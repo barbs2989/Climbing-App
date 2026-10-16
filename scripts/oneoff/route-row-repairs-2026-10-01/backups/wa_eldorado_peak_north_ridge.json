@@ -1,0 +1,59 @@
+{
+ "id": "wa_eldorado_peak_north_ridge",
+ "name": "North Ridge",
+ "approach": "Same approach as the East Ridge to high camp on the Inspiration Glacier, then descend toward the NW Ice Couloir notch to reach the base of the North Ridge.",
+ "approach_variants": [
+  {
+   "name": "Down the Inspiration Glacier to the ice-couloir notch, then snow onto the crest",
+   "notes": "The approach is the standard Eldorado one to the high camp on the Inspiration Glacier: Cascade River Road to the Eldorado Creek trailhead near 2,100 ft, the river crossing, the steep boot path, the boulder field, Eldorado Creek basin, and up the Eldorado Glacier to the East Ridge camp near 7,500-7,600 ft.\n\nFrom camp, the route goes down before it goes up. Descend the Inspiration Glacier toward the notch used as the rappel point for the Northwest Ice Couloir — an obvious gap between the North Ridge and the first rock spire, at about 8,100 ft — and climb steep snow from there onto the North Ridge proper.\n\nThe ridge follows generally solid rock on its eastern aspect with good friction and incut holds, so the exposure toward the glacier side stays modest while the drop to the west is dramatic. Near the top you can finish directly up steeper ice and rock or join the classic East Ridge finish.",
+   "season": "Summer, once the ridge is largely snow-free",
+   "hazards": [
+    "Crevasses on the Inspiration Glacier both on the way to the notch and on the way back",
+    "Loose rock in places along the crest",
+    "Wind exposure high on the ridge",
+    "Wet rock, which raises the difficulty of this route noticeably rather than marginally"
+   ],
+   "baseFinding": "The notch is the landmark, and it is shared with another route — which is why the test is what you do there, not where you stand. The gap you are looking for is the obvious notch between the North Ridge and the First Rock Spire along the crest, at about 8,100 ft, reached by descending the Inspiration Glacier from the East Ridge camp. That same notch is the rappel station for the Northwest Ice Couloir. So: at the notch, if you are putting a rope through an anchor and going down into the cirque on the other side, you are on the Northwest Couloir. If you are climbing steep snow up out of the notch onto a rock crest, you are on the North Ridge. Two routes, one notch, opposite directions. The rock tells you which side of the crest to be on, and that is the other half of the answer. This route stays on the ridge's east side — clean, solid rock with good friction and incut holds, snow on the northeast face below you keeping the exposure feeling manageable. If the drop is on both sides or you have drifted west into serious air and worse rock, come back east. What is honestly not published: no source names a single fixed starting point on this crest — one description says simply to climb the path of least resistance from your point of choice on the ridge. The notch is the findable thing; above it, the route is defined by staying east on the good rock rather than by a marked start. The crux moves are 5.7, so do not read a hard move as evidence you are off route."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek / Cascade River Road TH",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "In Marblemount, where SR 20 turns, go straight onto Cascade River Road and cross the Skagit River bridge. Follow the road about 20 miles to the small Eldorado parking area on the right at about 2,100 ft, with a pit toilet. The first 10 miles are paved and the rest is rough gravel. The road usually opens in late May or June. Overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center."
+  },
+  {
+   "lat": 48.533,
+   "lng": -121.129,
+   "elev": 7600,
+   "name": "Eldorado (East Ridge) camp",
+   "type": "Campsite",
+   "distMi": 5.5,
+   "directions": "Walk about 90 ft back down the road and cross the Cascade River on the log, then go about 100 ft straight away from the river to the climbers' path. It climbs steeply through timber to a boulder field; follow cairns up it, staying climber's right of Eldorado Creek, into Eldorado Creek Basin. Cross the ridge at about 6,100 ft into Roush Basin, take talus and slabs onto the Eldorado Glacier, rope up, and climb to the East Ridge camp near 7,500 to 7,600 ft."
+  },
+  {
+   "lat": 48.539,
+   "lng": -121.131,
+   "elev": 7900,
+   "name": "Base of North Ridge",
+   "note": "Traverse the upper Eldorado/Inspiration Glacier to the foot of the ridge.",
+   "type": "Junction",
+   "distMi": 6
+  },
+  {
+   "lat": 48.5375,
+   "lng": -121.1342,
+   "elev": 8868,
+   "name": "Eldorado Peak",
+   "note": "Exposed granite ridge crest, moves up to 5.7, leading to the summit.",
+   "type": "Summit",
+   "distMi": 6.5,
+   "directions": "Climb steep snow out of the notch onto the rock crest, then follow the ridge on its east side, where the rock is solid with good friction and incut holds (moves to 5.7). Near the top, either finish directly up steeper ice and rock or join the East Ridge knife-edge to the summit."
+  }
+ ],
+ "permit": null
+}

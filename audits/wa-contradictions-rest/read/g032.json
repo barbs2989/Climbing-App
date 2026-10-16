@@ -1,0 +1,2115 @@
+{
+ "batches": [
+  "b125.json",
+  "b126.json",
+  "b127.json",
+  "b128.json"
+ ],
+ "routes_read": 31,
+ "routes": [
+  {
+   "id": "wa_a_little_something",
+   "name": "A Little Something",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_notta_slab",
+   "name": "Notta Slab",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_firearms",
+   "name": "Firearms",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cheap_beer",
+   "name": "Cheap Beer",
+   "area": "Dikes, The",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bachelor_party",
+   "name": "Bachelor Party",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_moe",
+   "name": "Moe",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "drive 1.2 miles past the Middle Point Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Drive ~1.2 miles further south on FR 64 past this trailhead"
+      }
+     ],
+     "why": "The TRAILHEAD card sends the climber 1.5 miles past the trailhead (the Minidike pullout) while the approach and waypoints park this wall at 1.2 miles.",
+     "internal_resolution": "approach and trailhead waypoint agree on 1.2 mi for Megadike South; the 1.5 mi figure is the crag-wide Minidike distance",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_thunder",
+   "name": "Morning Thunder",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_face_farce",
+   "name": "Face Farce",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct (occasional winter access during inversions; see bestSeason)"
+      },
+      {
+       "field": "best_season",
+       "says": "USFS season of use for the access road/trail is April-November"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "70"
+      },
+      {
+       "field": "rope_note",
+       "says": "70m recommended given Megadike North's walls up to ~120ft."
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a standard sport rack of ~10 quickdraws and a 60m rope is plenty for this 35 ft route."
+      },
+      {
+       "field": "descent_text",
+       "says": "well within a 60m rope's reach (longest route here is 100 ft)"
+      }
+     ],
+     "why": "The rope spec says 70 m while the rack and descent text say a 60 m rope is plenty; the wall height is also given as ~120 ft vs a longest route of 100 ft.",
+     "internal_resolution": "For this 11 m (35 ft) route a 60 m rope suffices; the 70 m value is a crag-wide default",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_red_zinger",
+   "name": "Red Zinger",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cordwood",
+   "name": "Cordwood",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use, subject to the active hazard noted below."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_monkey_on_a_woodpile",
+   "name": "Monkey On A Woodpile",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_internal_combustion",
+   "name": "Internal Combustion",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_safety_dance",
+   "name": "Safety Dance",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "drive 1.2 miles past the Middle Point Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Drive ~1.2 miles further south on FR 64 past this trailhead"
+      }
+     ],
+     "why": "The TRAILHEAD card sends the climber 1.5 miles past the trailhead (the Minidike pullout) while the approach and waypoints park this wall at 1.2 miles.",
+     "internal_resolution": "approach and trailhead waypoint agree on 1.2 mi for Megadike South; the 1.5 mi figure is the crag-wide Minidike distance",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_incoming",
+   "name": "Incoming",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_redtail_arete",
+   "name": "Redtail Arete",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "drive 1.2 miles past the Middle Point Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Drive ~1.2 miles further south on FR 64 past this trailhead"
+      }
+     ],
+     "why": "The TRAILHEAD card sends the climber 1.5 miles past the trailhead (the Minidike pullout) while the approach and waypoints park this wall at 1.2 miles.",
+     "internal_resolution": "approach and trailhead waypoint agree on 1.2 mi for Megadike South; the 1.5 mi figure is the crag-wide Minidike distance",
+     "needs_research": false
+    },
+    {
+     "fact": "Watch-out text describes a different (alpine, trad) route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "Occasionally loose rock throughout—typical of Dikes granite"
+      },
+      {
+       "field": "watch_out",
+       "says": "No continuous crack systems—protection limited and often minimal; runouts between protection; bold climbing required"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Fully bolted."
+      },
+      {
+       "field": "watch_out",
+       "says": "rappel anchor locations must be confirmed; two-rope descent may be necessary"
+      },
+      {
+       "field": "descent",
+       "says": "Lower from the anchor at top on a single strand."
+      },
+      {
+       "field": "watch_out",
+       "says": "7000+ ft elevation gain from trailhead"
+      },
+      {
+       "field": "gain_ft",
+       "says": "350"
+      },
+      {
+       "field": "watch_out",
+       "says": "afternoon thunderstorms common in eastern Cascades"
+      },
+      {
+       "field": "hazards",
+       "says": "Fractured basalt typical of the Dikes"
+      }
+     ],
+     "why": "The watch_out block (granite, minimal protection, two-rope rappels, 7000+ ft gain, eastern Cascades) contradicts the row's fully bolted 18 m basalt sport pitch with a single-strand lower and 350 ft gain in the Blue Mountains.",
+     "internal_resolution": "Every other field (pro_needs, detailed_rack, descent, gain_ft, hazards, approach) agrees on a short bolted basalt sport route; watch_out is contaminated text",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_czech_it_out",
+   "name": "Czech it Out",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "drive 1.2 miles past the Middle Point Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Drive ~1.2 miles further south on FR 64 past this trailhead"
+      }
+     ],
+     "why": "The TRAILHEAD card sends the climber 1.5 miles past the trailhead (the Minidike pullout) while the approach and waypoints park this wall at 1.2 miles.",
+     "internal_resolution": "approach and trailhead waypoint agree on 1.2 mi for Megadike South; the 1.5 mi figure is the crag-wide Minidike distance",
+     "needs_research": false
+    },
+    {
+     "fact": "Aspect of the wall",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "NE"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Hot and exposed on this NE aspect in the afternoon"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "then traverse the ridge to the south-facing walls"
+      }
+     ],
+     "why": "The route is given a NE aspect but its Megadike South waypoint sends climbers to the south-facing walls, and an NE aspect would be shaded, not hot and exposed, in the afternoon.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_henpecked",
+   "name": "Henpecked",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_groove_thang",
+   "name": "Groove Thang",
+   "area": "Dikes, The",
+   "contradictions": []
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "name": "Unknown Climb Up the Castle",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season / year-round access vs road snow closure",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Year-round possible (routes established in winter conditions); best May-Oct for easier approach footing"
+      },
+      {
+       "field": "best_season",
+       "says": "USFS season of use is April-November"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip calls the route year-round while the road fields say snow blocks FR-64 in winter and spring and best_season/approach give April-November, so a climber cannot tell whether winter access exists.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "continue about 1.2 miles further down the road"
+      }
+     ],
+     "why": "The TRAILHEAD card sends the climber 1.5 miles past the trailhead (the Minidike pullout) while the approach and waypoints park this wall at 1.2 miles.",
+     "internal_resolution": "approach and trailhead waypoint agree on 1.2 mi for The Castle; the 1.5 mi figure is the crag-wide Minidike distance",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade for a 40 ft sport pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "descent_text",
+       "says": "Single short pitch (~40 ft) to the ~45 ft spire's summit"
+      },
+      {
+       "field": "length_m",
+       "says": "12"
+      }
+     ],
+     "why": "A commitment grade II chip (a half-day-plus technical outing) conflicts with a single 40 ft bolted roadside pitch.",
+     "internal_resolution": "length_m, pitches and descent all describe a single short pitch; II is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_just_enough",
+   "name": "Just Enough",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "one row, \"P1\""
+      },
+      {
+       "field": "pro_needs",
+       "says": "Fully bolted, two pitches"
+      },
+      {
+       "field": "descent",
+       "says": "a 70m rope is needed to link and lower both pitches at once."
+      },
+      {
+       "field": "descent_text",
+       "says": "Two linked pitches to 70 ft total"
+      },
+      {
+       "field": "hazards",
+       "says": "Fractured basalt typical of the Dikes, on a two-pitch line"
+      }
+     ],
+     "why": "The header and route breakdown show one pitch while pro_needs, descent, descent_text and hazards describe a two-pitch route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed to lower",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "a 70m rope is needed to link and lower both pitches at once."
+      },
+      {
+       "field": "descent_text",
+       "says": "Two linked pitches to 70 ft total; a 70m rope connects both for a single lower"
+      },
+      {
+       "field": "length_m",
+       "says": "21"
+      }
+     ],
+     "why": "A 70 ft (21 m) route lowers comfortably on a 60 m rope, so claiming a 70 m rope is needed contradicts the stated length.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_joe_s_route",
+   "name": "Joe's Route",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_lady_slipper",
+   "name": "Lady Slipper",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ahoot",
+   "name": "Ahoot",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_just_for_fun",
+   "name": "Just For Fun",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_heinous_thing",
+   "name": "Heinous Thing",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Season window and when the FR-64 access road is open",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "April-November per USFS season of use."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "only reliably snow-free roughly mid-June through October"
+      },
+      {
+       "field": "approach",
+       "says": "the road is passable roughly April-November and can hold snow into early summer"
+      },
+      {
+       "field": "access.closures",
+       "says": "FR-64 (Bluewood Road) is only reliably snow-free roughly mid-June through October"
+      }
+     ],
+     "why": "The season chip (May-Oct), best_season/approach (April-November) and road.seasonalGate (only reliably snow-free mid-June through October) give three different windows for the same crag access, so May and early-June trips are both endorsed and ruled out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.parking_pass_required",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access._raw.permit_type",
+       "says": "Northwest Forest Pass (day use)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No -- informal roadside pullout, not a developed fee site"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit required for day climbing at these informal roadside pullouts."
+      },
+      {
+       "field": "access.fees",
+       "says": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+      }
+     ],
+     "why": "The raw access record requires a Northwest Forest Pass while the rendered permit/pass fields say no pass or permit is needed at these roadside pullouts (low priority if _raw does not render).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "drive 1.2 miles past the Middle Point Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Drive ~1.2 miles further south on FR 64 past this trailhead"
+      }
+     ],
+     "why": "The TRAILHEAD card sends the climber 1.5 miles past the trailhead (the Minidike pullout) while the approach and waypoints park this wall at 1.2 miles.",
+     "internal_resolution": "approach and trailhead waypoint agree on 1.2 mi for Megadike South; the 1.5 mi figure is the crag-wide Minidike distance",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "name": "Meade Glacier",
+   "area": "Gilbert Peak",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "16.09"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "10.3"
+      },
+      {
+       "field": "beta",
+       "says": "it is a long day (~20 miles round trip)"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "Long, remote approach (~20 miles round trip)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Trail #1120 through Conrad Meadows to Surprise Lake / Warm Lake, ~8-9 mi one way."
+      }
+     ],
+     "why": "The header Dist shows 16.09 km (10 mi) while the prose gives ~20 mi round trip; the column is the one-way figure presented as the route distance.",
+     "internal_resolution": "waypoint distMi 10.3 and the 20 mi round-trip prose agree that 10 mi is one way",
+     "needs_research": false
+    },
+    {
+     "fact": "Which line this route is (ridge vs Meade Glacier)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Meade Glacier"
+      },
+      {
+       "field": "overview",
+       "says": "gaining the Meade Glacier's permanent snowfields on the peak's southeast side"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "this line goes ONTO THE RIDGE. The other route from this trailhead goes UNDER the peak — across the east side of the Conrad Glacier to a saddle, then onto the Meade. If you find yourself roping up for glacier travel before you have been on a ridge, you are on that one instead."
+      },
+      {
+       "field": "pitch_detail[2]",
+       "says": "Meade Glacier / summit snowfield — Snow travel/glacier crossing on the southeast side, crampons recommended."
+      }
+     ],
+     "why": "A route named for and described as climbing the Meade Glacier tells climbers in its base-finding that going onto the Meade is the sibling route, not this one.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through October is climbable"
+      },
+      {
+       "field": "best_season",
+       "says": "early season (June-July) offers a firmer, more continuous snow climb"
+      }
+     ],
+     "why": "best_season recommends June for the best snow and calls October climbable, both outside the Jul-Sep season chip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / trailhead in access",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.land_manager",
+       "says": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District) — Goat Rocks Wilderness"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Okanogan-Wenatchee National Forest (Naches Ranger District) for the Conrad Meadows approach"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Naches Ranger District, Okanogan-Wenatchee National Forest"
+      },
+      {
+       "field": "access.notes",
+       "says": "the standard approach (Snowgrass Flat, Berry Patch trailheads) is on the Gifford Pinchot side."
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Not required at Snowgrass Flat; required at Berry Patch trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "Drive to the Conrad Meadows / South Fork Tieton Trailhead"
+      }
+     ],
+     "why": "The ACCESS section names the Gifford Pinchot NF and the west-side Snowgrass/Berry Patch trailheads while the route, emergency and landManager fields use the east-side Conrad Meadows trailhead on the Okanogan-Wenatchee NF.",
+     "internal_resolution": "approach, road, waypoints, emergency and access.landManager agree on Conrad Meadows / Okanogan-Wenatchee (Naches RD); land_manager, notes and parking_pass are copied from the west-side routes",
+     "needs_research": false
+    },
+    {
+     "fact": "Exposure on the summit scramble",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "no significant exposure on most lines but rock is unstable."
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "The final class 3 scramble has real exposure despite its low technical grade"
+      }
+     ],
+     "why": "The route breakdown says the summit scramble has no significant exposure while watch_out says it has real exposure.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "When crevasses are a hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[2]",
+       "says": "can still harbor hidden crevasses/moats in early season."
+      },
+      {
+       "field": "obj_haz",
+       "says": "crevasses (late season)"
+      }
+     ],
+     "why": "One hazard field puts the crevasse risk in early season, the other in late season.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "name": "Conrad Glacier",
+   "area": "Gilbert Peak",
+   "contradictions": [
+    {
+     "fact": "Ranger district / land manager",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "emergency.rangerStation",
+       "says": "Cowlitz Valley Ranger District, Gifford Pinchot NF — (360) 497-1103, 10024 US Hwy 12, Randle, WA 98377"
+      },
+      {
+       "field": "emergency.county",
+       "says": "Yakima County"
+      },
+      {
+       "field": "approach",
+       "says": "From the South Tieton Creek/Conrad Meadows Trailhead"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Note this trailhead sits on the drier eastern forest rather than the Gifford Pinchot side"
+      }
+     ],
+     "why": "The emergency ranger station is the west-side Gifford Pinchot district while the route starts from the east-side Conrad Meadows trailhead in Yakima County, which the bivy says is not the Gifford Pinchot side.",
+     "internal_resolution": "approach, county and bivy agree on the east (Okanogan-Wenatchee, Naches RD) side; rangerStation is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope / glacier kit required",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "Rope and harness for the glacier crossing — the Conrad is the more active of Gilbert Peak's two small glaciers"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "this line wants a rope, a harness and a crevasse-rescue kit rather than just an axe and crampons."
+      },
+      {
+       "field": "pro_needs",
+       "says": "Basic glacier travel kit (axe, crampons) for the Conrad Glacier crossing"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "carry an ice axe, crampons, and consider a rope for glacier travel on Conrad Glacier."
+      }
+     ],
+     "why": "The PROTECTION section treats the rope as optional (axe and crampons as the kit) while gear and the approach say a rope, harness and crevasse-rescue kit are required.",
+     "internal_resolution": "gear, approach_variants and hazards agree a rope and crevasse kit are needed",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "name": "West Route",
+   "area": "Gilbert Peak",
+   "contradictions": [
+    {
+     "fact": "Camping at Snowgrass Flats",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From a base camp at Snowgrass Flats"
+      },
+      {
+       "field": "approach",
+       "says": "Snowgrass Flats, a large subalpine meadow used as base camp"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "Early morning start from Snowgrass Flats camp"
+      },
+      {
+       "field": "access.closures",
+       "says": "No camping or campfires at Snowgrass Flats itself"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "CAMPING WITHIN SNOWGRASS FLAT ITSELF IS PROHIBITED"
+      }
+     ],
+     "why": "Several fields tell the party to base-camp at Snowgrass Flats while access and bivy say camping there is prohibited.",
+     "internal_resolution": "access.closures and bivy agree camping is at sites below the flat (Lower Snowgrass/timber benches); the base-camp wording is loose",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at Snowgrass Flat trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Not required at Snowgrass Flat; required at Berry Patch trailhead — $5/day or $30/year Northwest Forest Pass."
+      },
+      {
+       "field": "access.fees",
+       "says": "Valid Recreation Pass / Northwest Forest Pass required at the trailhead"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "A Northwest Forest Pass or Interagency pass is required to park at Berry Patch or the Snowgrass trailhead."
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Snowgrass Flat Trailhead"
+      }
+     ],
+     "why": "parking_pass says no pass is needed at the Snowgrass Flat trailhead (this route's TRAILHEAD card) while fees and the bivy say a pass is required there.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "name": "Northeast Slopes / Goat Rocks crest",
+   "area": "Ives Peak",
+   "contradictions": [
+    {
+     "fact": "Aspect / line of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Northeast Slopes / Goat Rocks crest"
+      },
+      {
+       "field": "aspect",
+       "says": "NE"
+      },
+      {
+       "field": "beta",
+       "says": "then leaves the crest to climb the northeast side to the summit"
+      },
+      {
+       "field": "approach",
+       "says": "over a rounded intermediate high point toward Ives' northwest ridge"
+      },
+      {
+       "field": "approach",
+       "says": "traverse a narrow, exposed ledge (Class 2) to gain the upper south face"
+      },
+      {
+       "field": "descent",
+       "says": "Downclimb the Class 3 south face and Class 1-2 northwest ridge"
+      }
+     ],
+     "why": "The name, aspect and beta place the route on the NE slopes, but the approach, climbing_route, descent and itinerary follow the northwest ridge and finish on the south face.",
+     "internal_resolution": "approach, climbing_route, descent, descent_text, waypoints and itinerary all agree on NW ridge + south face; NE is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "PCT junction elevation and distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3]",
+       "says": "Pacific Crest Trail junction elev 6400, distMi 5"
+      },
+      {
+       "field": "approach",
+       "says": "junction with the Pacific Crest Trail at roughly 6,700–7,100 ft (~4.3 miles in)"
+      }
+     ],
+     "why": "The PCT junction is placed at 6,400 ft / 5 mi by the waypoint but 6,700-7,100 ft / 4.3 mi by the approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp location, elevation and camping rules",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "dropping a light camp in the upper Snowgrass basin around 7,100-7,200 ft"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "pass (but don't camp at) Lower Snowgrass Flat around 4 mi"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Lower Snowgrass Flat / Lily Basin Trail (#86) junction, type Campsite, elev 6250 — Established campsites near the Lily Basin Trail junction"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Snowgrass Flat area backcountry camps, elev 6200 — around 6,000 to 6,300 feet"
+      },
+      {
+       "field": "approach",
+       "says": "Upper Snowgrass Flat at roughly 6,400 ft ... a broad, popular wildflower meadow with good camping"
+      },
+      {
+       "field": "access.rules",
+       "says": "Camping is prohibited within Snowgrass Flat itself"
+      }
+     ],
+     "why": "The itinerary camps at 7,100-7,200 ft and says not to camp at Lower Snowgrass Flat, while the waypoints and bivy put the camps at Lower Snowgrass (6,200-6,250 ft) and the approach recommends camping on Upper Snowgrass Flat, which access says is closed to camping.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-1 mileage vs waypoint distances",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "backpack ~7 mi into an upper Snowgrass basin camp"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7 (Ives Peak summit)"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "5 (Pacific Crest Trail junction)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "hike the full ~6.5 mi back out to the trailhead"
+      }
+     ],
+     "why": "Day 1 walks 7 miles to a camp below the PCT junction, yet the waypoints put the junction at 5 mi and the summit itself at 7 mi, and day 2 says the hike out is 6.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-2 duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "8"
+      },
+      {
+       "field": "timing.sectionBreakdown[1].hrs",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "5:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].detail",
+       "says": "Arrive back at trailhead by ~4:30-5:00 PM."
+      }
+     ],
+     "why": "The day-2 schedule runs from 5:30 AM to 4:30-5:00 PM (11-11.5 h) while the day hours and timing section give 8 h.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-2 gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "900"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "7,880 ft."
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Old Snowy - Ives col elev 7250"
+      },
+      {
+       "field": "waypoints[6]",
+       "says": "Ives Peak summit elev 7920"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "camp in the upper Snowgrass basin around 7,100-7,200 ft"
+      }
+     ],
+     "why": "Camp (~7,150 ft) to Old Snowy (7,880) then down to the col (7,250) and up Ives (7,920) is already ~1,400 ft of gain before reversing the traverse, far more than the 900 ft stated.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Goat Creek crossing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "Ford of Goat Creek on the Snowgrass Trail"
+      },
+      {
+       "field": "approach",
+       "says": "cross Goat Creek on a footbridge/plank crossing around the 2-mile mark"
+      }
+     ],
+     "why": "The waypoint calls it a ford while the approach describes a footbridge/plank crossing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier/moat travel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel on the standard NE Slopes/crest scramble route"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "lingering snowfields and a glacier moat crossing near the Old Snowy-Ives col into July"
+      },
+      {
+       "field": "watch_out[3]",
+       "says": "McCall Glacier moat/snow bridge near the Old Snowy-Ives col can be tricky in early-mid summer"
+      }
+     ],
+     "why": "SEASONAL HAZARDS says no glacier travel while hazards and watch_out list a glacier moat/snow-bridge crossing on the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "name": "Liberty Cap via Ptarmigan Ridge",
+   "area": "Liberty Cap",
+   "contradictions": [
+    {
+     "fact": "Mowich Lake trailhead access",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice"
+      },
+      {
+       "field": "road.status",
+       "says": "No public vehicle, bike, or foot access via SR-165"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "Gravel road off Carbon River Road near Buckley leads to Mowich Lake (4,929 ft), the standard trailhead for the west-side approach"
+      },
+      {
+       "field": "approach",
+       "says": "Via Mowich Lake (4,929 ft, reached by gravel road off Carbon River Road near Buckley, often not opening until early-mid July)"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Mowich Lake Trailhead"
+      },
+      {
+       "field": "approach_variants[0]",
+       "says": "Mowich Lake, Spray Park and the Ptarmigan crest (primary: true)"
+      }
+     ],
+     "why": "The TRAILHEAD card, approach and primary approach variant send the party to a Mowich Lake trailhead that access and road say has had no vehicle access since the April 2025 bridge closure.",
+     "internal_resolution": "access.closures, road.status and road.seasonalGate agree the road is closed; the White River / St. Elmo variant is the usable approach",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Jul"
+      },
+      {
+       "field": "best_season",
+       "says": "roughly June through early July"
+      },
+      {
+       "field": "best_season",
+       "says": "the Mowich Lake road's late opening (often early July) effectively sets the practical start of the season"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "July to mid-August"
+      },
+      {
+       "field": "approach_variants[1].season",
+       "says": "Mid-May to early July"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Best window (June-early July) while ice still covers the crux chimney; conditions degrade quickly after mid-summer."
+      }
+     ],
+     "why": "The primary approach variant runs July to mid-August, after the June-early July window that best_season and climate call best, and best_season itself says the season starts in early July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp position relative to the bergschrund",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "establish a high camp (~10,300 ft) below the bergschrund"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the climb does not start above camp — it starts several hundred feet BELOW it"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "crosses the bergschrund at about 9,800 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "on the crest of Ptarmigan Ridge near 10,000 ft"
+      }
+     ],
+     "why": "The itinerary puts the 10,300 ft high camp below the bergschrund, but the base-finding places the bergschrund at 9,800 ft, several hundred feet below camp.",
+     "internal_resolution": "both approach_variants baseFindings agree the schrund (~9,800 ft) is below the 10,200-10,300 ft camp",
+     "needs_research": false
+    },
+    {
+     "fact": "White River Road opening",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[2].notes",
+       "says": "Access is gated by the White River Road, which typically does not open until late June"
+      },
+      {
+       "field": "approach_variants[1].season",
+       "says": "Mid-May to early July"
+      },
+      {
+       "field": "approach_variants[1].notes",
+       "says": "The way in that is actually available during the ice season, because the White River road opens well before Mowich Lake Road does"
+      }
+     ],
+     "why": "The White River variant is offered from mid-May as the early-season option, while the Camp Schurman bivy says the White River Road does not open until late June.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "name": "Liberty Cap via Liberty Ridge",
+   "area": "Liberty Cap",
+   "contradictions": [
+    {
+     "fact": "Which wall is on which side of Liberty Ridge",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "the Liberty Wall to climber's left, the infamous Willis Wall to the right"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Facing uphill, Willis Wall is on your LEFT, to the east, and the Liberty Wall is on your RIGHT, to the west. If the big wall is on your right hand as you look up, you are on the wrong feature."
+      }
+     ],
+     "why": "The overview and the base-finding give opposite sides for Willis Wall and Liberty Wall, and the base-finding uses this as its wrong-feature test.",
+     "internal_resolution": "baseFinding (and the Ptarmigan row's \"on Liberty Ridge the Liberty Wall is on your right\") agree Willis Wall is east/left; overview is reversed",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment and ice grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade IV-V, AI3+"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "IV"
+      },
+      {
+       "field": "commitment",
+       "says": "IV"
+      },
+      {
+       "field": "ice_grade",
+       "says": "AI2-3 (short steps to WI3)"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "steep snow/ice climbing up to AI3+"
+      }
+     ],
+     "why": "The grade column says IV-V and AI3+ while the grade chips (and the header pill, from ice_grade) say IV and AI2-3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the technical crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "This represents the crux of Liberty Ridge and is where parties often spend significant time."
+      },
+      {
+       "field": "hazards[6]",
+       "says": "summit bergschrund crossing, usually the technical crux"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "cross the summit bergschrund (usually the technical crux)"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "The bergschrund below the cap is usually the crux"
+      }
+     ],
+     "why": "The route breakdown names the Thumb Rock ice pitch as the crux while hazards, itinerary and waypoints name the summit bergschrund.",
+     "internal_resolution": "hazards, itinerary, waypoints and the day-3 schedule agree the summit bergschrund is usually the crux",
+     "needs_research": false
+    },
+    {
+     "fact": "Columbia Crest height / true summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "a rockier point on the crater's southwest rim now stands higher (~14,400 ft) than the faster-thinning Columbia Crest icecap (~14,389 ft)"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "many parties continue from Liberty Cap across the crater rim to true summit Columbia Crest (14,411 ft)"
+      }
+     ],
+     "why": "pro_tips calls Columbia Crest the true summit at 14,411 ft while the overview says it is ~14,389 ft and no longer the high point.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Thumb Rock camp shelter",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Thumb Rock (10,775 ft), the standard high camp — flat, wind-sheltered tent sites"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "exposed to rockfall and wind, so many parties dig in behind the rock."
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Camp spots are limited and exposed to rockfall"
+      }
+     ],
+     "why": "The approach calls Thumb Rock wind-sheltered while the waypoint and itinerary call it exposed to wind and rockfall.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season start vs White River Road opening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "Early May to mid-June"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "optimal"
+      },
+      {
+       "field": "road.status",
+       "says": "Seasonal — typically opens around Memorial Day weekend"
+      },
+      {
+       "field": "access.closures",
+       "says": "the White River Road/Campground approach used for Liberty Ridge typically opens around Memorial Day weekend"
+      }
+     ],
+     "why": "The approach is recommended from early May, but the only trailhead road the route uses typically does not open until late May.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

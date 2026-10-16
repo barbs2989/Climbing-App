@@ -1,0 +1,390 @@
+{
+ "takenAt": "2026-10-01T17:28:56.805Z",
+ "rows": [
+  {
+   "id": "wa_beckey_davis",
+   "waypoints": [
+    {
+     "lat": 47.527315,
+     "lng": -120.820942,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Alternate access only, used when the standard Stuart Lake Trailhead / Aasgard Pass approach is closed (e.g. wildfire closures) -- longer route via Snow Lakes/Lake Viviane (~10 mi one-way). Stuart Lake Trailhead is the standard/preferred access.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.485953,
+     "lng": -120.788698,
+     "elev": 7415,
+     "name": "Gnome Tarn",
+     "note": "Landmark tarn on the boot path leading to the base of Prusik Peak's south face routes.",
+     "type": "Junction",
+     "distMi": 8
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "name": "Prusik Peak south face base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "elev": 8008,
+     "name": "Prusik Peak",
+     "note": "South Face route, 6-7 pitches, FA Beckey-Davis 1962.",
+     "type": "Summit",
+     "distMi": 9
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_christensen",
+   "waypoints": [
+    {
+     "lat": 47.527315,
+     "lng": -120.820942,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Icicle Creek Rd approach into the Enchantments (Alpine Lakes Wilderness); overnight permit required.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.485953,
+     "lng": -120.788698,
+     "elev": 7415,
+     "name": "Gnome Tarn",
+     "type": "Junction",
+     "distMi": 8
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "elev": 8008,
+     "name": "Prusik Peak",
+     "type": "Summit",
+     "distMi": 9
+    }
+   ]
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "waypoints": [
+    {
+     "lat": 47.527315,
+     "lng": -120.820942,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Icicle Creek Rd approach into the Enchantments (Alpine Lakes Wilderness); overnight permit required.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.485953,
+     "lng": -120.788698,
+     "elev": 7415,
+     "name": "Gnome Tarn",
+     "type": "Junction",
+     "distMi": 8
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "elev": 8008,
+     "name": "Prusik Peak",
+     "note": "South Face, left of Solid Gold, joins it near the top; 4-5 pitches.",
+     "type": "Summit",
+     "distMi": 9
+    }
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "waypoints": [
+    {
+     "lat": 46.7683,
+     "lng": -121.7314,
+     "elev": 4870,
+     "name": "Reflection Lakes Trailhead",
+     "note": "South side of Stevens Canyon Road at the Reflection Lakes parking pullouts; Mount Rainier NP entrance fee applies, no water at the lot.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, at about 4,860 ft. It is a small paved pullout lot and it fills early on weekends, so plan an early arrival. A Mount Rainier National Park entrance fee applies, and there is no water at the lot, so fill up before you get here. The trail is signed but unnumbered and starts directly across Stevens Canyon Road from the parking. When the road is snow-gated, winter parties start instead from the Narada Falls pullout."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5350,
+     "name": "Seasonal Stream Crossing",
+     "note": "Small seasonal stream crosses the trail; often dry by late summer so don't rely on it for resupply.",
+     "type": "Water",
+     "distMi": 0.6
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5600,
+     "name": "Cliff Bands Below Trail",
+     "note": "Trail runs directly beneath exposed cliff bands here; watch for rockfall and loose debris, especially if goats or other hikers are above.",
+     "type": "Hazard",
+     "distMi": 0.9
+    },
+    {
+     "lat": 46.757782,
+     "lng": -121.732663,
+     "elev": 5920,
+     "name": "Pinnacle Saddle",
+     "note": "Maintained NPS trail ends at this 5,920-ft saddle between Pinnacle and Plummer Peaks; unmarked climber's path to the summit gully begins on the south side.",
+     "type": "Junction",
+     "distMi": 1.3
+    },
+    {
+     "lat": 46.757797,
+     "lng": -121.732683,
+     "elev": 6150,
+     "name": "Base of Summit Gully",
+     "note": "Climber's path traverses goat trails and loose scree around the peak's south side to reach the start of the class 3-4 ascent gully.",
+     "type": "Junction",
+     "distMi": 1.5
+    },
+    {
+     "lat": 46.757517,
+     "lng": -121.733062,
+     "elev": 6400,
+     "name": "Summit Gully Scramble",
+     "note": "NPS warns this is a precipitous scramble on loose, unstable rock; a few class 3 moves carry real exposure, so avoid climbing directly below other parties.",
+     "type": "Hazard",
+     "distMi": 1.7
+    },
+    {
+     "lat": 46.7581647,
+     "lng": -121.7325932,
+     "elev": 6562,
+     "name": "Pinnacle Peak Summit",
+     "note": "True summit, with sweeping views of Rainier, Adams, and St. Helens.",
+     "type": "Summit",
+     "distMi": 1.9
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "waypoints": [
+    {
+     "lat": 46.7683,
+     "lng": -121.7311,
+     "elev": 4870,
+     "name": "Reflection Lakes / Pinnacle Peak Trailhead",
+     "note": "~35-car unpaved pullout on the south side of Stevens Canyon Road, directly across from Reflection Lakes; trail sign for Pinnacle Peak/Plummer Peak starts here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, about 1.4 miles east of the Paradise-Longmire Road junction and roughly 1.9 miles from the Paradise turnoff — an unpaved pullout on the south side of the road with room for about 35 cars, directly across from the largest of the Reflection Lakes. The signed trail for Pinnacle Peak/Plummer Peak starts right there; it's a maintained Mount Rainier National Park trail with no official number. Stevens Canyon Road is open roughly late May through late October, and this small lot commonly fills by mid-morning on summer weekends."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5370,
+     "name": "Seasonal stream crossing",
+     "note": "A small seasonal stream crosses the switchbacks partway up; flows well early season but can run dry by late July-August.",
+     "type": "Water",
+     "distMi": 0.6
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5710,
+     "name": "Cliff-band switchbacks below the saddle",
+     "note": "Trail steepens onto loose rock with exposed drop-offs on the final switchbacks before the saddle; NPS specifically warns of unstable rock and steep edges here, worse with lingering snow.",
+     "type": "Hazard",
+     "distMi": 1
+    },
+    {
+     "lat": 46.754055,
+     "lng": -121.739672,
+     "elev": 5920,
+     "name": "Pinnacle Saddle",
+     "note": "T-intersection between Pinnacle and Plummer Peaks where the maintained trail ends; climber's boot path continues left/east to Pinnacle, right/west toward Plummer.",
+     "type": "Junction",
+     "distMi": 1.25
+    },
+    {
+     "lat": 46.754853,
+     "lng": -121.740056,
+     "elev": 6150,
+     "name": "Heather-and-talus boot path to Plummer's summit block",
+     "note": "Unmaintained Class 2 boot path across heather and loose talus with sparse cairns; easy to lose the path in cloud or on the descent.",
+     "type": "Hazard",
+     "distMi": 1.4
+    },
+    {
+     "lat": 46.753364,
+     "lng": -121.739524,
+     "elev": 6374,
+     "name": "Plummer Peak summit",
+     "note": "Small rocky summit (7th-highest in the Tatoosh Range) with views north to Rainier and south to Adams, St. Helens, and Hood on clear days.",
+     "type": "Summit",
+     "distMi": 1.55
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "name": "Prusik Peak south face base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.487385,
+     "lng": -120.784575,
+     "elev": 8008,
+     "name": "Prusik Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8008
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Self-issue day-use wilderness permit at the kiosk; overnight parties need a permit (advance reservation or daily lottery in Leavenworth).",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5570,
+     "name": "Colchuck Lake",
+     "note": "Reliable water and the last established camp before Aasgard Pass; trail reaches the lake's north end after 2,100 ft of gain.",
+     "type": "Water",
+     "distMi": 4.75
+    },
+    {
+     "lat": 47.48028,
+     "lng": -120.82056,
+     "elev": 7841,
+     "name": "Aasgard Pass (Colchuck Pass)",
+     "note": "Steep, loose talus/scree (snow or ice into early summer) gaining roughly 2,200 ft in under a mile; watch for rockfall kicked down from parties above.",
+     "type": "Hazard",
+     "distMi": 6.5
+    },
+    {
+     "lat": 47.482495,
+     "lng": -120.7837684,
+     "elev": 6788,
+     "name": "Lake Viviane",
+     "note": "First lake in the Enchantment core basin after dropping off the pass; climbers report spotted saxifrage blooming along the shore between here and the base of the south face.",
+     "type": "Water",
+     "distMi": 8
+    },
+    {
+     "lat": 47.485953,
+     "lng": -120.7886982,
+     "elev": 7415,
+     "name": "Gnome Tarn",
+     "note": "Leave the main basin trail here and traverse northeast toward Prusik's south face (7,350 ft); classic Prusik-over-tarn photo spot.",
+     "type": "Junction",
+     "distMi": 9.5
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "name": "Prusik Peak south face base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.48615,
+     "lng": -120.786352,
+     "elev": 7800,
+     "name": "Chockstone squeeze / upper chimney (P5)",
+     "note": "Squirm through a tight hole behind a chockstone (awkward with a pack on) then work right into a slick, sparsely-protected 5.9+ chimney.",
+     "type": "Hazard",
+     "distMi": 9.5
+    },
+    {
+     "lat": 47.487398,
+     "lng": -120.784552,
+     "elev": 8008,
+     "name": "Prusik Peak Summit",
+     "note": "True summit and top of the six-pitch, ~650 ft Burgner-Stanley line; small exposed perch at the west end of The Temple ridge.",
+     "type": "Summit",
+     "distMi": 9.5
+    },
+    {
+     "lat": 47.48615,
+     "lng": -120.786352,
+     "elev": 7600,
+     "name": "North face rappel descent",
+     "note": "Five rappels off slung blocks/horns down the north face, roughly an hour back to the base of the south face route where packs are typically stashed.",
+     "type": "Hazard",
+     "distMi": 9.5
+    }
+   ]
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "waypoints": [
+    {
+     "lat": 47.527315,
+     "lng": -120.820942,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Icicle Creek Rd approach into the Enchantments (Alpine Lakes Wilderness); overnight permit required.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.485953,
+     "lng": -120.788698,
+     "elev": 7415,
+     "name": "Gnome Tarn",
+     "type": "Junction",
+     "distMi": 8
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "name": "Prusik Peak south face base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.48786,
+     "lng": -120.78373,
+     "elev": 8008,
+     "name": "Prusik Peak",
+     "note": "6-pitch route, 5.10a.",
+     "type": "Summit",
+     "distMi": 9
+    }
+   ]
+  }
+ ]
+}

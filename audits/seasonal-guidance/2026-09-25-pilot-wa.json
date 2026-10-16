@@ -1,0 +1,690 @@
+[
+ {
+  "id": "wa_mount_shuksan_white_salmon_glacier",
+  "seasonal_guidance": {
+   "optimalWindow": "June to mid-July, while snow still bridges the creek valley and the glacier's crevasses before they open up",
+   "monthBreakdown": {
+    "May": {
+     "status": "marginal",
+     "reason": "Firm snow runs from the road-end clearcut to the glacier, but spring avalanche cycles off the Hanging Glacier and basin slopes are still active."
+    },
+    "June": {
+     "status": "optimal",
+     "reason": "Deep snow still fills the creek valley and bridges most crevasses, so the approach avoids slide alder; cross under the Hanging Glacier early."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "Snow recedes from the valley bottom and the clearcut contour gets brushier, but crevasses on the White Salmon are usually still bridged early in the month."
+    },
+    "August": {
+     "status": "good",
+     "reason": "The approach becomes a brushy contour with stream crossings, and crevasses on the White Salmon and Curtis glaciers open, lengthening route-finding."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "Bare, broken glacier and open crevasses make travel slow and circuitous, and the summit pyramid scramble is looser once snow is gone."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Shortening days, first autumn snow over open crevasses, and wet brush on the approach make this a poor time for the glacier."
+    }
+   }
+  },
+  "evidence": [
+   "Search summaries: White Salmon is the most popular winter/spring SKI route on Shuksan; Jan 2026 WTA report warns avalanche danger on the glacier and basin can be extreme - https://www.wta.org/go-hiking/trip-reports/trip_report-2026-01-24.215020785095",
+   "Turns-all-year reports on the White Salmon in March, April and May (firm snow May 2) - https://turns-all-year.com/trip-reports/may-2-white-salmon-glacier-mt-shuksan",
+   "Kyle Miller early-June ascent: rollers and crevasses hidden under 10+ ft of snow; an hour of bushwhacking snowless forest on the descent - https://www.whereiskylemiller.com/mt-baker-542/white-salmon-glacier/",
+   "Row's own approach text: with good snow cover descend into White Salmon Creek; without it contour the clearcut to avoid slide alder; hazards list Hanging Glacier avalanches and worse crevasses late season."
+  ],
+  "flags": [
+   "Research shows this is heavily used as a winter/spring (March-May) ski-mountaineering line; the stored season Jun-Sep reflects the summer climbing window only. Breakdown stays inside Jun-Sep for optimal/good and marks May marginal.",
+   "Could not verify any specific seasonal closure for the White Salmon Lodge road-end pull-off; the access.seasonal note about Baker Lake Road (FSR 11) applies to the Sulphide/Shannon Ridge side, not this Mount Baker Highway approach - worth a human look."
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July to mid-August, when the snow and ice leading to the ridge are consolidated and the rock has melted out",
+   "monthBreakdown": {
+    "June": {
+     "status": "marginal",
+     "reason": "The north-side snow and ice below the ridge climb well early in the morning, but the upper rock is often still snow-plastered and wet."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "Glacier approaches below the ridge are consolidated and the 4th class to 5.7 rock melts out; bergschrund crossings are usually still manageable."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Rock on the summit block is driest, though the ice lower down grows harder and more serac and crevasse obstacles appear by late month."
+    },
+    "September": {
+     "status": "risky",
+     "reason": "Bare glacier ice, wide bergschrunds and serac fall on the north-side approach make reaching the base of the ridge hard and exposed."
+    }
+   }
+  },
+  "evidence": [
+   "StephAbegg North Face trip, June 9 2013: 40-50 degree firm snow early, would turn dangerous within hours of sun - https://stephabegg.com/trip-reports/washington/shuksan-nf/",
+   "SummitPost Shuksan climber's log: early August relaxed conditions; earlier-season gullies with wet mixed snow/ice/rock are a challenge; serac fall destroyed an easy exit, forcing traverses above an open bergschrund - https://www.summitpost.org/mount-shuksan/climbers-log/150347/d-13302",
+   "Row's own best_season (Jul-Aug, consolidated glacier terrain and rock) and beta (ice lower down, alpine rock higher up)."
+  ],
+  "flags": [
+   "Few trip reports exist for this specific line; month statuses are inferred from north-side (North Face / Hanging Glacier) conditions plus the stored Jul-Aug window. Worth a human look.",
+   "Row has no hazards and its approach depends on another route; June/September assessments rely on that connecting terrain."
+  ]
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July through August, after the Boulder Ridge snow retreats and before the Park Glacier becomes too broken",
+   "monthBreakdown": {
+    "May": {
+     "status": "marginal",
+     "reason": "Continuous snow reaches far down Boulder Ridge, making a long slog, and the east-facing cleaver carries more rockfall as the snowpack warms."
+    },
+    "June": {
+     "status": "marginal",
+     "reason": "Deep snow still buries the upper trail and heather step, and warming slopes below the 9,300 ft buttress shed more rock."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "The trail melts out to high camp near 5,700 ft and snow still bridges most Park Glacier crevasses; expect flies and blowdown on the lower trail."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "The approach is fully melted out, but the glacier grows broken and the upper cleaver turns icy, so later trips need screws and careful routing."
+    },
+    "September": {
+     "status": "risky",
+     "reason": "The Park Glacier is heavily crevassed and the cleaver steep, icy and exposed to rockfall; parties have needed screws and pickets."
+    }
+   }
+  },
+  "evidence": [
+   "Turns-all-year July 15-16 2009: continuous snow from summit to 4,700 ft on Boulder Ridge in mid-July - https://turns-all-year.com/trip-reports/july-15-16-2009-mt-baker-via-boulder-glacier",
+   "Turns-all-year July 22-23: bushwhack approach with biting black flies, mud and blowdown - https://www.turns-all-year.com/trip-reports/july-22-23-boulder-glacier-mt-baker",
+   "Eric's Basecamp, Sept 7-8 2001: multiple crevasse fields on the Park Glacier; upper cleaver steep, icy, exposed to rockfall, protected with screws and pickets - http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm",
+   "Row's own best_season: mid-July through August; June too early, September too broken."
+  ],
+  "flags": [
+   "Stored season is May-Aug, but the row's own best_season says June is too early; May/June are therefore marked marginal, not good. September sits outside the stored window and is marked risky, consistent with best_season.",
+   "access.seasonal mentions Baker Lake Road (FSR 11) bridge-work closures - no specific current closure dates verified."
+  ]
+ },
+ {
+  "id": "wa_mount_baker_squak_glacier",
+  "seasonal_guidance": {
+   "optimalWindow": "Late May through June, while snow still covers the approach and before the bergschrund near 9,400 ft opens",
+   "monthBreakdown": {
+    "April": {
+     "status": "marginal",
+     "reason": "Snow still blocks the road about two miles short of the trailhead, adding distance, and spring avalanche cycles are still active on the open slopes."
+    },
+    "May": {
+     "status": "optimal",
+     "reason": "Continuous snow from near the trailhead to the summit and a filled-in bergschrund; the last stretch of road may still hold snow early in the month."
+    },
+    "June": {
+     "status": "optimal",
+     "reason": "The road is usually clear and crevasses remain bridged, though some sag late in the month and need to be walked around."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Still climbable early in the month, but the bergschrund above the Squak-Easton junction becomes convoluted and more crevasses open."
+    },
+    "August": {
+     "status": "marginal",
+     "reason": "The bergschrund near 9,400 ft and open crevasses force detours, and many parties switch to the Easton Glacier instead."
+    }
+   }
+  },
+  "evidence": [
+   "Squak is limited to early season because a bergschrund develops as the season progresses - https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/",
+   "Turns-all-year Aug 25 2012: bergschrund at 9,400 ft after Squak/Easton join becoming convoluted but still passable - https://turns-all-year.com/trip-reports/august-25-2012-mt-baker-easton-and-squak-glaciers",
+   "June 2023 report: crevasses on the Squak sagging and about to open - https://www.mountaineers.org/activities/trip-reports/mt-baker-squak-glacier-one-day-ski-mountaineering",
+   "Winter road blocked ~2 miles from trailhead; May report found snow on the road ~2.8 miles out - search summary of https://www.wta.org/go-hiking/hikes/schriebers-meadow-snowshoe and https://www.turns-all-year.com/trip-reports/squak-glacier-mt-baker-5-23-24"
+  ],
+  "flags": [
+   "Stored season May-Jul (early season preferred) matches research. August is outside the window and is marked marginal; an August 2012 report found the schrund still passable, so August is possible but not recommended."
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "seasonal_guidance": {
+   "optimalWindow": "May, while the south-facing couloir is still full and firm overnight, before rockfall and Nisqually crevasses take over",
+   "monthBreakdown": {
+    "March": {
+     "status": "marginal",
+     "reason": "Deep winter snowpack fills the couloir, but storm cycles, short days and the nightly Longmire-Paradise gate make windows rare and avalanche-prone."
+    },
+    "April": {
+     "status": "good",
+     "reason": "The couloir is fat with snow and Nisqually crevasses are well bridged; fresh spring storms still load the south aspect, so time it after a freeze."
+    },
+    "May": {
+     "status": "optimal",
+     "reason": "Firm refrozen snow in the couloir and bridged crevasses on the Nisqually crossing; start around midnight to be off the south face before it warms."
+    },
+    "June": {
+     "status": "good",
+     "reason": "Still climbable early in the month, but rockfall down the narrow couloir rises as it melts and crevasses on the Nisqually crossing begin to open."
+    },
+    "July": {
+     "status": "risky",
+     "reason": "In most years the couloir is melting out: heavy rockfall down the funnel, a broken Nisqually crossing and wet-snow slides by mid-morning."
+    }
+   }
+  },
+  "evidence": [
+   "Sister Fuhrer Finger 'typically goes out in early June due to rockfall and crevasses opening on the Nisqually'; late June/early July only in big snow years - https://www.powderproject.com/trail/7000332/fuhrer-finger (via search summary)",
+   "Fuhrer Thumb descent in mid/late May with high-season snowpack; crevasses to cross once melting starts - https://www.whereiskylemiller.com/mt-rainier/fuhrer-thumb/",
+   "Rockfall hazard high after sunrise; south side parties leave ~midnight - https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-fuhrer-finger",
+   "Fuhrer Finger ski June 25-26 2010 in May-like conditions (high snow year) - https://turns-all-year.com/trip-reports/june-25-26-2010-mt-rainier-fuhrer-finger"
+  ],
+  "flags": [
+   "Evidence here is mostly for the adjacent Fuhrer Finger; Thumb-specific month data is thin. Breakdown agrees with stored Apr-Jun but rates late June weaker than the stored window implies.",
+   "Row's access.permit says 'Free climbing permit' while access.fees states an $82 climbing fee - internal contradiction worth a look (not seasonal)."
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "seasonal_guidance": {
+   "optimalWindow": "July, when the headwall holds firm neve and the Mowich approach is snow-free, before the bergschrund becomes impassable",
+   "monthBreakdown": {
+    "May": {
+     "status": "risky",
+     "reason": "The Mowich Lake road is still closed and snowed in, adding many miles, and the northwest face carries unconsolidated spring snow and slide risk."
+    },
+    "June": {
+     "status": "good",
+     "reason": "The face is well filled and corns up for ski descents, but the Mowich Lake road usually has not opened and the approach through Spray Park is snowbound."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "Firm neve on the headwall and a melted-out approach; the bergschrund may need a bypass on climber's left, and rockfall picks up once sun hits the face."
+    },
+    "August": {
+     "status": "marginal",
+     "reason": "The bergschrund grows and the face turns to penitentes and hard ice, with more rockfall and wider crevasses on the Edmunds approach."
+    },
+    "September": {
+     "status": "risky",
+     "reason": "Late-season bare ice and open crevasses on a remote face, with the first fall storms arriving and shortening days."
+    }
+   }
+  },
+  "evidence": [
+   "Ranger conditions July 25 2017: main bergschrund impassable, bypass on left near twin gendarme; firm neve with penitentes; rockfall - https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+   "Headwall often skied June/July when it corns up - https://wildsnow.com/10311/rainier-edmunds-headwall-ski/",
+   "Mowich Lake Road open to vehicles typically mid-July to mid-October - https://www.nps.gov/places/mowich-lake.htm",
+   "SR 165 Fairfax Bridge closed April 2025, no alternate route to Mowich Lake - https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed"
+  ],
+  "flags": [
+   "Access blocker: the SR 165 Fairfax Bridge closure means no vehicle access to the Mowich Lake trailhead in ANY month until further notice; the month breakdown describes the route itself, not current access. Consider whether guidance should mention it.",
+   "Stored window Jun-Jul, but the Mowich Lake road normally opens only in mid-July, so a June attempt implies a long snowbound approach; reasons say so rather than contradict the window.",
+   "Row's access.permit calls the climbing permit 'Free' while access.fees states $82 - internal contradiction (not seasonal)."
+  ]
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "seasonal_guidance": {
+   "optimalWindow": "Late June through July, while the snow finger still bridges onto the glacier and the upper moat is crossable",
+   "monthBreakdown": {
+    "May": {
+     "status": "marginal",
+     "reason": "Snow on the upper Cle Elum road and over Dip Top Gap lengthens the approach, and loaded slopes above Marmot and Jade Lakes are avalanche terrain."
+    },
+    "June": {
+     "status": "optimal",
+     "reason": "The snow finger right of Pea Soup Lake gives a direct line onto the glacier past the lower icefall, and the moat below the col is still well filled."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "The approach is mostly melted out and the finger usually still goes early in the month; the moat starts to open and mosquitoes are heavy below 6,500 ft."
+    },
+    "August": {
+     "status": "marginal",
+     "reason": "The finger breaks up, forcing a Class 3 bypass on loose rock; crevasses can span the glacier and crossing the upper moat becomes the crux."
+    },
+    "September": {
+     "status": "risky",
+     "reason": "Bare, broken ice and a wide moat under the col, with loose rotten rock to reach the glacier; some years the lower route does not go at all."
+    }
+   }
+  },
+  "evidence": [
+   "Early season snow finger on far right bypasses lower icefall; late season Class 3 scramble left of finger - https://www.mountainproject.com/route/124973025/lynch-glacier (via search summary)",
+   "Moat crossing below the pyramid tricky; 2023 simple up high, impassable down low - Mountaineers trip reports (search summary) https://www.mountaineers.org/activities/trip-reports/glacier-climb-mount-daniel-lynch-glacier-2",
+   "Late season: full-width crevasses, loose rock access, Lynch Draw flooded - https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier (403, search summary)",
+   "Trip reports dated 6/28/2008 and 7/6/2020 - https://cascadeclimbers.com/forum/topic/60321-tr-mt-daniel-lynch-glacier-6282008/ , https://cascadeclimbers.com/forum/topic/103525-tr-mt-daniel-daniel-and-lynch-glaciers-07062020/"
+  ],
+  "flags": [
+   "Agrees with stored Jun-Jul. Cle Elum River road / Deception Pass trailhead opening date not verified, stated generally.",
+   "Row's high_point_ft is null (not seasonal)."
+  ]
+ },
+ {
+  "id": "wa_colchuck_peak_north_buttress_couloir",
+  "seasonal_guidance": {
+   "optimalWindow": "April to May, when the couloir is continuously snow-filled and the Eightmile road is about to open or has just opened",
+   "monthBreakdown": {
+    "February": {
+     "status": "marginal",
+     "reason": "Fully snow-filled, but the Eightmile road is gated and snowbound, adding miles of road approach, with short days and winter avalanche cycles."
+    },
+    "March": {
+     "status": "good",
+     "reason": "Deep, filling couloir, but the road gate is still closed and storm loading at the top raises cornice and slab concerns."
+    },
+    "April": {
+     "status": "optimal",
+     "reason": "Consolidating spring snow the whole way up; the road is still gated so expect a long walk in, but the lake is frozen and easy to cross."
+    },
+    "May": {
+     "status": "optimal",
+     "reason": "The Eightmile road often opens in late spring, cutting the approach; lake ice breaks up about then, and overnight permits apply from May 15."
+    },
+    "June": {
+     "status": "good",
+     "reason": "Still mostly snow, but sun-warmed rock above sheds more debris; overnight camps at the lake need the Enchantment permit lottery."
+    },
+    "July": {
+     "status": "marginal",
+     "reason": "Short Class 4 rock steps melt out in the couloir, the snow softens fast, and rockfall and ice debris increase."
+    },
+    "August": {
+     "status": "risky",
+     "reason": "The couloir is largely bare, with loose rock steps and a broken descent over the Colchuck Glacier."
+    }
+   }
+  },
+  "evidence": [
+   "Most often climbed in winter or early spring while the couloir is entirely filled; Eightmile road may be snowed in and/or gated then - https://www.summitpost.org/north-buttress-couloir/162206 (403, search summary)",
+   "Early May trip: road closed at Bridge Creek, +8 mi road walking; rangers said it would open by permit season; another report Eightmile Road open 5/15 - Mountaineers trip reports via search, https://www.mountaineers.org/activities/trip-reports/colchuck-peak-north-buttress-couloir-3",
+   "Colchuck Lake ice starts breaking up around mid-May on an average year - https://spokalpine.com/2016/04/11/colchuck-peak/ (search summary)",
+   "Late summer Class 4 rock exposed - row beta; https://wenatcheeoutdoors.org/2016/07/16/colchuck-north-buttress-couloir/"
+  ],
+  "flags": [
+   "Research says the route is often climbed in winter as well; stored window starts at March. February is included as a marginal shoulder, not rated good, to stay consistent with the stored Mar-Jun."
+  ]
+ },
+ {
+  "id": "wa_guye_peak_southeast_gully",
+  "seasonal_guidance": {
+   "optimalWindow": "February to March, after a cold clear night, when the gully is filled and firm and the sunny half has not yet turned to slush",
+   "monthBreakdown": {
+    "December": {
+     "status": "marginal",
+     "reason": "At this low elevation the gully is often not yet filled in, leaving rock and brush exposed, and early storm snow sits unconsolidated on the slope below."
+    },
+    "January": {
+     "status": "good",
+     "reason": "The gully is usually filled, but new storm snow loads it quickly and daylight is short; climb only after a stable forecast and a cold, clear night."
+    },
+    "February": {
+     "status": "optimal",
+     "reason": "Deep, settled snowpack fills the gully to the ridge; the shaded half stays firm, though a cornice often builds at the exit."
+    },
+    "March": {
+     "status": "optimal",
+     "reason": "Freeze-thaw cycles firm the snow for step-kicking early in the day; start early before sun softens the exposed half and wet slides begin."
+    },
+    "April": {
+     "status": "marginal",
+     "reason": "The sun-exposed half turns to slush by mid-morning, with wet slides and rollerballs, and the lower gully starts to melt out at this elevation."
+    },
+    "May": {
+     "status": "risky",
+     "reason": "The gully melts out into rock and wet snow with wet-slab and cornice-collapse hazard; by summer it is no longer a snow climb."
+    }
+   }
+  },
+  "evidence": [
+   "January through April have the best winter conditions on Guye's gullies; avalanches common in bad conditions; resort blasting on the south flank - https://www.summitpost.org/guye-peak/150942 (search summary)",
+   "1973 accident in the Southeast Gully on March 25: frozen snow, step cutting, trees for belays - http://publications.americanalpineclub.org/articles/13197302400"
+  ],
+  "flags": [
+   "Agrees with stored Jan-Apr; April rated marginal rather than good because of wet-slide warming the row's own best_season describes.",
+   "Row's best_season names NWAC as the forecast to check - the agency is named as a thing to consult, which may or may not fall foul of the no-sources rule (not seasonal_guidance text)."
+  ]
+ },
+ {
+  "id": "wa_colchuck_peak_east_ridge",
+  "seasonal_guidance": {
+   "optimalWindow": "July, while seasonal snow still covers the Colchuck Glacier to the col and before it melts to hard bare ice",
+   "monthBreakdown": {
+    "June": {
+     "status": "marginal",
+     "reason": "The access road may still be closed and the glacier gully holds deep, avalanche-prone snow; the scramble ridge above the col can still be snow-covered."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "Continuous consolidated snow up the glacier to the col takes crampons well, and the Class 2-3 ridge above is mostly melted out."
+    },
+    "August": {
+     "status": "good",
+     "reason": "Snow on the glacier thins and gets suncupped; patches of hard ice near the col become more likely late in the month, so crampons are essential."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "Seasonal snow is often gone, leaving bare glacier ice at the 40-degree section below the col where crampons bite poorly and a slip is hard to stop."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Fresh snow over bare glacier ice, short days and freezing temperatures make the glacier and col treacherous; the access road can close with the first heavy snow."
+    }
+   }
+  },
+  "evidence": [
+   "Colchuck Glacier transitions to bare/blue ice once the current year's snow melts; late season not recommended - https://www.summitpost.org/colchuck-glacier/162204 and https://besthikesbc.ca/hiking-colchuck-peak-in-the-enchantments/",
+   "Early July 2026 report: snow coverage continuous on climber's right of the glacier - https://www.mountaineers.org/activities/trip-reports/alpine-scramble-colchuck-peak-east-route",
+   "Early-season ascents (June) common on Colchuck Glacier - https://northwestadventurejournal.wordpress.com/2026/06/22/colchuck-peak-6-7-26/",
+   "FR 7601 closes in winter, roughly Nov-May - https://www.wta.org/go-hiking/hikes/lake-stuart"
+  ],
+  "flags": [
+   "Stored best_season (late July through September) disagrees with evidence: the Colchuck Glacier approach to the col is best on snow (June-July) and turns to bare ice by late August/September, so September is marked marginal, not good.",
+   "Research suggests June ascents are common and often better on snow, but June is outside the stored Jul-Oct season; it is marked marginal only. A human may want to widen the window to Jun-Sep."
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "seasonal_guidance": {
+   "optimalWindow": "July to August, once the snow finger and moat at the base shrink and the northwest-facing granite is dry",
+   "monthBreakdown": {
+    "June": {
+     "status": "marginal",
+     "reason": "The snowfield to the base needs crampons and axe, and the moat between snow and rock can be awkward to cross; the access road may not yet be open."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "The moraine approach melts out and the snow finger shrinks, though early July may still need crampons for the last few hundred feet to the base."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Driest, warmest rock and the least snow on the approach; long days suit the Grade IV length, but start early to beat afternoon thunderstorms."
+    },
+    "September": {
+     "status": "good",
+     "reason": "Dry, stable rock with fewer storms, but shorter days make a single-push ascent tighter and the northwest face stays cold in the morning."
+    },
+    "October": {
+     "status": "marginal",
+     "reason": "Short days, cold shaded rock and the first snowfalls can glaze ledges and the upper gully; the access road can close with the first heavy snow."
+    }
+   }
+  },
+  "evidence": [
+   "Multiple June ascents (2009, June 8 2017, June 2019) with moat and snow at base - https://spokalpine.com/2017/07/13/dragontail-peak-serpentine-arete-iv-5-8/ and https://climberkyle.com/2019/06/15/dragontail-peak-serpentine-arete-5-8/",
+   "July 2005 party cramponed up the last few hundred feet of snowfield to the base; 7/8/2017 TR - https://cascadeclimbers.com/forum/topic/100805-tr-dragontail-peak-serpentine-arete-782017/",
+   "FR 7601 closes in winter, roughly Nov-May - https://www.wta.org/go-hiking/hikes/lake-stuart"
+  ],
+  "flags": [
+   "June ascents are well documented (moat and snow at the base, crampons needed), but June is outside the stored Jul-Oct season; it is marked marginal only."
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_backbone_ridge",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July to August, when the north-facing rock is driest and the descent gully has mostly melted out",
+   "monthBreakdown": {
+    "June": {
+     "status": "marginal",
+     "reason": "Snow slopes on the approach and a steep, possibly corniced descent notch toward Aasgard Pass; the north-facing rock is often wet and cold."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "Approach snow shrinks and the ridge dries out; early in the month crampons and an axe are still useful for the snow slope and the descent."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Driest rock and longest days for this long Grade IV ridge; firm snow may linger on the descent, and afternoon thunderstorms are a threat on the Fin."
+    },
+    "September": {
+     "status": "good",
+     "reason": "Rock remains dry, but shorter days tighten the schedule and the shaded north aspect stays cold; descent snow may be hard and icy."
+    },
+    "October": {
+     "status": "marginal",
+     "reason": "Early snow and verglas on the north-facing ridge and short days make the long route and descent slow; the access road can close with the first heavy snow."
+    }
+   }
+  },
+  "evidence": [
+   "Descent toward Aasgard on moderately steep, sometimes very firm snow; early-season notch steep and possibly corniced - https://www.summitpost.org/dragontail-backbone-ridge-to-the-fin/539545",
+   "Route guide and trip reports - https://guidedexposure.com/blogs/guided-exposure-blog/backbone-ridge-on-dragontail-peak-a-complete-route-guide , https://www.jeffreyjhebert.com/adventures/backbone-ridge-on-dragontail-peak",
+   "FR 7601 closes in winter, roughly Nov-May - https://www.wta.org/go-hiking/hikes/lake-stuart"
+  ],
+  "flags": []
+ },
+ {
+  "id": "wa_ingalls_peak_east_ne_ridge_route",
+  "seasonal_guidance": {
+   "optimalWindow": "Late July to September, after the snow clears from Ingalls Pass and the basin and the loose upper face is dry",
+   "monthBreakdown": {
+    "June": {
+     "status": "marginal",
+     "reason": "Snow and ice linger near Ingalls Pass and throughout the basin, and the ledges to the ridge can be snow-covered; Lake Ingalls may still be frozen."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Snow melts off Ingalls Pass and the ledges to the ridge base through the month; early July may still need care on snow patches."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Dry rock matters most on the runout, loose upper east-face pitch; the approach is snow-free, though afternoon thunderstorms are common."
+    },
+    "September": {
+     "status": "optimal",
+     "reason": "Stable, dry weather and cooler temperatures; larch season late in the month brings heavy crowds to the trail and trailhead."
+    },
+    "October": {
+     "status": "marginal",
+     "reason": "Early snow or ice on the poorly protected upper face turns a 5.6 X pitch dangerous, and days are short."
+    }
+   }
+  },
+  "evidence": [
+   "Lake Ingalls/Ingalls Pass: lingering snow and ice near the pass; July-September best, June and October may have snow and a frozen lake; late July recommended - https://explorewithalec.com/lake-ingalls/ , https://www.10adventures.com/hikes/wenatchee-national-forest/lake-ingalls-hike/",
+   "June trip report: snow throughout the basin - https://www.wta.org/go-hiking/trip-reports/trip_report.2017-06-21.4668538392",
+   "East Peak route character - https://www.summitpost.org/ingalls-peaks/151160"
+  ],
+  "flags": [
+   "Could not verify the North Fork Teanaway Road opening date, so reasons avoid naming one."
+  ]
+ },
+ {
+  "id": "wa_eldorado_peak_west_arete",
+  "seasonal_guidance": {
+   "optimalWindow": "Late July to late August, once the arete is snow-free and before the glacier traverse to its base turns to bare ice",
+   "monthBreakdown": {
+    "June": {
+     "status": "risky",
+     "reason": "Cascade River Road is often still gated short of the trailhead, and wet approach snow and snow-filled gullies keep the loose arete out of shape."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Road open and glaciers still well bridged, but early July can leave snow in the chimneys and gullies; late July is usually dry."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Rock is fully dry and days are long enough for the 17-hour climb, though crevasses on the traverse below the west face are opening."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "The Eldorado and Inspiration glaciers go to bare ice with open crevasses and moats, and shorter days raise the odds of a forced bivy."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Short days, early snow and rime on a loose 19-pitch route, and the Cascade River Road can close with the first storms or washouts."
+    }
+   }
+  },
+  "evidence": [
+   "NPS Eldorado conditions blog: June approach snow 4,000-5,300 ft; Jul-Aug crevasses and bergschrunds opening; Sept blue ice, very visible crevasses - https://www.nps.gov/noca/blogs/climbing-conditions-for-eldorado-area.htm",
+   "Spokalpine TR 26 Jul 2025: 17 h round trip from base camp, summited at sunset, mid-season snow-free timing - https://spokalpine.com/2025/07/30/eldorado-peak-west-arete-iv-5-8/",
+   "CascadeClimbers TR titles show ascents 7/26/2025 and 9/24/2012 - https://cascadeclimbers.com/forum/topic/88711-tr-eldorado-west-arete-9242012/",
+   "Late-season Inspiration Glacier: bridges scarce, moats along rocks, crevasses parallel to ridge - https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier"
+  ],
+  "flags": [
+   "Stored season is Jul-Aug but best_season prose says roughly July-September; a documented 24 Sep 2012 ascent supports September as possible, so it is marked marginal (outside the stored window) rather than good.",
+   "access.closures says the road is closed roughly Nov-June at mile 20 while best_season says often not accessible until late June - consistent, but the exact gate timing varies by year and could not be verified."
+  ]
+ },
+ {
+  "id": "wa_mount_triumph_northeast_ridge",
+  "seasonal_guidance": {
+   "optimalWindow": "August to early September, when the approach gully has melted out and the gneiss ridge is dry, before autumn rime arrives",
+   "monthBreakdown": {
+    "June": {
+     "status": "risky",
+     "reason": "The Thornton Lakes Road is unmaintained and may hold snow or downed trees, and the approach gully and glacier remnant are still deep in snow."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Snow still fills the approach gully and basin below the ridge, easing travel but with a growing moat and thin snowbridges to cross."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "The ridge is dry and the gully mostly melted out, though the loose scree gully to the col becomes a tedious grind with heavy packs."
+    },
+    "September": {
+     "status": "optimal",
+     "reason": "Early September is snow-free on the talus approach and dry on the ridge; water at the col may mean melting snow, and days shorten."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "First snow and rime make the exposed gneiss ridge and long rappel descent unsafe, and short days leave little margin."
+    }
+   }
+  },
+  "evidence": [
+   "StephAbegg TR 1-3 Sep 2006: much less snow than historic; approach was 1,200 ft of loose talus/grass; melt snow for water at col; col quota ~2 parties - https://stephabegg.com/trip-reports/washington/triumph-ne-ridge/",
+   "July TRs: moat forming mid-traverse requiring a jump, thin snowbridge into the gully to the NE ridge notch - https://cascadeclimbers.com/forum/topic/107842-tr-mount-triumph-ne-ridge-07132024/ ; https://havetent.com/2022/07/19/mt-triumph-ne-ridge/",
+   "Thornton Lakes Road rough, not plowed or maintained in winter; trailhead sits west of the SR 20 winter gate - https://www.cynhw.com/blog/2021/2/22/thornton-lakes",
+   "Spokalpine TR dated Oct 2024 post (climb date not verified) - https://spokalpine.com/2024/10/05/triumph-ne-ridge-iii-5-7/"
+  ],
+  "flags": [
+   "No disagreement with stored Jul-Sep window. Water availability at the col in late season is inferred from a single report."
+  ]
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "seasonal_guidance": {
+   "optimalWindow": "Late July through August, after the ridge rock sheds its snow and while the glacier approach still holds consolidated snow",
+   "monthBreakdown": {
+    "June": {
+     "status": "marginal",
+     "reason": "SR 20 is usually open by now and snow eases the Burgundy Col descent, but the northeast-facing rock still holds snow and ice."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Firm morning snow on the glacier and snowfield below the Chianti Spires, with the ridge drying out through the month."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Rock is dry and the glacier still mostly snow-covered, though the Burgundy Col gully turns to loose scree as its snow melts."
+    },
+    "September": {
+     "status": "good",
+     "reason": "Dry rock, but the glacier shows more ice and open cracks, and melted-out boulder fields make the approach slower."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Early storms plaster the northeast aspect and can close SR 20 for the season, and short days hurt a long glacier-plus-rock day."
+    }
+   }
+  },
+  "evidence": [
+   "Mountaineers glacier TR June 2025: no snow on climbers trail to Burgundy Col, soft consolidated snow on backside, bullet-proof snow at dawn - https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-silver-star-mountain-silver-star-glacier",
+   "Late season: path up glacier avoiding blue ice; snow-covered boulder fields become hard to cross later; scree gully to col - https://climberkyle.com/2017/06/26/silver-star-mountain/ ; https://www.summitpost.org/burgundy-col-silverstar-glacier/158024",
+   "NE Ridge listed Grade III 5.9 - https://en.wikipedia.org/wiki/Silver_Star_Mountain_(Okanogan_County,_Washington)",
+   "SR 20 typically reopens April or early May and closes late Nov/early Dec - https://www.nps.gov/noca/planyourvisit/visiting-north-cascades-in-the-non-peak-season.htm"
+  ],
+  "flags": [
+   "No route-specific trip reports for the NE Ridge were found; month statuses are inferred from the shared glacier approach and the NE aspect.",
+   "Row beta describes the 1952 first ascent via 'this general northeast aspect' - may conflate the modern 5.9 NE Ridge with an older line; worth a human look."
+  ]
+ },
+ {
+  "id": "wa_sloan_peak_r1",
+  "seasonal_guidance": {
+   "optimalWindow": "July and August, when the Sloan Glacier is well bridged and the corkscrew ledges have melted free of snow",
+   "monthBreakdown": {
+    "May": {
+     "status": "risky",
+     "reason": "The Mountain Loop Highway gate often has not opened and deep snow on the approach and ledges brings avalanche and route-finding problems."
+    },
+    "June": {
+     "status": "marginal",
+     "reason": "Consolidated snow from mid elevations slows route-finding, drainages run high, and the upper ledges may still hold snow."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "The glacier is sealed with solid snow bridges and a clear boot path, and the upper west-face ledges come free of snow."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Ledges and summit scramble are dry, but by late August the glacier breaks up and crevasses need weaving around."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "Crevasses widen on the Sloan Glacier and the crossing can become impassable sometime this month; check recent conditions first."
+    }
+   }
+  },
+  "evidence": [
+   "Mountaineers TRs: July 2026 solid snow bridges and boot path, FR 4096 improved; June 2022 consolidated snow slowed route-finding 3.6-4.8k ft; late Aug 2016 glacier pretty broken up - https://www.mountaineers.org/activities/trip-reports/sloan-peak-corkscrew-route-c2c-via-bedel-creek",
+   "July-August safest; glacier typically impassable sometime in September - https://engineeredforadventure.com/sloan/ ; https://rocknropenw.com/2024/08/02/sloan-peak-corkscrew-route-from-bedal-trailhead/",
+   "Mountain Loop Highway typically reopens mid-May; some years not until June - https://townofdarrington.com/mountain-loop-highway-open/"
+  ],
+  "flags": [
+   "Stored season 'Jun-Sep (best Jul-Aug)' and best_season 'late June through August' agree with evidence; June and September are marked marginal because early June snow and September glacier breakup make them less than good.",
+   "Row has grade null and is a duplicate of the Corkscrew Route per its own beta; worth a human look."
+  ]
+ },
+ {
+  "id": "wa_vesper_peak_north_face_ragged_edge",
+  "seasonal_guidance": {
+   "optimalWindow": "August to September, once the north-face ledge traverse is snow-free and before fall storms close the road",
+   "monthBreakdown": {
+    "May": {
+     "status": "risky",
+     "reason": "The Mountain Loop Highway gate may still be closed, and deep snow lingers on Headlee Pass and the north-face ledges."
+    },
+    "June": {
+     "status": "marginal",
+     "reason": "Steep, exposed snow still covers the heather ledge traverse and the upper route, needing ice axe and crampons."
+    },
+    "July": {
+     "status": "good",
+     "reason": "The route rock is dry, but lingering snow on the approach ledges can leave a moat to scramble through at the base."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Approach ledges usually melt out, leaving dry granite and long days; weekends get crowded on the six pitches."
+    },
+    "September": {
+     "status": "optimal",
+     "reason": "Snow-free ledges and dry rock, though loose stacked blocks on pitch 4 are a known rockfall risk late season."
+    },
+    "October": {
+     "status": "marginal",
+     "reason": "Still climbed in dry spells, but short days, cold on the north face, and first snow that closes the road make it a gamble."
+    }
+   }
+  },
+  "evidence": [
+   "StephAbegg TR title: 'late spring/early summer conditions' with steep snowfields on June ledge traverse - https://stephabegg.com/trip-reports/washington/vesper-ragged-edge/",
+   "Reports of lingering snow on ledges and scrambling a moat between snow and north face; ledge may hold snow until mid-late summer - https://www.mountainproject.com/route/111130499/ragged-edge",
+   "SummitPost TR 3 Aug 2024 ascent - https://www.summitpost.org/vesper-peak-via-ragged-edge-2024-aug-3/1087497",
+   "CascadeClimbers TR 'Rockfall Beta 10/12/2024' - an October ascent - https://cascadeclimbers.com/forum/topic/107910-tr-vesper-peak-ragged-edge-rockfall-beta-10122024/",
+   "Mountain Loop Highway reopening varies mid-May to June - https://townofdarrington.com/mountain-loop-highway-open/"
+  ],
+  "flags": [
+   "October ascents are documented (TR dated 10/12/2024) but October is outside the stored Jun-Sep window; marked marginal only.",
+   "Hazard list says 'Documented rockfall event in September 2024', but the rockfall trip report is dated 10/12/2024 - the month may be wrong.",
+   "access.seasonal mentions Suiattle River Road/Glacier Peak, which is irrelevant to Vesper; worth a clean-up."
+  ]
+ }
+]

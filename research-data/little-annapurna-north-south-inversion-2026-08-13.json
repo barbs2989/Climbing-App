@@ -1,0 +1,60 @@
+{
+  "_README": [
+    "wa_little_annapurna_south_slopes carries a systematic NORTH/SOUTH inversion — and the",
+    "inversion is NOT the one first reported. The `aspect` column (N/NW) is CORRECT and so is",
+    "`face` ('the peak's north/west-facing slopes, ascending near the northeast ridge'). What is",
+    "wrong is the route NAME and the prose around it.",
+    "",
+    "Evidence, all from inside the catalog: the row's own waypoint for the 'base of south slopes'",
+    "sits NORTH of the summit, so the ascent travels southward up a north-facing slope; the peer",
+    "row wa_little_annapurna_south_face is the peak's genuine south side, a 5.6 technical face",
+    "reached from Ingalls Creek, a different valley; and the route is published as 'Little",
+    "Annapurna North Slope'.",
+    "",
+    "This matters beyond tidiness. `aspect` drives the sun/shade readout, so the FIRST reported",
+    "repair — 'fix the aspect to S' — would have turned a correctly-shady north slog into a sunny",
+    "one. And five fields tell you to keep back from the NORTH edge of the summit plateau when the",
+    "abrupt drop is on the SOUTH, over Ingalls Creek. That is the worst error here: it points a",
+    "party at the wrong edge.",
+    "",
+    "Every span below was chosen individually. A blind north<->south replace would break this row:",
+    "'head south-southwest past Isolation Lake', 'the lake's south end', 'the trail splits",
+    "left/south' and 'the lake's south/east shoreline' are all CORRECT — travel directions and",
+    "features on the walk in, not the slope's aspect. They are untouched.",
+    "",
+    "NOT DONE HERE: the route's `name` is still 'South Slopes'. Renaming is an identity change —",
+    "it feeds search, dedup and the duplicate-name view — so it goes through hand-written SQL a",
+    "human runs, not through this script."
+  ],
+  "wa_little_annapurna_south_slopes": {
+    "area": "wa_little_annapurna",
+    "_grounding": "the row's own `aspect` and `face` columns, its own 'base of south slopes' waypoint sitting north of the summit, and the peer row wa_little_annapurna_south_face",
+    "set": {
+      "overview": "Little Annapurna (8,485 ft) is a granite summit in the Core (Upper) Enchantments, Stuart Range, Alpine Lakes Wilderness, immediately south of the Enchantment Lakes basin near Isolation and Tranquil Lakes. It was named by Ellensburg's Sherpa Climbing Club for its resemblance to the Himalayan Annapurna massif. The North Slopes route is the easiest way up the peak, an enjoyable Class 2-3 scramble typically approached via Aasgard Pass, finishing with a short 3rd-class step onto the small summit pedestal and views of Dragontail Peak, the Knitting/Nightmare Needles, and the Enchantment Lakes.",
+      "beta": "From the Stuart/Colchuck Lake Trailhead, hike to Colchuck Lake and grind up the steep boulder-and-scree gully of Aasgard Pass to reach the upper Enchantment basin. From the pass, head roughly south-southwest past Isolation and Tranquil Lakes toward Little Annapurna's northeast ridge, then follow cairns up open granite slabs and talus on the peak's north side to the summit -- one of three rocky high points on the ridge, with the true summit being the middle one. The line itself involves minimal exposure and only occasional Class 3 moves, but Aasgard Pass is the physical and route-finding crux of the day.",
+      "approach": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601), follow the Stuart Lake Trail (#1599) about 2.5 miles to the signed fork where the Colchuck Lake Trail (#1599.1) splits left/south. Continue roughly 1.8 more miles — crossing Mountaineer Creek and a boulder-hop stretch near the outlet — to Colchuck Lake (5,570 ft, ~4.3 mi in), the last easy, reliable water before the pass. Skirt the lake's south/east shoreline on a braided, cairned climbers' path over talus and slab to the base of Aasgard Pass, the obvious steep gully/headwall at the lake's south end. Aasgard Pass is the crux of the approach: it gains roughly 2,000 ft in under a mile on a mix of dirt switchbacks, loose scree and boulder-hopping, cairns are frequently knocked down and the path braids into several use-trails, and well into summer it can still hold firm snow/ice that makes an ice axe (and sometimes crampons) worthwhile even though the route is otherwise a scramble. Top out at Aasgard Pass (~7,800-7,841 ft, ~5.3 mi from the trailhead). Beyond the pass, cross the grey talus/glacial-till 'moonscape' of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the meadow-and-tarn complex some guides call the Brisingamen Lakelets. Near the far end of these meadows watch for an unsigned climbers' path forking right (west) toward Little Annapurna — crossing a stream and passing a toilet sign means you've overshot the junction. From there the route is more a scatter of cairned, well-worn boot paths than a trail; pick the path of least resistance up the broad north-facing slabs and talus on the peak's east/left side, switchbacking and scrambling (low 3rd class at most) to the 8,485-ft summit. Trailhead-to-summit totals run about 15-16 miles and 5,000-5,800 ft, consistent with the on-file stats. Hazards: no water past the Colchuck Lake outlet, so fill up there; loose rock and rockfall potential on Aasgard Pass and the final slopes, especially with parties above you; full sun/thunderstorm exposure on the open talus above the pass; and early/mid-season snow on the pass creating slip-and-slide fall hazard.",
+      "descent_text": "Reverse the North Slopes: downclimb the low-3rd-class/class-2 slabs and talus on the peak's east side back to the col/basin, pick up the braided boot paths back through the Brisingamen Lakelets meadows, and rejoin the Core Zone trail past Isolation and Tranquil Lakes to Aasgard Pass. This is a scramble walk-off in both directions — no rope, rack, or rappelling is used on the standard North Slopes line; every trip report reviewed simply describes 'reversing the ascent,' and multiple sources characterize the peak as little more than a steep class 2 hike with no technical descent gear mentioned. The one genuine descent-specific hazard is Aasgard Pass itself: down-climbing its ~2,000 ft of loose scree and talus in the afternoon (often with the sun having softened any remaining snow, and other parties ascending below) is a well-documented source of rockfall incidents and slips — down-climb deliberately, stay out of others' fall line, and only glissade if a real, clean snow chute with a safe runout is in (by mid-to-late summer the pass is usually bare, exposed talus rather than snow). From the base of the pass, retrace the trail around Colchuck Lake and down the Colchuck Lake/Stuart Lake Trail to the trailhead. Rappels: 0.",
+      "hazards": [
+        "loose talus and slabs",
+        "the abrupt south-side drop from the summit plateau",
+        "early-season snow up high - ice axe and crampons are often needed into July",
+        "afternoon thunderstorms, most common July-August",
+        "the steep, loose Aasgard Pass headwall (about 2,000 ft of gain in ~0.5 mile) on approach and descent, with rockfall risk from parties climbing above"
+      ],
+      "pro_tips": [
+        "Combine it with nearby Core summits in one outing.",
+        "Carry an axe early season for the upper snow.",
+        "Stay well back from the dramatic south edge.",
+        "Go in larch season for the best views."
+      ],
+      "watch_out": [
+        "loose talus underfoot",
+        "the abrupt south-side cliffs",
+        "afternoon storms on the plateau",
+        "early-season snow"
+      ],
+      "pro_needs": "There is no protectable climbing; movement is unroped scrambling. The challenge is minimal beyond basic route-finding and staying back from the south edge.",
+      "bail": "Retreat is trivial by reversing the scramble at any point, with no committing terrain. The only real caution is keeping well back from the abrupt south edge of the summit plateau."
+    }
+  }
+}

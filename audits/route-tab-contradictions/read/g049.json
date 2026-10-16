@@ -1,0 +1,425 @@
+{
+ "batches": ["batches/b193.json", "batches/b194.json", "batches/b195.json", "batches/b196.json"],
+ "routes_read": 8,
+ "routes": [
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "name": "Megalodon Ridge",
+   "area": "Mount Goode",
+   "contradictions": [
+    {
+     "fact": "Which drainage/trailhead the descent ends at",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend the Southwest Couloir (standard route) toward the approach side."},
+      {"field": "itinerary.days[2].note", "says": "...keep losing elevation toward the Bridge Creek drainage rather than returning to the Day 1 camp."},
+      {"field": "itinerary.days[3].note / .objective", "says": "Finish down North Fork Bridge Creek and the PCT back to Highway 20. / Return to the Bridge Creek trailhead."},
+      {"field": "itinerary.totalNote", "says": "...a long multi-day descent and hike-out via the Southwest Couloir — roughly 35 mi and 7,500 ft of gain round trip."},
+      {"field": "descent_text", "says": "Because the standard descent drops into the Park Creek/Stehekin drainage - the opposite side of the mountain from the Bridge Creek approach used to reach Megalodon Ridge - getting back to a car at Rainy Pass is a long second act: parties either arrange a shuttle or hike out via Park Creek Trail and Thunder Creek Trail to the North Cascades Highway at Colonial Creek..."},
+      {"field": "rappel_detail[5].station", "says": "...from here a climber's path leads down to the Park Creek Trail."}
+     ],
+     "why": "The short `descent` field and the itinerary/timing narrative (days 3-4, totalNote) all describe returning to the Bridge Creek/Rainy Pass side, but the much more detailed `descent_text` (and rappel_detail's final station) explicitly say the standard descent lands in the Park Creek/Stehekin drainage on the opposite side of the mountain, requiring a shuttle or ~15-20 extra miles — not a simple walk back to the approach trailhead.",
+     "internal_resolution": "gain_ft (7500) and loss_ft (8700) are themselves asymmetric by 1,200 ft, i.e. the route's own numbers imply ending lower than the start rather than a symmetric out-and-back — consistent with descent_text's Park Creek/Stehekin ending, not with the itinerary's claim of returning to the same trailhead. descent_text + rappel_detail (detailed, technical) agree; itinerary/timing/short descent field appear to have wrongly assumed a simple reversal.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "18 (≈11.2 mi)"},
+      {"field": "itinerary.days[].miles", "says": "13, 2, 10, 10 (sum 35 mi)"},
+      {"field": "approach", "says": "Total approach is on the order of 12+ miles with several thousand feet of gain before any roped climbing begins..."},
+      {"field": "descent_text", "says": "...adding on the order of 15-20 additional trail miles beyond the descent proper."}
+     ],
+     "why": "dist_km (11.2 mi) is roughly a third of the itinerary's summed 35 mi, which itself is corroborated by the ~12-mile one-way approach plus the ~15-20 extra descent miles described in descent_text.",
+     "internal_resolution": "itinerary + approach + descent_text agree at ~35 mi; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the descent reverses (any of) the ridge",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "Descend via the standard Southwest Couloir/Black Tooth Notch rappel line rather than reversing the ridge; a 50m rappel was used to bypass an icy moat near the final gendarmes on the FA."},
+      {"field": "rappel_detail[0].station", "says": "The stations down the ridge are the same ones you pass climbing the final 5.6 pitches up and right to the summit — note their positions on the way up, because they are much harder to pick out from above. The first runs close to straight down the ridgeline."}
+     ],
+     "why": "`rappels` states the descent avoids reversing the ridge, but rappel_detail's first three rappel stations are explicitly the same terrain/stations used on the final ridge pitches going up — i.e. the descent does reverse part of the ridge before reaching Black Tooth Notch/the couloir.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier/crevasse exposure on approach",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel is documented for this ridge route; approach details near any glaciated terrain are not fully verified"},
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer rock ridge route"},
+      {"field": "obj_haz", "says": "glacier crevasse hazard on approach"},
+      {"field": "itinerary.days[1].schedule[0].detail", "says": "Approach the base of the ridge across the glacier."}
+     ],
+     "why": "seasonal_hazards flatly denies any glacier travel on this route, but obj_haz lists glacier crevasse hazard on the approach and the itinerary's own summit-day schedule has the party crossing the glacier to reach the ridge base.",
+     "internal_resolution": "obj_haz + itinerary + the approach's own proximity to Goode Glacier's icefall support glacier exposure being real; seasonal_hazards.crevasses/avalanche appear to be the outlier denial.",
+     "needs_research": false
+    },
+    {
+     "fact": "Identity/elevation of the Rainy Pass trailhead waypoint",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[0]", "says": "name 'Rainy Pass PCT North Trailhead', elev 4500, note: 'A separate, slightly lower trailhead ~1 mi east of Rainy Pass, matching the recorded GPS track for the route.'"},
+      {"field": "approach_logistics.trailheadDirection", "says": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"},
+      {"field": "approach", "says": "Start at the Rainy Pass trailhead on Highway 20 (large paved lot at ~4,800 ft)..."}
+     ],
+     "why": "The waypoint (at the same lat/lng as approach_logistics' trailhead) describes itself as a separate, lower point ~1 mi east of Rainy Pass (4,500 ft), while approach_logistics/approach describe the same coordinates as Rainy Pass itself at ~4,800-4,860 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "name": "Banded Glacier",
+   "area": "Mount Logan",
+   "contradictions": [
+    {
+     "fact": "Primary approach trailhead (Easy Pass vs Thunder Creek)",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Follow Thunder Creek Trail from Colonial Creek Campground (SR-20 MP130) about 9 miles to the Fisher Creek Trail junction, then Fisher Creek Trail about 3 miles to a lake camp near 5,160 ft below the Banded Glacier."},
+      {"field": "approach_logistics.trailhead", "says": "Thunder Creek Trailhead (Colonial Creek Campground)"},
+      {"field": "waypoints[0].name", "says": "Thunder Creek Trailhead (Colonial Creek Campground, Hwy 20)"},
+      {"field": "beta", "says": "Approach via Easy Pass (6,500 ft) from Highway 20 mile 151, descend into Fisher Basin, then off-trail climb to Banded Glacier basin... (A longer, always-open alternate approach exists via the Thunder Creek/Fisher Creek Trail from Colonial Creek Campground - ~13 mi one-way vs. ~10 mi via Easy Pass...)"},
+      {"field": "itinerary.days[0].note", "says": "Hike the Easy Pass Trail up and over the pass (~6,600 ft), descend into the Fisher Creek drainage, then leave trail to reach a basin lake camp near the toe of the Banded Glacier..."},
+      {"field": "pitch_detail[0].pitch", "says": "1: Easy Pass Trailhead to Easy Pass"},
+      {"field": "access.closures", "says": "Easy Pass Trailhead (primary approach, SR 20 MP151) sits INSIDE SR 20's winter closure zone... The alternate Thunder Creek/Colonial Creek Campground trailhead... is open year-round, but is a longer approach (~13 mi one-way vs. Easy Pass's ~10 mi one-way to the lake camp)."},
+      {"field": "road.name", "says": "North Cascades Highway (SR 20) to Easy Pass Trailhead"}
+     ],
+     "why": "beta, access, road, itinerary, timing and pitch_detail all treat Easy Pass Trailhead as the standard/primary approach (with Thunder Creek as a seasonal alternate), but the main `approach` prose field, approach_logistics and waypoints describe only the Thunder Creek trailhead/route, without mentioning Easy Pass at all — a climber reading APPROACH would go to a different trailhead than the one the rest of the route describes as standard.",
+     "internal_resolution": "7 of 9 fields (beta, access, road, itinerary, timing, pitch_detail, descent_text) treat Easy Pass as primary; only approach/approach_logistics/waypoints describe Thunder Creek as if it were the only route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead direction text names the wrong place",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_logistics.trailheadDirection", "says": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"},
+      {"field": "approach_logistics.trailhead", "says": "Thunder Creek Trailhead (Colonial Creek Campground)"}
+     ],
+     "why": "The trailheadDirection text describes Rainy Pass (a different peak's trailhead — this exact phrasing appears on the Mount Goode/Megalodon Ridge route), not the Thunder Creek Trailhead this field is nominally attached to, and not Easy Pass Trailhead either.",
+     "internal_resolution": "Clear contamination/copy error; the trailhead name field and the direction text describe two different places.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "7027"},
+      {"field": "loss_ft", "says": "13000"},
+      {"field": "itinerary.days[].gainFt", "says": "4600, 3200, 300 (sum 8100)"},
+      {"field": "itinerary.days[].lossFt", "says": "300, 3200, 4600 (sum 8100)"}
+     ],
+     "why": "The itinerary is internally symmetric (gain=loss=8,100 ft, as expected for a route that reverses the approach), but the route-level loss_ft (13,000) is nearly double gain_ft (7,027) — physically inconsistent with returning to the same trailhead, and neither figure matches the itinerary's own 8,100 ft.",
+     "internal_resolution": "itinerary's symmetric 8,100/8,100 is the internally consistent figure; gain_ft/loss_ft are both outliers, and their mutual asymmetry is itself implausible for a there-and-back route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to the summit/lake camp",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "19.3 (≈12.0 mi)"},
+      {"field": "itinerary.days[].miles", "says": "12.5, 6, 12.5 (sum 31 mi)"},
+      {"field": "waypoints[1] (summit)", "says": "distMi 14.51 (one-way per recorded track)"}
+     ],
+     "why": "dist_km's 12.0 mi is less than even the one-way summit distance recorded in waypoints (14.51 mi), and far under the itinerary's round-trip total of 31 mi.",
+     "internal_resolution": "itinerary (31 mi) and waypoints' one-way distance doubled (~29 mi) roughly agree; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window / best months",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Aug"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "July to September"},
+      {"field": "best_season", "says": "Jun-Jul"},
+      {"field": "seasonal_guidance.monthBreakdown.June", "says": "reason: 'Highway/approach access can still be snowbound this early for spring', status: 'risky'"}
+     ],
+     "why": "`season`'s stated window (Jun-Aug) and seasonal_guidance.optimalWindow (Jul-Sep) don't nest — June is in `season` but outside optimalWindow, and September is in optimalWindow but outside `season`. best_season also names June as one of the two best months, while monthBreakdown separately rates June 'risky', not optimal or good.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "name": "Douglas Glacier",
+   "area": "Mount Logan",
+   "contradictions": [
+    {
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "7000"},
+      {"field": "loss_ft", "says": "1500"},
+      {"field": "itinerary.days[].gainFt", "says": "2900, 4300, 2000 (sum 9200)"},
+      {"field": "itinerary.days[].lossFt", "says": "2000, 4300, 2900 (sum 9200)"}
+     ],
+     "why": "The itinerary is internally symmetric (9,200 ft gain and loss, consistent with a there-and-back route), but the route-level loss_ft (1,500) is only about a fifth of gain_ft (7,000) and a sixth of the itinerary's own loss total — physically implausible for returning to the same trailhead.",
+     "internal_resolution": "itinerary's symmetric 9,200/9,200 is internally consistent; loss_ft (1,500) is a clear outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "24.1 (≈15.0 mi)"},
+      {"field": "itinerary.days[].miles", "says": "7, 5, 7 (sum 19 mi)"}
+     ],
+     "why": "dist_km (15.0 mi) is about 21% below the itinerary's summed round-trip distance (19 mi).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window / best months",
+     "severity": "medium",
+     "claims": [
+      {"field": "best_season", "says": "Jun-Jul"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "July to September"},
+      {"field": "seasonal_guidance.monthBreakdown.June", "says": "reason: 'Highway/approach access can still be snowbound this early for spring', status: 'risky'"}
+     ],
+     "why": "best_season names June as one of the two best months, but seasonal_guidance's optimal window doesn't start until July, and monthBreakdown separately rates June 'risky'.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Which approach/trailhead this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "Strong multi-day backpacking fitness for the same long, remote Thunder Creek / Park Creek Pass approach used by the other Logan routes"},
+      {"field": "approach", "says": "Start at Easy Pass Trailhead at Highway 20 mile 151 (elevation 3,700 ft)... Continue to Fisher Creek valley floor... cross Fisher Creek... travel east side of Douglas Creek valley..."},
+      {"field": "waypoints[0].name", "says": "Easy Pass Trailhead"},
+      {"field": "road.driveNote", "says": "The Easy Pass Trailhead sits directly off SR 20 (~milepost 151, elev. ~3,700 ft); this route does not use the Colonial Creek/Thunder Creek trailhead."}
+     ],
+     "why": "partner_requirements claims this route uses the 'Thunder Creek / Park Creek Pass approach' used by the other Logan routes, but this route's own approach/waypoints/road fields — and road.driveNote explicitly — say it uses Easy Pass Trailhead and Douglas Creek, and specifically does NOT use Thunder Creek. Park Creek Pass belongs to the Fremont Glacier route on the same peak, not this one.",
+     "internal_resolution": "approach/waypoints/road (3 fields, including one explicit denial) agree on Easy Pass/Douglas Creek; partner_requirements appears copied from the Fremont Glacier route.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "name": "Fremont Glacier",
+   "area": "Mount Logan",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade II, Class 3-4"},
+      {"field": "commitment", "says": "III"}
+     ],
+     "why": "`grade`'s stated commitment component (Grade II) is a full grade below `commitment` (III), with no overlapping range given (unlike the other two Logan routes, which use ranges).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Cumulative gain/loss",
+     "severity": "low",
+     "claims": [
+      {"field": "gain_ft", "says": "8900"},
+      {"field": "loss_ft", "says": "9600"},
+      {"field": "itinerary.days[].gainFt", "says": "5150, 2750, 300 (sum 8200)"},
+      {"field": "itinerary.days[].lossFt", "says": "300, 2750, 5150 (sum 8200)"}
+     ],
+     "why": "Route-level gain_ft/loss_ft (8900/9600) diverge modestly (8-17%) from the itinerary's symmetric 8,200/8,200, and are themselves asymmetric with each other for a route the descent_text describes as reversing.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Park Creek Pass",
+     "severity": "low",
+     "claims": [
+      {"field": "beta", "says": "Approach via Thunder Creek Trail to Park Creek Pass (19.6 mi, 4,900 ft gain from trailhead)..."},
+      {"field": "waypoints (Park Creek Pass)", "says": "distMi 18.3"}
+     ],
+     "why": "beta states 19.6 mi to Park Creek Pass, about 1.3 mi more than the waypoint's own recorded 18.3 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "name": "Mutchler Peak Scramble",
+   "area": "Mutchler Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel on the standard scramble route"},
+      {"field": "rope_note", "says": "No route-specific beta found online. Class 3 scrambles of this type typically require no rope."},
+      {"field": "gear / what_to_bring", "says": "Ice axe, sturdy boots, trekking poles, map/compass, satellite communicator (no rope, harness or crevasse-rescue kit listed)"},
+      {"field": "obj_haz", "says": "glacier/crevasse (listed as a hazard on this route)"},
+      {"field": "detailed_rack", "says": "The Mountaineers program the Mutchler add-on as a Basic Glacier Climb, so parties carry standard glacier-travel gear (rope, harness, crevasse-rescue hardware, crampons, ice axe) rather than a traditional protection rack."},
+      {"field": "pro_needs", "says": "Protection needs are glacier-travel oriented (crevasse-rescue kit, and pickets if the Mutchler Glacier crossing warrants them) rather than rock protection..."}
+     ],
+     "why": "seasonal_hazards.crevasses and rope_note flatly deny any glacier travel or need for a rope, while obj_haz, detailed_rack and pro_needs all describe this as effectively a glacier climb requiring rope, harness and crevasse-rescue gear, with pro_needs even naming 'the Mutchler Glacier crossing'. The top-level gear/what_to_bring lists also omit any rope/crampon/crevasse gear, siding with the denial fields. This is a safety-relevant gear disagreement — a party following gear/what_to_bring would arrive without the equipment detailed_rack/pro_needs say is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "24.78 (≈15.4 mi)"},
+      {"field": "itinerary.days[].miles", "says": "7, 3.5, 7 (sum 17.5 mi)"},
+      {"field": "approach", "says": "...total car-to-summit distance is on the order of 12-14 km one way given the ~24.8 km round trip, consistent with reports citing full Snowking/Kindy Ridge trips of 15-17 miles round trip..."},
+      {"field": "waypoints[6] (summit)", "says": "distMi 7.7 (one-way)"}
+     ],
+     "why": "dist_km, the approach prose, and the waypoint's one-way distance doubled (7.7×2=15.4 mi) all agree at ~15.4 mi, but the itinerary's own day-by-day miles sum to 17.5 mi, a ~14% outlier.",
+     "internal_resolution": "dist_km, approach prose and doubled waypoint distance agree at ~15.4 mi; itinerary is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_slope",
+   "name": "East Slope",
+   "area": "Primus Peak",
+   "contradictions": [
+    {
+     "fact": "Whether September is part of the best/safe climbing window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Year-round (winter ascents documented); best scrambling conditions Jul-Sep"},
+      {"field": "climate.bySeason.summer", "says": "Best climbing window, roughly July-September, once Lucky Ridge and the glacier approach have melted out; afternoon thunderstorms are possible."},
+      {"field": "best_season", "says": "Mid-July through August is the sweet spot... By late September the glacier is largely bare and thin - a Sept. 2012 attempt found the standard east ridge 'nothing more than a walk' unavailable due to conditions at Lucky Pass, with bullet ice and loose rock instead."},
+      {"field": "climate.bySeason.fall", "says": "By September the Borealis Glacier is largely bare and thin-bridged over its crevasses; a documented late-Sept attempt found the route iced up and the standard col unreachable."}
+     ],
+     "why": "`season` and climate.bySeason.summer both include September as part of the 'best' window, while best_season and climate.bySeason.fall single out September as the month the route can become 'unavailable'/'unreachable', citing a specific documented failed attempt.",
+     "internal_resolution": "best_season and bySeason.fall give a specific, documented reason (a failed Sept. 2012 attempt); season/climate.summer's inclusion of September in the 'best' window looks like the overstatement.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km convention (one-way vs round-trip)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "16.1 (≈10.0 mi)"},
+      {"field": "itinerary.days[].miles", "says": "8, 3, 8 (sum 19 mi)"},
+      {"field": "waypoints (summit)", "says": "distMi 11.3 (one-way)"}
+     ],
+     "why": "dist_km (10.0 mi) is close to the one-way summit distance (11.3 mi) but far under the itinerary's round-trip total (19 mi) — likely dist_km is using a different (one-way) convention than the itinerary total that would actually render in the header.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "name": "South Ridge / McAllister Glacier",
+   "area": "Primus Peak",
+   "contradictions": [
+    {
+     "fact": "beta describes a different route (East Slope) than this one",
+     "severity": "high",
+     "claims": [
+      {"field": "beta", "says": "Primus Peak's difficulty lies almost entirely in its remoteness and glacier approach rather than technical climbing. The standard line (also called the 'East Slope') is 3rd class, with class 2-3 scrambling and moderate snow once above Lucky Pass. Most parties treat it as a 3-day trip with a high camp above Borealis Lake."},
+      {"field": "overview", "says": "...crossing the Eldorado, Inspiration, and North Klawatti/McAllister Glaciers through the Klawatti–Austera high country."},
+      {"field": "approach", "says": "Trailhead is the Eldorado Creek climbers' trailhead on Cascade River Road, roughly mile 20 out of Marblemount..."}
+     ],
+     "why": "The `beta` field on the South Ridge/McAllister Glacier route describes the East Slope route (Lucky Pass, Borealis Lake) rather than this route's own Eldorado Creek/Klawatti Col approach, which is what overview/approach describe.",
+     "internal_resolution": "overview and approach (this route's own detailed fields) describe the Eldorado/Klawatti approach consistently; beta is contaminated with East Slope content.",
+     "needs_research": false
+    },
+    {
+     "fact": "turnaround describes the East Slope's approach, not this route's",
+     "severity": "high",
+     "claims": [
+      {"field": "turnaround", "says": "Because the approach is roughly 9-10 miles one-way with substantial elevation gain and ends in a creek ford that grows more hazardous later in the day as snowmelt increases flow, parties should set a firm summit turnaround time..."},
+      {"field": "approach", "says": "Total one-way distance from trailhead to summit is on the order of 18-20 miles with roughly 6,400 ft of net gain..."}
+     ],
+     "why": "turnaround's '9-10 miles one-way ... creek ford' matches the East Slope route's Thunder Creek approach, not this route's own ~18-20 mile Eldorado Creek/Cascade River approach.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "pitch_detail describes a different route (East Slope) than this one",
+     "severity": "high",
+     "claims": [
+      {"field": "pitch_detail[0]", "says": "Trailhead to McAllister Camp: ~6 mi, ~600 ft gain on the Thunder Creek Trail from Colonial Creek Campground; ford Thunder Creek near a logjam."},
+      {"field": "pitch_detail[1]", "says": "McAllister Camp to high camp: ...up forested Lucky Ridge (below Tricouni Peak)... to a bivy above Borealis Lake (~6,000-6,700 ft)."},
+      {"field": "pitch_detail[2]", "says": "Borealis Glacier crossing: ...to the Primus-Tricouni col ('Lucky Pass,' ~7,200 ft)."},
+      {"field": "approach", "says": "...cross the Cascade River... climbers' path... boulder field around 4,000 ft... Eldorado Basin... toe of the Eldorado Glacier..."}
+     ],
+     "why": "pitch_detail entirely narrates the East Slope's Thunder Creek/McAllister Camp/Lucky Ridge/Borealis Glacier/Lucky Pass line, not this route's own Eldorado Creek/Eldorado Glacier/Inspiration Glacier/Klawatti Col approach described in `approach` and `overview`.",
+     "internal_resolution": "approach/overview (this route's own fields) are consistent with each other; pitch_detail is contaminated with the East Slope route's content.",
+     "needs_research": false
+    },
+    {
+     "fact": "Primary trailhead and one-way distance",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0].name / note", "says": "Thunder Creek Trailhead... South end of Colonial Creek Campground on Hwy 20; an alternate southern approach via Eldorado Creek and the Eldorado ice cap is also used for this side."},
+      {"field": "waypoints[1] (Primus Peak) distMi", "says": "11.5"},
+      {"field": "road.name", "says": "Cascade River Road to Eldorado Trailhead"},
+      {"field": "approach", "says": "Total one-way distance from trailhead to summit is on the order of 18-20 miles..."}
+     ],
+     "why": "waypoints lists Thunder Creek Trailhead with a one-way summit distance (11.5 mi) that matches the East Slope route's own GPS distance (11.3 mi), while this route's own road/access/approach fields describe the Eldorado Creek Trailhead (Cascade River Road) as the trailhead, with a stated one-way distance of 18-20 miles — nearly double.",
+     "internal_resolution": "road/access/approach agree on Eldorado Trailhead and ~18-20 mi; waypoints appears copied from the East Slope route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "15.3 (≈9.5 mi)"},
+      {"field": "itinerary.days[].miles", "says": "7, 3.5, 3, 6.5 (sum 20 mi)"}
+     ],
+     "why": "dist_km (9.5 mi) is under half the itinerary's summed round-trip distance (20 mi), consistent with dist_km being contaminated from the East Slope route's shorter distances along with beta/turnaround/pitch_detail/waypoints.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "name": "North Ridge",
+   "area": "Primus Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the North Ridge is reached via Lucky Pass",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[1] (Primus Peak) note", "says": "Via McAllister Camp (~6 mi in), then the ridge below Tricouni Peak to the Borealis Glacier and Lucky Pass (7,200 ft) col, finishing up Primus's ridge."},
+      {"field": "approach", "says": "...the North Ridge is reached by traversing around the lake instead of climbing the glacier from camp."},
+      {"field": "overview / beta", "says": "...reached by descending a couloir onto an unnamed glacier north of Primus (accessed from the North Klawatti Glacier after climbing Austera Peak the same day)..."},
+      {"field": "approach_variants[1].baseFinding", "says": "LUCKY PASS IS NOT THIS ROUTE. If you are standing at a col at about 7,200 ft at the head of the Borealis Glacier, with Tricouni Peak's route splitting off east, you are at the start of the East Slope — a class 3 walk. The North Ridge is reached by turning away from that pass, not through it."}
+     ],
+     "why": "The waypoints summit note routes the ascent through the Borealis Glacier and Lucky Pass col, directly contradicting this route's own approach/overview/beta/approach_variants, which say the North Ridge is reached by going AROUND the lake or via a glacier/couloir north of the peak — and approach_variants explicitly warns that reaching Lucky Pass means you are actually on the East Slope, not the North Ridge.",
+     "internal_resolution": "approach, overview, beta and approach_variants.baseFinding (4 fields, including an explicit warning) agree the ascent avoids Lucky Pass; the waypoints note is the outlier and would send a climber up the wrong route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "11.3 (≈7.0 mi)"},
+      {"field": "itinerary.days[].miles", "says": "8, 3.5, 8 (sum 19.5 mi)"}
+     ],
+     "why": "dist_km (7.0 mi) is roughly a third of the itinerary's summed round-trip distance (19.5 mi).",
+     "internal_resolution": "itinerary total is internally consistent with gain_ft/loss_ft (7550/7550, matching the itinerary's own sums); dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "access._raw trip stats match a different route",
+     "severity": "low",
+     "claims": [
+      {"field": "access._raw.trip_stats", "says": "19 miles roundtrip, 7,300 feet elevation gain"},
+      {"field": "itinerary.days[].miles (this route)", "says": "8, 3.5, 8 (sum 19.5 mi)"},
+      {"field": "gain_ft (this route)", "says": "7550"}
+     ],
+     "why": "access._raw.trip_stats (19 mi / 7,300 ft) matches the East Slope route's own itinerary total (19 mi) and gain_ft (7,300) exactly, not this route's own values (19.5 mi / 7,550 ft) — apparent leftover/copied scrape data. Low priority since `_raw` is unlikely to render.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

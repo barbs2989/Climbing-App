@@ -1,0 +1,219 @@
+{
+ "file": "t307.json",
+ "results": [
+  {
+   "id": "wa_mount_steel_standard",
+   "fact": "Distance from Upper Duckabush camp/junction to Marmot Lake",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Marmot Lake is roughly 3.5 trail miles above the Upper Duckabush camp/junction (camp ~17.7 mi, lake ~21.3 mi from the trailhead)",
+   "evidence": "A trip log puts the Upper Duckabush camp at 17.7 mi (2,700 ft) with the Marmot Lake/O'Neil Pass junction 0.1 mi beyond; Marmot Lake is widely given as 21.3 mi from the Duckabush trailhead. The itinerary's '~3 miles below the lake' is consistent with that; only the bivy card's '1.1 miles' disagrees, and bivy[] is owned by the camping clean-up, so no patch.",
+   "sources": [
+    "http://www.thesuns.net/hiking/2011/Duckabush%20to%20Staircase%20(7-8-2011)/Duckabush%20to%20Staircase.htm",
+    "https://www.summitpost.org/mount-steel/152969"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "fact": "Summit grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only external ratings found call the Marmot Lake line class 1 (a peak encyclopedia entry and a climbing-site page it likely derives from, so effectively one source); no independent source rating it class 2 or 2-3 was found. Settling it needs a second independent trip report or guide rating the amphitheater-to-summit slopes.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Steel",
+    "https://www.summitpost.org/mount-steel/152969"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "fact": "Avalanche hazard",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "June: avalanche potential on the east-facing slopes below the summit while cornices/snow linger",
+   "evidence": "hazards[1], best_season, watch_out[0] and approach_variants[0].hazards all state early-season avalanche potential on the east-facing slopes into late June; an external route page says to be aware of possible avalanche hazard on the east-facing slope while cornices persist until late June. Only the June cell of the avalanche panel reads N/A; the zone line (no NWAC forecast for this peak) is left alone.",
+   "sources": [
+    "https://www.summitpost.org/mount-steel/152969"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth",
+      "June"
+     ],
+     "expect": "N/A",
+     "value": "Possible on the east-facing slopes below the summit while cornices and snow linger",
+     "id": "wa_mount_steel_standard",
+     "fact": "Avalanche hazard"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "fact": "Day-1 loss over Big Hump",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A trip report confirms Big Hump is about 1,000 ft up in ~30 switchbacks and 800 ft back down, so day 1's 200 ft loss (and day 5's 0 ft gain on the return over the Hump) is too low. But the itinerary day totals currently equal gain_ft 6200 / loss_ft 6400, and no source states a car-to-car loss/gain for this route, so the day figures cannot be changed without breaking the totals.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=22526"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "fact": "Location of the Duckabush River ford",
+   "verdict": "fixed",
+   "correct_value": "The wide Duckabush River ford is above (beyond) Duckabush Camp, around mile 19",
+   "evidence": "One trail page puts the ford of the Duckabush about 19 miles up the trail; a trip report places the 'upper river ford' between the Home Sweet Home junction (at Upper Duckabush camp) and Marmot Lake; a trip log puts Upper Duckabush camp at 17.7 mi, with only a log-bridged crossing just before camp. So descent_text and approach_variants ('above Duckabush Camp') are right and the approach's 'just before Duckabush Camp' is the stale copy.",
+   "sources": [
+    "https://trailsnw.com/trails/olympics/duckabush-river",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=22526",
+    "http://www.thesuns.net/hiking/2011/Duckabush%20to%20Staircase%20(7-8-2011)/Duckabush%20to%20Staircase.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Around mile 17, just before Duckabush Camp, the trail fords the Duckabush River itself",
+     "replace": "Above Duckabush Camp (about mile 17.7), the trail fords the Duckabush River itself",
+     "id": "wa_mount_steel_standard",
+     "fact": "Location of the Duckabush River ford"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "fact": "Where the climbers' creek turnoff leaves the trail",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach says the turnoff is about 3 miles above Duckabush Camp (i.e. just below Marmot Lake at ~21.3 mi), while waypoints[2] (distMi 18.3), waypoints[5].note, approach_variants[0].notes and the itinerary place it ~3 miles below Marmot Lake near the camp junction. The primary route page that describes the creek turnoff could not be fetched (403) and no second source locating the turnoff was found.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Camping in Upper Royal Basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's Royal Basin page says camp in designated sites only, listing Royal Creek, Lower Royal Meadow and Royal Lake. Two independent trip blogs say upper-basin camping is possible with a special permit issued directly by the Wilderness Information Center (not on the online booking site), on bare ground or gravel only; the park's reservations page does say sites not listed online are booked by phone. Sources conflict, and the only disagreeing fields are bivy[] (owned by the camping clean-up) and a waypoint type; settling it needs the WIC's current rule.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://www.cynhw.com/blog/hiking-and-backpacking-royal-lake",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Direction at the Royal Basin Trail junction",
+   "verdict": "fixed",
+   "correct_value": "Turn right at the signed fork (just before the Royal Creek footlog) and climb southwest up the Royal Creek valley",
+   "evidence": "Two route pages say to turn right at the well-signed junction just before the footlog over Royal Creek and follow Royal Creek; a third says to go right where Royal Creek feeds the Dungeness. The row's own pins run west-southwest from the junction up Royal Creek, so 'east, then south' is wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "http://www.willhiteweb.com/olympic_mountains/royal_basin/dungeness_river_trail_242.htm",
+    "https://www.10adventures.com/hikes/olympic-national-park/royal-basin/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Bear right (east, then south) onto the Royal Basin Trail #840 and settle",
+     "replace": "Bear right onto the Royal Basin Trail and settle",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Direction at the Royal Basin Trail junction"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "bear right, east then south, onto Royal Basin Trail 840.",
+     "replace": "bear right onto the Royal Basin Trail, which climbs southwest up the Royal Creek valley.",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Direction at the Royal Basin Trail junction"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Royal Basin trail number",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Trail #840 is the Tubal Cain Trail; the Royal Creek (Royal Basin) trail is #832 — drop the wrong number",
+   "evidence": "The Forest Service lists the Royal Creek (Basin) Trail as #832, starting 1 mile up the Upper Dungeness Trail, and lists #840 as the Tubal Cain Trail to Marmot Pass; a mapping site agrees #840 is Tubal Cain. The approach and waypoint copies of '#840' are removed in the direction patches above; this patch removes the descent_text copy.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/royal-creek-trail-832",
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/tubal-cain-trail-840",
+    "https://www.gaiagps.com/hike/248685/tubal-cain-trail-840/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Royal Basin Trail #840 and Upper Dungeness",
+     "replace": "Royal Basin Trail and Upper Dungeness",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Royal Basin trail number"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Access road",
+   "verdict": "fixed",
+   "correct_value": "Gravel FR 2880 then FR 2870 to the Upper Dungeness Trailhead",
+   "evidence": "One hike page gives the drive as Palo Alto Road, then gravel Forest Road 2880 and straight onto Forest Road 2870 for about 9 miles to the trailhead; another gives NF-2880 then NF-2870 to the trailhead. The FS 2860-120 status line describes the Baldy/Gray Wolf approach, not this road.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.10adventures.com/hikes/olympic-national-park/royal-basin/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Gravel; reported in good condition on the Baldy/Gray Wolf Ridge approach (FS 2860-120)",
+     "value": "Gravel Forest Service roads — FR 2880, then FR 2870 to the Upper Dungeness Trailhead",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Access road"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No park entrance fee; a Northwest Forest Pass/interagency pass to park plus the wilderness permit for overnights",
+   "evidence": "The park's Royal Basin page and a hike page both name only a Northwest Forest Pass or America the Beautiful pass for parking at the USFS Upper Dungeness Trailhead, plus a wilderness permit for camping; access.fees, parking_pass and passRequired on the row agree. access.notes is boilerplate.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the trailhead parking pass and the wilderness camping permit apply",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+    }
+   ]
+  }
+ ]
+}

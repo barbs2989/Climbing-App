@@ -1,0 +1,76 @@
+{
+ "applied": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Switchback length and plateau-top elevation"
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Wilderness permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "before": {
+    "beta": "From the Artist Point parking lot (about 5,075 ft), the Table Mountain Trail climbs a series of tight, exposed switchbacks cut into the mountain's southeast-facing rock face for roughly 0.6-1 mile to gain the broad summit plateau near 5,700 ft. Beyond the switchbacks the trail is gentle, crossing the plateau to tarns with Shuksan views around the 1.3-mile mark; most hikers turn around there. The trail continues west and eventually drops to link with the Chain Lakes Trail system. The route is entirely above treeline, narrow and cliff-edge in its lower half, and not recommended for those uneasy with exposure or for small children; dogs are not allowed."
+   }
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "before": {
+    "permit": "Free self-issue The Brothers Wilderness permit at the trailhead; Northwest Forest Pass to park."
+   }
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "before": {
+    "permit": "Free self-issue The Brothers Wilderness permit at the trailhead; Northwest Forest Pass to park.",
+    "access": {
+     "fees": "Northwest Forest Pass required to park at the Lena Lake/Brothers trailhead; the site is cashless — pay at the on-site fee machine or bring a pre-purchased pass",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Groups limited to 12; no campfires above 3,500 ft; no bikes, stock, or motorized vehicles within The Brothers Wilderness",
+     "permit": "Free self-issue wilderness permit at the trailhead register; The Brothers Wilderness itself is not quota-limited (unlike Upper Lena Lake camping, which requires a reserved permit May 1-Sep 30)",
+     "closures": "FS Road 25 and the trailhead are generally open year-round, but can wash out or be snow-covered in winter/early spring — check current Hood Canal Ranger District road status before off-season trips",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest, Hood Canal Ranger District (The Brothers Wilderness); the summit sits on the boundary with Olympic National Park",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District) — The Brothers Wilderness",
+     "parking_pass": "Northwest Forest Pass required at the Lena Lake/Brothers trailhead — $5/day or $30/year (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass (or America the Beautiful / Interagency Pass)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the national forest side",
+      "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit."
+     }
+    }
+   }
+  }
+ ]
+}

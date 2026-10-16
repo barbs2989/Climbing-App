@@ -1,0 +1,153 @@
+{
+ "id": "wa_mount_seattle_south",
+ "name": "South Slopes (Standard)",
+ "waypoints": [
+  {
+   "lat": 47.5759,
+   "lng": -123.648,
+   "elev": 500,
+   "name": "North Fork Quinault Trailhead (North Shore Road)",
+   "note": "Road's end on North Shore Road above Lake Quinault; Wilderness Information Center permit required, start of the North Fork Quinault River Trail; the Three Lakes trail up to the Skyline Ridge Primitive Trail also leaves from here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 at the west end of Lake Quinault, near Amanda Park, turn east onto North Shore Road and follow it about 17 miles to its end at the North Fork Quinault trailhead and ranger station. A national park entrance pass is required, plus a wilderness permit for overnight stays."
+  },
+  {
+   "lat": 47.72481,
+   "lng": -123.55462,
+   "elev": 3602,
+   "name": "Low Divide",
+   "note": "Saddle between Mount Seattle and Mount Christie and the terminus of the Skyline Ridge Primitive Trail, near the historic Low Divide Ranger Station site.",
+   "type": "Junction",
+   "distMi": 16,
+   "directions": "Follow the North Fork Quinault River Trail up the valley past Wolf Bar and Halfway House, fording Wild Rose and Elip creeks, to the ford of the North Fork at Sixteen Mile Camp, about 12 miles in; it is hazardous or impassable in heavy rain or snowmelt. Beyond it the trail climbs steeply to Low Divide at about 3,600 ft, 16 miles from the trailhead."
+  },
+  {
+   "lat": 47.727303057142855,
+   "lng": -123.56447954285714,
+   "elev": 4550,
+   "name": "Seattle Meadows",
+   "note": "High camp in Upper Seattle Basin reached via a ~1,000 ft climb from Seattle Creek; standard launch point for the summit scramble, per route beta.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": 47.730995,
+   "lng": -123.577965,
+   "elev": 6246,
+   "name": "Mount Seattle",
+   "note": "True summit gained by a Class 2-3 scramble up the east ridge, crossing scree and talus slopes on the peak's eastern side above Upper Seattle Basin.",
+   "type": "Summit",
+   "distMi": 19
+  }
+ ],
+ "itinerary": {
+  "cal": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route; check current park conditions for the North Fork Quinault fords, especially the Sixteen Mile crossing, before committing to the approach.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+    "hours": null,
+    "miles": null,
+    "title": "Up the North Fork Quinault River Trail",
+    "gainFt": null,
+    "lossFt": null,
+    "packLb": 42,
+    "schedule": [],
+    "objective": "Reach a river camp such as Elip Creek or Sixteen Mile"
+   },
+   {
+    "n": 2,
+    "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+    "hours": null,
+    "miles": null,
+    "title": "Over the Sixteen Mile ford to Low Divide and high camp",
+    "gainFt": null,
+    "lossFt": null,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Reach a high camp at Seattle Meadows"
+   },
+   {
+    "n": 3,
+    "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+    "hours": 5,
+    "miles": 4,
+    "title": "Summit day",
+    "gainFt": 1700,
+    "lossFt": 1700,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave high camp",
+      "detail": "Light daypack; rope/overnight gear left at camp."
+     },
+     {
+      "time": "~7:00 AM",
+      "label": "Gain the south/east ridge",
+      "detail": "Talus and scree slopes above Seattle Meadows basin."
+     },
+     {
+      "time": "~7:50 AM (about 2.3 hr from camp)",
+      "label": "Summit",
+      "detail": "Class 2-3 scramble; views across the Bailey Range and Elwha headwaters."
+     },
+     {
+      "time": "8:20 AM",
+      "label": "Begin descent",
+      "detail": "Reverse the south-side scree/talus line."
+     },
+     {
+      "time": "~10:15 AM (about 1.9 hr from summit)",
+      "label": "Back at high camp",
+      "detail": "Rest of the day free to recover before the long walk out begins."
+     }
+    ],
+    "objective": "Climb Mount Seattle via the south-side talus/scree slopes"
+   },
+   {
+    "n": 4,
+    "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+    "hours": null,
+    "miles": null,
+    "title": "Back down to the North Fork",
+    "gainFt": null,
+    "lossFt": null,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Return to a river camp below Low Divide"
+   },
+   {
+    "n": 5,
+    "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+    "hours": null,
+    "miles": null,
+    "title": "Hike out to the trailhead",
+    "gainFt": null,
+    "lossFt": null,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Return to the North Fork Quinault trailhead"
+   }
+  ],
+  "totalNote": "A multi-day wilderness backpack (about 5 days / 4 nights) up the North Fork Quinault River, 16 trail miles to Low Divide, then on to a high camp at Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same trail back out."
+ },
+ "pitch_detail": [
+  {
+   "grade": "Trail, ~16 mi",
+   "notes": "North Fork Quinault River Trail through old-growth rainforest; gains roughly 3,100 ft to Low Divide camp (~3,600 ft).",
+   "pitch": "Trailhead to Low Divide"
+  },
+  {
+   "grade": "Primitive trail/off-trail",
+   "notes": "Via the Skyline Trail system into Seattle Creek Basin, climbing to camp near 4,550 ft below the peak's west slopes.",
+   "pitch": "Low Divide to Seattle Meadows basecamp"
+  },
+  {
+   "grade": "Class 2-3 scramble",
+   "notes": "Ascend scree on the west slope, cross to the southwest couloir, then scramble loose talus on the south ridge/east side to the (slightly higher) south summit; roughly 2-2.5 hrs from camp, under 2 hrs to descend.",
+   "pitch": "Seattle Meadows to summit"
+  }
+ ]
+}

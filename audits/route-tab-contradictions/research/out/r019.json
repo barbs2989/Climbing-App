@@ -1,0 +1,355 @@
+{
+ "file": "r019.json",
+ "results": [
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "verdict": "fixed",
+   "correct_value": "Nason Ridge and Round Mountain trailheads charge $5/day or $30/yr; Rock Mountain and Merritt Lake trailheads need no pass",
+   "evidence": "The Forest Service Round Mountain Trailhead page states a Northwest Forest Pass is required for all vehicles ($5/day, $30/year), and the Alpine Lookout hike page (which starts at the Round Mountain trailhead on FR 6910) lists NW Forest Pass / America the Beautiful required. The Rock Mountain (#1587) and Merritt Lake hike pages list no pass required; the FS Nason Ridge trail page confirms the $5/$30 fee at the Nason Ridge trailhead. So the Alpine Lookout entry is right and the three 'only Nason Ridge charges' sentences are wrong; they are corrected to name both fee trailheads.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "of the trailheads serving this crest only Nason Ridge is a fee site, at $5 a day or $30 a year.",
+     "replace": "the Nason Ridge and Round Mountain trailheads are fee sites, at $5 a day or $30 a year.",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Which Nason Ridge trailheads charge a fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      1,
+      "permit"
+     ],
+     "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+     "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Which Nason Ridge trailheads charge a fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      4,
+      "permit"
+     ],
+     "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+     "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Which Nason Ridge trailheads charge a fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Time to reach summit vs total car-to-car time",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs should not hold the 8.5-hr car-to-car total; nulled (itinerary places the summit ~4.5 hr after a 5 AM start)",
+   "evidence": "The route is an 8-mile round trip (WTA hike page; independent hiker write-up also 8 mi, ~4,050 ft); AllTrails averages about 6.75 hours for the full out-and-back, so 8.5 hours is a car-to-car figure, not a time to the summit. The row's own totalHrs, sectionBreakdown and itinerary treat 8.5 as car-to-car. Per the catalog convention for this defect class, the duplicated total is removed rather than replaced with a computed number.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.alltrails.com/trail/us/washington/rock-mountain-trail",
+    "https://musthikemusteat.com/hwy-2/rock-mountain-via-rock-lake-trail/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 8.5,
+     "value": null,
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Time to reach summit vs total car-to-car time"
+    }
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Round-trip distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (6.44 km = 4.0 mi) renders as the one-way approach distance and itinerary miles (8) is the single day's round trip; both match the 8-mile round trip published for the trail.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Route name ('West Route') vs its stated aspect/face",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The name distinguishes this western, US-2 trail approach from the Northeast Ridge traverse arriving from the east; it does not claim a west-facing slope. The switchbacks climb an open south-facing slope as aspect/face say, and the name column is out of scope for patching.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Round-trip distance and gain in partner requirements / October guidance (11 mi, 4,300 ft) vs 8 mi, 4,050 ft everywhere else",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "8 mi round trip, ~4,050 ft gain",
+   "evidence": "The Washington Trails Association hike page gives 8.0 miles roundtrip, 4,050 ft gain, high point 6,852 ft for the #1587 trail from US-2; an independent hiker write-up records 8 miles and 4,049 ft; AllTrails lists 8.2 mi. gain_ft, the itinerary and totalNote already say 8 mi / 4,050 ft; only partner_requirements and the October guidance carried 11 mi / 4,300 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://musthikemusteat.com/hwy-2/rock-mountain-via-rock-lake-trail/",
+    "https://www.alltrails.com/trail/us/washington/rock-mountain-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "11 mi round trip with ~4,300 ft gain",
+     "replace": "8 mi round trip with ~4,050 ft gain",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Round-trip distance and gain in partner requirements / October guidance (11 mi, 4,300 ft) vs 8 mi, 4,050 ft everywhere else"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "October",
+      "reason"
+     ],
+     "find": "full 11-mile round trip",
+     "replace": "full 8-mile round trip",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Round-trip distance and gain in partner requirements / October guidance (11 mi, 4,300 ft) vs 8 mi, 4,050 ft everywhere else"
+    }
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Slope aspect of the switchbacks: 'southeast-facing' (itinerary note, sectionBreakdown note) vs 'south/southwest-facing' (approach, face, descent_text)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "No external source consulted states the aspect of the switchback slope (the trail pages describe it only as open and exposed). The row's own trailhead-to-meadow pins run north-northwest, which would make the slope face south-southeast, so the internal majority (southwest) is not clearly right either; left unpatched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Turn at the Nason Ridge Trail junction: 'left (north)' in waypoint note vs 'left (west)' in approach",
+   "verdict": "not_a_contradiction",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Both name the same left turn toward the summit, which lies north-northwest of the junction; the trail page likewise just says turn left for the summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rock_mountain_northeast_ridge",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "verdict": "fixed",
+   "correct_value": "Nason Ridge and Round Mountain trailheads charge $5/day or $30/yr",
+   "evidence": "The Forest Service Round Mountain Trailhead page states a Northwest Forest Pass is required for all vehicles ($5/day, $30/year), and the Alpine Lookout hike page (which starts at the Round Mountain trailhead on FR 6910) lists NW Forest Pass / America the Beautiful required. The Rock Mountain (#1587) and Merritt Lake hike pages list no pass required; the FS Nason Ridge trail page confirms the $5/$30 fee at the Nason Ridge trailhead. So the Alpine Lookout entry is right and the three 'only Nason Ridge charges' sentences are wrong; they are corrected to name both fee trailheads.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "of the trailheads serving this crest only Nason Ridge is a fee site, at $5 a day or $30 a year.",
+     "replace": "the Nason Ridge and Round Mountain trailheads are fee sites, at $5 a day or $30 a year.",
+     "id": "wa_rock_mountain_northeast_ridge",
+     "fact": "Which Nason Ridge trailheads charge a fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      1,
+      "permit"
+     ],
+     "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+     "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+     "id": "wa_rock_mountain_northeast_ridge",
+     "fact": "Which Nason Ridge trailheads charge a fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      4,
+      "permit"
+     ],
+     "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+     "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+     "id": "wa_rock_mountain_northeast_ridge",
+     "fact": "Which Nason Ridge trailheads charge a fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "basecamp drainage for the approach",
+   "verdict": "fixed",
+   "correct_value": "Camp at Fox Camp or the basin between Emerald and Saska off the North Fork Entiat / Pyramid trails",
+   "evidence": "Trip reports approach Saska from the North Fork Entiat River Trailhead (end of FR 5606) up the North Fork Entiat trail to the Pyramid Mountain trail junction and camp near it or in Saska Basin (hike2hike: camp near the Pyramid trail junction ~mile 8.5; trailcatjim: NF Entiat trailhead to Pyramid trail junction and Saska Basin). Neither mentions Leroy Basin or Phelps Creek, which lie on the Chiwawa side under Seven Fingered Jack/Maude/Fernow.",
+   "sources": [
+    "https://hike2hike.com/scrambling/cardinal-saska-and-emerald-entiat-bulgers/",
+    "https://trailcatjim.com/milham-pass-traverse-cardinal-peak-emerald-peak-saska-peak-pinnacle-mountain/",
+    "https://www.summitpost.org/saska-peak/152282"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "typically via high camp in Leroy or Phelps Creek basin",
+     "replace": "typically via a camp at Fox Camp or in the basin between Emerald and Saska off the North Fork Entiat trail",
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "basecamp drainage for the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "whether the route is ever climbed in avalanche season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Jul-Sep scramble season falls outside avalanche season, but the peak has been climbed in winter and the southwest face carries avalanche hazard then",
+   "evidence": "A February 22-23, 2020 trip report describes probable first winter ascents of Cardinal, Emerald and Saska, noting low avalanche danger was important for the steep face up Saska and that a ski was lost over a cliff on the descent. The row's hazards, climate spring and winter entries and descent_text all agree; only the avalanche zone sentence claimed the route is never climbed in avalanche season. Scoped the claim to the summer window.",
+   "sources": [
+    "https://www.countryhighpoints.com/cardinal-emerald-saska-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "and this route is not climbed in avalanche season",
+     "replace": "and the July-September scrambling window falls after avalanche season; winter and spring ascents face real avalanche hazard on the steep southwest face",
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "whether the route is ever climbed in avalanche season"
+    }
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Approach trail named 'North Fork Entiat / Snow Brushy Creek Trail corridor' vs North Fork Entiat + Pyramid Creek trails everywhere else",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "North Fork Entiat and Pyramid Creek trails",
+   "evidence": "The Snow Brushy Creek trail leaves the main Entiat River trail and climbs to Milham Pass on the far side of Saska Pass; the traverse report uses it only as the exit toward Lake Chelan, while the approach to Saska Basin is the North Fork Entiat trail to the Pyramid trail junction (both trip reports). The row's approach, waypoints and road fields all use the North Fork Entiat / Pyramid route.",
+   "sources": [
+    "https://trailcatjim.com/milham-pass-traverse-cardinal-peak-emerald-peak-saska-peak-pinnacle-mountain/",
+    "https://hike2hike.com/scrambling/cardinal-saska-and-emerald-entiat-bulgers/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "North Fork Entiat / Snow Brushy Creek Trail corridor",
+     "replace": "North Fork Entiat and Pyramid Creek trails",
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "Approach trail named 'North Fork Entiat / Snow Brushy Creek Trail corridor' vs North Fork Entiat + Pyramid Creek trails everywhere else"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "North Fork Entiat / Snow Brushy Creek Trail corridor",
+     "replace": "North Fork Entiat and Pyramid Creek trails",
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "Approach trail named 'North Fork Entiat / Snow Brushy Creek Trail corridor' vs North Fork Entiat + Pyramid Creek trails everywhere else"
+    }
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "dist_km (35.41 km = 22 mi) shown as one-way approach vs summit ~11 mi from the trailhead",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "~11 mi one way = 17.7 km",
+   "evidence": "The Fox Camp / Pyramid trail junction is about 8 miles up the North Fork Entiat trail with the Emerald-Saska basin 1.5 miles beyond (summitpost route summary), and a trip report camped near the junction at ~mile 8.5 with Saska about 2 more miles (hike2hike) - about 10.5-11 miles one way. The row's summit waypoint is at distMi 11 and the itinerary totals 22 miles round trip, so 35.41 km is the round-trip figure stored in the one-way field.",
+   "sources": [
+    "https://www.summitpost.org/saska-peak/152282",
+    "https://hike2hike.com/scrambling/cardinal-saska-and-emerald-entiat-bulgers/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 35.41,
+     "value": 17.7,
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "dist_km (35.41 km = 22 mi) shown as one-way approach vs summit ~11 mi from the trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The consulted trip reports do not state which way the Pyramid trail leaves the North Fork Entiat trail; the row's own pins put the basin camp north-east of Fox Camp. Not settled by two sources; left unpatched.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The row itself is inconsistent (6,900 ft junction camp vs ~1,000 ft climb to a ~7,100 ft basin); one trip report puts a camp near the basin at 6,900 ft, which suggests the Fox Camp figure may be the basin's. No source giving Fox Camp's own elevation was found; left unpatched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-19-2262424069"
+   ],
+   "patches": []
+  }
+ ]
+}

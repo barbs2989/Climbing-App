@@ -1,0 +1,111 @@
+{
+ "applied": [
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "column": "approach",
+   "path": [],
+   "fact": "Where to cache overnight packs"
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where to cache overnight packs"
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where to cache overnight packs"
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Aspect of the snow-holding basin"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "before": {
+    "approach": "Start at the Lena Lake Trailhead on Hamma Hamma River Road (FS 25, ~600-750 ft). Follow the well-maintained Lena Lake Trail (#810) about 3 miles through second-growth and old-growth forest along Lena Creek to Lena Lake (~1,800 ft), a popular backpacking destination with reliable camping and water. Beyond Lena Lake the trail narrows to a steep, primitive tread that climbs the West Fork Lena Creek drainage; continue roughly 3.5 more miles and about 2,700 additional feet to Upper Lena Lake (~4,000 ft total gain, ~6.5 mi from the trailhead), the last reliable water and the last maintained-trail camp before the traverse goes cross-country. From Upper Lena Lake, leave the trail and head southwest/west: pick up the Scout Lake way-trail across meadows and huckleberry-heather slopes past Lena Tarn to Scout Pass (~5,200 ft), descend slightly to Upper Scout Lake, contour high around it into Scout Basin, and climb to Ullin's Pass (~5,000 ft) overlooking the tarns known as \"Ullin's Bathtubs.\" From Ullin's Pass, a rising traverse above the small lakes leads to a snow ramp that angles across a steep hillside below Mt. Stone and ends at a loose, grungy moraine; the final approach to St. Peter's Gate (~5,950 ft, the traverse's high point) is exposed dirt-and-mud slopes with real route-finding demands, about 2.2 miles and 2,200 ft above Upper Lena Lake. This entire off-trail section crosses loose moraine and talus, can hold snow patches well into summer (many parties carry an ice axe), and has no dependable water between Upper Lena Lake and the small tarns near Ullin's Pass; fog is common and has caused parties to lose the route. From St. Peter's Gate, most parties cache overnight packs and descend about 300 ft to the base of a basalt cliff, then follow a vague climber's path up a Class 3-4 gully on Mt. Stone's south face into a rock bowl below the summit block, joining the standard west-ridge route for a final ~100 ft of Class 2-3 scrambling on solid pillow basalt to the true (south) summit.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 3-4",
+      "label": "South face gully",
+      "notes": "From St. Peter's Gate, most parties cache overnight packs and descend about 300 ft to the base of a basalt cliff, then follow a vague climber's path up the gully on Mt. Stone's south face into a rock bowl below the summit block. Fog is common and has caused parties to lose the route."
+     },
+     {
+      "n": 2,
+      "class": "Class 2-3",
+      "label": "West ridge to the true summit",
+      "notes": "Join the standard west-ridge route for a final ~100 ft of scrambling on solid pillow basalt to the true (south) summit."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Lena Lake, Upper Lena Lake and the way-trails to St. Peter's Gate",
+      "notes": "From the Lena Lake Trailhead on FS 25 at about 750 ft, the well-maintained Lena Lake Trail #810 runs about 3 miles through second- and old-growth forest along Lena Creek to Lena Lake at about 1,800 ft. Beyond the lake the trail narrows to steep primitive tread up the West Fork Lena Creek drainage, roughly 3.5 more miles and 2,700 ft to Upper Lena Lake at about 4,550 ft — 6.5 miles and about 4,000 ft from the road, the last reliable water and the last maintained-trail camp.\n\nFrom Upper Lena Lake the traverse goes cross-country: the Scout Lake way-trail west across meadows and huckleberry-heather past Lena Tarn to Scout Pass at about 5,200 ft, down to Upper Scout Lake, contour high round it into Scout Basin, then up to Ullin's Pass at about 5,000 ft overlooking Ullin's Bathtubs. From Ullin's Pass a rising traverse above the small lakes leads to a snow ramp angling across a steep hillside below Mount Stone, ending at a loose grungy moraine, then exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft — roughly 2.2 miles and 2,200 ft above Upper Lena Lake.\n\nNo dependable water between Upper Lena Lake and the tarns near Ullin's Pass.",
+      "season": "Roughly Jul-Sep, once Scout Pass and Ullin's Pass are largely clear; many parties still carry an axe",
+      "hazards": [
+       "Extensive off-trail and way-trail route-finding over multiple ridges and passes",
+       "Loose glacial moraine of all sizes near St. Peter's Gate",
+       "A very long outing, up to about 16 miles and 9,000 ft of gain, with limited bail options partway through",
+       "Fog and whiteout navigation on Mount Stone's upper mountain — multiple parties have lost the route",
+       "Exposed headwall sections with several-hundred-foot drops on the Putvin Trail below Lake of the Angels, some using a fixed handline or tree roots",
+       "Unbridged stream crossings requiring downclimbing to the bed and back out",
+       "The exit is at a different trailhead and needs a shuttle"
+      ],
+      "baseFinding": "THE BASE OF THE SUMMIT CLIMB IS 300 FT BELOW ST. PETER'S GATE, AND THE FIRST MOVE IS DOWNHILL — WHICH IS THE WHOLE TEST. Reach the Gate (the traverse's high point at about 5,950 ft, an obvious rocky notch in Mount Stone's southeast ridge). Cache your overnight packs there. Then DESCEND ABOUT 300 FT to the BASE OF A BASALT CLIFF. The climber's path up the south-face gully starts at the foot of that cliff. A route that goes up from the Gate is not this one.\n\nThat is a good fog test precisely because it is counter-intuitive: standing in a notch with the summit above you, the instruction is to lose height first and pick the line up from underneath the cliff band.\n\nSECOND TEST, in the gully: it is a vague climber's path up a Class 3-4 gully on Mount Stone's SOUTH face, and it leads into a ROCK BOWL below the summit block. The bowl is the confirmation — an enclosed basin of rock, not a ridge and not open slope. From it the line joins the standard west-ridge route for a final 100 ft or so of Class 2-3 scrambling on SOLID PILLOW BASALT to the true south summit. That last detail is worth trusting: the rock at the top of this peak is noticeably better than anything below it, so if the last hundred feet is still rubble you have not reached the summit ridge.\n\nWHAT GOES WRONG HERE, AND IT IS RECORDED RATHER THAN HYPOTHETICAL: fog is common on Mount Stone's upper mountain and multiple parties have lost the route and ended up in unplanned harder terrain, and in cloud the true south summit is confused with the Middle and North summits. Count your summits and do not accept the first one.\n\nEXIT NOTE THAT IS PART OF THE PLAN, NOT AN AFTERTHOUGHT: the standard finish continues southwest half a mile to the Lake of the Angels basin and out the Putvin Trail — a DIFFERENT trailhead about 4 road miles from Lena Lake. Arrange a shuttle or stash a bike before you start."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Putvin Trail from Hamma Hamma Road to Lake of the Angels",
+      "notes": "From the Putvin Trailhead on Hamma Hamma River Road (FS 25) at about 1,565-1,600 ft — an unmarked roadside pullout, roughly 4.5 miles past the Lena Lake Trailhead — the Putvin Trail is an unmaintained, primitive user trail that climbs steeply and directly from the first steps. Expect root-staircase steps and boot-track tread through forest for the first mile. In recent years a slide near road mile 10.5 has at times blocked the last 1.2 miles of road, adding a road-walk; check Forest Service status.\n\nAbout halfway up the trail meets a rock headwall requiring hand-over-hand climbing, with a large tree root as the key handhold and, historically, a fixed handline on the steepest pitch. Above it the trail eases into subalpine forest and heather meadows, passing near Whitehorse Basin and the Pond of the False Prophet, and reaches Lake of the Angels at roughly 4,850-4,920 ft in a cirque below Mount Stone's south face — about 3 to 3.5 miles and 3,000 ft of gain. Little to no reliable water on the lower trail; carry enough to reach the lake.",
+      "season": "Roughly Jun-Sep. Snow lingers in the north-facing basin above the lake well into summer",
+      "hazards": [
+       "Trail-less, route-finding-dependent terrain above Lake of the Angels",
+       "Near-vertical root and rock steps on the lower Putvin Trail, genuinely exposed when wet, and worse descending on tired legs",
+       "Loose rock on the headwall and summit block with rockfall onto parties below",
+       "An ambiguous Class 3/4 crux near the summit",
+       "Fog is common here and multiple parties have lost the route on the upper mountain"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE OF THE CLIMB IS A NOTCH IN MOUNT STONE'S WEST RIDGE, AND THE TEST FOR IT IS A TURN YOU MAKE BEFORE A GATE. From Lake of the Angels contour and climb toward ST. PETER'S GATE — the obvious notch above the basin. JUST BEFORE THE GATE, TURN SHARPLY LEFT (SOUTH) and traverse along the BASE OF THE CLIFFS to a notch in the west ridge. If you walk through St. Peter's Gate, you have gone too far; the Gate is the marker you turn short of, not the one you pass through. That works in cloud because the cliff base is a tactile handrail: once you have made the turn, you keep rock on one side of you the whole traverse. Lose contact with the cliff and you have drifted downhill. SECOND TEST, at the notch: turn RIGHT and climb toward a first sub-summit rock, then up a short LOW CLASS 3 CHIMNEY to its top. A chimney is a shape you can feel with both hands. If the first difficulty above the notch is a face or a slab rather than a chimney you can bridge, you are not on the line. THIRD TEST, on the summit spire: from the sub-summit cross a brief, somewhat exposed ridge to the base of the true summit spire, then follow a GROOVE on the LEFT side that BENDS RIGHT, where a faint climbers' path leads the last steps to the top. Left then right — a groove that runs straight up is not it. WHAT THE ROUTE'S OWN TIMING SAYS: about 2.5 hours up from the Lake of the Angels camp and about 1.5 hours back down. If you have been on the ground above the lake far longer than that without finding the notch, you have most likely missed the turn short of the Gate. FOG WARNING SPECIFIC TO THIS MOUNTAIN: Mount Stone has more than one summit, and parties have confused the true south summit with the Middle and North summits in cloud. Count your ridges."
+     },
+     {
+      "name": "Lena Lake and Upper Lena Lake, the St. Peter's traverse from the east",
+      "notes": "The other side of the same notch. From the Lena Lake Trailhead on FS 25 at roughly 600-750 ft, take the well-graded Lena Lake Trail #810 about 3 miles to Lena Lake at about 1,800 ft, then the steep primitive tread up the West Fork Lena Creek drainage roughly 3.5 more miles to Upper Lena Lake at about 4,550 ft, some 6.5 miles and 4,000 ft from the trailhead. Upper Lena Lake is the last maintained-trail camp and the last reliable water before the traverse goes cross-country; wilderness permit and bear canister required.\n\nFrom Upper Lena Lake, leave the trail and head west on the Scout Lake way-trail across meadows and heather past Lena Tarn to Scout Pass at about 5,200 ft, down slightly to Upper Scout Lake, round it into Scout Basin, and up to Ullin's Pass at about 5,000 ft above the tarns known as Ullin's Bathtubs. From there a rising traverse above the small lakes leads to a snow ramp across a steep hillside below Mount Stone that ends at a loose moraine, and then exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft.\n\nThis is a two- or three-day trip and it is chosen for the country it crosses, not because it is quicker.",
+      "season": "Roughly Jul-Sep, once the off-trail benches and passes are largely clear",
+      "hazards": [
+       "Extensive off-trail way-trail route-finding over multiple passes and basins with faint tread",
+       "Loose glacial moraine of all sizes near St. Peter's Gate and exposed dirt-and-mud slopes on the final ramp",
+       "Fog on the upper mountain — multiple parties have lost the route here and ended up in harder terrain",
+       "No dependable water between Upper Lena Lake and the tarns near Ullin's Pass",
+       "A very long approach with limited bail options partway through"
+      ],
+      "baseFinding": "COMING FROM THE EAST YOU ARRIVE AT ST. PETER'S GATE ITSELF, WHICH IS THE HIGH POINT OF THE TRAVERSE AT ABOUT 5,950 FT AND AN OBVIOUS ROCKY NOTCH IN MOUNT STONE'S SOUTHEAST RIDGE. That is the arrival test and it is unmistakable in any weather: the ground stops rising, the notch pinches, and the Lake of the Angels basin opens on the far side. FROM THE GATE THERE ARE TWO WAYS ONTO THE PEAK AND THEY ARE DIFFERENT CLIMBS. The one this route describes is the west-ridge notch: go THROUGH the Gate and drop toward the Lake of the Angels basin, then work back up and turn the corner onto the cliff-base traverse to the notch in the WEST ridge — the same notch the Putvin parties reach by turning sharply left just short of the Gate. The other is the south-face gully, which starts by descending about 300 ft from the Gate to the base of a basalt cliff; that is the Lena Lake traverse route's line, not this one. SO THE FOG TEST FOR THIS VARIANT IS WHICH SIDE OF THE GATE YOU END UP ON: this route goes over to the Lake of the Angels side and approaches the west ridge from the south-west, keeping the cliff base at your shoulder. ABOVE THE NOTCH THE TESTS ARE IDENTICAL to the Putvin variant: turn right, low Class 3 CHIMNEY to a sub-summit, a brief exposed ridge, then a GROOVE on the LEFT that BENDS RIGHT to the true south summit."
+     }
+    ]
+   }
+  }
+ ]
+}

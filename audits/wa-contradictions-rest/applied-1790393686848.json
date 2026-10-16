@@ -1,0 +1,316 @@
+{
+ "applied": [
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elev"
+   ],
+   "fact": "Lake of the Woods camp elevation vs Pistol Pass"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Lake of the Woods camp elevation vs Pistol Pass"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Lake of the Woods camp elevation vs Pistol Pass"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Lake of the Woods camp elevation vs Pistol Pass"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Maintenance of Monument Creek Trail #484"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Maintenance of Monument Creek Trail #484"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Which peaks share this camp"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    6,
+    "directions"
+   ],
+   "fact": "Line from camp to the east ridge"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Line from camp to the east ridge"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Line from camp to the east ridge"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Line from camp to the east ridge"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Line from camp to the east ridge"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Difficulty"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.65617,
+      "lng": -120.51276,
+      "elev": 2430,
+      "name": "Monument Creek Trailhead",
+      "note": "Self-issue wilderness permit at the kiosk; no water/restrooms on-site; trail 484 starts off FR 5400 near the end of Lost River Road.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.701007,
+      "lng": -120.492945,
+      "elev": 2900,
+      "name": "Eureka Creek crossing",
+      "note": "Footlog/ford where the old bridge has repeatedly washed out; last reliable water for the next ~8 miles and 5,000 ft of climbing up Pistol Ridge.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Trail 484 runs north up the Lost River valley for about four miles of easy walking — the only well-maintained tread on the whole trip. The unbridged crossing is the one real hazard on this leg: during June and early-July runoff it can run thigh- to waist-deep, so cross in the cool of the morning when flows are lowest and be prepared to turn around rather than force it."
+     },
+     {
+      "lat": 48.708470500000004,
+      "lng": -120.50700775000001,
+      "elev": 4400,
+      "name": "Abandoned Pistol Ridge trail split",
+      "note": "Maintained tread ends at Eureka Creek; from here the route follows the old, unmaintained Pistol Pass trail steeply onto the crest of Pistol Ridge.",
+      "type": "Junction",
+      "distMi": 5.5,
+      "directions": "Fill every bottle at the creek — there is no reliable water from here until the lake basin, roughly eight miles and 5,000 ft of climbing away. Beyond the crossing the tread degrades into an abandoned trail climbing steeply out of the valley, with heavy deadfall, brush, and stretches where the path disappears entirely and cairns are all you have to follow."
+     },
+     {
+      "lat": 48.73257981818182,
+      "lng": -120.50329672727274,
+      "elev": 6200,
+      "name": "Pistol Ridge crest side-hill",
+      "note": "Exposed, poorly-defined tread along the ridge crest with steep drop-offs; easy to lose the path in fog or early-season snow.",
+      "type": "Hazard",
+      "distMi": 8,
+      "directions": "Climb steeply onto the ridge crest, about 1,800 ft over two and a half miles on faint, unmaintained tread. Expect to lose the path repeatedly in blowdown and brush and to navigate by cairn and map rather than by tread."
+     },
+     {
+      "lat": 48.76153,
+      "lng": -120.49899,
+      "elev": 7100,
+      "name": "Pistol Pass",
+      "note": "High saddle on Pistol Ridge marking the top of the approach; from here the route drops off-trail toward Lake of the Woods and Monument-Lake basin.",
+      "type": "Junction",
+      "distMi": 11,
+      "directions": "Continue along the crest to the saddle, another 900 ft of gain spread over roughly three miles, picking up cairns where the tread fades out. This tops out the approach climb — from the creek ford it is about 5,000 ft of gain, all of it dry."
+     },
+     {
+      "lat": 48.7727284,
+      "lng": -120.499502,
+      "elev": 7300,
+      "name": "Lake of the Woods",
+      "note": "Small alpine lake between Lake and Pistol Peaks with several established campsites; primary water source and base camp for the summit day.",
+      "type": "Campsite",
+      "distMi": 12,
+      "directions": "Drop off the far side of the pass and follow the basin about a mile north past the lake to the established camps. This is the first water since the creek ford. Parties commonly arrive here after dark at the end of a nine-hour-plus day, so know where the camps sit before you get close."
+     },
+     {
+      "lat": 48.7795741,
+      "lng": -120.50869925,
+      "elev": 7800,
+      "name": "Lake Mountain east ridge gain point",
+      "note": "Leave camp and gain Lake Mountain's east ridge directly above the lake basin; loose but solid granite, Class 2-3 with some exposure.",
+      "type": "Junction",
+      "distMi": 13.5,
+      "directions": "From camp, cross the low pass immediately south of Lake Mountain, drop down the far side, and make a descending traverse into the basin between Monument Peak and Lake Mountain. Do not try to go straight up the peak's south side — a subsidiary rock knob (Point 8165) and a cliff band near 8,000 ft bar a direct line, which is why the route swings around to the east ridge. All of this is off-trail talus, scree, and boulder-field travel."
+     },
+     {
+      "lat": 48.78176,
+      "lng": -120.51189,
+      "elev": 8377,
+      "name": "Lake Mountain",
+      "note": "True summit; broad, rocky top with views across the Pasayten toward Monument Peak and the Lost River drainage.",
+      "type": "Summit",
+      "distMi": 14,
+      "directions": "Follow the east ridge over blocky granite through larches and boulder fields, mostly Class 2 with occasional exposed Class 2-3 moves. Where the summit ridge meets the southeast slopes there is a short, roughly half-pitch stretch of genuinely exposed Class 3 that reads harder downclimbing than climbing, so note your line as you pass it. Stay on the crest or its south side and well clear of the north wall and northeast face, which are much steeper and not part of this route."
+     }
+    ],
+    "approach": "Lake Mountain (8,377') sits in a remote basin of the eastern Pasayten Wilderness immediately southeast of Monument Peak, and there is no short way in — both viable approaches are 2-3 day backpack-and-scramble trips. Primary approach: Monument Creek Trail No. 484, which leaves Harts Pass Road about 6 miles northwest of Mazama at the Monument Creek/Lost River trailhead (~2,400'). The trail follows the Lost River valley north for about 4 miles to Eureka Creek, where the old trail bridge has been out since it washed out (reports place this as early as 2006) — the ford is unbridged and can run thigh-to-waist deep during snowmelt season (June-early July); treat it as a real hazard, not a formality, and time the crossing for lower morning flows if possible. Beyond Eureka Creek the tread becomes an abandoned, unmaintained trail climbing onto the crest of Pistol Ridge — expect heavy deadfall, brush, and stretches where the path disappears entirely and is followed by cairns alone. This stretch gains roughly 5,000' over about 7-8 miles to 7,100' Pistol Pass. There is no reliable water between the Eureka Creek ford (mile ~4) and the Lake of the Woods basin, so tank up at the crossing. From Pistol Pass, descend about a mile north past Lake of the Woods to a basecamp around 7,000' — total is roughly 12 miles and 5,300' of gain from trailhead to camp. Alternate approach: from 6,960' Slate Pass at the end of Harts Pass Road, descend to the Robinson Creek (Middle Fork Pasayten) Trail No. 478 and follow it downstream about 7 miles to a large meadow/horse camp, then pick up the unmarked, unmaintained Ferguson Lake Trail No. 474A, which climbs an open avalanche chute and sidehills to Ferguson Lake in a cirque below Wildcat Mountain before dropping into the Eureka Creek drainage just south of Monument Peak — this avoids the Eureka Creek ford but is longer and its own tread is harder to follow. From either camp, gain the low pass just south of Lake Mountain, drop down the far side, and make a descending traverse into the basin between Monument Peak and Lake Mountain. From here a subsidiary rock knob (Pk. 8165) blocks a direct line up the south side, so the route bends onto the mountain's east ridge — a sustained but pleasant scramble on exposed, blocky Class 2-3 granite — to the summit; this final push from Lake of the Woods camp runs about 2-4 miles round trip with 1,300-1,400' of gain and takes under 2 hours each way for a fit party.",
+    "itinerary": {
+     "cal": "Best climbed July-September once Eureka Creek's ford is safer and the Pasayten's approach trails are snow-free; expect faint, little-maintained tread beyond the wilderness boundary.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Long, rough approach from the Monument Creek trailhead through the Lost River valley, fording Eureka Creek around mile 4, then climbing over Pistol Ridge/Pistol Pass and dropping into the Lake of the Woods basin below Lake Mountain's east side. Trail is faint/unmaintained in stretches past the wilderness boundary; parties commonly arrive at camp after dark.",
+       "hours": 9.4,
+       "miles": 12,
+       "title": "Approach to Lake of the Woods camp",
+       "gainFt": 5300,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Monument Creek trailhead",
+         "detail": "Early start recommended given the long day."
+        },
+        {
+         "time": "~4 mi",
+         "label": "Ford Eureka Creek",
+         "detail": "Can be a cold, thigh-deep wade depending on runoff; check flows early season."
+        },
+        {
+         "time": "Midday",
+         "label": "Climb Pistol Ridge to Pistol Pass",
+         "detail": "Steep, sustained gain up abandoned/faint trail."
+        },
+        {
+         "time": "Evening",
+         "label": "Descend into Lake of the Woods basin",
+         "detail": "Many parties finish the last stretch by headlamp after a 9+ hour day."
+        }
+       ],
+       "objective": "Reach base camp at Lake of the Woods (~7,100 ft)"
+      },
+      {
+       "n": 2,
+       "note": "A short, fast scramble day compared to the approach: gain the East Ridge directly from camp and follow class 2-3 granite to the summit. Many parties use the same camp to also bag nearby Monument Peak (8,592 ft) as a separate, much longer day, but Lake Mountain alone is a half-day outing.",
+       "hours": 4,
+       "miles": 3.5,
+       "title": "Climb Lake Mountain via the East Ridge",
+       "gainFt": 1300,
+       "lossFt": 1300,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Lake of the Woods camp",
+         "detail": "Head for the saddle/east ridge above camp."
+        },
+        {
+         "time": "~7:50 AM",
+         "label": "Gain the East Ridge and reach the summit",
+         "detail": "About 1.9 hours from camp; class 2-3 scrambling with some pleasant exposure."
+        },
+        {
+         "time": "~8:20 AM",
+         "label": "Leave the summit",
+         "detail": "~30 minutes on top; views into the Pasayten's remote core."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Back at Lake of the Woods camp",
+         "detail": "Rest of the day free for a Monument Peak add-on or just relaxing at camp."
+        }
+       ],
+       "objective": "Summit Lake Mountain (8,377 ft) and return to base camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: re-climb to Pistol Pass, drop down Pistol Ridge, re-ford Eureka Creek, and follow the Lost River valley back to the car. Faster than the way in but still a full, rugged day.",
+       "hours": 8,
+       "miles": 12,
+       "title": "Hike out to trailhead",
+       "gainFt": 700,
+       "lossFt": 5300,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Monument Creek trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~27-28 mile round trip out of Monument Creek trailhead: two long approach days bracketing one short, fun scramble day up Lake Mountain's East Ridge (class 2-3) from a Lake of the Woods base camp."
+    },
+    "approach_variants": [
+     {
+      "name": "Lake of the Woods camp and the east ridge",
+      "notes": "There is no trail on the mountain itself; the whole climb is talus, scree and boulder-field walking off a high camp. The usual staging is a camp around 7,000 to 7,300 ft near Lake of the Woods, reached over Pistol Pass on the long-abandoned Pistol Ridge tread out of the Monument Creek valley. That approach has been unmaintained for decades and involves an unbridged ford of Eureka Creek that runs thigh to waist deep during snowmelt. A longer alternative from the Slate Pass road end reaches the same country by way of the Ferguson Lake trail and avoids that ford, at the cost of tread that is harder still to follow. From camp the peak is a couple of hours each way for a fit party, and most parties pair it with Monument Peak.",
+      "season": "July to early October",
+      "hazards": [
+       "Loose talus near the summit",
+       "Short exposed sections of blocky granite on the ridge",
+       "Unbridged ford of Eureka Creek, dangerous during snowmelt",
+       "Abandoned, brushy, deadfall-choked approach tread navigated by cairns",
+       "Steep north wall and northeast face immediately off the standard line",
+       "No cell service and multi-day self-rescue distance"
+      ],
+      "baseFinding": "From camp near Lake of the Woods, gain the low pass just south of Lake Mountain, drop the far side, and make a descending traverse into the basin between Monument Peak and Lake Mountain. The base is the point in that basin where you stop traversing and turn uphill, and the mountain tells you where that is by refusing the obvious line. A subsidiary rock knob blocks a direct ascent from the south, and a cliff band bars a straight finish near 8,000 ft, so if you are looking up at a clean unbroken slope from the south side you are not below the standard start and pushing on will cliff you out. Bend instead onto the mountain's lower east ridge. That ridge is identifiable at its foot by larch: the lower slopes are studded with scattered larch groves, and the climbing proper begins where the larches thin out around 7,800 ft and the ground turns to boulder-hopping and coarse scree. Several gullies of much the same difficulty run up from there and any of them will go; take the one where hands come out only occasionally and the footing stays blocky rather than sliding. Early sections often feel like a staircase of granite blocks, which is a good sign you are on the ridge rather than in a scree runnel beside it. Two warnings on where not to be. The north wall and the northeast face are appreciably steeper and are not part of this route, so if the ground ahead drops away rather than rising, move back south. And the last few hundred feet hold snow late; footprints in it are a reasonable line but not proof of a good one."
+     }
+    ],
+    "access": {
+     "fees": "Northwest Forest Pass or Interagency/day pass required for trailhead parking at both Monument Creek and Robinson Creek trailheads.",
+     "rules": "Standard federal wilderness regulations apply: no bikes or mechanized equipment beyond the wilderness boundary, groups limited to 12, camp at least 200 ft from water and trails; bear-resistant food storage is strongly recommended.",
+     "permit": "Free, non-quota, self-issued wilderness permit required for overnight use; fill out at the trailhead. No reservation or quota system as of 2026.",
+     "closures": "Monument Creek Trail (#484) and the historic Pistol Pass Trail beyond Eureka Creek have been unmaintained for over 25 years — expect heavy brush and blowdown, impassable to stock, and slow going for hikers.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest / Pasayten Wilderness (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "pro_tips": [
+     "Tag it alongside Carru, Osceola, and Lago from one camp",
+     "Snow can linger on shaded slopes early season"
+    ],
+    "descent_text": "This is a scramble, not a technical climb — there is no rappelling on the standard route (0 rappels) and none of the sources reviewed mention fixed anchors anywhere on the mountain. The normal descent is to reverse the East Ridge: downclimb the Class 2-3 granite back into the Monument-Lake basin, staying well clear of the steeper north wall and northeast face, which are notably steeper and not part of the standard line. From the basin, re-ascend the low pass south of the peak and drop back to Lake of the Woods camp. Some parties climb the East Ridge but descend via the adjoining Southeast Ridge instead (a documented up-one/down-the-other variant), which avoids reversing the exact ascent line and can go a bit faster, but it is equally non-technical Class 2-3 terrain with the same exposure character — either way, careful route-finding and solid footing matter more than gear. From camp, the multi-day trail exit reverses whichever approach was used: back over Pistol Pass and down the abandoned Pistol Ridge tread to re-ford Eureka Creek (again potentially thigh-to-waist deep and best done in cooler, lower-flow conditions) and out the Monument Creek Trail to the Lost River trailhead, or back out via Ferguson Lake and the Robinson Creek Trail to Slate Pass. Loose talus on the ridge crest and the long, poorly maintained approach trail (deadfall, brush, faint tread) are the main hazards on the way down, not technical climbing terrain.",
+    "pro_needs": "Easy class 2 scramble; no technical gear normally required."
+   }
+  }
+ ]
+}

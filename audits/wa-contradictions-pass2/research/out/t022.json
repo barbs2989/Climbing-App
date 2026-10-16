@@ -1,0 +1,256 @@
+{
+ "file": "t022.json",
+ "results": [
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Days to approach",
+   "verdict": "fixed",
+   "correct_value": "One long approach day in to Crescent Creek Basin and one day out (a 3-day trip with the climb on day 2).",
+   "evidence": "Two independent 3-day trip reports to Crescent Creek Basin objectives (Mount Terror 2018, West Twin Needle 2023, both from the same shared basin used for Himmelhorn) each did the Goodell Creek to Crescent Creek Basin approach in a single day and hiked out in a single day. The row's own itinerary and timing already say one day each way; partner requirements, a hazard line and the turnaround text still said the approach itself was multi-day.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/"
+   ],
+   "patches": [
+    {
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Days to approach",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Multi-day approach (typically 1.5-2 days each way)",
+     "replace": "A full, long approach day each way"
+    },
+    {
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Days to approach",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "for a multi-day approach",
+     "replace": "for a long, full-day approach"
+    },
+    {
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Days to approach",
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "expect": "remoteness — a multi-day approach with no quick escape",
+     "value": "remoteness — a full-day approach each way with no quick escape"
+    },
+    {
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Days to approach",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "Given the multi-day approach",
+     "replace": "Given the full-day approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Crescent Creek Basin camp elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Crescent Creek Basin Camp waypoint and the bivy entry give 6,050 ft, while the same waypoint's directions and itinerary day 1 say about 5,800 ft. One trip report camped at a 6,400 ft bench (Chopping Block camp) and the basin has camps at several heights, so no single figure is settled by two sources; a topo reading of the specific bench this route uses would settle it.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The day miles sum to 18.2 while the total note says ~21 and the waypoint chain reaches 10.6 mi via the Barrier and Crescent Creek camp, which this route does not use. Outside figures for the shared Terror Basin approach disagree (about 17 mi round trip to West McMillan in one description, 20 mi in a one-day report) and no source gives a round-trip or camp-to-base mileage for Inspiration itself. A GPS track from Terror Basin camp to the West Ridge base would settle it.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Gain to Terror Basin camp",
+   "verdict": "fixed",
+   "correct_value": "roughly 5,500 ft of gain to the Terror Basin camp (7,500 ft is the whole-trip total)",
+   "evidence": "One trip report gives the elevations trailhead 600 ft, saddle 6,200 ft, camp 5,800 ft (about 5,600 ft of gain to camp); another describes an unrelenting 5,000 ft charge uphill to camp at about 6,000 ft. The row's itinerary day 1 (5,500 ft) and approach (6,000+ ft) agree; only the partner-requirements line used the whole-trip figure.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://thepeakoftheweek.com/2017/09/14/inspiration-peak-east-ridge/",
+    "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Gain to Terror Basin camp",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 7,500 ft of elevation gain",
+     "replace": "roughly 5,500 ft of elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Camp-to-summit distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit pin sits 1.1 mi past the 7.4 mi camp while day 2 is 6.2 mi. Trip reports give only times (about 2 hours from camp to the glacier edge, then an hour of glacier travel to the route) and no mileage for camp to Inspiration's base. A GPS track of the camp-to-base leg would settle it.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://thepeakoftheweek.com/2017/09/14/inspiration-peak-east-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Descent line (West Ridge only vs West Ridge then South Face)",
+   "verdict": "fixed",
+   "correct_value": "Rappel the upper West Ridge to the notch above the West Ridge gully, then continue rappelling down the South Face to the Terror Glacier.",
+   "evidence": "A South Face party made 3.5 double-rope rappels down the West Ridge to just above the notch of the West Ridge gully, then 4 double-rope rappels down the South Face, landing where they started. A 2024 East Ridge party made 5 single-rope rappels down the upper West Ridge, scrambled to a notch, then 9 more rappels down the South Face; a third description says parties drop down the south face once the ridge anchors end.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://chossclimbers.com/testing/us/washington/north-cascades/inspiration-via-east-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_5",
+     "fact": "Descent line (West Ridge only vs West Ridge then South Face)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Standard descent is down the West Ridge, not back down the South Face.",
+     "replace": "Standard descent rappels the upper West Ridge to a notch, then continues down the South Face to the glacier rather than reversing the Great Gash."
+    },
+    {
+     "id": "wa_south_face_5",
+     "fact": "Descent line (West Ridge only vs West Ridge then South Face)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "logged 7 double-rope rappels down the West Ridge line back to the Terror Glacier",
+     "replace": "logged 7 double-rope rappels, about three and a half down the West Ridge and four down the South Face, back to the Terror Glacier"
+    },
+    {
+     "id": "wa_south_face_5",
+     "fact": "Descent line (West Ridge only vs West Ridge then South Face)",
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "station"
+     ],
+     "find": "The descent is the West Ridge, not the South Face.",
+     "replace": "The descent starts down the West Ridge and finishes down the South Face below the ridge notch."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Rope for the rappel table",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Settled convention: rappel counts that differ only because one assumes two ropes and another a single rope are not contradictions when the text says so. The rappel_count_note states the 7-rappel table is the two-rope count and that a single 70 m rope needs about 14 shorter rappels, and descent_text says the same.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Fixed rappel anchors",
+   "verdict": "fixed",
+   "correct_value": "No bolts, but fixed pin/nut stations of variable quality exist on the descent.",
+   "evidence": "The West Ridge route description lists fixed rappel stations including a 3-pin anchor, a 2-pin anchor and a 2-pin-and-nut slab anchor, reported replaced in June 2024. A second route description notes established rappel stations on the West Ridge and in the access gully, and a trip report describes established ridge anchors running out before parties drop down the south face. The row's rappel table and descent text already say fixed pins exist; only one approach hazard line said none do.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://www.summitpost.org/inspiration-peak/205340",
+    "https://chossclimbers.com/testing/us/washington/north-cascades/inspiration-via-east-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_5",
+     "fact": "Fixed rappel anchors",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "expect": "A sustained multi-rappel descent down the West Ridge with no fixed or bolted stations anywhere on the peak",
+     "value": "A sustained multi-rappel descent down the West Ridge and then the South Face, with no bolts anywhere on the peak and fixed pin stations of variable quality"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Roping up on the glacier after the last rappel",
+   "verdict": "fixed",
+   "correct_value": "Rope up again for the crevassed Terror Glacier after the last rappel.",
+   "evidence": "A 2024 party roped up for the glacier descent after their 14 rappels; another party roped up for the Terror Glacier and navigated crevasses; a third notes crevasses bridged by snow on the same glacier. The row's own hazards and descent text call for roped glacier travel back to camp.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://thepeakoftheweek.com/2017/09/14/inspiration-peak-east-ridge/",
+    "https://chossclimbers.com/testing/us/washington/north-cascades/inspiration-via-east-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_5",
+     "fact": "Roping up on the glacier after the last rappel",
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      6,
+      "notes"
+     ],
+     "find": "unrope and walk off from here.",
+     "replace": "rope up again for the crevassed glacier back to camp."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Camp-to-summit distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit pin sits 1.1 mi past the 7.4 mi camp while day 2 is 6 mi. No source gives a mileage for Terror Basin camp to Inspiration's South Face; reports give only times (roughly 2-3 hours camp to the route). A GPS track of that leg would settle it.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Where the Terror Basin cairn junction is and how steep the climb above it is",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources place the cairn/stone arrow at the end of the easy roadbed and the start of the steep path, but disagree on the figures: one gives about 4 miles of flat trail then about 4,000 ft in 2 miles (matching the waypoint, and another source's 4-mile roadbed), while a second gives 4.5 easy miles then 2.5 miles and 4,700 ft (matching the approach and itinerary). Neither figure pair has two independent agreeing sources over the other; a GPS track of the turnoff would settle it.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://thepeakoftheweek.com/2017/09/14/inspiration-peak-east-ridge/"
+   ],
+   "patches": []
+  }
+ ]
+}

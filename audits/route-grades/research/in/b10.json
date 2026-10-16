@@ -1,0 +1,630 @@
+[
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "route": "Kennedy Glacier",
+  "peak": "Glacier Peak",
+  "discipline": "mountaineering",
+  "grade": "Glacier, steep snow/ice 40–45°",
+  "grade_system": "class",
+  "alpine_grade": "PD+",
+  "ice_grade": "Low-angle alpine ice (roughly AI1) on the upper headwall when icy; otherwise steep snow",
+  "commitment": "II",
+  "max_angle": 40,
+  "face": "North side (Kennedy Glacier)",
+  "overview": "The Kennedy Glacier ascends Glacier Peak's northwest flank and offers a more glaciated, slightly steeper alternative to the standard routes. It is a popular ski-mountaineering descent and a fine summer climb when crevasses are well bridged.",
+  "breakdown_grades": [
+   "Climbers' trail, easy snow",
+   "Glacier, deeply crevassed",
+   "~40° snow/ice",
+   "~45° snow, often icy"
+  ]
+ },
+ {
+  "id": "wa_glacier_peak_sitkum_glacier",
+  "route": "Sitkum Glacier",
+  "peak": "Glacier Peak",
+  "discipline": "mountaineering",
+  "grade": "Grade II glacier climb",
+  "grade_system": "class",
+  "alpine_grade": "III",
+  "commitment": "I-II",
+  "max_angle": 40,
+  "face": "Southwest side (Sitkum Glacier)",
+  "overview": "The Sitkum Glacier is the standard route on Glacier Peak — the most remote of Washington's major volcanoes. There's no technical crux, but the climb is defined by its long wilderness approach: many miles of trail just to reach a high camp, deep in the Glacier ",
+  "breakdown_grades": [
+   "Trail, steep climbers' path",
+   "Snowfields, moraine",
+   "Glacier, crevassed",
+   "Loose pumice",
+   "Snow chute, Class 2–3"
+  ]
+ },
+ {
+  "id": "wa_painted_traverse",
+  "route": "Painted Traverse",
+  "peak": "Glacier Peak Wilderness Traverses",
+  "discipline": "scrambling",
+  "grade": "4th",
+  "grade_system": "class",
+  "grade_num": 4,
+  "rock_grade": "Mostly class 2-3 ridge with class 4 on Black Mountain; loose gullies",
+  "overview": "A long, colorful ridge traverse in the Glacier Peak Wilderness linking Painted Mountain, Magenta Peak, Black Mountain, Skullcap Peak, Portal Peak and White Mountain above the North Fork Sauk valley. Most of the line is heather, meadow and broken ridge, but gen",
+  "breakdown_grades": [
+   "Class 2-3",
+   "Class 2-3",
+   "Class 3-4",
+   "Class 2-3",
+   "Class 2-3",
+   "Class 2-3",
+   "Trail"
+  ]
+ },
+ {
+  "id": "wa_goat_mountain_east_peak",
+  "route": "East Peak Traverse",
+  "peak": "Goat Mountain",
+  "discipline": "mountaineering",
+  "rock_grade": "Class 2-3",
+  "max_angle": 50,
+  "face": "East Peak / Southwest Face",
+  "overview": "A far more committing extension past the West Peak trail: leave the Goat Mountain Trail near its high point, drop into the saddle between the summits, then climb the East Peak's west ridge and southwest face on steep heather and snow to reach the mountain's tr",
+  "breakdown_grades": [
+   "Class 2",
+   "Class 2-3",
+   "Class 2 (steep snow to 40-50°)",
+   "Class 3"
+  ]
+ },
+ {
+  "id": "wa_goat_mountain_south_ridge",
+  "route": "South Ridge / Standard Scramble",
+  "peak": "Goat Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "grade_system": "class",
+  "grade_num": 2,
+  "rock_grade": "Class 2",
+  "alpine_grade": "PD",
+  "commitment": "II",
+  "max_angle": 50,
+  "face": "East Peak",
+  "overview": "A twin-summited peak in the Skagit Range of the North Cascades, directly across the Nooksack River valley from Mount Shuksan and just south of Mount Larrabee, within the Mount Baker Wilderness. The standard route follows USFS Trail #673 through old-growth fore",
+  "breakdown_grades": [
+   "Class 1-2",
+   "Class 2",
+   "Class 2-3 (snow)",
+   "Class 2"
+  ]
+ },
+ {
+  "id": "wa_goat_wall_claymore_aka_czech_gully",
+  "route": "Claymore (aka Czech Gully)",
+  "peak": "Goat Wall",
+  "discipline": "ice",
+  "grade": "5.7+ WI2-3 M3-4 Steep Snow",
+  "grade_system": "wi",
+  "grade_num": 3,
+  "ice_grade": "WI2-3"
+ },
+ {
+  "id": "wa_goat_wall_goat_s_beard_ice",
+  "route": "Goat's Beard Ice",
+  "peak": "Goat Wall",
+  "discipline": "ice",
+  "grade": "WI5",
+  "grade_system": "wi",
+  "grade_num": 5,
+  "ice_grade": "WI5"
+ },
+ {
+  "id": "wa_goat_wall_mazama_queen",
+  "route": "Mazama Queen",
+  "peak": "Goat Wall",
+  "discipline": "ice",
+  "grade": "WI3 M6 Steep Snow PG13",
+  "grade_system": "wi",
+  "grade_num": 3,
+  "ice_grade": "WI3"
+ },
+ {
+  "id": "wa_goat_wall_the_standard",
+  "route": "The Standard",
+  "peak": "Goat Wall",
+  "discipline": "ice",
+  "grade": "WI3-4",
+  "grade_system": "wi",
+  "grade_num": 4,
+  "ice_grade": "WI3-4"
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "route": "East Face",
+  "peak": "Golden Horn",
+  "discipline": "alpine",
+  "grade": "5.10+ R (also cited as 5.10 R)",
+  "grade_system": "yds",
+  "grade_num": 10,
+  "rock_grade": "5.10+ R (also cited as 5.10 R)",
+  "commitment": "IV",
+  "face": "East Face (a previously-unclimbed ~1,000-ft face)",
+  "overview": "An 11-pitch, roughly 1,000-foot IV 5.10+ R alpine rock route up Golden Horn's east face, climbed ground-up and onsight with no bolts or fixed gear by its first ascensionists in June 2015. The first-ascent party humorously nicknamed the line after a comedic son",
+  "breakdown_grades": [
+   "5.10+",
+   "5.10 R",
+   "5.10 R (~20 ft)"
+  ]
+ },
+ {
+  "id": "wa_golden_horn_north_face",
+  "route": "North Face",
+  "peak": "Golden Horn",
+  "discipline": "alpine",
+  "face": "North Face",
+  "overview": "A steep, rarely climbed line up Golden Horn's sheer north face, first climbed by Fred Beckey and Roe 'Duke' Watson in 1958; little is known of it beyond its first ascent."
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "route": "Northeast Arête",
+  "peak": "Golden Horn",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "grade_system": "yds",
+  "grade_num": 8,
+  "rock_grade": "5.8",
+  "commitment": "III",
+  "face": "Northeast Arête",
+  "overview": "A five-pitch, III 5.8 alpine rock route up Golden Horn's northeast arête, first climbed by Gordy Skoog and Jim Walseth in 1979."
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "route": "Southwest Route",
+  "peak": "Golden Horn",
+  "discipline": "alpine",
+  "rock_grade": "Low 5th class (also cited as Easy 5th, Grade I)",
+  "commitment": "I",
+  "face": "Southwest side / summit gully",
+  "overview": "A long, scenic PCT approach to a camp at Snowy Lakes, followed by an easy scree-and-talus scramble that ends in one short, exposed low-5th-class move to the true summit.",
+  "breakdown_grades": [
+   "Class 2–3",
+   "Low 5th class (~10 ft)"
+  ]
+ },
+ {
+  "id": "wa_gothic_peak_standard",
+  "route": "Standard Scramble (from Foggy Lake)",
+  "peak": "Gothic Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "grade_system": "class",
+  "grade_num": 3,
+  "rock_grade": "Class 3 (brief Class 4 moves near the summit block)",
+  "commitment": "II",
+  "max_angle": 25,
+  "face": "North Slope",
+  "overview": "Gothic Peak is the lower, more approachable of two summits (with Del Campo Peak, 0.5 mi northeast across Foggy Pass) reached from Foggy Lake in Gothic Basin. Despite a reputation as a simple talus walk-up, the standard route above the lake is a Class 3 scrambl",
+  "breakdown_grades": [
+   "Class 1-2 trail",
+   "Class 2 talus",
+   "Class 2-3",
+   "Class 3 (short Class 4 moves)"
+  ]
+ },
+ {
+  "id": "wa_gray_wolf_ridge_se_slopes",
+  "route": "Southeast Slopes (Standard Scramble)",
+  "peak": "Gray Wolf Ridge",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "grade_system": "class",
+  "grade_num": 3,
+  "rock_grade": "Class 2-3",
+  "alpine_grade": "F",
+  "commitment": "II",
+  "max_angle": 30,
+  "face": "Southeast Slopes",
+  "overview": "Gray Wolf Ridge is a long, dry, rain-shadow alpine ridge in the northeastern Olympic Mountains, straddling the boundary between the Buckhorn Wilderness (Olympic National Forest, Quilcene Ranger District) and Olympic National Park. The ridge carries six rocky, "
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "route": "West Ridge",
+  "peak": "Greenwood Mountain",
+  "discipline": "scrambling",
+  "rock_grade": "Class 3 (exposed scrambling)",
+  "face": "West ridge, reached via the connecting ledge/saddle shared with Dumbell Mountain",
+  "overview": "Greenwood Mountain's standard line follows its West Ridge, reached via a long, exposed connecting ledge from neighboring Dumbell Mountain; it is an unroped talus-and-scree scramble almost always climbed together with Dumbell in a single trip staged from upper ",
+  "breakdown_grades": [
+   "Class 2",
+   "Class 2-3",
+   "Class 2"
+  ]
+ },
+ {
+  "id": "wa_grotto_mountain_e_route",
+  "route": "East Ridge Scramble",
+  "peak": "Grotto Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3-4",
+  "grade_system": "class",
+  "grade_num": 4,
+  "alpine_grade": "F",
+  "commitment": "II",
+  "overview": "Grotto Mountain (5,618 ft) is a rugged, lightly-visited peak in the Wild Sky Wilderness (Mount Baker-Snoqualmie National Forest), rising east of Baring Mountain above the South Fork Skykomish River near the US-2 communities of Baring and Grotto. There is no ma"
+ },
+ {
+  "id": "wa_gunn_peak_southeast_route",
+  "route": "Southeast Route",
+  "peak": "Gunn Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3-4",
+  "grade_system": "class",
+  "grade_num": 4,
+  "rock_grade": "Class 2-4 scrambling, with exposed class 3-4 sections on the hidden-ramp-equivalent step and the summit block",
+  "alpine_grade": "PD",
+  "commitment": "III",
+  "max_angle": 40,
+  "face": "South Face / East Ridge via Tailgunner Pass and Gunn Point",
+  "overview": "Gunn Peak is an extraordinarily prominent summit above the Sultan Basin and Skykomish valley — the highest point in the Wild Sky Wilderness and the 29th-most prominent peak in Washington, its 3,600-plus feet of prominence making it a coveted objective. First c",
+  "breakdown_grades": [
+   "1-2",
+   "2",
+   "2-3",
+   "3-4",
+   "2-3",
+   "2-3"
+  ]
+ },
+ {
+  "id": "wa_gunnshy_peak_standard_route",
+  "route": "Gunnshy Peak Standard Route (Barclay Lake Approach)",
+  "peak": "Gunnshy Peak",
+  "discipline": "mountaineering",
+  "rock_grade": "Class 3 (the final summit block is sometimes described as Class 2)",
+  "face": "South approach slopes to a notch between the summit's two rock horns (crux ledge on the N side)",
+  "overview": "Gunnshy Peak (Peak 6218), the second-highest summit in the Wild Sky Wilderness, is reached by an unmaintained climber's path that leaves the Barclay Lake trailhead spur, crosses Barclay Creek, climbs a steep forested headwall and a seasonal waterfall gully, th",
+  "breakdown_grades": [
+   "Class 1",
+   "Class 2",
+   "Class 2",
+   "Class 2-3",
+   "Class 2-3",
+   "Class 2-3"
+  ]
+ },
+ {
+  "id": "wa_guye_peak_improbable_traverse",
+  "route": "Improbable Traverse",
+  "peak": "Guye Peak",
+  "discipline": "alpine",
+  "grade": "5.8 R",
+  "grade_system": "yds",
+  "grade_num": 8,
+  "rock_grade": "5.8 R",
+  "alpine_grade": "III 5.8 (Mountaineers list the outing as II 5.8 plus scrambling)",
+  "commitment": "III",
+  "face": "West Face",
+  "overview": "A technical alpine rock climb on Guye Peak's prominent west face offering a classic 5.8 traverse pitch with stellar views from Interstate 90. Once popular, the route was heavily damaged by rockfall in November 2021; current conditions are marginal and downclim",
+  "breakdown_grades": [
+   "5.4-5.5",
+   "5.5",
+   "5.5",
+   "5.8 (now 5.9-5.10- downclimbing)",
+   "4th class"
+  ]
+ },
+ {
+  "id": "wa_guye_peak_r1",
+  "route": "West Face",
+  "peak": "Guye Peak",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "grade_system": "yds",
+  "grade_num": 5,
+  "rock_grade": "Low 5th (about 30 ft), otherwise Class 3-4",
+  "commitment": "II",
+  "face": "West Face",
+  "overview": "Guye Peak's west face rises above the Alpental valley at Snoqualmie Pass. This is its easiest line and a short, close-to-the-road alpine outing: from the north end of the talus it follows a huge tree-covered ramp that climbs across the whole face from north to",
+  "breakdown_grades": [
+   "Class 3-4",
+   "Class 3-4",
+   "Class 4-low 5th",
+   "Low 5th"
+  ]
+ },
+ {
+  "id": "wa_guye_peak_r2",
+  "route": "North Route (\"Hidden Ridge\" variation)",
+  "peak": "Guye Peak",
+  "discipline": "alpine",
+  "grade": "Class 3-4 scramble (NCCS Grade I, optional 5.4 rappel/toprope variation)",
+  "grade_system": "class",
+  "grade_num": 4,
+  "rock_grade": "Class 3 (some call it 3-4)",
+  "alpine_grade": "I",
+  "commitment": "I",
+  "face": "North Ridge / Cave Ridge side",
+  "overview": "The north side of Guye Peak is reached via the separate Cave Ridge Trail rather than the West Face talus approach, and is best known as the 'North Route' — a class 3-4 scramble to the north summit that is also run as a scrambling-course objective, not a sustai",
+  "breakdown_grades": [
+   "Trail / class 2",
+   "Class 3 (summer)",
+   "Class 4, one 5.4 move",
+   "Class 3-4 (steeper snow in winter)"
+  ]
+ },
+ {
+  "id": "wa_guye_peak_southeast_gully",
+  "route": "Southeast Gully",
+  "peak": "Guye Peak",
+  "discipline": "alpine",
+  "alpine_grade": "II",
+  "commitment": "II",
+  "max_angle": 70,
+  "face": "Southeast Face - Southeast Gully",
+  "overview": "A 1,400-foot snow gully on Guye's southeast side that starts at a mellow 45 degrees and steepens steadily to about 70 degrees before topping out on the ridge between the true and false summits.",
+  "breakdown_grades": [
+   "45-degree snow",
+   "50-60 degree snow",
+   "Up to 70-degree snow",
+   "Steep snow / short mixed"
+  ]
+ },
+ {
+  "id": "wa_south_gully_south_spur",
+  "route": "South Gully/South Spur",
+  "peak": "Guye Peak",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "grade_system": "yds",
+  "grade_num": 2,
+  "rock_grade": "Easy 5th (summer/fall version)",
+  "alpine_grade": "II, M2+, moderate snow to ~50 degrees",
+  "ice_grade": "AI1-2",
+  "commitment": "II",
+  "max_angle": 50,
+  "face": "South Face - South Gully and South Spur",
+  "overview": "Alpine gully route up Guye Peak's south side: climbs a chockstone-choked gully, then exits onto the South Spur for the final push to the summit. Popular moderate objective near Snoqualmie Pass, climbed as a summer/fall scramble and, under snow, in winter.",
+  "breakdown_grades": [
+   "Moderate snow to ~50 degrees",
+   "M2 / steep snow",
+   "AI1-2 / M2+",
+   "Easy 5th / steep snow",
+   "3rd/4th class with one rappel"
+  ]
+ },
+ {
+  "id": "wa_south_rib",
+  "route": "South Rib",
+  "peak": "Guye Peak",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "grade_system": "class",
+  "grade_num": 5,
+  "rock_grade": "Easy 5th (class 3-4 by The Mountaineers' grading)",
+  "alpine_grade": "II",
+  "commitment": "II",
+  "face": "South Face / South Rib",
+  "overview": "Ascends Guye Peak's prominent, south-facing rib in five pitches of easy 5th-class rock and 3rd/4th-class scrambling, gradually easing toward the summit block.",
+  "breakdown_grades": [
+   "4th class",
+   "4th - easy 5th",
+   "Easy 5th",
+   "4th class",
+   "3rd/4th class"
+  ]
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "route": "Cougar Divide Route",
+  "peak": "Hadley Peak",
+  "discipline": "mountaineering",
+  "face": "Northwest Ridge (Chowder Ridge - Hadley Peak connecting ridge)",
+  "overview": "A shorter, higher-starting alternative to the Skyline Divide approach, climbing the Cougar Divide ridge trail from the end of FS Road 33 to Chowder Ridge before joining the same Class 2 scramble to Hadley Peak's summit.",
+  "breakdown_grades": [
+   "Class 1",
+   "Class 1-2",
+   "Class 2",
+   "Class 3"
+  ]
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "route": "Skyline Divide Route",
+  "peak": "Hadley Peak",
+  "discipline": "mountaineering",
+  "face": "Northwest Ridge (Chowder Ridge - Hadley Peak connecting ridge)",
+  "overview": "The more popular of Hadley Peak's two standard approaches, following the well-known Skyline Divide trail up onto the ridge crest and then continuing cross-country along Chowder Ridge to the base of Hadley's summit block for a long, scenic ridge-walk scramble.",
+  "breakdown_grades": [
+   "Class 1",
+   "Class 1",
+   "Class 1-2",
+   "Class 2",
+   "Class 3"
+  ]
+ },
+ {
+  "id": "wa_hagan_mountain_south",
+  "route": "South Slopes",
+  "peak": "Hagan Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "grade_system": "class",
+  "grade_num": 3,
+  "commitment": "II",
+  "face": "South Slopes (Hagan Glacier / southeast moraine basin)",
+  "overview": "Hagan Mountain is a multi-summited peak in the Lower Skagit/Bacon Peak group of the North Cascades, between Mount Blum (about 1.8 mi north) and Bacon Peak (about 4.5 mi south) in the Baker Lake backcountry. It straddles the boundary between the Noisy-Diobsud W",
+  "breakdown_grades": [
+   "Class 3"
+  ]
+ },
+ {
+  "id": "wa_half_moon_southwest_slopes",
+  "route": "North Ridge",
+  "peak": "Half Moon",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "grade_system": "yds",
+  "grade_num": 7,
+  "rock_grade": "5.7",
+  "face": "North ridge, from the deep notch just north of the summit fin",
+  "overview": "Half Moon is a crescent-shaped granite fin on the north half of Kangaroo Ridge, between Wallaby Peak and Big Kangaroo, about two miles east of the North Cascades Highway at Washington Pass. It has no easy way up: every line to its summit is a roped rock climb,",
+  "breakdown_grades": [
+   "5th class",
+   "5th class",
+   "5th class",
+   "Easy 5th class, then scrambling"
+  ]
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "route": "Helmet Butte Standard Route",
+  "peak": "Helmet Butte",
+  "discipline": "mountaineering",
+  "face": "Southwest side of the peak, above Buck Creek Pass",
+  "overview": "A non-technical but exposed Class 3 scramble to a well-defined granodiorite summit block, reached via a long approach up the Buck Creek Pass Trail and then an off-trail push through meadows above Pass No Pass (or, alternately, up steep grass/heather from Buck ",
+  "breakdown_grades": [
+   "Class 1 (trail)",
+   "Class 2",
+   "Class 2",
+   "Class 3"
+  ]
+ },
+ {
+  "id": "wa_hibox_mountain_standard",
+  "route": "Standard Scramble",
+  "peak": "Hibox Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "grade_system": "class",
+  "grade_num": 3,
+  "rock_grade": "Class 3",
+  "commitment": "II",
+  "max_angle": 47,
+  "face": "South Face / Southwest Ridge",
+  "overview": "Hibox Mountain (6,548 ft) is the high point of Box Ridge, a rugged sub-ridge of the Alpine Lakes Wilderness about 5 miles east of Snoqualmie Pass, rising above the popular Rachel Lake basin. It's one of the most-climbed scrambles near I-90, combining an easy t",
+  "breakdown_grades": [
+   "Class 1 (trail)",
+   "Class 2",
+   "Class 2-3",
+   "Class 3"
+  ]
+ },
+ {
+  "id": "wa_highway_97_chelan_ice_the_highway_dribbler",
+  "route": "The Highway Dribbler",
+  "peak": "Highway 97/Chelan Ice",
+  "discipline": "ice",
+  "grade": "WI4",
+  "grade_system": "wi",
+  "grade_num": 4,
+  "ice_grade": "WI4"
+ },
+ {
+  "id": "wa_himmelhorn_southeast_route",
+  "route": "Standard Route",
+  "peak": "Himmelhorn",
+  "discipline": "alpine",
+  "grade": "Class 4-5",
+  "grade_system": "yds",
+  "grade_num": 5,
+  "rock_grade": "Class 4-5",
+  "alpine_grade": "D+",
+  "commitment": "IV",
+  "face": "Northwest Aspect",
+  "overview": "Himmelhorn (originally Himmelgeisterhorn, \"Horn of the Sky Spirit\") is one of the most sought-after summits of the Southern Pickets, sitting on the crest between Ottohorn/Frenzel Spitz to the west and Twin Needles/Mount Terror to the east, with the small Musta"
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "route": "Stonehenge",
+  "peak": "Himmelhorn",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "grade_system": "yds",
+  "grade_num": 10,
+  "rock_grade": "5.10-",
+  "face": "South Face",
+  "overview": "An 8-pitch 5.10- line up Himmelhorn's previously-unclimbed south face, established in July 2015, finishing up a summit tower via steep, run-out faces separated by easier ground."
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "route": "Wild Hair Crack",
+  "peak": "Himmelhorn",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "grade_system": "yds",
+  "grade_num": 7,
+  "rock_grade": "5.7",
+  "face": "Northwest Face",
+  "overview": "A 4-pitch 5.7 crack climb up Himmelhorn's northwest aspect from the Himmelhorn-Ottohorn col, built around a striking 12-inch-wide vertical crack on pitch 2; widely regarded as one of the best moderate alpine rock climbs in the North Cascades.",
+  "breakdown_grades": [
+   "5.5",
+   "5.7",
+   "low 5th",
+   "3rd to low 5th"
+  ]
+ },
+ {
+  "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+  "route": "Raven Ridge Traverse",
+  "peak": "Hoodoo Peak",
+  "discipline": "alpine",
+  "grade": "5.7 (short crux move; optional rappel bypass)",
+  "grade_system": "yds",
+  "grade_num": 7,
+  "rock_grade": "5.7 (short crux move; optional rappel bypass)",
+  "face": "Ridge crest connecting Raven Ridge to Hoodoo Peak",
+  "overview": "A committing ridge traverse linking Raven Ridge to Hoodoo Peak via a loose approach gully and a narrow, increasingly knife-edged crest with one short 5.7 crux."
+ },
+ {
+  "id": "wa_hoodoo_peak_sawtooth_scramble",
+  "route": "Standard Scramble",
+  "peak": "Hoodoo Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "grade_system": "class",
+  "grade_num": 3,
+  "face": "East side, above the Libby Lake basin",
+  "overview": "Hoodoo Peak (8,475 ft) is a Methow Mountains summit — the easternmost sub-range of the North Cascades — within the Okanogan-Wenatchee National Forest's Lake Chelan-Sawtooth Wilderness, near the southern end of the range above Lake Chelan. It ranks among the hi"
+ },
+ {
+  "id": "wa_horseshoe_peak_scramble",
+  "route": "Standard Scramble",
+  "peak": "Horseshoe Peak",
+  "discipline": "alpine",
+  "grade": "Class 3, 5.2",
+  "grade_system": "class",
+  "grade_num": 2,
+  "rock_grade": "5.2",
+  "alpine_grade": "II",
+  "commitment": "II",
+  "face": "South side / Horseshoe Basin face of Ripsaw Ridge",
+  "overview": "Horseshoe Peak (8,480+ ft per the 1963 USGS Cascade Pass quad) is the high point of Ripsaw Ridge, a knife-edge arête connecting Boston Peak to Mt. Buckner, about a quarter-mile west of Buckner's summit, on the Skagit/Chelan county line deep in the Cascade Pass",
+  "breakdown_grades": [
+   "5.2"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "route": "North Route (North Peak)",
+  "peak": "Hozomeen Mountain",
+  "discipline": "scrambling",
+  "rock_grade": "Class 3-4",
+  "alpine_grade": "Class 2-4 scramble with moderate snow in the north cirque; ice axe recommended",
+  "face": "North ridge and north cirque",
+  "overview": "A long, mostly-Class-2-3 line up the North Peak's north ridge that drops into the north cirque, crosses its snowfields and finishes on the northeast ridge - the practical variation for parties starting from the Hozomeen ranger station rather than the Canadian ",
+  "breakdown_grades": [
+   "Class 2-3",
+   "Class 3 downclimb",
+   "Snow, moderate to steeper",
+   "Class 3",
+   "Class 3-4"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "route": "South Ridge (North Peak)",
+  "peak": "Hozomeen Mountain",
+  "discipline": "scrambling",
+  "rock_grade": "Class 3-4",
+  "face": "North Peak",
+  "overview": "One of the North Peak's easier class 3-4 scrambling lines, ascending the ridge toward the South Peak saddle."
+ }
+]

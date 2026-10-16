@@ -1,0 +1,242 @@
+{
+ "file": "t306.json",
+ "results": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Whether the Duckabush alternative is open",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Duckabush approach is not open either: the Home Sweet Home Trail from the Duckabush junction over First Divide is closed for the Bear Gulch Fire, so no open trail reaches First Divide.",
+   "evidence": "The park's wilderness trail-conditions page (updated Sept 14, 2026) lists both the North Fork Skokomish Trail (Staircase to First Divide) and the Home Sweet Home Trail (First Divide to Duckabush River Trail junction) as closed due to the Bear Gulch Fire. The row's approach, access.closures, road.driveNote and approach_variants[0] already state this; only overview and pro_tips[1] carry the stale 'open alternative' wording. The park fire page and a hiking-association trail page confirm the North Fork closure runs to Home Sweet Home.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+    "https://www.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+    "https://www.wta.org/go-hiking/hikes/north-fork-skokomish-river"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Whether the Duckabush alternative is open",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "; the Duckabush River Trail toward Marmot Lake is the currently drivable alternative, at roughly double the approach distance.",
+     "replace": "; the longer Duckabush approach via Marmot Lake, at roughly double the distance, is also cut where the Home Sweet Home Trail climbs to First Divide, so no open trail reaches the peak while the closure stands."
+    },
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Whether the Duckabush alternative is open",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "While Staircase is closed, plan on the Duckabush River Trail to Marmot Lake as the drive-to alternative — budget roughly double the approach mileage and extra days.",
+     "replace": "The Home Sweet Home Trail over First Divide is closed along with the Staircase side, so the Duckabush route via Marmot Lake is not an open alternative either; once it reopens, budget roughly double the approach mileage and extra days."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Permit issuance at Staircase",
+   "verdict": "fixed",
+   "correct_value": "Olympic NP wilderness permits are reserved in advance; there are no self-registration permits at trailheads and no same-day walk-ups.",
+   "evidence": "The park's wilderness reservations page states there are no longer paper self-registration permits at trailheads and no sites are held as same-day walk-ups. A park-support foundation guide to Olympic backcountry permits likewise says self-registration permits at trailheads are not available and nothing is held for same-day walk-up.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Permit issuance at Staircase",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Self-issue wilderness permit kiosk at the ranger station; ",
+     "replace": "Wilderness permits are reserved in advance and none are issued at the trailhead; "
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Season window",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "best_season itself names mid-July through September as the reliable window inside a broader late-June to early-October shoulder, which is what the Jul-Sep season chip, the 'risky' June and 'marginal' October statuses express; October's 'outside the season window' refers to the Jul-Sep season column. A best window inside a wider window, not a disagreement.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Land manager at the Staircase trailhead",
+   "verdict": "fixed",
+   "correct_value": "Staircase (ranger station and North Fork Skokomish trailhead) is inside Olympic National Park; only the Duckabush trailhead is national forest.",
+   "evidence": "The park's Staircase page places Staircase in the southeastern corner of Olympic National Park. A hiking-association trail page files the Staircase/North Fork Skokomish trailhead under Olympic National Park and requires a national park/interagency pass to park, matching the row's passRequired and parking_pass.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/visiting-staircase.htm",
+    "https://www.wta.org/go-hiking/hikes/north-fork-skokomish-river"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Land manager at the Staircase trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": "; Olympic National Forest, Hood Canal Ranger District, for the Staircase and Duckabush trailheads and lower valley trail.",
+     "replace": "; the Staircase trailhead also lies inside Olympic National Park, while the Duckabush trailhead and lower valley trail are Olympic National Forest, Hood Canal Ranger District."
+    },
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Land manager at the Staircase trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "; Olympic National Forest, Hood Canal Ranger District, for the Staircase and Duckabush trailheads and lower valley trail.",
+     "replace": "; the Staircase trailhead also lies inside Olympic National Park, while the Duckabush trailhead and lower valley trail are Olympic National Forest, Hood Canal Ranger District."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Bear-canister note names another camp",
+   "verdict": "fixed",
+   "correct_value": "Bear canisters are required at every Olympic NP wilderness camp, not just Flapjack Lakes.",
+   "evidence": "The park's wilderness reservations page says bear canisters are required in all wilderness camp areas. A trail-association notice reports Olympic National Park requires bear canisters throughout all wilderness areas. The sentence naming only Flapjack Lakes (a camp not on this route) is replaced with the park-wide rule, matching access.rules and gear.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.pnt.org/olympic-national-park-requires-bear-cans-throughout-all-wilderness-areas/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Bear-canister note names another camp",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Bear canisters are required at Flapjack Lakes, and",
+     "replace": "Bear canisters are required at every wilderness camp in the park, and"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Royal Basin reservation season",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Royal Basin advance reservations cover June 15 through October 15, released April 15 (approach and itinerary.cal are right).",
+   "evidence": "A hiking-association permit guide lists Royal Basin (with Glacier Meadows/Elk Lake, Flapjack Lakes and Lake Constance) at June 15 - Oct. 15, and an independent PNW permit guide gives the same June 15 - Oct 15 dates for Royal Basin; the park's general summer season is May 15 - Oct 15, which is where bivy[1].permit's 'mid-May' comes from. The only wrong copy is in bivy[1].permit (Royal Lake), which is owned by the camping clean-up, so no patch is written here. (One blog gives July 1 for alpine camps; it is the outlier.)",
+   "sources": [
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Glacier travel on the route",
+   "verdict": "fixed",
+   "correct_value": "No roped glacier travel, but the route crosses a small remnant glacier/ice field below the Clark-Johnson col.",
+   "evidence": "A 2025 trip report heading for the Clark-Johnson saddle describes crossing the remnant glacier, debris-covered enough to cross without traction, with running water on it. A separate Royal Basin/Surprise Basin trip account describes crossing a small ice field with running water and a snowfield below the Johnson-Clark pass. So the hazards/obj_haz/descent mention of a remnant glacier is right and 'N/A - no glacier travel' / 'non-glaciated' overstate it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-05.172138508318",
+    "https://onehikeaweek.com/2022/10/01/mount-deception/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Glacier travel on the route",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "N/A - no glacier travel",
+     "replace": "No roped glacier travel, but the route crosses a small remnant glacier/ice field below the Clark-Johnson col; it is walked unroped, is often debris-covered late in the season, and an ice axe is worth carrying early in the season"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Glacier travel on the route",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer route",
+     "replace": "N/A - summer route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No national park entrance fee at the Upper Dungeness Trailhead; a forest parking pass plus the wilderness camping permit apply.",
+   "evidence": "The Forest Service page for the Upper Dungeness Trailhead lists Northwest Forest Pass, Digital Pass or interagency passes at $5/day or $30/year. The park's Royal Basin page says a Northwest Forest Pass is required for trailhead parking, with a wilderness permit for camping; neither mentions an entrance fee, matching the row's parking_pass/fees/passRequired.",
+   "sources": [
+    "https://www.fs.usda.gov/recarea/olympic/recreation/recarea/?recid=48103",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the trailhead parking pass and the wilderness camping permit apply"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Start point of the summit climb",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Both are genuine camp options: parties either camp high in Upper Royal Basin and cross the divide on summit day (the itinerary's plan) or camp on the bare patches in Deception Basin below the Mystery Glacier (the start the CLIMBING ROUTE describes, and descent_text also mentions the Deception Basin camp). Trip reports document both a high camp in Upper Royal Basin and tents pitched in Deception Basin.",
+   "sources": [
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/",
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No national park entrance fee at the Upper Dungeness Trailhead; a forest parking pass plus the wilderness camping permit apply.",
+   "evidence": "The Forest Service page for the Upper Dungeness Trailhead lists Northwest Forest Pass, Digital Pass or interagency passes at $5/day or $30/year. The park's Royal Basin page says a Northwest Forest Pass is required for trailhead parking, with a wilderness permit for camping; neither mentions an entrance fee, matching the row's parking_pass/fees/passRequired.",
+   "sources": [
+    "https://www.fs.usda.gov/recarea/olympic/recreation/recarea/?recid=48103",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mystery_standard",
+     "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the trailhead parking pass and the wilderness camping permit apply"
+    }
+   ]
+  }
+ ]
+}

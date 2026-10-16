@@ -1,0 +1,55 @@
+[
+ {
+  "id": "wa_eldorado_peak_northeast_face",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": 6,
+   "descentTimeHrs": 3,
+   "approachTimeHrs": 6,
+   "recommendedStart": "Pre-dawn/alpine start (parties reported waking and roping up before sunrise)"
+  },
+  "after": {
+   "totalHrs": 19,
+   "summitTimeHrs": 6.5,
+   "descentTimeHrs": 6.5,
+   "approachTimeHrs": 6,
+   "recommendedStart": "Pre-dawn/alpine start (parties reported waking and roping up before sunrise)",
+   "sectionBreakdown": [
+    {
+     "hrs": 6,
+     "fromTo": "Trailhead to high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 6.5,
+     "fromTo": "Summit day: the Northeast Face, then back down to camp",
+     "section": "Climb"
+    },
+    {
+     "hrs": 6.5,
+     "fromTo": "Hike out",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_easy_getaway",
+  "field": "timing",
+  "before": {
+   "totalHrs": 10,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 1.5,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Pre-dawn given the approach length and descent complexity"
+  },
+  "after": {
+   "totalHrs": 11,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 2,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Pre-dawn given the approach length and descent complexity"
+  }
+ }
+]

@@ -1,0 +1,170 @@
+{
+  "wa_mount_stuart_west_ridge": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Ingalls Creek → west ridge crest", "grade": "Class 3 gully", "notes": "From the talus shoulder below the ridge, head up the second prominent gully of the parallel set on the south flank rather than the first one encountered. Sandy Class 3 on good granite gives way to steeper scrambling; a short 4th-class chimney exits the top, after which traverse right and slightly down into the next gully, the one beneath Long John Tower. Snow can linger here into midsummer and is often icy early in the day." },
+      { "pitch": "Lower west ridge", "grade": "Class 4", "notes": "Climb to the notch behind Long John Tower. The right side of the face under the tower is the easier way; the alternative is a chimney left of the tower with a chockstone near its start and one strenuous pull. The rock looks steep and loose from below but is solid, sustained Class 4 in reality. Many parties rope up here if the gully holds snow." },
+      { "pitch": "Long John Tower notch → West Horn", "grade": "Exposed Class 3–4", "notes": "The route-finding crux. From the notch, go nearly straight up, then drift right along ledges toward the West Horn rather than following the crest. Pass the Horn on its south side on a broad, very exposed ledge roughly 50 ft below its top; a short belay or handline is common here. Cairns exist on several lines, so follow the terrain rather than the nearest cairn." },
+      { "pitch": "West Horn → West Ridge Notch", "grade": "Class 3–4 ledges", "notes": "Keep working right across gullies and ledges to the West Ridge Notch, the second big notch past the Horn, where a small bivy ledge looks straight down onto the Stuart Glacier. Scrambling ends here; most parties rope up for the rest of the climb." },
+      { "pitch": "Onto the north face", "grade": "4th class", "lengthM": 30, "notes": "From the notch, climb easy Class 4 a short way, then step left around a blind corner onto the north side of the ridge. Exposure jumps sharply here with the Stuart Glacier far below. Protection is small to medium cams and nuts; a short rope is enough for the whole upper section. Belay where the terrain steepens left of the crest." },
+      { "pitch": "Short 5th-class steps", "grade": "low 5th", "lengthM": 30, "notes": "Climb steep, blocky low-5th ground just left of the crest to a notch, then cross back to the south side of the ridge. Above, a short low-angle chimney with wide cracks and a brief awkward downclimb lead toward the summit block; several parallel options exist, some harder than the standard line. Keep rope drag down by belaying often." },
+      { "pitch": "Summit block", "grade": "5.6", "crux": true, "notes": "The technical crux: a short, well-protected pitch up twin finger-to-hand cracks, with a stuck piton at the hardest move. Most parties find it soft for the grade and well protected. Above, easy ground reaches the true summit directly. The descent then heads east along the summit ridge to the false summit to find the Cascadian Couloir." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "4 → 7 entries. Stored rows were generic ('scrambling over towers and notches'); the new table follows the route's named sequence (gullies, Long John Tower, West Horn ledge, West Ridge Notch, the north-side pitches, 5.6 summit cracks). The stored 'False Summit → true summit' row named ground this route never climbs (the false summit is on the Cascadian descent) and is replaced by 'Summit block'; 'Short 5th-class steps' is kept for the low-5th pitch.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106502853/west-ridge",
+        "https://climberkyle.com/2020/07/11/mt-stuart-west-ridge-5-6/",
+        "https://outdoors.ahelwer.ca/post/2021-08-28-mt-stuart-west-ridge/",
+        "https://engineeredforadventure.com/mt-stuart-west-ridge/",
+        "https://spokalpine.com/2025/09/09/mt-stuart-west-ridge-ii-5-6/"
+      ],
+      "other_findings": "The stored approach text claims a 5.4 fixed-pin dihedral vs 5.6 layback choice at Long John Tower; none of the sources I read describe that choice there. The fixed piton they describe sits on the 5.6 summit cracks. The approach text is worth a check. The stored approach says to aim for 'the middle of three parallel gullies'; the route description says the second prominent gully, which is consistent."
+    }
+  },
+  "wa_mount_stuart_cascadian_couloir": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Trailhead → Longs Pass", "grade": "Trail, ~2,000 ft gain", "notes": "From the Esmeralda trailhead (~4,250 ft), follow the old road briefly, take the right fork toward Longs Pass, and switchback up an open, sun-baked slope to the pass (~6,250 ft). The first full view of Stuart and the couloir is from the top. Start before dawn in summer; the slope has no shade and holds avalanche-prone snow in winter and spring." },
+      { "pitch": "Longs Pass → Ingalls Creek", "grade": "Steep loose trail", "notes": "Drop steeply down loose, gravelly trail on the north side of the pass, losing roughly 1,200–1,400 ft to Ingalls Creek. Cross on the log bridge and follow the Ingalls Creek Trail a short way to the climbers' paths near 4,800–5,000 ft, just downstream of the Longs Pass junction. Camps cluster near the crossing and below the couloir; fill water here, as none is reliable higher up." },
+      { "pitch": "Cascadian Couloir", "grade": "Class 2–3 scree", "notes": "Climb through trees and brush into the gully as it steepens and turns to loose rock, working around several small cliff bands low down. Near 7,000 ft a second gully opens to the left; stay in the right-hand one. Rock and sand move easily, and anything kicked loose funnels onto parties below, so wear a helmet and keep the party close together." },
+      { "pitch": "Upper couloir → false summit", "grade": "Scree, snowfield", "notes": "Near 8,000 ft cross a minor rib to climber's left and continue up loose sand and scree. Toward the head of the couloir, climb boulders to a shoulder, skirt the lingering snowfield along its edge, and continue to a height of land near 8,500 ft below the false summit. Carry axe and crampons into midsummer for the snow, which is dangerous to fall on when firm." },
+      { "pitch": "False → true summit", "grade": "Class 3 scramble", "notes": "About 100 ft below the false summit on its left is a good spot to leave packs. Scramble through a notch near 9,000 ft beside the false summit, then make a rising traverse northwest along the exposed summit ridge to the true summit (9,415 ft). In spring this ridge can hold steep snow. On the way down, stay high through that same notch; dropping off too early leads into the wrong couloir." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 → 5 entries. Kept all four stored labels, split the couloir into its lower gully and the upper couloir/snowfield to the false summit, and added the key route-finding points (stay in the right-hand gully near 7,000 ft, cross left near 8,000 ft, the ~9,000 ft notch that is also the descent trap).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107179436/cascadian-couloir",
+        "https://wenatcheeoutdoors.org/2016/06/04/stuart-mt-cascadian-couloir/",
+        "https://www.summitpost.org/mount-stuart-cascadian-couloir-detailed-description/807219 (search excerpt only; page returned 403)"
+      ],
+      "other_findings": "Stored descent text puts the permanent snowfield 'near 8,800 ft' and says to stay on climber's-left talus around it; the upper-couloir description I read has the traverse on the snowfield's right edge on the way up. Direction depends on ascent vs descent, so I wrote 'along its edge' rather than pick a side."
+    }
+  },
+  "wa_mount_stuart_ice_cliff_glacier": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Bivy → glacier", "grade": "Moraine", "notes": "From the camps near 5,400 ft in the upper Mountaineer Creek basin, gain the moraine and follow it up toward the toe of the North Ridge at about 6,600 ft. The moraine is loose; in early season most of it is snow-covered and quick. Rope up and gear up before leaving the moraine, because the next stage runs beneath the ice cliff." },
+      { "pitch": "Lower Ice Cliff Glacier", "grade": "Snow, serac debris", "notes": "Cut hard left from the base of the North Ridge and traverse beneath the ice cliff toward whichever flank of the icefall will be climbed. The slope is littered with avalanche debris and blocks of glacier ice that have fallen from the cliff above. Move through quickly and do not stop to rest under the cliff." },
+      { "pitch": "Ice cliff bypass", "grade": "AI2", "crux": true, "notes": "Pass the icefall on one flank. In early season the left side gives a snowy couloir with short steps of steep ice, AI2 to AI3 depending on conditions, then a traverse right over the lip onto flatter glacier. Late in the season the ice recedes and a 5.8 slab on the right side is often the better option. Screws are needed on the ice steps; bring a small rock rack late season." },
+      { "pitch": "Upper glacier cirque", "grade": "Glacier, crevassed", "notes": "Above the icefall, take the line of least resistance across the cirque toward the base of the upper couloir. Crevasses open here as the season advances, and fresh snow on the plateau can be deep and slow. Cross the bergschrund on the right side of the couloir's foot." },
+      { "pitch": "Upper couloir", "grade": "50–60° snow or ice", "notes": "Climb roughly 1,000 ft of sustained couloir, staying near its left side, and take the right-hand fork near the top. In fat conditions it is steep snow; in lean conditions or late season it turns to hard snow-ice and blue ice up to 60–70°, and then needs screws and careful front-pointing. Pickets protect the snow sections. Rock and ice fall down the couloir once the sun reaches the face." },
+      { "pitch": "Cornice exit", "grade": "Steep snow, cornice", "notes": "The couloir exits through a cornice onto the south-facing ridge just below the false summit at about 8,600 ft. When the cornice is large this is the hardest part of the climb: loose, near-vertical snow needing careful tool work. Look right for a smaller break before tunnelling or climbing the steepest section." },
+      { "pitch": "Upper mixed → summit", "grade": "Summit ridge, snow/rime", "notes": "From the exit, traverse below the false summit on its south side, then follow the summit ridge past rime-covered spires to the true summit (9,415 ft). The ridge can hold snow and rime well into the season. Descend by the Sherpa Glacier or the Cascadian Couloir; do not reverse the ice route." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 → 7 entries. Reordered to the real sequence: moraine, traverse beneath the ice cliff, icefall (left AI2/right 5.8 slab by season), crevassed upper cirque and bergschrund, ~50–60° couloir with the right fork, cornice exit at ~8,600 ft, and the ridge to the summit. All four stored labels are kept; 'Lower Ice Cliff Glacier' now names the traverse under the cliff, which comes before the bypass. The old '70° AI3' on the bypass is now AI2 (to AI3 in the notes) to match the route's stated AI2-3 overall.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+        "https://climberkyle.com/2019/04/20/mt-stuart-ice-cliff-glacier-ai2-60-70-degree-snice/",
+        "https://www.jeffreyjhebert.com/adventures/ice-cliff-glacier-on-mount-stuart"
+      ],
+      "other_findings": "Stored descent_text says the Sherpa Glacier descent starts 'near the false summit (~8,200 ft)'; the Ice Cliff exit is put at ~8,600 ft below the false summit and the false summit itself is ~9,200 ft elsewhere in the catalog. 8,200 ft looks low for the false summit."
+    }
+  },
+  "wa_dragontail_peak_backbone_ridge": {
+    "area": "wa_dragontail_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.6", "lengthM": 60, "notes": "From the top of the 4th-class approach ledges, climb the low-angle white corner to the ridge crest, then follow the crest up to a stance at the foot of the obvious offwidth. Belay on the ledge below the wide crack." },
+      { "pitch": "2", "grade": "5.9", "lengthM": 30, "crux": true, "notes": "The crux offwidth, straight up. The lower half takes small and hand-sized cams; the upper half protects only with a very large cam (BD #6), bumped along as you go. Some parties get by with a #5 and runout. Packs make it much harder, so haul or hang them. Expect a strenuous, knee-and-ankle-scraping struggle. Belay on hand-sized gear above." },
+      { "pitch": "3", "grade": "5.8", "lengthM": 60, "notes": "Walk left from the belay and climb a long, blocky open-book corner toward a small roof. Short of the roof, step right and build the belay. Protection is good in the corner cracks; small cams and offset nuts are useful at the anchor." },
+      { "pitch": "4", "grade": "5.8", "lengthM": 50, "notes": "Climb a low-angle finger crack just left of the crest; when it widens, step left into a wide-hands layback. From the top of the layback, trend left through cracks and blocks to the sharp ridgeline. The move off the finger crack is the pitch's crux and relies on small edges or smears." },
+      { "pitch": "5-6", "grade": "low 5th", "notes": "Step down and left from the sharp ridge onto a large ledge, then scramble back to the crest and follow it to a small saddle below the Fin. The rock is lichen-covered and loose in places, with several possible lines; most parties simul-climb this section, keeping to the left side of the ridge where the choice is unclear. Watch rope drag and loose blocks." },
+      { "pitch": "7", "grade": "5.5", "lengthM": 60, "notes": "Take the ramp up toward the base of the Fin headwall, crossing a gravel apron, and belay on a left-leaning ledge below the twin cracks. Easy ground, but gravel on the ledges makes it slick underfoot." },
+      { "pitch": "8", "grade": "5.8", "lengthM": 30, "notes": "The first Fin pitch: climb the twin cracks and face holds above the ledge to a large flat ledge. Gear spacing is reasonable; a grassy crack to the right is an alternative but dirtier. Loose blocks sit on the ledge at the top, so place a high directional to keep the rope from pulling them onto the second." },
+      { "pitch": "9", "grade": "5.9", "lengthM": 40, "notes": "The hardest Fin pitch: a tricky hand and finger crack around the left corner of the arête, then a right-facing corner to a semi-hanging stance straddling the Fin crest below a large roof. Superb rock in an exposed position. Ledge-fall potential low on the pitch; protect it well. The belay takes #1–#3 cams." },
+      { "pitch": "10", "grade": "5.8", "notes": "Climb the blocky crack a short way, then traverse right along horizontal cracks across the face of the Fin: a long, rising, near-horizontal shuffle past the roof with poor feet, few holds and very exposed. Gear is sparse in the middle, so protect well for the second as well as the leader. Some rock near the end of the traverse is questionable. Belay at the notch between gendarmes." },
+      { "pitch": "11-12", "grade": "low 5th", "notes": "Easy but loose terrain along ledges and gravelly gullies toward the summit; most parties simul-climb or short-rope it. Choose flake anchors carefully and manage drag around the small walls. Near the top, a gravel apron and a shallow gully lead up and left to the summit, or contour left sooner to join the descent trail." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "10 → 10 entries, same labels and pitch structure as the stored table. Notes are now full descriptions rather than fragments. Cleaned grade tokens ('5.9 (crux)' → '5.9' + crux:true) and moved the lengths out of the notes into lengthM. The '60m+' Fin traverse pitch and the ~100m simul blocks have no firm length, so lengthM is omitted there.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106073405/backbone-ridge",
+        "https://guidedexposure.com/blogs/guided-exposure-blog/backbone-ridge-on-dragontail-peak-a-complete-route-guide",
+        "https://spokalpine.com/2021/09/03/dragontail-peak-backbone-ridge-iv-5-9/",
+        "https://www.jeffreyjhebert.com/adventures/backbone-ridge-on-dragontail-peak",
+        "https://www.mountaineers.org/activities/trip-reports/dragontail-peak-backbone-ridge-with-fin-direct (search excerpt only; page returned 403)"
+      ],
+      "other_findings": "Pitch numbering differs a lot between sources (one guide splits the route into 13 pitches). Fin pitch grades vary between 5.8 and 5.9 across sources (the traverse is 5.7 to 5.8, P9 is 5.8+ to 5.9). The stored descent_text describes rappels as a real option; one detailed source calls the rappel alternative unviable and recommends the snow descent toward Aasgard Pass. That matches the stored caveat about poor anchors."
+    }
+  },
+  "wa_the_direct_north_ridge_w_gendarme": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "notes": "Start from a big ledge about 150 ft above the true toe of the ridge. Climb easy ground and a lieback to a small pine, then continue into an awkward squeeze slot, 5.8 and considerably harder with a pack on. Pitch breaks vary between parties here; belay on the ledge above the slot." },
+      { "pitch": "2", "grade": "5.7", "notes": "Face climbing on good granite to a comfortable ledge at the foot of the long crack on the left. Moderate and well protected; it sets up the belay for the crux pitch." },
+      { "pitch": "3", "grade": "5.9+", "crux": true, "notes": "The technical crux of the whole route: a striking, sustained lieback crack on the left that goes on for a long way, ending with a pull over a small roof to a belay ledge. Pumpy and insecure with alpine packs. Parties who cannot free it often aid through the crux." },
+      { "pitch": "4", "grade": "5.7", "notes": "A short pitch that finishes the steep lower buttress. Above it, the ridge eases and the simul-climbing begins. Take note of the terrain above before pulling the rope, since route-finding from here to the notch is by the cleanest path." },
+      { "pitch": "5-15 (approx)", "grade": "5.6", "notes": "Long simul-climbing blocks of 3rd class to 5.6 up and right along the ridge to the large notch at about 8,200 ft, where the Stuart Glacier approach joins. Rock off the most-travelled line is loose and lichen-covered, so follow the cleanest path. The notch has bivy sites and, earlier in the season, water from snowmelt." },
+      { "pitch": "Notch → Great Gendarme", "grade": "5.7", "notes": "From the notch stay on the left (east) side, then follow an easy ramp to the crest. The ridge narrows to an exposed knife-edge, taken on its west side, with short 5.5 laybacks and one 5.7 move. A superb 5.5 slab split by a crack comes just before the Gendarme. Most parties simul-climb most of this upper ridge." },
+      { "pitch": "Gendarme, lower", "grade": "5.9", "notes": "A steep fingers-and-hands dihedral with laybacks and underclings, with good rests between the harder sections, to the top of a pillar. Given grades range from 5.8 to 5.9. The Gendarme is almost always shaded and can be cold, wet or iced after bad weather. Bypass option: a bolted rappel down the west side, then a dirty, rockfall-prone gully; not recommended." },
+      { "pitch": "Gendarme, upper", "grade": "5.9", "notes": "Traverse to the offwidth and climb it. It is steep and intimidating from below but has solid holds and fist jams inside; given grades range from 5.8+ to 5.9+. A 3.5–4 in cam is essential, and a second one makes it much safer. Belay above once the angle eases." },
+      { "pitch": "Final", "grade": "5.7", "notes": "Above the Gendarme, trend right on an airy traverse back to the crest at a small saddle. Climb a short 5.7 hand crack (some parties find a 5.8 move), then lower-angle broken ground leads to the summit (9,415 ft). The descent is the Cascadian Couloir to the south, or the Sherpa Glacier for a north-side camp." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "8 → 9 entries, all stored labels kept. Split the long simul section at the 8,200 ft notch (new 'Notch → Great Gendarme' row) and added the Gendarme bypass and shade/ice hazard. P1 is raised from 5.7 to 5.8 because it contains the 5.8 squeeze slot. The stored P4 note ('joining the standard North Ridge') is wrong: the standard route joins at the notch much higher up.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+        "https://www.mountainproject.com/route/106050599/north-ridge",
+        "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+        "https://climberkyle.com/2021/07/18/mt-stuart-complete-north-ridge-5-9/"
+      ],
+      "other_findings": "FA: the Direct North Ridge page gives Mead Hargis & Jay Ossiander in 1963; the stored fa says 1970 for the direct start. Also, this row credits the first ascent over the Great Gendarme to Beckey & Marts (1963), while wa_upper_north_ridge_w_great_gendarme credits 'Great Gendarme: John Rupley & Don Gordon, 1956'. The two rows contradict each other; neither is verified here."
+    }
+  },
+  "wa_upper_north_ridge_w_great_gendarme": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1-11", "grade": "5.7", "notes": "Reach the notch at about 8,200 ft from the Stuart Glacier by a 4th-class gully. From the notch, stay on the east side and take an easy ramp to the crest, then follow roughly eleven pitches of exposed low- to mid-5th on solid granite, mostly simul-climbed. A knife-edge section goes on its west side, and there is a single 5.7 move. A fine 5.5 slab split by a crack comes just before the Gendarme." },
+      { "pitch": "Gendarme, lower", "grade": "5.9", "notes": "A steep fingers-and-hands dihedral with laybacks and good rests between the hard sections, to the top of a pillar. Given grades range from 5.8 to 5.9. It is shaded nearly all day and can be cold, wet or iced after storms. Bypass option: a bolted rappel of about 75 ft down the west side, then a dirty gully prone to rockfall; not recommended." },
+      { "pitch": "Gendarme, upper", "grade": "5.9", "notes": "Traverse from the pillar to the offwidth and climb it. It is wide and steep but has good holds and fist jams inside; given grades range from 5.8+ to 5.9+. Carry at least one 3.5–4 in piece; a second makes it much safer. Belay above where the angle eases." },
+      { "pitch": "Above the Gendarme", "grade": "5.8", "notes": "Trend right on an airy traverse back to the crest at a small saddle, then climb a short hand crack. Given grades for this pitch range from 5.7 to 5.9. The exposure is big and the rock mostly good; watch for loose blocks on the traverse." },
+      { "pitch": "Final 3", "grade": "low 5th", "notes": "About three pitches of blocky, lower-angle low-5th ground lead to the summit (9,415 ft); most parties simul-climb or short-rope them. Above the summit the descent heads southeast on blocky 3rd/4th class toward the false summit and the Cascadian Couloir." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "4 → 5 entries, stored labels kept. Split the old 'Final 3' (stored as 5.8-5.9 'blocky terrain') into the one 5.8ish pitch above the Gendarme and the three low-5th pitches that follow. Added how the notch is reached, the knife-edge and slab features, the Gendarme bypass rappel, and the shade/ice hazard. Grade tokens are single values, with the spread given in the notes.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106050599/north-ridge",
+        "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+        "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+        "https://climberkyle.com/2021/07/18/mt-stuart-complete-north-ridge-5-9/"
+      ],
+      "other_findings": "The stored approach text sends parties 'northeast via Lake Ingalls to Goat Pass (east-northeast), then south to Stuart Glacier'. Goat Pass is west of Stuart, so these bearings look confused; worth a check. The fa conflict with wa_the_direct_north_ridge_w_gendarme is noted on that entry."
+    }
+  },
+  "wa_prusik_peak_sail_away": {
+    "area": "wa_prusik_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1 (The Onramp)", "grade": "5.5", "lengthM": 21, "notes": "Start about 20 yards left of Solid Gold. Climb an easy fifth-class slab that leans left, aiming for a ledge with several pine trees, and belay there. Low-angle and quick, but gear is sparse on the slab." },
+      { "pitch": "P2 (The Superflake)", "grade": "5.9", "lengthM": 21, "notes": "Follow the steep flake system on the left side of the big dihedral. It narrows to an airy spire right beside the corner; belay at or next to the spire. The flakes take good gear, but check them before loading." },
+      { "pitch": "P3", "grade": "5.9", "lengthM": 21, "notes": "Step right off the spire into the dihedral and follow it to a belay beneath a slightly overhanging wide crack. Gear goes mostly on the dihedral's left-facing wall and is plentiful and straightforward." },
+      { "pitch": "P4", "grade": "5.10-", "lengthM": 18, "notes": "Climb the slightly overhanging crack above the belay; it is wide but takes good gear. Easier climbing follows to an angled ledge at the foot of an overhanging pair of hand cracks." },
+      { "pitch": "P5 (Gemini Cracks)", "grade": "5.10", "lengthM": 16, "notes": "Two overhanging parallel hand cracks: tight hands on the left, baggy hands on the right. Pick one or move between them as the sizes suit you. Doubles in the hand sizes let you protect either line." },
+      { "pitch": "P6 (Sail Headwall)", "grade": "5.11", "lengthM": 24, "crux": true, "notes": "The crux: one crack up the slightly overhanging, sail-shaped headwall, spiralling west as it goes. It starts as thin fingers, widens quickly to tight and then baggy hands, and finishes as offwidth over 4 in. Save a large piece for the top. Descend with two rappels from the Solid Gold anchors, then walk off the north side." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "6 → 6 entries, same labels, grades and lengths. Notes are expanded with belay locations, gear character and the crack-width progression; crux:true is added on P6. The rack (triples to 1 in, doubles to 4 in) is summarised in the notes.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/201502096/sail-away"
+      ],
+      "other_findings": "The route was first climbed in August 2025, so the first-ascent page is the only detailed source; confidence is medium for that reason. Stored length_m 123 matches the stated 403 ft."
+    }
+  },
+  "wa_cashmere_mountain_se_route": {
+    "skip_reason": "No pitch- or section-level description beyond what is stored: sources give only a broad S/SE gully, mostly Class 2 up the center/right and Class 3-4 on climber's left. Neither stored lengthM (70 m / 41 m) is supported by any source, and 111 m total is far short of the gully's real height. The '8,150 ft' figure appears in one source as roughly where the gully tops out, not where it steepens as the stored note says. Recommend a human review drop the two lengthM values and re-check the 8,150 ft note rather than enrich."
+  }
+}

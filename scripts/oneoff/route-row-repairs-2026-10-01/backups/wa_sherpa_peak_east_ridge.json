@@ -1,0 +1,65 @@
+{
+ "id": "wa_sherpa_peak_east_ridge",
+ "name": "East Ridge",
+ "approach": "Access is the same Esmeralda Basin/Longs Pass Trailhead used for the West Ridge: follow the Longs Pass Trail (FST 1391) over Longs Pass (~6,200 ft) and down to Ingalls Creek Trail, crossing Ingalls Creek and continuing on the climbers' boot path up into the Sherpa-Argonaut basin (see West Ridge approach for that shared section). From the basin, rather than aiming for the West Ridge notch, angle climber's-left (east), traversing a grassy slope and ascending a talus/scree gully to reach the prominent notch at roughly 8,000 ft, about 600 vertical feet below and east of the true summit. Gain the ridge crest about 100 ft above (east of) the notch via class 2 terrain. This line is longer and more circuitous through loose talus than the direct West Ridge approach, and picking the correct gully/notch is the main route-finding crux; a 50m rope is worth carrying from here since the route above uses fixed rappel slings at several obstacles.",
+ "waypoints": [
+  {
+   "lat": 47.4366,
+   "lng": -120.937,
+   "elev": 4243,
+   "name": "Esmeralda Basin / Ingalls Way Trailhead (North Fork Teanaway Rd, FR-9737) via Longs Pass",
+   "note": "Shared trailhead for Longs Pass Trail and Esmeralda Basin/Ingalls Way Trail; route drops from Longs Pass into Ingalls Creek drainage before climbing to Sherpa's east basin.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 4243,
+   "directions": "Drive the North Fork Teanaway Road (FR-9737) to its end at the Esmeralda Basin / Ingalls Way trailhead. This is the shared lot for the Longs Pass Trail and the Esmeralda Basin / Ingalls Way Trail, and it is the same trailhead the West Ridge uses; for the East Ridge you want the Longs Pass Trail (FST 1391), which goes over Longs Pass at about 6,200 ft and down to Ingalls Creek. Plan on late June through September, once that Longs Pass and Ingalls Creek approach is snow-free."
+  },
+  {
+   "lat": 47.4492902,
+   "lng": -120.9251031,
+   "elev": 6250,
+   "name": "Long's Pass",
+   "type": "Junction",
+   "distMi": 2.5,
+   "elevFt": 6250,
+   "directions": "From the lot, follow the Esmeralda Basin trail 0.3 mile and turn right onto the Ingalls Way Trail (#1390). Climb about 1.4 miles to the junction at about 5,440 ft, turn right onto the Longs Pass trail, and switchback steeply up open, rocky slopes about 1.2 miles to the pass."
+  },
+  {
+   "lat": 47.465,
+   "lng": -120.895,
+   "elev": 6300,
+   "name": "Stuart basin bivy",
+   "type": "Campsite",
+   "distMi": 4.5,
+   "elevFt": 6300,
+   "directions": "Drop steeply off the north side of the pass on the boot path, about 1,400 ft, to Ingalls Creek; ford or rock-hop it and follow the Ingalls Creek Trail east about a mile to the Beverly-Turnpike junction. Leave the trail on the climbers' path up through timber and brush, climb the rib staying left of its crest, and at about 5,800 ft traverse right over the rib into the basin below Sherpa."
+  },
+  {
+   "lat": 47.4718,
+   "lng": -120.8855,
+   "elev": 7800,
+   "name": "East end of ridge",
+   "type": "Junction",
+   "distMi": 5.6,
+   "elevFt": 7800,
+   "directions": "From the basin, angle climber's left (east) across a grassy slope and climb the talus and scree gully to the notch about 600 ft below and east of the summit. If you find yourself in a higher basin southwest of the summit, you have gone too far."
+  },
+  {
+   "lat": 47.471845,
+   "lng": -120.888871,
+   "elev": 8630,
+   "name": "Sherpa Peak summit",
+   "type": "Summit",
+   "elevFt": 8630,
+   "directions": "Gain the ridge crest on class 2 ground just past the notch, then follow the ridge west over class 3 and 4 blocks with some low fifth-class moves to the summit. Fixed slings sit at several obstacles; a 50m rope is enough."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 47.471944,
+  "peakLng": -120.888889,
+  "trailhead": "Esmeralda Basin Trailhead (FR-9737)",
+  "trailheadLat": 47.43656,
+  "trailheadLng": -120.93697,
+  "trailheadDirection": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+ }
+}

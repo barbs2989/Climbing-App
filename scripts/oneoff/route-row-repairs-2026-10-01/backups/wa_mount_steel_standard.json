@@ -1,0 +1,71 @@
+{
+ "id": "wa_mount_steel_standard",
+ "name": "Standard Scramble (Marmot Lake / Duckabush approach)",
+ "permit": "NPS wilderness camping permit (reserved via Recreation.gov) required for any overnight stay beyond the park boundary; a park entrance fee applies where the route crosses into Olympic National Park. No separate technical-climbing permit is needed for this non-technical scramble. Source: NPS Olympic National Park fees/wilderness-reservations pages.",
+ "waypoints": [
+  {
+   "lat": 47.685162,
+   "lng": -123.039683,
+   "elev": 270,
+   "name": "Duckabush Trailhead",
+   "note": "Road-end trailhead on Duckabush Trail #803 (FR 2510-060); self-issue day pass/NW Forest Pass at the kiosk, plus an Olympic NP wilderness permit once you cross the park boundary.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 about 15 miles south of Quilcene, turn west at the Duckabush Recreation Area sign onto Duckabush Road. Pavement ends at about 3.6 miles; just past the horse parking area at about 6 miles, bear right and uphill onto FS Road 2510-060 to the trailhead in 0.1 mile. A Northwest Forest Pass is required to park, and an Olympic National Park wilderness permit for any night inside the park."
+  },
+  {
+   "lat": 47.676343,
+   "lng": -123.20179,
+   "elev": 1400,
+   "name": "Ten-Mile Camp",
+   "note": "Established Duckabush River camp with a privy and bear wires; last easy, reliable water and legal campsite before the climb into subalpine terrain.",
+   "type": "Campsite",
+   "distMi": 10.7
+  },
+  {
+   "lat": 47.65405,
+   "lng": -123.318004,
+   "elev": 3900,
+   "name": "Duckabush Camp creek turnoff",
+   "note": "Leave the maintained Duckabush Trail here, about 3 mi below Marmot Lake, and follow the unmarked feeder creek toward the amphitheater below Steel's west face.",
+   "type": "Junction",
+   "distMi": 18.3
+  },
+  {
+   "lat": 47.65065,
+   "lng": -123.348421,
+   "elev": 3700,
+   "name": "Steep push below Marmot Lake",
+   "note": "The final mile up to Marmot Lake gains elevation fast on loose, eroded tread; it is the most exhausting stretch of the approach.",
+   "type": "Hazard",
+   "distMi": 20.3
+  },
+  {
+   "lat": 47.64895,
+   "lng": -123.36363,
+   "elev": 4400,
+   "name": "Marmot Lake",
+   "note": "Standard backcountry basecamp for this route, 1.2 mi below O'Neil Pass, with views across the basin to Mts. Duckabush and Steel.",
+   "type": "Campsite",
+   "distMi": 21.3
+  },
+  {
+   "lat": 47.642204,
+   "lng": -123.343442,
+   "elev": 5450,
+   "name": "Amphitheater below west face",
+   "note": "From camp, drop back roughly 3 mi to the creek junction and climb into this open basin; easy slopes lead to the summit from here but can hold snow into July, requiring an ice axe.",
+   "type": "Junction",
+   "distMi": 24
+  },
+  {
+   "lat": 47.639705,
+   "lng": -123.335965,
+   "elev": 6225,
+   "name": "Mount Steel Summit",
+   "note": "True summit (Class 2-3); the peak rises over 3,400 ft above the Duckabush River in roughly one mile, giving abrupt views into the LaCrosse Basin and toward Mt. Duckabush.",
+   "type": "Summit",
+   "distMi": 25
+  }
+ ]
+}

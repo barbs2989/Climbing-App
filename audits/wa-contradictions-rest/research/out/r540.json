@@ -1,0 +1,938 @@
+{
+ "file": "r540.json",
+ "results": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path",
+   "verdict": "fixed",
+   "correct_value": "From Marmot Pass turn right (north) onto the Tubal Cain Trail and follow it briefly, then leave it for the boot path climbing right up the ridge; ROUTE BREAKDOWN is correct and the approach/base-finding text is wrong.",
+   "evidence": "The reader's internal resolution runs the wrong way. WTA's Marmot Pass guide says the summit is reached from the pass via the Tubal Cain Trail; a Marmot Pass trail guide says to take the Tubal Cain Trail right from the pass and then branch up to the summit; SummitPost/Mountaineers snippets say to hop on the Tubal Cain Trail briefly and then veer right for the climb. So pitch_detail[2] is correct and the approach, beta, climbing_route and baseFinding ('neither goes up', 'leaves from the pass itself') are wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/marmot-pass-upper-big-quilcene",
+    "https://wanderingwithadromomaniac.com/trail-guide-marmot-pass/",
+    "https://www.summitpost.org/buckhorn-mountain/151016",
+    "https://www.mountaineers.org/activities/routes-places/tubal-cain-mine-buckhorn-lake-marmot-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Buckhorn's summit route leaves the maintained trail here: pick up the unsigned climbers'/boot path that follows the open ridge crest north from the pass roughly 1 mile",
+     "replace": "Buckhorn's summit route turns right (north) here onto the Tubal Cain Trail for only a short distance, then leaves it for the unsigned climbers'/boot path that climbs right up the open ridge crest roughly 1 mile"
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "leave the maintained trail and follow a boot path north about 100 m to a junction, then climb right",
+     "replace": "turn right onto the Tubal Cain Trail and follow it north about 100 m to a junction, then leave it and climb right"
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The summit route leaves the maintained trail at Marmot Pass: pick up the unsigned climbers'/boot path that follows the open ridge crest north from the pass roughly 1 mile",
+     "replace": "At Marmot Pass turn right (north) onto the Tubal Cain Trail for a short distance, then leave it for the unsigned climbers'/boot path that climbs right up the open ridge crest roughly 1 mile"
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The summit route leaves from the pass itself and not from any signed junction: pick up the unsigned boot path and follow it roughly a hundred metres north along the crest to where a braided path forks right and begins switchbacking up the open ridge. Two things here are maintained tread and neither goes up — the trail continuing west over the pass toward Home Lake and the Dungeness, and the fork dropping northeast toward the lake.",
+     "replace": "Turn right (north) onto the Tubal Cain Trail and follow it only briefly — roughly a hundred metres — to where an unsigned, braided boot path forks right and begins switchbacking up the open ridge. Take that fork: beyond it the Tubal Cain Trail carries on north toward Buckhorn Pass and the lake, and the main trail continues west over the pass toward the Dungeness, and neither of them climbs to the summit."
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Location of the steep 3/4-mile switchback section",
+   "verdict": "fixed",
+   "correct_value": "Shelter Rock Camp is at ~2.5 mi; the steep ~3/4-mile section starts around mile 3.5, between Shelter Rock Camp and Camp Mystery.",
+   "evidence": "WTA's Marmot Pass guide puts Shelter Rock Camp at 2.5 mi (3,600 ft) and says the grade increases after about 3.5 miles for about three-quarters of a mile, before Camp Mystery at 4.5 mi. A second trail description (ProTrails/AllTrails summary) says the trail climbs steeply away from the river after passing Shelter Rock Camp, with the steep grade running from Shelter Rock Camp to Camp Mystery. descent_text is right; the approach and approach_variants[0].notes put the switchbacks below Shelter Rock.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/marmot-pass-upper-big-quilcene",
+    "https://www.protrails.com/trail/654/olympic-national-park-marmot-pass-big-quilcene-trail",
+    "https://wanderingwithadromomaniac.com/trail-guide-marmot-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Location of the steep 3/4-mile switchback section",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "At about mile 2.5–3.5 the trail pulls away from the river and climbs a sustained, steeper 3/4-mile pitch of switchbacks — the single steepest, most sustained grade on the approach — to Shelter Rock Camp (~3,600 ft), a designated camp with water access. From there the trail continues climbing through subalpine forest and opens",
+     "replace": "At about mile 2.5 you reach Shelter Rock Camp (~3,600 ft), a designated camp with water access. Past it, around mile 3.5, the trail pulls away from the river and climbs a sustained, steeper 3/4-mile pitch of switchbacks — the single steepest, most sustained grade on the approach — then continues climbing through subalpine forest and opens"
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Location of the steep 3/4-mile switchback section",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "for the first two and a half miles, then a sustained switchbacking pitch to Shelter Rock Camp and open meadows to Camp Mystery",
+     "replace": "for the first two and a half miles to Shelter Rock Camp, then a sustained switchbacking pitch up to the open meadows at Camp Mystery"
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Summit grade and exposure",
+   "verdict": "fixed",
+   "correct_value": "Class 2 boot path and talus with one short Class 3 move onto the summit boulder (Class 2-3).",
+   "evidence": "A Buckhorn trip blog describes the ascent as almost entirely a hike with a single third-class move where hands are needed; SummitPost describes a short Class 2-3 scramble with hands at the bouldery summit and a short scramble up onto a large boulder at the high point. The 'non-exposed class 2' wording in itinerary.totalNote and rope_note, and the bare 'Class 2' crux in grade, understate this; rock_grade, overview, watch_out and pitch_detail already say Class 2-3.",
+   "sources": [
+    "https://havetent.com/2019/07/08/marmot-pass-buckhorn-mountain/",
+    "https://www.summitpost.org/buckhorn-mountain/151016"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit grade and exposure",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "the summit push above Marmot Pass is an easy, non-exposed class 2 scramble.",
+     "replace": "the summit push above Marmot Pass is a class 2 scramble finishing with one short class 3 move onto the summit boulder."
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit grade and exposure",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "a steep but non-exposed open path gains the West Peak summit — explicitly described as an easy Class 2 scramble suitable as a first scramble, no technical gear needed.",
+     "replace": "a steep open boot path gains the West Peak summit — an easy Class 2 scramble with one short Class 3 move onto the summit boulder, suitable as a first scramble, no technical gear needed."
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Summit grade and exposure",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2 (off-trail talus/scree)",
+     "value": "Class 2-3 (off-trail talus/scree)"
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Permit for day use / overnight",
+   "verdict": "fixed",
+   "correct_value": "No entrance fee and no camping permit; a Northwest Forest Pass (or interagency pass) is needed to park.",
+   "evidence": "WTA's Marmot Pass guide lists only an America the Beautiful or Northwest Forest Pass for parking; a Marmot Pass trail guide says no permit is required, only a Northwest Forest Pass or interagency pass to park. access.notes' 'standard entrance fee and wilderness camping permit' is park boilerplate that does not apply to this national-forest trailhead. The free self-issue registration named in `permit` is left untouched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/marmot-pass-upper-big-quilcene",
+    "https://wanderingwithadromomaniac.com/trail-guide-marmot-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Permit for day use / overnight",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only a Northwest Forest Pass (or interagency pass) to park applies."
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 13.5 mi round trip, so ~6.75 mi (10.9 km) one way to the summit; dist_km 9.3 (5.8 mi) is the trailhead-to-Marmot-Pass distance.",
+   "evidence": "WTA gives 11.5 mi round trip to Marmot Pass (5.75 mi one way) plus 1 mi and 900 ft from the pass to the Buckhorn summit, so ~6.75 mi one way. A Buckhorn trip blog gives ~13 mi round trip for the summit. The stored 9.3 km (5.8 mi) matches the distance to the pass, not to the summit. The summit waypoint's 6.02 distMi is left as is; it is a separate, track-derived value.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/marmot-pass-upper-big-quilcene",
+    "https://havetent.com/2019/07/08/marmot-pass-buckhorn-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Round-trip distance",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.3,
+     "value": 10.9
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Camp Mystery mileage in the itinerary schedule",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Camp Mystery is about 4.5 mi in.",
+   "evidence": "The schedule says Camp Mystery is ~4.8 mi in, while the approach and pitch_detail say 4.5. WTA puts Camp Mystery at 4.5 mi (5,300 ft); a second trail guide also gives 4.5 mi.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/marmot-pass-upper-big-quilcene",
+    "https://wanderingwithadromomaniac.com/trail-guide-marmot-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Camp Mystery mileage in the itinerary schedule",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "~4.8 mi in;",
+     "replace": "~4.5 mi in;"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "fact": "Whether the walk-out re-crosses Constance Pass",
+   "verdict": "fixed",
+   "correct_value": "From the Dungeness side Home Lake is reached before Constance Pass, which lies ~500 ft above and beyond the lake; the walk out to the Dungeness does not cross the pass, and the trail climbs (not drops) to Home Lake.",
+   "evidence": "One trail guide gives Home Lake at 9.3 mi / 5,308 ft with Constance Pass 492 ft higher at 9.8 mi, and describes steep grades up to the lake; WTA's Home Lake guide gives the lake (5,330 ft) as the high point of the hike from the Upper Dungeness trailhead and says the trail climbs to it. onX also describes a final ascent to Home Lake. So the 're-ascent over Constance Pass on the way out' is wrong, and so is 'drop to Home Lake'.",
+   "sources": [
+    "https://www.onxmaps.com/hiking/k1mzjnnv2qd7/constance-pass-home-lake-via-upper-dungeness-trail",
+    "https://www.wta.org/go-hiking/hikes/home-lake",
+    "http://www.protrails.com/trail/664"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_northwest_buttress",
+     "fact": "Whether the walk-out re-crosses Constance Pass",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Note that the walk out regains meaningful elevation over Constance Pass before the long descent to the Dungeness, so budget more time for the exit than a simple downhill mileage estimate suggests.",
+     "replace": "The walk out does not cross Constance Pass — Home Lake sits below it on the Dungeness side — but it is still more than nine miles back to the car, so budget time for it."
+    },
+    {
+     "id": "wa_inner_constance_northwest_buttress",
+     "fact": "Whether the walk-out re-crosses Constance Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "A 9+ mile approach with meaningful re-ascent over Constance Pass on the way out",
+     "replace": "A 9+ mile approach, and the same distance back out"
+    },
+    {
+     "id": "wa_inner_constance_northwest_buttress",
+     "fact": "Whether the walk-out re-crosses Constance Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "and drop to Home Lake at about 9.3 miles",
+     "replace": "and climb to Home Lake at about 9.3 miles"
+    },
+    {
+     "id": "wa_inner_constance_northwest_buttress",
+     "fact": "Whether the walk-out re-crosses Constance Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and drop to Home Lake at about 9.3 miles",
+     "replace": "and climb to Home Lake at about 9.3 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "fact": "Approach distance to base camp",
+   "verdict": "fixed",
+   "correct_value": "Home Lake is a little over 9 miles from the Upper Dungeness trailhead (9.3-9.7 mi); the '8.5 miles to base camp' sentence is wrong.",
+   "evidence": "One trail guide puts Home Lake at 9.3 mi (Boulder Shelter 6.1 mi); WTA puts it at 9.7 mi (Boulder Shelter 6.4 mi, Home Lake 3.3 mi beyond). Both put the lake more than 9 miles in, and the boulder camp lies beyond the lake, so '8.5 miles up to a base camp near Home Lake' is removed and the existing 9.3 figure kept. The bivy note's 'two miles and 400 ft' from Boulder Shelter is also short (~3.2-3.3 mi), but bivy[] is owned by the camping clean-up and is not patched here.",
+   "sources": [
+    "http://www.protrails.com/trail/664",
+    "https://www.wta.org/go-hiking/hikes/home-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_northwest_buttress",
+     "fact": "Approach distance to base camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": " Put simply, the approach is 8.5 miles up to a base camp near Home Lake.",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "fact": "Rock quality near the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only description found for this face (the Second Wind page, which shares the Northwest Buttress finish) calls the final Northwest Buttress pitch a 'beautiful low angle pitch' and says all the rock is typical unstable, loose Olympic rock; it says nothing about solid pillow basalt capping the peak. No second source was found for the 'as bad as anything in the Olympics near the summit ridge' claim or for the 'more solid' final pitch. Left open.",
+   "sources": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "fact": "Order of the ledge traverse and the Class 3/4 gully",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only detailed description found (the Second Wind route page) orders it scree field → ramp right of the prominent dihedral → steep class 3/4 gully → base of the crack system, and says the Northwest Buttress turns left onto the green-lichen ledge after the first pitch. That supports the baseFinding order (gully before the ledge) and contradicts pitch_detail P3 ('gully above the ledge system'), which is the reverse of the reader's internal resolution. Only one independent source, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+   "verdict": "fixed",
+   "correct_value": "The standard route on Inner Constance is the Southeast Couloir–South Defile–South Gully–East Ridge line (Route 2A) from Lake Constance via Avalanche Canyon; the Crystal Pass / north-ridge traverse text belongs to a different line.",
+   "evidence": "A detailed trip report climbs Inner Constance by the Southeast Couloir–South Defile–South Gully–East Ridge (Route 2A) from Lake Constance, gaining the East Ridge notch from the gully and finishing with a Class 2-3 scramble on pillow basalt. A WTA trip report (2004, 'Lake Constance, Inner Constance') describes the same gully with a discontinuous snow finger, deep moats and a refrigerator-size snow block, reached from Lake Constance. Accounts of Crystal Pass tie it to Mount Constance's West Arete, not Inner Constance. The route name still says 'via Crystal Pass' — names are out of scope for these patches and should be reviewed separately.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004071729",
+    "https://www.mountainwerks.org/cma/2004/constance.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "Northeast side, above Crystal Pass",
+     "value": "South Gully and East Ridge, above Avalanche Canyon"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "expect": "Short step above the pass",
+     "value": "Avalanche Canyon to the South Defile"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "From the base of Inner Constance's northeast side, a short step just above the pass leads into the rising traverse.",
+     "value": "From Lake Constance, go north up Avalanche Canyon to the broad couloir below the Thumb, then veer right into a steeper secondary couloir that narrows into the moat-lined snow of the South Defile."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "label"
+     ],
+     "expect": "Rising traverse on the north ridge/crest",
+     "value": "South Gully to the East Ridge and summit"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "expect": "A rising traverse along the right side of the north ridge/crest on broken, blocky terrain, with occasional class 4 (and low 5th class) moves where the crest steepens, working up to the summit.",
+     "value": "Above the defile, climb the steep, discontinuous snow finger of the South Gully, stemming between snow and rock around the moats, to the notch on the East Ridge. A short rock step puts you on the crest, and Class 2-3 scrambling on pillow basalt leads along the ridge to the northeast (true) summit."
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Reverse the South Gully–East Ridge line to Avalanche Canyon and Lake Constance, then out the Lake Constance path and the Dosewallips Road.",
+   "evidence": "The trip report for the South Gully–East Ridge route descends the same line and calls it an excellent descent route with adequate snow, glissading the lower couloir; the WTA 2004 report describes down-climbing the gully and defile, staying in the moats and down-climbing rock steps. descent_text (the longer field, the one shown) described a Crystal Pass / Constance Pass exit and is rewritten to match `descent`.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004071729"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Descent line",
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descend by reversing the ascent line: downclimb the class 3–4 blocky terrain back down the rising traverse to the step above Crystal Pass. Route-specific rappel counts for this exact Crystal Pass/NE line are thinly documented, but the Constance massif's upper terrain that Inner Constance shares with its neighbor — broken, gendarmed ridge steps on notoriously poor rock — is commonly down-climbed by confident parties with one short rappel used through the single steepest step near the top by those who prefer it. Plan on roughly one rappel of about 30 m/100 ft; a single 30 m rope (or a 60 m doubled) is enough length. Treat any anchor as natural rather than fixed: the only documented technical route on this peak explicitly notes 'no fixed gear' and 'very poor rock, very poor pro,' so expect to sling a horn/block or build a hand-placed gear anchor and inspect (or replace) any tat you find rather than trust it blindly. Below that step, continue down the same broken class 2–3 ground back to Crystal Pass, then reverse the approach: down into Crystal Basin, over Constance Pass, and back down the Constance Pass Trail and Dosewallips Road to the washout trailhead. Loose rock and scree are a hazard the entire way off the summit block — this is classic crumbly Olympic metavolcanic rock — so keep parties tight and out of each other's fall line. There is no easier walk-off alternative; the class 4/low 5th step near the top is the only way through, whether downclimbed or rappelled.",
+     "value": "Descend by reversing the ascent line: scramble back down the East Ridge to the notch, downclimb or rappel the short rock step into the gully, then descend the discontinuous snow finger and the South Defile, watching for moats on both sides and for snow blocks that loosen as the day warms. Where the snow is firm and runs out safely, the lower couloir can be plunge-stepped or glissaded. Loose rock is a hazard the whole way off the summit, so keep the party close together and out of each other's fall line. From the broad couloir below the Thumb, walk back down Avalanche Canyon to Lake Constance, then descend the steep climbers' path and the closed Dosewallips Road to the washout."
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+   "verdict": "fixed",
+   "correct_value": "Approach by the closed Dosewallips Road and the Lake Constance climbers' path; camp at Lake Constance; then Avalanche Canyon.",
+   "evidence": "The NPS Lake Constance Route page describes the approach from the Dosewallips Road washout (~700 ft) and a very steep climb to the lake at 4,800 ft; WTA's Lake Constance guide gives the lake at 4,800 ft, 2.2 mi one way from the trailhead, above the washed-out road. The Route 2A trip report bikes the road, hikes to Lake Constance and goes up Avalanche Canyon. The approach paragraph, itinerary day 1, its timing note, and partner requirements are rewritten to this approach; the Crystal Pass way stays as the second approach variant.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "op": "set",
+     "column": "approach",
+     "path": [],
+     "expect": "From the Dosewallips River Road washout (roughly 1 mile in from the old trailhead gate, elev. ~600 ft), the road has been closed to motor vehicles since a 2002 flood took out a ~300-ft section, but it remains open to foot and bicycle travel — most parties bike the flat, mostly-shaded roadbed to save time, working around the washout on a riverside bypass/use trail. Continue roughly 5.5 more miles of road-walking/biking to the old Dosewallips Campground and decommissioned ranger station at the true road end (about 6.5 mi and ~1,900 ft of cumulative gain from the gate). From there, pick up the Constance Pass Trail, which climbs steadily south/southwest through forest into subalpine parkland — accounts differ on exact trail mileage (roughly 5–8 additional miles depending on where the count starts), gaining to Constance Pass at about 5,850 ft; the upper stretch is steep, open meadow and scree with the last reliable water at creek crossings below treeline and none above. From Constance Pass, leave the maintained trail and travel cross-country west, dropping into the head of Crystal Basin and climbing to Crystal Pass, the windswept notch on the Constance–Warrior massif dividing the Dosewallips (Crystal Basin) side from Avalanche Canyon. This stretch is talus, scree, and (early/mid-season) lingering snow and ice — the informal climbers' track fades near the pass, so careful route-finding is needed, and a rope/axe may be prudent on the snow remnant below the pass in early season. From Crystal Pass, descend into upper Avalanche Canyon — a barren, glacially carved basin between Mount Constance and Inner Constance — following an intermittent climbers' path through scree and talus, staying toward the right (north) side of the canyon past the distinctive 'Cat Ears' rock formation, then contour/climb toward the base of Inner Constance's northeast side. From there, a short step just above the pass leads into a rising traverse along the right side of the north ridge/crest on broken, blocky class 2–3 terrain with occasional class 4 (and low 5th class) moves where the crest steepens, working up to the summit. This Dosewallips/Crystal Pass approach (about 16 mi one-way, ~25.75 km) is considerably longer than the more commonly used Lake Constance approach into Avalanche Canyon (roughly 8 mi one-way) but avoids that trail's brutally steep, unmaintained, blowdown-choked lower section; expect a 2–3 day trip with a camp near Constance Pass or in upper Avalanche Canyon, and carry all the water you'll need above Constance Pass since only transient snowmelt is available higher up.",
+     "value": "From the Dosewallips River Road washout (~700 ft) — the road has been closed to motor vehicles since a 2002 flood but stays open to foot and bicycle travel — most parties bike the closed roadbed, getting around the washed-out section on a riverside bypass. Several miles up, an unsigned, unmaintained climbers' path leaves the roadbed and climbs very steeply up the narrow Constance Creek canyon: roughly 3,300 ft in about 2 miles, choked with blowdown in its lower part and with some hands-on scrambling higher up, past a small creekside bench near 3,100 ft, to Lake Constance at 4,800 ft, the usual camp (a wilderness permit is needed and the lake is a quota area). From the lake, head north into barren Avalanche Canyon on a faint, intermittent climbers' track and snow patches to the broad couloir below the Thumb, where the South Chute of Mount Constance and the South Gully of Inner Constance part ways. A much longer alternative follows the closed road to its old end, climbs the Constance Pass Trail and crosses Crystal Pass into the head of Avalanche Canyon; it avoids the Lake Constance path's steep lower section. Expect a 2–3 day trip either way."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "From the Dosewallips trailhead, follow the Dosewallips River trail and climb toward Constance Pass, then leave the maintained trail to gain the basin/pass (Crystal Pass) below Inner Constance's northeast aspect.",
+     "replace": "From the Dosewallips Road washout, bike or walk the closed road to the unsigned Lake Constance climbers' path, then climb it steeply to camp at Lake Constance."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Reach a high camp in the basin/pass below Inner Constance's NE side",
+     "value": "Reach camp at Lake Constance"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "From the Dosewallips trailhead, follow the Dosewallips River trail and climb toward Constance Pass, then leave the maintained trail to gain the basin/pass (Crystal Pass) …",
+     "replace": "From the Dosewallips Road washout, bike or walk the closed road to the unsigned Lake Constance climbers' path, then climb it steeply to camp at Lake Constance."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "a long, sustained off-trail approach via the Dosewallips toward Crystal Pass",
+     "replace": "a long approach up the closed Dosewallips Road and the very steep Lake Constance climbers' path"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "a long backcountry hike via Dosewallips Road/trail toward Crystal Pass and a high camp near the Constance group",
+     "replace": "a long ride or walk up the closed Dosewallips Road and a very steep climb to camp at Lake Constance"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 16 miles round trip (~8 mi one way) via Lake Constance; the '16 mi one-way' figure is removed with the Crystal Pass approach text.",
+   "evidence": "The Route 2A trip report gives 16 miles total (8 by bike, 8 on foot), matching totalNote's 16 mi round trip and dist_km 12.9 (8 mi one way). The '16 mi one-way' statement in the approach belonged to the Crystal Pass way and is gone in the rewritten approach. The per-day mileages (6.5 in, 5 out) still differ and are recorded as a separate open item.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Itinerary in/out day mileage (6.5 vs 5 mi on the same trail)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Day 1 (in) is 6.5 mi and day 3 (out) is 5 mi over the same road and path. No source gives the washout-to-lake distance consistently (NPS and WTA give ~5 mi of road plus ~2 mi of path; the trip report says ~4 mi of road each way). Not patched.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": "7,300 ft (gain_ft) is supported by one trip report",
+   "evidence": "The Route 2A trip report gives ~7,300 ft gained and lost, matching gain_ft. The itinerary days sum to 6,000 ft and totalNote says 6,000 ft, but no source gives per-day gains, and only one source states the total, so neither the days nor totalNote are changed.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Hardest rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Route 2A trip report describes Class 3-4 sections in the upper defile/gully and a Class 2-3 scramble on the East Ridge, with no roof or chimney; the 'low 5th' grade, rock_grade 5.0 and the chimney/roof ('cave of despair') in pro_needs appear to come from the Crystal Pass line. Only one source describes the South Gully grade, so grade, rock_grade and pro_needs are not changed.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Season / best window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Late June through July, while the South Gully and defile still hold consolidated snow; by August the gully melts out to loose rock and scree.",
+   "evidence": "The Route 2A trip report recommends early summer for snow cover and found mid-July melt already producing difficult moats and loose rock. On the row, season, best_season, beta ('excellent when snow is firm'), approach_variants[0].season and the South Defile waypoint (moats opening by mid-late season) all favour early-to-mid season; seasonal_guidance is the lone outlier and is brought into line.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through September, once the rock has mostly dried out but before the first early-season storms arrive",
+     "value": "Late June through July, while the South Gully and defile still hold consolidated snow over the moats"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "status"
+     ],
+     "expect": "risky",
+     "value": "good"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "expect": "Typically still heavy snow and steep snow/full alpine conditions; the route is outside its documented best-season window and approach/route-finding is significantly harder",
+     "value": "Late June opens the favoured window while the gully and defile hold consolidated snow; earlier in the month the approach can still be snowbound and the upper snow needs an avalanche check"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "good",
+     "value": "optimal"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Early July can still carry lingering snowfields and the small glacier remnant high on the route; conditions generally firm up and the route dries through the month, matching the Mid-July start of the best season",
+     "value": "The best month for this line: snow still fills the defile and bridges the moats, though they widen through the month and a small glacier remnant lingers high on the route early on"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Season / best window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Core of the best-season window: rock is driest, snow patches are minimal, and this is the most reliable month for the standard route",
+     "value": "The gully's snow largely melts out, leaving loose rock, scree and deep moats; still climbable but harder and looser than earlier in the season"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Commitment grade vs a multi-day trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states a commitment grade for this route. The trip report did it in ~10.5 hours of movement; the grade may describe only the climb from camp. Not changed.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Location of the Class 3-4 rock step",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The rock step is where the gully exits onto the East Ridge at the notch; above it the ridge to the summit is Class 2-3.",
+   "evidence": "The Route 2A trip report has the steep snow gully leading to the East Ridge notch, followed by a Class 2-3 scramble on pillow basalt to the summit. On the row, pitch_detail[3], the East Ridge Notch waypoint, beta and approach_variants[0].baseFinding all put the step at the notch; the schedule, day-2 note and `descent` (summit block) are the outliers.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Location of the Class 3-4 rock step",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "From the ridge it's a Class 2-3 scramble on loose-to-solid pillow basalt, with a short Class 3-4 rock step guarding the summit block.",
+     "replace": "A short Class 3-4 rock step gains the ridge, and from there it's a Class 2-3 scramble on loose-to-solid pillow basalt to the summit."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Location of the Class 3-4 rock step",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Gain the East Ridge; stow snow tools if rock takes over.",
+     "value": "Exit onto the East Ridge by a short Class 3-4 rock step; stow snow tools if rock takes over."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Location of the Class 3-4 rock step",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "label"
+     ],
+     "expect": "Class 3-4 step to summit block",
+     "value": "East Ridge scramble"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Location of the Class 3-4 rock step",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "expect": "Short exposed rock step below the true summit.",
+     "value": "Class 2-3 scrambling on pillow basalt along the crest to the true summit."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Location of the Class 3-4 rock step",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "down-climb/rappel the Class 3-4 rock steps off the summit block",
+     "replace": "scramble back down the East Ridge, down-climb/rappel the Class 3-4 rock step at the notch"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Rock type",
+   "verdict": "fixed",
+   "correct_value": "Pillow basalt, not granite.",
+   "evidence": "Inner Constance is built of tilted Eocene pillow basalt (Wikipedia geology entry), and the Route 2A trip report describes basaltic rock and pillow basalt on the East Ridge. watch_out's 'granite and metamorphic rock' is wrong.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Inner_Constance",
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Rock type",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "granite and metamorphic rock severely weathered",
+     "replace": "pillow basalt severely weathered"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Lake Constance quota season",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The NPS Lake Constance Route page recommends early reservations for trips between May 1 and September 30; the NPS wilderness reservations page gives the quota-area summer season as May 15–October 15. The park's two pages disagree, so neither field is changed.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Road-walk mileage within the Crystal Pass variant",
+   "verdict": "fixed",
+   "correct_value": "About 6.5 mi of closed road from the washout to the old road end; the Lake Constance turn-off is part-way along it, not 5.5 mi before the road end.",
+   "evidence": "NPS says the road closure adds about 6.5 miles to reach the old trailhead; WTA says to hike or bike 5+ miles of road above the washout. With the Lake Constance turn-off ~5 mi up (waypoint), '5.5 miles past the turn-off' cannot also be 6.5 mi from the gate. The wrong clause is removed and the 6.5-mile total kept.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.wta.org/go-hiking/hikes/lake-constance"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Road-walk mileage within the Crystal Pass variant",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground",
+     "replace": "past the Lake Constance turn-off to the old Dosewallips Campground"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Washout parking vs road end",
+   "verdict": "fixed",
+   "correct_value": "Vehicle traffic ends and parking is at the washout, about 8.5 miles from US-101.",
+   "evidence": "WTA's Lake Constance guide says to drive 8.5 miles to the washout where vehicle traffic ends, then hike or bike above it; NPS says hikers start at the washout (~700 ft); the Route 2A trip report starts at the road gate at the washout. road.status's 'washout is roughly a mile farther up' is wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Washout parking vs road end",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Drive about 8.5 miles from US-101 to the road-end parking — the washout is roughly a mile farther up the old roadbed — then foot or bike only",
+     "replace": "Drive about 8.5 miles from US-101 to the road-end parking at the washout, then foot or bike only"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Where the route finishes (false summit vs true summit)",
+   "verdict": "unresolved",
+   "correct_value": "Per the route's only description: to the SW false summit, then the final NW Buttress pitch to the true summit",
+   "evidence": "The route page says that after the roof, a few pitches of class 4-low fifth lead to the false summit to the southwest, then the line rejoins the NW Buttress for a final low-angle pitch to the summit proper, and the descent goes down the north side. That supports pitch_detail/baseFinding over overview/descent_text/itinerary, but it is the only independent source found and the row's fields split 3 against 4, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The overview's '3-pitch' describes the crack system and goes on to name the further pitches to the top; pitches and pitch_detail count all six. Framing, not a conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The normal descent is a scramble off the north side into Avalanche Canyon; rappels (off built anchors) are for retreat.",
+   "evidence": "The route page describes the descent as exposed ridge scrambling down the north side to a loose sandy ledge system to the top of Avalanche Canyon. On the row, descent, descent_text, watch_out, itinerary and approach_variants[0].hazards all describe a scrambling descent; only the rappels prose implies rappelling down. Reworded to say rappels are for retreat.",
+   "sources": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_seans_route",
+     "fact": "Descent method",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "double ropes make the descent much less committing.",
+     "replace": "double ropes make a retreat much less committing. The normal descent is a scramble off the north side, not a rappel line."
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Parking pass at the trailhead",
+   "verdict": "fixed",
+   "correct_value": "A Forest Service recreation pass (Northwest Forest Pass, Interagency or Digital pass; $5/day or $30/year) is needed at the Upper Dungeness Trailhead; no park entrance fee is charged on this approach.",
+   "evidence": "The Forest Service Upper Dungeness Trailhead page requires a recreation pass (Digital, Northwest Forest or Interagency) at $5/vehicle/day or $30/year; WTA's Home Lake guide lists an America the Beautiful or Northwest Forest Pass for this trailhead. The NPS entrance-fee claims in access.fees and access.passRequired are wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/upper-dungeness-trailhead",
+    "https://www.wta.org/go-hiking/hikes/home-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_seans_route",
+     "fact": "Parking pass at the trailhead",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "NPS park entrance fee applies",
+     "value": "Upper Dungeness Trailhead day use $5/vehicle/day or $30/year (Forest Service recreation pass)"
+    },
+    {
+     "id": "wa_inner_constance_seans_route",
+     "fact": "Parking pass at the trailhead",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "NPS entrance fee or America the Beautiful pass for vehicle/park access",
+     "value": "Northwest Forest Pass, Interagency Recreation Pass or Digital Pass displayed at the Upper Dungeness Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Approach length",
+   "verdict": "fixed",
+   "correct_value": "Home Lake is a little over 9 miles in (9.3-9.7 mi), reached in one day; the boulder camp is beyond it.",
+   "evidence": "One trail guide gives Home Lake at 9.3 mi and WTA at 9.7 mi from the Upper Dungeness trailhead; both are over 9 mi, so '8.5 miles to basecamp' is short. The approach is a single day to camp in the row's own approach and itinerary, so climate's 'two-day approach' is reworded.",
+   "sources": [
+    "http://www.protrails.com/trail/664",
+    "https://www.wta.org/go-hiking/hikes/home-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_seans_route",
+     "fact": "Approach length",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "approximately 8.5 miles uphill to a basecamp near Home Lake",
+     "replace": "about 9.3 miles uphill to Home Lake and on to a basecamp at the boulders beyond it"
+    },
+    {
+     "id": "wa_inner_constance_seans_route",
+     "fact": "Approach length",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Published approach distance is usually given as about 8.5 miles from the trailhead to basecamp; the northwest face",
+     "replace": "The northwest face"
+    },
+    {
+     "id": "wa_inner_constance_seans_route",
+     "fact": "Approach length",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "fall"
+     ],
+     "find": "a route with a two-day approach",
+     "replace": "a route with a long approach"
+    }
+   ]
+  }
+ ]
+}

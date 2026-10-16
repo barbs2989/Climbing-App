@@ -1,0 +1,347 @@
+{
+ "applied": [
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Number of days for the trip"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Itinerary day mileages vs waypoint distances"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "One-way approach distance"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "column": "rappel_detail",
+   "path": [
+    3,
+    "hazards",
+    1
+   ],
+   "fact": "Whether a 60 m rope reaches the hidden fourth rappel anchor"
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction from Lake of the Woods camp to the Lake Mountain saddle"
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Direction from Lake of the Woods camp to the Lake Mountain saddle"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_dot_mountain_scramble",
+   "before": {
+    "descent_text": "This is an off-trail ridge scramble with no fixed hardware and no rappelling anywhere on it — rappels: 0. The way down is to reverse the ascent line. From Dot Mountain, retrace the ridge crest south, re-negotiating the exposed ledge traverse and class 3 moves on Point 8165 and the class 3–4 crux on Point 8207; both are more awkward downclimbing than climbing, so face in where needed and watch for loose blocks near the crux. Regain the Lago–Carru col and reverse the contour across Mount Lago's loose north-slope talus back down to the 7,400' tarn — parties describe this specific slope as a grinding, ankle-turning scree/talus descent, easier going up than down, so take it slow. From the tarn, drop back into Eureka Creek Basin and climb back over Freds Pass and follow the Middle Fork Pasayten trail up-valley for the long return to the Slate Pass trailhead. Given the total distance (~35–36 miles round trip) and elevation swing, this route is normally done as a 2–3 day trip with a high camp near the Lago–Carru col rather than a single push — so for most parties the 'descent' off Dot Mountain is really the return leg to that high camp, with the longer trail descent to the car following on a subsequent day. No rope, harness, or rappel device is needed anywhere on this route; a helmet for the loose ridge and talus sections is the main safety item worth carrying.",
+    "itinerary": {
+     "cal": "Snow often lingers on the Lago traverse into July, and the Slate Pass access road (FR 5400) typically isn't clear until early-mid summer -- check current conditions before a trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Buckskin Ridge trailhead at Slate Pass, the trail drops off the ridge into the Eureka Creek drainage before climbing again toward the Pasayten high country. Most parties carry full overnight packs and camp somewhere along Eureka Creek to break up the long approach.",
+       "hours": 6,
+       "miles": 9,
+       "title": "Approach to Eureka Creek",
+       "gainFt": 2200,
+       "lossFt": 1200,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach a camp in the Eureka Creek drainage"
+      },
+      {
+       "n": 2,
+       "note": "Continue up out of Eureka Creek toward the Lago-Carru col, then drop slightly to camp near the 7,400 ft tarn below Mount Lago's north slopes. This puts you within striking distance of Dot Mountain for a lighter summit day.",
+       "hours": 5,
+       "miles": 7,
+       "title": "Push to high camp below Mount Lago",
+       "gainFt": 2000,
+       "lossFt": 800,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Reach the 7,400 ft tarn / Lago-Carru col camp"
+      },
+      {
+       "n": 3,
+       "note": "Leave camp at first light with a light pack and traverse Lago's rocky north slopes past Points 8207 and 8165 to the Dot Mountain summit. Strong parties continue the mile-long ridge to Ptarmigan Peak before retracing the traverse back to high camp; the ridge gets knife-edged with some easy class 3 near Pt. 8165.",
+       "hours": 9,
+       "miles": 8,
+       "title": "Summit push over Lago's north slopes to Dot",
+       "gainFt": 1800,
+       "lossFt": 1800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Sunrise",
+         "label": "Leave high camp",
+         "detail": "Light pack, traverse north past Pt. 8207 toward Lago's north slopes."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Cross to Dot Mountain",
+         "detail": "Cross the exposed, occasionally knife-edged ridge past Pt. 8165."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit Dot Mountain",
+         "detail": "Easy walk-up finish; optionally continue the ridge to Ptarmigan Peak."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Reverse traverse",
+         "detail": "Retrace the route across Lago's slopes back toward high camp."
+        },
+        {
+         "time": "Evening",
+         "label": "Back at high camp",
+         "detail": "Long day; some parties nap before continuing toward the trailhead the next day."
+        }
+       ],
+       "objective": "Tag Dot Mountain (and optionally Ptarmigan Peak)"
+      },
+      {
+       "n": 4,
+       "note": "Break camp and reverse the approach back over the Eureka Creek drainage to the trailhead. It's a long descending day with a couple of re-climbs where the trail crosses drainages.",
+       "hours": 7,
+       "miles": 11.2,
+       "title": "Hike out",
+       "gainFt": 500,
+       "lossFt": 3700,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to the Buckskin Ridge / Slate Pass trailhead"
+      }
+     ],
+     "totalNote": "A remote 4-day, roughly 35-mile round trip with about 6,000-7,000 ft of cumulative gain each way; the standard plan backpacks in to a high camp below Mount Lago and tags Dot Mountain (often combined with Ptarmigan Peak) on a long summit day."
+    },
+    "timing": {
+     "totalHrs": 27,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 7,
+     "approachTimeHrs": 11,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "From the Buckskin Ridge trailhead at Slate Pass, the trail drops off the ridge into the Eureka Creek drainage before climbing again toward the Pasayten high country. Most parties c…",
+       "fromTo": "Approach to Eureka Creek",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5,
+       "note": "Continue up out of Eureka Creek toward the Lago-Carru col, then drop slightly to camp near the 7,400 ft tarn below Mount Lago's north slopes. This puts you within striking distance…",
+       "fromTo": "Push to high camp below Mount Lago",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Leave camp at first light with a light pack and traverse Lago's rocky north slopes past Points 8207 and 8165 to the Dot Mountain summit. Strong parties continue the mile-long ridge…",
+       "fromTo": "Summit push over Lago's north slopes to Dot",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7,
+       "note": "Break camp and reverse the approach back over the Eureka Creek drainage to the trailhead. It's a long descending day with a couple of re-climbs where the trail crosses drainages.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail, then off-trail)",
+      "notes": "Roughly 18-25 miles one-way via Slate Pass/Robinson Creek/Tatoosh Buttes or Eureka Creek/Lago-Carru Col trail systems to a high camp on Tamarack Ridge or near Dot Lakes",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Talus and scree slopes from the Ptarmigan-Dot saddle (~7,800 ft) gain the final several hundred feet to the summit",
+      "pitch": "Saddle to summit (north side)"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Narrow, blocky ridge with considerable exposure; documented as never exceeding Class 3, descending toward a loose gully above Dot Lakes",
+      "pitch": "South ridge (from Lago)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "before": {
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "Rappel from the top/Pitch 8 area down to its base, joining the established descent line.",
+      "anchor": "Established bolted/chain anchor at base of Pitch 8",
+      "hazards": [
+       "One party who rappelled from the true top judged there were too many places for the rope to hang up to risk pulling it in one go from here"
+      ],
+      "lengthM": 30,
+      "station": "Rappel the climbing line down to the point where the descent leaves it - the bottom of pitch 8 in the current 8-pitch numbering, also commonly called the bottom of pitch 6 (the same place; the count differs by whether the traverse pitches are numbered). A 70 m rope links the two rappels above it into one full-stretch 35 m shot and skips the semi-hanging belay; a 60 m needs both stations."
+     },
+     {
+      "n": 2,
+      "notes": "First of five further rappels to the ground; use every anchor station with a 60m rope.",
+      "anchor": "Established rappel station",
+      "hazards": [
+       "Rappelling the fall line instead of traversing right lands you on the wrong ground; multiple parties report going too far left here and having to swing back",
+       "One party went so far wrong they considered simul-rappelling because the rock they were on looked very loose"
+      ],
+      "lengthM": 30,
+      "station": "The rappel route leaves the climb here and this is the station people get wrong. From the anchor, go climber's RIGHT along the base of the wall, following a ramp and hugging the wall for about 30 m - not straight down. The published test is blunt: if your body is not touching the wall, you are not far right enough. The anchor is in a narrow gully on the far climber's right, under a small tree."
+     },
+     {
+      "n": 3,
+      "notes": "Continuing down; a 70m rope can link some of these into fewer, longer raps.",
+      "anchor": "Established rappel station",
+      "hazards": [
+       "Having been told to go hard right on the rappel above, parties overcorrect and go too far right on this one"
+      ],
+      "lengthM": 30,
+      "station": "This one is straight down the fall line, close to a full-length rappel. Look for the anchor to climber's LEFT as you come down."
+     },
+     {
+      "n": 4,
+      "notes": "Mid-sequence rappel.",
+      "anchor": "Established rappel station",
+      "hazards": [
+       "This is the station named in the route description as somewhat hidden, and the tree anchor to its left is an active decoy that parties have rappelled to",
+       "A party on a 70 m rope arrived at this anchor with only a couple of metres of rope left; a 60 m barely reaches"
+      ],
+      "lengthM": 30,
+      "station": "The hidden anchor, and the one the route page itself flags. It is NOT straight down: go climber's right over a slight rib into the next gully. Look over the rocky spine for a blue-green gully; the station sits beneath a band of blue-green rock forming the gully wall. There is a big tree down and to the LEFT with a sling on it - that is the wrong gully and the wrong anchor."
+     },
+     {
+      "n": 5,
+      "pull": "The route description warns specifically to take care pulling ropes in the gully because of the volume of loose rock; stand out of the fall line and expect debris to come with the rope.",
+      "notes": "Mid-sequence rappel.",
+      "anchor": "Established rappel station",
+      "hazards": [
+       "Parties report not seeing this anchor until they are on it, so do not assume you have missed it and keep going",
+       "The gully is loaded with loose rock and dirt - one party was showered with gravel while rappelling and pulling, and reported dodging larger blocks"
+      ],
+      "lengthM": 30,
+      "station": "Continues down the gully. The final station sits on a rock directly below the end of the blue-green gully."
+     },
+     {
+      "n": 6,
+      "notes": "Final rappel to the ground.",
+      "anchor": "Established rappel station at base",
+      "hazards": [
+       "A 60 m only just reaches on the last two rappels of this sequence",
+       "Loose rock in the gully above continues to be the hazard until you are out of the fall line"
+      ],
+      "lengthM": 30,
+      "station": "The last station is at the end of the gully, on the climber's right. This rappel trends LEFT, following water-cleaned rock out of the gully to the ground, landing at a steep trail that returns to the start of the climb in a few minutes."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "before": {
+    "approach": "Four approaches reach Monument Peak, all long and remote — this is deep in the Pasayten Wilderness near the Canadian border, and most parties treat it as a 2-3 day trip with a high camp. The most common is via the Monument Creek Trailhead on Lost River Road/FR 5400 (about 22 miles northwest of Winthrop via Mazama), starting at roughly 2,400 ft. From the trailhead, follow Monument Creek Trail No. 484 up the Lost River valley; the first ~4 miles are well-maintained through old-growth forest and along rock slopes to the Eureka Creek confluence (Eureka Falls Camp) — this is your last easy, reliable water before a long dry stretch. Beyond Eureka Creek the trail has been essentially unmaintained for 25+ years, brushy and choked with deadfall, and route-finding becomes real work. Ford Eureka Creek (can run thigh-to-waist deep during snowmelt — a genuine early-summer hazard) then pick up the abandoned tread climbing onto Pistol Ridge, following it up to 7,100-ft Pistol Pass around mile 11. From the pass, descend about a mile on the trail, finishing on a short spur, to Lake of the Woods in the Monument–Lake Mountain basin, a common high camp — about 12 miles and 5,300 ft of gain from the trailhead. From camp, traverse cross-country south to the ~7,400-ft saddle below Lake Mountain, then descend into Lower Monument Basin (~6,100 ft); the lake-outlet creek here is your last dependable water for the summit push and can shrink to a trickle late in the season. From the basin, climb a left-angling ramp system to gain Monument Peak's south/southeast ridge at about 6,900 ft, then follow a long talus traverse toward the summit. The final section involves roughly a half-pitch of Class 3 (locally Class 3-4) scrambling where the ridge merges with the southeast slopes, sometimes complicated by a steep snowfield just below the true summit that can still require an ice axe (or a class 3/4 rock detour around its left side) into midsummer. Three alternative approaches exist: dropping in from 6,960-ft Slate Pass on the Harts Pass Road down to the Robinson Creek Trail No. 478 and Ferguson Lake Trail No. 474A (reportedly the easiest, though not shortest, reaching the same basin from the north); via the Buckskin Ridge Trailhead just past Harts Pass on Trail No. 498, crossing the Middle Fork Pasayten River and picking up Robinson Creek Trail No. 478 then Ferguson Lake Trail No. 474A; or a longer approach from the Lost Creek/Monument Creek trailhead side. Whichever line is used, expect long, remote travel with significant off-trail brush and route-finding on the final miles — carry a map/GPS and budget extra time.",
+    "approach_variants": [
+     {
+      "name": "Lower Monument Basin and the left-angling ramp",
+      "notes": "Monument is the most rugged thing in this group and sits nearly as an island, with Eureka Creek wrapping three sides of it. The travelled approach is the Monument Creek trail from the Lost River road: well maintained through old growth for about four miles to the Eureka Creek confluence, then unmaintained, brushy and deadfall-choked, with a ford of Eureka Creek that can run thigh to waist deep in early summer. From there the abandoned tread climbs onto Pistol Ridge and over Pistol Pass, and most parties camp near Lake of the Woods. Three other approaches exist off Slate Pass and Buckskin Ridge by way of the Ferguson Lake trail and reach the same basin from the north. Summit day is long enough that finishing the last talus by headlamp is common.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Loose blocky talus on the whole upper mountain",
+       "Exposed scrambling on the final summit block",
+       "A snowfield below the summit that can hold firm or icy into midsummer",
+       "Eureka Creek ford, cold and high with early-season snowmelt",
+       "Faint, unmaintained tread beyond Pistol Pass, worse on the return",
+       "Long, remote, multi-day approach with no cell service"
+      ],
+      "baseFinding": "The base of the climb is marked by water, which is convenient because you should be stopping there anyway. From high camp, traverse south to the saddle below Lake Mountain around 7,400 ft, then drop into Lower Monument Basin at roughly 6,100 ft. The outlet creek running from the lake in that basin is the last dependable water on the peak and it sits directly beneath the route; late in the season it can shrink to a trickle but the drainage is still obvious. Fill bottles, then look up and to the left for a ramp system that angles left across the face above you. That ramp is the start of the climbing and it is the feature to identify: it is a continuous weakness slanting up and left, not a gully, and it delivers you onto the south ridge crest at about 6,900 ft. Once you are on the crest the ground flattens into a broad talus highway that runs for well over a mile toward the summit, and that flatness is itself the confirmation that you gained the ridge in the right place rather than on a side rib. Two things mislead near the top. A false summit around 8,000 ft takes a short scramble and looks convincing; the true top is a distinctive leaning horn of granite, so if what you are standing on is not leaning you are not finished. And a steep snowfield sits just below the true summit well into midsummer, which can be crossed with an axe or turned on rock to its left, but should not be glissaded on the way down because it stays firm."
+     }
+    ]
+   }
+  }
+ ]
+}

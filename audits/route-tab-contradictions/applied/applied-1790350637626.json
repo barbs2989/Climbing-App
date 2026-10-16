@@ -1,0 +1,464 @@
+{
+ "applied": [
+  {
+   "id": "wa_cathedral_rock_standard",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Time to reach the summit (summitTimeHrs)"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "2026 fire closure of the Cathedral Pass Trail / trailhead"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Car-to-car time, start time and approach time in partner requirements"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Car-to-car time, start time and approach time in partner requirements"
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "column": "overview",
+   "path": [],
+   "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress"
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "column": "beta",
+   "path": [],
+   "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress"
+  },
+  {
+   "id": "wa_chair_peak_east_face",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Hardest pitch grade / crux grade disagreement"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "Ice grade (route-level ice_grade vs crux pitch grades)"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Ice grade (route-level ice_grade vs crux pitch grades)"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "column": "max_angle",
+   "path": [],
+   "fact": "Crux step angle (max_angle/pitch_detail vs beta/pro_tips/waypoint)"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Total approach gain to the base of the North Face"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs equals the car-to-car total"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs equals the car-to-car total"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cathedral_rock_standard",
+   "before": {
+    "dist_km": 4.8,
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "Nearly all parties do this as a single long day from the Tucquala Meadows trailhead: trail to Cathedral Pass, a boot path past Peggy's Pond to the base of the formation, then a scr…",
+       "fromTo": "Car-to-car scramble day",
+       "section": "Climb"
+      }
+     ]
+    },
+    "access": {
+     "fees": "Northwest Forest Pass required at the trailhead (annual pass $30 as of 2026; day pass also available). The wilderness permit itself is free.",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "rules": "Standard Alpine Lakes Wilderness rules apply: groups capped at 12 people/stock combined (must split into separate parties with 1-mile separation if larger); no campfires above 5,000 ft elevation, which puts Cathedral Pass and any high camp near the peak in the no-fire zone; no bikes, drones, or other wheeled/mechanized equipment; stay on durable surfaces near Squaw Lake and Cathedral Pass to protect marked restoration areas.",
+     "permit": "Free, self-issued wilderness permit — fill out the paper permit at the Cathedral Pass/Tucquala Meadows trailhead kiosk (no quota, no advance reservation; required for both day use and overnight).",
+     "closures": "No route-specific closures found as of mid-2026, but the Cle Elum River corridor has had periodic seasonal restoration-area closures in past years — check current Okanogan-Wenatchee NF alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (Alpine Lakes Wilderness).",
+     "land_manager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (Alpine Lakes Wilderness).",
+     "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+     "passRequired": "Northwest Forest Pass (or an America the Beautiful interagency pass) required at the trailhead.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry your copy."
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong hiking fitness for a ~9-10 mile round trip day with sustained elevation gain, matching the 8-hour car-to-car estimate with a 06:00 start",
+      "packWeight": "Light day pack (roughly 10-15 lb) — no technical rack needed, though a helmet is strongly advised given loose rock near the summit"
+     },
+     "approachTime": "Roughly 4-5 hours from the trailhead to the base of the scramble, within the 8-hour total car-to-car estimate",
+     "requiredSkills": [
+      "Class 3 scrambling and route-finding on loose rock",
+      "Composure on exposed, unroped terrain at the summit block",
+      "Snow travel/self-arrest competence for early-season gully snow",
+      "Off-trail/climber's-trail navigation beyond Cathedral Pass"
+     ],
+     "experienceLevel": "Comfortable, confident Class 3 scrambler; needs solid judgment on loose rock and exposure since the summit block is unroped and holds are frequently loose"
+    }
+   }
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "before": {
+    "overview": "A class 3 gully on Cathedral Rock's northwest side, used both as an alternate ascent line and as the standard descent from the summit.",
+    "beta": "The Northwest Couloir climbs to a chockstone in the upper gully; parties commonly rappel or downclimb past the chockstone. It is frequently used as a descent route after climbing the Southwest Face or Northeast Buttress. The couloir holds notably loose, fractured rock."
+   }
+  },
+  {
+   "id": "wa_chair_peak_east_face",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "5.1-5.6",
+      "notes": "Climb either side of a narrow chimney to a short, wide roof; gear anchor at a good crack",
+      "pitch": "P1",
+      "lengthM": 50
+     },
+     {
+      "grade": "4th class",
+      "notes": "Traverse left under the roof; very little protection — use anchor spots as they appear",
+      "pitch": "P2",
+      "lengthM": 40
+     },
+     {
+      "grade": "3rd/4th class",
+      "notes": "Easy terrain trending right to a notch onto the Northeast Buttress; simul-climbing option",
+      "pitch": "P3",
+      "lengthM": 40
+     },
+     {
+      "grade": "3rd class, occasional 4th",
+      "notes": "Mostly 3rd class with a few 4th-class moves up the left side of the NE face toward the summit",
+      "pitch": "Scramble",
+      "lengthM": 52
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "AI3",
+      "notes": "Starts at the bergschrund/base of the face and climbs through a band of ice bulges on steepening ground up to roughly 70°; the center line generally holds better, more consolidated ice than the thin, downsloping rock slabs off to climber's right. Belay is built with screws once the angle eases on a shoulder partway up the face.",
+      "pitch": 1,
+      "anchor": "Ice screw anchor",
+      "lengthM": 55
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "AI2",
+      "notes": "A full rope-length of sustained steep snow (roughly 50-60°) up the exposed face to a stout tree belay; conditions swing between firm neve good for standard axe placements and harder ice bulges that force a switch to front-pointing/piolet traction.",
+      "pitch": 2,
+      "anchor": "Tree (sling)",
+      "lengthM": 60
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "AI2",
+      "notes": "Moderate snow and mixed ground weaving past small rock bands, using scrub trees for protection and the belay; in fast, stable conditions parties commonly simul-climb this pitch together with pitch 2 rather than belaying it separately.",
+      "pitch": 3,
+      "anchor": "Tree anchor",
+      "lengthM": 50
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "AI3",
+      "notes": "Steepens again to 50-70° snow and ice on the final headwall, sometimes including a short verglassed mixed/rock step, to a small col about 60 ft below the summit block; the belay sits near the often-corniced summit ridge, watch for cornice lip. From here it's an unroped scramble of about 20 ft of blocky rock to the true summit.",
+      "pitch": 4,
+      "anchor": "Picket / tree belay",
+      "lengthM": 50
+     }
+    ],
+    "max_angle": 70,
+    "approach": "Park at the upper Alpental parking lot (end of Alpental Road, shared with the Snow Lake / Source Lake trailhead). Pick up the maintained Alpental Valley trail, which runs along and above the South Fork Snoqualmie River on the old ski-area service road/cat track for about the first 0.5 mile before narrowing to a standard trail. Continue up-valley roughly 1.5-2 miles, climbing gently through forest and avalanche-path brush with Chair Peak's north side visible ahead; a boot path forks off the main Source Lake/Snow Lake trail toward Source Lake and the basin below Chair Peak's east/north aspect (~4200 ft). From the basin, ascend talus and (in season) a snow apron directly toward the base of the north face at the head of the Alpental cirque, aiming for the obvious snow/ice runnel system below the summit block. Total approach gain to the base is roughly 1,300-1,500 ft over about 2.5-3 miles one-way. Hazards: the valley floor and lower slopes cross active avalanche paths below Chair Peak, Snoqualmie Mountain, and The Tooth, so this is a serious slide-prone approach in winter/spring — most parties go early and move quickly through the runout zones; there is also a creek crossing near Source Lake that can be tricky at high flow, and the basin below the face holds a moat late-season that can complicate the final approach to the ice.",
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "4:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "Standard winter/spring outing from the Alpental upper lot: hike/skin past Source Lake into the basin below Chair Peak, then climb 4 short pitches of snow/ice up the North Face gull…",
+       "fromTo": "Car-to-car: approach, climb the North Face, descend",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "before": {
+    "grade": "Class 5.6",
+    "pitch_detail": [
+     {
+      "grade": "Class 4 / M1-4 (var.)",
+      "notes": "S-shaped gully on climber's right; conditions vary from easy snow to mixed climbing; a left slab variation exists. Tree anchor.",
+      "pitch": "P1"
+     },
+     {
+      "grade": "Easy snow",
+      "notes": "Long pitch (70-80m) to the base of the ice bulge.",
+      "pitch": "P2"
+     },
+     {
+      "grade": "AI2-3 (winter) / 5.4-5.6 (dry)",
+      "notes": "The route's crux - an obvious, steep ice bulge (or rock step when dry); awkward anchor placement above.",
+      "pitch": "P3"
+     },
+     {
+      "grade": "Steep snow / Class 3-4",
+      "notes": "Leads to the summit saddle; many parties unrope for the final scrambling.",
+      "pitch": "P4"
+     }
+    ],
+    "pro_tips": [
+     "A Cascade classic, popular in both summer and winter",
+     "Helmet essential for the variable rock",
+     "From the base, follow the blocky gully down-right of the ridge divide, then angle left across slabby ledges to a cluster of trees near the buttress's prow before following the crest to the top — about 400 ft of mostly Class 3-4 with one short 5.6 step."
+    ],
+    "waypoints": [
+     {
+      "lat": 47.44542,
+      "lng": -121.42353,
+      "elev": 3100,
+      "name": "Alpental / Snow Lake Trailhead",
+      "note": "Self-serve day-use fee kiosk (Northwest Forest Pass or $5/day); trail departs the north end of the upper Alpental Ski Area parking lot.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From I-90 Exit 52, follow Alpental Road to its end and park in the upper Alpental lot (~3,100 ft). The trail leaves from the north end of the lot. Self-serve fee kiosk — Northwest Forest Pass or $5/day."
+     },
+     {
+      "lat": 47.453472,
+      "lng": -121.4479,
+      "elev": 3800,
+      "name": "Source Lake Trail junction",
+      "note": "Leave the maintained Snow Lake Trail here toward Source Lake and Chair's east basin.",
+      "type": "Junction",
+      "distMi": 1.8,
+      "directions": "The first half mile follows the old ski-area cat track before it becomes standard trail, then climbs gently through forest. Stay on the maintained Snow Lake Trail until the Source Lake fork — that is where you leave it."
+     },
+     {
+      "lat": 47.45608,
+      "lng": -121.455983,
+      "elev": 4900,
+      "name": "Thumb Tack",
+      "note": "Large rock landmark in Chair's east basin; skis or packs are often cached here before ascending toward the buttress.",
+      "type": "Junction",
+      "distMi": 2.4,
+      "directions": "Leave the maintained trail at the fork and continue cross-country on boot path toward the basin under Chair's east face, roughly half a mile to a mile of talus, heather and (early or mid season) snow. The Thumb Tack is the large rock landmark once you are in the basin; parties commonly cache skis or packs here."
+     },
+     {
+      "lat": 47.457384,
+      "lng": -121.460025,
+      "elev": 5100,
+      "name": "Buttress base / entry gully",
+      "note": "Blocky entry gully gains low-angle blocky rock leading toward the buttress prow; rope up here for sustained Class 5.6 climbing above.",
+      "type": "Junction",
+      "distMi": 2.7,
+      "directions": "From the Thumb Tack climb a short snow gully, about 300 ft, to gain the crest of the ridge that forms the Northeast Buttress. This gully sits under avalanche terrain coming off Chair and Snoqualmie Mountain and is a known early-season slide path — most parties carry axe and crampons from the basin onward and rope up at the base of the blocky entry gully."
+     },
+     {
+      "lat": 47.458687,
+      "lng": -121.464067,
+      "elev": 5800,
+      "name": "Tree cluster near buttress prow",
+      "note": "Notable stand of trees used as a belay stance on the ascent and as the first rappel anchor on the descent.",
+      "type": "Junction",
+      "distMi": 3,
+      "directions": "Follow the ridge crest up low-angle blocky rock from the entry gully to the stand of trees on the prow. This is the usual belay stance on the way up, and the first rappel anchor on the way down."
+     },
+     {
+      "lat": 47.45955,
+      "lng": -121.46675,
+      "elev": 6238,
+      "name": "Chair Peak summit",
+      "note": "True summit is the uncorniced center section with rock underneath; the northeast side is heavily corniced.",
+      "type": "Summit",
+      "distMi": 3.2,
+      "directions": "Continue up the buttress — four to five pitches of class 3-4 with big exposure. The true summit is the uncorniced centre section with rock underneath it; the northeast side is heavily corniced, so stay well back from the lip."
+     },
+     {
+      "lat": 47.458502,
+      "lng": -121.463491,
+      "elev": 6000,
+      "name": "Notch/saddle in main ridge",
+      "note": "Downclimb the SE-facing gully from the true summit to this notch before the rappels; steep unconsolidated snow up to about 70 degrees.",
+      "type": "Hazard",
+      "directions": "Descending: from the true summit, downclimb the southeast-facing gully to the notch in the main ridge. Steep unconsolidated snow, up to roughly 70 degrees."
+     },
+     {
+      "lat": 47.457615,
+      "lng": -121.460744,
+      "elev": 5800,
+      "name": "Fixed rappel anchor at rock buttress",
+      "note": "Double-rope rappel from a fixed anchor here down to the tree cluster, then continue rappelling and downclimbing to the base of the buttress.",
+      "type": "Hazard",
+      "directions": "From the notch, continue to the fixed anchor on the rock buttress. A double-rope rappel from here reaches the tree cluster, then keep rappelling and downclimbing to the base of the buttress and reverse the approach."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-high fitness for a ~2 hour approach with real elevation gain from Alpental/Snow Lake trailhead into the Source Lake basin, plus the multi-pitch climb and descent, totaling a 5-8 hour car-to-car day",
+      "packWeight": "Light-moderate day pack (rock rack, rope, helmet, approach shoes/boots); heavier in winter with ice tools/screws and extra layers"
+     },
+     "approachTime": "About 2 hours from the Alpental/Snow Lake trailhead to the base of the buttress",
+     "requiredSkills": [
+      "4th class and low 5th class (5.6) scrambling with exposure",
+      "rope management and belaying on a multi-pitch alpine route",
+      "anchor building and rappelling",
+      "rockfall awareness and loose-rock management (serious party-caused rockfall hazard)",
+      "basic route-finding in an alpine cirque"
+     ],
+     "experienceLevel": "Intermediate alpine climber - comfortable on low 5th class rock with sustained exposure and loose rock; prior multi-pitch/scrambling experience expected (this is a standard Mountaineers 'Basic Alpine Climb' objective)"
+    },
+    "timing": {
+     "totalHrs": 11.5,
+     "summitTimeHrs": 11.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 11.5,
+       "note": "A popular moderate alpine rock outing from the Alpental upper lot: approach past Source Lake into the basin, then climb 4-5 pitches of easy class 3-4 rock with big exposure up the …",
+       "fromTo": "Car-to-car: approach, climb the Northeast Buttress, descend",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

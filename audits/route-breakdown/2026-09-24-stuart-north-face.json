@@ -1,0 +1,76 @@
+{
+  "verdict": "DELETE",
+  "route_id": "wa_mount_stuart_north_face",
+  "area": "wa_mount_stuart",
+  "verdict_note": "No real climb on Mount Stuart is called, or commonly referred to as, the 'North Face'. The row's only distinguishing data (IV, 5.8, AI2) is the Ice Cliff Glacier row's own facts: its beta already gives AI2 ice on the left flank and a 5.8 slab on the right, and an earlier catalog audit flagged the row as a likely duplicate of Ice Cliff Glacier. So the grade came from Ice Cliff Glacier, but the row describes no line of its own. It has nothing to merge into wa_mount_stuart_ice_cliff_glacier, and the row's prose says no such route exists. Delete it rather than repurpose it. BEFORE DELETING: check with the service key for anything keyed on route_id = 'wa_mount_stuart_north_face' (contributions, comments, climb_logs, wishlists or lists, crews). The 2026-08-09 audit held off deleting for exactly this reason, and that check was not run here because this task was read-only. If rows exist, move them to wa_mount_stuart_ice_cliff_glacier (the closest match) or ask the owner, then delete.",
+  "candidates": [
+    {
+      "name": "Ice Cliff Glacier",
+      "location": "NE side, the Ice Cliff Glacier cirque east of the North Ridge; icefall, then the upper couloir to the ridge below the false summit (~8,600 ft)",
+      "grade": "II-III, AI2-3 (55-70 deg snow/ice); 5.8 slab alternative on the icefall's right side in late season",
+      "length": "about 2,000 ft (catalog length_m 610)",
+      "first_ascent": "Bill Prater, Gene Prater, Dave Mahre, 5 Aug 1957",
+      "in_catalog": "YES: wa_mount_stuart_ice_cliff_glacier",
+      "relation": "This is where the row's AI2 + 5.8 comes from; previously self-flagged as the likely source of this row."
+    },
+    {
+      "name": "Stuart Glacier Couloir",
+      "location": "N/NW side, couloir above the Stuart Glacier to the West Ridge notch, then up the West Ridge and across the upper north face",
+      "grade": "IV, WI2-3 M5- (low to mid 5th on rock; about 5.7 on a left-side variation)",
+      "length": "1,700 ft, about 6 pitches on the ridge",
+      "first_ascent": "Helmy Beckey and Larry Strathdee, June 1944",
+      "in_catalog": "YES: wa_mount_stuart_stuart_glacier_couloir",
+      "relation": "The only Grade IV north-side ice line. Its upper pitches cross the north face, but no source calls it 'North Face', and its ice grade is WI2-3 rather than AI2 alone."
+    },
+    {
+      "name": "Lara Kellogg Memorial Route",
+      "location": "Upper northeast face above the Ice Cliff Glacier",
+      "grade": "IV WI6 A1 (single secondary source; the FA trip report page did not load)",
+      "length": "unknown",
+      "first_ascent": "Colin Haley and Dylan Johnson, 29 Apr 2007 (described as a new variation on the NE face)",
+      "in_catalog": "NO",
+      "relation": "A real NE-face line that is not in the catalog, but it is steep ice and aid (WI6 A1), nowhere near 5.8/AI2. The row does not describe it, and sources are too thin to write a route page, so it is not a repurpose target."
+    },
+    {
+      "name": "Northeast face / east headwall routes (1960 and 1961)",
+      "location": "Ice Cliff Glacier cirque headwall. The 1960 line runs from the upper basin via the NE face to the North Ridge just below the Great Gendarme. The 1961 line (Fred Beckey and Ron Niccoli, 14-15 Aug) takes a spiral ledge system, then the east headwall to the summit crest.",
+      "grade": "1961: about 1,500 ft of roped free climbing with pitons on nearly every pitch; no YDS grade given",
+      "length": "about 1,500 ft (1961)",
+      "first_ascent": "1960 party unnamed in the source; 1961 Beckey and Niccoli",
+      "in_catalog": "NO",
+      "relation": "Obscure historical rock lines on the east/NE headwall, not a 'North Face' and not AI2 ice. No modern description was found, so they are not a repurpose target."
+    },
+    {
+      "name": "Always the Cowboy, Never the Cow",
+      "location": "Mt Stuart (listed on Mountain Project; face not confirmed)",
+      "grade": "AI5 M5",
+      "length": "unknown",
+      "first_ascent": "unknown",
+      "in_catalog": "NO",
+      "relation": "A modern hard mixed line. Its grade does not match, and no description could be retrieved."
+    }
+  ],
+  "evidence": "Mountain Project's full Mt Stuart list (15 routes) has no 'North Face' route and nothing graded 5.8 with AI2. Its routes are Always the Cowboy, Cascadian Couloir, Direct North Ridge, Girth Pillar, Gorillas Direct, Gorillas in the Mist, Ice Cliff Glacier AI2-3, King Kong, North Ridge, Sherpa Glacier, South Headwall 5.8, Stuart Glacier Couloir WI2-3 M5-, Stuart Range Traverse, Ulrich's Couloir and West Ridge. Wikipedia, The Mountaineers' route pages, guide services and the other reports consulted all use 'north face' only for the face as terrain, which is split among the North Ridge, Stuart Glacier Couloir, Ice Cliff Glacier, Sherpa Glacier and Girth Pillar, never as a route name. 'IV 5.8 AI2' combines facts that belong to Ice Cliff Glacier (AI2 left side, 5.8 slab right side) with a Grade IV from the neighbouring north-side routes. The 2026-08-09 audit (batch-90) had already flagged the row as a likely duplicate of Ice Cliff Glacier, and verify-3 ruled that the identity claim was false. The row holds no pitches, no length and no route-specific prose, and its own beta says the route does not exist.",
+  "sources": [
+    "https://www.mountainproject.com/area/105996601/mt-stuart",
+    "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+    "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mt-stuart-ice-cliff-glacier",
+    "https://en.wikipedia.org/wiki/Mount_Stuart",
+    "http://publications.americanalpineclub.org/articles/12196136200/North-America-United-States-WashingtonCascades-Mount-Stuart-East-Face",
+    "https://climberkyle.com/2020/03/22/forgotten-cascade-alpine-ice-routes/",
+    "https://cascadeclimbers.com/forum/topic/50501-tr-mt-stuart-lara-kellogg-memorial-route-fa-4292007/",
+    "https://www.planetmountain.com/en/news/alpinism/colin-haley-mountain-climbing-from-alaska-to-patagonia.html",
+    "https://alpinist.com/newswire/mount-stuart-activity/",
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/",
+    "audits/sql/2026-08-09-batch-90.sql (prior self-flag as Ice Cliff Glacier duplicate)",
+    "audits/route-breakdown/2026-09-24-verify-3.json (identity REFUTED)"
+  ],
+  "proposal": {
+    "action": "delete_row",
+    "route_id": "wa_mount_stuart_north_face",
+    "area_id": "wa_mount_stuart",
+    "precondition": "Run a service-key count of rows referencing route_id 'wa_mount_stuart_north_face' in every table with a route_id or route reference. If any exist, move them to 'wa_mount_stuart_ice_cliff_glacier' first. Then recount the areas.route_count for wa_mount_stuart (npm run check:counts).",
+    "fallback_if_delete_refused": "Mark it unverified or hidden rather than writing any prose: no real route exists to describe."
+  }
+}

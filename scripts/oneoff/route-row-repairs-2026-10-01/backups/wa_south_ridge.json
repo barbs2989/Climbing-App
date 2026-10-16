@@ -1,0 +1,31 @@
+{
+ "id": "wa_south_ridge",
+ "name": "South Ridge",
+ "waypoints": [
+  {
+   "lat": 48.2595,
+   "lng": -121.2229,
+   "elev": 1440,
+   "name": "Downey Creek Trailhead",
+   "note": "Corrected - previous waypoints incorrectly placed this route ~59 miles away at Amphitheater Mountain (Pasayten Wilderness), a research error. South Peak is actually part of the Gunsight Range, Glacier Peak Wilderness - same remote 2-day approach as Middle Peak (Downey/Bachelor Creek trail to Itswoot Ridge, Dome-Chickamin col, Chickamin Glacier).",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Darrington, drive SR-530 north about 8 miles to the Suiattle River Road (FS Road 26) and follow it east about 20 miles to the Downey Creek Trailhead, at about 1,450 ft. The trail starts just past the Downey Creek bridge on the north side of the road; parking is on the south side. The Suiattle River Road is prone to washout closures, so check its status before going."
+  },
+  {
+   "lat": 48.303,
+   "lng": -120.99439,
+   "elev": 8100,
+   "name": "South Peak (Gunsight Range)",
+   "note": "A real, distinct summit — the southernmost of four named summits (Northeast/North/Middle/South) along one short ridge crest, reached last in a north-to-south traverse after Middle Peak. This coordinate is a disclosed geometric estimate ~0.2mi south of Middle Peak's position (48.30571,-120.99439) along the ridge, not a directly measured fix.",
+   "type": "Summit",
+   "distMi": 17.5
+  }
+ ],
+ "approach_logistics": {
+  "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+  "trailheadLat": 48.2591,
+  "trailheadLng": -121.2244,
+  "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+ }
+}

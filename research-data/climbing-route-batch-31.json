@@ -1,0 +1,69 @@
+{
+  "wa_sherman_peak_baker_route": {
+    "area": "wa_sherman_peak_baker",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Easton Glacier above the toe",
+        "notes": "Rope up for glacier travel around 6,800–7,200 ft (conditions-dependent) and ascend the Easton Glacier heading north, angling slightly west toward Sherman Peak; the standard line stays east (climber's right) of the glacier's major crevasse bands. Route-finding through the crevasse field shifts season to season, and wanding the route is standard practice given frequent whiteout/cloud cap conditions on Baker's south side."
+      },
+      {
+        "n": 2,
+        "label": "Sherman Crater rim",
+        "notes": "Above roughly 9,600–9,800 ft the route skirts the rim of Sherman Crater, where active fumaroles vent sulfurous steam (occasionally noticeable by smell and visible venting). Stay on the established boot path here and keep gear away from the acidic, degraded rock near the vents."
+      }
+    ]
+  },
+  "wa_sloan_peak_r1": {
+    "area": "wa_sloan_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach is a one-line cross-reference that names but never describes the climbing: \"joining the Sloan Glacier crossing before the final west-face scramble to the summit.\" There is no ground, rock quality, direction or hazard detail to re-home."
+  },
+  "wa_south_twin_sister_north_ridge": {
+    "area": "wa_south_twin_sister",
+    "climbing_route": [],
+    "skip_reason": "The text stops at the base: \"the saddle/notch between North Twin's southeast ridge and South Twin's north ridge, around 5,800 ft — this saddle is the actual start of the route.\" Everything after that is about the approach's own route-finding crux, not the ridge."
+  },
+  "wa_summit_chief_mountain_north_face": {
+    "area": "wa_summit_chief_mountain",
+    "climbing_route": [],
+    "skip_reason": "The text stops below the climb: \"then climb to a camp below the north face. The FA party's full approach from vehicle to camp took about 6.5 hours.\""
+  },
+  "wa_switchback_mountain_scramble": {
+    "area": "wa_switchback_mountain",
+    "climbing_route": [],
+    "skip_reason": "Both trailhead descriptions stop where the route begins — \"climb to Cooney Pass and the SE Ridge from there\" and \"2.2 more miles to Cooney Lake (7,200 ft) to join the same summit route.\" The summit route itself is never described."
+  },
+  "wa_tepeh_towers": {
+    "area": "wa_main_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach text describes a DIFFERENT peak's climb — \"climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit\" — and the text itself flags this: \"IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area.\" Tepeh Towers are only \"passed along this same glacier traverse\"; no climbing on the towers is described."
+  },
+  "wa_three_queens_standard": {
+    "area": "wa_three_queens",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower south-face talus",
+        "notes": "From the base of Three Queens' south-face talus it is off-trail talus and scree for the remaining 1,400-1,700 ft of gain; the lower ~1,000 ft is moderately angled, largely stable large talus."
+      },
+      {
+        "n": 2,
+        "label": "Upper choss gullies",
+        "class": "class 2",
+        "notes": "Above the lower talus the rock turns smaller and looser, funneling into choss gullies that run generally class 2 with short class 3 sections higher up. A snow ramp (commonly encountered around 5,200 ft) can persist into midsummer on some lines, so carry an ice axe for early-season attempts. Loose rock and rockfall are the dominant hazards through the upper talus and gullies — wear a helmet and keep the group tight so climbers aren't stacked below one another."
+      },
+      {
+        "n": 3,
+        "label": "Final 400 ft to the high point",
+        "class": "class 3",
+        "notes": "The final ~400 ft to the 6,693-ft high point is the most exposed scrambling on the route, with brief but genuine class 3 moves and blocks that can shift underfoot; guidebook descriptions of this section as 'class 3' are considered generous by several parties who found it heads-up the whole way."
+      }
+    ]
+  },
+  "wa_trapper_mountain_north_couloir": {
+    "area": "wa_trapper_mountain",
+    "climbing_route": [],
+    "skip_reason": "The text stops at the base: \"From the lake, boot or skin directly to the base of the obvious north-facing couloir splitting the summit block, switching to crampons/ski (ascent) plates as the snow firms up higher on the route.\" The couloir itself is never described."
+  }
+}

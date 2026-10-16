@@ -1,0 +1,331 @@
+{
+ "file": "r083.json",
+ "results": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Which route the row describes (2017 West Ridge vs standard east ridge)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2017 first-ascent trip report confirms a separate route: the West Ridge ('Bring The Noise'), gained from the crest saddle just east of West Peak and traversed east over the sub-summits Beep and Honk, with belayed climbing to 5.8 and a couple of 5.9 sequences, a double-rope rappel, an unplanned bivy, and a descent by rappel off the summit ridge then the Otto-Himmel gully to Crescent Creek Basin. So the name/overview/hazards describe that route, while rock_grade, pitch_detail, climbing_route, descent, rappels, pro_needs, face and aspect describe the 1961 east ridge (class III per the 1962 AAJ). Only one source documents the West Ridge, and fixing it means rewriting most of the row (and the overview's 'grade not recorded' is itself wrong: the FA report gives up to 5.9) — left open for an owner decision on what this row should be.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Aspect",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2017 FA report has the West Ridge approached from the saddle east of West Peak and climbed eastward along the crest to the summit, i.e. a west-facing ridge line not reached from the Otto-Himmel col; aspect S and the face text describe the south-side col approach of the standard route. Depends on the unresolved route-identity question; only one source for the West Ridge.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Side of the col descended",
+   "verdict": "fixed",
+   "correct_value": "The retreat from the col goes back down its south side into Crescent Creek Basin, which can itself be harder late season than the scramble above.",
+   "evidence": "The 2017 party descended from the Otto-Himmel gully to their Crescent Creek Basin camp via a rappel station above a giant chockstone and face-in snow downclimbing. A traverse party descending south from the col into Crescent Creek Basin in August used three rappel anchors before kicking down the snow finger; the north side leads to the Mustard Glacier. So the retreat is down the south side and it does get harder late season; only the side named in climbing_route was wrong.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Side of the col descended",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "getting back down its north side late in the season can be harder than the scramble above",
+     "replace": "getting back down into Crescent Creek Basin late in the season can be harder than the scramble above"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Trailhead location",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "48.6866, -121.2712 (Upper Goodell Creek Group Camp trailhead, ~600 ft)",
+   "evidence": "Climbing write-ups place the climbers' trailhead at the Upper Goodell Creek Group Campground, reached by following the road uphill from the T-junction, at about 600 ft. USGS 3DEP gives ~611 ft at the pin/approach_logistics coordinate (48.68664, -121.27121) but ~483 ft at the prose coordinate (48.6733, -121.2658), which sits near Goodell Creek's mouth by the lower campground and contradicts the prose's own 'about 600 ft'. The pin, approach_logistics name ('Upper Goodell Group Camp trailhead') and the stated elevation all agree; the prose coordinate is the outlier.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.2658&y=48.6733&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Trailhead location",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(48.6733, -121.2658, about 600 ft)",
+     "replace": "(48.6866, -121.2712, about 600 ft)"
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Trailhead location",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Trailhead at 48.6733, -121.2658, roughly 600 ft.",
+     "replace": "Trailhead at 48.6866, -121.2712, roughly 600 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Whether the camp zone permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Crescent Creek (and Terror Basin) cross-country zones are walk-up only; not reservable in advance.",
+   "evidence": "The park's cross-country zones page states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that the remaining cross-country zones (including Terror Basin and Crescent Creek) are walk-up only. The park's backcountry reservations page repeats the same list and says most cross-country zones can only be obtained in person at a permit station. The 60/40 reservable split applies park-wide, not to these zones. The row's own camp cards already say walk-up only.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Reserve on Recreation.gov (watch the mandatory safety video and email noca_wilderness@nps.gov within three days of your trip start, then print the permit), or take your chances on walk-ups: roughly 40% of sites are held for same-day or next-day issue.",
+     "replace": "The Terror Basin and Crescent Creek cross-country zones cannot be booked ahead: their permits are walk-up only, issued in person the day of or the day before your trip."
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "This zone is walk-up only: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before your trip."
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin and Crescent Creek cross-country zones are walk-up only, issued in person at the Marblemount Wilderness Information Center)"
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "find": "reserved on Recreation.gov and printed before you go",
+     "replace": "picked up in person at Marblemount, since the zones here are walk-up only"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Rappels on the south side of the Otto-Himmel col",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "rappels says none are required on the standard south-side descent, but the 2017 FA party rappelled from a station above a giant chockstone in the Otto-Himmel gully on the way to Crescent Creek Basin, and an August traverse party used three rappel anchors descending the south side of the col. Seasonal snow cover likely decides it; the exact wording of a seasonal rappel note was not settled, so no patch.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found giving a commitment grade (II, III or IV) for Ottohorn's east ridge/southeast route; the 1962 AAJ and 2004 AAJ accounts give only class III / class 4. Left open.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Difficulty of the standard line (5.7 vs class 3)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 1962 AAJ first-ascent account gives class III via the east ridge from the col; the 2004 enchainment account rates the east ridge class 4; a 2011 party found fresh rockfall 30 ft below the summit ridge and climbed two juggy 5.7 pitches around the corner as a bypass. So the standard line is class 3-4 and 5.7 is a conditions-driven variation, but the row's name, pro_tips and pitch_detail present the 5.7 pitches as part of this 'Southeast Route', and the grade column is also in dispute (commitment unresolved). Correcting rock_grade/grade/pitch_detail/descent_text together needs an owner decision on whether this row includes the 5.7 variation.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-5.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Approach line at the cairn (Terror Basin path vs Terror Creek)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources agree the cairn/stone arrow at ~1,700 ft is where the climbers' path turns uphill toward Terror Creek and the Barrier, and the 2017 party bound for Crescent Creek Basin forded Terror Creek, climbed through Stump Hollow and over the Barrier — the line the approach text describes — so the pro tip's 'staying straight at the cairn' looks wrong. But that report also mentions a later junction with the Terror Basin trail after the creek, so the pro tip may be describing that fork misplaced; could not confirm which, so no patch.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Cairn / turnoff elevation and distance",
+   "verdict": "fixed",
+   "correct_value": "about 1,700 ft",
+   "evidence": "The stone arrow marking the turnoff to the Terror Creek path is at 1,700 ft at the end of about 4 miles of old roadbed; another approach description puts the stream crossing at ~3.5 miles and ~1,700 ft with the cairn just beyond. The row's approach and approach_variants say ~1,700 ft; USGS 3DEP gives ~1,895 ft at the pin, nowhere near 3,200. distMi 4 fits the 3.5-4 mile range and is left alone.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Cairn / turnoff elevation and distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 3200,
+     "value": 1700
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Crescent Creek Basin camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No two sources agree on a single Crescent Creek Basin camp elevation: one report camps at the ~6,400 ft saddle near the Chopping Block, the 2017 party camped 'below Terror', and parties use several benches; USGS gives ~5,420 ft at the camp pin. Left open.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Glacier on the approach",
+   "verdict": "fixed",
+   "correct_value": "The Mustard Glacier lies on the north side of the Otto-Himmel col and is not on this route's approach.",
+   "evidence": "A north-to-south traverse party reached the col from the Mustard Glacier side (north) and descended south into Crescent Creek Basin; a 2011 traverse party planned to descend by glacier from the col's far side toward Frenzel Spitz. The route's own approach and descent_text stay on the south (Crescent Creek) side, so the Mustard Glacier crevasse item is removed. Whether the Crescent Creek Basin snowfields carry crevasses (crevasse card vs 'non-glaciated' avalanche note) was not settled and is left as is.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+    "https://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-5.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Glacier on the approach",
+     "op": "set",
+     "column": "obj_haz",
+     "path": [],
+     "expect": [
+      "loose rock at and above the col",
+      "bergschrund/moat at the col late season",
+      "crevasses on the Mustard Glacier approach",
+      "rockfall"
+     ],
+     "value": [
+      "loose rock at and above the col",
+      "bergschrund/moat at the col late season",
+      "rockfall"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Whether the camp zone permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Crescent Creek cross-country zone is walk-up only; not reservable in advance.",
+   "evidence": "The park's cross-country zones page states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that the remaining cross-country zones (including Terror Basin and Crescent Creek) are walk-up only. The park's backcountry reservations page repeats the same list and says most cross-country zones can only be obtained in person at a permit station. The 60/40 reservable split applies park-wide, not to these zones. The row's own camp cards already say walk-up only.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before",
+     "replace": "The Crescent Creek cross-country zone cannot be reserved in advance; its permits are walk-up only, obtained in person up to a day ahead"
+    },
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "As of the park's current process, reserve on Recreation.gov or request via email to noca_wilderness@nps.gov, watch the mandatory backcountry video, and print/carry the signed permit.",
+     "replace": "The zone is walk-up only: pick up the permit in person at the Marblemount Wilderness Information Center and carry it on the trip."
+    },
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "This zone is walk-up only: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before your trip."
+    },
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin and Crescent Creek cross-country zones are walk-up only, issued in person at the Marblemount Wilderness Information Center)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Rappels on the south side of the Otto-Himmel col",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "descent_text says the south-side return does not require rappelling under normal conditions and rappels is '0', but the 2017 FA party rappelled from a station above a giant chockstone in the Otto-Himmel gully descending to Crescent Creek Basin, and an August traverse party used three rappel anchors on the south side. Likely seasonal; wording not settled, no patch.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+   ],
+   "patches": []
+  }
+ ]
+}

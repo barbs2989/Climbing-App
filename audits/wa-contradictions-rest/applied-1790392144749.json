@@ -1,0 +1,425 @@
+{
+ "applied": [
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead named in GETTING THERE"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead named in GETTING THERE"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit for a day climb"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trail distance to the saddle"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elevFt"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel anchor location"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "descent",
+   "path": [],
+   "fact": "Rappel anchor location"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Climbing-permit threshold stated in access notes"
+  },
+  {
+   "id": "wa_scramble_route",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Which section is the Class 4 bypass"
+  },
+  {
+   "id": "wa_scramble_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best season / whether May-June is the Monitor Ridge window"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "May",
+    "status"
+   ],
+   "fact": "Best season / whether May-June is the Monitor Ridge window"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "May",
+    "reason"
+   ],
+   "fact": "Best season / whether May-June is the Monitor Ridge window"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Best season / whether May-June is the Monitor Ridge window"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking fee at Climbers Bivouac"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance and gain in partner requirements"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Glacier / rope on the route"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass for this trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "before": {
+    "road": {
+     "name": "Eagle Peak Trailhead, Longmire, Mount Rainier NP (Tatoosh Range access)",
+     "status": "Paved park road to Longmire year-round (weather permitting).",
+     "driveNote": "From the Nisqually (SW) entrance, drive via Longmire and Paradise to the Stevens Canyon Road junction, then east about 1.5 miles to the Reflection Lakes pullouts; the Pinnacle Peak/Castle trailhead is on the south side of the road, directly across from the lakes. In winter, park instead at the year-round Narada Falls lot and approach on skis/snowshoes.",
+     "seasonalGate": "Gated and closed by snow roughly mid-October through late May/early June, depending on snowpack; also subject to intermittent summer closures for road-rehab construction — check NPS road status before driving."
+    },
+    "access": {
+     "_raw": {
+      "note": "Remote location - contact ranger district for current permit requirements",
+      "altitude": "8,343 feet",
+      "permit_type": "Wilderness permit",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest - north Cascades Ranger District",
+      "parking_pass": "Northwest Forest Pass ($30 annual or $5 day pass)",
+      "access_routes": "Provincial Park (north), PCT (west), Freezeout Creek (east)",
+      "cost_structure": {
+       "parking_pass": "$30 annual Northwest Forest Pass or $5 day pass"
+      },
+      "permit_location": "Ranger district offices (contact for specific details)",
+      "special_hazards": [
+       "Avalanche hazard (winter/spring)",
+       "Loose rock on technical pitches",
+       "Exposure on North Face granite walls",
+       "Glacial terrain and ice sheets"
+      ],
+      "group_size_limit": "Varies by area - typically 6-12 people",
+      "seasonal_closures": {
+       "typical": "Winter snowpack (likely Nov-May)",
+       "2026_specific": "Check with ranger district for current conditions"
+      }
+     },
+     "notes": "Inside Mount Rainier National Park (not the adjacent Gifford Pinchot Tatoosh Wilderness), but both are non-glaciated scrambles under 6,000 ft — well below the threshold that triggers Rainier’s climbing permit and $82 fee. Only a backcountry camping permit is needed for an overnight stay.",
+     "permit": "Wilderness permit",
+     "landManager": "National Park Service (Mount Rainier National Park)",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 46.7683,
+      "lng": -121.73111,
+      "elev": 4950,
+      "name": "Pinnacle Peak Trailhead (Reflection Lakes, Stevens Canyon Road)",
+      "note": "Shared trailhead for Pinnacle Peak, Plummer Peak, and The Castle; hike 2 miles up Pinnacle Peak Trail then contour south/east across scree below Pinnacle's summit to reach The Castle's SE side.",
+      "type": "Trailhead",
+      "elevFt": 4950
+     },
+     {
+      "lat": 46.757752,
+      "lng": -121.728328,
+      "elev": 6640,
+      "name": "The Castle summit (true/northernmost ridge)",
+      "type": "Summit",
+      "elevFt": 6640
+     }
+    ],
+    "rappels": "One ~40 ft rappel off fixed slings on the summit block; downclimbing the easy 5th-class line is also common.",
+    "descent": "Downclimb the easy 5th-class line, or make a single short (~40 ft) rappel from the fixed slings on the summit block, then reverse the chimney pitch from the notch."
+   }
+  },
+  {
+   "id": "wa_scramble_route",
+   "before": {
+    "hazards": [
+     "Exposed terrain at saddle with fall consequences",
+     "Loose rock holds on Class 4 bypass section",
+     "Avalanche danger on steep meadow in winter (requires avalanche skills)",
+     "Rockfall hazard when multiple parties on route",
+     "Wet conditions increase scrambling difficulty"
+    ],
+    "access": {
+     "_raw": {
+      "permit_type": "Wilderness Permit + Climbing Permit (for travel above 10,000 ft or on glaciers)",
+      "land_manager": "National Park Service - Mount Rainier National Park",
+      "parking_pass": "Mount Rainier National Park entrance fee ($30 per vehicle) or Northwest Forest Pass",
+      "permit_hours": "Seasonal - Call for current hours",
+      "cost_structure": {
+       "non_refundable_fee": "$6 per reservation",
+       "annual_climbing_fee": "$82 per person (required annually)",
+       "wilderness_permit_per_night": "$12 per person per night (May 1 - Sept 15)"
+      },
+      "permit_location": "Longmire Wilderness Information Center (360-569-6550)",
+      "special_hazards": [
+       "Avalanche hazard (especially in winter)",
+       "Snow cornices hiding cliff edges",
+       "Steep meadows subject to avalanches",
+       "Exposure and fall risk at saddle",
+       "Snow lingering into June"
+      ],
+      "wilderness_zone": "Mount Rainier National Park - Tatoosh Range area",
+      "group_size_limit": "No specific group size limit stated",
+      "seasonal_closures": {
+       "typical": "Road closures common in winter months; Longmire accessible year-round but Paradise road closes in winter",
+       "2026_specific": "Nisqually-to-Paradise Corridor main access, other roads closed in winter"
+      },
+      "altitude_restrictions": "Permit required for travel above 10,000 ft or on glaciers"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Inside Mount Rainier National Park (not the adjacent Gifford Pinchot Tatoosh Wilderness), but both are non-glaciated scrambles under 6,000 ft — well below the threshold that triggers Rainier’s climbing permit and $82 fee. Only a backcountry camping permit is needed for an overnight stay.",
+     "permit": "Wilderness Permit + Climbing Permit (for travel above 10,000 ft or on glaciers)",
+     "closures": "N/A",
+     "permitZone": "Mount Rainier National Park - Tatoosh Range area",
+     "landManager": "National Park Service - Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late spring (May-June) on lingering snow is best for efficient climbing and glissade descent; the route remains open and permitted through October but is loose and tedious once snow-free",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Residual snow cover often still present early in the month, allowing efficient glissade descent; permit demand is lower under the larger Apr1-May14 quota",
+       "status": "optimal"
+      },
+      "July": {
+       "reason": "Typically snow-free — route becomes loose volcanic ash and boulders; hot and exposed",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Prime snow-climbing/glissade conditions; high weekend demand under the tighter 110/day quota",
+       "status": "optimal"
+      },
+      "August": {
+       "reason": "Driest, hottest month; heat and lack of water called out as a specific hazard",
+       "status": "good"
+      },
+      "October": {
+       "reason": "Early snow and storms can return; permit quota season ends Oct 31, after which the route effectively transitions toward Worm Flows winter conditions",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Cooler temperatures than midsummer, still dry/loose underfoot, generally stable weather",
+       "status": "good"
+      }
+     }
+    },
+    "access": {
+     "fees": "A Washington Sno-Park permit (or Forest Service equivalent) is required to park at Marble Mountain Sno-Park during the winter Sno-Park season.",
+     "notes": "Daily quota: 350 climbers/day (Apr 1–May 14), 110 climbers/day (May 15–Oct 31). This is a distinct fee/permit system from both Mount Rainier’s $82 Climbing Cost Recovery Fee and Mount Adams’ $20 Climbing Pass — do not conflate them.",
+     "rules": "Group size capped at 12. Stay at least 30 ft back from the crater rim — cornices are unstable and have caused fatalities; entry into the crater is strictly prohibited. Blue bags required for human waste above treeline.",
+     "permit": "November 1-March 31: climbing permits are free and self-issued at the Marble Mountain Sno-Park kiosk. April 1-October 31: permits are limited and must be purchased in advance on Recreation.gov (released one month at a time), since the quota season applies mountain-wide regardless of which trailhead is used.",
+     "closures": "Crater entry is prohibited year-round; stay back from the cornice-prone rim edge.",
+     "group_limit": 12,
+     "landManager": "USDA Forest Service — Gifford Pinchot National Forest, Mount St. Helens National Volcanic Monument.",
+     "land_manager": "U.S. Forest Service — Mount St. Helens National Volcanic Monument (Gifford Pinchot National Forest)",
+     "parking_pass": "$5/day/vehicle at Climber’s Bivouac, waived with a valid climbing permit.",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/4675309",
+      "what": "Mount St. Helens climbing permit for travel above 4,800 ft; no permit to camp at the roadhead",
+      "where": "April 1 to October 31 buy it in advance on Recreation.gov (daily quota, fee per climber). November 1 to March 31 it is free and self-issued at the trailhead kiosk. Camping above 4,800 ft is not allowed."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous full-day climb, roughly 8-9 miles round trip with about 4,500 ft of gain on snow, potentially with postholing in soft/unconsolidated conditions",
+      "packWeight": "Moderate winter mountaineering kit (ice axe, crampons, extra insulation/layers, navigation tools; avalanche gear recommended for higher-risk periods)"
+     },
+     "approachTime": "No separate approach — climb begins at Marble Mountain Sno-Park trailhead; typically a 7-10 hour round trip",
+     "requiredSkills": [
+      "Ice axe self-arrest and crampon technique on sustained steep snow",
+      "Whiteout/featureless-terrain navigation (map, compass, or GPS)",
+      "Cornice awareness near the crater rim, where fatalities from cornice collapse are a noted hazard",
+      "Basic avalanche hazard evaluation for wind-loaded slopes and storm-loading conditions"
+     ],
+     "experienceLevel": "Intermediate-to-advanced winter mountaineering experience required — this is a non-technical grade but a serious winter snow climb, not a beginner outing"
+    },
+    "itinerary": {
+     "cal": "Standard winter/spring route Dec-May when snow covers the volcanic rubble; requires a WA Sno-Park permit Dec 1-Mar 31 in addition to the climbing permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Worm Flows is climbed as a single long day from Marble Mountain Sno-Park, not backpacked - no established high camp. The route climbs through forest, crosses Swift Creek above Chocolate Falls, then follows a long open ridge of packed snow/lava rubble to the crater rim; most parties glissade much of the descent.",
+       "hours": 9.5,
+       "miles": 12,
+       "title": "Car-to-car summit day",
+       "gainFt": 5700,
+       "lossFt": 5700,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30-5:00 AM",
+         "label": "Leave Marble Mountain Sno-Park",
+         "detail": "Early start typical; Washington Sno-Park permit required Dec 1-Mar 31, plus climbing permit."
+        },
+        {
+         "time": "6:00-6:30 AM",
+         "label": "Cross Swift Creek above Chocolate Falls",
+         "detail": "~2 miles in, exit forest around 3,750 ft near the falls."
+        },
+        {
+         "time": "8:00-9:00 AM",
+         "label": "Gain the ridge / treeline",
+         "detail": "Open snow slopes begin; rope up or don crampons as conditions dictate."
+        },
+        {
+         "time": "12:00-1:00 PM",
+         "label": "Reach crater rim",
+         "detail": "Trip reports commonly show rim arrival around 12:45 PM on a dawn start; summit ~8,363 ft."
+        },
+        {
+         "time": "1:00-2:00 PM",
+         "label": "Summit break",
+         "detail": "Rest, food, views before the long glissade descent."
+        },
+        {
+         "time": "2:00-4:30 PM",
+         "label": "Glissade/descend to sno-park",
+         "detail": "Snow slopes make for a fast glissade descent back to the trailhead."
+        }
+       ],
+       "objective": "Reach the crater rim via Worm Flows and return to Marble Mountain Sno-Park"
+      }
+     ],
+     "totalNote": "A single long day: about 9-10 hrs car-to-car, 5,700 ft gain over roughly 12 miles round trip, no camp required."
+    },
+    "access": {
+     "fees": "A Washington Sno-Park permit (or Forest Service equivalent) is required to park at Marble Mountain Sno-Park during the winter Sno-Park season.",
+     "notes": "Daily quota: 350 climbers/day (Apr 1–May 14), 110 climbers/day (May 15–Oct 31). This is a distinct fee/permit system from both Mount Rainier’s $82 Climbing Cost Recovery Fee and Mount Adams’ $20 Climbing Pass — do not conflate them.",
+     "rules": "Group size capped at 12. Stay at least 30 ft back from the crater rim — cornices are unstable and have caused fatalities; entry into the crater is strictly prohibited. Blue bags required for human waste above treeline.",
+     "permit": "November 1-March 31: climbing permits are free and self-issued at the Marble Mountain Sno-Park kiosk. April 1-October 31: permits are limited and must be purchased in advance on Recreation.gov (released one month at a time), since the quota season applies mountain-wide regardless of which trailhead is used.",
+     "closures": "Crater entry is prohibited year-round; stay back from the cornice-prone rim edge.",
+     "group_limit": 12,
+     "landManager": "USDA Forest Service — Gifford Pinchot National Forest, Mount St. Helens National Volcanic Monument.",
+     "land_manager": "U.S. Forest Service — Mount St. Helens National Volcanic Monument (Gifford Pinchot National Forest)",
+     "parking_pass": "$5/day/vehicle at Climber’s Bivouac, waived with a valid climbing permit.",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/4675309",
+      "what": "Mount St. Helens climbing permit for travel above 4,800 ft; a Washington Sno-Park permit to park in winter",
+      "where": "April 1 to October 31 buy the climbing permit in advance on Recreation.gov (daily quota, fee per climber); November 1 to March 31 it is free and self-issued at the Marble Mountain Sno-Park kiosk. Camping above 4,800 ft is not allowed."
+     }
+    }
+   }
+  }
+ ]
+}

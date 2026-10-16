@@ -1,0 +1,453 @@
+{
+ "file": "r361.json",
+ "results": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External figures disagree: one route page gives about 6 mi round trip with ~2,000 ft gain (direct ridge line from the 1.4-mi saddle), a trip report via the East Peak gives 6 mi and ~2,500 ft, and an overnight report via the Watson Lakes camp gives ~8 mi and ~3,000 ft for the scramble portion. No two independent sources agree on one total for this Watson-Lakes line, so gain_ft (2,400), loss_ft (3,800) and the itinerary (3,800 gain) are left for a follow-up; loss_ft vs gain_ft convention is also a standing refused class.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-watson",
+    "https://trailcatjim.com/mt-watson-east-peak-via-northwest-face/",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route page gives ~6 mi round trip (3 mi one way, matching dist_km 4.8 km) for the direct ridge line; another trip report also gives 6 mi; an overnight via the Watson Lakes camp gives ~8 mi round trip (~4 mi one way). None supports the 4.7-mi one-way summit waypoint or the ~9-10 mi itinerary total, and the sources describe different lines, so no value was adopted.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-watson",
+    "https://trailcatjim.com/mt-watson-east-peak-via-northwest-face/",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Which summit is the true summit / side of approach",
+   "verdict": "fixed",
+   "correct_value": "The true summit (6,221 ft) lies WEST of a separate, lower East Peak; the route climbs from the Watson Lakes on the north side to the ~5,900 ft col between the East Peak and the western summits, then goes west along the south side of the ridge to the summit block.",
+   "evidence": "Peak data lists Mount Watson at 6,221 ft with a separate 'Mount Watson, East Peak' 0.4 mi away; another peak list carries 'East Watson' at 6,180 ft, lower than the main summit. A route summary describes east and west summits separated by a saddle reached by a snow finger, and an overnight trip report reaches a 5,900 ft saddle via the east gully then traverses the ridge to the summit block. The beta and face fields calling the East summit the true summit were the outliers; the itinerary, bivy and approach-variant fields already agree.",
+   "sources": [
+    "https://peakery.com/mount-watson-washington/",
+    "https://listsofjohn.com/peak/50169",
+    "https://www.summitpost.org/mount-watson/155079",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "work up open slopes/ridge on the mountain's south side toward the notch between the West and true (East) summits",
+     "replace": "work up open slopes on the mountain's north side toward the notch between the lower East Peak and the true (western) summit",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which summit is the true summit / side of approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "scramble loose, mossy class 3 terrain around the south side of the West Summit and along",
+     "replace": "scramble loose, mossy class 3 terrain west along the south side of the ridge and along",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which summit is the true summit / side of approach"
+    },
+    {
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "South Face / summit ridge between the West and true (East) summits",
+     "value": "South side / summit ridge west of the East Peak",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which summit is the true summit / side of approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "loose, mossy scrambling around the West Summit and the exposed summit ridge",
+     "replace": "loose, mossy scrambling along the ridge west of the col and the exposed summit ridge",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which summit is the true summit / side of approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Glacier travel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Watson Glacier is a real feature on the peak's north slope, and a route summary describes a snow finger (with a possible moat) leading to the saddle between the east and west summits; the overnight report describes snow travel but no glacier crossing. No source establishes whether the standard line's snow finger counts as glacier/crevassed terrain or whether parties descend onto the Watson Glacier, so the safety fields ('no glacier travel') and the beta/rack/hazard mentions of a glacier apron were left for follow-up.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Watson_(Washington)",
+    "https://www.summitpost.org/mount-watson/155079",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Permit requirement",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit or quota; only a recreation pass at the Watson Lakes Trailhead.",
+   "evidence": "The Forest Service's Noisy-Diobsud Wilderness page and the Anderson-Watson Lakes Trail 611 page list only a Recreation Pass at the Watson Lakes Trailhead (plus designated-site camping and a fire ban at Watson Lakes), with no wilderness permit or registration. Two independent hiking write-ups describe the trip as permit-free with only a forest pass. access.permit and the camp card already say this; the permit column was the outlier.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness",
+    "https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.cynhw.com/blog/2023/5/21/anderson-and-watson-lakes",
+    "https://savvyexploring.com/post/northamerica/usa/watsonlakes/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue Noisy-Diobsud Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+     "value": "No wilderness permit, quota or fee is required for the Noisy-Diobsud Wilderness; a Northwest Forest Pass or other recreation pass must be displayed at the Watson Lakes Trailhead.",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Permit requirement"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Distance to the Watson Lakes saddle",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service trail page gives 1 mi to the Anderson Butte junction, another mile to the 4,700 ft second junction, then 0.5 mi up to the saddle (about 2.5 mi, matching the waypoints). A hiking guide and a route page instead put the ~4,800 ft saddle about 1.4 mi from the trailhead, and a third write-up gives ~1.75 mi. Sources conflict, so no change was made.",
+   "sources": [
+    "https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes",
+    "https://www.mountaineers.org/activities/routes-places/mount-watson",
+    "https://savvyexploring.com/post/northamerica/usa/watsonlakes/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Which lake the route passes",
+   "verdict": "fixed",
+   "correct_value": "This route's approach goes via the left fork to the Watson Lakes, not Upper Anderson Lake (an alternative line some parties use).",
+   "evidence": "The Forest Service trail page has the left fork at the 4,700 ft junction climbing to the saddle and down to the Watson Lakes, and the overnight scramble report camps at the Watson Lakes and climbs from there. An Upper Anderson Lakes gully line exists as a separate variant (kept in pro_tips as an option), so only the partner-requirements and crowds text that route this line through Upper Anderson Lake were changed.",
+   "sources": [
+    "https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.6827621991"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~1.5-2.5 hrs on trail to Upper Anderson Lake,",
+     "replace": "~1.5-2.5 hrs on trail to the Watson Lakes,",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which lake the route passes"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "the summit scramble beyond Upper Anderson Lake stays",
+     "replace": "the summit scramble beyond the Watson Lakes stays",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which lake the route passes"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "fact": "Descent rappels and rope",
+   "verdict": "fixed",
+   "correct_value": "The descent is the north-side (Beckey-Schmidtke) rappel line on double ropes; a single rope is not enough.",
+   "evidence": "The first-ascent party's own account records descending the standard north-face route with double-rope rappels on a 60 m and a 50 m rope (two raps near the summit, downclimbing, then three more to the snow, then downclimbing the couloir); the journal note confirms they descended the standard north-face route. Reports of that north-side line describe about ten 60 m rappels, and an encyclopedia entry says ten or more. The gear list's single 60 m rope was the outlier and was changed; the count note already presents a 4-to-10+ range (note: the account read gives five double rappels to the snow, not four to the col, so the note's first-hand figure should be re-checked).",
+   "sources": [
+    "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/Part2.htm",
+    "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face",
+    "https://en.wikipedia.org/wiki/Nooksack_Tower"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "expect": "60-meter rope",
+     "value": "Two 60-meter ropes (double-rope rappels on the north-side descent)",
+     "id": "wa_nooksack_tower_south_face",
+     "fact": "Descent rappels and rope"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "fact": "NPS overnight permit cost",
+   "verdict": "fixed",
+   "correct_value": "The North Cascades NP backcountry permit costs $10 per person plus a $6 fee (youth 15 and under free).",
+   "evidence": "The park's permits page states permits cost $10 per person plus a $6 fee, for reservations and walk-ups alike; a state trails organisation and a park fund article give the same $10 + $6 structure.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "where a free NPS backcountry permit is required only if camping overnight past the boundary",
+     "replace": "where an NPS backcountry permit ($10 per person plus a $6 fee) is required only if camping overnight past the boundary",
+     "id": "wa_nooksack_tower_south_face",
+     "fact": "NPS overnight permit cost"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "fact": "Round-trip time from high camp",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The timing fields measure base-to-summit (8 h) and summit-to-base (4 h); the 17 h figure is the whole push from the shoulder camp, including the glacier approach to and from the face. The first-ascent account fits both: first pitch ~8 am, summit ~4:30 pm, back at the lower bergschrund ~9 pm, camp ~10 pm after a 3 am start.",
+   "sources": [
+    "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/Part2.htm",
+    "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "fact": "First-ascent year",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent party's own trip report dates the climb July 23-25, 2001, and the journal note appeared in the 2002 volume (which normally reports the previous year's climbs) without stating the year. fa and approach_variants say July 2002. Only one source names the year explicitly, so no FA change was made.",
+   "sources": [
+    "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/SouthFace,Summer01.htm",
+    "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Route identity: North Face vs East Ridge",
+   "verdict": "fixed",
+   "correct_value": "The Beckey-Schmidtke route climbs the north-face couloir and the north arête; it is not an East Ridge route.",
+   "evidence": "The 1946 first-ascent account describes the bergschrund at the foot of the final north face, an 800 ft 50-degree ice couloir on the north face and 1,200 ft of fourth class along the north arête (the tower itself sits on Shuksan's east ridge, which likely caused the mix-up). Modern trip reports title it the NE Face (Beckey/Schmidtke). Overview, itinerary title and one rappel note were corrected.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent",
+    "https://cascadeclimbers.com/forum/topic/91649-tr-nooksack-tower-ne-face-beckeyschmidtke-6102013/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "The East Ridge (Beckey-Schmidtke) route is the classic line",
+     "replace": "The North Face (Beckey-Schmidtke) route is the classic line",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Route identity: North Face vs East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "expect": "Summit push via the East Ridge couloir",
+     "value": "Summit push via the north face couloir",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Route identity: North Face vs East Ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Continues down the steep, complex east-ridge terrain;",
+     "replace": "Continues down the steep, complex north-side terrain;",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Route identity: North Face vs East Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Trip duration / summit-day hours",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The summit day from high camp is very long, typically about 18-21 hours round trip.",
+   "evidence": "The itinerary day note, schedule, totalNote, descent_text and approach-variant hazards all put the summit day at 18-21 h; a modern trip report tagged the summit about 10 hours after leaving and returned 21 hours after starting, with about ten 60 m rappels. The partner-requirement '10+ hrs round trip' was the outlier and was corrected. The timing block is a per-section estimate (approach, climb, descent) and was left as is.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "followed by a long summit day (10+ hrs round trip)",
+     "replace": "followed by a very long summit day (often 18-21 hrs round trip from high camp)",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Trip duration / summit-day hours"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "followed by a long (often 10+ hour) summit push and descent",
+     "replace": "followed by a very long (often 18-21 hour) summit push and descent",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Trip duration / summit-day hours"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Couloir steepness",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent account gives an 800 ft, 50-degree ice couloir, and an encyclopedia entry says '50-degree or greater slopes'. No source found confirms the itinerary's 50-60 degrees with a 70-degree step or max_angle 70, nor rules it out, so no change was made.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent",
+    "https://en.wikipedia.org/wiki/Nooksack_Tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Rappel length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A modern trip report describes 'about ten 60m rappels' to the glacier, and an encyclopedia entry says ten or more rappels; neither gives per-rappel lengths, and the phrase is ambiguous between 60 m ropes and 60 m rappels. Nothing supports or refutes the 30 m per-station figures in rappel_detail, so no change was made.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023/",
+    "https://en.wikipedia.org/wiki/Nooksack_Tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External dates do not support the reader's internal resolution: the first ascent was July 5, and published trip reports include June 10 (2013) and July 2-4 (2009) ascents, i.e. before mid-July, while the approach-variant text notes the couloir is safer earlier. Whether the window is Jun-Aug or mid-Jul-Sep needs more sourcing, so neither was changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent",
+    "https://cascadeclimbers.com/forum/topic/91649-tr-nooksack-tower-ne-face-beckeyschmidtke-6102013/",
+    "https://www.nwhikers.net/forums/viewtopic.php?t=7976458"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Where to park / trailhead location",
+   "verdict": "fixed",
+   "correct_value": "Drive FR 32 then about 1 mile of FR 34 to the Ruth Creek washout (~2,200 ft), park there, and walk about 2 miles of old roadbed to the original Nooksack Cirque trailhead.",
+   "evidence": "A hiking guide gives Hannegan Pass Road 32 for about a mile, then Road 34 for a mile to the parking area, Ruth Creek unbridged, and about 2 miles on old roadbed to the original trailhead. The south-face first-ascent party's report likewise describes a short ford where the road washed out and riding the overgrown old road beyond. The road card's 'dead-ends at the trailhead' and the approach's unqualified 'Nooksack Cirque trailhead at 2,550 feet' were made consistent with the parking waypoint.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/nooksack-cirque",
+    "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/SouthFace,Summer01.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Road #34 is short (about 1 mile) and dead-ends at the trailhead.",
+     "replace": "Road #34 is short (about 1 mile) and ends at the Ruth Creek washout, where parties park and walk the old roadbed beyond.",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Where to park / trailhead location"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Passenger cars can usually reach the trailhead in dry conditions",
+     "replace": "Passenger cars can usually reach the Ruth Creek parking area in dry conditions",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Where to park / trailhead location"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "for two miles to the Nooksack Cirque trailhead at 2,550 feet",
+     "replace": "for two miles to the original Nooksack Cirque trailhead at 2,550 feet",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Where to park / trailhead location"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "for two miles to the Nooksack Cirque trailhead at 2,550 ft",
+     "replace": "for two miles to the original Nooksack Cirque trailhead at 2,550 ft",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Where to park / trailhead location"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Parking pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is only with the camp card (bivy[0].permit, and bivy[1] also mentions a parking pass). A hiking guide states no parking pass or entry fee is required at the Nooksack Cirque parking, matching access.parking_pass; the bivy text is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/nooksack-cirque"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Hardest rock grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route is 5.4 (route database: 5.4 IV AI1-2; encyclopedia: class 4 to 5.4). 'Crux moves around 5.4-5.5' is rounding, and a partner requirement to lead up to 5.6 is a skill margin above the route grade, not a statement of the route's grade.",
+   "sources": [
+    "https://www.mountainproject.com/area/122727465/nooksack-tower",
+    "https://en.wikipedia.org/wiki/Nooksack_Tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Saddle / high bivy position along the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent account places the bergschrund at 6,500 ft with an 800 ft couloir and 1,200 ft of rock above; no source found locates a 'Nooksack Bivouac saddle' at 7,900 ft or pins the exposed snow saddle the approach crosses before dropping to the Price Glacier. It may be two different saddles; no change without sources.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent"
+   ],
+   "patches": []
+  }
+ ]
+}

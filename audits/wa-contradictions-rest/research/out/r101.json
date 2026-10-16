@@ -1,0 +1,76 @@
+{"file": "r101.json", "results": [
+ {"id": "wa_snowfield_peak_neve_glacier", "fact": "Colonial Glacier crevasses", "verdict": "fixed",
+  "correct_value": "The Colonial Glacier carries crevasses (mostly small); parties rope up on it and may glissade its moderate slopes on descent where safe.",
+  "evidence": "Eric's Base Camp describes 'a lot of crevasses' on the Colonial Glacier, none large, and a glissade on descent after unroping. Climber Kyle's report roped up on it (few crevasses showing) and boot-skied down; Lemke saw large cracks near the glacier lake. So 'crevasse-free' is wrong; the glissade advice stands.",
+  "sources": ["https://www.ericsbasecamp.net/trips/SnowfieldPk/SnowfieldPk.htm", "https://climberkyle.com/2017/07/15/snowfield-peak/", "https://www.lemkeclimbs.com/snowfield-peak.html"],
+  "patches": [
+   {"id": "wa_snowfield_peak_neve_glacier", "fact": "Colonial Glacier crevasses", "op": "replace_text", "column": "descent_text", "path": [], "find": "(many parties glissade the moderate, crevasse-free snow slopes where safe)", "replace": "(many parties glissade its moderate snow slopes where safe, keeping clear of its crevasses)"}
+  ]},
+ {"id": "wa_snowfield_peak_neve_glacier", "fact": "Line past Paul Bunyan's Stump in season", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "One description (SummitPost-style route text surfaced in search) says that after mid-July the side of the Colonial Glacier directly below Paul Bunyan's Stump becomes too crevassed and parties cross east around the basin rim on a rock rib. No second independent source was found (Steph Abegg, Jim Brisbine, Lemke and Alpine Wanderlust reports do not describe the bypass). The seasonal fields already state the bypass; the approach variant was not changed.",
+  "sources": ["https://www.summitpost.org/snowfield-peak/151462", "https://stephabegg.com/trip-reports/washington/snowfield-slam/", "https://trailcatjim.com/colonial-peak-and-paul-bunyans-stump/"],
+  "patches": []},
+ {"id": "wa_snowfield_peak_neve_glacier", "fact": "Height where the glacier is left / length of summit scramble", "verdict": "fixed",
+  "correct_value": "Leave the glacier ~7,700 ft; the gully puts you ~300-400 ft below the summit (waypoint 7,950 ft); the finish after the notch is short (~150 ft summit gully), not 400-600 ft.",
+  "evidence": "Eric's Base Camp puts the Snowfield-Horseman ridge at ~7,700 ft and about 300-400 vertical ft of class 3/4 scrambling above it; Lemke reached the dry ridge at 7,800 ft. The route description on the Mountaineers route page gives the final south-side summit gully as about 150 ft. So leaving at 7,700 and a gully that tops out 300-400 ft below the summit is consistent (the gully makes up the difference), and the whole rock section from the glacier (~650 ft) fits pitch_detail's 400-600 ft; only the summit waypoint's '400-600 ft' AFTER the notch is wrong.",
+  "sources": ["https://www.ericsbasecamp.net/trips/SnowfieldPk/SnowfieldPk.htm", "https://www.lemkeclimbs.com/snowfield-peak.html", "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/snowfield-peak-neve-glacier"],
+  "patches": [
+   {"id": "wa_snowfield_peak_neve_glacier", "fact": "Height where the glacier is left / length of summit scramble", "op": "replace_text", "column": "waypoints", "path": [7, "directions"], "find": "400-600 ft of blocky scrambling finishes it", "replace": "a short stretch of blocky scrambling finishes it"}
+  ]},
+ {"id": "wa_snowfield_peak_neve_glacier", "fact": "Moraine camp elevation", "verdict": "fixed",
+  "correct_value": "~5,900 ft",
+  "evidence": "Mountaineers trip reports place the camp at the bottom of the Colonial Glacier, on the rocky ridge above its toe, at 5,900 ft, with other camps at ~5,400 ft at treeline; the thawing lake beneath the Colonial Glacier is also given at 5,900 ft. The row's waypoint, approach and itinerary agree on ~5,900 ft.",
+  "sources": ["https://www.mountaineers.org/activities/activities/basic-glacier-climb-snowfield-peak-neve-glacier-11", "https://www.mountaineers.org/activities/trip-reports/glacier-climb-snowfield-peak-neve-glacier-3", "https://zamosfamilydiaries.com/trip-report-snowfield-peak-climb-north-cascades-national-park/"],
+  "patches": [
+   {"id": "wa_snowfield_peak_neve_glacier", "fact": "Moraine camp elevation", "op": "replace_text", "column": "pitch_detail", "path": [0, "notes"], "find": "a camp around 5,500-5,700 ft at the Colonial Glacier moraine", "replace": "a camp around 5,900 ft at the Colonial Glacier moraine"}
+  ]},
+ {"id": "wa_snowfield_peak_neve_glacier", "fact": "Distance to camp / total distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Round trip is ~15 mi (Eric's Base Camp ~15 mi; a WTA report 15.4 mi) and a GPS track gives 6.9 mi one way, so dist_km (7.5 mi), the summit waypoint (7.0 mi) and the 15-16 mi total are all roughly consistent. No source gives the distance to the moraine camp, so whether day 1 is 4.4 or 5.5 mi could not be settled.",
+  "sources": ["https://www.ericsbasecamp.net/trips/SnowfieldPk/SnowfieldPk.htm", "https://www.gaiagps.com/hike/235553/snowfield-peak-via-pyramid-lake-trail/", "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-20-6992408117"],
+  "patches": []},
+ {"id": "wa_snowfield_peak_neve_glacier", "fact": "Where the Pyramid Lake Trail starts", "verdict": "fixed",
+  "correct_value": "Parking is on the north side of SR-20; the trail starts across the highway.",
+  "evidence": "WTA's Pyramid Lake hike page says parking is on the left side of SR-20 and the trailhead on the right, so hikers must cross the highway. Alpine Wanderlust says the parking was on the opposite side from the trailhead, an extended shoulder. The road card is right; the waypoint was wrong.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/pyramid-lake", "https://www.alpinewanderlust.com/chilling-on-glaciers-snowfield-peak/"],
+  "patches": [
+   {"id": "wa_snowfield_peak_neve_glacier", "fact": "Where the Pyramid Lake Trail starts", "op": "replace_text", "column": "waypoints", "path": [0, "directions"], "find": "The maintained Pyramid Lake Trail starts from the pullout.", "replace": "The maintained Pyramid Lake Trail starts across the highway from the pullout."}
+  ]},
+ {"id": "wa_neve_glacier_west_ridge", "fact": "Parking pass", "verdict": "fixed",
+  "correct_value": "No parking pass or entrance fee; only the overnight backcountry permit costs money.",
+  "evidence": "NPS states there is no entrance fee for the North Cascades complex and no trailhead or parking fees for trails that begin on NPS land, so a Northwest Forest Pass is only for adjacent Forest Service trailheads. WTA's Pyramid Lake page lists no pass required.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/fees.htm", "https://www.wta.org/go-hiking/hikes/pyramid-lake"],
+  "patches": [
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Parking pass", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Northwest Forest Pass required ($5/day or $30/annual).", "replace": "No parking pass or entrance fee is needed."},
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Parking pass", "op": "replace_text", "column": "access", "path": ["fees"], "find": "None beyond the parking or entrance fee this route already lists.", "replace": "No parking or entrance fee; only the overnight backcountry permit carries a cost."}
+  ]},
+ {"id": "wa_neve_glacier_west_ridge", "fact": "Rules copied from another area", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Remove the Boston Basin camping sentence; it belongs to a different cross-country zone.",
+  "evidence": "Every other field of the row uses the Pyramid Lake / Colonial Basin / Colonial-Neve col approach, and the NPS lists Boston Basin as a separate zone reached from the Cascade River Road, not SR-20. The sibling standard route's rules name only the Colonial/Snowfield zones.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm"],
+  "patches": [
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Rules copied from another area", "op": "replace_text", "column": "access", "path": ["rules"], "find": "(12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear", "replace": "(12 in on-trail corridors). Bear"}
+  ]},
+ {"id": "wa_neve_glacier_west_ridge", "fact": "Height where the glacier is left for the ridge", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources disagree: Eric's Base Camp reaches the Snowfield-Horseman ridge at ~7,700 ft and Lemke the dry ridge at 7,800 ft, while the Mountaineers route description (echoed on a WTA page) leaves the snow around 8,100-8,200 ft to traverse into the NW-facing gully. These may be different points (reaching the ridge vs leaving the upper snow) or seasonal differences, and no two sources agree on a single figure for the gully entry.",
+  "sources": ["https://www.ericsbasecamp.net/trips/SnowfieldPk/SnowfieldPk.htm", "https://www.lemkeclimbs.com/snowfield-peak.html", "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/snowfield-peak-neve-glacier"],
+  "patches": []},
+ {"id": "wa_neve_glacier_west_ridge", "fact": "Winter road status", "verdict": "fixed",
+  "correct_value": "SR-20 stays open to the trailhead in winter; the winter closure starts east of it (MP 134, moved back to MP 130 in deep snow).",
+  "evidence": "WSDOT and news coverage give the winter closure points as MP 134 (Ross Dam Trailhead) and MP 171, moved to MP 130 (Colonial Creek) in heavy snow, both east of the MP 126.8 trailhead. Cascadia Daily News reported the highway open to the Ross Dam trailhead in February 2026.",
+  "sources": ["https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm", "https://www.cascadiadaily.com/2026/feb/16/north-cascades-highway-now-open-to-ross-dam-trailhead/", "https://kpq.com/north-cascades-highway-close-winter/"],
+  "patches": [
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Winter road status", "op": "set", "column": "road", "path": ["status"], "expect": "Open seasonally; closed in winter", "value": "Open year-round to the trailhead; the winter closure is farther east"},
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Winter road status", "op": "set", "column": "climate", "path": ["winter"], "expect": "Highway access closed; not a winter objective", "value": "The highway stays open to the trailhead, which sits west of the winter closure, but deep snow and avalanche terrain make this a serious undertaking; not a standard winter objective"}
+  ]},
+ {"id": "wa_neve_glacier_west_ridge", "fact": "Summit distance vs camp distance", "verdict": "fixed",
+  "correct_value": "Summit ~7 mi one way; ~15 mi round trip.",
+  "evidence": "A GPS track gives 6.9 mi one way to the summit; Eric's Base Camp gives ~15 mi round trip and a WTA report 15.4 mi. The summit waypoint at 5 mi (the same as day 1 to camp) and the '~14 mi' total were the outliers; the sibling route's summit waypoint is 7.0 mi and this row's itinerary days sum to 14.8 mi.",
+  "sources": ["https://www.gaiagps.com/hike/235553/snowfield-peak-via-pyramid-lake-trail/", "https://www.ericsbasecamp.net/trips/SnowfieldPk/SnowfieldPk.htm", "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-20-6992408117"],
+  "patches": [
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Summit distance vs camp distance", "op": "set", "column": "waypoints", "path": [1, "distMi"], "expect": 5, "value": 7},
+   {"id": "wa_neve_glacier_west_ridge", "fact": "Summit distance vs camp distance", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "(~14 mi, ~7,250 ft gain round trip)", "replace": "(~15 mi, ~7,250 ft gain round trip)"}
+  ]}
+]}

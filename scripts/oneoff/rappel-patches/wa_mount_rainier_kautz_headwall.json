@@ -1,0 +1,36 @@
+{
+ "id": "wa_mount_rainier_kautz_headwall",
+ "area_id": "wa_mount_rainier",
+ "stations": 4,
+ "allowRange": true,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First of 1-3 rappels down the upper ice step (up to 300+ ft of AI3 alpine ice); V-thread anchors leave no gear behind and are not left in place between ascent and descent.",
+    "anchor": "V-thread/Abalakov (\"Zero-Thread\") ice anchor",
+    "lengthM": null
+   },
+   {
+    "n": 2,
+    "notes": "Continue down the upper ice step; belay to easier ground climber's-left/east into the chute rather than committing to team-arrest on exposed ice.",
+    "anchor": "V-thread/Abalakov ice anchor",
+    "lengthM": null
+   },
+   {
+    "n": 3,
+    "notes": "First of 1-2 rappels down the lower ice step, same anchor style as above.",
+    "anchor": "V-thread/Abalakov ice anchor",
+    "lengthM": null
+   },
+   {
+    "n": 4,
+    "notes": "Final rappel through the lower ice step; after the chute, move fast across the traverse back toward the Rock Step since this stretch sits under the active Kautz Ice Cliff.",
+    "anchor": "V-thread/Abalakov ice anchor",
+    "lengthM": null
+   }
+  ],
+  "rappels": "2-5 rappels through the Kautz ice steps on the way down, depending on conditions and how much rope you carry: 1-3 down the upper ice step and 1-2 down the lower one, all on ice anchors you build yourself. The four stations listed are a middle count for a party on a single 60 m rope; with two 60 m ropes it can be as few as two, plus some downclimbing.",
+  "rappel_count_note": "The count ranges from 2-5 rappels total, depending on rope length/number of ropes carried: 1-3 on the upper ice step, 1-2 on the lower ice step. 4 is used here as a representative middle count for a party on a single 60m rope; fewer with two ropes, more if short-pitching. With two 60 m ropes, two double-rope rappels plus some downclimbing get most parties through the steepest ice."
+ }
+}

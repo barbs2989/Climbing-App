@@ -1,0 +1,402 @@
+{"batches": ["b308.json", "b309.json", "b310.json", "b311.json", "b312.json", "b313.json", "b314.json"], "routes_read": 14, "routes": [
+{"id": "wa_east_twin_needle_thread_of_ice", "name": "Thread of Ice", "area": "East Twin Needle", "contradictions": []},
+
+{"id": "wa_east_twin_needle_south_route", "name": "South Route", "area": "East Twin Needle", "contradictions": [
+ {"fact": "Rope set-up for the Eye Col gully descent", "severity": "medium",
+  "claims": [
+   {"field": "rope_type", "says": "single"},
+   {"field": "rope_length_m", "says": "60"},
+   {"field": "gear[1]", "says": "2x60m ropes (for rappelling the descent gully)"},
+   {"field": "rack[4]", "says": "2x60m ropes (rappel descent)"},
+   {"field": "descent_text", "says": "expect 1-3 short single-rope rappels depending on snow coverage and the exact gully taken"},
+   {"field": "rope_note", "says": "plus a second 60m rope for the double-rope rappels if you descend by the Himmelhorn-West Twin Needle notch"}],
+  "why": "The kit fields say the second 60 m rope is needed for the descent gully, while descent_text and rope_note say the gully takes short single-rope raps and the second rope is only for the Himmelhorn-West Twin Needle notch exit.",
+  "internal_resolution": "descent_text and rope_note agree: single 60 m for the Eye Col gullies, second rope only for the notch exit; gear[1] and rack[4] should say so.",
+  "needs_research": false},
+ {"fact": "Glacier travel on the approach", "severity": "low",
+  "claims": [
+   {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel on the South Route itself; early-season parties may cross residual snowfields on the approach, but the route is not glaciated"},
+   {"field": "rope_note", "says": "glacier approach gear (ice axe/crampons) for Crescent Creek basin approach"},
+   {"field": "partner_requirements.requiredSkills[1]", "says": "Off-trail wilderness navigation and route-finding in glaciated alpine terrain"}],
+  "why": "One field says there is no glacier travel, others call for glacier approach gear and glaciated-terrain skills.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Crescent Creek Basin camp elevation", "severity": "low",
+  "claims": [
+   {"field": "waypoints[3].name", "says": "Crescent Creek Basin (Chopping Block Camp)"},
+   {"field": "waypoints[3].elev", "says": "6400"},
+   {"field": "bivy[0].elev", "says": "6050"},
+   {"field": "approach", "says": "to a camp below Mount Terror at about 6,050'"}],
+  "why": "The waypoint labelled Crescent Creek Basin sits at 6,400 ft (the Chopping Block ridge figure), while the basin camp is 6,050 ft in bivy and approach; the waypoint merges two camps the approach keeps separate.",
+  "internal_resolution": "approach distinguishes the Chopping Block ridge camp (~6,400') from the Crescent Creek Basin camp (~6,050'); the waypoint name/elev mixes them.",
+  "needs_research": false}
+]},
+
+{"id": "wa_plan_9_from_outer_space", "name": "Plan 9 from Outer Space", "area": "Ed Wood Memorial Buttress", "contradictions": [
+ {"fact": "Base camp for the climb", "severity": "medium",
+  "claims": [
+   {"field": "bivy[0].name", "says": "Terror Basin camp"},
+   {"field": "bivy[0].role", "says": "main"},
+   {"field": "itinerary", "says": "Day 2, cross the Barrier into Crescent Creek Basin and establish camp within striking distance of the Himmelhorn/Blob area; Day 3, climb Plan 9 from Outer Space and return to camp"},
+   {"field": "timing.recommendedStart", "says": "Pre-dawn/alpine start from the Crescent Creek Basin camp"},
+   {"field": "approach", "says": "Descend into Crescent Creek Basin and camp within reach of the Himmelhorn and the Blob"}],
+  "why": "The camping list names Terror Basin as the main camp and has no Crescent Creek Basin entry, while approach, itinerary and timing all climb from a Crescent Creek Basin camp.",
+  "internal_resolution": "approach, itinerary and timing agree on Crescent Creek Basin; the bivy main camp is the outlier.",
+  "needs_research": false},
+ {"fact": "Whether the overnight permit can be reserved in advance", "severity": "medium",
+  "claims": [
+   {"field": "permit", "says": "reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center"},
+   {"field": "access.overnight_permit.where", "says": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center"},
+   {"field": "bivy[0].permit", "says": "It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY"}],
+  "why": "Permit and access say the permit can be reserved on Recreation.gov, while the main camp's permit note says the zone is walk-up only.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Recommended timing (late June)", "severity": "low",
+  "claims": [
+   {"field": "pro_tips[0]", "says": "Go early in the season (late June-July)"},
+   {"field": "season", "says": "Jul-Sep"},
+   {"field": "seasonal_guidance.monthBreakdown.June.status", "says": "marginal"},
+   {"field": "best_season", "says": "Late July through September is the usual window."}],
+  "why": "The pro tip recommends late June, which falls outside the stated season and is rated marginal in the seasonal guidance.",
+  "internal_resolution": "season, best_season and seasonal_guidance agree on July onward; pro_tips[0] is the outlier.",
+  "needs_research": false},
+ {"fact": "Barrier crossing on climb day", "severity": "low",
+  "claims": [
+   {"field": "turnaround", "says": "to be back across the Barrier crossing before afternoon thunderstorms typically build"},
+   {"field": "itinerary", "says": "Day 3, climb Plan 9 from Outer Space and return to camp via the Blob/Terror col rappels; Day 4, hike out."}],
+  "why": "The turnaround advice assumes a Barrier crossing on climb day, but the itinerary returns to a Crescent Creek Basin camp that day and crosses the Barrier only on the hike-out.",
+  "internal_resolution": "itinerary (and approach) have no Barrier crossing on climb day.",
+  "needs_research": false}
+]},
+
+{"id": "wa_frenzel_spitz_south_route", "name": "South Route", "area": "Frenzel Spitz", "contradictions": [
+ {"fact": "Which way the step below the Ottohorn-Himmelhorn col is rappelled", "severity": "medium",
+  "claims": [
+   {"field": "waypoints[7].directions", "says": "the step below the col is commonly rappelled from natural anchors on the way back"},
+   {"field": "waypoints[6].directions", "says": "a steep step that is usually rappelled on the way down and has to be reclimbed on the way back"},
+   {"field": "itinerary.days[2].schedule[2].detail", "says": "Rappel the steep step below the col, then downclimb broken couloir and glacier/moat ground, roughly 500 ft in all."},
+   {"field": "itinerary.days[2].schedule[5].detail", "says": "Reclimb the ~500 ft to the col"}],
+  "why": "One waypoint says the step is rappelled on the way back; the other waypoint and the itinerary say it is rappelled going in, toward Frenzel Spitz, and reclimbed on the return.",
+  "internal_resolution": "waypoints[6], the itinerary and descent_text agree that the rappel happens going in and the step is reclimbed coming back; waypoints[7] is the outlier.",
+  "needs_research": false},
+ {"fact": "Time from trailhead to Terror Basin", "severity": "low",
+  "claims": [
+   {"field": "waypoints[3].note", "says": "roughly 3+ hours in"},
+   {"field": "itinerary.days[0].hours", "says": "7"},
+   {"field": "timing.sectionBreakdown[0].hrs", "says": "7"}],
+  "why": "The Terror Basin waypoint says about 3+ hours from the car, while the itinerary and timing give 7 hours for the same leg.",
+  "internal_resolution": "itinerary and timing agree on 7 h.",
+  "needs_research": false},
+ {"fact": "Single pitch vs multi-pitch", "severity": "low",
+  "claims": [
+   {"field": "detailed_rack", "says": "A light alpine rock rack is sufficient for the single moderate pitch"},
+   {"field": "rope_note", "says": "a remote 5.6 multi-pitch Southern Pickets route"}],
+  "why": "The rack text describes one pitch of climbing and the rope note describes a multi-pitch route.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Days to walk out", "severity": "low",
+  "claims": [
+   {"field": "partner_requirements.approachTime", "says": "Multi-day approach (roughly 1.5-2 days each way)"},
+   {"field": "itinerary.days[3].note", "says": "Fit parties do this in one long push"},
+   {"field": "itinerary.days[3].hours", "says": "9.5"}],
+  "why": "Partner requirements say 1.5-2 days each way, but the itinerary exits in one 9.5-hour day.",
+  "internal_resolution": "itinerary and timing both plan a one-day exit.",
+  "needs_research": false}
+]},
+
+{"id": "wa_himmelhorn_stonehenge", "name": "Stonehenge", "area": "Himmelhorn", "contradictions": []},
+
+{"id": "wa_himmelhorn_wild_hair_crack", "name": "Wild Hair Crack", "area": "Himmelhorn", "contradictions": []},
+
+{"id": "wa_himmelhorn_southeast_route", "name": "Southeast Route", "area": "Himmelhorn", "contradictions": [
+ {"fact": "Summit-day duration", "severity": "medium",
+  "claims": [
+   {"field": "itinerary.days[1].hours", "says": "7"},
+   {"field": "timing.summitTimeHrs", "says": "7"},
+   {"field": "itinerary.days[1].schedule[0].time", "says": "4:30 AM"},
+   {"field": "itinerary.days[1].schedule[5].time", "says": "2:00 PM"}],
+  "why": "The day's own schedule runs 4:30 AM to 2:00 PM, 9.5 hours, while the day hours and timing say 7 hours.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Crescent Creek Basin camp elevation", "severity": "low",
+  "claims": [
+   {"field": "waypoints[5].elev", "says": "6050"},
+   {"field": "waypoints[5].directions", "says": "the established basin camp at roughly 5,800 ft below Mt. Terror"},
+   {"field": "itinerary.days[0].note", "says": "camp on heather/slabs around 5,800 ft below Terror and Himmelhorn"}],
+  "why": "The camp waypoint is pinned at 6,050 ft, but its own directions and the itinerary put the camp at about 5,800 ft.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "July conditions vs optimal window", "severity": "low",
+  "claims": [
+   {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through early September"},
+   {"field": "seasonal_guidance.monthBreakdown.July.status", "says": "marginal"}],
+  "why": "The optimal window starts in mid-July, but the whole of July is rated marginal.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Size of the rack", "severity": "low",
+  "claims": [
+   {"field": "detailed_rack", "says": "a small set of nuts and cams, a few slings/draws"},
+   {"field": "rack[0]", "says": "Light alpine rack: small set of nuts and cams"},
+   {"field": "sling_rack.cams", "says": "rack to ~3in, doubles in common finger/hand sizes"},
+   {"field": "sling_rack.nuts", "says": "full stopper set"}],
+  "why": "The rack text calls for a light, small set, while sling_rack calls for doubles and a full stopper set.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Days to approach", "severity": "low",
+  "claims": [
+   {"field": "partner_requirements.approachTime", "says": "Multi-day approach (typically 1.5-2 days each way)"},
+   {"field": "itinerary.days[0].title", "says": "Approach to Crescent Creek Basin"},
+   {"field": "itinerary.days[0].hours", "says": "8"},
+   {"field": "itinerary.days[2].hours", "says": "7"}],
+  "why": "Partner requirements say 1.5-2 days each way, while the itinerary does the approach and the exit in one day each.",
+  "internal_resolution": "itinerary and timing agree on one day each way.",
+  "needs_research": false}
+]},
+
+{"id": "wa_inspiration_peak_west_ridge", "name": "West Ridge", "area": "Inspiration Peak", "contradictions": [
+ {"fact": "Summit time", "severity": "medium",
+  "claims": [
+   {"field": "turnaround", "says": "most parties top out well before noon"},
+   {"field": "itinerary.days[1].schedule[3].time", "says": "12:30 PM"}],
+  "why": "The turnaround text says most parties summit well before noon, but the route's own schedule puts the summit at 12:30 PM.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Round-trip distance", "severity": "low",
+  "claims": [
+   {"field": "itinerary.totalNote", "says": "~21 mi round trip"},
+   {"field": "itinerary.days[0].miles", "says": "7.4"},
+   {"field": "itinerary.days[1].miles", "says": "3.4"},
+   {"field": "itinerary.days[2].miles", "says": "7.4"},
+   {"field": "waypoints[7].distMi", "says": "10.6"},
+   {"field": "waypoints[3].note", "says": "Only needed if continuing to Crescent Creek Basin; this route does not cross it."}],
+  "why": "The day miles add up to 18.2, but the total note says ~21. The waypoint distances reach 10.6 mi at the summit only because they run through the Barrier and the Crescent Creek camp, which the waypoint notes themselves say this route does not use.",
+  "internal_resolution": "the day-by-day miles (18.2) and the waypoint notes excluding the Barrier suggest the ~21 mi total and the cumulative waypoint distMi values past Terror Basin are inflated by the detour.",
+  "needs_research": false},
+ {"fact": "Gain to Terror Basin camp", "severity": "low",
+  "claims": [
+   {"field": "partner_requirements.fitnessSpec.hiking", "says": "roughly 7,500 ft of elevation gain over brush, talus, and cross-country terrain to the Terror Basin camp"},
+   {"field": "itinerary.days[0].gainFt", "says": "5500"},
+   {"field": "approach", "says": "Total car-to-base is roughly 7 miles and 6,000+ ft of gain"}],
+  "why": "Partner requirements give 7,500 ft of gain to camp, but the approach day gains 5,500 ft; 7,500 ft is the whole-trip total.",
+  "internal_resolution": "itinerary and approach agree on ~5,500-6,000 ft to camp.",
+  "needs_research": false}
+]},
+
+{"id": "wa_east_ridge_4", "name": "East Ridge", "area": "Inspiration Peak", "contradictions": [
+ {"fact": "Camp-to-summit distance", "severity": "low",
+  "claims": [
+   {"field": "itinerary.days[1].miles", "says": "6.2"},
+   {"field": "itinerary.days[0].miles", "says": "7.4"},
+   {"field": "waypoints[1].distMi", "says": "8.5"}],
+  "why": "The summit waypoint sits 1.1 mi past the 7.4 mi camp (about 2.2 mi round trip), while the summit day is listed as 6.2 mi.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Summit time", "severity": "low",
+  "claims": [
+   {"field": "turnaround", "says": "summit by early-mid afternoon"},
+   {"field": "itinerary.days[1].schedule[3].time", "says": "~4 PM"}],
+  "why": "The turnaround text expects the summit by early-to-mid afternoon, but the schedule has it at about 4 PM.",
+  "internal_resolution": null,
+  "needs_research": false}
+]},
+
+{"id": "wa_south_face_5", "name": "South Face", "area": "Inspiration Peak", "contradictions": [
+ {"fact": "Descent line (West Ridge only vs West Ridge then South Face)", "severity": "medium",
+  "claims": [
+   {"field": "rappel_detail[0].station", "says": "The descent is the West Ridge, not the South Face."},
+   {"field": "descent_text", "says": "Standard descent is down the West Ridge, not back down the South Face."},
+   {"field": "rappel_detail[3].station", "says": "Around here the line reaches the notch of the West Ridge gully and switches onto the South Face"},
+   {"field": "rappel_detail[6].station", "says": "On the South Face variant it returns you to the base of the route itself"}],
+  "why": "The rappel table first says the descent is not the South Face, then switches onto the South Face partway down.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Rope for the rappel table", "severity": "medium",
+  "claims": [
+   {"field": "rope_length_m", "says": "70"},
+   {"field": "rope_type", "says": "single dynamic"},
+   {"field": "rack[3]", "says": "Single dynamic rope"},
+   {"field": "rappel_detail[0].lengthM", "says": "60"},
+   {"field": "rappel_detail[4].notes", "says": "two ropes used doubled/joined for close to full-length rappels"},
+   {"field": "descent_text", "says": "a single 70 m rope doubled reaches only about 35 m, so on one rope expect roughly twice as many stations: about 14 rappels of 30-35 m"}],
+  "why": "The kit is one 70 m rope, which reaches about 35 m, but the rappel table lists 60 m double-rope rappels (7 total) that need a second rope the gear never lists.",
+  "internal_resolution": "descent_text shows a single 70 m rope means ~14 rappels of 30-35 m; the 7 x 60 m table assumes two ropes.",
+  "needs_research": false},
+ {"fact": "Fixed rappel anchors", "severity": "medium",
+  "claims": [
+   {"field": "approach_variants[0].hazards[3]", "says": "A sustained multi-rappel descent down the West Ridge with no fixed or bolted stations anywhere on the peak"},
+   {"field": "rappel_detail[2].anchor", "says": "fixed three-pin anchor"},
+   {"field": "rappel_detail[6].anchor", "says": "fixed anchor (two pins and a nut)"},
+   {"field": "descent_text", "says": "the stations are fixed pins, nuts and cord of variable quality"}],
+  "why": "One hazard line says there are no fixed stations anywhere on the peak, while the rappel table and descent text describe fixed pin anchors.",
+  "internal_resolution": "rappel_detail and descent_text agree that fixed pin anchors exist (no bolts); the hazard line is the outlier.",
+  "needs_research": false},
+ {"fact": "Roping up on the glacier after the last rappel", "severity": "medium",
+  "claims": [
+   {"field": "rappel_detail[6].notes", "says": "Final rappel reaching the Terror Glacier; unrope and walk off from here."},
+   {"field": "rappel_detail[6].hazards[0]", "says": "bergschrund immediately below the landing"},
+   {"field": "descent_text", "says": "re-cross the icefall (same crevasse hazard as the approach"},
+   {"field": "hazards[0]", "says": "crevassed Terror Glacier on approach"}],
+  "why": "The last rappel note says to unrope and walk off, but the same row says the rappel lands above a bergschrund and the way back crosses a crevassed icefall that needs a rope.",
+  "internal_resolution": "descent_text, the hazards and the rappel's own hazard all call for roped glacier travel after landing.",
+  "needs_research": false},
+ {"fact": "Camp-to-summit distance", "severity": "low",
+  "claims": [
+   {"field": "itinerary.days[1].miles", "says": "6"},
+   {"field": "itinerary.days[0].miles", "says": "7.4"},
+   {"field": "waypoints[1].distMi", "says": "8.5"}],
+  "why": "The summit waypoint sits 1.1 mi past the 7.4 mi camp (about 2.2 mi round trip), while the summit day is listed as 6 mi.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+
+{"id": "wa_little_mac_spire_southwest_route", "name": "Southwest Route", "area": "Little Mac Spire", "contradictions": [
+ {"fact": "Summit-day duration", "severity": "low",
+  "claims": [
+   {"field": "itinerary.days[1].hours", "says": "10"},
+   {"field": "timing.summitTimeHrs", "says": "10"},
+   {"field": "itinerary.days[1].schedule[0].time", "says": "4:30 AM"},
+   {"field": "itinerary.days[1].schedule[5].time", "says": "~4:30 PM"}],
+  "why": "The schedule runs 4:30 AM to about 4:30 PM, 12 hours, while the day hours and timing say 10.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Where the Terror Basin cairn junction is and how steep the climb above it is", "severity": "low",
+  "claims": [
+   {"field": "waypoints[2].note", "says": "Large cairn and stone arrow mark the turn off the maintained Goodell Creek trail onto the steep, faint climbers' path south of Terror Creek — the start of the '~4,000 ft over 2 mi' push."},
+   {"field": "waypoints[2].distMi", "says": "4"},
+   {"field": "approach", "says": "The first roughly 4.5 miles are comparatively mellow, mostly forested walking to the old 'spar tree,' ... From there the trail turns brutally steep for about 2.5 more miles and 4,700 ft of gain ... Watch for a large cairn marking the unsigned junction where a climbers' path splits off toward Terror Basin"}],
+  "why": "The waypoint puts the cairn at the bottom of a ~4,000 ft / 2 mi climb at mile 4, while the approach puts the steep start at the spar tree at 4.5 mi (4,700 ft over 2.5 mi) and the cairn fork somewhere above it.",
+  "internal_resolution": "itinerary.days[0].note matches the approach (easy 4.5 mi, then 4,700 ft in 2.5 mi); the waypoint is the outlier on the figures.",
+  "needs_research": true}
+]},
+
+{"id": "wa_mcmillan_spire_west_southwest_ridge", "name": "Southwest Ridge", "area": "McMillan Spire (West)", "contradictions": [
+ {"fact": "Walk-up permit fee", "severity": "medium",
+  "claims": [
+   {"field": "access.fees", "says": "overnight backcountry camping permit costs $10/person plus a $6 reservation fee (free walk-up permits also available)"},
+   {"field": "access.notes", "says": "Terror Basin is a walk-up-only zone"},
+   {"field": "access.overnight_permit.what", "says": "North Cascades NP backcountry permit for the cross-country zone, with a fee"}],
+  "why": "The fees text says walk-up permits are free, yet the zone is walk-up only and the overnight permit is described as carrying a fee, so the climber cannot tell whether this trip's permit costs anything.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Number of runners", "severity": "low",
+  "claims": [
+   {"field": "sling_rack.slings", "says": "4 single + 2 double-length"},
+   {"field": "gear[1]", "says": "8-10 runners"},
+   {"field": "rack[2]", "says": "8-10 runners/slings"},
+   {"field": "detailed_rack", "says": "plus 8-10 shoulder-length runners for the long, wandering pitches"}],
+  "why": "sling_rack lists 6 slings, while gear, rack and detailed_rack call for 8-10 runners.",
+  "internal_resolution": "three fields agree on 8-10 runners; sling_rack is the outlier.",
+  "needs_research": false}
+]},
+
+{"id": "wa_mcmillan_spire_west_west_ridge", "name": "West Ridge / Southwest Approach", "area": "McMillan Spire (West)", "contradictions": [
+ {"fact": "Shape of the lower approach (4-mile roadbed vs immediate climb)", "severity": "medium",
+  "claims": [
+   {"field": "approach", "says": "pick up the unsigned climbers'-path ... that starts behind a large boulder near the campground. ... The path switchbacks up through second-growth and old-growth forest along a spur ridge south of Terror Creek ... Around 3,200 ft the trail gains the crest of the forested ridge and settles into a steady, unrelenting climb (roughly 4,000 ft of gain over about 2 miles is typical for this stretch)"},
+   {"field": "itinerary.days[0].note", "says": "follow the old forestry-road bed roughly 4 miles through mossy, brushy, deadfall-choked forest, then turn uphill at the cairned junction for a steep 2-mile, ~4,000 ft climb"},
+   {"field": "waypoints[1].name", "says": "Stone-arrow/cairn turnoff to Terror Basin path"},
+   {"field": "waypoints[1].elev", "says": "1700"},
+   {"field": "waypoints[3].elev", "says": "5100"}],
+  "why": "The approach prose skips the 4-mile flat roadbed and has the path climbing from the boulder, with 4,000 ft of gain starting at 3,200 ft (which would end near 7,200 ft). The itinerary, waypoints and road note all put a 4-mile roadbed first, then 4,000 ft from ~1,700 ft to treeline at ~5,100 ft.",
+  "internal_resolution": "itinerary, waypoints[1]-[3], road.driveNote and descent_text agree on the 4-mile roadbed then the steep climb; the approach profile is the outlier.",
+  "needs_research": false},
+ {"fact": "Water between the trailhead and Terror Basin", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "There is reliable running water right at the start, then none again until Terror Basin"},
+   {"field": "approach_variants[0].hazards[1]", "says": "No water between the trailhead and Terror Basin"},
+   {"field": "waypoints[2].name", "says": "Last water before the hill climb"},
+   {"field": "what_to_bring[7]", "says": "water treatment (no reliable water source between the top of the hillclimb and Terror Basin)"}],
+  "why": "Two fields say there is no water after the trailhead, while a waypoint marks a water source at 4.2 mi at the foot of the hill climb.",
+  "internal_resolution": "waypoints[2] and what_to_bring[7] agree there is water at the foot of the climb.",
+  "needs_research": false},
+ {"fact": "Time for the first 4 miles", "severity": "low",
+  "claims": [
+   {"field": "road.driveNote", "says": "Follow an old logging roadbed about 4 miles (~1 hr)"},
+   {"field": "waypoints[1].directions", "says": "budget two to four hours rather than judging pace by the mileage"},
+   {"field": "pro_tips[1]", "says": "Budget 2-4 hours for the first 4 miles along Goodell Creek alone due to deadfall"}],
+  "why": "The road note gives about 1 hour for the roadbed, while two other fields tell climbers to budget 2-4 hours.",
+  "internal_resolution": "waypoints[1], pro_tips[1] and the itinerary schedule (7:00 to 9:30 AM) agree on more than 2 h.",
+  "needs_research": false},
+ {"fact": "Summit-day start time", "severity": "low",
+  "claims": [
+   {"field": "timing.recommendedStart", "says": "parties typically leave camp around 3:30-4:00 AM"},
+   {"field": "itinerary.days[1].schedule[0].time", "says": "5:00 AM"}],
+  "why": "The recommended start is 3:30-4:00 AM, but the itinerary leaves camp at 5:00 AM.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Difficulty of the summit step", "severity": "low",
+  "claims": [
+   {"field": "grade", "says": "Grade II, 4th class (3rd class below)"},
+   {"field": "overview", "says": "class 2-3 ridge scrambling with one short, exposed step below the true summit"},
+   {"field": "climbing_route[2].notes", "says": "A short section of exposed 3rd-class climbing leads onto the summit block."},
+   {"field": "pitch_detail[3].grade", "says": "Class 3-4, short 5.6 step reported by some parties"},
+   {"field": "rock_grade", "says": "4th class (up to low 5th in spots)"}],
+  "why": "The summit step is called 3rd class, 4th class, low 5th and 5.6 in different fields.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Pitch count for an unroped scramble", "severity": "low",
+  "claims": [
+   {"field": "pitches", "says": "4"},
+   {"field": "rappels", "says": "Not typically roped or rappelled — the route is usually downclimbed."},
+   {"field": "detailed_rack", "says": "many climb the entire route unroped"},
+   {"field": "pitch_detail[0].pitch", "says": "Approach: trailhead to Terror Basin"}],
+  "why": "The header shows 4 pitches, but the route is usually climbed unroped, and the 4 pitch_detail rows are approach legs (trailhead, glacier, gully, ridge), not pitches.",
+  "internal_resolution": null,
+  "needs_research": false}
+]},
+
+{"id": "wa_mount_degenhardt_southwest_route", "name": "Southwest Route", "area": "Mount Degenhardt", "contradictions": [
+ {"fact": "Season window (June)", "severity": "medium",
+  "claims": [
+   {"field": "season", "says": "Jun-Sep"},
+   {"field": "approach_variants[0].season", "says": "Jun-Sep"},
+   {"field": "seasonal_guidance.monthBreakdown.June.status", "says": "risky"},
+   {"field": "seasonal_guidance.monthBreakdown.June.reason", "says": "Snowbound in spring: approach and basin are typically still holding deep, unconsolidated snow with limited access"},
+   {"field": "best_season", "says": "Mid-July through early September"},
+   {"field": "itinerary.cal", "says": "best window is late July–September"}],
+  "why": "The season opens in June, but the seasonal guidance rates June risky and snowbound, and the other season fields start in July.",
+  "internal_resolution": "best_season, seasonal_guidance, climate and itinerary.cal agree on July onward; season/approach_variants season is the outlier.",
+  "needs_research": false},
+ {"fact": "Whether the overnight permit can be reserved in advance", "severity": "medium",
+  "claims": [
+   {"field": "permit", "says": "reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center"},
+   {"field": "access.permit", "says": "Reserve via Recreation.gov (spring early-access lottery, then general on-sale) or obtain a walk-up permit in person"},
+   {"field": "bivy[4].permit", "says": "It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY"},
+   {"field": "bivy[0].permit", "says": "Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance."}],
+  "why": "Permit and access say the Terror Basin zone can be reserved on Recreation.gov, while both camp permit notes say it is walk-up only.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Road seasonality", "severity": "low",
+  "claims": [
+   {"field": "road.status", "says": "Seasonal"},
+   {"field": "road.seasonalGate", "says": "Winter closures"},
+   {"field": "climate.winter", "says": "even though the SR-20 trailhead itself stays open"}],
+  "why": "The road card says the access is seasonal with winter closures, while the climate text says the trailhead stays open in winter.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Name of the approach junction", "severity": "low",
+  "claims": [
+   {"field": "approach_variants[0].hazards[0]", "says": "An unmarked junction at Roost Creek that is a genuine route-finding crux"},
+   {"field": "approach", "says": "Roughly 4 miles in, near Terror Creek, watch for the unmarked junction where the Terror Creek climbers' path splits off"}],
+  "why": "The hazard puts the junction at Roost Creek, while the approach and waypoints put it at Terror Creek.",
+  "internal_resolution": "approach, approach_variants notes and waypoints[1] all say Terror Creek.",
+  "needs_research": false},
+ {"fact": "Cairn location relative to the Terror Creek crossing", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "watch for the unmarked junction where the Terror Creek climbers' path splits off — historically flagged only by a rock arrow, a post, and a large cairn"},
+   {"field": "waypoints[1].distMi", "says": "4.3"},
+   {"field": "waypoints[2].distMi", "says": "4.5"},
+   {"field": "waypoints[2].directions", "says": "From the log, push back through dense devil's club to regain the path on the far side. A large cairn with a rock arrow and a post marks the spot where valley travel ends and the climb begins."}],
+  "why": "The approach puts the cairn, rock arrow and post at the junction before Terror Creek, while the waypoints put them after the log crossing.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Is the notch south of the summit the upper Barrier crossing", "severity": "low",
+  "claims": [
+   {"field": "approach_variants[0].baseFinding", "says": "THE START OF THE CLIMBING IS THE NOTCH IMMEDIATELY SOUTH OF THE SUMMIT, AND THAT NOTCH IS ALSO THE UPPER BARRIER CROSSING."},
+   {"field": "approach_variants[0].baseFinding", "says": "make the Barrier crossing, then cross a snowfield and small glacier below Degenhardt's south side and CLAW UP DIRT AND BROKEN ROCK TO THE NOTCH IMMEDIATELY SOUTH OF THE PEAK"},
+   {"field": "approach", "says": "Beyond the Barrier, cross a snowfield/small glacier below Degenhardt's south side ... to reach the base of the southwest line"}],
+  "why": "The base-finding text says the notch is the upper Barrier crossing, but the same text and the approach cross the Barrier first, then a snowfield and glacier, then climb to the notch.",
+  "internal_resolution": null,
+  "needs_research": true}
+]}
+]}

@@ -1,0 +1,244 @@
+{
+ "batches": ["b053.json", "b054.json", "b055.json", "b056.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "name": "South Ridge",
+   "area": "Ingalls Peak",
+   "contradictions": [
+    {
+     "fact": "pitch count on the South Ridge",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "4"},
+      {"field": "pitch_detail", "says": "3 entries (pitch 1, 2, 3)"},
+      {"field": "itinerary.days[0].note", "says": "3 pitches of 4th/low-5th class climbing to the ~7,662 ft summit"},
+      {"field": "itinerary.days[0].schedule[3].detail", "says": "3 pitches, 4th/low-5th class"},
+      {"field": "waypoints[5].note", "says": "rope up for the 3-pitch 5.4 ridge climb"},
+      {"field": "waypoints[6].directions", "says": "Three pitches gain the true summit"}
+     ],
+     "why": "The header/stats field pitches says 4, but pitch_detail lists exactly 3 pitches and the itinerary note, itinerary schedule, and two waypoint notes all independently say 3 pitches.",
+     "internal_resolution": "3 is correct — pitch_detail (3 rows), the itinerary text, and both waypoints agree; pitches=4 is the lone outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "standard descent method (downclimb vs rappel)",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent", "says": "Downclimb/scramble the ridge back toward the North-South notch (3rd/4th class with a few exposed steps); many parties place one short rappel off blocks near the top of the red slab rather than downclimbing it."},
+      {"field": "descent_text", "says": "most parties do the descent in three rappels with a single 60m rope"}
+     ],
+     "why": "descent frames the normal descent as downclimbing with at most one optional short rappel; descent_text frames it as a full three-rappel descent from the summit. These describe materially different amounts of rope work.",
+     "internal_resolution": "descent_text is corroborated by rappel_detail (3 numbered stations) and rappel_count_note; descent_text is also the longer field so it is what actually renders per the page's own rule, but the two fields still disagree internally.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_9",
+   "name": "East Ridge",
+   "area": "Ingalls Peak",
+   "contradictions": [
+    {
+     "fact": "rappel sequence/count on the shared South Ridge descent",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent", "says": "then make a double-rope rappel to a large platform, a single-rope rappel to a lower slab, and a final double-rope rappel to the base"},
+      {"field": "descent_text", "says": "three rappels on two 60 m ropes (four rappels if you carry a single 60 m rope), going first via a single-strand rappel off a two-bolt anchor to a narrow ledge, then a full-rope-length rappel... and a final rappel to the base ledges"}
+     ],
+     "why": "descent implies 4 rappels in a double/single/double pattern; descent_text says 3 rappels in a single/double/(final) pattern, matching the South Ridge route's own documented rappel_detail order (single, double, single).",
+     "internal_resolution": "descent_text matches the shared South Ridge route's own rappel_detail sequence; descent's 4-rappel double/single/double account is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ingalls_peak_friends_in_high_places",
+   "name": "Friends In High Places",
+   "area": "Ingalls Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ingalls_peak_east_route",
+   "name": "East Peak (Low Fifth Class)",
+   "area": "Ingalls Peak - East Peak",
+   "contradictions": [
+    {
+     "fact": "standard descent method (downclimb vs rappel)",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Most parties downclimb/scramble back to the North/East col and retrace the approach trail through Ingalls Pass to the Esmeralda Trailhead rather than rappelling the route."},
+      {"field": "descent_text", "says": "the standard descent is to rappel the route itself: three rappel stations are encountered descending the line"}
+     ],
+     "why": "descent explicitly says most parties downclimb rather than rappel; descent_text explicitly calls rappelling the route the standard descent — directly opposite characterizations of the normal way down.",
+     "internal_resolution": "descent_text is corroborated by rappel_detail (3 stations, including a mandatory double-rope final rappel) and rappel_count_note; descent's downclimb framing is the outlier, though descent_text (longer) is what actually renders.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km vs stated round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8.9"},
+      {"field": "approach", "says": "consistent with this route's ~16 km round-trip distance figure"},
+      {"field": "itinerary.days[0].miles", "says": "10"}
+     ],
+     "why": "dist_km (8.9 km ≈ 5.5 mi) reads as a one-way figure while the approach prose and itinerary describe a ~16 km / 10 mi round trip; doubling 8.9 gives ~17.8 km, moderately over the ~16 km the prose claims.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ingalls_peak_east_ne_ridge_route",
+   "name": "East Peak (Northeast Ridge to East Face)",
+   "area": "Ingalls Peak - East Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ingalls_peak_south_scramble",
+   "name": "South Peak Scramble",
+   "area": "Ingalls Peak - South Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "name": "North Slopes",
+   "area": "Little Annapurna",
+   "contradictions": [
+    {
+     "fact": "which side of the summit the final slopes face (north vs south)",
+     "severity": "high",
+     "claims": [
+      {"field": "name", "says": "North Slopes"},
+      {"field": "aspect", "says": "N/NW"},
+      {"field": "face", "says": "the peak's north/west-facing slopes"},
+      {"field": "approach", "says": "broad north-facing slabs and talus on the peak's east/left side"},
+      {"field": "climbing_route[0].label", "says": "South slabs and talus to the summit"},
+      {"field": "climbing_route[0].notes", "says": "up the broad south-facing slabs and talus on the peak's east/left side"},
+      {"field": "pitch_detail[3].notes", "says": "Ascend granite slabs and blocks on the peak's south side/slopes to the summit"},
+      {"field": "waypoints[3].name", "says": "Base of south slopes"}
+     ],
+     "why": "Route name, aspect, face, and the main approach prose all say the standard line climbs north/northwest-facing slopes, while climbing_route, the final pitch_detail row, and a waypoint literally named 'Base of south slopes' describe the identical final approach to the summit as south-facing. A climber comparing Overview (face) to the Plan tab's WAYPOINTS/ROUTE BREAKDOWN would get opposite compass directions for the same terrain.",
+     "internal_resolution": "Cannot be resolved from the row alone — roughly half the fields support each direction. Notably the route's own id, wa_little_annapurna_south_slopes, matches the 'south' fields while the displayed name 'North Slopes' matches the 'north' fields, suggesting two versions were merged.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_little_annapurna_south_face",
+   "name": "South Face",
+   "area": "Little Annapurna",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "name": "Southwest Scramble",
+   "area": "McClellan Peak",
+   "contradictions": [
+    {
+     "fact": "which trailhead/approach reaches this route",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_logistics.trailhead", "says": "Snow Lakes Trailhead"},
+      {"field": "waypoints[0].name", "says": "Snow Lakes Trailhead"},
+      {"field": "road.name", "says": "Icicle Creek Road"},
+      {"field": "approach", "says": "From Leavenworth, drive Icicle Road (Forest Road 7600) about 4.2–4.3 miles west to the Snow Lakes Trailhead"},
+      {"field": "beta", "says": "From Colchuck Lake, climb the steep Aasgard Pass gully to the pass, then drop gently into the gentler, rocky Upper Enchantments basin."},
+      {"field": "face", "says": "West side of the summit block (reached via the south/Ingalls Creek approach)"},
+      {"field": "pitch_detail[0].notes", "says": "Ingalls Creek Trail to the Crystal Creek crossing, ~7.5 miles of gentle forested trail."},
+      {"field": "pitch_detail[1].notes", "says": "Cross-country ascent through forest and talus to a high camp near the 6,000 ft basin below Crystal Lake."}
+     ],
+     "why": "approach_logistics, the waypoints array, road, the main approach prose, and itinerary all agree the route is reached via the Snow Lakes Trailhead / Icicle Creek Road. But beta instead routes the climber via Colchuck Lake and Aasgard Pass (a different range-crossing entirely), and face/pitch_detail describe an Ingalls Creek/Crystal Creek approach with a '~7.5 mile' hike and a '6,000 ft basin below Crystal Lake' — this exact wording and figures match the unrelated Little Annapurna South Face route's approach, indicating contaminated/copied text.",
+     "internal_resolution": "Snow Lakes Trailhead is correct — confirmed by approach_logistics.trailhead, waypoints, road, and the itinerary schedule ('Leave Snow Creek trailhead'); beta, face, and pitch_detail are the contaminated outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6364"},
+      {"field": "itinerary.days[0].gainFt", "says": "8100"},
+      {"field": "loss_ft", "says": "8100"}
+     ],
+     "why": "gain_ft is about 27% below both the itinerary's own gainFt and the route's own loss_ft for what is an out-and-back day, where gain and loss should be roughly equal.",
+     "internal_resolution": "loss_ft and itinerary.gainFt agree with each other at 8100; gain_ft (6364) is the outlier (also flagged by the mechanical detector).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "name": "Cascadian Couloir",
+   "area": "Mount Stuart",
+   "contradictions": [
+    {
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "8100"},
+      {"field": "loss_ft", "says": "8100"},
+      {"field": "dist_km", "says": "19.3"},
+      {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt", "says": "1800 + 3375 = 5175"},
+      {"field": "itinerary.days[0].lossFt + itinerary.days[1].lossFt", "says": "1300 + 3875 = 5175"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "5.3 + 10.6 = 15.9"},
+      {"field": "itinerary.totalNote", "says": "roughly 8,100+ ft of cumulative gain/loss (the profile crosses Longs Pass twice) over about 12 mi round trip"}
+     ],
+     "why": "The header stats (gain_ft/loss_ft 8100, dist_km 19.3 ≈ 12 mi) are corroborated by the route's own itinerary.totalNote prose, but the itinerary's own per-day gainFt/lossFt/miles fields sum to only 5,175 ft / 15.9 mi — a climber reading the day-by-day plan would budget for meaningfully less elevation gain and more distance than the route's own summary states.",
+     "internal_resolution": "gain_ft/loss_ft/dist_km match totalNote's own prose (8,100+ ft, ~12 mi) and reflect the profile crossing Longs Pass twice; the itinerary's day-level numbers are the outlier and appear to omit part of the return trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "name": "Upper North Ridge w/Great Gendarme",
+   "area": "Mount Stuart",
+   "contradictions": [
+    {
+     "fact": "whether an Enchantment-zone lottery permit is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "permit", "says": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead."},
+      {"field": "access.permit", "says": "Free Self-Issue Day Permit"},
+      {"field": "bivy[3].permit", "says": "approached on Alpine Lakes Wilderness ground under the Cle Elum Ranger District — free self-issued trailhead permit, Northwest Forest Pass to park, no Enchantment lottery permit"}
+     ],
+     "why": "The route's top-level permit field is generic Enchantment-lottery boilerplate, but the route approaches via Esmeralda/Goat Pass (Alpine Lakes Wilderness, Cle Elum Ranger District), and its own Goat Pass bivy entry explicitly says 'no Enchantment lottery permit' for that exact ground; access.permit similarly only names a free self-issue day permit.",
+     "internal_resolution": "access.permit and the Goat Pass bivy note agree (no lottery); the top-level permit field's Enchantment-lottery claim is the outlier, likely copied from an Enchantments-zone route.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "name": "The Direct North Ridge w/ Gendarme",
+   "area": "Mount Stuart",
+   "contradictions": [
+    {
+     "fact": "whether an Enchantment-zone lottery permit is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "permit", "says": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery)"},
+      {"field": "access.permit", "says": "Free Self-Issue Day Permit"},
+      {"field": "bivy[3].permit", "says": "no Enchantment lottery permit"}
+     ],
+     "why": "Same pattern as the Upper North Ridge route: the generic top-level permit field claims an Enchantment lottery is required, while access.permit and the route's own Goat Pass bivy entry say no lottery applies to this approach.",
+     "internal_resolution": "access.permit and the Goat Pass bivy note agree with each other (no lottery); the top-level permit field is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "which trailhead starts this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach_logistics.trailhead", "says": "Esmeralda Basin Trailhead (FR-9737)"},
+      {"field": "waypoints[0].name", "says": "Stuart Lake Trailhead (Eightmile Creek Rd #7601)"},
+      {"field": "waypoints[0].note", "says": "This pin is the Icicle-side start, not the Teanaway one."}
+     ],
+     "why": "The TRAILHEAD card (approach_logistics.trailhead) names Esmeralda Basin Trailhead, but the route's waypoints array itself starts at Stuart Lake Trailhead on the opposite (Icicle Creek) side of the range. The waypoint's own note acknowledges two different approach variants exist, but the two rendered fields still name different trailheads as 'the' starting point.",
+     "internal_resolution": "Both are legitimate documented approach_variants (one marked primary: the Ingalls Lake/Goat Pass line matching approach_logistics), so this is a data-selection inconsistency between which variant each field defaults to, rather than one being flatly wrong.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

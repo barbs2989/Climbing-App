@@ -67,7 +67,7 @@ if (!areas.length) {
 }
 const areaById = new Map(areas.map(a => [a.id, a]));
 
-const COLS = "id,name,area_id,dist_km,gain_ft,discipline,source";
+const COLS = "id,name,area_id,dist_km,gain_ft,discipline";
 const routes = [];
 const ids = areas.map(a => a.id);
 for (let i = 0; i < ids.length; i += 80) {
@@ -140,7 +140,7 @@ console.log("  A hypothesis, not a verdict: confirm the row against its own over
 for (const r of misfiled) {
   const v = ruledOn.get(r.id);
   console.log(`  ${pad(r.dist_km, 6)} km  ${r.discipline}  ${peakOf(r)} / ${r.name}  [${r.id}]` +
-    `${r.source ? "" : "  source:null"}${v ? "  -> " + v.verdict.toUpperCase() : "  -> NEW"}`);
+    `${v ? "  -> " + v.verdict.toUpperCase() : "  -> NEW"}`);
 }
 if (deferredMisfiled.length) console.log(`  ${deferredMisfiled.length} of these is a deferred defect, not clean data.`);
 console.log("");

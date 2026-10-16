@@ -1,0 +1,203 @@
+{"batches": ["batches/b085.json", "batches/b086.json", "batches/b087.json", "batches/b088.json"], "routes_read": 14, "routes": [
+ {"id": "wa_south_face_7", "name": "South Face", "area": "Red Mountain", "contradictions": []},
+ {"id": "wa_red_mountain_snoqualmie_standard", "name": "Standard Scramble", "area": "Red Mountain",
+  "contradictions": [
+   {"fact": "Waypoint list names 'Red Pass' as a mid-route junction, but the route's own prose never goes there",
+    "severity": "medium",
+    "claims": [
+     {"field": "waypoints[1]", "says": "{\"name\":\"Red Pass\",\"type\":\"Junction\",\"lat\":47.4592466,\"lng\":-121.3954014}"},
+     {"field": "approach", "says": "...turn left (west) onto Trail #1033, the Commonwealth Creek Trail...As the trail levels out near a small tarn/pond below Red Mountain's west slope, watch for a cairn planted in the middle of the path — this marks the scramble takeoff point..."},
+     {"field": "itinerary.days[0].schedule", "says": "Leave PCT North Trailhead -> Commonwealth Creek Trail (#1033) junction -> Reach the pond below the west face -> Ascend boot path to summit (no Red Pass stop listed)"},
+     {"field": "wa_east_ridge_7.approach (same area, for contrast)", "says": "...to Red Mountain Saddle/Red Pass (approx. 5,320+ ft), passing the Red Mountain scramble boot path along the way"}
+    ],
+    "why": "The Standard Scramble's own beta/approach/itinerary describe leaving the trail at a cairn near an unnamed tarn (~4,600 ft) and never mention Red Pass, yet the route's waypoint list places 'Red Pass' as a junction between the trailhead and the summit. The area's other route (East Ridge) independently describes Red Pass (~5,320+ ft) as a further, higher point along the same trail that this route's cairn turnoff is reached before — so Red Pass does not sit on this route's line as described.",
+    "internal_resolution": "The approach/beta/itinerary (3 fields) agree on a cairn/tarn turnoff with no mention of Red Pass; the waypoint entry looks contaminated from a neighboring route's data.",
+    "needs_research": true
+   },
+   {"fact": "dist_km is one-way while the itinerary/total note give round-trip mileage",
+    "severity": "low",
+    "claims": [
+     {"field": "dist_km", "says": "6.45"},
+     {"field": "itinerary.days[0].miles", "says": "8"},
+     {"field": "itinerary.totalNote", "says": "A single long day: ~8 miles round trip, 2,900 ft gain..."}
+    ],
+    "why": "6.45 km (~4.0 mi) is almost exactly half of the itinerary's 8-mile round-trip figure, so dist_km reads as one-way while the header/itinerary distance is round-trip — the page could show two different 'distance' numbers for the same day.",
+    "internal_resolution": "itinerary.miles (8) and totalNote agree with each other and with approach_variants distMi=8; dist_km is the one-way convention noted elsewhere in this codebase as inconsistent.",
+    "needs_research": false
+   }
+  ]
+ },
+ {"id": "wa_east_ridge_7", "name": "East Ridge", "area": "Red Mountain",
+  "contradictions": [
+   {"fact": "Route's own approach names a saddle belonging to a different peak (Lundin/East Lundin) rather than Red Mountain",
+    "severity": "high",
+    "claims": [
+     {"field": "approach", "says": "The route begins at the saddle between Lundin and East Lundin peaks; follow a climber's path west/up to the base of the route."},
+     {"field": "watch_out[1]", "says": "Confirm which summit (Red Mountain vs. neighboring Lundin Peak) you intend to top out on before committing — see route notes."},
+     {"field": "approach_variants[0].baseFinding", "says": "the published location text for this route refers to a saddle between Lundin and East Lundin peaks, while the approach it gives goes to Red Pass and then west, which is Red Mountain's ground rather than Lundin's...Three descriptions, one name."},
+     {"field": "high_point_ft", "says": "5890 (matches Red Mountain's own summit elevation, not a Lundin-area point)"}
+    ],
+    "why": "The route's own 'approach' field names a saddle associated with a neighboring peak (Lundin/East Lundin), not Red Mountain, while the rest of the route's data (area filing, high_point_ft, watch_out) treats it as a Red Mountain route — and the route's own baseFinding text explicitly flags this as a real naming confusion 'that could send you to another mountain.'",
+    "internal_resolution": "baseFinding says to identify the route by 'the saddle and the three bolts, not by the route name,' treating the Red Pass approach (Red Mountain) as correct and the Lundin/East Lundin saddle wording as the error — but this is stated nowhere in the primary 'approach' field itself.",
+    "needs_research": false
+   }
+  ]
+ },
+ {"id": "wa_snoqualmie_mountain_standard_route", "name": "Standard Route (Southwest Slopes)", "area": "Snoqualmie Mountain",
+  "contradictions": [
+   {"fact": "Stated season excludes October, but seasonal guidance includes it",
+    "severity": "medium",
+    "claims": [
+     {"field": "season", "says": "Jul-Sep"},
+     {"field": "seasonal_guidance.optimalWindow", "says": "August is peak-optimal; the broader viable window runs mid-July through October data"},
+     {"field": "seasonal_guidance.monthBreakdown.October", "says": "{\"status\":\"marginal\",\"reason\":\"Shorter daylight and increasing chance of early snow/ice on the steep loose path toward the tail end of the season window\"}"}
+    ],
+    "why": "October falls entirely outside the route's stated Jul-Sep season (shown in the header/Trip-plan season chip), yet the route's own seasonal_guidance names October as part of the 'broader viable window' and gives it a status — the guidance window is wider than the season, not a best-window-inside-a-season case.",
+    "internal_resolution": null,
+    "needs_research": false
+   }
+  ]
+ },
+ {"id": "wa_snoqualmie_mountain_boogie_wonderland", "name": "Boogie Wonderland", "area": "Snoqualmie Mountain", "contradictions": []},
+ {"id": "wa_snoqualmie_mountain_the_snostril", "name": "The Snostril", "area": "Snoqualmie Mountain", "contradictions": []},
+ {"id": "wa_new_york_gully", "name": "New York Gully", "area": "Snoqualmie Mountain",
+  "contradictions": [
+   {"fact": "First-ascent year/party disagrees between fa and overview",
+    "severity": "low",
+    "claims": [
+     {"field": "fa", "says": "Ruch and Cordery-Cotter, 1985"},
+     {"field": "overview", "says": "First climbed by Jim Ruche and Bob Cotter in February 1991 as a IV 5.8 A2 WI4 aid line"}
+    ],
+    "why": "The fa field and the overview's first-ascent sentence give different years (1985 vs 1991) and slightly different names (Ruch/Cordery-Cotter vs Ruche/Bob Cotter) for what appears to be the same first ascent.",
+    "internal_resolution": null,
+    "needs_research": true
+   },
+   {"fact": "Pitch count (5) exceeds the numbered rows in pitch_detail (4)",
+    "severity": "medium",
+    "claims": [
+     {"field": "pitches", "says": "5"},
+     {"field": "pitch_detail", "says": "4 numbered pitch rows (1, 2, 3, 4)"},
+     {"field": "itinerary.days[0].title/objective", "says": "climb 4-6 pitches of ice/mixed/snow"}
+    ],
+    "why": "The header/TECHNICAL STATS would show 5 pitches, but the ROUTE BREAKDOWN table (pitch_detail) only lists 4 numbered pitches — a climber counting pitches from the breakdown gets a different number than the stat.",
+    "internal_resolution": null,
+    "needs_research": false
+   },
+   {"fact": "Overview's stated route length (~1,300 ft) is roughly double length_m and the pitch-length total",
+    "severity": "medium",
+    "claims": [
+     {"field": "overview", "says": "it's a roughly 1,300-ft alpine route following a prominent gully system to a distinctive 'box gully' feature..."},
+     {"field": "length_m", "says": "213 (≈699 ft)"},
+     {"field": "pitch_detail (sum of lengthM)", "says": "55+50+35+45 = 185 m (≈607 ft)"}
+    ],
+    "why": "The overview describes the route as about 1,300 vertical feet, while the TECHNICAL STATS climb-length field (length_m=213m≈699ft) and the sum of the four listed pitch lengths (≈607ft) both land at roughly half that figure.",
+    "internal_resolution": null,
+    "needs_research": true
+   }
+  ]
+ },
+ {"id": "wa_the_tooth_fairy", "name": "The Tooth Fairy", "area": "The Tooth",
+  "contradictions": [
+   {"fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling",
+    "severity": "medium",
+    "claims": [
+     {"field": "descent", "says": "Rappel the route (P6 down to P1) rather than descending via Pineapple Pass, using the bolted anchors."},
+     {"field": "rappels", "says": "...alternatively walk off via the South Face descent."},
+     {"field": "descent_text", "says": "Some parties instead walk off toward Pineapple Pass and descend the South Face's scramble descent."},
+     {"field": "itinerary", "says": "...rappel the route or walk off -> retrace the approach to the trailhead."}
+    ],
+    "why": "The short 'descent' field states the route is rappelled 'rather than' walking off via Pineapple Pass, while rappels, descent_text, and the itinerary string all present walking off as a legitimate alternative descent option.",
+    "internal_resolution": "Three fields (rappels, descent_text, itinerary) agree walk-off is a real option; the single 'descent' field is the outlier.",
+    "needs_research": false
+   },
+   {"fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit",
+    "severity": "medium",
+    "claims": [
+     {"field": "gear", "says": "Small cams (0.4-0.5 C4 size) or nuts — the top pitch's belay isn't bolted, so you need gear to build the summit anchor"},
+     {"field": "pitch_detail[6] (P7)", "says": "Unroped scrambling to the true summit; single bolt en route but no anchor at the top."},
+     {"field": "overview", "says": "...seven-pitch (six roped pitches plus a short summit scramble)..."},
+     {"field": "descent_text", "says": "the anchor is unequipped at the true summit — P7 is an unroped scramble with no rappel anchor"}
+    ],
+    "why": "The gear list implies the party belays a final pitch and needs cams/nuts to build a 'summit anchor,' while the overview, the pitch table, and descent_text all agree the stretch to the true summit is unroped scrambling with no anchor at all.",
+    "internal_resolution": null,
+    "needs_research": true
+   }
+  ]
+ },
+ {"id": "wa_southwest_face", "name": "Southwest Face", "area": "The Tooth", "contradictions": []},
+ {"id": "wa_the_tooth_south_face", "name": "South Face (Standard)", "area": "The Tooth",
+  "contradictions": [
+   {"fact": "rappels field calls the 4 standard rappel stations 'bolted,' but the per-station detail describes natural (tree/horn/block) anchors",
+    "severity": "medium",
+    "claims": [
+     {"field": "rappels", "says": "4 rappels (roughly 25-30m / under 100ft each) from bolted/slung anchors back down to Pineapple Pass"},
+     {"field": "rappel_detail[0].anchor", "says": "3 rap rings, backed by sling around tree/horn"},
+     {"field": "rappel_detail[2].anchor", "says": "two slung trees"},
+     {"field": "rappel_detail[3].anchor", "says": "several slings + 3 rap rings around a block"},
+     {"field": "rappel_count_note", "says": "A separate, partly hidden bolted line beside pitches 1 and 2 exists so that ascending and descending parties are not in the same place; it is a different set of anchors, not a variation."}
+    ],
+    "why": "The summary 'rappels' field calls the standard descent's anchors 'bolted,' but every one of the 4 detailed stations is a tree, horn, or block sling (with rap rings/cordelette added, not drilled bolts), and the route's own note says bolted anchors belong to a separate line beside pitches 1-2, not these 4 stations.",
+    "internal_resolution": "rappel_detail (4 stations) and rappel_count_note agree the standard line is natural/slung anchors; the 'bolted' word in the summary rappels field appears to be the error.",
+    "needs_research": false
+   }
+  ]
+ },
+ {"id": "wa_the_tooth_indentured_servant", "name": "Indentured Servant", "area": "The Tooth", "contradictions": []},
+ {"id": "wa_tooth_chair_traverse", "name": "Tooth - Chair Traverse", "area": "The Tooth", "contradictions": []},
+ {"id": "wa_the_tooth_r1", "name": "Northeast Slabs", "area": "The Tooth",
+  "contradictions": [
+   {"fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)",
+    "severity": "medium",
+    "claims": [
+     {"field": "gain_ft", "says": "2500"},
+     {"field": "loss_ft", "says": "2500"},
+     {"field": "approach_variants[0].gainFt", "says": "2500"},
+     {"field": "itinerary.days[0].gainFt", "says": "3000"},
+     {"field": "itinerary.days[0].lossFt", "says": "3000"},
+     {"field": "itinerary.totalNote", "says": "...about 6.5 miles and 3,000 ft of gain over 5-6 pitches..."}
+    ],
+    "why": "The route-level gain_ft/loss_ft and approach_variants agree on 2,500 ft, but the itinerary day and its own totalNote both state 3,000 ft for the same car-to-car climb — a 20% gap between the header/TECHNICAL STATS number and the Trip-plan TOTAL row.",
+    "internal_resolution": "gain_ft, loss_ft, and approach_variants (3 fields) agree at 2,500 ft; the itinerary/totalNote pair is the outlier at 3,000 ft.",
+    "needs_research": false
+   },
+   {"fact": "Stated season excludes April, but seasonal guidance and the avalanche table include it",
+    "severity": "medium",
+    "claims": [
+     {"field": "season", "says": "Dec-Mar"},
+     {"field": "seasonal_guidance.monthBreakdown.April", "says": "{\"status\":\"marginal\",\"reason\":\"Warming temperatures increasingly melt the line out and raise wet-snow avalanche risk\"}"},
+     {"field": "seasonal_hazards.avalanche.byMonth.April", "says": "Moderate"}
+    ],
+    "why": "April falls outside the route's stated Dec-Mar season, yet the route's own seasonal_guidance month breakdown and its avalanche-by-month table both include April as a climbable (if marginal/moderate-hazard) month.",
+    "internal_resolution": null,
+    "needs_research": false
+   },
+   {"fact": "descent_text describes 2 rappels down the NE side to Pineapple Pass, but rappel_detail describes joining the South Face's 4-rappel line at the summit",
+    "severity": "medium",
+    "claims": [
+     {"field": "descent_text", "says": "From the summit, downclimb a short distance to a tree anchor just below/west of the true summit. From there, two rappels — up to 60m each...drop down the NE side to the notch (Pineapple Pass)...From the notch you join the South Face (standard) descent..."},
+     {"field": "rappel_detail[0].notes", "says": "First rappel of the standard South Face descent that Northeast Slabs climbers join at the summit."},
+     {"field": "rappels", "says": "Standard descent follows the South Face rappel line (4 raps, roughly 25-30m each) back to Pineapple Pass; some winter parties instead make 2 long rappels (60m) from a tree below the summit directly down to the notch before skiing out."}
+    ],
+    "why": "descent_text's main narrative has the party rappel twice down the NE side to reach Pineapple Pass before joining the South Face descent, while the route's own detailed rappel_detail table (identical station-by-station text to the South Face route) instead has climbers join the South Face's 4-rappel sequence immediately at the summit — two different physical descent lines both presented as what happens.",
+    "internal_resolution": null,
+    "needs_research": true
+   }
+  ]
+ },
+ {"id": "wa_east_face_variation", "name": "East Face Variation", "area": "The Tooth",
+  "contradictions": [
+   {"fact": "climate.winter and climate.spring each give a different season end-point than season/best_season",
+    "severity": "low",
+    "claims": [
+     {"field": "season", "says": "Dec-Apr (winter-spring; condition-dependent), first climbed in winter"},
+     {"field": "best_season", "says": "Winter-spring (roughly December-April) once enough snow and ice have built up..."},
+     {"field": "climate.winter", "says": "Primary season (Dec-Mar) for the route as a mixed/ice line..."},
+     {"field": "climate.spring", "says": "Consolidating snowpack can offer workable mixed/snow conditions March-May, but the crux corner's ice/snow coverage is highly variable"}
+    ],
+    "why": "season and best_season both give December through April, but climate.winter narrows the 'primary season' to Dec-Mar (dropping April) while climate.spring separately extends workable conditions out to May (beyond the stated season) — three different end months for when the route stops being climbable.",
+    "internal_resolution": null,
+    "needs_research": false
+   }
+  ]
+ }
+]}

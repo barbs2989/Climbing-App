@@ -1,0 +1,83 @@
+{
+ "id": "wa_lost_peak_pasayten_scramble",
+ "name": "Standard Scramble",
+ "waypoints": [
+  {
+   "lat": 48.65617,
+   "lng": -120.51276,
+   "elev": 2550,
+   "name": "Monument Creek Trailhead (Lost River Road / Harts Pass Road)",
+   "note": "USFS trailhead on Lost River Road (FR 5400 spur); no parking pass needed; fill out the free self-issue wilderness permit at the kiosk. There is no toilet or drinking water here.",
+   "type": "Trailhead",
+   "distMi": 0
+  },
+  {
+   "lat": 48.75375,
+   "lng": -120.63538,
+   "elev": 6220,
+   "name": "Robinson Pass",
+   "note": "Gains the Middle Fork Pasayten divide via a steep final 1.2-mile forested pitch; trail forks here toward the Pasayten River valley.",
+   "type": "Junction",
+   "distMi": 9,
+   "directions": "Trail #478 follows Robinson Creek through big timber for about six miles, never far from the sound of the water, then fords the creek. Above the ford the grade stays gradual through forest, crossing several avalanche runouts, and breaks into meadowland near 4,700 ft. Pass the Slate Pass Trail junction and finish with a half mile of open meadow climbing to the pass."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": null,
+   "name": "Middle Fork Pasayten River flats",
+   "note": "Common first-night camp beside the river a few miles below Robinson Pass; reliable water but mosquito-heavy in early season.",
+   "type": "Water",
+   "distMi": 12,
+   "directions": "Drop off the far side of the pass and descend about three miles into the broad U-shaped Middle Fork valley, losing roughly 1,800 ft to river level. Camps sit along the water here."
+  },
+  {
+   "lat": 48.82287,
+   "lng": -120.59824,
+   "elev": 6507,
+   "name": "Fred's Lake",
+   "note": "Green alpine lake ringed by larches with a popular established camp; last dependable water before the Rolo/Shellrock high country.",
+   "type": "Campsite",
+   "distMi": 16,
+   "directions": "Continue down-river before the trail turns and climbs back into the high country, gaining around 2,100 ft to the lake basin. Fred's Lake sits a short way off the main trail rather than on it, so watch for the spur or you will walk straight past it."
+  },
+  {
+   "lat": 48.819342400000004,
+   "lng": -120.56960532,
+   "elev": 7100,
+   "name": "Rolo Pass",
+   "note": "Ridge-crest pass just above Fred's Lake; route continues cross-country toward the head of Eureka Creek and Shellrock Basin.",
+   "type": "Junction",
+   "distMi": 18,
+   "directions": "From the lake keep climbing to the ridge-crest pass a few hundred feet above, through open larch and talus. The maintained tread thins out above the lake, and this is where the route stops being a trail hike."
+  },
+  {
+   "lat": 48.81486,
+   "lng": -120.52594,
+   "elev": 7500,
+   "name": "Shellrock Pass / Shellrock Basin",
+   "note": "Trail here has been unmaintained for decades and the basin fogs in frequently; easy to lose the faint tread in whiteout, navigate by map/compass.",
+   "type": "Hazard",
+   "distMi": 21,
+   "directions": "From Rolo Pass drop to the headwaters of Eureka Creek and traverse across into Shellrock Basin, then climb to the pass at 7,500 ft. The tread through here has been unmaintained for decades and is faint to nonexistent, and the basin fogs in readily — carry map and compass and be ready to navigate without seeing any of the surrounding peaks."
+  },
+  {
+   "lat": 48.81287,
+   "lng": -120.458255,
+   "elev": 8464,
+   "name": "Lost Peak",
+   "note": "Reached along the ridge from Butte Pass and Pass Butte over several false summits; the loose west and southwest slopes are the other way down.",
+   "type": "Summit",
+   "distMi": 24,
+   "directions": "From a camp near the pass, gain either the southwest or the northwest ridge and follow it over talus and alpine meadow to the top. Class 3 with no sustained technical ground, but the crest is high, exposed to wind, and can hold snow well past midsummer."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.81287,
+  "peakLng": -120.458255,
+  "trailhead": "Monument Creek Trailhead (Lost River Road / Harts Pass Road)",
+  "trailheadLat": 48.65617,
+  "trailheadLng": -120.51276,
+  "trailheadDirection": "From the Monument Creek Trailhead off Lost River Road past Mazama"
+ }
+}

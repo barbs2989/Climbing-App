@@ -57,8 +57,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
+import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, looksLikeSpinner } from "./lib/render-settle.mjs";
+import { MENU_SCREENS, openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -166,8 +168,26 @@ try {
   }
   const page = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
 
-  log("creating fixture accounts...");
-  fixture = await createFixture(log);
+  // Two ways to get a signed-in account, and which one is available says where we are.
+  //
+  // LOCALLY: create a pair per run with the service key and destroy them after, so nothing
+  // is left in the production project.
+  //
+  // IN CI: sign in to two DURABLE accounts with the anon key. CI must never hold the service
+  // key, and that is why this guard sat outside CI for so long — ~40 merged commits with no
+  // run, because "hand-run" means "not run" on a loaded machine. The privileged work happened
+  // once, locally (scripts/oneoff/create-ci-test-accounts.mjs and seed-ci-test-fixture.mjs);
+  // all CI does is exchange a password for a session, which is what a browser does.
+  //
+  // The durable pair is marked discoverable=false so it cannot appear in partner browse, and
+  // durable-fixture re-checks that on every run rather than trusting the day it was set.
+  if (durableCredsPresent()) {
+    log("signing in to the durable CI accounts...");
+    fixture = await durableFixture(log);
+  } else {
+    log("creating fixture accounts...");
+    fixture = await createFixture(log);
+  }
   const pageErrors = [];
   page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 
@@ -180,9 +200,14 @@ try {
 
   const screens = {};
   const tap = async (text, i = 0) => {
+    // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+    if (MENU_SCREENS[text]) return openFromMenu(page, text);
     const hit = await page.evaluate(({ t, idx }) => {
       const els = [...document.querySelectorAll('button,[role="button"],a,select,summary')]
-        .filter((e) => (e.textContent || "").trim() === t);
+        .filter((e) => (e.textContent || "").trim() === t)
+        // The primary nav is a BOTTOM tab bar, so it is LAST in DOM order. A tab label
+        // ("Partners") also names in-page controls; put the nav first so a tab tap means the tab.
+        .sort((a, b) => Number(!!b.closest('[aria-label="Primary"]')) - Number(!!a.closest('[aria-label="Primary"]')));
       if (!els[idx]) return false;
       els[idx].click();
       return true;
@@ -291,7 +316,7 @@ try {
   log(`signed in as the fixture owner (${fixture.owner.id.slice(0, 8)}), real auth gate live`);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -302,15 +327,47 @@ try {
   // itself empty -- caught by the FORBIDDEN entry above, and by naming the mate here.
   log("crew with a real second member:");
   await reset();
-  await tap("Crew");
+  await tap("Crews");
+  /* WAIT FOR THE ROSTER, NOT JUST THE CARD. The crew row paints from one query and its members from a
+     second, and under a busy database (the 57014 storm of 2026-10-08, 14:50-15:10) the second landed
+     after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
+     which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
+     defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
+  const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
+  await page.waitForFunction(
+    (m) => document.body.innerText.toLowerCase().includes(m),
+    mateWait,
+    { timeout: 15000 },
+  ).catch(() => {});
   // The crew card renders expanded inline on this tab -- there is no separate detail
   // screen to open. Clicking the route name here does NOT drill into the crew, it
   // navigates to the ROUTE, which is how the first draft of this check "failed" on a
   // perfectly good roster.
+  /* The AREA crew's name arrives from a THIRD query (the area card, keyed off the invites read), so wait for
+     it the way the roster is waited for; the assertion below is unchanged, so a name that never renders
+     still fails, just 15s later. */
+  await page.waitForFunction(
+    (n) => document.body.innerText.includes(n),
+    fixture.areaCrew.areaName,
+    { timeout: 15000 },
+  ).catch(() => {});
   const crewText = await capture("Crew:detail");
   asserted++;
   if (!crewText.includes("North Ridge")) {
     fail("Crew:detail", "the fixture's crew is not listed — the signed-in crew query returned nothing");
+  }
+  // THE AREA CREW (0302). The fixture also seats the owner in a crag SESSION at World Wall, a crew
+  // with no route, so it renders as a crew CARD here. The card must name the crag -- before
+  // crewPlace() every reader resolved crew.routeId, and an area crew would have been declared "no
+  // longer available" at best and printed "undefined" at worst.
+  asserted++;
+  if (!crewText.includes(fixture.areaCrew.areaName)) {
+    const crewLines = crewText.split("\n").filter((l) => /crew|session|no longer available|Loading/i.test(l)).slice(0, 8).join(" | ");
+    fail("Crew:detail", `the fixture's AREA crew at ${JSON.stringify(fixture.areaCrew.areaName)} is not named on the Crew tab — an area crew's card resolves to nothing (the 0302 shape of #569). Crew lines seen: ${crewLines || "(none)"}`);
+  }
+  asserted++;
+  if (/\bundefined\b/.test(crewText)) {
+    fail("Crew:detail", "the Crew tab prints the word undefined — a crew's place resolved against the wrong store");
   }
   asserted++;
   // First name only, deliberately: the app renders members through pubFirst/pubName, so
@@ -325,25 +382,73 @@ try {
   // fails on any uncaught page error, and a component that throws during render leaves a
   // near-empty screen, which the floor above catches.
   let chatOpened = false;
+  let chatText = "";
   for (const label of ["Crew chat", "Chat", "Messages"]) {
-    if (await clickText(label)) { chatOpened = true; await capture("Crew:chat", { min: 200 }); break; }
+    if (await clickText(label)) { chatOpened = true; chatText = await capture("Crew:chat", { min: 200 }); break; }
   }
   asserted++;
   if (!chatOpened) fail("Crew:chat", "could not open the crew chat — the screen that blanked in #569 went unwalked");
+
+  // The chat header says "You + N climbers" over a chip row that renders a "You" chip and then
+  // every member. The hydration guarantees a climberId 0 entry for the signed-in climber
+  // (`mid(u) = u===uid ? 0 : u`, and a 0 row is prepended when absent), so a naive N counts YOU
+  // as one of the others -- the header claims one more person than is in the crew, and your own
+  // handle appears as a chip beside "You". Assert the header against the fixture, whose crew is
+  // exactly you plus the mate, and against the chips, so a future off-by-one in either fails.
+  if (chatOpened) {
+    asserted++;
+    const head = /You \+ (\d+) climbers?/.exec(chatText);
+    if (!head) {
+      fail("Crew:chat", "the \"You + N climbers\" header is not on screen — it was renamed, so the crew size was never checked");
+    } else if (Number(head[1]) !== 1) {
+      fail("Crew:chat", `the header reads ${JSON.stringify(head[0])} for a crew of you plus one other — "You" is being added to a count that already includes you`);
+    }
+    // The chip row beside it renders a "You" chip and then the SAME array, so a wrong count and
+    // your own handle appearing as a second chip are one defect, not two -- the count is the half
+    // that can be asserted without predicting whether pubFirst renders a handle or a first name
+    // (it differs between the local and CI fixtures, and an assertion that cannot fire only
+    // certifies).
+    asserted++;
+    if (!/\bYou\b/.test(chatText)) {
+      fail("Crew:chat", "the chat does not name the signed-in climber at all — the \"You\" chip is gone, so the header's count has nothing to be relative to");
+    }
+  }
 
   // --- Group management: #680's ground. -----------------------------------------------
   // The fixture OWNS this group, so the owner controls must render, and the uuid member
   // must appear on the roster. Before #680 both were false and the screen looked fine.
   log("a group the signed-in account owns:");
   await reset();
-  await tap("Crew");
-  // Groups are a sub-tab of Crew, not of Partners. Its label carries a count ("Groups1"),
-  // which clickText's trailing-digits allowance handles.
-  const toGroups = await clickText("Groups");
+  // Groups is a screen of its own, opened from the Menu's "Groups" tile (it used to be a Crew
+  // sub-tab whose label carried a count, "Groups1"). It opens on For you, which leads with a tile
+  // per group you are in -- so this run's group is one tap away by name.
+  const toGroups = await tapMenuItem(page, "Groups");
   asserted++;
-  if (!toGroups) fail("Group:detail", "could not find the Groups sub-tab on the Crew screen");
+  if (!toGroups) fail("Group:detail", "could not find the Groups tile in the Menu");
   await page.waitForTimeout(2000);
-  if (await clickContaining("Fixture Alpine Club")) {
+  // THIS run's group, by name, not a constant. In CI the accounts are durable and shared, so
+  // a hardcoded name meant every concurrent run opened the same group and asserted on state
+  // the others were mutating — the #969 red that passed on re-run of the same SHA. The
+  // fixture now names its group per run; matching that name is what makes the assertion about
+  // this run's data. Falls back to the literal only if a fixture predates the field.
+  const groupName = fixture.group?.name || "Fixture Alpine Club";
+  if (await clickContaining(groupName)) {
+    /* AND a second, independent gap that per-run groups do not close. `isCreator` in
+       ClimbMatch.jsx reads `cl._db ? (!!uid && cl.ownerId === uid) : ...`, and `isMod` is
+       `isCreator || ...`. `ownerId` is fixed data no concurrent run can change — but `uid` is
+       the SIGNED-IN USER, and it resolves asynchronously after every reset() reload. The
+       session is in localStorage immediately (which is all the whoami check above proves)
+       while useSession() -> DB_UID lands later, so `!!uid` can still be false on a screen that
+       has otherwise settled. That is why #969 lost `+ Mod` AND `Make private/public` together
+       while `Owner` — a property of the member ROW, needing no identity — still rendered.
+
+       Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
+       that genuinely never renders still fails, with the same message, just later. */
+    await page.waitForFunction(
+      () => /[+\u2212-]\s?Mod\b/.test(document.body.innerText),
+      undefined,
+      { timeout: 15000 },
+    ).catch(() => {});
     const g = await capture("Group:detail");
     asserted++;
     // Case-insensitive: the crew card renders a first name ("Robin") while the group
@@ -356,9 +461,27 @@ try {
     // The fixture group has exactly two members. Every count on this screen must agree
     // with the roster under it: the header count added 1 for "me" whenever it could not
     // find the seed id 0 in the list, so a DB group always over-counted by one.
-    for (const m of g.matchAll(/(\d+) members|MEMBERS · (\d+)|Members · (\d+)/gi)) {
-      const n = Number(m[1] ?? m[2] ?? m[3]);
-      if (n !== 2) fail("Group:detail", `a member count reads ${n} for a 2-member group (${JSON.stringify(m[0])}) — it disagrees with the roster below it`);
+    // SCOPED TO THE ROSTER HEADING, because the capture is not only the detail view.
+    //
+    // This used to scan the WHOLE screen for /(\d+) members/ and require every match to be 2. The
+    // Group:detail capture also contains the browse list underneath it — "EXPLORE BY AREA", then a
+    // CARD for each group, each rendering "Based in X · N members". So any OTHER group with a
+    // different member count failed this assertion, on app code that was never wrong.
+    //
+    // That is the whole of the intermittency recorded in memory as
+    // group-member-count-intermittent-reads-1: it failed 2/2 in CI, where the durable accounts
+    // accumulate groups, and 1/6 locally, where each run makes its own — the asymmetry an unscoped
+    // read over a browse list predicts exactly. Confirmed from a --dump: three matches on that
+    // screen, only two of which belong to the detail view.
+    //
+    // "MEMBERS · N" is the roster heading and appears only in the detail view. The header count
+    // beside the group name is the SAME expression in the app, so asserting the heading covers
+    // both; a bare "N members" cannot be attributed to a particular group and is not asserted.
+    const memHead = /MEMBERS · (\d+)/i.exec(g);
+    if (!memHead) {
+      fail("Group:detail", "the MEMBERS · N roster heading is not on screen — the detail view did not render, so its member count was never checked");
+    } else if (Number(memHead[1]) !== 2) {
+      fail("Group:detail", `the roster heading reads ${JSON.stringify(memHead[0])} for a 2-member group — the count disagrees with the members the fixture created`);
     }
     asserted++;
     // The account that created this group is its owner, and must be told so. modIds
@@ -415,7 +538,21 @@ try {
   //
   // So try each tab and take the first where opening the overlay actually CHANGES the
   // screen. Failing only when no tab works is what makes "changed nothing" mean something.
-  const TABS = ["me", "today", "crew", "routes", "logbook", "discover"];
+  // Compare lines with their DIGITS MASKED, and that is what turned a permanent failure into
+  // a 1-in-3 flake for a month. The test is "did opening this add a line the tab did not
+  // already have", so any line that moves on its own answers YES without an overlay being
+  // involved -- a relative timestamp rolling from "In 2 days" to "In 1 day", an unread badge,
+  // the ASPECT & SUN clock. `inboxOpen` was reported OPENED at "1610 chars (on me)" on runs
+  // where the Inbox could not render at all: 1610 is the plain Profile tab, credited to the
+  // overlay because one number had changed since the baseline. So two runs of the same commit
+  // disagreed, the failures read as flaky, and the REAL defect underneath (#890 left the
+  // Calendar's JSX fragment unclosed, so the Inbox early return became fragment TEXT and the
+  // screen was unreachable) was dismissed twice as CI noise.
+  // The cost is a line that differs ONLY by a number no longer proving a mount. A false pass
+  // certifies a modal nobody looked at, which is strictly worse than asking for a second
+  // distinguishing line -- and `render-settle` already masks digits for exactly this reason.
+  const lineKey = (l) => l.trim().replace(/\d+/g, "#");
+  const TABS = ["me", "today", "crew", "routes", "logbook", "discover", "ranks", "groups"];
   const baselines = {};
   for (const t of TABS) {
     await page.goto(`${base}?zt=${t}`, { waitUntil: "domcontentloaded", timeout: 180000 });
@@ -424,7 +561,7 @@ try {
     // the tab was still filling in is missing lines, so the diff below would credit the
     // overlay with content that was always going to arrive.
     const baseText = await settledText(page, { min: 30, timeout: 45000 });
-    baselines[t] = new Set(baseText.split("\n").map((l) => l.trim()));
+    baselines[t] = new Set(baseText.split("\n").map(lineKey));
   }
 
   assertKnownOverlays(overlays, fail);
@@ -433,7 +570,7 @@ try {
       log(`  ${name}: skipped — ${NEEDS_EXTRA_STATE[name]}`);
       continue;
     }
-    let opened = null, empty = null, threw = null;
+    let opened = null, empty = null, threw = null, sawText = "";
     for (const t of TABS) {
       await page.goto(`${base}?zt=${t}&z=${name}`, { waitUntil: "domcontentloaded", timeout: 180000 });
       await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
@@ -456,8 +593,11 @@ try {
       // "Did it ADD a line", not "is the whole screen different". Whole-screen equality
       // trips on anything that moves on its own -- a clock, a relative timestamp -- and
       // would report an overlay as opened when nothing opened at all.
-      const lines = openedText.split("\n").map((l) => l.trim());
+      const lines = openedText.split("\n").map(lineKey);
       if (lines.some((l) => l && !baselines[t].has(l))) { opened = { tab: t }; break; }
+      // Keep the closest look at the screen, for the failure message below. "It added
+      // nothing" is only actionable if it also says what WAS there.
+      if (!sawText || openedText.length > sawText.length) sawText = openedText;
     }
     if (threw) {
       asserted++;
@@ -472,7 +612,15 @@ try {
     }
     asserted++;
     if (!opened) {
-      fail(`modal:${name}`, `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified`);
+      // Print what WAS on screen. Without it this message cannot distinguish "the opener
+      // never ran", "the app never mounted" (the boot shell mirrors the nav, so a blank app
+      // reads as nav-present) and "the state flipped but the screen ignores it" — three
+      // faults needing three different repairs, and the third is what #890 actually was.
+      const head = sawText.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, 6).join(" | ");
+      fail(`modal:${name}`,
+        `added nothing on any of ${TABS.length} tabs — it never rendered, so it is unverified. ` +
+        `The screen it settled on was ${sawText.trim().length} chars: ${JSON.stringify(head)}. ` +
+        `If that is the ordinary tab, the state flipped and nothing reads it; if it is the nav alone, the app never mounted.`);
       continue;
     }
     // The floor is deliberately low: a takeover like the guide dashboard legitimately
@@ -480,6 +628,49 @@ try {
     // the forbidden-text and page-error checks inside capture(), which is what caught
     // #674's "undefined" and the friends row here.
     await capture(`modal:${name}`, { min: 30, tab: opened.tab });
+  }
+
+  // The TRIP RECAP asks you to mark who showed, and its own copy says no-shows lower reliability
+  // and feed the trust score. It built its roster as a hardcoded "You" row concatenated with EVERY
+  // crew member -- and `members` always carries a climberId 0 row for the signed-in climber -- so a
+  // two-person crew listed three, the third being you under your own display name. Both rows
+  // carried `cid: 0`, so they keyed the same entry in `recapMarks` and marking one flipped the
+  // other. Same shape as the crew chat (#1269), on a screen where the duplicate is actionable.
+  //
+  // Asserted on the text the sweep above already captured, so it costs no extra walk. The owner's
+  // display name is what `crewMemberById(0)` resolves to, so its presence IS the duplicate.
+  {
+    // SCOPE THE READ TO THE MODAL. `capture()` records the whole SCREEN, and this overlay opens
+    // over the Profile tab, which legitimately shows the account holder's own name — so an
+    // unscoped search for it fails on a working fix. (I made exactly this mistake writing this
+    // assertion, and it is the third time today: a fixed window or a whole-screen read is not a
+    // section.) The modal runs from its title to its submit button.
+    const _whole = screens["modal:recapId"];
+    const _a = _whole === undefined ? -1 : _whole.indexOf("Trip recap");
+    const _b = _a < 0 ? -1 : _whole.indexOf("Confirm attendance", _a);
+    const recap = (_a >= 0 && _b > _a) ? _whole.slice(_a, _b) : undefined;
+    if (_whole === undefined) {
+      log("  recap roster: not checked — modal:recapId was skipped or never opened");
+    } else if (recap === undefined) {
+      asserted++;
+      fail("modal:recapId", "could not find the recap between its title and \"Confirm attendance\" — it was renamed, so the roster was NOT checked");
+    } else {
+      asserted++;
+      if (!/\bYou\b/.test(recap)) {
+        fail("modal:recapId", "the recap does not list a \"You\" row, so there is nothing for the duplicate check to be relative to");
+      } else if (recap.includes(fixture.owner.name)) {
+        fail("modal:recapId",
+          `the signed-in climber is listed twice — a "You" row and a ${JSON.stringify(fixture.owner.name)} row. ` +
+          "Both carry cid 0, so they share one attendance mark and one React key.");
+      }
+      asserted++;
+      // …and the OTHER member must still be there. A roster that dropped everyone would satisfy
+      // the check above and be a worse screen than the one it replaced.
+      const mateFirst = fixture.mate.name.split(" ")[0];
+      if (!recap.toLowerCase().includes(mateFirst.toLowerCase())) {
+        fail("modal:recapId", `the crew's other member ${JSON.stringify(mateFirst)} is not on the recap roster`);
+      }
+    }
   }
 
   if (DUMP) {
@@ -523,7 +714,16 @@ try {
         console.error(`\nFIXTURE NOT FULLY REMOVED: ${leaked.join(", ")} — delete these by hand; a leftover profile shows up in partner search for real users.`);
         process.exitCode = 1;
       } else {
-        log("fixture accounts removed.");
+        // Say which thing actually happened. In durable mode nothing was created, so
+        // "accounts removed" would be a small lie about the one property that makes a
+        // permanent pair acceptable — and the next person reading a CI log would believe
+        // teardown ran when there was nothing to tear down.
+        // Say what actually happened. In durable mode the ACCOUNTS persist but this run's
+        // GROUP does not, and claiming "nothing was created" would be false the moment the
+        // fixture started making one — the kind of small lie that makes a log untrustworthy.
+        log(durableCredsPresent()
+          ? "durable CI accounts kept; this run's own group removed."
+          : "fixture accounts removed.");
       }
     }
   }

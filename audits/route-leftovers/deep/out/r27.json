@@ -1,0 +1,51 @@
+{
+ "results": [
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "item": "1 - itinerary day 2 = 7.7 mi",
+   "verdict": "unresolved",
+   "resolution": "No op. No new source states a figure for a day that runs from Goat Flats camp to the lookout, back to camp and out to the trailhead. Every figure found is a one-way leg or a whole-trip total, so writing any day-2 number would mean adding legs.",
+   "summary": "Still no source gives a mileage for a Three Fingers day that goes from Goat Flats camp to the lookout and out to the trailhead, so day 2's 7.7 mi stays.",
+   "evidence": "Twelfth pass, 2026-10-01. Live row re-read: day 2 miles 7.7, hours 9, note '~4.5 miles back out'; day 1 4.5; dist_km null; gain_ft 4200 / loss_ft 4200. The tried list (d5, h2, r1, r4, r8, r11, r14, r18, r21, r23) already covers WTA pages and reports, trailchick, angelatravels, Backcountry Sights, Climber Kyle, both Brisbine reports, Abegg, SummitPost, the Mountaineers route page, alpinewanderlust and the Internet Archive guidebook full-text hits. NEW this pass: (1) 10adventures 'Three Fingers hike': 25.7 km return, ~4 km to Saddle Lake, Saddle Lake to Tin Can Gap 3.2 km; presented as a day hike with optional lookout/Goat Flats overnight, no day split. (2) Trailgroove 'Hiking, biking and climbing to Three Fingers Lookout': 7.5 mi trailhead to lookout, 15 mi from the Meadow Mountain side; night at the lookout, no Goat Flats camp day. (3) An AllTrails recording titled 'Three Fingers Lookout - Day 2' (403; not read, and a single recording would be one source). (4) Web searches for 'second day' / 'day two' / 'day 2' with Goat Flats returned only pages already on the list. Never sum legs and never null one day alone, so no op.",
+   "sources": [
+    "https://www.10adventures.com/hikes/mount-baker-snoqualmie-national-forest/three-fingers-hike/",
+    "https://www.trailgroove.com/blogs/entry/188-hiking-biking-and-climbing-to-three-fingers-lookout/",
+    "https://www.alltrails.com/explore/recording/morning-hike-at-three-fingers-via-goat-flats-trail-566a996-2 (403, not read)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "item": "2 - waypoint 3 'Regain North Ridge crest' distMi 3.2",
+   "verdict": "unresolved",
+   "resolution": "No op. No source states a distance from the trailhead to the 6,100 ft point where the route regains the North Ridge crest. distMi 3.2 stays.",
+   "summary": "No published account gives a mileage to the point where the route regains the north ridge, so its 3.2-mile figure stays as it is.",
+   "evidence": "Live row re-read 2026-10-01: waypoint 3 'Regain North Ridge crest' distMi 3.2 (pin at 47.618605,-121.272469 from r21). Already tried (r9, r12, r15, r18, r21, r24): the 2006 and 2017 NWHikers reports and the 2017 GPS track, the 2019 and 2021 blogs, the 2000 WTA report, SummitPost peak and route pages, Beckey, Mountaineer annuals, OSM, the 1965 USGS quad. New search this pass (north ridge / Miller River / 6100 wording) returned only Bald Eagle Mountain (a different peak on the North Fork Skykomish), the Bald Eagle Loop, and pages already read. Measuring along the 2017 track would be a computed figure, so not used.",
+   "sources": [
+    "Web search 2026-10-01 (no new source with a distance)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "item": "3 - loss_ft 4,660 beside a nulled gain_ft",
+   "verdict": "unresolved",
+   "resolution": "The held line is stale: loss_ft is already null on the live row (s4.json applied), so gain_ft and loss_ft are both null and nothing on the tab contradicts. No source states a total gain (or loss) for the row's Wolf Creek / Gardner Meadows line, so no set op.",
+   "summary": "Abernathy's stray 4,660 ft descent figure was already removed, so nothing on the route contradicts itself; no source gives a total climb for the Wolf Creek line, so gain stays blank.",
+   "evidence": "Live row re-read 2026-10-01: gain_ft null, loss_ft null, dist_km null; approach, itinerary and waypoints all describe Wolf Creek Trail #527 -> Gardner Meadows -> tarn -> spur ridge -> north ridge. Sources read this pass: (1) SummitPost Abernathy Peak page (Wayback 2024 copy), Route 3 Wolf Creek: trailhead 'at 2,400 ft', 11 mi to Gardner Meadows (c. 5,700 ft), 'two miles to the 7,680+ ft saddle', '3,300 ft of gain from trailhead to meadows, then 2,700 ft more to the top'. It states only two legs, no total; adding them would be computing. Its 2,400 ft trailhead also disagrees with the row's ~3,000 ft (USGS 2,997) trailhead. Its Route 2 North Creek gives '4,700 ft of gain', confirming the old 4,660 belonged to the North Creek line. (2) countryhighpoints 'Abernathy and the Gardners' (Wolf Creek, north ridge): only a whole-day 34 mi / 8,000 ft across three peaks. (3) countryhighpoints winter ascents (Wolf Creek, north ridge above Nasty Pond): only 30 mi skiing / 8 mi snowmobiling for three peaks, no gain. (4) mountainflamingo 2015: Scatter Creek ascent, out by Wolf Creek, 20.9 mi / 11,500 ft across three peaks. (5) Search excerpts: trail-only figures (21.0 mi RT and 4,270 ft for the Wolf Creek trail; 19.6 mi and 3,681 ft to Gardner Meadows; 'starts at about 2900' and gains 2400' to Gardner Meadows') cover the trail, not the summit. (6) Peakbagger ascent list (Wayback 2020): the logged gains (3,154; 5,122) are south-side ascents; no Wolf Creek ascent with a gain was visible. (7) whereiskylemiller and hike2hike: Scatter Lake side. (8) The 2020 WTA overnight report via Wolf Creek: 403 and no Wayback copy. Result: no stated trailhead-to-summit gain for this line from even one source. The row's fitnessSpec 'roughly 2,600 ft from the meadows' is a difference of two stated heights (s3) and sits within SummitPost's 2,700, so it needs no change.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/abernathy-peak/152230",
+    "https://www.countryhighpoints.com/abernathy-and-the-gardners/",
+    "https://www.countryhighpoints.com/abernathy-and-gardners-winter-ascents/",
+    "https://mountainflamingo.com/2015-09-12-13-abernathy-gardner-north-gardner/",
+    "http://web.archive.org/web/20200925175827/https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1931",
+    "https://www.whereiskylemiller.com/highway-20/abernathy-peak/",
+    "https://hike2hike.com/scrambling/abernathy-peak-north-cascades/"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

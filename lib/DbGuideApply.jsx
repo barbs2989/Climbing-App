@@ -1,14 +1,16 @@
 // Real guide application/intake — replaces the old GuideApply's legal-agreement-only
 // screen with an actual application: cert track + docs + mandatory attestations,
 // all persisted to Supabase. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createPortal } from "react-dom";
+import { clickable } from "./clickable";
 import { useSession } from "./auth";
 import {
   useCertTrackDisciplines, useGuideProfile, useGuideCredentials,
   submitGuideApplication, addGuideCredential, uploadGuideDocument,
   CERT_TRACK_LABELS, DISCIPLINE_LABELS,
 } from "./db";
+import { POP_BACK } from "./popupChrome.js";
 
 const CROSS_CUTTING = [["AIARE", "AIARE (avalanche)"], ["WFR", "WFR (Wilderness First Responder)"], ["other", "Other medical/safety cert"]];
 
@@ -23,7 +25,7 @@ const AGREEMENTS = [
 export default function DbGuideApply({ onClose, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
-  const { data: existing } = useGuideProfile(uid);
+  const { data: existing, isError: existingError } = useGuideProfile(uid);
   const { data: certTrackRows } = useCertTrackDisciplines();
   const { data: existingCreds } = useGuideCredentials(uid);
   const tracks = Object.keys(CERT_TRACK_LABELS);
@@ -65,12 +67,18 @@ export default function DbGuideApply({ onClose, notify, C }) {
     agree.every(Boolean) && sig.trim().length > 1;
 
   const today = new Date().toISOString();
+  // Five writes, and the first one FILES the application. A failure after it used to read as
+  // "something went wrong submitting", while the application already sat in the review queue, and a
+  // retry inserted every credential again. Each finished step is remembered, so a retry resumes.
+  const done = useRef({});
+  const STEP = { profile: "your application", cred: "your certification", cc: "an extra credential", coi: "your insurance document", card: "your certification card" };
 
   const submit = async () => {
     if (!ok || submitting) return;
     setSubmitting(true);
+    const d = done.current; let step = "profile";
     try {
-      const profile = await submitGuideApplication({
+      if (!d.profile) { await submitGuideApplication({
         id: uid, status: "submitted",
         title: title.trim(), base_location: baseLocation.trim(), specialty: specialty.trim(), bio: bio.trim(),
         cancellation_policy: cancellationPolicy.trim(),
@@ -84,23 +92,33 @@ export default function DbGuideApply({ onClose, notify, C }) {
         independent_contractor_attested: true, independent_contractor_attested_at: today,
         agreement_signed_name: sig.trim(), agreement_signed_at: today,
         submitted_at: today,
-      });
-      const primaryCred = await addGuideCredential({
+      }); d.profile = true; }
+      step = "cred";
+      if (!d.credId) { const primaryCred = await addGuideCredential({
         guide_id: uid, kind: "primary_track", cert_track: certTrack,
         cert_number: certNumber.trim(), issuing_org: issuingOrg.trim(), status: "pending",
-      });
-      for (const cc of crossCutting) {
+      }); d.credId = primaryCred.id; }
+      step = "cc";
+      d.cc = d.cc || 0;
+      for (const cc of crossCutting.slice(d.cc)) {
         await addGuideCredential({
           guide_id: uid, kind: "cross_cutting", cross_cutting_type: cc.type,
           cert_number: cc.cert_number, status: "pending",
         });
+        d.cc++;
       }
-      await uploadGuideDocument(uid, "insurance_coi", insuranceFile, primaryCred.id);
-      await uploadGuideDocument(uid, "cert_card", certCardFile, primaryCred.id);
+      step = "coi";
+      if (!d.coi) { await uploadGuideDocument(uid, "insurance_coi", insuranceFile, d.credId); d.coi = true; }
+      step = "card";
+      if (!d.card) { await uploadGuideDocument(uid, "cert_card", certCardFile, d.credId); d.card = true; }
+      done.current = {};
       notify && notify("Application submitted — we'll review your credentials and follow up.");
       onClose && onClose();
     } catch (e) {
-      notify && notify("Something went wrong submitting your application: " + (e && e.message || "please try again."));
+      const why = (e && e.message) || "please try again.";
+      notify && notify(d.profile
+        ? "Your application was sent, but " + STEP[step] + " didn't save — " + why + " Tap Submit again to finish."
+        : "Couldn't submit your application — " + why);
     } finally {
       setSubmitting(false);
     }
@@ -112,17 +130,42 @@ export default function DbGuideApply({ onClose, notify, C }) {
 
   if (!session) {
     return createPortal((
-      <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
-        <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to apply as a guide — this application creates a legally-relevant, timestamped record tied to your identity.</div>
+      <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+        <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
+        <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in to apply as a guide — this application creates a legally relevant, timestamped record tied to your identity.</div>
+      </div>
+    ), document.body);
+  }
+
+  /* A FAILED READ MUST NOT OFFER THE FORM, and here that is a data-loss guard rather than an
+     honesty one. `existing` is undefined both when a climber has never applied AND when the read
+     failed, so the status branch below fell through and an approved guide was shown a BLANK
+     APPLICATION. submitGuideApplication() is an `upsert` on guide_profiles keyed by the user's own
+     id, so submitting that form would overwrite a live listing back to "submitted", replacing the
+     title, base location and everything else with whatever was typed into the empty form.
+
+     Blocking a first-time applicant during a transient error costs them a retry. Letting an
+     approved guide silently overwrite their own listing costs them the listing. So this refuses
+     rather than guesses, and says which of the two it is.
+
+     Deliberately placed ABOVE the status branch: that branch tests `existing`, which is exactly
+     the value we could not read. */
+  if (existingError) {
+    return createPortal((
+      <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"\u2190 Back"}</button>
+        <div style={{ marginTop: 24, fontSize: 14.5, fontWeight: 700, color: C.text }}>{"Couldn\u2019t check your application status"}</div>
+        <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>
+          {"The read failed, so this is not a claim that you have not applied. The form is not shown, because submitting a fresh application would replace one you may already have. Check your connection and try again."}
+        </div>
       </div>
     ), document.body);
   }
 
   if (existing && existing.status !== "draft" && existing.status !== "rejected") {
     return createPortal((
-      <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+      <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+        <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
         <div style={{ marginTop: 24, fontSize: 14.5, fontWeight: 700, color: C.text }}>{"Application status: " + existing.status}</div>
         <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>
           {existing.status === "submitted" ? "We're reviewing your credentials — check back soon, or open your guide dashboard for details." : "Your listing is live."}
@@ -137,9 +180,9 @@ export default function DbGuideApply({ onClose, notify, C }) {
   }
 
   return createPortal((
-    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain" }}>
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2, display: "flex", alignItems: "center", gap: 10 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
         <div style={{ fontSize: 15, fontWeight: 700 }}>Apply to guide on ClimbMatch</div>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
@@ -185,16 +228,19 @@ export default function DbGuideApply({ onClose, notify, C }) {
         </label>
 
         <div style={label}>Agreements</div>
+        {/* These are the mandatory attestations that gate the application, so a climber who
+            cannot reach them cannot apply at all. role="checkbox" + aria-checked, for the
+            reason DbGuides' Check records — a button role would drop the state. */}
         {AGREEMENTS.map((text, i) => (
-          <div key={i} onClick={() => setAgree(a => a.map((v, k) => k === i ? !v : v))} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
-            <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (agree[i] ? C.blue : C.border), background: agree[i] ? C.blue : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{agree[i] ? "✓" : ""}</span>
+          <div key={i} {...clickable(() => setAgree(a => a.map((v, k) => k === i ? !v : v)), { role: "checkbox" })} aria-checked={!!agree[i]} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
+            <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (agree[i] ? C.blue : C.border), background: agree[i] ? C.blueSolid : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{agree[i] ? "✓" : ""}</span>
             <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{text}</span>
           </div>
         ))}
         <div style={{ ...label, marginTop: 10 }}>Signature</div>
         <input aria-label="Type your full legal name" value={sig} onChange={e => setSig(e.target.value)} placeholder="Type your full legal name" style={inp} />
 
-        <button onClick={submit} disabled={!ok || submitting} style={{ width: "100%", marginTop: 18, background: ok ? C.blue : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 13, fontSize: 14, fontWeight: 700, cursor: ok ? "pointer" : "default" }}>
+        <button onClick={submit} disabled={!ok || submitting} style={{ width: "100%", marginTop: 18, background: ok ? C.blueSolid : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 13, fontSize: 14, fontWeight: 700, cursor: ok ? "pointer" : "default" }}>
           {submitting ? "Submitting…" : "Submit application"}
         </button>
       </div>

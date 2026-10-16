@@ -1,0 +1,81 @@
+{
+ "file": "s022.json",
+ "results": [
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Couloir length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: the one route description still gives about 800 ft for the couloir (about 5,000 ft base to a notch near 5,800 ft), and a topo map page puts the base of the north face near 5,000 ft but gives no top figure; a ski-line page gives about 1,100 ft including the apron. The pitch notes' first section is labelled as the approach apron, so the couloir proper (sections 2-3) reads 800-1,000 ft, close to length_m, but no two sources fix the apron/couloir split. Would settle: a second description stating the couloir's vertical, or a topo reading of the notch elevation.",
+   "sources": [
+    "https://www.mountainproject.com/route/117755275/fly-the",
+    "https://caltopo.com/m/2CH7",
+    "https://www.powderproject.com/trail/7000339/the-fly-couloir"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found more Fly reports but none agreeing: a ski report ~1,500 ft (not summiting), another 1,764 ft with extra runs, and a Narada Falls report doing both Zipper and Fly logged 3,500 ft for the day. No two sources state one car-to-car figure for climbing the Fly alone. Would settle: two independent GPS-logged single-objective Fly ascents from the same trailhead.",
+   "sources": [
+    "https://havetent.com/2018/05/04/lane-peak-ski-via-fly-couloir/",
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly",
+    "https://www.amessinthecascades.com/search-by-adventure/snowy-adventures/skiing/lane-peak-zipper-and-fly-3-19-21"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: reported round trips are ~3 mi (ski, Fly only), 5.5 mi (extra runs) and ~5 mi (Zipper plus Fly from Narada Falls, GPS unreliable); start points differ (Reflection Lakes vs Narada Falls). No two sources agree on a Fly-only one-way or round-trip distance. Would settle: two single-objective tracks from the same trailhead.",
+   "sources": [
+    "https://havetent.com/2018/05/04/lane-peak-ski-via-fly-couloir/",
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly",
+    "https://www.amessinthecascades.com/search-by-adventure/snowy-adventures/skiing/lane-peak-zipper-and-fly-3-19-21"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "fact": "Crux rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searched forum trip reports and the regional first-ascent index; the only route description found still grades every pitch 5.10a while heading the route 5.10a/b, and no second independent source gives a grade (the FA index page did not render). Would settle: a second description or the guidebook listing giving the route's overall grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/107745728/spontaneous-distraction",
+    "https://cascadeclimbers.com/forum/fawiki/area/washington-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: the first-ascensionist's write-up and the AAJ note give no approach or car-to-car gain; the only gain figure found (about 2,000 ft parking to the notch) is for the general Liberty Bell west-side approach, not this east-face route. Neither 2,700 nor 2,400 is stated by any source. Would settle: two east-face trip reports stating car-to-car gain.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2017/11/live-free-or-die-on-liberty-bell.html",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "fact": "Commitment grade vs alpine grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: guide-service and route pages describe Overexposure as a short 5.8 (two to four pitches) and none gives an IFAS-style letter grade, so there is no sourced value to set alpine_grade to. Note 'D' is a different scale from the Grade II commitment numeral, so the two are not strictly incompatible, but 'D' itself is unverified. Would settle: a source giving an IFAS grade, or an owner decision to clear unsourced letter grades.",
+   "sources": [
+    "https://www.ncmountainguides.com/routes/climbing/liberty-bell-overexposure",
+    "https://en.wikipedia.org/wiki/Liberty_Bell_Mountain"
+   ],
+   "patches": []
+  }
+ ]
+}

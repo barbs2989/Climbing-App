@@ -1,0 +1,14 @@
+{
+ "results": [
+  {
+   "id": "wa_three_queens_standard",
+   "verdict": "confirmed",
+   "rule": "row's own stated figure; car-to-car total held in summitTimeHrs",
+   "fact": "timing.summitTimeHrs 9.5 (the car-to-car total) vs 'about 5 hours up' and a 5:00 AM start / ~10:00 AM summit schedule",
+   "evidence": "partner_requirements.approachTime and itinerary.totalNote both say about 5 hours up; the summit day leaves at 5:00 AM and summits ~10:00 AM. 9.5 is totalHrs copied into the summit field.",
+   "ops": [
+    {"op": "set", "id": "wa_three_queens_standard", "column": "timing", "path": ["summitTimeHrs"], "expect": 9.5, "value": 5}
+   ]
+  }
+ ]
+}

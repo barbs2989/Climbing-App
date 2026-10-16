@@ -7,7 +7,7 @@
 // measured on 2026-08-09 it offered 13 distinct fields across all nine disciplines while
 // SuggestFix offered 49 and the merge allow-list SS accepted 53 — and the tailoring ran
 // BACKWARDS, a single-pitch sport route being asked 10 questions against alpine's 8. Alpine
-// had no approach, no height, no rappels, no turnaround and no comms.
+// had no approach, no height, no rappels and no comms.
 //
 // Three questions, none of which the other guards ask:
 //   1. Every key the form SENDS is a key `SS` knows. A key outside SS is accepted, stored,
@@ -22,11 +22,12 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { appSources } from "./lib/guard-sources.mjs";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 appSources(ROOT, "check:add-route-fields");
 
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 let failures = 0;
@@ -100,8 +101,183 @@ const sent = (() => {
 })();
 const sentSet = new Set(sent);
 
+// ── the set being checked must not quietly shrink ───────────────────────────────────────
+// Every assertion below is of the form "of the keys we found, are they all storable?", so
+// a key that stops being FOUND leaves the checked set and takes its own assertion with it.
+// The run then reports ok on the survivors. Measured, not theorised — replicating the
+// walker on a synthetic literal and folding one key inside a nested object:
+//
+//     healthy            keys=[name,grade,beta,gear,haz]   -> ok, all 5 submitted keys in SS
+//     beta nested away   keys=[name,grade,gear,haz]        -> ok, all 4 submitted keys in SS
+//
+// and `beta` nested inside another object is a REAL regression: SS applies top-level keys,
+// so it would no longer be storable at all. The existing fail-closed floor is on FIELDS
+// (`< 5 disciplines`), which guards the wrong axis entirely — it says nothing about fields,
+// so `sent` could collapse to two keys and still pass.
+//
+// So the names are pinned. This is bookkeeping on purpose: a pinned name that stops being
+// submitted FAILS rather than passing quietly, which forces whoever removed it to say so
+// here. Same rule as check:field-renders' KNOWN map. Do not "fix" a failure by deleting the
+// entry -- that is the vacuous pass this block exists to prevent.
+const MUST_COVER = [
+  "name", "discipline", "grade", "pitchCount", "length", "gain", "dist", "rock", "aspect",
+  // `approach` was REMOVED here deliberately, and must not come back as a bucket control. The
+  // form's Approach chips submitted an opaque key — "u1"/"1to3"/"3to6"/"6plus" — and
+  // approve_new_route (0135) inserts `v->>'approach'` straight into `routes.approach`, which is
+  // PROSE: the walk-in narrative the Planner renders. An approved contribution would have shown
+  // "3to6" as its APPROACH section. Nothing read those keys back, so nothing was lost. A future
+  // approach control has to write a SENTENCE, and then this name belongs here again.
+  "season", "commit", "descentText", "style", "haz", "gear", "beta",
+  // the eight #794 added; every one of these was a question the form asked and could not store
+  "protRating", "fa", "crux", "landing", "startType", "rap", "comms",
+];
+const unpinned = MUST_COVER.filter((k) => !sentSet.has(k));
+if (unpinned.length) {
+  fail(`the proposal no longer submits ${unpinned.join(", ")} — either it stopped being ` +
+       `collected, or it moved out of the top level where SS can apply it. If the removal ` +
+       `was deliberate, drop the name from MUST_COVER in this file in the same commit.`);
+} else ok(`all ${MUST_COVER.length} pinned fields are still submitted at the top level`);
+
+// THE APPROACH BUCKET MUST NOT COME BACK, and nothing else here would notice if it did.
+// `source`/`sourceNote` above are caught for free because SS does not know them — but `approach`
+// IS in SS, so a re-added chip group would satisfy every other assertion in this file while
+// putting an opaque key back into a prose column. This is a STRING-level revert, which
+// audit:silent-reverts says in its own closing caveat it cannot see.
+//
+// The four keys are the fingerprint: they appeared at exactly ONE place in the whole app (the
+// chip array itself) and nothing ever read them back.
+{
+  // COMMENTS STRIPPED FIRST, and this fired on its own explanation before they were: the JSX
+  // comment left where the control used to be NAMES all four keys, so a raw scan reports the
+  // removal as a re-introduction. `check:ci-cancel` and `check:correction-readers` record the
+  // same trap. Block comments only — enough for four short quoted literals, and it cannot
+  // desynchronise on the apostrophes that make a full string-aware blanker unsafe here.
+  const nc = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
+  const [coreNC, appNC] = [nc(core), nc(app)];
+  const BUCKETS = ["u1", "1to3", "3to6", "6plus"];
+  const hits = BUCKETS.filter((k) => coreNC.includes(`"${k}"`) || appNC.includes(`"${k}"`));
+  if (!hits.length) ok("the approach bucket keys are gone (they wrote junk into a prose column)");
+  else fail(`the approach bucket key(s) ${hits.join(", ")} are back. They were removed because ` +
+    `approve_new_route inserts v->>'approach' straight into routes.approach, which is PROSE — the ` +
+    `walk-in narrative the Planner renders — so an approved contribution showed "3to6" as its ` +
+    `APPROACH section. An approach control has to write a SENTENCE, not a bucket.`);
+}
+
+// A BUCKET-KEY CHIP GROUP MUST MATCH THE SHAPE OF THE COLUMN ITS VALUE LANDS IN, and `approach`
+// was not the only one. Censused 2026-09-10 across all five chip controls in AddRoute:
+//
+//   approach     u1/1to3/3to6/6plus      -> routes.approach      PROSE   removed  #1713
+//   descentText  rappel/walkoff          -> routes.descent_text  PROSE   free text
+//   pitchCount   single/multi            -> routes.pitches       INT     number
+//   outingShape  outback/loop/point      -> routes.outing_shape  KEY + CHECK   CORRECT
+//   rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135; group removed 0202
+//
+// So it is a CLASS, not a one-off: three of five, and the two live ones were reachable on 7/9
+// and 4/9 disciplines. `pitchCount` was the worse of them — a REQUIRED question whose value
+// `proposal_num(...)::int` turns into NULL, so the form insisted on an answer and stored none.
+//
+// SCOPED TO AddRoute's BODY, because the bare keys are ordinary English elsewhere: `"rappel"`
+// occurs 8 times in core alone (a vouch skills array, `passesFilters`' own FINDER filter), and
+// the `["key","Label"]` pair shape occurs legitimately in TIME_BUDGETS, a crag filter and
+// RouteDetail's PIN_CATEGORIES. A guard that flagged those would be telling authors to break
+// correct code. The fingerprint is the pair shape INSIDE this one component.
+//
+// `outingShape` IS THE LOAD-BEARING NEGATIVE. A rule that merely forbids chip groups would
+// forbid the one that is right, and this file records that a rule demanding only ABSENCE is
+// satisfied by deleting the feature. Its column carries a CHECK constraint naming exactly those
+// three keys (0087), so the value fits by construction — it is the model, and it must stay.
+{
+  const nc = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
+  const i = core.indexOf("function AddRoute(");
+  if (i < 0) anchorLost("`function AddRoute(` — the form this section is about");
+  let d = 0, end = -1;
+  for (let j = core.indexOf("{", core.indexOf(")", i)); j < core.length; j++) {
+    if (core[j] === "{") d++;
+    else if (core[j] === "}" && --d === 0) { end = j; break; }
+  }
+  if (end < 0) anchorLost("AddRoute's body did not close — braces unbalanced");
+  const bodyNC = nc(core.slice(i, end + 1));
+  if (bodyNC.length < 20000) anchorLost(`AddRoute's body lifted short (${bodyNC.length} chars)`);
+
+  // A key is only reported when it appears as the HEAD of a [key,"Label"] pair — the chip shape.
+  const pair = (k) => new RegExp(`\\[\\s*"${k}"\\s*,`).test(bodyNC);
+  const FORBIDDEN = [
+    ["approach",    ["u1", "1to3", "3to6", "6plus"],   "routes.approach",     "PROSE — the walk-in narrative the Planner renders"],
+    ["descentText", ["rappel", "walkoff"],             "routes.descent_text", "PROSE — the block descentBeta() renders, median 530 chars across 1,013 live routes"],
+    ["pitchCount",  ["single", "multi"],               "routes.pitches",      "an INT — proposal_num()::int returns NULL for a non-numeric value, so the answer is discarded"],
+  ];
+  let back = 0;
+  for (const [field, keys, col, why] of FORBIDDEN) {
+    const hits = keys.filter(pair);
+    if (!hits.length) continue;
+    back++;
+    fail(`the ${field} bucket chips are back (${hits.join(", ")}). Their value lands in ${col}, ` +
+      `which is ${why}. Give the control the column's own shape — a sentence, a number, or a key ` +
+      `column with a CHECK constraint like routes.outing_shape — rather than a bucket key.`);
+  }
+  if (!back) ok(`no bucket-key chip group writes into a column of another shape (${FORBIDDEN.length} censused)`);
+
+  // ...AND THE LIST ABOVE IS A BLACKLIST, WHICH IS BEATEN BY ONE MORE CONTROL. It names the three
+  // key sets that were actually wrong, so a BRAND-NEW bucket group — different keys, same defect —
+  // is invisible to it. That is the too-narrow-proxy trap this repo records under a dozen names, and
+  // it was in the guard written to close this very class. So the durable rule is a WHITELIST over
+  // chip GROUPS: every one of them must be declared, and an undeclared group fails.
+  //
+  // A GROUP is an array OF pair-arrays, and that shape is what makes this precise. The KEYS cannot
+  // carry the rule — `["cams","nuts"]` is a bare two-string list and is CHARACTER-IDENTICAL to a
+  // [key,"Label"] pair, which is exactly what made one injection case inject the forbidden shape
+  // while claiming to be innocent. An array of ARRAYS is unambiguous. Measured: exactly 2 groups in
+  // AddRoute, both legitimate, with `["cams","nuts"]` correctly not matched.
+  //
+  // The two rules are complementary rather than duplicated: the blacklist gives a specific message
+  // naming the historical defect and the column it corrupted, the whitelist catches the next one.
+  //
+  // WHY SuggestFix NEEDS NO SUCH RULE, measured 2026-09-10: its 15 `single` fields build options as
+  // `.map(x => [x, x])`, so key EQUALS label and the stored value IS the display string — safe by
+  // construction. Its one key-not-label field is `outingShape`, targeting the same key column. The
+  // two forms use different conventions for one control type, and only AddRoute's can be wrong.
+  // The trad/sport/bouldering group ("What style of rock climbing?") was removed on purpose in
+  // 0202: there is no "Rock" type, so trad, sport, top rope and bouldering are picked directly in
+  // the discipline row, and that key is sent as `discipline` — the column that holds those keys.
+  const GROUPS = {
+    "outback/loop/point":
+      "outingShape — routes.outing_shape carries a CHECK constraint naming exactly these keys " +
+      "(0087), so here the key IS the storable value. This is the model a bucket control should " +
+      "follow, and it must not be swept away with the wrong ones.",
+  };
+  const GROUP_RE = /\[\s*(?:\[\s*"[^"]{1,30}"\s*,\s*"[^"]{1,40}"\s*\]\s*,\s*)+\[\s*"[^"]{1,30}"\s*,\s*"[^"]{1,40}"\s*\]\s*\]/g;
+  const found = new Map();
+  for (const m of bodyNC.matchAll(GROUP_RE)) {
+    const keys = [...m[0].matchAll(/\[\s*"([^"]{1,30})"\s*,/g)].map((x) => x[1]);
+    found.set(keys.join("/"), m[0].slice(0, 90));
+  }
+  if (!found.size) anchorLost("no chip group parsed in AddRoute at all — the shape test matches nothing");
+
+  const undeclared = [...found.keys()].filter((k) => !(k in GROUPS));
+  if (undeclared.length) {
+    for (const k of undeclared) {
+      fail(`the chip group [${k}] in AddRoute is not declared. A group whose key differs from its ` +
+        `label stores a KEY, and a key only fits a column that holds keys. Say which column this ` +
+        `one lands in and why the shape fits — or, if it lands in a prose or numeric column, give ` +
+        `the control that column's own shape instead. Three controls got this wrong (approach, ` +
+        `descentText, pitchCount) and one got it right (outingShape, CHECK-constrained in 0087).`);
+    }
+  } else ok(`all ${found.size} chip group(s) in AddRoute are declared with a column that fits`);
+
+  const stale = Object.keys(GROUPS).filter((k) => !found.has(k));
+  if (stale.length) {
+    for (const k of stale) {
+      fail(`the chip group [${k}] is declared here but is no longer in AddRoute. Declared reason: ` +
+        `${GROUPS[k]} If it was removed on purpose, drop the declaration in the same commit; if it ` +
+        `was swept away with the bucket controls that were wrong, put it back.`);
+    }
+  } else ok(`no stale chip-group declaration (${Object.keys(GROUPS).length} declared, all present)`);
+}
+
 // 1. every submitted key is one SS knows about, or is explicitly provenance
-const PROVENANCE = new Set(["areaName", "source", "sourceNote", "climbed", "photoCount"]);
+// `source` and `sourceNote` were here until the Source step was removed from the form: the app
+// no longer asks a contributor where their information came from, and must not start again.
+const PROVENANCE = new Set(["areaName", "climbed", "photoCount"]);
 const unknown = [...sentSet].filter((k) => !SS.has(k) && !PROVENANCE.has(k));
 if (unknown.length) fail(`the form submits ${unknown.length} key(s) that SS cannot apply: ${unknown.join(", ")}`);
 else ok(`all ${sentSet.size} submitted keys are in SS or declared provenance`);
@@ -114,11 +290,46 @@ else ok("no duplicate keys in the submitted proposal");
 
 // 2. FIELDS entries and rendered inputs agree
 const arStart = core.indexOf("function AddRoute(");
-const arEnd = core.indexOf("function numsClose(");
+// The next TOP-LEVEL function after AddRoute, never a named neighbour: AddRoute moved to
+// lib/AddRoute.jsx (lazy-loaded) and readCoreSource() appends it after the rest of core, so a
+// fixed neighbour like numsClose now sits BEFORE it. In the pre-move file the two were the same.
+const arNext = core.indexOf("\nfunction ", arStart + 10);
+const arEnd = arNext < 0 ? core.length : arNext + 1;
 if (arStart < 0 || arEnd < 0) anchorLost("AddRoute function bounds");
 const ar = core.slice(arStart, arEnd);
-const gated = new Set([...ar.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]));
+
+// The completeness meter is NOT an input, and counting it as one is how `loss` hid.
+// `const checks=[…]` contains `sf("loss")?!!loss:1` for every field, so a field with no
+// control at all still looked "gated" here — the guard reported 30/30 rendered while four
+// disciplines declared a field the form never drew, and whose entry in `checks` could
+// therefore never be satisfied (the meter could not reach 100%). Cut that expression out
+// before looking for inputs.
+const ckStart = ar.indexOf("const checks=[");
+if (ckStart < 0) anchorLost("`const checks=[` in AddRoute — the completeness meter");
+let ckDepth = 0, ckEnd = ar.indexOf("[", ckStart);
+for (let i = ckEnd; i < ar.length; i++) {
+  if (ar[i] === "[") ckDepth++;
+  else if (ar[i] === "]") { ckDepth--; if (!ckDepth) { ckEnd = i; break; } }
+}
+// Block comments go too, and this is not hypothetical: the comment added beside the fix
+// EXPLAINS the bug by quoting `sf("loss")?!!loss:1`, which put a second occurrence outside
+// `checks` and made the input test pass on prose. Presence is not use — the same false pass
+// check:rappel-readers and check:crew-member-readers both record. Only `/* */` is stripped:
+// the aggressive blanker other guards use eats real code when a string contains `//`.
+const arInputs = (ar.slice(0, ckStart) + ar.slice(ckEnd)).replace(/\/\*[\s\S]*?\*\//g, " ");
+
+const gated = new Set([...arInputs.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]));
 const declared = new Set(Object.values(FIELDS).flat());
+
+// The general form of the same defect, and the one that does not depend on where sf() is
+// written: a piece of form state nothing can write. `useState` gives every field a setter;
+// if only the declaration mentions it, no control writes it and the field is dead however
+// convincingly it is declared elsewhere.
+const setters = [...new Set([...ar.matchAll(/\bset[A-Z][A-Za-z0-9]*/g)].map((m) => m[0]))];
+const deadSetters = setters.filter((t) => (ar.match(new RegExp(`\\b${t}\\b`, "g")) || []).length === 1);
+if (deadSetters.length) {
+  fail(`AddRoute state nothing ever writes: ${deadSetters.join(", ")} — declared with useState and never called, so the field cannot be filled in`);
+} else ok(`all ${setters.length} form states are written by some control`);
 
 const promisedNotRendered = [...declared].filter((k) => !gated.has(k));
 if (promisedNotRendered.length) fail(`FIELDS offers ${promisedNotRendered.join(", ")} but no input is gated on it — the form never asks`);
@@ -127,6 +338,41 @@ else ok(`all ${declared.size} declared fields have a gated input`);
 const renderedNotDeclared = [...gated].filter((k) => !declared.has(k));
 if (renderedNotDeclared.length) fail(`an input is gated on ${renderedNotDeclared.join(", ")}, which no discipline declares — it can never render`);
 else ok("no input is gated on a field no discipline declares");
+
+/* 2b. NO FIELD MAY RENDER TWICE.
+   ---------------------------------------------------------------------------
+   #953 moved six inputs to the sections they belong under and left one behind: the whole
+   2,168-character "Pitch by pitch" builder rendered under BOTH "4 · The climb" and
+   "5 · Gear to bring" — byte-identical, twice on one form. Every gate above stayed green,
+   because each asks whether a field is declared, gated, storable and ordered. None asked HOW
+   MANY TIMES it renders.
+
+   Nothing else could see it either: check:dead-props reads props, check:refs reads bindings,
+   and duplicated JSX is valid and renders correctly — just twice. It was found by reading the
+   form's structure; this is that reading made repeatable.
+
+   NO DECLARED MAP, deliberately. A field->heading table would be bookkeeping that rots, and
+   every legitimate move would have to rewrite it. Counting render sites needs nothing
+   declared: one input per field is true by construction, whatever the layout becomes.
+
+   The completeness meter is already cut out of `arInputs` above, so every sf() counted here
+   is a render site rather than a readiness test. */
+const renderSites = [...arInputs.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+const siteCount = new Map();
+for (const f of renderSites) siteCount.set(f, (siteCount.get(f) || 0) + 1);
+/* A field legitimately appears twice when its GROUP is gated on the union of its own fields —
+   `{(sf("fa")||sf("crux"))?<div><div style={grp}>…` — so the gate and the input both count.
+   That is at most one extra, and only for a field named in such a union. A third occurrence,
+   or a second for a field no union mentions, is a duplicate render. */
+const unions = [...arInputs.matchAll(/\((?:\s*sf\("[A-Za-z0-9_]+"\)\s*\|\|)+\s*sf\("[A-Za-z0-9_]+"\)\s*\)/g)].map((m) => m[0]);
+const inUnion = new Set();
+for (const u of unions) for (const m of u.matchAll(/sf\("([A-Za-z0-9_]+)"\)/g)) inUnion.add(m[1]);
+const dupRenders = [...siteCount.entries()].filter(([f, n]) => n > (inUnion.has(f) ? 2 : 1));
+if (dupRenders.length) {
+  fail(`these fields render MORE THAN ONCE: ${dupRenders.map(([f, n]) => `${f} (${n} sites)`).join(", ")} — a climber sees ` +
+    `the same input twice, under two headings. Delete the copy in the wrong section and keep one. Duplicated JSX is ` +
+    `valid and renders correctly, which is why no other gate catches it.`);
+} else ok(`no field renders twice (${siteCount.size} fields, ${renderSites.length} sites, ${inUnion.size} legitimately in a group union)`);
 
 // 3. the ordering invariant this audit existed to fix
 const counts = Object.fromEntries(Object.entries(FIELDS).map(([d, v]) => [d, v.length]));

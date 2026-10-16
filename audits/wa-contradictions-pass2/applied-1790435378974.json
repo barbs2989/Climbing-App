@@ -1,0 +1,218 @@
+{
+ "applied": [
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Days to approach"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Days to approach"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "Days to approach"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Days to approach"
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Gain to Terror Basin camp"
+  },
+  {
+   "id": "wa_south_face_5",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line (West Ridge only vs West Ridge then South Face)"
+  },
+  {
+   "id": "wa_south_face_5",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line (West Ridge only vs West Ridge then South Face)"
+  },
+  {
+   "id": "wa_south_face_5",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "station"
+   ],
+   "fact": "Descent line (West Ridge only vs West Ridge then South Face)"
+  },
+  {
+   "id": "wa_south_face_5",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Fixed rappel anchors"
+  },
+  {
+   "id": "wa_south_face_5",
+   "column": "rappel_detail",
+   "path": [
+    6,
+    "notes"
+   ],
+   "fact": "Roping up on the glacier after the last rappel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong off-trail/bushwhack fitness for a multi-day approach (Goodell Creek/Stump Hollow into Crescent Creek basin) with sustained elevation gain on unmaintained terrain",
+      "packWeight": "Heavy multi-day pack (camp gear, food, rock rack) for at least a 3-4 day trip"
+     },
+     "approachTime": "Multi-day approach (typically 1.5-2 days each way) from Goodell Creek trailhead via Stump Hollow into Crescent Creek basin before the climb itself",
+     "requiredSkills": [
+      "5.8 alpine rock climbing on unfamiliar, loose gneiss",
+      "Route-finding among gendarmes with minimal beta/marked path",
+      "Off-trail navigation and bushwhack travel",
+      "Self-rescue and remote wilderness first aid (no quick evac)",
+      "Backcountry camping and Leave No Trace practice in a NPS wilderness zone",
+      "Multi-pitch anchor building and rappelling on exposed terrain"
+     ],
+     "experienceLevel": "Advanced alpine climber with prior grade III-IV alpine rock experience; comfortable route-finding through unmarked gendarme terrain far from rescue"
+    },
+    "hazards": [
+     "sustained exposure",
+     "loose/chossy rock on the upper peak and approach gully",
+     "remoteness — a multi-day approach with no quick escape",
+     "The Barrier crossing between Terror and Crescent Creek basins: steep, loose, exposed traverse",
+     "route-finding through brush and cliff bands on the Goodell Creek approach",
+     "lingering moats and icy snow in the Himmel-Otto col gully in early/late season"
+    ],
+    "turnaround": "Given the multi-day approach and lack of any fast escape, set a firm summit-day turnaround time and factor in the extra hours needed to get back to the col and basin camp before dark."
+   }
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high; multi-day, trail-less approach with roughly 7,500 ft of elevation gain over brush, talus, and cross-country terrain to the Terror Basin camp",
+      "packWeight": "Heavy overnight/glacier-travel kit (40-50+ lbs) for the multi-day approach plus a full alpine rock rack"
+     },
+     "approachTime": "1-2 days of cross-country travel to reach the Terror Basin camp before the climb itself",
+     "requiredSkills": [
+      "Multi-pitch traditional rock leading at 5.7 with sustained exposure",
+      "Route-finding on an unmarked, trail-less approach and on the ridge itself",
+      "Glacier travel and crevasse rescue (standard kit for this zone per outside route beta)",
+      "Efficient rappelling/downclimbing on loose alpine rock for the descent",
+      "Self-sufficient multi-day wilderness travel and navigation in a remote, no-rescue-nearby setting"
+     ],
+     "experienceLevel": "Advanced to expert alpine climbers only - prior remote North Cascades/Pickets-style objectives strongly recommended before this one"
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_5",
+   "before": {
+    "descent_text": "Standard descent is down the West Ridge, not back down the South Face. From the summit, downclimb/scramble a few hundred feet toward a notch on the ridge, then begin rappelling. Multiple trip reports of this exact route confirm it as a sustained multi-rappel descent through a gully/notch system with no bolts; the stations are fixed pins, nuts and cord of variable quality, slung horns, or anchors built from gear (nuts, small-to-medium cams), so carry a rack sufficient for both the climb and for leaving/building rappel anchors, plus some cord or rap tat. One detailed trip report of this route logged 7 double-rope rappels down the West Ridge line back to the Terror Glacier, building a fresh natural anchor at each station; a separate party descending the same general line but counting differently (single 70m rope, more, shorter pitches) reported roughly 5 rappels down the upper West Ridge to a notch followed by about 9 more rappels down through the gully/South Face terrain to the glacier, with several rappels traversing hard to one side to reach the next station and the final rappel using nearly the full rope length to reach a flat spot on the ice. Two ropes give the fewest rappels. The two-rope stations sit roughly 60 m apart and a single 70 m rope doubled reaches only about 35 m, so on one rope expect roughly twice as many stations: about 14 rappels of 30-35 m, which is what the single-rope party above ended up doing. Expect loose rock in the gully and real risk of the rope hanging up on the traversing raps, so back up rappels and check pulls carefully. The descent ends back on the Terror Glacier at the base of the West Ridge/South Face, from which you re-cross the icefall (same crevasse hazard as the approach, now on tired legs and possibly softer afternoon snow) to regain camp, then reverse the Terror Basin boot path and Goodell Creek Trail to the trailhead.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Loose blocks sit on this line; clear what you safely can rather than pulling ropes down onto it.",
+      "notes": "First rappel off the West Ridge below the notch; stations are fixed pins, nuts and cord of variable quality, or built from gear.",
+      "anchor": "gear anchor (nuts/small-med cams, occasional slung horn)",
+      "hazards": [
+       "accounts differ on how much fixed material is in place - some describe stations roughly a rope length apart on fixed pins, nuts and cord, reported replaced in mid-2024, while others describe building every anchor from gear. Carry cord and a rack for anchors either way."
+      ],
+      "lengthM": 60,
+      "station": "The descent is the West Ridge, not the South Face. The stations are on the skier's-left / west side of the summit; descend the ridge crest from there toward the base of the headwall."
+     },
+     {
+      "n": 2,
+      "notes": "Continuing down the West Ridge rappel line toward the Terror Glacier.",
+      "anchor": "gear anchor (nuts/cams/slung horn)",
+      "lengthM": 60,
+      "station": "A large horn anchor, reached by scrambling down the ridge crest."
+     },
+     {
+      "n": 3,
+      "notes": "Fixed three-pin station; check and back up the cord.",
+      "anchor": "fixed three-pin anchor",
+      "hazards": [
+       "free-hanging off the overhang, with the next station offset rather than straight below"
+      ],
+      "lengthM": 60,
+      "station": "A three-pin anchor at the start of the ridge; the rappel from it goes down and climber's right off a large overhang."
+     },
+     {
+      "n": 4,
+      "notes": "Mid-line rappel down steep West Ridge terrain.",
+      "anchor": "gear anchor (nuts/cams/slung horn)",
+      "lengthM": 60,
+      "station": "Around here the line reaches the notch of the West Ridge gully and switches onto the South Face - one party counted about three and a half double-rope rappels down the ridge to just above that notch, then four more down the face."
+     },
+     {
+      "n": 5,
+      "notes": "Continuing the descent; two ropes used doubled/joined for close to full-length rappels.",
+      "anchor": "gear anchor (nuts/cams/slung horn)",
+      "lengthM": 60
+     },
+     {
+      "n": 6,
+      "notes": "Second-to-last rappel before reaching glacier-adjacent terrain.",
+      "anchor": "gear anchor (nuts/cams/slung horn)",
+      "lengthM": 60
+     },
+     {
+      "n": 7,
+      "notes": "Final rappel reaching the Terror Glacier; unrope and walk off from here.",
+      "anchor": "fixed anchor (two pins and a nut)",
+      "hazards": [
+       "bergschrund immediately below the landing",
+       "rockfall onto the base of the route, which is where stashed packs sit"
+      ],
+      "lengthM": 30,
+      "station": "The final rappel is short - about 100 ft by one party's estimate - off a slab anchor of two pins and a nut, landing back on the Terror Glacier above the bergschrund. On the South Face variant it returns you to the base of the route itself, so gear can be left there."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Goodell Creek to the Glee Peak saddle camp, then through the Terror Glacier icefall to the buttress at the lower-left corner of the face",
+      "notes": "Park at the small pullout just before Goodell Creek Campground at about 600 ft and pick up the Goodell Creek Trail heading north from the Highway 20 corridor. The first 3.75-4 miles follow an old, gently graded forest roadbed along Goodell Creek, brushy with some downed logs in the first mile, and crossing TWO BOULDER-STREWN WASHOUT SECTIONS where the tread disappears into the creek's flood debris and you pick a line across large boulders. That is the trickiest route-finding of the lower approach. ABOUT 200 YARDS PAST THE SECOND WASHOUT, AT AN OBVIOUS CAMPSITE WITH A FIRE RING, an unsigned climbers' boot path breaks right off the roadbed, historically marked by a stone arrow on the ground at roughly 1,700 ft. That is the turn for Terror Basin; missing it means continuing pointlessly up the McMillan Spire approach. From the turnoff the boot path climbs steeply and directly through forest, hand-over-hand in places on roots and branches, and breaks out of the trees around 5,000-5,200 ft. Above treeline a rising traverse across meadow, slab and early-season snow reaches a saddle or notch at about 6,200 ft near Glee Peak; the standard camp sits about 400 ft below the saddle at roughly 5,800 ft. A seasonal trickle down a rock outcrop a few hundred feet below camp is the early-season water source; by late summer parties melt snow.",
+      "season": "Jul-Sep; the first ascent was made in mid-June in a low-snow year",
+      "hazards": [
+       "Two boulder-strewn washouts where the tread vanishes, the lower approach's route-finding crux",
+       "A broken Terror Glacier icefall with open crevasses that worsens through the season",
+       "A camp water source that dries out by late summer",
+       "A sustained multi-rappel descent down the West Ridge with no fixed or bolted stations anywhere on the peak",
+       "Loose rock in the descent gully and real risk of the rope hanging up on traversing rappels"
+      ],
+      "baseFinding": "AIM FOR THE LOWER-LEFT CORNER OF THE SOUTH FACE WHERE A SMALL ROCK BUTTRESS MEETS THE GLACIER. THAT BUTTRESS IS THE START OF THE ROUTE. It is a place where rock touches ice directly, with no intervening gully, and that is what tells it apart from the peak's other lines.\n\nTHE DISCRIMINATOR AGAINST THE WEST RIDGE, WHICH LEAVES THE SAME GLACIER: the West Ridge leaves at a BERGSCHRUND BELOW THE WEST END of the peak and then climbs ABOUT 300 FT OF GULLY before any ridge. If there is a gully above you, you have gone past this route's corner and are set up for the West Ridge.\n\nGETTING THERE IS THE ICEFALL PROBLEM, NOT A NAVIGATION ONE: from camp, rope up and cross the Terror Glacier. THE ICEFALL IN ITS MIDDLE IS BROKEN AND OFTEN HAS OPEN CREVASSES; parties commonly work a LEFT-TRENDING SNOW RAMP OR ICE BRIDGE ABOVE A LARGE CREVASSE to get through it onto gentler slopes beyond. That crossing gets more serious as the season progresses.\n\nSO THE HANDRAIL THROUGH THE ICEFALL IS THE LARGE CREVASSE ITSELF: the way through is above it, trending left. If you are dropping below the big crevasse looking for a bridge, you are on the wrong side of the feature parties use.\n\nA COUNTABLE APPROACH MARKER LOWER DOWN THAT SAVES THE WHOLE DAY: TWO WASHOUTS, then 200 yards, then a fire ring. That is how you find the turn in poor light. A stone arrow may or may not still be there; the second washout and the fire ring are ground features that do not move."
+     }
+    ]
+   }
+  }
+ ]
+}

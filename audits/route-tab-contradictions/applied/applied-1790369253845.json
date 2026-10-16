@@ -1,0 +1,178 @@
+{
+ "applied": [
+  {
+   "id": "wa_sloan_peak_corkscrew",
+   "column": "season",
+   "path": [],
+   "fact": "Climbing season window (does it include September?)"
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "Number of technical pitches on the route"
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "column": "overview",
+   "path": [],
+   "fact": "Number of technical pitches on the route"
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Number of technical pitches on the route"
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Number of technical pitches on the route"
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "column": "waypoints",
+   "path": [
+    2,
+    "directions"
+   ],
+   "fact": "Number of technical pitches on the route"
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "column": "approach",
+   "path": [],
+   "fact": "Number of technical pitches on the route"
+  },
+  {
+   "id": "wa_diamond_in_the_rough",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Pitch count stated in the rack description"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_sloan_peak_corkscrew",
+   "before": {
+    "season": "Jul-Aug"
+   }
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.10d",
+      "notes": "Steep, left-leaning corner-and-chimney system with 5.9 climbing low; the crux comes near the top where the crack arches left and turns slightly overhanging, but gear protection is excellent throughout.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 50
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10-",
+      "notes": "Sustained, varied pitch linking a hand crack, featured face holds, and a short rightward hand traverse to an overhanging crack section below a horizontal roof.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 60
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Right-facing corner to a giant heather ledge; several similar-looking corners sit nearby, making this a route-finding pitch as much as a climbing one.",
+      "pitch": 3,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "Left-trending crack system toward a pedestal; parties have reported some ambiguity near the top, so favor the leftward line rather than the most obvious crack.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10c",
+      "notes": "Knob-and-fin face climbing (a bit runout, roughly 5.8R) leads into a right-facing corner that gives this pitch its own hard, near-crux moves.",
+      "pitch": 5,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Featured, juggy face climbing to another large heather ledge — a breather before the final pitch.",
+      "pitch": 6,
+      "anchor": "Gear",
+      "lengthM": 50
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10",
+      "notes": "Climbs past a gendarme/prow on hand cracks and positive edges, then traverses left across fun flakes to the final heather ledge where technical climbing ends and the shared Corkscrew scramble to the summit begins.",
+      "pitch": 7,
+      "anchor": "Gear (heather ledge, top of technical climbing)",
+      "lengthM": 90
+     }
+    ],
+    "overview": "Fire on the Mountain climbs 7 pitches of sustained, well-protected alpine rock (to 5.10d) up Sloan's Southwest Face, joining a major ledge that intersects the Corkscrew Route; from there it's roughly 500 ft of 4th-class/low-5th scrambling to the true summit.",
+    "rope_note": "7 pitches of 5.10d rock (to a ledge intersecting the Corkscrew Route) plus ~500ft of 4th/low-5th scrambling to the true summit; ~1000ft technical + 500ft scrambling total. Generally good protection at cruxes but runout sections on P2 and P5.",
+    "waypoints": [
+     {
+      "lat": 48.0719,
+      "lng": -121.3765,
+      "elev": 2800,
+      "name": "Bedal Creek/Sloan Creek Trailhead",
+      "note": "End of FR-4096, ~3 mi off the Mountain Loop Highway south of Bedal Campground.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Leave the Mountain Loop Highway on FR 4096, the Bedal Creek spur, about three miles south of Bedal Campground, and drive it to the trailhead at road's end, roughly 2,790 to 2,800 ft."
+     },
+     {
+      "lat": 48.05601,
+      "lng": -121.36307,
+      "elev": 3500,
+      "name": "Climber's trail junction (leaves Bedal Creek trail for the basin)",
+      "type": "Junction",
+      "distMi": 1.5,
+      "elevFt": 3500,
+      "directions": "Take the Bedal Creek Trail #705 through old growth along the steep banks of the creek. Somewhere between 1.5 and 2.5 miles in the maintained tread gives out at a large brushy washout draining the basin under Sloan's West Face; scramble up the boulder- and blowdown-choked washout, which is the hardest route-finding on the approach, until a cairn marks the exit onto a climbers' path, often flagged with pink tape, at about 3,500 ft."
+     },
+     {
+      "lat": 48.04149,
+      "lng": -121.34012,
+      "elev": 7835,
+      "name": "Sloan Peak Summit",
+      "note": "7-pitch 5.10d route up the southwest face, topping out at the shared summit.",
+      "type": "Summit",
+      "distMi": 4.5,
+      "directions": "The climbers' path switchbacks steeply through forest from 3,500 to 4,900 ft, then crosses talus and a meadow bench with summit views, passing a stagnant tarn at the 5,300 ft saddle between Bedal and Sloan — last dependable water is there or at the streams just below. Rocky, exposed scrambling continues to about 5,800 ft at the toe of the glacier, and here this route parts from the standard Corkscrew: rather than stepping onto the glacier, cross the low ridge dividing the West Face basin from the Southwest Face basin to reach the foot of the face. Seven sustained pitches to 5.10d finish on a heather ledge, from which about 500 ft of 3rd and 4th class on the upper Corkscrew line reaches the true summit."
+     }
+    ],
+    "approach": "From the Mountain Loop Highway, turn onto FR 4096 (Bedal Creek Trailhead spur) and park at the trailhead, 2,790–2,800 ft. Follow the Bedal Creek Trail #705 through old-growth forest along Bedal Creek's steep banks; the maintained tread peters out roughly 1.5–2.5 miles in, at a large brushy washout coming down off the basin below Sloan's West Face. Scramble up the boulder- and blowdown-choked washout — this is the crux of route-finding on the approach — until a cairn marks an exit onto a climber's path (often flagged with pink tape) that switchbacks steeply through forest from about 3,500 ft to 4,900 ft. Above treeline the path crosses talus and a meadow bench (4,900–5,300 ft) with summit views, passes a stagnant tarn near the 5,300 ft saddle between Bedal Peak and Sloan Peak (last reliable water is here or at the cascading streams just below), then continues on rocky, exposed scrambling terrain to about 5,800 ft at the toe of the glacier — crampons/axe may be needed here depending on season. For the Southwest Face (Fire on the Mountain's start), do not follow the standard Corkscrew line onto the glacier; instead cross the low ridge that separates the West Face basin from the Southwest Face basin/meadows to reach the base of the face. Total car-to-base time runs about 3 hours for a fit, familiar party; expect a long day given ~7 pitches of technical climbing still ahead. An alternate approach via the Cougar Creek/North Fork Sauk trailhead (FR 49) converges with the Bedal Creek route around 5,000–5,500 ft but requires fording the North Fork Sauk River, a crossing that is deep, swift, and best avoided solo or in high early-season flow."
+   }
+  },
+  {
+   "id": "wa_diamond_in_the_rough",
+   "before": {
+    "detailed_rack": "Doubles to 3 inches plus a single #4 Camalot, per the first-ascent party's rack; standard set of nuts/stoppers and alpine draws for a wandering 8-pitch line."
+   }
+  }
+ ]
+}

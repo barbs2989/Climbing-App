@@ -1,0 +1,103 @@
+{
+ "applied": [
+  {
+   "id": "wa_drilling_me_softly",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Access road / trailhead for the crag"
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Access road / trailhead for the crag"
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Access road / trailhead for the crag"
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "column": "alpine_draws",
+   "path": [],
+   "fact": "Number of quickdraws needed"
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "column": "rope_note",
+   "path": [],
+   "fact": "How well-documented the crag/route is"
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Access road / trailhead for the crag"
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Access road / trailhead for the crag"
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Access road / trailhead for the crag"
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "column": "alpine_draws",
+   "path": [],
+   "fact": "Number of quickdraws needed"
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "column": "rope_note",
+   "path": [],
+   "fact": "How well-documented the crag/route is"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_drilling_me_softly",
+   "before": {
+    "road": {
+     "name": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel",
+     "status": "Paved road from I-90 Exit 52 to a large gravel lot at Alpental; well-maintained but subject to seasonal snow closure.",
+     "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 52."
+    },
+    "alpine_draws": 10,
+    "rope_note": "Area ('Sofa King Buttress') could not be found in any published index. Inferred from grade/regional style as a short bolted granite pitch typical of Washington Pass sport crags."
+   }
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "before": {
+    "road": {
+     "name": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel",
+     "status": "Paved road from I-90 Exit 52 to a large gravel lot at Alpental; well-maintained but subject to seasonal snow closure.",
+     "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 52."
+    },
+    "alpine_draws": 10,
+    "rope_note": "Same unverified area as Drilling Me Softly (Sofa King Buttress). Inferred bolted-sport gear from grade/regional style."
+   }
+  }
+ ]
+}

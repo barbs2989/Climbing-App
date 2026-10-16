@@ -1,0 +1,396 @@
+{
+ "applied": [
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent rappel count"
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Descent rappel count"
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Trailhead named"
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Trailhead named"
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Trailhead and access season"
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "column": "beta",
+   "path": [],
+   "fact": "Beta describes a different route (grade, length, trailhead)"
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "column": "rappels",
+   "path": [],
+   "fact": "Standard descent / rappel count"
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "column": "overview",
+   "path": [],
+   "fact": "Headwall protection (bolted pitches vs bolted anchors)"
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent choice logic"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "How the North Ridge Notch is gained from the standard approach"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "How the North Ridge Notch is gained from the standard approach"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "How the North Ridge Notch is gained from the standard approach"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "overview",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Beta describes a different route"
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment field holds a time"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "before": {
+    "rappels": "About 5-6 rappels from bolted anchors if you descend the ridge line: the first station is obvious just west of the summit, two rappels bring you down to a flat part of the ridge, then the line is forced off the crest onto 3rd-class ledges on the south side, with three more bolted rappels to reach the ground. Some parties instead reverse the ridge with short downclimbs and occasional rappels, or descend the South Buttress's established rappel line.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Graded a Mountaineers 'basic' climb but airy and committing: a loose scree/choss approach leads to the Southwest Gully, then sustained class 3-4 climbing along a narrow, hugely exposed ridge crest with running belays. Shorter than the South Buttress but still a full single-day outing for most parties.",
+       "hours": 10,
+       "miles": 3.6,
+       "title": "West Ridge, car-to-car",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 16,
+       "schedule": [
+        {
+         "time": "5:00-6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Approach through forest and meadow to the base of the Southwest Gully."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Southwest Gully",
+         "detail": "Two class 3-4 pitches gain the ridge crest through loose, choss-covered terrain."
+        },
+        {
+         "time": "+2-4 hr",
+         "label": "Ridge traverse",
+         "detail": "Class 3-4 scrambling along the narrow spine, including the exposed 'Humps' section, with running belays."
+        },
+        {
+         "time": "midday-early PM",
+         "label": "Summit",
+         "detail": "Most parties top out by early-to-mid afternoon."
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Descend",
+         "detail": "About 4 rappels off the west side plus scree/gully hiking back toward the trail."
+        }
+       ],
+       "objective": "Climb the West Ridge and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single day car-to-car, roughly 3.6 mi and ~3,300 ft round trip; trip reports range from about 10 to 13 hours depending on route-finding and rappel efficiency."
+    },
+    "beta": "Grade II, 5th-class climbing to about 5.6 (harder direct variations reach 5.7). Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+    "access": {
+     "_raw": {
+      "permit_type": "Day-use only, no permits required",
+      "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+      "cost_structure": {
+       "person_fee": "None",
+       "parking_pass": "$5 per vehicle per day or $30 annually"
+      },
+      "wilderness_zone": "North Cascades Scenic Highway corridor",
+      "seasonal_closures": "Not accessible during winter when State Route 20 is closed",
+      "permit_pickup_hours": "Monday-Friday 8:00 AM - 4:00 PM (lunch 12:30-1:30 PM)",
+      "special_restrictions": "Bicycles only permitted to Cutthroat Pass; no camping within 1/4 mile of Cutthroat Lake; parking very limited and fills quickly",
+      "parking_pass_required": "Northwest Forest Pass or Digital Day Pass via Recreation.gov",
+      "permit_pickup_location": "Methow Valley Ranger District Office"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No permits required. Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October. Hazards: Steep terrain, loose rock in approach gully, exposure.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "Day-use only, no permits required",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "North Cascades Scenic Highway corridor",
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or Digital Day Pass via Recreation.gov",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "The 'Complete' South Buttress follows the full original line low on the buttress (published topos show up to 22 pitches) rather than the commonly-linked ~12-pitch version, making it a longer day of rope work than the standard South Buttress before the same long descent.",
+       "hours": 12,
+       "miles": 4,
+       "title": "Complete South Buttress, car-to-car",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Forest and meadow approach to the base of the buttress."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Base of route",
+         "detail": "Rack up for a full-length pitched ascent."
+        },
+        {
+         "time": "+4-6 hr",
+         "label": "Climb",
+         "detail": "Up to ~16 pitches of wandering moderate rock to 5.8, more sustained rope work than the standard linked-out version."
+        },
+        {
+         "time": "mid-late afternoon",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "+3-5 hr",
+         "label": "Descend",
+         "detail": "Multi-rappel descent (West Ridge or reversing the buttress) then hike out."
+        }
+       ],
+       "objective": "Climb the full South Buttress line (up to 22 pitches) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A long single car-to-car day, roughly 4.0 mi and an estimated ~3,300 ft round trip; expect 11-14 hours given the extra pitches over the standard South Buttress line."
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "before": {
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "No permits required. Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October. Hazards: Steep terrain, loose rock in approach gully, exposure.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "Entirely dependent on Highway 20's spring reopening date, which varies year to year with snowpack and (in 2026) road-repair work.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass if using a developed FS trailhead lot.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "before": {
+    "beta": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+    "rappels": "Single 60m rope; roughly 10-12 rappels down the buttress, generally following the line of ascent"
+   }
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "before": {
+    "overview": "A modern, sustained 5.11 alpine testpiece up Cutthroat's East Face, with four bolt-protected headwall pitches (5.10-5.11) linking natural, less-traveled terrain below and above — a quality alternative to the crowded Liberty Bell group just to the south.",
+    "descent": "Rappel the route (the four bolted headwall pitches allow a two-rope rappel), or descend via the South Buttress or West Ridge if other parties are on those routes."
+   }
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "The shortest and least committing of Cutthroat's technical lines: a quick approach leads to 2-3 short pitches gaining the North Ridge Notch, then mostly class 2-4 ridge climbing with one steeper 5.6-5.7 section before easing off near the top.",
+       "hours": 8.5,
+       "miles": 4,
+       "title": "North Ridge, car-to-car",
+       "gainFt": 2800,
+       "lossFt": 2800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "~6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Short, pleasant approach through forest/meadow to the base of the North Ridge Notch."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Gain the notch",
+         "detail": "2-3 short low-5th-class pitches to the North Ridge Notch."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Climb the ridge",
+         "detail": "~8 pitches, mostly 2nd-4th class ramps and corners with one steeper 5.6-5.7 slab section."
+        },
+        {
+         "time": "early-mid PM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Descend",
+         "detail": "Downclimb plus ~5 rappels via the West Ridge side back to the notch, then hike out."
+        }
+       ],
+       "objective": "Climb the North Ridge (Grade II, 5.6-5.7, ~8 pitches) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A shorter single-day outing than Cutthroat's other lines: roughly 4.0 mi and an estimated ~2,800 ft round trip, typically well under 10 hours."
+    },
+    "timing": {
+     "totalHrs": 8.5,
+     "summitTimeHrs": null,
+     "descentTimeHrs": 2.5,
+     "approachTimeHrs": 2,
+     "recommendedStart": "~6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8.5,
+       "note": "The shortest and least committing of Cutthroat's technical lines: a quick approach leads to 2-3 short pitches gaining the North Ridge Notch, then mostly class 2-4 ridge climbing wi…",
+       "fromTo": "North Ridge, car-to-car",
+       "section": "Climb"
+      }
+     ]
+    },
+    "alpine_grade": "II-III",
+    "overview": "The North Ridge is a moderate, less-traveled alternative to the South Buttress: an 8-pitch, roughly 600-foot Grade II-III 5.7 ridge climb first done by Fred Beckey, Jim Crooks, and Ed Kenney on August 19, 1940."
+   }
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "before": {
+    "rock_grade": "5.7",
+    "beta": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+    "commitment": "12.5 hrs"
+   }
+  }
+ ]
+}

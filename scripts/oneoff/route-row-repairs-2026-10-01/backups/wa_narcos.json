@@ -1,0 +1,32 @@
+{
+ "id": "wa_narcos",
+ "name": "Narcos",
+ "waypoints": [
+  {
+   "lat": 48.5564,
+   "lng": -120.6547,
+   "name": "Cutthroat Creek Trailhead",
+   "note": "Turn off Hwy 20 ~4.4-4.5mi east of Washington Pass onto FR-400 (signed for Cutthroat Lake/Creek Trail), drive ~1mi to trailhead lot (restrooms). From the trailhead, leave trail and bushwhack/hike up through open forest (no maintained trail) toward the wall, gaining elevation and traversing left; ~1-1.5hr to the base.",
+   "type": "Trailhead",
+   "directions": "Turn off Hwy 20 about 4.4 to 4.5 miles east of Washington Pass onto Forest Road 400, signed for the Cutthroat Lake/Creek Trail, and drive roughly a mile to the trailhead lot. The lot sits at about 4,500 ft and has restrooms. Don't confuse this with the Cutthroat Peak approach, which starts from an unmarked highway pullout about 1.5 miles west of Washington Pass with no maintained trail."
+  },
+  {
+   "lat": 48.54975,
+   "lng": -120.6435,
+   "elev": 6263,
+   "name": "Cutthroat Creek Wall / Little Liberty Bell",
+   "note": "No established trail; hike through woods then traverse rocky benches to the wall base, ~1-1.5 hrs. Narcos is a 5.9 trad, PG13 line.",
+   "type": "Topout",
+   "distMi": 1.2,
+   "directions": "From the lot, walk up through the woods toward the wall on an unmaintained, intermittently cairned climbers' line, gaining elevation quickly, then traverse left through open forest and across slabby benches to a shoulder at the base of the wall's right-hand side. Allow an hour to an hour and a half."
+  },
+  {
+   "lat": 48.54975,
+   "lng": -120.6435,
+   "elev": 6263,
+   "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+   "type": "Summit",
+   "elevFt": 6263
+  }
+ ]
+}

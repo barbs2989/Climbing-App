@@ -1,0 +1,2188 @@
+[
+ {
+  "id": "wa_morning_star_peak_standard",
+  "name": "Standard Scramble",
+  "area_id": "wa_morning_star_peak",
+  "findings": [
+   "r055.json: The waypoint pin (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail guide (48.0251, -121.4779) to within ~50 m; approach_logistics (48.02389, -121.47414) sits ~300 m away (the trailhead has also been planned for relocation ~0.5 mi back). Coordinates are out of scope for patching here, so it is left flagged. | 48.0251, -121.4779 (waypoint position)"
+  ],
+  "gpx_summary": "469 points; 0 of 2 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_morning_star_peak_standard",
+   "area_id": "wa_morning_star_peak",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Sam Heller, 1940 (first ascent of the peak, via this easiest Class 3 line)",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe (useful through June/early July for the Headlee Pass chute and any lingering snow near the summit)",
+    "helmet (rockfall is common in the loose Headlee Pass chute)",
+    "trekking poles (talus and heather sidehilling)",
+    "sturdy boots with good ankle support"
+   ],
+   "hazards": [
+    "notorious rockfall chute immediately below Headlee Pass — helmet strongly recommended",
+    "difficult ford of the South Fork Stillaguamish ~0.5 mi from the trailhead; seasonal log crossings often washed out, especially during high runoff",
+    "lingering steep snow in the Headlee Pass gully and on north-facing terrain into July",
+    "loose talus and heather sidehilling above the pass with sparse cairns",
+    "exposure on the final summit scramble moves"
+   ],
+   "verif": null,
+   "overview": "Morning Star Peak (6,020 ft) sits above Headlee Pass and the Sunrise Mine basin between Sperry and Del Campo Peaks, in the Mountain Loop Highway corridor of the Mt. Baker-Snoqualmie National Forest (Darrington Ranger District). The standard route leaves the Sunrise Mine Trail about half a mile in, before the South Fork Stillaguamish crossing, and climbs the brushy river valley and snow-covered slabs to a notch in the southeast ridge, then a steep gully to the south ridge and the summit. The South Ridge scramble requires comfort on steep rock and snow and is tougher than the Class 2-3 label alone suggests, especially in early season. Route-finding takes some care, and the snow-covered slabs below the notch are the route's main avalanche concern.",
+   "beta": "The Standard Scramble represents the basic approach to Morning Star Peak's 6,020 ft summit. Multiple scramble options exist on the peak, including the South Ridge and Northwest Face routes, both of which involve Class 3 scrambling with sections of steep rock and snow.",
+   "turnaround": "Turn around if snow slopes are firm without an axe or weather closes in.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": "Class 2-3",
+   "ice_grade": null,
+   "gain_ft": 3670,
+   "loss_ft": 3800,
+   "dist_km": 4.35,
+   "max_angle": 45,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "South Ridge / North Notch",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "Cell service is unreliable in the Stillaguamish River Valley and absent above ~4,000 feet. Assume no service; rely on satellite devices (Garmin inReach, PLB) for emergency communication.",
+   "descent": "Reverse the scramble toward Headlee Pass / Sunrise Mine Trail.",
+   "obj_haz": [
+    "steep snow/ice in gully and notch outside summer",
+    "loose rock on upper ledges",
+    "off-trail route-finding through talus/brush",
+    "short class 4 step on the NW variant"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0247261,
+     "lng": -121.4778459,
+     "name": "Sunrise Mine Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.003885,
+     "lng": -121.490955,
+     "elev": 6018.7,
+     "name": "Morning Star Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6018.7
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "Standard scramble from the Sunrise Mine Trailhead: ford the South Fork Stillaguamish, climb to Headlee Pass, then traverse cairned talus and heather benches below the Mile High But…",
+      "fromTo": "Car-to-car scramble via Headlee Pass",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack; ice axe useful early season for snow in the basin.",
+   "what_to_bring": [
+    "ice axe (early-season/high-snow years)",
+    "helmet",
+    "trekking poles",
+    "Green Trails Mountain Loop Highway No. 111SX map",
+    "Northwest Forest Pass or day-use fee"
+   ],
+   "pro_tips": [
+    "Start early, both to beat other parties into the loose Headlee Pass chute and to keep daylight margin for the descent",
+    "Carry an ice axe even in July in high-snow years — the chute below Headlee Pass holds snow longest",
+    "Green Trails 'Mountain Loop Highway No. 111SX' is the standard paper map for this approach"
+   ],
+   "watch_out": [
+    "rockfall in the Headlee Pass chute — go early and space out from other parties",
+    "high/unbridged river ford during spring snowmelt",
+    "afternoon thunderstorms are common in the North Cascades in summer — start early"
+   ],
+   "pro_needs": "None.",
+   "best_season": "July through September",
+   "high_point_ft": 6020,
+   "aid_grade": null,
+   "approach": "From the Sunrise Mine Trailhead (2,350 ft, end of FR-4065 off the Mountain Loop Highway), follow the Sunrise Mine Trail (Trail #707) about half a mile. Just before the trail crosses the South Fork Stillaguamish River, leave it for a faint abandoned path on the river's east side, or take the line of least resistance along that side. The path soon fades into slide alder, brush and rock debris; fording the river to dodge the brush is hazardous in high runoff, especially in late spring and early summer. Work up the valley past a house-sized boulder near 3,100 ft, then either cross the river and climb a ridge ramp southwest to the upper basin (about 4,000 ft), or continue to a broad basin at about 3,700 ft and climb the steep gully (or the slabs to its right) directly east of it, leaving it to the right where that is easy. Climb snow-covered slabs to a notch in Morning Star's southeast ridge at about 5,600 ft; these slabs are the route's main avalanche concern. The round trip is roughly 5.5-6 miles with 3,700-4,200 ft of gain. The steep gully is often icy when snow-filled, so helmet, ice axe and crampons are standard early in the season; early-season snow makes this a basic alpine climb rather than a scramble.",
+   "descent_text": "This is a walk-off/downclimb — reverse the ascent line, there is no rappelling on the standard route (0 rappels). From the 6,020 ft summit, descend on or near the south ridge to the broad gully, downclimb it into the southeast basin, traverse back below the cliffs and climb about 200 ft through trees to the notch in the southeast ridge. The gully (icy in early/mid-season) is often easier to face in and downclimb than to descend facing out, and crampons make the icy sections much smoother; groups should stay tight and avoid stacking directly above one another. From the notch, descend the snow-covered slabs (watch for avalanche conditions) and the gully or ridge ramp back into the South Fork Stillaguamish valley, then retrace the brushy east-side path to the Sunrise Mine Trail and the trailhead.",
+   "bail": "Descend to the basin and trail.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, then brushy path",
+     "notes": "Follow the Sunrise Mine Trail about half a mile. Just before it crosses the South Fork Stillaguamish, leave it for a faint abandoned path on the river's east side. The path comes and goes and soon vanishes into slide alder and brush, worst around 2,700 ft. Fording the river to dodge the brush is not safe when the water is high.",
+     "pitch": "1"
+    },
+    {
+     "grade": "Brush, boulders, debris",
+     "notes": "Keep working up the east side of the valley past a house-sized boulder near 3,000–3,100 ft. One option crosses the river here and climbs a ridge ramp southwest to an upper basin at 4,000 ft, which is brushier. The other follows the river to the broad basin at about 3,700 ft below Del Campo's north face. In spring this ground is piled with hard, lumpy avalanche debris shed off the slabs.",
+     "pitch": "2"
+    },
+    {
+     "grade": "Steep gully or slabs",
+     "notes": "From the 3,700-ft basin turn sharply right up the steep gully directly east, or the slabs on its right. Leave it to the right once that is easy. At a headwall near 4,400 ft either climb straight up or go around through the trees, which is the easier line on snow and on the way down. The gully often holds snow into early summer, with water running down its middle.",
+     "pitch": "3"
+    },
+    {
+     "grade": "Snow-covered slabs",
+     "notes": "Climb the slabs east to a notch in Morning Star's southeast ridge at about 5,600 ft. The summit comes into view on this flatter ground. These slabs hold snow well into the season and are the route's main avalanche concern. Close to the notch the snow can be icy under fresh snow, so put crampons on before it steepens.",
+     "pitch": "4"
+    },
+    {
+     "grade": "Steep gully, ~45° snow",
+     "notes": "From the notch drop roughly 100–200 ft through trees into the southeast basin (about 5,400 ft). Traverse right below the cliffs to the first broad gully and climb it to the south ridge about 250 ft below the summit. Filled with snow, the gully runs near 45° and is often icy, so crampons are standard. When the snow is bad, the rocks on its right are an alternative, but they are exposed.",
+     "pitch": "5"
+    },
+    {
+     "grade": "Steep rock and snow",
+     "notes": "Climb north on or near the south ridge over the last 200–250 ft of steep ground to the 6,020-ft summit. Early in the day the west-facing slope below the top can stay icy, so mix rock, heather and snow to avoid the iced patches. Descend the same way, taking particular care in the gully below.",
+     "pitch": "6"
+    }
+   ],
+   "itinerary": {
+    "cal": "Sunrise Mine Trailhead requires a NW Forest Pass; the trail is typically snow-free and brushy June through October.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard scramble from the Sunrise Mine Trailhead: ford the South Fork Stillaguamish, climb to Headlee Pass, then traverse cairned talus and heather benches below the Mile High Buttress before a short scramble gully/ridge to the summit. Descent reverses the same line.",
+      "hours": 9,
+      "miles": 5.4,
+      "title": "Car-to-car scramble via Headlee Pass",
+      "gainFt": 3800,
+      "lossFt": 3800,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Ford the South Fork Stillaguamish at 0.5 mi; can be a difficult crossing after rain."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach Headlee Pass (4,600')",
+        "detail": "2.7 mi and 2,400 ft in, between Sperry and Morning Star Peaks."
+       },
+       {
+        "time": "8:15 AM",
+        "label": "Leave the pass trail, traverse talus/heather",
+        "detail": "Cairned route northeast toward the Mile High Buttress."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Summit Morning Star Peak",
+        "detail": "Final scramble gully/ridge right of the buttress."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the scramble to Headlee Pass / Sunrise Mine Trail."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Back at trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit Morning Star Peak (6,020')"
+     }
+    ],
+    "totalNote": "A long single day: about 9 hrs car-to-car, 3,800 ft gain over roughly 5.4 mi round trip via Headlee Pass."
+   },
+   "access": {
+    "fees": "$5/vehicle day-use fee or $30 annual site pass at the Sunrise Mine Trailhead; Northwest Forest Pass and Interagency (America the Beautiful) passes are honored. Washington's Discover Pass is NOT accepted here.",
+    "rules": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply.",
+    "permit": "No wilderness permit or self-issue permit required for day trips.",
+    "closures": "Sunrise Mine Road (FR 4065) and the trail have no formal gate but are typically snow-covered and impassable until roughly June; the South Fork Stillaguamish ford near the trailhead can become impassable during high runoff.",
+    "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May.",
+    "group_limit": 12,
+    "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (administered from Verlot Public Service Center)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass (or equivalent day-use fee) required for trailhead parking",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required outside the wilderness",
+     "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+    }
+   },
+   "road": {
+    "name": "Sunrise Mine Road (Forest Road 4065)",
+    "status": "Narrow gravel road, rough in spots but passable to most passenger cars in dry conditions",
+    "driveNote": "From Verlot Public Service Center, drive 17.1 mi east on the paved Mountain Loop Highway, then turn right onto FR 4065 and continue 2.2 mi to its end at the Sunrise Mine Trailhead (~2,350 ft).",
+    "seasonalGate": "No permanent gate; road and trail typically aren't clear of snow until June — check Mt. Baker-Snoqualmie NF alerts before driving out."
+   },
+   "climate": {
+    "typical": "Wet, west-slope North Cascades marine climate with heavy winter snowpack and a relatively narrow reliable snow-free window at elevation.",
+    "bySeason": {
+     "fall": "Good conditions can persist into early October; watch for early-season snow after storms and shrinking daylight for the descent.",
+     "spring": "Deep, unstable snow lingers in the Headlee Pass gully and on north aspects into June; the river ford runs high with snowmelt.",
+     "summer": "Best window, roughly July-September; trail and scramble terrain typically snow-free by mid-to-late July.",
+     "winter": "Road and trail generally inaccessible; the Headlee Pass chute is avalanche terrain."
+    },
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to nonexistent from the trailhead through Headlee Pass. The river ford near the trailhead and the loose chute below Headlee Pass are the most commonly reported hazard sites on this approach.",
+    "county": "Snohomish",
+    "rangerStation": "Verlot Public Service Center, 33515 Mountain Loop Highway, Granite Falls, WA 98252 — (360) 691-7791 (seasonal hours, Fri-Mon 8am-noon & 12:30-4pm; closed Tue-Thu)",
+    "nearestHospital": "Cascade Valley Hospital (Arlington, WA) — Level IV Emergency Department, the closest facility to the Mountain Loop Highway corridor; Providence Regional Medical Center Everett — Level II trauma center — for serious/major trauma",
+    "sheriffDispatch": "911 — Snohomish County Sheriff's Office dispatches Snohomish County Volunteer Search & Rescue (SCVSAR) for backcountry incidents"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July-September; drawn mostly by WA peak-bagging (Bulger list) parties and climbers using the same Sunrise Mine Trail/Headlee Pass approach as the much more popular Vesper Peak and Vesper Lake day hike, but Morning Star itself sees a fraction of that traffic since it requires leaving the trail into the basin",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Roughly a dozen to a few dozen parties per season (rough estimate) - one party in 2007 described only a single other car at the trailhead"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Full day out (8 hrs total) with significant elevation gain on trail followed by steep, loose off-trail terrain to Headlee Pass and into the Sunrise Mine basin",
+     "packWeight": "Light day-pack, roughly 15-25 lbs (water, layers, helmet, basic scramble gear) - no technical rack needed"
+    },
+    "approachTime": "Roughly 3-4 hrs one-way to the basin/summit based on the 8-hr round-trip total with a 06:00 recommended start",
+    "requiredSkills": [
+     "off-trail routefinding into the basin",
+     "steep loose talus and heather scrambling",
+     "judgment around the Headlee Pass chute, which is notorious for rockfall",
+     "comfort with exposure near the summit block",
+     "early-season snow/glissade judgment when the basin is still snow-filled",
+     "turnaround discipline given afternoon weather buildup"
+    ],
+    "experienceLevel": "Intermediate scrambler - comfortable leaving an established trail for unmarked off-trail routefinding and sustained Class 2-3 talus/heather scrambling; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September (July-September); July is prime once the basin clears of snow",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Prime scramble season; talus and heather are typically snow-free by this point",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "The basin typically holds snow into early summer ('snow-filled basin' in spring); early-season snow above Headlee Pass adds glissade/post-hole hazard and obscures the talus route",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most reliable dry footing on talus/heather; prime scramble season",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the best-season window; early snow can return above Headlee Pass and Sunrise Mine Road access becomes less reliable",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Early fall is good; still within the best season window but shortening days and higher chance of an early cold snap",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime Cascades weather the basin can still be holding snow into early summer, transitioning to dry talus/heather conditions through the July-September window and turning snowbound again once the road closes for winter",
+     "probability": "'afternoon weather' - convective buildups are common in the alpine on summer afternoons, so an early (06:00) start and summit-before-midday plan is advised"
+    },
+    "exposure": "Class 2-3 scrambling; exposure and fall consequence concentrate at the steep, loose Headlee Pass chute (notorious for rockfall onto parties below) and near the summit block, where exposure is the hazard - a slip on loose talus could produce a serious fall, though this is not sustained technical climbing",
+    "avalanche": {
+     "zone": "West Slopes Central (NWAC) covers the Mountain Loop Highway/Sunrise Mine area, but this is a dry-season (Jul-Sep) scramble outside NWAC's formal winter forecast window, so no meaningful avalanche advisory applies during the climbing season",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; this is a talus-and-heather scramble, not glaciated terrain"
+   },
+   "data_quality": {
+    "gaps": [
+     "precise round-trip mileage/elevation-gain for the summit itself (beyond the Vesper Lake trail figures) not independently confirmed",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/VUQF9",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.003885,
+    "peakLng": -121.490955,
+    "trailhead": "Sunrise Mine Trailhead (Trail #707, FR-4065)",
+    "trailheadLat": 48.02388889,
+    "trailheadLng": -121.4741444,
+    "trailheadDirection": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Sunrise Mine Trail over Headlee Pass",
+     "notes": "From the Sunrise Mine trailhead, take the trail the whole way. The first mile crosses two unbridged creeks — a log crossing, a root crossing and a more substantial ford — which need real caution in early season or after rain. Beyond them the trail climbs steadily through forest and then tightens into ever-sharper switchbacks up a narrow rocky couloir. The last quarter mile below the pass is the notorious part: steep, with tread periodically wrecked by snow and rockfall and a genuine risk from rock kicked down by parties above. Unlike the three rock routes on this peak, do NOT leave the trail at the switchback lower down.",
+     "season": "July to September. Snow lingers in the pass gully and on north-facing ground into July, and an ice axe is worth carrying until it has gone.",
+     "hazards": [
+      "Notorious rockfall chute immediately below the pass — a helmet is worth wearing on the trail here, not just above it",
+      "Difficult ford about half a mile from the trailhead; seasonal log crossings are often washed out in high runoff",
+      "Lingering steep snow in the pass gully and on north-facing terrain into July",
+      "Loose talus and heather sidehilling above the pass with only sparse cairns",
+      "A steep gully partway up the scramble is often icy; parties commonly move onto the rock rib to its right to avoid it"
+     ],
+     "baseFinding": "The scrambling starts at HEADLEE PASS itself — the notch where the trail finally tops out of the rockfall chute and the ground opens northward. The test that you are at the pass and not at a false top inside the chute is water: the outlet stream just beyond the pass runs strong for most of the season and is the last reliable water of the day, so if there is no stream on the far side you have not topped out yet. From the pass, leave the maintained tread and work north along and below the peak's south ridge over talus and heather benches. Cairns mark parts of the line and stop entirely higher up, so the real check is that the ground steepens continuously into rock and gully terrain rather than easing off. Negative marker: if you have left the trail lower down on open talus, following cairns northeast toward a rock tower, you are on the climbers' traverse to the towers north of the peak and you are heading for a bolted rock route, not the summit scramble."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "South Fork Stillaguamish valley",
+     "notes": "Leave the Sunrise Mine Trail about half a mile in, just before it crosses the South Fork Stillaguamish, and work up the east side of the valley through brush, slide alder and rock debris past a house-sized boulder near 3,100 ft. Either cross the river and climb a ridge ramp southwest to the upper basin (about 4,000 ft), or continue to the broad basin near 3,700 ft and climb the steep gully, or the slabs to its right, directly east."
+    },
+    {
+     "n": 2,
+     "label": "Slabs to the southeast-ridge notch (~5,600 ft)",
+     "notes": "Climb snow-covered slabs to the notch in Morning Star's southeast ridge. These slabs hold snow well into the season and are the route's main avalanche concern."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Gully and south ridge to the summit (6,020 ft)",
+     "notes": "From the notch drop about 200 ft through trees into the southeast basin, traverse right below the cliffs to the first broad gully, and climb it to the south ridge about 250 ft below the summit. Finish on or near the south ridge. The gully is steep and often icy when snow-filled; helmet, ice axe and crampons are standard early in the season."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+     "role": "main",
+     "type": "camp",
+     "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the valley. They are closer to the Sunrise Mine and Big Four trailheads than anything up-valley, at the cost of being low, wooded and busy with general campers rather than climbers. Weekend availability is genuinely tight in midsummer, so a reservation is worth having. Dispersed roadside pullouts along the corridor need no permit but are increasingly signed and patrolled.",
+     "water": "Verlot and Gold Basin generally have drinking water in season; the Stillaguamish runs alongside as a backup",
+     "permit": "Developed fee campgrounds, no permit. None are in wilderness. A Northwest Forest Pass is what you need for the trailheads up the road, not for the sites themselves.",
+     "capacity": "Large by the standards of this valley — dozens of developed sites across the three, tables, toilets, some with potable water; fee sites, reservable in part"
+    },
+    {
+     "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+     "role": "main",
+     "type": "camp",
+     "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchbacked chute below Headlee Pass at roughly 4,700 ft, which is loose and known for rockfall — parties should not stack up in it. Snow lingers in the chute and on the pass long after the valley is clear, and it is the section most likely to turn an overnight around. Camp on the durable benches rather than the meadow closest to the water. No elevation is recorded; none was confidently sourced.",
+     "water": "Reliable — the basin outlet stream runs all season and the lake itself is a backup, though it holds ice and snow cover well into July",
+     "permit": "Mt Baker-Snoqualmie National Forest but OUTSIDE any wilderness — no permit of any kind to camp. Northwest Forest Pass required at the Sunrise Mine trailhead.",
+     "capacity": "Several tents — grassy benches above the stream just past the pass, plus more spread around the lake basin"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_west_face_2",
+  "name": "West Face",
+  "area_id": "wa_north_peak",
+  "findings": [
+   "r058.json: The approach paragraph opens with a note that the area's stored coordinates are wrong and 'worth flagging for correction' — pipeline commentary shown to climbers, contradicting the page's own trailhead card and waypoints, which already sit at Downey Creek. The Gunsight Range is reached from Downey Creek per both sources. | approach begins with the Downey Creek approach; the data-quality note is removed"
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_west_face_2",
+   "area_id": "wa_north_peak",
+   "name": "West Face",
+   "discipline": "mountaineering",
+   "grade": "5.11+",
+   "grade_system": "yds",
+   "grade_num": 11,
+   "pitches": 6,
+   "length_m": 183,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Jim Nelson & Carl Dietrich, 1986 (5.10 A2, with aid); FFA by Max Hasson & Jens Holsten, 2007 (5.11+)",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Climbing rack for granite crack climbing (cams #0.5-#3, wires #1-#8, stoppers)",
+    "Two 60m dynamic ropes — the descent is four double-rope rappels and one rope will not complete it",
+    "Harness, helmet, belay device, quickdraws",
+    "Crampons, ice axe",
+    "Glacier travel protection (crevasse rescue kit)",
+    "Insulating layers, alpine rock shoes, approach shoes",
+    "Helmet required for exposed alpine terrain"
+   ],
+   "hazards": [
+    "Exposed granite climbing on remote face with significant consequences for falls",
+    "Glacier travel on Chickamin Glacier with crevasse rescue required if roped team breaks through",
+    "Remote location (a day or more of rugged approach from the road) means rescue is slow and helicopter evacuation uncertain",
+    "Rapid onset afternoon thunderstorms common in July; exposure to lightning hazard above treeline",
+    "Bivouacking in sub-zero temperatures at 8,500 feet with minimal shelter options",
+    "Approach trail washouts occur; access may be seasonally restricted"
+   ],
+   "verif": null,
+   "overview": "The West Face of North Peak is one of the Cascades' sheerest and cleanest granite faces, offering world-class alpine rock climbing. The route ascends the center of the face with excellent crack and face climbing on solid white granite. Originally established as an aid route in 1986, the first free ascent in 2007 demonstrated the exceptional quality of the line, with sustained 5.11 climbing featuring hard crack work, bulbous knobs, lieback sections, and wild exposure.",
+   "beta": "A premier alpine testpiece featuring five pitches of high-quality granite climbing to the summit terrace, plus a short sixth pitch up an easy chimney to the summit. The route climbs splitter cracks and exposed face climbing over 600 vertical feet. Pitch 2 contains the crux with thin cracks, bulbous knobs, and a small roof. The climbing features varied terrain including incipient flakes, stemming, and lieback sections. Protection is generally reliable on white granite. The onsight first free ascent in 2007 was completed with no falls. Descent via four double-rope rappels from the summit.",
+   "turnaround": "Establish a firm turnaround time of 1:00 PM from the start of climbing from high camp (typically 6:00 AM start suggests 1:00 PM go/no-go decision). If crux pitches (pitch 1-2) are not completed and protected by 10:00-11:00 AM, consider descending to avoid rappelling in darkness. In any conditions worse than broken clouds with visibility over 1 mile, abort the climb. Do not delay descent to tag the summit if weather is deteriorating.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.11+",
+   "ice_grade": null,
+   "gain_ft": 9600,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "4 double-rope rappels down the West Face",
+   "commitment": "III",
+   "face": "West Face (main granite wall of North/Gunsight Peak, above the Chickamin Glacier)",
+   "permit": null,
+   "comms": "No reliable cell coverage expected in this deep wilderness cirque; a satellite communicator/messenger is strongly advised given the remote 2-day approach and lack of nearby rescue infrastructure.",
+   "descent": "From the summit, descend via four double-rope rappels — roughly 50 m, 50 m, 50 m and 20 m — directly from the peak, utilizing existing anchors and natural features on the granite. This brings climbers back to the base of the route. From base camp, descend the approach route in reverse. Some ascents have descended via traversal south to Middle Gunsight and South Gunsight, adding complexity and additional days to the descent.",
+   "obj_haz": [
+    "crevassed glacier crossing (Chickamin/Dome Glacier)",
+    "remote 2-day approach with no quick retreat",
+    "loose/grainy rock in sections",
+    "marginal protection on the 5.11+ crux",
+    "rapid weather changes typical of the North Cascades crest"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.2591,
+     "lng": -121.2244,
+     "elev": 1400,
+     "name": "Downey Creek Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1400
+    },
+    {
+     "elev": 3500,
+     "name": "Bachelor Flats (Camp 1)",
+     "type": "Campsite",
+     "distMi": 6.6,
+     "elevFt": 3500
+    },
+    {
+     "elev": 8500,
+     "name": "Chikamin-Dome Col (Camp 2/High Camp)",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 8500
+    },
+    {
+     "elev": 8500,
+     "name": "Dome-Chickamin Col",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 8500
+    },
+    {
+     "elev": 8160,
+     "name": "North Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8160
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 33.8,
+    "summitTimeHrs": 7.5,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 21.3,
+    "recommendedStart": "6:00 AM from high camp (Chikamin-Dome Col)"
+   },
+   "detailed_rack": "For the West Face on North Peak, bring a complete rack of cams from #0.5 to #3 for the thin crack climbing on pitches 1-2 and the crux, supplemented with wires #1-#8 for protection on flakes and knobs. Small stoppers are useful for incipient crack sections. Quickdraws for both natural protection and any bolted anchors. The rock is solid white granite with reliable placements. Bring a 60m single dynamic rope and basic alpine rock climbing gear. Thin hands to finger cracks are essential for pitches with incipient placements.",
+   "what_to_bring": [
+    "Alpine rock climbing shoes",
+    "Approach shoes/hiking boots",
+    "Warm insulating layers (fleece, down)",
+    "Waterproof jacket and pants (afternoon thunderstorm risk)",
+    "Lightweight sleeping bag rated to 0-10°F for high camp",
+    "Insulated sleeping pad",
+    "Headlamp with extra batteries",
+    "Water bottles/hydration system (refill at streams on approach)",
+    "High-calorie food and energy bars",
+    "Sunscreen and lip balm (SPF 50+)",
+    "First aid kit with blister treatment",
+    "Toiletries and personal medications",
+    "Map and compass or GPS device",
+    "Crampons and ice axe",
+    "Helmet for both climbing and approach",
+    "Rope and rappel devices (personal backup descenders)"
+   ],
+   "pro_tips": [
+    "Start early from the high camp to maximize daylight and avoid afternoon thunderstorms",
+    "Pitch 2 contains the technical and psychological crux; focus and confidence critical",
+    "The approach requires serious glacier travel skills; crevasse rescue knowledge mandatory",
+    "Carry minimal water on the climb itself as it adds weight during sustained steep climbing",
+    "Plan for a 2-3 day approach and 3-4 day descent; rushing this objective has led to accidents",
+    "July offers the most stable weather window; plan accordingly",
+    "The onsight FFA demonstrates clean rock and reliable protection; trust the granite"
+   ],
+   "watch_out": [
+    "Rapidly changing alpine weather with afternoon thunderstorms common; storms can appear within minutes",
+    "Significant crevasse hazard on Chickamin Glacier approach; use proper glacier travel techniques and equipment",
+    "Remoteness means rescue is extremely difficult and time-delayed; every team member must be self-sufficient",
+    "Route Finding: cross-country and glacier navigation required; detailed map and compass/GPS essential",
+    "The approach involves heavy load carrying (rock shoes, crampons, ice axe, glacier gear, bivouac kit) over steep terrain; fitness critical",
+    "Objective hazard: loose rock on descent from summit; descenders and those on rappel must remain aware",
+    "The 2-day approach means weather exposure builds throughout the climb; turnaround decisions must be made early"
+   ],
+   "pro_needs": "This is a serious alpine rock route requiring expert-level crack climbing protection skills. Protection is generally available but requires solid understanding of gear placement in granite. The crux pitches (especially pitch 2) demand confident lead climbing and protection placement at 5.11 difficulty. Pitches with thin cracks and bulbous knobs require precision protection. The onsight nature of the first free ascent speaks to the quality of the granite and availability of natural protection.",
+   "best_season": "July and August offer the most stable and driest weather conditions in the North Cascades, with temperatures averaging 63-70°F during the day and 41-45°F at night. June sees slightly more precipitation (2.2 inches) while July-August drops to 1.7 inches. Occasional afternoon thunderstorms and rapid weather changes are always a possibility at this remote alpine location. Early-to-mid summer has the better snow bridges on the Chickamin Glacier; by late August they melt out and crevasses open.",
+   "high_point_ft": 8160,
+   "aid_grade": "A1",
+   "approach": "The standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of North Peak's granite West Face; this is an experienced-mountaineers-only objective, not a roadside crag.",
+   "descent_text": "Rappel down the center of the West Face via four consecutive double-rope rappels of roughly 50 m, 50 m, 50 m and 20 m, using natural anchor features and existing bolt/gear anchors established on the granite. Ensure proper rope management to avoid tangling on the steep granite face. Once back at the base of the route, climb back up to the Chikamin-Dome Col via the Chickamin Glacier approach, watching carefully for crevasses and potential moat crossings. From the col, descend the cross-country route back to Bachelor Flats (taking approximately 8-10 hours depending on snow coverage and conditions). From Bachelor Flats, follow the Downey Creek trail back to the trailhead (6-8 hours depending on fitness and pack weight). Total descent time from summit to vehicle is typically 3-4 days.",
+   "bail": "From the base of the route or mid-route, descend back to the Chikamin-Dome Col and reverse the approach route via Bachelor Flats to the Downey Creek trailhead. If weather deteriorates mid-climb, retreat down the same route via rappel anchors (or natural features if no anchors present). Once back at high camp, wait for safe weather window to descend approach. In emergency situations, signal with mirror/whistle; however, response time may exceed 2+ days due to remoteness. Self-rescue and route-finding in whiteout conditions should be expected as primary contingency.",
+   "pitch_detail": [
+    {
+     "grade": "5.9+",
+     "notes": "Thin cracks and flakes in a shallow corner with delicate climbing. Requires small gear placements. Belay with good anchor at horn.",
+     "pitch": "1"
+    },
+    {
+     "grade": "5.11+",
+     "notes": "Technical crux featuring thin cracks, bulbous knobs, and small roof with overlap. Exceptional granite with solid protection available but demanding lead climbing. Aesthetically striking climbing with hard crack work.",
+     "pitch": "2"
+    },
+    {
+     "grade": "5.10+",
+     "notes": "Committing moves on tricky gear transitioning to wild climbing up flakes. Challenging protection requiring careful placement.",
+     "pitch": "3"
+    },
+    {
+     "grade": "5.10+",
+     "notes": "Continuation along flake and crack systems with knobs. Granular rock but solid climbing with good natural protection.",
+     "pitch": "4"
+    },
+    {
+     "grade": "5.9",
+     "notes": "Stemming over steep terrain, then a corner with a final mantle move onto the terminal terrace.",
+     "pitch": "5"
+    },
+    {
+     "grade": "5.6",
+     "notes": "Short pitch: move right along the flat terrace to a chimney system that leads to the summit; a traverse is needed to reach the actual summit register.",
+     "pitch": "6"
+    }
+   ],
+   "itinerary": "Day 1: Hike Downey Creek and Bachelor Creek trails to Cub Lake basin / Dome-Chickamin col area and make camp (long day with significant brush and blowdown on Bachelor Creek). Day 2: Cross Chickamin Glacier to the base of the West Face, climb the route (5-6 pitches), rappel the descent, return to camp. Day 3: Hike out via Bachelor/Downey Creek trails.",
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+    "permit": "N/A",
+    "closures": "CLOSED RIGHT NOW: Suiattle River Road (FR 26) is washed out and closed to vehicles at about milepost 4.5 after the December 2025 flood, under a closure order running to 1 January 2028 unless lifted sooner, so the Downey Creek Trailhead cannot be reached by car. The Downey Creek Trail itself is also closed through 31 December 2026 under a separate fire closure. Call the Darrington Ranger District, (360) 436-1155, before planning a trip.",
+    "seasonal": "Suiattle River Road (FSR 26) is closed to vehicles at about milepost 4 after flood damage (closure order in effect until January 1, 2028 unless lifted sooner); the Downey Creek Trailhead is currently reached on foot or by bike.",
+    "permitZone": "N/A",
+    "group_limit": 12,
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+    "parking_pass": "Northwest Forest Pass or Interagency pass required at the Downey Creek Trailhead.",
+    "passRequired": "N/A",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+     "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+     "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "Suiattle River Road (FSR 26) to the Downey Creek Trailhead",
+    "status": "Closed to motorized vehicles at about milepost 4 after flood damage, under a closure order in effect until January 1, 2028 unless lifted sooner. Walking or biking the closed road is still allowed, which adds roughly 16 miles each way to the trailhead at about mile 20.",
+    "driveNote": "From Darrington take SR 530 north about 7.5 miles and turn east onto the Suiattle River Road; the Downey Creek Trailhead is on the right just past the Downey Creek bridge, about 20 miles up the road (paved, then gravel). A Northwest Forest Pass or Interagency pass is required at the trailhead.",
+    "seasonalGate": "The Suiattle River Road has a long history of flood closures, including a decade-long one before its 2014 reopening; confirm its status before committing to this approach."
+   },
+   "climate": {
+    "fall": "Increasingly unstable weather; rising avalanche danger; early season storms",
+    "spring": "Heavy snow coverage at high elevations; glaciers heavily crevassed; poor rock conditions",
+    "summer": "Best climbing season; July-August ideal with most stable weather; occasional afternoon storms; daytime temps 63-70°F; precipitation 1.7-2.2 inches; blue skies interspersed with showers",
+    "winter": "Heavy snow accumulation; alpine rock not generally climbed; approach not feasible",
+    "typical": "Alpine rock and ice climbing in remote North Cascades; high exposure to rapidly changing weather; frequent afternoon showers possible",
+    "forecastZone": "North Cascades/Mount Baker area"
+   },
+   "emergency": {
+    "notes": "Extreme remoteness means rescue response can take 2+ days. Helicopter rescue unlikely due to terrain and weather. Party must be capable of self-rescue and descent with injuries. Satellite messenger (InReach/Garmin) recommended for emergency communication. Cell phone coverage: none in the Gunsight Range area.",
+    "county": "Snohomish County",
+    "rangerStation": "Mount Baker Ranger District (Glacier Peak Wilderness office), approximately 50 miles from peak (very remote)",
+    "nearestHospital": "Skagit Valley Hospital (Sedro-Woolley) or Cascade Medical Center (Cascade), 60+ miles away",
+    "sheriffDispatch": "Snohomish County Sheriff: 911 or (425) 388-3393"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July to mid-August, when the face is dry and the glacier snow bridge is still intact",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The glacier is well bridged and the approach is melting out; the thin crux cracks can stay damp early in the month.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "The two-day approach over Itswoot Ridge is still snow-covered, the creek crossings run high, and the granite cracks seep.",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Dry granite and long daylight; afternoon thunderstorms are common, and the snow bridge onto the glacier can melt out by late month.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms can put snow on the face and the glacier, and cold days leave little margin on a remote multi-day objective.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Snow bridges onto the glacier have often melted out, forcing a crevasse detour, and shorter days squeeze the long approach.",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+    "trailheadLat": 48.2591,
+    "trailheadLng": -121.2244,
+    "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via the Downey Creek / Bachelor Creek approach"
+   },
+   "sling_rack": {
+    "cams": "doubles 0.1-3in, triples in tips/fingers sizes if climbing near limit",
+    "nuts": "full stopper set, used prolifically on crux pitches",
+    "runners": "6-8 slings"
+   },
+   "alpine_draws": 6,
+   "rope_type": "single (two 60m ropes required for the four double-rope rappels on descent)",
+   "rope_length_m": 60,
+   "rope_note": "6-pitch, 600ft alpine rock route; a 60m lead rope, plus a second 60m rope for the double-rope descent rappels. Upper section has newer bolted rap stations; original descent raps off a large chockstone.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "From the north end of the flat terrace below the summit block, descending the North Ridge.",
+     "anchor": "rap station on the North Ridge (natural anchor/tat)",
+     "lengthM": 50
+    },
+    {
+     "n": 2,
+     "notes": "Either continue down the North Ridge to a small notch, or rappel straight down the face to this anchor.",
+     "anchor": "flake with tat (black tat reported; often reinforced by parties)",
+     "lengthM": 50
+    },
+    {
+     "n": 3,
+     "notes": "Terrain eases toward the packs below.",
+     "anchor": "horn with tat (red tat reported) or a party-built anchor",
+     "lengthM": 50
+    },
+    {
+     "n": 4,
+     "notes": "Short final rappel reaching packs at the base of the route.",
+     "anchor": "natural anchor near the base",
+     "lengthM": 20
+    }
+   ],
+   "rappel_count_note": "Four rappels, and they are DOUBLE-rope rappels: the published descent is roughly 50 m, 50 m, 50 m and a short 20 m, so two 60 m ropes are needed and one rope will not complete it. Two independent accounts describe the descent as double-rope throughout. The stations are the north-ridge line down to the packs at the base of the route.",
+   "rack": [
+    "Cams, doubles 0.1-3\" (triples in tips/finger sizes recommended)",
+    "Wires/stoppers #1-#8, full set",
+    "6-8 slings",
+    "6 alpine quickdraws",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Crack",
+    "Face",
+    "Overhanging",
+    "Sustained",
+    "Exposed",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Downey Creek, Itswoot Ridge and the Dome-Chikamin col",
+     "notes": "This is a two-day approach each way and there is no short way in. From the Downey Creek Trailhead follow the valley trail to the Bachelor Creek crossing, then the unmaintained Bachelor Creek climbers' path through heavy brush to Cub Lake and Itswoot Ridge for the first camp. From there continue over the ridge and glacier ground to the Dome-Chikamin col and make a high camp. On the climbing day, cross the Chikamin Glacier from the col to the foot of the wall.",
+     "season": "Midsummer to early autumn; the glacier crossing opens up as the season goes on and later parties have reached the ice by the rock rib coming down off the neighbouring summit instead",
+     "hazards": [
+      "Big crevasses on the Chikamin Glacier; the bergschrund is crossed on a snow bridge and is a place to move quickly",
+      "Heavy bushwhacking on the Bachelor Creek path",
+      "Sustained hard free climbing on a very steep face, two days from the car in either direction"
+     ],
+     "baseFinding": "Cross the glacier from the col to the foot of the face and then stop looking at the wall — the start is not reached from the ice. Get onto the RAMP that runs beneath the LEFT side of the face and scramble along it. The ramp SPLITS, and the route starts just past that split, with a small cairn on the ground marking it. Those two things together, the split in the ramp and the cairn beside it, are the proof; either on its own is not enough on a face this size. From there the first climbing goes up a shallow corner on thin cracks, flakes and occasional knobs on clean white granite, and the objective is the centre of the wall. If you are still on the glacier below a uniformly steep face with no ramp beneath you, you have not gained the access ledge. If the ramp is running on unbroken with no branch in it, keep going — you are short of the start."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+     "role": "main",
+     "type": "bivy",
+     "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and above quoted for it. From that eastern col the Chickamin Glacier is the highway to Sinister Peak, whose North Face and Southwest Route are both reached across it, and on to the three Gunsight Range summits beyond, which are granite spires ringed by the Chickamin and Blue glaciers and among the most remote objectives in the state. Parties on the Gunsight peaks routinely cross the Chickamin twice in a day from a camp on this ground. Season is short: the glaciers are best covered from July into August, later brings open crevasses and bare ice, and there is no water, no shelter and no quick way down from any of it.",
+     "water": "None running. Every drop is melted snow, and on bare ice years even that takes hunting for. Carry what you can from Cub Lake or the Itswoot Ridge creeks and plan the fuel for melting.",
+     "permit": "Glacier Peak Wilderness self-issue permit from the Downey Creek register. Camp on snow, rock or ice. Pack out human waste, which matters more here than anywhere else in the zone because the meltwater below runs straight into the glacier-fed creeks.",
+     "capacity": "Rock rings and cleared platforms for one or two parties at a time. At the Dome-Chickamin col there is a flat, large, windy option on the west side and a smaller, harder, calmer one on the east. Nothing else, and no toilet."
+    },
+    {
+     "elev": 4500,
+     "name": "Bachelor Creek forest and meadow camps",
+     "role": "route",
+     "type": "camp",
+     "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two miles are tolerable, then it crosses to the south side and turns into slide alder and avalanche deadfall, with reports of sixty or more trees over the trail and long sections where following it is closer to bushwhacking than hiking. Parties routinely take nine to eleven hours from the car to Cub Lake and a slow group with heavy packs can lose the trail entirely. Splitting the approach with a night around the 4,500 ft meadows near the head of the creek is the honest answer for anyone who is not fast, and it is why some parties choose to enter from Cascade Pass and exit here rather than the other way round, so the brush is done downhill and with lighter packs. There is a north-side line through open forest paralleling the creek that some report as better than the trail itself. Everything about this approach is harder than the above suggests: the Suiattle River Road has been closed to vehicles at about milepost 4 after flood damage, under a Forest Service order in effect April 2, 2026 through January 1, 2028 unless rescinded sooner, which leaves roughly sixteen extra road miles each way to a trailhead at mile 20. On top of that, the Forest Service's Miner's Fire order (06-05-26-17) closes the Downey Creek Trailhead, the Downey Creek Trail and the Bachelor Creek Trail from August 15 through December 31, 2026, unless rescinded sooner. The road also spent about a decade closed before reopening in 2014, so a long closure here is the normal state of affairs rather than a surprise. Confirm the road before committing to this end.",
+     "water": "Bachelor Creek runs the whole way and is never the problem. The creek crossing itself can be, in high water or early season.",
+     "permit": "Glacier Peak Wilderness self-issue permit; Northwest Forest Pass or Interagency pass on the vehicle at Downey Creek. This is the one part of the zone low enough that a fire is not automatically out of the question, but the ground is wet forest and a stove is the sensible choice.",
+     "capacity": "Rough forest sites and a meadow flat near the head of the creek, party-sized only. Nothing established, no toilet."
+    },
+    {
+     "elev": 5338,
+     "name": "Cub Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. It is the south-end hub: from the lake the trail climbs to Itswoot Ridge for Spire Point and Dome Peak, and everything on the Chickamin side including Sinister Peak and the Gunsight summits starts from the same ground. Because it is the established camp it also takes the impact, and there is a reasonable argument for camping on the ridge above instead where the ground is less worn, at the cost of carrying water. Coming out, this is where the traverse ends and the brush begins.",
+     "water": "The lake, reliable all season. This is the last certain water for anyone heading up onto the ridge and glaciers, and the first on the way out.",
+     "permit": "Glacier Peak Wilderness self-issue permit; Northwest Forest Pass or Interagency pass at the Downey Creek trailhead. Camp 100 feet back from the shore. Practically speaking no fires, and the site is heavily enough used that the surrounding wood is already gone.",
+     "capacity": "A well established camp at the lake with room for a few parties, plus meadow sites nearby. It is the most used ground in the southern half of the zone and it shows."
+    },
+    {
+     "elev": 5880,
+     "name": "Itswoot Ridge",
+     "role": "route",
+     "type": "bivy",
+     "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches it is moderate snow of about thirty degrees, or a scree-and-heather line on the left in late season, up to Spire Col at 7,760 ft, and from the col a short descending traverse onto the upper Dana Glacier puts you under the southeast and southwest faces of Spire Point. Dome Peak is the other objective, reached over the Dana Glacier and the Dome Glacier above. Reaching this ridge from the car is a full day with a heavy pack, so plan on arriving late and going nowhere else that evening.",
+     "water": "Small running creeks below the lower benches, fed by snowfields on the north side of the ridge, and generally dependable through the normal climbing season. The higher benches toward the col dry out first, so drop back down for water rather than assuming it is there.",
+     "permit": "Glacier Peak Wilderness self-issue permit from the Downey Creek trailhead register, plus a Northwest Forest Pass or Interagency pass on the vehicle. No campfires up here.",
+     "capacity": "A string of flat heather benches along the ridge rather than one site, so several parties can spread out without crowding each other. No toilet, no built platforms."
+    },
+    {
+     "name": "Bachelor Flats (Camp 1)",
+     "role": "hidden"
+    },
+    {
+     "name": "Chikamin-Dome Col (Camp 2/High Camp)",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_old_guard_peak_southwest_route",
+  "name": "West Side (LeConte Glacier)",
+  "area_id": "wa_old_guard_peak",
+  "findings": [
+   "r058.json: A detailed trip report describes spotting 'the snow slope on Old Guard Peak's northwest side' and climbing that ramp to the class 3 rock; a second trip report and the peak's summary page describe the standard line as a class 2/3 snow couloir and scramble on the west side from the LeConte Glacier (the east side is the low-5th route). The row's own pins put the couloir base north of the summit. beta, face and aspect were right; approach, climbing_route, itinerary day 3 and the LeConte Glacier waypoint note are corrected. The route's stored NAME 'Southwest Route' is out of scope and left as is; timing.sectionBreakdown[2].note is truncated at 'west/…' and left alone. | the snow ramp/snowfinger i"
+  ],
+  "gpx_summary": "8 points; 8 of 8 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_old_guard_peak_southwest_route",
+   "area_id": "wa_old_guard_peak",
+   "name": "West Side (LeConte Glacier)",
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe",
+    "crampons",
+    "helmet",
+    "light rope optional"
+   ],
+   "hazards": [
+    "loose rock",
+    "remoteness",
+    "early-season snow",
+    "glacier travel/crevasses on Le Conte Glacier"
+   ],
+   "verif": null,
+   "overview": "Old Guard Peak rises near Le Conte Mountain and Sentinel Peak along the southern half of the Ptarmigan Traverse, just south of Cache Col in Glacier Peak Wilderness, overlooking the Le Conte and South Cascade Glaciers. A precision differential-GPS survey puts it at 8,260 ft, a few feet above neighboring Sentinel Peak, and its prominence makes it a worthy detour for traverse parties.",
+   "beta": "Old Guard is usually tagged as a side-trip from a Ptarmigan Traverse camp near the Le Conte-Sentinel col (roughly 7,300-7,400 ft). From the col, rope up and cross the Le Conte Glacier, skirting crevasses and a bergschrund, to reach a snow ramp on the peak's northwest side. Above the ramp the route eases into a straightforward but somewhat loose, indistinct class 2-3 rock scramble to the summit. Most parties climb neighboring Sentinel Peak from the same camp in the same outing.",
+   "turnaround": "Because the route requires a roped glacier crossing exposed to afternoon sun on the Le Conte Glacier, start early enough to complete the glacier crossing while the snow is still firm, and set a turnaround that gets you back across the glacier before it softens into wet, crevasse-obscuring snow later in the day.",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "Class 3 scramble (no roped rock climbing)",
+   "ice_grade": null,
+   "gain_ft": 10600,
+   "loss_ft": 12400,
+   "dist_km": 26.23,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "West/northwest side, directly off the LeConte Glacier",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass or Interagency pass on a vehicle left at the Downey Creek Trailhead.",
+   "comms": "No cell coverage anywhere along the LeConte Glacier, the Old Guard–Sentinel col, or the Ptarmigan Traverse corridor generally; carry a satellite messenger (inReach/SPOT) for emergency communication.",
+   "descent": "Reverse the west-side route back to the Le Conte Glacier",
+   "obj_haz": [
+    "Crevasses on the Middle Cascade and Le Conte Glaciers",
+    "Cornices on the eastern rim of Cache Col along the standard approach",
+    "Steep, exposed snow on the Red Ledge crux of the approach",
+    "Loose rock possible on the final gabbro scramble"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "elev": 3660,
+     "name": "Cascade Pass Trailhead",
+     "note": "End of Cascade River Road, 23.1 mi from Marblemount; NPS backcountry permit required for overnight stays, self-issue day-use is free.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Cascade River Road east from Marblemount roughly 23 miles to its end at the Cascade Pass Trailhead at 3,660 ft — paved for about the first 10 miles, then good gravel the rest of the way. Check the road first: in some seasons, including 2026, vehicles are stopped at the Eldorado gate at mile 20 and the last 3 miles and 1,500 ft to the trailhead must be walked or biked. There is a parking area and a vault toilet at the road end. Day use is free and self-issue; a North Cascades backcountry permit is required for overnight camps, released seasonally through recreation.gov, and the camps along this traverse fill fast in peak season. Because the traverse exits at a different trailhead on the Suiattle River Road, most parties pre-arrange a car shuttle rather than leaving a vehicle here."
+    },
+    {
+     "lat": 48.4676181,
+     "lng": -121.0590796,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "Trail tread ends at the pass; leave the maintained trail here and head south/southeast onto the Ptarmigan Traverse cross-country route.",
+     "type": "Junction",
+     "distMi": 3.7,
+     "directions": "The trail switchbacks around thirty times up a forested rib, gaining roughly 1,400 ft in the first two miles, then eases into a long ascending traverse through meadow and talus to the pass. Figure two and a half to three and a half hours. Snowfields can lie across the traverse well into summer."
+    },
+    {
+     "lat": 48.4485,
+     "lng": -121.0529,
+     "elev": 6903,
+     "name": "Cache Col",
+     "note": "Gap between Magic Mountain and Mix-up Peak at the head of Cache Glacier; gain it via a steep snow/scree gully, the crux route-finding point of day one.",
+     "type": "Junction",
+     "distMi": 6.5,
+     "directions": "Leave the trail at the pass and head south and east, traversing and climbing across the Mixup arm on boot path, talus and snow bands. Gain the shoulder, follow the snow ramp up, then drop onto the Cache Glacier and walk it to the col at its head. The step onto the glacier is short but steep and can be corniced, and an axe and crampons are normal here into midsummer."
+    },
+    {
+     "lat": 48.4386686,
+     "lng": -121.0458149,
+     "elev": 6119,
+     "name": "Kool-Aid Lake",
+     "note": "Small tarn on a bench south of Cache Col, the standard first-night bivy/base camp for the traverse; exposed, fog often wafts up from the valley below.",
+     "type": "Campsite",
+     "distMi": 7.7,
+     "directions": "Descend the far side of the col — a steep snowfield that usually needs an axe and crampons well into midsummer — and lose several hundred feet to the bench holding the tarn. The runout below the snow is rocky, so this is not a place to glissade blind into fog."
+    },
+    {
+     "lat": 48.400043,
+     "lng": -121.043071,
+     "elev": 6400,
+     "name": "Red Ledge",
+     "note": "Narrow, exposed rock ledge cutting west from Art's Knoll that bypasses cliffs south of Kool-Aid Lake; can hold an open moat, verglas, or fresh snow that makes the traverse 'spicy' even in summer.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "Climb out of the lake basin and traverse toward the cliff band running west off Art's Knoll, which from below looks like it stops the route entirely. Getting established usually means scrambling through the moat at the snow-rock margin and up a few feet of Class 3 to reach the ledge. Once on it the ledge is broad and walkable, unless it is holding snow or verglas."
+    },
+    {
+     "lat": 48.3637,
+     "lng": -121.0357,
+     "elev": 7434,
+     "name": "LeConte Glacier",
+     "note": "Broad glacier basin below Old Guard and Sentinel Peaks; rope up here and cross to the base of Old Guard's west/northwest side, watching for late-season crevasses near the peak's flanks.",
+     "type": "Junction",
+     "distMi": 10,
+     "directions": "This leg is far longer than the mileage on file suggests. Past the ledge the traverse crosses the Middle Cascade Glacier, climbs to the Spider-Formidable col and drops to the Yang Yang Lakes basin, after which the ledge system known as the goat path leads up onto the LeConte snowfield and glacier. It is a full day or more of committing glaciated terrain, travelled roped and with crevasse-rescue gear, not a short hop from the Red Ledge."
+    },
+    {
+     "lat": 48.3597,
+     "lng": -121.0354,
+     "elev": 7900,
+     "name": "Snowfinger / Couloir Base",
+     "note": "Steep snow couloir (Class 2/3) rising off the glacier to the base of the summit rock; firm early-morning snow can require an axe and crampons, softening to punchy postholing by afternoon.",
+     "type": "Hazard",
+     "distMi": 10.3,
+     "directions": "From the glacier work to the foot of the snow finger rising toward the summit rock and get onto it wherever the moat or bergschrund allows — that transition is often the awkward move of the day. It is a few hundred feet of steep snow, best taken early while it is firm, since by afternoon it softens to punchy postholing and the runout is back onto the glacier."
+    },
+    {
+     "lat": 48.3557,
+     "lng": -121.0351,
+     "elev": 8260,
+     "name": "Old Guard Peak",
+     "note": "Short Class 3 scramble up grippy gabbro from the top of the couloir gains the true summit, with views across the LeConte Glacier to Sentinel Peak and Dome Peak.",
+     "type": "Summit",
+     "distMi": 10.6,
+     "directions": "Top out of the couloir and finish on a short Class 3 scramble up blocky gabbro, a few hundred feet on rock that takes hands but stays straightforward. Stash axe and crampons somewhere you will find them again, because the descent reverses this same couloir."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 46,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 18.5,
+    "approachTimeHrs": 15.5,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "From the Cascade Pass trailhead, hike the maintained trail to Cascade Pass, then climb switchbacks to Cache Col (~6,900 ft) before dropping to a camp near Kool-Aid Lake / upper Bas…",
+      "fromTo": "Approach to Kool-Aid Lake via Cache Col",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8.5,
+      "note": "Rope up for the Cascade/Middle Cascade Glacier crossing, traverse the exposed Red Ledge, and cross Spider-Formidable Col before dropping to camp at Yang Yang Lakes. Slow going rela…",
+      "fromTo": "Glacier travel to Yang Yang Lakes",
+      "section": "Approach"
+     },
+     {
+      "hrs": 12,
+      "note": "The long day of the trip: cross the LeConte Glacier to Sentinel Pass, drop packs, and knock off Old Guard Peak via a steep snowfinger and short Class 3 gabbro scramble on its west/…",
+      "fromTo": "Sentinel Pass and the Old Guard Peak summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6.5,
+      "note": "Cross South Cascade and Dana Glacier terrain toward Itswoot Ridge, camping near the Dana-Dome Saddle. Many parties use this camp for an optional Dome Peak side summit, though it is…",
+      "fromTo": "Traverse toward the Dome Peak area",
+      "section": "Descent"
+     },
+     {
+      "hrs": 4.5,
+      "note": "A shorter day easing down off the glaciated high country toward timberline camp at Bachelor Meadow, staging for the long exit hike.",
+      "fromTo": "Descend toward Bachelor Meadow",
+      "section": "Descent"
+     },
+     {
+      "hrs": 7.5,
+      "note": "A long, brushy exit down the climbers'-path-quality Bachelor Creek trail to Downey Creek and the Suiattle River Road. Expect log crossings and overgrown tread low down; most partie…",
+      "fromTo": "Exit via Bachelor and Downey Creek",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Standard glacier-travel kit: ice axe, crampons, a rope per team, pickets or ice screws, and a full crevasse-rescue kit (prusiks, pulley, mechanical ascenders), plus a helmet for the scramble above the col. No technical rock rack is used on this class 2-3 route.",
+   "what_to_bring": [
+    "ice axe",
+    "crampons",
+    "navigation",
+    "overnight gear"
+   ],
+   "pro_tips": [
+    "Climb as part of the Ptarmigan Traverse",
+    "Pair with Sentinel and Le Conte",
+    "A harder 2-3 pitch low-5th-class alternative exists on the east side for parties wanting more technical climbing than the standard snow couloir line."
+   ],
+   "watch_out": [
+    "loose rock",
+    "early-season snow",
+    "glacier crevasses"
+   ],
+   "pro_needs": "None beyond glacier-travel protection - pickets/screws for crevasse rescue and a belay on the snow ramp if desired; the summit scramble itself is unroped class 2-3.",
+   "best_season": "Mid-July through August is most reliable, once the Ptarmigan Traverse itself is in season; the route depends on the whole traverse being passable, not just local conditions on Old Guard. Early season trips face larger cornices at Cache Col and a more consequential Red Ledge crux; a low-snow September can still work but exposes more bare glacier ice/crevasses on the LeConte Glacier crossing.",
+   "high_point_ft": 8260,
+   "aid_grade": null,
+   "approach": "Drive Cascade River Road east from Marblemount roughly 23 miles (paved for about the first 10, then good gravel) to its end at the Cascade Pass Trailhead (3,660 ft; parking area and vault toilet, North Cascades NP wilderness permit required for overnight camps). In some seasons, including 2026, the road is gated to vehicles at Eldorado (mile 20), leaving the last 3 miles to the trailhead on foot or bike. From the trailhead, follow the Cascade Pass Trail, which switchbacks about 30 times up a forested rib, gaining roughly 1,400 ft in the first 2 miles before the grade eases into a long ascending traverse through meadows, talus, and lingering snowfields to Cascade Pass (5,400 ft) at about 3.7 miles — figure 2.5-3.5 hours to the pass. This is only the start: Old Guard Peak sits deep in the Ptarmigan Mountains and is normally reached via the classic Ptarmigan Traverse, not as a day trip from the pass. From Cascade Pass, leave the maintained trail and climb south and east on a boot path/talus toward Cache Col (~6,900 ft), a rocky saddle roughly 3 hours above the pass; a steep snowfield on the col's far side (often needing an axe and crampons through midsummer) descends to Kool-Aid Lake basin (~6,320-6,800 ft), a common first camp about 6-8 miles and 2,800 ft of gain from the trailhead. From Kool-Aid Lake the route crosses a band of steep snow (pickets useful) to reach the Red Ledge, an exposed but broad Class 3 rock traverse that is the traverse's first real crux, especially if snow-covered. Beyond the ledges, follow the true-left (climber's left) edge of the Middle Cascade Glacier, roping up for crevasse hazard, staying on the less-broken upper glacier, then continue to the Spider-Formidable Col (a whiteout-prone spot where altimeter/compass/GPS route-finding matters). From the col, descend steep snow and a long sidehill traverse over snow and rock down to Yang Yang Lakes, then continue via LeConte Pass and Sentinel Pass to White Rock Lakes/the LeConte Glacier area — the standard second or third camp, roughly 12-14 hours of cumulative travel from the trailhead for parties moving efficiently. Old Guard Peak is climbed from Sentinel Pass: contour onto the LeConte Glacier and ascend a moderate, gradually-angled snow couloir/snowfinger on the peak's northwest side (watch for a bergschrund/moat late season) to gain the summit ridge, then finish on short, low-Class-3 scrambling on solid, high-friction gabbro to the true summit (8,240-8,260 ft). Water is available at Kool-Aid Lake, Yang Yang Lakes, and White Rock Lakes/tarns near the LeConte Glacier; carry a full topo map and glacier gear, as this is committing, remote glacier terrain with no easy bail once past Cache Col.",
+   "descent_text": "Reverse the snow couloir and scramble down to the Le Conte-Sentinel col camp.",
+   "bail": "Retreat off the peak itself is straightforward (reverse to the Le Conte Glacier), but exiting the broader Ptarmigan Traverse to the south is cut off: the Suiattle River Road has been closed to vehicles at milepost 4 since the December 2025 flood (Forest Service order in effect April 2, 2026 through January 1, 2028), and the Forest Service's Miner's Fire order closes the Downey Creek Trailhead and Downey Creek Trail from August 15 through December 31, 2026, so plan retreat via Cascade Pass instead.",
+   "pitch_detail": [
+    {
+     "grade": "Glacier travel / low-angle snow",
+     "notes": "Roped crossing of the Le Conte Glacier from the Le Conte-Sentinel col, skirting crevasses and a bergschrund to reach the base of Old Guard's northwest snow ramp.",
+     "pitch": "Col to snow ramp"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Snow couloir/ramp gains a short, somewhat loose rock scramble (class 2-3) to the summit.",
+     "pitch": "Snow ramp to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best mid-July through September once North Cascades snow bridges and glacier crossings (Cache/Middle Cascade, LeConte, South Cascade) are stable; a North Cascades NP backcountry permit (recreation.gov, released seasonally) is required and popular camps (Kool-Aid Lake, Yang Yang Lakes, White Rock Lakes) fill fast in peak season.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Cascade Pass trailhead, hike the maintained trail to Cascade Pass, then climb switchbacks to Cache Col (~6,900 ft) before dropping to a camp near Kool-Aid Lake / upper Basin Creek. This is the last on-trail day; everything after is off-trail glacier and ridge travel.",
+      "hours": 7,
+      "miles": 6.5,
+      "title": "Approach to Kool-Aid Lake via Cache Col",
+      "gainFt": 3700,
+      "lossFt": 300,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach high camp below Cache Col"
+     },
+     {
+      "n": 2,
+      "note": "Rope up for the Cascade/Middle Cascade Glacier crossing, traverse the exposed Red Ledge, and cross Spider-Formidable Col before dropping to camp at Yang Yang Lakes. Slow going relative to the mileage due to glacier travel and route-finding.",
+      "hours": 8.5,
+      "miles": 4.5,
+      "title": "Glacier travel to Yang Yang Lakes",
+      "gainFt": 2000,
+      "lossFt": 1800,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Cross to Yang Yang Lakes via Red Ledge and Spider-Formidable Col"
+     },
+     {
+      "n": 3,
+      "note": "The long day of the trip: cross the LeConte Glacier to Sentinel Pass, drop packs, and knock off Old Guard Peak via a steep snowfinger and short Class 3 gabbro scramble on its west/northwest side. Continue on to camp at White Rock Lakes; many parties also tag LeConte Mountain from the same pass.",
+      "hours": 12,
+      "miles": 5.5,
+      "title": "Sentinel Pass and the Old Guard Peak summit",
+      "gainFt": 2600,
+      "lossFt": 2200,
+      "packLb": 40,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Break camp at Yang Yang Lakes",
+        "detail": ""
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Reach Sentinel Pass",
+        "detail": "Drop overnight packs before the side-summit push."
+       },
+       {
+        "time": "9:15 AM",
+        "label": "Start Old Guard side trip",
+        "detail": "Steep snowfinger/couloir on the west side."
+       },
+       {
+        "time": "~10:45 AM",
+        "label": "Summit Old Guard Peak",
+        "detail": "Short Class 3 scramble on grippy gabbro finishes the route."
+       },
+       {
+        "time": "~11:45 AM",
+        "label": "Back at Sentinel Pass",
+        "detail": "Re-shoulder packs and continue the traverse."
+       },
+       {
+        "time": "~6:00 PM",
+        "label": "Arrive White Rock Lakes camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit Old Guard Peak via the northwest snow couloir and Class 3 scramble"
+     },
+     {
+      "n": 4,
+      "note": "Cross South Cascade and Dana Glacier terrain toward Itswoot Ridge, camping near the Dana-Dome Saddle. Many parties use this camp for an optional Dome Peak side summit, though it isn't required for the Old Guard objective.",
+      "hours": 6.5,
+      "miles": 4.5,
+      "title": "Traverse toward the Dome Peak area",
+      "gainFt": 1800,
+      "lossFt": 1400,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Continue south to Itswoot Ridge / Dana-Dome Saddle"
+     },
+     {
+      "n": 5,
+      "note": "A shorter day easing down off the glaciated high country toward timberline camp at Bachelor Meadow, staging for the long exit hike.",
+      "hours": 4.5,
+      "miles": 5,
+      "title": "Descend toward Bachelor Meadow",
+      "gainFt": 300,
+      "lossFt": 2500,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Drop off the high traverse into the Bachelor Creek drainage"
+     },
+     {
+      "n": 6,
+      "note": "A long, brushy exit down the climbers'-path-quality Bachelor Creek trail to Downey Creek and the Suiattle River Road. Expect log crossings and overgrown tread low down; most parties pre-arrange a car shuttle since this is a different trailhead than the Cascade Pass start.",
+      "hours": 7.5,
+      "miles": 9,
+      "title": "Exit via Bachelor and Downey Creek",
+      "gainFt": 200,
+      "lossFt": 4200,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Hike out to the Suiattle River Road trailhead"
+     }
+    ],
+    "totalNote": "A 6-day, roughly 33-mile glacier traverse (Cascade Pass to the Suiattle River) with on the order of 11,000-12,000 ft of cumulative gain; Old Guard Peak itself is a ~2.5-3 hr round-trip snow-couloir-and-scramble side summit from Sentinel Pass on day 3, not a stand-alone car-to-car objective."
+   },
+   "access": {
+    "fees": "No fee within Glacier Peak Wilderness (free self-issue permit). An NPS wilderness permit is only needed if camping within North Cascades National Park, i.e. north of Cache Col.",
+    "rules": "Leave No Trace; cross-country regulations",
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; an NPS backcountry permit is required only if camping north of Cache Col inside North Cascades National Park.",
+    "closures": "Suiattle River Road (FSR 26) is closed to vehicles at MP 4 (flood damage; closure order in effect April 2, 2026 - January 1, 2028), cutting off the Downey Creek trailhead at MP 20. The Downey Creek Trailhead, Downey Creek Trail #768 and Bachelor Creek Trail #796 are also closed from August 15 through December 31, 2026 under the Forest Service's Miner's Fire order (06-05-26-17), unless rescinded sooner. Cascade River Road's June 2026 vehicle closure at Eldorado (MP 20) has been lifted; the park's road-conditions page, updated July 3, 2026, lists the road open.",
+    "group_limit": 12,
+    "landManager": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) - not North Cascades National Park. The park boundary ends at Cache Col, well north of this summit.",
+    "land_manager": "Okanogan-Wenatchee National Forest (Chelan Ranger District) — Glacier Peak Wilderness",
+    "parking_pass": "Northwest Forest Pass or Interagency pass required for a shuttle vehicle left at the Downey Creek Trailhead, where the traverse exits; NPS wilderness permit only required if camping within the park (north of Cache Col).",
+    "passRequired": "Northwest Forest Pass or Interagency pass required for a shuttle vehicle left at the Downey Creek Trailhead, where the traverse exits; NPS wilderness permit only required if camping within the park (north of Cache Col).",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+     "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+     "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (north approach) or Suiattle River Road (south approach)",
+    "status": "Suiattle River Road closed to vehicles at MP 4 due to 2025-26 flood damage (closure order through Jan 1, 2028) - Downey Creek trailhead effectively unreachable by car. Cascade River Road (gravel past mile 10) is open: its June 2026 vehicle closure at Eldorado (MP 20) has been lifted, and the park's road-conditions page, updated July 3, 2026, lists the road open.",
+    "driveNote": "Cascade River Road is listed open on the park's road-conditions page updated July 3, 2026, but the Suiattle River Road, the traverse's southern exit, is closed to vehicles at MP 4 under a Forest Service order in effect April 2, 2026 through January 1, 2028 - verify current status with NPS (Cascade River Road) and Mt. Baker-Snoqualmie NF (Suiattle River Road) before planning a shuttle.",
+    "seasonalGate": "Cascade River Road is also snow-gated in winter/spring in addition to the current washout-driven closures."
+   },
+   "climate": {
+    "fall": "Early-season storms can drop new snow on the high traverse terrain and complicate glacier travel and route-finding.",
+    "summer": "Best weather window for the traverse, but afternoon thunderstorms and lingering snow on the glaciers are still possible into July.",
+    "winter": "Not a winter/spring objective — deep snow, avalanche hazard, and unplowed access roads make the approach impractical.",
+    "typical": "Cool, changeable high-alpine conditions typical of the North Cascades crest; mornings are usually firmer for glacier travel, with afternoon cloud buildup and a real chance of thunderstorms or sudden weather shifts common along the Ptarmigan Traverse.",
+    "bySeason": {
+     "fall": "September can still work in low-snow years with more exposed glacier ice/crevasses and colder overnight temps; shortening daylight is a factor on the long traverse approach.",
+     "spring": "Generally too much unstable snow on Cache Col and the Red Ledge crux; road may still be gated at Eldorado.",
+     "summer": "July-August is the core season once the Ptarmigan Traverse route itself is passable; snow bridges and cornices at Cache Col are more consolidated by mid-to-late July.",
+     "winter": "Not a winter objective - Cascade River Road is snowed in and the approach is avalanche terrain."
+    }
+   },
+   "emergency": {
+    "notes": "Remote Ptarmigan Traverse terrain in Glacier Peak Wilderness (not North Cascades National Park - the park boundary is at Cache Col, north of here); self-sufficiency essential. The Suiattle River Road has been closed to vehicles at milepost 4 since the December 2025 flood (Forest Service order in effect April 2, 2026 through January 1, 2028), which will lengthen any evacuation to the south; Cascade River Road to the north is open, as listed on the park's road-conditions page updated July 3, 2026.",
+    "county": "Chelan County",
+    "rangerStation": "Chelan Ranger District, Okanogan-Wenatchee National Forest, (509) 682-4900 (jurisdiction); Darrington Ranger District, Mt. Baker-Snoqualmie National Forest, administers the western Suiattle River/Downey Creek access side.",
+    "nearestHospital": "Cascade Valley Hospital, Arlington",
+    "sheriffDispatch": "Chelan County Sheriff's Office handles Search & Rescue for this peak — call 911. A party still on the Cascade River side of the traverse is in Skagit County, whose Sheriff non-emergency line is (360) 416-1911."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Mid-to-late July through August, coinciding with the main Ptarmigan Traverse permit/travel season; essentially no traffic outside that window since the peak isn't reachable independently",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - roughly 10-20 parties per season; this is not a standalone destination but almost always a side-summit tacked onto a Ptarmigan Traverse thru-trip"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Fit for a 35+ mile multi-day traverse with 10,000+ ft of cumulative gain over glaciated and off-trail terrain to even reach the peak's base",
+     "packWeight": "Heavy multi-day pack (roughly 30-40+ lb with glacier travel and camping gear) for the traverse approach; light pack for the ~2-3 hour round-trip summit side-trip itself"
+    },
+    "approachTime": "No standalone trailhead approach - only reached via the Ptarmigan Traverse, typically 2-4 days of travel from Cascade Pass (or Downey Creek) before a roughly 2-3 hour round-trip side-trip to the summit",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue (LeConte Glacier crossing to reach the base)",
+     "Class 3 scrambling on loose rock",
+     "off-trail routefinding and navigation",
+     "self-arrest / steep snow travel for early-season snow couloir sections",
+     "multi-day backcountry self-sufficiency and camping"
+    ],
+    "experienceLevel": "Experienced glacier traveler and off-trail scrambler with prior multi-day North Cascades backpacking/mountaineering trips - not appropriate as a first alpine outing given the remoteness and glacier crossing"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through August",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Prime traverse season, though early July can still carry lingering snow bridges and firmer early-season conditions; conditions steadily improve through the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Ptarmigan Traverse route and LeConte Glacier crossing are typically still heavily snow-covered and unstable this early; 'early-season snow' specifically, and Cascade Pass access itself may still be snowbound",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most consolidated glacier/snow conditions and driest access; this is the core of the best-season window",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still climbable but with shortening weather windows and rising risk of early autumn storms/new snow toward month's end",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical North Cascades high-alpine summer weather - cool mornings with potential for rapid changes",
+     "probability": "Afternoon thunderstorms and fast-moving weather systems are possible in July-August, as is common for North Cascades high peaks"
+    },
+    "exposure": "Class 3 scrambling on loose rock with moderate fall consequence; the early-season snow couloir adds slip-and-fall risk requiring solid self-arrest ability; the peak's remoteness significantly raises the stakes of any injury given a likely multi-day evacuation",
+    "avalanche": {
+     "zone": "N/A - summer alpine scramble climbed outside NWAC's Nov-Apr operational forecast season; no NWAC zone specifically covers this route in-season",
+     "byMonth": {
+      "July": "Moderate",
+      "June": "Considerable",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Real crevasse hazard on the LeConte Glacier crossing required to reach the peak's base; roping up and crevasse rescue skills/gear are expected"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact route name(s) vary between sources ('Southwest Route', 'Northwest Snowfinger') for what may be the same or very similar lines off the LeConte Glacier - could not fully reconcile naming.",
+     "No confirmed county-specific sheriff/SAR dispatch number found; general 911 and NPS ranger contact provided instead.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.3559,
+    "peakLng": -121.0358,
+    "trailhead": "Cascade Pass Trailhead (Cascade River Road)",
+    "trailheadLat": 48.475497,
+    "trailheadLng": -121.075031,
+    "trailheadDirection": "From the Cascade Pass Trailhead at the end of Cascade River Road (~3,660 ft)"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "Given peak elevation was null. A June 2025 differential-GPS survey (countryhighpoints.com) measured the summit at 8,259.6 ft NAVD88, matching listsofjohn.com's 8,259 ft and closely matching yellowleaf.org/peakery's ~8,260 ft — use ~8,259 ft rather than the older, less accurate USGS-topo-contour estimate of ~8,051 ft that still appears on some map sites (topozone/mountainzone). 2026-07-31: access.land_manager corrected from \"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)\" to \"Okanogan-Wenatchee National Forest (Chelan Ranger District)\", matching this row's own access.landManager/emergency.rangerStation fields. access.parking_pass corrected to remove an unrelated \"Mountain Loop Highway trailheads\" reference, matching this row's own access.passRequired (no NW Forest Pass needed).",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Cascade Pass and the traverse corridor to the LeConte Glacier",
+     "notes": "This is a side trip off a multi-day high traverse, not a day climb. From the Cascade Pass Trailhead at the end of the Cascade River Road, the maintained trail switchbacks up a forested rib and eases into a long ascending traverse through meadow and talus to the pass, where the tread ends. Leave the trail there and head south and east, traversing and climbing across the Mixup arm on boot path, talus and snow bands, then onto the Cache Glacier and up it to Cache Col; the step onto the glacier is short but steep and can be corniced, and an axe and crampons are normal here into midsummer. Descend the steep snowfield on the far side to the bench holding Kool-Aid Lake, the usual first camp. From there the Red Ledge bypasses the cliff band west of the knoll above, entered by scrambling through the moat at the snow-rock margin. Past the ledge, the corridor crosses the Middle Cascade Glacier, climbs to the Spider-Formidable col and drops to the Yang Yang Lakes basin, after which a ledge system leads up onto the LeConte snowfield and glacier. Camp near the col between LeConte and Sentinel, or at White Rock Lakes, and climb the peak from there.",
+     "season": "Mid-July through August is most reliable, since the route depends on the whole corridor being passable rather than on local conditions. Early trips face larger cornices at Cache Col and a more consequential Red Ledge; a low-snow autumn exposes more bare glacier ice.",
+     "hazards": [
+      "roped glacier travel with crevasses on the LeConte Glacier, and a bergschrund or moat at the foot of the snow ramp late season",
+      "loose rock on the upper scramble",
+      "remoteness with no easy bail once past Cache Col",
+      "steep early-season snow on the col approaches and on the ramp itself",
+      "the ramp softens to punchy postholing by afternoon, with the runout back onto the glacier"
+     ],
+     "baseFinding": "ONE SNOW RAMP RISES OFF THE GLACIER TO THE SUMMIT RIDGE, AND THE MOAT AT ITS FOOT IS THE GATE. From the LeConte Glacier the peak shows a single moderate, gradually-angled snow finger running up to the summit rocks; that ramp is the route, and getting onto it — finding the spot where the moat or bergschrund at its base allows a step across — is usually the awkward move of the day. It is a few hundred feet of steep snow, best taken early while it is firm, because by afternoon it turns to punchy postholing and the runout is straight back onto the glacier. Above it, the finish is a short scramble of a few hundred feet on blocky, high-friction gabbro that takes hands and stays straightforward. Two negative markers. Sentinel Peak is the adjacent summit immediately WEST of this one and is a few feet lower than this one — if the peak you are under is the western of the pair, you are below Sentinel. And if the rock above the top of your snow ramp turns into two pitches of mid-fifth-class climbing rather than a hands-on scramble, you are on this peak's east ridge, which is a real route but not this one. Stash the axe and crampons somewhere you will find them; the descent reverses the same ramp."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "LeConte Glacier contour from Sentinel Pass",
+     "notes": "Old Guard Peak is climbed from Sentinel Pass: contour onto the LeConte Glacier. Committing, remote glacier terrain — carry a full topo map and glacier gear; there is no easy bail once past Cache Col."
+    },
+    {
+     "n": 2,
+     "label": "Northwest snow couloir/snowfinger",
+     "notes": "Ascend a moderate, gradually-angled snow couloir/snowfinger on the peak's northwest side to gain the summit ridge; watch for a bergschrund/moat late season."
+    },
+    {
+     "n": 3,
+     "class": "low-Class-3",
+     "label": "Summit ridge",
+     "notes": "Finish on short scrambling on solid, high-friction gabbro to the true summit (8,240-8,260 ft)."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5850,
+     "name": "Yang Yang Lakes",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from the Le Conte Glacier above by a class 2 to 3 snow couloir and short scramble on the west side, or by two to three pitches of easy to moderate fifth class on the east ridge. Sentinel Peak is the other objective from here and the two are usually taken together. The descent into and climb out of this basin is steep on both sides, so parties running late often push instead to Le Conte Pass above and accept the thinner water. Snow lingers in the bowl well into July, which is when the camping is easiest and the heather is protected.",
+     "water": "Two lakes, which makes this the most dependable water on the northern half of the traverse. Nothing above it is reliable: the ridge camps toward Formidable and the ground up at Le Conte Pass are snowmelt-only late in the season, though the pass usually holds tarns into midsummer.",
+     "permit": "Glacier Peak Wilderness, free self-issue permit at the trailhead register. Camp at least 100 feet back from the lakeshores. No campfires; the ground here is thin alpine heather that does not recover.",
+     "capacity": "Several unimproved sites in the heather between the two small lakes, enough for two or three parties. No toilet and no established platforms."
+    },
+    {
+     "elev": 6320,
+     "name": "Kool-Aid Lake",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical reason to know it exists even if you are only passing through. Published elevations vary by a couple of hundred feet, with figures around 6,300 the most common and one outlier several hundred feet higher, so treat the number as approximate rather than a waypoint. From here the day ahead crosses the Red Ledge and the Middle Cascade Glacier toward Old Guard Peak and Sentinel, and there are further ridge bivouacs at around 6,300 ft just past the Red Ledge if the lake is full or the hour is late. Early season this is a snow camp with easy water everywhere; late season it is bare heather and rock and the tarn is the only source.",
+     "water": "The tarn itself plus snowmelt runnels feeding it. Reliable in July and through most of August, but it is a shallow pool with a small catchment and it can drop to a warm, silty puddle by September in a light snow year. Cache Col just above has no water at all, so parties camping high on the shoulder have to carry from here or melt snow.",
+     "permit": "Once you cross Cache Col you are out of North Cascades National Park and into Glacier Peak Wilderness, so no park permit covers this camp. Sign the free self-issue wilderness register instead. If you spend a night on the park side, including at Cascade Pass or on the shoulder below the Cache Glacier, that night does need an NPS wilderness permit collected in person at the Marblemount Wilderness Information Center. Campfires have no place at this elevation; carry a stove.",
+     "capacity": "A handful of small heather and gravel platforms around a tiny tarn, comfortable for two or three parties and crowded beyond that. No facilities, no toilet, nothing built."
+    },
+    {
+     "elev": 6200,
+     "name": "White Rock Lakes",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome Peak and the Dana Glacier, which is the day that follows. Sinister Peak is not climbed from here directly, but this is the last camp with easy water before the ground gets serious: the Chickamin and Dome glaciers are the way to Sinister and to the Gunsight Range, and everything from here east is snow, ice and rock with no running water. It is a windy basin and the good sites are the sheltered ones near the outlet. Snow can cover the lakes into early July, which some parties prefer because it makes the camping flat and the water trivially available.",
+     "water": "The lakes, fed by the snowfields and the Le Conte and Dana ice above them. Normally good all season, though the outlet stream can be reduced to a trickle late in a dry summer and the smaller pools go stagnant.",
+     "permit": "Glacier Peak Wilderness self-issue permit. Keep camps 100 feet from the water. Stoves only.",
+     "capacity": "Open benches near the outlet of the larger lake and scattered spots around the basin, wind-exposed but roomy enough for several parties. Unimproved, no toilet."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_rimrock_ridge_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_rimrock_ridge",
+  "findings": [
+   "r060.json: No ascent account of Rimrock Ridge was found, so no source names an established approach. The ridge divides upper Flat Creek (north) from the West Fork Agnes Creek (south); the Flat Creek trail ends about 4.2 mi up short of the valley head, and the West Fork Agnes trail heading west from Fivemile Camp (~5.5 mi up the PCT) is now a bushwhack. The row's approach text (continue to Swamp Creek Camp ~8.5 mi, then bushwhack EAST into 'Agnes Creek/Blue Basin') looks geographically wrong, since the summit pin (48.372,-121.000) lies northwest of Fivemile Camp and well north of Swamp Creek Camp (48.310), but with no source describing a real line, rewriting the approach would be invention. Both Flat Cr"
+  ],
+  "gpx_summary": "4 points; 4 of 4 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_rimrock_ridge_scramble",
+   "area_id": "wa_rimrock_ridge",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "Variable",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "sturdy scrambling boots"
+   ],
+   "hazards": [
+    "Thick, routefinding-heavy off-trail bushwhacking with no established boot path to the ridge",
+    "Loose, blocky rock on the Class 3 steps along the crest",
+    "No reliable water source once on the ridge crest itself",
+    "Aggressive bear activity reported at nearby PCT camps in 2026 (Fireweed, South Fork)",
+    "Afternoon thunderstorms typical of the dry east-Cascades summer",
+    "Remote self-rescue — no cell coverage; nearest help arrives via Chelan County SAR by boat or helicopter"
+   ],
+   "verif": null,
+   "overview": "Rimrock Ridge is a minor, infrequently climbed 7,255' crest in the Ptarmigan Mountains subgroup of the Glacier Peak Wilderness, rising above the headwaters of Agnes Creek in Chelan County. It sits near Agnes Mountain (8,115') and Devore Peak, on the dry east side of the Cascade crest above Lake Chelan and the Stehekin valley (USGS Agnes Mountain 7.5' quad). The ridge has essentially no recorded ascents or published trip reports online; most parties visiting this upper-Agnes-Creek basin are headed for the better-documented Agnes Mountain or Gunsight Peak via the same approach.",
+   "beta": "No published or online route beta exists specifically for Rimrock Ridge. It lies about 2.3 miles from Old Guard Peak in the same remote LeConte Glacier / Ptarmigan Traverse massif, so an ascent would likely involve terrain similar to nearby Old Guard and Sentinel Peaks: long, unmaintained approaches from Stehekin (via Agnes Creek or Flat Creek) or a cross-country detour off the Ptarmigan Traverse, followed by off-trail alpine scrambling to the summit.",
+   "turnaround": "No party-specific timing data exists for this peak. As on the surrounding Ptarmigan Traverse terrain, plan turnaround around weather, off-trail route-finding time, and the long unmaintained approach rather than a fixed clock time — afternoon thunderstorms and sudden whiteout conditions are common on this section of the North Cascades crest in summer.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4300,
+   "loss_ft": 4300,
+   "dist_km": 40.23,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "II",
+   "face": null,
+   "permit": null,
+   "comms": "This is deep wilderness with no maintained trail; expect no cell coverage for essentially the entire approach and climb, consistent with the rest of the Glacier Peak Wilderness / Stehekin backcountry. A satellite communicator or PLB is strongly advised.",
+   "descent": null,
+   "obj_haz": [
+    "loose rock",
+    "exposed ridge sections",
+    "remote terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.38025,
+     "lng": -120.83955,
+     "elev": 1600,
+     "name": "High Bridge Guard Station / Agnes Creek (PCT) Trailhead",
+     "note": "Reached by the Lady of the Lake ferry from Chelan to Stehekin Landing, then ~11 mi up Stehekin Valley Road (shuttle or bike); North Cascades NP backcountry permit required for overnight camping, available in Stehekin.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.342907,
+     "lng": -120.901771,
+     "elev": 2200,
+     "name": "Fivemile Camp",
+     "note": "First established dispersed camp along the Agnes Creek Trail with reliable water from Agnes Creek; common first-night stop for the long valley approach.",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 48.30964,
+     "lng": -120.92038,
+     "elev": 2800,
+     "name": "Swamp Creek Camp",
+     "note": "Established camp at the Swamp Creek confluence with year-round water; last reliably maintained camp before the trail begins climbing out of the valley bottom toward the upper basins.",
+     "type": "Campsite",
+     "distMi": 8.1
+    },
+    {
+     "lat": 48.3721,
+     "lng": -121.0001,
+     "elev": 7255,
+     "name": "Rimrock Ridge summit",
+     "note": "True summit of the ridge crest (listed 7,255-7,260 ft); descent reverses the crest, downclimbing rock steps and bypassing gendarme towers on the same side used on ascent.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 16,
+    "summitTimeHrs": 7,
+    "descentTimeHrs": 9,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacen…",
+      "fromTo": "Backpack in to high camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9,
+      "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full …",
+      "fromTo": "Summit push and hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock rack is documented for this ridge; the route is a Class 3 scramble that never touches a glacier, so a helmet and, early in the season, an ice axe are the relevant gear rather than a rack or a glacier kit.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "navigation tools",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "Hold the crest for the cleanest line",
+    "Drop off the spine to bypass the harder towers"
+   ],
+   "watch_out": [
+    "No cairned route or published trip reports exist for this specific ridge — expect genuine routefinding on both the bushwhack and the crest",
+    "The Agnes Creek bridge at Hemlock Camp is out of service in 2026 — plan an alternate camp (Cedar Camp or South Fork Agnes Creek)",
+    "2026: the High Bridge shuttle bus is not running — budget extra time/mileage to reach the trailhead from Stehekin Landing"
+   ],
+   "pro_needs": "No rope or protection is needed for the Class 3 crest in dry conditions; the route stays off the glaciers. Carry a helmet, and an ice axe early in the season for lingering snow.",
+   "best_season": "Typically late July through September, once the approach brushfields and any lingering snow on the ridge have melted out. Earlier in the season expect mosquitoes in the lower Agnes Creek valley and possible snow on north-facing sections of the ridge. Check current NPS/USFS trail-condition reports before going, since bridges and camps in this corridor were still being repaired in 2026 after the December 2025 Stehekin flood.",
+   "high_point_ft": 7255,
+   "aid_grade": null,
+   "approach": "Access to the trailhead is by boat, floatplane, or trail only — no road connects Stehekin to the outside world. Take the Lady of the Lake ferry from Chelan up 50-mile-long Lake Chelan to Stehekin Landing (Lady Express ~2.5 hrs, Lady II ~4 hrs). From there it is 11 miles up-valley on Stehekin Valley Road to High Bridge Guard Station (1,600'), the trailhead for the Agnes Creek Trail (PCT); for the 2026 season the historic High Bridge shuttle bus is not scheduled to run, so plan to walk the road, bike it, or book a private shuttle. From High Bridge, follow the Agnes Creek Trail (PCT) roughly 8-9 miles up-valley (Three-Mile Camp near mile 3, Swamp Creek Camp near mile 8.5), then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage toward the base of the ridge. Off-trail brush is thick for roughly the first 1,000' of gain and eases above about 4,000'; fording Agnes Creek or Spruce Creek on downed logs is typically required to reach the basin.",
+   "descent_text": "Retrace the ridge crest, downclimbing the rock steps and bypassing towers on the same side used on ascent.",
+   "bail": null,
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Approach trails in this remote corner of the Stehekin backcountry are typically not reliably snow-free until mid-to-late July, with the best window July through September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacent camp spot below the ridge. The last part leaves the trail for thick brush and a creek crossing, so expect slow going with an overnight pack.",
+      "hours": 7,
+      "miles": 13,
+      "title": "Backpack in to high camp",
+      "gainFt": 2600,
+      "lossFt": 200,
+      "packLb": 34,
+      "schedule": [],
+      "objective": "Reach a camp near the base of the summit ridge"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full approach trail back out the same day, making for a long but standard single 'summit + out' day.",
+      "hours": 9,
+      "miles": 12,
+      "title": "Summit push and hike out",
+      "gainFt": 1700,
+      "lossFt": 4100,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave camp",
+        "detail": "Light day pack, headlamp start to catch cool morning temps on exposed rock."
+       },
+       {
+        "time": "+2.5 hr",
+        "label": "Gain the ridge crest",
+        "detail": "Cross-country travel on scree, slabs, and broken rock — no maintained trail on the ridge itself."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Reach Rimrock Ridge summit",
+        "detail": "Views across the Glacier Peak Wilderness; short break."
+       },
+       {
+        "time": "+5.5 hr",
+        "label": "Back at camp",
+        "detail": "Reverse the ascent line; break camp and shoulder full pack."
+       },
+       {
+        "time": "~6:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Full hike-out on trail after breaking camp."
+       }
+      ],
+      "objective": "Climb Rimrock Ridge and return to the trailhead"
+     }
+    ],
+    "totalNote": "A 2-day, 1-night trip: roughly 25 miles round trip and ~4,300 ft of cumulative gain to a 7,255 ft summit, with the second day combining the summit scramble and the full hike out."
+   },
+   "access": {
+    "fees": "2026 NPS backcountry fees: $6 non-refundable permit reservation fee plus $10/person/night camping fee within the park boundary (ages 15 and under free); the Forest Service wilderness permit beyond the park boundary is free. Ferry fare to/from Stehekin and any High Bridge shuttle fee are separate.",
+    "rules": "Leave No Trace travel required; camping is restricted to designated/permitted sites within the park/NRA portion of the approach. Food storage from bears is essential — aggressive bear activity has been reported in 2026 at PCT camps in this corridor (Fireweed and South Fork camps in particular).",
+    "permit": "An NPS wilderness permit is required for any overnight camping within the park/NRA boundary near High Bridge (reserve on recreation.gov or get a walk-up permit at the Golden West Visitor Center in Stehekin). Once across into the Glacier Peak Wilderness (Forest Service land), only a free self-issue wilderness permit is required, available at trailhead registration boxes.",
+    "closures": "As of mid-2026 the Stehekin area is still recovering from a historic December 2025 flood: Company Creek Road lost roughly 1,000 ft of roadbed and a levee (an elevated interim road was completed June 23, 2026); North Cascades Lodge at Stehekin is closed for the season (no lodging, dining, fuel, or showers, though ferry and postal service continue); the High Bridge shuttle bus is not running for 2026. On the trail itself, the Agnes Creek bridge at Hemlock Camp (south of the park boundary, in the Glacier Peak Wilderness) is out of service and camping at Hemlock Camp is considered unsafe due to hazard trees — use Cedar Camp or the South Fork Agnes Creek camp instead. Confirm current conditions with the Wilderness Information Center (360-854-7245) before going. Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes the Pacific Crest Trail (Trail 2000) along Agnes Creek on the Chelan Ranger District, along with Agnes Creek Trail 1272, Agnes Gorge Trail 1281 and Swamp Creek Trail 1242. North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) also close the Pacific Crest Trail from the park boundary down to High Bridge and on to Bridge Creek Camp, the High Bridge area, and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This approach cannot be used while these closures stand. Chelan Ranger District: (509) 682-4900. North Cascades National Park: (360) 854-7200.",
+    "group_limit": 12,
+    "landManager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area for roughly the first mile out of High Bridge, then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness, for the remainder of the approach and the peak itself.",
+    "land_manager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area (first mile out of High Bridge), then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness",
+    "parking_pass": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+    "passRequired": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP wilderness permit for the Stehekin valley camps — quota, fee",
+     "where": "Reserve on Recreation.gov and contact the park the day before, as there are no permit services in Stehekin. Camping beyond the park boundary in the Glacier Peak Wilderness needs no park permit."
+    }
+   },
+   "road": {
+    "name": "Stehekin Valley Road (boat landing to High Bridge)",
+    "status": "Not connected to any outside highway — Stehekin is accessible only by boat, floatplane, or trail. Within the valley, the road is a local shuttle/bike route from the boat landing to High Bridge (~11 mi). North Cascades National Park has closed the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire (park fire-closure list updated September 14, 2026; no end date given).",
+    "driveNote": "No road connects Stehekin to the outside highway network — access is by the Lady of the Lake ferry from Chelan (Lady Express ~2.5 hrs, Lady II ~4 hrs), by floatplane, or on foot over Cascade Pass; from Stehekin Landing it is roughly 11 miles up Stehekin Valley Road to the High Bridge/Agnes Creek trailhead.",
+    "seasonalGate": "Ferry and shuttle run year-round on a reduced winter schedule; the trail beyond High Bridge is typically snow-free from July into October."
+   },
+   "climate": {
+    "summer": "Summer is the working window: the approach brush and the ridge are usually snow-free from late July, with hot days, cool nights and a risk of afternoon thunderstorms; snow cover varies a lot from year to year.",
+    "typical": "Dry east-Cascades climate in the rain shadow of the crest — hot summer days, cool nights, and a much shorter, drier snow season than the west-side Cascades. Afternoon thunderstorms are common in July and August.",
+    "forecastZone": "Not covered by NWAC avalanche forecasts (this is a summer, snow-free-window scramble; no winter forecast zone applies)."
+   },
+   "emergency": {
+    "notes": "No road access and no cell coverage in this drainage — carry a satellite communicator. Any rescue will likely require a multi-hour boat evacuation and/or helicopter.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Golden West Visitor Center, Stehekin (NPS) for the park/NRA portion of the approach; Chelan Ranger District office, Okanogan-Wenatchee National Forest, in Chelan, for the Glacier Peak Wilderness portion.",
+    "nearestHospital": "Lake Chelan Community Hospital, Chelan, WA — roughly 50 lake-miles from Stehekin; backcountry rescues from this drainage are typically by helicopter given the lack of road access to Stehekin.",
+    "sheriffDispatch": "911, or Chelan County Sheriff/Rivercom Dispatch direct at 509-663-9911; technical mountain rescue support comes from the volunteer Chelan County Mountain Rescue."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed overall; what little traffic exists would cluster on August weekends within the Late July-September window",
+    "solitudeRating": 5,
+    "estimatePerSeason": "very low - likely single digits to low tens of parties per season; no trip-report volume or register data found for this summit"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long wilderness approach fitness - full-day (or overnight) endurance typical of Glacier Peak Wilderness access; exact approach mileage not confirmed in sources",
+     "packWeight": "Light scrambling kit for the ridge itself; overnight/backpacking load (roughly 20-30 lb) likely needed for the approach given the remote access"
+    },
+    "approachTime": "Long/remote approach consistent with Glacier Peak Wilderness (Okanogan-Wenatchee NF) access",
+    "requiredSkills": [
+     "route-finding on an unmaintained approach and along the ridge crest",
+     "exposed Class 3 scrambling, including negotiating rock steps and notches",
+     "sound judgment downclimbing loose rock",
+     "map/compass or GPS navigation in trail-less Glacier Peak Wilderness terrain"
+    ],
+    "experienceLevel": "Solid, independent Class 3 scrambler comfortable on an infrequently traveled ridge with loose rock and no fixed protection; not a beginner objective given the remote Glacier Peak Wilderness setting"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August as the prime month",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still carry lingering snow on the approach slopes; conditions typically firm up by late July when the season window opens",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Matches the best-season - snow-free approach and driest, most stable ridge conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Generally dry and stable, continuing August conditions, but shorter daylight and a rising chance of early-season snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical North Cascades/Glacier Peak Wilderness summer pattern - warm, dry days and cool nights during the July-September window",
+     "probability": "Afternoon thunderstorms are a general risk in the North Cascades summer season, but no peak-specific storm data was found for Rimrock Ridge"
+    },
+    "exposure": "Exposure is concentrated at the notches along the ridge crest, compounded by loose rock/blocks on the ridge; a slip near a notch would be consequential, though the route stays at Class 3 rather than sustained technical terrain",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts for this peak, and the route is only climbed in the snow-free late-July-September window",
+     "byMonth": {
+      "July": "Low",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; Rimrock Ridge is a non-glaciated ridge scramble"
+   },
+   "data_quality": {
+    "gaps": [
+     "No dedicated trip reports or route descriptions specific to Rimrock Ridge were found online; the approach/route detail above is inferred from the nearby, better-documented Agnes Mountain approach out of the same Agnes Creek/Blue Basin drainage.",
+     "Elevation for this peak is reported inconsistently across sources (roughly 7,050-7,260 ft depending on source/USGS interpolation); the prominence figure could not be independently verified.",
+     "Exact bushwhack line from the Agnes Creek Trail to the base of the ridge is unconfirmed by any first-hand account.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.3720712,
+    "peakLng": -121.0001074,
+    "trailhead": "High Bridge (Stehekin Valley Road)",
+    "trailheadLat": 48.3807,
+    "trailheadLng": -120.8403,
+    "trailheadDirection": "Via the Lady of the Lake ferry to Stehekin and the NPS shuttle to High Bridge, then the Agnes Creek / PCT trails"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 3 scramble; no rope required in dry conditions.",
+   "ascender": null,
+   "corrections": "No route-specific trip reports found beyond peak elevation (7,260ft); gear inferred purely from stated Class 3 grade.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 2275,
+     "name": "Park Creek Camp, at the valley road",
+     "role": "main",
+     "type": "camp",
+     "notes": "THIS IS THE CAMP THE PARK ITSELF POINTS OVERNIGHT PARTIES TO NOW THAT FLAT CREEK IS SHUT, and that closure is the single most important planning fact for this peak. The camp at the Flat Creek trailhead, which would otherwise be the obvious base, has its access trail closed for hazard trees and has dropped out of both the park's camp list and its booking system; no reopening date has been given anywhere. Park Creek sits lower down the same road, so using it lengthens an approach that is already long — you are walking further to the trailhead each morning rather than sleeping at it. Note this is the camp on the VALLEY ROAD where the Park Creek trail leaves it, not the stock camp several miles up that trail toward the pass. The four-person cap is worth checking against your party before you plan around it.",
+     "water": "Park Creek at the camp, reliable all season.",
+     "permit": "National Park Service backcountry permit, arranged by email before you travel as above. A TOTAL CAMPFIRE BAN has been in force across the entire Stehekin valley since the end of June, covering anything that produces ash including propane fire pits, with no end date announced — so the ring here is out of use regardless of what the camp table says about fires. Gas and propane STOVES are still allowed, with clearance around them and a working shut-off valve. Confirm the ban's status when you get the permit.",
+     "capacity": "Two sites, each capped at four people, so this is a small-party camp only. No stock. It has a fire ring, which is not the same as permission to use it right now."
+    },
+    {
+     "name": "Bivouacs in the upper Flat Creek basin, beyond the end of the trail",
+     "role": "main",
+     "type": "bivy",
+     "notes": "Rimrock Ridge is an obscure summit and should be described as one. It forms the southern rim of the upper Flat Creek valley — everything falling off its far side goes into the West Fork of Agnes Creek instead — and it looks across at the glaciated back of the crest that the classic traverse walks along. Accounts of that traverse do not mention it, because climbers up there are facing the other way, and no ascent account of it was found at all. The approach is the whole difficulty: boat, shuttle, most of a day walking the old road, a gentle valley trail of about four miles that gains only a few hundred feet through old growth and through forest still recovering from a fire early this century, and then trailless ground up the headwaters to whatever line goes. The trail ends well short of the head of the valley and the summit is beyond where it ends. Budget four days minimum for something that would be an afternoon if a road came near it, and build the itinerary around the boat timetable rather than the climbing, because a missed sailing costs a day at each end. Late summer into early autumn is the window; the valley walk is snow-free long before the head of it is.",
+     "water": "Creek and snowmelt throughout the basin, which is at least the easy part — this is a wet valley fed off the glaciers on the crest above it, and running water is not the problem here that it is on a ridge camp.",
+     "permit": "THE AGENCY CHANGES ON THIS TRAIL, and it is the thing most likely to be got wrong. The Flat Creek trail leaves the national park about two miles up and passes into the Glacier Peak Wilderness under the national forest, so the ground you actually camp and climb on is Forest Service. Checked against the boundary rather than assumed: the summit itself lies inside that wilderness. It takes a free self-issue permit filled in at the trailhead rather than a park permit, with no reservation and no fee, and a party limit of TWELVE counting people and pack animals together — larger than the park's limit down in the valley, and a rare case where walking further gets you a looser rule. Groups over twelve must split and stay a mile apart. Your park permit still covers the valley camps you slept in getting there, so a full trip needs both. There is NO park cross-country zone for Flat Creek; that is not a gap in the record, the zone system simply does not reach here because the ground is not the park's. Standard wilderness practice otherwise: durable surfaces, well back from the water, pack out what will not bury, and no fires.",
+     "capacity": "No established camping and no site count. THERE IS NOTHING UP HERE. The trail stops, and a party going on picks whatever flat gravel, slab or old moraine it can find in the head of the valley. Anyone describing a camp here is describing a place they happened to sleep."
+    },
+    {
+     "elev": 1687,
+     "name": "Tumwater Camp, Stehekin valley road",
+     "role": "route",
+     "type": "camp",
+     "notes": "The first camp of consequence above the shuttle's turnaround at High Bridge, and its job on this trip is to absorb the arrival day. The boat gets in around the middle of the day and the last shuttle up the valley goes in the late afternoon, so nobody sensibly starts a twenty-mile approach on day one — you ride to High Bridge, walk a short way up the old road, and sleep in flat riverside forest with no view and no alpine character at all. It has a history of high-water damage and was closed after a bad flood, though it stands in the park's current camp table; confirm it is genuinely open when you arrange the permit rather than assuming, because there are not many camps up here and losing one reshapes the whole itinerary.",
+     "water": "The Stehekin River is right there and runs all season. Treat it — it is a big glacial river carrying silt and everything else off the drainage.",
+     "permit": "National Park Service backcountry permit required, covering Lake Chelan National Recreation Area as well as the park. THERE IS NO PERMIT DESK IN STEHEKIN — the visitor centre at the landing does not issue them and is closed. For a trip starting in the valley the permit is arranged by EMAIL with the park's wilderness office, sent early on the morning BEFORE your start date, with a short mandatory video to watch and a signed copy to print and carry. There is no cell service in Stehekin, so all of that has to happen before you get on the boat. Food lockers are provided at these valley camps and no bear canister is required.",
+     "capacity": "Two sites, each taking up to six people, so six is the party ceiling. No stock. Assigned by night on the permit."
+    },
+    {
+     "elev": 1927,
+     "name": "Shady Camp, Stehekin valley road",
+     "role": "route",
+     "type": "camp",
+     "notes": "Further up the old road than Tumwater and the only camp on this stretch that is held back from the booking system entirely, which is exactly why it is worth knowing about. A party whose permit request comes back with a hole in the middle of the itinerary can often fill it here. It is another flat forested river camp with nothing to look at, used purely for position. Note that the road above the washout is closed to BICYCLES as well as vehicles — the upper section is decommissioned or maintained as a non-motorized, non-mechanized trail, so the obvious idea of riding the old roadbed to save a day is not permitted. It is walking or stock, and that is what makes this approach as long as it is.",
+     "water": "River water beside the camp, dependable through the season and needing treatment.",
+     "permit": "National Park Service backcountry permit required, arranged the same way as the rest of the valley — by email to the wilderness office the morning before you start, since nothing can be issued in Stehekin itself. Because the site is walk-up rather than reservable, it cannot be locked in months ahead; ask for it in that same email.",
+     "capacity": "A single site taking up to eight people. No stock. WALK-UP ONLY — this one takes no reservations at all, which makes it the useful fallback when everything else on the road is booked out."
+    },
+    {
+     "name": "Swamp Creek Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_northeast_ridge_1963_route",
+  "name": "Northeast Ridge (1963 Route)",
+  "area_id": "wa_johannesburg_mountain",
+  "findings": [
+   "r074.json: The route starts partway up the C-J couloir from a trailhead near the Cascade Pass parking lot (Mountain Project 1963 route page). Reports of the couloir approach put its base about 20 minutes from the road after dropping into the valley (Where Is Kyle Miller; Turns-All-Year), with no ascent to Cascade Pass. The fact is settled, but the fix is removing waypoints[1] (the Cascade Pass pin) and re-deriving the later pins' distMi (4.3/4.8/5.5, all measured via the pass) and the river-crossing elev 4,300 ft, which is pin work outside this patch scope. Flagged for the waypoint/pin pass; no patch written. | The approach leaves the road by the Cascade Pass trailhead and crosses the Cascade River and"
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_northeast_ridge_1963_route",
+   "area_id": "wa_johannesburg_mountain",
+   "name": "Northeast Ridge (1963 Route)",
+   "discipline": "alpine",
+   "grade": "5.7+",
+   "grade_system": "yds",
+   "grade_num": 7,
+   "pitches": 12,
+   "length_m": 1219,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1963 (climbing party not recorded)",
+   "lat": null,
+   "lng": null,
+   "aspect": "NE",
+   "season": "Summer, when the low couloir approach still holds climbable snow",
+   "description": null,
+   "gear": [
+    "small-medium alpine rock rack to 3 inches",
+    "10+ runners",
+    "helmet",
+    "ice axe and crampons for the couloir/glacier approach"
+   ],
+   "hazards": [
+    "Notorious rockfall hazard — the mountain is repeatedly called Beckey-era Cascades' 'most notorious' peak for danger, with loose rock cited across multiple trip reports and a documented near-miss rockfall incident on a 2020 descent",
+    "Frequent large avalanches/icefall from several hanging glaciers on the peak, including the Sill Glacier near this route",
+    "Steep (45–60°) snow sections on approach/descent with real fall consequence; one trip report calls the heather descent 'the most dangerous part of the trip'",
+    "Difficult, routefinding-intensive Doug's Direct descent through suspect rappel anchors and loose terrain, with a documented history of parties returning a day or two late",
+    "Cascade River crossing/ford required on approach"
+   ],
+   "verif": null,
+   "overview": "A more direct, all-rock alternative to the neighboring East Ridge and Northeast Buttress lines: climbs partway up the Cascade-Johannesburg Couloir to a hanging glacier, then follows the leftmost rib to the summit, deliberately avoiding the brush that plagues the other routes.",
+   "beta": "Grade: 5.7+ YDS, Grade IV, 12 pitches, 4,000 feet. First ascent: 1963. Route: Climb partway up C-J couloir to hanging glacier on right; ascend leftmost rib to summit. Hazards: Objective danger from falling rock/ice, steep snow, exposed scrambling, avalanche potential. Equipment: Small-to-medium alpine rock rack (to 3 inches), 10+ runners, helmet. Best season: July-September. No bush climbing.",
+   "turnaround": "As with the mountain's other technical routes, set a firm turnaround time before committing above the couloir — the loose upper rib and long descent leave little margin if benighted.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.7+",
+   "ice_grade": null,
+   "gain_ft": 4563,
+   "loss_ft": null,
+   "dist_km": 4.83,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "IV",
+   "face": "Northeast Face, above the hanging (Sill) glacier",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "Cell coverage in the Cascade Pass/Johannesburg cirque is unreliable; NPS advises never relying on a phone as a sole evacuation plan, though reception is occasionally possible from higher, more open terrain.",
+   "descent": "Not specifically documented for this route; climbers on Johannesburg's other technical lines typically descend via \"Doug's Direct\" (traversing beneath Cascade Peak/the Triplets and over Mixup Peak's north ridge to Cache Glacier) or by rappelling the East Ridge back to the Cascade-Johannesburg col.",
+   "obj_haz": [
+    "Icefall/rockfall from the hanging (Sill) glacier during the approach traverse",
+    "Loose rock",
+    "Steep snow sections"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.4755,
+     "lng": -121.075,
+     "elev": 3600,
+     "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 3600,
+     "directions": "Drive Cascade River Road to its end at the Cascade Pass trailhead, near 3,600 ft. The road is generally open late June through September, and this route's season is tied to it. This is one of the shortest approaches in the range: the serious ground starts around 3,500 ft, within an hour of the car, so there is no long walk to warm up on."
+    },
+    {
+     "lat": 48.4683,
+     "lng": -121.06,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "Maintained trail tops out here; leave it for the climbers' path toward Johannesburg.",
+     "type": "Junction",
+     "distMi": 3.6
+    },
+    {
+     "lat": 48.4655,
+     "lng": -121.079,
+     "elev": 4300,
+     "name": "Cascade River Crossing / Terminal Moraine",
+     "note": "Off-trail descent and ford of the infant Cascade River below the terminal moraine.",
+     "type": "Hazard",
+     "distMi": 4.3
+    },
+    {
+     "lat": 48.4665,
+     "lng": -121.085,
+     "elev": 5200,
+     "name": "Base of C-J Couloir",
+     "note": "Gain rock just before the Cascade-Johannesburg couloir narrows; the NE Ridge (1963) climbs the rib right of the couloir.",
+     "type": "Junction",
+     "distMi": 4.8
+    },
+    {
+     "lat": 48.4665,
+     "lng": -121.088,
+     "elev": 6800,
+     "name": "Hanging Glacier Traverse",
+     "note": "Exposed rising traverse beneath Johannesburg's hanging glaciers; rockfall and icefall hazard.",
+     "type": "Hazard",
+     "distMi": 5.5
+    },
+    {
+     "lat": 48.46472,
+     "lng": -121.09194,
+     "elev": 8066,
+     "name": "Johannesburg Mountain",
+     "type": "Summit",
+     "elevFt": 8200
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 3,
+    "recommendedStart": "Pre-dawn alpine start from a high bivy near the route's base, to be through the couloir/glacier crossing before daytime warming increases rock and icefall hazard"
+   },
+   "detailed_rack": "A small-to-medium alpine rock rack up to about 3 inches, 10+ runners/slings, plus ice axe and crampons for the couloir/glacier portion of the approach.",
+   "what_to_bring": [
+    "headlamp",
+    "approach shoes",
+    "light bivy gear as a contingency"
+   ],
+   "pro_tips": [
+    "The route stays on more solid, direct rock and avoids the brush of the neighboring Northeast Buttress lines by climbing partway up the C-J Couloir before cutting onto the leftmost rib."
+   ],
+   "watch_out": [
+    "Like all of Johannesburg's northeast-side routes, the lower section shares exposure to icefall from the hanging glaciers above the couloir."
+   ],
+   "pro_needs": "Standard alpine rock rack to 3 inches with plenty of runners for the 12-pitch rib; supplement with snow/ice protection for the lower couloir approach.",
+   "best_season": "Late June through September, once the road is open and the lower couloir approach has consolidated snow.",
+   "high_point_ft": 8200,
+   "aid_grade": null,
+   "approach": "East/Northeast from Cascade Pass trailhead; descend and cross Cascade River, then approach the northeast face via C-J couloir",
+   "descent_text": "From the summit, follow the East Ridge — downclimbing/rappelling loose, exposed 3rd/4th-class gendarme ledges (staying well below the crest) — to the Cascade-Johannesburg col. From the col, either rappel the C-J couloir or take the \"Doug's Direct\" line: traverse beneath the Triplets buttress, sidehill steep heather/meadow slopes, cross the north ridge of Mixup Peak, and descend to Cache Glacier, then follow the Cascade Pass trail back to the trailhead. This descent has taken other parties on Johannesburg's NE-aspect routes on the order of 4.5-9+ hours from the col.",
+   "bail": "Retreat from the upper rib is difficult on loose rock; parties are effectively committed once established above the C-J Couloir, generally continuing to the summit and descending via Doug's Direct or the East Ridge rappels.",
+   "pitch_detail": null,
+   "itinerary": "Typically climbed over 2 days: Day 1 — approach from the Cascade Pass trailhead to a high bivy near the base of the Northeast Face/C-J couloir; Day 2 — climb the route to the summit, then descend via the East Ridge/C-J col and Doug's Direct back to the car (a long day; some parties add a 3rd day).",
+   "access": {
+    "fees": "No park entrance fee — North Cascades NP is fee-free. Summer-season backcountry permits (mid-May through early October) cost $10/person/night plus a $6 nonrefundable reservation fee; free outside that window.",
+    "notes": "Wilderness permit required year-round for overnight stays in North Cascades National Park. Permits via Recreation.gov (60% reservation) or first-come-first-serve (40%). Cascade River Road (unpaved, 23 miles) opens late June/July. Free trailhead parking.",
+    "rules": "No permit is required for a single-day climb; an overnight bivy or any backcountry camping requires a North Cascades NP wilderness/backcountry permit, reservable on Recreation.gov or obtained walk-up at the Marblemount Wilderness Information Center.",
+    "permit": "North Cascades NP wilderness/backcountry camping permit (required for any overnight stay; day climbs need none)",
+    "closures": "Cascade River Road is gated for winter at the park boundary (milepost 18) and typically doesn't reopen to the Cascade Pass trailhead until late June, sometimes not until early July in heavy-snow years — this can affect an early-summer attempt, since the trailhead itself may still be inaccessible by vehicle.",
+    "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+    "group_limit": 6,
+    "landManager": "North Cascades National Park (South Unit), National Park Service",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "passRequired": "None for day climbing; a wilderness permit (not a parking pass) is only needed if bivying overnight.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP wilderness permit, quota, not free",
+     "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (from Marblemount) to Boston Basin trailhead",
+    "status": "Paved for the first ~10 miles from Marblemount, then gravel with potholes and washboard; a high-clearance vehicle is recommended for the final miles to the Boston Basin pulloff. Vulnerable to washouts/flooding closures.",
+    "driveNote": "Roughly 3-3.5 hours from Seattle to Marblemount, then 45 min-1+ hour further up Cascade River Road.",
+    "seasonalGate": "Only snow-cleared and opened each spring/early summer; check the NPS North Cascades road-conditions page before driving."
+   },
+   "climate": {
+    "fall": "Shortening weather windows with early-season snow possible by late September/October.",
+    "spring": "Deep snowpack and the access road often still gated; high avalanche/wet-slide hazard.",
+    "summer": "Primary climbing season (Jul-Sep); frequent afternoon thunderstorms and ongoing icefall off the hanging glaciers.",
+    "winter": "Road closed at a lower gate; extreme avalanche and icefall hazard.",
+    "typical": "Wet, snowy winters and warmer, drier summers typical of the west-slope North Cascades; the Johannesburg cirque holds hanging glaciers year-round, so cold microclimates and active icefall persist even in summer.",
+    "forecastZone": "NWS/NWAC \"West Slopes North Cascades and Passes\" zone (WAZ567)"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable in the Cascade Pass/Johannesburg cirque; rescue response can take hours given the remote, technical terrain.",
+    "county": "Skagit County, WA",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount, WA",
+    "nearestHospital": "Skagit Valley Hospital, 300 Hospital Pkwy, Mount Vernon, WA — Level III ED, (360) 424-4111",
+    "sheriffDispatch": "Skagit County Sheriff dispatch (360) 336-9450; North Cascades NP dispatch (360) 856-5700 ext. 515, after-hours (360) 873-4590 ext. 37"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Reportedly rarely climbed by any route",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low — an estimated 3–5 ascents per year by any route on the NE face as a whole (not this line specifically)"
+   },
+   "partner_requirements": {
+    "fitnessSpec": "~12 pitches, ~4,000 ft gain; a short (~1 mile) but very steep approach crossing/fording the Cascade River, moraine, and glacier-adjacent slabs, plus vertical brushwhacking to ~4,400 ft before roped climbing starts",
+    "approachTime": "Short distance (~1 mile) but very steep and technical, including a Cascade River crossing/ford",
+    "requiredSkills": [
+     "5.7+ YDS multi-pitch trad leading",
+     "Comfort with loose rock and moving fast on exposed 4th/5th class terrain, including simul-climbing when needed",
+     "Serious routefinding on confusing, braided rib/ridge terrain",
+     "Solid downclimbing judgment for the Doug's Direct descent (steep heather down-climbing)"
+    ],
+    "experienceLevel": "Advanced/expert — Grade IV alpine rock on a mountain with a documented history of epics"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through August",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Multiple documented ascents in late July (e.g. July 26–27, mid-July, and July on the NE Buttress)",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Multiple documented ascents in August (Aug 1–2, Aug 21); the range has little/no cloud cover in summer per general climate data",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Summers relatively dry/clear; the range is otherwise cloudy and wet, which would sharply increase rockfall/routefinding risk if encountered mid-climb"
+    },
+    "exposure": "Grade IV, sustained, remote terrain with a difficult descent (Doug's Direct or the C-J Couloir); bail-out options are poor once committed",
+    "avalanche": {
+     "zone": "Mountain 'frequently looses enormous avalanches' from several hanging glaciers per route descriptions; maritime snowpack is wet and heavy, elevating hazard especially outside the stable summer window"
+    },
+    "crevasses": {
+     "timing": "Steep snow sections (45–60°) on approach/descent carry real fall consequence; most hazardous outside the summer stable window",
+     "location": "Route crosses beneath/adjacent to a hanging glacier and the Sill Glacier"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "FA audit: the on-file date '1963' is sourced only to a crowdsourced Mountain Project route page (submitted by a user in 2020), not a primary source (AAJ, Beckey guidebook, club journal). Other sources describe similar NE-side lines dated 1951 ('Northeast Rib') and 1957 ('NE Rib') — it's unclear whether this is a distinct route or a conflation/renaming of an earlier line. Treat '1963' as unverified rather than a confirmed historical FA date; no correction applied since no confident alternative was found either.",
+     "No climbers' names found for the Northeast Ridge (1963 Route) FA in any source checked (Mountain Project, Wikipedia, SummitPost, AAC Publications, CascadeClimbers). The mountain's overall FA (East Ridge/CJ Couloir, a different route) is well documented: July 26, 1938, by Calder Bressler, Bill Cox, Ray W. Clough, and Tom Myers (Wikipedia) — do not conflate with this route.",
+     "CascadeClimbers.com forum threads returned HTTP 403 and could not be read directly, and no AAC Publications/AAJ accident or route report specific to this line was found.",
+     "No source discusses September+ conditions for this route — late-season window is an unresearched gap."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.46456,
+    "peakLng": -121.09192,
+    "trailhead": "Cascade Pass Trailhead",
+    "trailheadLat": "48.475497",
+    "trailheadLng": "-121.075031",
+    "trailheadDirection": "From the Cascade Pass Trailhead"
+   },
+   "sling_rack": {
+    "cams": "small-medium alpine rack to 3 inches",
+    "nuts": "light set",
+    "runners": "10+ slings/runners"
+   },
+   "alpine_draws": 10,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "12-pitch Grade IV 5.7+ alpine ridge with steep snow/mixed approach terrain. Ice axe/crampons often needed for approach snow depending on season.",
+   "ascender": null,
+   "corrections": "Gear line taken directly from Mountain Project route page for Northeast Ridge (1963 Route). 2026-07-31: approach_logistics.trailheadLat/Lng corrected from 48.4683,-121.06 (the Cascade Pass junction, 3.6mi up-trail) to 48.475497,-121.075031 (the actual Cascade River Road trailhead) — matches this row's own already-corrected waypoints entry and the identical shared trailhead on wa_northeast_face_direct (Mount Formidable).",
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "60m. This first one is described either as a single rope-stretching rappel or split into two shorter ones to the block below.",
+     "notes": "Plan on a typical single-rope rappel. Begins the descent of the loose East Ridge crest toward C-J col.",
+     "anchor": "rap-sling anchor, East Ridge crest",
+     "hazards": [
+      "parties who do not drop far enough below the crest end up committed to loose 4th and low-5th ground and have to climb back up to find the ledge with the cairns",
+      "anchors through this descent are mostly slings around large blocks, and some of the wrapped boulders are themselves suspect — check what the sling is attached to, not just the sling"
+     ],
+     "lengthM": null,
+     "station": "Not on the crest. Traverse the gendarmes on loose ledges roughly 40 to 75 ft below the ridge top, following occasional cairns, until the last two mini-summits come into view, then climb back onto the crest and look down the gully. The first anchors sit beside a small tower on the left side of that gully about 200 ft down, with a cairn on the tower in at least one season."
+    },
+    {
+     "n": 2,
+     "pull": "Carry spare cord and webbing — some stations are old tat and nothing else. A short rope leaves you between established anchors rather than at them.",
+     "anchor": "rap-sling anchor, East Ridge crest",
+     "hazards": [
+      "stations are weathered tat and it is normal for the first person down to back one up with gear or add fresh sling",
+      "the rappel line is not the climbing line, so retrieving a stuck rope means climbing ground nobody in the party has been on"
+     ],
+     "lengthM": null,
+     "station": "A big block below the first anchors, where parties who split the opening rope-stretcher into two shorter raps end up."
+    },
+    {
+     "n": 3,
+     "notes": "A loose gully to climbers' right can be downclimbed instead of rappelled at various points.",
+     "anchor": "rap-sling anchor, East Ridge crest",
+     "hazards": [
+      "the loose gully to climber's right of the rappels is the downclimbing alternative, and given how rotten the rock is, some parties consider downclimbing the safer of the two"
+     ],
+     "lengthM": null,
+     "station": "Continuing down the gully toward the heather benches. How many rappels this takes varies with rope length and how much of the loose gully a party is willing to downclimb, so the count between here and the benches is reported as two or three."
+    },
+    {
+     "n": 4,
+     "anchor": "rap-sling anchor, East Ridge crest",
+     "hazards": [
+      "everything here is loose enough that a rappelling party showers the ground below it; take the gully one at a time rather than moving together"
+     ],
+     "lengthM": null
+    },
+    {
+     "n": 5,
+     "anchor": "rap-sling anchor, East Ridge crest",
+     "hazards": [
+      "the heather feels less secure than the rock steps above it and is very hard to protect, which is the part of this descent accounts single out as genuinely dangerous rather than merely slow"
+     ],
+     "lengthM": null,
+     "station": "The last of the rappels into the heather benches. From here downclimb the heather to reach the next station."
+    },
+    {
+     "n": 6,
+     "anchor": "rap-sling anchor, East Ridge crest",
+     "hazards": [
+      "aim straight at the col; lines that look more inviting trend away from it and cliff out, forcing a reversal late in the day"
+     ],
+     "lengthM": null,
+     "station": "A slightly hidden station below the heather benches — look for it before committing to more heather downclimbing, because it is easy to walk past."
+    },
+    {
+     "n": 7,
+     "pull": "60m. Counts for the whole ridge vary widely with how much is downclimbed — anywhere from two rappels to eight is reported for the same line.",
+     "notes": "Final rappel of the sequence, reaching the Cascade-Johannesburg col.",
+     "anchor": "rap-sling anchor, East Ridge crest, above C-J col",
+     "hazards": [
+      "the col sits at the head of the C-J couloir, which is a documented rock and icefall path — do not linger there and do not treat descending it as the easy way out",
+      "summit to col alone runs three to five hours, so parties routinely reach this last rappel at dusk with the long traverse out still ahead of them"
+     ],
+     "lengthM": null,
+     "station": "The final rappel, dropping below the heather benches onto moderately angled slabs directly above the Cascade-Johannesburg col."
+    }
+   ],
+   "rappel_count_note": "Not specifically documented for this route; the route's own beta says parties generally top out and descend via Doug's Direct (a non-rappel traverse) or by rappelling the East Ridge to the Cascade-Johannesburg (C-J) col, which is well documented for Johannesburg's other technical routes as roughly 7 single-rope rappels on rap-sling anchors down the ridge crest. Per-rappel lengths are not individually documented, so none are given here — plan on typical single-rope-length rappels; treat this as shared-route beta, not confirmed 1963-route-specific detail.",
+   "rack": [
+    "Small-to-medium alpine rack to 3in",
+    "Light nut set",
+    "10+ runners/slings",
+    "10 alpine draws",
+    "Ice axe, crampons for the couloir/glacier approach",
+    "Single dynamic rope"
+   ],
+   "features": [
+    "Sustained",
+    "Exposed",
+    "Committing",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "loop",
+   "approach_variants": [
+    {
+     "name": "Straight off the road end: the C-J couloir to the hanging glacier, then the leftmost rib",
+     "notes": "This is one of the shortest approaches in the range and one of the least forgiving. From the Cascade Pass trailhead at the end of Cascade River Road near 3,600 ft, walk a short way back down the road, descend a dirt embankment, ford or cross the infant Cascade River, and cross the terminal moraine and snowfield. Serious ground starts around 3,500 ft — you are on the route within an hour of the car.\n\nClimb PARTWAY up the Cascade-Johannesburg couloir to the hanging glacier on the RIGHT, then take the leftmost rib to the summit. Twelve pitches, about 4,000 ft.\n\nThe descent is a separate expedition: the East Ridge's loose 3rd and 4th class gendarme ledges to the Cascade-Johannesburg col, then either the couloir or 'Doug's Direct' — beneath the Triplets buttress, sidehilling steep heather, across Mixup Peak's north ridge and down to the Cache Glacier. Parties have taken four and a half to nine hours from the col.",
+     "season": "Late June through September, once the road is open and the lower couloir approach holds consolidated snow",
+     "hazards": [
+      "Hanging glaciers above the route — the Sill Glacier among them — that release ice and rock; parties describe rocks and ice bouncing for three or four seconds at a time",
+      "The mountain's standing reputation for rockfall, with loose rock reported across trip reports and a documented near-miss on a 2020 descent",
+      "Steep 45-60 degree snow on approach and descent with real fall consequence — one party found the heather descent the most dangerous part of the trip",
+      "A Cascade River ford at the very start, which rises through the day",
+      "A routefinding-intensive descent with suspect rappel anchors, and a history of parties returning a day or two late"
+     ],
+     "baseFinding": "THE TEST FOR THIS ROUTE IS WHETHER YOU ARE TOUCHING VEGETATION, AND IT IS THE CLEANEST DISCRIMINATOR ON THE WHOLE FACE. This side of Johannesburg carries at least five named lines within a few hundred metres of each other, and most of them start with hundreds of feet of vertical bushwhacking — alder, turf, tree roots, tunnelling through near-vertical pines. THIS ROUTE DOES NOT. Its own published description ends with the words no bush climbing. IF YOU ARE PULLING ON TREES OR HEATHER TO MAKE UPWARD PROGRESS, YOU ARE ON THE NORTHEAST RIB OR THE NORTHEAST BUTTRESS, NOT ON THIS.\n\nSO THE SEQUENCE IS: STAY IN THE COULOIR. Do not break out onto rock low down. Climb the Cascade-Johannesburg couloir until a HANGING GLACIER appears on your RIGHT — that glacier is the landmark, and it is what you leave the couloir for. The Northeast Rib lines leave the couloir far lower, before it narrows.\n\nFROM THE HANGING GLACIER, TAKE THE LEFTMOST RIB. That is the whole route-finding instruction and the word that matters is leftmost. Several rib features present themselves at that shelf; the correct one is the far left of them.\n\nORIENT YOURSELF ON THE FACE AS A WHOLE BEFORE YOU START, BECAUSE IT IS CROWDED: running WEST to EAST across it the order is the Northeast Rib lines, then a route in a vertical cleft with a waterfall, then the Northeast Buttress. The Cascade-Johannesburg couloir is the broad snow line that separates Johannesburg from Cascade Peak, and this route uses it as a stairway rather than climbing it to the col.\n\nAND KNOW WHAT THE COULOIR ITSELF IS: it is the original 1938 line and the most popular one, finishing at the col rather than on any rib. If you are still in the snow at the top, you never left for the rib."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 3400,
+     "name": "Johannesburg Camp",
+     "role": "main",
+     "type": "camp",
+     "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Johannesburg Couloir, Cascade Peak, and any pre-dawn start where you want to be at the road end the night before. If it is full, Marble Creek and Mineral Park down the Cascade River Road are the car campgrounds, at the cost of driving the rough section twice.",
+     "water": "A creek runs beside the sites and normally holds water through the season, being fed by drainage off the north side of Johannesburg Mountain rather than by a single small snowfield.",
+     "permit": "NPS wilderness permit required even though the camp is minutes from the car; Cascade River Road permits are issued in person at Marblemount, part reservable on Recreation.gov and part held for walk-ups. Approved bear-resistant food storage is required.",
+     "capacity": "Three small primitive sites, so it is easily filled by one or two parties."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

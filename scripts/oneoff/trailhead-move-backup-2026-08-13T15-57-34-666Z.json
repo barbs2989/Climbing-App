@@ -1,0 +1,3066 @@
+{
+  "wa_andersons_thumb_standard": [
+    {
+      "lat": 47.703671,
+      "lng": -123.314173,
+      "elev": 3527,
+      "name": "Honeymoon Meadows",
+      "note": "Forested backcountry camp with reliable creek water; the West Fork ford here can run high and hazardous in spring or after heavy rain, and mosquitoes are thick in summer.",
+      "type": "Water",
+      "distMi": 14.15
+    },
+    {
+      "lat": 47.6961,
+      "lng": -123.3265,
+      "elev": 4464,
+      "name": "Anderson Pass",
+      "note": "Trail junction where the West Fork Dosewallips and East Fork Quinault routes cross; the Anderson Pass Shelter (Camp Siberia) sits just below at roughly 4,180 ft.",
+      "type": "Junction",
+      "distMi": 16
+    },
+    {
+      "lat": 47.701764,
+      "lng": -123.330884,
+      "elev": 5100,
+      "name": "Anderson Tarn high camp",
+      "note": "Small tarn camp reached via a steep mile of wildflower slopes above the pass; last reliable camp before committing to the glacier.",
+      "type": "Campsite",
+      "distMi": 17
+    },
+    {
+      "lat": 47.710261,
+      "lng": -123.337461,
+      "elev": 6500,
+      "name": "Flypaper Pass",
+      "note": "Gain point onto the Eel Glacier via a snow finger, named for the dark rocks scattered across the ice below; the finger typically melts out by late summer, so climb it early season.",
+      "type": "Junction",
+      "distMi": 18.5
+    },
+    {
+      "lat": 47.713093,
+      "lng": -123.339653,
+      "elev": 6650,
+      "name": "Eel Glacier bergschrund / headwall",
+      "note": "Downward traverse around a rock buttress onto the upper Eel Glacier; the bergschrund opens wide late-season and glacier recession has steepened this slope to 40+ degrees in spots.",
+      "type": "Hazard",
+      "distMi": 19
+    },
+    {
+      "lat": 47.7434,
+      "lng": -123.2033,
+      "elev": 1600,
+      "name": "West Fork Dosewallips Trailhead (Dose Forks)",
+      "note": "Current DB value (47.7413,-123.0474) is misplaced near the Dosewallips Road washout gate off Hwy 101, ~8-9 trail miles short of the real trailhead.",
+      "type": "Trailhead",
+      "elevFt": 1600
+    },
+    {
+      "lat": 47.7211,
+      "lng": -123.3317,
+      "elev": 7330,
+      "name": "Mount Anderson summit",
+      "type": "Summit",
+      "elevFt": 7330
+    }
+  ],
+  "wa_boston_peak_southeast_face": [
+    {
+      "lat": 48.492,
+      "lng": -121.065,
+      "elev": 6200,
+      "name": "Boston Basin",
+      "type": "Campsite",
+      "distMi": 3,
+      "elevFt": 6200
+    },
+    {
+      "lat": 48.4935,
+      "lng": -121.04,
+      "elev": 8200,
+      "name": "Sahale-Boston col",
+      "type": "col",
+      "distMi": 4.2,
+      "elevFt": 8200
+    },
+    {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "type": "Junction",
+      "distMi": 4.2,
+      "elevFt": 5392
+    },
+    {
+      "lat": 48.48055,
+      "lng": -121.07979,
+      "elev": 3200,
+      "name": "Boston Basin Trailhead",
+      "note": "Small pullout on Cascade River Road, mile ~21.7, opposite Johannesburg Mountain. Mountaineers.org lists this route as 'Boston Peak/Southeast Face via Quien Sabe Glacier' — the SE Face is reached by climbing up from Boston Basin high camp toward the Sahale/Quien Sabe Glacier area and traversing to the face, not via a separate road trailhead. Existing DB value (48.475,-121.075) was close but imprecise; corrected to the sourced pullout location.",
+      "type": "Trailhead",
+      "elevFt": 3200
+    },
+    {
+      "lat": 48.49542,
+      "lng": -121.036161,
+      "elev": 8894,
+      "name": "Boston Peak summit",
+      "type": "Summit",
+      "elevFt": 8894
+    }
+  ],
+  "wa_boston_peak_west_face": [
+    {
+      "lat": 48.49555,
+      "lng": -121.03709,
+      "name": "West Face route start",
+      "type": "route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.4841,
+      "lng": -121.05665,
+      "elev": 6400,
+      "name": "Winter approach angle point (~6,400 ft)",
+      "type": "approach",
+      "distMi": null,
+      "elevFt": 6400
+    },
+    {
+      "lat": 48.4954,
+      "lng": -121.0362,
+      "elev": 8894,
+      "name": "Boston Peak Summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 8894
+    },
+    {
+      "lat": 48.49261,
+      "lng": -121.11761,
+      "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+      "type": "Trailhead"
+    }
+  ],
+  "wa_soviet_route": [
+    {
+      "lat": 48.2142371,
+      "lng": -120.8541992,
+      "elev": 3956,
+      "name": "Hart Lake",
+      "note": "Reliable, ice-cold water source and the last easy camp option before the route's steep terraces begin, per Cascade Alpine Guide beta.",
+      "type": "Water",
+      "distMi": 3.5
+    },
+    {
+      "lat": 48.220816,
+      "lng": -120.857538,
+      "elev": 5500,
+      "name": "Rock and heather terraces",
+      "note": "Steep, loose rock-and-heather terraces gain most of the ~3,000 ft to high camp; exposed Class 3-4 scrambling in spots.",
+      "type": "Junction",
+      "distMi": 4.3
+    },
+    {
+      "lat": 48.227634,
+      "lng": -120.860998,
+      "elev": 7100,
+      "name": "High camp near North Star-Bonanza pass (~7,100 ft)",
+      "note": "Flat, parklike camp with water available, about 2.5 hours above Hart Lake, just south of the pass between North Star Mountain and Bonanza's Southwest Peak.",
+      "type": "Campsite",
+      "distMi": 5.3
+    },
+    {
+      "lat": 48.228486,
+      "lng": -120.861431,
+      "elev": 7300,
+      "name": "Buttress base",
+      "note": "Under an hour across talus from camp to the start of the route, roughly 60 ft above the buttress's lowest point; first pitch is a narrow chimney.",
+      "type": "Junction",
+      "distMi": 5.6
+    },
+    {
+      "lat": 48.232747,
+      "lng": -120.863593,
+      "elev": 8300,
+      "name": "Crux pitches, middle third of buttress",
+      "note": "Three sustained pitches of 5.9-5.10a in the middle of the route, the technical crux above a horizontal bypass ledge and cave belay.",
+      "type": "Hazard",
+      "distMi": 6.1
+    },
+    {
+      "lat": 48.237477,
+      "lng": -120.865994,
+      "elev": 9410,
+      "name": "Northeast Ridge traverse to West Peak",
+      "note": "Exposed, gendarmed ridge traverse (~2 hr) from the Southwest Peak to the West Peak before dropping off the NW side via talus and two ~200-ft rappels.",
+      "type": "Hazard",
+      "distMi": 6.8
+    },
+    {
+      "lat": 48.199335,
+      "lng": -120.774078,
+      "elev": 3215,
+      "name": "Holden Village / Railroad Creek Trailhead",
+      "note": "Via ferry+bus to Holden Village, then Railroad Creek Trail ~3.5mi to Hart Lake (3,956ft), then off-trail up rock/heather terraces ~3,000ft to a camp near the 7,100ft pass between Bonanza and North Star Peak, then talus to the buttress base.",
+      "type": "Trailhead",
+      "elevFt": 3215
+    },
+    {
+      "lat": 48.235,
+      "lng": -120.8722,
+      "elev": 9320,
+      "name": "Bonanza Peak - Southwest Peak (estimated position)",
+      "type": "Summit",
+      "elevFt": 9320
+    }
+  ],
+  "wa_buckhorn_marmot_pass": [
+    {
+      "lat": 47.825049,
+      "lng": -123.122453,
+      "elev": 6000,
+      "name": "Marmot Pass",
+      "type": "Junction",
+      "distMi": 5,
+      "elevFt": 6000
+    },
+    {
+      "lat": 47.82784,
+      "lng": -123.04064,
+      "elev": 2600,
+      "name": "Upper Big Quilcene Trailhead (Trail #833.1)",
+      "note": "Reached via FR 27 (Big Quilcene River Road) then FR 2750, ~4.75 mi to trailhead; the existing DB trailhead coordinate is wrong, it sits near Marmot Pass rather than the actual road trailhead",
+      "type": "Trailhead",
+      "elevFt": 2600
+    },
+    {
+      "lat": 47.825574,
+      "lng": -123.121867,
+      "elev": 6988,
+      "name": "Buckhorn Mountain (Southwest Summit)",
+      "type": "Summit",
+      "elevFt": 6988
+    }
+  ],
+  "wa_burgundy_spire_north_face": [
+    {
+      "lat": 48.55432294525177,
+      "lng": -120.59196946096063,
+      "name": "Burgundy Col",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.5514,
+      "lng": -120.6309,
+      "elev": 4310,
+      "name": "SR-20 Pullout (Burgundy Col climbers' trail)",
+      "note": "Same pullout as the other two routes; directly corroborated by this route's own recorded GPS track (trackStart 48.55143,-120.63097). The existing DB trailhead ('Early Winters Creek Trailhead', 48.532,-120.61) appears to be a data error — it is ~1.5 mi from this location and unsupported by any source or by the route's own track.",
+      "type": "Trailhead",
+      "elevFt": 4310
+    },
+    {
+      "lat": 48.55186,
+      "lng": -120.59014,
+      "elev": 8400,
+      "name": "Burgundy Spire Summit",
+      "type": "Summit",
+      "elevFt": 8400
+    }
+  ],
+  "wa_chianti_spire_east_face": [
+    {
+      "lat": 48.554323,
+      "lng": -120.591969,
+      "elev": 7900,
+      "name": "Burgundy Col",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 7900
+    },
+    {
+      "lat": 48.55186,
+      "lng": -120.59014,
+      "name": "Chianti Spire / East Face (Rebel Yell) area",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.554345,
+      "lng": -120.631061,
+      "name": "SR-20 Pullout near Milepost 166 (Burgundy Col approach)",
+      "note": "Unmarked highway pullout ~2-4 miles east of the Washington Pass hairpin turn; climbers descend to Early Winters Creek then switchback up to Burgundy Col. Coordinate taken from this route's recorded GPS track start, which matches sourced approach descriptions geographically. Existing DB value ('Early Winters Creek Trailhead') is a likely mismatch with a different, unrelated hiking trailhead.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.55186,
+      "lng": -120.59014,
+      "elev": 8420,
+      "name": "Chianti Spire Summit",
+      "type": "Summit",
+      "elevFt": 8420
+    }
+  ],
+  "wa_chimney_rock_east_face_direct": [
+    {
+      "lat": 47.50589,
+      "lng": -121.28827,
+      "name": "East Face Direct - base of climb",
+      "type": "route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 47.509135,
+      "lng": -121.285965,
+      "elev": 7727,
+      "name": "Chimney Rock (Main/Central Summit)",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7727
+    },
+    {
+      "lat": 47.435,
+      "lng": -121.1855,
+      "name": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+      "type": "Trailhead"
+    }
+  ],
+  "wa_dark_peak_dark_glacier_route": [
+    {
+      "lat": 48.25889,
+      "lng": -120.88389,
+      "name": "Dark Glacier",
+      "type": "Feature",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.2383,
+      "lng": -120.8664,
+      "elev": 9516,
+      "name": "Bonanza Peak (adjacent landmark)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 9516
+    },
+    {
+      "lat": 48.3802,
+      "lng": -120.8395,
+      "elev": 1700,
+      "name": "High Bridge / Agnes Creek Trailhead (Stehekin Valley Road)",
+      "note": "Reached only via Lady of the Lake ferry from Chelan to Stehekin (no road access), then NPS shuttle bus up-valley to High Bridge; hike Agnes Creek Trail ~5mi to Five Mile/Swamp Creek Camp, then follow the abandoned, overgrown Swamp Creek Trail/drainage up to the Dark Glacier.",
+      "type": "Trailhead",
+      "elevFt": 1700
+    },
+    {
+      "lat": 48.254643,
+      "lng": -120.881869,
+      "elev": 8504,
+      "name": "Dark Peak Summit",
+      "type": "Summit",
+      "elevFt": 8504
+    }
+  ],
+  "wa_narcos": [
+    {
+      "lat": 48.54975,
+      "lng": -120.6435,
+      "elev": 6263,
+      "name": "Cutthroat Creek Wall / Little Liberty Bell",
+      "note": "No established trail; hike through woods then traverse rocky benches to the wall base, ~1-1.5 hrs. Narcos is a 5.9 trad, PG13 line.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 48.5564,
+      "lng": -120.6547,
+      "name": "Cutthroat Creek Trailhead",
+      "note": "Turn off Hwy 20 ~4.4-4.5mi east of Washington Pass onto FR-400 (signed for Cutthroat Lake/Creek Trail), drive ~1mi to trailhead lot (restrooms). From the trailhead, leave trail and bushwhack/hike up through open forest (no maintained trail) toward the wall, gaining elevation and traversing left; ~1-1.5hr to the base. This matches the existing DB entry exactly.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.54975,
+      "lng": -120.6435,
+      "elev": 6263,
+      "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+      "type": "Summit",
+      "elevFt": 6263
+    }
+  ],
+  "wa_wright_pond": [
+    {
+      "lat": 48.54975,
+      "lng": -120.6435,
+      "elev": 6263,
+      "name": "Cutthroat Creek Wall / Little Liberty Bell",
+      "note": "No established trail; hike through woods then traverse rocky benches to the wall base, ~1-1.5 hrs. Wright-Pond is a 5.11a/b trad, PG13 line.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 48.5564,
+      "lng": -120.6547,
+      "name": "Cutthroat Creek Trailhead",
+      "note": "Same trailhead/approach as Narcos — both routes are on the same small wall, reached via the Cutthroat Creek Trail/FR-400 trailhead off Hwy 20.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.54975,
+      "lng": -120.6435,
+      "elev": 6263,
+      "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+      "type": "Summit",
+      "elevFt": 6263
+    }
+  ],
+  "wa_ahoot": [
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "name": "Minidike wall (Ahoot)",
+      "type": "Junction"
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.5 miles further south on FR 64 past this trailhead, then a short scramble up to Minidike's base.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3712,
+      "name": "Minidike",
+      "type": "Summit",
+      "elevFt": 3712
+    }
+  ],
+  "wa_czech_it_out": [
+    {
+      "lat": 46.1238,
+      "lng": -117.8215,
+      "elev": 3850,
+      "name": "Megadike South",
+      "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.1243,
+      "lng": -117.8218,
+      "elev": 3890,
+      "name": "Megadike (south section)",
+      "type": "Summit",
+      "elevFt": 3890
+    }
+  ],
+  "wa_firearms": [
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3708,
+      "name": "Minidike",
+      "note": "Smaller of the two closely-spaced fins at the core of The Dikes; park ~1.5 mi past the trailhead just after the river bridge, cross the road, scramble down the abutment, and follow the trail downstream on the NW bank.",
+      "type": "Topout",
+      "distMi": 1.5
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "name": "Minidike wall (Firearms)",
+      "type": "Junction"
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.5 miles further south on FR 64 past this trailhead, then a short scramble up to Minidike's base.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3712,
+      "name": "Minidike",
+      "type": "Summit",
+      "elevFt": 3712
+    }
+  ],
+  "wa_heinous_thing": [
+    {
+      "lat": 46.1238,
+      "lng": -117.8215,
+      "elev": 3850,
+      "name": "Megadike South",
+      "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.1243,
+      "lng": -117.8218,
+      "elev": 3890,
+      "name": "Megadike (south section)",
+      "type": "Summit",
+      "elevFt": 3890
+    }
+  ],
+  "wa_internal_combustion": [
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3708,
+      "name": "Minidike",
+      "note": "Smaller of the two closely-spaced fins at the core of The Dikes; park ~1.5 mi past the trailhead just after the river bridge, cross the road, scramble down the abutment, and follow the trail downstream on the NW bank.",
+      "type": "Topout",
+      "distMi": 1.5
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "name": "Minidike wall (Internal Combustion)",
+      "type": "Junction"
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.5 miles further south on FR 64 past this trailhead, then a short scramble up to Minidike's base.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3712,
+      "name": "Minidike",
+      "type": "Summit",
+      "elevFt": 3712
+    }
+  ],
+  "wa_just_for_fun": [
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3708,
+      "name": "Minidike",
+      "note": "Smaller of the two closely-spaced fins at the core of The Dikes; park ~1.5 mi past the trailhead just after the river bridge, cross the road, scramble down the abutment, and follow the trail downstream on the NW bank.",
+      "type": "Topout",
+      "distMi": 1.5
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "name": "Minidike wall (Just For Fun)",
+      "type": "Junction"
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.5 miles further south on FR 64 past this trailhead, then a short scramble up to Minidike's base.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.11857,
+      "lng": -117.82283,
+      "elev": 3712,
+      "name": "Minidike",
+      "type": "Summit",
+      "elevFt": 3712
+    }
+  ],
+  "wa_moe": [
+    {
+      "lat": 46.1238,
+      "lng": -117.8215,
+      "elev": 3850,
+      "name": "Megadike South",
+      "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.1243,
+      "lng": -117.8218,
+      "elev": 3890,
+      "name": "Megadike (south section)",
+      "type": "Summit",
+      "elevFt": 3890
+    }
+  ],
+  "wa_redtail_arete": [
+    {
+      "lat": 46.1238,
+      "lng": -117.8215,
+      "elev": 3850,
+      "name": "Megadike South",
+      "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.1243,
+      "lng": -117.8218,
+      "elev": 3890,
+      "name": "Megadike (south section)",
+      "type": "Summit",
+      "elevFt": 3890
+    }
+  ],
+  "wa_safety_dance": [
+    {
+      "lat": 46.1238,
+      "lng": -117.8215,
+      "elev": 3850,
+      "name": "Megadike South",
+      "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+      "type": "Trailhead",
+      "elevFt": 3400
+    },
+    {
+      "lat": 46.1243,
+      "lng": -117.8218,
+      "elev": 3890,
+      "name": "Megadike (south section)",
+      "type": "Summit",
+      "elevFt": 3890
+    }
+  ],
+  "wa_dorado_needle_east_ridge": [
+    {
+      "lat": 48.53755,
+      "lng": -121.13436,
+      "name": "Col between Pt. 8386 and Dorado Needle (East Ridge start)",
+      "type": "route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.5136,
+      "lng": -121.1964,
+      "name": "Eldorado Trailhead (Cascade River Road)",
+      "note": "Existing DB value (48.492611,-121.117611) appears incorrect — does not match the confirmed roadside trailhead used by the other three Dorado Needle routes; recommend correcting to this value",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.54972,
+      "lng": -121.13861,
+      "elev": 8440,
+      "name": "Dorado Needle summit",
+      "type": "Summit",
+      "elevFt": 8440
+    }
+  ],
+  "wa_east_mcmillan_spire_west_ridge": [
+    {
+      "lat": 48.727375,
+      "lng": -121.291312,
+      "elev": 1700,
+      "name": "Cairn / Terror Basin Route split",
+      "note": "Cairn marks where the climbers' path leaves the old logging roadbed and angles south of Terror Creek, climbing steeply toward treeline.",
+      "type": "Junction",
+      "distMi": 3.5
+    },
+    {
+      "lat": 48.764392,
+      "lng": -121.28099,
+      "elev": 5800,
+      "name": "Terror Basin Camp",
+      "note": "Gravelly, wildflower-covered basin with established tent sites and running snowmelt streams — the standard high camp shared by parties climbing any of the McMillan Spires.",
+      "type": "Campsite",
+      "distMi": 7.4
+    },
+    {
+      "lat": 48.767245,
+      "lng": -121.281724,
+      "elev": 6200,
+      "name": "Basin notch above camp",
+      "note": "Notch just above camp gives a view down to Lake Azure and the glaciated cliffs below; from here the route crosses basin slabs and snow benches toward the East-West McMillan col.",
+      "type": "Junction",
+      "distMi": 7.6
+    },
+    {
+      "lat": 48.770178,
+      "lng": -121.282271,
+      "elev": 7400,
+      "name": "Snow gully below East-West McMillan col",
+      "note": "Steep snow/scree gully estimated in the 40-degree range on the approach to the col — crampons and axe essential; this is also the descent line, so watch for rockfall and parties below.",
+      "type": "Hazard",
+      "distMi": 7.8
+    },
+    {
+      "lat": 48.772084,
+      "lng": -121.280199,
+      "elev": 7750,
+      "name": "East-West McMillan Col",
+      "note": "Crux decision point where the steep snow gully and the 4th-class rock ledge variant both top out before the final scramble to the East summit block.",
+      "type": "Junction",
+      "distMi": 8
+    },
+    {
+      "lat": 48.6828,
+      "lng": -121.2693,
+      "elev": 600,
+      "name": "Goodell Creek Trail Trailhead (climbers' access near Upper Group Campground)",
+      "note": "Corrects existing DB point, which is ~1.1km south and appears to mark the campground entrance rather than the actual trail start; new coordinate corroborated by both Trailforks and our recorded GPS track's start point.",
+      "type": "Trailhead",
+      "elevFt": 600
+    },
+    {
+      "lat": 48.774076,
+      "lng": -121.2761191,
+      "elev": 7992,
+      "name": "East McMillan Spire Summit",
+      "type": "Summit",
+      "elevFt": 7992
+    }
+  ],
+  "wa_east_twin_needle_south_route": [
+    {
+      "lat": 48.720424186046515,
+      "lng": -121.27755162790697,
+      "elev": 2100,
+      "name": "Terror Creek logjam crossing",
+      "note": "Climbers' path fades to bushwhack here; cross Terror Creek on a large logjam (last reliable water before the steep, cliffy push up toward the Barrier).",
+      "type": "Water",
+      "distMi": 3.8
+    },
+    {
+      "lat": 48.745203255813955,
+      "lng": -121.28299348837209,
+      "elev": 6100,
+      "name": "The Barrier ridge crossing",
+      "note": "Loose, exposed scrambling (harder late-season without snow cover) gains this ridge that separates the Terror Creek drainage from Crescent Creek Basin.",
+      "type": "Junction",
+      "distMi": 6.3
+    },
+    {
+      "lat": 48.752141395348836,
+      "lng": -121.28451720930232,
+      "elev": 6400,
+      "name": "Crescent Creek Basin (Chopping Block Camp)",
+      "note": "Established bivy sites on the saddle below Mount Terror, used as base camp for both Twin Needles; talus/scree basin below the south-facing summit gullies.",
+      "type": "Campsite",
+      "distMi": 7
+    },
+    {
+      "lat": 48.76007069767442,
+      "lng": -121.28625860465115,
+      "elev": 7400,
+      "name": "Eye Col",
+      "note": "Class-5 chockstone squeeze gains the notch between the summit gullies shared with West Twin Needle; rope up for this section.",
+      "type": "Junction",
+      "distMi": 7.8
+    },
+    {
+      "lat": 48.68276,
+      "lng": -121.26928,
+      "elev": 600,
+      "name": "Goodell Creek Trailhead (Cross-Country Zone Access, Upper Goodell Creek)",
+      "note": "Confirmed by AAC Publications ('Lower Goodell Creek trailhead' used for East Twin Needle North Buttress), Wikipedia ('Goodell Creek Cross-Country Zone Access Trailhead', RT 19.5 mi, 600-7936ft), and a detailed trip report (onehikeaweek.com) describing the same Goodell Creek Trail -> Terror Creek ford -> The Barrier -> Crescent Creek Basin -> Eye Col approach used for all Twin Needles routes. Existing DB coordinate matches the documented trailhead location near the Upper Goodell Creek Group Camp/gravel-pit parking area and was not changed.",
+      "type": "Trailhead",
+      "elevFt": 600
+    },
+    {
+      "lat": 48.7767,
+      "lng": -121.3115,
+      "elev": 7840,
+      "name": "East Twin Needle",
+      "note": "Wikipedia (citing Twin Needles as a pair) gives one shared coordinate for the complex, 48.77667N/121.31250W, and states the peaks lie ~0.55 mi west of Mount Terror (48.7743N/121.2996W, per Wikipedia's Mount Terror article) - the existing DB point at 48.768,-121.288 is southeast of Terror, the wrong direction, and appears incorrect. A trip report (onehikeaweek.com) independently confirms East Twin Needle sits atop 'Eye Col' immediately adjacent to West Twin Needle. No source gives East and West Twin Needle fully separate coordinates, so this point is nudged slightly east of the shared Wikipedia coordinate toward Eye Col/Mount Terror to approximate the 'East' summit specifically; treat it as an approximation good to a few hundred meters, not an exact surveyed point.",
+      "type": "Summit",
+      "elevFt": 7840
+    }
+  ],
+  "wa_glacier_view_temple": [
+    {
+      "lat": 47.3651,
+      "lng": -121.31359,
+      "name": "Glacier View Temple (East Face)",
+      "type": "Junction"
+    },
+    {
+      "lat": 47.3651,
+      "lng": -121.31359,
+      "elev": 4601,
+      "name": "East Face (Keechelus Ridge)",
+      "type": "Crag",
+      "distMi": null,
+      "elevFt": 4601
+    },
+    {
+      "lat": 47.365,
+      "lng": -121.31444,
+      "elev": 4700,
+      "name": "Keechelus Ridge parking area (off FR 4934)",
+      "note": "I-90 Exit 54, north on FR 4832 ~4 mi, left on FR 4934, pass Mount Margaret Trailhead, continue ~3 mi to small parking area on right; ~25-30 min uphill hike/scramble to the East Face wall. Shared by all East Face routes including Project Crack.",
+      "type": "Trailhead",
+      "elevFt": 4700
+    },
+    {
+      "lat": 47.3651,
+      "lng": -121.31359,
+      "elev": 4700,
+      "name": "East Face wall top-out, Keechelus Ridge",
+      "note": "Not a mountain summit — single-pitch crag; climbers top out directly above the route at the cliff edge, essentially the same location as the crag itself.",
+      "type": "Summit",
+      "elevFt": 4700
+    }
+  ],
+  "wa_project_crack": [
+    {
+      "lat": 47.3651,
+      "lng": -121.31359,
+      "elev": 4601,
+      "name": "East Face (Keechelus Ridge)",
+      "type": "Crag",
+      "distMi": null,
+      "elevFt": 4601
+    },
+    {
+      "lat": 47.365,
+      "lng": -121.31444,
+      "elev": 4700,
+      "name": "Keechelus Ridge parking area (off FR 4934)",
+      "note": "Same shared approach as all East Face routes: I-90 Exit 54, FR 4832, FR 4934, ~25-30 min hike to the wall.",
+      "type": "Trailhead",
+      "elevFt": 4700
+    },
+    {
+      "lat": 47.3651,
+      "lng": -121.31359,
+      "elev": 4700,
+      "name": "East Face wall top-out, Keechelus Ridge",
+      "note": "Not a mountain summit — single-pitch crag; top-out is directly above the route line.",
+      "type": "Summit",
+      "elevFt": 4700
+    }
+  ],
+  "wa_plan_9_from_outer_space": [
+    {
+      "lat": 48.7716,
+      "lng": -121.28356,
+      "elev": 7337,
+      "name": "Ed Wood Memorial Buttress",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 7337
+    },
+    {
+      "lat": 48.673,
+      "lng": -121.267,
+      "elev": 600,
+      "name": "Goodell Creek Trailhead (Terror Basin / Crescent Creek Basin approach)",
+      "note": "Standard access point for all Southern Pickets objectives via Hwy 20 near Newhalem; not route-specific beta, but no other approach is documented for this remote buttress.",
+      "type": "Trailhead",
+      "elevFt": 600
+    },
+    {
+      "lat": 48.7716,
+      "lng": -121.28356,
+      "elev": 7337,
+      "name": "Ed Wood Memorial Buttress",
+      "type": "Summit",
+      "elevFt": 7337
+    },
+    {
+      "lat": 48.7716,
+      "lng": -121.28356,
+      "name": "Ed Wood Memorial Buttress / Plan 9 from Outer Space start",
+      "type": "Route",
+      "distMi": null,
+      "elevFt": null
+    }
+  ],
+  "wa_junior_s_farm": [
+    {
+      "lat": 47.89076,
+      "lng": -123.13832,
+      "elev": 4800,
+      "name": "The Full Montey (Junior's Farm topout)",
+      "note": "8-pitch sport/alpine route (5.9) at Tyler Peak Crags in Olympic National Forest; topout elevation is approximate.",
+      "type": "Topout",
+      "distMi": 2.5
+    },
+    {
+      "lat": 47.89076,
+      "lng": -123.13832,
+      "elev": 4916,
+      "name": "The Full Montey / Junior's Farm base area",
+      "type": "Crag",
+      "distMi": null,
+      "elevFt": 4916
+    },
+    {
+      "lat": 47.8823,
+      "lng": -123.1436,
+      "name": "Tyler Peak Trailhead",
+      "note": "Unmarked trailhead off FR 2870/2860 (turn at spur sign '270'), ascends a boulder field to the Mossness Wall; same approach used for The Full Montey / Junior's Farm.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.9028,
+      "lng": -123.1482,
+      "elev": 6364,
+      "name": "Tyler Peak",
+      "type": "Summit",
+      "elevFt": 6364
+    }
+  ],
+  "wa_blood_sport": [
+    {
+      "lat": 47.442,
+      "lng": -121.411,
+      "elev": 3400,
+      "name": "Blood Sport crag",
+      "note": "Short (~50') isolated crag low on the mountain, just around the corner from the main West Face, near the base of South Rib.",
+      "type": "Topout",
+      "distMi": 0.6
+    },
+    {
+      "lat": 47.4454,
+      "lng": -121.4235,
+      "name": "Alpental Ski Area / Snow Lake Trailhead parking lot",
+      "note": "Existing DB trailhead (47.4453,-121.4234) is essentially correct — matches published Snow Lake TH coordinates. Blood Sport is reached by heading up the boot path/old Sahale ski track from this lot and traversing east along the base of Guye Peak's south rib (Mountain Project: 'passed when traversing east along the base of the South Rib route').",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.4415,
+      "lng": -121.4093,
+      "elev": 5168,
+      "name": "Guye Peak",
+      "type": "Summit",
+      "elevFt": 5168
+    }
+  ],
+  "wa_ephemeral": [
+    {
+      "lat": 48.51379,
+      "lng": -120.64526,
+      "elev": 5500,
+      "name": "Ice Box right side topout",
+      "note": "Corrected coordinate - matches this area's own registered location (Ice Box right side, Hairpin Crags, Washington Pass) and the real Ice Box left side crag used by nearby routes (Iceman, Route C, Route D) in this same database.",
+      "type": "Topout",
+      "distMi": 0.2
+    },
+    {
+      "lat": 48.51379,
+      "lng": -120.64526,
+      "elev": 5305,
+      "name": "Ice Box right side / Ephemeral base",
+      "type": "Crag",
+      "distMi": null,
+      "elevFt": 5305
+    },
+    {
+      "lat": 48.51429,
+      "lng": -120.64284,
+      "name": "Hairpin Turn pullout (Hwy 20 roadside parking, Washington Pass)",
+      "note": "Roadside pullout at the highway's hairpin switchback just east of Washington Pass; no permit required. This is the Mountain Project-listed coordinate for Hairpin Crags itself ('park at the hairpin' is the entire approach instruction) — there is no separately surveyed parking pin distinct from the crag location.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.51379,
+      "lng": -120.64526,
+      "elev": 5490,
+      "name": "Ice Box (right side) formation, Hairpin Crags",
+      "note": "Not a distinct mountain summit — a slab/gully rock formation that routes top out on. Elevation is an estimate carried over from the adjacent, similarly-elevationed Ice Box left side listing (5,490 ft) since Mountain Project does not give a separate elevation for the right side.",
+      "type": "Summit",
+      "elevFt": 5490
+    }
+  ],
+  "wa_j_tnar": [
+    {
+      "lat": 47.77748,
+      "lng": -121.57543,
+      "elev": 5500,
+      "name": "Jötunheim Wall Topout (Middle Peak)",
+      "note": "16-pitch, Grade VI big wall (5.9 A3+) with bolted anchors and portaledge bivies; best climbed late July-early Sept before snowmelt turns pitches into waterfalls.",
+      "type": "Topout",
+      "distMi": 5
+    },
+    {
+      "lat": 47.78194,
+      "lng": -121.57028,
+      "elev": 2526,
+      "name": "Lake Serene",
+      "type": "Junction",
+      "distMi": 3.6,
+      "elevFt": 2526
+    },
+    {
+      "lat": 47.77748,
+      "lng": -121.57543,
+      "elev": 3765,
+      "name": "Jötunheim (North Norwegian Buttress base cirque)",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 3765
+    },
+    {
+      "lat": 47.78021,
+      "lng": -121.57762,
+      "elev": 4801,
+      "name": "North Norwegian Buttress",
+      "type": "Feature",
+      "distMi": null,
+      "elevFt": 4801
+    },
+    {
+      "lat": 47.80925,
+      "lng": -121.57409,
+      "elev": 600,
+      "name": "Lake Serene Trailhead (Mount Index Rd / Trail 1068)",
+      "note": "Existing DB value confirmed exact match to sourced coordinates. Hike the Lake Serene trail then traverse talus/scree around the lake's south/west side into the Norwegian Buttress cirque; this is the only approach used for all routes in this cirque (Jötnar, Mjolnir, Bluebell, etc.).",
+      "type": "Trailhead",
+      "elevFt": 600
+    },
+    {
+      "lat": 47.78063,
+      "lng": -121.58179,
+      "elev": 5406,
+      "name": "Middle Peak (Mount Index)",
+      "type": "Summit",
+      "elevFt": 5406
+    }
+  ],
+  "wa_northeast_ridge_1963_route": [
+    {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Maintained trail tops out here; leave it for the climbers' path toward Johannesburg.",
+      "type": "Junction",
+      "distMi": 3.6
+    },
+    {
+      "lat": 48.4655,
+      "lng": -121.079,
+      "elev": 4300,
+      "name": "Cascade River Crossing / Terminal Moraine",
+      "note": "Off-trail descent and ford of the infant Cascade River below the terminal moraine.",
+      "type": "Hazard",
+      "distMi": 4.3
+    },
+    {
+      "lat": 48.4665,
+      "lng": -121.085,
+      "elev": 5200,
+      "name": "Base of C-J Couloir",
+      "note": "Gain rock just before the Cascade-Johannesburg couloir narrows; the NE Ridge (1963) climbs the rib right of the couloir.",
+      "type": "Junction",
+      "distMi": 4.8
+    },
+    {
+      "lat": 48.4665,
+      "lng": -121.088,
+      "elev": 6800,
+      "name": "Hanging Glacier Traverse",
+      "note": "Exposed rising traverse beneath Johannesburg's hanging glaciers; rockfall and icefall hazard.",
+      "type": "Hazard",
+      "distMi": 5.5
+    },
+    {
+      "lat": 48.4755,
+      "lng": -121.075,
+      "elev": 3600,
+      "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+      "note": "Corrects existing DB pin, which sits ~1.2km southeast of the actual NPS trailhead parking loop; two independent sources (WTA, 10adventures) agree closely on this coordinate.",
+      "type": "Trailhead",
+      "elevFt": 3600
+    },
+    {
+      "lat": 48.46472,
+      "lng": -121.09194,
+      "elev": 8066,
+      "name": "Johannesburg Mountain",
+      "type": "Summit",
+      "elevFt": 8066
+    }
+  ],
+  "wa_klawatti_peak_sw_buttress": [
+    {
+      "lat": 48.533,
+      "lng": -121.129,
+      "elev": 7600,
+      "name": "Eldorado (East Ridge) camp",
+      "type": "Campsite",
+      "distMi": 5.5
+    },
+    {
+      "lat": 48.5529,
+      "lng": -121.1062,
+      "elev": 7900,
+      "name": "Klawatti camp / col",
+      "note": "Camp south of Klawatti near the col dividing the Klawatti and McAllister Glaciers; SW Buttress start is minutes away.",
+      "type": "Junction",
+      "distMi": 6.9
+    },
+    {
+      "lat": 48.5136,
+      "lng": -121.1964,
+      "elev": 2100,
+      "name": "Eldorado Trailhead (Cascade River Road, Mile 20)",
+      "note": "Existing DB trailhead (48.4926,-121.1176) is likely wrong — should be corrected to this shared Eldorado Creek Trailhead, same as the SE Face route.",
+      "type": "Trailhead",
+      "elevFt": 2100
+    },
+    {
+      "lat": 48.55444,
+      "lng": -121.10444,
+      "elev": 8485,
+      "name": "Klawatti Peak",
+      "type": "Summit",
+      "elevFt": 8485
+    }
+  ],
+  "wa_liberty_cap_ptarmigan_ridge_finish": [
+    {
+      "lat": 46.8628,
+      "lng": -121.7746,
+      "elev": "14097",
+      "name": "Liberty Cap",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": "14097"
+    },
+    {
+      "lat": 46.8528857,
+      "lng": -121.7603744,
+      "elev": "14389",
+      "name": "Columbia Crest (historic high point; overtaken by the crater's southwest rim per an Aug. 2024 GPS survey as the icecap thins)",
+      "type": "landmark",
+      "distMi": null,
+      "elevFt": "14389"
+    },
+    {
+      "lat": 46.9003,
+      "lng": -121.6581,
+      "elev": 9400,
+      "name": "Camp Schurman (Emmons-Winthrop descent)",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": 9400
+    },
+    {
+      "lat": 46.9336,
+      "lng": -121.8654,
+      "name": "Mowich Lake Trailhead",
+      "type": "Trailhead"
+    }
+  ],
+  "wa_spontaneous_distraction": [
+    {
+      "lat": 48.53569,
+      "lng": -120.62207,
+      "elev": 6386,
+      "name": "Le Petit Cheval Upper Mountain",
+      "note": "Shared upper section for Le Petit Cheval's multi-pitch routes.",
+      "type": "Topout",
+      "distMi": 1.5
+    },
+    {
+      "lat": 48.538,
+      "lng": -120.625,
+      "name": "Milepost 165 Pullout, SR-20",
+      "note": "Climbers' trail starts at the far west end of the Milepost 165 pullout, crosses Early Winters Creek, then traverses an avalanche path (three fixed-rope sections) toward the base of the formation; ~1.5hr approach. A faster alternative uses the gully paralleling Spontaneity Arete.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.53569,
+      "lng": -120.62207,
+      "elev": 6386,
+      "name": "Le Petit Cheval",
+      "type": "Summit",
+      "elevFt": 6386
+    }
+  ],
+  "wa_tooth_and_claw": [
+    {
+      "lat": 48.5144,
+      "lng": -120.6575,
+      "elev": 7560,
+      "name": "Lexington Tower East Shoulder (topout)",
+      "note": "Confirmed via Mountain Project - this route climbs Lexington Tower's East Face, Washington Pass. Coordinate is medium confidence (formation-level, from an AI-summarized page fetch rather than a directly visible lat/lon field).",
+      "type": "Topout",
+      "distMi": 0
+    },
+    {
+      "lat": 48.5144,
+      "lng": -120.6575,
+      "name": "Lexington Tower / Tooth and Claw (Mountain Project marker)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.521,
+      "lng": -120.644,
+      "name": "Pond pullout near hairpin turn (SR 20), E of Washington Pass — shared start with East Face",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.514154,
+      "lng": -120.65743,
+      "name": "Lexington Tower summit",
+      "type": "Summit"
+    }
+  ],
+  "wa_little_mac_spire_southwest_route": [
+    {
+      "lat": 48.728486,
+      "lng": -121.289238,
+      "elev": 1700,
+      "name": "Goodell Creek Crossings",
+      "note": "Trail fords two branches of Goodell Creek that run high on hot afternoons; a small streamside campsite sits near the second crossing.",
+      "type": "Water",
+      "distMi": 3.5
+    },
+    {
+      "lat": 48.732941,
+      "lng": -121.282053,
+      "elev": 3200,
+      "name": "Terror Creek Cairn / Climbers' Path",
+      "note": "Large cairn and stone arrow mark the turn off the maintained Goodell Creek trail onto the steep, faint climbers' path south of Terror Creek — matches the on-file '~4,000 ft over 2 mi' push.",
+      "type": "Junction",
+      "distMi": 4
+    },
+    {
+      "lat": 48.753404,
+      "lng": -121.267477,
+      "elev": 5200,
+      "name": "Rocky Streambed Source",
+      "note": "Last dependable water on the climbers' path, running in a rocky streambed; the faint tread resumes just upstream.",
+      "type": "Water",
+      "distMi": 6
+    },
+    {
+      "lat": 48.762728,
+      "lng": -121.276516,
+      "elev": 6300,
+      "name": "Terror Basin Notch",
+      "note": "Gap on the east rim of Terror Basin reached via a rising traverse over moderate snow into midsummer; first view down onto the basin and the McMillan/Little Mac group.",
+      "type": "Junction",
+      "distMi": 6.7
+    },
+    {
+      "lat": 48.76947,
+      "lng": -121.282642,
+      "elev": 5800,
+      "name": "Terror Basin Camp",
+      "note": "Shared high camp for the whole McMillan/Terror cluster — flat gravel benches, running water, and rock-walled bivy sites; base for Little Mac, East Mac, and West Mac.",
+      "type": "Campsite",
+      "distMi": 7.4
+    },
+    {
+      "lat": 48.772271,
+      "lng": -121.280567,
+      "elev": 7500,
+      "name": "Loose Rock Below the Summit Block",
+      "note": "Southern Pickets rock is notoriously fractured here; test holds and stagger climbers on the short 5.4 pitch to avoid knocking rock onto partners below.",
+      "type": "Hazard",
+      "distMi": 7.6
+    },
+    {
+      "lat": 48.6828,
+      "lng": -121.269,
+      "elev": 500,
+      "name": "Goodell Creek Trailhead",
+      "note": "Standard, single approach for all Southern Pickets/Terror Basin objectives including Little Mac Spire. Existing DB point (48.6733,-121.2658, 'Goodell Creek Group Campground Trailhead') is ~1.1km south of the actual trail start and appears to be the campground rather than the trailhead itself; corrected coordinate matches the sourced Goodell Creek trailhead location almost exactly.",
+      "type": "Trailhead",
+      "elevFt": 500
+    },
+    {
+      "lat": 48.7737,
+      "lng": -121.2762,
+      "elev": 7680,
+      "name": "Little Mac Spire",
+      "note": "Approximate — no independently surveyed summit coordinate found for this minor Southern Pickets spire; cross-referenced against neighboring McMillan/Terror group summits and the route's recorded approach track to place it as close to the true high point as available sources allow.",
+      "type": "Summit",
+      "elevFt": 7680
+    }
+  ],
+  "wa_traverse_of_mount_index": [
+    {
+      "lat": 47.78194,
+      "lng": -121.57028,
+      "elev": 2526,
+      "name": "Lake Serene (approach basin below North Peak)",
+      "type": "Junction",
+      "distMi": 4.1,
+      "elevFt": 2526
+    },
+    {
+      "lat": 47.8177,
+      "lng": -121.5514,
+      "elev": 1000,
+      "name": "Lake Serene Trailhead (Bridal Veil Falls TH, US-2 near Index, WA)",
+      "note": "Traverse starts 'at the lake' (Lake Serene basin) and climbs the skyline right-to-left, summiting North Peak first then continuing over Middle and Main.",
+      "type": "Trailhead",
+      "elevFt": 1000
+    },
+    {
+      "lat": 47.77453,
+      "lng": -121.58093,
+      "elev": 5338,
+      "name": "Mount Index - North Peak (first of three summits climbed on the traverse)",
+      "type": "Summit",
+      "elevFt": 5338
+    }
+  ],
+  "wa_blood_orgy": [
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Top of Mamie Peak wall",
+      "note": "Blood Orgy is reached by rappel off Woodland Critter Christmas, or via a short 5.10 pitch starting up it; Mamie Peak's true summit (6,108') is easy scrambling above.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "name": "Mamie Peak crag (Blood Orgy)",
+      "type": "Crag/route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.9102,
+      "lng": -121.592,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Existing DB value confirmed correct; USFS/WTA list trailhead near 48.9105,-121.5894 to 48.9102,-121.592 (road-end parking, slight variance by source but same location).",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Mamie Peak crag (single-pitch wall)",
+      "type": "Summit",
+      "elevFt": 5000
+    }
+  ],
+  "wa_ellation": [
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Top of Ellation",
+      "note": "8-pitch, ~700' 5.11a (or 5.10 A0) up shallow grooves above the crag.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "name": "Mamie Peak crag (Ellation start)",
+      "type": "Crag/route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.9102,
+      "lng": -121.592,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Existing DB value confirmed correct.",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Mamie Peak (top of 8-pitch buttress)",
+      "type": "Summit",
+      "elevFt": 5000
+    }
+  ],
+  "wa_hail_satan": [
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Top of Mamie Peak wall",
+      "note": "Multi-pitch line on the same crag as Ellation and Blood Orgy.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "name": "Mamie Peak crag (Hail Satan)",
+      "type": "Crag/route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.9102,
+      "lng": -121.592,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Existing DB value confirmed correct.",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Mamie Peak crag (single-pitch wall)",
+      "type": "Summit",
+      "elevFt": 5000
+    }
+  ],
+  "wa_mcclellan_peak_southwest_scramble": [
+    {
+      "lat": 47.506,
+      "lng": -120.748,
+      "elev": 5100,
+      "name": "Nada Lake",
+      "type": "Water",
+      "distMi": 6.5,
+      "elevFt": 5100
+    },
+    {
+      "lat": 47.496,
+      "lng": -120.756,
+      "elev": 5400,
+      "name": "Snow Lakes basin",
+      "type": "Campsite",
+      "distMi": 7.5,
+      "elevFt": 5400
+    },
+    {
+      "lat": 47.476,
+      "lng": -120.782,
+      "elev": 6900,
+      "name": "Base of southwest slopes",
+      "type": "Junction",
+      "distMi": 9,
+      "elevFt": 6900
+    },
+    {
+      "lat": 47.5441,
+      "lng": -120.7097,
+      "name": "Snow Lakes Trailhead",
+      "note": "4.2 mi south on Icicle Creek Rd (FR-76) from junction with US-2, Leavenworth. Existing DB coord (47.5556, -120.705) is ~1.3 mi off but in the same immediate area/road; corrected to the FS-listed parking lot coordinate.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.470169,
+      "lng": -120.785833,
+      "elev": 8368,
+      "name": "McClellan Peak summit",
+      "type": "Summit",
+      "elevFt": 8368
+    }
+  ],
+  "wa_woodland_critter_christmas": [
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Top of Mamie Peak wall",
+      "note": "Access pitch that connects into Blood Orgy via rappel or continued 5.10 climbing.",
+      "type": "Topout",
+      "distMi": 1.2
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "name": "Mamie Peak crag (Woodland Critter Christmas)",
+      "type": "Crag/route start",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.9102,
+      "lng": -121.592,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Existing DB value confirmed correct.",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.91508,
+      "lng": -121.58401,
+      "elev": 5000,
+      "name": "Mamie Peak crag (near base of Ellation)",
+      "type": "Summit",
+      "elevFt": 5000
+    }
+  ],
+  "wa_honeymoon_route": [
+    {
+      "lat": 47.8779,
+      "lng": -123.1369,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Via Upper Dungeness Trail from Royal Basin trailhead; exact trailhead coordinates could not be confidently verified so only Royal Lake and the summit are included.",
+      "type": "Campsite",
+      "distMi": 7.2
+    },
+    {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2900,
+      "name": "Upper Dungeness Trailhead",
+      "note": "Standard approach for the only documented route on Mount Deception: hike the Royal Basin Trail (#833.2) ~7.2 miles to Royal Lake, then the Upper Royal Basin Trail into the alpine basin, then scramble to the summit ridge. Accessed via Forest Roads 2880/2870 from Sequim/Palo Alto Rd.",
+      "type": "Trailhead",
+      "elevFt": 2900
+    },
+    {
+      "lat": 47.8131,
+      "lng": -123.23389,
+      "elev": 7788,
+      "name": "Mount Deception Summit",
+      "type": "Summit",
+      "elevFt": 7788
+    }
+  ],
+  "wa_moss_out_for_harambe": [
+    {
+      "lat": 48.03015,
+      "lng": -121.44552,
+      "elev": 2301,
+      "name": "Mossy Loaf wall",
+      "type": "Junction",
+      "elevFt": 2301
+    },
+    {
+      "lat": 48.03015,
+      "lng": -121.44552,
+      "elev": 2301,
+      "name": "Mossy Loaf",
+      "type": "Crag",
+      "elevFt": 2301
+    },
+    {
+      "lat": 48.0264,
+      "lng": -121.4443,
+      "name": "Barlow Pass trailhead (Mountain Loop Highway)",
+      "note": "Same trailhead as Gothic Basin/Monte Cristo townsite trail; gated end of pavement, ~31 mi east of Granite Falls. Existing DB value (48.0265,-121.444) matches closely.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.03015,
+      "lng": -121.44552,
+      "elev": 2400,
+      "name": "Mossy Loaf (crag top-out)",
+      "type": "Summit",
+      "elevFt": 2400
+    }
+  ],
+  "wa_poltergeist_pinnacle": [
+    {
+      "lat": 48.8878,
+      "lng": -121.5348,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "Trail crests here; continue cross-country toward the Chilliwack drainage and Whatcom Pass.",
+      "type": "Junction",
+      "distMi": 4.2
+    },
+    {
+      "lat": 48.895,
+      "lng": -121.47,
+      "elev": 3200,
+      "name": "Boundary Camp",
+      "note": "Camp in the Chilliwack River valley below the climb to Whatcom Pass.",
+      "type": "Campsite",
+      "distMi": 8
+    },
+    {
+      "lat": 48.8754053,
+      "lng": -121.3645777,
+      "elev": 5210,
+      "name": "Whatcom Pass",
+      "note": "Gap between Whatcom Peak and the Challenger massif; gateway to Challenger Glacier.",
+      "type": "Junction",
+      "distMi": 12
+    },
+    {
+      "lat": 48.84,
+      "lng": -121.345,
+      "elev": 6800,
+      "name": "Challenger Glacier Crossing",
+      "note": "Roped glacier travel across Challenger Glacier; crevasse hazard.",
+      "type": "Hazard",
+      "distMi": 14.5
+    },
+    {
+      "lat": 48.91016,
+      "lng": -121.59414,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead (Trail #674)",
+      "note": "Matches existing DB entry (48.91021, -121.591885) to within ~150m — same trailhead, minor coordinate rounding difference. This is the sole approach used for all Northern Pickets objectives near Mount Challenger; route continues via Whatcom Pass and Perfect Pass (~6300 ft) before a multi-mile crossing of the Challenger Glacier to reach the pinnacle.",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.82361,
+      "lng": -121.34139,
+      "elev": 8200,
+      "name": "Poltergeist Pinnacle",
+      "type": "Summit",
+      "elevFt": 8200
+    }
+  ],
+  "wa_you_moss_be_joking": [
+    {
+      "lat": 48.03015,
+      "lng": -121.44552,
+      "elev": 2301,
+      "name": "Mossy Loaf wall",
+      "type": "Junction",
+      "elevFt": 2301
+    },
+    {
+      "lat": 48.03015,
+      "lng": -121.44552,
+      "elev": 2301,
+      "name": "Mossy Loaf",
+      "type": "Crag",
+      "elevFt": 2301
+    },
+    {
+      "lat": 48.0264,
+      "lng": -121.4443,
+      "name": "Barlow Pass trailhead (Mountain Loop Highway)",
+      "note": "Same trailhead as Moss Out For Harambe — both routes are on the same formation. Existing DB value (48.0265,-121.444) matches closely.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.03015,
+      "lng": -121.44552,
+      "elev": 2400,
+      "name": "Mossy Loaf (crag top-out)",
+      "type": "Summit",
+      "elevFt": 2400
+    }
+  ],
+  "wa_mount_lyall_south_route": [
+    {
+      "lat": 48.199064,
+      "lng": -120.774147,
+      "elev": 3218,
+      "name": "Holden Village / Holden Lake Trailhead",
+      "note": "Shuttle drop-off at the former mining village; the Holden Lake Trail begins on the west side of town along Holden Road, following the Railroad Creek valley.",
+      "type": "Junction",
+      "distMi": 11
+    },
+    {
+      "lat": 48.207169,
+      "lng": -120.788997,
+      "elev": 3400,
+      "name": "Holden Lake Trail turnoff (Hart/Lyman Lake Trail junction)",
+      "note": "After about a mile paralleling Railroad Creek, bear right off the Hart/Lyman Lake trail onto the Holden Lake Trail and begin climbing switchbacks.",
+      "type": "Junction",
+      "distMi": 12
+    },
+    {
+      "lat": 48.219326,
+      "lng": -120.811273,
+      "elev": 4400,
+      "name": "Avalanche chute crossings",
+      "note": "Trail crosses several open, south-facing avalanche chutes on dry terrain; tread can be faint and brushy through slide alder after big snow years.",
+      "type": "Hazard",
+      "distMi": 13.5
+    },
+    {
+      "lat": 48.2314826,
+      "lng": -120.8335481,
+      "elev": 5282,
+      "name": "Holden Lake",
+      "note": "Glacial basin lake with established camping and reliable water; Bonanza Mountain's Mary Green Glacier is visible across the valley — good base camp for the summit push.",
+      "type": "Campsite",
+      "distMi": 15
+    },
+    {
+      "lat": 48.256615,
+      "lng": -120.845313,
+      "elev": 6200,
+      "name": "Basin below Holden Pass",
+      "note": "Leave the trail here and head off-trail cross-country up open basins toward Holden Pass, the jumping-off point for the south-facing talus/heather slopes to Lyall's summit.",
+      "type": "Junction",
+      "distMi": 16
+    },
+    {
+      "lat": 48.2022,
+      "lng": -120.5911,
+      "elev": 1109,
+      "name": "Lucerne Landing (Lake Chelan) via Holden Village shuttle",
+      "note": "No road access; reached only by Lady of the Lake passenger ferry from Chelan (~40 mi uplake) to the Lucerne dock, then the Holden Village shuttle (FS Rd 8301, ~11 mi) to Holden, from where trails up Railroad/Tenmile/Company Creek lead to the Tenmile Pass/Hilgard Pass basins used to climb Lyall. Existing DB coordinate (48.20188,-120.59921) was already essentially correct — refined here to the more precisely sourced Lucerne coordinate (48°12'08\"N 120°35'28\"W).",
+      "type": "Trailhead",
+      "elevFt": 1109
+    },
+    {
+      "lat": 48.2818,
+      "lng": -120.8568,
+      "elev": 7867,
+      "name": "Mount Lyall",
+      "type": "Summit",
+      "elevFt": 7867
+    }
+  ],
+  "wa_mount_norton_scramble": [
+    {
+      "lat": 47.90817076923077,
+      "lng": -123.51363076923077,
+      "elev": 1345,
+      "name": "Mary's Falls Camp",
+      "note": "Established backcountry campsite beside the Elwha River with reliable water; roughly the halfway point to Elkhorn and a common overnight stop for the long approach.",
+      "type": "Water",
+      "distMi": 8.8
+    },
+    {
+      "lat": 47.87309,
+      "lng": -123.4694,
+      "elev": 1437,
+      "name": "Elkhorn Guard Station",
+      "note": "Historic 1911 backcountry patrol cabin and grassy river-flat camp; last reliably maintained camp before leaving the main Elwha corridor toward Norton.",
+      "type": "Campsite",
+      "distMi": 14.3
+    },
+    {
+      "lat": 47.8093095,
+      "lng": -123.453858,
+      "elev": 1750,
+      "name": "Hayes River Guard Station",
+      "note": "Elwha River Trail meets the Hayes River here (16.1 mi from Whiskey Bend per NPS); climbers leave the maintained trail near this junction and head up the Hayes River drainage toward Norton's east slopes.",
+      "type": "Junction",
+      "distMi": 16.1
+    },
+    {
+      "lat": 47.78651388461538,
+      "lng": -123.43433106666667,
+      "elev": 3600,
+      "name": "Off-trail ascent below Norton's east face",
+      "note": "No path or cairns beyond Hayes River — dense slide alder and devil's club in the lower brush belt give way to open Class 2 heather/talus higher up; the east aspect gains about 3,200 ft in under a mile, so route-find carefully in fog or low visibility.",
+      "type": "Hazard",
+      "distMi": 18
+    },
+    {
+      "lat": 47.9678,
+      "lng": -123.5824,
+      "elev": 1150,
+      "name": "Whiskey Bend Trailhead",
+      "note": "Start of the Elwha River Trail; existing DB coordinate (47.9643,-123.5844) is within ~0.3mi of this and effectively the same trailhead. From Whiskey Bend the route follows the Elwha River Trail roughly 16+ miles south to the Hayes River area before leaving trail for the class 2 scramble to Norton's summit.",
+      "type": "Trailhead",
+      "elevFt": 1150
+    },
+    {
+      "lat": 47.7625185,
+      "lng": -123.4137764,
+      "elev": 6397,
+      "name": "Mount Norton",
+      "type": "Summit",
+      "elevFt": 6397
+    }
+  ],
+  "wa_mount_olson_standard": [
+    {
+      "lat": 47.4809,
+      "lng": -123.4532,
+      "elev": 1450,
+      "name": "South Fork Skokomish River ford",
+      "note": "Unbridged ford of the Skokomish's south bank; safely crossable (ankle-deep) only in late summer/early fall low water per WTA, otherwise a serious hazard.",
+      "type": "Hazard",
+      "distMi": 2.4
+    },
+    {
+      "lat": 47.4825875,
+      "lng": -123.4544375,
+      "elev": 2500,
+      "name": "Olympic National Park boundary",
+      "note": "Trail leaves Olympic National Forest and enters Olympic National Park/Wilderness; self-issue backcountry camping permit required beyond this point, tread grows fainter above here.",
+      "type": "Junction",
+      "distMi": 5.1
+    },
+    {
+      "lat": 47.4839,
+      "lng": -123.4554,
+      "elev": 4125,
+      "name": "Sundown Pass",
+      "note": "Forested saddle marked by a broken signpost, reached via steep, faint tread through wet subalpine meadows; junction with the Six Ridge Trail heading east along the crest toward Mount Olson.",
+      "type": "Junction",
+      "distMi": 7.2
+    },
+    {
+      "lat": 47.4990336,
+      "lng": -123.4578968,
+      "elev": 4030,
+      "name": "Lake Sundown",
+      "note": "Short spur off the pass to a subalpine basin lake on Six Ridge's western flank; last dependable water and the standard base camp for an Olson attempt.",
+      "type": "Campsite",
+      "distMi": 7.6
+    },
+    {
+      "lat": 47.540651,
+      "lng": -123.464763,
+      "elev": 4650,
+      "name": "Six Ridge crest / Mount Olson boot-path junction",
+      "note": "Point on Six Ridge's sawtooth crest closest to Olson where an unsigned, unofficial boot path ('Mount Olson Way') leaves the trail for the peak; faint and overgrown with blowdowns and lingering snowfields into midsummer.",
+      "type": "Junction",
+      "distMi": 8.7
+    },
+    {
+      "lat": 47.5709182,
+      "lng": -123.46975660000001,
+      "elev": 5100,
+      "name": "Tarn below Olson's summit block",
+      "note": "Boulder-field tarn just below the summit block is the last water and a common bivy spot; the final gully above it to the top is steep, loose, and exposed per trip reports.",
+      "type": "Campsite",
+      "distMi": 9.5
+    },
+    {
+      "lat": 47.48632,
+      "lng": -123.45775,
+      "name": "Upper South Fork Skokomish Trailhead (Trail #873)",
+      "note": "Existing DB coordinate (47.4794,-123.4521) is close (~1km off) but the USFS-published trailhead coordinate is more precise. Reached via Skokomish Valley Rd / FS-23 / FS-2361 from Shelton; FS-2361 gated Oct 1-Apr 30. Standard route follows Trail 873 to Sundown Lake, then the Six Ridge crest ~11 miles to the overgrown 'Mount Olson Way' spur.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.5784,
+      "lng": -123.4712,
+      "elev": 5292,
+      "name": "Mount Olson",
+      "type": "Summit",
+      "elevFt": 5292
+    }
+  ],
+  "wa_ridge_traverse_from_east_fury": [
+    {
+      "lat": 48.76,
+      "lng": -121.14,
+      "elev": 2200,
+      "name": "Access Creek Junction",
+      "note": "Leave Big Beaver Trail to ascend Access Creek toward the Southern Pickets.",
+      "type": "Junction",
+      "distMi": 15
+    },
+    {
+      "lat": 48.79,
+      "lng": -121.2,
+      "elev": 6800,
+      "name": "Access Col",
+      "note": "Gains the crest between Access Creek and Luna Cirque.",
+      "type": "Junction",
+      "distMi": 19
+    },
+    {
+      "lat": 48.805,
+      "lng": -121.28,
+      "elev": 6700,
+      "name": "Luna Col",
+      "note": "High col below Luna Peak; standard approach to the Fury massif.",
+      "type": "Junction",
+      "distMi": 22
+    },
+    {
+      "lat": 48.811,
+      "lng": -121.32,
+      "elev": 8100,
+      "name": "Loose Tower Traverse",
+      "note": "Descend to a low saddle then climb over three loose towers, low 5th class; rope recommended for rappels.",
+      "type": "Hazard",
+      "distMi": 25
+    },
+    {
+      "lat": 48.7317,
+      "lng": -121.0672,
+      "elev": 1602,
+      "name": "Ross Dam Trailhead (SR-20) — via Ross Lake water taxi/hike to Big Beaver, then off-trail to Access Creek/Luna Camp",
+      "note": "Road-accessible trailhead on SR-20 (MP 134-135) at Ross Dam/Ross Lake Resort. Parties either walk ~6 mi along the west shore of Ross Lake or take the Ross Lake Resort water taxi to the Big Beaver Trail junction, hike ~9.4 mi up Big Beaver Trail to Luna Camp, then go off-trail up Access Creek to the Luna-Fury col before climbing East Fury and traversing the connecting ridge (three towers) to reach West Fury. This is the standard approach corridor for essentially all Picket Range 'northern group' peaks including both East and West Fury; existing DB trailhead (48.71,-121.058) is close to but not exactly on this corridor — it sits between the Ross Dam trailhead and the Big Beaver Creek/Ross Lake confluence (~48.776,-121.058).",
+      "type": "Trailhead",
+      "elevFt": 1602
+    },
+    {
+      "lat": 48.81222,
+      "lng": -121.32306,
+      "elev": 8301,
+      "name": "West Fury (Mount Fury, official/USGS-named summit)",
+      "type": "Summit",
+      "elevFt": 8301
+    }
+  ],
+  "wa_mount_shuksan_hanging_glacier": [
+    {
+      "lat": 48.8353,
+      "lng": -121.6019,
+      "name": "Hanging Glacier",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.8353,
+      "lng": -121.6019,
+      "name": "Hanging Glacier",
+      "type": "Feature",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.8595,
+      "lng": -121.648,
+      "name": "White Salmon Road (hairpin) TH",
+      "note": "Corrects existing DB value of Lake Ann TH. Hairpin turn onto NF-3075 off SR542 near mile 51-52, just before the White Salmon Day Lodge.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.831095,
+      "lng": -121.602955,
+      "elev": 9127,
+      "name": "Mount Shuksan summit pyramid",
+      "type": "Summit",
+      "elevFt": 9127
+    }
+  ],
+  "wa_sherpa_glacier": [
+    {
+      "lat": 47.47854,
+      "lng": -120.88416,
+      "elev": 6600,
+      "name": "Sherpa Glacier toe/icefall",
+      "note": "Glacier terminates as an icefall here; crevasses present, cross high where the glacier is flatter.",
+      "type": "Hazard",
+      "distMi": 6
+    },
+    {
+      "lat": 47.47227,
+      "lng": -120.89263,
+      "elev": 7600,
+      "name": "Top of Sherpa Glacier",
+      "note": "Tops out at the notch gaining Mount Stuart's upper North Ridge.",
+      "type": "Topout",
+      "distMi": 6.5
+    },
+    {
+      "lat": 47.52808,
+      "lng": -120.82071,
+      "elev": 2930,
+      "name": "Stuart Lake Trailhead (end of FR 7601, Eightmile Creek Rd)",
+      "type": "Trailhead",
+      "elevFt": 2930
+    },
+    {
+      "lat": 47.4751179,
+      "lng": -120.9031444,
+      "elev": 9415,
+      "name": "Mount Stuart summit",
+      "type": "Summit",
+      "elevFt": 9415
+    }
+  ],
+  "wa_upper_north_ridge_w_great_gendarme": [
+    {
+      "lat": 47.47227,
+      "lng": -120.89263,
+      "elev": 7600,
+      "name": "Top of Sherpa Glacier notch",
+      "note": "Ascend Sherpa Glacier to this notch to gain the upper North Ridge, bypassing the lower ridge's early pitches.",
+      "type": "Junction",
+      "distMi": 6.5
+    },
+    {
+      "lat": 47.43656,
+      "lng": -120.93697,
+      "elev": 4243,
+      "name": "Esmeralda Basin / Ingalls Lake Trailhead (North Fork Teanaway Rd, FR 9737)",
+      "note": "DB currently lists Stuart Lake TH (Eightmile Creek Rd) — appears to be an error; this specific 'Upper' route variant is guided/documented via the Ingalls Lake side to skip the lower ridge",
+      "type": "Trailhead",
+      "elevFt": 4243
+    },
+    {
+      "lat": 47.4751179,
+      "lng": -120.9031444,
+      "elev": 9415,
+      "name": "Mount Stuart summit",
+      "type": "Summit",
+      "elevFt": 9415
+    }
+  ],
+  "wa_clast_from_the_past": [
+    {
+      "lat": 46.3268,
+      "lng": -121.92379,
+      "elev": 4821,
+      "name": "Pinto Rock topout (approximate)",
+      "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found; this reuses the pullout coordinate with a disclosed ~0.3mi uncertainty rather than a precise fix.",
+      "type": "Topout",
+      "distMi": 0.3
+    },
+    {
+      "lat": 46.32799,
+      "lng": -121.92374,
+      "elev": 4864,
+      "name": "North Side wall (Mountain Project GPS pin)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 4864
+    },
+    {
+      "lat": 46.3268,
+      "lng": -121.92379,
+      "name": "Pinto Rock Pullout (North Side)",
+      "note": "Roadside pullout on NF-77 (via NF-25 -> NF-28 -> NF-77 from Randle, WA) directly below Pinto Rock; matches existing DB entry exactly.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 46.3265018,
+      "lng": -121.9237007,
+      "elev": 5118,
+      "name": "Pinto Rock",
+      "type": "Summit",
+      "elevFt": 5118
+    }
+  ],
+  "wa_flycatcher_buttress": [
+    {
+      "lat": 48.5128,
+      "lng": -120.6558,
+      "elev": 6900,
+      "name": "Base of Flycatcher Buttress",
+      "note": "Stay right of the gully dividing the two spires, scrambling to a flat ledge at the start.",
+      "type": "Junction",
+      "distMi": 0.65
+    },
+    {
+      "lat": 48.519,
+      "lng": -120.648,
+      "name": "Hairpin Turn pullout (SR-20)",
+      "note": "East-side approach — NOT Blue Lake TH. MP route text explicitly names the Hairpin as the start point.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 7760,
+      "name": "North Early Winters Spire",
+      "type": "Summit",
+      "elevFt": 7760
+    }
+  ],
+  "wa_sidewinder_4": [
+    {
+      "lat": 46.3268,
+      "lng": -121.92379,
+      "elev": 4821,
+      "name": "Pinto Rock topout (approximate)",
+      "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found; this reuses the pullout coordinate with a disclosed ~0.3mi uncertainty rather than a precise fix.",
+      "type": "Topout",
+      "distMi": 0.3
+    },
+    {
+      "lat": 46.32799,
+      "lng": -121.92374,
+      "elev": 4864,
+      "name": "North Side wall (Mountain Project GPS pin)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 4864
+    },
+    {
+      "lat": 46.3268,
+      "lng": -121.92379,
+      "name": "Pinto Rock Pullout (North Side)",
+      "note": "Same pullout as the other North Side routes; MP route page notes the approach trail is 'extremely steep and loose.'",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 46.3265018,
+      "lng": -121.9237007,
+      "elev": 5118,
+      "name": "Pinto Rock",
+      "type": "Summit",
+      "elevFt": 5118
+    }
+  ],
+  "wa_top_gun": [
+    {
+      "lat": 46.3268,
+      "lng": -121.92379,
+      "elev": 4821,
+      "name": "Pinto Rock topout (approximate)",
+      "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found; this reuses the pullout coordinate with a disclosed ~0.3mi uncertainty rather than a precise fix.",
+      "type": "Topout",
+      "distMi": 0.3
+    },
+    {
+      "lat": 46.32799,
+      "lng": -121.92374,
+      "elev": 4864,
+      "name": "North Side wall (Mountain Project GPS pin)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 4864
+    },
+    {
+      "lat": 46.3268,
+      "lng": -121.92379,
+      "name": "Pinto Rock Pullout (North Side)",
+      "note": "Same pullout/approach as Sidewinder and Clast from the Past; MP describes Top Gun as a toprope reached by lowering from Sidewinder's anchor chains to the roof lip, i.e. same base approach, not a separate trailhead.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 46.3265018,
+      "lng": -121.9237007,
+      "elev": 5118,
+      "name": "Pinto Rock",
+      "type": "Summit",
+      "elevFt": 5118
+    }
+  ],
+  "wa_lone_wolf": [
+    {
+      "lat": 47.36859,
+      "lng": -121.45406,
+      "elev": 4494,
+      "name": "The Obelisk",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 4494
+    },
+    {
+      "lat": 47.36859,
+      "lng": -121.45406,
+      "elev": 4494,
+      "name": "The Obelisk",
+      "type": "Crag",
+      "distMi": null,
+      "elevFt": 4494
+    },
+    {
+      "lat": 47.3732,
+      "lng": -121.4467,
+      "elev": 3720,
+      "name": "FR-9070 / PCT (#2000) junction near Olallie Meadow, Snoqualmie Pass",
+      "note": "This is the well-documented point where FR-9070 crosses the PCT (per WTA's Silver Peak trailhead directions: I-90 exit 54, Hyak Drive NE becomes FR-9070, 5.4 mi to the PCT crossing). Mountain Project's Citidel approach says climbers then take the LEFT fork of FR-9070 past this junction and drive/walk to 'a large turnaround just below Silver Basin' (20-30 min approach on foot from there to the crag base) — that further turnaround has no separately published name or coordinate, so this junction is the closest sourced reference point, not the exact parking spot. Confidence is medium because of that gap.",
+      "type": "Trailhead",
+      "elevFt": 3720
+    },
+    {
+      "lat": 47.36859,
+      "lng": -121.45406,
+      "elev": 4900,
+      "name": "The Obelisk (rock formation/crag), Silver Basin",
+      "note": "Elevation is an estimate from the surrounding terrain (Citidel base area is listed at 4,585 ft; The Obelisk sits further up-slope from the Sofa King Buttress sub-area, per MP's own text) — MP does not publish a separate elevation figure for this formation.",
+      "type": "Summit",
+      "elevFt": 4900
+    }
+  ],
+  "wa_ottohorn_southeast_route": [
+    {
+      "lat": 48.721092,
+      "lng": -121.288257,
+      "elev": 3200,
+      "name": "Large cairn off the old roadbed",
+      "note": "Cairn/arrow marks where the climbers' path leaves the Goodell Creek roadbed toward Terror Creek and Crescent Creek Basin, per multiple trip reports of this same junction.",
+      "type": "Junction",
+      "distMi": 4
+    },
+    {
+      "lat": 48.724699,
+      "lng": -121.289851,
+      "elev": 2600,
+      "name": "Terror Creek ford",
+      "note": "Ford on foot near a cairn on the far bank; typically no more than calf-deep by midsummer but can run high and cold earlier in the season.",
+      "type": "Water",
+      "distMi": 4.3
+    },
+    {
+      "lat": 48.733115,
+      "lng": -121.293572,
+      "elev": 3800,
+      "name": "Forested ridge crest, toe of the Barrier",
+      "note": "Steep climbers' path tops out on the ridge between Terror and Crescent Creeks here; this is the base of 'the Barrier' rock rib you cross next.",
+      "type": "Junction",
+      "distMi": 5
+    },
+    {
+      "lat": 48.751149,
+      "lng": -121.301543,
+      "elev": 6100,
+      "name": "The Barrier crossing",
+      "note": "Loose, dirty Class 3 traverse with exposed moves crossing the Barrier's rock rib into the Terror/Crescent Creek basins; rockfall risk on the loose sections.",
+      "type": "Hazard",
+      "distMi": 6.5
+    },
+    {
+      "lat": 48.763172,
+      "lng": -121.306857,
+      "elev": 6200,
+      "name": "Crescent Creek Basin camp",
+      "note": "Established basin camp used for Ottohorn, Himmelhorn, and the Chopping Block; reached after crossing the Barrier.",
+      "type": "Campsite",
+      "distMi": 7.5
+    },
+    {
+      "lat": 48.769183,
+      "lng": -121.309514,
+      "elev": 7400,
+      "name": "Ottohorn-Himmelhorn col",
+      "note": "About an hour above camp with some dicey scrambling near the top; gain the col here then follow the 1961 line onto Ottohorn's east ridge (Class III). South side of the col is the easier descent, the north side turns to loose low-5th once melted out.",
+      "type": "Junction",
+      "distMi": 8
+    },
+    {
+      "lat": 48.68276,
+      "lng": -121.26928,
+      "name": "Goodell Creek Trailhead",
+      "note": "Unpaved pullout off Goodell Creek Rd, just before Goodell Creek Campground, across SR-20 from Newhalem; standard access for all Southern Pickets objectives via the Terror Creek climbers' trail.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.776397,
+      "lng": -121.312703,
+      "elev": 7840,
+      "name": "Ottohorn summit",
+      "type": "Summit",
+      "elevFt": 7840
+    }
+  ],
+  "wa_pernod_spire_standard": [
+    {
+      "lat": 48.546,
+      "lng": -120.585,
+      "name": "Burgundy Col",
+      "note": "\"7,770-ft notch separating the Wine Spires from Vasiliki Ridge, reached via steep talus/scree above the Bench camp.\"",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 48.545,
+      "lng": -120.629,
+      "name": "SR-20 Wine Spires pullout / Burgundy Col climbers' trail",
+      "note": "Corrects existing DB value; see wa_direct_west_face note for the same trailhead description.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.5526,
+      "lng": -120.5903,
+      "name": "Pernod Spire Summit",
+      "type": "Summit"
+    }
+  ],
+  "wa_point_success_south_side": [
+    {
+      "lat": 46.79417,
+      "lng": -121.83889,
+      "elev": 5300,
+      "name": "Indian Henry's Hunting Ground (patrol cabin)",
+      "note": "Historic 1915 patrol cabin marks where the route leaves the maintained Wonderland Trail for cross-country travel toward the Mirror Lakes basin.",
+      "type": "Junction",
+      "distMi": 7
+    },
+    {
+      "lat": 46.7957,
+      "lng": -121.8415,
+      "elev": 5600,
+      "name": "Mirror Lakes",
+      "note": "Small tarns about a mile off the Wonderland Trail; last dependable water before contouring dry southwest/west slopes of Pyramid Peak.",
+      "type": "Water",
+      "distMi": 8
+    },
+    {
+      "lat": 46.821214,
+      "lng": -121.799046,
+      "elev": 6631,
+      "name": "Point 6631 (base camp north of Pyramid Peak)",
+      "note": "Flat campsites just north of this 6,631 ft high point give broad views of Success Cleaver; no sourced GPS fix found, position estimated from route beta contouring Pyramid Peak.",
+      "type": "Campsite",
+      "distMi": 9.5
+    },
+    {
+      "lat": 46.825322,
+      "lng": -121.793781,
+      "elev": 6400,
+      "name": "6,400 ft saddle below Success Cleaver",
+      "note": "Short descent NNE from Point 6631 to this saddle; typical high camp before scrambling onto the lower cleaver at first light.",
+      "type": "Campsite",
+      "distMi": 10
+    },
+    {
+      "lat": 46.833489,
+      "lng": -121.783106,
+      "elev": 8200,
+      "name": "Lower Success Cleaver gendarmes",
+      "note": "Loose rock towers force weaving route-finding on the lower rib; rockfall risk climbs if other parties are above, per trip reports citing bivy options around 8,100-8,300 ft.",
+      "type": "Hazard",
+      "distMi": 11
+    },
+    {
+      "lat": 46.843829,
+      "lng": -121.768939,
+      "elev": 12600,
+      "name": "Rockfall chutes to Kautz Cleaver headwall",
+      "note": "Angle across three loose, rockfall-swept chutes to the headwall and gain the Kautz Cleaver near 12,600 ft; helmet mandatory, best crossed before sun loosens rock.",
+      "type": "Hazard",
+      "distMi": 12.3
+    },
+    {
+      "lat": 46.79476,
+      "lng": -121.88152,
+      "elev": 3200,
+      "name": "Westside Road / Dry Creek (Tahoma Creek) Trailhead",
+      "note": "End of driveable Westside Road (3.2 mi from the Nisqually-Longmire Rd junction), gated at Dry Creek. Existing DB value (Longmire Wilderness Information Center) is a permit/ranger station ~3.5 miles away, not the actual trailhead. This point sits ~30m from the recorded track's start (46.795212, -121.88138), strongly corroborating it.",
+      "type": "Trailhead",
+      "elevFt": 3200
+    },
+    {
+      "lat": 46.8459412,
+      "lng": -121.7675967,
+      "elev": 14158,
+      "name": "Point Success",
+      "type": "Summit",
+      "elevFt": 14158
+    }
+  ],
+  "wa_remmel_mountain_nw_ridge": [
+    {
+      "lat": 48.92573,
+      "lng": -120.13832,
+      "elev": 6850,
+      "name": "Four Point Lake",
+      "note": "Multiple good campsites with views of Remmel; standard bivy.",
+      "type": "Water",
+      "distMi": 14
+    },
+    {
+      "lat": 48.928,
+      "lng": -120.185,
+      "elev": 7500,
+      "name": "NW Ridge Camp",
+      "note": "Bivy on Remmel's NW Ridge itself, reached via ridge travel from the Four Point Lake basin.",
+      "type": "Campsite",
+      "distMi": 17.5
+    },
+    {
+      "lat": 48.8231,
+      "lng": -120.0197,
+      "name": "Thirtymile Trailhead",
+      "note": "Existing DB coordinate (48.835, -120.068) is ~4km off from the true trailhead; corrected per WTA.org and Natural Atlas. From here, follow Chewuch River Trail #510 to Remmel Lake, then go off-trail south (~2 miles bushwhack) to reach the NW Ridge, per a documented 2011 ascent trip report.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.9232028,
+      "lng": -120.196762,
+      "elev": 8685,
+      "name": "Remmel Mountain",
+      "type": "Summit",
+      "elevFt": 8685
+    }
+  ],
+  "wa_ruth_icy_traverse": [
+    {
+      "lat": 48.885,
+      "lng": -121.535,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "Leave the maintained trail; climbers path heads east/south around a shoulder toward Ruth Glacier.",
+      "type": "Junction",
+      "distMi": 4.2
+    },
+    {
+      "lat": 48.895,
+      "lng": -121.555,
+      "elev": 5800,
+      "name": "Ruth Glacier Camp",
+      "note": "Common high camp on Ruth Mountain's north slope.",
+      "type": "Campsite",
+      "distMi": 6
+    },
+    {
+      "lat": 48.85,
+      "lng": -121.555,
+      "elev": 5800,
+      "name": "Ruth-Icy Saddle",
+      "note": "Descend a west-facing snow slope from Ruth to this connecting saddle.",
+      "type": "Junction",
+      "distMi": 8.5
+    },
+    {
+      "lat": 48.9101,
+      "lng": -121.5927,
+      "elev": 3100,
+      "name": "Hannegan Trailhead (Hannegan Pass Trail #674 road end)",
+      "note": "Road end of Forest Road 32 (Ruth Creek/Hannegan Pass Rd) at Hannegan Campground, ~12.5 mi east of Glacier, WA on Mt Baker Hwy SR 542 then 5.3 mi up FR 32. Hike Hannegan Pass Trail 4 mi to Hannegan Pass (5,056 ft), then climbers' trail east/south onto the north side of the Ruth Glacier to the summit. Matches existing DB trailhead almost exactly (48.91021,-121.591885 vs sourced 48.9101,-121.5927 — same point).",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.8597,
+      "lng": -121.5328,
+      "elev": 7115,
+      "name": "Ruth Mountain",
+      "type": "Summit",
+      "elevFt": 7115
+    }
+  ],
+  "wa_concerto_in_c_for_drill_and_hammer": [
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "~3 hr approach through forest, a tributary crossing, and two gullies to the saddle below Squire Creek Wall's South Face; 14-pitch 5.8 friction slab leads to the summit crest above Buckeye Basin.",
+      "type": "Topout",
+      "distMi": 3
+    },
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+    },
+    {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "Existing DB value confirmed correct against WTA. Road is badly washed out near the end (2002 Jumbo Mountain slide); many parties now park ~1/3 mile short at an informal pullout.",
+      "type": "Trailhead",
+      "elevFt": 1900
+    },
+    {
+      "lat": 48.1854,
+      "lng": -121.6493,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+    }
+  ],
+  "wa_doorway_flake": [
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "Shares the same ~3 hr approach as the wall's other South Face routes.",
+      "type": "Topout",
+      "distMi": 3
+    },
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+    },
+    {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "Existing DB value confirmed correct against WTA.",
+      "type": "Trailhead",
+      "elevFt": 1900
+    },
+    {
+      "lat": 48.1854,
+      "lng": -121.6493,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+    }
+  ],
+  "wa_skeena26": [
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "Brilliant white slab starting near the saddle, mostly 5.4-5.6 with a 5.9 opening pitch.",
+      "type": "Topout",
+      "distMi": 3
+    },
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+    },
+    {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "Existing DB value confirmed correct against WTA; multiple CascadeClimbers.com trip reports (FA 9/17/2012, and later linkups) describe this same approach.",
+      "type": "Trailhead",
+      "elevFt": 1900
+    },
+    {
+      "lat": 48.1854,
+      "lng": -121.6493,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+    }
+  ],
+  "wa_spectre_peak_south_route": [
+    {
+      "lat": 48.8829219,
+      "lng": -121.5342754,
+      "elev": 5100,
+      "name": "Hannegan Pass",
+      "note": "High point of the maintained Hannegan Pass Trail (#674); leave the trail here to traverse cross-country toward Easy Ridge rather than continuing to Copper Ridge.",
+      "type": "Junction",
+      "distMi": 4
+    },
+    {
+      "lat": 48.8727739,
+      "lng": -121.487756125,
+      "elev": 3600,
+      "name": "Chilliwack River ford",
+      "note": "Ford the Chilliwack River below Easy Ridge on the climbers' path past Copper Creek before switchbacking back up; can be a cold, thigh-deep crossing in early season.",
+      "type": "Water",
+      "distMi": 7
+    },
+    {
+      "lat": 48.8474039,
+      "lng": -121.37145793750001,
+      "elev": 6600,
+      "name": "Bivy beyond Easy Peak",
+      "note": "Established climbers' bivy near the summit of Easy Peak (6,613'), reached via the Easy Ridge climbers' path gained above Hannegan Pass; typical end of day one.",
+      "type": "Campsite",
+      "distMi": 14.5
+    },
+    {
+      "lat": 48.844021233333336,
+      "lng": -121.35595151250001,
+      "elev": 7000,
+      "name": "Imperfect Impasse",
+      "note": "A notch on Easy Ridge that must be downclimbed and re-ascended to continue toward the Pickets proper; exposed and slower than it looks from a distance.",
+      "type": "Hazard",
+      "distMi": 15.5
+    },
+    {
+      "lat": 48.837497425,
+      "lng": -121.347398725,
+      "elev": 8000,
+      "name": "Challenger Col",
+      "note": "Snow/glacier col that gains the western slope of the range; parties have noted a bergschrund forming near its top by mid-to-late season.",
+      "type": "Junction",
+      "distMi": 16.5
+    },
+    {
+      "lat": 48.827832475,
+      "lng": -121.345799575,
+      "elev": 7300,
+      "name": "Pickle Pass",
+      "note": "Gap below Spectre's serrated south ridge of hoodoos, visible from Frenzel Camp, where the technical climbing on the route begins.",
+      "type": "Junction",
+      "distMi": 17.5
+    },
+    {
+      "lat": 48.9102,
+      "lng": -121.5941,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Matches existing DB entry almost exactly (existing 48.9101,-121.5927 vs. FS/WTA-sourced 48.9102,-121.5941, ~100m diff, within trailhead/parking-area noise). Confirmed as the start point for the 2-day approach (Hannegan Pass -> Easy Ridge -> Pickell Pass) described in the AAC/theclimbingguides trip reports for this route's first ascent.",
+      "type": "Trailhead",
+      "elevFt": 3120
+    },
+    {
+      "lat": 48.812,
+      "lng": -121.343,
+      "elev": 7952,
+      "name": "Spectre Peak",
+      "type": "Summit",
+      "elevFt": 7952
+    }
+  ],
+  "wa_western_dihedral": [
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "Climbs the obvious reddish right-facing corner visible from the saddle; crux liebacking/stemming and a finger traverse on pitches 2-3.",
+      "type": "Topout",
+      "distMi": 3
+    },
+    {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+    },
+    {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "Existing DB value confirmed correct against WTA. MP notes ~4 hours trailhead-to-base, then Class 4 scrambling via Skeena26's base to reach this route.",
+      "type": "Trailhead",
+      "elevFt": 1900
+    },
+    {
+      "lat": 48.1854,
+      "lng": -121.6493,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+    }
+  ],
+  "wa_direct_finish": [
+    {
+      "lat": 47.96193,
+      "lng": -123.45412,
+      "elev": 5567,
+      "name": "Steeple Rock (base/summit area)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 5567
+    },
+    {
+      "lat": 47.962,
+      "lng": -123.4543,
+      "name": "Obstruction Point Road pullout at base of Steeple Rock (~2 mi from Hurricane Ridge Visitor Center junction)",
+      "note": "Not the Hurricane Ridge Visitor Center — that is 2 road-miles away and only the registration point/road start. The spire sits directly beside Obstruction Point Road; climbers park at a pullout at its base.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.961935,
+      "lng": -123.454043,
+      "elev": 5567,
+      "name": "Steeple Rock",
+      "type": "Summit",
+      "elevFt": 5567
+    }
+  ],
+  "wa_east_ridge": [
+    {
+      "lat": 47.96193,
+      "lng": -123.45412,
+      "elev": 5567,
+      "name": "Steeple Rock (base/summit area)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 5567
+    },
+    {
+      "lat": 47.962,
+      "lng": -123.4543,
+      "name": "Obstruction Point Road pullout at base of Steeple Rock (~2 mi from Hurricane Ridge Visitor Center junction)",
+      "note": "Not the Hurricane Ridge Visitor Center — that is 2 road-miles away and only the registration point/road start.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.961935,
+      "lng": -123.454043,
+      "elev": 5567,
+      "name": "Steeple Rock",
+      "type": "Summit",
+      "elevFt": 5567
+    }
+  ],
+  "wa_north_ridge": [
+    {
+      "lat": 47.96193,
+      "lng": -123.45412,
+      "elev": 5567,
+      "name": "Steeple Rock (base/summit area)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 5567
+    },
+    {
+      "lat": 47.962,
+      "lng": -123.4543,
+      "name": "Obstruction Point Road pullout at base of Steeple Rock (~2 mi from Hurricane Ridge Visitor Center junction)",
+      "note": "Not the Hurricane Ridge Visitor Center — that is 2 road-miles away and only the registration point/road start.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.961935,
+      "lng": -123.454043,
+      "elev": 5567,
+      "name": "Steeple Rock",
+      "type": "Summit",
+      "elevFt": 5567
+    }
+  ],
+  "wa_wings": [
+    {
+      "lat": 47.96193,
+      "lng": -123.45412,
+      "elev": 5567,
+      "name": "Steeple Rock (base/summit area)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 5567
+    },
+    {
+      "lat": 47.962,
+      "lng": -123.4543,
+      "name": "Obstruction Point Road pullout at base of Steeple Rock (~2 mi from Hurricane Ridge Visitor Center junction)",
+      "note": "Not the Hurricane Ridge Visitor Center — that is 2 road-miles away and only the registration point/road start.",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 47.961935,
+      "lng": -123.454043,
+      "elev": 5567,
+      "name": "Steeple Rock",
+      "type": "Summit",
+      "elevFt": 5567
+    }
+  ],
+  "wa_the_temple_south_ridge": [
+    {
+      "lat": 47.486,
+      "lng": -120.777,
+      "elev": 7500,
+      "name": "Prusik Pass",
+      "type": "Junction",
+      "distMi": 9.5,
+      "elevFt": 7500
+    },
+    {
+      "lat": 47.4855,
+      "lng": -120.78,
+      "elev": 7300,
+      "name": "Core Enchantments / Prusik Pass area",
+      "type": "Campsite",
+      "distMi": 9.6,
+      "elevFt": 7300
+    },
+    {
+      "lat": 47.4895,
+      "lng": -120.771,
+      "elev": 7700,
+      "name": "Base of south ridge",
+      "type": "Junction",
+      "distMi": 10,
+      "elevFt": 7700
+    },
+    {
+      "lat": 47.5441,
+      "lng": -120.7097,
+      "elev": 1300,
+      "name": "Snow Lakes Trailhead",
+      "note": "Corrected from DB's existing value (47.5556, -120.705), which is ~1.3km off the actual parking lot location on Icicle Creek Road, 4.2-4.3 mi from US-2/Icicle Creek Road junction.",
+      "type": "Trailhead",
+      "elevFt": 1300
+    },
+    {
+      "lat": 47.4906,
+      "lng": -120.7694,
+      "elev": 8295,
+      "name": "The Temple summit",
+      "type": "Summit",
+      "elevFt": 8295
+    }
+  ],
+  "wa_trapper_mountain_north_couloir": [
+    {
+      "lat": 48.4684,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "type": "pass",
+      "distMi": 3.7,
+      "elevFt": 5392
+    },
+    {
+      "lat": 48.44,
+      "lng": -121.0036,
+      "elev": 4170,
+      "name": "Trapper Lake",
+      "type": "Water",
+      "distMi": null,
+      "elevFt": 4170
+    },
+    {
+      "lat": 48.4318,
+      "lng": -121.0184,
+      "elev": 7530,
+      "name": "Trapper Mountain (summit)",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7530
+    },
+    {
+      "lat": 48.475497,
+      "lng": -121.075031,
+      "name": "Cascade Pass Trailhead (Cascade River Road)",
+      "type": "Trailhead"
+    }
+  ],
+  "wa_tricouni_peak_southwest_slopes": [
+    {
+      "lat": 48.61,
+      "lng": -121.085,
+      "elev": 1700,
+      "name": "Thunder Creek log crossing",
+      "note": "The original footbridge over Thunder Creek near mile 6.6 washed out in fall 2017; parties cross via a log felled about 1,000 ft downstream of the old bridge site. Coordinates approximate.",
+      "type": "Hazard",
+      "distMi": 6.4
+    },
+    {
+      "lat": 48.598,
+      "lng": -121.079,
+      "elev": 1900,
+      "name": "McAllister Camp",
+      "note": "Backcountry stock camp where McAllister Creek meets Thunder Creek; leave the maintained trail here and pick up the unmaintained climbers' boot path at the first fork. Coordinates approximate.",
+      "type": "Campsite",
+      "distMi": 6.6
+    },
+    {
+      "lat": 48.588,
+      "lng": -121.072,
+      "elev": 4600,
+      "name": "Ridge viewpoint",
+      "note": "Boot path up the north ridge passes a viewpoint here with the first views of Primus, Tricouni, and neighboring peaks. Coordinates approximate.",
+      "type": "Viewpoint",
+      "distMi": 8.5
+    },
+    {
+      "lat": 48.578,
+      "lng": -121.066,
+      "elev": 5200,
+      "name": "Borealis Lake camp",
+      "note": "Standard base camp on a flat bench below the Borealis Glacier. Elevation and coordinates are approximate — not precisely confirmed in available trip reports.",
+      "type": "Campsite",
+      "distMi": 10
+    },
+    {
+      "lat": 48.582,
+      "lng": -121.073,
+      "elev": 7700,
+      "name": "Lucky Pass (Primus-Tricouni col)",
+      "note": "Reached via roped travel across the Borealis Glacier's west edge, which has retreated and split into upper/lower tiers separated by slabs and cliffs. Elevation and coordinates are approximate.",
+      "type": "Junction",
+      "distMi": 11.5
+    },
+    {
+      "lat": 48.6855,
+      "lng": -121.0925,
+      "elev": 1240,
+      "name": "Thunder Creek Trailhead (Colonial Creek Campground, South Loop)",
+      "note": "Existing DB coords (48.6892,-121.0977) are within ~0.4mi of this NPS/WTA-sourced point and are a reasonable match for the same trailhead; both refer to the Thunder Creek Trail start at Colonial Creek Campground on Hwy 20. This is a legitimately long/remote approach (24-mile round trip: Thunder Creek Trail to McAllister camp, off-trail to Borealis Lake, across Borealis Glacier to Lucky Pass) — the ~12km straight-line distance from summit is expected, not a data error.",
+      "type": "Trailhead",
+      "elevFt": 1240
+    },
+    {
+      "lat": 48.5822,
+      "lng": -121.0783,
+      "elev": 8102,
+      "name": "Tricouni Peak",
+      "type": "Summit",
+      "elevFt": 8102
+    }
+  ],
+  "wa_south_face": [
+    {
+      "lat": 48.54,
+      "lng": -120.595,
+      "elev": 6000,
+      "name": "The Ledge Bivy",
+      "note": "Common bivy area partway up to Burgundy Col.",
+      "type": "Campsite",
+      "distMi": 2
+    },
+    {
+      "lat": 48.546,
+      "lng": -120.585,
+      "elev": 7950,
+      "name": "Burgundy Col",
+      "note": "Separates the Wine Spires from Vasiliki Ridge; Vasiliki Tower stands on the left entering the col.",
+      "type": "Junction",
+      "distMi": 3
+    },
+    {
+      "lat": 48.532,
+      "lng": -120.61,
+      "elev": 4300,
+      "name": "Early Winters Creek Trailhead",
+      "note": "Roadside pull-off on SR-20 near milepost 165-166, ~4 mi east of Washington Pass; cross Early Winters Creek then climb ~3 mi to Burgundy Col.",
+      "type": "Trailhead",
+      "elevFt": 4300
+    },
+    {
+      "lat": 48.55552,
+      "lng": -120.59304,
+      "elev": 7663,
+      "name": "Vasiliki Tower",
+      "type": "Summit",
+      "elevFt": 7663
+    }
+  ],
+  "wa_whatcom_peak_southwest_route": [
+    {
+      "lat": 48.8837,
+      "lng": -121.5335,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "High point of the maintained Hannegan Pass Trail; the route leaves good tread here and drops steeply into the Chilliwack River valley toward the Brush Creek approach.",
+      "type": "Junction",
+      "distMi": 4.6
+    },
+    {
+      "lat": 48.881137,
+      "lng": -121.466565,
+      "elev": 2700,
+      "name": "Chilliwack River ford",
+      "note": "Unbridged ford of the Chilliwack River reported thigh-deep at typical mid-summer flow; can run much higher and more dangerous during snowmelt or after rain.",
+      "type": "Hazard",
+      "distMi": 7
+    },
+    {
+      "lat": 48.8790008,
+      "lng": -121.4107855,
+      "elev": 3400,
+      "name": "Graybeal Camp",
+      "note": "Established camp about 2 miles up the Brush Creek Trail; the camp itself is dry by late summer, so fill water bottles at Brush Creek roughly a half mile before arriving.",
+      "type": "Campsite",
+      "distMi": 9
+    },
+    {
+      "lat": 48.8754053,
+      "lng": -121.3645777,
+      "elev": 5210,
+      "name": "Whatcom Pass",
+      "note": "Trail high point and standard base-camp area for the climb; junction with the Tapto Lakes path and the climbers' route onto the Whatcom Glacier.",
+      "type": "Junction",
+      "distMi": 16.5
+    },
+    {
+      "lat": 48.866521,
+      "lng": -121.369063,
+      "elev": 5500,
+      "name": "Whatcom Glacier traverse",
+      "note": "Traverse the east side of the retreating Whatcom Glacier around 5,200-5,500 ft; NPS and guidebook reports warn of icefall and crevasse hazard here, worsening after mid-summer as the ice has thinned.",
+      "type": "Hazard",
+      "distMi": 18
+    },
+    {
+      "lat": 48.9101,
+      "lng": -121.5927,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Same trailhead. NPS trip account describes traversing Whatcom Peak's east side / 'Whatcom Glacier route' from Whatcom Pass (reached via Hannegan Pass Trailhead).",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 48.8561,
+      "lng": -121.3825,
+      "elev": 7574,
+      "name": "Whatcom Peak",
+      "type": "Summit",
+      "elevFt": 7574
+    }
+  ],
+  "wa_gato_negro": [
+    {
+      "lat": 48.55016,
+      "lng": -120.58894,
+      "elev": 7800,
+      "name": "Whine Spire (Gato Negro topout)",
+      "note": "12-pitch alpine trad route (5.10a/b) on the sub-peak east of Silver Star Mountain; topout elevation is approximate.",
+      "type": "Topout",
+      "distMi": 3.5
+    },
+    {
+      "lat": 48.55,
+      "lng": -120.6306,
+      "elev": 4400,
+      "name": "SR-20 Wine Spires / Silver Star pullout (~MP 165, ~4 mi east of Washington Pass)",
+      "note": "Corrects existing DB value (Blue Lake Trailhead), which is on the wrong side of Washington Pass entirely. Climbers park at this pullout, descend to and cross Early Winters Creek, then climb a steep climbers trail to the Bench (~6,500-6,700ft) below Burgundy Col, from which all Wine Spires routes (including Whine Spire/Gato Negro) and Silver Star's standard route are reached.",
+      "type": "Trailhead",
+      "elevFt": 4400
+    },
+    {
+      "lat": 48.55016,
+      "lng": -120.58894,
+      "elev": 8348,
+      "name": "Whine Spire summit (sub-peak on Silver Star Mountain's ridge, east side)",
+      "type": "Summit",
+      "elevFt": 8348
+    }
+  ]
+}

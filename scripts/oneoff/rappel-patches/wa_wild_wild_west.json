@@ -1,0 +1,23 @@
+{
+ "id": "wa_wild_wild_west",
+ "area_id": "wa_west_face_6",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First of two rappels using a single 60m rope; tie stopper knots since the rappel is close to the rope's max length.",
+    "anchor": "bolted anchor",
+    "lengthM": 30
+   },
+   {
+    "n": 2,
+    "notes": "Second rappel reaches the base of the formation.",
+    "anchor": "bolted anchor near tree, north end",
+    "lengthM": 30
+   }
+  ],
+  "rappels": "2 rappels with a 60 m rope from the anchor near a stand of fir trees at the north end of the formation, down the East Face (one long rappel with two ropes)",
+  "rappel_count_note": "Can be done as 1 rappel instead with two ropes tied together"
+ }
+}

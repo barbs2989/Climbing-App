@@ -1,0 +1,203 @@
+{
+ "wa_mount_rainier_disappointment_cleaver": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": "snow slog",
+    "notes": "4,600 ft up the Muir Snowfield; non-glaciated but exposed to weather",
+    "pitch": "Paradise → Camp Muir"
+   },
+   {
+    "grade": "glacier",
+    "notes": "rope up; cross the Cowlitz Glacier to the gap",
+    "pitch": "Camp Muir → Cathedral Gap"
+   },
+   {
+    "grade": "glacier",
+    "notes": "relatively flat crevassed bench; common high camp/turn-back point",
+    "pitch": "Ingraham Flats"
+   },
+   {
+    "grade": "steep snow/rock to 35–40°",
+    "notes": "loose rock rib; rockfall hazard; helmets essential",
+    "pitch": "Disappointment Cleaver"
+   },
+   {
+    "grade": "snow 30–40°",
+    "notes": "switchbacking through crevasses, ladders/fixed lines possible late season",
+    "pitch": "Upper glacier to crater rim"
+   }
+  ]
+ },
+ "wa_mount_rainier_gibraltar_ledges": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": "glacier",
+    "notes": "Cowlitz Glacier edge below the Cowlitz Cleaver, past the Beehive.",
+    "pitch": "Camp Muir to Gibraltar Rock"
+   },
+   {
+    "grade": "snow ledges / loose 4th-class rock",
+    "notes": "Traverse the ledge system across the face of Gibraltar Rock.",
+    "pitch": "Gibraltar Ledges"
+   },
+   {
+    "grade": "steep ice",
+    "notes": "Ice chute between rock and the Nisqually ice cliff to the saddle.",
+    "pitch": "Gibraltar Chute"
+   },
+   {
+    "grade": "glacier ~40°",
+    "notes": "~2,000 ft to the east crater rim and summit.",
+    "pitch": "Summit slopes"
+   }
+  ]
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": "40-45°",
+    "notes": "~1,000 ft of 40-45° snow above the bergschrund",
+    "pitch": "Lower schrund/snow"
+   },
+   {
+    "grade": "45-55°",
+    "notes": "Traverse left into an hourglass snow face below the rock buttress splitting the upper route",
+    "pitch": "Hourglass/buttress"
+   }
+  ]
+ },
+ "wa_mount_rainier_tahoma_glacier": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": "Trail/moraine hike",
+    "notes": "Westside Road gate to Emerald Ridge camp via Tahoma Creek and Wonderland Trails",
+    "pitch": "Approach"
+   },
+   {
+    "grade": "Glacier travel, ~30°",
+    "notes": "Zigzag south side of the glacier to ~7,200 ft, then diagonal traverse",
+    "pitch": "Lower glacier"
+   },
+   {
+    "grade": "Glacier travel, up to ~45°",
+    "notes": "Traverse back and forth across the glacier around 9,000-10,000 ft to avoid crevasse bands",
+    "pitch": "Mid glacier"
+   },
+   {
+    "grade": "Glacier travel",
+    "notes": "Joins upper-mountain terrain toward the summit",
+    "pitch": "Upper glacier to summit"
+   }
+  ]
+ },
+ "wa_mount_rainier_curtis_ridge": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": null,
+    "notes": "~70 ft rappel off a boulder anchor to reach snow slopes below",
+    "pitch": "Rappel at 10,300 ft"
+   },
+   {
+    "grade": "4th class",
+    "notes": "Traverse right on the snowfield to find a weakness through the cliff band; exposed scrambling",
+    "pitch": "Gendarme/cliff band"
+   },
+   {
+    "grade": null,
+    "notes": "Deposits climbers atop the cliff section at 12,500 ft; easy snow above to 13,800 ft",
+    "pitch": "Final gully"
+   }
+  ]
+ },
+ "wa_mount_rainier_nisqually_icefall": {
+  "area": "wa_mount_rainier",
+  "pitch_detail": [
+   {
+    "grade": "~40°, loose",
+    "notes": "Start of the historic FA line, ~500 ft",
+    "pitch": "Debris slope"
+   },
+   {
+    "grade": "Up to ~50°, sustained",
+    "notes": "Sérac and crevasse navigation, ice ridges, knife-edges, cut steps",
+    "pitch": "Icefall maze"
+   },
+   {
+    "grade": "Glacier travel",
+    "notes": "Joins the established Kautz route toward the summit at ~13,000 ft",
+    "pitch": "Upper Nisqually Glacier to Kautz route"
+   }
+  ]
+ },
+ "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+  "area": "wa_little_tahoma",
+  "pitch_detail": [
+   {
+    "grade": "Glacier travel, moderate terrain with one no-fall zone",
+    "notes": "Approach-side glacier traverse; length reflected in distKm, not counted in routeFt",
+    "pitch": "Cowlitz/Ingraham glacier traverse to south face base",
+    "lengthM": 0
+   },
+   {
+    "grade": "Steep snow/ice",
+    "notes": "Ascend to exit at the glacier's upper-left corner into the summit gully",
+    "pitch": "Upper Frying Pan Glacier corner into gully",
+    "lengthM": 137
+   },
+   {
+    "grade": "Low 5th class",
+    "notes": "Roughly two-thirds up the gully to a short (~6 ft) step",
+    "pitch": "Gully to headwall step",
+    "lengthM": 122
+   },
+   {
+    "grade": "Low 5th class",
+    "notes": "Short (~6 ft) step at the headwall",
+    "pitch": "Headwall step",
+    "lengthM": 2
+   },
+   {
+    "grade": "Low 5th class",
+    "notes": "Chimney climbing to the summit notch",
+    "pitch": "Gully-chimney to summit notch",
+    "lengthM": 85
+   },
+   {
+    "grade": "Class 3, exposed",
+    "notes": "Short (~30 ft), loose, exposed scramble along the ridge crest to the true summit",
+    "pitch": "Final ridge-crest scramble",
+    "lengthM": 9
+   }
+  ]
+ },
+ "wa_mount_adams_north_ridge": {
+  "area": "wa_mount_adams",
+  "pitch_detail": [
+   {
+    "grade": "trail",
+    "notes": "approach to ~6,900 ft north-side camp",
+    "pitch": "Killen Creek TH → High Camp"
+   },
+   {
+    "grade": "snow/glacier",
+    "notes": "rope for crevasses between Adams/Lava glaciers",
+    "pitch": "High Camp → ridge base"
+   },
+   {
+    "grade": "steep snow 40–45°",
+    "notes": "sustained; rockfall and cornices on the crest",
+    "pitch": "North Ridge"
+   },
+   {
+    "grade": "snow 25–30°",
+    "notes": "join the summit dome",
+    "pitch": "Upper mountain → summit"
+   }
+  ]
+ }
+}

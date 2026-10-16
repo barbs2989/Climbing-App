@@ -1,0 +1,83 @@
+{
+ "id": "wa_mount_stuart_stuart_glacier_couloir",
+ "name": "Stuart Glacier Couloir",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "End of FR 7601 past Eightmile Lake; self-issue day-use wilderness permit at the kiosk, Northwest Forest Pass required for parking.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The Stuart Lake Trailhead sits at the end of Eightmile Road (FR 7601), which leaves Icicle Creek Road (FR 7600); follow FR 7601 to its end, past Eightmile Lake. A Northwest Forest Pass is required to park in the lot. Fill out the self-issue day-use wilderness permit at the kiosk before you start walking."
+  },
+  {
+   "lat": 47.503934,
+   "lng": -120.844376,
+   "elev": 4500,
+   "name": "Colchuck Lake Trail junction",
+   "note": "Continue straight on the Stuart Lake Trail past this junction, staying along Mountaineer Creek rather than turning left for Colchuck Lake.",
+   "type": "Junction",
+   "distMi": 3,
+   "directions": "Follow the Stuart Lake Trail up the Mountaineer Creek valley about 2.5 miles to the Colchuck Lake junction, near 4,500 ft."
+  },
+  {
+   "lat": 47.499981,
+   "lng": -120.858796,
+   "elev": 5000,
+   "name": "Off-trail turn toward Stuart Glacier basin",
+   "note": "About a mile past the Colchuck junction, leave the maintained trail and follow the valley climbers' path up toward the Sherpa/Stuart Glacier basin — often snow-covered and poorly marked March-June.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Stay right on the Stuart Lake Trail rather than turning left for Colchuck Lake, and continue about a mile. Where the trail turns uphill and starts switchbacking away from the creek, leave it and stay in the valley bottom on the unmaintained climbers' path; it is often snow-covered and poorly marked in spring."
+  },
+  {
+   "lat": 47.486534,
+   "lng": -120.866784,
+   "elev": 5400,
+   "name": "Basin below Sherpa Glacier",
+   "note": "Standard base camp for the Stuart Glacier Couloir in a small flat valley at the base of the Sherpa Glacier, about 5 miles and 5+ hours from the trailhead.",
+   "type": "Campsite",
+   "distMi": 5.5
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7800,
+   "name": "Stuart Glacier Couloir bergschrund",
+   "note": "Bergschrund at the couloir's entrance around 7,800 ft is often the route's crux obstacle; parties have belayed across on sugary, unconsolidated snow.",
+   "type": "Hazard",
+   "distMi": 6.5,
+   "directions": "From the basin, continue west around the far side of the North Ridge rock rib onto the Stuart Glacier, watching for crevasses, and climb the glacier to the foot of the couloir at about 7,800 ft. The North Ridge should be on your left; if a hanging ice cliff is above you, you are still on the Ice Cliff side."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 9000,
+   "name": "West Ridge notch (col)",
+   "note": "Couloir tops out at this notch on the West Ridge, the col shared with the West Ridge route, after a narrow ice/snow section that can run 40-60 degrees; continue over mixed 5th-class rock toward the summit.",
+   "type": "Junction",
+   "distMi": 7,
+   "directions": "Cross the bergschrund, belaying it if the snow is sugary, and climb the 40 to 50 degree couloir as it narrows to a short steep step of ice or verglas, then a second shorter step. Above, the gully widens into a snowfield; climb a couple hundred feet of 50 degree snow to the notch on the upper West Ridge."
+  },
+  {
+   "lat": 47.475118,
+   "lng": -120.903144,
+   "elev": 9415,
+   "name": "Mount Stuart summit",
+   "note": "True summit, typically reached via 2-3 short pitches of mid-5th-class rock above the West Ridge notch.",
+   "type": "Summit",
+   "distMi": 7.5,
+   "directions": "From the notch, drop about 10 ft onto the south side and follow ledges along the south flank of the ridge, then climb mid-fifth-class rock and a diagonal traverse into a gully that leads back to the crest. Class 3 ledges and short cracks lead to the summit block; a short 5.6 lieback near the top can be bypassed by a traverse. Expect rime and ice on the ledges early in the season."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 47.475118,
+  "peakLng": -120.903144,
+  "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+  "trailheadLat": 47.5282,
+  "trailheadLng": -120.82036,
+  "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,540 ft), via the Mountaineer Creek drainage"
+ }
+}

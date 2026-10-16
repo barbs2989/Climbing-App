@@ -1,0 +1,709 @@
+{
+ "file": "r055.json",
+ "results": [
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Rappel/rope length needed",
+   "verdict": "fixed",
+   "correct_value": "60m rope (single ~75 ft rappel off the chimney anchor)",
+   "evidence": "The North Col route description gives one ~75-ft rappel on descent (a doubled 30m rope reaches only ~49 ft) and reports a 60m rope sufficient off the bolt-plus-nut anchor. A 2025 trip report lists a 60m rope and one rappel with rope to spare; the Mazamas description places a rappel anchor ~25 ft up the chimney. The 30m figures in rope_length_m, rack, gear and pro_needs are the outliers.",
+   "sources": [
+    "https://www.summitpost.org/north-col/161518",
+    "https://onehikeaweek.com/2025/07/12/monte-cristo-peak/",
+    "https://mazamas.org/activity/218/"
+   ],
+   "patches": [
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Rappel/rope length needed",
+     "op": "set",
+     "column": "rope_length_m",
+     "path": [],
+     "expect": 30,
+     "value": 60
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Rappel/rope length needed",
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "find": "30m rope for the roped chimney section",
+     "replace": "60m rope for the roped chimney section and its rappel"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Rappel/rope length needed",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "rope (30m sufficient for the short technical pitch)",
+     "replace": "rope (60m, for the chimney pitch and its ~75 ft rappel)"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Rappel/rope length needed",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "a 30m rope is sufficient for the short technical section",
+     "replace": "a 60m rope covers the technical section and its rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Glacier/crevasse travel on this route",
+   "verdict": "fixed",
+   "correct_value": "No glacier travel, but a crevasse-like moat between snow and rock at the North Col must be crossed and widens as summer goes on",
+   "evidence": "An accident report describes a climber falling into a ~20-ft-deep moat between the snow slope and rock at ~6,680 ft on the North Col descent in August. A July 2025 trip report found a seven-foot-deep gap with water running in it at the col, and the Mazamas route text warns the step across the moat can be intimidating or impossible.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13197904600/Slip-on-Snow-Fall-Into-Moat-Washington-Monte-Cristo-Peak",
+    "https://onehikeaweek.com/2025/07/12/monte-cristo-peak/",
+    "https://mazamas.org/activity/218/"
+   ],
+   "patches": [
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Glacier/crevasse travel on this route",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel on this route",
+     "value": "No glacier travel, but the moat between the snow and the rock at the North Col is a crevasse-like gap that must be crossed both ways; it widens as the season goes on and can be many feet deep by late summer."
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Best/classic season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep, best in June to early July before the moat opens",
+   "evidence": "The peak description gives the season as roughly May to the first autumn snow and says crossing the moat can be challenging from early July on, with the col gully becoming a talus slog once the snow is gone. The Mazamas route text notes the later in the season, the lower the snow and the worse the moat step; a late-July 2026 trip report found hard, thin snow over an open moat where thick early-season snow had made it straightforward, and a 1979 accident was a fall into the moat in late August. So the row's best_season, pro_tips, approach_variants, itinerary.cal and climate are right and season/seasonal_guidance were the outliers.",
+   "sources": [
+    "https://www.summitpost.org/monte-cristo-peak/152819",
+    "https://mazamas.org/activity/218/",
+    "https://trailcatjim.com/monte-cristo-glacier-basin-climbing-reconnaissance-2026/",
+    "http://publications.americanalpineclub.org/articles/13197904600/Slip-on-Snow-Fall-Into-Moat-Washington-Monte-Cristo-Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Best/classic season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Best/classic season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through September; August is the most reliable stretch",
+     "value": "June to early July, while snow still bridges the moat at the chimney; later in summer the moat opens and can block access"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Best/classic season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown"
+     ],
+     "expect": {
+      "July": {
+       "reason": "Route becomes viable as snow starts clearing, but lingering snowfields on approach/upper slopes and afternoon thunderstorms are common early in the month",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Most consistent snow-free conditions and the most stable weather window for the summit scramble",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Cooler, generally stable, but shorter days and possible early-season snow late in the month",
+       "status": "good"
+      }
+     },
+     "value": {
+      "June": {
+       "status": "optimal",
+       "reason": "Snow still covers the North Col talus and usually bridges the moat at the chimney's base; steep snow to the col needs an axe and crampons, and Barlow Pass can still hold snow early in the month"
+      },
+      "July": {
+       "status": "good",
+       "reason": "Snow thins on the approach and the moat begins to open, more so late in the month; afternoon thunderstorms are common"
+      },
+      "August": {
+       "status": "good",
+       "reason": "The steadiest weather, but the moat at the chimney is often open and awkward or impassable, and the talus below the col is loose once melted out"
+      },
+      "September": {
+       "status": "good",
+       "reason": "Cooler and generally stable, but shorter days, an open moat and possible early-season snow late in the month"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Approach distance and gain from the car to Glacier Basin",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "About 2.5 mi and ~1,700 ft from the townsite; about 6.5 mi and ~2,100 ft from Barlow Pass to Glacier Basin",
+   "evidence": "The approach text says Glacier Basin is \"roughly 6.5 miles ... from Monte Cristo, ~10.5 miles and ~4,000 ft from the car\", contradicting its own 2.5 mi from the townsite and itinerary day 1 (6.7 mi, 2,150 ft). The WTA Glacier Basin guide gives 12 mi round trip and 2,159 ft gain from Barlow Pass; the Mountaineers give 12.5 mi round trip and 2,040 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/glacier-basin-1",
+    "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-glacier-basin-silver-lake-twin-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Approach distance and gain from the car to Glacier Basin",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "after about 2.5 miles — roughly 6.5 miles and ~1,700 ft of gain from Monte Cristo, ~10.5 miles and ~4,000 ft from the car.",
+     "replace": "after about 2.5 miles and ~1,700 ft of gain from Monte Cristo — roughly 6.5 miles and ~2,100 ft from the car."
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Where the rappel is (summit vs the chimney)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The single rappel descends the short chimney below the summit ledges, not off the summit",
+   "evidence": "partner_requirements and seasonal_hazards.exposure put the rappel \"off the summit\"/\"off the top\", while descent_text and the waypoints have ~100 ft of Class 3 downclimbing from the summit to the chimney anchor. The Mazamas route text puts the rappel anchor ~25 ft above the chimney start; a 2025 trip report made its one rappel from the bottom of the ramp above the chimney; the route description calls it one ~75-ft rappel.",
+   "sources": [
+    "https://mazamas.org/activity/218/",
+    "https://onehikeaweek.com/2025/07/12/monte-cristo-peak/",
+    "https://www.summitpost.org/north-col/161518"
+   ],
+   "patches": [
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Where the rappel is (summit vs the chimney)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "(~60m rappel commonly used off the summit)",
+     "replace": "(one ~75 ft rappel down the summit chimney on a 60m rope)"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Where the rappel is (summit vs the chimney)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "comfortable with a roped rappel off the summit block",
+     "replace": "comfortable with a roped rappel down the summit chimney"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Where the rappel is (summit vs the chimney)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "minimal rack for the summit rappel",
+     "replace": "minimal rack for the chimney and its rappel"
+    },
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Where the rappel is (summit vs the chimney)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "a roped rappel (60m) is the standard descent off the top",
+     "replace": "a roped rappel (60m rope) down the chimney is the standard descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Avalanche note says the route is climbed only once snow-free",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The col gully is climbed on steep snow (to ~45 degrees) into midsummer",
+   "evidence": "seasonal_hazards.avalanche.zone says the route is 'only climbed once snow-free', but the row's approach, hazards and waypoints require steep snow to ~45 degrees to the col. The Mazamas route text describes steep snow to 45 degrees for a few hundred feet to the col, and 2025 and 2026 trip reports climbed snow to the col in July.",
+   "sources": [
+    "https://mazamas.org/activity/218/",
+    "https://onehikeaweek.com/2025/07/12/monte-cristo-peak/",
+    "https://trailcatjim.com/monte-cristo-glacier-basin-climbing-reconnaissance-2026/"
+   ],
+   "patches": [
+    {
+     "id": "wa_monte_cristo_peak_scramble",
+     "fact": "Avalanche note says the route is climbed only once snow-free",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "but the route is only climbed once snow-free",
+     "replace": "though the gully to the North Col holds steep snow into midsummer"
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Total elevation gain (gain_ft/loss_ft 5200 vs itinerary 4,800)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft and loss_ft are 5200, while the itinerary days sum to 4,800 ft gain / 4,780 ft loss and totalNote says ~4,800 ft; Barlow Pass (2,360 ft) to the 7,136-ft summit is 4,776 ft net. A 2025 trip report gives ~4,841 ft only as the elevation difference. No source states a measured total gain, so neither figure could be confirmed.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/12/monte-cristo-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+   "evidence": "Morning Star Peak sits on Mt. Baker-Snoqualmie National Forest land and is listed within the Morning Star NRCA; the Sunrise Mine trail guide names no wilderness and says much of the Headlee Pass area lies outside protected wilderness, requiring only a Northwest Forest/interagency parking pass. The Forest Service trail page likewise lists only a recreation pass. Glacier Peak Wilderness and its Suiattle River Road access are a separate area well to the north-east, so its group/campfire rules, the wilderness permit and the Suiattle storm note do not apply to this trailhead.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Morning_Star_Peak",
+    "https://peakvisor.com/peak/morning-star-peak.html",
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/sunrise-mine-trail-707"
+   ],
+   "patches": [
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "expect": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "value": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "Adjacent to or within Glacier Peak Wilderness area",
+     "value": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "notes"
+     ],
+     "expect": "As of April 2026, access to Glacier Peak Wilderness is extremely limited due to December 2025 storm damage",
+     "value": "Reached from the Mountain Loop Highway and Sunrise Mine Road (FR 4065), not through the Glacier Peak Wilderness access roads."
+    },
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "wilderness_zone"
+     ],
+     "expect": "Adjacent to or within Glacier Peak Wilderness area",
+     "value": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "value": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May."
+    },
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply."
+    },
+    {
+     "id": "wa_marvin_s_ear",
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free self-issue wilderness permit",
+     "value": "No wilderness permit required."
+    }
+   ]
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "fact": "Sunrise Mine Trailhead location",
+   "verdict": "unresolved",
+   "correct_value": "48.0251, -121.4779 (waypoint position)",
+   "evidence": "The waypoint pin (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail guide (48.0251, -121.4779) to within ~50 m; approach_logistics (48.02389, -121.47414) sits ~300 m away (the trailhead has also been planned for relocation ~0.5 mi back). Coordinates are out of scope for patching here, so it is left flagged.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://dnr.wa.gov/natural-areas/natural-resources-conservation-areas/morning-star-natural-resources-conservation-area"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "fact": "car-to-car day length",
+   "verdict": "fixed",
+   "correct_value": "About 14 hrs car-to-car: leave 4:30 AM, back ~6:30 PM",
+   "evidence": "Pacing notes for the route give a ~2-2.5 hr approach to the base and ~35 min per pitch (~6.5 hr for 11 pitches). A Mile High Club trip report (same rappel line and approach) took 1.5 hr to rappel from the summit and 2 hr more to the car, so the 3:15 PM descent start lands near 6:30-6:45 PM, not 8:30 PM. timing.totalHrs 14, itinerary hours 14 and the 13-14 hr totalNote are right; the schedule's last time was the outlier.",
+   "sources": [
+    "http://hiking.andrewleader.net/routes/beyond-redlining/",
+    "https://stephabegg.com/trip-reports/washington/morning-star-mile-high/"
+   ],
+   "patches": [
+    {
+     "id": "wa_beyond_redlining",
+     "fact": "car-to-car day length",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "time"
+     ],
+     "expect": "8:30 PM",
+     "value": "6:30 PM"
+    }
+   ]
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route",
+   "verdict": "fixed",
+   "correct_value": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May.",
+   "evidence": "Morning Star Peak sits on Mt. Baker-Snoqualmie National Forest land and is listed within the Morning Star NRCA; the Sunrise Mine trail guide names no wilderness and says much of the Headlee Pass area lies outside protected wilderness, requiring only a Northwest Forest/interagency parking pass. The Forest Service trail page likewise lists only a recreation pass. Glacier Peak Wilderness and its Suiattle River Road access are a separate area well to the north-east, so its group/campfire rules, the wilderness permit and the Suiattle storm note do not apply to this trailhead.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Morning_Star_Peak",
+    "https://peakvisor.com/peak/morning-star-peak.html",
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/sunrise-mine-trail-707"
+   ],
+   "patches": [
+    {
+     "id": "wa_beyond_redlining",
+     "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "value": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May."
+    },
+    {
+     "id": "wa_beyond_redlining",
+     "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply."
+    },
+    {
+     "id": "wa_beyond_redlining",
+     "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free self-issue wilderness permit",
+     "value": "No wilderness permit required."
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "which notch/direction the route uses",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is known as the South Ridge. Route descriptions mention a notch reached on icy snow before dropping ~200 ft into the southeast basin, and a 2015 trip report describes an unnamed access notch; none names a \"North Notch\" or confirms which notch the face field means, so the name could not be settled from two sources.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge",
+    "https://onehikeaweek.com/2015/02/21/morning-star-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "total car-to-car time / one-way time to summit",
+   "verdict": "unresolved",
+   "correct_value": "9 hrs car-to-car (row majority)",
+   "evidence": "timing.totalHrs, itinerary hours, totalNote and the 6 AM-3 PM schedule all say 9 hrs; partner_requirements says 8. No external source giving a car-to-car time for the scramble was found, so the one-external-source condition for an internal fix is not met.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "which wilderness area applies",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+   "evidence": "Morning Star Peak sits on Mt. Baker-Snoqualmie National Forest land and is listed within the Morning Star NRCA; the Sunrise Mine trail guide names no wilderness and says much of the Headlee Pass area lies outside protected wilderness, requiring only a Northwest Forest/interagency parking pass. The Forest Service trail page likewise lists only a recreation pass. Glacier Peak Wilderness and its Suiattle River Road access are a separate area well to the north-east, so its group/campfire rules, the wilderness permit and the Suiattle storm note do not apply to this trailhead.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Morning_Star_Peak",
+    "https://peakvisor.com/peak/morning-star-peak.html",
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/sunrise-mine-trail-707"
+   ],
+   "patches": [
+    {
+     "id": "wa_morning_star_peak_standard",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "expect": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "value": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_morning_star_peak_standard",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "value": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May."
+    },
+    {
+     "id": "wa_morning_star_peak_standard",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply."
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "Sunrise Mine Trailhead location",
+   "verdict": "unresolved",
+   "correct_value": "48.0251, -121.4779 (waypoint position)",
+   "evidence": "The waypoint pin (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail guide (48.0251, -121.4779) to within ~50 m; approach_logistics (48.02389, -121.47414) sits ~300 m away (the trailhead has also been planned for relocation ~0.5 mi back). Coordinates are out of scope for patching here, so it is left flagged.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://dnr.wa.gov/natural-areas/natural-resources-conservation-areas/morning-star-natural-resources-conservation-area"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "total route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach; 4.35 km = 2.7 mi is exactly half of the 5.4 mi round trip in the itinerary, so the two agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "Whether the scramble goes via Headlee Pass or up the South Fork Stillaguamish drainage",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "pitch_detail describes following the river valley to a 3,700-ft basin (consistent with trip reports that leave the Sunrise Mine trail at ~0.5 mi and follow a bootpath up the South Fork Stillaguamish drainage through slide alder), while approach, itinerary and timing say the route goes over Headlee Pass and north along the south ridge. Sources describe the drainage line but none confirms or excludes a Headlee Pass variant clearly enough to rewrite the approach.",
+   "sources": [
+    "https://onehikeaweek.com/2015/02/21/morning-star-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-20-1046775428"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mile_high_club",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": "roughly 3,000 ft or more (2,700 is too low)",
+   "evidence": "The summit of Eros/Vega North Tower is 5,280 ft and the trailhead ~2,350 ft, so car-to-car gain cannot be below ~2,930 ft; 2,700 ft is the approach gain quoted to the base. One GPS trip report logged 921 m (~3,020 ft) total, while the row's itinerary says 3,500. No two sources agree on the total, so no value was written.",
+   "sources": [
+    "https://www.mountainproject.com/route/112553808/mile-high-club",
+    "https://stephabegg.com/trip-reports/washington/morning-star-mile-high/",
+    "https://www.francisbaileyh.com/2023/09/02/eros-tower/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mile_high_club",
+   "fact": "car-to-car day length used for turnaround planning",
+   "verdict": "fixed",
+   "correct_value": "roughly 8-12 hrs car-to-car (the 12-hr schedule is the conservative plan)",
+   "evidence": "Published car-to-car times range from about 6.75 hr (1:15 PM to 8 PM) and 8.25 hr (11:15 AM to 7:30 PM) to 11.35 hr. Both \"8-10\" (turnaround) and \"10-12\" (totalNote) are narrower than that; stating 8-12 hrs in both makes them agree with each other and with the 12-hr planned schedule as its upper end.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/morning-star-mile-high/",
+    "https://www.francisbaileyh.com/2023/09/02/eros-tower/",
+    "https://www.jeffreyjhebert.com/adventures/mile-high-club-on-morning-star-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_mile_high_club",
+     "fact": "car-to-car day length used for turnaround planning",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "Given the ~8-10 hour car-to-car day",
+     "replace": "Given the ~8-12 hour car-to-car day"
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "car-to-car day length used for turnaround planning",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 10-12 hrs car-to-car",
+     "replace": "roughly 8-12 hrs car-to-car"
+    }
+   ]
+  },
+  {
+   "id": "wa_mile_high_club",
+   "fact": "which wilderness area applies",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+   "evidence": "Morning Star Peak sits on Mt. Baker-Snoqualmie National Forest land and is listed within the Morning Star NRCA; the Sunrise Mine trail guide names no wilderness and says much of the Headlee Pass area lies outside protected wilderness, requiring only a Northwest Forest/interagency parking pass. The Forest Service trail page likewise lists only a recreation pass. Glacier Peak Wilderness and its Suiattle River Road access are a separate area well to the north-east, so its group/campfire rules, the wilderness permit and the Suiattle storm note do not apply to this trailhead.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Morning_Star_Peak",
+    "https://peakvisor.com/peak/morning-star-peak.html",
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/sunrise-mine-trail-707"
+   ],
+   "patches": [
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "expect": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "value": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "Adjacent to or within Glacier Peak Wilderness area",
+     "value": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "notes"
+     ],
+     "expect": "As of April 2026, access to Glacier Peak Wilderness is extremely limited due to December 2025 storm damage",
+     "value": "Reached from the Mountain Loop Highway and Sunrise Mine Road (FR 4065), not through the Glacier Peak Wilderness access roads."
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "wilderness_zone"
+     ],
+     "expect": "Adjacent to or within Glacier Peak Wilderness area",
+     "value": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness."
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "value": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May."
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply."
+    },
+    {
+     "id": "wa_mile_high_club",
+     "fact": "which wilderness area applies",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free self-issue wilderness permit",
+     "value": "No wilderness permit required."
+    }
+   ]
+  }
+ ]
+}

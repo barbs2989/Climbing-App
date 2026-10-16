@@ -1,0 +1,39 @@
+{
+ "applied": [
+  {
+   "id": "wa_spraying_mantis",
+   "op": "move_pin",
+   "index": 0,
+   "name": "FS Road 9070 Turnaround at Silver Basin",
+   "moved_km": 0.64,
+   "gpx_vertices_carried": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_spraying_mantis",
+   "waypoints": [
+    {
+     "lat": 47.36741,
+     "lng": -121.45564,
+     "elev": 4585,
+     "name": "FS Road 9070 Turnaround at Silver Basin",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4585
+    },
+    {
+     "lat": 47.36741,
+     "lng": -121.45564,
+     "elev": 4650,
+     "name": "Sofa King Buttress base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 4650
+    }
+   ],
+   "gpx": null
+  }
+ ]
+}

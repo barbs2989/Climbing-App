@@ -1,0 +1,612 @@
+{
+ "file": "r108.json",
+ "results": [
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "fact": "Total round-trip time",
+   "verdict": "fixed",
+   "correct_value": "11-17 hours car to car (matching the itinerary)",
+   "evidence": "A July 2022 Aasgard Pass ascent took 12 h 39 min car to car. Other published trip reports for the Aasgard Pass route give 10 h 40 min, 11 h 42 min, about 13 h and 15 h car to car. No report found supports 8-10 hours as typical; the itinerary's 11-17 h range covers them.",
+   "sources": [
+    "https://www.francisbaileyh.com/2022/07/01/dragontail-peak/",
+    "https://www.mountaineers.org/activities/trip-reports/little-annapurna-and-dragontail-peak-via-aasgard-pass",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-11-10.5689594573"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "commitment",
+     "path": [],
+     "find": "8-10 hours",
+     "replace": "11-17 hours",
+     "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+     "fact": "Total round-trip time"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "fact": "Elevation gain to Aasgard Pass mislabeled",
+   "verdict": "fixed",
+   "correct_value": "The ~700 ft snow slope runs from the top of Aasgard Pass (~7,800 ft) to the 8,500 ft saddle — above the pass, not the climb to it",
+   "evidence": "One route description says to climb from Aasgard Pass (7,800 ft) southwest up the slope to the saddle at 8,500 ft, then ~300 ft to the summit. A second ascent report describes the permanent snowfield above the pass as a 35-degree slope gaining roughly 700 ft to the notch. The watch_out numbers are right but belong to the slope above the pass.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-aasgard-pass",
+    "https://lemkeclimbs.com/dragontail-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "Steep snow slope to Aasgard Pass",
+     "replace": "Steep snow slope above Aasgard Pass",
+     "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+     "fact": "Elevation gain to Aasgard Pass mislabeled"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "fact": "Steepest angle of the snow slope above Aasgard Pass",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "watch_out says 35 degrees; max_angle, beta, pitch_detail and climbing_route say about 30 degrees at its steepest. One ascent report calls it a 35-degree slope; no second source with an angle was found, so 30 vs 35 is left open.",
+   "sources": [
+    "https://lemkeclimbs.com/dragontail-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Route grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Grade II",
+   "evidence": "grade, alpine_grade, commitment and ice_grade all rate the route Grade II (I-II); watch_out alone says Grade III. The published route page for the Colchuck Col couloir (West Route) rates it a Grade II snow climb, 600 ft, needing only axe and crampons.",
+   "sources": [
+    "https://www.mountainproject.com/route/107144495/west-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Grade III alpine terrain",
+     "replace": "Grade II alpine terrain",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Route grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Total elevation gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 5500,
+   "evidence": "The trailhead is at 3,400 ft and the summit at 8,840 ft (widely published), so net rise alone is 5,440 ft; 4,700 ft is impossible. The itinerary's day gains sum to 5,500 ft, agreeing with the waypoints and high_point_ft.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dragontail_Peak",
+    "https://www.mountainproject.com/route/107144495/west-route"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4700,
+     "value": 5500,
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Glacier travel claim",
+   "verdict": "fixed",
+   "correct_value": "The Colchuck Glacier is crossed to reach Colchuck Col; little crevassing, but moats/crevasses and hard ice appear later in the season",
+   "evidence": "A route description says to ascend snow or talus to the glacier and follow it to Colchuck Col, noting it can be icy by mid-season. A mid-July ascent report describes climbing the Colchuck Glacier and seeing crevasses and snow moats; an August report found a band of blue ice across most of it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "https://www.lemkeclimbs.com/colchuck-peak.html",
+    "https://www.richardhforbes.com/trip-log/2019/8/5/trip-report-dragontail-peak-via-colchuck-glacier-pandoras-box-then-through-the-enchantments"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel",
+     "value": "The approach crosses the small Colchuck Glacier to Colchuck Col. It usually has little crevassing, but moats and a few crevasses can open as it melts back, and it can turn to hard ice late in the season.",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Glacier travel claim"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Steepest angle of the couloir",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One ski report puts Pandora's Box at up to about 45 degrees; other reports describe the steep traverse on the Dragontail side at around 45-50 degrees max and one mentions 50. Sources do not settle 45 vs 50, so max_angle and watch_out are left as they are.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/may-18-19-2012-dragontail-via-pandoras-box-couloir",
+    "https://turns-all-year.com/trip-reports/may-9-2009-circumnavigation-of-dragontail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Seasonal guidance omits the season it's quoted for",
+   "verdict": "fixed",
+   "correct_value": "May through July on firm snow; August marginal",
+   "evidence": "Documented ascents via the Colchuck Glacier and Pandora's Box fall in May (two ski trips), late June, July 1, mid-July and July 31; an August ascent found blue ice across the glacier that made it the crux. The route page says it is best early in the season. This agrees with season (May-Jul), climate.spring and the itinerary, not the Dec-Apr monthBreakdown.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/may-18-19-2012-dragontail-via-pandoras-box-couloir",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+    "https://www.francisbaileyh.com/2022/07/01/colchuck-peak/",
+    "https://www.lemkeclimbs.com/colchuck-peak.html",
+    "https://www.richardhforbes.com/trip-log/2019/8/5/trip-report-dragontail-peak-via-colchuck-glacier-pandoras-box-then-through-the-enchantments"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [],
+     "expect": {
+      "optimalWindow": "Late winter to spring, conditions dependent",
+      "monthBreakdown": {
+       "April": {
+        "reason": "Frequently the most reliable window before spring warming destabilizes the snowpack",
+        "status": "good"
+       },
+       "March": {
+        "reason": "Often in condition; requires careful stability assessment before committing",
+        "status": "good"
+       },
+       "January": {
+        "reason": "Cold, often unstable snowpack typical of mid-winter storm cycles",
+        "status": "risky"
+       },
+       "December": {
+        "reason": "Couloir may not be fully formed; short daylight and early-season instability",
+        "status": "risky"
+       },
+       "February": {
+        "reason": "Line often building into condition but storm-driven avalanche danger tends to be elevated",
+        "status": "marginal"
+       }
+      }
+     },
+     "value": {
+      "optimalWindow": "Late spring into midsummer, on firm snow",
+      "monthBreakdown": {
+       "May": {
+        "status": "good",
+        "reason": "Glacier and couloir are normally fully snow-covered; check for lingering avalanche hazard after storms and warm spells"
+       },
+       "June": {
+        "status": "good",
+        "reason": "A commonly climbed month; the snow is usually consolidated and firm early in the day"
+       },
+       "July": {
+        "status": "good",
+        "reason": "Still commonly climbed, though the glacier firms up toward ice and the couloir starts to thin"
+       },
+       "August": {
+        "status": "marginal",
+        "reason": "Hard blue ice often shows on the glacier and the couloir melts toward loose talus; crampons and care are essential"
+       }
+      }
+     },
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Seasonal guidance omits the season it's quoted for"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Seasonal guidance suggests 'Late May and early June typically have best conditions' - poor conditions outside this window",
+     "replace": "Best on firm snow from about May through July; by late summer the glacier can turn to hard ice and the couloir to loose talus",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Seasonal guidance omits the season it's quoted for"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Ice/mixed skill claims on a non-technical snow couloir",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Unroped steep-snow route (axe and crampons), no ice or mixed climbing",
+   "evidence": "The route page rates it a Grade II snow climb needing crampons and an ice axe. A firsthand account climbed it unroped with one axe, boots and strap-on crampons; another describes it as moderate snow and 3rd class, unroped. overview, beta, rack and pro_needs already say it is not ice or mixed; pro_tips, partner_requirements and seasonal_hazards.exposure still described mixed cruxes and alpine ice leading.",
+   "sources": [
+    "https://www.mountainproject.com/route/107144495/west-route",
+    "https://engineeredforadventure.com/dragontailpeak/",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "experienced mixed climbers",
+     "replace": "climbers confident on steep snow",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Ice/mixed skill claims on a non-technical snow couloir"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills"
+     ],
+     "expect": [
+      "alpine ice leading",
+      "mixed climbing through cruxes",
+      "avalanche hazard evaluation",
+      "cornice awareness",
+      "route-finding in a steep, committing couloir"
+     ],
+     "value": [
+      "self-arrest and cramponing on steep snow",
+      "avalanche hazard evaluation",
+      "cornice awareness",
+      "route-finding in a steep couloir"
+     ],
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Ice/mixed skill claims on a non-technical snow couloir"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "Experienced alpine ice/mixed climber comfortable with mixed cruxes and avalanche-prone couloir terrain",
+     "value": "Alpine climber comfortable moving unroped on 40-45° snow with axe and crampons, and able to judge avalanche and rockfall hazard",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Ice/mixed skill claims on a non-technical snow couloir"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "an ice/mixed rack and winter gear",
+     "replace": "axe, crampons and camping gear",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Ice/mixed skill claims on a non-technical snow couloir"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "mixed cruxes and cornices guard the upper couloir",
+     "replace": "steep, narrow snow in the upper couloir",
+     "id": "wa_dragontail_peak_r3",
+     "fact": "Ice/mixed skill claims on a non-technical snow couloir"
+    }
+   ]
+  },
+  {
+   "id": "wa_der_dihedral",
+   "fact": "Day-2 climb duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No published timing for Der Dihedral was found; its route page gives only line, grade and length. A Backbone Ridge ascent (neighbouring line on the same upper mountain) took about 18 hours car to car, making the 15.5 h schedule at least as plausible as the 11 h day figure, so neither side can be declared wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/114288397/der-dihedral",
+    "https://spokalpine.com/2021/09/03/dragontail-peak-backbone-ridge-iv-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_der_dihedral",
+   "fact": "Which route Der Dihedral finishes on",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "overview, beta and descent_text say it joins the 1972 NE Arete, as the route page states; itinerary day 2 (note, title, schedule 'Join Backbone Ridge') and timing.sectionBreakdown say it joins Backbone Ridge for its finish. Whether these are the same line could not be confirmed from two sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/114288397/der-dihedral"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_this_my_friend",
+   "fact": "Descent method — walk-off vs. rappelling the route",
+   "verdict": "fixed",
+   "correct_value": "Walk-off: scramble S/W across 3rd/4th class to a gully, then join the Aasgard Pass descent; not set up for rappel",
+   "evidence": "The route page says the route is not set up for rappel and describes descending S and W across broken 3rd/4th class terrain to a clean gully about 500 ft below the final belay, then scrambling SW to the standard summit descent to Aasgard Pass. An independent 2024 trip report walked off the backside down to Aasgard Pass.",
+   "sources": [
+    "https://www.mountainproject.com/route/119518502/this-my-friend",
+    "https://climberkyle.com/2024/08/25/dragontail-peak-this-my-friend-5-10a/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Rappel the route (no fixed anchors — build gear rappels) and retrace the approach back to the car.",
+     "replace": "Scramble off to the south and west (the route is not set up for rappel), join the Aasgard Pass trail and retrace the approach back to the car.",
+     "id": "wa_this_my_friend",
+     "fact": "Descent method — walk-off vs. rappelling the route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Begin rappels",
+     "value": "Begin descent",
+     "id": "wa_this_my_friend",
+     "fact": "Descent method — walk-off vs. rappelling the route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "expect": "Gear rappels back down the route.",
+     "value": "Scramble southwest to the Aasgard Pass trail.",
+     "id": "wa_this_my_friend",
+     "fact": "Descent method — walk-off vs. rappelling the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "rappel the route, and hike out",
+     "replace": "scramble off to Aasgard Pass, and hike out",
+     "id": "wa_this_my_friend",
+     "fact": "Descent method — walk-off vs. rappelling the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Rappel…",
+     "replace": "Walk off…",
+     "id": "wa_this_my_friend",
+     "fact": "Descent method — walk-off vs. rappelling the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "no fixed anchors on this climb, so plan your own rappel or downclimb off the NE Towers.",
+     "replace": "no fixed anchors and not set up for rappel, so scramble off south and west to the Aasgard Pass trail.",
+     "id": "wa_this_my_friend",
+     "fact": "Descent method — walk-off vs. rappelling the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_this_my_friend",
+   "fact": "Total elevation gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 5040,
+   "evidence": "The route page has the Aasgard Pass trail left at 7,300-7,400 ft and 900+ ft of climbing, so the top-out is above ~8,200 ft; from the 3,400 ft trailhead that is at least ~4,850 ft of net rise, which 4,200 ft cannot cover. gain_ft (5,040) and the waypoints (trailhead 3,400 ft, route top 8,250 ft) agree; the walk-off adds no re-ascent, so loss equals gain.",
+   "sources": [
+    "https://www.mountainproject.com/route/119518502/this-my-friend"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4200,
+     "value": 5040,
+     "id": "wa_this_my_friend",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4200,
+     "value": 5040,
+     "id": "wa_this_my_friend",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a rope length for Hidden Couloir alone. On Triple Couloirs (whose first couloir it is) one party used a 6mm 60m rope for rappels; the route page and other reports state no length. The row's own corrections note admits 30 m was an estimate, but only one source supports 60 m.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/january-6-2013-dragontail-triple-couloirs",
+    "https://www.mountainproject.com/route/107059043/triple-couloirs"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "fact": "Climbing season window",
+   "verdict": "fixed",
+   "correct_value": "Mar-Jul (late winter/spring prime; winter possible in stable spells)",
+   "evidence": "Ascents of Triple Couloirs, whose first couloir this is, are documented on Jan 6, Mar 29, late March, Apr 20, Apr 26 and Apr 29, so March is squarely in season and season's April start is too narrow; winter ascents happen but are not the norm (seasonal_guidance rates Dec-Jan risky, climate.spring calls spring prime). season is widened to March and climate.bySeason.winter no longer calls winter the primary season.",
+   "sources": [
+    "https://spokalpine.com/2015/03/29/triple-couloirs/",
+    "https://climberkyle.com/2018/03/31/dragontail-peak-triple-couloirs-wi2-m3/",
+    "http://www.alpinedave.com/enchantments/dragontail/triplecouloirs/triple_couloirs.htm",
+    "https://turns-all-year.com/trip-reports/january-6-2013-dragontail-triple-couloirs",
+    "https://www.jeffreyjhebert.com/adventures/triple-couloirs-on-dragontail-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Apr-Jul (retains snow into mid-summer)",
+     "value": "Mar-Jul",
+     "id": "wa_dragontail_peak_r1",
+     "fact": "Climbing season window"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "winter"
+     ],
+     "expect": "Primary couloir season; cold and avalanche-prone",
+     "value": "Climbable in cold, stable spells, but avalanche-prone with a long winter approach",
+     "id": "wa_dragontail_peak_r1",
+     "fact": "Climbing season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "fact": "Rack cam-size upper limit",
+   "verdict": "fixed",
+   "correct_value": "Small cams up to #2 (.3-#2)",
+   "evidence": "The Triple Couloirs route page lists cams from .5 to 2; a March 2015 ascent brought cams .3-2; an April 2003 ascent says the biggest piece was a #2 Camalot. One 2018 party carried .2 to #1 and a 2017 party .3-.75, but #2 is the agreed top size, matching gear's .3-2.",
+   "sources": [
+    "https://www.mountainproject.com/route/107059043/triple-couloirs",
+    "https://spokalpine.com/2015/03/29/triple-couloirs/",
+    "http://www.alpinedave.com/enchantments/dragontail/triplecouloirs/triple_couloirs.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "0.2-1in (small set)",
+     "value": ".3-#2 (small set)",
+     "id": "wa_dragontail_peak_r1",
+     "fact": "Rack cam-size upper limit"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      2
+     ],
+     "find": "Small cam set 0.2–1in",
+     "replace": "Small cam set .3–#2",
+     "id": "wa_dragontail_peak_r1",
+     "fact": "Rack cam-size upper limit"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page lists summer and winter racks but no rope length. One 2015 trip report used a 70m rope and simul-climbed beyond it; no second source states a length, and one party's choice does not make 60m wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/110245564/gerber-sink",
+    "https://www.jeffreyjhebert.com/adventures/gerber-sink-on-dragontail-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "fact": "Descent method",
+   "verdict": "fixed",
+   "correct_value": "Walk-off/downclimb to Aasgard Pass, no rappels",
+   "evidence": "Gerber-Sink finishes in the third of the Triple Couloirs; that route's page gives the descent as heading right toward Aasgard Pass from a notch below the summit. A 2015 Gerber-Sink party descended the snow and glissaded most of Aasgard Pass back to camp. The short descent field (hidden behind descent_text but stored) still framed rappels as required.",
+   "sources": [
+    "https://www.mountainproject.com/route/107059043/triple-couloirs",
+    "https://www.jeffreyjhebert.com/adventures/gerber-sink-on-dragontail-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via established descent route, using rappels and downclimbing as necessary. Multiple anchor points and protection required.",
+     "replace": "Walk and downclimb the standard descent to Aasgard Pass and down to Colchuck Lake; no rappels are normally needed.",
+     "id": "wa_dragontail_peak_r2",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "fact": "Seasonal guidance omits the route's actual planned season",
+   "verdict": "fixed",
+   "correct_value": "July-September for the rock line; late winter to spring for the ice/mixed line",
+   "evidence": "The route page describes both a summer 5.7 rock version and a popular winter WI3+ M4 version. Documented ice ascents took place Feb 17 2008, Apr 4 2015 and Apr 19 2015. The July-September monthBreakdown stays correct for the rock line; the optimal window now names both, matching best_season and the itinerary.",
+   "sources": [
+    "https://www.mountainproject.com/route/110245564/gerber-sink",
+    "https://www.jeffreyjhebert.com/adventures/gerber-sink-on-dragontail-peak",
+    "https://cascadeclimbers.com/forum/topic/57491-tr-dragontail-gerber-sink-north-face-2172008/",
+    "https://cascadeclimbers.com/forum/topic/97062-tr-dragontail-peak-gerber-sink-442015/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "July to September",
+     "value": "July to September for the rock line; late winter to spring for the ice/mixed line",
+     "id": "wa_dragontail_peak_r2",
+     "fact": "Seasonal guidance omits the route's actual planned season"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "fact": "dist_km appears to be one-way while itinerary totals round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is by convention the one-way approach distance (6.4 km ≈ 4 mi to Colchuck Lake) and itinerary miles are per day; they measure different quantities.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

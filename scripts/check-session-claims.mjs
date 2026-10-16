@@ -38,14 +38,22 @@ function sources(dir, acc = []) {
     if (e.name === "node_modules" || e.name === "dist" || e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) { if (!/^(scripts|catalog|supabase|enrichment-wip|docs|research)$/.test(e.name)) sources(p, acc); }
-    else if (/\.jsx?$/.test(e.name)) acc.push(path.relative(ROOT, p));
+    else if (/\.[jt]sx?$/.test(e.name)) acc.push(path.relative(ROOT, p));
   }
   return acc;
 }
 
 // Copy that is NOT a success claim: failures, refusals, and messages that already say
 // the change is local only.
-const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only the|not allowed|on this device|locally only|won.t be saved|sign in|log in/i;
+// `invite only` is a REFUSAL — the branch it sits in performs no write at all, it tells a climber
+// why the tap did nothing. The category was already documented on the line above; the vocabulary
+// simply had no phrasing for a group that admits nobody without an invitation (0178).
+// `no longer open` / `no longer on your friends list` / `already connected` report a connection row
+// the SERVER says is gone or already accepted — the branch performs no write and says so. They are the
+// honest replacement for "You and X are now connected" over a row that no longer existed (0257 PR).
+// Spelled out whole, not as a bare `no longer`, which would also excuse a real claim like
+// "X will no longer see your posts".
+const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only the|invite only|not allowed|on this device|locally only|won.t be saved|sign in|log in|is no longer open|no longer on your friends list|are already connected/i;
 
 function scan() {
   const found = new Map();
@@ -53,7 +61,7 @@ function scan() {
     const code = fs.readFileSync(path.join(ROOT, rel), "utf8");
     if (!code.includes("showToast")) continue;
     let ast;
-    try { ast = parse(code, { sourceType: "module", plugins: ["jsx"] }); }
+    try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
     catch (e) { console.error(`\n  Could not parse ${rel}: ${e.message}\n`); process.exit(1); }
 
     // helpers that bail out without a session: function(){ if(!uid)return; ... }

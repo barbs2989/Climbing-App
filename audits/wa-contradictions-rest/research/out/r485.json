@@ -1,0 +1,209 @@
+{
+ "file": "r485.json",
+ "results": [
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines are real: Mathias is reached from the Hoh River Trail via Glacier Meadows, the Blue Glacier and Glacier Pass, and Bailey Range traverse parties start at Sol Duc, reach Camp Pan, then cross the Hoh Glacier to Glacier Pass and descend the Blue Glacier to Glacier Meadows and the Hoh. The row mixes them: approach/trailhead card/pitch_detail describe the Hoh out-and-back while itinerary, timing and waypoints[1..] describe the Sol Duc traverse from a pin that sits at the Hoh trailhead. Settling it means choosing which line the page describes and moving or renaming the trailhead pin (out of scope), so no patch beyond the separately listed pin note/elevation fixes.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Mathias",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://engineeredforadventure.com/bailey-range-traverse/",
+    "https://www.oregonhikers.org/field_guide/Hoh_River_to_Blue_Glacier_Hike"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Glacier travel required",
+   "verdict": "fixed",
+   "correct_value": "Roped glacier travel on the Hoh (and, from the Hoh side, Blue) Glacier is required to reach the summit ridge; ice axe needed all season.",
+   "evidence": "Mathias sits between the Blue Glacier on its west and the Hoh Glacier on its east. Traverse parties descend from Camp Pan onto the Hoh Glacier, cross it to Glacier Pass and continue across the Blue Glacier toward Glacier Meadows; the Hoh-side line climbs the Blue Glacier to Snow Dome. The row's own gear, rack, pro_needs, approach and itinerary all require roped glacier travel.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Mathias",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://engineeredforadventure.com/bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Glacier travel required",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "N/A - no glacier travel required on the Class 3 scramble route to the summit itself, though the broader Bailey Range Traverse passes near glaciated terrain (Hoh Glacier) that requires care",
+     "replace": "Roped glacier travel is required to reach the peak: the Hoh Glacier must be crossed to Glacier Pass, and the Hoh-side line also climbs the Blue Glacier. Expect hidden crevasses and softening snow bridges; the Class 4 summit ridge itself is off the ice."
+    },
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Glacier travel required",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scramble route",
+     "replace": "N/A - summer route with a glaciated approach"
+    },
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Glacier travel required",
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      1
+     ],
+     "expect": "ice axe (early season)",
+     "value": "ice axe and crampons"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Scramble grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 4 summit ridge (the traverse approach itself is Class 3 off-trail terrain).",
+   "evidence": "The easiest route on Mathias is given as Class 4 on the west face/summit ridge. Inside the row, grade, rock_grade, beta, overview, pitch_detail, hazards, watch_out and the summit waypoint note all say Class 4; only the partner and seasonal-hazard lines say Class 3. A second independent external statement of the class was not found (peak pages returned 403), hence internal-plus-one.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Mathias"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Scramble grade",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Committing, remote Class 3 terrain",
+     "replace": "Committing, remote terrain with an exposed Class 4 summit ridge"
+    },
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Scramble grade",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "expect": "exposed Class 3 scrambling with a pack",
+     "value": "exposed Class 3 scrambling with a pack, and Class 4 on the summit ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states car-to-car gain for this exact line (Sol Duc to Camp Pan, Mathias, out the Hoh). Published traverse totals are for different variants: about 26,000 ft over 61 mi for Sol Duc out-and-back with Olympus, and about 15,000 ft over 58 mi for a Quinault exit. The stored 6,130 ft is far below any traverse figure but no two sources agree on a replacement; it also depends on the unresolved choice of line.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "578 ft (Hoh trailhead, as the pin's name and coordinates place it)",
+   "evidence": "The elevation sign at the Hoh Visitor Center reads 573 ft, and a DEM lookup at the visitor-center coordinates gives about 640 ft; the row's approach, pitch_detail and trailheadDirection say 578 ft. 1,950 ft is roughly the Sol Duc trailhead's height, not the Hoh's, so the pin as drawn (Hoh coordinates, Hoh name) should read 578.",
+   "sources": [
+    "https://www.waymarking.com/waymarks/WMHG03_573_Ft_at_Hoh_Visitor_Center_Olympic_National_Park",
+    "https://elevation.maplogs.com/poi/hoh_rain_forest_visitor_center_upper_hoh_rd_forks_wa_usa.364212.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1950,
+     "value": 578
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Distance to first camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trip reports put Sol Duc to Eleven Bull Basin at about 15 mi (nearly 6,000 ft gain) and about 12.5 mi (5,000 ft); both exceed the itinerary's 9 mi, which is only the distance to High Divide, but the two sources do not agree on one figure, and changing day 1 would also change the itinerary total and totalNote.",
+   "sources": [
+    "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse",
+    "https://www.mountaineers.org/activities/trip-reports/bailey-range-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Descent route",
+   "verdict": "fixed",
+   "correct_value": "From Glacier Pass cross onto the Blue Glacier and descend it to Glacier Meadows; Camp Pan is not on this line.",
+   "evidence": "Traverse parties go Camp Pan -> Hoh Glacier -> Glacier Pass -> Blue Glacier -> moraine -> Glacier Meadows; Camp Pan lies east of the Hoh Glacier, so returning there before descending the Blue Glacier is geographically backwards. Both sources describe crossing Glacier Pass straight onto the Blue Glacier toward Glacier Meadows, matching the itinerary day 4 note.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://engineeredforadventure.com/bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Descent route",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "cross the Hoh Glacier back to Camp Pan, then descend via the Blue Glacier",
+     "replace": "cross back onto the Blue Glacier and descend it"
+    },
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Descent route",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "from Camp Pan back to the car",
+     "replace": "from Glacier Pass back to the car"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Hoh trailhead pin says it starts the Sol Duc approach",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The Hoh trailhead starts the Hoh River Trail toward Glacier Meadows; the Sol Duc trailhead is a separate start on Sol Duc Hot Springs Road.",
+   "evidence": "The Hoh River Trail runs from the Hoh visitor center about 17-18 mi to Glacier Meadows; Bailey Range traverse parties start at the separate Sol Duc trailhead. The row's own road.driveNote lists the two trailheads on different roads.",
+   "sources": [
+    "https://www.nps.gov/places/000/hoh-river-trailhead.htm",
+    "https://www.oregonhikers.org/field_guide/Hoh_River_to_Blue_Glacier_Hike",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mathias_scramble",
+     "fact": "Hoh trailhead pin says it starts the Sol Duc approach",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "; start of the Sol Duc/High Divide approach into the Bailey Range.",
+     "replace": "; start of the Hoh River Trail toward Glacier Meadows."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{"file": "s079.json", "results": [
+ {"id": "wa_west_twin_needle_south_route", "fact": "Total gain/loss", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Retry found no source stating a cumulative car-to-car gain or loss for West Twin Needle's south side; the peak listing only repeats the 600-7,936 ft elevation range and 19.5 mi round trip, which is a range, not a gain total. The itinerary's 9,000 ft and the 7,336 ft column cannot be reconciled without an outside cumulative figure. Would settle: a GPS track or trip report stating total gain for the Goodell Creek-Barrier-Crescent Creek approach to this peak.",
+  "sources": ["https://onehikeaweek.com/2023/08/28/west-twin-needle/", "https://peakery.com/west-twin-needle-washington/"],
+  "patches": []},
+ {"id": "wa_west_twin_needle_south_route", "fact": "Where the 5.7 crux is and which face it climbs", "verdict": "fixed_internal_plus_one",
+  "correct_value": "The chockstone gully to the Eye Col is low fifth class (one narrow-crack pitch belayed); the 5.7 is the white-slab pitch on the east face above the Eye Col.",
+  "evidence": "Inside the row, the approach (low 5th in the gully, 5.7 above the notch), itinerary day 2 note and schedule, the timing sectionBreakdown ('East Face 5.7 Direct') and pitch_detail ('crux on the south/east face') all place the 5.7 above the col; only rock_grade puts it in the gully, and the summit waypoint note welds the chockstones onto the pitch above the col. The one detailed trip report pitched an unrated narrow crack past the chockstones below the Eye Col and then climbed 5.7 white slabs on the east face above the col. The AAJ report confirms the Eye Col is the notch between East and West Twin Needle, so a pitch above it on West Twin is on that peak's east side.",
+  "sources": ["https://onehikeaweek.com/2023/08/28/west-twin-needle/", "http://publications.americanalpineclub.org/articles/13201216383"],
+  "patches": [
+   {"id": "wa_west_twin_needle_south_route", "fact": "Where the 5.7 crux is and which face it climbs", "op": "set", "column": "rock_grade", "path": [], "expect": "5.7 (crux, in the Eye Col gully)", "value": "5.7 (crux, on the east face above the Eye Col)"},
+   {"id": "wa_west_twin_needle_south_route", "fact": "Where the 5.7 crux is and which face it climbs", "op": "replace_text", "column": "waypoints", "path": [6, "note"], "find": "Final class 5.7 pitch through larger chockstones/a narrow crack above the col, then class 2-3 scrambling under white slabs to the true summit", "replace": "Above the Eye Col, a 5.7 pitch up white slabs on the east face, then scrambling to the true summit"}
+  ]},
+ {"id": "wa_west_twin_needle_south_route", "fact": "Which notch the approach reaches at ~7,400 ft", "discovered": true, "verdict": "fixed",
+  "correct_value": "The chockstone gully climbed from Crescent Creek Basin tops out at the Eye Col (the notch between East and West Twin Needle, ~7,400 ft); the Himmelhorn-West Twin Needle col is the separate notch on the other (west) side of the peak, used for the descent.",
+  "evidence": "The AAJ report on East Twin Needle defines the Eye Col as the notch between East and West Twin Needles, i.e. east of West Twin, while the Himmelhorn lies west of West Twin (0.2 mi away per the peak listing). The trip report that is the basis of this row's gully description (rightmost gully, closed chimney, minor rib, chockstones) reached the Eye Col at about 7,400-7,600 ft, then descended by a different notch, the Himmelhorn-West Twin col, via the class 2-3 west face and two rappels in the left gully. The approach calls the same gully both the 'Eye Col' gully and the route to the Himmelhorn notch, and the descent says it 'reverses' to the Himmelhorn notch, which the party never climbed.",
+  "sources": ["http://publications.americanalpineclub.org/articles/13201216383", "https://onehikeaweek.com/2023/08/28/west-twin-needle/", "https://peakery.com/west-twin-needle-washington/"],
+  "patches": [
+   {"id": "wa_west_twin_needle_south_route", "fact": "Which notch the approach reaches at ~7,400 ft", "op": "replace_text", "column": "approach", "path": [], "find": "up to the Himmelhorn–West Twin Needle notch at about 7400 ft.", "replace": "up to the Eye Col, the notch between the two Twin Needles, at about 7400 ft."},
+   {"id": "wa_west_twin_needle_south_route", "fact": "Which notch the approach reaches at ~7,400 ft", "op": "replace_text", "column": "descent_text", "path": [], "find": "Descend by reversing to the Himmelhorn–West Twin Needle notch (~7400 ft), then downclimbing the class 2–3 west face below it.", "replace": "Rather than reversing the ascent gully to the Eye Col, descend the class 2–3 west face to the Himmelhorn–West Twin Needle notch on the far side of the peak."}
+  ]},
+ {"id": "wa_west_twin_needle_south_route", "fact": "Commitment grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No accessible source gives an overall commitment grade for the south route; the encyclopedia entry rates the easiest route class 4 with no grade, and the 'II' rating quoted in beta and pitch_detail could not be found. Would settle: a guidebook-derived route listing giving the Roman-numeral grade for the south face of West Twin Needle.",
+  "sources": ["https://en.wikipedia.org/wiki/Twin_Needles", "https://onehikeaweek.com/2023/08/28/west-twin-needle/"],
+  "patches": []},
+ {"id": "wa_whatcom_peak_southwest_route", "fact": "Approach line (Easy Ridge vs Whatcom Pass/Brush Creek)", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: the itinerary and published times reproduce the Easy Ridge-in / Whatcom Pass-out loop, while approach, variant, waypoints and climbing route ascend from Whatcom Pass over the glacier. The only sourced day-by-day figures for the Whatcom Pass corridor are for the hiking trip to the pass (about 35 mi RT over 4 days), not for a Whatcom Pass ascent of the peak, so no sourced replacement itinerary exists. Would settle: a trip report giving day-by-day miles/gain/hours for the Whatcom Pass-glacier ascent, or an owner decision to label the itinerary as the Easy Ridge variant.",
+  "sources": ["https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/", "https://www.mountaineers.org/activities/activities/backpack-whatcom-pass"],
+  "patches": []},
+ {"id": "wa_whatcom_peak_southwest_route", "fact": "Total elevation gain/loss", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No source states a car-to-car gain or loss for the Whatcom Pass/Whatcom Glacier ascent; the Whatcom Pass backpack gives about 4,000 ft in and 2,000 ft out to the pass only, and the Easy Ridge loop figures (12,000-13,700 ft) disagree and describe another line. Stored 6,840 ft is likely low but cannot be replaced by arithmetic. Would settle: a GPS track total for Hannegan TH to Whatcom summit via Whatcom Pass and back.",
+  "sources": ["https://www.mountaineers.org/activities/activities/backpack-whatcom-pass", "https://fastestknowntime.com/route/whatcom-peak-wa"],
+  "patches": []},
+ {"id": "wa_whatcom_peak_southwest_route", "fact": "Best month", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Documented ascents fall in both late July and early-to-mid August, with a late-August party finding bare ice; no source ranks July against August for this line. Would settle: a route description that names the best month for the Whatcom Glacier crossing.",
+  "sources": ["https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/", "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"],
+  "patches": []}
+]}

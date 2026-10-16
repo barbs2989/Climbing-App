@@ -1,0 +1,2200 @@
+{
+ "applied": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "area_id": "wa_alta_mountain",
+   "name": "Rampart Ridge Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 2736,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Oct",
+   "description": null,
+   "gear": [
+    "sturdy scrambling/hiking boots (mountaineering boots if any snow lingers)",
+    "trekking poles",
+    "helmet (situational, precautionary -- carried by some parties for rockfall/loose rock, not technically required)",
+    "ice axe (early-season/lingering-snow on the approach gully only; not needed on dry summer rock)"
+   ],
+   "hazards": [
+    "exposure along the ridge crest",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "Alta Mountain is a popular scramble on the long Rampart Ridge above Rachel Lake near Snoqualmie Pass. From the Rachel Lake trail and Rampart Lakes, an enjoyable Class 2 ridge walk and scramble leads along the crest to the summit with excellent views over the Alpine Lakes country.",
+   "beta": "From the Rachel Lake / Lila Lake trail junction, an unsigned 'climber's path' marked by a cairn leaves the maintained trail and climbs Alta Mountain's south ridge. The initial section is steep with loose rock and large steps and no shade; the grade then moderates onto a knife-edge ridge with sustained exposure. There are several class 2-3 moves, at least one 6-8 ft near-vertical step with good holds but serious exposure, a class 3 downclimb crux near the top, and multiple false summits before the true summit is reached. The route is non-technical (no rope typically used) but is exposed enough to be unsuitable for anyone uneasy with heights or for dogs.",
+   "turnaround": "Turn back if snow or ice is present on the ridge, if any party member is not comfortable with the class 3 downclimb crux or the sustained exposure, or if thunderstorms are building given the fully exposed ridge walk with no bail-out shelter.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 3300,
+   "loss_ft": 3300,
+   "dist_km": 9.7,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "South Ridge",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": null,
+   "descent": "Reverse the ridge back toward Rachel Lake.",
+   "obj_haz": [
+    "loose rock/scree on the climber's path",
+    "sustained fall exposure along the knife-edge ridge",
+    "a class 3 downclimb crux near the summit",
+    "no shade or water above Lila Lake",
+    "becomes hazardous when snow-covered"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.4009,
+     "lng": -121.2836,
+     "elev": 2800,
+     "name": "Rachel Lake Trailhead",
+     "note": "Trail #1313 start off FR 4930; Northwest Forest Pass plus self-issued wilderness permit required (USFS Rachel Lake Trailhead page).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From I-90 Exit 62, follow Kachess Lake Road to FS Road 4930 and drive it to the road end at about 2,800 ft. Trail #1313 leaves the parking area; a Northwest Forest Pass plus a self-issued wilderness permit are required at the board."
+    },
+    {
+     "lat": 47.4227,
+     "lng": -121.3292,
+     "elev": 4667,
+     "name": "Rachel Lake",
+     "note": "~4.1 mi from the trailhead, at the top of the steep, rooty 'mile from hell' climb.",
+     "type": "Water",
+     "distMi": 4.1,
+     "directions": "Trail #1313 runs beside Box Canyon Creek on gentle grade for roughly 2.75 miles, crossing several side streams and cascades — water is reliable the whole way, so there is no need to carry much from the car. Past the creek crossing the trail turns into the rooty, rocky boot-beaten climb locals call the 'mile from hell': about 1,300 ft of gain in a mile with large step-ups and no switchbacks. It is a fitness crux, not a technical one, but it is brutal under a full pack."
+    },
+    {
+     "lat": 47.42,
+     "lng": -121.334,
+     "elev": 5100,
+     "name": "Rampart Ridge / Rampart Lakes junction",
+     "note": "Ridge crest above Rachel Lake where the maintained trail splits toward Rampart Lakes and Lila Lake. Coordinate is a trail-guide interpolation (no exact published fix found), cross-checked against a nearby Rampart Lakes basin waypoint at 47.4182,-121.3376.",
+     "type": "Junction",
+     "distMi": 4.6,
+     "directions": "At the lake a use path branches off near the outhouse and skirts the north shore. From there it switchbacks steeply up rocky tread for about half a mile to the crest of Rampart Ridge, where the maintained trail splits toward Rampart Lakes and toward Lila Lake."
+    },
+    {
+     "lat": 47.4285,
+     "lng": -121.3332,
+     "elev": null,
+     "name": "Alta climbers' path turnoff (cairn)",
+     "note": "Cairned fork on the Lila Lake trail about 0.3 mi past the Rampart Ridge junction, where the unmarked climbers' path up Alta's south ridge leaves on the left. Coordinate is an estimate between the ridge junction and the summit, not surveyed.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "At the ridge-top junction above Rachel Lake, go right toward Lila Lake (the left branch leads to Rampart Lakes). The tread is brushy in places but always clear; after about 0.3 mile a cairn marks the fork where the Lila Lake trail carries straight on and the climbers' path to Alta leaves on the left."
+    },
+    {
+     "lat": 47.441131,
+     "lng": -121.331964,
+     "elev": 6275,
+     "name": "Alta Mountain summit",
+     "note": "Reached past several false summits along the exposed ridge crest.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "At the cairned fork on the Lila Lake trail an unmarked climbers' path leaves the maintained trail and follows the ridge crest toward the summit block. It starts steep, loose and shadeless with large steps, then eases onto a narrow crest with sustained exposure: expect several class 2-3 moves, at least one near-vertical step of six to eight feet with good holds, a short class 3 downclimb near the top, and three or more false summits before the real one. Do not attempt this stretch with snow on the crest or on wet rock — the path skirts a cliff edge and the fall consequences are serious. Helmets are worth wearing for the loose rock."
+    }
+   ],
+   "gpx": [
+    [
+     47.400856,
+     -121.283593
+    ],
+    [
+     47.400867,
+     -121.283585
+    ],
+    [
+     47.400962,
+     -121.283593
+    ],
+    [
+     47.401054,
+     -121.283616
+    ],
+    [
+     47.401103,
+     -121.283562
+    ],
+    [
+     47.401309,
+     -121.283249
+    ],
+    [
+     47.401412,
+     -121.283173
+    ],
+    [
+     47.401512,
+     -121.282982
+    ],
+    [
+     47.401493,
+     -121.282631
+    ],
+    [
+     47.401504,
+     -121.282418
+    ],
+    [
+     47.401687,
+     -121.282723
+    ],
+    [
+     47.401889,
+     -121.282837
+    ],
+    [
+     47.402065,
+     -121.283211
+    ],
+    [
+     47.402431,
+     -121.283692
+    ],
+    [
+     47.40269,
+     -121.28386
+    ],
+    [
+     47.402862,
+     -121.284127
+    ],
+    [
+     47.403079,
+     -121.284554
+    ],
+    [
+     47.40319,
+     -121.284836
+    ],
+    [
+     47.403518,
+     -121.285149
+    ],
+    [
+     47.403739,
+     -121.285599
+    ],
+    [
+     47.403934,
+     -121.285691
+    ],
+    [
+     47.403999,
+     -121.285828
+    ],
+    [
+     47.404159,
+     -121.285859
+    ],
+    [
+     47.40438,
+     -121.286034
+    ],
+    [
+     47.404548,
+     -121.286408
+    ],
+    [
+     47.404628,
+     -121.286538
+    ],
+    [
+     47.404731,
+     -121.286614
+    ],
+    [
+     47.404796,
+     -121.286469
+    ],
+    [
+     47.404869,
+     -121.286446
+    ],
+    [
+     47.404945,
+     -121.286515
+    ],
+    [
+     47.405078,
+     -121.286492
+    ],
+    [
+     47.405319,
+     -121.286515
+    ],
+    [
+     47.405532,
+     -121.286614
+    ],
+    [
+     47.405933,
+     -121.286644
+    ],
+    [
+     47.406604,
+     -121.286545
+    ],
+    [
+     47.407115,
+     -121.286728
+    ],
+    [
+     47.407447,
+     -121.287056
+    ],
+    [
+     47.407825,
+     -121.287209
+    ],
+    [
+     47.408115,
+     -121.287354
+    ],
+    [
+     47.408279,
+     -121.287797
+    ],
+    [
+     47.408767,
+     -121.288224
+    ],
+    [
+     47.409133,
+     -121.288521
+    ],
+    [
+     47.409191,
+     -121.288758
+    ],
+    [
+     47.409706,
+     -121.2892
+    ],
+    [
+     47.410018,
+     -121.289528
+    ],
+    [
+     47.410198,
+     -121.289826
+    ],
+    [
+     47.410354,
+     -121.290062
+    ],
+    [
+     47.410411,
+     -121.290299
+    ],
+    [
+     47.410285,
+     -121.29052
+    ],
+    [
+     47.410137,
+     -121.290734
+    ],
+    [
+     47.410099,
+     -121.290841
+    ],
+    [
+     47.410137,
+     -121.29097
+    ],
+    [
+     47.410346,
+     -121.291153
+    ],
+    [
+     47.410655,
+     -121.291382
+    ],
+    [
+     47.410934,
+     -121.291466
+    ],
+    [
+     47.410976,
+     -121.291543
+    ],
+    [
+     47.410945,
+     -121.291756
+    ],
+    [
+     47.411083,
+     -121.291863
+    ],
+    [
+     47.411243,
+     -121.292069
+    ],
+    [
+     47.411296,
+     -121.292222
+    ],
+    [
+     47.411304,
+     -121.292374
+    ],
+    [
+     47.411453,
+     -121.292687
+    ],
+    [
+     47.411582,
+     -121.292855
+    ],
+    [
+     47.411701,
+     -121.292916
+    ],
+    [
+     47.412414,
+     -121.293412
+    ],
+    [
+     47.412765,
+     -121.293549
+    ],
+    [
+     47.412845,
+     -121.293831
+    ],
+    [
+     47.41296,
+     -121.294129
+    ],
+    [
+     47.412971,
+     -121.294426
+    ],
+    [
+     47.412998,
+     -121.294594
+    ],
+    [
+     47.41296,
+     -121.294953
+    ],
+    [
+     47.413055,
+     -121.29522
+    ],
+    [
+     47.413276,
+     -121.29554
+    ],
+    [
+     47.413372,
+     -121.295777
+    ],
+    [
+     47.413497,
+     -121.295914
+    ],
+    [
+     47.413661,
+     -121.296303
+    ],
+    [
+     47.414028,
+     -121.296814
+    ],
+    [
+     47.414215,
+     -121.297196
+    ],
+    [
+     47.414402,
+     -121.297547
+    ],
+    [
+     47.414524,
+     -121.297661
+    ],
+    [
+     47.414695,
+     -121.297989
+    ],
+    [
+     47.41476,
+     -121.298241
+    ],
+    [
+     47.414836,
+     -121.298295
+    ],
+    [
+     47.414943,
+     -121.298317
+    ],
+    [
+     47.415107,
+     -121.298569
+    ],
+    [
+     47.415206,
+     -121.299035
+    ],
+    [
+     47.415355,
+     -121.299157
+    ],
+    [
+     47.415485,
+     -121.299454
+    ],
+    [
+     47.415618,
+     -121.299592
+    ],
+    [
+     47.41566,
+     -121.29982
+    ],
+    [
+     47.415748,
+     -121.300126
+    ],
+    [
+     47.415786,
+     -121.300599
+    ],
+    [
+     47.415927,
+     -121.300911
+    ],
+    [
+     47.41592,
+     -121.301117
+    ],
+    [
+     47.415885,
+     -121.3014
+    ],
+    [
+     47.415874,
+     -121.301621
+    ],
+    [
+     47.415863,
+     -121.301735
+    ],
+    [
+     47.416049,
+     -121.302147
+    ],
+    [
+     47.416084,
+     -121.302483
+    ],
+    [
+     47.416053,
+     -121.302697
+    ],
+    [
+     47.416095,
+     -121.302834
+    ],
+    [
+     47.416347,
+     -121.303124
+    ],
+    [
+     47.416488,
+     -121.303505
+    ],
+    [
+     47.416713,
+     -121.303818
+    ],
+    [
+     47.416797,
+     -121.304108
+    ],
+    [
+     47.416862,
+     -121.304299
+    ],
+    [
+     47.416873,
+     -121.304413
+    ],
+    [
+     47.416851,
+     -121.304482
+    ],
+    [
+     47.4169,
+     -121.304551
+    ],
+    [
+     47.416919,
+     -121.304635
+    ],
+    [
+     47.416923,
+     -121.304711
+    ],
+    [
+     47.417011,
+     -121.304757
+    ],
+    [
+     47.417121,
+     -121.30481
+    ],
+    [
+     47.417198,
+     -121.304871
+    ],
+    [
+     47.41732,
+     -121.304917
+    ],
+    [
+     47.417362,
+     -121.30497
+    ],
+    [
+     47.417556,
+     -121.305527
+    ],
+    [
+     47.417549,
+     -121.305993
+    ],
+    [
+     47.417602,
+     -121.306397
+    ],
+    [
+     47.417648,
+     -121.306679
+    ],
+    [
+     47.417884,
+     -121.307023
+    ],
+    [
+     47.418098,
+     -121.307816
+    ],
+    [
+     47.418151,
+     -121.3079
+    ],
+    [
+     47.418342,
+     -121.307953
+    ],
+    [
+     47.418464,
+     -121.308022
+    ],
+    [
+     47.418544,
+     -121.308167
+    ],
+    [
+     47.418624,
+     -121.308213
+    ],
+    [
+     47.418766,
+     -121.30819
+    ],
+    [
+     47.418846,
+     -121.30835
+    ],
+    [
+     47.418807,
+     -121.308503
+    ],
+    [
+     47.418842,
+     -121.308556
+    ],
+    [
+     47.418994,
+     -121.30861
+    ],
+    [
+     47.419055,
+     -121.308693
+    ],
+    [
+     47.419132,
+     -121.30877
+    ],
+    [
+     47.419162,
+     -121.308945
+    ],
+    [
+     47.419258,
+     -121.309105
+    ],
+    [
+     47.419307,
+     -121.309121
+    ],
+    [
+     47.419319,
+     -121.309304
+    ],
+    [
+     47.419364,
+     -121.309426
+    ],
+    [
+     47.419307,
+     -121.309632
+    ],
+    [
+     47.41938,
+     -121.30983
+    ],
+    [
+     47.419517,
+     -121.310105
+    ],
+    [
+     47.419582,
+     -121.310494
+    ],
+    [
+     47.419769,
+     -121.310875
+    ],
+    [
+     47.419784,
+     -121.311142
+    ],
+    [
+     47.420295,
+     -121.311699
+    ],
+    [
+     47.420463,
+     -121.312226
+    ],
+    [
+     47.420639,
+     -121.312783
+    ],
+    [
+     47.42078,
+     -121.312951
+    ],
+    [
+     47.421039,
+     -121.313042
+    ],
+    [
+     47.421173,
+     -121.313386
+    ],
+    [
+     47.421302,
+     -121.313561
+    ],
+    [
+     47.421527,
+     -121.313706
+    ],
+    [
+     47.421722,
+     -121.313874
+    ],
+    [
+     47.421787,
+     -121.31408
+    ],
+    [
+     47.422004,
+     -121.314248
+    ],
+    [
+     47.422187,
+     -121.314728
+    ],
+    [
+     47.422233,
+     -121.315346
+    ],
+    [
+     47.42242,
+     -121.315941
+    ],
+    [
+     47.422447,
+     -121.316506
+    ],
+    [
+     47.422576,
+     -121.316918
+    ],
+    [
+     47.422569,
+     -121.317284
+    ],
+    [
+     47.422473,
+     -121.31762
+    ],
+    [
+     47.422603,
+     -121.317574
+    ],
+    [
+     47.422729,
+     -121.317658
+    ],
+    [
+     47.422676,
+     -121.317902
+    ],
+    [
+     47.422756,
+     -121.318215
+    ],
+    [
+     47.422676,
+     -121.318406
+    ],
+    [
+     47.422786,
+     -121.318573
+    ],
+    [
+     47.422725,
+     -121.318833
+    ],
+    [
+     47.42284,
+     -121.318947
+    ],
+    [
+     47.422676,
+     -121.319199
+    ],
+    [
+     47.422672,
+     -121.319336
+    ],
+    [
+     47.422786,
+     -121.319413
+    ],
+    [
+     47.422916,
+     -121.319428
+    ],
+    [
+     47.423,
+     -121.319497
+    ],
+    [
+     47.423015,
+     -121.319703
+    ],
+    [
+     47.422885,
+     -121.319825
+    ],
+    [
+     47.422874,
+     -121.319909
+    ],
+    [
+     47.422958,
+     -121.320031
+    ],
+    [
+     47.423065,
+     -121.320076
+    ],
+    [
+     47.423065,
+     -121.320176
+    ],
+    [
+     47.422916,
+     -121.320298
+    ],
+    [
+     47.422904,
+     -121.320405
+    ],
+    [
+     47.423,
+     -121.320443
+    ],
+    [
+     47.423042,
+     -121.320519
+    ],
+    [
+     47.422966,
+     -121.320595
+    ],
+    [
+     47.422676,
+     -121.320694
+    ],
+    [
+     47.422672,
+     -121.320908
+    ],
+    [
+     47.422523,
+     -121.32103
+    ],
+    [
+     47.422454,
+     -121.321229
+    ],
+    [
+     47.422515,
+     -121.32148
+    ],
+    [
+     47.422637,
+     -121.321602
+    ],
+    [
+     47.422592,
+     -121.321755
+    ],
+    [
+     47.422462,
+     -121.3219
+    ],
+    [
+     47.422225,
+     -121.322236
+    ],
+    [
+     47.421974,
+     -121.322335
+    ],
+    [
+     47.421852,
+     -121.322472
+    ],
+    [
+     47.421623,
+     -121.322526
+    ],
+    [
+     47.421394,
+     -121.322686
+    ],
+    [
+     47.42126,
+     -121.322869
+    ],
+    [
+     47.421062,
+     -121.32293
+    ],
+    [
+     47.420997,
+     -121.32306
+    ],
+    [
+     47.420906,
+     -121.32306
+    ],
+    [
+     47.420845,
+     -121.323136
+    ],
+    [
+     47.420722,
+     -121.323159
+    ],
+    [
+     47.420669,
+     -121.323304
+    ],
+    [
+     47.420631,
+     -121.323426
+    ],
+    [
+     47.420753,
+     -121.32351
+    ],
+    [
+     47.420967,
+     -121.323456
+    ],
+    [
+     47.421112,
+     -121.323388
+    ],
+    [
+     47.421268,
+     -121.323502
+    ],
+    [
+     47.42131,
+     -121.323761
+    ],
+    [
+     47.421302,
+     -121.323868
+    ],
+    [
+     47.421257,
+     -121.324013
+    ],
+    [
+     47.421249,
+     -121.32425
+    ],
+    [
+     47.421291,
+     -121.324387
+    ],
+    [
+     47.421352,
+     -121.324402
+    ],
+    [
+     47.421401,
+     -121.324334
+    ],
+    [
+     47.42144,
+     -121.324364
+    ],
+    [
+     47.421524,
+     -121.324639
+    ],
+    [
+     47.421611,
+     -121.324791
+    ],
+    [
+     47.421749,
+     -121.324814
+    ],
+    [
+     47.421901,
+     -121.324723
+    ],
+    [
+     47.421993,
+     -121.324677
+    ],
+    [
+     47.422096,
+     -121.324547
+    ],
+    [
+     47.422172,
+     -121.324502
+    ],
+    [
+     47.42226,
+     -121.324593
+    ],
+    [
+     47.422317,
+     -121.324921
+    ],
+    [
+     47.422386,
+     -121.325196
+    ],
+    [
+     47.42255,
+     -121.325554
+    ],
+    [
+     47.422618,
+     -121.325776
+    ],
+    [
+     47.422733,
+     -121.325814
+    ],
+    [
+     47.42295,
+     -121.325615
+    ],
+    [
+     47.423107,
+     -121.325638
+    ],
+    [
+     47.423183,
+     -121.325753
+    ],
+    [
+     47.423191,
+     -121.325875
+    ],
+    [
+     47.423133,
+     -121.326035
+    ],
+    [
+     47.423164,
+     -121.326195
+    ],
+    [
+     47.42324,
+     -121.326378
+    ],
+    [
+     47.423198,
+     -121.326638
+    ],
+    [
+     47.42313,
+     -121.326859
+    ],
+    [
+     47.423027,
+     -121.327034
+    ],
+    [
+     47.423095,
+     -121.327187
+    ],
+    [
+     47.422973,
+     -121.327332
+    ],
+    [
+     47.42295,
+     -121.327591
+    ],
+    [
+     47.422992,
+     -121.32779
+    ],
+    [
+     47.423099,
+     -121.328042
+    ],
+    [
+     47.422988,
+     -121.328431
+    ],
+    [
+     47.422901,
+     -121.328644
+    ],
+    [
+     47.422851,
+     -121.328873
+    ],
+    [
+     47.422809,
+     -121.329125
+    ],
+    [
+     47.422977,
+     -121.329194
+    ],
+    [
+     47.423107,
+     -121.329171
+    ],
+    [
+     47.423267,
+     -121.329255
+    ],
+    [
+     47.423374,
+     -121.329354
+    ],
+    [
+     47.423446,
+     -121.3294
+    ],
+    [
+     47.423522,
+     -121.329415
+    ],
+    [
+     47.423622,
+     -121.329407
+    ],
+    [
+     47.42369,
+     -121.329499
+    ],
+    [
+     47.423736,
+     -121.32972
+    ],
+    [
+     47.423774,
+     -121.329964
+    ],
+    [
+     47.423881,
+     -121.330269
+    ],
+    [
+     47.4239,
+     -121.330445
+    ],
+    [
+     47.423877,
+     -121.330758
+    ],
+    [
+     47.423843,
+     -121.331055
+    ],
+    [
+     47.423847,
+     -121.331246
+    ],
+    [
+     47.423896,
+     -121.331444
+    ],
+    [
+     47.423858,
+     -121.331597
+    ],
+    [
+     47.423976,
+     -121.331749
+    ],
+    [
+     47.423908,
+     -121.33181
+    ],
+    [
+     47.4239,
+     -121.331872
+    ],
+    [
+     47.423973,
+     -121.331917
+    ],
+    [
+     47.423919,
+     -121.332032
+    ],
+    [
+     47.423816,
+     -121.332032
+    ],
+    [
+     47.423778,
+     -121.332116
+    ],
+    [
+     47.423851,
+     -121.3322
+    ],
+    [
+     47.423873,
+     -121.332299
+    ],
+    [
+     47.423835,
+     -121.332383
+    ],
+    [
+     47.423694,
+     -121.332482
+    ],
+    [
+     47.423679,
+     -121.332558
+    ],
+    [
+     47.42382,
+     -121.332604
+    ],
+    [
+     47.423709,
+     -121.332764
+    ],
+    [
+     47.423797,
+     -121.332787
+    ],
+    [
+     47.423679,
+     -121.332886
+    ],
+    [
+     47.423652,
+     -121.332963
+    ],
+    [
+     47.423698,
+     -121.333069
+    ],
+    [
+     47.423774,
+     -121.333077
+    ],
+    [
+     47.423889,
+     -121.333062
+    ],
+    [
+     47.423866,
+     -121.333161
+    ],
+    [
+     47.423938,
+     -121.333199
+    ],
+    [
+     47.42398,
+     -121.333367
+    ],
+    [
+     47.423995,
+     -121.33368
+    ],
+    [
+     47.424057,
+     -121.333817
+    ],
+    [
+     47.424102,
+     -121.333855
+    ],
+    [
+     47.424163,
+     -121.333878
+    ],
+    [
+     47.42435,
+     -121.333649
+    ],
+    [
+     47.424571,
+     -121.333443
+    ],
+    [
+     47.424648,
+     -121.333405
+    ],
+    [
+     47.424942,
+     -121.333382
+    ],
+    [
+     47.425094,
+     -121.333313
+    ],
+    [
+     47.425178,
+     -121.333199
+    ],
+    [
+     47.425254,
+     -121.333031
+    ],
+    [
+     47.425441,
+     -121.332711
+    ],
+    [
+     47.425552,
+     -121.332589
+    ],
+    [
+     47.425865,
+     -121.332421
+    ],
+    [
+     47.426372,
+     -121.332261
+    ],
+    [
+     47.426471,
+     -121.332192
+    ],
+    [
+     47.426807,
+     -121.331841
+    ],
+    [
+     47.426898,
+     -121.331788
+    ],
+    [
+     47.427604,
+     -121.331597
+    ],
+    [
+     47.42786,
+     -121.33165
+    ],
+    [
+     47.427879,
+     -121.331803
+    ],
+    [
+     47.427841,
+     -121.331933
+    ],
+    [
+     47.427898,
+     -121.332093
+    ],
+    [
+     47.427989,
+     -121.332078
+    ],
+    [
+     47.428043,
+     -121.332016
+    ],
+    [
+     47.428119,
+     -121.332032
+    ],
+    [
+     47.428203,
+     -121.332032
+    ],
+    [
+     47.428272,
+     -121.331955
+    ],
+    [
+     47.428363,
+     -121.331963
+    ],
+    [
+     47.428462,
+     -121.332032
+    ],
+    [
+     47.428569,
+     -121.332078
+    ],
+    [
+     47.428752,
+     -121.332131
+    ],
+    [
+     47.428913,
+     -121.331994
+    ],
+    [
+     47.429008,
+     -121.33194
+    ],
+    [
+     47.429088,
+     -121.331818
+    ],
+    [
+     47.429153,
+     -121.331704
+    ],
+    [
+     47.429256,
+     -121.331688
+    ],
+    [
+     47.429363,
+     -121.331635
+    ],
+    [
+     47.429485,
+     -121.331658
+    ],
+    [
+     47.429584,
+     -121.331566
+    ],
+    [
+     47.429725,
+     -121.331536
+    ],
+    [
+     47.429893,
+     -121.331551
+    ],
+    [
+     47.430042,
+     -121.33162
+    ],
+    [
+     47.430133,
+     -121.331589
+    ],
+    [
+     47.430213,
+     -121.331612
+    ],
+    [
+     47.430351,
+     -121.331605
+    ],
+    [
+     47.43048,
+     -121.331536
+    ],
+    [
+     47.430553,
+     -121.331566
+    ],
+    [
+     47.430648,
+     -121.331566
+    ],
+    [
+     47.430797,
+     -121.331452
+    ],
+    [
+     47.430938,
+     -121.331444
+    ],
+    [
+     47.43114,
+     -121.331322
+    ],
+    [
+     47.431201,
+     -121.331154
+    ],
+    [
+     47.431297,
+     -121.331101
+    ],
+    [
+     47.431297,
+     -121.331162
+    ],
+    [
+     47.431392,
+     -121.331139
+    ],
+    [
+     47.431533,
+     -121.331078
+    ],
+    [
+     47.431789,
+     -121.331009
+    ],
+    [
+     47.43198,
+     -121.330971
+    ],
+    [
+     47.432079,
+     -121.330956
+    ],
+    [
+     47.432189,
+     -121.330941
+    ],
+    [
+     47.432331,
+     -121.330933
+    ],
+    [
+     47.432399,
+     -121.330903
+    ],
+    [
+     47.432552,
+     -121.330842
+    ],
+    [
+     47.432804,
+     -121.330689
+    ],
+    [
+     47.432987,
+     -121.330575
+    ],
+    [
+     47.433109,
+     -121.330483
+    ],
+    [
+     47.433223,
+     -121.33043
+    ],
+    [
+     47.433361,
+     -121.330391
+    ],
+    [
+     47.433509,
+     -121.330468
+    ],
+    [
+     47.433597,
+     -121.330605
+    ],
+    [
+     47.433673,
+     -121.330628
+    ],
+    [
+     47.433712,
+     -121.330651
+    ],
+    [
+     47.433731,
+     -121.330689
+    ],
+    [
+     47.433685,
+     -121.330742
+    ],
+    [
+     47.433712,
+     -121.330773
+    ],
+    [
+     47.433792,
+     -121.330781
+    ],
+    [
+     47.433856,
+     -121.330811
+    ],
+    [
+     47.433956,
+     -121.330887
+    ],
+    [
+     47.434097,
+     -121.330872
+    ],
+    [
+     47.434246,
+     -121.330971
+    ],
+    [
+     47.434417,
+     -121.330971
+    ],
+    [
+     47.434566,
+     -121.331063
+    ],
+    [
+     47.434638,
+     -121.331063
+    ],
+    [
+     47.434684,
+     -121.331101
+    ],
+    [
+     47.434703,
+     -121.331154
+    ],
+    [
+     47.434707,
+     -121.3312
+    ],
+    [
+     47.434783,
+     -121.331238
+    ],
+    [
+     47.434814,
+     -121.331315
+    ],
+    [
+     47.434879,
+     -121.331345
+    ],
+    [
+     47.434955,
+     -121.331437
+    ],
+    [
+     47.435054,
+     -121.331452
+    ],
+    [
+     47.435131,
+     -121.331399
+    ],
+    [
+     47.435199,
+     -121.331368
+    ],
+    [
+     47.435245,
+     -121.331406
+    ],
+    [
+     47.435443,
+     -121.331376
+    ],
+    [
+     47.435684,
+     -121.331337
+    ],
+    [
+     47.435817,
+     -121.331345
+    ],
+    [
+     47.435974,
+     -121.331315
+    ],
+    [
+     47.436225,
+     -121.331337
+    ],
+    [
+     47.436309,
+     -121.331383
+    ],
+    [
+     47.436347,
+     -121.331406
+    ],
+    [
+     47.436492,
+     -121.33136
+    ],
+    [
+     47.436622,
+     -121.33136
+    ],
+    [
+     47.436679,
+     -121.331322
+    ],
+    [
+     47.436702,
+     -121.331269
+    ],
+    [
+     47.436798,
+     -121.331238
+    ],
+    [
+     47.436916,
+     -121.331193
+    ],
+    [
+     47.437057,
+     -121.331162
+    ],
+    [
+     47.43729,
+     -121.331032
+    ],
+    [
+     47.437397,
+     -121.331048
+    ],
+    [
+     47.437568,
+     -121.331025
+    ],
+    [
+     47.43769,
+     -121.33104
+    ],
+    [
+     47.437774,
+     -121.331032
+    ],
+    [
+     47.437843,
+     -121.33104
+    ],
+    [
+     47.437908,
+     -121.331017
+    ],
+    [
+     47.43798,
+     -121.331009
+    ],
+    [
+     47.438018,
+     -121.331055
+    ],
+    [
+     47.438068,
+     -121.331063
+    ],
+    [
+     47.438148,
+     -121.331002
+    ],
+    [
+     47.438217,
+     -121.331017
+    ],
+    [
+     47.438251,
+     -121.331109
+    ],
+    [
+     47.438308,
+     -121.331177
+    ],
+    [
+     47.438407,
+     -121.3312
+    ],
+    [
+     47.438594,
+     -121.331177
+    ],
+    [
+     47.438758,
+     -121.33117
+    ],
+    [
+     47.438892,
+     -121.331131
+    ],
+    [
+     47.438987,
+     -121.33117
+    ],
+    [
+     47.439083,
+     -121.331254
+    ],
+    [
+     47.439174,
+     -121.331261
+    ],
+    [
+     47.439258,
+     -121.331376
+    ],
+    [
+     47.439338,
+     -121.331429
+    ],
+    [
+     47.43943,
+     -121.331429
+    ],
+    [
+     47.439479,
+     -121.331505
+    ],
+    [
+     47.439643,
+     -121.33162
+    ],
+    [
+     47.439788,
+     -121.33165
+    ],
+    [
+     47.439899,
+     -121.331627
+    ],
+    [
+     47.440067,
+     -121.331749
+    ],
+    [
+     47.440166,
+     -121.331841
+    ],
+    [
+     47.440235,
+     -121.331833
+    ],
+    [
+     47.440288,
+     -121.331856
+    ],
+    [
+     47.440399,
+     -121.331955
+    ],
+    [
+     47.440448,
+     -121.331955
+    ],
+    [
+     47.440464,
+     -121.33191
+    ],
+    [
+     47.440479,
+     -121.331833
+    ],
+    [
+     47.44054,
+     -121.331788
+    ],
+    [
+     47.440612,
+     -121.331788
+    ],
+    [
+     47.440696,
+     -121.331841
+    ],
+    [
+     47.440834,
+     -121.331826
+    ],
+    [
+     47.440914,
+     -121.331833
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 8,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 8,
+      "note": "Parties consistently treat this as a single long day hike/scramble, not a backpack. From the Rachel Lake TH (2,800 …",
+      "fromTo": "Car-to-car: Rachel Lake to Rampart Ridge & Alta Mountain",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No rock rack is used or needed -- this is an unroped Class 2 hands-on-rock scramble, not a roped rock climb. Parties do not carry cams, nuts, hexes, or a rack of any kind on the standard South Ridge/Rampart Ridge route.",
+   "what_to_bring": [
+    "bug net and repellent (mosquitoes reported swarming heavily at rest stops on the approach)",
+    "sun protection -- little to no shade on the final push and ridge",
+    "map/GPS/route beta for false-summit routefinding (3-5 false summits reported before the true summit)",
+    "wind layer for the exposed open ridge",
+    "turn-around discipline / willingness to bail if snow is encountered on the ridge or gully"
+   ],
+   "pro_tips": [
+    "A great early-summer scramble once Rampart Ridge melts out",
+    "Spectacular larch and lake views; popular and family-friendly for strong scramblers"
+   ],
+   "watch_out": [
+    "loose rock",
+    "thunderstorms",
+    "lingering snow/cornices on the ridge early"
+   ],
+   "pro_needs": "None -- no technical protection is placed on this route. It is a Class 2 scramble: loose rock and large steps on the initial push, then a narrow, exposed but non-technical ridge crest with several false summits to the true summit. Rock quality on the ridge itself is solid enough for hands-and-feet scrambling; the main hazard is loose talus/scree on the lower approach slope rather than anything requiring gear placement.",
+   "best_season": "Mid-July through October (larch color in fall)",
+   "high_point_ft": 6275,
+   "aid_grade": null,
+   "approach": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313. The first ~2.75 miles follow Box Canyon Creek on gentle grade, crossing several side streams and cascades (reliable water throughout — no need to carry much from the car). At about mile 2.75 the trail crosses Box/Canyon Creek and hits the notorious 'mile from hell': a heavily rooted, rocky boot-beaten climb that gains roughly 1,300 ft in about a mile, with large step-ups and no switchbacks — this is the crux of the approach fitness-wise, not technically hard but brutal with a full pack. The trail tops out at Rachel Lake (4,700 ft, ~3.5-4 mi from the TH); a use trail/climber's path branches right near the outhouse and skirts the north side of the lake, then switchbacks steeply up rocky tread for about half a mile to the Rampart Ridge crest (~5,100 ft). At the ridge junction, go left (south) for Rampart Lakes or right for Lila Lake/Alta Mountain — for this route, go right toward Lila Lake. The tread is brushy in places but easy to follow; after about 0.3 mile a cairn marks a fork where the Lila Lake trail continues straight and the unsigned climber's path to Alta branches left. Take the left fork, which starts steep and loose with big steps and no shade, and follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure (in one section the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge). A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure. Total one-way distance to the 6,274 ft summit is about 9.5-10 km (matches the 19.3 km round trip) with roughly 3,300 ft of total gain.",
+   "descent_text": "This is a scramble, not a technical climb — there is no rappelling on this route (rappels: 0). Descend by reversing the exact ascent line: retrace the ridge crest scramble back over the false summits and down the steep, loose lower ridge to the cairned fork, follow the Lila Lake trail back to the Rampart Ridge junction, drop via the steep half-mile rocky switchbacks to Rachel Lake, then retrace Trail #1313 down through the 'mile from hell' (this section is notably harder on tired knees going down — loose rocky step-downs and roots) and out along Box Canyon Creek to the trailhead. Key descent hazards mirror the approach: the exposed ridge-crest sections near the summit (do not descend this route if the ridge is snow-covered or wet — the exposed traverse becomes significantly more dangerous), loose rock on the steep lower ridge (rockfall risk onto anyone below — descend it one at a time), and the steep, rooted, ankle-turning tread on the 'mile from hell' switchbacks. No natural or fixed anchors are used anywhere on this route; parties should not carry a rope expecting to need it, though a short handline could be improvised on the steep lower ridge for less confident scramblers.",
+   "bail": "Descend off the ridge toward Rampart Lakes and the trail.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Snow can linger on the ridge traverses into July, and the route is not recommended in snow due to cliff-adjacent sections near the summit; best conditions are typically August-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard trip reports all treat this as a single long day hike/scramble, not a backpack. From the Rachel Lake TH (2,800 ft), hike Box Creek Canyon to Rachel Lake, climb to Rampart Ridge and turn right toward Lila Lake, then follow the unmarked climber's path up Alta's long south ridge past several false summits to the 6,274 ft summit. Reverse the same line to descend.",
+      "hours": 8,
+      "miles": 12,
+      "title": "Car-to-car: Rachel Lake to Rampart Ridge & Alta Mountain",
+      "gainFt": 3300,
+      "lossFt": 3300,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Rachel Lake trailhead",
+        "detail": "Elevation ~2,800 ft; first 2.5 mi is easy along Box Canyon Creek."
+       },
+       {
+        "time": "8:15 AM",
+        "label": "Arrive Rachel Lake",
+        "detail": "4.4 mi in, ~4,700 ft; steep rocky/root-filled final push to the lake."
+       },
+       {
+        "time": "9:15 AM",
+        "label": "Reach the Rampart Ridge junction",
+        "detail": "Trail skirts the lake then climbs ~600 ft more to the ridge; go right toward Lila Lake."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Start Alta's south ridge",
+        "detail": "Leave the maintained trail for the unmarked climber's path; expect several false summits."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Summit Alta Mountain",
+        "detail": "6,274 ft; views of the Snoqualmie/Keechelus peaks."
+       },
+       {
+        "time": "2:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Reverse the ridge, Rampart Lakes, and Rachel Lake trail to the car."
+       }
+      ],
+      "objective": "Summit Alta Mountain via Rachel Lake and Rampart Ridge"
+     }
+    ],
+    "totalNote": "A single long day hike/scramble car-to-car: roughly 12 miles round trip with about 3,300 ft of gain, typically 7-9 hours including summit time; not an overnight trip for the standard route, though Rampart Lakes can be used as a base camp by those who prefer to split it up."
+   },
+   "access": {
+    "fees": "$5/day or $30/year Northwest Forest Pass (Northwest Forest Pass, America the Beautiful, or Recreation.gov digital day-pass all accepted); Alpine Lakes Wilderness entry itself requires only a free, self-issued permit at the trailhead.",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Alpine Lakes Wilderness regulations apply",
+    "permit": "Self-issued wilderness permit at the trailhead",
+    "closures": null,
+    "group_limit": 12,
+    "landManager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "land_manager": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District)",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "passRequired": "Northwest Forest Pass at Rachel Lake trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Kachess Lake Road / Box Canyon Road (FR 4930) to Rachel Lake trailhead",
+    "status": "Typically accessible June through October per USFS",
+    "driveNote": "Paved then gravel forest roads; rough near the trailhead",
+    "seasonalGate": "No formal gate found in official sources, but FR 4930 and the trail can hold snow into early summer; check Okanogan-Wenatchee NF alerts/notices for storm-damage closures before driving."
+   },
+   "climate": {
+    "typical": "Transitional Cascade-crest climate; snowier than the east slope",
+    "bySeason": {
+     "fall": "Excellent; larch color, cool and clear",
+     "spring": "Snow on the ridge well into early summer",
+     "summer": "Prime window; dry, watch for storms",
+     "winter": "Snowbound; not a standard scramble objective"
+    },
+    "forecastZone": "NOAA West Slopes Central Cascades / Snoqualmie Pass"
+   },
+   "emergency": {
+    "county": "Kittitas County, WA",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest — (509) 852-1100",
+    "nearestHospital": "Kittitas Valley Healthcare, Ellensburg, WA — nearest full-service ER (roughly 1 hr drive from the Kachess Lake/Rachel Lake trailhead)",
+    "sheriffDispatch": "911 for emergencies; Kittitas County Sheriff non-emergency line (509) 962-7525"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July through September; Mountaineers-club scramble courses regularly run this as a group outing, adding organized parties on top of casual traffic",
+    "solitudeRating": 2,
+    "estimatePerSeason": "Rachel Lake trailhead (50-car lot) is one of the busier Alpine Lakes Wilderness access points and regularly fills on summer weekends; traffic thins sharply past Rampart Lakes onto the ridge toward the true summit. Rough estimate: 50-150+ parties/season reach Rampart Ridge, with a smaller subset (perhaps 30-80) continuing to Alta's summit block, including organized Mountaineers scramble outings."
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "8-12 mile round trip with roughly 3,300+ ft of gain, including a steep final 1.4 miles into Rachel Lake and sustained off-trail ridge travel beyond Rampart Lakes",
+     "packWeight": "Day-pack weight, roughly 15-25 lb including layers, water, and the 10 essentials"
+    },
+    "approachTime": "~3-4 hours to Rachel Lake and up onto Rampart Ridge (4.4 mi, steep last 1.4 mi), plus another 1-2 hours of ridge travel to the summit",
+    "requiredSkills": [
+     "Basic Class 2 scrambling and off-trail route-finding",
+     "Comfort with exposure along the ridge crest and loose rock",
+     "Navigation past the easy-to-miss Lila Lake / Alta junction",
+     "Snow travel/self-arrest awareness if attempting in early July while snow or cornices linger on the ridge"
+    ],
+    "experienceLevel": "Good first alpine scramble for a partner with some off-trail hiking experience; suitable as an intro scramble when paired with someone who has done Class 2 terrain before, given the well-traveled boot path and moderate exposure"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October, with the best combination of dry ridge conditions and larch color in late September into early October",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still have lingering snow and cornices on the ridge crest; conditions firm up and become straightforward by mid-to-late month",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Prime dry window with the most reliable access to the full ridge and summit block; watch for typical afternoon thunderstorms",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Peak larch color early in the month draws heavy traffic, but days shorten and early-season storms/snow become more likely as the month progresses",
+      "status": "good"
+     },
+     "September": {
+      "reason": "Excellent stable weather window; larch color begins to appear late in the month",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Transitional Cascade-crest climate that is snowier than the east slope; summer window is generally dry and clear once seasonal snow clears",
+     "probability": "Afternoon thunderstorms are a recognized hazard on this route; storm frequency increases again in October as fall systems arrive"
+    },
+    "exposure": "Sustained exposure along the ridge crest with loose rock underfoot; the terrain is mostly moderate Class 2 walking, but a slip on exposed sections or on lingering early-season snow/cornices could have serious consequences",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer/fall scramble route; nearest NWAC forecast zone is Snoqualmie Pass, relevant mainly for shoulder-season snow, not during the normal July-October climbing window",
+     "byMonth": {
+      "July": "Moderate",
+      "August": "N/A",
+      "October": "Low",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official NWAC forecast zone specifically covers this ridge; Snoqualmie Pass zone used as the closest regional proxy",
+     "No precise season-long party-count data was found; crowd estimate is inferred from trailhead parking capacity (~50 cars) and frequency of trip reports/reviews",
+     "Could not confirm the split between casual/independent parties and organized Mountaineers scramble-course groups",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/N6N9",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 3,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.441005,
+    "peakLng": -121.331945,
+    "trailhead": "Rachel Lake Trailhead",
+    "trailheadLat": 47.4012,
+    "trailheadLng": -121.2848,
+    "trailheadDirection": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 2 scramble along Rampart Ridge from Rachel Lake with one or two easy 2nd-class spots; no rope or rack needed.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Rachel Lake, Rampart Ridge, and the cairned Alta turnoff on the Lila Lake trail",
+     "notes": "From the Rachel Lake trailhead at 2,800 ft, at the end of FS Rd 4930 off Kachess Lake Road from I-90 exit 62, take Rachel Lake Trail #1313. The first 2.75 miles follow Box Canyon Creek at a gentle grade with reliable water throughout.\n\nAt about mile 2.75 the trail crosses the creek and hits the section known locally as the mile from hell: a heavily rooted, rocky climb gaining roughly 1,300 ft in a mile with big step-ups and no switchbacks. It is the fitness crux of the day, not a technical one.\n\nAt Rachel Lake, 4,700 ft, a use trail branches right near the outhouse, skirts the lake's north side, and switchbacks steeply about half a mile to the Rampart Ridge crest at about 5,100 ft. At the ridge junction go RIGHT toward Lila Lake; the left branch leads to Rampart Lakes and is not this route. After about 0.3 mile a cairn marks a fork: Lila Lake is straight ahead, and the climbers' path up Alta's south ridge is the left branch.",
+     "gainFt": 3300,
+     "season": "July to October. The route should not be attempted with snow on the ridge",
+     "hazards": [
+      "Sustained exposure along the ridge crest, including a section skirting a cliff edge",
+      "Three false summits and a class 3 downclimb crux near the top",
+      "Loose rock and large step-ups on the initial climbers' path",
+      "Afternoon thunderstorms on a long exposed crest",
+      "Lingering snow in the approach gully in early season"
+     ],
+     "baseFinding": "THE TAKEOFF IS A CAIRN ON THE LILA LAKE TRAIL, NOT ANYTHING IN THE RAMPART LAKES BASIN. At the ridge-top junction above Rachel Lake turn RIGHT (left goes to Rampart Lakes); about 0.3 mile along, a cairn marks a fork where Lila Lake is straight on and the unsigned climbers' path to Alta goes left. If you find yourself among the Rampart tarns, you took the wrong branch at the ridge.\n\nWHERE IT PUTS YOU: the climbers' path climbs Alta's south ridge, steep, loose and shadeless at first, before easing onto the narrow crest that leads to the summit block.\n\nWHAT THE RIDGE THEN DOES, SO YOU CAN COUNT YOUR WAY ALONG IT: THREE FALSE SUMMITS, class 2-3 rock steps, at least one near-vertical step of 6 to 8 ft with good holds and serious exposure, and a class 3 DOWNCLIMB crux near the top. A party that has crossed one bump and thinks it is at the summit is two bumps early.\n\nAND THE ONE PLACE WHERE THE FINDING IS A WARNING RATHER THAN A DIRECTION: there is a section where the path skirts a cliff edge. Fall consequences there are serious. This route should not be attempted with snow on the ridge, and it is not a place for anyone uneasy with heights or for dogs.\n\nA SECOND, INDEPENDENT DESCRIPTION OF THE SAME TAKEOFF: an unsigned climbers' path marked by a CAIRN leaves the maintained trail near the Rachel Lake / Lila Lake junction and climbs the south ridge. Steep, loose, big steps and no shade at first, then it moderates onto the knife-edge crest."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "class 2-3 rock steps",
+     "label": "Up Alta's south ridge from the cairned turnoff",
+     "notes": "From the cairned turnoff, follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure. Trip reports flag a section where the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge."
+    },
+    {
+     "n": 2,
+     "label": "Final ridge scramble to the 6,274 ft summit",
+     "notes": "A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4700,
+     "name": "Rachel Lake designated sites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800 ft. The trail runs an easy few miles up Box Canyon Creek and then climbs hard and rootily to the lake at four and a bit miles. Alta is reached by continuing over the ridge crest above the lake; Hibox leaves the trail lower down, at around 3,300 ft, on a steep boot path onto Box Ridge. Both are day scrambles from the car for a fit party, so a night here is about a civilised start or a plan that ran long. The honest caveat is the state of the basin: it is one of the most hammered lake basins in the wilderness, the parking lot fills by mid-morning in summer, and the designated sites exist because dispersed camping wrecked the shoreline. Snow-free window is roughly July into October.",
+     "water": "The lake and Box Canyon Creek are reliable all season. Treat it.",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the Rachel Lake trailhead, filled out at the box and carried for the trip. Camping is restricted to designated sites within half a mile of Rachel Lake and Rampart Lakes. Campfires are banned outright within half a mile of Rachel Lake and everywhere above 5,000 ft on this side of the crest, so plan on stoves regardless of where you end up. Party size capped at 12. Northwest Forest Pass or interagency pass for the trailhead, or a small daily fee. No drones. As of August 2026 the Box Canyon road and this trailhead were inside a wildfire closure order affecting a large part of the eastern Alpine Lakes; confirm the trailhead is actually open before driving to it.",
+     "capacity": "Multiple established sites around the lake, but the basin is visibly damaged from decades of overuse and the hardened sites are what is left"
+    },
+    {
+     "elev": 5082,
+     "name": "Rampart Lakes basin",
+     "role": "main",
+     "type": "camp",
+     "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,500 ft from the trailhead. For Alta Mountain's Rampart Ridge scramble this is better placed than Rachel Lake itself, since the ridge walk to the summit starts from the crest junction just above the basin rather than from the lake below it. Camping high also means camping exposed: the shelf is open, weather arrives with no warning, and there is nothing to shelter behind. Late July through September is the realistic season, and the basin is a well-known destination in its own right, so expect to share it.",
+     "water": "The tarns hold water through the season. Treat it. They are shallow and warm late in summer, so draw from the inlets where you can.",
+     "permit": "Same free self-issue Alpine Lakes Wilderness permit as Rachel Lake, from the Rachel Lake trailhead box. Designated sites only within half a mile of the lakes. No campfires anywhere above 5,000 ft on this side, and the whole basin sits above that line — stoves only, without exception. Party size capped at 12. Northwest Forest Pass or interagency pass to park. Subject to the same 2026 wildfire closure of the Box Canyon approach; check before committing.",
+     "capacity": "Numerous established sites spread across the shelf between the tarns; more room than Rachel Lake but correspondingly busier on weekends"
+    },
+    {
+     "elev": 2275,
+     "name": "Kachess Campground, I-90 exit 62",
+     "role": "route",
+     "type": "camp",
+     "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving over the pass at four in the morning. It is a lakeside family campground rather than anything resembling a climbers' camp, and it fills on summer weekends, so book rather than arrive hopeful. It sits low, on the shore of Kachess Lake, well below the trailhead. If it is full there is unreserved dispersed camping along the logging road toward the Rachel Lake trailhead, which is rough and unimproved but free and closer to the walk-in.",
+     "water": "Drinking water is provided during the operating season.",
+     "permit": "Standard campground fee, most sites reservable in advance and the remainder first-come. No wilderness permit required to sleep here and no trailhead pass needed for the campground itself. Seasonal operation only — it closes outside the summer months, so it is not a winter option. As of August 2026 this campground was among those closed by the wildfire order covering the north end of Kachess Lake; check it is open before relying on it.",
+     "capacity": "Large developed Forest Service campground of roughly 150 tent and RV sites plus a group site; a mix of reservable and first-come, and very busy in summer"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "rampart ridge rdg scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

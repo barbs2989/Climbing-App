@@ -34,7 +34,11 @@ import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
+import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-settle.mjs";
+import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
+import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
+import { checkScreenCounts } from "./lib/screen-counts.mjs";
+import { MENU_SCREENS, openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -59,12 +63,15 @@ let ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs
 let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 
 // A screen with less text than this rendered nothing useful -- the blank-screen signal.
-// "Crew:Groups" is legitimately the shortest screen in the app: the demo has joined no
-// groups, so it is a heading, one explanatory line and two CTAs -- a correct and complete
-// empty state, measured at 353 chars. The floor is set just under that rather than at the
-// 400 default, which would fail a working screen. It stays a real floor: the nav chrome
-// alone is ~90 chars, so a blank content area still trips it.
-const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, "Crew:Groups": 300 };
+// The GROUPS screen and its tabs are legitimately short: the demo has joined no groups, so a
+// tab can be its header, the tab strip and one explanatory line -- a correct and complete
+// empty state. (When Groups was a Crew sub-view it measured 353 chars.) The floor is set under
+// that rather than at the 400 default, which would fail a working screen. It is a weak floor
+// on its own -- the header and strip alone are ~250 -- so every tab but For you also carries a
+// LANDMARK below that only its own body renders, and the twin rule catches a tab that
+// silently renders a sibling.
+const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 300,
+  "Groups:Your groups": 300, "Groups:Your activity": 300, "Groups:Discover": 300, "Groups:Events": 300 };
 
 // Text that should never reach a user. Tuned to the bugs above; each entry is a
 // regex plus a note on the shape it catches.
@@ -104,7 +111,16 @@ const LANDMARKS = {
   "Crew:Friends": ["PEOPLE YOU’VE CLIMBED WITH", "FRIENDS’ RECENT ACTIVITY"],
   // Descriptive lines rather than counts: "CREW INVITES (1)" moves with the seed data and
   // would rot into a false failure the first time somebody adds an invite.
-  "Crew:Groups": ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  // The Groups screen (Menu → Groups). Its header line renders on every tab, so it proves only
+  // that the SCREEN opened; each other tab is proved by a heading only its own body renders
+  // (uppercase: innerText returns the CSS-transformed text). Those headings carry their count
+  // ("ALL YOUR GROUPS · 3"), so capture() also matches a line with a trailing " · N" removed,
+  // and the landmark stays the descriptive part the rule above asks for.
+  Groups: ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  "Groups:Your groups": ["ALL YOUR GROUPS"],
+  "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
+  "Groups:Discover": ["GROUPS TO JOIN"],
+  "Groups:Events": ["UPCOMING IN YOUR GROUPS"],
   "Crew:Requests": ["Friend requests, crew invites, and group activity waiting on you."],
 };
 
@@ -194,6 +210,17 @@ async function claimPort(start, span = 40) {
   return null;
 }
 
+// Ask the database one cheap question before spawning anything. This walk opens a DB route
+// BY NAME, so with the catalog unreachable it cannot succeed — and what it printed during the
+// 2026-08-13 outage was `could not choose a country — "United States" was not among the
+// options`, which reads as a broken area picker. Six minutes to produce a message pointing at
+// the wrong thing. Naming the real cause in twenty seconds is the whole gain.
+//
+// Skipped with --url on purpose: local env describes the server this script SPAWNS and says
+// nothing about an app served from somewhere else, exactly as the sample-route note above
+// records. Aborting a production check on the strength of a local dotfile would be its own
+// false failure.
+if (!URL_ARG) await assertDbReachable({ label: "check:ui" });
 let server = null;
 let base = URL_ARG;
 if (!base) {
@@ -231,13 +258,18 @@ page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 // never opens, and the previous screen gets captured a second time. The
 // identical-screen rule below is what surfaced this; the quoting is the fix.
 const tap = async (text, i = 0) => {
+  // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+  if (MENU_SCREENS[text]) return openFromMenu(page, text);
   // Prefer a real control whose visible label is exactly this text; only then fall
   // back to a text node. Matching text alone can land on a wrapping element that
   // ignores the click -- "Log a climb" looked completely dead that way, while the
   // <button> beside it opened the picker fine.
   const hitControl = await page.evaluate(({ t, idx }) => {
     const els = [...document.querySelectorAll('button,[role="button"],a,select,summary')]
-      .filter((e) => (e.textContent || "").trim() === t);
+      .filter((e) => (e.textContent || "").trim() === t)
+      // The primary nav is a BOTTOM tab bar, so it is LAST in DOM order. A tab label
+      // ("Partners") also names in-page controls; put the nav first so a tab tap means the tab.
+      .sort((a, b) => Number(!!b.closest('[aria-label="Primary"]')) - Number(!!a.closest('[aria-label="Primary"]')));
     if (!els[idx]) return false;
     els[idx].click();
     return true;
@@ -250,36 +282,11 @@ const tap = async (text, i = 0) => {
   return true;
 };
 
-// Click a control by its ACCESSIBLE NAME instead of its text content.
-//
-// This exists because tap() cannot reach the Crew sub-tabs, and six attempts to make it
-// failed before the reason was clear. Those buttons render the badge count INSIDE the
-// control -- `<button>{label}{n?<span>{n}</span>:null}</button>` -- so textContent is
-// "Friends2", and every exact-text strategy tap() has (its own querySelectorAll filter and
-// Playwright's `text="…"`) misses. Worse, tap() then returns false SILENTLY, and a caller
-// that ignores the return value carries on clicking whatever is on screen: that is how a
-// flow came to be "checking" the Friends view while standing on a different tab entirely.
-//
-// #740 and #755 gave those buttons an explicit aria-label ("Friends, 2"), which is both the
-// a11y fix and a durable handle -- it is authored, so it does not move when the count does.
-// Match the label exactly or up to the ", " the count is appended after, never a substring:
-// a bare prefix match would let "Crews" also select "Crews, 2" on a different bar.
-const tapByName = async (label) => {
-  const ok = await page.evaluate((label) => {
-    const re = new RegExp("^" + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(,|$)");
-    const el = [...document.querySelectorAll("[aria-label]")].find((e) => {
-      if (!re.test((e.getAttribute("aria-label") || "").trim())) return false;
-      const r = e.getBoundingClientRect();
-      return r.width > 2 && r.height > 2;
-    });
-    if (!el) return false;
-    el.scrollIntoView({ block: "center" });
-    el.click();
-    return true;
-  }, label);
-  if (ok) await page.waitForTimeout(1600);
-  return ok;
-};
+// Click a control by its ACCESSIBLE NAME instead of its text content. The implementation, and
+// the six failed attempts that produced its anchoring rule, moved to scripts/lib/tap-by-name.mjs
+// when check:outage needed the same handle on the same bar -- one implementation, so the two
+// guards cannot drift on how a Crew sub-tab is reached.
+const tapByName = (label) => tapByNameOn(page, label);
 
 // Leaf elements whose trimmed text matches a DISCLOSURE pattern, in DOM order.
 //
@@ -387,7 +394,9 @@ async function capture(name) {
   const min = MIN_CHARS[name] ?? MIN_CHARS.default;
   if (text.length < min) fail(name, `rendered only ${text.length} chars (min ${min}) — blank or broken screen`);
   for (const [re, why] of FORBIDDEN) { const m = text.match(re); if (m) fail(name, `${why} — found ${JSON.stringify(m[0])}`); }
-  const lines = new Set(text.split("\n").map((l) => l.trim()));
+  // Each line, plus the same line without a trailing " · N" count (a heading that counts its
+  // list is still that heading). Additive: every line that matched before still does.
+  const lines = new Set(text.split("\n").map((l) => l.trim()).flatMap((l) => [l, l.replace(/ · \d+$/, "")]));
   for (const want of LANDMARKS[name] || []) { if (!lines.has(want)) fail(name, `expected section ${JSON.stringify(want)} is missing`); }
   for (const e of pageErrors) fail(name, `uncaught page error: ${e}`);
   const twin = Object.keys(screens).find((k) => k !== name && screens[k] === text);
@@ -420,7 +429,7 @@ try {
   await page.waitForTimeout(2500);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -428,7 +437,7 @@ try {
   // Everything above checked default state. This walks one interaction deep,
   // where the last three sessions' worth of real bugs actually were.
   log("interactive state:");
-  for (const tab of ["Home", "Crew", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Crews", "Logbook", "Ranks", "Profile"]) {
     await sweepInteractive(tab);
   }
 
@@ -463,10 +472,35 @@ try {
   // Ask the app which catalog it is actually serving, rather than inferring it from
   // local env that does not apply to a remote target. The DB picker lists plain
   // "Washington"; the seed one lists "Utah · 10 climbs".
+  // The area picker asks for a COUNTRY before it will offer a state, now that the catalog
+  // holds more than one. `document.querySelector("select")` used to be the state picker and is
+  // now the country one, so choosing a country has to happen first — and both selects are
+  // addressed by accessible name rather than by document order, so a third control appearing
+  // above them cannot silently redirect this again. The country select is absent entirely when
+  // only one country exists, which is not an error: the app skips a step it cannot offer.
+  const pickInSelect = (namePrefix, label) => page.evaluate(({ namePrefix, label }) => {
+    const sel = [...document.querySelectorAll("select")]
+      .find((x) => (x.getAttribute("aria-label") || "").startsWith(namePrefix));
+    if (!sel) return "no-select";
+    const opt = [...sel.options].find((o) => o.label === label || o.label.startsWith(label + " ") || o.label.startsWith(label + " —"));
+    if (!opt) return "no-option";
+    sel.value = opt.value;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+    return "ok";
+  }, { namePrefix, label });
+
+  const countryPick = await pickInSelect("Select a country", "United States");
+  if (countryPick === "no-option") {
+    fail("route", `could not choose a country — "United States" was not among the options`);
+  }
+  if (countryPick === "ok") await settledText(page, { min: 30, timeout: 45000 });
+
   let catalog = USE_DB ? "DB" : "seed";
   if (URL_ARG && !(argOf("--route") && argOf("--state"))) {
     const opts = await page.evaluate(() => {
-      const sel = document.querySelector("select");
+      const sel = [...document.querySelectorAll("select")]
+        .find((x) => (x.getAttribute("aria-label") || "").startsWith("Select a state"))
+        || document.querySelector("select");
       return sel ? [...sel.options].map((o) => o.label) : [];
     });
     if (opts.length) {
@@ -480,14 +514,10 @@ try {
   // The seed state picker labels its options "Utah · 10 climbs" while the DB one
   // uses plain "Washington" — match by prefix so both drill in, and dispatch a real
   // change event so React's controlled select actually updates.
-  await page.evaluate((state) => {
-    const sel = document.querySelector("select");
-    if (!sel) return;
-    const opt = [...sel.options].find((o) => o.label === state || o.label.startsWith(state + " "));
-    if (!opt) return;
-    sel.value = opt.value;
-    sel.dispatchEvent(new Event("change", { bubbles: true }));
-  }, STATE);
+  const statePick = await pickInSelect("Select a state", STATE);
+  if (statePick !== "ok") {
+    fail("route", `could not choose "${STATE}" in the area picker (${statePick}) — the country step above it may not have applied`);
+  }
   // These were the last two flat waits in this file; every other step settles on the text
   // having stopped changing (see render-settle.mjs). Settling is strictly more adaptive than
   // 3000ms — it tolerates a slow list without tolerating a missing one, since a list that
@@ -498,6 +528,12 @@ try {
   // UNPROVEN: scripts/oneoff/test-checkui-route-nav-under-slow-db.mjs replays this exact
   // sequence under an injected per-request delay and the old timing opened the route anyway
   // at both 6s and 12s. So do not read this as "the flake is fixed" and stop looking.
+  //
+  // It recurred on 2026-08-12 (PR #840, a change confined to SuggestFix, which this walk never
+  // opens) — red in CI, green locally on the identical commit with all 20 screens passing, then
+  // green on re-run. Twice now the cost has been an author proving a red was not theirs, which
+  // is why the retry below exists. The retry addresses the COST, not the cause: the cause is
+  // still unknown and this comment stays until somebody reproduces it.
   //
   // Two things that injection did establish, both of which correct the obvious story:
   //   - The search box here does NOT issue a name=ilike query. Four /rest/v1/routes requests
@@ -514,9 +550,36 @@ try {
   await page.waitForTimeout(800);
   await settledText(page, { min: 30, timeout: 45000 });
   await tap("Routes");
-  const input = await page.$('input[type="text"], input:not([type])');
-  if (input) { await input.fill(ROUTE); await page.waitForTimeout(800); await settledText(page, { min: 30, timeout: 45000 }); }
-  if (!(await tap(ROUTE))) {
+  // BOUNDED RETRY, and deliberately not a longer timeout. The 2026-08-09 investigation could
+  // not reproduce this under an injected slow DB at 6s or 12s, so the exposure is not a wait
+  // that is merely too short, and a bigger number would be a guess dressed as a fix. A retry
+  // buys the one thing that is safe to buy without knowing the cause: if the row genuinely is
+  // not there, every attempt fails and the run still goes red with the same three-way message
+  // below. Nothing is weakened — only the cost of an intermittent miss is removed.
+  //
+  // It re-reads the input and re-types each pass rather than just tapping again, because the
+  // hypothesis this addresses is that the LIST was not ready: the search filters client-side
+  // over an already-loaded list (measured — zero name queries go out), so a re-filter against
+  // a list that has since arrived is the operation that can newly succeed. `fill("")` first,
+  // or React's controlled input keeps the previous value and the second fill is a no-op.
+  //
+  // A retry that succeeds is PRINTED, never silent. Absorbing it quietly would turn a
+  // measurable flake into an invisible one, and the next person to see this go red would have
+  // no idea it had been happening — the same rule this file follows for anything it drops.
+  let input = null, openedOn = 0;
+  for (let attempt = 1; attempt <= 3 && !openedOn; attempt++) {
+    if (attempt > 1) await settledText(page, { min: 30, timeout: 45000 });
+    input = await page.$('input[type="text"], input:not([type])');
+    if (input) {
+      await input.fill("");
+      await input.fill(ROUTE);
+      await page.waitForTimeout(800);
+      await settledText(page, { min: 30, timeout: 45000 });
+    }
+    if (await tap(ROUTE)) openedOn = attempt;
+  }
+  if (openedOn > 1) console.log(`  note: sample route opened on attempt ${openedOn} of 3 — the route list was not ready on the first pass`);
+  if (!openedOn) {
     // In CI nobody is watching the browser, so this failure has to say which of the
     // two very different causes it is. The sample route is pinned by name against the
     // live DB catalog, so a rename or a delete there turns this red on a PR whose
@@ -527,15 +590,47 @@ try {
     // "No climbs match this filter."
     const listed = await page.innerText("body").catch(() => "");
     const empty = /No routes match\.|No climbs match this filter\./i.test(listed);
+    // Fifth cause: a database READ failed, and the app said so. DbAreaBrowser renders
+    // "Couldn't load this area — ..." when the area's children/routes read errors (and then
+    // there is no search box to find), and "Couldn't search routes..." when routes_in_subtree
+    // errors. On 2026-10-02 both were the anon role's ~3s statement_timeout on Washington-wide
+    // reads while the project was CPU-starved, and this check reported them as "the route list
+    // rendered before this step" and "the route list or the search box". The app's own error
+    // text is the evidence, so name it rather than infer it -- and test it BEFORE the missing
+    // search box, which a failed area read causes.
+    const appError = (listed.match(/Couldn.t (?:load this area|search routes)[^\n]*/i) || [])[0];
+    // Fourth cause, and the one that was being reported as the third: the list never
+    // POPULATED. A still-spinning list and a slow database both leave the page with no rows
+    // and no empty state, which is exactly the shape the "not missing data" branch below
+    // then blamed on the route list. On 2026-08-13 that message sent this session hunting
+    // through DbAreaBrowser while Postgres was taking seconds per query — the route opened
+    // fine, on the same commit, once the database recovered.
+    //
+    // So: ask the app whether it is still loading, and ask the DATABASE how it is doing,
+    // rather than inferring either. assertDbReachable ran before the walk and only proves
+    // the project was alive THEN; a degraded project passes it and fails here. Skipped under
+    // --url, where local env describes a different deployment than the one being walked.
+    const spinning = looksLikeSpinner(listed);
+    const db = URL_ARG ? { state: "skipped" } : await probeDbLatency();
+    const dbSlow = db.state === "error" || (db.state === "ok" && db.ms > 2000);
+    const dbNote = db.state === "ok" ? `the database answered in ${db.ms}ms`
+      : db.state === "error" ? `the database did not answer (${db.err})`
+      : "the database was not probed (--url)";
     // Third cause, and it used to hide inside the second: no text input was found at all,
     // so nothing was ever typed and the tap was looking through an unfiltered list. That is
     // a different repair from a broken list, and the message must not conflate them.
     fail("route", `could not open the sample route ${JSON.stringify(ROUTE)} in the ${STATE} ${catalog} catalog`
-      + (!input
+      + (appError
+        ? ` — the app showed ${JSON.stringify(appError.trim())}: a database READ failed (usually the anon role's ~3s statement timeout on a state-wide read while the project is slow), so the route was never listed. ${dbNote}. This is the database, not the route list or the search box: re-run once the project is healthy.`
+        : !input
         ? ` — no search box was found on the Routes view, so the name was never typed. Check the route list rendered before this step, not the search itself.`
         : empty
         ? ` — the list rendered and said it has no match, so the row was probably renamed or deleted. This check pins the name; pass --route to point it elsewhere.`
-        : ` — the list did not report an empty search, so this is the route list or the search box, not missing data.`));
+        : spinning
+        ? ` — the list is STILL LOADING, so the row was never on screen to tap. ${dbNote}. This is the data not arriving, not the route list.`
+        : dbSlow
+        ? ` — the list rendered neither rows nor an empty state, and ${dbNote}. Treat this as a slow database rather than a broken list: re-run once it is answering in well under a second, and only investigate the list if it fails again on a healthy project.`
+        : ` — the list reported no empty search, is not still loading, and ${dbNote}. That leaves the route list or the search box.`));
   } else {
     await page.waitForTimeout(2500);
     // If the route page threw during render, React unmounts the tree and every
@@ -550,23 +645,31 @@ try {
       await capture("route:" + sub);
     }
     // Expanding a pitch is its own render path, and the one that blanked in #359.
-    // PITCH-BY-PITCH lives on Plan, not Overview — it moved there with PROTECTION and the
-    // rappels so the tab that describes the approach and the descent also describes the
-    // climbing between them. Tapping the wrong tab here does not fail loudly on its own:
-    // it finds no "more" control and reports the render path as unchecked, which is the
-    // message that caught this. Plan is absent on a route with no plan content, so fall
-    // back to Overview rather than assuming the tab is there.
+    // ROUTE BREAKDOWN lives on Plan, not Overview — the pitches moved there with PROTECTION
+    // and the rappels so the tab that describes the approach and the descent also describes
+    // the climbing between them. Tapping the wrong tab here does not fail loudly on its own:
+    // it finds no pitch row and reports the render path as unchecked, which is the message
+    // that caught this. Plan is absent on a route with no plan content, so fall back to
+    // Overview rather than assuming the tab is there.
     if (!(await tap("Plan"))) await tap("Overview");
     await page.waitForTimeout(1500);
+    /* IT USED TO HUNT FOR THE TEXT "▸ more", which was the pitch row's expander and existed
+       nowhere else in the app. Merging PITCH-BY-PITCH and ROUTE BETA into one ordered list
+       gave both kinds of row the same bare "▸", so that needle stopped matching and this step
+       went red — correctly: the render path really had stopped being walked.
+       It clicks the ROW now, selected by the `data-kind` the rows carry for check:pitch-split.
+       That is what the step has always meant ("expand a PITCH"), and unlike a glyph it cannot
+       be satisfied by a "more" belonging to some other control. A travel section is
+       deliberately not accepted: it has no photos, no comments and no PitchConsensus, so
+       expanding one exercises a different and much smaller render path. */
     const expanded = await page.evaluate(() => {
-      let t = null;
-      document.querySelectorAll("div,span").forEach((e) => { if (!t && e.children.length === 0 && /^.?\s*more$/.test((e.textContent || "").trim())) t = e; });
-      if (!t) return false;
-      (t.parentElement || t).click();
+      const row = document.querySelector('[data-kind="pitch"]');
+      if (!row) return false;
+      (row.querySelector('[role="button"]') || row).click();
       return true;
     });
     if (expanded) { await page.waitForTimeout(2000); await capture("route:pitch-expanded"); }
-    else fail("route:pitch-expanded", `no expandable pitch found on ${JSON.stringify(ROUTE)} — the pitch-expand render path went unchecked`);
+    else fail("route:pitch-expanded", `no [data-kind="pitch"] row found on ${JSON.stringify(ROUTE)} — the pitch-expand render path went unchecked. Either this route describes no roped pitches, or ROUTE BREAKDOWN stopped tagging its rows.`);
   }
 
   // ---- named interaction flows -------------------------------------------
@@ -621,7 +724,7 @@ try {
   await flow("logbook-subtabs-switch", async () => {
     await tap("Logbook");
     const seen = {};
-    for (const sub of ["Objectives", "Completed", "Challenges", "Areas"]) {
+    for (const sub of ["Objectives", "Completed", "Challenges", "Saved"]) {
       if (!(await tap(sub))) throw new Error(`the Logbook sub-tab ${JSON.stringify(sub)} is not present`);
       const t = await page.innerText("body");
       const twin = Object.keys(seen).find((k) => seen[k] === t);
@@ -636,13 +739,16 @@ try {
   // render guard had ever opened, and it is where #569 (a populated crew reading "You + 0
   // climbers") and #688 lived.
   await flow("crew-subviews-switch", async () => {
-    await tap("Crew");
+    await tap("Crews");
     // Only three are captured. `crewView` defaults to "crews", so the Crews sub-view IS the
     // Crew screen already captured in the main walk -- capturing it again would be a
     // byte-identical twin and fail for being correct. That equality is worth asserting
     // rather than dodging, so it becomes the round-trip check at the end.
-    for (const sub of ["Friends", "Groups", "Requests"]) {
-      if (!(await tapByName(sub))) throw new Error(`the Crew sub-tab ${JSON.stringify(sub)} is not present, or has lost its aria-label`);
+    for (const sub of ["Friends", "Requests"]) {
+      // Friends and Requests left the Crew tab's bar: they open from the Menu now, and the Crew tab
+      // is crews only. Each still renders as a crewView, with a "← Crews" row to return. Groups
+      // left the Crew tab altogether -- it is its own screen, walked in the main loop and below.
+      if (!(await tapMenuItem(page, sub))) throw new Error(`the Menu tile ${JSON.stringify(sub)} is not present`);
       // capture() settles the screen, records it into --snapshot, and applies the same
       // min-length / FORBIDDEN / LANDMARKS / identical-twin rules every other screen gets.
       // The twin check is global, so a sub-view that silently renders another screen fails
@@ -656,10 +762,27 @@ try {
     }
   });
 
+  // THE GROUPS SCREEN'S OWN TABS (Menu → Groups: For you · Your groups · Your activity · Discover ·
+  // Events). The main walk captures the first; each of the others is captured here under the same
+  // min-length / FORBIDDEN / LANDMARKS / twin rules, so a tab that renders nothing, or silently
+  // renders a sibling, fails. For you is tapped last so the screen is left where a visit starts.
+  await flow("groups-tabs-switch", async () => {
+    if (!(await tap("Groups"))) throw new Error("the Menu's Groups tile is not present");
+    for (const sub of ["Your groups", "Your activity", "Discover", "Events"]) {
+      if (!(await tap(sub))) throw new Error(`the Groups tab ${JSON.stringify(sub)} is not present`);
+      await capture("Groups:" + sub);
+    }
+    if (!(await tap("For you"))) throw new Error("the Groups tab \"For you\" is not present");
+    const back = await settledText(page, { min: 30, timeout: 45000 });
+    if (screens.Groups && back !== screens.Groups) {
+      throw new Error("returning to For you did not restore the Groups screen -- the tab strip navigates one way only");
+    }
+  });
+
   await flow("log-a-climb-picker-opens", async () => {
     await tap("Logbook");
     // Flows share one browser and React keeps sub-tab state, so reset to the view
-    // that owns this control -- the previous flow leaves the Logbook on "Areas",
+    // that owns this control -- the previous flow leaves the Logbook on "Saved",
     // where "Log a climb" legitimately does not render.
     await tap("Objectives");
     const before = await page.innerText("body");
@@ -672,6 +795,14 @@ try {
 } finally {
   await browser.close();
   if (server) server.kill();
+}
+
+// Two screens counting the SAME list must not disagree — the mechanisable half of #1203, where
+// the Profile said "3 active" while the Logbook said "4 climbs to go" about one list. Every
+// assertion above passed: the numbers were well-formed, the screens rendered, nothing was NaN.
+// Nobody was comparing them. Runs on the text already captured, so it costs no extra walk.
+for (const r of checkScreenCounts(screens)) {
+  fail("counts:" + r.group, (r.kind === "unmeasured" ? "NOT COMPARED — " : "") + r.msg);
 }
 
 if (SNAPSHOT) { fs.writeFileSync(SNAPSHOT, JSON.stringify(screens, null, 1)); log(`\nwrote ${SNAPSHOT} (${Object.keys(screens).length} screens)`); }

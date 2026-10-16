@@ -1,0 +1,967 @@
+{
+ "applied": [
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Number of step-across moves"
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Walking length of the Loomis approach"
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "approach",
+   "path": [],
+   "fact": "Route-specific approach text describes other routes"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "miles"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "pro_tips",
+   "path": [
+    5
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "overview",
+   "path": [],
+   "fact": "Approach distance to Upper Cathedral Lake"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Descent into the lake basin from Andrews Pass"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "overview",
+   "path": [],
+   "fact": "Position of the route relative to The Monk"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    5
+   ],
+   "fact": "Bear canister requirement"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Size of The Monk"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Which side of The Monk the cracks are on"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "Descent certainty"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road surface to Andrews Creek"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Which side of The Monk the cracks are on"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "Descent certainty"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "before": {
+    "beta": "Also referred to as the West Ridge or the southwest slope, and universally described as the easy way up and the route of choice for descending after climbing the Southeast or North faces. From Upper Cathedral Lake (7,380 ft) take the trail 0.6 miles nearly to Cathedral Pass (7,600 ft), leave it, and climb easy sandy terrain for several hundred vertical feet. Ducks and cairns then lead over Class 2-3 granite outcrops, blocks and slabs — solid, coarsely crystalline rock with occasional spots where a friction hoist gets you over a block — to a hidden cleft running parallel to and just below the west ridge crest. There are two minor Class 3+ steps and one Class 4 step-across. The chasm that cleaves the summit rocks into north and south sections is the crux: step onto a large chockstone jammed in the slot and mantle onto a bulge on the far side. The climbing is easy; the exposure is dramatic, and most parties carry a rope and harnesses for it, often rigging a handline with prusiks for the return. In early season the chasm is filled with snow, which makes the first of the two step-acrosses easy or trivial; the second never has snow in the hole. It is Class 3 with exposure that makes it Class 4-.",
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the trail toward Cathedral Pass",
+      "notes": "Drive north from Winthrop up the Chewuch River road to the Andrews Creek trailhead at about 3,050 ft and walk trail #504 up the drainage to Andrews Pass above 6,680 ft. The lower half is an old burn with no shade and brushy tread. From the pass, drop into the next drainage and take the Cathedral Lakes trail up to Upper Cathedral Lake at about 7,380 ft. That is the base camp and it is a full long day of walking, usually two.\n\nOne early-season bonus is worth planning around: the chasm that splits the summit rocks is often snow-filled early, which makes the first step-across easy or trivial. Late season means a bare hole and the pure version of the move. It can snow here in any month, so carry layers whatever the forecast says.\n\nThe alternatives are the valley trail from the Thirtymile trailhead, gentle but longer, and the high trail from Loomis, which walks least but drives longest and leaves you 1,300 ft of climbing on the way out.",
+      "season": "July to mid-September; the sunny south-west aspect melts out first",
+      "hazards": [
+       "The step-across onto the chockstone is easy climbing over serious exposure and is harder in descent than in ascent",
+       "The second step-across never has snow in the hole, whatever the season",
+       "Ducks and cairns are the only route markers on the granite section",
+       "Loose blocks and sandy slopes that plunge-step well going down and slide going up",
+       "This is also the descent for every technical route here, so parties meet it tired and often late in the day"
+      ],
+      "baseFinding": "This route has no rock start to find. It begins where you LEAVE THE TRAIL, and that spot is defined by the pass, not by a cairn: walk about 0.6 mile of trail from Upper Cathedral Lake toward Cathedral Pass and step off just short of the pass at roughly 7,600 ft. If you have crested the pass and started descending the far side, you have gone too far — turn round.\n\nAbove that, the route confirms itself by TEXTURE, in a fixed order. First several hundred vertical feet of easy sandy slopes with no rock scrambling at all. Then ducks and cairns over coarse granite blocks and slabs, solid rock, class 2 to 3, with two minor steps that need a hand and one place where a friction push gets you over a block. If you are pulling on anything harder than that, you have wandered off the ducks.\n\nThe route then enters a HIDDEN CLEFT running parallel to and just below the west ridge crest. That cleft is the strongest confirmation on the whole climb, because it cannot be seen from below and you either find yourself in it or you do not.\n\nThe last feature is the crux and it is unmistakable: a long chasm cleaving the summit rocks into a north and a south half, with a big chockstone jammed in the slot. Step onto the chockstone and mantle onto the bulge on the far side. The move is easy; the exposure is not, and most parties rig a handline with prusiks for the return. Lower down there is a cannonhole giving an easier alternative to one vertical step.\n\nNEGATIVE MARKER: if at any point you are standing under a thousand-foot wall with a detached tower leaning against its lower right side, you have walked round to the south side of the mountain and you are below the technical routes, not on the walk-up."
+     }
+    ],
+    "road": {
+     "name": "Chewuch River Road — Okanogan County Rd 1213 (West Chewuch Rd) becoming FS Road 51, with FS 5160 continuing to Thirtymile",
+     "status": "Paved out of Winthrop then well-maintained gravel; passable to standard passenger cars in summer.",
+     "driveNote": "From Winthrop, West/East Chewuch Road north joins FS 51 after 6–7 miles. Andrews Creek Trailhead is at roughly mile 22 where the pavement ends; Thirtymile Trailhead is about 29 miles out via FS 51/5160 at 3,400 ft, with vault toilets, picnic tables and no potable water. About 4.5 hours from Seattle. Iron Gate (6,150 ft) is a separate drive from Loomis via Toats Coulee Rd / FS 39 and 6 miles of FS 3900-500, which is high-clearance only.",
+     "seasonalGate": "No locked gate; unplowed and snowbound in winter and spring. Snow season October–May; eastern-side trails typically clear by early July."
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_10",
+   "before": {
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 from the Chewuch River road",
+      "notes": "The drive is the easy part — paved almost all the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft. The walk is one of the longest wilderness approaches in the state.\n\nTrail #504 climbs the drainage for roughly twelve miles to Andrews Pass above 6,680 ft, crossing an old burn for much of that: hot, rocky, buggy, and no shade. From the pass the trail drops into the next drainage before the Cathedral Lakes side trail climbs to Upper Cathedral Lake at about 7,380 ft, below the peak's south-west side.\n\nTreat this as a two-to-four day backpack with a summit push from camp in the basin. A free self-issue wilderness permit is taken at the trailhead along with a parking pass. There is no cell coverage anywhere on this trip.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "Three separate routes share this face and the lower ground accepts almost any line",
+       "The tower in front of the wall carries its own routes under a colliding name",
+       "Loose rock and rockfall from parties above on a wall this size",
+       "Walk-off descent to the west whose crux is a no-fall step across a gap",
+       "No cell coverage and a multi-day walk out"
+      ],
+      "primary": true,
+      "baseFinding": "From camp, follow the trail toward Cathedral Pass and then climb scree and talus to the foot of the main wall. Thirty to sixty minutes.\n\nFIRST, RULE OUT THE TOWER. A semi-detached tower leans against the lower right side of the wall, and a deep gully separates it from the mountain. If that tower is between you and the rock, you are under the buttress route, which climbs the ridge behind it. This route is on the OPEN WALL, and specifically on its CENTRE. Nothing should be standing in front of you.\n\nStart low and central, near the bottom of the wall rather than off to one side. The line then confirms itself by a run of features in a fixed order, and this is the identification that actually works, because the lower face accepts many lines:\n\nLow down there is a boxed-in feature the first ascent called a confession box. At mid-height there is a SPECTACULAR CURVING CHIMNEY — this is the single best confirmation on the route and it is visible from the ground if you look for it. High up you cross a pulpit ledge and then a belfry ledge before easier ground runs to the top.\n\nNEGATIVE MARKER, and it matters because the two lines converge: if instead of a curving chimney you find yourself pushed rightward along a long ramp toward a steep thin crack in a headwall, you have drifted onto the harder line that takes the right-hand third of the face. That one is several number grades above this and it takes very thin protection. Come back left and look for the chimney.\n\nSECOND NEGATIVE MARKER: the tower in front of the wall has its own small south face carrying several short routes. Beta written about the tower will also be headed South Face. The tower's routes are two to five pitches; this wall is about a thousand feet."
+     },
+     {
+      "name": "Cathedral Driveway trail #510A from Loomis via Toats Coulee",
+      "notes": "The high trailhead above Loomis, reached by Toats Coulee Road and the forest roads beyond it, sits at about 5,570 ft. This is a trail and not a four-wheel-drive road, whatever you may have read; the high-clearance warning in circulation belongs to a different spur.\n\nThe trail drops from the trailhead to meet the valley trail lower down, then follows the valley up to the Cathedral Lakes basin. It is the shortest walk and the least total climbing of the ways in.\n\nBoth ends carry a penalty. The drive is about two hours longer than from Winthrop, and because the trailhead is high and the trail loses height to reach the valley, the trip finishes with roughly 1,300 ft of climbing on the way out.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "1,300 ft of climbing at the very end of the trip on the way out",
+       "A trailhead published under several different names",
+       "The wall foreshortens badly from directly below, so the mid-height chimney is hard to relocate at the base",
+       "Same walk-off descent with a no-fall gap crossing near the summit"
+      ],
+      "baseFinding": "The base is the same and reached the same way from camp. What changes is where you first see the wall, and on a face this size that is worth more than any description.\n\nComing up the valley you enter the basin from below rather than over the pass, so the whole south side stands up in front of you at once. Stop at the lake and sort out three things before walking up: the small detached TOWER at the lower right of the wall; the deep GULLY between that tower and the mountain; and the OPEN CENTRE of the wall to the left of both. This route is the open centre.\n\nWhile you are looking, find the CURVING CHIMNEY at mid-height in that centre panel. It is the feature that proves the line and it is far easier to pick out from across the water than from underneath, where the wall foreshortens and everything reads as featured granite. Fix it against the skyline above it so you can re-find it at the base.\n\nNEGATIVE MARKER from the lake: if the panel you are looking at has a long ramp cutting rightward across it toward a steep headwall crack, that is the right-hand line, not this one. And if the wall you are looking at is only a few pitches tall and stands clear of the mountain, you are looking at the tower."
+     }
+    ],
+    "watch_out": [
+     "The 1969 FA account notes protection on 'assorted blocks and horns' in places — inspect placements on the original aid pitches.",
+     "It's a long multi-day commitment to even reach the base; weather windows should be confirmed before setting out."
+    ],
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: from Cathedral Lakes camp, follow the trail toward Cathedral Pass and climb scree/talus to the base of the peak's main South Face; SE Buttress starts on the left wall just after entering the deep gully that separates Cathedral Peak from The Monk, while NE Ridge is gained by continuing up and around toward the ridgeline running north."
+   }
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "before": {
+    "itinerary": {
+     "cal": "Pasayten Wilderness requires only a free self-issue permit at the trailhead (no quota); the Andrews Creek approach is typically snow-free and drivable July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, steady approach on the Andrews Creek Trail through forest and subalpine meadows into the Pasayten Wilderness, ending at Upper Cathedral Lake, the standard base camp for the peak. Self-issue a free wilderness permit at the trailhead kiosk before starting.",
+       "hours": 9,
+       "miles": 15,
+       "title": "Backpack to Upper Cathedral Lake",
+       "gainFt": 4350,
+       "lossFt": 200,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Andrews Creek Trailhead",
+         "detail": "Self-issue wilderness permit at the trailhead register."
+        },
+        {
+         "time": "~5 hr in",
+         "label": "Pass Spanish Camp / Cathedral Pass junction",
+         "detail": ""
+        },
+        {
+         "time": "~3:00 PM",
+         "label": "Arrive Upper Cathedral Lake",
+         "detail": "Set up camp and scout the buttress across the basin."
+        }
+       ],
+       "objective": "Reach high camp at Upper Cathedral Lake (7,380 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start for the short approach to the base of the buttress, then 10 pitches of sustained hand and finger cracks on excellent granite to the 8,606 ft summit. Descend via the 4th-class scramble route, including a short, exposed gap crossing, back to camp.",
+       "hours": 10,
+       "miles": 2,
+       "title": "Southeast Buttress summit day",
+       "gainFt": 1300,
+       "lossFt": 1300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Rack up at base of route",
+         "detail": "~40 min approach from the lake."
+        },
+        {
+         "time": "1:00-3:30 PM",
+         "label": "Top out on summit",
+         "detail": "7-9 hrs of climbing depending on party size and conditions."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Begin descent",
+         "detail": "4th-class scramble trending west/southwest, including the exposed notch ('leap of faith')."
+        },
+        {
+         "time": "5:30-6:30 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the SE Buttress (10 pitches, 5.8-5.9) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Many parties build in a layover day at Upper Cathedral Lake to recover and take advantage of being deep in the Pasayten -- a common add-on is the easy 3rd-class scramble up nearby Amphitheater Mountain or Deacon Peak. Skip this day entirely for a faster 4-day trip.",
+       "hours": 4,
+       "miles": 4,
+       "title": "Rest day / optional bonus summit",
+       "gainFt": 800,
+       "lossFt": 800,
+       "packLb": 10,
+       "schedule": [],
+       "objective": "Recover, or scramble Amphitheater Mountain or Deacon Peak"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the Andrews Creek Trail back to the trailhead, losing the elevation gained on Day 1.",
+       "hours": 8,
+       "miles": 15,
+       "title": "Hike out",
+       "gainFt": 200,
+       "lossFt": 4350,
+       "packLb": 25,
+       "schedule": [],
+       "objective": "Return to Andrews Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 4-5 day trip: roughly 30 miles round-trip and 4,350 ft of approach gain on the Andrews Creek Trail, plus an 8-11 hour, 10-pitch 5.8-5.9 summit day from Upper Cathedral Lake camp; many parties add a rest or bonus-summit day."
+    },
+    "waypoints": [
+     {
+      "lat": 48.7838,
+      "lng": -120.1088,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "Self-issue wilderness permit at the kiosk; trail #504 starts in a 2003-burn zone with little shade for the first several miles.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive West Chewuch Road / FR-51 north out of Winthrop roughly 22-23 miles to the road end at about 3,050 ft. Everything above is gained on foot — this is one of the longest wilderness approaches in the state, and the Chewuch River trailhead to the east is a longer alternative to the same camp."
+     },
+     {
+      "lat": 48.835231,
+      "lng": -120.147377,
+      "elev": 4200,
+      "name": "Andrews Creek (burn-zone crossings)",
+      "note": "Trail parallels and repeatedly crosses Andrews Creek through the burn — last easy, frequent water before the climb toward the pass.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Trail #504 climbs steadily up the Andrews Creek drainage through the 2003 burn scar: little shade, brushy regrowth that soaks you through after rain, and blowdown between trail-crew visits. The creek runs beside the tread for these miles, so there is no reason to carry much water on this stretch."
+     },
+     {
+      "lat": 48.857306,
+      "lng": -120.159132,
+      "elev": 6200,
+      "name": "Peepsight Trail junction",
+      "note": "Stay on Andrews Creek Trail (left/straight) for Andrews Pass; the right fork climbs to Peepsight Lake.",
+      "type": "Junction",
+      "distMi": 5.5,
+      "directions": "Stay on #504 as it continues up-valley. The Peepsight Trail branches off toward Peepsight Creek and eventually rejoins the Andrews Creek line much higher by a far longer loop — not the way to Cathedral. Burn and brushy tread continue past the fork."
+     },
+     {
+      "lat": 48.944476,
+      "lng": -120.228605,
+      "elev": 6700,
+      "name": "Andrews Pass",
+      "note": "Burn zone ends and open meadow country begins here; dispersed camps sit on the bluff just east of the pass, trail then contours toward Spanish Creek and the Boundary Trail.",
+      "type": "Junction",
+      "distMi": 12,
+      "directions": "Above the Peepsight fork the trail keeps grinding up the drainage in burned timber until it tops out at the pass, where open parkland and meadow replace the snags and the view opens north toward Amphitheater Mountain. Snow patches can hold on this stretch into early July."
+     },
+     {
+      "lat": 48.975736,
+      "lng": -120.212212,
+      "elev": 7400,
+      "name": "Upper Cathedral Lake camp",
+      "note": "Established basecamp used by SE Buttress climbers, in parkland meadows just west of Cathedral Pass; last reliable water before the route.",
+      "type": "Campsite",
+      "distMi": 15,
+      "directions": "From the pass follow the Boundary Trail (#533) through rolling meadow toward Spanish Creek, then take the Cathedral Lakes side trail, which bears off near the old wilderness guard-station cabin, for the last few miles into the lake basin. Budget a full, long day from the car to here; most parties arrive mid-afternoon."
+     },
+     {
+      "lat": 48.981125,
+      "lng": -120.20481,
+      "elev": 7600,
+      "name": "Cathedral Pass",
+      "note": "40-60 min walk from camp; the Pacific Northwest Trail crosses here between Cathedral Peak and Amphitheater Mountain — leave the trail toward the Cathedral-Monk gully.",
+      "type": "Junction",
+      "distMi": 15.5,
+      "directions": "A 40-60 minute walk from camp, climbing east out of the lake basin on the trail that crosses the pass between Cathedral Peak and Amphitheater Mountain. Leave it at the first switchback above the pass and start up toward the gully."
+     },
+     {
+      "lat": 48.984996,
+      "lng": -120.197464,
+      "elev": 7750,
+      "name": "Cathedral–Monk gully approach",
+      "note": "Loose, wide gully separating Cathedral Peak from The Monk; route starts about 150 ft up it — watch for rockfall from other parties above.",
+      "type": "Hazard",
+      "distMi": 16,
+      "directions": "Cross meadow and talus toward the obvious deep cleft between Cathedral Peak and the pinnacle called The Monk. There is no climbers' path, so pick the line by eye — 30 to 60 minutes from camp in total. Scramble up into the gully; the first pitch is on the left (north) wall a short way in, launched from a tall pedestal that makes a solid belay stance."
+     },
+     {
+      "lat": 48.98926,
+      "lng": -120.188954,
+      "elev": 8606,
+      "name": "Cathedral Peak summit",
+      "note": "True summit atop the route's two-pitch headwall; descend trending west then southwest, 4th-class with an exposed gap crossing, back down into the meadows above Upper Cathedral Lake.",
+      "type": "Summit",
+      "distMi": 16.5,
+      "directions": "Ten pitches up the buttress: corners, a chockstone and chimney ground low down, easier discontinuous terrain through the middle, then the sustained headwall — linking pitches 8 and 9 into one 55-60 m lead avoids the route's only semi-hanging belay. Two short hand-crack steps and third-class scrambling finish at the true summit."
+     }
+    ],
+    "pro_tips": [
+     "Cathedral's granite is exceptional — one of the better rock summits in the Pasayten",
+     "Link pitches 8-9 into one continuous 55m 5.10a finger-crack pitch rather than fighting the original P9 offwidth — most modern parties prefer this line",
+     "Camp at Upper Cathedral Lake: reliable water year-round and only a 40-60 minute approach to the base of the route",
+     "Budget a full climbing day (8-9+ hours base-to-summit); this is a grade III outing, not a quick scramble",
+     "The route sees relatively light traffic — inspect any anchors/gear placements carefully rather than assuming they're bomber",
+     "Getting to the trailhead and camp alone (drive + 15-mile backpack) takes a full day — plan a minimum 4-day round trip"
+    ],
+    "what_to_bring": [
+     "multi-day backpacking kit for the 15+ mile approach",
+     "bear canister, Ursack, or hang kit for food storage (black bears present; no campfires above ~5,000 ft, so plan on a stove)",
+     "3+ liters water capacity for summit day (limited refill options once off the approach trail)",
+     "approach shoes or light boots for talus/scree below the buttress",
+     "satellite communicator (inReach/SPOT) — cell coverage is unreliable to absent near Cathedral Lakes",
+     "map/compass or GPS; wilderness self-issue permit form",
+     "sun protection — east-Cascades exposure is intense on the SE-facing buttress"
+    ],
+    "overview": "Cathedral Peak (~8,601-8,606 ft depending on datum) is the granite high point of the Remmel Group in the far-northern Pasayten Wilderness, just over a mile south of the Canadian border and Cathedral Provincial Park, BC. First climbed in 1901 by Carl W. Smith and George O. Smith via the easier scramble line, the peak is best known among Cascade alpinists for the Southeast Buttress — a 10-pitch, Grade III 5.9+ line first climbed in July 1973 up sustained crack systems on the peak's roughly 1,000-foot south face, just right of a smaller rock tower known as 'The Monk.' It is widely regarded as one of the best moderate alpine-rock routes in Washington, but the long, remote approach (15+ miles one-way) keeps it lightly traveled.",
+    "approach": "Drive to the Andrews Creek Trailhead (~3,050 ft) at the end of West Chewuch Road/FR-51, roughly 22–23.5 miles north of Winthrop. From the trailhead, follow Andrews Creek Trail #504, which climbs steadily through the Andrews Creek drainage — the first ~6-12 miles pass through the 2003 wildfire burn scar, so expect little shade, brushy/overgrown tread in early season (some parties describe being soaked to the skin pushing through wet regrowth after rain), and occasional blowdowns despite periodic trail-crew clearing. Andrews Creek itself parallels the trail for this stretch and is a reliable water source. At about 12 miles the trail tops out at Andrews Pass (6,680+ ft), where the burn gives way to open parkland and meadow with views north toward Amphitheater Mountain; snow patches can linger here into early July. From the pass, continue on the Boundary Trail (#533) through rolling meadows, then drop via the Cathedral Lakes side trail (bear off near the old wilderness guard-station cabin) for the final push down to Upper Cathedral Lake — roughly 18 miles and a full, long hiking day from the trailhead, with a net ~1,300-ft descent into the lake basin that has to be regained on the way out. Upper Cathedral Lake is the standard base camp. From camp, cross meadows and talus toward the obvious deep gully separating Cathedral Peak from the smaller pinnacle known as 'The Monk' — this is a 30–60 minute approach. The Southeast Buttress's first pitch starts on the left (north) wall of that gully, a short way in; scramble up onto a tall pedestal that provides a solid belay stance to launch pitch one.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Must comfortably cover 18-22+ miles one-way (Chewuch River or Andrews Creek trail) with a multi-day pack to reach Upper Cathedral Lake / Cathedral Pass camp, often done as a single long day (sunrise to sundown)",
+      "packWeight": "35-45 lb combined multi-day camping + alpine rock rack (rope, trad rack, bivy/camp gear, food for several days)"
+     },
+     "approachTime": "Full day (8-12+ hrs), 18-22+ miles via Andrews Creek/Chewuch River trail to Upper Cathedral Lake high camp, climbing on a subsequent day",
+     "requiredSkills": [
+      "Trad leading solid 5.9",
+      "Multi-pitch anchor building, rope management, and simul-climbing/efficiency on a ~1000ft route",
+      "Route-finding on a buttress with limited fixed protection or markings",
+      "Remote wilderness first aid / self-rescue",
+      "Off-trail navigation for the long approach",
+      "Bear canister / wilderness camping competence (required in Pasayten)"
+     ],
+     "experienceLevel": "Experienced alpine rock leader comfortable leading sustained trad multi-pitch 5.7-5.9 (III, sometimes rated up to 5.10a) on somewhat run-out, occasionally loose granite, plus fully self-sufficient multi-day wilderness backpacking experience with no bailout options nearby."
+    },
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the trailhead (el. 3,050 ft). Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer — confirm current conditions with the Methow Valley Ranger District before driving in."
+    }
+   }
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "before": {
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "Paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then one of the longest wilderness approaches in the state on foot. Trail #504 climbs roughly twelve miles to Andrews Pass above 6,680 ft, mostly through an old burn with no shade, then drops into the next drainage before a side trail climbs to Upper Cathedral Lake at about 7,380 ft.\n\nMost parties treat this as a two-to-four day backpack and climb from camp in the basin. A free self-issue wilderness permit is taken at the trailhead along with a parking pass.\n\nThe alternatives are the valley trail from the Thirtymile trailhead, and the high trail from Loomis, which walks least, drives longest, and leaves 1,300 ft of climbing for the way out.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "Five routes share this one small tower and none of the starts is marked",
+       "Beta headed South Face may describe the mountain's thousand-foot wall rather than the tower",
+       "Rappel anchors in the north-east descent gully are not documented as fixed; carry webbing and rings",
+       "Loose rock in the gully separating the tower from the mountain",
+       "Remote basin; any injury is a multi-day walk out with no cell coverage"
+      ],
+      "baseFinding": "THE TOWER IS THE POINT. This route is not on the mountain's big wall; it is on the small semi-detached tower leaning against the wall's lower right side, separated from it by a deep gully. From camp, cross meadows and talus toward that gully, then work onto the tower's own south-facing rock on the RIGHT-hand side of the gully. If you are climbing the left wall of the gully, you are on the mountain and you are on the buttress route, which is a much bigger day.\n\nOn the tower, this line starts at the LOWEST POINT of the south face and climbs straight up the middle of it. Walk the base until the ground stops dropping and starts rising again — that low point is the start. Nothing is fixed and nothing is marked.\n\nCONFIRMATION IS A ROOF, AND ITS SIDE. At mid-face there is a prominent roof. This route passes it on the LEFT. That single decision is the defining move of the climb and it is what tells you the line was right; if the roof is nowhere above you, you are not on this line at all.\n\nNEGATIVE MARKERS, and there are three because there are four other routes on this tower. If you started in a chimney or gully feature LEFT of centre and topped out in three pitches on a splitter jam crack, you are on the neighbouring crack line, a grade harder and two pitches shorter. If you started from a LARGE LEDGE low on the RIGHT side of the lowest rock and then zigzagged rightward, you are on the right-hand line. If you started at a pair of parallel cracks on the LOWER LEFT and were finished after two pitches, you are on the short pair of cracks, not on this.\n\nDescent is the tower's north-east gully in three rappels of about seventy-five feet each; a single sixty-metre rope doubled covers each one."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "Long approach via Andrews Creek/Andrews Pass/Boundary Trail to Upper Cathedral Lake, then ~40 min to the base of The Monk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The drive is straightforward: from Winthrop, follow the Chewuch River valley north on West Chewuch Road / FR-51, paved the entire way, about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft. Andrews Creek Trail #504 leaves from the parking area, and a free self-issue wilderness permit is filled out here — you also need a trailhead parking pass displayed on the car. Day one of the standard plan is a 17 to 20 mile hike to Upper Cathedral Lake, so drive in early and expect to be walking for most of the day. This is a two to four day backpack, so pack the car for a trip, not an outing."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "note": "The Monk is a semi-detached ~1000' tower leaning against Cathedral Peak's flank, in the gully between the two formations.",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "before": {
+    "watch_out": "5.8 route in The Monk complex\nWeather exposure on extended climbing\nRoute-finding through multi-pitch terrain\nLoose rock hazard in mixed sections\nDescent rappel sequences",
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "Winthrop to the Andrews Creek trailhead at about 3,050 ft is paved most of the way up the Chewuch River valley. On foot it is roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft, largely across an old burn with no shade and brushy tread, then down into the next drainage and up a side trail to Upper Cathedral Lake at about 7,380 ft.\n\nPlan on a two-to-four day trip with the climbing done from camp. Free self-issue wilderness permit at the trailhead, parking pass as well, no cell coverage anywhere.\n\nThe other ways in are the gentle valley trail from the Thirtymile trailhead and the high trail from Loomis, which is the shortest walk but adds about two hours of driving and returns 1,300 ft of climbing on the way out.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "Five routes on one small tower with unmarked starts within a few minutes of each other",
+       "A chimney start means poor protection options if you are on the wrong line",
+       "Rappel anchors in the descent gully are not documented as fixed; carry webbing and rings",
+       "Loose rock in the gully between tower and mountain",
+       "Multi-day walk out from a remote basin with no cell coverage"
+      ],
+      "baseFinding": "This is a route on the small semi-detached TOWER, not on the mountain's big wall. From camp cross toward the deep gully separating the two, and get onto the tower's own south-facing rock on the RIGHT side of that gully. Climbing the LEFT wall of the gully puts you on the mountain and on the buttress route.\n\nOn the tower's south face, this line is LEFT OF CENTRE. The physical test at the bottom is not a position but a SHAPE: the first two pitches go up a chimney and gully feature, so you should be climbing INSIDE something with walls on both sides almost immediately. If your first pitch is open face or a corner rather than a chimney, you are not on this line.\n\nThe second confirmation comes at the top and is the reason people climb it: the route finishes on a SPLITTER JAM CRACK of noticeably better rock than anything below it. Three pitches, then that crack, then the top of the tower.\n\nNEGATIVE MARKERS. If you started at the LOWEST POINT of the face and went straight up the middle, passing a prominent roof on its left, you are on the central five-pitch line. If you started from a LARGE LEDGE on the RIGHT of the lowest rock and are zigzagging rightward, you are on the right-hand five-pitch line. If you started at a PAIR of parallel cracks on the lower left and were done in two pitches, you are on the short cracks. All three are on this same face and all three start within a few minutes' walk of each other.\n\nBe honest about the count as well: this route is THREE pitches. If you are still climbing on the fifth, you have linked into something else.\n\nDescent is the tower's north-east gully in three rappels of about seventy-five feet; a doubled sixty-metre rope covers each."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "before": {
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "Paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then twelve miles of trail #504 to Andrews Pass above 6,680 ft, mostly through an old burn: hot, rocky, buggy and shadeless. Down into the next drainage, then a side trail up to Upper Cathedral Lake at about 7,380 ft.\n\nThis is a two-to-four day backpack for almost everyone, climbing from camp in the basin. Free self-issue wilderness permit and a parking pass at the trailhead.\n\nAlternatives are the valley trail from the Thirtymile trailhead, gentler and longer, and the high trail from Loomis, shortest on foot but two hours more driving and 1,300 ft of climbing on the way out.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "Five unmarked route starts within a few minutes' walk on one small tower",
+       "Zigzagging line makes rope drag a real hazard; long slings are essential",
+       "Its descent is the tower's rappel gully, not the mountain's walk-off; do not follow summit beta",
+       "Descent anchors are not documented as fixed; carry webbing and rings",
+       "Remote basin, multi-day walk out, no cell coverage"
+      ],
+      "baseFinding": "The objective is the small semi-detached TOWER at the lower right of the mountain's south wall, not the wall itself. Walk from camp toward the deep gully between the two and get onto the tower's own rock on the RIGHT side of that gully.\n\nThis line is the RIGHT-HAND one on the tower's south face, and it has the only start on this face you can actually stand on and name: a LARGE LEDGE low down, near the right side of the lowest part of the rock. Walk the base rightward until you can step up onto a ledge big enough to organise a rack on. That is the start. If you are standing on broken talus at the very bottom of the face with no ledge under you, keep walking right.\n\nThe route then confirms itself by BEHAVIOUR rather than by a landmark: it ZIGZAGS. Five pitches that keep cutting back and forth across the right side of the face, which is why long slings are not optional here — rope drag is the thing people complain about, and drag is itself evidence you are on the correct line.\n\nNEGATIVE MARKERS. If you started at the LOWEST POINT of the face and went straight up the middle past a prominent roof, you are on the central line. If your first two pitches were a chimney or gully left of centre, you are on the three-pitch crack line further left. If you started at a PAIR of parallel cracks on the lower left and were off after two pitches, you are on the short cracks.\n\nAlso worth knowing: this route's descent is NOT the mountain's summit walk-off. It comes off the tower by the north-east gully in three rappels of about seventy-five feet, each covered by a doubled sixty-metre rope. If somebody has told you to walk west off the summit, they were describing the mountain, not the tower."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "before": {
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "The drive is paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft. The walk in is roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft, mostly through an old burn, then down into the next drainage and up a side trail to Upper Cathedral Lake at about 7,380 ft.\n\nA two-to-four day backpack, with the climbing done from camp. Free self-issue wilderness permit and a parking pass at the trailhead; no cell coverage.\n\nIt is worth saying plainly that this is a two-pitch route at the end of a two-day walk. Almost nobody comes here for it alone — it is a companion to the longer lines on the tower and the wall, or a way to finish a day.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "The route name says west and the rock faces south; parties look for the wrong wall",
+       "Its twin runs parallel a few feet away and reads almost identically in print",
+       "The upper chimney crux needs large gear that a short route tempts you to leave behind",
+       "Rappel anchors are not documented as fixed anywhere on this tower; carry webbing and rings",
+       "A two-pitch route at the end of a multi-day approach; the walk out is the real commitment"
+      ],
+      "baseFinding": "START WITH THE NAME, BECAUSE THE NAME IS MISLEADING. These are called the West Cracks and they are on the LOWER LEFT OF THE TOWER'S SOUTH FACE. Do not go looking for a west-facing wall; you will not find these there.\n\nThe objective is the small semi-detached TOWER at the lower right of the mountain's big south wall, reached from camp by crossing toward the deep gully that separates the two and getting onto the tower's own rock on the RIGHT side of that gully.\n\nWalk the base of the tower's south face LEFTWARD, past the lowest point of the rock, until you find A PAIR OF PARALLEL CRACKS running up the lower left of the face. Two cracks, side by side, close enough that you will see them as a pair rather than as two separate features. That pair is the whole landmark. If you can only see one crack, you have not found them yet.\n\nTHIS ROUTE IS THE LEFT-HAND CRACK OF THE PAIR, and there is a physical test that settles it above the ground: the crux of this line is an UPPER CHIMNEY near the top of the second pitch, and it wants a large cam or big passive gear. The right-hand crack of the pair has no chimney crux; its hard climbing is face and crack higher up, and it goes a full grade easier.\n\nSO: if you are wedged in a chimney on pitch two and wishing you had brought the big cam, you are on the correct line. If pitch two is open crack climbing and feels easy for the grade, you are one crack to the right.\n\nNEGATIVE MARKER on length. This is a TWO-PITCH route. If you are still going on the third, you have linked into the upper formation, and the descent changes with it: most parties simply rappel this route on gear from the top of pitch two, whereas topping out on the tower commits you to the north-east gully in three rappels of about seventy-five feet each."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The driving is the easy part of this trip. From Winthrop, head north up the Chewuch River valley on West Chewuch Road / FR-51 — paved the whole way — about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft, where Andrews Creek Trail #504 starts. Fill out the free self-issue wilderness permit at the trailhead and leave a trailhead parking pass on the car. Everything difficult is on the far side of the parking lot: the walk in runs around 18 miles one way, so load the car for a multi-day trip rather than a day out."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "note": "Left of the two West Cracks lines on The Monk's west side.",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "emergency": {
+     "notes": "Deep wilderness setting; no cell coverage should be assumed. The descent is unknown — confirm beta before committing.",
+     "county": "Okanogan County, WA",
+     "rangerStation": "Methow Valley Ranger District, 24 W Chewuch Rd, Winthrop WA — (509) 996-4000",
+     "nearestHospital": "Mid-Valley Hospital, Omak WA (~29 mi from Winthrop); Three Rivers Hospital, Brewster WA also nearby",
+     "sheriffDispatch": "911 emergency; Okanogan County Sheriff non-emergency dispatch (509) 422-7232 / (800) 572-6604"
+    }
+   }
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "before": {
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 miles of gravel to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "approach_variants": [
+     {
+      "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+      "notes": "Paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft. The lower half is an old burn with no shade and overgrown tread. Down into the next drainage, then a side trail up to Upper Cathedral Lake at about 7,380 ft.\n\nTwo to four days for most parties, climbing from camp in the basin. Free self-issue wilderness permit and a parking pass at the trailhead; no cell coverage anywhere on the trip.\n\nAs with its twin, this is two pitches at the end of a long walk. It is a companion climb rather than an objective in itself.",
+      "season": "Roughly July through the first snow of October",
+      "hazards": [
+       "The route name says west and the rock faces south",
+       "Its twin runs parallel a few feet away and is a grade harder with a chimney crux",
+       "Committing to the tower's summit changes the descent from a two-rope-length retreat to a gully rappel",
+       "Rappel anchors here are not documented as fixed; carry webbing and rings",
+       "Remote basin, multi-day walk out, no cell coverage"
+      ],
+      "baseFinding": "THE NAME POINTS THE WRONG WAY. These are the West Cracks and they sit on the LOWER LEFT OF THE TOWER'S SOUTH FACE. There is no west-facing wall to look for.\n\nFrom camp, cross toward the deep gully dividing the mountain's south wall from the small semi-detached TOWER at its lower right, and get onto the tower's own rock on the RIGHT side of that gully. Then walk the base of the tower's south face LEFTWARD, past the lowest point of the rock, until you are under A PAIR OF PARALLEL CRACKS. Two cracks side by side, read as one feature. That pair is the landmark; a single crack means you have not reached them.\n\nTHIS ROUTE IS THE RIGHT-HAND CRACK OF THE PAIR. The test that separates it from its twin is what happens on pitch two. This line's hardest climbing comes HIGHER UP and is crack and face — no chimney. The left-hand crack of the pair cruxes in an UPPER CHIMNEY that swallows a large cam.\n\nSO: if pitch two puts you inside a chimney wanting big gear, step back down and move one crack right. If pitch two stays out in the open on cracks and face and the hard moves arrive near the top, you are on this route. It also goes a full number grade easier than its twin, so difficulty itself is evidence — a pitch that feels desperate for the grade is a sign you are on the left-hand line.\n\nNEGATIVE MARKER on length and descent. TWO pitches. Most parties rappel the route on gear from the top of pitch two and walk down the talus and slabs to the drainage. If you continue and top out on the tower itself, you have committed to a different descent — the north-east gully in three rappels of about seventy-five feet each, a doubled sixty-metre rope for every one, with anchors you may have to build."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The drive gives no trouble — paved the whole way from Winthrop, north up the Chewuch River valley on West Chewuch Road / FR-51, about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft. Andrews Creek Trail #504 leaves from here. Take care of the free self-issue wilderness permit at the trailhead and display a trailhead parking pass. The approach beyond the car is roughly 18 miles one way, so this is a multi-day load-out."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "note": "Right of the two West Cracks lines on The Monk's west side.",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "emergency": {
+     "notes": "Deep wilderness setting; no cell coverage should be assumed. The descent is unknown — confirm beta before committing.",
+     "county": "Okanogan County, WA",
+     "rangerStation": "Methow Valley Ranger District, 24 W Chewuch Rd, Winthrop WA — (509) 996-4000",
+     "nearestHospital": "Mid-Valley Hospital, Omak WA (~29 mi from Winthrop); Three Rivers Hospital, Brewster WA also nearby",
+     "sheriffDispatch": "911 emergency; Okanogan County Sheriff non-emergency dispatch (509) 422-7232 / (800) 572-6604"
+    }
+   }
+  }
+ ]
+}

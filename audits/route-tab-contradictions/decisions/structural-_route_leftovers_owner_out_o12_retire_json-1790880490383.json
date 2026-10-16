@@ -1,0 +1,3775 @@
+{
+ "applied": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "op": "merge",
+   "into": "wa_ottohorn_southeast_route"
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "op": "merge",
+   "into": "wa_lexington_tower_east_face"
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "area_id": "wa_ottohorn",
+   "name": "West Ridge",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe & crampons (snow and small glacier slopes from Crescent Creek Basin to the col)",
+    "Glacier travel rope + crevasse-rescue kit (2-3 person rope team)",
+    "Light alpine rock rack for the ridge climbing",
+    "Helmet (loose rock typical of unrepeated Southern Pickets lines)",
+    "60m rope for climbing/rappelling loose sections",
+    "Full overnight glacier-camping kit (multi-day approach)"
+   ],
+   "hazards": [
+    "Loose rock, typical of unrepeated Picket Range lines.",
+    "Documented by a single 2017 first-ascent trip report — no grade, pitch count, or length is recorded, so treat all difficulty and gear information as unknown.",
+    "Deep in the Southern Pickets: a long, committing wilderness approach with route-finding throughout and no realistic prospect of quick outside help.",
+    "Afternoon weather deterioration is a recurring hazard on this peak."
+   ],
+   "verif": null,
+   "overview": "A 2017 first-ascent line up Ottohorn's west ridge, climbed during the same outing that established two nearby new routes ('Beep' and 'Honk') in the Southern Pickets. Its grade, pitch count and length are not recorded.",
+   "beta": "Established alongside two other new Southern Pickets routes in July 2017; beyond the trip-report title and date, no further route beta (grade, protection, or descent) is publicly available.",
+   "turnaround": "Set a hard turnaround before you leave camp and honour it. Two conditions should stop you regardless of the clock: fresh rockfall debris or visibly unstable blocks on the last 30 ft of the summit ridge (back off and take the north-side variation or go home — one party found exactly this and made the right call), and a moat or bergschrund below the col that has opened enough that you are not confident of recrossing it in the afternoon when it is softer. Weather turnaround: if cloud is filling Crescent Creek Basin, go down while you can still see the Barrier — routefinding across it in a whiteout on loose grassy ledges is how people get hurt here. Because the col is only about an hour from camp, there is almost never a good reason to push a marginal call on this peak.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "Class 3-4 (a 5.7 variation exists on the north side of the summit blocks)",
+   "ice_grade": null,
+   "gain_ft": 7240,
+   "loss_ft": 7240,
+   "dist_km": 16.1,
+   "max_angle": null,
+   "rappels": "None on the east ridge, which is normally downclimbed to the col. The south-side gully below the col needs none in early season while snow fills it; later in the summer, as the snow melts back, parties rappel the chockstone and moats at its top from fixed anchors before kicking down the remaining snow. Parties who take the 5.7 variation on the north side of the summit blocks generally make one or two single-rope rappels off slung blocks to regain the ridge. If you continue north out of the col instead of returning to Crescent Creek Basin (i.e. toward the Mustard Glacier and Picket Pass), budget three or more rappels off improvised anchors — a 2011 party built theirs from a driven piton, a slung block and a nut in a constriction, then rappelled the broken couloir and glacier spilling off the north side.",
+   "commitment": null,
+   "face": "Crescent Creek Spires — south side, from Crescent Creek Basin via the Ottohorn-Himmelhorn (Otto-Himmel) col",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (the Terror Basin and Crescent Creek cross-country zones are walk-up only, issued in person at the Marblemount Wilderness Information Center).",
+   "comms": "Assume no cell coverage. The Goodell Creek trailhead sits in a deep valley beside SR 20 near Newhalem with marginal service at best, and there is none on the climbers' path, in Terror Basin or in Crescent Creek Basin. Line-of-sight from high points on the crest occasionally produces a bar or two toward the Skagit valley, but it is not something to plan around. Carry a satellite messenger or PLB — NPS climbing guidance for North Cascades is explicit that parties here must be self-reliant, and a rescue in the Southern Pickets is a multi-day helicopter operation dependent on weather windows. Leave a detailed itinerary with someone at home and file your route with the Wilderness Information Center in Marblemount when you pick up the permit.",
+   "descent": "Downclimb the east ridge back to the Ottohorn-Himmelhorn col, then descend the snow south into Crescent Creek Basin and reverse the approach over the Barrier.",
+   "obj_haz": [
+    "rockfall",
+    "loose rock",
+    "bergschrund",
+    "moat",
+    "glacier travel",
+    "cornice",
+    "avalanche",
+    "exposure",
+    "routefinding",
+    "extreme remoteness",
+    "afternoon whiteout"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.68664,
+     "lng": -121.27121,
+     "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+     "type": "Trailhead"
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 1,
+    "recommendedStart": "From a Crescent Creek Basin camp, leave at first light (roughly 05:00-06:00) so the snow up to the Otto-Himmel col is still firm and the moat crossing is at its most solid, and so you are back at camp with the whole afternoon in hand. A pre-dawn alpine start is not necessary for the climb itself — the col is only about an hour above camp — but it matters if you intend to link Himmelhorn or Mount Terror the same day, or to recross the Barrier and keep descending."
+   },
+   "detailed_rack": "Glacier travel gear for the snow and small glacier slopes from Crescent Creek Basin to the col, plus a light alpine rock rack (assorted nuts + small-to-mid cams ~0.3-2in) and slings for rock steps on the ridge; a 60m rope covers rappelling loose terrain near the Otto-Himmel col.",
+   "what_to_bring": [
+    "North Cascades backcountry permit, picked up in person at Marblemount, since the zones here are walk-up only",
+    "Satellite messenger or PLB — there is no cell coverage on any part of this route",
+    "Bear canister or a proper hang bag (NPS food-storage rules apply)",
+    "Blue bags for human waste on snow and bare rock — never bury it in snow",
+    "3-4 L water capacity; the climbers' path has essentially no water for 5,000 ft",
+    "GPX or waypoint for the stone arrow at ~1,700 ft where the Terror Creek path leaves the roadbed",
+    "Approach shoes for the roadbed plus boots that take crampons",
+    "Full storm shell and insulation — maritime squalls hit the Pickets even in August",
+    "Sun protection and glacier glasses for the snow basins",
+    "Trekking poles for the 5,000 ft climbers' path and the brutal descent of it",
+    "Map of the Barrier crossing; it is the single easiest place on the trip to get cliffed out"
+   ],
+   "pro_tips": [
+    "Camp in Crescent Creek Basin, not Terror Basin. One party reached the Ottohorn-Himmelhorn col in about an hour from a Crescent Creek Basin camp — that turns Ottohorn into a short morning instead of a full day with a Barrier crossing at each end.",
+    "The turnoff from the Goodell Creek roadbed to the Terror Creek climbers' path is marked only by a stone arrow on the ground at about 1,700 ft, roughly 3.5-4 miles in. Waypoint it before you leave home; people walk past it every season.",
+    "Go while there is still snow in the basins. The Otto-Himmel col is straightforward when snow-filled and turns into loose, tricky low-fifth-class rock once it melts out.",
+    "Nobody comes all this way for Ottohorn alone. Plan it as one of several summits from a single Crescent Creek Basin camp — Himmelhorn's Wild Hair Crack, Mount Terror and Twin Needles all share the same base.",
+    "Treat the last 30 ft as a rockfall zone rather than a scramble. A 2011 party found the standard finish had collapsed into fresh unstable blocks and went around the corner onto two juggy 5.7 pitches instead — the harder line was the safer one that day.",
+    "Carry a couple of pitons and be prepared to leave gear. Anchors in this cirque are slung blocks, nuts and driven pins, not fixed stations.",
+    "Scout the moat below the col on the way up and remember exactly where you crossed it; it will be softer and wider on the way down.",
+    "Pick up the permit and current conditions in person at the Marblemount Wilderness Information Center (360-854-7200) — the rangers there track snow levels on the Terror Creek path and the state of the Barrier.",
+    "Build a spare day into the trip. Parties on the Southern Picket traverse routinely burn one to squalls, and both the Barrier and the climbers' path are markedly more dangerous wet."
+   ],
+   "watch_out": [
+    "The final ~30 ft to the summit ridge has produced active rockfall; blocks that look welded in place are not.",
+    "The south side of the Otto-Himmel col is the friendly side. The north side can demand loose 5th class or rappels once the snow goes, and it commits you to the Mustard Glacier.",
+    "Moats and bergschrunds where the snow meets rock below the col open into overhanging pits by late season — one party had to jump one and axe their way out the far side.",
+    "The Barrier crossing at about 6,100 ft is 'serious Class 3' on steep, loose, grassy ledges. It is the real crux of the trip and it is not a place to slip.",
+    "This is arguably the most isolated terrain in the contiguous United States. A broken ankle in Crescent Creek Basin is a multi-day, weather-dependent helicopter problem.",
+    "The Terror Creek climbers' path gains roughly 5,000 ft with almost no water between the creek and treeline — carry it.",
+    "Skagit Gneiss in the Pickets swings between excellent and appalling within a single pitch; test everything, and keep the party out of each other's fall line."
+   ],
+   "pro_needs": "Protection needs are minimal but the rock quality is the variable. On the standard Class 3-4 east ridge most parties place nothing at all, or slings over blocks and horns for a moving belay through the final step. If the direct summit finish looks loose, the north-side 5.7 variation takes conventional small-to-medium gear in solid, juggy rock and is the safer choice despite the higher grade. The larger protection problem is the snow below the col — a bergschrund and moat that grows through the season — so bring the glacier kit even though the rock rack is trivial.",
+   "best_season": "Mid-July through mid-September is the working window, and earlier in it is generally better. The whole trip is easier with snow: the traverse of Terror Basin, the Barrier crossing and the slopes up to the Otto-Himmel col are all straightforward when snow-filled, and the col specifically is described as easy when snowy and as loose, tricky low-fifth-class rock once melted out. Against that, a big snow year can leave the Terror Basin approach and the climbers' path buried and the basins short of running water in early July. Late July and August are the usual compromise — settled maritime high pressure, the climbers' path melted out, and enough snow left in the basins for travel. By September the col and the moats below it are at their worst, though the summit ridge is at its driest. Outside that window this is a full winter expedition into the most isolated terrain in the lower 48, with an avalanche-prone maritime snowpack.",
+   "high_point_ft": 7840,
+   "aid_grade": null,
+   "approach": "There is no trail to this peak; the approach is the trip. From SR 20 just west of Newhalem, turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, past a gravel quarry, then right and uphill on a narrow but well-graded gravel road to the signed Goodell Creek climbers' trailhead (48.6866, -121.2712, about 600 ft). Follow the old roadbed up Goodell Creek for roughly 3.5-4 miles. At about 1,700 ft a stone arrow on the ground marks the unsigned turnoff for the Terror Creek climbers' path — it is easy to walk straight past it, so waypoint it in advance. From the arrow the boot-beaten path climbs relentlessly and steeply up the hillside, gaining about 5,000 ft with essentially no reliable water, to timberline at 5,000-5,200 ft. Above treeline make a rising traverse over meadows, slabs and snowfields toward a 6,200 ft saddle; the standard Terror Basin camp sits about 400 ft below the saddle at roughly 5,800 ft. One party took about 6.5 hours from the trailhead to Terror Basin. For Ottohorn you must keep going west: traverse Terror Basin holding roughly the 6,000 ft contour, then cross the Barrier — the ridge dividing Terror Basin from Crescent Creek Basin — at about 6,100 ft. The Barrier crossing is the non-technical crux of the whole trip: steep, loose, grassy 'serious Class 3' ledges where a slip is not survivable. Drop into Crescent Creek Basin and camp at about 6,200 ft (a good alternative camp sits at 6,400 ft on the Chopping Block ridge overlooking the basin). From that camp, snow and small glacier slopes lead northwest in about an hour to the Ottohorn-Himmelhorn col at roughly 7,400 ft, where the route proper begins. Note on the numbers: the listed 7,240 ft is the net trailhead-to-summit gain from recorded elevations; the Barrier crossing and the Terror Basin traverse add several hundred feet of extra up-and-down each way, and the near-identical Goodell Creek / Terror Basin / Barrier approach to Mount Terror is recorded at 20 miles and 10,000 ft round trip.",
+   "descent_text": "Reverse the east ridge — 200-250 ft of blocky Class 3 with a short Class 4 step, downclimbed by most parties. If you climbed the 5.7 variation on the north side of the summit blocks, one or two single-rope rappels off slung blocks put you back on the ridge crest; back the anchor up, because the rock here has proven itself capable of moving. From the Otto-Himmel col descend the snow and glacier slopes south back into Crescent Creek Basin. The critical detail here is the moat and bergschrund where the snow meets the rock: it is a non-event when snow-filled in early season and can become an overhanging pit by August. One party descending the equivalent feature on the north side had to jump a large overhanging moat and then climb out the far side with an ice axe. Scout the crossing on the way up and remember where it was; late in the season parties rappel this upper section from fixed anchors. Do NOT descend north out of the col unless you are deliberately continuing toward the Mustard Glacier and Picket Pass — that side takes multiple rappels off improvised anchors down a broken couloir and glacier. From Crescent Creek Basin, recross the Barrier at about 6,100 ft (the steep grassy ledges are considerably worse downhill-facing and tired), traverse Terror Basin at roughly the 6,000 ft contour, then drop the 5,000 ft climbers' path to the stone arrow at 1,700 ft and follow the old roadbed out to Goodell Creek. Give the descent of the climbers' path real respect — it is steep, loose, brushy and hard on knees, and the exit is where most parties are moving slowest.",
+   "bail": "There is no quick exit from Crescent Creek Basin — every retreat goes back over the Barrier into Terror Basin and down the Goodell Creek climbers' path, so plan on a full day out from high camp regardless of what has gone wrong. On the route itself, bailing is easy and cheap: the east ridge can be downclimbed anywhere back to the Otto-Himmel col, and the col is only about an hour of snow above camp. If the summit blocks look freshly loose, retreating from the col and going to Himmelhorn or Terror instead costs nothing. Do not use the north side of the col as an escape — it drops onto the Mustard Glacier and commits you to multiple rappels off improvised gear and, ultimately, to an exit via Picket Pass and the Big Beaver or Access Creek valleys, which is a far bigger undertaking than walking back over the Barrier.",
+   "pitch_detail": [
+    {
+     "grade": "Snow / small glacier, moderate",
+     "notes": "From camp at roughly 6,200 ft, climb snow and small glacier slopes northwest toward the notch between Ottohorn and Himmelhorn. About an hour from a Crescent Creek Basin camp. Rope up for glacier travel; crampons and axe. Early season this is a straightforward snow plod, late season it becomes bare ice and rubble.",
+     "pitch": "Section 1 — Crescent Creek Basin to below the col",
+     "lengthM": 305
+    },
+    {
+     "grade": "Steep snow, or loose low 5th class late season",
+     "notes": "The transition from snow to rock at roughly 7,400 ft. Trivial when snow-filled; by August the moat can be overhanging and the exit onto the col can require loose fifth-class moves. The south (Crescent Creek) side is markedly friendlier than the north. Scout the crossing here for the descent.",
+     "pitch": "Section 2 — bergschrund / moat and exit onto the Otto-Himmel col",
+     "lengthM": 60
+    },
+    {
+     "grade": "Class 3",
+     "notes": "From the col, blocky scrambling west up the ridge crest on Skagit Gneiss. Most parties move unroped. Good holds interspersed with detached blocks — keep the party out of each other's fall line.",
+     "pitch": "Section 3 — lower east ridge",
+     "lengthM": 75
+    },
+    {
+     "grade": "Class 3-4 (or 5.7 variation on the north side)",
+     "notes": "The final step to the summit at 7,840 ft. Graded Class III by the 1961 first-ascent party and Class 4 by the 2003 enchainment party. In 2011 the direct finish was found to be an active fresh-rockfall zone about 30 ft below the ridge; that party avoided it by moving around the corner onto two juggy 5.7 pitches. Judge it on the day and rope up if there is any doubt.",
+     "pitch": "Section 4 — summit blocks",
+     "lengthM": 60
+    }
+   ],
+   "itinerary": "Day 1 — Goodell Creek trailhead (600 ft) to Terror Basin camp (5,800 ft), about 6.5 hours; 3.5-4 miles of old roadbed then 5,000 ft of climbers' path. Day 2 — traverse Terror Basin at the 6,000 ft contour, cross the Barrier at about 6,100 ft, and camp in Crescent Creek Basin (6,200 ft) or on the Chopping Block ridge at 6,400 ft; a short day that leaves the afternoon for scouting the line to the col. Day 3 — summit day: about an hour of snow and glacier from camp to the Ottohorn-Himmelhorn col (7,400 ft), then the east ridge to the summit (7,840 ft) and back to camp; almost everyone links a second objective from the same camp (Himmelhorn's Wild Hair Crack, Mount Terror, or Twin Needles) rather than making a dedicated trip for Ottohorn. Day 4 — recross the Barrier and descend to the trailhead. Build a weather day into the plan: parties on the full traverse routinely lose a day to squalls, and the Barrier and the climbers' path are both much worse wet.",
+   "access": {
+    "fees": "Summer backcountry permits cost $10 per person plus a $6 non-refundable reservation fee; youth 15 and under are free. Fees apply mid-May through early October; permits are free from early October to mid-May. There is no park entrance fee and no parking fee on North Cascades National Park land.",
+    "permit": "A backcountry/wilderness permit is required for every overnight stay, including bivouacs — which means every realistic ascent of this peak. The Terror Basin and Crescent Creek cross-country zones cannot be booked ahead: their permits are walk-up only, issued in person the day of or the day before your trip. The Wilderness Information Center at 7280 Ranger Station Road, Marblemount WA 98267 (360-854-7200) issues permits, lends bear canisters and gives current conditions.",
+    "closures": "No standing closure on this approach. Practical constraints instead: no campfires anywhere in the backcountry zones (stoves only), food must be stored in a bear canister or hung, human waste must be packed out in blue bags on snow and bare rock and never buried in snow or crevasses, and all flagging and webbing left behind counts as trash. Cutting vegetation is illegal and citable. Check with the Wilderness Information Center for temporary closures before each trip.",
+    "landManager": "North Cascades National Park (National Park Service) — the Southern Picket Range cross-country zone. Trailhead and approach are within the North Cascades National Park Complex.",
+    "passRequired": "No Northwest Forest Pass or America the Beautiful pass is needed to park at the Goodell Creek climbers' trailhead — it is on park land, where NPS charges no entry or parking fee. (Note that many other North Cascades-area trailheads on adjacent Forest Service land do require a Northwest Forest Pass.)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+     "where": "This zone is walk-up only: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before your trip."
+    }
+   },
+   "road": {
+    "name": "Goodell Creek Campground access road off SR 20 (North Cascades Highway) at Newhalem",
+    "status": "Open — paved SR 20 to Newhalem, then a short gravel spur past a gravel quarry to a developed climbers' trailhead with parking and a sign noting this is a climbers' trail, not a hikers' trail. Passable to any passenger car.",
+    "driveNote": "From Marblemount follow SR 20 east about 14 miles to Newhalem. Turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, continue past a gravel quarry where the pavement ends, then take the right fork uphill on a narrow but well-graded gravel road; the trailhead is on the right within about a mile. Trailhead at 48.6866, -121.2712, roughly 600 ft.",
+    "seasonalGate": "None affecting this approach. SR 20's winter closure gates sit east of Newhalem — the initial closure is between the Ross Dam trailhead (MP 134) and the Silver Star gate (MP 171), moving down to the Newhalem gate (MP 120) and Early Winters (MP 178) in deep winter. Access to Goodell Creek from Marblemount and the west is open year-round."
+   },
+   "climate": {
+    "fall": "Early September can be superb: dry rock on the summit ridge, stable air, fewer bugs. The trade-off is that the Otto-Himmel col and the moats below it are at their most melted-out and awkward, and the first Pacific fronts of the autumn arrive without much warning. After late September, storms and short days make the approach and the Barrier crossing dangerous.",
+    "spring": "Deep, consolidating maritime snowpack. Wet, heavy snow and high avalanche danger on the basins and the couloirs off the crest; cornices along the Southern Picket ridgeline. The Terror Creek climbers' path is usually snow-covered and the approach becomes a serious snow-travel undertaking rather than a hike.",
+    "summer": "The season. Late July through August brings the most settled high pressure, the climbers' path melts out, and the basins still hold enough snow to make the Terror Basin traverse, the Barrier and the slopes to the col straightforward. Squalls still come through — parties on multi-day traverses routinely lose a day to rain and wind even in August.",
+    "winter": "Full expedition conditions. Heavy maritime snowfall, high and persistent avalanche danger, and a 5,000 ft approach path buried under snow with no reliable route through the Barrier. Essentially unvisited in winter.",
+    "typical": "Marine west coast climate. Most weather originates over the Pacific and is driven northeast into the Cascades, where orographic lift wrings out heavy precipitation on the western slopes — the Pickets sit right in the firing line. Temperatures are moderated by the maritime influence and rarely drop below 0F or exceed 80F. Expect the range to make its own weather: clear valleys below and cloud sitting on the crest is a normal Picket day.",
+    "forecastZone": "NWAC 'West Slopes North' avalanche forecast zone."
+   },
+   "emergency": {
+    "notes": "Plan as if no outside help is coming quickly. The Picket Range is among the most isolated terrain in the contiguous United States, there is no cell coverage anywhere on the route, and a rescue from Crescent Creek Basin depends on a helicopter and a weather window — realistically a multi-day proposition. Carry a satellite messenger or PLB, leave a detailed itinerary with a contact at home, and register your route with the Wilderness Information Center when collecting the permit. Self-rescue capability (crevasse and moat extraction, improvised rappel anchors, the ability to get an injured partner back over the Barrier) is the practical minimum standard for this trip.",
+    "county": "Whatcom County, Washington (the Goodell Creek trailhead and the SR 20 drive are in Whatcom County; the nearest hospital is over the line in Skagit County)",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Road, Marblemount WA 98267 — 360-854-7200. Permits, current conditions, bear canister loans and trip-planning advice.",
+    "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Drive, Sedro-Woolley WA 98284 — 24/7 Level IV emergency department, ED phone 360-856-6021. It is the critical-access hospital serving Marblemount and the upper Skagit; anything major will be transferred onward.",
+    "sheriffDispatch": "911 for emergencies. Whatcom County Sheriff's Office non-emergency dispatch: 360-676-6911. The WCSO runs search and rescue for the Southern Pickets."
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through August, with the Terror Basin path melted out but enough basin snow left to ease the col",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still bury the approach, but by late month the path is clear and snow still fills the Otto-Himmel col.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "The Terror Creek path and basins are buried, avalanche slopes loom over the Barrier traverse, and meltwater is scarce.",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Settled high pressure, a melted-out climbers' path and enough snow in the basins for fast travel to the col.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms and short days on a committing route in the most remote part of the Pickets; walk-up permits end with the season.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "The summit ridge is driest, but the col melts to loose low-fifth-class rock and the moats below it are at their worst.",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "trailheadLat": 48.68664,
+    "trailheadLng": -121.27121
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": 60,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": null,
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "3",
+     "label": "Scramble from the Himmelhorn-Ottohorn col",
+     "notes": "From the col the summit is reported as easy scrambling — most accounts call the peak class 3, with a short class 4 step, and describe it as one of the few Southern Picket summits that is not fifth class. Parties have climbed it from the col in roughly an hour round trip, some without taking rope or rack out of camp. Picket rock is broken and the col itself is loose, so helmets and careful block-testing matter more than the grade suggests; the col is also the retreat point, and getting back down into Crescent Creek Basin late in the season can be harder than the scramble above."
+    },
+    {
+     "n": 2,
+     "class": "5.7",
+     "label": "Rockfall scar below the summit ridge",
+     "notes": "At least one party found the easy line broke into a fresh rockfall zone about 30 ft below the summit ridge and backed off rather than cross it, returning with a rope and climbing a roped alternative of about two pitches of juggy 5.7 to the top. Treat this as conditions-dependent rather than fixed: the scar is recent enough that the terrain here may have changed again, and a scramble party arriving without gear may find no acceptable line through the unstable blocks. Carry enough to retreat or to protect a short 5th-class variation, and do not commit to the last 100 ft until you can see it."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6050,
+     "name": "Crescent Creek Basin camp",
+     "role": "main",
+     "type": "camp",
+     "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between them; Frenzel Spitz sits off the main chain near the Ottohorn's north side. Parties camp at several benches at different heights.",
+     "water": "Snowmelt streams and pools fed by the basin's snowfields, reliable early and mid season and unreliable late once the snow has pulled back. Plan on melting snow in a lean year.",
+     "permit": "This is the separate Crescent Creek cross-country zone, not Terror Basin — a trip camping in both needs both zones written onto the same permit, night by night. Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance.",
+     "capacity": "A few parties on gravel, slab and snow; the zone is capped at 6 people per party"
+    },
+    {
+     "elev": 500,
+     "name": "Goodell Creek Campground, roadhead staging",
+     "role": "route",
+     "type": "camp",
+     "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+     "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+     "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+     "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+    },
+    {
+     "elev": 2000,
+     "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+     "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+     "permit": "A wilderness permit is required, and this spot is legally awkward: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+     "capacity": "One or two small parties on flat ground beside the old grade"
+    },
+    {
+     "elev": 5800,
+     "name": "Terror Basin camp",
+     "role": "route",
+     "type": "camp",
+     "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+     "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+     "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is not on the short list of zones reservable in advance, so it is walk-up only — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+     "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+    },
+    {
+     "elev": 6000,
+     "name": "Stump Hollow bench",
+     "role": "route",
+     "type": "camp",
+     "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeast of the Chopping Block near 6,400 ft and drops into Crescent Creek Basin from there. Camp on rock, gravel or snow rather than the heather — this is thin alpine ground that shows every night somebody spends on it.",
+     "water": "Snowmelt only. Trickles and small pools are dependable through early summer while snow lingers, and can dry up or retreat entirely by late season; late-summer parties should expect to search or carry.",
+     "permit": "Cross-country zone permit from the Wilderness Information Center. This bench sits close to the divide between the Terror Basin and Crescent Creek zones, so ask which zone the rangers are writing you into rather than assuming — the answer decides what the rest of your itinerary can say.",
+     "capacity": "Small — a couple of parties on heather benches and slabs, and it is easy to end up spread out"
+    },
+    {
+     "name": "High bivouacs at the western end of the crest",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gravel bench to a night sitting on a ledge. There is no shelter and no water, so this only makes sense with a settled forecast and a party willing to move fast the next morning.",
+     "water": "No dependable source. These are snow-and-rock bivouacs: carry water up or melt snow, and expect nothing at all once the summer snow has gone.",
+     "permit": "Still inside a cross-country zone and still requires a wilderness permit with the night assigned to the correct zone. Camp only on snow, rock or bare ground, keep 100 ft from water, no fires, and carry waste out in a blue bag above treeline.",
+     "capacity": "One party, and often only a ledge or a gravel patch for two people"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "west ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "area_id": "wa_ottohorn",
+   "name": "Southeast Route",
+   "discipline": "alpine",
+   "grade": "Grade III-IV, 5.7",
+   "grade_system": "yds",
+   "grade_num": 7,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Ed Cooper, Glen Denny, Joan Firey, Joe Firey, and George Whitmore, September 10, 1961 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "SE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Light alpine rock rack (small-to-mid cams and a few nuts) for low-5th to 5.7 pitches",
+    "30-60m rope",
+    "Helmet",
+    "Ice axe for early-season snow"
+   ],
+   "hazards": [
+    "loose rock",
+    "routefinding",
+    "remoteness",
+    "afternoon weather"
+   ],
+   "verif": null,
+   "overview": "The Ottohorn is a slender granite spire in the Southern Pickets, rising directly across the Ottohorn-Himmelhorn col from its larger neighbor Himmelgeisterhorn, deep in North Cascades National Park's Crescent Creek Basin. It was first climbed on September 10, 1961 by Ed Cooper, Glen Denny, Joan Firey, Joe Firey, and George Whitmore via the east ridge from the col (Class III) — the same trip that put up Himmelgeisterhorn and Frenzel Spitz, all three reportedly named after labels the Fireys peeled off a mustard bottle carried on the approach. One of the range's more obscure summits, Ottohorn is rarely climbed alone; most parties tag it as part of a Crescent Creek Basin enchainment with Himmelgeisterhorn and/or Frenzel Spitz.",
+   "beta": "From the Otto-Himmel Col (reached via Stump Hollow trail from Goodell Creek trailhead), ascend the east ridge directly to the summit. Early season (June–July): route is primarily snow with Class II-III scrambling near summit; descent is straightforward on consolidated snow. Mid-season (July–August): snow transitions to exposed rock; negotiable as Class III with careful foot placement. Late season (August–September): loose, tricky 5th class scrambling through chossy rock and talus fields. Final approach to summit features a fresh rockfall zone approximately 30 feet below summit ridge; experienced alpinists rope-protect the 5.7 pitches or navigate unstable terrain carefully. Route is approximately 500–700 vertical feet from col to summit.",
+   "turnaround": "Because the col crossing and east ridge get looser as the day warms, and because the Barrier/Terror Creek exit is easy to lose in poor visibility, most parties set a firm early-afternoon turnaround from Crescent Creek Basin camp to guarantee daylight for the return to camp.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": "5.7",
+   "ice_grade": null,
+   "gain_ft": 8000,
+   "loss_ft": 8000,
+   "dist_km": 27.68,
+   "max_angle": 35,
+   "rappels": "0",
+   "commitment": "III",
+   "face": "Southeast side, reached from the Ottohorn-Himmelhorn col",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (the Terror Basin and Crescent Creek cross-country zones are walk-up only, issued in person at the Marblemount Wilderness Information Center).",
+   "comms": "No reliable cell service in the Southern Pickets backcountry; parties should carry a satellite messenger/communicator for emergencies.",
+   "descent": "Reverse the route: downclimb/scramble back to the Ottohorn-Himmelhorn col and descend its south side into Crescent Creek Basin.",
+   "obj_haz": [
+    "loose rock at and above the col",
+    "bergschrund/moat at the col late season",
+    "rockfall"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.68276,
+     "lng": -121.26928,
+     "name": "Goodell Creek Trailhead",
+     "note": "Unpaved pullout off Goodell Creek Rd, just before Goodell Creek Campground, across SR-20 from Newhalem; standard access for all Southern Pickets objectives via the Terror Creek climbers' trail.",
+     "type": "Trailhead",
+     "directions": "Take the gravel road that forks off Highway 20 across from Newhalem and follow it to where it dead-ends at a gravel pit, at about 600 feet — there is parking here but no trailhead sign. The unpaved pullout sits just before Goodell Creek Campground and is the standard access point for Southern Pickets objectives via the Terror Creek climbers' path. A North Cascades National Park backcountry permit for the Crescent Creek Basin zone is required."
+    },
+    {
+     "lat": 48.721092,
+     "lng": -121.288257,
+     "elev": 1700,
+     "name": "Large cairn off the old roadbed",
+     "note": "Cairn/arrow marks where the climbers' path leaves the Goodell Creek roadbed toward Terror Creek and Crescent Creek Basin.",
+     "type": "Junction",
+     "distMi": 4
+    },
+    {
+     "lat": 48.724699,
+     "lng": -121.289851,
+     "elev": 2600,
+     "name": "Terror Creek ford",
+     "note": "Ford on foot near a cairn on the far bank; typically no more than calf-deep by midsummer but can run high and cold earlier in the season.",
+     "type": "Water",
+     "distMi": 4.3
+    },
+    {
+     "lat": 48.733115,
+     "lng": -121.293572,
+     "elev": 3800,
+     "name": "Forested ridge crest, toe of the Barrier",
+     "note": "Steep climbers' path tops out on the ridge between Terror and Crescent Creeks here; this is the base of 'the Barrier' rock rib you cross next.",
+     "type": "Junction",
+     "distMi": 5
+    },
+    {
+     "lat": 48.751149,
+     "lng": -121.301543,
+     "elev": 6100,
+     "name": "The Barrier crossing",
+     "note": "Loose, dirty Class 3 traverse with exposed moves crossing the Barrier's rock rib into the Terror/Crescent Creek basins; rockfall risk on the loose sections.",
+     "type": "Hazard",
+     "distMi": 6.5
+    },
+    {
+     "lat": 48.763172,
+     "lng": -121.306857,
+     "elev": 6200,
+     "name": "Crescent Creek Basin camp",
+     "note": "Established basin camp used for Ottohorn, Himmelhorn, and the Chopping Block; reached after crossing the Barrier.",
+     "type": "Campsite",
+     "distMi": 7.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7400,
+     "name": "Ottohorn-Himmelhorn col",
+     "note": "About an hour above camp with some dicey scrambling near the top; gain the col here then follow the 1961 line onto Ottohorn's east ridge (Class III). South side of the col is the easier descent, the north side turns to loose low-5th once melted out.",
+     "type": "Junction",
+     "distMi": 8
+    },
+    {
+     "lat": 48.7764,
+     "lng": -121.3125,
+     "elev": 7840,
+     "name": "Ottohorn summit",
+     "type": "Summit",
+     "elevFt": 7840
+    }
+   ],
+   "gpx": [
+    [
+     48.721092,
+     -121.288257
+    ],
+    [
+     48.724699,
+     -121.289851
+    ],
+    [
+     48.733115,
+     -121.293572
+    ],
+    [
+     48.751149,
+     -121.301543
+    ],
+    [
+     48.763172,
+     -121.306857
+    ],
+    [
+     48.769183,
+     -121.309514
+    ],
+    [
+     48.68276,
+     -121.26928
+    ],
+    [
+     48.7764,
+     -121.3125
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 25.5,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 7.5,
+    "approachTimeHrs": 9,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "From the Goodell Creek trailhead, follow the old roadbed and climbers' path up Terror Creek to gain the Barrier ridge crest, then cross the Barrier (loose ledges at the lower end o…",
+      "fromTo": "Approach to Crescent Creek Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Climb steep snow/talus from camp to the Ottohorn-Himmelhorn col, then scramble the class 3-4 east ridge/southeast side to the Ottohorn summit; parties report roughly an hour round …",
+      "fromTo": "Ottohorn via the Ottohorn-Himmelhorn col",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7.5,
+      "note": "Break camp and reverse the approach: recross the Barrier, descend the Terror Creek drainage, and follow the roadbed back to the Goodell Creek trailhead.",
+      "fromTo": "Exit to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Bring a light rack of passive protection (nuts, hexes) and a few cams (size 00–2) for securing belays or protecting the 5.7 pitches used to bypass rockfall zones. Slings and cordage for creating anchors in scree and rock. Screwgate carabiners for safety. Most of the route is Class III solo scramble; the 5.7 option is backup for significant weather delays or if rockfall zone is extremely active.",
+   "what_to_bring": [
+    "Helmet — loose rock is the norm throughout the Southern Pickets",
+    "Light alpine rock rack for low-5th-class to 5.7 terrain",
+    "Sturdy approach footwear for brush, slide alder, and talus on the Barrier",
+    "Ice axe (and possibly light traction) for lingering snow on the Barrier and Otto-Himmel col into July"
+   ],
+   "pro_tips": [
+    "Most parties climb Ottohorn as part of a one-day enchainment with Himmelgeisterhorn and/or Frenzel Spitz from a Crescent Creek Basin camp — plan for a full day out.",
+    "At the stone cairn on the Goodell Creek approach, staying straight (not turning onto the more obvious trail) keeps you headed for Crescent Creek Basin instead of Terror Basin.",
+    "Carry a satellite communicator — there is no cell coverage in Crescent Creek Basin or on the approach.",
+    "A steeper 2-pitch 5.7 variation on the southeast side has also been reported (Hilden-Holsten-Wertkin party) for parties wanting more sustained climbing."
+   ],
+   "watch_out": [
+    "The north side of the Ottohorn-Himmelhorn col turns loose, exposed low-5th-class scrambling by late season as snow melts out — the south side is the friendlier crossing.",
+    "The Barrier crossing between Terror and Crescent Creek basins has turned back parties in poor visibility; don't underestimate route-finding on the brushy ridge crest.",
+    "Rock quality on Southern Pickets summits is notoriously loose — test holds and manage rockfall exposure for partners below."
+   ],
+   "pro_needs": "A light alpine rock rack is sufficient for the scattered low-5th-class to 5.7 moves; belays are typically natural gear anchors rather than fixed stations.",
+   "best_season": "Mid-July through early September is the reliable window. Snow often lingers on the Barrier crossing and in the Ottohorn-Himmelhorn col into July, and by early September shortening days and unsettled weather make this remote objective riskier — most parties target a tight late-July-to-August window.",
+   "high_point_ft": 7840,
+   "aid_grade": null,
+   "approach": "From the Goodell Creek trailhead (~600 ft, reached via the gravel road that forks off Hwy 20 across from Newhalem and dead-ends at a gravel pit — there's parking but no trailhead sign), follow the old abandoned logging roadbed paralleling the true-left/east bank of Goodell Creek. The first ~1.5 miles thread through dozens of downed trees and washouts on the roadbed before a real, if faint, trail emerges in the timber above; tread then levels out around 1,100 ft for roughly a mile. Around mile 3.5 (~1,700 ft) the trail crosses a stream — the last easy, reliable water for a long stretch — near a small campsite and a cairn marking the unsigned climbers' path up 'The Barrier,' the forested spur ridge that separates the Goodell/Terror Creek drainage from Crescent Creek Basin; fill bottles here. From the cairn the path steepens hard: a traverse around 3,200 ft, a talus field near 4,000 ft, a rock band around 4,800 ft, then a steep, brush-choked gully (early-season snow/ice up to ~35°) to a rocky streambed near 5,200 ft. Above that, heather benches and slabs lead to the crest of The Barrier, a ~6,200 ft notch that is the high point of the approach and the site of a common bivy. From the notch, descend ~250 ft into 'Stump Hollow,' the gentle basin between The Barrier and the Chopping Block, then contour on a long, rising traverse across the snow, slabs, and talus of Crescent Creek Basin — holding roughly the 5,800 ft level — to a camp near Mount Terror/Himmelhorn (around 7-9 miles and 6,000-6,500 ft of gain from the trailhead, consistent with this route's ~28 km round-trip distance). From camp, continue the rising traverse of Crescent Creek Basin toward the Ottohorn-Himmelhorn col; crampon up the final snow/scree pitch to the col itself, which turns to loose, chossy class 3-4 scrambling once melted out late-season, with an overhanging boulder near the top sometimes forcing a chossy class 3/4 bypass on the left. A North Cascades National Park backcountry permit for the Crescent Creek Basin zone is required. Both The Barrier crossing and the basin traverse involve real route-finding on an unsigned, easily-lost climbers' path through heather and talus, and creek crossings near the trailhead can run high and fast on hot, high-snowmelt afternoons.",
+   "descent_text": "Descend the Southeast Route by reversing the east ridge back down to the Ottohorn-Himmelhorn col — a few pitches of low-5th-class downclimbing/scrambling to the notch. From the col, the standard return for this route is down the south side, back into Crescent Creek Basin: this is the easier, non-technical line (snow early season, loose class 3-4 talus/scree scrambling once late-season melt strips the snow) and does not require rappelling under normal conditions. If coverage is thin and a section of the loose downclimb feels too exposed, some parties back it off with a single short rappel off a sling on a natural anchor (block/horn) rather than downclimb it, but this is not the norm. Note that the north side of the col is a different, and harder, proposition and is not part of this route's own descent — parties continuing a traverse toward Himmelhorn/Mustard Glacier descend that side via one single-rope rappel from an established rap station about 150 ft below the col onto the Mustard Glacier (or, when well filled-in, a steep snow couloir); don't confuse that crossing with the Southeast Route's own walk-off. From Crescent Creek Basin, reverse the approach: traverse back to the base of The Barrier, regain the ~250 ft to the 6,200 ft notch, then descend the steep gully/talus/heather line back down to the Goodell Creek trail and out to the trailhead. Watch for loose rock in the gully below the Barrier notch and for creek crossings running high on hot afternoons. To continue on to Frenzel Spitz, descend roughly 500 ft from Ottohorn's north side, per the original 1961 first-ascent account.",
+   "bail": "Retreat is a straightforward reversal down the east ridge/southeast line back to the Ottohorn-Himmelhorn col; most parties can downclimb rather than needing to abandon gear, though the col's north-side descent gets loose and rotten by late summer.",
+   "pitch_detail": [
+    {
+     "grade": "Class 3-4",
+     "notes": "From the Otto-Himmel Col, unroped or simul-climbed scrambling up the east ridge/gullies toward the summit ridge.",
+     "pitch": "Approach scramble"
+    },
+    {
+     "grade": "5.6-5.7",
+     "notes": "A short technical section near the top, historically encountered where a rockfall scar undercuts the easier original line; parties rope up here.",
+     "pitch": "Crux pitch(es)"
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Goodell Creek trailhead, follow the old roadbed and climbers' path up Terror Creek to gain the Barrier ridge crest, then cross the Barrier (loose ledges at the lower end of Terror Glacier, or moats/steep snow at the upper end) and drop into Crescent Creek Basin. Most parties camp on the heather/slab bench around 6,300-6,600 ft below the Chopping Block-Ottohorn massif.",
+      "hours": 9,
+      "miles": 7.5,
+      "title": "Approach to Crescent Creek Basin",
+      "gainFt": 5800,
+      "lossFt": 300,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Goodell Creek trailhead",
+        "detail": "Old roadbed, then climbers' path up Terror Creek drainage."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Gain the Barrier crest",
+        "detail": "Brushy, faint boot path; timberline around 5,600 ft."
+       },
+       {
+        "time": "+6.5 hr",
+        "label": "Cross the Barrier",
+        "detail": "Loose ledges or upper snow/moat crossing, under an hour either way."
+       },
+       {
+        "time": "+8-9 hr",
+        "label": "Make camp in Crescent Creek Basin",
+        "detail": "Heather/slab benches near 6,300-6,600 ft, below the Ottohorn-Himmelhorn col."
+       }
+      ],
+      "objective": "Establish high camp below the Ottohorn-Himmelhorn col"
+     },
+     {
+      "n": 2,
+      "note": "Climb steep snow/talus from camp to the Ottohorn-Himmelhorn col, then scramble the class 3-4 east ridge/southeast side to the Ottohorn summit; parties report roughly an hour round trip from the col to the summit and back. Many groups use the same col to tag Frenzel Spitz and/or Himmelgeisterhorn (Düsseldorfspitz) the same day since the approach effort to the col is the crux of the outing.",
+      "hours": 9,
+      "miles": 2.5,
+      "title": "Ottohorn via the Ottohorn-Himmelhorn col",
+      "gainFt": 1900,
+      "lossFt": 1900,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave camp",
+        "detail": "Light rack, rope, and a day's food; climbing gear only."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Reach Ottohorn-Himmelhorn col",
+        "detail": "Steep snow or loose class 4-5.easy rock depending on season and snow coverage."
+       },
+       {
+        "time": "+3 hr",
+        "label": "Summit Ottohorn",
+        "detail": "Class 3-4 scramble along the east ridge/southeast face; roughly an hour round trip from the col."
+       },
+       {
+        "time": "+4-6 hr",
+        "label": "Optional: traverse to Frenzel Spitz",
+        "detail": "Southeast ridge/face, class 4-low 5th; common to combine on the same col day."
+       },
+       {
+        "time": "By dusk",
+        "label": "Return to camp",
+        "detail": "Reverse the col and snow/talus descent."
+       }
+      ],
+      "objective": "Summit Ottohorn (and often Frenzel Spitz) from high camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and reverse the approach: recross the Barrier, descend the Terror Creek drainage, and follow the roadbed back to the Goodell Creek trailhead.",
+      "hours": 7.5,
+      "miles": 7.5,
+      "title": "Exit to trailhead",
+      "gainFt": 300,
+      "lossFt": 5800,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Pack out via the Barrier and Terror Creek"
+     }
+    ],
+    "totalNote": "A standard 3-day trip: roughly 9 hrs / 5,800 ft to establish high camp in Crescent Creek Basin, a technical summit day over the Ottohorn-Himmelhorn col (often combined with Frenzel Spitz), and a 7-8 hr exit; only very fast, committed parties compress this to 2 days."
+   },
+   "access": {
+    "fees": "$10 per person plus a nonrefundable $6 permit fee during the summer season (roughly mid-May through early October); no fee is charged the rest of the year; youth 15 and under are free.",
+    "notes": "The Crescent Creek cross-country zone cannot be reserved in advance; its permits are walk-up only, obtained in person up to a day ahead at the Wilderness Information Center in Marblemount.",
+    "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+    "permit": "Overnight camping in Crescent Creek Basin requires an NPS wilderness/backcountry permit (day climbing itself needs no separate permit, but no one climbs Ottohorn car-to-car). The zone is walk-up only: pick up the permit in person at the Marblemount Wilderness Information Center and carry it on the trip.",
+    "closures": "The Goodell Creek trailhead itself is reachable whenever WA-20 is open at Newhalem, which is normally year-round; only the highway east of Ross Dam (~milepost 134) closes for winter. Check NPS road-conditions and WSDOT pages before shoulder-season trips.",
+    "group_limit": 6,
+    "landManager": "North Cascades National Park (National Park Service)",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "passRequired": "No separate day-use pass — access is via Goodell Creek Road inside the park, so only the wilderness camping permit applies.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+     "where": "This zone is walk-up only: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before your trip."
+    }
+   },
+   "road": {
+    "name": "WA-20 (North Cascades Highway) to Goodell Creek Road, near Newhalem",
+    "status": "Goodell Creek Road/trailhead is reachable whenever WA-20 is open at Newhalem, which is normally year-round.",
+    "driveNote": "From Sedro-Woolley/Marblemount, follow WA-20 east toward Newhalem; Goodell Creek Road turns off to the north just west of town, opposite the visitor-center road and just east of Goodell Creek Campground, and dead-ends at the trailhead parking.",
+    "seasonalGate": "WA-20 itself only closes seasonally east of Ross Dam (~milepost 134). The 2025-26 winter saw a later-than-usual spring reopening (mid-June 2026) after storm and rockslide damage between roughly mileposts 142-148, so verify current status for early-season trips."
+   },
+   "climate": {
+    "fall": "Shortening weather windows; early snow can return to the col and upper ridge by late September.",
+    "spring": "Heavy snowpack, high avalanche hazard, approach largely impassable for the standard climbers' route.",
+    "summer": "Primary climbing window (Jul–Sep); still subject to afternoon thunderstorms and periods of persistent low cloud/rain typical of the North Cascades.",
+    "winter": "Not a viable climbing season; heavy snow and avalanche terrain throughout the approach and route.",
+    "typical": "Maritime-influenced alpine climate — the Southern Pickets sit close enough to Puget Sound moisture that even summer weather windows can turn quickly. This zone is not covered by NWAC's avalanche forecast; check NWS Bellingham point forecasts and mountain-specific forecasts before committing.",
+    "bySeason": {
+     "fall": "Short weather windows after early September; days shorten fast and the brushy approach turns miserable in rain.",
+     "spring": "Approach is still heavily snow-covered; not a realistic season for this route.",
+     "summer": "Best/driest window, but snow often lingers on the Barrier crossing and in the Ottohorn-Himmelhorn col into July; afternoon thunderstorms are a real hazard on exposed ridgelines.",
+     "winter": "Effectively inaccessible for climbing — deep snow and avalanche terrain on the approach, though Goodell Creek Road stays reachable off WA-20."
+    }
+   },
+   "emergency": {
+    "notes": "No cell coverage in Crescent Creek Basin or along the Barrier approach — carry a satellite communicator/PLB. NPS 24-hr dispatch: (360) 856-5700 ext. 515; after hours (360) 873-4590 ext. 37.",
+    "county": "Skagit County",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount, WA — (360) 854-7245, noca_wilderness@nps.gov",
+    "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA — a Level III trauma center roughly 2+ hours' drive from the Goodell Creek trailhead; serious trauma cases are typically flown to Harborview Medical Center in Seattle.",
+    "sheriffDispatch": "Skagit County Sheriff (360) 336-9450 (after-hours contact); call 911 in an emergency."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rare even at peak season (late July-August); most 'traffic' is parties enchaining Ottohorn with Himmelhorn and Frenzel Spitz rather than dedicated solo ascents",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Roughly 5-15 parties per season - a genuinely obscure objective"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained off-trail alpine approach fitness - the Crescent Creek basin approach involves brushy bushwhacking, talus, and likely glacier/snow travel with a heavy overnight pack",
+     "packWeight": "Multi-day alpine pack (35-50 lb) for the approach, typically dropped at a high camp before the technical climbing day"
+    },
+    "approachTime": "Full day (6-10+ hrs) of strenuous off-trail approach to a high camp in the Crescent Creek basin before the climb itself; typically planned as a 3-5 day trip when combined with neighboring Pickets summits",
+    "requiredSkills": [
+     "5.7 alpine rock proficiency, often in boots or approach shoes with a pack",
+     "route-finding in complex, unmarked terrain among towers",
+     "multi-pitch rope management and rappelling on loose rock",
+     "glacier travel and crevasse rescue for the approach (Crescent Creek basin)",
+     "self-sufficiency for remote/unrescuable terrain",
+     "off-trail bushwhacking and talus/scree navigation"
+    ],
+    "experienceLevel": "Experienced alpine rock climbers only - multiple prior grade III-IV alpine rock routes, comfortable with remote, unrescuable terrain and sustained route-finding among towers"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through early September - this is a narrow, snow-dependent window",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still hold significant snow on approach slopes and the col; conditions become optimal by mid-month as snow recedes and rock dries out",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Most reliable window - approach snow largely melted out, rock typically driest, and long daylight hours support the strenuous approach-plus-climb itinerary",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Early September can still work but shortening days, higher storm/new-snow risk, and cooling temps make the window close quickly; late September is risky",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "For the range - a short weather-window-dependent alpine season with rapid changeability typical of the North Cascades",
+     "probability": "Afternoon thunderstorms and fast-moving weather systems are a real risk on multi-day approaches into the Crescent Creek basin; parties should build in weather buffer days"
+    },
+    "exposure": "Sustained exposure on the southeast side rock; loose rock and route-finding among towers compound fall consequences given the remote, unrescuable setting",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route; NWAC's operational avalanche forecasting for the North Cascades zone applies to the winter/spring season and does not extend into the Jul-Sep climbing window for this route",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Likely crevasse hazard on the glacier/snow approach into the Crescent Creek basin during early season (July); largely melts out by mid-to-late season but should be assessed on a given trip"
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed pitch count, rope length, or specific rack for the southeast/5.7 line itself — sources confirm it exists as a variation (Hilden-Holsten-Wertkin) but don't give a pitch-by-pitch topo.",
+     "Prominence figure (310 ft) was not independently re-verified against a primary source during this pass.",
+     "No first-hand, recent (post-2015) trip report specifically describing the southeast 5.7 line was found; most modern accounts describe the easier east-ridge/col line as part of a broader enchainment.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 4,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.7764,
+    "peakLng": -121.3125,
+    "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "trailheadLat": 48.68664,
+    "trailheadLng": -121.27121,
+    "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+   },
+   "sling_rack": {
+    "cams": "0.3-3 in single rack",
+    "nuts": "full set"
+   },
+   "alpine_draws": 6,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Grade III-IV alpine rock in the Southern Pickets area; approach crosses glaciated terrain near Ottohorn-Himmelhorn col requiring rope for glacier travel.",
+   "ascender": null,
+   "corrections": "No dedicated route topo/gear list found; gear inferred from grade (III-IV 5.7) and typical Southern Pickets glacier-approach alpine rock norms. 2026-07-31: fa corrected — previously credited Twin Needles' 1932 FA party (Degenhardt/Martin/Strandberg), which this row's own overview and the wa_ottohorn area blurb already correctly distinguish from Ottohorn's real 1961 FA. 2026-07-31: waypoints[7] (Ottohorn summit) elevFt corrected from 7640 to 7840 to match this row's own high_point_ft and the wa_ottohorn area elevation_ft.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Light alpine rack: nuts/hexes and a few small cams (size 00-2)",
+    "Slings and cordage for anchors in scree/rock",
+    "Screwgate carabiners",
+    "30-60m rope"
+   ],
+   "features": [
+    "Exposed",
+    "Adventurous",
+    "Committing",
+    "Face"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "Goodell Creek, the Barrier notch and Stump Hollow, then the Crescent Creek Basin traverse to the Ottohorn-Himmelhorn col",
+     "notes": "From the Goodell Creek trailhead at about 600 ft, reached via the gravel road that forks off Hwy 20 across from Newhalem and dead-ends at a gravel pit with parking but no trailhead sign, follow the old logging roadbed along the east bank of Goodell Creek. The first 1.5 miles thread through dozens of downed trees and washouts before a faint trail emerges in the timber; the tread then levels around 1,100 ft for roughly a mile.\n\nAround mile 3.5, at about 1,700 ft, the trail crosses a stream, the last easy reliable water for a long stretch, near a small campsite and a cairn marking the unsigned climbers' path up the Barrier. Fill bottles there.\n\nFrom the cairn the path steepens hard: a traverse around 3,200 ft, a talus field near 4,000 ft, a rock band around 4,800 ft, then a steep brush-choked gully with early-season snow or ice to about 35 degrees, to a rocky streambed near 5,200 ft. Heather benches and slabs then lead to the crest of the Barrier, a roughly 6,200 ft notch that is the high point of the approach and a common bivy. From the notch, descend about 250 ft into Stump Hollow, then contour on a long rising traverse across Crescent Creek Basin holding roughly the 5,800 ft level to a camp near Mount Terror and Himmelhorn.\n\nA North Cascades National Park backcountry permit for the Crescent Creek Basin zone is required.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "A steep brush-choked gully with early-season snow or ice to about 35 degrees on the Barrier climb",
+      "An overhanging boulder near the col forcing a loose exposed bypass",
+      "A moat at the col that can become an overhanging pit by August",
+      "A fresh rockfall scar reported about 30 ft below the summit ridge",
+      "The north side of the col takes multiple rappels off improvised anchors; do not descend it by mistake",
+      "Steep grassy ledges on the Barrier that are considerably worse downhill-facing and tired"
+     ],
+     "baseFinding": "The route begins at the Ottohorn-Himmelhorn col and you crampon the last of the way there. From camp, continue the rising traverse across Crescent Creek Basin toward the col, and crampon up the final snow and scree pitch to the col itself. Once melted out late season that last pitch turns to loose, chossy class 3-4 scrambling, with an overhanging boulder near the top sometimes forcing a chossy class 3 or 4 bypass on the left.\n\nSo the overhanging boulder is the arrival marker: one block near the top of the gully, passed on its left, and then the col. The route text stops at the col because the col is the start.\n\nThe negative test, and it is the most important line here: from the col, this route goes up the east ridge and its walk-off returns down the south side, back into Crescent Creek Basin. The north side of the col is a different and harder proposition. Parties continuing a traverse toward Himmelhorn and the Mustard Glacier descend that side by a single-rope rappel from an established station about 150 ft below the col, or a steep snow couloir when well filled in. If you are looking down at a glacier and rigging a rappel, you are on the wrong side of the col for this route.\n\nConfirm on the climb, and the measurements are small: from the col the summit is reported as easy scrambling, class 3, and parties have done it from the col in roughly an hour round trip, some without taking rope or rack out of camp. It is one of the few Southern Picket summits that is not fifth class. If you are on sustained fifth class you are not on the standard line.\n\nOne conditions-dependent complication, recorded because it changed a party's day: at least one party found the easy line broke into a fresh rockfall scar about 30 ft below the summit ridge and backed off rather than cross it, returning with a rope for about two pitches of juggy 5.7. Do not commit to the last 100 ft until you can see it.\n\nThe moat at the col is the thing to scout on the way up: where the snow meets the rock it is a non-event when snow-filled early season and can be an overhanging pit by August. Note where you crossed it; you will want that on the way down."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "class 3-4",
+     "label": "Final pitch to the Ottohorn-Himmelhorn col",
+     "notes": "Crampon up the final snow/scree pitch to the col itself. Once melted out late-season it turns to loose, chossy class 3-4 scrambling, with an overhanging boulder near the top sometimes forcing a chossy class 3/4 bypass on the left. The route text stops at the col."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6050,
+     "name": "Crescent Creek Basin camp",
+     "role": "main",
+     "type": "camp",
+     "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between them; Frenzel Spitz sits off the main chain near the Ottohorn's north side. Parties camp at several benches at different heights.",
+     "water": "Snowmelt streams and pools fed by the basin's snowfields, reliable early and mid season and unreliable late once the snow has pulled back. Plan on melting snow in a lean year.",
+     "permit": "This is the separate Crescent Creek cross-country zone, not Terror Basin — a trip camping in both needs both zones written onto the same permit, night by night. Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance.",
+     "capacity": "A few parties on gravel, slab and snow; the zone is capped at 6 people per party"
+    },
+    {
+     "elev": 500,
+     "name": "Goodell Creek Campground, roadhead staging",
+     "role": "route",
+     "type": "camp",
+     "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+     "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+     "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+     "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+    },
+    {
+     "elev": 2000,
+     "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+     "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+     "permit": "A wilderness permit is required, and this spot is legally awkward: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+     "capacity": "One or two small parties on flat ground beside the old grade"
+    },
+    {
+     "elev": 5800,
+     "name": "Terror Basin camp",
+     "role": "route",
+     "type": "camp",
+     "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+     "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+     "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is not on the short list of zones reservable in advance, so it is walk-up only — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+     "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+    },
+    {
+     "elev": 6000,
+     "name": "Stump Hollow bench",
+     "role": "route",
+     "type": "camp",
+     "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeast of the Chopping Block near 6,400 ft and drops into Crescent Creek Basin from there. Camp on rock, gravel or snow rather than the heather — this is thin alpine ground that shows every night somebody spends on it.",
+     "water": "Snowmelt only. Trickles and small pools are dependable through early summer while snow lingers, and can dry up or retreat entirely by late season; late-summer parties should expect to search or carry.",
+     "permit": "Cross-country zone permit from the Wilderness Information Center. This bench sits close to the divide between the Terror Basin and Crescent Creek zones, so ask which zone the rangers are writing you into rather than assuming — the answer decides what the rest of your itinerary can say.",
+     "capacity": "Small — a couple of parties on heather benches and slabs, and it is easy to end up spread out"
+    },
+    {
+     "name": "High bivouacs at the western end of the crest",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gravel bench to a night sitting on a ledge. There is no shelter and no water, so this only makes sense with a settled forecast and a party willing to move fast the next morning.",
+     "water": "No dependable source. These are snow-and-rock bivouacs: carry water up or melt snow, and expect nothing at all once the summer snow has gone.",
+     "permit": "Still inside a cross-country zone and still requires a wilderness permit with the night assigned to the correct zone. Camp only on snow, rock or bare ground, keep 100 ft from water, no fires, and carry waste out in a blue bag above treeline.",
+     "capacity": "One party, and often only a ledge or a gravel patch for two people"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southeast se route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "area_id": "wa_liberty_bell",
+   "name": "East Face",
+   "discipline": "alpine",
+   "grade": "Grade II, 5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 4,
+   "length_m": 125,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "alpine rock rack",
+    "cams to 3in",
+    "nuts"
+   ],
+   "hazards": [
+    "moderate exposed rock",
+    "route-finding to the summit block",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "A moderate rock route on the east side of Liberty Bell, giving accessible alpine rock climbing on good Washington Pass granite to the summit. A popular, lower-grade line on the formation.",
+   "beta": "Ten pitches of varied crack, chimney and face climbing on the East Face, with a difficult-to-protect slopey pitch 1 traverse and an offwidth crux (pitch 6) passing a fixed 2x4 and two bolts to an alcove.",
+   "turnaround": "Turn around if storms build over the Pass in the afternoon.",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 2400,
+   "loss_ft": 2400,
+   "dist_km": 4.02,
+   "max_angle": null,
+   "rappels": "2",
+   "commitment": "II",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No reliable cell coverage anywhere on the peak or at Washington Pass.",
+   "descent": "Descend via the standard Beckey Route rappels/downclimb on the southwest side.",
+   "obj_haz": [
+    "rockfall",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5200,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive SR-20 to the hairpin curve just east of Washington Pass and park on the north shoulder near the curve, at roughly 5,100 ft. This is the east-side pullout that every route on this wall uses, not the Blue Lake Trailhead. If you top out on the true summit and descend the standard west-side notch line you will come out about a mile of highway from the car, so leave a shuttle vehicle or accept the road walk back."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5750,
+     "name": "Stream crossing near meadow",
+     "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+     "type": "Water",
+     "distMi": 1.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Climbers' path junction",
+     "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward the Liberty Bell-Concord notch.",
+     "type": "Junction",
+     "distMi": 1.6
+    },
+    {
+     "lat": 48.514639,
+     "lng": -120.659478,
+     "elev": 7100,
+     "name": "Approach gully rockfall zone",
+     "note": "Gully below the notch holds snow into late June and sheds rock heavily once it melts out; stay on the boot path that breaks off before the loose gully proper.",
+     "type": "Hazard",
+     "distMi": 2.2
+    },
+    {
+     "lat": 48.514666,
+     "lng": -120.658696,
+     "elev": 7300,
+     "name": "Liberty Bell-Concord Tower notch",
+     "note": "Base for the east side; gain the east aspect from here rather than the SW-facing Beckey gully.",
+     "type": "Junction",
+     "distMi": 2.4
+    },
+    {
+     "lat": 48.514677,
+     "lng": -120.658591,
+     "elev": 7350,
+     "name": "East face loose rock",
+     "note": "Moderate 5.6 face/crack systems on this aspect see far less traffic than the Beckey Route and hold looser rock — helmet strongly advised.",
+     "type": "Hazard",
+     "distMi": 2.5
+    },
+    {
+     "lat": 48.515435,
+     "lng": -120.658365,
+     "elev": 7720,
+     "name": "Liberty Bell summit",
+     "note": "Summit block gained via the east-side crack systems; descend via the Beckey/Overexposure bolted rappels back into the notch.",
+     "type": "Summit",
+     "distMi": 2.7
+    }
+   ],
+   "gpx": [
+    [
+     48.519127,
+     -120.67427
+    ],
+    [
+     48.51909,
+     -120.67428
+    ],
+    [
+     48.5191,
+     -120.674225
+    ],
+    [
+     48.519028,
+     -120.67425
+    ],
+    [
+     48.518963,
+     -120.67419
+    ],
+    [
+     48.51902,
+     -120.67418
+    ],
+    [
+     48.51902,
+     -120.674095
+    ],
+    [
+     48.519,
+     -120.67406
+    ],
+    [
+     48.519047,
+     -120.6739
+    ],
+    [
+     48.519047,
+     -120.67378
+    ],
+    [
+     48.51912,
+     -120.67355
+    ],
+    [
+     48.519375,
+     -120.673134
+    ],
+    [
+     48.519524,
+     -120.67294
+    ],
+    [
+     48.51955,
+     -120.67287
+    ],
+    [
+     48.520046,
+     -120.672035
+    ],
+    [
+     48.52032,
+     -120.67141
+    ],
+    [
+     48.520447,
+     -120.67118
+    ],
+    [
+     48.52049,
+     -120.67104
+    ],
+    [
+     48.520638,
+     -120.67089
+    ],
+    [
+     48.520737,
+     -120.6709
+    ],
+    [
+     48.520863,
+     -120.67079
+    ],
+    [
+     48.520977,
+     -120.67063
+    ],
+    [
+     48.5211,
+     -120.670364
+    ],
+    [
+     48.521145,
+     -120.66999
+    ],
+    [
+     48.521187,
+     -120.669846
+    ],
+    [
+     48.52122,
+     -120.669624
+    ],
+    [
+     48.521275,
+     -120.66948
+    ],
+    [
+     48.521324,
+     -120.66942
+    ],
+    [
+     48.5214,
+     -120.66937
+    ],
+    [
+     48.521587,
+     -120.66914
+    ],
+    [
+     48.52169,
+     -120.668884
+    ],
+    [
+     48.521805,
+     -120.66873
+    ],
+    [
+     48.521805,
+     -120.66856
+    ],
+    [
+     48.521687,
+     -120.66848
+    ],
+    [
+     48.52112,
+     -120.66863
+    ],
+    [
+     48.5209,
+     -120.66859
+    ],
+    [
+     48.520733,
+     -120.668594
+    ],
+    [
+     48.5206,
+     -120.66866
+    ],
+    [
+     48.52045,
+     -120.66878
+    ],
+    [
+     48.520077,
+     -120.66916
+    ],
+    [
+     48.51995,
+     -120.669235
+    ],
+    [
+     48.519695,
+     -120.66952
+    ],
+    [
+     48.519432,
+     -120.669655
+    ],
+    [
+     48.519173,
+     -120.66988
+    ],
+    [
+     48.519028,
+     -120.67006
+    ],
+    [
+     48.518875,
+     -120.67018
+    ],
+    [
+     48.518642,
+     -120.67048
+    ],
+    [
+     48.518524,
+     -120.67068
+    ],
+    [
+     48.518417,
+     -120.67081
+    ],
+    [
+     48.518272,
+     -120.67093
+    ],
+    [
+     48.518173,
+     -120.67115
+    ],
+    [
+     48.517807,
+     -120.671745
+    ],
+    [
+     48.51768,
+     -120.67193
+    ],
+    [
+     48.517532,
+     -120.67204
+    ],
+    [
+     48.51699,
+     -120.67202
+    ],
+    [
+     48.516846,
+     -120.672035
+    ],
+    [
+     48.51663,
+     -120.67215
+    ],
+    [
+     48.5165,
+     -120.672195
+    ],
+    [
+     48.516357,
+     -120.67223
+    ],
+    [
+     48.51627,
+     -120.6722
+    ],
+    [
+     48.51602,
+     -120.67203
+    ],
+    [
+     48.51596,
+     -120.67196
+    ],
+    [
+     48.515923,
+     -120.67195
+    ],
+    [
+     48.515713,
+     -120.67175
+    ],
+    [
+     48.515583,
+     -120.67172
+    ],
+    [
+     48.515507,
+     -120.67161
+    ],
+    [
+     48.51551,
+     -120.6715
+    ],
+    [
+     48.515457,
+     -120.67146
+    ],
+    [
+     48.51535,
+     -120.67129
+    ],
+    [
+     48.515377,
+     -120.671
+    ],
+    [
+     48.51532,
+     -120.67088
+    ],
+    [
+     48.515327,
+     -120.670815
+    ],
+    [
+     48.51536,
+     -120.67077
+    ],
+    [
+     48.515343,
+     -120.67058
+    ],
+    [
+     48.51515,
+     -120.67041
+    ],
+    [
+     48.51494,
+     -120.67043
+    ],
+    [
+     48.514694,
+     -120.67053
+    ],
+    [
+     48.514576,
+     -120.6708
+    ],
+    [
+     48.51461,
+     -120.67094
+    ],
+    [
+     48.514595,
+     -120.67107
+    ],
+    [
+     48.514606,
+     -120.67125
+    ],
+    [
+     48.514652,
+     -120.6713
+    ],
+    [
+     48.51461,
+     -120.67126
+    ],
+    [
+     48.514587,
+     -120.671036
+    ],
+    [
+     48.514587,
+     -120.67085
+    ],
+    [
+     48.51465,
+     -120.67063
+    ],
+    [
+     48.5148,
+     -120.67046
+    ],
+    [
+     48.514835,
+     -120.67037
+    ],
+    [
+     48.514812,
+     -120.670334
+    ],
+    [
+     48.514862,
+     -120.67016
+    ],
+    [
+     48.51486,
+     -120.66993
+    ],
+    [
+     48.514877,
+     -120.66983
+    ],
+    [
+     48.514893,
+     -120.669815
+    ],
+    [
+     48.51488,
+     -120.669655
+    ],
+    [
+     48.514797,
+     -120.66944
+    ],
+    [
+     48.51474,
+     -120.669365
+    ],
+    [
+     48.51478,
+     -120.66922
+    ],
+    [
+     48.51472,
+     -120.66906
+    ],
+    [
+     48.51452,
+     -120.668816
+    ],
+    [
+     48.514595,
+     -120.66868
+    ],
+    [
+     48.51464,
+     -120.66863
+    ],
+    [
+     48.514694,
+     -120.66861
+    ],
+    [
+     48.51474,
+     -120.668526
+    ],
+    [
+     48.51469,
+     -120.668274
+    ],
+    [
+     48.514694,
+     -120.668076
+    ],
+    [
+     48.51477,
+     -120.6679
+    ],
+    [
+     48.514797,
+     -120.66773
+    ],
+    [
+     48.514725,
+     -120.667656
+    ],
+    [
+     48.514668,
+     -120.66754
+    ],
+    [
+     48.514618,
+     -120.66738
+    ],
+    [
+     48.514614,
+     -120.6673
+    ],
+    [
+     48.514496,
+     -120.6672
+    ],
+    [
+     48.514477,
+     -120.66703
+    ],
+    [
+     48.514187,
+     -120.666916
+    ],
+    [
+     48.51415,
+     -120.66688
+    ],
+    [
+     48.514103,
+     -120.66671
+    ],
+    [
+     48.514027,
+     -120.66657
+    ],
+    [
+     48.513912,
+     -120.666534
+    ],
+    [
+     48.513714,
+     -120.666534
+    ],
+    [
+     48.513588,
+     -120.66645
+    ],
+    [
+     48.513546,
+     -120.666374
+    ],
+    [
+     48.513523,
+     -120.66618
+    ],
+    [
+     48.513474,
+     -120.666016
+    ],
+    [
+     48.51348,
+     -120.66607
+    ],
+    [
+     48.51351,
+     -120.66598
+    ],
+    [
+     48.51355,
+     -120.66594
+    ],
+    [
+     48.513535,
+     -120.66568
+    ],
+    [
+     48.51349,
+     -120.66547
+    ],
+    [
+     48.513397,
+     -120.66533
+    ],
+    [
+     48.513412,
+     -120.66528
+    ],
+    [
+     48.513382,
+     -120.6652
+    ],
+    [
+     48.513344,
+     -120.665146
+    ],
+    [
+     48.513287,
+     -120.665115
+    ],
+    [
+     48.513283,
+     -120.66505
+    ],
+    [
+     48.513214,
+     -120.66493
+    ],
+    [
+     48.513123,
+     -120.664856
+    ],
+    [
+     48.513046,
+     -120.66489
+    ],
+    [
+     48.513016,
+     -120.66486
+    ],
+    [
+     48.513023,
+     -120.664825
+    ],
+    [
+     48.512936,
+     -120.66475
+    ],
+    [
+     48.512848,
+     -120.664764
+    ],
+    [
+     48.512787,
+     -120.664734
+    ],
+    [
+     48.512794,
+     -120.66475
+    ],
+    [
+     48.51277,
+     -120.664764
+    ],
+    [
+     48.51277,
+     -120.664734
+    ],
+    [
+     48.512817,
+     -120.66468
+    ],
+    [
+     48.51281,
+     -120.66458
+    ],
+    [
+     48.51282,
+     -120.66447
+    ],
+    [
+     48.51284,
+     -120.66444
+    ],
+    [
+     48.51284,
+     -120.66432
+    ],
+    [
+     48.512867,
+     -120.66434
+    ],
+    [
+     48.51288,
+     -120.66427
+    ],
+    [
+     48.512863,
+     -120.66412
+    ],
+    [
+     48.512928,
+     -120.66413
+    ],
+    [
+     48.51297,
+     -120.66411
+    ],
+    [
+     48.512997,
+     -120.66405
+    ],
+    [
+     48.512993,
+     -120.663895
+    ],
+    [
+     48.513023,
+     -120.66389
+    ],
+    [
+     48.513054,
+     -120.66382
+    ],
+    [
+     48.513046,
+     -120.66378
+    ],
+    [
+     48.513084,
+     -120.66364
+    ],
+    [
+     48.513073,
+     -120.66355
+    ],
+    [
+     48.513115,
+     -120.66349
+    ],
+    [
+     48.513103,
+     -120.663414
+    ],
+    [
+     48.51313,
+     -120.663246
+    ],
+    [
+     48.51312,
+     -120.66315
+    ],
+    [
+     48.51314,
+     -120.66307
+    ],
+    [
+     48.513126,
+     -120.662994
+    ],
+    [
+     48.51317,
+     -120.66288
+    ],
+    [
+     48.51312,
+     -120.662704
+    ],
+    [
+     48.51314,
+     -120.66266
+    ],
+    [
+     48.513134,
+     -120.66259
+    ],
+    [
+     48.513054,
+     -120.66241
+    ],
+    [
+     48.51298,
+     -120.66236
+    ],
+    [
+     48.51294,
+     -120.66214
+    ],
+    [
+     48.51294,
+     -120.66206
+    ],
+    [
+     48.512817,
+     -120.66193
+    ],
+    [
+     48.512806,
+     -120.66186
+    ],
+    [
+     48.51287,
+     -120.66153
+    ],
+    [
+     48.512882,
+     -120.66141
+    ],
+    [
+     48.512894,
+     -120.66142
+    ],
+    [
+     48.51299,
+     -120.6613
+    ],
+    [
+     48.51307,
+     -120.66128
+    ],
+    [
+     48.513084,
+     -120.66123
+    ],
+    [
+     48.513077,
+     -120.66108
+    ],
+    [
+     48.51299,
+     -120.6609
+    ],
+    [
+     48.512486,
+     -120.66036
+    ],
+    [
+     48.512375,
+     -120.660324
+    ],
+    [
+     48.51228,
+     -120.66037
+    ],
+    [
+     48.512302,
+     -120.66037
+    ],
+    [
+     48.51229,
+     -120.66031
+    ],
+    [
+     48.51226,
+     -120.66023
+    ],
+    [
+     48.51222,
+     -120.66019
+    ],
+    [
+     48.512203,
+     -120.660126
+    ],
+    [
+     48.51201,
+     -120.66012
+    ],
+    [
+     48.511936,
+     -120.66004
+    ],
+    [
+     48.511845,
+     -120.65999
+    ],
+    [
+     48.511883,
+     -120.6599
+    ],
+    [
+     48.511883,
+     -120.6598
+    ],
+    [
+     48.511932,
+     -120.65933
+    ],
+    [
+     48.511925,
+     -120.65924
+    ],
+    [
+     48.51197,
+     -120.659164
+    ],
+    [
+     48.512127,
+     -120.65914
+    ],
+    [
+     48.512302,
+     -120.65922
+    ],
+    [
+     48.512447,
+     -120.65916
+    ],
+    [
+     48.51254,
+     -120.65907
+    ],
+    [
+     48.512577,
+     -120.659065
+    ],
+    [
+     48.512596,
+     -120.65898
+    ],
+    [
+     48.512638,
+     -120.65894
+    ],
+    [
+     48.512657,
+     -120.658844
+    ],
+    [
+     48.512936,
+     -120.65869
+    ],
+    [
+     48.51301,
+     -120.658714
+    ],
+    [
+     48.512947,
+     -120.65881
+    ],
+    [
+     48.513035,
+     -120.65896
+    ],
+    [
+     48.513107,
+     -120.65899
+    ],
+    [
+     48.5132,
+     -120.6589
+    ],
+    [
+     48.513138,
+     -120.65892
+    ],
+    [
+     48.513172,
+     -120.65894
+    ],
+    [
+     48.513577,
+     -120.65886
+    ],
+    [
+     48.513767,
+     -120.658844
+    ],
+    [
+     48.51381,
+     -120.65879
+    ],
+    [
+     48.51382,
+     -120.65871
+    ],
+    [
+     48.513847,
+     -120.65865
+    ],
+    [
+     48.514065,
+     -120.658615
+    ],
+    [
+     48.514122,
+     -120.6585
+    ],
+    [
+     48.5141,
+     -120.6585
+    ],
+    [
+     48.51411,
+     -120.65847
+    ],
+    [
+     48.51424,
+     -120.65846
+    ],
+    [
+     48.51421,
+     -120.65844
+    ],
+    [
+     48.514362,
+     -120.6585
+    ],
+    [
+     48.514282,
+     -120.65847
+    ],
+    [
+     48.51429,
+     -120.65846
+    ],
+    [
+     48.51422,
+     -120.65829
+    ],
+    [
+     48.51435,
+     -120.65813
+    ],
+    [
+     48.51423,
+     -120.65824
+    ],
+    [
+     48.514183,
+     -120.658264
+    ],
+    [
+     48.514286,
+     -120.6581
+    ],
+    [
+     48.514076,
+     -120.65817
+    ],
+    [
+     48.514095,
+     -120.65823
+    ],
+    [
+     48.51409,
+     -120.65833
+    ],
+    [
+     48.513966,
+     -120.65834
+    ],
+    [
+     48.51396,
+     -120.65837
+    ],
+    [
+     48.51403,
+     -120.65843
+    ],
+    [
+     48.514008,
+     -120.65849
+    ],
+    [
+     48.51416,
+     -120.65838
+    ],
+    [
+     48.514374,
+     -120.658
+    ],
+    [
+     48.514606,
+     -120.65775
+    ],
+    [
+     48.51463,
+     -120.657776
+    ],
+    [
+     48.514572,
+     -120.65778
+    ],
+    [
+     48.514538,
+     -120.65773
+    ],
+    [
+     48.514668,
+     -120.65773
+    ],
+    [
+     48.514717,
+     -120.65776
+    ],
+    [
+     48.514755,
+     -120.65769
+    ],
+    [
+     48.514736,
+     -120.65772
+    ],
+    [
+     48.514687,
+     -120.65767
+    ],
+    [
+     48.514668,
+     -120.65768
+    ],
+    [
+     48.514675,
+     -120.6577
+    ],
+    [
+     48.514656,
+     -120.65776
+    ],
+    [
+     48.514786,
+     -120.658005
+    ],
+    [
+     48.51431,
+     -120.65806
+    ],
+    [
+     48.514286,
+     -120.65776
+    ],
+    [
+     48.514313,
+     -120.6578
+    ],
+    [
+     48.514297,
+     -120.65789
+    ],
+    [
+     48.51424,
+     -120.65808
+    ],
+    [
+     48.514248,
+     -120.65817
+    ],
+    [
+     48.51429,
+     -120.65822
+    ],
+    [
+     48.514286,
+     -120.65824
+    ],
+    [
+     48.514248,
+     -120.65828
+    ],
+    [
+     48.514114,
+     -120.65823
+    ],
+    [
+     48.51412,
+     -120.65845
+    ],
+    [
+     48.514156,
+     -120.658485
+    ],
+    [
+     48.514,
+     -120.658516
+    ],
+    [
+     48.51387,
+     -120.6585
+    ],
+    [
+     48.51389,
+     -120.65849
+    ],
+    [
+     48.5139,
+     -120.65858
+    ],
+    [
+     48.51385,
+     -120.65861
+    ],
+    [
+     48.51384,
+     -120.658714
+    ],
+    [
+     48.51378,
+     -120.6588
+    ],
+    [
+     48.513744,
+     -120.658875
+    ],
+    [
+     48.513695,
+     -120.65886
+    ],
+    [
+     48.51363,
+     -120.658875
+    ],
+    [
+     48.513573,
+     -120.658966
+    ],
+    [
+     48.513584,
+     -120.65904
+    ],
+    [
+     48.513557,
+     -120.65906
+    ],
+    [
+     48.51358,
+     -120.65915
+    ],
+    [
+     48.513565,
+     -120.65924
+    ],
+    [
+     48.513596,
+     -120.65933
+    ],
+    [
+     48.513657,
+     -120.6594
+    ],
+    [
+     48.513687,
+     -120.65949
+    ],
+    [
+     48.513542,
+     -120.6595
+    ],
+    [
+     48.51353,
+     -120.65955
+    ],
+    [
+     48.513454,
+     -120.65962
+    ],
+    [
+     48.513416,
+     -120.659706
+    ],
+    [
+     48.513527,
+     -120.659996
+    ],
+    [
+     48.513615,
+     -120.66005
+    ],
+    [
+     48.51363,
+     -120.66009
+    ],
+    [
+     48.513664,
+     -120.66011
+    ],
+    [
+     48.513733,
+     -120.66008
+    ],
+    [
+     48.51375,
+     -120.660194
+    ],
+    [
+     48.5138,
+     -120.66032
+    ],
+    [
+     48.51385,
+     -120.66036
+    ],
+    [
+     48.513885,
+     -120.66029
+    ],
+    [
+     48.513885,
+     -120.66026
+    ],
+    [
+     48.513916,
+     -120.66024
+    ],
+    [
+     48.513912,
+     -120.6603
+    ],
+    [
+     48.51395,
+     -120.66024
+    ],
+    [
+     48.51398,
+     -120.660255
+    ],
+    [
+     48.514057,
+     -120.660255
+    ],
+    [
+     48.514057,
+     -120.66028
+    ],
+    [
+     48.514004,
+     -120.66012
+    ],
+    [
+     48.514103,
+     -120.66018
+    ],
+    [
+     48.514145,
+     -120.66017
+    ],
+    [
+     48.51402,
+     -120.660034
+    ],
+    [
+     48.51433,
+     -120.66024
+    ],
+    [
+     48.514236,
+     -120.66016
+    ],
+    [
+     48.514122,
+     -120.660225
+    ],
+    [
+     48.51414,
+     -120.660255
+    ],
+    [
+     48.513977,
+     -120.66015
+    ],
+    [
+     48.513927,
+     -120.66023
+    ],
+    [
+     48.51387,
+     -120.66043
+    ],
+    [
+     48.51389,
+     -120.660545
+    ],
+    [
+     48.513924,
+     -120.66059
+    ],
+    [
+     48.51387,
+     -120.66049
+    ],
+    [
+     48.513885,
+     -120.66039
+    ],
+    [
+     48.513874,
+     -120.660385
+    ],
+    [
+     48.51388,
+     -120.660416
+    ],
+    [
+     48.51394,
+     -120.66042
+    ],
+    [
+     48.513844,
+     -120.66037
+    ],
+    [
+     48.513855,
+     -120.66037
+    ],
+    [
+     48.51388,
+     -120.66025
+    ],
+    [
+     48.51387,
+     -120.66025
+    ],
+    [
+     48.51394,
+     -120.66054
+    ],
+    [
+     48.513905,
+     -120.660515
+    ],
+    [
+     48.51396,
+     -120.66041
+    ],
+    [
+     48.51398,
+     -120.6605
+    ],
+    [
+     48.513866,
+     -120.66034
+    ],
+    [
+     48.51384,
+     -120.66035
+    ],
+    [
+     48.513832,
+     -120.6603
+    ],
+    [
+     48.513866,
+     -120.66037
+    ],
+    [
+     48.513836,
+     -120.66033
+    ],
+    [
+     48.51388,
+     -120.660324
+    ],
+    [
+     48.51392,
+     -120.660286
+    ],
+    [
+     48.5139,
+     -120.660095
+    ],
+    [
+     48.513897,
+     -120.65992
+    ],
+    [
+     48.51391,
+     -120.65989
+    ],
+    [
+     48.51398,
+     -120.65995
+    ],
+    [
+     48.514008,
+     -120.65991
+    ],
+    [
+     48.514046,
+     -120.659904
+    ],
+    [
+     48.514122,
+     -120.659935
+    ],
+    [
+     48.51418,
+     -120.659805
+    ],
+    [
+     48.51434,
+     -120.65978
+    ],
+    [
+     48.514435,
+     -120.65969
+    ],
+    [
+     48.514557,
+     -120.65963
+    ],
+    [
+     48.51453,
+     -120.65963
+    ],
+    [
+     48.514507,
+     -120.65956
+    ],
+    [
+     48.514614,
+     -120.65952
+    ],
+    [
+     48.514637,
+     -120.65948
+    ],
+    [
+     48.514744,
+     -120.65938
+    ],
+    [
+     48.514755,
+     -120.659325
+    ],
+    [
+     48.51472,
+     -120.65929
+    ],
+    [
+     48.514675,
+     -120.65928
+    ],
+    [
+     48.514664,
+     -120.659225
+    ],
+    [
+     48.514774,
+     -120.65911
+    ],
+    [
+     48.51466,
+     -120.659096
+    ],
+    [
+     48.51461,
+     -120.659004
+    ],
+    [
+     48.514782,
+     -120.65886
+    ],
+    [
+     48.514866,
+     -120.65883
+    ],
+    [
+     48.51486,
+     -120.65885
+    ],
+    [
+     48.51487,
+     -120.65886
+    ],
+    [
+     48.51488,
+     -120.65879
+    ],
+    [
+     48.514915,
+     -120.65874
+    ],
+    [
+     48.514812,
+     -120.65873
+    ],
+    [
+     48.514828,
+     -120.65867
+    ],
+    [
+     48.51475,
+     -120.658585
+    ],
+    [
+     48.51467,
+     -120.65855
+    ],
+    [
+     48.51464,
+     -120.65858
+    ],
+    [
+     48.514603,
+     -120.65841
+    ],
+    [
+     48.514618,
+     -120.658455
+    ],
+    [
+     48.51465,
+     -120.658485
+    ],
+    [
+     48.5146,
+     -120.65839
+    ],
+    [
+     48.51462,
+     -120.65843
+    ],
+    [
+     48.514572,
+     -120.65849
+    ],
+    [
+     48.51467,
+     -120.65858
+    ],
+    [
+     48.514637,
+     -120.65858
+    ],
+    [
+     48.514687,
+     -120.6586
+    ],
+    [
+     48.51467,
+     -120.65862
+    ],
+    [
+     48.514626,
+     -120.658615
+    ],
+    [
+     48.51462,
+     -120.65873
+    ],
+    [
+     48.51469,
+     -120.65871
+    ],
+    [
+     48.5146,
+     -120.65862
+    ],
+    [
+     48.514595,
+     -120.658585
+    ],
+    [
+     48.514618,
+     -120.65859
+    ],
+    [
+     48.514545,
+     -120.65859
+    ],
+    [
+     48.514656,
+     -120.658615
+    ],
+    [
+     48.514645,
+     -120.6586
+    ],
+    [
+     48.514626,
+     -120.658615
+    ],
+    [
+     48.514584,
+     -120.65852
+    ],
+    [
+     48.51463,
+     -120.658585
+    ],
+    [
+     48.514534,
+     -120.65832
+    ],
+    [
+     48.51455,
+     -120.658325
+    ],
+    [
+     48.51474,
+     -120.658646
+    ],
+    [
+     48.514732,
+     -120.65874
+    ],
+    [
+     48.51483,
+     -120.65894
+    ],
+    [
+     48.51457,
+     -120.658554
+    ],
+    [
+     48.51469,
+     -120.65868
+    ],
+    [
+     48.514633,
+     -120.65864
+    ],
+    [
+     48.51457,
+     -120.65869
+    ],
+    [
+     48.514595,
+     -120.658775
+    ],
+    [
+     48.514862,
+     -120.659134
+    ],
+    [
+     48.514774,
+     -120.65891
+    ],
+    [
+     48.514717,
+     -120.65886
+    ],
+    [
+     48.514706,
+     -120.65887
+    ],
+    [
+     48.514713,
+     -120.65889
+    ],
+    [
+     48.514683,
+     -120.65886
+    ],
+    [
+     48.514698,
+     -120.65881
+    ],
+    [
+     48.514698,
+     -120.65884
+    ],
+    [
+     48.514664,
+     -120.6588
+    ],
+    [
+     48.514614,
+     -120.65864
+    ],
+    [
+     48.514587,
+     -120.65873
+    ],
+    [
+     48.514545,
+     -120.65871
+    ],
+    [
+     48.514534,
+     -120.658646
+    ],
+    [
+     48.51459,
+     -120.6586
+    ],
+    [
+     48.5146,
+     -120.65863
+    ],
+    [
+     48.51459,
+     -120.65859
+    ],
+    [
+     48.514614,
+     -120.65847
+    ],
+    [
+     48.514683,
+     -120.658554
+    ],
+    [
+     48.51467,
+     -120.65863
+    ],
+    [
+     48.514618,
+     -120.65846
+    ],
+    [
+     48.51461,
+     -120.65849
+    ],
+    [
+     48.51466,
+     -120.65864
+    ],
+    [
+     48.514626,
+     -120.65853
+    ],
+    [
+     48.514656,
+     -120.65857
+    ],
+    [
+     48.51459,
+     -120.65849
+    ],
+    [
+     48.514618,
+     -120.65851
+    ],
+    [
+     48.514603,
+     -120.65846
+    ],
+    [
+     48.514645,
+     -120.65847
+    ],
+    [
+     48.514683,
+     -120.658585
+    ],
+    [
+     48.51467,
+     -120.6586
+    ],
+    [
+     48.514664,
+     -120.65858
+    ],
+    [
+     48.51469,
+     -120.658516
+    ],
+    [
+     48.5147,
+     -120.65852
+    ],
+    [
+     48.514828,
+     -120.65882
+    ],
+    [
+     48.51484,
+     -120.65891
+    ],
+    [
+     48.51486,
+     -120.65894
+    ],
+    [
+     48.51487,
+     -120.65895
+    ],
+    [
+     48.514915,
+     -120.6589
+    ],
+    [
+     48.51494,
+     -120.658936
+    ],
+    [
+     48.514973,
+     -120.65893
+    ],
+    [
+     48.514946,
+     -120.65892
+    ],
+    [
+     48.51491,
+     -120.65886
+    ],
+    [
+     48.51494,
+     -120.65876
+    ],
+    [
+     48.514935,
+     -120.658745
+    ],
+    [
+     48.514923,
+     -120.65876
+    ],
+    [
+     48.514942,
+     -120.65876
+    ],
+    [
+     48.514942,
+     -120.65874
+    ],
+    [
+     48.514996,
+     -120.65865
+    ],
+    [
+     48.515,
+     -120.65862
+    ],
+    [
+     48.51498,
+     -120.65858
+    ],
+    [
+     48.515,
+     -120.65858
+    ],
+    [
+     48.515003,
+     -120.65853
+    ],
+    [
+     48.515015,
+     -120.65854
+    ],
+    [
+     48.515,
+     -120.65856
+    ],
+    [
+     48.515057,
+     -120.65854
+    ],
+    [
+     48.515106,
+     -120.65855
+    ],
+    [
+     48.515224,
+     -120.65849
+    ],
+    [
+     48.515266,
+     -120.65851
+    ],
+    [
+     48.515285,
+     -120.658485
+    ],
+    [
+     48.51531,
+     -120.65839
+    ],
+    [
+     48.515327,
+     -120.65838
+    ],
+    [
+     48.515293,
+     -120.65848
+    ],
+    [
+     48.51537,
+     -120.65831
+    ],
+    [
+     48.515278,
+     -120.65849
+    ],
+    [
+     48.515373,
+     -120.65826
+    ],
+    [
+     48.51543,
+     -120.6582
+    ],
+    [
+     48.51537,
+     -120.65838
+    ],
+    [
+     48.515408,
+     -120.65827
+    ],
+    [
+     48.515423,
+     -120.658264
+    ],
+    [
+     48.51542,
+     -120.65829
+    ],
+    [
+     48.515297,
+     -120.65847
+    ],
+    [
+     48.515297,
+     -120.65849
+    ],
+    [
+     48.515175,
+     -120.65854
+    ],
+    [
+     48.51517,
+     -120.65852
+    ],
+    [
+     48.515156,
+     -120.65852
+    ],
+    [
+     48.51513,
+     -120.65856
+    ],
+    [
+     48.51509,
+     -120.65847
+    ],
+    [
+     48.51512,
+     -120.65839
+    ],
+    [
+     48.51512,
+     -120.6583
+    ],
+    [
+     48.51508,
+     -120.658264
+    ],
+    [
+     48.515038,
+     -120.6583
+    ],
+    [
+     48.51505,
+     -120.65832
+    ],
+    [
+     48.515015,
+     -120.65831
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "Approach from Blue Lake TH into the basin below the east face (about 1.5-2 hr), climb the 4 pitches, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "fromTo": "Car-to-car day climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A light single rack through hand size with a set of nuts is ample for the moderate climbing.",
+   "what_to_bring": [
+    "helmet",
+    "rock shoes",
+    "light rack",
+    "slings"
+   ],
+   "pro_tips": [
+    "A good first route on Liberty Bell for parties newer to alpine rock.",
+    "Start early to avoid afternoon storms.",
+    "Keep an eye on route-finding to the true summit."
+   ],
+   "watch_out": [
+    "afternoon thunderstorms",
+    "route-finding to the summit",
+    "rockfall in the descent gully"
+   ],
+   "pro_needs": "Modest rack; the climbing is moderate and well-featured.",
+   "best_season": "Summer into early fall for dry, warm granite.",
+   "high_point_ft": 7720,
+   "aid_grade": null,
+   "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the highway, round its east end, and follow a cairned boot path north into the forest. The path climbs through timber and breaks out onto the talus field directly below the East Face after roughly 20-30 minutes and 0.5 mile (~600-800 ft gain). No water source along the way; watch for the cairned track being hard to follow in low light, and loose talus underfoot at the base.",
+   "descent_text": "Because this is a shorter (4-pitch) line on the East Face rather than a full summit route like Liberty Crack or Thin Red Line, the standard descent is the same notch-based line used across Liberty Bell: downclimb east ~100 ft through trees/loose rock to the 2-bolt station, then one rappel to an intermediate stance followed by a double-rope rappel (or two single-rope raps) into the Liberty Bell-Concord notch — 2 rappels on bolted anchors — then downclimb the scree gully to the climbers' path. Note that because this route (like Liberty Crack) is approached from the East Face pullout rather than Blue Lake Trailhead, returning via the west-side notch means either a car shuttle or a roughly 1-mile roadside walk back to your vehicle; parties who top out near Liberty Crack's finish sometimes instead use that route's dedicated 6-bolt rap line or the 4-double-rope-rap line off M&M Ledge to return directly to the East Face base.",
+   "bail": "Rappel or downclimb to the Beckey descent; retreat is straightforward on this moderate terrain.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Lower-angle face and crack climbing off the East Face talus, easier than the neighboring bolted testpieces at this same cluster of routes.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "The technical crux of this shorter, lower-grade East Face line: sustained crack and face moves on solid Washington Pass granite.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Easier climbing continues up the face toward the upper mountain.",
+     "pitch": 3,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Final easy pitch/scramble; most parties then descend via the standard Beckey Route notch rappels rather than topping out directly above this line.",
+     "pitch": 4,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 30
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach from Blue Lake TH into the basin below the east face (about 1.5-2 hr), climb the 4 pitches, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "hours": 9,
+      "miles": 5,
+      "title": "Car-to-car day climb",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 16,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "7:15 AM",
+        "label": "Reach base",
+        "detail": ""
+       },
+       {
+        "time": "7:45 AM",
+        "label": "Start climbing",
+        "detail": ""
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Top out",
+        "detail": ""
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb the East Face and descend the Beckey gully"
+     }
+    ],
+    "totalNote": "A single roadside day, about 9 hrs car-to-car, matching the Beckey Route timing since they share the descent."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass at the Blue Lake Trailhead",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "Standard national forest day-use rules; Leave No Trace.",
+    "permit": "None required for day climbing",
+    "closures": "Highway 20 (North Cascades Highway) over Washington Pass closes seasonally in winter.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest (Washington Pass / Okanogan NF)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "WA-20 (North Cascades Highway) to Blue Lake Trailhead",
+    "status": "Open seasonally",
+    "driveNote": "From the east (Mazama/Winthrop) or west via Highway 20 to the Blue Lake Trailhead near Washington Pass.",
+    "seasonalGate": "Washington Pass closed in winter (typically late fall to spring)"
+   },
+   "climate": {
+    "typical": "Sunny east-slope granite; afternoon thunderstorms common in summer.",
+    "bySeason": {
+     "fall": "Crisp and dry; great climbing before the highway closes.",
+     "spring": "Snow lingering; highway may still be closed.",
+     "summer": "Prime season; warm dry granite, afternoon storm risk.",
+     "winter": "Highway closed; not accessible."
+    },
+    "forecastZone": "Washington East Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies. Note: Washington Pass straddles the Chelan/Okanogan county boundary; confirm jurisdiction locally.",
+    "county": "Chelan County / Okanogan County (summit straddles the line)",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Overshadowed by the Beckey Route and the west-face classics; low traffic, likely only occasional ascents per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Blue Lake Trailhead approach around to the east side",
+     "packWeight": "Light alpine rack, roughly 12-15 lb"
+    },
+    "approachTime": "Roughly 1.5-2 hours from the Blue Lake Trailhead, potentially longer approaching around to the east side",
+    "requiredSkills": [
+     "moderate multi-pitch leading around 5.6",
+     "route-finding to the summit block on a less-documented line",
+     "rappel descent",
+     "comfort on exposed rock"
+    ],
+    "experienceLevel": "Competent alpine rock leader comfortable on moderate terrain around 5.6 with route-finding to the summit block"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer into early fall for dry, warm granite",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Warm dry granite, prime conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Approach can still be damp or snow-affected early in the month",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cooler and drier",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+     "probability": "Afternoon storm buildup"
+    },
+    "exposure": "Moderate exposure; route-finding uncertainty to the summit block and rockfall in the descent gully",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Little indexed beta found beyond what is already on file - this is a minor, obscure line on the peak",
+     "No crowd or party-count sources located",
+     "No dedicated NWAC or seasonal timing data for this exact aspect",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/6PBH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "First ascent party/date for this specific 4-pitch East Face line is unknown -- the previously-stored FA (Marts & McPherson, June 1966) was Lexington Tower's East Face FA, mistakenly copied onto this row; removed rather than left wrong."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.515435,
+    "peakLng": -120.658365,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "This route's header facts (FA: Steve Marts & Don McPherson, June 1966; 10 pitches; 5.9+) were copied from Lexington Tower's East Face, a different nearby formation -- this row's own pitch_detail/descent_text/itinerary consistently describe a shorter, easier 4-pitch 5.6 line that stays on Liberty Bell. Fixed pitches/length/grade to match the on-file pitch_detail; fa left blank pending a human source for this specific short line's actual first ascent.",
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Reached via ~100 ft downclimb through trees/loose rock from the summit; rappels to an intermediate stance.",
+     "anchor": "2-bolt station",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Double-rope rappel (or two single-rope rappels) down to the Liberty Bell-Concord notch.",
+     "anchor": "bolted anchor at intermediate stance",
+     "lengthM": 55
+    }
+   ],
+   "rappel_count_note": "Shares the standard Liberty Bell notch descent with the Beckey Route and Northwest Face. The count depends on rope configuration - the lower section is one double-rope rappel or two single-rope rappels, so a party on a single 60 m rope should expect one more rappel than the number shown. The East Face enters this line lower than the Beckey Route does.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "East Face from the SR-20 hairpin pullout",
+     "hours": "0.5-1",
+     "notes": "Shared with every route on this wall: park at the hairpin turnout on SR-20 just east of Washington Pass, walk back west along the shoulder to the small pond on the south side of the road, round its east end, and follow the cairned boot path north into the trees. It climbs steeply through timber and comes out on the talus directly beneath the East Face in roughly half an hour to an hour.\n\nNo water on the way. The cairns are hard to follow in the dark.\n\nIf you finish on the true summit and descend the standard west-side notch line you will be about a mile of highway from your car, so plan a shuttle or accept the road walk.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "loose talus at the base",
+      "cairned path easy to lose before dawn",
+      "rockfall from parties higher on the wall",
+      "descent by the west-side notch leaves you at the wrong trailhead"
+     ],
+     "baseFinding": "The East Face carries a dense cluster of routes in a short stretch of wall, so identify your line off the big features before you leave the talus rather than by picking the nearest crack. The reference point everybody uses is the large roof high on the left-hand part of the wall — the Lithuanian Lip — which Liberty Crack passes on its right. Anything you start well right of that roof-and-crack system is a different route. Approach ledges at the base are third and fourth class and traverse in from the left, so the start of a line is usually a short sideways walk from where the talus meets the rock, not straight up from it."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, about a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "east face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "area_id": "wa_lexington_tower",
+   "name": "East Face",
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 10,
+   "length_m": 244,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Steve Marts, Don McPherson (1966)",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "standard rack with gear to 6 inches",
+    "#4 cam used frequently",
+    "stoppers",
+    "long runners"
+   ],
+   "hazards": [
+    "A snowfield lingers at the base early season, affecting how you gain the rock.",
+    "Offwidth and chimney sections are strenuous and can feel committing.",
+    "You do not tag the true summit; the descent gully has loose third-class downclimbing."
+   ],
+   "verif": null,
+   "overview": "Lexington Tower's East Face is a striking 10-pitch alpine rock climb on the prominent east wall of the Liberty Bell skyline, featuring an exposed no-hands traverse, a crux lieback, and memorable offwidth pitches including one with a jammed 2x4 for pro.",
+   "beta": "Start on low-angle dihedral left of Lexington-Minuteman gully. Ascend via cracks and chimneys; crux is pitch 5 with exposed traverse. Upper pitches are off-width and chimney climbing. Exit via notch, descend west gully. Standard trad rack essential; doubles to #3 plus a #4, with a single #5 or #6 useful for the short wide sections.",
+   "turnaround": "If the base snowfield or weather looks marginal, reconsider; the route is long for its grade.",
+   "auto_generated": false,
+   "alpine_grade": "IV",
+   "rock_grade": "5.9+",
+   "ice_grade": null,
+   "gain_ft": 2171,
+   "loss_ft": 2171,
+   "dist_km": 10.46,
+   "max_angle": 70,
+   "rappels": "0 — the standard descent is a walk-off down a short 3rd-class gully from the notch; no rappels required. A ~7-rappel line straight down the face is a documented but non-standard alternative some parties use in bad weather.",
+   "commitment": "IV",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "Cell service unreliable. Satellite communicator (Garmin InReach, PLB) recommended.",
+   "descent": "From the notch below the summit, descend west into the skier's-left gully and traverse north to the Liberty Bell cattle trail back to the Blue Lake trail.",
+   "obj_haz": [
+    "Significant runout on P2",
+    "Exposed ~30-ft no-hands traverse and difficult lieback on the P5 crux",
+    "Chunky/loose rock on the upper pitches",
+    "Old fixed gear (a 2x4 with sling) in the offwidth pitch — inspect before trusting"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5450,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 5450
+    },
+    {
+     "lat": 48.514255,
+     "lng": -120.657465,
+     "elev": null,
+     "name": "Lexington Tower notch",
+     "type": "Summit",
+     "distMi": 1.2,
+     "elevFt": null
+    }
+   ],
+   "gpx": [
+    [
+     48.521,
+     -120.644
+    ],
+    [
+     48.514255,
+     -120.657465
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 8.5,
+    "summitTimeHrs": 8.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "A long single day up straightforward, well-featured cracks, chimneys, and offwidths on Lexington's 800-ft east wall. Approach is short and quick; the climbing itself is the crux of…",
+      "fromTo": "East Face, car-to-car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A standard rack with gear to 6 inches; a #4 Camalot gets used a lot and a 6-inch piece helps the wide sections, though confident wide-crack climbers can skip it. Two newer bolts protect the offwidth pitch with the jammed 2x4. Bring long runners.",
+   "what_to_bring": [
+    "helmet",
+    "60m rope",
+    "approach shoes",
+    "wide cams",
+    "headlamp"
+   ],
+   "pro_tips": [
+    "A wedged piece of 2x4 in the offwidth crack functions as fixed pro on one of the wide pitches — back it up, don't rely on it alone.",
+    "Bring a real #4 Camalot (or two); it sees repeated use through the wide pitches, while a single #6 covers the widest slot for parties who don't want to stem past it.",
+    "The crux comes at pitch 5 — an exposed traverse into a lieback — and the offwidth pitch above it has two bolts alongside the 2x4 for extra protection."
+   ],
+   "watch_out": [
+    "base snowfield",
+    "strenuous wide cracks",
+    "loose descent gully"
+   ],
+   "pro_needs": "Wide-friendly rack; the crux lieback and offwidth pitches reward big gear.",
+   "best_season": "Late June through September once the base snowfield recedes.",
+   "high_point_ft": 7560,
+   "aid_grade": null,
+   "approach": "Park at the pond pullout on the south side of SR-20, about 1.2 miles east of Washington Pass (a small dirt turnout marked by a roadside pond). The climbers' path starts just left (west) of the highway's east-side guardrail/barrier and immediately begins gaining elevation through forest. It pops out of the trees onto an open scree-and-boulder slope that climbs directly toward the Liberty Bell group towers, with Lexington Tower's east face visible above. Figure 30-45 minutes (some parties report closer to an hour) of steep hiking/scrambling from the pullout to the base of the wall, gaining several hundred feet over roughly a third of a mile. There are two common ways to gain the actual start depending on snow coverage: a gully/snowfield left of the face, or scrambling in from climber's right on rock. Early-to-mid season the approach gully can hold firm snow well into summer (ice axe/traction useful); by late August it is typically dry talus and easily avoided. No reliable water source on this short approach — carry what you need from the car.",
+   "descent_text": "The standard descent is a walk-off, not a rappel-the-face descent. From the notch below the true summit (not the summit itself), head west and downclimb a short gully on skier's left — roughly 20 feet of 3rd-class terrain. Old rap slings are present in this gully but most parties simply downclimb rather than bother rigging a rappel. From the base of the gully, traverse right (north) until you intersect the well-worn climbers'/cattle trail that also serves Liberty Bell, and follow it down to join the Blue Lake Trail. Lower down, watch for a faint climbers' path that cuts back toward the highway and saves close to a mile of road-walking versus following Blue Lake Trail all the way to its own trailhead. Some parties instead choose to rappel directly back down the East Face route itself (useful in bad weather or if the walk-off is unfamiliar/snow-covered) — one documented descent of the face took 7 double-rope (60m) rappels, built from a mix of slung horns/rap rings and a couple of fixed/bolted anchors encountered on route. That face-rappel line is not the recommended standard descent, just an alternative to the normal walk-off descent.",
+   "bail": "Belay options are plentiful and pitches can be linked or reversed; the descent gully also provides an escape from the notch.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Crack system then a left traverse into slopey climbing with tricky pro placements.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Up and slightly right to the base of an obvious left-facing corner; tree belay.",
+     "pitch": 2,
+     "anchor": "Tree",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Climb the left-facing corner to a ledge with a tree belay.",
+     "pitch": 3,
+     "anchor": "Tree",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Up and left through hand-to-finger cracks to a stance below a roof and a dead-end chimney.",
+     "pitch": 4,
+     "anchor": "Gear",
+     "lengthM": 25
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.9+",
+     "notes": "Route crux: an exposed no-hands traverse right for 30 feet, then a difficult lieback into a hand/finger crack.",
+     "pitch": 5,
+     "anchor": "Gear",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.8+",
+     "notes": "Offwidth climbing past a jammed 2x4 (fixed pro) and two bolts to an alcove.",
+     "pitch": 6,
+     "anchor": "2-bolt anchor (alcove)",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Short chimney leads to blockier terrain and another offwidth section.",
+     "pitch": 7,
+     "anchor": "Gear",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Easier low-fifth-class rock trending up and left past a few blocky steps; many parties simul-climb this section to save time before the upper headwall.",
+     "pitch": 8,
+     "anchor": "Gear",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Continue on moderate terrain toward a tree belay.",
+     "pitch": 9,
+     "anchor": "Tree",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "4th",
+     "notes": "Exposed catwalk traverse to the notch below the true summit, where the route unropes for the walk-off descent.",
+     "pitch": 10,
+     "anchor": "Walk-off (unroping notch)",
+     "lengthM": 30
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "A long single day up straightforward, well-featured cracks, chimneys, and offwidths on Lexington's 800-ft east wall. Approach is short and quick; the climbing itself is the crux of the day's time budget, especially for parties less practiced at wide-crack technique.",
+      "hours": 8.5,
+      "miles": 6.5,
+      "title": "East Face, car-to-car",
+      "gainFt": 2171,
+      "lossFt": 2171,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave the pond pullout",
+        "detail": "An early start is standard given the route's length."
+       },
+       {
+        "time": "+30-45 min",
+        "label": "Approach to the base of the East Face",
+        "detail": ""
+       },
+       {
+        "time": "+6-8 hr",
+        "label": "Climb the 10 pitches",
+        "detail": "5.9+ cracks and chimney/offwidth sections; slower for parties unfamiliar with wide-crack technique."
+       },
+       {
+        "time": "Midday/afternoon",
+        "label": "Reach the notch below the summit",
+        "detail": ""
+       },
+       {
+        "time": "+1-1.5 hr",
+        "label": "Descend the gully to the Blue Lake climbers' trail",
+        "detail": "West into the skier's-left gully, then north to the Liberty Bell cattle trail and Blue Lake Trail."
+       }
+      ],
+      "objective": "Climb the 10-pitch East Face and return to the trailhead same day"
+     }
+    ],
+    "totalNote": "A long single day: 8-10+ hours car-to-car for the 10-pitch East Face."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Part of Liberty Bell Group; multiple aspect routes (north face and east face most common); popular climbing destination",
+     "elevation": "7,560 feet",
+     "permit_cost": "Free",
+     "permit_type": "No overnight permit required",
+     "land_manager": "USFS Okanogan-Wenatchee National Forest",
+     "forest_contact": "(509) 664-9200 - Okanogan-Wenatchee National Forest",
+     "wilderness_zone": "Not in designated wilderness; Liberty Bell Group area, Washington Pass",
+     "parking_pass_cost": "$5 per day or $30 annual",
+     "seasonal_closures": "Washington Pass (SR 20) typically closed early December through April/May; closing typically falls in early December per WSDOT, with the exact opening date varying year to year with snowpack (and, in some years, road-repair work).",
+     "special_requirements": "Standard Forest Service regulations apply; best climbing season late June-September",
+     "parking_pass_required": "Northwest Forest Pass"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No overnight permit required",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Not in designated wilderness; Liberty Bell Group area, Washington Pass",
+    "landManager": "USFS Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Same Okanogan-Wenatchee National Forest corridor as the rest of the Liberty Bell group; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park."
+    }
+   },
+   "road": {
+    "name": "North Cascades Highway (SR 20)",
+    "status": "Paved",
+    "driveNote": "Park at the pond pullout about 1.2 miles east of Washington Pass.",
+    "seasonalGate": "Closed in winter"
+   },
+   "climate": {
+    "fall": "Good crisp conditions into September/early October before the highway closes for winter",
+    "spring": "Snow-covered approaches and gullies well into June in heavy-snow years",
+    "summer": "Prime climbing season, June-September, with a risk of afternoon convective storms",
+    "winter": "Inaccessible; SR-20 is gated closed",
+    "typical": "Best late June through September.",
+    "bySeason": {
+     "fall": "Short cool windows",
+     "spring": "Base snowfield large; not ideal",
+     "summer": "Prime; afternoon storm risk",
+     "winter": "Highway closed"
+    },
+    "forecastZone": "WA Cascades east slopes north"
+   },
+   "emergency": {
+    "notes": "Technical/high-angle rescues here are typically handled by Okanogan County Search & Rescue with helicopter support from Aero Methow Rescue Service, based in Winthrop.",
+    "county": "Chelan / Okanogan (summit straddles county line)",
+    "rangerStation": "Methow Valley Ranger District, Winthrop, WA (Okanogan-Wenatchee NF)",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA; or Mid-Valley Hospital, Omak, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in July-August; midweek days are much quieter",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate - likely a few dozen parties per season; a recognized Liberty Bell Group classic but distinctly less trafficked than the Beckey Route on Liberty Bell itself, which is the area's main crowd magnet"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Short but steep approach (roughly 1 hour to the base); fitness matters more for the long multi-pitch day (~9.5 hrs car-to-car) than for approach distance",
+     "packWeight": "Light alpine rack plus water/layers, roughly 15-20 lbs; no bivy gear needed for a single push"
+    },
+    "approachTime": "About 1 hour from the road to the base of the route",
+    "requiredSkills": [
+     "Confident trad leading at 5.9+ with gear-placement efficiency for 10 pitches",
+     "Offwidth and chimney technique - the route is known for strenuous wide cracks",
+     "Multi-pitch systems: efficient belay transitions, rope management, and route-finding",
+     "Comfortable downclimbing loose 3rd-class terrain on the descent gully",
+     "Early-season snow travel (kick steps/glissade skills) if climbing before the base snowfield fully recedes"
+    ],
+    "experienceLevel": "Solid intermediate-to-advanced trad/alpine climber - this is not a beginner multi-pitch objective given sustained 5.9+ climbing, wide-crack technique, and a full 10-pitch alpine day"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June through September once the base snowfield recedes; July-August is the most reliable stretch",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Prime conditions with the snowfield mostly receded, but afternoon thunderstorms are a real risk on this exposed east face",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Base snowfield is often still large in late June, complicating the start of the route; cold mornings possible",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Warmest, most stable stretch of the season; still watch for afternoon storm buildup",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Short cool weather windows with generally stable weather, but shorter daylight and possible early-season snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Best late June through September; base snowfield makes spring travel poor, and SR 20 closes seasonally in winter, closing off access entirely",
+     "probability": "Afternoon thunderstorms common in July-August on this exposed east-facing wall - an early start is recommended to be off the upper pitches before storms build"
+    },
+    "exposure": "Sustained exposure across 10 pitches of 5.9+ crack, corner, chimney, and offwidth climbing; the route does not top out on the true summit, and the descent gully involves loose, committing 3rd-class downclimbing where a slip or rockfall onto teammates is the main consequence",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route; falls within NWAC's East Slopes North winter forecast zone, but that forecast does not apply to the June-September climbing season",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No route-specific party-per-season count was found; the crowd estimate is inferred from general Liberty Bell Group traffic reports (Beckey Route noted as the area's main bottleneck) rather than a direct count for this route",
+     "No NWAC avalanche zone applies directly since this is a dry-season rock climb, so avalanche fields are marked N/A rather than sourced from a live forecast",
+     "Mountain Project star rating / vote count for the route could not be retrieved from search results to quantify popularity precisely",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 5,
+    "technical": 3,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.514255,
+    "peakLng": -120.657465,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "The hairpin pond pullout, the steep forest path, and the treed ledge below the east face",
+     "notes": "Park at the pond pullout on the south side of SR-20 about 1.2 miles east of Washington Pass, a small dirt turnout marked by a roadside pond. The climbers' path starts just left, west, of the highway's east-side guardrail and immediately begins gaining elevation through forest.\n\nIt pops out of the trees onto an open scree-and-boulder slope that climbs directly toward the Liberty Bell group towers, with Lexington Tower's east face visible above. Figure 30-45 minutes, some parties closer to an hour, of steep hiking and scrambling from the pullout to the base, gaining several hundred feet over roughly a third of a mile. No water; carry what you need from the car.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "Frequent rockfall in both gullies flanking the treed ledge",
+      "A 5.8 pitch as one of the two ways to gain the base",
+      "Snow lingering in the talus into early-mid summer",
+      "No water on the approach",
+      "A descent that finishes at the Blue Lake Trail, not at the pond pullout"
+     ],
+     "baseFinding": "The base is a treed ledge, and there are two ways onto it and snow decides which. From the talus, either climb a roped 5.8 pitch around a protruding block, or scramble one of the gullies flanking the ledge. Snow lingering in the talus and at the base of the wall into early-mid summer affects whether you gain the ledge from the left or the right.\n\nSo the arrival test is a ledge with trees on it, part way up the wall, not ground level. Trees underfoot on a bench beneath a steep east-facing wall is the confirmation, and it works without seeing the tower above.\n\nThe discriminator against the other route from the same ledge, and it is a left-right test: Tooth and Claw begins near the left side of the treed ledge and angles rightward across slabs to its first bolt. If you are traversing right across slabs looking for a bolt, you are on Tooth and Claw, a 5.12a, not on the East Face.\n\nHelmet up before the gullies, not after: both gullies flanking the ledge see fairly frequent rockfall.\n\nWhere the day ends, which is on the other side of the ridge: the standard descent is a walk-off from the notch below the true summit, not from the summit itself. Head west and downclimb a short gully on skier's left, about twenty feet of third class; old rap slings are present but most parties downclimb. From the base of that gully, traverse right, north, until you intersect the well-worn climbers' and cattle trail that also serves Liberty Bell, and follow it down to the Blue Lake Trail. Lower down, watch for a faint climbers' path that cuts back toward the highway and saves close to a mile of road walking."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, about a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "east face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": [
+  "wa_ottohorn_west_ridge",
+  "wa_liberty_bell_east_face"
+ ]
+}

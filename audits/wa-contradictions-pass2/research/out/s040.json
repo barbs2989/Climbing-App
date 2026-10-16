@@ -1,0 +1,287 @@
+{
+ "file": "s040.json",
+ "results": [
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Day-1 gain to Upper Royal Basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: 1,800 ft is too low. A 2017 party's GPS gave 3,600 ft gain (10.7 mi) for the hike-in day to Upper Royal Lake at 5,720 ft, and the park gives 2,550 to 5,100 ft to Royal Lake alone. But no source gives a car-to-car gain for Johnson alone (the 2017 summit day combined Clark and Johnson: 3,760 ft), so raising Day 1 would push the itinerary total well past gain_ft 5,180 without a sourced total to match. Settle with a sourced Johnson-only car-to-car gain.",
+   "sources": [
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8024957",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Final moves to the summit",
+   "verdict": "fixed",
+   "correct_value": "The route finishes up the rightmost chimney (class 4) on the summit block, reached by a ledge south from the lower snowfield, the upper snowfield and a gully behind Sweat Spire and Gasp Pinnacle; descent reverses it.",
+   "evidence": "The fresh pitch_detail already describes the rightmost-chimney finish; the itinerary and descent still describe a SE-ridge gully off a corkscrew ledge. Resolved together with the discovered corkscrew finding below (same patches): two independent trip reports (2009, 2017) and a 2019 report all finish Johnson via the summit-block chimney.",
+   "sources": [
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8024957",
+    "http://www.nwhikers.net/forums/viewtopic.php?p=529652",
+    "https://peakery.com/mount-johnson-washington/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Johnson: drop ~100 ft from the Clark-Johnson col, lower snowfield, narrow ledge south to the upper snowfield, gully behind Sweat Spire/Gasp Pinnacle, rightmost class 4 chimney on the summit block. The cairned class 3 crack around a corner with ledges is Mount Clark's route.",
+   "evidence": "A 2017 trip report climbing both peaks from the col describes Clark's route as ledges around a corner with a steep downward class 3 crack, and Johnson's as: drop 100 ft, lower snowfield to its upper-left corner, narrow ledge left to the upper snowfield, then the rightmost chimney on the summit block. A separate 2009 party describes the same ledge south toward the basin below Gasp and Sweat and the summit-block chimney (they used a 5th-class notch variant between the spires). A 2019 report likewise gives class 3 around Gasp Pinnacle then a class 4 chimney. Itinerary day 2, schedule, timing section, descent, the 'Corkscrew ledge crux' waypoint (elevation now unknown), hazards[4] and the approach variant's crack text were Clark's and are rewritten to Johnson's line.",
+   "sources": [
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8024957",
+    "http://www.nwhikers.net/forums/viewtopic.php?p=529652",
+    "https://peakery.com/mount-johnson-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "find": "the Corkscrew ledge route",
+     "replace": "the ledges and summit chimney"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "find": "the Corkscrew ledge route",
+     "replace": "the ledges and summit chimney"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "drop into the bowl below, then pick up the cairned ledge system that corkscrews around toward the SE ridge. A short class 3 crack downclimb accesses the ledge traverse, followed by a loose gully and class 3-4 moves onto the summit block. Reverse the entire route to descend, including re-locating the cairned crack and re-crossing the notch back to camp.",
+     "replace": "drop about 100 ft and climb Johnson's lower snowfield to its upper-left corner, then take the narrow, exposed ledge south onto the upper snowfield. A loose, low-angle gully and the foot of a low wall lead around behind Sweat Spire and Gasp Pinnacle to the summit block, where the rightmost chimney (class 4) gains the crest just below the top. Reverse the entire route to descend, facing in on the chimney, and re-cross the notch back to camp."
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "drop into the bowl below, then pick up the cairned ledge system that corkscrews around toward the SE…",
+     "replace": "drop about 100 ft and climb Johnson's lower snowfield, then take the narrow ledge south toward the summit chimney…"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Cross any remaining snow/ice field and drop into the bowl below.",
+     "replace": "Drop about 100 ft and climb Johnson's lower snowfield to its upper-left corner."
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Locate the cairned class 3 crack and downclimb onto the corkscrew ledge traverse.",
+     "replace": "Traverse the narrow, exposed ledge south onto the upper snowfield."
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "Gully and SE ridge",
+     "replace": "Gully and summit chimney"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Climb the loose gully and class 3-4 moves toward the summit block.",
+     "replace": "Climb the loose gully around behind Sweat Spire and Gasp Pinnacle, then the rightmost chimney (class 4) on the summit block."
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "including re-finding the crack and ledge.",
+     "replace": "including downclimbing the chimney and re-crossing the ledge."
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "downclimb the SE-ridge gully back onto the corkscrew ledge, re-locate the cairned class 3 crack to regain the ledge traverse, cross back over",
+     "replace": "downclimb the summit chimney facing in, descend the loose gully to the upper snowfield, re-cross the narrow ledge to the lower snowfield, cross back over"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "name"
+     ],
+     "expect": "Corkscrew ledge crux",
+     "value": "Narrow ledge traverse"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "expect": "Ledge system wraps the south/east side of the summit block; where it looks like it cliffs out at a corner, a cairned Class 3 crack marks the correct up/downclimb — easy to miss in fog.",
+     "value": "From the upper-left corner of Johnson's lower snowfield, a ledge only a few feet wide leads south past an outcrop onto the upper snowfield above a loose, outsloping drop."
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elev"
+     ],
+     "expect": 7300,
+     "value": null
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      4
+     ],
+     "find": "route-finding crux at a cairned class 3 downclimb crack on the ledge system that is easy to miss",
+     "replace": "route-finding trap above the upper snowfield: exiting too far right leads into steepening gullies under the spires that are hard to reverse"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "A cairned Class 3 crack on the ledge system that is easy to walk past",
+     "replace": "Gullies under Sweat Spire and Gasp Pinnacle that steepen into rounded steps if you leave the upper snowfield too far right"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The ledge system then wraps the south and east of the summit block until it reaches a corner where it looks for all the world as though it cliffs out; a cairned Class 3 crack around that corner is the passage, and missing it in cloud is the recognised crux of the route-finding. Above that a final Class 4 push on loose, rotten rock gains the top. If the rock has gone easy and you are walking broad scree with no ramp above you, you have dropped below the ledge and should climb back to it.",
+     "replace": "The key passage is a narrow ledge leading left (south) from the top of Johnson's lower snowfield onto the upper snowfield; from there a rubbly gully and the foot of a low wall lead behind the spires to the summit block, where the rightmost of several chimneys is the Class 4 finish on loose, rotten rock. Leaving the upper snowfield too far right puts you in gullies under the spires that steepen into rounded steps and are hard to reverse."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Summit-day hours from high camp",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "partner_requirements says ~11 hrs from high camp; timing and itinerary day 2 say 9. The only camp-based figure found is 12 hrs for Clark AND Johnson together from Upper Royal Basin (2017); no Johnson-only duration was found. Settle with a published Johnson-only camp-to-camp time.",
+   "sources": [
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8024957"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Summit-day hours from high camp",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Duplicate of the previous entry (same dispute listed twice in the input): partner_requirements says ~11 hrs from high camp; timing and itinerary day 2 say 9. The only camp-based figure found is 12 hrs for Clark AND Johnson together from Upper Royal Basin (2017); no Johnson-only duration was found. Settle with a published Johnson-only camp-to-camp time.",
+   "sources": [
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8024957"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Summit-day schedule span vs day hours",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Schedule spans 5:00 AM to 3:00 PM (10 hrs) against 9 hrs stated for the day. No Johnson-only summit-day duration found (2017: 12 hrs for Clark plus Johnson), so neither figure can be chosen. Settle with the same Johnson-only time as above.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

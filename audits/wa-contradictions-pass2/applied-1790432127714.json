@@ -1,0 +1,62 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Treeline elevation / where the route joins Monitor Ridge"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "aspect",
+   "path": [],
+   "fact": "Aspect of the route"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "face",
+   "path": [],
+   "fact": "Aspect of the route"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain vs itinerary total and overview"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.131,
+      "lng": -122.171,
+      "elev": 2680,
+      "name": "Marble Mountain Sno-Park",
+      "note": "Standard winter/spring trailhead; climbing permit required above 4,800 ft year-round.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.191484,
+      "lng": -122.195848,
+      "elev": 8363,
+      "name": "Mount St. Helens Crater Rim",
+      "note": "Breaks treeline near 4,600 ft, joins the Monitor Ridge route near 7,000 ft, then follows the crater rim west to the true high point.",
+      "type": "Summit",
+      "distMi": 5.4
+     }
+    ],
+    "aspect": "W",
+    "face": "Worm Flows lava-flow ridge (south-southwest side)",
+    "gain_ft": 5563
+   }
+  }
+ ]
+}

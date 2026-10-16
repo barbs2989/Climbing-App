@@ -38,10 +38,10 @@ jobs:
   counts:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
       # No npm install -- the script uses fetch and the REST API only, so this
       # keeps working even when the build is broken.
       - name: Does every area's cached route_count match the truth?
@@ -52,3 +52,41 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/check-area-counts.mjs --sql
+      # Same read, second question: did a DUPLICATE route land? The database refuses them (0216/0218);
+      # this is the check that the refusal held. Rows only -- CI has no management token, so whether
+      # the triggers are still installed is the hand-run half (npm run check:catalog-duplicates).
+      - name: Has any area gained a duplicate route?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-catalog-duplicates.mjs --rows-only
+      # Third question on the same read: is any PLACE filed twice? 0221 folded 268 same-place area
+      # pairs (MP's parallel bouldering/ice trees among them) and the MP import is still adding
+      # states. Pairs READ as different places ("West Face" of two domes) are listed in
+      # scripts/data/area-duplicates-baseline.json; anything else fails. Anon key, no DB link.
+      - name: Has any place been filed twice?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-area-duplicates.mjs
+      # Fourth: does any area NAME still carry the export's sort label ("a1. The Uberfall - left")?
+      # The importer strips them as it creates; duplicates the label hid are listed in
+      # scripts/data/area-sort-labels-held.json until folded. Anon key, no DB link.
+      - name: Does any area name carry a sort label?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-area-sort-labels.mjs
+      # Fifth: is any area named only by DISCIPLINE ("Bouldering", "Other Climbs", "CO Ice & Mixed")?
+      # 0259 folded 147 of them into the places they are; the importer steps through such a level of
+      # the source's path rather than re-creating it. Real names the rule matches are listed in
+      # scripts/data/generic-area-names-exempt.json. Anon key, no DB link.
+      - name: Is any area named only by discipline?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-generic-area-names.mjs

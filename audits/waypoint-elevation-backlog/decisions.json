@@ -1,0 +1,869 @@
+[
+ {
+  "op": "none",
+  "route": "wa_mount_adams_adams_glacier",
+  "pin": "Junction|Adams Glacier Base",
+  "reason": "Both halves are wrong, so no allowed op fits. Recommend removing the pin, or clearing the coordinate and nulling the height together.",
+  "claim": 8000,
+  "box": "4994-5216",
+  "evidence": "The coordinate 46.285,-121.515 is a rounded guess on a 5-point sketch. It sits NE of the Killen Creek trailhead (ground 5145), off the mountain. The route's own prose puts the toe of the Adams Glacier at '~7,000–7,300 ft', so the 8000 claim does not match the named place either. No sibling exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_adams_adams_glacier",
+  "pin": "Campsite|High Camp",
+  "oldLat": 46.27,
+  "oldLng": -121.53,
+  "claim": 7000,
+  "box": "4945-5715",
+  "evidence": "The prose says 'High Camp at about 7,000 ft has established flat dry sites' at the end of High Camp Trail (~6,900 ft), so the 7000 claim is right. The coordinate is a rounded 46.27,-121.53 on a 5-point sketch with ground 5323, below the PCT junction, and is not the camp. The listed siblings are other mountains' high camps, so no donor exists."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_adams_north_ridge",
+  "pin": "Junction|North Ridge Base",
+  "reason": "Both halves are unsupported: the coordinate is plainly wrong, and the 8000 claim has no published or prose backing. Recommend removing the pin, or clearing the coordinate and nulling the height together.",
+  "claim": 8000,
+  "box": "5059-5592",
+  "evidence": "The coordinate 46.275,-121.52 is a rounded guess on a 4-point sketch (ground 5211), north of the High Camp pin and away from the summit. The ridge is SE of High Camp. The prose gives no height for the foot of the North Ridge. The siblings are other peaks' North Ridges."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_adams_north_ridge",
+  "pin": "Campsite|High Camp",
+  "oldLat": 46.27,
+  "oldLng": -121.53,
+  "claim": 7000,
+  "box": "4945-5715",
+  "evidence": "This is the same pin as Adams Glacier #2 (the shared Killen Creek High Camp). The prose says 'Camping is spread between 7,000 and 7,600 ft' and the Adams Glacier prose says 'High Camp at about 7,000 ft', so the claim is right. The rounded coordinate has ground 5323 and is not the camp."
+ },
+ {
+  "op": "clear",
+  "route": "wa_hoodoo_peak_sawtooth_scramble",
+  "pin": "Water|Burn-zone spring",
+  "oldLat": 48.246926,
+  "oldLng": -120.33733,
+  "claim": 5280,
+  "box": "7180-7679",
+  "evidence": "The pin's own distMi is 1.4, but the coordinate lies on the real 91-point track at mile 5.17, beside the historic cabin (ground 7281). The coordinate is provably misplaced. The height is UNVERIFIED, with no published number: it only falls inside the prose's bracket of the trailhead at ~4,430 ft and the cabin at ~5 mi, below Libby Lake at 7,740."
+ },
+ {
+  "op": "clear",
+  "route": "wa_hoodoo_peak_sawtooth_scramble",
+  "pin": "Junction|Lake Chelan-Sawtooth Wilderness boundary",
+  "oldLat": 48.247298,
+  "oldLng": -120.337966,
+  "claim": 5470,
+  "box": "7213-7683",
+  "evidence": "The pin claims 1.7 mi, but its coordinate sits on the real track at mile 5.17 (ground 7312), the same cluster as the cabin and summit pins. The coordinate is wrong. The height is unverified and is only consistent with the prose's elevation bracket."
+ },
+ {
+  "op": "clear",
+  "route": "wa_hoodoo_peak_sawtooth_scramble",
+  "pin": "Campsite|North Fork Libby Creek crossing",
+  "oldLat": 48.247489,
+  "oldLng": -120.340037,
+  "claim": 5970,
+  "box": "7300-7874",
+  "evidence": "The prose puts North Fork Libby Creek 'at roughly 3 miles' and the pin says 2.5 mi, but the coordinate is on the track at mile 5.28 (ground 7423), past the cabin. The coordinate is wrong. The 5970 height is unverified (no published number), but it fits between the trailhead (~4,430) and the cabin."
+ },
+ {
+  "op": "clear",
+  "route": "wa_buckskin_mountain_southwest_slopes",
+  "pin": "Water|Snow Brushy Creek to Aurora Creek",
+  "oldLat": 48.074101,
+  "oldLng": -120.691047,
+  "claim": 3800,
+  "box": "5326-5825",
+  "evidence": "The track has 8 points drawn through the pins (a sketch), so the coordinate is evidence of nothing; its ground of 5566 sits on the valley wall. The prose keeps the Entiat River Trail on the valley floor: 'Larch Lakes Trail #1430 at 4.7 miles (3,780 ft)' and 'Emerald Park Trail #1230 junction at 6.2 miles (4,000 ft)'. The 3800 claim falls in that bracket but is not itself published."
+ },
+ {
+  "op": "clear",
+  "route": "wa_buckskin_mountain_southwest_slopes",
+  "pin": "Junction|Cool Creek junction",
+  "oldLat": 48.135152,
+  "oldLng": -120.741424,
+  "claim": 5060,
+  "box": "6345-7116",
+  "evidence": "The prose states 'Continue past the Cool Creek Trail #1431 junction at 13.3 miles (5,060 ft)', which matches the claim exactly. The coordinate is a vertex of an 8-point sketch with ground 7116, on the slopes above the valley trail, so the coordinate is the wrong half."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_south_twin_sister_west_ridge",
+  "pin": "Water|Orsino Creek Crossing",
+  "oldElev": 4500,
+  "claim": 4500,
+  "box": "3238-3450",
+  "evidence": "The coordinate is on the real 27-point track at mile 4.62 (0.08 mi off), 0.5 mi past Dailey Prairie (3166). The note calls it the bike stash, and the prose says parties bike '6-7 miles and well over 2,000 ft of gain' from ~1,200 ft, so ground 3298 fits the place. A 4500 bike cache would leave little of the 'unpleasant slog' to the notch, which is published at 'about 5200 feet' (trailcatjim.com). No published height exists for the crossing."
+ },
+ {
+  "op": "none",
+  "route": "wa_south_twin_sister_west_ridge",
+  "pin": "Campsite|Orsino Creek Basin / Red Talus Slope",
+  "reason": "The name joins two different places. The coordinate fits the lower one (the red talus just past the bike stash, ground 3710), and the 5000 claim plausibly fits the upper one (Orsino Creek Basin below the 5,200 ft notch). Neither height is published. The pin should be split or renamed.",
+  "claim": 5000,
+  "box": "3579-4062",
+  "evidence": "The coordinate is on the track at mile 5.15 (0.05 mi off). The prose sequence is: bike cache, path drops slightly, red talus, traverse over a timbered rib past cabin ruins, then up into Orsino Creek Basin, then a steep slog to the notch at ~5,200. That puts the talus far below the basin."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_olympus_west_ridge",
+  "pin": "Campsite|Snow Dome high camp",
+  "oldLat": 47.812335,
+  "oldLng": -123.690764,
+  "claim": 6700,
+  "box": "5349-5674",
+  "evidence": "The route prose says 'Snow Dome at roughly 6,700-6,800 ft ... is the recommended high camp', and the sibling route's prose says 'the crest of Snow Dome (6,600 ft)', so the claim is right. The coordinate lies on the track at mile 17.38 on the lower Blue Glacier (ground 5494), about 1,000+ ft below the dome. No sibling coordinate passes the ground gate (the East Ramps pin has ground 5292), and no published coordinate was found. Peakbagger's 'Snow Dome' is the Dome Peak one."
+ },
+ {
+  "op": "clear",
+  "route": "wa_olympus_blue_glacier_east_ramps",
+  "pin": "Junction|Snow Dome",
+  "oldLat": 47.813934,
+  "oldLng": -123.67962,
+  "claim": 6600,
+  "box": "5246-5696",
+  "evidence": "The prose says 'reach the crest of Snow Dome (6,600 ft)', which matches the claim. The coordinate is on the track at mile 17.32, where the lower Blue Glacier is crossed (ground 5292), not on the dome. This is consistent with the West Ridge decision. The Blue Glacier sibling has a null coordinate."
+ },
+ {
+  "op": "clear",
+  "route": "wa_horseshoe_peak_scramble",
+  "pin": "Hazard|Summit gully and ledge",
+  "oldLat": 48.47544,
+  "oldLng": -121.073516,
+  "claim": 8380,
+  "box": "3569-4216",
+  "evidence": "The coordinate is about 0.1 mi from the Cascade Pass trailhead pin (48.4755,-121.075), with ground 3780, so it is clearly not the summit gully. The note and prose put the ledge 'about a hundred feet below the top' of the 8481 summit, which the 8380 claim matches. The only sibling is Goat Mountain's gully, a different place."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_la_crosse_scramble",
+  "pin": "Junction|La Crosse Pass Trail Junction",
+  "oldLat": 47.633283,
+  "oldLng": -123.2974,
+  "claim": 2600,
+  "box": "4797-5416",
+  "evidence": "The junction is on the Duckabush River floor. A web search snippet (not fetched verbatim; WTA returned 403) gives the 'junction to La Crosse Pass ... 2677 feet', and the route's own prose says it is 'roughly three thousand feet' below the 5,566 ft pass. So the 2600 claim is right to within about 80 ft. The coordinate has ground 5008, 3.6 mi south of the pass on a ridge, with no gpx and no sibling."
+ },
+ {
+  "op": "clear",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Junction|Terror Creek Cairn / Climbers' Path",
+  "oldLat": 48.732941,
+  "oldLng": -121.282053,
+  "claim": 1700,
+  "box": "3192-3974",
+  "evidence": "Eric's Base Camp (ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm) says: 'stream crossing at about 3.5 miles (c.1700'). Just beyond the steam, there is a cairn marking the Terror Basin Route and a small campsite.' That matches the claim. The coordinate is on the track at mile 4.46, already ~1,800 ft up the steep nose (ground 3511), so the coordinate is the wrong half. Note that pin #1 (Goodell Creek Crossings, 1700 vs ground 2828) shares the same misplacement."
+ },
+ {
+  "op": "clear",
+  "route": "wa_switchback_mountain_scramble",
+  "pin": "Water|Foggy Dew Falls",
+  "oldLat": 48.17084,
+  "oldLng": -120.312287,
+  "claim": 5370,
+  "box": "6449-6826",
+  "evidence": "The stored coordinate is 1.15 mi off the track, at ground 6826, high on the ridge. The published Northwest Waterfall Survey coordinate has USGS ground 4236, which matches its published elevation. That point is 2.17 mi from this route's 280-point track, which therefore probably follows the Eagle Lakes approach; the trailhead note itself warns that Eagle Lakes Trail #431 'never passes Foggy Dew Falls'. The move to the published falls (48.16984, -120.2781) was REFUSED by the apply gate: it made the Merchants Basin / Cooney Lake split an impossible distance, so this route's own stored distances do not describe that point. Cleared instead."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_switchback_mountain_scramble",
+  "pin": "Water|Foggy Dew Falls",
+  "oldElev": 5370,
+  "elev": 4235,
+  "source": "https://www.waterfallsnorthwest.com/waterfall/Foggy-Dew-Falls-2900",
+  "quote": "Elevation: 4235 feet",
+  "claim": 5370,
+  "box": "6449-6826",
+  "evidence": "This applies together with the move above. Both stored halves were wrong: the published falls height is 4235 (USGS ground at the published coordinate is 4236), against a 5370 claim. Apply it only with the move."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_snowfield_peak_neve_glacier",
+  "pin": "Hazard|Neve Glacier crossing",
+  "oldElev": 7700,
+  "claim": 7700,
+  "box": "6527-6836",
+  "evidence": "The coordinate is on the real 800-point track (0.04 mi off), between the Colonial-Neve col and the west-ridge gully pins, with ground 6656. The prose says 'from the col (~6,800-6,900 ft) you drop roughly 150 to 250 ft onto the Neve Glacier and cross it', so the crossing is about 6,600-6,700 and 7700 is impossible. The Needle sibling's 6700 has a null coordinate, so copyElev's 0.05 mi gate fails. No single published height exists."
+ },
+ {
+  "op": "move",
+  "route": "wa_mcclellan_peak_southwest_scramble",
+  "pin": "Campsite|Snow Lakes basin",
+  "oldLat": 47.496,
+  "oldLng": -120.756,
+  "lat": 47.483116,
+  "lng": -120.7586572,
+  "source": "https://en.wikipedia.org/wiki/Snow_Lakes",
+  "quote": "47.483116°N 120.7586572°W",
+  "claim": 5400,
+  "box": "6220-6650",
+  "evidence": "The stored coordinate is a rounded guess on a 5-point sketch (ground 6650). Wikipedia gives Snow Lakes at '5,433 ft' with the coordinate above, and USGS ground there reads 5433, which admits the 5400 claim. The Smears sibling (47.522,-120.75, ground 6377) fails the ground gate and is itself misplaced, though outside this batch."
+ },
+ {
+  "op": "copy",
+  "route": "wa_sundial_northeast",
+  "pin": "Water|Upper Royal Basin tarns",
+  "oldLat": 47.840757,
+  "oldLng": -123.211942,
+  "lat": 47.837636,
+  "lng": -123.220429,
+  "fromRoute": "wa_mount_walkinshaw_scramble",
+  "fromPin": "Campsite|Upper Royal Basin",
+  "claim": 5695,
+  "box": "4691-4941",
+  "evidence": "The stored coordinate is NE of Royal Lake (5117) at ground 4691, downhill of the lake and not in Upper Royal Basin. The Walkinshaw 'Upper Royal Basin' pin (elev 5700, 5 ft from the claim; ground 5825) is the same basin below the Needles' wall, and its note likewise calls it the last reliable water. All three gates hold. The other siblings were rejected: Incisor has ground 5464, and Johnson's 5600 is 95 ft off."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_rainier_kautz_glacier",
+  "pin": "Campsite|Camp Hazard",
+  "oldLat": 46.793,
+  "oldLng": -121.762,
+  "claim": 10800,
+  "box": "5063-5631",
+  "evidence": "Ground at the pin is 5461 ft, near Paradise and nowhere near the Wapowety Cleaver; the route's 5-point gpx is only a sketch. The route's own prose puts 'Camp Hazard (10,800 ft, ... top of the Turtle Snowfield)', so the height matches the prose and the coordinate is the bad half. NOTE: published sources (SummitPost/Mountaineers per search) more often give Camp Hazard as ~11,300 ft, so the height is also disputed. No sibling or published coordinate exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_rainier_kautz_glacier",
+  "pin": "Hazard|Wilson Gully (Crux)",
+  "oldLat": 46.778,
+  "oldLng": -121.755,
+  "claim": 7300,
+  "box": "4430-4803",
+  "evidence": "Ground at the pin is 4642 ft, south of Paradise below the Nisqually snout, on a 5-point sketch track. The prose says the gully climbs 'the Nisqually/Wilson Glacier margin at 6,800 ft ... to the same 7,300-7,400 ft Wilson Bench', so the 7300 claim matches the prose and the coordinate is wrong. No published or sibling coordinate."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_rainier_kautz_glacier",
+  "pin": "Junction|Glacier Vista",
+  "oldLat": 46.782,
+  "oldLng": -121.748,
+  "claim": 6336,
+  "box": "4863-5215",
+  "evidence": "Ground at the pin is 5151 ft, below Paradise, on a 5-point sketch track. Published heights agree with the claim: WTA Glacier Vista Snowshoe gives 'Highest Point: 6,330 feet', and WTA Glacier Vista-Panorama Point says 'you're standing at 6,300 feet'. So the coordinate is the bad half. No published or sibling coordinate."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_rainier_disappointment_cleaver",
+  "pin": "Water|Pebble Creek Crossing",
+  "oldLat": 46.781,
+  "oldLng": -121.752,
+  "claim": 7300,
+  "box": "4708-5124",
+  "evidence": "Ground at the pin is 4866 ft, and the pin is 0.83 mi off the route's real 786-point gpx track. The published height is ~7,200 ft: eyehike says 'There is a sign marking the creek and it notes the elevation as 7,200 feet', and WTA gives 7,180. The claim is within 100 ft of that, so the coordinate is the bad half. No sibling or verbatim coordinate was fetched."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_rainier_disappointment_cleaver",
+  "pin": "Junction|Panorama Point",
+  "oldLat": 46.786,
+  "oldLng": -121.745,
+  "claim": 6800,
+  "box": "4803-5447",
+  "evidence": "Ground at the pin is 5269 ft, and the pin is 0.41 mi off the real gpx track. The NPS Camp Muir route (via search) gives 'Panorama Point (6,800 ft)', matching the claim, so the coordinate is wrong. Peakbagger's Panorama Point (46.803595,-121.729741, 6920+) is the summit knob, not the trail viewpoint/junction, so it was not used for a move."
+ },
+ {
+  "op": "clear",
+  "route": "wa_castle_peak_pasayten_scramble",
+  "pin": "Junction|Southwest Ridge Notch",
+  "oldLat": 48.96973636363636,
+  "oldLng": -120.86604545454546,
+  "claim": 7600,
+  "box": "5498-5791",
+  "evidence": "The route has no gpx, and the pin is a computed, evenly-spaced fractional point, so its coordinate is not evidence. Ground there is 5542 ft. The prose says 'climb steep red heather, talus, and scree to a notch on the peak's southwest ridge at about 7,600 ft', which confirms the height. The siblings are unrelated 'west ridge notches' on other peaks."
+ },
+ {
+  "op": "clear",
+  "route": "wa_castle_peak_pasayten_scramble",
+  "pin": "Hazard|Freezeout Creek Ford & Blowdown Zone",
+  "oldLat": 48.90741818181817,
+  "oldLng": -120.89277272727273,
+  "claim": 4600,
+  "box": "5800-6334",
+  "evidence": "This is a computed fractional point with no gpx. Ground is 6334 ft, which is impossible for a creek ford: the prose has tread vanishing ~4,200 ft and the cross to the open south side at 5,000 ft. The 4600 claim sits inside the prose's 4,200-5,000 ft creekside band, so the coordinate is the bad half. The height itself is not published exactly."
+ },
+ {
+  "op": "copy",
+  "route": "wa_mount_barnes_scramble",
+  "pin": "Hazard|The Catwalk (Cat Peak-Mt. Carrie arete)",
+  "oldLat": 47.92392006,
+  "oldLng": -123.78531996,
+  "lat": 47.89104,
+  "lng": -123.661054,
+  "fromRoute": "wa_mount_ferry_standard",
+  "fromPin": "Hazard|The Catwalk (Cat Peak-Mt. Carrie arete)",
+  "claim": 5800,
+  "box": "3684-4209",
+  "evidence": "The Barnes pin sits at 3831 ft on the Sol Duc/Bogachiel side, 9.9 mi off its track and west of its own High Divide pin. The Ferry route's identically named pin (elev 5900, within 100 of 5800) has USGS ground 5910 ft (epqs), which admits the claim, and it is the same Cat Peak-Mt Carrie arete on the same Bailey Range traverse."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_barnes_scramble",
+  "pin": "Hazard|Childs Glacier crossing",
+  "oldLat": 47.814440270000006,
+  "oldLng": -123.61143982,
+  "claim": 5600,
+  "box": "3845-4495",
+  "evidence": "Ground at the pin is 3966 ft, 6.6 mi off the route's real 438-point track and ~1.5 mi from Bear Pass. The note and prose place this 'small glacier below Bear Pass' ('Firm snow on the small glacier below Bear Pass'), and Bear Pass is 5600 (ground 5567), so the height is consistent and the coordinate is the bad half. No sibling or published coordinate."
+ },
+ {
+  "op": "none",
+  "route": "wa_emerald_peak_se_ridge",
+  "pin": "Junction|Fern Lake Trail #1436 spur junction",
+  "reason": "Both halves are wrong, so no allowed op fits. The coordinate (ground 6865) is the same bad point as the Pinnacle pin and looks like FERN LAKE itself (lake 6,894 ft; the spur 'heads west ... in 1.5 miles gains 1,700 feet'), not the junction. The height 4900 is also wrong: the Cardinal sibling at the real junction is 5240 with ground 5225. The copy gate fails (5240 vs 4900 = 340 ft).",
+  "claim": 4900,
+  "box": "6859-7337",
+  "evidence": "Cardinal idx2 (48.07647,-120.627495, elev 5240, ground 5225) is the same junction at 6.1 mi. Recommended manual fix: copy BOTH the coordinate and elev from it, consistent with the Pinnacle copy. That breaks the 100-ft gate, so it is left to the user."
+ },
+ {
+  "op": "copy",
+  "route": "wa_pinnacle_mountain_entiat_scramble",
+  "pin": "Junction|Fern Lake Trail (#1436) junction",
+  "oldLat": 48.0755369,
+  "oldLng": -120.6453854,
+  "lat": 48.07647,
+  "lng": -120.627495,
+  "fromRoute": "wa_cardinal_peak_se_slopes",
+  "fromPin": "Junction|Fern Lake Trail (#1436) junction",
+  "claim": 5240,
+  "box": "6859-7337",
+  "evidence": "The stored point has ground 6865, which looks like Fern Lake (6,894 ft) up the spur, not the junction. The Cardinal route's identically named pin has the same elev 5240, ground 5225 (admits the claim), and the same 6.1 mi distance on the same NF Entiat trail #1437, so it is the same place."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_baker_easton_glacier",
+  "pin": "Campsite|Sandy Camp / Railroad Grade Camp",
+  "oldLat": 48.7985,
+  "oldLng": -121.88,
+  "claim": 5900,
+  "box": "4082-4750",
+  "evidence": "The pin is 3.24 mi off the route's real 795-point track, NW of the summit on the Heliotrope side, with ground 4361. The prose says 'Sandy Camp at about 5,900 ft is the usual one ... roughly four miles in', and the Sherman sibling stores 5900 with null coords. So the height is right and the coordinate wrong. The sibling has no coordinate to copy."
+ },
+ {
+  "op": "clear",
+  "route": "wa_sherman_peak_baker_route",
+  "pin": "Water|Sulphur Creek crossing, Schriebers Meadow",
+  "oldLat": 48.685559,
+  "oldLng": -121.753721,
+  "claim": 3600,
+  "box": "2002-2544",
+  "evidence": "The pin is 3.09 mi off the route's real 241-point track, SE of Schriebers Meadow, with ground 2207. The prose puts the ford 'within the first 0.3-0.4 mile' of the 3,360 ft trailhead, so this coordinate cannot be the crossing. No sibling or published coordinate."
+ },
+ {
+  "op": "none",
+  "route": "wa_sherman_peak_baker_route",
+  "pin": "Water|Sulphur Creek crossing, Schriebers Meadow",
+  "reason": "The HEIGHT is also doubtful. The crossing is 0.3-0.4 mi from a 3,360 ft trailhead, so 3600 is probably high. But no published height for the crossing was found, so it is left as-is and flagged.",
+  "claim": 3600,
+  "box": "2002-2544",
+  "evidence": "The prose gives the trailhead ~3,360 ft and the ford within 0.3-0.4 mi. No source states the crossing's elevation."
+ },
+ {
+  "op": "copy",
+  "route": "wa_forbidden_peak_east_ledges",
+  "pin": "Trailhead|Boston Basin / Cascade River Road trailhead",
+  "oldLat": 48.5021,
+  "oldLng": -121.0676,
+  "lat": 48.48055,
+  "lng": -121.07979,
+  "fromRoute": "wa_forbidden_peak_west_ridge",
+  "fromPin": "Trailhead|Boston Basin Trailhead",
+  "claim": 3200,
+  "box": "5891-6532",
+  "evidence": "The trailhead pin sits up in Boston Basin at ground 6219. The same peak's West Ridge (and East Ridge) route has 'Boston Basin Trailhead' at 48.48055,-121.07979, elev 3200 (identical to the claim), with ground 3215. Same trailhead, all three gates hold. The listed Boston Basin campsite siblings are a different place and were not used."
+ },
+ {
+  "op": "clear",
+  "route": "wa_snowking_mountain_standard",
+  "pin": "Junction|Blocked road ends, climbers' path begins",
+  "oldLat": 48.446001,
+  "oldLng": -121.23137,
+  "claim": 2000,
+  "box": "4160-4633",
+  "evidence": "Ground at the pin is 4358 ft, 0.17 mi off the real 334-point track. That is up on the steep climbers' path ~2,000 ft above where it leaves the road, so the coordinate is not the road end. No sibling or published coordinate."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_snowking_mountain_standard",
+  "pin": "Junction|Blocked road ends, climbers' path begins",
+  "oldElev": 2000,
+  "elev": 2350,
+  "source": "https://www.mountainproject.com/area/115160036/snowking-mountain",
+  "quote": "When the road/trail reaches about 2,350 ft in elevation, leave it for a steep well worn path into old growth.",
+  "claim": 2000,
+  "box": "4160-4633",
+  "evidence": "Both halves are wrong. The route's prose agrees with the published height ('end-of-road firepit near 2,300ft'). This setElev goes with the clear above; the setElev precondition (coordinate right) does not hold, so apply it only together with the clear."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_walkinshaw_scramble",
+  "pin": "Water|Royal Creek",
+  "oldLat": 47.852422,
+  "oldLng": -123.178433,
+  "claim": 4200,
+  "box": "5384-5873",
+  "evidence": "There is no gpx, and the pin lies on the straight line between the Royal Basin junction pin and the Royal Lake pin (an interpolated point). That puts it on a ridge at 5690 ft, ~1,500 ft above the creek it names, so the coordinate is not evidence and is wrong. The height 4200 at mile 4 is consistent with the valley climb to Royal Lake (5,100 at 7.2 mi) but is NOT published. The siblings (Royal Creek Camp 3500, crossings 3400) are different spots."
+ },
+ {
+  "op": "none",
+  "route": "wa_cathedral_peak_pasayten_se_buttress",
+  "pin": "Junction|Peepsight Trail junction",
+  "reason": "Undecidable. The published junction is 'At 8.4 miles from the trailhead' (WTA trip report, via search), but the pin sits at dist 5.5. The route's gpx covers only 3 mi near the summit, so it cannot place the pin. No published elevation for the junction was found. 6200 looks too high for a valley junction 3.6 mi below 6,680 ft Andrews Pass, but the coordinate may also be misplaced.",
+  "claim": 6200,
+  "box": "4639-5035",
+  "evidence": "Ground at the pin is 4686, and the pin is 8.8 mi off the (summit-area) track. WTA's Andrews Creek page gives no junction height or coordinate."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_saska_peak_emerald_saska_col",
+  "pin": "Campsite|Fox Camp (Pyramid Creek Trail junction)",
+  "oldElev": 6900,
+  "claim": 6900,
+  "box": "5637-6053",
+  "evidence": "The coordinate (ground 5728) is ~0.15 mi from the Emerald route's Fox Camp pin (48.0895,-120.6396, elev 5500, ground 5691), beside the Pyramid Creek junction, which is consistent with the prose ('Fox Camp sits about a quarter mile north of it'). 6900 contradicts the prose, which puts the basin camp at ~7,100 ft as 1,000 ft above the junction. No published height exists, and the Emerald sibling is beyond 0.05 mi, so copyElev does not apply."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_dana_scramble",
+  "pin": "Junction|Lillian River Trail junction",
+  "oldLat": 47.92393704980237,
+  "oldLng": -123.57234331699605,
+  "claim": 800,
+  "box": "1646-1946",
+  "evidence": "There is no gpx, and this is a computed fractional point, so the coordinate is not evidence of the junction's position."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_mount_dana_scramble",
+  "pin": "Junction|Lillian River Trail junction",
+  "oldElev": 800,
+  "elev": 1500,
+  "source": "https://www.wta.org/go-hiking/hikes/elwha-river",
+  "quote": "it's another 2.5 miles to the end of the Lillian River trail, which dead ends at the river after climbing to 2200 feet (you're currently at 1500, so that's about 700 feet in those 2.5 miles.",
+  "claim": 800,
+  "box": "1646-1946",
+  "evidence": "800 ft is impossible: it is below the 1,250 ft Whiskey Bend trailhead the trail climbs from. WTA puts the hiker at 1500 ft at the Lillian River turnoff. Both halves are suspect, so this is paired with the clear above."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_mount_stuart_cascadian_couloir",
+  "pin": "Junction|Cascadian Couloir Base",
+  "oldElev": 7200,
+  "claim": 7200,
+  "box": "4915-5543",
+  "evidence": "The pin is 0.13 mi off the real 650-pt track where it bottoms out at Ingalls Creek (track ground 4891-5011 at 3.8-3.95 mi, 5377 at 4.1 mi as the climb starts), ground 5074, so the coordinate is at the couloir toe. The route's own prose says the couloir 'bottoms out in the meadow at roughly 4,800 ft', so 7200 is wrong. I could not fetch a published toe height (SummitPost and Mountaineers return 403), so null it."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_mount_stuart_cascadian_couloir",
+  "pin": "Junction|Long's Pass Trail Junction",
+  "oldElev": 6800,
+  "claim": 6800,
+  "box": "5213-5752",
+  "evidence": "Longs Pass is the high point of the approach (GNIS 6,217 ft, and the route prose says ~6,250), and this junction lies below it on the north side, toward Ingalls Creek at about 4,800-4,900 ft. So 6800 cannot be right for any junction past the pass. The coordinate is 0.08 mi from the real track on the descent between Longs Pass and the couloir base (ground 5488). CAVEAT: it sits about 0.3 mi upslope of where the track reaches the creek, so it is near the junction but not exactly on it."
+ },
+ {
+  "op": "clear",
+  "route": "wa_sherpa_peak_east_ridge",
+  "pin": "Junction|Long's Pass",
+  "oldLat": 47.4561,
+  "oldLng": -120.9136,
+  "claim": 6250,
+  "box": "4902-5402",
+  "evidence": "The stored coordinate lies on the Cascadian track's descent near Ingalls Creek (on track at 3.43 mi, ground 5086), not at the pass. The claim of 6250 is the pass height (route prose ~6,200; GNIS 6,217). The ground at the GNIS coordinate is 6225 and agrees with the track's high point of 6240 at 47.4492,-120.9261. The quote came from the WebSearch result for TopoZone; a direct fetch returned 403. I did not copy the Cascadian route's 'Longs Pass' pin (47.444,-120.924): it is 0.36 mi south of GNIS, on a 6282-ft flank. A published coordinate exists (47.4492844, -120.9250885, https://www.topozone.com/washington/chelan-wa/gap/longs-pass/) but the page refused a re-fetch (HTTP 403), so it is cleared rather than moved; a later pass can move it with a fetched quote."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_stuart_stuart_glacier_couloir",
+  "pin": "Hazard|Stuart Glacier Couloir bergschrund",
+  "oldLat": 47.483986,
+  "oldLng": -120.880611,
+  "claim": 7800,
+  "box": "5387-5859",
+  "evidence": "Both the pin's note and the approach prose put the couloir entry at about 7,800 ft, so the height is right. The coordinate has ground 5387, which is the Sherpa/Ice Cliff basin floor next to the 5,400-ft camp. The couloir is west, past the North Ridge rib, so the coordinate is the wrong half. No published or sibling coordinate exists."
+ },
+ {
+  "op": "none",
+  "route": "wa_summit_chief_mountain_south_route",
+  "pin": "Junction|PCT junction near Lemah Meadow",
+  "reason": "Both halves are wrong. This route's own variant prose puts the Pete Lake Trail/PCT junction at 'about 3,220 ft', not 4,000. The coordinate (ground 2896) is on the Cooper River/Pete Lake corridor about 1 mi short of Pete Lake, not at the junction. The track is only 1.15 mi long and is 2.99 mi away, so it is no evidence. The note's '~4,000 ft climbers' bypass' matches nothing published. Recommend the user review or delete the pin.",
+  "claim": 4000,
+  "box": "2868-2986",
+  "evidence": "Ground at the pin is 2896. Pete Lake (2,983) lies further along the trail. Variant prose: 'turn right again onto the Pacific Crest Trail at about 3,220 ft.' No sibling sits at a valid coordinate: all three Lemah siblings share the bad 47.4623,-121.281 coordinate."
+ },
+ {
+  "op": "clear",
+  "route": "wa_lemah_mountain_east_route",
+  "pin": "Junction|Lemah Meadow / PCT junction campsite",
+  "oldLat": 47.4623,
+  "oldLng": -121.281,
+  "claim": 3250,
+  "box": "4238-4450",
+  "evidence": "The coordinate is 1.13 mi off this route's real 959-pt track, on a 4238-ft hillside southwest of Lemah Meadows. The junction is on the valley floor (the Lemah Meadows ford pin nearby is on the track at ground 3264). The Summit Chief route prose puts the PCT junction at 'about 3,220 ft', which admits the 3250 claim. No published or sibling coordinate exists: every sibling shares this bad point."
+ },
+ {
+  "op": "clear",
+  "route": "wa_east_face_6",
+  "pin": "Junction|PCT Junction near Lemah Meadows",
+  "oldLat": 47.4623,
+  "oldLng": -121.281,
+  "claim": 3300,
+  "box": "4238-4450",
+  "evidence": "This is the same shared bad coordinate as the Lemah and Chimney Rock pins: ground 4238, on a hillside 1-1.65 mi off the real tracks. The prose puts the junction at about 3,220 ft and the PCT avalanche-swath hairpin beyond it at about 3,360 ft, so the 3300 claim fits and the coordinate is the wrong half. No published or sibling coordinate exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_chimney_rock_west_face",
+  "pin": "Junction|PCT Junction near Lemah Meadows",
+  "oldLat": 47.4623,
+  "oldLng": -121.281,
+  "claim": 3300,
+  "box": "4238-4450",
+  "evidence": "The coordinate is 1.65 mi off this route's real 1070-pt track, with ground 4238. The junction is at about 3,220 ft per prose, so the 3300 claim fits. This decision matches the identical pin on wa_east_face_6 and the Lemah pin."
+ },
+ {
+  "op": "clear",
+  "route": "wa_columbia_peak_scramble",
+  "pin": "Hazard|SW-face gully below the cliff band",
+  "oldLat": 47.961024,
+  "oldLng": -121.383403,
+  "claim": 6300,
+  "box": "4428-5223",
+  "evidence": "Prose says scrambling starts at 'the snow patch at about 6,300 to 6,400 ft' and that the route 'above roughly 6,300 ft' works past the buttress into the gully, so the height is right. The coordinate is on the real track (7.36 mi) but at ground 5136, 1.35 track-miles and about 2,000 ft below the summit, in the boulder-field stretch rather than at the gully. No published coordinate exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_columbia_peak_scramble",
+  "pin": "Hazard|West Chimney crux",
+  "oldLat": 47.955712,
+  "oldLng": -121.380674,
+  "claim": 6900,
+  "box": "4704-5382",
+  "evidence": "Prose places the buttress with the chimney/crack move at 'roughly 6,700 to 6,800 ft', which is consistent with the 6900 claim. The coordinate is 0.27 mi off the track at ground 5336, about 1 mi southwest of and roughly 1,800 ft below the summit, so it cannot be the crux. No published coordinate exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_cadet_peak_scramble",
+  "pin": "Campsite|Ray's Knoll, Glacier Basin",
+  "oldLat": 47.9854,
+  "oldLng": -121.3926,
+  "claim": 4500,
+  "box": "2749-2992",
+  "evidence": "The coordinate is on the track at 4.35 mi, at ground 2783. That is the Monte Cristo townsite: this route's own townsite pin is 0.15 mi away at ground 2876. Ray's Knoll is the knoll in Glacier Basin, published at about 4,500-4,680 ft (Mountaineers: 'Glacier Basin (c. 4,500 ft)'; search results also give 4,650 ft for Ray's Knoll), so the height is right. I rejected the Monte Cristo 'Glacier Basin' sibling (47.983,-121.3556) as a donor because its ground is 5837."
+ },
+ {
+  "op": "clear",
+  "route": "wa_wilmans_peak_scramble",
+  "pin": "Campsite|Mystery Hill camp (Glacier Basin)",
+  "oldLat": 47.967704,
+  "oldLng": -121.359301,
+  "claim": 4680,
+  "box": "6181-6740",
+  "evidence": "The coordinate has ground 6504, on Wilmans' flank about 1.7 km south of the basin floor. The camp is on the timbered knoll in Glacier Basin, published as 'the 4,680+ ft timbered knoll in the middle of the basin' (route prose: ~4,400-4,680 ft), so the height is right. No usable sibling coordinate: the Monte Cristo Glacier Basin pin has ground 5837."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_index_bluebell",
+  "pin": "Summit|Mount Index Middle Peak",
+  "oldLat": 47.7801,
+  "oldLng": -121.5787,
+  "claim": 5527,
+  "box": "4077-4661",
+  "evidence": "The claim of 5527 is ListsOfJohn's LiDAR height for this exact peak (Peakbagger gives 5520.5 at 47.779685,-121.581745), so the height is right. The stored coordinate has ground 4321. The ground at the new coordinate is 5514. The quote came via WebSearch because direct fetches of ListsOfJohn and Peakbagger returned 403. A published coordinate exists (47.77971, -121.58178, https://listsofjohn.com/peak/51039) but the page refused a re-fetch (HTTP 403), so it is cleared rather than moved; a later pass can move it with a fetched quote."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_index_north_norwegian_buttress",
+  "pin": "Summit|Mount Index Middle Peak",
+  "oldLat": 47.7801,
+  "oldLng": -121.5787,
+  "claim": 5527,
+  "box": "4077-4661",
+  "evidence": "This is the same pin as on wa_mount_index_bluebell: stored ground 4321, published LiDAR height 5527, ground at the published coordinate 5514. Same decision. A published coordinate exists (47.77971, -121.58178, https://listsofjohn.com/peak/51039) but the page refused a re-fetch (HTTP 403), so it is cleared rather than moved; a later pass can move it with a fetched quote."
+ },
+ {
+  "op": "clear",
+  "route": "wa_gray_wolf_ridge_se_slopes",
+  "pin": "Junction|Ridge crest gained",
+  "oldLat": 47.877010895,
+  "oldLng": -123.174813575,
+  "claim": 6200,
+  "box": "3321-4019",
+  "evidence": "Prose: 'At about 2.7 miles and 6,200 ft it tops out on the saddle between Tyler Peak and Baldy', so the height matches. The coordinate has ground 3572, only about 300 ft above the 3300-ft trailhead and 0.68 mi off the real 420-pt track, so it is the wrong half. No published coordinate exists for the saddle."
+ },
+ {
+  "op": "none",
+  "route": "wa_lost_peak_pasayten_scramble",
+  "pin": "Water|Middle Fork Pasayten River flats",
+  "reason": "Both halves are unsupported. The coordinate is an interpolated sketch point (48.783078228571426, fractional; the route has no gpx) at ground 6411, which is not a river flat. The 4400 height is also contradicted by published data: per the WTA results, the Middle Fork trail is still at 5,000 ft at the Freds Lake junction downstream of this camp, and only drops to 4,280 at the far-north Boundary Trail junction. A camp 'about three miles' below Robinson Pass (6,220) sits well above 4,400. Recommend the user review or delete the pin.",
+  "claim": 4400,
+  "box": "6201-6654",
+  "evidence": "Ground at the pin is 6411. The route prose gives no number for the flats, and no sibling exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_remmel_mountain_nw_ridge",
+  "pin": "Water|Four Point Lake",
+  "oldLat": 48.92573,
+  "oldLng": -120.13832,
+  "claim": 6850,
+  "box": "5223-5777",
+  "evidence": "TheOutbound (fetched): 'Four Point Lake (6850 ft) hosts multiple good campsites...', so the height is right. The stored coordinate has ground 5251. It matches the start of the Four Point Lake trail as Trailforks lists it, down in the Chewuch valley, not the lake. I found no published lake coordinate. Separately, the pin's own note says the lake is not on this route's approach."
+ },
+ {
+  "op": "move",
+  "route": "wa_white_mountain_olympics_scramble",
+  "pin": "Junction|Dose Forks",
+  "oldLat": 47.72198583533649,
+  "oldLng": -123.2630610866756,
+  "lat": 47.74329,
+  "lng": -123.19362,
+  "source": "https://www.oregonhikers.org/field_guide/Dose_Forks_Camp",
+  "quote": "Latitude, Longitude: 47.74329, -123.19362",
+  "claim": 1700,
+  "box": "2631-3204",
+  "evidence": "The stored coordinate has ground 2631 and sits about 1 mi short of Diamond Meadows, far up the West Fork. Oregon Hikers (fetched) gives Dose Forks Camp 'Elevation: 1755 feet' at the coordinate quoted, and the ground there is 1757, so the claim of 1700 (55 ft off) belongs to this place. That page says the camp is about 0.5 mi east of the actual confluence, while the pin's note describes the trail split at the confluence."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_white_mountain_olympics_scramble",
+  "pin": "Junction|Dose Forks",
+  "oldElev": 1700,
+  "elev": 1755,
+  "source": "https://www.oregonhikers.org/field_guide/Dose_Forks_Camp",
+  "quote": "Elevation: 1755 feet",
+  "claim": 1700,
+  "box": "2631-3204",
+  "evidence": "This is optional and goes with the move: once the pin is at the published Dose Forks Camp coordinate (ground 1757), the published height of 1755 replaces the round 1700."
+ },
+ {
+  "op": "clear",
+  "route": "wa_dragontail_peak_r3",
+  "pin": "Junction|North shore / glacier approach",
+  "oldLat": 47.476068,
+  "oldLng": -120.816391,
+  "claim": 6800,
+  "box": "7596-7939",
+  "evidence": "The note and the prose put this pin on the Colchuck Glacier approach (Colchuck Lake 5,570 to the col; a trip report gears up on the glacier at about 6,300 ft), so 6800 fits the named feature. The coordinate sits on the route's gpx, but that track climbs Aasgard Pass (ground 5933 to 7803 at 4.36-5.01 mi) and crosses the Enchantments side, at ground 7730. That is a different approach, on the far side of Dragontail from the glacier. The route says it 'does not use Aasgard Pass'. No published coordinate exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_earl_peak_southwest_ridge",
+  "pin": "Water|Bean Creek crossing",
+  "oldLat": 47.397261,
+  "oldLng": -120.855924,
+  "claim": 4300,
+  "box": "5117-5736",
+  "evidence": "The coordinate is 0.44 mi off the real 162-pt track, upslope east of Bean Creek, at ground 5713. The trail itself is at ground 4662 by 1.2 mi and only reaches 5,700 ft near 2.4 mi, and the Mountaineers place even the second crossing at 5,100 ft. The 4300 claim fits the trail profile at about 1 mi (between 3645 at the trailhead and 4662 at 1.2 mi), so the coordinate is the wrong half. Every pin on this route sits upslope of its trail (the trailhead and the Bean Creek fork too), so the user may want the whole set reviewed."
+ },
+ {
+  "op": "clear",
+  "route": "wa_southwest_buttress",
+  "pin": "Hazard|McAllister Glacier crossing",
+  "oldLat": 48.54434,
+  "oldLng": -121.147217,
+  "claim": 7800,
+  "box": "6082-6804",
+  "evidence": "Mountain Project (mountainproject.com/route/111927639) puts this leg between the '8000-foot Inspiration-McAllister Glacier col' and 'the Marble Creek-McAllister pass at 7600 feet', so the crossing lies between 7,600 and 8,000 ft and 7,800 fits the prose. Ground at the pin is 6,398 ft, below both ends of the leg, on an 8-point sketch track. The coordinate is the wrong half, and no published or sibling replacement exists."
+ },
+ {
+  "op": "clear",
+  "route": "wa_southwest_buttress",
+  "pin": "Junction|Inspiration–McAllister Glacier col",
+  "oldLat": 48.54542,
+  "oldLng": -121.14548976190477,
+  "claim": 8000,
+  "box": "6285-7071",
+  "evidence": "MP Southwest Buttress, verbatim: 'Traverse generally North across the Inspiration Glacier to the 8000-foot Inspiration-McAllister Glacier col'. The height is published. The coordinate is a computed fraction (-121.14548976190477) on an 8-point sketch track, ground 6,660 ft. All three sibling pins share the same computed coordinate, so none can donate."
+ },
+ {
+  "op": "clear",
+  "route": "wa_direct_southwest_buttress",
+  "pin": "Junction|Inspiration–McAllister Glacier col",
+  "oldLat": 48.54542,
+  "oldLng": -121.14548976190476,
+  "claim": 8000,
+  "box": "6285-7071",
+  "evidence": "Same place and same computed coordinate as wa_southwest_buttress #3: ground 6,660 ft, against a published 8000-foot col (MP route 111927639). Coordinate cleared for consistency."
+ },
+ {
+  "op": "clear",
+  "route": "wa_northwest_ridge",
+  "pin": "Junction|Inspiration–McAllister Glacier col",
+  "oldLat": 48.54542,
+  "oldLng": -121.14548976190477,
+  "claim": 8000,
+  "box": "6285-7071",
+  "evidence": "Same place and same computed coordinate as wa_southwest_buttress #3: ground 6,660 ft, against a published 8000-foot col (MP route 111927639). Coordinate cleared for consistency."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mcmillan_spire_west_west_ridge",
+  "pin": "Junction|7,200 ft Inspiration-McMillan col",
+  "oldLat": 48.764262,
+  "oldLng": -121.28099,
+  "claim": 7200,
+  "box": "5522-6272",
+  "evidence": "Eric's Base Camp (ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm), verbatim: 'a gully to reach the 7200' col between Inspiration and the objective'. The pin sits on the real 800-point track (0.02 mi off), but its ground is 5,914 ft, lower than Terror Basin camp at 5,942 ft, so it is near the gully foot, not the col. Height is right, coordinate wrong, and no donor exists."
+ },
+ {
+  "op": "none",
+  "route": "wa_old_snowy_mountain_r1",
+  "pin": "Landmark|Snowgrass Flats meadows",
+  "reason": "Both halves look wrong. The coordinate is on the track at 3.08 mi (ground 4,932 ft), before the Bypass #97 junction, which USFS places 'at mile 4'. WTA puts the lower Snowgrass Flat at the Trail 86 junction 'at 4.1 miles' with a 5,800 ft high point; visitrainier.com: 'At 5,960 feet we came to the signed junction for Lily Basin/Snowgrass Flats.' Neither source supports 6,400, and no source gives a coordinate.",
+  "claim": 6400,
+  "box": "4623-5328",
+  "evidence": "Ground 4,932 at the pin. USFS trail-96 page: Bypass #97 'at mile 4'. WTA snowgrass: lower flat at 4.1 mi, high point 5,800. visitrainier: 5,960 ft at the flats junction. Needs a re-pin by hand."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_old_snowy_mountain_r1",
+  "pin": "Junction|Trail 97 junction",
+  "oldElev": 6550,
+  "claim": 6550,
+  "box": "5470-5707",
+  "evidence": "The pin is on the real 976-point track at 3.96 mi, matching USFS 'junction with Bypass Trail #97 (at mile 4)', so the coordinate is right; ground 5,594 ft. The junction lies below Snowgrass Flat (5,800–5,960 ft per WTA and visitrainier), so 6,550 is impossible. No published height for the junction itself."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_old_snowy_mountain_r1",
+  "pin": "Junction|PCT junction",
+  "oldElev": 6900,
+  "claim": 6900,
+  "box": "5828-6146",
+  "evidence": "6,900 ft is the published height of a different junction: search snippets place 'the intersection at the base of Old Snowy' at 6,900 ft. TheOutbound reports reaching the PCT 'just under 6000ft' on the Snowgrass Trail, which matches ground 5,958 at the pin. Caveat: the pin is 0.37 mi off its own track, so its coordinate deserves a later look. The height is wrong under every source."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_ballard_south",
+  "pin": "Hazard|Overgrown Mill Creek Trail",
+  "oldLat": 48.688171,
+  "oldLng": -120.81229,
+  "claim": 4350,
+  "box": "5934-6651",
+  "evidence": "The hazard is the Mill Creek valley tread between the junction (pin #2, ground 2,841) and the Azurite Mine (published MRDS coordinate, ground 4,442), so 4,350 fits the valley. The pin sits about 1.5 mi west of that line on a ridge flank at ground 6,281. There is no gpx track and no sibling, so the coordinate is cleared."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_ballard_south",
+  "pin": "Campsite|Azurite Mine",
+  "reason": "Both halves are copied verbatim from one published record: westernmininghistory.com/mine-detail/10047819 gives '48.68278, -120.78111' and '5,899 Feet (1,798 Meters)'. Ground at that coordinate is 4,442 ft, at the Mill Creek valley floor. The IAML summary says the workings span 4,400–7,700 ft, so 5,899 is likely one opening upslope and not the creekside camp. Neither half can be overruled without a second source.",
+  "claim": 5899,
+  "box": "4429-4778",
+  "evidence": "Ground 4,442 at the published MRDS coordinate. The route's own prose 'around 5,900 ft' derives from the same record. Suggest a human decide whether the camp pin should keep the mine's MRDS elevation."
+ },
+ {
+  "op": "clear",
+  "route": "wa_sinister_peak_southwest_route",
+  "pin": "Campsite|Sixmile Camp",
+  "oldLat": 48.313704,
+  "oldLng": -121.137319,
+  "claim": 2300,
+  "box": "3567-3865",
+  "evidence": "The donor 'Sixmile Camp / Bachelor Creek Trail junction' (elev 2400, within 100 ft) has ground 2,441, which admits 2,300. It is the same place, the end of Downey Creek Trail 768, and wa_dome_peak_dome_glacier #1 sits 0.005 mi away at 48.324225,-121.157032; Dome's prose: 'Six Mile campsite at roughly 2,440 ft'. Current pin ground is 3,592, 2 km up Bachelor Creek. The copy of wa_spire_point_southwest_face's coordinate (48.324303, -121.15708) was REFUSED by the apply gate: it made the Bachelor Creek crossing an impossible distance, so this route's own stored distances do not describe that point. Cleared instead."
+ },
+ {
+  "op": "clear",
+  "route": "wa_dome_peak_dome_glacier",
+  "pin": "Campsite|Itswoot Ridge camp",
+  "oldLat": 48.3005711,
+  "oldLng": -121.0876158,
+  "claim": 6200,
+  "box": "5020-5221",
+  "evidence": "The route prose says 'climbs heather beside a cascade to Itswoot Ridge at about 6,200 ft', so the height matches. Ground at the pin is 5,020, which is Itswoot Lake itself, the place the note says lies 'just below'. Siblings sit on the ridge (ptarmigan #9 ground 6,342; gunsight #4 ground 6,264), but they store 6,400, 200 ft from this claim, so the copy gate fails. Coordinate cleared."
+ },
+ {
+  "op": "clear",
+  "route": "wa_spectre_peak_south_route",
+  "pin": "Hazard|Imperfect Impasse",
+  "oldLat": 48.844021233333336,
+  "oldLng": -121.35595151250001,
+  "claim": 5200,
+  "box": "6281-7015",
+  "evidence": "trailcatjim.com (Whatcom Peak circuit): the party 'reached the \"Perfect Impasse\" at 5200 feet' between Easy Peak and Perfect Pass, so the height is right. The pin is a computed fraction on an 8-point sketch, east of Perfect Pass on Challenger Arm (ground 6,631). The sibling (Poltergeist #2) is wrong too, so the coordinate is cleared."
+ },
+ {
+  "op": "clear",
+  "route": "wa_poltergeist_pinnacle_north_route",
+  "pin": "Hazard|Imperfect Impasse (Easy Ridge)",
+  "oldLat": 48.864602,
+  "oldLng": -121.445197,
+  "claim": 5100,
+  "box": "3737-4168",
+  "evidence": "Published as 5,200 ft (trailcatjim.com: 'reached the \"Perfect Impasse\" at 5200 feet'), between Easy Peak and Perfect Pass. This pin sits about 4.5 mi west of Perfect Pass, low on Easy Ridge's flank at ground 3,815, so the coordinate is wrong. The stored 5,100 is 100 ft under the published height. It could be set to 5,200 once a coordinate is found."
+ },
+ {
+  "op": "clear",
+  "route": "wa_lake_mountain_pasayten_scramble",
+  "pin": "Hazard|Pistol Ridge crest side-hill",
+  "oldLat": 48.73257981818182,
+  "oldLng": -120.50329672727274,
+  "claim": 6200,
+  "box": "3474-4102",
+  "evidence": "The coordinate is a computed fraction 0.84 mi off the route's own 56-point track, with ground 3,588, a valley-side point and not a ridge crest. The prose says the abandoned tread 'gains roughly 5,000' over about 7-8 miles to 7,100' Pistol Pass', which is consistent with 6,200 at mile 8. No sibling exists, so the coordinate is cleared."
+ },
+ {
+  "op": "copy",
+  "route": "wa_east_twin_needle_south_route",
+  "pin": "Campsite|Chopping Block saddle camp (above Crescent Creek Basin)",
+  "oldLat": 48.752141395348836,
+  "oldLng": -121.28451720930232,
+  "lat": 48.756967,
+  "lng": -121.30485,
+  "fromRoute": "wa_mount_degenhardt_southwest_route",
+  "fromPin": "Campsite|Chopping Block Saddle Camp",
+  "claim": 6400,
+  "box": "4032-4574",
+  "evidence": "The donor 'Chopping Block Saddle Camp' stores 6,400 (identical) and has ground 6,225, which admits the claim. It is the same saddle camp beside the Chopping Block that serves Twin Needles, Degenhardt and Terror. The current pin is a computed fraction on a 6-point sketch at ground 4,209."
+ },
+ {
+  "op": "clear",
+  "route": "wa_overcoat_peak_southeast_route",
+  "pin": "Junction|Notch on Overcoat Peak's north ridge (Overcoat Col)",
+  "oldLat": 47.504947,
+  "oldLng": -121.299111,
+  "claim": 6800,
+  "box": "5246-5792",
+  "evidence": "PeakVisor lists Overcoat's key col (SE, toward Chimney Rock) at '47.511111 N -121.290278 W'; ground there is 6,806, which matches 6,800 and the note's '~6,800 ft' col. The pin sits 0.7 mi SW of the summit in a valley at ground 5,453. The pin says 'north ridge' while the key col is SE, so a move to the PeakVisor point is not proven to be the same place. Coordinate cleared; the PeakVisor point is the candidate for a human to confirm."
+ },
+ {
+  "op": "clear",
+  "route": "wa_point_success_south_side",
+  "pin": "Campsite|Point 6631 (base camp north of Pyramid Peak)",
+  "oldLat": 46.821214,
+  "oldLng": -121.799046,
+  "claim": 6631,
+  "box": "7635-8340",
+  "evidence": "6,631 is the map spot height that names the point. The prose reaches it cross-country 'between roughly 6,000 and 6,300 ft' just north of Pyramid Peak. The pin's own note admits the position is 'interpolated', and it sits up on the cleaver at ground 8,128. Neighbour #4 (6,400 saddle, ground 8,641) is displaced the same way."
+ },
+ {
+  "op": "setNote",
+  "route": "wa_point_success_south_side",
+  "pin": "Campsite|Point 6631 (base camp north of Pyramid Peak)",
+  "oldNote": "Flat campsites just north of this 6,631 ft high point give broad views of Success Cleaver; position is estimated, not surveyed — interpolated along the contour around Pyramid Peak.",
+  "note": "Flat campsites just north of this 6,631 ft high point give broad views of Success Cleaver.",
+  "evidence": "The clear removes the interpolated coordinate this clause described."
+ },
+ {
+  "op": "clear",
+  "route": "wa_wallaby_peak_standard",
+  "pin": "Hazard|South-Facing Summit Gully",
+  "oldLat": 48.503165,
+  "oldLng": -120.624015,
+  "claim": 7700,
+  "box": "6149-6844",
+  "evidence": "The prose says 'At about 7,400 ft, swing around onto the south flank into the south-facing summit gully' and that it reaches the near-summit of a 7,995 ft peak, so 7,700 fits. Ground at the pin is 6,328, 1,000+ ft below where the gully starts. The pin lies on the 271-point track, but the track's along-distances run out of order against the pins (pass 0.78, swing 1.13, gully 2.80 mi), so that track is not evidence. Neighbours #2 and #3 are displaced low too."
+ },
+ {
+  "op": "clear",
+  "route": "wa_tomyhoi_peak_southeast_ridge",
+  "pin": "Campsite|Yellow Aster tarns / meadows",
+  "oldLat": 48.97039,
+  "oldLng": -121.704028,
+  "claim": 5580,
+  "box": "6381-6967",
+  "evidence": "The prose says 'a basin of small tarns at about 5,200-5,600 ft (roughly 2 hours/4 miles from the car)', so the height matches. The pin is about 0.4 mi from Tomyhoi's summit at ground 6,957, beyond the 6,266 col and the Tomyhoi Arm. It sits at 5.12 mi on a 5.43 mi track, past the boot-path pin (#3, 4.56 mi). No sibling exists, so the coordinate is cleared."
+ }
+]

@@ -1,0 +1,2071 @@
+{
+ "file": "r340.json",
+ "results": [
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade II",
+   "evidence": "Two guide services running the route (one titles its route profile \"Mt. Baker, Easton Glacier, II\"; another lists it as Grade II, 30-degree snow-ice and glacier travel) give Grade II, matching the grade line. One user-maintained climbing database lists Grade III, an outlier; no source gives Grade I.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-mt-baker-easton-glacier-ii/",
+    "https://www.mountainschool.com/content/main/mt-baker-climb-easton-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Commitment grade",
+     "op": "set",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "Grade I",
+     "value": "Grade II"
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Commitment grade",
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "I",
+     "value": "II"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach (\"Approach (one way)\"); 6.4 km = 4 mi is the walk to Sandy Camp, matching approach_variants distMi 4, so it is a different quantity from the round-trip itinerary, not a conflicting one.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Distance to summit",
+   "verdict": "fixed",
+   "correct_value": "Summit about 7 mi one way; ~14 mi round trip",
+   "evidence": "Two independent trip reports give the Easton round trip as 14 miles (7,500 ft) and 14.2 miles (7,600 ft), i.e. ~7 mi each way. The summit pin at 8.8 mi copied day 2 mileage; day 2 (camp to summit and out, from a camp ~4 mi in) is ~10 mi, and the total note said 12-13 mi.",
+   "sources": [
+    "https://engineeredforadventure.com/eastonglacier/",
+    "https://backcountrysights.com/mount-baker-easton-glacier-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 8.8,
+     "value": 7
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 8.8,
+     "value": 10.2
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Distance to summit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~12-13 miles round trip",
+     "replace": "~14 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Sandy Camp location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach, bivy and the camp elevation all place Sandy Camp on the south-side Railroad Grade (top of the moraine near 6,000 ft), so the pin at 48.7985,-121.88 north-west of the summit is wrong. The disputed value is the pin coordinate, which is out of scope for this pass (coordinates may not be changed); no patch written.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/railroad-grade"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Direction at the Railroad Grade junction",
+   "verdict": "fixed",
+   "correct_value": "Turn RIGHT onto the Railroad Grade Trail 603.2",
+   "evidence": "The hiking-association guide says to turn right and head up the stone steps at the Park Butte / Railroad Grade junction; an independent trail guide says to stay right at the Morovitz junction for Railroad Grade Trail 603.2 (left continues to the Park Butte lookout). approach_variants already says right; approach and pitch_detail said left.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/railroad-grade",
+    "https://www.go-washington.com/Railroad-Grade-Trail-603-2-Washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Direction at the Railroad Grade junction",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "bear left onto Railroad Grade Trail 603.2",
+     "replace": "bear right onto Railroad Grade Trail 603.2"
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Direction at the Railroad Grade junction",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "bear left onto the Railroad Grade trail",
+     "replace": "bear right onto the Railroad Grade trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register; recreation pass to park",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "free self-issue Wilderness permit at trailhead (optional climbing register recommended)",
+     "replace": "no wilderness permit (the voluntary climbing register is recommended)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Group-size limit",
+   "verdict": "fixed",
+   "correct_value": "12",
+   "evidence": "The forest wilderness regulations set a 12-person limit in wilderness areas, and the Forest Service pages for Heliotrope Ridge Trail 677, the Squak route and Boulder Ridge Trail 605 each state party size in the Mt. Baker Wilderness is limited to 12. The access.notes claim that no numeric cap is published is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677",
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/boulder-ridge-trail-605"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Group-size limit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "No published numeric group-size cap for Baker specifically — don’t assume one.",
+     "value": "Group size capped at 12 (see group_limit)."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Water above Morovitz Meadows",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No reliable running water above Morovitz; plan to melt snow",
+   "evidence": "approach, approach_variants, pitch_detail and bivy all say there is no reliable water above Morovitz Meadows; a trip report camped near the top of the Railroad Grade describes relying on a snowmelt source. The itinerary note (and its truncated copy in timing) was the only field promising water along the ridge.",
+   "sources": [
+    "https://engineeredforadventure.com/eastonglacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Water above Morovitz Meadows",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Water and flat sandy tent sites are available at several spots along the ridge.",
+     "replace": "Flat sandy tent sites are available at several spots along the ridge, but running water is unreliable, so plan to melt snow."
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Water above Morovitz Meadows",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Water and flat sandy ten…",
+     "replace": "Flat sandy tent sites along the ridge; plan to melt snow…"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Gain to Sandy Camp",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 2,600 ft to Sandy Camp (~5,900-6,000 ft) from the ~3,360 ft trailhead",
+   "evidence": "The trailhead (3,360 ft) and Sandy Camp (5,900-6,000 ft) stated throughout the row differ by ~2,600 ft, matching approach_variants; a guide service gives base camp around 6,000 ft. 2,300 ft matches a lower camp below the Railroad Grade. Day 2 gain/loss adjusted so the itinerary still totals gain_ft 7,600.",
+   "sources": [
+    "https://www.mountainschool.com/content/main/mt-baker-climb-easton-glacier/",
+    "https://backcountrysights.com/mount-baker-easton-glacier-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Gain to Sandy Camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2300,
+     "value": 2600
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Gain to Sandy Camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 5100,
+     "value": 5000
+    },
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Gain to Sandy Camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 7400,
+     "value": 7600
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Creek crossing at Schriebers Meadow",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two different creeks are crossed: the Forest Service trail page names the Rocky Creek crossing (difficult in heavy runoff) and the hiking-association guide names the Sulphur Creek crossing at the start; the hazard and the approach each describe a real crossing.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/park-butte-trail-603",
+    "https://www.wta.org/go-hiking/hikes/railroad-grade"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Which road is Baker Lake Road",
+   "verdict": "fixed",
+   "correct_value": "Baker Lake Road is FR 11; FR 12 then FR 13 lead to the Park Butte trailhead",
+   "evidence": "The Forest Service Park Butte trail page gives Baker Lake Highway as Forest Service Road 11, then FS 12 for 3.6 mi and FS 13 for 5.3 mi; a trail guide gives the same 11 → 12 → 13 sequence. road.name wrongly called FR 13 \"Baker Lake Rd\".",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/park-butte-trail-603",
+    "https://www.go-washington.com/Railroad-Grade-Trail-603-2-Washington/",
+    "https://www.wta.org/go-hiking/hikes/railroad-grade"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Which road is Baker Lake Road",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "find": "Forest Road 13 (Baker Lake Rd/Sulfur Creek Rd)",
+     "replace": "Baker Lake Road (FR 11), FR 12 and FR 13 (Sulfur Creek Rd)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "III (III+)",
+   "evidence": "Two guide-service route profiles and an independent trip report all grade the North Ridge III+ (AI3), matching the grade line; none gives II.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-baker-iii/",
+    "https://spokalpine.com/2017/06/06/mt-baker-north-ridge-iii-ai3/",
+    "https://www.mountainschool.com/content/main/mt-baker-climb-north-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Commitment grade",
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "II",
+     "value": "III"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Descend the Coleman-Deming (Roman Wall, Colfax saddle, Coleman Glacier) to the Hogsback camp",
+   "evidence": "A guide-service route profile says to head west across the summit plateau and descend the Roman Wall to the 9,000 ft saddle; an independent trip report descended the Roman Wall and Coleman Glacier to the Heliotrope Ridge trail. Nobody reverses the ridge; the descent field clause about returning to the ridge base was the outlier.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-baker-iii/",
+    "https://climberkyle.com/2019/05/26/mt-baker-north-ridge-ai3/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "From the ridge summit section, carefully descend back to the ridge base at 7,500 feet, then retrace glacier travel back to Coleman Glacier and Heliotrope Ridge base camp.",
+     "replace": "From the summit, go down the Roman Wall to the saddle and back across the Coleman Glacier to the Hogsback camp above Heliotrope Ridge."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Distance to summit",
+   "verdict": "fixed",
+   "correct_value": "Summit about 6 mi from the trailhead; camp ~3 mi",
+   "evidence": "The shared Heliotrope Ridge approach puts the summit ~6.2 mi one way (mapping app) and ~12 mi round trip (a trip report: 2.9 mi to Hogsback camp, 6.3 mi camp-summit-camp); descent_text says the North Ridge matches the Coleman-Deming mileage. The ridge-base pin sits ~0.8 mi straight-line from the camp pin, so ~4 mi from the trailhead.",
+   "sources": [
+    "https://www.gaiagps.com/hike/1510/mount-baker-via-heliotrope-ridge-trail/",
+    "https://www.wanderingtherockies.com/blog/mountbaker-colemandeming-washington2025"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 8,
+     "value": 4
+    },
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 12,
+     "value": 6
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach; 4 km = 2.5 mi is the walk to the Hogsback camp (approach_variants distMi 2.5), a different quantity from the itinerary round trip.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Gain to Hogsback camp",
+   "verdict": "fixed",
+   "correct_value": "About 2,300 ft over ~3 mi from the ~3,700 ft trailhead to the ~6,000 ft camp",
+   "evidence": "A guide service gives ~2,200 ft of gain on the approach day to the Hogsback; an independent trip report gives 2.9 mi and 2,200 ft; the Forest Service puts the Hogsback 1,000 ft above a junction ~2 mi from a 3,700 ft trailhead. 2,800 ft is too much for a 3,700 → 6,000 ft climb.",
+   "sources": [
+    "https://www.rmiguides.com/north-cascades/baker-coleman-deming",
+    "https://www.wanderingtherockies.com/blog/mountbaker-colemandeming-washington2025",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Gain to Hogsback camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(about 2.5 mi and 2,800 ft of gain,",
+     "replace": "(about 3 mi and 2,300 ft of gain,"
+    },
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Gain to Hogsback camp",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2.5,
+     "value": 3
+    },
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Gain to Hogsback camp",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "gainFt"
+     ],
+     "expect": 2800,
+     "value": 2300
+    },
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Gain to Hogsback camp",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "two and a half miles and 2,800 ft",
+     "replace": "about three miles and 2,300 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~3,700 ft",
+   "evidence": "The hiking-association guide gives a 5,100 ft high point reached with 1,400 ft of gain (a ~3,700 ft trailhead), a trail database lists the trailhead at 3,700 ft, and the 1961 first-ascent account left the road at 3,700 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+    "https://www.alltrails.com/trail/us/washington/heliotrope-ridge-trail--6",
+    "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 3437,
+     "value": 3700
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Ice screw count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5-7 ice screws",
+   "evidence": "gear and pitch_detail agree on 5-7 screws; an independent trip report carried 7 screws and 2 pickets for the crux. detailed_rack (the rack that renders) was the outlier at 2-4.",
+   "sources": [
+    "https://climberkyle.com/2019/05/26/mt-baker-north-ridge-ai3/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Ice screw count",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "2-4 ice screws",
+     "replace": "5-7 ice screws"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Crux ice steepness",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A guide-service profile describes 60-70 degree ice for two pitches at the ice cliff, while a trip report found about 15 ft of dead-vertical ice and another trip report found WI4 on a variant right of the easiest line; the ice cliff changes yearly, so a single max angle (80 vs 85 vs vertical) is not settled by agreeing sources.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-baker-iii/",
+    "https://climberkyle.com/2019/05/26/mt-baker-north-ridge-ai3/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Which side is east when crossing the Coleman",
+   "verdict": "fixed",
+   "correct_value": "Cross the Coleman climbers' LEFT (east) toward the ridge",
+   "evidence": "Facing uphill from the Hogsback the North Ridge lies to the east, which is on the climber's left; a trip report describes traversing \"up and left\" across the Coleman to the ridge, and a guide-service profile describes traversing eastward. approach and pitch_detail said right (east). bivy[0].notes repeats \"climbers' right\" but bivy is owned by the camping clean-up and is not patched here.",
+   "sources": [
+    "https://climberkyle.com/2019/05/26/mt-baker-north-ridge-ai3/",
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-baker-iii/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Which side is east when crossing the Coleman",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "heading climbers' right (east)",
+     "replace": "heading climbers' left (east)"
+    },
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Which side is east when crossing the Coleman",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climbers' right (east)",
+     "replace": "climbers' left (east)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Which side of the ridge the snow approach climbs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One climbing database says to ascend snow slopes to the left of the ridge from the Coleman, while the beta says the west slope; which frame \"left\" uses (facing the face or facing up the ridge) is not stated, and no second source names the flank by compass direction.",
+   "sources": [
+    "https://www.mountainproject.com/route/106445849/north-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: a guide service grades the route Grade III+ (50 degree ice with steeper steps), while a climbing database lists Grade IV, AI4 and another guide service lists \"Alpine Ice IV\". No source supports the commitment chip's II-III, but III+ vs IV is not settled by agreeing sources.",
+   "sources": [
+    "https://www.mountainschool.com/mt-baker-guides-coleman-headwall",
+    "https://www.mountainproject.com/route/105893407/coleman-headwall",
+    "https://mountainmadness.com/trips/washington-mount-baker-coleman-headwall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Rappels on the descent",
+   "verdict": "fixed",
+   "correct_value": "No rappels: walk-off descent via the Coleman-Deming",
+   "evidence": "A climbing database gives \"Descent via Coleman-Deming route\" and a guide service descends the Coleman-Deming back to camp; the Coleman-Deming is a walk/downclimb of the Roman Wall. The descent field's \"multiple rappels\" off the upper face was the outlier against descent_text, rappels and climbing_route.",
+   "sources": [
+    "https://www.mountainproject.com/route/105893407/coleman-headwall",
+    "https://www.mountainschool.com/mt-baker-guides-coleman-headwall"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Rappels on the descent",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Rappel or downclimb from the upper ice face, navigate bergshrunds, and traverse back across the Coleman Glacier to Heliotrope Ridge camp. Multiple rappels on ice or snow anchors may be necessary depending on the descent line chosen.",
+     "replace": "Walk across the summit plateau, downclimb the Roman Wall to the saddle, and follow the Coleman Glacier back to camp above Heliotrope Ridge; no rappels are needed on this descent."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "12",
+   "evidence": "pitch_detail, the itinerary and the waypoint directions agree on about a dozen pitches; a guide service describes up to 12 pitches of 60-70 m. Another guide service says up to 14 depending on conditions, so 12 is the typical count and 14 the high end.",
+   "sources": [
+    "https://www.mountainschool.com/mt-baker-guides-coleman-headwall",
+    "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 14,
+     "value": 12
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "~6,700 ft",
+   "evidence": "A guide service puts its Coleman Headwall base camp around 6,700 ft; a trip report describes the flat camping area toward the Roman Nose at about 6,500 ft. The 6,000 ft figure is the standard Coleman-Deming Hogsback camp. bivy is owned by the camping clean-up and is not patched.",
+   "sources": [
+    "https://www.mountainschool.com/mt-baker-guides-coleman-headwall",
+    "https://www.jeffreyjhebert.com/adventures/coleman-headwall-on-mount-baker"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 6000,
+     "value": 6700
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Distance to summit",
+   "verdict": "fixed",
+   "correct_value": "Summit about 6 mi from the trailhead; headwall base ~4.5 mi",
+   "evidence": "The Heliotrope Ridge approach puts the summit ~6.2 mi one way (mapping app) and ~12 mi round trip (trip report), consistent with dist_km (13 mi round trip) and the itinerary (3.5 + 9.5). The headwall-base pin sits ~1.4 mi straight-line beyond the camp pin at ~3 mi. dist_km left unchanged.",
+   "sources": [
+    "https://www.gaiagps.com/hike/1510/mount-baker-via-heliotrope-ridge-trail/",
+    "https://www.wanderingtherockies.com/blog/mountbaker-colemandeming-washington2025"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 10,
+     "value": 4.5
+    },
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 12.5,
+     "value": 6
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Glacier Creek Road washout",
+   "verdict": "fixed",
+   "correct_value": "Road reopened to the trailhead on 20 Aug 2026",
+   "evidence": "A regional newspaper reported on 20 Aug 2026 that the Forest Service finished the Glacier Creek Road repairs and vehicles can again reach the Heliotrope Ridge trailhead; a trail-conditions site confirms the road is open to the trailhead with late-August reports. The waypoint directions were stale.",
+   "sources": [
+    "https://www.cascadiadaily.com/2026/aug/20/glacier-creek-road-reopens-following-washout-repairs/",
+    "https://www.hikewa.app/trails/heliotrope-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Glacier Creek Road washout",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Check the road status before committing: the washout adds about nine miles and 2,000 ft of travel on foot or bike before you even reach the sign-in kiosk.",
+     "replace": "The road washed out in December 2025 and reopened to vehicles in August 2026 after repairs; it has washed out before, so check its status before committing."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Group-size limit",
+   "verdict": "fixed",
+   "correct_value": "12",
+   "evidence": "The forest wilderness regulations set a 12-person limit in wilderness areas, and the Forest Service pages for Heliotrope Ridge Trail 677, the Squak route and Boulder Ridge Trail 605 each state party size in the Mt. Baker Wilderness is limited to 12. The access.notes claim that no numeric cap is published is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677",
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/boulder-ridge-trail-605"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Group-size limit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "No published numeric group-size cap for Baker specifically — don’t assume one.",
+     "value": "Group size capped at 12 (see group_limit)."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "May-June; out of condition by about July 1",
+   "evidence": "A guide-service profile says the safer right-hand line is generally out of condition by mid-summer and not recommended beyond July 1; a climbing database describes early-May conditions. itinerary.cal's Feb-May / mid-late summer window was the outlier.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+    "https://www.mountainproject.com/route/105893407/coleman-headwall"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "late winter through spring (Feb-May); the headwall can go bare/rotten by mid-late summer.",
+     "replace": "May through June; the safer right-hand line is generally out of condition by about July 1."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~3,700 ft",
+   "evidence": "The trailhead waypoint says 3,437 ft while the approach and trailhead card say ~3,700 ft. The hiking-association guide implies a ~3,700 ft trailhead (5,100 ft high point with 1,400 ft gain), a trail database lists 3,700 ft, and the 1961 first-ascent account on the neighbouring ridge left the road at 3,700 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+    "https://www.alltrails.com/trail/us/washington/heliotrope-ridge-trail--6"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_headwall",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 3437,
+     "value": 3700
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found giving Grade I or Grade II for the Squak; one climbing database lists Grade III (Easy Snow). With no two agreeing sources, the chips are left as they are.",
+   "sources": [
+    "https://www.mountainproject.com/route/108224628/squak-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "fact": "Crag View Camp location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service Squak page and a climbing database place Crag View (~6,500 ft) on the south side, reached from the Scott Paul Trail, so the pin north-west of the summit is wrong. The disputed value is the pin coordinate, which is out of scope for this pass (coordinates may not be changed); no patch written.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route",
+    "https://www.mountainproject.com/route/108224628/squak-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "fact": "Distance to summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 9-mile summit distance is too long, but sources disagree on the true value: a mapping app gives 6.5 mi one way, while an outdoor guide gives 10 mi round trip (5 mi one way). dist_km (3.4 mi) is the one-way approach to Crag View and is not itself in conflict.",
+   "sources": [
+    "https://www.gaiagps.com/hike/362552/mount-baker-via-squak-glacier-route-and-scott-paul-trail/",
+    "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "fact": "Road access in May",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The road gate is snow-dependent; a climbing database tells parties to drive FS 13 \"as far as conditions allow\", and the Forest Service notes the recreation area is used by snowmobiles into late spring, so May ascents that start below the snowline are consistent with a road that usually melts out around June.",
+   "sources": [
+    "https://www.mountainproject.com/route/108224628/squak-glacier",
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness. The permit field contradicted this row's own access.permit and access.overnight_permit.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_squak_glacier",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found gives a roman commitment grade for the Boulder-Park Cleaver: a climbing database lists \"Mod. Snow\" and a trip report describes it as strenuous but not technically difficult.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Glacier crossed to reach the cleaver",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: a climbing database says to cross the lower Boulder Glacier north-west to the toe of the cleaver, while a trip report says they stepped onto the Park Glacier and climbed toward the bottom of the cleaver.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "High camp elevation and location",
+   "verdict": "fixed",
+   "correct_value": "Main camp on Boulder Ridge ~5,500-5,700 ft; optional upper camp beside the cleaver ~7,200-7,500 ft",
+   "evidence": "A trip report camped at 5,700 ft on Boulder Ridge and noted sites near 7,200 ft on the cleaver; a climbing database gives ridge camps ~5,500 ft; a route summary adds a flat sheltered spot at ~7,500 ft. No source puts a camp at 7,800-8,000 ft, so the descent field and the camp waypoint are corrected to the upper-camp figure, which approach_variants already names.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm",
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "High camp elevation and location",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "at approximately 7,800-8,000 feet",
+     "replace": "at about 7,200-7,500 ft"
+    },
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "High camp elevation and location",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 8000,
+     "value": 7500
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "High camp pin on the wrong side of the mountain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The camp pin (48.79,-121.84) lies west-north-west of the summit while every other field and the trailhead put this route on the east side. The disputed value is the pin coordinate, which is out of scope for this pass (coordinates may not be changed); no patch written.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Hogsback camp named on an east-side route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Boulder Ridge high camp",
+   "evidence": "approach, bivy and itinerary all name the Boulder Ridge camp; the Forest Service Boulder Glacier route page says most campsites are at the end of Boulder Ridge near the Boulder Glacier. The Hogsback is the Heliotrope Ridge camp on the other side of the mountain.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "Hogsback camp named on an east-side route",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      "gearTiers",
+      "recommended",
+      2
+     ],
+     "find": "high camp at Hogsback",
+     "replace": "high camp on Boulder Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Trip duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 8-hour total is clearly too short for a two-day, ~8,000 ft outing; one route summary gives 4-5 hours trailhead to camp and 5-7 hours camp to summit, but no second independent source supplies a descent time to rebuild the whole timing block.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 16 mi round trip; summit ~8 mi one way",
+   "evidence": "A trip report gives the Boulder-Park Cleaver as ~16 miles round trip, matching dist_km (25.7 km = 16 mi) and the sibling Boulder Glacier row; the 11-mile summit waypoint (22 mi round trip) is the outlier. The trail runs nearly 4 mi to the moraine and cliff base below the ridge camp; the upper camp beside the cleaver is set to ~5.5 mi so the camp no longer sits at the summit's distance.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm",
+    "https://www.wta.org/go-hiking/hikes/boulder-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "Distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 11,
+     "value": 8
+    },
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "Distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 8,
+     "value": 5.5
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Cleaver base elevation",
+   "verdict": "fixed",
+   "correct_value": "Toe of the cleaver ~6,800 ft; the 9,300 ft buttress is ~2,500 ft above it",
+   "evidence": "A trip report puts the bottom of the Boulder-Park Cleaver at c. 6,800 ft and a climbing database places the decision buttress at 9,300 ft. The base-finding line \"3,600 ft above the start of the route\" measured from the 5,700 ft camp, which reads as if the cleaver base were 5,700 ft.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm",
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "Cleaver base elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "if you have reached it you are 3,600 ft above the start of the route",
+     "replace": "if you have reached it you are about 2,500 ft above the toe of the cleaver"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness. The permit field contradicted this row's own access.permit.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach; 4.7 km = 2.9 mi is the walk to the Hogsback camp (itinerary day 1 miles), a different quantity from the round trip.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Gain to Hogsback camp",
+   "verdict": "fixed",
+   "correct_value": "About 2,300 ft over roughly 3 mi (trailhead ~3,700 ft to camp ~6,000 ft)",
+   "evidence": "A guide service gives ~2,200 ft on the approach day to the Hogsback; a trip report gives 2.9 mi and 2,200 ft; the Forest Service trail page puts the Hogsback 1,000 ft above a junction about 2 mi from the trailhead. 2,800 ft over 2.5 mi was the outlier; the itinerary's 2,200 is within rounding.",
+   "sources": [
+    "https://www.rmiguides.com/north-cascades/baker-coleman-deming",
+    "https://www.wanderingtherockies.com/blog/mountbaker-colemandeming-washington2025",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Gain to Hogsback camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Gain 2,800 ft over 2.5 miles",
+     "replace": "Gain about 2,300 ft over roughly 3 miles"
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Gain to Hogsback camp",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2.5,
+     "value": 3
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Gain to Hogsback camp",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "gainFt"
+     ],
+     "expect": 2800,
+     "value": 2300
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Gain to Hogsback camp",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "around two and a half miles and 2,800 ft above the car",
+     "replace": "around three miles and 2,300 ft above the car"
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Gain to Hogsback camp",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climbs about 2,800 ft",
+     "replace": "climbs about 2,300 ft"
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Gain to Hogsback camp",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 2.5,
+     "value": 3
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Crater rim on the route line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Coleman Glacier to the Colfax saddle, pumice ridge and Roman Wall",
+   "evidence": "pitch_detail, beta, approach_variants and descent_text all route via the Colfax-summit saddle and the Roman Wall; a guide-service route profile describes descending the Roman Wall to the ~9,000 ft saddle between the Deming and Coleman Glaciers. The crater rim is the Easton line.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-baker-iii/",
+    "https://www.rmiguides.com/north-cascades/baker-coleman-deming"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Crater rim on the route line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "roped travel up the Coleman Glacier and around the crater rim to the summit",
+     "replace": "roped travel up the Coleman Glacier to the Colfax saddle and up the Roman Wall to the summit"
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Crater rim on the route line",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "roped travel up the Coleman Glacier and around the crater rim to the summit",
+     "replace": "roped travel up the Coleman Glacier to the Colfax saddle and up the Roman Wall to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Summit-day gain",
+   "verdict": "fixed",
+   "correct_value": "About 4,700-5,000 ft on summit day",
+   "evidence": "A guide service gives 4,980 ft of gain on summit day from the Hogsback and a trip report gives 4,700 ft; ~7,000 ft is the whole outing.",
+   "sources": [
+    "https://www.rmiguides.com/north-cascades/baker-coleman-deming",
+    "https://www.wanderingtherockies.com/blog/mountbaker-colemandeming-washington2025"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Summit-day gain",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 7,000 ft of gain round trip on summit day after the approach",
+     "replace": "roughly 4,700 ft of gain on summit day after the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The wilderness permit is free and self-issued.",
+     "replace": "No climbing or wilderness permit is needed; the climbing register is voluntary."
+    },
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "permits"
+     ],
+     "expect": "Free self-issue wilderness permit",
+     "value": "No climbing or wilderness permit; voluntary climbing register"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Group-size limit",
+   "verdict": "fixed",
+   "correct_value": "12",
+   "evidence": "The forest wilderness regulations set a 12-person limit in wilderness areas, and the Forest Service pages for Heliotrope Ridge Trail 677, the Squak route and Boulder Ridge Trail 605 each state party size in the Mt. Baker Wilderness is limited to 12. The access.notes claim that no numeric cap is published is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677",
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/boulder-ridge-trail-605"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Group-size limit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "No published numeric group-size cap for Baker specifically — don’t assume one.",
+     "value": "Group size capped at 12 (see group_limit)."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Which line the route climbs (glacier vs cleaver)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service route page and a trip report describe climbing the Boulder Glacier itself, while the row (named \"Boulder Glacier / Boulder Cleaver\") and a climbing database describe the cleaver approach as the recommended way through the lower glacier. Whether this row should describe the glacier line or the combined line is a scoping decision the sources do not settle; no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+    "https://hike2hike.com/mountaineering/boulder-glacier-mount-baker-washington/",
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~2,700 ft",
+   "evidence": "trailheadDirection and approach_variants agree on ~2,700 ft, as does the sibling Boulder-Park Cleaver row; a trail database gives the Boulder Ridge Trail's low point as 2,704 ft.",
+   "sources": [
+    "https://www.trailforks.com/trails/boulder-ridge-trail-321801/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 2200,
+     "value": 2700
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "Usual camp ~5,500-5,700 ft where Boulder Ridge meets the glacier; a sheltered optional site near 7,500 ft beside the cleaver",
+   "evidence": "The Forest Service says most campsites are at the end of Boulder Ridge near the Boulder Glacier; a climbing database gives ridge bivies ~5,500 ft; a trip report on the neighbouring line camped at 5,700 ft (with sites near 7,200 ft on the cleaver). \"Most parties push up to 6,800-7,500 ft\" is unsupported. Gains rebuilt from a ~2,700 ft trailhead: 3,000 ft to camp and ~5,100 ft on summit day (10,781 - 5,700), so the outing totals ~8,100 ft, not 7,000 (the sibling cleaver row already gives 8,081).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "most parties push up to a sheltered site around 6,800-7,500 ft near the base of the cleaver to shorten the summit day, rather than stopping at the lower 5,200-5,700 ft options.",
+     "replace": "most parties camp where the ridge meets the glacier at about 5,500-5,700 ft; a sheltered site near 7,500 ft beside the cleaver shortens the summit day for those who carry higher."
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "most parties push up to a sheltered site around 6,800-7,500 ft near the base of the cleaver to sh…",
+     "replace": "most parties camp where the ridge meets the glacier at about 5,500-5,700 ft…"
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3800,
+     "value": 3000
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 3200,
+     "value": 5100
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 7000,
+     "value": 8100
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7000,
+     "value": 8100
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 7000,
+     "value": 8100
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 16 miles and 7,000 ft round trip",
+     "replace": "roughly 16 miles and 8,100 ft round trip"
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "7,000 ft of gain",
+     "replace": "8,000 ft of gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Distance to summit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Summit ~8 mi one way; ~16 mi round trip",
+   "evidence": "dist_km (16 mi), the itinerary (6.5 + 9.5) and totalNote agree on ~16 mi round trip; a trip report on the shared approach gives ~16 miles round trip. The 6.35-mile summit waypoint (shorter than the day-1 walk to camp) was the outlier.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 6.35,
+     "value": 8
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Approach time to camp",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~4-5 hours",
+   "evidence": "timing and the itinerary agree on 4.5 hours; a route summary gives 4-5 hours trailhead to camp. partner_requirements' 6-8 hours was the outlier.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Approach time to camp",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "~6-8 hrs from the Baker Lake/Boulder Creek side to a high camp",
+     "value": "~4-5 hrs from the Boulder Ridge trailhead to the high camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Climbing permit / registration",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; registering is voluntary",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Climbing permit / registration",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Climbing permit / registration",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Mount Baker Climbing",
+     "value": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker."
+    },
+    {
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Climbing permit / registration",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "find": "Climbers must sign the climbers' register at this office before attempting a climb.",
+     "replace": "Registering a climb is voluntary but recommended."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Trailhead and approach line",
+   "verdict": "fixed",
+   "correct_value": "Heliotrope Ridge Trailhead, Hogsback camp, then northeast across the Coleman and Roosevelt Glaciers to the ridge foot at ~7,500-7,800 ft",
+   "evidence": "The 1961 first-complete-ascent account left the road at 3,700 ft, followed the trail to Kulshan Cabin and the moraine, and crossed the Coleman and Roosevelt Glaciers northeastward to the foot of the ridge at 7,800 ft; a climbing database likewise gives access from Heliotrope across the Coleman and Roosevelt Glaciers to the ridge around 7,500 ft. The Artist Point / Rainbow-Park approach in approach, approach_variants, the trailhead card and waypoint was copied from the Park Glacier Headwall. The trailhead pin and approach_logistics coordinates still point at Artist Point; coordinates are out of scope and need a separate pin fix. bivy entries (Portals, Camp Kiser) are owned by the camping clean-up and are not patched.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+    "https://www.mountainproject.com/route/113499467/cockscomb-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach",
+     "path": [],
+     "expect": "Drive the Mount Baker Highway (SR 542) to its end at Artist Point. Start on Chain Lakes Trail 682 for about a mile to the Ptarmigan Ridge junction, then follow Ptarmigan Ridge Trail 682.1 along the crest, passing beneath Coleman Pinnacle, to Camp Kiser at roughly 5 miles. Past Camp Kiser the maintained tread ends and a primitive climbers' boot path takes over. Leave the crest on snow to climber's right, traverse below the ridgeline to a rocky saddle, cross to its far side and work beneath the cliff bands down onto the Rainbow Glacier. Cross the Rainbow and climb onto the Park Glacier; most parties camp near The Portals. From camp, ascend the Park Glacier through the crevasses toward the Park Glacier Headwall, with the Cockscomb rising above it, and follow the ridge to the summit plateau. Note that the Coleman and Roosevelt Glaciers are on Baker's west and northwest flanks and are not crossed on this approach.",
+     "value": "From the Heliotrope Ridge Trailhead (~3,700 ft) at the end of Glacier Creek Road (FR 39), follow Trail 677 through old growth to the fork at about two miles and take the right-hand climbers' path up the Hogsback moraine to camp near 6,000 ft at the edge of the Coleman Glacier. From camp, rope up and cross the Coleman and then the Roosevelt Glacier heading northeast — roughly 2-3 hours of crevassed travel — and take low-to-moderate snow ramps to the foot of the ridge at about 7,500-7,800 ft. Thin snow bridges over a crevasse maze are the main hazard on this crossing."
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Artist Point, Ptarmigan Ridge and the Portals",
+     "value": "Heliotrope Ridge, the Hogsback and the Coleman-Roosevelt crossing"
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "The same walk in as the Park Glacier Headwall: Chain Lakes Trail 682 from Artist Point for about a mile to the Ptarmigan Ridge junction, then Trail 682.1 along the crest past Coleman Pinnacle to Camp Kiser at roughly five miles. Past Camp Kiser the maintained trail ends and a primitive bootpath takes over through the Portals.\n\nFrom there leave the crest on snow, traverse below the ridgeline to a rocky saddle, cross to its far side, work beneath the cliff bands down onto the Rainbow Glacier, cross it and climb onto the Park Glacier. Camps are usually near the Portals.\n\nSnow lingers here into late season, which makes the walk long early and the navigation harder later.",
+     "value": "Glacier Creek Road (FR 39) to the Heliotrope Ridge trailhead, then Trail 677 through old growth to the fork at about two miles. Take the right-hand climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft beside the Coleman Glacier, the same camp used for the Coleman-Deming and the North Ridge.\n\nFrom camp the route ropes up and heads northeast, crossing the Coleman and then the Roosevelt Glacier. Expect two to three hours of glacier travel through a crevasse field before low-to-moderate snow ramps lead to the foot of the ridge."
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "expect": "The Cockscomb is the formation above the Park Glacier Headwall — the ridge is gained by going up the Park Glacier through the crevasses toward the headwall with the Cockscomb standing above it, then following the ridge to the summit plateau.\n\nUse the Cockscomb itself as the aiming mark rather than any point on the glacier: it is the only thing on this side of the mountain that reads as a serrated rock crest above a headwall. If you are on a glacier with no rock crest above the wall in front of you, you are on the Rainbow rather than the Park and have not finished the crossing.\n\nOne durable negative check: the Coleman and Roosevelt Glaciers lie on Baker's west and north-west flanks and are not crossed on this approach at any point.",
+     "value": "The ridge is reached by traversing northeast from the Hogsback camps across the Coleman and then the Roosevelt Glacier. Aim for the foot of the ridge at about 7,500-7,800 ft, where low-angle snow ramps lead up onto the crest.\n\nThe Cockscomb Tower, about 300 ft high, stands well above the base and is passed on its east side by steep snow; if you are already beside it, you are far above the start. If you have crossed only the Coleman and are still west of the Roosevelt, you have not reached this ridge yet."
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards"
+     ],
+     "expect": [
+      "steep snow chutes and long snow travel early in the season",
+      "unmarked bootpath braid through the Portals",
+      "crevasses on both the Rainbow and the Park",
+      "cliff bands to be turned between the rocky saddle and the Rainbow Glacier"
+     ],
+     "value": [
+      "crevasses and thin snow bridges on the Coleman and Roosevelt Glaciers",
+      "bergschrunds below and on the ridge",
+      "loose rock on the ridge, worse as the snow melts out",
+      "icefall on the ramps that skirt the towers"
+     ]
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Artist Point (Ptarmigan Ridge Trailhead)",
+     "value": "Heliotrope Ridge Trailhead (Trail #677, FR-39)"
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "Start at Artist Point parking area (elevation 5,075 ft)",
+     "value": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Artist Point (Ptarmigan Ridge Trailhead)",
+     "value": "Heliotrope Ridge Trailhead"
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead and approach line",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "expect": "Drive the Mount Baker Highway (SR 542) to its end at the Artist Point parking area, which is the Ptarmigan Ridge trailhead for this route. The walk in leaves the lot on Chain Lakes Trail 682 and reaches the Ptarmigan Ridge junction after about a mile.",
+     "value": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Descent route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descend the Coleman-Deming back to the Hogsback camp and out the Heliotrope Ridge trail",
+   "evidence": "With the approach from Heliotrope Ridge, descent_text, beta, pitch_detail and the itinerary all descend the Coleman-Deming back to camp; a climbing database gives the descent as the Coleman-Deming. The descent field's reversal to Artist Point belonged to the Park Glacier Headwall approach.",
+   "sources": [
+    "https://www.mountainproject.com/route/113499467/cockscomb-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Descent route",
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "The standard exit reverses the climb: drop off the summit plateau past the headwall, descend the Park Glacier, recross the Rainbow to camp near The Portals, then retrace the boot path and Ptarmigan Ridge Trail to Artist Point. On the way out most parties take a lower line around the north side of Coleman Pinnacle to avoid regaining elevation. Descending the Coleman-Deming instead puts you on Baker's west side at Heliotrope Ridge, reached by Glacier Creek Road roughly 40 road miles from Artist Point — that carryover is the Watson Traverse variation and only works with a car shuttle arranged in advance.",
+     "value": "Descend the Coleman-Deming route: cross the summit plateau, go down the Roman Wall to the saddle below Colfax Peak, and follow the Coleman Glacier back to the Hogsback camp, then walk out the Heliotrope Ridge trail to the car."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~3,700 ft (Heliotrope Ridge Trailhead)",
+   "evidence": "The route starts at the Heliotrope Ridge trailhead (see the approach finding), which the 1961 first-ascent party left at 3,700 ft and which the hiking-association guide implies at ~3,700 ft (5,100 ft high point, 1,400 ft gain). Neither 3,437 nor Artist Point's 5,075 ft applies.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+    "https://www.wta.org/go-hiking/hikes/heliotrope-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 3437,
+     "value": 3700
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found gives a roman commitment grade: a climbing database grades it 4th class, AI2-3, M1b, PG13 with no grade number, and the first-ascent account gives none. III vs II is not settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/113499467/cockscomb-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Approach duration",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "4.5 hours",
+   "evidence": "The section breakdown, itinerary and totalHrs arithmetic (4.5 + 13 = 17.5) all use 4.5 hours; guide services put the Heliotrope Ridge approach to the ~6,000 ft camp at 3-4 hours (4-5 with a heavy pack), not 7.",
+   "sources": [
+    "https://www.rmiguides.com/north-cascades/baker-coleman-deming"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Approach duration",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 7,
+     "value": 4.5
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Location of the route",
+   "verdict": "fixed",
+   "correct_value": "North side, between the North Ridge and the Park Glacier; approached across the Coleman and Roosevelt Glaciers",
+   "evidence": "The first-ascent account and a climbing database both reach the ridge across the Coleman and Roosevelt Glaciers on the north side; nothing places it near the east-side Boulder Glacier.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+    "https://www.mountainproject.com/route/113499467/cockscomb-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Location of the route",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "an obscure mixed line near the Boulder Glacier",
+     "replace": "an obscure mixed line on Baker's north side"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness. The Artist Point toilet/parking sentence is also dropped from access.notes since the route starts at Heliotrope Ridge.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Free self-issue wilderness permit available at trailhead (day use or overnight).",
+     "replace": "No climbing or wilderness permit is required; a voluntary climbing register may be at the trailhead."
+    },
+    {
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": " Vault toilets and parking for ~160 vehicles at Artist Point. No water available.",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Waypoint distances",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoints place the ridge base at 9.5 mi, the tower at 11 mi and the summit at 12.5 mi from the trailhead, but the itinerary (3 mi to camp, 9 mi camp-summit-out) implies a summit ~6 mi away. The ridge-base and tower distances cannot be set from sources found.",
+   "sources": [
+    "https://www.gaiagps.com/hike/1510/mount-baker-via-heliotrope-ridge-trail/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found gives a roman grade for the headwall line; a climbing database lists the (non-headwall) Park Glacier route as Grade II. IV vs III is not settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/120834763/park-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Descent route and where it ends",
+   "verdict": "fixed",
+   "correct_value": "Reverse the route down the Park Glacier, back across the Rainbow to the Portals camp and out Ptarmigan Ridge to Artist Point",
+   "evidence": "A trip report that summited this line retraced the approach back to the car (taking a lower line north of Coleman Pinnacle), matching the row's itinerary schedule; another party on the Park Glacier descended the same glacier back to the ski-area lot. Descending the Coleman-Deming ends on the far side of the mountain and needs a shuttle (the Watson Traverse). The V-thread gear line is consistent with reversing steep ice and is left as is.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/park-glacier-on-mount-baker",
+    "https://engineeredforadventure.com/park-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Descent route and where it ends",
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Descend the Coleman-Deming route",
+     "value": "Reverse the route"
+    },
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Descent route and where it ends",
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descend Coleman-Deming to Heliotrope Ridge",
+     "value": "Reverse the ascent: descend the Park Glacier, recross the Rainbow Glacier to camp near the Portals, then walk back along Ptarmigan Ridge to Artist Point, taking the lower line north of Coleman Pinnacle to avoid regaining height. Going down the Coleman-Deming instead ends at Heliotrope Ridge on the far side of the mountain and needs a car shuttle."
+    },
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Descent route and where it ends",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "expect": "A standard-route descent simplifies the day",
+     "value": "Reversing the approach avoids a car shuttle to the far side of the mountain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service says the route is best early in the season before the glacier breaks up; trip reports on the Park Glacier are from April and late May (via the ski-area lot before Artist Point is plowed). Whether the chip should read May-Jun or Jun-Aug, and whether July is risky, is not settled by two agreeing sources.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+    "https://www.jeffreyjhebert.com/adventures/park-glacier-on-mount-baker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Water at the Portals camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service route page says potable water is not available, which does not settle whether running (untreated) meltwater is present at the Portals; trip reports found do not mention water there.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Direction of the Ptarmigan Ridge approach",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The trail leaves Artist Point heading southeast, then turns due west along Ptarmigan Ridge to Coleman Pinnacle",
+   "evidence": "The hiking-association guide says the trail crests the ridge at 2.9 mi and changes direction from southeast to due west, passing beneath Coleman Pinnacle; the trailhead and peak coordinates put Baker west-south-west of Artist Point. \"Continue 3 miles east\" was wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ptarmigan-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Direction of the Ptarmigan Ridge approach",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Continue 3 miles east to Coleman Pinnacle base",
+     "replace": "Continue about 3 miles west along the ridge to Coleman Pinnacle base"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Trailhead name",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Artist Point",
+   "evidence": "approach, approach_variants and the waypoint start at Artist Point; the Forest Service Park Glacier route page starts the approach from the Artist Point trailhead. Heather Meadows is only the early-season fallback before the road is plowed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Trailhead name",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Heather Meadows trailhead",
+     "replace": "Artist Point trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Approach duration",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "4 hours",
+   "evidence": "The section breakdown, the itinerary and the totalHrs arithmetic (4 + 12.5 = 16.5) use 4 hours; the Forest Service describes the five-mile approach as a long slog, supporting the longer figure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Approach duration",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 3.5,
+     "value": 4
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Route grade in the beta",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A technical ice route above the Park Glacier (not Grade II glacier travel)",
+   "evidence": "grade, commitment, alpine_grade and ice_grade describe a steep ice headwall; route summaries describe steep snow and ice for several pitches past the headwall. The \"Grade II\" in the beta belongs to the non-headwall Park Glacier route.",
+   "sources": [
+    "https://www.mountainproject.com/route/120834763/park-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Route grade in the beta",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Grade II glacier travel with crevasse rescue.",
+     "replace": "Glacier travel with crevasse rescue below a steep ice headwall."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or wilderness permit; voluntary climbing register",
+   "evidence": "The Forest Service Mt. Baker climbing page and its Recreation.gov listing both state the Forest Service does not require permits for climbing Mt. Baker, with a voluntary climbing register at some trailheads; a guide service repeats this. The forest-wide wilderness regulations list a free self-issue wilderness permit only for the Alpine Lakes Wilderness, not Mount Baker Wilderness. The permit field contradicted this row's own access.permit.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.recreation.gov/camping/poi/235204",
+    "https://www.valhallamountainguides.com/permits-and-parking",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee."
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

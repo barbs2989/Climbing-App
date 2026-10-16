@@ -1,0 +1,44 @@
+{
+ "id": "wa_sherman_peak_baker_squak_glacier",
+ "name": "Squak Glacier Route",
+ "pitch_detail": [
+  {
+   "grade": "Glacier travel, roped, crevasse maze",
+   "notes": "High camp (~6,500 ft) up the Squak Glacier through crevassed terrain to the saddle below the Roman Wall.",
+   "pitch": "Section 1",
+   "lengthM": 823
+  },
+  {
+   "grade": "Steep, icy front-pointing",
+   "notes": "Traverse south of Mount Baker's true summit and front-point up steep icy slopes toward Sherman Peak's summit ridge.",
+   "pitch": "Section 2",
+   "lengthM": 183
+  },
+  {
+   "grade": "Unroped, exposed ridge with rime-ice knobs",
+   "notes": "Final summit ridge to Sherman Peak; can be heavily rimed and exposed, typically climbed unroped.",
+   "pitch": "Section 3",
+   "lengthM": 91
+  }
+ ],
+ "overview": "A glacier ascent of Sherman Peak via Mount Baker's Squak Glacier on the mountain's south side, approached from the same Schriebers Meadow trailhead as the Easton Glacier line but following a more westerly glacier path through a maze of crevasses to a bergschrund-guarded final summit slope.",
+ "waypoints": [
+  {
+   "lat": 48.7067849,
+   "lng": -121.8129229,
+   "name": "Schriebers Meadow / Park Butte Trailhead",
+   "type": "Trailhead",
+   "directions": "From SR-20 at milepost 82, about 16 miles east of Sedro-Woolley, turn north onto Baker Lake Road (FS Road 11). At about mile 12 turn left onto FS Road 12 and drive about 3.6 miles, then turn right onto FS Road 13 and follow it 5.3 miles to the Park Butte Trailhead at the road's end in Schriebers Meadow. A recreation pass is required to park."
+  },
+  {
+   "lat": 48.767268,
+   "lng": -121.813697,
+   "elev": 10133,
+   "name": "Sherman Peak summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 10133,
+   "directions": "Take the Scott Paul Trail #603.1, which branches off the Park Butte Trail about 100 ft from the trailhead, and follow it through forest and meadows. Leave it north at an unmarked junction on a steep climbers' path to the toe of the Squak Glacier, where high camp is usually set near 6,500 ft. Rope up and climb the crevassed Squak Glacier north toward Sherman Peak, then steep, often icy slopes to its summit ridge and the top."
+  }
+ ]
+}

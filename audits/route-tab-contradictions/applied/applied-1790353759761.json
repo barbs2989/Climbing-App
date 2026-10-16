@@ -1,0 +1,486 @@
+{
+ "applied": [
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "grade",
+   "path": [],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "rappels",
+   "path": [],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Total number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "rappels",
+   "path": [],
+   "fact": "Total number of rappels on descent"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Total number of rappels on descent"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "descent",
+   "path": [],
+   "fact": "Total number of rappels on descent"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Total number of rappels on descent"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Total number of rappels on descent"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "How the day's time is split between approach and climbing to the summit"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "How the day's time is split between approach and climbing to the summit"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hours"
+   ],
+   "fact": "How the day's time is split between approach and climbing to the summit"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "How the day's time is split between approach and climbing to the summit"
+  },
+  {
+   "id": "wa_garfield_mountain_leaning_spire_west_route",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Time required to reach the Y Notch (start of this route's own terrain)"
+  },
+  {
+   "id": "wa_garfield_mountain_leaning_spire_west_route",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Time required to reach the Y Notch (start of this route's own terrain)"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "pro_needs/gear say no rack is used; sling_rack/rope fields describe an actual rack"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km holds the round-trip distance, but it renders as the one-way approach"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "approach",
+   "path": [],
+   "fact": "dist_km holds the round-trip distance, but it renders as the one-way approach"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "recommendedStart says 5:30 AM from the trailhead; the itinerary leaves Seattle at 5:30 and starts hiking at 7:00"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "before": {
+    "grade": "Class 3",
+    "hazards": [
+     "extremely loose, rotten rock throughout the gullies and slabs — Fred Beckey called the standard South Route a 'hazardous enigma'",
+     "mandatory 5th-class climbing and roped rappels on every documented line (South Route, Southwest Ledges 5.3, Infinite Bliss 5.10c); this is not scrambling terrain despite the local nickname",
+     "brutal bushwhack low on the approach through slide alder, devil's club, and downed timber",
+     "complex routefinding among the massif's five summits and connecting notches (e.g. the 'Y Notch')",
+     "afternoon thunderstorms, common over the Cascade crest in July–August",
+     "long days — trip reports document 12–15+ hour car-to-car pushes and frequent forced bivouacs (Glade Saddle is a known 2-person bivy site)"
+    ],
+    "overview": "Garfield Mountain is a rugged granodiorite massif of five named summits (Main/East Peak 5,519 ft, West Peak 4,896 ft, North Peak 5,101 ft, plus the Leaning Spire) rising more than 4,400 ft above the Middle Fork Snoqualmie River in barely a mile — one of the steepest, most relief-dense peaks in the western Cascades. Despite a local reputation as a 'scramble,' every summit actually requires roped technical climbing: documented lines range from the 5.3 Southwest Ledges to the 23-pitch 5.10c sport route Infinite Bliss on the West Peak's south face, with the classic South Route (first ascended August 27, 1940 by Jim Crooks and Judson Nelson) involving sustained 5th-class terrain, extremely loose rock, and six double-rope rappels on the way down.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained off-trail fitness - the approach is a long, slow, physically taxing bushwhack through dense brush and steep, trail-less terrain, not a groomed-trail hike",
+      "packWeight": "Keep it light (roughly 15-20 lb day pack); a heavy pack makes brush-fighting and steep terrain much harder"
+     },
+     "approachTime": "Long and slow - plan a full day; the brushy, steep, trail-less approach typically takes significantly longer than distance/elevation alone would suggest",
+     "requiredSkills": [
+      "off-trail routefinding among multiple summits",
+      "tolerance and technique for sustained bushwhacking through dense vegetation",
+      "comfort on loose rock and exposed Class 3 terrain",
+      "map/compass or GPS navigation skill, since the route is sparsely documented"
+     ],
+     "experienceLevel": "Comfortable, experienced Class 3 scrambler; the modest technical grade is deceptive because the approach demands as much or more from a partner as the climbing does"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "West-slope Cascades convective weather during the climbing season - generally drier through summer but always capable of turning wet given the marine-influenced, heavily vegetated setting",
+      "probability": "Afternoon thunderstorms common in summer, especially August"
+     },
+     "exposure": "Moderate technical exposure - Class 3 terrain with loose rock where a slip could cause a serious fall/injury; the more consequential real-world hazard is getting lost or benighted among the multiple summits in dense brush with limited visibility, per the existing routefinding-error and loose-rock watch-outs",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; not a standard winter/spring objective",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "rope_note": "Garfield is a multi-summit massif; the standard multi-summit scramble stays around Class 3 while some subsidiary summits require technical 5th-class moves. A short rope/handline is prudent for exposed ridge connections between summits.",
+    "rope_type": "optional handline",
+    "rappels": "Roughly 6-9 rope-length rappels on descent (mix of single- and double-rope, two 60m ropes) off bolted anchors, trees, and chockstones through the slab and #2 Gully",
+    "descent_text": "Nearly every party descends the same South Route line rather than walking off, and this is where Garfield earns its reputation as a serious undertaking — budget as much time for the descent as the climb, since many parties top out with only a few hours of daylight left. From the summit, reverse the ridge with a single-rope rappel down to the col, then work back down through the '#2 Gully' system with a sustained series of rappels: parties describe roughly six double-rope (doubled-strand) rappels through the gully's mixed loose/polished rock, a single-rope rappel off the steep step on the wooded ramp, and two more double-rope rappels getting off the base of the slab (~2,900 ft) — on the order of 10 rappels total on a typical South Route descent. Treat that as a working estimate rather than an exact count: some parties reference numbered rap stations well into the teens/twenties on the broader Garfield massif's fixed rap line, and how many you actually do depends on rope length and how many stations you can combine. Anchors are mixed — some slab sections have bolted chain anchors and fixed rap rings, but much of the gully relies on natural anchors (slung trees, horns, chockstones), so carry extra webbing/cord and rap rings and inspect every anchor before weighting it. Two 60m ropes are the standard recommendation for this descent; parties have combined stations using 2x70m ropes, but a single 60m (or shorter) rope will leave you short on several drops and force exposed down-scrambling to reach the next anchor. Below the slab, downclimb/scramble the wooded ridge and dirt gully back into forest, then descend the creekbed/wash to the trailhead. Loose rock is a hazard throughout, especially in the dirt gully and on the west side of #2 Gully — keep helmets on for the entire descent and watch for rockfall onto parties below. Route-finding in the dark is a real risk since flagging and cairns are easy to lose — benightment low on the mountain is common enough that a GPS track of your ascent line and a reliable headlamp are strongly recommended.",
+    "descent": "There is no walk-off. The classic South Route requires six double-rope rappels (bolted and tree anchors; two 60m ropes recommended) back down through the gully system, followed by the same brushy, loose approach in reverse.",
+    "waypoints": [
+     {
+      "lat": 47.547851,
+      "lng": -121.536936,
+      "elev": 1200,
+      "name": "Middle Fork Road (FR-56) Pullout at Taylor River Crossing",
+      "note": "Small pullout where FR-56 crosses the Taylor River; parties leave the road here and bushwhack cross-country toward Garfield's south flank — no maintained trail beyond this point.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From I-90 Exit 34 at North Bend, drive Middle Fork Snoqualmie River Road (FR-56) east - paved at first, then good gravel - staying on FR-56 past the Taylor River Road (FR-5620) junction to a wide gravel wash and old borrow-pit pullout on the north side of the road, at roughly 1,150 to 1,200 feet. There is no maintained, numbered Forest Service trail from this pullout; the route beyond it is an unmaintained climbers' boot path marked only intermittently with cairns and pink flagging tape."
+     },
+     {
+      "lat": 47.5493342,
+      "lng": -121.5282222,
+      "elev": 2100,
+      "name": "Dirt Gully Creek Crossing",
+      "note": "Creek bed at the base of the dirt gully is the last reliable, 'for-sure' water on the route — top off here before the climbing begins.",
+      "type": "Water",
+      "distMi": 0.3
+     },
+     {
+      "lat": 47.54947323333333,
+      "lng": -121.5267759,
+      "elev": 2200,
+      "name": "Dirt Gully",
+      "note": "About 400 vertical feet of loose rock, dirt, and scrub brush above the creek; friable and prone to rockfall, especially when wet.",
+      "type": "Hazard",
+      "distMi": 0.35
+     },
+     {
+      "lat": 47.55030743333333,
+      "lng": -121.5180981,
+      "elev": 3600,
+      "name": "Razorback / Tiny Notch",
+      "note": "Beckey's route description is notoriously vague here; parties commonly go astray choosing between the Razorback and Tiny Notch, adding significant route-finding time.",
+      "type": "Junction",
+      "distMi": 0.65
+     },
+     {
+      "lat": 47.5510026,
+      "lng": -121.5108666,
+      "elev": 4200,
+      "name": "Glade Saddle Bivy",
+      "note": "Small bivy site for two tucked into a saddle; most parties reach it roughly three hours in and treat it as the last comfortable rest stop before the upper gullies.",
+      "type": "Campsite",
+      "distMi": 0.9
+     },
+     {
+      "lat": 47.55169776666666,
+      "lng": -121.5036351,
+      "elev": 4800,
+      "name": "Y Notch",
+      "note": "Confluence of the #1 and #2 Gullies at the head of the Great Canyon; stay right into the #2 Gully to follow the standard South Route line.",
+      "type": "Junction",
+      "distMi": 1.15
+     },
+     {
+      "lat": 47.5522539,
+      "lng": -121.4978499,
+      "elev": 5200,
+      "name": "#2 Gully Rockfall Zone",
+      "note": "A nightmarish mix of impossibly loose rock on one side and polished, mossy rock on the other; a climber here was struck by a rolling 500-lb boulder, so helmets and staggered spacing are essential.",
+      "type": "Hazard",
+      "distMi": 1.35
+     },
+     {
+      "lat": 47.552695,
+      "lng": -121.493635,
+      "elev": 5519,
+      "name": "Garfield Mountain Summit",
+      "note": "True summit register has historically logged only a handful of ascents per decade; descend via six double-rope rappels down the #2 Gully on a mix of aging bolts, chockstones, and slung trees (webbing dated as old as 1998) — carry two 60m ropes.",
+      "type": "Summit",
+      "distMi": 1.5
+     }
+    ],
+    "itinerary": {
+     "cal": "Best done June-August once winter snow/ice has cleared the slabs; pick a long-daylight date given the 12-14+ hour commitment.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is a single very long day, not an overnight trip — but treat it like an alpine climb: an early (pre-dawn) start is mandatory because the round trip commonly runs 12-14+ hours car to car. From the trailhead a short, steep ~45-minute approach through forest and a dry creek bed gains the base of the route; from there loose dirt gullies, a slab traverse on intersecting dikes, and the exposed 'key ledge traverse' lead into the crux #2 Gully, a mix of simul-climbed and belayed 4th/low-5th-class pitches on rock that is loose on one side and polished/mossy on the other. Above the gully, easier slabs and steep heather lead to the Main Peak summit at 5,519 ft; parties chasing the multi-summit link-up continue across to the adjoining Garfield summits before reversing. There is no walk-off: descent is via six double-rope rappels down bolted anchors and tree slings back through the gully system, with loose downclimbing between stations, so budget as much time for the descent as the ascent.",
+       "hours": 13,
+       "miles": 3,
+       "title": "Car-to-car: South Route scramble, multi-summit",
+       "gainFt": 4400,
+       "lossFt": 4400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Near-solstice alpine start; Published descriptions call 12 hours an absolute minimum car-to-car."
+        },
+        {
+         "time": "4:45 AM",
+         "label": "Reach base of route",
+         "detail": "Steep forest approach up a dry creek bed gains the start of the technical ground."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Enter #2 Gully",
+         "detail": "Key ledge traverse leads into the crux gully; loose rock on one side, polished/mossy rock on the other."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Summit Main Peak (5,519 ft)",
+         "detail": "~8 hours of climbing from the car is typical; continue to adjoining summits if doing the multi-summit link-up."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin descent",
+         "detail": "Six double-rope rappels (two 60m ropes recommended) on bolted and tree anchors, with loose downclimbing between stations."
+        },
+        {
+         "time": "6:00-7:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Total elapsed time commonly exceeds 12-14 hours; parties who fall behind schedule sometimes take an impromptu bivy on route rather than rappel in the dark."
+        }
+       ],
+       "objective": "Summit Garfield's Main Peak (and adjoining summits) via the South Route, then reverse via 6 rappels"
+      }
+     ],
+     "totalNote": "A long single day car-to-car (roughly 13 hours, 4,400 ft gain) done during the longest daylight of summer with a pre-dawn start — not an overnight trip, but slower parties sometimes end up bivying on route rather than descending after dark."
+    },
+    "grade_num": 3
+   }
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "before": {
+    "rappels": "~9 rappels on descent: about 6 double-rope raps (two 60 m ropes) down #2 Gully, a single-rope rap off the wooded ramp, and two double-rope raps down the slab",
+    "descent_text": "From the summit scramble down to the top of the easy slab and rig a single-rope rappel to the col at the top of #2 Gully. From there scramble to a bolted rappel station and make the first of about six double-rope rappels with two 60 m ropes, traversing 100-yard stretches of slab between stations on the east side of the gully; the lower stations are on trees and chockstones with slings dating back to the 1990s. Pack the ropes near the base of the gully and downclimb — this is where the west-side rock is loosest and where a party member was struck by a 500-pound block that cut loose under hand pressure in 2001. Cross back over the Y Notch and the Key Ledge Traverse, make a single-rope rappel off the steep section of the wooded ramp, and continue down past the Glade Saddle. Two more double-rope rappels land you at the base of the slab at 2,900 ft; from there it is the wooded ridge, then the dirt gully to the creek at 2,100 ft, then the faint trail and the dry creek bed to the car. Expect to lose the trail in the dark at least once.",
+    "descent": "Reverse the route: about six double-rope rappels from the summit area down #2 Gully, then more raps on the wooded ramp and slab.",
+    "turnaround": "Set a turnaround at the base of #2 Gully: the gully takes four to five pitches up and six double-rope rappels down, so if you are not starting up it by mid-morning you will be rappelling loose terrain in the dark. Descend in daylight as far as the slab if you can — parties routinely finish the last 2,000 feet by headlamp.",
+    "detailed_rack": "Two 60 m ropes (an 8.1 mm twin/half pair was used and appreciated on the classic 2001 ascent) — you need doubles for the six rappels down #2 Gully. Carry a modest alpine rack: a set of stoppers, small-to-mid cams, and plenty of slings, since most of your anchors will be trees, horns and chockstones rather than placements. Expect marginal gear in the gully — one leader described his best placement on the summit slab traverse as a bad micro-nut.",
+    "timing": {
+     "totalHrs": 16,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": 7.5,
+     "approachTimeHrs": 1,
+     "recommendedStart": "First light or earlier — Beckey calls twelve hours an absolute minimum and a documented 6:45 a.m. start still finished at 11:05 p.m."
+    },
+    "approach_variants": [
+     {
+      "name": "Gravel wash pullout on FR 56, dry creekbed and dirt gully",
+      "hours": "5-7",
+      "notes": "I-90 Exit 34 near North Bend, then Middle Fork Snoqualmie Road (FR 56) past the Taylor River bridge junction to a pullout roughly 2.6 miles further on, beside a gravel wash. From the car the whole route is only about 1.5 miles horizontally but 4,400 vertical feet.\n\nStart up the dry creek bed and leave it partway up into the woods, following a mix of pink flagging tape and faint tread up steep pine-needle slopes — 'scrumbling', pulling on whatever vegetation is at hand. Low down the path braids: take the higher up-and-down traverse rather than the flat early one that cuts to the slab too low. About an hour in, at roughly 2,200 ft, you reach the dirt gully.",
+      "distMi": 1.5,
+      "gainFt": 4400,
+      "season": "Jul-Sep, bone dry only",
+      "hazards": [
+       "Loose 40-degree duff above the slab",
+       "No water above the trailhead creek",
+       "Slabs lethal when damp",
+       "Braided boot path low down",
+       "Exposed ledge traverse below the Y Notch"
+      ],
+      "baseFinding": "The dirt gully at about 2,200 ft is the gate, and the first major SLAB at about 2,900 ft is the base. Clean rock after an hour of nothing but duff and scree is the confirmation. Reaching slab without having passed through the dirt gully means you took the low traverse and are too far along the base — go up and left.\n\nAbove the slab the pine-needle slopes run about 40 degrees on loose duff, and huckleberry stems make the best handholds. The sequence above is the tiny notch, the razorback, the glade saddle, the wooded ramp with a 20 ft step, the exposed ledge traverse, and then the Y Notch where the route joins the gully system. Reaching the Y is what confirms you are on the South Route rather than on one of the neighbouring gully lines."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_garfield_mountain_leaning_spire_west_route",
+   "before": {
+    "itinerary": "One very long day, car to car, with a pre-dawn start; Beckey's twelve-hour minimum for the South Route approach terrain still applies before you even reach the Y. A bivy at the Glade Saddle above the slab (room for two) turns it into a comfortable two-day trip and is the traditional option.",
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5,
+     "recommendedStart": "Alpine start — the South Route approach terrain alone is a Beckey-stated twelve-hour minimum for the Main Peak, and this route branches off high on it"
+    }
+   }
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "before": {
+    "pro_needs": "This is an unroped scramble - no fixed protection or rack is used on the standard line. A helmet is strongly advised for rockfall on the loose talus and in the gully/col below the summit block.",
+    "dist_km": 7.72,
+    "approach": "Grotto Mountain (5,618') sits east of the more famous Baring Mountain, above the South Fork Skykomish River near the Wild Sky Wilderness boundary. The drive-in is variable and should be reconfirmed with the Skykomish Ranger District, but the trailhead itself is the end of FS spur NF-6514-410, off Beckler River Road (FR-65) — roughly 6.5 miles of gravel/dirt FS road from pavement, ending at a small pullout at about 3,480 ft. There is no maintained trail from here; this is an off-trail scramble the entire way (about 2.4 miles/3,900 ft one-way to the 5,618 ft high point, matching the route's 7.7 km round-trip figure). From road's end, the line immediately enters dense huckleberry brush heading toward talus — a brushy, moss-lined streambed just to the side of the huckleberry slope offers noticeably easier (if slick when wet) passage and is the preferred line reported by recent parties. Follow this drainage/talus combination up into a rock basin around 4,300 ft, where the route makes a rising traverse across talus into a gully, then climbs a heathered slope below a cliff band to avoid a slide-alder tangle. This gains Klinger Ridge at roughly 4,600 ft — open meadow and boulder terrain with pikas and clear views back to Baring Mountain. Continue along/near the ridge crest toward the east summit; from about 4,800 ft below the summit, weave through steep granite blocks and a final talus traverse to a notch just west of a prominent rock tower, then downclimb a short, steep/near-vertical step (exposed, loose in places — helmet warranted) to gain the south side and the true summit. Water is generally abundant from snowmelt streams in the lower basin (below ~4,300 ft) but can dry up by late summer; carry what you need for the upper mountain. Key hazards: thick brush and slick moss low down, sustained off-trail route-finding (fog/whiteout is a real risk with no trail to follow), loose rock and a burn-scarred south-facing slope on Klinger Ridge from the 2022 Bolt Creek Fire, and exposed granite/talus near the summit notch.",
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "From the Eagle Creek/Beckler River road-end, climbers push through huckleberry brush to a streambed, cross talus around 4,000 ft, then work up heathered slopes and granite steps to…",
+       "fromTo": "East Ridge scramble, car to car",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

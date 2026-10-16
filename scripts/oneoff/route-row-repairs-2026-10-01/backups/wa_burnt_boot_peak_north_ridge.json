@@ -1,0 +1,28 @@
+{
+ "id": "wa_burnt_boot_peak_north_ridge",
+ "name": "North Ridge",
+ "waypoints": [
+  {
+   "lat": 47.5104,
+   "lng": -121.3495,
+   "name": "Dutch Miller Gap Trailhead",
+   "type": "Trailhead",
+   "directions": "From I-90 Exit 34, go north on 468th Ave SE and turn right onto the Middle Fork Road (FR 56). Follow it about 12 miles past the Middle Fork Trailhead lot, bear right onto the rough gravel road signed for Dingford and Dutch Miller Gap, and drive about 6 more miles to the gate at the Dingford Creek Trailhead. The road beyond the gate is closed to vehicles, so the old Dutch Miller Gap road end is reached by walking or biking the closed road east up the valley."
+  },
+  {
+   "lat": 47.5009,
+   "lng": -121.3276,
+   "elev": 6540,
+   "name": "Burnt Boot Peak",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 6540
+  }
+ ],
+ "approach_logistics": {
+  "trailhead": "Dutch Miller Gap Trailhead",
+  "trailheadLat": 47.5104,
+  "trailheadLng": -121.3495,
+  "trailheadDirection": "Same access as the peak's other routes: via the Dutch Miller Gap Trailhead at the end of the Middle Fork Snoqualmie Road"
+ }
+}

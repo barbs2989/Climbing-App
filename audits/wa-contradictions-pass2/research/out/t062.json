@@ -1,0 +1,174 @@
+{
+ "file": "t062.json",
+ "results": [
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)",
+   "verdict": "fixed",
+   "correct_value": "About a mile of good gravel road (Forest Road 400) off SR-20 to the Cutthroat Lake Trailhead lot.",
+   "evidence": "One hiking trail guide says to drive a mile on a good gravel road to the trailhead at the end; a family hiking guide says the trailhead is about a mile up gravel road 400; two more guides agree the lot is one mile up Forest Road 400 off SR 20. The waypoint, approach_logistics, approach variant and camp all agree; only road.status claimed paved highway parking.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cutthroat-lake",
+    "https://www.thehikermama.com/hikes-for-kids/highway-20-north-cascades-highway/cutthroat-lake/",
+    "https://trailsnw.com/trails/north-washington-cascades/cutthroat-lake",
+    "https://wenatcheeoutdoors.org/2017/01/23/cutthroat-lake-cutthroat-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_perfect_crime_with_variations",
+     "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+     "replace": "About a mile of good gravel road (Forest Road 400) off SR-20 to the Cutthroat Lake Trailhead lot."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "fact": "Whether June is prime season",
+   "verdict": "fixed",
+   "correct_value": "Season late June through September; June marginal",
+   "evidence": "The Washington Pass area page gives the best season as late June through September and warns snow and ice may remain early in the season; a regional climbing guide says latish June through latish September, with snow and ice expected early. That matches best_season and June 'marginal'; all of June as prime season is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_perfect_crime_with_variations",
+     "fact": "Whether June is prime season",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "find": "June-September is prime season",
+     "replace": "The season runs late June through September, though early-season snow can linger on the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_easy_getaway",
+   "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)",
+   "verdict": "fixed",
+   "correct_value": "About a mile of good gravel road (Forest Road 400) off SR-20 to the Cutthroat Lake Trailhead lot.",
+   "evidence": "One hiking trail guide says to drive a mile on a good gravel road to the trailhead at the end; a family hiking guide says the trailhead is about a mile up gravel road 400; two more guides agree the lot is one mile up Forest Road 400 off SR 20. The waypoint, approach_logistics, approach variant and camp all agree; only road.status claimed paved highway parking.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cutthroat-lake",
+    "https://www.thehikermama.com/hikes-for-kids/highway-20-north-cascades-highway/cutthroat-lake/",
+    "https://trailsnw.com/trails/north-washington-cascades/cutthroat-lake",
+    "https://wenatcheeoutdoors.org/2017/01/23/cutthroat-lake-cutthroat-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_easy_getaway",
+     "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+     "replace": "About a mile of good gravel road (Forest Road 400) off SR-20 to the Cutthroat Lake Trailhead lot."
+    }
+   ]
+  },
+  {
+   "id": "wa_easy_getaway",
+   "fact": "Whether June is prime season",
+   "verdict": "fixed",
+   "correct_value": "Season late June through September; June marginal",
+   "evidence": "The Washington Pass area page gives the best season as late June through September and warns snow and ice may remain early in the season; a regional climbing guide says latish June through latish September, with snow and ice expected early. That matches best_season and June 'marginal'; all of June as prime season is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_easy_getaway",
+     "fact": "Whether June is prime season",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "find": "June-September is prime season",
+     "replace": "The season runs late June through September, though early-season snow can linger on the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Total elevation loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A timed Gardner-only trip report gives about 25 miles with 7,300 ft gained and lost; a peak guide gives 7,000-9,000 ft of gain for both peaks; 5,800 ft appears elsewhere only as a Gardner-only gain figure. No source states the car-to-car descent for the Gardner-North Gardner traverse, so loss_ft cannot be set by rule. Would settle: a source stating total loss for the two-peak trip.",
+   "sources": [
+    "https://trailcatjim.com/gardner-mountain-mazama-mountains/",
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Time from the trailhead to Gardner Meadows camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A timed trip report took 4.0 h from the trailhead to lower Gardner Meadows; another report (night start) took about 4 h to the start of the off-trail climb. The bivy's 4.5-5 h is to the meadows, while itinerary day 1 and timing.approachTimeHrs 6.5 run on to the basin camp at ~6,000-6,250 ft, a different endpoint; no source times the walk to the basin camp. bivy is owned by the camping clean-up. Would settle: a timed trailhead-to-basin-camp figure (partner_requirements' '~5-7 hrs to Gardner Meadows' is also longer than both reports).",
+   "sources": [
+    "https://trailcatjim.com/gardner-mountain-mazama-mountains/",
+    "https://hike2hike.com/scrambling/north-gardner-mountain-winthrop-bulger-peaks/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Route difficulty class",
+   "verdict": "fixed",
+   "correct_value": "Class 2-3 by the lower line; Class 3-4 only on the direct crest",
+   "evidence": "A peak guide says the Gardner-North Gardner traverse does not go above class 2 by the lower line that drops to ~7,400 ft below the cliff bands, while the crest itself has tricky scrambling; a trip report on the ridge needed 4th-class moves several times around its rock pillars. The grade pill, beta and descent_text already frame the crest as optional; rope_note alone stated the whole traverse as Class 3-4.",
+   "sources": [
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+    "https://hike2hike.com/scrambling/north-gardner-mountain-winthrop-bulger-peaks/"
+   ],
+   "patches": [
+    {
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Route difficulty class",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "West Ridge/Saddle Traverse is Class 3-4 depending on line/conditions",
+     "replace": "The saddle traverse is Class 2-3 on the lower line below the cliff bands and Class 3-4 only if taken along the crest"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Mileage of the North Fork Wolf Creek crossing (2.3 in waypoints/hazards vs 2.6 in approach)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "A hiking trail guide puts the North Fork crossing at 2.6 miles; a search summary of another listing gives 2.3 miles. The two disagree, so neither copy is changed. Would settle: a second source for the crossing's mileage.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wolf-creek"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_particulate_matter",
+   "fact": "Access notes describe a different area",
+   "verdict": "unresolved",
+   "correct_value": "No _raw block (it describes a Glacier Peak Wilderness peak)",
+   "evidence": "Every rendered field on the row (access land manager, road, emergency, approach, waypoints) places the Ice Box at the SR-20 hairpin at Washington Pass in the Methow Valley Ranger District; the crag's route-database page gives the same hairpin approach (park at the apex, trail toward Quicksilver Slab and Spire Gully, fixed line on the entry slab). access._raw names Image Lake, Ice Creek Ridge and the Chelan district, i.e. a different place; it does not render, so it is removed rather than rewritten.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  }
+ ]
+}

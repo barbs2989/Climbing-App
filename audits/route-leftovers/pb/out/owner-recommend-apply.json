@@ -1,0 +1,35 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "verdict": "confirmed",
+   "rule": "owner 'do all for what you recommend' (2026-10-01): fill from the row's own stated figure",
+   "fact": "timing.summitTimeHrs empty beside the 8.5 h total",
+   "evidence": "The row states ~5 hours to the summit (partner_requirements.approachTime) and its schedule reaches the summit at +5 hr. One ascent's 3.5 h is a single fast party and would contradict both; the row's own 5 h is copied, not computed.",
+   "ops": [
+    {"op": "set", "id": "wa_mount_mastiff_south_route", "column": "timing", "path": ["summitTimeHrs"], "expect": null, "value": 5}
+   ]
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "verdict": "confirmed",
+   "rule": "owner 'do all for what you recommend' (2026-10-01): clear a figure every source contradicts (Gunn precedent)",
+   "fact": "dist_km 8.85 (5.5 mi one way) vs summit pin 5.0 mi, 10 mi round trip, and the one stated one-way figure (4 mi)",
+   "evidence": "No source or other field on the row supports 5.5 mi one way: the summit pin says 5.0, the single day says 10 mi round trip, and the one published one-way figure is 4 mi. The headline is cleared rather than replaced, since 4 mi would contradict the pins and halving 10 is computing.",
+   "ops": [
+    {"op": "set", "id": "wa_three_queens_standard", "column": "dist_km", "path": [], "expect": 8.85, "value": null}
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "verdict": "confirmed",
+   "rule": "owner 'do all for what you recommend' (2026-10-01): remove a stated figure two sources contradict; day miles untouched",
+   "fact": "approach prose ~25.75 km and totalNote ~16 mi round trip vs a stated 12 mi round trip (two sources) and 6 mi one way (dist_km 9.7)",
+   "evidence": "One Southwest Buttress ascent states 6 mi one way and 12 mi round trip; the club route page also gives 12.0 mi round trip. The row's 16 mi / 25.75 km round-trip claims are removed; the itinerary day miles stay as stored (never nulled or recomputed).",
+   "ops": [
+    {"op": "replace_text", "id": "wa_southwest_buttress", "column": "approach", "path": [], "find": " The recorded round-trip distance is about 25.75 km, somewhat longer than the East Ridge approach because the SW start point is farther along the glacier traverse.", "replace": ""},
+    {"op": "replace_text", "id": "wa_southwest_buttress", "column": "itinerary", "path": ["totalNote"], "find": "~16 mi round trip, ", "replace": ""}
+   ]
+  }
+ ]
+}

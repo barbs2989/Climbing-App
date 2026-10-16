@@ -1,0 +1,2125 @@
+[
+ {
+  "zone": "cascade-pass-mid-traverse",
+  "routes": [
+   {
+    "id": "wa_elephant_head_standard",
+    "name": "Standard Route",
+    "peak": "Elephant Head",
+    "area_id": "wa_elephant_head",
+    "discipline": "mountaineering",
+    "grade": "Class 4 / glacier",
+    "high_point_ft": 7990,
+    "overview": "Elephant Head (~7,990-7,995 ft) sits at the northwest end of a series of jagged crags extending about 1.1 miles off Dome Peak's twin summits in the Glacier Peak Wilderness, dividing the Dana Glacier (west) from the Chickamin Glacier (east). Its summit cliffs plunge into the ice-sculpted cirque at th…",
+    "approach": "From the Downey Creek Trailhead (elev. ~1,450 ft, reached via FR 26/Suiattle River Road off SR 530 north of Darrington), start on Downey Creek Trail #768. The trail holds a gentle grade through old-growth forest along Downey Creek for roughly 6 miles to Six Mile Camp, then continues about another ha…",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     },
+     {
+      "name": "Cub Lake meadows camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "Drop about 500 ft off the far side of the gap into the lake basin. Talus and brush make this short descent tricky to follow in poor visibility. It is the point …"
+     }
+    ]
+   },
+   {
+    "id": "wa_le_conte_mountain_northern_aspect",
+    "name": "Northern Aspect",
+    "peak": "Le Conte Mountain",
+    "area_id": "wa_le_conte_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7762,
+    "overview": "The standard route on Le Conte Mountain, an off-trail glacier-and-scramble line reached via the Ptarmigan Traverse: climbers approach from a camp at Yang Yang Lakes, skirt Peak 7004 on its east-slope talus/snow, and finish up an exposed, loose-rock ledge system to the summit.",
+    "approach": "Drive Cascade River Road from Marblemount (paved for roughly the first third, then gravel, narrow and steep near the end) 23.1 miles to the Cascade Pass Trailhead (road-end elevation about 3,660 ft). Hike the Cascade Pass Trail 3.7 miles / 1,700 ft gain to Cascade Pass, then continue cross-country/o…",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     }
+    ]
+   },
+   {
+    "id": "wa_lizard_mountain_south_route",
+    "name": "South Route",
+    "peak": "Lizard Mountain",
+    "area_id": "wa_lizard_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 7420,
+    "overview": "A remote, seldom-visited summit on the divide between the Cascade Pass and Dome Peak country, Lizard Mountain rises above the White Rock Lakes basin along the classic Ptarmigan Traverse -- one of the North Cascades' premier glaciated high routes. Most parties encounter it as a half-day side-scramble…",
+    "approach": "Lizard Mountain has no dedicated trailhead — the accepted approach follows the southern leg of the Ptarmigan Traverse corridor out of the Downey Creek Trailhead (~1,600 ft) on the Suiattle River Road (FR 26) east of Darrington. Take Downey Creek Trail #768, which enters Glacier Peak Wilderness withi…",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     },
+     {
+      "name": "Kool-Aid Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6119,
+      "notes": "From the col descend and traverse south-southeast for about a mile over rock and heather-covered benches. Keep the ice axe in hand — the steep heather is the re…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5852,
+      "notes": "Climb the glacier to the low gap west of Spider Mountain, then descend steep snow and scree on the far side to the tarns. In whiteout this is easy ground to get…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6197,
+      "notes": "Climb from the lakes toward Le Conte Mountain, cross the Le Conte Glacier to the gap north of Sentinel Peak, then traverse onto the South Cascade Glacier and cr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_formidable_south_face",
+    "name": "South Face / Southeast Ledges",
+    "peak": "Mount Formidable",
+    "area_id": "wa_mount_formidable",
+    "discipline": "alpine",
+    "grade": "Grade III, Class 4 / low 5th",
+    "high_point_ft": 8325,
+    "overview": "Mount Formidable is a prominent, aptly named peak on the classic high route between Cascade Pass and Dome Peak (the Ptarmigan Traverse). Herman Ulrichs named it in 1935 for the rugged appearance of its north face; it was first climbed via this general line on July 25, 1938 by Calder Bressler, Ray Cl…",
+    "approach": "From the Cascade Pass Trailhead (3,600 ft) at the end of Cascade River Road, follow the maintained Cascade Pass Trail 3.7 miles and about 1,800 ft of gain to Cascade Pass (5,392 ft) — a well-graded trail, roughly 1.5-2 hours at a steady pace. This is the last maintained tread; everything beyond is b…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": null,
+      "elev": 6100,
+      "notes": "PLANNED first camp on the traverse, roughly three hours past Cascade Pass and the usual night one for a Formidable trip. Good sheltered ground and easy water. Mountain goats work the camp for salt — stow sweaty gear and …"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": null,
+      "elev": 7320,
+      "notes": "PLANNED high camp and the closest ground to the north side of the peak — the col is the only non-technical crossing of the Spider-Formidable wall and it puts you directly above the Middle Cascade Glacier. Fully exposed o…"
+     },
+     {
+      "name": "Ridge benches above Yang Yang Lakes",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED launching camp specifically noted by parties climbing Formidable, sitting on the ridge above the lakes with a much shorter summit day than camping at the lakes themselves. The trade is water: there is none up her…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": null,
+      "elev": 5850,
+      "notes": "PLANNED camp on the south side of the col, the standard traverse night and the fallback when the col is windbound. Sheltered, easy water, and a comfortable place to sit out weather — but it is well below the peak and add…"
+     }
+    ]
+   },
+   {
+    "id": "wa_northeast_face_direct",
+    "name": "Northeast Face Direct",
+    "peak": "Mount Formidable",
+    "area_id": "wa_mount_formidable",
+    "discipline": "mountaineering",
+    "grade": "5.6",
+    "high_point_ft": 8325,
+    "overview": "Rarely-repeated alpine rock route on Mount Formidable's northeast face above the heavily crevassed Formidable Glacier in the North Cascades; first climbed in 2002, with a documented second ascent not until 2013.",
+    "approach": "Mount Formidable is a deep objective on the Ptarmigan Traverse, reached from the same Cascade Pass Trailhead as Mix Up Peak but with a much longer approach. From Cascade Pass, descend to Pelton Basin, cross below Cache Col, and traverse over glaciated and talus terrain past Kool-Aid Lake toward Yang…",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7320,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     }
+    ]
+   },
+   {
+    "id": "wa_sentinel_peak_standard",
+    "name": "Standard Route",
+    "peak": "Sentinel Peak",
+    "area_id": "wa_sentinel_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4 / glacier",
+    "high_point_ft": 8257,
+    "overview": "Sentinel Peak (8,257 ft) is a remote summit deep in the Dome Peak / Ptarmigan Mountains section of the Glacier Peak Wilderness, standing shoulder-to-shoulder with its near-twin Old Guard Peak a few hundred yards away. It is not a stand-alone objective reached from a road-end trailhead — it's a side-…",
+    "approach": "Start at the Cascade Pass Trailhead at the end of Cascade River Road (paved/gravel Forest Road 15, inside North Cascades NP boundary — verify current road/washout status at nps.gov/noca before driving). Take the maintained Cascade Pass Trail 3.7 miles and about 1,800 ft of gain up open switchbacks a…",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     },
+     {
+      "name": "Kool-Aid Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "Drop steeply off the far side of the col on a snowfield that usually wants an ice axe, losing only about a hundred feet to the bench holding the tarn. It is a s…"
+     }
+    ]
+   },
+   {
+    "id": "wa_spider_mountain_north_face",
+    "name": "North Face (Kloke-Tindall Route)",
+    "peak": "Spider Mountain",
+    "area_id": "wa_spider_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8317,
+    "overview": "A steep snow/ice line up a hook-shaped snow finger running direct to the summit on Spider Mountain's north face, first climbed by Dallas Kloke and Reed Tindall in 1972 and later established as a notable spring ski descent.",
+    "approach": "Via the Cascade Pass Trail and Cache Col to a high camp near Kool-Aid Lake/Cache Col, then across to Art's Knoll — the saddle directly across the valley from Spider Mountain — which gives access to and a view of the north face and its bergschrund before committing to the climb.",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7320,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     }
+    ]
+   },
+   {
+    "id": "wa_spider_mountain_north_ridge",
+    "name": "Southeast Gully / East Ridge (Spider-Formidable Col)",
+    "peak": "Spider Mountain",
+    "area_id": "wa_spider_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8317,
+    "overview": "The standard route: glacier travel and a talus approach to Spider-Formidable Col, then a loose, narrow southeast-facing gully and rock buttress up onto the east ridge, finishing with a short Class 3 traverse along a corniced arête to the summit.",
+    "approach": "From the Cascade Pass Trailhead (3,600 ft, at the end of the 23.1-mile Cascade River Road from Marblemount), hike the Cascade Pass Trail 3.7 miles to Cascade Pass (~5,400-5,560 ft). Continue on a climbers' path across talus to Cache Col (~6,900 ft), then descend steep snowfields (ice axe/crampons of…",
+    "camps": [
+     {
+      "name": "Cache Col and the Cache Glacier shoulder",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful ste…"
+     },
+     {
+      "name": "Spider-Formidable Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7320,
+      "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the co…"
+     },
+     {
+      "name": "Drop Creek high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "THIS IS THE OTHER WAY TO FORMIDABLE AND IT IS NOT THE TRAVERSE. It starts at the South Fork Cascade River trailhead, which is little more than a bend in the Cascade River Road around mile 17 to 18 near the Forest Service…"
+     },
+     {
+      "name": "South Fork Cascade River valley camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The fallback first night on the Drop Creek approach to Formidable, for a party that starts late or is not confident of reaching the high camp in one push. It exists because the valley section is slower than its mileage s…"
+     },
+     {
+      "name": "Le Conte Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of lea…"
+     },
+     {
+      "name": "Sentinel Pass and Lizard Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the d…"
+     },
+     {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "cascade-river-road",
+  "routes": [
+   {
+    "id": "wa_boston_peak_southeast_face",
+    "name": "Southeast Face",
+    "peak": "Boston Peak",
+    "area_id": "wa_boston_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 4",
+    "high_point_ft": 8894,
+    "overview": "Boston Peak has a fearsome reputation as one of the loosest summits in the North Cascades, and even its easiest line — the Southeast Face via the Quien Sabe Glacier — demands constant caution. First climbed in 1938 by Calder Bressler, Ray Clough, Bill Cox, and Tom Myers, the standard route gains the…",
+    "approach": "From the Boston Basin Trailhead at the end of Cascade River Road (~3,200 ft, roughly mile 21.7), follow the unmaintained but well-established boot path through forest and slide alder, climbing steeply into Boston Basin (~3.2 mi, ~3,100 ft gain). Most parties camp at the basin's high camp (~6,400 ft)…",
+    "camps": [
+     {
+      "name": "Boston Basin high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper camp, roughly 6,400 ft, with a composting toilet. It is the practical base for Boston: from here you gain the Quien Sabe and traverse under Sharkfin toward the peak's east side. The rock on this route is notori…"
+     },
+     {
+      "name": "Boston Basin low camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "About 5,300 ft on a morainal rib with a little tree cover. Slower parties and early-season trips use it because it melts out sooner and is more sheltered; the trade is a longer summit day."
+     },
+     {
+      "name": "Boston Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_cascade_peak_east_ridge",
+    "name": "East Ridge and NW Chimney",
+    "peak": "Cascade Peak",
+    "area_id": "wa_cascade_peak",
+    "discipline": "alpine",
+    "grade": "Grade III",
+    "high_point_ft": 7428,
+    "overview": "A scenic alpine route combining the East Ridge and Northwest Chimney on Cascade Peak, typically done as a single enchainment via the CJ Couloir approach. The route offers varied climbing and excellent views of the North Cascades Highway corridor.",
+    "approach": "Start from the Cascade Pass Road trailhead (elevation 3,600 ft). Hike to the base of the CJ Couloir (approximately 0.7 mi). Enter the couloir and ascend to the East Ridge proper. The route then transitions to the NW Chimney section for the final approach to the summit.",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_forbidden_peak_east_ledges",
+    "name": "East Ledges",
+    "peak": "Forbidden Peak",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "high_point_ft": 8815,
+    "overview": "The East Ledges (also called the 'NE Ledge' in older and casual usage - a naming overlap that has caused confusion with the distinct, genuinely technical Northeast Face ice route on the same aspect) is technically the easiest route to the summit of Forbidden Peak, at Class 4. From the East Ridge sad…",
+    "approach": "Start at the Boston Basin trailhead off the Cascade River Road. A steep climbers' trail with several creek crossings (Boston Creek can run high on warm afternoons) climbs to the camps in Boston Basin; overnight stays there need a park backcountry permit. From the upper basin, head north toward Forbi…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_forbidden_peak_east_ridge",
+    "name": "East Ridge Direct",
+    "peak": "Forbidden Peak",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.8",
+    "high_point_ft": 8815,
+    "overview": "This is Forbidden's East Ridge Direct, the second of the peak's two classic ridge lines and longer/more sustained than the West Ridge. It climbs a series of gendarmes and a knife-edge granite crest to a 5.8 crux pitch near the top; sources consistently grade the technical difficulty at 5.8 rather th…",
+    "approach": "Same trailhead and Boston Basin climbers' trail as the West Ridge (old Diamond Mine roadbed for ~1 mile, then a steep climbers' path with several creek crossings to treeline around 5,300 ft, then talus/heather to the usual high camp at 6,300–6,600 ft, roughly 4–5 miles / 3–4 hours from the car). Fro…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Boston Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_forbidden_peak_north_ridge",
+    "name": "North Ridge",
+    "peak": "Forbidden Peak",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade III, 5.6",
+    "high_point_ft": 8815,
+    "overview": "A long, elegant alpine rock ridge on the north side of Forbidden Peak. Sustained, exposed ridge climbing on solid North Cascades rock, accessed over the Boston Glacier, makes this one of the area's coveted ridgelines.",
+    "approach": "North-northeast via glacier traversals. From Boston Basin parking, hike to Boston Basin high camp (~5700 ft). Traverse moraine and west edge of Quien Sabe Glacier to 7,500 ft. Climb to Sharkfin Col (7,720 ft).",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Boston Basin High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Standard base camp for both Torment and Forbidden; continue northeast along the Quien Sabe Glacier's west edge toward Sharkfin Col."
+     }
+    ]
+   },
+   {
+    "id": "wa_forbidden_peak_northeast_face",
+    "name": "Northeast Face",
+    "peak": "Forbidden Peak",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "alpine",
+    "grade": "IV",
+    "high_point_ft": 8815,
+    "overview": "A steep face of rock and ice on the northeast side of Forbidden Peak: rock below and above a single steep ice patch (about 50°) in the middle of the face. Best in firm early-season conditions, it is a rarely climbed line in a shaded, remote North Cascades cirque.",
+    "approach": "From Boston Basin Trailhead, hike ~3-4 mi via old mine road then a climbers' path (4 stream crossings) to high camp near 6,400 ft (3-4 hrs). Continue along the moraine and west edge of the Quien Sabe Glacier to Sharkfin Col (~7,720 ft) via ~10 ft of 5.7 rock and a Class 3 gully. Rappel into the berg…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Boston Basin High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Base camp on flats below the glaciers; from here work northeast across glaciated terrain toward the peak's northeast side."
+     }
+    ]
+   },
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "name": "Northwest Face",
+    "peak": "Forbidden Peak",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.8",
+    "high_point_ft": 8815,
+    "overview": "Forbidden's tallest, steepest, and most remote established route, first climbed by Fred Beckey and Ed Cooper in July 1959. Beckey called it 'an exceptional climb of purity' whose mixed character 'requires some genuine climbing and flexible alpine skills.' From a high bivy, roughly 500 ft of steep, s…",
+    "approach": "From Boston Basin Trailhead, hike ~3-4 mi via old mine road then a climbers' path (4 stream crossings) to high camp near 6,400 ft (3-4 hrs), often continuing to a bench at ~7,500 ft beside the Quien Sabe Glacier below Sharkfin Tower. Ascend the west side of the Quien Sabe Glacier to a notch above Sh…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Boston Basin High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Base camp on flats below the Boston/Forbidden glaciers; head northwest across glaciated terrain toward the face."
+     }
+    ]
+   },
+   {
+    "id": "wa_forbidden_peak_west_ridge",
+    "name": "West Ridge",
+    "peak": "Forbidden Peak",
+    "area_id": "wa_forbidden_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "high_point_ft": 8815,
+    "overview": "One of the Fifty Classic Climbs of North America and Forbidden's standard route: a sweeping, exposed arête of clean North Cascades granite. The crux is a single sustained 5.6 move near a prominent gendarme tower (stay left to avoid straying onto the harder West Ridge Direct variation), followed by a…",
+    "approach": "From the Boston Basin trailhead off Cascade River Road, follow the unsigned but well-beaten Boston Basin climbers' path. It starts by following the old Diamond Mine roadbed for about 1 mile, then splits off the roadbed to climb steeply and directly through forest. The trail crosses four seasonal cre…",
+    "camps": [
+     {
+      "name": "Boston Basin high camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 6200,
+      "notes": "The standard base for the route, in the boulder-and-heather basin below the south face, roughly 3 miles and 3,000 ft above the trailhead. Most parties leave camp very early and are back the same day; it is also the place…"
+     },
+     {
+      "name": "Treeline emergency bivy",
+      "store": "bivy",
+      "type": null,
+      "elev": 4800,
+      "notes": "Not a planned camp and not a substitute for reaching the basin. An emergency option only: parties benighted on the walk in have stopped near treeline on the Boston Basin path; there are no prepared sites and no reason to…"
+     },
+     {
+      "name": "Boston Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_johannesburg_mountain_cj_couloir",
+    "name": "Cascade-Johannesburg Couloir (East Ridge)",
+    "peak": "Johannesburg Mountain",
+    "area_id": "wa_johannesburg_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4, steep snow",
+    "high_point_ft": 8200,
+    "overview": "The Cascade-Johannesburg Couloir ('CJ Couloir'), followed by Johannesburg's East Ridge, is the mountain's original and most-climbed line — first climbed July 26, 1938 by Calder Bressler, Bill Cox, Ray Clough, and Tom Myers. It also has one of the shortest approaches of any major North Cascades alpin…",
+    "approach": "Shares its start with the Northeast Buttress: from the Cascade Pass trailhead (~3,600 ft), descend briefly from the parking lot, cross the creek/river drainage, and work through brush and a terminal moraine to reach a permanent snowfield around 3,300 ft. It's one of the more compact approaches in th…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_johannesburg_mountain_northeast_buttress",
+    "name": "Northeast Buttress",
+    "peak": "Johannesburg Mountain",
+    "area_id": "wa_johannesburg_mountain",
+    "discipline": "alpine",
+    "grade": "Grade IV-V, 5.8",
+    "high_point_ft": 8200,
+    "overview": "Johannesburg Mountain's Northeast Buttress is one of the great long alpine routes of the North Cascades: a sustained, roughly twenty-pitch line up the same immense northeast face that drops nearly 5,000 ft in under a mile above the Cascade Pass road. It's rated no harder than 5.8 technically, but ca…",
+    "approach": "Start at the Cascade Pass Trailhead (~3,600 ft) at the end of Cascade River Road. Rather than taking the maintained Cascade Pass Trail, leave the trail near the parking lot/hairpin area and descend a dirt/brush embankment down to the Cascade River, then ford it — this is a cold, glacial-melt crossin…",
+    "camps": [
+     {
+      "name": "Buttress bivy at the heather-to-rock transition",
+      "store": "bivy",
+      "type": null,
+      "elev": 7100,
+      "notes": "This is a planned bivy, not an emergency ledge, and it is what makes the route a two-day climb for most parties — it typically takes eight to twelve hours of climbing from the base of the buttress to reach it, with two t…"
+     },
+     {
+      "name": "Chopped platforms on the upper glacier",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "An improvised, secondary option above the standard bivy for parties who ran out of daylight higher up. Summer sun cupping means real work with an axe to get a flat platform, and it is fully exposed to wind and to crevass…"
+     }
+    ]
+   },
+   {
+    "id": "wa_magic_mountain_north_face",
+    "name": "North Face",
+    "peak": "Magic Mountain",
+    "area_id": "wa_magic_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "high_point_ft": 7610,
+    "overview": "A glacier-approach line up Magic Mountain's north side via the Yawning Glacier, finishing with a distinct 600 ft class 4 rock face to a notch just northwest of the summit.",
+    "approach": "Same trailhead and Cascade Pass approach as the South Ridge route, but continue toward Pelton Basin (rather than Kool-Aid Lake) as the camp for this route.",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_magic_mountain_northeast_couloir",
+    "name": "Northeast Couloir",
+    "peak": "Magic Mountain",
+    "area_id": "wa_magic_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7610,
+    "overview": "A snow line on the peak's northeast flank: follow the North Face approach up the Yawning Glacier to the Magic–Pelton Col, then take the couloir directly to the summit on rock or snow. Known to skiers as the Banana Couloir, with a documented 2,000 ft of consistently steep fall-line.",
+    "approach": "Cascade River Road 23.1 miles from Marblemount to the Cascade Pass trailhead (~3,600 ft). Hike 3.7 miles to Cascade Pass (5,392 ft), then cross the pass and descend east toward the Stehekin side; Pelton Basin Camp is about 0.5 miles downhill and east of the pass, 4.9 miles and 1,800 ft of gain from …",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_magic_mountain_south_ridge",
+    "name": "South Ridge / Southeast Slopes",
+    "peak": "Magic Mountain",
+    "area_id": "wa_magic_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 7610,
+    "overview": "Set above the head of Cascade Pass near Spider-Formidable country, Magic Mountain (7,610 ft) is a rewarding scramble usually combined with a backcountry camp in the basin below. The South Ridge / Southeast Slopes standard route leaves Cascade Pass on a climber's path that traverses heather and talus…",
+    "approach": "From the Cascade Pass Trailhead (3,660 ft) at the end of Cascade River Road (FR-15), follow the Cascade Pass Trail — a well-graded, heavily switchbacked National Park trail — 3.7 miles and about 1,700 ft of gain to Cascade Pass (5,360-5,400 ft), the low notch between Mixup Peak and Cascade Peak. Thi…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Kool-Aid Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6120,
+      "notes": "From the col the route drops rather than climbs: a climber's path makes a descending traverse to the southeast down to the lake. Do not continue north over the …"
+     }
+    ]
+   },
+   {
+    "id": "wa_magic_mountain_southwest_cirque",
+    "name": "Southwest Cirque",
+    "peak": "Magic Mountain",
+    "area_id": "wa_magic_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 7610,
+    "overview": "A class 3-4 scramble up heathery gullies from the cirque southwest of the summit, sharing the South Ridge route's approach.",
+    "approach": "Same Cascade Pass Trailhead / Cascade Pass / Kool-Aid Lake approach as the South Ridge route, diverting into the cirque southwest of the summit rather than continuing to the Hurry-up col.",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_magic_mountain_west_ridge",
+    "name": "West Ridge",
+    "peak": "Magic Mountain",
+    "area_id": "wa_magic_mountain",
+    "discipline": "mountaineering",
+    "grade": "5.6",
+    "high_point_ft": 7610,
+    "overview": "The technical rock line on Magic Mountain, crossing a schrund from a pocket glacier below the west face and climbing a 5.6 pitch to gain the summit ridge.",
+    "approach": "Approach via the general Cascade Pass/Ptarmigan Traverse access to reach the pocket glacier below Magic Mountain's west face.",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mix_up_peak_east_face",
+    "name": "East Face / East Buttress",
+    "peak": "Mix-up Peak",
+    "area_id": "wa_mixup_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 4 / low 5th",
+    "high_point_ft": 7440,
+    "overview": "Mix-up Peak (7,440 ft) sits one mile south of Cascade Pass on the Skagit–Chelan county line and marks the northern end of the Ptarmigan Traverse. First climbed in 1947 by Wesley Grande and Jack Kendrick, its East Face is a compact, mostly solid-rock 'staircase' of class 3–4 scrambling with a short m…",
+    "approach": "Start at the Cascade Pass Trailhead at the end of the Cascade River Road (Forest Road 15), elevation ~3,600 ft. Follow the Cascade Pass Trail (a well-graded, switchbacking National Park trail, unnumbered but universally called the Cascade Pass Trail) 3.5-3.7 miles and about 1,800 ft of gain to Casca…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_torment_south_ridge",
+    "name": "South Ridge",
+    "peak": "Mount Torment",
+    "area_id": "wa_mount_torment",
+    "discipline": "mountaineering",
+    "grade": "Grade II, 5.4",
+    "high_point_ft": 8120,
+    "overview": "The standard route to Torment's summit, climbing solid granite over moderate steps and towers on four pitches (~1000 ft); best known as the start of the Torment-Forbidden Traverse. Climbing tops out around 5.4 with generally good rock and moderate route-finding.",
+    "approach": "Start at the Boston Basin Trailhead (end of Cascade River Road/FR-15). The unmaintained but well-beaten climbers' trail switchbacks steeply up through forest and traverses west, crossing a couple of small creeks (reliable water), to reach the meadows of Boston Basin in roughly 1.5-3.5 hours dependin…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Boston Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_torment_torment_forbidden_traverse",
+    "name": "Torment-Forbidden Traverse",
+    "peak": "Mount Torment",
+    "area_id": "wa_mount_torment",
+    "discipline": "mountaineering",
+    "grade": "Grade IV, 5.6",
+    "high_point_ft": 8815,
+    "overview": "Links the summits of Mount Torment and Forbidden Peak along their connecting ridge, one of the premier moderate alpine traverses in the North Cascades. First climbed by Ed Cooper and Walt Sellers over a two-day push in July 1958, the traverse combines Torment's South Ridge/SE face, roughly a mile of…",
+    "approach": "From the Boston Basin trailhead pullout on Cascade River Road (~3,300 ft, opposite Johannesburg Mountain, roughly mile 22-23), follow the old abandoned mining road for about 0.75 mile to the historic mine site. From there an unmaintained but well-beaten climbers' path takes over, switchbacking steep…",
+    "camps": [
+     {
+      "name": "Boston Basin high camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 6300,
+      "notes": "A comfortable planned camp, roughly 6,300 to 6,400 ft, on a small sandy flat at the foot of a permanent snowfield with a privy and a food storage bin nearby. This is the standard staging camp for the traverse: about two …"
+     },
+     {
+      "name": "Torment Basin camp below the southeast face",
+      "store": "bivy",
+      "type": null,
+      "elev": 7100,
+      "notes": "A planned alternative camp for parties who want to start the traverse from the base of the climbing instead of from Boston Basin. It sits under the southeast side of Torment near the foot of the east couloir. Early in th…"
+     },
+     {
+      "name": "Mid-traverse ridge bivy",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "This is the emergency-and-committed option rather than a planned camp: a flat spot at a notch on the ridge roughly midway along the traverse, reached after the snow and ice section on the north side. Parties who get beni…"
+     },
+     {
+      "name": "Boston Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_north_ridge_7",
+    "name": "North Ridge",
+    "peak": "Aiguille de l'M",
+    "area_id": "wa_aiguille_de_l_m",
+    "discipline": "alpine",
+    "grade": "4th",
+    "high_point_ft": 7200,
+    "overview": "Exposed ridge climb combining three to four pitches of fourth-class scrambling with a final 40-foot 5.5 pitch to a short tower. Easily completed as a half-day climb from Boston Basin campsites.",
+    "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different, lower stop than the Eldorado tr…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_northeast_ridge_1963_route",
+    "name": "Northeast Ridge (1963 Route)",
+    "peak": "Johannesburg Mountain",
+    "area_id": "wa_johannesburg_mountain",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "high_point_ft": 8200,
+    "overview": "A more direct, all-rock alternative to the neighboring East Ridge and Northeast Buttress lines: climbs partway up the Cascade-Johannesburg Couloir to a hanging glacier, then follows the leftmost rib to the summit, deliberately avoiding the brush that plagues the other routes.",
+    "approach": "East/Northeast from Cascade Pass trailhead; descend and cross Cascade River, then approach the northeast face via C-J couloir",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_northwest_ridge_2",
+    "name": "Northwest Ridge",
+    "peak": "Boston Peak",
+    "area_id": "wa_boston_peak",
+    "discipline": "mountaineering",
+    "grade": "5.5 X",
+    "high_point_ft": 8894,
+    "overview": "Boston Peak's northwest ridge is an obscure, seriously run-out line linking the Sharkfin-Boston col to Boston's summit. Its only known ascent is Sam Boyce and Kyle Willis's August 2018 'Boston Marathon,' a west-to-east enchainment that circled Boston Basin over Forbidden Peak, Sharkfin Tower, Boston…",
+    "approach": "There is no standalone approach described for this ridge. What is confirmed is that the ridge connecting Boston Peak toward Forbidden Peak passes over Sharkfin Tower (8,120+ ft), and the only known ascent reached it via a multi-day connecting traverse begun on Forbidden Peak rather than as a direct …",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Lower Boston Basin Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Established backcountry campsites just above treeline; NPS wilderness permit required and food must be stored per park regulations."
+     }
+    ]
+   },
+   {
+    "id": "wa_sharkfin_tower_southeast_ridge",
+    "name": "Southeast Ridge",
+    "peak": "Sharkfin Tower",
+    "area_id": "wa_sharkfin_tower",
+    "discipline": "mountaineering",
+    "grade": "II, 5.0",
+    "high_point_ft": 8120,
+    "overview": "Sharkfin Tower (8,120 ft) is a slender granite spire on the connecting ridge between Forbidden Peak and Boston Peak in North Cascades National Park, overlooking the Quien Sabe Glacier to the south and the Boston Glacier to the north. It's popular with Boston Basin parties as a shorter add-on to bigg…",
+    "approach": "From the Boston Basin climbers' trailhead on Cascade River Road (~3,200–3,400 ft, ~21.7 mi from Marblemount when the road is open past the washout), pick up the unmaintained but well-worn Boston Basin climbers' path. It switchbacks steeply up through forest on old roadbed/boot path, crosses a couple…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Boston Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_south_ridge_6",
+    "name": "South Ridge",
+    "peak": "Aiguille de l'M",
+    "area_id": "wa_aiguille_de_l_m",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 7200,
+    "overview": "A cool 5.6 romp up exposed ridge combining fourth-class scrambling with short 5th-class sections. Similar commitment to North Ridge but slightly more technical. Half-day alpine objective from Boston Basin camps.",
+    "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different, lower stop than the Eldorado tr…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_southeast_face",
+    "name": "Southeast Face",
+    "peak": "Sharkfin Tower",
+    "area_id": "wa_sharkfin_tower",
+    "discipline": "mountaineering",
+    "grade": "5.10-",
+    "high_point_ft": 8120,
+    "overview": "A harder, more sustained alternative to the classic Southeast Ridge, climbing the exposed granite face directly right of the ridge crest in 2 pitches up to 5.10-. First climbed in September 1990 by Jim Nelson, Jim Martin, Kit Lewis, Bill Liddell, and Dave Bale, it shares the Southeast Ridge's approa…",
+    "approach": "Drive Cascade River Road roughly 21.7 miles from Marblemount to the small, unsigned Boston Basin pulloff/trailhead at about 3,200-3,300 ft (a rough, sometimes rutted gravel road best driven with a bit of clearance). From the trailhead, follow the old abandoned mining road for about 0.75 mile to a de…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_triad_east_peak",
+    "name": "East Peak (Standard Route)",
+    "peak": "The Triad",
+    "area_id": "wa_the_triad",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4 to 5.4",
+    "high_point_ft": 7520,
+    "overview": "The Triad is a cluster of three rocky summits (west, middle, and east peaks, all within roughly 80 ft of each other in height) on the southwest ridge extension of Eldorado Peak, rising above the remote, glaciated Marble Creek cirque in North Cascades National Park. Composed of granodioritic orthogne…",
+    "approach": "From Marblemount, drive Cascade River Road (FR-15) about 10.2 paved miles, then turn onto FR-1540 (Sibley Creek Road) and follow its rough gravel surface 4.5 miles to the small Hidden Lake Trailhead (~3,600 ft; Northwest Forest Pass required to park). Hike Hidden Lake Trail #745 through forest and w…",
+    "camps": [
+     {
+      "name": "Boston Basin lower camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the…"
+     },
+     {
+      "name": "Boston Basin upper (high) camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the …"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Reached by the maintained trail to Cascade Pass and then up Sahale Arm, this is the natural high camp for Sahale Peak and for the Quien Sabe Glacier side of Boston Peak. It is fully exposed to weather and wind, which is …"
+     },
+     {
+      "name": "Pelton Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin lies roughly half a mile down the east side of Cascade Pass and is the fallback when Sahale Glacier Camp is full, since camping at the pass itself is not allowed. From here Mixup Peak, Magic Mountain and the…"
+     },
+     {
+      "name": "Johannesburg Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Jo…"
+     },
+     {
+      "name": "Informal snow and rock bivouacs above the basins",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col ar…"
+     },
+     {
+      "name": "Marble Creek / Triad basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6500,
+      "notes": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "chilliwack",
+  "routes": [
+   {
+    "id": "wa_indian_mountain_baker_scramble",
+    "name": "Indian Mountain Scramble",
+    "peak": "Indian Mountain",
+    "area_id": "wa_indian_mountain_baker",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7133,
+    "overview": "Indian Mountain (7,133 ft) is a remote, rarely climbed summit in the North Cascades National Park backcountry, about 7 miles south of the Canadian border in Whatcom County. It sits in the Chilliwack River drainage — which flows north into Canada, not toward Baker Lake — between Whatcom Pass and Copp…",
+    "approach": "No maintained trail reaches the summit — Indian Mountain is approached cross-country from the Hannegan Pass/Chilliwack River trail system, the only real access into this part of the park. From the Hannegan Trailhead (3,120 ft, end of FR 32/Ruth Creek Road), follow the Hannegan Pass Trail roughly 4-5…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Graybeal Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3139,
+      "notes": "Turn up the Brush Creek Trail and climb roughly 1,250 ft over about two miles toward Whatcom Pass, through the 2022 burn — expect rockfall off unstable burned s…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "constance",
+  "routes": [
+   {
+    "id": "wa_mount_constance_finger_traverse",
+    "name": "Finger Traverse",
+    "peak": "Mount Constance",
+    "area_id": "wa_mount_constance",
+    "discipline": "alpine",
+    "grade": "Grade II",
+    "high_point_ft": 7756,
+    "overview": "A rock alternative to the adjacent Terrible Traverse, encountered on the North Chute side around 7,400-7,450 ft. Climbers cross an airy, narrow ledge with thin footholds by jamming fingers into a continuous horizontal crack/flake that runs the length of the traverse, giving good hands even though th…",
+    "approach": "From the Dosewallips River Road washout (~mile 1, roughly 700 ft) it's about a 5-mile road-walk or bike-in on the now-closed road to the unsigned, unmaintained Lake Constance climbers' trail at approximately 1,450 ft, crossing Constance Creek on a couple of wooden footbridges near the start. From th…",
+    "camps": [
+     {
+      "name": "Lake Constance — the standard base for the South Chute",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The base camp for essentially every ascent by the standard South Chute, reached by a savage climbers' path that gains roughly 3,300 to 3,400 ft in under two miles of hand-over-hand scrambling above the Dosewallips road. …"
+     },
+     {
+      "name": "Dosewallips road-end camps, staging for the washed-out road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1540,
+      "notes": "THE ROAD HAS BEEN CLOSED BY A WASHOUT SINCE THE EARLY 2000s, so what used to be a drive-in trailhead is now several miles of road walking — estimates range from about 6.5 extra miles on the round trip to over five miles …"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — NOT the standard Constance camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "Home Lake sits just below Constance Pass and is a genuine high camp, but it MUST NOT BE CONFUSED WITH LAKE CONSTANCE — it does not serve the South Chute and cannot substitute for the quota at the lake. Parties camp here …"
+     },
+     {
+      "name": "Lake Constance",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4750,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "name": "North Chimney (Standard Route)",
+    "peak": "Mount Constance",
+    "area_id": "wa_mount_constance",
+    "discipline": "scrambling",
+    "grade": "Grade II-III",
+    "high_point_ft": 7756,
+    "overview": "The classic climber's route on Mount Constance, third-highest peak in the Olympics — generally known among Olympic climbers as the 'South Chute' (or 'College Route'); 'North Chimney' refers specifically to the final short chimney on the summit block. From Lake Constance (4,650-4,800 ft), the route f…",
+    "approach": "Park at the Dosewallips Road washout (~600 ft), reached via ~7 paved miles then ~3 gravel miles of FR 2610 from US 101 at Brinnon (closed to vehicles since a 2002 washout). From the gate, walk or mountain-bike the old roadbed roughly 5-6 more miles up the Dosewallips valley to the signed, unmaintain…",
+    "camps": [
+     {
+      "name": "Lake Constance",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The only practical camp for the route and a brutal one to reach: an unmaintained climbers' path gaining roughly 3,200 ft in about 1.8 mi from the Dosewallips, steep enough that you are pulling on roots and logs, and that…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_constance_north_chute",
+    "name": "North Chute",
+    "peak": "Mount Constance",
+    "area_id": "wa_mount_constance",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 7756,
+    "overview": "An alternate, less-traveled couloir option to the standard South Chute, ascending a comparable chute on the north side of Avalanche Canyon and rejoining the standard route at the Terrible Traverse below the summit block.",
+    "approach": "Same as the standard route to Lake Constance: bike/hike the washed-out Dosewallips Road (FS 2610), then the steep Lake Constance Trail. From the lake, head north into Avalanche Canyon; where the standard route bears toward the South Chute, the North Chute climbs a parallel couloir further into the c…",
+    "camps": [
+     {
+      "name": "Lake Constance — the standard base for the South Chute",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The base camp for essentially every ascent by the standard South Chute, reached by a savage climbers' path that gains roughly 3,300 to 3,400 ft in under two miles of hand-over-hand scrambling above the Dosewallips road. …"
+     },
+     {
+      "name": "Dosewallips road-end camps, staging for the washed-out road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1540,
+      "notes": "THE ROAD HAS BEEN CLOSED BY A WASHOUT SINCE THE EARLY 2000s, so what used to be a drive-in trailhead is now several miles of road walking — estimates range from about 6.5 extra miles on the round trip to over five miles …"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — NOT the standard Constance camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "Home Lake sits just below Constance Pass and is a genuine high camp, but it MUST NOT BE CONFUSED WITH LAKE CONSTANCE — it does not serve the South Chute and cannot substitute for the quota at the lake. Parties camp here …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_constance_terrible_traverse",
+    "name": "Terrible Traverse",
+    "peak": "Mount Constance",
+    "area_id": "wa_mount_constance",
+    "discipline": "scrambling",
+    "grade": "Grade II",
+    "high_point_ft": 7756,
+    "overview": "The Terrible Traverse is the historic crux of the standard Mount Constance route: an exposed, steep snow traverse across a cirque above a sheer cliff, encountered around 7,400-7,450 ft while crossing from the South Chute notch toward the summit block — a fall here would likely be fatal, hence the na…",
+    "approach": "Same demanding approach as the standard route: roughly 5 miles of road-walking/biking up the washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail (~1,450 ft), then a punishing, unmaintained boot path gaining roughly 3,300-3,400 ft in under 2.2 miles to Lake Constance (4,8…",
+    "camps": [
+     {
+      "name": "Lake Constance — the standard base for the South Chute",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The base camp for essentially every ascent by the standard South Chute, reached by a savage climbers' path that gains roughly 3,300 to 3,400 ft in under two miles of hand-over-hand scrambling above the Dosewallips road. …"
+     },
+     {
+      "name": "Dosewallips road-end camps, staging for the washed-out road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1540,
+      "notes": "THE ROAD HAS BEEN CLOSED BY A WASHOUT SINCE THE EARLY 2000s, so what used to be a drive-in trailhead is now several miles of road walking — estimates range from about 6.5 extra miles on the round trip to over five miles …"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — NOT the standard Constance camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "Home Lake sits just below Constance Pass and is a genuine high camp, but it MUST NOT BE CONFUSED WITH LAKE CONSTANCE — it does not serve the South Chute and cannot substitute for the quota at the lake. Parties camp here …"
+     },
+     {
+      "name": "Lake Constance",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4750,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_constance_west_arete",
+    "name": "West Arête",
+    "peak": "Mount Constance",
+    "area_id": "wa_mount_constance",
+    "discipline": "alpine",
+    "grade": "Grade III",
+    "high_point_ft": 7756,
+    "overview": "A more sustained, technical alternative to the standard scramble: roughly 1,100 feet of class 3 to sustained 5.4-5.5 rock over 5+ pitches (harder than the 'low 5th' commonly cited), climbing the arete that rises directly above Crystal Pass at the head of Avalanche Canyon to the summit ridge. From Cr…",
+    "approach": "Same trailhead and grueling approach as the standard route: a road-walk/bike of roughly 5 miles up the closed, washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail (~1,450 ft), then a steep, unmaintained boot path gaining roughly 3,300-3,400 ft in under 2.2 miles — no swi…",
+    "camps": [
+     {
+      "name": "Lake Constance — the standard base for the South Chute",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The base camp for essentially every ascent by the standard South Chute, reached by a savage climbers' path that gains roughly 3,300 to 3,400 ft in under two miles of hand-over-hand scrambling above the Dosewallips road. …"
+     },
+     {
+      "name": "Dosewallips road-end camps, staging for the washed-out road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1540,
+      "notes": "THE ROAD HAS BEEN CLOSED BY A WASHOUT SINCE THE EARLY 2000s, so what used to be a drive-in trailhead is now several miles of road walking — estimates range from about 6.5 extra miles on the round trip to over five miles …"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — NOT the standard Constance camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "Home Lake sits just below Constance Pass and is a genuine high camp, but it MUST NOT BE CONFUSED WITH LAKE CONSTANCE — it does not serve the South Chute and cannot substitute for the quota at the lake. Parties camp here …"
+     },
+     {
+      "name": "Lake Constance",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4750,
+      "notes": ""
+     }
+    ]
+   }
+  ]
+ }
+]

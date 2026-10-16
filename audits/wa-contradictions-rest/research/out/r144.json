@@ -1,0 +1,538 @@
+{
+ "file": "r144.json",
+ "results": [
+  {
+   "id": "wa_unnamed_6",
+   "fact": "Year-round access claim",
+   "verdict": "fixed",
+   "correct_value": "Seasonal: reachable only while SR-20 over Washington Pass is open (it is gated from roughly Nov/Dec to Apr/May).",
+   "evidence": "WSDOT closes SR-20 for the winter between the Ross Dam trailhead and the Silver Star gate, taking in Washington Pass (5,475 ft); the 2025 closure was Dec 4. It typically reopens in April or early May depending on snowpack. The crag cannot be reached by car in winter, so 'year-round' is wrong; access, road, climate and season already agree.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://wsdot.wa.gov/travel/highways-bridges/passes/north-cascades-highway/home",
+    "https://komonews.com/news/local/north-cascades-highway-state-route-20-closes-for-winter-season-december-2025-avalanche-danger-snow-fall-rain-weather-pacific-northwest"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "accessible year-round on good weather days",
+     "replace": "for good-weather days whenever SR-20 is open, roughly late spring to early winter",
+     "id": "wa_unnamed_6",
+     "fact": "Year-round access claim"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_6",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+   "evidence": "These are single-pitch (15-21 m) bolted routes ending at fixed anchors (Unnamed 6: bolted anchor on a small ledge, lowered from the top; Honeymoon Sweet: chain anchor at top of cliff); a 60 m rope lowers them. The row's descent_text, rappels/bail and rope fields all describe lowering; the short descent field (hidden on screen as the shorter) is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119079520/unnamed-6",
+    "https://www.mountainproject.com/route/127248771/honeymoon-sweet",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Walk off or rappel from bolted anchors at route top",
+     "value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+     "id": "wa_unnamed_6",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_6",
+   "fact": "Approach gain",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 300 is right; the hairpin trailhead is ~5,150 ft, not 5,400/5,477",
+   "evidence": "The SR-20 hairpin pullout (Kangaroo Pass trailhead) is given as 5,150 ft in one trip report and 5,160 ft on the Mountaineers route page; the USGS 1 m DEM at the pullout coordinate reads 5,151 ft, while the crag is listed at 5,500 ft (DEM at the crag pin: 5,454 ft). So ~300 ft of gain is right and the trailhead pin elevation (5,400/5,477 — 5,475 ft is Washington Pass itself, not the hairpin below it) is the wrong field.",
+   "sources": [
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 5150,
+     "id": "wa_unnamed_6",
+     "fact": "Approach gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_6",
+   "fact": "Trailhead pin location vs stated distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The pin at 48.5269,-120.6506 sits near Washington Pass itself (USGS DEM 5,567 ft there), roughly 0.9 mi from the crag, whereas the hairpin pullout used by the sibling Unnamed 5 row (48.51454,-120.64332) is ~0.15 mi from the crag, matching distMi 0.2. The wrong value is the pin's coordinate, which is out of scope for this pass; distMi is correct as a walking distance.",
+   "sources": [
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_6",
+   "fact": "Approach time (approach prose 10-15 min vs timing.approachTimeHrs 0.12)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Only one external source found: the Spire Gully area page gives a seven-minute approach from the hairpin. In the row, timing.approachTimeHrs 0.12 (~7 min) and the waypoint note agree with it against the approach prose's 10-15 minutes, but that is short of the 4-field internal bar and no second independent source was found (the DEM gives ~300 ft over ~0.2 mi, consistent with either).",
+   "sources": [
+    "https://www.mountainproject.com/area/113263604/spire-gully"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_6",
+   "fact": "Land manager",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+   "evidence": "Washington Pass and the SR-20 corridor below it lie in the Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Forest Service district page; WTA Washington Pass Overlook listing). The row's own land_manager, notes and emergency.rangerStation already say so; landManager 'N/A' is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/washington-pass-overlook",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/methow-valley-ranger-district"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_unnamed_6",
+     "fact": "Land manager"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_3",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+   "evidence": "These are single-pitch (15-21 m) bolted routes ending at fixed anchors (Unnamed 6: bolted anchor on a small ledge, lowered from the top; Honeymoon Sweet: chain anchor at top of cliff); a 60 m rope lowers them. The row's descent_text, rappels/bail and rope fields all describe lowering; the short descent field (hidden on screen as the shorter) is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119079520/unnamed-6",
+    "https://www.mountainproject.com/route/127248771/honeymoon-sweet",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Walk off or rappel from bolted anchors at route top",
+     "value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+     "id": "wa_unnamed_3",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_3",
+   "fact": "Approach gain",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 300 is right; the hairpin trailhead is ~5,150 ft, not 5,400/5,477",
+   "evidence": "The SR-20 hairpin pullout (Kangaroo Pass trailhead) is given as 5,150 ft in one trip report and 5,160 ft on the Mountaineers route page; the USGS 1 m DEM at the pullout coordinate reads 5,151 ft, while the crag is listed at 5,500 ft (DEM at the crag pin: 5,454 ft). So ~300 ft of gain is right and the trailhead pin elevation (5,400/5,477 — 5,475 ft is Washington Pass itself, not the hairpin below it) is the wrong field.",
+   "sources": [
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 5150,
+     "id": "wa_unnamed_3",
+     "fact": "Approach gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_3",
+   "fact": "Trailhead pin location vs stated distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The pin at 48.5269,-120.6506 sits near Washington Pass itself (USGS DEM 5,567 ft there), roughly 0.9 mi from the crag, whereas the hairpin pullout used by the sibling Unnamed 5 row (48.51454,-120.64332) is ~0.15 mi from the crag, matching distMi 0.2. The wrong value is the pin's coordinate, which is out of scope for this pass; distMi is correct as a walking distance.",
+   "sources": [
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_3",
+   "fact": "Approach time (approach prose 10-15 min vs timing.approachTimeHrs 0.12)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Only one external source found: the Spire Gully area page gives a seven-minute approach from the hairpin. In the row, timing.approachTimeHrs 0.12 (~7 min) and the waypoint note agree with it against the approach prose's 10-15 minutes, but that is short of the 4-field internal bar and no second independent source was found (the DEM gives ~300 ft over ~0.2 mi, consistent with either).",
+   "sources": [
+    "https://www.mountainproject.com/area/113263604/spire-gully"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_3",
+   "fact": "Land manager",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+   "evidence": "Washington Pass and the SR-20 corridor below it lie in the Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Forest Service district page; WTA Washington Pass Overlook listing). The row's own land_manager, notes and emergency.rangerStation already say so; landManager 'N/A' is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/washington-pass-overlook",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/methow-valley-ranger-district"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_unnamed_3",
+     "fact": "Land manager"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_4",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+   "evidence": "These are single-pitch (15-21 m) bolted routes ending at fixed anchors (Unnamed 6: bolted anchor on a small ledge, lowered from the top; Honeymoon Sweet: chain anchor at top of cliff); a 60 m rope lowers them. The row's descent_text, rappels/bail and rope fields all describe lowering; the short descent field (hidden on screen as the shorter) is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119079520/unnamed-6",
+    "https://www.mountainproject.com/route/127248771/honeymoon-sweet",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Walk off or rappel from bolted anchors at route top",
+     "value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+     "id": "wa_unnamed_4",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_4",
+   "fact": "Approach gain",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 300 is right; the hairpin trailhead is ~5,150 ft, not 5,400/5,477",
+   "evidence": "The SR-20 hairpin pullout (Kangaroo Pass trailhead) is given as 5,150 ft in one trip report and 5,160 ft on the Mountaineers route page; the USGS 1 m DEM at the pullout coordinate reads 5,151 ft, while the crag is listed at 5,500 ft (DEM at the crag pin: 5,454 ft). So ~300 ft of gain is right and the trailhead pin elevation (5,400/5,477 — 5,475 ft is Washington Pass itself, not the hairpin below it) is the wrong field.",
+   "sources": [
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 5150,
+     "id": "wa_unnamed_4",
+     "fact": "Approach gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_4",
+   "fact": "Trailhead pin location vs stated distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The pin at 48.5269,-120.6506 sits near Washington Pass itself (USGS DEM 5,567 ft there), roughly 0.9 mi from the crag, whereas the hairpin pullout used by the sibling Unnamed 5 row (48.51454,-120.64332) is ~0.15 mi from the crag, matching distMi 0.2. The wrong value is the pin's coordinate, which is out of scope for this pass; distMi is correct as a walking distance.",
+   "sources": [
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_4",
+   "fact": "Approach time (approach prose 10-15 min vs timing.approachTimeHrs 0.12)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Only one external source found: the Spire Gully area page gives a seven-minute approach from the hairpin. In the row, timing.approachTimeHrs 0.12 (~7 min) and the waypoint note agree with it against the approach prose's 10-15 minutes, but that is short of the 4-field internal bar and no second independent source was found (the DEM gives ~300 ft over ~0.2 mi, consistent with either).",
+   "sources": [
+    "https://www.mountainproject.com/area/113263604/spire-gully"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_4",
+   "fact": "Land manager",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+   "evidence": "Washington Pass and the SR-20 corridor below it lie in the Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Forest Service district page; WTA Washington Pass Overlook listing). The row's own land_manager, notes and emergency.rangerStation already say so; landManager 'N/A' is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/washington-pass-overlook",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/methow-valley-ranger-district"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_unnamed_4",
+     "fact": "Land manager"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_5",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower off the anchor above the roof on a single rope; single pitch, no walk-off or rappel needed.",
+   "evidence": "These are single-pitch (15-21 m) bolted routes ending at fixed anchors (Unnamed 6: bolted anchor on a small ledge, lowered from the top; Honeymoon Sweet: chain anchor at top of cliff); a 60 m rope lowers them. The row's descent_text, rappels/bail and rope fields all describe lowering; the short descent field (hidden on screen as the shorter) is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119079520/unnamed-6",
+    "https://www.mountainproject.com/route/127248771/honeymoon-sweet",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Walk off or rappel with placed anchors",
+     "value": "Lower off the anchor above the roof on a single rope; single pitch, no walk-off or rappel needed.",
+     "id": "wa_unnamed_5",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_5",
+   "fact": "Approach gain",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 300 is right; the hairpin trailhead is ~5,150 ft, not 5,400/5,477",
+   "evidence": "The SR-20 hairpin pullout (Kangaroo Pass trailhead) is given as 5,150 ft in one trip report and 5,160 ft on the Mountaineers route page; the USGS 1 m DEM at the pullout coordinate reads 5,151 ft, while the crag is listed at 5,500 ft (DEM at the crag pin: 5,454 ft). So ~300 ft of gain is right and the trailhead pin elevation (5,400/5,477 — 5,475 ft is Washington Pass itself, not the hairpin below it) is the wrong field.",
+   "sources": [
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5477,
+     "value": 5150,
+     "id": "wa_unnamed_5",
+     "fact": "Approach gain"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 5477,
+     "value": 5150,
+     "id": "wa_unnamed_5",
+     "fact": "Approach gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "at about 5,480 feet",
+     "replace": "at about 5,150 feet",
+     "id": "wa_unnamed_5",
+     "fact": "Approach gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_5",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one external source found: the Spire Gully area page gives a seven-minute approach from the hairpin. In the row, timing.approachTimeHrs 0.12 (~7 min) and the waypoint note agree with it against the approach prose's 10-15 minutes, but that is short of the 4-field internal bar and no second independent source was found (the DEM gives ~300 ft over ~0.2 mi, consistent with either).",
+   "sources": [
+    "https://www.mountainproject.com/area/113263604/spire-gully"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_5",
+   "fact": "Land manager",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+   "evidence": "Washington Pass and the SR-20 corridor below it lie in the Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Forest Service district page; WTA Washington Pass Overlook listing). The row's own land_manager, notes and emergency.rangerStation already say so; landManager 'N/A' is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/washington-pass-overlook",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/methow-valley-ranger-district"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_unnamed_5",
+     "fact": "Land manager"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_2",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+   "evidence": "These are single-pitch (15-21 m) bolted routes ending at fixed anchors (Unnamed 6: bolted anchor on a small ledge, lowered from the top; Honeymoon Sweet: chain anchor at top of cliff); a 60 m rope lowers them. The row's descent_text, rappels/bail and rope fields all describe lowering; the short descent field (hidden on screen as the shorter) is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119079520/unnamed-6",
+    "https://www.mountainproject.com/route/127248771/honeymoon-sweet",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Walk off or rappel from bolted anchors at route top",
+     "value": "Lower off the bolted anchor at the top; single pitch, no walk-off or rappel needed.",
+     "id": "wa_unnamed_2",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_2",
+   "fact": "Approach gain",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 300 is right; the hairpin trailhead is ~5,150 ft, not 5,400/5,477",
+   "evidence": "The SR-20 hairpin pullout (Kangaroo Pass trailhead) is given as 5,150 ft in one trip report and 5,160 ft on the Mountaineers route page; the USGS 1 m DEM at the pullout coordinate reads 5,151 ft, while the crag is listed at 5,500 ft (DEM at the crag pin: 5,454 ft). So ~300 ft of gain is right and the trailhead pin elevation (5,400/5,477 — 5,475 ft is Washington Pass itself, not the hairpin below it) is the wrong field.",
+   "sources": [
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 5150,
+     "id": "wa_unnamed_2",
+     "fact": "Approach gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_2",
+   "fact": "Trailhead pin location vs stated distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The pin at 48.5269,-120.6506 sits near Washington Pass itself (USGS DEM 5,567 ft there), roughly 0.9 mi from the crag, whereas the hairpin pullout used by the sibling Unnamed 5 row (48.51454,-120.64332) is ~0.15 mi from the crag, matching distMi 0.2. The wrong value is the pin's coordinate, which is out of scope for this pass; distMi is correct as a walking distance.",
+   "sources": [
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_2",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one external source found: the Spire Gully area page gives a seven-minute approach from the hairpin. In the row, timing.approachTimeHrs 0.12 (~7 min) and the waypoint note agree with it against the approach prose's 10-15 minutes, but that is short of the 4-field internal bar and no second independent source was found (the DEM gives ~300 ft over ~0.2 mi, consistent with either).",
+   "sources": [
+    "https://www.mountainproject.com/area/113263604/spire-gully"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unnamed_2",
+   "fact": "Land manager",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+   "evidence": "Washington Pass and the SR-20 corridor below it lie in the Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Forest Service district page; WTA Washington Pass Overlook listing). The row's own land_manager, notes and emergency.rangerStation already say so; landManager 'N/A' is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/washington-pass-overlook",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/methow-valley-ranger-district"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_unnamed_2",
+     "fact": "Land manager"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_sweet",
+   "fact": "Trad vs sport",
+   "verdict": "unresolved",
+   "correct_value": "sport",
+   "evidence": "The route page lists Honeymoon Sweet as Sport, 50 ft, 5 bolts to a chain anchor, FA Windham/Sweetland Oct 2008 as the first sport route in Spire Gully; the row's overview, beta, fa, pro_needs, gear and bail all agree it is bolted sport. The fix is discipline trad -> sport, but `discipline` is a column this pass may not change, so it is left for the owner.",
+   "sources": [
+    "https://www.mountainproject.com/route/127248771/honeymoon-sweet",
+    "https://www.mountainproject.com/area/113263617/spire-gully-right-alpenkuhl"
+   ],
+   "patches": []
+  }
+ ]
+}

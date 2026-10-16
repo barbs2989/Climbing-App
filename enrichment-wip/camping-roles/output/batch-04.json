@@ -1,0 +1,696 @@
+{
+ "zones": [
+  {
+   "zone": "cutthroat",
+   "overnightPermit": {
+    "what": "No wilderness camping permit required",
+    "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake.",
+    "url": null
+   }
+  },
+  {
+   "zone": "cutthroat-methow-pass",
+   "overnightPermit": {
+    "what": "No wilderness camping permit required",
+    "where": "A Northwest Forest Pass, an America the Beautiful pass, or a Recreation.gov day pass covers parking at the Rainy Pass PCT North trailhead; no permit paperwork is needed to camp anywhere along this stretch of the Pacific Crest Trail.",
+    "url": null
+   }
+  },
+  {
+   "zone": "davis-peak",
+   "overnightPermit": {
+    "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+    "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "eldorado",
+   "overnightPermit": {
+    "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+    "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "elephant-butte",
+   "overnightPermit": {
+    "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+    "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_complete_south_buttress",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only"
+   ],
+   "drop": [
+    "Cutthroat Lake basin, outside the quarter-mile closure",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Extends the standard South Buttress approach, so it shares that route's trailhead sleeping spots and the south-side basin bivy; the north/east-side lake basin and the separate Cutthroat Wall don't serve this line."
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only"
+   ],
+   "drop": [
+    "Cutthroat Lake basin, outside the quarter-mile closure",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Reaches the East Face couloir via the same State Creek/south-basin approach used for the South Buttress, so it gets the same trailhead and south-side bivy; not confident how far up-couloir parties actually bivy."
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only"
+   ],
+   "drop": [
+    "Cutthroat Lake basin, outside the quarter-mile closure",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Named 'East Face' (id says northeast_face), but its own approach text follows the South Buttress's south-side State Creek approach before traversing to the face, so it is grouped with the south-side routes rather than the north/east-side Cutthroat Lake basin despite the name."
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only"
+   ],
+   "drop": [
+    "Cutthroat Lake basin, outside the quarter-mile closure",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Shares the State Creek/south-basin approach with the South Buttress."
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only"
+   ],
+   "drop": [
+    "Cutthroat Lake basin, outside the quarter-mile closure",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same route family/approach as Complete South Buttress."
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "main": [
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Cutthroat Creek trailhead",
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Lake basin, outside the quarter-mile closure",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [
+    {
+     "name": "Highway shoulder pullout near Blue Lake trailhead",
+     "type": "camp",
+     "elev": 5400,
+     "capacity": "A handful of vehicles",
+     "water": "None — carry water in",
+     "permit": "None beyond the Northwest Forest Pass/day pass that covers Blue Lake trailhead parking",
+     "notes": "An informal roadside pull-off on SR-20 about half a mile west of the Blue Lake trailhead, used to shorten the West Ridge approach; no facilities.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "West Ridge parks at a separate highway pullout near Blue Lake, not the Cutthroat Creek trailhead the other routes use, so that real staging spot was missing from the input list and had to be added."
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat Lake basin, outside the quarter-mile closure"
+   ],
+   "drop": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Wall base terrace"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The south-side basin bivy's own note says it does not serve the North Ridge; the Cutthroat Lake basin sits under the peak's north/east sides, which fits this route's northern approach better."
+  },
+  {
+   "id": "wa_easy_getaway",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat Wall base terrace"
+   ],
+   "drop": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Lake basin, outside the quarter-mile closure"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Reached via the maintained Cutthroat Creek Trail from the Cutthroat trailhead, then an unmaintained bushwhack to the wall base — the south-side peak bivy and the peak's lake basin don't serve this different formation."
+  },
+  {
+   "id": "wa_narcos",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat Wall base terrace"
+   ],
+   "drop": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Lake basin, outside the quarter-mile closure"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Shares the Cutthroat Creek Trail / Little Liberty Bell approach with the other Cutthroat Wall routes."
+  },
+  {
+   "id": "wa_one_piece_at_a_time",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat Wall base terrace"
+   ],
+   "drop": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Lake basin, outside the quarter-mile closure"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same trailhead and wall-base approach as Easy Getaway, just left of it on the wall."
+  },
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat Wall base terrace"
+   ],
+   "drop": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Lake basin, outside the quarter-mile closure"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same trailhead and wall-base approach as the other Cutthroat Wall routes."
+  },
+  {
+   "id": "wa_wright_pond",
+   "main": [
+    "Cutthroat Creek trailhead",
+    "Lone Fir Campground",
+    "Klipchuck Campground, with Early Winters nearby"
+   ],
+   "onRoute": [
+    "Cutthroat Wall base terrace"
+   ],
+   "drop": [
+    "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+    "Cutthroat Lake basin, outside the quarter-mile closure"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Its approach text names a different-looking FS Road 400 turnoff, but that road is the same one-mile spur to the Cutthroat trailhead used for the rest of the Cutthroat Creek Wall/Little Liberty Bell routes."
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "main": [
+    "Snowy Lakes basin",
+    "Swamp Creek highway pullout, for Mount Hardy's south face"
+   ],
+   "onRoute": [
+    "Methow Pass and the PCT meadow camps below Snowy Lakes"
+   ],
+   "drop": [
+    "Rainy Pass PCT north trailhead",
+    "Cutthroat Pass, PCT crest camps",
+    "Granite Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Its own approach text says the standard access to the north side is the Swamp Creek pullout bushwhack straight to Snowy Lakes, not the longer on-trail Rainy Pass/Cutthroat Pass/Granite Pass corridor other Snowy Lakes-basin peaks use — some parties likely do use the PCT instead."
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "main": [
+    "Rainy Pass PCT north trailhead",
+    "Methow Pass and the PCT meadow camps below Snowy Lakes"
+   ],
+   "onRoute": [
+    "Cutthroat Pass, PCT crest camps",
+    "Granite Pass",
+    "Upper Snowy Lake basin"
+   ],
+   "drop": [
+    "Snowy Lakes basin",
+    "Swamp Creek highway pullout, for Mount Hardy's south face"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "This route's own approach follows the PCT toward Methow Pass, west of Golden Horn/Tower's Snowy Lakes camp; the 'Upper Snowy Lake basin' waypoint is kept on-route as a possible connecting stop but its notes describe the Tower/Golden Horn basin, so its use for Mount Hardy specifically is not certain. The Swamp Creek pullout is named for Mount Hardy's separate south-face day route, not this one."
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "main": [
+    "Rainy Pass PCT north trailhead",
+    "Snowy Lakes basin"
+   ],
+   "onRoute": [
+    "Cutthroat Pass, PCT crest camps",
+    "Granite Pass"
+   ],
+   "drop": [
+    "Methow Pass and the PCT meadow camps below Snowy Lakes",
+    "Swamp Creek highway pullout, for Mount Hardy's south face",
+    "Snowy Lakes basin camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "'Snowy Lakes basin camp' duplicates 'Snowy Lakes basin' (same elevation, same lake) so the more general entry is kept."
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "main": [
+    "Rainy Pass PCT north trailhead"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Cutthroat Pass, PCT crest camps",
+    "Granite Pass",
+    "Snowy Lakes basin",
+    "Methow Pass and the PCT meadow camps below Snowy Lakes",
+    "Swamp Creek highway pullout, for Mount Hardy's south face"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "This is a short (~4 mile round trip) scramble straight up from the trailhead, done car-to-car; the passes and basins several miles up the PCT serve the neighboring multi-day peaks, not this route."
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "main": [
+    "Gorge Creek overlook, the trailhead you sleep at",
+    "Goodell Creek Campground, Newhalem"
+   ],
+   "onRoute": [
+    "Snowfield benches on the south side, around 4,800 feet",
+    "The 5,720 ft saddle south of the summit"
+   ],
+   "drop": [
+    "South Davis Saddle"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "'South Davis Saddle' duplicates 'The 5,720 ft saddle south of the summit' (same 5,700-5,800 ft notch on the same ridge), so only the fuller entry is kept."
+  },
+  {
+   "id": "wa_austera_peak",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Klawatti Col camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Roush Creek Basin camp"
+   ],
+   "drop": [
+    "Eldorado (East Ridge) camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Austera is one of the peaks Klawatti Col exists to put within a day's reach on a multi-night trip, so the Col is kept as a main camp alongside the closer Inspiration-glacier high camp."
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Klawatti Col camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Roush Creek Basin camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same multi-glacier approach and camp roles as the standard Austera Peak route."
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Klawatti Col camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Roush Creek Basin camp"
+   ],
+   "drop": [
+    "Eldorado Creek Basin",
+    "Roush Creek Basin (Eldorado high camp)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach system as the standard Austera Peak route."
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Klawatti Col camp"
+   ],
+   "drop": [
+    "Eldorado/Inspiration Glacier high camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Shares the Southwest Buttress's approach; Klawatti Col is kept on-route as an optional farther-out staging camp rather than required."
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Klawatti Col camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Eldorado-area approach to an Inspiration-glacier high camp below Dorado Needle."
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Klawatti Col camp"
+   ],
+   "drop": [
+    "Eldorado Creek Basin camp",
+    "Eldorado/Inspiration Glacier high camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Eldorado-area approach."
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Klawatti Col camp"
+   ],
+   "drop": [
+    "Eldorado Creek Basin camp",
+    "Eldorado/Inspiration Glacier high camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Eldorado-area approach."
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "main": [
+    "Eldorado-Inspiration Glacier saddle high camp",
+    "Roush Creek Basin"
+   ],
+   "onRoute": [
+    "Eldorado Creek Basin"
+   ],
+   "drop": [
+    "Eldorado / Inspiration Glacier camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "This route's own camp list uses slightly different names for the same places as the shared Eldorado-zone list; 'Eldorado / Inspiration Glacier camp' has no notes of its own and duplicates the saddle high camp at essentially the same elevation."
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp"
+   ],
+   "drop": [
+    "Klawatti Col camp",
+    "Eldorado / Inspiration Glacier camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Shares the East Ridge's approach up to the glacier saddle, then breaks off climber's right for the couloir."
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp"
+   ],
+   "drop": [
+    "Klawatti Col camp",
+    "Eldorado (East Ridge) camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Uses the same high camp as the East Ridge, then descends toward the NW Ice Couloir notch to reach the North Ridge's base."
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp"
+   ],
+   "drop": [
+    "Klawatti Col camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach as the East Ridge to the glacier apron below the face."
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp"
+   ],
+   "drop": [
+    "Klawatti Col camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same lower approach as the other Main Peak routes before traversing to the West Arete's start."
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp"
+   ],
+   "drop": [
+    "Klawatti Col camp",
+    "Eldorado camp (Inspiration Glacier flat)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same standard Eldorado approach."
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "main": [
+    "Eldorado-Inspiration snow arm high camp",
+    "Roush Creek Basin camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp"
+   ],
+   "drop": [
+    "Klawatti Col camp",
+    "Eldorado (East Ridge) camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A short add-on climbed from the same Eldorado high camp as the main peak routes."
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "main": [
+    "Klawatti Col camp",
+    "Eldorado-Inspiration snow arm high camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Roush Creek Basin camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Klawatti is one of the peaks Klawatti Col exists to reach, so the Col is kept as the lead main camp."
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "main": [
+    "Klawatti Col camp",
+    "Eldorado-Inspiration snow arm high camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Roush Creek Basin camp"
+   ],
+   "drop": [
+    "Roush Creek Basin camps",
+    "Eldorado ice-cap / Inspiration Glacier high camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach as the North Ridge, continuing onto the Klawatti Glacier."
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "main": [
+    "Klawatti Col camp",
+    "Eldorado-Inspiration snow arm high camp",
+    "Marble Creek Campground, Cascade River Road"
+   ],
+   "onRoute": [
+    "Eldorado East Ridge rock bivies",
+    "Eldorado Basin camp",
+    "Roush Creek Basin camp"
+   ],
+   "drop": [
+    "Eldorado (East Ridge) camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach as the North Ridge."
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "main": [
+    "Sourdough Camp, Sourdough Creek"
+   ],
+   "onRoute": [
+    "Sourdough Mountain summit ground",
+    "Stetattle Ridge tarn camps",
+    "Improvised camp on the shoulder of Elephant Butte"
+   ],
+   "drop": [
+    "Pierce Mountain Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Pierce Mountain Camp is on the alternate Ross Dam/Pierce Mountain approach, not this route's own Sourdough Mountain Trail line."
+  }
+ ],
+ "misassigned": []
+}

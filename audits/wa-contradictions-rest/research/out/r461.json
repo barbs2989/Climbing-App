@@ -1,0 +1,48 @@
+{"file": "r461.json", "results": [
+ {"id": "wa_junior_s_farm", "fact": "Route grade and crux pitches", "verdict": "fixed",
+  "correct_value": "Top grade 5.8+/5.9 at P1 (the crux), P6 the next hardest (5.8); pitch grades roughly 5.5-5.9; no 5.10a pitch; P8 is not a crux (about 5.7).",
+  "evidence": "The route's main listing gives a top grade of 5.9 with pitches ranging 5.5-5.9 and Pitch 1 as the crux; its description calls P1 and P6 the stiff 5.8s, and P1 on its own is graded 5.9-. A detailed 2020 trip report grades P1 5.8 ('well agreed to be the crux pitch'), P6 5.8 ('second toughest'), and P8 5.7. No source lists a 5.10a pitch or makes P8 a crux. The 5.8+ vs 5.9 top-grade difference is one notch on the same pitch and is left as is.",
+  "sources": ["https://www.mountainproject.com/route/111765317/juniors-farm", "https://www.mountainproject.com/route/111764913/bad-tempered-prom-queen", "http://hiking.andrewleader.net/reports/juniors-farm-2020/"],
+  "patches": [
+   {"id": "wa_junior_s_farm", "fact": "Route grade and crux pitches", "op": "replace_text", "column": "rock_grade", "path": [], "find": "5.5-5.10a/5.6-5.8; P1 and P8 are the cruxes", "replace": "5.5-5.9; P1 is the crux and P6 the next hardest"}
+  ]},
+ {"id": "wa_junior_s_farm", "fact": "Pitch count", "verdict": "not_a_contradiction",
+  "correct_value": "10 pitches counting 8 roped pitches plus 2 scramble pitches",
+  "evidence": "The header's 10 is the 8 roped pitches plus 2 scramble pitches, which the itinerary states explicitly; the route's main listing counts it the same way (10 pitches, 8 climbing + 2 third/fourth-class scrambles).",
+  "sources": ["https://www.mountainproject.com/route/111765317/juniors-farm"], "patches": []},
+ {"id": "wa_junior_s_farm", "fact": "Rope needed for the rappel descent", "verdict": "fixed",
+  "correct_value": "A single 60 m rope reaches every station provided every anchor is used; a 70 m only links the top two rappels.",
+  "evidence": "The route's description says the descent can be done with a 60 m rope using every anchor station and that a 70 m links the top two rappels into one shot, warning not to skip or link anchors lower down. A 2020 trip report states flatly that a single 60 m rope works and walks through each rappel. The 'insufficient' claim appears to misread an older note that a single rope cannot reach the ground from the grassy ledge above pitch 1 in one rappel.",
+  "sources": ["https://www.mountainproject.com/route/111765317/juniors-farm", "http://hiking.andrewleader.net/reports/juniors-farm-2020/"],
+  "patches": [
+   {"id": "wa_junior_s_farm", "fact": "Rope needed for the rappel descent", "op": "replace_text", "column": "descent", "path": [], "find": "A single 60-70m rope is insufficient for complete descent—ensure team carries adequate rappel stations and backup anchors.", "replace": "A single 60 m rope reaches the ground only if you use every anchor station—do not skip or link stations low on the descent."},
+   {"id": "wa_junior_s_farm", "fact": "Rope needed for the rappel descent", "op": "replace_text", "column": "descent_text", "path": [], "find": "A single 60m rope is insufficient; ensure adequate redundant anchors at each station.", "replace": "A single 60m rope is enough provided you use every anchor station; do not skip or link stations."}
+  ]},
+ {"id": "wa_junior_s_farm", "fact": "Rappel count", "verdict": "fixed",
+  "correct_value": "Seven or more rappels on a 60 m rope (one fewer on a 70 m): the first ones down the climbing line, then five on the separate rappel route.",
+  "evidence": "The route's description has parties rappel the route to the divergence point, then five more rappels to the ground, with a 70 m linking the top two rappels into one — so at least seven on a 60 m and six on a 70 m. A 2020 trip report on a 60 m made three rappels down the climbing line and then five on the rappel route. The note's 'Six rappels' is only the 70 m count, yet it sits beside the claim that a 60 m does the whole thing; the 5-8 / 6-8 prose ranges already cover the sourced counts.",
+  "sources": ["https://www.mountainproject.com/route/111765317/juniors-farm", "http://hiking.andrewleader.net/reports/juniors-farm-2020/"],
+  "patches": [
+   {"id": "wa_junior_s_farm", "fact": "Rappel count", "op": "replace_text", "column": "rappel_count_note", "path": [], "find": "Six rappels: one down the climbing line to where the descent diverges, then five on a dedicated rappel route to the ground.", "replace": "Seven or more rappels on a 60 m rope (one fewer on a 70 m): first down the climbing line to where the descent diverges, then five on a dedicated rappel route to the ground."}
+  ]},
+ {"id": "wa_junior_s_farm", "fact": "Descent line", "verdict": "fixed",
+  "correct_value": "The normal descent rappels the climbing line only down to the divergence point, then follows a separate rappel route in a gully to climber's right; bailing lower down can rappel the climbed line using every anchor.",
+  "evidence": "The route's description says the descent rappels the route to the divergence point, then follows a separate rappel route for five rappels. A 2020 trip report says the rappel route leaves the climbing line at that anchor and heads far to climber's right. The bail text and the itinerary both wrongly say the normal descent rappels the whole climbing line.",
+  "sources": ["https://www.mountainproject.com/route/111765317/juniors-farm", "http://hiking.andrewleader.net/reports/juniors-farm-2020/"],
+  "patches": [
+   {"id": "wa_junior_s_farm", "fact": "Descent line", "op": "replace_text", "column": "bail", "path": [], "find": " — this is the same line used for the normal descent.", "replace": ", using every anchor; the normal descent from the top instead leaves the climbing line partway down for a separate rappel route."},
+   {"id": "wa_junior_s_farm", "fact": "Descent line", "op": "replace_text", "column": "itinerary", "path": [], "find": "then rappel the full route back down to the boulder field", "replace": "then rappel back down to the boulder field (partway down, the rappel route leaves the climbing line for a gully to climber's right)"}
+  ]},
+ {"id": "wa_junior_s_farm", "fact": "Approach length and total gain", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A 2020 trip report calls the base 'only a 5 minute walk from the car', and the area description has the first wall visible through the trees above the boulder field at the parking spot, which supports a very short approach; but no second source states an approach time or distance, and no source states a total gain for this route. The 0.75 h approach time, 2.5 mi topout distance and 2,700 ft gain are unsourced, but no sourced replacement values exist.",
+  "sources": ["http://hiking.andrewleader.net/reports/juniors-farm-2020/", "https://www.mountainproject.com/area/111764782/tyler-peak-crags"], "patches": []},
+ {"id": "wa_junior_s_farm", "fact": "Topout vs base elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Setting high_point_ft to the base elevation follows the catalog's crag-route convention. The two pins share one coordinate, though, and the 4,800 ft topout is below the 4,916 ft base. The Full Montey (upper bench) area is listed at 4,916 ft and the crag area as a whole at 4,217 ft, which suggests 4,916 is the topout bench rather than the base, but no second source confirms either elevation.",
+  "sources": ["https://www.mountainproject.com/area/111765314/the-full-montey", "https://www.mountainproject.com/area/111764782/tyler-peak-crags"], "patches": []},
+ {"id": "wa_junior_s_farm", "fact": "Wall aspect", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No source states the aspect of the Mossness/Full Montey walls; the route's description only says it is hot in summer and best climbed early. The crag coordinate lies south of Tyler Peak's summit, which hints at a south-facing slope, but that is not a sourced aspect.",
+  "sources": ["https://www.mountainproject.com/route/111765317/juniors-farm"], "patches": []}
+]}

@@ -1,0 +1,612 @@
+{
+ "reviewed": "2026-09-26T03:29:52.173Z",
+ "deleted_by_0217": [
+  {
+   "id": "ak_glacier_creek_drainage_and_snowbird_glacier_2",
+   "bc": "Alaska › South Central Alaska › Hatcher Pass › Glacier Creek Drainage and Snowbird Glacier",
+   "twin": "ak_glacier_creek_drainage_and_snowbird_glacier",
+   "twinBc": "Alaska › Anchorage & South Central Alaska › Hatcher Pass › Glacier Creek Drainage and Snowbird Glacier",
+   "n": "17"
+  },
+  {
+   "id": "ak_portage_3",
+   "bc": "Alaska › South Central Alaska › Portage",
+   "twin": "ak_portage_4",
+   "twinBc": "Alaska › South Central Alaska › South Central Alaska Ice and Alpine › Portage",
+   "n": "13"
+  },
+  {
+   "id": "ak_boy_scout_rocks_2",
+   "bc": "Alaska › South Central Alaska › Seward Highway › Boy Scout Rocks",
+   "twin": "ak_boy_scout_rocks",
+   "twinBc": "Alaska › Anchorage & South Central Alaska › Seward Highway › Boy Scout Rocks",
+   "n": "11"
+  },
+  {
+   "id": "ak_sky_pilot_areas_2",
+   "bc": "Alaska › South Central Alaska › Seward Highway › Sky Pilot Areas",
+   "twin": "ak_sky_pilot_areas",
+   "twinBc": "Alaska › Anchorage & South Central Alaska › Seward Highway › Sky Pilot Areas",
+   "n": "30"
+  },
+  {
+   "id": "az_the_ultimates",
+   "bc": "Arizona › Northern Arizona › Flagstaff Area › Upper Pumphouse Wash › The Ultimates",
+   "twin": "az_ultimates_the",
+   "twinBc": "Arizona › Northern Arizona › Flagstaff Area › Upper Pumphouse Wash › Ultimates, The",
+   "n": "56"
+  },
+  {
+   "id": "az_colorado_river_2",
+   "bc": "Arizona › Northern Arizona › Grand Canyon › Colorado River",
+   "twin": "az_colorado_river",
+   "twinBc": "Arizona › Northern Arizona › Grand Canyon National Park › Colorado River",
+   "n": "3"
+  },
+  {
+   "id": "az_the_druid",
+   "bc": "Arizona › Southern Arizona › Mount Lemmon (Santa Catalina Mountains) › Mount Lemmon (Catalina Highway) › 6 - Mid-Mountain › The Druid",
+   "twin": "az_druid_the",
+   "twinBc": "Arizona › Southern Arizona › Mount Lemmon (Santa Catalina Mountains) › Mount Lemmon (Catalina Highway) › 6 - Mid-Mountain › Druid, The",
+   "n": "22"
+  },
+  {
+   "id": "az_pinale_o_mountains_mt_graham",
+   "bc": "Arizona › Southern Arizona › Pinaleño Mountains (Mt. Graham)",
+   "twin": "az_pinaleno_mtns_mt_graham",
+   "twinBc": "Arizona › Southern Arizona › Pinaleno mtns. (Mt. Graham)",
+   "n": "3"
+  },
+  {
+   "id": "ca_scheelite_crags_psom_slab_2",
+   "bc": "California › Eastern Sierra › Bishop Area › Pine Creek Canyon › Scheelite Crags / PSOM Slab",
+   "twin": "ca_scheelite_crags_psom_slab",
+   "twinBc": "California › Sierra Eastside › Bishop Area › Pine Creek Canyon › Scheelite Crags / PSOM Slab",
+   "n": "81"
+  },
+  {
+   "id": "ca_south_lake_2",
+   "bc": "California › Eastern Sierra › Bishop Area › South Lake",
+   "twin": "ca_south_lake",
+   "twinBc": "California › Sierra Eastside › Bishop Area › South Lake",
+   "n": "31"
+  },
+  {
+   "id": "ca_wheeler_crest_2",
+   "bc": "California › Eastern Sierra › Bishop Area › Wheeler Crest",
+   "twin": "ca_wheeler_crest",
+   "twinBc": "California › Sierra Eastside › Bishop Area › Wheeler Crest",
+   "n": "19"
+  },
+  {
+   "id": "ca_mount_morrison",
+   "bc": "California › High Sierra › 05 - Convict Lake & McGee Creek › Mount Morrison",
+   "twin": "ca_mt_morrison",
+   "twinBc": "California › High Sierra › 05 - Convict Lake & McGee Creek › Mt. Morrison",
+   "n": "16"
+  },
+  {
+   "id": "ca_the_blob",
+   "bc": "California › Joshua Tree National Park › Hidden Valley Area › Hidden Valley Campground › The Blob",
+   "twin": "ca_blob_the",
+   "twinBc": "California › Joshua Tree National Park › Hidden Valley Area › Hidden Valley Campground › Blob, The",
+   "n": "32"
+  },
+  {
+   "id": "ca_oz_2",
+   "bc": "California › Joshua Tree National Park › Pinto Basin › OZ Area › OZ.",
+   "twin": "ca_oz",
+   "twinBc": "California › Joshua Tree National Park › Pinto Basin › OZ Area › OZ_",
+   "n": "52"
+  },
+  {
+   "id": "ca_darwin_dome_2",
+   "bc": "California › Joshua Tree National Park › Queen Valley Area › Geology Tour Road › Geology Tour Road West › The Galapagos › Darwin Dome",
+   "twin": "ca_darwin_dome",
+   "twinBc": "California › Joshua Tree National Park › Queen Valley Area › Geology Tour Road › Galapagos, The › Darwin Dome",
+   "n": "9"
+  },
+  {
+   "id": "ca_bucks_bar_dome",
+   "bc": "California › Lake Tahoe › Highway 50 Corridor › Placerville › Cosumnes River Gorge › Bucks Bar Dome",
+   "twin": "ca_buck_s_bar_dome",
+   "twinBc": "California › Lake Tahoe › Highway 50 Corridor › Placerville › Cosumnes River Gorge › Buck's Bar Dome",
+   "n": "44"
+  },
+  {
+   "id": "ca_the_benches",
+   "bc": "California › Lake Tahoe › I-80 Corridor › Bowman/Emeralds › The Emeralds › The Benches",
+   "twin": "ca_benches_the",
+   "twinBc": "California › Lake Tahoe › I-80 Corridor › Bowman/Emeralds › Emeralds, The › Benches, The",
+   "n": "123"
+  },
+  {
+   "id": "ca_so_so_grotto_2",
+   "bc": "California › Northwest California › So-So Grotto",
+   "twin": "ca_so_so_grotto",
+   "twinBc": "California › Redwood Coast › So-So Grotto",
+   "n": "17"
+  },
+  {
+   "id": "ca_trinity_alps_2",
+   "bc": "California › Northwest California › Trinity Alps",
+   "twin": "ca_trinity_alps",
+   "twinBc": "California › Redwood Coast › Trinity Alps",
+   "n": "6"
+  },
+  {
+   "id": "ca_the_skull",
+   "bc": "California › San Bernardino Mountains › Lake Arrowhead Area › Lake Arrowhead Pinnacles › The Skull",
+   "twin": "ca_skull_the",
+   "twinBc": "California › San Bernardino Mountains › Lake Arrowhead Area › Lake Arrowhead Pinnacles › Skull, The",
+   "n": "19"
+  },
+  {
+   "id": "ca_the_wedge",
+   "bc": "California › San Diego County › South San Diego County › El Cajon Mountain › The Wedge",
+   "twin": "ca_wedge_the",
+   "twinBc": "California › San Diego County › South San Diego County › El Cajon Mountain › Wedge, The",
+   "n": "63"
+  },
+  {
+   "id": "ca_j_hawk_dome_2",
+   "bc": "California › Southern-Western Sierra › Hwy 41: Fresno Dome, Shuteye Ridge › Fresno Dome (Wamello) Area › Fresno Dome › j. Hawk Dome",
+   "twin": "ca_j_hawk_dome",
+   "twinBc": "California › Western Sierra › Fresno Dome (Wamello) Area › Fresno Dome › j. Hawk Dome",
+   "n": "18"
+  },
+  {
+   "id": "ca_domeland_wilderness_2",
+   "bc": "California › Southern-Western Sierra › Southern Sierra - The Needles, Kern River, Domelands, etc. › Domeland Wilderness",
+   "twin": "ca_domeland_wilderness",
+   "twinBc": "California › Western Sierra › Domeland Wilderness",
+   "n": "22"
+  },
+  {
+   "id": "ca_lower_kern_river_canyon_2",
+   "bc": "California › Southern-Western Sierra › Southern Sierra - The Needles, Kern River, Domelands, etc. › Lower Kern River Canyon",
+   "twin": "ca_lower_kern_river_canyon",
+   "twinBc": "California › Western Sierra › Needles / Kern River, The › Lower Kern River Canyon",
+   "n": "52"
+  },
+  {
+   "id": "co_the_grenadiers",
+   "bc": "Colorado › Alpine Rock › San Juans › The Grenadiers",
+   "twin": "co_grenadiers_the",
+   "twinBc": "Colorado › Alpine Rock › San Juans › Grenadiers, The",
+   "n": "16"
+  },
+  {
+   "id": "co_west_needle_mountains_2",
+   "bc": "Colorado › Alpine Rock › San Juans › The Needles › West Needle Mountains",
+   "twin": "co_west_needle_mountains",
+   "twinBc": "Colorado › Alpine Rock › San Juans › Needles, The › West Needle Mountains",
+   "n": "5"
+  },
+  {
+   "id": "co_bouldering_problems_2",
+   "bc": "Colorado › Denver South › Castlewood Canyon SP › Bouldering problems",
+   "twin": "co_bouldering_problems",
+   "twinBc": "Colorado › Denver Metropolitan Area Bouldering and Buildering › Denver South › Castlewood Canyon SP › Bouldering problems",
+   "n": "183"
+  },
+  {
+   "id": "co_the_access_fund_trailhead",
+   "bc": "Colorado › Grand Junction Area › Unaweep Canyon › Main Canyon: Unaweep Granite › The Access Fund Trailhead",
+   "twin": "co_access_fund_trailhead_the",
+   "twinBc": "Colorado › Grand Junction Area › Unaweep Canyon › Main Canyon: Unaweep Granite › Access Fund Trailhead, The",
+   "n": "131"
+  },
+  {
+   "id": "id_the_sawtooth_range",
+   "bc": "Idaho › Central Idaho › The Sawtooth Range",
+   "twin": "id_sawtooth_range_the",
+   "twinBc": "Idaho › Central Idaho › Sawtooth Range, The",
+   "n": "39"
+  },
+  {
+   "id": "id_gunsight_peak_2",
+   "bc": "Idaho › North Idaho › The Selkirk Crest (American) › Gunsight Peak",
+   "twin": "id_gunsight_peak",
+   "twinBc": "Idaho › North Idaho › Selkirk Crest, The › Gunsight Peak",
+   "n": "2"
+  },
+  {
+   "id": "id_riggins_2",
+   "bc": "Idaho › West Idaho › Riggins",
+   "twin": "id_riggins",
+   "twinBc": "Idaho › Central Idaho › Riggins",
+   "n": "10"
+  },
+  {
+   "id": "me_great_head_2",
+   "bc": "Maine › -Acadia National Park › Great Head",
+   "twin": "me_great_head",
+   "twinBc": "Maine › Acadia National Park › Great Head",
+   "n": "26"
+  },
+  {
+   "id": "mn_ely_s_peak_bouldering_2",
+   "bc": "Minnesota › Duluth Area › Ely's Peak Bouldering",
+   "twin": "mn_ely_s_peak_bouldering",
+   "twinBc": "Minnesota › Duluth Area (Rock and Ice) › Duluth Rock Climbs › Duluth Bouldering › Ely's Peak Bouldering",
+   "n": "49"
+  },
+  {
+   "id": "mn_little_foxx_canyon_2",
+   "bc": "Minnesota › Duluth Area › Little Foxx Canyon",
+   "twin": "mn_little_foxx_canyon",
+   "twinBc": "Minnesota › Duluth Area (Rock and Ice) › Duluth Rock Climbs › Duluth Bouldering › Little Foxx Canyon",
+   "n": "97"
+  },
+  {
+   "id": "mt_mill_creek_north_rim_2",
+   "bc": "Montana › Northwest Region › Mill Creek › Mill Creek North Rim",
+   "twin": "mt_mill_creek_north_rim",
+   "twinBc": "Montana › Northwest Region › Mill Creek North Rim",
+   "n": "36"
+  },
+  {
+   "id": "nv_ash_canyon_2",
+   "bc": "Nevada › Southern Nevada › Red Rocks › Calico Basin › Ash Spring › Ash Canyon",
+   "twin": "nv_ash_canyon",
+   "twinBc": "Nevada › Southern Nevada › Red Rocks › Red Rock Bouldering › Calico Basin Boulders › Ash Canyon",
+   "n": "3"
+  },
+  {
+   "id": "nv_mount_wilson",
+   "bc": "Nevada › Southern Nevada › Red Rocks › Mount Wilson",
+   "twin": "nv_mt_wilson",
+   "twinBc": "Nevada › Southern Nevada › Red Rocks › Mt. Wilson",
+   "n": "45"
+  },
+  {
+   "id": "nm_la_cueva_canyon_upper_2",
+   "bc": "New Mexico › Albuquerque Area › Sandia Mountains (West Side) › La Cueva Canyon (Upper)",
+   "twin": "nm_la_cueva_canyon_upper",
+   "twinBc": "New Mexico › Albuquerque Area › Sandia Mountains › La Cueva Canyon, Upper",
+   "n": "110"
+  },
+  {
+   "id": "nm_dona_ana_mountains_2",
+   "bc": "New Mexico › Las Cruces Area › Dona Ana Mountains",
+   "twin": "nm_dona_ana_mountains",
+   "twinBc": "New Mexico › Las Cruces Area Climbing › Dona Ana Mountains",
+   "n": "121"
+  },
+  {
+   "id": "nm_needle_and_squaretops_2",
+   "bc": "New Mexico › Las Cruces Area › Organ Mountains › Needle and Squaretops",
+   "twin": "nm_needle_and_squaretops",
+   "twinBc": "New Mexico › Las Cruces Area Climbing › Organ Mountains › Needle and Squaretops",
+   "n": "26"
+  },
+  {
+   "id": "nm_the_diamond",
+   "bc": "New Mexico › Las Cruces Area › Organ Mountains › North Organs › The Diamond",
+   "twin": "nm_diamond_the",
+   "twinBc": "New Mexico › Las Cruces Area Climbing › Organ Mountains › North Organs › Diamond, The",
+   "n": "1"
+  },
+  {
+   "id": "nm_rabbit_ears_area_2",
+   "bc": "New Mexico › Las Cruces Area › Organ Mountains › Rabbit Ears Area",
+   "twin": "nm_rabbit_ears_area",
+   "twinBc": "New Mexico › Las Cruces Area Climbing › Organ Mountains › Rabbit Ears Area",
+   "n": "119"
+  },
+  {
+   "id": "nc_the_dark_side_closed_to_climbing_included_for_historic_",
+   "bc": "North Carolina › 1. Southern Mountains Region › The Dark Side (Closed to climbing, included for historic reference)",
+   "twin": "nc_dark_side_closed_to_climbing_included_for_historic_refe",
+   "twinBc": "North Carolina › 1. Southern Mountains Region › Dark Side (Closed to climbing, included for historic reference), The",
+   "n": "56"
+  },
+  {
+   "id": "or_the_garden",
+   "bc": "Oregon › Willamette Valley › The Garden",
+   "twin": "or_garden_the",
+   "twinBc": "Oregon › Willamette Valley › Garden, The",
+   "n": "133"
+  },
+  {
+   "id": "pa_the_northwest",
+   "bc": "Pennsylvania › The Northwest",
+   "twin": "pa_northwest_the",
+   "twinBc": "Pennsylvania › Northwest, The",
+   "n": "138"
+  },
+  {
+   "id": "sd_the_chessmen",
+   "bc": "South Dakota › The Needles Of Rushmore › Horsethief Lake Area › The Chessmen",
+   "twin": "sd_chessmen_the",
+   "twinBc": "South Dakota › Needles Of Rushmore, The › Horsethief Lake Area › Chessmen, The",
+   "n": "54"
+  },
+  {
+   "id": "ut_the_minarets",
+   "bc": "Utah › South Central Utah › Grand Staircase › Church › The Minarets",
+   "twin": "ut_minarets_the",
+   "twinBc": "Utah › South Central Utah › Grand Staircase › Church › Minarets, The",
+   "n": "2"
+  },
+  {
+   "id": "ut_the_desert_wedding_site",
+   "bc": "Utah › South Central Utah › Grand Staircase › The Desert Wedding Site",
+   "twin": "ut_desert_wedding_site_the",
+   "twinBc": "Utah › South Central Utah › Grand Staircase › Desert Wedding Site, The",
+   "n": "9"
+  },
+  {
+   "id": "ut_the_maze_district",
+   "bc": "Utah › South Central Utah › Hanksville Area › The Maze District",
+   "twin": "ut_maze_district_the",
+   "twinBc": "Utah › South Central Utah › Hanksville Area › Maze District, The",
+   "n": "2"
+  },
+  {
+   "id": "ut_the_whisky_caps",
+   "bc": "Utah › Southeast Utah › Little Valley › The Whisky Caps",
+   "twin": "ut_whisky_caps_the",
+   "twinBc": "Utah › Southeast Utah › Little Valley › Whisky Caps, The",
+   "n": "5"
+  },
+  {
+   "id": "ut_cottonwood_wash_4",
+   "bc": "Utah › Southeast Utah › San Juan County › Bluff › Cottonwood Wash",
+   "twin": "ut_cottonwood_wash",
+   "twinBc": "Utah › Southeast Utah › 191 South › Bluff › Cottonwood Wash",
+   "n": "12"
+  },
+  {
+   "id": "ut_bells_canyon",
+   "bc": "Utah › Wasatch Range › Central Wasatch › Bells Canyon",
+   "twin": "ut_bell_s_canyon",
+   "twinBc": "Utah › Wasatch Range › Central Wasatch › Bell's Canyon",
+   "n": "29"
+  },
+  {
+   "id": "ut_the_fin",
+   "bc": "Utah › Wasatch Range › Central Wasatch › Little Cottonwood Canyon › The Fin",
+   "twin": "ut_fin_the",
+   "twinBc": "Utah › Wasatch Range › Central Wasatch › Little Cottonwood Canyon › Fin, The",
+   "n": "17"
+  },
+  {
+   "id": "wa_entiat_mountain_range",
+   "bc": "Washington › Central-East Cascades, Wenatchee, & Leavenworth › Entiat Mountain Range",
+   "twin": "wa_chiwawa_entiat_region",
+   "twinBc": "Washington › Central-East Cascades, Wenatchee & Leavenworth › Entiat Mountain Range",
+   "n": "28"
+  },
+  {
+   "id": "wa_madsen_s_buttress_area",
+   "bc": "Washington › Central-East Cascades, Wenatchee, & Leavenworth › Leavenworth › Icicle Creek › Madsen's Buttress Area",
+   "twin": "wa_madsen_s_buttress",
+   "twinBc": "Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Icicle Creek › Madsen's Buttress",
+   "n": "8"
+  },
+  {
+   "id": "wa_castle_rock_4",
+   "bc": "Washington › Central-East Cascades, Wenatchee, & Leavenworth › Leavenworth › Tumwater Canyon › Castle Rock",
+   "twin": "wa_castle_rock_2",
+   "twinBc": "Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Tumwater Canyon › Castle Rock",
+   "n": "54"
+  },
+  {
+   "id": "wa_tumwater_mountain_crest_2",
+   "bc": "Washington › Central-East Cascades, Wenatchee, & Leavenworth › Leavenworth › Tumwater Canyon › Tumwater Mountain Crest",
+   "twin": "wa_tumwater_mountain_crest",
+   "twinBc": "Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Tumwater Canyon › Tumwater Mountain Crest",
+   "n": "5"
+  },
+  {
+   "id": "wa_the_diamond_area",
+   "bc": "Washington › Central-West Cascades & Seattle › Skykomish Valley › Index › The Diamond Area",
+   "twin": "wa_diamond_area_the",
+   "twinBc": "Washington › Central-West Cascades & Seattle › Skykomish Valley › Index › Diamond Area, The",
+   "n": "16"
+  },
+  {
+   "id": "wa_the_gunsight_range",
+   "bc": "Washington › Northwest Region › Darrington and Mountain Loop Hwy › Glacier Peak Wilderness › The Gunsight Range",
+   "twin": "wa_gunsight_range_the",
+   "twinBc": "Washington › Northwest Region › Darrington and Mountain Loop Hwy › Glacier Peak Wilderness › Gunsight Range, The",
+   "n": "8"
+  },
+  {
+   "id": "wa_eldorado_peak_2",
+   "bc": "Washington › Northwest Region › Hwy 20 and North Cascades National Park › North Cascades › Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.) › Eldorado Peak",
+   "twin": "wa_eldorado_peak",
+   "twinBc": "Washington › Northwest Region › Hwy 20 and North Cascades National Park › North Cascades › North Cascades Core › Eldorado Peak",
+   "n": "12"
+  },
+  {
+   "id": "wv_cotton_hill_2",
+   "bc": "West Virginia › The New River Gorge Region › New River Gorge Proper › Cotton Hill",
+   "twin": "wv_cotton_hill",
+   "twinBc": "West Virginia › New River Gorge, The › New River Gorge Proper › Cotton Hill",
+   "n": "66"
+  },
+  {
+   "id": "wv_endless_wall_2",
+   "bc": "West Virginia › The New River Gorge Region › New River Gorge Proper › Endless Wall",
+   "twin": "wv_endless_wall",
+   "twinBc": "West Virginia › New River Gorge, The › New River Gorge Proper › Endless Wall",
+   "n": "270"
+  },
+  {
+   "id": "wv_summersville_gauley_river_area_2",
+   "bc": "West Virginia › The New River Gorge Region › Summersville (Gauley River) Area",
+   "twin": "wv_summersville_gauley_river_area",
+   "twinBc": "West Virginia › New River Gorge, The › Summersville (Gauley River) Area",
+   "n": "271"
+  },
+  {
+   "id": "wy_snowy_range_2",
+   "bc": "Wyoming › Laramie Area › Snowy Range",
+   "twin": "wy_snowy_range",
+   "twinBc": "Wyoming › Snowy Range",
+   "n": "49"
+  },
+  {
+   "id": "wy_the_book_pages_mound",
+   "bc": "Wyoming › Laramie Range › Laramie Peak Wildlife Habitat Management Area › Reese Mountain › Southwest Ridge of Reese Mtn › The Book Pages Mound",
+   "twin": "wy_book_pages_mound_the",
+   "twinBc": "Wyoming › Laramie Range › Laramie Peak Wildlife Habitat Management Area › Reese Mountain › Southwest Ridge of Reese Mtn › Book Pages Mound, The",
+   "n": "64"
+  }
+ ],
+ "kept": [
+  {
+   "id": "az_mitten_ridge",
+   "bc": "Arizona › Northern Arizona › Sedona Area › Sedona › Mitten Ridge",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "az_courthouse_butte_bell_rock",
+   "bc": "Arizona › Northern Arizona › Sedona Area › Village of Oak Creek › Courthouse Butte & Bell Rock",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ar_7_the_throne",
+   "bc": "Arkansas › North-Central Arkansas › Sam's Throne & Surroundings › Sam's Throne › 7. The Throne",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_silver_lake_3",
+   "bc": "California › Eastern Sierra › June Lake Area › Silver Lake",
+   "why": "twin is a different place, or uncertain: ca_silver_lake_2 | California › Lake Tahoe › Carson Pass Highway (88) › Silver Lake | 67"
+  },
+  {
+   "id": "ca_the_lion_s_den",
+   "bc": "California › Inland Empire › Menifee Area › Lion's Den › The Lion's Den",
+   "why": "twin is a different place, or uncertain: ca_lion_s_den_the_2 | California › High Desert › Barstow Area › Calico Mountains › Monolith › Lion's Den, The | 1"
+  },
+  {
+   "id": "ca_big_rock_main_slab",
+   "bc": "California › Inland Empire › Perris Area › Big Rock Area › Big Rock - Main Slab",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_indian_cove_cg_west",
+   "bc": "California › Joshua Tree National Park › Indian Cove › Indian Cove Campground › Indian Cove CG West",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_the_fortress",
+   "bc": "California › Lake Tahoe › Carson Pass Highway (88) › Woodfords Canyon › The Fortress",
+   "why": "twin is a different place, or uncertain: ca_the_fortress_2 | California › Sequoia & Kings Canyon NP › Castle Rocks › The Fortress | 1"
+  },
+  {
+   "id": "ca_sue_meg_state_park",
+   "bc": "California › Northwest California › Sue-meg State Park",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_mount_woodson_south",
+   "bc": "California › San Diego County › North San Diego County › Mount Woodson › Mount Woodson South",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_steven_s_canyon",
+   "bc": "California › San Francisco Bay Area › South Bay Area › Steven’s Canyon",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_a_chilkoot_lake_area",
+   "bc": "California › Southern-Western Sierra › Hwy 41: Fresno Dome, Shuteye Ridge › Shuteye Ridge › A. Chilkoot Lake Area",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_c_shuteye_creek_area",
+   "bc": "California › Southern-Western Sierra › Hwy 41: Fresno Dome, Shuteye Ridge › Shuteye Ridge › C. Shuteye Creek Area",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ca_sherman_pass_road",
+   "bc": "California › Southern-Western Sierra › Southern Sierra - The Needles, Kern River, Domelands, etc. › Sherman Pass Road",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "co_san_miguel_mountains",
+   "bc": "Colorado › Alpine Rock › San Juans › San Miguel Mountains",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "co_the_warm_up_blocks",
+   "bc": "Colorado › Boulder › Eldorado Canyon State Park › Eldorado Canyon Bouldering › East Draw › The Warm-up Blocks",
+   "why": "twin is a different place, or uncertain: co_warm_up_blocks | Colorado › Lyons › St. Vrain Canyons › North Fork of the St. Vrain River › Big Elk Meadows - Boulders › Warm-Up Blocks | 7"
+  },
+  {
+   "id": "co_the_narrows",
+   "bc": "Colorado › Carbondale Area › The Narrows",
+   "why": "twin is a different place, or uncertain: co_narrows | Colorado › CO Ice & Mixed › Coal Creek Canyon › Narrows | 2"
+  },
+  {
+   "id": "co_pine_river_area",
+   "bc": "Colorado › Durango › Pine River Area",
+   "why": "twin is a different place, or uncertain: co_pine_river | Colorado › CO Ice & Mixed › Durango › Vallecito Lake Ice › Pine River | 2"
+  },
+  {
+   "id": "me_nick_wilder_s_test_area",
+   "bc": "Maine › ZZZ Area for Holding whole Areas › Nick Wilder’s Test Area",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "mn_m_m_hill",
+   "bc": "Minnesota › MN/Canada Border Areas › Crane Lake Area › M&M Hill",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "mt_mount_sentinel",
+   "bc": "Montana › Northwest Region › Missoula Area › Mount Sentinel",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "nh_band_m",
+   "bc": "New Hampshire › WM: Albany Area › Band M",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "nh_russell_crags_in_merriam_woods",
+   "bc": "New Hampshire › WM: Lincoln/Woodstock Area › Russell Crags (in Merriam Woods)",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "nm_cc_couloir_ridge",
+   "bc": "New Mexico › Albuquerque Area › Sandia Mountains (West Side) › Chimney Canyon › \"CC\" Couloir Ridge",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "or_e_three_sisters_wilderness",
+   "bc": "Oregon › Oregon Volcanoes › e. Three Sisters Wilderness",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ut_191_north",
+   "bc": "Utah › Southeast Utah › Grand County › 191 North",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "ut_little_valley_3",
+   "bc": "Utah › Southeast Utah › Grand County › Little Valley",
+   "why": "twin is a different place, or uncertain: ut_little_valley_2 | Utah › Southeast Utah › State Highway 313 › Little Valley | 1"
+  },
+  {
+   "id": "ut_the_schoolroom",
+   "bc": "Utah › Wasatch Range › Northern Wasatch › Ogden › The Schoolroom",
+   "why": "twin is a different place, or uncertain: ut_schoolroom_area | Utah › Central Utah › Maple Canyon › Maple Canyon Road › Schoolroom Area | 15"
+  },
+  {
+   "id": "wa_squire_creek_wall",
+   "bc": "Washington › Northwest Region › Darrington and Mountain Loop Hwy › Darrington › Squire Creek Wall",
+   "why": "no twin — a real area climbers can add to"
+  },
+  {
+   "id": "wa_boston_basin_peaks_forbidden_johannesburg_etc",
+   "bc": "Washington › Northwest Region › Hwy 20 and North Cascades National Park › North Cascades › Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.) › Boston Basin Peaks (Forbidden, Johannesburg, etc.)",
+   "why": "no twin — a real area climbers can add to"
+  }
+ ]
+}

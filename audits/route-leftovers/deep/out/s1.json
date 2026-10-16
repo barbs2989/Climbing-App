@@ -1,0 +1,6 @@
+{"results":[
+ {"id":"wa_spraying_mantis","verdict":"confirmed","ops":[],"pin_ops":[{"op":"move_pin","id":"wa_spraying_mantis","index":0,"expect":{"name":"FS Road 9070 Turnaround at Silver Basin","lat":47.36741,"lng":-121.45564},"lat":47.373,"lng":-121.45787,"elev":4254,"elevFt":4254,"sources":["https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/32","https://www.openstreetmap.org/way/202991403"]}]},
+ {"id":"wa_spire_mountain_scramble","verdict":"confirmed","ops":[
+  {"op":"set","id":"wa_spire_mountain_scramble","column":"approach_logistics","path":["trailheadLat"],"expect":47.92684,"value":null},
+  {"op":"set","id":"wa_spire_mountain_scramble","column":"approach_logistics","path":["trailheadLng"],"expect":-121.27705,"value":null}],"pin_ops":[]}
+]}

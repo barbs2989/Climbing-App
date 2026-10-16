@@ -1,0 +1,838 @@
+#!/usr/bin/env node
+// check:new-climber-journey — does what a NEW climber enters actually survive?
+//
+// WHY THIS EXISTS. Four static censuses found six defects that a real account hits in its first
+// hour (#1554, #1563, #1569, #1576): onboarding saved nothing, a crew could not be found, a friend
+// could not be removed, a shared route was never sent, and the trust card accused you of honouring
+// 0% of crews you had never joined. Every one of them shared ONE shape -- state changed on screen
+// and nothing was stored -- and every one needed its own census to find. A single walk that TYPES
+// SOMETHING IN AND THEN RELOADS would have found them together.
+//
+// WHAT MAKES IT DIFFERENT FROM check:signed-in. That guard walks screens as an account that
+// ALREADY OWNS THINGS and asserts what renders. This one performs the actions a brand-new climber
+// performs and then asks the DATABASE, not the screen. A screen assertion cannot see this class:
+// the optimistic local state renders perfectly, which is exactly why six defects survived.
+//
+// WHAT IT COVERS TODAY -- FIVE of the six, stated as a count so it cannot quietly stall.
+//   1. onboarding (#1576): disciplines and a grade typed in, then read back out of `profiles`
+//      and off the screen after a reload.
+//   2. the crew (#1554): a row a real account opens, found by a DIFFERENT real account through
+//      crew_listings.
+//   3. the route share (#1576): a route shared from the real share sheet, asked of `messages` --
+//      and it runs BEFORE 4, because the sheet can only reach the mate while they are connected.
+//   4. remove-friend (#1563): a connection a real account removes, asked of `connections` and
+//      then of the screen after a reload.
+//   5. the connect button (#1569): a request one real account sends to another, asked of
+//      `connections` -- and it must be PENDING -- and then of the screen after a reload. It runs
+//      AFTER 4, because while the two are connected the profile offers no Connect control at all.
+// The one still uncovered is #1569's other half, the reliability ratio. It is a RENDER question
+// rather than a did-it-store one, so it belongs in an SSR guard rather than in this walk.
+//
+//   node scripts/check-new-climber-journey.mjs
+//
+// HAND-RUN, and the reason is a credential rule rather than a preference. It creates a REAL
+// account and MUTATES its profile, so it needs the service key -- which CI must never hold -- and
+// the durable CI pair is not a substitute, because a concurrent guard signed in as that account
+// would be walking a profile this rewrites mid-run. Declared in check:guard-wiring's EXCLUDED.
+import { spawn } from "node:child_process";
+import net from "node:net";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { chromium } from "playwright-core";
+import { createFixture, sweepOrphans, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
+import { SUPABASE_URL, requireServiceKey, anonKey } from "./lib/supabase-env.mjs";
+import { settledText } from "./lib/render-settle.mjs";
+import { tapByName } from "./lib/tap-by-name.mjs";
+import { openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+// ONE NAVIGATION BUDGET, AND IT IS MEASURED RATHER THAN PICKED.
+// The FIRST page load pays for vite transforming the app on request, and journey.config's route
+// opener adds to that: buildOpener discovers overlays by balancing braces over 400kB of source
+// INSIDE the transform hook, so the cost lands on the first module request rather than at server
+// start. Measured back to back on a loaded box (load ~650), same minute:
+//
+//   baseline config      server 92.5s | first goto  74.3s
+//   with the opener      server 88.7s | first goto 136.7s
+//
+// So 180s was inside the noise of this box rather than a margin, and a run duly died on
+// `page.goto: Timeout 180000ms exceeded` — which reads as a broken app and is a statement about
+// contention. On a quiet machine both numbers are seconds. Raised with the measurement attached so
+// the next reader can tell a slow box from a real hang instead of re-deriving it.
+const GOTO_MS = 420000;
+const log = (m) => console.log(m);
+let fails = 0;
+const ok = (m) => console.log("  ok    " + m);
+const bad = (m) => { console.log("  FAIL  " + m); fails++; };
+// process.exit() skips finally, so a failure would leak the account it just created -- the trap
+// check:block-guarantees records after leaking two accounts and a crew on its first red run.
+const dead = (m) => { throw new Error(m); };
+
+const freePort = () => new Promise((res, rej) => {
+  const s = net.createServer();
+  s.on("error", rej);
+  s.listen(0, "127.0.0.1", () => { const p = s.address().port; s.close(() => res(p)); });
+});
+// SIX MINUTES, NOT ONE, AND THE NUMBER IS MEASURED RATHER THAN PICKED.
+// This waited 60s and reported "dev server never came up" — which reads as a broken config and
+// sent a session inspecting one that was fine. Measured back to back on a loaded box (load ~575
+// and ~660): this config starts in 169.5s and the PREVIOUS one in 214.6s, so the wait was already
+// short of the tree as it stood before any change here. Same asymmetry db-preflight records:
+// waiting longer for a slow box costs a few minutes, giving up early costs a false diagnosis
+// pointed at the wrong file. It reports the elapsed time either way, so "slow" and "broken" are
+// distinguishable from the failure line rather than only from a rerun.
+const waitForServer = async (base) => {
+  const t0 = Date.now();
+  for (let i = 0; i < 720; i++) {
+    try { const r = await fetch(base, { signal: AbortSignal.timeout(2000) }); if (r.ok) return ((Date.now() - t0) / 1000).toFixed(1); } catch {}
+    await new Promise((r) => setTimeout(r, 500));
+  }
+  return null;
+};
+
+// The route the phase-2 crew is opened on. A REAL catalog row, so CrewFinder can resolve its
+// name -- a crew on an id the routes table lacks would render blank and read as the defect.
+const JOURNEY_ROUTE = "wa_mount_baker_north_ridge";
+const JOURNEY_ROUTE_NAME = "North Ridge";
+// The AREA crew's crag (0302): World Wall, Little Si — in the live catalog, a crag, sport.
+const JOURNEY_AREA = "wa_world_wall";
+const JOURNEY_AREA_NAME = "World Wall";
+
+const key = requireServiceKey();
+const H = { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
+const profileRow = async (uid) => {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?select=*&id=eq.${uid}`, { headers: H });
+  if (!r.ok) dead(`could not read the profile back: ${r.status} ${await r.text()}`);
+  const rows = await r.json();
+  return rows[0] || null;
+};
+
+let server, browser, fixture;
+try {
+  await sweepOrphans(log);
+  const port = await freePort();
+  const base = `http://127.0.0.1:${port}/`;
+  server = spawn("npx", ["vite", "--config", "scripts/journey.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+    { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
+  let died = false;
+  server.on("exit", () => { died = true; });
+  const upIn = await waitForServer(base);
+  if (upIn === null || died) dead("the dev server never answered within 360s" + (died ? " and the process exited" : "") + " — that is a broken config or a box too loaded to serve, NOT a verdict about the app");
+  log("  dev server up in " + upIn + "s");
+
+  log("creating a brand-new account...");
+  fixture = await createFixture(log);
+  const uid = fixture.owner.id;
+
+  // createFixture seeds disciplines/grades because it serves check:signed-in, whose account is
+  // meant to own things. A NEW climber owns none, so clear exactly the fields under test -- and
+  // clear them through the service key rather than by adding a mode to the shared fixture, which
+  // four other guards depend on.
+  {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${uid}`, {
+      method: "PATCH", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ disciplines: [], sport_grade: null, trad_grade: null, boulder_grade: null }),
+    });
+    if (!r.ok) dead(`could not blank the fixture profile: ${r.status} ${await r.text()}`);
+    log("  blanked the fixture's disciplines and grades — this walk is about a NEW climber");
+  }
+
+  // THE BASELINE IS LOAD-BEARING. "the columns are populated after onboarding" proves nothing
+  // unless they were empty before -- a fixture that seeds a profile would make every assertion
+  // below pass whatever the app did.
+  const before = await profileRow(uid);
+  if (!before) dead("the new account has no profiles row at all");
+  const emptyBefore = !(before.disciplines && before.disciplines.length) && !before.sport_grade;
+  if (emptyBefore) ok("the new account starts with no disciplines and no grades");
+  else bad(`the fixture already has disciplines/grades (${JSON.stringify(before.disciplines)}, ${before.sport_grade}) — every assertion below would pass vacuously`);
+
+  browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 180000 });
+  const page = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
+  const pageErrors = [];
+  page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
+  // EVERY profiles request the app makes, with its status. A FAIL below then says whether the
+  // read or the write went out at all and what came back, rather than leaving it to be reasoned
+  // out of the code afterwards.
+  const t0 = Date.now();
+  const profileTraffic = [];
+  page.on("response", (r) => {
+    const u = r.url();
+    if (u.includes("/rest/v1/profiles")) profileTraffic.push(`${((Date.now() - t0) / 1000).toFixed(1)}s ${r.request().method()} ${r.status()}`);
+  });
+  const traffic = () => (profileTraffic.length ? " [profiles traffic: " + profileTraffic.join(", ") + "]" : " [no profiles request was made]");
+  // Re-applied on every navigation, so the RELOAD below stays signed in -- which is the whole test.
+  await page.addInitScript(
+    ({ k, v }) => { try { window.localStorage.setItem(k, v); } catch {} },
+    { k: STORAGE_KEY, v: JSON.stringify(sessionForStorage(fixture.session)) },
+  );
+
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+  await settledText(page);
+
+  // READ THE FLAG BEFORE DESCRIBING ANYTHING. `onboarded` and `authed` are BOTH
+  // useState(DEMO_AUTOLOGIN), so this one value decides whether onboarding auto-opens and whether
+  // the Home "Set up your climbing profile" card renders. journey.config.mjs publishes it; two
+  // earlier runs guessed at it and were wrong both times.
+  const demoFlag = await page.evaluate(() => globalThis.__DEMO_AUTOLOGIN);
+  if (demoFlag === undefined) dead("journey.config did not publish __DEMO_AUTOLOGIN — the walk would be reasoning about a flag it cannot see");
+  if (demoFlag === true) bad("DEMO_AUTOLOGIN is TRUE in this walk, so a brand-new REAL account is treated as already onboarded (onboarded = useState(DEMO_AUTOLOGIN)). Nothing below is a statement about a new climber.");
+  else ok("DEMO_AUTOLOGIN is false — this really is a new-climber walk");
+
+  const clickText = async (t) => page.evaluate((txt) => {
+    const el = [...document.querySelectorAll("button,a,[role=button]")]
+      .find((e) => (e.innerText || "").trim() === txt);
+    if (!el) return false;
+    el.click(); return true;
+  }, t);
+
+  // ---- ONBOARDING ------------------------------------------------------------------------------
+  // THIS WALK FOUND THAT ONBOARDING COULD NOT AUTO-OPEN FOR A REAL ACCOUNT, AND CARRIED IT AS A
+  // DECLARED KNOWN UNTIL IT WAS A PRODUCT DECISION SOMEBODY TOOK. Both halves are now assertions.
+  //   was: useEffect(()=>{if(authed&&!onboarded)setOnboardOpen(true);},[authed])
+  // `authed` is useState(DEMO_AUTOLOGIN) and setAuthed(true) is called in exactly ONE place --
+  // LoginScreen's onAuth, the !realAuthGate DEMO branch. A real session renders <AuthModal
+  // onAuthed={()=>{}}/> -- a NO-OP -- and the app is gated on `signedIn` instead. So `authed`
+  // stayed false forever on the real path and the effect written to onboard a new climber could
+  // never fire for one.
+  //
+  // WHY IT WAS NOT SIMPLY RE-KEYED ON `signedIn`, which is the repair this guard warned against:
+  // `onboarded` does not persist either, so that fires on EVERY page load for EVERYBODY. What
+  // shipped instead splits the question in two -- the ACCOUNT decides whether onboarding is still
+  // needed (no disciplines recorded, read from the profile row, so it is right on a second device
+  // and self-heals if the write failed), and a DEVICE preference decides whether this browser has
+  // already opened the sheet once. The Home card is what keeps the path open afterwards, so
+  // skipping the sheet costs nothing.
+  // ONBOARDING AUTO-OPENS FOR A NEW ACCOUNT NOW, AND THIS IS ASSERTED BEFORE THE CARD BECAUSE THE
+  // SHEET COVERS THE SCREEN THE CARD IS ON. Reading Home first would be reading the modal.
+  // The old effect keyed on `authed`, which is set true in exactly one place -- LoginScreen's
+  // !realAuthGate DEMO branch -- so it could never fire for a real session. It keys on the ACCOUNT
+  // now: no disciplines recorded means onboarding was never completed, which is durable and right
+  // on a second device, where the session-only `onboarded` flag said nothing at all.
+  // WAIT FOR THE PROFILE READ, not for the text to settle. `accountNeedsOnboarding` waits on
+  // profileLoaded, which turns true only when getProfile resolves, and nothing spins while it is
+  // pending -- so settledText returns before the read does, and on a loaded box the sheet opened
+  // AFTER this assertion had already failed it.
+  await page.waitForFunction(() => /Takes about 30 seconds\.|WHAT DO YOU DO\?/.test(document.body.innerText || ""), null, { timeout: 60000 }).catch(() => {});
+  const firstScreen = await page.evaluate(() => document.body.innerText || "");
+  const autoOpened = firstScreen.includes("Takes about 30 seconds.") || firstScreen.includes("WHAT DO YOU DO?");
+  if (autoOpened) ok("onboarding AUTO-OPENED for a brand-new real account");
+  else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile" + traffic());
+
+  // SKIP RATHER THAN COMPLETE, because the card assertion below depends on still needing it.
+  // `onSkip` is ()=>setOnboardOpen(false) and does NOT mark them onboarded, so a climber who
+  // skips still needs the card — which is exactly the state worth measuring.
+  if (autoOpened) {
+    if (!(await clickText("Skip for now"))) dead("the onboarding sheet is open but offers no 'Skip for now' — cannot reach Home to check the card");
+    await settledText(page);
+  }
+
+  // THE CARD IS ON HOME. Asked of the page TEXT, not of a control selector -- an earlier pass
+  // concluded "the card is absent" from a list of controls, which cannot tell a card that did not
+  // render from one the selector did not match.
+  await page.waitForFunction(() => (document.body.innerText || "").includes("Set up your climbing profile"), null, { timeout: 30000 }).catch(() => {});
+  const homeText = await page.evaluate(() => document.body.innerText || "");
+  if (homeText.includes("Set up your climbing profile"))
+    ok("the 'Set up your climbing profile' card is on HOME — the screen a new climber lands on");
+  else bad("the setup card is not on Home. It is gated on (accountNeedsOnboarding && !dismissed); the account has no disciplines and homeDismiss starts empty, so both are satisfied and it should be here" + traffic());
+
+  // AND NOT ON CLIMBS, or the move left a copy behind. A card in two places is worse than a card
+  // in the wrong place: the dismiss button writes one key, so dismissing one would blank both.
+  {
+    if (!(await clickText("Climbs"))) bad("could not open the Climbs tab to confirm the setup card no longer renders there");
+    else {
+      await settledText(page);
+      const climbsText = await page.evaluate(() => document.body.innerText || "");
+      if (climbsText.includes("Set up your climbing profile"))
+        bad("the setup card still renders on the CLIMBS tab as well as Home — the move left a copy behind");
+      else ok("...and it no longer renders on Climbs");
+    }
+    await clickText("Home");
+    await settledText(page);
+  }
+
+  // HOW A CLIMBER REACHES ONBOARDING, established by walking rather than by reading.
+  // 1. It AUTO-OPENS on the first load for an account that has not onboarded, asserted above.
+  // 2. The Home "Set up your climbing profile" card is the standing way back in, asserted above.
+  //    It used to render on the CLIMBS tab, which a new climber has no reason to open first; the
+  //    evidence that Home was always the intent is its own dismiss state's name -- `homeDismiss`,
+  //    keyed "climbsetup" -- so on Climbs its dismiss button wrote to a list nothing there reads.
+  // 3. Settings -> "Edit areas, disciplines & grades" opens it too, and that is the path walked
+  //    below, because the walk deliberately SKIPPED the sheet in order to check the Home card.
+  let entered = "settings";
+  if (await clickText("Set up my profile")) {
+    entered = "the sheet already on screen";
+  } else {
+    if (!(await tapMenuItem(page, "Settings"))) dead("no Settings row in the Menu (top-left avatar)");
+    await settledText(page);
+    if (!(await clickText("Edit areas, disciplines & grades"))) {
+      const seen = await page.evaluate(() => [...document.querySelectorAll("button,a,[role=button]")]
+        .map((e) => (e.innerText || "").trim()).filter(Boolean).slice(0, 40));
+      dead("Settings did not offer 'Edit areas, disciplines & grades'. Controls: " + JSON.stringify(seen));
+    }
+    await settledText(page);
+    if (!(await clickText("Set up my profile"))) {
+      // Already past step 0 -- the editing entry can land on step 1 directly, which is fine.
+      const onStep1 = await page.evaluate(() => (document.body.innerText || "").includes("WHAT DO YOU DO?"));
+      if (!onStep1) dead("Settings opened something that is not Onboarding");
+    }
+    // THE SETTINGS PATH IS STILL THE ONE WALKED, and that is deliberate rather than left over: the
+    // walk SKIPPED the sheet above so it could check the Home card, so it has to come back in. It
+    // is also the path a climber uses on their second device, where the sheet has already been
+    // shown once and the device preference stops it opening again.
+    ok("onboarding is still reachable from Settings after the sheet has been dismissed");
+  }
+  await settledText(page);
+  ok(`onboarding is open (entered via ${entered})`);
+
+  // The discipline chips carry aria-pressed and their own label; pick two by that shape rather
+  // than by a hardcoded name, so a renamed discipline does not read as a broken walk.
+  const picked = await page.evaluate(() => {
+    const chips = [...document.querySelectorAll("button[aria-pressed]")]
+      .filter((b) => (b.innerText || "").trim().length > 2);
+    const take = chips.slice(0, 2);
+    take.forEach((b) => b.click());
+    return take.map((b) => (b.innerText || "").trim());
+  });
+  if (picked.length !== 2) dead(`found ${picked.length} discipline chips, expected at least 2 — the walk entered nothing`);
+  ok(`picked disciplines: ${picked.join(", ")}`);
+
+  const grade = await page.evaluate(() => {
+    const sel = [...document.querySelectorAll("select")].find((s) => (s.getAttribute("aria-label") || "").startsWith("Sport"));
+    if (!sel) return null;
+    const opt = [...sel.options].map((o) => o.value).find((v) => /^5\.\d/.test(v));
+    if (!opt) return null;
+    sel.value = opt;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+    return opt;
+  });
+  if (!grade) dead("no Sport grade select — the walk entered no grade");
+  ok(`picked a sport grade: ${grade}`);
+
+  await settledText(page);
+  if (!(await clickText("Finish setup"))) dead("'Finish setup' was not clickable — disciplines may not have registered");
+  await settledText(page);
+  ok("finished onboarding");
+
+  // ---- THE ACTUAL QUESTION: DID IT REACH THE DATABASE? -----------------------------------------
+  // Asked of the DB, not the screen. The screen showed it correctly the whole time this was broken.
+  // POLLED, not a fixed sleep: a 2.5s wait read the row before a slow write had landed and
+  // reported a write that never happened. A write that has not landed in 30s is a failure.
+  let after = null;
+  for (let i = 0; i < 30; i++) {
+    after = await profileRow(uid);
+    if (after && after.disciplines && after.disciplines.length) break;
+    await new Promise((r) => setTimeout(r, 1000));
+  }
+  const gotDiscs = !!(after && after.disciplines && after.disciplines.length);
+  if (gotDiscs) ok(`disciplines reached the database: ${JSON.stringify(after.disciplines)}`);
+  else bad("onboarding's disciplines never reached the database — they are lost on reload, and compat() scores them at 16 points each" + traffic());
+  if (after && after.sport_grade) ok(`the sport grade reached the database: ${after.sport_grade}`);
+  else bad("onboarding's sport grade never reached the database");
+
+  // ---- AND DOES THE SCREEN SHOW IT AFTER A RELOAD? ----------------------------------------------
+  // The DB write is necessary and not sufficient: the sign-in hydration has to read it back.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+  await settledText(page);
+  // ON THE PROFILE TAB, not Home. Home does not display your disciplines at all, so the first
+  // version of this assertion searched a screen that never shows them and reported a false
+  // failure -- against a write that had demonstrably landed one assertion earlier.
+  if (!(await openFromMenu(page, "Profile"))) dead("no Profile card in the Menu after the reload");
+  await settledText(page);
+  const reloaded = await page.evaluate(() => document.body.innerText || "");
+  const shown = picked.filter((d) => reloaded.toLowerCase().includes(d.toLowerCase()));
+  if (shown.length) ok(`after a reload the app still shows ${shown.length} of the ${picked.length} disciplines entered`);
+  else bad(`after a reload the Profile shows none of the entered disciplines (${picked.join(", ")}) — the write landed but the hydration does not read it back`);
+  if (!(await clickText("Set up my profile"))) ok("onboarding does not re-open — the account is set up");
+  else bad("onboarding re-opened after a reload, so nothing it collected was remembered");
+
+  // ---- PHASE 2: A CREW ONE REAL CLIMBER OPENS, FOUND BY ANOTHER --------------------------------
+  // The question that started this whole thread, and the ONLY test of it with two real accounts.
+  // probe-crewfinder-shows-a-real-crew.mjs renders the component over a SYNTHETIC crew; this walks
+  // a row that actually exists, read through crew_listings by a DIFFERENT signed-in account.
+  //
+  // The crew must contain NEITHER climber: App excludes crews you organise or are already in, so
+  // reusing a fixture crew would assert on a row the finder is right to hide. It is created here,
+  // owned by the OWNER, and torn down explicitly.
+  let crewId = null, areaCrewId = null;
+  try {
+    const mk = await fetch(`${SUPABASE_URL}/rest/v1/crews`, {
+      method: "POST", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ created_by: uid, route_id: JOURNEY_ROUTE, dates: [], cap: 4 }),
+    });
+    if (!mk.ok) dead(`could not create the findable crew: ${mk.status} ${await mk.text()}`);
+    crewId = (await mk.json())[0].id;
+    ok(`the owner opened a crew (${crewId.slice(0, 8)}) on ${JOURNEY_ROUTE}`);
+    // AND AN AREA CREW (0302): a crag session at World Wall, no route. The mate must find it in Join
+    // a crew by the crag's name, with no "undefined" -- the finder resolves a crew's place through
+    // crewPlace() and an area card read, which is exactly what this walks.
+    const mkA = await fetch(`${SUPABASE_URL}/rest/v1/crews`, {
+      method: "POST", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ created_by: uid, route_id: null, area_id: JOURNEY_AREA, discipline: "sport", dates: [], cap: 4 }),
+    });
+    if (!mkA.ok) dead(`could not create the findable AREA crew: ${mkA.status} ${await mkA.text()}`);
+    areaCrewId = (await mkA.json())[0].id;
+    ok(`the owner opened an AREA crew (${areaCrewId.slice(0, 8)}) at ${JOURNEY_AREA}`);
+
+    // Sign in as the MATE. Over the auth API rather than the sign-in modal, for the reason
+    // ui-fixture states: deterministic, and not coupled to that modal's markup.
+    const tok = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+      method: "POST", // anonKey(), not process.env: supabase-env loads the credentials from the DOTFILES, so the
+      // environment does not carry them and the token endpoint answers 401 "Invalid API key".
+      headers: { apikey: anonKey(), "Content-Type": "application/json" },
+      body: JSON.stringify({ email: fixture.mate.email, password: fixture.mate.password }),
+    });
+    const mateBody = await tok.json();
+    if (!tok.ok || !mateBody.access_token) dead(`could not sign in as the mate: ${tok.status} ${JSON.stringify(mateBody).slice(0, 200)}`);
+
+    const mp = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
+    await mp.addInitScript(({ k, v }) => { try { window.localStorage.setItem(k, v); } catch {} },
+      { k: STORAGE_KEY, v: JSON.stringify(sessionForStorage(mateBody)) });
+    await mp.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+    await settledText(mp);
+
+    const mateClick = async (t) => mp.evaluate((txt) => {
+      const el = [...document.querySelectorAll("button,a,[role=button]")]
+        .find((e) => (e.innerText || "").trim() === txt);
+      if (!el) return false; el.click(); return true;
+    }, t);
+
+    if (!(await mateClick("Partners"))) dead("the mate could not open the Partners tab");
+    await settledText(mp);
+    if (!(await mateClick("Join a crew"))) dead("no 'Join a crew' control on Partners");
+    await settledText(mp);
+    // "My Objectives" is the default mode and filters to the VIEWER's objectives; the mate has
+    // none on this route, so a crew correctly absent there would read as a defect. Ask "Any Crew".
+    if (!(await mateClick("Any Crew"))) dead("no 'Any Crew' mode button in CrewFinder");
+    await settledText(mp);
+
+    const seenByMate = await mp.evaluate(() => document.body.innerText || "");
+    if (seenByMate.includes(JOURNEY_AREA_NAME)) ok(`the mate FINDS the owner's AREA crew ("${JOURNEY_AREA_NAME}") in Join a crew`);
+    else bad(`the mate cannot find the owner's AREA crew — "${JOURNEY_AREA_NAME}" is absent from Join a crew, so a crag session is invisible to another real climber`);
+    if (seenByMate.includes(JOURNEY_ROUTE_NAME)) ok(`the mate FINDS the owner's crew ("${JOURNEY_ROUTE_NAME}") in Join a crew`);
+    else bad(`the mate cannot find the owner's crew — "${JOURNEY_ROUTE_NAME}" is absent from Join a crew, so a real climber's crew is invisible to another real climber`);
+    if (/undefined/.test(seenByMate)) { const at = seenByMate.indexOf("undefined"); bad("the crew list contains the word undefined — a row resolved against the wrong store: …" + seenByMate.slice(Math.max(0, at - 120), at + 40).replace(/\s+/g, " ") + "…"); }
+    else ok("no undefined in the mate's crew list");
+    await mp.close().catch(() => {});
+  } finally {
+    if (crewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${crewId}`, { method: "DELETE", headers: H }).catch(() => {});
+    if (areaCrewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${areaCrewId}`, { method: "DELETE", headers: H }).catch(() => {});
+  }
+
+  // ---- PHASE 3: A ROUTE ONE CLIMBER SHARES REACHES THE OTHER ------------------------------------
+  // #1576. `onShareRoute` pushed the message into the local `msgs` map and NOWHERE ELSE, so the
+  // climber you shared a route with never received it -- while `sendMsg()`, declared in the same
+  // component, had always done the optimistic push AND the `sendDirectMessage` write. The toast
+  // said "Shared X with Y" either way.
+  //
+  // IT RUNS BEFORE THE REMOVE-FRIEND PHASE, and that ordering is load-bearing rather than tidy.
+  // The share sheet's pool is `connections` PLUS seed CLIMBERS, and a seed climber's id is an
+  // INTEGER -- `sendMsg` gates its write on `isDbId(pid)`, so sending to one correctly takes the
+  // honest "Demo profile — messages here stay on this device" branch and writes nothing. Only the
+  // MATE exercises the real write, and the mate is in that pool only while the connection exists.
+  // Phase 4 deletes it. Appended after phase 4 this would assert against an empty pool and pass
+  // having sent nothing.
+  //
+  // check:message-delivery proves a DM RENDERS in the recipient's inbox and never touches the
+  // share control, which is where #1576 broke. So this asserts the WRITE and leaves the render to
+  // that guard rather than covering it twice.
+  const msgFilter = `or=(and(sender_id.eq.${uid},recipient_id.eq.${fixture.mate.id}),and(sender_id.eq.${fixture.mate.id},recipient_id.eq.${uid}))`;
+  const msgRows = async () => {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/messages?select=id,sender_id,recipient_id,body&${msgFilter}`, { headers: H });
+    if (!r.ok) dead(`could not read the messages table: ${r.status} ${await r.text()}`);
+    return r.json();
+  };
+
+  let sharedIds = [];
+  try {
+    // THE BASELINE, for the third time and the same reason: "a message exists afterwards" proves
+    // nothing unless none existed before. The fixture seeds no messages.
+    const msgBefore = await msgRows();
+    if (msgBefore.length === 0) ok("no messages between the two accounts yet");
+    else bad(`expected 0 messages before the share, found ${msgBefore.length} — the assertion below would be vacuous`);
+
+    // ?zr=1 calls the app's OWN openRoute(), so no browse drill-in can defeat it. Waiting on
+    // __routeOpen as WELL as on the text settling: settling says nothing about whether the
+    // navigation has happened yet, which is what check:selected-state's first CI run got wrong.
+    await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+    await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 60000 })
+      .catch(() => dead("the route page never opened — ?zr=1 did not land, so there is no share sheet to reach"));
+    await settledText(page);
+
+    const openedShare = await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")]
+        .filter((e) => /Share$/.test((e.innerText || "").trim()) && (e.innerText || "").trim().length <= 10);
+      if (b.length !== 1) return b.length;
+      b[0].click(); return -1;
+    });
+    if (openedShare !== -1) dead(`expected exactly 1 Share control on the route page, found ${openedShare}`);
+    await settledText(page);
+
+    // FILTER TO THE MATE BY NAME, because the pool also holds every seed climber and each row
+    // carries its own Send button — clicking the first would send to a seed integer id and take
+    // the demo branch, which writes nothing and would read as the defect. The name comes from the
+    // FIXTURE rather than being typed here.
+    await page.fill('[aria-label="Search climbers by name"]', fixture.mate.name);
+    await settledText(page);
+
+    const sendCount = await page.evaluate(() =>
+      [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Send").length);
+    if (sendCount !== 1) {
+      dead(`expected exactly 1 Send control after filtering the share sheet to the mate, found ${sendCount} — the send would not be attributable`);
+    }
+    const routeText = await page.evaluate(() => document.body.innerText || "");
+    await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")].filter((x) => (x.innerText || "").trim() === "Send");
+      b[0].click();
+    });
+    await settledText(page);
+    await new Promise((r) => setTimeout(r, 2500));
+    ok(`shared the open route with ${fixture.mate.name} from the route page`);
+
+    // ---- THE ACTUAL QUESTION: DID THE SHARE REACH THE DATABASE? --------------------------------
+    const msgAfter = await msgRows();
+    sharedIds = msgAfter.map((m) => m.id);
+    if (msgAfter.length === 1) ok("the shared route reached the database as a real message");
+    else if (msgAfter.length === 0) bad("\"Shared X with Y\" was toasted and NO message row exists — the climber you shared with never receives it");
+    else bad(`expected exactly 1 message after one share, found ${msgAfter.length}`);
+
+    if (msgAfter.length) {
+      const m = msgAfter[0];
+      if (m.sender_id === uid && m.recipient_id === fixture.mate.id) ok("it is addressed from the owner to the mate");
+      else bad(`the message is addressed ${m.sender_id} -> ${m.recipient_id}, not owner -> mate`);
+      // NAMES THE ROUTE THE CLIMBER WAS LOOKING AT, cross-checked against that page's own text
+      // rather than against a name typed in here — a share carrying somebody else's route is a
+      // defect a bare "a row exists" assertion cannot see.
+      const nm = /^Check out this route: (.+?) \(/.exec(String(m.body || ""));
+      if (!nm) bad(`the message body does not read as a shared route: ${JSON.stringify(String(m.body || "").slice(0, 80))}`);
+      else if (routeText.includes(nm[1])) ok(`the message names the route that was open (${nm[1]})`);
+      else bad(`the message names "${nm[1]}", which is not on the route page it was shared from`);
+    }
+  } finally {
+    for (const id of sharedIds) {
+      await fetch(`${SUPABASE_URL}/rest/v1/messages?id=eq.${id}`, { method: "DELETE", headers: H }).catch(() => {});
+    }
+    // A 204 IS NOT EVIDENCE THE ROW WENT -- check:message-delivery records PostgREST answering a
+    // zero-row DELETE with 204 and res.ok true while the row stood. Read it back.
+    if (sharedIds.length) {
+      const left = await msgRows().catch(() => []);
+      if (left.length) { console.log("  FAIL  could not remove the shared message(s) — " + left.length + " left behind"); fails++; }
+    }
+  }
+
+  // ---- PHASE 4: A FRIEND A REAL CLIMBER REMOVES STAYS REMOVED ----------------------------------
+  // #1563. "Remove friend" filtered local state and toasted success while `removeConnection` sat
+  // imported and called from NOWHERE -- so a climber tapped Remove, was told it worked, the row
+  // vanished, and the connection was still there on the next load.
+  //
+  // NOTHING COULD SEE IT, and the near misses are why this belongs in a walk rather than a static
+  // gate: check:writes forbids a success message in front of a write whose FAILURE is
+  // unobservable, and check:claims one for a write that only runs signed-in -- neither can see a
+  // toast in front of NO WRITE AT ALL. Every screen assertion passed throughout, because the
+  // optimistic local state rendered perfectly. That is the shape all six defects shared.
+  //
+  // probe-remove-friend-persists.mjs is scoped to the HANDLER's source; this is the round trip --
+  // a real account taps Remove in the real overlay, and then the DATABASE is asked whether the row
+  // actually went, and a RELOAD asked whether the friend stays gone.
+  const connFilter = `or=(and(requester.eq.${uid},addressee.eq.${fixture.mate.id}),and(requester.eq.${fixture.mate.id},addressee.eq.${uid}))`;
+  const connRows = async () => {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/connections?select=id,status,requester,addressee&${connFilter}`, { headers: H });
+    if (!r.ok) dead(`could not read the connections table: ${r.status} ${await r.text()}`);
+    return r.json();
+  };
+
+  // THE BASELINE IS LOAD-BEARING, exactly as it is for onboarding above. "the row is gone after
+  // Remove" proves nothing unless it was there first, and an account with no connection would
+  // satisfy every assertion below whatever Remove did.
+  const connBefore = await connRows();
+  if (connBefore.length === 1) ok("the owner and the mate are connected — 1 row in `connections`");
+  else bad(`expected exactly 1 connection row before removal, found ${connBefore.length} — every assertion below would be vacuous`);
+
+  // THE CREW NAV BUTTON CARRIES A BADGE, so an exact-text click misses it. crewBadgeN renders an
+  // unread/invite count INSIDE the button, and this fixture seats the owner as INVITED in a second
+  // crew -- so innerText is not "Crews" for exactly the account this walk uses. The aria-label is
+  // authored and does not move with the count, which is what tapByName's anchoring is for. Same
+  // lesson as the Crew SUB-tab bar one line down, one level up the nav.
+  if (!(await tapByName(page, "Crews"))) dead("no Crew tab");
+  await settledText(page);
+  // BY ACCESSIBLE NAME, never by text: the Crew sub-tab buttons render their badge count INSIDE
+  // the control, so textContent is "Friends1" and every exact-text strategy misses. tapByName's
+  // `^label(,|$)` anchoring is what accepts both "Friends" and "Friends, 1".
+  if (!(await tapMenuItem(page, "Friends"))) dead("no Friends sub-view on the Crew tab");
+  await settledText(page);
+  const friendsViewBefore = await page.evaluate(() => document.body.innerText || "");
+  if (friendsViewBefore.length < 200) dead(`the Crew:Friends view rendered ${friendsViewBefore.length} chars — nothing below would mean anything`);
+
+  // The Remove control lives in the FriendsList OVERLAY, not on the inline list, and the overlay
+  // opens from "See all (N) →" -- matched by PREFIX because the count is inside the label, the
+  // same reason tapByName exists.
+  const openedList = await page.evaluate(() => {
+    const el = [...document.querySelectorAll("button")].find((b) => /^See all\b/.test((b.innerText || "").trim()));
+    if (!el) return false;
+    el.click(); return true;
+  });
+  if (!openedList) dead("no 'See all' control on Crew:Friends — the friends overlay could not be opened");
+  await settledText(page);
+
+  // Read the friend's name AS THE APP RENDERS IT rather than deriving it. pubName() gates the
+  // display name on show_name and otherwise falls back to a handle built from the name, so a
+  // walk that computed the expected string would be re-implementing a rule that can move -- and
+  // would then agree with itself whatever the app did.
+  const rowNames = await page.evaluate(() => {
+    return [...document.querySelectorAll("button")]
+      .filter((b) => (b.innerText || "").trim() === "Remove")
+      .map((b) => {
+        const row = b.parentElement;
+        const lines = ((row && row.innerText) || "").split("\n").map((s) => s.trim()).filter(Boolean);
+        return lines[0] || "";
+      });
+  });
+  // EXACTLY ONE, so the click is attributable. With two friends on screen this walk would remove
+  // an arbitrary one and then assert about the pair, which is how a guard reports a pass for the
+  // wrong reason.
+  if (rowNames.length !== 1) {
+    dead(`expected exactly 1 friend row with a Remove control, found ${rowNames.length} — the click would not be attributable`);
+  }
+  const friendName = rowNames[0];
+  if (!friendName) dead("the friend row rendered no name — Remove would be asserted against a blank row");
+  ok(`the friends list shows 1 friend (${friendName}) with a Remove control`);
+
+  const clickedRemove = await page.evaluate(() => {
+    const b = [...document.querySelectorAll("button")].filter((x) => (x.innerText || "").trim() === "Remove");
+    if (b.length !== 1) return false;
+    b[0].click(); return true;
+  });
+  if (!clickedRemove) dead("the Remove control could not be clicked");
+  // #2024 (2026-09-30) put a confirm sheet in front of Remove, and this walk kept clicking only
+  // "Remove" -- so from then on it asserted a removal nobody had confirmed and went red at the
+  // database check, then cascaded into every phase after it. Confirm it the way a climber must.
+  await page.waitForSelector('[role="alertdialog"]', { timeout: 8000 }).catch(() => dead("Remove opened no confirm sheet — the flow the climber sees has changed"));
+  const confirmed = await page.evaluate(() => {
+    const d = document.querySelector('[role="alertdialog"]');
+    const b = d && [...d.querySelectorAll("button")].find((x) => (x.innerText || "").trim() === "Remove friend");
+    if (!b) return null;
+    const title = d.getAttribute("aria-label") || "";
+    b.click(); return title;
+  });
+  if (confirmed === null) dead("the confirm sheet has no 'Remove friend' button");
+  ok(`confirmed the removal in the sheet ("${confirmed}")`);
+  await settledText(page);
+  await new Promise((r) => setTimeout(r, 2500));
+
+  // ---- THE ACTUAL QUESTION: DID THE REMOVAL REACH THE DATABASE? --------------------------------
+  const connAfter = await connRows();
+  if (connAfter.length === 0) ok("the connection row is GONE from the database");
+  else bad(`"Remove" changed the screen and left the connection in the database (${connAfter.length} row(s) still there) — the climber is told it worked and the friend is back on the next load`);
+
+  // ---- AND IS THE FRIEND STILL GONE AFTER A RELOAD? --------------------------------------------
+  // The delete is necessary and not sufficient: a hydration that re-adds them would put the
+  // friend back on screen with the row already gone.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+  await settledText(page);
+  if (!(await tapByName(page, "Crews"))) dead("no Crew tab after the reload");
+  await settledText(page);
+  if (!(await tapMenuItem(page, "Friends"))) dead("no Friends sub-view after the reload");
+  await settledText(page);
+  const friendsViewAfter = await page.evaluate(() => document.body.innerText || "");
+  // FAIL CLOSED: a screen that rendered nothing satisfies every "is absent" assertion below.
+  if (friendsViewAfter.length < 200) dead(`the Crew:Friends view rendered ${friendsViewAfter.length} chars after the reload — its silence is not evidence`);
+  // A FRIEND ROW, not the page. The Crew:Friends view also renders "People you may know", and a climber
+  // you just unfriended is exactly who that section suggests next (shared crews, mutuals) -- so a
+  // whole-page text search read a correct suggestion as "the removal did not survive" (2026-10-15).
+  // The friend list's own rows carry a Remove control (the overlay) or sit under "See all"; neither
+  // may name them. The "See all" absence is asserted below as well.
+  const friendRowsAfter = await page.evaluate(() => [...document.querySelectorAll("button")]
+    .filter((b) => (b.innerText || "").trim() === "Remove")
+    .map((b) => { const row = b.parentElement; const lines = ((row && row.innerText) || "").split("\n").map((s) => s.trim()).filter(Boolean); return lines[0] || ""; }));
+  const seeAllAfter = await page.evaluate(() => [...document.querySelectorAll("button")].some((b) => /^See all\b/.test((b.innerText || "").trim())));
+  if (!friendRowsAfter.includes(friendName) && !seeAllAfter) ok(`after a reload ${friendName} is no longer a friend — no friend row names them and there is no friends list to open (a "People you may know" suggestion may still show them)`);
+  else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive (friend rows: ${JSON.stringify(friendRowsAfter)}, See all: ${seeAllAfter})`);
+  // THE OPENER IS THE FALSIFIABLE TEST HERE, AND A REMOVE-CONTROL COUNT IS NOT.
+  // "See all (N)" renders only on `connections.length > 0`, so its absence is a direct
+  // consequence of the removal having stuck. Counting Remove controls instead passes
+  // VACUOUSLY: they live in the OVERLAY, which is not open after a reload, so that count is
+  // 0 whatever the database holds. Found by reading the injected run, where it printed a
+  // cheerful `ok` beside two failures — the assertion could not fail in this position.
+  const openerAfter = await page.evaluate(() =>
+    [...document.querySelectorAll("button")].filter((b) => /^See all\b/.test((b.innerText || "").trim())).length);
+  if (openerAfter === 0) ok("Crew:Friends offers no 'See all' — the account really has no connections");
+  else bad("Crew:Friends still offers 'See all' after the reload — the connection list is not empty");
+
+  // ---- PHASE 5: A CONNECTION REQUEST LANDS AS *PENDING*, AND SURVIVES A RELOAD -----------------
+  // #1569's other half. The Connect control on a climber's profile opens ConnectModal, whose Send
+  // calls `sendConnectionRequest` -- and the row that write leaves must be PENDING. `0087`'s insert
+  // policy is `auth.uid() = requester and status = 'pending'`, so a request landing as `accepted`
+  // would be one climber putting themselves into another climber's friends without being asked.
+  // The BUTTON is the app's own second claim: it must read "Requested" and be DISABLED afterwards,
+  // because `friendState` is rebuilt from the database on every load and a control that offers
+  // "+ Friend" again is telling a climber the request never happened.
+  //
+  // IT RUNS AFTER PHASE 4, and that ordering is load-bearing rather than tidy: `friendState` reads
+  // "friends" while the connection exists, so the profile renders a DISABLED "✓ Friend" and there
+  // is no Connect control to click at all. This phase's subject is reachable only in the state
+  // phase 4 leaves behind -- placed anywhere earlier it would find nothing to tap and say so.
+  //
+  // The mate is NOT reachable through partner browse: listing defaults ON since `0195`, but the
+  // CI fixture accounts are written `discoverable=false` and `0195` leaves them so, and
+  // durable-fixture.mjs asserts it -- so the fixture's accounts are correctly absent from it. The crew roster is the real
+  // surface a climber uses here -- you climbed with somebody, you open them from the crew -- and it
+  // needs no visibility flip, so nothing about the fixture is manufactured to make this reachable.
+
+  // ONE opener, used for the click and again after the reload. Two copies of a four-step navigation
+  // drift, and the second copy is the one that silently stops landing.
+  const openMateProfile = async (why) => {
+    if (!(await tapByName(page, "Crews"))) dead(`no Crew tab (${why})`);
+    await settledText(page);
+    if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
+    await settledText(page);
+    // FOUND STRUCTURALLY -- the one roster member who is not YOU -- never by a name derived here.
+    // THE ROSTER DOES NOT RENDER `pubName`: it renders `p.name.split(" ")[0]`, the member's first
+    // name, so the handle phase 4 read off the friends row (`@robinbelay`) matches nothing here.
+    // That mix of `pubName` and a bare `.name` across FriendsList and CrewCard is the documented
+    // limit Privacy §3 states, not a defect this walk has found -- and re-deriving the rule here
+    // (`fixture.mate.name.split(" ")[0]`) would make the walk agree with itself whatever the app
+    // rendered, which is exactly what reading the name off the screen exists to avoid.
+    // The crew has two members and one of them is the account driving the walk, so "not You" is
+    // both unambiguous and independent of how either name is spelled.
+    const pick = await page.evaluate(() => {
+      // EVERY CREW CARD, NOT THE FIRST ONE. The fixture seats this account in TWO crews -- the one
+      // it shares with the mate, and a second the mate owns where it is only INVITED -- so the Crews
+      // view renders two cards and `find` on the first heading can land on a roster that holds no
+      // other member at all. Taking the first match reported "found 0" while the mate's row was
+      // further down the page, which is a selector defect that reads exactly like a missing feature.
+      //
+      // MATCHED CASE-INSENSITIVELY, because the heading carries textTransform:"uppercase" and
+      // innerText returns the CSS-TRANSFORMED text -- it reads "CREW · 2 MEMBERS", not the source
+      // string. That is the trap check:ui records for PEOPLE YOU'VE CLIMBED WITH, and it cost a run.
+      const heads = [...document.querySelectorAll("div")].filter((d) => {
+        const t = (d.innerText || "").trim();
+        return /^crew · \d+ member/i.test(t) && t.length < 80 && d.nextElementSibling;
+      });
+      const cand = [];
+      for (const h of heads) {
+        for (const row of [...h.nextElementSibling.children]) {
+          const el = row.querySelector('[role="button"]');
+          if (!el) continue;
+          const first = ((el.innerText || "").trim().split("\n")[0] || "").trim();
+          // NOT ME, and never matched by a name derived here: the roster renders
+          // `p.name.split(" ")[0]` rather than `pubName`, so the handle phase 4 read off the friends
+          // row does not appear on this screen at all. That mix of pubName and a bare .name across
+          // FriendsList and CrewCard is the documented limit Privacy §3 states, not a finding here.
+          if (first && first !== "You") cand.push({ el, first });
+        }
+      }
+      const labels = [...new Set(cand.map((c) => c.first))];
+      if (labels.length !== 1) {
+        // A MISS ARRIVES AS EVIDENCE RATHER THAN AS ANOTHER GUESS. Three runs were spent on
+        // confident wrong readings of this screen -- the four-attempts shape CLAUDE.md records for
+        // AreaLatest -- so the failure carries the cards it saw and what was on the page.
+        return {
+          err: `expected exactly 1 crew member who is not You, found ${labels.length} distinct`,
+          saw: labels, cards: heads.length,
+          seen: (document.body.innerText || "").slice(0, 400).replace(/\s+/g, " "),
+        };
+      }
+      const chosen = cand.find((c) => c.first === labels[0]);
+      chosen.el.click();
+      return { name: chosen.first, cards: heads.length };
+    });
+    if (pick.err) {
+      dead(`could not open the mate from the crew roster (${why}): ${pick.err}` +
+        (pick.saw ? " — rows: " + JSON.stringify(pick.saw) : "") +
+        (pick.seen ? " — screen was: " + JSON.stringify(pick.seen) : ""));
+    }
+    await settledText(page);
+    const txt = await page.evaluate(() => document.body.innerText || "");
+    if (txt.length < 200) dead(`the profile rendered ${txt.length} chars (${why}) — nothing below would mean anything`);
+    return { txt, name: pick.name };
+  };
+
+  // THE BASELINE, for the fourth time and the same reason: phase 4 has just deleted the connection,
+  // so "a pending row exists afterwards" is only evidence if there was none to begin with.
+  const connIdle = await connRows();
+  if (connIdle.length === 0) ok("no connection between the two accounts to start from");
+  else bad(`expected 0 connection rows before the request, found ${connIdle.length} — every assertion below would be vacuous`);
+
+  let requestIds = [];
+  try {
+    const mate = await openMateProfile("to send the request");
+
+    const clickedConnect = await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")].filter((x) => (x.innerText || "").trim() === "+ Friend");
+      if (b.length !== 1) return b.length;
+      if (b[0].disabled) return -2;
+      b[0].click(); return -1;
+    });
+    if (clickedConnect === -2) dead("the profile offers \"+ Friend\" DISABLED — the app still believes these two are connected, so phase 4's removal did not take");
+    if (clickedConnect !== -1) dead(`expected exactly 1 enabled "+ Friend" control on the profile, found ${clickedConnect}`);
+    await settledText(page);
+
+    // ConnectModal's send reads "Send without note" with an empty note and "Send request" with one.
+    const sent = await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")].filter((x) => /^Send (without note|request)$/.test((x.innerText || "").trim()));
+      if (b.length !== 1) return b.length;
+      b[0].click(); return -1;
+    });
+    if (sent !== -1) dead(`expected exactly 1 send control on the connect sheet, found ${sent} — the request sheet did not open`);
+    await settledText(page);
+    await new Promise((r) => setTimeout(r, 2500));
+    ok(`asked ${mate.name} to connect, from their profile on the crew`);
+
+    // ---- THE ACTUAL QUESTION: WHAT DID THE WRITE LEAVE IN THE TABLE? ---------------------------
+    const reqRows = await connRows();
+    requestIds = reqRows.map((r) => r.id);
+    if (reqRows.length === 1) ok("the request reached the database as a real connection row");
+    else if (reqRows.length === 0) bad("the connect sheet was sent and NO connection row exists — the climber is told the request went and it reaches nobody");
+    else bad(`expected exactly 1 connection row after one request, found ${reqRows.length}`);
+
+    if (reqRows.length === 1) {
+      const r = reqRows[0];
+      if (r.status === "pending") ok("it is PENDING — the request is asked, not granted");
+      else bad(`the request was stored as "${r.status}" rather than pending — one climber would be adding themselves to another climber's friends`);
+      if (r.requester === uid && r.addressee === fixture.mate.id) ok("it is addressed from the owner to the mate");
+      else bad(`the request is addressed ${r.requester} -> ${r.addressee}, not owner -> mate`);
+    }
+
+    // ---- AND DOES THE SCREEN STILL KNOW, ONCE THE CLIENT STATE IS GONE? -----------------------
+    await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+    await settledText(page);
+    await openMateProfile("after the reload");
+    const after = await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")]
+        .filter((x) => ["+ Friend", "Requested · undo", "✓ Friend", "Accept"].includes((x.innerText || "").trim()));
+      if (b.length !== 1) return { n: b.length };
+      return { n: 1, label: (b[0].innerText || "").trim(), disabled: !!b[0].disabled };
+    });
+    // b46f3225 (2026-09-30) made a second tap WITHDRAW the request, so the control reads
+    // "Requested · undo" and is deliberately ENABLED. This walk still asserted a disabled "Requested"
+    // and died here from then on. What matters is unchanged: after a reload the app must not offer
+    // "+ Friend" (a resend the unique pair index would refuse) — it must know the request is out.
+    if (after.n !== 1) dead(`expected exactly 1 connect-state control after the reload, found ${after.n}`);
+    if (after.label === "Requested · undo") ok("after a reload the profile still reads \"Requested · undo\" — the request survived and can be taken back");
+    else bad(`after a reload the profile offers "${after.label}" — the pending request did not survive, so the climber is invited to send it again`);
+  } finally {
+    for (const id of requestIds) {
+      await fetch(`${SUPABASE_URL}/rest/v1/connections?id=eq.${id}`, { method: "DELETE", headers: H }).catch(() => {});
+    }
+    // A 204 IS NOT EVIDENCE THE ROW WENT -- PostgREST answers a zero-row DELETE with 204 and
+    // res.ok true, which check:message-delivery records shipping as a false "removed: ok".
+    if (requestIds.length) {
+      const left = await connRows().catch(() => []);
+      if (left.length) { console.log("  FAIL  could not remove the connection request — " + left.length + " row(s) left behind"); fails++; }
+    }
+  }
+
+  if (pageErrors.length) bad(`uncaught page errors: ${pageErrors.slice(0, 3).join(" | ")}`);
+  else ok("no uncaught page errors during the journey");
+} finally {
+  if (browser) await browser.close().catch(() => {});
+  if (server) server.kill();
+  if (fixture && fixture.cleanup) {
+    const leaked = await fixture.cleanup().catch((e) => [String(e)]);
+    if (leaked && leaked.length) { console.error("LEAKED: " + leaked.join(", ")); fails++; }
+  }
+}
+
+console.log(fails ? `\ncheck:new-climber-journey FAILED — ${fails} problem(s) a new climber would hit.`
+                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload, the crew they open is found by another real climber, the route they share reaches that climber, a friend they remove stays removed, and a partner they ask to connect is asked rather than added.");
+process.exit(fails ? 1 : 0);

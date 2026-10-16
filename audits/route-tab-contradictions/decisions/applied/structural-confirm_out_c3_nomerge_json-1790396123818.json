@@ -1,0 +1,4767 @@
+{
+ "applied": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "op": "patch",
+   "columns": [
+    "beta",
+    "pitch_detail",
+    "itinerary",
+    "timing",
+    "bail",
+    "descent_text"
+   ]
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "op": "rename",
+   "name": "Southwest Slope (De Roux Creek)"
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "op": "patch",
+   "columns": [
+    "overview",
+    "approach",
+    "descent",
+    "descent_text",
+    "climbing_route",
+    "bail",
+    "pro_tips",
+    "itinerary",
+    "timing",
+    "gain_ft",
+    "loss_ft",
+    "dist_km",
+    "hazards",
+    "gear",
+    "what_to_bring",
+    "road",
+    "access",
+    "emergency",
+    "partner_requirements",
+    "climate",
+    "crowds",
+    "rope_note"
+   ]
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "op": "rename",
+   "name": "Southwest Ridge (Hemlock Pass)"
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "op": "patch",
+   "columns": [
+    "face",
+    "aspect",
+    "overview",
+    "approach",
+    "climbing_route",
+    "descent_text",
+    "approach_variants",
+    "hazards",
+    "pro_tips",
+    "what_to_bring",
+    "gain_ft",
+    "loss_ft",
+    "itinerary",
+    "road",
+    "access",
+    "emergency",
+    "partner_requirements"
+   ]
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "op": "rename",
+   "name": "West Ridge / North Ridge via Chetwoot Lake"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "op": "patch",
+   "columns": [
+    "aspect",
+    "overview",
+    "approach",
+    "descent_text",
+    "itinerary",
+    "timing",
+    "dist_km",
+    "hazards",
+    "obj_haz",
+    "pro_tips",
+    "partner_requirements",
+    "road",
+    "emergency",
+    "bivy"
+   ]
+  }
+ ],
+ "rejected": [
+  {
+   "result": "wa_iron_cap_mountain_south_route",
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "access",
+   "why": "new text cites a source"
+  }
+ ],
+ "backups": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "area_id": "wa_buck_mountain",
+   "name": "South Ridge",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1948 — Carl Suback and Ray Rigg",
+   "lat": 48.09363,
+   "lng": -120.9122,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Helmet",
+    "Ice axe and crampons if snow present"
+   ],
+   "hazards": [
+    "loose rock",
+    "ridge exposure",
+    "lingering snow on approach",
+    "loose black schist on the upper scramble slopes",
+    "short Class 3-4 step near a rock horn just below the true summit",
+    "stream crossings on the Buck Creek Trail approach",
+    "afternoon thunderstorms possible in late summer"
+   ],
+   "verif": null,
+   "overview": "Buck Mountain (8,534 ft) is the high point of the peaks ringing Buck Creek Pass in the Glacier Peak Wilderness, named for pioneer USFS surveyor Albert H. Sylvester. Its north and east faces are composed of dark, almost black schist that gives the summit a brooding look above the pass; the summit affords sweeping views of Glacier Peak (about 9 miles west), Clark Mountain (its taller parent peak, ~4 miles southwest), Liberty Cap, and Helmet Butte. First climbed in 1948 by Carl Suback and Ray Rigg, the peak is now one of the most popular scrambles in the area — typically climbed as a side trip from a multi-day backpack based at Buck Creek Pass, and rated as an Alpine Scramble.",
+   "beta": "From the Trinity Trailhead, follow the Buck Creek Trail (#1513) about 1.5 miles past the Chiwawa River Trail junction (3,200 ft), then leave the trail and climb forested, brushy, and open slopes southwestward to King Lake (5,940 ft), which has good camping. From the lake, climb directly south to a notch on Buck's east ridge, cross to the south side of the ridge, contour around the next ESE ridge onto the low-angle southeast slopes, and bear WNW to the saddle between the south and middle summits before scrambling up rubbly, slabby schist to the middle (highest) or north summit. An alternative, longer approach reaches the peak's west/southwest slopes via Buck Creek Pass and High Pass.",
+   "turnaround": "Set a firm turnaround time before starting the summit push from camp and honor it — afternoon thunderstorms, the long remote approach, and loose schist on the exposed Class 3 terrain make a late or rushed descent significantly more hazardous.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 5700,
+   "loss_ft": 5700,
+   "dist_km": 38.62,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "South Ridge",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": null,
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "loose/slabby schist rock",
+    "creek crossing (Buck Creek)",
+    "brush/bushwhacking off-trail",
+    "route-finding above the trail",
+    "lingering snowfields and avalanche terrain into early summer",
+    "exposed Class 3 moves near the summit",
+    "remoteness / long wilderness approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.072,
+     "lng": -120.85,
+     "elev": 2800,
+     "name": "Trinity Trailhead",
+     "note": "End of Chiwawa River Road/FR-6200 (last 12 mi rough gravel); pay day-use fee or NW Forest Pass and self-issue a free Glacier Peak Wilderness permit at the kiosk.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.076579,
+     "lng": -120.854449,
+     "elev": 2800,
+     "name": "Chiwawa River footbridge",
+     "note": "Plank/log bridge crossing the Chiwawa River just beyond the trailhead — solid underfoot despite an ominous warning sign posted at the trailhead.",
+     "type": "Water",
+     "distMi": 0.2
+    },
+    {
+     "lat": 48.144,
+     "lng": -120.9629,
+     "elev": 5900,
+     "name": "Buck Creek Pass",
+     "note": "Established camps in scattered trees and meadows; most parties base camp here for the climb, with a junction to the Flower Dome Trail #799 a half mile north.",
+     "type": "Campsite",
+     "distMi": 9.6
+    },
+    {
+     "lat": 48.088007,
+     "lng": -120.87463,
+     "elev": 7400,
+     "name": "Basin below Buck's south/southwest slopes",
+     "note": "Leave the maintained trail at the pass and contour/ascend cross-country into the open basin beneath the peak's south and southwest slopes — start of the actual scramble.",
+     "type": "Junction",
+     "distMi": 11
+    },
+    {
+     "lat": 48.078141,
+     "lng": -120.856978,
+     "elev": 8300,
+     "name": "Snowfield and loose schist below the summit",
+     "note": "A firm, sometimes icy snowfield crossing leads into loose, exfoliating Class 2-3 schist blocks just right of the obvious white scar — significant rockfall risk for parties below.",
+     "type": "Hazard",
+     "distMi": 11.7
+    },
+    {
+     "lat": 48.09363,
+     "lng": -120.9122,
+     "elev": 8534,
+     "name": "Buck Mountain",
+     "note": "True summit; sweeping views of Glacier Peak, Clark Mountain, and the Napeequa valley — first climbed in 1948 by Carl Suback and Ray Rigg.",
+     "type": "Summit",
+     "distMi": 12
+    }
+   ],
+   "gpx": [
+    [
+     48.072318,
+     -120.850608
+    ],
+    [
+     48.074051,
+     -120.854088
+    ],
+    [
+     48.076676,
+     -120.854463
+    ],
+    [
+     48.080049,
+     -120.857283
+    ],
+    [
+     48.084067,
+     -120.861912
+    ],
+    [
+     48.089077,
+     -120.866204
+    ],
+    [
+     48.093147,
+     -120.868063
+    ],
+    [
+     48.0976,
+     -120.867316
+    ],
+    [
+     48.101774,
+     -120.869665
+    ],
+    [
+     48.105123,
+     -120.871917
+    ],
+    [
+     48.107592,
+     -120.873514
+    ],
+    [
+     48.110747,
+     -120.874793
+    ],
+    [
+     48.113519,
+     -120.877166
+    ],
+    [
+     48.116337,
+     -120.877347
+    ],
+    [
+     48.118289,
+     -120.877818
+    ],
+    [
+     48.121401,
+     -120.877789
+    ],
+    [
+     48.123633,
+     -120.879006
+    ],
+    [
+     48.127064,
+     -120.880277
+    ],
+    [
+     48.129632,
+     -120.881546
+    ],
+    [
+     48.129848,
+     -120.881397
+    ],
+    [
+     48.132515,
+     -120.882881
+    ],
+    [
+     48.134842,
+     -120.884847
+    ],
+    [
+     48.137759,
+     -120.886594
+    ],
+    [
+     48.1388,
+     -120.888297
+    ],
+    [
+     48.141389,
+     -120.890845
+    ],
+    [
+     48.143441,
+     -120.894267
+    ],
+    [
+     48.142025,
+     -120.896062
+    ],
+    [
+     48.142738,
+     -120.898112
+    ],
+    [
+     48.144443,
+     -120.900037
+    ],
+    [
+     48.14618,
+     -120.902531
+    ],
+    [
+     48.146372,
+     -120.904484
+    ],
+    [
+     48.14702,
+     -120.907481
+    ],
+    [
+     48.147929,
+     -120.909262
+    ],
+    [
+     48.148546,
+     -120.90949
+    ],
+    [
+     48.149151,
+     -120.909149
+    ],
+    [
+     48.150013,
+     -120.91054
+    ],
+    [
+     48.150953,
+     -120.911418
+    ],
+    [
+     48.151705,
+     -120.913387
+    ],
+    [
+     48.151847,
+     -120.913826
+    ],
+    [
+     48.152706,
+     -120.915097
+    ],
+    [
+     48.153272,
+     -120.915622
+    ],
+    [
+     48.155188,
+     -120.916567
+    ],
+    [
+     48.15609,
+     -120.916211
+    ],
+    [
+     48.1569,
+     -120.916694
+    ],
+    [
+     48.157864,
+     -120.916306
+    ],
+    [
+     48.158958,
+     -120.915373
+    ],
+    [
+     48.160246,
+     -120.913473
+    ],
+    [
+     48.160726,
+     -120.909785
+    ],
+    [
+     48.161513,
+     -120.909431
+    ],
+    [
+     48.16294,
+     -120.90833
+    ],
+    [
+     48.163182,
+     -120.907935
+    ],
+    [
+     48.162343,
+     -120.908964
+    ],
+    [
+     48.161793,
+     -120.909645
+    ],
+    [
+     48.160974,
+     -120.909598
+    ],
+    [
+     48.160127,
+     -120.910516
+    ],
+    [
+     48.159636,
+     -120.914715
+    ],
+    [
+     48.158103,
+     -120.916289
+    ],
+    [
+     48.158373,
+     -120.91754
+    ],
+    [
+     48.158725,
+     -120.919042
+    ],
+    [
+     48.159496,
+     -120.923471
+    ],
+    [
+     48.160069,
+     -120.927266
+    ],
+    [
+     48.16023,
+     -120.928735
+    ],
+    [
+     48.16042,
+     -120.929974
+    ],
+    [
+     48.160477,
+     -120.930706
+    ],
+    [
+     48.160639,
+     -120.930951
+    ],
+    [
+     48.160837,
+     -120.931277
+    ],
+    [
+     48.160944,
+     -120.931639
+    ],
+    [
+     48.160713,
+     -120.932052
+    ],
+    [
+     48.160818,
+     -120.932568
+    ],
+    [
+     48.160664,
+     -120.932791
+    ],
+    [
+     48.15941,
+     -120.933594
+    ],
+    [
+     48.157456,
+     -120.934192
+    ],
+    [
+     48.154242,
+     -120.93683
+    ],
+    [
+     48.153829,
+     -120.941028
+    ],
+    [
+     48.154635,
+     -120.943067
+    ],
+    [
+     48.153909,
+     -120.944732
+    ],
+    [
+     48.153566,
+     -120.946553
+    ],
+    [
+     48.15294,
+     -120.948393
+    ],
+    [
+     48.151915,
+     -120.949877
+    ],
+    [
+     48.150927,
+     -120.949004
+    ],
+    [
+     48.149393,
+     -120.947901
+    ],
+    [
+     48.147349,
+     -120.947475
+    ],
+    [
+     48.146225,
+     -120.947006
+    ],
+    [
+     48.145014,
+     -120.948311
+    ],
+    [
+     48.144141,
+     -120.951093
+    ],
+    [
+     48.142783,
+     -120.953604
+    ],
+    [
+     48.142447,
+     -120.956272
+    ],
+    [
+     48.143541,
+     -120.958678
+    ],
+    [
+     48.14464,
+     -120.961033
+    ],
+    [
+     48.144293,
+     -120.961229
+    ],
+    [
+     48.143486,
+     -120.962138
+    ],
+    [
+     48.142699,
+     -120.963047
+    ],
+    [
+     48.141403,
+     -120.964469
+    ],
+    [
+     48.139965,
+     -120.965242
+    ],
+    [
+     48.138842,
+     -120.964611
+    ],
+    [
+     48.136024,
+     -120.967234
+    ],
+    [
+     48.132319,
+     -120.96506
+    ],
+    [
+     48.130413,
+     -120.962242
+    ],
+    [
+     48.129379,
+     -120.959447
+    ],
+    [
+     48.126266,
+     -120.95531
+    ],
+    [
+     48.122976,
+     -120.955219
+    ],
+    [
+     48.120857,
+     -120.954626
+    ],
+    [
+     48.118614,
+     -120.95314
+    ],
+    [
+     48.116139,
+     -120.952144
+    ],
+    [
+     48.114469,
+     -120.949683
+    ],
+    [
+     48.114322,
+     -120.949896
+    ],
+    [
+     48.111713,
+     -120.951302
+    ],
+    [
+     48.109657,
+     -120.952284
+    ],
+    [
+     48.107136,
+     -120.952032
+    ],
+    [
+     48.102929,
+     -120.952811
+    ],
+    [
+     48.101406,
+     -120.951982
+    ],
+    [
+     48.102435,
+     -120.951126
+    ],
+    [
+     48.101702,
+     -120.948889
+    ],
+    [
+     48.10143,
+     -120.946888
+    ],
+    [
+     48.102593,
+     -120.946701
+    ],
+    [
+     48.103088,
+     -120.9465
+    ],
+    [
+     48.101837,
+     -120.946448
+    ],
+    [
+     48.101753,
+     -120.945729
+    ],
+    [
+     48.102141,
+     -120.941997
+    ],
+    [
+     48.100295,
+     -120.941768
+    ],
+    [
+     48.099455,
+     -120.939889
+    ],
+    [
+     48.096632,
+     -120.935586
+    ],
+    [
+     48.095245,
+     -120.933244
+    ],
+    [
+     48.093802,
+     -120.93068
+    ],
+    [
+     48.093673,
+     -120.93031
+    ],
+    [
+     48.094148,
+     -120.927423
+    ],
+    [
+     48.094619,
+     -120.92565
+    ],
+    [
+     48.09426,
+     -120.923846
+    ],
+    [
+     48.093105,
+     -120.923099
+    ],
+    [
+     48.091599,
+     -120.922743
+    ],
+    [
+     48.090133,
+     -120.92142
+    ],
+    [
+     48.090918,
+     -120.917344
+    ],
+    [
+     48.089906,
+     -120.912055
+    ],
+    [
+     48.090995,
+     -120.911749
+    ],
+    [
+     48.091738,
+     -120.91181
+    ],
+    [
+     48.089932,
+     -120.912931
+    ],
+    [
+     48.090562,
+     -120.915918
+    ],
+    [
+     48.090683,
+     -120.916169
+    ],
+    [
+     48.087945,
+     -120.918188
+    ],
+    [
+     48.085323,
+     -120.919532
+    ],
+    [
+     48.084444,
+     -120.917078
+    ],
+    [
+     48.084695,
+     -120.916735
+    ],
+    [
+     48.085307,
+     -120.913394
+    ],
+    [
+     48.085562,
+     -120.909334
+    ],
+    [
+     48.085393,
+     -120.906213
+    ],
+    [
+     48.086047,
+     -120.90446
+    ],
+    [
+     48.087362,
+     -120.90276
+    ],
+    [
+     48.087846,
+     -120.901294
+    ],
+    [
+     48.087984,
+     -120.901224
+    ],
+    [
+     48.087749,
+     -120.900455
+    ],
+    [
+     48.086723,
+     -120.897513
+    ],
+    [
+     48.086427,
+     -120.896909
+    ],
+    [
+     48.086014,
+     -120.895809
+    ],
+    [
+     48.08582,
+     -120.894856
+    ],
+    [
+     48.087752,
+     -120.89275
+    ],
+    [
+     48.088033,
+     -120.891085
+    ],
+    [
+     48.087525,
+     -120.888719
+    ],
+    [
+     48.087523,
+     -120.887374
+    ],
+    [
+     48.087355,
+     -120.885226
+    ],
+    [
+     48.086991,
+     -120.883816
+    ],
+    [
+     48.087286,
+     -120.881241
+    ],
+    [
+     48.087536,
+     -120.879348
+    ],
+    [
+     48.087685,
+     -120.876914
+    ],
+    [
+     48.08802,
+     -120.874538
+    ],
+    [
+     48.088104,
+     -120.873707
+    ],
+    [
+     48.087907,
+     -120.873005
+    ],
+    [
+     48.087812,
+     -120.872757
+    ],
+    [
+     48.088026,
+     -120.872274
+    ],
+    [
+     48.088292,
+     -120.870801
+    ],
+    [
+     48.088335,
+     -120.869226
+    ],
+    [
+     48.088408,
+     -120.868378
+    ],
+    [
+     48.087878,
+     -120.86791
+    ],
+    [
+     48.08764,
+     -120.868112
+    ],
+    [
+     48.087099,
+     -120.867598
+    ],
+    [
+     48.086884,
+     -120.867568
+    ],
+    [
+     48.086778,
+     -120.867877
+    ],
+    [
+     48.086381,
+     -120.867808
+    ],
+    [
+     48.086341,
+     -120.866065
+    ],
+    [
+     48.086487,
+     -120.865511
+    ],
+    [
+     48.086649,
+     -120.86568
+    ],
+    [
+     48.086718,
+     -120.8656
+    ],
+    [
+     48.086649,
+     -120.865591
+    ],
+    [
+     48.085635,
+     -120.863901
+    ],
+    [
+     48.081909,
+     -120.859503
+    ],
+    [
+     48.078037,
+     -120.856908
+    ],
+    [
+     48.075789,
+     -120.853537
+    ],
+    [
+     48.073618,
+     -120.853923
+    ],
+    [
+     48.072108,
+     -120.851218
+    ],
+    [
+     48.07223,
+     -120.850773
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 18.5,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 5.5,
+    "approachTimeHrs": 7,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513), passing the Chiwawa River Trail junction at 1.5 miles, then leave the …",
+      "fromTo": "Backpack in to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6,
+      "note": "Drop the overnight gear and climb with a light pack. The route climbs south from camp to a notch on Buck's east ridge, crosses to the south side, contours around a lower ESE ridge …",
+      "fromTo": "Summit push via the South Ridge",
+      "section": "Climb"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Break camp and reverse the approach: down through King Lake basin, around Mt. Berge, back across Buck Creek, and out the Buck Creek/Chiwawa River Trail to the trailhead. Straightfo…",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No roped rock rack is needed for the standard scramble line; it is climbed unroped in typical dry summer conditions. Some parties carry a light rope, a few slings, and basic protection for added security on the more exposed class 3 steps or if conditions are wet, icy, or snow-covered.",
+   "what_to_bring": [
+    "ice axe (early season)",
+    "helmet",
+    "satellite communicator",
+    "trekking poles (stream crossings on the Buck Creek Trail approach)"
+   ],
+   "pro_tips": [
+    "Pair with a Buck Creek Pass basecamp",
+    "Watch the exposure on the ridge steps",
+    "Fill out the free self-issue wilderness permit at the Trinity Trailhead kiosk",
+    "Check the Okanogan-Wenatchee NF road-conditions page before driving — Chiwawa River Road has been closed short of Trinity Trailhead since a Dec. 2025 storm",
+    "The short Class 3-4 step near the summit horn can be skirted via ledges to the west for an easier passage."
+   ],
+   "watch_out": [
+    "loose blocks",
+    "exposed moves on the crest",
+    "a brief harder (Class 3-4) step near a dark rock horn below the summit",
+    "snow-covered gully terrain persisting later than expected in big-snow years"
+   ],
+   "pro_needs": "This is an unroped Class 2-3 scramble with no fixed protection or established rappel anchors; parties uncomfortable with the exposed schist moves near the summit sometimes carry a rope and a few slings for a hip-belay or short rappel, but it is not standard gear for this line.",
+   "best_season": "August",
+   "high_point_ft": 8534,
+   "aid_grade": null,
+   "approach": "From the Trinity Trailhead (Glacier Peak Wilderness, self-issue wilderness permit at the kiosk) at the end of the Chiwawa River Road/FR-6200 (~2,800 ft), follow Buck Creek Trail #1513. The trail splits from the Chiwawa River Trail #1550 within the first mile and climbs steadily through forest; around mile 2.75-3 it crosses the upper Chiwawa River on a footbridge that is weathered/damaged, so treat it with care in high runoff and have a wading backup plan in early season. Above the crossing the trail is a long, fairly shadeless, grinding ascent (mosquitoes/black flies are heavy in July) through forest and then subalpine meadow along the flank of Middle Ridge, opening into increasingly good wildflower and Glacier Peak views as you climb. At roughly 9.25-10 miles and about 3,000-3,300 ft of gain, the trail tops out at Buck Creek Pass (~5,800-5,900 ft) - one of the most scenic passes in the Cascades, with a reliable spring near the pass for water (last dependable source before the basin). Beyond the pass there is no maintained trail: pick up the well-used climbers'/boot path that switchbacks up toward Liberty Cap and the High Pass Trail junction, then leave that path to contour and traverse west/southwest, staying below Liberty Cap, into the upper basin below Buck Mountain's south and west aspects (Louis Creek Basin, ~6,700 ft) - the standard camp for a two-day trip. Follow the ridge crest through Class 2-3 terrain (stepping to locally 3-4 near a horn/gendarme close to the true summit) on loose, rubbly, slabby schist to the top; the summit crest has several bumps within feet of each other, so take care identifying the true high point. Primary approach hazards: rockfall/loose schist (helmet recommended, especially with parties above or below), the river crossing in high water, no reliable water source between the pass and the basin in a dry year, and route-finding above Buck Creek Pass since the climbers' path is intermittent. An alternate historic approach reaches Buck Mountain via Little Giant Pass and the Napeequa Valley, used for longer traverses.",
+   "descent_text": "This is a walk-off/downclimb - no rappelling is involved on the standard South Ridge route. Reverse the ascent line: downclimb the Class 2-3 (locally 3-4 near the summit horn) loose, rubbly schist back down the ridge crest to the low-angle snowfield/basin around 7,400 ft, then descend the pumice and talus slopes back to the Louis Creek Basin camp (~6,700 ft). From there, traverse back east below Liberty Cap to rejoin the boot path down to Buck Creek Pass, and finish on the maintained Buck Creek Trail #1513 for the roughly 9.25-10 mile, ~3,000-3,300 ft descent back to the Trinity Trailhead. Trip reports on this route put summit-day round trip from a Buck Creek Pass/Louis Creek Basin camp at roughly 4 hours; given the near-24-mile car-to-car round trip distance, most parties treat this as an overnight (camp at Buck Creek Pass or the upper basin) rather than a single push, though strong parties have done it in a long day. The main descent hazard is the same loose schist encountered on the way up - downclimbing loose rock is generally more dangerous than ascending it, so descend deliberately, test holds, and keep the group tight (or move one at a time) through the Class 3-4 band near the summit to avoid kicking rock onto climbers below. Rappels: 0.",
+   "bail": "Retreat is straightforward on this unroped scramble route — descend the same slopes back toward King Lake or the Buck Creek Pass/High Pass basin; no technical/rope descent is required on the standard line.",
+   "pitch_detail": [
+    {
+     "grade": "Trail/off-trail",
+     "notes": "Trinity Trailhead via Buck Creek Trail #1513 to the Chiwawa River Trail junction area (~3,200 ft), then off-trail southwest to King Lake (5,940 ft)",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "From King Lake, climb south to a notch on Buck's east ridge and cross to its south side",
+     "pitch": "Lower slopes"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Contour around the ESE ridge onto low-angle southeast slopes, bearing WNW toward the saddle between the south and middle summits",
+     "pitch": "Southeast slopes"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Exposed Class 2-3 scrambling up loose, slabby schist to the middle (highest) or north summit",
+     "pitch": "Summit scramble"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best mid-July through September once the Buck Creek Trail brush and snowfields on the approach have melted out; no permit required but self-issue Glacier Peak Wilderness permits are at the trailhead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513), passing the Chiwawa River Trail junction at 1.5 miles, then leave the maintained trail for a brushy, steep climbers' path that crosses Buck Creek and contours around Mt. Berge's east side toward King Lake (5,940 ft) and on to an upper basin camp near 6,800 ft on Buck's south flank. Expect forest, brush, and talus with no reliable tread for the upper portion.",
+      "hours": 7,
+      "miles": 9.5,
+      "title": "Backpack in to high camp",
+      "gainFt": 4000,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach high camp below Buck's south side (~6,800 ft)"
+     },
+     {
+      "n": 2,
+      "note": "Drop the overnight gear and climb with a light pack. The route climbs south from camp to a notch on Buck's east ridge, crosses to the south side, contours around a lower ESE ridge onto low-angle southeast slopes, then trends WNW to the saddle between the south and middle summits for a final Class 2-3 scramble on loose, slabby schist to the true summit.",
+      "hours": 6,
+      "miles": 4,
+      "title": "Summit push via the South Ridge",
+      "gainFt": 1700,
+      "lossFt": 1700,
+      "packLb": 12,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave high camp",
+        "detail": "Early start to have firm/frozen ground on the SE slopes and beat afternoon thunderstorm risk."
+       },
+       {
+        "time": "+1.5 hr",
+        "label": "Reach notch on the East Ridge",
+        "detail": "Cross to the south side of the ridge above King Lake basin."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Contour the ESE ridge onto SE slopes",
+        "detail": "Low-angle scrambling and talus; route-finding is the crux of the day."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Gain the saddle between south and middle summits",
+        "detail": "Bear WNW off the SE slopes to reach the summit ridge."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Summit",
+        "detail": "Final Class 2-3 scramble on loose, rubbly schist to the true (middle) summit."
+       },
+       {
+        "time": "Early afternoon",
+        "label": "Back at high camp",
+        "detail": "Reverse the route; most parties are back at camp by early-to-mid afternoon."
+       }
+      ],
+      "objective": "Climb Buck Mountain (8,534 ft) and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and reverse the approach: down through King Lake basin, around Mt. Berge, back across Buck Creek, and out the Buck Creek/Chiwawa River Trail to the trailhead. Straightforward but tedious brush and steep descent in the upper section.",
+      "hours": 5.5,
+      "miles": 9.5,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 4000,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to Trinity trailhead"
+     }
+    ],
+    "totalNote": "A 3-day backpack: roughly 24 miles and ~5,700 ft one-way gain (2,800 ft trailhead to 8,534 ft summit), with a light-and-fast summit day from a high camp near King Lake / Buck's south basin. Buck is remote and lightly visited (roughly a handful of parties per year) — expect brush, loose rock, and real route-finding rather than a trail."
+   },
+   "access": {
+    "rules": "Leave No Trace practices and Glacier Peak Wilderness group-size/stock limits apply; no mechanized or wheeled equipment permitted in wilderness.",
+    "permit": "Free self-issue wilderness permit, filled out at the Trinity Trailhead kiosk (required for all Glacier Peak Wilderness users, day or overnight).",
+    "closures": "Chiwawa River Road (FR 6200) is closed to vehicles at milepost 18.2, just beyond Atkinson Flat Campground, due to December 2025 storm damage; per the Okanogan-Wenatchee NF conditions page (updated July 1, 2026) it is unlikely to reopen this season. Check fs.usda.gov/r06/okanogan-wenatchee/conditions before driving out.",
+    "landManager": "Glacier Peak Wilderness, Wenatchee River Ranger District, Okanogan-Wenatchee National Forest",
+    "passRequired": "Northwest Forest Pass or National Forest Day Pass required for Trinity Trailhead parking ($5/day or $30 annual); Interagency/America the Beautiful and National Park passes also honored.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Chiwawa River Road (Forest Road 6200) to Trinity Trailhead",
+    "status": "Closed beyond MP 18.2 (2026 season) — not a normal seasonal closure",
+    "driveNote": "From Coles Corner (US-2) take SR-207 toward Lake Wenatchee ~4.2 mi, bear right onto Chiwawa Loop Road, then left onto Chiwawa River Road (FR 6200); pavement ends near mile 10.8, and the final stretch is rough gravel/dirt not suited to low-clearance vehicles. Since May 20, 2026 the road has been closed to vehicles at MP 18.2 beyond Atkinson Flat Campground under Forest Service order 06-17-07-2026-11 (through December 31, 2027) — plan for extra road-walking miles to reach Trinity Trailhead. While the Little Giant Fire closure (order 06-17-07-2026-40) is in force, September 3 through October 31, 2026 unless lifted sooner, the road and the Buck Creek Trail are closed to all entry.",
+    "seasonalGate": "Normally opens as snow clears in late May/June and stays open into fall; currently closed beyond Atkinson Flat under USFS closure order #06-17-07-2026-11 (effective May 20, 2026 through December 31, 2027 unless rescinded sooner) after December 2025 storm damage, rather than a routine seasonal gate."
+   },
+   "climate": {
+    "typical": "East-slope Cascades transitional climate: Pacific storm systems drop heavy, wet snow on the approach through winter and spring via orographic lift as they hit the peaks, while summers are drier and more settled than the west side of the range; afternoon thunderstorms are possible in late summer.",
+    "bySeason": {
+     "fall": "Short, often clear weather window; first snow can arrive by late September/October",
+     "spring": "Deep, avalanche-prone snowpack on the approach slopes and summit gullies",
+     "summer": "Best window, generally dry rock from mid/late July through September, but watch for afternoon thunderstorms",
+     "winter": "Full snow cover; road access to Trinity Trailhead typically closed by snow even in normal years"
+    },
+    "forecastZone": "No confirmed dedicated NWAC zone for this specific peak; nearest coverage is from NWAC's East Slopes North and Stevens Pass forecast zones — check nwac.us for the current zone map before a spring trip."
+   },
+   "emergency": {
+    "notes": "Remote wilderness terrain with no cell coverage past the trailhead; a satellite communicator is strongly advised. All 911 calls in Chelan County route through RiverCom dispatch; the Chelan County Sheriff's Office Search & Rescue unit is the primary responder for the area. Note the active 2026 Chiwawa River Road closure adds significant time/distance to any self-rescue or evacuation.",
+    "county": "Chelan County",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth, WA 98826 — (509) 548-2550 (closed Wednesdays)",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA — 24/7 emergency department, closer to the Chiwawa Valley trailhead than Lake Chelan Community Hospital; advanced trauma cases are transported to Wenatchee, Seattle, or Spokane."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; what traffic exists clusters around the Aug optimal window, often parties already based at Buck Creek Pass/Trinity for backpacking",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely fewer than 10 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong and sustained - roughly 10 miles / 3,100+ ft gain on the Buck Creek Trail #1513 just to reach Buck Creek Pass, plus additional off-trail elevation and cross-country travel to the summit ridge",
+     "packWeight": "Typically an overnight/multi-day pack (30-40 lb) since most parties camp near Buck Creek Pass/Trinity rather than attempting a single push"
+    },
+    "approachTime": "Long - about 10 miles/3,100 ft to Buck Creek Pass from the Trinity trailhead on Chiwawa River Road; most parties treat this as a 2-3 day backpack trip with a scramble day rather than a single long car-to-summit push",
+    "requiredSkills": [
+     "Class 3 scrambling with exposure management",
+     "Off-trail / cross-country route-finding (no maintained summit trail)",
+     "Loose rock (talus/blocky terrain) awareness",
+     "Basic snow travel/self-arrest for lingering early-season snowfields",
+     "Wilderness navigation (map, compass, or GPS)"
+    ],
+    "experienceLevel": "Comfortable, competent Class 3 scrambler with exposure tolerance and remote-wilderness self-sufficiency; not a beginner objective given the long approach and loose rock"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August the most reliable window",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snowfields on the approach and ridge; conditions improve through late July as the season window opens",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "In season - the route is typically snow-free with the most stable transitional east-side weather",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still climbable and usually melted out, but shorter days and an increasing chance of early fall weather narrow the margin",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Transitional east-side climate - summer offers the most stable weather with warm days and cool nights; overall a short, dry high-pressure window bracketed by snow in spring/fall",
+     "probability": "Afternoon thunderstorms/isolated convective buildups are possible on east-side Cascades ridgelines in Aug, raising lightning risk on the exposed ridge"
+    },
+    "exposure": "Ridge exposure and loose blocks: a slip on exposed Class 3 sections could result in a serious fall, so staying on the easiest line and testing loose rock is important",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route climbed outside the NWAC forecast season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; the South Ridge scramble line stays off the peak's glaciated aspects"
+   },
+   "data_quality": {
+    "gaps": [
+     "Elevation is cited as both 8,534 ft (current USGS/GNIS-derived figure, Wikipedia/Peakbagger) and 8,573 ft (older triangulated maps, some WTA trip reports) — used 8,534 ft as the more authoritative modern figure.",
+     "Exact NWAC avalanche forecast zone boundary for this specific peak not confirmed from a primary source.",
+     "No confirmed reopening date for the Chiwawa River Road closure beyond \"unlikely in 2026\" per the Forest Service.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/97CC",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.09363,
+    "peakLng": -120.9122,
+    "trailhead": "Trinity Trailhead (end of Chiwawa River Road)",
+    "trailheadLat": 48.071966,
+    "trailheadLng": -120.84999,
+    "trailheadDirection": "From the Trinity Trailhead (~2,800 ft) at the end of Chiwawa Valley Road 6200"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Described generically as 'Class 3, exposed scrambling — gear and experience recommended.' Route-specific South Ridge trip reports were sparse; inferred that a rope is not typically carried for the ridge scramble itself given comparable Class 3 Cascades scrambles, though some parties may carry a short rope/sling for exposed moves.",
+   "ascender": null,
+   "corrections": "Limited South Ridge-specific source data. Gear profile inferred from the Class 3 rating and regional norms.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Trinity to Buck Creek Pass, then the High Pass high route around the west side",
+     "hours": "6",
+     "notes": "Start at Trinity at the end of the Chiwawa River Road, FR 62, at about 2,800 ft. Take the Buck Creek trail #1513, which splits off the Chiwawa River trail within the first mile and climbs steadily to Buck Creek Pass — roughly six hours and about 3,100 ft of gain.\n\nWhy this way round at all is worth understanding before you commit: Buck sits only about three miles from Trinity as the crow flies and is Class 2-3 from the south-west, but a long rugged ridge runs north and south of it and there is no road or trail up the Napeequa on the west, so the normal route is a very long way round. The two documented ways to reach that west side are the high route north from Buck Creek Pass and Little Giant Pass from the south.\n\nAt the pass there is a large established camp with toilets just before the switchbacks up toward Liberty Cap. FILL UP WITH WATER THERE — there is none for the next four miles and the ridge walk is fully sun-exposed.\n\nFollow the old High Pass trail as it winds high around the side of Liberty Cap, then south for several miles until the tread dies out in talus and hard snowfields at High Pass; crampons are worth having for that. Contour through the pass and under Mount Berge, then angle up to the ridge crest just south of Point 7839. A short section of Class 3 reaches a faint saddle from which there is an easy walk-off down into Louis Creek Basin.",
+     "gainFt": 3100,
+     "season": "Roughly Jul-Sep; the traverse from the Berge saddle crosses steep heather that is nasty when wet, and holds snow into summer",
+     "hazards": [
+      "No water for four miles beyond Buck Creek Pass on an exposed ridge",
+      "Steep heather ledges at the Berge saddle, very sketchy when wet",
+      "Waterfall slabs below the traverse line if you lose too much height",
+      "Hard snowfields at High Pass wanting crampons",
+      "Loose rubbly schist on the summit crest, with a fatal fall on record on this peak",
+      "Burn scar on the lower Buck Creek trail — hot, and blowdown"
+     ],
+     "baseFinding": "The critical instruction on the traverse is about HEIGHT, and it comes with a stated consequence: from the saddle south of Berge, curving right around the bowl toward the mountain, STAY HIGH. Drop too low and you end up in steep waterfall slabs. If you are looking at running water over slabby ground, you have lost too much elevation and should climb back.\n\nThe arrival is unmistakable and it is not rock: you reach a beautiful forested bench with larches — good enough that parties note it as a campsite — and CROSS A RIVER. Once across that river you are at the base of Buck.\n\nAbove there the ground is broad pumice, talus and low-angle snowfield up to the south ridge around 7,400 ft, and then rubbly slabby schist along the crest with a short step up to Class 3-4 near a horn close to the top.\n\nSUMMIT WARNING, and it is a genuine unresolved disagreement rather than a caution: parties do not agree how many summits Buck has or which is highest. One party climbed the middle of the long crest, found the register there, and judged it higher than both the north point and the south by twenty feet or more. Another says the south is the true one. A third found the register — dated 1967 — on the NORTH horn and reported the two tops as roughly equal. Only one of those parties actually measured anything. The summit crest holds several bumps within a few feet of each other, so expect to walk the crest rather than to arrive at an obvious high point, and do not treat a register as proof.\n\nA useful sighting cue from a party approaching by a different line: the summit does not come into view until you reach the flat ground around 8,000 ft, in an upper cirque one climber described as looking like the flying bridge of a boat.\n\nThis mountain has killed someone — a climber fell fifty feet scrambling on a route on the east side, direct from Trinity, in 2018. The direct east line involves a river ford and a savage brushy bushwhack and is generally recommended as a descent rather than an ascent."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Pumice and talus slopes to the south ridge",
+     "notes": "From the basin, ascend broad pumice and talus slopes and a low-angle snowfield to gain the south ridge around 7,400 ft; an ice axe, and crampons in early season, are worth carrying."
+    },
+    {
+     "n": 2,
+     "class": "Class 2-3",
+     "label": "South ridge crest to the summit",
+     "notes": "Follow the ridge crest through Class 2-3 terrain, stepping to locally 3-4 near a horn/gendarme close to the true summit, on loose, rubbly, slabby schist. Rockfall/loose schist is the main hazard - helmet recommended, especially with parties above or below. The summit crest has several bumps within feet of each other, so take care identifying the true high point."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5800,
+     "name": "Buck Creek Pass and the High Pass camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the shortest objective from here. Buck Mountain rises directly south across the valley and is normally taken by leaving the Buck Creek trail lower down for the east ridge of Cleator and the Buck–Berge col, which also gives Mount Berge. From the pass a way trail continues north over Flower Dome to High Pass, which is both a fine high camp in its own right and the link over into the Napeequa, tying this side of the zone to Clark and Luahna. Getting here is around ten miles and three thousand feet of steady forest walking up Buck Creek from Trinity, so it is a full first day. It is a scenic and genuinely popular pass, which for a climbing party means arriving early enough to get a site. When the Chiwawa road is shut at Atkinson Flat the trailhead itself is roughly eleven road miles further on, which turns a two-day trip into a four-day one or a long bike shuttle.",
+     "water": "A stream at the pass is the main supply and is reliable through the season; the higher camps toward High Pass run on snowmelt only and can be dry by September",
+     "permit": "Free self-issue Glacier Peak Wilderness permit at the Trinity trailhead, twelve-person party limit, Northwest Forest Pass for parking. Fires are prohibited where posted and the meadow ground here is exactly the kind of place that gets posted — carry a stove. Camp on the bare established sites rather than in the heather. The road is the real permit question: the Chiwawa River road is closed from Atkinson Flat north to Trinity under a storm order running through the end of 2027, with no reopening estimate, and a large 2026 fire closure covered the same road on top of it.",
+     "capacity": "Several established forested and meadow-edge sites at the pass itself, enough for a few parties, with rougher and more exposed ground higher toward Flower Dome and High Pass"
+    },
+    {
+     "name": "Buck Creek Pass",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "name_search": "south ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "area_id": "wa_esmeralda_peaks",
+   "name": "Standard Scramble (Esmeralda Basin)",
+   "discipline": "mountaineering",
+   "grade": "Class 2",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 335,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Oct",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "crampons (early season, if the headwall gully is still snow-filled)",
+    "trekking poles (creek crossings, scree)"
+   ],
+   "hazards": [
+    "routefinding among the multiple Esmeralda summits",
+    "afternoon thunderstorms",
+    "loose talus and scree on the upper ridge",
+    "lingering snow/ice in the north-facing headwall gully into early summer",
+    "early-season creek crossings in Esmeralda Basin"
+   ],
+   "verif": null,
+   "overview": "Esmeralda Peaks form a rugged, multi-summit ridge at the south end of the Teanaway Range in the Wenatchee Mountains, straddling the boundary of the Alpine Lakes Wilderness about 2.5 miles south of Ingalls Peak. The massif has an east and a west summit roughly 10 vertical feet apart, with older topos disagreeing on which is the true high point — most parties tag both. It sits on the USGS Mount Stuart quadrangle and is a popular moderate scramble objective with close-up views of Mt. Stuart and, from the ridge, distant Mt. Rainier. The line described here climbs out of Esmeralda Basin toward Fortune Creek Pass before leaving the trail for a Class 2 talus-and-heather scramble to the summit ridge; the peaks can also be reached from the east via the De Roux Creek Trail, a separate, steeper scree scramble on their south side.",
+   "beta": "From the De Roux trailhead (3,800 ft), follow the Boulder-De Roux Trail #1392 roughly 3 miles west up the valley between Esmeralda Peaks and Koppen Mountain, passing several waterfalls, to a scree field near the final switchback (~5,600 ft) marked by a house-sized boulder. Leave the trail here and climb straight up a sustained, ~1,100 ft Class 2 scree/talus slope to the west summit (6,765 ft, true high point and register location); many topo maps mark the eastern summit (~10 ft lower) as the true top, so most parties tag both. The upper 100-150 ft is loose broken rock but not technically difficult; no rope is normally needed.",
+   "turnaround": "Set a turnaround time that gets you off the summit ridge before typical July–August afternoon thunderstorms build over the Teanaway high country.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 3300,
+   "loss_ft": 3300,
+   "dist_km": 6.4,
+   "max_angle": null,
+   "rappels": "None — Class 2 walk-off descent, no rappels required",
+   "commitment": null,
+   "face": "South side, above the De Roux Creek drainage",
+   "permit": null,
+   "comms": null,
+   "descent": "Downclimb the same talus/heather line back to the vicinity of Fortune Creek Pass, then rejoin the Esmeralda Basin Trail for the walk out; parties carrying an axe sometimes glissade or plunge-step an early-season snow gully above the basin to save time.",
+   "obj_haz": [
+    "Loose, unconsolidated scree and talus for nearly the entire scramble",
+    "No established boot path or cairns above ~5,600 ft — genuine route-finding required",
+    "Early/late-season snow on the shaded upper slopes",
+    "Afternoon thunderstorms build quickly in the Teanaway's rain-shadow summers"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.440532,
+     "lng": -120.938446,
+     "elev": 4400,
+     "name": "Ingalls Way / Longs Pass Trail 1390 split",
+     "note": "Trail 1390 forks off toward Ingalls Way and Longs Pass; stay on the Esmeralda Basin Trail (1394) climbing the old mining road.",
+     "type": "Junction",
+     "distMi": 0.4
+    },
+    {
+     "lat": 47.45275,
+     "lng": -120.96288,
+     "elev": 5200,
+     "name": "Esmeralda Basin camps",
+     "note": "Established campsites in open meadow/basin below the headwall, fed by small side streams cascading off the surrounding slopes.",
+     "type": "Campsite",
+     "distMi": 2.2
+    },
+    {
+     "lat": 47.456599,
+     "lng": -120.966091,
+     "elev": 5700,
+     "name": "Lake Ann Trail 1226 junction",
+     "note": "Side trail splits north to Lake Ann overlook; keep straight/left on the main tread climbing toward Fortune Creek Pass.",
+     "type": "Junction",
+     "distMi": 3
+    },
+    {
+     "lat": 47.45714,
+     "lng": -120.97099,
+     "elev": 5960,
+     "name": "Fortune Creek Pass",
+     "note": "Barren, rocky saddle where the maintained trail ends; leave the trail here and head south up open slopes toward Esmeralda's west summit.",
+     "type": "Junction",
+     "distMi": 3.5
+    },
+    {
+     "lat": 47.446757625000004,
+     "lng": -120.968905875,
+     "elev": 6400,
+     "name": "Summit talus/scree slope",
+     "note": "Loose, blocky talus above the pass with sections of unstable rock reported class 3/4 near the final saddle - test holds before weighting them.",
+     "type": "Hazard",
+     "distMi": 4
+    },
+    {
+     "lat": 47.43656,
+     "lng": -120.93697,
+     "elev": 4269,
+     "name": "Esmeralda Basin Trailhead (FR-9737)",
+     "note": "The correct approach is via FR-9737 to the De Roux Creek trailhead/campground, then the Boulder-DeRoux Trail southwest to a scree gully leaving the trail near the last switchback at ~5600ft.",
+     "type": "Trailhead",
+     "elevFt": 4269
+    },
+    {
+     "lat": 47.440662,
+     "lng": -120.968166,
+     "elev": 6765,
+     "name": "Esmeralda Peaks - West Summit (true/high summit)",
+     "type": "Summit",
+     "elevFt": 6765
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 7,
+    "summitTimeHrs": 7,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "From the Esmeralda/Ingalls Lake trailhead, follow the Esmeralda Basin Trail up through wildflower meadows and a rocky headwall to Fortune Creek Pass, then leave the trail for a Cla…",
+      "fromTo": "Car-to-car: both Esmeralda summits",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack needed — this is a non-technical Class 2 scramble with no fixed protection or established rope work.",
+   "what_to_bring": [
+    "10 essentials",
+    "helmet",
+    "trekking poles",
+    "early-season ice axe/crampons",
+    "sun protection — the basin headwall has little shade"
+   ],
+   "pro_tips": [
+    "Tag both the east and west summits — topos disagree on the true high point, and the summit register sits on the west summit",
+    "Use Fortune Creek Pass as a natural turnaround/bail point if the scramble above looks snow-loaded or storms are building",
+    "Filter water low in the basin — the upper mountain and ridge are dry"
+   ],
+   "watch_out": [
+    "Multiple false summits and a very similar-looking east/west summit pair — many parties tag the wrong one",
+    "Loose, exposure-prone talus low on the ridge",
+    "Afternoon thunderstorms build quickly over the Teanaway high country in July–August — start early and be off the ridge by early afternoon"
+   ],
+   "pro_needs": "None; a rope/rack is not used on the standard route.",
+   "best_season": "Mid-July through October",
+   "high_point_ft": 6765,
+   "aid_grade": null,
+   "approach": "Start at the Esmeralda Basin / Ingalls Lake Trailhead (aka Esmeralda Trailhead, elev. ~4,300 ft) at the end of FR-9737, and take Esmeralda Basin Trail #1394. At about 0.4 mi you'll hit a signed junction with the Ingalls Way / Longs Pass Trail (#1390); stay straight/left to remain on the Esmeralda Basin Trail (the right fork climbs to Lake Ingalls and is off-limits to dogs). From here the trail follows an old mining road up the North Fork Teanaway drainage through subalpine forest, crossing a couple of small side-creeks (these are the last dependable water before the basin opens up — fill up here in late season). Around 2-3 mi the trail breaks out into the wildflower meadows of Esmeralda Basin proper, with the craggy Esmeralda Peaks visible directly ahead. From roughly 3 mi (~5,600-5,800 ft) the trail begins climbing via rockier switchbacks, skirting the north side of Ingalls Peak, and tops out at Fortune Creek Pass (~5,900-6,000 ft, ~3.5 mi from the TH) — a barren, open saddle with views toward Mt. Stuart, Hawkins Mountain, and (on a clear day) Rainier. Leave the maintained trail at or just below the pass and angle east/northeast off-trail onto the open talus and scree slopes on the south/southwest aspect of Esmeralda's west (true) summit. This last stretch is roughly 900-1,100 ft of unmaintained, sustained Class 2 talus/scree scrambling with some minor route-finding through boulder bands — parties note a rockier crux band partway up that's easiest skirted to the west, and a boulder-field alternative exists farther west if the direct scree gully is too loose. Watch for rockfall from parties above/below on this loose terrain, lingering snow patches in the gully into early summer (traction/axe useful then), and generally no water once you leave the basin meadows.",
+   "descent_text": "This is a walk-off/downclimb scramble with no rappelling. Retrace the ascent line: descend the same Class 2 talus/scree slope back down to Fortune Creek Pass, taking care on the loose scree (many parties find it faster and safer to plunge-step or glissade lingering snow in the gully in early season rather than fighting the talus). From the pass, drop back onto the maintained Esmeralda Basin Trail #1394 and follow it back down through the meadows and forest to the trailhead, retracing the ~3.5 mi hike-in. The two summits of Esmeralda Peaks are close enough that some parties traverse between the east and west high points along the connecting ridge before descending the same southwest gully — this adds minor Class 2-3 ridge scrambling but no additional technical gear. No fixed anchors, bolts, or rope work are reported on this route; the only real descent hazards are loose rock underfoot and reduced visibility route-finding back to the correct gully in whiteout/low-cloud conditions given the broad, similar-looking talus slopes above Fortune Creek Pass.",
+   "bail": "From anywhere on the ridge, retreat the way you came to Fortune Creek Pass; from the pass it's a straightforward, well-established trail all the way back to the car.",
+   "pitch_detail": [
+    {
+     "grade": "Trail",
+     "notes": "De Roux trailhead (3,800 ft) on Boulder-De Roux Trail #1392 through forest to a De Roux Creek crossing, sometimes on two logs.",
+     "pitch": "Trailhead to creek crossing"
+    },
+    {
+     "grade": "Trail",
+     "notes": "Continue ~1.6-3 mi up the valley between Esmeralda Peaks and Koppen Mountain past several waterfalls to a scree field near ~5,600 ft, marked by a house-sized boulder at the final switchback.",
+     "pitch": "Trail to scree exit"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "~1,100 ft of sustained, loose scree and talus up the southwest slope to the west (true high point, 6,765 ft) summit; upper 100-150 ft is loose broken rock.",
+     "pitch": "Scree/talus scramble"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Short ridge scramble between the west and east summits; the west holds the register, though many topo maps mark the east as the true summit.",
+     "pitch": "Summit traverse"
+    }
+   ],
+   "itinerary": {
+    "cal": "NW Forest Pass required; the trailhead lot is small and fills early on summer weekends, and the route is typically snow-free and in best condition July-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Esmeralda/Ingalls Lake trailhead, follow the Esmeralda Basin Trail up through wildflower meadows and a rocky headwall to Fortune Creek Pass, then leave the trail for a Class 2 talus/heather scramble onto the ridge. Tag the west summit (register) and traverse to the nearby east summit before retracing the same line back down. Done entirely in a day — no camp is needed.",
+      "hours": 7,
+      "miles": 8.6,
+      "title": "Car-to-car: both Esmeralda summits",
+      "gainFt": 2500,
+      "lossFt": 2500,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave trailhead (4,269 ft)",
+        "detail": "The small Esmeralda/Ingalls Lake trailhead lot fills early on summer weekends, so an early start is standard."
+       },
+       {
+        "time": "6:15 AM",
+        "label": "Esmeralda Basin / Ingalls Way junction",
+        "detail": "Stay left onto the Esmeralda Basin Trail (~0.4 mi in)."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Reach Fortune Creek Pass (5,960 ft)",
+        "detail": "~3 miles of trail through the basin and up the headwall switchbacks; this is where maintained tread ends."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "West summit (6,776 ft)",
+        "detail": "Class 2 talus/heather scramble up onto the Esmeralda ridge from at or below the pass."
+       },
+       {
+        "time": "10:15 AM",
+        "label": "East summit",
+        "detail": "Short ridge traverse to the second, slightly lower summit; many parties tag both."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Downclimb the same talus/heather line to the pass, then walk out the trail."
+       }
+      ],
+      "objective": "Tag the west (true, 6,776 ft) and east summits via Fortune Creek Pass"
+     }
+    ],
+    "totalNote": "A single long day car-to-car: roughly 6-9 hours, ~8.6 miles round trip with 2,500 ft of gain — no backpacking or camp required."
+   },
+   "access": {
+    "fees": "$5/vehicle/day self-pay, or $30 annual Northwest Forest Pass; Recreation.gov Digital Day Pass also accepted",
+    "rules": "Dogs are permitted on the Esmeralda Basin Trail itself but prohibited beyond the 0.4-mi junction with Ingalls Way/Longs Pass Trail; stay on trail through the wildflower basin. Dispersed target shooting occurs legally on adjacent National Forest land near the lower road — expect occasional gunfire noise.",
+    "permit": "Free self-issued Alpine Lakes Wilderness permit — fill out at the trailhead kiosk",
+    "closures": "FR-9737 (North Fork Teanaway Road) is gated/unplowed in winter and early spring; the nearest winter parking is the Teanaway/29 Pines Sno-Park about 2.5 miles north, which requires a WA Sno-Park permit",
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District",
+    "passRequired": "Northwest Forest Pass or America the Beautiful/Interagency Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+    }
+   },
+   "road": {
+    "name": "FR-9737 (North Fork Teanaway Road)",
+    "status": "Gravel and rough for the last ~9–10 miles; generally passable to passenger cars in dry conditions but has potholes and washboard",
+    "driveNote": "From WA-970, follow the paved North Fork Teanaway Road about 13 miles, then gravel FR-9737 about 9.6 miles to the Esmeralda/Ingalls Lake trailhead (elev. 4,269 ft)",
+    "seasonalGate": "Typically opens in late spring/early summer after snowmelt; unplowed and effectively closed in winter near the 29 Pines area"
+   },
+   "climate": {
+    "fall": "Cooler and stable, overlapping with hunting season (roughly September-October); early snow possible by late October.",
+    "spring": "Snow lingers on the upper approach and scree into early-mid June; De Roux Creek runs high with snowmelt.",
+    "summer": "Hot and dry; scree typically snow-free by July with little shade on the southwest-facing slope.",
+    "winter": "Snowbound; FR 9737 gated and unplowed, accessible only by ski, snowshoe, or snowmobile.",
+    "typical": "East of the Cascade crest in the rain-shadow zone: summers are warm and dry with strong sun exposure on the basin's open slopes, but afternoon thunderstorms build regularly over the Teanaway high country in July and August. Winters are cold with heavy snow that can linger in north-facing gullies near the summit block into early summer.",
+    "bySeason": {
+     "fall": "Stable, cool conditions and often the best rock; larch color peaks in early October; nights below freezing.",
+     "spring": "Basin and approach are often still snow-covered into June; an ice axe may be needed on the headwall.",
+     "summer": "Prime climbing window; hot at the trailhead but weather can turn stormy quickly — start early to be off the ridge before afternoon convection builds.",
+     "winter": "FR-9737 is unplowed/gated near 29 Pines; access effectively requires skis or snowshoes and avalanche awareness."
+    },
+    "forecastZone": "NWAC East Central"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to nonexistent in Esmeralda Basin and on the summit ridge; dial 911, which routes to Kittitas County Sheriff dispatch for backcountry SAR response",
+    "county": "Kittitas",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest",
+    "nearestHospital": "KVH Hospital (Kittitas Valley Healthcare), 603 S. Chestnut St, Ellensburg, WA — 24-hour ER, roughly 35 miles from the trailhead; KVH Urgent Care in Cle Elum (214 W. 1st St) is closer but is not a trauma-capable ER",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July-September see the heaviest trailhead/basin traffic; the summit scramble itself rarely has other parties on it",
+    "solitudeRating": 3,
+    "estimatePerSeason": "No firm party count is known; trailhead/basin corridor is a popular Teanaway destination (shared access with Lake Ingalls) and sees heavy weekend hiker traffic, but the Esmeralda Peaks summit itself is comparatively lightly visited — parties describe overflow parking and crowded basin trails while reporting solitude on the actual summit block"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Moderate-to-strong hiker; a full day of basin approach plus off-trail talus ascent, several thousand feet of gain",
+     "packWeight": "Light day pack (water, layers, navigation tools) — no overnight or technical gear required"
+    },
+    "approachTime": "Full-day car-to-car objective via Esmeralda Basin; exact trailhead mileage/hours not specified",
+    "requiredSkills": [
+     "Basic map/navigation and routefinding (multiple similar-looking sub-summits)",
+     "Sure-footed movement on loose rock and talus",
+     "Weather judgment for afternoon thunderstorm bail decisions"
+    ],
+    "experienceLevel": "Comfortable on sustained Class 2 talus/scree with some prior scrambling mileage; needs to handle routefinding decisions among the multiple Esmeralda sub-summits without a defined trail"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October, with August-September as the most reliable stretch",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Basin is generally accessible by mid-July but lingering snow patches from the prior winter can still be present early in the month; thunderstorm season is active",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Prime dry-season conditions; watch for afternoon storm buildup",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Excellent and clear, but early-season snow is possible later in the month, especially at higher sub-summits",
+      "status": "good"
+     },
+     "September": {
+      "reason": "Cool, clear, stable east-slope weather; one of the best months",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "East-slope Cascade climate — generally dry and sunny in summer, cooling into clear fall conditions by September-October",
+     "probability": "Afternoon thunderstorms are the primary weather hazard and are common on the east slopes in summer; plan for an early start and to be off exposed terrain by early afternoon"
+    },
+    "exposure": "Class 2 terrain with low technical fall exposure overall, but loose rock and talus among the multiple Esmeralda sub-summits make routefinding errors and slip-and-fall on scree the dominant hazard rather than sustained cliff exposure",
+    "avalanche": {
+     "zone": "NWAC East Slopes Central (nearest published forecast zone) — this is a dry-season, non-glaciated summer/fall scramble, so NWAC winter avalanche forecasts do not meaningfully apply to the July-October climbing window",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact scramble line and elevation gain from Fortune Creek Pass to the summit ridge is not documented precisely in any single source — trip reports describe slightly different talus/heather lines",
+     "No confirmed GPX or waypoint track exists for this specific Esmeralda Basin approach",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.441115,
+    "peakLng": -120.969755,
+    "trailhead": "Esmeralda Basin Trailhead (FR-9737)",
+    "trailheadLat": 47.43656,
+    "trailheadLng": -120.93697,
+    "trailheadDirection": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 2 scree/talus scramble from De Roux Creek/Esmeralda Basin; no technical gear needed. Ice axe recommended if snow present early season.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Boulder-De Roux Trail #1392 to the last switchback",
+     "notes": "This is the standard approach. From the De Roux trailhead follow the Boulder-De Roux Trail west up the valley between the peaks and the mountain opposite; at the junction a mile or so in, the left branch is the signed De Roux spur and the way on is the right-hand trail signed for Gallagher Head Lake. That climbs steadily for another mile and a half, topping out at a creek crossing that takes some balance, and passes several waterfalls before making its final switchback across a talus ridge below an open scree field. The Esmeralda Basin trail on the far side of the massif connects to this one only as a long loop by way of the jeep road and the lake, so it is a different way round to the same departure rather than a separate climbing line.",
+     "season": "July into October. The slope faces south and clears early, though the scree is at its worst fully dry.",
+     "hazards": [
+      "A sustained scree and talus slope of roughly 1,100 ft with nothing to hold a slip",
+      "Navigation through the meadows, tree cover and upper boulder fields is genuinely tricky and many paths lead up with none of them obvious",
+      "The upper hundred to hundred and fifty feet is loose broken rock, easy to send down onto a party below",
+      "One short section of steeper scrambling has been used to reach the final summit block",
+      "Two summits within about ten feet of each other in height, with the maps and the register disagreeing about which is which",
+      "No water once you leave the valley trail"
+     ],
+     "baseFinding": "A HOUSE-SIZED BOULDER AT THE LAST SWITCHBACK IS THE MARKER, AND YOU LEAVE THE TRAIL ON ITS CLIMBER'S LEFT. Walking up the valley past the waterfalls, the trail makes its final switchback across a talus ridge somewhere around 5,500 to 5,600 ft, and a single boulder the size of a house sits at that turn. Leave the tread there, on the boulder's climber's-left side, and head straight up the hillside on a northeast bearing. The overshoot tell is unmistakable: past that last switchback the trail stops climbing altogether and begins a long traverse toward the lake at the head of the valley, so if you are contouring rather than gaining and no big rock has appeared, you have gone by it. The upper mountain comes into view around 6,200 ft. Nothing above is marked and many faint paths lead up — none is the route, and either the line under the southwest ridge or the talus further climber's right will go. At the top there are two knobs a couple of hundred yards apart: the western one is a walk-up and is very slightly the higher, while the eastern is the one the maps mark. Tag both."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2",
+     "label": "South/southwest talus and scree slopes",
+     "notes": "Leave the maintained trail at or just below Fortune Creek Pass and angle east/northeast off-trail onto the open talus and scree slopes on the south/southwest aspect of Esmeralda's west (true) summit. Roughly 900-1,100 ft of unmaintained, sustained talus/scree scrambling with some minor route-finding through boulder bands. Watch for rockfall from parties above/below on this loose terrain, lingering snow patches in the gully into early summer (traction/axe useful then), and no water once you leave the basin meadows."
+    },
+    {
+     "n": 2,
+     "label": "Rockier crux band",
+     "notes": "A rockier crux band partway up is easiest skirted to the west; a boulder-field alternative exists farther west if the direct scree gully is too loose."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune Peak's standard line goes up the basin and over the pass near Lake Ann before turning up the peak; both are honest day trips from the road end, so this is a place to sleep when the party is slow, the day is short, or you want two summits without driving twice. The trail leaves the road end at about 4,500 feet and climbs gently through meadow, timber and small stream crossings before the ground steepens toward the pass; take the Lake Ann branch to reach the bench and the knoll above it, which has a wide view back down the upper Teanaway. Fortune Peak can also be climbed by its east slope out of Headlight Basin, which is a different camp on the other side of the divide and is described with the Ingalls group rather than here. Mountain goats work this whole area and are bold about salt — keep gear packed and relieve yourself well away from camp.",
+     "water": "The bench camp has running water beside it, fed by snowmelt draining the basin, and small streams cross the main basin trail lower down. All of it is snowmelt and all of it fades: reliable through July, marginal in August, and effectively gone by September, when the basin is dry rock and cured grass. There is no water at all on the pass or on either summit.",
+     "permit": "Alpine Lakes Wilderness above the basin, under the Cle Elum district and entirely outside the Enchantment Permit Area — a free self-issued slip from the trailhead box covers day and overnight use, with no quota, no lottery and no reservation. Northwest Forest Pass to park at the Esmeralda Basin trailhead. No campfires; this is open subalpine meadow and the ban is both seasonal and permanent by elevation. Camping is prohibited at Ingalls Lake, which is a different basin over the divide, and the designated sites in Headlight Basin are the legal option on that side.",
+     "capacity": "Small scattered sites rather than a campground — a bench part way up the Lake Ann branch takes a tent or two, and a knoll on its east side holds several more; nothing here suits a large group"
+    },
+    {
+     "name": "Esmeralda Basin camps",
+     "role": "main",
+     "type": "camp"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard scramble esmeralda basin",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "area_id": "wa_bryant_peak",
+   "name": "Southeast Slopes",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1926 - Anderson, Best, Maxwell, Shorrock, West, Wunderling (first ascent of Bryant Peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "SE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Waterproof boots",
+    "Gaiters",
+    "Helmet",
+    "Trekking poles"
+   ],
+   "hazards": [
+    "loose scree",
+    "lingering snow early season",
+    "steep loose gully between Bryant and Chair Peak funnels rockfall from parties above"
+   ],
+   "verif": null,
+   "overview": "Bryant Peak (5,801 ft) sits on the ridge between Chair Peak and The Tooth above the Source Lake and Snow Lake basins in the Alpine Lakes Wilderness, about 0.65 miles southeast of Chair Peak. Originally named Hemlock Peak, it was renamed in 1925 for Sidney V. Bryant; the peak was first climbed in 1926. It's a popular, moderate scramble often paired with Chair Peak and/or The Tooth on the Alpental skyline traverse. The standard line climbs a steep gully directly from Source Lake to the summit ridge.",
+   "beta": "From Hemlock Pass the route follows the ridgeline toward Bryant Peak, angling right behind trees to a brushy notch, then climbs roughly 170 ft to a meadow at the base of a talus slope that covers about three-quarters of the peak's base. The final scramble goes up rock on the left (or, when snow-free, around the exposed north side) to the summit; the rock is loose and helmets are recommended.",
+   "turnaround": "Turn around with enough daylight and margin to reverse the loose, exposed summit scramble before deteriorating weather, wet rock, or fatigue increase fall and rockfall risk.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 3900,
+   "loss_ft": 3900,
+   "dist_km": 7.25,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "Southeast Slopes",
+   "permit": null,
+   "comms": "No confirmed cell coverage data found for this specific route; the broader Snoqualmie Pass/I-90 corridor has patchy but sometimes usable cell signal on ridges and summits, unreliable in valleys and basins.",
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "avalanche"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.44542,
+     "lng": -121.42353,
+     "elev": 2300,
+     "name": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+     "note": "The Denny Creek Trail -> Hemlock Pass -> ridge -> SE talus field approach is the one used for this Southeast Slopes route.",
+     "type": "Trailhead",
+     "elevFt": 2300,
+     "directions": "Take I-90 to Exit 52, then follow Alpental Road to its end. Park at the Alpental day-use trailhead, at roughly 3,100 to 3,120 feet."
+    },
+    {
+     "lat": 47.429115,
+     "lng": -121.45393,
+     "elev": 3700,
+     "name": "Source Lake Trail junction",
+     "note": "Signed junction on Snow Lake Trail #1013; leave the main trail here and head toward Source Lake basin.",
+     "type": "Junction",
+     "distMi": 1.8
+    },
+    {
+     "lat": 47.432343,
+     "lng": -121.45366,
+     "elev": 4100,
+     "name": "Source Lake basin stream crossing",
+     "note": "Climbers' path fords the outlet stream draining Source Lake basin around 4,100 ft; last reliable water before the ascent gully, cairns mark the crossing.",
+     "type": "Water",
+     "distMi": 2.2
+    },
+    {
+     "lat": 47.436877,
+     "lng": -121.456524,
+     "elev": 4780,
+     "name": "Gully 'secret passage' below the cliffs",
+     "note": "An easy-to-miss rock passage at ~4,780 ft where the route leaves the open streambed gully and climbs NE along cliff bands into the upper basin.",
+     "type": "Junction",
+     "distMi": 2.7
+    },
+    {
+     "lat": 47.4599,
+     "lng": -121.4607,
+     "elev": 5080,
+     "name": "Thumbtack (rock tower), upper basin",
+     "note": "Prominent free-standing rock tower marking the talus basin between Bryant and Chair Peak; from here the route corkscrews southwest toward the Bryant-Chair gully.",
+     "type": "Junction",
+     "distMi": 3.1
+    },
+    {
+     "lat": 47.443575,
+     "lng": -121.464028,
+     "elev": 5500,
+     "name": "Bryant-Chair Peak gully / talus shoulder",
+     "note": "Steep, loose gully between the two peaks gains a talus shoulder on Bryant's ridge; helmets recommended, rockfall risk from parties above.",
+     "type": "Hazard",
+     "distMi": 3.6
+    },
+    {
+     "lat": 47.446762,
+     "lng": -121.464969,
+     "elev": 5700,
+     "name": "Summit block traverse",
+     "note": "Route stays left (south) of the talus field and traverses the south side of the west shoulder before the final scramble; exposed with loose rock, though holds are generally good.",
+     "type": "Hazard",
+     "distMi": 4.3
+    },
+    {
+     "lat": 47.451358,
+     "lng": -121.46092,
+     "elev": 5801,
+     "name": "Bryant Peak summit",
+     "type": "Summit",
+     "elevFt": 5801
+    }
+   ],
+   "gpx": [
+    [
+     47.4152566,
+     -121.4433387
+    ],
+    [
+     47.4155195,
+     -121.4432092
+    ],
+    [
+     47.4157605,
+     -121.4429502
+    ],
+    [
+     47.4160014,
+     -121.4427237
+    ],
+    [
+     47.4159795,
+     -121.4427237
+    ],
+    [
+     47.4161766,
+     -121.4424647
+    ],
+    [
+     47.4161548,
+     -121.4424323
+    ],
+    [
+     47.4162643,
+     -121.4421085
+    ],
+    [
+     47.4162643,
+     -121.4420762
+    ],
+    [
+     47.4164833,
+     -121.4417524
+    ],
+    [
+     47.4164833,
+     -121.4417201
+    ],
+    [
+     47.4167681,
+     -121.4414287
+    ],
+    [
+     47.4167462,
+     -121.4414611
+    ],
+    [
+     47.4168995,
+     -121.4416229
+    ],
+    [
+     47.4170747,
+     -121.4417201
+    ],
+    [
+     47.4173814,
+     -121.4418819
+    ],
+    [
+     47.4176005,
+     -121.4420762
+    ],
+    [
+     47.4176223,
+     -121.4420762
+    ],
+    [
+     47.4177319,
+     -121.4425618
+    ],
+    [
+     47.4180385,
+     -121.4433711
+    ],
+    [
+     47.4181919,
+     -121.4436624
+    ],
+    [
+     47.418389,
+     -121.4438567
+    ],
+    [
+     47.4184766,
+     -121.4440509
+    ],
+    [
+     47.4184985,
+     -121.4440509
+    ],
+    [
+     47.4187176,
+     -121.4439862
+    ],
+    [
+     47.4188928,
+     -121.4435977
+    ],
+    [
+     47.4188928,
+     -121.4435654
+    ],
+    [
+     47.4189366,
+     -121.4433711
+    ],
+    [
+     47.4192652,
+     -121.4434359
+    ],
+    [
+     47.4197033,
+     -121.443274
+    ],
+    [
+     47.4197033,
+     -121.4432416
+    ],
+    [
+     47.4199005,
+     -121.4430797
+    ],
+    [
+     47.4198566,
+     -121.443015
+    ],
+    [
+     47.420229,
+     -121.442756
+    ],
+    [
+     47.4201633,
+     -121.442756
+    ],
+    [
+     47.4204262,
+     -121.4425294
+    ],
+    [
+     47.420448,
+     -121.4425294
+    ],
+    [
+     47.4206233,
+     -121.4427884
+    ],
+    [
+     47.4206233,
+     -121.4428207
+    ],
+    [
+     47.4207328,
+     -121.4431122
+    ],
+    [
+     47.4209519,
+     -121.4433711
+    ],
+    [
+     47.4210614,
+     -121.4436624
+    ],
+    [
+     47.4210833,
+     -121.4436624
+    ],
+    [
+     47.4211709,
+     -121.4438567
+    ],
+    [
+     47.4211928,
+     -121.4438567
+    ],
+    [
+     47.4211052,
+     -121.4440833
+    ],
+    [
+     47.4211052,
+     -121.4445689
+    ],
+    [
+     47.4211271,
+     -121.4445689
+    ],
+    [
+     47.4213461,
+     -121.4448279
+    ],
+    [
+     47.421368,
+     -121.4448603
+    ],
+    [
+     47.4215432,
+     -121.4450221
+    ],
+    [
+     47.4215432,
+     -121.4450545
+    ],
+    [
+     47.4215871,
+     -121.4452811
+    ],
+    [
+     47.4217623,
+     -121.4454754
+    ],
+    [
+     47.4217842,
+     -121.4460581
+    ],
+    [
+     47.4220252,
+     -121.4464789
+    ],
+    [
+     47.4223756,
+     -121.4471264
+    ],
+    [
+     47.4223318,
+     -121.4471588
+    ],
+    [
+     47.4223099,
+     -121.4477415
+    ],
+    [
+     47.4224632,
+     -121.4482595
+    ],
+    [
+     47.4223538,
+     -121.4483565
+    ],
+    [
+     47.4223756,
+     -121.4483565
+    ],
+    [
+     47.4223975,
+     -121.4485832
+    ],
+    [
+     47.4223756,
+     -121.4485832
+    ],
+    [
+     47.4222661,
+     -121.4488745
+    ],
+    [
+     47.4222661,
+     -121.4489393
+    ],
+    [
+     47.4225289,
+     -121.4493278
+    ],
+    [
+     47.4225728,
+     -121.4495544
+    ],
+    [
+     47.4227042,
+     -121.449781
+    ],
+    [
+     47.4227042,
+     -121.4498134
+    ],
+    [
+     47.4226823,
+     -121.4500723
+    ],
+    [
+     47.4226823,
+     -121.4501048
+    ],
+    [
+     47.4229232,
+     -121.4504932
+    ],
+    [
+     47.4233613,
+     -121.4506227
+    ],
+    [
+     47.4233832,
+     -121.4506551
+    ],
+    [
+     47.4237995,
+     -121.4506551
+    ],
+    [
+     47.4240185,
+     -121.4508493
+    ],
+    [
+     47.4241938,
+     -121.450817
+    ],
+    [
+     47.4243689,
+     -121.4510435
+    ],
+    [
+     47.4246537,
+     -121.4512054
+    ],
+    [
+     47.4249604,
+     -121.4514967
+    ],
+    [
+     47.4248071,
+     -121.451691
+    ],
+    [
+     47.425048,
+     -121.4517234
+    ],
+    [
+     47.4251575,
+     -121.4519176
+    ],
+    [
+     47.4251356,
+     -121.45195
+    ],
+    [
+     47.4250699,
+     -121.452209
+    ],
+    [
+     47.4248728,
+     -121.45195
+    ],
+    [
+     47.4248508,
+     -121.45195
+    ],
+    [
+     47.4247413,
+     -121.4519824
+    ],
+    [
+     47.4248071,
+     -121.4523385
+    ],
+    [
+     47.4249385,
+     -121.452468
+    ],
+    [
+     47.4249165,
+     -121.4525003
+    ],
+    [
+     47.4250042,
+     -121.4530183
+    ],
+    [
+     47.4249822,
+     -121.4530183
+    ],
+    [
+     47.4248508,
+     -121.4536334
+    ],
+    [
+     47.4248508,
+     -121.4536658
+    ],
+    [
+     47.4248071,
+     -121.4539895
+    ],
+    [
+     47.4248946,
+     -121.4542485
+    ],
+    [
+     47.4248946,
+     -121.4542162
+    ],
+    [
+     47.4250918,
+     -121.4539895
+    ],
+    [
+     47.4250918,
+     -121.4539572
+    ],
+    [
+     47.4251794,
+     -121.4537305
+    ],
+    [
+     47.4251794,
+     -121.4536982
+    ],
+    [
+     47.4253765,
+     -121.453245
+    ],
+    [
+     47.4257271,
+     -121.4534068
+    ],
+    [
+     47.4259461,
+     -121.4535363
+    ],
+    [
+     47.4262089,
+     -121.4534715
+    ],
+    [
+     47.4264279,
+     -121.4535363
+    ],
+    [
+     47.4264279,
+     -121.453504
+    ],
+    [
+     47.4266471,
+     -121.4535363
+    ],
+    [
+     47.4269537,
+     -121.4535363
+    ],
+    [
+     47.4273261,
+     -121.4535363
+    ],
+    [
+     47.4273479,
+     -121.4535363
+    ],
+    [
+     47.4276765,
+     -121.4534068
+    ],
+    [
+     47.4276765,
+     -121.4533745
+    ],
+    [
+     47.4281804,
+     -121.4532125
+    ],
+    [
+     47.4284651,
+     -121.453245
+    ],
+    [
+     47.4280927,
+     -121.4537629
+    ],
+    [
+     47.4285308,
+     -121.45386
+    ],
+    [
+     47.4285527,
+     -121.45386
+    ],
+    [
+     47.4290127,
+     -121.4538924
+    ],
+    [
+     47.4292755,
+     -121.4539895
+    ],
+    [
+     47.4294508,
+     -121.4539247
+    ],
+    [
+     47.4298014,
+     -121.4538313
+    ],
+    [
+     47.4300861,
+     -121.4541551
+    ],
+    [
+     47.4302833,
+     -121.4541551
+    ],
+    [
+     47.4305243,
+     -121.4541551
+    ],
+    [
+     47.4309404,
+     -121.4539931
+    ],
+    [
+     47.4309186,
+     -121.4539608
+    ],
+    [
+     47.4312252,
+     -121.4536045
+    ],
+    [
+     47.4314661,
+     -121.4533779
+    ],
+    [
+     47.4315757,
+     -121.4535722
+    ],
+    [
+     47.4315319,
+     -121.4539608
+    ],
+    [
+     47.4315538,
+     -121.4539284
+    ],
+    [
+     47.4318167,
+     -121.4535397
+    ],
+    [
+     47.4318167,
+     -121.4535074
+    ],
+    [
+     47.4318167,
+     -121.4532483
+    ],
+    [
+     47.4318167,
+     -121.453216
+    ],
+    [
+     47.4320576,
+     -121.453054
+    ],
+    [
+     47.43197,
+     -121.4532807
+    ],
+    [
+     47.4321233,
+     -121.453216
+    ],
+    [
+     47.4321014,
+     -121.453216
+    ],
+    [
+     47.4319481,
+     -121.4535397
+    ],
+    [
+     47.4321671,
+     -121.4535074
+    ],
+    [
+     47.4321452,
+     -121.4535397
+    ],
+    [
+     47.4320138,
+     -121.453896
+    ],
+    [
+     47.4322547,
+     -121.4536045
+    ],
+    [
+     47.432408,
+     -121.4537017
+    ],
+    [
+     47.4322328,
+     -121.4540904
+    ],
+    [
+     47.4324519,
+     -121.4538313
+    ],
+    [
+     47.4324519,
+     -121.4538636
+    ],
+    [
+     47.4325833,
+     -121.4538636
+    ],
+    [
+     47.4322985,
+     -121.4543494
+    ],
+    [
+     47.4325833,
+     -121.4543818
+    ],
+    [
+     47.4325614,
+     -121.4543818
+    ],
+    [
+     47.4328023,
+     -121.4543818
+    ],
+    [
+     47.433328,
+     -121.4545761
+    ],
+    [
+     47.4339194,
+     -121.4549647
+    ],
+    [
+     47.4339194,
+     -121.4549971
+    ],
+    [
+     47.4342918,
+     -121.4554505
+    ],
+    [
+     47.434708,
+     -121.4552885
+    ],
+    [
+     47.4346861,
+     -121.4552885
+    ],
+    [
+     47.4349052,
+     -121.455418
+    ],
+    [
+     47.4349271,
+     -121.4559686
+    ],
+    [
+     47.434949,
+     -121.4559686
+    ],
+    [
+     47.4354309,
+     -121.45626
+    ],
+    [
+     47.4355843,
+     -121.4561629
+    ],
+    [
+     47.4355623,
+     -121.4561629
+    ],
+    [
+     47.4355843,
+     -121.4559362
+    ],
+    [
+     47.4360004,
+     -121.4562277
+    ],
+    [
+     47.4360223,
+     -121.4562277
+    ],
+    [
+     47.436329,
+     -121.45626
+    ],
+    [
+     47.4365699,
+     -121.4561629
+    ],
+    [
+     47.436767,
+     -121.4562924
+    ],
+    [
+     47.4368547,
+     -121.4565191
+    ],
+    [
+     47.437249,
+     -121.4566162
+    ],
+    [
+     47.4377747,
+     -121.4566162
+    ],
+    [
+     47.4377747,
+     -121.4566487
+    ],
+    [
+     47.4381909,
+     -121.4572316
+    ],
+    [
+     47.4384099,
+     -121.4571992
+    ],
+    [
+     47.439067,
+     -121.4578792
+    ],
+    [
+     47.4393737,
+     -121.4579117
+    ],
+    [
+     47.4398775,
+     -121.4586565
+    ],
+    [
+     47.4398994,
+     -121.4586565
+    ],
+    [
+     47.4403156,
+     -121.4591099
+    ],
+    [
+     47.4407099,
+     -121.4595632
+    ],
+    [
+     47.4409289,
+     -121.4604052
+    ],
+    [
+     47.4409509,
+     -121.4604376
+    ],
+    [
+     47.4412137,
+     -121.460891
+    ],
+    [
+     47.4412137,
+     -121.4609234
+    ],
+    [
+     47.4412794,
+     -121.4614091
+    ],
+    [
+     47.4414327,
+     -121.4617653
+    ],
+    [
+     47.4415642,
+     -121.4617653
+    ],
+    [
+     47.441608,
+     -121.4612796
+    ],
+    [
+     47.441586,
+     -121.4612472
+    ],
+    [
+     47.4417832,
+     -121.4610205
+    ],
+    [
+     47.4417394,
+     -121.4615387
+    ],
+    [
+     47.4417832,
+     -121.4616682
+    ],
+    [
+     47.4419803,
+     -121.4613444
+    ],
+    [
+     47.442046,
+     -121.4617978
+    ],
+    [
+     47.442046,
+     -121.4617653
+    ],
+    [
+     47.4422432,
+     -121.4614739
+    ],
+    [
+     47.4421337,
+     -121.4620244
+    ],
+    [
+     47.4422213,
+     -121.4623159
+    ],
+    [
+     47.4423308,
+     -121.4623159
+    ],
+    [
+     47.4423746,
+     -121.4619596
+    ],
+    [
+     47.442506,
+     -121.4626397
+    ],
+    [
+     47.4424842,
+     -121.4626721
+    ],
+    [
+     47.4427032,
+     -121.4628988
+    ],
+    [
+     47.4426813,
+     -121.4628664
+    ],
+    [
+     47.442747,
+     -121.4621216
+    ],
+    [
+     47.442725,
+     -121.4621216
+    ],
+    [
+     47.4429879,
+     -121.4626397
+    ],
+    [
+     47.4430099,
+     -121.4629635
+    ],
+    [
+     47.4432508,
+     -121.4632228
+    ],
+    [
+     47.4433603,
+     -121.4632551
+    ],
+    [
+     47.4432727,
+     -121.463579
+    ],
+    [
+     47.4435136,
+     -121.4638057
+    ],
+    [
+     47.4437108,
+     -121.4645181
+    ],
+    [
+     47.4436889,
+     -121.4644858
+    ],
+    [
+     47.4435793,
+     -121.4647772
+    ],
+    [
+     47.4433603,
+     -121.4648743
+    ],
+    [
+     47.4433384,
+     -121.4648743
+    ],
+    [
+     47.4434042,
+     -121.4651334
+    ],
+    [
+     47.443426,
+     -121.4651334
+    ],
+    [
+     47.4435793,
+     -121.4655544
+    ],
+    [
+     47.4437108,
+     -121.4660077
+    ],
+    [
+     47.4437765,
+     -121.4657811
+    ],
+    [
+     47.4438422,
+     -121.4660725
+    ],
+    [
+     47.443645,
+     -121.4666555
+    ],
+    [
+     47.4439736,
+     -121.4667202
+    ],
+    [
+     47.444127,
+     -121.4666231
+    ],
+    [
+     47.444127,
+     -121.4665907
+    ],
+    [
+     47.4441708,
+     -121.4661373
+    ],
+    [
+     47.4442803,
+     -121.4656192
+    ],
+    [
+     47.4444556,
+     -121.466364
+    ],
+    [
+     47.4444556,
+     -121.4663964
+    ],
+    [
+     47.4444556,
+     -121.4669793
+    ],
+    [
+     47.4441927,
+     -121.467206
+    ],
+    [
+     47.4441927,
+     -121.4672384
+    ],
+    [
+     47.4441489,
+     -121.4676594
+    ],
+    [
+     47.444127,
+     -121.4676594
+    ],
+    [
+     47.4439736,
+     -121.4676918
+    ],
+    [
+     47.4437984,
+     -121.4677565
+    ],
+    [
+     47.4441489,
+     -121.4680156
+    ],
+    [
+     47.4443899,
+     -121.4679185
+    ],
+    [
+     47.444806,
+     -121.467886
+    ],
+    [
+     47.4450799,
+     -121.4676617
+    ],
+    [
+     47.4452333,
+     -121.467435
+    ],
+    [
+     47.4454304,
+     -121.467014
+    ],
+    [
+     47.4455618,
+     -121.4669168
+    ],
+    [
+     47.445737,
+     -121.4665929
+    ],
+    [
+     47.445737,
+     -121.4665605
+    ],
+    [
+     47.4459341,
+     -121.4663338
+    ],
+    [
+     47.4459341,
+     -121.4663014
+    ],
+    [
+     47.4460437,
+     -121.4660099
+    ],
+    [
+     47.4460437,
+     -121.4659775
+    ],
+    [
+     47.4461094,
+     -121.4657832
+    ],
+    [
+     47.4462627,
+     -121.4656213
+    ],
+    [
+     47.4465475,
+     -121.4655565
+    ],
+    [
+     47.4465475,
+     -121.465524
+    ],
+    [
+     47.446679,
+     -121.4652973
+    ],
+    [
+     47.446679,
+     -121.4652649
+    ],
+    [
+     47.4467884,
+     -121.4648763
+    ],
+    [
+     47.4467884,
+     -121.4648439
+    ],
+    [
+     47.4468104,
+     -121.464358
+    ],
+    [
+     47.4468104,
+     -121.4642932
+    ],
+    [
+     47.4469199,
+     -121.463937
+    ],
+    [
+     47.4469199,
+     -121.4639046
+    ],
+    [
+     47.4470951,
+     -121.4635807
+    ],
+    [
+     47.4470951,
+     -121.4635483
+    ],
+    [
+     47.4472484,
+     -121.4632892
+    ],
+    [
+     47.4473799,
+     -121.4631272
+    ],
+    [
+     47.4476647,
+     -121.4629653
+    ],
+    [
+     47.4479494,
+     -121.4629005
+    ],
+    [
+     47.448256,
+     -121.4629005
+    ],
+    [
+     47.4486503,
+     -121.4629329
+    ],
+    [
+     47.4488913,
+     -121.4630301
+    ],
+    [
+     47.4492417,
+     -121.4630949
+    ],
+    [
+     47.4492637,
+     -121.4630949
+    ],
+    [
+     47.4494827,
+     -121.4630949
+    ],
+    [
+     47.4497017,
+     -121.4630949
+    ],
+    [
+     47.4499865,
+     -121.4630624
+    ],
+    [
+     47.4500084,
+     -121.4630624
+    ],
+    [
+     47.450337,
+     -121.4628357
+    ],
+    [
+     47.450556,
+     -121.4625766
+    ],
+    [
+     47.450556,
+     -121.4625118
+    ],
+    [
+     47.4507532,
+     -121.4621879
+    ],
+    [
+     47.4507532,
+     -121.4621555
+    ],
+    [
+     47.4509503,
+     -121.4618641
+    ],
+    [
+     47.4509723,
+     -121.4618641
+    ],
+    [
+     47.4511256,
+     -121.4615725
+    ],
+    [
+     47.451235,
+     -121.4612487
+    ],
+    [
+     47.451235,
+     -121.4612162
+    ],
+    [
+     47.4512789,
+     -121.4608276
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "This is done in a single long day car-to-car — no camping. Hike the Denny Creek Trail to Hemlock Pass, then follow the ridge and talus slopes on the standard route to the class 2-3…",
+      "fromTo": "Car-to-car scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "ZERO TECHNICAL GEAR - unroped scramble",
+   "what_to_bring": [
+    "ice axe (early season)",
+    "trekking poles",
+    "helmet (loose rock in the gully)"
+   ],
+   "pro_tips": [
+    "Often part of a skyline traverse",
+    "Pair with Chair Peak or the Tooth",
+    "Alternate SW approach via Hemlock Pass and the Melakwa Lake Trail avoids the steep Source Lake gully",
+    "A quieter NE/east line goes from Source Lake through Great Scott Basin to Bryant Col"
+   ],
+   "watch_out": [
+    "loose footing",
+    "snow early season",
+    "the first high point on the summit block may be a false summit — a short exposed traverse is needed to reach the true top"
+   ],
+   "pro_needs": null,
+   "best_season": "Late July through September — the gully and upper slopes often hold snow into July. A separate, more technical winter/early-season ascent (ice axe and crampons required, significant avalanche hazard) is popular but distinct from the summer scramble.",
+   "high_point_ft": 5801,
+   "aid_grade": null,
+   "approach": "From the Alpental day-use trailhead (~3,120 ft, at the end of Alpental Road via I-90 Exit 52), start on the Snow Lake Trail (#1013), a wide, well-graded trail that climbs through old avalanche-path brush and second-growth forest below the ski area's lower lift line. At roughly 1.8 miles and about 720 ft of gain, leave the main Snow Lake Trail where a boot path splits left (southwest) toward Source Lake rather than continuing right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water before the basin steepens, and worth treating and topping off here — then follow the use trail along the lake's north/east shore into the open basin beneath The Tooth and Chair Peak (Source Lake, ~3,400 ft). From the lake the tread becomes an intermittent boot-track over boulder-hop terrain and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south), staying beneath the broken cliff bands on Bryant Peak's east side, and cross a talus field below the rock spire known locally as \"the Thumbtack\" to reach the mouth of a steep scree-and-talus gully splitting Bryant's southeast face — this is the same drainage backcountry skiers call the \"Bryant Couloir\"/\"wonder gully,\" and it is an active avalanche path in winter and spring, so avoid it in unstable snow or soon after a storm. Ascend the gully favoring its far climber's-right side, which has noticeably firmer footing than the loose center and left. The gully tops out on the Bryant–Chair connecting ridge; from there work south over blocky ridge and talus to the base of the summit block. If the block still holds snow, the final scramble is easy Class 3 with little real exposure; in bare/dry conditions the only reasonable line is around the north (climber's left) side on exposed, distinctly loose Class 3 rock — test every hold. Overall this is about a 9.5-mile round trip with on the order of 3,000–3,400 ft of net gain to the 5,801 ft summit; plan 4–6 hours trailhead-to-summit for a fit party, more if the gully still holds snow requiring axe/crampons.",
+   "descent_text": "This is a walk-off/downclimb scramble — there is no rappelling and no fixed anchors on the standard Southeast Slopes route; rappels = 0. Reverse the ascent line: downclimb the same exposed, loose Class 3 stretch on the summit block's north side (or the easier snow-covered line if it's still in), then pick back across the ridge and talus to the head of the southeast gully. Stay on the ascent line — climber's right — on the way down; parties who drift climber's-left in this gully have gotten cliffed out above steep, loose dirt and been forced to down-scramble exposed, vegetated terrain to regain the route, so don't try to shortcut the fall line. Descend the gully facing in (plunge-stepping or using an axe if snow remains) through its steeper upper section, easing into a talus/boulder walk-down lower down. Because this gully doubles as a backcountry-ski descent and documented avalanche path, avoid it in the morning after a hard freeze-thaw cycle or following fresh snow loading in shoulder-season conditions. From the gully base, retrace the traverse beneath Bryant's cliffs back through Great Scott Basin to Source Lake, then rejoin the Snow Lake Trail (#1013) for the final descent to the Alpental trailhead. Note for context: a separate, considerably harder winter line up Bryant's northeast ridge has been descended with three 60m rappels (summit anchor to a ridge col/gendarme, a second 60m lowering past steep terrain, and a final rap down an ice step) — but that is a distinct technical route, not this standard Southeast Slopes scramble, and does not apply here.",
+   "bail": "Retreat is straightforward on this route: reverse course down the talus to Hemlock Pass and the Denny Creek Trail at essentially any point below the final summit rock step.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Best late June through September once the Denny Creek Trail and upper snowfields have melted out; earlier-season ascents involve more snow travel and require an ice axe.",
+    "days": [
+     {
+      "n": 1,
+      "note": "This is done in a single long day car-to-car — no camping. Hike the Denny Creek Trail to Hemlock Pass, then follow the ridge and talus slopes on the standard route to the class 2-3 summit block, and reverse the same line to descend. Helmets recommended for loose rock and minor exposure near the top.",
+      "hours": 9,
+      "miles": 9.5,
+      "title": "Car-to-car scramble",
+      "gainFt": 3900,
+      "lossFt": 3900,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Denny Creek Trailhead",
+        "detail": "Start at ~2,300 ft; trailhead lot fills early on summer weekends."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Reach Hemlock Pass",
+        "detail": "About 4 miles up Denny Creek Trail No. 1014, gaining roughly 2,300 ft."
+       },
+       {
+        "time": "+3.5 hr",
+        "label": "Base of the summit talus field",
+        "detail": "From the pass, follow the ridge on a 33° bearing, skirting cliff bands, to the meadow below Bryant's talus slopes."
+       },
+       {
+        "time": "+5 to 5.5 hr",
+        "label": "Summit Bryant Peak",
+        "detail": "Final class 2-3 scramble, typically around the north side of the summit block; rock is loose."
+       },
+       {
+        "time": "+6 hr",
+        "label": "Begin descent",
+        "detail": "Reverse the ascent line back through the talus, ridge, and Hemlock Pass."
+       },
+       {
+        "time": "+9 to 9.5 hr",
+        "label": "Back at trailhead",
+        "detail": "Most parties finish the full round trip in 8-10 hours car-to-car."
+       }
+      ],
+      "objective": "Summit Bryant Peak via Denny Creek Trail and Hemlock Pass, then return"
+     }
+    ],
+    "totalNote": "A single long day car-to-car: about 9.5 miles round trip with roughly 3,900 ft of gain/loss, typically 8-10 hours total; no backpacking or camping involved."
+   },
+   "access": {
+    "fees": "$5/day (cash or Scan & Pay QR code) or $30 annual Northwest Forest Pass at the automated fee station; America the Beautiful/Interagency passes also accepted for summer day use. During ski season the Alpental lot now uses Summit at Snoqualmie's paid parking, but the policy changed for 2025-26: instead of a flat ~$55/day charged every day from late Nov through April, fee parking (about $25/vehicle at Alpental) now applies only on weekends and holidays starting late November; the Northwest Forest Pass is not accepted for this resort-operated lot.",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Leave No Trace; wilderness group-size limits apply",
+    "permit": "Free self-issue wilderness permit at the trailhead kiosk (fill out, carry your copy, deposit the stub) — no quota or advance reservation required here (unlike the Enchantments core).",
+    "group_limit": 12,
+    "landManager": "Alpine Lakes Wilderness (Mt. Baker-Snoqualmie National Forest)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Alpental Road, Snoqualmie Pass",
+    "driveNote": "From I-90 Exit 52 (Snoqualmie Pass), go north on Alpental Road about 1.3 miles to its end at the Alpental Ski Area / Snow Lake trailhead parking lot (~3,100 ft). The lot is large but fills early on summer weekends — arrive before mid-morning.",
+    "seasonalGate": "none for the road itself; the lot's fee structure changes for ski season (~Nov 25–Apr 30)"
+   },
+   "climate": {
+    "typical": "Wet maritime climate; clearest mid- to late summer.",
+    "bySeason": {
+     "fall": "Good clear window",
+     "spring": "Snow-covered; avalanche risk",
+     "summer": "Best window with dry slopes",
+     "winter": "Snow-covered"
+    },
+    "forecastZone": "Snoqualmie Pass"
+   },
+   "emergency": {
+    "notes": "Popular, heavily trafficked trailhead; cell coverage is spotty from Source Lake up through the gully and summit block — a satellite messenger/SOS device is worth carrying.",
+    "county": "King County",
+    "rangerStation": "Snoqualmie Ranger District – North Bend Office, 902 SE North Bend Way, Bldg 1, North Bend, WA 98045; (425) 888-1421 (Mt. Baker-Snoqualmie National Forest)",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA — a Level 5 (rural critical-access) trauma center roughly 20 minutes from the trailhead; more serious trauma is typically transferred to Harborview Medical Center in Seattle."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in August, especially when linked into the Chair Peak-Tooth skyline traverse; Mountaineers scramble course outings add periodic weekday/weekend groups",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Roughly 15-30 parties per season - a moderate-traffic Snoqualmie Pass scramble, busier than a remote alpine objective but well below trade routes like Mount Si or Granite Mountain"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Sustained off-trail alpine approach with meaningful elevation gain over rugged talus and heather - solid aerobic fitness needed",
+     "packWeight": "Light day pack (helmet, layers, water, basic first aid) - no technical rack required for the standard line"
+    },
+    "approachTime": "Full alpine day out of Alpental Road trailhead",
+    "requiredSkills": [
+     "Class 2-3 scrambling and routefinding on scree/talus",
+     "loose-rock hazard awareness (helmet recommended)",
+     "basic navigation off-trail",
+     "comfort with early-season snow if climbing at the shoulder of the July window"
+    ],
+    "experienceLevel": "Comfortable on off-trail Class 2-3 terrain with loose rock; prior scrambling experience recommended before attempting the summit block"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August is the core optimal month, with the Mid-July through September window giving a reliable dry-scramble margin either side",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Season opens mid-July; early-month climbs can still encounter residual snow patches before the route fully melts out",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Lingering snow on approach and summit slopes; not within the documented season",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "In season - driest, most stable conditions in a Best summer",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Fall is a Good window; scree and rock are dry, though days shorten and early snow becomes possible late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Wet maritime pattern - summer offers the best stability but conditions can turn quickly",
+     "probability": "Afternoon convective buildups are common in the Cascades in July-August; check a point forecast before committing to the summit block"
+    },
+    "exposure": "Class 2-3 exposure with loose scree underfoot; the final summit block is the main fall-exposure crux, with rockfall/footing hazard more significant than sustained cliff exposure. Snow lingering into early season adds slip/postholing risk before full melt-out",
+    "avalanche": {
+     "zone": "Snoqualmie Pass (NWAC forecast zone) - used as the nearest regional proxy; this route is climbed dry-season and is not typically avalanche-forecasted",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Elevation/prominence for Bryant Peak varies by source (elevation 5,790–5,801 ft; prominence roughly 321–346 ft) — no single authoritative survey confirmed, so area figures were left unchanged.",
+     "No confirmed technical/scramble class rating from a published guidebook (e.g. Beckey's Cascade Alpine Guide) was found; Class 2-3 reflects online trip-report/Mountaineers consensus, not a verified guidebook grade.",
+     "Precise round-trip mileage and total elevation gain from trailhead to summit are not documented in the sources reviewed; the gain figure given is a derived estimate from trailhead and summit elevations, not a measured GPS track.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/3L7T",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.451132,
+    "peakLng": -121.4608365,
+    "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+    "trailheadLat": 47.44542,
+    "trailheadLng": -121.42353,
+    "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Class 2-3 scramble via Hemlock Pass with talus and a rock scramble finish; some exposure and rockfall potential (helmet recommended) but no rope used in trip reports.",
+   "ascender": null,
+   "corrections": "None — reconfirmed via SummitPost, Mountaineers, and WTA sources.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Source Lake and Great Scott Basin to the gully splitting Bryant's southeast face",
+     "notes": "From the Alpental day-use trailhead at about 3,120 ft, take the Snow Lake Trail #1013 through old avalanche brush and second growth. At roughly 1.8 miles and 720 ft of gain, a boot path splits LEFT (southwest) toward Source Lake while the main trail continues right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water — and follow the use trail along the lake's north and east shore into the open basin below The Tooth and Chair Peak. From there the tread becomes intermittent boot-track over boulders and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south) beneath the broken cliff bands on Bryant's east side and cross a talus field to the foot of the gully. About 9.5 miles round trip and on the order of 3,000 to 3,400 ft of gain; four to six hours trailhead to summit for a fit party.",
+     "gainFt": 3400,
+     "season": "Roughly July to September once the gully has melted out; earlier the gully holds snow and needs an axe and crampons",
+     "hazards": [
+      "The gully is an active avalanche path in winter and spring; avoid it in unstable snow or soon after a storm",
+      "Loose scree, with the centre and left of the gully markedly worse than the right",
+      "The gully funnels rockfall from parties above",
+      "Lingering early-season snow, requiring axe and crampons",
+      "Exposed and loose class 3 on the north side of the summit block when the block is dry"
+     ],
+     "baseFinding": "THE THUMBTACK IS THE LANDMARK YOU WALK PAST, AND THE GULLY IS THE ONE IMMEDIATELY BEYOND IT. Contouring south beneath Bryant's east side you cross a talus field below the rock spire known locally as the Thumbtack. The mouth of the route's gully is at the far side of that talus. Spire behind you, steep scree-and-talus gully splitting the face in front of you.\n\nWHAT THE GULLY IS, IN OTHER WORDS: this is the same drainage backcountry skiers call the Bryant Couloir or the wonder gully. If your winter partner knows the ski line, they know the route.\n\nTHE FOOTING TEST TELLS YOU WHERE TO BE WITHIN IT: climb favouring the FAR CLIMBERS' RIGHT side of the gully, which is noticeably firmer than the loose centre and left. A party grinding up loose ground in the middle is in the correct gully and in the wrong part of it.\n\nWHERE IT DELIVERS YOU: the gully tops out on the BRYANT-CHAIR CONNECTING RIDGE, not on a summit. From there you work SOUTH over blocky ridge and talus to the base of the summit block. A gully that finishes on a summit is not this one.\n\nAND THE LAST STEP CHANGES CHARACTER WITH THE SNOW, which is worth knowing before you commit: with snow on the block the final scramble is easy class 3 with little real exposure. Dry, the only reasonable line goes round the NORTH — climbers' left — side on exposed and distinctly loose class 3. Test every hold."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Southeast face gully",
+     "notes": "Steep scree-and-talus gully splitting Bryant's southeast face, entered at its mouth past a talus field below the rock spire known locally as \"the Thumbtack\". Ascend favoring its far climber's-right side, which has noticeably firmer footing than the loose center and left. This is the drainage backcountry skiers call the \"Bryant Couloir\"/\"wonder gully\" and it is an active avalanche path in winter and spring — avoid it in unstable snow or soon after a storm; axe and crampons if it still holds snow."
+    },
+    {
+     "n": 2,
+     "label": "Bryant-Chair connecting ridge",
+     "notes": "The gully tops out on the Bryant-Chair connecting ridge; from there work south over blocky ridge and talus to the base of the summit block."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Summit block",
+     "notes": "If the block still holds snow the final scramble is easy Class 3 with little real exposure. In bare/dry conditions the only reasonable line is around the north (climber's left) side on exposed, distinctly loose Class 3 rock — test every hold. Summit 5,801 ft."
+    }
+   ],
+   "bivy": [],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southeast se slopes",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "area_id": "wa_iron_cap_mountain",
+   "name": "South Route",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1925, a party led by Joe Hazard",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe (early season)",
+    "helmet",
+    "trekking poles (multiple creek crossings on approach)",
+    "map/GPS track (cairns are sparse through the boulder fields and it's easy to wander off-route)"
+   ],
+   "hazards": [
+    "loose rock",
+    "long approach",
+    "route-finding through boulder fields between sparse cairns",
+    "creek crossings along the Middle Fork Snoqualmie / Dingford Creek approach",
+    "lingering snow and ice on north-facing terrain into early-to-mid July"
+   ],
+   "verif": null,
+   "overview": "Iron Cap Mountain (6,347 ft) rises above the Williams Lake and La Bohn Gap country near the heart of the Alpine Lakes Wilderness. Despite its modest elevation, it has striking local relief, climbing about 2,500 feet above the Middle Fork Snoqualmie River Valley in less than a mile. The mountain straddles two drainages: its south side (this route's approach) sheds into tributaries of the Snoqualmie River via the Williams Lake basin, while the north side drains toward the Foss River. It was first climbed in 1925 by a party led by Seattle mountaineer Joe Hazard. This South Route follows the long Middle Fork Snoqualmie / Dutch Miller Gap Trail corridor to Williams Lake, then finishes on Iron Cap's west and north ridges.",
+   "beta": "A long backcountry approach (6.6+ trail miles, ~3,400 ft gain to Chetwoot Lake) followed by off-trail cross-country travel and unroped class 3 scrambling on the west and north ridges. Solid granite in places but loose talus and scree lower down; most parties treat it as a 2-3 day trip with a camp at Big Heart or Chetwoot Lake.",
+   "turnaround": "Given the long approach and off-trail, unmarked ridge terrain, set a firm turnaround time before setting out and stick to it — losing daylight or getting caught by weather on the loose, exposed class 3 ridge or during cross-country travel back to the trail is the main risk on this route.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4707,
+   "loss_ft": 4707,
+   "dist_km": 28.1,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II-III",
+   "face": "West Ridge / North Ridge",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": null,
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "Small glacial remnant (locally called the 'Iron Cap Glacier') and lingering snow/ice on the peak's north side into summer",
+    "Loose talus and boulder terrain typical of Alpine Lakes Wilderness cross-country approaches",
+    "Brushy, indistinct off-trail sections reported near Necklace Valley and La Bohn Gap"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.525214342105265,
+     "lng": -121.3932652631579,
+     "elev": 1800,
+     "name": "Middle Fork footbridge",
+     "note": "Trail crosses to the south side of the Middle Fork Snoqualmie River on a footbridge; reliable water here.",
+     "type": "Water",
+     "distMi": 4.5
+    },
+    {
+     "lat": 47.510099,
+     "lng": -121.34632,
+     "elev": 2828,
+     "name": "Hardscrabble Horse Camp",
+     "note": "Old road tread ends here at an established horse camp with views of rockslides and waterfalls; trail narrows beyond, crossing Hardscrabble Creek into the Alpine Lakes Wilderness just after.",
+     "type": "Campsite",
+     "distMi": 7.7
+    },
+    {
+     "lat": 47.539899210526315,
+     "lng": -121.28088631578947,
+     "elev": 3300,
+     "name": "Pedro Camp / steel bridge",
+     "note": "Locally-known campsite where the trail crosses a steel bridge back over the Middle Fork; open avalanche-slope views of Burntboot Peak, Overcoat Peak and Iron Cap Mountain start from here.",
+     "type": "Campsite",
+     "distMi": 13
+    },
+    {
+     "lat": 47.54365,
+     "lng": -121.252323,
+     "elev": 4200,
+     "name": "Williams Lake Trail junction",
+     "note": "Leave the Dutch Miller Gap Trail here and turn onto Williams Lake Trail 1030.1 for the 1-mile side trip up to the lake.",
+     "type": "Junction",
+     "distMi": 14.2
+    },
+    {
+     "lat": 47.55065,
+     "lng": -121.24765,
+     "elev": 4600,
+     "name": "Williams Lake",
+     "note": "Subalpine lake basin at the base of Bear's Breast Mountain; established campsites on the west shore, boot paths head up toward the high country from here.",
+     "type": "Campsite",
+     "distMi": 15.2
+    },
+    {
+     "lat": 47.55020589473684,
+     "lng": -121.27265410526316,
+     "elev": 5400,
+     "name": "Williams Lake saddle",
+     "note": "Boot path gains this saddle above the lake; from here it's talus and boulder hopping onto the ridge leading toward the Iron Cap summit block.",
+     "type": "Junction",
+     "distMi": 16.4
+    },
+    {
+     "lat": 47.5172,
+     "lng": -121.45437,
+     "elev": 1500,
+     "name": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+     "note": "approach via Trout Lake, Copper/Malachite Lake, and Chetwoot Lake/Iron Cap Lake basin to the peak's north/west ridge.",
+     "type": "Trailhead",
+     "elevFt": 1500
+    },
+    {
+     "lat": 47.553833,
+     "lng": -121.285424,
+     "elev": 6347,
+     "name": "Iron Cap Mountain",
+     "type": "Summit",
+     "elevFt": 6347
+    }
+   ],
+   "gpx": [
+    [
+     47.634996,
+     -121.303308
+    ],
+    [
+     47.634629,
+     -121.304356
+    ],
+    [
+     47.634509,
+     -121.305613
+    ],
+    [
+     47.634124,
+     -121.306214
+    ],
+    [
+     47.633432,
+     -121.306863
+    ],
+    [
+     47.63281,
+     -121.307576
+    ],
+    [
+     47.632197,
+     -121.30807
+    ],
+    [
+     47.631506,
+     -121.308845
+    ],
+    [
+     47.630672,
+     -121.308814
+    ],
+    [
+     47.629772,
+     -121.30868
+    ],
+    [
+     47.629083,
+     -121.309155
+    ],
+    [
+     47.628552,
+     -121.309346
+    ],
+    [
+     47.627938,
+     -121.309745
+    ],
+    [
+     47.627108,
+     -121.310771
+    ],
+    [
+     47.626638,
+     -121.311804
+    ],
+    [
+     47.626202,
+     -121.312521
+    ],
+    [
+     47.626516,
+     -121.313219
+    ],
+    [
+     47.626447,
+     -121.314177
+    ],
+    [
+     47.625778,
+     -121.314868
+    ],
+    [
+     47.624889,
+     -121.314872
+    ],
+    [
+     47.624542,
+     -121.315084
+    ],
+    [
+     47.624001,
+     -121.315295
+    ],
+    [
+     47.623171,
+     -121.314949
+    ],
+    [
+     47.622134,
+     -121.314808
+    ],
+    [
+     47.621624,
+     -121.314515
+    ],
+    [
+     47.621064,
+     -121.314718
+    ],
+    [
+     47.62031,
+     -121.31466
+    ],
+    [
+     47.619666,
+     -121.313994
+    ],
+    [
+     47.618937,
+     -121.314109
+    ],
+    [
+     47.618376,
+     -121.314555
+    ],
+    [
+     47.617759,
+     -121.315031
+    ],
+    [
+     47.61725,
+     -121.315761
+    ],
+    [
+     47.616396,
+     -121.316257
+    ],
+    [
+     47.61582,
+     -121.31638
+    ],
+    [
+     47.615279,
+     -121.31629
+    ],
+    [
+     47.614456,
+     -121.316495
+    ],
+    [
+     47.613779,
+     -121.316773
+    ],
+    [
+     47.613052,
+     -121.317118
+    ],
+    [
+     47.612441,
+     -121.317467
+    ],
+    [
+     47.613001,
+     -121.31763
+    ],
+    [
+     47.612858,
+     -121.318227
+    ],
+    [
+     47.612401,
+     -121.319125
+    ],
+    [
+     47.61209,
+     -121.31983
+    ],
+    [
+     47.612251,
+     -121.320711
+    ],
+    [
+     47.612427,
+     -121.321968
+    ],
+    [
+     47.612585,
+     -121.322049
+    ],
+    [
+     47.612647,
+     -121.322676
+    ],
+    [
+     47.612631,
+     -121.323524
+    ],
+    [
+     47.612753,
+     -121.32371
+    ],
+    [
+     47.612906,
+     -121.324767
+    ],
+    [
+     47.613278,
+     -121.324083
+    ],
+    [
+     47.613501,
+     -121.323789
+    ],
+    [
+     47.613518,
+     -121.324467
+    ],
+    [
+     47.613454,
+     -121.325569
+    ],
+    [
+     47.613427,
+     -121.326176
+    ],
+    [
+     47.613676,
+     -121.326954
+    ],
+    [
+     47.613826,
+     -121.327387
+    ],
+    [
+     47.613777,
+     -121.32789
+    ],
+    [
+     47.614117,
+     -121.327457
+    ],
+    [
+     47.61419,
+     -121.328105
+    ],
+    [
+     47.614096,
+     -121.32921
+    ],
+    [
+     47.613839,
+     -121.329568
+    ],
+    [
+     47.613472,
+     -121.330492
+    ],
+    [
+     47.612897,
+     -121.33028
+    ],
+    [
+     47.612578,
+     -121.330211
+    ],
+    [
+     47.612083,
+     -121.330585
+    ],
+    [
+     47.611509,
+     -121.330442
+    ],
+    [
+     47.611025,
+     -121.331242
+    ],
+    [
+     47.610672,
+     -121.331632
+    ],
+    [
+     47.6106,
+     -121.331906
+    ],
+    [
+     47.610135,
+     -121.331683
+    ],
+    [
+     47.610495,
+     -121.332412
+    ],
+    [
+     47.610879,
+     -121.332829
+    ],
+    [
+     47.610881,
+     -121.333003
+    ],
+    [
+     47.61035,
+     -121.332942
+    ],
+    [
+     47.609605,
+     -121.332347
+    ],
+    [
+     47.609074,
+     -121.331189
+    ],
+    [
+     47.608283,
+     -121.330487
+    ],
+    [
+     47.608108,
+     -121.329682
+    ],
+    [
+     47.607259,
+     -121.328756
+    ],
+    [
+     47.606576,
+     -121.327943
+    ],
+    [
+     47.60579,
+     -121.327826
+    ],
+    [
+     47.605074,
+     -121.328086
+    ],
+    [
+     47.604335,
+     -121.327778
+    ],
+    [
+     47.603729,
+     -121.327563
+    ],
+    [
+     47.603066,
+     -121.327792
+    ],
+    [
+     47.602363,
+     -121.328099
+    ],
+    [
+     47.601795,
+     -121.328566
+    ],
+    [
+     47.601063,
+     -121.329019
+    ],
+    [
+     47.600529,
+     -121.329565
+    ],
+    [
+     47.600182,
+     -121.330061
+    ],
+    [
+     47.59952,
+     -121.330629
+    ],
+    [
+     47.598966,
+     -121.330726
+    ],
+    [
+     47.598225,
+     -121.330746
+    ],
+    [
+     47.597481,
+     -121.330587
+    ],
+    [
+     47.596858,
+     -121.330543
+    ],
+    [
+     47.596143,
+     -121.330027
+    ],
+    [
+     47.595628,
+     -121.329614
+    ],
+    [
+     47.594739,
+     -121.329161
+    ],
+    [
+     47.594037,
+     -121.329218
+    ],
+    [
+     47.593396,
+     -121.328287
+    ],
+    [
+     47.593659,
+     -121.32762
+    ],
+    [
+     47.593927,
+     -121.326984
+    ],
+    [
+     47.59422,
+     -121.327101
+    ],
+    [
+     47.594421,
+     -121.32736
+    ],
+    [
+     47.594733,
+     -121.327143
+    ],
+    [
+     47.59507,
+     -121.326329
+    ],
+    [
+     47.59567,
+     -121.32501
+    ],
+    [
+     47.595833,
+     -121.323788
+    ],
+    [
+     47.594942,
+     -121.323061
+    ],
+    [
+     47.594412,
+     -121.322687
+    ],
+    [
+     47.593937,
+     -121.323009
+    ],
+    [
+     47.59345,
+     -121.322977
+    ],
+    [
+     47.593181,
+     -121.323212
+    ],
+    [
+     47.592953,
+     -121.322412
+    ],
+    [
+     47.592644,
+     -121.321936
+    ],
+    [
+     47.592313,
+     -121.321134
+    ],
+    [
+     47.592291,
+     -121.319676
+    ],
+    [
+     47.59189,
+     -121.319252
+    ],
+    [
+     47.591095,
+     -121.319741
+    ],
+    [
+     47.590254,
+     -121.319771
+    ],
+    [
+     47.589303,
+     -121.320288
+    ],
+    [
+     47.589023,
+     -121.320737
+    ],
+    [
+     47.589075,
+     -121.319789
+    ],
+    [
+     47.588434,
+     -121.3202
+    ],
+    [
+     47.587879,
+     -121.320822
+    ],
+    [
+     47.587072,
+     -121.320669
+    ],
+    [
+     47.586305,
+     -121.320146
+    ],
+    [
+     47.5856,
+     -121.319874
+    ],
+    [
+     47.584948,
+     -121.319772
+    ],
+    [
+     47.584522,
+     -121.319486
+    ],
+    [
+     47.584304,
+     -121.319053
+    ],
+    [
+     47.584216,
+     -121.318882
+    ],
+    [
+     47.583651,
+     -121.318491
+    ],
+    [
+     47.583197,
+     -121.317707
+    ],
+    [
+     47.582849,
+     -121.317088
+    ],
+    [
+     47.582138,
+     -121.316558
+    ],
+    [
+     47.581724,
+     -121.316175
+    ],
+    [
+     47.581497,
+     -121.315786
+    ],
+    [
+     47.581248,
+     -121.315379
+    ],
+    [
+     47.580874,
+     -121.315324
+    ],
+    [
+     47.58034,
+     -121.31512
+    ],
+    [
+     47.580209,
+     -121.313787
+    ],
+    [
+     47.580199,
+     -121.313211
+    ],
+    [
+     47.580206,
+     -121.312414
+    ],
+    [
+     47.579731,
+     -121.311498
+    ],
+    [
+     47.579194,
+     -121.310867
+    ],
+    [
+     47.578822,
+     -121.310733
+    ],
+    [
+     47.578397,
+     -121.310723
+    ],
+    [
+     47.578074,
+     -121.31087
+    ],
+    [
+     47.577572,
+     -121.310974
+    ],
+    [
+     47.577548,
+     -121.311182
+    ],
+    [
+     47.577172,
+     -121.311543
+    ],
+    [
+     47.576462,
+     -121.311559
+    ],
+    [
+     47.57582,
+     -121.311213
+    ],
+    [
+     47.575498,
+     -121.311443
+    ],
+    [
+     47.575211,
+     -121.311731
+    ],
+    [
+     47.574819,
+     -121.312133
+    ],
+    [
+     47.574344,
+     -121.312303
+    ],
+    [
+     47.573797,
+     -121.31268
+    ],
+    [
+     47.573372,
+     -121.313073
+    ],
+    [
+     47.573052,
+     -121.312829
+    ],
+    [
+     47.572661,
+     -121.312595
+    ],
+    [
+     47.572537,
+     -121.312153
+    ],
+    [
+     47.572247,
+     -121.312494
+    ],
+    [
+     47.571685,
+     -121.312759
+    ],
+    [
+     47.571119,
+     -121.31285
+    ],
+    [
+     47.570516,
+     -121.313391
+    ],
+    [
+     47.570016,
+     -121.313532
+    ],
+    [
+     47.569575,
+     -121.313809
+    ],
+    [
+     47.568885,
+     -121.314298
+    ],
+    [
+     47.56807,
+     -121.314261
+    ],
+    [
+     47.567482,
+     -121.314433
+    ],
+    [
+     47.567175,
+     -121.314397
+    ],
+    [
+     47.566503,
+     -121.314594
+    ],
+    [
+     47.565979,
+     -121.314679
+    ],
+    [
+     47.56541,
+     -121.315189
+    ],
+    [
+     47.565006,
+     -121.315372
+    ],
+    [
+     47.564436,
+     -121.31518
+    ],
+    [
+     47.564162,
+     -121.315461
+    ],
+    [
+     47.563559,
+     -121.315656
+    ],
+    [
+     47.563179,
+     -121.315031
+    ],
+    [
+     47.562792,
+     -121.314609
+    ],
+    [
+     47.562577,
+     -121.314017
+    ],
+    [
+     47.562249,
+     -121.313481
+    ],
+    [
+     47.561978,
+     -121.312845
+    ],
+    [
+     47.561638,
+     -121.312337
+    ],
+    [
+     47.561132,
+     -121.311766
+    ],
+    [
+     47.560703,
+     -121.311107
+    ],
+    [
+     47.560224,
+     -121.310016
+    ],
+    [
+     47.559813,
+     -121.309294
+    ],
+    [
+     47.560094,
+     -121.30896
+    ],
+    [
+     47.560288,
+     -121.308248
+    ],
+    [
+     47.56021,
+     -121.307897
+    ],
+    [
+     47.559551,
+     -121.307511
+    ],
+    [
+     47.559284,
+     -121.30815
+    ],
+    [
+     47.558818,
+     -121.308281
+    ],
+    [
+     47.558721,
+     -121.3086
+    ],
+    [
+     47.558656,
+     -121.308524
+    ],
+    [
+     47.558735,
+     -121.307943
+    ],
+    [
+     47.558431,
+     -121.307382
+    ],
+    [
+     47.558284,
+     -121.306505
+    ],
+    [
+     47.558116,
+     -121.305731
+    ],
+    [
+     47.557793,
+     -121.30533
+    ],
+    [
+     47.557615,
+     -121.304757
+    ],
+    [
+     47.55752,
+     -121.303551
+    ],
+    [
+     47.557731,
+     -121.302375
+    ],
+    [
+     47.557825,
+     -121.301703
+    ],
+    [
+     47.557716,
+     -121.300826
+    ],
+    [
+     47.557386,
+     -121.299889
+    ],
+    [
+     47.557097,
+     -121.299415
+    ],
+    [
+     47.556872,
+     -121.299108
+    ],
+    [
+     47.556605,
+     -121.298603
+    ],
+    [
+     47.556304,
+     -121.298136
+    ],
+    [
+     47.556343,
+     -121.297355
+    ],
+    [
+     47.556588,
+     -121.296722
+    ],
+    [
+     47.557,
+     -121.296053
+    ],
+    [
+     47.556392,
+     -121.296235
+    ],
+    [
+     47.556177,
+     -121.295655
+    ],
+    [
+     47.556035,
+     -121.295375
+    ],
+    [
+     47.555593,
+     -121.295322
+    ],
+    [
+     47.554971,
+     -121.295096
+    ],
+    [
+     47.554585,
+     -121.293898
+    ],
+    [
+     47.554339,
+     -121.292863
+    ],
+    [
+     47.554031,
+     -121.291651
+    ],
+    [
+     47.553646,
+     -121.290896
+    ],
+    [
+     47.553447,
+     -121.289861
+    ],
+    [
+     47.553189,
+     -121.288632
+    ],
+    [
+     47.553411,
+     -121.287851
+    ],
+    [
+     47.553634,
+     -121.287237
+    ],
+    [
+     47.5538,
+     -121.2865
+    ],
+    [
+     47.554047,
+     -121.285881
+    ],
+    [
+     47.553809,
+     -121.285614
+    ],
+    [
+     47.553847,
+     -121.285596
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 23,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 9,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "From the Dutch Miller Gap Trailhead (Dingford Creek, Middle Fork Snoqualmie Rd), follow the Middle Fork Snoqualmie / Dutch Miller Gap Trail roughly 14-15 miles, mostly gentle valle…",
+      "fromTo": "Backpack in to Williams Lake / La Bohn Gap",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6,
+      "note": "Day-climb from Williams Lake with a light pack: gain La Bohn Gap, then follow talus/heather slopes and the connecting ridge onto Iron Cap's upper west or north ridge for a Class 2-…",
+      "fromTo": "Climb Iron Cap Mountain",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Retrace the Dutch Miller Gap Trail back down the Middle Fork Snoqualmie valley to the trailhead - a long but straightforward descent day.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "Northwest Forest Pass or America the Beautiful pass for trailhead parking",
+    "Free self-issue Alpine Lakes Wilderness permit (available at the trailhead)",
+    "Topo map/GPS track — cairns thin out through the boulder fields",
+    "Ice axe if traveling before mid-to-late July",
+    "Trekking poles for creek crossings"
+   ],
+   "pro_tips": [
+    "Many parties climb Iron Cap as part of a longer traverse (Big Snow Mountain, Chetwoot/Tank Lakes, La Bohn Gap) rather than as an isolated day trip, since the approach is so long",
+    "Water is available at Williams Lake and along much of the approach, but the Dingford Creek Trailhead itself has no potable water or facilities beyond parking",
+    "The Dingford Creek Trailhead lot is small and fills on summer weekends — arrive early"
+   ],
+   "watch_out": [
+    "Losing the boulder-field route between cairns — carry a GPS track or detailed map",
+    "The 3rd-class downclimb to the crux notch is a bit exposed; take care with a loaded pack",
+    "High avalanche hazard on approach slopes during May-June snowmelt; this is not an early-season objective"
+   ],
+   "pro_needs": "No technical protection is needed — this is an unroped class 3 scramble on talus and blocky rock; a helmet is a reasonable precaution against rockfall on the ridge.",
+   "best_season": "August",
+   "high_point_ft": 6347,
+   "aid_grade": null,
+   "approach": "The South Route begins at the Dingford Creek Trailhead (also signed/known as the Dutch Miller Gap Trailhead, ~1,550 ft), reached via I-90 Exit 34 and the rough, high-clearance/4WD-recommended Middle Fork Snoqualmie Road (FR 56) — the old Dutch Miller Gap Trailhead further up the road is no longer vehicle-accessible, so Dingford Creek is now the actual start. Self-issue Alpine Lakes Wilderness permits (free, required May 15–Oct 31) are at the trailhead register; there's a vault toilet but no potable water. From the trailhead, follow the Middle Fork Trail (#1003), which becomes the Dutch Miller Gap Trail (#1030), east up the Middle Fork Snoqualmie valley: a footbridge crossing of the Middle Fork at about 4.5 miles, then a steady, moderate climb to Hardscrabble Horse Camp (~7.7 mi) with open views of rockslides, waterfalls, and jagged peaks including Iron Cap itself across the valley (bikes and stock traffic are permitted only up to this point). Beyond Hardscrabble the trail crosses several avalanche-path openings and re-enters forest, reaching a steel bridge at Pedro Camp (~13 mi) and the Williams Lake Trail (#1031) junction at 14.2 mi (Williams Lake is a worthwhile water source/camp detour 1 mile off-route if backpacking in). The main trail continues through heather-and-huckleberry meadows to Dutch Miller Gap itself (~15.2 mi, ~5,000 ft), the low pass separating the Snoqualmie and Foss/Skykomish drainages. From the gap, leave the maintained trail and go cross-country north-northwest, contouring and ascending open talus, heather benches, and scree/dirt slopes on Iron Cap's south aspect toward the Iron Cap Lake basin, then up onto the west ridge for the final class 2–3 scramble to the 6,347 ft summit. This upper cross-country section is unmarked and route-finding is the crux of the approach — expect loose rock and dirt underfoot, occasional steep heather ('veggie') sections, and limited cairning; a map/GPS track is strongly advised since visibility-dependent cliff bands can cliff out a poorly chosen line. Water is reliable along the Middle Fork and at creek crossings/Williams Lake but scarce once you leave the valley floor above the gap, so tank up before the final push. Given the ~34-mile round trip and ~4,700–5,000 ft of cumulative gain, most parties treat this as a backpack (camping near Hardscrabble, Pedro Camp, or Williams Lake) rather than a single push, though strong parties have done it car-to-car. From the ridge, a short 3rd-class downclimb drops into a notch; beyond it a wide ramp traverses (no sidehilling) below the summit block to meet the broad north ridge, which leads via easy red-rock/dirt scrambling to the true summit.",
+   "descent_text": "Descent reverses the ascent line: downclimb the loose red-tinged rock, dirt, and scree of the summit ridges back to the talus benches above Iron Cap Lake basin, then drop back down to Dutch Miller Gap and rejoin the maintained Dutch Miller Gap/Middle Fork Trail (#1030/#1003) for the long walk out to the Dingford Creek Trailhead. This is a class 2–3 scramble route with no fixed anchors or rappel stations — it is a walk-off/downclimb, not a rappel descent. The main hazards on the way down are the same loose, dirt-over-rock terrain that makes the ascent's crux (test holds carefully, especially when wet or in the early season with residual snow patches), plus the route-finding challenge of picking the correct gully/ledge system back down to the basin rather than getting cliffed out on the steeper east-side rock bands — parties in this area have reported wandering into steep 'veggie' terrain when they lost the correct line, so retracing your ascent track (or using a GPS track) is the most reliable way down. Once back at Dutch Miller Gap, it's a straightforward, well-graded trail walk of roughly 15 miles back to the trailhead with the elevation loss front-loaded near the gap and gentler grades through the lower valley.",
+   "bail": "Retreat is straightforward at nearly any point on the ridge or the cross-country approach by simply reversing the ascent line back to Chetwoot Lake and the maintained trail — no fixed rappels or technical retreat gear are needed.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "The high basin and La Bohn Gap area typically aren't fully snow-free until mid-to-late July, so August-September is the most reliable window.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Dutch Miller Gap Trailhead (Dingford Creek, Middle Fork Snoqualmie Rd), follow the Middle Fork Snoqualmie / Dutch Miller Gap Trail roughly 14-15 miles, mostly gentle valley grade until a steeper final push past Lake Ivanhoe, then a short spur to Williams Lake. It's a long first day but not technical.",
+      "hours": 9,
+      "miles": 15.2,
+      "title": "Backpack in to Williams Lake / La Bohn Gap",
+      "gainFt": 3800,
+      "lossFt": 300,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Dutch Miller Gap Trailhead",
+        "detail": "Long valley approach along the Middle Fork Snoqualmie River."
+       },
+       {
+        "time": "~11:00 AM",
+        "label": "Pass Hardscrabble/Lake Ivanhoe area",
+        "detail": "Grade steepens for the final climb toward Dutch Miller Gap."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Arrive Williams Lake camp",
+        "detail": "Small camp on the west side of the lake; set up and rest for summit day."
+       }
+      ],
+      "objective": "Reach high camp at Williams Lake below La Bohn Gap"
+     },
+     {
+      "n": 2,
+      "note": "Day-climb from Williams Lake with a light pack: gain La Bohn Gap, then follow talus/heather slopes and the connecting ridge onto Iron Cap's upper west or north ridge for a Class 2-3 scramble to the summit. Return the same way to camp.",
+      "hours": 6,
+      "miles": 4.5,
+      "title": "Climb Iron Cap Mountain",
+      "gainFt": 2000,
+      "lossFt": 2000,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Williams Lake camp",
+        "detail": "Head up toward La Bohn Gap on the steep but well-cairned climber's path."
+       },
+       {
+        "time": "~7:15 AM",
+        "label": "Top out at La Bohn Gap",
+        "detail": "~700 ft climb from camp; views open up toward Iron Cap and Chimney Rock."
+       },
+       {
+        "time": "~8:00 AM",
+        "label": "Traverse onto Iron Cap's ridge",
+        "detail": "Talus and heather leading to the west/north ridge scramble."
+       },
+       {
+        "time": "~9:30 AM",
+        "label": "Summit",
+        "detail": "Class 2-3 scrambling near the top; broad views over the Alpine Lakes basins."
+       },
+       {
+        "time": "~1:00 PM",
+        "label": "Back at Williams Lake camp",
+        "detail": "Reverse the route; rest, refill water, enjoy the afternoon."
+       }
+      ],
+      "objective": "Summit Iron Cap Mountain via La Bohn Gap and the west/north ridge"
+     },
+     {
+      "n": 3,
+      "note": "Retrace the Dutch Miller Gap Trail back down the Middle Fork Snoqualmie valley to the trailhead - a long but straightforward descent day.",
+      "hours": 8,
+      "miles": 15.2,
+      "title": "Hike out",
+      "gainFt": 300,
+      "lossFt": 3800,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day, roughly 34-mile round-trip backpack: ~15 miles in, a day-climb of Iron Cap via La Bohn Gap, and ~15 miles back out. Very fit/fast parties sometimes compress this into 2 days or even a single huge car-to-car push, but 3 days with a Williams Lake camp is the standard way it's done."
+   },
+   "access": {
+    "fees": "A Northwest Forest Pass ($5/day or $30/annual) or America the Beautiful pass covers most Mt. Baker-Snoqualmie NF trailheads in this corridor; the Dingford Creek Trailhead itself is currently posted as a no-fee site, but carry a pass in case that changes.",
+    "notes": "",
+    "rules": "No bikes beyond the old Dutch Miller Gap Horse Camp (trail mile 7.7); no motorized or mechanized travel within the Alpine Lakes Wilderness; groups larger than 12 must split into separate parties with at least one mile of separation.",
+    "permit": "Free self-issue day-use/overnight wilderness permit required at the trailhead for all of the Alpine Lakes Wilderness; group size is capped at 12 (people and stock combined).",
+    "closures": "The old Dutch Miller Gap Trailhead is no longer reachable by vehicle — Dingford Creek Trailhead is now the standard starting point. The lower Middle Fork Snoqualmie Trail below Dingford Creek has been closed since a 2018 landslide. FR 56 has had periodic washout closures near the Taylor River; check current Mt. Baker-Snoqualmie NF alerts before driving.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry your copy."
+    }
+   },
+   "road": {
+    "name": "Middle Fork Snoqualmie Road (FR 56)",
+    "status": "Rough native-surface forest road; high-clearance vehicle recommended; periodic washout closures reported near the Taylor River",
+    "driveNote": "From I-90 Exit 34, go north 0.6 mi on 468th Ave SE, then continue about 17 miles on FR 56 to the Dingford Creek Trailhead"
+   },
+   "climate": {
+    "typical": "Wet, cool west-slope Cascades climate; heavy winter snowpack persists into early summer, especially on north-facing terrain. Reliable snow-free scrambling conditions typically arrive by late July/August and hold through September.",
+    "bySeason": {
+     "fall": "Late September into October: shorter days and rising storm risk; snow can return to the high basin by mid-October.",
+     "spring": "Not viable — approach trail and route are largely snow-covered with high avalanche hazard on surrounding slopes during May-June snowmelt.",
+     "summer": "Best window (August-September): warm, mostly snow-free ridge, though the boulder-field approach still demands care and route-finding.",
+     "winter": "FR 56 and the trail are typically snow-covered and effectively inaccessible; not a winter objective."
+    },
+    "forecastZone": "NWAC Snoqualmie Pass / Stevens Pass zones (the peak sits near the boundary) — check both for early- and late-season travel"
+   },
+   "emergency": {
+    "notes": "No cell coverage in the Middle Fork Snoqualmie valley or the basin below Iron Cap; the approach is remote, so plan for a multi-hour hike/drive to reach help in an emergency.",
+    "county": "King County",
+    "rangerStation": "Snoqualmie Ranger District, Mount Baker-Snoqualmie National Forest (administers the Dingford Creek / Dutch Miller Gap Trailhead used for this route)",
+    "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Late July-August weekends, mostly parties doing the Alpine Lakes High Route traverse rather than a dedicated Iron Cap day trip",
+    "solitudeRating": 4,
+    "estimatePerSeason": "roughly 20-40 parties per season (rough estimate from trip-report frequency, not a measured count)"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained uphill fitness — long unmaintained approach through the Foss River drainage to the Williams Lake/La Bohn Gap basins before any scrambling begins",
+     "packWeight": "Most parties camp near Williams Lake or La Bohn Gap given the approach length, so plan for an overnight pack (roughly 20-35 lbs) rather than a single big day"
+    },
+    "approachTime": "Long — multi-hour approach, often broken into an overnight, via Foss River trail into the Williams Lake/La Bohn Gap basins before the south-side scramble itself",
+    "requiredSkills": [
+     "Class 3 scrambling on loose talus and short rock steps",
+     "off-trail routefinding (route is not signed/maintained)",
+     "comfort with loose/exposed footing",
+     "self-sufficiency on a long approach far from help"
+    ],
+    "experienceLevel": "Advanced scrambler comfortable with sustained off-trail travel and unmaintained wilderness approaches; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August is the core window; late July into September is climbable but with more variable snow/weather at the margins (August) and season (Late July-September)",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Only the back half of July is in season; early/mid-July can still have lingering snowpack on the approach and route from spring snow cover",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "In season; maritime climate is clearest and driest in mid-to-late summer, giving the most reliable dry-rock talus/scramble conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still within the dry summer window, but shorter days and a rising chance of early-season storms as fall approaches (a 'short clear window' in fall)",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime Cascades climate; the route window is the driest and clearest in mid-to-late summer, with full snow cover in winter and lingering snow/avalanche risk in spring",
+     "probability": "Afternoon convective showers are a general Cascades summer pattern; no route-specific thunderstorm frequency data was found for Iron Cap"
+    },
+    "exposure": "Class 3 terrain on loose talus and short rock steps (on-file hazard: loose rock); parties describe a short 3rd-class downclimb near a notch adding fall exposure, and the long, unmaintained approach (on-file hazard: long approach) increases the consequence of any injury given distance from help",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (nearest NWAC coverage is the Stevens Pass zone, but Iron Cap is climbed only in the snow-free season, outside the winter/spring avalanche forecast period)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official gain_ft/dist_km figures specific to an Iron Cap-only round trip were found; the ~15-mile-to-Williams-Lake and ~30-mile-round-trip figures are derived from trip-report mileages for multi-peak traverses, not a dedicated FS trail log for this exact route",
+     "The precise orientation/name of the summit ridge (some sources call the easiest line the 'North Ridge' from the Foss side; this South Route reaches a broad north ridge from Williams Lake) isn't fully reconciled across sources",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.554001,
+    "peakLng": -121.284819,
+    "trailhead": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+    "trailheadLat": 47.5172,
+    "trailheadLng": -121.45437,
+    "trailheadDirection": "From the Dingford Creek Trailhead up the Middle Fork Snoqualmie Road from North Bend"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 3 scramble on stepped rock terrain (Alpine Lakes Wilderness); no rope standard. Ice axe useful for early-season snow approach via Chetwoot Lake/West Fork Foss.",
+   "ascender": null,
+   "corrections": "No route-specific gear beta found; inference from Class 3 terrain description (SummitPost/WTA).",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Iron Cap Lake basin to the north ridge",
+     "notes": "However you reach it, the last of the walking is cross-country over open talus, heather benches and scree above the lake basin. Route-finding is the crux of the approach rather than any move on it: the ground is unmarked and lightly cairned, the footing is loose rock and dirt with occasional steep heather, and visibility-dependent cliff bands will stop a poorly chosen line. Water is scarce once you leave the valley floor, so tank up before the final push.",
+     "season": "Late July to September",
+     "hazards": [
+      "Loose dirt over rock on the upper slopes",
+      "Steep heather with poor runout",
+      "Cliff bands on the east side that will stop a badly chosen line",
+      "Snow lingering into early July on north-facing ground",
+      "No water above the basin"
+     ],
+     "baseFinding": "The scrambling begins on rock ledges above the outlet of Iron Cap Lake. Cross the outlet stream and start working upward to the SOUTHEAST on a series of ledges — the change from vegetated, dirt-over-rock ground to continuous clean ledges is the tell that you are on the route, and the rock here is genuinely solid, unlike everything below it. The line curves around the nose of the north ridge rather than attacking the summit block head-on. Higher, a short third-class downclimb drops into a notch, which reads as a dead end and is not one: beyond it a wide ramp traverses below the summit block, taking you across without sidehilling, and meets the broad north ridge. From there easy red-tinged rock and dirt lead to the true summit. Losing that ramp is the way parties end up cliffed out on the steeper east-side rock bands, so note the line as you go and retrace it exactly on the way down."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2-3",
+     "label": "West ridge",
+     "notes": "Gained off unmarked cross-country ground above Iron Cap Lake basin; loose rock and dirt underfoot with occasional steep heather. Class 2-3 scrambling toward the 6,347 ft summit."
+    },
+    {
+     "n": 2,
+     "class": "Class 3",
+     "label": "Downclimb into the notch",
+     "notes": "From the ridge a short 3rd-class downclimb drops into a notch."
+    },
+    {
+     "n": 3,
+     "label": "Ramp below the summit block to the north ridge",
+     "notes": "Beyond the notch a wide ramp traverses below the summit block — no sidehilling required — to meet the broad north ridge, which is easy red-rock and dirt scrambling to the true summit."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+     "role": "main",
+     "type": "camp",
+     "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the valley — the last stretch through avalanche slopes, wildflowers and deep bracken fern depending on the season — to the Williams Lake junction. Williams Lake sits about half a mile off the main trail and is genuinely secluded, with a good view across to Little Big Chief. From these meadows the route to Iron Cap climbs toward La Bohn Gap and then takes the ridge, with a bit of exposure but generally easy scrambling to the true summit. Two things to be honest about. First, this is a fourteen-mile approach before any climbing starts, so Iron Cap from here is a three-day objective for most parties. Second, La Bohn Gap is equally reachable from Necklace Valley on the East Fork Foss River off Highway 2, on the north side of the divide — a completely separate drive and a shorter approach to the gap, and the right choice if Iron Cap alone is the objective. Come this way when Big Snow, Burnt Boot or the western side of Chimney Rock and Overcoat are also on the list. The same trail continues over Dutch Miller Gap to the Waptus valley, so the Middle Fork and Cle Elum halves of this zone are linked on foot even though they are hours apart by road. Beyond Camp Pedro the route toward Overcoat and Chimney Rock climbs steeply and brushily into the rocky corridor between the Chief summits and crosses a pass at about 6,140 ft to reach the Overcoat Glacier — long, committing, and the reason the Pete Lake side is the standard for Chimney Rock.",
+     "water": "Williams Lake, the Middle Fork Snoqualmie River, and tarns and snowmelt in the meadows toward the gap",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park. Group limit twelve. Campfires prohibited on the higher benches above 5,000 ft; keep to durable ground and stay off the boggy meadow.",
+     "capacity": "Williams Lake holds a small number of quiet sites, a party or two; the heather and huckleberry benches nearer the gap are informal and can absorb a few more"
+    },
+    {
+     "elev": 2828,
+     "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+     "role": "route",
+     "type": "camp",
+     "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is GATED AT DINGFORD CREEK, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. BURNT BOOT PEAK is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+     "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+     "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+    },
+    {
+     "name": "Hardscrabble Horse Camp",
+     "role": "hidden"
+    },
+    {
+     "name": "Williams Lake",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

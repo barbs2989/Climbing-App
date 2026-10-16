@@ -1,0 +1,2214 @@
+[
+ {
+  "zone": "bailey-range-solduc",
+  "routes": [
+   {
+    "id": "wa_mount_angeles_standard",
+    "name": "Standard Scramble (Switchback / Klahhane Ridge approach)",
+    "peak": "Mount Angeles",
+    "area_id": "wa_mount_angeles",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6454,
+    "overview": "Mount Angeles (6,454 ft) is the highest point between Hurricane Ridge and the Strait of Juan de Fuca, rising as a prominent, accessible summit above the Hurricane Ridge Visitor Center in the northern Olympics. It's reached by trail almost the whole way, with a short, loose Class 3 scramble guarding …",
+    "approach": "From the Hurricane Ridge Visitor Center parking lot (end of Hurricane Ridge Road, ~17 mi south of Port Angeles via Race St/Hwy 101), start on the paved High Ridge Trail at the east end of the lot. At about 0.3 mi bear toward Sunrise Point/Klahhane Ridge Trail and continue along open, exposed subalpi…",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_appleton_standard",
+    "name": "Standard Scramble (Appleton Pass / Boulder Lake approach)",
+    "peak": "Mount Appleton",
+    "area_id": "wa_mount_appleton",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6017,
+    "overview": "Mount Appleton (6,017 ft) is one of two summits on a double-topped ridge in the Daniel J. Evans Wilderness of Olympic National Park, rising directly above Appleton Pass on the divide between the Sol Duc River and Boulder Creek (South Fork) drainages in the northern Olympics. Its slightly higher neig…",
+    "approach": "Two approaches reach Appleton Pass, the base for the scramble. The Sol Duc approach is now the practical option: from the Sol Duc Trailhead (about 13 road miles off US-101 via Sol Duc Rd, near Sol Duc Falls), follow the Sol Duc River Trail roughly 4.9 miles upriver, crossing Crystal Creek on a suspe…",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     },
+     {
+      "name": "Appleton Pass camp area",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5050,
+      "notes": "Scattered established tent pads just below the pass, some fully exposed to wind with views, others tucked in trees; water is from Oyster Lake or lingering snowf…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_carrie_se_route",
+    "name": "Southeast Route via Hurricane Ridge / Cat Basin",
+    "peak": "Mount Carrie",
+    "area_id": "wa_mount_carrie",
+    "discipline": "scrambling",
+    "grade": "Class 2–3 with steep snow early season",
+    "high_point_ft": 6995,
+    "overview": "Mount Carrie is the highest point of the Bailey Range and the scenic centerpiece of the classic Bailey Range Traverse. Despite this route's name, there is no trail or known route connecting Hurricane Ridge to Cat Basin or Mount Carrie — Hurricane Ridge sits on the opposite (east) side of the park an…",
+    "approach": "There is no established route to Mount Carrie from Hurricane Ridge; that area is separated from the Bailey Range by miles of trailless, glaciated terrain and functions only as a viewpoint. The actual approach used by essentially all climbers starts at the Sol Duc River Road trailhead (~2,000 ft) on …",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     },
+     {
+      "name": "Cat Basin / High Divide",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_carrie_standard",
+    "name": "Standard Route (Carrie Glacier / High Divide)",
+    "peak": "Mount Carrie",
+    "area_id": "wa_mount_carrie",
+    "discipline": "mountaineering",
+    "grade": "Class 3 + glacier travel",
+    "high_point_ft": 6995,
+    "overview": "Mount Carrie (6,995 ft) is the highest summit in the Bailey Range, a glaciated interior subrange of the Olympic Mountains within Olympic National Park's Daniel J. Evans Wilderness. Named in 1899 by surveyor Theodore Rixon for his wife Caroline \"Carrie,\" the peak is composed of grey Eocene sandstone …",
+    "approach": "From US-101 about 2 miles west of Lake Crescent, turn onto Sol Duc Hot Springs Road and drive roughly 14 miles past Sol Duc Hot Springs Resort to the road-end trailhead (Sol Duc River Trailhead, ~2,000 ft). Hike the Sol Duc River Trail past Sol Duc Falls, continue about 1 mile past the Deer Lake Tra…",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_fairchild_standard",
+    "name": "Standard Route",
+    "peak": "Mount Fairchild",
+    "area_id": "wa_mount_fairchild",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3, glacier travel",
+    "high_point_ft": 6900,
+    "overview": "Mount Fairchild (6,899 ft) is the second-highest peak in the Bailey Range, a glaciated subrange deep in the interior of Olympic National Park's Daniel J. Evans Wilderness. It carries the small, retreating Fairchild Glacier on its northeast flank and sits about 0.84 mi northeast of higher neighbor Mo…",
+    "approach": "There is no trail to Mount Fairchild itself, but the standard approach follows a well-defined maintained-trail corridor before turning to off-trail wilderness travel. Start at the Sol Duc River Trailhead (end of Sol Duc Road) on the Sol Duc River Trail. At 0.8 mi pass Sol Duc Falls, and at 0.9 mi re…",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_mathias_scramble",
+    "name": "Bailey Range Scramble",
+    "peak": "Mount Mathias",
+    "area_id": "wa_mount_mathias",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "high_point_ft": 7156,
+    "overview": "Mount Mathias (7,156 ft) is a high summit in the rugged Bailey Range in the interior of Olympic National Park, flanked by the Blue Glacier to the west and the Hoh Glacier to the east. It is reached by long wilderness approaches, culminating in a short but genuine Class 4 scramble on the summit ridge…",
+    "approach": "Drive the paved Upper Hoh Road to its end at the Hoh Ranger Station (578 ft). Hike the Hoh River Trail 17.2 miles to Glacier Meadows (~4,200-4,300 ft), the standard base camp for this side of the range (note: a washed-out section partway up requires a fixed ladder/rope crossing). From Glacier Meadow…",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     },
+     {
+      "name": "Eleven Bull Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "First established camp on the Northern Baileys - heather benches with streams gushing off the hillside; last easy reliable water before the long exposed sidehil…"
+     },
+     {
+      "name": "Ferry Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "Broad glacially-scoured pass/basin below Mt. Ferry with glacial lakes and streams, reached via the Stephen Lake bypass to avoid sidehilling; smooth walking befo…"
+     },
+     {
+      "name": "Camp Pan",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "Obvious sandy-flat campsite on a prow jutting into the glacial valley, a half-mile and 600 ft below Blizzard Pass; the standard last camp before climbing Mathia…"
+     }
+    ]
+   },
+   {
+    "id": "wa_ruth_peak_olympics_scramble",
+    "name": "Ruth Peak Scramble",
+    "peak": "Ruth Peak",
+    "area_id": "wa_ruth_peak_olympics",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6850,
+    "overview": "Ruth Peak (~6,841–6,850 ft) is the third-highest summit in the Bailey Range, a remote sub-range of the northern Olympic Mountains, between higher neighbors Mount Carrie (6,995 ft, 0.9 mi NW) and Mount Fairchild (6,900 ft, 0.9 mi N). The Fairchild Glacier drapes its northeast slope. There is no trail…",
+    "approach": "From the Sol Duc Trailhead (~1,900 ft), follow the Sol Duc River Trail through old-growth forest to Sol Duc Park, then climb to Heart Lake (7.85 mi) and the High Divide/Bailey Range junction (~8.3 mi, ~5,050 ft). Leave the maintained trail here and drop off the High Divide via the boot-path known as…",
+    "camps": [
+     {
+      "name": "Sol Duc Hot Springs Resort campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1684,
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers…"
+     },
+     {
+      "name": "Deer Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a…"
+     },
+     {
+      "name": "Heart Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4744,
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, …"
+     },
+     {
+      "name": "Cat Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath …"
+     },
+     {
+      "name": "Boston Charlie's Camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5543,
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains arou…"
+     },
+     {
+      "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston…"
+     },
+     {
+      "name": "Appleton Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The direct base for Mount Appleton, a class 3 scramble of just over 6,000 ft sitting northwest of the pass on a ridge with a couple of genuinely exposed moves. From the Sol Duc trailhead it is about seven and a bit miles…"
+     },
+     {
+      "name": "Heart o' the Hills campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1800,
+      "notes": "This is the staging base for Mount Angeles and it is a staging base only — it is a few miles up the Hurricane Ridge road from Port Angeles, and no part of the climb passes through it. The scramble itself starts from a pu…"
+     },
+     {
+      "name": "Eleven Bull Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "There is a meltwater source at the east end of the arete, known as Boston Charlie's, worth topping off at before the traverse. From there faint herd paths sideh…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "baker",
+  "routes": [
+   {
+    "id": "wa_mount_baker_boulder_glacier",
+    "name": "Boulder Glacier / Boulder Cleaver",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "II-III",
+    "high_point_ft": 10781,
+    "overview": "A classic, less-crowded glacier route up the east side of Baker via the Boulder Glacier and Boulder Cleaver. It's the steepest of Baker's standard glacier routes but not technically difficult once above the approach — the real crux is the arduous, unmaintained approach trail, which keeps crowds well…",
+    "approach": "From Sedro-Woolley, drive SR 20 east 16 miles to milepost 82, turn north on Baker Lake Highway (FR 11) for about 18 miles, then (after Boulder Creek Campground) turn onto FR 1130 for about 1 mile to FR 1131, and follow it to the Boulder Ridge Trailhead. Hike the Boulder Ridge Trail (maintained about…",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_boulder_park_cleaver",
+    "name": "Boulder–Park Cleaver",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "Grade II Snow",
+    "high_point_ft": 10781,
+    "overview": "An east-side route climbing the rock/snow cleaver dividing the Boulder and Park Glaciers — more strenuous and remote than the standard routes but not technically difficult, with the lowest trailhead (2,700 ft) and among the largest elevation gains of any Baker route.",
+    "approach": "Drive Baker Lake Highway to FR1130, then FR1131 to its end at the Boulder Ridge Trailhead (~2,700 ft). Hike the Boulder Ridge Trail #605 — nearly flat through an old clear-cut and timber for about 2 miles to a boggy clearing at the Mount Baker Wilderness boundary — then continue on a rougher user pa…",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     },
+     {
+      "name": "High Camp below Boulder-Park Cleaver",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 8000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_cockscomb_ridge",
+    "name": "Cockscomb Ridge",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 10781,
+    "overview": "Cockscomb Ridge is the true north ridge of Mount Baker — a long, prominent rock-and-ice ridge forming a skyline on the north side of the peak, distinct from the popular 'North Ridge' route (which is actually the NW spur). It sits between the North Ridge and the Park Glacier Headwall and is approache…",
+    "approach": "Drive the Mount Baker Highway (SR 542) to its end at Artist Point. Start on Chain Lakes Trail 682 for about a mile to the Ptarmigan Ridge junction, then follow Ptarmigan Ridge Trail 682.1 along the crest, passing beneath Coleman Pinnacle, to Camp Kiser at roughly 5 miles. Past Camp Kiser the maintai…",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     },
+     {
+      "name": "Heliotrope Ridge Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_coleman_deming",
+    "name": "Coleman–Deming Glacier",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "Grade II glacier climb",
+    "high_point_ft": 10781,
+    "overview": "The Coleman–Deming is Mount Baker's most popular route and a classic introduction to glacier mountaineering — a moderate, non-technical climb up two of the peak's big glaciers, finishing with the steeper Roman Wall snow slope to the summit plateau. Heavily glaciated and very scenic, it's the route m…",
+    "approach": "Coleman-Deming on Mount Baker starts at Heliotrope Ridge TH (3,650 ft) via Glacier Creek Road (FS 39). Gain 2,800 ft over 2.5 miles through forest and alpine meadows, crossing Grouse, Kulshan, and Heliotrope Creeks to reach Hogsback Camp (6,000 ft). Cross creeks in early morning before afternoon gla…",
+    "camps": [
+     {
+      "name": "Hogsback Camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 6000,
+      "notes": "The standard planned high camp, two to three hours up from the trailhead on the moraine beside the Coleman Glacier. It is above the trees, so there is nothing to hang food from and nothing to break the wind coming off th…"
+     },
+     {
+      "name": "Kulshan Cabin site",
+      "store": "bivy",
+      "type": null,
+      "elev": 5000,
+      "notes": "A lower fallback just below treeline where the cabin used to stand. Nothing remains of the structure, but there are trees for shelter and for hanging food, which Hogsback does not have. Worth knowing about as a foul-weat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_coleman_headwall",
+    "name": "Coleman Headwall",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "III+",
+    "high_point_ft": 10781,
+    "overview": "A sustained Grade III+ ice route up the broken Coleman Glacier's northwest headwall, and one of the more technically complex routes regularly climbed on Baker. From a high camp near 6,600-7,000 ft, the route crosses the broken lower Coleman Glacier to the base of the headwall around 8,500 ft, then c…",
+    "approach": "Start from the Heliotrope Ridge Trailhead (~3,700 ft, reached via Glacier Creek Rd 39 — note the road washout adds ~9 mi/2,000 ft of extra approach on foot/bike before you even reach the sign-in kiosk). Trail 677 climbs through old-growth forest and flower-filled avalanche chutes; watch for a couple…",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     },
+     {
+      "name": "Heliotrope Ridge Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Trail 677 climbs through old-growth forest and flower-filled avalanche chutes, with a couple of unbridged creek crossings that are awkward early season or after…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_easton_glacier",
+    "name": "Easton Glacier",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "Grade II glacier climb",
+    "high_point_ft": 10781,
+    "overview": "The Easton Glacier is Baker's standard south-side route and rivals the Coleman–Deming in popularity — a broad, moderate glacier climb approached via the scenic Railroad Grade moraine, finishing on the same Roman Wall to the summit. The gentler approach and excellent camping make it a favorite for fi…",
+    "approach": "From the Park Butte/Schriebers Meadow Trailhead (~3,360 ft, end of FR 13/Sulfur Creek Road), the route follows Park Butte Trail 603. Cross Sulfur Creek on a footbridge/log crossing near the start (can be a ford in high water), then climb through Schriebers Meadow and forest switchbacks to Morovitz M…",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     },
+     {
+      "name": "Sandy Camp / Railroad Grade Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5900,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_north_ridge",
+    "name": "North Ridge",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "Grade III(+), ice to ~60–80°",
+    "high_point_ft": 10781,
+    "overview": "The North Ridge of Mount Baker is the peak's premier moderate alpine ice route and a Cascades classic, first climbed by Fred Beckey, Ralph Widrig, and Dick Widrig in August 1948. From the Heliotrope Ridge approach, cross the Coleman Glacier laterally to the base of the ridge, then ascend snow slopes…",
+    "approach": "Shares the Heliotrope Ridge Trailhead (~3,500-3,700 ft) and the same Trail 677 approach as the Coleman-Deming route: switchback through old growth to the Kulshan Cabin site/treeline fork (~2.25 mi), then up the Hogsback moraine to the standard high camp at ~6,000 ft (about 2.5 mi and 2,800 ft of gai…",
+    "camps": [
+     {
+      "name": "Hogsback",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Shared with the Coleman-Deming route and reached by branching off Trail 677 at the old Kulshan Cabin site and climbing the moraine crest. There are no trees at this elevation, so food has to go in a bear canister or Ursa…"
+     },
+     {
+      "name": "Heliotrope Ridge Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_park_glacier_headwall",
+    "name": "Park Glacier Headwall",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": "IV",
+    "high_point_ft": 10781,
+    "overview": "A steep ice headwall on the northeast side above the Park Glacier, offering one of Baker's most scenic approaches and a quieter, more remote alpine-ice line than the Coleman Headwall or North Ridge, though not quite as continuously steep as either. One common line climbs three 50m ice pitches up the…",
+    "approach": "Southeast via Chain Lakes Trail to Ptarmigan Ridge. From Artist Point parking, take Chain Lakes Trail (682) to Ptarmigan Ridge Trail (682.1) junction. Continue 3 miles east to Coleman Pinnacle base, then 0.5 miles to Camp Kiser (~7,000 ft).",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_baker_squak_glacier",
+    "name": "Squak Glacier",
+    "peak": "Mount Baker",
+    "area_id": "wa_mount_baker",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 10781,
+    "overview": "A quieter, early-season-friendly alternative to the Easton Glacier, climbing steady snow slopes on Mount Baker's south side past Sherman Peak to join the Easton route near the summit.",
+    "approach": "From the Park Butte/Schriebers Meadow trailhead area, take the Scott Paul Trail; around 4,600 ft leave the maintained trail for the climbers' path to Crag View camp (~6,500 ft, about 3.5 mi from the trailhead with roughly 3,300 ft of gain).",
+    "camps": [
+     {
+      "name": "Hogsback Camp, Heliotrope Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Access is the current problem ra…"
+     },
+     {
+      "name": "Kulshan Cabin site and Harrison Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around…"
+     },
+     {
+      "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls…"
+     },
+     {
+      "name": "Colfax-Grant saddle bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 9000,
+      "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent.…"
+     },
+     {
+      "name": "Sandy Camp, top of the Railroad Grade",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more sceni…"
+     },
+     {
+      "name": "Railroad Grade and Morovitz Meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces …"
+     },
+     {
+      "name": "North Ridge glacier bivy, upper Coleman",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. W…"
+     },
+     {
+      "name": "Crag View Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6500,
+      "notes": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "baker-highway-front",
+  "routes": [
+   {
+    "id": "wa_bearpaw_mountain_scramble",
+    "name": "Church Lake Scramble",
+    "peak": "Bearpaw Mountain",
+    "area_id": "wa_bearpaw_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6091,
+    "overview": "Bearpaw Mountain (6,091 ft) is a short, steep scramble summit above Church Lake, just east of Church Mountain in the Nooksack Ridge high country north of Mount Baker. It's reached by an unmaintained boot path (not an official Forest Service trail) from the end of FS Road 3160, off Canyon Creek Road,…",
+    "approach": "From the FS 3160 road-end parking (roughly 48.957°N, 121.851°W, reached via Canyon Creek Road/FS 31 then FS 3160 as noted above), the route follows an unmaintained but well-worn boot path — not a numbered Forest Service trail, just a heavily used user track — that climbs steeply through forest for a…",
+    "camps": [
+     {
+      "name": "Artist Point and the Heather Meadows road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "The obvious place to sleep is, plainly, the one place you cannot. Table Mountain is a short, steep switchbacked climb from the Artist Point lot and is usually done in an hour or two; Mount Herman goes from the Bagley Lak…"
+     },
+     {
+      "name": "Silver Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2060,
+      "notes": "The closest developed campground to the Heather Meadows end of the highway, roughly fourteen miles east of Glacier on the west side of the road just after the river crossing, and about eight miles below the Heather Meado…"
+     },
+     {
+      "name": "Douglas Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1045,
+      "notes": "Two and a half miles east of Glacier, low in the valley and a long way below anything you would climb — but it is the campground that serves BOTH halves of this zone, because the Canyon Creek Road turning is only a coupl…"
+     },
+     {
+      "name": "Mazama Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4708,
+      "notes": "The nearest legal backcountry camping to the Heather Meadows peaks and the only overnight option in the immediate basin, in the string of subalpine lakes that the Chain Lakes trail drops into on the far side of Herman Sa…"
+     },
+     {
+      "name": "Hayes Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper pair of the Chain Lakes camps, a short distance on from the lower lake and a little higher, closer to the climb back up to Herman Saddle. For a party that has come over from the Artist Point side and intends to…"
+     },
+     {
+      "name": "Bearpaw Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for Bearpaw Mountain and the only camping anywhere near its own line. Canyon Creek Road leaves the Mount Baker Highway about two miles east of Glacier and runs north for a long, slow fourteen miles or so of alte…"
+     },
+     {
+      "name": "Excelsior ridge camps and the high spring, Canyon Creek Road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the established high camping on the Canyon Creek road system, at the far end of the same road that serves Bearpaw, and it is listed with the caveat that IT IS NOT ON BEARPAW'S OWN ROUTE. Bearpaw is the prominent …"
+     },
+     {
+      "name": "Church Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "The path climbs steeply through forest — the steepest sustained grade of the day, about 400 ft — then rolls over a rise into the cirque holding the lake, 0.6 to…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_ann_scramble",
+    "name": "Lake Ann Approach Scramble",
+    "peak": "Mount Ann",
+    "area_id": "wa_mount_ann",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 5873,
+    "overview": "Mount Ann is a ~5,840-5,873 ft summit on the ridge dividing Swift Creek from Lake Ann, immediately southwest of Mount Shuksan and roughly a mile outside the North Cascades National Park boundary. It's reached via the heavily-traveled Lake Ann Trail from the Austin Pass/Artist Point trailhead on the …",
+    "approach": "From the Austin Pass/Artist Point trailhead (paved lot at the end of SR 542, roughly 58 miles / 1.5-2 hr from Bellingham), follow the signed Lake Ann Trail #600, which drops about 700 ft into the Swift Creek headwaters basin before climbing back up past Lake Ann (4.1 miles one-way to the lake area) …",
+    "camps": [
+     {
+      "name": "Artist Point and the Heather Meadows road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "The obvious place to sleep is, plainly, the one place you cannot. Table Mountain is a short, steep switchbacked climb from the Artist Point lot and is usually done in an hour or two; Mount Herman goes from the Bagley Lak…"
+     },
+     {
+      "name": "Silver Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2060,
+      "notes": "The closest developed campground to the Heather Meadows end of the highway, roughly fourteen miles east of Glacier on the west side of the road just after the river crossing, and about eight miles below the Heather Meado…"
+     },
+     {
+      "name": "Douglas Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1045,
+      "notes": "Two and a half miles east of Glacier, low in the valley and a long way below anything you would climb — but it is the campground that serves BOTH halves of this zone, because the Canyon Creek Road turning is only a coupl…"
+     },
+     {
+      "name": "Mazama Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4708,
+      "notes": "The nearest legal backcountry camping to the Heather Meadows peaks and the only overnight option in the immediate basin, in the string of subalpine lakes that the Chain Lakes trail drops into on the far side of Herman Sa…"
+     },
+     {
+      "name": "Hayes Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper pair of the Chain Lakes camps, a short distance on from the lower lake and a little higher, closer to the climb back up to Herman Saddle. For a party that has come over from the Artist Point side and intends to…"
+     },
+     {
+      "name": "Bearpaw Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for Bearpaw Mountain and the only camping anywhere near its own line. Canyon Creek Road leaves the Mount Baker Highway about two miles east of Glacier and runs north for a long, slow fourteen miles or so of alte…"
+     },
+     {
+      "name": "Excelsior ridge camps and the high spring, Canyon Creek Road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the established high camping on the Canyon Creek road system, at the far end of the same road that serves Bearpaw, and it is listed with the caveat that IT IS NOT ON BEARPAW'S OWN ROUTE. Bearpaw is the prominent …"
+     },
+     {
+      "name": "Lake Ann",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "Established camp basin below Mount Shuksan's Fisher Chimneys; must camp at least 2 mi from trailhead, and it fills up on weekends."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_herman_standard_scramble",
+    "name": "Standard Scramble (South/East Slopes)",
+    "peak": "Mount Herman",
+    "area_id": "wa_mount_herman",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 6285,
+    "overview": "An off-trail scramble above Heather Meadows on the Mount Baker Highway (SR 542) — despite easy road access it is climbed far less often than neighbors like Table Mountain or Church Mountain, and is best known locally among backcountry skiers who ski/ride its couloirs. From the Bagley Lakes/Chain Lak…",
+    "approach": "Start from the Bagley Lakes Trailhead (~4,200 ft) at the south end of the upper Mt. Baker Ski Area parking lot near the Heather Meadows Visitor Center. Follow Bagley Lakes Trail (Forest Service Trail 684.1) south along the eastern shore of Bagley Lake — this is the only reliable water source on the …",
+    "camps": [
+     {
+      "name": "Artist Point and the Heather Meadows road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "The obvious place to sleep is, plainly, the one place you cannot. Table Mountain is a short, steep switchbacked climb from the Artist Point lot and is usually done in an hour or two; Mount Herman goes from the Bagley Lak…"
+     },
+     {
+      "name": "Silver Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2060,
+      "notes": "The closest developed campground to the Heather Meadows end of the highway, roughly fourteen miles east of Glacier on the west side of the road just after the river crossing, and about eight miles below the Heather Meado…"
+     },
+     {
+      "name": "Douglas Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1045,
+      "notes": "Two and a half miles east of Glacier, low in the valley and a long way below anything you would climb — but it is the campground that serves BOTH halves of this zone, because the Canyon Creek Road turning is only a coupl…"
+     },
+     {
+      "name": "Mazama Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4708,
+      "notes": "The nearest legal backcountry camping to the Heather Meadows peaks and the only overnight option in the immediate basin, in the string of subalpine lakes that the Chain Lakes trail drops into on the far side of Herman Sa…"
+     },
+     {
+      "name": "Hayes Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper pair of the Chain Lakes camps, a short distance on from the lower lake and a little higher, closer to the climb back up to Herman Saddle. For a party that has come over from the Artist Point side and intends to…"
+     },
+     {
+      "name": "Bearpaw Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for Bearpaw Mountain and the only camping anywhere near its own line. Canyon Creek Road leaves the Mount Baker Highway about two miles east of Glacier and runs north for a long, slow fourteen miles or so of alte…"
+     },
+     {
+      "name": "Excelsior ridge camps and the high spring, Canyon Creek Road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the established high camping on the Canyon Creek road system, at the far end of the same road that serves Bearpaw, and it is listed with the caveat that IT IS NOT ON BEARPAW'S OWN ROUTE. Bearpaw is the prominent …"
+     }
+    ]
+   },
+   {
+    "id": "wa_table_mountain_standard_scramble",
+    "name": "Table Mountain Trail (Standard)",
+    "peak": "Table Mountain",
+    "area_id": "wa_table_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 5742,
+    "overview": "Table Mountain is a flat-topped andesite lava plateau in the Mount Baker Wilderness, directly above Heather Meadows and the Mt. Baker Ski Area between Mount Baker and Mount Shuksan. From the Artist Point parking lot (~5,100 ft), a short but dramatic trail switchbacks up a basalt/andesite cliff band …",
+    "approach": "From the Artist Point trailhead (elev. ~5,100 ft, at the end of Mt. Baker Highway/SR 542, GPS approx. 48.847, -121.693) walk to the northwest corner of the large paved parking lot — the signed Table Mountain Trail #681 starts opposite the vault toilets, on the side of the lot away from the highway. …",
+    "camps": [
+     {
+      "name": "Artist Point and the Heather Meadows road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "The obvious place to sleep is, plainly, the one place you cannot. Table Mountain is a short, steep switchbacked climb from the Artist Point lot and is usually done in an hour or two; Mount Herman goes from the Bagley Lak…"
+     },
+     {
+      "name": "Silver Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2060,
+      "notes": "The closest developed campground to the Heather Meadows end of the highway, roughly fourteen miles east of Glacier on the west side of the road just after the river crossing, and about eight miles below the Heather Meado…"
+     },
+     {
+      "name": "Douglas Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1045,
+      "notes": "Two and a half miles east of Glacier, low in the valley and a long way below anything you would climb — but it is the campground that serves BOTH halves of this zone, because the Canyon Creek Road turning is only a coupl…"
+     },
+     {
+      "name": "Mazama Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4708,
+      "notes": "The nearest legal backcountry camping to the Heather Meadows peaks and the only overnight option in the immediate basin, in the string of subalpine lakes that the Chain Lakes trail drops into on the far side of Herman Sa…"
+     },
+     {
+      "name": "Hayes Lake designated sites, Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper pair of the Chain Lakes camps, a short distance on from the lower lake and a little higher, closer to the climb back up to Herman Saddle. For a party that has come over from the Artist Point side and intends to…"
+     },
+     {
+      "name": "Bearpaw Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for Bearpaw Mountain and the only camping anywhere near its own line. Canyon Creek Road leaves the Mount Baker Highway about two miles east of Glacier and runs north for a long, slow fourteen miles or so of alte…"
+     },
+     {
+      "name": "Excelsior ridge camps and the high spring, Canyon Creek Road end",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the established high camping on the Canyon Creek road system, at the far end of the same road that serves Bearpaw, and it is listed with the caveat that IT IS NOT ON BEARPAW'S OWN ROUTE. Bearpaw is the prominent …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "baker-lake-blum",
+  "routes": [
+   {
+    "id": "wa_hagan_mountain_south",
+    "name": "South Slopes",
+    "peak": "Hagan Mountain",
+    "area_id": "wa_hagan_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7080,
+    "overview": "Hagan Mountain is a multi-summited peak in the Lower Skagit/Bacon Peak group of the North Cascades, between Mount Blum (about 1.8 mi north) and Bacon Peak (about 4.5 mi south) in the Baker Lake backcountry. It straddles the boundary between the Noisy-Diobsud Wilderness (Mount Baker-Snoqualmie Nation…",
+    "approach": "Park at the Baker River Trailhead, the end of FR 11 (Baker Lake Highway), elevation roughly 800 ft. Start on Baker River Trail #606, which follows the true-right bank of the Baker River upstream through mossy old-growth forest — mostly flat, easy tread. At about 0.6 mile the trail crosses the river …",
+    "camps": [
+     {
+      "name": "Lower Blum Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "This is the base camp for both peaks and effectively the only one. Getting here is the whole difficulty of the trip: leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek, and find th…"
+     },
+     {
+      "name": "Middle Blum Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "A few hundred yards and a hundred feet of gain above the lower lake, and the more common choice for parties who want to shorten summit day on Blum. The ground is heather and slab, so tent sites are where the rock is, not…"
+     },
+     {
+      "name": "Upper Blum tarn, southeast of the main lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5700,
+      "notes": "The highest practical ground on the Blum side, on the way from the main lakes toward the gullies and snow slopes leading to Blum's east ridge. It buys perhaps an hour on summit day and costs an extra 700 ft of carrying a…"
+     },
+     {
+      "name": "South Hagan bench",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "Open benches on the south side of Hagan Mountain, reached from the Blum Lakes by climbing to the ridge crest near 5,600 ft and traversing south. This is where parties stage for Hagan's south slopes: from the bench, talus…"
+     },
+     {
+      "name": "Hidden Lake, below the Blum-Hagan divide",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4550,
+      "notes": "A small lake in the saddle country between Hagan and Bacon, reached from the Blum Lakes by crossing the ridge southeast of them and dropping to it. It matters here as the reliable water on Hagan's far side and as the sta…"
+     },
+     {
+      "name": "Sulphide Camp, end of the Baker River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the only designated, built camp anywhere near this trailhead: flat sites and a toilet at the end of trail 606, a couple of easy valley miles past the suspension bridge. IT IS NOT ON THE WAY TO BLUM OR HAGAN. The …"
+     },
+     {
+      "name": "Blum Creek spur ridge, forest bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THERE IS NO ESTABLISHED CAMP ON THIS APPROACH, said plainly rather than recommending a place that does not exist. The 4,000 ft of steep forest between the Baker River and the Blum Lakes has no benches worth the name, no …"
+     },
+     {
+      "name": "Upper Watson Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4415,
+      "notes": "Start on the maintained Anderson-Watson Lakes Trail 611 from the road end. Where the tread splits at about 4,700 ft, take the left (Watson) branch - the right f…"
+     },
+     {
+      "name": "Uppermost Diobsud Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": "Drop off the saddle through open heather and easy slopes into the Diobsud basin, aiming for the uppermost pair of the four Diobsud Lakes. Heather and open groun…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_blum_north_ridge",
+    "name": "North Ridge",
+    "peak": "Mount Blum",
+    "area_id": "wa_mount_blum",
+    "discipline": "mountaineering",
+    "grade": "5.8-5.9 R",
+    "high_point_ft": 7685,
+    "overview": "A serrated, high-quality alpine granite ridge rising between two glaciers on Mount Blum's north side — a technical rock line reached by a glacier crossing, with a steep headwall of sustained 5.8-5.9 climbing to gain the crest followed by easier but still exposed scrambling along the crest to the sum…",
+    "approach": "Same trailhead and Blum Creek approach as the South Ridge route to the Blum Lakes basin, then continue to the northernmost of the Blum Lakes before crossing the northwest shoulder into the glacial basin below the North Ridge (glacier travel gear needed for this crossing).",
+    "camps": [
+     {
+      "name": "Lower Blum Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "This is the base camp for both peaks and effectively the only one. Getting here is the whole difficulty of the trip: leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek, and find th…"
+     },
+     {
+      "name": "Middle Blum Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "A few hundred yards and a hundred feet of gain above the lower lake, and the more common choice for parties who want to shorten summit day on Blum. The ground is heather and slab, so tent sites are where the rock is, not…"
+     },
+     {
+      "name": "Upper Blum tarn, southeast of the main lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5700,
+      "notes": "The highest practical ground on the Blum side, on the way from the main lakes toward the gullies and snow slopes leading to Blum's east ridge. It buys perhaps an hour on summit day and costs an extra 700 ft of carrying a…"
+     },
+     {
+      "name": "South Hagan bench",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "Open benches on the south side of Hagan Mountain, reached from the Blum Lakes by climbing to the ridge crest near 5,600 ft and traversing south. This is where parties stage for Hagan's south slopes: from the bench, talus…"
+     },
+     {
+      "name": "Hidden Lake, below the Blum-Hagan divide",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4550,
+      "notes": "A small lake in the saddle country between Hagan and Bacon, reached from the Blum Lakes by crossing the ridge southeast of them and dropping to it. It matters here as the reliable water on Hagan's far side and as the sta…"
+     },
+     {
+      "name": "Sulphide Camp, end of the Baker River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the only designated, built camp anywhere near this trailhead: flat sites and a toilet at the end of trail 606, a couple of easy valley miles past the suspension bridge. IT IS NOT ON THE WAY TO BLUM OR HAGAN. The …"
+     },
+     {
+      "name": "Blum Creek spur ridge, forest bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THERE IS NO ESTABLISHED CAMP ON THIS APPROACH, said plainly rather than recommending a place that does not exist. The 4,000 ft of steep forest between the Baker River and the Blum Lakes has no benches worth the name, no …"
+     },
+     {
+      "name": "Blum Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5003,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_blum_south_ridge",
+    "name": "South Ridge / Southeast Slopes",
+    "peak": "Mount Blum",
+    "area_id": "wa_mount_blum",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7685,
+    "overview": "Mount Blum (7,685 ft) is a rugged, glacier-draped granite peak on the western edge of North Cascades National Park, the highest of a chain of remote summits strung between Mount Shuksan and the Picket Range. It's named for John Blum, a U.S. Forest Service fire-patrol pilot who died in a 1931 plane c…",
+    "approach": "Drive Baker Lake Road (Forest Road 11) 25.5 miles north from WA-20 (milepost 82, near Concrete) to its end at the Baker River Trailhead (774 ft; Northwest Forest Pass required, vault toilet on site). Hike the maintained Baker River Trail (#606) roughly 0.5 mile to the Baker River suspension bridge (…",
+    "camps": [
+     {
+      "name": "Lower Blum Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "This is the base camp for both peaks and effectively the only one. Getting here is the whole difficulty of the trip: leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek, and find th…"
+     },
+     {
+      "name": "Middle Blum Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "A few hundred yards and a hundred feet of gain above the lower lake, and the more common choice for parties who want to shorten summit day on Blum. The ground is heather and slab, so tent sites are where the rock is, not…"
+     },
+     {
+      "name": "Upper Blum tarn, southeast of the main lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5700,
+      "notes": "The highest practical ground on the Blum side, on the way from the main lakes toward the gullies and snow slopes leading to Blum's east ridge. It buys perhaps an hour on summit day and costs an extra 700 ft of carrying a…"
+     },
+     {
+      "name": "South Hagan bench",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "Open benches on the south side of Hagan Mountain, reached from the Blum Lakes by climbing to the ridge crest near 5,600 ft and traversing south. This is where parties stage for Hagan's south slopes: from the bench, talus…"
+     },
+     {
+      "name": "Hidden Lake, below the Blum-Hagan divide",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4550,
+      "notes": "A small lake in the saddle country between Hagan and Bacon, reached from the Blum Lakes by crossing the ridge southeast of them and dropping to it. It matters here as the reliable water on Hagan's far side and as the sta…"
+     },
+     {
+      "name": "Sulphide Camp, end of the Baker River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the only designated, built camp anywhere near this trailhead: flat sites and a toilet at the end of trail 606, a couple of easy valley miles past the suspension bridge. IT IS NOT ON THE WAY TO BLUM OR HAGAN. The …"
+     },
+     {
+      "name": "Blum Creek spur ridge, forest bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THERE IS NO ESTABLISHED CAMP ON THIS APPROACH, said plainly rather than recommending a place that does not exist. The 4,000 ft of steep forest between the Baker River and the Blum Lakes has no benches worth the name, no …"
+     },
+     {
+      "name": "Blum Lakes (Middle Blum Lake)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5003,
+      "notes": "Established backcountry camp at the outlet of the middle of the ~6 Blum Lakes cirque lakes; last reliable water before the summit push."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "baker-satellites",
+  "routes": [
+   {
+    "id": "wa_colfax_peak_cosley_houston",
+    "name": "Cosley-Houston Couloir",
+    "peak": "Colfax Peak",
+    "area_id": "wa_colfax_peak",
+    "discipline": "mountaineering",
+    "grade": "WI4",
+    "high_point_ft": 9440,
+    "overview": "Colfax Peak is one of the Black Buttes, eroded remnants of an older Mount Baker volcanic cone on Baker's northwest shoulder above the Coleman Glacier. The Cosley-Houston is the easiest of Colfax's steep north-face ice lines: a meandering ~600 ft, 4-pitch WI4 route that starts just above the bergschr…",
+    "approach": "From the Heliotrope Ridge trailhead (~3,700 ft, end of Glacier Creek Road/FR 39), follow the Heliotrope Ridge Trail (#677) through forest for roughly 2 miles, crossing a plank bridge over Grouse Creek and one avalanche-path/rockfall gully below Hogsback that can hold hazardous debris and running wat…",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     },
+     {
+      "name": "Hogsback Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Camp sites scattered 6,000-6,200 ft along the moraine crest above the trees; standard bivy for Coleman Glacier and Colfax north-face routes."
+     }
+    ]
+   },
+   {
+    "id": "wa_colfax_peak_kimchi_suicide_volcano",
+    "name": "Kimchi Suicide Volcano",
+    "peak": "Colfax Peak",
+    "area_id": "wa_colfax_peak",
+    "discipline": "mountaineering",
+    "grade": "M5 AI4+",
+    "high_point_ft": 9440,
+    "overview": "An independent mixed line on Colfax's north face, just left of the Polish Route — the first route on the wall to be more of a true mixed climb than a pure ice line.",
+    "approach": "Same as the Cosley-Houston and Polish Route: from Glacier, WA via Glacier Creek Road (FS-39) to the Heliotrope Ridge trailhead, up the Heliotrope Ridge Trail onto the Coleman Glacier moraine, then glacier travel to the base of Colfax's north face.",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     }
+    ]
+   },
+   {
+    "id": "wa_colfax_peak_polish_route",
+    "name": "Polish Route",
+    "peak": "Colfax Peak",
+    "area_id": "wa_colfax_peak",
+    "discipline": "mountaineering",
+    "grade": "WI6",
+    "high_point_ft": 9440,
+    "overview": "The Polish Route is widely regarded as the best line on Colfax's north face: a striking, direct ~1,000 ft, 4-pitch WI6 ice line running straight up the middle of the wall, culminating in a free-hanging ice dagger crux. It sits alongside the easier Cosley-Houston (WI4) and Ford's Theatre (WI4+) as on…",
+    "approach": "Same trailhead and lower approach as Cosley-Houston: from the Heliotrope Ridge trailhead (~3,700 ft) follow Trail #677 roughly 2 miles through forest (last reliable water near treeline/moraine) to the Coleman Glacier moraine, then join the standard Coleman-Deming boot track onto the glacier. Rope up…",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     },
+     {
+      "name": "Hogsback Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Standard moraine-crest bivy at 6,000-6,200 ft used for both Coleman Glacier and Colfax north-face objectives."
+     }
+    ]
+   },
+   {
+    "id": "wa_hadley_peak_cougar_divide",
+    "name": "Cougar Divide Route",
+    "peak": "Hadley Peak",
+    "area_id": "wa_hadley_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7522,
+    "overview": "A shorter, higher-starting alternative to the Skyline Divide approach, climbing the Cougar Divide ridge trail from the end of FS Road 33 to Chowder Ridge before joining the same Class 2 scramble to Hadley Peak's summit.",
+    "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east and turn onto Forest Service Road 33; follow roughly 11 miles of gravel road (rough in sections, high-clearance/SUV recommended, sedans passable with care) to its end at the Cougar Divide Trailhead/parking (room for 8-10 vehicles). Note the tru…",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     }
+    ]
+   },
+   {
+    "id": "wa_hadley_peak_skyline_divide",
+    "name": "Skyline Divide Route",
+    "peak": "Hadley Peak",
+    "area_id": "wa_hadley_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7522,
+    "overview": "The more popular of Hadley Peak's two standard approaches, following the well-known Skyline Divide trail up onto the ridge crest and then continuing cross-country along Chowder Ridge to the base of Hadley's summit block for a long, scenic ridge-walk scramble.",
+    "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east about 1 mile past the Glacier Public Service Center to Glacier Creek Road (FS 39); turn right, then take an immediate left onto Deadhorse Road (FS 37). FS 37 normally continues 12.7 miles to the Skyline Divide Trailhead. As of the Forest Servic…",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sherman_peak_baker_route",
+    "name": "Crater Rim Scramble (from Easton Glacier)",
+    "peak": "Sherman Peak",
+    "area_id": "wa_sherman_peak_baker",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3 (glacier)",
+    "high_point_ft": 10133,
+    "overview": "Sherman Peak is the high point on the south rim of Sherman Crater, Mount Baker's persistently active volcanic vent, sitting roughly 650 ft below and about half a mile southeast of Baker's true summit, Grant Peak (10,781 ft). A July 2023 differential-GPS survey fixed its elevation at 10,133 ft with 3…",
+    "approach": "Start at the Park Butte Trailhead (elev. ~3,360 ft) at the end of Forest Service Road 13, reached via the Baker Lake Highway/Sulfur Creek Road turnoff (do not repeat the drive-in here — this covers the hike only). From the trailhead register, follow Park Butte Trail #603 south into Schriebers Meadow…",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     },
+     {
+      "name": "Sandy Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "Terminus of Railroad Grade Trail and the standard high camp for the Easton Glacier route; last established, durable tent sites before glacier travel."
+     }
+    ]
+   },
+   {
+    "id": "wa_sherman_peak_baker_squak_glacier",
+    "name": "Squak Glacier Route",
+    "peak": "Sherman Peak",
+    "area_id": "wa_sherman_peak_baker",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 10133,
+    "overview": "A glacier ascent of Sherman Peak via Mount Baker's Squak Glacier on the mountain's south side, approached from the same Schriebers Meadow trailhead as the Easton Glacier line but following a more westerly glacier path through a maze of crevasses to a bergschrund-guarded final summit slope.",
+    "approach": "Approach from the Schriebers Meadow Trailhead (~3,366 ft) as for the Easton Glacier route, branching onto the Squak Glacier line rather than the Railroad Grade/Easton line; high camp is commonly established around 6,800 ft.",
+    "camps": [
+     {
+      "name": "Crag View, Squak Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above S…"
+     },
+     {
+      "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is…"
+     },
+     {
+      "name": "Coleman Glacier bivy under the Black Buttes north faces",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Colfax's three north-side ice lines — the Cosley-Houston, the Polish Route and Kimchi Suicide Volcano — all start off the Coleman somewhere near 8,000 ft, and this is the staging ground for a party that does not want to …"
+     },
+     {
+      "name": "Cougar Divide meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unoff…"
+     },
+     {
+      "name": "Skyline Divide crest camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inacces…"
+     },
+     {
+      "name": "Deadhorse Creek basin, below Chowder Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from eithe…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "bridge-creek-goode",
+  "routes": [
+   {
+    "id": "wa_goode_mountain_megalodon_ridge",
+    "name": "Megalodon Ridge",
+    "peak": "Mount Goode",
+    "area_id": "wa_mount_goode",
+    "discipline": "alpine",
+    "grade": "IV+, 5.10",
+    "high_point_ft": 9220,
+    "overview": "A long, serrated ridge on Goode's east side offering sustained, committing alpine rock climbing over many towers. First climbed September 6, 2007 by Blake Herrington and Sol Wertkin, who named it Megalodon Ridge after the giant prehistoric shark; the ridge runs roughly 2,800 feet and, broken into pi…",
+    "approach": "Start at the Rainy Pass trailhead on Highway 20 (large paved lot at ~4,800 ft) and head south on the Pacific Crest Trail. Follow the PCT roughly 9-10 miles, descending along Bridge Creek, to the junction with the North Fork Bridge Creek Trail near North Fork Camp. Continue on this increasingly brush…",
+    "camps": [
+     {
+      "name": "North Fork Camp, Bridge Creek / PCT junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "This sits right at the junction where the PCT leaves Bridge Creek for the North Fork, roughly ten miles in from the SR 20 trailhead, so it is the natural first-night stop for a party that started late. It is a long way b…"
+     },
+     {
+      "name": "Walker Park Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3086,
+      "notes": "Roughly two miles up the North Fork trail from the junction, this is the first camp that meaningfully shortens the walk to the Goode Glacier drainage. The tread to here is still ordinary maintained trail, so it is an eas…"
+     },
+     {
+      "name": "Grizzly Creek Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3163,
+      "notes": "About four miles up the North Fork trail, this is the last designated camp before the country turns unpleasant, and the practical decision point for the whole approach. Beyond it the tread gets brushy and faint — stingin…"
+     },
+     {
+      "name": "Fireweed Camp, Bridge Creek / PCT",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A Bridge Creek corridor camp on the PCT well short of the North Fork junction, near the Twisp Pass trail area. It is only useful to a Goode party as an overflow choice when the North Fork camps are booked out, which happ…"
+     },
+     {
+      "name": "Goode Glacier approach bivy, timbered knoll",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Reached by leaving the North Fork trail after Grizzly Creek, fording the creek and grinding up timber and scree beside the drainage off the Goode Glacier, this is the classic first bivy under the buttress. Reports differ…"
+     },
+     {
+      "name": "Upper bivy in the rock bands east of the buttress toe",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5600,
+      "notes": "Sitting in the rock bands just east of where the Northeast Buttress meets the ground, this puts you at the base with a few hundred feet already banked for summit day, which is the argument for grinding past the lower kno…"
+     }
+    ]
+   },
+   {
+    "id": "wa_goode_mountain_northeast_face",
+    "name": "Northeast Face",
+    "peak": "Mount Goode",
+    "area_id": "wa_mount_goode",
+    "discipline": "alpine",
+    "grade": "IV",
+    "high_point_ft": 9220,
+    "overview": "A steep, rarely-repeated mixed alpine line up Goode's east-facing aspect, climbers' right of the classic Northeast Buttress. It sees a fraction of the traffic of the Buttress and is documented mainly through scattered trip reports (e.g., a 2011 Cascade Crusades ski-mountaineering ascent) rather than…",
+    "approach": "South on Pacific Crest Trail along Bridge Creek for 9.6 miles to North Fork Bridge Creek Trail junction; then north with final bushwhacking to glacier base camp",
+    "camps": [
+     {
+      "name": "North Fork Camp, Bridge Creek / PCT junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "This sits right at the junction where the PCT leaves Bridge Creek for the North Fork, roughly ten miles in from the SR 20 trailhead, so it is the natural first-night stop for a party that started late. It is a long way b…"
+     },
+     {
+      "name": "Walker Park Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3086,
+      "notes": "Roughly two miles up the North Fork trail from the junction, this is the first camp that meaningfully shortens the walk to the Goode Glacier drainage. The tread to here is still ordinary maintained trail, so it is an eas…"
+     },
+     {
+      "name": "Grizzly Creek Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3163,
+      "notes": "About four miles up the North Fork trail, this is the last designated camp before the country turns unpleasant, and the practical decision point for the whole approach. Beyond it the tread gets brushy and faint — stingin…"
+     },
+     {
+      "name": "Fireweed Camp, Bridge Creek / PCT",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A Bridge Creek corridor camp on the PCT well short of the North Fork junction, near the Twisp Pass trail area. It is only useful to a Goode party as an overflow choice when the North Fork camps are booked out, which happ…"
+     },
+     {
+      "name": "Goode Glacier approach bivy, timbered knoll",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Reached by leaving the North Fork trail after Grizzly Creek, fording the creek and grinding up timber and scree beside the drainage off the Goode Glacier, this is the classic first bivy under the buttress. Reports differ…"
+     },
+     {
+      "name": "Upper bivy in the rock bands east of the buttress toe",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5600,
+      "notes": "Sitting in the rock bands just east of where the Northeast Buttress meets the ground, this puts you at the base with a few hundred feet already banked for summit day, which is the argument for grinding past the lower kno…"
+     }
+    ]
+   },
+   {
+    "id": "wa_goode_mountain_southwest_couloir",
+    "name": "Southwest Couloir",
+    "peak": "Mount Goode",
+    "area_id": "wa_mount_goode",
+    "discipline": "mountaineering",
+    "grade": "III",
+    "high_point_ft": 9220,
+    "overview": "The Southwest Couloir is the standard, least-technical route up Goode and the line of the 1936 first ascent. From the base, the route climbs a narrow couloir of snow, scree, and short rock steps, crosses through the Black Tooth Notch, then traverses across the upper Northeast Face before a short, ex…",
+    "approach": "From the Bridge Creek/PCT trailhead on SR-20 near milepost 159 (Rainy Pass area, ~4,875 ft), follow the Pacific Crest Trail southbound along Bridge Creek. This stretch loses elevation steadily — roughly 2,000 ft over about 9.5-9.6 miles — down through forest to the North Fork Camp junction, where th…",
+    "camps": [
+     {
+      "name": "5,500 ft bivy below the slabs",
+      "store": "bivy",
+      "type": null,
+      "elev": 5500,
+      "notes": "PLANNED camp and the most commonly used one on this side of the peak. Reached after the slide-alder section and a crossing of the creek, tucked just below the low-angle slabs with rock walls around it and running water o…"
+     },
+     {
+      "name": "5,200 ft camp to the west",
+      "store": "bivy",
+      "type": null,
+      "elev": 5200,
+      "notes": "PLANNED camp, the fallback if you run out of daylight in the brush below. Perfectly serviceable, but reports consistently say the extra three hundred feet up to the higher bivy is worth carrying, because summit day from …"
+     },
+     {
+      "name": "Goode Glacier toe",
+      "store": "bivy",
+      "type": null,
+      "elev": 6400,
+      "notes": "PLANNED camp on the moraine and rubble between roughly 6,400 and 6,800 ft. Flat ground is genuinely limited and the good spots are specific rather than general — expect to hunt for them, and expect glacier noise all nigh…"
+     },
+     {
+      "name": "West Tower ledge, upper mountain",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "EMERGENCY ledge, not a camp. A narrow shelf on the north side of the crest between the West Tower and the main summit, where a solo climber spent a night wedged between rocks and still lost sleep to constant south wind. …"
+     },
+     {
+      "name": "Lateral moraine camp above Goode Glacier",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "Established bivy atop the lateral moraine overlooking the Goode Glacier's seracs; standard base camp for the Southwest Couloir attempt."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_goode_northeast_buttress",
+    "name": "Northeast Buttress",
+    "peak": "Mount Goode",
+    "area_id": "wa_mount_goode",
+    "discipline": "mountaineering",
+    "grade": "Grade IV, 5.5",
+    "high_point_ft": 9220,
+    "overview": "The highest peak in the Lake Chelan-Sawtooth country and a coveted Bulger summit, Mount Goode dominates the head of Bridge Creek. Its Northeast Buttress is a long, classic alpine rock climb on a grand mountain, pairing a glaciated approach with many pitches of moderate granite up a striking buttress…",
+    "approach": "South-southeast via Pacific Crest Trail (PCT) descent, then east up North Fork Bridge Creek",
+    "camps": [
+     {
+      "name": "Valley bivy below the buttress",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The classic first night, and it is earned: parties commonly take about eight hours from the trailhead, down the PCT to the North Fork Bridge Creek trail, then up past Grizzly Creek into slabs, brush and talus. The usual …"
+     },
+     {
+      "name": "Goode Glacier moraine",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The higher option, on the lateral moraine looking across at the seracs of the Goode Glacier, variously reported between about 6,400 and 7,000 ft. It shortens the climbing day considerably over the valley bivy and puts yo…"
+     },
+     {
+      "name": "Summit bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties who start from the valley often finish the buttress too late to descend and sleep on the summit itself. There is also a grassy ledge reported around 8,500 ft on the upper route that one party found softer and mor…"
+     },
+     {
+      "name": "High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "bulls-tooth-chiwaukum",
+  "routes": [
+   {
+    "id": "wa_bulls_tooth_standard",
+    "name": "Standard Scramble",
+    "peak": "Bulls Tooth",
+    "area_id": "wa_bulls_tooth",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6840,
+    "overview": "Bulls Tooth is a striking granite summit on the arcuate ridge rimming Chain and Doelle Lakes in the Chiwaukum Mountains, about 5.5 miles southeast of Stevens Pass in the Alpine Lakes Wilderness (Okanogan-Wenatchee National Forest). It's one of the longest approaches out of Stevens Pass -- roughly 10…",
+    "approach": "Start at the Stevens Pass PCT-South trailhead (large lot on the south side of US 2, ~4,060 ft, just east of the ski area buildings). Follow the Pacific Crest Trail south; the trail climbs gradually through forest and past Lake Susan Jane, staying high above Nason Creek before working into the Icicle…",
+    "camps": [
+     {
+      "name": "Chiwaukum Chain Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the working climbers' camp for Bulls Tooth and the only place a party should plan to sleep for the standard scramble. From the upper lake the route works around the shore to the base of a northwest-facing couloir…"
+     },
+     {
+      "name": "Doelle Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5775,
+      "notes": "About one and eight tenths miles from the Chain Lakes over a gap that takes some six hundred feet of climbing, this basin sits at nearly the same height as the upper Chain Lake and is the more scenic option and it looks …"
+     },
+     {
+      "name": "Frosty Pass and the Wildhorse Creek headwaters",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the pivot of the western approach to Bulls Tooth and the last camp before the peak from that side. The Frosty and Wildhorse Creek trail runs about eleven miles and thirty-five hundred feet from the Whitepine side…"
+     },
+     {
+      "name": "Whitepine Creek valley camps and the Wildhorse junction ford",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These exist to break the walk, and on an approach this long that matters more than it sounds. It is roughly three miles of easy valley trail from the road end to the Wildhorse Creek junction, and then six and a half mile…"
+     },
+     {
+      "name": "White Pine road end trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "The staging point for the western approach and the shorter drive from anywhere on US 2. The road leaves the highway west of Leavenworth and runs about four miles of gravel to the trailhead at roughly 2,800 feet. Sleeping…"
+     }
+    ]
+   }
+  ]
+ }
+]

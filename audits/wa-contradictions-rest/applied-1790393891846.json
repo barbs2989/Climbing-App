@@ -1,0 +1,54 @@
+{
+ "applied": [
+  {
+   "id": "wa_junior_s_farm",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Route grade and crux pitches"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "column": "descent",
+   "path": [],
+   "fact": "Rope needed for the rappel descent"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rope needed for the rappel descent"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Rappel count"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "column": "bail",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Descent line"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_junior_s_farm",
+   "before": {
+    "rock_grade": "5.9 (pitch grades range roughly 5.5-5.10a/5.6-5.8; P1 and P8 are the cruxes)",
+    "descent": "Rappel descent from grassy ledge area above pitch 8 via multiple anchors. A single 60-70m rope is insufficient for complete descent—ensure team carries adequate rappel stations and backup anchors.",
+    "descent_text": "After completing pitch 8 and scrambling to the upper summit plateau area, descend via rappelling from the grassy ledge area at the base of the upper pitches. This area has established rappel anchors. Due to the terrain and pitch length, multiple rappels are required—at least 6-8 raps to 30m or longer. A single 60m rope is insufficient; ensure adequate redundant anchors at each station. Do not rely solely on fixed lines if present, as they may be unreliable. Verify all anchor points independently.",
+    "rappel_count_note": "Six rappels: one down the climbing line to where the descent diverges, then five on a dedicated rappel route to the ground. A single 60 m rope does the whole thing PROVIDED you use every anchor station - below the divergence you must not skip anchors or try to link rappels on a 60 or a 70, and parties confirm the last two are only just within reach of a 60. A 70 m buys exactly one thing: it links the top two rappels into a single rope-stretching 35 m shot and skips a semi-hanging belay. It does not let you skip anything lower. Note a numbering discrepancy that is not a disagreement about the route: the current numbering puts the divergence at the bottom of pitch 8 while an older numbering says the bottom of pitch 6 - the same spot, counted with and without the traverse pitches. A walk-off exists from the top of pitch 4 by way of a fixed line, but is not recommended in climbing shoes.",
+    "bail": "Every belay has a bolted chain anchor, so a party can bail from essentially any pitch by rappelling the line already climbed back down to the boulder field — this is the same line used for the normal descent.",
+    "itinerary": "Single long day: ~5-minute approach from the car up the boulder field to the base of Mossness Wall, climb the 8 roped pitches (5.5-5.9) plus 2 scramble sections to the upper bench of Full Montey, then rappel the full route back down to the boulder field and walk out. Plan for 6+ hours car-to-car."
+   }
+  }
+ ]
+}

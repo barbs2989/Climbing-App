@@ -1,0 +1,496 @@
+{
+  "id": "wa_elephant_head_standard",
+  "area_id": "wa_elephant_head",
+  "name": "Standard Route",
+  "discipline": "mountaineering",
+  "grade": "Class 4 / glacier",
+  "grade_system": "class",
+  "grade_num": 4,
+  "pitches": null,
+  "length_m": null,
+  "sort_order": null,
+  "stars": null,
+  "fa": null,
+  "lat": null,
+  "lng": null,
+  "aspect": "E",
+  "season": "Jul-Sep",
+  "description": null,
+  "gear": [
+    "helmet",
+    "rope",
+    "ice axe",
+    "crampons",
+    "light rock rack",
+    "crevasse rescue kit (prusiks/pulley)",
+    "glacier travel harness",
+    "map/compass or GPS (route-finding across the Dana and Chickamin Glaciers is complex and unmarked)"
+  ],
+  "hazards": [
+    "glacier travel and crevasse hazard crossing the Dana Glacier",
+    "Chickamin Glacier's crevasse maze and bergschrund immediately below the connecting ridge - reported as a route-finding crux by parties on the adjoining Ptarmigan Traverse",
+    "loose rock on the upper peak and connecting ridge",
+    "very long, mostly off-trail approach with unmaintained tread beyond Bachelor Creek (mile 6.6)",
+    "no cell coverage anywhere in the Downey Creek/Bachelor Creek drainage or on the glaciers",
+    "Suiattle River Road currently closed at MP 4.5 (flood damage), adding significant extra road-walking distance to reach the trailhead"
+  ],
+  "verif": null,
+  "overview": "Elephant Head (~7,990-7,995 ft) sits at the northwest end of a series of jagged crags extending about 1.1 miles off Dome Peak's twin summits in the Glacier Peak Wilderness, dividing the Dana Glacier (west) from the Chickamin Glacier (east). Its summit cliffs plunge into the ice-sculpted cirque at the head of Agnes Creek's West Fork. Unlike Dome Peak itself, Elephant Head has almost no independently documented route history - it is essentially always climbed, when climbed at all, as a side trip from a Dome Peak high camp or during the Ptarmigan Traverse, sharing the same long approach and glacier crossing.",
+  "beta": "Ascend diagonally west-southwest to approximately 6,200 feet before turning south, then traverse and climb gently at first, then more steeply up the Dana Glacier toward Elephant Head. The route finding is straightforward with mixed climbing and scrambling on the ridge approach.",
+  "turnaround": "Firm turnaround; escape options are limited",
+  "auto_generated": true,
+  "alpine_grade": "PD",
+  "rock_grade": "Class 3-4",
+  "ice_grade": null,
+  "gain_ft": 7800,
+  "loss_ft": 7800,
+  "dist_km": 23.35,
+  "max_angle": 35,
+  "rappels": "0",
+  "commitment": "II",
+  "face": "Cliffs face east/northeast into the cirque at the head of Agnes Creek's west fork, on the arête separating the Dana Glacier (west) from the Chickamin Glacier (north/east).",
+  "permit": null,
+  "comms": "Cell service is not available in the alpine. Satellite communication devices recommended for parties in remote Glacier Peak Wilderness.",
+  "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+  "obj_haz": [
+    "Crevasses",
+    "Glacier travel",
+    "Remote access",
+    "High-water creek crossings"
+  ],
+  "waypoints": [
+    {
+      "lat": 48.2591,
+      "lng": -121.2244,
+      "elev": 1450,
+      "name": "Downey Creek Trailhead",
+      "note": "On Suiattle River Rd (FR-26) ~19.5 mi from Darrington; self-issue Glacier Peak Wilderness permit and NW Forest Pass/day-fee kiosk at the trailhead, trail starts just past the Downey Creek Bridge.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From SR 530 north of Darrington, follow the Suiattle River Road (FR 26) about 19.5 miles to the trailhead, where the trail starts just past the Downey Creek bridge. The road has been closed by flood damage well below the trailhead, which adds a long road walk or bike ride — check the current closure point before fixing a schedule."
+    },
+    {
+      "lat": 48.324225,
+      "lng": -121.157032,
+      "elev": 2400,
+      "name": "Bachelor Creek crossing / Sixmile Camp junction",
+      "note": "Unsigned junction where Bachelor Creek Trail forks off Downey Creek Trail near Sixmile Camp; log-crossing of Bachelor Creek to the south bank, trail gets brushy and hard to follow beyond here.",
+      "type": "Water",
+      "distMi": 6.6,
+      "directions": "Follow Downey Creek Trail #768 at a gentle grade through old-growth along the creek for about six miles to Six Mile Camp, then another half mile to the junction. It is unsigned and unmaintained and very easy to walk straight past, so slow down and look for it. The crossing itself can run high and fast during June and early-July snowmelt and is the main early-season hazard on the approach."
+    },
+    {
+      "lat": 48.308225,
+      "lng": -121.094,
+      "elev": 5880,
+      "name": "Gap NW of Cub Lake",
+      "note": "Trail crests a minor ridge at this ~5,880 ft gap before a steep 500 ft descent to Cub Lake; talus and brush make routefinding tricky in poor visibility.",
+      "type": "Junction",
+      "distMi": 11.5,
+      "directions": "Turn off-trail and climb the boot path steeply through brush, avalanche debris and old timber to Bachelor Meadows around 4,400-4,800 ft, a common first camp. Above the meadows the path continues over benches and heather meadows to the broad gap on the ridge, with faint tread and slow going throughout."
+    },
+    {
+      "lat": 48.3056342,
+      "lng": -121.0912265,
+      "elev": 5300,
+      "name": "Cub Lake meadows camp",
+      "note": "Established camp in meadows southeast of the lake, the last reliable camp before the glacier approach (roughly 9-11 hrs in from the trailhead).",
+      "type": "Campsite",
+      "distMi": 12,
+      "directions": "Drop about 500 ft off the far side of the gap into the lake basin. Talus and brush make this short descent tricky to follow in poor visibility. It is the point where forest gives way to true alpine ground."
+    },
+    {
+      "lat": 48.31917,
+      "lng": -121.05139,
+      "elev": 7200,
+      "name": "Dana Glacier crossing",
+      "note": "Rope up — the glacier (spanning ~6,000-8,000 ft) hides crevasses under summer snowpack; aim for the higher of two cols leading toward the Dome Peak-Elephant Head ridge.",
+      "type": "Hazard",
+      "distMi": 14,
+      "directions": "A climbers' trail switchbacks up out of the lake basin onto Itswoot Ridge; follow the crest through loose rock and boulder benches until the boot path fades near the seasonal snowline, usually around 6,300-6,500 ft. Above that there is no tread at all — talus, heather and snow depending on the season — so keep track of the line you took, because you reverse it late in a very long day."
+    },
+    {
+      "lat": 48.31840269230769,
+      "lng": -121.04348807692308,
+      "elev": 7900,
+      "name": "Dome Peak-Elephant Head col",
+      "note": "Saddle on the connecting ridge between the two summits; gain the ridge here and turn north toward Elephant Head on Class 3-4 rock.",
+      "type": "Junction",
+      "distMi": 14.7,
+      "directions": "Travel roped up-glacier, weaving around the crevasse bands. Two cols break the ridge above; take the higher one. A bergschrund and crevasse maze sit immediately below the connecting ridge and are the route-finding crux of the day, varying a great deal with the season."
+    },
+    {
+      "lat": 48.317745,
+      "lng": -121.036715,
+      "elev": 7995,
+      "name": "Elephant Head",
+      "note": "True summit — an ice-sculpted rock bastion 1.1 mi NW of Dome Peak dividing the Dana and Chickamin Glaciers, commonly climbed in the same push as Dome Peak.",
+      "type": "Summit",
+      "distMi": 15.3,
+      "directions": "From the col, gain the connecting ridge and follow it to the summit rocks on jagged, exposed Class 3-4 rock that is loose in places. One short, awkward step is the sticking point; parties commonly fix a handline on it, and some prefer to rappel it rather than downclimb on the way back. There is no fixed gear anywhere on this ridge, so carry slings and cord if you want an anchor."
+    }
+  ],
+  "gpx": [
+    [
+      48.2595,
+      -121.2229
+    ],
+    [
+      48.28487381,
+      -121.150479575
+    ],
+    [
+      48.30371194166667,
+      -121.09671289583333
+    ],
+    [
+      48.3056342,
+      -121.0912265
+    ],
+    [
+      48.31917,
+      -121.05139
+    ],
+    [
+      48.31840269230769,
+      -121.04348807692308
+    ],
+    [
+      48.317745,
+      -121.036715
+    ]
+  ],
+  "elev_pts": null,
+  "disciplines": [
+    "alpine",
+    "scrambling"
+  ],
+  "timing": {
+    "totalHrs": 32,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": 9,
+    "approachTimeHrs": 10,
+    "recommendedStart": "5:00 AM from camp",
+    "sectionBreakdown": [
+      {
+        "hrs": 10,
+        "note": "Hike the maintained Downey Creek trail 6.6 miles to the Bachelor Creek junction (2,400 ft), then follow the rough, unmaintained Bachelor Creek climbers' path through berry brush, b…",
+        "fromTo": "Approach to Cub Lake camp",
+        "section": "Approach"
+      },
+      {
+        "hrs": 13,
+        "note": "From Cub Lake, climb back up over Itswoot Ridge and rope up to cross the Dana Glacier to the col between Dome Peak and Elephant Head, then scramble the exposed, jagged connecting r…",
+        "fromTo": "Summit day: Dana Glacier to Elephant Head",
+        "section": "Climb"
+      },
+      {
+        "hrs": 9,
+        "note": "Reverse the approach: climb back over the saddle from Cub Lake, then descend the brushy Bachelor Creek path and the Downey Creek trail to the car. Mostly downhill but still slow th…",
+        "fromTo": "Hike out",
+        "section": "Descent"
+      }
+    ]
+  },
+  "detailed_rack": "Glacier kit plus a light rock rack for Class 3-4 terrain",
+  "what_to_bring": [
+    "helmet",
+    "rope",
+    "ice axe",
+    "crampons",
+    "light rack",
+    "crevasse rescue kit",
+    "navigation (map/GPS)",
+    "sun protection"
+  ],
+  "pro_tips": [
+    "Most parties treat Elephant Head as a side trip from a Dome Peak camp on Itswoot Ridge or during the Ptarmigan Traverse rather than a dedicated objective, since the approach is identical",
+    "Verify current Suiattle River Road status before driving - it has been closed at MP 4.5 by flood damage since late 2025 (closure order in effect through Jan 2028)",
+    "Rope up for both the Dana and Chickamin Glacier crossings; parties describe the Chickamin as notably more heavily crevassed than the Dana"
+  ],
+  "watch_out": [
+    "Chickamin Glacier crevassing and the bergschrund below the summit ridge have been called a 'route-finding nightmare' by Ptarmigan Traverse parties",
+    "Climbers' path beyond Bachelor Creek (mile 6.6) is unmaintained - expect brush and sidehilling",
+    "Weather can change quickly with no cell coverage for a forecast check once on route"
+  ],
+  "pro_needs": "Glacier protection on approach; belay exposed steps",
+  "best_season": "July through September",
+  "high_point_ft": 7990,
+  "aid_grade": null,
+  "approach": "From the Downey Creek Trailhead (elev. ~1,450 ft, reached via FR 26/Suiattle River Road off SR 530 north of Darrington), start on Downey Creek Trail #768. The trail holds a gentle grade through old-growth forest along Downey Creek for roughly 6 miles to Six Mile Camp, then continues about another half-mile to the unsigned, unmaintained junction with the climbers' path up Bachelor Creek — watch for it closely, as it is easy to walk past. Turn off-trail here and follow the boot path steeply uphill through brush, avalanche debris, and old timber, crossing Bachelor Creek on a log or by fording (this crossing can run high and fast during snowmelt in June/early July and is the approach's main early-season hazard). The path climbs to Bachelor Meadows (roughly 4,400–4,800 ft), a common first camp, then continues up through benches and heather meadows to a broad ~5,900 ft pass before dropping slightly to Cub Lake (5,340 ft) — a good water source and popular high camp that marks the transition from forest to true alpine terrain. From Cub Lake, a climbers' trail switchbacks up onto Itswoot Ridge; follow the ridge crest (loose rock and route-finding through boulder benches in spots) until the boot path fades near the seasonal snowline, typically around 6,300–6,500 ft. Above this point travel is general mountaineering terrain — talus, heather, and snow slopes depending on season — toward the peak's high point at 7,995 ft, with straightforward Class 2–3 scrambling on the final approach to the summit rocks. Given the ~30-mile round-trip distance and roughly 6,500 ft of elevation gain to reach the ridge alone, most parties treat this as a 2–3 day trip with a base camp at Cub Lake or on Itswoot Ridge rather than a car-to-car push.",
+  "descent_text": "Descend the same line used on ascent: down Itswoot Ridge to Cub Lake, back over the ~5,900 ft pass to Bachelor Meadows, down the steep climbers' path to the Bachelor Creek crossing, and out Downey Creek Trail #768 to the trailhead. This is fundamentally a walk-off/downclimb — there is no established rappel line, fixed anchors, or bolted station on this route, and none should be expected. The one caveat — a possible short rappel — reflects a single short, awkward rock step some parties encounter low on the ridge or near the summit rocks that a few climbers choose to rappel rather than downclimb, especially when wet or under load; if used, this is a single-pitch rappel (30–60 ft) off a natural anchor a party builds themselves (sling around a horn, block, or tree) — there is no fixed gear to rely on, so carry a small rack of slings/cord for this contingency. Watch for loose rock on the ridge crest and on the steep brushy descent above Bachelor Creek, and reverse the Bachelor Creek crossing with the same caution as the approach, since afternoon snowmelt can raise the water level later in the day.",
+  "bail": "Limited bail options - return along the approach",
+  "pitch_detail": [
+    {
+      "grade": "Class 2-3",
+      "notes": "Dana Glacier approach, moderate slope climbing on mixed snow and ice",
+      "pitch": "1"
+    },
+    {
+      "grade": "Class 3-4",
+      "notes": "Final ridge approach with scrambling and exposed climbing to summit",
+      "pitch": "2"
+    },
+    {
+      "grade": "Class 3",
+      "notes": "Summit approach and final assault",
+      "pitch": "3"
+    }
+  ],
+  "itinerary": {
+    "cal": "Bachelor Creek trail is unmaintained brush/blowdown and the Dana Glacier crossing wants a consolidated snowpack — best attempted mid/late summer (Jul-Sep) after creek crossings have dropped.",
+    "days": [
+      {
+        "n": 1,
+        "note": "Hike the maintained Downey Creek trail 6.6 miles to the Bachelor Creek junction (2,400 ft), then follow the rough, unmaintained Bachelor Creek climbers' path through berry brush, blowdown and swampy flats up to a ~5,800 ft saddle before dropping to camp at Cub Lake (5,300 ft). This leg typically takes 9-11 hours car-to-camp — it is the crux of the trip logistically, not technically.",
+        "hours": 10,
+        "miles": 11.5,
+        "title": "Approach to Cub Lake camp",
+        "gainFt": 4300,
+        "lossFt": 700,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach Cub Lake high camp via Downey & Bachelor Creek"
+      },
+      {
+        "n": 2,
+        "note": "From Cub Lake, climb back up over Itswoot Ridge and rope up to cross the Dana Glacier to the col between Dome Peak and Elephant Head, then scramble the exposed, jagged connecting ridge (class 3-4, a handline is commonly rigged on the crux) to the summit. Parties reverse the entire glacier crossing and descend all the way back to Cub Lake the same day, making this a very long alpine day.",
+        "hours": 13,
+        "miles": 6,
+        "title": "Summit day: Dana Glacier to Elephant Head",
+        "gainFt": 2900,
+        "lossFt": 2900,
+        "packLb": 16,
+        "schedule": [
+          {
+            "time": "5:00 AM",
+            "label": "Leave Cub Lake camp",
+            "detail": "Climb back up over Itswoot Ridge toward the glacier."
+          },
+          {
+            "time": "+3 hr",
+            "label": "Rope up for the Dana Glacier",
+            "detail": "Standard roped glacier travel; crevasse hazard varies by season."
+          },
+          {
+            "time": "~10:30-11:00 AM",
+            "label": "Reach the Dome-Elephant Head col",
+            "detail": "Around 7,800-7,900 ft, at the base of the summit ridge."
+          },
+          {
+            "time": "+1 hr",
+            "label": "Exposed ridge scramble to the summit",
+            "detail": "Class 3-4 on jagged, loose rock; handline often fixed on the crux."
+          },
+          {
+            "time": "Midday",
+            "label": "Summit (7,995 ft)",
+            "detail": "Brief stay, then reverse the entire route."
+          },
+          {
+            "time": "~7:00-8:00 PM",
+            "label": "Back at Cub Lake camp",
+            "detail": "Full glacier and ridge descent, often finishing in fading light."
+          }
+        ],
+        "objective": "Climb to Elephant Head (7,995 ft) and return to Cub Lake"
+      },
+      {
+        "n": 3,
+        "note": "Reverse the approach: climb back over the saddle from Cub Lake, then descend the brushy Bachelor Creek path and the Downey Creek trail to the car. Mostly downhill but still slow through blowdown and brush.",
+        "hours": 9,
+        "miles": 11.5,
+        "title": "Hike out",
+        "gainFt": 600,
+        "lossFt": 4200,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Return to the Downey Creek trailhead"
+      }
+    ],
+    "totalNote": "A strenuous ~29-mile round trip with roughly 7,800 ft of cumulative gain over 3 days; most parties camp once at Cub Lake and treat the middle day as one very long (12-14 hr) summit push across the Dana Glacier."
+  },
+  "access": {
+    "fees": "Northwest Forest Pass required for trailhead parking at Downey Creek",
+    "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+    "permit": "Free self-issue wilderness permit at the Downey Creek trailhead kiosk - no quota or reservation on the Forest Service side",
+    "closures": "Suiattle River Road (FR 26) is closed to vehicles at milepost 4 due to atmospheric-river flood damage; USFS closure order in effect from April 2026 through January 2028. While it stands, reaching Downey Creek Trailhead requires walking or biking the closed road bed beyond MP 4, adding significant round-trip distance.",
+    "group_limit": 12,
+    "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Glacier Peak Wilderness) - the standard Downey Creek approach and most of the peak lie on this side; the Okanogan-Wenatchee National Forest (Chelan Ranger District) borders the peak's remote east side above Agnes Creek",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass / Interagency Pass (Downey Creek Trailhead, southern approach)",
+    "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required (Glacier Peak Wilderness)",
+      "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted."
+    }
+  },
+  "road": {
+    "name": "Suiattle River Road (Forest Road 26)",
+    "status": "Closed to motor vehicles beyond milepost 4 (flood damage); trailhead still reachable on foot or by bike",
+    "driveNote": "From Darrington, drive Highway 530 north/east then Suiattle River Road (FR 26) east; Downey Creek Trailhead is normally ~20 miles up FR 26, but the road is gated at MP 4 by a flood-damage closure order in effect April 2, 2026 through January 1, 2028."
+  },
+  "climate": {
+    "spring": "Apr-Jun: heavy snowpack, ski-mountaineering conditions, elevated avalanche hazard on approach slopes.",
+    "summer": "Jul-Aug: the reliable window once snow bridges and high passes (Cache Col) have opened for glacier and rock travel.",
+    "typical": "Maritime Cascades climate: heavy, wet winters and springs keep the road, trail, and glaciers unworkable most of the year; the July-September window is the only realistic climbing season. Even in summer, expect fast-moving fronts and afternoon buildups typical of the North Cascades crest.",
+    "bySeason": {
+      "fall": "Early snow can close the route by late September/October; the unmaintained climbers' path above Bachelor Creek gets brushier late season",
+      "spring": "Approach road and trail are typically still snow-covered and often washed out; not a viable season",
+      "summer": "Best conditions July through August; snow bridges on the Dana and Chickamin Glaciers gradually degrade through the season",
+      "winter": "Not a winter objective - deep snow, avalanche terrain, and the Suiattle River Road are all closed"
+    },
+    "forecastZone": "NWS Zone WAZ567 (West Slopes North Cascades and Passes)"
+  },
+  "emergency": {
+    "notes": "No cell coverage in the Downey Creek/Bachelor Creek drainage or on the Dana/Chickamin Glaciers - carry a satellite communicator",
+    "county": "Snohomish County (Downey Creek/Bachelor Creek approach side, the standard route); the remote east side above Agnes Creek is in Chelan County",
+    "rangerStation": "Darrington Ranger District, Mt. Baker-Snoqualmie National Forest, 1405 Emens Ave N, Darrington, WA 98241",
+    "nearestHospital": "Cascade Valley Hospital, Arlington, WA (Level IV Emergency Department) - closest hospital to the Darrington/Suiattle approach; Skagit Valley Hospital, Mount Vernon, WA (Level III ED) is a larger secondary option",
+    "sheriffDispatch": "911 - Snohomish County Sheriff's Office; Snohomish County Volunteer Search & Rescue (SCVSAR) handles mountain rescues in this drainage"
+  },
+  "lists": null,
+  "crowds": {
+    "peakTraffic": "Rarely climbed as a standalone objective; most traffic in the area is Ptarmigan Traverse through-hikers passing near Dome/Gunsight, not summit-bound parties",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely well under 5 parties per season; almost no dedicated trip reports found"
+  },
+  "partner_requirements": {
+    "fitnessSpec": {
+      "hiking": "Very strong; must sustain 10-12+ hour days with a loaded pack over a multi-day approach and a long (~12 hr) summit push",
+      "packWeight": "40-50+ lbs for a multi-day glacier climbing kit plus camp gear"
+    },
+    "approachTime": "Multi-day approach (2+ days) via Downey Creek / Bachelor Creek toward the Dome-Gunsight area before a pre-dawn summit push",
+    "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Route-finding in remote, unmarked, off-trail terrain",
+      "Class 3-4 scrambling/climbing on loose rock with exposure",
+      "Self-sufficiency and sound judgment far from help (extreme remoteness)",
+      "Multi-day backcountry camping and navigation"
+    ],
+    "experienceLevel": "Advanced/expert alpinist - prior glacier climbing and remote North Cascades experience strongly recommended"
+  },
+  "seasonal_guidance": {
+    "optimalWindow": "Late July through early September - the mid-summer stretch when high-elevation snow has receded enough for safer glacier and rock travel",
+    "monthBreakdown": {
+      "July": {
+        "reason": "Start of the best window, but glaciers and high terrain can still hold significant snow into mid-summer; crevasses beginning to open",
+        "status": "good"
+      },
+      "June": {
+        "reason": "Deep lingering North Cascades snowpack; approach trails and access roads/bridges often still snow-affected, and avalanche/wet-slide hazard remains elevated",
+        "status": "risky"
+      },
+      "August": {
+        "reason": "Most reliable conditions - snow generally most receded, approach trails clearer, and weather typically most stable",
+        "status": "optimal"
+      },
+      "September": {
+        "reason": "Still climbable but shortening days and rising chance of early-season storms as fall approaches",
+        "status": "good"
+      }
+    }
+  },
+  "seasonal_hazards": {
+    "weather": {
+      "typical": "Heavy North Cascades snowpack with glaciers and lingering snow into summer; long approaches leave parties committed to multi-day weather windows",
+      "probability": "North Cascades summer weather can shift quickly; afternoon thunderstorms and fast-moving fronts are a realistic risk given the exposed, glaciated upper mountain"
+    },
+    "exposure": "High consequence - sustained Class 3-4 exposure on loose upper-mountain rock combined with extreme remoteness means any fall or injury becomes a serious, slow self-rescue or evacuation",
+    "avalanche": {
+      "zone": "No dedicated NWAC zone covers this remote Dome Peak/Gunsight area specifically; nearest official zones are West Slopes North and Stevens Pass, but NWAC's forecast season (roughly Nov-Apr) does not operate during this route's July-September climbing window",
+      "byMonth": {
+        "July": "Low",
+        "June": "Considerable",
+        "August": "Low",
+        "September": "Low"
+      }
+    },
+    "crevasses": "Significant - the route crosses glaciers in the Dome Peak/Gunsight area; rope-team travel and crevasse rescue skills are required, especially early season when snow bridges are less consolidated"
+  },
+  "data_quality": {
+    "gaps": [
+      "No dedicated first-ascent history or pitch-by-pitch route description found for Elephant Head itself; beta here is inferred from adjacent Dome Peak and Ptarmigan Traverse sources since the two share the same terrain",
+      "Exact coordinates and a fully confirmed prominence figure were not verified beyond secondary peak-list aggregator sites",
+      "No confirmed trip reports found of parties climbing Elephant Head specifically as a standalone objective rather than incidentally while on Dome Peak or the Ptarmigan Traverse",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-01"
+  },
+  "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 5
+  },
+  "approach_logistics": {
+    "peakLat": 48.317745,
+    "peakLng": -121.036715,
+    "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+    "trailheadLat": 48.2591,
+    "trailheadLng": -121.2244,
+    "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via the Downey Creek / Bachelor Creek approach"
+  },
+  "sling_rack": null,
+  "alpine_draws": null,
+  "rope_type": null,
+  "rope_length_m": null,
+  "rope_note": null,
+  "ascender": null,
+  "corrections": "Given elevation (7,995 ft) is close to but not identical to the 7,990 ft figure on listsofjohn.com (peak ID 211822) — treated as the same peak on matching name, coordinates within the same immediate Dome Peak/Sentinel Peak cirque, and no other WA peak of this name found; the ~5 ft gap is almost certainly differing survey/DEM data, not a real conflict. No Mountain Project, SummitPost, or accessible Peakbagger.com page with route-specific detail exists for this peak despite checking all three required primary sources plus the wider source list — most technical route fields (FA, grade, pitches, rack) are left null because no reputable source documents an actual climbing line to the summit, only its appearance as a background landmark on the Ptarmigan Traverse. FA removed 2026-07-29: previously credited \"Jim Nelson, August 6, 1982 (Northwest Ridge)\", but this row beta/overview/approach describe a Dana Glacier line, not a Northwest Ridge, and this row own data_quality notes no FA history was actually found for Elephant Head itself -- the credit likely belongs to a different line or peak. Removed rather than guessed; the original value is preserved in this note.",
+  "gear_confidence": null,
+  "rappel_detail": null,
+  "rappel_count_note": null,
+  "rack": null,
+  "features": null,
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": null,
+  "approach_variants": null,
+  "climbing_route": [
+    {
+      "n": 1,
+      "label": "General mountaineering terrain above the snowline",
+      "notes": "Above the point where the boot path fades near the seasonal snowline, typically around 6,300–6,500 ft, travel is general mountaineering terrain — talus, heather, and snow slopes depending on season — toward the peak's high point at 7,995 ft. Below this the Itswoot Ridge crest holds loose rock and route-finding through boulder benches."
+    },
+    {
+      "n": 2,
+      "class": "Class 2–3",
+      "label": "Final approach to the summit rocks",
+      "notes": "Straightforward Class 2–3 scrambling on the final approach to the summit rocks at 7,995 ft."
+    }
+  ],
+  "bivy": [
+    {
+      "name": "Cub Lake meadows camp",
+      "role": "main",
+      "type": "camp"
+    },
+    {
+      "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+      "role": "route",
+      "type": "bivy",
+      "notes": "SAY IT PLAINLY: THESE ARE NOT SITES, THEY ARE WHEREVER A PARTY GETS TO. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the head of the west fork of Agnes Creek, between the ice on either side. It gets a handful of ascents in a decade and there is no established camp for it, so parties climbing it either work out from the lake basin below or level a spot on the divide and accept a dry, exposed night. The same is true of anyone caught out on the South Cascade side by weather or by a slower day than planned. The season is short and matters more here than anywhere else: July into August has the glaciers covered and the bivouac snow usable, while September brings open crevasses, bare ice and no water at all. Anyone planning a night on this ground should carry the fuel to melt snow and treat the whole thing as an unplanned shelter that happens to be foreseeable.",
+      "water": "Snowmelt only, and unreliable after midsummer. The last certain water on this stretch is the lakes below, and everything east of the divide is snow, ice and bare rock.",
+      "permit": "Glacier Peak Wilderness, free self-issue permit. Camp on snow, rock or ice, never on the heather benches. Pack out human waste. No fires; there is nothing to burn and nothing that would recover.",
+      "capacity": "Whatever the party can level. Rock rings, gravel benches and snow platforms for one party at a time, scattered along the divide. No toilet and no established sites of any kind."
+    }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": "2026-08-27T12:00:00+00:00",
+  "name_search": "standard route rte",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+}

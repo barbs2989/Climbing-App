@@ -1,0 +1,62 @@
+{"file": "r580.json", "results": [
+ {"id": "wa_baldy_standard", "fact": "Trailhead identity", "verdict": "fixed",
+  "correct_value": "The route starts at the Maynard Burn trailhead (also signed/known as the Tyler Peak trailhead) at the end of the FR 2870-120 spur, ~3,300 ft; the Upper Dungeness trailhead is a different, lower start that adds ~5.2 mi round trip, and Slab Camp/Deer Ridge is not on this route.",
+  "evidence": "The Mountaineers route page describes continuing on FR 2870, turning onto FR 2870-120 to its end at the Maynard Burn trailhead (3,300 ft), and says starting there saves 5.2 miles round trip and 800 ft versus the Upper Dungeness trail start. A 2023 trip blog and AllTrails call the same road-end start the Tyler Peak trailhead and note the Upper Dungeness trailhead as an alternative. WTA's 7.2 mi / 3,800 ft figures (matching this row) are from the spur-road trailhead. Patches remove the Upper Dungeness and Slab Camp/Deer Ridge outliers and make the trailhead card name both aliases.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/baldy-tyler-peak", "https://onehikeaweek.com/2023/10/22/baldy-olympic-mountains/", "https://www.alltrails.com/trail/us/washington/baldy-via-upper-maynard-burn-trail", "https://www.wta.org/go-hiking/hikes/baldy", "https://mountainflamingo.com/2019-05-26-tyler-baldy-gray-wolf-ridge/"],
+  "patches": [
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "from the Upper Dungeness trailhead:", "replace": "from the Maynard Burn (Tyler Peak) trailhead:"},
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "from the Upper Dungeness trailhead:", "replace": "from the Maynard Burn (Tyler Peak) trailhead:"},
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "replace_text", "column": "detailed_rack", "path": [], "find": "The route follows the Upper Maynard Burn Trail or the older Baldy Trail from the Slab Camp/Deer Ridge trailhead area,", "replace": "The route follows the Lower and Upper Maynard Burn Trail from the Maynard Burn (Tyler Peak) trailhead at the end of FR 2870-120,"},
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "replace_text", "column": "beta", "path": [], "find": "From the FR 270 trailhead,", "replace": "From the Maynard Burn (Tyler Peak) trailhead,"},
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "replace_text", "column": "road", "path": ["status"], "find": "to the main Upper Dungeness/Baldy trailhead just past the Dungeness River bridge; the FR 2870-120 spur to the upper Maynard Burn trailhead is rougher", "replace": "to the Upper Dungeness trailhead just past the Dungeness River bridge; the FR 2870-120 spur to the Maynard Burn (Tyler Peak) trailhead, where this route starts, is rougher"},
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "set", "column": "approach_logistics", "path": ["trailhead"], "expect": "Tyler Peak Trailhead", "value": "Maynard Burn (Tyler Peak) Trailhead"},
+   {"id": "wa_baldy_standard", "fact": "Trailhead identity", "op": "set", "column": "waypoints", "path": [0, "name"], "expect": "Lower Maynard Burn Trailhead", "value": "Maynard Burn (Tyler Peak) Trailhead"}
+  ]},
+ {"id": "wa_baldy_standard", "fact": "Water above Mueller Creek", "verdict": "fixed",
+  "correct_value": "Mueller Creek is the last water low on the route; the last water of all is a small meadow stream reached by a short, steep side path just below where the trail gains the ridge crest (~2.7 mi). Nothing flows above that.",
+  "evidence": "WTA's hike description says that at the ridge top (2.7 mi, 6,200 ft) the last water can be obtained by a steep downhill side path. A WTA trip report says that on breaking out of the trees you cross a meadow with a small creek, reachable slightly below the trail, and no other running water is found beyond it. So water exists near the crest (the waypoint is right in substance) and the approach's claim that nothing exists above Mueller Creek is wrong; wording keeps it as not guaranteed.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/baldy", "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-06-23.3494210051"],
+  "patches": [
+   {"id": "wa_baldy_standard", "fact": "Water above Mueller Creek", "op": "replace_text", "column": "approach", "path": [], "find": "is the last reliable water on the mountain — top off here, especially in late-summer conditions, since nothing dependable exists above.", "replace": "is the last reliable water low on the mountain — top off here, especially in late summer. The only water higher up is a small meadow stream reached by a short, steep side path just below where the trail gains the ridge crest, and nothing flows above that."},
+   {"id": "wa_baldy_standard", "fact": "Water above Mueller Creek", "op": "replace_text", "column": "waypoints", "path": [1, "directions"], "find": "is the last dependable water on the mountain — top off here, especially late in the summer, since nothing above can be counted on.", "replace": "is the last dependable water low on the mountain — top off here, especially late in the summer; the only water higher up is a small stream off a steep side path near the ridge crest."},
+   {"id": "wa_baldy_standard", "fact": "Water above Mueller Creek", "op": "replace_text", "column": "waypoints", "path": [4, "note"], "find": "Trail tops out on the ridge crest with an accessible water source;", "replace": "Trail tops out on the ridge crest; the last water on the route is a small meadow stream down a short, steep side path here, with none beyond;"},
+   {"id": "wa_baldy_standard", "fact": "Water above Mueller Creek", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "Mueller Creek in the first switchbacks is the last dependable water on the mountain.", "replace": "Mueller Creek in the first switchbacks is the last dependable water low on the mountain; the only water higher is a small stream down a steep side path near the ridge crest."},
+   {"id": "wa_baldy_standard", "fact": "Water above Mueller Creek", "op": "replace_text", "column": "what_to_bring", "path": [5], "find": "no reliable water source high on the route", "replace": "no water on the route above the ridge crest"}
+  ]},
+ {"id": "wa_baldy_standard", "fact": "Waypoint elevations below the ridge crest", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "WTA puts the ridge top at 2.7 mi / 6,200 ft and says the trail gains about 3,000 ft in just over 2 miles, which does not settle the 6,300 ft ravine pin (it could be either an overstated ravine or a small drop). A trip report says the steep trail runs straight up to about 5,400 ft before entering meadows, which is consistent with the descent text's ~5,400 ft forest line; the approach's 6,200 ft point is where the last trees end on the crest, so the treeline wording is two landmarks rather than a clear conflict. No source gives the ravine's elevation, so the 6,300 ft pin is left unchanged.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/baldy", "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-06-23.3494210051"],
+  "patches": []},
+ {"id": "wa_baldy_standard", "fact": "Season window", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The itinerary says 'best done June through October' while the season chip and seasonal guidance say July-September. Outside sources only give a broad May-October hiking window with variable early-season snow; no two sources state a Jul-Sep or Jun-Oct window for this route, so nothing was changed.",
+  "sources": ["https://www.alltrails.com/trail/us/washington/baldy-via-upper-maynard-burn-trail", "https://mountainflamingo.com/2019-05-26-tyler-baldy-gray-wolf-ridge/"],
+  "patches": []},
+ {"id": "wa_baldy_standard", "fact": "Total gain", "verdict": "fixed",
+  "correct_value": "~3,800 ft round trip",
+  "evidence": "WTA gives 7.2 mi round trip and 3,800 ft of gain; a separate trail database gives about 11 km and ~1,200 m (3,937 ft) from the same Lower Maynard Burn start. Both are far above the 3,000-3,400 ft in the gear list, which is below even the net rise from 3,300 ft to 6,808 ft.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/baldy", "https://hiiker.app/trails/washington/clallam-county/baldy-and-east-baldy-via-lower-maynard-burn-trail"],
+  "patches": [
+   {"id": "wa_baldy_standard", "fact": "Total gain", "op": "replace_text", "column": "what_to_bring", "path": [1], "find": "route gains ~3,000-3,400 ft", "replace": "route gains ~3,800 ft"}
+  ]},
+ {"id": "wa_baldy_standard", "fact": "Day trip vs camping", "verdict": "fixed",
+  "correct_value": "Most parties day-hike Baldy; only those continuing along Gray Wolf Ridge camp.",
+  "evidence": "WTA describes Baldy as a 7.2 mi day hike. The Mountaineers say Tyler Peak, Peak B and Baldy together make a full day trip and only parties adding Gray Wolf and other peaks make it multi-day. Trip reports (2019, 2023) did Baldy with Tyler in one day.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/baldy", "https://www.mountaineers.org/activities/routes-places/baldy-tyler-peak", "https://onehikeaweek.com/2023/10/22/baldy-olympic-mountains/"],
+  "patches": [
+   {"id": "wa_baldy_standard", "fact": "Day trip vs camping", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "many parties camp partway rather than day-hiking it", "replace": "most parties do it in a day, and only those continuing along Gray Wolf Ridge camp"}
+  ]},
+ {"id": "wa_baldy_standard", "fact": "False summit Pt 6537", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "WTA describes a steep ~300 ft climb over 0.15 mi to a low peak on Gray Wolf Ridge before continuing to Baldy (matching this row's pitch_detail and the approach/beta 'over' wording), while a 2023 trip report says East Baldy (Pk 6520) was traversed en route, which does not say whether over or around. No two sources say parties bypass it beneath, so the waypoint note and baseFinding were not changed and the approach was not changed either.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/baldy", "https://onehikeaweek.com/2023/10/22/baldy-olympic-mountains/"],
+  "patches": []},
+ {"id": "wa_baldy_standard", "fact": "Entrance fee / overnight permit", "verdict": "fixed",
+  "correct_value": "Only a Northwest Forest Pass (or interagency pass) to park; no wilderness permit in the Buckhorn Wilderness.",
+  "evidence": "The Forest Service says no permit is needed to visit Olympic National Forest wilderness areas, including the Buckhorn Wilderness, while trailheads with facilities need a recreation pass. WTA's Baldy page lists America the Beautiful or Northwest Forest Pass as the requirement. There is no entrance fee on this national forest route.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/buckhorn-wilderness", "https://www.fs.usda.gov/r06/olympic/wilderness", "https://www.wta.org/go-hiking/hikes/baldy"],
+  "patches": [
+   {"id": "wa_baldy_standard", "fact": "Entrance fee / overnight permit", "op": "replace_text", "column": "access", "path": ["notes"], "find": "only the standard entrance fee and wilderness camping permit apply.", "replace": "only a Northwest Forest Pass (or interagency pass) to park applies; there is no entrance fee, and no wilderness permit is needed on the Buckhorn Wilderness side."}
+  ]}
+]}

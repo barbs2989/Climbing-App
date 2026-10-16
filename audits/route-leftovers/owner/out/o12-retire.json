@@ -1,0 +1,26 @@
+{
+ "results": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_ottohorn_west_ridge",
+     "into": "wa_ottohorn_southeast_route"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_liberty_bell_east_face",
+     "into": "wa_lexington_tower_east_face"
+    }
+   ]
+  }
+ ]
+}

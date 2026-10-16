@@ -1,0 +1,389 @@
+{
+ "file": "r582.json",
+ "results": [
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Flypaper Pass snow finger angle",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The finger is about 300 vertical ft and now reaches 40+ degrees in its steepest section; the ~30 degree figure is an older description.",
+   "evidence": "The older route description gives about 30 degrees over ~300 vertical ft; a recent multi-day trip report states the slope now reaches an estimated 40+ degrees in its steepest parts because of glacier recession. On the row, hazards, watch_out, approach, descent_text, climbing_route, approach_variants, partner_requirements, seasonal_hazards and max_angle all state 40+ against the two 30-degree outliers, and approach_variants explicitly calls 30 degrees the outdated figure.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics",
+    "https://www.summitpost.org/east-ridge-from-flypaper-pass/528123"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Flypaper Pass snow finger angle",
+     "op": "replace_text",
+     "column": "beta",
+     "find": "Flypaper Pass snow finger runs about 30 degrees, 300 vertical feet.",
+     "replace": "Flypaper Pass snow finger rises about 300 vertical feet and now reaches 40 degrees or more in its steepest section.",
+     "path": []
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Flypaper Pass snow finger angle",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Main feature: 30-degree snow finger (300 vertical ft).",
+     "replace": "Main feature: steep snow finger (300 vertical ft), now 40+ degrees in its steepest section."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Road distances and trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "Drive ~8.5 mi from US-101 to the road-end parking (~500-600 ft); the washout is ~1 mi beyond; ~6.5 mi of closed road from the parking to the Dosewallips Ranger Station/campground (~1,550-1,600 ft).",
+   "evidence": "The hiking guide for the Dosewallips River Road puts the parking 8.5 mi from the highway, the washout at mile 1 of the walk, and the campground at road end 6.5 mi from the parking with a high point of 1,550 ft. The park's West Fork trail page says the road is washed out 6.5 miles from the trailhead. Another hiking guide starts the walk at 520 ft and reaches the campground in 6.3 mi, and a peak page puts the closure at about 600 ft. So the 5.5-mile drive, the 5-mile and 11-mile road-walk figures and the 1,550-ft elevation on the parking pin are wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://home.nps.gov/olym/planyourvisit/west-fork-dosewallips.htm",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://www.summitpost.org/mount-constance/151586"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "drive roughly 5.5 miles to the washed-out gate — the road has been closed",
+     "replace": "drive roughly 8.5 miles to the road-end parking — the road beyond has been closed",
+     "path": []
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "Follow the bypass trail around the washout",
+     "replace": "Walk about a mile up the closed road and follow the bypass trail around the washout",
+     "path": []
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "5 miles on closed road",
+     "replace": "About 6.5 miles on closed road"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "through the ~1-mile washout detour and the ~6.5 miles of old roadbed to Dose Forks",
+     "replace": "on the ~6.5 miles of closed road and washout bypass between the parking and the old road-end at the ranger station"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "descent",
+     "find": "back to Dose Forks, then the extra ~6.5 mi of old roadbed out to the current road-end trailhead.",
+     "replace": "back to Dose Forks and the old road-end at the ranger station, then the extra ~6.5 mi of closed road out to the current road-end parking.",
+     "path": []
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      5
+     ],
+     "find": "roughly 11 miles of closed road at each end",
+     "replace": "roughly 6.5 miles of closed road at each end"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "drive Dosewallips Road to the washout gate — closed to vehicles since the 2002 flood and still closed. Park there.",
+     "replace": "drive Dosewallips Road about 8.5 miles to the road-end parking and leave the car there; the road beyond has been closed to vehicles since the 2002 flood, and the washout itself is about a mile farther on."
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "to the historic Dose Forks trailhead",
+     "replace": "to the historic road-end trailhead at the Dosewallips Ranger Station"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1550,
+     "value": 600
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Dosewallips Road-End (Ranger Station/Campground, post-washout)",
+     "value": "Dosewallips Road-End Parking (below the washout)"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Dosewallips Road-End (Ranger Station/Campground, post-washout)",
+     "value": "Dosewallips Road-End Parking (below the washout)"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Road distances and trailhead elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "follow it inland to the closure at the washout, which is as far as a car goes",
+     "replace": "follow it inland about 8.5 miles to the road-end parking below the washout, which is as far as a car goes"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Approach mileage",
+   "verdict": "fixed",
+   "correct_value": "~16 mi from the road-end parking to Anderson Pass plus ~1 mi to the tarn camp: ~17 mi each way on days 1 and 3.",
+   "evidence": "The park's trail page gives road end to Anderson Pass as 16 miles (6.5 mi of washed-out road, then 9.1 mi from Dose Forks to the pass); a trail mileage log puts Anderson Pass at mile 16.0 from the road-end. A trip report adds about 1 steep mile from the pass to the tarn camp at ~5,100 ft. The itinerary's 11 / 11.5 miles cover only the trail beyond the ranger station although day 1 and day 3 include the road walk.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/west-fork-dosewallips.htm",
+    "https://www.protrails.com/trail/838/",
+    "https://trailcatjim.com/mount-anderson-east-peak-and-attempt-of-west-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Approach mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 11,
+     "value": 17
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Approach mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 11.5,
+     "value": 17
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "West Fork crossing",
+   "verdict": "fixed",
+   "correct_value": "At least one ford of the West Fork (notably at Honeymoon Meadows), depth varying with snowmelt; blowdown on the trail.",
+   "evidence": "The park's trail page says the footbridge above Diamond Meadow is out and the West Fork crossing at Honeymoon Meadows may be hazardous in spring or after rain. One trip report crossed at Honeymoon Meadows in 2-ft-deep water; another forded near Diamond Meadows. The row's approach, approach_variants, hazards and bivy all describe a real ford.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/west-fork-dosewallips.htm",
+    "https://trailcatjim.com/mt-anderson-east-peak-west-peak-attempt/",
+    "https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "West Fork crossing",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Good trail throughout with one easy rock-hop river crossing.",
+     "replace": "Expect blowdown and at least one ford of the West Fork, calf- to knee-deep depending on snowmelt."
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "West Fork crossing",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Rock-hop the river crossing and continue up the valley.",
+     "replace": "Ford the West Fork (calf- to knee-deep depending on snowmelt) and continue up the valley."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Camp-to-summit round-trip time",
+   "verdict": "fixed",
+   "correct_value": "5-7 hours camp to summit (one way); the summit day round trip runs roughly 10-13 hours.",
+   "evidence": "The club route page gives trailhead to camp 7-9 hrs and camp to summit 5-7 hrs, i.e. one way. A club trip report left camp at 5:05 and reached only Flypaper Pass at 9:15, and an independent trip report took 3.8 h camp to summit and 12.3 h for the whole day. The partner-requirements text misread the one-way 5-7 h as a round trip; the itinerary's 12 h (10-13 h) is right.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-anderson-eel-glacier",
+    "https://trailcatjim.com/mount-anderson-east-peak-and-attempt-of-west-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Camp-to-summit round-trip time",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "with camp-to-summit taking an additional 5-7 hours round trip",
+     "replace": "with camp-to-summit taking an additional 5-7 hours one way (roughly 10-13 hours round trip)"
+    },
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Camp-to-summit round-trip time",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "another 5-7 hours camp-to-summit round trip",
+     "replace": "another 5-7 hours camp to summit (roughly 10-13 hours round trip)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Flypaper Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "~6,500 ft (some sources 6,600 ft)",
+   "evidence": "The route page puts Flypaper Pass at 6,500 ft, a mountain guide gives about 6,500 ft, and another route description calls it the 6600-ft notch between Mount Anderson and Echo Rock. Nothing supports 6,800 ft.",
+   "sources": [
+    "https://www.summitpost.org/east-ridge-from-flypaper-pass/528123",
+    "https://summitborn.com/mount-anderson-mountain-guide/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Flypaper Pass elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "gains the pass at roughly 6,800 ft",
+     "replace": "gains the pass at roughly 6,500 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Camp Siberia elevation",
+   "verdict": "fixed",
+   "correct_value": "Camp Siberia ~4,200 ft below Anderson Pass; the tarn camp ~5,100 ft is above the pass.",
+   "evidence": "A trail mileage log places Camp Siberia (Anderson Pass Camp) at 4,180 ft, 0.55 mi below Anderson Pass (4,464 ft); another description puts the shelter 0.7 mi and 700 ft above Honeymoon Meadows (3,527 ft), and a trip-report site gives about 4,200 ft. The tarn camp at ~5,100 ft is a separate site above the pass.",
+   "sources": [
+    "https://www.protrails.com/trail/838/",
+    "http://exploreolympics.com/reports/?p=8107",
+    "https://www.summitpost.org/mount-anderson/152143"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Camp Siberia elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Camp Siberia or Anderson Tarn, roughly 5,100 ft, below Flypaper Pass.",
+     "replace": "Anderson Tarn (roughly 5,100 ft, below Flypaper Pass), or lower at Camp Siberia (about 4,200 ft) below Anderson Pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "fact": "Route to Flypaper Pass",
+   "verdict": "fixed",
+   "correct_value": "From Anderson Pass, up the moraine into the Anderson Glacier basin, traverse above the tarn along the right side of the basin's remnant snow, then the snow finger to Flypaper Pass; the Anderson Glacier has largely vanished, so the rope goes on at the Eel Glacier.",
+   "evidence": "The older route description follows the right side of the Anderson Glacier to the snow finger; a current mountain guide says the Anderson Glacier has all but vanished and parties now cross the basin's remnant snow and moraine; a trip report traversed above the still-frozen Anderson (Valkyrie) Lake to the finger. The row's beta (minimal crevasse hazard) and climbing_route agree, and the itinerary ropes up at the pass for the Eel.",
+   "sources": [
+    "https://summitborn.com/mount-anderson-mountain-guide/",
+    "https://trailcatjim.com/mt-anderson-east-peak-west-peak-attempt/",
+    "https://www.summitpost.org/east-ridge-from-flypaper-pass/528123"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_anderson_eel_glacier",
+     "fact": "Route to Flypaper Pass",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "ascend moraine to glacier at 5,200 ft. Rope up and traverse right side of Anderson Glacier to Flypaper Pass (6,500 ft).",
+     "replace": "ascend the moraine into the Anderson Glacier basin (~5,200 ft), where little glacier remains; traverse above the tarn along the right side of the basin and climb to Flypaper Pass (6,500 ft)."
+    }
+   ]
+  }
+ ]
+}

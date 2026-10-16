@@ -1,0 +1,349 @@
+{
+ "file": "r061.json",
+ "results": [
+  {
+   "id": "wa_himmelhorn_wild_hair_crack",
+   "fact": "County vs sheriff jurisdiction",
+   "verdict": "fixed",
+   "correct_value": "Whatcom County Sheriff's Office non-emergency: (360) 676-6911; emergency: 911",
+   "evidence": "Himmelhorn lies in the Picket Range inside North Cascades NP in Whatcom County (Wikipedia; peakbagger listing); the row's own county field and the sister Southeast Route row also say Whatcom. The Whatcom County Sheriff's own site and the WA 211 directory both give the non-emergency dispatch line as 360-676-6911, so the Skagit sheriff line is the wrong agency.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)",
+    "https://www.peakbagger.com/peak.aspx?pid=38255",
+    "https://www.whatcomcounty.us/200/Sheriff",
+    "https://search.wa211.org/search/99511bd1-5418-5246-9b0e-5f477c8fe49b"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "sheriffDispatch"
+     ],
+     "expect": "Skagit County Sheriff's Office non-emergency: (360) 416-1911; emergency: 911",
+     "value": "Whatcom County Sheriff's Office non-emergency: (360) 676-6911; emergency: 911",
+     "id": "wa_himmelhorn_wild_hair_crack",
+     "fact": "County vs sheriff jurisdiction"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "fact": "County vs sheriff jurisdiction",
+   "verdict": "fixed",
+   "correct_value": "Whatcom County Sheriff's Office non-emergency: (360) 676-6911; emergency: 911",
+   "evidence": "Himmelhorn lies in the Picket Range inside North Cascades NP in Whatcom County (Wikipedia; peakbagger listing); the row's own county field and the sister Southeast Route row also say Whatcom. The Whatcom County Sheriff's own site and the WA 211 directory both give the non-emergency dispatch line as 360-676-6911, so the Skagit sheriff line is the wrong agency.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)",
+    "https://www.peakbagger.com/peak.aspx?pid=38255",
+    "https://www.whatcomcounty.us/200/Sheriff",
+    "https://search.wa211.org/search/99511bd1-5418-5246-9b0e-5f477c8fe49b"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "sheriffDispatch"
+     ],
+     "expect": "Skagit County Sheriff's Office non-emergency: (360) 416-1911; emergency: 911",
+     "value": "Whatcom County Sheriff's Office non-emergency: (360) 676-6911; emergency: 911",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "County vs sheriff jurisdiction"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_wild_hair_crack",
+   "fact": "Permit reservation",
+   "verdict": "fixed",
+   "correct_value": "$6 non-refundable permit fee that applies to walk-up permits too; the zone is not one of the advance-reservable cross-country zones",
+   "evidence": "NPS lists only Boston Basin, Eldorado, Sulphide Glacier, Price, Triumph and Tapto Lakes as reservable cross-country zones (the rest are walk-up only) and says the $6 non-refundable fee is charged on walk-up permits as well; WNPF and a second permit guide independently state the $6 fee also applies to first-come permits issued in person. So the fee does not imply a reservation, and the fees text is reworded so it no longer claims one; the closures text is already correct.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "$6 non-refundable recreation.gov reservation fee for the required overnight camping",
+     "replace": "$6 non-refundable permit fee, charged on walk-up permits too",
+     "id": "wa_himmelhorn_wild_hair_crack",
+     "fact": "Permit reservation"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "fact": "Permit reservation",
+   "verdict": "fixed",
+   "correct_value": "$6 non-refundable permit fee that applies to walk-up permits too; the zone is not one of the advance-reservable cross-country zones",
+   "evidence": "NPS lists only Boston Basin, Eldorado, Sulphide Glacier, Price, Triumph and Tapto Lakes as reservable cross-country zones (the rest are walk-up only) and says the $6 non-refundable fee is charged on walk-up permits as well; WNPF and a second permit guide independently state the $6 fee also applies to first-come permits issued in person. So the fee does not imply a reservation, and the fees text is reworded so it no longer claims one; the closures text is already correct.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "$6 non-refundable recreation.gov reservation fee for overnight camping",
+     "replace": "$6 non-refundable permit fee, charged on walk-up permits too",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Permit reservation"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_wild_hair_crack",
+   "fact": "Crack size vs rack",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Single rack 0.3-2 in; the 12-inch P2 crack is protected sparingly and climbed on face holds",
+   "evidence": "The route's published description gives P2 as a ~12-inch vertical crack kept at 5.7 by face holds with very limited protection low, and recommends a single rack .3-2 in, a half set of nuts and alpine draws. On the row, overview, pitch_detail[1], detailed_rack, gear and watch_out all agree with that; only pro_needs' 'sized for hand-to-fist cracks' is the outlier. Trip reports could not be loaded for a second external source.",
+   "sources": [
+    "https://www.mountainproject.com/route/122905014/wild-hair-crack"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Standard alpine trad rack sized for hand-to-fist cracks;",
+     "replace": "A single alpine trad rack to 2 in;",
+     "id": "wa_himmelhorn_wild_hair_crack",
+     "fact": "Crack size vs rack"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "fact": "Pitch 2 dihedral: crux line vs dead end",
+   "verdict": "fixed",
+   "correct_value": "Pitch 2's dihedral dead-ends; the leader traverses left onto the face to a 5.10- hand crack",
+   "evidence": "The AAJ report says pitch 2 was a dead-end dihedral, the leader eventually traversing left onto the face and up another hand crack (5.10-). The Alpinist account says the crack became wide and unprotectable higher, so the leader traversed left and laybacked/jammed a good 5.10- crack to the belay. watch_out is correct; beta is fixed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+    "https://alpinist.com/newswire/finding-stonehenge-in-the-picket-range/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "a crux hand-crack dihedral (5.10-) on pitch 2",
+     "replace": "a crux pitch 2 (5.10-) that leaves a dead-end dihedral and traverses left onto the face to a hand crack",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Pitch 2 dihedral: crux line vs dead end"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "fact": "Descent direction of the loose pitch",
+   "verdict": "fixed",
+   "correct_value": "The notch and the easy loose pitch are the ascent's finish (notch, then one loose pitch UP to the summit); no descent is described",
+   "evidence": "AAJ: pitch 7 is a wild rightward traverse to a notch, pitch 8 'one easy, loose pitch to the summit'; the descent is only 'all downhill, more or less'. Alpinist: a traverse up right to a notch on a ridge, then a last pitch of deteriorating rock to the summit; no descent given. descent_text had turned the ascent finish into a descent; it and the matching approach_variants hazard are rewritten (the descent column is shorter and hidden).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+    "https://alpinist.com/newswire/finding-stonehenge-in-the-picket-range/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "From the top of the difficulties, descend via a notch between the summit tower and an adjacent pinnacle, then take one easy but loose pitch down toward the summit; the authors describe the remainder of the return as 'all downhill, more or less' with no rappel count given.",
+     "value": "From the top of the difficulties, a traverse reaches a notch on the ridge, and one easy but loose pitch leads from there up to the summit. No descent line or rappel count has been recorded for the way back down.",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Descent direction of the loose pitch"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "expect": "Loose rock on the descent through the notch between the summit tower and the adjacent pinnacle",
+     "value": "Loose rock on the final pitch from the notch to the summit",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Descent direction of the loose pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "fact": "Stonehenge first-ascent year",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "July 6, 2015",
+   "evidence": "The AAJ report (published 2016) dates the climb July 6, 2015; the Alpinist newswire piece and the first-ascent trip report titled 7/6/2015 agree. This row's fa, overview and beta all said 2004 and are corrected; the sister Southeast Route row already says 2015.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+    "https://alpinist.com/newswire/finding-stonehenge-in-the-picket-range/",
+    "https://cascadeclimbers.com/forum/topic/97774-tr-the-himmelhorn-south-face-quotstonehengequot-fa-762015/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "fa",
+     "path": [],
+     "expect": "Jason Schilling, Tim Halder — July 6, 2004",
+     "value": "Jason Schilling, Tim Halder — July 6, 2015",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Stonehenge first-ascent year"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "established in July 2004",
+     "replace": "established in July 2015",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Stonehenge first-ascent year"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "First climbed July 6, 2004",
+     "replace": "First climbed July 6, 2015",
+     "id": "wa_himmelhorn_stonehenge",
+     "fact": "Stonehenge first-ascent year"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Stonehenge first-ascent year",
+   "verdict": "not_a_contradiction",
+   "correct_value": "2015",
+   "evidence": "This row's overview (2015) is correct per the AAJ report, Alpinist and the FA trip report (July 6, 2015); the sister Stonehenge row was wrong and is fixed in its own result.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+    "https://alpinist.com/newswire/finding-stonehenge-in-the-picket-range/",
+    "https://cascadeclimbers.com/forum/topic/97774-tr-the-himmelhorn-south-face-quotstonehengequot-fa-762015/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Rock grade / technical difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 1961 first-ascent account (AAJ 1962) describes a class IV line following a ledge onto the north face from the west notch; Wikipedia lists the easiest route only as class 5, and the row's own corrections note cites an 'awkward 5.7 step-around'. No source names a 'Southeast Route' or gives Grade IV 5.8, but a replacement grade (and the commitment/alpine grade to match) is not settled by two sources.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Aspect / side of the peak climbed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The FA account climbs from the west (Himmel-Otto) notch via a ledge onto the north face, supporting the NW fields; but no source describes a route called 'Southeast Route', so it is unclear whether the row's name or its prose is the error. One source only; left open.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://www.mountainproject.com/route/122905014/wild-hair-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Glacier travel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The published Crescent Creek approach and the FA account mention no glacier on the route, but the lower Barrier crossing runs at the toe of the Terror Glacier, and no source states whether parties rope up for glacier travel. Not settled by two sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/122905014/wild-hair-crack",
+    "http://publications.americanalpineclub.org/articles/12196206500/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Rappel count and line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No external source gives a rappel count or a false-summit-notch descent for this line (that false-summit notch belongs to Wild Hair Crack's description). The descent is undocumented beyond reversing the route.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://www.mountainproject.com/route/122905014/wild-hair-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Season end",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Four fields end the season in September, but an ascent of Wild Hair Crack from the same col is documented on Oct 4, 2020, so an external record supports October climbing against the internal majority. Not settled.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/103696-tr-himmelhorn-wild-hair-crack-and-ne-ridge-of-the-chopping-block-10042020/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Permit method / pass",
+   "verdict": "fixed",
+   "correct_value": "NPS wilderness permit for overnight stays; no parking pass at this NPS trailhead",
+   "evidence": "NPS states there are no trailhead or parking fees for trails that begin on NPS land, and that the Northwest Forest Pass applies at adjacent Forest Service trailheads; a regional field guide and WTA say the same, naming Goodell Creek as free NPS parking. NPS permits are issued online or in person, not described as self-issue. The trailhead note is corrected; the reservable-vs-walk-up question is recorded separately.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue wilderness permit required for overnight, Northwest Forest Pass for day parking.",
+     "replace": "NPS wilderness permit required for overnight; no parking pass is needed at this National Park trailhead.",
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Permit method / pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Advance reservability of the Crescent Creek cross-country zone",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "NPS lists only six reservable cross-country zones (Boston Basin, Eldorado, Sulphide Glacier, Price, Triumph, Tapto Lakes) with the rest walk-up only, which supports bivy[0].permit's 'walk-up only' against access.permit, permit and access.overnight_permit.where ('reserve on Recreation.gov'). No second independent source names the Crescent Creek/Terror zone's status, so no patch.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Waypoint positions vs distances",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit pin matches the peak's published coordinate (48.77639, -121.31472); the camp/gully pins sit well south, so the defect is pin placement, which is out of scope. The distMi values are unsourced but in order, so they are not nulled.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)"
+   ],
+   "patches": []
+  }
+ ]
+}

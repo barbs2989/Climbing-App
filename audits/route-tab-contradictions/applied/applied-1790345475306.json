@@ -1,0 +1,329 @@
+{
+ "applied": [
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "column": "season",
+   "path": [],
+   "fact": "Best season window"
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "column": "pitch_detail",
+   "path": [
+    9,
+    "grade"
+   ],
+   "fact": "Crux/headline rock grade: 5.8+ vs 5.9"
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "column": "climbing_route",
+   "path": [
+    3,
+    "class"
+   ],
+   "fact": "Crux/headline rock grade: 5.8+ vs 5.9"
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "column": "watch_out",
+   "path": [],
+   "fact": "watch_out text describes an unrelated ice/mixed winter route"
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Crevasse hazard claimed absent, but glacier travel/crevasses are described elsewhere"
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Crevasse hazard claimed absent, but glacier travel/crevasses are described elsewhere"
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Whether winter is the season's technical norm"
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "April",
+    "reason"
+   ],
+   "fact": "Whether winter is the season's technical norm"
+  },
+  {
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Whether roping up for glacier travel is standard practice"
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain understates the trailhead-to-summit climb"
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain understates the trailhead-to-summit climb"
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Overview/beta omits the glacier crossing that approach/gear require"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "before": {
+    "season": "Best in a cool, stable freeze — commonly climbed late April-May or Sep-Oct"
+   }
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "From the lowest point of the buttress (Kearney start), gain the rock and head for wide, broken cracks.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "A shorter pitch reaching the buttress crest below a large headwall.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Downclimb the crest about 15 feet, then ascend rightward on ramps to a vertical seam before returning left to a ledge.",
+      "pitch": 3,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7-5.8",
+      "notes": "Get into the main dihedral and pull a series of tougher moves, including a shallow, somewhat dirty chimney; the Kearney and Beckey start variations converge above here.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.0-5.5",
+      "notes": "A rising traverse on ledges begins the long combined section of the route.",
+      "pitch": 5,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "A rising traverse across broken ledges and short steps on the buttress crest; this section is commonly simul-climbed to keep pace on the long route.",
+      "pitch": 6,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "More of the ledge traverse toward the upper wall.",
+      "pitch": 7,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.0-5.5",
+      "notes": "Final section of the rising ledge traverse before the wall steepens again.",
+      "pitch": 8,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Ascend the wall via a left-facing corner toward the ridge crest.",
+      "pitch": 9,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "Continue up the left-facing corner system, the route's technical crux section, gaining the ridge crest.",
+      "pitch": 10,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Buttress crest climbing with a rightward traverse onto ledges.",
+      "pitch": 11,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "More crest climbing over solid granite blocks with occasional loose flakes on the upper buttress; test holds before committing weight.",
+      "pitch": 12,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "low 5th",
+      "notes": "Traverse right on ledges underneath big blocks.",
+      "pitch": 13,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Follow the dihedral, then blocky terrain to the summit plateau.",
+      "pitch": 14,
+      "anchor": "Walk-off (no belay)",
+      "lengthM": 35
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Moat and the toe of the buttress",
+      "notes": "Cross the Colchuck Glacier on its true-right margin in crampons to reach the lowest point of the buttress. The moat where snow meets rock is the variable here — it can be a step across a snow bridge or block in a good year and the technical crux of the day in a lean one, and parties do rope for it. There is no water above the lake, and the rock start is where the day's timing is decided."
+     },
+     {
+      "n": 2,
+      "class": "5.8",
+      "label": "Lower buttress pitches",
+      "notes": "The lower section, most commonly climbed by the left-hand start, takes wide broken cracks on solid rock to gain the crest below a large headwall. Above that, downclimb about 15 ft off the crest and work up and right on ramps to a vertical seam, then back left to a ledge at around 5.7. The pitch into the main dihedral includes a shallow chimney at 5.7 to 5.8 and is the dirtiest part of the route — moss, loose gravel and old fixed pins marking the way. Two established starts exist and mixing them up is the usual route-finding error."
+     },
+     {
+      "n": 3,
+      "class": "5.5",
+      "label": "Rising ledge traverse",
+      "notes": "A long rising traverse on ledge systems at roughly 5.0 to 5.5 links several pitches. Rock quality improves through this section and most parties simul-climb or move together in approach shoes to save time; on a 14-pitch route this is where the schedule is made up. Loose debris on the ledges is the hazard for anyone below."
+     },
+     {
+      "n": 4,
+      "class": "5.9",
+      "label": "Crux corner to the ridge crest",
+      "notes": "The route's technical crux climbs the wall above the ledges, meandering left before traversing back right into a left-facing corner that is run to the ridge crest, generally reported at 5.8 to 5.9. Rock here is solid and the movement varied, but the crux involves steep, smooth climbing before a cam can be placed blind in a horizontal crack. A rack to 3 inches with doubles from about .5 to 2 is what parties report using."
+     },
+     {
+      "n": 5,
+      "class": "5.6",
+      "label": "Upper crest, headwall and summit",
+      "notes": "Follow the buttress crest, then traverse right onto ledges to reach the base of the headwall at around 5.6. The final pitch traverses right roughly 80 ft under large blocks into a north-facing dihedral, finishing on blocky terrain to the summit plateau; the last move has been reported as a mantel past a loose block. Budget for nine hours or so on rock at Grade IV. Descent is the Colchuck Glacier, taking the skier's-right fork back toward the lake. Benighted parties are common — the length, not the grade, is what catches people."
+     }
+    ],
+    "watch_out": "Highly conditions-dependent difficulty; mixed climbing (M4) pitches vary from easy snow/ice to sustained steep sections based on current conditions\nSteep ice bulge (A2-3 rating) on pitch 3 with notoriously difficult anchor placement; anchors unreliable and sparingly available above pitch 3\nHeavily corniced rappel descent; cornice collapse risk during warm spells; potential for rappel line being cut by cornices\nS-shaped gully on pitch 1 with variable mixed climbing up to M4; conditions-dependent route difficulty affects protection options\nLong pitch to base of ice bulge (70-80m) on easy terrain, but terrain becomes avalanche-prone on wider snow slopes\nExposed approach traverse; wind-loaded terrain near Snoqualmie Pass; rapid weather changes common\nMultiple rappel anchors required for descent; deteriorating conditions during descent can create urgent retreat scenarios"
+   }
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Late-spring systems bring new snow loading followed by rapid daytime warming",
+      "probability": "Storm cycles raise avalanche loading in the confined couloir; rockfall once the sun hits the aspect on warm afternoons"
+     },
+     "exposure": "High - a confined, sustained gully with limited escape options; avalanche, spindrift, rockfall, and a potentially corniced exit, all of which raise the consequence of any mistake",
+     "avalanche": {
+      "zone": "NWAC East Central (approximate - not specific to this couloir's exact aspect/elevation)",
+      "byMonth": {
+       "May": "Moderate",
+       "July": "N/A",
+       "June": "Low",
+       "April": "Considerable"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; this is a couloir/mixed line on the peak's flank rather than the glacier proper"
+    },
+    "watch_out": "CRITICAL AVALANCHE TERRAIN: Slope angle of 35-45 degrees with extensive vertical relief and frequent terrain traps—couloir is prime avalanche slope with multiple fatal accidents (3 deaths in Feb 2023); only climb in ideal snow conditions with confirmed low/minimal avalanche hazard\nEntry and exit of steep couloir can be technical with snow or ice up to 60 degrees—difficult down-climbing if route-finding error occurs; requires excellent snow/ice judgment\nRock and ice fall from walls above couloir—stay alert and compact party; position out of direct fall line; watch for ice/rock loosening due to solar warming\nBergschrund crossing at glacier base—may be significant obstacle early/mid-season with potential fall hazard; probe and belay crossing if uncertain\nLate-season glacier becomes bare ice (July+)—surface becomes extremely difficult and icy; crampons and ice tools essential; increased rockfall risk from warming\nCrevasses in upper Colchuck Glacier approach (though fewer than on other glacier routes)—travel roped; probe continuously\nLimited escape options once committed to upper couloir—retreat can be hazardous in poor conditions; plan to turn back early if conditions deteriorate\nNavigation difficulty in whiteout conditions—few visual landmarks; GPS/map essential; descending in low visibility is particularly risky",
+    "seasonal_guidance": {
+     "optimalWindow": "May to early June, conditions dependent",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Prime season for filled, consolidated couloir snow",
+       "status": "optimal"
+      },
+      "July": {
+       "reason": "The route melts out to loose rock by summer",
+       "status": "risky"
+      },
+      "June": {
+       "reason": "Can still hold early in the month, but risk of the couloir beginning to melt out rises through the month",
+       "status": "good"
+      },
+      "April": {
+       "reason": "Typically still full winter/avalanche-prone conditions before the best-season window opens",
+       "status": "risky"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "before": {
+    "pro_tips": [
+     "Go early season for filled-in, bridged snow.",
+     "Start at first light to travel firm snow.",
+     "Rope up for glacier travel even when bridges look solid.",
+     "Turn the climb around before the afternoon slush sets in."
+    ]
+   }
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "before": {
+    "gain_ft": 2800,
+    "loss_ft": 2800,
+    "beta": "From Colchuck Lake, traverse south-west to the east ridge base. Follow the ridge crest, negotiating Class 2-3 scrambling terrain. Several sections require hands but no protection needed. The granite is generally solid with good friction. Descent retraces the ascent."
+   }
+  }
+ ]
+}

@@ -35,9 +35,49 @@ const log = (...a) => console.log(...a);
 // ---------------------------------------------------------------- fetch
 // Two full-table reads. `routes` is ~205k rows, so ask for the two columns actually
 // needed rather than `*` -- selectAll pages by keyset on id, so id has to come along.
+/* The FIRST request of a run pays connection setup — measured at 3.7s against 0.3-0.7s for the
+   same query once warm — and this reads under the ANON key on purpose (a checker that could
+   write is one that can corrupt what it is checking), which carries a 3s statement_timeout. So
+   the opening read below intermittently died with `57014 canceling statement due to statement
+   timeout` before it had fetched a single row.
+   That is a cold start, NOT an expensive query, and the distinction matters because the obvious
+   response is to shrink the page, which fixes nothing: measured, 1000 areas takes 725 ms warm
+   and 400 still failed cold. See scripts/oneoff/probe-areas-page-cost.mjs.
+   So pay the setup on a request whose result is thrown away, and leave the page size alone.
+   This guard runs on a SCHEDULE (area-count-drift.yml), so a cold-start death is a day with no
+   answer rather than a visible failure — the same shape as the empty-read false pass guarded
+   against below, and the reason audit:waypoints already carries this exact warm-up. */
+await selectAll("areas", "id", "id=eq.__warmup_no_such_area__", { pageSize: 1 });
+
+/* The warm-up REDUCES the opening cost but does not eliminate the failure, which is why this
+   retry exists beside it rather than instead of it. Measured 2026-08-13 (see
+   scripts/oneoff/probe-areas-cold-start.mjs), first page of `areas`:
+       cold    9418ms / 4456ms / 7848ms
+       warmed  2468ms / 1507ms / FAILED 57014 after 18270ms
+   So warming helps materially and a warmed run can still die. Retrying only on 57014 keeps the
+   distinction that matters: `57014` is the server answering "that took too long", which is
+   worth another attempt, while a 522 or a socket timeout means the database is UNREACHABLE and
+   retrying would just spend three times as long reporting the same outage. Those two look alike
+   in a log and mean opposite things.
+   It stays fail-closed: after 3 attempts the error is rethrown and the run dies loudly. A
+   scheduled guard that quietly reports nothing is the failure this whole script guards against. */
+async function readAll(table, cols) {
+  let last;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      return await selectAll(table, cols, "", { pageSize: 1000 });
+    } catch (e) {
+      last = e;
+      if (!/57014|statement timeout/i.test(String(e.message))) throw e;
+      log(`  ${table}: statement timeout on attempt ${attempt} of 3 — retrying`);
+    }
+  }
+  throw last;
+}
+
 log("reading areas + routes (read-only, anon key)...");
-const areas = await selectAll("areas", "id,name,area_type,parent_id,route_count", "", { pageSize: 1000 });
-const routes = await selectAll("routes", "id,area_id", "", { pageSize: 1000 });
+const areas = await readAll("areas", "id,name,area_type,parent_id,route_count");
+const routes = await readAll("routes", "id,area_id");
 log(`  areas=${areas.length}  routes=${routes.length}`);
 
 if (!areas.length || !routes.length) {

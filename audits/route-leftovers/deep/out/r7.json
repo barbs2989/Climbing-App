@@ -1,0 +1,99 @@
+{
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "verdict": "unresolved",
+   "evidence": "Third pass (2026-09-30), still one spot-specific author; no ops. Live rows re-read (service key, read-only): all five still hold access.passRequired \"Recreation pass\" beside access.notes \"...is not a developed fee site\" and access.parking_pass \"Half Moon Crag: no fee site identified.\" NEW ANGLES, none decisive: (1) The crag guidebook is Weekend Rock Washington (Whitelaw, Mountaineers Books, 2006), which has a HALF MOON CRAGS BETA block (\"Getting there: Drive US 2 to Stevens Pass. Half Moon Group: From a junction just 100...\"); Google Books full-text queries for that volume with \"Northwest Forest Pass\", \"pass\"+\"parking\" and \"hairpin\" returned zero hits, and the page preview sits behind a bot check (not bypassed). A zero full-text hit is not a statement that no pass is needed, so it is not counted. (2) King County Old Cascade Scenic Highway Heritage Corridor (Stevens Pass) mile-by-mile tour: describes the hairpin at mile 1.3 and Wellington Trail at mile 2.8 but says nothing about passes or fees anywhere. (3) Federal Register 2022-19186 (MBS proposed new fee sites) lists no site on Old Stevens Pass Hwy/Tye Rd - USFS again, and an absence. (4) Recreation.gov POI for Old Stevens Pass Highway (FS 6099): no fee/pass text; RIDB data is USFS-supplied, not independent. (5) Washington Climbers Coalition: no Stevens Pass/Tye Road page. Mountain Project Stevens Pass Boulders parks at the PCT lot, not this pull-off. (6) No WTA, NWHikers, CascadeClimbers or reddit report found naming parking at the Tye Road hairpin pull-off and a pass either way; the WTA pass mentions on Tye Road are for the Wellington/Iron Goat trailheads (listed fee sites), not this pull-off. Seattle Times mile-by-mile Stevens Pass guide returned 403. Net: the only spot-specific evidence remains USFS (fee-site list omits the pull-off; FS 6099 page has no fee section) - one author. Not confirmed under the two-source rule. Owner note unchanged: the row contradicts itself; if a second source appears the op is passRequired \"Recreation pass\" -> a no-pass value on these five rows only; access.fees and access._raw untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/recreation/old-stevens-pass-highway-fs-road-6099",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.google.com/books/feeds/volumes?q=%22Half+Moon+Group%22+%22From+a+junction+just%22+inauthor:Whitelaw",
+    "https://cdn.kingcounty.gov/-/media/king-county/depts/dnrp/building-property/historic-preservation-program/projects-and-programs/historic-and-scenic-corridors-project/downloads/oldcascadescenichighwaymilebymiletour.pdf",
+    "https://govinfo.gov/content/pkg/FR-2022-09-06/pdf/2022-19186.pdf",
+    "https://www.recreation.gov/camping/poi/235241",
+    "https://washingtonclimbers.org/index.php/climbingareas/western-washington-2/",
+    "https://www.mountainproject.com/area/119240735/stevens-pass-boulders",
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "verdict": "unresolved",
+   "evidence": "Third pass (2026-09-30), still one spot-specific author; no ops. Live rows re-read (service key, read-only): all five still hold access.passRequired \"Recreation pass\" beside access.notes \"...is not a developed fee site\" and access.parking_pass \"Half Moon Crag: no fee site identified.\" NEW ANGLES, none decisive: (1) The crag guidebook is Weekend Rock Washington (Whitelaw, Mountaineers Books, 2006), which has a HALF MOON CRAGS BETA block (\"Getting there: Drive US 2 to Stevens Pass. Half Moon Group: From a junction just 100...\"); Google Books full-text queries for that volume with \"Northwest Forest Pass\", \"pass\"+\"parking\" and \"hairpin\" returned zero hits, and the page preview sits behind a bot check (not bypassed). A zero full-text hit is not a statement that no pass is needed, so it is not counted. (2) King County Old Cascade Scenic Highway Heritage Corridor (Stevens Pass) mile-by-mile tour: describes the hairpin at mile 1.3 and Wellington Trail at mile 2.8 but says nothing about passes or fees anywhere. (3) Federal Register 2022-19186 (MBS proposed new fee sites) lists no site on Old Stevens Pass Hwy/Tye Rd - USFS again, and an absence. (4) Recreation.gov POI for Old Stevens Pass Highway (FS 6099): no fee/pass text; RIDB data is USFS-supplied, not independent. (5) Washington Climbers Coalition: no Stevens Pass/Tye Road page. Mountain Project Stevens Pass Boulders parks at the PCT lot, not this pull-off. (6) No WTA, NWHikers, CascadeClimbers or reddit report found naming parking at the Tye Road hairpin pull-off and a pass either way; the WTA pass mentions on Tye Road are for the Wellington/Iron Goat trailheads (listed fee sites), not this pull-off. Seattle Times mile-by-mile Stevens Pass guide returned 403. Net: the only spot-specific evidence remains USFS (fee-site list omits the pull-off; FS 6099 page has no fee section) - one author. Not confirmed under the two-source rule. Owner note unchanged: the row contradicts itself; if a second source appears the op is passRequired \"Recreation pass\" -> a no-pass value on these five rows only; access.fees and access._raw untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/recreation/old-stevens-pass-highway-fs-road-6099",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.google.com/books/feeds/volumes?q=%22Half+Moon+Group%22+%22From+a+junction+just%22+inauthor:Whitelaw",
+    "https://cdn.kingcounty.gov/-/media/king-county/depts/dnrp/building-property/historic-preservation-program/projects-and-programs/historic-and-scenic-corridors-project/downloads/oldcascadescenichighwaymilebymiletour.pdf",
+    "https://govinfo.gov/content/pkg/FR-2022-09-06/pdf/2022-19186.pdf",
+    "https://www.recreation.gov/camping/poi/235241",
+    "https://washingtonclimbers.org/index.php/climbingareas/western-washington-2/",
+    "https://www.mountainproject.com/area/119240735/stevens-pass-boulders",
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_astroglide",
+   "verdict": "unresolved",
+   "evidence": "Third pass (2026-09-30), still one spot-specific author; no ops. Live rows re-read (service key, read-only): all five still hold access.passRequired \"Recreation pass\" beside access.notes \"...is not a developed fee site\" and access.parking_pass \"Half Moon Crag: no fee site identified.\" NEW ANGLES, none decisive: (1) The crag guidebook is Weekend Rock Washington (Whitelaw, Mountaineers Books, 2006), which has a HALF MOON CRAGS BETA block (\"Getting there: Drive US 2 to Stevens Pass. Half Moon Group: From a junction just 100...\"); Google Books full-text queries for that volume with \"Northwest Forest Pass\", \"pass\"+\"parking\" and \"hairpin\" returned zero hits, and the page preview sits behind a bot check (not bypassed). A zero full-text hit is not a statement that no pass is needed, so it is not counted. (2) King County Old Cascade Scenic Highway Heritage Corridor (Stevens Pass) mile-by-mile tour: describes the hairpin at mile 1.3 and Wellington Trail at mile 2.8 but says nothing about passes or fees anywhere. (3) Federal Register 2022-19186 (MBS proposed new fee sites) lists no site on Old Stevens Pass Hwy/Tye Rd - USFS again, and an absence. (4) Recreation.gov POI for Old Stevens Pass Highway (FS 6099): no fee/pass text; RIDB data is USFS-supplied, not independent. (5) Washington Climbers Coalition: no Stevens Pass/Tye Road page. Mountain Project Stevens Pass Boulders parks at the PCT lot, not this pull-off. (6) No WTA, NWHikers, CascadeClimbers or reddit report found naming parking at the Tye Road hairpin pull-off and a pass either way; the WTA pass mentions on Tye Road are for the Wellington/Iron Goat trailheads (listed fee sites), not this pull-off. Seattle Times mile-by-mile Stevens Pass guide returned 403. Net: the only spot-specific evidence remains USFS (fee-site list omits the pull-off; FS 6099 page has no fee section) - one author. Not confirmed under the two-source rule. Owner note unchanged: the row contradicts itself; if a second source appears the op is passRequired \"Recreation pass\" -> a no-pass value on these five rows only; access.fees and access._raw untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/recreation/old-stevens-pass-highway-fs-road-6099",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.google.com/books/feeds/volumes?q=%22Half+Moon+Group%22+%22From+a+junction+just%22+inauthor:Whitelaw",
+    "https://cdn.kingcounty.gov/-/media/king-county/depts/dnrp/building-property/historic-preservation-program/projects-and-programs/historic-and-scenic-corridors-project/downloads/oldcascadescenichighwaymilebymiletour.pdf",
+    "https://govinfo.gov/content/pkg/FR-2022-09-06/pdf/2022-19186.pdf",
+    "https://www.recreation.gov/camping/poi/235241",
+    "https://washingtonclimbers.org/index.php/climbingareas/western-washington-2/",
+    "https://www.mountainproject.com/area/119240735/stevens-pass-boulders",
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "verdict": "unresolved",
+   "evidence": "Third pass (2026-09-30), still one spot-specific author; no ops. Live rows re-read (service key, read-only): all five still hold access.passRequired \"Recreation pass\" beside access.notes \"...is not a developed fee site\" and access.parking_pass \"Half Moon Crag: no fee site identified.\" NEW ANGLES, none decisive: (1) The crag guidebook is Weekend Rock Washington (Whitelaw, Mountaineers Books, 2006), which has a HALF MOON CRAGS BETA block (\"Getting there: Drive US 2 to Stevens Pass. Half Moon Group: From a junction just 100...\"); Google Books full-text queries for that volume with \"Northwest Forest Pass\", \"pass\"+\"parking\" and \"hairpin\" returned zero hits, and the page preview sits behind a bot check (not bypassed). A zero full-text hit is not a statement that no pass is needed, so it is not counted. (2) King County Old Cascade Scenic Highway Heritage Corridor (Stevens Pass) mile-by-mile tour: describes the hairpin at mile 1.3 and Wellington Trail at mile 2.8 but says nothing about passes or fees anywhere. (3) Federal Register 2022-19186 (MBS proposed new fee sites) lists no site on Old Stevens Pass Hwy/Tye Rd - USFS again, and an absence. (4) Recreation.gov POI for Old Stevens Pass Highway (FS 6099): no fee/pass text; RIDB data is USFS-supplied, not independent. (5) Washington Climbers Coalition: no Stevens Pass/Tye Road page. Mountain Project Stevens Pass Boulders parks at the PCT lot, not this pull-off. (6) No WTA, NWHikers, CascadeClimbers or reddit report found naming parking at the Tye Road hairpin pull-off and a pass either way; the WTA pass mentions on Tye Road are for the Wellington/Iron Goat trailheads (listed fee sites), not this pull-off. Seattle Times mile-by-mile Stevens Pass guide returned 403. Net: the only spot-specific evidence remains USFS (fee-site list omits the pull-off; FS 6099 page has no fee section) - one author. Not confirmed under the two-source rule. Owner note unchanged: the row contradicts itself; if a second source appears the op is passRequired \"Recreation pass\" -> a no-pass value on these five rows only; access.fees and access._raw untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/recreation/old-stevens-pass-highway-fs-road-6099",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.google.com/books/feeds/volumes?q=%22Half+Moon+Group%22+%22From+a+junction+just%22+inauthor:Whitelaw",
+    "https://cdn.kingcounty.gov/-/media/king-county/depts/dnrp/building-property/historic-preservation-program/projects-and-programs/historic-and-scenic-corridors-project/downloads/oldcascadescenichighwaymilebymiletour.pdf",
+    "https://govinfo.gov/content/pkg/FR-2022-09-06/pdf/2022-19186.pdf",
+    "https://www.recreation.gov/camping/poi/235241",
+    "https://washingtonclimbers.org/index.php/climbingareas/western-washington-2/",
+    "https://www.mountainproject.com/area/119240735/stevens-pass-boulders",
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_artic_rose",
+   "verdict": "unresolved",
+   "evidence": "Third pass (2026-09-30), still one spot-specific author; no ops. Live rows re-read (service key, read-only): all five still hold access.passRequired \"Recreation pass\" beside access.notes \"...is not a developed fee site\" and access.parking_pass \"Half Moon Crag: no fee site identified.\" NEW ANGLES, none decisive: (1) The crag guidebook is Weekend Rock Washington (Whitelaw, Mountaineers Books, 2006), which has a HALF MOON CRAGS BETA block (\"Getting there: Drive US 2 to Stevens Pass. Half Moon Group: From a junction just 100...\"); Google Books full-text queries for that volume with \"Northwest Forest Pass\", \"pass\"+\"parking\" and \"hairpin\" returned zero hits, and the page preview sits behind a bot check (not bypassed). A zero full-text hit is not a statement that no pass is needed, so it is not counted. (2) King County Old Cascade Scenic Highway Heritage Corridor (Stevens Pass) mile-by-mile tour: describes the hairpin at mile 1.3 and Wellington Trail at mile 2.8 but says nothing about passes or fees anywhere. (3) Federal Register 2022-19186 (MBS proposed new fee sites) lists no site on Old Stevens Pass Hwy/Tye Rd - USFS again, and an absence. (4) Recreation.gov POI for Old Stevens Pass Highway (FS 6099): no fee/pass text; RIDB data is USFS-supplied, not independent. (5) Washington Climbers Coalition: no Stevens Pass/Tye Road page. Mountain Project Stevens Pass Boulders parks at the PCT lot, not this pull-off. (6) No WTA, NWHikers, CascadeClimbers or reddit report found naming parking at the Tye Road hairpin pull-off and a pass either way; the WTA pass mentions on Tye Road are for the Wellington/Iron Goat trailheads (listed fee sites), not this pull-off. Seattle Times mile-by-mile Stevens Pass guide returned 403. Net: the only spot-specific evidence remains USFS (fee-site list omits the pull-off; FS 6099 page has no fee section) - one author. Not confirmed under the two-source rule. Owner note unchanged: the row contradicts itself; if a second source appears the op is passRequired \"Recreation pass\" -> a no-pass value on these five rows only; access.fees and access._raw untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/recreation/old-stevens-pass-highway-fs-road-6099",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.google.com/books/feeds/volumes?q=%22Half+Moon+Group%22+%22From+a+junction+just%22+inauthor:Whitelaw",
+    "https://cdn.kingcounty.gov/-/media/king-county/depts/dnrp/building-property/historic-preservation-program/projects-and-programs/historic-and-scenic-corridors-project/downloads/oldcascadescenichighwaymilebymiletour.pdf",
+    "https://govinfo.gov/content/pkg/FR-2022-09-06/pdf/2022-19186.pdf",
+    "https://www.recreation.gov/camping/poi/235241",
+    "https://washingtonclimbers.org/index.php/climbingareas/western-washington-2/",
+    "https://www.mountainproject.com/area/119240735/stevens-pass-boulders",
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

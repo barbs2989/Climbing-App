@@ -27,6 +27,7 @@
 // overlay. See dialogOverlays() for the two precision rules that keep it honest.
 
 import { readFileSync, existsSync } from "node:fs";
+import { readCoreSource } from "./guard-sources.mjs";
 
 // Overlays whose RENDERER is gated on state beyond their own flag, so flipping the flag
 // alone cannot mount them. These are correct code, not bugs: the walk simply cannot reach
@@ -38,12 +39,10 @@ import { readFileSync, existsSync } from "node:fs";
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
-  // These two render INSIDE the openGroupId group view, not at App level: their JSX sits
-  // within that IIFE and the `posts` they look up is a local (`var posts=groupPosts[cl.id]`),
-  // so there is no App-scope expression that could open them. Reaching them means opening a
-  // group first, which is a different walk from "set a flag and see what mounts".
-  postMenuFor: "nested inside the openGroupId group view — `posts` is a local of that IIFE",
-  reactPickerFor: "nested inside the openGroupId group view — `posts` is a local of that IIFE",
+  // `sessionRestoring` deliberately gets NO entry — it is a derived const
+  // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
+  // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
+  // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
 
 // ---------------------------------------------------------------------------------------
@@ -74,9 +73,75 @@ export const NEEDS_EXTRA_STATE = {
 // in NEEDS_EXTRA_STATE fails the run (assertKnownOverlays), so a modal added tomorrow cannot
 // quietly go unwalked. That is the property the name-shape discovery lost.
 export const OVERLAY_PAYLOADS = {
+  // ---- reachable only by building the screen they live inside ----
+  //
+  // These two render INSIDE the openGroupId group view, and the `posts` they look up is a
+  // local of that IIFE — which is why they were exempt as unreachable. They are not
+  // unreachable; they need the screen around them to exist first, and every piece of that
+  // screen is App state the opener can set.
+  //
+  // `prep` runs before the payload: inject a group, give it a post, open the group. The view
+  // does createdGroups.concat(GROUPS).find(id) and returns null on a miss, so the group must
+  // be in createdGroups; ownerId:0 satisfies its non-_db isCreator branch; groupPosts[id] is
+  // what becomes the `posts` local. None of this is DB-backed — group posts are client state —
+  // so no fixture could seed them, and this is the only way to reach these two in any walk.
+  postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+  reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+
+  // 0258's two group sheets. `joinAsk` resolves its group out of createdGroups.concat(GROUPS) and
+  // renders one field per entry of `joinQuestions`, so the probe group carries one question of each
+  // kind -- a written answer and a multiple choice -- and the payload is the shape groupJoinTap
+  // builds. `groupReport` with no postId is the report-a-GROUP sheet; it needs only the group.
+  joinAsk: { prep: 'setCreatedGroups([{id:"__ov_qgroup",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",policy:"approval",ownerId:"__ov_owner",memberIds:[],moderatorIds:[],joinQuestions:[{prompt:"What do you climb?",type:"text",required:true},{prompt:"Highest lead grade?",type:"choice",options:["5.8","5.10"],required:false}],rules:[{title:"Helmets on",details:"At every crag."}]}]);', expr: '{mode:"request",groupId:"__ov_qgroup",answers:["",""],agreed:false,err:"",busy:false}' },
+  // 0260's remove/decline sheet. The REMOVE kind is the richer one (the ban checkbox and its reason
+  // field render only for a real group, so the probe group is `_db` and the target a uuid-shaped id).
+  memberAction: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[],_db:true}]);', expr: '{kind:"remove",groupId:"__ov_group",userId:"00000000-0000-4000-8000-000000000001",name:"Probe",targetIsMod:false,db:true,ban:true,reason:"",busy:false}' },
+  groupReport: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[],_db:true}]);', expr: '{groupId:"__ov_group"}' },
+
+  // The group EVENT detail view, newly discovered once it gained role="dialog" (it is a
+  // `position:fixed; inset:0` full-screen view that renders over the app, so it is a modal to a
+  // climber; it simply announced as nothing before).
+  //
+  // It holds {groupId, id} and resolves an event out of `events[groupId]`, then reads
+  // `ev.date.split("-")`, `ev.hostId`, `ev.going` and `ev.capacity` — so an unresolvable payload
+  // does not render an empty view, it throws. `events` is client state seeded from DEMO_FILLERS
+  // (permanently false), so no fixture can seed it and a `prep` is the only way in — the same
+  // situation as postMenuFor/reactPickerFor above.
+  openEvent: {
+    prep: 'setEvents({__ov_group:[{id:"__ov_event",title:"Overlay probe event",date:"2026-01-01",hostId:0,going:[0],capacity:0}]});',
+    expr: '{groupId:"__ov_group",id:"__ov_event"}',
+  },
+
   // NOTE: a dialog state initialised to `false` needs no entry here — it is a flag whatever
   // it is called, and is opened with `true`. `confirmDelete` and `pastExpand` are the two
   // today. Only state that HOLDS something needs a payload.
+
+  // A data-rights request KIND, not an object. Both setter call sites pass a bare string —
+  // setDataReq("export") and setDataReq("optout") — and the sheet's copy branches on which,
+  // so an object here would render the opt-out wording under the export heading rather than
+  // fail loudly. "export" is the one reached from Settings → Your data.
+  dataReq: { expr: '"export"' },
+
+  // A legal document KIND, not an object — `<LegalView kind={legal}/>` is an App early-return
+  // SCREEN (shape 3), so it replaces the nav rather than layering over it. The only two setter
+  // call sites are setLegal("terms") and setLegal("privacy"); "terms" is the one the sign-in
+  // gate links to. Lifted from the app, not invented, like every entry here.
+  legal: { expr: '"terms"' },
+
+  // The profile editor, an App early-return SCREEN whose payload is a 386-character
+  // ME-derived object literal. `lift` EXTRACTS that literal from the app's own setter call
+  // site by balancing braces, rather than copying it here.
+  //
+  // Copying would satisfy "lifted, not invented" on the day it was written and then rot: it
+  // is a second copy of a shape that lives elsewhere, so adding a field to the draft would
+  // leave this one silently stale, opening a half-filled editor that reads like a broken
+  // screen rather than failing loudly. check:anniversary records exactly this trap and solves
+  // it the same way — extract the literal, never hand-write it.
+  //
+  // The expression references ME, weekOf and showRealName, all App scope, and the opener is
+  // injected inside App, so it evaluates where the app itself evaluates it.
+  editDraft: { lift: "setEditDraft({" },
+
 
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
@@ -84,6 +149,10 @@ export const OVERLAY_PAYLOADS = {
   logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
+  // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
+  // No list has the nil uuid, so the walk sees the "private, or deleted" state — still the dialog,
+  // its heading and its ✕, which is what the walks assert on.
+  sharedListId: { expr: "'00000000-0000-0000-0000-000000000000'" },
   reportUser: { expr: "CLIMBERS[0]" },
   // Resume is also opened on yourself (`setResumeFor(ME)`), and that is the branch that
   // matters — `logs={resumeFor.id===0?logs:[]}` and the seed-history gate both key on it.
@@ -95,6 +164,9 @@ export const OVERLAY_PAYLOADS = {
 
   // Composites, copied from the setter call sites verbatim.
   invitePrompt: { expr: "{climber:CLIMBERS[0],route:ROUTES[0]}" },
+  // Start a crew at an AREA (0302): the sheet renders for any payload; the lifted shape is what the area
+  // page's "Start a crew here" builds, on a seed area so it resolves without the database.
+  startCrew: { expr: '{mode:"area",area:{id:"lcc_hellgate",name:"Hellgate",areaType:"crag",disciplines:["sport"]},partners:[]}' },
   quickLogFor: { expr: "{route:ROUTES[0],crewId:undefined,partners:[]}" },
 
   // Blank drafts — exactly what the "create" buttons open.
@@ -184,6 +256,26 @@ function matchBrace(s, i) {
 
 const TAG = /<([A-Za-z][\w$.]*)/;
 
+// The component a region RENDERS, looking through a leading <Suspense> wrapper. Screens split off
+// the startup bundle render as <Suspense fallback={<…Skeleton/>}><LogAscent …/></Suspense>, so
+// the region's first tag is Suspense and the next one is the fallback's — neither is the dialog.
+// Skip the whole Suspense opening element (its props hold JSX) and read the tag after it.
+function firstRenderedTag(seg) {
+  const t = TAG.exec(seg);
+  if (!t || t[1] !== "Suspense") return t;
+  let d = 0;
+  for (let k = t.index + t[0].length; k < seg.length; k++) {
+    const c = seg[k];
+    if (c === "{") d++;
+    else if (c === "}") d--;
+    else if (c === ">" && d === 0) {
+      const inner = TAG.exec(seg.slice(k + 1));
+      return inner ? Object.assign(inner, { index: inner.index + k + 1 }) : null;
+    }
+  }
+  return null;
+}
+
 // Shape 2: state of any name or initial value whose JSX renders a dialog.
 //
 // Two precision rules, both of which were wrong in the first draft:
@@ -209,7 +301,7 @@ export function dialogOverlays(appCode, coreCode) {
       const end = matchBrace(appCode, r.index);
       if (end < 0) continue;
       const seg = appCode.slice(r.index, end);
-      const t = TAG.exec(seg);
+      const t = firstRenderedTag(seg);
       if (!t) continue;
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
       const d = seg.indexOf('role="dialog"');
@@ -228,9 +320,53 @@ export function dialogOverlays(appCode, coreCode) {
 
 // Overlay states are discovered from the SOURCE, never listed, so a modal added tomorrow is
 // walked without anyone remembering to register it.
+// Shape 3: an App EARLY-RETURN SCREEN — `if(state)return <…>` at App's top level.
+//
+// Shapes 1 and 2 both look for something that renders a DIALOG. These do not: they replace
+// the whole screen, nav included, so a behavioural dialog test cannot see them and never
+// could. Measured before this existed: discovery found 51 states and `legal`, `editDraft`
+// and `sessionRestoring` were in none of them, while `calOpen`, `inboxOpen`, `dashOpen` and
+// `guideAppOpen` — early returns that ALSO render dialog-ish content — were already caught
+// by shape 2. So the hole was exactly the screens that are only screens.
+//
+// That matters more than an uncovered overlay: these are early returns from App, so a crash
+// in one blanks the entire app — the #317/#359 failure the whole guard suite exists for —
+// and the terms/privacy screen was rendered by no browser guard at all.
+//
+// Deliberately NOT Babel-scoped to App the way check:toast-reachable is. Every match is
+// intersected with the App-level `useState` names shapes 1 and 2 already parse, so an
+// `if(x)return <…>` inside a nested component cannot enter the list unless that component
+// also declares a same-named App-level state — and the fail-closed payload registry would
+// catch that on the next run rather than silently walking something meaningless.
+export function screenOverlays(appCode) {
+  // `at` must be the DECLARATION offset, not the offset of the early return. buildOpener
+  // keeps only states declared ABOVE its injection anchor, and the return that renders a
+  // screen sits in App's render section tens of thousands of characters BELOW that anchor.
+  // Recording the return's offset therefore reported both screens as unreachable when both
+  // are declared at ~15,900 against an anchor at ~113,400 — a wrong position, not a wrong
+  // list, and it failed loudly rather than silently only because check:overlay-discovery
+  // treats an unopenable overlay as a defect.
+  const declared = new Map();
+  for (const m of appCode.matchAll(/\[([a-zA-Z][\w$]*),(set[A-Z][\w$]*)\]=useState\(/g))
+    if (!declared.has(m[1])) declared.set(m[1], m.index);
+  const found = [];
+  const seen = new Set();
+  for (const m of appCode.matchAll(/if\(([a-zA-Z][\w$]*)\)return\s*</g)) {
+    const name = m[1];
+    if (!declared.has(name) || seen.has(name)) continue;
+    seen.add(name);
+    found.push({ name, setter: "set" + name[0].toUpperCase() + name.slice(1), at: declared.get(name), kind: "screen", evidence: "App early-return screen" });
+  }
+  return found;
+}
+
 export function overlayStates(code, coreCode) {
-  const core = coreCode != null ? coreCode : readFileSync(new URL("../../ClimbMatchCore.jsx", import.meta.url), "utf8");
-  return [...flagOverlays(code), ...dialogOverlays(code, core)];
+  const core = coreCode != null ? coreCode : readCoreSource();
+  const first = [...flagOverlays(code), ...dialogOverlays(code, core)];
+  const have = new Set(first.map((o) => o.name));
+  // Shapes 1 and 2 win: an early return that also renders a dialog is already opened
+  // correctly by them, and re-listing it would walk the same state twice.
+  return [...first, ...screenOverlays(code).filter((o) => !have.has(o.name))];
 }
 
 // Build the opener effect. `?zt=<tab>` selects a tab, `?z=<overlayName>` opens an overlay.
@@ -287,7 +423,7 @@ export function routeDetailOverlays(rdCode) {
       const end = matchBrace(rdCode, r.index);
       if (end < 0) continue;
       const seg = rdCode.slice(r.index, end);
-      const t = TAG.exec(seg);
+      const t = firstRenderedTag(seg);
       if (!t) continue;
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
       const d = seg.indexOf('role="dialog"');
@@ -358,7 +494,44 @@ export function buildRouteDetailOpener(rdCode, label) {
   return { code: out, names, states: all };
 }
 
-export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
+// One line for a config's transform hook: hand it every module, it claims RouteDetail.jsx and
+// returns null for everything else.
+//
+// This exists because passing the wiring by hand did not survive contact. FIVE configs call
+// buildOpener and #779 wired THREE — a11y-badges and anniversary silently kept walking without
+// RouteDetail's modals, so check:a11y-badges and check:overflow were narrower than the other
+// three and nothing said so. That is the exact drift the shared scaffold was factored out to
+// prevent, reintroduced as per-config boilerplate. Anything a config has to remember is
+// something a config will forget.
+export function routeDetailTransform(code, id, label) {
+  if (!id.endsWith("/RouteDetail.jsx")) return null;
+  return buildRouteDetailOpener(code, label).code;
+}
+
+// Same reasoning, the other half: the names DEFAULT to the ones on disk, so a config that does
+// not pass them still opens a route rather than walking a quietly narrower set.
+let _rdNames = null;
+export function routeDetailNames() {
+  if (!_rdNames) _rdNames = buildRouteDetailOpener(routeDetailSource(), "overlay-scaffold").names;
+  return _rdNames;
+}
+
+// Resolve a payload to a JS expression. `expr` is written here; `lift` is EXTRACTED from the
+// app's own source by balancing braces from a setter call site, so it cannot drift from the
+// shape the app actually sets. Fails loudly rather than returning a truncated literal, because
+// a half-extracted object would open a half-filled screen that reads like a product bug.
+function payloadExpr(name, code) {
+  const p = OVERLAY_PAYLOADS[name];
+  if (p.expr) return p.expr;
+  const at = code.indexOf(p.lift);
+  if (at < 0) throw new Error(`overlay-scaffold: payload for ${name} lifts from ${JSON.stringify(p.lift)}, which is not in the app source — the call site was renamed`);
+  const open = at + p.lift.length - 1;
+  const end = matchBrace(code, open);
+  if (end < 0) throw new Error(`overlay-scaffold: payload for ${name} lifts from ${JSON.stringify(p.lift)} but its braces do not balance`);
+  return code.slice(open, end + 1);
+}
+
+export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
   const at = code.indexOf(anchor);
   if (at < 0) throw new Error(`buildOpener: anchor not found: ${anchor}`);
   const all = overlayStates(code, coreCode);
@@ -393,10 +566,16 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
   //     window.__overlays, so the guards enumerate and skip it rather than losing the row.
   const map = usable.map((s) => {
     const q = JSON.stringify(s.name);
-    if (s.kind === "dialog" && !OVERLAY_PAYLOADS[s.name]) return q + ":function(){}";
-    const arg = s.kind === "flag" ? "true" : OVERLAY_PAYLOADS[s.name].expr;
+    // Any NON-FLAG kind without a payload is a no-op opener, not just a dialog. Shape 3
+    // (screens) added a second payload-taking kind, and testing for "dialog" by name meant an
+    // exempt screen fell through to `OVERLAY_PAYLOADS[name].expr` and died on undefined. The
+    // kind decides how you OPEN it; only `flag` opens with plain `true`.
+    if (s.kind !== "flag" && !OVERLAY_PAYLOADS[s.name]) return q + ":function(){}";
+    const arg = s.kind === "flag" ? "true" : payloadExpr(s.name, code);
     const why = JSON.stringify(s.kind === "flag" ? "" : (OVERLAY_PAYLOADS[s.name].needsData || "its payload resolved empty in this fixture"));
-    return q + ":function(){try{var v=(" + arg + ");" +
+    const prep = (s.kind === "flag" ? "" : (OVERLAY_PAYLOADS[s.name].prep || ""));
+    // `prep` builds the screen a nested modal lives inside, before its payload is evaluated.
+    return q + ":function(){try{" + prep + "var v=(" + arg + ");" +
       "if(v==null||v===\"\"){(window.__overlayNoPayload=window.__overlayNoPayload||{})[" + q + "]=" + why + ";return;}" +
       s.setter + "(v);}catch(e){" +
       "(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[" + q + "]=String(e&&e.message||e);}}";
@@ -409,7 +588,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
   // missed and crewInvite and recapId reported "added nothing on any of 6 tabs" — a guard
   // failure indistinguishable from a broken modal, which is the one confusion this walk must
   // not introduce. Assigning through a ref during render keeps the payload current.
-  const rdNames = routeDetailNames || [];
+  const rdNames = routeDetailNames_ || routeDetailNames();
   const names = usable.map((s) => JSON.stringify(s.name)).concat(rdNames.map((n) => JSON.stringify(n))).join(",");
   const rdSet = JSON.stringify(rdNames);
   return {
@@ -423,10 +602,28 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
       // actually opened the thing. Setting it here would mean "App has navigated", which is
       // not the question any guard is asking.
       "var __rdOv=" + rdSet + ";" +
-      "__ovOpen.current=function(z){if(__rdOv.indexOf(z)>=0){openRoute(ROUTES[0]);return;}var M={" + map + "};if(M[z])M[z]();};" +
+      "var _zrpParam=new URLSearchParams(location.search).get('zrp');" +
+      "function __zrPick(){if(!_zrpParam)return ROUTES[0];" +
+      "for(var i=0;i<ROUTES.length;i++){var _pd=ROUTES[i].pitchDetail;if(Array.isArray(_pd)&&_pd.length&&_pd.some(function(x){return x&&x.crux;}))return ROUTES[i];}" +
+      "window.__zrNoPitched=true;return ROUTES[0];}" +
+      "__ovOpen.current=function(z){if(__rdOv.indexOf(z)>=0){openRoute(__zrPick());return;}var M={" + map + "};if(M[z])M[z]();};" +
       "useEffect(function(){window.__overlays=[" + names + "];" +
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
+      // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
+      // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did
+      // not complete under the scaffold config, so the richest layout in the app, and the one
+      // where both recorded overflow bugs lived, printed NOT REACHED on every run. CLAUDE.md
+      // calls fixing it the top follow-up. Navigating directly is deterministic and cannot be
+      // defeated by a row that renders differently or a list that is slow.
+      // Readiness is deferred here for the same reason it is everywhere else in this file,
+      // and getting it wrong once more is what the first CI run caught: with `?zr=1` and no
+      // `z`, the `else` at the bottom set __overlaysReady SYNCHRONOUSLY while this navigation
+      // waits 900ms, so the guard read window.__routeOpen before it could exist and reported
+      // the route page as unreachable. Ready must mean "the thing that opens THIS screen has
+      // run" — see the note below and #768.
+      "var _zr=p.get('zr');" +
+"if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
       // opener fires 1200ms later meant they were asking before there was an answer. The
@@ -448,7 +645,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames) {
       "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
       "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
       "else window.__overlaysReady=true;},1200);" +
-      "else window.__overlaysReady=true;},[]);",
+      "else if(!_zr)window.__overlaysReady=true;},[]);",
   };
 }
 

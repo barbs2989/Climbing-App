@@ -1,0 +1,328 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach side and base camp"
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the permit can be reserved"
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the permit can be reserved"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope: single vs double 60 m"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Terrain into the Eye Col"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Days of approach / when the climb happens"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Days of approach / when the climb happens"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Days of approach / when the climb happens"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Terror Creek crossing"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Height of the Barrier descent"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the permit can be reserved"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Whether the permit can be reserved"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the permit can be reserved"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the permit can be reserved"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "before": {
+    "approach": "Approached from the north side of the Twin Needles rather than the standard Crescent Creek Basin/Eye Col south approach; specific trailhead-to-base beta beyond the first-ascent account has not been published.",
+    "access": {
+     "fees": "Wilderness permit: $10/person plus a $6 reservation fee; youth 15 and under free",
+     "permit": "NPS wilderness/cross-country zone permit required for any overnight stay",
+     "closures": null,
+     "landManager": "North Cascades National Park (NPS)",
+     "passRequired": "None — North Cascades National Park charges no entrance fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."
+   }
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "before": {
+    "rope_note": "Picket Range alpine rock route, Grade III. Sources most directly document a Southeast Ridge/Face line at II 5.10a rather than a distinctly-named 'South Route' at 5.7 — treat this as a related but not exactly-matched line. Standard alpine rack, glacier approach gear (ice axe/crampons) for Crescent Creek basin approach, 60m rope for multi-pitch rock.",
+    "itinerary": {
+     "cal": "North Cascades NP requires a backcountry permit for Terror/Crescent Creek Basin camps, and the Barrier is normally only safely crossable July-September once seasonal snow bridges and the approach brush have opened up.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A grueling cross-country day: old roadbed and steep, brushy boot path from Goodell Creek Trailhead past Terror Creek, then a loose, exposed scramble across the Barrier into the Crescent Creek Basin drainage. Most parties camp on a flat bench or col around 6,000-6,400 ft, close under the Chopping Block/Twin Needles group.",
+       "hours": 8,
+       "miles": 6.5,
+       "title": "Approach over the Barrier to high camp",
+       "gainFt": 5800,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Goodell Creek Trailhead",
+         "detail": "Follow the old logging roadbed roughly 4 miles before it fades into boot-path."
+        },
+        {
+         "time": "~8:30 AM",
+         "label": "Ford Terror Creek, start steep climber's path",
+         "detail": "Very steep, root- and brush-choked trail gaining toward treeline."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Cross the Barrier",
+         "detail": "Loose, exposed ledges and talus at ~6,000-6,400 ft; the crux of the approach and route-finding."
+        },
+        {
+         "time": "~4:30-5:30 PM",
+         "label": "Arrive high camp",
+         "detail": "Camp near the Chopping Block col or on benches above Crescent Creek Basin."
+        }
+       ],
+       "objective": "Reach camp in/above Crescent Creek Basin"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start day from camp: cross Crescent Creek Basin's snow and talus to Eye Col, the notch between the two Twin Needles, then scramble/climb the South Route to East Twin Needle's summit. Most parties use the same col to tack on West Twin Needle's easier class 2-3 west slope before returning to camp.",
+       "hours": 11,
+       "miles": 3,
+       "title": "East (and West) Twin Needle via Eye Col",
+       "gainFt": 1500,
+       "lossFt": 1500,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start to cross snow/talus in basin while firm."
+        },
+        {
+         "time": "~6:30 AM",
+         "label": "Gain Eye Col",
+         "detail": "Mix of snow and 4th-class scrambling between the two Needles."
+        },
+        {
+         "time": "~7:30-9:30 AM",
+         "label": "South Route to East Twin Needle summit",
+         "detail": "3rd/4th class terrain on the south side; roped pitches for less-experienced parties."
+        },
+        {
+         "time": "~10:00 AM-12:00 PM",
+         "label": "Descend to Eye Col, tag West Twin Needle",
+         "detail": "Optional: easier class 2-3 west slope from the col if time and weather allow."
+        },
+        {
+         "time": "~5:00-6:00 PM",
+         "label": "Back at camp",
+         "detail": "Reverse gullies/rappels down to Crescent Creek Basin and camp."
+        }
+       ],
+       "objective": "Summit East Twin Needle, tag West Twin Needle if conditions allow"
+      },
+      {
+       "n": 3,
+       "note": "Built-in slack for weather or recovery. Strong parties instead use it to climb another objective from the same camp, commonly Himmelhorn or Mount Terror's West Ridge, at similar cost in time and effort to Day 2.",
+       "hours": 0,
+       "miles": 0,
+       "title": "Spare day / bonus objective",
+       "gainFt": 0,
+       "lossFt": 0,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Weather buffer or add a second Southern Pickets peak"
+      },
+      {
+       "n": 4,
+       "note": "A long reversal of Day 1: break camp, re-cross the Barrier, and descend the steep boot path and roadbed back to the car. Most parties treat this as a full day given the terrain and fatigue.",
+       "hours": 7.5,
+       "miles": 6.5,
+       "title": "Descend back to the trailhead",
+       "gainFt": 200,
+       "lossFt": 5800,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to Goodell Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-4 day trip out of Goodell Creek Trailhead: a long, brutal cross-country approach over the Barrier to a high camp in/above Crescent Creek Basin, a big summit day tagging East (and usually West) Twin Needle via Eye Col, an optional spare/bonus day, and a long descent back out — roughly 16-19 miles round trip and 7,000+ ft of cumulative gain."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very strenuous multi-day off-trail approach with heavy elevation gain/loss and bushwhacking into the Crescent Creek basin; expect long (8-12+ hour) approach days before the climb even starts",
+      "packWeight": "Heavy multi-day alpine load: overnight camping gear, technical rock rack, and approach/snow travel gear for a several-day trip"
+     },
+     "approachTime": "Multi-day approach (commonly ~2 days each way) via the Goodell Creek/Crescent Creek basin to reach a Southern Pickets base camp before the climb itself",
+     "requiredSkills": [
+      "Confident 5.7 traditional/alpine rock leading on loose rock",
+      "Off-trail wilderness navigation and route-finding in glaciated alpine terrain",
+      "Multi-day backcountry self-sufficiency in a remote NPS cross-country zone",
+      "Experience managing sustained exposure and loose rock (both already flagged as route hazards)",
+      "Basic steep-snow travel for the approach, especially early in the season"
+     ],
+     "experienceLevel": "Experienced alpine climbers only — requires prior multi-day North Cascades approach and off-trail route-finding experience; not suitable for beginner or intermediate parties"
+    },
+    "approach": "Start at the Goodell Creek Cross-Country Zone Access Trailhead off SR-20 near milepost 119 (elev. ~600'). Follow the Goodell Creek Trail, an old forestry roadbed running through open forest along Goodell Creek, for roughly 4-4.5 miles. Near the trail's end, leave the maintained tread at a large cairn marking the start of the unmaintained Terror Basin/Barrier climbers' path and ford Terror Creek (can run high with snowmelt in early/mid summer - scout for a safe crossing). From the creek, the route shoots straight up the increasingly brushy crest of 'The Barrier,' a steep, dry ridge with essentially no water until small snowmelt puddles appear around 5,400'. Timberline is reached near 5,600', where travel opens onto slabs and heather in 'Stump Hollow' between the Barrier crest and the Chopping Block. Most parties camp on the Chopping Block ridge (~6,400'), making the car-to-camp day roughly 6-7.5 miles with about 5,800-6,000' of gain - a full, strenuous day, and the crux of the whole trip for many parties (loose talus, fading cairns/flagging, and route-finding through brush make The Barrier notorious for turning parties around). On day two, drop about 200-250' off the ridge crest into Crescent Creek Basin and traverse roughly a mile cross-country (talus, slabs, occasional snow) staying near 5,800', to a second camp below Mount Terror at about 6,050' near two streams fed by overhead slabs (reliable water, unlike the Barrier). From this basin camp, descend about 300' below the moraine to the head of Crescent Creek, then work up and around buttresses toward the braided, loose south-facing gullies beneath the Eye Col, the notch separating East and West Twin Needle. The final few hundred feet to the col and onto the route involve steep, loose gully climbing with real route-finding uncertainty (this south side has comparatively sparse route information and can feel disorienting in cloud or low light) before gaining the exposed southeast ridge/east arête that the route follows to the summit.",
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek Trailhead (Cross-Country Zone Access, Upper Goodell Creek)",
+      "note": "Goodell Creek Trail -> Terror Creek ford -> The Barrier -> Crescent Creek Basin -> Eye Col approach used for all Twin Needles routes.",
+      "type": "Trailhead",
+      "elevFt": 600
+     },
+     {
+      "lat": 48.720424186046515,
+      "lng": -121.27755162790697,
+      "elev": 2100,
+      "name": "Terror Creek logjam crossing",
+      "note": "Climbers' path fades to bushwhack here; cross Terror Creek on a large logjam (last reliable water before the steep, cliffy push up toward the Barrier).",
+      "type": "Water",
+      "distMi": 3.8
+     },
+     {
+      "lat": 48.745203255813955,
+      "lng": -121.28299348837209,
+      "elev": 6100,
+      "name": "The Barrier ridge crossing",
+      "note": "Loose, exposed scrambling (harder late-season without snow cover) gains this ridge that separates the Terror Creek drainage from Crescent Creek Basin.",
+      "type": "Junction",
+      "distMi": 6.3
+     },
+     {
+      "lat": 48.752141395348836,
+      "lng": -121.28451720930232,
+      "elev": 6400,
+      "name": "Crescent Creek Basin (Chopping Block Camp)",
+      "note": "Established bivy sites on the saddle below Mount Terror, used as base camp for both Twin Needles; talus/scree basin below the south-facing summit gullies.",
+      "type": "Campsite",
+      "distMi": 7
+     },
+     {
+      "lat": 48.76007069767442,
+      "lng": -121.28625860465115,
+      "elev": 7400,
+      "name": "Eye Col",
+      "note": "Class-5 chockstone squeeze gains the notch between the summit gullies shared with West Twin Needle; rope up for this section.",
+      "type": "Junction",
+      "distMi": 7.8
+     },
+     {
+      "lat": 48.7767,
+      "lng": -121.3115,
+      "elev": 7840,
+      "name": "East Twin Needle",
+      "note": "East Twin Needle sits atop 'Eye Col' immediately adjacent to West Twin Needle.",
+      "type": "Summit",
+      "elevFt": 7840
+     }
+    ],
+    "descent_text": "Most parties reverse the route: downclimb the south-facing gullies back to the Eye Col and continue down into Crescent Creek Basin, a mix of class 4 downclimbing and short rappels off natural anchors (rock horns and slings - no bolted stations reported) on loose rock; expect 1-3 short single-rope rappels depending on snow coverage and the exact gully taken. East Twin Needle is frequently climbed in combination with West Twin Needle as part of a Southern Pickets enchainment; in that case parties continue the ridge west and exit via the Himmelhorn-West Twin Needle notch rather than re-descending the Eye Col gullies. That exit is better documented: two rappels using double 60m ropes are needed below the notch to get past vertical slabs, landing on grass and sloping rock around 6,800'; from there the route continues down a south gully with additional short rappels over vertical rock above a lingering snowfield before regaining Crescent Creek Basin. All anchors encountered on this descent are natural (horns, chockstones, slings) - carry cord/webbing for anchor building and expect to leave gear. From Crescent Creek Basin, reverse the approach: back up and over the Chopping Block ridge, down The Barrier (roughly 3,200' of descent to Terror Creek - loose and brushy, arguably harder in descent than ascent), across Terror Creek, and out the Goodell Creek Trail to the trailhead.",
+    "access": {
+     "fees": "NPS wilderness permit: $6 non-refundable reservation fee plus $10 per person, per night recreation fee (youth 15 and under free); no day-use fee.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Leave No Trace cross-country travel and camping (no maintained trail or designated sites in this zone); camp on durable surfaces around Crescent Creek Basin; pack out all waste; no campfires in the alpine zone.",
+     "permit": "Overnight wilderness permit required year-round for the Southern Picket Range cross-country zone; reserve in advance via Recreation.gov or obtain a first-come, first-served permit in person at the Wilderness Information Center in Marblemount (self-issue station available outside the WIC when it's closed for winter).",
+     "closures": "No fixed seasonal closure of the trailhead itself, but the route is realistically in condition (largely snow-free, Terror Creek fordable) only from roughly mid-July to early September; check current NPS/trip-report conditions before an early- or late-season attempt.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "NPS wilderness permit (North Cascades NP has no general entrance fee).",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."
+   }
+  }
+ ]
+}

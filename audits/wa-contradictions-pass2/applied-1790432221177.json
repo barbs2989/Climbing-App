@@ -1,0 +1,349 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elev"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elevFt"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "descent",
+   "path": [],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_norton_scramble",
+   "before": {
+    "overview": "Mount Norton is a 6,397 ft summit deep in Olympic National Park's Daniel J. Evans Wilderness, rising above the confluence of the Elwha and Hayes Rivers in the park's remote interior. It has no maintained summit trail. Originally named \"Mount Egan\" in 1890 by the Seattle Press Expedition, it was renamed in 1925 by USFS official G.A. Whitehead for his friend Ernest Norton; Pat Cummins made the first recorded ascent in 1947. The peak is defined by extreme local relief — its east face climbs 3,200 ft above Hayes River in under a mile, and its west slopes drop 4,400 ft to the Elwha valley over about two miles. The standard route is Class 2, but published trip-report beta is sparse; this is a serious, multi-day wilderness objective rather than a roadside or day scramble.",
+    "waypoints": [
+     {
+      "lat": 47.9678,
+      "lng": -123.5824,
+      "elev": 1150,
+      "name": "Whiskey Bend Trailhead",
+      "note": "Start of the Elwha River Trail; From Whiskey Bend the route follows the Elwha River Trail roughly 16+ miles south to the Hayes River area before leaving trail for the class 2 scramble to Norton's summit.",
+      "type": "Trailhead",
+      "elevFt": 1150
+     },
+     {
+      "lat": 47.902313,
+      "lng": -123.490328,
+      "elev": 1296,
+      "name": "Mary's Falls Camp",
+      "note": "Established backcountry campsite beside the Elwha River with reliable water; roughly the halfway point to Elkhorn and a common overnight stop for the long approach.",
+      "type": "Water",
+      "distMi": 8.8
+     },
+     {
+      "lat": 47.87309,
+      "lng": -123.4694,
+      "elev": 1437,
+      "name": "Elkhorn Guard Station",
+      "note": "Historic 1911 backcountry patrol cabin and grassy river-flat camp; last reliably maintained camp before leaving the main Elwha corridor toward Norton.",
+      "type": "Campsite",
+      "distMi": 14.3
+     },
+     {
+      "lat": 47.8093095,
+      "lng": -123.453858,
+      "elev": 1750,
+      "name": "Hayes River Guard Station",
+      "note": "Elwha River Trail meets the Hayes River here (16.1 mi from Whiskey Bend per NPS); climbers leave the maintained trail near this junction and head up the Hayes River drainage toward Norton's east slopes.",
+      "type": "Junction",
+      "distMi": 16.1
+     },
+     {
+      "lat": 47.78651388461538,
+      "lng": -123.43433106666667,
+      "elev": 3600,
+      "name": "Off-trail ascent below Norton's east face",
+      "note": "No path or cairns beyond Hayes River — dense slide alder and devil's club in the lower brush belt give way to open Class 2 heather/talus higher up; the east aspect gains about 3,200 ft in under a mile, so route-find carefully in fog or low visibility.",
+      "type": "Hazard",
+      "distMi": 18
+     },
+     {
+      "lat": 47.762435,
+      "lng": -123.413675,
+      "elev": 6397,
+      "name": "Mount Norton",
+      "type": "Summit",
+      "elevFt": 6397
+     }
+    ],
+    "high_point_ft": 6397,
+    "itinerary": {
+     "cal": "As of the 2024 Olympic Hot Springs Road washout, vehicle access ends at Madison Falls, adding roughly 7 miles each way of road walking/biking before the old Whiskey Bend trailhead; check NPS Wilderness Trail Conditions for washouts beyond Elkhorn, and get a wilderness camping permit — best conditions are June through August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the trailhead (currently Madison Falls, since the Olympic Hot Springs Road washout closed vehicle access beyond there) follow the old road bed and then the Elwha River Trail south through second-growth and old-growth forest. Grade is gentle and the trail is well-graded, so this is mostly a long valley walk.",
+       "hours": 6.5,
+       "miles": 11.5,
+       "title": "Backpack in to lower Elwha camp",
+       "gainFt": 900,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Elkhorn / Camp Wilder area"
+      },
+      {
+       "n": 2,
+       "note": "A shorter day continuing up-valley along the Elwha River Trail to the Hayes River patrol cabin/camp area, which sits almost directly below Mount Norton's steep east face. Check current NPS trail-condition reports first — sections between Elkhorn and Hayes River have had flood/landslide damage in recent years.",
+       "hours": 3,
+       "miles": 5.3,
+       "title": "Continue to Hayes River",
+       "gainFt": 500,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Camp near Hayes River Guard Station"
+      },
+      {
+       "n": 3,
+       "note": "Leave the heavy gear at Hayes River camp and climb the steep, brushy east aspect (about 3,200 ft of gain in under a mile per the peak's official description) to the upper ridge, then follow class 2 talus/heather slopes to the summit. Out-and-back to the same camp same day.",
+       "hours": 8,
+       "miles": 4.2,
+       "title": "Summit push",
+       "gainFt": 3400,
+       "lossFt": 3400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Hayes River camp",
+         "detail": "Light day pack, leave tents/food cache set up."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start the steep east-side climb",
+         "detail": "Brushy, unmaintained, steep — pick the path of least resistance up open timber and heather bands."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Gain the summit ridge",
+         "detail": "Terrain eases to class 2 talus and heather."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Reach the summit (6,321 ft)",
+         "detail": "Views over the Bailey Range and Elwha/Hayes drainages."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line; steep terrain is slower and harder to reverse than it looks."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at Hayes River camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Mount Norton's east side and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the Elwha River Trail (and road-walk/bike section from Madison Falls if the road closure is still in effect) all the way back to the car. A long but flat-grade day.",
+       "hours": 8,
+       "miles": 16.8,
+       "title": "Hike out",
+       "gainFt": 300,
+       "lossFt": 1600,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A remote 4-day trip, roughly 38 miles and ~5,000+ ft round trip: two long valley-trail days in, one steep off-trail summit day from a Hayes River camp, and one long day out."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.48632,
+      "lng": -123.45775,
+      "name": "Upper South Fork Skokomish Trailhead (Trail #873)",
+      "note": "Reached via Skokomish Valley Rd / FS-23 / FS-2361 from Shelton; FS-2361 gated Oct 1-Apr 30. Standard route follows Trail 873 to Sundown Lake, then the Six Ridge crest ~11 miles to the overgrown 'Mount Olson Way' spur.",
+      "type": "Trailhead"
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 1450,
+      "name": "South Fork Skokomish River ford",
+      "note": "Unbridged ford of the Skokomish's south bank; safely crossable (ankle-deep) only in late summer/early fall low water, otherwise a serious hazard.",
+      "type": "Hazard",
+      "distMi": 2.4
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 2500,
+      "name": "Olympic National Park boundary",
+      "note": "Trail leaves Olympic National Forest and enters Olympic National Park/Wilderness; a wilderness camping permit, reserved in advance, is required for overnight stays beyond this point, tread grows fainter above here.",
+      "type": "Junction",
+      "distMi": 5.1
+     },
+     {
+      "lat": 47.5312,
+      "lng": -123.51323,
+      "elev": 4125,
+      "name": "Sundown Pass",
+      "note": "Forested saddle marked by a broken signpost, reached via steep, faint tread through wet subalpine meadows; junction with the Six Ridge Trail heading east along the crest toward Mount Olson.",
+      "type": "Junction",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.53554,
+      "lng": -123.51033,
+      "elev": 3810,
+      "name": "Lake Sundown",
+      "note": "Short spur off the pass to a subalpine basin lake on Six Ridge's western flank; last dependable water and the standard base camp for an Olson attempt.",
+      "type": "Campsite",
+      "distMi": 7.6
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4650,
+      "name": "Six Ridge crest / Mount Olson boot-path junction",
+      "note": "Point on Six Ridge's sawtooth crest closest to Olson where an unsigned, unofficial boot path ('Mount Olson Way') leaves the trail for the peak; faint and overgrown with blowdowns and lingering snowfields into midsummer.",
+      "type": "Junction",
+      "distMi": 8.7
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5100,
+      "name": "Tarn below Olson's summit block",
+      "note": "Boulder-field tarn just below the summit block is the last water and a common bivy spot; the final gully above it to the top is steep, loose, and exposed.",
+      "type": "Campsite",
+      "distMi": 9.5
+     },
+     {
+      "lat": 47.5784,
+      "lng": -123.4712,
+      "elev": 5292,
+      "name": "Mount Olson",
+      "type": "Summit",
+      "elevFt": 5292
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "South Fork Skokomish Trail #873 to Sundown Pass, then the Six Ridge crest and the Mount Olson Way",
+      "notes": "Mount Olson sees very few ascents and is normally reached as a side trip off the long Six Ridge traverse. From the Upper South Fork Skokomish Trailhead (Trail #873), reached via Skokomish Valley Road, FS-23 and FS-2361 from Shelton — FS-2361 is gated 1 October to 30 April — the trail runs up the valley. There is an unbridged FORD of the South Fork at about 2.4 miles and 1,450 ft that is only ankle-deep and safely crossable in late summer or early autumn low water; at other times it is a serious hazard. The Olympic National Park boundary comes near 5.1 miles, after which tread grows fainter and an advance-reserved wilderness permit is required for overnight stays.\n\nSundown Pass, a forested saddle marked by a broken signpost, comes at about 7.2 miles and 4,125 ft — this is the junction with the Six Ridge Trail heading east along the crest. Lake Sundown is a short spur off the pass at about 7.6 miles and 3,810 ft: the last dependable water and the standard basecamp.\n\nFollow the Six Ridge Trail east along its sawtooth crest — a ridge either side with a gully in the middle, and brutal uphill for every downhill — to about 8.7 miles and 4,650 ft, where an unsigned, unofficial boot path known as the MOUNT OLSON WAY leaves the trail for the peak. It is faint and overgrown with blowdown and lingering snowfields into midsummer. A boulder-field tarn at about 5,100 ft below the summit block is the last water and a common bivy.",
+      "season": "Roughly Jul-Sep, and gated by two fords that are only reliably safe in late summer and early autumn low water",
+      "hazards": [
+       "Two unbridged fords only safely crossable in late summer and early autumn low water",
+       "Route-finding on trail-less and boot-path terrain with an unsigned departure from Six Ridge",
+       "Dense brush and blowdown along the Six Ridge approach",
+       "A 55-60 degree grass and heather summit pitch that is loose and exposed, and worse descending",
+       "FS-2361 is gated 1 October to 30 April",
+       "Afternoon weather on an exposed crest, and a multi-day return from a very lightly visited peak"
+      ],
+      "baseFinding": "THE BASE OF THE CLIMB IS THE PASS IMMEDIATELY EAST OF THE SUMMIT, AND THE TEST IS THAT THE CLIMBING STARTS THE MOMENT YOU STAND IN IT. From the pass, the final ascent to Olson's 5,289 ft top is a steep, unmarked scramble up a GRASSY AND HEATHER SLOPE pitched around 55-60 degrees in places — hands-on, solid Class 3 — directly above you. Grass and heather at that angle is a distinctive surface: it is neither talus nor rock, and you are either on it or you are not.\n\nSECOND TEST, and it is what tells you the slope is easing correctly rather than that you have wandered: the pitch EASES AND CURVES ROUND THE NORTH SIDE of the peak onto a HEATHER BENCH, and then it is an easy stroll to the true summit. So the sequence is steep grass, then a bench that takes you leftward round the peak, then a walk. If the ground stays steep all the way to a top, or if you are on rock and scree rather than heather, you are on the wrong side.\n\nTHE APPROACH TEST BEFORE ANY OF THAT is the departure from Six Ridge, because it is the thing people miss: the Mount Olson Way leaves the Six Ridge Trail at the point on the sawtooth crest CLOSEST TO OLSON, at about 4,650 ft, and it is UNSIGNED. It is faint, overgrown and blowdown-choked. If you are still on obvious trail after passing the point where the crest is nearest the peak, you have walked past the turn.\n\nHONEST LIMIT: there is no documented roped climbing route, rack or pitch-by-pitch description for this peak. It is recorded as a summit without a route write-up. This is a bushwhack and scramble objective for peak-baggers, and the markers above are the sum of what has been written down. Treat the notch and the upper summit meadow as the crux going both ways: both are loose and exposed and better handled with an axe or a pole for self-arrest, especially wet or under late snow."
+     }
+    ],
+    "descent": "Reverse the boot path/ridge from the summit down to the tarn, then back through McGravey Lakes and Camp Bellevue to the Mount Olson Way Trail/Six Ridge Trail junction, and out the South Fork Skokomish River Trail to the trailhead."
+   }
+  }
+ ]
+}

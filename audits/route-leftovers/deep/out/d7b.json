@@ -1,0 +1,540 @@
+{
+ "results": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "verdict": "confirmed",
+   "resolution": "Removed pins 3 ('Basin below Buck's south/southwest slopes') and 4 ('Snowfield and loose schist below the summit') under rule 1: both sit in the Chiwawa valley near the Trinity trailhead, 2.9 km and 4.4 km east of the summit on 4,394 ft and 2,847 ft ground, while the places they name lie on the west/southwest side of the summit at 7,400-8,300 ft; no source gives a position for either.",
+   "summary": "The two upper-mountain pins sat down in the valley beside the trailhead, kilometres from the basin and summit snowfield they name, and nothing published places those spots, so both are removed; the trailhead, river bridge, Buck Creek Pass and summit pins remain.",
+   "evidence": "Live row re-read 2026-09-30. Pin 3 at 48.088007,-120.87463 claims 7,400 ft; USGS ground there is 4,394 ft, 2.86 km ENE of the summit (48.09363,-120.9122) and 612 m from the nearest Forest Service trail (#1550). Pin 4 at 48.078141,-120.856978 claims 8,300 ft 'below the summit'; ground is 2,847 ft, 4.45 km from the summit and 20 m from the Chiwawa River trail #1550 about half a mile from the trailhead - i.e. on the valley-floor approach, nowhere near a summit snowfield. The row's own approach, itinerary and approach variant all send the route north over Buck Creek Pass, around Liberty Cap and through High Pass to Louis Creek Basin on the WEST/southwest side of the summit, so the named basin and snowfield are west of the summit at 6,700-8,300 ft, more than 2.5 km from both pins. Searches for a published GPS track of the High Pass / Louis Creek line found trip-report prose only (no downloadable track, no coordinates); peakbagger returns 403; the earlier pass (pins/out/p01.json) also found no position. Rule 1: provably >500 m from the place they describe and unplaceable -> removed. Neither is the summit or the trailhead. Pin 2 (Buck Creek Pass) and pin 5 (summit) are on mapped points; pin 1 was placed by the earlier pass. Row has no gpx line.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://trailcatjim.com/high-giant-traverse-buck-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-10-15.7084670439"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_buck_mountain_south_ridge",
+     "index": 3,
+     "expect": {
+      "name": "Basin below Buck's south/southwest slopes",
+      "lat": 48.088007,
+      "lng": -120.87463
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_buck_mountain_south_ridge",
+     "index": 4,
+     "expect": {
+      "name": "Snowfield and loose schist below the summit",
+      "lat": 48.078141,
+      "lng": -120.856978
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "verdict": "confirmed",
+   "resolution": "Removed the Boulder Basin Camp pin (index 2) under rule 1: it sits on the Sitkum Glacier on 8,115 ft ground, and the nearest ground at the camp's documented 5,500-6,000 ft is about 1.8 km west; no source publishes a position for the camp. Also cleared the drawn line (rule 2): after White Pass it runs north along high ground at 6,100-6,700 ft east of the White Chuck and straight up the south side of the peak, never dropping to the Sitkum Creek junction or passing Boulder Basin as the row's approach, variants and itinerary describe.",
+   "summary": "The Boulder Basin camp pin sat high on the glacier nearly 2 km from the treeline camp and nothing published places the camp, so it is removed (the camp stays fully described in the camping section); the drawn line followed a different way up the mountain than the route text and is cleared.",
+   "evidence": "Live row re-read 2026-09-30. Pin 2 'Boulder Basin Camp' 48.105,-121.13 (elev 6200): USGS ground 8,115 ft, inside the mapped Sitkum Glacier (OSM relation 3998945, bbox 48.1057-48.1154, -121.1423 to -121.1188). Every source and the row's own text/bivy put the camp at 5,500-6,000 ft at treeline on the ridge SOUTH of Sitkum Creek (OSM Sitkum Creek runs 48.106-48.117, -121.186 to -121.146), below the glacier toe. A ground grid around the pin: 7,300-7,950 ft at -121.135/-121.14, 6,300-6,900 ft at -121.145/-121.15, first ground below 6,000 ft at about -121.155 to -121.16 (5,650-5,220 ft at 48.095-48.10) - so the camp lies at least ~1.8 km west of the pin, well beyond 500 m. Position search: GNIS has no WA 'Boulder Basin'; Nominatim/OSM has no such camp or basin; the archived summitpost Sitkum Glacier and Glacier Peak pages give only prose (5,500-6,000 ft, ridge south of Sitkum Creek) and the Glacier Peak page's downloadable GPX is a 2011 drawn route that goes up the south side via the White Chuck high ground, never near Boulder Basin; the MP route page gives only the summit coordinate; trip reports (two blogs, a ski TR, WTA) are prose/photos only. Earlier pass (pins/out/p05.json) also found nothing. Rule 1 -> remove; not the summit or trailhead. Camp content survives in the row's `bivy` (Boulder Basin, main camp). LINE: row gpx (81 pts) reaches White Pass then heads north at lng -121.136 to -121.122 on 6,154/6,708/6,365/6,337 ft ground and climbs directly to 8,710 ft at 48.1058,-121.1221 - the same corridor as the drawn 2011 GPX, i.e. a high-traverse/south-side line. The row's approach, both approach_variants and the itinerary send the party down the PCT to the Sitkum Creek junction (~3,850 ft), up the climbers' path to Boulder Basin and onto the Sitkum Glacier from the west; the line visits none of these -> cleared. Owner note, not changed here: the approach column still opens by calling the White Chuck approach 'effectively gone' and then describes it in full, while waypoints start at the North Fork Sauk trailhead.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/sitkum-glacier/155846",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/glacier-peak/150318",
+    "https://www.openstreetmap.org/relation/3998945",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Sitkum",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://trailcatjim.com/glacier-peak/",
+    "https://www.desertmountaineer.com/2020/11/29/glacier-peak/"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "index": 2,
+     "expect": {
+      "name": "Boulder Basin Camp",
+      "lat": 48.105,
+      "lng": -121.13
+     }
+    },
+    {
+     "op": "clear_line",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "why": "After White Pass the drawn line runs north on 6,100-6,700 ft high ground east of the White Chuck and straight up the south side to 8,700 ft; it never reaches the Sitkum Creek/PCT junction, the climbers' path or Boulder Basin that the row's approach, variants and itinerary describe.",
+     "expect_gpx": "LIVE"
+    }
+   ]
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "verdict": "confirmed",
+   "resolution": "Rule 2: made the pins and the remaining fields agree with the De Roux Creek line that the row's approach, beta, descent, itinerary, timing, pitch breakdown and approach variant already describe. Moved the trailhead pin from the Esmeralda Basin trailhead (road end) to the De Roux trailhead and renamed it; removed the three Esmeralda Basin approach pins, the Fortune Creek Pass pin and the north-side talus pin (all 1.1-2.2 km from the De Roux trail, or beyond the summit on the far side); added a pin at the trail's last switchback where the scramble leaves the trail; replaced the Esmeralda Basin / Lake Ann camping entries with the De Roux trailhead campground; rewrote approach_logistics' trailhead record and the stale data-quality gaps; removed four stray 'basin' phrases. No line to clear (gpx is null).",
+   "summary": "The Esmeralda Peaks pins still traced the old Esmeralda Basin / Fortune Creek Pass approach while every text field describes the De Roux Creek route; the trailhead pin now sits at the De Roux trailhead, a new pin marks the last switchback where the scramble leaves the trail, the five basin-side pins are removed, and the camping card and trailhead record now name the De Roux trailhead campground.",
+   "evidence": "Live row re-read 2026-09-30; gpx is null. TRAILHEAD: pin 5 sat at 47.43656,-120.93697 - the start of the Forest Service Esmeralda Basin trail #1394 (47.43662,-120.93698), i.e. the road-end trailhead, on 4,269 ft ground. The De Roux trailhead is 47.41913,-120.93902 in the Forest Service recreation-site layer (recid 57465, 'Elevation 3800'', 'This trailhead doubles as a small campground', horse sites, first come first served, $10/night, open late May/early June to mid-October), 47.41911,-120.93906 as OSM trailhead node 5376641070 ('DeRoux Trailhead', on De Roux Trail #1392), and 47.41907,-120.93906 as the east end of the Forest Service Boulder De Roux trail #1392 line - all within 10 m; ground 3,805 ft, matching the row's ~3,800 ft. DEPARTURE PIN: the Forest Service #1392 geometry, walked up from the trailhead, makes its final switchback at 47.43518,-120.97477 (ground 5,449 ft) and then traverses northwest toward Gallagher Head Lake without further switchbacks - exactly the row's 'past the last switchback the trail stops climbing and traverses toward the lake'; OSM independently maps an 'Esmeralda scrambling trail' (ways 1065390378/1065390379, mapped 2024) that leaves De Roux Trail at node 3788559510, 47.43523,-120.97488 (13 m from that switchback) and climbs north-northeast toward the west summit - the row's 'head up the hillside on a northeast bearing'. Several route descriptions put the departure at the house-sized boulder on the last switchback at ~5,500-5,600 ft. Pin placed at the OSM junction node, elev from ground. REMOVED (rule 1/2): pins 0-3 (Ingalls Way split 2,202 m, Esmeralda Basin camps 1,848 m, Lake Ann junction 2,021 m, Fortune Creek Pass 1,888 m from the nearest point of trail #1392) are on the Esmeralda Basin trail the route no longer uses; pin 4 'Summit talus/scree slope' (47.44676,-120.96891) is ~680 m NORTH of the west summit on the Fortune Creek Pass side, while the De Roux scramble climbs the south/southwest slope from 47.4352,-120.9749 to the summit, so it is beyond the top on the far side and 1,072 m from the trail. None is placeable on the De Roux line (they name basin features). CAMP: the only camp for this day route is the trailhead campground (row + Forest Service recreation-site record); the Lake Ann bench entry described the Esmeralda Basin side and claimed the peaks are scrambled 'directly from the basin on their standard route', contradicting the row. OTHER APPROACH: the existing approach variant already notes the Esmeralda Basin trail connects only as a long loop; no separate variant added (not researched to two sources).",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RecreationOpportunities_01/MapServer/0/query",
+    "https://www.openstreetmap.org/node/5376641070",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://www.openstreetmap.org/way/1065390378",
+    "https://www.openstreetmap.org/way/440831867",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/esmeralda-peak-via-de-roux-creek-trailhead/461944",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "waypoints",
+     "path": [
+      5,
+      "name"
+     ],
+     "expect": "Esmeralda Basin Trailhead (FR-9737)",
+     "value": "De Roux Trailhead"
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "expect": "The correct approach is via FR-9737 to the De Roux Creek trailhead/campground, then the Boulder-DeRoux Trail southwest to a scree gully leaving the trail near the last switchback at ~5600ft.",
+     "value": "Small trailhead campground on FR-9737 below the road end. Self-issue the free wilderness permit at the kiosk and take the Boulder-De Roux Trail #1392 west up the valley."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "approach_logistics",
+     "path": [],
+     "expect": {
+      "peakLat": 47.441115,
+      "peakLng": -120.969755,
+      "trailhead": "Esmeralda Basin Trailhead (FR-9737)",
+      "trailheadLat": 47.43656,
+      "trailheadLng": -120.93697,
+      "trailheadDirection": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+     },
+     "value": {
+      "peakLat": 47.441115,
+      "peakLng": -120.969755,
+      "trailhead": "De Roux Trailhead (FR-9737)",
+      "trailheadLat": 47.41913,
+      "trailheadLng": -120.93902,
+      "trailheadDirection": "From the De Roux trailhead and campground on FR-9737, via the Boulder-De Roux Trail #1392 west up the valley to its last switchback"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "data_quality",
+     "path": [
+      "gaps"
+     ],
+     "expect": [
+      "Exact scramble line and elevation gain from Fortune Creek Pass to the summit ridge is not documented precisely in any single source — trip reports describe slightly different talus/heather lines",
+      "No confirmed GPX or waypoint track exists for this specific Esmeralda Basin approach",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "value": [
+      "The scree and talus line from the trail's last switchback to the summit is unmarked, and parties describe slightly different lines up it",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "bivy",
+     "path": [],
+     "expect": [
+      {
+       "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+       "role": "main",
+       "type": "camp",
+       "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune Peak's standard line goes up the basin and over the pass near Lake Ann before turning up the peak; both are honest day trips from the road end, so this is a place to sleep when the party is slow, the day is short, or you want two summits without driving twice. The trail leaves the road end at about 4,500 feet and climbs gently through meadow, timber and small stream crossings before the ground steepens toward the pass; take the Lake Ann branch to reach the bench and the knoll above it, which has a wide view back down the upper Teanaway. Fortune Peak can also be climbed by its east slope out of Headlight Basin, which is a different camp on the other side of the divide and is described with the Ingalls group rather than here. Mountain goats work this whole area and are bold about salt — keep gear packed and relieve yourself well away from camp.",
+       "water": "The bench camp has running water beside it, fed by snowmelt draining the basin, and small streams cross the main basin trail lower down. All of it is snowmelt and all of it fades: reliable through July, marginal in August, and effectively gone by September, when the basin is dry rock and cured grass. There is no water at all on the pass or on either summit.",
+       "permit": "Alpine Lakes Wilderness above the basin, under the Cle Elum district and entirely outside the Enchantment Permit Area — a free self-issued slip from the trailhead box covers day and overnight use, with no quota, no lottery and no reservation. Northwest Forest Pass to park at the Esmeralda Basin trailhead. No campfires; this is open subalpine meadow and the ban is both seasonal and permanent by elevation. Camping is prohibited at Ingalls Lake, which is a different basin over the divide, and the designated sites in Headlight Basin are the legal option on that side.",
+       "capacity": "Small scattered sites rather than a campground — a bench part way up the Lake Ann branch takes a tent or two, and a knoll on its east side holds several more; nothing here suits a large group"
+      },
+      {
+       "name": "Esmeralda Basin camps",
+       "role": "main",
+       "type": "camp"
+      }
+     ],
+     "value": [
+      {
+       "name": "De Roux trailhead campground",
+       "role": "main",
+       "type": "camp",
+       "elev": 3800,
+       "notes": "The trailhead doubles as a small campground with hitching posts and sites for horse parties, handy for an early start. The scramble itself is an ordinary day trip, so no camp is needed on the mountain.",
+       "permit": "Sites are first come, first served with a nightly fee per site; a Northwest Forest Pass covers parking at the trailhead.",
+       "capacity": "A handful of sites at the trailhead, open roughly late May or early June to mid-October"
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "climate",
+     "path": [
+      "typical"
+     ],
+     "find": "strong sun exposure on the basin's open slopes",
+     "replace": "strong sun exposure on the open south-facing slopes"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "heaviest trailhead/basin traffic",
+     "replace": "heaviest trailhead traffic"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "a full day of basin approach plus",
+     "replace": "a full day of valley-trail approach plus"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "Basin is generally accessible by mid-July",
+     "replace": "The valley trail and scree slope are generally clear by mid-July"
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "index": 5,
+     "expect": {
+      "name": "Esmeralda Basin Trailhead (FR-9737)",
+      "lat": 47.43656,
+      "lng": -120.93697
+     },
+     "lat": 47.41913,
+     "lng": -120.93902,
+     "elev": 3800,
+     "elevFt": 3800,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RecreationOpportunities_01/MapServer/0/query",
+      "https://www.openstreetmap.org/node/5376641070",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "index": 0,
+     "expect": {
+      "name": "Ingalls Way / Longs Pass Trail 1390 split",
+      "lat": 47.440532,
+      "lng": -120.938446
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "index": 1,
+     "expect": {
+      "name": "Esmeralda Basin camps",
+      "lat": 47.45275,
+      "lng": -120.96288
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "index": 2,
+     "expect": {
+      "name": "Lake Ann Trail 1226 junction",
+      "lat": 47.456599,
+      "lng": -120.966091
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "index": 3,
+     "expect": {
+      "name": "Fortune Creek Pass",
+      "lat": 47.45714,
+      "lng": -120.97099
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "index": 4,
+     "expect": {
+      "name": "Summit talus/scree slope",
+      "lat": 47.446757625000004,
+      "lng": -120.968905875
+     }
+    },
+    {
+     "op": "add_pin",
+     "id": "wa_esmeralda_peaks_scramble",
+     "after_name": "De Roux Trailhead",
+     "pin": {
+      "name": "Last switchback (house-sized boulder)",
+      "type": "Junction",
+      "lat": 47.43523,
+      "lng": -120.97488,
+      "elev": 5450,
+      "note": "The trail's final switchback crosses a talus ridge beside a house-sized boulder. Leave the tread on the boulder's climber's left and head northeast up the scree; if the trail starts contouring toward the lake without climbing, you have passed it."
+     },
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://www.openstreetmap.org/way/1065390378"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "verdict": "confirmed",
+   "resolution": "Rule 2: the documented line in current use is the West Fork Foss / Chetwoot Lake approach (already chosen and written into every text field by the earlier confirmation c3, and followed by the drawn line). Moved the only trailhead pin from the Dingford Creek trailhead on the Middle Fork Snoqualmie to the West Fork Foss trailhead and renamed it; removed the six Middle Fork / Williams Lake pins (1.1-7.2 km off the line); added pins for Big Heart Lake (end of the maintained trail) and the Chetwoot Lake outlet camp; rewrote approach_logistics, the stale data-quality gaps, the winter road note and the first climbing step to match. The drawn line already follows the Foss route and is kept. The Middle Fork approach is not added as a variant: the earlier confirmation found the only Middle Fork account was a traverse walking out past Williams Lake, not an approach to Iron Cap.",
+   "summary": "Iron Cap's pins traced the Middle Fork Snoqualmie / Williams Lake approach while the text and the drawn line use the West Fork Foss lakes route; the trailhead pin now sits at the West Fork Foss trailhead, the six Middle Fork pins are removed, and new pins mark Big Heart Lake and the Chetwoot Lake camp where the drawn line passes them.",
+   "evidence": "Live row re-read 2026-09-30. Text (overview, approach, itinerary, timing, bivy, road, access, emergency, partner_requirements) all use West Fork Foss -> Trout, Copper, Big Heart lakes -> cross-country over Atrium Ridge -> Chetwoot Lake. The drawn line (234 pts) starts 37 m from the Forest Service West Fork Foss trailhead, passes 25 m from the end of trail #1064 at Big Heart Lake, 31 m from Little Chetwoot Lake and ends 13 m from the summit - it is the Foss line. Pins 0-5 (Middle Fork footbridge, Hardscrabble Horse Camp, Pedro Camp, Williams Lake junction, Williams Lake, Williams Lake saddle) lie 7.2, 6.1, 1.6, 2.7, 2.9 and 1.1 km from that line, on the Middle Fork / Dutch Miller Gap side the route no longer uses -> removed. TRAILHEAD: Forest Service recreation site 'West Fork Foss Lakes Trailhead' 47.634802,-121.303704 (access to trail 1064); OSM trailhead node 53163346 at 47.63483,-121.30395 (18 m); Forest Service trail 1064 begins at 47.63477,-121.30449. Elev 1,640 ft as stated by sources and consistent with gain_ft 4,707 = 6,347 - 1,640 (ground reads 1,578). BIG HEART LAKE: Forest Service trail 1064 ends at 47.58195,-121.31638 and OSM 'West Fork Foss Trail' (way 362500803) ends at 47.58196,-121.31658 (15 m), beside OSM backcountry camp pitches at 47.5825-47.5836 and the GNIS/OSM Big Heart Lake (GNIS 47.57519,-121.31808); the row states 7.3 mi to the lake. Ground 4,735 ft at the trail end (lake surface ~4,530). CHETWOOT CAMP: the NHD West Fork Foss River leaves Chetwoot Lake (GNIS 47.556596,-121.314434) at its east-end outlet 47.55848,-121.30852; OSM maps four backcountry camp pitches 30-80 m from that outlet (nodes 12200710861, 12200750935, 12200750936, 9955622567) and the end of its informal 'Chetwoot Lake Route' at 47.55852,-121.30856; an earlier-cited account camped at the Chetwoot outlet. Ground 4,901 ft. Both new pins sit about 20 m from the drawn line. climbing_route step 1 described the Iron Cap Lake variant start; now matches the approach text (Point 6077 on the east).",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RecreationOpportunities_01/MapServer/0/query",
+    "https://www.openstreetmap.org/node/53163346",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://www.openstreetmap.org/way/362500803",
+    "https://www.openstreetmap.org/way/364832001",
+    "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7/query",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "waypoints",
+     "path": [
+      6,
+      "name"
+     ],
+     "expect": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+     "value": "West Fork Foss Trailhead"
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "expect": "approach via Trout Lake, Copper/Malachite Lake, and Chetwoot Lake/Iron Cap Lake basin to the peak's north/west ridge.",
+     "value": "Start of the West Fork Foss Lakes Trail #1064 at the end of FR 6835. Self-issue the free Alpine Lakes Wilderness permit at the kiosk; a Northwest Forest Pass or interagency pass is needed to park."
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "approach_logistics",
+     "path": [],
+     "expect": {
+      "peakLat": 47.554001,
+      "peakLng": -121.284819,
+      "trailhead": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+      "trailheadLat": 47.5172,
+      "trailheadLng": -121.45437,
+      "trailheadDirection": "From the Dingford Creek Trailhead up the Middle Fork Snoqualmie Road from North Bend"
+     },
+     "value": {
+      "peakLat": 47.554001,
+      "peakLng": -121.284819,
+      "trailhead": "West Fork Foss Trailhead (FR 6835)",
+      "trailheadLat": 47.634802,
+      "trailheadLng": -121.303704,
+      "trailheadDirection": "From US 2 at Skykomish, south on Foss River Road (FR 68) and FR 6835 to the West Fork Foss trailhead, then the West Fork Foss Lakes Trail #1064 to Big Heart Lake"
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "winter"
+     ],
+     "find": "FR 56 and the trail are",
+     "replace": "The Foss River roads and the trail are"
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "data_quality",
+     "path": [
+      "gaps"
+     ],
+     "expect": [
+      "No official gain_ft/dist_km figures specific to an Iron Cap-only round trip were found; the ~15-mile-to-Williams-Lake and ~30-mile-round-trip figures are derived from trip-report mileages for multi-peak traverses, not a dedicated FS trail log for this exact route",
+      "The precise orientation/name of the summit ridge (some sources call the easiest line the 'North Ridge' from the Foss side; this South Route reaches a broad north ridge from Williams Lake) isn't fully reconciled across sources",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "value": [
+      "No land-manager trail log covers the whole trip; the trail mileages to the lakes are published, but the cross-country leg from Big Heart Lake to Chetwoot Lake and the climb above it rest on trip reports",
+      "Sources name the line differently (west ridge, north ridge): the usual way gains the west ridge from Chetwoot Lake and finishes on the broad north ridge",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Gained off unmarked cross-country ground above Iron Cap Lake basin;",
+     "replace": "Gained from Chetwoot Lake over unmarked talus and heather toward Point 6077, passing it on the east;"
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 6,
+     "expect": {
+      "name": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+      "lat": 47.5172,
+      "lng": -121.45437
+     },
+     "lat": 47.634802,
+     "lng": -121.303704,
+     "elev": 1640,
+     "elevFt": 1640,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RecreationOpportunities_01/MapServer/0/query",
+      "https://www.openstreetmap.org/node/53163346",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 0,
+     "expect": {
+      "name": "Middle Fork footbridge",
+      "lat": 47.525214342105265,
+      "lng": -121.3932652631579
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 1,
+     "expect": {
+      "name": "Hardscrabble Horse Camp",
+      "lat": 47.510099,
+      "lng": -121.34632
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 2,
+     "expect": {
+      "name": "Pedro Camp / steel bridge",
+      "lat": 47.539899210526315,
+      "lng": -121.28088631578947
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 3,
+     "expect": {
+      "name": "Williams Lake Trail junction",
+      "lat": 47.54365,
+      "lng": -121.252323
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 4,
+     "expect": {
+      "name": "Williams Lake",
+      "lat": 47.55065,
+      "lng": -121.24765
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "index": 5,
+     "expect": {
+      "name": "Williams Lake saddle",
+      "lat": 47.55020589473684,
+      "lng": -121.27265410526316
+     }
+    },
+    {
+     "op": "add_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "after_name": "West Fork Foss Trailhead",
+     "pin": {
+      "name": "Big Heart Lake (trail end)",
+      "type": "Campsite",
+      "lat": 47.58196,
+      "lng": -121.31648,
+      "elev": 4730,
+      "distMi": 7.3,
+      "note": "The maintained trail ends on the rocky rise above the lake's outlet, with established sites nearby; popular and often busy. From here the way on is cross-country over the south end of Atrium Ridge."
+     },
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://www.openstreetmap.org/way/362500803"
+     ]
+    },
+    {
+     "op": "add_pin",
+     "id": "wa_iron_cap_mountain_south_route",
+     "after_name": "Big Heart Lake (trail end)",
+     "pin": {
+      "name": "Chetwoot Lake camp",
+      "type": "Campsite",
+      "lat": 47.55848,
+      "lng": -121.30852,
+      "elev": 4900,
+      "note": "Camps near the lake's east-end outlet, just south of Little Chetwoot Lake; quieter than Big Heart. The climb heads up talus and heather toward Point 6077 from here."
+     },
+     "sources": [
+      "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query",
+      "https://www.openstreetmap.org/node/12200750935"
+     ]
+    }
+   ]
+  }
+ ]
+}

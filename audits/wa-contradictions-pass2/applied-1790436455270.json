@@ -1,0 +1,281 @@
+{
+ "applied": [
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "pitches",
+   "path": [],
+   "fact": "Number of technical pitches"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "Number of technical pitches"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "waypoints",
+   "path": [
+    5,
+    "directions"
+   ],
+   "fact": "Number of technical pitches"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Number of technical pitches"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Number of technical pitches"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Number of technical pitches"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "permit",
+   "path": [],
+   "fact": "Overnight permit"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "When FR-1107 washed out"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Summit elevation in the CLIMBING ROUTE step"
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain from the river to the Cinderella-Little Sister notch"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "before": {
+    "pitches": 3,
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.3",
+      "notes": "Cross slabs, ledges, and gullies to the entrance of the summit chimney system on notoriously loose rock.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "A smooth face move surmounts a large chockstone, ending at a tight 'cannonhole' squeeze where packs must be pushed through ahead of the climber — the technical crux.",
+      "pitch": 2,
+      "anchor": "Gear/chockstone",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.3",
+      "notes": "Easier chockstone steps lead up out of the chimney toward the summit ridge.",
+      "pitch": 3,
+      "anchor": "Walk-off (summit)",
+      "lengthM": 25
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.95176,
+      "lng": -121.63534,
+      "elev": 5200,
+      "name": "Twin Lakes Trailhead",
+      "note": "Start of the High Pass Trail; Northwest Forest Pass required at the trailhead.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Twin Lakes Road to its end at about 5,200 ft. The final miles are rough and deeply rutted, and many parties park short and walk them rather than risk the car. A Northwest Forest Pass is required; the signed High Pass Trail starts from the parking area."
+     },
+     {
+      "lat": 48.9539,
+      "lng": -121.6365,
+      "elev": 5960,
+      "name": "High Pass",
+      "note": "Leave the maintained trail here; drop and follow the climbers' path north and west toward the old Gargett Mine.",
+      "type": "Junction",
+      "distMi": 2,
+      "directions": "About a quarter mile up, the short spur to the Winchester Mountain lookout splits off — stay north on the High Pass Trail. It contours the west side of Winchester, dips through the minor saddle known as Low Pass with open views west to Tomyhoi, then climbs steadily to High Pass. This is maintained tread the whole way, roughly 750 ft of gain; Mount Baker comes into view south when you top out."
+     },
+     {
+      "lat": 48.97152,
+      "lng": -121.64847,
+      "elev": 5400,
+      "name": "Gargett Mine",
+      "note": "Old mine workings; last reliable water source until lingering snow patches high on the peak. Coordinate is the surveyed mine adit (elev 5708 ft) - parties camp in the basin just below at ~5400 ft.",
+      "type": "Water",
+      "distMi": 2.5,
+      "directions": "Leave the maintained tread at the pass and follow the climbers' path north and west, dropping about 550 ft to the old mine workings. Tent space here is limited, so most parties bivy rather than camp properly. Fill up: the mine creek is the last easy water until lingering snow patches high on the peak."
+     },
+     {
+      "lat": 48.9777,
+      "lng": -121.65278,
+      "elev": 6300,
+      "name": "Notch (Mt. Larrabee NW rib)",
+      "note": "Reached after a long, unmarked sidehill traverse below Larrabee's southwest and west flanks; drop slightly beyond into the red talus/moraine bowl. Coordinate is a geometric interpolation (elevation-scaled) between Gargett Mine and the summit — estimated, not surveyed.",
+      "type": "Junction",
+      "distMi": 3.2,
+      "directions": "From the mine, traverse north across Larrabee's timbered southwest rib in the first quarter mile, then commit to a full mile of unmarked sidehill below Larrabee's west flank — steep talus, scree, heather and slick herbaceous slopes with no tread. A small scree chute at the end leads to the notch in Larrabee's rocky northwest rib. Do not start this traverse on wet grass or wet rock; helmets go on here and stay on, since rockfall is the defining hazard of the whole approach."
+     },
+     {
+      "lat": 48.98343,
+      "lng": -121.65678,
+      "elev": 6850,
+      "name": "South AmBo Saddle",
+      "note": "Scrambling and low 5th-class climbing begins here, below the rock feature climbers call 'De Gaulle's Nose'. Coordinate is a geometric interpolation (elevation-scaled) between Gargett Mine and the summit — estimated, not surveyed.",
+      "type": "Junction",
+      "distMi": 3.8,
+      "directions": "Beyond the notch, descend a steep dirt chute between snow and rock, then contour at roughly 5,800 ft above the moraine bowl. From there angle north through a series of steep gullies and ribs to the saddle. Route-finding, not difficulty, is what costs time on this section, and the red talus is loose throughout."
+     },
+     {
+      "lat": 48.99524,
+      "lng": -121.66493,
+      "elev": 7998,
+      "name": "American Border Peak summit",
+      "note": "Views to Mt. Larrabee, Canadian Border Peak, and the Pickets.",
+      "type": "Summit",
+      "distMi": 4.3,
+      "directions": "Follow a faint climbers' path along the crest for about two hundred yards, then traverse right onto slabby red ledges near a rock rib. A cleft just left of the rib and more slabby ledges gain a flat step on top of it; a down-sloping bench then crosses to the mouth of a steep snow gully, where a tall snow fin splits the gully and you take a moat on either side or the hole through the fin itself. From the notch above, three pitches of the Great Chimney lead to the top — a 5.3 entry, a smooth 5.4 face move over a large chockstone, and a squeeze so tight that packs have to be pushed through ahead of the climber. Above the chimney a dirty slabby trough, a row of horns and gaps, and one dramatically exposed step-across finish the climb."
+     }
+    ],
+    "itinerary": {
+     "cal": "Best conditions are typically July–September after the Twin Lakes access road (FS 3065) melts out; earlier in the season the chimney pitches can be snow/ice-choked.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From Twin Lakes trailhead (~5,200 ft), hike over Low Pass and High Pass, then drop and traverse cross-country toward the boulders and flat spots below the American Border Peak–Mt. Larrabee ridge. About 80% of this is off-trail on talus, scree, and heather; water can be scarce late season so carry enough to camp dry if needed.",
+       "hours": 4.5,
+       "miles": 4.3,
+       "title": "Approach to high bivy",
+       "gainFt": 1400,
+       "lossFt": 300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach a bivy site near the ABP–Larrabee ridge / \"3rd bowl\""
+      },
+      {
+       "n": 2,
+       "note": "An early start gets the technical ground done while rock is cold and other parties haven't kicked rock down. From the bivy, gain the notch/col below the face, traverse in, and climb the 3-pitch chimney system (rated 5.4, though several parties found it stiffer and harder to protect, more like sustained 5.8 in spots). Reverse the route with rappels over the steep steps, retrieve camp, and hike all the way back out to the car.",
+       "hours": 11,
+       "miles": 5.4,
+       "title": "Summit push and full descent to trailhead",
+       "gainFt": 1400,
+       "lossFt": 2900,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave bivy",
+         "detail": "Alpine start to be off the face before afternoon rockfall risk and thunderstorm buildup."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Reach the base of the Southeast Face",
+         "detail": "Cross scree/talus to the start of the technical climbing."
+        },
+        {
+         "time": "7:00 AM – 9:30 AM",
+         "label": "Climb the 3-pitch chimney system",
+         "detail": "Class 3-4 face climbing into a chimney with a low-5th-class (5.4-5.8) crux; some parties solo, others pitch it out."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Summit (7,998 ft)",
+         "detail": "Views to Mt. Larrabee, the Canadian Border Peak, and the Pickets."
+        },
+        {
+         "time": "10:30 AM – 1:00 PM",
+         "label": "Rappel/downclimb back to the col",
+         "detail": "Reverse the steep steps with 2-3 rappels; loose rock demands care on the descent."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at bivy, break camp",
+         "detail": "Pack up and start the long walk out via High Pass and Low Pass."
+        }
+       ],
+       "objective": "Climb the Southeast Face chimney to the summit, then descend all the way out"
+      }
+     ],
+     "totalNote": "A committing 2-day trip: ~9.7 miles and ~2,800 ft of net gain, but with a long, mostly off-trail approach and 3 pitches of loose, sustained class 4-5.8 climbing — most parties bivy once near the ABP-Larrabee ridge rather than pushing it car-to-car."
+    }
+   }
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "before": {
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "road": {
+     "name": "Baker Lake Road (FR-11) to FR-1106/FR-1107, Anderson & Watson Lakes Trailhead",
+     "driveNote": "FR-1107 (Anderson-Watson Road) has been closed at Mile Post 3.8 by a washout since July 8, 2026, with no end date given on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the standard Anderson & Watson Lakes Trailhead. The shorter, brushier Bacon Creek Road (FR-1060) to spur NF-1064 on the mountain's SE side (~800 ft start) is closed too: the Forest Service's Electric Fire order (06-05-26-19) closes FR-1060 from SR 20 to NF-1064, and NF-1064 itself, from September 2 through October 31, 2026; verify current road/washout status before relying on either, as conditions change."
+    },
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 3, loose",
+      "label": "Gullies from Diobsud Lakes basin to the south ridge",
+      "notes": "From the lakes basin, sidehill across slippery vegetation and cedar thickets, then climb mossy slabs and steep dirt-and-scree gullies onto Bacon's south ridge. Once the snow melts, this is the most unpleasant ground on the climb, and loose rock is a real hazard to anyone below. When snow-filled, the gully is avalanche terrain, and firm morning snow makes it much easier."
+     },
+     {
+      "n": 2,
+      "class": "Glacier",
+      "label": "South ridge snow onto the Diobsud Creek Glacier",
+      "notes": "Broad snow slopes on the south ridge lead onto the toe of the Diobsud Creek Glacier on the peak's southeast side. Rope up here. Then head northwest toward the saddle below the summit, probing as you go. Crevasses near the top are usually easy to avoid in a good snow year but open more early and late in the season. In whiteout, navigation on the flat upper glacier is the main difficulty."
+     },
+     {
+      "n": 3,
+      "class": "Class 2–3",
+      "label": "Saddle at 6,250 ft to the summit",
+      "notes": "From the saddle, used as a high camp, follow the flat, often windy summit ridge over a short snow arête. Then scramble a little on the dry rocks to the 7,061 ft summit. Take care on the arête if it is corniced or icy."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "before": {
+    "approach": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme). The trail immediately meets the Middle Fork Nooksack River — there is no bridge at the marked crossing, and fording can be dangerous or outright impassable during high water; many parties instead use an unofficial log crossing roughly 1/4 mile downstream from the official ford, made of logs lashed between two boulders. Once across, pick up the Elbow Lake Trail proper and climb through forest for about 1.5 miles to a switchback near Hildebrand Creek, where an unmaintained but well-trodden, blue-blazed 'Green Creek Climber's Trail' splits off to the left into the Green Creek cirque (look closely for the small blue markers — it's easy to walk past). Follow this climber's trail up into the basin; Green Creek itself runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with class 3 rock steps required to reach the toe of the Green Creek (Sisters) Glacier — route-finding through this section is the crux of the approach, and parties should expect to hunt for the least-loose line. Cross the low-angle glacier (crevasse hazard is generally low here but rises later season; carry basic glacier gear) up to the low notch on the ridge between Cinderella and Little Sister, which is the jumping-off point for Cinderella's west ridge/north face. Elevation gain from the river crossing to this notch is substantial — on the order of 4,500-5,500 ft over several miles — and fit parties often go car-to-car in one long day, while others split it with a camp in the Green Creek basin."
+   }
+  }
+ ]
+}

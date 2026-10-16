@@ -1,0 +1,91 @@
+{
+ "applied": [
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit / land manager"
+  },
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "column": "climate",
+   "path": [
+    "winter"
+   ],
+   "fact": "Winter access for dry-tooling"
+  },
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Winter access for dry-tooling"
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit / land manager"
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "column": "climate",
+   "path": [
+    "winter"
+   ],
+   "fact": "Winter access for dry-tooling"
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Winter access for dry-tooling"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "before": {
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "climate": {
+     "fall": "Rain returns and temperatures drop; road access can still be fine into October.",
+     "spring": "Wet, with lingering snow on the access road into May/early June.",
+     "summer": "Warmest, driest window and the best time for rock climbing on this line.",
+     "winter": "Heavy snowfall typically makes Hannegan Pass Road impassable to vehicles; this is when climbers use the wall for dry-tooling.",
+     "typical": "Wet, temperate maritime climate with heavy winter snowfall and a relatively short dry-and-mild summer window.",
+     "forecastZone": "North Cascades / Mt. Baker area (western Whatcom County)"
+    },
+    "road": {
+     "name": "Hannegan Pass Road (FS-32), just off Mt. Baker Highway (SR-542) near milepost 46",
+     "status": "Unpaved but easily accessible — the crag is only about 2 minutes' drive up Hannegan Pass Road from the highway turnoff.",
+     "driveNote": "Roughly 2-2.5 hours from Seattle/Bellingham via SR-542 to the Hannegan Pass Road turnoff.",
+     "seasonalGate": "Closed to vehicles Nov 1 – Mar 31 under an annual Forest Service closure order"
+    }
+   }
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "before": {
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "climate": {
+     "fall": "Rain returns and temperatures drop; road access can still be fine into October.",
+     "spring": "Wet, with lingering snow on the access road into May/early June.",
+     "summer": "Warmest, driest window and the best time for rock climbing on this line.",
+     "winter": "Heavy snowfall typically makes Hannegan Pass Road impassable to vehicles; this is when climbers use the wall for dry-tooling.",
+     "typical": "Wet, temperate maritime climate with heavy winter snowfall and a relatively short dry-and-mild summer window.",
+     "forecastZone": "North Cascades / Mt. Baker area (western Whatcom County)"
+    },
+    "road": {
+     "name": "Hannegan Pass Road (FS-32), just off Mt. Baker Highway (SR-542) near milepost 46",
+     "status": "Unpaved but easily accessible — the crag is only about 2 minutes' drive up Hannegan Pass Road from the highway turnoff.",
+     "driveNote": "Roughly 2-2.5 hours from Seattle/Bellingham via SR-542 to the Hannegan Pass Road turnoff.",
+     "seasonalGate": "Closed to vehicles Nov 1 – Mar 31 under an annual Forest Service closure order"
+    }
+   }
+  }
+ ]
+}

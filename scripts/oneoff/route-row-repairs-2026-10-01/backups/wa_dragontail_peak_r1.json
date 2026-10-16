@@ -1,0 +1,80 @@
+{
+ "id": "wa_dragontail_peak_r1",
+ "name": "Hidden Couloir",
+ "approach": "From the Stuart Lake trailhead (3,400 ft), hike the Stuart Lake Trail then Colchuck Lake Trail about 4 miles to Colchuck Lake (5,570 ft). Traverse the lake's south/east shore and ascend talus to the base of the Hidden Couloir at roughly 6,400 ft, just east of the lowest point of Dragontail's north face.",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Self-issue day-use wilderness permit and NW Forest Pass required at the kiosk; parking fills fast in this heavily-trafficked Enchantments quota area.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The Stuart Lake Trailhead sits at about 3,400 ft at the end of FR-7601, off Icicle Creek Road. A Northwest Forest Pass and a self-issue day-use wilderness permit are both required at the kiosk. This is the main trailhead for the heavily-trafficked Enchantments quota area and the parking fills fast, so arrive early."
+  },
+  {
+   "lat": 47.5048,
+   "lng": -120.828435,
+   "elev": 4200,
+   "name": "Colchuck Lake / Stuart Lake trail split",
+   "note": "Signed junction roughly 2-2.5 mi in; bear left onto Colchuck Lake Trail #1599A.",
+   "type": "Junction",
+   "distMi": 2.3
+  },
+  {
+   "lat": 47.4878,
+   "lng": -120.8343,
+   "elev": 5570,
+   "name": "Colchuck Lake",
+   "note": "Established backcountry camps and reliable water near the outlet; dogs prohibited in the Enchantment Permit Area.",
+   "type": "Campsite",
+   "distMi": 4
+  },
+  {
+   "lat": 47.4922,
+   "lng": -120.8331,
+   "elev": 5561,
+   "name": "Colchuck Lake",
+   "type": "Water",
+   "distMi": 4.3,
+   "elevFt": 5561
+  },
+  {
+   "lat": 47.483857,
+   "lng": -120.833918,
+   "elev": 6400,
+   "name": "Lateral moraine crest (Colchuck Glacier)",
+   "note": "Boulder-hop the south/east shore then gain the moraine crest deposited by the Colchuck Glacier to avoid loose talus below the north face.",
+   "type": "Junction",
+   "distMi": 5
+  },
+  {
+   "lat": 47.482673,
+   "lng": -120.833803,
+   "elev": 6400,
+   "name": "Hidden Couloir base",
+   "note": "Base of the north-face couloir system below the glacier's east lobe; check avalanche and icefall conditions before committing in winter/spring.",
+   "type": "Hazard",
+   "distMi": 5.3
+  },
+  {
+   "lat": 47.479913,
+   "lng": -120.833536,
+   "elev": 7800,
+   "name": "Mid-face ice runnels",
+   "note": "Route narrows through runnels splitting the mid-face rock band; reported as thin, unpredictable ice depending on the season.",
+   "type": "Hazard",
+   "distMi": 6
+  },
+  {
+   "lat": 47.47873,
+   "lng": -120.833421,
+   "elev": 8840,
+   "name": "Dragontail Peak summit",
+   "note": "True summit; descend the standard Aasgard Pass scramble route back to Colchuck Lake.",
+   "type": "Summit",
+   "distMi": 6.3
+  }
+ ]
+}

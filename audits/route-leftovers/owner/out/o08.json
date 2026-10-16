@@ -1,0 +1,45 @@
+{"results": [
+ {"id": "wa_mount_carrie_se_route", "verdict": "confirmed", "resolution": "rename",
+  "summary": "The name was already fixed to the southwest-ridge line; this sets the aspect and face to match it and removes a leftover 'SE' label from the crowds note.",
+  "evidence": "Every account climbs Carrie from Sol Duc via the High Divide, Cat Basin and the Catwalk to Boston Charlie's Camp, then up the southwest ridge/rib and across the south-facing scree basin to the summit. No source describes a southeast route. The row's name, beta, approach and descent already say southwest ridge; only aspect 'SE', the vague face and one crowds sentence still disagreed.",
+  "sources": ["https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/", "https://www.outdoorproject.com/united-states/washington/mount-carrie-southwest-rib-route-high-divide-bogachiel", "https://en.wikipedia.org/wiki/Mount_Carrie"],
+  "ops": [
+   {"op": "set", "id": "wa_mount_carrie_se_route", "column": "aspect", "path": [], "expect": "SE", "value": "SW"},
+   {"op": "set", "id": "wa_mount_carrie_se_route", "column": "face", "path": [], "expect": "Long Ridge / Bailey Range crest approach", "value": "Southwest Ridge and south-facing summit basin"},
+   {"op": "replace_text", "id": "wa_mount_carrie_se_route", "column": "crowds", "path": ["estimatePerSeason"], "find": "this SE/Cat Basin approach", "replace": "this Cat Basin and Catwalk approach"}
+  ],
+  "pin_followups": []},
+ {"id": "wa_ives_peak_r1", "verdict": "confirmed", "resolution": "rename",
+  "summary": "Rename this to Northwest Ridge / South Face and set its aspect to south, since that is the line it describes, and remove the website named as a source in its beta and a 'trip reports recommend' phrase in its descent.",
+  "evidence": "Two independent trip accounts climb Ives from the Old Snowy-Ives col up the northwest (north) ridge, then drop onto a ramp and finish on the south/southwest face (class 3). No source describes a northeast-slopes route; the McCall Glacier occupies the northeast side. The row's beta, face, descent and climbing_route already describe the NW ridge / south face.",
+  "sources": ["https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/", "https://www.hippohamster.com/posts/south_cascades/ives_peak/"],
+  "ops": [
+   {"op": "rename", "id": "wa_ives_peak_r1", "expect_name": "Northeast Slopes / Goat Rocks crest", "name": "Northwest Ridge / South Face"},
+   {"op": "set", "id": "wa_ives_peak_r1", "column": "aspect", "path": [], "expect": "NE", "value": "S"},
+   {"op": "replace_text", "id": "wa_ives_peak_r1", "column": "beta", "path": [], "find": "A 2026 ski-mountaineering trip report (climberkyle.com) that circled the peak describes the ridge north of the summit as rocky and wind-scoured, with a short loose ('choss') section near the col, and notes lingering snow on the peak's flanks into early summer.", "replace": "The ridge north of the summit is rocky and wind-scoured, with a short loose section near the col, and snow lingers on the peak's flanks into early summer."},
+   {"op": "replace_text", "id": "wa_ives_peak_r1", "column": "descent_text", "path": [], "find": "which several trip reports recommend specifically to avoid the worst loose rock", "replace": "which avoids the worst loose rock"}
+  ],
+  "pin_followups": []},
+ {"id": "wa_whistler_mountain_scramble", "verdict": "confirmed", "resolution": "rename",
+  "summary": "Rename this to South Ridge / Southwest Slope so the name matches the line, aspect and face it already describes, and drop the old 'Southeast Slopes' wording from the approach and descent text.",
+  "evidence": "The route description for this scramble reaches the level part of the south ridge at 6,180 ft from the highway turnout and finishes up the ridge or across gullies onto the southwest slope; the Rainy Pass alternative climbs the west ridge/gully. No source describes a southeast-slopes route. Aspect SW and face 'South Ridge / Southwest Slope' were already set on two sources.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/whistler-mountain", "https://onehikeaweek.com/2021/06/27/whistler-mountain/", "https://climberkyle.com/2021/05/15/whistler-mountain-west-gully/"],
+  "ops": [
+   {"op": "rename", "id": "wa_whistler_mountain_scramble", "expect_name": "Southeast Slopes / Standard Scramble", "name": "South Ridge / Southwest Slope"},
+   {"op": "replace_text", "id": "wa_whistler_mountain_scramble", "column": "approach", "path": [], "find": "Two trailheads serve the Southeast Slopes / South Ridge scramble,", "replace": "Two trailheads serve this scramble,"},
+   {"op": "replace_text", "id": "wa_whistler_mountain_scramble", "column": "descent_text", "path": [], "find": "on the standard Southeast Slopes/South Ridge route", "replace": "on this route"}
+  ],
+  "pin_followups": ["Trailhead pin sits at Rainy Pass (the west-ridge alternative); already handled separately per the input."]},
+ {"id": "wa_silver_star_ne_ridge", "verdict": "confirmed", "resolution": "leave",
+  "summary": "Nothing to change on this row: it stores no gain figure at all, so the gain problem does not apply here.",
+  "evidence": "The row's gain_ft, loss_ft, dist_km, timing and itinerary are all empty, and no text on it states a trailhead-to-summit gain. The 4,400 ft 'East Ridge' figure the finding mentions is not on this row (it may belong to the sibling East Ridge row, wa_east_ridge_3). Published car-to-car gains for the shared Burgundy Col approach also disagree (4,500 / 5,200 / 5,380 / 6,000 ft), so no figure could be added from two sources anyway.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan", "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"],
+  "ops": [],
+  "pin_followups": []},
+ {"id": "wa_silver_star_glacier", "verdict": "unresolved", "resolution": "leave",
+  "summary": "The stored 4,000 ft gain is too low, but published totals all disagree, so it is left as is until a second source matches one figure.",
+  "evidence": "Car-to-car totals found: 4,500 ft (trail-association page, read), 5,200 ft (club route page, per search listing), 5,380 ft and ~4,636 ft (two trip reports), 5,500 ft and 6,000 ft (other listings); a guide service says only 'over 4,000 ft'. No two sources state the same total, and computing one is not allowed, so gain_ft 4,000 is not changed.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan", "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier", "http://www.willhiteweb.com/north_cascades/silver_star_mountain/map_142.htm", "https://ncmountainguides.com/routes/climbing/silver-star-mountain-silver-star-glacier"],
+  "ops": [],
+  "pin_followups": []}
+]}

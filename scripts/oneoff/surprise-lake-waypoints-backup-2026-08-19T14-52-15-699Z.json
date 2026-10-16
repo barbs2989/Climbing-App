@@ -1,0 +1,67 @@
+{
+  "id": "wa_slippery_slab_tower_ne_face",
+  "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+  "waypoints": [
+    {
+      "lat": 47.696,
+      "lng": -121.245,
+      "elev": 4573,
+      "name": "Surprise Lake",
+      "note": "Trail switchbacks above the lake to join the PCT.",
+      "type": "Water",
+      "distMi": 4.7
+    },
+    {
+      "lat": 47.6744,
+      "lng": -121.124,
+      "elev": 5050,
+      "name": "Trap Pass",
+      "note": "PCT junction; the climbers path to Thunder Mountain and Slippery Slab Tower leaves directly from the top of the pass.",
+      "type": "Junction",
+      "distMi": 6
+    },
+    {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "elev": 6200,
+      "name": "Base of Slippery Slab Tower",
+      "note": "Corrected - previous coordinate (47.665,-121.22) jumped ~4.5mi west of Trap Pass instead of continuing toward the tower, likely a data entry error. Real tower location sourced via Peakbagger (47.668645,-121.126119, elev 6356ft), matching this area's own registered location.",
+      "type": "Junction",
+      "distMi": 6.8
+    },
+    {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "elev": 6356,
+      "name": "Slippery Slab Tower NE Face Topout",
+      "note": "Corrected - previous coordinate (47.6636,-121.2226) was ~4.5mi off, confirmed via Peakbagger (pid 2167) cross-checked against this area's own registered location. Two-pitch 5.4; Pitch 2 diagonals left into a gully to a large boulder near the top.",
+      "type": "Topout",
+      "distMi": 7
+    },
+    {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "name": "Slippery Slab Tower NE Face (start)",
+      "type": "Route",
+      "distMi": null,
+      "elevFt": null
+    },
+    {
+      "lat": 47.7094,
+      "lng": -121.1065,
+      "elev": 3100,
+      "name": "Tunnel Creek Trailhead",
+      "note": "FS Rd 6095, ~13.2 mi east of Skykomish off US-2; approach is Tunnel Creek Trail -> PCT (Hope Lake) -> south to Trap Pass -> climbers trail to NE base of tower",
+      "type": "Trailhead",
+      "elevFt": 3100
+    },
+    {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "elev": 6356,
+      "name": "Slippery Slab Tower",
+      "type": "Summit",
+      "elevFt": 6356
+    }
+  ]
+}

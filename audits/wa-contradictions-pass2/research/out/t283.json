@@ -1,0 +1,60 @@
+{"file": "t283.json", "results": [
+ {"id": "wa_mount_washington_olympic_standard", "fact": "Distance (one-way vs round trip)", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "dist_km 3.2 (2 mi) is the one-way figure shown as 'Approach (one way)', while the itinerary day's 4 miles is the car-to-car round trip for a one-day out-and-back; both are labelled for their convention and agree with each other.",
+  "sources": [], "patches": []},
+ {"id": "wa_mount_washington_olympic_standard", "fact": "Car-to-car descent (loss_ft 3,300 vs descent_text and itinerary 3,190)", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "loss_ft is 3,300 while descent_text and the itinerary day both say 3,190 ft of loss. No outside source was found stating a car-to-car descent figure for this route, and the rules forbid deriving loss from gain; a published descent figure for this route would settle it.",
+  "sources": [], "patches": []},
+ {"id": "wa_washington_ellinor_traverse_ridge", "fact": "Start of the best season", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Best July through September (June still needs snow gear)",
+  "evidence": "Inside the row, seasonal_guidance.optimalWindow (July-Sep), the June month rating (marginal, axe and crampons needed), climate.bySeason.summer (July-September prime), climate.bySeason.spring (not a standard-season traverse until snow clears) and climate.summer (a late-June ascent still needed crampons) all put the best window from July; best_season is the lone outlier. A mid-June 2023 traverse report found a hanging snowfield with a creek beneath it and advised bringing axe and crampons at that time of year.",
+  "sources": ["https://climberkyle.com/2023/06/12/washington-ellinor-traverse/"],
+  "patches": [
+   {"id": "wa_washington_ellinor_traverse_ridge", "fact": "Start of the best season", "op": "replace_text", "column": "best_season", "path": [], "find": "Best June through September;", "replace": "Best July through September;"}
+  ]},
+ {"id": "wa_mount_worthington_standard", "fact": "Parking pass at the Tubal Cain Trailhead", "verdict": "bivy_zone_list",
+  "correct_value": "No parking pass or fee required at the Tubal Cain Trailhead (access fields are correct; the bivy[0].permit sentence claiming a Northwest Forest Pass is wrong)",
+  "evidence": "The Olympic National Forest recreation-site page for Tubal Cain Trailhead states no fees are required for the site, and the WTA hike page for Tubal Cain Mine / Buckhorn Lake lists the parking pass as None. So the five access fields are right and the only wrong copy is in bivy[0].permit, which this pass may not patch; the camping clean-up should drop 'Northwest Forest Pass or interagency pass required to park at the Tubal Cain trailhead' from that camp card.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/tubal-cain-trailhead", "https://www.wta.org/go-hiking/hikes/tubal-cain-mine-and-buckhorn-lake"],
+  "patches": []},
+ {"id": "wa_the_brothers_traverse", "fact": "Composition of the 7 pitches", "verdict": "fixed",
+  "correct_value": "The scramble to the 6,100 ft notch and the snow descent into the Great Basin are unroped approach; the 7 belayed pitches begin below the North Brother",
+  "evidence": "The route description behind the 7-pitch count says the party scrambled down easy rock to a flat spot where they roped up below the North Brother, then lists the pitches as two moderate snow pitches on the east side, rock traverses on the west side, mixed rock/snow to moats, and the steep couloir, followed by an unroped scramble to the South Brother summit; the approach to ~5,500 ft and the notch is described as hiking and scrambling. An independent trip report through the same 6,100 ft notch and steep snow finger into the Great Basin describes that whole section as unroped, with roped climbing starting only on the ridge between the summits.",
+  "sources": ["https://www.mountainproject.com/route/106494582/brothers-traverse", "https://trailcatjim.com/the-brothers-north-peak-via-east-couloir-south-ridge/"],
+  "patches": [
+   {"id": "wa_the_brothers_traverse", "fact": "Composition of the 7 pitches", "op": "replace_text", "column": "beta", "path": [], "find": "The traverse is 7 roped pitches (statically belayed, though simulclimbing is possible): fourth-class scrambling to a notch near 6,100 ft, a descent on steep snow into the Great Basin, moderate snow pitches", "replace": "Fourth-class scrambling leads to a notch near 6,100 ft and a descent on steep snow into the Great Basin, below the North Brother. From there the traverse is 7 roped pitches (statically belayed, though simulclimbing is possible): moderate snow pitches"}
+  ]},
+ {"id": "wa_the_brothers_south_couloir", "fact": "High-camp elevation and day-1 gain", "verdict": "fixed",
+  "correct_value": "Climbers' camp at Lena Forks, ~3,000 ft (East Lena Creek Basin is a separate, higher camp)",
+  "evidence": "The Brothers peak page puts the climbers' camp in the upper Valley of Silent Men at 3,000 ft; the Mountaineers route data put Lena Forks camp at 3,000 ft where the East Fork splits; a 2019 trip report reaches the climbers' camp after gaining 800 ft past the 2,200 ft wilderness boundary (~3,000 ft). The itinerary's ~3,600 ft and merging of Lena Forks with East Lena Creek Basin is the outlier. Day-1 gainFt 2,900 is left untouched because changing it would break the itinerary total against gain_ft, and no source states both day figures.",
+  "sources": ["https://www.summitpost.org/the-brothers/517714", "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse", "https://onehikeaweek.com/2019/11/28/the-brothers/"],
+  "patches": [
+   {"id": "wa_the_brothers_south_couloir", "fact": "High-camp elevation and day-1 gain", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "forested camp (Lena Forks / East Lena Creek Basin area, ~3,600 ft)", "replace": "forested camp (Lena Forks, ~3,000 ft)"},
+   {"id": "wa_the_brothers_south_couloir", "fact": "High-camp elevation and day-1 gain", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "forested camp (Lena Forks / East Lena Creek Basin…", "replace": "forested camp (Lena Forks, ~3,000 ft)…"}
+  ]},
+ {"id": "wa_the_brothers_south_couloir", "fact": "Summit-day duration", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The schedule runs 5:00 AM to 1:30 PM (8.5 h) while the day and timing.summitTimeHrs say 10.5 h. Trip reports vary widely: one overnight party summited ~10 AM, was back at camp 3 PM and at the trailhead 6:30 PM; another took ~3 h summit-to-camp and ~5.5 h camp-to-car. No two sources agree on a camp-start summit-day duration, so the schedule times cannot be rebuilt; consistent published camp-to-summit and camp-to-trailhead times would settle it.",
+  "sources": ["https://www.jeffreyjhebert.com/adventures/south-couloir-on-the-brothers-south-peak", "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-the-brothers-south-couloir"],
+  "patches": []},
+ {"id": "wa_the_brothers_south_couloir", "fact": "Best early-season window", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The April-May 'best in early season because of brush' statement is published for the Brothers Traverse (which shares the approach), while other South Couloir pages give only broad spring/summer/fall seasons or say the climb goes in all seasons with varying gear. No two South Couloir sources state the same optimal window; two agreeing route-specific statements (April-May vs late May-June) would settle it.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse", "https://mazamas.org/activity/346/", "https://www.theoutbound.com/washington/hiking/climb-the-brothers-south-climb"],
+  "patches": []},
+ {"id": "wa_warrior_peak_standard", "fact": "Crossing the cirque's drainage stream", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Mountaineers route data say to leave the Dungeness trail before crossing the major stream from the Warrior/Inner Constance cirque and climb east staying north of the streambed. The SummitPost peak page instead describes continuing past the last, larger creek to a boulder field and then heading up and back left toward the creek under a cliff band to avoid bushwhacking. The two sources describe different lines and no third account says which side is correct, so the approach prose and the 'wrong side' test cannot be reconciled; a GPS track or a third independent account of the cirque approach would settle it.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit", "https://www.summitpost.org/warrior-peak/816121"],
+  "patches": []},
+ {"id": "wa_warrior_peak_standard", "fact": "Difficulty billing of the rock step", "verdict": "fixed",
+  "correct_value": "Class 4 / low 5th rock step (grade unchanged); remove the conflicting 'Class 3-4' billing from watch_out and bail",
+  "evidence": "The SummitPost page rates the route Class 3-5.2 and says the rock above the 7,000 ft saddle is closer to Class 4 than the guidebook's Class 3; the Mountaineers route data call the first 20-50 ft of rock above the saddle difficult and of poor quality, with a rope recommended. Both agree the step is harder than a Class 3-4 billing, which supports the row's existing grade, so the two sentences calling the route Class 3-4 are reworded without a numeral.",
+  "sources": ["https://www.summitpost.org/warrior-peak/816121", "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit"],
+  "patches": [
+   {"id": "wa_warrior_peak_standard", "fact": "Difficulty billing of the rock step", "op": "replace_text", "column": "watch_out", "path": [], "find": "Crux rock step (20-50 ft above saddle) more serious than Class 3-4 billing suggests", "replace": "Crux rock step (20-50 ft above saddle) is more serious than its short length suggests"},
+   {"id": "wa_warrior_peak_standard", "fact": "Difficulty billing of the rock step", "op": "replace_text", "column": "bail", "path": [], "find": "even though the route is nominally unroped Class 3-4", "replace": "even though many parties climb it unroped"}
+  ]}
+]}

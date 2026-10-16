@@ -1,0 +1,49 @@
+{
+ "id": "wa_the_tiger",
+ "name": "The Tiger",
+ "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass summit). From the highway, head directly uphill (north) toward the talus at the base of the Supercave gully, following it up and briefly left before rejoining the gully; it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes.",
+ "approach_variants": [
+  {
+   "name": "Supercave gully to the upper ledge",
+   "notes": "From the roadside pullout near milepost 166, go directly uphill to the north through talus and forest toward the gully below the wall, taking the forced dogleg out left and back in. Pass the lower ledge and keep going to the upper ledge. There is an exposed easy-fifth step in the gully on the way, so this is not a walk with your hands in your pockets. Rockfall in the gully is worse when another party is above you and worse again after rain.",
+   "season": "July to September; the highway over the pass is gated shut through winter and into spring, so the wall is car-inaccessible for roughly half the year.",
+   "hazards": [
+    "Loose talus and an exposed easy-fifth step in the approach gully",
+    "Rockfall in the gully, particularly with parties above or after rain",
+    "South-facing aspect gives full-day sun and real heat in summer",
+    "Two routes leave the same treed ledge — confirm which anchor you are heading for before you commit to a rope length"
+   ],
+   "baseFinding": "On the upper ledge, work to the centre of the wall — this line is neither the right-hand cave line nor the apron below. The start is a treed ledge, and it is shared: two routes leave from the same spot, so identify it by the ledge and the trees, then identify the route by where you stop. The first pitch here is short — a slabby left-facing corner, about twenty-five metres, ending at a belay well below the first roof. Negative markers: if you run the same corner out to more than sixty metres and finish at a pin-and-gear anchor tucked under a roof, you are on the free variation of the old aid line, which shares this ground; if the corner you started up is forty metres long and leads to a stance under twin left-slanting cracks, you are on the right-hand cave line; and if you are on a narrow ledge below the whole wall with a single bolt beside you, you stopped one ledge too low."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.549,
+   "lng": -120.630965,
+   "elev": 4360,
+   "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+   "note": "Park roadside ~3 mi east of the Washington Pass hairpin; ascend talus directly uphill (north) toward the Supercave gully, ~1 hr 10 min to the upper ledge.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20 to the roadside pullout near milepost 166, about 3 miles east of the hairpin turns and a similar distance from the Washington Pass summit. Park at the pullout itself — this is one of the largest roadside walls at Washington Pass, so the parking is the trailhead and there is no spur road to find. From the shoulder the talus and the Supercave gully are directly above you."
+  },
+  {
+   "lat": 48.54793,
+   "lng": -120.63975,
+   "elev": 5895,
+   "name": "Upper ledge, M&M Wall",
+   "note": "11-pitch 5.12 up the wall's south face, one of the longer lines on M&M Wall.",
+   "type": "Junction",
+   "distMi": 1.2
+  },
+  {
+   "lat": 48.54793,
+   "lng": -120.63975,
+   "elev": 5895,
+   "name": "M&M Wall (Supercave) base area",
+   "type": "Base",
+   "distMi": null,
+   "elevFt": 5895
+  }
+ ]
+}

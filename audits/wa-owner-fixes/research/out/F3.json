@@ -1,0 +1,668 @@
+{
+ "file": "F3.json",
+ "results": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    },
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Climbing Fee: $82 per person;",
+     "replace": "Climbing Fee: $82 per person, per climb;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_nisqually_icefall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    },
+    {
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "requires the park's annual climbing pass plus climbing registration",
+     "replace": "requires the per-climb climbing cost recovery fee ($82 per person in 2026) plus climbing registration"
+    },
+    {
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Annual Climbing Cost Recovery Fee",
+     "value": "Climbing Cost Recovery Fee ($82 per person, per climb) plus the park entrance pass"
+    },
+    {
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "$82 climbing registration per person",
+     "replace": "$82 climbing fee per person, per climb"
+    }
+   ]
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "rainier_central_mowich_face",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    },
+    {
+     "id": "rainier_central_mowich_face",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "requires the park's annual climbing pass plus climbing registration",
+     "replace": "requires the per-climb climbing cost recovery fee ($82 per person in 2026) plus climbing registration"
+    },
+    {
+     "id": "rainier_central_mowich_face",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Annual Climbing Cost Recovery Fee",
+     "value": "Climbing Cost Recovery Fee ($82 per person, per climb) plus the park entrance pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "Rainier climbing fee: per climb, not annual",
+   "verdict": "fixed",
+   "correct_value": "$82 per person per climb (2026); not an annual/calendar-year pass",
+   "evidence": "The park's climbing-fee FAQ states 'The fee for 2026 is $82 per person per climb for all ages'; the park's climbing page says each party member must pay $82 via the Special Use Permit form. An independent Rainier climbing-permit explainer states each climber pays $82 and that the fee 'is no longer valid for the entire climbing season as of May 2026'. An older NPS 'things to do' page still describes a $53/$37 annual fee good for the calendar year; it is superseded (pre-2026 rates).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_curtis_ridge",
+     "fact": "Rainier climbing fee: per climb, not annual",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "value": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Wilderness permit fee stated wrong",
+   "verdict": "fixed",
+   "correct_value": "$12 per person per night (15 and under free), 2026",
+   "evidence": "The park's wilderness-permit FAQ: 'The wilderness permit fee in 2026 is $12 per person per night. Individuals 15 and younger are free', plus a $6 reservation fee per trip; the wilderness-permit page repeats $12 per person per night + $6. The independent permit explainer also gives $12 per person plus $6 per permit.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Wilderness permit fee stated wrong",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Wilderness Permit: $10 per person per night",
+     "replace": "Wilderness Permit: $12 per person per night"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Wilderness permit fee stated wrong",
+   "verdict": "fixed",
+   "correct_value": "$12 per person per night, 2026",
+   "evidence": "The park's wilderness-permit FAQ: 'The wilderness permit fee in 2026 is $12 per person per night. Individuals 15 and younger are free', plus a $6 reservation fee per trip; the wilderness-permit page repeats $12 per person per night + $6. The independent permit explainer also gives $12 per person plus $6 per permit.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit-faqs.htm",
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Wilderness permit fee stated wrong",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "$12-26 wilderness permit per person/night",
+     "replace": "$12 wilderness permit per person/night"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "same facts without naming the park's route brief or time estimates as the source",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "the NPS route brief is explicit that 'up was down' (ascending feels safer than retreating) is the dominant, and dangerous, pattern in the route's accident history",
+     "replace": "the route's accident history is dominated by a dangerous pattern: parties judge that continuing up feels safer than retreating"
+    },
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "— NPS time estimates put this leg at just under three hours for an average party.",
+     "replace": "— an average party needs just under three hours for this leg."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "same facts without 'NPS' as the stated source",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "season",
+     "path": [],
+     "find": "after August 1 (NPS)",
+     "replace": "after August 1"
+    },
+    {
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "NPS recommends Zero-Thread ice anchors over V-threads",
+     "replace": "Zero-Thread ice anchors are preferred over V-threads"
+    },
+    {
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "the modern standard per NPS guidance, not fixed bolts",
+     "replace": "the modern standard, not fixed bolts"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "same minimalist rack and crowd numbers, stated plainly",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Rendered text names where a fact came from",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "note"
+     ],
+     "expect": "verbatim from a direct trip report: 'a rope, a cam, a few nuts, three screws, and one piton' — deliberately minimalist for speed through icefall exposure",
+     "value": "A minimalist rack is enough: a rope, a cam, a few nuts, three screws and one piton — kept light for speed through the icefall exposure"
+    },
+    {
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "A direct trip report's minimalist rack used one rope",
+     "replace": "A minimalist rack uses one rope"
+    },
+    {
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "The park's annual mountaineering reports do count it: 8 climbers",
+     "replace": "Recorded use is tiny: 8 climbers"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "same facts stated plainly",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "note"
+     ],
+     "expect": "three independent trip reports converge: 'a rock rack was essential'",
+     "value": "A rock rack is essential"
+    },
+    {
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A 3-day trip (~9,500 ft gain), consistent across trip reports: an approach day",
+     "replace": "A 3-day trip (~9,500 ft gain): an approach day"
+    },
+    {
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "; length isn't fixed across sources but 60m matches the multi-pitch mixed terrain reported.",
+     "replace": "; 60m suits the multi-pitch mixed terrain."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "'one party summited by 6:15 AM...' (and the truncated timing note completed)",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes. The timing note was also truncated mid-word ('once unde…'); it is completed from the row's own itinerary day 3 note.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Rendered text names where a fact came from",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "expect": "Navigate crevasse crossings on the Tahoma Glacier to the summit; one reported trip summited by 6:15 AM and was back at the tent by 9:30 AM, so the climbing itself is fast once unde…",
+     "value": "Navigate crevasse crossings on the Tahoma Glacier to the summit; one party summited by 6:15 AM and was back at the tent by 9:30 AM, so the climbing itself is fast once underway."
+    },
+    {
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "one reported trip summited",
+     "replace": "one party summited"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "same advice stated plainly",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes. bivy[1].permit also names 'NPS listings' and 'third-party campground sites' but bivy is owned by the camping clean-up and is not patched here.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_curtis_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "trip report recommends carrying extra cord",
+     "replace": "carry extra cord"
+    },
+    {
+     "id": "wa_mount_rainier_curtis_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "check nps.gov/mora road status for early/late-season openings",
+     "replace": "check the park's current road status for early/late-season openings"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "'about 5.6 hours car-to-summit for one party'",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes. No Rainier fee statement exists on this row.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "car-to-summit in one reported trip",
+     "replace": "car-to-summit for one party"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Rendered text names where a fact came from",
+   "verdict": "fixed",
+   "correct_value": "same FA facts without pipeline/source wording",
+   "evidence": "Rewording only: the fact is kept and stated plainly; no external research is needed because no value changes. The row makes no Rainier fee claim (it says no Rainier-style climbing fee applies, which is correct for Okanogan-Wenatchee NF land); access.fees '$5 (day)' vs access._raw '$5 (5-day)' involves a non-rendered raw field, and the NW Forest Pass day pass is $5/day.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_southern_man",
+     "fact": "Rendered text names where a fact came from",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "(a September 2009 ascent by Burdo at 5.12a has also been reported but is unconfirmed — see data gaps)",
+     "replace": "(a September 2009 ascent by Burdo at 5.12a is unconfirmed)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,291 @@
+{
+ "file": "r641.json",
+ "results": [
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 16.09 km (10 mi) is the one-way approach, matching the summit pin's 10.3 mi and the ~20 mi round trip in the prose; the 8-9 mi pitch_detail figure is to Surprise/Warm Lake, not the summit. Trip reports give ~20 and 20.6 mi round trip.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/GoatRocks/Gilbert.htm",
+    "https://onehikeaweek.com/2019/06/02/gilbert-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "Which line this route is (ridge vs Meade Glacier)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row blends two distinct lines. The Klickton Divide line (southwest to the divide, northwest along it to the summit block) involves no glacier travel (Mazamas trip listings; onehikeaweek trip report). The Meade Glacier line proper leaves the Surprise Lake loop high point (~5,600 ft), crosses a basin west, climbs the Meade to the SSE ridge and does not use Klickton Divide (ericsbasecamp; Mountaineers description of the Meade variant). Making name, overview, beta, baseFinding and pitch_detail agree means deciding which line this row represents and rewriting its core prose - not a minimal patch, so left for an owner decision.",
+   "sources": [
+    "https://mazamas.org/activity/instance/9354/detail/",
+    "https://mazamas.org/activity/instance/14288/",
+    "http://ericsbasecamp.net/trips/GoatRocks/Gilbert.htm",
+    "https://onehikeaweek.com/2019/06/02/gilbert-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "Season window",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The Jul-Sep chip is the main window (climate.summer says the same); best_season explicitly describes late June and October as shoulder conditions around it. A July ascent and a late-September ascent are both documented.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/GoatRocks/Gilbert.htm",
+    "https://mazamas.org/activity/instance/14288/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "Land manager / trailhead in access",
+   "verdict": "fixed",
+   "correct_value": "Conrad Meadows / South Fork Tieton trailhead is Okanogan-Wenatchee NF, Naches Ranger District; Northwest Forest Pass ($5/day, $30/yr) required",
+   "evidence": "The Forest Service Conrad Meadows trailhead page lists the Naches Ranger District and a $5/day or $30/year day-use fee; WTA and Oregon Hikers both place the South Fork Tieton trail on the Okanogan-Wenatchee NF, Naches RD; TrailMeister states a Northwest Forest Pass is required there. The ACCESS land_manager, notes and parking_pass were copied from the west-side Snowgrass routes.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/conrad-meadows-trailhead",
+    "https://www.wta.org/go-hiking/hikes/south-fork-tieton-river",
+    "https://www.oregonhikers.org/field_guide/South_Tieton_Hike",
+    "https://www.trailmeister.com/trails/conrad-meadows/"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_meade_glacier",
+     "fact": "Land manager / trailhead in access",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District) — Goat Rocks Wilderness",
+     "replace": "Okanogan-Wenatchee National Forest (Naches Ranger District) — Goat Rocks Wilderness"
+    },
+    {
+     "id": "wa_gilbert_peak_meade_glacier",
+     "fact": "Land manager / trailhead in access",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "the standard approach (Snowgrass Flat, Berry Patch trailheads) is on the Gifford Pinchot side.",
+     "replace": "this route's approach from the Conrad Meadows trailhead is on the Okanogan-Wenatchee side."
+    },
+    {
+     "id": "wa_gilbert_peak_meade_glacier",
+     "fact": "Land manager / trailhead in access",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Not required at Snowgrass Flat; required at Berry Patch trailhead — $5/day",
+     "replace": "Required at the Conrad Meadows trailhead — $5/day"
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "Exposure on the summit scramble",
+   "verdict": "fixed",
+   "correct_value": "The final class 3 scramble is exposed in places",
+   "evidence": "One trip report calls the finish 'a quick, exposed class 3 climb'; another describes it as airy at times, through a notch between pillars with cliffs dropping hundreds of feet around the summit; a third notes solid rock in the exposed sections. watch_out is right; pitch_detail's 'no significant exposure' is the outlier.",
+   "sources": [
+    "https://onehikeaweek.com/2019/06/02/gilbert-peak/",
+    "https://www.jonnewmark.com/trip-reports/vdvtqarn9yebmvx7tydr3d3si4i9er",
+    "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-gilbert-peak-klickton-divide"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_meade_glacier",
+     "fact": "Exposure on the summit scramble",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "no significant exposure on most lines but rock is unstable.",
+     "replace": "exposed in places, and the rock is unstable."
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "When crevasses are a hazard",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two fields describe the two halves of one pattern: early season the crevasses and moats are hidden under snow, late season they open. A July party found none open and noted they are expected later in the season.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/GoatRocks/Gilbert.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "fact": "Ranger district / land manager",
+   "verdict": "fixed",
+   "correct_value": "Naches Ranger District, Okanogan-Wenatchee National Forest",
+   "evidence": "The Forest Service Conrad Meadows trailhead page names the Naches Ranger District (10237 Highway 12, Naches); WTA and Oregon Hikers place the South Fork Tieton approach on the Okanogan-Wenatchee NF, Naches RD. The Cowlitz Valley RD is the west-side (Snowgrass) district.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/conrad-meadows-trailhead",
+    "https://www.wta.org/go-hiking/hikes/south-fork-tieton-river",
+    "https://www.oregonhikers.org/field_guide/South_Tieton_Hike"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_conrad_glacier",
+     "fact": "Ranger district / land manager",
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "expect": "Cowlitz Valley Ranger District, Gifford Pinchot NF — (360) 497-1103, 10024 US Hwy 12, Randle, WA 98377",
+     "value": "Naches Ranger District, Okanogan-Wenatchee National Forest — 10237 US Hwy 12, Naches, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "fact": "Rope / glacier kit required",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Rope, harness and crevasse-rescue kit required on the Conrad Glacier",
+   "evidence": "The Mountaineers' Conrad Glacier route description lists glacier rope, harness and glacier gear, and its trip report on the route records the party roping up at ~6,900 ft (same organisation, so counted as one). Internally gear[1], gear[2], approach_variants notes, climbing_route[1] and hazards all treat it as roped glacier travel; only pro_needs and detailed_rack call the rope optional.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/gilbert-peak-conrad-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/gilbert-peak-via-conrad-and-meade-glaciers"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_conrad_glacier",
+     "fact": "Rope / glacier kit required",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "carry an ice axe, crampons, and consider a rope for glacier travel on Conrad Glacier.",
+     "replace": "carry an ice axe, crampons, and a rope, harness and crevasse-rescue kit for glacier travel on Conrad Glacier."
+    },
+    {
+     "id": "wa_gilbert_peak_conrad_glacier",
+     "fact": "Rope / glacier kit required",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Basic glacier travel kit (axe, crampons) for the Conrad Glacier crossing",
+     "replace": "Glacier travel kit (axe, crampons, rope, harness, crevasse-rescue gear) for the Conrad Glacier crossing"
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "fact": "Camping at Snowgrass Flats",
+   "verdict": "fixed",
+   "correct_value": "Snowgrass Flat itself is closed to camping; camp at established sites below it",
+   "evidence": "WTA states camping at Snowgrass Flat and in Shoe Lake Basin is prohibited; the Forest Service Goat Rocks trailhead information says Shoe Lake basin and Snow Grass Flats are closed to camping and campfires. The fields telling parties to base-camp on the flat are wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/snowgrass",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/conrad-meadows-trailhead"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "From a base camp at Snowgrass Flats,",
+     "replace": "From a camp in the timber below Snowgrass Flats,"
+    },
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "a large subalpine meadow used as base camp;",
+     "replace": "a large subalpine meadow that is closed to camping (use the established sites below it);"
+    },
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a large subalpine meadow used as base camp.",
+     "replace": "a large subalpine meadow; the flat itself is closed to camping, so camp at the established sites below it."
+    },
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "find": "Early morning start from Snowgrass Flats camp",
+     "replace": "Early morning start from camp below Snowgrass Flats"
+    },
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      3
+     ],
+     "find": "for a Snowgrass Flats base camp",
+     "replace": "for a base camp below Snowgrass Flats"
+    },
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "back to Snowgrass Flats camp,",
+     "replace": "back to camp below Snowgrass Flats,"
+    },
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Camping at Snowgrass Flats",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "from a Snowgrass Flats camp: Day 1, hike in to Snowgrass Flats (or Lower Snowgrass);",
+     "replace": "from a camp below Snowgrass Flats: Day 1, hike in to Lower Snowgrass or the timber sites below the flat;"
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "fact": "Parking pass at Snowgrass Flat trailhead",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass (or $5/day, $30/yr fee) required at both Snowgrass and Berry Patch",
+   "evidence": "The Forest Service Snowgrass trailhead page charges $5 per vehicle per day or $30 annual, payable by cash, scan or a valid recreation pass; WTA lists a Northwest Forest Pass or America the Beautiful pass as required at the Snowgrass trailhead.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-snowgrass",
+    "https://www.wta.org/go-hiking/hikes/snowgrass"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_west_route",
+     "fact": "Parking pass at Snowgrass Flat trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Not required at Snowgrass Flat; required at Berry Patch trailhead — $5/day",
+     "replace": "Required at both the Snowgrass Flat and Berry Patch trailheads — $5/day"
+    }
+   ]
+  }
+ ]
+}

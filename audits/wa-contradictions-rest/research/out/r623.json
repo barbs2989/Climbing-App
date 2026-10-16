@@ -1,0 +1,43 @@
+{"file": "r623.json", "results": [
+ {"id": "wa_mount_lincoln_standard", "fact": "Route grade", "verdict": "fixed_internal_plus_one",
+  "correct_value": "rock_grade: Class 3-4 (matching grade's Class 3-4 with a low-5th chockstone crux)",
+  "evidence": "Inside the row, grade, pitch_detail[3], hazards, the approach variant's hazards, pro_tips, gear and rack all put the summit crux at stiff Class 4 / low 5th; rock_grade (the header pill) is the only field saying Class 2 with Class 3 sections. A 2024 trip report describes low-5th-class terrain and a chockstone gully with no-fall moves at the summit block. Historic references rate the easiest (south ridge) line Class 2 and the Flapjack/north ridge line Class 3, so the external picture is not unanimous; the fix rests on the row's own overwhelming agreement plus the trip report.",
+  "sources": ["https://explorerron.com/2024/09/11/mount-lincoln-olympic-mountains-sawtooth-range-no-easy-steps/", "https://explorerron.com/2024/09/24/mount-lincoln-and-sw-lincoln/", "https://en.wikipedia.org/wiki/Mount_Lincoln_(Washington)"],
+  "patches": [
+   {"id": "wa_mount_lincoln_standard", "fact": "Route grade", "op": "set", "column": "rock_grade", "path": [], "expect": "Class 2, with Class 3 sections", "value": "Class 3-4"}
+  ]},
+ {"id": "wa_mount_lincoln_standard", "fact": "Ridge/side climbed", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Published route lists name three lines: South Ridge (Class 2), Flapjack Lake / North Ridge (Class 3) and Harniss Chute (Class 3), so the Flapjack Lakes approach this route uses is the one historically called the north ridge, which supports the itinerary and contradicts face='South Ridge'. But a Mountaineers trip report from the Flapjack side finished via a Class 3 gully on the south side of the summit block, and the row's own waypoints place the saddle south of the summit. No two sources settle which ridge name this route should carry, so no patch.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Lincoln_(Washington)", "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-lincoln", "https://explorerron.com/2024/09/24/mount-lincoln-and-sw-lincoln/"],
+  "patches": []},
+ {"id": "wa_mount_lincoln_standard", "fact": "Descent line (Sawtooth Pass vs reversing the ascent)", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sawtooth Pass and the chute there are the approach to The Fin and The Horn, well northwest along Sawtooth Ridge from Lincoln, so descent_text's route via Sawtooth Pass and the Gladys Divide tarn does not match 'reverse the ascent' from the saddle below the north sub-peak. No source found describes a Lincoln descent via Sawtooth Pass; one 2024 party descended a couloir about a quarter mile south of the summit to a basin one ridge from Flapjack Lakes. With no two sources describing the standard descent, no replacement text can be written.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn", "https://explorerron.com/2024/09/11/mount-lincoln-olympic-mountains-sawtooth-range-no-easy-steps/"],
+  "patches": []},
+ {"id": "wa_mount_lincoln_standard", "fact": "Flapjack Lakes basin waypoint position", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: the Flapjack Lakes camp pin sits about 120 m from the Staircase trailhead pin, while its distMi (7) and the 7.5-mile trail distance put it far up the valley. The distMi value is consistent with the trail distance. The fix is a coordinate change, and waypoint lat/lng are outside this pass's scope.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm", "https://www.wta.org/go-hiking/hikes/flapjack-lakes"],
+  "patches": []},
+ {"id": "wa_mount_lincoln_standard", "fact": "Land manager", "verdict": "fixed",
+  "correct_value": "The summit sits on the Olympic National Park / Olympic National Forest boundary (Daniel J. Evans Wilderness / Mount Skokomish Wilderness)",
+  "evidence": "Both sources put Mount Lincoln on the boundary between the Daniel J. Evans Wilderness and the Mount Skokomish Wilderness, which is also the shared border of Olympic National Park and Olympic National Forest. PeakVisor lists Olympic National Park, Olympic National Forest and Mount Skokomish Wilderness as the protected areas. access.landManager already says this; access.land_manager (NPS only, old 'Olympic Wilderness' name) is the outlier.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Lincoln_(Washington)", "https://peakvisor.com/peak/mount-lincoln.html"],
+  "patches": [
+   {"id": "wa_mount_lincoln_standard", "fact": "Land manager", "op": "set", "column": "access", "path": ["land_manager"], "expect": "National Park Service — Olympic National Park (Olympic Wilderness)", "value": "National Park Service — Olympic National Park (Daniel J. Evans Wilderness, trail/approach); the summit sits on the boundary with the USDA Forest Service's Olympic National Forest (Mount Skokomish Wilderness)"}
+  ]},
+ {"id": "wa_mount_lincoln_standard", "fact": "Season", "verdict": "fixed_internal_plus_one",
+  "correct_value": "mid-July through September",
+  "evidence": "season, best_season, seasonal_guidance.optimalWindow, the approach variant's season and climate.summer all give mid-July (or July) through September and call June risky; only itinerary.cal says June-September. The park service notes snow hazards may exist on the Flapjack Lakes Trail through June, which supports leaving June out of the best window for the summit scramble.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm"],
+  "patches": [
+   {"id": "wa_mount_lincoln_standard", "fact": "Season", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "(roughly June-September)", "replace": "(roughly mid-July through September)"}
+  ]},
+ {"id": "wa_mount_lincoln_standard", "fact": "Route distance", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "dist_km (13.68 km = 8.5 mi) is the one-way approach figure shown as 'Approach (one way)', while the itinerary miles (7.7 + 10.9) are per-day totals for the round trip; they measure different quantities and are consistent with a roughly 9-mile one-way distance to the summit.",
+  "sources": [],
+  "patches": []}
+]}

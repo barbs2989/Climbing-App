@@ -1,0 +1,587 @@
+{
+ "file": "r007.json",
+ "results": [
+  {
+   "id": "wa_arrowhead_mountain_south_route",
+   "fact": "Best season contradicts the route's own description of its most-common (and easier) season",
+   "verdict": "fixed",
+   "correct_value": "Most commonly and most easily climbed on snow, roughly December-April; a snow-free summer ascent is possible but brushier and slower.",
+   "evidence": "Two independent trip-report sites describe Arrowhead as best done in winter when snow covers the ground, one noting that parties who left the snow line met steep, brushy bushwhacking; further winter snowshoe reports (January, February) show the usual season. This agrees with the row's beta, itinerary.cal, detailed_rack and approach_variants; best_season, seasonal_guidance, climate, crowds.peakTraffic and the season chip were a summer template.",
+   "sources": [
+    "https://musthikemusteat.com/hwy-2/arrowhead-mountain/",
+    "https://havetent.com/2019/03/24/arrowhead-mountain-ski-snowshoe/",
+    "https://trailcatjim.com/arrowhead-mtn-snowshoe-climb-via-northeast-ridge/",
+    "https://onehikeaweek.com/2011/02/19/arrowhead-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "best_season",
+     "path": [],
+     "expect": "August",
+     "value": "December-April, on consolidated snow",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Oct scramble; also climbed Dec-Mar as a snow route",
+     "value": "Dec-Apr; Jul-Sep",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through September, with August as the single best month",
+     "value": "December through April on consolidated snow, when the brushy, log-choked lower slopes are buried; a snow-free ascent from mid-July through September is possible but slower",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "good",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Driest, clearest window on this transitional, drier-than-the-crest slope; best footing on heather and talus",
+     "value": "The driest snow-free month, but with no snow the lower forest and clearcut are brushy and log-choked, so travel is slower than on a winter ascent",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "summer"
+     ],
+     "expect": "Best window with dry slopes",
+     "value": "Dry and snow-free, but the lower slopes are brushy and slow without snow cover",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "winter"
+     ],
+     "expect": "Full snow cover",
+     "value": "Full snow cover; the usual season for this route",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "typical"
+     ],
+     "expect": "Transitional climate, drier than the crest; clearest mid- to late summer.",
+     "value": "Transitional climate, drier than the crest; clearest mid- to late summer, though the route is usually climbed on winter and spring snow.",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    },
+    {
+     "op": "set",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "expect": "weekends in August when trail/scree is driest; occasional club scramble outings",
+     "value": "winter and spring weekends on snow; occasional summer club scramble outings",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season"
+    }
+   ]
+  },
+  {
+   "id": "wa_arrowhead_mountain_south_route",
+   "fact": "One-way approach distance",
+   "verdict": "fixed",
+   "correct_value": "About 3.1 mi one-way (6.1-6.3 mi round trip); dist_km 5.0.",
+   "evidence": "One trip report gives 6.1 miles round trip and 3,300 ft ('3300 ft in 3 miles'); a second, independent GPS-logged snowshoe report gives 6.3 miles round trip and 3,450 ft; a third gives about 7 miles round trip. All put the one-way distance near 3-3.5 miles, matching the waypoints and itinerary (6.1 mi); the approach prose's 4.5-4.8 miles one-way and dist_km 7.2 were wrong.",
+   "sources": [
+    "https://musthikemusteat.com/hwy-2/arrowhead-mountain/",
+    "https://trailcatjim.com/arrowhead-mtn-snowshoe-climb-via-northeast-ridge/",
+    "https://havetent.com/2019/03/24/arrowhead-mountain-ski-snowshoe/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 7.2,
+     "value": 5.0,
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "One-way approach distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total one-way distance runs roughly 4.5-4.8 miles",
+     "replace": "Total one-way distance runs roughly 3-3.5 miles",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "One-way approach distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "over 6-9 miles depending",
+     "replace": "over 6-7 miles depending",
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "One-way approach distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_arrowhead_mountain_south_route",
+   "fact": "Trailhead and lower waypoint elevations (1,900-2,000 ft) vs a ~2,800 ft roadhead",
+   "verdict": "fixed",
+   "correct_value": "US-2 pullout ~2,800 ft; the route leaves the grade near 2,700 ft.",
+   "evidence": "One source gives the route's elevation range as 2,800-6,030 ft and a GPS-logged report puts the WSDOT-yard start at 2,950 ft. The row's own bivy[0] (2,800 ft) and approach (leave the grade at ~2,700 ft about a mile in) agree; the waypoints at 1,900/1,900/2,000 ft were ~800-900 ft too low.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/arrowhead-6030",
+    "https://trailcatjim.com/arrowhead-mtn-snowshoe-climb-via-northeast-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1900,
+     "value": 2800,
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Trailhead and lower waypoint elevations (1,900-2,000 ft) vs a ~2,800 ft roadhead"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 1900,
+     "value": 2750,
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Trailhead and lower waypoint elevations (1,900-2,000 ft) vs a ~2,800 ft roadhead"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 2000,
+     "value": 2750,
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Trailhead and lower waypoint elevations (1,900-2,000 ft) vs a ~2,800 ft roadhead"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_arrowhead_mountain_south_route",
+   "fact": "Total gain/loss: gain_ft/loss_ft 3,554 vs itinerary 3,300",
+   "verdict": "fixed",
+   "correct_value": "3,300 ft gain and loss car to car.",
+   "evidence": "Two independent trip reports each give 3,300 ft of gain for the round trip; a third GPS log gives 3,450 ft. The itinerary day (3,300 up/down) agrees; gain_ft/loss_ft 3,554 disagreed with the itinerary total.",
+   "sources": [
+    "https://musthikemusteat.com/hwy-2/arrowhead-mountain/",
+    "https://havetent.com/2019/03/24/arrowhead-mountain-ski-snowshoe/",
+    "https://trailcatjim.com/arrowhead-mtn-snowshoe-climb-via-northeast-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3554,
+     "value": 3300,
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Total gain/loss: gain_ft/loss_ft 3,554 vs itinerary 3,300"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 3554,
+     "value": 3300,
+     "id": "wa_arrowhead_mountain_south_route",
+     "fact": "Total gain/loss: gain_ft/loss_ft 3,554 vs itinerary 3,300"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "Approach/camp line: King Lake + east-ridge notch vs. Buck Creek Pass + Liberty Cap + Louis Creek Basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines are real, documented routes: one source describes climbing from King Lake directly south to a notch (~7,140 ft) on the east ridge, crossing to the south side and contouring onto the low-angle SE slopes to the middle summit (the beta/pitch_detail/itinerary line); other sources describe the long 'normal' route to the west side via Buck Creek Pass and the High Pass high route to a Louis Creek Basin camp (the approach/descent_text/approach_variants line), and note King Lake is also used for the NE face. The row welds two different routes together; choosing which one this route id represents means rewriting beta, pitch_detail, three itinerary days and timing notes (or the approach, descent_text and waypoints), an editorial decision rather than a single wrong value, so no patch is written. Several waypoint pins (the basin and snowfield pins) also sit east of the summit near Trinity, matching neither line.",
+   "sources": [
+    "https://www.summitpost.org/buck-mountain/151532",
+    "https://www.lemkeclimbs.com/buck--fortress-mountains.html",
+    "https://drdirtbag.com/2021/08/12/buck-loop-ne-face-to-buck-pass/",
+    "https://trailcatjim.com/high-giant-traverse-buck-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "Avalanche hazard claimed N/A but described as present on the approach",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The AVALANCHE panel covers only the Jul-Sep climbing window (byMonth Jul/Aug/Sep, outside the NWAC forecast season), while climate.bySeason.spring and obj_haz describe spring/early-summer snow outside that window; these are statements about different seasons, not incompatible claims.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Total elevation gain — 5,300 ft (gain_ft) vs 8,400 ft (itinerary sum) vs 7,300+ ft (approach prose)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 8,600 ft round trip from the Snow Lakes trailhead.",
+   "evidence": "The net rise alone is ~7,340 ft (trailhead ~1,300 ft to the 8,638 ft summit). One source tallies ~4,500 ft to Snow Lakes, ~4,500 ft more from Snow Lakes to the summit and back, and ~450 ft on the walk out (~9,450 ft total); another measures ~7,000 ft of gain from the Snow Lakes trailhead just to Aasgard Pass, implying ~6,000 ft to the core-lakes camp. The row's itinerary days (6,000 + 2,300 + regained dips) and the approach's '7,300+' agree against gain_ft 5,300; the itinerary's in/out asymmetry (300 ft lost on the way in, only 100 regained on the way out) is squared so gain and loss both total 8,600.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/little_annunpurna/cannon_enchantment_085.htm",
+    "https://stephabegg.com/trip-reports/washington/enchantments-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5300,
+     "value": 8600,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Total elevation gain — 5,300 ft (gain_ft) vs 8,400 ft (itinerary sum) vs 7,300+ ft (approach prose)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "gainFt"
+     ],
+     "expect": 100,
+     "value": 300,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Total elevation gain — 5,300 ft (gain_ft) vs 8,400 ft (itinerary sum) vs 7,300+ ft (approach prose)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Total elevation loss — 4,500 ft (loss_ft) vs 8,600 ft (itinerary sum)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "8,600 ft (an out-and-back from one trailhead loses what it gains).",
+   "evidence": "Same evidence as the gain: the round trip returns to the same trailhead, so loss equals gain (~8,600 ft), which the itinerary's own loss total already states.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/little_annunpurna/cannon_enchantment_085.htm",
+    "https://stephabegg.com/trip-reports/washington/enchantments-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4500,
+     "value": 8600,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Total elevation loss — 4,500 ft (loss_ft) vs 8,600 ft (itinerary sum)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)",
+   "verdict": "fixed",
+   "correct_value": "About 10-11 mi from the Snow Lakes trailhead to the Perfection Lake camp, ~13.75 mi one-way to the summit (dist_km 22.1); ~6,000 ft of gain to the core lakes.",
+   "evidence": "One source puts the full Stuart-to-Snow Lakes thru-hike at 19.25 miles with the core lakes 6.75-9.75 miles from the Stuart end, i.e. Perfection Lake roughly 10-11 miles from the Snow Lakes trailhead; another gives ~18.5 miles and ~7,000 ft of gain from the Snow Lakes trailhead to Aasgard Pass (7,841 ft), which puts the core lakes (~7,100 ft) near 6,000 ft of gain. The approach's '8-9 miles and about 4,500 ft' to Perfection Lake (4,500 ft is roughly the gain to Snow Lakes), the variant's matching sentence and gainFt 4,500, the trailhead note's '~9 mi, ~4,500 ft one-way', and dist_km (8 mi) were all the same wrong figure; the itinerary (10.5 mi and 6,000 ft to camp, 6.5 mi summit day) is correct.",
+   "sources": [
+    "https://www.earthtrekkers.com/how-to-hike-the-enchantments-in-one-day/",
+    "https://stephabegg.com/trip-reports/washington/enchantments-traverse/",
+    "http://www.willhiteweb.com/washington_climbing/little_annunpurna/cannon_enchantment_085.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 12.87,
+     "value": 22.1,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "on the order of 8-9 miles and about 4,500 ft of gain from the trailhead",
+     "replace": "on the order of 10-11 miles and about 6,000 ft of gain from the trailhead",
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "by which point you have covered eight or nine miles and about 4,500 ft.",
+     "replace": "by which point you have covered ten or eleven miles and about 6,000 ft.",
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "gainFt"
+     ],
+     "expect": 4500,
+     "value": 6000,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "(~9 mi, ~4,500 ft gain one-way)",
+     "replace": "(roughly 13-14 mi and over 7,300 ft of gain one-way)",
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Core Enchantment Zone overnight-permit season — May 15 vs June 15 start",
+   "verdict": "fixed",
+   "correct_value": "May 15-Oct 31.",
+   "evidence": "The Forest Service's Enchantments overnight-permit page and independent permit guides all give the overnight permit season as May 15 through October 31, matching access.notes/access.permit and the top-level permit; itinerary.cal's June 15 was wrong.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.enchantmentsguide.com/planning/permits",
+    "https://wildernessbeta.com/permits/enchantments/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "roughly June 15-Oct 31",
+     "replace": "May 15-Oct 31",
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Core Enchantment Zone overnight-permit season — May 15 vs June 15 start"
+    }
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Research agrees the camp for this Snow Lakes/Prusik Pass line is in the core Enchantment lakes near Perfection/Inspiration Lake (itinerary, bivy, approach, and route descriptions that reach Prusik Pass from the north end of Perfection Lake). But the 'Basin below Cannon' Campsite pin (and the 'Base of south slopes' pin) sit north-northeast of the summit, on the far side of the mountain from this route, so renaming or re-elevating it would label a pin at the wrong place; pin positions are out of scope. Lake elevations are also unsettled: one mapping source puts Perfection Lake at 7,556 ft (the waypoint's value), others at ~7,000-7,170 ft, so the itinerary's '~7,500 ft' and bivy's 7,190 ft cannot be reconciled from two agreeing sources.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/little_annunpurna/cannon_enchantment_085.htm",
+    "https://peakvisor.com/poi/perfection-lake.html",
+    "https://www.waterfallsnorthwest.com/waterfall/Perfection-Falls-4548"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Summit elevation — summit waypoint 8,652 ft vs high_point_ft 8,638 ft",
+   "verdict": "fixed",
+   "correct_value": "8,638 ft.",
+   "evidence": "The peak's elevation is given as 8,638 ft (No. 38 of Washington's 100 highest) by independent peak references, matching high_point_ft; the summit waypoint's 8,652 ft (both elev and elevFt) was the outlier.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cannon_Mountain_(Washington)",
+    "https://www.summitpost.org/cannon-mountain-wa/151408",
+    "https://peakvisor.com/peak/cannon-mountain-united-states.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elev"
+     ],
+     "expect": 8652,
+     "value": 8638,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Summit elevation — summit waypoint 8,652 ft vs high_point_ft 8,638 ft"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elevFt"
+     ],
+     "expect": 8652,
+     "value": 8638,
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Summit elevation — summit waypoint 8,652 ft vs high_point_ft 8,638 ft"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_cannon_mountain_northeast_ridge",
+   "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle",
+   "verdict": "fixed",
+   "correct_value": "The route starts at the Stuart Lake (Colchuck Lake) trailhead at the end of Eightmile Road (FR 7601) and the loop descends via Aasgard Pass and Colchuck Lake back to that same lot; no car shuttle.",
+   "evidence": "Two independent trip reports of this route both start at the Stuart/Colchuck Lake trailhead (Mountaineer Creek), leave the trail near the Mountaineer Creek bridge or up an old road and climb east to the northeast ridge, then descend toward Prusik Pass, through the upper Enchantments and down Aasgard Pass back to the same trailhead and car. The row's own approach and road driveNote also put the start at the road-end lot. So the 'descent' field is correct, and the fields naming a separate 'Eightmile Trailhead' start and calling for a car shuttle are wrong.",
+   "sources": [
+    "https://lemkeclimbs.com/cannon-enchantment-and-stuart",
+    "https://outdoors.ahelwer.ca/post/2017-10-08-cannon-mountain/",
+    "https://outdoors.ahelwer.ca/post/2018-09-23-cannon-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [],
+     "expect": "Feasible as a very long single day done as a loop: ascend the NE Ridge from the Eightmile Trailhead parking area, then descend via Prusik Pass, the Upper Enchantments, and Aasgard Pass to the Stuart Lake Trailhead -- about 15 miles with sustained class 3 scrambling and heavy bushwhacking. Best attempted only by strong, experienced parties, with a car shuttle or road connection arranged between the two trailheads.",
+     "value": "Feasible as a very long single day done as a loop: ascend the NE Ridge from the Stuart Lake Trailhead parking area at the end of Eightmile Road, then descend via Prusik Pass, the Upper Enchantments, Aasgard Pass and Colchuck Lake back to the same trailhead -- about 15 miles with sustained class 3 scrambling and heavy bushwhacking. Best attempted only by strong, experienced parties; no car shuttle is needed.",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This route starts at the Eightmile trailhead itself, not at the Stuart Lake trailhead further up the same road system.",
+     "replace": "This route starts from the Stuart Lake trailhead lot at the road end, the same lot used for Colchuck Lake.",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and two different trailheads. Plan the car shuttle before you start walking.",
+     "replace": "and it finishes back at the same lot it started from, so no car shuttle is needed.",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "expect": "Descent is over the summit to a DIFFERENT trailhead: a car shuttle or a long road walk",
+     "value": "Descent is over the summit and out via Aasgard Pass and Colchuck Lake, a long way round back to the same trailhead",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The descent is over the top and down the far side of the mountain to a different trailhead.",
+     "replace": "The descent is over the top and down the far side of the mountain, looping back to the same trailhead via Aasgard Pass.",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The route starts at the Eightmile Trailhead,",
+     "replace": "The route starts at the Stuart Lake Trailhead,",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "from the Eightmile Trailhead;",
+     "replace": "from the Stuart Lake Trailhead;",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Icicle Road / Forest Road 7600, Eightmile Road spur (Eightmile Trailhead)",
+     "value": "Icicle Road / Forest Road 7600, Eightmile Road spur (Stuart Lake Trailhead)",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Eightmile Trailhead",
+     "value": "Stuart Lake Trailhead",
+     "id": "wa_cannon_mountain_northeast_ridge",
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle"
+    }
+   ]
+  }
+ ]
+}

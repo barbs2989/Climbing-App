@@ -1,0 +1,338 @@
+{
+ "applied": [
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "column": "fa",
+   "path": [],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Route grade vs every listed pitch grade"
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "crux"
+   ],
+   "fact": "Crux-flagged pitch vs actual hardest pitch"
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "crux"
+   ],
+   "fact": "Crux-flagged pitch vs actual hardest pitch"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "overview",
+   "path": [],
+   "find": "A1 in 1972 and later freed",
+   "replace": "A1 in 1971 and later freed",
+   "id": "wa_big_snow_mountain_east_buttress",
+   "fact": "First-ascent year",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197211601/North-America-United-States-WashingtonCascade-Mountains-Big-Snow-Mountain-East-Butteress",
+    "https://www.summitpost.org/big-snow-mountain/216509"
+   ],
+   "why": "find occurs 0x at overview[]"
+  },
+  {
+   "op": "set",
+   "column": "aid_grade",
+   "path": [],
+   "expect": "A1 (original 1972 ascent)",
+   "value": "A1 (original 1971 ascent)",
+   "id": "wa_big_snow_mountain_east_buttress",
+   "fact": "First-ascent year",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197211601/North-America-United-States-WashingtonCascade-Mountains-Big-Snow-Mountain-East-Butteress",
+    "https://www.summitpost.org/big-snow-mountain/216509"
+   ],
+   "why": "expect mismatch at aid_grade[]: live \"A1 (original 1971 ascent)\""
+  },
+  {
+   "op": "replace_text",
+   "column": "pro_needs",
+   "path": [],
+   "find": "The 1972 first ascent",
+   "replace": "The 1971 first ascent",
+   "id": "wa_big_snow_mountain_east_buttress",
+   "fact": "First-ascent year",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197211601/North-America-United-States-WashingtonCascade-Mountains-Big-Snow-Mountain-East-Butteress",
+    "https://www.summitpost.org/big-snow-mountain/216509"
+   ],
+   "why": "find occurs 0x at pro_needs[]"
+  },
+  {
+   "op": "set",
+   "column": "loss_ft",
+   "path": [],
+   "expect": 4100,
+   "value": 5300,
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Total elevation gain",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+   ],
+   "why": "expect mismatch at loss_ft[]: live 5140"
+  },
+  {
+   "op": "set",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "expect": 2600,
+   "value": 3800,
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Total elevation gain",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+   ],
+   "why": "expect mismatch at itinerary[\"days\",1,\"gainFt\"]: live 3640"
+  },
+  {
+   "op": "set",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "expect": 2600,
+   "value": 3800,
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Total elevation gain",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+   ],
+   "why": "expect mismatch at itinerary[\"days\",1,\"lossFt\"]: live 3640"
+  },
+  {
+   "op": "replace_text",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "find": "~2,600 ft round-trip summit day",
+   "replace": "~3,800 ft round-trip summit day",
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Total elevation gain",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+   ],
+   "why": "find occurs 0x at itinerary[\"totalNote\"]"
+  },
+  {
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "One-way distance from the trailhead is roughly 3.5 mi (the logged 6.92 km is evidently round trip), with",
+   "replace": "One-way distance from the river ford to the summit is roughly 2.25 mi, with",
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "One-way distance from trailhead to summit",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "crux"
+   ],
+   "expect": false,
+   "value": true,
+   "id": "wa_batskins",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "sources": [
+    "https://www.mountainproject.com/route/106197963/batskins",
+    "https://www.outdoorresearch.com/blogs/stories/insiders-guide-to-climbing-indexs-under-the-radar-gems"
+   ],
+   "why": "expect mismatch at pitch_detail[0,\"crux\"]: live true"
+  },
+  {
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "crux"
+   ],
+   "expect": true,
+   "value": false,
+   "id": "wa_batskins",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "sources": [
+    "https://www.mountainproject.com/route/106197963/batskins",
+    "https://www.outdoorresearch.com/blogs/stories/insiders-guide-to-climbing-indexs-under-the-radar-gems"
+   ],
+   "why": "expect mismatch at pitch_detail[1,\"crux\"]: live false"
+  },
+  {
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "expect": "5.11+",
+   "value": "5.11+ (5.12c/d extended)",
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "fact": "Route grade vs every listed pitch grade",
+   "sources": [
+    "https://www.mountainproject.com/route/106328521/tpmv-10-meteorological-vinculation",
+    "https://www.mountainproject.com/route/116994868/ten-percent-direct-en-passant"
+   ],
+   "why": "expect mismatch at pitch_detail[0,\"grade\"]: live \"5.11+ (5.12c/d extended)\""
+  },
+  {
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "crux"
+   ],
+   "expect": false,
+   "value": true,
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "fact": "Route grade vs every listed pitch grade",
+   "sources": [
+    "https://www.mountainproject.com/route/106328521/tpmv-10-meteorological-vinculation",
+    "https://www.mountainproject.com/route/116994868/ten-percent-direct-en-passant"
+   ],
+   "why": "expect mismatch at pitch_detail[0,\"crux\"]: live true"
+  },
+  {
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "crux"
+   ],
+   "expect": true,
+   "value": false,
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "fact": "Route grade vs every listed pitch grade",
+   "sources": [
+    "https://www.mountainproject.com/route/106328521/tpmv-10-meteorological-vinculation",
+    "https://www.mountainproject.com/route/116994868/ten-percent-direct-en-passant"
+   ],
+   "why": "expect mismatch at pitch_detail[2,\"crux\"]: live false"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "before": {
+    "fa": "Don Williamson, Bill Bucher, and Tom Oas, c. 1972",
+    "overview": "A rarely repeated technical new route established in 1971-72 up Burnt Boot Peak's north ridge: three leads of low-to-mid class 5 granite culminating on a knife-edge crest, followed by three easier leads of class 3-4 scrambling to the summit."
+   }
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "before": {
+    "gain_ft": 5140
+   }
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": true,
+      "grade": "5.11+ (5.12c/d extended)",
+      "notes": "Shallow corners/cracks past 3 bolts and gear to anchor; usually climbed alone starting from Japanese Gardens P1. Continuing past that anchor through a hard, height-dependent boulder problem on small gear is the extended version and gives the route its 5.12c/d grade.",
+      "pitch": 1
+     },
+     {
+      "crux": false,
+      "grade": "5.10-",
+      "notes": "Slightly runout; cracks up right-facing corner to a ledge, then face climbing left to anchor below corner/slab pitch.",
+      "pitch": 2
+     },
+     {
+      "crux": false,
+      "grade": "5.11b/c",
+      "notes": "Slab-and-corner pitch; committing clip to first bolt, continues up difficult corner via bolts and gear.",
+      "pitch": 3
+     },
+     {
+      "crux": false,
+      "grade": "5.10d",
+      "notes": "Slab past bolts and gear with a tough mantle; multiple 5.8-5.9 finish variations.",
+      "pitch": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "grade": "5.11b",
+      "notes": "Left-facing dihedral (5.10a to first chains), continues past chains, two fingers-to-hands cruxes, finishes on finger crack.",
+      "pitch": 1
+     },
+     {
+      "crux": true,
+      "grade": "5.11b",
+      "notes": "Jam/lieback increasing in difficulty, ledgy climbing to upper-right anchor.",
+      "pitch": 2
+     },
+     {
+      "crux": false,
+      "grade": "5.11a",
+      "notes": "Flare with fingercrack, physical jamming around a roof and slab to belay.",
+      "pitch": 3
+     },
+     {
+      "crux": false,
+      "grade": "5.11c",
+      "notes": "Slab climbing through left-facing corners/arches, easing to 5.9 slabs at the top.",
+      "pitch": 4
+     }
+    ]
+   }
+  }
+ ]
+}

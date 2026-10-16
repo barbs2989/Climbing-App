@@ -1,0 +1,173 @@
+{
+ "applied": [
+  {
+   "id": "wa_labor_pains",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Number of 5.11 pitches"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "rappel_detail",
+   "path": [
+    3,
+    "anchor"
+   ],
+   "fact": "Chockstone descent anchors"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "rappel_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Chockstone descent anchors"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead location"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead location"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_labor_pains",
+   "before": {
+    "rappels": "Most parties descend the separate bolted rappel line down the West Face, which runs between the West Face route and Labor Pains itself, rather than the Chockstone Route stations. The Chockstone line is the original chockstone/notch descent down the south side: three single-rope rappels to the notch, a largely free-hanging double-rope rappel past the giant chockstone, and a short rappel off a tree to the ground. Its second gully rappel comes up about 5 ft short on a 60 m rope and is finished with a downclimb.",
+    "rappel_count_note": "These five stations are the ORIGINAL chockstone/notch descent down the south side, and the count assumes a SINGLE rope for the three upper rappels plus TWO ropes for the chockstone rappel - accounts describe it as up to five rappels depending on conditions and the number of ropes carried, and parties with two ropes throughout combine some of the upper ones. The second gully rappel comes up about 5 ft short on a 60 m. IMPORTANT: this is probably not the descent a Labor Pains party will use. A separate BOLTED rappel line was established down the West Face, running between the West Face route and Labor Pains itself, and it is that West Face line, rather than anything in this route's own gear list, that wants a 70 m rope; the list here is a 60 m. That line shares only the FIRST anchor with the chockstone descent - from it you head down the West Face instead of into the gully - and has nothing else in common with the stations listed here. It is currently six stations on bolts and chains ending a minute from the base of the routes, with one rappel that a 60 m does not make (parties report needing to block and extend a strand, or carry a 70), and a last anchor that is genuinely hard to find, on a rib below some shrubs and skier's left as you walk down loose dirt from the fifth station. Some parties still rappel from a nearby dead tree carrying no slings, which is not the anchor. Do not blend the two lines: the station list shown is the chockstone line.",
+    "descent_text": "Rappel down the Chockstone Route line - the same bolted stations used to descend that route - rather than reversing the Labor Pains pitches.",
+    "turnaround": "With two sustained 5.10/5.11 pitches and PG13 protection in spots, turn back rather than push through the crux overhang if the leader is pumped or conditions are wet.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of three single-rope rappels down the south side toward the notch between North and South Early Winters Spire.",
+      "anchor": "fixed/natural station",
+      "hazards": [
+       "Rope drag and route-finding after the slab traverse make this a confusing place to arrive; the anchor is above where most parties stop",
+       "The descent is repeatedly described as windy, which throws a tossed rope off line"
+      ],
+      "lengthM": 30,
+      "station": "About 30 m down from where the route tops out and on the SKIER'S RIGHT, not on the summit itself. The top station is a bolted anchor - reached, from the West Face finish, by continuing about 50 ft above the top of that route's last pitch. It is worth noting where this anchor is on the way up: parties descending at dusk say knowing where the first anchors are is what makes a late descent reasonable. First of three single-rope rappels heading down toward the notch between North and South Early Winters Spire."
+     },
+     {
+      "n": 2,
+      "notes": "Second single-rope rappel continuing toward the notch/gully.",
+      "anchor": "fixed station",
+      "hazards": [
+       "This is the rappel reported as coming up about 5 ft short on a 60 m rope, finished with a short downclimb. Expect it rather than discovering it at the ends",
+       "The gully is loose and chossy, and snow-covered well into the season"
+      ],
+      "lengthM": 30,
+      "station": "Second of the three single-rope rappels, down into the gully."
+     },
+     {
+      "n": 3,
+      "notes": "Third single-rope rappel reaching the notch.",
+      "anchor": "fixed station at notch/gully",
+      "hazards": [
+       "The gully here is the one parties mistakenly ASCEND when route-finding up the chasm; on the way down it is loose and often snow-filled",
+       "Rockfall onto anyone still on the rappel above"
+      ],
+      "lengthM": 30,
+      "station": "Third single-rope rappel, landing in the notch between North and South Early Winters Spire - often snow-covered. There is a tree at the notch that parties use as the landmark for the anchors here. A few minutes of class-3 scrambling and downclimbing links this to the chockstone station."
+     },
+     {
+      "n": 4,
+      "notes": "Largely free-hanging double-rope rappel past the giant chockstone (~50 ft of air); accounts describe this station as natural/mixed rather than a clean bolted line.",
+      "anchor": "mixed bolt/natural anchor above chockstone",
+      "hazards": [
+       "Fully free-hanging with no way to reach rock once you are on it",
+       "You arrive at this station from above by scrambling loose gully ground, which is where material gets knocked onto anyone below"
+      ],
+      "lengthM": 35,
+      "station": "The rappel this descent is known for. Below the notch, a short scramble leads to the giant chockstone in the gully; the station is a BOLTED rap anchor on top of the chockstone - not tat, and the same bolts parties belay from on the way up when climbing the Chockstone Route. The rappel goes off the chockstone and hangs completely free for around 50 ft, and is routinely described as the longest free-hanging rappel the party has done."
+     },
+     {
+      "n": 5,
+      "notes": "Final short (~30 ft) rappel, or downclimb/scramble alternative, back to the base.",
+      "anchor": "tree anchor",
+      "hazards": [
+       "Loose, steep gully walking either way"
+      ],
+      "lengthM": 10,
+      "station": "A few more minutes of class-3 scrambling and downclimbing below the chockstone, then a last short rappel of about 30 ft off a tree to the ground. Some parties downclimb this instead of rigging it."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "before": {
+    "road": {
+     "name": "State Route 20 / North Cascades Highway",
+     "status": "Seasonal — gated in winter",
+     "driveNote": "Blue Lake Trailhead is on Hwy 20 about 30 mi west of Winthrop (0.25 mi past the Washington Pass Overlook turnoff) or about 42 mi east of Newhalem. Small ~20-car paved lot with a privy; fills early on summer weekends.",
+     "seasonalGate": "Typically closed early/mid-December to mid/late spring (varies by year and snowpack/storm damage); 2025-26 closure ran Dec 4, 2025 to Jun 14, 2026. Gate points are usually Ross Dam TH (MP 134, west) and Silver Star (MP 171, east), sometimes moving to Newhalem (MP 120) / Early Winters (MP 178)."
+    },
+    "approach_logistics": {
+     "peakLat": 48.512935,
+     "peakLng": -120.655465,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    },
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail, then north along the base of the west side",
+      "hours": "1-2",
+      "notes": "Nearly all the routes on North Early Winters Spire are on its west side, so the Blue Lake Trailhead is the right side of the mountain to start from — the hairpin pullout on the east serves the East Buttress and couloir lines, not this one.\n\nFrom the Blue Lake Trailhead (~5,200 ft) on SR-20 about 1.5 miles west of Washington Pass, follow the maintained trail for roughly a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction, which sits just past a small stream and is marked with a large cairn. That stream is your last reliable water.\n\nTrail #727 switchbacks up slabs, talus and heather into the basin under the west faces. Approach as if for South Early Winters Spire and then traverse LEFT (north) along the base of the formations, scrambling, until you are under North Early Winters Spire. Most parties report one to two hours from the car.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "lingering snow and avalanche debris in the basin and approach gully into June",
+       "braided climbers' paths through the upper talus make it easy to drift onto the wrong formation",
+       "no water past the stream at the Trail #727 junction",
+       "poorly protected chimney section low on the first pitch"
+      ],
+      "baseFinding": "Keep traversing north along the base. The Northwest Corner begins at a distinct corner-and-crack system whose first pitch — around 45 metres of 5.8, including a short chimney section with sparse gear — runs up to a broad ledge covered in trees. That treed ledge is the landmark: it is visible from below and from across the basin, it is the top of pitch one, and the route continues up and left off its left-hand edge. If you are under blank slab with no corner leading to a treed ledge, you have not gone far enough north yet. The corner start is shared with the West Face route, so being at the right corner puts you at the right place for either — the two diverge above the ledge, not below it."
+     }
+    ]
+   }
+  }
+ ]
+}

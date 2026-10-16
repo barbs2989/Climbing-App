@@ -1,0 +1,115 @@
+{
+  "wa_mount_challenger_challenger_glacier": {
+    "area": "wa_mount_challenger",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Gaining the Challenger Glacier from Perfect Pass",
+        "class": "Class 4",
+        "notes": "Drop onto the glacier at about 7,000-7,200 ft from Perfect Pass or the Wiley Lake basin; the exact entry point shifts year to year with crevasse conditions. Depending on melt-out, getting off Perfect Pass camp can involve roughly 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat."
+      },
+      {
+        "n": 2,
+        "label": "Bergschrund and glacier snow to the summit rocks",
+        "notes": "Cross a bergschrund, then climb steepening snow — a snow arete in late season — toward the base of the summit rocks. Late-season hazard just below the summit rocks: a moat reported up to about 5 ft wide and occasionally impassable, forcing a detour to find a snow bridge."
+      },
+      {
+        "n": 3,
+        "label": "Scramble to the base of the summit pitch",
+        "class": "Class 3",
+        "notes": "A clean 3rd-class scramble takes the final approach to the true summit rock."
+      },
+      {
+        "n": 4,
+        "label": "Summit rock pitch",
+        "class": "5.5-5.7",
+        "notes": "A short pitch, roughly 50 ft, well protected on solid unbroken rock. Many parties fix a handline from the summit rappel anchor down to the top of the scramble to manage the exposure."
+      }
+    ]
+  },
+  "wa_buckner_mountain_north_face": {
+    "area": "wa_buckner_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower north face snow/ice",
+        "notes": "About 1,300 ft of 40-50 degree snow and ice overall. From the base, work left of the bergschrund, then back right into the center of the lower face and straight up. Competent parties in good conditions often solo the face; less experienced or larger parties belay with pickets and ice screws. Rockfall, afternoon softening and weather are the standing hazards."
+      },
+      {
+        "n": 2,
+        "label": "Rising leftward traverse under the upper cliffs",
+        "notes": "Continue straight up until upper rock cliffs force a rising traverse to the left."
+      },
+      {
+        "n": 3,
+        "label": "Summit exit around the rock outcrop",
+        "notes": "Within about 200 ft of the summit, go left around a craggy rock outcrop, then back right to the top."
+      }
+    ]
+  },
+  "wa_eldorado_peak_eldorado_glacier_nw": {
+    "area": "wa_main_peak",
+    "climbing_route": [],
+    "skip_reason": "The approach text ends at the couloir's base (~7,800 ft) and describes nothing above it. Everything it covers — the trail, the Roush Divide, the Eldorado Glacier traverse to the Eldorado-Dean's Spire col, high camps, and the optional belayed downclimb/two 30 m rappels shortcut — is travel to the base, not climbing on the route."
+  },
+  "wa_lemah_mountain_east_route": {
+    "area": "wa_lemah_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Cliff step onto the southeast snowfields",
+        "notes": "From about 6,200 ft, exit left (south) up a short cliff step onto the glacial remnants and snowfields on the peak's southeast side, then traverse to just southwest of the main summit."
+      },
+      {
+        "n": 2,
+        "label": "Cliff bands to the Lemah Two / Main Peak col",
+        "class": "Class 2-3",
+        "notes": "A series of cliff bands leads to the col between Lemah Two and the Main (East) Peak. Trip reports flag this as the technical crux for both route-finding and loose rock: scrambling is loose and exposed, and locating the correct gully and cliff-band line up to the col is a genuine route-finding crux, especially in fog, low visibility, or lingering snow."
+      },
+      {
+        "n": 3,
+        "label": "Summit block step from the col",
+        "class": "easy 5th class",
+        "notes": "From the Lemah Two / Main col, a short exposed step of easy 5th-class climbing guards the final summit block."
+      }
+    ]
+  },
+  "wa_mount_fernow_southeast_face": {
+    "area": "wa_mount_fernow",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "South/southeast talus and scree slopes",
+        "class": "Class 2-3",
+        "notes": "Broad talus and scree on Fernow's south/southeast side, roughly a mile of mostly class 2-3 talus toward the summit block. It holds one notably exposed 'unexpected crux' — a sloped, gravel-covered slab with about a 30 m drop below and a 10 m traverse across it; rated only class 2 but consequential."
+      },
+      {
+        "n": 2,
+        "label": "Upper choss to the summit block",
+        "class": "Class 3-4",
+        "notes": "Above about 8,800 ft the terrain steepens into class 3-4 choss for the final several hundred feet up to the base of the summit block."
+      }
+    ]
+  },
+  "wa_denny_mountain_north_slopes": {
+    "area": "wa_denny_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Open ramp to the summit horn",
+        "notes": "Above the Edelweiss lift station, angle up the wide open ramp toward the summit horn, transitioning from scree and heather to broken rock."
+      },
+      {
+        "n": 2,
+        "label": "Cabled ledge traverse",
+        "notes": "A fixed steel cable — a short via-ferrata-style handline — protects an exposed, down-sloping and often slick rock ledge traverse just below the top."
+      },
+      {
+        "n": 3,
+        "label": "Rock cleft to the summit block",
+        "class": "Class 2-3",
+        "notes": "A short scramble through a narrow rock cleft finishes the route; some parties report a stiffer class 3-4 move. The summit block carries an old radio-relay structure and a survey marker."
+      }
+    ]
+  }
+}

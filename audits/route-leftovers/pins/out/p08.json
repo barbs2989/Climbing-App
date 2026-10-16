@@ -1,0 +1,423 @@
+{
+ "results": [
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "verdict": "confirmed",
+   "summary": "The start pin sat at the Cascade Pass road-end instead of the Boston Basin trailhead this route starts from, and two glacier pins sat on the Cascade Pass trail kilometres from the Boston Glacier; the start is moved, the two stray pins removed, and the mileages measured from the wrong start cleared.",
+   "evidence": "Pin 0: the route's approach, variant and day 1 all start at the Boston Basin trailhead (~3,200 ft, mile 21.7 of Cascade River Road). OSM maps the Boston Basin Trail starting at a parking area at 48.4803,-121.0797, and the route guide for Boston Peak gives the trailhead as 48.48055,-121.07979 (30 m apart); four neighbouring Boston Basin routes use the same point. Ground height 3,215 ft. Pins 1-3 (Cascade Pass, Sahale Glacier Camp, Sahale-Boston col) are kept: the itinerary exits over Sahale Arm and Cascade Pass on day 3 and the variant names the Sahale route as a second way in; the Cascade Pass pin is 95 m from OSM's pass node. Their distMi (3.7/5.9/7.0) and the summit's 8.6 were measured from the Cascade Pass road-end, so they are cleared. Pin 1's note called the Cascade Pass trail the PCT, which it is not. Sahale Glacier Camp: OSM puts the camp 460 m SE of the pin while a campground listing agrees with the pin, so it is left. Pins 4 ('Boston Glacier crossing', 48.4713,-121.0608) and 5 ('North Face bergschrund', 48.4776,-121.0677) sit beside Cascade Pass and the Cascade Pass trailhead, 3-4 km from the Boston Glacier (OSM centre 48.509,-121.043) and the foot of Buckner's north face; no source gives a coordinate for the crossing or the schrund, so they are removed (their hazards are already in the variant's hazard list). approach_logistics still names the Cascade Pass trailhead with its coordinates; that is not a pin and is not changed here.",
+   "sources": [
+    "https://www.openstreetmap.org/way/1110147162",
+    "https://www.summitpost.org/boston-peak/151096",
+    "https://www.openstreetmap.org/way/563981214",
+    "https://www.openstreetmap.org/node/4278630830",
+    "https://www.openstreetmap.org/way/305191555",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Sahale+Glacier+Camp",
+    "https://thedyrt.com/camping/washington/sahale-glacier-camp"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_buckner_mountain_north_face",
+     "index": 0,
+     "expect": {
+      "name": "Cascade Pass Trailhead",
+      "lat": 48.4754,
+      "lng": -121.0751
+     },
+     "lat": 48.48055,
+     "lng": -121.07979,
+     "elev": 3210,
+     "sources": [
+      "https://www.openstreetmap.org/way/1110147162",
+      "https://www.summitpost.org/boston-peak/151096"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_buckner_mountain_north_face",
+     "index": 4,
+     "expect": {
+      "name": "Boston Glacier crossing",
+      "lat": 48.471253,
+      "lng": -121.060763
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_buckner_mountain_north_face",
+     "index": 5,
+     "expect": {
+      "name": "North Face bergschrund",
+      "lat": 48.477583,
+      "lng": -121.067672
+     }
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Cascade Pass Trailhead",
+     "value": "Boston Basin Trailhead"
+    },
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "End of Cascade River Road (FR-15); self-issue wilderness permit required for overnight camping.",
+     "value": "Small pullout on Cascade River Road (FR-15) at about 3,200 ft. The unmaintained climbers' path follows an old mining road about a mile, then climbs steeply through old growth into Boston Basin; wilderness permit required for overnight camping, and Boston Basin camping is limited to its two designated camps."
+    },
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "expect": "Cascade River Road (FR-15) runs east from Marblemount to the road-end loop, a couple of miles past the Boston Basin trailhead at mile 21.7, where the usual approach to this face starts; this road-end start is the Sahale Arm way in, which is also the usual way out. The upper road is narrow gravel and holds snow into early summer.",
+     "value": "Cascade River Road (FR-15) runs east from Marblemount; the trailhead is a small pullout at about mile 21.7, a couple of miles short of the Cascade Pass road-end loop where the Sahale Arm exit comes out. The upper road is narrow gravel and holds snow into early summer."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Leave the PCT/Stehekin trail and climb",
+     "replace": "On the Sahale Arm way in or out: leave the Cascade Pass trail here and climb"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "From the road-end loop the maintained trail",
+     "replace": "From the Cascade Pass road-end loop, a couple of miles past the Boston Basin pullout, the maintained trail"
+    },
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 3.7,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 5.9,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 7,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_buckner_mountain_north_face",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 8.6,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at the end of a different spur road, about 3.5 miles east of the peak and 600 ft too high; it is moved to the end of the spur that continues past the Eagle Lake trailhead, and its note no longer says the spur end is five miles past that trailhead.",
+   "evidence": "Pin 0 was at 47.7768,-121.3446, the end of OSM's FR 6514-409 spur east of the Eagle Creek Road fork: 5.7 km in a straight line from the summit (the route is 2.4 mi one way) and 4,100 ft on the ground against the stated 3,480 ft. A 2025 trip report gives the start as the end of spur 410, reached by driving five miles to the fork and continuing past the Eagle Lake trailhead, starting at 3,480 ft; a 2002 report also parks at the end of the Eagle Creek road beyond the fork and follows the ridge west to Grotto Lake. OSM's only road end past the Eagle Lake Fisherman's trailhead is the track ending at 47.76305,-121.39002, ground height 3,505 ft, about 2.3 km east of the summit with Grotto Lake between: it fits both reports. The note's 'about 5 miles past the Eagle Lake trailhead fork' misread the drive. Klinger Lake (pin 3) matches the USGS name point exactly; the summit matches OSM; the other pins are unpinned or untestable and are left. approach_logistics still holds the old trailhead coordinates; not a pin, not changed here.",
+   "sources": [
+    "https://www.openstreetmap.org/way/587354333",
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314",
+    "https://www.openstreetmap.org/node/53024244",
+    "https://www.openstreetmap.org/way/6327678",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_grotto_mountain_e_route",
+     "index": 0,
+     "expect": {
+      "name": "NF-6514-410 road's end",
+      "lat": 47.776833,
+      "lng": -121.344633
+     },
+     "lat": 47.76305,
+     "lng": -121.39002,
+     "elev": 3500,
+     "sources": [
+      "https://www.openstreetmap.org/way/587354333",
+      "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+      "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_grotto_mountain_e_route",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Park at the end of the spur off Beckler River Road (FS-65)/FS-6514, about 5 miles past the Eagle Lake trailhead fork; no maintained trail beyond this point.",
+     "replace": "Park at the end of spur 410 off Eagle Creek Road (FS-6514), which leaves Beckler River Road (FS-65): about five miles in, keep on 410 at the fork and continue past the Eagle Lake trailhead to the road's end; no maintained trail beyond this point."
+    }
+   ]
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "verdict": "confirmed",
+   "summary": "The Rampart Lakes pin marks a lake this route never goes to — the climb leaves the Rachel Lake trail at the avalanche clearing and goes up Box Ridge — so it is removed.",
+   "evidence": "The pin is correctly on Rampart Lakes (USGS name point 47.41572,-121.34044; OSM lake 47.41576,-121.34064), but that is about 3.5 km west-southwest of Hibox's summit and beyond Rachel Lake. The route's approach, beta, itinerary and descent all leave the Rachel Lake Trail near 2-2.2 miles at the avalanche clearing and climb northeast up the Hibox boot path; Rampart Lakes appears only as a summit view. No counterpart pin exists to move it to (the boot-path junction has no published coordinate).",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7",
+    "https://www.openstreetmap.org/relation/6520842",
+    "https://www.openstreetmap.org/node/356547169"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_hibox_mountain_standard",
+     "index": 1,
+     "expect": {
+      "name": "Rampart Lakes",
+      "lat": 47.4157642,
+      "lng": -121.340643
+     }
+    }
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "verdict": "confirmed",
+   "summary": "Five pins traced the Mildred Lakes trail, which this route does not use; the list now runs Putvin trailhead, Lake of the Angels camp, summit, and the Mildred pins are gone.",
+   "evidence": "The route text, variant, itinerary and camp all go Putvin Trailhead -> Putvin Trail #813 -> Lake of the Angels -> 5,800 ft saddle -> summit, and say the Mildred side serves other peaks. Pins 0-4 (Huckleberry Creek crossing, root-ladder ridge high point, Mildred Lakes basin, brush slope above the lakes, and an unpinned saddle) all describe the Mildred Lakes trail. Pin 0 is moved onto the Putvin trailhead and renamed to become the first pin: OSM maps the Putvin Trailhead parking at 47.58330,-123.23429 and the trail guide for Lake of the Angels starts at 47.5836,-123.2347 (40 m apart); this is where the old trailhead pin 5 already sat, which is then removed as a duplicate so the trailhead comes first in the list. Ground 1,586 ft. Pin 2 is moved onto Lake of the Angels, the route's camp: USGS name point 47.59658,-123.27357 and OSM lake 47.59656,-123.27360 agree; ground 4,945 ft (the route says 4,850-4,920 ft); the route states 3.5 mi from the trailhead. Pins 1, 3 and 4 have no Putvin counterpart with a published coordinate and are removed. The summit agrees with OSM within 15 m.",
+   "sources": [
+    "https://www.openstreetmap.org/way/832769290",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7",
+    "https://www.openstreetmap.org/relation/15361917",
+    "https://www.openstreetmap.org/node/2821966498",
+    "https://www.openstreetmap.org/node/4109408751"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_mount_skokomish_standard",
+     "index": 0,
+     "expect": {
+      "name": "Huckleberry Creek crossing",
+      "lat": 47.569916,
+      "lng": -123.273736
+     },
+     "lat": 47.583284,
+     "lng": -123.234276,
+     "elev": 1590,
+     "sources": [
+      "https://www.openstreetmap.org/way/832769290",
+      "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_mount_skokomish_standard",
+     "index": 2,
+     "expect": {
+      "name": "Mildred Lakes basin (Lower/Upper Mildred Lake)",
+      "lat": 47.5589791,
+      "lng": -123.2998876
+     },
+     "lat": 47.59658,
+     "lng": -123.27357,
+     "elev": 4950,
+     "sources": [
+      "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7",
+      "https://www.openstreetmap.org/relation/15361917"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_skokomish_standard",
+     "index": 1,
+     "expect": {
+      "name": "Root-ladder ridge highpoint (4,100 ft)",
+      "lat": 47.565768,
+      "lng": -123.283656
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_skokomish_standard",
+     "index": 3,
+     "expect": {
+      "name": "Off-trail brush slope above the lakes",
+      "lat": 47.565955,
+      "lng": -123.298602
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_skokomish_standard",
+     "index": 4,
+     "expect": {
+      "name": "Basin/saddle below Skokomish's south peak",
+      "lat": null,
+      "lng": null
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_skokomish_standard",
+     "index": 5,
+     "expect": {
+      "name": "Putvin Trailhead (Trail #813, FR-25/Hamma Hamma Rd)",
+      "lat": 47.583284,
+      "lng": -123.234276
+     }
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Huckleberry Creek crossing",
+     "value": "Putvin Trailhead (Trail #813, FR-25/Hamma Hamma Rd)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      0,
+      "type"
+     ],
+     "expect": "Water",
+     "value": "Trailhead"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Trail drops into a brushy ravine to ford Huckleberry Creek — last reliable water before the root-ladder climb, and easy to lose in poor light.",
+     "value": "About 12 miles up Hamma Hamma Road (FR-25) from US-101, just past the lower Lena Lake trailhead across a concrete bridge, at about 1,600 ft. The trail is steep and narrow, with a root-and-rock headwall below the lake."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 1.4,
+     "value": 0
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      2,
+      "name"
+     ],
+     "expect": "Mildred Lakes basin (Lower/Upper Mildred Lake)",
+     "value": "Lake of the Angels"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "expect": "Trail drops ~250 ft off the ridge to Lower Mildred Lake then continues past Middle to Upper Mildred Lake in a wooded bowl between Mount Lincoln and Mount Cruiser; informal camps on rock benches, last dependable water before going off-trail.",
+     "value": "Standard camp for the peak, about 3.5 miles and 3,400 ft from the trailhead: four designated sites in a fragile basin, Olympic National Park wilderness permit required, no fires. The lake is shallow and can be low and warm late in a dry season. From here, go around the right-hand side of the lake and climb west to the 5,800 ft saddle."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_skokomish_standard",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 4.3,
+     "value": 3.5
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "verdict": "confirmed",
+   "summary": "The 'Terror Glacier crossing' pin sat on the south side of the peak, on a glacier this route never crosses; the real crossing is on the Mustard Glacier on the north side, which has no published coordinate, so the pin is removed.",
+   "evidence": "The route reaches the north face from Crescent Creek Basin over the Ottohorn-Himmelhorn col and down the Mustard Glacier into McMillan Cirque; the text never crosses the Terror Glacier. The pin (48.7686,-121.3035, ground 6,300 ft) is 650 m south-southwest of the summit, on the south side of the crest toward the Terror Glacier (OSM centre 48.7654,-121.2924; USGS name point 48.7669,-121.2893). The Mustard Glacier is not named in USGS names or OSM and no source gives a coordinate for the crossing below the face, so there is no sourced place to move it to; the crevasse hazard is already in the variant's hazard list. Not changed, but worth a look: pin 3 '~6,200' notch above Terror Basin' sits 480 m from the summit at a ground height of 6,540 ft, which does not fit a 6,200 ft approach saddle; no two sources place that notch, so it is left.",
+   "sources": [
+    "https://www.openstreetmap.org/way/372063599",
+    "https://www.openstreetmap.org/node/349028391",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_terror_north_face",
+     "index": 5,
+     "expect": {
+      "name": "Terror Glacier crossing",
+      "lat": 48.768571,
+      "lng": -121.303544
+     }
+    }
+   ],
+   "ops": []
+  }
+ ]
+}

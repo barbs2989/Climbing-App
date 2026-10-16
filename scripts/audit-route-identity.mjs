@@ -107,7 +107,10 @@ const COMPARATIVE = /\b(not|unlike|other than|rather than|as opposed to|compared
 // Big pages: the default 60 would be ~3,400 round trips over the 200k-row routes table.
 const PAGE = { pageSize: 1000 };
 
-const areasList = await selectAll("areas", "id,name,parent_id,area_type,elevation_ft", null, PAGE);
+// lat/lng are for check 10 only. Every other check here works on names and ancestry, which is
+// deliberate — but check 10's whole point is that a NAME cannot arbitrate between two areas that
+// share one, so it needs the coordinate.
+const areasList = await selectAll("areas", "id,name,parent_id,area_type,elevation_ft,lat,lng", null, PAGE);
 const areas = new Map(areasList.map(a => [a.id, a]));
 
 function ancestry(id) {
@@ -136,7 +139,10 @@ function stateOf(areaId) {
 // that omits them yields undefined for every row — which reads as "clean" rather than as
 // an error. Both checks silently reported 0 findings until this list was widened.
 const NUMERIC = ["gain_ft", "loss_ft", "dist_km", "length_m", "high_point_ft"];
-const routes = await selectAll("routes", ["id", "name", "area_id", ...ENRICHED, ...NUMERIC].join(","), null, PAGE);
+// approach_logistics is fetched but kept OUT of ENRICHED on purpose: checks 2, 5 and 7 iterate
+// ENRICHED as prose columns, and a jsonb blob there would be stringified into every one of them.
+// Only check 10 reads it.
+const routes = await selectAll("routes", ["id", "name", "area_id", "approach_logistics", ...ENRICHED, ...NUMERIC].join(","), null, PAGE);
 const scoped = STATE
   ? routes.filter(r => stateOf(r.area_id).startsWith(STATE) || String(r.id).startsWith(`${STATE}_`))
   : routes;
@@ -489,6 +495,109 @@ for (const s of steep.slice(0, 20)) {
 if (steep.length > 20) console.log(`   ... ${steep.length - 20} more`);
 console.log("");
 
+// ------------------------------------------------------- 10. peak coordinate resolved by NAME
+// The same root cause as check 1, one column over, and reached only by coordinates. There are two
+// WA areas named "South Face" — one at Squire Creek near Darrington, one at Pinto Rock 130 miles
+// south — and four Squire Creek routes stored `approach_logistics.peakLat/Lng` pointing at the
+// OTHER one. Nothing else here can see it: the value is a plausible WA coordinate, the column is
+// populated, and every name involved is correct.
+//
+// THE CONVENTION IS MEASURED, NOT ASSUMED. Across 749 comparable WA routes, peakLat/Lng is
+// identical to the route's own area coordinate on 693 (92.5%) — median 0.00 mi, p90 0.01, p99
+// 1.74. So "far from your own area" is a real anomaly rather than a guess about how the column
+// ought to behave. FAR_MI sits well past p99.
+const FAR_MI = 25;
+const R_MI = 3958.7613, RAD = Math.PI / 180;
+const miBetween = (a, b) => 2 * R_MI * Math.asin(Math.min(1, Math.sqrt(
+  Math.sin((b.lat - a.lat) * RAD / 2) ** 2 +
+  Math.cos(a.lat * RAD) * Math.cos(b.lat * RAD) * Math.sin((b.lng - a.lng) * RAD / 2) ** 2)));
+
+const located = areasList.filter(a => Number.isFinite(Number(a.lat)) && Number.isFinite(Number(a.lng)))
+  .map(a => ({ ...a, lat: Number(a.lat), lng: Number(a.lng) }));
+
+// The four real offenders were REPAIRED the day this check was written, so a clean run is now the
+// expected result — and a clean run is exactly what a broken detector prints. The fault lives in
+// the database and this script cannot write, so the injection perturbs a row in memory on the way
+// past. Both cases must MOVE THE COUNTER, not merely log.
+//   --inject=peakname   point a route at a far area that SHARES its area's name -> MUST report 1
+//   --inject=peakfar    point it at a far area with a DIFFERENT name            -> MUST report 0
+// The second is the one that matters: it pins the exclusion that keeps wa_ptarmigan_traverse out.
+const INJECT_PEAK = (process.argv.find(a => a.startsWith("--inject=")) || "").split("=")[1] || null;
+if (INJECT_PEAK) {
+  const wantSame = INJECT_PEAK === "peakname";
+  if (INJECT_PEAK !== "peakname" && INJECT_PEAK !== "peakfar") { console.log(`unknown --inject=${INJECT_PEAK}`); process.exit(1); }
+  // PICK THE VICTIM BY WHETHER A COLLISION CAN BE BUILT FROM IT, not by taking the first eligible
+  // row. The first draft grabbed the first route with a peakLat and then looked for a far area
+  // sharing its area's name — that name was unique catalog-wide, so the case aborted with
+  // "no far area with a matching name" and proved nothing. The pair has to be chosen together.
+  const byName = new Map();
+  for (const a of located) {
+    const k = norm(a.name);
+    if (!byName.has(k)) byName.set(k, []);
+    byName.get(k).push(a);
+  }
+  let victim = null, far = null, own = null;
+  for (const r of scoped) {
+    const al = r.approach_logistics;
+    const o = areas.get(r.area_id);
+    if (!al || typeof al !== "object" || !Number.isFinite(Number(al.peakLat))) continue;
+    if (!o || !Number.isFinite(Number(o.lat))) continue;
+    const oPt = { lat: Number(o.lat), lng: Number(o.lng) };
+    const pool = wantSame ? (byName.get(norm(o.name)) || []) : located;
+    const hit = pool.find(a => a.id !== o.id && miBetween(oPt, a) > FAR_MI * 2 &&
+      (wantSame ? true : norm(a.name) !== norm(o.name)));
+    if (hit) { victim = r; far = hit; own = o; break; }
+  }
+  if (!victim) { console.log(`inject: no route/area pair supports a ${wantSame ? "same-name" : "different-name"} far target`); process.exit(1); }
+  victim.approach_logistics = { ...victim.approach_logistics, peakLat: far.lat, peakLng: far.lng };
+  console.log(`inject ${INJECT_PEAK} -> ${victim.id} (area "${own.name}") peak set to ${far.id} "${far.name}"\n`);
+}
+const peakMisresolved = [];
+let comparable = 0;
+for (const r of scoped) {
+  const al = r.approach_logistics;
+  if (!al || typeof al !== "object") continue;
+  const p = { lat: Number(al.peakLat), lng: Number(al.peakLng) };
+  if (!Number.isFinite(p.lat) || !Number.isFinite(p.lng)) continue;
+  const own = areas.get(r.area_id);
+  if (!own || !Number.isFinite(Number(own.lat))) continue;
+  comparable++;
+  const ownPt = { lat: Number(own.lat), lng: Number(own.lng) };
+  const away = miBetween(p, ownPt);
+  if (away <= FAR_MI) continue;
+  // What does the stored value actually denote? The nearest area to it.
+  let best = null;
+  for (const a of located) { const mi = miBetween(p, a); if (!best || mi < best.mi) best = { a, mi }; }
+  if (!best) continue;
+  // THE NAME COLLISION IS REQUIRED, NOT THE DISTANCE — and this exclusion is load-bearing rather
+  // than cautious. `wa_ptarmigan_traverse` sits 25.1 mi from its own area and points at Dome Peak,
+  // which is CORRECT: its area is "Alpine and Technical Traverses", a range-level container, and a
+  // traverse legitimately anchors on one of its peaks. Reporting on distance alone would tell
+  // somebody to break working data.
+  const collides = norm(best.a.name) === norm(own.name);
+  if (!collides) continue;
+  peakMisresolved.push({ id: r.id, ownArea: own.id, ownAreaName: own.name, away,
+                         pointsAt: best.a.id, pointsAtName: best.a.name });
+}
+peakMisresolved.sort((a, b) => b.away - a.away);
+console.log(`10. PEAK COORDINATE RESOLVED BY AREA NAME  (${peakMisresolved.length} route(s) point at a DIFFERENT area sharing their area's name)`);
+// FAIL CLOSED. If approach_logistics were dropped from the select, or `areas` lost its
+// coordinates, every row would skip and this would print 0 — indistinguishable from clean. That
+// is the exact failure the NUMERIC comment above records for checks 6 and 7.
+if (!comparable) {
+  console.log(`   SCAN BROKE: 0 routes had both a peakLat/Lng and a located area. That is not a clean`);
+  console.log(`   catalog — check that approach_logistics is still in the routes select and that`);
+  console.log(`   areas still carry lat/lng.`);
+} else {
+  for (const m of peakMisresolved) {
+    console.log(`   ${m.id.padEnd(44)} ${m.away.toFixed(0)} mi from its own area`);
+    console.log(`      own area  : ${m.ownArea} "${m.ownAreaName}"`);
+    console.log(`      points at : ${m.pointsAt} "${m.pointsAtName}"  — same name, different place`);
+  }
+  console.log(`   (${comparable} route(s) comparable)`);
+}
+console.log("");
+
 const report = {
   examined: scoped.length,
   idScoping: { peakScoped: scoped.length - orphan.length, nameDerived: orphan.length,
@@ -500,6 +609,7 @@ const report = {
   numericContamination: numericContam,
   wrongJurisdiction: wrongJuris,
   gainExceedsDistance: steep,
+  peakCoordinateResolvedByName: peakMisresolved,
 };
 if (OUT) { fs.writeFileSync(OUT, JSON.stringify(report, null, 1)); console.log(`wrote ${OUT}`); }
 

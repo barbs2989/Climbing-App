@@ -1,0 +1,83 @@
+{
+ "id": "wa_mount_dana_scramble",
+ "name": "Mount Dana Scramble",
+ "approach": "Getting to the trailhead is part of the approach: November 2017 flood damage closed Olympic Hot Springs Road to vehicles at the Madison Falls parking area, and that closure, still listed with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adds roughly 7 miles each way of road walking or biking just to reach the Whiskey Bend trailhead (the road remains open to foot/bike traffic beyond Madison Falls). From Whiskey Bend, the actual hike-in follows the Elwha River Trail, a well-graded historic path along the river's east bank that passes the old Geyser Valley homestead sites (Michael's Cabin, Humes Ranch) in the first mile or two. The trail is mellow by Olympic standards, staying under roughly 2,000 ft of gain through its first 15+ miles, and passes Lillian River junction (~4 mi), Mary's Falls Camp (8.8 mi), Canyon Camp, Elkhorn Guard Station, and Stony Point as it winds upstream through old-growth forest with the Elwha River itself as a constant, reliable water source. Camp Wilder and Hayes River Guard Station mark roughly the trail's halfway point. Continue up the valley to Chicago Camp, roughly 24-26 trail miles from Whiskey Bend, where the Elwha River must be forded; check conditions before you go, since the crossing can be genuinely hazardous in early-season high water or after rain. At Chicago Camp leave the main trail, which turns south for Low Divide, and take the fainter way trail west up the Elwha toward Elwha Basin, past Happy Hollow camp. Beyond Happy Hollow the route leaves all paths: strike north up the valley side, steep and brushy through timber, to the crest of the ridge that joins Mount Barnes and Mount Wilder. There is no path on the ridge either. Stay high and follow the crest east toward Mount Wilder and then northeast to Dana, finishing with a class 2 scramble to the 6,213-ft summit. Water is scarce once you leave the valley floor, so carry enough for a camp on the ridge. This is a trip of several days, and solid off-trail navigation is essential from Chicago Camp on.",
+ "approach_logistics": {
+  "peakLat": 47.791345,
+  "peakLng": -123.485665,
+  "trailhead": "Whiskey Bend Trailhead (Elwha)",
+  "trailheadLat": 47.968,
+  "trailheadLng": -123.583,
+  "trailheadDirection": "Via the Elwha Valley: Olympic Hot Springs Road is closed to vehicles at Madison Falls — walk or bike ~7 miles to the Whiskey Bend Trailhead"
+ },
+ "access": {
+  "fees": "Park entrance: $30/vehicle or $15/person on foot/bike (both valid 7 days), or $55 for an annual Olympic NP pass. Wilderness camping permit: $8 per person per night plus a non-refundable $6 per-permit reservation fee (youth 15 and under camp free).",
+  "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+  "rules": "Campfires are prohibited above 3,500 ft; the Elwha River and its tributaries are closed to fishing; the Elwha must be forded (unbridged) at Chicago Camp en route to the interior.",
+  "permit": "No separate climbing permit is required. Any overnight stay in the backcountry requires a Wilderness Camping Permit, reserved via Recreation.gov or in person at the Wilderness Information Center (WIC) in Port Angeles — required practically for this route given the multi-day approach. Nights in the cross-country zones beyond Chicago Camp cannot be booked online; arrange them by calling the WIC.",
+  "closures": "Olympic Hot Springs Road is closed to all vehicle traffic at Madison Falls due to flood/washout damage, adding roughly 7 miles of walking or biking each way to reach the Whiskey Bend trailhead; check current NPS Elwha status before planning.",
+  "group_limit": 12,
+  "landManager": "Olympic National Park",
+  "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+  "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+  "passRequired": "Olympic National Park entrance pass or America the Beautiful interagency pass, plus a wilderness camping permit",
+  "overnight_permit": {
+   "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+   "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+   "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+  }
+ },
+ "road": {
+  "name": "Olympic Hot Springs Road to Whiskey Bend Road",
+  "status": "Closed to vehicles at Madison Falls due to washout",
+  "driveNote": "From Port Angeles, drive to the Madison Falls parking area; vehicle access beyond that point has been closed since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, requiring an additional ~7 miles each way on foot or bike to reach the Whiskey Bend trailhead."
+ },
+ "waypoints": [
+  {
+   "lat": 47.968,
+   "lng": -123.583,
+   "elev": 1250,
+   "name": "Whiskey Bend Trailhead",
+   "note": "Start of the Elwha River Trail (28.4 mi to Low Divide); the road to it has been closed to vehicles at the Madison Falls parking area since November 2017 flood damage, so it is reached on foot or by bike.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US-101 about 8 miles west of Port Angeles, turn south on Olympic Hot Springs Road into the Elwha Valley and drive to the Madison Falls parking area at the park boundary, where the road is closed to vehicles by flood damage. From there walk or bike the closed road and the Whiskey Bend Road, about 6 miles one way, to the trailhead. An Olympic National Park entrance pass applies, and overnight trips need a wilderness permit."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1500,
+   "name": "Lillian River Trail junction",
+   "note": "Elwha River Trail crosses to the east bank near the Lillian River confluence and meets the Lillian River Trail spur; reliable water here before the climb to a high crest at mile 6.2.",
+   "type": "Junction",
+   "distMi": 4.8
+  },
+  {
+   "lat": 47.902313,
+   "lng": -123.490328,
+   "elev": 1296,
+   "name": "Mary's Falls Camp",
+   "note": "Established backcountry campsite beside the falls on the Elwha River Trail; NPS wilderness permit reservation required in summer season.",
+   "type": "Campsite",
+   "distMi": 8.8
+  },
+  {
+   "lat": 47.7366057,
+   "lng": -123.5293929,
+   "elev": 1900,
+   "name": "Chicago Camp (Elwha ford)",
+   "note": "Ford (footlog when present) of the Elwha River just before the trail's steep 3.1 mi final push toward Low Divide; last established camp before leaving the maintained trail for Elwha Basin.",
+   "type": "Water",
+   "distMi": 25.3
+  },
+  {
+   "lat": 47.791345,
+   "lng": -123.485665,
+   "elev": 6214,
+   "name": "Mount Dana",
+   "note": "Summit of Mount Dana, reached by following the ridge crest east and then northeast from the Barnes–Wilder ridge; class 2 scrambling at the top.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "wa_mount_baker_cockscomb_ridge",
+ "name": "Cockscomb Ridge",
+ "approach_logistics": {
+  "peakLat": 48.7797,
+  "peakLng": -121.8204,
+  "trailhead": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+  "trailheadLat": 48.80218056,
+  "trailheadLng": -121.894725,
+  "trailheadDirection": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+ },
+ "waypoints": [
+  {
+   "lat": 48.80224,
+   "lng": -121.89567,
+   "elev": 3670,
+   "name": "Heliotrope Ridge Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+  },
+  {
+   "lat": 48.7893,
+   "lng": -121.86777,
+   "elev": 5900,
+   "name": "Heliotrope Ridge Camp",
+   "type": "Campsite",
+   "distMi": 3,
+   "directions": "Follow Trail 677 through old growth, crossing Grouse, Kulshan and Heliotrope Creeks (lowest early in the day), to the signed fork at about 2 miles. Take the right-hand climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft beside the Coleman Glacier."
+  },
+  {
+   "lat": 48.79605,
+   "lng": -121.81755,
+   "elev": 7800,
+   "name": "Cockscomb Ridge base (east edge of the Roosevelt Glacier)",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Rope up and head east-northeast across the Coleman and then the Roosevelt Glacier, two to three hours through a crevasse field with thin snow bridges, then take low-to-moderate snow ramps to the foot of the ridge at about 7,500 to 7,800 ft on the east edge of the Roosevelt."
+  },
+  {
+   "lat": 48.78642,
+   "lng": -121.81378,
+   "elev": 9260,
+   "name": "Cockscomb Tower",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Climb the lower ridge on moderate snow, passing a pinnacle on its right and keeping to snow over the poor rock. Get around the junky towers and bergschrunds on the left (east) on ramps through the icefall, including a long contour east near 9,000 ft around a schrund, to the foot of the 300 ft Cockscomb Tower."
+  },
+  {
+   "lat": 48.776797,
+   "lng": -121.814467,
+   "elev": 10781,
+   "name": "Mount Baker Summit",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Pass the tower on its left (east) side by steep snow; late in the season, when that snow is gone, drop onto the Park Glacier and climb its AI3 headwall instead. Regain the crest above the tower, follow it as it broadens into the summit plateau, and cross the plateau to Grant Peak."
+  }
+ ]
+}

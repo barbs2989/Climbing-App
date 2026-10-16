@@ -1,0 +1,1167 @@
+{
+ "applied": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "op": "patch",
+   "columns": [
+    "waypoints",
+    "dist_km"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "area_id": "wa_gunn_peak",
+   "name": "Southeast Route",
+   "discipline": "scrambling",
+   "grade": "Class 4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh, on their fifth attempt, approaching via Lewis Creek",
+   "lat": null,
+   "lng": null,
+   "aspect": "SE approach via Tailgunner Pass, crossing the south face to a north-side ledge below the summit",
+   "season": "Jun-Sep; early-June parties encounter significant lingering snow and brush, while late-July through August is typically clearer",
+   "description": null,
+   "gear": [
+    "rope (recommended)",
+    "light rock rack",
+    "helmet"
+   ],
+   "hazards": [
+    "steep brush (alder, devil's club, salmonberry) on the lower approach",
+    "loose rock",
+    "narrow, ~1-ft-wide exposed ledge/ramp on the summit block, dangerous when wet",
+    "route-finding — the climbers' path is unmaintained and easy to lose, especially in the old clear-cut and boulder field",
+    "log-jam creek crossing of Barclay Creek can be slick"
+   ],
+   "verif": null,
+   "overview": "Gunn Peak is an extraordinarily prominent summit above the Sultan Basin and Skykomish valley — the highest point in the Wild Sky Wilderness and the 29th-most prominent peak in Washington, its 3,600-plus feet of prominence making it a coveted objective. First climbed July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh. The standard route climbs from Barclay Lake Trailhead over Tailgunner Pass into Gunn Basin, then up the southwest corner of the summit block via a hidden, often-wet Class 3 ramp through a lower cliff band (the 'hidden ramp'), squeezing through a notch east of the true summit to exposed heather ledges on the north side leading to the top. Few parties climb it each year, largely due to the brushy, easy-to-lose approach and short but serious summit-block exposure; many combine it with neighboring Tailgunner Peak.",
+   "beta": "Serious alpine scramble requiring climbing experience and high mountain skills. Follows overgrown logging roads and climbers' trails from Barclay Lake, ascending steeply through forest to boulder field approach. Technical crux is an exposed class 3-4 hidden ramp with loose rock and significant exposure. A narrow ledge on north side of summit requires careful foot placement, especially in wet or icy conditions. Multiple search and rescue incidents have occurred on this peak.",
+   "turnaround": "Start descent by 3-4 PM at latest to ensure full daylight return to trailhead. Be especially conservative in autumn (shorter days) and spring (weather instability).",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "Class 2-4 scrambling, with exposed class 3-4 sections on the hidden-ramp-equivalent step and the summit block",
+   "ice_grade": null,
+   "gain_ft": 4700,
+   "loss_ft": 4700,
+   "dist_km": 4.8,
+   "max_angle": 40,
+   "rappels": "A short rappel is sometimes placed over the steepest scramble step on descent; otherwise the route is climbed unroped with occasional running belays",
+   "commitment": "III",
+   "face": "South Face / East Ridge via Tailgunner Pass and Gunn Point",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell phone service unreliable or absent in Barclay Lake area and Wild Sky Wilderness. Download offline topographic maps (Gaia GPS, Caltopo, or similar) before departing. Carry satellite messenger or personal locator beacon (PLB) if possible, as multiple search and rescue operations conducted on this peak.",
+   "descent": "Reverse the ascent: downclimb the exposed heather ledges and the 'hidden ramp' back through the notch (some parties place a hand-line or short rappel on the ramp if wet or for less-experienced members), then re-cross Gunn Basin, back over Tailgunner Pass, and down the brushy climbers' path to the Barclay Creek log jam and trailhead.",
+   "obj_haz": [
+    "loose rock",
+    "brush and deadfall on the lower approach",
+    "steep, hard snowpatches on the north-facing traverse into midsummer",
+    "exposed unprotected scrambling",
+    "long, remote approach via Tailgunner Pass"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": 2300,
+     "name": "Barclay Lake Trailhead",
+     "note": "Self-issue day-use fee ($5) or Northwest Forest Pass at the kiosk; vault toilet on site, no potable water; walk back down the access road ~0.25 mi to find the old forest road turnoff.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Leave US 2 at Baring and follow FS Road 6024 to its end at the Barclay Lake trailhead. A Northwest Forest Pass is required here, or pay the $5 self-issue day-use fee at the kiosk. There is a vault toilet at the lot but no potable water, so arrive with what you need. Note that this route does not start on the Barclay Lake trail — you walk back down the access road about a quarter mile to an old gated spur road, and parties who already know the line often park at that spur start rather than driving on to the main lot."
+    },
+    {
+     "lat": 47.797424,
+     "lng": -121.460837,
+     "elev": 2180,
+     "name": "Barclay Creek log jam crossing",
+     "note": "Cross the first log jam, then immediately turn left and follow the south shore of the smaller creek branch on a flagged path for ~50 yards rather than crossing the tempting second log jam, which leads to a trail that fades out.",
+     "type": "Water",
+     "distMi": 0.3
+    },
+    {
+     "lat": 47.808025,
+     "lng": -121.451837,
+     "elev": 4400,
+     "name": "Cliff-band brush weakness (leaves couloir line)",
+     "note": "Around 3,800-4,400 ft the climbers' path bends right off the rock face and pushes up a brushy weakness in the cliff band into ferns, alders, then huckleberry-heather meadows dotted with light gray rock.",
+     "type": "Junction",
+     "distMi": 1.5
+    },
+    {
+     "lat": 47.81195,
+     "lng": -121.447844,
+     "elev": 5100,
+     "name": "Ramp/chockstone crux",
+     "note": "A short (~10 ft) Class 3-4 ramp past a cliff band; the gully line has a chockstone move nearing low Class 5, the climbers'-right alternative avoids it but feels more exposed.",
+     "type": "Hazard",
+     "distMi": 2
+    },
+    {
+     "lat": 47.81547,
+     "lng": -121.446635,
+     "elev": 5800,
+     "name": "The notch",
+     "note": "Boulder-hop up from the hidden bench to an opening on the left revealing a notch to hop through onto the upper south face; this is the key navigational landmark referenced on both ascent and descent.",
+     "type": "Junction",
+     "distMi": 2.45
+    },
+    {
+     "lat": 47.816299,
+     "lng": -121.445481,
+     "elev": 6050,
+     "name": "Exposed upper south face traverse",
+     "note": "Cross two remnant snowpatches and an exposed heather/rock ledge below a smooth granite wall with a steep drop-off; parties report using a handline here and carrying an axe into early July.",
+     "type": "Hazard",
+     "distMi": 2.62
+    },
+    {
+     "lat": 47.8162174,
+     "lng": -121.4473274,
+     "elev": 6238,
+     "name": "Gunn Peak summit",
+     "note": "Final Class 3 boulder scramble to the true summit; sweeping views over the Wild Sky Wilderness toward Monte Cristo and the Skykomish valley.",
+     "type": "Summit",
+     "distMi": 2.75
+    }
+   ],
+   "gpx": [
+    [
+     47.794651,
+     -121.46168
+    ],
+    [
+     47.79475,
+     -121.460792
+    ],
+    [
+     47.795492,
+     -121.460527
+    ],
+    [
+     47.796153,
+     -121.460514
+    ],
+    [
+     47.796834,
+     -121.460517
+    ],
+    [
+     47.797351,
+     -121.460713
+    ],
+    [
+     47.798021,
+     -121.459556
+    ],
+    [
+     47.798528,
+     -121.458818
+    ],
+    [
+     47.799002,
+     -121.457958
+    ],
+    [
+     47.79952,
+     -121.457068
+    ],
+    [
+     47.800179,
+     -121.456005
+    ],
+    [
+     47.801008,
+     -121.456232
+    ],
+    [
+     47.801673,
+     -121.456366
+    ],
+    [
+     47.80238,
+     -121.456178
+    ],
+    [
+     47.802661,
+     -121.456532
+    ],
+    [
+     47.802884,
+     -121.456392
+    ],
+    [
+     47.803305,
+     -121.456321
+    ],
+    [
+     47.803557,
+     -121.456498
+    ],
+    [
+     47.803717,
+     -121.455918
+    ],
+    [
+     47.803458,
+     -121.455671
+    ],
+    [
+     47.803564,
+     -121.454993
+    ],
+    [
+     47.803504,
+     -121.454819
+    ],
+    [
+     47.8037,
+     -121.454351
+    ],
+    [
+     47.803813,
+     -121.453884
+    ],
+    [
+     47.80398,
+     -121.453544
+    ],
+    [
+     47.804149,
+     -121.453166
+    ],
+    [
+     47.80439,
+     -121.452549
+    ],
+    [
+     47.804775,
+     -121.452633
+    ],
+    [
+     47.804788,
+     -121.453235
+    ],
+    [
+     47.804946,
+     -121.453536
+    ],
+    [
+     47.805237,
+     -121.453185
+    ],
+    [
+     47.80553,
+     -121.452745
+    ],
+    [
+     47.805839,
+     -121.452728
+    ],
+    [
+     47.806152,
+     -121.452606
+    ],
+    [
+     47.806335,
+     -121.452398
+    ],
+    [
+     47.806537,
+     -121.452624
+    ],
+    [
+     47.806754,
+     -121.452545
+    ],
+    [
+     47.806998,
+     -121.452622
+    ],
+    [
+     47.807213,
+     -121.452572
+    ],
+    [
+     47.807578,
+     -121.4524
+    ],
+    [
+     47.808093,
+     -121.452214
+    ],
+    [
+     47.808343,
+     -121.451806
+    ],
+    [
+     47.80889,
+     -121.450949
+    ],
+    [
+     47.809204,
+     -121.450367
+    ],
+    [
+     47.809509,
+     -121.450397
+    ],
+    [
+     47.809897,
+     -121.450959
+    ],
+    [
+     47.809565,
+     -121.451492
+    ],
+    [
+     47.80951,
+     -121.451621
+    ],
+    [
+     47.809517,
+     -121.451611
+    ],
+    [
+     47.809803,
+     -121.451397
+    ],
+    [
+     47.810125,
+     -121.45069
+    ],
+    [
+     47.810441,
+     -121.450805
+    ],
+    [
+     47.810694,
+     -121.449845
+    ],
+    [
+     47.810828,
+     -121.449536
+    ],
+    [
+     47.810972,
+     -121.449073
+    ],
+    [
+     47.811052,
+     -121.448611
+    ],
+    [
+     47.811552,
+     -121.448413
+    ],
+    [
+     47.812208,
+     -121.448732
+    ],
+    [
+     47.812765,
+     -121.449159
+    ],
+    [
+     47.813411,
+     -121.449716
+    ],
+    [
+     47.813708,
+     -121.449899
+    ],
+    [
+     47.814272,
+     -121.449763
+    ],
+    [
+     47.814516,
+     -121.449568
+    ],
+    [
+     47.814733,
+     -121.449345
+    ],
+    [
+     47.814876,
+     -121.449125
+    ],
+    [
+     47.815126,
+     -121.44905
+    ],
+    [
+     47.815353,
+     -121.449116
+    ],
+    [
+     47.815501,
+     -121.449055
+    ],
+    [
+     47.815644,
+     -121.44898
+    ],
+    [
+     47.815678,
+     -121.448803
+    ],
+    [
+     47.815617,
+     -121.448474
+    ],
+    [
+     47.81566,
+     -121.448228
+    ],
+    [
+     47.815608,
+     -121.447805
+    ],
+    [
+     47.815753,
+     -121.447112
+    ],
+    [
+     47.81589,
+     -121.446697
+    ],
+    [
+     47.816101,
+     -121.446686
+    ],
+    [
+     47.816218,
+     -121.44682
+    ],
+    [
+     47.81644,
+     -121.446828
+    ],
+    [
+     47.816368,
+     -121.447553
+    ],
+    [
+     47.81625,
+     -121.447973
+    ],
+    [
+     47.816234,
+     -121.447972
+    ],
+    [
+     47.816329,
+     -121.447703
+    ],
+    [
+     47.816369,
+     -121.447392
+    ],
+    [
+     47.8164,
+     -121.447058
+    ],
+    [
+     47.816426,
+     -121.446623
+    ],
+    [
+     47.816327,
+     -121.446033
+    ],
+    [
+     47.81628,
+     -121.445982
+    ],
+    [
+     47.816348,
+     -121.446021
+    ],
+    [
+     47.816373,
+     -121.446103
+    ],
+    [
+     47.816401,
+     -121.446527
+    ],
+    [
+     47.816394,
+     -121.446762
+    ],
+    [
+     47.816219,
+     -121.446623
+    ],
+    [
+     47.815968,
+     -121.446579
+    ],
+    [
+     47.815816,
+     -121.446956
+    ],
+    [
+     47.815627,
+     -121.447502
+    ],
+    [
+     47.815443,
+     -121.447721
+    ],
+    [
+     47.815401,
+     -121.447999
+    ],
+    [
+     47.815566,
+     -121.448355
+    ],
+    [
+     47.815595,
+     -121.448528
+    ],
+    [
+     47.815598,
+     -121.448485
+    ],
+    [
+     47.815776,
+     -121.448343
+    ],
+    [
+     47.815637,
+     -121.448494
+    ],
+    [
+     47.815626,
+     -121.448453
+    ],
+    [
+     47.815445,
+     -121.449245
+    ],
+    [
+     47.815615,
+     -121.44887
+    ],
+    [
+     47.815675,
+     -121.448949
+    ],
+    [
+     47.815332,
+     -121.449245
+    ],
+    [
+     47.815139,
+     -121.44956
+    ],
+    [
+     47.814922,
+     -121.449905
+    ],
+    [
+     47.81468,
+     -121.450299
+    ],
+    [
+     47.814468,
+     -121.450378
+    ],
+    [
+     47.813684,
+     -121.450306
+    ],
+    [
+     47.813122,
+     -121.449435
+    ],
+    [
+     47.812433,
+     -121.448886
+    ],
+    [
+     47.811784,
+     -121.448639
+    ],
+    [
+     47.811068,
+     -121.448658
+    ],
+    [
+     47.810988,
+     -121.44911
+    ],
+    [
+     47.810858,
+     -121.449558
+    ],
+    [
+     47.810692,
+     -121.449849
+    ],
+    [
+     47.810487,
+     -121.450806
+    ],
+    [
+     47.810108,
+     -121.45086
+    ],
+    [
+     47.80968,
+     -121.451525
+    ],
+    [
+     47.809538,
+     -121.45173
+    ],
+    [
+     47.809582,
+     -121.451361
+    ],
+    [
+     47.809863,
+     -121.450911
+    ],
+    [
+     47.809435,
+     -121.450273
+    ],
+    [
+     47.809011,
+     -121.450619
+    ],
+    [
+     47.808483,
+     -121.45166
+    ],
+    [
+     47.808048,
+     -121.452198
+    ],
+    [
+     47.807509,
+     -121.452598
+    ],
+    [
+     47.807056,
+     -121.452598
+    ],
+    [
+     47.806839,
+     -121.452607
+    ],
+    [
+     47.806549,
+     -121.452709
+    ],
+    [
+     47.806315,
+     -121.45246
+    ],
+    [
+     47.806223,
+     -121.452522
+    ],
+    [
+     47.80591,
+     -121.452773
+    ],
+    [
+     47.805436,
+     -121.452825
+    ],
+    [
+     47.805164,
+     -121.453378
+    ],
+    [
+     47.804834,
+     -121.453449
+    ],
+    [
+     47.804818,
+     -121.452888
+    ],
+    [
+     47.804618,
+     -121.452509
+    ],
+    [
+     47.804197,
+     -121.452918
+    ],
+    [
+     47.804042,
+     -121.453724
+    ],
+    [
+     47.803796,
+     -121.454029
+    ],
+    [
+     47.803685,
+     -121.454542
+    ],
+    [
+     47.803447,
+     -121.454869
+    ],
+    [
+     47.803612,
+     -121.455265
+    ],
+    [
+     47.803816,
+     -121.455674
+    ],
+    [
+     47.803698,
+     -121.456303
+    ],
+    [
+     47.803367,
+     -121.456339
+    ],
+    [
+     47.803056,
+     -121.456354
+    ],
+    [
+     47.802662,
+     -121.456499
+    ],
+    [
+     47.802245,
+     -121.456179
+    ],
+    [
+     47.801781,
+     -121.456296
+    ],
+    [
+     47.801317,
+     -121.456246
+    ],
+    [
+     47.800861,
+     -121.456243
+    ],
+    [
+     47.800498,
+     -121.455982
+    ],
+    [
+     47.800243,
+     -121.456105
+    ],
+    [
+     47.79979,
+     -121.456266
+    ],
+    [
+     47.799645,
+     -121.456739
+    ],
+    [
+     47.799492,
+     -121.457437
+    ],
+    [
+     47.799168,
+     -121.457878
+    ],
+    [
+     47.798834,
+     -121.458397
+    ],
+    [
+     47.798476,
+     -121.459085
+    ],
+    [
+     47.797778,
+     -121.460061
+    ],
+    [
+     47.797083,
+     -121.46114
+    ],
+    [
+     47.796601,
+     -121.460321
+    ],
+    [
+     47.795787,
+     -121.460502
+    ],
+    [
+     47.795081,
+     -121.461022
+    ],
+    [
+     47.794743,
+     -121.461142
+    ],
+    [
+     47.794797,
+     -121.461188
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "A relentless, steep, mostly off-trail scramble: cross Barclay Creek, grind up a faint dirt climbers' trail through forest (~2,000-2,500 ft/mile in places), then negotiate talus, th…",
+      "fromTo": "Car-to-car via the SE climbers' trail",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No rock protection needed as this is a scramble, not a rock climbing route. However, carry 1-2 runners/slings and carabiners if planning to use rappel station above hidden ramp section. A 30 m rope is optional but recommended for groups with inexperienced members, as a handline or for the one short rappel at the hidden ramp.",
+   "what_to_bring": [
+    "light rock rack",
+    "helmet",
+    "rope (recommended)",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "The exposed summit ramp becomes dangerous when wet — avoid climbing it during or right after rain.",
+    "Many parties link Gunn Peak with neighboring Tailgunner Peak via the connecting ridge and a small tarn near Tailgunner Pass.",
+    "The climbers' path beyond the old logging road is unmaintained and easy to lose; a GPS track or prior route beta is strongly recommended."
+   ],
+   "watch_out": [
+    "heavy brush on the approach",
+    "exposure near the top"
+   ],
+   "pro_needs": "No technical protection required for ascent (scramble), but some parties install slings and anchors at hidden ramp crux to facilitate safe descent via rappel. If descending by rappel, ensure anchor integrity before committing weight.",
+   "best_season": "Late July through September for reliable snow-free conditions; August is generally the most reliable month (lower creek levels, drier brush and ramp). An early-season variant exists via the snow-filled Tailgunner Couloir but requires different gear/skills.",
+   "high_point_ft": 6244,
+   "aid_grade": null,
+   "approach": "From the Barclay Lake Trailhead (~2,200 ft, end of FS Rd 6024 out of Baring) do not follow the maintained Barclay Lake Trail #1055; instead walk back down the access road roughly a quarter mile and pick up the old, deactivated Barclay Creek spur road (parties who know the route often park directly at the spur's gated start rather than the main Barclay Lake lot). Follow the old roadbed about 100-200 yards to a fire-pit clearing, turn right, and pick up the unmarked but well-trodden 'Gunn climbers' path.' The path drops to Barclay Creek and crosses via a log-jam/rock-hop near the downstream tip of a small mid-channel island — this ford is the approach's main early-season hazard, since the crossing can run high and slick with spring runoff. On the far bank the boot path swings west then turns north and starts climbing in earnest: about 200 ft of easier grade gives way to sustained, tight switchbacks gaining roughly 1,500 ft through second-growth timber with generally good tree/root holds underfoot but a steep, sometimes loose tread. Around 3,600-3,800 ft the path forks near a band of exposed rock — stay right and do not scramble the outcrop straight ahead, a known route-finding trap; the correct line keeps traversing climber's-left beneath a cliff band in partial shade. A usually-dry waterfall ravine is crossed around 4,400 ft (can carry meltwater and be slick in early season). The trail continues switchbacking up brushy, sometimes slide-alder-choked terrain for another ~1,500 ft to gain the ridge crest at roughly 5,400 ft — call it 3-4 hours and about 3,200 ft of gain above the creek crossing for a fit party. From the ridge crest, drop about 100 ft off the crest to skirt a cliff band, then boulder-hop roughly 500 ft up a talus basin to the upper tree benches directly below the peak's south face, which marks the base of the summit scrambling. There is no reliable water above Barclay Creek/the waterfall ravine in late summer, so fill up early. Cairns thin out badly above treeline and the boot path fades in the talus, so route-finding (not technical difficulty) is the main hazard on the upper approach — carrying a GPS track or recent trip-report beta is strongly recommended.",
+   "descent_text": "Descend by reversing the ascent line — essentially every accessible way off Gunn's summit block funnels back through the same notch, ledge, and ramp used going up, so this is fundamentally a downclimb/walk-off rather than a rappel route, with one optional short rappel commonly used at the crux. From the summit, downclimb the short class 3 blocks back to the notch between the peak's two summit 'horns,' then reverse the narrow, roughly one-foot-wide dirt/heather ledge traversing the north face — this exposed traverse is the route's crux in both directions and is meaningfully more dangerous descending when wet, icy, or snow-covered; less experienced parties should consider a handline here. Below the ledge, downclimb back through the class 3-4 notch move to the 'hidden ramp,' a roughly 10-ft, near-vertical step in the cliff band with two options: a chockstone-choked gully (near class 5) on the left, or a more exposed class 3-4 line to the right. This ramp is the one spot on the peak where parties commonly rappel instead of downclimbing — parties describe a sling/rappel station left on a horn or chockstone here (a natural anchor, not bolted; inspect and back it up before trusting it), and a single rappel of roughly 15-20 m clears the step, so a 30 m rope doubled is more than sufficient. Confident scramblers frequently downclimb this section unroped instead, and some parties opt to rappel the steeper gully just right of the ramp when it is wet, icy, or holding snow rather than the ramp itself. Below the ramp, re-cross the talus basin, regain the boot path, and climb back up to the ridge crest (~5,400 ft) before dropping down the switchbacking forest trail, re-crossing Barclay Creek at the log jam, and following the old spur road back to the Barclay Lake Trailhead.",
+   "bail": "Bail points: Lower switchback section (descend back to trailhead at any point); Boulder field (descend back to trailhead by returning to forest edge); Hidden ramp (critical juncture - consider rappel descent or delay to better conditions rather than forcing technical down-climb in poor visibility).",
+   "pitch_detail": [
+    {
+     "grade": "1-2",
+     "notes": "Steep forest trail and overgrown logging road, stream crossing, initial switchbacks on grippy dirt",
+     "pitch": "Lower forest and approach (Class 1-2)"
+    },
+    {
+     "grade": "2",
+     "notes": "Steep switchbacks on dirt trail gaining 1,500 feet to 3,800 feet elevation; slippery when wet",
+     "pitch": "Lower switchback section (Class 2)"
+    },
+    {
+     "grade": "2-3",
+     "notes": "Navigate under cliff bands, traverse talus and boulder field; route-finding critical",
+     "pitch": "Mid-section boulder field and cliff bands (Class 2-3)"
+    },
+    {
+     "grade": "3-4",
+     "notes": "Steep exposed gully with loose rock; alternate lines available (left: chockstone move; right: exposed climb); exposure significant",
+     "pitch": "Hidden ramp crux (Class 3-4)"
+    },
+    {
+     "grade": "2-3",
+     "notes": "Heather ledge and granite catwalk on north side, exposed class 2 traverse with 1000+ foot drop-offs; narrow and requires careful foot placement",
+     "pitch": "Upper traverse to summit (Class 2-3)"
+    },
+    {
+     "grade": "2-3",
+     "notes": "Final scramble over boulders to summit register; brief but exposed",
+     "pitch": "Summit section (Class 2-3)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Barclay Lake trailhead requires a Northwest Forest Pass; the route is driest and most in-condition July through September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A relentless, steep, mostly off-trail scramble: cross Barclay Creek, grind up a faint dirt climbers' trail through forest (~2,000-2,500 ft/mile in places), then negotiate talus, the exposed 'hidden ramp,' and a keyhole notch onto a narrow north-side ledge before the final easy scramble to the summit. Most parties treat it as a full daylight outing with an early start.",
+      "hours": 9,
+      "miles": 7.5,
+      "title": "Car-to-car via the SE climbers' trail",
+      "gainFt": 4900,
+      "lossFt": 4900,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Barclay Lake trailhead",
+        "detail": "Walk back down the road, cut onto the old forest road, cross Barclay Creek at the log jam to pick up the climbers' trail."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Clear the steep forest slog",
+        "detail": "Faint, punishing dirt trail gains close to 3,000 ft in the trees before breaking into the alpine."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Reach the talus/rockslide below the hidden ramp",
+        "detail": "First class 3 exposure of the day; a cairn marks the ramp's start."
+       },
+       {
+        "time": "10:45 AM",
+        "label": "Through the keyhole notch onto the north-side ledge",
+        "detail": "Foot-wide traverse beneath cliffs — the crux, especially if wet or icy."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Summit (6,238')",
+        "detail": "Views of Merchant, Baring, and Index; typical parties linger 20-30 min."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Reverse the ramp/ledge with care; some parties place a short hand-line or rappel on the ramp."
+       }
+      ],
+      "objective": "Summit Gunn Peak (6,238') and return to the Barclay Lake trailhead"
+     }
+    ],
+    "totalNote": "A big single day car-to-car: ~7.5 miles round trip with 4,900 ft of gain; strong parties finish in 5.5-6 hours, most take 7-9 hours."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass required at the Barclay Lake Trailhead — $5 daily or $30 annual.",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "rules": "Wilderness regulations apply: no mechanized equipment/bikes, pack out human waste (WAG bags recommended), and follow strict Leave No Trace due to the fragile alpine terrain.",
+    "permit": "Free self-issue Wild Sky Wilderness permit at the trailhead.",
+    "closures": "FR-6024 (Barclay Creek Road) suffered a washout/mudslide that USFS had cleared to the trailhead by April 2026, and blowdown remains on the trail — but as of 6 May 2026, the footlog crossing over Barclay Creek (~1.2 mi in) has been fully removed for safety (not merely damaged/'in poor shape'), with no timeline yet for a replacement; expect to rock-hop/log-cross without a fixed bridge. Verify current Mt. Baker-Snoqualmie NF road/trail conditions before a trip.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (office: 74920 NE Stevens Pass Hwy, Skykomish, WA 98288)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "FR-6024 (Barclay Creek Road)",
+    "status": "Road itself reopened by USFS as of April 2026 after washout repairs and is passable, but the separate Barclay Creek footlog/bridge on the trail has since been fully removed (May 2026) rather than just damaged — check current conditions before a trip.",
+    "driveNote": "From US Hwy 2 near milepost 41-42 in the town of Baring (across from the old Baring store), turn north onto 635th Place NE, cross the railroad tracks, keep left after 0.1 mile as the road becomes FR-6024, then continue about 3.9-4.3 miles (accounts differ slightly) to the Barclay Lake Trailhead (2,200 ft, ~20 car parking, privy). Watch for potholes; a higher-clearance vehicle is recommended."
+   },
+   "climate": {
+    "typical": "Marine west coast climate: Pacific weather systems produce strong orographic lift and heavy precipitation on this west-slope Cascades location, with wet, heavy winter/spring snowfall that drives high avalanche danger in the Tailgunner Couloir season.",
+    "bySeason": {
+     "fall": "Possible extension into early October in dry years, but shortening daylight and early-season snow are risks.",
+     "spring": "Deep snowpack can cover much of the approach brush (some parties prefer this for easier travel) but the Tailgunner Couloir and upper slopes carry real avalanche hazard.",
+     "summer": "July-September is the practical climbing window; the summit ramp and heather ledges are typically snow-free and driest in August."
+    }
+   },
+   "emergency": {
+    "notes": "Cell service is unreliable in the Barclay Creek/Gunn Peak drainage; save maps and directions offline. This route has a history of search-and-rescue incidents, largely tied to the exposed summit-block ramp and route-finding on the brushy approach.",
+    "county": "Snohomish County",
+    "rangerStation": "Skykomish Ranger District, Mt. Baker-Snoqualmie National Forest, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in July-August; weekday climbers consistently report having the mountain to themselves. Sultan/Hwy 2 weekend traffic on the drive out is also a known nuisance",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low-to-moderate — likely a few dozen parties per summer, an estimate rather than any counted total; growing social media popularity has reportedly pushed recent traffic up from historically sparse numbers"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained hiking fitness — most parties report 7-9 hours round trip with continuous steep, brushy, off-trail elevation gain",
+     "packWeight": "Light day-pack load (roughly 15-20 lb); this is a long day-trip, not an overnight, and a heavy pack makes the brush-bashing much harder"
+    },
+    "approachTime": "Long — 7-9 hours round trip is typical, most of it steep and brushy with no real trail",
+    "requiredSkills": [
+     "Class 3-4 scrambling and exposed rock movement",
+     "off-trail routefinding through heavy, disorienting brush",
+     "comfort on loose rock near the summit",
+     "sound turnaround/bail judgment given the peak's SAR history"
+    ],
+    "experienceLevel": "Experienced scramblers only. This is unmaintained Class 3-4 terrain with a faint boot path, steep brush, and exposed summit moves — not a beginner objective. The peak has a history of search-and-rescue incidents, so partners should have solid turnaround judgment."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through August — this is when brush and rock are driest",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Brush is drying out and snow is retreating, though wet vegetation and possible high snow patches can still linger, especially early in the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Late-June starts the season, but lingering snow patches on upper slopes plus wet, dense brush from spring runoff make conditions slow and unpleasant",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Driest conditions of the year for both the brush approach and the summit rock, matching the best-season",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still generally dry, but shorter daylight for the long round trip and increasing risk of an early fall wet-weather system closing the window",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Very wet maritime climate overall; during the summer window expect the brush to stay damp longer than the calendar suggests, and weather can turn quickly given the very wet spring/fall shoulder seasons",
+     "probability": "Afternoon thunderstorms and convective buildup are possible July-August in the Cascades; because the approach and summit push commit you to exposed terrain, get an early start and watch the forecast"
+    },
+    "exposure": "Exposed Class 3-4 climbing right at the summit combined with loose rock and routefinding through heavy brush on the approach; the peak's documented history of search-and-rescue calls underscores that a slip or a wrong turn here has real consequences, not just an inconvenience",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; no NWAC forecast zone specifically covers this peak (nearest general coverage would be the West Slopes Central/Stevens Pass corridor, but that forecast doesn't target this route)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact current FR-6024/trailhead road mileage varies slightly between sources (3.9-4.3 mi) and its post-washout condition is still changing.",
+     "No official topo/photo confirming the precise line of the 'hidden ramp' crux beyond trip-report descriptions.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/2L3J",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.8162914,
+    "peakLng": -121.4479383,
+    "trailhead": "Barclay Lake Trailhead (FR-6024)",
+    "trailheadLat": 47.7923,
+    "trailheadLng": -121.4592,
+    "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+   },
+   "sling_rack": {
+    "runners": "1-2 slings for optional hand line/rappel anchor"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic (optional)",
+   "rope_length_m": 30,
+   "rope_note": "Standard route is unroped Class 3-4 for competent scramblers; a hand line is sometimes rigged on the exposed 'hidden ramp' descent, and the narrow summit ledge is consequential if wet/icy.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Barclay Creek climbers' path — summer line",
+     "notes": "From the Barclay Lake trailhead, do not take the maintained lake trail. Walk back down the access road about a quarter mile and pick up the old deactivated spur road — parties who know it often park at the spur's gated start instead of the main lot. Follow the old roadbed a hundred or two hundred yards to a fire-pit clearing, turn right, and pick up the unmarked but well-trodden climbers' path. It drops to the creek and crosses on a log jam or by rock-hopping near the downstream tip of a small mid-channel island; this crossing is the main early-season hazard. On the far bank the path swings west, then north, and starts climbing in earnest through sustained tight switchbacks in second-growth timber. Two decision points follow. Around thirty-six to thirty-eight hundred feet the path forks near a band of exposed rock — stay right and do not scramble the outcrop straight ahead, which is a known trap; the correct line keeps traversing climber's-left beneath a cliff band. Then around forty-four hundred feet the summer line bends left up a brushy weakness in the cliff band rather than continuing up the couloir, which holds snow late. Huckleberry and heather meadows lead to the saddle at about fifty-four hundred feet, the last reliable water.",
+     "season": "June to September. Early June parties meet significant lingering snow and heavy brush; late July through August is typically the clearest.",
+     "hazards": [
+      "Steep brush — alder, devil's club and salmonberry — on the lower approach",
+      "Log-jam crossing of the creek is slick and runs high in spring",
+      "The fork near the exposed rock band around thirty-six to thirty-eight hundred feet is a known route-finding trap; the outcrop ahead is not the way",
+      "Loose rock on the talus fan and at the ramp",
+      "No reliable water above the creek and the waterfall ravine in late summer",
+      "Cairns thin out badly above treeline and the boot path fades in the talus; route-finding rather than difficulty is the main hazard here",
+      "Multiple search-and-rescue incidents have occurred on this peak"
+     ],
+     "primary": true,
+     "baseFinding": "From the saddle, drop about a hundred feet off the crest to skirt a cliff band and boulder-hop up the talus fan toward the upper tree benches directly below the peak's south face. The base of the technical ground is the top of that fan — and the feature you are looking for cannot be seen from below. A ramp cuts up the face from the top of the talus and only appears once you are underneath it, which is exactly why parties overshoot by continuing up the rockslide. The unmistakable test is the single step at the ramp's foot: a boulder with two options off it, a left-hand line past a chockstone that takes a steep low-fifth move, and a right-hand line, steeper and more exposed but on solid holds, which is what most parties take. If there is no boulder with a two-way step above it, you are not at the ramp. Negative marker: if you are still grinding up loose rockslide with no ramp cutting off to either side, you have gone past the entry — the ramp is entered from the talus, not from the top of it. Higher up, the next landmark is a keyhole notch through the ridge to the north side; if you have not passed the ramp step you will not reach it."
+    },
+    {
+     "name": "Tailgunner couloir — snow-season line",
+     "notes": "The same start — the spur road, the fire-pit clearing, the creek crossing at the island, and the switchbacks up through the timber. The difference comes at about forty-four hundred feet: instead of bending left into the brushy weakness in the cliff band, the snow-season line continues directly up the couloir to the saddle. This same couloir is a documented wrong turn in summer and an avalanche path, so it is only reasonable when it is a continuous snow climb and conditions have been assessed.",
+     "season": "Late spring, while the couloir holds continuous consolidated snow. Once it starts melting out it becomes the wrong answer and the summer line through the brushy weakness is correct.",
+     "hazards": [
+      "Avalanche hazard — this couloir is an active path and holds snow late",
+      "Snow conditions vary hour to hour on it; assess before committing",
+      "Everything the summer line carries below the cliff band, including the brushy lower approach and the creek crossing at higher spring flow",
+      "The ramp above is harder to protect and downclimb when wet or holding snow, and it is the one place on this peak where parties commonly rappel"
+     ],
+     "baseFinding": "The couloir tops out at the same saddle as the summer line, so the base of the climbing is identical: drop about a hundred feet off the crest to skirt the cliff band, then boulder-hop up the talus fan to the upper tree benches below the south face. The ramp at the top of the fan is invisible until you are under it; identify it by the boulder at its foot with a two-way step above — a left-hand chockstone move at low fifth, or a steeper, more exposed line on good holds to the right. Negative marker: if you are still on snow when you expect to be on talus, you have carried on above the saddle into the wrong basin; the couloir delivers you to a saddle, and the talus fan starts on the far side of it."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2",
+     "label": "Talus fan below the south face",
+     "notes": "Ascend the fan of large talus blocks that runs up to the base of the south face directly below the summit. The blocks are big enough to walk on but some shift; the cairns that mark the way lower down have usually thinned to nothing by here, so the line is chosen by eye toward the base of the ramp above."
+    },
+    {
+     "n": 2,
+     "class": "Class 3-4",
+     "label": "The hidden ramp",
+     "notes": "The route's crux, and it is short. A ramp cuts up the face from the top of the talus and is not obvious until you are underneath it. The hard part is the single step off the boulder at its foot: the left-hand option passes a chockstone and involves a steep low fifth-class move, while the right-hand option is a steep, exposed Class 3-4 sequence on solid holds and is the line most parties take. Above that step the ramp itself eases. Some parties sling the ramp for a belay or a handline; a short rope is worth carrying even though a confident scrambler will not need it."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Upper south face to the high notch",
+     "notes": "Above the ramp, cross the upper south face — typically over two remnant snow patches that persist well into summer — and scramble to the high notch between the west and east summits. In June, or any heavy snow year, these patches are steep snow immediately above the very exposed north side and turn a scramble into a climb needing axe and crampons; by August they are usually melted out and the section is unremarkable. Judge this from the notch below, not from the trailhead."
+    },
+    {
+     "n": 4,
+     "class": "Class 2",
+     "label": "North-side ledge and summit block",
+     "notes": "From the notch, traverse north-side heather ledges — easy walking, but with substantial drop below, and parties sometimes leave a handline here for the return. A short Class 3 scramble on the prominent summit block finishes the climb. The descent reverses everything, and the step down off the hidden ramp feels harder than it did going up; plan on downclimbing it carefully or rappelling from a slung block."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 880,
+     "name": "Money Creek Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits almost directly under Grotto Mountain and is a sensible base for the Beckler-side objectives, for Baring and the Barclay Creek peaks about fifteen minutes back down the highway, and for anyone wanting a shower-free but civilised night before an early start. Being this low it is usable well outside the alpine season — a real advantage in a zone where several of the objectives are winter routes and everything above 3,000 ft is snowbound. Do not treat it as an approach camp; it is a place to sleep in the valley with a proper toilet and a fire ring, twenty to forty minutes' drive from any of the trailheads.",
+     "water": "Potable water at the campground. The South Fork Skykomish runs alongside.",
+     "permit": "Standard national forest campground fee, booked through the federal reservation system or taken first-come at the two unreserved sites. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Fourteen-day stay limit. Check the current forest-wide campfire ban before planning a fire.",
+     "capacity": "25 sites, 24 single and one double, most of them accessible. Reservable, with a couple held first-come first-served. Picnic tables, vault toilets, and a swimming hole on the river."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southeast se route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

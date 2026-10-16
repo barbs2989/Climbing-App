@@ -1,0 +1,962 @@
+{
+ "wa_mount_prophet_east": {
+  "confirm": [
+   "Luna Camp, Big Beaver Trail",
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Challenger Arm camp",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+  ],
+  "reject": []
+ },
+ "wa_mount_prophet_southwest_rib": {
+  "confirm": [
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Challenger Arm camp",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+  ],
+  "reject": []
+ },
+ "wa_south_ridge_2": {
+  "confirm": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver"
+  ],
+  "reject": [
+   {
+    "camp": "Beaver Pass Camp",
+    "reason": "the documented Luna Cirque loop (trailcatjim 'Access Creek to Wiley Ridge via Luna Pass—Challenger Gap + Luna Peak'; Abegg 'Big Beaver to Wiley Ridge to Luna Creek') enters or leaves Luna Cirque over Challenger Gap and Wiley Ridge to Beaver Pass — the Luna Cirque floor note describes the same loop, and the reviewer kept Challenger Arm for this route on that basis"
+   },
+   {
+    "camp": "Eiley Lake benches, lower Wiley Ridge",
+    "reason": "the documented Luna Cirque loop (trailcatjim 'Access Creek to Wiley Ridge via Luna Pass—Challenger Gap + Luna Peak'; Abegg 'Big Beaver to Wiley Ridge to Luna Creek') enters or leaves Luna Cirque over Challenger Gap and Wiley Ridge to Beaver Pass — the Luna Cirque floor note describes the same loop, and the reviewer kept Challenger Arm for this route on that basis"
+   },
+   {
+    "camp": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "reason": "the documented Luna Cirque loop (trailcatjim 'Access Creek to Wiley Ridge via Luna Pass—Challenger Gap + Luna Peak'; Abegg 'Big Beaver to Wiley Ridge to Luna Creek') enters or leaves Luna Cirque over Challenger Gap and Wiley Ridge to Beaver Pass — the Luna Cirque floor note describes the same loop, and the reviewer kept Challenger Arm for this route on that basis"
+   }
+  ]
+ },
+ "wa_mount_fury_east_mongo_ridge": {
+  "confirm": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp"
+  ],
+  "reject": []
+ },
+ "wa_mount_fury_west_west_ridge": {
+  "confirm": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp"
+  ],
+  "reject": []
+ },
+ "wa_ridge_traverse_from_east_fury": {
+  "confirm": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak"
+  ],
+  "reject": [
+   {
+    "camp": "Beaver Pass Camp",
+    "reason": "the route's own approach prose walks 13-14 mi up Big Beaver TO Beaver Pass and then onto Wiley Ridge; the prose looks like a copied Challenger description, but removing camps its own text names makes the page contradict itself — fix the prose first"
+   },
+   {
+    "camp": "Eiley Lake benches, lower Wiley Ridge",
+    "reason": "own prose sends the party onto Wiley Ridge from Beaver Pass"
+   },
+   {
+    "camp": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "reason": "own prose sends the party onto Wiley Ridge from Beaver Pass"
+   },
+   {
+    "camp": "Twin Rocks and Stillwell Camps, Little Beaver",
+    "reason": "own prose goes from Beaver Pass 'over Whatcom Pass', which descends past Stillwell at the Little Beaver junction"
+   }
+  ]
+ },
+ "wa_swiss_peak_standard_route": {
+  "confirm": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp"
+  ],
+  "reject": []
+ },
+ "wa_luna_glacier": {
+  "confirm": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver"
+  ],
+  "reject": [
+   {
+    "camp": "Beaver Pass Camp",
+    "reason": "the documented Luna Cirque loop (trailcatjim 'Access Creek to Wiley Ridge via Luna Pass—Challenger Gap + Luna Peak'; Abegg 'Big Beaver to Wiley Ridge to Luna Creek') enters or leaves Luna Cirque over Challenger Gap and Wiley Ridge to Beaver Pass — the Luna Cirque floor note describes the same loop, and the reviewer kept Challenger Arm for this route on that basis"
+   },
+   {
+    "camp": "Eiley Lake benches, lower Wiley Ridge",
+    "reason": "the documented Luna Cirque loop (trailcatjim 'Access Creek to Wiley Ridge via Luna Pass—Challenger Gap + Luna Peak'; Abegg 'Big Beaver to Wiley Ridge to Luna Creek') enters or leaves Luna Cirque over Challenger Gap and Wiley Ridge to Beaver Pass — the Luna Cirque floor note describes the same loop, and the reviewer kept Challenger Arm for this route on that basis"
+   },
+   {
+    "camp": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "reason": "the documented Luna Cirque loop (trailcatjim 'Access Creek to Wiley Ridge via Luna Pass—Challenger Gap + Luna Peak'; Abegg 'Big Beaver to Wiley Ridge to Luna Creek') enters or leaves Luna Cirque over Challenger Gap and Wiley Ridge to Beaver Pass — the Luna Cirque floor note describes the same loop, and the reviewer kept Challenger Arm for this route on that basis"
+   }
+  ]
+ },
+ "wa_north_ridge_2": {
+  "confirm": [
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Challenger Arm camp"
+  ],
+  "reject": [
+   {
+    "camp": "Luna Camp, Big Beaver Trail",
+    "reason": "the route's own second way in is the Ross Lake / Little Beaver water-taxi loop, which exits over Beaver Pass and down the Big Beaver past Luna Camp (Twin Rocks note); the reviewer kept Beaver Pass for exactly this loop, so Luna Camp — ~3 mi below it on the same exit — is on it too"
+   }
+  ]
+ },
+ "wa_south_spur": {
+  "confirm": [
+   "Luna Camp, Big Beaver Trail",
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Challenger Arm camp"
+  ],
+  "reject": []
+ },
+ "wa_whatcom_peak_southwest_route": {
+  "confirm": [
+   "Luna Camp, Big Beaver Trail",
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Challenger Arm camp"
+  ],
+  "reject": []
+ },
+ "wa_big_craggy_peak_scramble": {
+  "confirm": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp"
+  ],
+  "reject": []
+ },
+ "wa_west_craggy_peak_standard_route": {
+  "confirm": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp"
+  ],
+  "reject": []
+ },
+ "wa_castle_peak_pasayten_scramble": {
+  "confirm": [
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_north_face_left_buttress": {
+  "confirm": [
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_blizzard_peak_standard": {
+  "confirm": [
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_robinson_mountain_north_couloir": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_robinson_mountain_southeast_ridge": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_osceola_peak_scramble": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_blackcap_mountain_scramble": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Copper Glance Lake"
+  ],
+  "reject": [
+   {
+    "camp": "Lake of the Woods and the Eureka Falls camp",
+    "reason": "Blackcap sits between Monument and Lake Mountain (~1 mi from Monument); SummitPost's Blackcap page describes approaching via Monument Creek Trail #484 and Pistol Pass, skirting Lake of the Woods toward the summit — Lake of the Woods is a real Blackcap base"
+   }
+  ]
+ },
+ "wa_ptarmigan_peak_pasayten_scramble": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_dot_mountain_scramble": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_lake_mountain_pasayten_scramble": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_monument_peak_pasayten_scramble": {
+  "confirm": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Copper Glance Lake"
+  ],
+  "reject": []
+ },
+ "wa_ingalls_peak_south_ridge": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_ingalls_peak_east_route": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_ingalls_peak_south_scramble": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_sherpa_peak_east_ridge": {
+  "confirm": [
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "confirm": [
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_south_face_12": {
+  "confirm": [
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_argonaut_peak_northeast_couloir": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_northwest_arete": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_sherpa_balanced_rock_ne_couloir": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_sherpa_peak_north_ridge": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_cannon_mountain_south_slopes": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline"
+  ],
+  "reject": []
+ },
+ "wa_cannon_mountain_northeast_ridge": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_cashmere_mountain_west_ridge": {
+  "confirm": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Nada Lake"
+  ],
+  "reject": []
+ },
+ "wa_mount_fernow_southeast_face": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "reject": []
+ },
+ "wa_spectacle_buttes_west_route": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "reject": []
+ },
+ "wa_fifth_of_july_mountain_scramble": {
+  "confirm": [
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "reject": []
+ },
+ "wa_cardinal_peak_nw_couloir_north_ridge": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ],
+  "reject": []
+ },
+ "wa_cardinal_peak_se_slopes": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ],
+  "reject": []
+ },
+ "wa_emerald_peak_se_ridge": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ],
+  "reject": []
+ },
+ "wa_emerald_peak_west_route": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ],
+  "reject": []
+ },
+ "wa_saska_peak_emerald_saska_col": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ],
+  "reject": []
+ },
+ "wa_pinnacle_mountain_entiat_scramble": {
+  "confirm": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ],
+  "reject": []
+ },
+ "wa_action_potential": {
+  "confirm": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   }
+  ]
+ },
+ "wa_burgundy_spire_north_face": {
+  "confirm": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   }
+  ]
+ },
+ "wa_ultramega_ok": {
+  "confirm": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   }
+  ]
+ },
+ "wa_east_face_2": {
+  "confirm": [],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   },
+   {
+    "camp": "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+    "reason": "the route's OWN prose offers 'via Silver Star Creek drainage (recommended for winter; approach in snow)'; SummitPost: Chablis' standard route starts from the glacier to the east, approached as for Silver Star"
+   }
+  ]
+ },
+ "wa_chianti_spire_east_face": {
+  "confirm": [],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   },
+   {
+    "camp": "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+    "reason": "an east-side route: from Burgundy Col it traverses onto the Silver Star Glacier / east side of the ridge, and SummitPost says Chablis' standard line 'starts from the glacier to the E, approach from the same route you took up Silver Star' — the Silver Star Creek approach this camp serves (spring snow)"
+   }
+  ]
+ },
+ "wa_direct_west_face": {
+  "confirm": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   }
+  ]
+ },
+ "wa_pernod_spire_standard": {
+  "confirm": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   }
+  ]
+ },
+ "wa_south_face_2": {
+  "confirm": [],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   },
+   {
+    "camp": "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+    "reason": "traverses round the east (Silver Star Creek) side to the Pernod-Chablis notch and is often linked with Chablis' East Face; an east-side route: from Burgundy Col it traverses onto the Silver Star Glacier / east side of the ridge, and SummitPost says Chablis' standard line 'starts from the glacier to the E, approach from the same route you took up Silver Star' — the Silver Star Creek approach this camp serves (spring snow)"
+   }
+  ]
+ },
+ "wa_gato_negro": {
+  "confirm": [],
+  "reject": [
+   {
+    "camp": "Lower Silver Star Creek basin — EAST side, Silver Star only",
+    "reason": "SummitPost's Silver Star Creek approach TO BURGUNDY COL climbs 2 mi to this 4,800 ft basin, crosses to its west side and heads for the col; it is the recommended early-season/snow approach to the Wine Spires, and the camp's own note says parties 'cross to the west side' here"
+   },
+   {
+    "camp": "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+    "reason": "Whine Spire's Gato Negro is on the east side of Silver Star's ridge; an east-side route: from Burgundy Col it traverses onto the Silver Star Glacier / east side of the ridge, and SummitPost says Chablis' standard line 'starts from the glacier to the E, approach from the same route you took up Silver Star' — the Silver Star Creek approach this camp serves (spring snow)"
+   }
+  ]
+ },
+ "wa_east_ridge_3": {
+  "confirm": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side"
+  ],
+  "reject": []
+ },
+ "wa_colonial_peak_west_ridge": {
+  "confirm": [
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "reject": []
+ },
+ "wa_pyramid_peak_colonial_standard": {
+  "confirm": [
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "reject": []
+ },
+ "wa_cosho_peak_scramble": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "reject": []
+ },
+ "wa_crater_mountain_standard_route": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek"
+  ],
+  "reject": []
+ },
+ "wa_jack_mountain_east_ridge": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek"
+  ],
+  "reject": []
+ },
+ "wa_jack_mountain_nohokomeen_headwall": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "reject": []
+ },
+ "wa_jack_mountain_north_ridge": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "reject": []
+ },
+ "wa_jack_mountain_northeast_glacier": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "reject": []
+ },
+ "wa_jack_mountain_southwest_ridge": {
+  "confirm": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail"
+  ],
+  "reject": [
+   {
+    "camp": "Jerry Lakes basin, Jack Mountain south side",
+    "reason": "SummitPost: Jack's shortest approach is Little Jack to the SW, 'but an approach from Jerry Lakes to the SE is also feasible'; trailcatjim camped at Jerry Lakes and climbed the South Face finishing on the West Ridge, so Jerry Lakes serves the upper SW/W ridge (medium)"
+   }
+  ]
+ },
+ "wa_guye_peak_improbable_traverse": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_guye_peak_r1": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_guye_peak_r2": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_guye_peak_southeast_gully": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_south_gully_south_spur": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_south_rib": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_snoqualmie_mountain_standard_route": {
+  "confirm": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ],
+  "reject": []
+ },
+ "wa_southwest_face": {
+  "confirm": [
+   "Snow Lake designated campsites"
+  ],
+  "reject": []
+ },
+ "wa_the_tooth_fairy": {
+  "confirm": [
+   "Snow Lake designated campsites"
+  ],
+  "reject": []
+ },
+ "wa_the_tooth_r1": {
+  "confirm": [
+   "Snow Lake designated campsites"
+  ],
+  "reject": []
+ },
+ "wa_the_tooth_south_face": {
+  "confirm": [
+   "Snow Lake designated campsites"
+  ],
+  "reject": []
+ },
+ "wa_colfax_peak_cosley_houston": {
+  "confirm": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "reject": []
+ },
+ "wa_colfax_peak_kimchi_suicide_volcano": {
+  "confirm": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "reject": []
+ },
+ "wa_colfax_peak_polish_route": {
+  "confirm": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "reject": []
+ },
+ "wa_hadley_peak_cougar_divide": {
+  "confirm": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces"
+  ],
+  "reject": []
+ },
+ "wa_hadley_peak_skyline_divide": {
+  "confirm": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces"
+  ],
+  "reject": []
+ },
+ "wa_sherman_peak_baker_route": {
+  "confirm": [
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "reject": []
+ },
+ "wa_sherman_peak_baker_squak_glacier": {
+  "confirm": [
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "reject": []
+ },
+ "wa_mount_blum_north_ridge": {
+  "confirm": [
+   "Sulphide Camp, end of the Baker River trail"
+  ],
+  "reject": []
+ },
+ "wa_mount_blum_south_ridge": {
+  "confirm": [
+   "Sulphide Camp, end of the Baker River trail"
+  ],
+  "reject": []
+ },
+ "adams_avalanche_glacier": {
+  "confirm": [
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_wilson_glacier_headwall": {
+  "confirm": [
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_mazama_glacier_headwall": {
+  "confirm": [
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "reject": []
+ },
+ "adams_northwest_ridge": {
+  "confirm": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_lava_glacier_headwall": {
+  "confirm": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_lyman_glacier": {
+  "confirm": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_north_ridge": {
+  "confirm": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_northwest_ridge": {
+  "confirm": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ],
+  "reject": []
+ },
+ "wa_mount_adams_adams_glacier": {
+  "confirm": [
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ],
+  "reject": []
+ },
+ "wa_ellation": {
+  "confirm": [
+   "Ruth Arm ridge camps below the Ruth Glacier",
+   "Notch bivy on the Ruth-Icy ridge",
+   "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+   "Nooksack Cirque river bottom, below the tower"
+  ],
+  "reject": []
+ }
+}

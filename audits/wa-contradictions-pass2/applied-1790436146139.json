@@ -1,0 +1,335 @@
+{
+ "applied": [
+  {
+   "id": "wa_spontaneous_distraction",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "rack",
+   "path": [
+    4
+   ],
+   "fact": "Rope setup for the rappel descent"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope setup for the rappel descent"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Notch elevation vs summit"
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elevFt"
+   ],
+   "fact": "Notch elevation vs summit"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Where a party on 60 m ropes starts rappelling"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "station"
+   ],
+   "fact": "Where a party on 60 m ropes starts rappelling"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rope length for the two rappels"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Where the three pitches end"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Where the three pitches end"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Where the three pitches end"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_spontaneous_distraction",
+   "before": {
+    "road": {
+     "name": "SR-20 highway pullout, Washington Pass",
+     "status": "Reached directly from a paved highway pullout; no unpaved approach road.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    },
+    "access": {
+     "_raw": {
+      "notes": "Multi-pitch climbing route (4 pitches) at Washington Pass, beside Spontaneity Arete",
+      "permit_cost": "Free",
+      "permit_type": "No overnight permit required",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest",
+      "forest_contact": "(509) 664-9200 - Okanogan-Wenatchee National Forest",
+      "wilderness_zone": "Not in designated wilderness; Washington Pass area",
+      "parking_pass_cost": "$5 per day or $30 annual",
+      "seasonal_closures": "Washington Pass (SR 20) typically closed mid-November to mid-April",
+      "special_requirements": "Standard Forest Service regulations; best climbing season late June-September",
+      "parking_pass_required": "Northwest Forest Pass"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permit required",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Not in designated wilderness; Washington Pass area",
+     "landManager": "USFS Okanogan-Wenatchee National Forest",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_first_amendment",
+   "before": {
+    "rack": [
+     "Cams 0.5–2in Camalot, doubles (primary sizes)",
+     "Single 3in Camalot",
+     "Small nut set + spare purple TCU/small cam",
+     "10 alpine quickdraws",
+     "Single 60m rope, double-rope rappel for descent"
+    ],
+    "rope_note": "Rope length is not recorded; 9-pitch Grade IV route, standard practice is 60m single with double-rope rappel for descent.",
+    "road": {
+     "name": "SR-20 highway pullout, Washington Pass",
+     "status": "Reached directly from a paved highway pullout; no unpaved approach road.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    },
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "Only accessible while SR-20 is open, roughly May-November",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass recommended for fee sites",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5450,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 5450
+     },
+     {
+      "lat": 48.514255,
+      "lng": -120.657465,
+      "elev": 7621,
+      "name": "Lexington Tower notch",
+      "type": "Summit",
+      "distMi": 1.2,
+      "elevFt": 7621
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "before": {
+    "rappel_count_note": "No source publishes a rappel total for this route, and the count moves with where you start, so no per-station distances are listed. The rope requirement is published and it is not a preference: the top station is a bolted anchor roughly 20-30 ft above the old pitch-6 slung-block anchor, and from it two 70m ropes reach the bolted anchor atop pitch 5 while doubled 60m ropes do not. A 70m lead rope plus a 70m tagline is the stated ideal because it keeps the option of rappelling from the very top; a party on 60s has to start lower, from partway through the 4th-class scrambling on pitch 7. Most parties do not rappel this at all — they top out on the East Shoulder and take the walk-off, a very exposed and sketchy 4th-class traverse west into the descent gully, which most keep the rope on for despite poor protection.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "On two 70s this is close to a full-length rappel, so set the knot well clear of the lip and knot the ends.",
+      "notes": "Top anchor allowing a rappel from the very top of the route with double 70m ropes.",
+      "anchor": "Bolted station ~20-30 ft above the old P6 slung-block anchor",
+      "hazards": [
+       "Rope choice is decided at this station and the margin is not discretionary: from the top anchor two 70 m ropes reach the bolted anchor atop pitch 5, and doubled 60 m ropes DO NOT reach between them",
+       "The older slung-block anchor below the bolts is still the more obvious thing to see; it is not the current station"
+      ],
+      "lengthM": null,
+      "station": "The top station is a BOLTED anchor sitting roughly 20-30 ft above the old slung-block anchor at the top of pitch 6 - the old block is the landmark, the bolts are above it. Parties who do not want the full-length first rappel start instead from partway through the 4th-class scrambling on pitch 7."
+     },
+     {
+      "n": 2,
+      "notes": "Described generically as an 'obvious, good-quality anchor'.",
+      "anchor": "Bolted or tree anchor",
+      "hazards": [
+       "Slab above and below with little to stand on, so arrive at the anchor rather than near it - there is nothing to grab if you end up off line"
+      ],
+      "lengthM": null,
+      "station": "The bolted anchor at the top of pitch 5, immediately above the route's very thin slab crux. This is the station the first rappel is measured to, and the reason two 70 m ropes are the published requirement."
+     },
+     {
+      "n": 3,
+      "notes": "Same as above; individual rappel lengths aren't known.",
+      "anchor": "Bolted or tree anchor",
+      "lengthM": null
+     },
+     {
+      "n": 4,
+      "notes": "Continuing down the route on double ropes.",
+      "anchor": "Bolted or tree anchor",
+      "lengthM": null
+     },
+     {
+      "n": 5,
+      "notes": "Continuing down the route on double ropes.",
+      "anchor": "Bolted or tree anchor",
+      "lengthM": null
+     },
+     {
+      "n": 6,
+      "notes": "Final rappel to the ground.",
+      "anchor": "Bolted or tree anchor near base",
+      "hazards": [
+       "Pitch 1 is described as sustained, heady and delicate with alpine crumbliness - the loosest ground on the route, and both strands run over it"
+      ],
+      "lengthM": null,
+      "station": "Last rappel, down pitch 1 to the base of the wall."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_north_face_3",
+   "before": {
+    "descent_text": "From the summit, downclimb the exposed 'Stegosaur' ridge crest pitch (3rd/low-5th class scrambling along a knobby, horn-studded ridge) back down to the notch just below the summit block — most parties downclimb this rather than rappel it. From that notch, make two single-rope rappels (a 30m or 60m single-strand rope is sufficient for each) down the north face back to the Concord-Lexington col; documented descents used natural gear anchors — slings around horns — rather than fixed bolts or chains, so bring extra webbing/cord to back up or replace tat. Total time from summit to the col is about 20 minutes for a competent party. From the col, reverse the approach: descend the talus/heather gully back to the Blue Lake climbers' path and follow it back to the Blue Lake Trail and trailhead. Many parties link this route with a Concord Tower climb, rappelling from Concord's summit into the shared col before starting Lexington's North Face, so plan rope/anchor needs accordingly if doing a link-up.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "A short, fun 3-pitch 5.7 outing that stays in the shade most of the morning — many parties deliberately start a bit later than a typical alpine start to let the face warm up. Approach up the Blue Lake Trail and climbers' trail to the Concord-Lexington col, then 3 pitches (5.7 crux low, easing to 5.4-5.6) to the notch between the summits.",
+       "hours": 6.5,
+       "miles": 6,
+       "title": "North Face, car-to-car",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "6:30-9:00 AM",
+         "label": "Leave Blue Lake Trailhead",
+         "detail": "Some parties push start time later since the north face stays shaded and cold in the early morning."
+        },
+        {
+         "time": "+1.5-2 hr",
+         "label": "Reach Concord-Lexington col",
+         "detail": "Blue Lake Trail then a climbers' trail up scree/talus into the Concord-Lexington gully."
+        },
+        {
+         "time": "+1-1.5 hr",
+         "label": "Climb 3 pitches to the notch",
+         "detail": "Awkward 5.7 crux right off the ground on P1, easing to fun 5.4-5.6 stemming/chimney above."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit / notch between towers",
+         "detail": ""
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Descend: downclimb Stegosaur ridge, 2 raps to col, retrace to trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Lexington Tower via the North Face and return to the trailhead"
+      }
+     ],
+     "totalNote": "A short-to-moderate single day: roughly 6-7 hours car-to-car for a fit party, ~2,300 ft gain over 3 pitches — one of the more approachable towers in the Liberty Bell group."
+    }
+   }
+  }
+ ]
+}

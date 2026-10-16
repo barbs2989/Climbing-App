@@ -1,0 +1,252 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_fast",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_half_fast",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_half_fast",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Managing national forest"
+  },
+  {
+   "id": "wa_astral_projection",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_astral_projection",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_astroglide",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_astroglide",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_astroglide",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Managing national forest"
+  },
+  {
+   "id": "wa_asymptotic",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_asymptotic",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_asymptotic",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Managing national forest"
+  },
+  {
+   "id": "wa_artic_rose",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_artic_rose",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access notes describe a different peak (Mount Index)"
+  },
+  {
+   "id": "wa_artic_rose",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Managing national forest"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_half_fast",
+   "before": {
+    "access": {
+     "_raw": {
+      "climbing_permit_type": "None (day use pass only)",
+      "parking_pass_required": "Recreation pass",
+      "climbing_permit_required": false
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+     "passRequired": "Recreation pass"
+    },
+    "emergency": {
+     "notes": "Approximately 45 minutes to hospital. Helicopter evacuation available. Satellite communication recommended.",
+     "county": "King County, Washington",
+     "rangerStation": "Okanogan-Wenatchee National Forest Skykomish Ranger District",
+     "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+     "sheriffDispatch": "911"
+    }
+   }
+  },
+  {
+   "id": "wa_astral_projection",
+   "before": {
+    "access": {
+     "_raw": {
+      "climbing_permit_type": "None (day use pass only)",
+      "parking_pass_required": "Recreation pass",
+      "climbing_permit_required": false
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+     "passRequired": "Recreation pass"
+    }
+   }
+  },
+  {
+   "id": "wa_astroglide",
+   "before": {
+    "access": {
+     "_raw": {
+      "climbing_permit_type": "None (day use pass only)",
+      "parking_pass_required": "Recreation pass",
+      "climbing_permit_required": false
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+     "passRequired": "Recreation pass"
+    },
+    "emergency": {
+     "notes": "Satellite communicator recommended.",
+     "county": "King County, Washington",
+     "rangerStation": "Okanogan-Wenatchee National Forest",
+     "nearestHospital": "Snoqualmie Valley Hospital",
+     "sheriffDispatch": "911"
+    }
+   }
+  },
+  {
+   "id": "wa_asymptotic",
+   "before": {
+    "access": {
+     "_raw": {
+      "climbing_permit_type": "None (day use pass only)",
+      "parking_pass_required": "Recreation pass",
+      "climbing_permit_required": false
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+     "passRequired": "Recreation pass"
+    },
+    "emergency": {
+     "notes": "Approximately 45 minutes to hospital. Helicopter evacuation possible via King County Sheriff Air Support Unit.",
+     "county": "King County, Washington",
+     "rangerStation": "Okanogan-Wenatchee National Forest, Skykomish Ranger District",
+     "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+     "sheriffDispatch": "911"
+    }
+   }
+  },
+  {
+   "id": "wa_artic_rose",
+   "before": {
+    "access": {
+     "_raw": {
+      "climbing_permit_type": "None (day use pass only)",
+      "parking_pass_required": "Recreation pass",
+      "climbing_permit_required": false
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+     "passRequired": "Recreation pass"
+    },
+    "emergency": {
+     "notes": "Approximately 45 minutes to nearest hospital. Helicopter evacuation available through King County Sheriff Air Support Unit. Satellite communicator strongly recommended for any backcountry climbing.",
+     "county": "King County, Washington",
+     "rangerStation": "Okanogan-Wenatchee National Forest, Skykomish Ranger District",
+     "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+     "sheriffDispatch": "911 - King County Sheriff"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "file": "t263.json",
+ "results": [
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "fact": "Crux grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 3 (with Class 3-4 exposed rock on the final ridge from the false summit to the true summit)",
+   "evidence": "The east-ridge route is described as class 3 scrambling (first-ascent line, 1961). A trip report reached the false summit on relaxed scrambling and turned back because the ridge to the true summit is exposed, horribly shattered rock - harder than class 2. Internally rock_grade, alpine_grade, pitch_detail (Class 3 / Class 3-4), beta (class 3 rock) and turnaround (class 3-4) all agree against the Class 2-3 copies.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Pulitzer_(Washington)",
+    "https://trailcatjim.com/olympus-bailey-traverse-mt-olympus-stephen-peak-mt-carrie/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2-3",
+     "value": "Class 3",
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Crux grade"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "expect": "Class 2-3 exposed scrambling",
+     "value": "Class 3 exposed scrambling",
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Crux grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "class 2-3 scramble",
+     "replace": "class 3 scramble",
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Crux grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Class 2-3 rating",
+     "replace": "Class 3 rating",
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Crux grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Route grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Class 3",
+   "evidence": "The Class 2 labels apply only to the lower ridge and the final ridge section; the crux is the steep, firm scree traverse around the cliff band near 5,300 ft (climbing_route[1], which carries no class), which reports describe as a 3rd-class traverse, with crumbly slabs and steep heather. An overall Class 3 grade with mostly Class 2 terrain is consistent; day 3 says 'Mostly Class 2', not all.",
+   "sources": [
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Which glacier the crux descent drops onto",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The steep, loose descent off the Olympus massif that turns parties back drops to the White Glacier (the Hubert Glacier is an alternate southern line to the Tom-Olympus ridge)",
+   "evidence": "A party traversing from Snow Dome toward Mount Tom described the steep and loose descent off the Olympus massif to the White Glacier and abandoned Tom there. The Hubert Glacier lies on Olympus's south side and was used by a different party coming from the Valhallas, who called that line pretty easy in early-season snow - not a turn-back point. Internally pitch_detail[2], itinerary day 3 note and schedule, totalNote, obj_haz and descent_text all place the crux descent at the White Glacier; only hazards[1] and watch_out[0] say Hubert.",
+   "sources": [
+    "https://www.thewildoutsiders.com/adventure-journal/mount-olympus",
+    "https://stephabegg.com/trip-reports/washington/olympics-traverse/",
+    "https://en.wikipedia.org/wiki/Hubert_Glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "to the Hubert Glacier",
+     "replace": "to the White Glacier",
+     "id": "wa_mount_tom_scramble",
+     "fact": "Which glacier the crux descent drops onto"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "down onto the Hubert Glacier",
+     "replace": "down onto the White Glacier",
+     "id": "wa_mount_tom_scramble",
+     "fact": "Which glacier the crux descent drops onto"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Best season",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's Mount Olympus climbing page gives the main Blue Glacier season as late June to mid-August, which supports the itinerary's late-June start for snow-bridge coverage and argues against simply trimming it to July; no Tom-specific source states the window, so season/seasonal_guidance (July onward, June marginal) vs the itinerary note cannot be settled with two sources. A Tom-specific season statement would settle it.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": "33.8 km one way; ~69 km / 43 mi round trip",
+   "evidence": "dist_km is the one-way figure (33.8 km = 21 mi, matching the 21.5 mi summit waypoint); the approach states the round-trip distance, which is twice that. Different quantities, clearly labelled.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Direction from Camp Wilder to the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit pin matches the peak's published coordinate (47.7675 N, 123.5197 W) and the easiest route is a Class 2 south ridge rising ~3,800 ft from the upper Elwha, which suggests the summit lies west/northwest of a Camp Wilder pinned at 123.46 W, contradicting the prose 'north/northeast'. But no source located Camp Wilder or described the actual cross-country line from it, and pin coordinates are out of scope. A mapped Camp Wilder location or an ascent report of the south ridge would settle it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Wilder"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,1602 @@
+[
+ {
+  "zone": "enchantments",
+  "routes": [
+   {
+    "id": "wa_beckey_davis",
+    "name": "Beckey-Davis",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 8008,
+    "overview": "The original line up Prusik's south face (FA Fred Beckey and Dan Davis, June 1962). The lower pitches are comparatively unremarkable knobby face and slab climbing, but the upper half above Snafflehound Ledge delivers sustained, steep 5.9 crack climbing to the summit.",
+    "approach": "Standard access is via Aasgard Pass into the Core Enchantments: Stuart Lake Trailhead → Stuart Lake Trail (2.5 mi) → Colchuck Lake Trail #1599A, crossing Mountaineer Creek and switchbacking up to Colchuck Lake (5,570 ft, ~4.1 mi/2,000 ft). From the south-end boulder field, climb Aasgard Pass (1.25 m…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Prusik Peak south face base",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_boving_christensen",
+    "name": "Boving-Christensen",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "high_point_ft": 8008,
+    "overview": "A little-traveled line on Prusik's south face, put up by Paul Boving and Matt Christensen in 1977 using nuts and hexes. It has a moderately gritty, lichen-covered, adventurous feel compared to its more popular neighbors.",
+    "approach": "Reached via the same Core Enchantments approach as the other south-face lines: Stuart Lake Trailhead → Stuart Lake Trail (2.5 mi) → Colchuck Lake Trail #1599A across Mountaineer Creek to Colchuck Lake (5,570 ft, ~4.1 mi/2,000 ft), then the south-end boulder field and Aasgard Pass (1.25 mi, ~2,000 ft…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+    "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+    "peak": "Colchuck Balanced Rock",
+    "area_id": "wa_colchuck_balanced_rock",
+    "discipline": "scrambling",
+    "grade": "3rd",
+    "high_point_ft": 8011,
+    "overview": "A scenic, non-technical approach/scramble route to the col between Colchuck Balanced Rock and Colchuck Peak, used both as an approach for the harder rock routes and as a moderate objective in its own right. The line is rated 3rd class overall (Grade II).",
+    "approach": "This is the approach/scramble route to the col above Colchuck Lake's east side, used to access objectives beyond Colchuck Balanced Rock (notably Dragontail Peak). Start at the Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road) and hike the Colchuck Lake Trail (#1599) 4 miles and 2,280 ft to …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Boulder camp in the flats",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Low-impact camping on rock and gravel among boulders just below the col; no reliable water at this camp."
+     }
+    ]
+   },
+   {
+    "id": "wa_colchuck_peak_colchuck_glacier",
+    "name": "Colchuck Glacier",
+    "peak": "Colchuck Peak",
+    "area_id": "wa_colchuck_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 3, glacier",
+    "high_point_ft": 8705,
+    "overview": "The Colchuck Glacier (Beckey's 'East Route') is the classic, most-climbed line on Colchuck Peak: an easy-angled snow/glacier ascent up the peak's northeast side to the Colchuck-Dragontail col, then a short 3rd-class scramble to the summit. From the north shore of Colchuck Lake, climbers gain the cre…",
+    "approach": "From the Stuart Lake Trailhead (end of FS Road 7601, Eightmile Road, ~3,400 ft — reached via Icicle Road/FS 76 from Leavenworth, roughly 8.4 miles, then FS 7601 another 3.8 miles), follow Stuart Lake Trail #1599 south along Mountaineer Creek about 2.5 miles/1,100 ft of gain to the signed fork; take …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Colchuck Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5561,
+      "notes": "Climb the switchbacks to the lake at about 5,560 ft. Reliable water and established shoreline campsites; from here you can read the whole objective across the w…"
+     }
+    ]
+   },
+   {
+    "id": "wa_colchuck_peak_east_ridge",
+    "name": "East Ridge (Non-Technical)",
+    "peak": "Colchuck Peak",
+    "area_id": "wa_colchuck_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 8705,
+    "overview": "Colchuck Peak is primarily known for its technical alpine routes and glaciated approaches, but the East Ridge provides a non-technical Class 2-3 scrambling alternative for parties seeking to reach the summit without technical climbing. This route is less traveled than the technical options.",
+    "approach": "From Leavenworth, drive Icicle Road (FR 7601 via Eightmile Road) to the Stuart Lake Trailhead (3,400 ft). Hike the Stuart Lake Trail roughly 2.5 miles (1,100 ft gain) to the Colchuck Lake Trail junction, then switchback up another 1.6 miles (1,100 ft gain) to Colchuck Lake (~4.1 mi, ~2,200 ft total)…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_colchuck_peak_holsten_hilden",
+    "name": "Holsten-Hilden",
+    "peak": "Colchuck Peak",
+    "area_id": "wa_colchuck_peak",
+    "discipline": "alpine",
+    "grade": "Grade IV, M6, AI3+",
+    "high_point_ft": 8705,
+    "overview": "A mixed ice-and-rock winter line up Colchuck Peak's northeast face, right of the Northeast Couloir, combining two sustained AI3 ice pitches with technical M6 mixed climbing through a chimney system to the summit ridge.",
+    "approach": "Hike the Stuart Lake Trail to Colchuck Lake, then continue to the base of the Colchuck Glacier/moraine below Colchuck's northeast face. The route starts right of the Northeast Couloir: two 60m pitches of AI3 ice gain the initial couloir, followed by several hundred feet of 50-60 degree snow trending…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_colchuck_peak_north_buttress_couloir",
+    "name": "North Buttress Couloir",
+    "peak": "Colchuck Peak",
+    "area_id": "wa_colchuck_peak",
+    "discipline": "alpine",
+    "grade": "5.5 (harder direct-start variation)",
+    "high_point_ft": 8705,
+    "overview": "The most direct couloir rising out of the Colchuck Glacier's moraine on Colchuck Peak's north side — a popular introduction to steep snow and easy mixed climbing, with conditions ranging from a straightforward snow slog to thin mixed rock-and-ice.",
+    "approach": "Follow the shared Colchuck Peak approach: from Leavenworth, drive Icicle Road ~8.4 mi to FR 7601, then FR 7601 ~3.7 mi to Stuart Lake Trailhead; hike the Stuart Lake/Colchuck Lake Trail (~4-4.5 mi, ~2,200 ft gain) to Colchuck Lake. From the lake's far (south) side, hike up and gain the moraine, foll…",
+    "camps": [
+     {
+      "name": "Colchuck Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "The base camp for the route, about 4-4.5 mi and 2,200 ft from the Stuart Lake trailhead. Parties heading for the couloir generally camp toward the far, south end of the lake so they are already at the moraine in the morn…"
+     }
+    ]
+   },
+   {
+    "id": "wa_colchuck_peak_northeast_couloir",
+    "name": "Northeast Couloir",
+    "peak": "Colchuck Peak",
+    "area_id": "wa_colchuck_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II-III, AI2-3",
+    "high_point_ft": 8705,
+    "overview": "The Northeast Couloir splits off about a third of the way up the Colchuck Glacier and climbs the shaded northeast flank of the peak on firm snow and short ice steps, with a steeper entry and exit — reported up to 60 degrees — that deposits climbers on the ridge just below the summit. It's sometimes …",
+    "approach": "Start at the Stuart Lake Trailhead at the end of FS Road 7601 (Eightmile Road), elevation ~3,400 ft — in early season when Eightmile Road is gated/snowed in, tack on roughly 4 additional miles of road walking/skiing from the Bridge Creek Campground area on Icicle Road. From the trailhead, follow Stu…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Colchuck Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5570,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_backbone_ridge",
+    "name": "Backbone Ridge",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 8840,
+    "overview": "A long, left-trending granite ridge line up the lower-right side of Dragontail's north face, mixing clean crack-and-corner pitches with looser scrambling, capped by the striking 'Fin' feature near the summit.",
+    "approach": "Stuart Lake Trailhead → Colchuck Lake Trail (~4 mi, 2,280 ft gain) → around the lake and up the moraine to the route base (roughly 200 ft left of Serpentine Arête); initial bushwhacking on brushy ledges until the party cliffs out and traverses up/right toward the ridge crest.",
+    "camps": [
+     {
+      "name": "Colchuck Lake",
+      "store": "bivy",
+      "type": null,
+      "elev": 5570,
+      "notes": "The planned base camp for the route, roughly two and a quarter hours from the trailhead. Camp as close to the south end as you can — everything you save there is time you are not walking in the dark, because the moraine …"
+     },
+     {
+      "name": "First large flat ledge low on the ridge",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "An emergency bivy, not a camp. It is the first genuinely flat spot after the initial pitches and is normally used as a break and gear-sorting stance, but it is somewhere to stop if a party is benighted low on the ridge. …"
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+    "name": "East Ridge via Aasgard Pass Route",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3 (3rd class with airy sections)",
+    "high_point_ft": 8840,
+    "overview": "The East Ridge via Aasgard Pass is Dragontail's standard, non-technical route to the summit — a long alpine day combining the Colchuck Lake approach, a steep ~2,000-ft climb to 7,841-ft Aasgard Pass, and Class 2-3 scrambling with easy glacier travel across the upper mountain to the summit.",
+    "approach": "From Colchuck Lake's west side trail, follow cairns up the climbers' trail into Aasgard Pass, gaining roughly 2,200 ft in 0.75 mile. At the pass, head right/south along a short ridge above a tarn to reach Dragontail's east saddle, then cross the Snow Creek Glacier basin (typically snow-covered throu…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_r1",
+    "name": "Hidden Couloir",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, alpine ice/mixed couloir",
+    "high_point_ft": 8840,
+    "overview": "Hidden Couloir is the entry gully of Dragontail's north-face ice and mixed complex — it is the first of the three couloirs linked by the popular Triple Couloirs route. It starts around 6,400 ft directly above the south end of Colchuck Lake and, true to its name, is hidden from view from the lake its…",
+    "approach": "From the Stuart Lake trailhead (3,400 ft), hike the Stuart Lake Trail then Colchuck Lake Trail about 4 miles to Colchuck Lake (5,570 ft). Traverse the lake's south/east shore and ascend talus to the base of the Hidden Couloir at roughly 6,400 ft, just east of the lowest point of Dragontail's north f…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Colchuck Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "Established backcountry camps and reliable water near the outlet; dogs prohibited in the Enchantment Permit Area."
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_r2",
+    "name": "Gerber-Sink",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "alpine",
+    "grade": "Grade III-IV alpine rock",
+    "high_point_ft": 8840,
+    "overview": "Also known as the North Face route, Gerber-Sink climbs the lowest point of Dragontail's north face (nordwand), between Triple Couloirs and Backbone Ridge, above Colchuck Lake. Originally a 5.7 summer rock route with a couple of harder cruxes, it has become a popular winter/spring ice-and-mixed objec…",
+    "approach": "From the Stuart Lake Trailhead (3,400 ft) follow Stuart Lake Trail #1599 to the junction at 2.6 miles, then Colchuck Lake Trail #1599A to Colchuck Lake (5,570 ft, ~4.3-4.4 miles, ~2,200 ft gain). This route is typically climbed in winter/spring ice conditions, so expect a longer, harder approach wit…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Colchuck Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "Reliable water and camps; skirt the shore toward the north face."
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_r3",
+    "name": "Pandora's Box (W Couloir)",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II, steep snow to ~40-45°, Class 3 scramble",
+    "high_point_ft": 8840,
+    "overview": "Pandora's Box (also called the W Couloir) is the standard moderate couloir linking Colchuck and Dragontail near Colchuck Col. It's a west-facing snow/talus couloir a couple hundred feet east of Colchuck Col, most often climbed as the summit finish for Dragontail Peak via the Colchuck Glacier approac…",
+    "approach": "From the Stuart Lake Trailhead (3,400 ft) follow Stuart Lake Trail #1599 to the junction at 2.6 miles, then Colchuck Lake Trail #1599A to Colchuck Lake (5,570 ft) at roughly 4.3-4.4 miles and about 2,200 ft of gain (2-2.5 hours). Unlike the Aasgard Pass routes, continue around the lake's west/south …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Colchuck Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "Reliable water and camps; head along the north shore toward the Colchuck Glacier."
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_r4",
+    "name": "Triple Couloirs",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "alpine",
+    "grade": "Grade IV, WI3 M3, steep snow (R)",
+    "high_point_ft": 8840,
+    "overview": "An ultra-classic Cascades alpine line: three couloirs separated by short steep rock bands cut straight up the middle of Dragontail's north face, giving roughly 2,500 ft of sustained snow, ice, and mixed climbing to the summit.",
+    "approach": "Stuart Lake Trailhead to Colchuck Lake (4.5 mi, ~2,000 ft gain), then approach the base of the north face aiming for the lowest rock protrusion near the middle of the wall to find the Hidden Couloir entrance around 6,400 ft.",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dragontail_peak_serpentine_arete",
+    "name": "Serpentine Arête",
+    "peak": "Dragontail Peak",
+    "area_id": "wa_dragontail_peak",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 8840,
+    "overview": "A long, high-quality granite line up the right (west) side of Dragontail's north face, roughly 200 ft right of Backbone Ridge, following corners and crack systems to two sustained 5.8 crux pitches before ridge scrambling to the summit.",
+    "approach": "From the Stuart Lake Trailhead (FR 7601), hike the Colchuck Lake Trail ~4 mi / 2,280 ft gain to Colchuck Lake (5,574 ft). Round the lake's east/south shore, boulder-hop onto the Colchuck Glacier's lateral moraine, and traverse it toward the orange-colored rock marking the route start; 4th-class ledg…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_e_se_face",
+    "name": "E/SE Face",
+    "peak": "Witches Tower",
+    "area_id": "wa_witches_tower",
+    "discipline": "alpine",
+    "grade": "4th",
+    "high_point_ft": 8566,
+    "overview": "A less-traveled line up Witches Tower's east/southeast aspect, climbing broken, blocky Class 4 terrain; only a handful of ascents are on record (it is logged as a 4th-class rock route that's occasionally graded up to Ice 2/Mixed 1b, reflecting a short snow or low-angle ice step that can persist on t…",
+    "approach": "From the Stuart Lake Trailhead (~3,400 ft, reached via ~8.7 mi of Icicle Creek Road southwest of Leavenworth), follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles, bear left (south) at the signed junction onto the Colchuck Lake Trail (this junction is also where the Lake S…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_enchantment_peak_southwest_scramble",
+    "name": "Southwest Scramble",
+    "peak": "Enchantment Peak",
+    "area_id": "wa_enchantment_peak",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 2 to 3",
+    "high_point_ft": 8538,
+    "overview": "Enchantment Peak (8,538 ft) is the granite high point of the Core Enchantments, rising on the ridge between Prusik Peak (NE) and Dragontail Peak/Aasgard Pass (SW), within the Alpine Lakes Wilderness. The peak actually has two summits about 1,500 ft apart and of nearly equal height: the NE summit is …",
+    "approach": "Start at the Stuart Lake Trailhead (elev. ~3,400 ft) on FS Road 7601 off Icicle Road. Follow the Stuart Lake Trail (Trail #1599) north through Douglas-fir/subalpine forest, crossing Mountaineer Creek on sturdy footbridges; the grade is moderate for the first 2.5 miles (about 1,500 ft gain) to the si…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Core Enchantments",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_energizer_bunny",
+    "name": "Energizer Bunny",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.10+ C1",
+    "high_point_ft": 8008,
+    "overview": "A little-traveled line on Prusik's west face, just left of Solid Gold, documented as a probable first ascent by Jon Pobst and Steph Abegg in June 2015 (status as true FA unconfirmed). Excellent, clean splitter cracks make up most of the climbing; pitch 4's rock features give the route its name.",
+    "approach": "Reached via the standard Core Enchantments approach shared by the other south-face lines: Stuart Lake Trailhead → Stuart Lake Trail (2.5 mi) → Colchuck Lake Trail #1599A across Mountaineer Creek to Colchuck Lake (5,570 ft, ~4.1 mi/2,000 ft), then the south-end boulder field and Aasgard Pass (1.25 mi…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_annapurna_south_slopes",
+    "name": "North Slopes",
+    "peak": "Little Annapurna",
+    "area_id": "wa_little_annapurna",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 2 to 3",
+    "high_point_ft": 8485,
+    "overview": "Little Annapurna (8,485 ft) is a granite summit in the Core (Upper) Enchantments, Stuart Range, Alpine Lakes Wilderness, immediately south of the Enchantment Lakes basin near Isolation and Tranquil Lakes. It was named by Ellensburg's Sherpa Climbing Club for its resemblance to the Himalayan Annapurn…",
+    "approach": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601), follow the Stuart Lake Trail (#1599) about 2.5 miles to the signed fork where the Colchuck Lake Trail (#1599.1) splits left/south. Continue roughly 1.8 more miles — crossing Mountaineer Creek and a boulder-hop s…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Core Enchantments",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "From the pass, cross the grey talus and glacial till of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the mead…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mcclellan_peak_southwest_scramble",
+    "name": "Southwest Scramble",
+    "peak": "McClellan Peak",
+    "area_id": "wa_mcclellan_peak",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 3",
+    "high_point_ft": 8368,
+    "overview": "McClellan Peak forms the high, sprawling rampart on the southeast side of the Enchantments, a granite massif with substantial prominence that rises above the Snow Lakes and Nada Lake basins. It sits about 1.3 miles east of Little Annapurna and 1.6 miles southwest of The Temple, and was first climbed…",
+    "approach": "From Leavenworth, drive Icicle Road (Forest Road 7600) about 4.2–4.3 miles west to the Snow Lakes Trailhead and parking area on the south side of the road (~1,350 ft). Start on the Snow Lakes Trail No. 1553, which climbs steadily through forest along Icicle Creek/Snow Creek drainage. Around 4 miles …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Snow Lakes basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5400,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_northeast_buttress_4",
+    "name": "Northeast Buttress",
+    "peak": "Colchuck Peak",
+    "area_id": "wa_colchuck_peak",
+    "discipline": "mountaineering",
+    "grade": "5.8+",
+    "high_point_ft": 8705,
+    "overview": "The Northeast Buttress is Colchuck's premier rock route: a sustained 14-pitch, roughly 1,200-foot IV 5.8+ line on mostly solid granite, well south of the Northeast Couloir. Two start variations — the Kearney and Beckey lines — merge by around pitch 5, then the route follows the buttress crest and a …",
+    "approach": "Approach as for the Colchuck Glacier route: Stuart Lake Trailhead (end of FS 7601/Eightmile Road, ~3,400 ft) via Stuart Lake Trail #1599 (2.5 mi/1,100 ft to the fork) and then the Colchuck Lake Trail (1.6 mi/1,100 ft of switchbacks) to Colchuck Lake (5,570 ft, ~4 mi/2,200 ft in) — the last reliable …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_nw_ridge_2",
+    "name": "NW Ridge",
+    "peak": "Colchuck Balanced Rock",
+    "area_id": "wa_colchuck_balanced_rock",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 8240,
+    "overview": "A moderate scramble/low-5th-class ridge route on the northwest side of the formation, approached from the east side of Colchuck Lake. Class 3 terrain leads to a notch above Jabberwocky Tower, followed by a few pitches of low 5th class up to 5.6 along the exposed ridge crest to the summit area.",
+    "approach": "Hike the Colchuck Lake Trail (#1599) from the Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road) — 4 miles and 2,280 ft gain, crossing Mountaineer Creek on a log bridge at 1.5 miles and staying right at the Lake Stuart Trail junction — to reach Colchuck Lake (2.5-3 hours). Unlike the west-si…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_prusik_peak_der_sportsman",
+    "name": "Der Sportsman",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.11+",
+    "high_point_ft": 8008,
+    "overview": "A harder free climb on Prusik Peak's south face, climbing sustained, technical crack lines on the same superb Enchantments granite as the classic Burgner-Stanley. A coveted test-piece for strong trad climbers in a spectacular alpine setting.",
+    "approach": "Long approach into the Core Enchantments via Aasgard Pass: from the Stuart Lake Trailhead, follow the Stuart Lake Trail 2.5 miles to the Colchuck Lake Trail #1599A junction, cross Mountaineer Creek, and switchback up to Colchuck Lake (5,570 ft, ~4.1 mi/2,000 ft gain). From the boulder field at the l…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Prusik Peak south face base",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_prusik_peak_south_face_burgner_stanley",
+    "name": "South Face (Burgner-Stanley)",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "III, 5.9+",
+    "high_point_ft": 8008,
+    "overview": "The classic South Face of Prusik Peak — one of the most celebrated alpine rock routes in the Enchantments, put up in 1968 by Ron Burgner and Fred Stanley.",
+    "approach": "Long approach into the Core Enchantments via Aasgard Pass: Stuart Lake Trailhead → Stuart Lake Trail (2.5 mi) → Colchuck Lake Trail #1599A, crossing Mountaineer Creek and switchbacking to Colchuck Lake (5,570 ft, ~4.1 mi/2,000 ft). From the south-end boulder field, ascend Aasgard Pass — 1.25 miles, …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Prusik Peak south face base",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_prusik_peak_west_ridge",
+    "name": "West Ridge",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.7",
+    "high_point_ft": 8008,
+    "overview": "Prusik Peak is the iconic granite tower of the Enchantments, and its West Ridge is one of the most popular moderate alpine rock climbs in Washington. Four pitches of clean, featured granite lead along an airy crest to the small summit, with the climbing rarely exceeding 5.7 yet feeling thoroughly al…",
+    "approach": "Start at the Stuart Lake Trailhead (Trail #1599) at the end of Eightmile Road/FS-7601, elev. ~3,400-3,600 ft. Hike the Stuart Lake Trail about 2.5 miles to the signed junction with the Colchuck Lake Trail (#1599 continues to Stuart Lake; branch right/south onto the Colchuck Lake Trail). This spur cr…",
+    "camps": [
+     {
+      "name": "Tarn below Isolation Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A climbers' base camp rather than a scenic one: an unnamed tarn a tier below Isolation Lake, the first large lake reached coming over Aasgard Pass. Chosen for easy water, comparatively few insects and shelter below the o…"
+     },
+     {
+      "name": "Inspiration and Perfection Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The most used camping ground in the basin, on the benches and the bluff between the two lakes, and the closest general camp to the peak — the signed path toward Prusik Pass leaves the western shore of Perfection Lake. Op…"
+     },
+     {
+      "name": "Core Enchantments",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_southwest_rib_2",
+    "name": "Southwest Rib",
+    "peak": "Crystal Lake Tower",
+    "area_id": "wa_crystal_lake_tower",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 7923,
+    "overview": "A long, moderate alpine rock line that follows the crest of Crystal Lake Tower's prominent southwest rib for roughly 1,400-1,500 feet from its toe in Crystal Creek Basin to the summit, mixing an indistinct lower crest, a knife-edged ridge section, corner systems, and a gendarme-studded upper headwal…",
+    "approach": "",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_stanley_burgner",
+    "name": "Stanley-Burgner",
+    "peak": "Prusik Peak",
+    "area_id": "wa_prusik_peak",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "high_point_ft": 8008,
+    "overview": "The Enchantments' most celebrated moderate alpine rock line, put up in 1968 by Ron Burgner and Fred Stanley climbing directly up Prusik's south face to the summit — nearly free except two points of aid for the leader on the first ascent.",
+    "approach": "Access via the standard Core Enchantments approach: Stuart Lake Trailhead → Stuart Lake Trail (2.5 mi) to the Colchuck Lake Trail #1599A junction, across Mountaineer Creek and up switchbacks to Colchuck Lake (5,570 ft, ~4.1 mi/2,000 ft gain). From the south-end boulder field, climb Aasgard Pass (1.2…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Prusik Peak south face base",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_the_temple_south_ridge",
+    "name": "South Ridge",
+    "peak": "The Temple",
+    "area_id": "wa_the_temple",
+    "discipline": "alpine",
+    "grade": "Grade II, Class 3 to 4",
+    "high_point_ft": 8295,
+    "overview": "The Temple is the dramatic granite tower guarding the eastern edge of the Core Enchantments, rising above Prusik Pass and Tamarack Meadows in the Alpine Lakes Wilderness. First climbed by Fred Beckey in 1942, its standard route follows blocky, mostly class 3-4 terrain up the peak's south side to a s…",
+    "approach": "From the Snow Lakes Trailhead at the end of Icicle Creek Road (about 4.3 mi from US-2, ~1,300 ft elevation), cross Icicle Creek on the trail bridge and begin the long, switchbacking climb up open, sun-baked slabs on Snow Lakes Trail No. 1553 — this lower stretch is notoriously hot with almost no sha…",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Core Enchantments / Prusik Pass area",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7300,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_witches_tower_south_face",
+    "name": "South Face / Standard Route",
+    "peak": "Witches Tower",
+    "area_id": "wa_witches_tower",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.4",
+    "high_point_ft": 8566,
+    "overview": "Witches Tower is the distinct granite pinnacle at the west end of the Enchantments, about 0.4 mi east-southeast of Dragontail Peak (its nearest higher neighbor) and dividing remnants of the Snow Creek Glacier between Little Annapurna and Dragontail. It's a compact, airy summit block commonly tacked …",
+    "approach": "From the Stuart Lake Trailhead (Mountaineer Creek Trail #1599, elev. ~3,400 ft; Northwest Forest Pass required) at the end of Icicle Creek/Eightmile Road (FR 7601), follow the trail steadily uphill through forest along Mountaineer Creek. At about 2.5 miles, bear left at the signed junction onto the …",
+    "camps": [
+     {
+      "name": "Colchuck Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Cr…"
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps…"
+     },
+     {
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7190,
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a st…"
+     },
+     {
+      "name": "Gnome Tarn",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7372,
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from aro…"
+     },
+     {
+      "name": "Shield Lake, north of Prusik Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6706,
+      "notes": "Crossing Prusik Pass and dropping north puts a party on the shaded side of the ridge with far fewer people around, while still leaving Prusik's West Ridge within a short reverse approach in the morning. The trade is that…"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in…"
+     },
+     {
+      "name": "Colchuck Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5570,
+      "notes": "Reliable water and the last established camps before Aasgard Pass; overnight stays require an Enchantment Permit Area reservation May 15-Oct 31."
+     }
+    ]
+   }
+  ]
+ }
+]

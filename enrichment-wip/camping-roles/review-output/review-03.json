@@ -1,0 +1,166 @@
+{
+ "routes": [
+  {
+   "id": "wa_mount_lawson_standard",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Sixteen Mile Camp's elevation and its description as sitting directly under a peak rising ~3,800 ft in 1.3 miles both check out against independent trip reports of the North Fork Quinault approach. Wolf Bar, Halfway House and Elip Creek Camp are real but much lower staging camps well below Sixteen Mile on the same trail, so leaving them as unhidden pins (not camps) is correct."
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Route descriptions confirm the line from Upper Cathedral Lake goes around the west ridge via a boot path through the upper basin on the way to the summit, so that basin is correctly route-role rather than a base. Upper Cathedral Lake is repeatedly confirmed as the standard backpacking base for both Cathedral Peak and Amphitheater."
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Trip reports describe Copper Glance Lake and a separate, higher unnamed tarn/basin around 6,600 ft as two genuinely distinct overnight options in the same drainage, the higher one chosen specifically to shorten the summit day. These are two real camps, not a duplicate, so keeping both as main is correct."
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Independent trip reports confirm most parties camp at the alpine tarn off the Beauty Creek path (~6,750 ft), while separate lower, trail-side sites exist along the maintained Robinson Creek Trail itself. These are two different places, so the main/route split as stored is correct."
+  },
+  {
+   "id": "wa_windy_peak_windy_creek_trail",
+   "verdict": "change",
+   "setRole": {},
+   "remove": ["Windy Peak south plateau"],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "This is consistently described as a day hike on a trail nearly to the summit, and one route description states outright that there are no appealing places to camp on this stretch. No source describes a camp on a south plateau, so the entry (already flagged by the first researcher as a best guess) is removed, leaving this route with no main camp, which is fine for a genuine day hike."
+  },
+  {
+   "id": "wa_dome_peak_indian_summer",
+   "verdict": "change",
+   "setRole": {},
+   "remove": ["Itswoot Ridge"],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "The first-ascent trip report for Indian Summer describes the approach in detail — an emergency bivy in the Bachelor Creek brush, a rest stop at Cub Lake, and a multi-night high camp at the Dome/Chickamin col from which the route was climbed — and never mentions Itswoot Ridge, which is the base for the separate, non-technical south-peak routes from the same trailhead. Removing Itswoot Ridge leaves the col high camp as main and Bachelor Creek/Cub Lake correctly as route-role stops on the way there."
+  },
+  {
+   "id": "wa_old_guard_peak_east_side_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Multiple sources confirm the standard Ptarmigan Traverse camp order Kool-Aid Lake, then Yang Yang Lakes, then White Rock Lakes, with Old Guard Peak sitting directly between the latter two and climbed as a side trip from either; a documented ascent was staged from White Rock Lakes. Both are genuinely used bases for the peak, so no change."
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "A route description for Inner Constance itself (not just Warrior Peak) states the approach continues up the Upper Dungeness trail to a base camp near Home Lake, directly confirming it as the standard camp for this peak. Boulder Shelter sits well before Home Lake on the same trail and is described as the working base specifically for Warrior Peak, supporting its route-role placement here."
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "verdict": "change",
+   "setRole": {},
+   "remove": ["Easy Pass trailhead, SR 20"],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Overnight camping is prohibited at the Easy Pass trailhead and its meadows, the same rule as other North Cascades trailheads — it is where the car is parked, not a camp, so it is removed rather than kept as a route-role entry. Trip reports confirm the traverse's exit genuinely varies (Fisher Creek, or other passes), supporting Fisher Camp staying route-role rather than becoming a second main."
+  },
+  {
+   "id": "wa_crater_mountain_standard_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Crater Lake basin matches the route's own approach text exactly as the camp below the peak's south side. No reliable specific elevation for the lake itself (as opposed to the nearby trail junction) turned up anywhere, so it stays omitted rather than guessed, as the first researcher left it."
+  },
+  {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "The Northeast Glacier is technically a distinct feature from the Nohokomeen Glacier on the same north side of the mountain, but both are reached by the same May Creek/East Bank approach and no source describes a separate camp for the Northeast Glacier specifically. With nothing concrete to substitute and no rule permitting a guessed elevation for a new entry, the existing high camp and May Creek Camp stand as the best-supported camps for this approach."
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Two independent trip reports on this exact route both describe climbing the south face at dawn directly from Crater Creek Meadows, supporting its current position as the more central, first-listed main camp, with Jerry Lakes basin used on a separate night. The hidden pin sits at exactly 6,000 ft, matching Crater Creek Meadows rather than Jerry Lakes (6,350 ft), which points to it being a leftover duplicate of Crater Creek Meadows rather than a distinct third site, so it stays hidden."
+  },
+  {
+   "id": "wa_jack_mountain_southwest_ridge",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "A trip report independently describes camping at a 6,600 ft hump just northwest of Little Jack, matching the stored camp's name and elevation exactly and confirming it as a real, used site, even though fast parties also do the route car-to-car."
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Trip reports confirm both camps are genuinely used for Hoodoo: parties commonly set up at the old cabin, right where the scramble's boulder field and gully start, while others continue on to camp at Libby Lake just above."
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "A dedicated trip report for Crater Lakes on this approach confirms overnight camping there is an established, real base for Raven Ridge, consistent with the note that some fast parties instead do the whole route in a day."
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Trip reports place Upper Eagle Lake camping specifically in the context of the Eagle Lakes loop variant via the Crater Creek trailhead, not the direct Foggy Dew approach to Cooney Lake, confirming the current main/route split."
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "No trip report specifically and unambiguously describes a bivy for the Northwest Arete as opposed to the neighboring North Face line, so the shared bivy remains an assumption as the first researcher flagged, but the North Face bivy's own name and elevation check out against sources describing it. Independent sources do confirm Fisher Chimneys is used as a descent for the North Face, Price Glacier, or the Northwest Arete, which supports keeping it as a genuine route-role descent camp rather than a mistaken import."
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "A specific bivy area on slabs/saddle above Price Lake below the glacier is independently confirmed as the real base for this route, matching the first researcher's note, and sources confirm Fisher Chimneys is the typical descent after topping out on Price Glacier, supporting its route-role camps. (For the reviewer, not a role change: the main camp's elevation is stored as null even though a non-hidden pin of the identical name carries 6,500 ft — worth a follow-up data fix outside this role review's scope.)"
+  }
+ ]
+}

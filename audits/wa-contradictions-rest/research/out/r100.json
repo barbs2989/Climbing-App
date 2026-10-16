@@ -1,0 +1,419 @@
+{
+ "file": "r100.json",
+ "results": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit required; the route lies outside the Pasayten Wilderness (Okanogan-Wenatchee National Forest, Golden Horn roadless area).",
+   "evidence": "SummitPost's Azurite Peak page states the peak is close to the Pasayten Wilderness but not in it, on Okanogan National Forest land; Wikipedia places it on Okanogan-Wenatchee NF land with no wilderness designation. The Forest Service describes West Fork Methow Trail #480 as maintained primarily for motorcycles and mountain bikes (impossible inside designated wilderness), and neither the FS Rattlesnake Trailhead page nor WTA mentions a wilderness permit; the USFS roadless inventory places the Azurite/Mill Creek area in the Golden Horn roadless area.",
+   "sources": [
+    "https://www.summitpost.org/azurite-peak/154496",
+    "https://en.wikipedia.org/wiki/Azurite_Peak",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/rattlesnake-trailhead-methow",
+    "https://www.wta.org/go-hiking/hikes/west-fork-methow-river",
+    "https://www.fs.usda.gov/recarea/okawen/recreation/recarea/?recid=59499"
+   ],
+   "patches": [
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Self-issued wilderness permit required at the trailhead (route lies within the Pasayten Wilderness).",
+     "value": "No wilderness permit required; the route lies just outside the Pasayten Wilderness on Okanogan-Wenatchee National Forest land."
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "what"
+     ],
+     "expect": "Free self-issue Pasayten Wilderness permit",
+     "value": "No overnight permit required"
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Fill one out at the trailhead.",
+     "value": "Camps on the approach are dispersed national forest sites outside the Pasayten Wilderness."
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "url"
+     ],
+     "expect": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+     "value": null
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Pasayten Wilderness regulations apply: group size limits, no bikes or mechanized travel past the wilderness boundary, Leave No Trace camping.",
+     "value": "Standard national forest rules apply: Leave No Trace camping. The route lies outside the Pasayten Wilderness, so wilderness regulations do not apply."
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "upper Skagit divide, within the Pasayten Wilderness.",
+     "replace": "upper Skagit divide, just outside the Pasayten Wilderness."
+    }
+   ]
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One detailed trip report (same trailhead, Horse Heaven Camp, 3 days) records 25 miles and 6,700 ft gained and lost car to car, which supports gain_ft as a cumulative figure; the itinerary days (1,650 + 4,100) are net elevation differences. No second independent source gives a car-to-car gain for this approach, and itinerary day values may not be edited just to make totals agree.",
+   "sources": [
+    "https://trailcatjim.com/azurite-peak-via-south-ridge-southwest-gully/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "How much class 4",
+   "verdict": "fixed",
+   "correct_value": "Standard line is Class 3 (loose gully never more than Class 3); ~200 ft of sustained Class 4 exists only on the west rib as an optional harder variation.",
+   "evidence": "Lemke Climbs reports about 200 ft of sustained 4th class on the west rib, to be avoided unless extra difficulty is wanted, with the standard route mostly Class 3. SummitPost's standard-route page says the summit gully is loose but never more than Class 3 and that only the southwest face goes Class 4. Two further trip reports (trailcatjim, lucasmountainknowledge) describe only Class 3 on the route.",
+   "sources": [
+    "https://www.lemkeclimbs.com/azurite-peak.html",
+    "https://www.summitpost.org/standard-route/166242",
+    "https://trailcatjim.com/azurite-peak-via-south-ridge-southwest-gully/",
+    "https://www.lucasmountainknowledge.com/post/azurite-hardy-july-2025"
+   ],
+   "patches": [
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "How much class 4",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Parties describe sustained 4th class climbing through this rib/traverse section.",
+     "replace": "The west rib itself holds about 200 ft of sustained Class 4 for anyone wanting a harder line, but the standard way stays on Class 3 ground beside it."
+    }
+   ]
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Rappel rope length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "A 30 m rope doubled gives only a ~15 m rappel, while a 60 m rope doubled gives ~30 m; the descent text's parenthetical says exactly this, so rejecting a 30 m rope and recommending a doubled 60 m one is consistent. SummitPost likewise suggests a 60 m rope for rappelling the upper gully. The gear list's '30-60m' range is logged separately below.",
+   "sources": [
+    "https://www.summitpost.org/standard-route/166242"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Gear list offers a 30 m rope the descent calls too short",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "Probably 'optional 60m rope'",
+   "evidence": "gear[3] says 'optional 30-60m rope' while descent_text says a 30 m rope will not get through the gully. SummitPost suggests a 60 m rope for the upper-gully rappel, but no second independent source states the rappel length, so the gear line is left unchanged.",
+   "sources": [
+    "https://www.summitpost.org/standard-route/166242"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Parking-pass trailheads copied from another area",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Northwest Forest Pass (or Interagency pass) at the Rattlesnake / West Fork Methow Trailhead, $5/day or $30/year.",
+   "evidence": "Every other field (passRequired, waypoint 0, road, approach) uses the Rattlesnake / West Fork Methow trailhead; the Washington Pass trailheads named are from another area. The Forest Service Rattlesnake Trailhead page honours the Northwest Forest Pass, Interagency passes or a $5 day / $30 annual fee.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/rattlesnake-trailhead-methow"
+   ],
+   "patches": [
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Parking-pass trailheads copied from another area",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "value": "Northwest Forest Pass required at the Rattlesnake (West Fork Methow) Trailhead — $5/day or $30/annual (America the Beautiful pass also honored)."
+    }
+   ]
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "fact": "Elevation of the west-ridge saddle",
+   "verdict": "fixed",
+   "correct_value": "~7,400 ft",
+   "evidence": "SummitPost: enter the upper basin at 7,000 ft, then climb a loose slope for 400 ft to a small saddle in the west ridge (≈7,400 ft). Country Highpoints reached the west ridge at 7,500 ft, and onehikeaweek reached the ridge at 7,600 ft. All place the ridge saddle ~900 ft below the 8,374 ft summit, not at 8,250 ft.",
+   "sources": [
+    "https://www.summitpost.org/big-snagtooth/848553",
+    "https://www.countryhighpoints.com/big-snagtooth-winter-ascent/",
+    "https://onehikeaweek.com/2014/08/17/big-snagtooth/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_snagtooth_west_ridge",
+     "fact": "Elevation of the west-ridge saddle",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the saddle on the west ridge (~8,250 ft)",
+     "replace": "the saddle on the west ridge (~7,400 ft)"
+    },
+    {
+     "id": "wa_big_snagtooth_west_ridge",
+     "fact": "Elevation of the west-ridge saddle",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "a saddle near 8,250 ft",
+     "replace": "a saddle near 7,400 ft"
+    },
+    {
+     "id": "wa_big_snagtooth_west_ridge",
+     "fact": "Elevation of the west-ridge saddle",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "from the ~8,250 ft saddle",
+     "replace": "from the ~7,400 ft saddle"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "fact": "Gain vs loss on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "WTA and the Mazamas both give 4,000 ft of gain, supporting gain_ft. No source states a car-to-car descent figure, so loss_ft (4,500) is left as is under the loss_ft rule.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/big-snagtooth",
+    "https://mazamas.org/activity/instance/1912/detail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "fact": "Permit to camp at Wing Lake",
+   "verdict": "fixed",
+   "correct_value": "No permit needed at Wing or Lewis Lake (national forest); park permit only for camps inside NCNP.",
+   "evidence": "Explore with Alec's Wing Lake guide says no permit is needed to backpack there because it is national forest land, not the national park. SummitPost's Black Peak page notes the summit sits on the park/forest boundary and that camping east of the peak needs no permit.",
+   "sources": [
+    "https://explorewithalec.com/wing-lake/",
+    "https://www.summitpost.org/black-peak/150936"
+   ],
+   "patches": [
+    {
+     "id": "wa_black_peak_northeast_ridge",
+     "fact": "Permit to camp at Wing Lake",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "within North Cascades National Park (e.g., at Wing Lake), issued",
+     "replace": "within North Cascades National Park (not needed at Wing or Lewis Lake, which are on national forest land), issued"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "fact": "Lewis Lake elevation",
+   "verdict": "fixed",
+   "correct_value": "~5,700 ft, about 1,200 ft below Wing Lake",
+   "evidence": "Willhite's route page says the path drops about 500 ft from Heather Pass to Lewis Lake's outflow and then climbs about 1,100 ft to Wing Lake; Explore with Alec says the last mile to Wing Lake (just under 7,000 ft) gains over 1,200 ft; a trailcatjim report camped on the Lewis Lake knoll at 5,800 ft. Together with the row's own waypoint and bivy card (5,700), the 6,600 ft figure is wrong.",
+   "sources": [
+    "http://willhiteweb.com/north_cascades/black_peak/wing_lake_088.htm",
+    "https://explorewithalec.com/wing-lake/",
+    "https://trailcatjim.com/black-peak-via-lewis-lake-maple-pass-loop/"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Lewis Lake elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "dropping to Lewis Lake (~3 mi, ~6,600 ft;",
+     "replace": "dropping to Lewis Lake (~3.5-4 mi, ~5,700 ft;"
+    },
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Lewis Lake elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "climb roughly 1,000 ft more of meadow and talus to Wing Lake (~3.5-4 mi, ~6,900 ft)",
+     "replace": "climb roughly 1,200 ft more of meadow and talus to Wing Lake (~5 mi, ~6,900 ft)"
+    },
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Lewis Lake elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Lewis Lake at about 3 miles and 6,600 ft",
+     "replace": "Lewis Lake at about 3.5-4 miles and 5,700 ft"
+    },
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Lewis Lake elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climb roughly 1,000 ft more of meadow and talus to Wing Lake at about 3.5-4 miles and 6,900 ft",
+     "replace": "climb roughly 1,200 ft more of meadow and talus to Wing Lake at about 5 miles and 6,900 ft"
+    },
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Lewis Lake elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THEN A THOUSAND FEET OF CLIMBING",
+     "replace": "THEN ABOUT TWELVE HUNDRED FEET OF CLIMBING"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "fact": "Distance to Wing Lake camp and round trip",
+   "verdict": "fixed",
+   "correct_value": "Wing Lake ~5 mi one way; summit ~6 mi one way; ~12 mi round trip",
+   "evidence": "Explore with Alec gives about 5.5 miles one way to Wing Lake (~10-11 round trip); Willhite gives 6 miles to the summit; AllTrails and Hiiker list the Wing Lake route to Black Peak as an 11.2-11.8 mile out-and-back. That matches the row's waypoints (Wing Lake 5 mi, summit 6 mi). The approach text's 3.5-4 mi (fixed in the Lewis Lake patches), day 1's 6.2 mi, day 2's 9.8 mi and the 13 mi total are corrected to 5 / 7 / ~12. dist_km is left untouched (stored convention unclear).",
+   "sources": [
+    "https://explorewithalec.com/wing-lake/",
+    "http://willhiteweb.com/north_cascades/black_peak/wing_lake_088.htm",
+    "https://www.alltrails.com/trail/us/washington/black-peak-via-wing-lake-trail--2",
+    "https://hiiker.app/trails/washington/chelan-county/black-peak-wing-lake-and-lewis-lake-via-rainy-lake-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Distance to Wing Lake camp and round trip",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 6.2,
+     "value": 5
+    },
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Distance to Wing Lake camp and round trip",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 9.8,
+     "value": 7
+    },
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Distance to Wing Lake camp and round trip",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~13 mi round trip",
+     "replace": "~12 mi round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 3,971 is below the 4,120 ft net rise from the trailhead (4,850) to the summit (8,970), so it is too low, but outside figures disagree: Hiiker ~5,577 ft, Willhite 4,500 ft, and Explore with Alec's 2,700 ft up / 680 ft down to Wing Lake implies ~5,400 ft car to car. No two sources agree on one number, and loss_ft may only change on a stated car-to-car descent figure.",
+   "sources": [
+    "https://hiiker.app/trails/washington/chelan-county/black-peak-wing-lake-and-lewis-lake-via-rainy-lake-trail",
+    "http://willhiteweb.com/north_cascades/black_peak/wing_lake_088.htm",
+    "https://explorewithalec.com/wing-lake/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "fact": "Summit finish description",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Sources describe both features in sequence: an exposed cairned ledge traverse around/below the summit block, then a short class 4 step and a ~100-ft knife edge with exposure on both sides to reach the actual summit point (SummitPost, Willhite). The fields describe different parts of the same finish.",
+   "sources": [
+    "https://www.summitpost.org/black-peak/150936",
+    "http://willhiteweb.com/north_cascades/black_peak/wing_lake_088.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "fact": "Approach line from Wing Lake to the south col",
+   "verdict": "fixed",
+   "correct_value": "The South Route also goes up the moraine onto the permanent snowfield to the south col; a moraine is not a discriminator between the two routes.",
+   "evidence": "SummitPost's South Route description goes around Wing Lake, up the moraine and onto a gentle permanent snowfield to the obvious col in the south ridge; Willhite's page says the same ('heads up the moraine and onto a permanent snowfield to an obvious col'). The beta and col waypoint are correct; the variant's discriminator sentence is wrong.",
+   "sources": [
+    "https://www.summitpost.org/black-peak/150936",
+    "http://willhiteweb.com/north_cascades/black_peak/wing_lake_088.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Approach line from Wing Lake to the south col",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "A moraine underfoot and a notch on the northeast side means you are on the other route.",
+     "replace": "Both routes cross moraine above the lake, so that alone tells you nothing; a notch on the northeast side instead of the south col means you are on the other route."
+    }
+   ]
+  }
+ ]
+}

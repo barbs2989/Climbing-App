@@ -1,0 +1,212 @@
+{
+ "file": "v002",
+ "results": [
+  {
+   "id": "wa_austera_peak",
+   "fact": "Total route gain/loss/distance vs. the multi-day trip",
+   "verdict": "fixed",
+   "correct_value": "gain_ft, loss_ft and dist_km set to null (no stated car-to-car total or one-way distance exists; the stored values are the camp-to-Austera leg and are provably not the outing)",
+   "evidence": "Rule 4 (provably wrong, no sourced replacement). The USGS elevation service gives ~2,203 ft at the row's trailhead pin and ~8,325 ft at its summit pin, so the car-to-car gain cannot be below ~6,100 ft; a published Eldorado hike page gives 10 mi / 6,716 ft round trip and a 2024 car-to-car report ~12 mi / ~7,000 ft just to neighbouring Eldorado, whose camp this route must first reach. gain_ft 1,280 / loss_ft 592 are the one-way high-camp-to-Austera leg. dist_km 4.5 km is shorter than the 8.5 km straight line between the row's own trailhead and summit pins, so it cannot be the one-way approach. No two sources state an Austera-only total, so the fields are cleared rather than replaced.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.1176&y=48.4926&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.1014&y=48.5686&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+    "https://happyoutside.xyz/climbing-eldorado-peak-july-2024-trip-report/"
+   ],
+   "patches": [
+    {
+     "id": "wa_austera_peak",
+     "fact": "Total route gain/loss/distance vs. the multi-day trip",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 1280,
+     "value": null
+    },
+    {
+     "id": "wa_austera_peak",
+     "fact": "Total route gain/loss/distance vs. the multi-day trip",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 592,
+     "value": null
+    },
+    {
+     "id": "wa_austera_peak",
+     "fact": "Total route gain/loss/distance vs. the multi-day trip",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 4.5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (gain_ft 6000)",
+   "verdict": "fixed",
+   "correct_value": "gain_ft null (6,000 ft is only the trailhead-to-high-camp leg the row's own approach text names)",
+   "evidence": "Rule 4. The row's approach says 6,000 ft reaches the Eldorado high camp, with a further glacier traverse (including a rappel onto the Klawatti Glacier that must be reclimbed) to Austera. The USGS elevation service gives ~2,203 ft at the trailhead and ~8,325 ft at the Austera summit pin, so even the net rise exceeds 6,000 ft; a published Eldorado hike page (6,716 ft round trip) and a 2024 car-to-car report (~7,000 ft) for the neighbouring peak on the same approach are both higher. No source states an Austera-only car-to-car gain, so gain_ft is cleared rather than replaced.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.1176&y=48.4926&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.1014&y=48.5686&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+    "https://happyoutside.xyz/climbing-eldorado-peak-july-2024-trip-report/"
+   ],
+   "patches": [
+    {
+     "id": "wa_austera_peak_chockstone_route",
+     "fact": "Total route gain/distance vs. approach-to-camp leg only (gain_ft 6000)",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6000,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (dist_km 11.3)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 11.3 km (7 mi) is the trailhead-to-camp leg in the row's own approach text, not trailhead-to-Austera, but it is longer than the 8.5 km straight line between trailhead and summit, so it is not provably wrong as a one-way figure, and no two sources state a one-way distance to Austera (the only whole-trip figure, 19 mi round trip, is a three-peak outing). Left for a sourced value.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-05-28.130422421623",
+    "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "dist_km 72.4 km (= 45 mi, the round trip) shown as the one-way approach, while the approach prose gives ~21 mi trailhead to camp",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row no longer carries dist_km (72.4 km is gone), so nothing on screen shows the round trip as a one-way approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "dist_km 72.4 km (= 45 mi, the round trip) shown as the one-way approach, while the approach prose gives ~21 mi trailhead to camp",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row no longer carries dist_km, and the itinerary's day miles (12 + 9 to camp) agree with the approach's ~21 miles to the saddle camp.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Total round-trip gain and loss (loss_ft 1,820)",
+   "verdict": "fixed",
+   "correct_value": "loss_ft null (1,820 ft is one party's day-1 loss; the round trip must lose far more)",
+   "evidence": "Rule 4. The route is an out-and-back from the Bacon Creek road end: the USGS elevation service gives ~783 ft at the row's road-end pin and ~6,427 ft at its summit pin, so returning to the car must lose at least ~5,600 ft, and the ascent record that is the origin of 1,820 gives it as the day-1 loss only (road over the summit to a camp beyond). The row's own itinerary loses 5,300 ft on day 2 alone. No source states a car-to-car loss, so loss_ft is cleared rather than replaced.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.42308&y=48.64467&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.456671&y=48.706769&units=Feet&wkid=4326",
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+   ],
+   "patches": [
+    {
+     "id": "wa_berdeen_peak_scramble",
+     "fact": "Total round-trip gain and loss (loss_ft 1,820)",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 1820,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Total round-trip gain and loss (gain_ft 6,550 vs itinerary 5,600)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,550 is one party's day-1 figure (road over the summit to camp), while the itinerary/totalNote say 5,600 ft round trip, which is barely above the ~5,640 ft net rise measured by the USGS elevation service and ignores the intermediate loss the ascent record describes. A second itinerary (search excerpt only) gives +5,450 ft over 6.5 mi on day 1, disagreeing with 6,550. The forum reports that might settle it are not archived or would not load. No stated round-trip total, so nothing patched.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1243811",
+    "https://web.archive.org/web/2024/https://www.nwhikers.net/forums/viewtopic.php?p=1215435"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Elevation of the high camp above Berdeen Lake",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one account states the camp's height (about 800 ft above the 5,016 ft lake, i.e. ~5,800 ft, matching the waypoint). The 2022 forum report (read via an archive copy) gives no camp elevation; the 2019/2021 reports are not archived. The high-camp pin's coordinate is interpolated, so a ground lookup there measures nothing. No patch.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.nwhikers.net/forums/viewtopic.php?p=1243811",
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Day-1 gain to the Berdeen Lake camp stated in the bivy entry",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The bivy note's 'four thousand feet of gain' is below the net rise from the road end (~783 ft by USGS) to a lake camp at 5,016 ft or above. But the two day-1 figures found disagree (+6,550 ft in one ascent record; +5,450 ft in a second itinerary seen only as a search excerpt), so no replacement is agreed. Rewording to drop the number is possible under rule 4 but the camp it describes (lake benches vs high camp) is itself unsettled, so left.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.42308&y=48.64467&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "fact": "Maximum ice difficulty on the route (gear[0] 'WI4/95°' vs grade/ice_grade/pitch_detail WI5)",
+   "verdict": "fixed",
+   "correct_value": "WI5",
+   "evidence": "The first-ascent account grades the route IV+ 5.9 WI5 mixed. An independent later ascent report (read via an archive copy of the forum thread) describes the crux as a full 60 m of near-vertical to vertical ice and grades it WI5. One photo-essay page gives 'IV AI4', a single dissent that does not meet the two-source bar for a range. grade, ice_grade and pitch_detail already say WI5; only gear[0] is changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades",
+    "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/10808-big-four-spindrift-couloir-tr/",
+    "https://www.mattsea.com/featured/BigFour/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_four_mountain_spindrift_couloir",
+     "fact": "Maximum ice difficulty on the route (gear[0] 'WI4/95°' vs grade/ice_grade/pitch_detail WI5)",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "find": "up to roughly WI4/95°",
+     "replace": "up to roughly WI5/95°"
+    }
+   ]
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Which trailhead/approach the route uses (Alpental vs Denny Creek)",
+   "verdict": "unresolved",
+   "correct_value": "Denny Creek trailhead via Hemlock Pass",
+   "evidence": "STRUCTURAL: the Southeast Slopes line starts at the Denny Creek trailhead (~2,300 ft, I-90 Exit 47) and leaves the Denny Creek Trail #1014 at Hemlock Pass, as the row's approach, itinerary and primary variant already say; a 2013 trip page gives 'via Denny Creek + Hemlock Pass', 10.8 mi RT, 2,280-5,801 ft, and a club route page (search excerpt) describes the same Hemlock Pass line on a 33° bearing. What should change: approach_logistics.trailhead/trailheadLat/trailheadLng/trailheadDirection and waypoint 0 re-pointed to the Denny Creek trailhead (coordinates too), and waypoints 1-6 (Source Lake junction, stream crossing, gully passage, Thumbtack, Bryant-Chair gully) removed from this route or moved to the Alpental variant — they trace the secondary gully line. Waypoint 0's note already names Denny Creek while its name/coords are Alpental. Pin moves are outside the patch format.",
+   "sources": [
+    "https://onehikeaweek.com/2013/06/29/bryant-peak/",
+    "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "gain_ft/loss_ft 5,700 vs the itinerary's day gains (4,800 + 1,900 + 900) and losses; dist_km 38.62 km (24 mi) vs ~13.5 mi one way / ~30 mi round trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real. New on this pass: a multi-day traverse report of the same Buck Creek Pass / High Pass / Louis Creek Basin line gives ~30 mi and 10,200 ft gained / 10,400 ft lost, but it exits by Little Giant Pass, so it is not this out-and-back; a 2025 High Pass report gives 8,150 ft / 23-27.5 mi for a different outing; the club route page's 20 mi / 6,000 ft is the Little Giant line. The USGS elevation service gives ~2,760 ft at the trailhead pin and ~8,449 ft at the summit pin, so 5,700 is not provably below the net rise. The WTA reports of the High Pass line are 403 and not archived. No two sources state the out-and-back total or a one-way distance, so nothing is patched.",
+   "sources": [
+    "https://trailcatjim.com/high-giant-traverse-buck-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-14.142506833525",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.84999&y=48.071966&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.9122&y=48.09363&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  }
+ ]
+}

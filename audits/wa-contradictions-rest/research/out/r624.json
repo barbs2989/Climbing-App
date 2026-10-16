@@ -1,0 +1,682 @@
+{
+ "file": "r624.json",
+ "results": [
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)",
+   "verdict": "fixed",
+   "correct_value": "Putvin Trail (#813) to a camp at Lake of the Angels (~3.5 mi one way)",
+   "evidence": "Two independent accounts of the climb put the standard line up the Putvin Trail to Lake of the Angels, then west/southwest up a broad gully to the saddle north of Point 5945 and around the SE face. Trail pages give the lake at about 3.5 miles one way (7.0 mi round trip; 3.6 mi). The itinerary, its calendar note and the PUBLISHED TIMES breakdown are rewritten to the Putvin/Lake of the Angels approach; day 1 miles set to 3.5 and the total note to ~12 mi (a 12-mile round trip is stated for the climb). Per-day gain/loss figures are left untouched per the rules. The WAYPOINTS list is NOT fixed here - its pins sit on the Mildred Lakes trail and coordinates are out of scope (see the separate unresolved entry).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-skokomish",
+    "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.hikingproject.com/trail/7001921/lake-of-the-angels-putvin-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "The Mildred Lakes trailhead sits at the end of FR-25 off the Hamma Hamma River road",
+     "replace": "The Putvin trailhead sits on FR-25, the Hamma Hamma River road",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Backpack in to Mildred Lakes camp",
+     "value": "Backpack in to Lake of the Angels camp",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "expect": "The Mildred Lakes Trail is unmaintained and notoriously rough - steep root/rock ladders requiring hands and feet, especially past Huckleberry Creek - so most parties treat it as a half-day in with a full overnight pack. Camp in the Mildred Lakes basin below Sawtooth Ridge, which also serves as the base for nearby Mount Cruiser and Mount Stone.",
+     "value": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone.",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Set up basecamp near Mildred Lakes",
+     "value": "Set up basecamp at Lake of the Angels",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 4.5,
+     "value": 3.5,
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "expect": "Full overnight pack back down the steep, rooted Mildred Lakes trail.",
+     "value": "Full overnight pack back down the steep, rooted Putvin Trail.",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 13 miles round trip",
+     "replace": "roughly 12 miles round trip",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "expect": "The Mildred Lakes Trail is unmaintained and notoriously rough - steep root/rock ladders requiring hands and feet, especially past Huckleberry Creek - so most parties treat it as a …",
+     "value": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone.",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Backpack in to Mildred Lakes camp",
+     "value": "Backpack in to Lake of the Angels camp",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Approach trail and camp (Putvin/Lake of the Angels vs Mildred Lakes)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Waypoints describe the Mildred Lakes approach, not the Putvin/Lake of the Angels route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Waypoints 0-4 (Huckleberry Creek crossing, root-ladder ridge, Mildred Lakes basin, brush slope, basin/saddle) are pinned on the Mildred Lakes trail and describe the second approach variant, not the standard Putvin/Lake of the Angels line. Renaming them would leave pins on the wrong trail, and pin coordinates are out of scope, so this needs a pin rebuild (Putvin trail, Lake of the Angels ~4,900 ft, saddle north of Point 5945) rather than a text patch.",
+   "sources": [
+    "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Wilderness permit for the Putvin approach",
+   "verdict": "fixed",
+   "correct_value": "Day trips on the Putvin Trail need no wilderness permit; camping at Lake of the Angels (inside Olympic National Park) requires an Olympic NP wilderness camping permit",
+   "evidence": "One trail page states wilderness permits are required to camp at Lake of the Angels, obtained from an Olympic NP Wilderness Information Center; another notes the trail enters the park before the lake, and a third says overnighters entering the park fill out a wilderness permit along the trail. access.permit implied no permit for the Putvin approach at all; it is corrected to separate day use from camping at the lake.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.hikingproject.com/trail/7001921/lake-of-the-angels-putvin-trail",
+    "https://www.go-washington.com/Putvin-Trail-813-Washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No wilderness permit is required on Olympic National Forest land (Mildred Lakes, Putvin).",
+     "replace": "No wilderness permit is required for day trips on Olympic National Forest land (Mildred Lakes, Putvin Trail). Camping at Lake of the Angels, which lies inside Olympic National Park, requires an Olympic National Park wilderness camping permit.",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Wilderness permit for the Putvin approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Parking pass at the Putvin trailhead",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The pass dispute is between access.fees (Northwest Forest Pass required) and bivy[0].permit (no pass needed); bivy is owned by the camping clean-up so no patch is written. Research is split: the Forest Service trailhead listing (and a page copying it) says a pass or passport is needed at the trailhead, while a hiking-association page lists no parking pass, so access.fees is left as is. The Lake of the Angels bivy entry does serve this route; the Hamma Hamma road campgrounds are staging only.",
+   "sources": [
+    "https://www.go-washington.com/Putvin-Trail-813-Washington/",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Mildred Lakes trail closure status",
+   "verdict": "fixed",
+   "correct_value": "Mildred Lakes Trail/Trailhead reopened July 8, 2026; trails beyond the developed Staircase area (incl. Flapjack Lakes) remain closed; Putvin was never closed",
+   "evidence": "Regional news coverage of the July 2026 reopening lists the Mildred Lakes Trailhead and Trail among sites reopening July 8, 2026, with FS-2451, Copper Creek Trail and wilderness trails beyond the developed Staircase area staying closed. A second outlet's search summary and the Mason County paper report the same reopening. The overview and emergency notes still said the Mildred Lakes approach was closed; both are updated to match access.closures.",
+   "sources": [
+    "https://www.peninsuladailynews.com/2026/07/07/staircase-recreation-area-to-reopen-on-wednesday/",
+    "https://www.masoncounty.com/story/2026/07/09/news/sports-and-outdoors-a-year-later-staircase-entrance-areas-reopen/7457.html",
+    "https://www.myclallamcounty.com/2026/07/07/federal-recreation-areas-burned-last-year-set-to-reopen-july-8/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Access to this specific approach (Mildred Lakes / Flapjack Lakes) is currently closed by a Forest Service/NPS order tied to the 2025 Bear Gulch Fire.",
+     "replace": "The standard Putvin approach was never inside the 2025 Bear Gulch Fire closure; the Mildred Lakes trail reopened in July 2026, while the Flapjack Lakes side beyond the Staircase developed area stays closed for repairs.",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Mildred Lakes trail closure status"
+    },
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "the Mildred Lakes and Staircase/Flapjack approaches are inside the active Bear Gulch Fire closure area, so parties attempting those lines are trespassing on a closed trail in addition to the terrain hazards.",
+     "replace": "the Flapjack Lakes and North Fork Skokomish trails beyond the Staircase developed area remain closed after the 2025 Bear Gulch Fire, so check closure status before using that side.",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Mildred Lakes trail closure status"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Gain to Lake of the Angels",
+   "verdict": "fixed",
+   "correct_value": "about 3,400 ft in about 3.5 miles",
+   "evidence": "One trail page gives 3,400 ft of gain to the lake (7.0 mi round trip, high point 4,950 ft); another gives 3,358 ft over nearly four miles to the lake at 4,888 ft. A third lists 3,280 ft. The 2,800-3,000 ft figure in the approach and the primary approach variant is corrected to roughly 3,400 ft, matching beta, pitch_detail and the camp card.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.protrails.com/trail/844/olympic-national-park-lake-of-the-angels",
+    "https://www.hikingproject.com/trail/7001921/lake-of-the-angels-putvin-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 3.5 miles and roughly 2,800-3,000 ft of gain from the trailhead",
+     "replace": "about 3.5 miles and roughly 3,400 ft of gain from the trailhead",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Gain to Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 3.5 miles and 2,800-3,000 ft of gain",
+     "replace": "roughly 3.5 miles and 3,400 ft of gain",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Gain to Lake of the Angels"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Putvin trail number",
+   "verdict": "fixed",
+   "correct_value": "#813",
+   "evidence": "Two trail pages and the Forest Service-derived listing all number the Putvin Trail #813. The '#812' in the approach is a typo.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.hikingproject.com/trail/7001921/lake-of-the-angels-putvin-trail",
+    "https://www.go-washington.com/Putvin-Trail-813-Washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Putvin Trail #812 is unmaintained",
+     "replace": "Putvin Trail #813 is unmaintained",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Putvin trail number"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Avalanche hazard in season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "In-season wet-slide/sluff potential in the summit-saddle gullies, not N/A",
+   "evidence": "The zone text, hazards[1], approach, climbing_route and approach_variants all describe real in-season slide potential in the gullies; the N/A month table is the lone outlier. A peak page states avalanches are common on the mountain even in August or September and that snow lingers late and is frail.",
+   "sources": [
+    "https://www.summitpost.org/mount-skokomish/152044"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth",
+      "June"
+     ],
+     "expect": "N/A",
+     "value": "Steep snow in the saddle gullies - wet slides and sluffs possible",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Avalanche hazard in season"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth",
+      "July"
+     ],
+     "expect": "N/A",
+     "value": "Steep snow in the saddle gullies - wet slides and sluffs possible",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Avalanche hazard in season"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth",
+      "August"
+     ],
+     "expect": "N/A",
+     "value": "Lingering gully snow can still slide - assess on site",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Avalanche hazard in season"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth",
+      "September"
+     ],
+     "expect": "N/A",
+     "value": "Lingering gully snow can still slide - assess on site",
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Avalanche hazard in season"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge",
+   "fact": "Descent destination (Cathedral Lake camp vs Obstruction Point Road)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Reverse the route down the west slope to the Obstruction Point Road pullout",
+   "evidence": "descent_text described Cathedral Peak (Amphitheatre, Upper Cathedral Lake camp). Steeple Rock is a 200-ft spire right beside Obstruction Point Road; the route itself goes from the road up west-slope scree and heather to the north-ridge notch, so the descent reverses it, as `descent`, approach and waypoints already say. descent_text is rewritten to match.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351660/north-ridge",
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Two options: walk off to the southwest, contouring around Amphitheatre back to Upper Cathedral Lake camp, or descend via the small col southwest of the North Ridge and down a 3rd-class gully on the north slope.",
+     "value": "Reverse the route: follow the crest back west to the notch in the north ridge, then drop down the west-slope scree and heather to the Obstruction Point Road pullout a few hundred feet below.",
+     "id": "wa_north_ridge",
+     "fact": "Descent destination (Cathedral Lake camp vs Obstruction Point Road)"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge",
+   "fact": "Start point / remoteness",
+   "verdict": "fixed",
+   "correct_value": "Roadside spire; a quick climb (30 minutes to a few hours) from an Obstruction Point Road pullout",
+   "evidence": "A climbing-area page describes Steeple Rock as a 200-ft spire about 2 miles down Obstruction Point Road and 'a quick climb from the road' taking 30 minutes to a few hours; an encyclopedia entry says the pillar rises next to Obstruction Point Road. The 7-hour, lake-camp timing, the 'long remote approach' hazard, the 'long alpine ridge' turnaround and the remoteness line in emergency notes are contamination from another route. Timing is nulled (sibling Steeple Rock rows carry null timing) and the prose corrected.",
+   "sources": [
+    "https://www.mountainproject.com/area/118351599/steeple-rock",
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 7,
+     "value": null,
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 4,
+     "value": null,
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 2,
+     "value": null,
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 1,
+     "value": null,
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "Early morning from Cathedral Pass or lake camp",
+     "value": null,
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "expect": "Long, remote approach with no quick evacuation.",
+     "value": "Rescue response is slowed by the narrow, unpaved, seasonal Obstruction Point Road.",
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "this is a long, loose alpine ridge with no fast retreat",
+     "replace": "this is a loose, exposed ridge",
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "expect": "No cell coverage; long rescue response time given remoteness.",
+     "value": "No cell coverage. The roadside location aids extraction, but Obstruction Point Road is narrow, unpaved and seasonal, which lengthens rescue response.",
+     "id": "wa_north_ridge",
+     "fact": "Start point / remoteness"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge",
+   "fact": "Climate description",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Maritime Olympic high-country climate; no larches",
+   "evidence": "An encyclopedia entry for Steeple Rock describes a marine west coast climate with Pacific fronts forced up over the Olympics; subalpine larch occurs in Washington only as a Cascade Range population. The sibling Steeple Rock rows carry the maritime text. typical, fall and spring are replaced with the siblings' wording (spring also carried pipeline voice).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)",
+    "https://en.wikipedia.org/wiki/Larix_lyallii"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "typical"
+     ],
+     "expect": "High, semi-arid east-slope alpine climate; frequent summer afternoon thunderstorms.",
+     "value": "Marine west coast climate typical of Olympic high country: cool summers, wet winters, frequent orographic cloud/fog.",
+     "id": "wa_north_ridge",
+     "fact": "Climate description"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "fall"
+     ],
+     "expect": "Larches gold late Sept-early Oct; snow possible by mid-Oct.",
+     "value": "Shoulder season through about mid-October; first snow can close the road with little notice",
+     "id": "wa_north_ridge",
+     "fact": "Climate description"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "expect": "Snowbound into June; possible early-season snow climb variant but unconfirmed by sources.",
+     "value": "Road still snow-covered/closed",
+     "id": "wa_north_ridge",
+     "fact": "Climate description"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge",
+   "fact": "Season start",
+   "verdict": "fixed",
+   "correct_value": "mid-July through mid-October (while Obstruction Point Road is open)",
+   "evidence": "Two road guides state Obstruction Point Road is typically open from (early/)mid-July to mid-October depending on conditions. best_season's 'late June through September' is corrected to the road window; season Jul-Oct already agrees.",
+   "sources": [
+    "https://www.dirtyshoesandepicviews.com/blog/obstruction-point-road-olympic-national-park",
+    "https://livethatadventure.com/how-to-drive-obstruction-point-road-washingtons-scariest-road/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "best_season",
+     "path": [],
+     "expect": "Can go earlier in the season than the buttress rock routes since much of it is 3rd-4th class scrambling; late June through September, with July-August most stable.",
+     "value": "Mostly 3rd-4th class scrambling, but reachable only while Obstruction Point Road is open - typically mid-July through mid-October, with July-August most stable.",
+     "id": "wa_north_ridge",
+     "fact": "Season start"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_finish",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's own climbing-area page gives no protection or rope information (Protection: N/A) for this 6 m, 5.2 finish; no source states a rope length or type. The rope_note ('60m half-rope typical; more technical than standard route') and corrections ('Hand jam section 5.7ish') look copied from another route, but with no source neither 50 nor 60 m can be adopted.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351699/direct-finish"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_finish",
+   "fact": "Protection beta",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only route page lists Protection: N/A and its description (steep short wall, alcove, right-slanting ledge, corner) has no chimney, supporting pro_needs and undermining detailed_rack's 'medium sizes for chimney'. Only one source, and it says nothing positive about gear, so no rack can be written; recommend nulling detailed_rack in a class decision so PROTECTION falls back to pro_needs.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351699/direct-finish"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge",
+   "fact": "Itinerary describes a different peak",
+   "verdict": "fixed",
+   "correct_value": "No multi-day itinerary; a roadside short climb",
+   "evidence": "Steeple Rock is a 200-ft basalt pillar next to Obstruction Point Road, 'a quick climb from the road' of 30 minutes to a few hours. The Eldorado/Dorado Needle 3-day itinerary is contamination and is removed.",
+   "sources": [
+    "https://www.mountainproject.com/area/118351599/steeple-rock",
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [],
+     "expect": "Typically combined with Eldorado Peak's East Ridge as a multi-day trip: Day 1 approach to a high camp (~5,700-7,600 ft gain); Day 2 climb Dorado Needle's East Ridge from camp (8-12 hours round trip); Day 3 descend to the trailhead.",
+     "value": null,
+     "id": "wa_east_ridge",
+     "fact": "Itinerary describes a different peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge",
+   "fact": "Gain and distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 5700, loss_ft 5700 and dist_km 6.4 come from the Dorado Needle contamination and cannot describe a 200-ft roadside spire (80 ft route). No source states a gain, loss or approach distance for this route, and the rules forbid computing one, so no patch; recommend nulling all three as a class decision.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351627/east-ridge",
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge",
+   "fact": "Rappels on the descent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No rappels; downclimb or walk off the Class 2-3 north side",
+   "evidence": "descent, descent_text and bail all say downclimb/walk-off with no rappel anchors; the rappels text (sub-summit, summit pyramid, Northwest Ridge) is from Dorado Needle. An encyclopedia entry rates the easiest way on the pillar a class 3 scramble, consistent with walking off.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "Two short rappels from the sub-summit into the notch below the summit pyramid; descent adds further rappels/downclimbing on the Northwest Ridge (or an alternate 2-rappel north-face variant).",
+     "value": "None - no rappel anchors are documented on Steeple Rock; downclimb the route or walk off the easy north-side scramble.",
+     "id": "wa_east_ridge",
+     "fact": "Rappels on the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge",
+   "fact": "Rope length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A single short rope for one 24 m pitch",
+   "evidence": "The route page gives 80 ft (24 m) and no gear; rack, rope_note, rope_length_m and sling_rack all describe a small rack and a short single rope. detailed_rack's 'single rack to 3 inches ... single 60m rope' is Dorado Needle contamination and is rewritten to match the rack list.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351627/east-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Single rack to 3 inches (cams 0.3-3, optional doubles in 0.5-1) with a single 60m rope",
+     "replace": "A few light cams and a small set of nuts with a single short rope",
+     "id": "wa_east_ridge",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge",
+   "fact": "Glacier gear",
+   "verdict": "fixed",
+   "correct_value": "No snow or glacier gear",
+   "evidence": "Steeple Rock is a roadside rock pillar reached from Obstruction Point Road, which is only open in the snow-free summer-fall window; no glacier is involved. The ice axe/crampons clause is removed.",
+   "sources": [
+    "https://www.mountainproject.com/area/118351599/steeple-rock",
+    "https://en.wikipedia.org/wiki/Steeple_Rock_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "; ice axe, crampons, and a trekking pole for glacier approach.",
+     "replace": ". No snow or glacier gear is needed.",
+     "id": "wa_east_ridge",
+     "fact": "Glacier gear"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge",
+   "fact": "Route start (approach says south-side terrace via SW spur, copied from Direct Finish)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Start on the SE portion of Steeple Rock and scramble the south side of the east ridge",
+   "evidence": "The approach's route-specific sentence is copied from Direct Finish; the route page says to start on the SE portion and scramble along the S side of the ridge to the tree below the summit, as beta, face and pitch_detail already say.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351627/east-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "reach the south-side terrace via the SW spur along the south side of the ridge; Direct Finish is a summit-finish variation from the same terrace.",
+     "replace": "start on the southeast end of the formation and scramble along the south side of the east ridge to the tree just below the summit.",
+     "id": "wa_east_ridge",
+     "fact": "Route start (approach says south-side terrace via SW spur, copied from Direct Finish)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_wings",
+   "fact": "Protection beta",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page lists Protection: N/A and describes the line (left-facing corner, pillar-top belay, loose traverse, shallow chimney) without gear; no source gives the 0.3-2.5 in cam range. pro_needs ('no protection beta on record') is accurate to the sources; the rack's specific sizes are unsourced, so nothing can be adopted.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351686/wings"
+   ],
+   "patches": []
+  }
+ ]
+}

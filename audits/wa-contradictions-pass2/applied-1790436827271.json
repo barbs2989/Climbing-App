@@ -1,0 +1,194 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "grade",
+   "path": [],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Which glacier the crux descent drops onto"
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Which glacier the crux descent drops onto"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "before": {
+    "grade": "Class 2-3",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Sustained multi-day (5-8 day) cross-country traverse fitness with large daily elevation gain/loss entirely off-trail; day-to-day endurance matters more than single-day speed",
+      "packWeight": "Multi-day expedition load (food/fuel for a week-plus), roughly 35-45 lb pack"
+     },
+     "approachTime": "Not a single-day approach — reached only as part of a multi-day (5-8 day) Bailey Range traverse; no short standalone access to this summit",
+     "requiredSkills": [
+      "off-trail/cross-country navigation",
+      "Class 2-3 exposed scrambling",
+      "snowfield travel (ice axe self-arrest judgment)",
+      "self-rescue and bail-out decision-making given the long committing retreat",
+      "backcountry stream crossing"
+     ],
+     "experienceLevel": "Experienced off-trail/cross-country alpine traveler — needs prior multi-day wilderness travel and independent routefinding experience, not a beginner scrambler's first outing"
+    },
+    "itinerary": {
+     "cal": "The classic Elwha Snowfinger exit is a permanent snowfield that has been melting out earlier each year and may be unreliable or gone by late summer — check current trip reports before committing to it as your exit, and book Sol Duc/Seven Lakes Basin wilderness permits early since they're competitive.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A well-graded trail climb from the Sol Duc trailhead up the Sol Duc River and High Divide trails to Heart Lake, the last established camp before the Bailey Range cross-country section begins. Most parties treat this as an easy warm-up day.",
+       "hours": 5,
+       "miles": 7.5,
+       "title": "Approach to Heart Lake",
+       "gainFt": 3300,
+       "lossFt": 200,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Heart Lake camp below the Catwalk"
+      },
+      {
+       "n": 2,
+       "note": "The signature exposed section: an undulating, off-trail traverse across the Catwalk between Cat Peak and Mt. Carrie, then a long sidehill below Mt. Carrie and Mt. Ruth, a steep drop to Cream Lake, and a climb back up into Upper Ferry Basin. Trip reports consistently flag this as the longest, most tiring day of the trip.",
+       "hours": 10,
+       "miles": 9,
+       "title": "Cross the Catwalk to Ferry Basin",
+       "gainFt": 2600,
+       "lossFt": 2600,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Upper Ferry Basin camp"
+      },
+      {
+       "n": 3,
+       "note": "From Ferry Basin, most parties tag Mt. Ferry and/or Mt. Pulitzer as an early-morning side scramble before continuing the traverse south past Lone Tree Pass and over Bear Pass, dropping into Queets Basin to camp. This is widely described as the most scenic day of the traverse.",
+       "hours": 9,
+       "miles": 8,
+       "title": "Mount Pulitzer and on to Queets Basin",
+       "gainFt": 2500,
+       "lossFt": 2800,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Ferry Basin camp",
+         "detail": "Drop packs or carry light for the Pulitzer side trip."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach the Ferry-Pulitzer col",
+         "detail": "Start of the class 2-3 scramble up Pulitzer's east ridge."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Summit Mount Pulitzer",
+         "detail": "6,283 ft; brief stop for views before descending the same way."
+        },
+        {
+         "time": "8:15 AM",
+         "label": "Back at camp, resume traverse south",
+         "detail": "Head toward Lone Tree Pass with full packs."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Cross Bear Pass",
+         "detail": "High point of the day's traverse leg."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Arrive Queets Basin camp",
+         "detail": "Large post-glacial basin with running water; watch for bears."
+        }
+       ],
+       "objective": "Summit Mount Pulitzer, then reach Queets Basin camp"
+      },
+      {
+       "n": 4,
+       "note": "From Queets Basin the traditional exit climbs back toward Bear Pass then drops steeply via the Elwha Snowfinger permanent snowfield into the headwaters of the Elwha River, losing most of the day's elevation. Parties camp somewhere along the upper Elwha River Trail once back on maintained trail.",
+       "hours": 9,
+       "miles": 11,
+       "title": "Exit via the Elwha Snowfinger",
+       "gainFt": 800,
+       "lossFt": 4500,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Descend Bear Pass/Queets Basin drainage to the Elwha valley"
+      },
+      {
+       "n": 5,
+       "note": "A long but gentle trail walk down the Elwha River Trail to the Whiskey Bend trailhead, ending the traverse. Some parties split this into two shorter days if legs are trashed from the cross-country sections.",
+       "hours": 6,
+       "miles": 12,
+       "title": "Elwha River Trail out to Whiskey Bend",
+       "gainFt": 200,
+       "lossFt": 800,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Hike out to the Whiskey Bend trailhead"
+      }
+     ],
+     "totalNote": "A 5-day, roughly 47-mile point-to-point traverse (Sol Duc to Whiskey Bend) with Mount Pulitzer climbed as an optional early-morning side summit on day 3 from a Ferry Basin or Queets Basin camp — not a car-to-car day climb given the remote approach."
+    },
+    "rope_note": "No route-specific beta found; Class 2-3 rating is consistent with non-technical Olympic-style scrambling — rope not standard."
+   }
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "before": {
+    "hazards": [
+     "Crevassed glacier travel on the White/Hubert Glacier — genuine crevasse hazard, not just snow-covered talus",
+     "Steep, loose rock and scree on the descent from the Olympus massif to the Hubert Glacier, a common turn-back point",
+     "Notoriously loose, fractured Olympic rock (shale, sandstone, pillow basalt) prone to rockfall on any of the range's peaks",
+     "Difficult off-trail route-finding across the Bailey Range or Olympus massif in poor visibility",
+     "Hoh River and tributary fords that can become dangerous after rain",
+     "Rapidly changing mountain weather and high winds typical of the Olympics",
+     "No cell coverage and long, complex evacuation routes"
+    ],
+    "watch_out": [
+     "The gully/slope down onto the Hubert Glacier from the Olympus massif is steep and loose enough that multiple parties have abandoned the Tom objective there — don't commit to it in wet or actively rockfalling conditions",
+     "Snow bridges over glacier crevasses soften through the day; cross early and rope up",
+     "The summit scramble may be harder than the nominal grade in spots — keeping to rock all the way up the summit pinnacle is closer to Class 4, where the snow-then-scramble line stays easier; be willing to hunt for the path of least resistance"
+    ]
+   }
+  }
+ ]
+}

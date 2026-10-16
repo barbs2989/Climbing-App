@@ -1,0 +1,286 @@
+{
+ "results": [
+  {
+   "id": "wa_del_campo_peak_standard",
+   "kind": "item",
+   "fact": "Descent duration",
+   "verdict": "confirmed",
+   "summary": "A peakbagger ascent by this exact line (Weden Creek trail, Gothic Basin, Foggy Lake, south side scramble) states a descent time of 3 h 45 min, which matches the row's own schedule (begin descent 10:45 AM, trailhead 2:30 PM), so descentTimeHrs moves from 2.5 to 3.75.",
+   "evidence": "Peakbagger ascent 2012-10-07, route 'Road/Trail via Gothic Basin', Barlow Pass trailhead: ascent-statistics field 'Time: 5 Hours 6 Minutes', descent-statistics field 'Time: 3 Hours 45 Minutes'. Two other reports read (2024-07-27, 2024-08-13) give no descent time.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=288092"
+   ],
+   "searched": [
+    "peakbagger (full ascent list + 3 ascent reports)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_del_campo_peak_standard",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 2.5,
+     "value": 3.75
+    }
+   ]
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "confirmed",
+   "summary": "The same peakbagger north-ridge ascent from the Wolf Creek trailhead states a gain on the way in of 5,600 ft, so gain_ft is filled with 5600.",
+   "evidence": "Peakbagger ascent 2025-04-26, route 'Abernathy Lake to north ridge' from Wolf Creek: 'Gain on way in: 5600 ft / 1707 m'; descent from summit to Gardner Meadow camp 'Loss on way out: 2618 ft', matching the row's 'roughly 2,600 ft' off-trail climb from the meadows.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2825993"
+   ],
+   "searched": [
+    "peakbagger (full ascent list + 1 north-ridge ascent report)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_abernathy_peak_north_ridge",
+     "column": "gain_ft",
+     "path": [],
+     "expect": null,
+     "value": 5600
+    }
+   ]
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "confirmed",
+   "summary": "A peakbagger ascent by this exact line (Wolf Creek trailhead, Abernathy Lake, north ridge) states a one-way distance of 12.6 mi on the way in, so dist_km is filled with 20.28 km.",
+   "evidence": "Peakbagger ascent 2025-04-26: Ascent Statistics 'Distance: 12.6 mi / 20.3 km', 'Route: Abernathy Lake to north ridge', 'Start Trailhead: Wolf Creek 2732 ft'; descent statistics separately give 3.2 mi back to the Gardner Meadow camp. The row's own copies (about 10 mi of trail to Gardner Meadows, then off-trail) are consistent with it.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2825993"
+   ],
+   "searched": [
+    "peakbagger (full ascent list + 1 north-ridge ascent report)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_abernathy_peak_north_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": null,
+     "value": 20.28
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "kind": "fill",
+   "fact": "waypoints[7].distMi",
+   "verdict": "confirmed",
+   "summary": "A climber's stated ascent distance for this exact line (North Fork Sauk trailhead to the summit by the Gerdine and Cool glaciers) is 18.1 mi one way, so the summit pin takes 18.1 and dist_km is moved to the same stated figure (29.1 km) so the two do not disagree.",
+   "evidence": "Peakbagger ascent 2016-07-02, Ascent Statistics: 'Distance: 18.1 mi / 29.1 km', Route: Gerdine, Cool Glacier, Start Trailhead: N Fork Sauk River TH 2100 ft; descent by the same route to the same trailhead. The row's dist_km 27.4 (17.0 mi) has no prose copy elsewhere on the row; the itinerary (15 mi to Glacier Gap, 7 mi summit-day round trip) is consistent with 18.1.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=673364",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972&y=9999"
+   ],
+   "searched": [
+    "peakbagger (ascent list filtered to Gerdine/Cool routes; 1 ascent report read with stated one-way ascent distance)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 18.1
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "dist_km",
+     "path": [],
+     "expect": 27.4,
+     "value": 29.1
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "kind": "item",
+   "fact": "road-walk and One Acre Lake distances from the current gate",
+   "verdict": "confirmed",
+   "summary": "A 2026 party starting at the current gate (Sultan Basin Road junction, 1,685 ft) states the closed-road walk to the 3,700 ft leaving point is 4.8 miles one way and the summit 6.5 miles one way, so every copy of the 2.25 mi road walk and the five-to-six mile figure is set to 4.8, the now-impossible 3 mi path-fade pin is cleared, and dist_km takes the stated one-way 10.5 km; One Acre Lake still has no stated distance.",
+   "evidence": "Peakbagger ascent 2026-03-28, 'Standard route up the old Olney Creek Road starting from Sultan Basin Road': '4.8 miles one way on this trail/road', 'At 3700' was the fairly obvious spot to leave the road'; Ascent Statistics 'Distance: 6.5 mi / 10.5 km', Start Trailhead: Sultan Basin Road 1685 ft; round trip 12.9 mi. The row's gate is the same point (Olney Creek Road gate at Sultan Basin Road, ~1,680 ft) and its summit pin already reads 6.5 mi.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3151118",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1799&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 1 ascent report read with a stated one-way road walk and ascent distance)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_stickney_scramble",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 2.25,
+     "value": 4.8
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "uphill about 2.25 miles",
+     "replace": "uphill about 4.8 miles"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_stickney_scramble",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 3,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "approach",
+     "path": [],
+     "find": "for about 2.25 miles",
+     "replace": "for about 4.8 miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "roughly 2-2.5 miles",
+     "replace": "roughly 4.8 miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~2.25 miles of closed-road walking",
+     "replace": "~4.8 miles of closed-road walking"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "five to six miles",
+     "replace": "nearly five miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "bivy",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "five-to-six mile approach march",
+     "replace": "nearly five-mile approach march"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_stickney_scramble",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.7,
+     "value": 10.5
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Walk the road uphill for a little over two miles",
+     "replace": "Walk the road uphill for about 4.8 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "kind": "item",
+   "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+   "verdict": "confirmed",
+   "summary": "A Southwest Buttress party states 6 mi (9.7 km) one way from the Eldorado trailhead to the summit, so dist_km goes from 6.44 to 9.7; that now sits consistently above the itinerary's 5.7 mi day to the col camp. The separate round-trip figure (prose 16 mi / 25.75 km vs a stated 12 mi) stays open because the itinerary days would have to be recomputed.",
+   "evidence": "Peakbagger ascent 2015-07-18, Route: Southwest Buttress, Start Trailhead 2,100 ft: Ascent Statistics 'Distance: 6 mi / 9.7 km', gain on way in 6,371 ft; descent by the Northwest Ridge 6 mi; round trip 12 mi / 19.3 km (the club route page also gives 12.0 mi round trip). The camp pin's distMi is already null.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=548912",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1845&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list filtered to SW Buttress, 5 entries; 1 ascent report read with stated one-way distance)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_southwest_buttress",
+     "column": "dist_km",
+     "path": [],
+     "expect": 6.44,
+     "value": 9.7
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "kind": "item",
+   "fact": "round-trip distance vs overview's stated mileage",
+   "verdict": "confirmed",
+   "summary": "A peakbagger ascent of the Nohokomeen Headwall states 15 mi each way (30 mi round trip, 10,003 ft), which matches the overview's 30 mi round trip, so dist_km moves from 17.7 km (11 mi, the distance to the high camp) to 24.14 km (15 mi).",
+   "evidence": "2021-05-22 Jack Mountain ascent, Route: Nohokomeen Headwall. Ascent Statistics 'Distance: 15 mi / 24.1 km', 'Gain on way in: 10003 ft'; Summary 'Round-Trip Distance: 30 mi / 48.3 km'; report: 'hiked the 8 miles trail' then bushwhack, 'About 10,000ft gain and 30 miles round trip'. The row's own prose puts the camp above May Creek at 11 miles from the road (8 mi trail + 3 mi bushwhack), which stays consistent with 15 mi to the summit.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1662202"
+   ],
+   "searched": [
+    "peakbagger (Jack ascent list; 1 ascent report)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_jack_mountain_nohokomeen_headwall",
+     "column": "dist_km",
+     "path": [],
+     "expect": 17.7,
+     "value": 24.14
+    }
+   ]
+  }
+ ]
+}

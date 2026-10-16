@@ -1,0 +1,414 @@
+{
+ "file": "t261.json",
+ "results": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is required (day or overnight) in the Buckhorn Wilderness; only a recreation pass to park.",
+   "evidence": "The Olympic National Forest wilderness page states that no permit is needed to visit its wilderness areas and that a recreation pass is required at some trailheads; the Upper Big Quilcene trailhead page lists only the day-use recreation pass. A Marmot Pass trail guide likewise says no permit is needed to hike in and around Marmot Pass, only a pass to park. One hiking-association page still lists a free self-issue permit, but the land manager does not require one; the row's own overnight_permit already says none is required.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/wilderness",
+    "https://www.fs.usda.gov/r06/olympic/recreation/upper-big-quilcene-trailhead",
+    "https://wanderingwithadromomaniac.com/trail-guide-marmot-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Buckhorn Wilderness permit at the trailhead; Northwest Forest Pass to park.",
+     "replace": "No wilderness permit required; a Northwest Forest Pass (or other valid recreation pass) is needed to park."
+    },
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No separate wilderness entry permit is required for day use.",
+     "replace": "No wilderness permit is required, for day trips or overnight stays."
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 10.9 km (~6.8 mi) is the one-way figure shown as 'Approach (one way)', and the itinerary's 13.5 mi is the round trip; 2 x 6.8 = 13.5, so the two agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "fact": "Total gain (gain_ft vs itinerary, loss_ft and totalNote)",
+   "verdict": "fixed",
+   "correct_value": "4,477 ft car-to-car gain",
+   "evidence": "gain_ft 4,257 disagreed with loss_ft, the itinerary day gainFt and totalNote (all 4,477). One trip report gives about 4,477 ft over roughly 13 miles for the Buckhorn summit via Marmot Pass; a separate backpacking report gives 13.4 mi round trip with 4,489 ft of gain. Both agree on ~4,480 ft, and no source supports 4,257.",
+   "sources": [
+    "https://outdoor-society.com/mesmerized-by-marmot-pass-and-buckhorn-mountain/",
+    "https://zilcsak.com/blog/marmot-pass-and-buckhorn-mountain-overnight-weekend-backpacking"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckhorn_marmot_pass",
+     "fact": "Total gain (gain_ft vs itinerary, loss_ft and totalNote)",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4257,
+     "value": 4477
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Descent line",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The first-ascent description says parties descend the north side via exposed ridge scrambling to a loose sandy ledge system to the top of Avalanche Canyon, then back round to camp. 'Off the north side' and 'into Avalanche Canyon' are two parts of the same descent, so the fields agree.",
+   "sources": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Route line named vs described",
+   "verdict": "unresolved",
+   "correct_value": "The standard line goes via Lake Constance, Avalanche Canyon, the South Gully and the East Ridge, not via Crystal Pass.",
+   "evidence": "A detailed trip report for Inner Constance describes the Lake Constance - Avalanche Canyon - South Defile - South Gully - East Ridge line and does not go via Crystal Pass, and every content field of the row agrees. The only disagreeing field is `name`, which is out of scope for patching; the owner needs to rename the route (e.g. drop 'via Crystal Pass'). The watch_out 'Crystal Pass crossing' line fits the row's alternative approach over Crystal Pass and is left alone.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Rock quality on the summit ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report quotes a published description calling the final East Ridge 'a fun Class 2-3 scramble on solid pillow basalt', which supports beta and pitch_detail. I found no second independent source on the East Ridge rock itself (peakbagger reports were blocked), so watch_out's 'rotten throughout upper peak' is not patched. A second report describing the East Ridge rock would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Drive distance to the washout",
+   "verdict": "fixed",
+   "correct_value": "The vehicle road end (washout parking) is about 8.5 miles up Dosewallips Road from US-101 at Brinnon.",
+   "evidence": "Two hiking guides say to drive 8.5 miles up Dosewallips Road from US-101 to the vehicle road end. One of them puts the old washout about 1 mile beyond it, and the other puts a washout about 1.2 mi beyond. A news report puts the washout itself at about 10 miles from US-101, which is the source of the stale 10.5 figure but is not where cars park. So the waypoint's ~9 mi was nearer, and 10.5 mi to the parking is wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.theoutbound.com/washington/backpacking/camp-at-the-dose-forks",
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://www.peninsuladailynews.com/news/jefferson-washout-keeps-dosewallips-road-closed/"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Drive distance to the washout",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "(~9 mi from Hwy 101)",
+     "replace": "(~8.5 mi from Hwy 101)"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Drive distance to the washout",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "roughly 9 miles",
+     "replace": "roughly 8.5 miles"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Drive distance to the washout",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Drive about 10.5 miles from US-101",
+     "replace": "Drive about 8.5 miles from US-101"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Drive distance to the washout",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "at the washout, about 10.5 miles from Brinnon, since a January 2002 flood and",
+     "replace": "since a January 2002 flood, with cars stopping at a road end about 8.5 miles from Brinnon, and"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Road distance to the old road end",
+   "verdict": "fixed",
+   "correct_value": "The Lake Constance path leaves the closed road about 5 mi from the washout parking; the old road end/campground is about 6.5 mi, i.e. ~1.5 mi past the turn-off.",
+   "evidence": "One guide puts the Lake Constance trailhead near the park boundary at 4.9 miles and the end of the road (Dosewallips Campground) at 6.5 miles from the parking. A second guide gives about 5.2 miles to the Constance Creek path and 6.3 miles to the old campground, and the park service lists the Lake Constance route as 5.0 miles from the washout. So the campground is ~1.5 mi past the turn-off, not 5.5.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Road distance to the old road end",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "roughly 5.5 miles past the Lake Constance turn-off to the old campground",
+     "replace": "roughly 6.5 miles, about 1.5 miles past the Lake Constance turn-off, to the old campground"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Lake Constance waypoint distance",
+   "verdict": "fixed",
+   "correct_value": "Lake Constance is ~7 mi from the washout parking (about 5 mi of road plus ~2 mi of trail); the stored 2 is measured from the unlisted climbers'-trail start.",
+   "evidence": "The waypoint list includes the washout parking as its trailhead, yet the lake pin reads mile 2, which is its distance from the Lake Constance path, not from the parking. The park service gives 5.0 miles from the washout to the route and 2 miles/3,200-3,300 ft of trail, and a hiking guide agrees. No source states the pin's distance from the listed trailhead, so the value is set to unknown rather than computed.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.wta.org/go-hiking/hikes/lake-constance"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Lake Constance waypoint distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 15 km (~9.3 mi) is the one-way figure (about 5 mi of road, 2 mi of trail and the climb from the lake), and the itinerary's 18 mi is the round trip including the summit day; the two agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Whether the traverse must be melted out",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The season (Jun-Sep) is the climbable range, and best_season/seasonal_guidance give the recommended window inside it (after melt-out, with June rated risky). The prose describes how the crossing changes from hard snow needing axe, crampons and pickets to a rock ledge. That fits June being the riskier condition, and partner_requirements already tells parties to turn back if it is unmelted or icy. It is a best window inside a season, not a conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Road distance to the old road end",
+   "verdict": "fixed",
+   "correct_value": "About 5 mi to the Lake Constance turn-off and about 6.5 mi to the old road end, ~1.5 mi past the turn-off.",
+   "evidence": "One guide puts the Lake Constance trailhead at 4.9 miles and the end of the road at 6.5 miles from the parking; a second gives about 5.2 and 6.3 miles; the park service lists the Lake Constance route as 5.0 miles from the washout. The row's own '6.5 miles from the gate' is right, and '5.5 miles past the turn-off' is the error.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Road distance to the old road end",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "roughly 5.5 miles past the Lake Constance turn-off",
+     "replace": "roughly 1.5 miles past the Lake Constance turn-off"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 15 km (~9.3 mi) is the one-way figure, and the itinerary's 18 mi is the round trip including the summit day; they agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Lake Constance waypoint distance",
+   "verdict": "fixed",
+   "correct_value": "Lake Constance is ~7 mi from the listed washout-parking trailhead; the stored 2 is its distance from the climbers'-trail start.",
+   "evidence": "Same as the Finger Traverse row: the lake pin reads mile 2, its distance from the Lake Constance path (2 mi per the park service and a hiking guide), while the listed trailhead is the washout parking about 5 miles down the road. No source states the pin's distance from that trailhead, so it is set to unknown.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.wta.org/go-hiking/hikes/lake-constance"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Lake Constance waypoint distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": null
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Lake Constance trail gain",
+   "verdict": "fixed",
+   "correct_value": "About 3,200-3,300 ft in about 2 miles",
+   "evidence": "A hiking guide gives the Lake Constance trail as 3,300 ft of gain to 4,800 ft, and the park service says it climbs 3,200 ft in 1.8 miles. Neither supports 3,600 ft; the approach, variant and pitch_detail already say 3,200-3,400.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Lake Constance trail gain",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~3,600 ft gain in about 2 miles",
+     "replace": "~3,300 ft gain in about 2 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Cat Ears location",
+   "verdict": "fixed",
+   "correct_value": "The Cat Ears tower stands beside the ~6,560-6,600 ft notch at the top of the South Chute, not near the summit.",
+   "evidence": "One climber's report identifies the Cat Ears as the tower just left of the notch at the top of the South Chute; another titles that section '6560 ft saddle by Cats Ears'. The summit is 7,756 ft, over 1,100 ft higher. The approach, climbing_route and baseFinding already place them at the chute-top notch, so the two 'near the summit' phrases are corrected.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance/MtConstance2.htm",
+    "https://onehikeaweek.com/2021/07/24/mount-constance/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Cat Ears location",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "around the Cat's Ears near the summit",
+     "replace": "around the Cat's Ears at the South Chute notch"
+    },
+    {
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Cat Ears location",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "around the Cat's Ears near the summit",
+     "replace": "around the Cat's Ears at the South Chute notch"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 15 km (~9.3 mi) is the one-way figure, and the itinerary's 18 mi is the round trip including the summit day; they agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Lake Constance waypoint distance",
+   "verdict": "fixed",
+   "correct_value": "Lake Constance is ~7 mi from the listed washout-parking trailhead; the stored 2 is its distance from the climbers'-trail start.",
+   "evidence": "Same as the Finger Traverse row: the lake pin reads mile 2, its distance from the Lake Constance path (2 mi per the park service and a hiking guide), while the listed trailhead is the washout parking about 5 miles down the road. No source states the pin's distance from that trailhead, so it is set to unknown.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.wta.org/go-hiking/hikes/lake-constance"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Lake Constance waypoint distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": null
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Drive distance from US-101 to the washout parking",
+   "verdict": "fixed",
+   "correct_value": "About 8.5 miles of Dosewallips Road from US-101 to the vehicle road end.",
+   "evidence": "The approach says ~7 paved plus ~3 gravel miles (about 10 mi) to the washout parking. Two hiking guides give 8.5 miles from US-101 to the vehicle road end, and the Inner Constance row is being corrected to the same figure. The paved/gravel split is not sourced, so it is dropped.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.theoutbound.com/washington/backpacking/camp-at-the-dose-forks"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Drive distance from US-101 to the washout parking",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "reached via ~7 paved miles then ~3 gravel miles of FR 2610 from US 101 at Brinnon",
+     "replace": "reached via about 8.5 miles of FR 2610 from US 101 at Brinnon"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

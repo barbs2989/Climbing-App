@@ -1,0 +1,218 @@
+{
+ "file": "r063.json",
+ "results": [
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A ~800 ft, 9-pitch alpine rock route taking a long day from the Terror Basin camp",
+   "evidence": "pitches, length_m, beta, detailed_rack, descent_text and the itinerary (10-hour summit day) all agree on ~800 ft / 9 pitches. The Mountain Madness account states the SW Arete is 9 pitches and that the peak's shortest route is 800 ft of technical climbing; the Kellogg/Holsten enchainment account describes soloing several low-fifth pitches then simul-climbing, also not a single short pitch.",
+   "sources": [
+    "https://mountainmadness.com/blog/picket-range-expedition-stunning-cascades-climbing",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "on this short moderate rock pitch above camp",
+     "replace": "on this long, moderate multi-pitch rock route above camp"
+    },
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "stagger climbers on the short 5.4 pitch",
+     "replace": "stagger climbers on the 5.4 pitches"
+    },
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "expect": "Quick objective from the basin camp",
+     "value": "A full day from the basin camp"
+    },
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "short additional scramble from the shared McMillan-area camp once established",
+     "replace": "then talus from the shared McMillan-area camp to the base of the 800 ft arête"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Rock quality",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one external account speaks to the rock on this route: the guided-ascent blog calls the rock and movement excellent (matching beta and itinerary). No second independent source on this route's rock quality was found, and the Southern Pickets generally are known for loose rock, so the 'loose throughout' gear/waypoint wording cannot be overruled on one source.",
+   "sources": [
+    "https://mountainmadness.com/blog/picket-range-expedition-stunning-cascades-climbing"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Location of the base of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The guided account says the party reached the climb via the Terror Glacier from the 5,800 ft camp; the Kellogg/Holsten account says after Little Mac they rappelled into a gully below East McMillan and continued to East McMillan. Azure Lake lies ~0.75 mi east of McMillan Spire. No source states which side of East McMillan the SW arete starts from, so neither the approach text nor the itinerary's 'saddle east of East McMillan / above Azure Lake' can be confirmed.",
+   "sources": [
+    "https://mountainmadness.com/blog/picket-range-expedition-stunning-cascades-climbing",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment",
+    "https://en.wikipedia.org/wiki/Azure_Lake_(Whatcom_County,_Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Climbers' path junction elevation",
+   "verdict": "fixed",
+   "correct_value": "~1,700 ft",
+   "evidence": "One trip report puts the Goodell Creek stream crossing at about 3.5 mi and c.1,700 ft, with the Terror Basin cairn just beyond it. Another states the trail starts at ~600 ft, runs gently 4.5 mi, then gains 4,700 ft in 2.5 mi to the 6,200 ft notch, which places the turn-off near 1,500 ft. Both place it far below 3,200 ft; the row's own crossing pin (1,700 ft at 3.5 mi, just before the cairn) agrees with 1,700.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Climbers' path junction elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 3200,
+     "value": 1700
+    }
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Permit method",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's permit page says permits are either reserved on Recreation.gov (then issued by email) or walk-up in person the day of/before, and its list of advance-reservable cross-country zones does not name Terror Basin. No second source confirms whether Terror Basin is reservable in advance, so the conflict between 'reserve on Recreation.gov', 'in person only' and 'walk-up only' cannot be settled to two sources.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Rope purpose / descent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A single 60 m rope for the multi-rappel descent of the arête (and the short horn rappel if continuing)",
+   "evidence": "descent_text, rope_note, rope_length_m and rappels agree the way off is a multi-rappel descent of the arete with a 60 m rope. The guided account describes rappelling from ancient rap stations on the route; the enchainment account describes the separate rappel into the gully below East McMillan only for parties continuing.",
+   "sources": [
+    "https://mountainmadness.com/blog/picket-range-expedition-stunning-cascades-climbing",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Rope purpose / descent",
+     "op": "set",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "expect": "60m rope (for the short rappel off the horn if continuing the traverse)",
+     "value": "60m rope (for the multi-rappel descent of the arête)"
+    },
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Rope purpose / descent",
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "30-60m single rope for the short rappel off the horn",
+     "value": "60m single rope for the multi-rappel descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Cell coverage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No trip report found states whether there is any cell signal in Terror Basin; one report only mentions losing reception on the drive before the trailhead.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Which basin serves Terror/Chopping Block",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Both basins genuinely serve Mount Terror (parties camp in the Crescent Creek basin zone for the West Ridge; others base from Terror Basin), so these are two real options; the disputed wording sits in the bivy[0] camp card, which is owned by the separate camping clean-up. No patch.",
+   "sources": [
+    "https://jackdeansmith.com/posts/terror-west-ridge",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Peak coordinate",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach_logistics.peakLat/peakLng sits ~1 km from the summit waypoint, which matches the area coordinate. Coordinates are out of scope for this pass and no surveyed summit coordinate for Little Mac Spire was found; left for the pin audits.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Terror Basin notch elevation",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "6,200 ft",
+   "evidence": "The Terror Basin Notch waypoint says 6,300 ft while the itinerary, timing notes and camp card say 6,200 ft. One report gives the notch at 6,200 ft into a 5,800 ft basin; another gives the notch at 6,200 ft; a third says ~6,250 ft.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://onehikeaweek.com/2016/08/01/west-mcmillan-spire/"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Terror Basin notch elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 6300,
+     "value": 6200
+    }
+   ]
+  }
+ ]
+}

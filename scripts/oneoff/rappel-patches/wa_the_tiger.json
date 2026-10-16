@@ -1,0 +1,63 @@
+{
+ "id": "wa_the_tiger",
+ "area_id": "wa_m_m_wall_aka_supercave_wall",
+ "stations": 7,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 35,
+    "anchor": "fixed anchor",
+    "station": "From an anchor on the right edge of the highest summit overhangs.",
+    "notes": "Rappel 1 of 7, about 35 m on two 70 m ropes, angling left to the ledge atop pitch 10."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "anchor": "fixed anchor",
+    "station": "From the ledge atop pitch 10.",
+    "notes": "Rappel 2 of 7, about 30 m on two 70 m ropes, down the flake pitch."
+   },
+   {
+    "n": 3,
+    "lengthM": 40,
+    "anchor": "fixed anchor",
+    "station": "From the anchor below the flake pitch.",
+    "notes": "Rappel 3 of 7, about 40 m on two 70 m ropes, angling hard right; fixed wires are in place for directionals on the strand you will not pull."
+   },
+   {
+    "n": 4,
+    "lengthM": 45,
+    "anchor": "fixed anchor",
+    "station": "From the next anchor.",
+    "notes": "Rappel 4 of 7, about 45 m on two 70 m ropes, into the cave."
+   },
+   {
+    "n": 5,
+    "lengthM": 61,
+    "anchor": "fixed anchor",
+    "station": "From the cave.",
+    "notes": "Rappel 5 of 7, about 61 m on two 70 m ropes, a rope-stretching rappel to the ledge atop pitch 3.",
+    "hazards": [
+     "This one stretches two 70 m ropes; knot the ends."
+    ]
+   },
+   {
+    "n": 6,
+    "lengthM": 45,
+    "anchor": "fixed anchor",
+    "station": "From the ledge atop pitch 3.",
+    "notes": "Rappel 6 of 7, about 45 m on two 70 m ropes, down pitch 3."
+   },
+   {
+    "n": 7,
+    "lengthM": 60,
+    "anchor": "fixed anchor",
+    "station": "From the anchor at the foot of pitch 3.",
+    "notes": "Rappel 7 of 7, about 60 m on two 70 m ropes, down and slightly right over the terrain of pitches 1 and 2."
+   }
+  ],
+  "rappels": "7 rappels on two 70 m ropes down the route; or scramble off down and left on a treed ramp into the 3rd-class gully, or rappel the Ellen Pea line",
+  "rappel_count_note": "Seven rappels on two 70 m ropes, one of them a rope-stretching 61 m from the cave. A non-rappel descent tops out and scrambles down and left on a treed ramp into the 3rd-class gully left of the wall. From the base, walk left down the gully, or rappel the bolted slab below and right: about 75 m more, on three bolted anchors."
+ }
+}

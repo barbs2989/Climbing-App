@@ -1,0 +1,1109 @@
+[
+ {
+  "drop": "wa_amphitheater_mountain_north_buttress",
+  "keep": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Mountain Project lists no 'North Buttress' on Amphitheatre Mountain; its only III 5.9, 7-pitch line with a 07/15/1973 FA is Middle Finger Buttress - Right Side, which climbs cracks on the NW side of the biggest buttress above Upper Cathedral Lake. This row has the identical grade, commitment, pitch count and FA date, and its own face field calls it 'Middle Finger Buttress (right side)' - it is the same climb under a generic name.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_amphitheater_mountain_north_buttress",
+   "name": "North Buttress",
+   "area_id": "wa_amphitheater_mountain",
+   "grade": "5.9",
+   "areas": {
+    "name": "Amphitheater Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+   "name": "Middle Finger Buttress - Right Side",
+   "area_id": "wa_amphitheater_mountain",
+   "grade": "5.9",
+   "areas": {
+    "name": "Amphitheater Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_austera_peak_chockstone_route",
+  "keep": "wa_austera_peak_southwest_ridge",
+  "verdict": "PART_OF",
+  "confidence": "high",
+  "evidence": "The 'chockstone route' is the low-5th chockstone gully between Austera's false and true summits, the summit-block finish of the standard approach over the Klawatti/McAllister glaciers; parties can bypass it by scrambling right (Class 3) to the notch above the gully and climbing ~25 ft to the top. It is not a separate line up the mountain, only an optional crux finish of the standard route - fold it into the standard route's breakdown as the summit-block option.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_austera_peak_chockstone_route",
+   "name": "Chockstone Route",
+   "area_id": "wa_austera_peak",
+   "grade": "5.2",
+   "areas": {
+    "name": "Austera Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_austera_peak_southwest_ridge",
+   "name": "Southwest Ridge / McAllister Glacier",
+   "area_id": "wa_austera_peak",
+   "grade": "5.2",
+   "areas": {
+    "name": "Austera Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_bears_breast_mountain_se_mega_slab",
+  "keep": "wa_bears_breast_mountain_infinite_beauty",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "The SE Mega Slab is the feature (a ~3,000 ft sandstone slab from Shovel Creek to the SE shoulder), not a route; Mountain Project lists exactly two routes on it, Timeless Treasure (Windham/Burdo, Aug 2004, center of the slab left of the giant corner) and Infinite Beauty (Windham/Martin, 2005), both 5.6. This row's '2005' FA matches Infinite Beauty, and its generic unroped-slab-then-loose-summit-pitch beta is the same ascent; fold its approach/slab beta into Infinite Beauty (or into the area blurb).",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_bears_breast_mountain_se_mega_slab",
+   "name": "SE Mega Slab",
+   "area_id": "wa_bears_breast_mountain",
+   "grade": "5.6",
+   "areas": {
+    "name": "Bears Breast Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "name": "Infinite Beauty",
+   "area_id": "wa_bears_breast_mountain",
+   "grade": "5.6",
+   "areas": {
+    "name": "Bears Breast Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_bonanza_peak_north_ridge",
+  "keep": "wa_bonanza_peak_mary_green_glacier",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "No source documents a 'North Ridge' route on Bonanza: Mountain Project lists only the Mary Green Glacier, and the standard route is the Mary Green Glacier with steep exposed Class 3-4 scrambling to the upper ridge. This page's overview, beta and breakdown are word-for-word that standard route (Holden Lake/Pass, Mary Green Glacier, gully/rib system to a notch on the upper NE ridge), so it is the Mary Green route under a wrong name and should be folded into it.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_bonanza_peak_north_ridge",
+   "name": "North Ridge",
+   "area_id": "wa_bonanza_peak",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Bonanza Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "name": "Mary Green Glacier (Standard Route)",
+   "area_id": "wa_bonanza_peak",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Bonanza Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_colchuck_peak_east_ridge",
+  "keep": "wa_colchuck_peak_colchuck_glacier",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Beckey's 'East Route' on Colchuck is a short scramble northwest from Colchuck Col (Banshee Pass), and it is commonly called the Colchuck Glacier Route because most parties reach the col by the glacier. This row has the same col, the same glacier approach, the same 3rd-class finish and the same 1948 Johnson/Long FA as wa_colchuck_peak_colchuck_glacier - one route under two names.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_colchuck_peak_east_ridge",
+   "name": "East Ridge (Non-Technical)",
+   "area_id": "wa_colchuck_peak",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Colchuck Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "name": "Colchuck Glacier",
+   "area_id": "wa_colchuck_peak",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Colchuck Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_cutthroat_peak_southeast_buttress",
+  "keep": "wa_cutthroat_south_buttress",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "The Mountaineers' 'Cutthroat Peak/Southeast Buttress' (III 5.8, with a gully to the 'Tarzan Jump' for a bush) is the South Buttress: Mountain Project's South Buttress page shows the same Tarzan Step, reached either by the gully or by staying on the ridge. This row has no FA or details of its own beyond that grade and length, so it is the South Buttress under The Mountaineers' name.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "name": "Southeast Buttress",
+   "area_id": "wa_cutthroat_peak",
+   "grade": "5.8",
+   "areas": {
+    "name": "Cutthroat Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_cutthroat_south_buttress",
+   "name": "South Buttress",
+   "area_id": "wa_cutthroat_peak",
+   "grade": "5.8",
+   "areas": {
+    "name": "Cutthroat Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_davis_peak_nc_southwest",
+  "keep": "wa_davis_peak_nc_south_slope_and_ridge",
+  "verdict": "PART_OF",
+  "confidence": "medium",
+  "evidence": "The southwest line leaves the South Ridge around 5,700 ft and traverses into the main southwest-face gully/bowl to the summit; it was pioneered by skiers and avoids the old ridge's steep notch. It shares the whole Gorge Creek approach and lower ridge with the South Slope and Ridge route, so it is a variation of that route. Keep it as a named variation ('Southwest Face'), and trim its beta to the face finish, because it currently re-describes the ridge too.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_davis_peak_nc_southwest",
+   "name": "Southwest Route / Standard Scramble",
+   "area_id": "wa_davis_peak_nc",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Davis Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_davis_peak_nc_south_slope_and_ridge",
+   "name": "South Slope and Ridge",
+   "area_id": "wa_davis_peak_nc",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Davis Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_dragontail_peak_r1",
+  "keep": "wa_dragontail_peak_r4",
+  "verdict": "PART_OF",
+  "confidence": "high",
+  "evidence": "Hidden Couloir is the first of the three couloirs of Triple Couloirs: it starts ~6,400 ft above the south end of Colchuck Lake and climbs ~800 ft of 40-50 degree snow/ice before the first rock band (the Runnels). Every source describes it only as the opening section of Triple Couloirs, not as its own route; fold it into Triple Couloirs as a section of the route breakdown.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_dragontail_peak_r1",
+   "name": "Hidden Couloir",
+   "area_id": "wa_dragontail_peak",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Dragontail Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_dragontail_peak_r4",
+   "name": "Triple Couloirs",
+   "area_id": "wa_dragontail_peak",
+   "grade": "WI3",
+   "areas": {
+    "name": "Dragontail Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_fortress_mountain_northeast_face",
+  "keep": "wa_fortress_mountain_east_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "low",
+  "evidence": "The documented technical way up Fortress from the Chiwawa side is the East Route: moderate snow to a broad notch in the East Ridge, a clean chimney through a blank rock block (the crux), then Class 3-4 ridge and Class 2 boulders to the true summit. Others call this same Fortress-Chiwawa connecting ridge the 'northeast ridge' with a 4th-class chimney, and this row's grade, face and breakdown are that chimney. Its NE-face 'headwall plus snow slope' overview comes from a single forum report and has no other evidence, so fold the row into East Ridge.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_fortress_mountain_northeast_face",
+   "name": "Northeast Ridge",
+   "area_id": "wa_fortress_mountain",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Fortress Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_fortress_mountain_east_ridge",
+   "name": "East Ridge",
+   "area_id": "wa_fortress_mountain",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Fortress Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_garfield_mountain_scramble",
+  "keep": "wa_garfield_mountain_south_route",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Garfield's main summit was first climbed by Jim Crooks and Judson Nelson in August 1940 by the 'South Route', whose features run up to the exposed #2 Gully; that is exactly the FA, fixed-piton note and line this row carries. It is the South Route (Main Peak) under a vague name, and its 'scramble' framing contradicts its own text, which says every summit needs roped climbing; fold it into wa_garfield_mountain_south_route.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_garfield_mountain_scramble",
+   "name": "Multi-Summit Scramble",
+   "area_id": "wa_garfield_mountain",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Garfield Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_garfield_mountain_south_route",
+   "name": "South Route (Main Peak)",
+   "area_id": "wa_garfield_mountain",
+   "grade": "5.8",
+   "areas": {
+    "name": "Garfield Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_goat_mountain_east_peak",
+  "keep": "wa_goat_mountain_south_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Same climb as wa_goat_mountain_east_peak: Trail #673 to the ridge, then off-trail across the saddle and up steep heather/snow to the true East summit (6,891 ft), ~60 m higher than the trail's West Peak. Keep this row as the single East Peak route and merge the other into it; if a West Peak entry is wanted, it is a trail hike, not this row.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_goat_mountain_east_peak",
+   "name": "East Peak Traverse",
+   "area_id": "wa_goat_mountain",
+   "grade": "Class 2",
+   "areas": {
+    "name": "Goat Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_goat_mountain_south_ridge",
+   "name": "South Ridge / Standard Scramble",
+   "area_id": "wa_goat_mountain",
+   "grade": "Class 2",
+   "areas": {
+    "name": "Goat Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_hozomeen_mountain_southeast_face",
+  "keep": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "South Hozomeen's standard route (camp at the ~6,800-6,900 ft saddle, ledges and gullies across the south side, a short Class 5.0 ramp, the ~12-15 ft loose 5.6 bulge that most parties rappel, then a Class 4 step and gully to the summit) is the Southwest Route of the 1947 Beckey first ascent, which climbers call the 'SW Route' / 'SW Face'. This row is that route word for word under a 'Southeast Face' label, and the real SE line is the separate 1988 SE Buttress row.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "name": "Southeast Face (Standard)",
+   "area_id": "wa_hozomeen_mountain",
+   "grade": "5.6",
+   "areas": {
+    "name": "Hozomeen Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+   "name": "Southwest Route (South Peak)",
+   "area_id": "wa_hozomeen_mountain",
+   "grade": "5.6",
+   "areas": {
+    "name": "Hozomeen Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+  "keep": "wa_little_tahoma_east_shoulder",
+  "verdict": "PART_OF",
+  "confidence": "medium",
+  "evidence": "The route from Paradise crosses the Paradise, Cowlitz and Ingraham glaciers (high or low variant), goes through the Ingraham-Whitman saddle (a snow couloir and ~40 ft of loose Class 4) and onto the Whitman Glacier. From there it is the East Shoulder finish: the upper-left corner into the gully, the short headwall step, the gully-chimney and the exposed crest. The Mountaineers file it under 'Little Tahoma/East Shoulder', so it is an alternate approach to the East Shoulder, not a separate South Face rock route. Keep it as a named approach variant ('from Paradise via Cowlitz/Ingraham Glaciers') and drop the 'low-5th South Face' rock grade.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+   "name": "Cowlitz/Ingraham Glaciers (South Face)",
+   "area_id": "wa_little_tahoma",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Little Tahoma Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_little_tahoma_east_shoulder",
+   "name": "East Shoulder",
+   "area_id": "wa_little_tahoma",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Little Tahoma Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_frying_pan_whitman_glaciers",
+  "keep": "wa_little_tahoma_east_shoulder",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Little Tahoma's standard route is the East Shoulder, climbed by way of the Fryingpan and Whitman glaciers from Summerland (Grade II+, steep snow, loose summit rock; first ascent Flett and Garrison, August 29, 1894). Mountain Project calls it 'Frying Pan / Whitman Glaciers' and The Mountaineers call it 'East Shoulder', but it is one climb. Keep the East Shoulder row and fold in this row's richer beta.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "name": "Frying Pan / Whitman Glaciers",
+   "area_id": "wa_little_tahoma",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Little Tahoma Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_little_tahoma_east_shoulder",
+   "name": "East Shoulder",
+   "area_id": "wa_little_tahoma",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Little Tahoma Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_south_ridge_2",
+  "keep": "wa_luna_peak_southeast_slopes",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Luna has one standard line: Access Creek, then across the SE basin at ~6,600 ft to Luna Col (7,200 ft), up the broad ridge on ~1,100 ft of Class 2 talus to the south (false) summit, then the short exposed Class 3-4 traverse across the notch to the true north summit. Both this row and wa_luna_peak_southeast_slopes describe exactly that, with the same 1938 Cox/Thompson FA. Keep the Southeast Slopes id and fold this one in; 'South Ridge (from Luna Col)' is the more accurate display name for the kept row.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_south_ridge_2",
+   "name": "South Ridge",
+   "area_id": "wa_luna_peak",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Luna Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_luna_peak_southeast_slopes",
+   "name": "Southeast Slopes",
+   "area_id": "wa_luna_peak",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Luna Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_south_face_2001_variation",
+  "keep": "wa_lundin_peak_south_face_left",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Mountain Project's South Face Left (II 5.10, 4 pitches, 500 ft, FA Mike and Don Preiss 2004) starts near the center and low point of the south face at an obvious 5.10 layback hand crack, goes up and left to a left-trending ramp, and leaves it rightward on fun 5.7-5.8 rock - this row's overview, pitch grades and FA exactly. No source records a '2001 variation'; fold this row into South Face Left.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_south_face_2001_variation",
+   "name": "South Face (2001 Variation)",
+   "area_id": "wa_lundin_peak",
+   "grade": "5.10",
+   "areas": {
+    "name": "Lundin Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_lundin_peak_south_face_left",
+   "name": "South Face Left",
+   "area_id": "wa_lundin_peak",
+   "grade": "5.10",
+   "areas": {
+    "name": "Lundin Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_main_peak_4_northwest_ice_couloir",
+  "keep": "wa_eldorado_peak_eldorado_glacier_nw",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "This is an empty row (no prose, FA, face or commitment) for the same Eldorado NW Ice Couloir that wa_eldorado_peak_eldorado_glacier_nw fully describes. Fold it into that row, which should take this row's correct name.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_main_peak_4_northwest_ice_couloir",
+   "name": "Northwest Ice Couloir",
+   "area_id": "wa_main_peak",
+   "grade": "AI3",
+   "areas": {
+    "name": "Main Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "name": "Northwest Couloir / Eldorado Glacier",
+   "area_id": "wa_main_peak",
+   "grade": "AI3",
+   "areas": {
+    "name": "Main Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_baring_mountain_south_route",
+  "keep": "wa_baring_mountain_northwest_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Baring's standard route is called the Northwest Ridge: a very steep climbers' trail to the NW ridge crest, then the basin and a gully to the 5,550-ft notch between the south and main peaks, with easy Class 3 just below the summit. This row's beta describes exactly that line, and its face even reads 'Northwest Ridge / South notch'. Keep the Northwest Ridge name and move this row's prose and FA into it after checking them.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_baring_mountain_south_route",
+   "name": "South Route",
+   "area_id": "wa_main_peak_3",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Main Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area_id": "wa_main_peak_3",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Main Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_constance_finger_traverse",
+  "keep": "wa_mount_constance_north_chimney",
+  "verdict": "PART_OF",
+  "confidence": "high",
+  "evidence": "The Finger Traverse is the rock alternative to the Terrible Traverse on the standard South Chute route (~7,435 ft), not a separate way to the summit. The standard route is the row wa_mount_constance_north_chimney, whose own overview calls itself the South Chute. Fold this row in as a named option in that route's breakdown. Separately, the parent is misnamed and should be called 'South Chute'.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_constance_finger_traverse",
+   "name": "Finger Traverse",
+   "area_id": "wa_mount_constance",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Constance"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_constance_north_chimney",
+   "name": "North Chimney (Standard Route)",
+   "area_id": "wa_mount_constance",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Constance"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_constance_terrible_traverse",
+  "keep": "wa_mount_constance_north_chimney",
+  "verdict": "PART_OF",
+  "confidence": "high",
+  "evidence": "The Terrible Traverse is part of the standard South Chute route: an exposed snow traverse across a cirque above a big cliff, with the Finger Traverse as its alternative. Fold it into the standard-route row wa_mount_constance_north_chimney (really the South Chute) as one of the two crux options.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_constance_terrible_traverse",
+   "name": "Terrible Traverse",
+   "area_id": "wa_mount_constance",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Constance"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_constance_north_chimney",
+   "name": "North Chimney (Standard Route)",
+   "area_id": "wa_mount_constance",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Constance"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_olympus_blue_glacier_east_ramps",
+  "keep": "wa_mount_olympus_blue_glacier",
+  "verdict": "PART_OF",
+  "confidence": "high",
+  "evidence": "The East Face Ramps (Class 4 with one 5th-class step) is one of the summit-block finishes on the Blue Glacier / Crystal Pass standard route; the 5.4 north-side finishes are the others. Its beta repeats the whole Blue Glacier approach. Fold it into wa_mount_olympus_blue_glacier as that route's normal finish rather than keeping a second 'Standard' row. The north and west-edge variation rows can stay as variations.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+   "area_id": "wa_mount_olympus",
+   "grade": "5.0",
+   "areas": {
+    "name": "Mount Olympus (West Peak)"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_olympus_blue_glacier",
+   "name": "Blue Glacier (Standard Route)",
+   "area_id": "wa_mount_olympus",
+   "grade": "5.4",
+   "areas": {
+    "name": "Mount Olympus (West Peak)"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_price_north_route",
+  "keep": "wa_mount_price_hester_lake_route",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "The Hester Lake Route goes around Little Hester Lake to the ~4,640-ft saddle to its northwest, then follows Price's NORTH Ridge to the summit (Class 3 snow and rock gullies). That makes it the same line as the North Route row. Keep the established Hester Lake Route name. Also fix this row's 'south/east flank ... east ridge' wording to 'north ridge'.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_price_north_route",
+   "name": "North Route",
+   "area_id": "wa_mount_price",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Mount Price"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_price_hester_lake_route",
+   "name": "Hester Lake Route",
+   "area_id": "wa_mount_price",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Mount Price"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_rahm_standard",
+  "keep": "wa_mount_rahm_south_side",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "'Standard Route / Glacier' is the same south-side gully route from Ouzel Lake as wa_mount_rahm_south_side, and its face says so. 'Glacier' is misleading because the line is talus, gullies and a snowfield. Fold it into South Side, keeping its peak overview and its FA (Hutton/Mason 1955, not independently verified).",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_rahm_standard",
+   "name": "Standard Route / Glacier",
+   "area_id": "wa_mount_rahm",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Mount Rahm"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_rahm_south_side",
+   "name": "South Side",
+   "area_id": "wa_mount_rahm",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Rahm"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_stone_putvin",
+  "keep": "wa_mount_stone_lake_of_angels",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "This row has the same face, approach and crux as wa_mount_stone_lake_of_angels. 'Putvin Trail' is only the approach to the South Couloir. Fold it into the kept row, whose name should become 'South Couloir'.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_stone_putvin",
+   "name": "Putvin Trail / Lake of the Angels Scramble",
+   "area_id": "wa_mount_stone",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Stone"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_stone_lake_of_angels",
+   "name": "South Route via Lake of the Angels",
+   "area_id": "wa_mount_stone",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Mount Stone"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_the_direct_north_ridge_w_gendarme",
+  "keep": "wa_mount_stuart_north_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "The 'Complete' North Ridge and the 'Direct' North Ridge are the same climb: toe to summit, about 20 pitches and 2,800-3,000 ft, Grade IV 5.9+, over the Great Gendarme, established by Hargis and Ossiander in 1970. Mountain Project's 'Direct North Ridge' page describes it as the upper North Ridge plus about 1,200 ft of climbing below the notch. Keep this row (correct FA story) and fold the 'Direct North Ridge w/ Gendarme' row in. The Upper North Ridge stays a separate row.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "name": "The Direct North Ridge w/ Gendarme",
+   "area_id": "wa_mount_stuart",
+   "grade": "5.9+",
+   "areas": {
+    "name": "Mount Stuart"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_stuart_north_ridge",
+   "name": "North Ridge (Complete)",
+   "area_id": "wa_mount_stuart",
+   "grade": "5.9",
+   "areas": {
+    "name": "Mount Stuart"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_stuart_the_gendarme",
+  "keep": "wa_upper_north_ridge_w_great_gendarme",
+  "verdict": "PART_OF",
+  "confidence": "high",
+  "evidence": "The Great Gendarme is the two-pitch crux (5.8 lieback, then 5.9 offwidth) of the North Ridge, about two-thirds of the way up. Both the Upper and the Complete North Ridge climb it, and it is not a route to the summit on its own. Fold it into the Upper North Ridge row's breakdown, which already names it, rather than keeping it as a variation.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_stuart_the_gendarme",
+   "name": "The Gendarme",
+   "area_id": "wa_mount_stuart",
+   "grade": "5.9",
+   "areas": {
+    "name": "Mount Stuart"
+   }
+  },
+  "keep_row": {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "name": "Upper North Ridge w/Great Gendarme",
+   "area_id": "wa_mount_stuart",
+   "grade": "5.9",
+   "areas": {
+    "name": "Mount Stuart"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_mount_index_northeast_buttress",
+  "keep": "wa_mount_index_north_face",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "No 'Northeast Buttress' route on Index's North Peak turns up in any source. Every field of this row matches the North Face of North Peak: 1929 Chute/Kaartinen FA, 5.7 WI3-, 12 pitches, and the breakdown 'P1-2 5.5 / P3-9 the jungle / P10-12'. The original North Face line also starts up the bushy NE spur above Lake Serene, which likely produced the name. Fold this row into wa_mount_index_north_face.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_mount_index_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area_id": "wa_north_peak_2",
+   "grade": "5.6",
+   "areas": {
+    "name": "North Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_mount_index_north_face",
+   "name": "North Face (North Peak)",
+   "area_id": "wa_north_peak_2",
+   "grade": "5.7",
+   "areas": {
+    "name": "North Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_southwest_scramble",
+  "keep": "wa_pinnacle_peak_tatoosh_r1",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "Pinnacle Peak has one standard scramble: from Pinnacle Saddle, go along or below the ridge to a gully or chute on the western part of the south face, then climb loose Class 3-4 to the summit. Guides call it the 'south side scramble' or 'southwest gully'. The two rows describe that same line under two names. Keep this row (FA, peak overview) and fold the Southwest Scramble row's detailed chute beta into it. The East Ridge remains a separate route.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_southwest_scramble",
+   "name": "Southwest Scramble",
+   "area_id": "wa_pinnacle_peak_tatoosh",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Pinnacle Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "name": "Pinnacle Saddle / South Gully",
+   "area_id": "wa_pinnacle_peak_tatoosh",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Pinnacle Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_sherpa_balanced_rock_north_ridge",
+  "keep": "wa_sherpa_peak_north_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Sherpa's North Ridge (5.8, Grade III, ~13 pitches from about 7,000 ft, three sections separated by notches) ends on Sherpa Peak's main summit, not on the Balanced Rock. The catalog already has it as wa_sherpa_peak_north_ridge on the Sherpa Peak area. Fold this copy in, carrying its FA (La Belle/Derr 1971) if the kept row lacks one.",
+  "flag": "AREA-DIFF",
+  "drop_row": {
+   "id": "wa_sherpa_balanced_rock_north_ridge",
+   "name": "North Ridge",
+   "area_id": "wa_sherpa_balanced_rock",
+   "grade": "5.8",
+   "areas": {
+    "name": "Sherpa Balanced Rock"
+   }
+  },
+  "keep_row": {
+   "id": "wa_sherpa_peak_north_ridge",
+   "name": "North Ridge",
+   "area_id": "wa_sherpa_peak",
+   "grade": "5.8",
+   "areas": {
+    "name": "Sherpa Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_neve_glacier_west_ridge",
+  "keep": "wa_snowfield_peak_neve_glacier",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Keep this row, which has the full approach and overview, and give it the published name 'Neve Glacier / West Ridge' that Mountain Project uses. Fold the separate West Ridge row into it.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_neve_glacier_west_ridge",
+   "name": "Neve Glacier / West Ridge",
+   "area_id": "wa_snowfield_peak",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Snowfield Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "name": "Neve Glacier / Standard Route",
+   "area_id": "wa_snowfield_peak",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Snowfield Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_south_early_winter_spire_east_buttress",
+  "keep": "wa_south_early_winter_spire_direct_east_buttress",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "Mountain Project's full route list for South Early Winters Spire has no 5.8 'East Buttress'. The only east-buttress line is the Direct East Buttress (Beckey/Leen 1968, 9-10 pitches, mostly 5.8-5.9 with 5.11a or 5.9 A0 cruxes), which climbers often call simply 'the East Buttress'. This row has no FA and admits its details are undocumented, and its tidy 5.6-5.8 pitch list is unsupported. Fold it into the Direct East Buttress rather than present a moderate route that does not exist.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "name": "East Buttress",
+   "area_id": "wa_south_early_winters_spire",
+   "grade": "5.8",
+   "areas": {
+    "name": "South Early Winters Spire"
+   }
+  },
+  "keep_row": {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "name": "Direct East Buttress",
+   "area_id": "wa_south_early_winters_spire",
+   "grade": "5.11a",
+   "areas": {
+    "name": "South Early Winters Spire"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_south_twin_sister_scramble",
+  "keep": "wa_south_twin_sister_west_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "The south-side gully bypass from the high notch about 400 ft below the summit is the normal finish of South Twin's West Ridge route (Class 2-3 on olivine), and the Mountaineers' West Ridge description includes it. This row shares the whole West Ridge approach and differs only in naming that standard bypass. Fold it into wa_south_twin_sister_west_ridge.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_south_twin_sister_scramble",
+   "name": "South Twin Sister Olivine Scramble",
+   "area_id": "wa_south_twin_sister",
+   "grade": "Class 3",
+   "areas": {
+    "name": "South Twin Sister"
+   }
+  },
+  "keep_row": {
+   "id": "wa_south_twin_sister_west_ridge",
+   "name": "West Ridge",
+   "area_id": "wa_south_twin_sister",
+   "grade": "Class 4",
+   "areas": {
+    "name": "South Twin Sister"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_summit_chief_north_face",
+  "keep": "wa_summit_chief_mountain_north_face",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Same climb as wa_summit_chief_north_face (Haley/Burdick 2004, WI2-3 ramp, snowfields, AI2 exit). This is the row to keep: it carries the overview, beta, breakdown and FA; take pitches=12 from the other row.",
+  "flag": "AREA-DIFF",
+  "drop_row": {
+   "id": "wa_summit_chief_north_face",
+   "name": "North Face",
+   "area_id": "wa_summit_chief",
+   "grade": "WI3",
+   "areas": {
+    "name": "Summit Chief"
+   }
+  },
+  "keep_row": {
+   "id": "wa_summit_chief_mountain_north_face",
+   "name": "North Face",
+   "area_id": "wa_summit_chief_mountain",
+   "grade": "WI3",
+   "areas": {
+    "name": "Summit Chief Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_the_fin_scramble",
+  "keep": "wa_the_fin_northeast_face",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "The Fin's only documented route is the Northeast Face: one 120-ft 5.4 pitch into a chockstone chimney, then a third-class scramble to the summit, FA Harold Pinsch and Garry Tate 1966. This row has that exact grade, face, FA and description under a generic 'Sawtooth Range Scramble' name; there is no separate scramble route to The Fin.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_the_fin_scramble",
+   "name": "Sawtooth Range Scramble",
+   "area_id": "wa_the_fin",
+   "grade": "5.4",
+   "areas": {
+    "name": "The Fin"
+   }
+  },
+  "keep_row": {
+   "id": "wa_the_fin_northeast_face",
+   "name": "The Fin - Northeast Face",
+   "area_id": "wa_the_fin",
+   "grade": "5.4",
+   "areas": {
+    "name": "The Fin"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_tupshin_peak_scramble",
+  "keep": "wa_tupshin_peak_east_face",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "The beta (Bird Creek Camp, shoulder of the south ridge, into the east basin, zigzag ledges up the face to a 5.2-5.4 crux) is the East Face, the standard route since Liebert and Grubenhoff's 1982 first ascent. The Darr 1940 FA on this row belongs to the West Face, a different and essentially unrepeated line, so it must not move to the East Face page; 'South Ridge' is only the approach shoulder.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_tupshin_peak_scramble",
+   "name": "South Ridge",
+   "area_id": "wa_tupshin_peak",
+   "grade": "5.4",
+   "areas": {
+    "name": "Tupshin Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_tupshin_peak_east_face",
+   "name": "East Face",
+   "area_id": "wa_tupshin_peak",
+   "grade": "5.6",
+   "areas": {
+    "name": "Tupshin Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_unicorn_peak_r1",
+  "keep": "wa_classic_route_2",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "The Classic Route (5.4) is Unicorn's standard climb: Snow Lake trail, gully to the saddle west of the peak, around the summit block and up its south side for a short low-5th pitch. This row describes exactly that line under an approach name; fold its approach and summit-horn beta into wa_classic_route_2. Open Book and The Roof (5.6) remain separate summit-block variations.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_unicorn_peak_r1",
+   "name": "Snow Lake / Unicorn Creek approach",
+   "area_id": "wa_unicorn_peak",
+   "grade": "5.4",
+   "areas": {
+    "name": "Unicorn Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_classic_route_2",
+   "name": "Classic Route",
+   "area_id": "wa_unicorn_peak",
+   "grade": "5.4",
+   "areas": {
+    "name": "Unicorn Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_upper_black_ice_and_winter_ice_crag_unknown",
+  "keep": "wa_upper_black_ice_and_winter_ice_crag_cya",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "The only ice line documented at Black Ice Crag (Exit 38) is CYA, listed in the Washington Ice guidebook as WI4 M4, about 30 m. This empty row named 'unknown' carries that exact WI4 M4 grade and one pitch, so it is an import placeholder for CYA. CYA's own row should take the M4.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_upper_black_ice_and_winter_ice_crag_unknown",
+   "name": "unknown",
+   "area_id": "wa_upper_black_ice_and_winter_ice_crag",
+   "grade": "WI4",
+   "areas": {
+    "name": "Upper Black Ice and Winter Ice Crag"
+   }
+  },
+  "keep_row": {
+   "id": "wa_upper_black_ice_and_winter_ice_crag_cya",
+   "name": "CYA",
+   "area_id": "wa_upper_black_ice_and_winter_ice_crag",
+   "grade": "WI4",
+   "areas": {
+    "name": "Upper Black Ice and Winter Ice Crag"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_vesper_peak_north_face_ragged_edge",
+  "keep": "wa_ragged_edge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "Ragged Edge (II 5.7, 6 pitches, FA Darin Berdinka and Gene Pires, August 18, 2013) is a single route on the right side of Vesper's north face, duplicated as wa_vesper_peak_north_face_ragged_edge. Keep this row (correct route name) and take alpine_grade II from the other.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "name": "North Face (Ragged Edge)",
+   "area_id": "wa_vesper_peak",
+   "grade": "5.7",
+   "areas": {
+    "name": "Vesper Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_ragged_edge",
+   "name": "Ragged Edge",
+   "area_id": "wa_vesper_peak",
+   "grade": "5.7",
+   "areas": {
+    "name": "Vesper Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_whatcom_peak_southwest_route",
+  "keep": "wa_south_spur",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "Whatcom Peak's south-side route (South Spur) is reached from Whatcom Pass by a low orbit of the peak on the east, across the slabs below the Whatcom Glacier, or from Easy Ridge to Perfect Pass. From Perfect Pass parties climb the south snowfields and a short 3rd-class scramble. This row describes exactly that orbit plus the Perfect Pass finish, so it is the South Spur by one of its two approaches; keep it as approach beta on wa_south_spur. The 1936 Berry/Buchanan FA belongs to the North Ridge row, not here.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_whatcom_peak_southwest_route",
+   "name": "Southwest Route (Whatcom Glacier)",
+   "area_id": "wa_whatcom_peak",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Whatcom Peak"
+   }
+  },
+  "keep_row": {
+   "id": "wa_south_spur",
+   "name": "South Spur",
+   "area_id": "wa_whatcom_peak",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Whatcom Peak"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_whitehorse_mountain_r1",
+  "keep": "wa_whitehorse_mountain_nw_shoulder",
+  "verdict": "DUPLICATE",
+  "confidence": "medium",
+  "evidence": "The Northwest Shoulder is Whitehorse's standard route and is itself a snow and glacier climb: Niederprum Trail, couloir to Lone Tree Pass, High Pass, the So-Bahli-Ahli (Whitehorse) Glacier and a short exposed rock finish, usually done in spring. This row is that same line under early-season conditions, not a separate Northwest Face route. Fold its snow, rollover and ski-descent notes into the NW Shoulder page as conditions beta.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_whitehorse_mountain_r1",
+   "name": "Northwest Shoulder / Northwest Face (ice/snow)",
+   "area_id": "wa_whitehorse_mountain",
+   "grade": "Class 4",
+   "areas": {
+    "name": "Whitehorse Mountain"
+   }
+  },
+  "keep_row": {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "name": "Northwest Shoulder",
+   "area_id": "wa_whitehorse_mountain",
+   "grade": "Class 3",
+   "areas": {
+    "name": "Whitehorse Mountain"
+   }
+  },
+  "refs": {}
+ },
+ {
+  "drop": "wa_north_twin_sister_scramble",
+  "keep": "wa_north_twin_sister_west_ridge",
+  "verdict": "DUPLICATE",
+  "confidence": "high",
+  "evidence": "North Twin Sister's standard (and only commonly climbed) scramble is the West Ridge: about 1,500 ft of Class 3-4 on grippy dunite, easier (Class 2-3) by staying left of the crest. This row's face field, grade and description are that route; keep the West Ridge row and fold in the stay-left route-finding note.",
+  "flag": "",
+  "drop_row": {
+   "id": "wa_north_twin_sister_scramble",
+   "name": "North Twin Sister Olivine Scramble",
+   "area_id": "wa_north_twin_sister",
+   "grade": "Class 4",
+   "areas": {
+    "name": "North Twin Sister"
+   }
+  },
+  "keep_row": {
+   "id": "wa_north_twin_sister_west_ridge",
+   "name": "West Ridge",
+   "area_id": "wa_north_twin_sister",
+   "grade": "Class 4",
+   "areas": {
+    "name": "North Twin Sister"
+   }
+  },
+  "refs": {}
+ }
+]

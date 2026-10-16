@@ -1,0 +1,665 @@
+[
+ {
+  "pid": "qc_kanata_tremblant",
+  "crag": "Kanata Tremblant",
+  "groups": [],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108346289/kanata-tremblant",
+  "quote": "MP and FQME PMU name no rock ('15-30m cliff'; 'Roche, bloc'); only aggregator says granite"
+ },
+ {
+  "pid": "ri_blue_pond_boulders",
+  "crag": "Blue Pond Boulders",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/200810801/blue-pond-boulders",
+  "quote": "'The rock is granite and ranges in roughness.' (loose; does not decide held gneiss)"
+ },
+ {
+  "pid": "sd_land_of_the_way_too_high_boulders_the",
+  "crag": "Land Of The Way Too High Boulders, The",
+  "groups": [
+   {
+    "held": "greywacke (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Black Knight, The": "granite",
+   "Grizzly Boulder, The": "granite"
+  },
+  "aspects": {
+   "Stabbing Westward": "SE"
+  },
+  "url": "https://www.mountainproject.com/area/110189686/the-black-knight",
+  "quote": "Black Knight: 'a black granite boulder'; Grizzly: 'amazing solid granite'; Stabbing Westward: 'south east facing'"
+ },
+ {
+  "pid": "tx_grapevine_north",
+  "crag": "Grapevine North",
+  "groups": [
+   {
+    "held": "syenite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112792982/grapevine-hills-bouldering",
+  "quote": "Parent only: 'The rock type is syenite'; Grapevine North page names no rock"
+ },
+ {
+  "pid": "ut_junk_yard",
+  "crag": "Junk Yard",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/110178858/junk-yard",
+  "quote": "Crag page names no rock ('the awesome rock that garth has to offer')"
+ },
+ {
+  "pid": "ut_parowan_gap_all_crags",
+  "crag": "Parowan Gap (all crags)",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Shinobe": "S"
+  },
+  "url": "https://www.mountainproject.com/area/106570647/shinobe",
+  "quote": "Shinobe: 'reddish in color and obviously filled with cobbles'; 'The crag is south facing'"
+ },
+ {
+  "pid": "ut_springfield",
+  "crag": "Springfield",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "tuff (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/115178215/bunker-creek",
+  "quote": "Parent Bunker Creek only: 'The welded tuff comes with varying quality.' Springfield/boulder pages: none"
+ },
+ {
+  "pid": "va_bouldering_3",
+  "crag": "Bouldering",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/111218298/bouldering",
+  "quote": "Crag page names no rock; Easter Island: 'Great quality granite'; Nicholson Hollow: 'old rag granite'"
+ },
+ {
+  "pid": "va_highgarden",
+  "crag": "Highgarden",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/126031761/highgarden",
+  "quote": "Only 'boulders ... with lovely white quartzite streaks'; parent Boneyard: 'Metaconglomerate sandstone'"
+ },
+ {
+  "pid": "va_new_beginnings_area_2",
+  "crag": "New Beginnings Area",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/115390284/new-beginnings-area",
+  "quote": "Crag page: 'Blocks on blocks.' Parent Mile Two Boulders only: 'best sandstone boulders in Virginia'"
+ },
+ {
+  "pid": "vt_dr_evil_s_lair",
+  "crag": "Dr. Evil's Lair",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107221195/dr-evils-lair",
+  "quote": "Crag and DEKD parent name no rock ('glacial erratics')"
+ },
+ {
+  "pid": "vt_red_light_district",
+  "crag": "Red Light District",
+  "groups": [
+   {
+    "held": "phyllite (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106915027/red-light-district",
+  "quote": "'Several Granite boulders.' (parent Mount Hor: 'Beautiful Granite.')"
+ },
+ {
+  "pid": "wa_2_highway_ditch_zone",
+  "crag": "Highway Ditch Zone",
+  "groups": [
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/120343151/highway-ditch-zone",
+  "quote": "Crag page names no rock ('Three tiers of boulders')"
+ },
+ {
+  "pid": "wa_diamond_area_the",
+  "crag": "Diamond Area, The",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108080275/the-diamond-area",
+  "quote": "Diamond Area, The Diamond and The Beyond pages name no rock"
+ },
+ {
+  "pid": "wa_egg_the",
+  "crag": "Egg, The",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105950809/the-egg",
+  "quote": "Crag page names no rock"
+ },
+ {
+  "pid": "wa_granite_point",
+  "crag": "Granite Point",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119433304/granite-point-roped",
+  "quote": "Crag and wall pages name no rock (only the place name 'Granite')"
+ },
+ {
+  "pid": "wa_larrabee",
+  "crag": "Larrabee",
+  "groups": [],
+  "fills": {
+   "Boat Launch Wall": "sandstone",
+   "Desperation": "sandstone",
+   "Dihedral Area": "sandstone",
+   "Hobo Hide Away": "sandstone",
+   "Point, The": "sandstone",
+   "Raptor Ridge": "sandstone"
+  },
+  "wallExceptions": {},
+  "aspects": {
+   "Gray Wall, The": "SW"
+  },
+  "url": "https://www.mountainproject.com/area/107631746/dihedral-area",
+  "quote": "Dihedral: 'Solid Chuckanut sandstone'; Gray Wall: 'This Southwest facing wall'"
+ },
+ {
+  "pid": "wa_madsen_s_buttress",
+  "crag": "Madsen's Buttress",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122509654/sunkist-wall",
+  "quote": "Only Sunkist Wall: 'beautiful orange granite' (loose; does not decide diorite); others name no rock"
+ },
+ {
+  "pid": "wa_serene_area_boulders",
+  "crag": "Serene Area Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119831575/serene-area-boulders",
+  "quote": "'Several granite boulders sitting around Highway 2' (loose; does not confirm granodiorite)"
+ },
+ {
+  "pid": "wi_northern_highlands",
+  "crag": "Northern Highlands",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "greywacke (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Mountain, WI Bouldering Area": "granite"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106004170/wolf-rock",
+  "quote": "Wolf Rock: 'a huge granite boulder'; Mountain, WI: 'A nice big outcropping of granite'"
+ },
+ {
+  "pid": "wv_junction_boulders",
+  "crag": "Junction Boulders",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118833580/junction-boulders",
+  "quote": "'Small Boulder field ... consisting of strong iron rich sandstone.'"
+ },
+ {
+  "pid": "wy_jenny_lake_bouldering",
+  "crag": "Jenny Lake Bouldering",
+  "groups": [],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Falling Ant Slab": "N"
+  },
+  "url": "https://www.mountainproject.com/area/107589358/falling-ant-slab",
+  "quote": "No MP page names the rock; Falling Ant Slab: 'a 10' tall slab that faces North'"
+ },
+ {
+  "pid": "ab_prairie_creek",
+  "crag": "Prairie Creek",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/119339858/prairie-creek",
+  "quote": "'steep and hard sport routes on pocketed limestone'"
+ },
+ {
+  "pid": "ab_watchtower_creek",
+  "crag": "Watchtower Creek",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107209972/watchtower-creek",
+  "quote": "'Steep technical single pitch limestone sport climbing in an incredible canyon.'"
+ },
+ {
+  "pid": "az_spectrum_crags",
+  "crag": "Spectrum Crags",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Spectrum Wall": "W"
+  },
+  "url": "https://www.mountainproject.com/area/108833777/spectrum-wall",
+  "quote": "No page names the rock ('high quality rock'); Spectrum Wall: 'Climbs are all west facing.'"
+ },
+ {
+  "pid": "az_sweet_rock_2",
+  "crag": "Sweet Rock",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106333942/sweet-rock",
+  "quote": "Crag page names no rock (rock quality 'pretty good')"
+ },
+ {
+  "pid": "az_water_wheel_falls",
+  "crag": "Water Wheel Falls",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Ellison Thumb": "E"
+  },
+  "url": "https://mountainproject.com/area/122965466/water-wheel-falls",
+  "quote": "'typical rough granite'; 'smooth polished granite'; Ellison Thumb: 'This east-facing crag'"
+ },
+ {
+  "pid": "bc_higgyland",
+  "crag": "Higgyland",
+  "groups": [
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106189302/higgyland",
+  "quote": "Crag and all five zone pages name no rock"
+ },
+ {
+  "pid": "bc_new_crest_creek",
+  "crag": "New Crest Creek",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Lower Sunrise": "N"
+  },
+  "url": "https://www.mountainproject.com/area/114614765/lower-sunrise",
+  "quote": "Parent Crest Creek Crags only: 'made up of basalt'; Lower Sunrise: 'A north facing wall'"
+ },
+ {
+  "pid": "bc_pictograph_area",
+  "crag": "Pictograph Area",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114555086/old-hedley-boulders",
+  "quote": "Crag page names no rock; parent Old Hedley: 'pale pink-to-white granite'"
+ },
+ {
+  "pid": "bc_raven_s_castle",
+  "crag": "Raven's Castle",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Raven's Castle East": "E"
+  },
+  "url": "https://www.mountainproject.com/area/200850692/ravens-castle-east",
+  "quote": "Crag pages name no rock (parent Skaha: 'The rock is Gneiss'); East: 'around to the east-facing wall'"
+ },
+ {
+  "pid": "ca_08_bishop_pass_evolution",
+  "crag": "Bishop Pass & Evolution",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/110819748/08-bishop-pass-evolution",
+  "quote": "Area page names no rock; Trapezoid: 'green granite' (loose); Hurd Peak names no rock"
+ },
+ {
+  "pid": "ca_approach_road_crags_2",
+  "crag": "Approach Road Crags",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/116777817/approach-road-crags",
+  "quote": "Crag page names no rock"
+ },
+ {
+  "pid": "ca_biddles",
+  "crag": "Biddles",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/116644927/biddles",
+  "quote": "Only Castle Rock boilerplate warning: 'The sandstone around Castle Rock is fragile'"
+ },
+ {
+  "pid": "ca_campground_boulders",
+  "crag": "Campground Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112167040/campground-boulders",
+  "quote": "Crag page: 'Three huge boulders.'; parent Lover's Leap: 'mostly vertical granite'"
+ },
+ {
+  "pid": "ca_cave_area",
+  "crag": "Cave Area",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105908342/cave-area",
+  "quote": "Crag and Cave Boulder pages name no rock"
+ },
+ {
+  "pid": "ca_cosumnes_river_bouldering",
+  "crag": "Cosumnes River Bouldering",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120350956/cosumnes-river-bouldering",
+  "quote": "Crag page names no rock; parent gorge: 'Most of the granite in the area'"
+ },
+ {
+  "pid": "ca_cracks_on_the_rim_area",
+  "crag": "Cracks On The Rim Area",
+  "groups": [
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106977690/cracks-on-the-rim-area",
+  "quote": "Fetched page names no rock; only a search snippet claimed 'volcanic Bishop tuff'"
+ },
+ {
+  "pid": "ca_hemingway_boulders",
+  "crag": "Hemingway Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106126178/hemingway-boulders",
+  "quote": "Crag page names no rock ('quality rock')"
+ },
+ {
+  "pid": "ca_highway_38_crags",
+  "crag": "Highway 38 Crags",
+  "groups": [
+   {
+    "held": "mudstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "The Cole Mine": "sandstone"
+  },
+  "aspects": {
+   "Mt. San Bernardino Crag": "S"
+  },
+  "url": "https://www.mountainproject.com/area/127264967/the-cole-mine",
+  "quote": "Cole Mine: 'a very obscure sandstone crag'; Mt. San Bernardino Crag: 'exposed south facing location'"
+ }
+]

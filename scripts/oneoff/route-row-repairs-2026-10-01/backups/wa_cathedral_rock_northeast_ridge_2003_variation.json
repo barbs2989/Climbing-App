@@ -1,0 +1,103 @@
+{
+ "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+ "name": "Northeast Ridge (2003 Variation)",
+ "pitch_detail": [
+  {
+   "grade": "Class 4 / 5.easy",
+   "notes": "The variation begins where the original Northeast Ridge route ends its first pitch; consult a published description for the original approach and start.",
+   "pitch": "Start",
+   "lengthM": null
+  },
+  {
+   "grade": "Class 4+",
+   "notes": "A short pitch traversing left and up through scary, unstable rock, aiming for a left-hand vertical crack in a left-facing corner with yellow-speckled rock and roofs above. The route's most dangerous section.",
+   "pitch": "P2",
+   "lengthM": null
+  },
+  {
+   "grade": "5.7/5.8",
+   "notes": "Follow the crack and exit over its left side. Described as the best pitch on the route and well protected.",
+   "pitch": "P3",
+   "lengthM": null
+  },
+  {
+   "grade": "5.easy",
+   "notes": "Above the crux corner the rock eases; parties navigate upward through variations.",
+   "pitch": "P4",
+   "lengthM": null
+  },
+  {
+   "grade": "5.9+",
+   "notes": "A short difficult left-leaning crack — the hardest individual moves on the route.",
+   "pitch": "P5 — crux",
+   "lengthM": null
+  },
+  {
+   "grade": "Class 3-4",
+   "notes": "Moderate terrain leading to the summit area.",
+   "pitch": "P6",
+   "lengthM": null
+  }
+ ],
+ "descent_text": "From the summit area, descend the south side rather than reversing the ridge. Scramble the Class 2-3 crest southwest to the top of the Southwest Face crux, make one or two rappels using the rock horn with fixed slings and rings (inspect and back it up), downclimb the main gully — the loosest ground of the day — and contour southeast across talus and heather to Cathedral Pass. Pick up any cached gear on the way back around to the trail. Trip reports on the neighbouring Northeast Buttress describe the south side as having more frequent traffic and correspondingly less loose rock, which is why it is the universal descent for the peak. Allow 2-3 hours summit to pass, plus 1.5-2 hours down trail #1345.",
+ "approach_variants": [
+  {
+   "name": "Cathedral Pass, the gear-cache trees, and the traverse to the original route's first pitch",
+   "notes": "Drive and hike as for the Northeast Buttress: Trail #1345 from the Cathedral Rock trailhead at about 3,350 ft, past Nosh Nosh Wahtum at 2.5 miles, to Cathedral Pass and the PCT junction at 5,550 ft and 4 miles. Sign the wilderness permit at the register.\n\nCut across the meadow to the stand of trees — the usual gear cache — and traverse under the east face across talus to the northeast side.\n\nThis variation does not have its own start on the ground: it begins where the original Northeast Ridge route finishes its first pitch.\n\nAbout 6.4 km and 3,400 ft.",
+   "distMi": 4,
+   "gainFt": 3400,
+   "season": "Late July to September. Late August and September give the driest rock and the coldest, most stable air, which is worth waiting for where the protection is already marginal",
+   "hazards": [
+    "Shattered, friable andesite giving loose holds and unreliable protection",
+    "An explicitly unstable class 4+ section low on the route that must be crossed to reach the good climbing",
+    "PG13 protection with significant fall consequences",
+    "Rockfall onto belayers from a ridge littered with loose blocks",
+    "Six pitches at 5.9 plus a route-finding descent make benightment a real risk on a short day",
+    "No cell coverage and a remote gravel-access trailhead: slow rescue"
+   ],
+   "baseFinding": "Be clear about what you are looking for: this route's base is the top of somebody else's first pitch. You find the original Northeast Ridge start — the short steep snowfield on the northeast side, exiting left into the moat rather than right onto the harder ledges — climb its first pitch, and only then are you at the beginning of the 2003 line.\n\nThe feature that proves you are on the variation and not on the original, and this is the one to memorise, is yellow-speckled rock. From the top of that first pitch, traverse left and up over a short pitch of genuinely unstable class 4+ ground, aiming for a left-hand vertical crack in a left-facing corner, identified by yellow-speckled rock with roofs above it. Yellow speckles plus roofs above a left-facing corner is the target; nothing else on this side of the peak reads that way.\n\nThe confirmation is the third pitch: it climbs that crack and exits over its left side. It is the best pitch on the route, 5.7 to 5.8 and well protected — which is worth knowing precisely because everything below it is not. If pitch three is poorly protected choss, you are not in the corner you wanted.\n\nA higher check: above, the rock eases, and a short difficult left-leaning crack at 5.9+ comes before moderate terrain to the summit.\n\nAnd the honest warning that belongs in a base finding here: the pitch you must cross to reach the good climbing is described by the first-ascent party as scary and unstable. It is rated PG13, and the route would carry more stars if not for that second pitch. Knowing that in advance is what stops a party assuming they are off route when the ground feels wrong."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.5435,
+   "lng": -121.0968,
+   "elev": 3350,
+   "name": "Cathedral Rock Trailhead (Trail #1345)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3350,
+   "directions": "Leave I-90 at Exit 80 and follow SR-903 north through Roslyn and Ronald for about 14.8 miles, then continue roughly 12.3 miles on the gravel Cle Elum Valley Road / FR 4330 and the NF-153 spur to the Cathedral Rock trailhead for Trail #1345, at about 3,350 ft. Sign the free wilderness permit at the register before you start walking. There is no cell coverage here, and between that and the remote gravel access any rescue will be slow, so leave your plan with somebody before you drive in."
+  },
+  {
+   "lat": 47.53479,
+   "lng": -121.11398,
+   "elev": 4850,
+   "name": "Nosh Nosh Wahtum (formerly Squaw Lake) — water and campsites",
+   "type": "Water",
+   "distMi": 2.5,
+   "elevFt": 4850,
+   "directions": "Take Trail #1345 across the bridge over the Cle Elum River, entering the wilderness at about 0.5 mile, and climb through old growth past the Trail Creek Trail #1332 junction at about 2 miles to Nosh Nosh Wahtum, the lake at about 4,850 ft, 2.5 miles in."
+  },
+  {
+   "lat": 47.552206,
+   "lng": -121.131115,
+   "elev": 5550,
+   "name": "Cathedral Pass / Pacific Crest Trail junction — leave the trail here for the northeast side",
+   "type": "Junction",
+   "distMi": 4,
+   "elevFt": 5550,
+   "directions": "Continue on Trail #1345 as it opens into meadows with Cathedral Rock ahead, climbing to Cathedral Pass and the Pacific Crest Trail junction at 5,550 ft, about 4 miles from the trailhead."
+  },
+  {
+   "lat": 47.555058,
+   "lng": -121.135524,
+   "elev": 6724,
+   "name": "Cathedral Rock summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 6724,
+   "directions": "Walk north on the PCT a couple of minutes, cut across the meadow to the stand of trees used as a gear cache, and traverse under the east face across talus to the short steep snowfield on the northeast side. Exit left into the moat and climb the original Northeast Ridge's first pitch, then traverse left and up over loose class 4+ to the left-facing corner with yellow-speckled rock and roofs, and follow the variation above to the summit."
+  }
+ ]
+}

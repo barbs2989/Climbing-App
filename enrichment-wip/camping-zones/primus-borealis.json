@@ -1,0 +1,59 @@
+{
+ "zone": "Primus and Tricouni — Thunder Creek and the Borealis Glacier",
+ "_areas_note": "These two were pulled out of the Eldorado zone in batch 3 after the research flagged them as misassigned — Primus sits ~4 km from Eldorado but is approached from Thunder Creek, not Eldorado Creek. This zone closes that gap with their actual approach.",
+ "areas": ["wa_primus_peak", "wa_tricouni_peak"],
+ "sites": [
+  {
+   "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+   "type": "camp",
+   "capacity": "93 sites in the south loop, 19 of them tent-only; standard car-camping capacity per site",
+   "water": "Potable water on site during the operating season; Thunder Creek and Diablo Lake alongside",
+   "permit": "No wilderness permit needed. A Recreation.gov reservation and the standard nightly campground fee apply, and the loop is only open roughly mid-May to early September. This does NOT cover any night spent in the backcountry.",
+   "notes": "The Thunder Creek trail leaves directly from the south loop, so most parties sleep here the night before rather than driving in from the west at dawn. It is a low forested car camp on Diablo Lake and carries none of the wilderness rules that apply the moment you walk past the trailhead. Book it separately from your climbing permit; the two systems do not talk to each other. Outside the open season you can still park and start walking, but you cannot camp in the loop."
+  },
+  {
+   "name": "McAllister Hiker Camp, Thunder Creek trail",
+   "type": "camp",
+   "elev": 1900,
+   "capacity": "A small handful of numbered tent sites, plus a separate stock camp nearby; party size limits are set per site on the permit",
+   "water": "Thunder Creek is immediately at hand and reliable all season; treat it",
+   "permit": "Designated backcountry camp inside North Cascades National Park, so an NPS wilderness permit is required for every night. Roughly 60% of sites are reservable through Recreation.gov and about 40% held for walk-ups issued up to 24 hours ahead at Marblemount. NOT free — a per-person nightly fee plus a non-refundable reservation fee.",
+   "notes": "The last camp with any infrastructure — a pit toilet, a cook area and a food-hang setup — sitting at about mile 6.7 on an almost flat forest trail, so it is an easy first night rather than a real approach. Most parties treat it as the staging point, then start the steep work early the next morning. Because it is a designated site rather than open country, you are tied to the exact night and site your permit names. FILLING WATER HERE MATTERS: from the creek crossing upward there is nothing dependable until you are near 6,000 ft."
+  },
+  {
+   "name": "Tricouni Camp, Thunder Creek trail",
+   "type": "camp",
+   "capacity": "Small designated hiker camp, a few sites",
+   "water": "Fisher Creek and Thunder Creek nearby, reliable through the climbing season",
+   "permit": "Same NPS wilderness permit system and fees as McAllister — designated site, part reservable and part held for walk-up at Marblemount.",
+   "notes": "Despite sharing the peak's name this camp is about a mile and a half further up the valley than the point where climbers leave the trail, so it is a fallback rather than a first choice. It is worth knowing about when McAllister is booked out on the night you need, since a short extra walk each way costs less than losing the trip. The forest here is more open than at McAllister. Nothing about it shortens the climb."
+  },
+  {
+   "name": "Borealis Glacier toe / Borealis Lake high camp",
+   "type": "camp",
+   "elev": 6000,
+   "capacity": "Rock shelves and slabs above the lake; realistically two or three tents on good ground, and the party limit for the cross-country zone is small",
+   "water": "Meltwater and the lake itself, dependable in summer; earlier in the year you may be melting snow",
+   "permit": "CROSS-COUNTRY ZONE camping, not a designated site, and the rules differ sharply. The zone covering this basin does not accept advance reservations, so in practice it is WALK-UP ONLY from Marblemount, up to 24 hours before you start. Quotas are tiny — a small number of parties per night, with a low maximum party size — so a weekend plan can simply fail at the counter. Confirm the zone name and its current quota with the WIC rather than assuming.",
+   "notes": "The working base camp for both summits, on slabs and rubble near where the lower glacier has withdrawn into a lake. Ground is sloping and loose in places, so finding two flat platforms takes some hunting; camp on rock, snow or bare ground and stay well back from the water. Zone rules mean no fires, and human waste goes out in a blue bag once you are on snow or glacier. Allow the whole day to get here from the valley — parties routinely underestimate it. The steep climbers' trail above McAllister gains roughly 4,000 ft in about two miles."
+  },
+  {
+   "name": "Lucky Pass bivy, Primus-Tricouni col",
+   "type": "bivy",
+   "elev": 7200,
+   "capacity": "One or two parties at most, on rock and snow; nothing prepared",
+   "water": "Snowmelt only, and unreliable late in the season once the col melts out",
+   "permit": "Still inside the same cross-country zone as the Borealis camp, so the same walk-up-only permit, small party limit and blue-bag requirement apply. A permit issued for the zone covers a bivy here; it does not entitle you to camp wherever you like across zone boundaries.",
+   "notes": "The col between the two peaks is high, exposed and windy, and it exists as an option rather than a plan — a spot to sit out weather or finish a day that ran long. Both summits are short from here, which tempts people, but hauling camp another 1,200 ft is rarely worth it against a comfortable night lower down. Whether it is usable at all depends on snow: early season gives flat platforms, late season leaves broken rock. Treat it as an emergency or opportunistic bivy and carry the means to melt water."
+  },
+  {
+   "name": "Klawatti Col camp, Eldorado ice-cap traverse approach",
+   "type": "camp",
+   "elev": 7800,
+   "capacity": "Rock islands in the ice with room for a few tents; party size capped by the zone permit",
+   "water": "Meltwater and snow across the ice cap; essentially always available in season but usually means melting",
+   "permit": "A DIFFERENT approach means a different permit. Parties coming across the ice cap from Eldorado start in a zone that does accept advance reservations, but the zone boundaries out here are not obvious on the ground and a traverse can cross more than one. Sort the whole itinerary night by night with Marblemount, since a reservation for one zone is not a permit for the next.",
+   "notes": "This is the multi-day route in, from the Eldorado side across the ice, and it is NOT how most parties reach these two peaks — it is recorded so the option is visible, not recommended as a shortcut. It is a genuinely different undertaking: full glacier travel with crevasse rescue capability, several nights on snow, and a committing exit. Camps are on rock islands surrounded by ice, so they are windy and there is no shelter. Choose it because you want the traverse."
+  }
+ ]
+}

@@ -1,0 +1,204 @@
+{
+  "wa_mount_rainier_liberty_ridge": {
+    "area": "wa_mount_rainier",
+    "set": {
+      "rappels": "No fixed rappel anchors on the ridge; the usual descent is the Emmons-Winthrop glacier route, with no rappels. A party forced to retreat in poor conditions may need rappels on anchors it builds itself.",
+      "beta": "Grade IV alpine ice climbing with 40-60 degree steep snow and ice; 5,512 ft technical climbing from ridge base (8,600 ft) to Liberty Cap (14,112 ft); requires Alpine Ice Grade III+ experience and multi-day expedition commitment; crux is sustained steep ice and exposed ridge sections with high rockfall hazard from Willis Wall above Carbon Glacier"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels says '1-2 fixed rappels on upper ridge'",
+          "verdict": "CONFIRMED",
+          "evidence": "NPS Liberty Ridge in-depth route description: 'there are no guide services maintaining the route... nor are there established fixed anchors, ladders, wands, and rope lines'. Descent is the Emmons-Winthrop glacier route (glacier travel and steep snow). The row's own descent_text also says the ridge has no rappel anchors and the descent has no rappels. The fixed-anchor claim was removed; the conditional 'rappels may be needed in poor conditions' clause kept, reworded as self-built anchors.",
+          "sources": ["https://www.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf"]
+        },
+        {
+          "claim": "beta says '5.7 pitches'",
+          "verdict": "CONFIRMED",
+          "evidence": "NPS brief describes only snow, alpine ice, an optional short water-ice pitch through the Gun Sight and the bergschrund; rock bands are bypassed. Mountain Project grades it 'AI2-3 Steep Snow, Grade IV' with no YDS rock grade. Clause removed; rest of beta unchanged.",
+          "sources": ["https://www.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf", "https://www.mountainproject.com/route/106459197/liberty-ridge"]
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_kautz_glacier": {
+    "area": "wa_mount_rainier",
+    "set": {
+      "approach": "Two approaches are used, both arduous. The Paradise approach (5,420 ft) follows the Skyline Trail to the Nisqually Moraine Trail, then a climbers' path along the moraine to about 6,300 ft, where several boot paths drop onto the Nisqually Glacier itself; most parties rope up here, since the crossing threads through heavily crevassed terrain exposed to icefall from above and is genuinely dangerous in reduced visibility. From the glacier's east moraine there are two ways up onto Wapowety Cleaver: a flat traverse to the base of 'The Fan,' a gully with avalanche, rockfall, and steep-slope hazard, climbed directly to a bench at 7,300 ft; or a climb up the Nisqually/Wilson Glacier margin at 6,800 ft through an often-crevassed gully to the same 7,300–7,400 ft 'Wilson Bench.' From the bench, snow slopes lead to the ridge crest and a string of established camps at increasing elevation — Wilson Moraine (8,200–8,600 ft), Lower Castle (9,250 ft), and the Upper Castle (9,400–9,500 ft, the most common base for a summit push, with running water from mid-June on). The alternative Van Trump Park approach starts at the Comet Falls Trailhead (3,650 ft): follow the maintained Comet Falls Trail 2.2 miles (2,000 ft gain) to a junction, continue toward Van Trump Park another 0.6 miles to where maintained trail ends, then follow unmaintained social trails up a steep moraine crest to about 6,500 ft and onto the permanent snow of the Van Trump Glacier remnant, followed up to the Upper Castle (9,500 ft) where the two approaches merge — descending this line requires a saved GPS track to relocate the correct moraine and treeline trail junction, even in good visibility, per NPS guidance. Above the Castle, the Turtle Snowfield (slopes up to 45°) is climbed on its west (climber's-left) side, close to the rock ridge, since its center and climber's-right (east) side are threatened by ice and rockfall from above. Established high camps continue at Camp Hazard (10,800 ft, on the climber's-left side at the top of the Turtle Snowfield), the Rock Step camps (11,250 ft), and exposed Wapowety Cleaver bivy sites (13,100 ft, used mainly by parties planning to descend via the Disappointment Cleaver rather than reverse the Kautz)."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach: Camp Hazard sentence ('stick to the west/climber's-right-avoiding side') is garbled",
+          "verdict": "CONFIRMED",
+          "evidence": "NPS Kautz in-depth route description (Upper Castle safety note): the Turtle Snowfield has slopes up to 45°; 'the center and climber's right side (east) of the snowfield is threatened by ice and rockfall from above so climbers should stick to the west side of the snowfield close to the rock ridge'. The stored side (west) was right but the phrase 'climber's-right-avoiding' is easy to misread as 'climber's right', which is the threatened side. Second error in the same clause: NPS puts Camp Hazard at the TOP of the Turtle Snowfield (10,800 ft, climber's left side), and the Upper Castle at its base; stored text put Camp Hazard 'at the base'. Also 'off the Kautz Ice Cliff' for the Turtle hazard is not what NPS says (it says 'from above'; the Ice Cliff is named for the old ~11,000 ft Camp Hazard site), so it now reads 'from above'. Only this sentence changed. Mountain Project independently says to stay on the west side of the Turtle.",
+          "sources": ["https://home.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf", "https://www.mountainproject.com/route/105906991/kautz-glacier"]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Grade II–III, AI3",
+          "evidence": "Stored 'Grade III, ice to ~40–45°' omits the ice grade. NPS brief: 'The technical grade of AI3 does not take into account the effects of altitude and fatigue'; upper step is 'a short pitch to over 300 feet of AI3'. Mountain Project lists it as a Grade II ice climb; stored says III. Commitment grade differs by source, so a range is offered; the AI3 is the load-bearing addition."
+        }
+      }
+    }
+  },
+  "wa_mount_rainier_fuhrer_finger": {
+    "area": "wa_mount_rainier",
+    "set": {
+      "overview": "A prominent snow/ice couloir ('finger') splitting the cliffs between the Nisqually and Wilson Glaciers, giving one of the more direct lines up Rainier's south side. From Paradise the route crosses the Nisqually Glacier to high camps on Wapowety Cleaver at the edge of the Wilson Glacier, then crosses the Wilson Glacier and climbs a narrowing gully at 35-45° that leads onto the upper Nisqually Glacier; the Finger itself pinches to a few hundred feet wide at roughly 40-50°. Above the Finger the route continues up the upper Nisqually Glacier to about 13,000 ft, where it joins the upper Kautz Glacier line and the angle eases toward the summit.",
+      "approach": "From Paradise (5,400 ft), follow the Skyline Trail about a mile to Glacier Vista (about 6,300 ft), the usual rope-up point, and descend onto the Nisqually Glacier. Cross it and climb the gully on its far (west) side onto Wapowety Cleaver, then follow the cleaver crest to high camps, with old rock wind walls, at the edge of the Wilson Glacier, around 9,000–9,500 ft. From camp, cross the Wilson Glacier to the base of the Fuhrer Finger."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview and approach start the route from Camp Muir",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project: ascent begins at Paradise, Skyline Trail to Glacier Vista (6,300 ft, rope-up), down onto the Nisqually, up to Wapowety Cleaver and along its crest to high camp at the edge of the Wilson Glacier; Camp Muir appears only as a carry-over descent option. RMI: from the trailhead along the Camp Muir approach 'before turning west toward the Nisqually Glacier', through the Wilson Chute to the Wilson Bench, low camp ~9,000 ft. Search snippets (SummitPost) give camps ~9,500 ft. No source climbs to Camp Muir and traverses back west. Approach rewritten to the Paradise–Nisqually–Wapowety line; overview's 'From Camp Muir' clause replaced.",
+          "sources": ["https://www.mountainproject.com/route/106636996/fuhrer-finger", "https://www.rmiguides.com/mt-rainier/fuhrer-finger", "https://www.summitpost.org/fuhrer-finger-thumb/159008"]
+        },
+        {
+          "claim": "overview: 'continues up along the Wilson Cleaver — with a short section around 60° — to about 13,500 ft'",
+          "verdict": "CONFIRMED",
+          "evidence": "No source names a Wilson Cleaver on this route or a 60° section. Mountain Project: ~2,200 ft of 40–45° climbing, then the route joins the upper Kautz Glacier route at about 13,000 ft where 'the slopes ease back considerably'. RMI: 35–45° snow. Clause replaced with the upper-Nisqually / upper-Kautz junction at ~13,000 ft. (The row's own pitch_detail notes a ~50° roll near 12,000 ft; not repeated here since the overview did not carry it.)",
+          "sources": ["https://www.mountainproject.com/route/106636996/fuhrer-finger", "https://www.rmiguides.com/mt-rainier/fuhrer-finger"]
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_emmons_glacier": {
+    "area": "wa_mount_rainier",
+    "skip_reason": "finding REFUTED — stored elevations sit inside the range sources give",
+    "review": {
+      "findings": [
+        {
+          "claim": "approach puts Camp Curtis at ~9,000 ft and Camp Schurman at 9,460–9,600 ft (vs NPS 8,700 / 9,500)",
+          "verdict": "REFUTED",
+          "evidence": "Sources disagree among themselves rather than with the row. Camp Curtis: the numbered campsites are signed at ~8,685 ft, while route descriptions put the Inter Glacier rim at Camp Curtis at 9,000 ft (stored text says 'on the glacier's rim (~9,000 ft)'). Camp Schurman: NPS Liberty Ridge brief says 9,600 ft; other sources say 9,400 or ~9,500. The stored 9,460–9,600 range covers these. No change.",
+          "sources": ["https://www.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf", "https://www.summitpost.org/emmons-winthrop-glacier/156360", "https://mountrainierconditions.blogspot.com/p/camp-schurman.html"]
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_mowich_face": {
+    "area": "wa_mount_rainier",
+    "skip_reason": "finding REFUTED against the stored text — the quoted phrases are not in the row",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta says '~4,000 ft sustained ice/mixed wall' and 'some 5.x rock'",
+          "verdict": "REFUTED",
+          "evidence": "The live beta reads 'Grade III-IV ice climbing on the northwest aspect; specific documented lines in this area include the separately-catalogued North Mowich Headwall and Central Mowich Face routes.' Neither quoted phrase appears in beta, overview, approach or descent_text. The finding appears to describe an earlier value. Nothing to correct.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_edmunds_headwall": {
+    "area": "wa_mount_rainier",
+    "set": {
+      "approach": "From Mowich Lake, hike through Spray Park and up the lower Ptarmigan Ridge to camps near 9,600 ft between the North Mowich and Edmunds glaciers, then drop to the Edmunds Glacier and the base of the headwall."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach says 'traverse to the Edmunds/South Mowich glaciers'",
+          "verdict": "CONFIRMED",
+          "evidence": "NPS climbing-ranger patrol report: from Mowich Lake, bivy at 9,600 ft 'in between the North Mowich and Edmunds glaciers near the base of the Edmunds Headwall'. Ski/climb trip reports: approach via Spray Park to the Ptarmigan Ridge camp, then ~1,500 ft down a scree slope onto the Edmunds Glacier. No source routes the approach by the South Mowich Glacier. The corrected line names the approach the sources describe, with nothing added beyond them. Medium confidence: the old text was terse rather than detailed, and the South Mowich does border the Edmunds on its other side.",
+          "sources": ["https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html", "https://wildsnow.com/10311/rainier-edmunds-headwall-ski/"]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Steep snow/ice 45–50°",
+          "evidence": "Stored grade is null. Trip reports: above the bergschrund the slope 'ramped up to 45-50° and stayed there all the way to the top'; another mentions a few hundred feet of hard alpine ice on the headwall. No source consulted gives a commitment grade, so none is proposed (Grade III would be a guess)."
+        }
+      }
+    }
+  },
+  "wa_glacier_peak_frostbite_ridge": {
+    "area": "wa_glacier_peak",
+    "set": {
+      "overview": "Frostbite Ridge is the classic alpine route on Glacier Peak — a long, aesthetic ridge on the north/northwest side that links snow, ice, and a short mixed crux past the 'Rabbit Ears' gendarmes. Combined with the peak's deep remoteness, it's a committing Grade II outing and one of the great moderate alpine traverses in the North Cascades."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels=1 and descent_text's horn-anchor rappel into a 'doorway gap' found in no source",
+          "verdict": "REFUTED",
+          "evidence": "The claim is published: a route page says there is a belay horn, probably hung with old and untrustworthy slings, above the steep ice north of the Rabbit Ears, used to rappel the one pitch of steep ice to 'the doorway gap in the rib'. The stored descent_text follows that closely, including the warning to inspect the old slings and that some parties simul-climb it instead. Other reports describe a class 3 downclimb out of the Rabbit Ears notch, which is compatible (different parties downclimb or rappel). Could not read the page in full (HTTP 403); the sentence was confirmed through search snippets. No change.",
+          "sources": ["https://www.summitpost.org/frostbite-ridge/215844", "https://spokalpine.com/2025/07/21/dakobed-glacier-peak-frostbite-ridge-ii-ai2/"]
+        },
+        {
+          "claim": "overview calls it 'grade III–IV'",
+          "verdict": "CONFIRMED",
+          "evidence": "The row's own grade column says Grade II; Mountain Project lists Grade II; a 2025 trip report titles it 'Frostbite Ridge (II AI2)'. No source consulted gives III or IV. Only the grade words changed.",
+          "sources": ["https://www.mountainproject.com/route/110630353/frostbite-ridge", "https://spokalpine.com/2025/07/21/dakobed-glacier-peak-frostbite-ridge-ii-ai2/"]
+        }
+      ]
+    }
+  },
+  "wa_forbidden_peak_northeast_face": {
+    "area": "wa_forbidden_peak",
+    "set": {
+      "overview": "A steep face of rock and ice on the northeast side of Forbidden Peak: rock below and above a single steep ice patch (about 50°) in the middle of the face. Best in firm early-season conditions, it is a rarely climbed line in a shaded, remote North Cascades cirque.",
+      "rappels": "Depends on the descent chosen: the West Ridge descent into Boston Basin takes about 3 rappels in good early-season snow and up to 6–7 single-rope rappels in dry late-season conditions; the East Ledges alternative takes about 5 single-rope rappels, roughly 400 ft total."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview calls it 'a steep snow-and-ice face ... sustained steep ice climbing'",
+          "verdict": "CONFIRMED",
+          "evidence": "The only detailed account (the 1961 first-ascent note) gives 300 ft of grade III rock with a few pitons, a 300 ft ice patch at 50°, then 600 ft of steep 'upslab' rock to the top: about a quarter ice. The row's own climbing_route and pitch_detail describe the same rock–ice–rock sequence. Only one source exists, but the row contradicts itself and the overview has no support. 'Sustained steep ice climbing' removed; 'Best in firm early-season conditions' kept.",
+          "sources": ["http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"]
+        },
+        {
+          "claim": "rappels ('Same as East Ledges: ~5 single-rope rappels') disagrees with descent_text (West Ridge)",
+          "verdict": "CONFIRMED",
+          "evidence": "The row gives two different descents: descent_text sends parties down the West Ridge, and climbing_route pitch 3 describes the East Ledges traverse. The FA note says only 'normal route'. Both are real descents off Forbidden, and the sources do not say which one parties use after this face, so rappels now names both. Its numbers come from the row's own descent_text (West Ridge: 3, up to 6–7) and the East Ledges row (5 single-rope rappels, ~400 ft). No new figures added. Follow-up for a human: descent_text and the climbing_route pitch-3 note still name different descents; that is outside this finding and was left alone.",
+          "sources": ["http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"]
+        }
+      ]
+    }
+  },
+  "wa_mount_index_north_face": {
+    "area": "wa_north_peak_2",
+    "set": {
+      "rappels": "Descend by rappelling the route on existing slung and natural anchors (trees, roots, blocks), many hung with old slings; multiple double-rope rappels are needed, so carry extra webbing/cord.",
+      "beta": "From the talus/grass slopes on the rockslide on the west side of Lake Serene, the route climbs a broken, bushy spur and brushy gullies and ramps to a large basin on the north face, then a gully above the basin's left side; from its top it ascends the North Rib for three leads (the first two on solid, exposed class-5.5 rock) to an open, grassy bench, then continues via further pitches and scrambling to the North Peak's summit ridge and top. The face has several documented variations; a separately catalogued 'Direct Northeast Face' line on the same wall is rated 5.6 over 8-12 pitches, and may overlap with or vary from this description."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels mentions 'rockfall-damaged bolts'",
+          "verdict": "CONFIRMED",
+          "evidence": "No source consulted mentions bolts on this route. Descent reports describe rappel stations with old slings, a tree, a thick root and a slung block, including a free-hanging double-rope rappel. Descriptions say parties retrace the route with many rappels. Telling a climber to expect bolts matters for safety and has no support, so the bolt clause was removed and the natural anchors described. The double-rope and extra-webbing advice is kept.",
+          "sources": ["https://climberkyle.com/2020/07/05/north-index-attempt/", "https://www.summitpost.org/north-face-of-north-peak/158148"]
+        },
+        {
+          "claim": "beta goes straight from the lake to 'a wooded ridge' and the three-lead 5.5 rib, merging the lower spur with the upper North Rib",
+          "verdict": "CONFIRMED",
+          "evidence": "Route descriptions: brushy ramps for several pitches to a large bowl, the left edge and a gully (class 3 and sparse 5.4), then 3–4 pleasant 5.5 pitches on the crest. The row's own pitch_detail follows the same order: lower spur, gully, basin, a 3–4 lead gully, and only then the North Rib (three leads, first two 5.5) to the grassy bench. The opening sentence was rewritten to put the rib after the basin. The rest of beta is unchanged.",
+          "sources": ["https://www.summitpost.org/north-face-of-north-peak/158148", "https://climberkyle.com/2020/07/05/north-index-attempt/"]
+        }
+      ]
+    }
+  },
+  "wa_the_brothers_traverse": {
+    "area": "wa_the_brothers",
+    "set": {
+      "descent_text": "From the South Brother summit, descend the South Brother's standard route rather than reversing the ridge traverse: go down the east-facing gully to the 5,500 ft base camp area, then retrace the trail descent to Lena Lake Trailhead (additional 4-5 hours)."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text says 'reverse the ridge traverse'",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project: 'From here the route back down is just the descent from the standard South Brother route, and if you spent the night at 5500' you will hike right past your bivy site.' The traverse ends on the South Brother summit, and the stored text's own second sentence (east-facing gully to the 5,500 ft camp) is that standard descent, so the 'reverse the traverse' sentence contradicted the rest of the field. Reversal sentence removed; the gully, camp and trail-out details and the 4-5 hour estimate are kept. Medium confidence: the Mountaineers and SummitPost pages returned 403.",
+          "sources": ["https://www.mountainproject.com/route/106494582/brothers-traverse"]
+        }
+      ]
+    }
+  }
+}

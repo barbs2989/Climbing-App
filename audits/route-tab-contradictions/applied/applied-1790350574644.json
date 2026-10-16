@@ -1,0 +1,686 @@
+{
+ "applied": [
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "permit",
+   "path": [],
+   "fact": "whether a wilderness permit is required"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "whether a wilderness permit is required"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "whether a wilderness permit is required"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "driving route to the West Fork Buttermilk Creek Trailhead"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "driving route to the West Fork Buttermilk Creek Trailhead"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "driving route to the West Fork Buttermilk Creek Trailhead"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "approach length in partner_requirements (10+ mi via War/Eagle/Prince Creek) vs 7.5 mi via West Fork Buttermilk"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "approach length in partner_requirements (10+ mi via War/Eagle/Prince Creek) vs 7.5 mi via West Fork Buttermilk"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "watch_out",
+   "path": [],
+   "fact": "boat schedule logistics hazard on a road-accessed route"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "boat schedule logistics hazard on a road-accessed route"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "permit",
+   "path": [],
+   "fact": "wilderness permit: permit/access.permit say a self-issue permit is required; bivy permit texts say none"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "wilderness permit: permit/access.permit say a self-issue permit is required; bivy permit texts say none"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain/loss: 7,248 ft (columns) vs 8,300 ft (itinerary)"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total gain/loss: 7,248 ft (columns) vs 8,300 ft (itinerary)"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "day-1 camp: 'Bird Creek Camp (~5,400 ft) near the creek crossing' vs Bird Creek Camp waypoint 4,250 ft and the basin camp at 5,400-5,800 ft"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "day-1 camp: 'Bird Creek Camp (~5,400 ft) near the creek crossing' vs Bird Creek Camp waypoint 4,250 ft and the basin camp at 5,400-5,800 ft"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "day-1 camp: 'Bird Creek Camp (~5,400 ft) near the creek crossing' vs Bird Creek Camp waypoint 4,250 ft and the basin camp at 5,400-5,800 ft"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "day-1 camp: 'Bird Creek Camp (~5,400 ft) near the creek crossing' vs Bird Creek Camp waypoint 4,250 ft and the basin camp at 5,400-5,800 ft"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "day-1 camp: 'Bird Creek Camp (~5,400 ft) near the creek crossing' vs Bird Creek Camp waypoint 4,250 ft and the basin camp at 5,400-5,800 ft"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "day-1 camp: 'Bird Creek Camp (~5,400 ft) near the creek crossing' vs Bird Creek Camp waypoint 4,250 ft and the basin camp at 5,400-5,800 ft"
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "best window: itinerary.cal 'June-July before the snow finger melts' vs season Jul-Sep / seasonal_guidance mid-July-September"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    7,
+    "permit"
+   ],
+   "find": "This is inside the Lake Chelan National Recreation Area, so a North Cascades backcountry permit is required year-round for the overnight, tied to a specific camp and itinerary. Peak-season demand is high enough that an early-access lottery governs the best dates and the odds are poor; plan around it rather than hoping.",
+   "replace": "The camp lies in the Glacier Peak Wilderness, a few miles above where the Devore Creek trail leaves the Lake Chelan National Recreation Area, so no North Cascades backcountry permit is needed for a night here; that permit applies only to a night at a camp inside the recreation area, such as Weaver Point.",
+   "id": "wa_tupshin_peak_scramble",
+   "fact": "Bird Creek Camp permit: bivy[7] places it inside the Lake Chelan NRA (NPS permit, lottery) vs access.permit (Glacier Peak Wilderness permit covers Bird Creek camp)",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/devore-creek",
+    "https://www.summitpost.org/devore-peak/154223",
+    "https://trailcatjim.com/tupshin-peak-white-goat-peak-devore-peak/"
+   ],
+   "why": "not a string at bivy[7,\"permit\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "before": {
+    "permit": "Free self-issue Lake Chelan-Sawtooth Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "waypoints": [
+     {
+      "lat": 48.3114,
+      "lng": -120.3365,
+      "elev": 3960,
+      "name": "West Fork Buttermilk Creek Trailhead (Trail #411)",
+      "note": "Vault toilet and stock loading ramp at the trailhead; no day-use fee but Lake Chelan-Sawtooth Wilderness rules (self-issue permit) apply once you enter the wilderness boundary.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Twisp, follow the Twisp River Road about 10.7 miles and turn left onto Buttermilk Creek Road. Stay on it roughly 4.5 miles to a fork, then take the upper road — West Fork Buttermilk Creek Road — to the West Fork Buttermilk Creek trailhead at about 3,960 ft. There is a vault toilet and a stock loading ramp at the trailhead and no day-use fee, but Lake Chelan-Sawtooth Wilderness rules apply once you cross the boundary, so fill out the self-issue permit before you start up Trail #411."
+     },
+     {
+      "lat": 48.308579,
+      "lng": -120.338949,
+      "elev": 4200,
+      "name": "West Fork Buttermilk Creek crossing",
+      "note": "Creek crossing has been rerouted to a downed log about 100 ft upstream of the original ford after trail damage; last easy, reliable water for several miles.",
+      "type": "Water",
+      "distMi": 1
+     },
+     {
+      "lat": 48.275531,
+      "lng": -120.390917,
+      "elev": 6800,
+      "name": "Sub-alpine larch stand below Fish Creek Pass",
+      "note": "Trail breaks out of burned forest into the lowest larches on the route, roughly two miles below the pass; open going but watch for deadfall from the old burn.",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.25597,
+      "lng": -120.43759,
+      "elev": 7480,
+      "name": "Fish Creek Pass",
+      "note": "High point of the maintained trail (Trail #411 tops out here); first clear view down to Star Lake and the Star Peak massif opens up.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 48.25245,
+      "lng": -120.43907,
+      "elev": 7460,
+      "name": "Star Lake",
+      "note": "Standard basecamp for Star, Courtney, Buttermilk, Grey, and Oval Peaks; camp at least 200 ft from the lake edge per wilderness regulation.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.25727,
+      "lng": -120.41862,
+      "elev": 7900,
+      "name": "Notch west of Point 7912",
+      "note": "Climber's path switchbacks up terrible scree from the Star Lake basin to this notch; from here the route turns north onto Star Peak's west/SW ridge.",
+      "type": "Junction",
+      "distMi": 8.3
+     },
+     {
+      "lat": 48.254009,
+      "lng": -120.423567,
+      "elev": 8300,
+      "name": "SW ridge talus and scree slog",
+      "note": "Extended rock-hopping through large, unstable talus to gain the summit ridge; not technical but tedious and twisted-ankle terrain, worse if wet or snow-covered.",
+      "type": "Hazard",
+      "distMi": 8.8
+     },
+     {
+      "lat": 48.25052,
+      "lng": -120.42837,
+      "elev": 8693,
+      "name": "Star Peak",
+      "note": "True summit and high point of Sawtooth Ridge; easy scrambling with hands and feet on the final approach, broad views across the Lake Chelan-Sawtooth Wilderness.",
+      "type": "Summit",
+      "distMi": 9.3
+     }
+    ],
+    "approach": "Trailhead is the West Fork Buttermilk Creek Trailhead (Trail #411), reached via Twisp River Road ~10.7-10.8 miles from Twisp, then left on Buttermilk Creek Road ~4.5 miles to a fork where the upper road (West Fork Buttermilk Creek Road) reaches the trailhead at about 3,960 ft. From there Trail #411 climbs the West Fork Buttermilk Creek drainage into the Lake Chelan-Sawtooth Wilderness. Tread is inconsistently maintained in the lower-to-mid section — parties describe long stretches of blowdown with only brief clear tread, so plan to navigate by map/GPS rather than blazes. Several fords of the West Fork are the main early-season hazard: in June/early summer with high runoff these crossings can be genuinely difficult, sometimes requiring a detour upstream to find a log crossing. About 2 miles before Star Lake the trail enters the lowest larches, and roughly a half mile before the lake it crests Fish Creek Pass, an open viewpoint over the larch-covered Sawtooth Range and a good landmark/rest stop with reliable water nearby. From the pass, the trail drops slightly into the Star Lake basin (~7,460 ft) — 7.5 miles and about 3,500 ft of gain from the trailhead. Snow commonly lingers on the upper approach slopes into summer (encountered from roughly 6,000 ft up in early-season conditions), so a light axe/spikes are worth carrying outside of late-season. From Star Lake, pick up a climber's trail heading up into the bowl south of the lake, contour around Point 7912, and gain the SW ridge; a steep, loose scree track leads from the basin up to the ridge crest. From there it's scree-walking, talus-hopping, and some easy Class 2-3 hands-and-feet scrambling along the ridge east to the 8,693 ft summit. Total one-way distance from trailhead to summit runs roughly 8.5-9 miles with about 4,730 ft of cumulative gain. An alternate approach uses the Lady of the Lake ferry from Chelan to Prince Creek Landing, then climbs North Fork Prince Creek to the Sawtooth crest and reaches Star Peak via Star Pass — the classic way to combine it with Courtney Peak and other Sawtooth summits.",
+    "approach_logistics": {
+     "peakLat": 48.250748,
+     "peakLng": -120.428514,
+     "trailhead": "West Fork Buttermilk Creek Trailhead",
+     "trailheadDirection": "Trailhead is the West Fork Buttermilk Creek Trailhead (Trail #411), reached via Twisp River Road ~10.7-10.8 miles from Twisp, then left on Buttermilk Creek Road ~4.5 miles to a fork where the upper road (West Fork Buttermilk Creek Road) reaches the trailhead at about 3,960 ft."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day hiking fitness - long approach (10+ miles one-way via War Creek/Eagle Creek or Prince Creek trail systems) typically done as a 2-3 day backpack with a basecamp at Star Lake, plus several thousand feet of gain on summit day",
+      "packWeight": "Full overnight backpacking load (tent, food, water treatment) for the approach, lighter summit-day pack for the scramble itself"
+     },
+     "approachTime": "Multi-day: typically 1-2 days of hiking (10+ miles, significant elevation gain) to reach a basecamp near Star Lake before a summit push; not a reasonable single-day car-to-car objective for most parties",
+     "requiredSkills": [
+      "off-trail route-finding on talus/scree",
+      "Class 2-3 scrambling with hands and feet",
+      "self-arrest/careful footwork on loose rock",
+      "backcountry navigation (map/compass or GPS) given the long, remote approach",
+      "water rationing/planning given limited water on the crest"
+     ],
+     "experienceLevel": "Intermediate scrambler comfortable with sustained loose talus/scree and unmarked, mostly off-trail route-finding above Star Lake basin; prior Class 2-3 scrambling experience strongly preferred since the route is remote with no cell coverage or quick bailout"
+    }
+   }
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "Foggy Dew Rd (FR 4340) and the upper trail typically hold snow into late June; most parties describe firm scrambling conditions from July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Foggy Dew Creek Trailhead (~3,470 ft), follow Foggy Dew Creek Trail #417 up through forest and past Foggy Dew Falls, then climb steadily to the Sunrise Lake basin. Established campsites sit on the north end of the lake (~7,100 ft) with views toward the Sawtooth Ridge peaks.",
+       "hours": 4.5,
+       "miles": 6.2,
+       "title": "Approach to Sunrise Lake camp",
+       "gainFt": 3760,
+       "lossFt": 0,
+       "packLb": 32,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Foggy Dew Creek Trail #417, moderate steady grade through forest."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Pass Foggy Dew Falls / Merchants Basin junction",
+         "detail": "Stay left toward Sunrise Lake rather than the full Merchants Basin loop."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Arrive Sunrise Lake, make camp",
+         "detail": "Filter water, pitch tents, rest before the next day's scramble."
+        }
+       ],
+       "objective": "Reach Sunrise Lake and set up base camp"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp with light packs before sunrise and follow the open ridge/parkland northeast of Sunrise Lake onto Switchback Mountain's northwest ridge, an easy Class 2 scramble to the 8,321 ft summit. After descending to camp, break it down and hike the full 6.2 miles back out to the trailhead the same day — a long but standard single push for fit parties.",
+       "hours": 10,
+       "miles": 12.8,
+       "title": "Summit push and hike out",
+       "gainFt": 1800,
+       "lossFt": 5560,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Light daypack; cross open meadows/parkland toward Switchback's NW ridge."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Gain the ridge",
+         "detail": "Class 2 terrain, mostly open rock and talus."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit Switchback Mountain",
+         "detail": "8,321 ft; views across the Sawtooth Ridge and Lake Chelan-Sawtooth Wilderness."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at camp",
+         "detail": "Break down camp, refill water, eat lunch."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin hike out",
+         "detail": "Reverse Foggy Dew Creek Trail #417, full pack, steady descent."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Reach trailhead",
+         "detail": "End of trip."
+        }
+       ],
+       "objective": "Scramble Switchback Mountain, then pack out to the trailhead"
+      }
+     ],
+     "totalNote": "A standard 2-day/1-night backpack: ~19 miles round trip with roughly 5,600 ft of gain, camping one night at Sunrise Lake and day-scrambling Switchback Mountain's Class 2 NW ridge before hiking fully out."
+    },
+    "timing": {
+     "totalHrs": 14.5,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "From the Foggy Dew Creek Trailhead (~3,470 ft), follow Foggy Dew Creek Trail #417 up through forest and past Foggy Dew Falls, then climb steadily to the Sunrise Lake basin. Establi…",
+       "fromTo": "Approach to Sunrise Lake camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "Leave camp with light packs before sunrise and follow the open ridge/parkland northeast of Sunrise Lake onto Switchback Mountain's northwest ridge, an easy Class 2 scramble to the …",
+       "fromTo": "Summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "watch_out": [
+     "loose rock",
+     "remoteness",
+     "afternoon thunderstorms",
+     "boat schedule logistics"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Dry, warm summer conditions typical of the east-slope Cascades/Lake Chelan rain shadow during the best-season window",
+      "probability": "Afternoon thunderstorms are a hazard here — plan for early starts and off the exposed crest by early afternoon"
+     },
+     "exposure": "Consequence comes mainly from loose talus underfoot and the remoteness of the approach — a slip or injury on the crest is far from help given the boat-access, multi-mile approach from Lake Chelan; ridge travel itself is not sustained technical exposure but requires care on unstable rock",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "permit": "Free self-issue Lake Chelan-Sawtooth Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "access": {
+     "fees": "Northwest Forest Pass (or other Interagency recreation pass) required to park at both the Foggy Dew and Eagle Lakes/Crater Creek trailheads; day passes run about $5, annual passes about $30.",
+     "rules": "Group size limited to 12 people and 18 head of stock; no motorized or mechanized travel; store food properly (bear canister, hang, or vehicle) since black bears frequent the lake basins; keep stock 200 ft from lakeshores; don't leave camps/gear unattended more than 48 hrs.",
+     "permit": "Free self-issue Wilderness Use Permit at the trailhead register, required for all travel in the Chelan-Sawtooth Wilderness.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District — within the Lake Chelan-Sawtooth Wilderness",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Lake Chelan-Sawtooth Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. Most trailheads also need a Northwest Forest Pass to park."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "before": {
+    "gain_ft": 7248,
+    "loss_ft": 7248,
+    "itinerary": {
+     "cal": "Best conditions June-July before the snow finger melts out and while wildflower/larch basins are open; verify current Lake Chelan boat schedule (Lady Express/Lady of the Lake) since your itinerary is built around its Fields Point <-> Stehekin timing.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Take the Lake Chelan boat (Lady Express/Lady of the Lake) from Fields Point Landing to Stehekin Landing, then a shuttle/bus to the Harlequin Bridge trailhead. Hike the Stehekin River Trail then the Devore Creek Trail up to Bird Creek, climbing steadily through open forest and brush to a small campsite near the creek crossing.",
+       "hours": 5.5,
+       "miles": 10,
+       "title": "Ferry in, approach to Bird Creek Camp",
+       "gainFt": 5000,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "~12:00 PM",
+         "label": "Ferry arrives Stehekin Landing",
+         "detail": "Boat from Fields Point; confirm return-ferry time for exit day."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Shuttle to Harlequin Bridge trailhead",
+         "detail": ""
+        },
+        {
+         "time": "~1:30 PM",
+         "label": "Start hiking",
+         "detail": "Stehekin River Trail, then Devore Creek Trail."
+        },
+        {
+         "time": "Evening",
+         "label": "Reach Bird Creek Camp (~5,400 ft)",
+         "detail": "Small camp near the creek crossing; fill water, sleep early for a pre-dawn start."
+        }
+       ],
+       "objective": "Reach Bird Creek Camp (~5,400 ft) via Stehekin"
+      },
+      {
+       "n": 2,
+       "note": "A long scramble day: leave camp near sunrise, cross brush and larch basins to the talus below the east face, then a loose ramp and a short exposed/technical pitch to the summit pyramid. Descend the same way with rappels through the crux.",
+       "hours": 10,
+       "miles": 5,
+       "title": "Summit push via the South Ridge / East Face",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Head north through blueberry brush and wildflower fields toward the talus basin."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Breakfast break ~800 ft above camp",
+         "detail": "Below the mellow ridge that drops into the talus fields."
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Snow finger to the ramp",
+         "detail": "Traverse the talus basin under the east face, kick up the snow finger to the obvious ramp system."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Crux pitch",
+         "detail": "Short belayed chimney/flake move below the summit; helmet essential for rockfall."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Summit",
+         "detail": "~4 hrs camp-to-summit."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Back at camp",
+         "detail": "Descent via rappels and a loose downclimb back to the south-ridge shoulder."
+        }
+       ],
+       "objective": "Climb Tupshin Peak (8,348 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: Devore Creek Trail down to the Stehekin River Trail and back to the road, then catch the shuttle and afternoon/midday ferry out of Stehekin. Build in a buffer since missing the boat means an extra night.",
+       "hours": 5,
+       "miles": 10,
+       "title": "Hike out and ferry home",
+       "gainFt": 0,
+       "lossFt": 5000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to Stehekin Landing for the ferry"
+      }
+     ],
+     "totalNote": "A 3-day car-to-car trip built around the Stehekin ferry: ~1 day hiking in, 1 long summit day (~10 hrs, 3,300 ft round trip from camp), 1 day hiking out — roughly 22-25 miles and 8,000+ ft total, matching the recorded 36 km round-trip distance once camp shuffling is counted."
+    },
+    "timing": {
+     "totalHrs": 20.5,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "Take the Lake Chelan boat (Lady Express/Lady of the Lake) from Fields Point Landing to Stehekin Landing, then a shuttle/bus to the Harlequin Bridge trailhead. Hike the Stehekin Riv…",
+       "fromTo": "Ferry in, approach to Bird Creek Camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "A long scramble day: leave camp near sunrise, cross brush and larch basins to the talus below the east face, then a loose ramp and a short exposed/technical pitch to the summit pyr…",
+       "fromTo": "Summit push via the South Ridge / East Face",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Reverse the approach: Devore Creek Trail down to the Stehekin River Trail and back to the road, then catch the shuttle and afternoon/midday ferry out of Stehekin. Build in a buffer…",
+       "fromTo": "Hike out and ferry home",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

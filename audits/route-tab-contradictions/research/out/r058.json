@@ -1,0 +1,539 @@
+{
+ "file": "r058.json",
+ "results": [
+  {
+   "id": "wa_west_face_2",
+   "fact": "which peak this approach text is describing",
+   "verdict": "fixed",
+   "correct_value": "North Peak (North Gunsight) — the approach ends at the base of North Peak's West Face",
+   "evidence": "The route is the West Face of North Gunsight Peak (8,160 ft); both the route database page and the detailed trip report describe the approach from Downey Creek to the Dome-Chickamin col and across the Chickamin Glacier to the foot of North Peak's West Face. Every other field on the row names North Peak; the 'South Peak' mention is a slip.",
+   "sources": [
+    "https://www.mountainproject.com/route/106324866/west-face",
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_face_2",
+     "fact": "which peak this approach text is describing",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "reaching the base of South Peak's granite faces",
+     "replace": "reaching the base of North Peak's granite West Face"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face_2",
+   "fact": "which road/trailhead this route uses",
+   "verdict": "fixed",
+   "correct_value": "Downey Creek Trailhead on the Suiattle River Road (FSR 26), ~20 mi from SR 530; road closed to vehicles at ~MP 4 until as late as Jan 1, 2028",
+   "evidence": "The Forest Service trail page puts the Downey Creek Trailhead 20.6 miles up FR 26 from SR 530, requires a Northwest Forest Pass or Interagency pass, and reports the road closed to motorized vehicles at about mile 4.5 with foot/bike access beyond; the Forest Service closure alert gives the order as effective April 2, 2026 until January 1, 2028 unless rescinded. The hiking-association page independently gives the same ~20-mile drive, pass requirement and closure. The Barlow Pass/Monte Cristo Road text belongs to a different area; access.parking_pass (Sunrise Mine/Vesper) and access.seasonal (Mountain Loop gate) carried the same contamination and were corrected with it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_face_2",
+     "fact": "which road/trailhead this route uses",
+     "op": "set",
+     "column": "road",
+     "path": [],
+     "expect": {
+      "name": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+      "status": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+      "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+      "seasonalGate": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage."
+     },
+     "value": {
+      "name": "Suiattle River Road (FSR 26) to the Downey Creek Trailhead",
+      "status": "Closed to motorized vehicles at about milepost 4 after flood damage, under a closure order in effect until January 1, 2028 unless lifted sooner. Walking or biking the closed road is still allowed, which adds roughly 16 miles each way to the trailhead at about mile 20.",
+      "driveNote": "From Darrington take SR 530 north about 7.5 miles and turn east onto the Suiattle River Road; the Downey Creek Trailhead is on the right just past the Downey Creek bridge, about 20 miles up the road (paved, then gravel). A Northwest Forest Pass or Interagency pass is required at the trailhead.",
+      "seasonalGate": "The Suiattle River Road has a long history of flood closures, including a decade-long one before its 2014 reopening; confirm its status before committing to this approach."
+     }
+    },
+    {
+     "id": "wa_west_face_2",
+     "fact": "which road/trailhead this route uses",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "value": "Northwest Forest Pass or Interagency pass required at the Downey Creek Trailhead."
+    },
+    {
+     "id": "wa_west_face_2",
+     "fact": "which road/trailhead this route uses",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "value": "Suiattle River Road (FSR 26) is closed to vehicles at about milepost 4 after flood damage (closure order in effect until January 1, 2028 unless lifted sooner); the Downey Creek Trailhead is currently reached on foot or by bike."
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face_2",
+   "fact": "number of pitches",
+   "verdict": "fixed",
+   "correct_value": "6 pitches: five to the summit terrace (5.9+, 5.11+, 5.10+, 5.10+, 5.9) plus a short 5.6 chimney pitch to the summit; ~600 ft",
+   "evidence": "The route database page describes five pitches totalling 600 ft, the fifth ending with a mantle onto the summit terrace. The detailed trip report pitches the same line as six (600 ft): the same first five, then a short 5.6 pitch along the terrace and up a chimney to the summit. The row's pitch 5 row had merged those last two pitches ('5.9 to 5.6'); splitting it and saying so in beta makes pitches=6 true. rope_note's '500ft' also disagreed with length_m 183 and both sources' 600 ft.",
+   "sources": [
+    "https://www.mountainproject.com/route/106324866/west-face",
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_face_2",
+     "fact": "number of pitches",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "5.9+",
+       "notes": "Thin cracks and flakes in a shallow corner with delicate climbing. Requires small gear placements. Belay with good anchor at horn.",
+       "pitch": "1"
+      },
+      {
+       "grade": "5.11+",
+       "notes": "Technical crux featuring thin cracks, bulbous knobs, and small roof with overlap. Exceptional granite with solid protection available but demanding lead climbing. Aesthetically striking climbing with hard crack work.",
+       "pitch": "2"
+      },
+      {
+       "grade": "5.10+",
+       "notes": "Committing moves on tricky gear transitioning to wild climbing up flakes. Challenging protection requiring careful placement.",
+       "pitch": "3"
+      },
+      {
+       "grade": "5.10+",
+       "notes": "Continuation along flake and crack systems with knobs. Granular rock but solid climbing with good natural protection.",
+       "pitch": "4"
+      },
+      {
+       "grade": "5.9 to 5.6",
+       "notes": "Stemming over steep terrain, then corner with final mantle move onto terminal terrace. Includes chimney system (5.6) leading to summit. Traversal required to reach actual summit register.",
+       "pitch": "5"
+      }
+     ],
+     "value": [
+      {
+       "grade": "5.9+",
+       "notes": "Thin cracks and flakes in a shallow corner with delicate climbing. Requires small gear placements. Belay with good anchor at horn.",
+       "pitch": "1"
+      },
+      {
+       "grade": "5.11+",
+       "notes": "Technical crux featuring thin cracks, bulbous knobs, and small roof with overlap. Exceptional granite with solid protection available but demanding lead climbing. Aesthetically striking climbing with hard crack work.",
+       "pitch": "2"
+      },
+      {
+       "grade": "5.10+",
+       "notes": "Committing moves on tricky gear transitioning to wild climbing up flakes. Challenging protection requiring careful placement.",
+       "pitch": "3"
+      },
+      {
+       "grade": "5.10+",
+       "notes": "Continuation along flake and crack systems with knobs. Granular rock but solid climbing with good natural protection.",
+       "pitch": "4"
+      },
+      {
+       "grade": "5.9",
+       "notes": "Stemming over steep terrain, then a corner with a final mantle move onto the terminal terrace.",
+       "pitch": "5"
+      },
+      {
+       "grade": "5.6",
+       "notes": "Short pitch: move right along the flat terrace to a chimney system that leads to the summit; a traverse is needed to reach the actual summit register.",
+       "pitch": "6"
+      }
+     ]
+    },
+    {
+     "id": "wa_west_face_2",
+     "fact": "number of pitches",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "featuring five pitches of high-quality granite climbing.",
+     "replace": "featuring five pitches of high-quality granite climbing to the summit terrace, plus a short sixth pitch up an easy chimney to the summit."
+    },
+    {
+     "id": "wa_west_face_2",
+     "fact": "number of pitches",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "6-pitch, 500ft alpine rock route",
+     "replace": "6-pitch, 600ft alpine rock route"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face_2",
+   "fact": "elevation of the base of the West Face (descent_text says ~9,000 ft, above the 8,160 ft summit)",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "base of the route is below the 8,160 ft summit and below the ~8,500 ft Dome-Chikamin col camp; parties climb back up to the col",
+   "evidence": "descent_text places the base of the route at 'approximately 9,000 feet', above the row's own 8,160 ft summit (high_point_ft, summit waypoint) and the 8,500 ft col camp. The trip report gives the summit as 8,160 ft, about 600 ft of climbing on the face, and a ~2,700 ft round trip from the col camp down to the glacier and back, so the base is well below the col and the party climbs back up to it. The number is removed rather than replaced, and 'descend to the col' becomes 'climb back up to the col'.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/",
+    "https://www.mountainproject.com/route/106324866/west-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_face_2",
+     "fact": "elevation of the base of the West Face (descent_text says ~9,000 ft, above the 8,160 ft summit)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Once back at the base of the route (approximately 9,000 feet), descend to the Chikamin-Dome Col",
+     "replace": "Once back at the base of the route, climb back up to the Chikamin-Dome Col"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face_2",
+   "fact": "approach text claims the page's own location is a geocoding error (pipeline note rendered to climbers)",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "approach begins with the Downey Creek approach; the data-quality note is removed",
+   "evidence": "The approach paragraph opens with a note that the area's stored coordinates are wrong and 'worth flagging for correction' — pipeline commentary shown to climbers, contradicting the page's own trailhead card and waypoints, which already sit at Downey Creek. The Gunsight Range is reached from Downey Creek per both sources.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_face_2",
+     "fact": "approach text claims the page's own location is a geocoding error (pipeline note rendered to climbers)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Note: this area's stored coordinates place it at Washington Pass on SR-20, but the real-world Gunsight Range is a remote granite sub-range near Dome Peak in the Glacier Peak Wilderness, roughly 20+ miles south/southwest of Washington Pass — not reachable from the SR-20 pass corridor, likely a data/geocoding error worth flagging for correction. The genuine standard approach is",
+     "replace": "The standard approach is"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face_2",
+   "fact": "which ranger district / county administers the route (emergency.rangerStation says Mount Baker Ranger District; access.land_manager says Darrington Ranger District; emergency.county Snohomish)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Downey Creek trailhead and Suiattle River Road are administered by the Darrington Ranger District (Forest Service closure alert), which supports land_manager over rangerStation's 'Mount Baker Ranger District'. But Gunsight Peak is listed in Chelan County, Wenatchee National Forest, so emergency.county (Snohomish) and sheriffDispatch may also be wrong for the peak; not settled to two sources for North Peak specifically, so no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+    "https://en.wikipedia.org/wiki/Gunsight_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "Old Guard Peak vs. Sentinel Peak: which summit is higher",
+   "verdict": "fixed",
+   "correct_value": "Old Guard (8,259.6 ft) is ~3 ft higher than Sentinel (8,256.9 ft); Sentinel is the adjacent summit to the west",
+   "evidence": "A June 2025 differential-GPS survey measured Old Guard at 8,259.6 ft and Sentinel at 8,256.9 ft (NAVD88), Old Guard higher by 2.7 ft. The peak list gives Old Guard 8,259 ft and Sentinel 8,256 ft, agreeing. Sentinel's coordinates (48°21'22\"N 121°02'27\"W) put it about 0.4 km west of Old Guard, so the baseFinding direction is right and only its 'higher' claim is wrong; the overview is correct. Older topo-contour figures (Old Guard 8,240, Sentinel 8,261) are superseded.",
+   "sources": [
+    "https://www.countryhighpoints.com/sentinel-peak-and-old-guard-peak-surveys/",
+    "https://listsofjohn.com/peak/48782",
+    "https://listsofjohn.com/peak/48781",
+    "https://en.wikipedia.org/wiki/Sentinel_Peak_(Washington)"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Old Guard Peak vs. Sentinel Peak: which summit is higher",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "and is very slightly the higher of the two",
+     "replace": "and is a few feet lower than this one"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "Compass direction of the summit snow ramp/couloir",
+   "verdict": "fixed",
+   "correct_value": "the snow ramp/snowfinger is on the peak's northwest (west) side, off the LeConte Glacier",
+   "evidence": "A detailed trip report describes spotting 'the snow slope on Old Guard Peak's northwest side' and climbing that ramp to the class 3 rock; a second trip report and the peak's summary page describe the standard line as a class 2/3 snow couloir and scramble on the west side from the LeConte Glacier (the east side is the low-5th route). The row's own pins put the couloir base north of the summit. beta, face and aspect were right; approach, climbing_route, itinerary day 3 and the LeConte Glacier waypoint note are corrected. The route's stored NAME 'Southwest Route' is out of scope and left as is; timing.sectionBreakdown[2].note is truncated at 'west/…' and left alone.",
+   "sources": [
+    "https://onehikeaweek.com/2020/07/05/sentinel-peak/",
+    "https://trailcatjim.com/ptarmigan-traverse-hurry-up-peak-leconte-mtn-old-guard-peak-dome-peak/",
+    "https://www.summitpost.org/old-guard-peak/303084"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Compass direction of the summit snow ramp/couloir",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "snow couloir/snowfinger on the peak's southwest side",
+     "replace": "snow couloir/snowfinger on the peak's northwest side"
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Compass direction of the summit snow ramp/couloir",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "label"
+     ],
+     "expect": "Southwest snow couloir/snowfinger",
+     "value": "Northwest snow couloir/snowfinger"
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Compass direction of the summit snow ramp/couloir",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "on the peak's southwest side",
+     "replace": "on the peak's northwest side"
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Compass direction of the summit snow ramp/couloir",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "on its west/southwest side",
+     "replace": "on its west/northwest side"
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Compass direction of the summit snow ramp/couloir",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "find": "via the southwest snow couloir",
+     "replace": "via the northwest snow couloir"
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Compass direction of the summit snow ramp/couloir",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "base of Old Guard's west/southwest side",
+     "replace": "base of Old Guard's west/northwest side"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "Whether a vehicle can drive all the way to the Cascade Pass Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Cascade River Road runs 23.1 mi to the trailhead, but in 2026 (and in several past seasons) vehicles are gated at Eldorado, MP 20, with foot/bike access for the last 3 miles",
+   "evidence": "A June 2026 news report states the road is gated at milepost 20 (Eldorado Trailhead) with bikes and pedestrians allowed the final 3 miles and 1,500 ft to Cascade Pass Trailhead. The park's road page gives the 23.1-mile length (paved to mile 10) and its news releases record repeated closures at Eldorado/MP 20. The directions are kept but now carry the gate caveat that access.closures and road.status state.",
+   "sources": [
+    "https://www.spokesman.com/stories/2026/jun/17/wa-mountain-access-faces-long-road-to-recovery-as-/",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.nps.gov/noca/learn/news/cascade-river-road-closed-at-mp-20-september-8-2015.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Whether a vehicle can drive all the way to the Cascade Pass Trailhead",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "then good gravel the rest of the way.",
+     "replace": "then good gravel the rest of the way. Check the road first: in some seasons, including 2026, vehicles are stopped at the Eldorado gate at mile 20 and the last 3 miles and 1,500 ft to the trailhead must be walked or biked."
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Whether a vehicle can drive all the way to the Cascade Pass Trailhead",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "North Cascades NP wilderness permit required for overnight camps).",
+     "replace": "North Cascades NP wilderness permit required for overnight camps). In some seasons, including 2026, the road is gated to vehicles at Eldorado (mile 20), leaving the last 3 miles to the trailhead on foot or bike."
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "Total elevation loss for the trip",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 12400,
+   "evidence": "The trip starts at the Cascade Pass Trailhead (3,660 ft) and ends at the Downey Creek Trailhead (~1,440 ft), so total loss should exceed the 10,600 ft gain by only ~2,200 ft (~12,800 ft). loss_ft 14,100 implies a 3,500 ft net drop, which would end below 200 ft — impossible. The six itinerary days sum to 12,400 ft, consistent with the trailhead elevations to within estimate noise, and gain_ft already matches the itinerary sum; loss_ft is set to the itinerary total so the header and TOTAL row agree.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Total elevation loss for the trip",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 14100,
+     "value": 12400
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "Whether a Northwest Forest Pass is needed",
+   "verdict": "fixed",
+   "correct_value": "A Northwest Forest Pass or Interagency pass is required at the Downey Creek Trailhead (the exit/shuttle car)",
+   "evidence": "The Forest Service trail page says a valid recreation pass (Northwest Forest Pass, Interagency, or digital) is required at the Downey Creek Trailhead; the hiking-association page agrees. This route's itinerary exits at Downey Creek with a pre-arranged shuttle, so access.parking_pass/passRequired's 'No Northwest Forest Pass needed' is wrong; the permit field's vague 'at many trailheads' is made specific.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768",
+    "https://www.wta.org/go-hiking/hikes/downey-creek"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Whether a Northwest Forest Pass is needed",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "No Northwest Forest Pass needed for wilderness travel; NPS wilderness permit only required if camping within the park (north of Cache Col).",
+     "value": "Northwest Forest Pass or Interagency pass required for a shuttle vehicle left at the Downey Creek Trailhead, where the traverse exits; NPS wilderness permit only required if camping within the park (north of Cache Col)."
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Whether a Northwest Forest Pass is needed",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "No Northwest Forest Pass needed for wilderness travel; NPS wilderness permit only required if camping within the park (north of Cache Col).",
+     "value": "Northwest Forest Pass or Interagency pass required for a shuttle vehicle left at the Downey Creek Trailhead, where the traverse exits; NPS wilderness permit only required if camping within the park (north of Cache Col)."
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Whether a Northwest Forest Pass is needed",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass at many trailheads.",
+     "replace": "Northwest Forest Pass or Interagency pass on a vehicle left at the Downey Creek Trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "Which county sheriff/SAR has jurisdiction",
+   "verdict": "fixed",
+   "correct_value": "Old Guard Peak is in Chelan County; Chelan County Sheriff has SAR jurisdiction at the peak",
+   "evidence": "The federal place-name record, as shown by both a geographic feature index and a topo-map index, lists Old Guard Peak in Chelan County, matching emergency.county and the row's Okanogan-Wenatchee land manager; Cache Col, the traverse's northern gateway, sits on the Skagit-Chelan boundary. In Washington SAR runs through the sheriff of the county where the incident is, so the sheriff line now names Chelan for the peak and keeps the existing Skagit number only for the Cascade River side. No new phone number was invented.",
+   "sources": [
+    "https://www.mindat.org/feature-5805603.html",
+    "https://www.topozone.com/washington/chelan-wa/summit/old-guard-peak/",
+    "https://en.wikipedia.org/wiki/Cache_Col"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "Which county sheriff/SAR has jurisdiction",
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "sheriffDispatch"
+     ],
+     "expect": "Skagit County Sheriff (non-emergency): (360) 416-1911 — Search & Rescue is dispatched through the Sheriff's Office; Chelan County Sheriff covers the peak's home county",
+     "value": "Chelan County Sheriff's Office handles Search & Rescue for this peak — call 911. A party still on the Cascade River side of the traverse is in Skagit County, whose Sheriff non-emergency line is (360) 416-1911."
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "elevation of Cache Col (itinerary says ~6,100 ft; waypoint and approach say ~6,900 ft)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "~6,900 ft",
+   "evidence": "Cache Col is 6,903 ft per its encyclopedia entry (topo-derived), and a 2025 trip report places rock rings at ~7,000 ft just above the col's low point. The waypoint (6,903) and approach (~6,900) agree; the itinerary day-1 note and its copy in timing.sectionBreakdown said ~6,100.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://rocknropenw.com/2025/07/25/ptarmigan-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "elevation of Cache Col (itinerary says ~6,100 ft; waypoint and approach say ~6,900 ft)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Cache Col (~6,100 ft)",
+     "replace": "Cache Col (~6,900 ft)"
+    },
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "elevation of Cache Col (itinerary says ~6,100 ft; waypoint and approach say ~6,900 ft)",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Cache Col (~6,100 ft)",
+     "replace": "Cache Col (~6,900 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "fact": "direction from Cascade Pass to Cache Col (approach says north; waypoints say south and east)",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "south/southeast",
+   "evidence": "The approach says to 'climb north' from Cascade Pass toward Cache Col, but the Cascade Pass waypoint note and the Cache Col directions both say head south and east, and the pins place Cache Col (48.4485) south of the pass (48.4676). Cache Col's published position between Magic Mountain and Mix-up Peak at the head of the Cache Glacier is south-southeast of Cascade Pass.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_guard_peak_southwest_route",
+     "fact": "direction from Cascade Pass to Cache Col (approach says north; waypoints say south and east)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "climb north on a boot path/talus toward Cache Col",
+     "replace": "climb south and east on a boot path/talus toward Cache Col"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "id": "wa_south_face_2",
+ "name": "South Face",
+ "waypoints": [
+  {
+   "lat": 48.550174999999996,
+   "lng": -120.62791033333333,
+   "elev": 4200,
+   "name": "Early Winters Creek crossing",
+   "note": "Drop about 200 ft from the pullout on a boulder-field path to ford or log-cross Early Winters Creek; last reliable, easy water before the climb steepens.",
+   "type": "Water",
+   "distMi": 0.2,
+   "directions": "Park at the unsigned roadside pullout on SR-20 near milepost 166, about 4 miles east of Washington Pass. Follow the climbers' path down through boulders and talus, losing about 200 ft, to Early Winters Creek, and cross it on logs."
+  },
+  {
+   "lat": 48.551312499999995,
+   "lng": -120.6104275,
+   "elev": 6500,
+   "name": "The Bench (6,500 ft camp)",
+   "note": "Broad, flat bench roughly halfway up the approach with several established tent sites; last practical camp before the scree grind to Burgundy Col.",
+   "type": "Campsite",
+   "distMi": 1.5,
+   "directions": "Past the creek, follow the climbers' path up the timbered rib on the north side of Burgundy Creek, climbing steeply about 2,300 ft to the broad bench camp at about 6,500 ft, the staging area for the Wine Spires."
+  },
+  {
+   "lat": 48.554424,
+   "lng": -120.592209,
+   "elev": 7770,
+   "name": "Burgundy Col",
+   "note": "Class 2 scree notch on Silver Star's north ridge 3,700 ft above the creek crossing; from here the route leaves the main Silver Star Glacier trail and works east toward the Wine Spires.",
+   "type": "Junction",
+   "distMi": 2.3,
+   "directions": "From the bench, continue up the climbers' path through scree gullies, snow early in the season, to Burgundy Col at about 7,770 ft."
+  },
+  {
+   "lat": 48.5523625,
+   "lng": -120.5942895,
+   "elev": 7900,
+   "name": "East-side scree gully traverse below the Wine Spires",
+   "note": "Loose, unconsolidated scree gullies traversing the east side of the ridge toward Pernod's south face; rockfall risk from parties above, stay bunched or spread out with care.",
+   "type": "Hazard",
+   "distMi": 2.7
+  },
+  {
+   "lat": 48.5526,
+   "lng": -120.5903,
+   "elev": 8507,
+   "name": "Pernod Spire summit",
+   "type": "Summit"
+  }
+ ]
+}

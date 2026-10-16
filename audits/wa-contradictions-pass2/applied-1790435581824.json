@@ -1,0 +1,381 @@
+{
+ "applied": [
+  {
+   "id": "wa_beckey_tate",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time to the base"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach time to the base"
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "lengthM"
+   ],
+   "fact": "Pitch lengths"
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "lengthM"
+   ],
+   "fact": "Pitch lengths"
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "lengthM"
+   ],
+   "fact": "Pitch lengths"
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Where you park"
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Car-to-car day length"
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Summit time in the day schedule"
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Summit time in the day schedule"
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which line is the peak's classic"
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Summit time in the day schedule"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_beckey_tate",
+   "before": {
+    "approach": "From the Hairpin Turn pullout on SR-20, follow the cairned climbers' trail south along the west side of Early Winters Creek toward Kangaroo Temple/Wallaby Peak, but stay on the trail (right/west side of the creek) longer than the Southwest Rib/West Face line does — do not cross the creek where that route splits off. Continue up-valley as the trail fades into open talus and boulder fields, then work toward the head of the basin, cutting left (east) toward the low point on the ridge between Big Kangaroo and Half Moon. This drops/traverses you into the south-facing basin directly below Big Kangaroo's south wall, where the Beckey-Tate's obvious central ramp-and-ledge system is visible splitting the face. The approach is noticeably longer and more sustained than the standard West Face gully route — expect talus hopping and some brush, roughly 2 miles and 2,440 ft one-way to the base (with the full route running to about 3,166 ft of gain at the 8,326 ft summit), with 3-5 hours a reasonable estimate given the routefinding through boulder fields. Early-season parties will likely find snow lingering in the approach basin and in the gullies near the top of the route, so a light axe and crampons are worth carrying into early-mid summer.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout, staying WEST of the creek longer than the West Face line, then over the Half Moon col into the south basin",
+      "notes": "From the Hairpin Turn pullout on SR-20, follow the cairned climbers' trail south along the WEST side of Early Winters Creek toward Kangaroo Temple and Wallaby Peak, BUT STAY ON THE TRAIL, ON THE RIGHT OR WEST SIDE OF THE CREEK, LONGER THAN THE WEST FACE LINE DOES. Do not cross the creek where that route splits off.\n\nContinue up-valley as the trail fades into open talus and boulder fields, then work toward the head of the basin. Roughly 2 miles and 2,440 ft one-way to the base, with 3-5 hours a reasonable estimate given the route-finding through boulder fields. Noticeably longer and more sustained than the standard West Face gully route.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Talus hopping and route-finding through boulder fields for 2 miles",
+       "A lot of large loose rock on the route, making rappelling it inadvisable",
+       "An exposed unprotected 5.6 slab move past a single old bolt if tagging the true summit",
+       "A steep, loose upper gully on the shared descent",
+       "Snow lingering in the approach basin and the gullies near the top of the route in early season"
+      ],
+      "baseFinding": "CUT LEFT, EAST, TOWARD THE LOW POINT ON THE RIDGE BETWEEN BIG KANGAROO AND HALF MOON. That col drops and traverses you into the SOUTH-FACING BASIN DIRECTLY BELOW BIG KANGAROO'S SOUTH WALL.\n\nARRIVAL AT THE ROUTE ITSELF IS VISUAL AND UNAMBIGUOUS WHEN YOU CAN SEE THE WALL: THE BECKEY-TATE'S OBVIOUS CENTRAL RAMP-AND-LEDGE SYSTEM SPLITS THE FACE. A single ramp system running up the middle of a south wall, splitting it, is the line.\n\nSO THE ORDER OF FINDS IS: stay west of the creek, reach the head of the basin, cut east to the Half Moon col, drop into the south basin, then look for the ramp splitting the middle of the wall.\n\nTHE NEGATIVE TEST AGAINST THE WEST FACE, WHICH IS THE COMMONEST ERROR FROM THIS CAR: THE WEST FACE ROUTE CROSSES EARLY WINTERS CREEK AFTER ONLY HALF A MILE, AT THE EDGE OF THE TALUS FIELD, AND TAKES A BROAD SHALLOW WEST-FACING GULLY WITH A CHOCKSTONE IN IT. If you crossed the creek early and are looking at a chockstone, you are on the west side of the mountain.\n\nAND AGAINST THE OTHER SOUTH-FACE LINES, WHICH SHARE THIS BASIN: KEARNEY-THOMAS crosses the creek and ascends the prominent gully system TAKING THE LEFT FORK AT THE HIGH Y-JUNCTION. GOING DOWN UNDER starts at the Beckey-Tate base and then TRAVERSES RIGHT ACROSS OVERLAPS to its own start ledge. SKINNY START is ABOUT 30 METRES RIGHT of the Kearney-Thomas start. So on this wall: the central ramp is Beckey-Tate, and everything else is measured from either it or Kearney-Thomas.\n\nDESCENT IS NOT DOWN THIS ROUTE, AND THE REASON MATTERS: rappelling the Beckey-Tate is technically possible with two ropes, roughly five to six rappels off slings and trees, but the route wanders and holds a lot of large loose rock, so rope-stuck and rockfall risk is high and most parties explicitly avoid it. Instead scramble about 20 ft up and LEFT to the notch between the south face and the true summit, which is a few hundred feet higher, and descend the gully from there."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "5.10+ (splitters/left-facing corners)",
+      "notes": "Broken terrain leads to an obvious splitter through a clean panel; climbs solid granite splitters and left-facing corners.",
+      "pitch": "P1",
+      "lengthM": 86
+     },
+     {
+      "grade": "5.10+ (right-facing corner)",
+      "notes": "Trends left into a right-facing corner system.",
+      "pitch": "P2",
+      "lengthM": 86
+     },
+     {
+      "grade": "5.11 (fingers, joins Kearney-Thomas)",
+      "notes": "Joins the Kearney-Thomas line, finishing via its 5.11 finger-crack variation.",
+      "pitch": "P3",
+      "lengthM": 87
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "before": {
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "No permits required. Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October. Hazards: Steep terrain, loose rock in approach gully, exposure.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "Dependent on Highway 20 seasonal closure.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass if using a developed FS trailhead lot.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-good fitness; trip reports cite roughly 6 hours up and 4 hours down trailhead-to-trailhead",
+      "packWeight": "Light rack (small set plus slings) and scrambling gear, roughly 10-15 lb"
+     },
+     "approachTime": "Roughly 2-3 hours from the SR 20 pullout through meadows/the approach bowl to the ridge saddle; an 8-hour total route day starting early morning",
+     "requiredSkills": [
+      "exposed scrambling",
+      "short 5.6 pitch leading",
+      "ridge route-finding",
+      "basic rope/anchor skills for the short technical steps near the summit"
+     ],
+     "experienceLevel": "Competent scrambler/easy-5th-class leader; good route-finding judgment needed since Class 4 variations easily wander onto harder terrain"
+    }
+   }
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "The 'Complete' South Buttress follows the full original line low on the buttress (published topos show up to 22 pitches) rather than the commonly-linked ~12-pitch version, making it a longer day of rope work than the standard South Buttress before the same long descent.",
+       "hours": 12,
+       "miles": 4,
+       "title": "Complete South Buttress, car-to-car",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Forest and meadow approach to the base of the buttress."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Base of route",
+         "detail": "Rack up for a full-length pitched ascent."
+        },
+        {
+         "time": "+4-6 hr",
+         "label": "Climb",
+         "detail": "Up to ~22 pitches of wandering moderate rock to 5.8, more sustained rope work than the standard linked-out version."
+        },
+        {
+         "time": "mid-late afternoon",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "+3-5 hr",
+         "label": "Descend",
+         "detail": "Multi-rappel descent (West Ridge or reversing the buttress) then hike out."
+        }
+       ],
+       "objective": "Climb the full South Buttress line (up to 22 pitches) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A long single car-to-car day, roughly 4.0 mi and an estimated ~3,300 ft round trip; expect 11-14 hours given the extra pitches over the standard South Buttress line."
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "before": {
+    "itinerary": {
+     "cal": "Some parties bivy in the meadow below the route to split the long car-to-car day into two easier days — worth considering for slower or less-experienced parties.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long single-day buttress climb: ~2-hour approach through forest and meadow, ~12 pitches of wandering rock up to 5.8, then a long rappel descent. Trip reports commonly range from 9 to 15 hours depending on party speed and rope work.",
+       "hours": 10.5,
+       "miles": 3.8,
+       "title": "South Buttress, car-to-car",
+       "gainFt": 2965,
+       "lossFt": 2965,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Cross the creek, hike to the meadow below the south face."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Base of route",
+         "detail": "Rack up, swap to rock shoes."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Climb",
+         "detail": "Simul-climb and pitch out ~12 pitches to 5.8."
+        },
+        {
+         "time": "~1-2 PM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "+3-5 hr",
+         "label": "Descend",
+         "detail": "Multi-rappel descent (12+ raps if reversing the buttress) then hike out."
+        }
+       ],
+       "objective": "Climb the South Buttress (12 pitches) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single long car-to-car day: roughly 3.8 mi and 2,965 ft round trip, commonly 9-15 hours."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Good approach fitness for the boulder-field approach plus a full 12-pitch, multi-hour day",
+      "packWeight": "Light rack and approach shoes carried on route, roughly 15-20 lb"
+     },
+     "approachTime": "Roughly 2-3 hours from the SR 20 pullout to the boulder field below the south buttress; a 12-hour total route day with a pre-dawn start",
+     "requiredSkills": [
+      "5.8 trad leading",
+      "multi-pitch anchor building",
+      "route-finding on wandering alpine terrain",
+      "multiple-rappel descent",
+      "efficient party movement to finish a long route in a day"
+     ],
+     "experienceLevel": "Solid 5.8 trad leader with alpine multi-pitch mileage; must be comfortable leading loose/run-out sections and wandering route-finding across 12 pitches"
+    }
+   }
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "The SR-20 South Buttress pullout, then bear RIGHT into the basin beneath the North Ridge Notch",
+      "notes": "The standard approach uses the same SR-20 pullout as the South Buttress, on the north side of the highway about 1.5 miles WEST of Washington Pass. Follow the South Buttress approach: creek crossing, brushy climbers' path into the meadow, up into the boulder field.\n\nEight pitches at 5.7. This is the peak's classic line.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A loose, runout 5.7 PG13 pitch with marginal protection simply to reach the base of the ridge",
+       "A descent that leaves the ridge at the notch and continues down a different route's rappel line",
+       "Loose rock and brush on the lower approach",
+       "A more direct West Ridge descent from higher on the North Ridge exists but is considered worse for rockfall"
+      ],
+      "baseFinding": "AT THE BOULDER FIELD, BEAR RIGHT AND NORTH INTO THE BASIN BENEATH THE NORTH RIDGE NOTCH, RATHER THAN LEFT TOWARD THE SOUTH BUTTRESS GULLY. That is the fork, and left versus right is the whole difference between two of this peak's routes.\n\nTHE ROUTE'S REAL BASE IS THE NOTCH, AND GETTING TO IT IS ITSELF A PITCH: from the basin, A LOOSE, RUNOUT 5.7 PG13 PITCH GAINS THE NORTH RIDGE NOTCH. Protection is marginal, one or two small cams and narrow-head-width pieces help, AND THIS PITCH SHOULD BE TREATED AS THE TECHNICAL AND PSYCHOLOGICAL CRUX OF THE APPROACH, NOT OF THE RIDGE ABOVE IT.\n\nSO THE TEST IS BLUNT: IF THE HARDEST, SCARIEST THING YOU HAVE DONE IS THE PITCH THAT GOT YOU TO THE NOTCH, YOU ARE ON THE RIGHT ROUTE. If you got to a notch by walking, you are somewhere else.\n\nARRIVAL: a NOTCH, a gap on the crest with the ridge running above it. Everything above is the North Ridge.\n\nTHE NORTHERN ALTERNATIVE, WHICH ARRIVES AT THE SAME NOTCH FROM THE OTHER SIDE: from Rainy Pass, follow the Pacific Crest Trail into the PORCUPINE CREEK drainage, then climb TWO OR THREE SHORT PITCHES OF LOW FIFTH CLASS to gain the North Ridge Notch from that side. That is a legitimate option for parties camping near Rainy Pass, and it adds significant approach time. Two or three easy pitches versus one hard runout one is how you tell which side you came up.\n\nDESCENT DOES NOT REVERSE THE APPROACH PITCH ALL THE WAY: from the summit, reverse the North Ridge with several short rappels through the steeper fifth-class steps, then one longer rappel back into the North Ridge Notch. From the notch, descend via the standard South Buttress and West Ridge line, downclimbing to the first set of BOLTED CHAIN RAPPEL ANCHORS and continuing down the same FOUR-RAPPEL West Ridge sequence, a single 60 m rope sufficient for each, before the final scramble through the scree bowl and boulder field back to the meadow and creek crossing."
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "The shortest and least committing of Cutthroat's technical lines: a quick approach leads to one loose, runout 5.7 pitch gaining the North Ridge Notch, then mostly class 2-4 ridge climbing with one steeper 5.6-5.7 section before easing off near the top.",
+       "hours": 8.5,
+       "miles": 4,
+       "title": "North Ridge, car-to-car",
+       "gainFt": 2800,
+       "lossFt": 2800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "~6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Short, pleasant approach through forest/meadow to the base of the North Ridge Notch."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Gain the notch",
+         "detail": "One loose, runout 5.7 pitch to the North Ridge Notch."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Climb the ridge",
+         "detail": "~8 pitches, mostly 2nd-4th class ramps and corners with one steeper 5.6-5.7 slab section."
+        },
+        {
+         "time": "early-mid PM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Descend",
+         "detail": "Downclimb plus ~5 rappels via the West Ridge side back to the notch, then hike out."
+        }
+       ],
+       "objective": "Climb the North Ridge (Grade III, 5.6-5.7, ~8 pitches) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A shorter single-day outing than Cutthroat's other lines: roughly 4.0 mi and an estimated ~2,800 ft round trip, typically well under 10 hours."
+    }
+   }
+  }
+ ]
+}

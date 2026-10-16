@@ -1,0 +1,806 @@
+{
+  "zones": [
+    {
+      "zone": "pasayten-cathedral",
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at the trailhead registration box. No reservation is needed.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      }
+    },
+    {
+      "zone": "pasayten-harts-pass",
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at the trailhead registration box. No reservation is needed.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      }
+    },
+    {
+      "zone": "pasayten-remaining",
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at the trailhead registration box. No reservation is needed.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      }
+    },
+    {
+      "zone": "primus-borealis",
+      "overnightPermit": {
+        "what": "North Cascades NP wilderness permit — limited, with a fee",
+        "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead. Camps above Thunder Creek fall in cross-country zones.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_amphitheater_mountain_finger_of_fatwa",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_ne_ridge",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_south_face_10",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_the_monk_le_gibet",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_the_monk_odine",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_the_monk_scabo",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_the_monk_west_cracks_left_crack",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_the_monk_west_cracks_right_crack",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is the standard climbers' camp; Andrews Pass and Cathedral Pass lie on the Andrews Creek line in."
+    },
+    {
+      "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Remmel Lake and the Spanish Camp meadows",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard camp is Upper Cathedral Lake; Remmel Lake kept as onRoute because this route names the Chewuch approach, which passes it."
+    },
+    {
+      "id": "wa_amphitheater_mountain_west_route",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Remmel Lake and the Spanish Camp meadows",
+        "Cathedral Pass benches and the tarn slabs",
+        "Amphitheater Mountain upper basin"
+      ],
+      "drop": [
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake is standard; unsure whether the West Route actually passes through the Amphitheater upper basin, kept as onRoute."
+    },
+    {
+      "id": "wa_amphitheater_mountain_north_ridge",
+      "main": [
+        "Upper Cathedral Lake basin",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "onRoute": [
+        "Andrews Pass"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The ridge starts from Cathedral Pass, so the pass benches are a genuine second camp choice."
+    },
+    {
+      "id": "wa_cathedral_peak_pasayten_se_buttress",
+      "main": [
+        "Upper Cathedral Lake basin"
+      ],
+      "onRoute": [
+        "Andrews Pass",
+        "Cathedral Pass benches and the tarn slabs"
+      ],
+      "drop": [
+        "Remmel Lake and the Spanish Camp meadows",
+        "Amphitheater Mountain upper basin",
+        "Tungsten Mine camp",
+        "Upper Cathedral Lake camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Upper Cathedral Lake camp waypoint dropped as a duplicate of the basin entry; the Tungsten loop approach is not treated as this route's line."
+    },
+    {
+      "id": "wa_big_craggy_peak_scramble",
+      "main": [
+        "Copper Glance Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Copper Glance Lake is the only camp on the Eightmile side; every other camp belongs to the Harts Pass road."
+    },
+    {
+      "id": "wa_west_craggy_peak_standard_route",
+      "main": [
+        "Copper Glance Lake",
+        "Copper Glance Basin camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Unsure whether the 6,600 ft basin waypoint is a separate spot above the lake or the same camp."
+    },
+    {
+      "id": "wa_blackcap_mountain_scramble",
+      "main": [
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows"
+      ],
+      "onRoute": [
+        "Harts Pass and Meadows campgrounds"
+      ],
+      "drop": [
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake",
+        "Fred's Lake",
+        "Shellrock Basin"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Blackcap is climbed from Doris or Freds Lake, or from Shellrock on the longer loop; Fred's Lake and Shellrock Basin waypoints dropped as duplicates of the broader entries."
+    },
+    {
+      "id": "wa_blizzard_peak_standard",
+      "main": [
+        "Upper Frosty Basin Camp"
+      ],
+      "onRoute": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass"
+      ],
+      "drop": [
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at a US trailhead such as Harts Pass. Parties starting in Manning Park have no US kiosk on their way in, so contact the Methow Valley Ranger District before the trip.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      },
+      "note": "Upper Frosty Basin below Frosty Pass is the usual camp; Harts Pass, Windy Pass and Castle Pass serve only the long PCT approach from the US side."
+    },
+    {
+      "id": "wa_castle_peak_pasayten_scramble",
+      "main": [
+        "Freezeout Creek Cabin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "North Cascades NP complex backcountry permit for Ross Lake NRA camps; free self-issue Pasayten permit beyond",
+        "where": "Reserve Ross Lake and Lightning Creek camps on Recreation.gov or get a walk-up permit at the Marblemount Wilderness Information Center. Past the Pasayten Wilderness boundary, fill out a free self-issue permit.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      },
+      "note": "This route uses the Ross Lake and Freezeout Creek line, so the PCT camps at Hopkins Lake and Castle Pass are on a different approach; there may be higher unlisted camps on Freezeout Ridge."
+    },
+    {
+      "id": "wa_dot_mountain_scramble",
+      "main": [
+        "7,400 ft Tarn Camp, Mount Lago north side",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows"
+      ],
+      "onRoute": [
+        "Harts Pass and Meadows campgrounds",
+        "Doris Lake and Freds Lake basins"
+      ],
+      "drop": [
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Dot is reached from the tarn camp on Lago's north side via the Lago-Carru col; Shellrock is the other usual base. Moderate confidence."
+    },
+    {
+      "id": "wa_lake_mountain_pasayten_scramble",
+      "main": [
+        "Lake of the Woods and the Eureka Falls camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Copper Glance Lake",
+        "Lake of the Woods"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lake of the Woods waypoint dropped as a duplicate of the broader Lake of the Woods entry."
+    },
+    {
+      "id": "wa_monument_peak_pasayten_scramble",
+      "main": [
+        "Lake of the Woods and the Eureka Falls camp"
+      ],
+      "onRoute": [
+        "Lower Monument Basin"
+      ],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Copper Glance Lake",
+        "Lake of the Woods"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lake of the Woods waypoint dropped as a duplicate of the broader entry; Lower Monument Basin kept as the high-camp option for the summit push."
+    },
+    {
+      "id": "wa_north_face_left_buttress",
+      "main": [],
+      "onRoute": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass"
+      ],
+      "drop": [
+        "Robinson Creek valley campsites",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [
+        {
+          "name": "Castle Peak north-side glacier bivy",
+          "type": "bivy",
+          "capacity": "A few tent spots on rock and moraine; no established sites.",
+          "water": "Snowmelt and glacier runoff.",
+          "permit": "Free self-issue Pasayten Wilderness permit.",
+          "notes": "Most parties come in from Manning Park, leave the Monument 78 trail near the border and cross a high pass near 8,000 ft to camp below the glacier under the north face.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at a US trailhead such as Harts Pass. Parties starting in Manning Park have no US kiosk on their way in, so contact the Methow Valley Ranger District before the trip.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      },
+      "note": "Main camp added without an elevation; Harts Pass, Windy Pass and Castle Pass serve only the longer PCT approach from the US side."
+    },
+    {
+      "id": "wa_osceola_peak_scramble",
+      "main": [
+        "Doris Lake and Freds Lake basins"
+      ],
+      "onRoute": [
+        "Harts Pass and Meadows campgrounds"
+      ],
+      "drop": [
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake",
+        "Lake Doris"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lake Doris waypoint dropped as a duplicate of the Doris and Freds Lake entry."
+    },
+    {
+      "id": "wa_ptarmigan_peak_pasayten_scramble",
+      "main": [
+        "Shellrock Pass bench"
+      ],
+      "onRoute": [
+        "Harts Pass and Meadows campgrounds",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows"
+      ],
+      "drop": [
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Robinson Creek valley campsites",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shellrock Pass bench is the standard staging camp; the broader Shellrock and Eureka entry is kept as the lower alternative."
+    },
+    {
+      "id": "wa_robinson_mountain_north_couloir",
+      "main": [
+        "Robinson Creek valley campsites"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties camp a few miles up Robinson Creek; the exact spot is not a named camp."
+    },
+    {
+      "id": "wa_robinson_mountain_southeast_ridge",
+      "main": [],
+      "onRoute": [
+        "Robinson Creek valley campsites"
+      ],
+      "drop": [
+        "Harts Pass and Meadows campgrounds",
+        "Windy Pass and the crest camps north of Harts Pass",
+        "Hopkins Lake and Castle Pass",
+        "Doris Lake and Freds Lake basins",
+        "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+        "Lake of the Woods and the Eureka Falls camp",
+        "Copper Glance Lake"
+      ],
+      "add": [
+        {
+          "name": "Beauty Creek tarn camp",
+          "type": "camp",
+          "elev": 6750,
+          "capacity": "A few tent sites around the tarn.",
+          "water": "The tarn and its outlet stream.",
+          "permit": "Free self-issue Pasayten Wilderness permit.",
+          "notes": "Leave the Robinson Creek trail for the Beauty Creek path, then take the steep boot path up to the tarn below the southeast cirque. The meadows between Robinson and Beauty Peak also have space.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Added the Beauty Creek tarn as main; unsure whether the Robinson Creek valley entry already means this tarn."
+    },
+    {
+      "id": "wa_lost_peak_pasayten_scramble",
+      "main": [
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "onRoute": [
+        "The Berk Creek junction and the Middle Fork Pasayten river camps",
+        "Fred's Lake",
+        "The high bench southwest of Shellrock Pass"
+      ],
+      "drop": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The lower Chewuch River camps out of Thirtymile"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lost Peak is climbed from the upper Monument Creek and Butte Pass basin; the Middle Fork, Fred's Lake and Shellrock camps lie on the western loop approach this route's waypoints describe."
+    },
+    {
+      "id": "wa_mount_carru_scramble",
+      "main": [
+        "Shellrock Basin",
+        "The high bench southwest of Shellrock Pass"
+      ],
+      "onRoute": [
+        "The Berk Creek junction and the Middle Fork Pasayten river camps",
+        "Fred's Lake"
+      ],
+      "drop": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The lower Chewuch River camps out of Thirtymile",
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shellrock is the standard high camp; many parties also do Carru from Doris Lake, which is not in this list."
+    },
+    {
+      "id": "wa_mount_lago_south_slope_south_face",
+      "main": [
+        "Shellrock Basin camp area",
+        "The high bench southwest of Shellrock Pass"
+      ],
+      "onRoute": [
+        "The Berk Creek junction and the Middle Fork Pasayten river camps"
+      ],
+      "drop": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The lower Chewuch River camps out of Thirtymile",
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shellrock Basin is the standard high camp for the south side."
+    },
+    {
+      "id": "wa_remmel_mountain_nw_ridge",
+      "main": [
+        "NW Ridge Camp"
+      ],
+      "onRoute": [
+        "The lower Chewuch River camps out of Thirtymile"
+      ],
+      "drop": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The Berk Creek junction and the Middle Fork Pasayten river camps",
+        "The high bench southwest of Shellrock Pass",
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The ridge camp at treeline is standard; the approach starts from Remmel Lake, which is not in this list, and Four Point Lake is off this line."
+    },
+    {
+      "id": "wa_windy_peak_iron_gate_trail",
+      "main": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The lower Chewuch River camps out of Thirtymile",
+        "The Berk Creek junction and the Middle Fork Pasayten river camps",
+        "The high bench southwest of Shellrock Pass",
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "This approach runs through Sunny Pass in Horseshoe Basin, the natural camp."
+    },
+    {
+      "id": "wa_windy_peak_trail",
+      "main": [
+        "Two Bear Camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The lower Chewuch River camps out of Thirtymile",
+        "The Berk Creek junction and the Middle Fork Pasayten river camps",
+        "The high bench southwest of Shellrock Pass",
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Most parties do this as a day hike; Two Bear Camp is the water stop and the camp for those who split it."
+    },
+    {
+      "id": "wa_windy_peak_windy_creek_trail",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+        "Four Point Lake — the Chewuch-side base for Remmel Mountain",
+        "The lower Chewuch River camps out of Thirtymile",
+        "The Berk Creek junction and the Middle Fork Pasayten river camps",
+        "The high bench southwest of Shellrock Pass",
+        "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak"
+      ],
+      "add": [
+        {
+          "name": "Windy Peak south plateau",
+          "type": "camp",
+          "capacity": "Open ground with room for several tents; no established sites.",
+          "water": "None reliable on the plateau; fill up lower on the trail.",
+          "permit": "Free self-issue Pasayten Wilderness permit.",
+          "notes": "Usually done as a day hike. Parties who split it camp on the open south slopes and plateau below the summit, where this trail joins the standard route.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Uncertain: this is mostly a day hike and no listed camp is on the Windy Creek trail, so the added plateau camp is a best guess."
+    },
+    {
+      "id": "wa_east_slope",
+      "main": [
+        "Borealis Glacier toe / Borealis Lake high camp"
+      ],
+      "onRoute": [
+        "Colonial Creek South Campground, Thunder Creek trailhead",
+        "McAllister Hiker Camp, Thunder Creek trail",
+        "Lucky Pass bivy, Primus-Tricouni col"
+      ],
+      "drop": [
+        "Tricouni Camp, Thunder Creek trail",
+        "Klawatti Col camp, Eldorado ice-cap traverse approach",
+        "McAllister Camp",
+        "Bivy at toe of Borealis Glacier"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Bivy waypoint dropped as a duplicate of the Borealis entry, McAllister waypoint as a duplicate of the hiker camp; Tricouni Camp is past the point where climbers leave the trail."
+    },
+    {
+      "id": "wa_north_ridge_4",
+      "main": [
+        "Borealis Glacier toe / Borealis Lake high camp"
+      ],
+      "onRoute": [
+        "Colonial Creek South Campground, Thunder Creek trailhead",
+        "McAllister Hiker Camp, Thunder Creek trail"
+      ],
+      "drop": [
+        "Tricouni Camp, Thunder Creek trail",
+        "Lucky Pass bivy, Primus-Tricouni col",
+        "Klawatti Col camp, Eldorado ice-cap traverse approach"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Thunder Creek approach; the North Ridge is reached around the lake, not via Lucky Pass."
+    },
+    {
+      "id": "wa_primus_peak_south_ridge",
+      "main": [
+        "Klawatti Col camp, Eldorado ice-cap traverse approach"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Thunder Creek trailhead",
+        "McAllister Hiker Camp, Thunder Creek trail",
+        "Tricouni Camp, Thunder Creek trail",
+        "Borealis Glacier toe / Borealis Lake high camp",
+        "Lucky Pass bivy, Primus-Tricouni col"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "This route comes in from Eldorado over the ice cap, so the Thunder Creek camps are on a different approach; lower Eldorado glacier camps are not in the list."
+    },
+    {
+      "id": "wa_tricouni_peak_southwest_slopes",
+      "main": [
+        "Borealis Glacier toe / Borealis Lake high camp"
+      ],
+      "onRoute": [
+        "Colonial Creek South Campground, Thunder Creek trailhead",
+        "McAllister Hiker Camp, Thunder Creek trail",
+        "Lucky Pass bivy, Primus-Tricouni col"
+      ],
+      "drop": [
+        "Tricouni Camp, Thunder Creek trail",
+        "Klawatti Col camp, Eldorado ice-cap traverse approach",
+        "McAllister Camp",
+        "Borealis Lake camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Borealis Lake waypoint dropped as a duplicate of the Borealis entry despite its different stated elevation; McAllister waypoint dropped as a duplicate."
+    }
+  ],
+  "misassigned": [
+    "wa_north_face_left_buttress: no listed camp serves the usual Manning Park approach; added a north-side bivy.",
+    "wa_windy_peak_windy_creek_trail: no listed camp lies on the Windy Creek trail; added a plateau camp.",
+    "wa_robinson_mountain_southeast_ridge: the standard Beauty Creek tarn camp is missing from the list; added it."
+  ]
+}

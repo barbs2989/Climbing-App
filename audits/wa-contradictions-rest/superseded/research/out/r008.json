@@ -1,0 +1,364 @@
+{
+ "file": "r008.json",
+ "results": [
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "fact": "Is the true (south) summit part of this route, or beyond its scope?",
+   "verdict": "fixed",
+   "correct_value": "The standard line tops out on the middle summit (Class 3); the true highpoint is the south summit, about 7 in higher, reached from the middle summit by a short 4th/low-5th-class step (~20 ft) that the row treats as an optional finish. Overview and pro_tips must stop calling it out-of-scope / calling the middle point the true summit.",
+   "evidence": "A 2023 theodolite survey found the south summit 7 inches higher than the middle summit (mapped 8,590 ft) and describes it as needing a short pitch of 5th class while the middle summit is 3rd class. An independent peak page describes the south summit ~500 ft south as a 4th/5th-class summit block about 20 ft high with a rap sling and the register, and the middle summit as the easy walk-up most parties count. The row's pitch_detail, rock_grade, length_m, rope_note, detailed_rack and approach_variants already include the step as the optional finish; only the overview (out of scope) and pro_tips[3] (middle = true summit) disagree, and the summit waypoint note understated the final move as class 3.",
+   "sources": [
+    "https://www.countryhighpoints.com/cardinal-peak-theodolite-survey/",
+    "https://www.countryhighpoints.com/washington-top-100-peaks-updated-list/",
+    "https://www.summitpost.org/cardinal-peak/152280",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-20.5098410593"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "reachable only via a short technical 5th-class scramble beyond the scope of this route",
+     "replace": "reached from the middle summit by a short, exposed low-5th-class step that this route includes as an optional finish",
+     "id": "wa_cardinal_peak_se_slopes",
+     "fact": "Is the true (south) summit part of this route, or beyond its scope?"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "find": "The true summit is the middle of three points on the ridge \u2014 the north summit",
+     "replace": "The standard scramble tops out on the middle of three points on the ridge; the true highpoint is the south point just beyond it, guarded by a short low-5th-class step. The north summit",
+     "id": "wa_cardinal_peak_se_slopes",
+     "fact": "Is the true (south) summit part of this route, or beyond its scope?"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "exposed class 3 moves near the top",
+     "replace": "exposed class 3 scrambling leads to the middle summit, and a short 4th/low-5th-class step then gains this slightly higher south point",
+     "id": "wa_cardinal_peak_se_slopes",
+     "fact": "Is the true (south) summit part of this route, or beyond its scope?"
+    }
+   ]
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "fact": "Access closures: access.closures describes only a road landslide (and says the FR-5606 approach is past it), while the bivy entries on the same row say the Entiat camps and the North Fork Entiat / Pyramid trails are inside the current fire closure order",
+   "verdict": "fixed",
+   "correct_value": "The Little Giant Fire closure (effective 3 Sep 2026 through 31 Oct 2026 unless rescinded) closes Entiat River Road 5100, FSR 5606, North Fork Entiat River Trail 1437 and Pyramid Mountain Trail 1433 - this route's whole access.",
+   "evidence": "The Forest Service alert text for the Little Giant Fire closure (fetched directly) lists Entiat River Rd. 5100 and 5606 under ROADS CLOSED and North Fork Entiat River Tr. 1437 and Pyramid Mtn. Tr. 1433 under TRAILS CLOSED, effective September 3 through October 31, 2026. An independent news summary of the closure also names Entiat River Road 5100 as closed through October 31. The row's own bivy entries already say these trails are inside the order; access.closures did not.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/little-giant-fire-closure-order-wenatchee-river-and-entiat-ranger",
+    "https://deeparrival.com/news/little-giant-fire-wenatchee-closure-october-31-2026/",
+    "https://inciweb.wildfire.gov/incident-publication/waowf-little-giant-fire/okanoganwenatchee-national-forest-leavenworth-wa-little-giant-fire-closure-order-061707202633-09-04-2026"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "The Entiat River Road corridor (FR-51) sustained damage",
+     "replace": "CLOSED RIGHT NOW: the Little Giant Fire closure, in effect through 31 October 2026 unless lifted sooner, closes the Entiat River Road (FR 5100), FR 5606, the North Fork Entiat River Trail #1437 and the Pyramid Mountain Trail #1433, which is this route's entire access. Separately, the Entiat River Road corridor (FR-51) sustained damage",
+     "id": "wa_cardinal_peak_se_slopes",
+     "fact": "Access closures: access.closures describes only a road landslide (and says the FR-5606 approach is past it), while the bivy entries on the same row say the Entiat camps and the North Fork Entiat / Pyramid trails are inside the current fire closure order"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Hardest grade \u2014 Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)",
+   "verdict": "fixed",
+   "correct_value": "Class 3 with a few Class 4 moves (grade 'Grade II, Class 3'; rock_grade 'Class 3-4' stays)",
+   "evidence": "One peak page describes the upper west ridge as class 3 and 4 scrambling and notes most accounts admit a few class 4 moves; a regional trip report calls the finish third-class scrambling with exposure, avoiding fourth class by the right gully; a third report calls it Class 2-3 in dry summer and Class 4 with snow/rime. Consensus is Class 3 with occasional Class 4, so 'Class 2 to 3' in grade (and the copies in beta, detailed_rack and experienceLevel) understates it; rock_grade/pitch_detail/hazards stand. grade_num is derived and is left for the parser.",
+   "sources": [
+    "https://www.summitpost.org/cashmere-mountain/150650",
+    "https://wenatcheeoutdoors.org/2021/08/16/cashmere-caroline-and-cannonballs/",
+    "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-cashmere-mountain-15"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "grade",
+     "path": [],
+     "find": "Class 2 to 3",
+     "replace": "Class 3",
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Hardest grade \u2014 Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "standard dry-season Class 2-3 scramble",
+     "replace": "standard dry-season Class 3 scramble",
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Hardest grade \u2014 Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "turn the Class 2-3 terrain into harder Class 4 climbing",
+     "replace": "turn the Class 3 terrain into harder Class 4 climbing",
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Hardest grade \u2014 Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "sustained, exposed Class 2-3 terrain",
+     "replace": "sustained, exposed Class 3 terrain",
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Hardest grade \u2014 Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Round-trip distance \u2014 dist_km (8.7 mi) vs the route's own stated 17-mile round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance by convention; 14 km = 8.7 mi one way agrees with the stated ~17 mi round trip (and with 8.5-9 mi trailhead-to-summit found externally).",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2021/08/16/cashmere-caroline-and-cannonballs/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Overnight camp \u2014 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Camp ~7,100 ft at ~6.5 mi (waypoint[1] elev/elevFt 7100, distMi 6.5)",
+   "evidence": "The approach, itinerary day 1 note/objective/schedule and totalNote all put the high camp at ~7,100 ft about 0.5 mi east of where the trail is left at ~6,850 ft, with day 1 = 6.5 mi. A regional trip report independently puts the camp at roughly 7,100 ft, about 0.5 mi east of the trail after leaving it at 6,850 ft (another report camped lower in Windy Basin at 6,500 ft, so the value is adopted on the row's 4+ fields plus one agreeing source).",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2021/08/16/cashmere-caroline-and-cannonballs/",
+    "https://wenatcheeoutdoors.org/2016/06/13/caroline-lake-windy-pass/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 6000,
+     "value": 7100,
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Overnight camp \u2014 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 6000,
+     "value": 7100,
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Overnight camp \u2014 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 4.5,
+     "value": 6.5,
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Overnight camp \u2014 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Summit waypoint distMi 5.8 vs a one-way distance of ~8.5 mi (dist_km 14 km = 8.7 mi, overview ~17 mi round trip, camp itself at 6.5 mi)",
+   "verdict": "fixed",
+   "correct_value": "8.5",
+   "evidence": "Trailhead-to-summit is stated as roughly 8.5-9 miles in one trip report and as 18 miles round trip in another; the row's overview/totalNote (~17 mi RT) and dist_km (8.7 mi) agree. The summit waypoint's 5.8 mi places the summit before the 6.5 mi camp.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2021/08/16/cashmere-caroline-and-cannonballs/",
+    "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 5.8,
+     "value": 8.5,
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Summit waypoint distMi 5.8 vs a one-way distance of ~8.5 mi (dist_km 14 km = 8.7 mi, overview ~17 mi round trip, camp itself at 6.5 mi)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach and climbing_route put the start of the west ridge at the ~8,000 ft col NNE of camp; the waypoint's 6,800 ft / 5.2 mi better matches where the trail is left (~6,850 ft). Whether this pin is meant as the leave-trail point or the col cannot be settled without the pin geometry (out of scope), so no patch.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Recommended start time from high camp \u2014 5:00 AM vs ~6:00 AM",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "timing.recommendedStart and the itinerary schedule say 5:00 AM from camp; partner_requirements.approachTime says ~06:00. This is a planning recommendation rather than a researchable fact; no external source states a recommended start from the high camp (one report left the trailhead at 8:30 AM on a single-day trip), and two row fields against one does not meet the internal threshold.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2021/08/16/cashmere-caroline-and-cannonballs/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Eightmile Lake Trailhead elevation \u2014 elev 3,300 ft vs elevFt 4,650 ft in the same waypoint object",
+   "verdict": "fixed",
+   "correct_value": "3300",
+   "evidence": "Two independent trip reports give the Eightmile Lake Trailhead elevation as 3,300 ft; the waypoint's elev and directions already say 3,300, only the non-rendered elevFt copy says 4,650.",
+   "sources": [
+    "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/",
+    "https://wenatcheeoutdoors.org/2016/06/13/caroline-lake-windy-pass/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4650,
+     "value": 3300,
+     "id": "wa_cashmere_mountain_west_ridge",
+     "fact": "Eightmile Lake Trailhead elevation \u2014 elev 3,300 ft vs elevFt 4,650 ft in the same waypoint object"
+    }
+   ]
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "fact": "Aspect/face of the climbing line: southeast vs. the north side of the peak",
+   "verdict": "not_a_contradiction",
+   "correct_value": "SE",
+   "evidence": "Both fields are true of different parts of the line: the Napeequa approach traverses north of the Pilz Glacier beneath the north ridge into the upper basin, then gains the ridge by a scree gully near 8,000 ft, and the finish is an easy scramble up the southeast ridge. One source describes the Little Giant/Napeequa route as ending in an easy scramble up the southeast ridge; a trip report describes the traverse below the north ridge north of the glacier and the 8,000 ft scree-gully notch. aspect/face name the summit ridge; beta/approach name the ground crossed to reach it.",
+   "sources": [
+    "https://www.countryhighpoints.com/chalangin-peak-attempt/",
+    "https://onehikeaweek.com/2023/10/08/chalangin-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "fact": "dist_km appears to be one-way, not the round-trip total this multi-day itinerary implies",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is by convention the one-way approach distance; 21.7 km = 13.5 mi one way matches the summit waypoint and a ~26-27 mi round trip found externally.",
+   "sources": [
+    "https://onehikeaweek.com/2023/10/08/chalangin-peak/",
+    "https://www.countryhighpoints.com/chalangin-peak-attempt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "fact": "Access: access.closures is null and road.status describes the Chiwawa River Road as drivable to the trailhead, while the row's own bivy entries say the Chiwawa road is shut above Atkinson Flat under a multi-year storm order and the 2026 fire closure names the Little Giant trail",
+   "verdict": "fixed",
+   "correct_value": "FR 6200 closed to vehicles from Atkinson Flat Campground (about 2 mi below the Little Giant Trailhead) north to Trinity through 31 Dec 2027 (storm damage); Little Giant Fire closure through 31 Oct 2026 closes Chiwawa River Road 6200 and Little Giant Trail 1518.",
+   "evidence": "The Forest Service storm-damage order (effective May 20, 2026 through December 31, 2027) closes FSR 6200 from the Atkinson Flats Campground junction north to Trinity, with no reopening estimate; a local newspaper independently reports the Chiwawa River Road closed just past Atkinson Flat for flood damage. The Little Giant Fire order text lists Chiwawa River Road 6200 under roads closed and Little Giant Tr. 1518 under trails closed, effective Sept 3 - Oct 31, 2026; a news summary lists the same road and trail. The Little Giant Trailhead sits about 2 miles up-river from Atkinson Flat (19 vs ~16-17 road miles), so it is inside the storm closure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district",
+    "https://www.leavenworthecho.com/stories/chiwawa-river-road-closed-just-past-atkinson-flat-campground-due-to-flood-damage,51250",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/little-giant-fire-closure-order-wenatchee-river-and-entiat-ranger",
+    "https://deeparrival.com/news/little-giant-fire-wenatchee-closure-october-31-2026/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/little-giant-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": null,
+     "value": "CLOSED RIGHT NOW: the Chiwawa River Road (FR 6200) is closed to vehicles for storm damage from Atkinson Flat Campground, about 2 miles short of the Little Giant Trailhead, north to Trinity, with the closure running through 31 December 2027 and no reopening estimate. On top of that, the Little Giant Fire closure, in effect through 31 October 2026 unless lifted sooner, closes the Chiwawa River Road and the Little Giant Trail #1518 itself.",
+     "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+     "fact": "Access: access.closures is null and road.status describes the Chiwawa River Road as drivable to the trailhead, while the row's own bivy entries say the Chiwawa road is shut above Atkinson Flat under a multi-year storm order and the 2026 fire closure names the Little Giant trail"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Paved for roughly the first 11 miles",
+     "replace": "Closed to vehicles from Atkinson Flat Campground, about 2 miles below the trailhead, through 31 December 2027 for storm damage, and inside the Little Giant Fire closure through 31 October 2026. Paved for roughly the first 11 miles",
+     "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+     "fact": "Access: access.closures is null and road.status describes the Chiwawa River Road as drivable to the trailhead, while the row's own bivy entries say the Chiwawa road is shut above Atkinson Flat under a multi-year storm order and the 2026 fire closure names the Little Giant trail"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "fact": "Climbing season: 'May-Jun' header vs. a season description running through September",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Every documented ascent of this line found is late May / early June: a Memorial Day (May 28-30) ascent via the south slope-southwest face and a June 1, 2025 ascent via Thunder Creek, the latter timed so the snow had melted off the summit while the steep sections still took crampons; a November attempt failed on wind-loaded snow. No source documents a mid/late-summer or September ascent, or states that the face becomes a dry scramble in summer, so neither the 'May-Jun' chip nor best_season/climate's 'through September' can be confirmed by two sources. No patch.",
+   "sources": [
+    "http://trailcatjim.com/chalangin-peak-white-river-southwest-face/",
+    "https://www.countryhighpoints.com/chalangin-peak-wa-top-100-completion/",
+    "https://www.countryhighpoints.com/chalangin-peak-attempt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "fact": "Road/trailhead currently closed (access.closures) vs. road section describing it as open",
+   "verdict": "fixed",
+   "correct_value": "FSR 6400 to the road end and White River Trail 1507 closed by the Little Giant Fire closure, 3 Sep - 31 Oct 2026 unless rescinded; road.status must say so.",
+   "evidence": "The Forest Service closure order text (fetched directly) says the closure follows FSR 6400, closing it, NW to the end of the road and the junction with White River Trail 1507, effective September 3, 2026 until October 31, 2026 unless rescinded sooner, order 06-17-07-2026-40, last updated Sept 15 with no rescission. The same order is published on the national incident site. The row's access.closures is correct; road.status omitted it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/little-giant-fire-closure-order-wenatchee-river-and-entiat-ranger",
+    "https://inciweb.wildfire.gov/incident-publication/waowf-little-giant-fire/okanoganwenatchee-national-forest-leavenworth-wa-little-giant-fire-closure-order-061707202633-09-04-2026",
+    "https://kpq.com/little-giant-fire-okanogan-wenatchee/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Open seasonally; mix of paved and gravel",
+     "replace": "Closed to the end of the road through 31 October 2026 by the Little Giant Fire closure. Outside a closure it is open seasonally, a mix of paved and gravel",
+     "id": "wa_chalangin_peak_southwest_face",
+     "fact": "Road/trailhead currently closed (access.closures) vs. road section describing it as open"
+    }
+   ]
+  }
+ ]
+}

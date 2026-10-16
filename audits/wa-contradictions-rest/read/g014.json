@@ -1,0 +1,599 @@
+{"batches": ["b053.json", "b054.json", "b055.json", "b056.json"], "routes_read": 21, "routes": [
+{"id": "wa_playing_not_spraying", "name": "Playing Not Spraying", "area": "Silver Horn, The", "contradictions": [
+ {"fact": "Cedar Creek Trailhead elevation", "severity": "high", "claims": [
+   {"field": "waypoints[0].elev", "says": "4300"},
+   {"field": "road.status", "says": "parking area by a gravel pit at the road's end (about 3,030 ft)"},
+   {"field": "approach_logistics.trailheadDirection", "says": "trailhead by the gravel pit at the road's end (~3,000 ft)"}],
+  "why": "The Trailhead waypoint (shown on the Trailhead card and WeatherPanel) is ~1,300 ft higher than the road and trailhead text for the same parking area.",
+  "internal_resolution": "road.status and trailheadDirection agree on ~3,000-3,030 ft, and gain_ft 5321 = 8351 - 3030; the 4300 waypoint elevation is the outlier.",
+  "needs_research": false},
+ {"fact": "Rope length", "severity": "medium", "claims": [
+   {"field": "rack[3]", "says": "Single 60m rope"},
+   {"field": "rope_length_m", "says": "70"},
+   {"field": "gear[2]", "says": "70m rope"},
+   {"field": "rappels", "says": "70m rope recommended"}],
+  "why": "The rack lists a 60 m rope while every other kit and descent field specifies 70 m for the rappels.",
+  "internal_resolution": "rope_length_m, gear, rappels, descent_text and rope_note all say 70 m; rack[3] is the outlier.",
+  "needs_research": false},
+ {"fact": "Land manager / ranger district / wilderness", "severity": "medium", "claims": [
+   {"field": "access.landManager", "says": "USFS Okanogan-Wenatchee National Forest (Wenatchee or Chelan Ranger District)"},
+   {"field": "access.permitZone", "says": "Lake Chelan-Sawtooth Wilderness"},
+   {"field": "access.land_manager", "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"},
+   {"field": "access.notes", "says": "this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"},
+   {"field": "emergency.rangerStation", "says": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest: 509-996-4000"}],
+  "why": "ACCESS names the Wenatchee or Chelan Ranger District and a wilderness permit zone while the other access and emergency fields name the Methow Valley Ranger District.",
+  "internal_resolution": "access.land_manager, access.notes and emergency all say Methow Valley RD (the Cedar Creek TH is off SR-20 near Mazama); landManager/permitZone copied from access._raw are the outliers.",
+  "needs_research": false},
+ {"fact": "Glacier travel on approach", "severity": "low", "claims": [
+   {"field": "access._raw.special_hazards", "says": "Glacier travel on approach; exposed rock climbing"},
+   {"field": "approach", "says": "walk the Cedar Creek Trail ... follow a rough path up the right-hand side of the creek ... Meadows at about 6,200 ft"}],
+  "why": "The raw access record claims glacier travel on an approach that is a trail and creek path to meadows.",
+  "internal_resolution": "approach, approach_variants and bivy describe a trail/meadow approach with no glacier; _raw is the outlier (likely not rendered).",
+  "needs_research": false},
+ {"fact": "Season window", "severity": "low", "claims": [
+   {"field": "season", "says": "Jul-Sep"},
+   {"field": "best_season", "says": "Prime conditions run roughly mid-June through late September"},
+   {"field": "approach_variants[0].season", "says": "Roughly mid-June through late September"}],
+  "why": "The prose calls mid/late June prime while the season chip starts in July.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Approach distance", "severity": "low", "claims": [
+   {"field": "dist_km", "says": "8"},
+   {"field": "waypoints[1].distMi", "says": "7"}],
+  "why": "The header distance (8 km, about 5 mi) disagrees with the summit waypoint's 7 mi, and the page presents both as the distance to the climb.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_the_chalice", "name": "The Chalice", "area": "Silver Horn, The", "contradictions": [
+ {"fact": "Cedar Creek Trailhead elevation", "severity": "high", "claims": [
+   {"field": "waypoints[0].elev", "says": "4300"},
+   {"field": "road.status", "says": "parking area by a gravel pit at the road's end (about 3,030 ft)"},
+   {"field": "approach_logistics.trailheadDirection", "says": "trailhead by the gravel pit at the road's end (~3,000 ft)"}],
+  "why": "The Trailhead waypoint is ~1,300 ft higher than the road/trailhead text for the same parking area.",
+  "internal_resolution": "road.status and trailheadDirection agree on ~3,000-3,030 ft; the 4300 waypoint is the outlier.",
+  "needs_research": false},
+ {"fact": "Rope length", "severity": "high", "claims": [
+   {"field": "rope_length_m", "says": "60"},
+   {"field": "descent", "says": "Rappel the SE side, ~70m rope"},
+   {"field": "descent_text", "says": "rappelled the SE side of the peak on a single 70m rope"},
+   {"field": "approach_variants[0].baseFinding", "says": "a seventy-metre rope, sparse fixed anchors"}],
+  "why": "The kit specifies a 60 m rope while every descent field says the SE-side rappels need a 70 m rope.",
+  "internal_resolution": "descent, descent_text and approach_variants all say 70 m; rope_length_m 60 is the outlier.",
+  "needs_research": false},
+ {"fact": "Approach terrain (goat ledges vs trail and creek)", "severity": "medium", "claims": [
+   {"field": "what_to_bring[0]", "says": "Approach shoes or light boots for the goat-ledge approach"},
+   {"field": "watch_out[1]", "says": "Goat-ledge approach terrain is exposed scrambling with potential for loose rock"},
+   {"field": "hazards[1]", "says": "Loose rock possible on the alpine-terrain and goat-ledge approach"},
+   {"field": "approach", "says": "walk the Cedar Creek Trail ... follow a rough path up the right-hand side of the creek ... Meadows at about 6,200 ft"}],
+  "why": "Several fields describe an exposed goat-ledge scrambling approach, but the approach text and variant describe a trail and creek-side path to meadows.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Descent certainty", "severity": "low", "claims": [
+   {"field": "descent", "says": "Rappel the SE side, ~70m rope"},
+   {"field": "descent_text", "says": "No descent is separately documented for The Chalice ... this is an inference ... not a confirmed fact"}],
+  "why": "One field states the descent as fact and the other says it is undocumented.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Face aspect", "severity": "low", "claims": [
+   {"field": "face", "says": "South Face"},
+   {"field": "overview", "says": "the right side of Silver Horn's true South Face"},
+   {"field": "waypoints[1].note", "says": "The Chalice route on the SE face of Silver Horn."}],
+  "why": "The summit waypoint puts the route on the SE face, while face, aspect and overview say south face.",
+  "internal_resolution": "face, aspect S, overview and baseFinding say south face; waypoint note is the outlier.",
+  "needs_research": false},
+ {"fact": "Season window", "severity": "low", "claims": [
+   {"field": "season", "says": "Jul-Sep"},
+   {"field": "best_season", "says": "Prime conditions run roughly mid-June through late September"}],
+  "why": "The prose calls mid/late June prime while the season chip starts in July.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_silver_star_west_face_couloir", "name": "West Face Couloir", "area": "Silver Star Mountain", "contradictions": [
+ {"fact": "Parking pass requirement", "severity": "low", "claims": [
+   {"field": "access.passRequired", "says": "None currently required"},
+   {"field": "access.fees", "says": "None currently required"},
+   {"field": "permit", "says": "Northwest Forest Pass (or day fee) to park at developed trailheads."}],
+  "why": "ACCESS says no pass is required while the permit line calls for a Northwest Forest Pass.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_silver_star_northwest_face", "name": "Northwest Face", "area": "Silver Star Mountain", "contradictions": [
+ {"fact": "Parking pass requirement", "severity": "low", "claims": [
+   {"field": "access.passRequired", "says": "None currently required"},
+   {"field": "access.fees", "says": "None currently required"},
+   {"field": "permit", "says": "Northwest Forest Pass (or day fee) to park at developed trailheads."}],
+  "why": "ACCESS says no pass is required while the permit line calls for a Northwest Forest Pass.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Protection quality", "severity": "low", "claims": [
+   {"field": "pro_needs", "says": "described as involved but with adequate natural protection when ice is well-formed"},
+   {"field": "turnaround", "says": "given the serious, lightly-protected nature of the climbing"},
+   {"field": "obj_haz", "says": "sparse protection"}],
+  "why": "PROTECTION calls the protection adequate while turnaround and hazards call it light or sparse.",
+  "internal_resolution": null,
+  "needs_research": false}
+]},
+{"id": "wa_east_ridge_3", "name": "East Ridge", "area": "Silver Star Mountain", "contradictions": [
+ {"fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)", "severity": "high", "claims": [
+   {"field": "waypoints[0].name", "says": "Silver Star Creek Trailhead (Hwy 20 pullout, ~MP 165-166)"},
+   {"field": "waypoints[0].note", "says": "The long East Ridge ... starts via the Silver Star Creek approach from this same Hwy 20 pullout ... A separate, easier South-East Face and East Ridge variant starts instead from the Cedar Creek trailhead"},
+   {"field": "road.name", "says": "Silver Star Creek / Highway 20 pullout, Washington Pass"},
+   {"field": "approach", "says": "Start from the Cedar Creek trailhead near Mazama -- a different trailhead than the Silver Star Creek/Highway 20 pullout"},
+   {"field": "approach_logistics.trailhead", "says": "Cedar Creek Trailhead (Sandy Butte-Cedar Creek Road #200)"}],
+  "why": "The Trailhead waypoint and GETTING THERE send the party to the Hwy 20 Silver Star Creek pullout, while approach, beta, the trailhead card, the approach variant, partner requirements and bivy all say Cedar Creek.",
+  "internal_resolution": "approach, beta, approach_logistics, approach_variants, partner_requirements, access.fees, bivy (Klipchuck) and the FA line (gain the ridge at the Cedar/Early Winters confluence) all say Cedar Creek; the waypoint and road.* are the outliers.",
+  "needs_research": false},
+ {"fact": "Commitment grade", "severity": "medium", "claims": [
+   {"field": "commitment", "says": "V"},
+   {"field": "alpine_grade", "says": "IV"},
+   {"field": "pro_tips[1]", "says": "soloing/scrambling easier sections at roughly 5.8 IV, or fully pitched out at a more sustained 5.9+ V"}],
+  "why": "Two grade chips show V and IV side by side; the prose says it depends on style, but the chips don't explain that.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Climb length", "severity": "medium", "claims": [
+   {"field": "length_m", "says": "1609"},
+   {"field": "overview", "says": "A committing, mostly-unroped 3.5-mile alpine ridge traverse"},
+   {"field": "approach", "says": "follow the crest north and west for roughly 3.5 miles to the summit"}],
+  "why": "Technical stats show a 1,609 m (1 mile) climb, but the prose describes a 3.5-mile (~5.6 km) ridge.",
+  "internal_resolution": "overview, approach, approach_variants and partner_requirements all say 3.5 miles; length_m is the outlier.",
+  "needs_research": false},
+ {"fact": "Total gain", "severity": "medium", "claims": [
+   {"field": "gain_ft", "says": "4400"},
+   {"field": "bivy[0].elev", "says": "2900"},
+   {"field": "overview", "says": "from the confluence of Cedar and Early Winters Creeks to Silver Star's east summit (8,876 ft)"}],
+  "why": "Starting near the Cedar/Early Winters confluence (~2,900-3,000 ft) and reaching 8,876 ft over several sub-summits needs well over 5,800 ft of gain, not 4,400.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "FA style (roped vs unroped)", "severity": "medium", "claims": [
+   {"field": "fa", "says": "Geof Childs & Larry Goldie, September 14, 2000 (first continuous roped ascent)"},
+   {"field": "overview", "says": "placing no protection and belaying no pitches other than two short rappels near Varden Col"},
+   {"field": "partner_requirements.fitnessSpec.hiking", "says": "the FA party took 14 hours car-to-car soloing almost the entire 3.5-mile ridge"}],
+  "why": "The FA line calls it a roped ascent while the overview and partner requirements say the FA party soloed and placed no protection.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "FA date vs crowds history", "severity": "low", "claims": [
+   {"field": "fa", "says": "September 14, 2000"},
+   {"field": "crowds.peakTraffic", "says": "A 2006 first-person account by one of the FA climbers describes the ridge as having 'remained seldom visited ... ' nearly two decades after the FA"}],
+  "why": "Two decades before a 2006 account puts the FA in about 1986, not 2000.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Season window", "severity": "low", "claims": [
+   {"field": "season", "says": "Jul-Sep"},
+   {"field": "seasonal_guidance.optimalWindow", "says": "Roughly late June through September"},
+   {"field": "best_season", "says": "August-September gave good documented conditions"}],
+  "why": "The optimal window starts in late June, before the July season start.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "SR-20 winter closure dates", "severity": "low", "claims": [
+   {"field": "road.seasonalGate", "says": "typically closed by snow from mid-November into spring; reopening ... historically mid-April to mid-June"},
+   {"field": "access.seasonal", "says": "closes gate-to-gate roughly early December–mid/late April"}],
+  "why": "The two fields give different closure and reopening windows for the same highway.",
+  "internal_resolution": null,
+  "needs_research": false}
+]},
+{"id": "wa_silver_star_ne_ridge", "name": "Northeast Ridge", "area": "Silver Star Mountain", "contradictions": []},
+{"id": "wa_silver_star_glacier", "name": "Silver Star Glacier", "area": "Silver Star Mountain", "contradictions": [
+ {"fact": "Route distance", "severity": "medium", "claims": [
+   {"field": "dist_km", "says": "6.4"},
+   {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "3.6 + 7.7 = 11.3"},
+   {"field": "waypoints[6].distMi", "says": "3.5"},
+   {"field": "waypoints[3].distMi", "says": "2.7"},
+   {"field": "pitch_detail[0].notes", "says": "gaining ~3,500 ft elevation over 3.5 miles"}],
+  "why": "Distance to Burgundy Col is 2.7 mi (waypoints), 3.5 mi (pitch_detail) or 3.6 mi (day 1). The round trip is 11.3 mi in the itinerary, about 7 mi from the waypoints, and 4.0 mi from dist_km.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Total gain", "severity": "medium", "claims": [
+   {"field": "gain_ft", "says": "4000"},
+   {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt", "says": "3500 + 900 = 4400"},
+   {"field": "loss_ft", "says": "4400"},
+   {"field": "waypoints[0].elev", "says": "4400"}],
+  "why": "The header gain of 4,000 ft is less than the 4,476 ft net rise from the 4,400 ft trailhead waypoint to the 8,876 ft summit, and less than the itinerary's 4,400.",
+  "internal_resolution": "itinerary total 4400 and loss_ft 4400 match; gain_ft 4000 is the outlier (and day 2's 900 ft is below the ~1,076 ft col-to-summit rise plus the col reclimb).",
+  "needs_research": true},
+ {"fact": "Summit-block grade", "severity": "medium", "claims": [
+   {"field": "grade", "says": "Class 3-4"},
+   {"field": "rock_grade", "says": "4th class"},
+   {"field": "pitch_detail[3].notes", "says": "true east summit is 5th class with serious fall exposure"},
+   {"field": "overview", "says": "finishing with a 3rd-to-low-5th-class rock scramble"}],
+  "why": "The header grades say Class 3-4 while ROUTE BREAKDOWN says the true summit is 5th class.",
+  "internal_resolution": "approach_variants[0].baseFinding explains it: class 3-4 via the ramp ~40 ft below the summit, low 5th if the ramp is missed. pitch_detail[3] states 5th class unconditionally and is the outlier.",
+  "needs_research": false},
+ {"fact": "Overnight permit", "severity": "medium", "claims": [
+   {"field": "access.permit", "says": "No climbing permit required; free self-issued wilderness permit for overnight"},
+   {"field": "access.overnight_permit.what", "says": "No overnight permit required"},
+   {"field": "bivy[0].permit", "says": "outside any designated wilderness — no quota, no reservation and no self-issue permit"}],
+  "why": "ACCESS says an overnight self-issue wilderness permit is needed, but the overnight-permit line and CAMPING say no permit and no wilderness.",
+  "internal_resolution": "overnight_permit, access.notes and all four bivy entries say no permit / non-wilderness; access.permit (from _raw) is the outlier.",
+  "needs_research": false},
+ {"fact": "Parking pass", "severity": "medium", "claims": [
+   {"field": "access.passRequired", "says": "None"},
+   {"field": "waypoints[0].note", "says": "Northwest Forest Pass needed to park."},
+   {"field": "pro_tips[2]", "says": "Carry a Northwest Forest Pass - the SR-20 pullout has no fee station but the trailhead requires one"}],
+  "why": "ACCESS says no pass is required while the trailhead waypoint and pro tips say a Northwest Forest Pass is needed.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Approach drainage (Silver Star Creek vs Burgundy Creek)", "severity": "medium", "claims": [
+   {"field": "partner_requirements.approachTime", "says": "Long approach via Silver Star Creek to the glacier basin"},
+   {"field": "hazards[4]", "says": "Wildfire deadfall and unstable burned slopes on the Silver Star Creek approach"},
+   {"field": "approach", "says": "climber's trail that climbs the timbered rib on the west (left) side of the Burgundy Creek drainage"}],
+  "why": "PARTNERS and KNOWN HAZARDS describe a Silver Star Creek approach, but the approach, waypoints and itinerary all use Burgundy Creek to Burgundy Col. The descent_text calls Silver Star Creek a less common alternative exit.",
+  "internal_resolution": "approach, approach_variants, waypoints and itinerary all use Burgundy Creek/Burgundy Col; partner_requirements.approachTime is the outlier.",
+  "needs_research": false},
+ {"fact": "Standard camp and its wind protection", "severity": "medium", "claims": [
+   {"field": "itinerary.days[0].note", "says": "Most parties push to Burgundy Col for a shorter summit day and better wind protection on a flat snowfield below the Chianti Spires"},
+   {"field": "pro_tips[0]", "says": "Many parties camp on the larch bench (~6,400 ft) rather than the more exposed, windier Burgundy Col"},
+   {"field": "bivy[0].notes", "says": "It is exposed to wind from both sides"},
+   {"field": "approach_variants[1].notes", "says": "it is the standard overnight for this peak"}],
+  "why": "The itinerary says most parties camp at the col for wind protection. Pro tips, CAMPING and the approach variant say the col is windy and the bench is the standard camp.",
+  "internal_resolution": "pro_tips, bivy[0], bivy[1] and approach_variants[1] agree the bench is standard and the col is windy; the itinerary note is the outlier.",
+  "needs_research": false},
+ {"fact": "Rappel required?", "severity": "low", "claims": [
+   {"field": "rappels", "says": "1"},
+   {"field": "descent_text", "says": "treat this as an optional, not mandatory, rappel"}],
+  "why": "RAPPELS states one rappel as a count, while the descent says it is optional and most parties downclimb.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Water at the Bench and the col", "severity": "low", "claims": [
+   {"field": "waypoints[2].note", "says": "a seasonal trickle nearby dries up by late summer"},
+   {"field": "bivy[1].water", "says": "a spring roughly ten minutes north of camp keeps running well into September in most years"},
+   {"field": "waypoints[3].note", "says": "the last snowmelt trickle before the glacier"},
+   {"field": "bivy[0].water", "says": "No spring or stream. Parties melt snow"}],
+  "why": "The waypoints and CAMPING disagree about whether the bench water lasts and whether the col has a trickle.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Early Winters Creek crossing elevation", "severity": "low", "claims": [
+   {"field": "waypoints[1].elev", "says": "4450"},
+   {"field": "waypoints[0].elev", "says": "4400"},
+   {"field": "approach", "says": "drop down the embankment roughly 150–200 ft to Early Winters Creek"}],
+  "why": "The creek crossing is placed 50 ft above the trailhead, although the approach drops 150-200 ft to reach it.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "SR-20 winter closure dates", "severity": "low", "claims": [
+   {"field": "comms", "says": "Highway 20 is accessible mid-April to December, weather permitting; typically closed Dec-Mar."},
+   {"field": "road.seasonalGate", "says": "Gated for winter roughly early December through mid-April/May"},
+   {"field": "access._raw.seasonal_closures", "says": "Year-round access with winter vehicle pass requirement"}],
+  "why": "The fields give different highway closure windows, and the raw access record claims year-round access.",
+  "internal_resolution": null,
+  "needs_research": false}
+]},
+{"id": "wa_vasiliki_ridge_standard", "name": "Standard Route (Ares Tower)", "area": "Vasiliki Ridge (Ares Tower high point)", "contradictions": [
+ {"fact": "Total gain", "severity": "high", "claims": [
+   {"field": "gain_ft", "says": "4123"},
+   {"field": "itinerary.days[0].gainFt", "says": "4400"},
+   {"field": "itinerary.totalNote", "says": "~7 mi and ~5,800 ft one-way to the summit"},
+   {"field": "bivy[0].notes", "says": "gains roughly 2,000 ft from the highway"}],
+  "why": "Day 1 claims 4,400 ft of gain to the Bench (6,460 ft) from a 4,300 ft pullout, about 2,200 ft really. The total note says 5,800 ft against gain_ft 4,123 (≈8,203 - 4,080).",
+  "internal_resolution": "gain_ft 4123 matches the waypoint elevations (creek 4,080 ft to summit 8,203 ft) and bivy's ~2,000 ft to the Bench; the itinerary gain figures are the outliers.",
+  "needs_research": false},
+ {"fact": "Distance", "severity": "medium", "claims": [
+   {"field": "dist_km", "says": "11.27"},
+   {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "3.3 + 7 = 10.3"},
+   {"field": "itinerary.totalNote", "says": "~7 mi and ~5,800 ft one-way to the summit"},
+   {"field": "waypoints[6].distMi", "says": "3.5"}],
+  "why": "The total note says 7 mi one-way to the summit, but the summit waypoint is at 3.5 mi (so ~7 mi round trip). The header shows 10.3 mi.",
+  "internal_resolution": "waypoints (col 3 mi, summit 3.5 mi) and dist_km 11.27 km ≈ 7 mi round trip agree; totalNote's 'one-way' and the itinerary's 10.3 mi are outliers.",
+  "needs_research": false},
+ {"fact": "Direction along Vasiliki Ridge from Burgundy Col", "severity": "medium", "claims": [
+   {"field": "itinerary.days[1].note", "says": "From camp, gain Burgundy Col and traverse south along Vasiliki Ridge"},
+   {"field": "timing.sectionBreakdown[1].note", "says": "traverse south along Vasiliki Ridge"},
+   {"field": "approach_variants[0].baseFinding", "says": "FROM THE BENCH OR THE COL, GO NORTH"},
+   {"field": "beta", "says": "From Burgundy Col, work north along/just below the ridge crest"}],
+  "why": "The itinerary and timing send the party south from the col, but the beta, approach, pitch_detail and base-finding all say north. The base-finding warns that going south puts you under the Wine Spires.",
+  "internal_resolution": "beta, approach, pitch_detail[0], waypoints[4].note and approach_variants all say north; itinerary/timing are the outliers.",
+  "needs_research": false},
+ {"fact": "Commitment grade", "severity": "medium", "claims": [
+   {"field": "grade", "says": "Grade II-III, 5th class"},
+   {"field": "commitment", "says": "I-II"},
+   {"field": "approach_variants[0].baseFinding", "says": "Two pitches, Grade II-III, fifth class"}],
+  "why": "The crux grade and approach text say Grade II-III while the commitment chip says I-II.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Nature of the technical climbing / pitch count", "severity": "low", "claims": [
+   {"field": "pitches", "says": "2"},
+   {"field": "approach_variants[0].baseFinding", "says": "climb two pitches, rappel back to your gear"},
+   {"field": "overview", "says": "essentially a 4th-class scramble to a notch ... finished by a short low-5th-class step"},
+   {"field": "pitch_detail[1].notes", "says": "Short, exposed roped move out of the notch"}],
+  "why": "The approach text says two roped pitches on the tower, while the overview and ROUTE BREAKDOWN describe a scramble with one short roped step.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Partner requirements describe a harder, multi-rappel objective", "severity": "medium", "claims": [
+   {"field": "partner_requirements.requiredSkills[2]", "says": "Multi-rappel descent competence (raps off towers/spires)"},
+   {"field": "partner_requirements.experienceLevel", "says": "comfortable leading moderate (5.7-5.8-ish) multi-pitch trad routes"},
+   {"field": "rappels", "says": "1 rappel from an old fixed anchor near the summit"},
+   {"field": "rock_grade", "says": "low-mid 5th class (4th class terrain plus one short low-5th-class/~5.4 step to the true summit)"}],
+  "why": "PARTNERS asks for multi-pitch 5.7-5.8 leading and multi-rappel descents, but the route is a 4th-class scramble with one ~5.4 step and a single rappel.",
+  "internal_resolution": "rappels, descent_text, rock_grade, overview and pitch_detail agree on one ~5.4 step and one rappel; partner_requirements (written generically for the Wine Spires) is the outlier.",
+  "needs_research": false},
+ {"fact": "Parking pass at the Wine Spires pullout", "severity": "medium", "claims": [
+   {"field": "access.passRequired", "says": "None at the unsigned 'Wine Spires' pullout used for this approach."},
+   {"field": "pro_tips[1]", "says": "The unsigned 'Wine Spires' pullout used for this approach does not require a Northwest Forest Pass"},
+   {"field": "bivy[0].permit", "says": "Northwest Forest Pass for the vehicle at the pullout below."}],
+  "why": "CAMPING says a Northwest Forest Pass is needed at the pullout, while ACCESS and pro tips say it is not.",
+  "internal_resolution": "access.passRequired, access.fees and pro_tips agree no pass at this pullout; bivy[0].permit is the outlier.",
+  "needs_research": false},
+ {"fact": "Timing section labels", "severity": "low", "claims": [
+   {"field": "timing.summitTimeHrs", "says": "4.5"},
+   {"field": "timing.sectionBreakdown[0]", "says": "section \"Climb\", fromTo \"Approach to high camp\", 4.5 hrs"},
+   {"field": "timing.sectionBreakdown[1]", "says": "section \"Descent\", fromTo \"Traverse to Ares Tower and out\", 11 hrs"}],
+  "why": "PUBLISHED TIMES labels the approach to camp as the climb/summit time and the whole summit day as the descent.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "SR-20 open season", "severity": "low", "claims": [
+   {"field": "waypoints[0].directions", "says": "open only seasonally, typically mid-April to about mid-November"},
+   {"field": "access.seasonal", "says": "closes gate-to-gate roughly early December–mid/late April"}],
+  "why": "The fields give different closure dates for the same highway.",
+  "internal_resolution": null,
+  "needs_research": false}
+]},
+{"id": "wa_south_face_direct", "name": "South Face Direct", "area": "Vasiliki Tower", "contradictions": [
+ {"fact": "Hardest grade", "severity": "high", "claims": [
+   {"field": "grade", "says": "5.10"},
+   {"field": "rock_grade", "says": "5.9"},
+   {"field": "overview", "says": "crack climbing to a 5.9 finish"},
+   {"field": "beta", "says": "hand crack (5.7) ... finger crack (5.8+) ... 15-foot traverse left (5.9), then a widening finger crack (5.7)"}],
+  "why": "The crux grade in TECHNICAL STATS says 5.10, while the grade chip and every pitch grade in the beta top out at 5.9.",
+  "internal_resolution": "rock_grade, overview and the per-pitch grades in beta all give 5.9 as the hardest move; grade 5.10 is the outlier.",
+  "needs_research": false},
+ {"fact": "Pitch count", "severity": "medium", "claims": [
+   {"field": "pitches", "says": "0"},
+   {"field": "beta", "says": "Described as a well-protected two- to three-pitch climb."}],
+  "why": "The header shows 0 pitches for a route whose beta describes two pitches.",
+  "internal_resolution": "beta describes a first and second pitch explicitly; pitches 0 is wrong.",
+  "needs_research": false}
+]},
+{"id": "wa_northwest_face", "name": "Mountaineers' Northwest Face", "area": "Vasiliki Tower", "contradictions": [
+ {"fact": "Summit elevation vs Burgundy Col", "severity": "medium", "claims": [
+   {"field": "high_point_ft", "says": "7663"},
+   {"field": "approach", "says": "roughly 3 miles to Burgundy Col (~7,800 ft)"},
+   {"field": "overview", "says": "A moderate, well-protected 2-pitch line up Vasiliki Tower's northwest face from Burgundy Col"}],
+  "why": "The route climbs 240 ft from Burgundy Col to the summit, yet the summit (7,663 ft) is listed below the col (~7,800 ft).",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_south_face", "name": "South Face", "area": "Vasiliki Tower", "contradictions": [
+ {"fact": "Pitch count", "severity": "medium", "claims": [
+   {"field": "pitches", "says": "3"},
+   {"field": "overview", "says": "A friendly two-pitch alpine rock route"},
+   {"field": "beta", "says": "Two-pitch technical rock climb"},
+   {"field": "pitch_detail", "says": "2 rows (1, 2)"}],
+  "why": "The header shows 3 pitches while the overview, beta and ROUTE BREAKDOWN all show two.",
+  "internal_resolution": "overview, beta and pitch_detail agree on 2; pitches 3 is the outlier.",
+  "needs_research": false},
+ {"fact": "Summit elevation vs Burgundy Col elevation", "severity": "medium", "claims": [
+   {"field": "high_point_ft", "says": "7663"},
+   {"field": "waypoints[3].elev", "says": "7663"},
+   {"field": "waypoints[2].elev", "says": "7950"},
+   {"field": "approach", "says": "Burgundy Col (~7,720 ft, ~3 hours)"},
+   {"field": "itinerary", "says": "Burgundy Col itself (~7,800 ft)"}],
+  "why": "The route climbs up from Burgundy Col and descends back down to it, yet the summit is listed below all three col elevations, which themselves differ by 230 ft.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Grade vs protection description", "severity": "low", "claims": [
+   {"field": "grade", "says": "5.6"},
+   {"field": "gear[0]", "says": "5.8-5.9 protection"}],
+  "why": "The gear list implies 5.8-5.9 climbing on a 5.6 route.",
+  "internal_resolution": "grade, rock_grade and pitch_detail (5.6, 5.5) agree; gear[0] is the outlier.",
+  "needs_research": false},
+ {"fact": "Season window", "severity": "low", "claims": [
+   {"field": "season", "says": "Jul-Sep"},
+   {"field": "best_season", "says": "Mid-June through late September ... Best conditions are typically late June through August."},
+   {"field": "climate.summer", "says": "Mid-June through August: Best season."}],
+  "why": "The prose puts the best conditions in June, before the July season start.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Land manager / pass", "severity": "low", "claims": [
+   {"field": "access.landManager", "says": "N/A"},
+   {"field": "access.land_manager", "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"},
+   {"field": "access.passRequired", "says": "N/A"},
+   {"field": "bivy[0].permit", "says": "Northwest Forest Pass for the vehicle at the pullout below."}],
+  "why": "ACCESS says the land manager and pass are N/A, while other fields name the land manager and require a pass.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Approach text names a different formation", "severity": "low", "claims": [
+   {"field": "approach", "says": "Burgundy Spire is reached from the basin/col area with a short additional scramble"},
+   {"field": "approach_variants[0].baseFinding", "says": "Vasiliki Tower is the formation standing on your LEFT as you arrive at the col"}],
+  "why": "The approach ends by describing how to reach Burgundy Spire instead of Vasiliki Tower.",
+  "internal_resolution": "approach_variants and waypoints describe Vasiliki Tower at the col; the approach's last sentence is copied from a Burgundy Spire route.",
+  "needs_research": false}
+]},
+{"id": "wa_gato_negro", "name": "Gato Negro", "area": "Whine Spire", "contradictions": [
+ {"fact": "Hardest grade", "severity": "high", "claims": [
+   {"field": "rock_grade", "says": "5.10d"},
+   {"field": "grade", "says": "5.10"},
+   {"field": "beta", "says": "fairly sustained 5.10a/b climbing"},
+   {"field": "pitch_detail[1].grade", "says": "5.10a/b"},
+   {"field": "waypoints[1].note", "says": "12-pitch alpine trad route (5.10a/b)"}],
+  "why": "The header grade pill shows 5.10d, while the beta, ROUTE BREAKDOWN, waypoint and rope note all put the route at 5.10a/b.",
+  "internal_resolution": "beta, pitch_detail, waypoints[1].note and rope_note all say 5.10a/b; rock_grade 5.10d is the outlier.",
+  "needs_research": false},
+ {"fact": "Pitch count", "severity": "medium", "claims": [
+   {"field": "pitches", "says": "12"},
+   {"field": "beta", "says": "spread across 11 long pitches"},
+   {"field": "pitch_detail", "says": "12 rows"}],
+  "why": "The beta says 11 pitches; every other field says 12.",
+  "internal_resolution": "pitches, pitch_detail, turnaround, itinerary, rope_note and waypoint all say 12; beta is the outlier.",
+  "needs_research": false},
+ {"fact": "County / ranger district / SAR", "severity": "high", "claims": [
+   {"field": "emergency.county", "says": "Skagit County"},
+   {"field": "emergency.rangerStation", "says": "Okanogan-Wenatchee National Forest - Marblemount Ranger District"},
+   {"field": "emergency.sheriffDispatch", "says": "Skagit County Sheriff (non-emergency): 360-428-3211"},
+   {"field": "access.land_manager", "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"},
+   {"field": "access.notes", "says": "this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"}],
+  "why": "EMERGENCY sends the party to Skagit County and a Marblemount district, while ACCESS puts the route in the Methow Valley Ranger District. The same pullout is Okanogan County on every sibling route.",
+  "internal_resolution": "access.land_manager and access.notes say Methow Valley RD (Okanogan County side of Washington Pass); the emergency block is the outlier.",
+  "needs_research": true},
+ {"fact": "Rope system for rappels", "severity": "medium", "claims": [
+   {"field": "rope_length_m", "says": "60"},
+   {"field": "rack[5]", "says": "Single 60m rope"},
+   {"field": "rappels", "says": "doubled ropes recommended"},
+   {"field": "bail", "says": "rappelling the line of the route on double ropes"}],
+  "why": "The kit is a single 60 m rope, while RAPPELS and BAILOUT call for double ropes.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Which face of Silver Star", "severity": "medium", "claims": [
+   {"field": "rope_note", "says": "Confirmed 12-pitch route on Whine Spire (west face of Silver Star)"},
+   {"field": "face", "says": "East face of Whine Spire (a sub-peak on the east side of Silver Star Mountain)"},
+   {"field": "aspect", "says": "E"}],
+  "why": "The rope note puts the route on the west face; face, aspect, overview and the approach variant all say east.",
+  "internal_resolution": "face, aspect, overview and approach_variants all say east; rope_note is the outlier.",
+  "needs_research": false},
+ {"fact": "Topout elevation", "severity": "medium", "claims": [
+   {"field": "waypoints[1].elev", "says": "7800"},
+   {"field": "waypoints[2].elev", "says": "8348"},
+   {"field": "high_point_ft", "says": "8348"}],
+  "why": "The Gato Negro topout waypoint is 548 ft below the summit at the same coordinates, and the route tops out on the spire.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Early-season advice", "severity": "medium", "claims": [
+   {"field": "best_season", "says": "Late June through early July is particularly recommended ... Avoid early season (June) when snow patches and ice may still be present at the base."},
+   {"field": "season", "says": "late Jun-Sep"},
+   {"field": "approach_variants[0].season", "says": "Jul-Sep"}],
+  "why": "The prose both recommends late June and says to avoid June, and the approach season starts in July.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Route length", "severity": "low", "claims": [
+   {"field": "length_m", "says": "457"},
+   {"field": "overview", "says": "This big, sustained 1,500-foot climb"},
+   {"field": "beta", "says": "Most pitches span 180-190 feet with none shorter than 150 feet"},
+   {"field": "pitches", "says": "12"}],
+  "why": "Twelve pitches of at least 150 ft (mostly 180-190) add up to 1,800-2,200 ft, not 1,500 ft.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Bench camp water", "severity": "low", "claims": [
+   {"field": "what_to_bring[1]", "says": "bench camp water is limited to absent by late summer/fall"},
+   {"field": "bivy[1].water", "says": "a spring roughly ten minutes north of camp keeps running well into September in most years"},
+   {"field": "approach", "says": "good camping and a late-season spring are near 6,400-6,500 ft"}],
+  "why": "GEAR says the bench is dry by late summer, while CAMPING and the approach describe a spring that lasts into September.",
+  "internal_resolution": "bivy[1] and approach agree on a late-season spring; what_to_bring is the outlier.",
+  "needs_research": false},
+ {"fact": "Approach text names a different formation", "severity": "low", "claims": [
+   {"field": "approach", "says": "Burgundy Spire is reached from the basin/col area with a short additional scramble"},
+   {"field": "approach_variants[0].notes", "says": "Drop off the east side and traverse south beneath the east faces."}],
+  "why": "The APPROACH ends at Burgundy Spire and never describes dropping east from the col to Whine Spire's east face.",
+  "internal_resolution": "approach_variants describes the correct continuation; the approach text is copied from a Burgundy Spire route.",
+  "needs_research": false}
+]},
+{"id": "wa_wild_child", "name": "Wild Child", "area": "Summertime Crag", "contradictions": []},
+{"id": "wa_lefty", "name": "Lefty", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Discipline (trad vs fully bolted)", "severity": "low", "claims": [
+   {"field": "discipline", "says": "trad"},
+   {"field": "pro_needs", "says": "No trad gear needed - fully bolted ('no widgets necessary')."}],
+  "why": "Labelled as a trad route, yet described as fully bolted with no trad gear.",
+  "internal_resolution": "pro_needs, gear, overview and pitch_detail all say fully bolted; discipline is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_friction_therapy", "name": "Friction Therapy", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Discipline (trad vs fully bolted)", "severity": "low", "claims": [
+   {"field": "discipline", "says": "trad"},
+   {"field": "detailed_rack", "says": "6 bolts to a bolted anchor with rap rings; quickdraws only."}],
+  "why": "Labelled as a trad route, yet described as quickdraws only.",
+  "internal_resolution": "detailed_rack, gear and pitch_detail agree it is bolted; discipline is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_caravan", "name": "Caravan", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Line after the 3rd bolt", "severity": "medium", "claims": [
+   {"field": "overview", "says": "shares its start with Chitlins Con Carne before breaking right at the third bolt"},
+   {"field": "beta", "says": "Same start as Chitlins Con Carne, but goes straight up after the 3rd bolt"},
+   {"field": "pitch_detail[0].notes", "says": "goes straight up after the 3rd bolt into a hard slab crux"}],
+  "why": "The overview says the route breaks right at the shared third bolt, but the beta says it goes straight up. That is the one move that tells it apart from Chitlins.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Approach gain", "severity": "low", "claims": [
+   {"field": "gain_ft", "says": "500"},
+   {"field": "approach", "says": "about a 20-25 minute walk with minimal elevation change"},
+   {"field": "waypoints[0].elev", "says": "5231 (same as the crag waypoint, 5231)"}],
+  "why": "The header shows 500 ft of gain for a walk described as having minimal elevation change, between trailhead and crag waypoints of the same elevation.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_django", "name": "Django", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Route length", "severity": "low", "claims": [
+   {"field": "length_m", "says": "21"},
+   {"field": "pitches", "says": "2"},
+   {"field": "pitch_detail[1].notes", "says": "~50 ft second pitch above the belay to a ledge with more chains."}],
+  "why": "A two-pitch route whose second pitch alone is ~50 ft (15 m) cannot total 21 m (69 ft) unless P1 is only ~6 m.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Approach gain", "severity": "low", "claims": [
+   {"field": "gain_ft", "says": "500"},
+   {"field": "approach", "says": "about a 20-25 minute walk with minimal elevation change"}],
+  "why": "The header shows 500 ft of gain for a walk described as having minimal elevation change.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_hottentot", "name": "Hottentot", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Protection on P2", "severity": "medium", "claims": [
+   {"field": "gear[0]", "says": "Quickdraws — Hottentot is a bolt-protected sport line at Summertime Crag, not a trad route"},
+   {"field": "gear[2]", "says": "common practice at this crag even though it's fully bolted"},
+   {"field": "pro_needs", "says": "P1 is bolted; P2's protection and grade are unresolved"}],
+  "why": "The gear list says the route is fully bolted, while PROTECTION says the protection on P2 is undocumented.",
+  "internal_resolution": "pro_needs, detailed_rack, pitch_detail, watch_out and overview all say P2 is unconfirmed; gear list overstates it.",
+  "needs_research": false},
+ {"fact": "Descent from P2", "severity": "low", "claims": [
+   {"field": "descent", "says": "Lower or rappel from the bolted chain anchors at the top of each pitch."},
+   {"field": "descent_text", "says": "the descent from the P2 slab is unknown"}],
+  "why": "One descent field asserts chain anchors atop each pitch; the other says the P2 descent is unknown.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Approach gain", "severity": "low", "claims": [
+   {"field": "gain_ft", "says": "500"},
+   {"field": "approach", "says": "about a 20-25 minute walk with minimal elevation change"}],
+  "why": "The header shows 500 ft of gain for a walk described as having minimal elevation change.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_chitlins_con_carne", "name": "Chitlins Con Carne", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Protection certainty", "severity": "low", "claims": [
+   {"field": "gear[0]", "says": "Quickdraws — this is a bolted sport route at Summertime Crag, no trad gear needed"},
+   {"field": "pro_needs", "says": "Not documented in detail; assume bolted per route type until confirmed on-site."},
+   {"field": "watch_out[0]", "says": "Little is known about this route — be ready to assess protection on lead."}],
+  "why": "The gear list states as fact that no trad gear is needed; PROTECTION and watch-outs say the protection is undocumented.",
+  "internal_resolution": null,
+  "needs_research": false},
+ {"fact": "Approach gain", "severity": "low", "claims": [
+   {"field": "gain_ft", "says": "500"},
+   {"field": "approach", "says": "about a 20-25 minute walk with minimal elevation change"}],
+  "why": "The header shows 500 ft of gain for a walk described as having minimal elevation change.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_summertime", "name": "Summertime", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Descent from the top", "severity": "low", "claims": [
+   {"field": "descent_text", "says": "The descent beyond the crux pitch is unknown"},
+   {"field": "itinerary", "says": "then rappel the route back to the base"},
+   {"field": "rappels", "says": "Descend via the route's chain anchors, including intermediate stations atop Caravan and Django"}],
+  "why": "The itinerary and RAPPELS state a rappel descent of the route, while DESCENT says the descent above the crux is unknown.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Approach gain", "severity": "low", "claims": [
+   {"field": "gain_ft", "says": "500"},
+   {"field": "waypoints[0].directions", "says": "The walk in is only 20 to 25 minutes with little elevation change."}],
+  "why": "The header shows 500 ft of gain for a walk described as having little elevation change.",
+  "internal_resolution": null,
+  "needs_research": true}
+]},
+{"id": "wa_alice_in_wonderland", "name": "Alice in Wonderland", "area": "Summertime Crag", "contradictions": [
+ {"fact": "Sport vs mixed protection", "severity": "medium", "claims": [
+   {"field": "gear[0]", "says": "Quickdraws for the bolted face pitch (it is a sport route)"},
+   {"field": "gear[1]", "says": "A few small cams or wires as optional backup ... though the line is bolt-protected"},
+   {"field": "pro_needs", "says": "Mixed: small trad gear low, then bolts through the crux roof."},
+   {"field": "beta", "says": "continue up a seam/crack with small gear"},
+   {"field": "discipline", "says": "trad"}],
+  "why": "The gear list calls it a sport route with optional cams, while PROTECTION, beta, rack and ROUTE BREAKDOWN say the lower seam needs small trad gear.",
+  "internal_resolution": "pro_needs, detailed_rack, beta and pitch_detail agree small gear is needed low; gear list is the outlier.",
+  "needs_research": false},
+ {"fact": "Lower-off distance", "severity": "low", "claims": [
+   {"field": "descent", "says": "Lower or rappel from the anchor back to the ground."},
+   {"field": "overview", "says": "A short continuation pitch that climbs directly out of the top of Summertime's first pitch"},
+   {"field": "length_m", "says": "12"}],
+  "why": "A 12 m pitch starting atop Summertime P1 cannot be lowered 'back to the ground' as a single pitch length implies.",
+  "internal_resolution": null,
+  "needs_research": true},
+ {"fact": "Approach gain", "severity": "low", "claims": [
+   {"field": "gain_ft", "says": "500"},
+   {"field": "approach", "says": "about a 20-25 minute walk with minimal elevation change"}],
+  "why": "The header shows 500 ft of gain for a walk described as having minimal elevation change.",
+  "internal_resolution": null,
+  "needs_research": true}
+]}
+]}

@@ -1,0 +1,128 @@
+{
+ "wa_prey": {
+  "area": "wa_osprey_wall",
+  "pitch_detail": [
+   {
+    "grade": "5.6",
+    "notes": "Bolted slab ending in a chute; 4 bolts, 30 m.",
+    "pitch": "P1 – First Flight"
+   },
+   {
+    "grade": "5.9+",
+    "notes": "Right-facing corner with a roof and bolted slab; 5 bolts + gear, 40 m.",
+    "pitch": "P2"
+   },
+   {
+    "grade": "5.10c",
+    "notes": "Roof systems and an arete on white marbled rock; 11 bolts, 30-40 m.",
+    "pitch": "P3 – The Money Pitch"
+   },
+   {
+    "grade": "5.9",
+    "notes": "Corner ramp becoming an open book, with two variations; 3 bolts + gear, 30 m.",
+    "pitch": "P4"
+   },
+   {
+    "grade": "5.10c",
+    "notes": "Arete finish; 3 bolts, 15 m.",
+    "pitch": "P5"
+   }
+  ]
+ },
+ "wa_rise_and_fall": {
+  "area": "wa_central_wall_area",
+  "pitch_detail": [
+   {
+    "crux": true,
+    "grade": "5.12a/b",
+    "notes": "Corner past 4 bolts, traverse left, up quartzite dike, crux past a roof.",
+    "pitch": 1
+   },
+   {
+    "crux": false,
+    "grade": "5.10a",
+    "notes": "Airy dike climbing past a roof to a small ledge belay.",
+    "pitch": 2
+   },
+   {
+    "crux": true,
+    "grade": "5.11d++",
+    "notes": "Crux: tenuous mantle and thin slab moves on quartzite.",
+    "pitch": 3
+   },
+   {
+    "crux": false,
+    "grade": "5.11c",
+    "notes": "Long varied slab, pockets, roofs, bulges, thin crux sections.",
+    "pitch": 4
+   },
+   {
+    "crux": false,
+    "grade": "5.10b",
+    "notes": "Overhanging blocky rock to anchor near top of Upper Town Wall; loose in places.",
+    "pitch": 5
+   }
+  ]
+ },
+ "wa_and_say": {
+  "area": "wa_lookout_point",
+  "pitch_detail": [
+   {
+    "crux": false,
+    "grade": "5.7",
+    "notes": "Use handline to reach corner, climb the corner.",
+    "pitch": 1
+   },
+   {
+    "crux": false,
+    "grade": "5.11b",
+    "notes": "Splitter finger crack, doubles in blue/yellow Metolius sizes.",
+    "pitch": 2
+   },
+   {
+    "crux": false,
+    "grade": "5.10a",
+    "notes": "More splitter, cruiser with a sting-in-the-tail finish, added bolt at end.",
+    "pitch": 3
+   },
+   {
+    "crux": false,
+    "grade": "5.11+",
+    "notes": "Crimpy start to crystal pocket and small overlap, then friction slab.",
+    "pitch": 4
+   },
+   {
+    "crux": true,
+    "grade": "5.11+",
+    "notes": "Splitter tips to first knuckle for 20ft, capped with steep bolted finish.",
+    "pitch": 5
+   }
+  ]
+ },
+ "wa_steel_pulse_2": {
+  "area": "wa_lookout_point",
+  "pitch_detail": [
+   {
+    "crux": false,
+    "grade": "5.10c",
+    "notes": "Slab traverse, right-facing corner, thin flake work, well bolted at crux.",
+    "pitch": 1,
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "grade": "5.10b",
+    "notes": "Slab crux near start, balance moves on short slab near anchor.",
+    "pitch": 2,
+    "lengthM": 18
+   },
+   {
+    "crux": false,
+    "grade": "5.10c",
+    "notes": "Layback cracks into upper slab climbing with bolt protection.",
+    "pitch": 3,
+    "lengthM": 30
+   }
+  ]
+ }
+}

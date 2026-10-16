@@ -1,0 +1,80 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "pitch"
+   ],
+   "fact": "pitch_detail leg distances above Peggy's Pond (2 + 1 + 1 + 0.5 mi) vs ~2 mi pond-to-summit"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "pitch"
+   ],
+   "fact": "pitch_detail leg distances above Peggy's Pond (2 + 1 + 1 + 0.5 mi) vs ~2 mi pond-to-summit"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "pitch"
+   ],
+   "fact": "pitch_detail leg distances above Peggy's Pond (2 + 1 + 1 + 0.5 mi) vs ~2 mi pond-to-summit"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    5,
+    "pitch"
+   ],
+   "fact": "pitch_detail leg distances above Peggy's Pond (2 + 1 + 1 + 0.5 mi) vs ~2 mi pond-to-summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 1 trail",
+      "notes": "Well-maintained switchback trail through forest and alpine meadows. Gain 2,150 ft. 1.5-2 hours.",
+      "pitch": "Cathedral Rock Trailhead to Cathedral Pass (4.5 miles)"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "Alpine meadow traverse with some snow patches possible. Elevation 5,600 ft. 30-45 minutes.",
+      "pitch": "Cathedral Pass to Peggy's Pond (1 mile)"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Braided cat-trails through alpine meadows, then scrambling over talus and scree. Faint climber's trail over rocky terrain. 1-1.5 hours.",
+      "pitch": "Peggy's Pond to Southeast Ridge saddle (2 miles)"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Exposed scrambling with significant drop-offs. Loose, steep scree. Class 3 gendarmes and moves. 45 min-1 hour.",
+      "pitch": "Southeast Ridge saddle to East Summit (1 mile)"
+     },
+     {
+      "grade": "Class 2 glacier",
+      "notes": "Descend from East Summit, enter Daniel Glacier, traverse west on moderate-angle glacier with potential crevasses. 45 min-1.5 hours depending on conditions.",
+      "pitch": "East Summit to Middle Summit via Daniel Glacier (1 mile)"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Final scramble along ridge to highest summit (true Mount Daniel). Exposed but brief. 30-45 minutes.",
+      "pitch": "Middle Summit to West Summit (0.5 miles)"
+     }
+    ]
+   }
+  }
+ ]
+}

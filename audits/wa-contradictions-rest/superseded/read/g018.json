@@ -1,0 +1,360 @@
+{
+ "batches": ["b069.json", "b070.json", "b071.json", "b072.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_fortune_peak_standard_route",
+   "name": "Standard Route (Esmeralda Basin – Lake Ann Pass)",
+   "area": "Fortune Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_fortune_peak_east_slope",
+   "name": "East Slope Route (Headlight Basin)",
+   "area": "Fortune Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "name": "Standard Scramble",
+   "area": "Iron Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the route carries a formal class rating",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade / grade_system / grade_num", "says": "\"Class 2\" / \"class\" / 2"},
+      {"field": "beta", "says": "no published account gives a formal YDS class rating for this scramble."},
+      {"field": "pitch_detail[1].notes", "says": "~350 vertical feet of off-trail, unrated scrambling ... no formal class rating is published."}
+     ],
+     "why": "The structured grade field (which drives the header pill) asserts a specific rating, Class 2, while the prose and the pitch breakdown explicitly deny any formal rating exists for this scramble.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Name/identity of the trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.approachTime", "says": "Roughly 2-3 hours from the Beverly Creek/Iron Peak trailhead to the saddle/scramble start"},
+      {"field": "approach_logistics.trailhead", "says": "De Roux Creek Campground Trailhead"},
+      {"field": "waypoints[0].name", "says": "Iron Peak Trailhead (Trail #1399)"},
+      {"field": "road.driveNote", "says": "...to the signed Iron Peak Trailhead (#1399), just past the De Roux Campground turnoff."}
+     ],
+     "why": "partner_requirements names the start point as the 'Beverly Creek/Iron Peak trailhead,' but Beverly Creek trailhead is a different, separate trailhead used for Earl/Navaho-side approaches (per the shared bivy fields); every other field on this route names only the De Roux/Iron Peak trailhead on FR 9737. A climber could be misdirected to the wrong parking area.",
+     "internal_resolution": "approach, road, waypoints, and approach_logistics unanimously name the De Roux/Iron Peak trailhead; the 'Beverly Creek' mention in partner_requirements is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance and gain",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "roughly 9-mile round trip with about 3,700 ft of gain"},
+      {"field": "gain_ft", "says": "2710"},
+      {"field": "itinerary.days[0].miles / gainFt", "says": "7.5 mi / 2500 ft"},
+      {"field": "dist_km", "says": "6.1 (≈3.79 mi one-way ≈7.6 mi round trip)"},
+      {"field": "waypoints", "says": "Trailhead 3,800 ft (distMi 0) to Summit 6,510 ft (distMi 3.7)"}
+     ],
+     "why": "partner_requirements states 9 mi / 3,700 ft, roughly 20% and 37% higher respectively than every other figure on the route (gain_ft, itinerary, dist_km, and the waypoint elevations/distances, which are mutually consistent at ~7.4-7.6 mi RT / ~2,500-2,710 ft gain).",
+     "internal_resolution": "gain_ft (2,710 ft) exactly matches the waypoint elevation difference (3,800→6,510 ft); itinerary and dist_km agree closely with each other and with the waypoints. partner_requirements' 9 mi/3,700 ft is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "name": "South Slopes",
+   "area": "Navaho Peak",
+   "contradictions": [
+    {
+     "fact": "Distance and gain to Navaho Pass",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].note", "says": "follow Stafford Creek through meadows to Navaho Pass (~4.5 mi, ~2,100 ft gain)"},
+      {"field": "itinerary.days[0].schedule[1].detail", "says": "~4.5 miles and 2,100 ft gained through Stafford Creek Meadows; junction with the old County Line Trail."},
+      {"field": "timing.sectionBreakdown[0].note", "says": "...to Navaho Pass (~4.5 mi, ~2,100 ft gain)..."},
+      {"field": "waypoints", "says": "Navaho Pass at distMi 5.85, elev 6,000 ft (trailhead 3,100 ft, i.e. ~2,900 ft gain)"},
+      {"field": "approach", "says": "...before a final push to Navaho Pass (~6,000 ft) around mile 5 ... figure roughly 3,000 ft of gain spread over the approach"}
+     ],
+     "why": "The itinerary's own reach-the-pass checkpoint (4.5 mi / 2,100 ft) disagrees with the waypoint list and approach prose (5.85 mi / ~2,900-3,000 ft) by about 30-40%. It is also internally inconsistent: if the pass were really at 4.5 mi and the summit push is ~1 mi (per pitch_detail/waypoints), the round trip would be ~11 mi, not the 13 mi the same itinerary states as its own total.",
+     "internal_resolution": "Waypoints (distMi 5.85 to the pass, elev 6,000 ft) and the approach text ('around mile 5', '~3,000 ft gain') agree closely with each other and with the itinerary's own 13-mi round-trip total; the itinerary's '4.5 mi, 2,100 ft' checkpoint is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Mileage of the Standup Creek Trail junction",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "reaching a signed junction with the Standup Creek Trail (#1369) at about 3.5–3.8 miles; this crossing of Stafford Creek is the last reliable, easy water source..."},
+      {"field": "waypoints", "says": "'Standup Creek Trail junction' at distMi 4.85, note: 'about 1 mile below Navaho Pass'"},
+      {"field": "waypoints", "says": "'Stafford Creek crossing, Stafford Creek Meadows' (separate Water waypoint) at distMi 3.5"}
+     ],
+     "why": "The approach text conflates the water crossing (3.5 mi) with the Standup Creek Trail junction, placing the junction at 3.5-3.8 mi, but the waypoint list — internally consistent with the pass at 5.85 mi ('about 1 mile below Navaho Pass' = 4.85 mi) — puts the junction 1.3+ miles further up trail.",
+     "internal_resolution": "The waypoint list is self-consistent (junction is exactly 1 mi below the pass); the approach text's merged '3.5-3.8 mi' figure for the junction is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance of the final summit push from Navaho Pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitch_detail[1].notes", "says": "gaining the final ~1,000-1,200 ft over roughly one mile to the summit block"},
+      {"field": "climbing_route[0].notes", "says": "gaining the final 1,100–1,200 ft to the 7,223 ft summit over about 0.7–0.8 mile"},
+      {"field": "waypoints", "says": "Navaho Pass distMi 5.85 → Summit distMi 6.85 (diff = 1.0 mile)"}
+     ],
+     "why": "climbing_route states a notably shorter distance (0.7-0.8 mi) for the same final ridge segment that pitch_detail and the waypoint list put at ~1.0 mile — a ~25-30% difference for a short, exposed section relevant to pacing.",
+     "internal_resolution": "The waypoint distMi difference (5.85→6.85 = 1.0 mi) matches pitch_detail; climbing_route's 0.7–0.8 mi is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Name of the trail from the trailhead to Navaho Pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitch_detail[0]", "says": "pitch: \"Trail to Navaho Pass\"; notes: \"County Line Trail from Stafford Creek trailhead to Navaho Pass (~5.5 mi one-way, ~3,000 ft gain) -- maintained trail\""},
+      {"field": "beta", "says": "The standard route follows the Stafford Creek Trail to Navaho Pass, then picks up the old County Line Trail heading east..."},
+      {"field": "waypoints", "says": "'Navaho Pass' note: 'Junction with the old County Line Trail (Cascade Creek Trail #1217)'"}
+     ],
+     "why": "pitch_detail labels the entire trailhead-to-pass segment as the 'County Line Trail,' but every other field (beta, approach, waypoints) identifies that segment as Stafford Creek Trail #1359, and identifies the County Line Trail as the DIFFERENT trail picked up only after reaching the pass.",
+     "internal_resolution": "beta, approach and the waypoint note agree the trailhead-to-pass trail is Stafford Creek Trail #1359 and County Line Trail begins at the pass; pitch_detail[0]'s naming is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window (does it include October?)",
+     "severity": "low",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "October brings golden larches on the lower approach and clear, cool weather but shorter days."},
+      {"field": "seasonal_guidance.monthBreakdown.October.status", "says": "marginal"}
+     ],
+     "why": "The season chip excludes October, but best_season positively describes October conditions and seasonal_guidance still rates October as climbable ('marginal', not excluded), which could read as inconsistent to a climber checking whether an October trip is viable.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "name": "Multi-Summit Scramble",
+   "area": "Garfield Mountain",
+   "contradictions": [
+    {
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing",
+     "severity": "high",
+     "claims": [
+      {"field": "grade / grade_num", "says": "\"Class 3\" / 3"},
+      {"field": "rock_grade", "says": "Class 4 scrambling on the standard line; a short 5.4 pitch on Beckey's optional 'Chimney Variation'"},
+      {"field": "hazards", "says": "mandatory 5th-class climbing and roped rappels on every documented line (South Route, Southwest Ledges 5.3, Infinite Bliss 5.10c); this is not scrambling terrain despite the local nickname"},
+      {"field": "gear", "says": "rope and full rack mandatory on every established line, not optional... the classic South Route needs a full trad rack..."},
+      {"field": "overview", "says": "every summit actually requires roped technical climbing... the classic South Route... involving sustained 5th-class terrain"}
+     ],
+     "why": "The header grade ('Class 3') implies non-technical scrambling, but rock_grade, hazards, gear and the overview all explicitly state mandatory roped 5th-class climbing and rappels are required — a climber relying on the grade pill alone would badly underestimate the objective's seriousness.",
+     "internal_resolution": "rock_grade, hazards, gear and overview unanimously describe mandatory 5th-class climbing; the 'Class 3' grade field is the outlier (likely reflecting the mountain's informal 'scramble' nickname the hazards field explicitly disclaims).",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window (does it include June and/or October?)",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep, bone dry conditions required"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through October, with the driest and least brushy conditions typically in August-September"},
+      {"field": "best_season", "says": "July–August typically most reliable; the route can be dry as early as June..."},
+      {"field": "itinerary.cal", "says": "Best done June-August once winter snow/ice has cleared the slabs"},
+      {"field": "climate.typical", "says": "a reliable window of roughly June through September (July–August most consistent)"}
+     ],
+     "why": "Multiple fields describe June or October as viable/possible, while season states a hard 'Jul-Sep, bone dry conditions required' window; because the route is explicitly dangerous when not bone dry, planning off the wider June/October-inclusive fields could put a party on wet, unsafe rock.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total number of rappels on the standard descent",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Roughly 6-9 rope-length rappels on descent"},
+      {"field": "descent_text", "says": "...six double-rope rappels through the gully... a single-rope rappel off the steep step on the wooded ramp, and two more double-rope rappels getting off the base of the slab (~2,900 ft) — on the order of 10 rappels total on a typical South Route descent. [preceded by] reverse the ridge with a single-rope rappel down to the col"},
+      {"field": "waypoints (Summit note)", "says": "descend via six double-rope rappels down the #2 Gully"},
+      {"field": "itinerary.days[0].schedule", "says": "Six double-rope rappels (two 60m ropes recommended) on bolted and tree anchors"}
+     ],
+     "why": "The structured rappels field ('6-9') and several summary fields (waypoint note, itinerary schedule, overview) that cite a flat 'six' undercount the descent_text's own itemized total, which sums to about 10 once the summit-to-col rappel is included.",
+     "internal_resolution": "descent_text's own itemization (1 + 6 + 1 + 2 = 10) is the most detailed accounting; the 'six' figure repeated elsewhere and the rappels field's '6-9' both omit the initial summit-to-col rappel.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total car-to-car time vs. the itinerary's own schedule",
+     "severity": "low",
+     "claims": [
+      {"field": "timing.totalHrs / itinerary.days[0].hours", "says": "13"},
+      {"field": "itinerary.days[0].schedule", "says": "Leave trailhead 4:00 AM ... Back at trailhead 6:00-7:00 PM"}
+     ],
+     "why": "4:00 AM to 6:00-7:00 PM is 14-15 elapsed hours, not the 13 hours stated as the total — a modest (~1-2 hr) internal mismatch on a route where turnaround/benightment timing is safety-relevant.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_southwest_ledges",
+   "name": "Southwest Ledges",
+   "area": "Garfield Mountain",
+   "contradictions": [
+    {
+     "fact": "Number of times the route crosses the Infinite Bliss line",
+     "severity": "medium",
+     "claims": [
+      {"field": "bail", "says": "the route crosses Infinite Bliss twice: at the base of IB pitch 8 and again on the ledge level with IB pitch 11, and above the top of IB pitch 15."},
+      {"field": "pro_tips", "says": "those crossings are your handrails for navigation and your bail points (names only pitch 8 and pitch 11)"}
+     ],
+     "why": "The bail field states the crossing happens 'twice' but then names three separate crossing points (pitch 8, pitch 11, and above pitch 15) in the same sentence — a party using this field to plan a retreat gets a self-contradictory count.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_infinite_bliss",
+   "name": "Infinite Bliss",
+   "area": "Garfield Mountain",
+   "contradictions": [
+    {
+     "fact": "Typical climbing time to the top",
+     "severity": "low",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "6"},
+      {"field": "itinerary", "says": "a typical strong party takes ~7 hours up and 3 hours down plus the approach"}
+     ],
+     "why": "The structured timing field (6 hrs) and the itinerary prose (~7 hrs) for the same 'typical' climbing time differ by about an hour (~14%).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "name": "South Route (Main Peak)",
+   "area": "Garfield Mountain",
+   "contradictions": [
+    {
+     "fact": "Total number of rappels on descent",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "~9 rappels on descent: about 6 double-rope raps (two 60 m ropes) down #2 Gully, a single-rope rap off the wooded ramp, and two double-rope raps down the slab"},
+      {"field": "descent_text", "says": "From the summit scramble down to the top of the easy slab and rig a single-rope rappel to the col at the top of #2 Gully. From there ... make the first of about six double-rope rappels ... make a single-rope rappel off the steep section of the wooded ramp ... Two more double-rope rappels land you at the base of the slab..."}
+     ],
+     "why": "descent_text describes an additional single-rope rappel from the summit down to the col (before the six gully rappels) that the rappels field's component list (6+1+2=9) does not include, making the actual total closer to 10.",
+     "internal_resolution": "descent_text's step-by-step account is more detailed and includes the summit-to-col rappel the rappels field omits.",
+     "needs_research": false
+    },
+    {
+     "fact": "How the day's time is split between approach and climbing to the summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing", "says": "approachTimeHrs: 1, summitTimeHrs: 8, descentTimeHrs: 7.5, totalHrs: 16"},
+      {"field": "itinerary", "says": "one documented ascent left the car at 6:45 a.m., summited at 2:45 p.m. (8 hrs), started down at 3:30 p.m. and reached the car at 11:05 p.m. (7h35m)"},
+      {"field": "overview / turnaround", "says": "4,400 feet of dirt gully, brush, slab and ledge navigation from the Middle Fork road to the Y Notch, then four or five pitches of loose... climbing up #2 Gully"}
+     ],
+     "why": "An approachTimeHrs of only 1 hour is inconsistent with the route's own description of a multi-hour brushy approach (dirt gully, slab, razorback, Glade Saddle, Key Ledge Traverse, Y Notch) before the technical #2 Gully climbing even starts. If summitTimeHrs (8 hrs) already represents the full car-to-summit span (matching the itinerary's 6:45am-2:45pm), approachTimeHrs=1 has no time left to represent, yet it's labeled as if it's a distinct component.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_leaning_spire_west_route",
+   "name": "Leaning Spire West Route",
+   "area": "Garfield Mountain",
+   "contradictions": [
+    {
+     "fact": "Time required to reach the Y Notch (start of this route's own terrain)",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary", "says": "Beckey's twelve-hour minimum for the South Route approach terrain still applies before you even reach the Y."},
+      {"field": "timing.approachTimeHrs", "says": "5"}
+     ],
+     "why": "The itinerary text states a 12-hour minimum applies just to reach the Y Notch, but that 12-hour figure is Beckey's stated minimum for the ENTIRE South Route ascent (car to summit) on the sibling route, not merely to reach the Y Notch; the route's own approachTimeHrs field puts that same segment at 5 hours.",
+     "internal_resolution": "approachTimeHrs (5 hrs) is plausible given the shared approach's own waypoint timing (e.g. Glade Saddle reached ~3 hrs in on the sibling route); the itinerary's '12-hour minimum... before you even reach the Y' appears to conflate the whole-route minimum with just the approach segment.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_preiss_route",
+   "name": "Preiss Route",
+   "area": "Garfield Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "name": "North Route",
+   "area": "Mount Price",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "a long day (roughly 15 miles round trip with 4,000+ ft gain) or overnight."},
+      {"field": "itinerary.totalNote / itinerary.days[0].miles", "says": "roughly 10 miles round trip with 4,100 ft of gain / 10"},
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "comfortable with a long day (~10 mi round trip, 4,000+ ft gain)"},
+      {"field": "waypoints (Summit)", "says": "distMi 7.8 (one-way)"},
+      {"field": "dist_km", "says": "10.5 (≈6.5 mi)"}
+     ],
+     "why": "The approach field states a 15-mile round trip, matching the waypoint list (7.8 mi one-way ≈ 15.6 mi round trip), while the itinerary and partner_requirements both state ~10 miles round trip — a >50% discrepancy that would materially mislead pacing on a route that already runs 10.5 hours and warns of finishing after dark.",
+     "internal_resolution": "The waypoint list's one-way distance (7.8 mi, summing the individual waypoint distMi values) and the approach text's '15 miles round trip' agree closely; the itinerary's/partner_requirements' '10 miles round trip' is the outlier. dist_km (6.5 mi) also does not match either figure cleanly.",
+     "needs_research": false
+    },
+    {
+     "fact": "Name of the approach trail",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.approachTime", "says": "long - Snow Lake trail approach plus a slow, brush-heavy off-trail gain to the north slopes..."},
+      {"field": "crowds.estimatePerSeason", "says": "...the Snow Lake trail itself is one of the most heavily used trails near Seattle, but very few hikers leave the maintained trail to continue up Mount Price's brushy north slopes..."},
+      {"field": "approach", "says": "Hike Dingford Creek Trail about 3 miles, then follow the unmaintained Hester Lake Trail and off-trail terrain..."},
+      {"field": "approach_logistics.trailhead", "says": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)"}
+     ],
+     "why": "Two fields (partner_requirements and crowds) name 'Snow Lake trail' as this route's approach, but Snow Lake Trail is a real, well-known, geographically unrelated trailhead (near Snoqualmie Pass); every other field on this route consistently names the Dingford Creek Trail / Hester Lake Trail as the approach. This reads as copy/paste contamination from an unrelated route and could send a climber to the wrong trailhead.",
+     "internal_resolution": "Waypoints, approach, road, and approach_logistics unanimously name Dingford Creek Trailhead/Trail and Hester Lake Trail; 'Snow Lake trail' appears only in the two outlier fields.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window (does it include October?)",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Sep"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "August is peak conditions; mid-July through October is the viable window"},
+      {"field": "access.notes", "says": "Climbable roughly June–October..."},
+      {"field": "waypoints (Dingford Creek Trailhead) note", "says": "...roughly July through October."}
+     ],
+     "why": "Three separate fields (seasonal_guidance, access.notes, and the trailhead waypoint note) state the climbable window runs through October, while the season chip cuts off at September.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Whether a parking pass/fee is required at the trailhead",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.fees", "says": "No fee at the trailhead"},
+      {"field": "access.permit", "says": "None required — free self-issue day-use permit at the trailhead (no quota for day use)."},
+      {"field": "access.passRequired", "says": "None currently — Dingford Creek Trailhead is a fee-free USFS site (no Northwest Forest Pass charged as of the current USFS trailhead listing)"},
+      {"field": "access.parking_pass", "says": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads."}
+     ],
+     "why": "Three of the four access subfields (fees, permit, passRequired) agree no fee/pass is charged at this specific trailhead, while access.parking_pass directly states a Northwest Forest Pass is required — a climber could either buy an unnecessary pass or, worse, skip a pass another field implies is needed.",
+     "internal_resolution": "fees/permit/passRequired agree and give a specific reason (fee-free USFS site); parking_pass reads like generic boilerplate and is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether avalanche hazard applies to this route",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer/fall scramble route; ... falls outside the snow-covered period this route is normally climbed in"},
+      {"field": "obj_haz", "says": "Steep snow with avalanche potential on the ridge in shoulder season"},
+      {"field": "pro_tips", "says": "Some lingering snow into early summer eases the devil's club brush low on the route but adds avalanche exposure higher up"}
+     ],
+     "why": "seasonal_hazards explicitly rates avalanche exposure N/A, but the route's own hazard list and pro_tips warn of real avalanche potential on the ridge in shoulder/early season — the exact 'no avalanche terrain vs. an avalanche hazard listed' contradiction pattern, safety-relevant on a route that also flags 'Steep snow with avalanche potential' as a top-level hazard.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_price_hester_lake_route",
+   "name": "Hester Lake Route",
+   "area": "Mount Price",
+   "contradictions": []
+  }
+ ]
+}

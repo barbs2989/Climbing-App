@@ -1,0 +1,96 @@
+{"file": "r065.json", "results": [
+ {"id": "wa_north_ridge_7",
+  "fact": "Crux grade: `grade` field ('4th' class) vs rock_grade/pitch_detail (5.5)",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "grade '5.5' (yds)",
+  "evidence": "rock_grade, overview, beta, pitch_detail[1] and the Summit waypoint note all give the 40-ft crux pitch as 5.5; `grade`='4th' is the lone outlier. An established guide service's route profile grades the route 5.5 with a final 40-ft 5.5 pitch. A route database lists it 5.3 and calls the crux step 4th class, so external sources split between 5.3 and 5.5; the row overwhelmingly plus one source agree on 5.5. grade_num left untouched (derived).",
+  "sources": ["https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/", "https://www.mountainproject.com/route/109252305/north-ridge", "https://www.mountainproject.com/area/109252144/aiguille-de-lm"],
+  "patches": [
+   {"id": "wa_north_ridge_7", "fact": "Crux grade: `grade` field ('4th' class) vs rock_grade/pitch_detail (5.5)", "op": "set", "column": "grade", "path": [], "expect": "4th", "value": "5.5"},
+   {"id": "wa_north_ridge_7", "fact": "Crux grade: `grade` field ('4th' class) vs rock_grade/pitch_detail (5.5)", "op": "set", "column": "grade_system", "path": [], "expect": "class", "value": "yds"}
+  ]},
+ {"id": "wa_north_ridge_7",
+  "fact": "Route finish: does the route continue past the tower via one more pitch to 'the summit', or stop at/rappel from the tower?",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "The route ends on top of the short tower; the loose true summit beyond is not climbed; descent is one ~40-ft rappel.",
+  "evidence": "overview, beta, pitch_detail[1], descent, descent_text, pro_tips, hazards and approach_variants baseFinding all end the route on the tower top. The guide-service profile says the climb ends atop the tower and that continuing to the true summit is not recommended because it looks ready to topple. A route database describes a further short 4th-class pitch to a tiny summit (the likely origin of detailed_rack's wording), so sources differ; the row overwhelmingly plus one source agree on ending at the tower.",
+  "sources": ["https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/", "https://www.mountainproject.com/route/109252305/north-ridge"],
+  "patches": [
+   {"id": "wa_north_ridge_7", "fact": "Route finish: does the route continue past the tower via one more pitch to 'the summit', or stop at/rappel from the tower?", "op": "replace_text", "column": "detailed_rack", "path": [], "find": "leading to a short tower, followed by one more short 4th class pitch to the summit.", "replace": "leading to the top of a short tower, where the route ends."}
+  ]},
+ {"id": "wa_north_ridge_7",
+  "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary/bivy (6,400 ft)",
+  "verdict": "fixed",
+  "correct_value": "Boston Basin high camp ~6,400 ft (low camp ~5,300 ft)",
+  "evidence": "Two independent guide services running Boston Basin trips both give low camp 5,300 ft and high camp 6,400 ft. The row's itinerary, bivy[1].elev, beta and access.rules already say 6,400 ft; only the approach prose said ~6,000 ft.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://www.mountainbureau.com/scheduled-programs-blog/north-cascades-boston-basin-3day"],
+  "patches": [
+   {"id": "wa_north_ridge_7", "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary/bivy (6,400 ft)", "op": "replace_text", "column": "approach", "path": [], "find": "to reach the popular Boston Basin high camp around 6,000 ft", "replace": "to reach the popular Boston Basin high camp around 6,400 ft"}
+  ]},
+ {"id": "wa_north_ridge_7",
+  "fact": "Approach distance to Boston Basin high camp: itinerary '~2.5 mi' vs approach prose 'roughly 3-4 miles one-way'",
+  "discovered": true,
+  "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The itinerary says ~2.5 mi to high camp while the approach prose says roughly 3-4 miles one-way (and the Summit waypoint distMi is 4.5). One guide service gives 3-4 miles for the Boston Basin approach; no second independent figure for the high-camp distance was found, so no patch.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/"],
+  "patches": []},
+ {"id": "wa_south_ridge_6",
+  "fact": "Pitch count: `pitches` (5) vs pitch_detail's numbered rows (only 4 accounted for)",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "5 pitches: P1 4th class, P2 low 5th to a notch below a gendarme, P3 5.6 crux around the gendarme, P4 low 5th to the cockscomb, P5 low 5th to the summit",
+  "evidence": "pitches=5, the itinerary ('the 5 pitches'), detailed_rack (5.6 crux on pitch 3, belay at the P2/P3 notch below the gendarme) and pro_needs (pitch 3 crux, belayers on pitch 2) all describe a five-pitch route with the crux on P3. The only published description of this 2014 route gives exactly five pitches: 4th, low 5th, 5.6 crux bypassing the gendarme on the right, low 5th, low 5th. pitch_detail rewritten into five rows in original wording; its old 'good quality rock' note also contradicted the loose/lichen-covered rock stated elsewhere on the row.",
+  "sources": ["https://www.mountainproject.com/route/109252448/south-ridge"],
+  "patches": [
+   {"id": "wa_south_ridge_6", "fact": "Pitch count: `pitches` (5) vs pitch_detail's numbered rows (only 4 accounted for)", "op": "set", "column": "pitch_detail", "path": [],
+    "expect": [{"grade": "Class 4 to 5.5", "notes": "Exposed ridge scrambling and light climbing. Follow ridge line toward summit cone.", "pitch": "1-3"}, {"grade": "5.6", "notes": "Most technical section. Good quality rock with crack systems. Place solid protection and belay carefully.", "pitch": "4"}],
+    "value": [
+     {"pitch": "1", "grade": "Class 4", "notes": "Leave the snowfield, move right, then head straight up to reach the ridge crest."},
+     {"pitch": "2", "grade": "Low 5th", "notes": "Follow the crest to a small notch at the foot of a gendarme; belay here, out of the fall line of the next pitch."},
+     {"pitch": "3", "grade": "5.6", "notes": "Crux. Get round the gendarme on its right side, where the rock is firmer, then climb back onto the crest."},
+     {"pitch": "4", "grade": "Low 5th", "notes": "Airy ridge climbing up to the cockscomb. Loose and lichen-covered rock in places."},
+     {"pitch": "5", "grade": "Low 5th", "notes": "On to the summit; this stretch goes most smoothly as two or three short pitches."}
+    ]}
+  ]},
+ {"id": "wa_south_ridge_6",
+  "fact": "Descent method: rappels/itinerary say descend via the North Ridge (1 rappel), but descent/descent_text/bail describe reversing the South Ridge itself",
+  "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The only published description of this route says to descend via the North Ridge (whose descent is a single ~40-ft rappel then reversing that ridge, per a guide-service profile of the North Ridge). Within the row, rappels and itinerary say North Ridge while descent and descent_text say reverse the South Ridge (bail concerns mid-route retreat). Only one source addresses the South Ridge descent and the row is split 2-2, so no patch under the two-source rule; likely answer is descend the North Ridge.",
+  "sources": ["https://www.mountainproject.com/route/109252448/south-ridge", "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/"],
+  "patches": []},
+ {"id": "wa_south_ridge_6",
+  "fact": "Crux pitch number: pro_needs/detailed_rack call it pitch 3; pitch_detail's row is labeled 4",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "The 5.6 crux is pitch 3",
+  "evidence": "pro_needs and detailed_rack both put the crux on pitch 3 around the gendarme, and the published pitch-by-pitch description puts the 5.6 crux on pitch 3. Resolved by the same pitch_detail set patch listed under the pitch-count contradiction (not repeated here to avoid a double compare-and-set).",
+  "sources": ["https://www.mountainproject.com/route/109252448/south-ridge"],
+  "patches": []},
+ {"id": "wa_south_ridge_6",
+  "fact": "gain_ft (1,900 ft) is implausibly low for this route's own trailhead-to-summit elevation difference (~4,000 ft)",
+  "verdict": "fixed",
+  "correct_value": "4000",
+  "evidence": "The Boston Basin trailhead is at 3,200 ft (two guide services, matching the row's trailhead waypoint) and the Aiguille de l'M is 7,200 ft (route database area elevation, matching high_point_ft and the Summit waypoint). Minimum car-to-summit gain is therefore 4,000 ft, exactly the sibling North Ridge's gain_ft for the same trailhead and summit; 1,900 ft is impossible. No loss_ft or itinerary gain numbers exist on the row to reconcile.",
+  "sources": ["https://www.mountainproject.com/area/109252144/aiguille-de-lm", "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://www.mountainbureau.com/scheduled-programs-blog/north-cascades-boston-basin-3day"],
+  "patches": [
+   {"id": "wa_south_ridge_6", "fact": "gain_ft (1,900 ft) is implausibly low for this route's own trailhead-to-summit elevation difference (~4,000 ft)", "op": "set", "column": "gain_ft", "path": [], "expect": 1900, "value": 4000}
+  ]},
+ {"id": "wa_south_ridge_6",
+  "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary (6,400 ft) — same shared text issue as the North Ridge route",
+  "verdict": "fixed",
+  "correct_value": "Boston Basin high camp ~6,400 ft",
+  "evidence": "Two independent guide services give Boston Basin low camp 5,300 ft and high camp 6,400 ft; the row's itinerary, beta, bivy and access.rules already say 6,400 ft.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://www.mountainbureau.com/scheduled-programs-blog/north-cascades-boston-basin-3day"],
+  "patches": [
+   {"id": "wa_south_ridge_6", "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary (6,400 ft) — same shared text issue as the North Ridge route", "op": "replace_text", "column": "approach", "path": [], "find": "to reach the popular Boston Basin high camp around 6,000 ft", "replace": "to reach the popular Boston Basin high camp around 6,400 ft"}
+  ]},
+ {"id": "wa_south_ridge_6",
+  "fact": "Nearest hospital: this route says only 'Marblemount area'; the sibling North Ridge route (same peak/area) names a specific hospital 45 mi down-valley",
+  "verdict": "fixed",
+  "correct_value": "PeaceHealth United General Medical Center, Sedro-Woolley - about 45 miles down the Skagit valley",
+  "evidence": "Marblemount has no hospital. The hospital operator's own page says United General in Sedro-Woolley runs a 24/7 Level IV emergency department and serves Marblemount among its rural communities; an independent ER directory confirms a 24-hour emergency room at 2000 Hospital Dr, Sedro-Woolley. Adopted the sibling route's wording so both routes on the formation agree.",
+  "sources": ["https://www.peacehealth.org/foundation/united-general", "https://urgentcarelocations.org/wa/sedro--woolley/75728--peacehealth-united-general-hospital-emergency-room"],
+  "patches": [
+   {"id": "wa_south_ridge_6", "fact": "Nearest hospital: this route says only 'Marblemount area'; the sibling North Ridge route (same peak/area) names a specific hospital 45 mi down-valley", "op": "set", "column": "emergency", "path": ["nearestHospital"], "expect": "Marblemount area", "value": "PeaceHealth United General Medical Center, Sedro-Woolley - about 45 miles down the Skagit valley"}
+  ]}
+]}

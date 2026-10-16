@@ -1,0 +1,728 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "hours"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "hrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Summit-day start time"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Summit-day distance"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Summit-day start time"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Summit-day start time"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "hours"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "hrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Summit-day distance"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "High Hoh Bridge / ladder mileage"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "High Hoh Bridge / ladder mileage"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager / pass fields"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Land manager / pass fields"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Wilderness permit fee"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Wilderness permit fee"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Glacier Meadows to West Peak time"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "hours"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "hrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Summit-day duration"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "before": {
+    "itinerary": {
+     "cal": "Best late June through August; snow bridges and the bergschrund/Fourth of July gully change year to year, so the exact summit-day line shifts with conditions.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy, flat old-growth valley walk along the Hoh River. Most parties leave the trailhead by mid-morning and are in camp well before dark.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Hoh River Trail to Olympus Guard Station",
+       "gainFt": 1600,
+       "lossFt": 1250,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Lewis Meadow / Olympus Guard Station camp"
+      },
+      {
+       "n": 2,
+       "note": "The trail steepens above Elk Lake and works through the infamous washed-out ladder section before breaking into the open meadows below the Blue Glacier moraine. Rope/glacier gear gets sorted and rehearsed here.",
+       "hours": 6,
+       "miles": 8.3,
+       "title": "Guard Station to Glacier Meadows high camp",
+       "gainFt": 4500,
+       "lossFt": 1300,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish high camp at Glacier Meadows"
+      },
+      {
+       "n": 3,
+       "note": "An alpine-start round trip from camp: descend to and rope up on the Blue Glacier, climb Snow Dome, cross toward Crystal Pass around the Five Fingers, then scramble/short-rope the summit pyramid to the final block.",
+       "hours": 10,
+       "miles": 7,
+       "title": "Summit day via Blue Glacier, Snow Dome and Crystal Pass",
+       "gainFt": 3800,
+       "lossFt": 3800,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "2:00-3:00 AM",
+         "label": "Leave Glacier Meadows",
+         "detail": "Alpine start to cross the glacier while it's firm and beat afternoon heat/rockfall."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Onto the Blue Glacier",
+         "detail": "Descend the moraine, rope up, cross toward Snow Dome."
+        },
+        {
+         "time": "+4-5 hr",
+         "label": "Crest Snow Dome (6,600 ft)",
+         "detail": "Keep left of the big rock buttress, continue toward Crystal Pass."
+        },
+        {
+         "time": "+6-7 hr",
+         "label": "Crystal Pass / Five Fingers traverse",
+         "detail": "Wrap around the false summit; route varies year to year depending on the bergschrund/Fourth of July gully conditions."
+        },
+        {
+         "time": "9:00-11:00 AM",
+         "label": "Summit block",
+         "detail": "Short low-5th-class scramble/pitch to the true summit."
+        },
+        {
+         "time": "4:00-6:00 PM",
+         "label": "Back at Glacier Meadows",
+         "detail": "Reverse the route; softening snow makes the glacier crossing slower in the afternoon."
+        }
+       ],
+       "objective": "Summit and return to Glacier Meadows"
+      },
+      {
+       "n": 4,
+       "note": "Strong parties hike the full 17+ miles back to the car in one push; guided/slower groups split this into two days via Happy Four Camp.",
+       "hours": 8,
+       "miles": 17.3,
+       "title": "Hike out to trailhead",
+       "gainFt": 300,
+       "lossFt": 3900,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Hoh River trailhead"
+      }
+     ],
+     "totalNote": "A 4-day round trip (~41-44 mi, ~7,400 ft gain to the 7,980 ft summit): two days up the Hoh River to Glacier Meadows, one long summit day via the Blue Glacier/Snow Dome/Crystal Pass, one day to hike all the way out."
+    },
+    "timing": {
+     "totalHrs": 29,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 8,
+     "approachTimeHrs": 11,
+     "recommendedStart": "2:00-3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "An easy, flat old-growth valley walk along the Hoh River. Most parties leave the trailhead by mid-morning and are in camp well before dark.",
+       "fromTo": "Hoh River Trail to Olympus Guard Station",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "The trail steepens above Elk Lake and works through the infamous washed-out ladder section before breaking into the open meadows below the Blue Glacier moraine. Rope/glacier gear g…",
+       "fromTo": "Guard Station to Glacier Meadows high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "An alpine-start round trip from camp: descend to and rope up on the Blue Glacier, climb Snow Dome, cross toward Crystal Pass around the Five Fingers, then scramble/short-rope the s…",
+       "fromTo": "Summit day via Blue Glacier, Snow Dome and Crystal Pass",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "Strong parties hike the full 17+ miles back to the car in one push; guided/slower groups split this into two days via Happy Four Camp.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "crowds": {
+     "peakTraffic": "Weekends in July-August see the most parties; described in sources as crowded enough on the summit block that an early (4-5am) start is recommended to beat the queue",
+     "solitudeRating": 3,
+     "estimatePerSeason": "Not found as a precise number in sources; multiple guide/trip-report accounts describe this as the most popular route on Olympus, and Glacier Meadows camp permits are competitive in the April recreation.gov lottery during peak summer weeks"
+    }
+   }
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "before": {
+    "pro_tips": [
+     "Start summit day in pre-dawn darkness (3-4 AM) to minimize rockfall exposure on the East Face and avoid afternoon thunderstorms",
+     "Carry a 60-meter rope late season (July-August onward) to avoid multiple rappel stations; 40-50m may require intermediate anchors and extra time",
+     "Use a small, lightweight alpine rack (a few nuts or small cams, slings, quickdraws); most teams climb the summit block with minimal gear and good footwork",
+     "The Snow Dome is a broad, gently sloping platform; in whiteout conditions, use a GPS waypoint or compass bearing to navigate toward Crystal Pass to avoid wandering",
+     "Acclimatize at Glacier Meadows for at least one full day before summit attempt; the 4,200-7,980 ft push in a single day is taxing",
+     "Bring extra layers and a windproof shell; the summit is severely exposed and weather can change in minutes"
+    ],
+    "turnaround": "Be off the block and recrossing the Snow Dome by early afternoon; on busy weekends start at 4-5am because the block bottlenecks. Early season the ramps may be iced; late season a moat can block access to the east ledges.",
+    "itinerary": {
+     "cal": "The 'Fourth of July' direct gully has been reported out/closed by bergschrund conditions in several recent seasons, making these east-side ramps the default line — check recent trip reports before relying on the direct finish.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Flat old-growth valley approach along the Hoh River.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Hoh River Trail to Olympus Guard Station",
+       "gainFt": 1600,
+       "lossFt": 1250,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Lewis Meadow / Olympus Guard Station camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb through Elk Lake and the washed-out ladder section to camp at the edge of the Blue Glacier moraine.",
+       "hours": 6,
+       "miles": 8.3,
+       "title": "Guard Station to Glacier Meadows high camp",
+       "gainFt": 4500,
+       "lossFt": 1300,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish high camp at Glacier Meadows"
+      },
+      {
+       "n": 3,
+       "note": "This is the most commonly climbed finish: from Snow Dome and Crystal Pass, use the low-angle east-side snow/rock ramps around the false summit rather than a direct line, then a short scramble to the summit block.",
+       "hours": 10,
+       "miles": 7,
+       "title": "Summit day via Snow Dome and the East Face ramps",
+       "gainFt": 3800,
+       "lossFt": 3800,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "2:00-3:00 AM",
+         "label": "Leave Glacier Meadows",
+         "detail": "Alpine start onto the glacier."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Snow Dome / Crystal Pass",
+         "detail": "Cross toward the Five Fingers area."
+        },
+        {
+         "time": "+6-7 hr",
+         "label": "East Face ramps",
+         "detail": "Ascend the ramps system around the false summit to gain the summit block."
+        },
+        {
+         "time": "9:30-11:30 AM",
+         "label": "Summit",
+         "detail": "Short low-5th scramble to the true summit."
+        },
+        {
+         "time": "5:00-6:00 PM",
+         "label": "Back at Glacier Meadows",
+         "detail": "Reverse the ramps, Snow Dome, and glacier crossing."
+        }
+       ],
+       "objective": "Summit via the standard East Face ramps finish, return to camp"
+      },
+      {
+       "n": 4,
+       "note": "A long 17+ mile hike-out day; some parties split it via Happy Four Camp instead.",
+       "hours": 8,
+       "miles": 17.3,
+       "title": "Hike out to trailhead",
+       "gainFt": 300,
+       "lossFt": 3900,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Hoh River trailhead"
+      }
+     ],
+     "totalNote": "Same 4-day Hoh River approach as the standard route, distinguished only by using the East Face ramps (rather than the direct 4th of July line) to gain the summit block — this is in fact what most modern parties climb."
+    },
+    "timing": {
+     "totalHrs": 29,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 8,
+     "approachTimeHrs": 11,
+     "recommendedStart": "2:00-3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "Flat old-growth valley approach along the Hoh River.",
+       "fromTo": "Hoh River Trail to Olympus Guard Station",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Climb through Elk Lake and the washed-out ladder section to camp at the edge of the Blue Glacier moraine.",
+       "fromTo": "Guard Station to Glacier Meadows high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "This is the most commonly climbed finish: from Snow Dome and Crystal Pass, use the low-angle east-side snow/rock ramps around the false summit rather than a direct line, then a sho…",
+       "fromTo": "Summit day via Snow Dome and the East Face ramps",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "A long 17+ mile hike-out day; some parties split it via Happy Four Camp instead.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach_variants": [
+     {
+      "name": "Hoh River Trail to Glacier Meadows, Blue Glacier and Snow Dome",
+      "notes": "From the Hoh Rain Forest Visitor Center (about 578 ft) the Hoh River Trail runs east up the valley for roughly 17.4 miles to Glacier Meadows at about 4,300 ft, past Five Mile Island, the Olympus Guard Station and High Hoh Bridge near mile 9, Lewis Meadow near mile 11 (the usual overnight if you split the walk in), and Elk Lake near mile 15. A washed-out cliffside stretch around mile 16 is crossed on a fixed ladder; rungs have been reported missing in recent seasons, so look at it before you commit weight. Water is frequent the whole way.\n\nFrom Glacier Meadows a way path climbs about 0.8 mile to the crest of the Blue Glacier's lateral moraine and follows it roughly 0.2 mile before dropping onto the ice. That drop is loose and rockfall-prone; some parties fix a short line. Rope up on the ice. Cross the flat lower glacier and climb moderate snow, threading the rock islands to the right of the main icefall before swinging back left below the massif, to the crest of Snow Dome at about 6,600-6,800 ft. Snow Dome is the standard high camp, a thousand feet below the summit.\n\nFrom Snow Dome the standard line goes up to and over Crystal Pass, then traverses just south of and below Five Fingers Ridge and over a false summit to the summit pyramid. A large crevasse near Crystal Pass is usually bridged through midsummer.",
+      "season": "Roughly Jun-Aug. Earlier and the trail above Elk Lake is steep snow; later and the moat at the base of the summit rock opens and the ramps go from snow-covered to loose",
+      "hazards": [
+       "Crevasses on the Blue Glacier and a large one near Crystal Pass, usually snow-bridged and not always",
+       "Rockfall on the moraine descent onto the ice, and a fixed-ladder washout around mile 16 of the trail",
+       "Loose rock on the east-face ramps and rockfall from parties above on them",
+       "A developing moat at the base of the summit rock in warm or late-season conditions, forcing a committing step onto rock",
+       "Whiteout on Snow Dome — the crevassed plateau is where the 1993 fatal unroped fall happened",
+       "A 17-mile walk out with no cell coverage"
+      ],
+      "primary": true,
+      "baseFinding": "THE ARRIVAL TEST IS A FLAT TOP AT THE FOOT OF AN 80 FT TOWER, AND IT WORKS IN CLOUD BECAUSE IT IS UNDERFOOT, NOT ON THE HORIZON. Off the false summit you drop into a sharp saddle, then climb a short steep snow slope with a clean runout. That slope ENDS FLAT. The moment the ground stops rising and you are standing on a small flat platform of snow with an 80 ft rock tower directly above you, you are at the base of the summit block, on its NORTHEAST side. There is nothing else on this mountain that is a flat snow top under an 80 ft tower. SECOND TEST, and it is the one that separates this finish from the two other routes on this same block: from that platform the East Face Ramps line goes RIGHT, around the corner onto the east face, and climbs a series of ramps angling up and across it before joining the last Class 4 / 5.4 step. If you are climbing straight up the face directly above the platform you are on the North Face Direct, and if you have walked round to the far side you are on the Northwest Edge. All three finish on the same 80 ft tower and all three start from this platform; the only thing that tells them apart is which way you turn. WHAT GOING TOO FAR LOOKS LIKE: if you are still gaining height on snow with no rock tower over you, you are on the five-fingered false summit east of the true one and have not yet dropped into the saddle. If you can see the Blue Glacier below you on your right the whole way, you are still on the traverse and have not reached Crystal Pass. HONEST LIMIT: the ramps themselves are loose and the correct one is chosen by eye. A fog test can get you to the foot of the block; it cannot pick the ramp for you."
+     },
+     {
+      "name": "From the Bailey Range: Queets Basin, Blizzard Pass and the Humes Glacier",
+      "notes": "This is the approach of parties already on the Bailey Range Traverse rather than a way anyone drives to. It comes at Olympus from the SOUTH instead of the north: from the High Divide out of Sol Duc, along the Bailey crest through Cat Basin, Ferry Basin and Stephen Peak, then down into Queets Basin, and up over Blizzard Pass onto the Humes Glacier. From the Humes the summit massif is gained from the south side and the summit block is reached from the opposite direction to the Snow Dome line.\n\nIt is longer by days and it exists in the record because traverse parties use it, not because it is easier. A party carrying glacier gear can also run it the other way and exit down the Blue Glacier to the Hoh, which is how most traverses finish.\n\nNothing about the approach shortens the climb: the last five hundred feet, the false summit, the saddle and the summit block are the same ground the Hoh parties cross.",
+      "season": "Roughly Jul-Sep, once the Bailey Range crest is walkable and the Humes is not avalanching",
+      "hazards": [
+       "Multi-day committing wilderness travel with no bail options once on the Bailey crest",
+       "Crevasses and icefall on the Humes Glacier",
+       "Blizzard Pass holds steep snow and is named for what happens there",
+       "Route-finding on the Bailey crest in cloud, where the ridge is the only handrail",
+       "No resupply and no reliable rescue access; NPS has reported multiple helicopter rescues per season among permitted Bailey parties"
+      ],
+      "baseFinding": "THE ARRIVAL TEST IS THE SAME FLAT SNOW TOP UNDER THE 80 FT TOWER — the block does not care which side of the mountain you walked in from. What changes coming from the south is which way you meet the false summit: from the Humes side you are working up toward the summit ridge from below rather than dropping onto it from Crystal Pass, so the sharp saddle between the false summit and the true one is reached from the opposite end.\n\nThe test that you have not overshot on this side is Five Fingers Ridge. The standard line runs just SOUTH of and BELOW it. If Five Fingers Ridge is below you rather than above you, you are on the crest itself and too high; drop back under it and keep the ridge on your uphill side until the false summit is passed and the saddle opens.\n\nHONEST LIMIT: this approach is thinly documented as an approach — it is described in traverse accounts, which are about the traverse. Treat the Hoh variant as the one with detail and this one as the one that gets a traverse party to the same platform."
+     }
+    ],
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Olympic National Park entrance fee applies; no specific climbing permit beyond the standard overnight wilderness permit noted above.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers. Some approach corridors (e.g. Hoh River toward Olympus) have quota-limited camps.",
+     "permit": "No permit is required for a day climb. An overnight wilderness permit is required for any camp and is reserved through Recreation.gov: $8 per person per night for ages 16 and over, plus a $6 non-refundable reservation fee. Glacier Meadows and Elk Lake are quota sites.",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "N/A",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person",
+      "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. Glacier Meadows and the Hoh River camps are quota sites."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "before": {
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers. Some approach corridors (e.g. Hoh River toward Olympus) have quota-limited camps.",
+     "permit": "Olympic National Park wilderness permit required for overnight travel",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Olympic Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance fee ($30/vehicle for 7 days, or $55 annual pass)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person",
+      "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. Glacier Meadows and the Hoh River camps are quota sites."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 5.3-5.4",
+      "notes": "Same as standard route. Time: 2-2.5 hours to summit from Glacier Meadows base.",
+      "pitch": "West Peak summit block (standard route)"
+     },
+     {
+      "grade": "Class 3-4 scramble",
+      "notes": "Descend to saddle between peaks, then ascend Middle Peak. Loose rock and exposure. Time: 1.5-2 hours.",
+      "pitch": "West to Middle Peak traverse and descent"
+     },
+     {
+      "grade": "Class 3-4 scramble, exposure on ridge",
+      "notes": "Traverse the narrow ridge from Middle to East Peak. Significant exposure on both sides. Time: 1.5-2 hours.",
+      "pitch": "Middle Peak summit and traverse to East Peak"
+     },
+     {
+      "grade": "Class 3-4 scramble",
+      "notes": "Descend from the East Peak toward Glacier Pass, watching for icefall. Time: 2-3 hours.",
+      "pitch": "East Peak descent toward Glacier Pass"
+     },
+     {
+      "grade": "Glacier descent",
+      "notes": "From Glacier Pass descend the glacier to Glacier Meadows, keeping clear of the icefall. Time: 3-4 hours to Glacier Meadows.",
+      "pitch": "Glacier Pass to Glacier Meadows"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Flat old-growth valley approach along the Hoh River.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Hoh River Trail to Olympus Guard Station",
+       "gainFt": 1600,
+       "lossFt": 1250,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Lewis Meadow / Olympus Guard Station camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb through Elk Lake and the washed-out ladder section to the moraine-edge camp; sort rock rack for the summit block pitch tonight.",
+       "hours": 6,
+       "miles": 8.3,
+       "title": "Guard Station to Glacier Meadows high camp",
+       "gainFt": 4500,
+       "lossFt": 1300,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish high camp at Glacier Meadows"
+      },
+      {
+       "n": 3,
+       "note": "Standard glacier approach to the base of the summit block, then a single roped pitch straight up the north face instead of the easier scramble finish — carry a small rack (a few cams/nuts) for this pitch.",
+       "hours": 11,
+       "miles": 7,
+       "title": "Summit day via Blue Glacier, Snow Dome and the North Face Direct finish",
+       "gainFt": 3800,
+       "lossFt": 3800,
+       "packLb": 24,
+       "schedule": [
+        {
+         "time": "2:00-3:00 AM",
+         "label": "Leave Glacier Meadows",
+         "detail": "Alpine start onto the glacier."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Snow Dome / Crystal Pass",
+         "detail": "Standard glacier crossing to the base of the summit pyramid."
+        },
+        {
+         "time": "+7 hr",
+         "label": "Rack up below the summit block",
+         "detail": "Swap crampons/axes for rock shoes or approach shoes as needed."
+        },
+        {
+         "time": "~10:00-11:30 AM",
+         "label": "North Face direct pitch",
+         "detail": "Single roped pitch (low 5th class) straight to the summit rather than the easier scramble line."
+        },
+        {
+         "time": "5:00-6:30 PM",
+         "label": "Back at Glacier Meadows",
+         "detail": "Rappel the block, then reverse the glacier route."
+        }
+       ],
+       "objective": "Summit via the 1-pitch North Face direct finish, return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Long hike-out day back to the car.",
+       "hours": 8,
+       "miles": 17.3,
+       "title": "Hike out to trailhead",
+       "gainFt": 300,
+       "lossFt": 3900,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Hoh River trailhead"
+      }
+     ],
+     "totalNote": "Same 4-day Hoh River/Blue Glacier trip as the standard route; the only difference is choosing the steeper North Face Direct pitch to finish the summit block instead of the easy scramble."
+    },
+    "timing": {
+     "totalHrs": 30,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 8,
+     "approachTimeHrs": 11,
+     "recommendedStart": "2:00-3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "Flat old-growth valley approach along the Hoh River.",
+       "fromTo": "Hoh River Trail to Olympus Guard Station",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Climb through Elk Lake and the washed-out ladder section to the moraine-edge camp; sort rock rack for the summit block pitch tonight.",
+       "fromTo": "Guard Station to Glacier Meadows high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Standard glacier approach to the base of the summit block, then a single roped pitch straight up the north face instead of the easier scramble finish — carry a small rack (a few ca…",
+       "fromTo": "Summit day via Blue Glacier, Snow Dome and the North Face Direct finish",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "Long hike-out day back to the car.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,382 @@
+{
+ "file": "r381.json",
+ "results": [
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "Total gain / loss",
+   "verdict": "fixed",
+   "correct_value": "~8,000 ft gain and ~8,000 ft loss car to car; day 1 +3,500/-0 (to the ~6,600 ft camp), so day 2 must be ~+4,500/-8,000",
+   "evidence": "One trip report gives ~8k ft of gain for the traverse from the Hannegan trailhead; a second independent report gives ~8,000 ft gain/loss and ~16 miles. Day 1 ends at the 6,600 ft camp (+3,500 net), so day 2 (camp -> Ruth -> saddle -> Icy -> saddle -> Ruth -> trailhead at 3,100 ft) must lose 8,000 and gain 4,500 for the itinerary total to match gain_ft/loss_ft.",
+   "sources": [
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/",
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Total gain / loss",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 2000,
+     "value": 4500
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Total gain / loss",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 6400,
+     "value": 8000
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "Ruth-Icy saddle elevation",
+   "verdict": "fixed",
+   "correct_value": "roughly 5,700-5,800 ft",
+   "evidence": "One route description puts the lowest spot on the Ruth-Icy ridge at 5,700 ft. Ruth Mountain (7,115 ft) has 1,315 ft of prominence with parent Seahpo Peak, placing its key col (the Ruth-Icy saddle) at ~5,800 ft; a route page's 'two ~800 ft descents, ~1,600 ft total off Ruth' also lands near 5,500-5,700 ft. The 6,600 ft 'saddle' in one trip report is the first shoulder/notch just west of Ruth (with a campsite knoll), not the low saddle — the row confused the two.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://en.wikipedia.org/wiki/Ruth_Mountain",
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Ruth-Icy saddle elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "between Ruth and Icy at roughly 6,600-6,800 ft",
+     "replace": "between Ruth and Icy at roughly 5,700-5,800 ft"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Ruth-Icy saddle elevation",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "between Ruth and Icy at roughly 6,600-6,800 ft",
+     "replace": "between Ruth and Icy at roughly 5,700-5,800 ft"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Ruth-Icy saddle elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "between Ruth and Icy at roughly 6,600-6,800 ft",
+     "replace": "between Ruth and Icy at roughly 5,700-5,800 ft"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Ruth-Icy saddle elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "around 6,600-6,800 ft, and there are trees in it",
+     "replace": "around 5,700-5,800 ft, and there are trees in it"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "High camp elevation / location",
+   "verdict": "fixed",
+   "correct_value": "The itinerary's high camp is at the notch/shoulder just northwest of Ruth's summit (~6,600 ft, inside the park, permit needed) — ABOVE the Ruth-Icy saddle, not below it. The Ruth Arm ridge camp (~5,800-5,900 ft, national forest, no park permit) is a genuine lower alternative.",
+   "evidence": "One trip report describes a ~6,600 ft shoulder just west of Ruth with a campsite knoll and recommends camping there; the park lists the Ruth-Icy traverse as a high-occupancy cross-country camping zone. With the Ruth-Icy saddle at ~5,700-5,800 ft, a 6,600 ft camp cannot be 'below the Ruth-Icy col'; the wording is corrected to the notch northwest of Ruth's summit, matching approach and approach_variants. The 5,800 ft waypoint/Ruth Arm camp is a real alternative camp outside the park (bivy is owned by the camping clean-up; not patched).",
+   "sources": [
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+    "https://en.wikipedia.org/wiki/Ruth_Mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "High camp elevation / location",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "a high camp around 6,600 ft below the Ruth-Icy col",
+     "replace": "a high camp around 6,600 ft at the notch northwest of Ruth's summit"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "High camp elevation / location",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "a high camp around 6,600 ft below the Ruth-Icy col",
+     "replace": "a high camp around 6,600 ft at the notch northwest of Ruth's summit"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "High camp elevation / location",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "near the Ruth Arm / Ruth-Icy col",
+     "replace": "at the notch northwest of Ruth's summit"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "High camp elevation / location",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "most parties camp near the Ruth-Icy col",
+     "replace": "most parties camp at the notch northwest of Ruth's summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "Rappel vs downclimb on Icy's gully, fixed anchor",
+   "verdict": "fixed",
+   "correct_value": "Rappel or downclimb are both done; the anchor is a natural boulder/horn usually found slung with rap slings (no bolts).",
+   "evidence": "A route page says the gully can be rappelled but downclimbing is no problem; two trip reports rappelled it. One description reports a boulder at the top of the gully with new slings and rings; another trip report describes a rappel station of three slings beneath the summit, and the park-zone route page mentions rap slings around a horn. So rappel-vs-downclimb is two genuine options (descent/bail stay), but 'no fixed gear reported' is wrong — the horn is normally slung, though not bolted.",
+   "sources": [
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://www.summitpost.org/icy-peak-via-ruth-mtn/193496",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Rappel vs downclimb on Icy's gully, fixed anchor",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "used as a natural anchor — no bolts or fixed gear are reported on this route.",
+     "replace": "used as a natural anchor, usually found slung with rap slings — there are no bolts on this route."
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Rappel vs downclimb on Icy's gully, fixed anchor",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "anchor"
+     ],
+     "find": "; no bolts or fixed gear reported",
+     "replace": ", usually slung; no bolts"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Rappel vs downclimb on Icy's gully, fixed anchor",
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "The traverse has no fixed rappel stations;",
+     "replace": "The traverse has no bolted rappel stations;"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "Rope length for the gully rappel",
+   "verdict": "fixed",
+   "correct_value": "A 30 m rope (doubled) raps past the hardest part of the ~100 ft gully; a 60 m rope clears the whole gully in one rappel. 30 m stays as the minimum.",
+   "evidence": "One description used a 30 m rope to rappel, which got the party past the main difficulty only; a trip report rappelled the gully with a 60 m rope and called it perfect. A 30 m rope cannot make a single-strand rappel of a 100 ft gully off a slung horn, so the 'single-strand' wording in gear and rack is wrong; descent_text already describes both options correctly.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Rope length for the gully rappel",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      5
+     ],
+     "find": "30m+ rope is adequate for a single-strand rappel of the ~100 ft gully",
+     "replace": "A 30m rope raps the hardest part of the ~100 ft gully; a 60m rope clears the whole gully in one rappel"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Rope length for the gully rappel",
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      2
+     ],
+     "find": " (~100ft, single strand)",
+     "replace": " (~100ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "Time for the traverse day",
+   "verdict": "fixed",
+   "correct_value": "Day 2 ~12 hours from the high camp (total trip ~17.5 h over two days)",
+   "evidence": "One description gives 3-6 hours from Ruth to Icy and 15-20 hours of total trip time; a second trip report took 4.7 hours from Ruth's summit to Icy's SE summit; a third reports ~6 hours from Icy's summit back to the car and just under 12 hours moving. The itinerary's 2.5 hours Ruth-to-Icy and 10-hour day 2 are faster than all of these, so day 2 becomes 12 hours (matching descent_text and the hazard text), the timing totals follow, and partner requirements describe the two-day split instead of one 15.5-hour day.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "hours"
+     ],
+     "expect": 10,
+     "value": 12
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "time"
+     ],
+     "expect": "8:00 AM",
+     "value": "8:30 AM"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "time"
+     ],
+     "expect": "9:00 AM",
+     "value": "10:00 AM"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "10:30 AM",
+     "value": "11:30 AM"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "time"
+     ],
+     "expect": "4:00 PM",
+     "value": "5:30 PM"
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 15.5,
+     "value": 17.5
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "hrs"
+     ],
+     "expect": 10,
+     "value": 12
+    },
+    {
+     "id": "wa_ruth_icy_traverse",
+     "fact": "Time for the traverse day",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec"
+     ],
+     "find": "Fit for a ~15.5-hour remote day with a loaded pack",
+     "replace": "Fit for a ~12-hour remote day with a loaded pack, after a ~5.5-hour approach day"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_mountain_south_slopes",
+   "fact": "Max slope angle vs 'gentle' glacier",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route description calls the Ruth Glacier about a 30-degree snowfield, but also describes a seasonal very steep side traverse (60-degree snowfield) east of the first highpoint on the ridge approach — so the 60 may describe the approach traverse below Pt 5930, not the glacier. Only that single source gives 60 degrees and it reads as an overstatement for a Class 2-3 route; no second source confirms either 60 or a lower maximum for that traverse, so max_angle is left unchanged.",
+   "sources": [
+    "https://www.summitpost.org/ruth-glacier/156614"
+   ],
+   "patches": []
+  }
+ ]
+}

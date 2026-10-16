@@ -1,0 +1,105 @@
+{
+  "wa_merchant_peak_south_route": {
+    "area": "wa_merchant_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "South Slope",
+        "notes": "Above the waterfalls the gully opens into brush, forest, and then heather meadows/slopes — the 'South Slope' — which are followed up toward the East Ridge."
+      },
+      {
+        "n": 2,
+        "label": "East Ridge to the summit",
+        "class": "Class 3",
+        "notes": "A final ~300 feet of solid, enjoyable Class 3 scrambling on the East Ridge to the 6,113 ft summit."
+      }
+    ]
+  },
+  "wa_mesahchie_peak_west_ridge": {
+    "area": "wa_mesahchie_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "West ridge crest to the col",
+        "class": "class 4",
+        "notes": "From the 6,700-6,800 ft shoulder, work up the ridge crest — some class 4 moves getting established — to gentler but loose, cairned terrain leading to a col with a good bivy site."
+      },
+      {
+        "n": 2,
+        "label": "First gully on the southwest/west ridge",
+        "class": "class 3/4",
+        "notes": "From the col, cross talus to the base of the first obvious gully leading up the southwest/west ridge: steep class 3/4 at its bottom, then broadening and easing after a string of cairns; follow it to the ridge crest. Terrain here is loose and unmarked."
+      },
+      {
+        "n": 3,
+        "label": "Ridgecrest to the summit",
+        "notes": "The exposed but moderate ridgecrest leads to the summit."
+      }
+    ]
+  },
+  "wa_mount_arriva_scramble": {
+    "area": "wa_mount_arriva",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "South ridge from the 7,800-ft notch",
+        "notes": "A rising traverse across a talus bowl gains a key 7,800-ft notch on Arriva's south ridge; from the notch a final scramble leads to the summit. The source text describes nothing further about this ground."
+      }
+    ]
+  },
+  "wa_mount_baker_coleman_deming": {
+    "area": "wa_mount_baker",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Coleman and Deming Glaciers",
+        "notes": "From Hogsback Camp, rope up on the Coleman and Deming Glaciers — crevasses and route-finding."
+      },
+      {
+        "n": 2,
+        "label": "Roman Wall",
+        "notes": "The crux: steep snow at roughly 40 degrees between the Deming Glacier and the summit plateau."
+      }
+    ]
+  },
+  "wa_mount_baker_coleman_headwall": {
+    "area": "wa_mount_baker",
+    "climbing_route": [],
+    "skip_reason": "The approach text ends at the base of the headwall near 8,500 ft and describes no climbing above it. The only headwall content is timing/hazard advice (the headwall and the Black Buttes shed rock and ice as the day warms, so parties leave camp 11 p.m.-4:30 a.m. to be past the glacier crossing and lower headwall before the sun hits it), with no line, feature or grade for the 14 pitches."
+  },
+  "wa_mount_baker_north_ridge": {
+    "area": "wa_mount_baker",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Double bergschrund start",
+        "notes": "The base of the North Ridge proper is on the Coleman Glacier's true right side. The standard start crosses a double bergschrund via a bridge or narrow snow ramp — can be a difficult, exposed step depending on the season, and can close out entirely by late summer."
+      },
+      {
+        "n": 2,
+        "label": "Snow gully to the ridge crest",
+        "notes": "Climbs a broad 40-degree snow gully to the crest of the ridge. The route sees far less traffic than Coleman-Deming, so tracks and bridges may be unbroken."
+      }
+    ]
+  },
+  "wa_mount_carru_scramble": {
+    "area": "wa_mount_carru",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "South/southeast talus slopes",
+        "notes": "From a Shellrock Basin or Eureka Creek camp, gain the Carru-Osceola col or Rolo Pass and scramble the south/southeast talus slopes to the summit ridge."
+      }
+    ]
+  },
+  "wa_mount_chaval_scramble": {
+    "area": "wa_mount_chaval",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Left-to-right diagonal ramp, west face",
+        "notes": "At the base of Chaval's broad west face the ascent line's obvious left-to-right diagonal ramp begins. The gullies just below the west face are avalanche terrain and should not be crossed in unstable early-season snow; steep sidehilling with real exposure starts once above treeline. The source text describes nothing above the start of the ramp."
+      }
+    ]
+  }
+}

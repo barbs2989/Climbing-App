@@ -1,0 +1,217 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elev"
+   ],
+   "fact": "Elevation of the Mystery Glacier foot"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead forest road"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead forest road"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead forest road"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "How the overnight permit is obtained"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "How the overnight permit is obtained"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "How the overnight permit is obtained"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "hazards",
+   "path": [
+    3
+   ],
+   "fact": "Cause of the 2022 fatality"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Cause of the 2022 fatality"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2600,
+      "name": "Upper Dungeness Trailhead",
+      "note": "Large parking area with vault toilet; self-issue Olympic National Park wilderness permit required at the kiosk before starting up the Royal Basin Trail.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead sits on Forest Road 2870 in Olympic National Forest, at about 2,500 feet, with a large parking area and a vault toilet. A self-issue Olympic National Park wilderness permit is required at the kiosk before starting up the Royal Basin Trail."
+     },
+     {
+      "lat": 47.869049,
+      "lng": -123.15061,
+      "elev": 2650,
+      "name": "Royal Basin Trail junction",
+      "note": "Trail forks just before the Royal Creek footlog bridge; bear right onto Royal Basin Trail (Maynard Burn Trail continues straight and is easy to mistake in early light).",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 47.8595633,
+      "lng": -123.2031058,
+      "elev": 3500,
+      "name": "Royal Creek Camp",
+      "note": "Established camp and reliable water along Royal Creek in mossy forest, a common first-night stop before pushing to the basin.",
+      "type": "Campsite",
+      "distMi": 3.4
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Main basecamp with designated campsites and a seasonal ranger post; last dependable water before the dry climb to the notch.",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.812744767441856,
+      "lng": -123.21649244186047,
+      "elev": 6560,
+      "name": "Royal Basin–Deception Basin notch",
+      "note": "Divide between the two basins; the final ~200 ft below the notch is roughly 35-degree snow, so carry an ice axe outside late-season conditions.",
+      "type": "Junction",
+      "distMi": 9.5
+     },
+     {
+      "lat": 47.80685084883721,
+      "lng": -123.21821883720929,
+      "elev": 6650,
+      "name": "Mystery Glacier terminus / moraine lake",
+      "note": "Cross a dark moraine to reach the low-angle glacier; a jade-green moraine lake sits at its base and there are a few small crevasses to step over.",
+      "type": "Hazard",
+      "distMi": 10.2
+     },
+     {
+      "lat": 47.801798918604646,
+      "lng": -123.21969860465116,
+      "elev": 7400,
+      "name": "South Ridge notch",
+      "note": "Class 2 scree and a moderate snow traverse give way to loose, exposed class 3/4 rock in the summit gully above this notch — the main fall hazard on the route.",
+      "type": "Hazard",
+      "distMi": 10.8
+     },
+     {
+      "lat": 47.795905,
+      "lng": -123.221425,
+      "elev": 7639,
+      "name": "Mount Mystery summit",
+      "note": "True summit reached via a short moat crossing and a class 3/4 rock gully; rock here is more solid than the Olympics' loose reputation suggests.",
+      "type": "Summit",
+      "distMi": 11.5
+     }
+    ],
+    "road": {
+     "name": "Forest Road 2860 to Upper Dungeness Trailhead (Olympic National Forest)",
+     "driveNote": "From Sequim, take US-101 east ~3 miles to Palo Alto Rd, follow it ~7.5 miles to FR 28, then FR 2860 for about 11 miles to the Upper Dungeness Trailhead. Confirm current road/gate status with Olympic National Forest before the trip."
+    },
+    "approach": "From the Upper Dungeness Trailhead (Forest Road 2860, Olympic National Forest), follow the Upper Dungeness Trail (#833.2) about 1 mile, then Royal Creek Trail (#832) into Buckhorn Wilderness and across the park boundary to Royal Lake / Royal Basin (roughly 6-7 miles and ~2,500 ft of gain from the trailhead). From upper Royal Basin, continue off-trail cross-country over Royal Pass (~6,500 ft) into Deception Basin, then up basins/gullies (via the Mystery Glacier or the south ridge) to the base of the summit block. Expect a multi-day backcountry trip for most parties.",
+    "approach_variants": [
+     {
+      "name": "Upper Dungeness and Royal Basin, over the Royal-Deception divide into Deception Basin",
+      "notes": "From the Upper Dungeness Trailhead on FR-2870 — large parking area, vault toilet, self-issue Olympic National Park wilderness permit at the kiosk — take Upper Dungeness Trail #833.2 about a mile. The trail forks just before the Royal Creek footlog bridge; BEAR RIGHT onto the Royal Basin Trail #832. The Maynard Burn Trail continues straight and is easy to mistake in early light.\n\nRoyal Creek Camp at about 3.4 miles is a common first night. Royal Lake at about 7.2 miles and 5,100 ft is the main basecamp, with designated sites and a seasonal ranger post — the last dependable water before the dry climb. Many parties push on to camps around 5,800-6,200 ft in upper Royal Basin.\n\nFrom upper Royal Basin, climb a moraine and a snowfield of roughly 35-40 degrees to the notch on the Royal-Deception divide at about 6,500-6,560 ft, then descend shower-tile scree to grass and heather benches above Deception Basin.",
+      "season": "Roughly Jul-Sep. The notch below the divide holds 35-40 degree snow and an axe is worth carrying outside late season",
+      "hazards": [
+       "Rotten, tilted pillow basalt that breaks away readily, with rockfall funnelled by the gullies above the col",
+       "A Class 4 step on poor rock over steep runout dirt that must be reversed on descent — one party graded a move on the downclimb at 5.8",
+       "A reported moat over 30 ft deep below the gully late in the season",
+       "Lingering steep snow on the approach gullies and Mystery Glacier into summer, and a 35-40 degree snow slope below the Royal-Deception notch",
+       "Remote terrain — a solo traveller died in a fall near the peak's south end in July 2022"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE OF THE CLIMB IS THE LOWER LEFT CORNER OF THE MYSTERY GLACIER, AND THE THING THAT MARKS IT IS A LAKE YOU CANNOT MISTAKE FOR ANYTHING ELSE: A JADE-GREEN MORAINE-BOUNDED LAKE SITS AT THE GLACIER'S BASE. Drop off the benches into Deception Basin, cross a dark moraine, and the lake is at the foot of the ice. Get on the glacier at its LOWER LEFT corner. Colour is a fog-usable marker at short range and there is one such lake here.\n\nTHE TEST FOR THE GLACIER CROSSING IS A DIAGONAL: you enter at the lower LEFT and exit at the upper RIGHT, at a COL at about 6,700 ft on the peak's EAST side. The ice is stagnant and low-angle with a few small crevasses to step over — this is a walk with a rope on, not a serious glacier. If you are climbing straight up the fall line rather than trending right, you are not heading for the col.\n\nSECOND TEST, above the col, and it is a specific distance and a specific side: from the col traverse mixed rock and snow to reach OPEN SNOW ABOUT 200 FT SOUTH OF THE COL, then climb those slopes STAYING SOUTH OF the blocky rock band immediately above. South of the rock band, not through it. Snow angles reach around 40 degrees and take pickets well. The gullies feeding this section are where the rockfall comes from, so move one at a time and keep the party to three or fewer.\n\nTHIRD TEST, and it is the commitment point: a short CLASS 4 STEP on poor rock, with steep runout dirt below it, gains a NOTCH NEAR 7,500 FT. Trend CLIMBER'S LEFT on the approach to it. This step has to be downclimbed on the way out, usually unroped, and one party rated a single move on the reverse at 5.8 — so it is worth being certain about before you commit. A moat over 30 ft deep has been reported below the gully late in the season, which changes how the section is entered and exited.\n\nWHAT CONFIRMS YOU ARE THROUGH: beyond the notch a clean Class 3 gully leads to the summit block, and THE ROCK GETS MARKEDLY BETTER than anything below it. Good rock on this peak means you are nearly there."
+     },
+     {
+      "name": "Home Lake and Constance Pass, reaching Deception Basin from the south",
+      "notes": "The other side, and the one that suits a party already camped at Home Lake for Fricaba or Warrior. From the Upper Dungeness Trailhead, Trail #833.2 to Camp Handy at about 3.4 miles and Boulder Shelter at about 6.4 miles and 4,890 ft, then the Home Lake / Constance Pass Trail to Home Lake at roughly 9.3 miles and 5,308-5,330 ft. From camp, climbers' paths lead up to Constance Pass at about 5,750-5,800 ft, and from there the route traverses and descends west into upper Deception Basin.\n\nThis is the same basin the Royal Basin parties drop into, reached from the opposite end. It is the approach a high-route party is already on, and one detailed account describes exiting this way over Gunsight Pass toward Constance Pass and out the Dosewallips and Del Monte Ridge trail system with no rappels — a valid variant exit, distinct from reversing the ascent.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Loose scree traverses between Constance Pass and Deception Basin",
+       "All the summit-block hazards of the standard variant, including the reversible Class 4 step",
+       "Steep snow lingering on the Constance Pass and Deception Basin traverse into July",
+       "Long committing backcountry travel far from help"
+      ],
+      "baseFinding": "IDENTICAL ONCE YOU ARE IN DECEPTION BASIN, and the shared test is the good one: the JADE-GREEN MORAINE-BOUNDED LAKE at the foot of the Mystery Glacier. Get on the ice at its LOWER LEFT corner and cross diagonally to the COL AT ABOUT 6,700 FT at its UPPER RIGHT, on the peak's EAST side.\n\nTHE EXTRA TEST THIS SIDE NEEDS is at Constance Pass, because you arrive at Deception Basin along its length rather than dropping into its head. Leave the maintained trail at the pass and work WEST and DOWN into the upper basin. Loose scree on the descent is normal here. If you are contouring without losing height you have not committed to the basin; if you are climbing again you have crossed it and are heading for the Fricaba-Hal Foss ridge instead.\n\nABOVE THE COL THE TESTS ARE THE SAME: open snow about 200 ft SOUTH of the col, climbed staying SOUTH of the blocky rock band; then a short Class 4 step approached CLIMBER'S LEFT to a notch near 7,500 ft; then a clean Class 3 gully on markedly better rock to the summit."
+     }
+    ],
+    "hazards": [
+     "Rotten, tilted pillow-basalt rock that breaks away readily",
+     "Steep, exposed scrambling on the summit block, with brief Class 4 moves possible depending on line, and serious fall consequences",
+     "Lingering steep snow on the approach gullies and Mystery Glacier into summer",
+     "A solo backcountry traveler (Sean Allen, 38) died in a fall near the peak's south end / Del Monte ridgeline in July 2022, a reminder of the terrain and weather risk here — exact cause of the fall was not publicly detailed by NPS beyond that visibility/conditions were a factor"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool, wet maritime Olympic climate that can deteriorate quickly even in the July-September window",
+      "probability": "Rain shadow location (east side of the Olympics, per Jefferson County terrain) means somewhat drier than the west-side Olympics, but fast-moving Pacific frontal systems can still bring sudden rain/wind even in summer"
+     },
+     "exposure": "Serious fall consequences on the exposed, unroped summit block; compounded by rotten, tilted pillow-basalt rock that pulls loose readily (a 2022 fatality occurred here tied to route-finding errors onto cliffy ground)",
+     "avalanche": {
+      "zone": "N/A - summer route; nearest NWAC coverage (Olympics zone) is oriented toward winter/spring forecasting and does not specifically model this route's approach gullies",
+      "byMonth": {
+       "July": "Low",
+       "June": "Considerable",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "The route crosses the small, stagnant, low-angle Mystery Glacier from Deception Basin to the col east of the peak; expect a few small crevasses to step over, so wear crampons and treat it as glacier travel."
+    }
+   }
+  }
+ ]
+}

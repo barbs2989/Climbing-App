@@ -1,0 +1,683 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "label"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Summit-day gain"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Summit-day gain"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Summit-day gain"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Summit-day gain"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Required rock grade"
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Route difficulty"
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Permit reservability"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Elevation range stated in the trip total"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach length in days"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking pass at the trailhead"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Parking pass at the trailhead"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "How the camp permit is obtained"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "How the camp permit is obtained"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "How the camp permit is obtained"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "How the camp permit is obtained"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Glacier on the approach"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Flank difficulty in the overview"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_rake_traverse_route",
+   "before": {
+    "itinerary": {
+     "cal": "Climbed roughly July-September once approach gullies and Terror Basin snowfields have melted out; a North Cascades National Park wilderness permit (reservable in advance, or first-come at Marblemount) is required for the Terror Basin camp.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A steep, sweaty climb out of the Goodell Creek trailhead through forest and heather slopes into Terror Basin, gaining nearly 6,000 ft to the flat camping shelf at roughly 5,800 ft below the Southern Pickets crest. Parties carry a full multi-day rack, rope, and several days of food, since the route is entirely off-trail once past the first mile or two.",
+       "hours": 8,
+       "miles": 7.2,
+       "title": "Approach to Terror Basin",
+       "gainFt": 5800,
+       "lossFt": 300,
+       "packLb": 50,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Goodell Creek TH, permit and rack in hand"
+        },
+        {
+         "time": "+5 hr",
+         "label": "Clear treeline",
+         "detail": "Onto open heather and talus below the basin"
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Reach Terror Basin camp",
+         "detail": "Flat gravel bench at ~5,800 ft with water and views of the crest"
+        }
+       ],
+       "objective": "Reach the Terror Basin high camp"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start day climbing from camp to the Terror-Rake col, then following the crest on mixed 4th/5th-class terrain (to roughly 5.9) to the summit at 7,869 ft. The descent reverses the ridge with a series of rappels back to the col and down to camp, so the rope stays on for most of the day.",
+       "hours": 12,
+       "miles": 2,
+       "title": "Climb The Rake, ridge traverse route",
+       "gainFt": 1600,
+       "lossFt": 1600,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start with rack, single rope, and minimal water/food"
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Gain the Terror-Rake col",
+         "detail": "Steep gully/snow finger to the notch"
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Start ridge pitches",
+         "detail": "Mixed climbing along the crest, up to 5.9 in spots"
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit The Rake",
+         "detail": "High point 7,869 ft"
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin rappel descent",
+         "detail": "Reverse the ridge with a series of raps back toward the col"
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at Terror Basin camp"
+        }
+       ],
+       "objective": "Summit The Rake and return to Terror Basin camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and descend the approach route in reverse — steep heather and forest back down to the highway. Knees take the brunt of it; most parties are back at the car by mid-afternoon.",
+       "hours": 7.5,
+       "miles": 7.2,
+       "title": "Exit to trailhead",
+       "gainFt": 300,
+       "lossFt": 5800,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Hike out to Goodell Creek trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: one day backpacking into Terror Basin camp, a long technical day climbing The Rake's ridge crest and rappelling back to camp, and a day hiking out — roughly 16 miles and ~7,700 ft of gain round trip."
+    },
+    "timing": {
+     "totalHrs": 27.5,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": 7.5,
+     "approachTimeHrs": 8,
+     "recommendedStart": "3:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "A steep, sweaty climb out of the Goodell Creek trailhead through forest and heather slopes into Terror Basin, gaining nearly 6,000 ft to the flat camping shelf at roughly 5,800 ft …",
+       "fromTo": "Approach to Terror Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "An alpine-start day climbing from camp to the Terror-Rake col, then following the crest on mixed 4th/5th-class terrain (to roughly 5.9) to the summit at 7,869 ft. The descent rever…",
+       "fromTo": "Climb The Rake, ridge traverse route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7.5,
+       "note": "Break camp and descend the approach route in reverse — steep heather and forest back down to the highway. Knees take the brunt of it; most parties are back at the car by mid-aftern…",
+       "fromTo": "Exit to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "gain_ft": 7700,
+    "access": {
+     "fees": "$10 per person backcountry recreation fee plus a $6 nonrefundable permit/reservation fee — applies to advance Recreation.gov reservations, early-access lottery entries, and walk-up permits alike; no charge for youth 15 and under. This per-person structure replaced the former flat ~$20–26 per-permit fee in March 2024.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Reserved permits must be picked up by 11am on the trip's start date or the reservation is cancelled; camp only within your assigned cross-country zone.",
+     "permit": "NPS backcountry permit required for any overnight stay ($10/person/night + $6 nonrefundable fee as of March 2024 — no longer free). Reservable in advance via Recreation.gov, or obtained as a walk-up (about 40% of capacity is held for walk-ups) at the Wilderness Information Center in Marblemount, (360) 854-7245 / noca_wilderness@nps.gov.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (National Park Service) — Southern Pickets, Crescent Creek Basin cross-country zone",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high — the Crescent Creek approach into the Southern Pickets involves sustained off-trail bushwhacking, steep brush/talus, and significant elevation gain typical of Pickets approaches; expect a full, grueling approach day(s) before any climbing begins",
+      "packWeight": "Heavy multi-day alpine/overnight kit (bivy or camp gear, rack, glacier/snow travel gear for the approach in early season) — expect 35-50+ lb packs for the approach"
+     },
+     "approachTime": "Multi-day approach typical (1-2 days in via Crescent Creek basin) given the remoteness and difficulty of the approach; not a single-push objective for most parties",
+     "requiredSkills": [
+      "5.7 traditional/alpine rock climbing with a pack",
+      "route-finding on loose, exposed, unmarked alpine ridge terrain",
+      "multi-pitch and simul-climbing/scrambling efficiency",
+      "self-rescue and remote wilderness first-response competence",
+      "off-trail navigation and bushwhack approach experience",
+      "snow/glacier travel basics for early-season approach conditions"
+     ],
+     "experienceLevel": "Experienced alpine climbers only — comfortable with remote, unrescuable terrain, route-finding on a serrated alpine ridge, and multi-day self-sufficiency; prior North Cascades or similarly committing range experience strongly recommended"
+    }
+   }
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "before": {
+    "rock_grade": "Class 3-4 (YDS)",
+    "access": {
+     "fees": "NPS backcountry permit fee: $10/person plus a $6 reservation fee (Recreation.gov)",
+     "permit": "Wilderness backcountry permit required for overnight camping in the Terror Basin/Crescent Creek Cross-Country Zone; reserve via Recreation.gov and confirm via the Wilderness Information Center in Marblemount",
+     "closures": "Standard NPS Cross-Country Zone rules apply; a bear-resistant food canister may be required for certain camps",
+     "landManager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "before": {
+    "itinerary": {
+     "cal": "North Cascades NP wilderness permit required for camping in Terror/Crescent Creek Basin; best conditions are typically late July–September once snow on the Barrier and the Eye Col approach gullies has receded.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, hard approach day: from the Goodell Creek Cross-Country trailhead, follow the old roadbed and boot path up through Terror Creek drainage, over The Barrier (steep class 2-3 scrambling), and across Crescent Creek Basin to a flat camp spot with water below Mount Terror at ~6,050 ft. Most parties go straight to this camp in one day rather than splitting it with a separate Terror Basin camp.",
+       "hours": 9,
+       "miles": 9.5,
+       "title": "Approach to Crescent Creek Camp",
+       "gainFt": 5800,
+       "lossFt": 400,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Goodell Creek Cross-Country Zone Access trailhead."
+        },
+        {
+         "time": "",
+         "label": "Terror Creek crossing and old roadbed",
+         "detail": "Roadbed for ~4 miles, then steep boot path from ~1,700 ft up through treeline."
+        },
+        {
+         "time": "",
+         "label": "Cross The Barrier",
+         "detail": "Serious class 2-3 ridge crossing; the technical crux of the approach."
+        },
+        {
+         "time": "",
+         "label": "Traverse Crescent Creek Basin",
+         "detail": "Stay near 5,800 ft, traverse about a mile to camp."
+        },
+        {
+         "time": "",
+         "label": "Make camp",
+         "detail": "Flat site with water below Mount Terror, ~6,050 ft."
+        }
+       ],
+       "objective": "Reach climbing camp below Mount Terror / West Twin Needle"
+      },
+      {
+       "n": 2,
+       "note": "A full technical day from camp: descend to the head of Crescent Creek, traverse below the Eye Col gully, then climb chockstone-filled terrain into class 5 ground and the East Face 5.7 Direct to the summit. Descend via two 60m rappels through the Himmelhorn-West Twin notch back toward camp, aiming to be off the rock before dark.",
+       "hours": 13,
+       "miles": 2.5,
+       "title": "Summit push via South Route / East Face 5.7 Direct",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "~4:00 AM",
+         "label": "Leave camp",
+         "detail": "Early alpine start; helmet, rack, and 2x60m rope."
+        },
+        {
+         "time": "~4:45 AM",
+         "label": "Drop to Crescent Creek headwaters",
+         "detail": "Descend roughly 300 ft from camp before the rising traverse."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Traverse below Eye Col",
+         "detail": "Rising traverse past the adjacent buttress toward the south gully."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Enter south gully / chockstones",
+         "detail": "Scramble and short pitches through chockstone terrain into class 5 ground."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "East Face 5.7 Direct",
+         "detail": "Roped pitches to the summit ridge."
+        },
+        {
+         "time": "~11:30 AM",
+         "label": "Summit, then rappel descent",
+         "detail": "Two 60m raps through the Himmelhorn-West Twin notch, then reverse the approach to camp by evening."
+        }
+       ],
+       "objective": "Climb West Twin Needle and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: back across Crescent Creek Basin, over The Barrier, down through the Terror Creek drainage and old roadbed to the trailhead. Water can be scarce on this leg in late summer, so plan refill stops.",
+       "hours": 7,
+       "miles": 9.5,
+       "title": "Hike out",
+       "gainFt": 800,
+       "lossFt": 6200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to Goodell Creek trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, car-to-car trip of roughly 19.5 miles RT with about 7,900 ft of net elevation range; one long approach day in, one full technical summit day, one long day out."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - multi-day, largely trail-less approach with sustained elevation gain/loss and off-trail navigation to reach Crescent Creek basin before any technical climbing begins",
+      "packWeight": "50-65 lbs typical for a self-supported multi-day expedition (bivy gear, technical rack, food/fuel for several days)"
+     },
+     "approachTime": "Roughly 2-3 days of trail-less approach through the Southern Pickets (e.g., via Terror Basin/Crescent Creek) before reaching the base of the route",
+     "requiredSkills": [
+      "Comfortable leading 5.7 alpine rock on loose, unfamiliar rock (Grade III commitment)",
+      "Off-trail route-finding and bushwhacking through trail-less basins",
+      "Basic glacier/snow travel skills for approach terrain near Crescent Creek",
+      "Self-rescue and remote wilderness first aid competency given the isolation",
+      "Multi-pitch anchor building, rappelling, and efficient party movement"
+     ],
+     "experienceLevel": "Advanced alpine climbers only, with prior multi-day expedition experience in the North Cascades - this is a committing, remote objective with scarce route beta"
+    },
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+      "note": "Unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek; NW Forest Pass and a self-issue wilderness permit (or WIC permit in Marblemount) required.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead is an unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek. A Northwest Forest Pass is required to park, along with a self-issue wilderness permit at the trailhead, or one from the Wilderness Information Center in Marblemount if you plan to camp in the Terror or Crescent Creek basins."
+     },
+     {
+      "lat": 48.713999,
+      "lng": -121.289245,
+      "elev": 2200,
+      "name": "Upper trail fork",
+      "note": "Maintained forestry-road-bed trail ends here; climbers' path continues with diminishing cairns/flagging toward Terror Creek.",
+      "type": "Junction",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.718238,
+      "lng": -121.291407,
+      "elev": 2500,
+      "name": "Terror Creek crossing",
+      "note": "Ford Terror Creek at a shallow braid; crossing depth is very flow-dependent and can be a wade in high water.",
+      "type": "Water",
+      "distMi": 4
+     },
+     {
+      "lat": 48.732526,
+      "lng": -121.284572,
+      "elev": 5400,
+      "name": "The Barrier",
+      "note": "Steep, brushy, loose ridge (spur off Mt. Degenhardt) separating Terror Creek and Crescent Creek basins; cross via a loose ledge system near the lower Terror Glacier or a higher moat crossing below Degenhardt — classic sustained 'Pickets Class 3' that turns parties back.",
+      "type": "Hazard",
+      "distMi": 6
+     },
+     {
+      "lat": 48.736559,
+      "lng": -121.267264,
+      "elev": 6050,
+      "name": "Crescent Creek Basin camp (below Mt. Terror)",
+      "note": "Established high camp on a flat bench below Mount Terror with meltwater from two overhead slab streams; the basin runs 6,050–6,440 ft.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.746312,
+      "lng": -121.26574,
+      "elev": 7400,
+      "name": "Eye Col gully traverse",
+      "note": "Drop ~300 ft below the moraine to Crescent Creek's head, then rising-traverse below the Eye Col gully past an adjacent buttress on a minor rib to a notch, avoiding a closed chimney and loose choss.",
+      "type": "Junction",
+      "distMi": 8.7
+     },
+     {
+      "lat": 48.77667,
+      "lng": -121.3125,
+      "elev": 7936,
+      "name": "West Twin Needle",
+      "note": "Final class 5.7 pitch through larger chockstones/a narrow crack above the col, then class 2-3 scrambling under white slabs to the true summit; descend via rappels off the Himmelhorn–West Twin Needle col.",
+      "type": "Summit",
+      "distMi": 9.5
+     }
+    ],
+    "access": {
+     "fees": "$10 per person plus a $6 reservation fee for backcountry permits; climbers 15 and under are free. No day-use or parking fee at Goodell Creek Trailhead.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Camp only within the designated Terror Basin / Crescent Creek Basin cross-country zone; standard Leave No Trace and NPS backcountry regulations apply.",
+     "permit": "Wilderness/backcountry permit required for any overnight stay, including Terror Basin and Crescent Creek Basin cross-country zones; reserve via Recreation.gov and finalize through the North Cascades Wilderness Information Center in Marblemount (360-854-7200, noca_wilderness@nps.gov).",
+     "closures": "No standing closures specific to this route beyond normal winter road access; check current NPS trail/road condition reports before a trip.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (National Park Service)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None beyond the NPS wilderness permit - no Northwest Forest Pass needed since the approach is inside North Cascades National Park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "detailed_rack": "A light alpine rock rack (small-to-mid cams and nuts) covers the low-5th-class pitches and 5.7 crux; carry a few extra slings/quickdraws for the chockstone-choked gully sections and glacier travel gear (axe, and crampons if snow lingers) for the Crescent Creek Basin / Mustard Glacier approach depending on season.",
+    "overview": "West Twin Needle (7,936 ft) is the taller, western spire of the Twin Needles, a pair of rock pinnacles in the Southern Pickets immediately west of Mount Terror. Its slightly lower twin to the east (about 7,840+ ft) is the more technically serious of the pair; West Twin Needle carries easier class 3-4 flanks but this South Route tackles steeper 5.7 rock directly up its south/east side above Crescent Creek Basin. First climbed August 17, 1932 by William Degenhardt, James Martin, and Herb Strandberg, it sees very few ascents each year owing to the multi-day cross-country approach required to reach it."
+   }
+  }
+ ]
+}

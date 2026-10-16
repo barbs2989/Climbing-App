@@ -1,0 +1,227 @@
+{
+ "applied": [
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "pitch_detail",
+   "path": [
+    7,
+    "grade"
+   ],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "overview",
+   "path": [],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "beta",
+   "path": [],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "beta",
+   "path": [],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Hardest/crux rock grade"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "grade",
+   "path": [],
+   "fact": "overall commitment grade (roman numeral)"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "commitment",
+   "path": [],
+   "fact": "overall commitment grade (roman numeral)"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "overall commitment grade (roman numeral)"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "overall commitment grade (roman numeral)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "before": {
+    "grade": "5.11d",
+    "rock_grade": "5.12a",
+    "pitch_detail": [
+     {
+      "grade": "5.10+",
+      "notes": "Start from a small ledge just above the snow on the obvious hand-and-finger splitter. Mantle out the top, pass a tree onto a ledge, then climb a short corner into a chimney and belay above it. The tree has slings around it that are handy for hauling a pack.",
+      "pitch": "1",
+      "anchor": "gear",
+      "lengthM": 40
+     },
+     {
+      "grade": "5.9+",
+      "notes": "Go left up hanging corners around several arêtes, shuffle a short wide section à cheval, then traverse left on slab along an exposed crack. Skip the bolted belay and keep going left on slab through a short face crux to a large slung pillar. Rope drag is severe, so many parties split this pitch.",
+      "pitch": "2",
+      "anchor": "slung pillar",
+      "lengthM": 55
+     },
+     {
+      "grade": "5.10-",
+      "notes": "The Monkey Traverse. Climb the corner of the pillar, then swing right along an exposed horizontal crack to a large sloping ledge. Protect the traverse well for the second and extend placements to manage the rope.",
+      "pitch": "3",
+      "lengthM": 20
+     },
+     {
+      "grade": "5.9",
+      "notes": "Climb up, then slightly left into a V-slot. Finger cracks and varied stemming weave left, right and left again to the big midway ledge. Here the original Gorillas in the Mist breaks right onto 5.8 ground; King Kong heads left.",
+      "pitch": "4",
+      "lengthM": 60
+     },
+     {
+      "grade": "5.10",
+      "notes": "Move the belay about 25 ft left to the base of a striking corner crack. A crux start leads into a clean-lined corner and a good belay ledge. This pitch and the next are shared with Gorillas Direct.",
+      "pitch": "5",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.10+",
+      "notes": "A short, stout corner crack ends in a mantle onto a ledge. Continue up the crack onto slab where protection is sparse, traverse right-to-left into another corner crack, and finish with a rightward traverse to a two-pin belay. Back the pins up with small nuts.",
+      "pitch": "6",
+      "anchor": "fixed pins",
+      "lengthM": 55
+     },
+     {
+      "grade": "5.10+",
+      "notes": "Fifth Avenue. Climb the corner and the roof bulge above, move right then left into a stem-box, then go right on steep jugs with spaced protection to a two-bolt anchor at the base of the headwall. Grades given for this pitch range from 5.10b to 5.10+; back up the anchor with small nuts.",
+      "pitch": "7",
+      "anchor": "bolted",
+      "lengthM": 40
+     },
+     {
+      "crux": true,
+      "grade": "5.11d",
+      "notes": "The Empire State Building headwall splitter. Slabby cracks and blocks lead to vertical tombstone flakes, then a step left into a hand-and-finger crack and back right into the main splitter. It is sustained hands and fists with powerful laybacking, wide sections and chockstones, with a crux pulling the lip. Graded 5.11d by the first-ascent party and 5.12a on some topos. Two small fixed nuts remain.",
+      "pitch": "8",
+      "lengthM": 55
+     },
+     {
+      "grade": "5th class",
+      "notes": "A final fifth-class pitch scrambles to the top of the wall. From there most parties descend the West Ridge gullies to Stuart Pass rather than continuing to the summit.",
+      "pitch": "Exit"
+     }
+    ],
+    "overview": "The hardest currently-documented free route on Mount Stuart: begins on the original four pitches of Gorillas in the Mist, cuts left on a ledge system, joins two pitches of Gorillas Direct, then finishes independently with a two-pitch direct headwall finish up a striking splitter crack ('Empire State Building', 5.12a).",
+    "beta": "Grade: IV 5.11+ alpine rock climb (5.12a on some topos). Route length: 900 feet (8 pitches) on West Face Wall. First free ascent: September 9, 2016, by Sol Wertkin with Jon Gleason. Route climbs first 4 pitches of Gorillas in the Mist, moves left onto Gorillas Direct (2 pitches), then climbs 2-pitch direct finish up aesthetic splitter crack on overhanging headwall (5.11d crux). Connector pitch (5.10b): roof bulge, stem-box, runout overhanging jug climbing. Headwall pitch (5.11d): slabby steps, vertical features, meaty hand/fist jams, wild layback sequences. Required gear: double rack cams/nuts (small-medium), two fixed nuts at headwall top. Best season: late summer through early September (before fall storms and snow). Hazards: significant runouts between protection placements, loose rock with hidden chock stones, 30+ meters of overhanging exposure on headwall, alpine weather exposure risk (unplanned bivy possible).",
+    "watch_out": "High-grade 5.11d sustained climbing\nSerious exposure throughout route\nWeather sensitivity - afternoon storms dangerous at altitude\nComplex route-finding on ascent and descent\nAltitude hazard compounds climbing difficulty",
+    "grade_num": 12
+   }
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "before": {
+    "grade": "Grade II, 5.7",
+    "commitment": "III",
+    "alpine_grade": "III",
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits (required May 15-Oct 31) are won via a competitive winter lottery (roughly 5-10% odds for the Core zone) or the 2-day-ahead rolling walk-up window; many parties without one instead do the whole route car-to-car in one very long day.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stuart Lake/Colchuck trailhead (~3,400 ft), hike past Colchuck Lake (5,570 ft) then grind up the steep talus gully of Aasgard Pass -- about 2,200 ft in under a mile -- into the core Enchantments basin. Drop toward Prusik Pass and camp at Gnome Tarn, a small pool right below Prusik's south face and 15-20 minutes from most route starts.",
+       "hours": 6.5,
+       "miles": 9.3,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4600,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "The classic, easiest technical route on Prusik -- moving parties often simulclimb the low-5th-class ridge in about 90 minutes. Descend by rappelling the north side and walking back over Prusik Pass, leaving the afternoon free to explore the basin.",
+       "hours": 4.5,
+       "miles": 1.4,
+       "title": "Climb the West Ridge",
+       "gainFt": 600,
+       "lossFt": 600,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave camp",
+         "detail": "~20-30 min hike/scramble to the base of the West Ridge"
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Start climbing",
+         "detail": "Low 5th-class ridge, often simulclimbed by competent parties"
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Reach the summit",
+         "detail": "~1.5 hrs of climbing for a moving party"
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin the descent",
+         "detail": "Rappel the north side, then walk back over Prusik Pass"
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at camp",
+         "detail": "Rest of the day free to explore the Enchantments basin"
+        }
+       ],
+       "objective": "Summit via the West Ridge (5.7, II, 4 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp, climb back up to Aasgard Pass, then descend the long way back past Colchuck Lake to the trailhead. Efficient parties sometimes skip this third day and hike all the way out the same evening after climbing, making it a 2-day trip.",
+       "hours": 5.5,
+       "miles": 9.3,
+       "title": "Hike out via Aasgard Pass",
+       "gainFt": 700,
+       "lossFt": 4600,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Stuart Lake trailhead"
+      }
+     ],
+     "totalNote": "A relaxed 3-day trip (~20.5 mi, ~5,900 ft round-trip) built around a quick, popular 4-pitch 5.7 climb; strong parties without a permit often compress it into one ~15-16 hr car-to-car day instead."
+    }
+   }
+  }
+ ]
+}

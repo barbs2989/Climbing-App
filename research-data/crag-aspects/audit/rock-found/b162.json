@@ -1,0 +1,714 @@
+[
+ {
+  "pid": "mo_north_side_trail",
+  "crag": "North Side Trail",
+  "groups": [
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/202232289/north-side-trail",
+  "quote": "Crag and wall pages name no rock; parent Crane Lake: 'rhyolite boulder problems' and 'Small grained granite'"
+ },
+ {
+  "pid": "nh_exeter_area_bouldering",
+  "crag": "Exeter Area Bouldering",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107957041/the-exeter-boulder",
+  "quote": "Exeter Area Bouldering and The Exeter Boulder pages name no rock"
+ },
+ {
+  "pid": "nh_north_end_the_2",
+  "crag": "North End, The",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/113709129/the-north-end",
+  "quote": "North End and its wall pages name no rock; parent Clough SP: 'The rock type is granite.'"
+ },
+ {
+  "pid": "nh_wm_zealand_valley",
+  "crag": "WM: Zealand Valley",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Mount Oscar": "SW"
+  },
+  "url": "https://www.mountainproject.com/area/106202879/mount-oscar",
+  "quote": "Mount Oscar: 'Faces southwest and gets good sun'; names no rock (only resort pages say granite)"
+ },
+ {
+  "pid": "nl_central_northeastern_coast",
+  "crag": "Central / Northeastern Coast",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {
+   "Grand Falls - Windsor Gorge Park": "basalt",
+   "Main Topsail": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122498358/grand-falls-windsor-gorge-park",
+  "quote": "Grand Falls: 'rock stacks made from old volcanic basalt'; Main Topsail: 'a large granite face one its east side'",
+  "note": "Bonavista, Dark Cove (Eastport), Fogo island and Trinity pages name no rock. Main Topsail page: 'Its east face has roughly 200m to 250m of climbable rockface' - a named face, so no aspect written."
+ },
+ {
+  "pid": "nm_el_rito",
+  "crag": "El Rito",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "wrong",
+    "correct": "conglomerate"
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {
+   "El Rito Traditional Area": "conglomerate"
+  },
+  "wallExceptions": {},
+  "aspects": {
+   "Drunk Wall": "NE"
+  },
+  "url": "https://www.mountainproject.com/area/114457027/drunk-wall",
+  "quote": "Drunk Wall: 'A small, super secluded conglomerate northeast-facing wall.'",
+  "note": "Traditional Area fill rests on the El Rito crag page ('Chock full of conglomerate fun, there are three primary climbing sections'; the trad area is one of the three); its own page and lamountaineers.org name no rock."
+ },
+ {
+  "pid": "nm_los_alamos_canyon",
+  "crag": "Los Alamos Canyon",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "tuff",
+    "note": "Wall pages: Entrance Tower 'the rock is tuff', Hospital Crag 'rhyolitic tuff', Pipeline Cliff 'welded tuff'. Crag page says 'rhyolite/tuff' (mixed) - not used."
+   },
+   {
+    "held": "dacite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Pipeline Cliff": "welded tuff"
+  },
+  "aspects": {
+   "Entrance Tower": "S"
+  },
+  "url": "https://www.mountainproject.com/area/120167466/entrance-tower",
+  "quote": "Entrance Tower: 'the rock is tuff and was better quality than expected'; 'South-facing, sunny.'",
+  "note": "Reservoir Wall page names no rock; its 'east-facing wall' covers only the best routes, so no aspect."
+ },
+ {
+  "pid": "nm_nova_canyon",
+  "crag": "Nova Canyon",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/203849404/nova-canyon",
+  "quote": "Nova Canyon and both Science Friction pages name no rock; only the Sandia range page says granite"
+ },
+ {
+  "pid": "nt_main_trad_wall",
+  "crag": "Main/Trad Wall",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {
+   "The Bookshelf": "granite",
+   "The Middle Ground": "granite",
+   "The Shield": "granite",
+   "The Sinking Ship": "granite",
+   "Trail's End": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122755055/maintrad-wall",
+  "quote": "Crag: bouldering 'goes to the left around and up the granite knob the main face is on'",
+  "note": "Bookshelf page: 'giant flakes peeling off the the granite knob'; Trail's End page: wall 'toward the back of the granite knob'. Middle Ground, Shield and Sinking Ship fills rest on the crag page only."
+ },
+ {
+  "pid": "nv_box_canyon",
+  "crag": "Box Canyon",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Fire Wall, The": "NW"
+  },
+  "url": "https://www.mountainproject.com/area/113618579/box-canyon",
+  "quote": "Box Canyon is a large canyon complex featuring several classic limestone walls",
+  "note": "Fire Wall page: 'The wall faces NW and gets afternoon sun'. Water World page: 'sport on sharp gray limestone'."
+ },
+ {
+  "pid": "nv_lower_level",
+  "crag": "Lower Level",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/109924309/black-corridor-lower",
+  "quote": "Lower Level pages carry only Red Rocks' region-wide 'The sandstone in Red Rocks is fragile' boilerplate"
+ },
+ {
+  "pid": "nv_mount_charleston_bouldering",
+  "crag": "Mount Charleston Bouldering",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/201038326/mount-charleston-bouldering",
+  "quote": "The limestone tends to be a bit abrasive on the skin"
+ },
+ {
+  "pid": "nv_sun_city",
+  "crag": "Sun City",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/113987912/sun-city",
+  "quote": "A sunny south facing limestone crag that's about 30 minutes south of Mesquite.",
+  "note": "Digimon Sector 'Routes Mostly Face: South' and Cave Sector 'East / Southeast / South' are hedged or multiple, so no aspects."
+ },
+ {
+  "pid": "nv_the_sewers",
+  "crag": "The Sewers",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122864734/the-sewers",
+  "quote": "Crag: 'water polished limestone boulders' (crag holds 2 rocks); 10 of 11 boulder pages name no rock",
+  "note": "Half-Shell Boulder (held dolomite) page: 'sharp limestone on the left' - loose wording, not used to call dolomite wrong."
+ },
+ {
+  "pid": "ny_lake_gulley",
+  "crag": "Lake Gulley",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118584580/lake-gulley",
+  "quote": "Crag: 'a variety of rock types', 'shale-style lips'; parent Clark Reservation: 'limestone with some shale'"
+ },
+ {
+  "pid": "ny_spanky_s_area",
+  "crag": "Spanky's Area",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Nestle Wall": "S"
+  },
+  "url": "https://www.mountainproject.com/area/106907174/nestle-wall",
+  "quote": "Nestle Wall: 'A south facing cliff with good quality routes'; no Spanky's page names the rock"
+ },
+ {
+  "pid": "oh_cascade_park",
+  "crag": "Cascade Park",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "note": "Entrance Boulder, Orogeny and The Quarry descriptions are the bare note 'Berea Sandstone.' (terse); Falls Overlook and Warm Up Boulder name no rock. Lorain County Metro Parks page: 'exposures of Late Devonian age Berea Sandstone'."
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105994260/orogeny",
+  "quote": "Orogeny, Entrance Boulder, The Quarry: description reads only 'Berea Sandstone.'"
+ },
+ {
+  "pid": "oh_trash_shoot_area",
+  "crag": "Trash Shoot Area",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Trash Shoot Wall": "W"
+  },
+  "url": "https://www.mountainproject.com/area/120241747/trash-shoot-wall",
+  "quote": "Trash Shoot Wall: 'This area faces west and gets nice sun in the afternoon.' No page names the rock"
+ },
+ {
+  "pid": "ok_boulder_picnic_area_treasure_valley",
+  "crag": "Boulder Picnic Area - Treasure Valley",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122266671/boulder-picnic-area-treasure-valley",
+  "quote": "Crag says only 'bomber rock'; none of the 5 wall pages names a rock"
+ },
+ {
+  "pid": "or_coastal_region",
+  "crag": "Coastal Region",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "basalt"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/203653562/salmon-river",
+  "quote": "Salmon River: 'A soft basalt similar in nature to what you find in Yachats.'",
+  "note": "Fogerty Creek Beach page names no rock ('bomber for Oregon beach choss')."
+ },
+ {
+  "pid": "pa_haycock_mountain_nockamixon",
+  "crag": "Haycock Mountain (Nockamixon)",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "wrong",
+    "correct": "diabase"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107082197/haycock-mountain-nockamixon",
+  "quote": "Solid Triassic Diabase bouldering on Pennsylvania State Game Lands 157",
+  "note": "Geology source: Wikipedia Haycock Mountain - 'Haycock is covered with numerous triassic diabase boulders.'"
+ },
+ {
+  "pid": "pa_north_mountain",
+  "crag": "North Mountain",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "wrong",
+    "correct": "diabase"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/109647967/north-mountain",
+  "quote": "this does not detract from the possibility of great diabase boulder problems",
+  "note": "Parent Haycock page: 'Solid Triassic Diabase bouldering'; Wikipedia: 'triassic diabase boulders'."
+ },
+ {
+  "pid": "pa_smiley_area",
+  "crag": "Smiley Area",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106751820/smiley-area",
+  "quote": "Smiley Area and all 6 wall pages name no rock; only parent Governor Dick Park says diabase"
+ },
+ {
+  "pid": "qc_roussel_est",
+  "crag": "Roussel Est",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {
+   "Le Grand Mur et le Petit Mur": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {
+   "Monts et marées": "S"
+  },
+  "url": "https://www.mountainproject.com/area/201284140/le-grand-mur-et-le-petit-mur",
+  "quote": "Le Grand Mur et le Petit Mur: 'Les deux murs presentent un granitoide qui s'effrite legerement.'",
+  "note": "Fill rests on 'granitoide' (granitoid), a family term, written as granite. Monts et marees: 'South facing sunny cliff starting from a sandy beach.' L'Autre Monde and Les monts et merveilles name no rock."
+ },
+ {
+  "pid": "ri_peace_dove_area",
+  "crag": "Peace Dove Area",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112496211/peace-dove-area",
+  "quote": "Peace Dove Area and both boulder pages name no rock; parent Lincoln Woods says only 'granite'"
+ },
+ {
+  "pid": "sd_delicacy_wall_bouldering",
+  "crag": "Delicacy Wall Bouldering",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/110909697/delicacy-wall-bouldering",
+  "quote": "Crag: 'quality limestone bouldering' (crag holds 3 rocks); no wall page names a rock",
+  "note": "Cracked Slab Boulder: 'a huge highball slab face that faces north' - a face on the boulder, so no aspect."
+ },
+ {
+  "pid": "sd_old_hill_city_road",
+  "crag": "Old Hill City Road",
+  "groups": [
+   {
+    "held": "greywacke (mapped)",
+    "verdict": "unclear",
+    "note": "Rests on the crag page's Getting There sentence naming the walls (Indian Rocks) granite; no wall page names the rock; parent Mount Rushmore page: 'pegmatite granite'. Demoted in triage: only a Getting There remark (\"the large granite walls (Indian Rocks)\"); no wall page names a rock."
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "1880 Wall East": "S",
+   "1880 Wall West": "S"
+  },
+  "url": "https://www.mountainproject.com/area/108368646/old-hill-city-road",
+  "quote": "until you are perpendicular to the large granite walls (Indian Rocks)",
+  "note": "1880 Wall East and 1880 Wall West pages each say 'all routes face S'. Crag-wide 'S facing' not carried to Big Chief, Tipi Tower, Western Chief."
+ },
+ {
+  "pid": "tn_east_parking_bouldering",
+  "crag": "East Parking Bouldering",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120182408/east-parking-bouldering",
+  "quote": "East Parking and its 7 bloc pages name no rock; parent Dogwood: 'Bullet sandstone area'"
+ },
+ {
+  "pid": "tn_hemlock_block",
+  "crag": "Hemlock Block",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/115363907/hemlock-block",
+  "quote": "Hemlock Block and its 3 wall pages name no rock; parent Deep Creek: 'lots of overhanging sandstone'"
+ },
+ {
+  "pid": "tn_main_area",
+  "crag": "Main Area",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/121960065/main-area",
+  "quote": "Main Area and its boulder pages name no rock; parent Stone Fort calls the boulders sandstone"
+ },
+ {
+  "pid": "ut_c_o_h_canyon",
+  "crag": "C O H Canyon",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/121784256/c-o-h-canyon",
+  "quote": "C O H Canyon, parent Burma Road and all 6 wall pages name no rock"
+ },
+ {
+  "pid": "ut_crux_power_alley",
+  "crag": "Crux Power Alley",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/126045046/crux-power-alley",
+  "quote": "Crux Power Alley, parent Cottonwood Springs and all 7 boulder pages name no rock"
+ },
+ {
+  "pid": "ut_farmington",
+  "crag": "Farmington",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Prayer Rock": "W"
+  },
+  "url": "https://www.mountainproject.com/area/119499496/prayer-rock",
+  "quote": "Prayer Rock: 'West Facing crag between Farmington Canyon and Shepard Creek Canyon'; no page names the rock"
+ },
+ {
+  "pid": "ut_island_in_the_sky",
+  "crag": "Island In The Sky",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "note": "Wingate named for Horsethief Tower ('good Wingate'), Trad Wall ('routes on wingate'), Washer Woman and Monster Tower ('two incredible Wingate formations'; Wikipedia: Wingate Sandstone). Candlestick Tower, Charlie Horse Needle, Evan's Overlook and Grandview point overlook pages carry only the Moab boilerplate."
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105716988/washer-woman",
+  "quote": "Washer Woman and its neighbor Monster Tower are two incredible Wingate formations"
+ },
+ {
+  "pid": "ut_salt_lake_county_urban_crags",
+  "crag": "Salt Lake County Urban Crags",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119383604/salt-lake-county-urban-crags",
+  "quote": "Jordan River Park: 'composite material bouldering'; Wardle Fields: 'artificial crag'",
+  "note": "MAN-MADE: Jordan River Park ('Suburban, composite material bouldering'), Wardle Fields ('This artificial crag ... man-made'), Westminster Boulder Wall (a built campus wall with '\"natural\" crack features built into it'). Kahlert Boulder ('Boulder in the middle of the mulch patch') names no rock."
+ },
+ {
+  "pid": "ut_south_willow_canyon",
+  "crag": "South Willow Canyon",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Fern's Ledge": "E"
+  },
+  "url": "https://www.mountainproject.com/area/118991966/ferns-ledge",
+  "quote": "Fern's Ledge: 'Limestone sport. Slightly overhanging, short, bouldery ... East facing.'",
+  "note": "Lover's Leap page names no rock; crag page's 'numerous limestone outcroppings' is crag-wide on a 2-rock crag."
+ },
+ {
+  "pid": "va_new_boneyard",
+  "crag": "New Boneyard",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/109458464/lowgarden",
+  "quote": "New Boneyard (now Lowgarden) and its boulders name no rock; Boneyard Area: 'majority ... Metaconglomerate sandstone'"
+ },
+ {
+  "pid": "va_ridgeline",
+  "crag": "Ridgeline",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/126557225/ridgeline",
+  "quote": "Ridgeline, Firehouse and Four Bears pages name no rock; parent The Forest: 'greenstone boulders'"
+ },
+ {
+  "pid": "vt_roots_moon_tower_boulder_area",
+  "crag": "Roots/ Moon Tower Boulder Area",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108260632/roots-parking-area",
+  "quote": "Crag (now 'Roots Parking Area') and all 7 boulder pages name no rock"
+ },
+ {
+  "pid": "wa_big_butte",
+  "crag": "Big Butte",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Big Butte - South Face": "S",
+   "Big Butte - West Face": "W"
+  },
+  "url": "https://www.mountainproject.com/area/108407298/big-butte",
+  "quote": "Big Butte and its 3 face pages name no rock; only parent Mt Hull says 'fine quality gneiss'",
+  "note": "South Face: 'The main south facing wall'; West Face: 'The large west facing side of Big Butte'. East Face page states no direction beyond its name."
+ }
+]

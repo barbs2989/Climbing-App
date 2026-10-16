@@ -1,0 +1,238 @@
+[
+ {
+  "id": "wa_east_wilmans_spire",
+  "why": "Monte Cristo/Glacier Basin lies in the Henry M. Jackson Wilderness, not Glacier Peak; rules and land_manager now agree with overnight_permit",
+  "set": {
+   "access.rules": {
+    "from": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+    "to": "Group size capped at 12 (people + stock combined) in the Henry M. Jackson Wilderness. Campfires (stoves excepted) prohibited within ¼ mile of the Glacier Basin Trail."
+   },
+   "access.land_manager": {
+    "from": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+    "to": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Henry M. Jackson Wilderness"
+   }
+  }
+ },
+ {
+  "id": "wa_gato_negro",
+  "why": "best_season contradicted itself (recommend late June, then avoid June; 'late-summer snow')",
+  "set": {
+   "best_season": {
+    "from": "Late June through September is the primary climbing season. Late June through early July is particularly recommended to avoid late-summer snow and to ensure adequate daylight for the long descent. Avoid early season (June) when snow patches and ice may still be present at the base.",
+    "to": "Late June through September is the climbing season. Mid-July through August is best, once the Burgundy Col approach has melted out and the days are long enough for the long descent; September is good in stable weather. Late June is marginal, with snow patches and ice still likely at the base."
+   }
+  }
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "why": "best_season disagreed with the Jul-Sep season and used source-shaped 'per route reports'",
+  "set": {
+   "best_season": {
+    "from": "June through October offers the most reliable conditions per route reports, with the window potentially stretching from May into November depending on that year's snowpack. Early-season parties should expect lingering snow on the approach and the off-trail scramble slopes.",
+    "to": "July through September offers the most reliable conditions; June and October are marginal, depending on that year's snowpack. Early-season parties should expect lingering snow on the approach and the off-trail scramble slopes."
+   }
+  }
+ },
+ {
+  "id": "wa_huckleberry_mountain_east_ridge",
+  "why": "'Late spring' contradicted the July-October window it then stated",
+  "set": {
+   "best_season": {
+    "from": "Late spring through fall (roughly July-October); the ridge and approach basin are typically snow-free from around mid-July, with stable weather often continuing into September or October.",
+    "to": "Roughly July through October; the ridge and approach basin are typically snow-free from around mid-July, with stable weather often continuing into September or October."
+   }
+  }
+ },
+ {
+  "id": "wa_huckleberry_mountain_south_face",
+  "why": "'Late spring' contradicted the July-October window it then stated",
+  "set": {
+   "best_season": {
+    "from": "Late spring through fall (roughly July-October), once the approach heather/scree slopes above Joe Lake are snow-free.",
+    "to": "Roughly July through October, once the approach heather/scree slopes above Joe Lake are snow-free."
+   }
+  }
+ },
+ {
+  "id": "wa_nooksack_tower_south_face",
+  "why": "Nooksack Tower is inside North Cascades National Park; land_manager now agrees with landManager and still notes the national-forest approach",
+  "set": {
+   "access.land_manager": {
+    "from": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+    "to": "National Park Service — North Cascades National Park (the approach starts in the Mt. Baker-Snoqualmie National Forest's Mount Baker Wilderness)"
+   }
+  }
+ },
+ {
+  "id": "wa_ragged_edge",
+  "why": "The ledge traverse starts from the Vesper-Sperry col (as beta says); the approach named a non-existent Vesper-Wolf Peak saddle",
+  "set": {
+   "approach": {
+    "from": "Same trailhead and trail as True Grit: Sunrise Mine Trail #707 from the Sunrise Mine Trailhead on the Mountain Loop Highway, through second-growth forest and an early creek crossing of the South Fork Stillaguamish (log crossing, harder in high runoff), up through Wirtz Basin and out onto open, cairned talus, then through Headlee Pass (~4,720 ft, 2.7 mi, loose rock/rockfall exposure in the narrow couloir) and down to Vesper Creek and Vesper Lake (Lake Elan, ~4,950 ft, ~3.5 mi/~2,700 ft gain) — the last dependable water. From the lake the maintained trail fades; cross the outlet and follow an obvious talus ridgeline up to the col/saddle between Vesper and Wolf Peak. From there a slightly improbable but well-trodden heather ledge system (goat trail through it) cuts across the north face at roughly 5,800 ft to a small notch overlooking the remnant Vesper Glacier, where the route starts. This traverse crosses steep, exposed heather that's treacherous when wet and typically holds snow into mid-to-late summer, so an ice axe (and sometimes crampons) is worth carrying into early summer. Plan on 3+ hours from the trailhead to the base of the climb.",
+    "to": "Same trailhead and trail as True Grit: Sunrise Mine Trail #707 from the Sunrise Mine Trailhead on the Mountain Loop Highway, through second-growth forest and an early creek crossing of the South Fork Stillaguamish (log crossing, harder in high runoff), up through Wirtz Basin and out onto open, cairned talus, then through Headlee Pass (~4,720 ft, 2.7 mi, loose rock/rockfall exposure in the narrow couloir) and down to Vesper Creek and Vesper Lake (Lake Elan, ~4,950 ft, ~3.5 mi/~2,700 ft gain) — the last dependable water. From the lake the maintained trail fades; cross the outlet and follow an obvious talus ridgeline up to the col between Vesper and Sperry Peaks. From there a slightly improbable but well-trodden heather ledge system (goat trail through it) cuts across the north face at roughly 5,800 ft to a small notch overlooking the remnant Vesper Glacier, where the route starts. This traverse crosses steep, exposed heather that's treacherous when wet and typically holds snow into mid-to-late summer, so an ice axe (and sometimes crampons) is worth carrying into early summer. Plan on 3+ hours from the trailhead to the base of the climb."
+   }
+  }
+ },
+ {
+  "id": "wa_spontaneity_arete",
+  "why": "best_season claimed the route is inaccessible outside Jul-Sep, but SR 20 is closed only ~Dec-Apr and season is Jun-Oct",
+  "set": {
+   "best_season": {
+    "from": "July through September, once the approach snowfield and creek crossing have mostly melted out; the route is inaccessible outside this window since SR-20 over Washington Pass is gated shut in winter.",
+    "to": "July through September is best, once the approach snowfield and creek crossing have mostly melted out; June and October are possible while SR 20 over Washington Pass is open (it is gated shut roughly December to April)."
+   }
+  }
+ },
+ {
+  "id": "wa_wright_pond",
+  "why": "Dropped the SR 20 'reopens by early June' sentence (contradicts access.seasonal) and the misplaced 'Best season' sentence",
+  "set": {
+   "access.notes": {
+    "from": "Northwest Forest Pass or America the Beautiful Pass required ($5/day or $30 annually). Digital payment only via recreation.gov mobile app. Parking lot fills quickly, especially mid-season. Vault toilet available. No overnight parking allowed. FS-400 is semi-paved with potholes; navigate with caution. Highway 20 closed in winter, typically reopens by early June. Best season: late June through late September.",
+    "to": "Northwest Forest Pass or America the Beautiful Pass required ($5/day or $30 annually). Digital payment only via recreation.gov mobile app. Parking lot fills quickly, especially mid-season. Vault toilet available. No overnight parking allowed. FS-400 is semi-paved with potholes; navigate with caution."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_shuksan_white_salmon_glacier",
+  "why": "Baker Lake Road serves the Sulphide/Shannon side; this route starts off the Mount Baker Highway, which is plowed year-round to the ski area",
+  "set": {
+   "access.seasonal": {
+    "from": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+    "to": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter."
+   }
+  }
+ },
+ {
+  "id": "wa_vesper_peak_north_face_ragged_edge",
+  "why": "Removed the irrelevant Suiattle River Road / Glacier Peak sentence; kept the Mountain Loop Highway gate",
+  "set": {
+   "access.seasonal": {
+    "from": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+    "to": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May."
+   }
+  }
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_southeast_face",
+  "why": "access._raw was entirely the Pasayten Castle Peak block (8,343 ft, Freezeout Creek, Okanogan-Wenatchee NF); removed",
+  "set": {
+   "access._raw": {
+    "from": {
+     "note": "Remote location - contact ranger district for current permit requirements",
+     "altitude": "8,343 feet",
+     "permit_type": "Wilderness permit",
+     "land_manager": "USFS Okanogan-Wenatchee National Forest - north Cascades Ranger District",
+     "parking_pass": "Northwest Forest Pass ($30 annual or $5 day pass)",
+     "access_routes": "Provincial Park (north), PCT (west), Freezeout Creek (east)",
+     "cost_structure": {
+      "parking_pass": "$30 annual Northwest Forest Pass or $5 day pass"
+     },
+     "permit_location": "Ranger district offices (contact for specific details)",
+     "special_hazards": [
+      "Avalanche hazard (winter/spring)",
+      "Loose rock on technical pitches",
+      "Exposure on North Face granite walls",
+      "Glacial terrain and ice sheets"
+     ],
+     "group_size_limit": "Varies by area - typically 6-12 people",
+     "seasonal_closures": {
+      "typical": "Winter snowpack (likely Nov-May)",
+      "2026_specific": "Check with ranger district for current conditions"
+     }
+    },
+    "to": null
+   }
+  }
+ },
+ {
+  "id": "wa_east_face",
+  "why": "Removed the Mountain Loop Highway gate sentence, which is not on the Suiattle River Road / Downey Creek approach",
+  "set": {
+   "access.seasonal": {
+    "from": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+    "to": "Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip."
+   }
+  }
+ },
+ {
+  "id": "wa_ellation",
+  "why": "Removed the NPS Boston Basin/Marblemount permit template (with its 2026 lottery date) from a Mount Baker Wilderness crag; rules now state the national-forest wilderness limit",
+  "set": {
+   "access.notes": {
+    "from": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+    "to": null
+   },
+   "access.rules": {
+    "from": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+    "to": "Group size capped at 12 (people + stock combined) inside the Mount Baker Wilderness."
+   },
+   "access.group_limit": {
+    "from": 6,
+    "to": 12
+   }
+  }
+ },
+ {
+  "id": "wa_mount_teneriffe_kamikaze_trail",
+  "why": "Replaced Snoqualmie Pass/I-90 text: the trailhead is low near North Bend, and snow on the upper mountain, not the road, limits the season",
+  "set": {
+   "access.notes": {
+    "from": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "to": "The trailhead sits low off SE Mount Si Road near North Bend and is reachable year-round; snow on the upper mountain, not road closures, limits the season."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_teneriffe_standard_route",
+  "why": "Replaced Snoqualmie Pass/I-90 text: the trailhead is low near North Bend, and snow on the upper mountain, not the road, limits the season",
+  "set": {
+   "access.notes": {
+    "from": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "to": "The trailhead sits low off SE Mount Si Road near North Bend and is reachable year-round; snow on the upper mountain, not road closures, limits the season."
+   }
+  }
+ },
+ {
+  "id": "wa_ridge_traverse_from_east_fury",
+  "why": "access._raw described Olympic National Park (Elk Lake, Glacier Meadows, Blue Glacier); removed. Also dropped the year-specific 2026 lottery date from notes",
+  "set": {
+   "access._raw": {
+    "from": {
+     "special_requirements": "Experienced mountaineers only. Glacier travel expertise and crevasse rescue required. Ice axe and crampons often necessary. Limited permits for Elk Lake and Glacier Meadows basecamp. Groups exceeding 6 people need designated group sites. Bear canisters mandatory. No camping between Glacier Meadows and Blue Glacier.",
+     "seasonal_closure_dates": "Best June-August; winter snow closure typical Nov-May; Glacier Meadows permits limited and first-come first-served",
+     "permit_application_method": "Recreation.gov or in-person at visitor centers"
+    },
+    "to": null
+   },
+   "access.notes": {
+    "from": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+    "to": "60% of sites are reservable in advance via Recreation.gov; the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount."
+   }
+  }
+ },
+ {
+  "id": "wa_ruby_mountain_happy_creek",
+  "why": "Removed the Boston Basin permit-reservation notes (with 2026 lottery date) and the Boston Basin camp rule from a winter day climb off SR 20",
+  "set": {
+   "access.notes": {
+    "from": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+    "to": null
+   },
+   "access.rules": {
+    "from": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+    "to": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices."
+   }
+  }
+ },
+ {
+  "id": "wa_se_ridge_aka_shield_wall",
+  "why": "Replaced Olympic National Park rules (group sites, park-wide bear canisters) with the Mount Skokomish Wilderness limit of 12 people / 8 stock",
+  "set": {
+   "access.rules": {
+    "from": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+    "to": "Group size capped at 12 people / 8 stock in the Mount Skokomish Wilderness."
+   }
+  }
+ }
+]

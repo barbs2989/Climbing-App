@@ -1,0 +1,527 @@
+[
+ {
+  "id": "wa_fortress_mountain_southwest_face",
+  "name": "Southwest Face",
+  "peak": "wa_fortress_mountain",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "From Trinity Trailhead (2,800 ft) at the end of Chiwawa River Road/FR 6200, follow the Buck Creek Trail (#1513) roughly 9-9.5 miles, climbing through forest, an old avalanche debris field (~4,500 ft), and past an unmarked junction with the Pass No Pass way-trail (bears right, ~5,800 ft). Continue up the way-trail to Pass No Pass (~6,400 ft) and the alpine camping benches beyond, from which Fortress's southwest face and south ridge come into view. Note: since 2026, storm damage has closed FR 6200 to vehicles beyond Atkinson Flat Campground (about mile 16), adding roughly 7 miles of road-walking…",
+  "firstResearcherNote": "Parties camp in the basin below Pass No Pass or at Buck Creek Pass; both added. Elevation of the Pass No Pass basin camp not confirmed, so omitted.",
+  "camps": [
+   {
+    "name": "Basin below Pass No Pass",
+    "role": "main",
+    "elev": null,
+    "notes": "The small basin reached by the unmarked way trail that leaves the Buck Creek trail about a mile below Buck Creek Pass. The closest camp to the southwest face; the scramble starts above it."
+   },
+   {
+    "name": "Buck Creek Pass",
+    "role": "main",
+    "elev": 5800,
+    "notes": "The popular camp at the top of the Buck Creek trail, roughly ten miles from Trinity. From here drop back down the trail about a mile to the Pass No Pass way trail."
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "role": "route",
+    "elev": 2800,
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel an…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_cardinal_peak_se_slopes",
+  "name": "Southeast Slopes",
+  "peak": "wa_cardinal_peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "approach": "From the end of FR-5606 (the North Fork Entiat Trailhead, ~3,940 ft), pick up the North Fork Entiat River Trail #1437. This lower section sits outside wilderness, so mountain bikes are legal and commonly used to knock out easy miles. The first ~6 miles follow the North Fork Entiat River on a gentle, mostly forested grade, with the river itself as a reliable water source the whole way — top off here, since the route runs dry above. Some post-wildfire sections have significant blowdown; a few parties describe losing the tread briefly among downed timber and having to scramble back onto it. At ab…",
+  "firstResearcherNote": "Route-specific basin camp first; the Emerald-Saska basin is also commonly used for Cardinal. Unsure the two basins are distinct places.",
+  "camps": [
+   {
+    "name": "West-side basin camp below Cardinal Peak",
+    "role": "main",
+    "elev": null,
+    "notes": ""
+   },
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "role": "main",
+    "elev": null,
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardi…"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "role": "route",
+    "elev": 3140,
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roug…"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "role": "route",
+    "elev": null,
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarte…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "West-side basin camp below Cardinal Peak",
+    "elev": 7100,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_bald_eagle_peak_scramble",
+  "name": "Standard Scramble",
+  "peak": "wa_bald_eagle_peak",
+  "discipline": "scrambling",
+  "grade": "Class 3-4",
+  "approach": "From the pullout along FR 6835 (West Fork Foss Road) — just past the concrete bridge over the East Fork Foss River, about half a mile from its junction with FR 68 and roughly 5.2 miles from US-2 at Skykomish — there is no maintained trail. Climbers cross to the north side of the road and pick up the toe of Bald Eagle's north ridge at about 1,600 ft, entering second-growth forest thick with fallen timber that requires weaving/scrambling over deadfall for the first few hundred feet of gain. Stay on or near the ridge crest heading south-southeast; around 2,600 ft the forest transitions to older g…",
+  "firstResearcherNote": "A day scramble from the Foss River road with no camp on the north ridge; the car campground is the staging camp. Unsure whether the Bald Eagle Lake cirque lies on the north-ridge line, so it was dropped.",
+  "camps": [
+   {
+    "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+    "role": "main",
+    "elev": null,
+    "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and ha…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_north_gardner_mountain_nw_couloir",
+  "name": "Northwest Couloir (Cedar Creek approach)",
+  "peak": "wa_north_gardner_mountain",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "From Highway 20 near Winthrop, reach the Cedar Creek Trailhead (reported at 2,961 ft elevation) and follow the Cedar Creek Trail before leaving it to bushwhack cross-country toward Cedar Creek; a known ford crossing (via a log in some years, a wade in others) gives access to the Shelokum Creek drainage, which is followed trail-less uphill to open meadows/snowfields below the northwest couloir.",
+  "firstResearcherNote": "Cedar Creek side camps; unsure whether the meadow camps above the falls lie before the route leaves the trail.",
+  "camps": [
+   {
+    "name": "Cedar Creek meadow camps above the falls",
+    "role": "main",
+    "elev": null,
+    "notes": "The western approach camp, and the reason to use this side at all. Cedar Falls comes at about 1.7 miles from the trailhead and is the day-hike turnaround for most visitors; keep going and roughly two …"
+   },
+   {
+    "name": "Upper Cedar Creek head basin",
+    "role": "main",
+    "elev": null,
+    "notes": "A spring and early-summer bivouac rather than a camp, used by parties taking the west side of North Gardner when snow still covers the ground. Getting into the head of the valley involves leaving the …"
+   },
+   {
+    "name": "Klipchuck Campground and the Highway 20 road-head campgrounds",
+    "role": "route",
+    "elev": 2900,
+    "notes": "The obvious place to sleep before starting up either side of the Gardners, and the only one with running water and a toilet. It sits in ponderosa forest just off the highway about four miles beyond Ma…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_glacier_peak_disappointment_peak_cleaver",
+  "name": "Disappointment Peak Cleaver (Cool Glacier)",
+  "peak": "wa_glacier_peak",
+  "discipline": "mountaineering",
+  "grade": "Grade II–III glacier/snow",
+  "approach": "From the North Fork Sauk River Trailhead (2,050 ft, end of Sloan Creek Road/FR 49), the North Fork Sauk River Trail (#649) climbs gently through old-growth forest. At about 2.1 miles pass the Pilot Ridge Trail junction (an alternate/bailout route), and by roughly 3.5 miles reach a crossing of Red Creek — a seasonal ford that can be a genuine early-season obstacle. About 1.5 miles beyond that is Mackinaw Shelter, the last reliable flat camping and water before the climb steepens; many parties camp here or push on. Past the shelter the trail switchbacks steeply for about 3 miles, gaining roughly…",
+  "firstResearcherNote": "Cool/Gerdine Basin Camp has no notes; assumed to be a spot in the basin traverse between White Pass and Glacier Gap.",
+  "camps": [
+   {
+    "name": "Glacier Gap",
+    "role": "main",
+    "elev": 7200,
+    "notes": "PLANNED high camp and the standard staging point for the Cool Glacier and the cleaver. Plenty of established gravel sites with rock walls already built, which exist because the gap funnels wind — it i…"
+   },
+   {
+    "name": "Mackinaw Shelter",
+    "role": "route",
+    "elev": 2969,
+    "notes": "PLANNED low camp and the last reliable flat ground with running water before the trail steepens. Roughly five miles in, in forest. Most parties either sleep here on night one of a three-day trip or to…"
+   },
+   {
+    "name": "White Pass",
+    "role": "route",
+    "elev": 5900,
+    "notes": "PLANNED camp at the effective end of maintained trail, where the climbers' path toward Glacier Gap begins. Open meadow with good sites but no dependable water once the snow is gone, so treat it as a p…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Cool/Gerdine Basin Camp",
+    "elev": 6800,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "name": "Southwest Route",
+  "peak": "wa_mount_berge",
+  "discipline": "scrambling",
+  "grade": "Class 2-3",
+  "approach": "From Trinity Trailhead (end of Chiwawa River Road/FR-6200, about 23 miles up-road from WA-207 near Lake Wenatchee), three approaches reach Mount Berge's flanks within the Glacier Peak Wilderness. (1) Southwest approach: via the Little Giant Trail #1518, whose own trailhead sits at 2,600 ft about mile 19 of Chiwawa River Road; the trail climbs to Little Giant Pass (~10 mi round trip to the pass alone), drops into the Napeequa River valley, then follows a climbers' path upstream to the end of maintained tread at the creek draining Berge's southwest side. A steep, intermittent boot track then cli…",
+  "firstResearcherNote": "Parties base at Buck Creek Pass or the High Pass camps; the route also lists a Little Giant approach whose exact camp is unclear, so the Napeequa camps were dropped.",
+  "camps": [
+   {
+    "name": "Buck Creek Pass and the High Pass camps",
+    "role": "main",
+    "elev": 5800,
+    "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the …"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_mount_buckindy_scramble",
+  "name": "Buckindy Glacier/Scramble Route",
+  "peak": "wa_mount_buckindy",
+  "discipline": "mountaineering",
+  "grade": "Class 4 + glacier",
+  "approach": "From Darrington, drive north on SR 530 roughly 7-8 miles and turn right onto the Suiattle River Road (FR 26) just after crossing the Sauk River bridge. Follow FR 26 (pavement then gravel) about 20 miles, turn left onto FR 2680, and continue 6 miles to the Green Mountain Trailhead (~3,200 ft). Hike Green Mountain Trail #782 (about 4 miles, ~3,000 ft gain) through old growth and subalpine meadows to the lookout area, then go cross-country along the connecting ridge system east and southeast past the Horse Lake saddle, with slow sidehill travel toward Misch, to Buckindy's north slopes and glacier…",
+  "firstResearcherNote": "Low confidence: the Green Mountain approach has first-night camps near Horse Lake saddle (added), but where parties base for the north-side route (Kindy head vs a basin west of Misch) is thinly documented.",
+  "camps": [
+   {
+    "name": "Head of Kindy Creek and the Kindy-Buck Creek pass",
+    "role": "main",
+    "elev": null,
+    "notes": "THE GROUND THAT PUTS MOUNT BUCKINDY IN RANGE. Buckindy's standard route is a class 4 scramble on the north slopes, with glaciers on the north and east flanks, and the parties who climb it are camping …"
+   },
+   {
+    "name": "Horse Lake saddle camp",
+    "role": "main",
+    "elev": 5360,
+    "notes": "First-night camp on the Green Mountain approach, past the south shoulder of Green Mountain. Beyond it the traverse toward Misch and Buckindy is slow sidehill travel."
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Kindy Creek Cirque",
+    "elev": 5100,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_garfield_mountain_scramble",
+  "name": "Multi-Summit Scramble",
+  "peak": "wa_garfield_mountain",
+  "discipline": "alpine",
+  "grade": "Class 3",
+  "approach": "From I-90 Exit 34 (North Bend), drive Middle Fork Snoqualmie River Road (FR-56) east — paved at first, then good gravel — staying on FR-56 past the Taylor River Road (FR-5620) junction to a wide gravel wash / old borrow-pit pullout on the north side of the road near the base of the mountain (trailhead elevation roughly 1,150-1,200 ft). There is no maintained, numbered Forest Service trail here — this is an unmaintained climbers' boot path marked intermittently with cairns and pink flagging tape, not a hiking trail. From the wash, follow the dry creekbed/streambed uphill for roughly a mile; a b…",
+  "firstResearcherNote": "Normally a long day from the road; unsure whether the East Peak line via Green Ridge Lake is part of this multi-summit route, so that lake was dropped.",
+  "camps": [
+   {
+    "name": "Middle Fork Campground",
+    "role": "main",
+    "elev": 1100,
+    "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhe…"
+   },
+   {
+    "name": "Garfield Mountain improvised bivouac",
+    "role": "route",
+    "elev": null,
+    "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, an…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Glade Saddle Bivy",
+    "elev": 4200,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_price_hester_lake_route",
+  "name": "Hester Lake Route",
+  "peak": "wa_mount_price",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "Drive the Middle Fork Snoqualmie Road (FR 56) to the Dingford Creek Trailhead (~1,400 ft). Hike the Dingford Creek Trail, crossing several creeks, toward the Hester Lake basin (roughly 5-6 miles) before leaving the trail to begin the off-trail scramble.",
+  "firstResearcherNote": "Hester Lake is the documented overnight for Price; the Dingford roadside pull-outs are kept as the trailhead option but current dispersed-camping rules there are unclear.",
+  "camps": [
+   {
+    "name": "Hester Lake and Myrtle Lake basins",
+    "role": "main",
+    "elev": 3900,
+    "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hest…"
+   },
+   {
+    "name": "Middle Fork Campground",
+    "role": "main",
+    "elev": 1100,
+    "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhe…"
+   },
+   {
+    "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+    "role": "route",
+    "elev": 1400,
+    "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camp…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_fire_on_the_mountain",
+  "name": "Fire on the Mountain",
+  "peak": "wa_sloan_peak",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "approach": "From the Mountain Loop Highway, turn onto FR 4096 (Bedal Creek Trailhead spur) and park at the trailhead, 2,790–2,800 ft. Follow the Bedal Creek Trail #705 through old-growth forest along Bedal Creek's steep banks; the maintained tread peters out roughly 1.5–2.5 miles in, at a large brushy washout coming down off the basin below Sloan's West Face. Scramble up the boulder- and blowdown-choked washout — this is the crux of route-finding on the approach — until a cairn marks an exit onto a climber's path (often flagged with pink tape) that switchbacks steeply through forest from about 3,500 ft to…",
+  "firstResearcherNote": "Done in a big day or with a bivy at the base with running water; bivy elevation not confirmed so omitted.",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "role": "main",
+    "elev": 1246,
+    "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNP…"
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "role": "main",
+    "elev": null,
+    "notes": "Reached from the Bedal Creek trailhead by the west-face approach, traversing over a notch to the southwest. Parties who do not climb in a single long day sleep here."
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "name": "Northeast Ridge (Nason Ridge Traverse)",
+  "peak": "wa_rock_mountain",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft). Climb via Mahar Creek Ridge to Merritt Lake, then continue over Mt. Mastiff's Southeast Ridge and Mt. Howard's Northeast Ridge (both reported as snow climbs/rock scrambles) before dropping to the Howard-Rock col and climbing Rock Mountain's northeast side.",
+  "firstResearcherNote": "Traverse Merritt-Mastiff-Howard-Rock; Crescent Lake is the midpoint camp, Rock Lake assumed on the descent via the Rock Mountain trail.",
+  "camps": [
+   {
+    "name": "Crescent Lake",
+    "role": "main",
+    "elev": 5400,
+    "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by tra…"
+   },
+   {
+    "name": "Merritt Lake",
+    "role": "route",
+    "elev": 5010,
+    "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and…"
+   },
+   {
+    "name": "Mount Howard summit-area bivouac",
+    "role": "route",
+    "elev": null,
+    "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher exce…"
+   },
+   {
+    "name": "Rock Lake",
+    "role": "route",
+    "elev": 5851,
+    "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchback…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_gray_wolf_ridge_se_slopes",
+  "name": "Southeast Slopes (Standard Scramble)",
+  "peak": "wa_gray_wolf_ridge",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "approach": "The Southeast Slopes route is approached via the Upper Dungeness/Maynard Burn trail system, not by any direct road-side access - the drive only gets you to the trailhead at the end of FR-2860-120 (off FR-2870/Lost Mountain Rd, itself off Palo Alto Rd south of US-101 near Sequim). From the trailhead, the Lower Maynard Burn Trail #816 crosses Mueller Creek right away (the last easy, reliable water for a while) and follows an old roadbed before narrowing to single-track around 0.3 mile in. From there the trail turns and stays steep, gaining roughly 3,000 ft in a bit over 2 miles on tread that nar…",
+  "firstResearcherNote": "Day route via Maynard Burn and Baldy; Cedar Lake is reached from the Gray Wolf River, a different approach, so it is dropped. Unsure whether parties camp on the ridge crest.",
+  "camps": [],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_mount_claywood_standard",
+  "name": "Standard Route",
+  "peak": "wa_mount_claywood",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "approach": "From the Obstruction Point Trailhead (6,150 ft) — reached via the narrow, unpaved Obstruction Point Road that branches off Hurricane Ridge Road just below Hurricane Ridge — follow the Grand Pass Trail as it climbs onto and traverses Lillian Ridge. The first mile-plus is an easy, open ridge walk (the unmarked boot path up the Lillian Ridge Way / Elk Mountain high route splits off here for those doing the ridge-top variation instead). The trail then drops into the Grand Lake basin before climbing steadily to Grand Pass (6,488 ft) at roughly 5.95 mi and about 1,300 ft of net gain from the trailhe…",
+  "firstResearcherNote": "Unsure: this route is described from Obstruction Point over Cameron Pass, while the long-standing base for Claywood is Dose Meadows on the Dosewallips side; both kept as main.",
+  "camps": [
+   {
+    "name": "Upper Cameron Basin high camp",
+    "role": "main",
+    "elev": null,
+    "notes": ""
+   },
+   {
+    "name": "Dose Meadows",
+    "role": "main",
+    "elev": 4472,
+    "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, …"
+   },
+   {
+    "name": "Cameron Basin",
+    "role": "route",
+    "elev": 6000,
+    "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in an…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Upper Cameron Basin high camp",
+    "elev": 5450,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_sefrit_southwest_ridge",
+  "name": "Southwest Ridge",
+  "peak": "wa_mount_sefrit",
+  "discipline": "scrambling",
+  "grade": "Grade II-III, Class 4",
+  "approach": "From Glacier, drive Mt. Baker Highway (SR 542) east about 12.5 miles, turn left on Hannegan Pass Road (FR 32), continue just over a mile to the junction with Nooksack Cirque Road (FR 34), and follow FR 34 one mile to its end at the Nooksack Cirque Trailhead (do not confuse with the separate Hannegan Pass Trailhead further up FR 32). Ford Ruth Creek right at the trailhead — there is no bridge, and early-summer high water can make it difficult or unsafe to cross. Follow the old roadbed/Trail #750 up the North Fork Nooksack valley for roughly 50 minutes, then leave the trail and make an ascending…",
+  "firstResearcherNote": "Unsure: starts from the Nooksack Cirque trailhead, and the Hannegan campground is kept only as the nearby car camp.",
+  "camps": [
+   {
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "role": "main",
+    "elev": 3100,
+    "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Se…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_ghost_peak_south_route",
+  "name": "South Route",
+  "peak": "wa_ghost_peak",
+  "discipline": "mountaineering",
+  "grade": "Grade III, Class 4",
+  "approach": "Ghost Peak sits deep in the Northern Pickets, just south of Crooked Thumb Peak and about 0.3 mi NNE of Phantom Peak, so this is a multi-day wilderness approach, not a day hike to a base. Standard access is from the Hannegan Pass Trailhead at the end of Ruth Creek Road (FR 32, ~3,100 ft) - not Ross Lake, which instead serves Luna Peak and Mount Fury further south via the Big Beaver Trail/Access Creek approach. From the Hannegan Trailhead, follow the Ruth Creek Trail over Hannegan Pass (5,066 ft, ~4 mi in) and drop into the Chilliwack River valley to a forest camp near Copper Creek/Graybeal Camp…",
+  "firstResearcherNote": "Low confidence: south route base taken from the route's own waypoints; the Whatcom Pass and Perfect Pass waypoints duplicate the listed camps.",
+  "camps": [
+   {
+    "name": "Luna Cirque high camp (near Lousy Lake)",
+    "role": "main",
+    "elev": null,
+    "notes": ""
+   },
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "role": "route",
+    "elev": 5286,
+    "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary,…"
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "route",
+    "elev": 6300,
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Eas…"
+   },
+   {
+    "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "role": "route",
+    "elev": null,
+    "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out o…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Whatcom Pass",
+    "elev": 5210,
+    "hiddenFromList": true
+   },
+   {
+    "name": "Perfect Pass",
+    "elev": 6300,
+    "hiddenFromList": true
+   },
+   {
+    "name": "Luna Cirque high camp (near Lousy Lake)",
+    "elev": 6400,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_luna_glacier",
+  "name": "Luna Glacier",
+  "peak": "wa_phantom_peak",
+  "discipline": "mountaineering",
+  "grade": "Easy 5th",
+  "approach": "Reaching Luna Cirque is the crux of the trip. The historical approach follows the Big Beaver Trail from Ross Lake (a $35 water taxi from Ross Lake Resort cuts about 6 miles off the hike) up to Luna Camp, then climbs steeply beside Luna Creek into the cirque — Fred Beckey himself described this bushwhack as 'the worst imaginable struggle with flies, devil's club, willows, and alder.' Most contemporary parties instead approach via Access Creek, which branches off that same Big Beaver Trail rather than a separate trailhead — parties continue on the maintained trail roughly 15-17.5 miles past Luna…",
+  "firstResearcherNote": "Luna Creek approach from Luna Camp into the cirque; the cirque floor camp is assumed as the base for the east-face glacier.",
+  "camps": [
+   {
+    "name": "Luna Cirque floor",
+    "role": "main",
+    "elev": null,
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It si…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "role": "main",
+    "elev": 2432,
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "name": "Southwest Route",
+  "peak": "wa_mount_crowder",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "approach": "Mount Crowder has no trailhead and no maintained trail — every ascent is layered onto a multi-day, off-trail traverse through the heart of the Picket Range, and Crowder is almost never climbed as a standalone objective. Parties reach it via one of two corridors. From the south: the Goodell Creek climbers' path (turn off WA-20 opposite Newhalem into Goodell Creek Campground; the boot path starts behind a large boulder at the campground) climbs steeply and brushily through slide alder and old-growth timber, gaining roughly 2,500 ft in about a mile to reach the basins below McMillan Spire/Inspira…",
+  "firstResearcherNote": "Wild Lake added as base without elevation; Terror Basin kept for the southern corridor; low confidence on corridor camps.",
+  "camps": [
+   {
+    "name": "Wild Lake",
+    "role": "main",
+    "elev": null,
+    "notes": "Remote lake at the foot of the southwest flank, where the normal line up the peak begins. Reached only on multi-day traverses of the range."
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "route",
+    "elev": 6300,
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Eas…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Terror Basin Camp",
+    "elev": 5800,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "name": "Standard Route (Southwest Face)",
+  "peak": "wa_swiss_peak",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "Drive WA-20 (North Cascades Highway) to the Ross Dam Trailhead (MP 134). Descend about 1 mile on the Ross Dam trail/service road to Ross Lake, then cross via the Ross Lake Resort water taxi (on-demand, ~$4-5/person) or by hiking/paddling around, and pick up the Big Beaver Trail north along the lake. Follow it roughly 11 miles to Luna Camp, then continue about 1.5 miles further to the Access Creek drainage; leave the trail and climb the brushy, moderately steep Access Creek valley (staying on its north side is recommended) to the open basin east of Luna Peak (~4,300 ft) — described as the easie…",
+  "firstResearcherNote": "Swiss is done only as part of crest traverses; Luna Col base assumed from the Big Beaver approach text; low confidence.",
+  "camps": [
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "role": "main",
+    "elev": 7200,
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's w…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "role": "main",
+    "elev": 2432,
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing…"
+   },
+   {
+    "name": "Luna Cirque floor",
+    "role": "route",
+    "elev": null,
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It si…"
+   }
+  ],
+  "campsitePins": []
+ }
+]

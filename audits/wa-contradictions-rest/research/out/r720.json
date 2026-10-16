@@ -1,0 +1,499 @@
+{
+ "file": "r720.json",
+ "results": [
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Rope needed for the couloir rappel",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A 30 m rope covers the ascent on running belays only; a rappel descent needs two ropes (a single 70 m doubled reaches only in high snow).",
+   "evidence": "The published route description for the tree rappel into the Zipper says it is usually more than 100 ft, a double-rope rappel is recommended, and a 70 m rope may suffice only with high snow; a Lover's Lane trip report made the same rappel on a doubled-in-half 60 m twin rope. The row's descent_text and approach hazard agree; the rope_note and gear line presented 30 m without saying it cannot make the rappel.",
+   "sources": [
+    "https://www.mountainproject.com/route/114089121/lovers-lane",
+    "https://www.jeffreyjhebert.com/adventures/lovers-lane-on-lane-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "30m sufficient if comfortable with running belays/simul-climbing on the couloir;",
+     "replace": "30m sufficient for the ascent if comfortable with running belays/simul-climbing on the couloir, but too short for the rappel descent, which needs two ropes;",
+     "id": "wa_lane_peak_r1",
+     "fact": "Rope needed for the couloir rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "find": "a 30m is enough for a running belay/simul-climbing;",
+     "replace": "a 30m is enough for a running belay/simul-climbing on the way up, but rappelling the couloir needs two ropes;",
+     "id": "wa_lane_peak_r1",
+     "fact": "Rope needed for the couloir rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Which descent is most common",
+   "verdict": "fixed",
+   "correct_value": "Most parties traverse to the summit and walk off the south side via the Lane-Denman saddle; reversing the couloir is the bail line.",
+   "evidence": "The Zipper's published description has climbers top out and traverse southwest to the standard summit finish; the Fly's description sends parties across to the Lane-Denman saddle; an independent Lane Peak page says the easiest descent is the Lane-Denman saddle. Nothing supports calling the rappel reversal the more common return.",
+   "sources": [
+    "https://www.mountainproject.com/route/110175024/the-zipper",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm",
+    "https://www.mountainproject.com/route/117755275/fly-the"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Direct reversal (the more common bail/return line):",
+     "replace": "Direct reversal (the usual bail line):",
+     "id": "wa_lane_peak_r1",
+     "fact": "Which descent is most common"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Which ridge notch the Zipper tops out on",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "east-ridge notch",
+   "evidence": "The Zipper's published description ends 'at a dead tree at a notch in the east ridge of the summit block'. approach, approach_variants notes, descent_text, pitch_detail and baseFinding all say east ridge; only the itinerary objective says west (the Fly's top-out).",
+   "sources": [
+    "https://www.mountainproject.com/route/110175024/the-zipper"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "west-ridge notch",
+     "replace": "east-ridge notch",
+     "id": "wa_lane_peak_r1",
+     "fact": "Which ridge notch the Zipper tops out on"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Total gain",
+   "verdict": "fixed",
+   "correct_value": "about 2,000 ft car-to-car (gain_ft 2000 stands)",
+   "evidence": "A Lane Peak route page gives the winter Zipper approach from Narada Falls as 2 miles and 2,000 ft of gain to the 6,012 ft summit; a club listing for the Zipper also states 2,000 ft elevation gain. The itinerary 1,500 ft and the partner-requirements ~2,500 ft were the outliers. The itinerary day's lossFt is set to loss_ft (2000) so the TOTAL row stays a matched round trip.",
+   "sources": [
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm",
+    "https://mazamas.org/activity/instance/9144/detail/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 1500,
+     "value": 2000,
+     "id": "wa_lane_peak_r1",
+     "fact": "Total gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 1500,
+     "value": 2000,
+     "id": "wa_lane_peak_r1",
+     "fact": "Total gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 6 hours and 1,500 ft car-to-car",
+     "replace": "roughly 6 hours and 2,000 ft of gain car-to-car",
+     "id": "wa_lane_peak_r1",
+     "fact": "Total gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~2500 ft gain",
+     "replace": "~2000 ft gain",
+     "id": "wa_lane_peak_r1",
+     "fact": "Total gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One Lane Peak page gives '2 miles' for the winter approach (not stated as one-way or round trip); a ski report of the Zipper and Fly logged 5 miles but for two couloirs and with a GPS it called unreliable. No two sources agree on a one-way or round-trip figure for the Zipper alone.",
+   "sources": [
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm",
+    "https://www.amessinthecascades.com/search-by-adventure/snowy-adventures/skiing/lane-peak-zipper-and-fly-3-19-21"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Approach time to the couloir base",
+   "verdict": "fixed",
+   "correct_value": "roughly 45-75 minutes",
+   "evidence": "Trip reports put the approach from Narada Falls to the base of the north-face couloirs at about 45 minutes to an hour (Fly report), about 1 hour (map-route notes), 35 minutes (Lover's Lane report) and about 30 minutes to Tatoosh Creek (Zipper+Fly ski report). None comes near 1.5-2 or 2-4 hours. The timing note and itinerary (45-75 min, +1 hr) agree; partner_requirements was the outlier.",
+   "sources": [
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly",
+    "https://caltopo.com/m/2CH7",
+    "https://www.jeffreyjhebert.com/adventures/lovers-lane-on-lane-peak",
+    "https://www.amessinthecascades.com/search-by-adventure/snowy-adventures/skiing/lane-peak-zipper-and-fly-3-19-21"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Roughly 2-4 hours from the Narada Falls / Stevens Canyon area depending on snow depth",
+     "replace": "Roughly 45-75 minutes from the Narada Falls / Stevens Canyon area, longer depending on snow depth",
+     "id": "wa_lane_peak_r1",
+     "fact": "Approach time to the couloir base"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Dated ascents found include April 22 (2022, climbed and skied) and May 3 (2014, ski report), so 'melts out after April' in itinerary.cal is too early, but no source establishes whether the couloir is routinely in condition into June; the Dec-Jun chip vs Jan-Apr prose cannot be settled with two agreeing sources.",
+   "sources": [
+    "https://thepeakoftheweek.com/2022/04/22/lane-peak-zipper-couloir/",
+    "https://turns-all-year.com/trip-reports/may-3-14-lane-peak-zipper-couloir-video"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "When a wilderness permit is required for an overnight",
+   "verdict": "fixed",
+   "correct_value": "required year-round for any overnight stay",
+   "evidence": "The park's wilderness-permit page states a permit is required year-round for all overnight stays in the backcountry, at $12 per person per night; the park's wilderness camping page likewise says overnight camping requires a permit in summer and winter, and the permit FAQ gives the same $12 fee with no seasonal exemption. The 'required only May 1-Sept 15' window is wrong.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit-faqs.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "A wilderness permit ($12/person/night, required only May 1-Sept 15) is needed only if overnighting.",
+     "replace": "A wilderness permit ($12/person/night) is required year-round if overnighting.",
+     "id": "wa_lane_peak_r1",
+     "fact": "When a wilderness permit is required for an overnight"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Whether the descent involves a rappel",
+   "verdict": "fixed",
+   "correct_value": "Mostly a downclimb, with an optional rappel from the sturdy tree in the summit gully.",
+   "evidence": "The route's published description says a sturdy tree about 200 ft up can be used for a fixed line and/or rappel; a Lane Peak overview says the scramble down is fairly straightforward but a large tree allows a short rappel; a 2024 trip report notes a sling in the gully for a handline or rappel. descent_text's 'no rappelling' is the outlier; it now names the rappel as optional, agreeing with descent, rappels, bail and pro_tips.",
+   "sources": [
+    "https://www.mountainproject.com/route/119117818/classic-route",
+    "https://www.summitpost.org/lane-peak/152503",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-27.093739291338"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "This is a walk-off/downclimb — no rappelling. Reverse the ascent line:",
+     "replace": "This is mostly a downclimb; the sturdy tree in the gully allows an optional rappel over the loosest section. Reverse the ascent line:",
+     "id": "wa_classic_route_3",
+     "fact": "Whether the descent involves a rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Rope needed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only the route's own published description gives a rope length (a 70 m rope lets you rappel to the ground from the tree ~200 ft up); other sources describe the rappel only as 'short' or a sling for a handline. No second source states a rope length, and the 200 ft vs 70 m doubled geometry cannot be settled from the web, so rope_type/rope_note/rappels are left as they are.",
+   "sources": [
+    "https://www.mountainproject.com/route/119117818/classic-route",
+    "https://www.summitpost.org/lane-peak/152503"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Difficulty of the summit finish",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: the route's published grade is 4th class with mostly 3rd-class terrain; a 2024 trip report calls the final ~150 ft a sustained 3rd-class gully with a few 4th-class moves; a traverse report calls it 100-200 ft of class 3; an overview page calls the last 50 ft fun Class 3. No two independent sources agree on 'easy Class 3, minimal exposure' vs 'exposed 4th class', so neither side is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/119117818/classic-route",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-27.093739291338",
+    "http://ericsbasecamp.net/trips/Tatoosh2/Tatoosh2.htm",
+    "https://www.summitpost.org/lane-peak/152503"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Stevens Canyon Road opening date",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's Reflection Lakes page says Stevens Canyon Road is typically open late June-September; a regional visitor page says the lakes are drivable from Memorial Day weekend; a park opening-schedule release for 2015 opened the road to Snow Lake on May 1 and the full road May 22. The opening varies by snow year and the sources disagree on the typical date.",
+   "sources": [
+    "https://www.nps.gov/places/reflection-lakes.htm",
+    "https://www.nps.gov/mora/learn/news/opening-schedules-2015.htm",
+    "https://visitrainier.com/reflection-lakes-2/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only distance figures found are for multi-peak Tatoosh days (5.9 mi / 3,520 ft) or the winter north-face approach (2 mi); no source states the Classic Route's own round-trip or one-way distance.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-27.093739291338",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "When a wilderness permit is required for an overnight",
+   "verdict": "fixed",
+   "correct_value": "required year-round for any overnight stay",
+   "evidence": "The park's wilderness-permit page states a permit is required year-round for all overnight stays in the backcountry, at $12 per person per night; the park's wilderness camping page likewise says overnight camping requires a permit in summer and winter, and the permit FAQ gives the same $12 fee with no seasonal exemption. The 'required only May 1-Sept 15' window is wrong.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit-faqs.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "A wilderness permit ($12/person/night, required only May 1-Sept 15) is needed only if overnighting.",
+     "replace": "A wilderness permit ($12/person/night) is required year-round if overnighting.",
+     "id": "wa_classic_route_3",
+     "fact": "When a wilderness permit is required for an overnight"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Couloir length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Fly's published description gives 800 ft (242 m), from about 5,000 ft to a notch near 5,800 ft, matching length_m 244; a ski-line page gives about 1,100 ft of vertical (5,755 to 4,658 ft), which includes the apron. The pitch notes' 1,200-1,500 ft may count the approach slopes; with the two sources disagreeing on how much is couloir, no pitch note is rewritten.",
+   "sources": [
+    "https://www.mountainproject.com/route/117755275/fly-the",
+    "https://www.powderproject.com/trail/7000339/the-fly-couloir"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Approach time to the couloir base",
+   "verdict": "fixed",
+   "correct_value": "roughly 45-75 minutes",
+   "evidence": "Trip reports put the approach from Narada Falls to the base of the north-face couloirs at about 45 minutes to an hour (Fly report), about 1 hour (map-route notes), 35 minutes (Lover's Lane report) and about 30 minutes to Tatoosh Creek (Zipper+Fly ski report). None comes near 1.5-2 or 2-4 hours. The itinerary's 45-75 minutes agrees; the approach prose, approach variant and partner requirements were outliers.",
+   "sources": [
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly",
+    "https://caltopo.com/m/2CH7",
+    "https://www.jeffreyjhebert.com/adventures/lovers-lane-on-lane-peak",
+    "https://www.amessinthecascades.com/search-by-adventure/snowy-adventures/skiing/lane-peak-zipper-and-fly-3-19-21"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Approach takes approximately 1.5-2 hours to couloir base.",
+     "replace": "Approach takes approximately 45-75 minutes to couloir base.",
+     "id": "wa_lane_peak_r2",
+     "fact": "Approach time to the couloir base"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the approach usually takes 1.5 to 2 hours from the road to the couloir base",
+     "replace": "the approach usually takes 45 to 75 minutes from the road to the couloir base",
+     "id": "wa_lane_peak_r2",
+     "fact": "Approach time to the couloir base"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Roughly 2-4 hours from the Narada Falls / Stevens Canyon area depending on snow depth",
+     "replace": "Roughly 45-75 minutes from the Narada Falls / Stevens Canyon area, longer depending on snow depth",
+     "id": "wa_lane_peak_r2",
+     "fact": "Approach time to the couloir base"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Fly-specific reports give about 1,500 ft (ski report, not summiting) and 1,764 ft (ski report with extra runs); a general Lane Peak page gives 2,000 ft to the summit. No two sources agree on one car-to-car figure for the Fly, so gain_ft and the itinerary are left unchanged.",
+   "sources": [
+    "https://havetent.com/2018/05/04/lane-peak-ski-via-fly-couloir/",
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Ice screws and technical tools",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Ice axe, crampons, optional rope and pickets; no ice screws or second technical tool in a normal year.",
+   "evidence": "The Fly's published description says it is the least steep of the three couloirs, generally soloed, and could be protected with pickets; a ski-line page calls it about 45 degrees and 40-50 ft wide. gear, detailed_rack, beta and baseFinding already agree; only what_to_bring listed technical ice tools and ice screws.",
+   "sources": [
+    "https://www.mountainproject.com/route/117755275/fly-the",
+    "https://www.powderproject.com/trail/7000339/the-fly-couloir"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [],
+     "expect": [
+      "technical ice tools",
+      "crampons",
+      "rope",
+      "ice screws",
+      "pickets",
+      "helmet",
+      "avalanche gear"
+     ],
+     "value": [
+      "ice axe",
+      "crampons",
+      "rope",
+      "pickets",
+      "helmet",
+      "avalanche gear"
+     ],
+     "id": "wa_lane_peak_r2",
+     "fact": "Ice screws and technical tools"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A Fly ski report gives about 3 miles total, another 5.5 miles with extra runs, and a Lane Peak page gives 2 miles without saying one-way or round trip. The figures do not agree.",
+   "sources": [
+    "https://havetent.com/2018/05/04/lane-peak-ski-via-fly-couloir/",
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "fact": "Rope length for the rappel into the Zipper",
+   "verdict": "fixed",
+   "correct_value": "A 60 m rope for the climb plus a second rope for the double-rope rappel (a single 70 m may suffice only in high snow).",
+   "evidence": "The route's published description says the rappel is usually more than 100 ft, a double-rope rappel is recommended and a 70 m rope may suffice with high snow, while listing a 60 m rope as standard kit; a trip report made the rappel on a doubled-in-half 60 m twin rope. pro_tips told climbers a single 60 m would do, which it cannot.",
+   "sources": [
+    "https://www.mountainproject.com/route/114089121/lovers-lane",
+    "https://www.jeffreyjhebert.com/adventures/lovers-lane-on-lane-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      6
+     ],
+     "expect": "60m rope",
+     "value": "60m rope, plus a second rope for the double-rope rappel",
+     "id": "wa_lane_peak_r3",
+     "fact": "Rope length for the rappel into the Zipper"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Carry a 60m rope; the rappel",
+     "replace": "Carry a second rope as well as the 60m; the rappel",
+     "id": "wa_lane_peak_r3",
+     "fact": "Rope length for the rappel into the Zipper"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "A 60m rope, pickets",
+     "replace": "A 60m rope plus a second rope for the rappel, pickets",
+     "id": "wa_lane_peak_r3",
+     "fact": "Rope length for the rappel into the Zipper"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "fact": "Ice grade vs the steepest and hardest couloir",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "AI1 is the route's published grade, and the row itself frames it as nominal (turnaround and watch_out both say the steeper sections run well above the AI1 rating in lean years); other sources agree it is the steepest (40-60 degrees) of the three. A low published grade alongside 'hardest of the three' is stated and explained on the page, not a conflicting fact.",
+   "sources": [
+    "https://www.mountainproject.com/route/114089121/lovers-lane",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+// How many DISTINCT waypoint problems does audit:waypoints actually report?
+//
+// It prints one number — "753 waypoint problems warrant a look" — and a reader takes that as
+// 753 things to fix. But the geometry categories are not disjoint: `waypointOffLine` walks every
+// pin, and a trailhead or a summit that is off the line is ALSO a pin, so the same defect is
+// reported again under `trailheadOffLine` / `summitOffLine` / `truncatedTrack` /
+// `trackNotEndingAtSummit`. Mount Rainier's Curtis Ridge has 3 waypoints and produces 6 findings.
+//
+// This is the same class of error #834 already corrected once (878 -> 753, every reduction a fix
+// to the audit rather than to the data), so the question is worth asking again rather than
+// assuming the last pass caught it all.
+//
+// Read-only, no DB. Usage: node scripts/oneoff/measure-waypoint-finding-overlap.mjs <audit-json>
+import fs from "node:fs";
+
+const p = process.argv[2];
+if (!p) { console.error("usage: measure-waypoint-finding-overlap.mjs <audit-json>"); process.exit(1); }
+const F = JSON.parse(fs.readFileSync(p, "utf8")).findings || {};
+
+// Categories that make a claim about ONE named pin on one route. Everything else
+// (noTrack, unrouted, summitMissing, outOfOrder, ...) is a claim about the route or the list.
+const PIN = ["trailheadOffLine", "trailheadNotAtStart", "truncatedTrack", "summitOffLine",
+             "trackNotEndingAtSummit", "waypointOffLine"];
+
+const seen = new Map();   // "routeid\x00wp" -> [categories]
+let raw = 0;
+for (const k of PIN) {
+  for (const f of F[k] || []) {
+    if (!f.wp) continue;
+    raw++;
+    const key = `${f.id}\x00${f.wp}`;
+    if (!seen.has(key)) seen.set(key, []);
+    seen.get(key).push(k);
+  }
+}
+
+const dupes = [...seen.entries()].filter(([, v]) => v.length > 1);
+console.log(`pin-level findings as counted by the audit: ${raw}`);
+console.log(`distinct (route, waypoint) pairs:            ${seen.size}`);
+console.log(`pins reported more than once:                ${dupes.length}`);
+console.log(`inflation:                                   ${raw - seen.size} findings\n`);
+
+const combos = new Map();
+for (const [, v] of dupes) {
+  const k = [...v].sort().join(" + ");
+  combos.set(k, (combos.get(k) || 0) + 1);
+}
+console.log("-- which categories re-report the same pin --");
+[...combos.entries()].sort((a, b) => b[1] - a[1])
+  .forEach(([k, n]) => console.log(`  ${String(n).padStart(4)}  ${k}`));
+
+const total = Object.values(F).reduce((n, v) => n + (Array.isArray(v) ? v.length : 0), 0);
+const nonPin = total - raw;
+console.log(`\nheadline total across every category: ${total}`);
+console.log(`  of which pin-level:                 ${raw}  -> ${seen.size} distinct`);
+console.log(`  non-pin (route/list level):         ${nonPin}`);
+console.log(`corrected total:                      ${seen.size + nonPin}`);

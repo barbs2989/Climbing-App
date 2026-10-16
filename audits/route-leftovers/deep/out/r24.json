@@ -1,0 +1,130 @@
+{
+ "results": [
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "verdict": "confirmed",
+   "resolution": "Already done: the summit pin was moved in section 7 (r2.json) to 48.972745,-120.997915 on two agreeing published summit coordinates. The README 'Found, not fixed' line about this pin is stale. No new op.",
+   "summary": "The Hozomeen South Peak summit pin already sits on the summit; it was moved earlier on two agreeing published coordinates, and the ground there now reads above 8,000 ft.",
+   "evidence": "Live row re-read 2026-10-01: waypoint 1 'Hozomeen Mountain, South Peak' is at 48.972745,-120.997915 (elev 8,003), not the old 48.97196,-120.99643. That position came from two independent published summit coordinates that agree within 28 m: a peak database's LiDAR summit and a peak list's coordinate (r2.json). USGS 3DEP re-queried this pass reads 8,056 ft at the live pin. The 7,614 ft reading belonged to the old position on the face. No further action. The stored 8,003 ft is the published summit figure and is left as it is.",
+   "sources": [
+    "Peak database (LiDAR summit) and peak list (r2.json)",
+    "USGS 3DEP point query (confirmation only)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "verdict": "confirmed",
+   "resolution": "Already done: the summit pins on both Enchantment Peak rows (this one and wa_enchantment_peak_east_ridge) were moved in section 7 (r2.json) to the NE (true) summit, 47.489186,-120.80277, on two agreeing published coordinates. The README line is stale. No new op.",
+   "summary": "Both Enchantment Peak summit pins already sit on the true (northeast) summit; they were moved earlier on two agreeing published coordinates.",
+   "evidence": "Live rows re-read 2026-10-01. wa_enchantment_peak_southwest_scramble waypoint 5 and wa_enchantment_peak_east_ridge waypoint 0 are both 'Enchantment Peak summit' at 47.489186,-120.80277. Sources (r2.json): a peak database's LiDAR summit and the OpenStreetMap peak node, which agree within 7 m. USGS 3DEP re-queried this pass reads 8,542 ft there (stated 8,538). The old crest point 330 m SW is gone from both rows.",
+   "sources": [
+    "Peak database (LiDAR summit) and OpenStreetMap peak node (r2.json)",
+    "USGS 3DEP point query (confirmation only)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "unresolved",
+   "resolution": "No op. No source states a distance to the 6,100 ft ridge-regain point, so distMi 3.2 on waypoint 3 stays. The instruction is not to null it, and two sources would be needed to change it.",
+   "summary": "No published account gives a mileage to the point where the route regains the north ridge, so its 3.2-mile figure stays as it is.",
+   "evidence": "Live row re-read 2026-10-01: waypoint 3 'Regain North Ridge crest' 47.618605,-121.272469, 6,100 ft, distMi 3.2; summit distMi 3.3; itinerary 6.6 mi round trip. Sources already tried, not re-counted: the 2006 NWHikers report (5.4 mi round trip, no intermediate distances), the 2017 NWHikers report and its peak-database GPS track, the 2019 and 2021 blog reports, the 2000 WTA report, the SummitPost peak and North Ridge pages, Beckey (1973/1987/2000), the WAC name lists, the Mountaineer annuals 1983-90, OSM traces and the 1965 USGS Skykomish quad. New this pass: a web search for a distance to the 6,100 ft regain point. It returned only those same pages, plus a peak-visualisation site and unrelated Bald Eagle peaks. None of these gives a distance to an intermediate point. The only way to get a figure would be to measure along the 2017 GPS track, which is a computed number, so it is not used. The 3.2 is at least consistent with the row (the regain point is about 200 m short of the summit pin at 3.3).",
+   "sources": [
+    "Web search, 2026-10-01 (no new source with a distance)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "verdict": "confirmed",
+   "resolution": "Second independent grading found. The 1981 regional alpine guide (North Cascades volume) describes the climb of East Twin Needle from the dividing notch (the Eye Col) as one difficult ~50 ft pitch and then a class 4 pitch to the summit ridge, graded 'Class 5.6 and aid'. The 2009 party graded the same section's crux 5.7 free. The two accounts are 41 years apart and agree that this line is low fifth class, nowhere near 5.10a. The live grade (II, 5.7, applied in s4 on one source) therefore stands. 5.7 is kept because it is the only free-climbing grade either source gives; the 1968 grade includes a point of aid. Two text ops bring data_quality.gaps[0] and corrections up to date, since they still say the grade rests on one account. Grade fields are not changed.",
+   "summary": "A second, much older account of the climb from the Eye Col also grades it low fifth class (5.6 with a point of aid), so the page's 5.7 grade is now backed by two independent ascents and its notes say so.",
+   "evidence": "NEW SOURCE: the regional alpine guide, 1981 edition (Rainy Pass to Fraser River), was read through the Internet Archive full-text search. The volume is lending-restricted; only search snippets were read, chained phrase by phrase, with no borrowing and no bypass. Its EAST TWIN NEEDLE entry reads: first ascent by the West Twin Needle 1968 party, which 'continued the route from the dividing notch with a difficult pitch, some 50 ft in height to a good belay stance'. That pitch went right, then left, on piton protection and one aid chock. 'The next pitch (class 4) ends on the knifed summit ridge. Class 5.6 and aid.' The entry cites the 1969 American Alpine Journal. That journal's note, found by the same search, reports the 1968 party's ascent of East Twin Needle and says an earlier credited first ascent of the East Needle was in error. It is the same ascent as the guide, so it counts as one source with it. ALREADY KNOWN (not re-counted): the 2009 Thread of Ice party climbed East Twin from the Eye Col with a crux '5.7 handcrack' (the photographer's trip report and the regional journal's short note on it). Independence: one is the 1968 first-ascent party via the guide and journal, the other the 2009 party; they share no author or citation. PROPOSED WORDING (no source names): gaps[0] and corrections are rewritten to say two ascents grade the line 5.6 with a point of aid and 5.7 free. FLAG FOR THE OWNER (no op): the overview says both needles were first climbed together on August 17, 1932 by Degenhardt, Martin and Strandberg. The 1981 guide gives East Twin's first ascent to the 1968 party, and the 1969 journal note calls the earlier East Needle credit erroneous. Those two are one lineage, though, and the guide's other book says only that the 1932 party climbed 'one of the twin needles'. So the sentence is probably wrong for East Twin, but it is left as it is pending a second independent source.",
+   "sources": [
+    "Cascade Alpine Guide: Rainy Pass to Fraser River (1981), East Twin Needle entry, via Internet Archive full-text search",
+    "American Alpine Journal 1969, Southern Pickets / East Twin Needle note, via Internet Archive full-text search (same lineage as the guide)",
+    "Steph Abegg 2009 Twin Needles trip report (already known)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "data_quality",
+     "path": [
+      "gaps",
+      0
+     ],
+     "expect": "The 5.7 grade for the Eye Col line rests on a single party's account; the harder grades published for this peak belong to the East Arête (5.10a) and North Buttress (5.9), not to this line.",
+     "value": "Two ascents decades apart grade the climb from the Eye Col low fifth class: 5.6 with a point of aid on the first, 5.7 free on a later one. The harder grades published for this peak belong to the East Arête (5.10a) and North Buttress (5.9), not to this line."
+    },
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "corrections",
+     "path": [],
+     "expect": "Grade set to 5.7: the 5.10a grade belongs to the East Arête, a different line reached along the crest from the east. The one account of the climb from the Eye Col grades its crux hand crack 5.7.",
+     "value": "Grade set to 5.7: the 5.10a grade belongs to the East Arête, a different line reached along the crest from the east. Both recorded ascents from the Eye Col grade it low fifth class: the first at 5.6 with a point of aid, a later free ascent with a 5.7 hand-crack crux."
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "verdict": "confirmed",
+   "resolution": "No op. The live range II-III (applied by the owner from held-v021) now meets rule 5: each end has two independent sources. Grade II comes from the Beckey guide (the club route page and the 2013 one-day report both take it from there, so that counts as one source) and, new this pass, a 2014 trip report that rates the route (II, 5.7) and uses Nelson's Selected Climbs as its guide. Grade III comes from the route database and the 2016 spokalpine report.",
+   "summary": "The West Ridge's II-III commitment range is now backed by two independent sources at each end, so it stays as it is.",
+   "evidence": "Live row re-read 2026-10-01: grade 'Grade II-III, 5.7', commitment and alpine_grade 'II-III', and the itinerary objective '(5.7, II-III, 4 pitches)' all agree. NEW: a CascadeClimbers trip report dated 6/14/2014, read in an ordinary browser (it loads after a JavaScript cookie step; nothing was bypassed). It calls the route 'The West Ridge of Prusik Peak (II, 5.7)' and quotes Jim Nelson's Selected Climbs in the Cascades (Vol. 1) as its route description, not Beckey. Also confirmed this pass: the club route page (archived 2025-04-15) rates it 'Grade II, 5.7' and lists Beckey's Cascade Alpine Guide Vol. 1 as its reference. That makes the club page and the 2013 report one Beckey lineage. The 2016 spokalpine report is titled 'West Ridge (III 5.7)' and filed under Grade III; it gives no reference. Checked, no numeral given: the route encyclopedia (5.7, 4 pitches), the SummitPost route page (archived 2016: 'Half a day', 5.7), Todd Kilcup's 2014/2015 posts, a 2016 CascadeClimbers report (bailed), chossclimbers (cites Smoot for pitch grades only), amessinthecascades 2021, shane.st, francisbaileyh 2022. Nelson's guide itself is on the Internet Archive but lending-restricted, so its own page was not read.",
+   "sources": [
+    "CascadeClimbers trip report 'Prusik Peak - West Ridge 6/14/2014' (II, 5.7; quotes Nelson's Selected Climbs)",
+    "The Mountaineers route page, archived 2025-04-15 (Grade II, 5.7; reference Beckey Vol. 1)",
+    "Mountain Project West Ridge (Grade III)",
+    "spokalpine 2016 (III 5.7)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "verdict": "confirmed",
+   "resolution": "No op. A second independent source calls the trail's slope south-facing, so the r3 change (the two 'southeast-facing' notes became 'south-facing') is now two-source.",
+   "summary": "A second, independent hiking guide also describes the Rock Mountain trail as climbing a south-facing, sun-exposed slope, so the page's 'south-facing' wording stands on two sources.",
+   "evidence": "Live row re-read 2026-10-01: no 'southeast-facing' text remains. Overview, approach and itinerary say south-facing or south/southwest-facing. Earlier sources: the WTA trail page (southern exposure) and a USGS slope sample, which is a measurement and was the weak half. NEW: the Best Hikes BC Rock Mountain page (a separate publisher, 2024): 'Much of the hike is south facing and exposed to the sun, even at the beginning'. It also describes zigzagging steeply up open slopes, constantly in the sun. The old USFS trail page now redirects to a generic forest page and was not usable.",
+   "sources": [
+    "Best Hikes BC, Hiking Rock Mountain near Stevens Pass",
+    "WTA Rock Mountain hike page (already used)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "verdict": "confirmed",
+   "resolution": "Already done: waypoint 1 'Base of west ridge' sits at 47.55891,-120.85206 (8,000 ft). It was moved in r5 on two independent published positions: the peak list's key-saddle coordinate and an archived 2013 SummitPost GPS track that passes 3 m from it, with a 2020 CalTopo line as a third. The README 'col only located to 0.7 km' line predates r5 and is stale. No new op.",
+   "summary": "The Cashmere west-col pin already sits on the 8,000 ft col, placed earlier from two independent published positions.",
+   "evidence": "Live row re-read 2026-10-01: waypoints are trailhead, 'Base of west ridge' 47.55891,-120.85206 elev 8,000 (distMi 5.2), and the summit. The r5 sources agree within 14 m. distMi 5.2 is still unsourced and is left alone.",
+   "sources": [
+    "Peak list key saddle and archived SummitPost 2013 GPS track (r5.json)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_la_bohn_peak_southwest_slopes",
+   "verdict": "confirmed",
+   "resolution": "Already done: waypoint 4 'La Bohn Gap' sits on the OpenStreetMap saddle node 47.5627878,-121.2417305 (moved in s4). No op. New support for that position: the peak database (archived 2022) gives La Bohn Peak's key col toward Mount Hinman (the gap) at 5,855 ft. USGS 3DEP reads 5,856 ft at the OSM node and 5,831 ft at the GNIS point 335 m east. The key-col page itself (which would give a coordinate) is behind a Cloudflare check and has no archived copy, so this is an elevation match, not a second coordinate.",
+   "summary": "The La Bohn Gap pin already sits on the mapped saddle; a peak database's key-col height matches the ground there to the foot, though no second coordinate could be read.",
+   "evidence": "Live row re-read 2026-10-01. Earlier sources: the OSM saddle node (ele 1785 m) and the USGS GNIS record, 335 m apart, both on the saddle (ground 5,856 and 5,831 ft). New: the archived peak-database page for La Bohn Peak (2022-08-20) gives key col 5,855 ft, line parent Mount Hinman, isolation limit point 47.5625,-121.2325. The key-col coordinate page answered 403 / Cloudflare and was not bypassed. The pin position stands.",
+   "sources": [
+    "Peakbagger La Bohn Peak page, Wayback 2022-08-20 (key col 5,855 ft)",
+    "OpenStreetMap saddle node and USGS GNIS record (s3/s4)",
+    "USGS 3DEP point query (confirmation only)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

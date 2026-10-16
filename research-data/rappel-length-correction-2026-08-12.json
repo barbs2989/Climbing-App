@@ -1,0 +1,69 @@
+{
+  "_README": [
+    "CORRECTION batch, not enrichment. A rope doubled through an anchor reaches HALF its length,",
+    "so a single 60m rope gives 30m rappels and a single 70m rope gives 35m. Where a source gave",
+    "no per-station distance, an earlier pass wrote the ROPE'S CAPACITY into lengthM instead of",
+    "null. The table then overstates every rappel by 2x, which is the rope-off-the-end shape.",
+    "",
+    "Scope was MEASURED, not assumed: all 151 WA routes carrying a rappel table were checked for",
+    "a station length equal to a named rope size with no double-rope configuration described",
+    "anywhere in the route's prose, and separately for any station over 60m (impossible on less",
+    "than two ropes). Exactly two routes are affected. Two near misses are deliberately NOT",
+    "changed and are recorded at the bottom so they are not re-raised."
+  ],
+
+  "wa_ellation": {
+    "area": "wa_mamie_peak",
+    "_why": "The count note admitted it in writing — 'approximated at the stated single 70m rope capacity' — while the route's own rappels field says several raps 'approach the rope's full 35m reach'. 8 x 70m is 560m of rappel on an 8-pitch route. No source gives per-station distances, so the honest value is null: a rappel here may be 35m or it may be 15m, and inventing 35 everywhere would replace one fabricated number with another.",
+    "rappel_add": {
+      "1": { "lengthM": null },
+      "2": { "lengthM": null },
+      "3": { "lengthM": null },
+      "4": { "lengthM": null },
+      "5": { "lengthM": null },
+      "6": { "lengthM": null },
+      "7": { "lengthM": null },
+      "8": { "lengthM": null }
+    },
+    "set": {
+      "rappel_count_note": "Eight rappels down the line of ascent on a single 70m rope. Per-station distances are not published for this route, so none are listed here rather than estimated: a 70m rope doubled reaches 35m, and the route beta warns that several of these raps come close to that full 35m reach, so tie stopper knots in the ends. The station above pitch 3 sits about 30 ft to climber's-left — rappel off the tree there rather than straight down."
+    },
+    "_sources": ["route's own stored rappels/descent_text fields"],
+    "_confidence": "corroborated"
+  },
+
+  "wa_overcoat_peak_southeast_route": {
+    "area": "wa_overcoat_peak",
+    "_why": "Stored as 2 x 60m, but the route's own descent text says a single 60m rope handles both rappels and describes them as 'roughly full 30m/60m-rope-length pitches' — i.e. 30m rappels off a 60m rope. Here the corrected number IS sourced from the route's own text, so 30 is written rather than null.",
+    "rappel_add": {
+      "1": { "lengthM": 30 },
+      "2": { "lengthM": 30 }
+    },
+    "set": {
+      "rappel_count_note": "Two rappels of roughly 30m each, which is what a single 60m rope doubled reaches — this is the commonly reported method where the descent ledges pinch out at the damp dihedral. Some parties downclimb the full chimney/ledge system instead when conditions allow. Anchors are natural (slung horns, chockstones, gear) with no fixed hardware, so carry cordage and expect to leave gear. A shorter rope means more rappels, not longer ones."
+    },
+    "_sources": ["route's own stored descent_text field"],
+    "_confidence": "corroborated"
+  },
+
+  "wa_one_piece_at_a_time": {
+    "area": "wa_cutthroat_wall",
+    "_why": "The LENGTHS are right and are left alone: 3 rappels covering 5 pitches is about 60m each, and the source states 60m rappels directly. What was wrong is the note on rappel 1, which said 'a 60m rope is required to make each full-length rappel' — a 60m rope doubled reaches 30m, so that sentence describes something that cannot be done. The fix is the rope configuration, not the number.",
+    "rappel_add": {
+      "1": {
+        "notes": "Start of the rappel line. These are full 60m rappels, which needs TWO 60m ropes (or a 60m plus a tag line) — a single 60m rope doubled only reaches 30m and would leave you short. Parties carrying one rope should plan on the walk-off instead."
+      }
+    },
+    "set": {
+      "rappel_count_note": "Three full 60m rappels down the route itself, which many parties find faster than the shared Cutthroat Wall walk-off. Note the rope requirement: 60m rappels mean two ropes, since one 60m rope doubled reaches only 30m. With a single rope this becomes six shorter rappels and intermediate anchors would have to be built, so most single-rope parties walk off. Only the first anchor — a tree up and left of the pitch 5 belay — is individually named in the source beta."
+    },
+    "_sources": ["route's own stored rappels/descent_text fields"],
+    "_confidence": "single-source"
+  },
+
+  "_NOT_CHANGED": {
+    "wa_action_potential": "Flagged by the first scan and CORRECT. Its descent text gives the lengths individually — roughly 40m, 55m, 55m, 40m and a final 60m — and states 'with double ropes'. The scan missed the plural in 'double ropes'.",
+    "wa_tooth_and_claw": "6 x 70m stations, correct: the route explicitly recommends two 70m ropes.",
+    "wa_pernod_spire_standard": "A 65m first rappel, correct: two ropes are named."
+  }
+}

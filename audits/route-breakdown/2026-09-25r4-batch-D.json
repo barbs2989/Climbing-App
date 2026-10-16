@@ -1,0 +1,147 @@
+{
+  "wa_liberty_cap_ptarmigan_ridge_finish": {
+    "area": "wa_liberty_cap",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "Glacier, crevassed", "notes": "From high camp near 10,000 ft, drop several hundred feet onto the Mowich Glacier at about 9,800 ft and head for the bergschrund at the foot of the face. This is where the technical climbing begins; leave early, because the cliffs higher on the route shed rock once the sun reaches them." },
+      { "pitch": "2", "grade": "AI3", "notes": "The bergschrund is usually crossed on a snow bridge left of the central rock outcrop, but in some seasons it needs an end-run or a short steep ice step, which has gone at AI3. How hard this is depends entirely on the year and the month, from a walk over a bridge to a real ice pitch." },
+      { "pitch": "3", "grade": "40–60° snow and ice", "lengthM": 305, "notes": "About 1,000 ft of sustained slope, hugging the cliffs on the right, up to where large rock cliffs block the way. In firm snow it is 40–45° and often simul-climbed without much protection; in icy years it runs 50–60° alpine ice and wants screws or pickets every rope length. Between the snow aprons, a lean year can expose thin verglass and frozen mud." },
+      { "pitch": "Hourglass", "grade": "45–55° snow", "notes": "Traverse left into the hourglass-shaped snow face below the big buttress that splits the upper route, and climb it to the buttress base near 11,500 ft. Overhanging, rotten cliffs sit above: pick sheltered belays and move fast once the sun is on them. A melted-out rock band mid-hourglass can hold thin verglass. From here the original line goes left toward the icefall; the more-used line continues right." },
+      { "pitch": "4", "grade": "WI3", "notes": "The right-hand line crosses exposed snow and ice below the rock band, protected with pickets and screws, to a small cave under a strip of water ice. That ice has gone as a full rope length of WI3 on screws. How much ice forms varies a lot: expect anything from styrofoam snow to verglassed rock to good water ice." },
+      { "pitch": "5", "grade": "5.6", "notes": "An exposed talus scramble leads to the rock step, a short chimney through the rock band at about 12,000–12,200 ft. It is normally 5.6 rock climbed in crampons past a couple of fixed pins, but in some seasons it fills with water ice and goes at about WI3. Belays at its base are poor; a slung boulder has served as the anchor." },
+      { "pitch": "6", "grade": "Low-angle glacier snow", "notes": "Above the rock band you reach the broad, low-angle snow ramp of the Liberty Cap Glacier. Follow it up to Liberty Cap. Rime crust is common, and many parties unrope partway up. The technical difficulty is over, but it is a long, tiring climb at altitude after a big day." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept the six numbered rows and added an 'Hourglass' stage between 3 and 4 (7 entries). Every row now says where it goes, how it is protected and what the hazard is. I removed the lengthM values 250, 30, 60, 40 and 199 because no source gives them; 305 stays because the ~1,000 ft slope is stated by two sources. Row 6 no longer says '45-55° snow/ice': that angle belongs to the original left-hand finish, while the chimney line tops out onto low-angle Liberty Cap Glacier snow. No crux flag: sources disagree on whether the WI3 ice or the 5.6 chimney is the crux. The route is very conditions-dependent, and the sources describe different years.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+        "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/",
+        "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/",
+        "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier",
+        "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge (search summary only; page returned 403)"
+      ],
+      "other_findings": "Stored beta and the old pitch_detail give the rising traverse as '50-60°'. Mountain Project gives 40-45° snow for the same slope, so 50-60° is one icy year, not the norm. The stored pitch lengths 250/30/60/40/199 (which sum with 305 to length_m 884) look back-filled from length_m, not taken from a source."
+    }
+  },
+  "wa_northwest_ridge_2": {
+    "area": "wa_boston_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Ridge traverse (multiple pitches)", "grade": "Loose, unprotected rock", "notes": "The ridge is reached from the Sharkfin Tower end after some rappelling and traversing off the tower. From there the crest is loose rock that had never been climbed. The ridge as a whole is rated 5.5 X: protection is essentially absent and a fall would not be held. No individual pitches have been described for this section." },
+      { "pitch": "À cheval section (2 pitches)", "grade": "À cheval, rotten rock", "notes": "The most distinctive ground on the ridge: two pitches climbed straddling the crest, on rock that crumbles under hands and feet. Nothing here can be trusted to hold a fall or to serve as an anchor. Test every hold and keep your weight centred over the crest." },
+      { "pitch": "Upper ridge (~1,000 ft)", "grade": "Loose rock, ~1,000 ft", "notes": "About 1,000 ft of equally poor climbing leads from the end of the à cheval section to the 8,894 ft summit. The line has one known ascent, made as part of a traverse that carried on over the summit toward Sahale, so nothing is known about reversing it. Plan to descend another way." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three rows with the same labels. I rewrote the notes in my own words, because the old rows quoted the first-ascent account word for word ('virgin choss', 'feta cheese', 'best forgotten'). I added how the ridge is reached, what the X rating means for the leader, and that reversing the ridge is unknown. Grade chips are terrain descriptions: the only source gives 5.5 X for the ridge as a whole, not for each section, so I did not assign a grade to any single row. Single source (the first-ascent AAJ note), so medium at most.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon"
+      ],
+      "other_findings": "1) `rappels` says '3–5 rappels on the ridge itself to get past its gendarmes, off threaded cord', and climbing_route row 3 repeats the gendarme rappels. The AAJ account mentions rappelling only between Sharkfin Tower and the ridge, not on the ridge, so the count and the gendarmes look invented. 2) `approach` says the Sharkfin–Boston col approach reaches 'the low (southwest) end of this ridge'. A northwest ridge's low end is at its northwest (Sharkfin) end, and the ascent came from Sharkfin. 3) `grade` '5.5 X' matches the source."
+    }
+  },
+  "wa_south_ridge_4": {
+    "area": "wa_main_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "Crack to the U-notch", "notes": "The route starts at the lowest point of the south ridge, the left skyline seen from the east-ridge camp. Reaching it means crossing the glacier flank on steep, exposed firn where crampons are mandatory. The first pitch follows an obvious crack up the face to a U-shaped notch in the crest. The route is rated 5.6 overall; a single rack is enough." },
+      { "pitch": "P2", "grade": "Cracks to the knife-edge", "notes": "From the notch, cross to the far side of the ridge and climb excellent cracks back up to the knife-edge crest. This is some of the best rock on the route." },
+      { "pitch": "P3-P4", "grade": "Knife-edge, à cheval", "notes": "Two pitches along the exposed knife-edge crest, with an à cheval (straddling) stretch on the fourth pitch, end at a short downclimb. The moves are moderate but there is steady exposure on both sides, so protect the downclimb for the second." },
+      { "pitch": "Summit scramble", "grade": "Scree or snow, easy", "notes": "Past the downclimb the ridge turns broad. Once melted out it is loose scree; earlier in the season it is snow. Easy scrambling leads to the true summit, and the way down is the east ridge." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same four rows and labels, with fuller notes: how the base is reached (steep firn, crampons), which side of the notch pitch 2 climbs, the à cheval on pitch 4, and scree vs snow on the summit ridge. I removed the per-pitch grades '5.6' (P1) and '5.easy-5.6' (P2) because the source grades only the whole route 5.6 and gives no pitch grades. No lengths or anchors are stated anywhere. Pitch-level detail comes from a single source (the AAJ note only confirms the 5.6 grade and the knife-edge pitches), so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/118250844/south-ridge",
+        "http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon"
+      ],
+      "other_findings": "`rappels` says 'Several rappels used to bypass gendarmes along the ridge crest'. Both sources describe a short downclimb and a descent of the east ridge, with no rappels on the ridge. That field looks invented. Mountain Project lists the route as Trad/Alpine, ~1,000 ft, 4 pitches, Grade II; stored length_m 305 and pitches 4 agree."
+    }
+  },
+  "wa_mount_carrie_standard": {
+    "skip_reason": "Route identity is unclear: the row mixes two climbs. Its name and beta describe a Carrie Glacier variation (roped glacier travel in the northeast cirque), but its approach and pitch_detail are the standard High Divide → Catwalk → Boston Charlie's line. Sources describe that standard line as a non-glacial scramble up Carrie's southwest ridge/basin, about 2,000 ft from Boston Charlie's and mostly walking, with the Catwalk as the crux. The Carrie Glacier flows north-northeast from the summit, away from that approach. Per the brief, a row that mixes two climbs is skipped. Consulted: trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/, turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth (summitpost blocked). Finding for a human: decide whether this row is the SW-ridge standard route (then drop the glacier/rope language from name, grade and beta) or a real Carrie Glacier route (then it needs a glacier approach, not the Catwalk description)."
+  },
+  "wa_austera_peak": {
+    "area": "wa_austera_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Klawatti col rappel", "grade": "Moat, 75 ft rappel", "notes": "Pass through Klawatti col and follow Klawatti's north ridge along the upper McAllister Glacier to a break in the ridge at about 7,900 ft. Cross the moat and rappel 75 ft to the Klawatti Glacier from an old anchor. Getting back up on the return is a short belayed pitch graded 5.5–5.6 (stay left in the gully), so carry a small rack and retrievable cord." },
+      { "pitch": "Klawatti Glacier traverse", "grade": "Glacier, crevassed", "notes": "Traverse the Klawatti Glacier high and to the left toward Austera, which only comes into view when you are close. The route has moderate snow traverses and humps above and around crevasses, and icefalls below shed serac avalanches, so keep the line high and stay roped." },
+      { "pitch": "Sub-summit scramble", "grade": "4th/low 5th", "notes": "Leave packs and crampons at the rock. One line climbs a few hundred feet of 4th class, traverses left on a broken ridge, and finishes with about 30 ft of low 5th around to the right on the northeast face, which can be soloed or simul-climbed. An easier class 3 line on the southeast ridge also reaches this sub-summit, where most parties stop." },
+      { "pitch": "Summit tower", "grade": "Loose tower, technical", "notes": "The true summit is a separate tower a few feet higher than the sub-summit. It is about 50 ft of contrived technical climbing on very poor rock and is rarely climbed. It needs a rope and careful rock testing; most parties judge the sub-summit a finished ascent." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Added the Klawatti col rappel and the Klawatti Glacier traverse, which are the route's real technical ground (4 entries, was 2). Rewrote both summit rows. The old 'Summit tower' row gave '5.5, well-protected' for the summit pitch, but both sources place the well-protected 5.5 (or 5.6) pitch at the col on the return, not on the summit tower. No source grades the tower, so it now has a terrain chip and no grade token. No lengthM: the only lengths are the 75 ft rappel and the 30 ft low-5th finish, and neither is a roped pitch length in the planner's sense. Two sources, both trip-report style, so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/117615075/austera-peak",
+        "https://spokalpine.com/2025/07/09/austera-peak/"
+      ],
+      "other_findings": "1) `beta` says the 50 ft '(reported as well-protected 5.5)' pitch is on the summit tower. The source puts the well-protected 5.5 at the col on the return; the summit tower is ungraded and described as loose and contrived. 2) `descent_text` calls the return climb 'the ~75 ft rappel pitch (well-protected 5.5)', which is consistent with the sources, so only `beta` conflates the two. 3) `grade` 'Easy 5th' is fine for the sub-summit; the true summit is rarely climbed."
+    }
+  },
+  "wa_sinister_peak_north_face": {
+    "area": "wa_sinister_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "Bergschrund", "notes": "Reach the face at its lowest point on the Chickamin Glacier. The usual way is over the Dome–Chickamin col (about 8,500 ft) and down the glacier; the first ascent traversed in from the Blizzard–Gunsight col to the west. A bergschrund guards the base, and the line makes a brief detour to get around it before heading straight up." },
+      { "pitch": "2", "grade": "45–50° névé and ice", "notes": "A direct line runs straight up the centre of the face on a consistent 45–50° of névé and ice all the way to where it eases near the top. Ice tools, screws and pickets are the standard gear; how much is ice and how much is névé depends on the season." },
+      { "pitch": "3", "grade": "Short rock scramble", "notes": "Where the snow runs out below the summit rocks, a short rock scramble finishes on the 8,440 ft summit, which is roomy and looks straight across to Dome Peak and Gunsight Peak." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three numbered rows with fuller notes on how the face is reached, the bergschrund, gear and the finish. I removed lengthM 150/170/46: no source gives them, and they sum exactly to length_m 366, so they look like a back-filled split. I also removed the unsourced angle '45°' for the lower slope and 'Class 2-3' for the finish; the source gives 45–50° for the whole face and only 'a short rock scramble' at the top. The face has one primary description (the 1980 AAJ first-ascent note), confirmed only in outline by a Mountaineers route summary, so medium.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/12198053802",
+        "https://www.mountaineers.org/activities/routes-places/sinister-peak (search summary only; page is bot-gated)",
+        "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+        "https://www.lemkeclimbs.com/sinister-peak.html"
+      ],
+      "other_findings": "`grade` and `pitches` are null. The AAJ note gives NCCS II and 45–50° névé/ice, which could fill `grade` (for example 'II, 45–50° snow/ice'). `descent_text` says parties 'often' walk off via the west ridge. The only west-side description found is a class 3 gully to a notch on the lower west ridge, then class 2 to the summit, which supports a west-side descent, but 'often' is not sourced."
+    }
+  },
+  "wa_big_four_mountain_spindrift_couloir": {
+    "area": "wa_big_four_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Lower slabs", "grade": "5.8", "notes": "Climb a ribbon of ice on the initial slabs, reached through a break in the lower cliffs right of the steepest part of the headwall. On the first ascent it was about 65°, half an inch to an inch thick and too thin for protection or belays. It thinned to 5.8 mixed moves on edges, then a short near-vertical step on a thicker tongue, then more thin 65° ice to the bowl." },
+      { "pitch": "North face bowl", "grade": "20–35° snow", "notes": "Low-angle snow crosses the bowl toward the couloir, which cuts through shale bands several gullies right of the north rib. The bowl steepens to about 35° on the avalanche fan below the couloir. Snow ranges from névé to wind crust over powder, and rockfall and slides come down this fan, so do not linger." },
+      { "pitch": "First step", "grade": "75° névé and water ice", "notes": "The first of three steeper steps in the couloir: about two pitches of névé and water ice at roughly 75°, narrowing in one place to a slot about three feet wide with fat ice at the back. Protection is available here. About 300 ft of steeper ground in all brings you to the top of the step." },
+      { "pitch": "Second step", "grade": "5.8 WI5", "lengthM": 37, "notes": "Rotten shale, snow mushrooms and thin, strange ice. It starts on good 75° ice, then the ice gives out to powder over shale and the picks have to be dragged through snow until they catch. Protection and belay options are very poor, and the angle drops to about 60° on thicker ice at the top." },
+      { "pitch": "Crux", "grade": "Near-vertical ice", "lengthM": 30, "crux": true, "notes": "At about three-quarters height, the third and steepest step. In good conditions it is a near-vertical ice pitch leading to steep, often runnelled snow. In lean conditions it has gone as rotten ice over shale at 80–95°, with drytooling and a knifeblade in a shale seam as the main protection. The belay at its base is poor." },
+      { "pitch": "Upper névé slopes", "grade": "Steep névé and snow", "notes": "About 1,000 ft of mostly névé and ice remains above the third step and can be simul-climbed with occasional screws. In the last few hundred feet the snow can turn unconsolidated and give no protection, which makes this exposed upper slope one of the most serious parts of the route. A short mixed section sits just below the cornices." },
+      { "pitch": "Cornice exit", "grade": "Cornice, overhanging", "notes": "Summit cornices can overhang the face by about six feet. The first ascent cut a tunnel through them with an adze to reach the ridge. The route tops out on the summit ridge well west of the true summit, where a boulder offers a solid cam anchor for bringing up the second." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "7 entries, was 5. I split 'Main couloir (3 steps)' into the bowl and the first and second steps. I merged the old 'Crux' and 'Upper mixed' rows into one 'Crux' row: both describe the third step at three-quarters height, one in good ice and one as rotten ice and shale drytooling. A new 'Upper névé slopes' row covers the 1,000 ft above it. The lower slabs are corrected from '~75°' to 65° with a short near-vertical step and 5.8 mixed moves. Lengths: the second step is 120 ft (37 m) and the crux 100 ft (30 m), as the sources state them. The second step's grade '5.8 WI5' is stated for that section. I left out 'WI5' and '5.9' on the crux because no source grades that pitch: the route is 5.9 overall, and the 5.9 is not tied to a pitch. Labels 'Main couloir (3 steps)' and 'Upper mixed' are gone for the reason above. This is a winter/early-spring route: it forms only after rain followed by a cold snap.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades",
+        "http://publications.americanalpineclub.org/articles/12199713800/North-America-United-States-Washington-Cascades-Big-Four-Mountain-North-Face-Spindrift-Couloir",
+        "https://www.mattsea.com/featured/BigFour/"
+      ],
+      "other_findings": "The AAJ gives 4,000 ft, IV+ 5.9 95°; a later description gives IV AI4. Stored `grade` '5.9' drops the commitment grade and the ice grade, and `length_m` 1219 matches 4,000 ft. The old lower-slab angle '~75°' is contradicted by the first-ascent account (65° with a short 85° step). The route may have been climbed before 1996 (unconfirmed reports of a late-1980s ascent), which is relevant to `fa`."
+    }
+  },
+  "wa_fortress_mountain_east_ridge": {
+    "area": "wa_fortress_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Trailhead to bench below Chiwawa's east ridge", "grade": "Trail, ford, bushwhack", "notes": "Buck Creek Trail to the Chiwawa River Trail at 1.4 mi. Stay left at the Red Mountain junction around 5 mi, where the faint branch drops to the valley, and ford the Chiwawa River. Faint paths and open forest lead to a basin near 5,500 ft, then a gully or treed slopes to the camp bench at about 6,300 ft. The upper trail is brushy with hidden deadfall." },
+      { "pitch": "Bench to 7,200 ft col", "grade": "Class 2, snow early season", "notes": "From the bench, climb class 2 ground (a creek-side scramble works well in low water) to about 7,200 ft and traverse over to the flat col toward Chiwawa Mountain, which has wind-walled tent sites. A snowfield on the traverse toward Fortress can stay frozen hard into midsummer: carry an axe and traction, or drop below it rather than trying to skirt it high on loose rock." },
+      { "pitch": "Col to East Ridge via gully", "grade": "Class 3-4, very loose", "notes": "Aim for the broad notch in the East Ridge, up moderate snow that steepens near the top or, late in the season, unpleasant choss and talus. The gully is very loose: scree slides underfoot, holds break, and parties above send down rock. The last stretch has narrow sandy ledges. At the notch, go left over blocks and loose talus to gain the crest." },
+      { "pitch": "East Ridge to summit", "grade": "Class 3-4, chimney", "notes": "Stay as close to the crest as you can: the right side is very exposed and the left face is loose and sandy. The ridge rock is generally solid class 3–4, and a clean chimney through an otherwise blank block is the hardest move for many parties. Beyond it the ridge flattens into class 2 boulders and ledges to the true summit (8,674 ft), the farthest high point." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same four rows and labels. The notes now give the real junctions and ford, the gully hazards, and how to stay on the crest. The finish is corrected: the old row put an 'exposed, unroped 4th-class step just below the summit', but the source puts the crux chimney partway along the ridge, followed by easy class 2 to the summit. The bench is given as about 6,300 ft, not 6,580. No crux flag, because the source says only that 'some consider' the chimney the crux. Two sources, which differ on camp choice (6,300 ft bench vs the ~7,200 ft col), so medium.",
+      "sources_consulted": [
+        "https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/",
+        "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/"
+      ],
+      "other_findings": "1) `approach` and the old pitch_detail put the bench at ~6,580 ft; the source gives ~6,300 ft for the bench camps. 2) `approach` starts 'From Trinity Trailhead, hike the Chiwawa River Trail (#1550)'. The route actually starts on the Buck Creek Trail, with the Chiwawa River Trail branching off at 1.4 mi (`descent_text` has this right). 3) `descent_text` says to down-climb 'the exposed 4th-class step' just below the summit. The source places the crux chimney mid-ridge, with easy ground to the summit. 4) `grade` is null; sources call it class 3–4."
+    }
+  }
+}

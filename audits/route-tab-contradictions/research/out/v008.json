@@ -1,0 +1,177 @@
+{
+ "file": "v008",
+ "results": [
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "fact": "Gain vs loss for an out-and-back route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The archived 2004 two-peak report (Trinity, Buck Creek and Chiwawa River trails, camp below the 7,200 ft Fortress-Chiwawa saddle) gives about 20 mi RT and over 8,000 ft of gain for Fortress plus Chiwawa, agreeing with the combined 7,900 ft / ~20 mi figure already known; searches again turned up only the 22 mi / 6,000 ft figure tied to a different outing description. No source gives a Fortress-only car-to-car gain for this line, so gain_ft 5,884 (summit minus trailhead) and loss_ft 7,900 (the combined-trip figure) cannot be set to one sourced value; loss = gain is not assumed.",
+   "sources": [
+    "https://web.archive.org/web/2015/https://www.wta.org/go-hiking/trip-reports/tripreport-2004101404",
+    "https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/",
+    "https://www.theoutbound.com/washington/backpacking/scramble-fortress-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "distance to the high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. Searches again found the Hannegan-Whatcom Pass leg (~16-17 mi) and multi-day Pickets reports, but no source giving a mileage from Whatcom Pass or Perfect Pass to a camp below Ghost Peak; the route database's Ghost Peak page says only that access is obvious from high camp. Waypoints (~5 mi beyond Whatcom Pass) vs itinerary day 3 (7.5 mi) stays open; a figure would have to be computed.",
+   "sources": [
+    "https://www.mountainproject.com/area/120231853/ghost-peak",
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "high camp location: Crooked Thumb Glacier moraine vs Luna Cirque/Lousy Lake",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The route database's Ghost Peak page repeats the 1970 first-ascent line (south face to the south arete, then the west face; the huge east face is where the Crooked Thumb route starts) and says only 'access is obvious from high camp', naming no camp. The Pickets trip reports found (Big Beaver/Wiley Ridge/Luna Creek parties, a Challenger Arm camp overlooking Luna Basin, a Hannegan-side party on the Crooked Thumb Glacier moraine) each name a camp for neighbouring peaks, not for Ghost. No source names Ghost's camp, so approach/itinerary (Crooked Thumb Glacier moraine) vs waypoint/descent_text (Luna Cirque near Lousy Lake) stays open.",
+   "sources": [
+    "https://www.mountainproject.com/area/120231853/ghost-peak",
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-1/",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-attempt-mt-challenger/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "dist_km (shown as one-way approach) holds the round-trip total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 70.81 km (44 mi) is the itinerary round trip and renders as the one-way approach; the approach prose says roughly 23-24 mi one way. No source states the one-way distance to Ghost Peak's high camp or summit (the Whatcom Pass-to-camp leg is unsourced, see above), and halving the itinerary total is not allowed because the route is not a pure out-and-back on one trail stated by two sources. It is provably the wrong quantity but only the row's own prose contradicts it, not two external sources, so it is not nulled.",
+   "sources": [
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "Ross Lake described as serving only Luna/Fury",
+   "verdict": "fixed",
+   "correct_value": "Hannegan Pass is the standard access; a Ross Lake alternative via Big Beaver Creek and Wiley Ridge also reaches the Challenger area of the Northern Pickets",
+   "evidence": "Two independent trip-report authors document the Ross Lake approach reaching the Northern Pickets, not just Luna and Fury: a 2007 report goes Big Beaver to Wiley Ridge to Luna Creek and climbs Mt. Challenger, and a second author's reports climb Challenger via Big Beaver Creek, Wiley Ridge and Challenger Arm and attempt Crooked Thumb (Ghost's immediate neighbour) the same way. The row itself already agrees in partner_requirements.approachTime ('from Ross Lake to a high camp in the Challenger Glacier/Luna Cirque area'). Rule 3 keeps Hannegan as the standard line; only the four copies of the 'Ross Lake serves only Luna/Fury' claim are reworded.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-1/",
+    "https://trailcatjim.com/mount-challenger-via-challenger-glacier-northeast-face-northern-pickets/",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-attempt-mt-challenger/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(FR 32, ~3,100 ft) - not Ross Lake, which instead serves Luna Peak and Mount Fury further south via the Big Beaver Trail/Access Creek approach.",
+     "replace": "(FR 32, ~3,100 ft); the alternative from Ross Lake, up Big Beaver Creek and Wiley Ridge, also reaches the Challenger end of the Northern Pickets.",
+     "id": "wa_ghost_peak_south_route",
+     "fact": "Ross Lake described as serving only Luna/Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "Note that this, not Ross Lake, is the standard access; the Big Beaver/Access Creek approach out of Ross Lake serves Luna Peak and Fury, well to the south.",
+     "replace": "This is the standard access; the alternative out of Ross Lake climbs Big Beaver Creek and Wiley Ridge to the Challenger area instead.",
+     "id": "wa_ghost_peak_south_route",
+     "fact": "Ross Lake described as serving only Luna/Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Standard access to Ghost Peak is from the Hannegan Pass trailhead, not Ross Lake — that approach serves Fury/Luna further south.",
+     "replace": "Standard access to Ghost Peak is from the Hannegan Pass trailhead; a Ross Lake alternative climbs Big Beaver Creek and Wiley Ridge instead.",
+     "id": "wa_ghost_peak_south_route",
+     "fact": "Ross Lake described as serving only Luna/Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Standard access to Ghost Peak is from the Hannegan Pass trailhead, not Ross Lake — that approach serves Fury/Luna further south.",
+     "replace": "Standard access to Ghost Peak is from the Hannegan Pass trailhead; a Ross Lake alternative climbs Big Beaver Creek and Wiley Ridge instead.",
+     "id": "wa_ghost_peak_south_route",
+     "fact": "Ross Lake described as serving only Luna/Fury"
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. Search again surfaces only the same split: one route database gives Grade III (matching alpine_grade), the long-standing route site gives Grade I-II on its Sitkum Glacier page (its peak page also calls the standard route Grade I, same site so counted once), and club, guide and trip-report pages give no Roman grade. The range rule needs two independent sources for each end; the III end has one, so no range is written and grade (II), commitment (I-II) and alpine_grade (III) stay as they are.",
+   "sources": [
+    "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+    "https://www.summitpost.org/sitkum-glacier/155846",
+    "https://www.summitpost.org/glacier-peak/150318"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose",
+   "verdict": "unresolved",
+   "correct_value": "The White Chuck approach is no longer usable in summer; current access is North Fork Sauk -> White Pass -> PCT north over Red Pass -> Sitkum Creek -> Boulder Basin",
+   "evidence": "Third pass. Recent North Fork Sauk reports confirm White Pass at about 9 mi / 6,000 ft (5.5 mi of valley trail then ~3,000 ft of switchbacks) and one June 2026 party logged 13.9 mi and 6,324 ft to a camp on the Glacier Gap line, but none gives the PCT mileage from White Pass over Red Pass to the Sitkum Creek climbers' path or on to Boulder Basin. A February 2025 forum report exists for a winter White Chuck/Sitkum ascent (page blocked), so the old line is still used in winter on foot along the closed road. Rewriting itinerary days, timing and descent for the North Fork Sauk line would need computed segment distances, so no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-24.101059402275",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-02.7069727620",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1278905"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "fact": "one-way approach distance (dist_km 0.97 km shown as 'Approach (one way)' vs ~8+ mile walk in)",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "dist_km 0.97 km (0.6 mi) is the boulder-session distance, not the one-way approach it renders as. It is contradicted by the problem's route page ('about 8 miles' in) and by the Forest Service trail page (the North Fork Sauk trail reaches the PCT at 8.4 mi, on the bench below White Pass, and this boulder lies beyond White Pass: OpenStreetMap puts White Pass at 48.0332,-121.1485, about 2 mi south-west of the stored boulder coordinate). No two sources state the same one-way distance to the boulder itself (8 mi on the route page vs White Pass alone at 8.4-10 mi), so under the delegated rule the provably wrong value is set to null and no replacement is written; the seven prose copies of 'roughly 8 miles' are left as they are because one source states that figure and none states a better one.",
+   "sources": [
+    "https://www.mountainproject.com/route/118251503/dont-climb-that-she-said",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-sauk-trail-649",
+    "https://nominatim.openstreetmap.org/search?q=White+Pass&format=json&viewbox=-121.3,48.2,-121.0,47.95&bounded=1"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 0.97,
+     "value": null,
+     "id": "wa_don_t_climb_that_she_said",
+     "fact": "one-way approach distance (dist_km 0.97 km shown as 'Approach (one way)' vs ~8+ mile walk in)"
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. Under the delegated rule the North Fork Sauk line wins (FR 23 closed at milepost 3.7 since March 2025 and White Chuck Trail #643 listed inaccessible), and the itinerary already follows it (21 mi each way). What is left is the approach prose, approach_variants, dist_km 12.4 km (7.7 mi) and the waypoint distMi values (Kennedy Ridge junction 7.7, Glacier Creek 9.7, ...), which carry White Chuck mileages although waypoint 0 is the North Fork Sauk trailhead. New reports give North Fork Sauk pieces (about 5 mi to Mackinaw, ~4.5 mi up to the PCT, ~1 mi to Red Pass, ~5 mi down the far side to a camp) but none states the distance from the trailhead to the Kennedy Ridge junction or Glacier Creek, so every replacement distMi or one-way dist_km would be assembled from pieces. No patch; the approach paragraph and the waypoint distances need a sourced North Fork Sauk mileage.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-09-28-8656081052",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-sauk-trail-649",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/kennedy-ridge-trail-639"
+   ],
+   "patches": []
+  }
+ ]
+}

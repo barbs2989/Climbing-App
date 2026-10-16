@@ -1,0 +1,66 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Hairpin pullout position relative to Washington Pass"
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Dispersed camping stay limit"
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Elevation of Kangaroo Pass"
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Distance from the hairpin pullout to the Blue Lake trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "before": {
+    "road": {
+     "name": "North Cascades Highway (SR 20)",
+     "status": "Open seasonally; closed by WSDOT for winter avalanche/storm risk between roughly late November and mid/late April",
+     "driveNote": "The Hairpin Turn pullout used for the Half Moon approach is at approximately milepost 163, about 1 mile west of Washington Pass and 0.25 mile east of the Blue Lake trailhead.",
+     "seasonalGate": "Winter closure points are typically near the Ross Dam trailhead (MP134) on the west and Silver Star (MP171) on the east, sometimes retreating further to Newhalem (MP120)/Early Winters (MP178) gates in deep winter"
+    },
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "Approach is only accessible when SR 20 (North Cascades Highway) is open over Rainy and Washington Passes, roughly mid/late April through late November or early December in a typical year; check WSDOT's mountain pass report before driving, since dates vary and can be delayed by storm damage (as in 2026, when repairs pushed the opening to June 14).",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "No fee is collected at the informal Hairpin Turn highway pullout itself, but carrying a Northwest Forest Pass or America the Beautiful/Interagency pass is recommended — it's required at the neighboring, developed Blue Lake Trailhead a quarter mile away.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "approach": "Park at the large Hairpin Turn pullout on Highway 20 near milepost 163 (roughly 5,100 ft), just east of Washington Pass — this doubles as the trailhead for Kangaroo Pass. From the east end of the pullout, drop into the woods and pick up the unsigned but well-used climbers' path (no official trail number; this is the standard Kangaroo Ridge/Wallaby/Half Moon approach). The path runs south, staying west of and well above Early Winters Creek — do not angle down toward the creek itself, a common route-finding mistake. Around 1 mile in you pass a small clearing near the creek where old small-plane wreckage is still visible, a useful landmark that you're on line. Beyond this the path climbs through boulder fields and slab benches with intermittent cairns (route-finding gets genuinely tricky here in fog or fresh snow — the tread all but disappears on the slabs), crossing the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak; this slope is a hazard in early-season or after fresh snow and should be crossed with care or avoided later in the day once it's baked in the sun. The path gains the ridge at Kangaroo Pass (~6,800 ft, about 1.5-2 miles and roughly an hour of hiking from the car). From the pass, contour east below Wallaby's south slopes, staying just below the crest, until you can cross over the ridge at a low notch north of Half Moon into the basin on its southwest side — this puts you at the base of the broad southwest gully/slopes that give the route its name. Water is only reliably available near Early Winters Creek in the first mile; carry what you need above the pass. From the base of the gully, the route climbs class 2-3 talus and loose scree — rockfall is a real concern with any party above you — before the gully narrows to a steeper class 4 step of cleaner rock roughly midway up; above that, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+   }
+  }
+ ]
+}

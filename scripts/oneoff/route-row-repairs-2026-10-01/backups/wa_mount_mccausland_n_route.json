@@ -1,0 +1,117 @@
+{
+ "id": "wa_mount_mccausland_n_route",
+ "name": "North Slopes from Lake Valhalla",
+ "waypoints": [
+  {
+   "lat": 47.8025,
+   "lng": -121.0765,
+   "elev": 4000,
+   "name": "Smithbrook Trailhead",
+   "note": "Dirt lot for ~15 cars; self-register for wilderness travel here and start up the Smithbrook Trail through brush and an old boulder field before entering forest.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Take US 2 to a point about 4 miles east of Stevens Pass and turn onto Smith Brook Road, Forest Road 6700. Follow the gravel road roughly 2.6 to 2.8 miles to the Smithbrook Trailhead at about 4,000 feet. Parking is a dirt lot with room for around 15 cars, and you self-register for wilderness travel here before starting up the trail. Forest Road 6700 is closed to vehicles under a storm-damage order effective May 20, 2026 through December 31, 2027 unless lifted sooner; confirm it has reopened before driving. The Smithbrook Road access typically holds snow into early summer, so July through October is the dependable window."
+  },
+  {
+   "lat": 47.7956955,
+   "lng": -121.08958517857143,
+   "elev": 4400,
+   "name": "PCT Junction",
+   "note": "Smithbrook Trail tops out at the Pacific Crest Trail; turn south (left) onto a relatively flat, blueberry- and huckleberry-lined stretch of the PCT.",
+   "type": "Junction",
+   "distMi": 1.5
+  },
+  {
+   "lat": 47.79179371428572,
+   "lng": -121.10155242857144,
+   "elev": 4900,
+   "name": "McCausland Climber's Path Turnoff",
+   "note": "A small cairn (no trail sign) marks where the unofficial boot path leaves the PCT and heads straight up McCausland's north slopes.",
+   "type": "Junction",
+   "distMi": 2.7
+  },
+  {
+   "lat": 47.78984,
+   "lng": -121.10083,
+   "elev": 4834,
+   "name": "Lake Valhalla",
+   "note": "Alpine lake tucked beneath Lichtenberg Mountain and Mount McCausland just off the PCT; reliable water source and a popular rest/camp spot before the summit turnoff.",
+   "type": "Water",
+   "distMi": 2.8
+  },
+  {
+   "lat": 47.79378742857143,
+   "lng": -121.10230485714285,
+   "elev": 5200,
+   "name": "Braided Boot Path / Snow Patches",
+   "note": "Sandy, gravelly climber's path through blueberry and heather crosses a couple of lingering snow patches; several false paths dead-end, so stay on the main cairned line, especially in fog.",
+   "type": "Hazard",
+   "distMi": 2.9
+  },
+  {
+   "lat": 47.797566,
+   "lng": -121.103435,
+   "elev": 5747,
+   "name": "Mount McCausland Summit",
+   "note": "True summit with open views north to Glacier Peak and back down onto Lake Valhalla and Lichtenberg Mountain.",
+   "type": "Summit",
+   "distMi": 3.2
+  }
+ ],
+ "itinerary": {
+  "cal": "Best July-October; the Smithbrook Road access and upper trail typically hold snow into early summer at this elevation.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Smithbrook trailhead, climb switchbacks through forest to the PCT, follow it south along a gentle rolling grade to the Lake Valhalla basin, then take the McCausland spur trail for a steep, occasionally brushy 0.5-mile push to the north summit. Return the same way, with an optional stop at Lake Valhalla's sandy beach on the way out.",
+    "hours": 5.5,
+    "miles": 6.4,
+    "title": "Car-to-car via Smithbrook Trail and Lake Valhalla",
+    "gainFt": 1800,
+    "lossFt": 1800,
+    "packLb": 0,
+    "schedule": [
+     {
+      "time": "8:00 AM",
+      "label": "Leave Smithbrook trailhead",
+      "detail": "Climb ~1 mile of switchbacks to the PCT junction."
+     },
+     {
+      "time": "+1h45m",
+      "label": "Reach Lake Valhalla basin",
+      "detail": "Gentle, rolling trail along the PCT past the lake."
+     },
+     {
+      "time": "+30 min",
+      "label": "Branch onto Mount McCausland trail",
+      "detail": "Steep half-mile summit spur with a couple of brief Class 2 scramble steps; poles recommended."
+     },
+     {
+      "time": "~3-3.5 hr in",
+      "label": "Reach the summit",
+      "detail": "Views of Glacier Peak, Lichtenberg Mountain, and Lake Valhalla below; summit register in a steel lockbox."
+     },
+     {
+      "time": "+1.5-2 hr",
+      "label": "Descend to trailhead",
+      "detail": "Retrace the route; optional detour to the lake's sandy beach."
+     }
+    ],
+    "objective": "Summit Mount McCausland and return to trailhead"
+   }
+  ],
+  "totalNote": "A single, moderate day hike/scramble: about 6.4 miles round trip and 1,800 ft gain, typically 4-6 hours car-to-car (serious hikers can do it in 3-4 hours)."
+ },
+ "pro_tips": [
+  "Bring hiking poles — the final scramble above Lake Valhalla is steep with loose dirt and rock underfoot",
+  "The climber's trail up McCausland is unmarked; look for the distinct boot path leaving the lake's north/right shore",
+  "Sign the summit register in the steel lockbox bolted to the summit rock",
+  "The boot path braids into multiple social trails higher up — favor whichever strand visually trends toward the summit."
+ ],
+ "road": {
+  "name": "Smithbrook Road (FR 6700)",
+  "status": "Closed to vehicles (storm damage) under an order effective May 20, 2026 through December 31, 2027 unless lifted sooner; confirm current status before driving.",
+  "driveNote": "Normally gravel off US-2 east of Stevens Pass to the trailhead (~4,000 ft), but FR 6700 has been closed to vehicles since a Forest Service order (effective May 20, 2026) covering storm-damaged Wenatchee River Ranger District roads after Dec 2025 storms.",
+  "seasonalGate": "Closed by storm-damage order 06-17-07-2026-11 (May 20, 2026 through December 31, 2027 unless lifted sooner; the Wenatchee River Ranger District road table dated September 3, 2026 lists FR 6700 closed as extremely unstable and impassable), not just seasonal snow-gating; historically also snow-gated in winter."
+ }
+}

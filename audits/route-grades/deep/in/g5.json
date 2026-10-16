@@ -1,0 +1,404 @@
+[
+ {
+  "id": "wa_magic_mountain_northeast_couloir",
+  "route": "Northeast Couloir",
+  "peak": "Magic Mountain",
+  "area_id": "wa_magic_mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "rock_grade": null,
+  "alpine_grade": "Steep snow, 40-50 degrees (rock or snow finish)",
+  "ice_grade": null,
+  "commitment": null,
+  "face": "Northeast face / shoulder, above the Yawning Glacier",
+  "fa": null,
+  "pitches": null,
+  "overview": "A snow line on the peak's northeast flank: follow the North Face approach up the Yawning Glacier to the Magic–Pelton Col, then take the couloir directly to the summit on rock or snow. Known to skiers as the Banana Couloir, with a documented 2,000 ft of consistently steep fall-line.",
+  "beta": "The Northeast Couloir is the snow alternative to the North Face and shares its entire approach. From Pelton Basin, climb easy slopes and a steep couloir onto the Yawning Glacier (which spans roughly 6,200 to 6,800 ft), and follow the glacier to the Magic–Pelton Col at 6,480 ft. From there, instead of traversing west to the north face, take the couloir directly to the summit — the published description allows for either rock or snow depending on the year and the season. Skiers know the northeast ",
+  "breakdown": [
+   "Section 1 — Yawning Glacier to the base of the couloir: Glacier travel, roped",
+   "Section 2 — lower couloir: Snow, 40-45 degrees",
+   "Section 3 — upper couloir: Snow/ice, 45-50 degrees",
+   "Section 4 — finish to the summit: Class 3-4 rock or snow"
+  ],
+  "first_pass": {
+   "final_grade": "Class 3",
+   "scale": "class",
+   "evidence": "Banana (NE) Couloir: 2,000 ft of 40-45 degree snow below, 45-50 above, 50 degrees at the very top; booted, with no ice grade.",
+   "note": "Steep 45-50 degree snow with no ice grade, mapped to Class 3. The record's optional Class 3-4 rock finish would make it Class 4. The record has no headline grade.",
+   "sources": [
+    "https://engineeredforadventure.com/magic-mountain-ne-couloir-banana-couloir/",
+    "https://turns-all-year.com/trip-reports/magic-mountain"
+   ]
+  }
+ },
+ {
+  "id": "wa_magic_mountain_southwest_cirque",
+  "route": "Southwest Cirque",
+  "peak": "Magic Mountain",
+  "area_id": "wa_magic_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "rock_grade": "Class 3-4",
+  "alpine_grade": "Class 3-4",
+  "ice_grade": null,
+  "commitment": null,
+  "face": "Southwest cirque (north and northeast head of the cirque)",
+  "fa": null,
+  "pitches": null,
+  "overview": "A class 3-4 scramble up heathery gullies from the cirque southwest of the summit, sharing the South Ridge route's approach.",
+  "beta": "Approach as for the South Ridge route to the cirque southwest of the summit. Climb any of the heathery gullies at the north or northeast head of the cirque to gain the summit ridge, then finish to the top.",
+  "breakdown": [
+   "Section 1 — Kool-Aid Lake to the floor of the southwest cirque: Class 2 (snow early season)",
+   "Section 2 — heathery gullies at the north or northeast head of the cirque: Class 3-4",
+   "Section 3 — summit ridge to the top: Class 3"
+  ],
+  "first_pass": {
+   "final_grade": "Class 4",
+   "scale": "class",
+   "evidence": "No route-specific rating found beyond the record's Class 3-4 heather gullies; the neighbouring routes to the same summit are Class 3-4 and Class 4.",
+   "note": "Top of the record's Class 3-4. The record has no headline grade.",
+   "sources": [
+    "https://www.summitpost.org/magic-mountain-wa/1048343"
+   ]
+  }
+ },
+ {
+  "id": "wa_eldorado_peak_northeast_face",
+  "route": "Northeast Face",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "discipline": "alpine",
+  "grade": "AI2",
+  "rock_grade": null,
+  "alpine_grade": "AD",
+  "ice_grade": "AI2",
+  "commitment": "II",
+  "face": "Northeast Face",
+  "fa": null,
+  "pitches": null,
+  "overview": "A steeper snow/ice alternative to the East Ridge, climbing the face directly right of the standard route with running-belay protection, finishing at the same corniced summit ridge.",
+  "beta": "Follow the East Ridge route and leave its track around 7,500 ft, traversing climber's right onto the large triangular snow and ice face right of the ridge, above the cliffs below it. The usual line traverses beneath the rock band at roughly 8,200 ft, alongside a large crevasse; at its far end, roughly northeast of the summit, turn uphill and climb snow or ice up to 60°, several pitches usually protected with a running belay of pickets and ice screws, to the base of the summit knife-edge, where t",
+  "breakdown": [
+   "Leave the East Ridge: Glacier traverse",
+   "Traverse below the rock band: Easy to moderate snow",
+   "Face section: Snow/ice to 60°",
+   "Summit knife-edge: Exposed snow ridge"
+  ],
+  "first_pass": {
+   "final_grade": "AI2",
+   "scale": "wi",
+   "evidence": "SummitPost: Grade II, several pitches of snow and ice to 60 degrees right of the East Ridge, joining the knife-edge to the summit.",
+   "note": "No source gives an AI number; AI2 (the record's ice_grade) fits 60-degree alpine ice. Sources call it Grade II, not III. The record has no headline grade.",
+   "sources": [
+    "https://www.summitpost.org/northeast-face-eldorado-peak/689323",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-ne-face"
+   ]
+  }
+ },
+ {
+  "id": "wa_massie_peak_west_route",
+  "route": "West Route",
+  "peak": "Massie Peak",
+  "area_id": "wa_massie_peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "rock_grade": "Class 2-3",
+  "alpine_grade": "F",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": null,
+  "fa": null,
+  "pitches": null,
+  "overview": "Massie Peak is a remote, seldom-visited summit on the ridge above Massie Lake in the Phelps Creek/Chiwawa River high country of the Glacier Peak Wilderness. It has no maintained trail to its summit and is usually climbed as a side-trip from longer backcountry loops through Buck Creek Pass, High Pass, Liberty Cap, and neighboring Chiwawa Mountain, reached via the unmaintained 'Massie Lake High Route' — an old sheepherder's path — rather than any signed trail.",
+  "beta": "From the Trinity/Buck Creek Trailhead, follow the Chiwawa River Trail north about 4 miles to the unsigned, unmaintained 'Massie Lake' way-trail (an old sheepherder driveway marked by axe/burn blazes on trees) and climb steeply to Massie Lake. From the lake, gain the ridge above and continue cross-country toward the summit, bypassing a false summit before reaching the true top. The line is difficult to follow, brushy, and has claimed parties onto unwanted 4th-class terrain when off-route; a Aug-2",
+  "first_pass": {
+   "final_grade": "Class 3",
+   "scale": "class",
+   "evidence": "Peakbagger only notes an ascent via the Massie Lake High Route and summit ridge (3 logged ascents); no class rating found online, so the record's top-of-range Class 3 is kept.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=52034"
+   ]
+  }
+ },
+ {
+  "id": "wa_sw_ridge",
+  "route": "Southwest Ridge",
+  "peak": "Middle Peak",
+  "area_id": "wa_middle_peak",
+  "discipline": "mountaineering",
+  "grade": "5.0",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": null,
+  "face": "Southwest Ridge",
+  "fa": null,
+  "pitches": 5,
+  "overview": "A short, classic 5-pitch ridge route up Middle Gunsight's southwest side, starting with loose blocky climbing and finishing with enjoyable, easier climbing on cracks and knobs along an exposed ridge crest.",
+  "beta": "The classic SW ridge of the highest peak in the range: the route begins with loose, blocky climbing low down, then the final two pitches offer delightful easy climbing on cracks and knobs along an exposed ridge to the summit. All routes in the Gunsight Range are short, and this one runs about 5 pitches. A 2025 ascent, which climbed the E and SW faces of Middle and the S ridge of South, confirms the line is still being climbed as a distinct objective alongside the East Face. No published numeric ",
+  "first_pass": {
+   "final_grade": "5.0",
+   "scale": "yds",
+   "evidence": "Only description found: ~5 short pitches of loose blocky climbing, finishing with 'wonderful easy climbing up cracks and knobs'; no number given anywhere.",
+   "note": "No grade found. 5.0 is the brief's no-number default; the record has no grade at all. It may overlap the Standard Route (5.6) on the same peak.",
+   "sources": [
+    "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_adams_mount_adams_circumnavigation",
+  "route": "Mount Adams circumnavigation",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "discipline": "ice",
+  "grade": "Easy 5th WI1 PG13",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": "WI1",
+  "commitment": null,
+  "face": null,
+  "fa": null,
+  "pitches": 1,
+  "overview": "",
+  "beta": "\"\"",
+  "first_pass": {
+   "final_grade": "Class 3",
+   "scale": "class",
+   "evidence": "A 3-day off-trail loop, not a summit: route-finding, creek crossings, boulder fields, a Klickitat Glacier crossing and some exposed chossy downclimbs (class 5 cliffs are avoided). Mountain Project's 'Easy 5th WI1' line describes no ice or roped climbing.",
+   "note": "The MP grade string looks like a placeholder; no ice climbing is described.",
+   "sources": [
+    "https://www.mountainproject.com/route/108081549/mount-adams-circumnavigation",
+    "https://nwdirtchurners.com/mt-adams-circumnavigation/"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "route": "Wilson Glacier Headwall",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "rock_grade": null,
+  "alpine_grade": "D",
+  "ice_grade": null,
+  "commitment": "III-IV",
+  "face": "Wilson Glacier / East face (Roosevelt Cliff area)",
+  "fa": null,
+  "pitches": null,
+  "overview": "A steep, committing snow/ice headwall on Adams' northeast side, below Roosevelt Cliff, fed by the Wilson Glacier — one of the mountain's most serious and rarely repeated headwall lines, grouped with the neighboring Rusk Glacier Headwall as among the most dangerous routes on the peak. Rockfall is a major hazard on these east-side headwalls, so climbers should only attempt it early season in cold, frozen conditions.",
+  "beta": "Grouped with Victory Ridge and the Rusk Glacier Headwall as among Mount Adams's most challenging and infrequently climbed routes, this line ascends Roosevelt Cliff — a rock rib that splits the Wilson Glacier, named (along with the glacier itself) by Claude Ewing Rusk in 1919. The Wilson Glacier is fed by avalanching snow and ice off the summit ice cap starting around 10,800 ft and descends to a terminus near 7,400 ft on the reservation side of the mountain.",
+  "first_pass": {
+   "final_grade": "Class 3",
+   "scale": "class",
+   "evidence": "Described as Grade IV, ~55 degree snow/ice in 4-5 pitches up chimneys of the Roosevelt Cliff; extremely dangerous from rock- and icefall. No source gives an ice grade.",
+   "note": "Mapped belayed ~55 degree snow/ice with no ice grade to Class 3, per the brief. Mountain Project's 'Wilson Headwall' page (WI2) is the Mount Rainier route, not this one.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Adams_(Washington)",
+    "https://www.summitpost.org/mount-adams/150198"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "route": "Park Glacier Headwall",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "rock_grade": null,
+  "alpine_grade": "D",
+  "ice_grade": "AI3",
+  "commitment": "III",
+  "face": "Northeast flank, the headwall above the Park Glacier near the Cockscomb",
+  "fa": "Norm Bodine, Jim Friar, Tim Keliher — July 4-5, 1971 (headwall variation)",
+  "pitches": 4,
+  "overview": "A steep ice headwall on the northeast side above the Park Glacier, offering one of Baker's most scenic approaches and a quieter, more remote alpine-ice line than the Coleman Headwall or North Ridge, though not quite as continuously steep as either. One common line climbs three 50m ice pitches up the right-hand ridge to its crest and follows it to the summit; an alternative goes directly up the middle of the headwall from a large bergschrund, passing the left edge of a rock band mid-face. Finding",
+  "beta": "Glacier travel with crevasse rescue below a steep ice headwall. Longest climb of the northern approaches. From Camp Kiser, primitive boot path leads to Park Glacier and climbing terrain. High exposure with extensive glacier and numerous crevasses. 100+ km² of glaciers and permanent snowfields; iciest mountain in Cascade Range.",
+  "breakdown": [
+   "Schrund ramp: ~60° snow/ice at top",
+   "Headwall ice (x3): ~50m pitches, up to ~60°",
+   "Cornice exit: Short, exposed"
+  ],
+  "first_pass": {
+   "final_grade": "Class 3",
+   "scale": "class",
+   "evidence": "SummitPost: Grade III, 45-50 degree snow/ice wall over several pitches and a narrow snow arete; AAJ 1971 line: 60 degree snow/ice face. No source gives an AI grade.",
+   "note": "Mapped belayed steep snow/ice with no ice grade to Class 3, per the brief. The record's AI3 is unsupported online; if steep ice is meant to rank as ice, AI2-3 would be the reading.",
+   "sources": [
+    "https://www.summitpost.org/park-glacier-headwall/536658",
+    "https://publications.americanalpineclub.org/articles/12197134901"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "route": "North Ridge",
+  "peak": "Mount Chaval",
+  "area_id": "wa_mount_chaval",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "rock_grade": "5.6-5.7 (2 technical pitches; remainder Class 3-4 scrambling)",
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": null,
+  "face": "North Ridge",
+  "fa": null,
+  "pitches": 2,
+  "overview": "A roughly 1,500-ft alpine rock route up Chaval's north ridge: mostly moderate 3rd/4th-class scrambling on solid, well-fractured granitic rock, with two harder pitches on the steepest section near the top.",
+  "beta": "A distinct line from the standard West Route. It is essentially an alpine scramble with two pitches of harder climbing on the steepest part of the ridge, but a recorded attempt found the ridge heavily coated in moss and heather, making the two technical pitches far slower and harder than the nominal grade suggests.",
+  "breakdown": [
+   "Full route: Class 3-4 scramble + 5.6-5.7 (2 pitches)"
+  ],
+  "first_pass": {
+   "final_grade": "5.7",
+   "scale": "yds",
+   "evidence": "No online description of a North Ridge route on Chaval was found; the record's own grade (5.6-5.7, two technical pitches) is read at the top of its range.",
+   "sources": []
+  }
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "route": "Northeast Ridge",
+  "peak": "Mount Crowder",
+  "area_id": "wa_mount_crowder",
+  "discipline": "mountaineering",
+  "grade": "5.0",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": null,
+  "face": "Northeast Ridge",
+  "fa": null,
+  "pitches": null,
+  "overview": "A direct, technical ridge line dropping northeast off Crowder's summit toward Pickell Pass. It is documented as a descent used by parties continuing a Pickets high-route traverse northward, not as a recommended way to reach Crowder's summit, and is significantly harder and more hazardous than the Southwest Route.",
+  "beta": "Downclimbed from Crowder's summit toward Pickell Pass in 2012, the ridge is a winding line of grassy 3rd class ledges with an occasional 4th class move and one or two short 5th class downclimbing moves — slow, tedious going where a slip is not an option. A several-hundred-foot-long chasm (possibly a fault) cuts across the lower ridge, and the party ultimately had to find a break in a final cliff band and a scree slope to reach Pickell Pass; one partner chose to rappel sections that the other dow",
+  "first_pass": {
+   "final_grade": "5.0",
+   "scale": "yds",
+   "evidence": "Abegg (descent): grassy 3rd class ledges with occasional 4th class moves and one or two short 5th class downclimbing moves; no number given.",
+   "note": "Documented only as a descent; 'short 5th class' with no number maps to 5.0 per the brief.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_dana_scramble",
+  "route": "Mount Dana Scramble",
+  "peak": "Mount Dana",
+  "area_id": "wa_mount_dana",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "rock_grade": "Class 2-3",
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": "III",
+  "face": null,
+  "fa": "USGS survey party, 1928 (first ascent of the peak)",
+  "pitches": null,
+  "overview": "Mount Dana (6,213 ft, ~1,529 ft prominence) is an isolated, trailless summit in the Bailey Range, part of Olympic National Park's rugged interior above the headwaters of the Elwha River. It was named by the 1889-90 Seattle Press Expedition — the party that first explored the Olympic interior and named most of the Bailey Range — for Charles A. Dana, an editor of the New York Sun. The first recorded ascent was in 1928 by a USGS survey party. The peak is built of Eocene-age basalt typical of the Ol",
+  "beta": "Mount Dana is a class 2 scramble with no pitch-by-pitch detail published. The line with a described approach leaves the Elwha Basin way trail beyond Happy Hollow, climbs steeply north through brush and timber to the ridge joining Mount Barnes and Mount Wilder, and follows that crest high, past Wilder, to Dana's summit. Treat it as a route-finding, self-sufficient objective rather than a beta-rich one.",
+  "first_pass": {
+   "final_grade": "Class 3",
+   "scale": "class",
+   "evidence": "Sources list the easiest route only as 'scrambling' (a Mountaineers Olympia scramble peak); no class number found, so the top of the record's range is kept.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Dana_(Washington)",
+    "https://www.peakbagger.com/list.aspx?lid=5043"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_degenhardt_southwest_route",
+  "route": "South Route",
+  "peak": "Mount Degenhardt",
+  "area_id": "wa_mount_degenhardt",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "rock_grade": "Low 5th (loose)",
+  "alpine_grade": "PD+",
+  "ice_grade": null,
+  "commitment": "Grade III",
+  "face": "Southwest side of the peak",
+  "fa": "1931",
+  "pitches": null,
+  "overview": "Mount Degenhardt (8,107 ft) is a remote Southern Pickets summit at the north end of The Barrier, between Mount Terror and Inspiration Peak, with the Terror Glacier on its southeast flank. Named for William Degenhardt, an early Cascades pioneer who made the first ascent in 1931 with Herbert Strandberg. It's widely regarded as the chossiest peak in the Southern Pickets — loose, fractured gneiss throughout — but rewards the effort with a striking, rarely-visited summit and views across Crescent Cre",
+  "beta": "From the notch at the top of the Barrier, just south of the summit, the route follows Degenhardt's south ridge north to the top. The ground immediately above the notch is the worst of it: unstable boulders and broken rock sitting on steep dirt, climbed to reach the ridge crest. A short steep step on the crest is avoided by a ledge system that traverses left onto the west side of the ridge and leads to easier scrambling; close to the summit the ridge steepens again into a few short, exposed steps",
+  "breakdown": [
+   "Approach: ",
+   "Lower wall: ",
+   "West-side ledge traverse: ",
+   "Summit ridge: "
+  ],
+  "first_pass": {
+   "final_grade": "5.0",
+   "scale": "yds",
+   "evidence": "Degenhardt South Route described as low 5th (another report calls it a '4th class summit'); one party off route roped up for ~5.7. No number given for the normal line.",
+   "note": "Record rock_grade 5.6 is not supported; 5.7 terrain was reported only off route.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://drdirtbag.com/2014/07/28/southern-pickets/"
+   ]
+  }
+ },
+ {
+  "id": "wa_goode_mountain_northeast_face",
+  "route": "Northeast Face",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "rock_grade": "5.8",
+  "alpine_grade": "Grade III (historic, snow/ice + rock)",
+  "ice_grade": "AI2",
+  "commitment": "III",
+  "face": "Direct northeast face of Mt. Goode (the ice apron and slabs flanked by the 1966 Northeast Buttress)",
+  "fa": "Fred Beckey and John Parrott, 1954",
+  "pitches": null,
+  "overview": "A steep, rarely-repeated mixed alpine line up Goode's east-facing aspect, climbers' right of the classic Northeast Buttress. It sees a fraction of the traffic of the Buttress and is documented mainly through scattered trip reports (e.g., a 2011 Cascade Crusades ski-mountaineering ascent) rather than standard published descriptions, so expect route-finding on the fly and variable snow/ice/rock conditions depending on the year.",
+  "beta": "Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing. Approach requires glacier travel with crampons, navigation skills, and rope handling. Route includes Class 3-4 scrambling sections and rappel descents. Hazards: glacial crevasses/seracs, loose rock, rockfall, sun exposure. Best climbing season: mid-July for snowmelt conditions. Total climb: 2.2 miles, 3,300-3,800 ft elevation gain, ~10 hours.",
+  "first_pass": {
+   "final_grade": "5.8",
+   "scale": "yds",
+   "evidence": "Only sources: a 1954 ascent of the ice apron and steep slabs of the direct NE face, and a 2011 ascent on 50-55 degree snow/ice and rock; no YDS or ice grade published.",
+   "note": "5.8 is the record's own value; no source confirms it. Headline 'IV' is a commitment numeral.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196735203/North-America-United-States-WashingtonCascade-Mountains-Mount-Goode-East-Buttress",
+    "https://www.cascadecrusades.org/SkiMountaineering/goode/goode2011.htm"
+   ]
+  }
+ },
+ {
+  "id": "wa_olympus_blue_glacier_east_ramps",
+  "route": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "discipline": "mountaineering",
+  "grade": "5.0",
+  "rock_grade": "Class 4 with a 5th-class step",
+  "alpine_grade": "PD",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "East Face (summit block)",
+  "fa": "1907, L.A. Nelson and party (first ascent of Mount Olympus)",
+  "pitches": 1,
+  "overview": "This is the standard finish on the highest summit in the Olympics, reached after one of the longest approaches in the Lower 48. After miles of rainforest and a glacier crossing, the climb tops out by winding up a series of loose ramps on the east face of the summit pinnacle. The moves are moderate, but the rock is rotten and an exposed corner is best protected — a small, serious finale to a big wilderness peak.",
+  "beta": "From Glacier Meadows, descend to the Blue Glacier lateral moraine and rope up for glacier travel. Cross the Blue Glacier for approximately 1 mile with crevasse avoidance and careful snow bridge assessment. Ascend the broad Snow Dome to 6,600-7,000 feet. From Snow Dome, ascend toward Crystal Pass at 7,250 feet. After crossing Crystal Pass and traversing Five Fingers Ridge, encounter the false summit before the final push. The crux involves Class 4-5 scrambling on loose rocky ramps on the East Fac",
+  "breakdown": [
+   "1: Class 4 / 5.4 step"
+  ],
+  "first_pass": {
+   "final_grade": "5.0",
+   "scale": "yds",
+   "evidence": "Mountaineers: Class 4 ramps across the E face, then up to the summit with a Class 5 step; no number given.",
+   "note": "Low 5th with no number given anywhere; mapped to 5.0 per brief.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1043128"
+   ]
+  }
+ }
+]

@@ -1,0 +1,143 @@
+{
+ "id": "wa_little_tahoma_east_shoulder",
+ "name": "East Shoulder",
+ "waypoints": [
+  {
+   "lat": 46.8884,
+   "lng": -121.611,
+   "elev": 3816,
+   "name": "Fryingpan Creek / Summerland Trailhead",
+   "note": "White River Road ~2.9 mi past the White River entrance turnoff, just beyond the Fryingpan Creek bridge; this is the sole approach for the standard Fryingpan Glacier–Whitman Glacier–East Ridge/East Shoulder route via Summerland and Meany Crest.",
+   "type": "Trailhead",
+   "distMi": 0.03,
+   "elevFt": 3816,
+   "distFrom": "track",
+   "directions": "From Enumclaw, drive SR 410 east about 43 miles to the White River Entrance, then follow White River Road about 3 miles to the parking area by the Fryingpan Creek bridge; the trail starts across the road. The road is open summer only."
+  },
+  {
+   "lat": 46.869574,
+   "lng": -121.627262,
+   "elev": 5200,
+   "name": "Fryingpan Creek crossing",
+   "note": "Wonderland Trail crosses Fryingpan Creek on a footbridge in old-growth forest before switchbacking up toward Summerland; last easy creek water below treeline.",
+   "type": "Water",
+   "distMi": 3.2
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5950,
+   "name": "Summerland",
+   "note": "Subalpine meadow camp with a stone shelter below Little Tahoma's east face; a reserved wilderness permit is required to camp here, and it's the jumping-off point for the climbing route.",
+   "type": "Campsite",
+   "distMi": 4.5
+  },
+  {
+   "lat": 46.852924,
+   "lng": -121.678601,
+   "elev": 7900,
+   "name": "Toe of Fryingpan Glacier",
+   "note": "Leave the Wonderland Trail and climb steep talus/heather slopes to gain the lower edge of the Fryingpan Glacier; route-finding through boulders, often snow-covered into midsummer.",
+   "type": "Junction",
+   "distMi": 6.2
+  },
+  {
+   "lat": 46.850275,
+   "lng": -121.693649,
+   "elev": 9100,
+   "name": "Whitman Notch",
+   "note": "The obvious low point in the ridge just left of Little Tahoma; cross here from the Fryingpan Glacier onto the Whitman Glacier.",
+   "type": "Junction",
+   "distMi": 7
+  },
+  {
+   "lat": 46.847167,
+   "lng": -121.702359,
+   "elev": 10200,
+   "name": "Whitman Glacier bergschrund",
+   "note": "Crevasses and a bergschrund open up on the Whitman Glacier below the summit pyramid; rope up and probe for hidden slots, especially in low-snow years.",
+   "type": "Hazard",
+   "distMi": 7.5
+  },
+  {
+   "lat": 46.8496,
+   "lng": -121.7123,
+   "elev": 11138,
+   "name": "Little Tahoma Peak",
+   "type": "Summit",
+   "distMi": 7.54,
+   "elevFt": 11138,
+   "distFrom": "track"
+  },
+  {
+   "lat": 46.84856,
+   "lng": -121.706937,
+   "elev": 10800,
+   "name": "East shoulder saddle",
+   "note": "Gain the saddle on Little Tahoma's east shoulder, a narrow crumbly-andesite rib with roughly 2,000 ft of exposure down to the Emmons Glacier on the north side.",
+   "type": "Junction",
+   "distMi": 7.8
+  }
+ ],
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Fryingpan Creek Trailhead (3,900 ft), follow the Wonderland Trail through Summerland, then leave the trail to climb snow/scree onto the Fryingpan Glacier moraine to a rocky bivy site around 7,900 ft.",
+    "hours": 6,
+    "miles": 4,
+    "title": "Approach to high camp",
+    "gainFt": 4000,
+    "lossFt": 0,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Reach a high camp near Whitman Crest at ~7,900 ft"
+   },
+   {
+    "n": 2,
+    "note": "A 1-3 AM alpine start crosses the Fryingpan Glacier and Whitman Notch while the snow is firm, then climbs the Whitman Glacier and a picket-protected couloir to the crumbly east ridge and summit block. After a short summit stay the team descends (glissading where possible) back to camp by around noon, packs up, and continues straight down to the cars the same afternoon.",
+    "hours": 14,
+    "miles": 10.1,
+    "title": "Summit push and full hike-out",
+    "gainFt": 3238,
+    "lossFt": 7238,
+    "packLb": 35,
+    "schedule": [
+     {
+      "time": "1:00 AM",
+      "label": "Leave high camp",
+      "detail": "Alpine start for firm snow on the glacier crossings."
+     },
+     {
+      "time": "~3:00 AM",
+      "label": "Cross Fryingpan Glacier to Whitman Notch",
+      "detail": "The saddle/col between the two glaciers at ~9,100 ft."
+     },
+     {
+      "time": "~4:00 AM",
+      "label": "Ascend Whitman Glacier and the couloir",
+      "detail": "Roped travel with pickets up to the east shoulder."
+     },
+     {
+      "time": "Late morning",
+      "label": "Reach the summit",
+      "detail": "Class 3-4 rock finish along the narrow, crumbly east ridge to 11,138 ft."
+     },
+     {
+      "time": "~12:00 PM",
+      "label": "Back at camp",
+      "detail": "Descent aided by glissading the lower snowfields."
+     },
+     {
+      "time": "Afternoon",
+      "label": "Hike out to trailhead",
+      "detail": "Same-day exit rather than a third night out."
+     }
+    ],
+    "objective": "Climb the East Shoulder couloir to the summit and exit all the way to the trailhead same day"
+   }
+  ],
+  "totalNote": "A leaner 2-day, 1-night version of the same route: strong, acclimatized parties reach high camp on day 1, then combine the glacier/couloir summit push with the full hike-out in one very long alpine-start day (~14-15 hrs on day 2)."
+ }
+}

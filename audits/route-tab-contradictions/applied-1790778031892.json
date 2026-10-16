@@ -1,0 +1,345 @@
+{
+ "applied": [
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "rappels",
+   "path": [],
+   "fact": "length of the Sharkfin Col rappel onto the Boston Glacier"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "length of the Sharkfin Col rappel onto the Boston Glacier"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "length of the Sharkfin Col rappel onto the Boston Glacier"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    0
+   ],
+   "fact": "length of the Sharkfin Col rappel onto the Boston Glacier"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "before": {
+    "rappels": "~100 ft rappel from Sharkfin Col onto Boston Glacier; descent via West Ridge or East Ledges adds further rappels",
+    "waypoints": [
+     {
+      "lat": 48.48055,
+      "lng": -121.07979,
+      "elev": 3200,
+      "name": "Boston Basin Trailhead",
+      "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, self-issue wilderness permit required.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The Boston Basin trailhead is a small pullout on Cascade River Road roughly 21.7 miles from Marblemount, at about 3,200 ft. You need a Northwest Forest Pass to park there. A wilderness permit is required to camp in Boston Basin, and those permits are competitive — they go through the Park Service's early-access lottery, so have one in hand before you make the drive up."
+     },
+     {
+      "lat": 48.501315,
+      "lng": -121.062561,
+      "elev": 6400,
+      "name": "Boston Basin High Camp",
+      "note": "Standard base camp for both Torment and Forbidden; continue northeast along the Quien Sabe Glacier's west edge toward Sharkfin Col.",
+      "type": "Campsite",
+      "distMi": 3
+     },
+     {
+      "lat": 48.50492,
+      "lng": -121.06469,
+      "elev": 7720,
+      "name": "Sharkfin Col",
+      "note": "Low point on the ridge left of Sharkfin Tower, gained via ~10 ft of 5.7 rock and a 200-ft class-3 gully; loose scree underfoot.",
+      "type": "Junction",
+      "distMi": 3.6
+     },
+     {
+      "lat": 48.50539,
+      "lng": -121.064205,
+      "elev": 7570,
+      "name": "Rappel to Boston Glacier",
+      "note": "~150-ft rappel down a loose gully off the col to reach the Boston Glacier; watch for rope-snag on loose rock.",
+      "type": "Hazard",
+      "distMi": 3.7
+     },
+     {
+      "lat": 48.50774,
+      "lng": -121.06178,
+      "elev": 7000,
+      "name": "Boston Glacier crevasse traverse",
+      "note": "Northward traverse through heavily crevassed terrain toward the north end of the glacier; a fall here would be serious, kick solid steps.",
+      "type": "Hazard",
+      "distMi": 4.2
+     },
+     {
+      "lat": 48.50962,
+      "lng": -121.05984000000001,
+      "elev": 8100,
+      "name": "North Ridge crest",
+      "note": "Ridge regained above a 5.6 left-facing corner crux; two small snow-free bivy spots sit just below on the northeast side.",
+      "type": "Junction",
+      "distMi": 4.6
+     },
+     {
+      "lat": 48.51165,
+      "lng": -121.05841,
+      "elev": 8815,
+      "name": "Forbidden Peak",
+      "note": "True summit; descend via the West Ridge couloir back to Boston Basin.",
+      "type": "Summit",
+      "distMi": 5
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Quien Sabe Glacier to Sharkfin Col, rappel onto the Boston Glacier, then north to the foot of the ridge",
+      "notes": "From the Boston Basin trailhead near 3,200 ft on Cascade River Road, the old Diamond Mine roadbed runs about a mile to the mine site, then the climbers' path climbs hard through forest with four stream crossings to treeline near 5,300 ft. Camp low at about 5,300 ft or high at about 6,400 ft. From high camp, follow the moraine and the west edge of the QUIEN SABE GLACIER up to about 7,500 ft and climb to SHARKFIN COL at 7,720 ft — roughly 10 ft of 5.7 rock and 200 ft of a class 3 gully to gain it, on loose scree underfoot. The col is the commitment. From it you make a rappel of roughly 150 ft down a loose gully onto the BOSTON GLACIER; retreat after that means re-climbing to the col. Traverse north through crevassed ground toward the north end of the glacier, then re-ascend to the ridge. Three Forbidden routes cross Sharkfin Col and use this rappel. Where you LEAVE the Boston Glacier is what separates them.",
+      "season": "Mid to late summer, for dry rock and a glacier that is still bridged where it matters",
+      "hazards": [
+       "A rappel of about 150 ft down a loose gully off the col, with rope-snag on loose rock, and no easy retreat once you are down it",
+       "A heavily crevassed traverse of the Boston Glacier where a fall would be serious",
+       "A distinct moat where the glacier meets the North Ridge rock, sometimes needing technical work to exit, and worse late season",
+       "Steep snow gully sections on the ridge itself where a slip runs uncontrolled onto the Boston Glacier",
+       "A long, exposed crest with the descent on a completely different side of the mountain"
+      ],
+      "baseFinding": "FIRST, IDENTIFY SHARKFIN COL CORRECTLY, BECAUSE EVERYTHING AFTER IT IS COMMITTED. It is the LOW POINT ON THE RIDGE IMMEDIATELY LEFT OF SHARKFIN TOWER — a distinct rock tower stands beside it. A notch on that skyline with no tower beside it is not the col. You gain it by about 10 ft of 5.7 and a 200 ft class 3 gully; if you walked up to it, you are somewhere else.\n\nSECOND, ON THE BOSTON GLACIER, GO NORTH AND KEEP GOING. The base of this route is at the FAR NORTH END of the glacier, where the ice meets the foot of the ridge, and the crossing point is itself a notch rather than an arbitrary spot on the crest. You should pass a rock buttress on the way; if you have turned uphill without passing it, you have turned too early.\n\nTHE POSITIVE TEST AT THE BASE IS THE FIRST MOVE, AND IT IS UNAMBIGUOUS: THE CLIMBING STARTS WITH A SHORT, STEEP LEFT-FACING CORNER AT 5.6, STRAIGHT OFF THE COL AT THE FOOT OF THE RIDGE. That corner is the route's crux and it is the first thing you climb. IF THE FIRST GROUND ABOVE THE GLACIER IS 300 FT OF LOW-ANGLE ROCK LEADING TOWARD AN ICE PATCH, YOU ARE ON THE NORTHEAST FACE and you turned west off the glacier far too soon.\n\nAND YOU SHOULD BE AT A COL, NOT ON A FACE. The base is the gap between Boston and Forbidden: ground falls away on BOTH sides of you. If the mountain is above you and glacier below you and nothing behind, you are under a face, not at the col.\n\nCONFIRM AS YOU CLIMB: above the corner the crest passes a wildly exposed bivy platform — two small snow-free spots just below the crest on the northeast side — and above roughly 8,400 ft the rock notably improves. Poor rock all the way to the top means you never got onto the upper ridge."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "before": {
+    "approach": "From the North Fork Sauk River Trailhead (2,050 ft, off FR 49/Sloan Creek Road), hike ~9 mi to White Pass on the PCT. Continue east on the Foam Creek Trail ~2 mi, cross a ridge saddle near 6,600 ft, then traverse the White Chuck Glacier basin trending NE to Glacier Gap (~7,300 ft), the standard high camp where the Suiattle and White Chuck glaciers meet. Summit day is roughly 5.25 mi with about 3,450 ft of gain, some of it height lost and regained along the way: climb gentle snow above camp, follow a climber's track on volcanic scree onto the Gerdine and Cool glaciers, end-run a crevasse or two, then rejoin the climber's trail for the final steep pitch to the summit.",
+    "itinerary": {
+     "cal": "Accessed via the North Fork Sauk Trailhead because the White Chuck River Road (FR 23) has been closed from milepost 3.7 since March 19, 2025, with no end date given on the Forest Service alert updated June 30, 2026; best conditions are typically July-September once the Gerdine/Cool glacier crevasses are well-bridged.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the North Fork Sauk Trailhead, hike through old-growth to Mackinaw Shelter, climb steeply to the PCT at White Pass, then traverse and climb to a rocky camp at Glacier Gap with views south to Rainier.",
+       "hours": 7.5,
+       "miles": 11,
+       "title": "Approach to Glacier Gap camp",
+       "gainFt": 5600,
+       "lossFt": 350,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach high camp at Glacier Gap (~7,200 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start from Glacier Gap, drop to rocky Gerdine Ridge, then rope up on the Gerdine Glacier where it's reached (~8,500 ft), following it to a bend where it merges with the Cool Glacier and climbing to the Disappointment/Glacier Peak saddle and the summit. Move briskly under the rockfall-prone cliffs of Disappointment Peak.",
+       "hours": 8,
+       "miles": 7,
+       "title": "Summit via Gerdine Ridge / Cool Glacier",
+       "gainFt": 3450,
+       "lossFt": 3450,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Glacier Gap camp",
+         "detail": "Crampons on for the descent to Gerdine Ridge."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Rope up at ~8,500 ft",
+         "detail": "Climber's trail ends at a gendarme; step onto the Gerdine Glacier."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Merge onto Cool Glacier",
+         "detail": "Two small, easily-avoided crevasses at the bend."
+        },
+        {
+         "time": "9:00-10:00 AM",
+         "label": "Summit",
+         "detail": "Via the Disappointment/Glacier Peak saddle."
+        },
+        {
+         "time": "Early afternoon",
+         "label": "Back at Glacier Gap camp",
+         "detail": "Reverse the glacier and ridge."
+        }
+       ],
+       "objective": "Summit Glacier Peak (10,541 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the full approach back to the North Fork Sauk Trailhead.",
+       "hours": 6.5,
+       "miles": 12,
+       "title": "Hike out",
+       "gainFt": 350,
+       "lossFt": 5600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip for most parties (~30-33 miles RT, ~9,000-9,400 ft gain); fast/fit or ski-equipped parties have done it car-to-car-plus-camp in 2 days."
+    },
+    "waypoints": [
+     {
+      "lat": 48.0579,
+      "lng": -121.2882,
+      "elev": 2050,
+      "name": "North Fork Sauk River Trailhead",
+      "note": "Northwest Forest Pass required at the kiosk; this has been the primary approach since the White Chuck River Trail washed out in 2003.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The North Fork Sauk River Trailhead sits at about 2,050 ft off FR 49, the Sloan Creek Road, and it is where Trail #649 starts up the valley. A Northwest Forest Pass is required, and there is a kiosk at the trailhead. Do not plan on coming in from the west: the White Chuck River Road (FR 23) remains washed out, and this has been the primary approach to Glacier Peak since the White Chuck River Trail washed out in 2003."
+     },
+     {
+      "lat": 48.029485,
+      "lng": -121.186451,
+      "elev": 2950,
+      "name": "Mackinaw Shelter (former shelter site)",
+      "note": "Old-growth riverside camp; the actual shelter is gone/unsafe, use the established sites nearby, last reliable flat camping before the climb steepens.",
+      "type": "Campsite",
+      "distMi": 5,
+      "directions": "Follow the North Fork Sauk trail up-valley on a mellow, rolling, well-maintained grade through old-growth forest, with a few scattered campsites along the way. The old shelter site is the last of the low-elevation river camps; past it the trail leaves the valley floor and steepens sharply."
+     },
+     {
+      "lat": 48.033168,
+      "lng": -121.149547,
+      "elev": 5900,
+      "name": "North Fork Sauk Trail / PCT junction near White Pass",
+      "note": "Trail gains ~3,000 ft in the final stretch to this meadow junction with sweeping views of Glacier Peak; join the PCT here.",
+      "type": "Junction",
+      "distMi": 9,
+      "directions": "Beyond the old shelter site the trail turns into roughly three miles of switchbacks, gaining about 3,000 ft to the meadows at White Pass. Water is unreliable once you leave the river, so fill up before starting the climb. The PCT junction is at the top."
+     },
+     {
+      "lat": 48.05343,
+      "lng": -121.134692,
+      "elev": 6600,
+      "name": "Foam Creek Trail / ridge saddle crossing",
+      "note": "Leave the PCT on the Foam Creek climbers' path and cross the ridge saddle into the White Chuck Glacier basin.",
+      "type": "Junction",
+      "distMi": 11,
+      "directions": "From the PCT at White Pass, take the Foam Creek climbers' trail east for about two miles, then cross the ridge at a saddle on its north side near 6,600 ft. This saddle is the end of trail travel — beyond it the route is open basin and snow."
+     },
+     {
+      "lat": 48.068498,
+      "lng": -121.130524,
+      "elev": 7000,
+      "name": "White Chuck Glacier basin crossing",
+      "note": "Open glacial basin traverse trending NE toward Glacier Gap; rope up here as crevasses can be present even though the grade is gentle.",
+      "type": "Hazard",
+      "distMi": 12,
+      "directions": "Drop north off the saddle into the open White Chuck Glacier basin and trend northeast across it. The grade is gentle, but it is glacier under the snow, so rope up before you start across rather than partway."
+     },
+     {
+      "lat": 48.083655,
+      "lng": -121.127087,
+      "elev": 7300,
+      "name": "Glacier Gap",
+      "note": "Large, popular camp area with many established sites on a broad gap; standard base camp for the Gerdine Ridge/Cool Glacier route.",
+      "type": "Campsite",
+      "distMi": 13,
+      "directions": "Continue northeast across the basin, gaining a few hundred feet to the broad gap where the White Chuck and Suiattle glaciers meet. Established sites are spread across the gap, and it is the last flat ground before the summit push."
+     },
+     {
+      "lat": 48.105652,
+      "lng": -121.109776,
+      "elev": 9600,
+      "name": "Cool Glacier saddle (Gerdine-Cool col)",
+      "note": "Saddle between Disappointment Peak and Glacier Peak where the Gerdine Ridge route tops out onto the Cool Glacier for the final push.",
+      "type": "Junction",
+      "distMi": 15,
+      "directions": "Leave camp on crampons, losing a little height onto rocky Gerdine Ridge, then climb north, contouring the slope below Glacier Gap Peak before regaining the crest and following it to roughly 8,400 ft. The climber's track ends near a gendarme around 8,500 ft — rope up there, traverse northeast onto the Gerdine and upper Suiattle ice, and end-run one or two crevasses where it bends into the Cool Glacier. Keep moving on that traverse; the cliffs of Disappointment Peak above it shed rock. Finish by climbing west up the Cool Glacier to regain the ridge at the saddle."
+     },
+     {
+      "lat": 48.111844,
+      "lng": -121.11412,
+      "elev": 10541,
+      "name": "Glacier Peak summit",
+      "note": "True summit of Glacier Peak (Dakobed); broad volcanic summit with views across the North Cascades.",
+      "type": "Summit",
+      "distMi": 16,
+      "directions": "From the saddle the glacier travel is over. Rejoin the climber's trail and finish up one short, steep pitch of pumice and broken volcanic rock to the top — unroped class 2-3, with no rock gear needed."
+     }
+    ]
+   }
+  }
+ ]
+}

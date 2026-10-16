@@ -1,0 +1,167 @@
+{
+ "id": "wa_mount_torment_torment_forbidden_traverse",
+ "name": "Torment-Forbidden Traverse",
+ "waypoints": [
+  {
+   "lat": 48.48055,
+   "lng": -121.07979,
+   "elev": 3200,
+   "name": "Boston Basin Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3200,
+   "directions": "Drive Cascade River Road to the Boston Basin trailhead pullout, at roughly 3,300 feet and about mile 22-23, directly across from Johannesburg Mountain. Park at the small roadside pullout. A North Cascades National Park backcountry permit, issued at the Wilderness Information Center in Marblemount, is required to camp in Boston Basin."
+  },
+  {
+   "lat": 48.492,
+   "lng": -121.065,
+   "elev": 6200,
+   "name": "Boston Basin",
+   "type": "Campsite",
+   "distMi": 3,
+   "elevFt": 6200,
+   "directions": "Follow the old mining road about three quarters of a mile to the old mine site, then take the sharp right onto the steep, unmaintained climbers' trail. It switchbacks up through forest with four creek crossings to treeline around 5,300 ft, then eases across heather benches and talus into Boston Basin, with high camp at roughly 6,200 to 6,400 ft."
+  },
+  {
+   "lat": 48.5115,
+   "lng": -121.0579,
+   "elev": 8815,
+   "name": "Forbidden Peak summit",
+   "type": "Summit",
+   "distMi": 6,
+   "elevFt": 8815,
+   "directions": "Traverse northwest across the upper basin to the toe of the Taboo Glacier, rope up, and climb it and the east couloir past the moat to the notch at the base of Torment's South Ridge. Climb the ridge to Torment's summit, rappel from the notch onto the Forbidden Glacier, cross it to the saddle, and follow the Sidewalk in the Sky crest to the West Ridge Notch and up Forbidden's West Ridge to the summit."
+  }
+ ],
+ "itinerary": {
+  "cal": "Boston Basin is typically in condition July-September; the approach couloir and connecting ridge often hold snow into midsummer, so most parties wait until late July for drier rock.",
+  "days": [
+   {
+    "n": 1,
+    "note": "A steep, rough climbers' trail off Cascade River Road gains about 2,500 ft in 3-4 hours to benched campsites in upper Boston Basin below the Taboo Glacier. Afternoon is spent racking up and scouting the couloir for the next day's alpine start.",
+    "hours": 3.5,
+    "miles": 3.5,
+    "title": "Approach to Boston Basin camp",
+    "gainFt": 2500,
+    "lossFt": 0,
+    "packLb": 42,
+    "schedule": [],
+    "objective": "Establish camp below the Taboo Glacier"
+   },
+   {
+    "n": 2,
+    "note": "An alpine start crosses the Taboo Glacier to a snow/rock couloir that gains Torment's south ridge; low-5th-class rock leads to the summit around midday. Rather than pushing straight on to Forbidden, most parties downclimb and traverse the connecting ridge and find a bivy ledge in the early evening.",
+    "hours": 14,
+    "miles": 2.5,
+    "title": "Climb Torment, bivy on the connecting ridge",
+    "gainFt": 2200,
+    "lossFt": 500,
+    "packLb": 25,
+    "schedule": [
+     {
+      "time": "3:00-5:00 AM",
+      "label": "Leave Boston Basin camp",
+      "detail": "Alpine start to cross the Taboo Glacier while snow is firm."
+     },
+     {
+      "time": "~7:30 AM",
+      "label": "Reach the couloir/base of Torment's South Ridge",
+      "detail": ""
+     },
+     {
+      "time": "~12:00 PM",
+      "label": "Summit Mount Torment (8,120')",
+      "detail": ""
+     },
+     {
+      "time": "Afternoon",
+      "label": "Downclimb and traverse the connecting ridge",
+      "detail": "The hardest, slowest terrain of the trip."
+     },
+     {
+      "time": "~6:30 PM",
+      "label": "Find a bivy ledge on the ridge",
+      "detail": "Below the final towers leading to Forbidden."
+     }
+    ],
+    "objective": "Summit Mount Torment and reach a bivy site on the traverse ridge"
+   },
+   {
+    "n": 3,
+    "note": "From the ridge bivy, parties reach the notch below Forbidden's West Ridge by mid-morning, simul-climb to the summit around noon, then descend via the West Ridge and the Cat Scratch Gullies (roughly 6-8 rappels) back to Boston Basin and out to the trailhead, often not reaching the car until evening.",
+    "hours": 13,
+    "miles": 5.5,
+    "title": "Finish the traverse over Forbidden, descend to the car",
+    "gainFt": 500,
+    "lossFt": 5900,
+    "packLb": 20,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Wake at the ridge bivy",
+      "detail": ""
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Break camp, continue the traverse",
+      "detail": ""
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Reach the notch below Forbidden's West Ridge",
+      "detail": "Drop unneeded gear here."
+     },
+     {
+      "time": "~12:00 PM",
+      "label": "Summit Forbidden Peak (8,815')",
+      "detail": ""
+     },
+     {
+      "time": "12:30 PM",
+      "label": "Begin West Ridge / Cat Scratch Gullies descent",
+      "detail": "6-8 rappels back toward Boston Basin."
+     },
+     {
+      "time": "~7:30 PM",
+      "label": "Reach the trailhead",
+      "detail": ""
+     }
+    ],
+    "objective": "Summit Forbidden Peak and return to the trailhead"
+   }
+  ],
+  "totalNote": "A 3-day, 2-night trip (~40 hours car-to-car): hike in, climb Torment and bivy on the connecting ridge, then finish over Forbidden and descend all the way to the car; strong parties sometimes compress it into a single ~23-hour push."
+ },
+ "pitch_detail": [
+  {
+   "grade": "4th/5.4",
+   "notes": "Ascend Torment's South Ridge (or SE Face) on loose 4th/low-5th terrain to a grassy ledge and V-shaped notch below the summit; leave packs, tag the summit, and downclimb back to the notch.",
+   "pitch": "1"
+  },
+  {
+   "grade": null,
+   "notes": "An overhanging rappel on fixed slings from the notch drops onto the Forbidden Glacier.",
+   "pitch": "2"
+  },
+  {
+   "grade": "up to ~50° snow/ice",
+   "notes": "Cross the Forbidden Glacier past bergschrunds, moats, and snow bridges to a saddle below Forbidden's north side; the route's most serious and season-dependent hazard.",
+   "pitch": "3"
+  },
+  {
+   "grade": "3rd/4th",
+   "notes": "Follow the exposed 'Sidewalk in the Sky' ridge crest, bypassing two gendarmes (first on the left, second on the right), to the West Ridge Notch.",
+   "pitch": "4"
+  },
+  {
+   "grade": "4th/5.6",
+   "notes": "Join Forbidden Peak's classic West Ridge (Fifty Classic Climbs route): 4th-class scrambling with a crux 5.6 tower pitch near the summit.",
+   "pitch": "5"
+  },
+  {
+   "grade": null,
+   "notes": "Descend the West Ridge (partial downclimb, ~1 rappel) then roughly 7 rappels down the Cat Scratch Gullies back toward Boston Basin.",
+   "pitch": "6"
+  }
+ ]
+}

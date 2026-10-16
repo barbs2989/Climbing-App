@@ -1,0 +1,52 @@
+{
+ "id": "wa_klawatti_peak_sw_buttress",
+ "name": "Klawatti Peak SW Buttress",
+ "waypoints": [
+  {
+   "lat": 48.49261,
+   "lng": -121.11761,
+   "elev": 2100,
+   "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 2100,
+   "directions": "From Seattle, take I-5 north then follow WA-20, the North Cascades Highway, east through Sedro-Woolley, Concrete and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles to the Eldorado parking area near mile 20 — paved for the first 10 miles, gravel and washboard the rest of the way. Any overnight stay in the Eldorado/Klawatti zone requires a North Cascades National Park backcountry permit, available in advance on Recreation.gov or as a limited walk-up allocation from the Marblemount Wilderness Information Center or ranger station."
+  },
+  {
+   "lat": 48.533,
+   "lng": -121.129,
+   "elev": 7600,
+   "name": "Eldorado (East Ridge) camp",
+   "type": "Campsite",
+   "distMi": 5.5,
+   "directions": "Cross the Cascade River near the trailhead on whatever log or ford is in that year, then climb the steep, unmaintained climbers' path through old growth to the boulder field and on into the Eldorado Creek and Roush Creek basin. Rope up there and climb the Eldorado Glacier to camp on the ice cap near the base of Eldorado's east ridge."
+  },
+  {
+   "lat": 48.5529,
+   "lng": -121.1062,
+   "elev": 7900,
+   "name": "Klawatti camp / col",
+   "note": "Camp south of Klawatti near the col dividing the Klawatti and McAllister Glaciers; SW Buttress start is minutes away.",
+   "type": "Junction",
+   "distMi": 6.9,
+   "directions": "Roped, traverse the Inspiration Glacier north-northeast past Eldorado's summit to Klawatti Col, the saddle between the Klawatti and McAllister glaciers on the peak's south side. The ice cap is flat and featureless and whiteouts are common, so carry a bearing or track."
+  },
+  {
+   "lat": 48.55444,
+   "lng": -121.10444,
+   "elev": 8485,
+   "name": "Klawatti Peak",
+   "type": "Summit",
+   "elevFt": 8485,
+   "directions": "The buttress stands minutes above the col camp. Cross the moat onto the rock, climb one to three short low-fifth pitches of loose rock up the buttress, then scramble along the elongated southwest crest to the summit, where the high point is not obvious."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.5544,
+  "peakLng": -121.1044,
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+ }
+}

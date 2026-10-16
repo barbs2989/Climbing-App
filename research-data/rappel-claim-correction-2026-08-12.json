@@ -1,0 +1,58 @@
+{
+  "_README": [
+    "A rappel CLAIM correction — a different defect from the rope-capacity one in",
+    "rappel-length-correction-2026-08-12.json. There the number was wrong; here the rappels",
+    "existed only in the field, not on the mountain.",
+    "",
+    "Found while researching descent stations: the route's `rappels` field is contradicted by the",
+    "route's OWN descent_text, which is the strongest possible evidence because both were written",
+    "about the same climb. Nothing in the guard suite compares those two fields, and nothing in a",
+    "coverage count can see it — the column is populated, so it reads as enriched."
+  ],
+
+  "wa_mount_stuart_north_ridge": {
+    "area": "wa_mount_stuart",
+    "_why": "Stored as '6 raps to 30m'. The route's own descent_text says the opposite in as many words: nearly all parties walk off down the Cascadian Couloir with 'no rappelling required (0 rappels) under normal summer conditions', and the only rappel on the route is an optional ~75 ft bypass of the Great Gendarme taken on the way UP, which that same text says is 'not part of the standard descent, and is not counted in the rappel total'. The two sibling North Ridge routes on this peak (wa_the_direct_north_ridge_w_gendarme, wa_upper_north_ridge_w_great_gendarme) both describe it correctly, so this row is the outlier, not the convention. The practical harm runs both ways: a party plans a rappel descent off a mountain whose descent has no stations, and the descent text's real warning — that people who drift climber's-right in the Cascadian find OLD RAPPEL-STATION REMNANTS and much harder downclimbing — is exactly the trap a '6 raps' expectation walks you into.",
+    "set": {
+      "rappels": "None on the standard descent — the Cascadian Couloir is a walk-off/downclimb. The only rappel on the route is optional and on the way up: a ~75 ft rappel off the right side of the ridge below the Great Gendarme, from an established fixed sling (not bolted), used to bypass the 5.9 crux pitches. A single 60m rope doubled covers it."
+    },
+    "_sources": ["the route's own stored descent_text", "the two sibling North Ridge routes on the same peak"],
+    "_confidence": "corroborated"
+  },
+
+  "wa_mount_baker_coleman_headwall": {
+    "area": "wa_mount_baker",
+    "_why": "Stored as '2-3 rappels to 30m'. Its own descent text says the Coleman-Deming walk-off is non-technical with no rappelling required, and goes further: 'No trip reports for this route describe fixed rappels on the standard descent.' The only rope work it identifies is on the ASCENT — building a picket or v-thread to belay or lower across the summit bergschrund when it will not go cleanly. On the most-climbed volcano in the state, a stated rappel count invites parties to plan a descent that nobody makes.",
+    "set": {
+      "rappels": "None on the standard descent — Coleman-Deming is a walk-off, with the Roman Wall downclimbed or boot-skied. Rope work on this route belongs to the ascent: if the final bergschrund below the summit ice cap will not go cleanly, parties build a picket or ice-screw/v-thread anchor to belay or lower across it."
+    },
+    "_sources": ["the route's own stored descent_text"],
+    "_confidence": "corroborated"
+  },
+
+  "wa_colchuck_peak_northeast_couloir": {
+    "area": "wa_colchuck_peak",
+    "_why": "Not false, but it leads with the wrong descent. The field opened with a rappel sequence that the route's own descent text calls an emergency/alternate option — reversing the couloir is explicitly discouraged for loose rock and awkward mixed downclimbing, and the standard Colchuck Glacier walk-off needs no rappels at all. Read as a headline, it told parties to bring a rappel plan for a descent they should not be making. The rappel detail is kept, subordinated to the standard descent rather than replacing it.",
+    "set": {
+      "rappels": "None on the standard descent — the walk-off runs over Colchuck Col and down the Colchuck Glacier. Reversing the couloir is discouraged (loose entry gully, awkward mixed downclimbing), but parties who are benighted or skiing it report a single ~50m rappel off a natural anchor from the upper rock band to a ledge on the southeast face, then two or three 30m single-strand raps down the gully just east of the couloir's top. Nothing fixed is documented on that line — expect to build and leave anchors."
+    },
+    "_sources": ["the route's own stored descent_text"],
+    "_confidence": "corroborated"
+  },
+
+  "wa_mount_stickney_scramble": {
+    "area": "wa_mount_stickney",
+    "_why": "A bare '1' on a route whose own descent text says no rappelling is strictly required. It is a downclimb for competent scramblers in dry conditions and a rappel for parties who would rather not downclimb wet, loose, exposed 4th class — so the honest value is conditional, not a count. Also records that the anchors are natural, which a bare '1' cannot say.",
+    "set": {
+      "rappels": "0-1, conditions- and party-dependent. In dry conditions most parties downclimb the summit gully (easy 4th class on dirt and rock). When it is wet, muddy or the party would rather not downclimb exposed 4th class, one short rappel of roughly 50-60 ft gets past the steepest section. Anchors are natural — slings around trees or horns, including one reported around a mountain hemlock — so carry your own webbing and rap rings and back up any tat you find."
+    },
+    "_sources": ["the route's own stored descent_text"],
+    "_confidence": "corroborated"
+  },
+
+  "_NOT_CHANGED": {
+    "wa_buckner_mountain_north_face": "Flagged and CORRECT. Its '1' is not the summit slopes (which the text says are a 0-rappel walk-off) but the Sharkfin Col step on the return leg, where many parties make one short rappel off the natural/fixed sling at the col. The descent text explains exactly this and even says to treat that step, not the summit slopes, as the route's real rappel hazard.",
+    "wa_mount_mystery_standard": "Flagged and CORRECT. Its '2' is sourced to a Mountaineers trip report describing two single-rope rappels from near the summit block to the south ridge notch, and its count note already derives the length correctly as roughly half a 60m rope.",
+    "wa_overcoat_peak_southeast_route": "Flagged, and already repaired in rappel-length-correction-2026-08-12.json — the count is real, the lengths were the rope's capacity."
+  }
+}

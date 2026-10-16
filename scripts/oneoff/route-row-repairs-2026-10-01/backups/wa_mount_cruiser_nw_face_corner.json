@@ -1,0 +1,114 @@
+{
+ "id": "wa_mount_cruiser_nw_face_corner",
+ "name": "Northwest Face/Corner",
+ "waypoints": [
+  {
+   "lat": 47.5155,
+   "lng": -123.3295,
+   "elev": 900,
+   "name": "Staircase Ranger Station",
+   "note": "Approach via Flapjack Lakes Trail to Gladys Divide/Needle Pass. Note: Staircase area is currently closed post-2025 Bear Gulch Fire.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 in Hoodsport, follow SR 119 (Lake Cushman Road) about 9 miles to a T-intersection, turn left and continue about 5.4 miles on what becomes FR 24, then turn right into Olympic National Park and drive about 1.2 miles to the Staircase Ranger Station and its large trailhead parking area. The last miles are gravel. A national park entrance pass is required."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "name": "Base of Alpha (ridge gain)",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 47.56445,
+   "lng": -123.31552,
+   "elev": 6104,
+   "name": "Mount Cruiser",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 6104
+  },
+  {
+   "lat": 47.56445,
+   "lng": -123.31552,
+   "name": "Northwest Face/Corner (route pin)",
+   "type": "Route",
+   "distMi": null,
+   "elevFt": null
+  }
+ ],
+ "itinerary": {
+  "cal": "Less-traveled and more sparsely protected than the South Corner; parties should know the South Corner descent line since that's the standard way off regardless of which route was climbed.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Same approach as the South Corner: North Fork Skokomish River Trail (3.8 mi) then Flapjack Lakes Trail (4.1 mi) to camp at East Flapjack Lake (~3,850-3,900 ft).",
+    "hours": 5,
+    "miles": 8,
+    "title": "Hike in to Flapjack Lakes",
+    "gainFt": 3000,
+    "lossFt": 0,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach Flapjack Lakes camp"
+   },
+   {
+    "n": 2,
+    "note": "A short, easy carry up to the primitive camp near Gladys Divide/Needle Pass. Leaves the afternoon free to rack up, scope the Northwest Face line, and shortens the following day's summit push considerably.",
+    "hours": 1.5,
+    "miles": 1.5,
+    "title": "Move to high camp and scope the route",
+    "gainFt": 700,
+    "lossFt": 0,
+    "packLb": 25,
+    "schedule": [],
+    "objective": "Relocate to the Gladys Divide/Needle Pass primitive camp"
+   },
+   {
+    "n": 3,
+    "note": "From high camp, climb the sustained 5.7 Northwest Face/Corner to the summit block, then make the short exposed Class 3 scramble to the true summit. Descend via the standard South Corner bolted double-anchor rappel, break camp on the way down, and hike all the way back to the trailhead.",
+    "hours": 13,
+    "miles": 10.5,
+    "title": "Climb the Northwest Face/Corner and hike all the way out",
+    "gainFt": 1550,
+    "lossFt": 5250,
+    "packLb": 20,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave high camp",
+      "detail": "Short approach to the base of the Northwest Face/Corner."
+     },
+     {
+      "time": "~6:00-9:00 AM",
+      "label": "Climb the Northwest Face/Corner",
+      "detail": "Sustained 5.7 face/corner climbing, slower than the South Corner's low-5th moves."
+     },
+     {
+      "time": "~9:30 AM",
+      "label": "Reach the summit block",
+      "detail": "Short, exposed Class 3 scramble to the true summit."
+     },
+     {
+      "time": "10:00 AM-12:00 PM",
+      "label": "Rappel via South Corner anchors",
+      "detail": "Standard bolted double-anchor rappel back to the platform."
+     },
+     {
+      "time": "12:00-1:30 PM",
+      "label": "Descend to camp and break it down",
+      "detail": "Pack up the high camp and Flapjack Lakes camp."
+     },
+     {
+      "time": "~2:00-8:00 PM",
+      "label": "Hike out to trailhead",
+      "detail": "Full descent back to the Staircase trailhead."
+     }
+    ],
+    "objective": "Summit via the Northwest Face/Corner, then descend and hike out"
+   }
+  ],
+  "totalNote": "A 3-day trip is the sensible plan for this harder (5.7) line: hike in, relocate to a short high camp near Needle Pass to shorten the summit push, then climb the face and hike all the way out on day 3 — roughly 5,250 ft gain and 18-20 miles round trip."
+ }
+}

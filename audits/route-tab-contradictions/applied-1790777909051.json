@@ -1,0 +1,41 @@
+{
+ "applied": [
+  {
+   "id": "wa_leave_my_flake_alone",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Which pitch is bolted (pitch_detail[2] says 'Fully bolted' with bolts:0; gear says to protect the reach)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_leave_my_flake_alone",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Shares the start with Mourning Star, then trends about 20 ft right to Zoom is anchor."
+     },
+     {
+      "crux": false,
+      "bolts": 7,
+      "grade": "5.7",
+      "notes": "About 70 ft. Blocky bolted climbing, traverses right under a small roof to a triangular belay ledge (often wet)."
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "The Flake pitch, about 50 ft. Tricky and reachy off the belay, follows a flake system to the top. Fully bolted (added 2018-2019)."
+     }
+    ]
+   }
+  }
+ ]
+}

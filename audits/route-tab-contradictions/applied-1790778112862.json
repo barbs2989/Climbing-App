@@ -1,0 +1,25 @@
+{
+ "applied": [
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "crowds.peakTraffic 'Weekends in July-August' vs season Apr-Jun and seasonal_guidance July marginal / August risky"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "before": {
+    "crowds": {
+     "peakTraffic": "Weekends in July-August, especially when The Mountaineers or other clubs run scheduled trips; September sees a further drop-off",
+     "solitudeRating": 4,
+     "estimatePerSeason": "Low - roughly a couple dozen parties per season is a reasonable estimate (this is a Mountaineers club 'basic climb/basic glacier climb' pick, so it gets organized club trips), but exact counts are not published"
+    }
+   }
+  }
+ ]
+}

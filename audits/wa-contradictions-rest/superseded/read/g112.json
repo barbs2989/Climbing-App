@@ -1,0 +1,573 @@
+{"batches": ["b445.json", "b446.json", "b447.json", "b448.json"], "routes_read": 9, "routes": [
+{"id": "wa_sahale_mountain_sahale_glacier", "name": "Sahale Arm / Sahale Glacier", "area": "Sahale Mountain",
+ "contradictions": [
+  {"fact": "Summit block difficulty", "severity": "medium",
+   "claims": [
+     {"field": "grade", "says": "Grade II, Class 3, glacier"},
+     {"field": "rock_grade", "says": "5.0"},
+     {"field": "pitch_detail[3].grade", "says": "5.0 / 3rd-4th class"},
+     {"field": "climbing_route[2].class", "says": "about 5.0"},
+     {"field": "itinerary.days[1].note", "says": "then a class 2-3 scramble to the 8,680 ft summit"},
+     {"field": "itinerary.days[1].schedule[2].label", "says": "Class 2-3 scramble to the summit block"},
+     {"field": "approach_variants[0].baseFinding", "says": "The last confirmation is a short class 4 move"}
+   ],
+   "why": "The header pill shows 5.0 while the crux stat, itinerary and base-finding call the finish class 2-3, class 3 or class 4.",
+   "internal_resolution": "rock_grade, pitch_detail[3], climbing_route[2], beta and watch_out[3] all say about 5.0 for the summit move; the itinerary's 'class 2-3' is the outlier.",
+   "needs_research": false},
+  {"fact": "Summit block descent: optional rappel vs required rappel", "severity": "medium",
+   "claims": [
+     {"field": "rappels", "says": "Optional single rappel off a slung summit block to regain the scramble ledge; otherwise downclimb"},
+     {"field": "descent_text", "says": "Getting off the summit block itself, however, requires a rappel rather than a downclimb."},
+     {"field": "beta", "says": "Descend via rappel (or 5-rappel sequence for full descent)"}
+   ],
+   "why": "RAPPELS says the rappel is optional and you can downclimb, DESCENT says a rappel is required, and the beta mentions a 5-rappel sequence.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Side of the summit block the standard line takes", "severity": "medium",
+   "claims": [
+     {"field": "pitch_detail[3].notes", "says": "Short chimney-like feature on the south side"},
+     {"field": "face", "says": "SW face of the summit pyramid"},
+     {"field": "approach_variants[0].baseFinding", "says": "Trend right toward the notch, then onto the north/east side of the block — the correct line corkscrews around the peak rather than going up it."},
+     {"field": "approach_variants[0].baseFinding", "says": "Left of the standard notch there is a steeper dihedral feature that reads as the obvious line; it goes at fourth to low fifth class"}
+   ],
+   "why": "The route breakdown puts the finishing chimney on the south side, while the base-finding says the standard line goes around to the north/east side and calls the steeper fifth-class feature a variation.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Car-to-summit gain", "severity": "low",
+   "claims": [
+     {"field": "partner_requirements.fitnessSpec.hiking", "says": "~12 mi round trip with ~4,000+ ft gain from Cascade Pass TH to the summit"},
+     {"field": "gain_ft", "says": "5020"},
+     {"field": "itinerary.totalNote", "says": "~13 mi round trip and ~5,000 ft gain"}
+   ],
+   "why": "The partner fitness line understates total gain by about 1,000 ft compared with gain_ft and the itinerary.",
+   "internal_resolution": "gain_ft, the itinerary totals and the waypoint elevations (3,600 to 8,680 ft) agree on about 5,000 ft.",
+   "needs_research": false},
+  {"fact": "Trailhead parking pass", "severity": "low",
+   "claims": [
+     {"field": "access.passRequired", "says": "None — there are no trailhead or parking fees for trails that begin on National Park Service land"},
+     {"field": "access._raw.parking_pass_required", "says": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass"}
+   ],
+   "why": "One access field says no pass is needed; the raw access record says a Northwest Forest Pass is.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Bear canister requirement scope", "severity": "low",
+   "claims": [
+     {"field": "pro_tips[1]", "says": "Bear canisters are required June 1–November 15 throughout the area"},
+     {"field": "access.rules", "says": "Bear canisters required in some zones — free loaners at permit offices."}
+   ],
+   "why": "One field says canisters are required throughout the area; the other says only in some zones.",
+   "internal_resolution": null,
+   "needs_research": true}
+ ]},
+{"id": "wa_sahale_mountain_r1", "name": "Quien Sabe Glacier", "area": "Sahale Mountain",
+ "contradictions": [
+  {"fact": "Summit block difficulty", "severity": "medium",
+   "claims": [
+     {"field": "grade", "says": "Grade II, glacier + Class 3-4/5.0-5.4 summit block"},
+     {"field": "rock_grade", "says": "4th class"},
+     {"field": "pitch_detail[2].grade", "says": "Exposed snow traverse + Class 3"},
+     {"field": "climbing_route[3].class", "says": "class 3-4"}
+   ],
+   "why": "The crux stat says the summit block goes at 5.0-5.4, but the grade pill says 4th class and the route breakdown says Class 3.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Direction of the summit-block rappel", "severity": "medium",
+   "claims": [
+     {"field": "rappels", "says": "One short rappel (~30m, single rope) off tat/sling anchors on the summit block down to the col"},
+     {"field": "waypoints[7].note", "says": "fixed anchors used by many parties to rappel back to the col"},
+     {"field": "descent_text", "says": "commonly to the southeast/south off the summit block on tat/slings at a natural anchor, dropping onto easier class 3 terrain"}
+   ],
+   "why": "RAPPELS and the summit waypoint send the rappel back to the Boston-Sahale col, while DESCENT sends it south/southeast off the block.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Boston Basin camping rules", "severity": "medium",
+   "claims": [
+     {"field": "pro_tips[1]", "says": "Boston Basin has no fixed campsites — camp on durable rock or gravel"},
+     {"field": "access.rules", "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)."},
+     {"field": "bivy[0].permit", "says": "camping in the basin is legal only at the two designated sites"}
+   ],
+   "why": "A tip says there are no fixed sites, while ACCESS and CAMPING say camping is legal only at two designated sites.",
+   "internal_resolution": "access.rules, bivy[0].permit, bivy[1].permit and the two campsite waypoints all describe designated camps; pro_tips[1] is the outlier.",
+   "needs_research": false},
+  {"fact": "How the overnight permit is obtained", "severity": "medium",
+   "claims": [
+     {"field": "waypoints[0].note", "says": "self-issue wilderness permit and Northwest Forest Pass required"},
+     {"field": "waypoints[0].directions", "says": "Camping in Boston Basin needs a North Cascades wilderness permit picked up in person at Marblemount"},
+     {"field": "access.overnight_permit.where", "says": "Reserve on Recreation.gov (early-access lottery in March, then general on-sale at least 2 days ahead)"}
+   ],
+   "why": "The trailhead note says the permit is self-issued, while every other field says it is reserved or picked up in person at Marblemount.",
+   "internal_resolution": "waypoints[0].directions, approach_variants[0].notes, bivy permits, access.* and permit all say Recreation.gov or in person at Marblemount; the 'self-issue' note is the outlier.",
+   "needs_research": false},
+  {"fact": "Bergschrund end-run side", "severity": "medium",
+   "claims": [
+     {"field": "waypoints[5].note", "says": "Narrow snow bridge crosses above and left of the bergschrund late-season"},
+     {"field": "itinerary.days[1].schedule[2].detail", "says": "end-run the bergschrund to climber's right in late season"},
+     {"field": "seasonal_hazards.crevasses", "says": "the standard late-season workaround being to traverse climber's right to end-run the bergschrund"}
+   ],
+   "why": "The bergschrund waypoint puts the late-season crossing to the left; the itinerary and seasonal hazards say go right.",
+   "internal_resolution": "itinerary, seasonal_hazards, seasonal_guidance.September and approach_variants[0].baseFinding all say climber's right; the waypoint note is the outlier.",
+   "needs_research": false},
+  {"fact": "Parking capacity at the Boston Basin pullout", "severity": "low",
+   "claims": [
+     {"field": "waypoints[0].note", "says": "room for 6-8 cars"},
+     {"field": "road.status", "says": "the Boston Basin pullout is a small unsigned turnout with space for about 10 cars"}
+   ],
+   "why": "The two fields give different capacities for the same pullout.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Gain from trailhead to high camp", "severity": "low",
+   "claims": [
+     {"field": "itinerary.days[0].gainFt", "says": "2700"},
+     {"field": "approach_variants[0].gainFt", "says": "3000"},
+     {"field": "waypoints[0].elev / waypoints[3].elev", "says": "3200 / 6400"},
+     {"field": "itinerary.days[2].lossFt", "says": "2700"}
+   ],
+   "why": "The itinerary's 2,700 ft to high camp is 500 ft short of the 3,200 ft that the trailhead and high-camp waypoints imply.",
+   "internal_resolution": "The waypoint and bivy elevations (3,200 ft to about 6,400 ft) imply about 3,200 ft; the itinerary figure is low.",
+   "needs_research": false},
+  {"fact": "Side of the peak the route climbs", "severity": "low",
+   "claims": [
+     {"field": "overview", "says": "the direct line up Sahale's north side from Boston Basin"},
+     {"field": "aspect", "says": "W"},
+     {"field": "face", "says": "West side, on the ridge between Sahale and Boston Peak"}
+   ],
+   "why": "The overview calls it the north side, while aspect and face say west.",
+   "internal_resolution": null,
+   "needs_research": true}
+ ]},
+{"id": "wa_southeast_face", "name": "Southeast Face", "area": "Sharkfin Tower",
+ "contradictions": [
+  {"fact": "How the base of the face is reached", "severity": "high",
+   "claims": [
+     {"field": "approach", "says": "there is no separate approach line to the face itself - parties climb the first two pitches of the Southeast Ridge ... and rappel from a fixed anchor at the top of pitch 2 to reach the base of the Southeast Face's crack pitch"},
+     {"field": "approach_variants[0].baseFinding", "says": "THIS FACE IS NOT WALKED TO. IT IS RAPPELLED INTO"},
+     {"field": "itinerary.days[1].note", "says": "a gully (snow early season, loose scree late season) leads to a sloped terrace below the face. Two pitches of sustained 5.10 rock gain the summit"},
+     {"field": "itinerary.days[1].schedule[1].detail", "says": "Traverse the glacier and climb the approach gully to the terrace below the SE Face."}
+   ],
+   "why": "APPROACH says the face can only be reached by climbing two Southeast Ridge pitches and rappelling in, while the itinerary has the party walk up the gully to a terrace below the face.",
+   "internal_resolution": "approach, approach_variants[0] (name, notes and baseFinding) and climbing_route[1-2] all say the face is rappelled into; the itinerary is the outlier.",
+   "needs_research": false},
+  {"fact": "Where the two-bolt chainless anchor sits (top of P1 vs top of P2)", "severity": "medium",
+   "claims": [
+     {"field": "beta", "says": "zig-zags just left of the arete to a two-bolt anchor in a notch (no chains/rings). Pitch 2 traverses left from the belay past two bolts"},
+     {"field": "sling_rack.notes", "says": "two-bolt anchor atop P1"},
+     {"field": "pitch_detail[0].anchor", "says": "Gear (thin crack/face pro); no anchor at the very base of the pitch"},
+     {"field": "pitch_detail[1].anchor", "says": "2-bolt anchor (no chains/rings - leave a locking biner or cord)"},
+     {"field": "rappel_detail[1].anchor", "says": "2-bolt station atop Southeast Ridge pitch 1/2, no chains or rap rings"}
+   ],
+   "why": "The beta and rack notes put the chainless two-bolt anchor at the top of P1, while the route breakdown gives P1 a gear anchor and puts the bolts atop P2.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Character of pitch 1", "severity": "low",
+   "claims": [
+     {"field": "beta", "says": "Pitch 1 steps onto a detached block, then works up a widening finger-to-ring-lock seam"},
+     {"field": "pitch_detail[0].notes", "says": "delicate face moves into a thin crack"}
+   ],
+   "why": "Pitch 1 is described as a widening finger-to-ring-lock seam in one field and as face moves into a thin crack in the other.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Grade of pitch 2", "severity": "low",
+   "claims": [
+     {"field": "pitch_detail[1].grade", "says": "5.9"},
+     {"field": "itinerary.days[1].note", "says": "Two pitches of sustained 5.10 rock gain the summit"},
+     {"field": "itinerary.days[1].schedule[2].label", "says": "Climb two 5.10 pitches"}
+   ],
+   "why": "The itinerary calls both pitches 5.10, while the route breakdown grades pitch 2 as 5.9.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Round-trip distance", "severity": "low",
+   "claims": [
+     {"field": "dist_km", "says": "9.3"},
+     {"field": "itinerary.totalNote", "says": "10 miles round trip (estimated)"},
+     {"field": "waypoints[1].distMi", "says": "0"}
+   ],
+   "why": "dist_km (5.8 mi) and the itinerary's 10 mi round trip describe different quantities, and the summit waypoint claims 0 mi from the trailhead.",
+   "internal_resolution": null,
+   "needs_research": false}
+ ]},
+{"id": "wa_sharkfin_tower_southeast_ridge", "name": "Southeast Ridge", "area": "Sharkfin Tower",
+ "contradictions": [
+  {"fact": "Crux rock grade", "severity": "medium",
+   "claims": [
+     {"field": "grade", "says": "II, 5.0"},
+     {"field": "rock_grade", "says": "5.0"},
+     {"field": "pitch_detail[0].grade", "says": "5.4"},
+     {"field": "pitch_detail[1].grade", "says": "5.4"},
+     {"field": "climbing_route[0].class", "says": "5.0"},
+     {"field": "partner_requirements.requiredSkills[1]", "says": "Roped/simul-climbing on moderate (5.4) exposed alpine rock"}
+   ],
+   "why": "The header and crux stat say 5.0, while the route breakdown makes two pitches 5.4, and the grade given for pitch 1 differs between the two pitch lists.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Where the 2005 fatal accident happened (descent gully vs wrong gully)", "severity": "medium",
+   "claims": [
+     {"field": "descent_text", "says": "a well-documented 2005 accident on this exact descent involved a single-point natural anchor"},
+     {"field": "rappel_detail[3].notes", "says": "A well-documented 2005 accident on this descent involved a single-point natural anchor"},
+     {"field": "approach_variants[0].baseFinding", "says": "walked past the standard access gully and climbed a similar-looking gully further along ... during the retreat rappel a natural boulder anchor failed"},
+     {"field": "approach", "says": "a party climbed a similar-looking but incorrect gully next to the standard line"}
+   ],
+   "why": "The descent fields place the fatal anchor failure on this route's own descent, while the approach fields place it in a different, incorrect gully.",
+   "internal_resolution": "approach, approach_variants[0], hazards[2] and climbing_route[2] say the accident followed a wrong-gully error; the descent_text and rappel_detail wording is the outlier.",
+   "needs_research": false},
+  {"fact": "Trailhead parking pass", "severity": "low",
+   "claims": [
+     {"field": "access.passRequired", "says": "None — there are no trailhead or parking fees for trails that begin on National Park Service land"},
+     {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+     {"field": "access._raw.parking_pass_required", "says": "Northwest Forest Pass ($5 day / $30 annual) or Interagency Pass"}
+   ],
+   "why": "passRequired says no pass is needed, but the fees line refers to a parking fee the route 'already lists' and the raw record requires a Northwest Forest Pass.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Road open to the pullout", "severity": "low",
+   "claims": [
+     {"field": "road.status", "says": "Open as of mid-2026 to its end at Cascade Pass Trailhead"},
+     {"field": "waypoints[0].directions", "says": "getting this far depends on the road being open past a washout further up"},
+     {"field": "approach", "says": "~21.7 mi from Marblemount when the road is open past the washout"}
+   ],
+   "why": "GETTING THERE says the road is open to its end, while the trailhead and approach text make access conditional on a washout.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Primary approach season", "severity": "low",
+   "claims": [
+     {"field": "approach_variants[0].season", "says": "Jun-mid Jul, while the approach gully still holds snow"},
+     {"field": "season", "says": "Jul-Sep"},
+     {"field": "best_season", "says": "Late July through September is most reliable"}
+   ],
+   "why": "The primary approach is given a June window that falls outside the route's Jul-Sep season.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Avalanche forecast zone", "severity": "low",
+   "claims": [
+     {"field": "climate.forecastZone", "says": "NWAC West Slopes North (North Cascades zone)"},
+     {"field": "seasonal_hazards.avalanche.zone", "says": "no NWAC zone is specifically drawn around this North Cascades NP peak in any case"}
+   ],
+   "why": "One field names an NWAC zone for the route; the other says none applies.",
+   "internal_resolution": null,
+   "needs_research": false}
+ ]},
+{"id": "wa_cascade_peak_nw_chimney", "name": "Northwest Chimney", "area": "Cascade Peak",
+ "contradictions": []},
+{"id": "wa_cascade_peak_east_ridge", "name": "East Ridge and NW Chimney", "area": "Cascade Peak",
+ "contradictions": [
+  {"fact": "Season window", "severity": "high",
+   "claims": [
+     {"field": "season", "says": "Best June-September (snow-free)."},
+     {"field": "best_season", "says": "Roughly June through August."},
+     {"field": "seasonal_guidance.optimalWindow", "says": "Late April through June"},
+     {"field": "seasonal_guidance.monthBreakdown.May.status", "says": "optimal"},
+     {"field": "seasonal_guidance.monthBreakdown.July.status", "says": "risky"},
+     {"field": "approach_variants[0].season", "says": "May-Jun for continuous snow in the couloir"},
+     {"field": "climate.bySeason.summer", "says": "Best overall window (roughly June-August)"}
+   ],
+   "why": "The season chip says June-September, but seasonal guidance makes May optimal, calls July risky and ends the window in June.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Road access vs the optimal window", "severity": "medium",
+   "claims": [
+     {"field": "road.seasonalGate", "says": "Typically opens to the Cascade Pass trailhead parking area by late June"},
+     {"field": "access.permit", "says": "High-country zones like this one generally can't be reserved for trips starting before July 1 due to snow."},
+     {"field": "seasonal_guidance.optimalWindow", "says": "Late April through June"},
+     {"field": "crowds.peakTraffic", "says": "during a good stable-snowpack window in May"}
+   ],
+   "why": "The optimal window (late April-June) falls almost entirely before the road usually opens and before overnight permits can be booked.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Which line the route climbs (East Ridge scramble vs NW Chimney 5.8)", "severity": "medium",
+   "claims": [
+     {"field": "approach_variants[0].baseFinding", "says": "From the col the East Ridge is the crest running west toward Cascade Peak's summit ... Parties commonly climb it unroped while carrying a harness"},
+     {"field": "approach_variants[0].notes", "says": "it and the other routes finishing on the south side are mostly scrambling"},
+     {"field": "itinerary.days[1].note", "says": "Traverse from the col to the base of Cascade Peak's NW Chimney in the moat and climb the roughly 3-pitch route"},
+     {"field": "aspect", "says": "East to Northeast"},
+     {"field": "partner_requirements.requiredSkills[1]", "says": "solid 4th-class rock scrambling on loose, unconsolidated rock"},
+     {"field": "rock_grade", "says": "5.8"}
+   ],
+   "why": "The approach and partner fields describe an unroped East Ridge scramble finishing on the south side, while the itinerary, pitches and rack describe a 5.8, three-pitch NW Chimney climbed from the moat on the northwest side.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Which pitch is the chimney, and where pitch 1 starts", "severity": "medium",
+   "claims": [
+     {"field": "itinerary.days[1].note", "says": "loose crux crack, then a cleaner 5.8 chimney, then a short loose pitch"},
+     {"field": "pitch_detail[1].notes", "says": "Sustained class-4 ridge crest climbing with occasional low-5th-class steps"},
+     {"field": "pitch_detail[1].grade", "says": "5.6"},
+     {"field": "pitch_detail[2].notes", "says": "Short final pitch up the peak's broken summit tower (the 'NW Chimney' feature)"},
+     {"field": "pitch_detail[0].notes", "says": "gaining the ridge crest above the C-J col"},
+     {"field": "itinerary.days[1].schedule[1].detail", "says": "From the moat below the col; loose crux crack pitch first."}
+   ],
+   "why": "The itinerary makes pitch 2 a 5.8 chimney, while the route breakdown makes pitch 2 a 5.6 ridge-crest pitch and pitch 3 the chimney; it also has pitch 1 start on the ridge crest, not from the moat.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Approach distance", "severity": "medium",
+   "claims": [
+     {"field": "waypoints[3].distMi", "says": "1.7"},
+     {"field": "approach", "says": "Hike to the base of the CJ Couloir (approximately 0.7 mi)."},
+     {"field": "itinerary.days[0].miles", "says": "5.7"},
+     {"field": "itinerary.totalNote", "says": "11+ miles round trip"},
+     {"field": "dist_km", "says": "18.35"}
+   ],
+   "why": "The waypoints put the summit 1.7 mi from the trailhead via the couloir, but the itinerary and dist_km give 5.7 mi each way (11+ mi round trip).",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "CJ Couloir base elevation and length", "severity": "low",
+   "claims": [
+     {"field": "waypoints[1].elev", "says": "3700"},
+     {"field": "approach_variants[0].notes", "says": "go over the moraine onto the couloir apron at roughly 3,300 ft ... Then roughly 3,000 ft of booting to the col"},
+     {"field": "itinerary.days[0].note", "says": "Climb roughly 3,400 ft of snow/ice"}
+   ],
+   "why": "The couloir base is given as 3,700 ft in one field and 3,300 ft in another, and the couloir as 3,000 ft or 3,400 ft long.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Glacier / crevasse hazard", "severity": "medium",
+   "claims": [
+     {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel indicated for this route"},
+     {"field": "obj_haz[1]", "says": "Crevasses on the small glacier remnants below the peak's north side"},
+     {"field": "rappel_detail[2].notes", "says": "Final rappel(s) typically land at or near the moat where the chimney meets the glacier"},
+     {"field": "approach_variants[1].hazards[2]", "says": "Steep short snow tongue and flanking bergschrunds at Gunsight Notch"}
+   ],
+   "why": "Seasonal hazards say there is no glacier travel, while other fields list crevasses, bergschrunds and rappels landing on the glacier.",
+   "internal_resolution": "obj_haz, rappel_detail, hazards[1] and approach_variants[1] all involve glacier terrain; the crevasses 'N/A' is the outlier.",
+   "needs_research": false},
+  {"fact": "Fixed rappel anchors", "severity": "medium",
+   "claims": [
+     {"field": "hazards[3]", "says": "essentially no fixed protection or rappel anchors on the route"},
+     {"field": "descent", "says": "there is no fixed hardware on this route"},
+     {"field": "approach_variants[0].baseFinding", "says": "There are numerous rappel stations scattered around this area from previous parties"},
+     {"field": "approach_variants[0].hazards[3]", "says": "Existing rappel stations of unknown quality"}
+   ],
+   "why": "Several fields say there are no fixed anchors, while the primary approach says there are numerous existing rappel stations.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "First ascent", "severity": "medium",
+   "claims": [
+     {"field": "fa", "says": "Fred Beckey, Pete Schoening, and Phil Sharpe, July 23, 1950 (first ascent of the peak)"},
+     {"field": "approach_variants[0].notes", "says": "The East Ridge by way of the C-J Couloir was first climbed in 1938"}
+   ],
+   "why": "The peak's first ascent cannot be 1950 if the East Ridge was climbed in 1938.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Overnight permit booking", "severity": "medium",
+   "claims": [
+     {"field": "access.permit", "says": "Cascade Pass is a high-demand, walk-up-only zone — permits must be picked up in person ... rather than reserved online in advance"},
+     {"field": "access.overnight_permit.where", "says": "Reserve on Recreation.gov, or get a walk-up permit"},
+     {"field": "permit", "says": "reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center"},
+     {"field": "bivy[1].permit", "says": "part reservable on Recreation.gov and part held for walk-ups"}
+   ],
+   "why": "One access field says the zone is walk-up only, while three others say the permit can be reserved on Recreation.gov.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Road status to the trailhead", "severity": "medium",
+   "claims": [
+     {"field": "road.status", "says": "Closed to vehicles at Eldorado (milepost 20) as of early summer 2026 ... adding roughly 4 miles one-way"},
+     {"field": "waypoints[0].directions", "says": "Drive Cascade River Road to its end at the Cascade Pass Trailhead"},
+     {"field": "itinerary.days[0].note", "says": "From the Cascade Pass trailhead ... walk back to the hairpin"}
+   ],
+   "why": "GETTING THERE says the road is closed 4 miles short of the trailhead, while the trailhead card and itinerary have you drive to it with no extra road walk.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Rope for the rappels", "severity": "low",
+   "claims": [
+     {"field": "gear[4]", "says": "60m doubles for full-length rappels"},
+     {"field": "rappel_detail[2].notes", "says": "a single 60m rope is the practical minimum"},
+     {"field": "rappel_detail[0].lengthM", "says": "30"}
+   ],
+   "why": "The kit calls for double 60 m ropes for full-length rappels, but the rappel table lists 30 m rappels and a single 60 m rope as the minimum.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Summit-day start time", "severity": "low",
+   "claims": [
+     {"field": "timing.recommendedStart", "says": "4:00 AM from camp"},
+     {"field": "partner_requirements.approachTime", "says": "then a 03:30 start for the ~9-hour summit push"}
+   ],
+   "why": "The published start time and the partner requirements give different start times.",
+   "internal_resolution": "timing and itinerary.days[1].schedule[0] both say 4:00 AM.",
+   "needs_research": false},
+  {"fact": "Johannesburg Camp elevation vs the trailhead", "severity": "low",
+   "claims": [
+     {"field": "bivy[1].elev", "says": "3400"},
+     {"field": "bivy[1].notes", "says": "a short, steep and often slick few minutes above the Cascade Pass trailhead"},
+     {"field": "waypoints[0].elev", "says": "3600"}
+   ],
+   "why": "A camp described as above the 3,600 ft trailhead is listed at 3,400 ft.",
+   "internal_resolution": null,
+   "needs_research": true}
+ ]},
+{"id": "wa_colonial_peak_west_ridge", "name": "West Ridge / Colonial Glacier", "area": "Colonial Peak",
+ "contradictions": [
+  {"fact": "Line from the col to the summit and back (West Ridge vs east ridge/Northeast Gully)", "severity": "high",
+   "claims": [
+     {"field": "climbing_route[1].notes", "says": "From the col, leave the ice for a loose gully leading up onto the West Ridge."},
+     {"field": "descent_text", "says": "downclimb the east ridge back to the head of the Northeast Gully, then downclimb/plunge-step the snow gully back down to the Colonial-Snowfield col"},
+     {"field": "overview", "says": "climbs the Colonial Glacier on the northeast side to the Colonial-Snowfield col"},
+     {"field": "approach_variants[0].notes", "says": "A large tarn sits at the northwest toe of the glacier"},
+     {"field": "approach_variants[0].baseFinding", "says": "traverse talus and the high firnfield to the notch immediately west of the summit pyramid"}
+   ],
+   "why": "The ascent is via the West Ridge from the col, but DESCENT says reverse by the east ridge and the Northeast Gully, and the glacier is placed on the northeast side in one field and the northwest in another.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Summit rock grade and rack", "severity": "medium",
+   "claims": [
+     {"field": "rock_grade", "says": "5.0"},
+     {"field": "grade", "says": "Class 3-4 glacier + summit rock"},
+     {"field": "pitch_detail[3].grade", "says": "Class 3"},
+     {"field": "gear[3]", "says": "the last stretch to the summit is exposed 3rd/4th-class scrambling on rock, not technical climbing — no rack needed"},
+     {"field": "detailed_rack", "says": "plus a few small-to-mid cams/nuts and slings for the short class 4 summit step"}
+   ],
+   "why": "The header pill says 5.0 but the route breakdown says Class 3, and the gear list says no rack is needed while PROTECTION lists cams and nuts.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Northwest Forest Pass at Pyramid Lake Trailhead", "severity": "medium",
+   "claims": [
+     {"field": "access.passRequired", "says": "None — the Pyramid Lake trailhead is an NPS trailhead within the park complex, not National Forest land, so no Northwest Forest Pass/Interagency Pass is needed"},
+     {"field": "gear[4]", "says": "Northwest Forest Pass, plus a backcountry camping permit"},
+     {"field": "waypoints[0].directions", "says": "A Northwest Forest Pass covers the parking"},
+     {"field": "approach", "says": "Northwest Forest Pass to park"}
+   ],
+   "why": "ACCESS says no pass is needed; the gear list, trailhead card and approach all say a Northwest Forest Pass is.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "SR 20 winter closure at the trailhead", "severity": "medium",
+   "claims": [
+     {"field": "waypoints[0].directions", "says": "SR-20 is closed through the winter and normally reopens in April or May, which sets the earliest possible attempt"},
+     {"field": "itinerary.cal", "says": "SR 20 typically isn't plowed open until April/May"},
+     {"field": "climate.winter", "says": "Highway access to the trailhead itself is frequently gated/closed"},
+     {"field": "road.seasonalGate", "says": "This stretch of SR 20 through Newhalem/Diablo typically stays open year-round"},
+     {"field": "access.closures", "says": "SR 20 itself is normally open and plowed year-round past the Pyramid Lake trailhead (MP 126.8)"},
+     {"field": "climate.bySeason.winter", "says": "Highway to Diablo stays open"}
+   ],
+   "why": "Some fields say the highway to this trailhead closes all winter and reopens in April/May, while others say this stretch stays open year-round.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Round-trip distance", "severity": "medium",
+   "claims": [
+     {"field": "itinerary.days[1].miles", "says": "10"},
+     {"field": "itinerary.totalNote", "says": "~6 mi and 5,000 ft to camp on day 1, then a long ~10 mi summit-and-hike-out day"},
+     {"field": "approach", "says": "Total car-to-summit distance runs roughly 10-14 miles round trip"},
+     {"field": "waypoints[6].distMi", "says": "6.3"},
+     {"field": "dist_km", "says": "9.7"}
+   ],
+   "why": "The itinerary totals 16 mi, but the summit waypoint at 6.3 mi and the approach text give 10-14 mi round trip, and dist_km shows 6.0 mi.",
+   "internal_resolution": "The waypoints (camp 5.6 mi, summit 6.3 mi) and approach text agree on about 12-13 mi round trip; the itinerary's day-2 10 mi is high.",
+   "needs_research": false},
+  {"fact": "Gain vs horizontal distance", "severity": "low",
+   "claims": [
+     {"field": "partner_requirements.fitnessSpec.hiking", "says": "roughly 6,500+ ft of gain in under 3 miles via the Pyramid Lake approach"},
+     {"field": "waypoints[6].distMi", "says": "6.3"}
+   ],
+   "why": "The partner line says the gain comes in under 3 miles, but the approach is 6.3 mi to the summit; the 'under 3 miles' figure is the peak's relief above Thunder Arm, not the route.",
+   "internal_resolution": "The waypoints and itinerary put the summit about 6 mi from the trailhead.",
+   "needs_research": false},
+  {"fact": "Steepest snow angle", "severity": "low",
+   "claims": [
+     {"field": "max_angle", "says": "55"},
+     {"field": "pitch_detail[2].notes", "says": "steep snow up to ~30 degrees"}
+   ],
+   "why": "The steepest snow is given as 55 degrees in one field and about 30 degrees in the other.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Last water before the glacier", "severity": "low",
+   "claims": [
+     {"field": "approach", "says": "seasonal ponds and puddles here and near ~4,500 ft ... are the last reliable water before the glacier"},
+     {"field": "waypoints[1].note", "says": "last reliable water before the climb — refill here"},
+     {"field": "approach_variants[0].notes", "says": "A large tarn sits at the northwest toe of the glacier and makes a good water source and camp."}
+   ],
+   "why": "The last reliable water is placed at Pyramid Lake, at the ridge ponds, and at a tarn at the glacier toe in different fields.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Permit fee basis", "severity": "low",
+   "claims": [
+     {"field": "access.fees", "says": "$10/person/night + a flat $6 nonrefundable reservation fee"},
+     {"field": "access.permit", "says": "$10 per person plus a $6 non-refundable reservation fee"}
+   ],
+   "why": "One field charges per person per night; the other charges per person.",
+   "internal_resolution": null,
+   "needs_research": true}
+ ]},
+{"id": "wa_cosho_peak_scramble", "name": "Standard Scramble", "area": "Cosho Peak",
+ "contradictions": [
+  {"fact": "Approach line (Fisher Creek valley + south gully vs high Ragged Ridge traverse)", "severity": "medium",
+   "claims": [
+     {"field": "pitch_detail[1].pitch", "says": "Ridge traverse, Easy Pass to Kimtah-Cosho saddle area"},
+     {"field": "pitch_detail[1].notes", "says": "Several miles along the ~6,600-7,400 ft contour on Ragged Ridge's south side, past Mesahchie and Katsuk"},
+     {"field": "itinerary.days[0].note", "says": "Descend the north side down ~30 switchbacks and about 1,400 ft to the Fisher Creek Trail junction, then continue down-valley past Fisher Camp to Cosho Camp (3,880 ft)"},
+     {"field": "itinerary.days[1].note", "says": "climb one of the loose south-facing gullies (roughly 4,000 ft of gain ...) to the 7,830 ft Kimtah-Cosho saddle"},
+     {"field": "partner_requirements.approachTime", "says": "Long, multi-day approach via Easy Pass and the Ragged Ridge traverse"}
+   ],
+   "why": "ROUTE BREAKDOWN describes a high traverse along Ragged Ridge from Easy Pass, while the itinerary, waypoints, approach and descent use the Fisher Creek valley, Cosho Camp and a 4,000 ft gully.",
+   "internal_resolution": "approach, itinerary, timing, waypoints, descent, descent_text, bivy and approach_variants all use Fisher Creek/Cosho Camp and the south gully; the approach prose names the high traverse only as an alternative, so pitch_detail[1] is the outlier.",
+   "needs_research": false},
+  {"fact": "Base camp advice", "severity": "low",
+   "claims": [
+     {"field": "pro_tips[0]", "says": "Plan a high camp — Cosho is the most remote of the four"},
+     {"field": "pro_tips[3]", "says": "Base at Cosho Camp (3,880 ft, 6 mi past Easy Pass) rather than pushing further before starting the summit gullies"}
+   ],
+   "why": "One tip says to plan a high camp; the next says to base at the 3,880 ft valley camp.",
+   "internal_resolution": "The itinerary, bivy[0] and approach all base at Cosho Camp.",
+   "needs_research": false},
+  {"fact": "Side of the peak the saddle is on", "severity": "low",
+   "claims": [
+     {"field": "climbing_route[0].notes", "says": "From the saddle west of the peak the line goes onto the upper east face and east ridge."},
+     {"field": "waypoints[5].lng / waypoints[7].lng", "says": "-120.92167 / -120.92736"},
+     {"field": "overview", "says": "the westernmost and lowest of the four standard Ragged Ridge Bulger scrambles"}
+   ],
+   "why": "The Kimtah-Cosho saddle is east of the westernmost peak (its waypoint lies east of the summit), not west of it.",
+   "internal_resolution": "The waypoint coordinates and the east-face/east-ridge finish place the saddle east of the summit.",
+   "needs_research": false},
+  {"fact": "Glacier travel requirement", "severity": "low",
+   "claims": [
+     {"field": "partner_requirements.requiredSkills[2]", "says": "Basic glacier travel and crevasse awareness (route skirts the Kimtah/Mesahchie Glacier near the Cosho col)"},
+     {"field": "beta", "says": "No technical rock climbing or serious glacier travel is strictly required for the standard route"},
+     {"field": "detailed_rack", "says": "it is not required for the standard south-side ridge route in typical late-summer conditions"}
+   ],
+   "why": "The partner requirements make glacier skills required, while the beta and rack say the standard route needs no glacier travel.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Round-trip distance", "severity": "low",
+   "claims": [
+     {"field": "dist_km", "says": "18.5"},
+     {"field": "itinerary.totalNote", "says": "A 3-day, roughly 25-mile round trip"},
+     {"field": "waypoints[7].distMi", "says": "12.5"}
+   ],
+   "why": "dist_km (11.5 mi) matches neither the 12.5 mi one-way waypoint distance nor the 25 mi round trip.",
+   "internal_resolution": "The waypoints and itinerary agree on about 12.5 mi one way / 25 mi round trip.",
+   "needs_research": false}
+ ]},
+{"id": "wa_crater_mountain_standard_route", "name": "Standard Route (Southeast Ridge via Jackita Ridge / Crater Lake Trail)", "area": "Crater Mountain",
+ "contradictions": [
+  {"fact": "Following the yellow paint marks in the crux gully", "severity": "medium",
+   "claims": [
+     {"field": "pro_tips[0]", "says": "Follow the fading yellow paint X's and arrows through the gully closely — going off-line here is the main way parties get cliffed out"},
+     {"field": "watch_out[0]", "says": "easy to go off-route on without the painted markers"},
+     {"field": "approach_variants[0].baseFinding", "says": "the paint tempts you straight UP that gully ... the better line TRAVERSES ACROSS the gully and around the corner, where cairns lead upward"},
+     {"field": "approach_variants[0].hazards[1]", "says": "Yellow paint marks that lead into a steep, loose gully rather than along the better line"}
+   ],
+   "why": "The tips say to follow the paint closely to stay on route, while the approach says the paint leads into worse ground and the better line leaves it.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Camping permit and land manager at Crater Lake", "severity": "medium",
+   "claims": [
+     {"field": "permit", "says": "Free self-issue Pasayten Wilderness permit, available at the trailhead. This route is on Okanogan-Wenatchee National Forest land"},
+     {"field": "access.permit", "says": "not applicable to a standard out-and-back Crater Mountain trip, which stays on National Forest land"},
+     {"field": "bivy[0].permit", "says": "Ross Lake NRA backcountry permit"},
+     {"field": "access.overnight_permit.what", "says": "North Cascades National Park Complex backcountry permit (covers Ross Lake NRA) - quota, not free"}
+   ],
+   "why": "PERMIT and ACCESS say a free self-issue Pasayten permit on Forest Service land, while CAMPING and the overnight-permit line call for a paid NPS/Ross Lake NRA permit.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Crater Lake basin elevation", "severity": "low",
+   "claims": [
+     {"field": "approach", "says": "Crater Lake basin (~5,000-5,700 ft)"},
+     {"field": "pitch_detail[2].notes", "says": "Steep ~400 ft gain from Crater Lake basin onto the SE ridge, moderating near 6,800 ft"}
+   ],
+   "why": "A 400 ft climb from a basin at 5,000-5,700 ft cannot reach the 6,800 ft point where the ridge moderates.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Crux difficulty", "severity": "low",
+   "claims": [
+     {"field": "rock_grade", "says": "Class 3, with one short Class 4 move (exposed)"},
+     {"field": "pitch_detail[3].grade", "says": "Class 3 (exposed)"},
+     {"field": "beta", "says": "non-technical but sustained 3rd-class scramble"}
+   ],
+   "why": "The grade pill includes a Class 4 move that the route breakdown and beta never mention.",
+   "internal_resolution": null,
+   "needs_research": true}
+ ]}
+]}

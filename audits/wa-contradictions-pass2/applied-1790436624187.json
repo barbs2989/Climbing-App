@@ -1,0 +1,277 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_face_10",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "Free grade of the crux"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "overview",
+   "path": [],
+   "fact": "Free grade of the crux"
+  },
+  {
+   "id": "wa_south_face_10",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Free grade of the crux"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance Winthrop to trailhead"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance Winthrop to trailhead"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent grade and time"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent grade and time"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent grade and time"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Descent grade and time"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Descent grade and time"
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "When snow clears"
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Grade of the step-across"
+  },
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the route starts"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_face_10",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "5.7-5.8",
+      "notes": "Start near the 'Confession Box' feature described in the FA account.",
+      "pitch": "Lower face"
+     },
+     {
+      "grade": "5.8/A1 (free at ~5.9 per some parties)",
+      "notes": "A spectacular curving chimney climbed on aid by the FA party, then fine free cracks higher; 'Pulpit Ledge' is in this section.",
+      "pitch": "Mid face (chimney)"
+     },
+     {
+      "grade": "5.7-5.8",
+      "notes": "Passes 'Belfry Ledge' near the top before easier ground to the summit.",
+      "pitch": "Upper face"
+     }
+    ],
+    "overview": "The original 1968 Beckey line up the middle of Cathedral's imposing ~1,000-foot South Face — a classic mixed free/aid granite climb, now commonly led free in the 5.8-5.9 range.",
+    "pro_tips": [
+     "The face can reportedly be led free around 5.8/5.9, avoiding the original A1 aid.",
+     "Beckey's FA account describes 'sound excellent granodiorite' throughout — expect generally solid rock on the main line."
+    ]
+   }
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "before": {
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 paved miles to the trailhead (el. 3,050 ft). No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer — confirm current conditions with the Methow Valley Ranger District before driving in."
+    },
+    "descent": "Standard descent is a 4th-class scramble trending west then southwest off the summit, including a short, exposed gap crossing ('the jump'/'leap of faith') that can be stepped across or walked around; most ascents require no rappelling on this descent (about 45 minutes back to camp). Parties bailing mid-route should be prepared to rappel from gear instead.",
+    "descent_text": "This is a walk-off — there is no established rappel line down the buttress, and multiple independent trip reports (2016, 2018, 2024) confirm parties descend unroped. From the summit, downclimb/scramble west and then southwest along third-class ledges on the peak's west side, aiming to regain the notch/gap system below the true summit block often called the 'summit chasm.' This gap must be crossed (or re-crossed) via an exposed step-across move above a chockstone — rated easy class 3 when dry but genuinely no-fall terrain, and the crux of the whole descent; some parties down-lead the last ~15 feet above it and place gear rather than solo it. Once across, continue down loose, blocky slopes and scree southwest, working back around the mountain's west/southwest flank to regain the meadows and talus above Upper Cathedral Lake. Total time from summit back to camp runs about 45 minutes to just over an hour for parties familiar with the line. No rope or rack beyond what's carried for the route itself is needed for a normal, dry descent — several trip reports explicitly note they carried no rappel gear and used none. Do not confuse this descent gully/notch with the SE Buttress ascent line; parties have gotten cliffed out trying to descend the buttress itself, which is why the established walk-off (west then southwest) is strongly preferred. In wet or icy conditions, or for less-experienced parties uneasy with the chasm step-across, building an improvised tree or natural-gear rappel anchor near the notch is a reasonable fallback, but this is not standard practice. The exposed gap crossing near the summit chasm has a walk-around option for parties who'd rather not solo the step-across.",
+    "itinerary": {
+     "cal": "Pasayten Wilderness requires only a free self-issue permit at the trailhead (no quota); the Andrews Creek approach is typically snow-free and drivable July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, steady approach on the Andrews Creek Trail through forest and subalpine meadows into the Pasayten Wilderness, ending at Upper Cathedral Lake, the standard base camp for the peak. Self-issue a free wilderness permit at the trailhead kiosk before starting.",
+       "hours": 9,
+       "miles": 18,
+       "title": "Backpack to Upper Cathedral Lake",
+       "gainFt": 4350,
+       "lossFt": 200,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Andrews Creek Trailhead",
+         "detail": "Self-issue wilderness permit at the trailhead register."
+        },
+        {
+         "time": "~5 hr in",
+         "label": "Pass Spanish Camp / Cathedral Pass junction",
+         "detail": ""
+        },
+        {
+         "time": "~3:00 PM",
+         "label": "Arrive Upper Cathedral Lake",
+         "detail": "Set up camp and scout the buttress across the basin."
+        }
+       ],
+       "objective": "Reach high camp at Upper Cathedral Lake (7,380 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start for the short approach to the base of the buttress, then 10 pitches of sustained hand and finger cracks on excellent granite to the 8,606 ft summit. Descend via the 4th-class scramble route, including a short, exposed gap crossing, back to camp.",
+       "hours": 10,
+       "miles": 2,
+       "title": "Southeast Buttress summit day",
+       "gainFt": 1300,
+       "lossFt": 1300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Rack up at base of route",
+         "detail": "~40 min approach from the lake."
+        },
+        {
+         "time": "1:00-3:30 PM",
+         "label": "Top out on summit",
+         "detail": "7-9 hrs of climbing depending on party size and conditions."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Begin descent",
+         "detail": "4th-class scramble trending west/southwest, including the exposed notch ('leap of faith')."
+        },
+        {
+         "time": "5:30-6:30 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the SE Buttress (10 pitches, 5.9+/5.10a) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Many parties build in a layover day at Upper Cathedral Lake to recover and take advantage of being deep in the Pasayten -- a common add-on is the easy 3rd-class scramble up nearby Amphitheater Mountain or Deacon Peak. Skip this day entirely for a faster 4-day trip.",
+       "hours": 4,
+       "miles": 4,
+       "title": "Rest day / optional bonus summit",
+       "gainFt": 800,
+       "lossFt": 800,
+       "packLb": 10,
+       "schedule": [],
+       "objective": "Recover, or scramble Amphitheater Mountain or Deacon Peak"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the Andrews Creek Trail back to the trailhead, losing the elevation gained on Day 1.",
+       "hours": 8,
+       "miles": 18,
+       "title": "Hike out",
+       "gainFt": 200,
+       "lossFt": 4350,
+       "packLb": 25,
+       "schedule": [],
+       "objective": "Return to Andrews Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 4-5 day trip: roughly 36 miles round-trip and 4,350 ft of approach gain on the Andrews Creek Trail, plus an 8-11 hour, 10-pitch 5.9+/5.10a summit day from Upper Cathedral Lake camp; many parties add a rest or bonus-summit day."
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, with August generally the most reliable stretch",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow typically clears from the route and approach by mid-July; drier east-side conditions set in start",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Approach trail and gullies often still snow-covered; high stream crossings; cracks on the buttress may hold snow/ice - not the recommended window",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Most stable weather and driest rock of the season; the classic window most trip reports climb in",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still generally stable and dry, but shorter days and increasing chance of early-season storms/cold snaps this far into fall",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "before": {
+    "beta": "Also referred to as the West Ridge or the southwest slope, and universally described as the easy way up and the route of choice for descending after climbing the Southeast or North faces. From Upper Cathedral Lake (7,380 ft) take the trail 0.6 miles nearly to Cathedral Pass (7,600 ft), leave it, and climb easy sandy terrain for several hundred vertical feet. Ducks and cairns then lead over Class 2-3 granite outcrops, blocks and slabs — solid, coarsely crystalline rock with occasional spots where a friction hoist gets you over a block — to a hidden cleft running parallel to and just below the west ridge crest. There are two minor Class 3+ steps, and the summit chasm is crossed twice; the harder of the two step-acrosses is the Class 4 move. The chasm that cleaves the summit rocks into north and south sections is the crux: step onto a large chockstone jammed in the slot and mantle onto a bulge on the far side. The climbing is easy; the exposure is dramatic, and most parties carry a rope and harnesses for it, often rigging a handline with prusiks for the return. In early season the chasm is filled with snow, which makes the first of the two step-acrosses easy or trivial; the second never has snow in the hole. It is Class 3 with exposure that makes it Class 4-."
+   }
+  },
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "before": {
+    "approach": "Same Andrews Creek/Chewuch River approach to Cathedral Pass/Upper Cathedral Lake, then into the Cathedral-Monk gully to the base of the South Face."
+   }
+  }
+ ]
+}

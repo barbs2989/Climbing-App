@@ -1,0 +1,82 @@
+{
+ "id": "wa_mount_adams_mazama_glacier_headwall",
+ "name": "Mazama Glacier Headwall",
+ "waypoints": [
+  {
+   "lat": 46.1404,
+   "lng": -121.44,
+   "elev": 5700,
+   "name": "Bird Creek Road Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The approach starts from Bird Creek Meadows on the Yakama Nation side of the mountain, reached by the Mirror Lake road; the parking area sits at about 5,576-5,700 ft. You need a tribal-use permit for Tract D, bought at the fee station as you enter at the Mirror Lake gate — it cannot be obtained in advance, and it is only sold while the area is open to non-tribal use. That window has historically run from about the start of July to the start of October, and the area has been closed outright in some years, so confirm with the Yakama Nation before building a trip around this side. There is no alternative way in from here."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 8500,
+   "name": "Sunrise Camp",
+   "type": "Campsite",
+   "distMi": 3,
+   "directions": "From the parking area the trail is easy to follow to about 6,700 ft. Above that there is no single path: pick a line up through moraine, scree and glacier remnants to Sunrise Camp, a flat with hand-built rock wind shelters wedged between the toe of the Mazama Glacier and a small rock hill. Carry a map, since finding the camp is the part people get wrong."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 11600,
+   "name": "Mazama Glacier Headwall",
+   "type": "Junction",
+   "distMi": 6.5,
+   "directions": "Rope up and go straight up the Mazama Glacier from camp, weaving around the crevasses on its lower half. It steepens to about 40 degrees, with a bergschrund near 9,500 ft, and narrows as it climbs; around 11,300 ft veer right onto the 45-degree headwall."
+  },
+  {
+   "lat": 46.2024,
+   "lng": -121.4909,
+   "elev": 12276,
+   "name": "Mount Adams Summit",
+   "type": "Summit",
+   "distMi": 8,
+   "directions": "Climb the headwall toward Piker's Peak, the false south summit, exiting left onto easy 25-30 degree snow or right up about 40 ft of 60-70 degree snow and ice on the southeast corner. From Piker's Peak descend its back side to the saddle, then climb the last 600-700 ft of the summit cone to the high point on the east side of the plateau."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Bird Creek Meadows and Sunrise Camp, on the Yakama Reservation side",
+   "camps": [
+    "Sunrise Camp"
+   ],
+   "hours": "3-4",
+   "notes": "This is the southeast side of the mountain and the approach crosses Yakama Nation land, which makes it an access problem before it is a climbing problem. A tribal-use permit for Tract D is required, bought at the fee station on entry at the Mirror Lake gate — it cannot be obtained in advance — and it is only available when the area is open to non-tribal use. Historically that window has run from about the start of July to the start of October for non-members. The area has also been closed outright in some years, so confirm with the Yakama Nation before building a trip around this approach; there is no alternative way in from this side.\n\nFrom the Bird Creek Meadows parking area (about 5,576–5,700 ft), the trail is easy to follow to roughly 6,700 ft. Above that it is route-finding: any number of lines through moraine, scree and glacier remnants lead up to Sunrise Camp at about 8,300 ft. Carry a map — locating the camp is the part people get wrong. Trailhead to camp is about 3–4 hours.\n\nSunrise Camp sits at the base of the Mazama Glacier, tucked between the glacier and a small rock hill, with hand-built rock shelters. It is a fine fair-weather camp and a poor one otherwise: it is exposed to winds that can reach hurricane strength, and to rockfall off the glacier. The rock walls help, but only somewhat.\n\nFrom camp to summit is about 5 hours.",
+   "gainFt": 2600,
+   "season": "Summer; non-tribal access to this side has historically been limited to a mid-summer to early-autumn window",
+   "hazards": [
+    "Tribal-use permit required and only sold at the gate, in a limited seasonal window — no advance purchase, and the area has been closed in some years",
+    "Route-finding through moraine and scree above 6,700 ft to locate Sunrise Camp",
+    "Rockfall off the glacier onto Sunrise Camp",
+    "Extreme wind exposure at camp",
+    "Bergschrunds around 9,500 ft",
+    "Mistaking Piker's Peak, where the route tops out, for the true summit"
+   ],
+   "primary": true,
+   "baseFinding": "The climbing starts directly above camp — the first ground you cross after leaving Sunrise Camp is the glacier itself, so the recognition problem here is finding camp, not finding the base.\n\nSunrise Camp: at roughly 8,300 ft, a flat with rock wind shelters, wedged between the toe of the Mazama Glacier on one side and a small rock hill on the other. If you are on open moraine with no rock hill beside you, you are short of it or off to one side; the terrain between 6,700 and 8,300 ft has many plausible lines and only some of them end at the camp.\n\nAbove camp the sequence is legible. Long stretches of glacier at about 40 degrees, then bear right onto the headwall proper, which runs about 45 degrees and is where pickets earn their place. Bergschrunds appear around 9,500 ft. The glacier narrows as it climbs.\n\nThe top is where the route makes you choose. Nearing Piker's Peak — the south summit at 11,644 ft — you can exit left onto easy 25–30 degree ground, or stay right for a short technical finish: roughly 40 ft of 60–70 degree snow and ice on the southeast corner, worth two or three screws.\n\nCritical negative marker at the top: Piker's Peak is not the summit of Mount Adams. When the ground flattens out you have reached the south summit; the true summit is a further dome across the plateau to the north, with the geographic high point to the east. This route tops out on the false summit by design, so treat the flattening as a halfway signal rather than an arrival."
+  },
+  {
+   "name": "Cold Springs and the Round the Mountain trail",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Sunrise Camp",
+      "role": "main",
+      "type": "camp"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Cold Springs Camp (Forest Road 8040)",
+     "trailheadLat": 46.1359,
+     "trailheadLng": -121.4977
+    }
+   },
+   "notes": "From the Cold Springs trailhead, climb the South Climb trail to the Round the Mountain trail and follow it east across the lava flows to the reservation boundary and the edge of Bird Creek Meadows, then turn uphill onto the moraine toward the Mazama Glacier and Sunrise Camp. The turnoff is farther along the Round the Mountain trail than many descriptions suggest. A Recreation Pass is needed at Cold Springs."
+  }
+ ]
+}

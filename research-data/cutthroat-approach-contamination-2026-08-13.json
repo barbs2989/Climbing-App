@@ -1,0 +1,65 @@
+{
+  "_README": [
+    "FIVE routes on Cutthroat Peak shared one boilerplate approach string, and it is wrong twice:",
+    "",
+    "  \"South-southwest via open timber basin. From PCT trailhead, hike south on PCT for ~20",
+    "   minutes, leave trail at small stream bed. Ascend steeply through open timber to basin",
+    "   northwest of peak.\"",
+    "",
+    "It names the wrong trailhead (the PCT at Rainy Pass, rather than the SR-20 pullout about a mile",
+    "and a half west of Washington Pass) and the wrong side of the mountain — and it contradicts",
+    "itself inside a single sentence, saying south-southwest and then northwest.",
+    "",
+    "It is not a research question. FOUR OTHER ROWS ON THE SAME PEAK already describe the approach",
+    "correctly (Complete South Buttress, North Ridge, The Swarm, Cauthorn-Wilson), and every one of",
+    "them says the same thing: the long pullout on the north side of SR-20 roughly 1.5 miles west of",
+    "Washington Pass, a cairned climbers' track leaving its east end, down through timber, across",
+    "State Creek, and up into the basin SOUTH of the peak. The researched approach_variants applied",
+    "to four of these five routes agree independently.",
+    "",
+    "So every replacement below is RE-HOMED from a peer row on this peak or from that route's own",
+    "researched variant. Nothing here is composed from memory. The North Ridge row is the one that",
+    "shows the PCT is not simply invented — it is a real but LONGER, less common alternative from",
+    "Rainy Pass, which is probably how it leaked into a shared boilerplate in the first place."
+  ],
+
+  "wa_cutthroat_south_buttress": {
+    "area": "wa_cutthroat_peak",
+    "_grounding": "peer rows wa_complete_south_buttress and wa_north_ridge_3, plus this route's own researched variant",
+    "set": {
+      "approach": "From the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass, pick up the cairned climbers' track that leaves its east end and drops through timber to State Creek. Cross the creek — this is the last reliable water, so fill up — then climb the brushy path up through meadows into the boulder field below the south side of the peak, at roughly 6,500 ft. Reckon on an hour and a half to two hours.\n\nFrom the boulder field several large gullies come down out of the south buttress and they look interchangeable from below. Bear right and take the leftmost of them; that choice is the navigation crux of the whole approach."
+    }
+  },
+
+  "wa_cutthroat_west_ridge": {
+    "area": "wa_cutthroat_peak",
+    "_grounding": "this route's own researched variant, which places its parking WEST of the Blue Lake trailhead rather than at the South Buttress pullout",
+    "set": {
+      "approach": "Park on the broad shoulder of SR-20 roughly half a mile west of the Blue Lake trailhead, where there is a view through the trees to the peak; parties often meet at the Blue Lake lot and drive the short distance west to it. Head up from there into the basin below the peak.\n\nComing up into the basin, stay somewhat left to arrive at the notch at the base of the west ridge. That notch, rather than the ridge crest above it, is the reference point — from it, traverse ledges for about a hundred feet to the foot of a shallow gully running up and left onto the ridge."
+    }
+  },
+
+  "wa_cutthroat_peak_southeast_buttress": {
+    "area": "wa_cutthroat_peak",
+    "_grounding": "peer row wa_complete_south_buttress for the trailhead, plus this route's own researched variant for the basin and the twin gullies",
+    "set": {
+      "approach": "Drop to the State Creek crossing as for the South Buttress: the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass, then the cairned track from its east end down through timber to the creek.\n\nFrom the creek, climb the open slopes on the EAST side of the southeast-draining stream, which brings you into the basin immediately south of the peak. At the headwall, look for twin gullies running up to a notch — that notch is the base of the Southeast Buttress. Start up the right-hand gully and traverse into the left-hand one before you reach the notch; taking them in the other order is the common mistake here."
+    }
+  },
+
+  "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+    "area": "wa_cutthroat_peak",
+    "_grounding": "peer row wa_cutthroat_cauthorn_wilson, which states the rib traverse into the EAST basin, plus this route's own researched variant",
+    "set": {
+      "approach": "This route is on the EAST face, so the approach is the South Buttress approach with one extra step. From the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass, take the cairned climbers' track from its east end, drop through timber, cross State Creek, and climb toward the basin below the south side of the peak.\n\nFrom there, cross the rib that runs south from the South Buttress into the basin EAST of the peak. Once you are in the right basin there is no ambiguity about the line — the objective is the large couloir splitting the East Face, and it is the dominant gully on that aspect. The error to avoid here is a basin error, not a gully error.\n\nUsually climbed soon after SR-20 reopens, typically April into May."
+    }
+  },
+
+  "wa_cutthroat_peak_northeast_face": {
+    "area": "wa_cutthroat_peak",
+    "_grounding": "peer rows wa_cutthroat_cauthorn_wilson and wa_cutthroat_the_swarm, both of which describe reaching the East Face over the rib south of the South Buttress. This route carries NO researched approach_variants, so nothing route-specific beyond what those peers state is claimed.",
+    "set": {
+      "approach": "From the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass, follow the cairned climbers' track from its east end down through timber, cross State Creek, and climb toward the basin below the south side of the peak. Then traverse over the rib that extends south from the South Buttress into the basin EAST of Cutthroat Peak, where the East Face routes begin.\n\nAvoid the steep, loose scree chimneys directly below the wall on the way in. No per-route detail beyond this shared approach is on file for this line."
+    }
+  }
+}

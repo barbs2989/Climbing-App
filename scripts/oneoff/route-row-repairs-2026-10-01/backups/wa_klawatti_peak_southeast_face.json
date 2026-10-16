@@ -1,0 +1,84 @@
+{
+ "id": "wa_klawatti_peak_southeast_face",
+ "name": "Southeast Face / Klawatti Glacier",
+ "waypoints": [
+  {
+   "lat": 48.49261,
+   "lng": -121.11761,
+   "elev": 2150,
+   "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+   "note": "End of gravel Cascade River Road (~mile 20 from Marblemount); privy at trailhead, wilderness permit (from the Marblemount Wilderness Information Center) required for overnight camping in North Cascades NP.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Cascade River Road from Marblemount to its end at the large gravel pullout that serves as the Eldorado trailhead, at roughly 2,100 feet. The final stretch of road is gravel, and there's a privy at the trailhead. A wilderness permit, picked up in person at the Marblemount Wilderness Information Center, is required for overnight camping in North Cascades National Park. Best conditions on this route typically run mid-July through early September, once the road is open and the Cascade snowpack has consolidated."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3650,
+   "name": "Talus/boulder field entry",
+   "note": "After ~1,500 ft of forest gain the trail gives way to a cairned talus slope with cliffs on the left; stay off the climbers' path in fog, it's easy to lose in the boulders.",
+   "type": "Junction",
+   "distMi": 1.3,
+   "directions": "Find the current log crossing of the Cascade River (it shifts from year to year, so scout up- and downstream if it is gone), then follow the unmaintained climbers' path as it switchbacks steeply through timber and brush for about 1,500 ft to the start of the cairned talus field, with cliffs on the left."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6200,
+   "name": "Roush Creek Basin camps",
+   "note": "Small, level camp spots on the ridge at 6,100-6,400 ft in the basin below Eldorado Glacier; last reliable tent sites before roped glacier travel.",
+   "type": "Campsite",
+   "distMi": 3.3,
+   "directions": "Cross the boulders staying climber's right, since cairn lines trending left lead into cliffier ground. Follow the climbers' trail up a rib to a basin at 5,500-5,800 ft, drop slightly into the Roush Creek drainage for the last reliable running water, then climb again to the camps at 6,100-6,400 ft at the toe of the Eldorado Glacier."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6800,
+   "name": "Eldorado Glacier gain point",
+   "note": "Rope up here; snowfields lead onto the Eldorado Glacier just west (left) of the rocky ridge above Roush Creek Basin.",
+   "type": "Junction",
+   "distMi": 4.2,
+   "directions": "Rope up at camp and climb the snowfields above onto the Eldorado Glacier, keeping just west (left) of the rocky ridge above the basin."
+  },
+  {
+   "lat": 48.531491,
+   "lng": -121.125156,
+   "elev": 7500,
+   "name": "Eldorado ice-cap / Inspiration Glacier high camp",
+   "note": "Common high camp on the Eldorado-Inspiration ice cap near Klawatti Col, used as the base for the traverse onto the Klawatti Glacier.",
+   "type": "Campsite",
+   "distMi": 5.5,
+   "directions": "Climb the crevassed Eldorado Glacier north to the broad Eldorado-Inspiration ice cap and the high camp near the base of Eldorado's east ridge."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7800,
+   "name": "Klawatti Glacier crossing",
+   "note": "Stay roped crossing the crevassed Klawatti Glacier toward the base of the southeast face; open crevasses require route-finding, especially late season.",
+   "type": "Hazard",
+   "distMi": 6.3
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 8100,
+   "name": "Bergschrund below the southeast face",
+   "note": "A short Class 4-5 rock pitch is needed to clear the bergschrund guarding the face; a rap sling has been reported on the right (east) side for the descent moat.",
+   "type": "Hazard",
+   "distMi": 6.8
+  },
+  {
+   "lat": 48.554293,
+   "lng": -121.1042829,
+   "elev": 8485,
+   "name": "Klawatti Peak",
+   "note": "True summit, a rock nunatak ringed by the Klawatti, McAllister, and Inspiration Glaciers; the final few hundred feet above the schrund are 40-55° snow leading to low-5th-class rock.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Clear the bergschrund on a short class 4 to low-fifth rock step, or a snow bridge if one holds, then climb several hundred feet of 40-55 degree snow to the top of the face. From there the elongated summit crest is an easy scramble; its true high point is hard to pick out."
+  }
+ ]
+}

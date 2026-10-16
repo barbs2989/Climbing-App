@@ -1,0 +1,388 @@
+{
+ "batches": ["b017.json", "b018.json", "b019.json", "b020.json"],
+ "routes_read": 16,
+ "routes": [
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "name": "West Ridge / Walrus Glacier",
+   "area": "Clark Mountain",
+   "contradictions": [
+    {
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[].miles (sum)", "says": "7.5 + 5 + 7.5 = 20 miles"},
+      {"field": "itinerary.totalNote", "says": "roughly 26 miles and 7,300 ft gained/lost total"},
+      {"field": "approach", "says": "(~22-23 miles round trip, 6,200-6,500+ ft one-way gain to the summit)"},
+      {"field": "dist_km", "says": "18.5 (=11.5 mi one-way, matching waypoints' 11.5 mi to summit, i.e. ~23 mi round trip)"}
+     ],
+     "why": "Four fields describing the same 3-day Walrus Glacier trip give three different round-trip totals (20, 22-23, 26 miles); the itinerary's own day-by-day miles don't even match its own totalNote.",
+     "internal_resolution": "dist_km, the waypoints' one-way mileage, and the approach-text figure all cluster around ~22-23 mi round trip; the itinerary.totalNote's 26 mi and the day-miles sum of 20 mi are the outliers in opposite directions.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain for the Walrus Glacier itinerary",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "6500"},
+      {"field": "itinerary.days[].gainFt (sum)", "says": "3100 + 3000 + 0 = 6100"},
+      {"field": "itinerary.totalNote", "says": "roughly ... 7,300 ft gained/lost total"}
+     ],
+     "why": "The header gain stat (6,500 ft) and the itinerary's own per-day gain figures (summing to 6,100 ft) both disagree with the itinerary's own summary sentence, which claims 7,300 ft.",
+     "internal_resolution": "gain_ft (6,500) is corroborated independently by the approach text ('6,200-6,500+ ft') and the approach_variant text ('roughly 6,500 ft of gain'); totalNote's 7,300 ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boulder Basin camp elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[0].note", "says": "Camp in the forested basin around 5,600-6,000 ft"},
+      {"field": "waypoints[name=Boulder Basin camp].elev", "says": "5300"},
+      {"field": "approach", "says": "established camps are spread between roughly 4,900 and 5,300 ft"},
+      {"field": "approach_variants[1].notes", "says": "that basin is the camp ... at roughly 5,300 ft"}
+     ],
+     "why": "Three independent fields (a waypoint, the approach prose, and an approach_variant) all put the standard camp at 4,900-5,300 ft, but the itinerary's own day-1 note puts it 300-1,100 ft higher at 5,600-6,000 ft.",
+     "internal_resolution": "The 4,900-5,300 ft figure is corroborated three separate ways; the itinerary note's 5,600-6,000 ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Aspect/face of the documented Walrus Glacier line",
+     "severity": "medium",
+     "claims": [
+      {"field": "aspect", "says": "W"},
+      {"field": "face", "says": "West Ridge"},
+      {"field": "overview", "says": "its glaciated north and east flanks carry the small Clark (Walrus) Glacier"},
+      {"field": "bivy[name=Boulder Pass and Thunder Basin, White River].notes", "says": "the Walrus Glacier route ... gains the glacier for the east side of the mountain"}
+     ],
+     "why": "The route's own header aspect/face say West, but the itinerary/timing/pitch_detail all follow the Walrus Glacier line, which the route's own overview and bivy notes place on the north/east flank, not the west.",
+     "internal_resolution": "Likely because the route bundles two lines (West Ridge non-glacier + Walrus Glacier) under one aspect value; a climber reading only the header would misjudge sun/snow timing for the glacier crossing.",
+     "needs_research": false
+    },
+    {
+     "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Clark-specific",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[]", "says": "includes 'Mackinaw Shelter camp, North Fork Sauk', 'White Pass and the Foam Creek benches under White Mountain', 'Glacier Gap', 'Kennedy Ridge and the Glacier Creek camps' — all camps for climbing Glacier Peak, a different mountain"},
+      {"field": "overview / approach", "says": "this route's own approach and camps are White River Trailhead / Boulder Creek / Boulder Basin"}
+     ],
+     "why": "Several bivy entries describe camps used to climb Glacier Peak (a different, unrelated peak) rather than Clark Mountain, appearing to be copied boilerplate shared across the whole Dakobed cluster.",
+     "internal_resolution": "The route's own relevant camp (Boulder Pass and Thunder Basin, White River) is present and correct; the Glacier Peak entries are contamination.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "name": "Helmet Butte Standard Route",
+   "area": "Helmet Butte",
+   "contradictions": [
+    {
+     "fact": "Best-season window wider than the stated season",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "June through October offers the most reliable conditions per route reports, with the window potentially stretching from May into November"}
+     ],
+     "why": "best_season claims June and October (and hedges to May-November) are part of the most-reliable window, which falls outside the stated Jul-Sep season rather than inside it.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager / ranger district for this route's own access section",
+     "severity": "high",
+     "claims": [
+      {"field": "access.landManager", "says": "...the Trinity/Buck Creek Pass approach is managed by the Chelan Ranger District"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"},
+      {"field": "access.parking_pass", "says": "Northwest Forest Pass required at Mountain Loop Highway trailheads"},
+      {"field": "emergency.rangerStation", "says": "Chelan Ranger District, Okanogan-Wenatchee National Forest, 428 W. Woodin Ave, Chelan, WA"}
+     ],
+     "why": "Within the same access object, one field names the correct ranger district/forest (Chelan RD, Okanogan-Wenatchee NF, matching emergency.rangerStation), while a duplicate field names an entirely different national forest and ranger district (Mt. Baker-Snoqualmie, Darrington), and the parking-pass note references Mountain Loop Highway, a trailhead corridor nowhere near Trinity/Chiwawa.",
+     "internal_resolution": "landManager and emergency.rangerStation agree (Chelan Ranger District); land_manager and parking_pass look like copy-paste contamination from a Mountain Loop Highway (Darrington-side) route.",
+     "needs_research": false
+    },
+    {
+     "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Helmet Butte-specific",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[]", "says": "includes Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge camps — all for climbing Glacier Peak"},
+      {"field": "approach", "says": "this route's own approach is via Trinity Trailhead and Buck Creek Trail to Pass No Pass"}
+     ],
+     "why": "Several bivy entries describe camps for a different, unrelated peak (Glacier Peak), appearing to be shared boilerplate across the Dakobed cluster.",
+     "internal_resolution": "The route's own relevant camp (Buck Creek Pass and the High Pass camps) is present and correct; the Glacier Peak entries are contamination.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "name": "East Slopes",
+   "area": "Luahna Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the south/southeast ridge line is a variation of this route or a separate route",
+     "severity": "high",
+     "claims": [
+      {"field": "climbing_route[3].label", "says": "Variation: south/southeast ridge (avoids the glacier)"},
+      {"field": "approach_variants[0].baseFinding", "says": "if you never touched a glacier at all, you are on the south-west slopes and south-east ridge line, which is the OTHER ROUTE on this peak and is deliberately glacier-free ... neither is a variation of the other"}
+     ],
+     "why": "The route's own CLIMBING ROUTE breakdown lists the south/southeast ridge as step 4, a 'variation' of this route, while the same route's own approach_variants prose explicitly says that line is a completely separate, unrelated route and 'neither is a variation of the other.'",
+     "internal_resolution": "The approach_variants text is more detailed/deliberate on this exact point (it exists to warn against confusing the two), so climbing_route[3] is the likely error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether this route is glaciated",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scree/talus route (Glacier Peak Wilderness has no dedicated NWAC zone for this remote sub-range; route is only climbed in dry season)"},
+      {"field": "seasonal_hazards.crevasses", "says": "Real hazard — the standard line ... makes a rising traverse across the upper Richardson Glacier with real crevasse hazard (carry glacier travel gear)"},
+      {"field": "approach", "says": "a rising traverse across the upper Richardson Glacier (real crevasse hazard — carry glacier travel gear)"}
+     ],
+     "why": "The avalanche.zone field explicitly labels this a 'non-glaciated' route in the same seasonal_hazards object whose own crevasses field, and the route's own approach/climbing_route text, describe crossing the Richardson Glacier with real crevasse hazard.",
+     "internal_resolution": "Every other field (approach, climbing_route, seasonal_hazards.crevasses, obj_haz) agrees the route crosses a glacier; avalanche.zone's 'non-glaciated' characterization is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints (cumulative distMi to summit)", "says": "0, 4, 5.5, 10.5, 13, 15, 16.5 mi one-way to the summit"},
+      {"field": "dist_km", "says": "37.82 (=23.5 mi)"},
+      {"field": "itinerary.days[].miles (sum)", "says": "6 + 7.5 + 10 = 23.5 miles"},
+      {"field": "itinerary.totalNote", "says": "roughly 23.5 mi ... round trip"}
+     ],
+     "why": "dist_km and the itinerary's own day miles both independently total 23.5 miles round trip, but the waypoints' own cumulative one-way distance to the summit is already 16.5 miles, which would put the round trip near 33 miles — about 40% more than the other three fields agree on.",
+     "internal_resolution": "Three fields (dist_km, itinerary day-sum, itinerary totalNote) agree on 23.5 mi round trip; the waypoints' cumulative distMi is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Luahna-specific",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[]", "says": "includes Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge camps — all for climbing Glacier Peak, a different mountain"}
+     ],
+     "why": "Several bivy entries describe camps for an unrelated peak, appearing to be shared boilerplate across the Dakobed cluster.",
+     "internal_resolution": "The route's own relevant camp (Butterfly Butte and the Pilz Glacier basin camps) is present and correct; the Glacier Peak entries are contamination.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "name": "Southwest Slope - Southeast Ridge",
+   "area": "Luahna Peak",
+   "contradictions": [
+    {
+     "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Luahna-specific",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[]", "says": "includes Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge camps — all for climbing Glacier Peak, a different mountain"}
+     ],
+     "why": "Several bivy entries describe camps for an unrelated peak, appearing to be shared boilerplate across the Dakobed cluster.",
+     "internal_resolution": "The route's own relevant camp (Butterfly Butte and the Pilz Glacier basin camps) is present and correct; the Glacier Peak entries are contamination.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "name": "Southwest Route",
+   "area": "Mount Berge",
+   "contradictions": [
+    {
+     "fact": "totalNote understates both distance and gain vs. the itinerary's own days",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.totalNote", "says": "A demanding ~20-22 mile round trip with roughly 7,000-8,000 ft of cumulative gain crossing two valleys"},
+      {"field": "itinerary.days[].miles (sum)", "says": "10.5 + 3 + 10.5 = 24 miles"},
+      {"field": "itinerary.days[].gainFt (sum)", "says": "6200 + 1000 + 2000 = 9200"},
+      {"field": "gain_ft", "says": "9200"}
+     ],
+     "why": "The itinerary's own per-day miles and gain figures sum to 24 mi / 9,200 ft (the latter matching the header gain_ft exactly), but the itinerary's own summary sentence claims a smaller 20-22 mi / 7,000-8,000 ft trip.",
+     "internal_resolution": "The day-by-day figures and header gain_ft agree with each other (9,200 ft, 24 mi); totalNote is the outlier, understating both by 10-24%.",
+     "needs_research": false
+    },
+    {
+     "fact": "Waypoint distance jump at the summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[name=Exposed gully below summit ridge].distMi", "says": "7.5"},
+      {"field": "waypoints[name=Mount Berge].distMi", "says": "16.92"},
+      {"field": "dist_km", "says": "19.31 (=12 mi)"}
+     ],
+     "why": "The final waypoint jumps from 7.5 mi to 16.92 mi to cover what the route describes as a short final gully/ridge push to the summit — a 9.4-mile increase that is inconsistent with every other distance figure on the route (itinerary ~24 mi round trip, dist_km ~12 mi).",
+     "internal_resolution": "Likely a data error in the final waypoint's distMi (possibly sourced from a different measurement basis, per its 'distFrom: track' tag) rather than a real 9.4-mile stretch.",
+     "needs_research": true
+    },
+    {
+     "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Berge-specific",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[]", "says": "includes Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge camps — all for climbing Glacier Peak, a different mountain"}
+     ],
+     "why": "Several bivy entries describe camps for an unrelated peak, appearing to be shared boilerplate across the Dakobed cluster.",
+     "internal_resolution": "The route's own relevant camp (Buck Creek Pass and the High Pass camps) is present and correct; the Glacier Peak entries are contamination.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_berge_east_ridge",
+   "name": "East Ridge",
+   "area": "Mount Berge",
+   "contradictions": [
+    {
+     "fact": "Pitch count vs. ROUTE BREAKDOWN rows",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "15"},
+      {"field": "pitch_detail", "says": "2 entries: 'Lower Ridge' (300m) and 'Knife-edge, notch & crux' (300m)"}
+     ],
+     "why": "The header states 15 pitches, but the ROUTE BREAKDOWN table that would render on the Plan tab only has 2 rows describing the whole climb.",
+     "internal_resolution": "The two pitch_detail rows appear to be summary sections (each covering many simul-climbed rope-lengths) rather than a literal pitch-by-pitch list, but as rendered this doesn't match the 15-pitch header count.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_alpine_lookout_round_mountain_trail",
+   "name": "Round Mountain Trail (Standard Route)",
+   "area": "Alpine Lookout (Round Mountain)",
+   "contradictions": [
+    {
+     "fact": "timing.totalHrs doesn't equal the sum of its own components",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "6.5"},
+      {"field": "timing.approachTimeHrs", "says": "2.5"},
+      {"field": "timing.summitTimeHrs", "says": "0.5"},
+      {"field": "timing.descentTimeHrs", "says": "2"}
+     ],
+     "why": "2.5 + 0.5 + 2 = 5.0, not the stated total of 6.5 hours — a 1.5-hour gap within the same timing object.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_arrowhead_mountain_south_route",
+   "name": "South Route",
+   "area": "Arrowhead Mountain",
+   "contradictions": [
+    {
+     "fact": "Best season contradicts the route's own description of its most-common (and easier) season",
+     "severity": "high",
+     "claims": [
+      {"field": "best_season", "says": "August"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through September, with August as the single best month"},
+      {"field": "beta", "says": "The route is almost always done with snow on the ground; bare-ground conditions expose brushy, log-choked terrain that is considerably harder to travel"},
+      {"field": "itinerary.cal", "says": "Most commonly climbed Dec-Apr with snow covering the brushy clearcut and loose ground"},
+      {"field": "detailed_rack", "says": "The route is most commonly climbed Dec-April as a winter/spring snow scramble ... A summer ascent (July-Aug) trades snow travel for brush/talus"}
+     ],
+     "why": "best_season and seasonal_guidance both call August (a bare-ground month) the single best month, while the route's own beta, itinerary.cal, and detailed_rack all describe Dec-Apr snow cover as the standard and easier way to climb it, explicitly calling summer/bare-ground travel 'considerably harder.'",
+     "internal_resolution": "Three independent fields (beta, itinerary.cal, detailed_rack) agree this is fundamentally a winter snow route; best_season/seasonal_guidance look like a generic summer-scramble template mismatched to this specific route.",
+     "needs_research": false
+    },
+    {
+     "fact": "One-way approach distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints (cumulative distMi to summit)", "says": "0, 0.15, 0.3, 1, 1.4, 2, 3 mi (3 mi one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "6.1 (round trip, 'Car-to-car scramble')"},
+      {"field": "approach", "says": "Total one-way distance runs roughly 4.5-4.8 miles with about 3,300-3,550 ft of gain"},
+      {"field": "dist_km", "says": "7.2 (=4.47 mi, matching the approach text's one-way figure)"}
+     ],
+     "why": "Waypoints and the itinerary's round-trip mileage agree with each other (3 mi one-way / 6.1 mi round trip), but the approach paragraph explicitly states the one-way distance is 4.5-4.8 miles (which dist_km matches) — about 50% farther than the waypoints imply.",
+     "internal_resolution": "Two fields agree near 3 mi one-way (waypoints, itinerary) and two agree near 4.5-4.8 mi one-way (approach text, dist_km); no majority resolves it internally.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_of_the_mole",
+   "name": "South Face",
+   "area": "Hook Creek Drainage",
+   "contradictions": []
+  },
+  {
+   "id": "wa_southwest_rib_of_the_mole",
+   "name": "Southwest Rib",
+   "area": "Hook Creek Drainage",
+   "contradictions": []
+  },
+  {
+   "id": "wa_east_corner_of_the_mole",
+   "name": "East Corner",
+   "area": "Hook Creek Drainage",
+   "contradictions": []
+  },
+  {
+   "id": "wa_west_face_of_the_mole",
+   "name": "West Face",
+   "area": "Hook Creek Drainage",
+   "contradictions": []
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "name": "North Face of The Mole",
+   "area": "Hook Creek Drainage",
+   "contradictions": [
+    {
+     "fact": "Raptor closure / species cited for a different, named crag",
+     "severity": "medium",
+     "claims": [
+      {"field": "watch_out[0]", "says": "Golden eagles nest on Bridge Creek Wall with closure Jan 1-Aug 15 (1/2 mile buffer)"},
+      {"field": "access.closures", "says": "Bridge Creek Wall closed January 1 - August 15 (raptor nesting protection)"},
+      {"field": "access._raw.special_requirements", "says": "No climbing or travel within 1/2 mile of Bridge Creek Wall during nesting season. Peregrine falcons observed at Snow Creek Wall."},
+      {"field": "overview / name", "says": "The Mole (Edward Peak), Hook Creek Drainage"}
+     ],
+     "why": "The closure and raptor-species notes on this route name 'Bridge Creek Wall' and 'Snow Creek Wall,' which are distinct, separately-named crags in the Icicle Creek canyon — nowhere else in this route's own fields (name, overview, approach, waypoints) is The Mole/Edward Peak identified as either of those formations.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_shock_and_awe",
+   "name": "Shock and Awe",
+   "area": "Hate Rock",
+   "contradictions": [
+    {
+     "fact": "Commitment grade on a boulder problem",
+     "severity": "low",
+     "claims": [
+      {"field": "discipline", "says": "bouldering"},
+      {"field": "pitches", "says": "0"},
+      {"field": "commitment", "says": "III"}
+     ],
+     "why": "Commitment grade III normally denotes a half-day, multi-pitch undertaking, which is incompatible with a 0-pitch V3 boulder problem.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_upper_castle_toprope_wall",
+   "name": "Upper Castle Toprope Wall",
+   "area": "Upper Castle",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_howard_south_slope",
+   "name": "South Slope",
+   "area": "Mount Howard",
+   "contradictions": [
+    {
+     "fact": "Total gain understated vs. the route's own turnaround field",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "4600"},
+      {"field": "turnaround", "says": "The approach alone is long (roughly 12-14.5 miles and 5,000-6,400 ft of gain depending on trailhead ...)"}
+     ],
+     "why": "The header gain stat (4,600 ft) is below even the low end of the route's own turnaround-field range (5,000-6,400 ft), a gap of at least 400 ft and possibly up to 1,800 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

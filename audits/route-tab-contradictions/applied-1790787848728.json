@@ -1,0 +1,38 @@
+{
+ "applied": [
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear"
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "before": {
+    "gain_ft": 1663
+   }
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "before": {
+    "detailed_rack": "No fixed rock rack is documented for this route. The Mountaineers program the Mutchler add-on as a Basic Glacier Climb, so parties carry standard glacier-travel gear (rope, harness, crevasse-rescue hardware, crampons, ice axe) rather than a traditional protection rack.",
+    "pro_needs": "Protection needs are glacier-travel oriented (crevasse-rescue kit, and pickets if the Mutchler Glacier crossing warrants them) rather than rock protection; no fixed anchors or bolted protection are documented on the scrambling sections."
+   }
+  }
+ ]
+}

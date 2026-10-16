@@ -1,0 +1,43 @@
+{
+ "applied": [
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Total round-trip distance"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain 4,500 ft is less than the trailhead-to-summit rise"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "distance and gain: dist_km 25.75 km (16 mi, shown as the one-way approach) and gain_ft 5300 vs itinerary days 7 + 3.5 + 7 mi and 3,200 + 2,200 = 5,400 ft gain, and totalNote '~16 mi and ~5,400 ft round trip'"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "before": {
+    "dist_km": 37.82
+   }
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "before": {
+    "gain_ft": 4500
+   }
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "before": {
+    "dist_km": 25.75
+   }
+  }
+ ]
+}

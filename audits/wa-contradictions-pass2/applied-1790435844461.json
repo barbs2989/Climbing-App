@@ -1,0 +1,238 @@
+{
+ "applied": [
+  {
+   "id": "wa_concord_tower_north_face",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Trail distance to the summit"
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Trail distance to the summit"
+  },
+  {
+   "id": "wa_south_face_center",
+   "column": "rack",
+   "path": [
+    4
+   ],
+   "fact": "Rope for the rappel"
+  },
+  {
+   "id": "wa_the_cave_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Trail distance to the summit"
+  },
+  {
+   "id": "wa_the_cave_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Trail distance to the summit"
+  },
+  {
+   "id": "wa_up_in_arms",
+   "column": "pitch_detail",
+   "path": [
+    5,
+    "notes"
+   ],
+   "fact": "Pitch 6 length"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Trail distance to the summit"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Trail distance to the summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_concord_tower_north_face",
+   "before": {
+    "dist_km": 9.7,
+    "itinerary": {
+     "cal": "Frequently linked with Liberty Bell's Beckey Route and/or Lexington Tower's North Face for a multi-summit day since all share the same col/notch approach — add roughly 3-4 hrs per extra summit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Blue Lake Trail and climber's path up to the notch, then climb the North Face's three moderate pitches — a crack to a ledge, a run-out section past hollow rock and huecos, and cracks/slabs to the summit. Reverse to the notch and descend the Beckey Gully.",
+       "hours": 8,
+       "miles": 6,
+       "title": "Car-to-car: North Face",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 14,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave Blue Lake Trailhead",
+         "detail": ""
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach the col/notch",
+         "detail": "About 1,950 ft gain via the climber's path and gully."
+        },
+        {
+         "time": "+15 min",
+         "label": "Start climbing",
+         "detail": "P1 5.6 crack to a ledge; P2 5.7 past hollow rock and huecos; P3 5.6+/5.7 cracks and slabs to the top."
+        },
+        {
+         "time": "~10:45 AM",
+         "label": "Summit",
+         "detail": "About 2 hrs col-to-summit — this is the easiest, quickest of Concord's lines."
+        },
+        {
+         "time": "+45 min",
+         "label": "Begin descent",
+         "detail": "Reverse to the notch, then descend the Beckey Gully."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the classic 3-pitch North Face and return to the trailhead"
+      }
+     ],
+     "totalNote": "The easiest and quickest of Concord's rock lines — a single day, roughly 7.5-8 hrs car-to-car with only about 2 hours of climbing col-to-summit."
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_center",
+   "before": {
+    "rack": [
+     "Cams to #3 (~1.5 sets)",
+     "Stoppers, plus small cams/RPs for thin sections",
+     "6 alpine draws for rope drag",
+     "3 double-length + 2 shoulder-length slings",
+     "Single dynamic rope (70m ideal for a single-pitch rap)"
+    ]
+   }
+  },
+  {
+   "id": "wa_the_cave_route",
+   "before": {
+    "dist_km": 9.66,
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same Blue Lake Trail approach to the notch above Concord, then a loose, R-rated 3-pitch line up the north-side gully wall opposite the classic North Face. Move deliberately on the looser rock and reverse the same descent gully.",
+       "hours": 9.5,
+       "miles": 6,
+       "title": "Car-to-car: The Cave Route",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 15,
+       "schedule": [],
+       "objective": "Climb the 3-pitch Cave Route and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single day of similar overall length to the other Concord routes (about 9.5 hrs car-to-car), but expect slower, more cautious climbing given the R rating and looser rock."
+    }
+   }
+  },
+  {
+   "id": "wa_up_in_arms",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": true,
+      "bolts": 2,
+      "grade": "5.11",
+      "notes": "Starts about 25 ft left of a large corner below a low bolt. Mantle off a positive edge to clip the first bolt (or stick-clip it), make technical moves past a second bolt, then follow a left-trending crack whose gear is good but hard to see and place. The crux sequence is committing and runs above the gear. Easier ground leads toward a dark corner; move left at the top to build a belay in a clean crack.",
+      "pitch": "P1",
+      "anchor": "gear",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.9",
+      "notes": "Climb the wide crack as it rolls right and goes horizontal, to a stance beneath double cracks on the right. Follow the double cracks to a bolted anchor on a good ledge. The line wanders, so extend placements to control rope drag.",
+      "pitch": "P2",
+      "anchor": "bolted",
+      "lengthM": 30
+     },
+     {
+      "bolts": 1,
+      "grade": "5.10",
+      "notes": "Just right of the anchor, climb crumbly rock that still takes good gear to a bolt, then make a technical move right to a stance above jumbled blocks. Use the twin fish-shaped cracks to reach the left-hand crack and follow it to a broad ledge. Many gear belay options exist; belaying toward the left end sets up the next pitch.",
+      "pitch": "P3",
+      "anchor": "gear",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.7",
+      "notes": "Traverse left beneath the big roof, keeping the ropes high to avoid drag, then go roughly straight up and trend right to an overlap and easy slabby ground. Belay in wide cracks in a small notch on the right. Save the #3 and #4 cams for the next pitch if possible, since this belay uses large pieces.",
+      "pitch": "P4",
+      "anchor": "gear",
+      "lengthM": 45
+     },
+     {
+      "grade": "5.9",
+      "notes": "Head up and slightly left to a finger crack in a small left-facing corner, then traverse left in a shallow feature (protectable) and make a heady step up to a crack before moving right onto a dike. Where the crack ends, walk far right along the dike to the next crack, then climb wide cracks to a pod and belay on medium gear behind a flake. PG13; the pitch wanders, so belay early if drag builds.",
+      "pitch": "P5",
+      "anchor": "gear",
+      "lengthM": 40
+     },
+     {
+      "grade": "5.7",
+      "notes": "From the pod, one full 60 m rope length reaches the summit; parties that stopped short on the previous pitch will need to split this into two. Follow the wide crack through the right-facing corner above, watch for loose boulders near its top, then easy ground leads to the summit.",
+      "pitch": "P6",
+      "lengthM": 45
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "before": {
+    "dist_km": 9.7,
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach to the col/notch as the standard North Face. Share its first pitch, then break right into a sustained 5.8 crack-to-chimney crux pitch, finishing with an easy low-fifth pitch to the summit.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Car-to-car: North Face Var. Right (Directissimo)",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 16,
+       "schedule": [],
+       "objective": "Climb the Directissimo variant of the North Face"
+      }
+     ],
+     "totalNote": "A standard single day (about 9 hrs car-to-car); a bit slower than the easier 5.7 North Face due to the sustained 5.8 offwidth/chimney crux."
+    }
+   }
+  }
+ ]
+}

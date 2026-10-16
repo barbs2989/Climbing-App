@@ -1,0 +1,326 @@
+[
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "area_id": "wa_agnes_mountain",
+  "access": {
+   "fees": "The wilderness permit costs $10 per person plus a $6 fee, youth 15 and under free. A Lake Chelan shuttle boat or floatplane fare is also required to reach Stehekin.",
+   "permit": "Free self-issued wilderness permit at the trailhead for Glacier Peak Wilderness; NPS backcountry permit from the Wilderness Information Center in Marblemount required for overnight stays on the Lake Chelan NRA/PCT portion of the approach.",
+   "closures": "No specific closures found for this peak; check current NPS/USFS alerts before a trip.",
+   "landManager": "U.S. Forest Service — Okanogan-Wenatchee National Forest, Glacier Peak Wilderness (PCT/Agnes Creek approach corridor from High Bridge is within the NPS Lake Chelan National Recreation Area)",
+   "passRequired": "A Northwest Forest Pass or interagency pass may be required at some Forest Service trailheads in the area."
+  },
+  "road": {
+   "name": "Stehekin Valley Road",
+   "status": "No outside vehicle access — Stehekin is reached only by Lake Chelan passenger ferry, floatplane, or trail; an NPS shuttle serves the valley road from the boat landing to High Bridge.",
+   "driveNote": "There is no public road connecting Stehekin to the outside highway network; plan around ferry/floatplane schedules.",
+   "seasonalGate": null
+  }
+ },
+ {
+  "id": "wa_agnes_mountain_west_route",
+  "area_id": "wa_agnes_mountain",
+  "access": {
+   "fees": "No NPS entrance fee; a free wilderness permit is required for overnight camping. The first ~2 miles from High Bridge (inside North Cascades NP) fall under the NPS backcountry-permit process; beyond that, in the Glacier Peak Wilderness (Okanogan-Wenatchee NF), a free self-issue trailhead permit applies.",
+   "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+   "permit": "Free NPS backcountry permit (Wilderness Information Center/Golden West Visitor Center) only applies if camping within the first ~2 mi from High Bridge, inside North Cascades NP. For camps beyond that boundary — including the standard high camps used for this climb (Icy-Spruce Creek Pass, Upper Blue Basin, etc.) — a free, self-issue USFS wilderness permit obtained at the trailhead covers the Glacier Peak Wilderness portion; no NPS office visit is required for those.",
+   "closures": "Stehekin-area roads/trails have been affected by Dec 2025 flood damage; North Cascades Lodge at Stehekin is not operating public services in 2026 — check the NPS Stehekin Flood Response Update page for current Agnes Creek Trail/High Bridge shuttle status before planning",
+   "group_limit": 12,
+   "landManager": "Most of the route (beyond the first ~2 miles from High Bridge) and the summit itself lie within the Okanogan-Wenatchee National Forest's Glacier Peak Wilderness (USFS) — only the initial ~2 miles of the Agnes Creek Trail from High Bridge are within North Cascades National Park Service Complex (Stephen Mather Wilderness) / Lake Chelan National Recreation Area.",
+   "land_manager": null,
+   "parking_pass": "No trailhead parking — High Bridge has no road access. Park at Fields Point Landing to board the boat: overnight parking there is $9/night or $45/week.",
+   "passRequired": "None — no day-use pass on either the NPS or USFS wilderness portions; only a free wilderness permit is needed.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  },
+  "road": {
+   "driveNote": "No road access; reached via Lady of the Lake/Lady Express passenger ferry or floatplane to Stehekin, then the High Bridge shuttle or trail",
+   "seasonalGate": "High Bridge shuttle runs seasonally (roughly June-Sept 2026) from Stehekin Landing; verify current flood-recovery status before relying on it"
+  }
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "area_id": "wa_dark_peak",
+  "access": {
+   "fees": "No fee for wilderness travel or camping itself; the Stehekin Valley shuttle bus fare is roughly $10/adult each way, and the Lake Chelan ferry/floatplane fare is separate and not free",
+   "rules": "Group size capped at 12 (people + stock combined) — same Glacier Peak Wilderness system that covers Glacier Peak itself (one contiguous wilderness spanning both Mt. Baker-Snoqualmie and Okanogan-Wenatchee National Forests).",
+   "permit": "A free NPS backcountry/wilderness camping permit is required for designated campsites along the Agnes Creek corridor (Fivemile Camp, Swamp Creek Camp); permits have historically been issued in Stehekin at the Golden West Visitor Center, which has had reduced/no seasonal ranger staffing in recent years -- confirm the current permit process with North Cascades National Park before the trip",
+   "closures": "Stehekin Valley Road and area trails sustained significant damage from December 2025 atmospheric-river flooding and debris flows; an interim elevated road section (Company Creek Road) was completed by June 2026, but NPS trail crews were still reconstructing damaged trails park-wide as of mid-2026 -- check the park's Trail Conditions page and Stehekin flood-update page before attempting this route",
+   "group_limit": 12,
+   "landManager": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) on the peak and upper basin/glacier; the High Bridge/Agnes Creek Trail approach corridor lies within the Lake Chelan National Recreation Area, North Cascades National Park Service Complex",
+   "land_manager": "Okanogan-Wenatchee National Forest (Chelan Ranger District) — Glacier Peak Wilderness",
+   "parking_pass": "Northwest Forest Pass required at some trailheads (fee day-use sites) — $5/day or $30/year.",
+   "passRequired": null,
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  },
+  "road": {
+   "name": "Stehekin Valley Road",
+   "status": "Open from Stehekin Landing to High Bridge as of the 2026 season, following major December 2025 flood/debris-flow damage; NPS trail crews were still reconstructing damaged sections park-wide as of mid-2026",
+   "driveNote": "No public highway connects Stehekin to the outside road network. Access is by Lake Chelan Boat Company passenger ferry (Lady Express ~2.5 hrs or Lady II ~4 hrs) or floatplane from Chelan, followed by the Stehekin Valley shuttle bus/van (~$10/adult each way) to High Bridge, the trailhead and end of the road.",
+   "seasonalGate": "Lady of the Lake ferry runs a reduced winter schedule (roughly Nov-Apr) versus daily summer service"
+  }
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "area_id": "wa_devore_peak",
+  "access": {
+   "fees": "No fee to climb; a round-trip passenger ferry (Lake Chelan Boat Co. 'Lady of the Lake' or Stehekin Ferry) or floatplane fare is required to reach Stehekin.",
+   "rules": "Glacier Peak Wilderness group-size and camping regulations apply on USFS-managed sections; NPS backcountry regulations (bear canister requirements, designated-site rules) apply within the Lake Chelan National Recreation Area near Stehekin and Weaver Point.",
+   "permit": "No permit is required for the Weaver Point boat-in campground itself (first-come, first-served). For off-trail/cross-country backcountry camping elsewhere on the route, NPS North Cascades now requires a paid backcountry permit — $10/person/night plus a $6 non-refundable reservation fee (in effect since a March 2024 fee-structure change), booked via recreation.gov (60% of sites) or obtained walk-up (40% held); contact the park's wilderness office (noca_wilderness@nps.gov, 360-854-7200) or the Golden West Visitor Center in Stehekin (509-699-2080 ext. 14) if open for current conditions.",
+   "landManager": "Chelan Ranger District, Okanogan-Wenatchee National Forest (Glacier Peak Wilderness) for the upper mountain; Lake Chelan National Recreation Area, National Park Service (North Cascades NP Complex) for the Stehekin/Weaver Point trailhead corridor.",
+   "passRequired": "None at the Stehekin-area trailheads (NPS land, no entrance fee or Northwest Forest Pass required); a Northwest Forest Pass may be needed only if accessing via a separate front-country Wenatchee NF trailhead.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "Free self-issue Glacier Peak Wilderness permit; an NPS backcountry permit for any night inside Lake Chelan NRA",
+    "where": "Bird Creek camps are in the Glacier Peak Wilderness: fill out the self-issue permit at the trail register. Nights in the Stehekin valley or at Weaver Point need an NPS permit, reserved on Recreation.gov or picked up in Stehekin."
+   }
+  }
+ },
+ {
+  "id": "wa_eagle_rock_scramble",
+  "area_id": "wa_eagle_rock",
+  "road": {
+   "name": "US-2 to 0.8 mi east of Skykomish, then Beckler River Road (FR65) 0.6 mi to FR6510, then FR6510 → FR6514 → FR6517 for 10.8 mi to the trailhead parking area (~4,150 ft elevation), about 0.5 mi/0.8 mi short of the summit",
+   "status": "Rough, narrow Forest Service spur roads with a documented history of washouts, downed trees, blown culverts, and sinkholes on this section of the Skykomish Ranger District",
+   "driveNote": "Paved highway (US-2) to gravel/dirt forest roads; narrow and rough in spots, high-clearance vehicle recommended. MBS National Forest's current-conditions reports have noted shoulder damage on FR65 near milepost 7.4 and 12.1 — check current conditions with the Skykomish Ranger Station before driving, especially after storms."
+  }
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "area_id": "wa_flora_mountain",
+  "access": {
+   "fees": "No fee for the hike itself; the NPS shuttle bus from Stehekin Landing to Harlequin Bridge costs $5 one-way, and the Lake Chelan ferry (Lady of the Lake) to Stehekin is a separate paid fare.",
+   "notes": "Mixed jurisdiction: the lower Stehekin valley near the boat/floatplane landing is NPS (Lake Chelan NRA); if a party camps at an NPS-side site en route, an NPS backcountry permit would apply for that night specifically.",
+   "rules": "Group size capped at 12 in the Glacier Peak Wilderness portion.",
+   "permit": "No permit required for day hiking; camping at Bird Creek Camp falls within the Glacier Peak Wilderness (USFS), which does not require a wilderness permit, though the initial corridor out of Stehekin passes through NPS-managed Lake Chelan National Recreation Area.",
+   "closures": null,
+   "group_limit": 12,
+   "landManager": "North Cascades National Park Complex / Lake Chelan National Recreation Area (NPS) for the Stehekin approach corridor; Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (USFS) for the Devore Creek Trail beyond the wilderness boundary, including Bird Creek Camp and the summit.",
+   "land_manager": "U.S. Forest Service — Glacier Peak Wilderness (approach partly crosses NPS Lake Chelan National Recreation Area)",
+   "passRequired": "No parking pass reportedly required.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  }
+ },
+ {
+  "id": "wa_grotto_mountain_e_route",
+  "area_id": "wa_grotto_mountain",
+  "road": {
+   "name": "US-2 / local spur roads",
+   "status": "open",
+   "driveNote": "Access varies; private land near the base.",
+   "seasonalGate": null
+  }
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "area_id": "wa_middle_peak",
+  "access": {
+   "fees": "Northwest Forest Pass or America the Beautiful interagency pass required to park at Downey Creek Trailhead (~$5/day or $30/yr)",
+   "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+   "permit": "Free self-issue wilderness permit at the trailhead (no quota/reservation)",
+   "closures": "USFS closure order on Suiattle River Road (FR-26) at milepost 4 due to atmospheric-river flood damage, in effect April 2, 2026 through January 1, 2028 (unless rescinded sooner) - this cuts vehicle access to the Downey Creek Trailhead, the standard west-side approach. The only practical approach while this is in effect is the longer east-side route via the Lady of the Lake ferry to Stehekin and the PCT/Agnes Creek Trail, then cross-country to the Blue Glacier on the range's east side. Check current Mt. Baker-Snoqualmie NF alerts before planning a west-side trip.",
+   "group_limit": 12,
+   "landManager": "Glacier Peak Wilderness - Mount Baker-Snoqualmie National Forest (Darrington Ranger District) on the west/Downey Creek side; Okanogan-Wenatchee National Forest (Chelan Ranger District) on the east/Stehekin side",
+   "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+   "parking_pass": "Northwest Forest Pass required at the Downey Creek Trailhead on the Suiattle River Road — $5/day or $30/year.",
+   "passRequired": "Northwest Forest Pass / interagency pass",
+   "overnight_permit": {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+    "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+    "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+   }
+  }
+ },
+ {
+  "id": "wa_mcgregor_mountain_scramble",
+  "area_id": "wa_mcgregor_mountain",
+  "access": {
+   "fees": "NPS valley shuttle bus, High Bridge to/from Stehekin Landing: $10/adult, $5/child one-way (peak-season rate); Lady of the Lake round-trip ferry from Chelan or Field's Point: roughly $40.50/adult",
+   "notes": "This corridor is inside the Lake Chelan National Recreation Area (North Cascades National Park Service Complex). No Mount Rainier-style climbing fee applies here.",
+   "rules": "Pets and hunting prohibited in this NPS unit; hiker and stock use permitted on the trail",
+   "permit": "Free NPS backcountry permit required for any overnight stay (e.g. Heaton Camp, a single-party site for up to 12 people/stock at 7,000 ft); walk-up permits are issued at the Golden West Visitor Center in Stehekin, or reserved ahead for $20 plus a non-refundable $6 fee",
+   "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+   "landManager": "Lake Chelan National Recreation Area (North Cascades NP complex)",
+   "land_manager": "Lake Chelan National Recreation Area (North Cascades National Park Service Complex)",
+   "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  },
+  "road": {
+   "name": "Stehekin Valley Road / NPS shuttle corridor to High Bridge",
+   "status": "Gravel valley road served by NPS shuttle bus only — Stehekin itself has no highway connection to the outside road network and is reached only by boat, floatplane, or trail",
+   "seasonalGate": "Full shuttle schedule roughly June 5-Sept 30; limited weekend (and on-request mid-week) early/late-season service April 6-June 6"
+  }
+ },
+ {
+  "id": "wa_mount_lyall_south_route",
+  "area_id": "wa_mount_lyall",
+  "access": {
+   "fees": "Lady of the Lake passenger ferry or floatplane fare to Stehekin; NPS backcountry permit fee ($10/person + $6 reservation fee) if camping within North Cascades National Park near High Bridge",
+   "rules": "Leave No Trace; wilderness group-size limits apply; backcountry camping within the national park requires a permit even outside the park a free USFS self-issue wilderness permit applies",
+   "permit": "NPS wilderness permit (reservation via recreation.gov, lottery + walk-up) for camping near High Bridge/Agnes Creek inside the park; USFS self-issue permit once in Glacier Peak Wilderness",
+   "landManager": "Glacier Peak Wilderness (Okanogan-Wenatchee National Forest) for most of the route; the initial approach corridor from High Bridge lies within the Stephen Mather Wilderness, North Cascades National Park Service Complex (NPS)",
+   "passRequired": "No Forest Service trailhead pass needed at High Bridge (reached via boat/PCT, not a drive-to trailhead); NPS wilderness permit required for in-park camping",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  },
+  "road": {
+   "name": "Stehekin (Lake Chelan) access",
+   "status": "No public through-road; Stehekin is roadless and reached only by boat, floatplane, or trail",
+   "driveNote": "No road connects to Stehekin — reach it by passenger ferry or floatplane up Lake Chelan from Chelan, then travel the Stehekin Valley Road/PCT corridor to the High Bridge trailhead."
+  }
+ },
+ {
+  "id": "wa_needle_peak_north_ridge",
+  "area_id": "wa_needle_peak",
+  "access": {
+   "fees": null,
+   "permit": null,
+   "closures": null,
+   "landManager": "Okanogan-Wenatchee National Forest",
+   "passRequired": null,
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  }
+ },
+ {
+  "id": "wa_needle_peak_south_route",
+  "area_id": "wa_needle_peak",
+  "access": {
+   "fees": "Lady of the Lake ferry from Chelan (fares vary by boat/season) or floatplane charter to reach Stehekin; Stehekin shuttle bus to High Bridge is about $10/adult, $5/child one-way. No separate climbing fee.",
+   "rules": "Standard NPS wilderness regulations apply in the park/NRA portion (permit and, where applicable, designated-site camping, bear canister recommended); standard Leave No Trace and USFS wilderness group-size limits apply once past the wilderness boundary.",
+   "permit": "An NPS wilderness/backcountry permit is required for any overnight camping within the North Cascades National Park Complex boundary (the lower Agnes Creek Trail corridor) — $10/person plus a $6 non-refundable reservation fee if booked in advance via recreation.gov, or self-issued at the Stehekin Ranger Station when the Wilderness Information Center is unstaffed. Once across into the Glacier Peak Wilderness (USFS) near Swamp Creek, permits are free, self-issued trailhead registers.",
+   "closures": "Stehekin Valley Road and the village have faced wildfire evacuation closures in recent fire seasons (e.g., the 2024 Pioneer Fire) — check NPS and Chelan County alerts before a trip.",
+   "landManager": "North Cascades National Park Complex / Lake Chelan National Recreation Area (NPS) covers the Stehekin–High Bridge–lower Agnes Creek corridor; the route transitions into the Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) for the Swamp Creek approach and the peak itself.",
+   "passRequired": "None for day use of the National Forest portion; an NPS wilderness camping permit (see Permit) is required for overnight stays within the Park/NRA portion.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+    "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+   }
+  },
+  "road": {
+   "name": "Stehekin Valley Road (boat landing to High Bridge)",
+   "status": "Not connected to any outside highway — Stehekin is accessible only by boat, floatplane, or trail. Within the valley, the road is a local shuttle/bike route from the boat landing to High Bridge (~11 mi).",
+   "driveNote": "Reach Stehekin via the Lady of the Lake ferry from Chelan or by floatplane charter; from the boat landing, ride the Stehekin shuttle bus (~$10 adult one-way) or bike/walk the valley road to the High Bridge trailhead.",
+   "seasonalGate": "Ferry and shuttle run year-round on a reduced winter schedule; the trail beyond High Bridge is typically snow-free from July into October."
+  }
+ },
+ {
+  "id": "wa_rimrock_ridge_scramble",
+  "area_id": "wa_rimrock_ridge",
+  "access": {
+   "fees": "2026 NPS backcountry fees: $6 non-refundable permit reservation fee plus $10/person/night camping fee within the park boundary (ages 15 and under free); the Forest Service wilderness permit beyond the park boundary is free. Ferry fare to/from Stehekin and any High Bridge shuttle fee are separate.",
+   "rules": "Leave No Trace travel required; camping is restricted to designated/permitted sites within the park/NRA portion of the approach. Food storage from bears is essential — aggressive bear activity has been reported in 2026 at PCT camps in this corridor (Fireweed and South Fork camps in particular).",
+   "permit": "An NPS wilderness permit is required for any overnight camping within the park/NRA boundary near High Bridge (reserve on recreation.gov or get a walk-up permit at the Golden West Visitor Center in Stehekin). Once across into the Glacier Peak Wilderness (Forest Service land), only a free self-issue wilderness permit is required, available at trailhead registration boxes.",
+   "closures": "As of mid-2026 the Stehekin area is still recovering from a historic December 2025 flood: Company Creek Road lost roughly 1,000 ft of roadbed and a levee (an elevated interim road was completed June 23, 2026); North Cascades Lodge at Stehekin is closed for the season (no lodging, dining, fuel, or showers, though ferry and postal service continue); the High Bridge shuttle bus is not running for 2026. On the trail itself, the Agnes Creek bridge at Hemlock Camp (south of the park boundary, in the Glacier Peak Wilderness) is out of service and camping at Hemlock Camp is considered unsafe due to hazard trees — use Cedar Camp or the South Fork Agnes Creek camp instead. Confirm current conditions with the Wilderness Information Center (360-854-7245) before going.",
+   "group_limit": 12,
+   "landManager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area for roughly the first mile out of High Bridge, then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness, for the remainder of the approach and the peak itself.",
+   "land_manager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area (first mile out of High Bridge), then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness",
+   "parking_pass": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+   "passRequired": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades NP wilderness permit for the Stehekin valley camps — quota, fee",
+    "where": "Reserve on Recreation.gov and contact the park the day before, as there are no permit services in Stehekin. Camping beyond the park boundary in the Glacier Peak Wilderness needs no park permit."
+   }
+  },
+  "road": {
+   "name": "Stehekin Valley Road (boat landing to High Bridge)",
+   "status": "Not connected to any outside highway — Stehekin is accessible only by boat, floatplane, or trail. Within the valley, the road is a local shuttle/bike route from the boat landing to High Bridge (~11 mi).",
+   "driveNote": "No road connects Stehekin to the outside highway network — access is by the Lady of the Lake ferry from Chelan (Lady Express ~2.5 hrs, Lady II ~4 hrs), by floatplane, or on foot over Cascade Pass; from Stehekin Landing it is roughly 11 miles up Stehekin Valley Road to the High Bridge/Agnes Creek trailhead.",
+   "seasonalGate": "Ferry and shuttle run year-round on a reduced winter schedule; the trail beyond High Bridge is typically snow-free from July into October."
+  }
+ },
+ {
+  "id": "wa_storm_king_north_face",
+  "area_id": "wa_storm_king",
+  "access": {
+   "fees": "No park entrance fee; ferry/floatplane transport to Stehekin is a separate paid service.",
+   "notes": "Camping permit required (North Cascades National Park). Access via seaplane (Chelan Seaplanes) or Lady of the Lake ferry to Stehekin, then 11-mile shuttle to High Bridge Camp. Upper Stehekin River Road permanently closed. Best season July-September. Check avalanche conditions in spring/early summer.",
+   "permit": "Free wilderness/backcountry camping permit required for overnight stays; reserve via recreation.gov or self-issue/pick up at the Wilderness Information Center.",
+   "closures": "No route-specific closures found; check current NPS trail/fire closures for the Park Creek/Thunder Creek/Stehekin corridors.",
+   "landManager": "North Cascades National Park (National Park Service)",
+   "passRequired": "No federal recreation pass required for the park; backcountry permit required for overnight camping.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+    "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+   }
+  },
+  "road": {
+   "name": "Stehekin Valley Road (shuttle-only) / Cascade River Road (alternate approach)",
+   "status": "No public vehicle access to Stehekin itself; reached only by boat, floatplane, or trail. Cascade River Road (alternate approach) is a gravel USFS/NPS road.",
+   "driveNote": "Same access as the Southwest Route: Lady of the Lake ferry or floatplane from Chelan to Stehekin, then NPS shuttle to High Bridge Camp, or the Cascade Pass Trailhead alternate.",
+   "seasonalGate": "Cascade River Road typically opens as snow allows in late spring/early summer and is gated for winter."
+  }
+ },
+ {
+  "id": "wa_sw_ridge",
+  "area_id": "wa_middle_peak",
+  "access": {
+   "fees": "Lady of the Lake ferry runs roughly $40-45 one-way (Chelan-Stehekin); no vehicle/trailhead fee since there is no road access",
+   "permit": "NPS backcountry permit required for camping within the Lake Chelan NRA (obtained at the Golden West Visitor Center, Stehekin); a self-issued USFS wilderness permit applies once past the NRA boundary into Glacier Peak Wilderness",
+   "closures": null,
+   "landManager": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District); the first ~2 miles of the approach from High Bridge lie within the Lake Chelan National Recreation Area (National Park Service)",
+   "passRequired": "None (no Northwest Forest Pass needed; access is by boat/shuttle, not vehicle)",
+   "overnight_permit": {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+    "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+    "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+   }
+  },
+  "road": {
+   "name": "Stehekin Valley Road (High Bridge)",
+   "status": "Not connected to the outside highway network - Stehekin has no road link to Chelan",
+   "driveNote": "Reached only via the Lady of the Lake passenger ferry (~50 mi, ~2.5-3 hrs) from Fields Point Landing/Chelan to Stehekin, then an NPS shuttle bus up the Stehekin Valley Road (~11 mi) to High Bridge Campground, the PCT trailhead.",
+   "seasonalGate": null
+  }
+ },
+ {
+  "id": "wa_tupshin_peak_east_face",
+  "area_id": "wa_tupshin_peak",
+  "access": {
+   "fees": "No wilderness entry fee; ferry/floatplane to Stehekin is a paid service",
+   "permit": "Free self-issue wilderness permit typically required at National Forest trailheads; NPS backcountry permit required for designated NRA campsites",
+   "closures": "Check current Okanogan-Wenatchee NF and NPS Stehekin alerts — wildfire closures have affected this area in past years",
+   "landManager": "Okanogan-Wenatchee National Forest, Chelan Ranger District (Glacier Peak Wilderness); Stehekin approach corridor is Lake Chelan National Recreation Area (North Cascades National Park Complex)",
+   "passRequired": null
+  }
+ },
+ {
+  "id": "wa_tupshin_peak_scramble",
+  "area_id": "wa_tupshin_peak",
+  "access": {
+   "fees": "Round-trip Lady of the Lake/Lady Express passenger ferry fare from Fields Point Landing to Stehekin (check current rates at ladyofthelake.com); the in-valley Stehekin shuttle bus runs about $10/adult one-way (2026 rate, Stehekin Valley Adventures) if you don't walk from the Landing to Harlequin Bridge. The wilderness permit itself is free.",
+   "permit": "Once past the NPS boundary, a free, self-issued Glacier Peak Wilderness permit (available at the trailhead, no reservation or fee) covers the climb and Bird Creek camp. If you camp overnight anywhere within the Lake Chelan NRA/Stehekin corridor before reaching the wilderness boundary, an NPS backcountry permit is required (reservable via recreation.gov or in person at the Golden West Visitor Center in Stehekin).",
+   "closures": "Stehekin suffered major flooding and landslides in December 2025 — a levee failure sent the Stehekin River into Company Creek Road near Harlequin Bridge — with a further damaging flood event in March 2026; recovery work was still ongoing into summer 2026. As of June 2026 the Stehekin Valley Road was reported open from the Landing to Stehekin Valley Ranch, but check the NPS 'Stehekin Flood Response Update' page and the Chelan Ranger District before a trip, since the Harlequin Bridge/Devore Creek approach corridor was directly affected by the flood.",
+   "landManager": "The lower approach (Stehekin River Trail near Harlequin Bridge and the Devore Creek trailhead) lies within the North Cascades National Park Service Complex — Lake Chelan National Recreation Area (NPS). The Devore Creek Trail then crosses into the Glacier Peak Wilderness on the Okanogan-Wenatchee National Forest (Chelan Ranger District) for the climb itself.",
+   "passRequired": "No Northwest Forest Pass needed at this boat-in trailhead; wilderness permits (above) are the operative requirement.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "Free self-issue Glacier Peak Wilderness permit; an NPS backcountry permit for any night inside Lake Chelan NRA",
+    "where": "Bird Creek camps are in the Glacier Peak Wilderness: fill out the self-issue permit at the trail register. Nights in the Stehekin valley or at Weaver Point need an NPS permit, reserved on Recreation.gov or picked up in Stehekin."
+   }
+  }
+ }
+]

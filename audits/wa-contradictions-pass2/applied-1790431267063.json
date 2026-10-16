@@ -1,0 +1,87 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "before": {
+    "alpine_grade": "Grade II",
+    "commitment": "I",
+    "waypoints": [
+     {
+      "lat": 48.7067849,
+      "lng": -121.8129229,
+      "elev": 3200,
+      "name": "Schriebers Meadow / Park Butte Trailhead",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.797,
+      "lng": -121.875,
+      "elev": 6500,
+      "name": "Crag View Camp",
+      "type": "Campsite",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mount Baker Summit",
+      "type": "Summit",
+      "distMi": 9
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "before": {
+    "grade": "Grade II Snow",
+    "alpine_grade": "Grade II",
+    "commitment": "I"
+   }
+  }
+ ]
+}

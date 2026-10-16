@@ -1,0 +1,201 @@
+{
+ "applied": [
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Protection on the dike-streaked shield (pitch 1)"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Protection on the dike-streaked shield (pitch 1)"
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Imperfect Impasse elevation"
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Where the Easy Ridge path starts"
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "before": {
+    "detailed_rack": "A standard alpine rock rack: cams from small to about 3 inches, a set of nuts, and extra slings for the corner and ledge pitches; rock is generally sound and holds gear well throughout, including on the dike-streaked shield. Add glacier travel gear (rope, crevasse-rescue kit, ice axe, crampons) for the Challenger Glacier crossing on approach and descent.",
+    "pro_needs": "Gear anchors throughout — the rock is sound and protects well. Fixed anchors (bolts) are prohibited across the surrounding Stephen Mather Wilderness, so retreat and belays rely entirely on removable protection."
+   }
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.9102,
+      "lng": -121.5941,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Start point for the 2-day approach (Hannegan Pass -> Easy Ridge -> Pickell Pass) used on this route's first ascent.",
+      "type": "Trailhead",
+      "elevFt": 3120,
+      "directions": "Drive Forest Road 32, the Hannegan Pass Road, to its end at the Hannegan Pass Trailhead at about 3,120 ft. The road is normally open to the trailhead through summer and early fall but has a documented history of washout damage needing bypass construction, so confirm current status with the Glacier Public Service Center before driving in. Park with a Northwest Forest or interagency pass displayed; the overnight wilderness permit for everything past Hannegan Pass is a separate Park Service permit picked up in Glacier or Marblemount."
+     },
+     {
+      "lat": 48.88374,
+      "lng": -121.53347,
+      "elev": 5100,
+      "name": "Hannegan Pass",
+      "note": "High point of the maintained Hannegan Pass Trail (#674); stay on the maintained trail here and descend into the Chilliwack valley; the cross-country toward Easy Ridge starts far below, after the river ford, and the Copper Ridge trail branches down in the valley rather than at the pass.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Follow the maintained Hannegan Pass Trail #674 up the Ruth Creek valley, about 4 miles and roughly 2,000 ft of gain to the 5,050 ft pass, with Mount Sefrit and Nooksack Ridge across the valley. The grade is gentle and the tread is good the whole way, and the Ruth Creek crossings in the first couple of miles carry reliable water."
+     },
+     {
+      "lat": 48.8727739,
+      "lng": -121.487756125,
+      "elev": 2750,
+      "name": "Chilliwack River ford",
+      "note": "Ford the Chilliwack River below Easy Ridge on the climbers' path past Copper Creek before switchbacking back up; can be a cold, thigh-deep crossing in early season.",
+      "type": "Water",
+      "distMi": 9,
+      "directions": "From the pass the maintained trail keeps going, and this is the stretch people get wrong: do not leave it here. Descend the switchbacks north-east into the Chilliwack valley, losing about 1,500 ft over roughly three miles to the Copper Creek area at a little over 3,000 ft, where the Copper Ridge trail branches away and is not your turn. Continue past it on the climbers' path and drop to the Chilliwack River ford below Easy Ridge. The crossing is cold and can run thigh-deep in early season, so pick a braided section, unclip your hipbelt, and cross before the afternoon melt comes down. The climbers' path switchbacks straight back up the far side, so this low point at about 2,750 ft is the bottom of the whole approach."
+     },
+     {
+      "lat": 48.8474039,
+      "lng": -121.37145793750001,
+      "elev": 6600,
+      "name": "Bivy beyond Easy Peak",
+      "note": "Established climbers' bivy near the summit of Easy Peak (6,613'), reached via the Easy Ridge climbers' path gained above Hannegan Pass; typical end of day one.",
+      "type": "Campsite",
+      "distMi": 14.5,
+      "directions": "From the river, switchback steeply back up onto Easy Ridge and then follow the crest itself. This is a hot, dry, open, south-facing ridge with almost no shade; flowing water shows up relatively early along it, but the first-ascent party warned this stretch would be brutal later in the season and in dry years, so fill up while you can. Continue along and over Easy Peak to the established bivy beyond it, roughly a ten-hour day with a full pack from the trailhead."
+     },
+     {
+      "lat": 48.844021233333336,
+      "lng": -121.35595151250001,
+      "elev": 7000,
+      "name": "Imperfect Impasse",
+      "note": "A notch on Easy Ridge that must be downclimbed and re-ascended to continue toward the Pickets proper; exposed and slower than it looks from a distance.",
+      "type": "Hazard",
+      "distMi": 15.5,
+      "directions": "Leave camp and keep going along the ridge off-trail toward the Pickets, dropping to the cleft known as the Imperfect Impasse. This leg is route-finding and exposed scrambling rather than walking, and the notch has to be downclimbed and then re-ascended on the far side; parties consistently find it slower than it looks from a distance."
+     },
+     {
+      "lat": 48.837497425,
+      "lng": -121.347398725,
+      "elev": 8000,
+      "name": "Challenger Col",
+      "note": "Snow/glacier col that gains the western slope of the range; parties have noted a bergschrund forming near its top by mid-to-late season.",
+      "type": "Junction",
+      "distMi": 16.5,
+      "directions": "Out of the notch, regain elevation onto the flank of Mount Challenger and climb through Challenger Col. This is snow and glacier ground rather than rock, so rope up and treat it as crevassed terrain; parties have reported a bergschrund opening near the top of the col by mid to late season."
+     },
+     {
+      "lat": 48.827832475,
+      "lng": -121.345799575,
+      "elev": 7300,
+      "name": "Pickle Pass",
+      "note": "Gap below Spectre's serrated south ridge of hoodoos, visible from Frenzel Camp, where the technical climbing on the route begins.",
+      "type": "Junction",
+      "distMi": 17.5,
+      "directions": "From the col, traverse the southern Challenger cirque toward the west ridge of Phantom Peak, staying roped near the pocket glacier. Phantom's west and south ridge is the usual second bivy and where most parties stop for the night. Pickle Pass itself can hold snow well into the season, and the first-ascent party found it snowed over and skirted it rather than crossing."
+     },
+     {
+      "lat": 48.812,
+      "lng": -121.343,
+      "elev": 7952,
+      "name": "Spectre Peak",
+      "type": "Summit",
+      "elevFt": 7952,
+      "directions": "From the base of the south ridge, start up right of the entry notch: about 100 ft of fourth class leads into blocky 5.7 climbing, then low-fifth ground to a large tree-dotted ledge and a traverse left onto the crest proper. The crest gives sustained 5.4 to 5.8 climbing past the crux third pitch, a short overhanging band of 5.9 choss above sparse gear on the face right of a mossy gully, and past a shattered gendarme at pitch 7 where a 25 m rappel into the gap is followed by a self-belayed ascent of the far wall. The last pitch weaves through narrow, chalky hoodoo towers to a 30 m rappel off the final tower onto a big grassy ledge, from which about 600 ft of third and fourth class with a couple of low-fifth moves leads to the top."
+     }
+    ],
+    "access": {
+     "fees": "$10/person + $6 admin NPS backcountry permit fee; a Northwest Forest/interagency recreation pass is required to park at the Hannegan Pass Trailhead (national forest land).",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "NPS backcountry/wilderness permit required for all overnight stays once you're past Hannegan Pass — $10 per person plus a $6 administrative fee (free for youth 15 and under). Get it in person at the Glacier Public Service Center (10091 Mt Baker Hwy, Glacier, WA 98244), open Thu-Fri only, roughly June 25-Sept 25, or at the Marblemount Wilderness Information Center; advance reservations via recreation.gov or by emailing noca_wilderness@nps.gov up to 3 days ahead.",
+     "closures": "Forest Road 32 to the Hannegan Pass Trailhead has a history of washout damage requiring bypass construction — confirm current road status with the Glacier Public Service Center, (360) 599-2714, before driving in.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (the Picket Range lies entirely within the park); trailhead access is via Mt Baker-Snoqualmie National Forest, Mt. Baker Ranger District",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "NW Forest Pass or America the Beautiful interagency pass at the trailhead; NPS wilderness permit beyond Hannegan Pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "before": {
+    "access": {
+     "fees": "No park entrance fee; backcountry/wilderness camping permit required for all overnight stays ($10 per person plus a $6 permit fee from mid-May to early October; no charge the rest of the year).",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Wilderness/backcountry permit required year-round for overnight stays anywhere on the approach or in the range; obtained at the Wilderness Information Center in Marblemount (walk-up or Recreation.gov reservation).",
+     "closures": "Placing new fixed anchors/bolts is prohibited under the park's wilderness climbing moratorium (clean-climbing techniques required); SR 20 access road is closed seasonally each winter. Luna Fire closure (as of mid-September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. The closure moves - check current park fire closures before a trip. The southern approach's road is closed too: the Forest Service's Electric Fire order (06-05-26-19) closes Bacon Creek Road (FR 1060) from SR 20 to NF 1064, and NF 1064 itself, from September 2 through October 31, 2026, unless rescinded sooner.",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park, within the Stephen Mather Wilderness",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    }
+   }
+  }
+ ]
+}

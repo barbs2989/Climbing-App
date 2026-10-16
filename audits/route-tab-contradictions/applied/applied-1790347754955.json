@@ -1,0 +1,318 @@
+{
+ "applied": [
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "column": "overview",
+   "path": [],
+   "fact": "Is the true (south) summit part of this route, or beyond its scope?"
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "column": "pro_tips",
+   "path": [
+    3
+   ],
+   "fact": "Is the true (south) summit part of this route, or beyond its scope?"
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Is the true (south) summit part of this route, or beyond its scope?"
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Access closures: access.closures describes only a road landslide (and says the FR-5606 approach is past it), while the bivy entries on the same row say the Entiat camps and the North Fork Entiat / Pyramid trails are inside the current fire closure order"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest grade — Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Hardest grade — Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Hardest grade — Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Hardest grade — Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Overnight camp — 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elevFt"
+   ],
+   "fact": "Overnight camp — 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Overnight camp — 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Summit waypoint distMi 5.8 vs a one-way distance of ~8.5 mi (dist_km 14 km = 8.7 mi, overview ~17 mi round trip, camp itself at 6.5 mi)"
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Eightmile Lake Trailhead elevation — elev 3,300 ft vs elevFt 4,650 ft in the same waypoint object"
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Access: access.closures is null and road.status describes the Chiwawa River Road as drivable to the trailhead, while the row's own bivy entries say the Chiwawa road is shut above Atkinson Flat under a multi-year storm order and the 2026 fire closure names the Little Giant trail"
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Access: access.closures is null and road.status describes the Chiwawa River Road as drivable to the trailhead, while the row's own bivy entries say the Chiwawa road is shut above Atkinson Flat under a multi-year storm order and the 2026 fire closure names the Little Giant trail"
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road/trailhead currently closed (access.closures) vs. road section describing it as open"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "before": {
+    "overview": "Cardinal Peak (8,596 ft) is the highest summit in the Chelan Mountains, a remote subrange at the head of the Entiat River drainage, less than 5 miles from Lake Chelan. The peak has three summit points along its ridge; the standard route reaches the middle summit, traditionally treated as the highpoint, via a gully and ridge on the mountain's west side — though a June 2023 theodolite survey found the south summit is roughly 7 inches taller and is technically the true highpoint, reachable only via a short technical 5th-class scramble beyond the scope of this route. The north summit is a separate, harder Class 4 objective and is rarely climbed. Roughly 95% of climbers use the same North Fork Entiat approach, camping in the basin below Cardinal, Emerald, and Saska Peaks before a Class 3 scramble with real exposure near the top.",
+    "pro_tips": [
+     "Carry plenty of water — the high slopes are dry by midsummer and the basin camp is usually the last reliable source",
+     "An early-season (May–June) ascent is a real snow climb on the summit gully (40–50°) — bring axe and crampons, not just an axe",
+     "Most parties camp in the basin below Cardinal's west side (~7,000–7,200 ft) rather than trying it car-to-car",
+     "The true summit is the middle of three points on the ridge — the north summit is a harder, rarely-visited Class 4 objective and isn't needed to bag the highpoint",
+     "The final summit-ridge traverse is exposed and sometimes corniced, with roughly 500 ft of fall consequence on one side despite the Class 3 rating."
+    ],
+    "waypoints": [
+     {
+      "lat": 48.0112,
+      "lng": -120.5718,
+      "elev": 3940,
+      "name": "North Fork Entiat Trailhead",
+      "note": "Self-issue wilderness register and NW Forest Pass/day-use fee kiosk at the lot; trail immediately enters the 2012 Pyramid Fire burn scar.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "FR-5606 ends at the lot, and the North Fork Entiat River Trail #1437 starts from it. The lower trail sits outside the wilderness boundary, so mountain bikes are legal on the first several miles and many parties use one — this is a 20-21 mile round trip with about 4,700 ft of gain, long enough that most do it as a very long day or a one-night backpack."
+     },
+     {
+      "lat": 48.013051000000004,
+      "lng": -120.57303893877551,
+      "elev": 3960,
+      "name": "Grouse Creek crossing",
+      "note": "Ford or log-crossing of Grouse Creek near the trailhead; can run high with early-season snowmelt.",
+      "type": "Water",
+      "distMi": 0.2,
+      "directions": "Follow #1437 up-valley from the lot, straight into the burn. The creek is crossed on a log, inside one of the fire-damaged stretches where blowdown is heaviest."
+     },
+     {
+      "lat": 48.07647,
+      "lng": -120.627495,
+      "elev": 5240,
+      "name": "Fern Lake Trail (#1436) junction",
+      "note": "North Fork Entiat Trail #1437 continues straight; Fern Lake Trail forks left/west and climbs steeply — stay right/straight for Cardinal Peak.",
+      "type": "Junction",
+      "distMi": 6.1,
+      "directions": "Roughly six miles of gentle, mostly forested grade beside the North Fork Entiat. The river runs alongside the whole way and is the last reliable water — everything above the basin is dry — so fill here. Expect to lose the tread briefly among downed timber in the burned sections and to scramble back onto it."
+     },
+     {
+      "lat": 48.094495,
+      "lng": -120.60995224489797,
+      "elev": 7100,
+      "name": "West-side basin camp below Cardinal Peak",
+      "note": "Flat, open bench (old glacial terrace) at the head of the North Fork Entiat basin, directly below the broad gully leading to the saddle between Cardinal's north and middle summits; last reliable camping and water before the climb.",
+      "type": "Campsite",
+      "distMi": 9,
+      "directions": "Stay on #1437 past the Fern Lake fork. Around mile 7, near 5,800 ft, the trail bends sharply east and switchbacks about half a mile to a junction with the Pyramid Mountain Trail #1433 at roughly 6,600 ft — a useful timing landmark, since the summit is about a mile northeast of it. The mile above that junction is steep and loose underfoot. Where the trail reaches open meadow and basin, leave it and hike east through sparse forest and then talus toward Cardinal's west flank."
+     },
+     {
+      "lat": 48.098197,
+      "lng": -120.61163012244899,
+      "elev": 7800,
+      "name": "Northwest-facing scree/snow gully",
+      "note": "Loose class 2 talus and scree gully that often holds snow to ~40 degrees well into summer; crampons/axe advisable early season, rockfall risk from parties above.",
+      "type": "Hazard",
+      "distMi": 9.4,
+      "directions": "Contour onto the peak's western slopes and work along below the summit ridge across steep talus and scree until you are underneath the broad gully leading to the notch between the north and middle summits. Loose rock is constant across this whole traverse, so a helmet is worthwhile and parties should spread out rather than climb directly above one another."
+     },
+     {
+      "lat": 48.100048,
+      "lng": -120.61246906122449,
+      "elev": 8300,
+      "name": "Saddle between north and middle summits",
+      "note": "Gully tops out on the summit ridge here; turn and scramble class 2-3 along or just east of the crest toward the true summit.",
+      "type": "Junction",
+      "distMi": 9.6,
+      "directions": "Straight up the gully. Early in the season this is moderately steep snow, up to about 40 degrees, and wants an axe and crampons; later in the summer it is loose class 2 talus and scree the whole way. Stow the crampons at the top if the rock above is dry."
+     },
+     {
+      "lat": 48.10308,
+      "lng": -120.61265,
+      "elev": 8596,
+      "name": "Cardinal Peak summit",
+      "note": "True summit of the Chelan Mountains' highest point; exposed class 3 moves near the top, register has historically been a film canister tucked among the summit rocks.",
+      "type": "Summit",
+      "distMi": 9.8,
+      "directions": "Scramble along or just east of the crest. It is class 2-3 with genuinely exposed moves near the top — some parties call sections class 3-4 — and picking solid rock and a careful line matters more here than speed."
+     }
+    ],
+    "access": {
+     "fees": "$5/vehicle/day or $30/annual 'Digital Day Pass' at the North Fork Entiat Trailhead (payable via the Recreation.gov app or on-site), or a Northwest Forest Pass / America the Beautiful interagency pass.",
+     "rules": "Standard National Forest rules apply (Leave No Trace). The North Fork Entiat Trailhead lot itself is day-use/no-camping, though parking there overnight while backpacking is fine.",
+     "permit": "No wilderness permit is required. Cardinal Peak and the North Fork Entiat approach lie in general National Forest land outside designated wilderness — north of the Lake Chelan-Sawtooth Wilderness boundary (which runs close by, near Emerald/Saska Peaks) and well south of the Glacier Peak Wilderness, which is across the Entiat/White River divide.",
+     "closures": "The Entiat River Road corridor (FR-51) sustained damage in the December 2025 storm event; as of spring 2026 a landslide near the upper end of the road (beyond the FR-5606 junction, near Cottonwood Campground/Entiat River Trailhead) required a high-clearance-only temporary bypass with trailers prohibited. That damage is past the FR-5606 turnoff used for Cardinal Peak, but check current Okanogan-Wenatchee NF alerts/current-conditions pages before driving.",
+     "landManager": "Okanogan-Wenatchee National Forest, Entiat Ranger District",
+     "passRequired": "Northwest Forest Pass, Interagency (America the Beautiful) Pass, or the trailhead's $5/day Digital Day Pass — required specifically at the North Fork Entiat Trailhead"
+    }
+   }
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "before": {
+    "grade": "Grade II, Class 2 to 3",
+    "detailed_rack": "No fixed rack is required for the standard dry-season Class 2-3 scramble; parties occasionally carry a small selection of slings and a few small-to-medium chocks/nuts for optional running-belay protection on exposed sections or when snow/rime is present.",
+    "beta": "The standard and easiest route on Cashmere Mountain. From Windy Pass the west ridge becomes the obvious line: descend to a saddle where the scrambling begins, then work through a series of tooth-like gendarmes separated by roughly five main gaps, weaving from the north side of the ridge to the south and back, rarely following the crest exactly. Cairns mark parts of the route but route-finding is required. Rock is generally solid granite but loose in spots near the summit; snow or rime can turn the Class 2-3 terrain into harder Class 4 climbing in early season or after storms, and parties have roped up with slings/chocks for running belays in those conditions.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Full day of sustained scrambling on the ridge itself (6.5 hr route time) stacked on top of a multi-mile backcountry approach and camp - solid endurance and comfort moving efficiently on loose, unmaintained terrain required",
+      "packWeight": "Light day-scramble kit (helmet, layers, food/water) carried up from camp; approach/camp gear is separate overnight load"
+     },
+     "approachTime": "Typically approached via an overnight camp (e.g. near Lake Caroline/Eightmile Creek or a Windy Pass-area camp); recommended start ~06:00 from camp for the ~6.5 hr ridge round trip",
+     "requiredSkills": [
+      "Class 3-4 scrambling movement on loose rock",
+      "Independent route-finding on a broad, unmarked ridge with multiple gaps",
+      "Loose talus/scree management",
+      "Turnaround discipline for afternoon thunderstorms",
+      "Basic snow travel for early-season/residual snow patches"
+     ],
+     "experienceLevel": "Intermediate-to-advanced scrambler comfortable with sustained, exposed Class 2-3 terrain and willing to accept occasional Class 4 moves near the ridge gaps without a rope"
+    },
+    "waypoints": [
+     {
+      "lat": 47.536,
+      "lng": -120.8139,
+      "elev": 3300,
+      "name": "Eightmile Lake Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 4650,
+      "directions": "The trailhead is reached via Icicle Creek Road and Eightmile Road (Road 7601), ending at the Eightmile Lake Trailhead at about 3,300 feet."
+     },
+     {
+      "lat": 47.556,
+      "lng": -120.83,
+      "elev": 6000,
+      "name": "Below west ridge",
+      "type": "Campsite",
+      "distMi": 4.5,
+      "elevFt": 6000
+     },
+     {
+      "lat": 47.5575,
+      "lng": -120.842,
+      "elev": 6800,
+      "name": "Base of west ridge",
+      "type": "Junction",
+      "distMi": 5.2,
+      "elevFt": 6800
+     },
+     {
+      "lat": 47.5587,
+      "lng": -120.8473,
+      "elev": 8514,
+      "name": "Cashmere Mountain summit",
+      "type": "Summit",
+      "distMi": 5.8,
+      "elevFt": 8514
+     }
+    ],
+    "grade_num": 2
+   }
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "before": {
+    "access": {
+     "fees": "No day-use fee charged at Little Giant Trailhead.",
+     "permit": "Free self-issued wilderness permit required at the trailhead for entry into Glacier Peak Wilderness.",
+     "closures": null,
+     "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District (Glacier Peak Wilderness)",
+     "passRequired": null
+    },
+    "road": {
+     "name": "Chiwawa River Road (Forest Road 62)",
+     "status": "Paved for roughly the first 11 miles, then rough gravel/dirt for the remaining distance to the trailhead.",
+     "driveNote": "From Coles Corner, take WA-207 north about 4.4 miles, bear onto Chiwawa Loop Road, then continue on Chiwawa River Road/FR 62 for about 19 miles to the Little Giant Trailhead (2,600 ft).",
+     "seasonalGate": null
+    }
+   }
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "before": {
+    "road": {
+     "name": "White River Road (Forest Road 6400)",
+     "status": "Open seasonally; mix of paved and gravel, generally passable to passenger cars in summer.",
+     "driveNote": "From Coles Corner on US-2, drive WA-207 (Lake Wenatchee Highway) north about 10.5 miles, then continue on White River Road/FR 6400 for about 10 miles to the road-end trailhead at 2,300 ft.",
+     "seasonalGate": null
+    }
+   }
+  }
+ ]
+}

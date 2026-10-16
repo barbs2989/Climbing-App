@@ -1,0 +1,174 @@
+{
+ "file": "u027",
+ "results": [
+  {
+   "id": "wa_sahale_mountain_r1",
+   "fact": "hardest technical grade of the summit block",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "grade states a range ('Class 3-4/5.0-5.4 summit block'), and rock_grade's '4th class' is the common rating inside that range. The route database rates this route 4th (with 'a few slings for the 4th class summit block'), and other accounts describe the block as mostly class 4 with a low-fifth move on the direct line, or class 3 with some class 4 by the north-side variation. The range and the single rating describe the same block's variations, so they do not disagree. pitch_detail and climbing_route ('Class 3-4') agree with both.",
+   "sources": [
+    "https://www.mountainproject.com/route/107848161/quien-sabe-glacier",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002091100",
+    "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route guide's summary says to hike the North Fork Entiat trail about 8 miles to the Pyramid Trail junction, take the LEFT fork, and camp 0.25 mi north at Fox Camp, then hike the Pyramid Trail 1.5 mi to the Emerald-Saska basin. It gives a turn direction, not a compass bearing. The trail-guide loop description has the Pyramid Mountain Trail (#1433) leaving the upper North Fork after steep switchbacks and heading toward Saska Pass and Pyramid Mountain, which lie east, and the row's own pins put the basin camp north-east of Fox Camp. Together that leans toward 'east', but no source states the bearing, so the Fox Camp note is not changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+    "https://www.wta.org/go-hiking/hikes/north-fork-entiat-river",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-08-03-4386136282"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The USGS 1 m ground height at the row's Fox Camp pin is ~5,728 ft, and at its basin-camp pin ~6,627 ft, about 900 ft apart. That is consistent with the approach's '~1,000 ft above the junction' and suggests the 6,900 ft Fox Camp figure is too high. But no published source gives Fox Camp's own elevation (the route guide gives distances only), and the pin's placement is not verified, so this is one topo reading with no second source. Nothing is patched.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.63657&y=48.090409&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.630833&y=48.101567&units=Feet&wkid=4326",
+    "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "fact": "Total round-trip distance for the Standard Route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A second independent account now supports the trailhead-to-camp mileage: a 2020 Ptarmigan Traverse report logged 12 mi from the Cascade Pass trailhead to Yang Yang Lakes, and the earlier report put the Le Conte-Sentinel col at 12.7 mi. Both fit the waypoints (col 13 mi, summit 14 mi) and the approach text's ~45 km round trip. They do not fit dist_km (26.2 km = 16.3 mi one way) or the itinerary (7.2 + 9.5 = 16.7 mi to the col camp). But neither source gives the trailhead-to-summit figure, and correcting dist_km or the itinerary days would mean adding the col-to-summit leg (a computed figure) and rewriting per-day miles no source states. Left unresolved.",
+   "sources": [
+    "https://britrax.medium.com/ptarmigan-traverse-aug-14-16-2020-dc2996a88ea5",
+    "https://onehikeaweek.com/2020/07/05/sentinel-peak/",
+    "https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "fact": "Elevation where the two basin entry lines (gully vs ridge) merge",
+   "verdict": "fixed",
+   "correct_value": "The gully and ridge lines out of Leroy Basin rejoin at a flat spot around 6,700-6,800 ft where the broad southwest slope begins; 7,200 ft (base of cliffs) and 7,800 ft (bench) belong to the couloir line toward the Maude col",
+   "evidence": "A 2020 trip report on the Leroy Basin route says there is a good boot path up to around 6,700 ft and a flat spot where the trail was lost, after which the party went straight up toward the gap by Mount Maude's North Tower. The published route description has the gully out of the ~6,000 ft basin easing at about 6,800 ft. Both agree with the row's own waypoint ('Boot Path End', 6,700 ft, where 'the two rejoin at a flat spot') and pitch_detail (~6,800 ft bench). The 7,200-7,800 ft figures come from the separate couloir line (base of cliffs ~7,200 ft, bench ~7,800 ft), which the approach text keeps as its parenthetical variant. Only the merge elevation in approach, climbing_route[0] (label and notes) and descent_text is corrected.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-10-04-6881122251",
+    "https://www.summitpost.org/seven-fingered-jack/150428",
+    "https://www.outdoorproject.com/united-states/washington/seven-fingered-jack-leroy-basin"
+   ],
+   "patches": [
+    {
+     "id": "wa_seven_fingered_jack_southwest_slopes",
+     "fact": "merge elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "they merge in a flat shoulder around 7,200–7,800 ft",
+     "replace": "they merge in a flat spot around 6,700–6,800 ft"
+    },
+    {
+     "id": "wa_seven_fingered_jack_southwest_slopes",
+     "fact": "merge elevation",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "they merge in a flat shoulder around 7,200-7,800 ft",
+     "replace": "they merge in a flat spot around 6,700-6,800 ft"
+    },
+    {
+     "id": "wa_seven_fingered_jack_southwest_slopes",
+     "fact": "merge elevation",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "find": "7,200-7,800 ft shoulder",
+     "replace": "6,700-6,800 ft flat spot"
+    },
+    {
+     "id": "wa_seven_fingered_jack_southwest_slopes",
+     "fact": "merge elevation",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "to the 7,200–7,800 ft bench, then drop back",
+     "replace": "to the flat spot at about 6,700–6,800 ft, then drop back"
+    }
+   ]
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "fact": "parking pass at the Boston Basin trailhead",
+   "verdict": "not_a_contradiction",
+   "correct_value": "No parking pass needed at the Boston Basin trailhead (National Park Service land)",
+   "evidence": "The only rendered pass field, access.passRequired, says no pass is needed. The park's fees page states there are no trailhead or parking fees for trails that begin on National Park Service land (the Northwest Forest Pass applies at Forest Service trailheads only), and a North Cascades fee guide says there is no parking fee at Boston Basin. The disagreeing value sits only in access._raw.parking_pass_required, which is not rendered and must not be edited. The sibling Southeast Face row, which puts a Northwest Forest Pass in its passRequired, is a separate route row and outside this record.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Total elevation loss for the trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new source gives a car-to-car gain or loss for Sheep Gap's main summit. The reports found cover the North/Middle peaks or Gothic/Del Campo from the same basin (e.g. 11.3 mi and 7,100 ft for Gothic plus Del Campo), which are different outings. Setting loss_ft equal to gain_ft by out-and-back arithmetic is refused as a class, so loss_ft stays as is.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272",
+    "https://stephabegg.com/trip-reports/washington/gothic-del-campo/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Round-trip mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A fresh search found no measured round trip for the main summit. The only measured figure is still the 2024 North/Middle peak outing (13.8 mi round trip), which leans toward partner_requirements' 13-14 mi. The itinerary and waypoints (~11.8 mi) and the approach text ('nearly 19 km (~12 miles)') disagree with it, and there is no second source.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "fact": "face 'West Ridge' vs a route that reaches the block along the crest from the east and starts on its east-side pedestal",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A peak page notes that of the two south-side routes (West Ridge and East Ridge), the East Ridge passes right by the Balanced Rock, which supports the row's own description of reaching the block from the east and weakens 'West Ridge' as its face. West Ridge trip reports (2017, a later ascent) only view the Balanced Rock from the main summit, and one notes it is 5.10 and marginally lower. No second source names a face or aspect for the block, so no replacement is adopted.",
+   "sources": [
+    "https://www.summitpost.org/sherpa-peak/152244",
+    "https://climberkyle.com/2017/07/31/west-ridge-of-stuart-and-sherpa/",
+    "https://stevensong.com/usa/washington/sherpa-peak-west-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "fact": "access.permit/group_limit/notes put this route in the Enchantment Permit Area Stuart Zone, while the approach is via Longs Pass/Ingalls Creek (Cle Elum RD)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service Enchantments page says day permits are self-issued at 'any of the three trailheads that access the Enchantments Permit Area' (Stuart/Colchuck, Snow Lakes, Eightmile), and the Esmeralda/Longs Pass trailhead this route uses is not one of them. The Ingalls Creek and Longs Pass trail pages mention only a Northwest Forest Pass. That suggests the Longs Pass/Ingalls Creek approach is outside the permit area, but no source says where the boundary runs around Sherpa's south basin and crest. So the Stuart Zone permit text is not rewritten.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.wta.org/go-hiking/hikes/longs-pass",
+    "https://www.wta.org/go-hiking/hikes/ingalls-creek"
+   ],
+   "patches": []
+  }
+ ]
+}

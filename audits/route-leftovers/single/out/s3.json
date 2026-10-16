@@ -1,0 +1,1237 @@
+{
+ "results": [
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "climbing season window",
+   "verdict": "confirmed",
+   "summary": "One club route page for this line gives the season as July, August and September, so every window on the row is set to July-September.",
+   "evidence": "The Mountaineers route page for Mount Temple / West Side (the same south-side snow finger, bolted 5.6 friction face line) lists Seasons: July, August, September. No other source states a window. The row held Jun-Sep (chip) and July-October (best_season, optimal window, approach variant, avalanche note); both ends are moved to the stated window.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wikipedia",
+    "nwhikers",
+    "cascadeclimbers"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_the_temple_south_ridge",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep"
+    },
+    {
+     "op": "set",
+     "id": "wa_the_temple_south_ridge",
+     "column": "best_season",
+     "path": [],
+     "expect": "July through October",
+     "value": "July through September"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "July through October,",
+     "replace": "July through September,"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "October",
+      "reason"
+     ],
+     "find": "Still within the best-season, but cold temps",
+     "replace": "Past the usual season: cold temps"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "July-October climbing window",
+     "replace": "July-September climbing window"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "July to early October",
+     "replace": "July to September"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "number/type of summit rappels",
+   "verdict": "unresolved",
+   "summary": "Still no single count: the one club route page says only to rappel and downclimb the route, and the accounts that give a number disagree with each other and the row repeats all of them.",
+   "evidence": "The Mountaineers West Side page: 'Rappel and downclimb the climbing route' with no count or rope. Earlier first-hand accounts give one double-rope rap, two raps on 2x30 m, and three raps on a single 60 m; the row's rappels (1-2), descent_text (two, sometimes three) and climbing_route[3] (three) each carry one of these, so no single sourced value can be chosen without discarding another sourced one.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+    "https://www.summitpost.org/west-temple-climb/770102"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "nwhikers",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "one-way / round-trip approach distance",
+   "verdict": "unresolved",
+   "summary": "The only new figure is a stated 14.0 mi round trip; no source states a one-way distance to the base or summit, and halving is not allowed.",
+   "evidence": "The Mountaineers West Side page gives Length 14.0 mi (round trip) and Nada Lake at 5.2 mi; earlier reports give 16-18 mi round trips. The row's one-way figures (approach ~8 mi, waypoint distMi 9.5-10, dist_km 12.9) and the 19-20 mi 3-day total have no stated one-way source.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "nwhikers",
+    "cascadeclimbers",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "Total elevation gain/loss",
+   "verdict": "unresolved",
+   "summary": "Sources disagree (8,000 ft from one report, 6,892 ft from the club route page) and the row's gain_ft already holds a sourced 8,000, but its itinerary days cannot be brought to that total without computing.",
+   "evidence": "The Mountaineers West Side page gives Elevation Gain 6,892 ft, split 5,600 ft trailhead-to-camp and 1,292 ft camp-to-summit; an earlier report gives 8,000 ft. Under the rule the row's sourced 8,000 is kept, but the itinerary days (5,300 + 1,700 + 200) and totalNote (~7,000) would need new computed day figures to agree with it, so nothing is patched.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "nwhikers",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "item",
+   "fact": "Approach mileage/gain figures citing the wrong route's trailhead (Scatter Lake)",
+   "verdict": "already_fixed",
+   "summary": "The live row no longer quotes the Scatter Lake figures as this route's approach: partner_requirements and approachTime now describe only the Wolf Creek / Gardner Meadows line.",
+   "evidence": "Live row: partner_requirements.fitnessSpec.hiking and approachTime give about 10 miles of trail up Wolf Creek to Gardner Meadows; Scatter Lake survives only in overview/beta/crowds as the name of the other (standard) route, which is correct.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "item",
+   "fact": "Which approach/trailhead the North Ridge uses (North Creek Trail #413 + mine trail vs Wolf Creek/Gardner Meadows; Trailhead waypoint named Scatter Creek at 3,150 ft)",
+   "verdict": "already_fixed",
+   "summary": "The row has been rebuilt around the Wolf Creek / Gardner Meadows approach: trailhead pin, approach, approach_logistics and itinerary all use it.",
+   "evidence": "Live row: waypoints[0] is 'Wolf Creek Trailhead' (2,997 ft) with a Trail #527 note, approach_logistics.trailhead is Wolf Creek Trailhead, and the approach text describes Wolf Creek Trail #527 to Gardner Meadows, the tarn and the spur ridge; no North Creek / Scatter Creek trailhead text remains.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared timing described the abandoned North Creek line, and no source states a car-to-car time for the Wolf Creek north-ridge trip.",
+   "evidence": "The one north-ridge account via Wolf Creek (July 2020) gives only per-leg times (about 4.25 h to Gardner Meadows, 4.5 h camp to summit, under 4 h hiking out) over two days; a timing object would need a computed total.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-21-3059374829"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "countryhighpoints"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared 4,661 ft belonged to the North Creek line and no source states a total gain for the Wolf Creek north-ridge route.",
+   "evidence": "The trail page gives 4,270 ft round trip for Wolf Creek to Gardner Meadows only; north-ridge accounts give no total, and a multi-peak day (34 mi, 8,000 ft) covers three summits.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wolf-creek",
+    "https://www.countryhighpoints.com/abernathy-and-the-gardners/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "countryhighpoints"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a one-way distance from the Wolf Creek trailhead to Abernathy's summit.",
+   "evidence": "Sources give only the trail to Gardner Meadows (10-ish, 10.3 mi; 21.0 mi round trip); the off-trail leg to the summit has no stated mileage, and adding legs is not allowed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wolf-creek",
+    "https://www.go-washington.com/Wolf-Creek-Trail-527-Washington/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "go-washington"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "confirmed",
+   "summary": "Gardner Meadows is about 10 miles from the Wolf Creek trailhead, as the row's own prose already says, so its waypoint gets distMi 10.",
+   "evidence": "A July 2020 north-ridge trip report via Wolf Creek describes 'the entire 10-ish miles' of trail to Gardner Meadows; the Forest Service trail summary gives 10.3 miles to the meadows. The row's approach, waypoint note and partner fields say about 10 miles, which the report supports. (The cleared value 2 belonged to the old North Creek chain.)",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-21-3059374829",
+    "https://www.go-washington.com/Wolf-Creek-Trail-527-Washington/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "go-washington",
+    "countryhighpoints"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_abernathy_peak_north_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 10
+    }
+   ]
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "kind": "item",
+   "fact": "Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)",
+   "verdict": "unresolved",
+   "summary": "No source states a mileage from Fish Creek Pass to the summit by the southeast ridge; sources give only vertical (about 1,000 ft) and time (45 min to an hour).",
+   "evidence": "The peak's route page describes the Southeast Ridge from Fish Creek Pass as about 1,000 ft vertical of class 2 with no distance (its '1 mile' figure is for the west ridge from the Oval Lakes side, a different line); a Bulger-list report gives 45 min to an hour from the pass; a regional hike guide gives 7.5 mi to the pass and nothing beyond it.",
+   "sources": [
+    "https://web.archive.org/web/2023/https://www.summitpost.org/courtney-peak/728542",
+    "https://hike2hike.com/scrambling/star-courtney-and-oval-peaks-bulger-list/",
+    "https://besthikesbc.ca/hiking-courtney-star-peak-in-the-chelan-sawtooth-wilderness/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "wenatcheeoutdoors",
+    "hike2hike",
+    "besthikesbc",
+    "wikipedia"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "kind": "item",
+   "fact": "Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass",
+   "verdict": "unresolved",
+   "summary": "The stated trailhead-to-pass times (about 3 h and about 4 h) are both day-pack times and disagree; adopting 4 h in the overnight schedule would shift its later times and day total, which would have to be computed.",
+   "evidence": "A 2020 GPS-timed day party took 3 h 05 min to the pass and a 2023 day hiker about 4 h; no source times the pass with an overnight pack. timing.approachTimeHrs 4 matches one day-hike source, but the itinerary's '+5 to 6 hr' sits in a 32 lb backpacking schedule whose camp arrival (3:30-4:30 PM) and 9.5 h day follow from it, so changing it alone would create a new contradiction.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "hike2hike",
+    "besthikesbc"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "kind": "item",
+   "fact": "Total pitch count",
+   "verdict": "confirmed",
+   "summary": "The pitches column is set to 18, the count the row already gives everywhere else (overview tips, totalNote, partner fields and its 18 pitch rows) and the count the main route database states for this North Ridge line.",
+   "evidence": "The Mountain Project North Ridge page (whose description the row's beta follows: about 11 low/mid-5th pitches with one 5.7 move to the Gendarme, two 5.9 Gendarme pitches) gives 'Trad, Alpine, 1200 ft, 18 pitches, Grade IV'. A topo site gives 30 pitches for the Complete ridge; under the rule the row's own sourced 18 is kept and the stray 20 aligned to it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106050599/north-ridge"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "supertopo",
+    "wenatcheeoutdoors",
+    "stephabegg",
+    "climberkyle"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_stuart_north_ridge",
+     "column": "pitches",
+     "path": [],
+     "expect": 20,
+     "value": 18
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "kind": "item",
+   "fact": "Trailhead pin vs the approach the waypoints and itinerary describe",
+   "verdict": "unresolved",
+   "summary": "Still structural: the south-side Longs Pass and Goat Pass pins (distMi 3.5 and 5) sit in the chain that starts at the north-side Stuart Lake Trailhead, and removing or moving pins is outside the patch format.",
+   "evidence": "Live row: waypoints[1] Longs Pass (no coordinate, distMi 3.5) and waypoints[2] Goat Pass (no coordinate, distMi 5) still follow waypoints[0] Stuart Lake Trailhead, while approach, approach_logistics and approach_variants[0] describe the north approach via Mountaineer Creek. No source gives distances for those passes from the Stuart Lake trailhead because they are not on that approach.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "already_fixed",
+   "summary": "Not null on the live row (Great Gendarme distMi 5.8), so there is nothing to fill.",
+   "evidence": "Live row waypoints[5].distMi is 5.8.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "already_fixed",
+   "summary": "Not null on the live row (summit distMi 6), so there is nothing to fill.",
+   "evidence": "Live row waypoints[6].distMi is 6.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "kind": "item",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "summary": "No source states the approach gain from the FS 9070 turnaround to the Silver Basin / Citadel walls; the only published approach figure is a 20-30 minute walk.",
+   "evidence": "Searches of the route database, the peak pages for Silver Peak and The Citadel, and trip reports found no stated gain for this crag's approach. The row's pins show ~400 ft net rise against gain_ft 750, but a figure from pin heights would be computed.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wta",
+    "mountaineers",
+    "trailcatjim"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "kind": "item",
+   "fact": "Season / when the access road is open",
+   "verdict": "confirmed",
+   "summary": "The season chip is set to Jun-Oct, the window the row's best_season already gives and that one Silver Peak route page states for when FS Road 9070 is open.",
+   "evidence": "The SummitPost Silver Peak page (same FS Road 9070 access): 'The optimum timeframe to climb Silver Peak is from June-October, while Forest Road 9070 is open to the public.' A hiking guide instead says FR-9070 is generally snow-free from July until November. Sources disagree, so the row's own sourced value (best_season: June through October when FS Road 9070 is open) is kept and the Jul-Sep chip aligned to it.",
+   "sources": [
+    "https://www.summitpost.org/silver-peak/151393",
+    "https://www.wta.org/go-hiking/hikes/silver-peak"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountainproject"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_drilling_me_softly",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Oct"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_12",
+   "kind": "item",
+   "fact": "Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass",
+   "verdict": "unresolved",
+   "summary": "The only stated car-to-car total (7,400 ft) cannot be adopted without computing new day figures for the itinerary, and loss_ft may not be written.",
+   "evidence": "Earlier sources give 7,400 ft for the trip and the approach legs (about 1,800 ft up to Fourth Creek Pass, ~1,200 ft down to Ingalls Creek); a single-day ascent gives only the net 4,853 ft rise. Setting gain_ft to 7,400 would contradict the itinerary days (2,000 + 4,257) unless their figures were recomputed, and loss_ft is out of bounds, so nothing is changed.",
+   "sources": [
+    "http://www.ericsbasecamp.net/trips/Argonaut/Argonaut.htm",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/south-route/219332"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "ericsbasecamp",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "kind": "item",
+   "fact": "Which trailhead/approach the route uses (Alpental vs Denny Creek)",
+   "verdict": "already_fixed",
+   "summary": "The live row now starts at the Denny Creek trailhead in both the trailhead pin and approach_logistics, and the Alpental gully pins are gone.",
+   "evidence": "Live row: waypoints are Denny Creek Trailhead (I-90 Exit 47, 2,270 ft), a summit-block traverse hazard and the summit; approach_logistics.trailhead and its coordinates are the Denny Creek trailhead.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "kind": "item",
+   "fact": "Summit-day gain 3,080 ft reaches the 7,727 ft central summit, not the 7,440 ft South Peak this row climbs",
+   "verdict": "unresolved",
+   "summary": "Still no source states the gain from the Sunrise Knob camp to the South Peak; the one South Peak report gives only whole-trip figures and times.",
+   "evidence": "The South Peak East Gully report gives about 19 mi and 5,000 ft gained and lost for the whole trip, about 5 h camp to summit and 3 h down, but no summit-day gain; the archived peak page's 3,100 ft is to the main summit. A figure from pin heights would be computed.",
+   "sources": [
+    "https://trailcatjim.com/chimney-rock-south-peak-via-east-gully/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "trailcatjim",
+    "wta",
+    "mountaineers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "kind": "item",
+   "fact": "Summit-day length and start time: partner_requirements vs timing/itinerary",
+   "verdict": "unresolved",
+   "summary": "No source states a camp-to-camp time or a start time from a Colchuck Lake camp for the Northeast Couloir.",
+   "evidence": "The one Northeast Couloir report with times is a single-day ski ascent from the road (5:15 am start, a little over 4 h to the lake, summit about 4 pm), not a camp start; other timed reports concern the North Buttress Couloir. Neither partner_requirements' 04:00 / 8.5 h nor timing's 2:30 AM / 11 h is supported.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/northeast-couloir-on-colchuck-peak"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "jeffreyjhebert",
+    "wenatcheeoutdoors"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_der_dihedral",
+   "kind": "item",
+   "fact": "Day-2 climb duration",
+   "verdict": "unresolved",
+   "summary": "No ascent account of Der Dihedral with any time was found, so neither the 11 h nor the 10-12 h nor the 15.5 h schedule can be sourced.",
+   "evidence": "Searches for the route name, its area and trip reports return only unrelated 'Dihedral' routes; the only times remain proxies from neighbouring Backbone Ridge / NE Arete lines.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "kind": "item",
+   "fact": "Total trip time vs its own approach/summit/descent legs",
+   "verdict": "unresolved",
+   "summary": "Sources give days, not hours (two to three days with packs, or one long day light), and the timed reports disagree on legs, so neither the 36 h total nor the 5/3/4 h legs can be replaced.",
+   "evidence": "The peak's route page gives two to three days from Diablo with heavy packs or one long day travelling light, with no hours; other reports give about 10 h ridge camp to summit and back, or 10-12 h each way with overnight packs — different legs, no figure that matches the row's fields.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "nwhikers",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "kind": "item",
+   "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+   "verdict": "unresolved",
+   "summary": "No source states a car-to-car gain for Grotto Mountain (WA); the only figures are the 3,480-5,618 ft range and a 4.8 mi round trip, so neither 2,138, 3,400 nor 3,900 can be sourced.",
+   "evidence": "The 2025 report gives only the road's-end and summit heights and 4.8 mi round trip; the 2002 report describes intermediate drops without a total; web searches return Grotto Mountain in Alberta. The approach's '3,900 ft one-way' cannot be right against a 2,138 ft net rise, but no stated figure replaces it.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "giantsgate",
+    "followthatnerd"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_artic_rose",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "Still no source states the crag's wilderness status or permit rule, so the replacement text cannot be sourced.",
+   "evidence": "The crag's route-database page gives the elevation (4,761 ft), the Tye Road pullout and the approach, with nothing on wilderness or permits; the peak encyclopedia covers the 7,960 ft Half Moon, a different summit. The Wild Sky name remains wrong by geography (more than 4 km away), but the correct wording (no permit vs a Henry M. Jackson self-issue permit) is not stated anywhere found.",
+   "sources": [
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wikipedia",
+    "usfs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "kind": "item",
+   "fact": "Mileage along the PCT to the stump/boot-path turnoff (4.6-5 mi vs 5.5-6 mi vs mile 5.75)",
+   "verdict": "unresolved",
+   "summary": "No source states the stump turnoff's mileage from the trailhead; descriptions place it by landmark and elevation only.",
+   "evidence": "The peak's route page places the stump at about 5,200 ft and gives the newer-PCT variation only as segments (2 mi to a junction, a third of a mile to the first switchback, a mile to the second, a mile and a half to the final junction), which would have to be summed; it calls the outing about 5 miles one way to the summit, not to the stump. Other pages give 9.17-10 mi round trips.",
+   "sources": [
+    "https://www.summitpost.org/kendall-peak/151396"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "musthikemusteat",
+    "theoutbound",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "kind": "item",
+   "fact": "Elevation of the glacier-exit / moat transition below the col",
+   "verdict": "unresolved",
+   "summary": "No source states an elevation for the moat or the glacier exit; neither 6,200 ft (prose) nor 6,500 ft (waypoint) can be sourced.",
+   "evidence": "Route pages and reports describe the moat at the rock step below the main summit and the snow-finger exit at 4,800-5,000 ft, with no height for the moat; the latest search found only whole-trip figures (16 mi round trip, 4,700 ft).",
+   "sources": [
+    "https://www.summitpost.org/lemah-mountain/392789"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wta",
+    "mountaineers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "kind": "item",
+   "fact": "Total gain/loss: gain_ft 6,000 vs loss_ft 5,500 vs approach '~5,500 ft' on an out-and-back",
+   "verdict": "confirmed",
+   "summary": "gain_ft is set to 5,500 ft, the total the club route page states for this Lake Serene / gully line and the figure the row's approach and loss_ft already carry.",
+   "evidence": "The Mountaineers 'Mount Index / East Route' page (Lake Serene trail 4.1 mi and 2,000 ft, west side of the lake, saddle, ridge southwest of it, the gully through the cliffs) gives Elevation Gain 5,500 ft and Length 13.0 mi. One party reported over 6,000 ft; sources disagree, and the row's own sourced 5,500 (approach, loss_ft) is kept, so the lone 6,000 in gain_ft is aligned to it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-index-east-route"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "climberkyle",
+    "stevensong",
+    "mountainproject"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_hourglass_gully_winter",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6000,
+     "value": 5500
+    }
+   ]
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "kind": "item",
+   "fact": "Elevation of the Waterfall 3 crux",
+   "verdict": "confirmed",
+   "summary": "The jammed-boulder Waterfall 3 crux is set to about 3,700 ft everywhere on the row, the height the peak's South Gully route page states for it.",
+   "evidence": "The SummitPost South Gully page: 'Continue on up another 300 feet to 3700 feet where you will encounter Step 3 ... some large boulders fell and lodged in a narrow part of the gully walls', passed on the left wall — the same jammed-boulder chockstone the row calls the Waterfall 3 crux. No other source states this step's height. The row's ~3,900 ft (overview, hazards, watch_out) and the pin's 3,600 ft are both changed to 3,700.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/south-gully/165808"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "trailcatjim"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_merchant_peak_south_route",
+     "column": "overview",
+     "path": [],
+     "find": "(crux around 3,900 ft)",
+     "replace": "(crux around 3,700 ft)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_merchant_peak_south_route",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "crux waterfall (~3,900 ft)",
+     "replace": "crux waterfall (~3,700 ft)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_merchant_peak_south_route",
+     "column": "watch_out",
+     "path": [
+      1
+     ],
+     "find": "chockstone (~3,900 ft)",
+     "replace": "chockstone (~3,700 ft)"
+    },
+    {
+     "op": "set",
+     "id": "wa_merchant_peak_south_route",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 3600,
+     "value": 3700
+    }
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "kind": "fill",
+   "fact": "waypoints[0].distMi",
+   "verdict": "already_fixed",
+   "summary": "Not null on the live row: the trailhead pin's distMi is 0, so there is nothing to fill.",
+   "evidence": "Live row waypoints[0] (Tye Road pullout, type Trailhead) has distMi 0.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "kind": "item",
+   "fact": "Waypoint distance jump at the summit",
+   "verdict": "unresolved",
+   "summary": "No source states a one-way distance from the Little Giant trailhead to Berge's summit, so the summit's 16.92 mi cannot be replaced, and the chain's other distances need review with the pins.",
+   "evidence": "Sources give only the Little Giant Pass leg (10.4 mi round trip, 4,100 ft to the pass) and a verbal description of the Napeequa continuation. Live row unchanged: waypoints run 0-7.5 mi to the gully below the summit, then 16.92 at the summit; itinerary days of 10.5 mi in, dist_km 19.31 and totalNote ~24 mi round trip.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "kind": "item",
+   "fact": "total elevation gain/loss",
+   "verdict": "unresolved",
+   "summary": "No source states a total gain for the Southwest Couloir by the Bridge Creek / North Fork approach; the totals found belong to other lines or exits.",
+   "evidence": "The reports surfaced give 9,200 ft for a Northeast Buttress ascent with a Park Creek / Stehekin exit (38.7 mi) and a 3,800 ft first day to a high camp; the 8,400 ft in gain_ft is also a Northeast Buttress figure. None states this route's round-trip gain, so gain_ft 8,400, the itinerary days (4,600 + 2,400) and the ~6,500 ft totalNote stay as they are.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-16.4035302077"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "stephabegg",
+    "whereiskylemiller",
+    "trailcatjim"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "kind": "item",
+   "fact": "road-walk and One Acre Lake distances from the current gate",
+   "verdict": "unresolved",
+   "summary": "The one source for 2.25 mi measures the road walk from an older gate at the 2,100 ft switchback, not from the current gate at the bottom of Olney Creek Road where the row starts, so it does not support the row's 2.25 mi from the current gate.",
+   "evidence": "The Mountaineers Mount Stickney page: Olney Creek Road 'is permanently closed at the switchback at 2,100 ft' and from there 'Hike the closed road 2.25 miles to just past the second switchback ... (3,700 ft)'. The row's gate is the road's start at about 1,700 ft, where a 2026 report gives about 5 miles of walking before leaving the road at ~3,700 ft. No source states the distance to One Acre Lake from the current gate. The row's 2.25 mi (approach, waypoint, schedule) and the bivy notes' five-to-six mile road walk therefore cannot be reconciled from a stated figure for the same gate.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-stickney",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-02-11.055513514888"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "onehikeaweek"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_lone_wolf",
+   "kind": "item",
+   "fact": "The Obelisk's own elevation disagreement across waypoints",
+   "verdict": "confirmed",
+   "summary": "The third Obelisk pin's 4,900 ft (an estimate whose note says no figure is published) is set to the published 4,494 ft, which the other two Obelisk pins and high_point_ft already carry, and its note is corrected to say the formation lies down the shoulder from Sofa King Buttress.",
+   "evidence": "The route database's page for The Obelisk gives Elevation: 4,494 ft and says it 'lies by itself NE of the Sofa King Buttress; further down the shoulder of Silver Peak'. It is the only published record of the formation; nothing supports 4,900 or the 'further up-slope' reasoning in that waypoint's note.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477939/the-obelisk"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wta"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_lone_wolf",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 4900,
+     "value": 4494
+    },
+    {
+     "op": "set",
+     "id": "wa_lone_wolf",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elevFt"
+     ],
+     "expect": 4900,
+     "value": 4494
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lone_wolf",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "Elevation is an estimate from the surrounding terrain (Citidel base area is listed at 4,585 ft; The Obelisk sits further up-slope from the Sofa King Buttress sub-area) — no separate elevation figure is published for this formation.",
+     "replace": "The Obelisk stands on its own northeast of the Sofa King Buttress, further down the shoulder of Silver Peak, at about 4,494 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_lone_wolf",
+   "kind": "fill",
+   "fact": "sling_rack",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared value was a trad rack copied from an Index route, and the one source for this bolted sport line names no rack or slings, only chain anchors.",
+   "evidence": "The route's database page lists Lone Wolf as Sport 5.10a, 2 pitches, protection 'Chain anchors at the top of each pitch'; it gives no draw count or sling list.",
+   "sources": [
+    "https://www.mountainproject.com/route/120477970/lone-wolf"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "kind": "item",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "verdict": "unresolved",
+   "summary": "One peak page puts the North Fork / Pyramid trail junction at 6,600 ft, but adopting it for the Fox Camp pin would leave the approach's '~1,000 ft' climb to the 7,100 ft basin contradicted, and a new climb figure would have to be computed.",
+   "evidence": "The SummitPost Emerald Peak page (per its search excerpt) says the North Fork Entiat trail follows the river 7+ miles to 5,800 ft, then turns east to climb about half a mile to the Pyramid Mountain Trail junction at 6,600 ft. No source states an elevation for Fox Camp itself (a quarter mile from the junction) or the junction-to-basin climb, and the row's Fox Camp pin reads ~5,728 ft on the ground, so the pin placement is also in doubt.",
+   "sources": [
+    "https://www.summitpost.org/emerald-peak/152281"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "ericsbasecamp",
+    "hike2hike"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "kind": "item",
+   "fact": "rock_grade undersells the technical climbing",
+   "verdict": "confirmed",
+   "summary": "The grade fields were already rewritten to the East Ridge's class 3-4 with brief low-5th; the last copies of the old 5.7 'sustained pitches' framing, in the seasonal guidance, are changed to match.",
+   "evidence": "The peak's route page describes the East Ridge from the ~7,000 ft basin up a broad gully to the crest east of the balanced rock, then west over blocks and sandy benches to the summit: 'Class 3-4'; 5.7 belongs only to the optional Balanced Rock obelisk. Live row: grade 'Class 3-4, low 5th', rock_grade 'Class 3-4 (a few short low-5th-class moves)', pitch_detail cleared — rock_grade is not undersold. seasonal_guidance still spoke of 'the sustained 5.7 climbing' and 'harder, more sustained pitches'.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/sherpa-peak/152244"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "cascadeclimbers",
+    "wikipedia"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_peak_east_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "for the harder, more sustained pitches",
+     "replace": "for the exposed blocks on the upper ridge"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_peak_east_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "can slow the harder pitches",
+     "replace": "can slow the exposed steps"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_peak_east_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "for the sustained 5.7 climbing and long summit day",
+     "replace": "for the exposed class 3-4 ridge and long summit day"
+    }
+   ]
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "kind": "fill",
+   "fact": "commitment",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives a commitment grade (II or otherwise) for the East Ridge.",
+   "evidence": "The peak's route page and the 2005 East Ridge report give only class (3-4, a few low-5th moves); the cleared 'II' had no source.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/sherpa-peak/152244"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "Not filled: the East Ridge is described as a class 3-4 scramble and no source gives a pitch count.",
+   "evidence": "No source divides the East Ridge into pitches; the cleared 5 came from the unsourced 5.4-5.7 pitch rows.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives a pitch breakdown, and the cleared rows graded the line 5.4-5.7 and put the 5.7 on the wrong feature.",
+   "evidence": "Sources put 5.7 only on the Balanced Rock obelisk and describe the East Ridge as class 3-4; restoring the cleared rows would reintroduce the contradiction.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/sherpa-peak/152244"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "kind": "item",
+   "fact": "total gain: gain_ft/loss_ft 5,200 vs itinerary/approach/totalNote 4,730",
+   "verdict": "unresolved",
+   "summary": "The one stated 5,200 ft belongs to a 22 mi listing that does not match this row's 18.6 mi Star Lake line, and aligning the itinerary days (3,500 + 1,230) to any total would mean computing new day figures.",
+   "evidence": "A route listing gives 8.7 mi to Fish Creek Pass, 22 mi round trip and 5,200 ft; a regional hike page gives 7.5 mi and 3,500 ft to Star Lake and no summit figure. No source states the 4,730 ft or the row's 18.6 mi trip total.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/06/star-lake-star-peak/",
+    "https://www.summitpost.org/star-peak/151520"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wenatcheeoutdoors",
+    "trailcatjim",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "kind": "item",
+   "fact": "gain_ft/loss_ft (5,600) vs itinerary gain total and totalNote (5,400)",
+   "verdict": "unresolved",
+   "summary": "The row's gain_ft 5,600 has one North Peak source, but the itinerary's 5,400 is the sum of its day figures (3,000 + 2,400 + 0), so aligning it would mean computing new day gains.",
+   "evidence": "One North Peak report gives 5,600 ft gained and lost over ~14 mi; the main peak page's 4,000+ ft is for the South Peak lookout. Changing only the totalNote to 5,600 would contradict the day rows.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a one-way distance to North Peak; the only figure is a ~14 mi round trip, which may not be halved.",
+   "evidence": "North Peak report: ~14 mi round trip; peak page: 16 mi round trip to the South Peak lookout. No one-way figure for this line.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "kind": "item",
+   "fact": "Car-to-car distance: waypoint distMi (summit 2.7 mi one way) and itinerary 5.4 mi round trip look too long for the geometry",
+   "verdict": "unresolved",
+   "summary": "The one Union-only summer figure (5.0 mi round trip, 2,400 ft) does not fit the row's Smithbrook Trailhead start, and no source states a one-way distance, so neither the waypoint chain nor the 5.4 mi can be set from it.",
+   "evidence": "The club route page gives 5.0 mi round trip and 2,400 ft (a gain that implies a lower parking point than the ~4,000 ft trailhead); other guides give 6.6-12 mi with Jove Peak or a winter road walk. dist_km 1.6, the summit waypoint's 2.7 and the itinerary's 5.4 round trip still disagree with each other, and halving a round trip is not allowed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/union-jove-peaks",
+    "https://wenatcheeoutdoors.org/2016/06/06/union-peak/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wenatcheeoutdoors",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Not filled: the row was rebuilt around the Eldorado Creek / ice-cap approach, and no source states a one-way distance for that line; the 19 mi / 7,300 ft figures belong to the Colonial Creek side.",
+   "evidence": "The hiking database's Primus Peak page (19.0 mi round trip, 7,300 ft) starts at Colonial Creek Campground on SR-20, not Eldorado Creek; Eldorado-side reports (2003, 2016, 2024) give no mileage.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/primus-peak"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "turns-all-year",
+    "mountaineers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared 7,300 ft is the Colonial Creek (Thunder Creek) figure, and no source states a total gain for the Eldorado ice-cap line the row now describes.",
+   "evidence": "Only the Colonial Creek hike page states a gain (7,300 ft); the Eldorado-side reports give none.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/primus-peak"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "turns-all-year"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states the distance from the Eldorado Creek trailhead to Primus's summit.",
+   "evidence": "Eldorado ice-cap accounts describe the line by glaciers and cols without mileage; the cleared 11.5 came from the other approach.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "turns-all-year"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_iceman",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the crag's approach is published only as directions from the hairpin apex (trail to Spire Gully, dry creek bed, fixed-line slabs) with no distance.",
+   "evidence": "The route database's Ice Box Left Side page gives the approach by landmarks only; the cleared 1.8 mi was a Blue Lake figure.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_route_d",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the same Ice Box Left Side approach has no published distance from the hairpin.",
+   "evidence": "The route database's Ice Box Left Side page gives the approach by landmarks only; the cleared 1.8 mi was a Blue Lake figure.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives a timed ascent to Mastiff's summit; the route pages give only distance and gain.",
+   "evidence": "The club route page gives Mastiff from the Merritt Lake trailhead as a round-trip distance and gain with no times; the regional ski guide gives roughly 11 miles and no time. The cleared 8.5 equalled the car-to-car total, so it cannot return.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+    "https://wenatcheeoutdoors.org/2016/06/30/mastiff-mountain-via-merritt-lake/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wenatcheeoutdoors",
+    "wta"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "kind": "fill",
+   "fact": "timing.approachTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: the only stated time to Dutch Miller Gap (4.8 h) is from the old road end before the 2007 Dingford gate, and no current-gate time for this line was found.",
+   "evidence": "The 2003 ascent report gives 4.8 h from the old road end; a 2020 traverse report from the Dingford Creek trailhead gives about two hours to the Dutch Miller Gap trail junction but no time to the gap; a 2020 forum report could not be read.",
+   "sources": [
+    "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-01-2646986815"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "nwhikers",
+    "trailcatjim"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the pin is an unnamed snow-line point on the Airplane Creek bushwhack, and no source gives a distance to it.",
+   "evidence": "The 2021 ascent gives trailhead to turnoff 4.5 mi, turnoff to lake 1.5 mi, lake to summit 1.5 mi; nothing places the snow line, and summing legs is not allowed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-13-9462326046"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "trailcatjim",
+    "wikipedia"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives a distance to the base of the upper east face.",
+   "evidence": "Sources give the lake-to-summit leg as 1.5 mi with no intermediate point; the cleared 5.2 was not sourced.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-13-9462326046"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "trailcatjim"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_this_my_friend",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a one-way distance to this route's base below Aasgard Pass; the cleared 16.42 km was the round trip.",
+   "evidence": "Trail guides give the trail along Colchuck Lake (leaving it at mile 4.6) and an 11.15 mi out-and-back to Aasgard Pass; neither states the one-way distance to the route base.",
+   "sources": [
+    "https://www.enchantmentsguide.com/trail-guide/stuart-lake-trailhead"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "enchantmentsguide"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a total gain for the North-Middle-Main traverse; the stated totals are for the Main Peak alone or the Persis-Index traverse.",
+   "evidence": "Main Peak from Lake Serene: 5,500 ft (club route page); a Persis-Index trip: 6,391 ft. The traverse reports and the route database page give no total.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "cascadeclimbers",
+    "wta",
+    "mountaineers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "confirmed",
+   "summary": "gain_ft is filled with 6,400 ft, the gain one trail guide states from the Snow Lakes trailhead to Lake Viviane, beside which this crag sits; the row's waypoint note already says the same.",
+   "evidence": "The Snow Lakes trail guide: 'At 9.3 miles, and after climbing 6400 vertical feet, you'll reach Lake Viviane.' The row's Viviane Campsite waypoint is at distMi 9.3 with the note 'Reached after climbing ~6,400 vertical ft', and nothing else on the row states a gain.",
+   "sources": [
+    "https://www.enchantmentsguide.com/trail-guide/snow-lakes-trailhead"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "enchantmentsguide",
+    "mountaineers",
+    "usfs"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_smears_jugs_and_rock_roll",
+     "column": "gain_ft",
+     "path": [],
+     "expect": null,
+     "value": 6400
+    }
+   ]
+  }
+ ]
+}

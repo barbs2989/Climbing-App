@@ -34,10 +34,12 @@ const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scr
 // enrichment-wip/ is generated snippets that do not parse as modules.
 const walk = (dir, out = []) => {
   for (const name of readdirSync(dir)) {
-    if (SKIP.has(name)) continue;
+    if (SKIP.has(name) || name.startsWith(".")) continue; // a dot entry is never app source,
+    // and a guard temp file that vanishes between this readdir and the stat below would
+    // otherwise kill this walk — the guards now run concurrently.
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p, out);
-    else if (/\.jsx$/.test(name)) out.push(p);
+    else if (/\.[jt]sx$/.test(name)) out.push(p);
   }
   return out;
 };
@@ -108,7 +110,7 @@ const isFullScreen = (attr) => {
 for (const file of files) {
   const src = readFileSync(file, "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { console.error(`  parse error ${relative(ROOT, file)}: ${e.message}`); process.exit(1); }
   const rel = relative(ROOT, file);
 

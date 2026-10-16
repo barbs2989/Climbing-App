@@ -1,0 +1,45 @@
+{
+ "id": "wa_windy_peak_iron_gate_trail",
+ "name": "Windy Peak via Iron Gate Trailhead (Boundary Trail / Sunny Pass Approach)",
+ "access": {
+  "fees": "Northwest Forest Pass for trailhead parking",
+  "permit": "Free, self-issue wilderness permit at the trailhead",
+  "closures": null,
+  "landManager": "Colville National Forest, Tonasket Ranger District (Pasayten Wilderness)",
+  "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+  "overnight_permit": {
+   "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+   "what": "Free self-issue Pasayten Wilderness permit",
+   "where": "Fill one out at the trailhead registration box. No reservation is needed."
+  }
+ },
+ "pitch_detail": [
+  {
+   "grade": "Class 2 (easy, unroped)",
+   "notes": "All three trails converge before this same final easy scramble to the true summit.",
+   "pitch": "Final summit scramble (shared with the other two approaches)",
+   "lengthM": 70
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.908308,
+   "lng": -119.903845,
+   "name": "Iron Gate Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": null,
+   "directions": "From Loomis, drive north on County Road 9425 for 2 miles, then turn left onto Toats Coulee Road (County Road 4066), which becomes FR 39. Follow it about 14 miles to the spur signed for Iron Gate, FR 3900-500, and drive that about 6 miles to the trailhead. FR 3900-500 is a rough high-clearance road, not for passenger cars or trailers. A Northwest Forest Pass or day fee is required to park, plus a free self-issue wilderness permit."
+  },
+  {
+   "lat": 48.928205,
+   "lng": -119.970556,
+   "elev": 8335,
+   "name": "Windy Peak summit",
+   "type": "Summit",
+   "distMi": 6,
+   "elevFt": 8335,
+   "directions": "Hike north on the Boundary Trail #533, going straight through the four-way junction with the Clutch Creek and Deer Park trails, to Sunny Pass. There turn west onto the Windy Peak Trail, keep left at the next two junctions with the Basin Creek and Windy Creek trails, and take the short spur that climbs the last 200 ft to the summit."
+  }
+ ]
+}

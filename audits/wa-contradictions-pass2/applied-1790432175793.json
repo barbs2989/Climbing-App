@@ -1,0 +1,166 @@
+{
+ "applied": [
+  {
+   "id": "wa_chockstone_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Approach distance to the gully"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Approach distance to the gully"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Approach distance to the gully"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Blue Lake Trailhead elevation (waypoint 5,200 / approach_variants ~5,200 vs approach 5,400)"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Blue Lake Trailhead elevation (waypoint 5,200 / approach_variants ~5,200 vs approach 5,400)"
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Stay-left vs climber's-right on the ridge"
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "column": "pro_tips",
+   "path": [
+    4
+   ],
+   "fact": "Stay-left vs climber's-right on the ridge"
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "Stay-left vs climber's-right on the ridge"
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Stay-left vs climber's-right on the ridge"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_chockstone_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5200,
+      "name": "Blue Lake TH",
+      "note": "SR 20 pullout 1.5 mi west of Washington Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 6900,
+      "name": "Spire col (gully base)",
+      "note": "Base of the gully between North and South Early Winters Spires, below the giant chockstones.",
+      "type": "Junction",
+      "distMi": 0.6
+     },
+     {
+      "lat": 48.5133,
+      "lng": -120.6553,
+      "elev": 7300,
+      "name": "Chockstone crux",
+      "note": "5.7 pitch bypassing the first giant chockstone on the left.",
+      "type": "Hazard",
+      "distMi": 0.8
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 7760,
+      "name": "North Early Winters Spire",
+      "type": "Summit",
+      "distMi": 1
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the chasm between the two spires",
+      "hours": "1-2",
+      "notes": "From the Blue Lake Trailhead (~5,200 ft) on SR-20 about 1.5 miles west of Washington Pass, walk the maintained trail roughly a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction just past a small stream and a large cairn, then take the climbers' path up through slabs, talus and heather into the basin below the west faces.\n\nThe objective from here is the huge cleft that splits the two Early Winters Spires, seen from the WEST side. Head for its foot. Note this is the west-side gully — the couloir that splits the same two spires on the EAST side, reached from the highway hairpin, is a different feature and a different route.\n\nBe ready to swap between rock shoes and boots if snow is still lying in the gully.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "snow lingering in the gully early season — axe and crampons",
+       "loose rock funnelled down the gully, including from parties above",
+       "wind in the gully; it channels weather"
+      ],
+      "baseFinding": "The start is at the very foot of the enormous chasm dividing North from South Early Winters Spire — it is the biggest single feature on this side of the group and it is unambiguous even in poor visibility, because nothing else on the west faces is a full-height cleft between two summits. The route opens with a short step of low-fifth-class slab and layback moves, and then it is walking up the gully bed; if you are pulling on anything hard in the first rope length you are on one of the face routes to either side, not in the gully. Pitch one takes cracks and ramps along the LEFT edge of the gully rather than the middle. The house-sized chockstone that names the route sits much higher up the same gully, so do not expect to see it from the base as your confirmation."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "before": {
+    "beta": "The West Ridge is the standard and by far the most popular route on North Twin Sister. After a long logging-road and trail approach to treeline near Dailey Prairie, the route follows the ridge crest (staying generally on the climber's-right/west side to avoid the hardest moves) past two named rock features — the 'Obelisk' and the 'Cockscomb' — with a notch around 6,300 ft ('Katie Gap') that bypasses a cliff band where the crest is blocked. Most of the climbing is class 3 on excellent, high-friction rock with frequent holds; a handful of class 4 (and, on the crest itself, occasional class 5) moves are encountered, and some parties rope up for a short M1b mixed step on a variation start. Multiple false summits complicate routefinding near the top. Descent is either back down the ridge or, early season, a steep glissade down snow on the north face.",
+    "pro_tips": [
+     "The dunite rock offers superb friction — trust your feet",
+     "Confirm current logging-road access before the trip; gates and conditions change",
+     "Most parties mountain-bike the ~5 miles of lower logging road to save time and energy (bikes must be left before entering the Wilderness boundary)",
+     "This approach crosses private industrial timberland owned by Hampton Family Forests (formerly Weyerhaeuser) — a paid recreation permit is required and non-motorized permits are capped each year; confirm the gate status ahead, since it has a history of being locked without notice.",
+     "Stay left (west side) of the ridge crest near the false summits — straying right leads into harder, looser, exposed terrain."
+    ],
+    "descent": "Reverse the West Ridge (stay left/west of the crest); in early-mid season, some parties instead glissade/plunge-step the steep snow slopes on the north face.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long full car-to-car day (roughly 10-14 hrs): several miles of logging-road approach (often biked) plus ~1,500 ft of sustained scrambling each way",
+      "packWeight": "Light alpine day pack — helmet required, light rack/handline optional (some parties carry a rope for a hand-line on exposed sections even though most don't end up using it)"
+     },
+     "approachTime": "~6-7 hrs trailhead to summit, 4-5 hrs summit to trailhead (bike recommended for the multi-mile logging-road approach); scrambling portion alone is at least ~3 hrs round trip",
+     "requiredSkills": [
+      "Class 3-4 scrambling on exposed ridge crest",
+      "route-finding (staying on the correct/left side of the ridge — straying right leads into unintended class 5 terrain per multiple trip reports)",
+      "comfort with loose rock/blocks",
+      "optional: mountain biking the logging-road approach",
+      "early-season: ice axe use for lingering snow"
+     ],
+     "experienceLevel": "Experienced Class 3-4 scrambler comfortable on sustained exposed terrain; this is a step up from a beginner scramble — most parties do not rope up but should be capable of unroped movement over loose blocks and short class 4/occasional class 5 moves if they stray off-route"
+    }
+   }
+  }
+ ]
+}

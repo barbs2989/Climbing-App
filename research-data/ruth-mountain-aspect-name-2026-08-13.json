@@ -1,0 +1,27 @@
+{
+  "_README": [
+    "wa_ruth_mountain_south_slopes is named 'South Slopes / Ruth Glacier' while its aspect is N and",
+    "its face column says 'North Glacier'. Published sources settle it: the standard route climbs",
+    "Ruth from the NORTH via Hannegan Pass and the Ruth Glacier, and is described as the standard",
+    "North Face route. The peak's south-side features (south ridge, south couloir) belong to the",
+    "Ruth-Icy traverse, which is a separate row.",
+    "",
+    "The name encoded the DIRECTION OF TRAVEL as if it were an aspect: you walk south from Hannegan",
+    "Pass along Ruth Arm to reach a mountain you then climb on its north-side glacier.",
+    "",
+    "Only the two spans that state the aspect are touched. Every other 'south' on this row -- 'heading",
+    "east then south', 'the south side of a small pond', 'traverse south across heather' -- is a travel",
+    "direction on the walk in and is CORRECT. A blind replace would wreck the row, which is what",
+    "wa_little_annapurna_south_slopes taught.",
+    "",
+    "The NAME itself is an identity change and goes through hand-written SQL a human runs."
+  ],
+  "wa_ruth_mountain_south_slopes": {
+    "area": "wa_ruth_mountain",
+    "_why": "aspect N, face 'North Glacier', and published sources all say the standard route climbs the Ruth Glacier from the north via Hannegan Pass; the name states a travel direction as an aspect.",
+    "set": {
+      "overview": "A friendly glaciated peak above Hannegan Pass, Ruth Mountain is one of the more accessible alpine summits in the Mount Baker area and a popular introduction to glacier travel. The north-side Ruth Glacier gives a moderate snow climb with a short scramble to the summit.",
+      "descent_text": "This is a walk-off/downclimb — the standard North Face/Ruth Glacier route has no technical rappelling; rope, axe, and crampons are carried for glacier travel, not rock protection. Reverse the ascent line: downclimb the glacier's moderate north-slope snow/ice back to the ridge toe below the notch, staying roped and alert for the same crevasse hazard encountered on the way up (afternoon softening can open bridges that were solid at dawn, so an early start/turnaround is worth planning around). Pick up the climbers' path back along the shoulder, staying above/right of the cliff band, and drop past the pond south of Hannegan Pass to regain the maintained trail. From Hannegan Pass, follow Trail #674 back down its switchbacks past Hannegan Camp and out the gentle Ruth Creek valley grade to the trailhead."
+    }
+  }
+}

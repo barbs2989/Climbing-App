@@ -1,0 +1,1157 @@
+{
+ "file": "r661.json",
+ "results": [
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "High Camp at about 6,900 ft",
+   "evidence": "High Camp at the end of the High Camp Trail sits at about 6,900 ft: WTA gives the High Camp high point as 6,900 ft, Oregon Hikers gives 6,900 ft for Adams Glacier Meadows, and the onX track tops out at 6,860 ft. ~9,000 ft is where the icefall climbing begins, not the camp.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach ~9,000 ft high camp below the Adams Glacier",
+     "replace": "Reach High Camp (~6,900 ft) below the Adams Glacier",
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "High camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~5 hr approach to a 9,000 ft high camp",
+     "replace": "~5 hr approach to High Camp at about 6,900 ft",
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "High camp elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Approach distance to High Camp",
+   "verdict": "fixed",
+   "correct_value": "About 4.1 miles one way to High Camp (3.1 mi to the PCT junction at ~6,100 ft, then ~1 mi)",
+   "evidence": "Killen Creek Trail #113 is 3.1 miles to the PCT (Forest Service) and High Camp is about a mile beyond; NW Hiker and Oregon Hikers give 8.2 miles round trip (4.1 one way) and the onX track is 8 miles round trip. Day 1's 8.6 mi is a round-trip-sized figure. The 'High Camp Trail Junction' pin also stored 6,900 ft / 4.5 mi, but the junction is at ~6,100 ft, 3.1 mi (Forest Service ~6,000 ft; guides 6,100 ft). Day 1 gainFt (2,900 vs the sourced ~2,300) is left unchanged because the itinerary gain total cannot yet be reconciled with gain_ft (see Total gain).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8.6,
+     "value": 4.1,
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Approach distance to High Camp"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 6900,
+     "value": 6100,
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Approach distance to High Camp"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 4.5,
+     "value": 3.1,
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Approach distance to High Camp"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 5,
+     "value": 4.1,
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Approach distance to High Camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project gives the route's own gain as 4,700 ft (camp to summit), and a North Cleaver guide gives 'almost 8,000 ft' for the north-side trip car to car, but no source states a car-to-car gain for the Adams Glacier route itself; gain_ft (5,150) and the itinerary sum (7,680) are left for a sourced figure.",
+   "sources": [
+    "https://www.mountainproject.com/route/107707699/adams-glacier",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Glacier base elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Wikipedia puts the Adams Glacier terminus near 7,000 ft (matching approach/approach_variants), but a detailed trip report says parties reached the glacier and roped up at about 8,000 ft (matching the waypoint). The two describe different points (toe vs rope-up) and no two sources agree on the waypoint's meaning.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Adams_Glacier_(Mount_Adams)",
+    "https://iceandtrail.com/2014/07/09/mt-adams-adams-glacier-grade-iii-steep-snow-ai2/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Steepness of the route",
+   "verdict": "fixed",
+   "correct_value": "Typically ice steps of about 45-50°; some lines/years reach 55-65°",
+   "evidence": "Northwest Mountain School lists the Adams Glacier as snow/ice to 45°, and an Ice and Trail report notes guidebooks put the maximum angle at 45-50° while their left-hand line hit 55-60° touching 65°; a Santiam Alpine Club report describes 50-55° average with a 65° maximum on one feature. So 45-50° is typical and 65° is a real but line-dependent maximum; gear[0] overstated it as 'sustained'.",
+   "sources": [
+    "https://www.mountainschool.com/mt-adams-guides",
+    "https://iceandtrail.com/2014/07/09/mt-adams-adams-glacier-grade-iii-steep-snow-ai2/",
+    "http://santiamalpineclub.org/mountain/climbing/trip/report/03.06.28.adams.php"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "find": "sustained 50-55° ice/snow with sections to ~65°",
+     "replace": "ice steps of about 45-50° in typical years, reaching 55-65° on some lines",
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Steepness of the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Trailhead parking pass at Killen Creek",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No parking pass is required at Killen Creek Trailhead (access card is correct; the High Camp camp card's 'Northwest Forest Pass' line is the wrong one).",
+   "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'; the Oregon Hikers trailhead page lists only a bridge toll and the wilderness permit. Older hiking guides still say a Northwest Forest Pass is needed. The only field in conflict with the sourced answer is bivy[0].permit, which this pass may not patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Killen Creek trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "4,600 ft",
+   "evidence": "Trailhead elevation is about 4,585-4,600 ft (4,585 ft on one trail guide; the High Camp track's low point is 4,596 ft; 4,600 ft on a third guide). The trailhead pin stored 4,400 ft while the approach says ~4,600 ft.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4400,
+     "value": 4600,
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Killen Creek trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade I",
+   "evidence": "The Mountaineers route page rates the South Spur Grade I (moderate snow), and Northwest Mountain School lists the South Spur as Grade I. The commitment chip's II is the outlier.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+    "https://www.mountainschool.com/mt-adams-guides",
+    "https://www.cmc.org/education-adventure/trips/routes-places/mount-adams-south-spur"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "II",
+     "value": "I",
+     "id": "wa_mount_adams_south_climb",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "fact": "Climbing pass season and purchase",
+   "verdict": "fixed",
+   "correct_value": "Climbing Pass required May 1-Sep 30, $20 per person per trip, sold online only",
+   "evidence": "The Forest Service's Mt. Adams summit page and Trail #113 page both say the pass is required May 1 to September 30 and is sold on Recreation.gov (plan ahead, poor cell coverage); the Recreation.gov pass page and 2025 guidance give a flat $20 per person per trip, available only online. Weekday/weekend rates were a pre-2024 arrangement.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://recreation.gov/activitypass/4280e9ae-d010-11ea-8e82-82c0c22bed90",
+    "https://www.oregonhikers.org/field_guide/South_Climb_Trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(June 1 to September 30 per the Forest Service)",
+     "replace": "(May 1 to September 30)",
+     "id": "wa_mount_adams_south_climb",
+     "fact": "Climbing pass season and purchase"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Both can be self-issued at the trailhead, or the volcano pass can be obtained from the Mount Adams Ranger Station in Trout Lake or by mail. Weekend and weekday rates differ and an annual option exists.",
+     "replace": "The wilderness permit is self-issued at the trailhead; the climbing pass is a single-trip pass sold only online, so buy and print it before driving up.",
+     "id": "wa_mount_adams_south_climb",
+     "fact": "Climbing pass season and purchase"
+    }
+   ]
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "Permit requirement (contaminated access note)",
+   "verdict": "fixed",
+   "correct_value": "Mt. Adams Climbing Pass required above 7,000 ft May 1-Sep 30; free self-issued wilderness permit at the trailhead",
+   "evidence": "The Forest Service's Mt. Adams summit page requires the climbing pass for anyone 16+ above 7,000 ft May 1-Sep 30 with a self-issued wilderness permit otherwise; the Trail #113 page (the approach for this route) repeats the May 1-Sep 30 pass requirement. The access note's 'no permit' and Mount Index text belong to another peak.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "No permit required. Free wilderness permit for overnight (optional). Mount Index, North Cascades area.",
+     "replace": "Mt. Adams Climbing Pass required above 7,000 ft May 1–Sep 30; free self-issued wilderness permit at the Killen Creek trailhead.",
+     "id": "adams_northwest_ridge",
+     "fact": "Permit requirement (contaminated access note)"
+    }
+   ]
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "Trailhead parking (wrong trailhead)",
+   "verdict": "fixed",
+   "correct_value": "No parking pass required at Killen Creek Trailhead",
+   "evidence": "The route starts at Killen Creek. The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'. The Cold Springs day-use fee text belongs to the south-side trailhead. (The High Camp camp card still says Northwest Forest Pass; bivy is out of scope.)",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Cold Springs/South Climb Trailhead day-use fee: $5/vehicle/day or $30/year (a Northwest Forest Pass satisfies this; the Climbing Pass’s parking stub also covers it May 1–Sept 30).",
+     "replace": "No trailhead parking pass is required at the Killen Creek Trailhead. The Mount Adams Climbing Pass applies separately above 7,000 ft.",
+     "id": "adams_northwest_ridge",
+     "fact": "Trailhead parking (wrong trailhead)"
+    }
+   ]
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "Side of the Adams Glacier",
+   "verdict": "fixed",
+   "correct_value": "The route lies on climber's RIGHT (west) of the Adams Glacier: glacier on climber's left, Northwest Ridge crest on climber's right. The face field is correct; beta and baseFinding had the sides swapped.",
+   "evidence": "Mountain Project's North Face of NW Ridge page says the route is 'climbers right of Adams Glacier terminus', between the Adams Glacier and the loose Northwest Ridge, avoiding the ridge by staying left; a WildSnow ski report says the face is seen to the right of the Adams Glacier on approach and exits skier's right (east) onto the glacier, and another account describes crossing crevasses on the west side of the Adams Glacier to reach it. The Northwest Ridge is west of the Adams Glacier, so climbing south the glacier is on the left.",
+   "sources": [
+    "https://www.mountainproject.com/route/125742502/north-face-of-nw-ridge",
+    "https://wildsnow.com/26151/mount-adams-north-face-northwest-ridge/",
+    "https://en.wikipedia.org/wiki/Adams_Glacier_(Mount_Adams)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "between the Adams Glacier (on climber's right) and the Northwest Ridge crest (on climber's left, avoided for its poor rock)",
+     "replace": "between the Adams Glacier (on climber's left) and the Northwest Ridge crest (on climber's right, avoided for its poor rock)",
+     "id": "adams_northwest_ridge",
+     "fact": "Side of the Adams Glacier"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE ADAMS GLACIER SHOULD BE ON YOUR RIGHT AND THE CREST OF THE NORTHWEST RIDGE ON YOUR LEFT",
+     "replace": "THE ADAMS GLACIER SHOULD BE ON YOUR LEFT AND THE CREST OF THE NORTHWEST RIDGE ON YOUR RIGHT",
+     "id": "adams_northwest_ridge",
+     "fact": "Side of the Adams Glacier"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "you have drifted left onto the ridge",
+     "replace": "you have drifted right onto the ridge",
+     "id": "adams_northwest_ridge",
+     "fact": "Side of the Adams Glacier"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "you are too far right and on the Adams Glacier route",
+     "replace": "you are too far left and on the Adams Glacier route",
+     "id": "adams_northwest_ridge",
+     "fact": "Side of the Adams Glacier"
+    }
+   ]
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "Which ridge crest the route joins",
+   "verdict": "fixed",
+   "correct_value": "Northwest Ridge crest",
+   "evidence": "Mountain Project describes the route running between the Adams Glacier and the Northwest Ridge and continuing toward the NW Ridge's upper section near 10,000 ft; SummitPost places the North Ridge between the Adams and Lava glaciers, i.e. on the far (east) side of the Adams Glacier, so it is not reachable as an escape from this face.",
+   "sources": [
+    "https://www.mountainproject.com/route/125742502/north-face-of-nw-ridge",
+    "https://www.summitpost.org/mount-adams/150198"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "escape onto the North Ridge crest once angle allows",
+     "replace": "escape onto the Northwest Ridge crest once angle allows",
+     "id": "adams_northwest_ridge",
+     "fact": "Which ridge crest the route joins"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "High Camp at about 6,900 ft",
+   "evidence": "WTA and Oregon Hikers put High Camp / Adams Glacier Meadows at 6,900 ft and the onX track tops out at 6,860 ft; the row's approach, pitch_detail, camp card and partner fields already say ~6,900 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "before climbing onto snow to a high camp around 9,000 ft",
+     "replace": "before climbing to High Camp at about 6,900 ft",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "High camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach ~9,000 ft high camp below the North Ridge",
+     "replace": "Reach High Camp (~6,900 ft) below the North Ridge",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "High camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "a high camp around 9,0…",
+     "replace": "High Camp at about 6,900 ft.",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "High camp elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Approach distance and total distance",
+   "verdict": "fixed",
+   "correct_value": "About 4.1 miles one way to High Camp",
+   "evidence": "Trail #113 is 3.1 mi to the PCT (Forest Service) plus about a mile to High Camp; NW Hiker and Oregon Hikers give 8.2 mi round trip and onX 8 mi round trip. Itinerary days 1 and 3 (8.6 mi each) and the High Camp pin (5 mi) are fixed to 4.1. Not changed: dist_km 5.6 (convention not established) and the unsourced 7 / 11.5 mi distances on the ridge-base and summit pins (still in order).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8.6,
+     "value": 4.1,
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Approach distance and total distance"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 8.6,
+     "value": 4.1,
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Approach distance and total distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 5,
+     "value": 4.1,
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Approach distance and total distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 7,691 is consistent with a North Cleaver guide's 'almost 8,000 ft' car to car, but the itinerary day gains (2,900 + 3,300) were built on a 9,000 ft camp and no source states per-day figures for this route; per-day gainFt/lossFt are left unchanged.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Last reliable water",
+   "verdict": "fixed",
+   "correct_value": "East Fork Adams Creek, crossed about 2.5 miles up Trail #113",
+   "evidence": "onX's High Camp via Killen Creek guide says the trail crosses East Fork Adams Creek at about 2.5 miles and that it is the place to fill water; Oregon Hikers' Adams Glacier Meadows hike also crosses the East Fork of Adams Creek on this trail; the Forest Service lists no water on the trail itself. Killen Creek Meadows lies about a mile north along the PCT, off this approach.",
+   "sources": [
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Killen Creek low on the trail is the last dependable water.",
+     "replace": "East Fork Adams Creek, crossed about 2.5 miles up the trail, is the last dependable water.",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Last reliable water"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "expect": "No running water above Killen Creek",
+     "value": "No running water above East Fork Adams Creek",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Last reliable water"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Glaciers crossed",
+   "verdict": "fixed",
+   "correct_value": "Adams and Lava glaciers (either side of the ridge)",
+   "evidence": "SummitPost describes the North Ridge (North Cleaver) as lying between the Adams and Lava glaciers; the Lava Glacier headwall fills the triangle between the North Ridge and Lava Ridge (Mazamas), and the Lyman Glacier lies beyond Lava Ridge (reached 'around the toe of Lava Ridge', Mountaineers). The Lyman is not on this route.",
+   "sources": [
+    "https://www.summitpost.org/mount-adams/150198",
+    "https://mazamas.org/activity/221/",
+    "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Crevasses on the Lava and Lyman glacier approaches",
+     "replace": "Crevasses on the Adams and Lava glaciers either side of the ridge",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Glaciers crossed"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "Crevasses on the Lava and Lyman glacier approaches/descent",
+     "replace": "Crevasses on the Adams and Lava glaciers flanking the ridge",
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Glaciers crossed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Trailhead parking pass at Killen Creek",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No parking pass is required at Killen Creek Trailhead (access card is correct; the High Camp camp card's 'Northwest Forest Pass' line is the wrong one).",
+   "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'; the Oregon Hikers trailhead page lists only a bridge toll and the wilderness permit. Older hiking guides still say a Northwest Forest Pass is needed. The only field in conflict with the sourced answer is bivy[0].permit, which this pass may not patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Killen Creek trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "4,600 ft",
+   "evidence": "Trailhead elevation is about 4,585-4,600 ft (4,585 ft on one trail guide; the High Camp track's low point is 4,596 ft; 4,600 ft on a third guide). The trailhead pin stored 4,400 ft while approach_variants says ~4,600 ft.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4400,
+     "value": 4600,
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Killen Creek trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Trailhead (Killen Creek vs Muddy Meadows)",
+   "verdict": "fixed",
+   "correct_value": "Killen Creek via High Camp is the standard start; Muddy Meadows is an alternative from the east",
+   "evidence": "The Mountaineers' North Lyman Glacier route traverses from High Camp across lava fields and the Lava Glacier around the toe of Lava Ridge to the Lyman (the Killen Creek approach), while a Turns-All-Year trip reached the Lava/Lyman area from Muddy Meadows and Mountain Project's Lyman page approaches from the PCT near Devil's Garden — so Muddy Meadows is a real alternative, not the only trailhead. The pin note wrongly said Killen Creek does not serve this route.",
+   "sources": [
+    "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-adams-north-lyman-glacier",
+    "https://turns-all-year.com/trip-reports/may-25-26-2005-mt-adams-lava-lyman-wilson-rusk",
+    "https://www.mountainproject.com/route/120612241/lyman-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Reached by traversing from a Lava Glacier basecamp; Muddy Meadows is the trailhead for this approach, not Killen Creek (which serves the due-north Adams Glacier route).",
+     "replace": "Standard start, via High Camp and a traverse east past Lava Ridge. Muddy Meadows trailhead, farther east, is an alternative start for the Lava and Lyman glaciers.",
+     "id": "wa_mount_adams_lyman_glacier",
+     "fact": "Trailhead (Killen Creek vs Muddy Meadows)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers list the North Lyman Glacier as a Grade II ice route (agreeing with alpine_grade, commitment and rope_note), but no second independent source giving a commitment grade was found (Mountain Project gives only 'Moderate Snow'; Mazamas use their own letter scale).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes",
+    "https://www.mountainproject.com/route/120612241/lyman-glacier",
+    "https://mazamas.org/activity/222/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project calls it a late-spring climb (which supports May-Jun), while best_season/seasonal_guidance say June-July and the access card says the road is snow-blocked into June; no source gives a month window.",
+   "sources": [
+    "https://www.mountainproject.com/route/120612241/lyman-glacier",
+    "https://mazamas.org/activity/222/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Approach distance / total distance",
+   "verdict": "fixed",
+   "correct_value": "About 4.1 miles one way to High Camp",
+   "evidence": "Trail #113 is 3.1 mi to the PCT plus ~1 mi to High Camp (Forest Service); NW Hiker and Oregon Hikers give 8.2 mi round trip. Itinerary days 1 and 3 fixed to 4.1 mi. dist_km (37.3 km = the old itinerary total) is left alone: the one-way distance to the Lyman base is not sourced.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8.6,
+     "value": 4.1,
+     "id": "wa_mount_adams_lyman_glacier",
+     "fact": "Approach distance / total distance"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 8.6,
+     "value": 4.1,
+     "id": "wa_mount_adams_lyman_glacier",
+     "fact": "Approach distance / total distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Rack: screws and pickets",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers' gear list (recorded in corrections) gives 4-5 long screws and 2 pickets, matching sling_rack; no second source gives counts, so detailed_rack and gear are not changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-adams-north-lyman-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Descent line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descend the North Ridge (North Cleaver) back toward High Camp",
+   "evidence": "Mountain Project's Lyman Glacier page gives the descent as the North Cleaver or the adjacent snowfield; descent_text, gear[6], approach_variants notes and baseFinding all say the same. The short descent field held generic 'retrace the ascent' text.",
+   "sources": [
+    "https://www.mountainproject.com/route/120612241/lyman-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via the standard descent route, retracing the ascent when possible.",
+     "replace": "Descend the North Ridge (North Cleaver) back toward High Camp.",
+     "id": "wa_mount_adams_lyman_glacier",
+     "fact": "Descent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "4,600 ft",
+   "evidence": "Trailhead elevation is about 4,585-4,600 ft (4,585 ft on one trail guide; the High Camp track's low point is 4,596 ft; 4,600 ft on a third guide).",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4140,
+     "value": 4600,
+     "id": "wa_mount_adams_lyman_glacier",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4140,
+     "value": 4600,
+     "id": "wa_mount_adams_lyman_glacier",
+     "fact": "Trailhead elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Trailhead parking pass at Killen Creek",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No parking pass is required at Killen Creek Trailhead (access card is correct; the High Camp camp card's 'Northwest Forest Pass' line is the wrong one).",
+   "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'; the Oregon Hikers trailhead page lists only a bridge toll and the wilderness permit. Older hiking guides still say a Northwest Forest Pass is needed. The only field in conflict with the sourced answer is bivy[0].permit, which this pass may not patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "fact": "Season vs access window",
+   "verdict": "fixed",
+   "correct_value": "Jul-Sep",
+   "evidence": "Non-members can only start from Bird Creek Meadows (Yakama Tract D) in the summer window: EyeHike's Mount Adams logistics page says the non-member climbing season there is restricted to July 1-October 1, and a 2021 Yakama Nation announcement opened Tract D only from August 30 to October 1. A May start is not available to non-members.",
+   "sources": [
+    "https://www.eyehike.com/Adams/Adams_Logistics.htm",
+    "https://columbiacommunityconnection.com/the-dalles/yakama-nation-announces-tract-d-recreational-area-opening-dates",
+    "https://www.wta.org/go-hiking/hikes/mount-adams-highline"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "May-Aug",
+     "value": "Jul-Sep",
+     "id": "wa_mount_adams_mazama_glacier_headwall",
+     "fact": "Season vs access window"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Spring or summer for optimal snow/ice conditions.",
+     "replace": "Summer, inside the Yakama Nation's visitor window for the Bird Creek side (historically about July 1 to October 1, and shorter in some years); earlier in that window holds more snow.",
+     "id": "wa_mount_adams_mazama_glacier_headwall",
+     "fact": "Season vs access window"
+    }
+   ]
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "fact": "Side of the mountain on the approach",
+   "verdict": "fixed",
+   "correct_value": "Southwest/west side",
+   "evidence": "Wikipedia places the Avalanche and White Salmon glaciers on the west side of Mount Adams, and a Round the Mountain Trail guide describes the Avalanche Glacier's moraines up the Salt Creek drainage near the mountain's southwest corner, west of Cold Springs. The approach's 'northwest side' is wrong.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Adams_(Washington)",
+    "http://science.halleyhosting.com/nature/cascade/mtadams/places/flwrhikes/s/roundmttr.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to the northwest side of Mount Adams",
+     "replace": "to the southwest side of Mount Adams",
+     "id": "adams_avalanche_glacier",
+     "fact": "Side of the mountain on the approach"
+    }
+   ]
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "fact": "Drive direction to Cold Springs",
+   "verdict": "fixed",
+   "correct_value": "North from Trout Lake via Mt. Adams Road, FR 80 and FR 8040",
+   "evidence": "The Forest Service's South Climb trailhead page and Oregon Hikers both route drivers north from Trout Lake on Mt. Adams Road, then FR 80 to FR 8040 (500 spur) to Cold Springs; Randle/FR 23 from the north serves the Killen Creek side.",
+   "sources": [
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-south-climb",
+    "https://www.oregonhikers.org/field_guide/South_Climb_Trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "South from Randle, WA; accessible via Forest Road 23",
+     "replace": "North from Trout Lake via Mt. Adams Road, Forest Road 80 and Forest Road 8040",
+     "id": "adams_avalanche_glacier",
+     "fact": "Drive direction to Cold Springs"
+    }
+   ]
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "fact": "Camp and descent plan",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A Round the Mountain Trail guide confirms Mad Cat (Madcat) Meadows as a used camp near the Salt Creek drainage below the Avalanche Glacier, but no source describes this route's camp and descent plan; the high-bivy card is out of scope and the itinerary's 'descend via the South Spur to camp' cannot be settled.",
+   "sources": [
+    "http://science.halleyhosting.com/nature/cascade/mtadams/places/flwrhikes/s/roundmttr.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "fact": "County vs sheriff",
+   "verdict": "fixed",
+   "correct_value": "Skamania County Sheriff handles search and rescue for the southwest approach",
+   "evidence": "Wikipedia places Mount Adams in Skamania County, and Skamania County Sheriff's Office Search and Rescue lists Mount Adams inside its area of responsibility. The Yakima County number does not match the county the card names; no Skamania phone number is added.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Adams_(Washington)",
+    "https://www.scsosar.org/",
+    "https://skamaniasheriff.com/2025/08/25/skamania-county-continues-rising-trend-in-search-and-rescue-missions-for-the-month-of-july/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "sheriffDispatch"
+     ],
+     "find": "911; Yakima County Sheriff Search & Rescue 1 (800) 572-0490",
+     "replace": "911; Skamania County Sheriff's Office (search and rescue)",
+     "id": "adams_avalanche_glacier",
+     "fact": "County vs sheriff"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "EyeHike gives the non-member window on the Yakama side as July 1-October 1 (matching season/rope_note), while the row's condition fields prefer May-June; no route-specific source settles which window the season field should carry or which side the route is approached from.",
+   "sources": [
+    "https://www.eyehike.com/Adams/Adams_Logistics.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "fact": "Approach line: Lunch Counter vs Round the Mountain traverse",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source describing this route's approach was found; the Highline Trail to Avalanche Valley (the east-side camp) is closed to non-members at the reservation boundary per WTA, which does not settle whether parties stage from Lunch Counter or a Wilson-toe camp.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-adams-highline"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "fact": "Access side: Cold Springs vs Yakama/Bird Creek",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Wilson Glacier descends onto the Yakama side and the east-side approaches cross Tract D (WTA, EyeHike), but no source describes which trailhead this route actually uses, so the land-manager and trailhead fields are left as they are.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-adams-highline",
+    "https://www.eyehike.com/Adams/Adams_Logistics.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "fact": "Descent route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No external source for this route's descent was found; the North Ridge option is only a genuine alternative with a car shuttle, but the row cannot be patched on internal agreement alone.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "fact": "Parking pass / climbing permit",
+   "verdict": "fixed",
+   "correct_value": "Cold Springs day-use fee ($5/day or $30/year, Northwest Forest Pass accepted) plus the Mt. Adams Climbing Pass above 7,000 ft May 1-Sep 30",
+   "evidence": "The Forest Service's South Climb trailhead page gives the $5/day or $30/year fee and requires the climbing pass above 7,000 ft May 1-Sep 30; the Forest Service Mt. Adams summit page and the Recreation.gov pass page confirm the climbing pass requirement. 'No specific climbing permit' is wrong.",
+   "sources": [
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-south-climb",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://recreation.gov/activitypass/4280e9ae-d010-11ea-8e82-82c0c22bed90"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "replace": "Cold Springs trailhead day-use fee $5/day or $30/year (a Northwest Forest Pass covers it). Mt. Adams Climbing Pass required above 7,000 ft May 1–Sep 30.",
+     "id": "wa_mount_adams_wilson_glacier_headwall",
+     "fact": "Parking pass / climbing permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a distance for this route; the approach's ~27 km, dist_km 9.98 km and the itinerary's 12.4 mi cannot be reconciled without one.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_northwest_ridge",
+   "fact": "Trailhead parking pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No parking pass is required at Killen Creek Trailhead (access card is correct; the High Camp camp card's 'Northwest Forest Pass' line is the wrong one).",
+   "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'; the Oregon Hikers trailhead page lists only a bridge toll and the wilderness permit. Older hiking guides still say a Northwest Forest Pass is needed. The only field in conflict with the sourced answer is bivy[0].permit, which this pass may not patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Approach distance / total distance",
+   "verdict": "fixed",
+   "correct_value": "About 4.1 miles one way to High Camp",
+   "evidence": "Trail #113 is 3.1 mi to the PCT plus ~1 mi to High Camp (Forest Service); NW Hiker and Oregon Hikers give 8.2 mi round trip. Day 1 fixed to 4.1 mi; dist_km left alone.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8.6,
+     "value": 4.1,
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Approach distance / total distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Trailhead (Killen Creek vs Muddy Meadows)",
+   "verdict": "fixed",
+   "correct_value": "Killen Creek via High Camp is the standard start; Muddy Meadows is an alternative from the east",
+   "evidence": "A Turns-All-Year trip reached the Lava Glacier from Muddy Meadows, and Mountain Project's Lyman page approaches the neighbouring glacier from the PCT near Devil's Garden, so Muddy Meadows is a real alternative; the Mountaineers' north-side routes use Killen Creek and High Camp, as every other field on this row does. The note is rewritten so it no longer claims Muddy Meadows is the closer approach.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/may-25-26-2005-mt-adams-lava-lyman-wilson-rusk",
+    "https://www.mountainproject.com/route/120612241/lyman-glacier",
+    "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-adams-north-lyman-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Muddy Meadows is the more specific, closer approach for the northeast glacier cluster (Lava/Lyman/Wilson/Rusk).",
+     "replace": "Standard start, via High Camp. Muddy Meadows trailhead, farther east, is an alternative start for the Lava and Lyman glaciers.",
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Trailhead (Killen Creek vs Muddy Meadows)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Season vs best window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mazamas list the route for spring and summer and guides say 'early season'; no source gives months, and the access card's snow-blocked road into June supports the June-only season while the other fields say May-June.",
+   "sources": [
+    "https://mazamas.org/activity/221/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source giving a commitment grade for the Lava Glacier Headwall was found (Mazamas use their own letter scale).",
+   "sources": [
+    "https://mazamas.org/activity/221/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Descent line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descend the North Ridge back toward High Camp",
+   "evidence": "descent_text, rope_note, pro_tips and the itinerary all descend the North Ridge; Mazamas describe the headwall as bounded by the North Ridge, and Mountain Project's north-side glacier routes descend the North Cleaver. The short descent field held generic 'retrace the ascent' text.",
+   "sources": [
+    "https://mazamas.org/activity/221/",
+    "https://www.mountainproject.com/route/107707699/adams-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via the standard descent route, retracing the ascent when possible.",
+     "replace": "Descend the North Ridge (North Cleaver) back toward High Camp.",
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Descent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "4,600 ft",
+   "evidence": "Trailhead elevation is about 4,585-4,600 ft (4,585 ft on one trail guide; the High Camp track's low point is 4,596 ft; 4,600 ft on a third guide).",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4140,
+     "value": 4600,
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4140,
+     "value": 4600,
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Trailhead elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Trailhead parking pass at Killen Creek",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No parking pass is required at Killen Creek Trailhead (access card is correct; the High Camp camp card's 'Northwest Forest Pass' line is the wrong one).",
+   "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'; the Oregon Hikers trailhead page lists only a bridge toll and the wilderness permit. Older hiking guides still say a Northwest Forest Pass is needed. The only field in conflict with the sourced answer is bivy[0].permit, which this pass may not patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.nwhiker.com/GPNFHike28.html"
+   ],
+   "patches": []
+  }
+ ]
+}

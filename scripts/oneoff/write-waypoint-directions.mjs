@@ -48,21 +48,143 @@ for (const id of ids) {
   if (dirs.length !== wps.length) {
     throw new Error(`${id}: batch has ${dirs.length} entries but the route has ${wps.length} waypoints — positional write refused`);
   }
+  // INDEX 0 IS THE DRIVE, NOT A LEG — and that changes which gates apply.
+  // Every ordering gate below exists because a leg from waypoint i-1 to waypoint i is
+  // meaningless when the array is out of order. Index 0 has no predecessor, so it asserts
+  // nothing about order: it carries the drive to the trailhead ("Getting here — From I-90
+  // Exit 62, follow Kachess Lake Road..."), which 98 WA routes already do. A payload that
+  // touches ONLY index 0 is therefore unaffected by a spliced or reversed array, and
+  // refusing it would deny the drive to exactly the routes whose data is worst —
+  // wa_mount_stuart_north_ridge and wa_mount_challenger_challenger_glacier among them.
+  // This is NOT a loosening: the trailhead gate below gets STRICTER in this mode, because
+  // the drive has to land on the trailhead's own card and nothing else.
+  const driveOnly = String(dirs[0] || "").trim() !== "" &&
+    dirs.slice(1).every((t) => String(t || "").trim() === "");
+  if (driveOnly) {
+    const t0 = String((wps[0] && wps[0].type) || "");
+    if (!/^trailhead$/i.test(t0)) {
+      throw new Error(`${id}: drive-only write refused — waypoint 1 is "${(wps[0] && wps[0].name) || "?"}" of type "${t0 || "(none)"}", not a Trailhead. ` +
+        `The drive renders on the first waypoint's own card, so writing it here would put road directions on a campsite or a summit. ` +
+        `Both wa_mount_constance_* routes start at the Lake Constance CAMPSITE and were caught by exactly this.`);
+    }
+  }
+
   // `directions` means "how do I get HERE from the previous waypoint", so it is only
   // meaningful if the array is in travel order. It often is not: `audit:waypoint-order`
   // reports 51 of 1,019 WA routes rendering out of order, typically with the summit listed
   // second. Writing positional legs into one of those produces confident, wrong guidance —
   // worse than the empty field it replaces. Refuse instead.
+  const hav = (a, b) => {
+    if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) return null;
+    const R = 6371, t = (x) => (x * Math.PI) / 180;
+    const dLat = t(b.lat - a.lat), dLng = t(b.lng - a.lng);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(t(a.lat)) * Math.cos(t(b.lat)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+
+  // Run this BEFORE the ordering checks, because a bad coordinate makes them draw the wrong
+  // conclusion. Both Colfax routes were refused for "out of order" when the real fault was
+  // that Kulshan Cabin is stored 8.9 km from the trailhead while its own distMi says 2 miles.
+  //
+  // The invariant is airtight and needs no threshold-picking: trail distance can never be
+  // SHORTER than straight-line distance. Where it is, the coordinate is impossible — and the
+  // prose may still be perfectly writable, so this reports the real fault rather than
+  // blaming an ordering that might be fine.
+  const impossible = [];
+  for (let i = 1; i < wps.length; i++) {
+    const d = hav(wps[0], wps[i]);
+    if (d == null || wps[i].distMi == null) continue;
+    const trailKm = Number(wps[i].distMi) * 1.60934;
+    if (trailKm > 0 && d > trailKm * 1.10) {
+      impossible.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km straight-line vs ${wps[i].distMi}mi = ${trailKm.toFixed(1)}km of trail)`);
+    }
+  }
+  if (impossible.length && !driveOnly) {
+    throw new Error(`${id}: coordinate(s) impossible — straight-line distance exceeds the recorded trail distance: ${impossible.join("; ")}. ` +
+      `Trail distance can never be shorter than a straight line, so the lat/lng is wrong, not necessarily the order. The prose may still be writable once the coordinates are fixed.`);
+  }
   const marks = wps.map((w) => (w && w.distMi != null ? Number(w.distMi) : null));
   const known = marks.filter((m) => m != null);
   if (known.length >= 3) {
     const bad = [];
     let prev = null, prevI = -1;
     marks.forEach((m, i) => { if (m == null) return; if (prev != null && m < prev - 0.001) bad.push(`${prevI + 1}->${i + 1} (${prev} -> ${m} mi)`); prev = m; prevI = i; });
-    if (bad.length) {
+    if (bad.length && !driveOnly) {
       throw new Error(`${id}: waypoints are not in travel order (${bad.join(", ")}). ` +
         `Positional directions would describe legs that do not exist. Fix the order first — see npm run audit:waypoint-order.`);
     }
+  }
+  // `distMi` monotonicity is NOT sufficient to prove travel order, which a batch run found
+  // the hard way on wa_berdeen_peak_scramble: its marks climb 0 -> 2.5 -> 5.8 -> 6.3 -> 7.2
+  // so the check above passes, but the route's own approach and descent_text put Berdeen Lake
+  // and the high camp on the far side of the summit — you reach that basin by dropping ~500 ft
+  // NW off the top. The list walks you to the lake BEFORE the summit, which is backwards.
+  //
+  // Straight-line distance from the first waypoint catches it: if something listed before the
+  // summit sits farther out than the summit does, the sequence cannot be a single outward
+  // journey. Refuse and let a human look, rather than write legs for a trip nobody takes.
+  // Sixth gate, and it exists because the other five all passed wa_lemah_mountain_east_route.
+  // Its straight-line distance from waypoint 1 runs 5.95 -> 7.6 -> 7.0 -> 5.6 -> 2.5 -> 0.7 km
+  // and then jumps to 10.7 km for the summit: the coordinates walk out and come all the way
+  // back to the car. `distMi` and `elev` are cleanly monotonic, so gate (b) is happy; gate (a)
+  // compares each point only against its OWN trail mileage; and gate (d) compares only against
+  // the summit — which is the one point far enough out to mask every other.
+  //
+  // The missing question was never "is this point beyond the summit" but "did the party
+  // teleport backwards since the last point". Compare each waypoint with its PREDECESSOR.
+  const RETREAT_KM = 2.0; // smaller drops are real: switchbacks, a col regained, a basin skirted
+  const backtrack = [];
+  {
+    let prev = null, prevI = -1;
+    for (let i = 0; i < wps.length; i++) {
+      const d = hav(wps[0], wps[i]);
+      if (d == null) continue;
+      if (prev != null && prev - d > RETREAT_KM) {
+        backtrack.push(`${prevI + 1} "${wps[prevI].name}" (${prev.toFixed(1)}km) -> ${i + 1} "${wps[i].name}" (${d.toFixed(1)}km)`);
+      }
+      prev = d; prevI = i;
+    }
+  }
+  if (backtrack.length && !driveOnly) {
+    throw new Error(`${id}: consecutive waypoints jump back toward the start by more than ${RETREAT_KM}km — ${backtrack.join("; ")}. ` +
+      `distMi may look monotonic while the coordinates walk out and return; that is a lat/lng fault, and legs written against it would describe a trip nobody takes.`);
+  }
+
+  const sumIdx = wps.findIndex((w) => /^(summit|topout)$/i.test(String((w && w.type) || "")));
+  if (sumIdx > 0 && wps[0]) {
+    const dSum = hav(wps[0], wps[sumIdx]);
+    if (dSum != null) {
+      const beyond = [], nearBy = [];
+      for (let i = 1; i < sumIdx; i++) {
+        const d = hav(wps[0], wps[i]);
+        if (d == null) continue;
+        // Two tiers, because the cost is asymmetric. Past 15% it cannot be a single outward
+        // journey and the writer refuses. Between 0 and 15% a genuine cirque approach can
+        // legitimately swing wide, so it only warns — but it MUST warn, because Berdeen Peak
+        // clears the summit distance by 10% and slipped straight through a bare 15% test.
+        if (d > dSum * 1.15) beyond.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km vs summit ${dSum.toFixed(1)}km)`);
+        else if (d > dSum) nearBy.push(`${i + 1} "${wps[i].name}" (${d.toFixed(1)}km vs summit ${dSum.toFixed(1)}km)`);
+      }
+      if (nearBy.length) {
+        console.log(`  WARN ${id}: waypoint(s) before the summit sit slightly farther from the start than the summit — ${nearBy.join("; ")}.`);
+        console.log(`       Could be a cirque approach, or the list could be walking past the summit and back. Check the approach/descent prose before trusting these legs.`);
+      }
+      if (beyond.length && !driveOnly) {
+        throw new Error(`${id}: waypoint(s) listed BEFORE the summit sit farther from the start than the summit does — ${beyond.join("; ")}. ` +
+          `distMi is monotonic here, so the order check passes, but the sequence is not a single outward journey. Check the route's approach/descent prose before writing legs.`);
+      }
+    }
+  }
+  // Second blind spot, found the same way: the trailhead is not always first. On
+  // wa_argonaut_peak_east_ridge the Beverly Turnpike trailhead is waypoint FIVE of six, with
+  // Long's Pass and Colchuck Lake — two different approaches to the peak — listed above it.
+  // wa_bacon_peak_diobsud has its trailhead sixth of seven. Neither is caught by the distMi
+  // check, because the offending waypoints carry no distMi at all, so only three marks are
+  // known and those three ascend cleanly.
+  const thIdx = wps.findIndex((w) => /^trailhead$/i.test(String((w && w.type) || "")));
+  if (thIdx > 0 && !driveOnly) {
+    throw new Error(`${id}: the Trailhead is waypoint ${thIdx + 1} of ${wps.length}, not the first. ` +
+      `Everything listed above it is either a different approach or out of sequence, and positional legs would describe junctions this route never passes.`);
   }
   const next = wps.map((w, i) => {
     const d = String(dirs[i] || "").trim();

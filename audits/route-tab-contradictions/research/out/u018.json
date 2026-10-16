@@ -1,0 +1,136 @@
+{
+ "file": "u018",
+ "results": [
+  {
+   "id": "wa_massie_peak_west_route",
+   "fact": "Which approach and camp are used to reach Massie Peak's West Ridge",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row has been rewritten around one approach. The approach, the 2-day itinerary, timing.sectionBreakdown, partner_requirements and the waypoints all use the Chiwawa River Trail, the 'M' tree ford and the old sheep path to a camp at Massie Lake; Buck Creek Pass / High Pass now appear only as the setting of longer multi-peak loops, framed as an alternative.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "fact": "Elevation of Massie Lake",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the approach now gives Massie Lake as about 5,900 ft and its waypoint 5,930 ft; the 6,600-6,700 ft and 4,800 ft figures are gone. Both agree with the USGS 1 m elevation service, which returns a flat 5,936 ft water surface across the lake around its GNIS point (48.1332, -120.9014).",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.9014&y=48.1332&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "fact": "Distance up the Chiwawa River Trail to the Massie Lake turnoff: approach/itinerary/sectionBreakdown 'about 4 miles' vs the 'M' tree waypoint distMi 2.8 (and lake 4.7)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Found while re-reading the row: the prose puts the unsigned turnoff about 4 mi up the Chiwawa River Trail and the lake about 2 mi beyond, while the waypoints put the turnoff at 2.8 mi and the lake at 4.7 mi. Published accounts give 'roughly 4 miles' and 'approx 3-4 miles' to the turnoff and 1.9 mi for the lake spur; they do not settle the turnoff distance to one figure, and changing the pins' distMi would require computing new cumulative values, so nothing is changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/31/massie-lake-high-route/",
+    "https://wenatcheeoutdoors.org/2016/06/23/massie-lake-louis-creek-high-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "fact": "Elevation of the Waterfall 3 crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried with other reports. One scramble guide puts the cave-feature exit 400-500 ft above the third falls, and another report puts a point about 50 m past the tower at 3,900-4,000 ft, but neither gives the crux's own elevation, and the row's cave waypoint (4,400 ft) is itself unsourced. Other reports describe the third fall only by size (about 15 ft). No two sources fix the crux height, so the ~3,900 ft prose and the 3,600 ft waypoint are both left.",
+   "sources": [
+    "https://hike2hike.com/scrambling/merchant-peak-scramble-washington/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-26-3394895810",
+    "https://onehikeaweek.com/2015/01/31/merchant-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "fact": "access.permit ('None required'; rules: 'no permit required for day use') vs the top-level permit field ('Free self-issue Wild Sky Wilderness permit or trailhead registration')",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit or quota; Northwest Forest Pass (or equivalent) at the Barclay Lake trailhead",
+   "evidence": "Same contradiction as on the two Baring Mountain rows from the same trailhead. The Forest Service's Wild Sky Wilderness page lists only a recreation pass at some trailheads under Passes and Permits, and its wilderness-regulations page names a self-issue permit only for the Alpine Lakes Wilderness; an independent trail database's Barclay Lake listing gives only the Northwest Forest Pass / interagency pass. The top-level permit field is aligned with access.permit and access.rules.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.wta.org/go-hiking/hikes/barclay-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No wilderness permit or quota is required.",
+     "id": "wa_merchant_peak_south_route",
+     "fact": "access.permit ('None required'; rules: 'no permit required for day use') vs the top-level permit field ('Free self-issue Wild Sky Wilderness permit or trailhead registration')"
+    }
+   ]
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "fact": "which approach the trip plan uses, and the one-way distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Partly changed since the first pass: dist_km is now 12.1 km, matching the approach text's ~12 km one way. But the core contradiction remains: the itinerary (day 1 note and schedule) and timing.sectionBreakdown still describe the Ragged Ridge crest over Cub Peak to a high camp, while the approach, waypoints and approach_variants descend into Fisher Creek past Fisher Camp. Both lines are documented, so choosing which one the trip plan describes is an editorial decision research cannot make; no patch.",
+   "sources": [
+    "https://www.lemkeclimbs.com/mesahchie-peak.html",
+    "https://trailcatjim.com/mesahchie-peak-via-south-rib-south-gullies/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "recommended/actual start time from high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: turnaround says leave high camp 'commonly 4-5am', while timing.recommendedStart and the day-3 schedule start at ~7:00 AM (a camp move from the col to the glacier bench, then the summit push at ~11:00 AM). Additional trip reports checked (a North Gunsight west-face report, a high-route report) give no start times. No source supports a 4-5am norm or recommends 7:00 AM, so nothing is changed.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/",
+    "https://climberkyle.com/2023/07/01/glacier-peak-high-route/",
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "fact": "commitment grade of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade says 'Grade II' while commitment says 'I'. The route database still lists the East Face as Grade I; the club route and activity pages found give class/technical ratings and their own club grade letters but no commitment numeral, and the encyclopedia entry gives none. Only one source states a commitment grade, so neither column is changed.",
+   "sources": [
+    "https://www.mountainproject.com/area/110928479/mix-up-peak",
+    "https://mazamas.org/activity/217/",
+    "https://en.wikipedia.org/wiki/Mix-up_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "fact": "Total elevation gain (gain_ft/loss_ft 5200 vs itinerary 4,800)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried. A club route page for the North Col gives 3,600 ft to the col plus 300 ft to the summit (3,900 ft), which cannot be measured from Barlow Pass (2,360 ft) to the 7,136 ft summit and so appears to use a different start; other listings give only leg figures to Monte Cristo townsite and Glacier Basin. No source states a car-to-car total from Barlow Pass, and the itinerary sum cannot be adopted as a computed figure, so neither value is changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col",
+    "https://www.theoutbound.com/washington/hiking/hike-to-glacier-basin"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "fact": "Sunrise Mine Trailhead location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Unchanged on the live row: the trailhead waypoint (48.02473, -121.47785) and approach_logistics (48.02389, -121.47414) are still about 300 m apart, with the waypoint matching the published trailhead position. The only fix is a coordinate change, which is outside this pass's scope; the stated elevations (2,340 vs 2,350 ft) differ only by rounding.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "id": "wa_spire_mountain_scramble",
+ "name": "Standard Scramble",
+ "descent_text": "Descend by reversing the ascent line: downclimb (or rappel/back off facing in) the short Class 5 step near 6,100 ft, then retrace the ridge and the off-trail descent back through the 5,400 ft traverse and the 4,200-4,400 ft cliff-band bypass to the North Fork Skykomish Trail. Loose rock, brush, and the lack of a defined tread make the descent slow going — budget real time for it and avoid straying north or east into steeper terrain where permanent snow/ice and cliffs persist.",
+ "permit": "Self-issue wilderness permit (free, at trailhead)",
+ "access": {
+  "fees": "$5/vehicle/day or $30/year at the North Fork Skykomish Trailhead — Northwest Forest Pass, Interagency Recreation Pass, or the Forest Service's on-site digital 'Scan & Pay' all work; Washington's Discover Pass is NOT accepted here.",
+  "rules": "Standard Wild Sky Wilderness rules apply: group size capped at 12 people/stock combined (larger groups must split and stay 1+ mile apart), no bikes or other mechanized/motorized equipment, camp stoves recommended over open fires, no cutting of standing trees/snags/boughs, pack out all trash.",
+  "permit": "Free self-issue wilderness permit at the trailhead; no reservation or special-use permit needed beyond that for a day climb.",
+  "closures": "Both approach roads are washed out and access is effectively cut off: FR-63 (Index-Galena Road) has been closed since a December 2025 flood washout between mileposts 10-14 (Snohomish County Public Works estimates roughly $900,000 to repair) and is reported undrivable from the FR-65 side due to a North Fork Skykomish bridge/road failure; FR-65 (Beckler River Rd) itself is closed past Jack Pass (MP 12.3) due to downed trees and a washed-out bridge at the bottom of the valley. Neither closure has a reopening date on the Forest Service alert (June 30, 2026) or Snohomish County's road-closures page (checked September 25, 2026) — check the Mount Baker-Snoqualmie NF 'Road Damages/Closures - Skykomish District' alert page and call the Skykomish Ranger Station before planning a trip.",
+  "group_limit": 12,
+  "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+  "land_manager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+  "parking_pass": "No pass needed at the FR-63 roadside pullout east of Galena.",
+  "passRequired": "None at the roadside pullout",
+  "overnight_permit": {
+   "url": null,
+   "what": "No overnight permit required",
+   "where": "Sign the trailhead register if one is present; no parking pass is needed at the roadside pullout."
+  }
+ },
+ "pro_tips": [
+  "Carry a short hand line or a few meters of rope for the ~10 ft Class 5 step at ~6,100 ft — most parties find it easier to protect than to solo",
+  "Start very early; the off-trail approach, brush, and cliff-band route-finding make for a long day even before the technical ridge",
+  "Save or download a GPS track from a recent trip report — there's no trail above the North Fork Skykomish Trail, and threading the cliff bands is the crux of the approach, not just the summit ridge"
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Off-trail, Class 2",
+   "notes": "Steep timber and heavy blowdown from the FR63 parking area up to roughly 4,200 ft.",
+   "pitch": "Lower approach"
+  },
+  {
+   "grade": "Class 3",
+   "notes": "Traverse southeast beneath the north-side cliff band (~4,200-4,400 ft) to about 5,400 ft.",
+   "pitch": "Cliff-band bypass"
+  },
+  {
+   "grade": "Class 3; ice axe useful early season",
+   "notes": "Ascend the wide gully/slope to the 5,920 ft saddle northwest of the peak.",
+   "pitch": "Gully to saddle"
+  },
+  {
+   "grade": "Class 4-5 (short sections)",
+   "notes": "About 300 ft of exposed ridge scrambling southeast from the saddle to the Northwest Spire summit; rope sometimes used for the crux steps.",
+   "pitch": "Summit ridge"
+  }
+ ],
+ "waypoints": [
+  {
+   "elev": 1156,
+   "name": "Index-Galena Road / North Fork Skykomish River Access (FR-63, ~Mile 10)",
+   "note": "Park at the snowplow turnaround by the bridge about 1 mile east of Galena; this is the last reliable water, none is found once you leave the road.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive US 2 to Skykomish, then head north on the Beckler River Road (FR-65) for about 15 miles and turn left (west) onto FR-63. A high-clearance vehicle is worth having for the last few miles. Park at the turnaround by the river crossing near Galena at about 1,150 feet; the pullout is unmarked and easy to drive past. No permits are needed, and the river here is the last dependable water, since there is none once you leave the road."
+  },
+  {
+   "elev": 2300,
+   "name": "Old Logging Road / 2300-ft Saddle",
+   "note": "After a steep, brush-free first 600 ft through downed timber, cross an old overgrown logging road at this saddle on the lower north slopes.",
+   "type": "Junction",
+   "distMi": 0.7,
+   "directions": "Leave the road on the side away from the river and climb steeply, off-trail, through downed timber; the first 600 ft are steep but brush-free. After crossing an old logging road, traverse obliquely left to a saddle at about 2,300 ft, where you cross a second old overgrown logging road."
+  },
+  {
+   "elev": 3300,
+   "name": "Hogsback Ridge Top",
+   "note": "The well-defined hogsback you've been following since ~2700 ft terminates here; continue straight uphill toward the cliff bands above.",
+   "type": "Junction",
+   "distMi": 1.4,
+   "directions": "Continue uphill from the saddle; at about 2,700 ft the slope narrows into a well-defined, fairly brush-free hogsback. Follow its crest to where it ends at about 3,300 ft."
+  },
+  {
+   "elev": 4300,
+   "name": "Cliff Band Traverse",
+   "note": "Large cliff bands block the north end of the peak between roughly 4200-4400 ft; traverse southeast below them to reach the mountain's west/northwest side.",
+   "type": "Hazard",
+   "distMi": 2,
+   "directions": "From the top of the hogsback, continue straight uphill as the slope steepens toward the large cliff bands that block the north end of the peak at roughly 4,200 to 4,400 ft."
+  },
+  {
+   "elev": 5940,
+   "name": "5940-ft Saddle Northwest of Summit",
+   "note": "Gain this saddle via the traverse; a possible schrund/moat forms here depending on season and snow cover before you turn onto the final ridge.",
+   "type": "Hazard",
+   "distMi": 3.1,
+   "directions": "Traverse southeast beneath the cliff bands onto the mountain's west and northwest side to about 5,400 ft below the summit spires, then turn uphill and climb the wide gully and slope to the saddle just northwest of the summit. Watch for a moat or schrund as you near the saddle, depending on the season."
+  },
+  {
+   "elev": 6100,
+   "name": "Class 5 Step",
+   "note": "The final ridge is mostly Class 3, but two short sections here are Class 4-5; many parties place a rope for this exposed step.",
+   "type": "Hazard",
+   "distMi": 3.2,
+   "directions": "From the saddle, scramble southeast along the airy crest, mostly class 3, to a short exposed mantle step of about ten feet near 6,100 ft where many parties rope up. Stay on the crest; ground to the north and east steepens quickly into permanent snow and cliffs."
+  },
+  {
+   "lat": 47.865705,
+   "lng": -121.406065,
+   "elev": 6217,
+   "name": "Spire Mountain",
+   "note": "True summit at the top of the west/northwest ridge scramble, with views over the Monte Cristo peaks and North Fork Skykomish valley.",
+   "type": "Summit",
+   "distMi": 3.25,
+   "directions": "Above the step, continue a short way up the ridge to the summit."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 47.865705,
+  "peakLng": -121.406065,
+  "trailhead": "FR-63 roadside pullout east of Galena",
+  "trailheadLat": null,
+  "trailheadLng": null,
+  "trailheadDirection": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again; park at the unmarked pullout on the rise just past the bridge, about a mile east of Galena."
+ }
+}

@@ -1,0 +1,1182 @@
+{
+ "results": [
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "item",
+   "fact": "Pitch count: 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)",
+   "verdict": "already_fixed",
+   "summary": "The live row no longer carries a six-pitch count: pitch_detail is now null and pitches, beta, itinerary, partner_requirements and seasonal_hazards all say 8 pitches.",
+   "evidence": "Live row re-read: no '6 pitches' text remains and pitch_detail was cleared by a later pass.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "item",
+   "fact": "Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col",
+   "verdict": "already_fixed",
+   "summary": "The col-side East Ridge text is gone: pitch_detail and rappel_detail are null and descent_text now describes the South Gully, matching the Southeast Ridge name.",
+   "evidence": "Live row re-read: the only 'East Ridge' mentions left are in pro_needs (a named winter variant) and data_quality, neither describing this route as the col-side line.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "item",
+   "fact": "Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157",
+   "verdict": "unresolved",
+   "summary": "Still real, and no source gives a car-to-car time or total gain for the Southeast Ridge by the Beverly Turnpike / Fourth Creek line this row uses.",
+   "evidence": "The club route page for the Southeast Ridge gives 20.0 mi and 4,853 ft, but for the Colchuck Col approach it recommends (Northwest Forest Pass trailhead), not the Teanaway-side line on this row; the peak page gives only 'II 5.6, 8 pitches, two single or one double rappel into the notch' with no time or gain.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+    "https://www.summitpost.org/argonaut-peak/152581"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "Left null: the cleared rows described the col-side East Ridge, and no source gives a pitch-by-pitch breakdown of the Southeast Ridge.",
+   "evidence": "The peak page and the club route page give only '8 pitches, II 5.6' and a note that the lower pitches are blocky and lichen-covered; nothing per pitch.",
+   "sources": [
+    "https://www.summitpost.org/argonaut-peak/152581",
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "unresolved",
+   "summary": "Left null: the cleared entries described a descent toward the east gully from the col-side line, and the one source for this route gives no rappel lengths or anchors.",
+   "evidence": "The peak page states only 'two single, or 1 double rope rappel into the notch', which rappel_count_note already says; no per-rappel length or anchor is published.",
+   "sources": [
+    "https://www.summitpost.org/argonaut-peak/152581"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "kind": "item",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "summary": "No source states an approach gain for the Silver Basin crags, so the 750 ft figure is neither confirmed nor replaced.",
+   "evidence": "The crag's area page gives only the road directions and a 20-30 minute walk from the road-end turnaround; no gain figure is published anywhere found.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477448/the-citidel"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "wta",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "kind": "item",
+   "fact": "Season / when the access road is open",
+   "verdict": "confirmed",
+   "summary": "The season header now reads Jun-Oct, matching best_season and the one source that states when FS Road 9070 is open.",
+   "evidence": "The Silver Peak page (same FS Road 9070 access) states the optimum window is June-October, while Forest Road 9070 is open to the public; another guide's July-November differs, so the row's existing June-October (best_season) is kept as the supported value and the season header is brought into line.",
+   "sources": [
+    "https://www.summitpost.org/silver-peak/151393"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountainproject",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_spraying_mantis",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Oct"
+    }
+   ]
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "kind": "item",
+   "fact": "Trailhead waypoint sits on the crag coordinate with the area's 4,585 ft elevation",
+   "verdict": "already_fixed",
+   "summary": "The trailhead pin has already been moved to the FS 9070 road end at 47.373,-121.45787 with 4,254 ft, separate from the crag pin.",
+   "evidence": "Live row re-read: waypoints[0] is now at the road end with elev/elevFt 4254; waypoints[1] (crag base) is at 47.36741,-121.45564, 4,650 ft.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "item",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "verdict": "unresolved",
+   "summary": "Still split: the two sources that grade this route disagree (III and I-II), and the row already holds both values in different fields, so no single value can be kept by the rule.",
+   "evidence": "One route database grades the Sitkum Glacier Grade III (matching alpine_grade); the long-standing route site gives Grade I-II (matching commitment). The rule keeps the row's own value when a source supports it, but here each conflicting value is held by the row and supported by one source, so there is no basis to pick one; grade 'Grade II' sits inside the I-II range.",
+   "sources": [
+    "https://www.summitpost.org/glacier-peak/150318",
+    "https://www.mountainproject.com/route/121086767/sitkum-glacier"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "mountaineers",
+    "wta",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "item",
+   "fact": "Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose",
+   "verdict": "already_fixed",
+   "summary": "Every field now describes the North Fork Sauk / PCT / Red Pass approach: waypoints, road, approach_logistics, approach, itinerary and timing agree.",
+   "evidence": "Live row re-read: waypoints[0] and approach_logistics are the North Fork Sauk River Trailhead, road is Sloan Creek Road (FR 49), and the approach and itinerary prose describe the same line.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Left null: the cleared 14.5 km was a White Chuck figure and no source states a one-way distance for the North Fork Sauk / Red Pass line to this route.",
+   "evidence": "The peak database's Sitkum route is listed from the White Chuck Road trailhead (2,340 ft, 8,210 ft gain); North Fork Sauk reports give only pieces (trail to the PCT, PCT to Red Pass) or totals for the Glacier Gap and Disappointment Cleaver lines. Assembling pieces would be computed.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=1972",
+    "https://www.hikeoftheweek.com/2021/08/12/red-passhigh-portal-to-glacier-peak/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Left null: the only stated gain for the Sitkum route (8,210 ft) is from the closed White Chuck Road trailhead, not the North Fork Sauk line this row now describes.",
+   "evidence": "Peak database: Sitkum Glacier route, trailhead White Chuck Road 2,340 ft, vertical gain 8,210 ft. No source states a gain for the North Fork Sauk / Red Pass / Sitkum line, which recrosses Red Pass.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=1972"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Summit pin distMi left null: no source states the trailhead-to-summit mileage for the North Fork Sauk line.",
+   "evidence": "The cleared 14 mi was a White Chuck figure; North Fork Sauk sources give only partial legs, and summing them would be computed.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "kind": "item",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "summary": "Still real, and no source states a car-to-car gain for the direct Northeast Face; summing the row's day gains would be computed.",
+   "evidence": "Searches return the 1954 first-ascent description of the face (ice apron and steep slabs) and graded listings and trip reports for the separate Northeast Buttress; none gives a gain for this line.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "AAJ",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "kind": "item",
+   "fact": "commitment grade: grade 'IV' vs commitment 'III' vs alpine_grade 'Grade III'",
+   "verdict": "unresolved",
+   "summary": "Still real; no source grades the direct Northeast Face at all, so not even one source supports IV or III.",
+   "evidence": "The only Roman grades found (III-IV, IV) belong to the Northeast Buttress, a different line; the first-ascent account of the face carries no grade.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "AAJ",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "item",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "summary": "Still split, and no source states the Wild Sky Wilderness permit rule outright either way.",
+   "evidence": "The forest's wilderness-regulations page names the free self-issue permit only for the Alpine Lakes Wilderness, and its Wild Sky page says only that wilderness regulations apply and some trailheads need a recreation pass; the peak page says only that passes are not required at either parking spot. None says a permit is or is not required in Wild Sky.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness",
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "USFS",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "item",
+   "fact": "approach_logistics trailhead coordinate sits at the North Fork Skykomish Trailhead, ~12 km from the route's start",
+   "verdict": "already_fixed",
+   "summary": "The wrong North Fork Skykomish Trailhead coordinate is gone: approach_logistics.trailheadLat/Lng are now null and the trailhead is named as the FR-63 pullout east of Galena.",
+   "evidence": "Live row re-read: approach_logistics.trailhead 'FR-63 roadside pullout east of Galena', trailheadLat and trailheadLng null.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "fill",
+   "verdict": "unresolved",
+   "evidence": "The peak page gives only the summit coordinate (47.86568, -121.40586) and road directions to the pullout; no source states the pullout coordinate.",
+   "sources": [
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search"
+   ],
+   "ops": [],
+   "fact": "approach_logistics.trailheadLat",
+   "summary": "trailheadLat left null: the cleared value was the wrong trailhead (North Fork Skykomish), and no source gives a coordinate for the FR-63 pullout east of Galena."
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "fill",
+   "verdict": "unresolved",
+   "evidence": "The peak page gives only the summit coordinate (47.86568, -121.40586) and road directions to the pullout; no source states the pullout coordinate.",
+   "sources": [
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search"
+   ],
+   "ops": [],
+   "fact": "approach_logistics.trailheadLng",
+   "summary": "trailheadLng left null: the cleared value was the wrong trailhead (North Fork Skykomish), and no source gives a coordinate for the FR-63 pullout east of Galena."
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "item",
+   "fact": "access.closures is null while the bivy entries say the Rachel Lake trailhead / Box Canyon road were inside a 2026 wildfire closure",
+   "verdict": "confirmed",
+   "summary": "access.closures now states the current wildfire closure of the Rachel Lake Trail, its trailhead and Box Canyon Road through October 31, 2026.",
+   "evidence": "The current forest closure order 06-17-03-2026-44 (the decreased Three Queens Fire closure, effective September 18, 2026 through October 31, 2026 unless rescinded sooner; page last updated September 18) lists Rachel Lake Trail 1313 and Road 4930 as closed and Rachel Lake Trailhead among closed developed sites. The September 21-24 news line about closures being lifted refers to this decrease, which lifted only areas east of Highway 903.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district",
+    "https://www.applevalleynewsnow.com/news/three-queens-fire-suppression-efforts-progressing-as-forest-closures-lifted/article_2bcbdbe0-4b62-47e6-a7a6-881682a634c8.html"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "USFS",
+    "wta",
+    "news",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_alta_mountain_scramble",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": null,
+     "value": "Three Queens Fire area closure (order 06-17-03-2026-44): Rachel Lake Trail 1313, the Rachel Lake Trailhead and Box Canyon Road (FR 4930) are closed through October 31, 2026 unless the order is rescinded sooner. Check current Okanogan-Wenatchee closures before driving."
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead-to-summit time for Alta; the cleared 8 h equalled the whole car-to-car day.",
+   "evidence": "The trail page gives 12.0 mi round trip and 3,300 ft but no times; no report found states the time to the summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "waypoints[3].elev",
+   "verdict": "already_fixed",
+   "summary": "No fill needed: the climbers' path turnoff pin already carries an elevation (5,237 ft) on the live row.",
+   "evidence": "Live row re-read: waypoints[3] 'Alta climbers' path turnoff (cairn)' has elev 5237, so the field is no longer null.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states the trailhead mileage of the cairned turnoff; the one description gives only '0.3 mi past the ridge junction', and adding it to another leg would be computed.",
+   "evidence": "The trail page: 3.5 mi to Rachel Lake, half a mile up to the ridge, then 'after 0.3 miles, arrive at a junction marked by a cairn'; no cumulative figure.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "kind": "item",
+   "fact": "gain_ft/loss_ft 5,700 vs the itinerary's day gains (4,800 + 1,900 + 900) and losses; dist_km 38.62 km (24 mi) vs ~13.5 mi one way / ~30 mi round trip",
+   "verdict": "unresolved",
+   "summary": "One report of this exact out-and-back now reads (40 mi and 11,686 ft round trip, about 20 mi each way), but it contradicts every figure on the row, and adopting it would mean rewriting each day's miles and gain from computed splits, and leaving loss_ft (not writable) at 5,700.",
+   "evidence": "A September 2023 trip report of the Buck Creek Pass / High Pass line to a camp below Mount Berge, summit of Buck, and out the same way gives 'Our trip ended up being 40 miles with 11,686 ft elevation gain' and calls it 'the 20 mile one way circuitous way'. Every other figure found is for a different line (the traverse out by Little Giant Pass, or Buck Creek Pass alone at 19.2 mi round trip). Changing gain_ft or dist_km alone would leave the itinerary's 13.5 + 3 + 13.5 mi and 7,600 ft and the 5,700 ft loss contradicting them, so nothing is patched. Owner option: adopt 40 mi / 11,686 ft and rebuild the three itinerary days and timing by hand.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-19.9281992181",
+    "https://www.wta.org/go-hiking/hikes/buck-creek-pass"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "wenatcheeoutdoors",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Footbridge pin distMi left null: no source states the mileage of the Chiwawa River crossing, and a 2024 report says the bridge itself is gone.",
+   "evidence": "A route guide gives about 2.75 mi to where the Buck Creek Trail veers left off the Chiwawa River Trail (a junction, not the crossing); an August 2024 report says the damaged Chiwawa River bridge 'was no longer there', with a log crossing 20 ft upstream. The pin's note ('solid underfoot') may now be stale; that is a separate finding for the owner.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/09/buck-creek-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "wenatcheeoutdoors",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "kind": "item",
+   "fact": "Climbing season: May-Jun header vs a season description running through September",
+   "verdict": "unresolved",
+   "summary": "Still real; no source states a season window for the southwest-face line, so neither May-Jun nor a through-September window can be adopted.",
+   "evidence": "Accounts of this line give dated late-May and June ascents, a failed November attempt and a failed October/August attempt, and one notes the Thunder Creek route suits the shoulder seasons because it has the least avalanche exposure, but none states when the route is in season.",
+   "sources": [
+    "https://trailcatjim.com/chalangin-peak-white-river-southwest-face/",
+    "https://www.countryhighpoints.com/chalangin-peak-wa-top-100-completion/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "kind": "item",
+   "fact": "Commitment grade: IV vs III",
+   "verdict": "confirmed",
+   "summary": "alpine_grade now reads Grade IV, matching grade and commitment and the first-ascent party's published grade.",
+   "evidence": "The first-ascent note for the January 2011 Holsten-Hilden route on Colchuck's northeast face grades it 'IV M6 AI3+'. A route database lists Grade III; with sources split, the row's own value (IV in grade and commitment) is kept because one source supports it, and the one field saying III is brought into line.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "AAJ",
+    "mountainproject",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_colchuck_peak_holsten_hilden",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "Grade III (Alpine); FA account graded Grade IV",
+     "value": "Grade IV"
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "kind": "item",
+   "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+   "verdict": "unresolved",
+   "summary": "Partly changed (the camp pin's 3.2 mi is now null) but still real: dist_km is 4 mi while day 1 and day 3 are 5.7 mi each and the prose gives ~16 mi / 25.75 km round trip, and no source states a one-way figure to this route's camp or base.",
+   "evidence": "The one source for this line's total, the club route page, gives 12.0 mi and 7,000 ft round trip; a guide service gives 3 mi to the Eldorado/Inspiration camp, which is short of the itinerary's McAllister/Marble Creek col camp. A one-way dist_km cannot be taken from a round trip, and changing only the round-trip prose to 12 mi would contradict the itinerary days (5.7 + 4 + 5.7).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/dorado-needle-southwest-buttress"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "guide services",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "kind": "item",
+   "fact": "Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)",
+   "verdict": "already_fixed",
+   "summary": "The row was renamed 'South Gully' and its name, face, overview, beta and approach now all describe the Reginleif/Sigrun line to the gully below the northeast summit; Prusik Pass is named only as the other route.",
+   "evidence": "Live row re-read: beta now leaves the basin between Lakes Reginleif and Sigrun and calls the Prusik Pass east ridge 'the other way onto the northeast summit'; pitch_detail, descent_text and climbing_route no longer mention Prusik Pass.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "kind": "item",
+   "fact": "total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "summary": "Still real: waypoint 0 is the North Fork Sauk trailhead but dist_km and the waypoint mileages are White Chuck figures, and no source states the North Fork Sauk mileage to the Kennedy Ridge junction or Glacier Creek.",
+   "evidence": "North Fork Sauk sources give only legs (trail to the PCT, PCT to Red Pass); a trailhead-to-Glacier-Creek figure would have to be summed from them, which is computed.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "PCT guides",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "kind": "item",
+   "fact": "Which approach/route the waypoints describe",
+   "verdict": "already_fixed",
+   "summary": "The two conflicting pins (Lightning Creek landing and Willow Lake) are gone; the waypoints are now only the Ross Dam trailhead and the summit.",
+   "evidence": "Live row re-read: waypoints holds 'Ross Dam Trailhead (SR-20)' and 'Hozomeen Mountain, South Peak' only.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "kind": "item",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "verdict": "unresolved",
+   "summary": "Still real (pitches 20 and a 20-pitch partner note vs 12 breakdown rows), and no account of the route gives a pitch count at all.",
+   "evidence": "Detailed trip reports of the 1951 and 1957 starts describe roping for one to a handful of pitches and climbing the rest unroped or simul; none states 20, 12 or any total, because parties pitch the vegetated lower route differently.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+    "https://spokalpine.com/2020/08/09/johannesburg-57-ne-rib-v-5-6/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "cascadeclimbers",
+    "AAJ",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "kind": "item",
+   "fact": "Round-trip distance (dist_km vs. stated mileage)",
+   "verdict": "confirmed",
+   "summary": "The summer round trip now reads about 7 miles everywhere, and the 2-mile one-way dist_km, which no source supports and which contradicts it, is cleared rather than replaced with a halved figure.",
+   "evidence": "The club route page for this exact start (first switchback on Smithbrook Road, Lichtenwasser Lake fishing trail to the southeast-ridge saddle) gives Length 7.0 mi and 2,100 ft gain, round trip, matching the row's beta ('a 7-mile, 2,100-foot scramble') and gain_ft. The only other figure (about 5 mi round trip, ~1,000 ft) is a different line. No source states a one-way distance, so dist_km cannot be filled.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_lichtenberg_mountain_southeast_ridge",
+     "column": "itinerary",
+     "path": [],
+     "find": "roughly 4 to 7 miles round trip depending on where you leave the road, with about 2,100 to 2,600 ft of gain",
+     "replace": "about 7 miles round trip with about 2,100 ft of gain"
+    },
+    {
+     "op": "set",
+     "id": "wa_lichtenberg_mountain_southeast_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": 3.2,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "kind": "item",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "verdict": "unresolved",
+   "summary": "Still real (day 2 says 9 hours while its schedule runs 2:30 AM to 2:30 PM), and no source gives times for the Northeast Face itself.",
+   "evidence": "Published times found are for the standard East Ridge (3-5 hours camp to summit); nothing states the face's climbing or round-trip time, so neither the 9 hours nor the clock times can be adopted.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "guide services",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "kind": "item",
+   "fact": "which approach the trip plan uses, and the one-way distance",
+   "verdict": "already_fixed",
+   "summary": "The trip plan now describes one line throughout: Easy Pass Trail, leave it just west of the pass without descending into Fisher Creek, sidehill traverse to a camp below Mesahchie Col; no Cub Peak crest traverse remains.",
+   "evidence": "Live row re-read: itinerary days 1-2, totalNote, timing.sectionBreakdown and approach all describe the same traverse below Ragged Ridge; the Fisher Creek basin appears only as a named alternative in the camp notes.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "kind": "item",
+   "fact": "which tier (upper/lower) the route climbs",
+   "verdict": "confirmed",
+   "summary": "The overview now says the route is on Mossy Loaf's upper tier, matching face and the route's own page.",
+   "evidence": "The route page states: 'Look for the historic railroad sign; when facing it, the upper tier is to your right. Harambe is on the right end before it gets slabby.' face already reads 'Upper tier'; only the overview said lower.",
+   "sources": [
+    "https://www.mountainproject.com/route/119509372/moss-out-for-harambe"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountainproject",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_moss_out_for_harambe",
+     "column": "overview",
+     "path": [],
+     "find": "Mossy Loaf's lower tier",
+     "replace": "Mossy Loaf's upper tier"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "kind": "item",
+   "fact": "Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)",
+   "verdict": "unresolved",
+   "summary": "Still real (approach_variants[0].gainFt 6,100 equals the whole-trip gain_ft while its own notes say 'over 5,000 ft' to the gap), and no source states the gain to La Bohn Gap or the lakes.",
+   "evidence": "The Necklace Valley trail page gives 18.0 mi / 3,400 ft round trip to the valley, not the gap; a Hinman day-trip report gives about 24 mi and 7,000 ft for the whole summit trip; the La Bohn Gap hike page carries no stats. A search snippet claiming '15.0 mi one-way, 5,061 ft' to La Bohn Gap comes from a mapping app route via the Mt Hinman west ridge whose page could not be read and does not match this 10-11 mi line.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2015-08-18.3997363685",
+    "https://www.wta.org/go-hiking/hikes/la-bohn-gap"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "mountaineers",
+    "gaiagps",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "kind": "item",
+   "fact": "Total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "summary": "Still real, and the one new figure found does not share the row's start point.",
+   "evidence": "An August 2026 report gives '7 miles back' from Ouzel Lake to the cars, but that party started at the Depot Creek trail 50 ft from the border, while the row starts at the Depot Creek Road washout (~2,600 ft) below it; other reports give only the 5.5 mi from the border obelisk to the lake. No source states the washout-to-lake or washout-to-summit distance.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-04.141341499581"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "bivouac",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "kind": "item",
+   "fact": "Expected car-to-car time",
+   "verdict": "unresolved",
+   "summary": "No source states a car-to-car time for Painted Mountain, so the 6-9 h commitment and the 10 h timing stay as they are.",
+   "evidence": "The club route page and the peak page give 8 mi and 4,875 ft round trip without a time; the only summit timing found is about five hours up from one report, which is not a car-to-car figure.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "item",
+   "fact": "Which drainage/trail the approach to Rimrock Ridge uses",
+   "verdict": "already_fixed",
+   "summary": "The Agnes Creek / Swamp Creek leg and its waypoint are gone; the approach now runs the north end of the Ptarmigan Traverse to the Le Conte-Sentinel col and states the Agnes Creek trail does not lead to the ridge.",
+   "evidence": "Live row re-read: approach and waypoints (Cascade Pass Trailhead, Kool-Aid Lake, Yang Yang Lakes, summit) describe one line; no Swamp Creek Camp pin remains.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "kind": "item",
+   "fact": "Total elevation gain and loss for the Southwest Route",
+   "verdict": "unresolved",
+   "summary": "Still real; the only stated totals for Sinister are for the North Face (32 mi, 7,000 ft) and Northwest Face (35 mi, 11,400 ft), not the Southwest Route.",
+   "evidence": "The club pages for the North Face and Northwest Face give those totals plus the shared approach legs (+3,900, +3,450, -1,600/+1,300); none states a car-to-car total for the Southwest Route, and summing legs would be computed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sinister-peak",
+    "https://www.mountaineers.org/activities/routes-places/sinister-peak-northwest-face"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "kind": "item",
+   "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+   "verdict": "unresolved",
+   "summary": "Still real; no source gives a YDS number (5.4 or 5.6) for this line, so there is not even one source to adopt.",
+   "evidence": "Sources give only qualitative grades for Spire Point (Class 4 with an optional low-5th summit block, class 4/5, low class 5 on other routes).",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "kind": "item",
+   "fact": "One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT",
+   "verdict": "unresolved",
+   "summary": "Still real; the one figure for this East-summit line is a round trip (7.7 mi), which cannot be turned into the one-way dist_km or the summit pin's mileage without halving, and changing only the round trip would contradict both.",
+   "evidence": "One report gives 7.7 mi round trip (2,360-6,687 ft) for the East summit by the southeast shoulder from the Mineral Creek trailhead; the row's 10 mi / 4,600 ft belongs to a Middle Peak ascent by the south face. No one-way figure is published. Separately, Mineral Creek Trail 1331 is listed closed under the current Three Queens Fire order through October 31, 2026.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "nwhikers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "kind": "item",
+   "fact": "rappel/rope length: 30 m vs 60 m",
+   "verdict": "confirmed",
+   "summary": "detailed_rack now asks for a 30 m rope, matching rope_length_m, rappels and gear and the first-hand report that a 30 m rope was more than enough.",
+   "evidence": "A 2015 ascent report: after downclimbing to the old webbing belay station and backing it up, 'My 30-meter rope was more than enough to get me down to the ledge'. Other accounts differ (one needed an intermediate anchor, one found a 60 m short), so with sources split the row's own 30 m (held in rope_length_m, rappels and gear) is kept and the one 60 m mention is aligned.",
+   "sources": [
+    "https://onehikeaweek.com/2015/08/03/tupshin-peak/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "wta",
+    "climber blogs",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_tupshin_peak_scramble",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "plus a 60m rope for the crux pitch and descent rappels",
+     "replace": "plus a 30 m rope for the crux pitch and the short descent rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the route now has only four waypoints, so the pin at index 6 that carried 28.5 mi no longer exists.",
+   "evidence": "Live row re-read: waypoints are the North Fork Quinault Trailhead (0), Low Divide (16), Seattle Meadows (null) and Mount Seattle (19); the old Elwha-line pins were removed by an earlier pass.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "confirmed",
+   "summary": "gain_ft is filled with 5,750 ft, the one stated total for Mount Seattle by the 19-mile North Fork Quinault approach this row describes.",
+   "evidence": "A climbing club route listing for Mt. Seattle states Elevation Gain 5,750 ft, with a long approach of 19 miles along the North Fork of the Quinault and the route from Seattle Creek basin, which is the line on this row (Low Divide, west into Seattle Creek Basin, summit pin at mile 19). The cleared 7,500 ft belonged to the old Elwha-side description. loss_ft is null and the itinerary days carry no gain totals, so nothing on the row contradicts it.",
+   "sources": [
+    "https://mazamas.org/activity/286/"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "mazamas",
+    "nps",
+    "web search"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "gain_ft",
+     "path": [],
+     "expect": null,
+     "value": 5750
+    }
+   ]
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states any distance to Mutchler Peak; the cleared 24.78 km was a round trip stored in the one-way slot.",
+   "evidence": "Mutchler has a peak record but no route description or trip report with a distance in any source searched; reports for Snowking on the same Kindy Ridge approach give round trips only, for a different summit.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "nwhikers",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 9.5 mi belonged to the old Hogsback-line position).",
+   "evidence": "The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "AAJ",
+    "guide services"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 11 mi belonged to the old Hogsback-line position).",
+   "evidence": "The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "AAJ",
+    "guide services"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 12.5 mi belonged to the old Hogsback-line position).",
+   "evidence": "The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "AAJ",
+    "guide services"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_roofer_madness",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states the approach gain to Waterfall Basin; the cleared 4,200 ft was shown to be far too high.",
+   "evidence": "The basin area page gives the basin at 2,659 ft and about 2 hours from parking; trail pages give gain only for the whole Squire Creek trail to the pass (2,566 ft over 8.5 mi round trip), which is not this approach.",
+   "sources": [
+    "https://www.mountainproject.com/area/109502647/waterfall-basin",
+    "https://www.wta.org/go-hiking/hikes/squire-creek"
+   ],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "mountainproject"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 4.3 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 5.2 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 5.3 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 6.3 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 7 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 7.4 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[7].distMi",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 7.9 mi was part of an inflated chain.",
+   "evidence": "Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "web search",
+    "guide services",
+    "cascadeclimbers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "Left null: the cleared a 16-hour two-day timing block described the old Agnes Creek approach, and no source states a figure for the Ptarmigan Traverse line the row now describes.",
+   "evidence": "Rimrock Ridge has no published route description beyond the parties on record leaving the traverse at the Le Conte-Sentinel col and following the ridge east; no distance, gain or time to its summit is stated anywhere searched.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Left null: the cleared 40.23 km described the old Agnes Creek approach, and no source states a figure for the Ptarmigan Traverse line the row now describes.",
+   "evidence": "Rimrock Ridge has no published route description beyond the parties on record leaving the traverse at the Le Conte-Sentinel col and following the ridge east; no distance, gain or time to its summit is stated anywhere searched.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Left null: the cleared 4,300 ft described the old Agnes Creek approach, and no source states a figure for the Ptarmigan Traverse line the row now describes.",
+   "evidence": "Rimrock Ridge has no published route description beyond the parties on record leaving the traverse at the Le Conte-Sentinel col and following the ridge east; no distance, gain or time to its summit is stated anywhere searched.",
+   "sources": [],
+   "searched": [
+    "peakbagger",
+    "summitpost",
+    "mountaineers",
+    "wta",
+    "cascadeclimbers",
+    "web search"
+   ],
+   "ops": []
+  }
+ ]
+}

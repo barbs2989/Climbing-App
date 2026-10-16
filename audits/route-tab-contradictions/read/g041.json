@@ -1,0 +1,286 @@
+{
+ "batches": ["batches/b161.json", "batches/b162.json", "batches/b163.json", "batches/b164.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_mount_spickard_silver_glacier",
+   "name": "Silver Glacier",
+   "area": "Mount Spickard",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "name": "Southwest Route / Silver Lake",
+   "area": "Mount Spickard",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade on the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "rock_grade", "says": "Class 3"},
+      {"field": "grade", "says": "Class 3-4 + glacier"},
+      {"field": "hazards[1]", "says": "Loose, sharp rock on the final Class 2-3/3-4 gullies, chimneys, and ribs near the summit"},
+      {"field": "overview", "says": "...climbs broad talus and a southwest glacier to a final short but loose Class 3-4 rock scramble..."}
+     ],
+     "why": "The header grade pill reads rock_grade (Class 3), but the route's own grade field, hazards list, and overview all describe the summit scramble as reaching Class 4, understating difficulty on the header/grade chip.",
+     "internal_resolution": "grade, hazards, and overview all agree on Class 3-4; rock_grade (Class 3) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total one-way/round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "13.7 (~8.5 mi)"},
+      {"field": "waypoints[6].distMi", "says": "10.3 (cumulative, trailhead to summit)"},
+      {"field": "itinerary.totalNote", "says": "roughly 20 miles and 7,000 ft round-trip"}
+     ],
+     "why": "The header 'Dist' stat (itinerary miles if present, i.e. ~21.5 mi round trip) will disagree with the Overview technical-stats distance sourced from dist_km (8.5 mi), and neither matches the waypoint list's own cumulative one-way distance to the summit (10.3 mi).",
+     "internal_resolution": "The itinerary days (9+3.5+9=21.5 mi) and the waypoint cumulative distance (10.3 mi one-way) are mutually consistent with a ~20-21 mi round trip; dist_km looks like a stale/undercounted one-way figure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "name": "Standard Route / Northwest Spire",
+   "area": "Northwest Mox Peak",
+   "contradictions": [
+    {
+     "fact": "Crux pitch grade vs. stated route grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "rock_grade", "says": "5.5"},
+      {"field": "grade", "says": "5.5"},
+      {"field": "pitch_detail[0].grade", "says": "5.7"},
+      {"field": "pitch_detail[0].notes", "says": "150-200 feet. Wet, lichen-covered slabs. Crux involves manteling slab (mid-5th class)."}
+     ],
+     "why": "The route's own crux pitch (pitch 1, the headwall) is rated 5.7, harder than the 5.5 stated as the overall/rock grade shown on the header and grade chips.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5450"},
+      {"field": "itinerary.days[0].gainFt", "says": "3550"},
+      {"field": "itinerary.days[1].gainFt", "says": "1550"},
+      {"field": "itinerary.days[2].gainFt", "says": "1900"},
+      {"field": "itinerary.days[3].gainFt", "says": "0"}
+     ],
+     "why": "The header/Overview gain figure (5,450 ft) is about 28% lower than the itinerary's own day-by-day gain total (7,000 ft), which is also what timing.approachTimeHrs/summitTimeHrs/descentTimeHrs are keyed to.",
+     "internal_resolution": "The four itinerary days sum consistently to 7,000 ft and align with the detailed sectionBreakdown; gain_ft (5,450) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "14.5 (~9.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "7.5"},
+      {"field": "itinerary.days[1].miles", "says": "2"},
+      {"field": "itinerary.days[2].miles", "says": "5"},
+      {"field": "itinerary.days[3].miles", "says": "9.5"}
+     ],
+     "why": "dist_km implies ~9 mi total, but the itinerary's own 4-day mileage sums to 24 mi -- a climber comparing the header Dist stat to the Trip Plan would see wildly different trip lengths.",
+     "internal_resolution": "The itinerary breakdown (24 mi) is internally detailed and self-consistent; dist_km (9.0 mi) looks like a stale/undercounted figure.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to reach Lake Ouzel camp",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "...to reach Ouzel Lake (5,700 ft) in 5-6 hours with 3,500 ft elevation gain."},
+      {"field": "itinerary.days[0].hours", "says": "9.3"},
+      {"field": "itinerary.days[0].note", "says": "This is notoriously slow, bushwhacky terrain despite the modest mileage -- real parties report 8-9+ hours for this leg."},
+      {"field": "timing.sectionBreakdown[0].hrs", "says": "9.3"}
+     ],
+     "why": "The GETTING THERE/APPROACH prose claims 5-6 hours to camp, while the Trip Plan itinerary and PUBLISHED TIMES section for the identical leg both say 9.3 hours (8-9+ typical) -- nearly double, which would badly mislead a party's daylight/turnaround planning.",
+     "internal_resolution": "itinerary.days[0] and timing.sectionBreakdown[0] agree exactly (9.3 hrs) and itinerary explicitly flags the leg as notoriously slow; the approach field's '5-6 hours' is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "name": "West Ridge (Beckey Route)",
+   "area": "Southeast Mox Peak",
+   "contradictions": [
+    {
+     "fact": "Crux pitch grade vs. stated route grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "rock_grade", "says": "5.5"},
+      {"field": "grade", "says": "5.5"},
+      {"field": "overview", "says": "...then three roped pitches (5.5-5.6, easing to sparse-pro Class 4 near the top) to the summit."},
+      {"field": "beta", "says": "Per Beckey: most of the climbing is 'more intimidating than technically difficult; if a party finds the climbing above 5.5 they are probably off route.'"},
+      {"field": "pitch_detail[1].grade", "says": "5.6"},
+      {"field": "waypoints[6].note", "says": "Three 5.6 pitches (mostly Class 3-4 on the final pitch) above the notch to the true summit..."}
+     ],
+     "why": "rock_grade/grade both state 5.5 and beta quotes Beckey saying anything above 5.5 means you're off route, yet the route's own overview, its crux pitch (pitch 2, marked crux:true), and the summit waypoint note all put the hardest pitch at 5.6.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach/trailhead used for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "From the Depot Creek trailhead parking on the abandoned logging spur off Chilliwack Lake Road (BC)... hike... to the Monument 65 border marker..."},
+      {"field": "waypoints[0].name", "says": "Depot Creek Road parking / trailhead"},
+      {"field": "approach_variants[0].name", "says": "Depot Creek from the north side of the border to the lake camp"},
+      {"field": "approach_logistics.trailhead", "says": "Depot Creek Trailhead"},
+      {"field": "itinerary.days[0].title", "says": "Boat taxi + hike to a high bivy"},
+      {"field": "itinerary.days[0].note", "says": "A Ross Lake water taxi crosses the lake to the Little Beaver dock, then it's a steep, brushy climb up the Perry Creek drainage to a bivy site around 5,000 ft..."},
+      {"field": "itinerary.days[1].schedule[2].detail", "says": "Top out the Southeast Rib (Class 5, 3 pitches) at 8,504 ft."},
+      {"field": "timing.sectionBreakdown[0].fromTo", "says": "Boat taxi + hike to a high bivy"}
+     ],
+     "why": "Every geography field for this route (approach, waypoints, approach_variants, approach_logistics) describes the Depot Creek/Monument 65/Col of the Wild approach from British Columbia, but the Trip Plan itinerary and PUBLISHED TIMES sectionBreakdown instead describe a completely different approach -- a Ross Lake water-taxi to Little Beaver dock, then the Perry Creek drainage -- and even label the summit push 'the Southeast Rib', not the West Ridge. This is the approach used by a different route on the same peak (The Devils Club, East Face, approached via Ross Dam/Little Beaver/Perry Creek).",
+     "internal_resolution": "Six fields (overview, beta, approach, waypoints, approach_variants, approach_logistics) agree on the Depot Creek/BC approach; only itinerary and timing.sectionBreakdown describe Ross Lake/Perry Creek, matching a different route's data (The Devils Club) rather than this one.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of rappels on the descent",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "3 single-rope rappels from the summit, plus 6-7 improvised rappels/lowers (slung rock horns, knotted runners in cracks) down the gully and snow/talus below"},
+      {"field": "rappel_detail", "says": "4 entries: three 30m single-rope rappels + one 60m double-rope rappel"},
+      {"field": "rappel_count_note", "says": "Typical late-summer, snow-free count is ~4 rappels (three 30m single-rope + one 60m double-rope). In seasons with a lingering snow finger, parties have needed up to 9-10 shorter rappels interspersed with downclimbing instead."}
+     ],
+     "why": "The RAPPELS text on the Plan tab states a blanket ~9-10 total rappels (3 + 6-7) as if that were the normal descent, but the detailed rappel table (4 rows) and its own count note both say the typical descent is 4 rappels and that 9-10 only applies in abnormal lingering-snow conditions.",
+     "internal_resolution": "rappel_detail (4 rows) and rappel_count_note agree the normal count is 4; the 'rappels' prose field conflates the normal and abnormal-snow scenarios into a single inflated figure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_devils_club",
+   "name": "The Devils Club",
+   "area": "Southeast Mox Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_blood_orgy",
+   "name": "Blood Orgy",
+   "area": "Mamie Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ellation",
+   "name": "Ellation",
+   "area": "Mamie Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hail_satan",
+   "name": "Hail Satan",
+   "area": "Mamie Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_woodland_critter_christmas",
+   "name": "Woodland Critter Christmas",
+   "area": "Mamie Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "name": "Southwest Ridge / McAllister Glacier",
+   "area": "Austera Peak",
+   "contradictions": [
+    {
+     "fact": "Overall commitment grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade II, 5.2"},
+      {"field": "commitment", "says": "III"},
+      {"field": "grade_num", "says": "4"}
+     ],
+     "why": "The route's own grade field states 'Grade II', while the separate commitment field (rendered as its own grade chip) says III; grade_num (4) also doesn't correspond to either the '5.2' or a Roman-numeral commitment figure, suggesting the grade string was mis-parsed.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total route gain/loss/distance vs. the summit-day glacier traverse leg",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "1280"},
+      {"field": "loss_ft", "says": "592"},
+      {"field": "dist_km", "says": "4.5 (~2.8 mi)"},
+      {"field": "approach", "says": "...This glacier traverse from camp to the base of Austera's southwest side is itself roughly 3 miles with real elevation swings (about 1,280 ft of ascent and 592 ft of descent over 2.8 miles, ~4 hours one-way)..."},
+      {"field": "itinerary.totalNote", "says": "A remote 3-day glacier trek... roughly 18 miles round trip with ~7,000+ ft of cumulative gain across three glaciers and two cols..."},
+      {"field": "itinerary.days[0].gainFt", "says": "5400"},
+      {"field": "itinerary.days[2].lossFt", "says": "5400"}
+     ],
+     "why": "The route's own approach text says 1,280 ft gain / 592 ft loss / 2.8 mi describe only the summit-day glacier traverse (high camp to Austera and implicitly back), not the whole climb -- yet those are the only gain_ft/loss_ft/dist_km values stored, so the header Gain/Dist stats (shown on every tab) will drastically understate the true ~7,000+ ft / 18 mi round trip that the itinerary itself documents.",
+     "internal_resolution": "The itinerary's 3-day breakdown (7,200 ft gain/loss, 18.5 mi) is internally consistent and matches the totalNote's 'roughly 18 miles... ~7,000+ ft'; gain_ft/loss_ft/dist_km describe only a sub-leg mislabeled as the route totals.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak",
+   "name": "Austera Peak",
+   "area": "Austera Peak",
+   "contradictions": [
+    {
+     "fact": "Which peak this route summits",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "...From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours."},
+      {"field": "approach", "says": "IMPORTANT -- this route is NOT on Eldorado Peak itself, despite being filed under the same area: from the Eldorado/Inspiration Glacier high camp (~7,600ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col... Austera Peak requires further travel across the Klawatti Glacier (including a short rappel from the col) beyond Klawatti Peak..."}
+     ],
+     "why": "The same approach field first describes the route climbing to 'Eldorado's...8,868-foot summit' (Eldorado Peak, a different, higher, neighboring peak) and then explicitly states in the same paragraph that this route is NOT on Eldorado Peak -- self-contradicting, apparently leftover boilerplate from Eldorado Peak's own approach text.",
+     "internal_resolution": "The field's own explicit 'IMPORTANT' disclaimer resolves it: this route summits Austera Peak (8,339 ft, matching the area elevation and this route's own waypoints/high_point_ft), not Eldorado (8,868 ft); the opening sentence is contaminated text and should be disregarded.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total route gain/loss/distance vs. the multi-day trip",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "1280"},
+      {"field": "loss_ft", "says": "592"},
+      {"field": "dist_km", "says": "4.5 (~2.8 mi)"},
+      {"field": "itinerary", "says": "Day 1: hike Cascade River Road/Eldorado Creek trail and Eldorado Glacier to East Ridge high camp (~7,600 ft), 5-6 hrs. Day 2: traverse the glacier system to Austera Peak and back (~4 hrs one-way plus summit climbing)... Day 3: descend to the trailhead."},
+      {"field": "waypoints[0].elev", "says": "2100"},
+      {"field": "waypoints[4].elev (summit)", "says": "8339"}
+     ],
+     "why": "gain_ft/loss_ft/dist_km (1,280 ft / 592 ft / 2.8 mi) match only the summit-day glacier-traverse leg described in the itinerary's Day 2, not the full 3-day trip from a 2,100 ft trailhead to an 8,339 ft summit -- so the header Gain/Dist stats badly understate the real trip.",
+     "internal_resolution": "The itinerary text and waypoint elevations (2,100 ft to 8,339 ft over 3 days) show a much larger total than gain_ft/loss_ft/dist_km represent; this mirrors the identical issue on the Southwest Ridge route on the same peak, which stores the same three numbers.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "name": "Chockstone Route",
+   "area": "Austera Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {"field": "pitches", "says": "3"},
+      {"field": "overview", "says": "...may represent the same summit-block crux described elsewhere as part of the Southwest Ridge finish..."},
+      {"field": "beta", "says": "A short, moderate 2-3 pitch rock climb up 'very moderate rock scrambling' culminating in the 'infamous chockstone chimney'..."},
+      {"field": "pitch_detail", "says": "only 1 entry: 'Chockstone chimney (crux)', grade 5.2"}
+     ],
+     "why": "pitches is stated as 3 (beta says 2-3), but pitch_detail documents only the single crux pitch, so ROUTE BREAKDOWN shows one row for a route billed elsewhere as 2-3 pitches.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total route gain/distance vs. approach-to-camp leg only",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "6000"},
+      {"field": "dist_km", "says": "11.3 (~7.0 mi)"},
+      {"field": "approach", "says": "From the Cascade River Road trailhead, approximately 7 miles and 6,000 ft of elevation gain leads to an East Ridge of Eldorado high camp. From camp, cross the Inspiration, McAllister, and Klawatti Glaciers... to reach the base of Austera's rock tower."}
+     ],
+     "why": "The route's own approach text says the 7 mi / 6,000 ft figure reaches only the high camp, with further glacier travel and climbing still needed to reach Austera's summit -- but gain_ft/dist_km are the only stored totals, so the header Gain/Dist stats would understate the true trip to the summit (other routes on this peak show the glacier-traverse leg alone adds ~1,280 ft / 2.8 mi more).",
+     "internal_resolution": "The approach field itself distinguishes the to-camp leg from the remaining glacier traverse to the summit, confirming gain_ft/dist_km cover only part of the route.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

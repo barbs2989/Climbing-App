@@ -1,0 +1,253 @@
+// "This entry" as the subject: the catalog talking about ITSELF to a climber.
+//
+//     "This entry exists for Mount Olson and for nothing else in the zone."
+//     "This entry is the road rather than a campsite."
+//     "The elevation of the trail changes across the several miles this entry covers."
+//     "Superseded by the sibling access.* fields on this row (added in a later enrichment pass)"
+//
+// A climber reading CAMPING & BIVY does not see an "entry". They see a camp with a line under
+// it. The last one is worse still: it names COLUMNS (`land_manager`, `parking_pass`) and an
+// enrichment pass, which is pure pipeline bookkeeping rendered as route information.
+//
+// THE CONTENT IS ALMOST ALWAYS GOOD AND ONLY THE FRAMING IS WRONG. "This entry exists to say
+// plainly that the obvious place to sleep is the one place you cannot" is telling a climber
+// something genuinely useful; it is just telling them about the CATALOG on the way. Every repair
+// here keeps the sentence's point and drops the self-reference.
+//
+// A DIFFERENT APPLIER SHAPE, because these sentences repeat across many routes. Instead of
+// declaring (route, column) per edit, each edit declares the sentence and THE NUMBER OF VALUES IT
+// EXPECTS TO FIND. A count that does not match refuses the whole run — so a sentence that has
+// been edited elsewhere, or that turns out to be more widespread than I read, stops the sweep
+// rather than being applied blind.
+//
+// FOUND BY WIDENING A SCAN THAT HAD REPORTED CLEAN. The first working-language pass covered 22
+// columns and found 24 candidates. It could not see `bivy`, `approach_variants`, `access`,
+// `rope_note` or the rack columns — and two leaks were later found in those BY ACCIDENT during
+// citation work. Widened to 33 columns the same scan reports 118. A scan cannot report on a
+// column it does not read.
+//
+// ALREADY APPLIED. A re-run now REFUSES with "expected N, found 0" for every sentence, because
+// the declared counts describe the catalog as it was BEFORE the write. That is the contract
+// working rather than an error: this script is a record of what was changed, not a thing to run
+// twice.
+//
+// Dry run by default. Pass --apply to write.
+import { SUPABASE_URL, anonKey, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
+
+const APPLY = process.argv.includes("--apply");
+const DASH = "—";
+
+const COLS = ["bivy", "approach_variants", "access", "approach", "climbing_route", "pro_tips",
+  "overview", "beta", "descent_text", "watch_out", "itinerary"];
+
+// { find, repl, expect, note? }   `expect` is the number of VALUES the sentence should appear in.
+const EDITS = [
+  {
+    find: "the several miles this entry covers, so no single figure is recorded",
+    repl: "the several miles covered here, so no single figure is given",
+    expect: 14,
+  },
+  {
+    find: "This entry exists for Mount Olson and for nothing else in the zone.",
+    repl: "This camp serves Mount Olson and nothing else in the zone.",
+    expect: 11,
+  },
+  {
+    find: "This entry is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is.",
+    repl: "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is.",
+    expect: 6,
+  },
+  {
+    find: "This entry exists to say plainly that the obvious place to sleep is the one place you cannot.",
+    repl: "The obvious place to sleep is, plainly, the one place you cannot.",
+    expect: 4,
+    note: "the CONTENT is good - you cannot sleep in the obvious spot. Only the framing was about the catalog.",
+  },
+  {
+    find: "that is the realistic use of this entry, not a plan.",
+    repl: "that is the realistic use of this camp, not a plan.",
+    expect: 3,
+  },
+  {
+    find: "This entry is the road rather than a campsite, because on this side of the massif the road decides what the trip is.",
+    repl: "This is the road rather than a campsite, because on this side of the massif the road decides what the trip is.",
+    expect: 3,
+  },
+  {
+    find: "This entry exists for the party that runs long rather than the party that plans well.",
+    repl: "This is for the party that runs long rather than the party that plans well.",
+    expect: 3,
+  },
+  {
+    find: "There is no camp here and this entry exists to say so.",
+    repl: "There is no camp here, and that is worth saying plainly.",
+    expect: 3,
+    note: "a DOCUMENTED NEGATIVE. The finding is the whole value; only the self-reference goes.",
+  },
+  {
+    find: "and this entry exists to say so honestly rather than to recommend a place.",
+    repl: "said plainly rather than recommending a place that does not exist.",
+    expect: 3,
+  },
+  {
+    find: "That same activity is why this entry is a contingency and not a recommendation",
+    repl: "That same activity is why this is a contingency and not a recommendation",
+    expect: 2,
+    note: "sleeping under a debris cone that is there because things fall on it - a real warning, untouched." },
+  {
+    find: "This entry exists to say so plainly rather than to invent a site.",
+    repl: "That is worth saying plainly rather than inventing a site.",
+    expect: 1,
+  },
+
+];
+
+function countIn(v, find) {
+  if (typeof v === "string") return v.split(find).length - 1;
+  if (Array.isArray(v)) return v.reduce((n, x) => n + countIn(x, find), 0);
+  if (v && typeof v === "object") return Object.values(v).reduce((n, x) => n + countIn(x, find), 0);
+  return 0;
+}
+function replaceIn(v, find, repl) {
+  if (typeof v === "string") return v.split(find).join(repl);
+  if (Array.isArray(v)) return v.map((x) => replaceIn(x, find, repl));
+  if (v && typeof v === "object") {
+    const o = {};
+    for (const [k, x] of Object.entries(v)) o[k] = replaceIn(x, find, repl);
+    return o;
+  }
+  return v;
+}
+function leaves(v, out = []) {
+  if (typeof v === "string") out.push(v);
+  else if (Array.isArray(v)) v.forEach((x) => leaves(x, out));
+  else if (v && typeof v === "object") Object.values(v).forEach((x) => leaves(x, out));
+  return out;
+}
+
+const KEY = APPLY ? requireServiceKey() : anonKey();
+const rows = [];
+for (let off = 0; ; off += 1000) {
+  const r = await fetch(
+    `${SUPABASE_URL}/rest/v1/routes?id=like.wa_*&select=id,${COLS.join(",")}&limit=1000&offset=${off}`,
+    { headers: headers(KEY) },
+  );
+  if (!r.ok) { console.error(`read failed: ${r.status} ${await r.text()}`); process.exit(1); }
+  const b = await r.json();
+  rows.push(...b);
+  if (b.length < 1000) break;
+}
+if (rows.length < 8000) { console.error(`read only ${rows.length} routes - refusing`); process.exit(1); }
+console.log(`read ${rows.length} WA routes across ${COLS.length} columns.\n`);
+
+// Stage per (id, col), accumulating so two edits on one value both land. The key separator is
+// written as the ESCAPE \x00, never a literal NUL: git treats a file holding one as BINARY and
+// nobody can read its diff. `check:no-nul` caught a literal one here and, in forcing me to look
+// at the line, exposed the real defect - the `_raw` drop below was building the same key with a
+// SPACE. Two separators for one Map means a route needing both a sentence edit and the _raw drop
+// would be staged TWICE under different keys, and one write would clobber the other. It did not
+// fire (no route needed both, and the verify pass would have caught it if one had), but a
+// latent clobber is worth naming: build a composite key in exactly one way.
+const staged = new Map();
+const refusals = [];
+for (const e of EDITS) {
+  const hits = [];
+  for (const row of rows) {
+    for (const c of COLS) {
+      const key = `${row.id}\x00${c}`;
+      const cur = staged.has(key) ? staged.get(key).value : row[c];
+      if (countIn(cur, e.find) > 0) hits.push({ id: row.id, col: c, key });
+    }
+  }
+  if (hits.length !== e.expect) {
+    refusals.push(`expected ${e.expect} value(s) containing ${JSON.stringify(e.find.slice(0, 60))}, found ${hits.length}`);
+    continue;
+  }
+  for (const h of hits) {
+    if (!staged.has(h.key)) staged.set(h.key, { id: h.id, col: h.col, value: rows.find((r) => r.id === h.id)[h.col], edits: [] });
+    const s = staged.get(h.key);
+    s.value = replaceIn(s.value, e.find, e.repl);
+    s.edits.push(e);
+  }
+  console.log(`${String(hits.length).padStart(3)}  ${JSON.stringify(e.find.slice(0, 72))}`);
+  if (e.note) console.log(`     why: ${e.note}`);
+}
+
+if (refusals.length) {
+  console.error(`\nREFUSED - ${refusals.length} declared count(s) did not match:\n  ` + refusals.join("\n  "));
+  console.error("\nNothing was written. A sentence that is more widespread than declared stops the sweep.");
+  process.exit(1);
+}
+
+// A WHOLE NESTED BLOCK, not a sentence. `access._raw.note` on two routes reads:
+//
+//   "Superseded by the sibling access.* fields on this row (added in a later enrichment pass) —
+//    land_manager, parking_pass, and rules there are the current researched values. This _raw
+//    block is kept only as a record of an earlier failed auto-lookup, same pattern already fixed
+//    on this peak's wa_blood_sport route in BATCH 3."
+//
+// It names two COLUMNS, an enrichment pass, another ROUTE ID and a batch number. Nothing in it is
+// route information, and the fields it defers to are already populated on the same row - so the
+// whole `_raw` key is dropped rather than reworded. Declared by id, and refused if the key is
+// gone or its note no longer says what it is expected to say.
+const RAW_DROP = ["wa_south_gully_south_spur", "wa_blood_sport"];
+for (const id of RAW_DROP) {
+  const row = rows.find((r) => r.id === id);
+  const key = `${id}\x00access`;
+  const cur = staged.has(key) ? staged.get(key).value : (row && row.access);
+  if (!cur || !cur._raw || !String(cur._raw.note || "").includes("Superseded by the sibling access")) {
+    console.error(`REFUSED - ${id}.access._raw is not the bookkeeping block this expects.`);
+    process.exit(1);
+  }
+  if (!cur.land_manager) {
+    console.error(`REFUSED - ${id}.access has no land_manager, so the block it defers to is not there.`);
+    process.exit(1);
+  }
+  const next = { ...cur };
+  delete next._raw;
+  staged.set(key, { id, col: "access", value: next, edits: [{ find: "Superseded by the sibling access", repl: "" }] });
+  console.log(`  1  dropped ${id}.access._raw (pipeline bookkeeping naming columns, a route id and a batch number)`);
+}
+
+console.log(`\n--- sample of the resulting values ---`);
+let shown = 0;
+for (const s of staged.values()) {
+  if (shown++ >= 8) break;
+  const before = new Set(leaves(rows.find((r) => r.id === s.id)[s.col]));
+  for (const l of leaves(s.value)) if (!before.has(l)) console.log(`  ${s.id} ${s.col}\n    ${l.slice(0, 200)}`);
+}
+console.log(`\n${EDITS.length} distinct sentence(s), ${staged.size} value(s) changed.`);
+
+if (!APPLY) { console.log("\nDRY RUN - pass --apply to write."); process.exit(0); }
+
+let wrote = 0;
+for (const s of staged.values()) { await patchRow("routes", s.id, { [s.col]: s.value }); wrote++; }
+console.log(`\nwrote ${wrote} value(s).`);
+
+const ids = [...new Set([...staged.values()].map((s) => s.id))];
+const after = new Map();
+for (let i = 0; i < ids.length; i += 40) {
+  const v = await fetch(
+    `${SUPABASE_URL}/rest/v1/routes?id=in.(${ids.slice(i, i + 40).join(",")})&select=id,${COLS.join(",")}`,
+    { headers: headers(KEY) },
+  );
+  for (const row of await v.json()) after.set(row.id, row);
+}
+let bad = 0;
+for (const s of staged.values()) {
+  for (const e of s.edits) {
+    if (countIn(after.get(s.id)[s.col], e.find) !== 0) {
+      console.error(`NOT APPLIED: ${s.id} ${s.col} still contains ${JSON.stringify(e.find.slice(0, 50))}`);
+      bad++;
+    }
+  }
+}
+// The documented negatives are the reason several of these values exist at all.
+let negs = 0;
+for (const row of after.values()) {
+  const t = leaves(row.bivy).join(" ");
+  if (/no camp here|NO ESTABLISHED CAMP|one place you cannot/.test(t)) negs++;
+}
+console.log(`documented "there is no camp" negatives still present in ${negs} value(s).`);
+console.log(bad ? `\nVERIFY FAILED: ${bad} problem(s).` : `\nverified: every edit re-read clean.`);
+process.exit(bad ? 1 : 0);

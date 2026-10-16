@@ -1,0 +1,719 @@
+{
+ "file": "r051.json",
+ "results": [
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "fact": "whether approach beta for this boulder exists",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Approach is the North Fork Sauk River trail (standard southern Glacier Peak approach) toward White Pass and the White Chuck Glacier basin; boulder sits west of the White Chuck Glacier remnant, flat-topped, visible from the path, room for one tent at its base.",
+   "evidence": "The route's own catalog page describes the approach as the standard North Fork Sauk River approach used for Glacier Peak (about 8 miles), with the boulder west of what remains of the White Chuck Glacier, visible from the trail, distinct flat top, and a small tent spot at its base - matching timing, itinerary.totalNote, partner_requirements, pro_tips and the stored waypoint coordinate (identical to that page's coordinate). The trail agency and a hiking database confirm the North Fork Sauk trail reaches the PCT at 8.4 mi and White Pass at ~9.1 mi, and the Gerdine/Cool route page places the White Chuck basin east of White Pass. The approach field's claim that no beta exists is a stale refusal. New text avoids a mileage figure since the boulder lies somewhat beyond White Pass.",
+   "sources": [
+    "https://www.mountainproject.com/route/118251503/dont-climb-that-she-said",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-sauk-trail-649",
+    "https://www.wta.org/go-hiking/hikes/north-fork-sauk-river",
+    "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_don_t_climb_that_she_said",
+     "fact": "whether approach beta for this boulder exists",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "No route-specific trailhead or approach beta for this boulder problem turned up anywhere online, and the name itself reads like a locally-known or in-joke label rather than a catalogued, widely-documented line — it isn't cross-referenced anywhere against a named boulder or trailhead in the Glacier Peak area.",
+     "replace": "Reach it by the North Fork Sauk River trail, the standard southern approach to Glacier Peak: past Mackinaw Shelter, up the long switchbacks to the Pacific Crest Trail at White Pass, then east on the climbers' path toward the White Chuck Glacier basin. The boulder stands west of what is left of the White Chuck Glacier, in view of the path, and is easy to recognise by its flat top; there is room for a single tent at its foot."
+    }
+   ]
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "fact": "one-way approach distance (dist_km 0.97 km shown as 'Approach (one way)' vs ~8+ mile walk in)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km (0.97 km / 0.6 mi) matches the boulder-session itinerary miles, but TECHNICAL STATS labels it the one-way approach while every prose field says the boulder is ~8 miles in. The route page says 'about 8 miles'; the trail pages put White Pass at ~9.1 mi and the stored boulder coordinate lies east of White Pass, so the true one-way figure is likely 9-10 mi. No two sources state the same one-way distance to the boulder itself, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/118251503/dont-climb-that-she-said",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-sauk-trail-649",
+    "https://www.wta.org/go-hiking/hikes/north-fork-sauk-river"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "fact": "which approach/trailhead this route uses",
+   "verdict": "fixed",
+   "correct_value": "North Fork Sauk River Trailhead (~2,100 ft, end of FR 49) -> White Pass (~9 mi, ~5,900 ft) -> White Chuck basin -> Glacier Gap (~7,300 ft) high camp -> cleaver/Cool Glacier to summit; 4 days, ~30-35 mi RT.",
+   "evidence": "The Gerdine Ridge/Cool Glacier and Disappointment Peak Cleaver route pages both start the route from White Pass on the PCT via the North Fork Sauk trail and Glacier Gap. A guide service's 4-day itinerary: Sloan Creek trailhead 2,100 ft, day 1 to White Pass camp 5,900 ft, day 2 to Glacier Gap 7,300 ft (+1,400 ft), day 3 summit and back, day 4 out; another guide itinerary and a single-day trip report use the same North Fork Sauk/White Pass/Glacier Gap line. The trail agency puts the PCT at 8.4 mi and White Pass ~0.75 mi beyond; a hiking database gives the trailhead at 48.0584,-121.2866, so the stored waypoint[0] pin IS the North Fork Sauk trailhead and its note calling it the Trinity trailhead is false. The Buck Creek Pass/Trinity itinerary text was contamination; per-day gains now use net elevations (2,100 -> 5,900 -> 7,300 -> 10,541). Hours left unchanged (guide day lengths 7-8/4-5/6-8/6-8 h fit them).",
+   "sources": [
+    "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier",
+    "https://www.mountainproject.com/route/122217045/disappointment-peak-cleavergerdine-ridge-direct",
+    "https://www.northwestalpineguides.com/northwest-climbs/glacier-peak/",
+    "https://www.alpineascents.com/climbs/glacier-peak/itinerary/",
+    "https://climberkyle.com/2017/07/10/glacier-peak-in-a-day/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-sauk-trail-649",
+    "https://www.wta.org/go-hiking/hikes/north-fork-sauk-river"
+   ],
+   "patches": [
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Trinity Trailhead, where Buck Creek Trail #1513 and Chiwawa River Trail #1550 enter the Glacier Peak Wilderness. The North Fork Sauk River trailhead is 20.2 mi away on a different approach: both of this route's approach waypoints — Buck Creek Pass at 9.5 mi and the Cool/Gerdine Basin camp above it — are reached from Trinity, and the route's own itinerary begins 'Trailhead to Buck Creek Pass, 12 mi'.",
+     "replace": "Road-end trailhead for North Fork Sauk River Trail #649, at the end of Sloan Creek Road (FR 49)."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 2800,
+     "value": 2100
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Buck Creek Pass access depends on Suiattle River / Trinity-area road status, which has had washout issues in recent years — confirm current road conditions before relying on this trailhead.",
+     "replace": "Access depends on the Mountain Loop Highway, gated between Deer Creek and Bedal through the winter, and on Sloan Creek Road (FR 49), which has rough and washed-out sections — confirm current road conditions before the trip."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "A long first day climbing steadily to Buck Creek Pass (~5,800 ft), a popular backcountry basin with views of Glacier Peak's east face.",
+     "replace": "Old-growth forest along the North Fork Sauk River to Mackinaw Shelter, then the long, steep switchbacks to the Pacific Crest Trail and a short walk on it to White Pass (~5,900 ft)."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "find": "Trailhead to Buck Creek Pass",
+     "replace": "Trailhead to White Pass"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach the Buck Creek Pass area",
+     "replace": "Reach camp at White Pass"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 12,
+     "value": 9
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3200,
+     "value": 3800
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 100,
+     "value": 0
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Push on from Buck Creek Pass toward the mountain's eastern flank, camping on rock or moraine near the toe of the Cool Glacier to stage for the summit day.",
+     "replace": "Leave the trail east of White Pass, cross the ridge into the White Chuck Glacier basin and climb its far side to Glacier Gap (~7,300 ft), the high camp for the summit day."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "find": "Continue to eastern high camp",
+     "replace": "White Pass to Glacier Gap"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Reach a high camp near the Cool Glacier moraine",
+     "replace": "Reach high camp at Glacier Gap"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 4,
+     "value": 3.5
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 1600,
+     "value": 1400
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 50,
+     "value": 0
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "Alpine start onto the Cool Glacier, gaining the Disappointment Peak Cleaver and following it to the summit, then reversing the same line back to camp.",
+     "replace": "Alpine start up the Disappointment Peak Cleaver from Glacier Gap, onto the upper Cool Glacier (or directly over Disappointment Peak) to the summit, then reverse the same line back to camp."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "find": "Summit via Cool Glacier and the cleaver",
+     "replace": "Summit via the cleaver and Cool Glacier"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Rope up for glacier travel near camp.",
+     "replace": "Climb the cleaver on foot; rope up where the route steps onto the glacier."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 6,
+     "value": 5
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "gainFt"
+     ],
+     "expect": 2950,
+     "value": 3250
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 2950,
+     "value": 3250
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "Full reverse of the approach, back over Buck Creek Pass and down to the trailhead — a long, mostly-descending day.",
+     "replace": "Full reverse of the approach, back across the White Chuck basin to White Pass and down the North Fork Sauk trail to the car — a long, mostly-descending day."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "miles"
+     ],
+     "expect": 12,
+     "value": 12.5
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "lossFt"
+     ],
+     "expect": 5750,
+     "value": 5200
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A 4-day trip (~34 miles RT, ~7,750 ft gain) — the long eastern approach via Buck Creek Pass is what makes this route a multi-day undertaking rather than a single push.",
+     "replace": "A 4-day trip (~30-35 miles RT) — the long North Fork Sauk approach to Glacier Gap is what makes this route a multi-day undertaking rather than a single push."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "A long first day climbing steadily to Buck Creek Pass (~5,800 ft), a popular backcountry basin with views of Glacier Peak's east face.",
+     "replace": "Old-growth forest along the North Fork Sauk River to Mackinaw Shelter, then the long, steep switchbacks to the Pacific Crest Trail and a short walk on it to White Pass (~5,900 ft)."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "find": "Trailhead to Buck Creek Pass",
+     "replace": "Trailhead to White Pass"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Push on from Buck Creek Pass toward the mountain's eastern flank, camping on rock or moraine near the toe of the Cool Glacier to stage for the summit day.",
+     "replace": "Leave the trail east of White Pass, cross the ridge into the White Chuck Glacier basin and climb its far side to Glacier Gap (~7,300 ft), the high camp for the summit day."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "find": "Continue to eastern high camp",
+     "replace": "White Pass to Glacier Gap"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "Alpine start onto the Cool Glacier, gaining the Disappointment Peak Cleaver and following it to the summit, then reversing the same line back to camp.",
+     "replace": "Alpine start up the Disappointment Peak Cleaver from Glacier Gap, onto the upper Cool Glacier (or directly over Disappointment Peak) to the summit, then reverse the same line back to camp."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "find": "Summit via Cool Glacier and the cleaver",
+     "replace": "Summit via the cleaver and Cool Glacier"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      3,
+      "note"
+     ],
+     "find": "Full reverse of the approach, back over Buck Creek Pass and down to the trailhead — a long, mostly-descending day.",
+     "replace": "Full reverse of the approach, back across the White Chuck basin to White Pass and down the North Fork Sauk trail to the car — a long, mostly-descending day."
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Strong multi-day backpacking fitness for a long eastern approach via Chiwawa River/Buck Creek Pass",
+     "replace": "Strong multi-day backpacking fitness for the long North Fork Sauk approach via White Pass"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "2+ days to high camp via Trinity/Buck Creek Pass; roughly 4 days car-to-car",
+     "replace": "2 days to high camp at Glacier Gap via the North Fork Sauk trail and White Pass; roughly 4 days car-to-car"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Combine with Buck Creek Pass for a scenic eastern approach",
+     "replace": "Split the long walk in with a first night at White Pass"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Plan a multi-day trip and verify road access (Chiwawa Road status)",
+     "replace": "Plan a multi-day trip and verify road access (Mountain Loop Highway and Sloan Creek Road status)"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "Camp in the Gerdine/Cool basin and climb early",
+     "replace": "Camp at Glacier Gap and climb early"
+    },
+    {
+     "id": "wa_glacier_peak_disappointment_peak_cleaver",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "High camp in the Gerdine/Cool basin is the bail point; retreat from the upper mountain returns you there, then the long walk out.",
+     "replace": "High camp at Glacier Gap is the bail point; retreat from the upper mountain returns you there, then the long walk out."
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "fact": "waypoints[1] 'Buck Creek Pass' and waypoints[2] 'Cool/Gerdine Basin Camp' belong to an eastern approach",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "Should be White Pass (~5,900 ft, ~9 mi) and Glacier Gap (~7,300 ft, ~12.5 mi)",
+   "evidence": "These two pins sit at coordinates on the Buck Creek Pass / eastern side, not on this route's North Fork Sauk approach. Renaming them without moving the pins would put White Pass and Glacier Gap labels at the wrong places on the map, and pin positions are out of scope, so they are left for a pin repair.",
+   "sources": [
+    "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier",
+    "https://www.northwestalpineguides.com/northwest-climbs/glacier-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "fact": "total elevation gain for the trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 7,750 ft itinerary total belonged to the contaminated Buck Creek Pass itinerary; the corrected itinerary days now sum to the net 8,450 ft (trailhead ~2,100 to summit 10,541). Published totals for the North Fork Sauk route disagree: one guide says ~9,000 ft, another 9,200 ft, a single-day trip report 12,000 ft; the row's own corrections note says its figure is a computed net. None supports 9,846 exactly and the undulation through the White Chuck basin is not quantified, so gain_ft/loss_ft are left unchanged and the totalNote no longer states a gain number. gain_ft (9,846) and the itinerary TOTAL (8,450) still differ and need a decision.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/glacier-peak/itinerary/",
+    "https://www.northwestalpineguides.com/northwest-climbs/glacier-peak/",
+    "https://climberkyle.com/2017/07/10/glacier-peak-in-a-day/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km (7.7 mi) is the one-way approach and the 25 mi itinerary is a round trip, so those two do not conflict; day 1 of the itinerary is 8 mi. The real disagreement is inside the row: approach prose (4 + 1.7 + 2 mi = 7.7 mi to Glacier Creek) vs the waypoints (Kennedy Ridge junction at 6 mi, Glacier Creek camp at 9.7 mi). One route description gives 'about 4 miles' on the White Chuck trail; a Frostbite Ridge trip report gives 'approximately 6 miles'; a 1975 report implies ~5 mi to Kennedy. With the road also closed short of the trailhead, the one-way figure cannot be settled by two agreeing sources, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/kennedy-glacier/158306",
+    "http://ericsbasecamp.net/trips/GlacierPk/GlacierPk.htm",
+    "https://trailcatjim.com/glacier-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "CAMPING & BIVY list scope",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy[3] (Kennedy Ridge / Glacier Creek) is this route's own camp. bivy[0] Mackinaw Shelter and bivy[1] White Pass serve the alternate North Fork Sauk/PCT-over-Red-Pass approach the route's own approach text names. bivy[4] Boulder Basin serves the Sitkum descent variant the itinerary mentions. bivy[2] Glacier Gap (Cool Glacier high camp) and bivy[5]-[8] (Buck Creek Pass, Napeequa, Pilz Glacier basin, Boulder Pass/White River) do not serve this route. Left for the catalog-wide bivy class.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "White Chuck River Trailhead waypoint: road and elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Road-end trailhead at the end of White Chuck River Road (FR 23), ~2,350 ft",
+   "evidence": "waypoints[0] says the White Chuck trailhead is on Suiattle River Road (FR 26) at 1,700 ft, while the approach prose names FS-23 and the itinerary's day 1 (+3,850 ft to a ~6,200 ft camp) implies ~2,350 ft. A route description gives White Chuck River Rd (FS23) dead-ending at the trailhead; a peak-ascent report follows NFR 23 to Trail #643; one trip report gives the trailhead as 2,350 ft and another as 2,300 ft.",
+   "sources": [
+    "https://www.summitpost.org/kennedy-glacier/158306",
+    "https://www.countryhighpoints.com/glacier-peak-via-white-chuck-river/",
+    "https://trailcatjim.com/glacier-peak/",
+    "http://ericsbasecamp.net/trips/GlacierPk/GlacierPk.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_glacier_peak_kennedy_glacier",
+     "fact": "White Chuck River Trailhead waypoint: road and elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Road-end trailhead on Suiattle River Rd (FR 26), ~23.5 mi from Darrington; North Fork Sauk TH (48.05832,-121.28793) is a valid alternate approach for this route.",
+     "replace": "Road-end trailhead at the end of White Chuck River Road (FR 23); North Fork Sauk TH (48.05832,-121.28793) is a valid alternate approach for this route."
+    },
+    {
+     "id": "wa_glacier_peak_kennedy_glacier",
+     "fact": "White Chuck River Trailhead waypoint: road and elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1700,
+     "value": 2350
+    },
+    {
+     "id": "wa_glacier_peak_kennedy_glacier",
+     "fact": "White Chuck River Trailhead waypoint: road and elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 1700,
+     "value": 2350
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "summit-day descent line (Sitkum vs Frostbite Ridge/Vista Glacier)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.days[1].title and timing.sectionBreakdown[1] say the party descends via the Sitkum Glacier and Boulder Basin, while itinerary.days[1].note and its schedule say the descent is down Frostbite Ridge and the Vista Glacier. Both are real options on the mountain; which one this itinerary intends is an editorial choice, not a researchable fact, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_gothic_peak_standard",
+   "fact": "Which side of the SE ridge crest carries the correct/cairned line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The cairned line is in the scree on the climber's-right (north) side of the SE ridge crest; climber's-left just below the summit block is the exposed Class 4 trap.",
+   "evidence": "The peak's main route page says the easiest way is to stay in the scree climber's right of the SE ridge, following numerous cairns, and cut left on a small sidewalk only at the summit block. The row's approach, approach_variants[0].baseFinding, climbing_route[0] and pitch_detail[3] (north-side slope) all agree. descent_text uses the facing-uphill convention elsewhere in the same paragraph (climber's-left of the summit block = south face), so its 'climber's-left of the SE ridge crest' points at the hazard side; rewritten to name the north side.",
+   "sources": [
+    "https://www.summitpost.org/gothic-peak/153144"
+   ],
+   "patches": [
+    {
+     "id": "wa_gothic_peak_standard",
+     "fact": "Which side of the SE ridge crest carries the correct/cairned line",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "climber's-left of the SE ridge crest",
+     "replace": "on the north side of the SE ridge crest (the climber's-right side on the way up)"
+    }
+   ]
+  },
+  {
+   "id": "wa_gothic_peak_standard",
+   "fact": "Camping & bivy list includes entries for a different peak (Sperry Peak), not Gothic Peak",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy[1] Lower Gothic Basin and bivy[2] Weden Creek trail junction serve this route. bivy[0] Sunrise Mine road end and bivy[3] Red Bridge Campground are Sperry Peak staging camps and do not serve Gothic. Left for the catalog-wide bivy class.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_gothic_peak_standard",
+   "fact": "Total route distance ('Dist')",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 7.4 km (4.6 mi) is the one-way approach, which is how it renders ('Approach (one way)'); the itinerary's 9.8 mi is the round-trip sum of two days, and approach_variants gives 9.2 mi round trip - the figures agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_indian_head_peak_southwest_slopes",
+   "fact": "Total route distance ('Dist')",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 17.7 km (11 mi) is by definition the one-way approach and matches the approach and pitch_detail's explicit one-way 10.9-11 mi; the itinerary's ~27 mi is the round trip including the summit. The header falling back to dist_km is a display convention, not a data conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_indian_head_peak_southwest_slopes",
+   "fact": "PCT direction from the North Fork Sauk junction to White Pass",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Turn right (southbound) on the PCT, about 0.7 mi to White Pass",
+   "evidence": "The approach says to follow the PCT north from the North Fork Sauk junction to White Pass and then on to Indian Pass. The trail agency's page puts White Pass about 0.75 mi SOUTH on the PCT from the junction; a hiking guide says to turn right (east) on the PCT and walk about a mile to White Pass. Both place White Pass away from Red Pass (north), and Indian Pass lies further along the PCT past White Pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-sauk-trail-649",
+    "https://www.wta.org/go-hiking/hikes/white-pass-pilot-ridge-loop"
+   ],
+   "patches": [
+    {
+     "id": "wa_indian_head_peak_southwest_slopes",
+     "fact": "PCT direction from the North Fork Sauk junction to White Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Follow the PCT north about 0.7 mi to White Pass",
+     "replace": "Turn right (southbound) on the PCT and follow it about 0.7 mi to White Pass"
+    }
+   ]
+  }
+ ]
+}

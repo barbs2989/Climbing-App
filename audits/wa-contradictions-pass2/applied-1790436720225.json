@@ -1,0 +1,37 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Date of the Elwha road washout"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Approach corridor"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_noyes_standard",
+   "before": {
+    "pro_tips": [
+     "Most efficient as part of a multi-peak Elwha/Seattle Basin outing",
+     "Carry navigation tools for the trail-less terrain",
+     "Since the 2024 Elwha road washout, the North Fork Quinault River Trail to Low Divide (~16 mi) is now considerably shorter than the Whiskey Bend approach (~28 mi plus a 7-mile road walk)"
+    ]
+   }
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "before": {
+    "beta": "There is no maintained trail to Ruth Peak. Parties reach the Bailey Range crest cross-country (commonly via Appleton Pass, Cat Basin, and Ferry Basin/Eleven Bull Basin, or historically from the Elwha side), then scramble class 3 terrain to gain the summit from the ridge. The peak sits between Mount Carrie and Mount Fairchild, with small pocket/cirque glaciers (including the Fairchild Glacier) tucked beneath its steep gendarmes near Stephen Lake."
+   }
+  }
+ ]
+}

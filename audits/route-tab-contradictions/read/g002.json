@@ -1,0 +1,233 @@
+{
+ "batches": ["b005.json", "b006.json", "b007.json", "b008.json"],
+ "routes_read": 5,
+ "routes": [
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "name": "Southwest Route / Standard",
+   "area": "Chiwawa Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain/loss (gain_ft/loss_ft) vs itinerary day totals",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5659"},
+      {"field": "loss_ft", "says": "5659"},
+      {"field": "itinerary.days[*].gainFt (sum)", "says": "3300+3900+0 = 7200"},
+      {"field": "itinerary.days[*].lossFt (sum)", "says": "0+3900+3300 = 7200"},
+      {"field": "itinerary.days[1].gainFt/lossFt", "says": "3900/3900 for the camp(6,300 ft)-to-summit(8,459 ft) leg, a rise of only 2,159 ft per the route's own waypoints"},
+      {"field": "approach", "says": "about 5,700 ft of gain"}
+     ],
+     "why": "The header/stats gain_ft (5,659) matches the trailhead(2,800 ft)-to-summit(8,459 ft) elevation change shown by the route's own waypoints and the approach prose ('about 5,700 ft'), but the itinerary's day totals sum to 7,200 ft (27% higher), and day 2 alone claims 3,900 ft of gain/loss for a leg that the waypoints show as only 2,159 ft.",
+     "internal_resolution": "gain_ft/loss_ft (5,659) is corroborated by waypoint elevations and the approach text; itinerary day 2's 3,900 ft gain/loss figure looks like the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 3-4 + glacier"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late July through early September, while the Lyman Glacier still holds continuous snow/ice cover"},
+      {"field": "seasonal_guidance.monthBreakdown.August.reason", "says": "Best combination of stable weather and continuous glacier snow cover before late-season melt-out"},
+      {"field": "partner_requirements.approachTime", "says": "Long - typically a full day to reach a high camp near Spider Gap or Lyman Lakes before a summit push"},
+      {"field": "partner_requirements.requiredSkills", "says": "Glacier travel and roped crevasse rescue ... Comfort leading/following 2-3 pitches of moderate snow/ice"},
+      {"field": "partner_requirements.experienceLevel", "says": "Advanced - prior glacier travel and roped crevasse-rescue experience required"},
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "Strenuous multi-day approach (Phelps Creek to Spider Gap/Lyman Lakes high camp)"},
+      {"field": "overview", "says": "the standard southwest route described here is a non-glaciated, largely cross-country scramble"},
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - the standard southwest route is non-glaciated and does not cross the Lyman Glacier remnant, which lies on a separate, more involved approach on the mountain's northeast side"},
+      {"field": "pro_needs", "says": "No rope, rack, or crevasse-rescue gear is needed on this side of the mountain unless you detour onto the glaciated NE (Lyman Glacier) side"},
+      {"field": "pro_tips", "says": "this is a different basecamp than Lyman Lake/Spider Gap, which serves the separate, glaciated NE side of Chiwawa"}
+     ],
+     "why": "The Partners-tab requirements and part of the seasonal guidance describe a roped glacier climb approached via Phelps Creek/Spider Gap/Lyman Lakes, while overview, approach, waypoints, road, pro_needs, gear, detailed_rack, hazards and pro_tips all describe a non-glaciated Class 2-3 scramble from the Trinity Trailhead via Chiwawa River Road. A climber checking Partners would be told this needs glacier-travel/crevasse-rescue skills it doesn't.",
+     "internal_resolution": "8+ fields agree on the Trinity/non-glaciated framing, including an explicit statement that this basecamp is different from the 'glaciated NE side' one; partner_requirements and the glacier language in seasonal_guidance/grade appear to be copied from that other, glaciated approach and are wrong here.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of travel from camp to the Fortress-Chiwawa col",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "The route follows the path of least resistance from Fortress-Chiwawa Col, traversing east-northeast aiming for the col"},
+      {"field": "waypoints", "says": "Chiwawa Basin high camp benches (lng -120.896283) sit EAST of the Fortress-Chiwawa col (lng -120.903268)"},
+      {"field": "overview", "says": "Fortress Mountain (8,760'), lies about 1.1 miles west across the Fortress-Chiwawa col"}
+     ],
+     "why": "beta says the party travels east-northeast to reach the col, but the route's own waypoint coordinates and overview both place the col west of camp (toward Fortress Mountain); travelling east-northeast from camp moves away from, not toward, the col.",
+     "internal_resolution": "The waypoint coordinates and the overview's 'west' description agree with each other; beta's 'east-northeast' looks like the error.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cloudy_peak_southwest_slopes",
+   "name": "Southwest Slopes",
+   "area": "Cloudy Peak",
+   "contradictions": [
+    {
+     "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 2"},
+      {"field": "grade_num", "says": "2"},
+      {"field": "rope_note", "says": "Class 2 walk-up on the SW slopes; no rope or technical protection used on this specific line (other Cloudy Peak approaches have 3rd/4th class sections, but the SW Slopes route itself is non-technical)"},
+      {"field": "overview", "says": "pushes the route to Class 3-4 — don't mistake the easy approach for the whole picture"},
+      {"field": "climbing_route[2].class", "says": "Class 4+"},
+      {"field": "waypoints (Cloudy Peak summit).note", "says": "True summit gained by a short, exposed Class 3-4 scramble on the north side of the block"},
+      {"field": "hazards", "says": "exposed, unprotected Class 3-4 summit block with a steep drop-off — many parties stop below the true summit"},
+      {"field": "watch_out", "says": "the final rock spire/summit block requires unprotected Class 3-4 moves with real exposure"}
+     ],
+     "why": "The route's own top-level grade/grade_num (Class 2) and rope_note ('this specific line...is non-technical') contradict the overview, hazards, watch_out, climbing_route and waypoint text, which all describe this same route's summit block as Class 3-4 or Class 4+ and exposed.",
+     "internal_resolution": "Six independent fields (overview, hazards, watch_out, climbing_route, waypoint note, itinerary schedule) agree the crux is Class 3-4/4+; only grade/grade_num/rope_note undercount it as Class 2/non-technical.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].note", "says": "Most parties reach Cloudy Peak via Holden Village (Lady of the Lake ferry across Lake Chelan, then bus to the village) and hike the Railroad Creek / Hart-Lyman Lake trail up the valley"},
+      {"field": "itinerary.days[2].note", "says": "retrace the Railroad Creek trail back down through Lyman Lake and Hart Lake to Holden Village in time for the return ferry"},
+      {"field": "timing.sectionBreakdown[0].note", "says": "Most parties reach Cloudy Peak via Holden Village...hike the Railroad Creek / Hart-Lyman Lake trail"},
+      {"field": "approach", "says": "The standard approach starts at the Phelps Creek Trailhead...which is the one matching the round-trip distance (~39.6 km) and the Leavenworth/US-2 road drive"},
+      {"field": "waypoints[0].name", "says": "Phelps Creek Trailhead"},
+      {"field": "approach_variants[0]", "says": "\"Phelps Creek and Spider Gap (standard)\", \"primary\": true"},
+      {"field": "approach_logistics.trailhead", "says": "Phelps Creek Trailhead"}
+     ],
+     "why": "The day-by-day itinerary and Published Times both narrate a Holden Village/Railroad Creek ferry trip, but the route's waypoints, approach text (self-declared as matching this record's stats), primary approach_variant, and approach_logistics all describe a different trailhead and trip (drive to Phelps Creek Trailhead, hike over Spider Gap). A climber following the itinerary would book a Lake Chelan ferry instead of driving to Phelps Creek.",
+     "internal_resolution": "waypoints, approach (explicitly says it 'matches' the recorded stats), approach_variants (marked primary), approach_logistics and road all agree on Phelps Creek/Spider Gap; itinerary and timing.sectionBreakdown's narrative appears to be copied from the alternate Holden Village approach_variant.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crevasse/glacier hazard on Safety tab vs. the approach's own Spider Gap glacier crossing",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel; the route climbs open heather and talus directly from Cloudy Pass to the summit, not the nearby Spider Glacier/snowfield"},
+      {"field": "approach", "says": "ascends the glacier/snowfield about 0.5 mile to Spider Gap (7,100 ft) — this is the crux of the approach...can have open crevasses and firm, icy conditions early season"},
+      {"field": "waypoints (Spider Gap / Spider Glacier remnant).directions", "says": "early season brings open crevasses and firm refrozen snow"},
+      {"field": "approach_variants[0].hazards[0]", "says": "Spider Gap is the crux of the approach — a permanent snow/glacier slope...can hold open crevasses and firm icy snow early season"}
+     ],
+     "why": "The Safety tab's seasonal_hazards.crevasses flatly says 'no glacier travel,' but the Plan tab's approach, a waypoint, and the primary approach_variant all describe crossing the Spider Glacier/permanent snowfield with documented early-season open-crevasse risk to get to this route.",
+     "internal_resolution": "seasonal_hazards.crevasses is technically scoped to the final summit push (which is correct), but as worded it reads as a blanket denial of any crevasse exposure on the trip, which three other fields contradict.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_copper_peak_south_route",
+   "name": "South Route",
+   "area": "Copper Peak",
+   "contradictions": [
+    {
+     "fact": "Optional rappel of the class 4 step vs. explicit no-rappel descent",
+     "severity": "high",
+     "claims": [
+      {"field": "gear", "says": "harness and 30m rope for the glacier crossing and optional rappel of the class 4 step"},
+      {"field": "detailed_rack", "says": "A light rack (a few slings, a 30m rope) is worth having for the short, exposed class 4 moves near the summit notches, where some parties prefer to belay or rappel rather than solo them"},
+      {"field": "rope_note", "says": "a few slings and a small cam or nut let you belay or rappel that rather than solo it"},
+      {"field": "rappels", "says": "0"},
+      {"field": "descent_text", "says": "Multiple trip reports for this route explicitly describe downclimbing the ascent line...and none report rappelling; this is a downclimb/walk-off route, not a rappel descent"},
+      {"field": "approach_variants[0].baseFinding", "says": "If you are looking for rappel anchors on this route you will not find any; nothing on it is rappelled"}
+     ],
+     "why": "gear, detailed_rack and rope_note each present rappelling the class 4 step as an option some parties use, while rappels=\"0\" and the detailed descent_text/baseFinding state emphatically that no rappelling occurs and no anchors exist anywhere on the route.",
+     "internal_resolution": "rappels=0, descent_text (citing multiple trip reports) and baseFinding's explicit 'you will not find any [rappel anchors]' are the more specific sources; the 'optional rappel' language in gear/detailed_rack/rope_note looks like generic boilerplate not supported by this route's own research.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route name/aspect/face (South, SE) vs. the actual described terrain (East face, Northeast Ridge)",
+     "severity": "medium",
+     "claims": [
+      {"field": "name", "says": "South Route"},
+      {"field": "aspect", "says": "SE"},
+      {"field": "face", "says": "Southeast Glacier/Face"},
+      {"field": "climbing_route / waypoints", "says": "route climbs the Southeast Glacier (east-facing) and finishes on the upper Northeast Ridge"},
+      {"field": "approach_variants[0].baseFinding", "says": "this route is listed as the South Route with a south-east aspect, and everything published about it describes the EAST-facing glacier remnant and the upper NORTH-EAST ridge. Navigate by the glacier and the notch, not by the compass point in the name."}
+     ],
+     "why": "The route's own name/aspect/face fields say South/Southeast, but the detailed route description consistently describes an east-facing glacier and a Northeast Ridge finish — a mismatch the row itself flags.",
+     "internal_resolution": "The route's own baseFinding text explicitly acknowledges and resolves this: treat name/aspect/face as inaccurate labels and follow the glacier+ridge description instead.",
+     "needs_research": false
+    },
+    {
+     "fact": "NWAC forecast-zone coverage: Reports tab (climate) vs. Safety tab (avalanche)",
+     "severity": "medium",
+     "claims": [
+      {"field": "climate.forecastZone", "says": "NWAC East Slopes Central zone (spans Lake Chelan south to I-90)"},
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer/fall scramble route; not covered by any of NWAC's 10 forecast zones"}
+     ],
+     "why": "The Reports tab names a specific NWAC zone covering this area, while the Safety tab's avalanche section says no NWAC zone covers it — opposite claims about whether an official avalanche forecast exists for this peak.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "name": "Dark Glacier Route",
+   "area": "Dark Peak",
+   "contradictions": [
+    {
+     "fact": "Season window (Jun-Jul) vs. best_season's stated 'sweet spot' (June into August)",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Jul"},
+      {"field": "best_season", "says": "a core early-to-mid-summer window (roughly June into August) as the sweet spot...Dark Peak is broadly reckoned reasonably climbable May through October"},
+      {"field": "pro_tips", "says": "Climb early-to-mid season (June-July) for firmer, better snow-bridged glacier conditions and to avoid the more exposed crevasses reported in late summer"}
+     ],
+     "why": "The header's short season window (Jun-Jul) is narrower than the 'sweet spot' the route's own best_season text describes (June into August), so the header implies the window closes in July while the detailed text treats August as still part of the best window.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager for the peak: two disagreeing access fields",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) on the peak and upper basin/glacier"},
+      {"field": "access.land_manager", "says": "Okanogan-Wenatchee National Forest (Chiwawa/Entiat Ranger Districts) — Glacier Peak Wilderness"}
+     ],
+     "why": "Two access fields that both render in the Plan tab's ACCESS section name different ranger districts (Chelan RD vs. Chiwawa/Entiat RDs) as administering the same peak.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dumbell_mountain_west",
+   "name": "West Route / Standard Scramble",
+   "area": "Dumbell Mountain",
+   "contradictions": [
+    {
+     "fact": "beta claims no mileage/pitch description could be found, but the route has a detailed mileage-laden approach, climbing_route breakdown and itinerary",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "no detailed pitch-by-pitch or mileage description could be located despite an extensive search"},
+      {"field": "approach", "says": "gaining roughly 1,900 ft over about 6-7 miles to reach Spider Meadow...8-9 miles and roughly 2,500 ft above the trailhead"},
+      {"field": "climbing_route", "says": "a 3-entry route breakdown (South-side talus-and-scree gully; gully west of the notch to the ledges; West ridge, Class 3)"},
+      {"field": "itinerary.days[*]", "says": "day-by-day miles/hours/gain given for all 3 days"}
+     ],
+     "why": "The Overview's beta text says no mileage or pitch-by-pitch description could be found for this route, but the row itself contains a detailed mileage-laden approach description, a climbing_route breakdown, and a day-by-day itinerary with miles and gain.",
+     "internal_resolution": "approach, climbing_route and itinerary are detailed and consistent with each other; beta's claim that none could be found is simply wrong, likely stale text left over from before enrichment.",
+     "needs_research": false
+    },
+    {
+     "fact": "seasonal_guidance/partner_requirements tie this route to the 'Lyman basin,' which this approach never reaches",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-summer through early fall (roughly late July through September), once approach snow in the Lyman basin has consolidated or cleared"},
+      {"field": "partner_requirements.approachTime", "says": "backpack in via the Phelps Creek Trail/Spider Meadow or the Lyman Lake/Cloudy Pass side to a high camp"},
+      {"field": "approach_variants[0].notes", "says": "the left branch carries on toward Spider Gap and Larch Knob, and the Dumbell path is the RIGHT-hand one"}
+     ],
+     "why": "This route's own approach_variants describe Dumbell's path as the branch that does NOT go to Spider Gap/Lyman Basin, yet seasonal_guidance explains the climbing window by reference to snow 'in the Lyman basin,' and partner_requirements offers the Lyman Lake/Cloudy Pass side as an approach option for this peak.",
+     "internal_resolution": "The route's own approach_variants keep Dumbell's line in Phelps Basin, never crossing to Lyman Basin; the July-September date range itself isn't wrong (it matches best_season), only the stated terrain reference is misapplied, likely copied from a neighboring Lyman-basin peak's record.",
+     "needs_research": false
+    },
+    {
+     "fact": "NWAC forecast-zone coverage: Reports tab (climate) vs. Safety tab (avalanche)",
+     "severity": "medium",
+     "claims": [
+      {"field": "climate.forecastZone", "says": "Roughly NWAC's East Slopes-Central Cascades zone for winter/spring avalanche forecasting"},
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route; Dumbell Mountain sits in remote Glacier Peak Wilderness terrain not covered by a specific named NWAC forecast zone"}
+     ],
+     "why": "Same pattern as Copper Peak in this batch — the Reports tab names a specific NWAC zone, while the Safety tab's avalanche section says no NWAC zone covers the area.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "file": "s074.json",
+ "results": [
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Hardest climbing grade on Swiss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found no graded description of the southwest face. The AAJ Northern Pickets Traverse report only says the party found 'the easy way up' Swiss from the Spectre Plateau side (overall traverse VI 5.7); other Pickets traverse reports (Climber Kyle high route, Lemke full traverse, Abegg complete traverse, onehikeaweek) do not mention Swiss at all. The only graded account remains the class 3 south side from Pickell Pass. Settling it needs a trip report that grades the southwest face from the West Fury col.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200615400",
+    "https://climberkyle.com/2024/07/04/pickets-high-route/",
+    "https://www.lemkeclimbs.com/full-pickets-traverse.html",
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Descent line off the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still only one account (the 2017 Northern Pickets traverse) describes descending near the northwest ridge; the AAJ 2005 traverse report gives no descent for Swiss, and the other Pickets reports searched do not mention Swiss. A second party's description of the descent from Swiss toward the West Fury col would settle it; the short 'descent' field is hidden behind the longer descent_text on the page.",
+   "sources": [
+    "https://drdirtbag.com/2017/08/08/northern-pickets-traverse-east-fury-to-challenger-vi-5-7-28h32/",
+    "https://publications.americanalpineclub.org/articles/12200615400"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "fact": "Switchback length and plateau-top elevation",
+   "verdict": "fixed",
+   "correct_value": "Switchbacks top out on the plateau about half a mile from the car after roughly 400 ft of gain (plateau ~5,500 ft, not 5,700 ft; 5,700+ is the high point at the west end)",
+   "evidence": "WTA says the top of the rock is reached after gaining 400 ft; Best Hikes BC puts the switchback series at about 100 m (328 ft) of gain after a gentle start. The Mountaineers' Artist Point page says part of the first half mile is blasted out of the cliff, and the Forest Service says the plateau is reached in less than a mile. Together these support approach/climbing_route/itinerary (~400 ft, ~0.4-0.5 mi) and contradict beta's 0.6-1 mi and 'near 5,700 ft' plateau (5,700+ is the summit high point at the west end).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/table-mountain",
+    "https://besthikesbc.ca/hiking-table-mountain-in-the-mount-baker-wilderness/",
+    "https://www.mountaineers.org/activities/routes-places/artist-point",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/table-mountain-trail-681"
+   ],
+   "patches": [
+    {
+     "id": "wa_table_mountain_standard_scramble",
+     "fact": "Switchback length and plateau-top elevation",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "for roughly 0.6-1 mile to gain the broad summit plateau near 5,700 ft",
+     "replace": "for roughly half a mile and about 400 ft of gain to reach the broad summit plateau"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "fact": "Best time of year",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers route page is still the only source that states a best window (April-May, before brush fills the gullies). The Mountain Project description reports an early-June ascent with thin snow and says more snow makes the route easier, but names no window; a Jim Brisbine report climbed the North Brother mid-July with plenty of snow; CascadeClimbers reports record traverses on 6/1/2014 and May 2018. A second source explicitly recommending April-May (or June) would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+    "https://www.mountainproject.com/route/106494582/brothers-traverse",
+    "https://trailcatjim.com/the-brothers-north-peak-via-east-couloir-south-ridge/",
+    "https://cascadeclimbers.com/forum/topic/94908-tr-the-brothers-traverse-south-to-north-fsa-612014/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is required in The Brothers Wilderness (Olympic National Forest); only a Northwest Forest Pass / interagency pass to park. A park permit applies only to camps inside Olympic National Park.",
+   "evidence": "The Olympic National Forest wilderness page states plainly that no permit is needed to visit Olympic National Forest wilderness areas (The Brothers Wilderness is one of them), only a recreation pass at some trailheads. The Brothers SummitPost page says the wilderness is Forest Service land and no backcountry permit is required, only a Forest Service recreation pass. The FS Brothers Wilderness page lists the regulations (fires above 3,500 ft, group of 12) with no permit, and WTA lists only a NW Forest Pass / interagency pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/wilderness",
+    "https://www.summitpost.org/the-brothers/517714",
+    "https://www.fs.usda.gov/r06/olympic/recreation/brothers-wilderness",
+    "https://www.wta.org/go-hiking/hikes/the-brothers"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_brothers_traverse",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue The Brothers Wilderness permit at the trailhead; Northwest Forest Pass to park.",
+     "value": "No wilderness permit required; Northwest Forest Pass to park."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "fact": "Round-trip distance and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 14.5 is the one-way figure and is plausible, so distance is not in dispute. For gain, WTA gives 6,050 ft (18 mi RT) but for the ordinary South Brother climb, not the traverse, which crosses both summits and must gain more; no source states a car-to-car gain for the traverse. A published total gain for the North-to-South traverse would settle it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/the-brothers"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit, quota or entrance fee in The Brothers Wilderness; only a Northwest Forest Pass / interagency pass to park.",
+   "evidence": "The Olympic National Forest wilderness page states plainly that no permit is needed to visit Olympic National Forest wilderness areas (The Brothers Wilderness is one of them), only a recreation pass at some trailheads. The Brothers SummitPost page says the wilderness is Forest Service land and no backcountry permit is required, only a Forest Service recreation pass. The FS Brothers Wilderness page lists the regulations (fires above 3,500 ft, group of 12) with no permit, and WTA lists only a NW Forest Pass / interagency pass. The row's access.notes also claimed an 'entrance fee and wilderness camping permit', which neither source supports; the Forest Service trailhead needs only the parking pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/wilderness",
+    "https://www.summitpost.org/the-brothers/517714",
+    "https://www.fs.usda.gov/r06/olympic/recreation/brothers-wilderness",
+    "https://www.wta.org/go-hiking/hikes/the-brothers"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_brothers_south_couloir",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue The Brothers Wilderness permit at the trailhead; Northwest Forest Pass to park.",
+     "value": "No wilderness permit required; Northwest Forest Pass to park."
+    },
+    {
+     "id": "wa_the_brothers_south_couloir",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Free self-issue wilderness permit at the trailhead register; The Brothers Wilderness itself is not quota-limited",
+     "replace": "No wilderness permit is needed in The Brothers Wilderness, and it has no quota"
+    },
+    {
+     "id": "wa_the_brothers_south_couloir",
+     "fact": "Wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only a Northwest Forest Pass or interagency pass to park is needed."
+    }
+   ]
+  }
+ ]
+}

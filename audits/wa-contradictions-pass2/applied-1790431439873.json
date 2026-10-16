@@ -1,0 +1,47 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "rappels",
+   "path": [],
+   "fact": "Number of rappels on the descent"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "descent",
+   "path": [],
+   "fact": "Number of rappels on the descent"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "descent",
+   "path": [],
+   "fact": "Number of rappels on the descent"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Number of rappels on the descent"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "before": {
+    "rappels": "Descend the route: downclimb/short rappel off newer bolted anchors near the ridge crest back to the chockstone-chimney, then continue down the gully. The older Olympic Mountains climbing guide recommends two ropes.",
+    "descent": "From the summit, reverse the exposed Class 3 ridge crest to the bolted double-anchor rappel station above the South Corner pitch and rappel back to the platform, then reverse the Class 4 gully and Cannon Hole squeeze down to Needle Pass. Descend the couloir (glissade-capable early season; expect an open moat and loose dirt/scree by August) to the Gladys Divide trail and Flapjack Lakes, then hike out via the Flapjack Lakes and North Fork Skokomish River trails. A single 60 m rope is generally adequate for the rappel, though some parties have carried two ropes to comfortably link stations.",
+    "gear": [
+     "crampons & ice axe for the Needle Pass snow couloir (especially June–early July)",
+     "small-to-medium trad rack: wired nuts plus a few cams to about 2 in",
+     "a few alpine draws/slings",
+     "60 m rope (or two shorter ropes) for the rappel",
+     "helmet — loose rock in the approach gully and at the Cannon Hole squeeze"
+    ]
+   }
+  }
+ ]
+}

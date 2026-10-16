@@ -1,0 +1,63 @@
+{
+  "_README": [
+    "Prose written to justify a wrong route NAME, corrected against published sources.",
+    "Evidence: research-data/ASPECT-NAME-RESOLUTIONS-2026-08-14.md",
+    "",
+    "Every span is chosen individually. Most direction words on these rows are TRAVEL DIRECTIONS on",
+    "the walk in and are correct — Plummer's 'bear left (south/uphill)' off the tarn shelf is right,",
+    "and only the slope's stated aspect is wrong. A blind replace would wreck these rows, which is",
+    "what wa_little_annapurna_south_slopes taught.",
+    "",
+    "NO ROUTE IS RENAMED HERE and no `aspect` is touched. Both are separate decisions; three of these",
+    "rows have no published name to rename to at all."
+  ],
+  "wa_himmelhorn_southeast_route": {
+    "area": "wa_himmelhorn",
+    "_why": "prose stating a direction the published sources refute; written to support a route name that is itself wrong",
+    "set": {
+      "approach": "From the Goodell Creek Campground/Trailhead on SR 20 just west of Newhalem (~600 ft), follow the old decommissioned logging roadbed along the true left (south) side of Goodell Creek. This grassy/gravel roadbed is flat and easy hiking for roughly 4 to 4.5 miles, gaining only a few hundred feet to about 1,700-1,800 ft. Watch on the right for a cairn/stone marker (climbers call it the 'stone arrow') at the end of the roadbed - this marks the unsigned but well-boot-beaten climbers' path that leaves the creek bottom and switchbacks steeply up into old-growth forest toward Stump Hollow and Terror Creek Basin. This user trail is steep, root-and-duff footing, and brushy in spots (slide alder, devil's club low down) but stays reasonably distinct with flagging/cairns in the upper sections; there is no reliable water between the roadbed's end and treeline, so top off at Goodell Creek. Around 5,000-5,600 ft the forest opens into Stump Hollow, a slabby heather-and-snowfield basin wedged between the Barrier ridge and the Chopping Block - a scenic, easier-angle respite after the timber grind. From Stump Hollow, rising-traverse on meadow, slab, and (early/mid-season) snow to a broad saddle on the Barrier ridge at roughly 6,200 ft. Cross the Barrier itself by one of two options: a lower crossing on a loose, exposed ledge system at the toe of the Terror Glacier, or a higher crossing over moat terrain and steep choss just below Mt. Degenhardt; either takes under an hour but involves loose rock and some exposure, so care with rockfall onto any party below is essential. Descend the far side into Crescent Creek Basin (good bivy sites and reliable running water, roughly below Mt. Terror) - this is the standard camp for Himmelhorn objectives. From camp, ascend the narrow gully leading to the Himmel-Otto col: in early season this is a straightforward snow climb with a bit of scrambling near the top; by late season the gully turns to icy hardpack with choss-filled moats along the rock margins, and an overhanging boulder near the col often forces a loose, exposed class 3-4 bypass on the left (climber's) side. From the col, the standard route continues up easier ground (scrambling to low 5th class) onto Himmelhorn's northwest flank to the 7,880 ft summit. Total approach distance to the summit and back runs on the order of 15-16 miles round trip with substantial elevation gain and loss, so most parties treat this as a 2-4 day trip with a basecamp in Crescent Creek Basin rather than a car-to-car push."
+    },
+    "climbing_route": [
+      {
+        "n": 1,
+        "class": "scrambling to low 5th class",
+        "label": "Northwest flank from the Himmel-Otto col",
+        "notes": "From the col the Southeast Route continues up easier ground on Himmelhorn's southeast flank to the 7,880 ft summit."
+      }
+    ]
+  },
+  "wa_plummer_peak_r1": {
+    "area": "wa_plummer_peak",
+    "_why": "prose stating a direction the published sources refute; written to support a route name that is itself wrong",
+    "set": {
+      "approach": "Park at the Reflection Lakes pullouts on Stevens Canyon Road (1.4 miles east of the Paradise-Longmire Road junction, roughly 1.9 miles from the Paradise turnoff). The signed Pinnacle Peak Trail (no official trail number; it's a Mount Rainier NP maintained trail) leaves from the south side of the road, directly across from the largest of the Reflection Lakes (approx. 46.7683, -121.7314). The trail climbs moderately through mountain hemlock and Alaska yellow cedar forest for the first half-mile; around 0.5 mi you get a first partial view of Rainier through the trees, and at about 0.6 mi you cross a seasonal stream/cascading creek that is the only reliable water on the hike (dry by late summer in low-snow years). By 0.7 mi the trail breaks out of forest into open talus and heather slopes below the cliffs of Pinnacle Peak, and steepens noticeably from here — this is where lingering snow (well into July on the shaded, north-facing switchbacks) creates the trail's main hazard, since a slip on hard morning snow above the talus can slide a hiker into rock. Around 0.9-1.0 mi the trail passes beneath the impressive cliff bands on Pinnacle's north face, then switchbacks up a short, exposed final pitch (the 'best view on the trail' spot) to reach Pinnacle/Pinnacle Saddle (Pinnacle Gap) at about 1.25-1.3 mi and roughly 5,920-5,960 ft. This saddle is the trail's official end and the crux junction: unmaintained user paths fork east toward Denman Peak/The Castle and west toward Plummer Peak. For Plummer Peak, continue a short distance past the saddle and look for a climbers' path branching right (west); it crosses a flat rocky shelf holding a seasonal tarn, where a fork continues straight toward Denman — instead bear left (south/uphill) onto the boot path that climbs the open, rocky north-facing slopes of Plummer Peak. This upper section is unmaintained, loose in spots, and route-finding is straightforward but the tread is thin; a short class 2-3 scramble (brief hands-on-rock moves, some loose blocks, mild exposure) gains the last few hundred feet to the 6,374 ft summit. A lingering snowfield often crosses the boot path near the saddle into July — either kick steps straight up it or skirt left on the rockier tread; both options rejoin near the top."
+    },
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Climbers' path onto the north slopes",
+        "notes": "Continue a short distance past Pinnacle Saddle (about 5,920-5,960 ft) and look for a climbers' path branching right (west); it crosses a flat rocky shelf holding a seasonal tarn, where a fork continues straight toward Denman - instead bear left (south/uphill) onto the boot path climbing the open, rocky southeast-facing slopes. Unmaintained, loose in spots, and the tread is thin. A lingering snowfield often crosses the boot path near the saddle into July - either kick steps straight up it or skirt left on the rockier tread; both options rejoin near the top."
+      },
+      {
+        "n": 2,
+        "class": "class 2-3",
+        "label": "Summit scramble",
+        "notes": "A short class 2-3 scramble - brief hands-on-rock moves, some loose blocks, mild exposure - gains the last few hundred feet to the 6,374 ft summit."
+      }
+    ]
+  },
+  "wa_mount_cameron_standard": {
+    "area": "wa_mount_cameron",
+    "_why": "prose stating a direction the published sources refute; written to support a route name that is itself wrong",
+    "set": {
+      "face": "West ridge / false-summit traverse from Cameron Pass toward the Main, Middle, and East/Southwest summits"
+    }
+  },
+  "wa_tye_peak_e_route": {
+    "area": "wa_tye_peak",
+    "_why": "prose stating a direction the published sources refute; written to support a route name that is itself wrong",
+    "set": {
+      "face": "South ridge, gained via a cross-country approach from the Skyline Lake basin (east side)"
+    }
+  }
+}

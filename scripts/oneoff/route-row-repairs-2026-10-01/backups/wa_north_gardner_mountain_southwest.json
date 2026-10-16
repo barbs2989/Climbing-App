@@ -1,0 +1,43 @@
+{
+ "id": "wa_north_gardner_mountain_southwest",
+ "name": "Southwest Slopes / South Ridge",
+ "waypoints": [
+  {
+   "lat": 48.4837,
+   "lng": -120.2992,
+   "elev": 2923,
+   "name": "Wolf Creek Trailhead (FR #5005)",
+   "note": "Okanogan-Wenatchee NF; accesses Wolf Creek Trail-Gardner Meadows-Southeast Slope-South Ridge route to North Gardner.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From SR 20 in Winthrop, turn onto White Avenue just after the bridge over the Methow River; it becomes Twin Lakes Road. At 1.3 miles turn right onto Wolf Creek Road, follow it 2.9 miles, then turn left onto Wildflower Road, which becomes FS Road 5005 in about half a mile. Follow the signs to the Wolf Creek Trail at the road end, about 4 miles on."
+  },
+  {
+   "lat": 48.515229,
+   "lng": -120.501667,
+   "elev": 8956,
+   "name": "North Gardner Mountain summit",
+   "type": "Summit",
+   "distMi": 12.03,
+   "distFrom": "track",
+   "directions": "Follow Wolf Creek Trail #527 about 10 miles up the valley, crossing the North Fork of Wolf Creek and passing the Abernathy Lake junction, to Gardner Meadows. Leave the trail at the stream coming down from the north and climb its west bank to a small meadow basin near 6,200 ft, then work around gullies and cliff bands into the scree bowl below Point 8,487 and follow the ridge north past that false summit to the top."
+  }
+ ],
+ "permit": "No wilderness permit is required in the Lake Chelan-Sawtooth Wilderness. Some trailheads require a pass to park.",
+ "access": {
+  "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+  "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+  "rules": "Lake Chelan-Sawtooth Wilderness regulations apply; pack it in/pack it out",
+  "permit": "No wilderness permit is required for the Lake Chelan-Sawtooth Wilderness itself (self-issued backcountry permits only apply within the adjacent North Cascades National Park Service Complex, not this route); a Northwest Forest Pass or America the Beautiful pass is required to park at the Wolf Creek Trailhead.",
+  "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+  "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+  "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+  "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+  "passRequired": "Northwest Forest Pass required to park at the Wolf Creek Trailhead",
+  "overnight_permit": {
+   "url": null,
+   "what": "No overnight permit required",
+   "where": "Nothing to obtain for camping in the Lake Chelan-Sawtooth Wilderness; parking at the trailhead needs a recreation pass or day pass."
+  }
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "applied": [
+  {
+   "id": "wa_particulate_matter",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass at the hairpin pullout"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Gain, loss and distance (dist_km one-way approach)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_particulate_matter",
+   "before": {
+    "access": {
+     "_raw": {
+      "approach": "Box Creek Meadows area; Class 2 route to summit via Ice Creek Ridge",
+      "permit_cost": "No fee",
+      "permit_type": "Free self-issued wilderness permit (required)",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest (Chelan Ranger District)",
+      "permit_pickup": "Self-issue at trailhead",
+      "weed_free_feed": "Required if using pack animals",
+      "wilderness_zone": "Glacier Peak Wilderness",
+      "special_features": "North face has steep cliffs and glacier remnants; ideal season late Sept-Oct",
+      "fire_restrictions": "No fires within 1/2 mile of Ice Lakes, 1/4 mile of Image Lake, or above 4,000 feet on Lime Ridge",
+      "group_size_limits": "12 heartbeats maximum (humans + pack animals combined)",
+      "parking_pass_cost": "$5 day pass or $30 annual",
+      "seasonal_closures": "NOTE: April 2026 - extreme access limitations due to December 2025 storm damage",
+      "camping_restrictions": "No camping within 1/4 mile of Image Lake or 200 feet of Holden/Lyman Lakes",
+      "parking_pass_required": "Recreation Pass at trailhead (if developed recreation site)"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": null,
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Recreation Pass at trailhead (if developed recreation site)"
+    }
+   }
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "before": {
+    "dist_km": 7.2
+   }
+  }
+ ]
+}

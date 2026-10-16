@@ -1,0 +1,337 @@
+{
+ "applied": [
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope needed for the couloir rappel"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "gear",
+   "path": [
+    4
+   ],
+   "fact": "Rope needed for the couloir rappel"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which descent is most common"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Which ridge notch the Zipper tops out on"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time to the couloir base"
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "When a wilderness permit is required for an overnight"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether the descent involves a rappel"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "When a wilderness permit is required for an overnight"
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time to the couloir base"
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach time to the couloir base"
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time to the couloir base"
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "column": "what_to_bring",
+   "path": [],
+   "fact": "Ice screws and technical tools"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "gear",
+   "path": [
+    6
+   ],
+   "fact": "Rope length for the rappel into the Zipper"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Rope length for the rappel into the Zipper"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rope length for the rappel into the Zipper"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lane_peak_r1",
+   "before": {
+    "rope_note": "30m sufficient if comfortable with running belays/simul-climbing on the couloir; many parties still bring a standard 60m single for flexibility.",
+    "gear": [
+     "Ice axe — a single tool is standard; carrying a second is worth it if the ~20 ft-wide, ~45° narrows are icy that day",
+     "Crampons — firm morning neve is the typical condition",
+     "2-4 pickets and a couple of short ice screws — placed sparingly in the narrows; in good neve many parties place only one picket, or none",
+     "Small rock rack (nuts, small cams, a tricam or two) — the couloir doesn't take gear bigger than ~2 in, and the flanking rock fills in where snow runs thin",
+     "30-60m rope — a 30m is enough for a running belay/simul-climbing; some experienced parties solo it in good conditions",
+     "Helmet — narrow couloir funnels rock and ice fall"
+    ],
+    "descent_text": "Two descent options are used depending on conditions and whether the party continues to the true summit. Direct reversal (the more common bail/return line): from the dead-tree notch atop the couloir, downclimb a short stretch of exposed terrain to the tree, which carries fixed rappel slings (a natural, sling-on-tree anchor — not bolted), and make one rappel back down into the Zipper. The rappel is typically just over 100 ft (roughly 30+ m), so it requires a double-rope rappel — two ropes joined, or a single rope doubled — to reach the base cleanly; in a high-snow year a single 70 m rope may just reach, with some downclimbing to finish. From the bottom of the rappel, downclimb/plunge-step the remaining couloir and the debris apron back into the basin and reverse the approach to Tatoosh Creek and the road. Summit-and-walk-off option: instead of rappelling, many parties traverse climber's left from the top of the couloir until the summit slopes come into view and continue to Lane Peak's true summit (a running belay or short pitch on the last 200-300 ft is sometimes prudent), then descend via the standard South Face gully/saddle walk-off shared with the Classic Route (down to the 5,440 ft Lane-Denman saddle, through the timber, down the talus to Tatoosh Creek, and back to the road) — longer, but avoids the rappel entirely. Hazards: rockfall/spindrift funneling into the couloir from above, a real chance of a stuck rope on rock features during the rappel, and avalanche/wet-slide hazard in the basin and lower couloir on both the approach and the descent, particularly once the sun hits the face.",
+    "itinerary": {
+     "cal": "This is a snow/ice couloir climbed roughly January-April before it melts out; Longmire/Stevens Canyon Road gates can restrict start and end times (observed as open ~9:30am-4pm in some shoulder-season reports), so plan the day around the gate schedule.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Park at the Reflection Lakes pullout and approach via Stevens Canyon Road/Tatoosh Creek to the base of the obvious center couloir on Lane Peak's north face (roughly 45-75 min). Climb the couloir on 40-45° snow through its three short steps (the crux is an ~25 ft step near the top), pop out into the sun at the notch, and make the short scramble to the summit. Most parties descend a non-technical line (often the south-face Classic Route) rather than rappelling back down the couloir.",
+       "hours": 6,
+       "miles": 3.6,
+       "title": "Car-to-car climb of the Zipper couloir",
+       "gainFt": 1500,
+       "lossFt": 1500,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Reflection Lakes pullout",
+         "detail": "Aim to be moving early; the Longmire/Stevens Canyon gate can have restricted hours in shoulder season."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Reach the base of the couloir",
+         "detail": "Rope up and gear up for the three mixed/ice steps if conditions warrant."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Top out into the sun at the notch",
+         "detail": "Matches trip-report timing of roughly 75 minutes couloir to couloir-top."
+        },
+        {
+         "time": "+30 min",
+         "label": "Reach the summit",
+         "detail": "Short scramble from the notch."
+        },
+        {
+         "time": "+1.5-2 hr",
+         "label": "Descend the non-technical south side",
+         "detail": "Walk off via the Classic Route line rather than rappelling, conditions permitting."
+        },
+        {
+         "time": "~11:30 AM-12:30 PM",
+         "label": "Back at the car",
+         "detail": "Total field time typically 5-6.5 hours."
+        }
+       ],
+       "objective": "Climb the Zipper to the west-ridge notch and tag the summit"
+      }
+     ],
+     "totalNote": "A single, moderate day: roughly 6 hours and 1,500 ft car-to-car, done well within a morning by most parties."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Short but steep winter approach (roughly 2-3 miles, ~2500 ft gain) that can be slow postholing without a boot pack",
+      "packWeight": "Light-moderate day-climb load (~15-25 lb: rope, screws/pickets, rack, extra layers)"
+     },
+     "approachTime": "Roughly 2-4 hours from the Narada Falls / Stevens Canyon area depending on snow depth and trail-breaking conditions",
+     "requiredSkills": [
+      "45-degree snow/ice climbing",
+      "self-arrest and steep snow travel",
+      "avalanche hazard assessment",
+      "ice tool/crampon technique on mixed ground",
+      "short-roping or simul-climbing steep terrain",
+      "winter/whiteout navigation",
+      "companion rescue"
+     ],
+     "experienceLevel": "Solid alpine ice/mixed climber with prior steep-snow-couloir mileage; not a first alpine ice lead"
+    },
+    "access": {
+     "fees": "None — no climbing cost-recovery fee; only the standard park entrance fee applies",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "permit": "No NPS climbing fee/registration required — MRNP's $82 climbing fee and permit only apply to glacier travel or camps above roughly 10,000 ft, which doesn't apply to this non-glaciated Tatoosh objective. A wilderness permit ($12/person/night, required only May 1-Sept 15) is needed only if overnighting.",
+     "closures": "Stevens Canyon Road (the direct summer approach past Reflection Lake) is gated and unplowed roughly early/mid-October through late June; during that window approach from the year-round Narada Falls lot instead.",
+     "landManager": "Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_classic_route_3",
+   "before": {
+    "descent_text": "This is a walk-off/downclimb — no rappelling. Reverse the ascent line: downclimb the summit scramble and the southeast-face gully back to the 5,440 ft Lane–Denman saddle, then drop east back through the timber (staying right of the cliff band on the way down, mirroring the ascent line) to the top of the talus slope. Descend the talus to Tatoosh Creek, re-cross, and climb back up to Stevens Canyon Road, then walk back to the Narada Falls or Reflection Lake pullout. Watch for loose rock and inconsistent glissade conditions in the gully (plunge-stepping is fine on consolidated snow but the gully holds loose rock once it melts out), and take care not to cliff yourself out in the timber band by drifting off the ascent line.",
+    "access": {
+     "fees": "None — no climbing cost-recovery fee; only the standard park entrance fee applies",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "permit": "No NPS climbing fee/registration required — MRNP's $82 climbing fee and permit only apply to glacier travel or camps above roughly 10,000 ft, which doesn't apply to this non-glaciated Tatoosh objective. A wilderness permit ($12/person/night, required only May 1-Sept 15) is needed only if overnighting.",
+     "closures": "Stevens Canyon Road (the direct summer approach past Reflection Lake) is gated and unplowed roughly early/mid-October through late June; during that window approach from the year-round Narada Falls lot instead.",
+     "landManager": "Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "before": {
+    "approach": "Same as The Zipper: From Reflection Lakes pullout on Stevens Canyon Road (1.5 miles before Snow Lakes Trailhead), hike 2 miles with approximately 2,000 feet elevation gain. Walk briefly along Stevens Canyon Road, then drop into basin toward Tatoosh Creek. Climb up debris triangle and continue to base of couloir system. Identify The Fly as the rightmost/broadest of the three couloirs. Approach takes approximately 1.5-2 hours to couloir base.",
+    "approach_variants": [
+     {
+      "name": "Reflection Lakes or Narada Falls to the debris apron, then the rightmost couloir",
+      "notes": "Shared approach with the Zipper: from Reflection Lakes when the road is open, or from Narada Falls when it is gated, walk the road briefly and drop south into the basin toward Tatoosh Creek, then climb the debris triangle to the base of the couloir system. Roughly 2 miles with about 2,000 ft of gain; the approach usually takes 1.5 to 2 hours from the road to the couloir base.\n\nThe Fly is a broad couloir about 40 to 50 ft wide, predominantly snow at around 45 degrees, and is the easiest objective on the north face with fewer technical sections than the Zipper. The most efficient line follows the obvious broad gully, trending slightly right as you gain height.\n\nThe runout zone at the base is avalanche-prone, so stable snow is essential.\n\nFrom the top at the west-ridge notch, most parties continue round onto the South Face and descend the standard third and fourth class gully rather than reversing the couloir.",
+      "season": "Roughly Dec-Jun",
+      "hazards": [
+       "An avalanche-prone runout zone at the base of the couloir",
+       "Overhead hazard from parties on the neighbouring couloirs and from rockfall out of the walls once the sun hits",
+       "Variable snow and ice conditions season to season",
+       "Short winter days",
+       "Wet-loose avalanche activity documented on the slopes below the peak"
+      ],
+      "baseFinding": "LEFT TO RIGHT: LOVER'S LANE, THE ZIPPER, THE FLY. THE FLY IS THE RIGHTMOST, AND IT IS THE BROADEST.\n\nBREADTH IS THE TEST AND IT IS THE ONLY ONE YOU NEED AT THE BOTTOM: 40 to 50 ft wide, and IT STAYS THAT WIDE. IF THE COULOIR NARROWS TOWARD ABOUT 20 FT AND STARTS PUTTING SHORT ICE STEPS IN FRONT OF YOU, YOU ARE IN THE ZIPPER, ONE TO YOUR LEFT, ON HARDER GROUND THAN YOU CAME FOR.\n\nTHE SECOND TEST IS WHAT YOUR HANDS ARE DOING. This is the easiest line on the face — predominantly snow at about 45 degrees with no crux step. IF YOU ARE SWINGING TWO TOOLS INTO ICE, YOU ARE NOT ON THE FLY.\n\nTREND SLIGHTLY RIGHT AS YOU GAIN HEIGHT. That is the route's own shape, and drifting left at the base is exactly how parties end up in the Zipper.\n\nTHE TOP-OUT NAMES THE COULOIR RETROSPECTIVELY, WHICH IS WORTH KNOWING IF YOU HAD ANY DOUBT ON THE WAY UP: the Fly finishes at the WEST-RIDGE NOTCH. The Zipper finishes at a notch in the EAST ridge, at a DEAD TREE carrying rappel slings. If you topped out at a tree, you climbed the Zipper.\n\nA NEGATIVE THAT IS ABOUT PEOPLE RATHER THAN GROUND, AND IT IS SPECIFIC TO THIS FACE: on a good winter weekend all three couloirs carry parties at the same time, and a documented near-miss involved thirteen climbers and skiers spread across the three. Being able to see other parties is not confirmation you are in the right gully — it is a reason to watch what comes down.\n\nWHAT THE ANGLE SHOULD DO: about 40 to 45 degrees for the main gully, easing to 30-35 in the last few hundred feet to the ridge. It does not steepen near the top."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Short but steep winter approach (roughly 2-3 miles, ~2500 ft gain), can be slow without an established boot pack",
+      "packWeight": "Light-moderate day-climb load (~15-25 lb: rope, screws/pickets, rack, extra layers)"
+     },
+     "approachTime": "Roughly 2-4 hours from the Narada Falls / Stevens Canyon area depending on snow depth and trail-breaking conditions",
+     "requiredSkills": [
+      "40-45 degree snow/ice climbing",
+      "self-arrest and steep snow travel",
+      "avalanche hazard assessment",
+      "ice tool/crampon technique",
+      "short-roping or simul-climbing steep terrain",
+      "winter/whiteout navigation",
+      "companion rescue"
+     ],
+     "experienceLevel": "Solid alpine ice/mixed climber comfortable on sustained steep couloir terrain; described as the 'easiest' of the two Lane Peak couloirs but still a real alpine ice/mixed route, not a beginner outing"
+    },
+    "what_to_bring": [
+     "technical ice tools",
+     "crampons",
+     "rope",
+     "ice screws",
+     "pickets",
+     "helmet",
+     "avalanche gear"
+    ]
+   }
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "before": {
+    "gear": [
+     "Ice axe",
+     "Second ice tool",
+     "Crampons",
+     "Pickets",
+     "Ice screws",
+     "Small rock rack (nuts, small cams, tricams, pitons)",
+     "60m rope"
+    ],
+    "pro_tips": [
+     "This is the hardest and most sustained of the three couloirs — not a beginner objective.",
+     "Carry a 60m rope; the rappel into the Zipper is usually longer than 100 ft.",
+     "Conditions vary a lot year to year — the 'two or three steeper sections' can be moderate snow or bare ice."
+    ],
+    "detailed_rack": "A 60m rope, pickets and ice screws for the sustained 40-60° snow/ice, plus a small rock rack (nuts, small cams, tricams, a few pitons) for the two or three steeper mixed sections; carry a second tool."
+   }
+  }
+ ]
+}

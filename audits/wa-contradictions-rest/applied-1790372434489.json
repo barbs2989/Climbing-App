@@ -1,0 +1,231 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_face_2",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Rope kit for the descent"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Number of rappels"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Creek crossed at the start of the approach"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Which pullout is the trailhead"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Side of the highway the pullout is on"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Number of rappels"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Number of pitches"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Number of pitches"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead location relative to the hairpin"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead location relative to the hairpin"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead location relative to the hairpin"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_face_2",
+   "before": {
+    "rope_type": "twin/double-strand rappel setup (single 60m rope doubled, or two ropes)",
+    "rope_note": "4-pitch route on Chablis Spire (Wine Spires, Washington Pass), P4 is the 5.6 crux corner. Descent: downclimb 15ft from the 'bunny ears' notch to rap slings on a horn, then a double-rope rappel to the base.",
+    "approach": "Access via SR-20 north of Cascade Loop; drive past the hairpin turn just east of Washington Pass to the pullout near Milepost 166 on the north side of the highway. A climbers trail drops from the pullout, immediately crosses Burgundy Creek, and ascends steeply through timbered terrain to a bench camp around 6,500 feet. From camp, continue east toward the Wine Spires. From the bench camp, traverse to approach Chablis Spire via Burgundy Col approach (recommended spring-fall; 2-5 hours total from trailhead) or via Silver Star Creek drainage (recommended for winter; approach in snow). Chablis is reached after traversing past or over Burgundy Col area.",
+    "approach_logistics": {
+     "peakLat": 48.55259,
+     "peakLng": -120.59032,
+     "trailhead": "SR-20 Wine Spires pullout (milepost 166)",
+     "trailheadLat": 48.549,
+     "trailheadLng": -120.630965,
+     "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach used for Silver Star Mountain: forest trail from the Hwy 20 pullout, a creek crossing, then steep, loose, cairned gullies to the 6,600 ft bench and up to the bivy sites at Burgundy Col. Water is available near the col from year-round snow. Budget 3-5 hours depending on load and fitness.",
+       "hours": 4,
+       "miles": 3.9,
+       "title": "Approach to Burgundy Col camp",
+       "gainFt": 3500,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike in and establish camp at Burgundy Col (~7,900 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Drop off the col and traverse beneath Burgundy Spire's east face to reach the base of the route in well under an hour. The 7-pitch East Face climbs a wide dihedral, a splitter crack system, and a short 5.7 summit block; most parties top out in 4-6 hours. Rappel the standard descent line off the spire (double ropes, ~7 raps) and hike the full approach back out the same day.",
+       "hours": 11,
+       "miles": 3.9,
+       "title": "Climb the East Face and descend to the car",
+       "gainFt": 500,
+       "lossFt": 4000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Descend and traverse to the base of the East Face below Burgundy Spire."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Begin climbing",
+         "detail": "7 pitches of crack and offwidth climbing to the summit pedestal."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Reach the summit",
+         "detail": "Roughly 5-6 hours of climbing for a solid party."
+        },
+        {
+         "time": "12:15-2:00 PM",
+         "label": "Rappel the standard descent line",
+         "detail": "Fixed-anchor rappels with double ropes back to the base of the route."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Start the hike out",
+         "detail": "Retrace the Burgundy Col approach back to the trailhead."
+        },
+        {
+         "time": "~4:15 PM",
+         "label": "Arrive at the car",
+         "detail": "Hike-out typically takes about 2 hours from the col area."
+        }
+       ],
+       "objective": "Climb Rebel Yell (7 pitches, 5.10) to the summit, rappel the standard line, and hike out"
+      }
+     ],
+     "totalNote": "A 2-day, 1-night trip is standard: ~4 hours to camp at Burgundy Col, then one long day for the 7-pitch climb, rappel descent, and complete hike-out. It's frequently combined with Burgundy or Pernod Spire for a multi-summit Wine Spires trip (add a day), and strong parties do the whole thing car-to-car in a single long day once the approach is snow-free."
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier east-slope alpine climate; expect warm, mostly stable summer days with cooler nights at the Burgundy Col camp",
+      "probability": "Afternoon thunderstorms are common in summer - start early (per the 04:00 recommended start) to be off the exposed upper pitches before storms build"
+     },
+     "exposure": "Sustained, committing exposure typical of a Grade III alpine tower - six pitches with exposed belays; loose rock in spots adds objective hazard, and retreat from upper pitches requires multiple rappels rather than a simple walk-off, so a stuck party or weather change mid-route is a real consequence",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer rock route; nearest NWAC coverage is the East Slopes Central zone, but that forecast is not maintained during the July-September dry-rock climbing season for this route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Beyond Burgundy Col the standard approach crosses a section of the upper Silver Star Glacier to reach Chianti Spire's east side; conditions vary by season from an easy unroped snow slog to requiring a rope, so carry an axe and assess crevasse conditions before crossing."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong approach fitness - steep off-trail talus and a climber's trail up to Burgundy Col with real elevation gain before any climbing begins; many parties break the day into a 2-day trip with a high camp",
+      "packWeight": "Overnight alpine rack plus bivy gear if camping at Burgundy Col/Larch Bench (typical 30-40 lb approach pack); lighter if attempting car-to-car"
+     },
+     "approachTime": "Long - talus and climber's-trail approach to Burgundy Col is a significant undertaking on its own; frequently done as an overnight rather than a single big car-to-car day",
+     "requiredSkills": [
+      "trad leading comfortably through 5.9-5.10 (crack technique: hands, fists, and off-width sections reported on this line)",
+      "multi-pitch systems - efficient belay transitions, 6-pitch rope management",
+      "route-finding on featured but sometimes loose alpine granite",
+      "multi-rappel descent competence",
+      "self-rescue / companion-rescue basics given the remote, non-trivial approach"
+     ],
+     "experienceLevel": "Experienced alpine trad leader comfortable running it out on featured granite; should have prior multi-pitch alpine rock and rappel-descent experience, ideally in the Washington Pass / Wine Spires area or similar committing granite towers"
+    },
+    "road": {
+     "driveNote": "Trailhead pullout is near milepost ~166 on SR-20, about 4 miles east of Washington Pass and ~2.8 miles before the highway's 'hairpin turn' near Cutthroat Lake Road. Confirm current SR-20 status with WSDOT before traveling.",
+     "seasonalGate": "SR-20 typically closes in November and reopens between mid-April and late June depending on snowpack and any storm/slide repair work (opening dates have ranged as late as mid-June in heavy-snow years)."
+    },
+    "approach": "This is the same East Face/Rebel Yell line as wa_east_face_rebel_yell, so the hike-in is identical. From the SR-20 pullout near milepost ~166 (~0.7 mile past the Cutthroat Lake Road turnoff), a steep, faint climber's trail descends to Early Winters Creek; cross the creek and follow the climber's path/talus benches switchbacking up the far side, gaining about 3,500 ft over just under 5 miles to Burgundy Col — roughly 3-4 hours car-to-col with an overnight pack. Stay climber's-left toward the obvious col notch where the boot-path braids through timber and boulders lower down. A snow patch at/near the col is the last dependable water source but is unreliable by late summer, so carry water up from the creek if climbing after midsummer. From Burgundy Col, drop a short snow/rock step and traverse south below Burgundy Spire's East Face, across a small snowy rib, onto the upper Silver Star Glacier, and around to Chianti Spire's obvious east side and the base of the route (~7,900 ft) — under an hour from a col or Larch Bench camp. Carry an ice axe for this traverse through midsummer; the snow rib and glacier margin can be firm or icy in the morning.",
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout to Burgundy Col, then the snow traverse south beneath Burgundy's east face onto the Silver Star Glacier",
+      "notes": "From the SR-20 pullout near milepost 166, about 0.7 mile past the Cutthroat Lake Road turnoff, a steep faint climber's trail descends to Early Winters Creek. Cross the creek and follow the climber's path and talus benches switchbacking up the far side, gaining about 3,500 ft over just under 5 miles to Burgundy Col, roughly 3-4 hours car-to-col with an overnight pack. STAY CLIMBER'S-LEFT TOWARD THE OBVIOUS COL NOTCH where the boot-path braids through timber and boulders lower down.\n\nA snow patch at or near the col is the last dependable water and is unreliable by late summer, so carry water up from the creek if climbing after midsummer.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A snow and glacier traverse that can be firm or icy in the morning; carry an axe through midsummer",
+       "The last dependable water is a snow patch at the col which is unreliable by late summer",
+       "Rope-snag hazard in the chimney and offwidth pitches on the rappel descent",
+       "Fixed anchors that should be visually checked at each station; this is not a bolted sport descent",
+       "A re-ascent of 200-300 ft back to Burgundy Col at the end of the day"
+      ],
+      "baseFinding": "FROM BURGUNDY COL, DROP A SHORT SNOW AND ROCK STEP AND TRAVERSE SOUTH BENEATH BURGUNDY SPIRE'S EAST FACE, ACROSS A SMALL SNOWY RIB, ONTO THE UPPER SILVER STAR GLACIER, AND AROUND TO CHIANTI SPIRE'S OBVIOUS EAST SIDE AT ABOUT 7,900 FT. Under an hour from a col or bench camp.\n\nSO THE SEQUENCE OF SURFACES IS THE HANDRAIL, AND YOU CAN FEEL EACH ONE UNDERFOOT: rock step down, snow traverse, a rib, then glacier. If you have not crossed onto glacier you have not gone far enough.\n\nTHE ROUTE ON THE FACE, AND THIS IS WHERE THE TWO EAST-FACE LINES ARE TOLD APART: REBEL YELL'S DIHEDRAL IS THE OBVIOUS FEATURE ON THE RIGHT SIDE OF THE FACE. LICHEN BOUQUET'S RAMP STARTS DIRECTLY BELOW THE SUMMIT AND LEANS LEFT. SO: A BIG CORNER ON THE RIGHT-HAND SIDE OF THE WALL IS THIS ROUTE. A RAMP UNDER THE SUMMIT THAT LEANS LEFT IS NOT.\n\nCONFIRM ON THE CLIMB: seven pitches at III 5.10b, with chimney and offwidth pitches that readily snag ropes on the way down. Four double-rope rappels on two 60 m ropes get you back down the route itself, trending generally climber's-right, starting from the summit block and then anchors near the top of pitch 5.\n\nWHAT GOING TOO FAR LOOKS LIKE ON THE APPROACH: continuing south past Chianti along the glacier brings you under Pernod and toward the Pernod-Chablis notch, which serves different routes and involves loose fourth-class ground.\n\nAN ICE AXE IS WANTED FOR THIS TRAVERSE THROUGH MIDSUMMER; the snow rib and glacier margin can be firm or icy in the morning, and that is exactly when you will be crossing them."
+     }
+    ]
+   }
+  }
+ ]
+}

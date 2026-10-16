@@ -1,0 +1,251 @@
+{
+ "file": "F1.json",
+ "results": [
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "trailhead pin on Blue Lake TH, not the hairpin",
+   "verdict": "unresolved",
+   "correct_value": "Trailhead pin (and approach_logistics.trailheadLat/Lng) should sit at the SR-20 hairpin pullout about 1 mi east of Washington Pass; no stated coordinate for that pullout could be found, so the pin is left where it is.",
+   "evidence": "Contradiction is real: waypoints[0] and approach_logistics are named 'Washington Pass hairpin turnout' but sit at 48.518965,-120.67436, which is the Blue Lake Trailhead (OSM node 9181916060 at 48.51899,-120.67435; USGS ground there 5,380 ft), while approach, approach_variants and timing all start from the hairpin and the variant explicitly says NOT Blue Lake. Hairpin as the start is confirmed by Mountain Project (Poster Peak/Blue's Buttress), Medical Moose Labs and Spokalpine trip reports. No source found that STATES a coordinate for the SR-20 hairpin pullout: OpenStreetMap (Overpass, 48.49-48.60N/-120.70--120.55W) has no parking/trailhead node or way at the hairpin (only Blue Lake TH node 48.5189941,-120.6743456, Blue Lake parking way centred 48.5191116,-120.6742371, Washington Pass Observation Site, Cutthroat TH); Nominatim returns nothing for 'Washington Pass hairpin' or 'Kangaroo Pass trailhead'; the trip reports and guide pages checked (Mountain Project Washington Pass / Poster Peak / Blue's Buttress / SEWS pages, Wenatchee Outdoors, onehikeaweek Big Kangaroo + Wallaby Peak, yellowleaf Kangaroo Temple, Jeff Hebert, Spokalpine, Medical Moose Labs, stevensong) all describe the hairpin in words (about 1 mile / 0.9 mi east of Washington Pass, ~milepost 163, ~5,160 ft) and give no GPS. The pin elev 5477 is Washington Pass's own elevation (OSM saddle node 5,477 ft), not the hairpin (~5,160 ft per onehikeaweek, a single source), so elev was not changed either. Needs a stated hairpin coordinate (e.g. a WSDOT/USFS point or a GPS-bearing trip report) before any patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/111086662/blues-buttress",
+    "https://www.medicalmooselabs.com/blues-buttress-poster-peak",
+    "https://spokalpine.com/2016/08/08/poster/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://onehikeaweek.com/2018/05/27/wallaby-peak/",
+    "https://www.openstreetmap.org/node/9181916060"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_3",
+   "fact": "trailhead pin on Blue Lake TH, not the pond pullout",
+   "verdict": "unresolved",
+   "correct_value": "Trailhead pin should sit at the pullout on the north side of SR-20 just east of the small pond a few hundred yards east of Washington Pass; no stated coordinate found, pin left unchanged.",
+   "evidence": "Contradiction is real: the pin/approach_logistics are named 'Pond pullout east of Washington Pass' but the coordinate 48.518965,-120.67436 is the Blue Lake Trailhead (OSM node 9181916060; USGS ground 5,380 ft), west of the pass. The pond-pullout start is confirmed by StephAbegg's Washington Pass page ('nice pullout on the north side of highway shortly east of pond', skirt the pond's left side, ~45 min to the east-face talus) and Mountain Project's Washington Pass area page (east Liberty Bell routes from a pullout just west of the hairpin). OSM maps no pond (natural=water) and no parking area between Washington Pass and the hairpin, and no trip report found gives GPS for the pond pullout, so no coordinate could be adopted. The pin note already says the GPS is unconfirmed.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://www.openstreetmap.org/node/9181916060"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "trailhead card/pins at Blue Lake TH, route starts at the hairpin",
+   "verdict": "unresolved",
+   "correct_value": "Trailhead should be the SR-20 hairpin pullout below the east faces (not Blue Lake TH); the 'Hairpin-curve pullout' waypoint (48.516853,-120.674436, elev 4900) is also not at the hairpin. No stated hairpin coordinate found, so no pin was moved or relabelled.",
+   "evidence": "Real: approach, approach_variants, itinerary schedule and partner_requirements all start at the SR-20 hairpin, while approach_logistics.trailhead/trailheadDirection and waypoints[0] are the Blue Lake Trailhead (correctly placed there, OSM node 48.51899,-120.67435). Hairpin as the start for SEWS east-side routes is confirmed by Mountain Project's SEWS area page ('Getting to routes on the East side of the peak is best accomplished via parking at the hairpin turn on hwy 20') and Wenatchee Outdoors ('Some of the east-facing routes on the Early Winter Spires are also accessed from the hairpin'). waypoints[1] 'Hairpin-curve pullout' sits ~240 m south of Blue Lake TH, nowhere near the hairpin ~1 mi east of Washington Pass. No source found that STATES a coordinate for the SR-20 hairpin pullout: OpenStreetMap (Overpass, 48.49-48.60N/-120.70--120.55W) has no parking/trailhead node or way at the hairpin (only Blue Lake TH node 48.5189941,-120.6743456, Blue Lake parking way centred 48.5191116,-120.6742371, Washington Pass Observation Site, Cutthroat TH); Nominatim returns nothing for 'Washington Pass hairpin' or 'Kangaroo Pass trailhead'; the trip reports and guide pages checked (Mountain Project Washington Pass / Poster Peak / Blue's Buttress / SEWS pages, Wenatchee Outdoors, onehikeaweek Big Kangaroo + Wallaby Peak, yellowleaf Kangaroo Temple, Jeff Hebert, Spokalpine, Medical Moose Labs, stevensong) all describe the hairpin in words (about 1 mile / 0.9 mi east of Washington Pass, ~milepost 163, ~5,160 ft) and give no GPS. Relabelling the card to the hairpin without moving the pin would put a hairpin name on the Blue Lake lot, so nothing is patched.",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.openstreetmap.org/node/9181916060"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "trailhead is the Silver Star Creek pullout",
+   "verdict": "fixed",
+   "correct_value": "Trailhead = the pullout where SR-20 crosses Silver Star Creek (milepost 171, ~3,450 ft, 48.5986,-120.5879); the Wine Spires pullout (milepost 166) is where the Burgundy Col descent reaches the highway.",
+   "evidence": "Mountain Project's Clean Break page locates the route 'From Silver Star Creek, at 5000' make a rising traverse', and Ian Nicholson's trip report approached and returned 'up and down Silver Star Creek'; the SummitPost approach page (via search summary) gives 'park at Silver Star Creek, 8.5 miles past the pass', matching the row's own approach_variants, itinerary and descent_text (hitch back to the car). Coordinate: WTA's Silver Star View Snowshoe page states its trailhead is 'where State Route 20 crosses Silver Star Creek (milepost 171)', elevation 3,450 ft, at 48.5986,-120.5879; independently the USFS Silver Star Sno-Park page gives 48.59839,-120.58536 and OSM maps the Silver Star Sno-Park lot (way 1485487396) beside the SR-20 bridge at 48.5987,-120.589. USGS EPQS ground at 48.5986,-120.5879 = 3,427 ft vs claimed elev 3,450 (agrees). Summit distMi 3.5 was measured from the Wine Spires pullout and no source states the Silver Star Creek distance, so it is set to null. The old pin (48.549,-120.630965) was correctly on the Wine Spires pullout (WTA Silver Star Mountain TH 48.5500,-120.6306), so the approach prose is re-anchored to name that pullout explicitly.",
+   "sources": [
+    "https://www.mountainproject.com/route/109232141/clean-break",
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html",
+    "https://www.summitpost.org/approach-to-juno-tower-clean-break/856387",
+    "https://www.wta.org/go-hiking/hikes/silver-star-view-snowshoe",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/silver-star-sno-park",
+    "https://www.openstreetmap.org/way/1485487396",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "lat"
+     ],
+     "expect": 48.549,
+     "value": 48.5986,
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "lng"
+     ],
+     "expect": -120.630965,
+     "value": -120.5879,
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4300,
+     "value": 3450,
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "SR-20 Wine Spires pullout (milepost 166)",
+     "value": "Silver Star Creek pullout (SR-20, milepost 171)",
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Start of the steep climbers' trail toward Burgundy Col, the usual way down from Clean Break. The Silver Star Creek approach starts from a separate pullout about 8.5 miles east of Washington Pass.",
+     "value": "Park where SR-20 crosses Silver Star Creek, about 8.5 miles east of Washington Pass; the climbers' path heads up the east side of the creek. The Burgundy Col descent comes out at the Wine Spires pullout near milepost 166, farther west on the highway.",
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 3.5,
+     "value": null,
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "SR-20 Wine Spires pullout (milepost 166)",
+     "value": "Silver Star Creek pullout (SR-20, milepost 171)",
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.549,
+     "value": 48.5986,
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -120.630965,
+     "value": -120.5879,
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)",
+     "value": "From the pullout where SR-20 crosses Silver Star Creek near milepost 171 (~3,450 ft), about 8.5 miles east of Washington Pass",
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the pullout, find",
+     "replace": "The Burgundy Col trail starts from the Wine Spires pullout near milepost 166: find",
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the more direct way in to Juno Tower's east face is up Silver Star Creek from a separate pullout about 8.5 miles east of Washington Pass.",
+     "replace": "the way in to Juno Tower's east face is up Silver Star Creek from the pullout where SR-20 crosses the creek near milepost 171, about 8.5 miles east of Washington Pass.",
+     "id": "wa_clean_break",
+     "fact": "trailhead is the Silver Star Creek pullout"
+    }
+   ]
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "gain_ft below the trailhead-to-summit rise once the car is at Silver Star Creek",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "With the car at Silver Star Creek (~3,450 ft) and the route topping out on Juno Tower (summit 7,920 ft, high_point_ft 7,940), gain_ft 4200 is less than the straight rise of ~4,470 ft, so it cannot be the car-to-car gain from this trailhead (it may have been computed from the Wine Spires pullout at ~4,300 ft). No source found states a car-to-car gain for Clean Break via Silver Star Creek (Mountain Project, SummitPost, Ian Nicholson and search results give only the 1,500 ft route length), and the rules forbid computing one, so gain_ft is left unchanged and flagged.",
+   "sources": [
+    "https://www.mountainproject.com/route/109232141/clean-break",
+    "https://www.wta.org/go-hiking/hikes/silver-star-view-snowshoe"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "partner card approach via hairpin; route is approached from Blue Lake",
+   "verdict": "fixed",
+   "correct_value": "Approach from the Blue Lake Trailhead via the climbers' path to the base of the South Arete, then along the base of the wall past The Passenger's start (~1 hr to the South Arete base).",
+   "evidence": "Mountain Project's Passenger page: from the South Arete, head down and right along the base ~10 min to the Passenger's fir tree/double cracks, packs left at the South Arete (the standard descent); Mountain Project's Hitchhiker page and overlay place the Hitchhiker on the south face just right of the Passenger. Mountain Project's SEWS area page gives the Blue Lake Trail (~1 hr) as the way to the spire and reserves the hairpin for east-side routes; a WTA trip report on the South Arete starts and ends at the Blue Lake trailhead. This agrees with the row's approach, approach_variants, trailhead card, road, access, itinerary objective and descent_text; the partner card's hairpin/Spire Gully line (self-described as not route-confirmed) and the trailhead pin note's car-at-the-hairpin story are the outliers. The pin itself (48.518965,-120.67436) is correctly on Blue Lake TH (OSM node 9181916060).",
+   "sources": [
+    "https://www.mountainproject.com/route/106585962/the-passenger",
+    "https://www.mountainproject.com/route/108294579/the-hitchhiker",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2015-06-11.6772250562"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~1.5–2 hrs via the east-side hairpin/Spire Gully (shared approach with neighboring routes, not fully route-specific-confirmed)",
+     "replace": "~1 hr via the Blue Lake Trail and climbers' path to the base of the South Arete, then a short traverse down and right along the base of the wall past The Passenger's start",
+     "id": "wa_the_hitchhiker",
+     "fact": "partner card approach via hairpin; route is approached from Blue Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "; the route's name itself references hitchhiking back to a car left at the hairpin after descending the other side of the mountain.",
+     "replace": "; reached from this trailhead by the Blue Lake Trail and the climbers' path to the base of the South Arete.",
+     "id": "wa_the_hitchhiker",
+     "fact": "partner card approach via hairpin; route is approached from Blue Lake"
+    }
+   ]
+  }
+ ]
+}

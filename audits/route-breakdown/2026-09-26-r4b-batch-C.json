@@ -1,0 +1,289 @@
+{
+  "wa_morning_star_peak_standard": {
+    "area": "wa_morning_star_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "Trail, then brushy path",
+        "notes": "Follow the Sunrise Mine Trail about half a mile. Just before it crosses the South Fork Stillaguamish, leave it for a faint abandoned path on the river's east side. The path comes and goes and soon vanishes into slide alder and brush, worst around 2,700 ft. Fording the river to dodge the brush is not safe when the water is high."
+      },
+      {
+        "pitch": "2",
+        "grade": "Brush, boulders, debris",
+        "notes": "Keep working up the east side of the valley past a house-sized boulder near 3,000–3,100 ft. One option crosses the river here and climbs a ridge ramp southwest to an upper basin at 4,000 ft, which is brushier. The other follows the river to the broad basin at about 3,700 ft below Del Campo's north face. In spring this ground is piled with hard, lumpy avalanche debris shed off the slabs."
+      },
+      {
+        "pitch": "3",
+        "grade": "Steep gully or slabs",
+        "notes": "From the 3,700-ft basin turn sharply right up the steep gully directly east, or the slabs on its right. Leave it to the right once that is easy. At a headwall near 4,400 ft either climb straight up or go around through the trees, which is the easier line on snow and on the way down. The gully often holds snow into early summer, with water running down its middle."
+      },
+      {
+        "pitch": "4",
+        "grade": "Snow-covered slabs",
+        "notes": "Climb the slabs northwest to a notch in Morning Star's southeast ridge at about 5,600 ft. The summit comes into view on this flatter ground. These slabs hold snow well into the season and are the route's main avalanche concern. Close to the notch the snow can be icy under fresh snow, so put crampons on before it steepens."
+      },
+      {
+        "pitch": "5",
+        "grade": "Steep gully, ~45° snow",
+        "notes": "From the notch drop roughly 100–200 ft through trees into the southeast basin (about 5,400 ft). Traverse right below the cliffs to the first broad gully and climb it to the south ridge about 250 ft below the summit. Filled with snow, the gully runs near 45° and is often icy, so crampons are standard. When the snow is bad, the rocks on its right are an alternative, but they are exposed."
+      },
+      {
+        "pitch": "6",
+        "grade": "Steep rock and snow",
+        "notes": "Climb north on or near the south ridge over the last 200–250 ft of steep ground to the 6,020-ft summit. Early in the day the west-facing slope below the top can stay icy, so mix rock, heather and snow to avoid the iced patches. Descend the same way, taking particular care in the gully below."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same six entries and labels, in the same order. The thin phrases became directions: the east-side path and brush, the house-sized boulder with its two options, the 3,700-ft basin gully and 4,400-ft headwall, the 5,600-ft southeast-ridge notch, the drop into the southeast basin and the broad gully to the south ridge 250 ft below the top. Grades became terrain chips because this is a scrambling route. There is no lengthM (no source gives section lengths) and no crux flag (no source names one section as the crux). Entries 1–2 stay because the stored table already treats the approach as sections.",
+      "sources_consulted": [
+        "http://web.archive.org/web/20250218102618/https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge",
+        "http://web.archive.org/web/20251111170334/https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-morning-star-peak-south-ridge-1",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2015-02-23.9821583159",
+        "https://onehikeaweek.com/2015/02/21/morning-star-peak/",
+        "https://en.wikipedia.org/wiki/Morning_Star_Peak"
+      ],
+      "other_findings": "The climbing_route, approach and descent_text columns describe a different route. They have the party leave the Sunrise Mine Trail at Headlee Pass (~4,600 ft) and scramble north along Morning Star's south ridge, and they end the approach with 'last reliable water … near Lake Elon/Vesper Lake'. Every source consulted leaves the trail at about 0.5 mi, before the South Fork Stillaguamish crossing, and climbs up the river valley to the southeast-ridge notch. Headlee Pass sits on the Sperry–Vesper side, and Morning Star lies 1 mi southeast of Sperry. The stored pitch_detail already followed the valley route. Those three columns need a human look, and the Headlee Pass framing in the overview too. The Mountaineers rate the route Technical 3 / Strenuous 4 at 4,200 ft gain and 6.0 mi round trip, and note that early-season snow can make it a basic alpine climb."
+    }
+  },
+  "wa_mount_constance_north_chute": {
+    "area": "wa_mount_constance",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Avalanche Canyon approach (north side)",
+        "grade": "Talus and scree",
+        "notes": "From camp at the north end of Lake Constance, head north up Avalanche Canyon over large and small talus. Carry on past the Cat Ears and the mouth of the South Chute, then climb loose talus to the mouth of the North Chute, the last major chute on the canyon's east side. In early season the canyon and its chutes carry serious avalanche exposure."
+      },
+      {
+        "pitch": "North Chute",
+        "grade": "Class 3+, loose gully",
+        "notes": "Steeper than the South Chute, with firmer bedrock underneath covered in a skin of loose gravel. The difficulty builds from Class 2 low down to Class 4 moves higher up. The rock is better and cleaner on the right, where the chute steepens. Rockfall onto the party below is constant, so keep the group tight or out of the fall line. Near the top the chute narrows and flattens, and the summit block comes into view to the north."
+      },
+      {
+        "pitch": "Chute top to the snowfield",
+        "grade": "Exposed ledges, steep snow",
+        "notes": "At the top, cross a narrow exposed ledge trending left; here the South Chute route joins from its scree gully below. Scramble north through the notch to a snowfield that can be hard, steep and icy. A moat along the rock is sometimes used, but watch for pinches and deep holes. Then cross loose slopes to narrow crack ledges on exposed, down-sloping slabs, with cliffs below from here on."
+      },
+      {
+        "pitch": "Finger Traverse",
+        "grade": "Exposed Class 3 ledge",
+        "notes": "A narrowing, down-sloping ledge and slab around a blind corner above a big cliff. A continuous horizontal crack along the top gives secure hands, but footholds run out for the last few steps. Old pitons at the start and a hidden piton past the corner allow a belay. A 4th-class bypass goes around the west side of the tower. Treat it as far harder when wet."
+      },
+      {
+        "pitch": "Terrible Traverse (shared crux)",
+        "grade": "Steep snow above cliffs",
+        "notes": "The lower alternative to the Finger Traverse, shared with the South Chute route and more often used on the way down. It crosses at the foot of a steep snowfield that ends in cliffs. By late season the snow melts back from a ledge along its base that can simply be walked. Filled with firm snow it is a fall-would-be-fatal crossing, and further snow patches beyond it can block the way to the notch."
+      },
+      {
+        "pitch": "Half-bowl and diagonal ramp",
+        "grade": "Loose ramp, scree",
+        "notes": "Past the Finger Traverse, lose some height into a half-bowl below the summit ridge. Scramble around it and across another loose slope to a diagonal, down-sloping ramp that cuts a large cliff face. Use the wall on the left for handholds. The ramp holds loose rock. At its top a large, loose scree slope climbs to the base of the summit pinnacle."
+      },
+      {
+        "pitch": "Summit block / North Chimney",
+        "grade": "Class 3-4 pinnacle",
+        "notes": "Grind up the scree to a small headwall, then scramble north onto the crest of a minor ridge. A deep gap separates it from the summit pinnacle, so follow the crest north past the pinnacle and come back to where it connects on the north side. The standard way up the pinnacle is on its north side above a huge drop. A Class 3 line on the east side is also used."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Four entries became seven. The North Chute row now describes the chute further up Avalanche Canyon (gravel over firm rock, Class 2 building to 4, better rock on the right). New rows cover the ledge and notch at the chute top (where the South Chute route joins), the Finger Traverse, the half-bowl and ramp, and the summit pinnacle's north/east options. The Terrible Traverse row is kept under its label as the lower alternative, not the main line. All four stored lengthM values (152, 396, 31, 320) are dropped: no source gives a length for any of these sections. The '~45° snow' figure is dropped as unsourced. No crux flag. Sources give the Finger Traverse, the Terrible Traverse and the upper chute as separate hard points, and none names a single crux for this route. How I identified the North Chute: I used the chute that SummitPost's route list and map name 'North Chute' (Class 3+ Grade II). The North-Chute trip reports all describe the same chute: it lies beyond the South Chute entrance ('bypassed the South Chute entrance', 'the last chute'), and parties climbed it and then the Finger Traverse. The South Chute is the southernmost gully, begun where the Cat Ears come into view, gaining ~1,200 ft to the South Ridge low point. The inconsistency comes from one trip report: it calls the Cat Ears gully an 'access gully' and names the upper gully above the 6,560-ft saddle the 'south chute'. No source calls that upper gully the North Chute. Medium, not high, because the North Chute's upper ledges have only two detailed descriptions.",
+      "sources_consulted": [
+        "http://web.archive.org/web/20260921081707/https://www.summitpost.org/mount-constance/151586",
+        "http://web.archive.org/web/2026id_/https://www.summitpost.org/you-ll-die-if-you-fall-here-mount-constance/870057",
+        "http://web.archive.org/web/2026id_/https://www.summitpost.org/mount-constance/climbers-log/151586",
+        "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm",
+        "http://web.archive.org/web/20250614200214/https://cascadeclimbers.com/forum/topic/103003-tr-mount-constance-south-chute-finger-traverse-ft-bypass-08032019/",
+        "http://web.archive.org/web/20250417074231/https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+        "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+        "http://ericsbasecamp.net/trips/Constance/MtConstance2.htm",
+        "https://onehikeaweek.com/2021/07/24/mount-constance/",
+        "http://web.archive.org/web/2025id_/https://www.mountaineers.org/activities/trip-reports/mount-constance-north-chute"
+      ],
+      "other_findings": "beta and overview say the North Chute 'rejoins the standard route at (or just below) the Terrible Traverse'. In the trip reports it tops out below the east–west ridge notch, joining the South Chute line before the Finger Traverse. Parties went up it to the Finger Traverse and used the Terrible Traverse on the way down. The route's grade is null; SummitPost lists 'Class 3+ Grade II'. The stored length_m (899) has no source I could find. The name 'North Chimney' for the summit block appears only in the stored text. Sources say the 40–60 ft pinnacle is climbed on its north side, or by a Class 3 line on the east."
+    }
+  },
+  "wa_mount_constance_finger_traverse": {
+    "area": "wa_mount_constance",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Avalanche Canyon approach",
+        "grade": "Talus and scree",
+        "notes": "From camp at the north end of Lake Constance, go north up Avalanche Canyon about 0.6 mile on talus, scree and old snow; cairns and a faint path help in places. Start up the South Chute as soon as the Cat Ears come into view. That is the tower just north of the chute's top notch, and starting early skips much of the worst scree. In early season the canyon carries serious avalanche exposure."
+      },
+      {
+        "pitch": "South Chute",
+        "grade": "Scree or snow gully",
+        "notes": "Climb east up the broad chute, gaining about 1,200 ft, to the notch at the low point of the South Ridge (about 6,560 ft) beside the Cat Ears. Bare, it is tiring loose scree that sends rock onto anyone below. It is much better on firm early-season snow. The buttress beside the gully offers bigger rock, at the cost of a short 4th-class move over down-sloping slabs."
+      },
+      {
+        "pitch": "Scree gully to the east–west ridge notch",
+        "grade": "Scree, snow patches",
+        "notes": "Cross to the east side of the ridge and traverse north about 200 yards below cliffs. Then climb a broad scree gully system to an obvious notch in a minor east–west ridge. Go through the notch and drop a short way to a scree or snow ledge. Early in the season that snow can be hard and steep, and parties sometimes use the moat along the rock."
+      },
+      {
+        "pitch": "Ledges to the Finger Traverse",
+        "grade": "Exposed Class 3 ledges",
+        "notes": "Contour north around a rock outcrop to a second notch; the Terrible Traverse line drops down a snow chute from here. For the Finger Traverse, make a rising traverse over gravel-strewn, sloping slab ledges on the east side of the ridge. Cairns and a couple of white painted marks show the line, so stay just above them. From here on there are cliffs below."
+      },
+      {
+        "pitch": "Finger Traverse crux",
+        "grade": "Class 3",
+        "anchor": "fixed pins",
+        "crux": true,
+        "notes": "A narrowing ledge, then a down-sloping slab around a blind corner above a cliff of 1,000 ft or more. A continuous horizontal crack along the top takes the fingers. Feet are scarce for the last few steps, and the step from ledge onto slab is the crux. Old pitons at the start make an anchor. An alcove boulder halfway, a horn, a #1 cam and a rusty piton past the corner protect it. A 4th-class bypass goes around the west side. Treat it as far harder when wet."
+      },
+      {
+        "pitch": "Snow basin and diagonal ramp",
+        "grade": "Scree, loose ramp",
+        "notes": "Past the traverse, keep along the east side of the ridge and descend into the snow basin (a half-bowl) below the summit ridge. Climb scree and rock right of the cliffs to a diagonal, down-sloping ramp that cuts a large cliff face. Use the wall on its left for handholds and expect loose rock. The ramp tops out on an open scree slope below the summit."
+      },
+      {
+        "pitch": "Summit block",
+        "grade": "Class 3-4",
+        "notes": "Grind up the scree to a small headwall, then scramble roughly 100 ft onto the ridge. A deep gap separates the ridge from the summit tower, so follow the crest north past it and come back to where it connects. The standard way up the tower is on its north side, above a huge drop. A Class 3 line on the east side is also used."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Four entries became seven. The four stored labels are kept. New rows cover the traverse and gully to the east–west ridge notch, the ledges from the second notch to the Finger Traverse, and the snow basin and diagonal ramp beyond it. The Finger Traverse grade '5.0 (exposed)' became 'Class 3'. No source gives 5.0: SummitPost calls it 'only a class 3 ledge', and the bypass is described as 4th class. Adding anchor 'fixed pins' makes that row draw as a roped pitch. The crux flag is kept: the stored label already names it, and sources name the ledge-to-slab step as its crux. All stored lengthM values (122, 366, 8, 373) are dropped. 366 m is the South Chute's ~1,200-ft vertical gain, not its length. The 8 m came from a '20–30 ft' figure no source I found repeats. The other two have no source.",
+      "sources_consulted": [
+        "http://web.archive.org/web/20250417074231/https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+        "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+        "http://ericsbasecamp.net/trips/Constance/MtConstance2.htm",
+        "https://olypenpkbagger.wordpress.com/2015/08/19/mt-constance-finger-traverse-81615/",
+        "https://onehikeaweek.com/2021/07/24/mount-constance/",
+        "http://web.archive.org/web/2026id_/https://www.summitpost.org/you-ll-die-if-you-fall-here-mount-constance/870057",
+        "http://web.archive.org/web/20250614200214/https://cascadeclimbers.com/forum/topic/103003-tr-mount-constance-south-chute-finger-traverse-ft-bypass-08032019/",
+        "https://www.thewildoutsiders.com/adventure-journal/mount-constance",
+        "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm",
+        "http://web.archive.org/web/20260921081707/https://www.summitpost.org/mount-constance/151586"
+      ],
+      "other_findings": "climbing_route and approach say the South Chute climbs 'about 1,900 ft from the lake to roughly 6,600 ft'. The Mountaineers and a trip report give ~1,200 ft of gain in the chute itself; 1,900 ft only works if it is measured from the lake. The climbing_route 'turn south into the South Chute at the Cat Ears' clashes with sources, which turn east into the chute and put the Cat Ears just north of its top notch. The beta column ('from the summit ridge near the Terrible Traverse, locate the downsloping ledge') makes the two traverses sound adjacent. In the sources the Terrible Traverse is a separate, lower line reached by dropping down a snow chute from the second notch. The descent_text's 'fixed sling/rap anchor' on the summit block has no source I found."
+    }
+  },
+  "wa_south_twin_sister_scramble": {
+    "area": "wa_south_twin_sister",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach",
+        "grade": "Roads, climbers' path",
+        "notes": "From the gated Middle Fork Nooksack bridge, bike the logging roads around Dailey Prairie into the basin between the Twin Sisters. A climbers' path runs through forest, bearing right to a talus slope that often holds snow late. It then traverses right up the talus, over a timbered rib and past old cabin ruins to Orsino Creek Basin. Orsino Creek is the last reliable water."
+      },
+      {
+        "pitch": "Lower slopes",
+        "grade": "Class 2 dirt, scree",
+        "notes": "From the basin, climb a steep, loose dirt gully and then scree and talus to an obvious notch in the West Ridge at about 5,200 ft. Gaining the ridge this low is the easier choice and adds more time on good rock. The dirt and scree here are loose, so keep the party out of each other's fall line."
+      },
+      {
+        "pitch": "West Ridge to the high notch",
+        "grade": "Class 2-3 ridge",
+        "notes": "Follow the ridge east toward a high notch at about 6,600 ft, roughly two hours of Class 2-3 scrambling on grippy dunite. Use the crest or its south (right) side, which is solid, and avoid the north side, which is loose. Towers can be skirted on ledges. The line only reveals itself a few feet at a time, so allow for route-finding."
+      },
+      {
+        "pitch": "South-side bypass",
+        "grade": "Class 2-3, seasonal snow",
+        "notes": "At the high notch, about 400 ft below the summit, the ridge steepens into exposed ground with 5th-class moves. Leave it and traverse right (south) across a seasonal snowfield or scree slope to a set of shallow gullies. An ice axe helps on the snowfield into midsummer. Parties that stay on the crest here meet high 4th- to 5th-class climbing with serious exposure."
+      },
+      {
+        "pitch": "Summit block",
+        "grade": "Class 3 gullies",
+        "notes": "Climb the southern gullies; the second major one is a good choice, and a large dihedral near 6,500 ft goes on ledges and cracks. The first high point reached may be a false summit. The true summit, with survey markers and a register, is a short way along the ridge at its southeast end. Loose rock remains, so test holds."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Four entries became five, and the four stored labels are kept. A new 'West Ridge to the high notch' row adds the ridge scramble from the 5,200-ft notch to the 6,600-ft notch. The stored table skipped that ground and started the south-side bypass at the low notch. The bypass row now correctly covers only the last ~400 ft, with the ridge-direct alternative described as 5th class, not 'Class 4'. The approach row keeps its place because the stored table treats it as a section. There is no lengthM (no source gives section lengths) and no crux flag.",
+      "sources_consulted": [
+        "http://web.archive.org/web/2025id_/https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+        "https://www.summitpost.org/south-twin/679815 (via search excerpt; page blocked)",
+        "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+        "https://www.wta.org/go-hiking/trip-reports/tripreport-2003081014",
+        "https://stevensong.com/usa/washington/south-twin-twin-sisters-wa/",
+        "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister"
+      ],
+      "other_findings": "beta and overview say the route leaves the ridge at the ~5,200-ft notch and traverses south to avoid the ridge's 'Class 4 step'. Sources follow the West Ridge (Class 2-3) all the way to the ~6,600-ft notch and bypass only the final ~400 ft, and they describe that final section as 5th class, not Class 4. The route's grade is null; sources support Class 2-3 for the bypass line, and the Mountaineers list it as a basic alpine climb, 3,700 ft gain. The descent_text is consistent with this, but its 'notch below the ridge' should read the high notch."
+    }
+  },
+  "wa_mount_lyall_south_route": {
+    "area": "wa_mount_lyall",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach",
+        "grade": "Brush, windfall",
+        "notes": "From Swamp Creek Camp, take the unmaintained Swamp Creek Trail and cross Swamp Creek at about 3,600 ft on a big log. Beyond it the valley is choked with down trees. At about 4,000 ft turn uphill beside a side stream into the brushy, rocky west basin. That stream near 5,200 ft is the first water above the creek. Then work east, gaining about 600 ft, into the broad basin below the peak."
+      },
+      {
+        "pitch": "Lower SW Ridge",
+        "grade": "Talus, scree, snow",
+        "notes": "From the basin, turn south along the edge of a steep, larch-dotted scree slope. Then head straight for the notch at about 7,300 ft on the southwest ridge, over talus and any lingering snow. Sable Ridge comes into view at the notch."
+      },
+      {
+        "pitch": "Traverse",
+        "grade": "Class 3, exposed",
+        "notes": "The southwest ridge above the notch soon runs into cliffs. Drop about 100 ft on grass around the buttress, then traverse upward below a striking band of white vertical rock. Hug the base of the wall beneath an overhang, where the sloping slabs are sprinkled with small loose stones that roll underfoot."
+      },
+      {
+        "pitch": "Summit Gully",
+        "grade": "Class 3, exposed",
+        "notes": "Enter the exposed Class 3 gully, which narrows as it nears the summit. The final 200 ft or so is choss, climbed through stacked boulders to the top. Test every hold and keep the party out of each other's fall line. Descend the same way."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same four entries and labels. Notes now carry the specifics: the Swamp Creek log crossing at 3,600 ft, the turn uphill at 4,000 ft, the water near 5,200 ft, the larch scree edge, dropping 100 ft around the buttress below the white rock band, the overhang and loose-pebble slabs, and the final ~200 ft of stacked-boulder choss. Grade chips are kept as they were, except that 'Class 2' and 'Class 2-3' became terrain descriptions. Single source (one detailed trip report), so confidence is capped at medium. A search for a second source found none. No lengthM, no crux flag.",
+      "sources_consulted": [
+        "https://onehikeaweek.com/2023/09/11/needle-peak/",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130"
+      ],
+      "other_findings": "The only route description found calls the upper line the 'southwest gully' and rates it exposed Class 3. The stored grade 'Class 3-4' and the climbing_route 'stacked Class 3-4 boulders' have no source I could find. The stored route name 'Southwest Ridge Route' is also looser than the source: the line leaves the ridge at the notch. Caution: some search tools attribute a 'narrow gully … overhanging crest with wobbly rocks' excerpt to Lyall. That text is from the same author's Needle Peak day, not Lyall."
+    }
+  },
+  "wa_gilbert_peak_west_route": {
+    "area": "wa_gilbert_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach to Cispus Basin",
+        "grade": "Trail",
+        "notes": "From the Snowgrass trailheads off FR 2150, hike Trail 96 about 4 miles to cutoff Trail 97, which meets the PCT in about half a mile. Follow the PCT southbound (heading east here) about 2 miles to Cispus Basin. The main camp is in the trees just above where the PCT crosses the Cispus River. A higher site near 6,700 ft has little water by mid-August."
+      },
+      {
+        "pitch": "Entry gully to the white band",
+        "grade": "Loose gully",
+        "notes": "Climb to the saddle (about 6,900 ft) at the northeast end of the basin, then pick an entry gully up to the white band. The second gully has markedly better rock than the first; use the first only if the second still holds snow. This entry is the loosest ground of the day, so move one at a time. Don't be drawn up toward the high basin and headwall."
+      },
+      {
+        "pitch": "White aggregate band to notch",
+        "grade": "Class 3",
+        "notes": "Traverse at about 7,500 ft along the band of white aggregate, which is solid and abrasive underfoot. It points straight at the notch behind the black prow, about halfway across. Look for a gap behind a white pillar and a small top-heavy needle. The trickiest move is just below that gap: step down to a ledge and cross a small white rib on a scant handhold, or go around its base lower in the scree."
+      },
+      {
+        "pitch": "Goat path to the 7,600-ft saddle",
+        "grade": "Goat path, snow chutes",
+        "notes": "From the black-prow notch, follow the goat path east across two major gullies. Don't go up either one, however inviting they look toward Goat Citadel. Continue to the base of the steep cliffs on the far side. The last 100 ft climbs reasonably solid rock to the saddle ¼ mile south of the Citadel. Before August an ice axe is usually needed for the snow chutes."
+      },
+      {
+        "pitch": "Summit finish",
+        "grade": "Class 3, loose blocks",
+        "notes": "Cross the broad sandy saddle and go up the right side of the ridge. Where a rock spine with a small window blocks the way, go around just right of the window; the downclimb at the base of the wall is harder. Past it, distinctive layered rock with green lichen leads left into the final gully to the summit. Some large blocks here come loose at a touch, so a helmet is essential."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Four entries became five. The approach label changed from 'Approach to Snowgrass Flats' to 'Approach to Cispus Basin', because both sources camp in Cispus Basin via Trails 96, 97 and the PCT. 'Goat Ledges/Goat Ribs traverse' became 'Entry gully to the white band': the name 'Goat Ledges/Goat Ribs' appears in no source, and the ground it covered is the entry gully. 'White aggregate band to notch' and 'Summit finish' keep their labels. A new 'Goat path to the 7,600-ft saddle' row covers the second half of the traverse. The summit grade 'Class 4 (M1b)' became 'Class 3, loose blocks'; both sources describe a Class 3 route. No crux flag: the white-rib step is called the trickiest move of the traverse, not of the route. No lengthM.",
+      "sources_consulted": [
+        "http://web.archive.org/web/20260214191717/https://www.summitpost.org/west-route/217889",
+        "https://www.oregonhikers.org/forum/viewtopic.php?t=20196",
+        "http://web.archive.org/web/20260209123815/https://www.summitpost.org/gilbert-peak/151173",
+        "https://www.oregonhikers.org/field_guide/Gilbert_Peak"
+      ],
+      "other_findings": "The approach, beta, overview and descent_text all start from 'a camp in the timber below Snowgrass Flats' and 'cross south toward Old Snowy/Ives'. Sources start from Cispus Basin, reached by Trail 96 then Trail 97 then the PCT south, and climb from its 6,900-ft northeast saddle. 'Goat Ledges/Goat Ribs' and the 'Class 4 (M1b)' finish appear in no source. SummitPost rates the West Route Class 3 ('moderate scramble'), and the Oregon Hikers field guide calls it the more technical alternative to the Class 3 east-side routes. The stored length_m 610 has no source I found."
+    }
+  }
+}

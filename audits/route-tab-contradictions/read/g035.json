@@ -1,0 +1,278 @@
+{
+ "batches": ["b137.json", "b138.json", "b139.json", "b140.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "name": "South Route",
+   "area": "Lizard Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain (car-to-summit)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5980"},
+      {"field": "itinerary.totalNote", "says": "~10,500 ft cumulative gain"},
+      {"field": "itinerary.days[*].gainFt (sum: 3400+1800+1000+1300+2200+800)", "says": "10500"}
+     ],
+     "why": "The header/TECHNICAL STATS gain_ft (5,980 ft) is roughly half the cumulative gain the route's own 6-day itinerary adds up to (10,500 ft) and states explicitly in its own totalNote.",
+     "internal_resolution": "The itinerary's per-day gainFt figures and its totalNote agree with each other at ~10,500 ft; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cache Col elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[2] (Cache Col)", "says": "elev 6903"},
+      {"field": "bivy[0] (\"Cache Col and the Cache Glacier shoulder\")", "says": "elev 6400 (implied, camp is described at/below the col)"}
+     ],
+     "why": "The same named col is effectively given two elevations roughly 500 ft apart, more than double the usual ~250 ft tolerance.",
+     "internal_resolution": "The bivy entry itself hedges ('treat the elevation as approximate, since published figures for the col vary by a couple of hundred feet'), suggesting the surveyed waypoint figure (6,903 ft) is likelier correct, but the row does not resolve it definitively.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trip structure / which outing this route's fields describe",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "the accepted approach follows the southern leg of the Ptarmigan Traverse corridor out of the Downey Creek Trailhead ... almost everyone treats this as a 2-3 day round trip ... matching the ~29-mile (46.67 km) round-trip distance"},
+      {"field": "approach_logistics.trailhead", "says": "Downey Creek Trailhead (Trail #768, Suiattle River Road)"},
+      {"field": "descent", "says": "Parties who are instead walking the full Ptarmigan Traverse pick Lizard up mid-route and carry on to the other end, finishing at Cascade Pass rather than Downey Creek -- that is a shuttle trip and a different outing from the approach described here."},
+      {"field": "itinerary.days[0].title", "says": "Cascade Pass to Kool-Aid Lake"},
+      {"field": "itinerary.totalNote", "says": "A 6-day, ~34 mi one-way traverse (shuttle required) with ~10,500 ft cumulative gain"}
+     ],
+     "why": "The route's own approach/descent text frames this route as an out-and-back from the Downey Creek Trailhead and explicitly calls the Cascade-Pass-to-Downey-Creek shuttle traverse 'a different outing' -- yet the itinerary actually attached to this route IS that one-way, two-trailhead shuttle traverse (day 1 starts at Cascade Pass; day 6 ends at Downey Creek Trailhead), contradicting the single-trailhead framing used everywhere else on the row.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Waypoint distance chain splices two unconnected trailheads",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[0] (Downey Creek Trailhead)", "says": "distMi 0"},
+      {"field": "waypoints[1] (Cascade Pass)", "says": "distMi 3.7"}
+     ],
+     "why": "The waypoints list runs Downey Creek Trailhead (distMi 0) directly into Cascade Pass (distMi 3.7) as if contiguous, but Cascade Pass is reached from a separate, distant northern trailhead on Cascade River Road, not from Downey Creek; the southern approach (Bachelor Creek, Cub Lake, Itswoot Ridge) that the row calls its primary/accepted route is entirely absent from the waypoints list.",
+     "internal_resolution": "The rest of the waypoint chain (Cache Col onward) is internally consistent as distances from Cascade Pass; the Downey Creek Trailhead entry at distMi 0 appears spliced in from a different route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+     "severity": "low",
+     "claims": [
+      {"field": "bail", "says": "Do not count on reaching the Downey Creek/Suiattle River Road exit, which is currently closed by flood damage."},
+      {"field": "road.closures / pro_tips", "says": "the Downey Creek trailhead itself remains reachable on foot or by bike beyond the closure, adding several miles each way"}
+     ],
+     "why": "bail implies the exit route is unusable, while road.closures and pro_tips say it remains reachable on foot/bike, just longer.",
+     "internal_resolution": "road.closures/pro_tips give the fuller picture (still reachable, just longer); bail's blanket 'do not count on reaching it' overstates the closure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cadet_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Cadet Peak",
+   "contradictions": [
+    {
+     "fact": "Season start month",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep; snow lingers in the summit gully into June in most years"},
+      {"field": "best_season", "says": "Late June through September ... Trip reports document successful climbs from late May onward"},
+      {"field": "seasonal_guidance.monthBreakdown.June", "says": "Approach gullies and upper slopes typically still snow-covered ... outside the recommended scramble window; status: risky"}
+     ],
+     "why": "best_season recommends starting in late June (and even notes successful climbs from late May), which falls before the season field's stated July start and is explicitly rated 'risky'/outside the recommended window by the route's own seasonal_guidance.",
+     "internal_resolution": "season and seasonal_guidance.monthBreakdown agree the window doesn't really open until July; best_season is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cadet_peak_ne_ridge",
+   "name": "Northeast Ridge (Sloan-Cadet Traverse)",
+   "area": "Cadet Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_columbia_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Columbia Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "name": "Standard Scramble",
+   "area": "Del Campo Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "2"},
+      {"field": "pitch_detail", "says": "4 numbered rows: '1. Foggy Lake to shoulder', '2. Shoulder to notch', '3. Notch to sub-notch', '4. Sub-notch to summit'"}
+     ],
+     "why": "The route's own pitch-count field says 2 pitches, but the ROUTE BREAKDOWN (pitch_detail) lists four separately numbered stages for the same line.",
+     "internal_resolution": "pitch_detail is the more granular, itemized source and should govern; pitches=2 looks stale.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Foggy Lake",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Foggy Lake (~5,200 ft, 3.3 miles from the trailhead)"},
+      {"field": "approach_variants[0]", "says": "up boulder and talus slopes to Foggy Lake at about 5,200 ft, roughly 3.3 miles in"},
+      {"field": "waypoints[2] (Foggy Lake)", "says": "distMi 4.8"}
+     ],
+     "why": "Two prose fields agree Foggy Lake is 3.3 miles from the trailhead, but the waypoint entry for the same lake gives distMi 4.8 -- a 1.5-mile (~45%) discrepancy for the route's main staging/water point.",
+     "internal_resolution": "Both narrative fields (approach, approach_variants) agree at 3.3 mi; the waypoint's 4.8 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent duration",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.descentTimeHrs", "says": "2.5"},
+      {"field": "itinerary.days[0].schedule", "says": "Begin descent 10:45 AM ... Back at trailhead 2:30 PM"}
+     ],
+     "why": "The stated descentTimeHrs (2.5 hr) doesn't match the ~3h45m the route's own clock-time schedule shows between beginning the descent (10:45 AM) and reaching the trailhead (2:30 PM).",
+     "internal_resolution": "The itemized schedule has specific clock times and is more granular; descentTimeHrs appears understated relative to it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_foggy_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Foggy Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "name": "Glaciated Scramble (Standard)",
+   "area": "Kyes Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest grade on the route (Class 3 vs Class 4)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Class 3 + snow/glacier"},
+      {"field": "rock_grade", "says": "Class 3-4"},
+      {"field": "pitch_detail[1] (Summit block)", "says": "grade Class 3-4"},
+      {"field": "descent_text", "says": "a short, exposed 4th-class knife-edge section"},
+      {"field": "beta", "says": "some parties rate it Class 3, others Class 4 depending on line and conditions"}
+     ],
+     "why": "The top-level grade field caps the route at Class 3, but rock_grade, the summit-block pitch, and the descent text all describe Class 4 moves on the chossy summit block/knife-edge.",
+     "internal_resolution": "rock_grade, pitch_detail, beta and descent_text agree the route reaches Class 4; grade undercounts it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain (trailhead to summit)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6023"},
+      {"field": "itinerary.days[0].gainFt", "says": "5200"},
+      {"field": "approach", "says": "Total elevation gain from trailhead to the 7,282-ft high point is roughly 5,200 ft"}
+     ],
+     "why": "gain_ft (6,023) is about 800 ft (~14%) higher than both the itinerary's gainFt and the approach text's own explicit '~5,200 ft' statement.",
+     "internal_resolution": "itinerary and approach text agree at ~5,200 ft; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "One-way approach distance",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "roughly 5,200 ft over about 9-9.5 miles one-way, consistent with a ~19 km round-trip figure"},
+      {"field": "itinerary.totalNote", "says": "~12 miles round trip"},
+      {"field": "dist_km", "says": "11.1"},
+      {"field": "waypoints[6] (Kyes Peak summit)", "says": "distMi 7.3"}
+     ],
+     "why": "The approach text's own '9-9.5 miles one-way' claim is internally inconsistent with the '~19 km round-trip' figure in that same sentence (9-9.5 mi one-way implies ~18-19 mi / ~29-30 km round trip, not 19 km/12 mi), and it also disagrees with the itinerary/totalNote's ~12-mile round trip, dist_km (11.1 km = ~6.9 mi), and the waypoints' own cumulative one-way distance to the summit (7.3 mi).",
+     "internal_resolution": "itinerary, totalNote, dist_km and the waypoint chain all cluster around a ~7-mile one-way / ~12-mile round-trip distance; the approach text's '9-9.5 miles one-way' figure is the outlier and self-contradicts its own round-trip claim.",
+     "needs_research": false
+    },
+    {
+     "fact": "Earliest viable/recommended month",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Oct"},
+      {"field": "best_season", "says": "Kyes is technically climbable June-October: June ascents cross more continuous snow/glacier and should carry rope and crevasse-rescue gear"}
+     ],
+     "why": "season states the window runs Jul-Oct, but best_season explicitly extends the climbable window back to June.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Kyes Peak",
+   "contradictions": [
+    {
+     "fact": "Season start month",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Sep (spring ski ascents/descents also reported)"},
+      {"field": "best_season", "says": "Snow-covered conditions (roughly May-July) make the Pride Glacier crossing and ridge travel most straightforward with axe and crampons"}
+     ],
+     "why": "best_season's recommended window starts in May, a month before the season field's stated June start.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Monte Cristo Peak",
+   "contradictions": [
+    {
+     "fact": "Rappel/rope length needed",
+     "severity": "high",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "rack", "says": "30m rope for the roped chimney section (three moves: 5.6, 5.2, 5.6)"},
+      {"field": "detailed_rack", "says": "a 60m rope"},
+      {"field": "descent_text", "says": "A single 60m rope is sufficient to reach easier ground"},
+      {"field": "rappels", "says": "1 rappel off the bolted anchor above the crux chimney; 60m rope reported sufficient"}
+     ],
+     "why": "rope_length_m and rack both specify a 30 m rope, but detailed_rack, descent_text and the rappels field all say a 60 m rope is what's needed for the rappel -- a party equipped per rope_length_m/rack would carry half the rope length the row itself says the descent requires.",
+     "internal_resolution": "Three fields (detailed_rack, descent_text, rappels) agree on 60 m; rope_length_m and rack are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier/crevasse travel on this route",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel on this route"},
+      {"field": "obj_haz", "says": "moat/crevasse hazard at col"},
+      {"field": "waypoints (North Col)", "says": "a moat at the col can widen badly late-season, sometimes making the step across intimidating or impassable"},
+      {"field": "waypoints (Summit chimney)", "says": "Cross the moat at the col, then contour south (climber's left)..."},
+      {"field": "descent_text", "says": "re-cross the moat/schrund"}
+     ],
+     "why": "seasonal_hazards.crevasses claims there is no glacier travel and rates it N/A, but the route explicitly requires crossing a moat/schrund at the North Col on both ascent and descent, and obj_haz separately lists 'moat/crevasse hazard at col' as an objective hazard.",
+     "internal_resolution": "obj_haz, the North Col/Summit chimney waypoints, and descent_text all agree the moat crossing is real and required; seasonal_hazards.crevasses is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best/classic season window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "June is the classic window: enough snow remains on the North Col talus to speed travel while the moat at the chimney's base is usually still closed."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through September; August is the most reliable stretch"}
+     ],
+     "why": "best_season names June as the single classic/preferred month for this climb, but the season field starts in July and seasonal_guidance's optimalWindow/monthBreakdown don't include June at all.",
+     "internal_resolution": "season and seasonal_guidance agree the window opens in (mid-)July; best_season's headline recommendation of June is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_wilmans_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Wilmans Peak",
+   "contradictions": []
+  }
+ ]
+}

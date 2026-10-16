@@ -1,0 +1,170 @@
+{
+ "routes": [
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Sources confirm bivy sites at the rock outcrops near the glacier's foot, plus additional camps near Winnie's Slide/6800 ft used by parties continuing up the same glacier toward the summit pyramid (see the Mountaineers' Fisher Chimneys page); since the White Salmon Glacier route climbs the same upper glacier terrain, that upper camp is plausibly on this route's own line too, even though it's better known via Fisher Chimneys."
+  },
+  {
+   "id": "wa_baring_mountain_r1",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "The AAC's account of the North Face first ascent confirms Couloir Camp, about 1000 ft above Barclay Lake, as the established high camp used for the technical climb; Barclay Lake itself is a real, well-used lake camp in the same zone. No evidence either should be demoted."
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "No published beta exists for a distinct north-side trailhead/camp system for the Twin Needles; Crescent Creek Basin remains the only documented staging camp for this end of the crest, reached by crossing over from the standard approach. The first researcher's assumption is the best-supported option available."
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Ottohorn is one of the western Crescent Creek Spires; trip-report sources describe the direct Crescent Creek approach as the quicker option specifically for climbs at the western end of the Southern Pickets crest, consistent with the current main camp."
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "verdict": "change",
+   "setRole": { "Terror Basin camp": "main" },
+   "remove": ["Crescent Creek Basin camp", "Stump Hollow bench"],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "This route's own approach paragraph says it shares West McMillan Spire's approach via Goodell Creek to the alpine notch above Terror Basin, and search confirms Terror Basin is the standard base camp used for Inspiration Peak/Southern Pickets climbs on that side of the Barrier -- not Crescent Creek Basin, which serves the western crest on the far side of the Barrier. Stump Hollow bench sits on the Barrier-crossing route to Crescent Creek Basin and isn't on this route's own line either."
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "The route's own approach text explicitly follows the Terror Creek climbers' path to Terror Basin via the Terror Glacier, matching the current main camp; Terror Basin is confirmed as the standard south-side Southern Pickets base."
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "verdict": "change",
+   "setRole": { "Black and White Lakes — the fallback when Flapjack is booked out": "route" },
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Multiple sources describe Black and White Lakes only as a side trip from Flapjack Lakes for parties already camped there, not a co-equal base; the camp's own name and notes already call it 'the fallback,' which is a route-role description, not a main one."
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Lake Sundown/Sundown Pass is confirmed as the first major stop on the standard South Fork Skokomish approach, and Belview Camp is confirmed as a real, separate site further along the Six Ridge primitive trail -- consistent with the current main/route split."
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Sources describe the west face as reachable in about an hour from the trailhead, supporting day-trip use for many parties, but Lake Valhalla remains a real, easily reached, well-established lake camp that technical parties could still use for an unhurried climb; no specific evidence rules out overnight use, so the existing assignment stands."
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "verdict": "change",
+   "setRole": { "The basin between Tye Peak and Spinnaker Peak": "route" },
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "An independent source explicitly calls the Tye-Spinnaker basin 'a highly recommended winter camping area,' confirming the first researcher's own note that summer parties on this easy Class 3 scramble from a roadside trailhead typically do it car-to-car; the camp is real but is a route/emergency-use site, not this route's typical main camp, so the route ends with no main camp."
+  },
+  {
+   "id": "wa_thunder_mountain_north_face",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Trap Lake and the Thunder Mountain Lakes basin are both confirmed as real, well-regarded camps used by parties in this group; no specific evidence establishes one as clearly more-used than the other for the North Face specifically, so both remain main as given."
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Multiple independent sources (route description, first-ascent report, trip reports) confirm Gorillas Direct sits on the West Face Wall between Goat Peak and Stuart Pass and descends to bivy sites at Stuart Pass -- the same Stuart Pass/Ingalls-meadows side the current camps sit on. Despite the 'South Face' grouping label in this catalog, this route does not use the Cascadian Couloir/Ingalls Creek-via-Longs-Pass approach, so the existing camps (Upper Ingalls Creek meadows below Stuart Pass, Headlight Basin) are correct."
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Sources confirm a real, established camp at the Ingalls Creek ford reached via Beverly Turnpike and Fourth Creek Pass, distinct from the north-side Mountaineer Creek camps used by Argonaut's other routes in this batch -- consistent with the current south-side main camp."
+  },
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Independent sources confirm bivy sites around 6,390-6,600 ft in Argonaut's north basin below the Colchuck-Argonaut col, matching the current main camp closely."
+  },
+  {
+   "id": "wa_northwest_arete",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Same north basin bivy sites (roughly 6,390-6,600 ft) confirmed independently for this route's approach via Mountaineer Creek; no evidence contradicts the current assignment."
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_ne_couloir",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Sources describe a flat bivy area around 5,800 ft on the south branch of Mountaineer Creek used for north-side routes on Sherpa, closely matching the current Upper Mountaineer Creek bench camp at 5,400 ft."
+  },
+  {
+   "id": "wa_the_cave_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Sources describe this route as doable as either a day trip or an overnight outing from the Blue Lake Trailhead, and it shares the same Liberty-Concord gully approach as other routes in the group, so both current camps remain plausible as given."
+  },
+  {
+   "id": "wa_silver_star_ne_ridge",
+   "verdict": "change",
+   "setRole": {
+    "Burgundy Creek bench camp — WEST side": "main",
+    "Burgundy Col high camp — WEST side, the Wine Spires": "main",
+    "Lone Fir Campground, SR 20": "route"
+   },
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Independent sources confirm the Burgundy Creek bench (~6,400 ft) and Burgundy Col (~7,800 ft) are the two real alternate camps used on the standard Burgundy Col approach that this route shares -- consistent with both staying main, reordered with the bench (described elsewhere as the more pleasant option) first. Lone Fir Campground is a front-country roadside campground for the night before, not an alpine climb camp -- a pre-climb staging site, matching how this dataset treats other roadhead campgrounds (e.g. Goodell Creek Campground) as route-role staging, not main."
+  }
+ ]
+}

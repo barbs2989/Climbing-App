@@ -1,0 +1,66 @@
+{
+ "id": "wa_ruth_peak_olympics_scramble",
+ "name": "Ruth Peak Scramble",
+ "waypoints": [
+  {
+   "lat": 47.955249,
+   "lng": -123.835839,
+   "elev": 1900,
+   "name": "Sol Duc Trailhead",
+   "note": "Road's-end trailhead past Sol Duc Hot Springs; overnight permits are not issued here, so arrange the wilderness camping permit in advance before starting up the Sol Duc River Trail.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Port Angeles, drive west on US 101 about 28 miles, past Lake Crescent, and turn left onto the signed Sol Duc Hot Springs Road. Follow it about 14 miles, past the hot springs resort and campground, to the trailhead at the road's end. An Olympic National Park entrance pass is required, and overnight permits must be arranged in advance."
+  },
+  {
+   "lat": 47.90981,
+   "lng": -123.73438,
+   "elev": 4744,
+   "name": "Heart Lake",
+   "note": "Subalpine, heart-shaped lake below the High Divide reached via old-growth forest on the Sol Duc River Trail; reliable water and the last established camp before leaving maintained trail.",
+   "type": "Water",
+   "distMi": 7.85,
+   "directions": "The Sol Duc River Trail runs nearly level through old-growth forest past Sol Duc Falls, then climbs steadily through the subalpine meadows of Sol Duc Park to the lake basin. It is maintained tread the whole way, roughly eight miles and about 2,800 ft of gain, so most parties treat this as a full first day under an overnight pack. Stream crossings lower on the Sol Duc can run high and cold early in the season."
+  },
+  {
+   "lat": 47.90782,
+   "lng": -123.738013,
+   "elev": 5042,
+   "name": "High Divide / Cat Basin Junction",
+   "note": "Trail junction where the High Divide Trail meets the primitive Cat Basin route; scramblers leave the maintained trail here and head cross-country toward the Bailey Range.",
+   "type": "Junction",
+   "distMi": 8.3,
+   "directions": "A short half mile of switchbacks above the lake gains about 300 ft onto the crest of the High Divide to reach the junction. It is brief, but it is the end of maintained tread — everything past this point is unmarked cross-country travel, so fix your position on the map here rather than after the tread runs out."
+  },
+  {
+   "lat": 47.89104,
+   "lng": -123.661054,
+   "elev": 5800,
+   "name": "The Catwalk (below Cat Peak)",
+   "note": "Narrow, jumbled rock arete on the ridge between Cat Peak and Mount Carrie with exposed class 2-3 moves; full packs make balance and route-finding tricky, especially in fog.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Follow the High Divide Trail east from the junction until the maintained tread ends, then pick up an obvious boot path that climbs steeply toward the ridge crest past Cat Peak. Snow lingers on these north-facing slopes into early July and an ice axe is worth carrying that early. Crossing the arete itself takes roughly 45 minutes with a full pack — the low point sits in the middle, and it is balance and route-finding on the exposed class 2-3 moves that slow parties down, not the climbing."
+  },
+  {
+   "lat": 47.8822744,
+   "lng": -123.6412633,
+   "elev": 5200,
+   "name": "Eleven Bull Basin",
+   "note": "Heather benches and streams gushing off the hillside beneath Mount Carrie and Ruth Peak make this the standard camp for a Ruth Peak push; no reliable water again until Cream Lake, roughly an hour further on.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "There is a meltwater source at the east end of the arete, known as Boston Charlie's, worth topping off at before the traverse. From there faint herd paths sidehill below the crest, losing about 600 ft over a mile and a half through a string of gullies that need hands-on scrambling with an overnight pack. Count on one to two hours before the slope eases into the basin's heather benches and streams."
+  },
+  {
+   "lat": 47.886895,
+   "lng": -123.633101,
+   "elev": 6841,
+   "name": "Ruth Peak",
+   "note": "True summit of Ruth Peak, third-highest peak in the Bailey Range; final pitch above Eleven Bull Basin is class 2-3 scrambling with views to Mount Olympus and the Fairchild Glacier.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Leave the overnight gear at camp and climb north out of the basin on open talus and heather, gaining roughly 1,600 ft in about a mile. The terrain steepens from meadow into talus bands and gets noticeably looser near the top, but stays class 2-3 throughout. Cairns and boot paths are effectively nonexistent up here, so pick the path of least resistance and expect route-finding rather than difficulty to be the work."
+  }
+ ]
+}

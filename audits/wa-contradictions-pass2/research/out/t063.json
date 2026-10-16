@@ -1,0 +1,20 @@
+{"file": "t063.json", "results": [
+ {"id": "wa_north_ridge_west_side", "fact": "Number of days (one-day vs two-day)", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The itinerary frames a two-day plan with an optional camp ('camp if needed'), while timing gives a single 9-hour day with an alpine start. Available route pages (approach from Rainy Pass ~1.5 mi on the PCT then ~2 mi and 2,300 ft to the peak) give distance and gain but no stated car-to-car duration or day count; SummitPost and Mountaineers pages returned 403 and no trip report stating the day count for THIS route was found. Would be settled by two trip reports giving car-to-car time / number of days for the North Ridge - West Side.",
+  "sources": ["https://www.summitpost.org/molar-tooth/549056", "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside"],
+  "patches": []},
+ {"id": "wa_north_ridge_west_side", "fact": "Cutthroat Lake camp text describes a different peak's approach", "verdict": "bivy_zone_list",
+  "correct_value": null,
+  "evidence": "Bivy-only dispute; bivy[] is owned by the camping clean-up. Entry 0 (Cutthroat Creek trailhead) serves this route's approach (1); entry 1 (Cutthroat Lake basin) lies on approach (1) but its note is written for Cutthroat Peak's south-side/North Ridge routes (State Creek pullout), not Molar Tooth, and does not serve approach (2) from Rainy Pass.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_north_ridge_west_side", "fact": "Overnight temperature called freezing", "verdict": "fixed",
+  "correct_value": "Summer overnight lows around 40-50°F; freezing nights are rare in July-August",
+  "evidence": "NRCS SNOTEL daily minimum temperatures for July-August 2021-2025: Rainy Pass (4,880 ft, the route's trailhead) averaged 48.3°F with no night at or below 32°F in 310 days; Harts Pass (6,490 ft, nearby at route elevation) averaged 45.8°F with only 3 of 310 nights at or below 32°F. Both confirm the 40-50°F figure the row already states and contradict 'freezing common'.",
+  "sources": ["https://wcc.sc.egov.usda.gov/awdbRestApi/services/v1/data?stationTriplets=711:WA:SNTL&elements=TMIN&duration=DAILY&beginDate=2021-07-01&endDate=2025-08-31", "https://wcc.sc.egov.usda.gov/awdbRestApi/services/v1/data?stationTriplets=515:WA:SNTL&elements=TMIN&duration=DAILY&beginDate=2021-07-01&endDate=2025-08-31"],
+  "patches": [
+   {"id": "wa_north_ridge_west_side", "fact": "Overnight temperature called freezing", "op": "replace_text", "column": "climate", "path": ["summer"], "find": "Clear skies with 40-50°F overnight freezing for early-morning frozen gully conditions.", "replace": "Clear skies with overnight lows around 40-50°F."},
+   {"id": "wa_north_ridge_west_side", "fact": "Overnight temperature called freezing", "op": "replace_text", "column": "climate", "path": ["typical"], "find": "with overnight freezing common (40-50°F).", "replace": "with overnight lows usually 40-50°F."}
+  ]}
+]}

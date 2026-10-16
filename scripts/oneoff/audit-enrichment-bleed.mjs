@@ -1,0 +1,99 @@
+/* Does one route's enrichment describe a DIFFERENT route?
+
+   #816 found wa_gunsight_peak_standard carrying a rappel station table copied verbatim from a
+   published trip report for NORTH Gunsight Peak's West Face — a 5.11+ rock route on a
+   different summit — sitting on a Class 5.6 glacier route. Nothing caught it, and no id guard
+   could: the id was correct, the AREA was correct, and only the prose came from the wrong
+   mountain.
+
+   That case arrived from OUTSIDE the catalog, so it leaves no internal duplicate. This script
+   hunts the other half of the same family, which does: enrichment that has bled BETWEEN two
+   routes we hold. The fingerprint is a long, distinctive prose value appearing verbatim on
+   routes whose areas are far apart. Precedent in this repo: a Mount Adams permit block
+   appearing on Mount Baker and Forbidden, and numeric bleed across state lines.
+
+   PRECISION IS THE WHOLE PROBLEM, and this repo has a documented false-positive disaster to
+   learn from (audit:area-parents' first draft: 41 flagged, 12 real). Three rules keep it honest:
+
+     1. BOILERPLATE IS NOT BLEED. 89% of `gaps` arrays are one sentence repeated 8,021 times.
+        A value appearing on many routes is a template, not contamination. Only rare
+        duplicates (2..MAX_GROUP) are candidates.
+     2. SHARED DESCENTS ARE REAL. Routes on one peak, or on neighbouring peaks, legitimately
+        share a descent paragraph — the whole Liberty Bell group shares one rappel line. So
+        distance between the areas is the discriminator, not duplication alone.
+     3. SHORT STRINGS COLLIDE HONESTLY. "Walk off." is not evidence of anything.
+
+   Report-only. Every hit is a QUESTION, not a verdict — confirm against the route's own
+   character before changing anything. */
+import { anonKey, selectAll } from "../lib/supabase-env.mjs";
+
+const MIN_LEN = 120;      // shorter than this and identical wording is unremarkable
+const MAX_GROUP = 6;      // larger than this and it is a template, not a leak
+const FAR_KM = 15;        // beyond this, two routes do not share a descent by coincidence
+
+const key = anonKey();
+const FIELDS = ["descent_text", "approach", "rappel_count_note", "beta", "overview"];
+
+const areas = await selectAll("areas", "id,name,lat,lng,path", "", { pageSize: 1000, key });
+if (!areas.length) throw new Error("empty areas read — refusing to report a clean result");
+const A = Object.fromEntries(areas.map((a) => [a.id, a]));
+
+const routes = await selectAll("routes", `id,name,area_id,grade,discipline,${FIELDS.join(",")}`, "", { pageSize: 1000, key });
+if (!routes.length) throw new Error("empty routes read — refusing to report a clean result");
+console.log(`scanned ${routes.length} routes across ${areas.length} areas`);
+
+const km = (a, b) => {
+  if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) return null;
+  const R = 6371, r = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * r, dLng = (b.lng - a.lng) * r;
+  const x = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+};
+// Same branch of the tree = same massif; sharing prose there is expected.
+const related = (x, y) => {
+  const px = A[x] && A[x].path, py = A[y] && A[y].path;
+  if (!px || !py) return false;
+  return px === py || px.startsWith(py + ".") || py.startsWith(px + ".");
+};
+const norm = (s) => String(s).replace(/\s+/g, " ").trim().toLowerCase();
+
+const groups = new Map();
+for (const r of routes) {
+  for (const f of FIELDS) {
+    const v = r[f];
+    if (typeof v !== "string") continue;
+    const n = norm(v);
+    if (n.length < MIN_LEN) continue;
+    const k = f + "\x00" + n;
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(r);
+  }
+}
+
+const hits = [];
+for (const [k, rs] of groups) {
+  if (rs.length < 2 || rs.length > MAX_GROUP) continue;
+  const field = k.slice(0, k.indexOf("\x00"));
+  // farthest pair of areas in the group
+  let worst = null;
+  for (let i = 0; i < rs.length; i++) {
+    for (let j = i + 1; j < rs.length; j++) {
+      if (rs[i].area_id === rs[j].area_id || related(rs[i].area_id, rs[j].area_id)) continue;
+      const d = km(A[rs[i].area_id], A[rs[j].area_id]);
+      if (d != null && (!worst || d > worst.d)) worst = { d, a: rs[i], b: rs[j] };
+    }
+  }
+  if (worst && worst.d > FAR_KM) hits.push({ field, rs, ...worst, text: k.slice(k.indexOf("\x00") + 1) });
+}
+
+hits.sort((x, y) => y.d - x.d);
+console.log(`\nprose values shared by 2-${MAX_GROUP} routes whose areas are >${FAR_KM} km apart: ${hits.length}\n`);
+for (const h of hits.slice(0, 40)) {
+  console.log(`=== ${h.field}  —  ${Math.round(h.d)} km apart, ${h.rs.length} routes`);
+  for (const r of h.rs) console.log(`      ${r.id.padEnd(46)} ${(A[r.area_id] || {}).name || r.area_id}`);
+  console.log(`      "${h.text.slice(0, 150)}…"`);
+}
+if (hits.length > 40) console.log(`… and ${hits.length - 40} more`);
+console.log(`\nEvery hit is a QUESTION. Two routes on one massif sharing a descent is correct;`);
+console.log(`two routes 200 km apart sharing one is not. Confirm against the route's own`);
+console.log(`character before changing anything.`);

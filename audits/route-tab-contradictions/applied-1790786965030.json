@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km (Approach one way) holds the round-trip figure"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "before": {
+    "dist_km": 30.58
+   }
+  }
+ ]
+}

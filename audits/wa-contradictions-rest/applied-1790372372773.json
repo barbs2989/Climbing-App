@@ -1,0 +1,201 @@
+{
+ "applied": [
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Climbers' path junction elevation"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Rope purpose / descent"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope purpose / descent"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Terror Basin notch elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Remote alpine climate with a distinct midsummer optimum; snowbound in spring, cold and stormy in fall, and severe/rarely attempted in winter",
+      "probability": "Afternoon convective buildup possible in the North Cascades interior during summer; not separately confirmed for this specific pinnacle"
+     },
+     "exposure": "Loose rock and exposure are hazards on this short moderate rock pitch above camp; a fall or rockfall incident would be serious given the remoteness and distance from any rescue resources",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer rock route; no dedicated NWAC zone specifically covers the remote Picket Range/McMillan Spires interior",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on the spire itself; the shared multi-day approach to the McMillan-area camp may cross glaciated/snow terrain, but that is outside the scope of this specific route"
+    },
+    "waypoints": [
+     {
+      "lat": 48.6828,
+      "lng": -121.269,
+      "elev": 500,
+      "name": "Goodell Creek Trailhead",
+      "note": "Standard, single approach for all Southern Pickets/Terror Basin objectives including Little Mac Spire.",
+      "type": "Trailhead",
+      "elevFt": 500
+     },
+     {
+      "lat": 48.728486,
+      "lng": -121.289238,
+      "elev": 1700,
+      "name": "Goodell Creek Crossings",
+      "note": "Trail fords two branches of Goodell Creek that run high on hot afternoons; a small streamside campsite sits near the second crossing.",
+      "type": "Water",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.732941,
+      "lng": -121.282053,
+      "elev": 3200,
+      "name": "Terror Creek Cairn / Climbers' Path",
+      "note": "Large cairn and stone arrow mark the turn off the maintained Goodell Creek trail onto the steep, faint climbers' path south of Terror Creek — the start of the '~4,000 ft over 2 mi' push.",
+      "type": "Junction",
+      "distMi": 4
+     },
+     {
+      "lat": 48.753404,
+      "lng": -121.267477,
+      "elev": 5200,
+      "name": "Rocky Streambed Source",
+      "note": "Last dependable water on the climbers' path, running in a rocky streambed; the faint tread resumes just upstream.",
+      "type": "Water",
+      "distMi": 6
+     },
+     {
+      "lat": 48.762728,
+      "lng": -121.276516,
+      "elev": 6300,
+      "name": "Terror Basin Notch",
+      "note": "Gap on the east rim of Terror Basin reached via a rising traverse over moderate snow into midsummer; first view down onto the basin and the McMillan/Little Mac group.",
+      "type": "Junction",
+      "distMi": 6.7
+     },
+     {
+      "lat": 48.76947,
+      "lng": -121.282642,
+      "elev": 5800,
+      "name": "Terror Basin Camp",
+      "note": "Shared high camp for the whole McMillan/Terror cluster — flat gravel benches, running water, and rock-walled bivy sites; base for Little Mac, East Mac, and West Mac.",
+      "type": "Campsite",
+      "distMi": 7.4
+     },
+     {
+      "lat": 48.772271,
+      "lng": -121.280567,
+      "elev": 7500,
+      "name": "Loose Rock Below the Summit Block",
+      "note": "Southern Pickets rock is notoriously fractured here; test holds and stagger climbers on the short 5.4 pitch to avoid knocking rock onto partners below.",
+      "type": "Hazard",
+      "distMi": 7.6
+     },
+     {
+      "lat": 48.7737,
+      "lng": -121.2762,
+      "elev": 7680,
+      "name": "Little Mac Spire",
+      "note": "Approximate — no independently surveyed summit coordinate found for this minor Southern Pickets spire; cross-referenced against neighboring McMillan/Terror group summits and the route's recorded approach track to place it as close to the true high point as possible.",
+      "type": "Summit",
+      "elevFt": 7680
+     }
+    ],
+    "pro_tips": [
+     "Tag it with the McMillan Spires",
+     "Quick objective from the basin camp"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Multi-day approach fitness for sustained off-trail bushwhacking and cross-country travel to the McMillan Spires camp, carrying a multi-day pack",
+      "packWeight": "Overnight/multi-day alpine pack (climbing rack, camp gear, several days of food) over trailless terrain"
+     },
+     "approachTime": "Long, multi-day approach (typically climbed in conjunction with the McMillan Spires trip via Goodell Creek); short additional scramble from the shared McMillan-area camp once established",
+     "requiredSkills": [
+      "cross-country/off-trail route-finding in glaciated alpine terrain",
+      "5th-class rock climbing up to 5.4 with exposure",
+      "loose rock management and careful movement on choss",
+      "self-sufficiency and sound judgment given remoteness from help",
+      "wilderness camping and Leave No Trace practice in a cross-country zone"
+     ],
+     "experienceLevel": "Solid alpine climber comfortable with remote, unmaintained cross-country travel and Grade II-III commitment; prior Picket Range or similarly remote North Cascades experience strongly preferred since parties are usually already deep in the range to reach the shared McMillan camp."
+    },
+    "gear": [
+     "alpine rock rack (small cams/nuts to ~2 in)",
+     "60m rope (for the short rappel off the horn if continuing the traverse)",
+     "ice axe / microspikes for early-season snow near Terror Basin",
+     "helmet (mandatory — loose rock throughout)"
+    ],
+    "rack": [
+     "Small-medium cams to 2in (light rack)",
+     "Small nut set",
+     "2 alpine quickdraws",
+     "30-60m single rope for the short rappel off the horn"
+    ]
+   }
+  }
+ ]
+}

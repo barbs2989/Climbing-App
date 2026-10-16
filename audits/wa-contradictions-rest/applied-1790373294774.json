@@ -1,0 +1,459 @@
+{
+ "applied": [
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead distance past White River entrance"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking pass / climbing permit"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Summit timing vs turnaround"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "time"
+   ],
+   "fact": "Summit timing vs turnaround"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "time"
+   ],
+   "fact": "Summit timing vs turnaround"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "time"
+   ],
+   "fact": "Summit timing vs turnaround"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Summit timing vs turnaround"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Summit finish class (Class 2-3 in itinerary vs Class 3-4 grade)"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Summit finish class (Class 2-3 in itinerary vs Class 3-4 grade)"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel on descent"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Rappel on descent"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "descent",
+   "path": [],
+   "fact": "Rappel on descent"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Summit block difficulty"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Fryingpan Creek crossing location"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Fryingpan Creek crossing location"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Climbing registration: self-issue or not"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "before": {
+    "approach": "Start at the Fryingpan Creek Trailhead (~3,800-3,900 ft) on the Sunrise/White River Road, about 5 miles past the White River entrance station. Follow the signed Fryingpan Creek Trail, which climbs gently along Fryingpan Creek through old-growth forest. At roughly 3.2 miles / ~1,400 ft of gain (about 2-2.5 hrs from the car) the trail reaches an established footlog crossing of Fryingpan Creek - the main water source and a spot that can require careful footing in high runoff. Continue up-trail toward Summerland, reaching that popular alpine backcountry camp (patrol cabin, pit toilet, bear wires, wilderness permit required to camp) at about 4.5 miles and roughly 2,500 ft gain (~5,900 ft elevation) - this is the last reliable running water before the climb proper. From Summerland, leave the maintained trail and pick up the climbers' 'spring route' path that heads northwest of the campground knoll, ascending steep tundra/snow up the Meany Snowfield toward Meany Crest, a rock outcrop at roughly 7,350-7,500 ft that serves as the standard high camp (flat tent sites, stone wind breaks). This band between Summerland and Meany Crest is where route-finding matters most: parties that contour too far climber's right have gotten cliffed out in a bowl below rock bands, so stick to the cairned/bootpacked line. Above Meany Crest, gain the toe of the Fryingpan Glacier - rope up here, as this begins sustained glacier travel with real crevasse hazard - and climb generally south/southwest across the lower glacier apron to the broad notch separating the Fryingpan and Whitman Glaciers (~9,000-9,100 ft, commonly called Whitman Notch). From the notch, traverse and climb the upper Whitman Glacier, crossing a bergschrund (usually a straightforward step-across early season, wider and trickier late season) up moderate glacier slopes to about 10,500-11,000 ft, where snow gives way to a loose rock-and-scree gully. Climb the gully to a short (~6 ft) headwall step, then a gully-chimney to the summit notch, finishing with an exposed, loose Class 3 scramble (roughly 30-100 ft) along a narrow, crumbly andesite ridge crest to the 11,138 ft summit - there is major exposure here, with a roughly 2,000 ft drop to the Emmons Glacier on the north side. Additional hazards along the whole approach: avalanche potential on the Meany Snowfield in soft/early-season conditions, and afternoon whiteout or thunderstorm activity common on Rainier's flanks.",
+    "access": {
+     "fees": "$82/person climbing registration, required year-round for any travel above 10,000 ft or onto a glacier, plus a $12/person/night wilderness permit for overnight camping (May 1-Sep 15); park entrance is $30/vehicle for 7 days.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Climbing registration required for all travel above 10,000 ft or on any glacier; a separate wilderness permit is required for overnight camping at Summerland or high camp.",
+     "closures": "The Sunrise/White River Road is snow-gated and typically doesn't open until late June-early July; it closes for the season by mid-October.",
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park",
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful / interagency annual pass covers only the $30 vehicle entrance fee, not the separate $82 climbing registration fee.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration and fee for the glaciers",
+      "where": "Reserve on Recreation.gov or get a walk-up permit at the White River Wilderness Information Center; register and pay the climbing fee before the climb."
+     }
+    },
+    "timing": {
+     "totalHrs": 19.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": 2.5,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "6:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Hike the Wonderland Trail from the Fryingpan Creek Trailhead through old-growth forest, cross Fryingpan Creek, and climb through the Summerland meadows before leaving trail to work…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "An alpine start gets the team across the Fryingpan Glacier and over Whitman Notch (9,100 ft) before the snow softens, then up the Whitman Glacier and a picket-protected couloir to …",
+       "fromTo": "Summit day and move to Summerland",
+       "section": "Climb"
+      },
+      {
+       "hrs": 2.5,
+       "note": "A short, easy morning hike back down through Summerland and the forest to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "itinerary": {
+     "cal": "Best climbed June-August while the Fryingpan/Whitman glaciers hold consolidated snow; the Sunrise-area road/Fryingpan Creek trailhead often doesn't fully open until late June, and crevasses/moats open up more by late summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Wonderland Trail from the Fryingpan Creek Trailhead through old-growth forest, cross Fryingpan Creek, and climb through the Summerland meadows before leaving trail to work up scree/snow to a rocky camp overlooking the Fryingpan Glacier at roughly 7,350 ft.",
+       "hours": 6.5,
+       "miles": 4.5,
+       "title": "Approach to high camp",
+       "gainFt": 3550,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a high camp near Meany Crest on the Fryingpan Glacier moraine"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start gets the team across the Fryingpan Glacier and over Whitman Notch (9,100 ft) before the snow softens, then up the Whitman Glacier and a picket-protected couloir to a short Class 2-3 rock finish on the summit block. After descending back to camp, most parties drop further to the Summerland shelter that evening to shorten day 3.",
+       "hours": 10.5,
+       "miles": 5.5,
+       "title": "Summit day and move to Summerland",
+       "gainFt": 3788,
+       "lossFt": 5188,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave high camp",
+         "detail": "Roped up and crampons on for the Fryingpan Glacier crossing."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Cross Whitman Notch",
+         "detail": "~1,850 ft above camp; the col between the Fryingpan and Whitman glaciers."
+        },
+        {
+         "time": "~12:45 PM",
+         "label": "Reach the summit",
+         "detail": "Up the Whitman Glacier and couloir, then a short Class 2-3 scramble to the true summit at 11,138 ft."
+        },
+        {
+         "time": "4:30 PM",
+         "label": "Back at high camp",
+         "detail": "Descent re-crosses both glaciers via the notch."
+        },
+        {
+         "time": "Evening",
+         "label": "Move down to Summerland shelter",
+         "detail": "Drops to ~5,950 ft to shorten the exit hike."
+        }
+       ],
+       "objective": "Cross both glaciers, climb the couloir to the summit, and descend to Summerland"
+      },
+      {
+       "n": 3,
+       "note": "A short, easy morning hike back down through Summerland and the forest to the trailhead.",
+       "hours": 2.5,
+       "miles": 3.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2150,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to the Fryingpan Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip is the standard club/party pace: ~14 mi round trip with ~7,600 ft of gain/loss, split between a moderate approach day, a long alpine-start glacier summit day, and a short exit."
+    }
+   }
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "before": {
+    "rappels": "0",
+    "pitch_detail": [
+     {
+      "grade": "Glacier, crevassed",
+      "notes": "From the high camp at the rock outcrops near 7,000–7,350 ft above Meany Crest, climb a steep slope of about 300 ft onto the Fryingpan Glacier, rope up, and angle southwest up gentler slopes to Whitman Notch (9,100 ft) in Whitman Crest, where the Whitman Glacier comes into view. Crevasses open on the Fryingpan as the season goes on.",
+      "pitch": "Fryingpan Glacier to Whitman Notch"
+     },
+     {
+      "grade": "Snow to ~45°",
+      "notes": "Traverse the upper Whitman Glacier at low angle to get past cliffs, then turn uphill on steepening snow, reported at 45° or more on its upper part, stepping over a bergschrund. Big sun cups make it slow and tiring later in the season; in soft snow pickets need burying as deadmen, and some parties run belays here.",
+      "pitch": "Upper Whitman Glacier"
+     },
+     {
+      "grade": "Loose rock and snow",
+      "notes": "The glacier ends near 10,500 ft in a steep gully of loose rock and scree, followed by a steep snowfield below a cliff band and one more rocky gully onto the high southeast shoulder. Late season this is nearly snow-free: step carefully, keep the party out of each other's fall line, and wear helmets.",
+      "pitch": "Summit gully and shoulder"
+     },
+     {
+      "grade": "Class 3-4 (loose andesite)",
+      "notes": "A short, exposed scramble across a tiny notch and up the final face to the summit (11,138 ft), graded Class 3 to 4; many parties rope up. The east ridge is a narrow fin of rotten andesite dropping about 2,000 ft to the Emmons Glacier on the north. There are two lines up the final step; old anchors may be found, and a rappel is common on the way down.",
+      "pitch": "Summit block scramble"
+     }
+    ],
+    "descent": "Reverse the ascent: downclimb the summit block, descend the east shoulder and re-cross the Whitman Glacier over Whitman Notch (9,100 ft), then the Fryingpan Glacier back to high camp/Summerland. Early in the season the Meany snowfield below camp allows a fast glissade/plunge-step descent; watch for sun-cupped, softened crevasse bridges on both glaciers by afternoon, and avoid lingering below other parties on the loose rock during the descent.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Fryingpan Creek Trailhead (3,900 ft), follow the Wonderland Trail through Summerland, then leave the trail to climb snow/scree onto the Fryingpan Glacier moraine to a rocky bivy site around 7,900 ft.",
+       "hours": 6,
+       "miles": 4,
+       "title": "Approach to high camp",
+       "gainFt": 4000,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a high camp near Whitman Crest at ~7,900 ft"
+      },
+      {
+       "n": 2,
+       "note": "A 1-3 AM alpine start crosses the Fryingpan Glacier and Whitman Notch while the snow is firm, then climbs the Whitman Glacier and a picket-protected couloir to the crumbly east ridge and summit block. After a short summit stay the team descends (glissading where possible) back to camp by around noon, packs up, and continues straight down to the cars the same afternoon.",
+       "hours": 14,
+       "miles": 10.1,
+       "title": "Summit push and full hike-out",
+       "gainFt": 3238,
+       "lossFt": 7238,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "1:00 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start for firm snow on the glacier crossings."
+        },
+        {
+         "time": "~3:00 AM",
+         "label": "Cross Fryingpan Glacier to Whitman Notch",
+         "detail": "The saddle/col between the two glaciers at ~9,100 ft."
+        },
+        {
+         "time": "~4:00 AM",
+         "label": "Ascend Whitman Glacier and the couloir",
+         "detail": "Roped travel with pickets up to the east shoulder."
+        },
+        {
+         "time": "Late morning",
+         "label": "Reach the summit",
+         "detail": "Class 2-3 rock finish along the narrow, crumbly east ridge to 11,138 ft."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Back at camp",
+         "detail": "Descent aided by glissading the lower snowfields."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Hike out to trailhead",
+         "detail": "Same-day exit rather than a third night out."
+        }
+       ],
+       "objective": "Climb the East Shoulder couloir to the summit and exit all the way to the trailhead same day"
+      }
+     ],
+     "totalNote": "A leaner 2-day, 1-night version of the same route: strong, acclimatized parties reach high camp on day 1, then combine the glacier/couloir summit push with the full hike-out in one very long alpine-start day (~14-15 hrs on day 2)."
+    },
+    "waypoints": [
+     {
+      "lat": 46.869574,
+      "lng": -121.627262,
+      "elev": 4300,
+      "name": "Fryingpan Creek crossing",
+      "note": "Wonderland Trail crosses Fryingpan Creek on a footbridge in old-growth forest before switchbacking up toward Summerland; last easy creek water below treeline.",
+      "type": "Water",
+      "distMi": 2
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5950,
+      "name": "Summerland",
+      "note": "Subalpine meadow camp with a stone shelter below Little Tahoma's east face; a reserved wilderness permit is required to camp here, and it's the jumping-off point for the climbing route.",
+      "type": "Campsite",
+      "distMi": 4.5
+     },
+     {
+      "lat": 46.852924,
+      "lng": -121.678601,
+      "elev": 7900,
+      "name": "Toe of Fryingpan Glacier",
+      "note": "Leave the Wonderland Trail and climb steep talus/heather slopes to gain the lower edge of the Fryingpan Glacier; route-finding through boulders, often snow-covered into midsummer.",
+      "type": "Junction",
+      "distMi": 6.2
+     },
+     {
+      "lat": 46.850275,
+      "lng": -121.693649,
+      "elev": 9100,
+      "name": "Whitman Notch",
+      "note": "The obvious low point in the ridge just left of Little Tahoma; cross here from the Fryingpan Glacier onto the Whitman Glacier.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 46.847167,
+      "lng": -121.702359,
+      "elev": 10200,
+      "name": "Whitman Glacier bergschrund",
+      "note": "Crevasses and a bergschrund open up on the Whitman Glacier below the summit pyramid; rope up and probe for hidden slots, especially in low-snow years.",
+      "type": "Hazard",
+      "distMi": 7.5
+     },
+     {
+      "lat": 46.84856,
+      "lng": -121.706937,
+      "elev": 10800,
+      "name": "East shoulder saddle",
+      "note": "Gain the saddle on Little Tahoma's east shoulder, a narrow crumbly-andesite rib with roughly 2,000 ft of exposure down to the Emmons Glacier on the north side.",
+      "type": "Junction",
+      "distMi": 7.8
+     },
+     {
+      "lat": 46.8884,
+      "lng": -121.611,
+      "elev": 3816,
+      "name": "Fryingpan Creek / Summerland Trailhead",
+      "note": "White River Road ~2.9 mi past the White River entrance turnoff, just beyond the Fryingpan Creek bridge; this is the sole approach for the standard Fryingpan Glacier–Whitman Glacier–East Ridge/East Shoulder route via Summerland and Meany Crest.",
+      "type": "Trailhead",
+      "distMi": 0.03,
+      "elevFt": 3816,
+      "distFrom": "track"
+     },
+     {
+      "lat": 46.8496,
+      "lng": -121.7123,
+      "elev": 11138,
+      "name": "Little Tahoma Peak",
+      "type": "Summit",
+      "distMi": 7.54,
+      "elevFt": 11138,
+      "distFrom": "track"
+     }
+    ],
+    "access": {
+     "fees": "$82/person climbing registration, required year-round for any travel above 10,000 ft or onto a glacier, plus a $12/person/night wilderness permit for overnight camping (charged May 1-Sep 15 only); park entrance is $30/vehicle for 7 days.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Camp only at designated Summerland-area wilderness sites; stay on the maintained trail through the fragile Summerland meadow; pack out human waste above the toilets (required for high camps and glacier travel).",
+     "permit": "Climbing registration required for all travel above 10,000 ft or on any glacier (self-issued for free after paying the $82 climbing fee); a separate wilderness permit is required for overnight camping at Summerland or the high camp — reserve ahead or get a walk-up permit at a wilderness information center within 24 hrs of your trip during the May 22-Sep 30 walk-up season.",
+     "closures": "The Sunrise/White River Road is snow-gated and typically doesn't open until late June-early July; it closes for the season by mid-October, with nightly gate closures at the White River Campground junction beginning in late September. Check the NPS road-status page before driving up.",
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful / interagency annual pass covers only the $30 vehicle entrance fee — it does NOT cover the separate $82 climbing registration fee.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration and fee for the glaciers",
+      "where": "Reserve on Recreation.gov or get a walk-up permit at the White River Wilderness Information Center; register and pay the climbing fee before the climb."
+     }
+    }
+   }
+  }
+ ]
+}

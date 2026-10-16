@@ -1,0 +1,336 @@
+{
+ "file": "r102.json",
+ "results": [
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "fact": "First-ascent year",
+   "verdict": "fixed",
+   "correct_value": "1971 (May 11, 1971, Jeff Dial and Don Williamson)",
+   "evidence": "The AAJ report of the climb (Dial and Williamson, 'On May 11 ...', NCCS III F7 A1, 10 pitches) is printed in the 1972 journal, which records the 1971 season; the same volume carries the 1971 Burnt Boot north ridge climb. SummitPost's Big Snow page gives the East Buttress FA as Don Williamson and Jeff Dial, May 11, 1971. The fa field is right; overview, aid_grade and pro_needs wrongly say 1972 (the publication year).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197211601/North-America-United-States-WashingtonCascade-Mountains-Big-Snow-Mountain-East-Butteress",
+    "https://www.summitpost.org/big-snow-mountain/216509"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "A1 in 1972 and later freed",
+     "replace": "A1 in 1971 and later freed",
+     "id": "wa_big_snow_mountain_east_buttress",
+     "fact": "First-ascent year"
+    },
+    {
+     "op": "set",
+     "column": "aid_grade",
+     "path": [],
+     "expect": "A1 (original 1972 ascent)",
+     "value": "A1 (original 1971 ascent)",
+     "id": "wa_big_snow_mountain_east_buttress",
+     "fact": "First-ascent year"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "The 1972 first ascent",
+     "replace": "The 1971 first ascent",
+     "id": "wa_big_snow_mountain_east_buttress",
+     "fact": "First-ascent year"
+    }
+   ]
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Total elevation gain (gain_ft/itinerary vs approach prose & approach_variant's own gainFt)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction, but it is a symptom of the row merging two different approaches: gain_ft 3900, the itinerary, beta, bail and the trailhead pin's 2,300 ft elevation/note describe the Denny Creek Trail -> Hemlock Pass approach, while approach, approach_variants, climbing_route, descent_text and the overview describe an Alpental -> Source Lake -> Bryant gully approach (trailhead ~3,100 ft). The Mountaineers route page confirms 3,900 ft gain / 9.5 mi RT from the Denny Creek trailhead (2,300 ft) via Hemlock Pass, so 3900 is right for that approach; no second source was found for the Source Lake approach's gain or mileage (its '9.5-mile round trip' looks copied from the Denny Creek figure). Fixing requires deciding which approach this route row describes and rewriting one set of fields - an editorial call, not a number swap. Also noted: summit 5,801 (overview/waypoint) vs 5,790 (approach, climbing_route).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "fact": "First-ascent year",
+   "verdict": "fixed",
+   "correct_value": "1971 (June 1971; Don Williamson, Bill Bucher, Tom Oas)",
+   "evidence": "Wikipedia's Burnt Boot Peak article states the north ridge was first climbed in June 1971 by Don Williamson, Tom Oas and Bill Bucher. Williamson's own report is in the 1972 AAJ (article 12197211602), the volume covering the 1971 season, alongside the May 1971 Big Snow East Buttress climb. The sibling route's '1971' is right; this row's 'c. 1972' and '1971-72' hedges are corrected.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak",
+    "http://publications.americanalpineclub.org/articles/12197211602/North-America-United-States-WashingtonCascade-Mountains-Burnt-Boot-Peak-North-Ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "fa",
+     "path": [],
+     "expect": "Don Williamson, Bill Bucher, and Tom Oas, c. 1972",
+     "value": "Don Williamson, Bill Bucher, and Tom Oas, 1971",
+     "id": "wa_burnt_boot_peak_north_ridge",
+     "fact": "First-ascent year"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "established in 1971-72 up",
+     "replace": "established in 1971 up",
+     "id": "wa_burnt_boot_peak_north_ridge",
+     "fact": "First-ascent year"
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "~5,300 ft car to car from the Dingford gate (1,400 to the horse camp + ~3,800 camp-to-summit round trip + ~100 on the way out); summit day ~3,800 ft",
+   "evidence": "The reader's internal resolution is backwards: day 2's 2,600 ft cannot reach a 6,540 ft summit from a camp near 2,800 ft (1,400 ft trailhead + 1,400 ft day 1). A 2023 trip report gives Dingford -> Horse Camp as 7.5 mi / 1,400 ft and the ford -> summit -> ford hike as 4.5 mi with 3,822 ft gain; a 2022 trip report gives the same start (1,400 ft), ~1,400 ft to the horse camp, the ford at Hardscrabble Creek and the NE gully at 5,400-5,800 ft. Summit 6,540 ft (Wikipedia). So day 2 is ~3,800 ft and the total ~5,300 ft; gain_ft 5140 (summit minus trailhead) was the net floor, and loss_ft 4100 was wrong too.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5140,
+     "value": 5300,
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4100,
+     "value": 5300,
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 2600,
+     "value": 3800,
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 2600,
+     "value": 3800,
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~2,600 ft round-trip summit day",
+     "replace": "~3,800 ft round-trip summit day",
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "One-way distance from trailhead to summit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~2.25 mi one way from the river ford to the summit",
+   "evidence": "Internally the summit waypoint (distMi 2 from the ford area) and the day-2 itinerary (4.3 mi round trip) agree; the approach's '3.5 mi' and its '(the logged 6.92 km is evidently round trip)' aside are the outlier (dist_km is now 31.06, the full round trip from the Dingford gate). A 2023 trip report measured the ford -> summit -> ford hike at 4.5 mi, i.e. ~2.25 mi one way. The sentence is rewritten to give the ford-to-summit figure and drop the pipeline aside.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "One-way distance from the trailhead is roughly 3.5 mi (the logged 6.92 km is evidently round trip), with",
+     "replace": "One-way distance from the river ford to the summit is roughly 2.25 mi, with",
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "One-way distance from trailhead to summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Where the car is parked: road end vs Dingford gate",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach, approach_logistics.trailheadDirection and waypoint[0] ('Dutch Miller Gap Trailhead', elev 2862, ford 0.1 mi away; approach says ~2,500 ft) tell a party to drive to the road end and ford beside the lot, but FS Road 56 has been gated at Dingford Creek since 2007 and the itinerary, cal, bivy and both trip reports start at Dingford (~1,400 ft) with a 7-7.5 mi road walk/bike to the horse camp. Research confirms the gate, but the repair means rewriting the approach opening, the trailhead card and the trailhead pin (whose coordinates are out of scope), so it is flagged rather than patched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/",
+    "https://www.mountaineers.org/activities/routes-places/middle-fork-snoqualmie-river"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Distance from the Point 5,841 pass to the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Itinerary day 2 note ('a little over a mile of easier snow/talus to the summit') and its 12:00 PM schedule detail ('About a mile ... from the pass to the summit') contradict the waypoints (pass at 1.7 mi, summit at 2.0 mi - 0.3 mi apart) and the approach/climbing_route ('a short class 3-4 ridge traverse leads to the summit'). No external source found giving the pass-to-summit distance.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_batskins",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Pitch 1 (full, 5.12b) is the crux; pitch 2 is 5.11d",
+   "evidence": "The row's grade (5.12b), pitch 1 grade (5.12b) and pitch 2 grade (5.11d) all put the crux on pitch 1. The Mountain Project route description grades the full first pitch 5.12b (short version 5.11a) and pitch 2 5.11d, and the route is listed at 5.12b there and in an Outdoor Research Index feature. Only the crux flags are swapped.",
+   "sources": [
+    "https://www.mountainproject.com/route/106197963/batskins",
+    "https://www.outdoorresearch.com/blogs/stories/insiders-guide-to-climbing-indexs-under-the-radar-gems"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "crux"
+     ],
+     "expect": false,
+     "value": true,
+     "id": "wa_batskins",
+     "fact": "Crux-flagged pitch vs actual hardest pitch"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "crux"
+     ],
+     "expect": true,
+     "value": false,
+     "id": "wa_batskins",
+     "fact": "Crux-flagged pitch vs actual hardest pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "fact": "Route grade vs every listed pitch grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Headline 5.12c/d comes from the extended pitch 1 (continuing past the first anchor, ~5.12c-5.13a); the standard pitches top out at 5.11+",
+   "evidence": "The Mountain Project description explains that the usual pitch 1 (Japanese Gardens start, stepping left) is 5.11+, and that continuing past its anchor through the old 'Chopper Flake' section is a height-dependent boulder problem of .12c-.13a, which is where the route's 5.12+ grade comes from; the row's own gear list already says the crux is on the extended pitch 1. The pitch table simply omits the extension. Patch adds it to pitch 1 and moves the crux flag there.",
+   "sources": [
+    "https://www.mountainproject.com/route/106328521/tpmv-10-meteorological-vinculation",
+    "https://www.mountainproject.com/route/116994868/ten-percent-direct-en-passant"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "5.11+",
+     "value": "5.11+ (5.12c/d extended)",
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "usually climbed alone starting from Japanese Gardens P1.",
+     "replace": "usually climbed alone starting from Japanese Gardens P1. Continuing past this anchor adds a hard, height-dependent boulder section on small gear (5.12c/d), the route's crux.",
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "crux"
+     ],
+     "expect": false,
+     "value": true,
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "crux"
+     ],
+     "expect": true,
+     "value": false,
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "verdict": "fixed",
+   "correct_value": "Pitch 4 (5.11c) is the hardest pitch",
+   "evidence": "The Mountain Project description grades P1 11b, P2 11b, P3 11a and P4 11c (slab through left-facing corners and arches). Rakkup's Index feature describes Japanese Gardens as a 5.11c route ('if you can fathom 5.11c...'). Both put the hardest climbing at 5.11c, i.e. pitch 4, so the crux flag moves from pitch 2 to pitch 4.",
+   "sources": [
+    "https://www.mountainproject.com/route/105791008/japanese-gardens",
+    "https://rakkup.com/rock-climbing-index-washington-worlds-best-crag/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "crux"
+     ],
+     "expect": true,
+     "value": false,
+     "id": "wa_japanese_gardens",
+     "fact": "Crux-flagged pitch vs actual hardest pitch"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "crux"
+     ],
+     "expect": false,
+     "value": true,
+     "id": "wa_japanese_gardens",
+     "fact": "Crux-flagged pitch vs actual hardest pitch"
+    }
+   ]
+  }
+ ]
+}

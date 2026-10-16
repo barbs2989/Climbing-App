@@ -1,0 +1,38 @@
+{"file": "r900.json", "results": [
+ {"id": "wa_early_winter_couloir", "fact": "Hairpin trailhead elevation", "discovered": true, "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The USGS 3DEP elevation point query at the stored trailhead pin (48.51454, -120.64332) returns 5,151 ft, halfway between the pin's 5,200 and the prose's 'about 5,100 ft'; both are roundings of the same ~5,150 ft ground within 50 ft. No climbing source found states a precise hairpin elevation (Mountain Project, SummitPost, the 2025 accident report and several trip reports only give the hairpin as 1 mi SE of Washington Pass, which is 5,477 ft), so there is no basis to prefer either rounding.",
+  "sources": ["https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326", "https://www.mountainproject.com/route/110300021/early-winter-couloir", "https://en.wikipedia.org/wiki/Early_Winters_Spires"],
+  "patches": []},
+ {"id": "wa_gato_negro", "fact": "Nearest hospital", "discovered": true, "verdict": "fixed",
+  "correct_value": "Mid-Valley Hospital, Omak (24-hr ER), about 70 road miles east via Winthrop",
+  "evidence": "Winthrop has no hospital; a hospital directory lists Mid-Valley Hospital in Omak as the nearest to Winthrop, ahead of Three Rivers in Brewster. Mid-Valley's own page confirms a 24-hour emergency room at 810 Jasmine St, Omak. Winthrop-Omak is 46 road miles, and Washington Pass is about 30 miles west of Winthrop, so the pullout ~4 mi east of the pass is roughly 70 road miles from Omak. Mount Vernon lies west over the pass beyond Newhalem (itself ~42 road miles from the pass area), i.e. well over 100 miles, so 'about 60 miles' and Skagit Valley as nearest are both wrong.",
+  "sources": ["https://www.healthgrades.com/hospital-directory/wa-washington/winthrop", "https://www.mvhealth.org/locations/mid-valley-hospital/", "https://www.distance-cities.com/distance-winthrop-wa-to-omak-wa", "https://www.nrtapplication.org/trails/washington-pass-overlook-trail", "https://www.cbsnews.com/news/surviving-climber-fall-killed-3-unconscious-awoke-dark-calling-help/"],
+  "patches": [
+   {"id": "wa_gato_negro", "fact": "Nearest hospital", "op": "set", "column": "emergency", "path": ["nearestHospital"], "expect": "Skagit Valley Hospital, Mount Vernon, WA (about 60 miles)", "value": "Mid-Valley Hospital, 810 Jasmine St, Omak, WA - 24-hr emergency room (about 70 road miles east via Winthrop)"}
+  ]},
+ {"id": "wa_gato_negro", "fact": "Number of pitches", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "beta says '11 long pitches' while pitches=12, pitch_detail (12 rows), turnaround, rope_note, itinerary, the topout waypoint note and the approach-variant hazards all say 12. The first-ascent report and an independent trip report both count 11 pitches; Mountain Project lists 12 pitches; another trip report numbers pitches 1-11 and skipped the last. Sources split on how the route is pitched, so no patch.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12200319301", "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html", "https://www.mountainproject.com/route/113324178/gato-negro", "https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/"],
+  "patches": []},
+ {"id": "wa_mount_johnson_standard", "fact": "Direction from Royal Lake to the col", "verdict": "fixed",
+  "correct_value": "Upper Royal Basin lies up-valley (south) of Royal Lake beneath Mount Deception's northeast face; Surprise Basin and the Clark-Johnson col lie west of the upper basin, with The Needles forming the basin's west wall.",
+  "evidence": "The Needles drain east into Royal Creek, so Royal Basin lies east of Johnson and the col, and they are bounded by Deception to the south. Royal Basin descriptions put the upper basin's tarns beneath the northeast face of Deception, i.e. up-valley (south) from the lake. A Corkscrew-route trip report places Surprise Basin west/southwest of the upper Royal Basin camp, reached over the moraine rim. The row's own waypoint coordinates and bivy note (the Needles are the basin's west wall) agree.",
+  "sources": ["https://en.wikipedia.org/wiki/The_Needles_(Olympic_Mountains)", "https://www.mountaineers.org/activities/routes-places/royal-basin", "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/", "https://onehikeaweek.com/2022/10/01/mount-deception/"],
+  "patches": [
+   {"id": "wa_mount_johnson_standard", "fact": "Direction from Royal Lake to the col", "op": "replace_text", "column": "approach", "path": [], "find": "From Royal Lake continue north on the scramblers'", "replace": "From Royal Lake continue south up-valley on the scramblers'"},
+   {"id": "wa_mount_johnson_standard", "fact": "Direction from Royal Lake to the col", "op": "replace_text", "column": "approach", "path": [], "find": "below Mount Deception's south face", "replace": "below Mount Deception's northeast face"},
+   {"id": "wa_mount_johnson_standard", "fact": "Direction from Royal Lake to the col", "op": "replace_text", "column": "approach", "path": [], "find": "head cross-country east/northeast up heather benches", "replace": "head cross-country west up heather benches"}
+  ]},
+ {"id": "wa_mount_johnson_standard", "fact": "Summit-day hours from high camp", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "partner_requirements.approachTime says ~11 hrs from high camp; timing.summitTimeHrs, sectionBreakdown and itinerary day 2 hours say 9. No published camp-to-summit-to-camp time for Johnson was found; the only timing found is for neighbouring Mount Clark (3.6 hrs camp to summit) and a car-to-car Clark outing, neither of which settles Johnson's summit day.",
+  "sources": ["https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/", "https://www.lucasmountainknowledge.com/post/mount-clark"],
+  "patches": []},
+ {"id": "wa_mount_johnson_standard", "fact": "Summit-day schedule span vs day hours", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Itinerary day 2 schedule runs from 5:00 AM (leave camp) to 3:00 PM (back at camp), a 10-hour span, while that day's hours and timing.summitTimeHrs say 9 (and partner_requirements says ~11). No source for Johnson's summit-day duration was found, so the figure cannot be chosen.",
+  "sources": [],
+  "patches": []}
+]}

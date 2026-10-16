@@ -1,0 +1,123 @@
+{
+ "applied": [
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)"
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent: the east snow couloir was the way DOWN TO THE FACE, not the descent from the summit"
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent: the east snow couloir was the way DOWN TO THE FACE, not the descent from the summit"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass vs land manager"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass vs land manager"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "before": {
+    "approach": "From the Goat Mountain Trailhead (day-use parking just off FS-32/Hannegan Pass Rd, ~2.1-2.3 mi up from the Glacier Public Service Center), follow Goat Mountain Trail #673. It's a well-built but relentlessly steep trail that gains the ridge via dozens of switchbacks, crossing a small cascading creek/waterfall repeatedly in the first mile through old-growth fir and hemlock (look for ~100-year-old fire-scarred cedar snags). Around 1 mi (~3,200 ft) the grade eases and the trail traverses onto a narrow side-hill ridge. At roughly 2 mi the trail crosses into Mount Baker Wilderness; just past the boundary sign an unsigned spur ('Old Goat Trail') splits east toward an old lookout site - stay on the main tread. Big views of Baker, Shuksan, and Sefrit open through meadows by 2.7 mi, and the maintained trail tops out on the ridge crest at a 5,200-ft viewpoint knob around mile 4, with the official terminus near 5,600 ft (~4.1 mi, ~3,100 ft gain). Beyond this point the route leaves maintained tread and becomes an open ridge boot path: continue about 0.8 mi and 1,000 ft more to the ~6,600-ft West Peak false summit. Snow lingers here well into summer (reports note solid snow from ~4,300-4,500 ft), so carry an ice axe from around that elevation upward, and expect crampons or snowshoes to be useful in early/late season. Do not push straight over the false summit's top - it corniced and exposed; bypass it on the south or west slope. Past the false summit the ridge drops roughly 300 ft into a notch/col, then climbs a final ~1,400 ft of mixed snow, rock, and short exposed steps to the true (East) summit at 6,892 ft. A narrow, moderately exposed knife-edge-ish section near the top is the crux of the scramble - keep the axe in hand and self-arrest-ready on the steep snow. There is no reliable water source beyond the creek crossings in the forest (roughly the first 2.5 miles of trail); carry what you need for the ridge and summit push.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Open ridge boot path to the West Peak false summit",
+      "notes": "Beyond the official trail terminus near 5,600 ft the route leaves maintained tread for an open ridge boot path: about 0.8 mi and 1,000 ft more to the ~6,600-ft West Peak false summit. Snow lingers well into summer (reports note solid snow from ~4,300-4,500 ft), so carry an ice axe from around that elevation upward, and expect crampons or snowshoes to be useful in early/late season."
+     },
+     {
+      "n": 2,
+      "label": "False summit bypass",
+      "notes": "Do not push straight over the false summit's top — it is corniced and exposed; bypass it on the south or west slope."
+     },
+     {
+      "n": 3,
+      "label": "Notch/col and the final ridge to the East summit",
+      "notes": "Past the false summit the ridge drops roughly 300 ft into a notch/col, then climbs a final ~1,400 ft of mixed snow, rock, and short exposed steps to the true (East) summit at 6,892 ft."
+     },
+     {
+      "n": 4,
+      "label": "Knife-edge crux near the top",
+      "notes": "A narrow, moderately exposed knife-edge-ish section near the top is the crux of the scramble — keep the axe in hand and self-arrest-ready on the steep snow. No reliable water beyond the creek crossings in the forest, roughly the first 2.5 miles of trail."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Goat Mountain Trail #673 to the end of maintained tread, then over the West Peak false summit",
+      "notes": "From the Goat Mountain Trailhead, day-use parking just off FS-32 (Hannegan Pass Road) about 2.1-2.5 miles up from the Glacier Public Service Center, follow Goat Mountain Trail #673. It is well built and relentlessly steep, gaining the ridge by dozens of switchbacks and crossing a small cascading creek repeatedly in the first mile through old-growth fir and hemlock.\n\nAround a mile in, near 3,200 ft, the grade eases and the trail traverses a narrow side-hill ridge. At roughly two miles it crosses into the Mount Baker Wilderness; just past the boundary sign an unsigned spur — the Old Goat Trail — splits east toward an old lookout site. Stay on the main tread.\n\nMeadows and big views open by 2.7 miles; the maintained trail tops out on the crest at a 5,200 ft viewpoint knob around mile 4, with the official terminus near 5,600 ft.\n\nBeyond that it is an open ridge boot path, about 0.8 mile and 1,000 ft more to the West Peak false summit near 6,600 ft, and then on to the true East summit.\n\nThere is no reliable water beyond the creek crossings in the forest, roughly the first 2.5 miles of trail.",
+      "season": "Roughly Jul-Sep. Snow lingers on this ridge and reports have found solid snow from 4,300-4,500 ft well into summer",
+      "hazards": [
+       "Cornices on the West Peak false summit, invisible from above",
+       "Solid lingering snow from 4,300-4,500 ft upward well into summer",
+       "A knife-edge-ish exposed section near the true summit",
+       "No reliable water beyond the forest creek crossings (about the first 2.5 miles)",
+       "An unsigned spur trail near the wilderness boundary that leads to an old lookout site instead"
+      ],
+      "baseFinding": "THE ROUTE STARTS WHERE THE MAINTAINED TRAIL STOPS, NEAR 5,600 FT, AND THAT END IS ABRUPT. Below it, built tread and switchbacks. Above it, an open ridge boot path with nothing constructed. If you are still on graded trail you have not started the route.\n\nTHE FALSE SUMMIT IS CORNICED — DO NOT GO OVER ITS TOP. This is the one hard rule on the ridge and it is a safety instruction rather than a route preference: the West Peak at about 6,600 ft is corniced and exposed, and the correct line bypasses it on the SOUTH or WEST slope. Cornices are invisible from above and this is precisely the terrain where cloud sits.\n\nTHE 300 FT DROP IS HOW YOU KNOW YOU HAVE PASSED THE FALSE SUMMIT, AND IT IS THE STRONGEST TEST ON THE ROUTE. Past the West Peak the ridge DROPS ROUGHLY 300 FT into a notch before climbing again. So: if you have not descended 300 ft, the high ground in front of you is not the true summit — it is the false one you were supposed to walk around. An altimeter settles this in zero visibility and eyesight does not.\n\nAFTER THE NOTCH it is a final 1,400 ft of mixed snow, rock and short exposed steps to the true East summit at 6,892 ft. The crux is a narrow, moderately exposed knife-edge-ish section near the top — keep the axe in hand and self-arrest-ready on the steep snow.\n\nCARRY THE AXE FROM 4,300-4,500 FT, not from where the snow looks serious. That is where reports put the solid snow, and it is well below the point where a party without an axe realises it wanted one."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "before": {
+    "descent": "A snow couloir on the east side provides a straightforward descent with crampons and an ice axe.",
+    "descent_text": "The first-ascent party descended via a snow couloir on Golden Horn's east side, described as a straightforward descent given crampons and an axe, back toward the Snowy Lakes basin."
+   }
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "before": {
+    "access": {
+     "fees": "$30/year Washington Discover Pass (if required for parking)",
+     "notes": "A popular multi-pitch andesite crag with hundreds of bolted routes — outside any wilderness boundary.",
+     "permit": "None required.",
+     "closures": "Possible closures Feb 1 - April 15 for Golden Eagle nesting on certain routes; verify current conditions",
+     "landManager": "USDA Forest Service (Naches Ranger District, Okanogan-Wenatchee National Forest)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Naches Ranger District)",
+     "passRequired": "Discover Pass may be required in some parking areas"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,499 @@
+{
+ "applied": [
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    4,
+    "miles"
+   ],
+   "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to Luna Camp"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Distance to Luna Camp"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche/glacier status"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Access Creek approach trailhead"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Access Creek approach trailhead"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance from Luna Camp to the Access Creek turnoff"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "overview",
+   "path": [],
+   "fact": "Which face the glacier is on"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Permit fees"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_phantom_peak_south_route",
+   "before": {
+    "road": {
+     "name": "Goodell Creek / Ross Lake access",
+     "status": "Seasonal",
+     "driveNote": "Remote Northern Pickets approach",
+     "seasonalGate": "Winter closures"
+    },
+    "approach_logistics": {
+     "peakLat": 48.8190158,
+     "peakLng": -121.342631,
+     "trailhead": "Hannegan Pass Trailhead (end of Ruth Creek Rd / FR-32), via Hannegan Pass, Chilliwack River Trail, Whatcom Pass and Perfect Pass to the SW side of Phantom Peak",
+     "trailheadLat": 48.9101,
+     "trailheadLng": -121.5927,
+     "trailheadDirection": "From the Nooksack Cirque Trailhead at the end of FR-34 off Hannegan Pass Road (FR-32)"
+    },
+    "waypoints": [
+     {
+      "lat": 48.834423,
+      "lng": -121.20174,
+      "elev": 2500,
+      "name": "Luna Camp",
+      "note": "Established NPS backcountry campsite ~10 mi up the Big Beaver Trail (permit reserved at the Marblemount Wilderness Information Center); base camp for leaving the maintained trail to find the Access/Luna Creek drainages.",
+      "type": "Campsite",
+      "distMi": 10
+     },
+     {
+      "lat": 48.79336135625,
+      "lng": -121.26392853125,
+      "elev": 3200,
+      "name": "Luna Creek bushwhack",
+      "note": "Off-trail ascent from Luna Camp through devil's club and alder thickets; one of the worst bushwhacks in the North Cascades, and it's easy to lose the drainage in the brush.",
+      "type": "Hazard",
+      "distMi": 11.5
+     },
+     {
+      "lat": 48.81046431875,
+      "lng": -121.31639684375,
+      "elev": 7800,
+      "name": "Crooked Thumb Glacier moraine high camp",
+      "note": "High camp on the glacier's lateral moraine per route beta; last reliable tent sites and meltwater before dropping toward Phantom Peak's southwest buttress.",
+      "type": "Campsite",
+      "distMi": 14.5
+     },
+     {
+      "lat": 48.8133148125,
+      "lng": -121.3251415625,
+      "elev": 6100,
+      "name": "Southwest buttress saddle",
+      "note": "Gained via a roughly 1,000 ft descending traverse from the moraine camp; from here the route turns onto the pocket glacier on the buttress's southwest side.",
+      "type": "Junction",
+      "distMi": 15
+     },
+     {
+      "lat": 48.81616530625,
+      "lng": -121.33388628125,
+      "elev": 7300,
+      "name": "Bergschrund on the summit snow finger",
+      "note": "The pocket glacier's left-hand snow finger is cut by a bergschrund that's wide but shallow; parties crampon up slabby rock and crawl over the uphill wall to continue past it.",
+      "type": "Hazard",
+      "distMi": 15.5
+     },
+     {
+      "lat": 48.9101,
+      "lng": -121.5927,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead (end of Ruth Creek Rd / FR-32), via Hannegan Pass, Chilliwack River Trail, Whatcom Pass and Perfect Pass to the SW side of Phantom Peak",
+      "note": "This route is reached from the west side of the range over Hannegan Pass, not from Ross Lake.",
+      "type": "Trailhead",
+      "elevFt": 3120
+     },
+     {
+      "lat": 48.8190158,
+      "lng": -121.342631,
+      "elev": 8000,
+      "name": "Phantom Peak summit (Southwest/South Route, Class 4, easiest route, FA Fred & Helmy Beckey 1940)",
+      "type": "Summit",
+      "elevFt": 8000
+     }
+    ],
+    "itinerary": {
+     "cal": "Best climbed July-September once the Whatcom/Challenger Glacier crossings consolidate; requires a North Cascades NPS backcountry permit for all camps.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Trail hike from the Hannegan Trailhead over Hannegan Pass and down to the Chilliwack River, then up to Whatcom Pass — the standard first camp for Northern Pickets objectives.",
+       "hours": 6,
+       "miles": 9,
+       "title": "Hannegan TH to Whatcom Pass",
+       "gainFt": 2500,
+       "lossFt": 200,
+       "packLb": 48,
+       "schedule": [],
+       "objective": "Reach Whatcom Pass camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb onto the Whatcom Glacier, cross Perfect Pass and the Challenger Glacier, then descend to a moraine camp near the Crooked Thumb Glacier at roughly 7,800 ft — the standard staging camp for Phantom Peak.",
+       "hours": 9,
+       "miles": 5,
+       "title": "Whatcom Pass to high camp",
+       "gainFt": 3000,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Cross the Whatcom/Challenger Glacier to a high camp near Phantom Peak"
+      },
+      {
+       "n": 3,
+       "note": "A long round-trip summit day: descend across snow below Phantom Peak's west face, cross a pocket glacier and bergschrund, climb a moderate snow finger to the southwest ridge, then follow exposed but solid granite along the ridge crest — including a hand-lined traverse past the false summit — to the true summit.",
+       "hours": 13,
+       "miles": 2,
+       "title": "Summit via the South Route",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": ""
+        },
+        {
+         "time": "~6:30 AM",
+         "label": "Reach the SW buttress saddle",
+         "detail": "After descending snow slopes below Phantom Peak's west face."
+        },
+        {
+         "time": "~8:00 AM",
+         "label": "Cross the bergschrund",
+         "detail": "Climb the moderate snow finger above it using snow-fluke protection."
+        },
+        {
+         "time": "11:20 AM",
+         "label": "Reach true summit",
+         "detail": "~6.9 hr from camp, including a hand-lined false-summit traverse."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the entire route."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at high camp",
+         "detail": "~5.7 hr descent."
+        }
+       ],
+       "objective": "Climb Phantom Peak (8,016 ft) via the southwest glacier, south couloir, and southwest ridge"
+      },
+      {
+       "n": 4,
+       "note": "Reverse the Challenger Glacier / Perfect Pass crossing back down to Whatcom Pass camp.",
+       "hours": 9,
+       "miles": 5,
+       "title": "Descend to Whatcom Pass",
+       "gainFt": 300,
+       "lossFt": 3000,
+       "packLb": 42,
+       "schedule": [],
+       "objective": ""
+      },
+      {
+       "n": 5,
+       "note": "Trail miles back over Hannegan Pass to the Hannegan trailhead.",
+       "hours": 6,
+       "miles": 9,
+       "title": "Hike out to trailhead",
+       "gainFt": 200,
+       "lossFt": 2500,
+       "packLb": 30,
+       "schedule": [],
+       "objective": ""
+      }
+     ],
+     "totalNote": "A 5-day, ~30-32 mile round trip via Whatcom Pass with one long (~13 hr) technical summit day; matches how real Northern Pickets parties climb Phantom Peak from a Crooked Thumb Glacier camp."
+    },
+    "timing": {
+     "totalHrs": 43,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": 15,
+     "approachTimeHrs": 15,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Trail hike from the Hannegan Trailhead over Hannegan Pass and down to the Chilliwack River, then up to Whatcom Pass — the standard first camp for Northern Pickets objectives.",
+       "fromTo": "Hannegan TH to Whatcom Pass",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Climb onto the Whatcom Glacier, cross Perfect Pass and the Challenger Glacier, then descend to a moraine camp near the Crooked Thumb Glacier at roughly 7,800 ft — the standard stag…",
+       "fromTo": "Whatcom Pass to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 13,
+       "note": "A long round-trip summit day: descend across snow below Phantom Peak's west face, cross a pocket glacier and bergschrund, climb a moderate snow finger to the southwest ridge, then …",
+       "fromTo": "Summit via the South Route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9,
+       "note": "Reverse the Challenger Glacier / Perfect Pass crossing back down to Whatcom Pass camp.",
+       "fromTo": "Descend to Whatcom Pass",
+       "section": "Descent"
+      },
+      {
+       "hrs": 6,
+       "note": "Trail miles back over Hannegan Pass to the Hannegan trailhead.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "pro_tips": [
+     "Camp on the Crooked Thumb Glacier moraine (~7,800 ft) to stage a lighter, faster summit push",
+     "Favor the Access Creek approach over the Luna Creek bushwhack",
+     "Budget roughly 6-7 hours up and 5-6 hours down from high camp",
+     "Carry 3-4 flukes/pickets — parties have placed four on the glacier section alone"
+    ],
+    "approach": "There are two real approach options for the South (Southwest) Route on Phantom Peak, and both are serious multi-day North Cascades bushwhacks — this is not a trail hike. Option one, the Luna Creek approach: from Ross Lake Resort, take the water taxi across Ross Lake (roughly $35, saves about 6 miles of paddling/road-walking) to the Big Beaver trailhead. From there it's about 14 miles of maintained, mostly flat, forested trail up the Big Beaver Creek drainage (through old-growth cedar groves and past beaver ponds/marshy sections) to Luna Camp, an established backcountry campsite where a NOCA wilderness permit is required. From Luna Camp the trail effectively ends; climbers leave the maintained tread and push cross-country up the Luna Creek drainage toward Phantom Peak's south side, gaining roughly 4,000+ ft over a few miles through some of the worst brush in the Cascades. Fred Beckey, on the first traverse through here in 1940, called it 'the worst imaginable struggle with flies, devil's club, willows, and alder' — modern parties confirm little has changed, reporting huckleberry, devil's club, vine maple and slide alder so dense that 0.5 mph is a good pace, plus heavy mosquito/fly pressure in summer. The creek itself must be forded in places; fords get harder (deeper, faster) the lower/farther downstream you are, so it's best to gain elevation out of the valley bottom as early as possible rather than fighting the brush along the creek itself. Water is abundant throughout (the creek and countless side-seeps), but hazard is really the terrain: no trail, no cairns, high fall-into-a-hole-in-the-brush risk, and real potential to get separated from a partner in the thick stuff (this has happened to real parties here). Above the brush line the drainage opens into subalpine meadow and talus below Phantom's south aspect. Option two, favored by several recent parties, comes from the north via Whatcom Pass: Hannegan Trailhead (3,100 ft) → Ruth Creek Trail → Chilliwack River Trail (includes a cable-car creek crossing) → Brush Creek Trail up to Whatcom Pass, then off-trail via the Whatcom Glacier and Perfect Pass to a base camp on the Crooked Thumb Glacier moraine. From that camp, the route to Phantom itself is a roughly 1,000-ft descending traverse east across snow/talus to the base of Phantom's broad southwest buttress, then up a snowfield to a saddle around 6,100 ft within the buttress — this saddle is effectively the start of the technical climbing. Whichever approach is used, expect 2-3 days of travel each way; the total round-trip distance (51.5 km / ~32 mi) reflects the Big Beaver/Luna Creek option's mileage.",
+    "approach_variants": [
+     {
+      "name": "Hannegan Pass, Whatcom Pass and Perfect Pass to a camp on the Crooked Thumb Glacier moraine",
+      "notes": "The northern option, favoured by several recent parties. From the Hannegan Trailhead at 3,100 ft, the Hannegan Pass Trail leads over the pass to the Chilliwack River Trail, which includes a cable-car crossing, then up the Brush Creek Trail to Whatcom Pass. From there the route leaves trail and goes off-trail via the Whatcom Glacier and Perfect Pass to a base camp on the Crooked Thumb Glacier moraine. Expect 2-3 days of travel each way.",
+      "season": "Late Jun-Aug",
+      "hazards": [
+       "A bergschrund on the summit snow finger, crossed via a slabby rock step",
+       "Somewhat rotten rock on the summit tower and gully section, with natural anchors only",
+       "Rockfall off the buttress walls onto the snow finger",
+       "A 1,000 ft descending traverse that has to be regained on the return",
+       "The Chilliwack cable-car crossing and the Whatcom Glacier traverse on the way in"
+      ],
+      "primary": true,
+      "baseFinding": "THE START OF THE CLIMBING IS A SADDLE INSIDE THE BUTTRESS, AT ABOUT 6,100 FT, AND YOU GET THERE BY LOSING HEIGHT FIRST. From the Crooked Thumb Glacier moraine camp, the way to Phantom is a roughly 1,000 FT DESCENDING TRAVERSE EAST across snow and talus to the base of Phantom's broad southwest buttress, then up a snowfield to a saddle around 6,100 ft WITHIN the buttress. That saddle is effectively the start of the technical climbing.\n\nSO THE TEST IN CLOUD IS THE SHAPE OF THE GROUND, NOT THE VIEW: you go DOWN and EAST for a thousand feet, then UP a snowfield, and you stop when the snowfield delivers you into a gap in a rock rib rather than onto open mountainside. A saddle inside a buttress has rock rising on both sides of you; open snow does not.\n\nWHAT GOING TOO FAR LOOKS LIKE: continuing the descending traverse east past the buttress toe drops you toward Luna Cirque and the ground the peak's other route uses, which is a different climb from a different camp.\n\nCONFIRM ON THE CLIMB: above the saddle the route takes a pocket glacier and snowfield to a bergschrund crossed by a slabby rock step, then a snow finger, then broken class 2-3 rock to a false summit and a short exposed step to the true summit. One bergschrund, one snow finger, one false summit. If you have crossed two schrunds you are not on this line."
+     },
+     {
+      "name": "Big Beaver Trail to Luna Camp, then the Luna Creek bushwhack up Phantom's south side",
+      "notes": "The line the recorded distance reflects. From Ross Lake Resort, take the water taxi across Ross Lake, roughly $35 and saving about 6 miles, to the Big Beaver trailhead. From there it is about 14 miles of maintained, mostly flat, forested trail up the Big Beaver Creek drainage through old-growth cedar and past beaver ponds to Luna Camp, an established backcountry site where a wilderness permit is required. From Luna Camp the trail effectively ends. Climbers leave the tread and push cross-country up the Luna Creek drainage toward Phantom's south side, gaining roughly 4,000 ft over a few miles through some of the worst brush in the Cascades. Modern parties report huckleberry, devil's club, vine maple and slide alder dense enough that half a mile an hour is a good pace, with heavy insect pressure.",
+      "season": "Late Jun-Aug",
+      "hazards": [
+       "Some of the worst brush in the Cascades, at roughly half a mile an hour, with devil's club and slide alder",
+       "Fords of Luna Creek that get harder the lower you are",
+       "High risk of falling into a hole hidden by brush, and of separating from a partner",
+       "Heavy mosquito and fly pressure in summer",
+       "No trail, no cairns and real disorientation on the way back down"
+      ],
+      "baseFinding": "IN THIS DRAINAGE THE NAVIGATION RULE IS ABOUT HEIGHT, NOT DIRECTION, AND IT IS THE ONE THING THAT MAKES THE DAY WORK. The creek must be forded in places, and FORDS GET HARDER THE LOWER AND FARTHER DOWNSTREAM YOU ARE. Gain elevation out of the valley bottom as early as you can rather than fighting the brush along the creek. If you are still beside running water after a couple of hours, you are on the losing line.\n\nARRIVAL, WHICH IS UNAMBIGUOUS EVEN WITH NO VISIBILITY: above the brush line the drainage OPENS into subalpine meadow and talus below Phantom's south aspect. The brush stopping is the signal. Nothing else in this valley changes character that completely.\n\nFROM THERE THE BASE TEST IS THE SAME ONE THE NORTHERN APPROACH USES: find the snowfield that leads up into a saddle at about 6,100 ft within the southwest buttress. That gap is where the technical climbing starts.\n\nA REAL RISK PECULIAR TO THIS APPROACH, RECORDED BECAUSE IT HAS HAPPENED: in brush this thick, parties have become separated from each other. Agree a regrouping rule before entering it, not during."
+     }
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Short summer weather window, changing snow conditions noted as a watch-out item",
+      "probability": "North Cascades alpine weather can shift quickly even in summer; changing snow conditions are a primary concern"
+     },
+     "exposure": "Consequential: remote location (existing hazards flags 'remoteness'), loose rock on Class 4 terrain, and long/complex approach mean a fall or injury carries serious self-rescue and evacuation implications",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route (no NWAC zone specifically covers the remote Picket Range interior; nearest general NWAC coverage is the West Slopes North zone, but NWAC forecasts run winter/spring only and do not apply to this Jul-Sep climbing season)",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Route crosses glacier/snow remnants on the approach and south side (per existing hazards: 'snow/glacier on approach'); crevasse hazard should be assumed present and evaluated in the field, though this is not a heavily glaciated route on the scale of larger North Cascades glaciers"
+    }
+   }
+  },
+  {
+   "id": "wa_luna_glacier",
+   "before": {
+    "road": {
+     "name": "North Cascades Highway (SR-20) to Ross Lake trailheads (via Ross Dam/water taxi) or the Access Creek/Thunder Creek trailheads near Diablo",
+     "status": "SR-20 is paved and generally open in summer climbing season",
+     "driveNote": "The Ross Lake Resort water taxi (about $35 one-way, cash, reservation recommended) cuts roughly 6 miles off the Big Beaver Trail approach; the Access Creek approach instead starts from a Thunder Creek-corridor trailhead off SR-20.",
+     "seasonalGate": "SR-20 closes seasonally between Ross Lake and Mazama, typically mid-November through April/May depending on snowpack — check the WSDOT pass report before a shoulder-season trip"
+    },
+    "approach": "Reaching Luna Cirque is the crux of the trip. The historical approach follows the Big Beaver Trail from Ross Lake (a $35 water taxi from Ross Lake Resort cuts about 6 miles off the hike) up to Luna Camp, then climbs steeply beside Luna Creek into the cirque — Fred Beckey himself described this bushwhack as 'the worst imaginable struggle with flies, devil's club, willows, and alder.' Most contemporary parties instead approach via Access Creek, which branches off that same Big Beaver Trail rather than a separate trailhead — parties continue on the maintained trail roughly 15-17.5 miles past Luna Camp to the unmarked Access Creek/Big Beaver Creek confluence, then leave the trail there to follow the Access Creek drainage (with an occasional bootpath) up into the cirque — a longer but far less brutal line than Luna Creek.",
+    "overview": "The Luna Glacier route is Phantom Peak's original 1940 first-ascent line, named for the small hanging glacier that clings to the peak's east face above Luna Cirque (not an officially named glacier, but the moniker stuck). It's a moderate snow-and-easy-rock outing by Pickets standards — Grade II, Easy 5th class — but its remoteness and glacier crux keep it a rarely repeated route.",
+    "access": {
+     "_raw": {
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry permit required for overnight camping in Picket Range",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "group_size_limit": "Standard party size; check with WIC for specifics in cross-country zones",
+      "permit_pickup_hours": "During peak season; call (360) 854-7245 for current hours",
+      "special_requirements": "Advanced wilderness skills required; Picket Range is extremely remote; reserved permits must be picked up by 11:00 AM PT on trip start date",
+      "wilderness_zone_name": "Picket Range / North Cascades wilderness",
+      "parking_pass_required": "Northwest Forest Pass required for day-use trailhead parking",
+      "permit_pickup_location": "North Cascades Wilderness Information Center, Marblemount, WA",
+      "seasonal_closure_dates": "Peak season June-September; permits 60% reserved, 40% first-come first-served"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry permit required for overnight camping in Picket Range",
+     "closures": "Peak season June-September; permits 60% reserved, 40% first-come first-served. Luna Fire closure, read from the NPS North Cascades fire-closures page on 17 September 2026 (page last updated 14 September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. This is a dated snapshot of a moving closure - re-read the NPS closure page before relying on it.",
+     "permitZone": "N/A",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass required for day-use trailhead parking",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.7277,
+      "lng": -121.0626,
+      "elev": 1480,
+      "name": "Ross Dam / Big Beaver Trailhead (Hwy 20)",
+      "note": "Car trailhead on Hwy 20 (Big Beaver Trail start); approach to Luna Cirque/Phantom Peak via Ross Lake, Big Beaver Trail, Access Creek, Luna Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.8190158,
+      "lng": -121.342631,
+      "elev": 8016,
+      "name": "Phantom Peak summit",
+      "note": "Phantom Peak's own summit, elev 8016 ft. Luna Glacier is an approach to Phantom Peak itself, not to Luna Peak — a different, nearby peak.",
+      "type": "Summit",
+      "distMi": 0
+     }
+    ]
+   }
+  }
+ ]
+}

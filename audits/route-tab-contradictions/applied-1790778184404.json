@@ -1,0 +1,26 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "before": {
+    "commitment": "II",
+    "alpine_grade": "II"
+   }
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "id": "wa_northwest_face_2",
+ "area_id": "wa_kangaroo_temple",
+ "stations": 2,
+ "allowRange": true,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 30,
+    "anchor": "north-facing bolted anchor",
+    "station": "The fixed anchors on the north side, reached by downclimbing from the summit.",
+    "notes": "Rappel 1 of 2, a full 30 m single-rope rappel. Some parties split the descent into three shorter rappels to avoid stuck ropes."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "anchor": "bolted anchor",
+    "station": "The next station down the north side.",
+    "notes": "Rappel 2 of 2, about 30 m, to the North Ridge notch."
+   }
+  ]
+ }
+}

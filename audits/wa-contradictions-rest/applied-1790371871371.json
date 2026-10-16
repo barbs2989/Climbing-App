@@ -1,0 +1,250 @@
+{
+ "applied": [
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach describes a different peak (Inspiration Peak via Terror Basin)"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "High point"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elevFt"
+   ],
+   "fact": "High point"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Permit fee / land manager"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_cost"
+   ],
+   "fact": "Permit fee / land manager"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "_raw",
+    "land_manager"
+   ],
+   "fact": "Permit fee / land manager"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_application_method"
+   ],
+   "fact": "Permit fee / land manager"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Total time for the climb"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Backcountry permit fee"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Big Beaver Trail distance to Luna Camp"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Big Beaver Trail distance to Luna Camp"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Col gained from Access Creek"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "before": {
+    "approach": "Inspiration Peak shares the same approach as West McMillan Spire: from Goodell Creek Campground, an unmaintained path climbs the Goodell Creek valley for roughly 4 to 4.5 miles before a steep, brushy climbers' track gains about 1,500 feet in under half a mile to reach the alpine notch above Terror Basin, the standard base camp for the Southern Pickets. From camp, reaching Inspiration Peak involves traversing heather and snow slopes and crossing a permanent snowfield near the col between it and West McMillan Spire before tackling a technical rock route (low 5th class up to 5.9 depending on the line). This is a serious multi-day expedition approach requiring a North Cascades National Park backcountry permit, off-trail routefinding through brush and talus, and glacier/snow travel gear.",
+    "road": {
+     "name": "Ross Lake water taxi (from Ross Dam TH off SR-20) to Access Creek, Southern Pickets",
+     "status": "SR-20 to Ross Dam Trailhead is paved; most parties use the Ross Lake Resort water taxi across the reservoir, then a multi-day cross-country approach into the Southern Pickets.",
+     "driveNote": "Roughly 3 hours from Seattle via SR-20 to Ross Dam, plus the water taxi crossing and a multi-day wilderness approach.",
+     "seasonalGate": "SR-20 closes seasonally (typically mid-fall to spring) for avalanche safety well east of here, near Washington Pass/Rainy Pass (~milepost 134); the Goodell Creek trailhead (~milepost 119, just west of Newhalem) is on the west side of that closure and is not affected by it."
+    },
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+      "note": "Standard access point for all Southern Pickets objectives via Hwy 20 near Newhalem; not route-specific beta, but no other approach is documented for this remote buttress.",
+      "type": "Trailhead",
+      "elevFt": 600
+     },
+     {
+      "lat": 48.7716,
+      "lng": -121.28356,
+      "elev": 7337,
+      "name": "Ed Wood Memorial Buttress",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 7337
+     },
+     {
+      "lat": 48.7716,
+      "lng": -121.28356,
+      "elev": 7337,
+      "name": "Ed Wood Memorial Buttress",
+      "type": "Summit",
+      "elevFt": 7337
+     },
+     {
+      "lat": 48.7716,
+      "lng": -121.28356,
+      "name": "Ed Wood Memorial Buttress / Plan 9 from Outer Space start",
+      "type": "Route",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "Free",
+      "land_manager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+      "seasonal_closure_dates": "Year-round access, but winter conditions may restrict access",
+      "permit_application_method": "No permit required for climbing; free self-issue permit if entering wilderness"
+     },
+     "fees": "N/A",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "closures": "Year-round access, but winter conditions may restrict access",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "before": {
+    "timing": {
+     "totalHrs": 2.5,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn departure from high camp (West Fury col or Pickell Pass) to cross snow and glacier terrain while it is still firm."
+    },
+    "access": {
+     "fees": "No park entrance fee; backcountry/wilderness camping permit required for all overnight stays (free, but a reservation fee applies for reserved permits via Recreation.gov).",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Wilderness/backcountry permit required year-round for overnight stays anywhere on the approach or in the range; obtained at the Wilderness Information Center in Marblemount (walk-up or Recreation.gov reservation).",
+     "closures": "Placing new fixed anchors/bolts is prohibited under the park's wilderness climbing moratorium (clean-climbing techniques required); SR 20 access road is closed seasonally each winter. Luna Fire closure, read from the NPS North Cascades fire-closures page on 17 September 2026 (page last updated 14 September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. This is a dated snapshot of a moving closure - re-read the NPS closure page before relying on it.",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park, within the Stephen Mather Wilderness",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "approach": "Drive WA-20 (North Cascades Highway) to the Ross Dam Trailhead (MP 134). Descend about 1 mile on the Ross Dam trail/service road to Ross Lake, then cross via the Ross Lake Resort water taxi (on-demand, ~$4-5/person) or by hiking/paddling around, and pick up the Big Beaver Trail north along the lake. Follow it roughly 11 miles to Luna Camp, then continue about 1.5 miles further to the Access Creek drainage; leave the trail and climb the brushy, moderately steep Access Creek valley (staying on its north side is recommended) to the open basin east of Luna Peak (~4,300 ft) — described as the easiest, least-brushy approach on the east side of the Pickets. From there, gain Luna Col/Access Creek Col and traverse cross-country and glaciated terrain over Luna Peak, East Fury and West Fury to reach the Swiss–Fury saddle. An alternate southern approach reaches Swiss via Bacon Creek Road, Porkbelly Ridge, Mystery Ridge, Jasper Pass, Pioneer Ridge and Mt. Crowder's NE ridge down to a camp at Pickell Pass, from which Swiss's south side is climbed directly.",
+    "approach_variants": [
+     {
+      "name": "The northern line: Access Creek and Luna Col, then the high traverse over Luna, East Fury and West Fury to the Swiss-Fury saddle",
+      "notes": "From the Ross Dam Trailhead at milepost 134 on WA-20, about a mile of trail and service road drops to Ross Lake, crossed by the resort water taxi or by paddling or walking round. Pick up the Big Beaver Trail north along the lake and follow it roughly 11 miles to Luna Camp, then about 1.5 miles further to the Access Creek drainage.\n\nLeave the trail and climb the brushy, moderately steep Access Creek valley, staying on its north side, to the open basin east of Luna Peak at about 4,300 ft. This is described as the easiest and least brushy approach on the east side of the Pickets. From there, gain Access Col and traverse cross-country and glaciated terrain over Luna Peak, East Fury and West Fury to reach the Swiss-Fury saddle.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A full traverse of both Fury summits simply to reach the saddle",
+       "Glaciated terrain between Luna Col and the Fury summits",
+       "One of the most remote positions in the range, with no independent descent",
+       "Very little published route detail, and the peak itself is imprecisely located"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE IS A SADDLE BETWEEN TWO NAMED SUMMITS AND YOU REACH IT BY HAVING CROSSED BOTH SUMMITS OF FURY. That is a hard test to fail and a hard one to pass: there is no way to arrive at the Swiss-Fury saddle by this line without having traversed West Fury, so if you have not climbed Fury, you are not there. ARRIVAL: a saddle is the low point between two rises. From it, this route climbs the southwest face, and the descent runs back down near the NORTHWEST ridge toward the same saddle. If the ground above you steepens into a face rather than a ridge, that is the route. WHY THERE IS SO LITTLE HERE, SAID PLAINLY: Swiss Peak has one described route and no first-ascent record, the peak itself is not precisely located, and nothing published locates a feature at the foot of the southwest face. What is locatable is the saddle and the ridge. Do not expect a cairn, a gully or a flake to confirm you; expect the shape of the col. WHAT GOING TOO FAR LOOKS LIKE: continuing northwest along the crest past Swiss takes you toward the ground the Northern Pickets traverse uses, with no easier way down on that side."
+     },
+     {
+      "name": "The southern line: Bacon Creek Road, Porkbelly and Mystery Ridges, Jasper Pass and Crowder's northeast ridge to Pickell Pass",
+      "notes": "The alternate, and the shorter of the two in spirit if not in effort. It reaches Swiss from the south via Bacon Creek Road, Porkbelly Ridge, Mystery Ridge, Jasper Pass, Pioneer Ridge and Mount Crowder's northeast ridge, down to a camp at Pickell Pass.\n\nThis line is off-trail for most of its length and is described only in outline, so treat the ridge sequence as the route rather than any particular tread.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A long off-trail ridge sequence with no maintained tread",
+       "No independent descent; exiting the range means committing to one of the long approach drainages",
+       "Very little published detail for either approach to this peak"
+      ],
+      "baseFinding": "FROM PICKELL PASS THE SOUTH SIDE OF SWISS IS CLIMBED DIRECTLY, AND THE TEST IS THAT YOU ARE GOING UP RATHER THAN ALONG. Camp is a heather bench at the pass; the climbing starts on the class 3 south side immediately above it. Parties on this line downclimb the same class 3 south side back to the bench, so the ascent and descent are the same ground, and a party that has to traverse to find its line has left the route.\n\nHOW TO KNOW YOU ARE AT PICKELL PASS RATHER THAN ANOTHER SADDLE ON THE SAME RIDGE SYSTEM: it is reached by descending Mount Crowder's NORTHEAST ridge. The last named summit before the pass is Crowder. If you have not been on Crowder, you have not arrived by this line.\n\nWHY THIS SIDE MAY BE THE BETTER CHOICE, AS A PLANNING FACT RATHER THAN A LANDMARK: the northern line requires traversing Luna, East Fury and West Fury. This one does not require crossing Fury at all. The cost is a long ridge sequence with no trail and no bailout."
+     }
+    ]
+   }
+  }
+ ]
+}

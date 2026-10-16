@@ -1,0 +1,553 @@
+{
+ "file": "r054.json",
+ "results": [
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Total elevation gain (car-to-summit)",
+   "verdict": "fixed",
+   "correct_value": "10500 (whole-outing cumulative gain of the 6-day traverse itinerary the page renders)",
+   "evidence": "The page's rendered trip plan is the full north-to-south traverse (Cascade Pass to Downey Creek) with a Lizard side-scramble; its days sum to 10,500 ft and its totalNote says ~10,500 ft. Published figures for the traverse itself are about 11,000 ft gain/loss over ~30 mi and 'more than 10,000 feet' of gain. 5,980 ft is only the net rise from the Downey Creek trailhead (~1,440 ft) to the 7,420 ft summit, not a whole-outing total.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+    "https://www.climbing.com/news/ptarmigan-traverse-in-14-5-hours/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Total elevation gain (car-to-summit)",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5980,
+     "value": 10500
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Cache Col elevation",
+   "verdict": "fixed",
+   "correct_value": "6,900 ft (6,903 ft)",
+   "evidence": "Cache Col is 6,903 ft (GNIS-derived figure); a guide service's traverse itinerary gives Cache Col as 6,900 ft. The waypoint's 6,903 is right; the bivy entry's 6,400 ft is ~500 ft low. The bivy entry's own note already says the figure is approximate, so it is set to 6,900.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Cache Col elevation",
+     "op": "set",
+     "column": "bivy",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 6400,
+     "value": 6900
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Waypoint distance chain splices two unconnected trailheads",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Confirmed real: waypoints[0] is NAMED and PINNED as the Downey Creek Trailhead (Suiattle River Road, FS elevation 1,440 ft), but its elev (3,600), its note ('End of Cascade River Road, 23 mi from Marblemount') and the next waypoint's directions (3.7 mi, ~1,800 ft to Cascade Pass) describe the Cascade Pass trailhead, which is the start of the itinerary's north-to-south traverse. Fixing it means either moving/renaming the pin (coordinates are out of scope) or rebuilding the waypoint list around the Downey Creek approach, and it is tied to the unresolved outing-shape question (traverse vs out-and-back) recorded separately. No patch written.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+   "verdict": "fixed",
+   "correct_value": "Suiattle River Road closed to motor vehicles at milepost 4 (order Apr 2, 2026 - Jan 1, 2028); Downey Creek Trailhead currently inaccessible due to multiple washouts. No official statement found that it remains reachable on foot/bike.",
+   "evidence": "The Forest Service closure alert puts the closure at milepost 4 (not 4.5), effective April 2, 2026 to January 1, 2028, and lists Downey Creek Trail 768 among the affected trails; the Forest Service trailhead page and the WTA hike page both say the Downey Creek Trailhead is 'currently inaccessible due to multiple washouts'. Neither official page says the trailhead remains reachable on foot or by bike, so bail's caution stands and the closures/road text is corrected to drop the unsupported foot/bike claim and the MP 4.5 figure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://www.wta.org/news/signpost/hiker-headlines-no-timed-entry-permits-at-mount-rainier-in-2026-suiattle-river-road-closure-north-cascades-permit-lottery-2-26-26"
+   ],
+   "patches": [
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "closed to motor vehicles at roughly MP 4.5 due to",
+     "replace": "closed to motor vehicles at milepost 4 due to"
+    },
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "; the Downey Creek trailhead itself remains reachable on foot or by bike beyond the closure, adding several miles each way.",
+     "replace": "; the Downey Creek trailhead beyond it is currently cut off by multiple washouts, so do not plan an exit that depends on it."
+    },
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "closed to motor vehicles at roughly MP 4.5 (washout",
+     "replace": "closed to motor vehicles at milepost 4 (washout"
+    },
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "; the Downey Creek trailhead beyond it is foot/bike accessible only.",
+     "replace": "; the Downey Creek trailhead beyond it is currently cut off by multiple washouts."
+    },
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "closed to vehicles at MP 4.5 since",
+     "replace": "closed to vehicles at milepost 4 since"
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Downey Creek Trailhead elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "~1,450 ft (1,440 ft)",
+   "evidence": "The approach prose gives the Downey Creek Trailhead as ~1,600 ft while approach_logistics.trailheadDirection says ~1,450 ft. The Forest Service trailhead page lists 1,440 ft, and a traverse report gives the route's low point as 1,400 ft (the Downey Creek trailhead end).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Downey Creek Trailhead elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "out of the Downey Creek Trailhead (~1,600 ft)",
+     "replace": "out of the Downey Creek Trailhead (~1,450 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Parking pass names the wrong road (Mountain Loop Highway)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass / interagency pass at the Downey Creek Trailhead on the Suiattle River Road",
+   "evidence": "access.parking_pass says the pass is required at 'Mountain Loop Highway trailheads', but this route's pass-requiring trailhead is Downey Creek on the Suiattle River Road (access.fees says so). The Forest Service trailhead page requires a recreation pass ($5/day or $30/year: NW Forest Pass, digital or interagency) there, and the WTA hike page says a Northwest Forest Pass or interagency pass is required.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek"
+   ],
+   "patches": [
+    {
+     "id": "wa_lizard_mountain_south_route",
+     "fact": "Parking pass names the wrong road (Mountain Loop Highway)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "required at Mountain Loop Highway trailheads",
+     "replace": "required at the Downey Creek Trailhead on the Suiattle River Road"
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Outing shape: out-and-back from Downey Creek vs one-way traverse from Cascade Pass",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, descent, descent_text, dist_km (23.34 km = the 14-15 mi one-way figure), outing_shape 'outback' and the primary approach variant describe an out-and-back from Downey Creek, and descent explicitly calls the full traverse 'a different outing'; but the itinerary, timing.sectionBreakdown and waypoints describe a 6-day one-way traverse from Cascade Pass to Downey Creek with a shuttle. Both outings exist (Lizard is scrambled from White Rock Lakes on the traverse), so this is an editorial choice of which outing the page describes, not a fact research can settle. No patch.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+    "https://www.mountainproject.com/route/116969398/ptarmigan-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Route between Itswoot Ridge and Lizard/White Rock Lakes named as the South Cascade Glacier",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach prose, the south approach variant, timing/itinerary day 5 and seasonal_hazards.crevasses say the route from Itswoot Ridge crosses the South Cascade Glacier to Lizard Col. Published traverse descriptions put the South Cascade Glacier col on the NORTH side (crossed from Le Conte to drop into White Rock Lakes, just west of Lizard Mountain), while the ground between White Rock Lakes and Itswoot Ridge goes via the Dana Glacier and Spire Col (7,760 ft), which the sibling bivy notes also say. Fixing it needs a rewrite of several prose fields rather than a value swap, so it is flagged, not patched.",
+   "sources": [
+    "https://www.mountainproject.com/route/116969398/ptarmigan-traverse",
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face",
+   "fact": "number and total length of rappels",
+   "verdict": "fixed",
+   "correct_value": "2 double-rope rappels: one to the Middle-South Gunsight notch, one into the moat at the base of the notch (about 4 on a single 60 m rope, per the existing rappels text)",
+   "evidence": "A first-hand East Face report: one double-rope rappel reached the notch between Middle and South Gunsight, and one more loose, dirty rappel reached the moat at the base of the notch. The East Face route page (7 pitches, 600 ft) likewise shows the descent ending with a rappel back into the moat at the base of the notch. Nothing supports four 55 m rappels (~220 m) off a ~180 m face; the rappel_detail table is removed and the '3-4 rappels on 50-60 m lines' wording replaced. Only one source gives an explicit count; the other confirms the line.",
+   "sources": [
+    "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html",
+    "https://www.mountainproject.com/route/106325768/east-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face",
+     "fact": "number and total length of rappels",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "(typically 3-4 rappels on 50-60m lines)",
+     "replace": "(2 double-rope rappels, or about 4 on a single 60 m rope)"
+    },
+    {
+     "id": "wa_east_face",
+     "fact": "number and total length of rappels",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Perform 3-4 rappels on 50-60 meter lines to descend the south face, which is protected from rockfall.",
+     "replace": "Make one double-rope rappel to the notch between Middle and South Gunsight, then a second, loose and dirty one into the moat at the base of the notch."
+    },
+    {
+     "id": "wa_east_face",
+     "fact": "number and total length of rappels",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "notes": "First rappel after traversing the summit ridge to the south-facing anchors.",
+       "anchor": "South-face rappel anchor (rockfall-sheltered)",
+       "lengthM": 55
+      },
+      {
+       "n": 2,
+       "notes": "Continuing down the south face.",
+       "anchor": "South-face rappel anchor",
+       "lengthM": 55
+      },
+      {
+       "n": 3,
+       "notes": "Continuing down the south face.",
+       "anchor": "South-face rappel anchor",
+       "lengthM": 55
+      },
+      {
+       "n": 4,
+       "notes": "Final rappel before navigating the crevasse field on the Chickamin Glacier back to camp.",
+       "anchor": "South-face rappel anchor",
+       "lengthM": 55
+      }
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face",
+   "fact": "whether this route requires aid climbing",
+   "verdict": "fixed",
+   "correct_value": "No aid; free climb to 5.10d on a standard rack",
+   "evidence": "The East Face route page lists it as 5.10d, 7 pitches, 5.9-5.10+ free climbing with a standard rack and no aid. A first-hand ascent report gives the pitches as .10b, .10c, .10d and .10a free climbing on natural pro with no pitons or aid. The single documented A1 point in this group is on the Gunrunner traverse near North Peak, a different route.",
+   "sources": [
+    "https://www.mountainproject.com/route/106325768/east-face",
+    "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html",
+    "http://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face",
+     "fact": "whether this route requires aid climbing",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "medium stopper set, 0.5-1 inch pitons for aid (minimal), 2-3 slings",
+     "replace": "medium stopper set, 2-3 slings"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face",
+   "fact": "Parking pass names another area's trailhead (Sunrise Mine TH / Mountain Loop Highway)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass / interagency pass at the Downey Creek Trailhead on the Suiattle River Road",
+   "evidence": "access.parking_pass cites the Sunrise Mine TH for Vesper Peak on the Mountain Loop Highway, while every other access/road field names the Downey Creek Trailhead on the Suiattle River Road. The Forest Service trailhead page requires a recreation pass ($5/day or $30/year) at Downey Creek, and the WTA hike page says a Northwest Forest Pass or interagency pass is required.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face",
+     "fact": "Parking pass names another area's trailhead (Sunrise Mine TH / Mountain Loop Highway)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak)",
+     "replace": "required at the Downey Creek Trailhead on the Suiattle River Road"
+    }
+   ]
+  },
+  {
+   "id": "wa_gunrunner",
+   "fact": "access._raw block describes a different area/trailhead",
+   "verdict": "fixed",
+   "correct_value": "Glacier Peak Wilderness; Downey Creek Trailhead (Suiattle River Road); Northwest Forest Pass/interagency pass there",
+   "evidence": "The Downey Creek Trail 768 leaves the Downey Creek Trailhead on the Suiattle River Road into Glacier Peak Wilderness, and a recreation pass ($5/day or $30/year: NW Forest Pass or interagency) is required there, per the Forest Service trailhead page and the WTA hike page. The Lake Serene/Bridal Veil trailhead, Mt. Baker Wilderness and Sunrise Mine/Vesper Peak references belong to other areas. The rendered parking_pass and permitZone are fixed, and the matching _raw fields are corrected so the blob no longer disagrees.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768"
+   ],
+   "patches": [
+    {
+     "id": "wa_gunrunner",
+     "fact": "access._raw block describes a different area/trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak)",
+     "replace": "required at the Downey Creek Trailhead on the Suiattle River Road"
+    },
+    {
+     "id": "wa_gunrunner",
+     "fact": "access._raw block describes a different area/trailhead",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "Alpine climbing area",
+     "value": "Glacier Peak Wilderness"
+    },
+    {
+     "id": "wa_gunrunner",
+     "fact": "access._raw block describes a different area/trailhead",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "wilderness_zone"
+     ],
+     "expect": "Alpine climbing area",
+     "value": "Glacier Peak Wilderness"
+    },
+    {
+     "id": "wa_gunrunner",
+     "fact": "access._raw block describes a different area/trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "_raw",
+      "group_size_limit"
+     ],
+     "find": "Mt. Baker Wilderness",
+     "replace": "Glacier Peak Wilderness"
+    },
+    {
+     "id": "wa_gunrunner",
+     "fact": "access._raw block describes a different area/trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass"
+     ],
+     "find": "required for Lake Serene Trailhead",
+     "replace": "required for Downey Creek Trailhead"
+    },
+    {
+     "id": "wa_gunrunner",
+     "fact": "access._raw block describes a different area/trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup"
+     ],
+     "find": "access via Lake Serene/Bridal Veil Trailhead",
+     "replace": "access via Downey Creek Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "whether late June is a good/best time to climb",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "July through September; late June only in an exceptional year",
+   "evidence": "season (Jul-Sep), seasonal_guidance.optimalWindow (mid-July to early September), monthBreakdown (June risky), climate and the June 'Considerable' avalanche rating all agree against best_season's and itinerary.cal's late-June framing. The late-June claim rests on a single party (June 29 - July 4, 2017); other documented ascents are in July (July 9; July 17-20, 2020) and August (2011). best_season is corrected and its source reference dropped; itinerary.cal is aligned.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+    "https://onehikeaweek.com/2020/07/20/agnes-mountain/",
+    "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html",
+    "http://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner"
+   ],
+   "patches": [
+    {
+     "id": "wa_gunsight_peak_standard",
+     "fact": "whether late June is a good/best time to climb",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Late June through September; late June-July is favored for firmer, more continuous glacier snow on the Chikamin approach (per 2017 trip reports), while",
+     "replace": "July through September; July is favored for firmer, more continuous glacier snow on the Chikamin approach, while"
+    },
+    {
+     "id": "wa_gunsight_peak_standard",
+     "fact": "whether late June is a good/best time to climb",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Most parties go around the late-June/early-July window when",
+     "replace": "Most parties go in July, when"
+    }
+   ]
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "recommended/actual start time from high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Confirmed real: turnaround advises leaving high camp 'commonly 4-5am', while timing.recommendedStart and the day-3 schedule start at ~7:00 AM. The one detailed published schedule (2017) broke the col camp in the morning, moved to the glacier bench and began the summit push later, summiting at 6:30 PM and returning after dark; another party (2020) says only that they started early. No source found for a 4-5am norm, and none that recommends 7:00 AM as a start rather than recording one party's camp-move day. No patch.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+    "https://trailcatjim.com/gunsight-peak-and-sinister-peak/",
+    "https://onehikeaweek.com/2020/07/20/agnes-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "rappel count on the descent",
+   "verdict": "not_a_contradiction",
+   "correct_value": "2-3 rappels depending on party/rope",
+   "evidence": "Two independent documented descents differ: a 2017 party made two double-rope (2x60 m) rappels using a directional to reach the snow finger in one pull, while a 2020 party made three rappels (from the top of the chimney, from a second station to the ledge above the glacier, and one more onto the snow), which this row's own approach variant also describes. descent's '2-3' spans both real counts.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+    "https://onehikeaweek.com/2020/07/20/agnes-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "this route's own summit location vs the area it's filed under",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Same summit: the main/Middle Gunsight Peak, 8,184-8,198 ft",
+   "evidence": "The standard route climbs the main summit of Gunsight Peak (8,198 ft), the tiny barstool horn; that main summit is the Middle Peak, 'the highest peak in the range, the Middle Gunsight'. A topo-derived list gives Gunsight Peak as 8,184 ft, matching the area's 8,185. So the route's 'Gunsight Peak summit' and the area's 'Middle Peak' are the same summit; the 13 ft elevation difference is within tolerance and the ~100 m pin offset is a coordinate matter out of scope.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+    "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/",
+    "https://listsofjohn.com/peak/48805",
+    "https://en.wikipedia.org/wiki/Gunsight_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "East-side alternative approach said to lead to Bachelor Meadows/Cub Lake",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Stehekin/PCT/Agnes Creek leads cross-country to the Blue Glacier on the range's east side, not to Bachelor Meadows/Cub Lake (which are on the west-side Downey Creek approach)",
+   "evidence": "access.closures says the east-side route via Stehekin and the PCT/Agnes Creek Trail leads to Bachelor Meadows/Cub Lake, but the row's own approach and waypoints place Bachelor Meadows and Cub Lake on the west-side Downey Creek/Bachelor Creek approach. A 2020 party took Stehekin + PCT/Agnes Creek to a high camp and reached Gunsight by the Blue Glacier; the East Face route page starts from the Blue Glacier; a 2011 party walked the Agnes Creek trail from Stehekin before going cross-country to the range.",
+   "sources": [
+    "https://onehikeaweek.com/2020/07/20/agnes-mountain/",
+    "https://www.mountainproject.com/route/106325768/east-face",
+    "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_gunsight_peak_standard",
+     "fact": "East-side alternative approach said to lead to Bachelor Meadows/Cub Lake",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "and the PCT/Agnes Creek Trail to Bachelor Meadows/Cub Lake.",
+     "replace": "and the PCT/Agnes Creek Trail, then cross-country to the Blue Glacier on the range's east side."
+    }
+   ]
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "Parking pass names the wrong road (Mountain Loop Highway)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass / interagency pass at the Downey Creek Trailhead on the Suiattle River Road",
+   "evidence": "access.parking_pass says 'Mountain Loop Highway trailheads' while access.fees and the road block name the Downey Creek Trailhead on the Suiattle River Road. The Forest Service trailhead page and the WTA hike page both require a Northwest Forest Pass or interagency pass at Downey Creek.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek"
+   ],
+   "patches": [
+    {
+     "id": "wa_gunsight_peak_standard",
+     "fact": "Parking pass names the wrong road (Mountain Loop Highway)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "required at Mountain Loop Highway trailheads",
+     "replace": "required at the Downey Creek Trailhead on the Suiattle River Road"
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_ridge",
+   "fact": "which approach/trailhead this route uses",
+   "verdict": "fixed",
+   "correct_value": "This route's own east-side approach (ferry to Stehekin, shuttle to High Bridge, PCT/Agnes Creek, then cross-country) is correct; the claim that it is the same approach as the East Face and Gunrunner pages (which describe the west-side Downey Creek approach) is removed",
+   "evidence": "A party that climbed the SW Ridge of Middle Gunsight reached the range by the Lake Chelan ferry to Stehekin, the Park Service bus and a few miles of trail before bushwhacking; another Gunsight party describes the boat to Stehekin and the 9-mile Agnes Creek trail. So the row's trailhead, road and prose are right, but the sibling East Face and Gunrunner pages describe the Downey Creek approach, so the 'same approach' cross-reference contradicts them and is dropped.",
+   "sources": [
+    "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/",
+    "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html",
+    "https://onehikeaweek.com/2020/07/20/agnes-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_sw_ridge",
+     "fact": "which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Same multi-day approach as the East Face and Gunrunner: Lady of the Lake",
+     "replace": "The east-side multi-day approach: Lady of the Lake"
+    }
+   ]
+  }
+ ]
+}

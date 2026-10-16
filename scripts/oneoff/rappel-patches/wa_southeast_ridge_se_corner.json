@@ -1,0 +1,38 @@
+{
+ "id": "wa_southeast_ridge_se_corner",
+ "area_id": "wa_mount_shuksan",
+ "stations": 3,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First of the gully rappels. A 60 m rope reaches between all the standard stations.",
+    "anchor": "fixed rap ring on webbing, or a slung horn",
+    "hazards": [
+     "The gully is a rockfall corridor, worse late in the season and when several parties are stacked in it."
+    ],
+    "lengthM": null,
+    "station": "The head of the central gully, just below the summit block after the short downclimb from the top."
+   },
+   {
+    "n": 2,
+    "notes": "Second gully rappel. With a 30 m rope, expect short downclimbs to link stations.",
+    "anchor": "fixed webbing or a slung horn",
+    "hazards": [
+     "Inspect the webbing before use; worn rings and slings are replaced only periodically."
+    ],
+    "lengthM": null,
+    "station": "A station midway down the central gully."
+   },
+   {
+    "n": 3,
+    "notes": "Last gully rappel, onto the snow at the top of the Sulphide Glacier. Late in the season, with more rock exposed, some parties add a fourth short rappel here.",
+    "anchor": "fixed station or a slung horn",
+    "lengthM": null,
+    "station": "The lower gully, near the base of the summit pyramid."
+   }
+  ],
+  "rappels": "Usually 3 rappels down the summit pyramid's central gully (two to four by snow cover); a 60 m rope reaches all stations",
+  "rappel_count_note": "Reports give two to four rappels down the summit pyramid's central gully, depending on snow cover: more snow means more downclimbing and fewer rappels. Three is the usual mid-season count, and the table lists those three. A 60 m rope reaches between all standard stations; lengths are not published."
+ }
+}

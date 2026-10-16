@@ -1,0 +1,1500 @@
+{
+ "batches": [
+  "b392.json",
+  "b393.json",
+  "b394.json",
+  "b395.json",
+  "b396.json",
+  "b397.json",
+  "b398.json"
+ ],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "name": "Blue Glacier (Standard Route)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "10"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "4:00-6:00 PM"
+      }
+     ],
+     "why": "The day-3 schedule runs from a 2-3 AM start to a 4-6 PM return (~14 hr) while the same day and timing state 10 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "2:00-3:00 AM from camp"
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "an early (4-5am) start is recommended to beat the queue"
+      }
+     ],
+     "why": "Two different recommended start times for the same summit day.",
+     "internal_resolution": "Itinerary schedule and timing agree on 2-3 AM; crowds is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length vs summit pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "122"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~100 ft summit-pyramid pitch"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "the single ~100 ft summit pitch"
+      }
+     ],
+     "why": "Climb length of 122 m (~400 ft) vs a single ~100 ft pitch described everywhere else.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "41.6"
+      }
+     ],
+     "why": "dist_km 28 (~17.4 mi) is a one-way figure while the itinerary totals ~41.6 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "name": "West Ridge",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "13"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "1:30-2:30 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "6:30-8:30 PM"
+      }
+     ],
+     "why": "Schedule runs ~17-18 hr from leaving Glacier Meadows to returning, while the day and timing state 13 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person"
+      }
+     ],
+     "why": "access.fees says no fee beyond entrance, but the overnight permit carries a nightly per-person fee (other Olympus rows state $6 + $8/person/night).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count scope (summit block in or out of the 7 pitches)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "The ridge itself gains roughly 600 ft over 7 pitches ... to the base of the final ~100 ft summit block"
+      },
+      {
+       "field": "pitch_detail[6]",
+       "says": "pitch 7: Final ~100 ft summit block via West Face (mostly class 3) or North Face (5.4)"
+      }
+     ],
+     "why": "Prose puts the ~100 ft summit block after the 7 ridge pitches; pitch_detail counts the summit block as pitch 7.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "42.6"
+      }
+     ],
+     "why": "dist_km 28 (~17.4 mi) is a one-way figure while the itinerary totals ~42.6 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Summit-day start time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "2:00-3:00 AM from camp"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Start summit day in pre-dawn darkness (3-4 AM)"
+      },
+      {
+       "field": "turnaround",
+       "says": "on busy weekends start at 4-5am because the block bottlenecks"
+      }
+     ],
+     "why": "Three different start windows (2-3 AM, 3-4 AM, 4-5 AM) for the same summit day.",
+     "internal_resolution": "timing and the itinerary schedule agree on 2-3 AM.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "10"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4].time",
+       "says": "5:00-6:00 PM"
+      }
+     ],
+     "why": "Schedule spans ~15 hr from camp and back, the day/timing say 10 hr.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "7"
+      },
+      {
+       "field": "waypoints[2].distMi (Glacier Meadows)",
+       "says": "17.2"
+      },
+      {
+       "field": "waypoints[4].distMi (summit)",
+       "says": "22"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "generally quoted as four to six miles and around 3,500 ft of gain each way"
+      }
+     ],
+     "why": "Waypoints give ~4.8 mi each way (~9.6 RT) and the camp note 4-6 mi each way, but the summit day is 7 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-block pitch count/length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The final 50-60 feet ... to reach the summit block belay ledge, then 50 feet of Class 5.3-5.4 rock to the true summit"
+      },
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "length_m",
+       "says": "24"
+      },
+      {
+       "field": "rappels",
+       "says": "roughly 80 ft"
+      }
+     ],
+     "why": "Beta describes two roped stretches totalling ~100-110 ft to a belay ledge and then the summit; the row lists 1 pitch of 24 m on an 80 ft block.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "High Hoh Bridge / ladder mileage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the High Hoh Bridge (13.2 mi) ... a fixed-rope ladder crossing a washout about 0.25 mile before camp"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the Olympus Guard Station and High Hoh Bridge near mile 9 ... A washed-out cliffside stretch around mile 16 is crossed on a fixed ladder"
+      }
+     ],
+     "why": "The High Hoh Bridge is placed at mile 13.2 in one field and near mile 9 in another; the ladder at ~17 mi vs ~mile 16.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / pass fields",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — Olympic National Park (Olympic Wilderness)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "N/A"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day)..."
+      }
+     ],
+     "why": "access says land manager and pass are N/A while sibling fields name NPS and an entrance fee.",
+     "internal_resolution": "land_manager/parking_pass are specific; the N/A values are placeholders.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.permit",
+       "says": "$8 per person per night for ages 16 and over, plus a $6 non-refundable reservation fee"
+      }
+     ],
+     "why": "fees says no fee beyond entrance; permit states nightly and reservation fees.",
+     "internal_resolution": "access.permit is specific.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "41.6"
+      }
+     ],
+     "why": "dist_km 28 (~17.4 mi) is a one-way figure while the itinerary totals ~41.6 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "name": "Summit Block — Northwest Edge Finish (variation)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Commitment grade of a summit-block variation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III; 5.4"
+      },
+      {
+       "field": "commitment",
+       "says": "Grade III"
+      },
+      {
+       "field": "approach",
+       "says": "Same as Blue Glacier/East Face route approach until reaching the summit block base."
+      },
+      {
+       "field": "itinerary",
+       "says": "Same as Blue Glacier standard route; variation only on summit block."
+      }
+     ],
+     "why": "A one-pitch finish variation on an otherwise identical Grade II trip is given Grade III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Small rock rack of 6-10 cams, sizes 0.4-2.0 inches"
+      },
+      {
+       "field": "gear[2]",
+       "says": "3 to 4 small-to-medium cams for the 5.3-5.4 finishing moves"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Consider bringing slightly larger cams (up to 2.5 inch)"
+      }
+     ],
+     "why": "6-10 cams vs 3-4 cams; max size 2.0 vs 2.5 inch for the same single pitch.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Traverse-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "13"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "The traverse requires 14-16+ hours of climbing from Glacier Meadows"
+      },
+      {
+       "field": "what_to_bring[4]",
+       "says": "High-calorie food for 16+ hours of climbing"
+      },
+      {
+       "field": "itinerary.days[2].schedule",
+       "says": "1:30-2:00 AM leave ... 7:00-9:00 PM back at Glacier Meadows"
+      }
+     ],
+     "why": "The day is stated as 13 hr but prose and the schedule give 14-19+ hr.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier Meadows to West Peak time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Time: 2-2.5 hours to summit from Glacier Meadows base."
+      },
+      {
+       "field": "itinerary.days[2].schedule[1]",
+       "says": "Morning — West Peak summit (after a 1:30-2:00 AM start)"
+      }
+     ],
+     "why": "2-2.5 hr from Glacier Meadows to the West Peak is inconsistent with the ~6+ hr morning implied by the schedule (and every other Olympus row).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "Start very early (2-3 AM from Glacier Meadows)"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "1:30-2:00 AM from camp"
+      }
+     ],
+     "why": "Two different start windows.",
+     "internal_resolution": "timing and the schedule agree on 1:30-2:00 AM.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cam sizes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "Small-to-medium cam rack (roughly 0.3-1, a #2 and #3 handy)"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "3-4 small-to-medium cams (approx BD C4 #0.4-2 range)"
+      }
+     ],
+     "why": "gear calls for a #3; the rack stops at #2.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "44.6"
+      }
+     ],
+     "why": "dist_km 28 (~17.4 mi) is a one-way figure while the itinerary totals ~44.6 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "name": "Summit Block — North Face Direct Finish (variation)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "11"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4].time",
+       "says": "5:00-6:30 PM"
+      }
+     ],
+     "why": "Schedule spans ~14.5-15.5 hr, stated as 11 hr.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Rock rack of 8-10 cams, sizes 0.4-1.5 inches"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Protect with three or four small-to-medium cams and a few nuts"
+      },
+      {
+       "field": "gear",
+       "says": "small rack"
+      }
+     ],
+     "why": "8-10 cams vs 3-4 cams for the same ~80 ft pitch.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Where the pitch's difficulty lies",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "with Class 5.4 climbing throughout"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "the few 5.3-5.4 moves come low, then it eases"
+      }
+     ],
+     "why": "Beta says 5.4 throughout; pitch detail says a few moves low, then easier.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Hike-out days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "typically with another night at Lewis Meadow or Elk Lake"
+      },
+      {
+       "field": "itinerary.days[3]",
+       "says": "Hike out to trailhead — 17.3 mi, 8 hr, one day"
+      }
+     ],
+     "why": "Descent text adds a night on the way out; the itinerary hikes all the way out in one day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "41.6"
+      }
+     ],
+     "why": "dist_km 28 (~17.4 mi) is a one-way figure while the itinerary totals ~41.6 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "name": "Standard Scramble",
+   "area": "Mount Pulitzer",
+   "contradictions": [
+    {
+     "fact": "Crux grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 scramble (Class 3-4 exposed on the final ridge to the true summit)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "Class 3-4, exposed"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "Class 2-3 exposed scrambling"
+      }
+     ],
+     "why": "The crux grade (Class 2-3) is lower than the final-ridge pitch (Class 3-4) the same row describes.",
+     "internal_resolution": "rock_grade and pitch_detail agree on Class 3-4 for the true summit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Target mid-July through mid-August"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through mid-August is the prime snow-free window"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Best window (late Jul-Sep)"
+      }
+     ],
+     "why": "Optimal window ends in September in one field and mid-August in others.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit fees",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "Park entrance fee"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "reserved in advance with a nightly per-person fee"
+      }
+     ],
+     "why": "fees lists only the entrance fee while the overnight permit carries a nightly fee.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Exit trailhead reachability",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[4]",
+       "says": "Elwha River Trail out to Whiskey Bend ... Hike out to the Whiskey Bend trailhead (12 mi)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "the Elwha-side Whiskey Bend Road is closed to vehicles ... adding several miles if exiting that way"
+      }
+     ],
+     "why": "The itinerary ends at Whiskey Bend as if a car is there; the road field says it is closed to vehicles, adding miles.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "name": "South Slopes",
+   "area": "Mount Queets",
+   "contradictions": [
+    {
+     "fact": "Route grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (scrambling)"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "2nd class"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "2nd class"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Mostly Class 2 walking/scrambling"
+      },
+      {
+       "field": "itinerary.days[2].schedule[3].detail",
+       "says": "Class 2 slopes to the top"
+      }
+     ],
+     "why": "Every described segment is Class 2 yet the route is graded Class 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche rating vs 'not covered'",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "does not cover this dry, off-season (Jul-Sep) scramble route"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "Considerable"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.October",
+       "says": "Moderate"
+      }
+     ],
+     "why": "Ratings are given for months the same field says no forecast covers.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "name": "South Slopes (Standard)",
+   "area": "Mount Seattle",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "name": "Glacier/Scramble Route",
+   "area": "Mount Tom",
+   "contradictions": [
+    {
+     "fact": "Which glacier the crux descent drops onto",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[1]",
+       "says": "Steep, loose rock and scree on the descent from the Olympus massif to the Hubert Glacier"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "The gully/slope down onto the Hubert Glacier"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "The descent off the massif to the White Glacier is steep, loose"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Steep descent (45+ deg) to White Glacier is crux"
+      }
+     ],
+     "why": "The crux descent is placed onto the Hubert Glacier in some fields and the White Glacier in others.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "best conditions and snow-bridge coverage for the Tom traverse are typically late June-August"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "best_season",
+       "says": "Late July through August is generally favored"
+      }
+     ],
+     "why": "The itinerary calls late June part of the best window; season starts in July and June is rated marginal.",
+     "internal_resolution": "season, seasonal_guidance and best_season agree on July/late July onward.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche rating vs no summer forecast",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "NWAC does not issue summer forecasts"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "Low"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Early-to-mid season (late June-July) ... higher avalanche ... risk"
+      }
+     ],
+     "why": "June is rated Low while the same row says no forecast exists and early season carries higher avalanche risk.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "33.8"
+      },
+      {
+       "field": "approach",
+       "says": "The round-trip distance (~69 km/43 mi)"
+      }
+     ],
+     "why": "dist_km 33.8 vs the approach's stated round-trip distance of ~69 km; the page shows both as the distance.",
+     "internal_resolution": "dist_km is one-way; itinerary totals ~42 mi.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "name": "Mount Wilder Scramble",
+   "area": "Mount Wilder",
+   "contradictions": [
+    {
+     "fact": "Route grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 2 (YDS)"
+      },
+      {
+       "field": "beta",
+       "says": "The Class 2 south ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "this is a class 2 walk-off scramble"
+      }
+     ],
+     "why": "Crux grade Class 2-3 vs Class 2 in rock_grade and the prose.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Direction from Camp Wilder to the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Camp Wilder ... climb north/northeast off-trail ... to gain the peak's south ridge"
+      },
+      {
+       "field": "waypoints[3] (Camp Wilder)",
+       "says": "lat 47.766733, lng -123.460105"
+      },
+      {
+       "field": "waypoints[6] (summit)",
+       "says": "lat 47.767725, lng -123.519805"
+      },
+      {
+       "field": "waypoints[4] (Upper Elwha Basin)",
+       "says": "lat 47.7762, 'below Mount Wilder's south face'"
+      }
+     ],
+     "why": "The waypoints put the summit ~2.8 mi due WEST of Camp Wilder and the 'south face' basin NORTH of the summit, contradicting the prose bearings.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].gainFt",
+       "says": "3300"
+      },
+      {
+       "field": "waypoints[3].elev (Camp Wilder)",
+       "says": "2300"
+      },
+      {
+       "field": "waypoints[6].elev (summit)",
+       "says": "5939"
+      },
+      {
+       "field": "overview",
+       "says": "its south aspect rises roughly 3,800 feet in under two miles"
+      }
+     ],
+     "why": "Camp Wilder 2,300 ft to the 5,939 ft summit is ≥3,639 ft net, more than the 3,300 ft day gain.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[1]",
+       "says": "Wet maritime snowpack / avalanche danger into early summer"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route ... only climbed in the dry late-July-September window"
+      }
+     ],
+     "why": "An avalanche objective hazard is listed while the avalanche section says N/A.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "name": "Southwest Slope via Marmot Pass",
+   "area": "Buckhorn Mountain",
+   "contradictions": [
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Buckhorn Wilderness permit at the trailhead"
+      },
+      {
+       "field": "access.permit",
+       "says": "No separate wilderness entry permit is required for day use."
+      }
+     ],
+     "why": "One field says a self-issue wilderness permit is needed, another that none is required for day use.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "July snow conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.July",
+       "says": "Trail and upper talus typically snow-free (optimal)"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Lingering snow/ice on the summit slope and at Marmot Pass, often into mid-July"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through early September"
+      }
+     ],
+     "why": "July is called typically snow-free and optimal while other fields say snow lingers into mid-July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "10.9"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "13.5"
+      }
+     ],
+     "why": "dist_km 10.9 (~6.8 mi) is a one-way figure while the itinerary totals ~13.5 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "name": "Sean's Route/Second Wind",
+   "area": "Inner Constance",
+   "contradictions": [
+    {
+     "fact": "Descent line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "The normal descent is a scramble off the north side, not a rappel line."
+      },
+      {
+       "field": "descent",
+       "says": "Descend via exposed ridge scrambling and a loose, sandy ledge system down into Avalanche Canyon"
+      }
+     ],
+     "why": "The descent is described as off the north side in one field and into Avalanche Canyon (east/southeast of the peak) in others.",
+     "internal_resolution": "descent, descent_text and watch_out agree on Avalanche Canyon.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "name": "Northwest Buttress",
+   "area": "Inner Constance",
+   "contradictions": [
+    {
+     "fact": "Home Lake to Boulder Shelter distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "Camping lower at Boulder Shelter ... at the cost of two miles and 400 ft each way"
+      },
+      {
+       "field": "approach",
+       "says": "Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles ... Home Lake at about 9.3 miles"
+      }
+     ],
+     "why": "The approach puts Boulder Shelter ~3 mi below Home Lake; the bivy note says two miles.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "name": "Standard Route (Northeast summit via Crystal Pass)",
+   "area": "Inner Constance",
+   "contradictions": [
+    {
+     "fact": "Route line named vs described",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Standard Route (Northeast summit via Crystal Pass)"
+      },
+      {
+       "field": "overview",
+       "says": "climbs out of Avalanche Canyon via a South Gully/snow-filled defile to the East Ridge ('Route 2A') rather than via nearby Crystal Pass"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "Lake Constance and Avalanche Canyon to the South Gully (primary)"
+      },
+      {
+       "field": "watch_out",
+       "says": "Crystal Pass crossing—bergschrund potential"
+      }
+     ],
+     "why": "The route name says 'via Crystal Pass' while the overview says the standard line does not go via Crystal Pass and the primary approach never crosses it.",
+     "internal_resolution": "Overview, beta, itinerary, waypoints and the primary variant all describe the Lake Constance / South Gully line.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rock quality on the summit ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "follow Class 2-3 scrambling on solid pillow basalt to the summit"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "Scramble on solid pillar basalt along the East Ridge"
+      },
+      {
+       "field": "watch_out",
+       "says": "Rotten rock and rockfall hazard throughout upper peak—pillow basalt severely weathered"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Notoriously loose, rotten Olympic pillow basalt"
+      }
+     ],
+     "why": "The East Ridge is called solid in beta/pitch_detail and severely weathered/rotten throughout the upper peak elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Drive distance to the washout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Vehicle-accessible road end at the 2002 washout (~9 mi from Hwy 101)"
+      },
+      {
+       "field": "access.closures",
+       "says": "at the washout, about 10.5 miles from Brinnon"
+      },
+      {
+       "field": "road.status",
+       "says": "Drive about 10.5 miles from US-101 at Brinnon"
+      }
+     ],
+     "why": "~9 mi vs ~10.5 mi from US-101 to the washout.",
+     "internal_resolution": "access and road agree on 10.5 mi.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "name": "Finger Traverse",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "June in season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "Snow/ice likely still coats the ledge ... risky"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "marginal"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jun-Sep. Residual snow in the South Chute makes it a far better climb"
+      }
+     ],
+     "why": "The season chip includes June, and the approach calls early snow better, while seasonal guidance rates June risky and July marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road distance to the old road end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[1].notes",
+       "says": "road-walk or bike roughly 5.5 miles past the Lake Constance turn-off to the old campground"
+      },
+      {
+       "field": "approach_variants[1].hazards[3]",
+       "says": "Roughly 6.5 miles of closed road at each end"
+      },
+      {
+       "field": "approach",
+       "says": "about a 5-mile road-walk ... to the ... Lake Constance climbers' trail"
+      }
+     ],
+     "why": "5 mi to the turn-off plus 5.5 mi past it (~10.5 mi) conflicts with 6.5 mi of closed road.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lake Constance waypoint distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].distMi (Lake Constance)",
+       "says": "2"
+      },
+      {
+       "field": "approach",
+       "says": "about a 5-mile road-walk ... then ... 1.8-2.2 miles to Lake Constance"
+      }
+     ],
+     "why": "The waypoint list, which starts from the washout trailhead, puts the lake at mile 2 although it is ~7 mi from that trailhead.",
+     "internal_resolution": "distMi 2 is measured from the climbers' trail, not the listed trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "15"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "18"
+      }
+     ],
+     "why": "dist_km 15 (~9.3 mi) is a one-way figure while the itinerary totals ~18 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "name": "Terrible Traverse",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Whether the traverse must be melted out",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (steep hard snow persists longest of any crux on the mountain)"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September (after the traverse melts out)"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "Excluded from the best-season window ... risky"
+      },
+      {
+       "field": "approach",
+       "says": "early-to-mid summer it's a hard, steep snow traverse best done with an ice axe and crampons"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Neither is the wrong condition; they are different climbs."
+      }
+     ],
+     "why": "Seasonal fields say wait until the traverse melts out (June excluded) while the route prose treats the hard-snow condition as a normal way to climb it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11.5"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM leave camp ... ~6:30 PM back at camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "per the existing 13-hr round-trip timing"
+      }
+     ],
+     "why": "The schedule and partner requirements give ~13 hr; the day and timing give 11.5 hr.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road distance to the old road end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[1].notes",
+       "says": "roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground ... about 6.5 miles and 1,900 ft of cumulative gain from the gate"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 5 miles of road-walking/biking ... to the unsigned Lake Constance climbers' trail"
+      }
+     ],
+     "why": "If the turn-off is 5 mi from the gate, 5.5 mi past it cannot be 6.5 mi from the gate.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "15"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "18"
+      }
+     ],
+     "why": "dist_km 15 (~9.3 mi) is a one-way figure while the itinerary totals ~18 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "name": "North Chimney (Standard Route)",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "June in season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "Outside the season; heavy lingering snow and avalanche hazard ... risky"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Sep; June snow makes the South Chute far pleasanter than late-summer scree"
+      }
+     ],
+     "why": "Seasonal guidance calls June 'outside the season' while the season chip, best_season and the approach all include June.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of trip days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "almost always climbed as a 2-day trip"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "the standard 2-day approach-then-summit itinerary"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day, 2-night trip is standard"
+      }
+     ],
+     "why": "2-day vs 3-day as the standard trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "12"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM leave camp ... ~7:30 PM back at camp"
+      }
+     ],
+     "why": "Schedule spans ~14 hr vs 12 hr stated.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Lake Constance trail gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~3,600 ft gain in about 2 miles"
+      },
+      {
+       "field": "approach",
+       "says": "gains roughly 3,200-3,400 ft in under 2 miles"
+      }
+     ],
+     "why": "3,600 ft vs 3,200-3,400 ft for the same trail.",
+     "internal_resolution": "approach, variant and pitch_detail agree on 3,200-3,400 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cat Ears location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[0]",
+       "says": "exposure on the Terrible Traverse and Cat's Ears"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "around the Cat's Ears near the summit"
+      },
+      {
+       "field": "approach",
+       "says": "a saddle/notch near 6,560-6,600 ft below the Cat Ears"
+      }
+     ],
+     "why": "The Cat Ears are placed near the summit in hazard fields but at the ~6,600 ft South Chute notch in the approach.",
+     "internal_resolution": "approach, climbing_route and baseFinding put them at the chute-top notch.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II-III"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "II"
+      }
+     ],
+     "why": "Grade II-III vs II.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip distance (dist_km vs itinerary)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "15"
+      },
+      {
+       "field": "itinerary.days[].miles (sum)",
+       "says": "18"
+      }
+     ],
+     "why": "dist_km 15 (~9.3 mi) is a one-way figure while the itinerary totals ~18 mi round trip; the page shows both as the route's distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

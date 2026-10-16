@@ -1,0 +1,127 @@
+{
+ "results": [
+  {
+   "id": "wa_spraying_mantis",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Season / when the access road is open",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_spraying_mantis",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Oct"
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "access.closures is null while the bivy entries say the Rachel Lake trailhead / Box Canyon road were inside a 2026 wildfire closure",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_alta_mountain_scramble",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": null,
+     "value": "Three Queens Fire area closure (order 06-17-03-2026-44): Rachel Lake Trail 1313, the Rachel Lake Trailhead and Box Canyon Road (FR 4930) are closed through October 31, 2026 unless the order is rescinded sooner. Check current Okanogan-Wenatchee closures before driving."
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Commitment grade: IV vs III",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_colchuck_peak_holsten_hilden",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "Grade III (Alpine); FA account graded Grade IV",
+     "value": "Grade IV"
+    }
+   ]
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Round-trip distance (dist_km vs. stated mileage)",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_lichtenberg_mountain_southeast_ridge",
+     "column": "itinerary",
+     "path": [],
+     "find": "roughly 4 to 7 miles round trip depending on where you leave the road, with about 2,100 to 2,600 ft of gain",
+     "replace": "about 7 miles round trip with about 2,100 ft of gain"
+    },
+    {
+     "op": "set",
+     "id": "wa_lichtenberg_mountain_southeast_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": 3.2,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "which tier (upper/lower) the route climbs",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_moss_out_for_harambe",
+     "column": "overview",
+     "path": [],
+     "find": "Mossy Loaf's lower tier",
+     "replace": "Mossy Loaf's upper tier"
+    }
+   ]
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "rappel/rope length: 30 m vs 60 m",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_tupshin_peak_scramble",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "plus a 60m rope for the crux pitch and descent rappels",
+     "replace": "plus a 30 m rope for the crux pitch and the short descent rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "gain_ft",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "gain_ft",
+     "path": [],
+     "expect": null,
+     "value": 5750
+    }
+   ]
+  }
+ ],
+ "held": []
+}

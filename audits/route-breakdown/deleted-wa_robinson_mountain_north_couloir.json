@@ -1,0 +1,229 @@
+{
+  "id": "wa_robinson_mountain_north_couloir",
+  "area_id": "wa_robinson_mountain",
+  "name": "North Couloir",
+  "discipline": "mountaineering",
+  "grade": null,
+  "grade_system": null,
+  "grade_num": null,
+  "pitches": null,
+  "length_m": 427,
+  "sort_order": null,
+  "stars": null,
+  "fa": null,
+  "lat": null,
+  "lng": null,
+  "aspect": "N",
+  "season": "May-Jun",
+  "description": null,
+  "gear": [
+    "Ice axe for the sustained snow couloir",
+    "Crampons for the steep, north-facing snow",
+    "Helmet for rockfall and icefall risk inside the couloir"
+  ],
+  "hazards": [
+    "Rockfall/wet-snow sluff hazard in the couloir once sun-warmed",
+    "Possible cornice at the top of the couloir",
+    "Sustained 35-50 degree snow climbing with real fall consequences",
+    "Extremely remote position, far off-trail with no realistic outside help"
+  ],
+  "verif": null,
+  "overview": "A moderately steep, north-facing snow couloir splitting Robinson's remote north face, gaining the summit ridge just below the top — one of the better ice-axe-and-crampon couloir climbs in the Pasayten.",
+  "beta": "The North Couloir climbs continuous snow up Robinson's remote north face at a sustained 35-50 degrees, finishing with a short scramble to the summit ridge just below the top, where it joins the standard Southeast Ridge for the descent. A 2005 party found no register entries suggesting an ascent since 2003, underscoring how rarely it's climbed.",
+  "turnaround": "Start early enough to climb the couloir while it's still in the shade — once the sun hits the face, loose rock and wet-snow sluffs begin sweeping the couloir.",
+  "auto_generated": false,
+  "alpine_grade": null,
+  "rock_grade": null,
+  "ice_grade": null,
+  "gain_ft": 7000,
+  "loss_ft": 7000,
+  "dist_km": null,
+  "max_angle": 50,
+  "rappels": null,
+  "commitment": null,
+  "face": "North Face",
+  "permit": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads.",
+  "comms": null,
+  "descent": "From the top of the couloir, scramble a short distance to the summit ridge, then descend via the standard Southeast Ridge scree/snow slope into the basin above the Beauty Creek tarn.",
+  "obj_haz": [
+    "rockfall once sun-warmed",
+    "wet-snow sluffs",
+    "possible summit cornice",
+    "sustained 35-50 degree snow",
+    "extreme remoteness/no cell coverage"
+  ],
+  "waypoints": [
+    {
+      "lat": 48.726768,
+      "lng": -120.575086,
+      "elev": 8729,
+      "name": "Robinson Mountain summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 8729
+    }
+  ],
+  "gpx": null,
+  "elev_pts": null,
+  "disciplines": null,
+  "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": 1,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Alpine start essential — climb the couloir before the sun hits the north face and begins loosening rock and wet snow."
+  },
+  "detailed_rack": "Ice axe and crampons for sustained 35-50 degree snow/neve; a helmet is essential given rockfall risk once the sun hits the couloir. The route has been soloed unroped on good neve, though a rope with a picket or two (or ice screws) would add security if conditions are firmer or icier than typical spring neve.",
+  "what_to_bring": [
+    "wilderness permit (self-issue at trailhead)",
+    "map and altimeter/GPS (remote, off-trail navigation to the saddle and couloir base)",
+    "sturdy mountaineering boots",
+    "sun protection"
+  ],
+  "pro_tips": [
+    "Climb it in late spring/early summer while the snow is still continuous and firm — it likely melts out to rock by mid-to-late summer.",
+    "Take an alpine start so you're through the couloir before the sun hits the face and starts loosening rock and snow.",
+    "Descend via the standard Southeast Ridge rather than reversing the couloir."
+  ],
+  "watch_out": [
+    "Loose rock and wet-snow sluffs once the sun warms the couloir — keep to one side and move efficiently.",
+    "A cornice can guard the top of the couloir and may require care to negotiate.",
+    "This is a very remote, rarely-traveled face — expect no other parties and no cell signal."
+  ],
+  "pro_needs": "No fixed protection; typically climbed unroped on good neve, but pickets or ice screws would provide security on firmer or icier snow.",
+  "best_season": "A continuous snow climb, best in May-June; the couloir likely melts out by late summer.",
+  "high_point_ft": 8729,
+  "aid_grade": null,
+  "approach": "From a backcountry camp several miles up the Robinson Creek Trail (past the 'Porcupine Camp' area, beyond which there is no maintained tread), leave the trail and climb roughly 2,000 ft cross-country to the saddle between Robinson Mountain and Devils Peak, then traverse east across snowfields below Robinson's north face to the base of the couloir.",
+  "descent_text": "Top out the couloir just below the true summit, scramble the short remaining distance to the top, then downclimb the Southeast Ridge route (the scree/snow slope dropping into the basin above the Beauty Creek tarn) rather than reversing the couloir.",
+  "bail": "Below the crux steepening, the couloir can be down-climbed; once committed higher up, retreat is slow and increasingly exposed to rockfall/wet-snow sluffs as the sun warms the face, so parties should commit early or turn back before the sun reaches the couloir.",
+  "pitch_detail": [
+    {
+      "grade": "Snow 30-35°",
+      "notes": "Lower snow fan leading into the couloir proper.",
+      "pitch": "1",
+      "lengthM": 91
+    },
+    {
+      "grade": "Snow/neve 40-50°",
+      "notes": "Main couloir climb on firm neve, front-pointing; the route's crux steepness with rockfall exposure once sun-warmed.",
+      "pitch": "2",
+      "lengthM": 305
+    },
+    {
+      "grade": "Class 2-3",
+      "notes": "Short scramble from the top of the couloir to the summit ridge.",
+      "pitch": "3",
+      "lengthM": 30
+    }
+  ],
+  "itinerary": "Typically done as a long single day from a backcountry camp partway up the Robinson Creek Trail: an early start, roughly six off-trail miles and 2,000+ ft of gain to the saddle and traverse to the couloir base, about an hour of steep front-pointing to gain the couloir's top, then a descent via the Southeast Ridge — one party reported roughly 14 miles and over 7,000 ft of gain/loss for the full day back to their mid-valley camp.",
+  "access": {
+    "fees": "None to enter; parking may require a Northwest Forest Pass or federal recreation pass at some Pasayten trailheads.",
+    "permit": "Free, self-issue wilderness permit required, available at the trailhead kiosk.",
+    "closures": null,
+    "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District), Pasayten Wilderness",
+    "passRequired": "Northwest Forest Pass / America the Beautiful pass recommended for trailhead parking.",
+    "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+    }
+  },
+  "road": {
+    "name": "Lost River Road / Robinson Creek Trail access, out of Mazama, WA",
+    "status": "Same low-elevation access road/trail as the Southeast Ridge route",
+    "driveNote": "Same Mazama-area access as the Southeast Ridge route; this route departs the maintained trail well up-valley, near 'Porcupine Camp'.",
+    "seasonalGate": null
+  },
+  "climate": {
+    "fall": null,
+    "spring": "Continuous snow/neve typical; conditions can still hold good climbing even in low-snowpack years.",
+    "summer": "Couloir likely melts out to rock/scree, losing its character as a snow climb.",
+    "winter": null,
+    "typical": "Best climbed while the couloir still holds continuous snow, generally before it melts out in summer.",
+    "forecastZone": null
+  },
+  "emergency": {
+    "notes": "Extremely remote, off-trail north face with no cell coverage; nearest EMS response is via Aero Methow Rescue Service and Okanogan County Search & Rescue — expect a long, difficult evacuation from this face.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA 98862 — (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA (nearest hospital to the Methow Valley/Mazama area)",
+    "sheriffDispatch": null
+  },
+  "lists": null,
+  "crowds": null,
+  "partner_requirements": null,
+  "seasonal_guidance": {
+    "optimalWindow": "May and June, while the north couloir holds continuous consolidated snow and before sun-warmed sluff and rockfall set in",
+    "monthBreakdown": {
+      "May": {
+        "reason": "The approach snowpack consolidates and the couloir holds continuous firm snow; an early start beats the afternoon sluff.",
+        "status": "optimal"
+      },
+      "July": {
+        "reason": "The couloir thins to runnels and exposed rock, and rockfall rises as the snow melts; hard ice may appear.",
+        "status": "marginal"
+      },
+      "June": {
+        "reason": "The trail below the saddle melts out, while the north-facing couloir still holds snow; the cornice at the top may still be there.",
+        "status": "optimal"
+      },
+      "April": {
+        "reason": "Snow reaches low on the Robinson Creek trail, the long cross-country climb to the saddle is avalanche terrain, and cornices are still large.",
+        "status": "risky"
+      }
+    }
+  },
+  "seasonal_hazards": null,
+  "data_quality": null,
+  "difficulty": null,
+  "approach_logistics": {
+    "peakLat": 48.726768,
+    "peakLng": -120.575086,
+    "trailhead": "Robinson Creek Trailhead",
+    "trailheadLat": 48.66227,
+    "trailheadLng": -120.54241
+  },
+  "sling_rack": null,
+  "alpine_draws": null,
+  "rope_type": null,
+  "rope_length_m": null,
+  "rope_note": null,
+  "ascender": null,
+  "corrections": null,
+  "gear_confidence": null,
+  "rappel_detail": null,
+  "rappel_count_note": null,
+  "rack": null,
+  "features": null,
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": null,
+  "approach_variants": null,
+  "climbing_route": null,
+  "bivy": [
+    {
+      "name": "Robinson Creek valley campsites",
+      "role": "main",
+      "type": "camp",
+      "notes": "The trailhead sits at about 2,560 feet just off the Harts Pass road, which means this is the low road into country whose summits stand near 8,500 — the elevation gain is the whole story. Robinson Mountain is climbed from here by walking a little over two miles to the Beauty Creek bridge and picking up an unmaintained path just beyond it, then leaving that for open slopes above; it is fourteen miles round trip with over six thousand feet of gain and only very fit parties do it in a day, so a first night at one of the lower established sites is the sensible plan. Carrying on up the valley reaches Robinson Pass at 6,220 feet in about nine and a half miles and drops into the Middle Fork Pasayten, which is the back door to Blackcap and Osceola for anyone who would rather not start from Slate Pass. The lower valley burns and reburns, so expect open hot walking, standing dead timber and variable blowdown, and note that this drainage was inside the 2026 fire closure. Ask the district about trail conditions before building a schedule around it.",
+      "water": "Good, and unusually so for this wilderness — the creek runs beside the trail for most of its length and most of the established sites hold water into the autumn. This is the one approach in the zone where water is not the limiting factor.",
+      "permit": "Free self-issue Pasayten permit at the trailhead kiosk, no quota and no reservation. Northwest Forest Pass or Interagency pass to park. Certified weed-free feed is required for stock and animals may not be tied directly to trees overnight or highlined within eight feet of them. Campfires are allowed in existing rings outside a burn ban, though the lower valley is dry and bans are common by late summer.",
+      "capacity": "Nine established sites are spread along the trail at roughly one and a half, two and a half, four, six, six and a half, seven and a half and nine miles from the trailhead, so a party can pick its distance rather than racing to one spot. Most take one or two tents. Stock parties use this valley heavily."
+    }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": null,
+  "name_search": "north couloir coulior",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+}

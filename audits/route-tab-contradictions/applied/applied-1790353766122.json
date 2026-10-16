@@ -1,0 +1,435 @@
+{
+ "applied": [
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Name/identity of the trailhead"
+  },
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance and gain"
+  },
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trail number of the approach trail (pitch_detail says #1394, every other field #1399)"
+  },
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Direction of the summit ridge from the saddle (descent_text says south ridge; bivy says scramble turns west)"
+  },
+  {
+   "id": "wa_j_tnar",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager: 'N/A' vs a named agency in the same access object"
+  },
+  {
+   "id": "wa_j_tnar",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass: access.passRequired 'N/A' vs access.parking_pass and permit requiring a pass"
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche hazard on the route (AVALANCHE panel says N/A, KNOWN HAZARDS/climate say otherwise)"
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Route class/difficulty (Class 2 vs Class 2-3)"
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Route class/difficulty (Class 2 vs Class 2-3)"
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Route class/difficulty (Class 2 vs Class 2-3)"
+  },
+  {
+   "id": "wa_la_bohn_peak_southwest_slopes",
+   "column": "overview",
+   "path": [],
+   "fact": "Direction of travel from La Bohn Gap to the summit"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "waypoints",
+   "path": [
+    4,
+    "name"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "waypoints",
+   "path": [
+    5,
+    "directions"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "which side of the summit the final slopes face (north vs south)"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Side of the summit plateau with the abrupt drop-off (seasonal_hazards.exposure says north; hazards, watch_out, bail, pro_needs say south)"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "fact": "Direction of the summit ridge from the saddle (descent_text says south ridge; bivy says scramble turns west)",
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    4,
+    "notes"
+   ],
+   "find": "the scramble turns west up the ridge",
+   "replace": "the scramble turns south up the ridge",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/iron-peak",
+    "https://pacificnwseasons.blogspot.com/2013/07/hiking-teanaway-iron-peak.html"
+   ],
+   "why": "not a string at bivy[4,\"notes\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-high fitness for a roughly 9-mile round trip with about 3,700 ft of gain, often done car-to-car in a day",
+      "packWeight": "Light day pack (water, layers, navigation) - no technical rack or overnight gear needed for the standard scramble"
+     },
+     "approachTime": "Roughly 2-3 hours from the Beverly Creek/Iron Peak trailhead to the saddle/scramble start, based on trip reports reaching the ridge saddle by mid-morning from a ~8am start",
+     "requiredSkills": [
+      "off-trail routefinding",
+      "loose-rock scrambling judgment",
+      "basic navigation/map reading above the trail",
+      "afternoon-thunderstorm awareness and turnaround discipline"
+     ],
+     "experienceLevel": "Comfortable with off-trail Class 2 scrambling and basic routefinding; prior scrambling or peak-bagging experience recommended since the route leaves the maintained Iron Peak Trail onto open slopes"
+    },
+    "pitch_detail": [
+     {
+      "grade": null,
+      "notes": "Maintained Trail #1394; not part of the technical routeFt figure (approach, not climbing/scrambling terrain).",
+      "pitch": "Trailhead to saddle",
+      "lengthM": null
+     },
+     {
+      "grade": null,
+      "notes": "~350 vertical feet of off-trail, unrated scrambling over loose serpentine rock to the 6,510 ft summit; no formal class rating is published.",
+      "pitch": "Saddle to true summit",
+      "lengthM": 106.7
+     }
+    ],
+    "descent_text": "Descend by reversing the ascent ridge and boot path back to the 6,100 ft saddle — this is a walk-off/scramble down-climb with no rappelling required (rappels: 0). From the summit, favor staying on the crest of the south ridge rather than dropping onto the loose scree/gully slopes to the west; the direct scree line below the summit is reportedly steep, loose, and slower than it looks, and the gully drop-in around 6,250 ft that is sometimes suggested is worse than simply staying on the ridge the whole way down. Once back at the saddle, rejoin the maintained Iron Peak Trail (No. 1399) and follow it down the rib, re-crossing onto the ridge tread and back down along the creek drainage to the De Roux Creek Campground trailhead. Watch footing on the rocky, uneven upper tread and the short switchbacks lower down; there is no water again until you near the trailhead creek crossing."
+   }
+  },
+  {
+   "id": "wa_j_tnar",
+   "before": {
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Maritime climate with heavy snowpack that lingers into early summer; expect cool mornings and variable afternoon conditions typical of the Cascade crest",
+      "probability": "Afternoon thunderstorms are possible in July-August in the Cascades; check forecasts before committing to the exposed ridge/scramble portion"
+     },
+     "exposure": "Off-trail scrambling on loose summit blocks creates moderate fall exposure near the top; the steep snow on the Kendall Katwalk traverse in early season adds real slip-and-fall consequence above the exposed drop below the trail",
+     "avalanche": {
+      "zone": "N/A - non-glaciated route climbed July-October outside the winter avalanche season; the Snoqualmie Pass NWAC zone covers nearby winter backcountry ski/couloir objectives (e.g. the Kendall Adventure Zone), not this summer scramble",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "rock_grade": "Class 2-3",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "~11 mi round trip on the PCT with ~2,700+ ft gain to the Katwalk, plus additional off-trail elevation gain/loss to the summit and back - a full, strenuous day (7.5 hr total)",
+      "packWeight": "Light daypack, roughly 15-25 lbs including layers, extra water, and (early season) traction/ice axe"
+     },
+     "approachTime": "~3-4 hrs of PCT hiking to reach the leave-trail point near the Katwalk before the scramble portion begins, within the 7.5 hr total",
+     "requiredSkills": [
+      "Class 2-3 scrambling",
+      "off-trail route-finding",
+      "loose rock/talus navigation",
+      "steep snow travel and self-arrest for early-season attempts on the Katwalk"
+     ],
+     "experienceLevel": "Hiking-fit partner comfortable with off-trail Class 2-3 scrambling, loose rock, and self-directed route-finding once you leave the PCT; the approach itself is a straightforward maintained trail"
+    }
+   }
+  },
+  {
+   "id": "wa_la_bohn_peak_southwest_slopes",
+   "before": {
+    "overview": "La Bohn Peak (6,585 ft) is a granite summit at the head of Necklace Valley in the eastern Alpine Lakes Wilderness, rising directly west of La Bohn Gap — a broad, tarn-dotted saddle around 5,900 ft between the peak and Mount Hinman (7,492 ft, 1.7 mi east). The standard line follows a climbers' path east/northeast from the gap up the ridge and face above La Bohn Lakes, gaining a final ~1,000 ft of Class 2 (occasional Class 3) talus and rock to the summit. It's rarely climbed on its own — most parties tag it as a half-day add-on from a Necklace Valley or Dutch Miller Gap-Williams Lake-Chain Lakes backpack, often paired with Mount Hinman."
+   }
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.5278,
+      "lng": -120.8205,
+      "elev": 3500,
+      "name": "Stuart Lake Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 3500,
+      "directions": "Drive Eightmile Road (FR-7601) to its end at the Stuart Lake/Colchuck Lake trailhead, about 3,500 ft. Overnight stays in the Colchuck Zone need a quota wilderness permit."
+     },
+     {
+      "lat": 47.4919578,
+      "lng": -120.8335801,
+      "elev": 5570,
+      "name": "Colchuck Lake",
+      "type": "Junction",
+      "distMi": 4.3,
+      "elevFt": 5570,
+      "directions": "Follow the Stuart Lake Trail #1599 about 2.5 miles to the signed fork where the Colchuck Lake Trail #1599.1 splits left and south. Continue roughly 1.8 miles more, crossing Mountaineer Creek and a boulder-hop stretch near the outlet, to the lake at 5,570 ft. This is the last easy, reliable water, so fill here because there is none above."
+     },
+     {
+      "lat": 47.4803,
+      "lng": -120.8206,
+      "elev": 7841,
+      "name": "Aasgard Pass",
+      "type": "Junction",
+      "distMi": 5.5,
+      "elevFt": 7841,
+      "directions": "Skirt the lake's south and east shoreline on a braided, cairned climbers' path over talus and slab to the foot of the obvious steep gully and headwall at the head of the lake. Aasgard gains roughly 2,000 ft in under a mile on dirt switchbacks, loose scree and boulder-hopping; cairns get knocked over and the path splits into several use trails, so keep re-picking the line toward the notch. Firm snow and ice can linger into July, making an axe and sometimes crampons worthwhile on what is otherwise a scramble."
+     },
+     {
+      "lat": 47.476,
+      "lng": -120.81,
+      "elev": 7400,
+      "name": "Core Enchantments",
+      "type": "Campsite",
+      "distMi": 6.5,
+      "elevFt": 7400,
+      "directions": "From the pass, cross the grey talus and glacial till of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets."
+     },
+     {
+      "lat": 47.47,
+      "lng": -120.815,
+      "elev": 7700,
+      "name": "Base of south slopes",
+      "type": "Junction",
+      "distMi": 7,
+      "elevFt": 7700,
+      "directions": "Near the far end of the meadows, watch for an unsigned climbers' path forking right, to the west, toward Little Annapurna. If you cross a stream and pass a toilet sign you have gone by the junction and should backtrack."
+     },
+     {
+      "lat": 47.4682,
+      "lng": -120.8143,
+      "elev": 8485,
+      "name": "Little Annapurna summit",
+      "type": "Summit",
+      "distMi": 7.3,
+      "elevFt": 8485,
+      "directions": "Above here it is a scatter of cairned, well-worn boot paths rather than a trail. Take the line of least resistance up the broad south-facing slabs and talus on the peak's east side, switchbacking and scrambling at low 3rd class at most. The true summit is the middle of three rocky high points along the crest."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail)",
+      "notes": "4.3 mi via the Lake Stuart Trail (2.5 mi) then the Colchuck Lake Trail (1.8 mi), gaining roughly 1,900 ft to the lake at 5,570 ft.",
+      "pitch": "Trailhead to Colchuck Lake"
+     },
+     {
+      "grade": "Class 2 (steep talus/boulder)",
+      "notes": "Gains roughly 2,270 ft in under a mile up a loose boulder-and-scree gully between Dragontail Peak and Little Annapurna; can hold hard snow/ice into summer.",
+      "pitch": "Colchuck Lake to Aasgard Pass"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Cross the open upper Enchantment basin near Isolation and Tranquil Lakes, then turn south/southwest toward Little Annapurna's northeast ridge.",
+      "pitch": "Aasgard Pass to the upper basin below Little Annapurna"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Ascend granite slabs and blocks on the peak's south side/slopes to the summit, following cairns; occasional Class 3 moves are possible depending on the exact line chosen. The true summit is the middle of three rocky high points.",
+      "pitch": "Upper basin to summit"
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "low 3rd class at most",
+      "label": "South slabs and talus to the summit",
+      "notes": "A scatter of cairned, well-worn boot paths rather than a trail: pick the path of least resistance up the broad south-facing slabs and talus on the peak's east/left side, switchbacking and scrambling to the 8,485-ft summit. Loose rock and rockfall potential on the final slopes, especially with parties above you; full sun and thunderstorm exposure on the open talus; no water past the Colchuck Lake outlet."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Aasgard Pass and the Core, snow-free",
+      "hours": "6-8",
+      "notes": "Stuart Lake / Colchuck Lake Trailhead at about 3,500 ft, Stuart Lake Trail #1599 for roughly 2.5 miles to the signed fork, then left/south on the Colchuck Lake Trail for another 1.8 miles to Colchuck Lake at 5,570 ft, around 4.3 miles in. That is the last easy, reliable water.\n\nSkirt the lake's south and east shore on a braided cairned path over talus and slab to the foot of Aasgard Pass, the obvious steep headwall at the lake's south end. The pass gains roughly 2,000 ft in under a mile on dirt switchbacks, loose scree and boulder-hopping. Cairns get knocked over and the path braids; there are cairns marking more than one line, so follow the most worn tread and keep climber's LEFT of the cliff bands. Drifting climber's right toward the waterfall terrain on Colchuck Peak's flank is how people get cliffed out and killed here. Near the top the path passes a small waterfall and climbs steeply beside a much bigger one — missing the turn there puts you on vertical rock.\n\nTop out at about 7,800-7,841 ft, roughly 5.3 miles from the car. Cross the grey talus and glacial till of the upper Core past Tranquil Lake and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets.\n\nLate September brings the larches, and with them the year's heaviest crowds and permit competition. A day scramble needs no lottery permit; camping in the Core does.",
+      "distMi": 5.3,
+      "gainFt": 4300,
+      "season": "late Jul-early Oct",
+      "hazards": [
+       "Aasgard Pass: cliffed-out terrain climber's right near the waterfalls, with fatalities on record",
+       "Misleading and duplicated cairns on the pass and on the peak itself",
+       "Loose rock and rockfall from parties above, on the pass and on the final slopes",
+       "No water past the Colchuck Lake outlet",
+       "Full sun and thunderstorm exposure on open talus above the pass — no shelter anywhere in the Core"
+      ],
+      "primary": true,
+      "baseFinding": "There are two separate 'find it' problems on this route and the first one is the trail junction, not the mountain.\n\nNear the FAR END of the meadows, watch for an UNSIGNED path forking RIGHT (west) toward Little Annapurna. It is a use-path, not tread. The unambiguous overshoot marker is downstream of it: if you cross a small stream AND pass a sign for the toilet, you have gone too far and need to come back. That pair — stream then toilet sign — is the single most useful navigational fact on this route, because the junction itself has nothing to see.\n\nFrom the pass at Aasgard, Little Annapurna lies to the SOUTHEAST and reads as a gently rolling hill rather than a peak, which is part of why people walk past the turn.\n\nThe second problem is the mountain itself, and the honest answer is that there is no single line. The 'route' is a scatter of well-worn boot paths over broad south-facing slabs and talus. Cairns are present, easy to lose, and mark more than one option. The working rule reported by everyone: take the path of least resistance up the peak's LEFT (east) side, switchbacking and scrambling, nothing harder than low 3rd class, to the summit at 8,485 ft.\n\nIf you find yourself on anything that feels like real climbing, you have drifted off the line — this is a walk-up with hands occasionally on rock, and any steepening means come back left and lower."
+     },
+     {
+      "name": "Aasgard Pass and the Core with snow",
+      "notes": "The same line with snow on the pass and on the upper slopes. An ice axe is worth carrying, and sometimes crampons, even though the peak itself is a scramble — the exposure is on Aasgard, not on Little Annapurna.\n\nEarly-season snow on the pass firms overnight and turns punchy through the day, hiding ice underneath; there is also a creek running beneath the talus that snow bridges. The pass is avalanche terrain in shoulder season.\n\nDescending the pass in the afternoon on softened snow, with tired legs and other parties below, is the well-documented incident scenario here. Glissade only where there is a genuine clean chute with a safe runout — by mid to late summer the pass is bare talus and there is nothing to glissade.",
+      "season": "late Jun-mid Jul, and shoulder season either side",
+      "hazards": [
+       "Avalanche terrain on Aasgard Pass in shoulder season",
+       "Creek running beneath the talus under snow bridges on the pass",
+       "Punchy afternoon snow over hidden ice",
+       "Patchy snow-to-slab transitions on the summit slopes",
+       "Uncontrolled glissade descending the pass — the classic afternoon incident here"
+      ],
+      "baseFinding": "With snow covering the Core, the unsigned right-hand fork toward Little Annapurna and the stream-then-toilet-sign overshoot marker are all buried or unreliable, so navigate by the lakes instead: from the top of Aasgard, travel between Isolation Lake and Tranquil Lake and then head SOUTH toward the broad rolling summit mass that sits southeast of the pass.\n\nOn the peak, snow simplifies the problem — the braided boot paths and contradictory cairns that make the summer scramble confusing are gone, and the broad south-facing slopes go directly. Keep to the LEFT (east) side of the mountain and take the easiest angle available.\n\nWhat to watch for instead: the transition from snow to bare slab, which happens patchily on a south-facing slope in early summer and is where an unroped slip becomes a slide."
+     }
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "A short summer-to-fall scramble best done July through October, with late September larch season especially scenic",
+      "probability": "Afternoon thunderstorms are a known risk on the exposed summit plateau — check forecasts and turn around early if storms are building"
+     },
+     "exposure": "Moderate — Class 2-3 talus/slab terrain; an abrupt drop-off on the north side of the summit plateau, so straying off-route in poor visibility or storm is the main fall hazard, compounded by loose underfoot rock throughout",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble climbed July-Oct, outside NWAC's typical Nov-Apr forecast season",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    }
+   }
+  }
+ ]
+}

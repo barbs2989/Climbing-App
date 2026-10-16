@@ -1,0 +1,573 @@
+{
+ "results": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "verdict": "unresolved",
+   "resolution": "none (no documented climb matches; owner must choose re-author as South Face or North Ridge)",
+   "summary": "No scramble or 'Southwest Slopes' route exists on Half Moon; the peak's documented lines are all technical rock climbs, and there is not enough sourced detail to rebuild this row as one of them, so it is left untouched for an owner decision.",
+   "evidence": "Every source found agrees Half Moon has no easy route: an encyclopedia entry rates the easiest route class 5+, the peak's route pages say there are at least three difficult and no easy routes, and the only documented lines are the South Face (5.9+ or 5.7 A0, Grade III, five pitches, approached over Kangaroo Pass and east below Wallaby into the basin south of the peak) and the North Ridge (5.7+, Grade III, seven pitches, from the deep notch north of the peak via the scree gully at about 2 miles), plus the modern Uncle Wehrly's Toupee (5.10-). The 1942 first-ascent record (the club annual's list of that season's first ascents) names only the peak and calls it a good rock climb, without the side climbed. The row's Class 3-4 scramble, the 5.6 open-book pitch, the belay ledge 200 ft below the summit and the summit rappel appear in no source. Re-authoring the row as the South Face would rest on a single route page for every pitch, gear and descent fact, and the row's itinerary follows the North Ridge approach while its approach text follows the South Face approach. Options for the owner: (a) re-author as the South Face (keeps the Kangaroo Pass approach text, waypoints and the 1942 FA framing out; needs grade 5.9+/5.7 A0, Grade III, 5 pitches, double ropes), (b) re-author as the North Ridge, or (c) hide the row. Until then the row keeps publishing a scramble that does not exist.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Half_Moon_(Washington)",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/south-face/163682",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/north-ridge/163686",
+    "https://www.mountainproject.com/area/120749906/half-moon",
+    "https://www.mountaineers.org/about/history/the-mountaineer-annuals/indexes-annuals-maps/the-mountaineer-1942/@@download/file/1942.pdf"
+   ],
+   "ops": [],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A (the Rainy Pass / Methow Pass / southeast-slope line) + rename",
+   "summary": "Keep this row as the long Methow Pass route up Mount Hardy's southeast slope, rename it to match, and take the short Swamp Creek south-ridge steps out of its route breakdown (that line stays listed as the alternative approach).",
+   "evidence": "Two write-ups of the Methow Pass line agree: leave the crest trail at Methow Pass, follow a climbers' path west onto talus toward the east ridge, stay high on the ridge, reach the saddle between the summit and an eastern knob (false summit), then Class 2-3 scrambling to the top; one titles it the Southeast Slope—South Face. The short line from the Swamp Creek pullout is a separate, well-documented south-ridge route (4-4.5 mi, ~4,100-4,200 ft; stay climber's right of the 5,200 ft cliff bands, leave the ridge at ~7,200 ft for a notch and a shallow summit gully). No source calls either line 'Southwest Slopes'. The row's waypoints, camps, itinerary, timing, approach, climbing_route, descent, gain and distance all describe the Methow Pass line, and its pins and camps cannot be moved, so that line is kept; only pitch_detail and beta described the Swamp Creek line. The Swamp Creek approach variant stays as the alternative, no longer marked primary, and its baseFinding no longer claims both approaches finish the same way. The encyclopedia entry confirms Class 3 as the easiest grade, Methow Pass to the east, and the 1933 first ascent (route not recorded, so the 'via this southwest line' claim is removed).",
+   "sources": [
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains/",
+    "https://www.thewildoutsiders.com/adventure-journal/golden-horn-and-tower-mountain",
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains-2/",
+    "https://www.mountaineers.org/activities/routes-places/mount-hardy-south-face",
+    "https://onehikeaweek.com/2015/05/02/mount-hardy/",
+    "https://en.wikipedia.org/wiki/Mount_Hardy_(Washington)"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_mount_hardy_snow_scramble",
+     "expect_name": "Southwest Slopes (Snow/Scramble)",
+     "name": "Southeast Slope via Methow Pass"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "aspect",
+     "path": [],
+     "expect": "SW",
+     "value": "SE"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "face",
+     "path": [],
+     "expect": "Southwest Slopes",
+     "value": "Southeast Slope, from Methow Pass"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "fa",
+     "path": [],
+     "find": " (first recorded ascent of the peak, via this standard southwest line)",
+     "replace": " (first recorded ascent of the peak)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "beta",
+     "path": [],
+     "expect": "The standard approach ascends the south ridge via brushy forest to the base of the ridge, then follows the ridge upward while staying climber's right to avoid cliff bands at mid-elevations. From approximately 7,200 feet, leave the ridge and scramble loose scree and granite blocks on the east side to reach a notch below the summit block. From the notch, traverse left and scramble a shallow gully to reach the summit. Snow extends the hiking window and covers loose talus early in the season.",
+     "value": "From Methow Pass, leave the crest trail and head west and southwest over open heather and talus benches to the peak's east ridge. Get onto the ridge as early as you can and stay close to its crest; the talus below it is loose and slow. Moderate sand, scree and talus lead to the saddle between the true summit and a lower eastern knob, and from there several hundred feet of blocky Class 2-3 scrambling reach the summit. Early in the season snow covers much of the loose talus."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Class 1-2",
+       "notes": "Brushy forest with boot trail; 1.2-1.5 miles of elevation gain through mixed conifer forest to ridge base. Faint trail; route-finding experience helpful.",
+       "pitch": "1: Forest Approach"
+      },
+      {
+       "grade": "Class 2+",
+       "notes": "Ridge crest and slabs; stay climber's right to avoid 5,200-foot cliff band. Loose blocks and moderate exposure. Approximately 1,000 feet of elevation gain.",
+       "pitch": "2: South Ridge to Cliff Zone"
+      },
+      {
+       "grade": "Class 2-3",
+       "notes": "Leave ridge at 7,200 feet, scramble loose scree and granite blocks on east side of ridge toward summit block notch. Loose, steep terrain with exposure. 800+ feet of gain.",
+       "pitch": "3: Scree and Blocks to Summit Block Notch"
+      },
+      {
+       "grade": "Class 2-3",
+       "notes": "Shallow gully scramble from notch to summit. Loose rock, ~100 feet of scrambling to peak. Final exposed section with good granite.",
+       "pitch": "4: Summit Gully"
+      }
+     ],
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "rope_note",
+     "path": [],
+     "find": "Southwest Slopes standard route is",
+     "replace": "The southeast-slope route is"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "corrections",
+     "path": [],
+     "expect": "None; SummitPost/Mountaineers route description confirms scramble-only terrain.",
+     "value": "None; the route is scramble-only terrain."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "southwest/southeast slopes",
+     "replace": "southeast slope"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "Rainy Pass, the crest trail to Methow Pass, and the east ridge",
+       "notes": "The long way, and the one that suits a two-day trip. From the large paved lot on the north side of SR-20 at Rainy Pass, follow the crest trail north as it climbs steadily through subalpine forest and larch parkland past Porcupine Creek — fill up there, it is the last easy water before a long dry stretch of switchbacks — to Cutthroat Pass. From the pass the trail drops toward Granite Pass and a saddle beyond it, where a steep snowfield often lasts into August and has caused slide-for-life falls, so carry an axe if you are early in the season. Beyond, the trail contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop, with a short side trail west into the Snowy Lakes basin for a higher and more scenic bivy under Tower Mountain and Golden Horn. From the meadow, stay on the crest trail north to the open plateau at Methow Pass and leave it there: travel west and southwest off-trail through open heather and talus benches toward the peak's east ridge, gain the ridge, and follow moderate sand, scree and talus — loose in places, with real route-finding — up to the saddle between the true summit and its lower false summit.",
+       "season": "Late June through September, with July through September giving the driest scree. June ascents work but the final slopes and gully still hold snow and want an axe and crampons. The highway is shut for avalanche control through the winter, which closes both approaches outright.",
+       "hazards": [
+        "loose scree, talus and blocky rock on the unmarked upper route, worst near the summit saddle and the final gully",
+        "a steep lingering snowfield just past Granite Pass that has caused slide-for-life falls into August",
+        "a long, mostly off-trail final leg with no marked line",
+        "afternoon thunderstorms and fast weather changes on exposed ridge crest and passes",
+        "wildfire smoke reducing visibility in late summer",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "longForm": true,
+       "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. Whichever approach you used, the climbing starts the same way. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+      },
+      {
+       "name": "Swamp Creek pullout and the south ridge",
+       "notes": "The short, steep alternative, and the way most day parties go. Start from the highway pullout at Swamp Creek and climb through brushy forest to the foot of the prominent ridge on the mountain's south side. Follow the ridge upward, staying on the crest where it lets you and moving climber's right to get around the cliff bands that block the crest around 5,200 ft — getting that traverse wrong is what turns parties back. Above the cliff bands the ridge opens out onto sand and scree and continues to the summit block. This side faces the sun and dries early, which is why it comes into condition before the crest-trail approach and why it turns into a loose, dusty grind by late summer; a snow finger on this flank can hold firm snow at a fairly steep angle into early summer, which speeds the ascent considerably for a party carrying an axe.",
+       "season": "Late June through September once the snow finger has stabilised or melted, with July and August driest. Earlier in the season the finger is a snow climb rather than a scramble.",
+       "hazards": [
+        "cliff bands around 5,200 ft where the crest is blocked and the bypass is on climber's right — the main route-finding failure on this side",
+        "a steep snow finger on this flank into early summer, with wet-slide and sluff potential",
+        "brushy forest on the lower ridge with no maintained tread",
+        "loose scree and blocky rock on the upper route and in the final gully",
+        "an exposed ridge crest with no shelter from afternoon thunderstorms",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "primary": true,
+       "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. Whichever approach you used, the climbing starts the same way. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+      }
+     ],
+     "value": [
+      {
+       "name": "Rainy Pass, the crest trail to Methow Pass, and the east ridge",
+       "notes": "The long way, and the one that suits a two-day trip. From the large paved lot on the north side of SR-20 at Rainy Pass, follow the crest trail north as it climbs steadily through subalpine forest and larch parkland past Porcupine Creek — fill up there, it is the last easy water before a long dry stretch of switchbacks — to Cutthroat Pass. From the pass the trail drops toward Granite Pass and a saddle beyond it, where a steep snowfield often lasts into August and has caused slide-for-life falls, so carry an axe if you are early in the season. Beyond, the trail contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop, with a short side trail west into the Snowy Lakes basin for a higher and more scenic bivy under Tower Mountain and Golden Horn. From the meadow, stay on the crest trail north to the open plateau at Methow Pass and leave it there: travel west and southwest off-trail through open heather and talus benches toward the peak's east ridge, gain the ridge, and follow moderate sand, scree and talus — loose in places, with real route-finding — up to the saddle between the true summit and its lower false summit.",
+       "season": "Late June through September, with July through September giving the driest scree. June ascents work but the final slopes and gully still hold snow and want an axe and crampons. The highway is shut for avalanche control through the winter, which closes both approaches outright.",
+       "hazards": [
+        "loose scree, talus and blocky rock on the unmarked upper route, worst near the summit saddle and the final gully",
+        "a steep lingering snowfield just past Granite Pass that has caused slide-for-life falls into August",
+        "a long, mostly off-trail final leg with no marked line",
+        "afternoon thunderstorms and fast weather changes on exposed ridge crest and passes",
+        "wildfire smoke reducing visibility in late summer",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "longForm": true,
+       "baseFinding": "THE SADDLE YOU ARE AIMING FOR SITS BETWEEN THE TRUE SUMMIT AND A LOWER KNOB TO ITS EAST — DO NOT STOP ON THE KNOB. From Methow Pass, get up onto the east ridge as early as you can and keep close to its crest; the talus slopes below it are loose and slow, and parties who angle across them lose time. Moderate sand, scree and talus lead to the saddle between the summit and the eastern false summit. From the saddle, several hundred feet of blocky Class 2-3 scrambling on rock that takes hands reach the top. If the highest ground you can reach still has something higher a short distance to the west, you are on the knob, and the saddle below it is where you cross to the true summit.",
+       "primary": true
+      },
+      {
+       "name": "Swamp Creek pullout and the south ridge",
+       "notes": "The short, steep alternative, and the way most day parties go. Start from the highway pullout at Swamp Creek and climb through brushy forest to the foot of the prominent ridge on the mountain's south side. Follow the ridge upward, staying on the crest where it lets you and moving climber's right to get around the cliff bands that block the crest around 5,200 ft — getting that traverse wrong is what turns parties back. Above the cliff bands the ridge opens out onto sand and scree and continues to the summit block. This side faces the sun and dries early, which is why it comes into condition before the crest-trail approach and why it turns into a loose, dusty grind by late summer; a snow finger on this flank can hold firm snow at a fairly steep angle into early summer, which speeds the ascent considerably for a party carrying an axe.",
+       "season": "Late June through September once the snow finger has stabilised or melted, with July and August driest. Earlier in the season the finger is a snow climb rather than a scramble.",
+       "hazards": [
+        "cliff bands around 5,200 ft where the crest is blocked and the bypass is on climber's right — the main route-finding failure on this side",
+        "a steep snow finger on this flank into early summer, with wet-slide and sluff potential",
+        "brushy forest on the lower ridge with no maintained tread",
+        "loose scree and blocky rock on the upper route and in the final gully",
+        "an exposed ridge crest with no shelter from afternoon thunderstorms",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+      }
+     ]
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A (the 2017 West Ridge, 'Bring The Noise'); east-ridge content removed because the Southeast Route row already covers that line",
+   "summary": "Keep this row as the 2017 West Ridge of Ottohorn and replace the parts that described the ordinary east-ridge scramble, which already has its own page.",
+   "evidence": "The 2017 first-ascent report is the only record of the West Ridge: from a Crescent Creek Basin camp the party hiked west below the spires to the crest saddle just east of West Peak, then climbed east along the crest over two previously unclimbed sub-summits (Beep and Honk) with belayed climbing to 5.8 and a couple of 5.9 sequences above the Honk-Ottohorn notch, a double-rope rappel off Beep, a second rappel at a notch on the upper ridge, an unplanned bivouac, low-fifth-class to the summit, then a rappel off the summit ridge, the Ottohorn-Himmelhorn gully with a rappel above a giant chockstone, and face-in snow downclimbing to the basin; they named it Bring The Noise and called the rock sometimes loose, sometimes good. The 1961 first ascent and later parties climbed the east ridge from the Ottohorn-Himmelhorn col (Class III-4, a 5.7 variation), which is the sibling Southeast Route row. Keeping this row as the east ridge would duplicate that row, so the row keeps its West Ridge identity and every field that described the east ridge is rewritten. Everything written here rests on the single first-ascent report, because no second ascent is recorded; the overview's former 'grade not recorded' was itself wrong.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "aspect",
+     "path": [],
+     "expect": "S",
+     "value": "W"
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "face",
+     "path": [],
+     "expect": "Crescent Creek Spires — south side, from Crescent Creek Basin via the Ottohorn-Himmelhorn (Otto-Himmel) col",
+     "value": "West ridge — the Southern Pickets crest from the saddle just east of West Peak, over the sub-summits Beep and Honk"
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "fa",
+     "path": [],
+     "expect": null,
+     "value": "July 2017 (first ascent of the route and of the sub-summits Beep and Honk)"
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "overview",
+     "path": [],
+     "expect": "A 2017 first-ascent line up Ottohorn's west ridge, climbed during the same outing that established two nearby new routes ('Beep' and 'Honk') in the Southern Pickets. Its grade, pitch count and length are not recorded.",
+     "value": "A long ridge traverse to Ottohorn's summit, first climbed in July 2017 and named Bring The Noise. It follows the Southern Pickets crest east from the saddle just east of West Peak, over two sub-summits, Beep and Honk, that had never been climbed before. The belayed climbing runs mostly up to 5.8, with a couple of 5.9 sequences on the step above the Honk-Ottohorn notch, and the ridge needs two rappels on the way. The position and views are exceptional and the rock is mixed, some of it loose. The first party was benighted on the ridge short of the summit. The ordinary way up Ottohorn is the separate east ridge from the Ottohorn-Himmelhorn col."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "expect": "Documented by a single 2017 first-ascent trip report — no grade, pitch count, or length is recorded, so treat all difficulty and gear information as unknown.",
+     "value": "Only one ascent is recorded, so there is no established pitch count, length or fixed anchor on the ridge; the first party found it slower than expected and was benighted short of the summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "beta",
+     "path": [],
+     "expect": "Established alongside two other new Southern Pickets routes in July 2017; beyond the trip-report title and date, no further route beta (grade, protection, or descent) is publicly available.",
+     "value": "From a Crescent Creek Basin camp, hike west below the spires and gain the crest at the saddle just east of West Peak. Follow the crest east: easy ground turns into a defined rock crest leading to the base of Beep, the first tower. Belayed pitches climb Beep — a steeper, somewhat heathery start, then thin cracks on a lichen-covered face and exposed face climbing past a rock horn. Traverse Beep's crest and make a double-rope rappel from a rock obelisk to just below the Beep-Honk notch. A rope-stretching pitch of the best climbing on the route reaches Honk's summit; downclimb delicately and traverse to the notch below Ottohorn. From that notch, break right around the corner up steep steps, then work back to the crest through a couple of 5.9 sequences. Farther along, a notch on the ridge forces another rappel, and low-fifth-class climbing leads to the summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 3-4 (a 5.7 variation exists on the north side of the summit blocks)",
+     "value": "5.9 (belayed climbing mostly up to 5.8, with a couple of 5.9 sequences)"
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Snow / small glacier, moderate",
+       "notes": "From camp at roughly 6,200 ft, climb snow and small glacier slopes northwest toward the notch between Ottohorn and Himmelhorn. About an hour from a Crescent Creek Basin camp. Rope up for glacier travel; crampons and axe. Early season this is a straightforward snow plod, late season it becomes bare ice and rubble.",
+       "pitch": "Section 1 — Crescent Creek Basin to below the col",
+       "lengthM": 305
+      },
+      {
+       "grade": "Steep snow, or loose low 5th class late season",
+       "notes": "The transition from snow to rock at roughly 7,400 ft. Trivial when snow-filled; by August the moat can be overhanging and the exit onto the col can require loose fifth-class moves. The south (Crescent Creek) side is markedly friendlier than the north. Scout the crossing here for the descent.",
+       "pitch": "Section 2 — bergschrund / moat and exit onto the Otto-Himmel col",
+       "lengthM": 60
+      },
+      {
+       "grade": "Class 3",
+       "notes": "From the col, blocky scrambling west up the ridge crest on Skagit Gneiss. Most parties move unroped. Good holds interspersed with detached blocks — keep the party out of each other's fall line.",
+       "pitch": "Section 3 — lower east ridge",
+       "lengthM": 75
+      },
+      {
+       "grade": "Class 3-4 (or 5.7 variation on the north side)",
+       "notes": "The final step to the summit at 7,840 ft. Graded Class III by the 1961 first-ascent party and Class 4 by the 2003 enchainment party. In 2011 the direct finish was found to be an active fresh-rockfall zone about 30 ft below the ridge; that party avoided it by moving around the corner onto two juggy 5.7 pitches. Judge it on the day and rope up if there is any doubt.",
+       "pitch": "Section 4 — summit blocks",
+       "lengthM": 60
+      }
+     ],
+     "value": [
+      {
+       "pitch": "Section 1 — crest saddle east of West Peak to the base of Beep",
+       "grade": "Easy ground, then simul-climbing",
+       "notes": "Hike east along the crest until it becomes a defined rock crest; one long simul-climbed pitch reaches the base of Beep, the first tower."
+      },
+      {
+       "pitch": "Section 2 — Beep",
+       "grade": "To 5.8",
+       "notes": "A steeper, somewhat heathery pitch starts the tower; the next climbs thin cracks on a lichen-covered face to exposed face climbing past an oddly shaped rock horn; one more pitch reaches Beep's summit, then an intricate pitch traverses its crest."
+      },
+      {
+       "pitch": "Section 3 — rappel into the Beep-Honk notch",
+       "grade": "Double-rope rappel",
+       "notes": "Rappel from a rock obelisk on Beep's crest to just below the notch between Beep and Honk."
+      },
+      {
+       "pitch": "Section 4 — Honk",
+       "grade": "To 5.8",
+       "notes": "A rope-stretching pitch, some of the best climbing on the route, straight to Honk's summit."
+      },
+      {
+       "pitch": "Section 5 — Honk to the Ottohorn notch",
+       "grade": "Delicate downclimb",
+       "notes": "Downclimb carefully off Honk's summit and traverse to a comfortable belay in the notch below Ottohorn."
+      },
+      {
+       "pitch": "Section 6 — Ottohorn's west step",
+       "grade": "5.9",
+       "notes": "Break right around the corner and follow steep steps upward, then a pitch with a couple of 5.9 sequences works back to the ridge crest."
+      },
+      {
+       "pitch": "Section 7 — upper ridge to the summit",
+       "grade": "Low 5th class, one rappel",
+       "notes": "A traversing pitch along the crest reaches a notch that has to be rappelled; the rappel lands in a moat behind a snowbank. Low-fifth-class climbing then leads to Ottohorn's summit."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "climbing_route",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "class": "3",
+       "label": "Scramble from the Himmelhorn-Ottohorn col",
+       "notes": "From the col the summit is reported as easy scrambling — most accounts call the peak class 3, with a short class 4 step, and describe it as one of the few Southern Picket summits that is not fifth class. Parties have climbed it from the col in roughly an hour round trip, some without taking rope or rack out of camp. Picket rock is broken and the col itself is loose, so helmets and careful block-testing matter more than the grade suggests; the col is also the retreat point, and getting back down into Crescent Creek Basin late in the season can be harder than the scramble above."
+      },
+      {
+       "n": 2,
+       "class": "5.7",
+       "label": "Rockfall scar below the summit ridge",
+       "notes": "At least one party found the easy line broke into a fresh rockfall zone about 30 ft below the summit ridge and backed off rather than cross it, returning with a rope and climbing a roped alternative of about two pitches of juggy 5.7 to the top. Treat this as conditions-dependent rather than fixed: the scar is recent enough that the terrain here may have changed again, and a scramble party arriving without gear may find no acceptable line through the unstable blocks. Carry enough to retreat or to protect a short 5th-class variation, and do not commit to the last 100 ft until you can see it."
+      }
+     ],
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "descent",
+     "path": [],
+     "expect": "Downclimb the east ridge back to the Ottohorn-Himmelhorn col, then descend the snow south into Crescent Creek Basin and reverse the approach over the Barrier.",
+     "value": "Rappel off the summit ridge to third-class ground, scramble down into the gully below the Ottohorn-Himmelhorn col, rappel from the station above the giant chockstone, and downclimb the snow gully south into Crescent Creek Basin; then reverse the approach over the Barrier."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Reverse the east ridge — 200-250 ft of blocky Class 3 with a short Class 4 step, downclimbed by most parties. If you climbed the 5.7 variation on the north side of the summit blocks, one or two single-rope rappels off slung blocks put you back on the ridge crest; back the anchor up, because the rock here has proven itself capable of moving. From the Otto-Himmel col descend the snow and glacier slopes south back into Crescent Creek Basin. The critical detail here is the moat and bergschrund where the snow meets the rock: it is a non-event when snow-filled in early season and can become an overhanging pit by August. One party descending the equivalent feature on the north side had to jump a large overhanging moat and then climb out the far side with an ice axe. Scout the crossing on the way up and remember where it was; late in the season parties rappel this upper section from fixed anchors. Do NOT descend north out of the col unless you are deliberately continuing toward the Mustard Glacier and Picket Pass — that side takes multiple rappels off improvised anchors down a broken couloir and glacier. From Crescent Creek Basin, recross the Barrier at about 6,100 ft (the steep grassy ledges are considerably worse downhill-facing and tired), traverse Terror Basin at roughly the 6,000 ft contour, then drop the 5,000 ft climbers' path to the stone arrow at 1,700 ft and follow the old roadbed out to Goodell Creek. Give the descent of the climbers' path real respect — it is steep, loose, brushy and hard on knees, and the exit is where most parties are moving slowest.",
+     "value": "Do not reverse the ridge. From the summit, rig a rappel off the summit ridge down to third-class terrain; choose the line with the pull in mind, because a rope jammed here would mean leading back up to free it. Scramble down into the gully below the Ottohorn-Himmelhorn col and rappel from the station above the giant chockstone; the anchor is not maintained, so inspect and back it up. Early in the season snow fills this gully; later, as the snow melts back, the top has moats that parties rappel from fixed anchors before kicking down the remaining snow. Below, downclimb the snow gully facing in to Crescent Creek Basin. Do NOT descend north out of the col unless you are deliberately heading toward the Mustard Glacier and Picket Pass — that side takes multiple rappels off improvised anchors down a broken couloir and glacier. From Crescent Creek Basin, recross the Barrier at about 6,100 ft (the steep grassy ledges are considerably worse downhill-facing and tired), traverse Terror Basin at roughly the 6,000 ft contour, then drop the 5,000 ft climbers' path to the stone arrow at 1,700 ft and follow the old roadbed out to Goodell Creek. Give the descent of the climbers' path real respect — it is steep, loose, brushy and hard on knees, and the exit is where most parties are moving slowest."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "rappels",
+     "path": [],
+     "expect": "None on the east ridge, which is normally downclimbed to the col. The south-side gully below the col needs none in early season while snow fills it; later in the summer, as the snow melts back, parties rappel the chockstone and moats at its top from fixed anchors before kicking down the remaining snow. Parties who take the 5.7 variation on the north side of the summit blocks generally make one or two single-rope rappels off slung blocks to regain the ridge. If you continue north out of the col instead of returning to Crescent Creek Basin (i.e. toward the Mustard Glacier and Picket Pass), budget three or more rappels off improvised anchors — a 2011 party built theirs from a driven piton, a slung block and a nut in a constriction, then rappelled the broken couloir and glacier spilling off the north side.",
+     "value": "On the ridge: a double-rope rappel from a rock obelisk off Beep into the Beep-Honk notch, and a rappel from a notch on Ottohorn's upper ridge. On the descent: a rappel off the summit ridge to third-class ground, then a rappel from the station above the giant chockstone in the gully below the Ottohorn-Himmelhorn col. Early in the season snow fills that gully; later, the melting snow leaves moats at its top that parties rappel from fixed anchors before kicking down the remaining snow. Anchors on the ridge are natural — horns, blocks and a rock obelisk — so carry slings and a couple of pitons."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Protection needs are minimal but the rock quality is the variable. On the standard Class 3-4 east ridge most parties place nothing at all, or slings over blocks and horns for a moving belay through the final step. If the direct summit finish looks loose, the north-side 5.7 variation takes conventional small-to-medium gear in solid, juggy rock and is the safer choice despite the higher grade. The larger protection problem is the snow below the col — a bergschrund and moat that grows through the season — so bring the glacier kit even though the rock rack is trivial.",
+     "value": "An alpine rock rack for a long day of belayed climbing to 5.8 with a couple of 5.9 sequences, on rock that is sometimes solid and sometimes loose. Anchors are natural — horns, blocks, a rock obelisk — so bring plenty of slings, a few pitons and nuts to build or back them up, and two ropes for the double-rope rappel off Beep. Snow gear is needed for the basin and for the descent gully below the Ottohorn-Himmelhorn col."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "Glacier travel gear for the snow and small glacier slopes from Crescent Creek Basin to the col, plus a light alpine rock rack (assorted nuts + small-to-mid cams ~0.3-2in) and slings for rock steps on the ridge; a 60m rope covers rappelling loose terrain near the Otto-Himmel col.",
+     "value": "An alpine rock rack for sustained 5.8-5.9 ridge climbing, plenty of slings for natural anchors, a few pitons and nuts to back up rappel stations, and two ropes for the double-rope rappels. Ice axe and crampons for the snow in Crescent Creek Basin and the descent gully below the Ottohorn-Himmelhorn col."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "Ice axe & crampons (snow and small glacier slopes from Crescent Creek Basin to the col)",
+      "Glacier travel rope + crevasse-rescue kit (2-3 person rope team)",
+      "Light alpine rock rack for the ridge climbing",
+      "Helmet (loose rock typical of unrepeated Southern Pickets lines)",
+      "60m rope for climbing/rappelling loose sections",
+      "Full overnight glacier-camping kit (multi-day approach)"
+     ],
+     "value": [
+      "Ice axe & crampons (snow and small glacier slopes from Crescent Creek Basin to the col)",
+      "Glacier travel rope + crevasse-rescue kit (2-3 person rope team)",
+      "Alpine rock rack for sustained belayed climbing to 5.8, with a couple of 5.9 sequences",
+      "Helmet (loose rock typical of unrepeated Southern Pickets lines)",
+      "Two ropes for the double-rope rappels",
+      "Full overnight glacier-camping kit (multi-day approach)"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "bail",
+     "path": [],
+     "expect": "There is no quick exit from Crescent Creek Basin — every retreat goes back over the Barrier into Terror Basin and down the Goodell Creek climbers' path, so plan on a full day out from high camp regardless of what has gone wrong. On the route itself, bailing is easy and cheap: the east ridge can be downclimbed anywhere back to the Otto-Himmel col, and the col is only about an hour of snow above camp. If the summit blocks look freshly loose, retreating from the col and going to Himmelhorn or Terror instead costs nothing. Do not use the north side of the col as an escape — it drops onto the Mustard Glacier and commits you to multiple rappels off improvised gear and, ultimately, to an exit via Picket Pass and the Big Beaver or Access Creek valleys, which is a far bigger undertaking than walking back over the Barrier.",
+     "value": "There is no quick exit from Crescent Creek Basin — every retreat goes back over the Barrier into Terror Basin and down the Goodell Creek climbers' path, so plan on a full day out from high camp regardless of what has gone wrong. On the route, the decision point is the base of Beep: up to there the crest is easy ground back to the saddle east of West Peak. Once you have rappelled into the Beep-Honk notch, the practical way off is forward over Honk and Ottohorn and down the gully below the Ottohorn-Himmelhorn col, so commit only with daylight and bivy insulation in hand. Do not use the north side of the col as an escape — it drops onto the Mustard Glacier and commits you to multiple rappels off improvised gear and, ultimately, to an exit via Picket Pass and the Big Beaver or Access Creek valleys, which is a far bigger undertaking than walking back over the Barrier."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "turnaround",
+     "path": [],
+     "expect": "Set a hard turnaround before you leave camp and honour it. Two conditions should stop you regardless of the clock: fresh rockfall debris or visibly unstable blocks on the last 30 ft of the summit ridge (back off and take the north-side variation or go home — one party found exactly this and made the right call), and a moat or bergschrund below the col that has opened enough that you are not confident of recrossing it in the afternoon when it is softer. Weather turnaround: if cloud is filling Crescent Creek Basin, go down while you can still see the Barrier — routefinding across it in a whiteout on loose grassy ledges is how people get hurt here. Because the col is only about an hour from camp, there is almost never a good reason to push a marginal call on this peak.",
+     "value": "Set a hard turnaround at the base of Beep and honour it: past the rappel into the Beep-Honk notch, retreat means finishing the route. The first party reached the Ottohorn notch late in the day, could not finish before dark and sat out a cold night on the ridge. Weather turnaround: if cloud is filling Crescent Creek Basin, go down while you can still see the Barrier — routefinding across it in a whiteout on loose grassy ledges is how people get hurt here."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "From a Crescent Creek Basin camp, leave at first light (roughly 05:00-06:00) so the snow up to the Otto-Himmel col is still firm and the moat crossing is at its most solid, and so you are back at camp with the whole afternoon in hand. A pre-dawn alpine start is not necessary for the climb itself — the col is only about an hour above camp — but it matters if you intend to link Himmelhorn or Mount Terror the same day, or to recross the Barrier and keep descending.",
+     "value": "Leave a Crescent Creek Basin camp at first light. The walk west to the crest saddle east of West Peak comes first, and the ridge over Beep and Honk is long and slow — the first party did not finish before dark. An early start also finds the snow in the descent gully firmer."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "approach",
+     "path": [],
+     "find": "From that camp, snow and small glacier slopes lead northwest in about an hour to the Ottohorn-Himmelhorn col at roughly 7,400 ft, where the route proper begins.",
+     "replace": "From that camp, hike west below the spires and gain the crest at the saddle just east of West Peak, where the route proper begins; the descent comes back into the basin down the gully below the Ottohorn-Himmelhorn col."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "itinerary",
+     "path": [],
+     "find": "about an hour of snow and glacier from camp to the Ottohorn-Himmelhorn col (7,400 ft), then the east ridge to the summit (7,840 ft) and back to camp; almost everyone links a second objective from the same camp (Himmelhorn's Wild Hair Crack, Mount Terror, or Twin Needles) rather than making a dedicated trip for Ottohorn.",
+     "replace": "hike west below the spires to the crest saddle just east of West Peak, climb the ridge east over Beep and Honk to Ottohorn's summit (7,840 ft), and descend the gully below the Ottohorn-Himmelhorn col back to camp. The only recorded ascent took longer than a day and bivouacked on the ridge, so carry enough to survive a night out."
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "pro_tips",
+     "path": [],
+     "expect": [
+      "Camp in Crescent Creek Basin, not Terror Basin. One party reached the Ottohorn-Himmelhorn col in about an hour from a Crescent Creek Basin camp — that turns Ottohorn into a short morning instead of a full day with a Barrier crossing at each end.",
+      "The turnoff from the Goodell Creek roadbed to the Terror Creek climbers' path is marked only by a stone arrow on the ground at about 1,700 ft, roughly 3.5-4 miles in. Waypoint it before you leave home; people walk past it every season.",
+      "Go while there is still snow in the basins. The Otto-Himmel col is straightforward when snow-filled and turns into loose, tricky low-fifth-class rock once it melts out.",
+      "Nobody comes all this way for Ottohorn alone. Plan it as one of several summits from a single Crescent Creek Basin camp — Himmelhorn's Wild Hair Crack, Mount Terror and Twin Needles all share the same base.",
+      "Treat the last 30 ft as a rockfall zone rather than a scramble. A 2011 party found the standard finish had collapsed into fresh unstable blocks and went around the corner onto two juggy 5.7 pitches instead — the harder line was the safer one that day.",
+      "Carry a couple of pitons and be prepared to leave gear. Anchors in this cirque are slung blocks, nuts and driven pins, not fixed stations.",
+      "Scout the moat below the col on the way up and remember exactly where you crossed it; it will be softer and wider on the way down.",
+      "Pick up the permit and current conditions in person at the Marblemount Wilderness Information Center (360-854-7200) — the rangers there track snow levels on the Terror Creek path and the state of the Barrier.",
+      "Build a spare day into the trip. Parties on the Southern Picket traverse routinely burn one to squalls, and both the Barrier and the climbers' path are markedly more dangerous wet."
+     ],
+     "value": [
+      "Camp in Crescent Creek Basin, not Terror Basin. Both the start of this ridge (the crest saddle just east of West Peak) and the descent gully below the Ottohorn-Himmelhorn col are reached from there.",
+      "The turnoff from the Goodell Creek roadbed to the Terror Creek climbers' path is marked only by a stone arrow on the ground at about 1,700 ft, roughly 3.5-4 miles in. Waypoint it before you leave home; people walk past it every season.",
+      "Go while there is still snow in the basins. The Otto-Himmel col is straightforward when snow-filled and turns into loose, tricky low-fifth-class rock once it melts out.",
+      "Nobody comes all this way for Ottohorn alone. Plan it as one of several summits from a single Crescent Creek Basin camp — Himmelhorn's Wild Hair Crack, Mount Terror and Twin Needles all share the same base.",
+      "Plan for a night out. The only recorded ascent could not finish before dark and spent a cold, unplanned night on the ridge short of the summit; carry enough insulation to sit one out.",
+      "Carry a couple of pitons and be prepared to leave gear. Anchors in this cirque are slung blocks, nuts and driven pins, not fixed stations.",
+      "Look at the moat and chockstone at the top of the gully below the Ottohorn-Himmelhorn col from the basin before you start; you will be descending through it tired.",
+      "Pick up the permit and current conditions in person at the Marblemount Wilderness Information Center (360-854-7200) — the rangers there track snow levels on the Terror Creek path and the state of the Barrier.",
+      "Build a spare day into the trip. Parties on the Southern Picket traverse routinely burn one to squalls, and both the Barrier and the climbers' path are markedly more dangerous wet."
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_ottohorn_west_ridge",
+     "column": "watch_out",
+     "path": [],
+     "expect": [
+      "The final ~30 ft to the summit ridge has produced active rockfall; blocks that look welded in place are not.",
+      "The south side of the Otto-Himmel col is the friendly side. The north side can demand loose 5th class or rappels once the snow goes, and it commits you to the Mustard Glacier.",
+      "Moats and bergschrunds where the snow meets rock below the col open into overhanging pits by late season — one party had to jump one and axe their way out the far side.",
+      "The Barrier crossing at about 6,100 ft is 'serious Class 3' on steep, loose, grassy ledges. It is the real crux of the trip and it is not a place to slip.",
+      "This is arguably the most isolated terrain in the contiguous United States. A broken ankle in Crescent Creek Basin is a multi-day, weather-dependent helicopter problem.",
+      "The Terror Creek climbers' path gains roughly 5,000 ft with almost no water between the creek and treeline — carry it.",
+      "Skagit Gneiss in the Pickets swings between excellent and appalling within a single pitch; test everything, and keep the party out of each other's fall line."
+     ],
+     "value": [
+      "The ridge rock swings between solid and loose; test blocks before you pull on them or rappel from them.",
+      "The south side of the Otto-Himmel col is the friendly side. The north side can demand loose 5th class or rappels once the snow goes, and it commits you to the Mustard Glacier.",
+      "Moats and bergschrunds where the snow meets rock below the col open into overhanging pits by late season — one party had to jump one and axe their way out the far side.",
+      "The Barrier crossing at about 6,100 ft is 'serious Class 3' on steep, loose, grassy ledges. It is the real crux of the trip and it is not a place to slip.",
+      "This is arguably the most isolated terrain in the contiguous United States. A broken ankle in Crescent Creek Basin is a multi-day, weather-dependent helicopter problem.",
+      "The Terror Creek climbers' path gains roughly 5,000 ft with almost no water between the creek and treeline — carry it.",
+      "Skagit Gneiss in the Pickets swings between excellent and appalling within a single pitch; test everything, and keep the party out of each other's fall line."
+     ]
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_south_face_3 (Concord Tower, South Face)",
+   "summary": "This climb is Concord Tower's South Face, which already has its own page; fold this duplicate into that page and carry over its one extra gear note (a pink tricam for the summit block).",
+   "evidence": "Two route databases list this exact line — 5.6, 3 pitches, Grade II, FA Cramer, Anderson, Schuler and Stanley 1965, gravelly 'price of admission' traverse, sandy stance by the shark fin, bolts on the summit, single-rope rappel to an intermediate anchor or double-rope rappel to the notch — as Concord Tower's South Face, and a separate trip report climbs the same shark-fin line on Concord. Concord Tower already has that route as wa_south_face_3 (same name, grade, pitches, length, FA and beta, with a fuller pitch table, approach, descent and camps), so a refile would create a duplicate; merge instead. The only fact on this row missing from the kept row is the pink tricam for the slot on the summit block, stated on the route database page this row was built from, so it is carried into the kept row's gear list.",
+   "sources": [
+    "https://www.mountainproject.com/route/117635520/south-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Concord-Tower-South-Face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_south_face_3",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "cams 0.4-3 in",
+      "stoppers",
+      "double-length slings"
+     ],
+     "value": [
+      "cams 0.4-3 in",
+      "stoppers",
+      "double-length slings",
+      "pink tricam (for a slot on the summit block)"
+     ]
+    },
+    {
+     "op": "merge",
+     "from": "wa_lexington_tower_south_face",
+     "into": "wa_south_face_3"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "verdict": "unresolved",
+   "resolution": "none (no documented climb matches; owner decision needed)",
+   "summary": "No 4-pitch 5.6 'East Face' route exists on Liberty Bell; the row is a mix of made-up pitches and another tower's route, so it is left for the owner to hide or replace rather than patched.",
+   "evidence": "Two complete route lists for Liberty Bell (a route database with 19 routes and an encyclopedia list) have no route called East Face and nothing at 5.6 except the Beckey Route on the southwest face, which already has its own row; the east face carries only hard lines (Liberty Crack, Thin Red Line, Freedom Rider and others, 5.10-5.13), all with their own rows. The row's beta (ten pitches, a slopey first-pitch traverse, an offwidth crux past a fixed 2x4) is Lexington Tower's East Face, which also already has its own row (wa_lexington_tower_east_face), and the row's own corrections note says its header facts came from there. The four-pitch table, grade and 'popular, lower-grade line' framing match no source. Rules forbid removing a row, and there is no documented climb to rewrite it as, so no ops; the owner should decide whether to hide or delete it.",
+   "sources": [
+    "https://www.mountainproject.com/area/105797864/liberty-bell",
+    "https://en.wikipedia.org/wiki/Liberty_Bell_Mountain",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "ops": [],
+   "pin_followups": []
+  }
+ ]
+}

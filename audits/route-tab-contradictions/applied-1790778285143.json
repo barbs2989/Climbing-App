@@ -1,0 +1,61 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether a parking pass/fee is required at this trailhead"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "before": {
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads."
+   }
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5181,
+      "lng": -120.7331,
+      "elev": 4500,
+      "name": "Rainy Pass PCT North Trailhead",
+      "note": "A separate, slightly lower trailhead ~1 mi east of Rainy Pass, matching the recorded GPS track for the route.",
+      "type": "Trailhead",
+      "elevFt": 4500
+     },
+     {
+      "lat": 48.4828,
+      "lng": -120.9108,
+      "elev": 9220,
+      "name": "Goode Mountain Summit",
+      "type": "Summit",
+      "elevFt": 9220
+     }
+    ]
+   }
+  }
+ ]
+}

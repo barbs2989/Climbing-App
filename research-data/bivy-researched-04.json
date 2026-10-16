@@ -1,0 +1,304 @@
+{
+  "wa_mount_rainier_ptarmigan_ridge": {
+    "area": "wa_mount_rainier",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://mountrainierclimbing.blogspot.com/2018/06/ptarmigan-ridge.html",
+      "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/",
+      "https://home.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "https://thedyrt.com/camping/washington/glacier-basin"
+    ],
+    "bivy": [
+      {
+        "name": "Glacier Basin camp",
+        "elev": 5900,
+        "capacity": "five individual sites plus one group site",
+        "water": "creek/White River at camp, filter",
+        "permit": "wilderness camping permit required (reserve or self-register); designated site",
+        "notes": "PLANNED camp and the last established campground on the White River approach. Composting toilet a short walk away and bear boxes on site. Melts out early and is the last dependable running water before the route goes onto snow and ice for good — most parties fill here rather than carry from the car."
+      },
+      {
+        "name": "Curtis Ridge camp",
+        "capacity": "small parties; scattered flat ground on the ridge crest, no established platforms",
+        "water": "none — melt snow",
+        "notes": "PLANNED first-night option when the traverse from White River is split over two days; the park's own route notes list it as the standard intermediate camp before Ptarmigan high camp. Sits on the crest between the Winthrop and Carbon glaciers, which is the point — you hear serac collapse off Willis Wall all night but the crest keeps you out of the runout. Do not drop and camp on the open Carbon below the wall to save an hour."
+      },
+      {
+        "name": "Ptarmigan Ridge high camp",
+        "elev": 10300,
+        "capacity": "one to two tents on dug snow platforms",
+        "water": "none — melt snow",
+        "permit": "climbing permit required above 10,000 ft in addition to the camping permit",
+        "notes": "PLANNED high camp and the one the route is built around. Comfortable bivy ground on the ridge crest, deliberately sited just outside the serac fall line off the Liberty Wall — that icefall is the single largest objective hazard on the climb, so the exact spot matters more than the comfort. Fully exposed to wind. Parties who want an acceptable risk margin wait for an overnight freezing level at or below about 12,000 ft."
+      },
+      {
+        "name": "Camp Schurman",
+        "elev": 9460,
+        "capacity": "limited designated tent sites; fills early in season",
+        "water": "none — melt snow",
+        "permit": "wilderness camping permit required; separate climbing permit for glacier travel",
+        "notes": "DESCENT camp, not an ascent camp — most parties come off Ptarmigan Ridge down the Emmons-Winthrop and use this. Has a ranger hut and a solar toilet, but both can be buried in snow well into the season, so plan to be self-sufficient and pack out waste. Reserve early; this is one of the first camps on the mountain to fill."
+      }
+    ]
+  },
+  "wa_mount_rainier_mowich_face": {
+    "area": "wa_mount_rainier",
+    "_confidence": "corroborated",
+    "_sources": [
+      "http://upwardescape.blogspot.com/2012/08/central-mowich-face-mt-rainier.html",
+      "https://turns-all-year.com/trip-reports/july-21-23-2016-mt-rainier-central-mowich-face",
+      "https://home.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm"
+    ],
+    "bivy": [
+      {
+        "name": "Ptarmigan Ridge bivy above Observation Rock",
+        "elev": 8600,
+        "capacity": "a couple of tents on hand-built platforms",
+        "water": "none reliable — melt snow",
+        "notes": "PLANNED camp and the most sheltered ground on this side of the mountain: old stacked rock windbreaks sit here and parties describe it as the best bivy shelter in the area. The catch is position, not comfort — from here you still have to descend loose scree onto the North Mowich Glacier, and parties who camped here have called that descent the inefficient part of their trip. Cross-country zone; permit required."
+      },
+      {
+        "name": "Edmunds/North Mowich glacier divide camp",
+        "elev": 8100,
+        "capacity": "one to two tents",
+        "water": "none — melt snow",
+        "notes": "PLANNED alternative used by parties who cross the North Mowich above Needle Rock rather than staying high on Ptarmigan Ridge. Puts you on the correct side of the glacier for the face, at the cost of more elevation to regain in the morning."
+      },
+      {
+        "name": "High camp below the North Mowich headwall",
+        "elev": 10000,
+        "capacity": "one to two tents; flat ground is scarce and has to be dug",
+        "water": "none — melt snow",
+        "permit": "climbing permit required above 10,000 ft in addition to the camping permit",
+        "notes": "PLANNED camp closest to the base of the face, and the most exposed of the three. Parties who have used it wore helmets in camp because of rockfall and icefall shedding off the deteriorating headwall above; there is no fully sheltered ground up here. Worth it only when conditions are cold and you intend to start on the face within a few hours. Search around 9,200 ft first if the higher ground looks loaded — flat sites there are limited but out from under the wall."
+      },
+      {
+        "name": "Liberty Cap saddle",
+        "capacity": "improvised, no prepared ground",
+        "water": "none — melt snow",
+        "notes": "EMERGENCY bivy only, on the broad saddle between Liberty Cap and the summit, used by at least one party benighted after topping out. It is more sheltered than the true summit and less wind-hammered than climbers expect, but it is an unplanned option to know about, not a camp to aim for — going there means you are spending a night above 13,000 ft with whatever you carried up the face."
+      }
+    ]
+  },
+  "wa_mount_rainier_willis_wall": {
+    "area": "wa_mount_rainier",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://cascadeclimber.com/willis_wall.htm",
+      "https://www.mountaineers.org/blog/an-epic-climb-of-mount-rainier-via-the-willis-wall",
+      "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/",
+      "https://thedyrt.com/camping/washington/glacier-basin"
+    ],
+    "bivy": [
+      {
+        "name": "Glacier Basin camp",
+        "elev": 5900,
+        "capacity": "five individual sites plus one group site",
+        "water": "creek/White River at camp, filter",
+        "permit": "wilderness camping permit required; designated site",
+        "notes": "PLANNED camp on the White River approach, which is now the practical way in — the Carbon River side lost public vehicle access when the Fairfax Bridge closed. Composting toilet and bear boxes. Last dependable running water; everything above is melt snow."
+      },
+      {
+        "name": "St Elmo Pass bivy",
+        "elev": 7400,
+        "capacity": "one to two tents on a small flat bench",
+        "water": "none — melt snow, usually plentiful",
+        "notes": "PLANNED staging bivy at the pass where parties change into glacier gear before stepping onto the Winthrop. A short rock wall gives some wind shelter and the site is out of any fall line. Useful when a late trailhead start makes the full traverse to Curtis Ridge too long."
+      },
+      {
+        "name": "Curtis Ridge camp",
+        "capacity": "small parties; flat ground has to be built by moving rocks or stomping snow",
+        "water": "none — melt snow",
+        "notes": "PLANNED high camp for the wall, on the northeast side of the ridge dividing the Carbon from the Winthrop. This is the camp the route is climbed from — parties leave here before midnight to reach the avalanche cones at the foot of the central rib while everything overhead is still frozen. **Do not camp out on the Carbon Glacier below the wall.** A party that pitched on the Carbon in the fall line watched a large collapse off Willis Wall run close to their tent; the ice cliff at the top of the wall is on the order of 300 ft high and it discharges straight down onto the head of the glacier. The ridge crest is the whole reason this camp exists."
+      }
+    ]
+  },
+  "wa_liberty_cap_liberty_ridge_finish": {
+    "area": "wa_liberty_cap",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/",
+      "https://www.summitpost.org/liberty-cap-beating-1-liberty-ridge/783262",
+      "https://www.climber.org/reports/1996/142.html",
+      "https://home.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm"
+    ],
+    "bivy": [
+      {
+        "name": "Glacier Basin camp",
+        "elev": 5900,
+        "capacity": "five individual sites plus one group site",
+        "water": "creek/White River at camp, filter",
+        "permit": "wilderness camping permit required; designated site",
+        "notes": "PLANNED first camp for parties not pushing straight to Thumb Rock. Composting toilet, bear boxes. Last dependable running water on the route — from here it is snow and ice, and Thumb Rock has none."
+      },
+      {
+        "name": "Curtis Ridge / Carbon Glacier access bivy",
+        "elev": 7300,
+        "capacity": "a few small sites in the access gully and on the ridge",
+        "water": "none — melt snow",
+        "notes": "PLANNED intermediate camp, and the usual way to split what is otherwise a 7-10 hour push from the car to Thumb Rock. Established sites sit in the ramp that gains the Carbon at about 7,300 ft, with more ground on the ridge crest above. Parties camp here specifically so they can cross the exposed ground under Willis Wall early and cold. Do not pitch out on the open Carbon under the wall to shorten the morning — that is the fall line for serac collapse off the summit icecap."
+      },
+      {
+        "name": "Thumb Rock",
+        "elev": 10775,
+        "capacity": "a handful of existing snow platforms; can be crowded in season, and late parties dig their own",
+        "water": "none — melt snow or ice",
+        "permit": "climbing permit required above 10,000 ft in addition to the camping permit",
+        "notes": "PLANNED high camp and the standard one — flat, partly wind-sheltered tent sites tucked behind the rock buttress, reached by moderate snow and loose rock bands. Reports place the platforms anywhere from about 10,400 to 10,700 ft depending on which bench and how much snow is in; the ground above the rock is more exposed and takes the full wind. There is no liquid water at any point. The approach ramps immediately below turn loose and unpleasant once they melt out, so late-season parties arrive slower than they plan."
+      },
+      {
+        "name": "Camp Schurman",
+        "elev": 9460,
+        "capacity": "limited designated tent sites; fills early in season",
+        "water": "none — melt snow",
+        "permit": "wilderness camping permit required; separate climbing permit for glacier travel",
+        "notes": "DESCENT camp. Liberty Ridge tops out near Liberty Cap and most parties come down the Emmons-Winthrop, so this is where a slow summit day ends rather than a forced night out high on the ice. Ranger hut and solar toilet, both potentially buried in snow — carry blue bags and pack them out. Reserve well ahead."
+      }
+    ]
+  },
+  "wa_point_success_south_side": {
+    "area": "wa_point_success",
+    "_confidence": "corroborated",
+    "_sources": [
+      "http://mountrainierclimbing.blogspot.com/2017/06/success-cleaver-june-26-2017.html",
+      "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-success-cleaver",
+      "https://home.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm"
+    ],
+    "bivy": [
+      {
+        "name": "Devil's Dream camp",
+        "capacity": "designated trailside sites, small",
+        "water": "reliable creek water at camp",
+        "permit": "wilderness camping permit required; designated trailside camp",
+        "notes": "PLANNED low camp about five miles in on the Wonderland Trail, in trees below Indian Henry's. Useful mainly as a bail-out or a late-start first night — it is well below the climbing and adds a lot of gain to day two. Reliable water is the reason to stop here."
+      },
+      {
+        "name": "Rock slabs below Pyramid Peak",
+        "elev": 6300,
+        "capacity": "a few tents on open slabs",
+        "water": "running snowmelt nearby into early summer",
+        "notes": "PLANNED first camp for the standard two-day ascent, out past Indian Henry's and Mirror Lakes where the maintained tread ends. Open slab ground with running water all around it early in the season; once the snowmelt dries up later in summer the water goes with it. Cross-country zone camping — permit required, and it is the last easy water before the cleaver."
+      },
+      {
+        "name": "Dug platform on the lower-mid cleaver",
+        "elev": 9400,
+        "capacity": "one tent on a dug platform",
+        "water": "none — melt snow",
+        "notes": "PLANNED alternative for parties who run out of daylight low on the cleaver. Reports describe digging in here specifically because the spot felt protected from the rockfall lines running down either side — the lower cleaver is loose choss with real exposure to anything a party above knocks down, so on this route the shelter of the platform is the point rather than the view."
+      },
+      {
+        "name": "Cleaver crest col",
+        "elev": 10700,
+        "capacity": "one to two tents; platforms stomped or dug into snow",
+        "water": "none — melt snow",
+        "permit": "climbing permit required above 10,000 ft in addition to the camping permit",
+        "notes": "PLANNED high camp and the best ground on the route: a broad saddle on the cleaver crest that is generally out of the rockfall lines, which very little else on this cleaver can claim. No water. Above it the crest includes a knife-edge that has to be scrambled once the snow melts off it, so leaving from here in the dark is easier early season when it is still snow-covered. Some parties instead stop around 10,200 ft, which is also comfortable but leaves more of the crest for summit day."
+      }
+    ]
+  },
+  "wa_glacier_peak_disappointment_peak_cleaver": {
+    "area": "wa_glacier_peak",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-glacier-peak-disappointment-peak-cleaver-7",
+      "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-21.101723144415",
+      "https://www.miyaradventures.com/glacier-peak-trip-report-2018/"
+    ],
+    "bivy": [
+      {
+        "name": "Mackinaw Shelter",
+        "capacity": "several parties; established riverside sites around the old shelter",
+        "water": "North Fork Sauk River at camp",
+        "notes": "PLANNED low camp and the last reliable flat ground with running water before the trail steepens. Roughly five miles in, in forest. Most parties either sleep here on night one of a three-day trip or top off water here, because there is nothing dependable between here and White Pass — that stretch is 2,000 ft of switchbacks."
+      },
+      {
+        "name": "White Pass",
+        "elev": 5900,
+        "capacity": "several parties in the meadow sites at the PCT junction",
+        "water": "seasonal snowmelt and seeps; can be dry late in the year",
+        "notes": "PLANNED camp at the effective end of maintained trail, where the climbers' path toward Glacier Gap begins. Open meadow with good sites but no dependable water once the snow is gone, so treat it as a place you may have to carry into. Camp on durable ground — these meadows are heavily used."
+      },
+      {
+        "name": "Glacier Gap",
+        "elev": 7200,
+        "capacity": "many sites, several with stacked rock windbreaks",
+        "water": "a running seep just below camp, plus snowmelt; two sources within a few minutes' walk in most seasons",
+        "notes": "PLANNED high camp and the standard staging point for the Cool Glacier and the cleaver. Plenty of established gravel sites with rock walls already built, which exist because the gap funnels wind — it is known for wind and for storms rolling through after dark, so use the walls and pitch low. Some sites are dry camps; the seep below camp is the dependable one and it is the last water on the route. The last mile and a half in is loose scree and boulders."
+      }
+    ]
+  },
+  "wa_mount_formidable_north_ptarmigan": {
+    "area": "wa_mount_formidable",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "https://www.mountaineers.org/activities/trip-reports/ptarmigan-traverse-1",
+      "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+      "https://trailcatjim.com/mt-formidable-via-south-face-east-ridge/"
+    ],
+    "bivy": [
+      {
+        "name": "Kool-Aid Lake",
+        "elev": 6100,
+        "capacity": "several small parties; established sites around the tarn",
+        "water": "lake at camp",
+        "notes": "PLANNED first camp on the traverse, roughly three hours past Cascade Pass and the usual night one for a Formidable trip. Good sheltered ground and easy water. Mountain goats work the camp for salt — stow sweaty gear and pee well away from the sites. It is still a long day from here to the peak, so parties chasing a single summit day usually push higher."
+      },
+      {
+        "name": "Spider-Formidable Col",
+        "elev": 7320,
+        "capacity": "one to two tents on small levelled spots on the col",
+        "water": "a trickle down nearby slabs when running; otherwise melt snow",
+        "notes": "PLANNED high camp and the closest ground to the north side of the peak — the col is the only non-technical crossing of the Spider-Formidable wall and it puts you directly above the Middle Cascade Glacier. Fully exposed on a notch, so expect wind and no shelter at all in weather. The slab trickle is unreliable; confirm it before counting on it, and be prepared to melt. The col itself holds steep snow into the season and parties have needed hand lines to descend the far side."
+      },
+      {
+        "name": "Ridge benches above Yang Yang Lakes",
+        "capacity": "small; scattered flat spots on the ridge",
+        "water": "none — melt snow",
+        "notes": "PLANNED launching camp specifically noted by parties climbing Formidable, sitting on the ridge above the lakes with a much shorter summit day than camping at the lakes themselves. The trade is water: there is none up here except what you melt or carry from below. Gaining this ridgeline out of the lakes is the most consequential bit of travel in this section of the traverse."
+      },
+      {
+        "name": "Yang Yang Lakes",
+        "elev": 5850,
+        "capacity": "several parties; established sites",
+        "water": "lakes at camp",
+        "notes": "PLANNED camp on the south side of the col, the standard traverse night and the fallback when the col is windbound. Sheltered, easy water, and a comfortable place to sit out weather — but it is well below the peak and adds a steep, loose climb back to the ridge in the morning."
+      }
+    ]
+  },
+  "wa_mount_anderson_eel_glacier": {
+    "area": "wa_mount_anderson",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://trailcatjim.com/mount-anderson-east-peak-and-attempt-of-west-peak/",
+      "https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics",
+      "https://www.nps.gov/olym/planyourvisit/west-fork-dosewallips.htm",
+      "https://www.nps.gov/olym/planyourvisit/wilderness-regulations.htm"
+    ],
+    "bivy": [
+      {
+        "name": "Honeymoon Meadows",
+        "elev": 3527,
+        "capacity": "several parties; established riverside sites",
+        "water": "West Fork Dosewallips at camp",
+        "permit": "Olympic National Park wilderness permit required year-round for all overnight stays",
+        "notes": "PLANNED camp and the last big established site on the West Fork, roughly eight trail-miles past the ranger station. Dry ground at the far end of the meadows once the snow goes. Getting here involves at least one calf- to knee-deep ford of the West Fork depending on melt, so arrive with time to deal with a high river rather than in the dark."
+      },
+      {
+        "name": "Camp Siberia / Anderson Pass shelter area",
+        "capacity": "a few sites in forest",
+        "water": "creek nearby",
+        "permit": "Olympic National Park wilderness permit required year-round for all overnight stays",
+        "notes": "PLANNED alternative about 0.7 mile and 700 ft above Honeymoon Meadows, below Anderson Pass. Sheltered and in trees, which is its value in weather — but parties routinely walk past it without finding it under snow, so do not commit to it as your only plan on a late arrival. It is still below the pass, so it leaves the whole climbers' path and moraine for the next day."
+      },
+      {
+        "name": "Tarn camp above Anderson Pass",
+        "elev": 5100,
+        "capacity": "a few tents on open ground near the tarn",
+        "water": "the tarn when melted out; often still frozen in spring, so melt snow",
+        "permit": "Olympic National Park wilderness permit required year-round for all overnight stays",
+        "notes": "PLANNED high camp and the one worth reaching — open slopes above Anderson/Valkyrie Lake, roughly a mile past the pass up the climbers' path and moraine, and preferred by parties specifically to avoid sleeping in the forest at or below the pass. Budget 7-9 hours from the road closure to here. This is the last water on the route: the snow finger to Flypaper Pass and everything on the Eel above it has none, so fill here or plan to melt. Exposed to wind, with no built shelter."
+      }
+    ]
+  }
+}

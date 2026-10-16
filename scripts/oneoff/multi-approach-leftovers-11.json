@@ -1,0 +1,226 @@
+{
+ "wa_mount_crowder_southwest_route": {
+  "approach": "Crowder has no trail and no road anywhere near it, and the way in is from the north, down the west side of the Picket Range. From the Hannegan Pass Trailhead, walk over Hannegan Pass and down to the Chilliwack River, ford it, and climb onto Easy Ridge. Follow the ridge over Easy Peak, get around the Imperfect Impasse gap (in most years by dropping well below it and climbing back up an exposed class 4 step) and carry on to Perfect Pass. From there keep heading south across the western slopes of the range, below Challenger, Crooked Thumb and Ghost Peak, to the west side of Phantom Peak, then continue south to the col between Phantom and Crowder, at a little over 6,000 ft, where the climb starts. Allow at least two days to reach the col.\n\nThe other way in comes from the west and is seldom used: the Baker River Trail, then the high route along Pioneer Ridge, whose southeast end sits at the bottom of Crowder's easy southwest slopes.",
+  "approach_logistics": {
+   "peakLat": 48.7976266,
+   "peakLng": -121.352631,
+   "trailhead": "Hannegan Pass Trailhead",
+   "trailheadLat": 48.91049444,
+   "trailheadLng": -121.5894222,
+   "trailheadDirection": "From WA-542 (Mount Baker Highway), take Hannegan Pass Road (FS Road 32) to its end at the Hannegan Pass Trailhead."
+  },
+  "approach_variants": [
+   {
+    "name": "Hannegan Pass, Easy Ridge and Perfect Pass, then south along the west side of the range to the Phantom-Crowder col",
+    "primary": true,
+    "season": "Jul-Sep",
+    "camps": [
+     "Easy Ridge bivouac ground below Easy Peak",
+     "Perfect Pass, Perfect Pass cross-country zone",
+     "Crooked Thumb Glacier moraine camp"
+    ],
+    "notes": "From the Hannegan Pass Trailhead the trail climbs about 4 miles to Hannegan Pass, then drops the far side to the Chilliwack River. Ford the river near Easy Creek and climb steeply onto Easy Ridge, then follow its crest over Easy Peak. The Imperfect Impasse, a notch guarded by snow moats and wet, down-sloping slabs, usually has to be passed by dropping several hundred feet and climbing back up exposed class 4 ground. Beyond it, carry on to Perfect Pass.\n\nFrom Perfect Pass the line stays on the west side of the range and heads south: across the edge of the Challenger Glacier, below Crooked Thumb and Ghost Peak, and along under the west side of Phantom Peak. Keep going south to the col between Phantom and Crowder. It is several days of travel each way, with no shortcut and no easy way out once you are past Easy Ridge.",
+    "hazards": [
+     "Fording the Chilliwack River",
+     "The Imperfect Impasse: snow moats, wet down-sloping slabs and an exposed class 4 climb back up",
+     "Crevasses wherever the line crosses glacier below Challenger and Crooked Thumb",
+     "Whiteout navigation on the open snowfields between the Impasse and Perfect Pass",
+     "No reasonable retreat once past Easy Ridge"
+    ],
+    "baseFinding": "The climb starts at the col between Phantom Peak and Crowder, the low point, a little over 6,000 ft, of the ridge that runs south from Phantom. From the col, head southwest and up over a lesser summit of about 7,020 ft. The summit block is beyond it, not on it, and a rib of sound rock leads from its base to the top.\n\nIf the rock in front of you is a steep face dropping north toward Picket Creek, you are on the wrong side: Crowder's north side is the steep one, while its west and southwest slopes are moderate."
+   },
+   {
+    "name": "Baker River Trail and the Pioneer Ridge high route",
+    "season": "Jul-Sep",
+    "notes": "The seldom-used way in, from the west. From the Baker River Trailhead at the end of Baker Lake Road, take the Baker River Trail up the valley, then get up onto Pioneer Ridge and follow the high route along it to the southeast. Pioneer Ridge is a long, rough massif, walled by cliffs and slabs above the Baker River and Picket Creek, and its highest point is at the far southeast end, west of Goodell Creek. Crowder's southwest flank runs down at an easy angle to the foot of that ridge, so this line reaches the peak from below on the southwest rather than at the Phantom col.\n\nNothing about this line is recorded in detail: no mileage, no gain and no camps. Treat it as a serious cross-country route and plan it from the map. Baker Lake Road has been closed to vehicles and walkers from the Shannon Creek Bridge to the trailhead since mid-July 2026 for construction; check before going.",
+    "hazards": [
+     "Long trailless travel on a rough ridge walled by cliff bands",
+     "No recorded water or camps along the ridge",
+     "Baker Lake Road construction closure from the Shannon Creek Bridge to the trailhead, in place since mid-July 2026"
+    ],
+    "baseFinding": "Coming off Pioneer Ridge, the peak is climbed by its easy southwest slope, which runs down to the ridge's foot. Head up it toward the summit block; the last part is the rib of sound rock that finishes the main line.",
+    "trip": {
+     "approachLogistics": {
+      "trailhead": "Baker River Trailhead",
+      "trailheadLat": 48.7507,
+      "trailheadLng": -121.556,
+      "trailheadDirection": "Drive Baker Lake Road (Forest Road 11) 25.5 miles north from WA-20 (milepost 82, near Concrete) to its end at the Baker River Trailhead (774 ft; Northwest Forest Pass required, vault toilet on site)."
+     },
+     "road": {
+      "name": "Baker Lake Road / forest access",
+      "status": "Per current USFS alert, closed to all vehicle and foot traffic at the Shannon Creek Bridge (~MP 23.8) through its terminus at the Baker River Trailhead, beginning approximately July 15, 2026, due to active construction — verify current status with the Mt. Baker Ranger District before driving.",
+      "driveNote": "Access from the Baker Lake area; verify current road and trailhead status before driving.",
+      "seasonalGate": "The road is also subject to normal winter snow closure; the 2026 mid-summer closure noted above is construction-related, not seasonal."
+     },
+     "access": {
+      "fees": "$6 non-refundable lottery/reservation fee, plus a $10-per-person-per-night backcountry camping fee (free for ages 15 and under), under the park's current backcountry permit fees.",
+      "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+      "rules": "New fixed anchors (bolts) are prohibited park-wide under the wilderness climbing moratorium — clean, removable protection only. Practice Leave No Trace and pack out all waste in this cross-country zone.",
+      "permit": "North Cascades NP wilderness/backcountry camping permit (required for any overnight stay; day climbs need none)",
+      "closures": "No standing closures specific to Crowder, but check current park alerts for fire restrictions, wildlife closures, or trail/creek-crossing hazards before a trip.",
+      "group_limit": 6,
+      "landManager": "North Cascades National Park Service Complex (National Park Service)",
+      "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+      "passRequired": "A wilderness backcountry permit (not a highway pass) is required for any overnight stay; 60% of permits are reservable in advance via Recreation.gov, with the remaining 40% held for walk-up issue at the Wilderness Information Center in Marblemount. No permit is needed for a single-push day climb, but a Crowder trip is realistically multi-day.",
+      "overnight_permit": {
+       "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+       "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+      }
+     },
+     "bivy": []
+    }
+   }
+  ],
+  "road": {
+   "name": "Ruth Creek Rd / Hannegan Pass Rd (FR-32)",
+   "status": "Seasonal USFS road, subject to washout",
+   "driveNote": "From WA-542 (Mt. Baker Hwy), follow FR-32 about 5.3 mi to road's end at the Hannegan Pass Trailhead; recent storm damage has at times restricted vehicles to around mile 5.2 — check current Mt. Baker-Snoqualmie NF alerts before you go.",
+   "seasonalGate": "Typically opens once snow clears in early-mid summer and closes with the first significant fall snow."
+  },
+  "waypoints": [
+   {
+    "lat": 48.9101,
+    "lng": -121.5927,
+    "elev": 3100,
+    "name": "Hannegan Pass Trailhead",
+    "note": "Road-end at Hannegan Campground off Ruth Creek Rd/FR-32; Northwest Forest Pass required, self-issue wilderness permit needed for NOCA camps ahead.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to the road-end at Hannegan Campground, at the end of FS Road 32 (Ruth Creek Road) off WA-542 — this is the Hannegan Pass Trailhead. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed for the North Cascades National Park camps ahead on the route."
+   },
+   {
+    "lat": 48.8829219,
+    "lng": -121.5342754,
+    "elev": 5100,
+    "name": "Hannegan Pass",
+    "note": "Trail crests the pass then drops roughly 650 ft per mile into North Cascades National Park toward the Chilliwack River, the gateway from Mt. Baker Wilderness into the park backcountry.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Follow Hannegan Pass Trail #674 up the Ruth Creek valley, a well-graded 2,000 ft over about 4 miles, to Hannegan Pass. It is the last easy water for a while."
+   },
+   {
+    "lat": 48.884457,
+    "lng": -121.502415,
+    "elev": 2800,
+    "name": "Chilliwack River ford / Easy Ridge climbers' path",
+    "note": "Faint, unsigned climbers' path leaves the valley trail here to gain Easy Ridge; parties commonly lose it near the river crossing, especially in fog.",
+    "type": "Hazard",
+    "distMi": 7,
+    "directions": "Continue down the Chilliwack River Trail to where the faint, unsigned climbers' path for Easy Ridge leaves the valley trail and fords the Chilliwack. Log crossings here are unreliable, and the path is easy to lose near the river."
+   },
+   {
+    "lat": 48.8482,
+    "lng": -121.37224,
+    "elev": 6278,
+    "name": "Perfect Pass",
+    "note": "Renowned high bivy site reached off Easy Ridge by working around the exposed notch known as the Impasse below Whatcom Peak; last reliable camp before the glacier.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "Ford the Chilliwack and climb steeply onto Easy Ridge, then follow the faint climbers' path along the crest past tarns and slabby sections, over Easy Peak, to the notch known as the Impasse. In many years the direct crossing is unsafe and the way round drops off the crest and re-climbs an exposed class 4 step. Beyond it, continue cross-country over snowfields to Perfect Pass; in fog, do not drift toward Whatcom Peak's summit wall, which steepens where the pass levels into a saddle."
+   },
+   {
+    "lat": 48.805899,
+    "lng": -121.341814,
+    "name": "Col between Phantom Peak and Crowder",
+    "note": "Gain this col to start the SW Flank route; from here grass and talus ramps trend up and left toward Crowder's summit block.",
+    "type": "Junction"
+   },
+   {
+    "name": "NE Ridge chasm (avoid)",
+    "note": "A deep, several-hundred-foot-long chasm splits Crowder's lower NE Ridge; stay on the SW Flank grass/talus line rather than straying onto the NE Ridge, which has stranded descending parties.",
+    "type": "Hazard"
+   },
+   {
+    "lat": 48.7977056,
+    "lng": -121.3519083,
+    "elev": 7082,
+    "name": "Mount Crowder",
+    "type": "Summit",
+    "elevFt": 7082
+   }
+  ],
+  "gpx": null,
+  "timing": null,
+  "itinerary": null,
+  "dist_km": null,
+  "gain_ft": null,
+  "bivy": [
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open ground above 6,000 ft on the crest of Easy Ridge, near Easy Peak (6,615 ft), where an old fire lookout once stood. It is the end of the first long day from the trailhead: over Hannegan Pass, down to the Chilliwack River, across it and up the ridge. The next morning starts with the detour around the Imperfect Impasse, a drop of several hundred feet and a climb back up, before Perfect Pass.",
+    "water": "Seasonal tarns scattered along the crest. Some hold water and some are dry in the same summer, which makes this the least predictable water on the route. Fill at the Chilliwack River before starting up.",
+    "permit": "Park wilderness permit required. This side is served by the wilderness information centres on both the Mount Baker Highway and at Marblemount, and the ranger will decide whether your night goes onto a designated camp or a cross-country zone — ask rather than assume, because the answer changes what the rest of the itinerary can say. Walk-up. Fires prohibited. Approved food storage required, and above treeline there is nothing to hang from, so a canister is the practical answer.",
+    "capacity": "Small — one or two parties on the ridge crest; party limit 6"
+   },
+   {
+    "elev": 6300,
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevations vary between roughly 6,000 and 6,300 ft depending on the account, and there are no facilities of any kind.",
+    "water": "Snowmelt streams and tarns; dependable while snow lingers, marginal to absent late season",
+    "permit": "Wilderness permit for the Perfect Pass cross-country zone. Walk-up only and capped at a single party per night. It cannot be booked ahead, so the permit is won or lost at the counter — this quota is usually the binding constraint on a Challenger trip, not the terrain.",
+    "capacity": "Party limit 6, and only ONE party per night in the whole zone — the tightest quota in this part of the park"
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "A moraine camp at the southern edge of the Crooked Thumb Glacier, below Ghost Peak, on the west side of the range. It is reached from Perfect Pass across the Challenger Glacier, and it is the last camp on record before the Phantom-Crowder col, which lies further south along the west side of Phantom Peak. Fully exposed to weather.",
+    "water": "Snowmelt and glacier melt only",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents on a narrow moraine"
+   }
+  ],
+  "descent_text": "Descend by reversing the SW Flank exactly as climbed: down the easy 2nd/3rd-class scree and heather ramps to the Phantom–Crowder col, then back north along the west side of the range the way you came. This is a walk-off/downclimb on the standard route — no rappels are required. Do not be tempted to shortcut east off the NE Ridge toward Pickell Pass: a first-hand account found this alternative deceptively difficult — in practice descending it means weaving a convoluted line of grassy 3rd-class ledges broken by short, exposed 4th-class and even a couple of 5th-class downclimbing moves, past a major chasm/fault splitting the lower ridge, with an unprotectable vertical drop near the base that forced one climber in that party to rig an improvised rappel off natural gear (there is no fixed hardware anywhere on this peak) rather than downclimb it. On the standard SW Flank descent, plan on 0 rappels; a rope is not needed for the reversal, just careful 3rd-class scrambling technique and, ideally, a GPS track of your ascent line given the routefinding-heavy terrain.",
+  "pitch_detail": [
+   {
+    "grade": "Class 2-3",
+    "notes": "From Perfect Pass, south along the west side of the range below Crooked Thumb and Phantom Peak to the col between Phantom and Crowder; off-trail travel on snow, talus and heather",
+    "pitch": "Approach ridge"
+   },
+   {
+    "grade": "Class 3-4",
+    "notes": "Southwest from the col over a lesser summit of about 7,020 ft, then a rib of sound rock up the summit block",
+    "pitch": "Southwest Flank"
+   }
+  ],
+  "overview": "Mount Crowder (7,082 ft) is a remote summit at the high point of a ridge running south from Phantom Peak in the Picket Range, North Cascades National Park, between upper Goodell Creek and Picket Creek, about 1.7 mi southwest of Mount Fury and just south of its parent peak, Phantom Peak. It has 1,042 ft of prominence and 1.53 mi of isolation. First climbed in 1962 by Cal Magnusson, Jack Ardussi, Don Mech, and Don Schmechel when it was still known informally as 'Old Brownie,' the peak was officially renamed in 1970 by the U.S. Board on Geographic Names to honor Dr. Dwight F. Crowder (1929-1970), a USGS geologist, mountaineer, and North Cascades conservationist credited with several first ascents in the range, including South Spectacle Butte and Sitkum Spire. Crowder sits deep in the trailless heart of the Pickets and is almost never climbed as a standalone objective — nearly all recorded ascents are one summit within a multi-day Picket Range ridge enchainment.",
+  "watch_out": [
+   "The NE Ridge descent toward Pickell Pass looks like a reasonable alternate way down but hides a several-hundred-foot chasm and a cliff band that has forced parties to rappel — don't commit to it without a rope and rappel gear.",
+   "The Chilliwack River has to be forded on the way to Easy Ridge; it can be difficult or dangerous to cross during snowmelt.",
+   "This is multi-day, no-cell-coverage terrain — carry a satellite communicator and file a detailed itinerary."
+  ],
+  "climate": {
+   "fall": "Weather deteriorates and snow returns by roughly early October, matching the point at which NPS backcountry camping fees stop being charged for the season.",
+   "spring": "Approach passes typically remain heavily snow-covered into June/July, easing brush travel but adding steep-snow and avalanche exposure.",
+   "summer": "July and the first weeks of August are the most reliably dry and stable; by mid-to-late August nearby glaciers and moats open up and can complicate approach terrain, though the SW Flank itself is non-glaciated.",
+   "winter": "Effectively inaccessible for climbing; deep snowpack and avalanche hazard affect all approaches.",
+   "typical": "Marine west-coast alpine climate typical of the North Cascades crest — heavy winter snowpack, a wet, slow-to-clear spring, and a comparatively drier but still unsettled summer. An unnamed glacier occupies Crowder's north cirque.",
+   "bySeason": {
+    "fall": "Early snow and rime can arrive by late September, adding difficulty to the already-loose SW Flank and the NE Ridge's exposed sections.",
+    "spring": "The Chilliwack River ford runs high and cold with snowmelt; upper gullies typically still hold snow.",
+    "summer": "July through September is the historically favorable window for a snow-free SW Flank; the best-documented ascent was made August 12.",
+    "winter": "Deep snowpack and avalanche exposure make the peak essentially inaccessible."
+   },
+   "forecastZone": "NWS Seattle / NWAC North Cascades — Whatcom/Skagit backcountry zone forecast"
+  },
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong multi-day fitness for a long approach over Hannegan Pass and Easy Ridge, then off-trail travel down the west side of the range with significant elevation gain and loss",
+    "packWeight": "Multi-day overnight/expedition pack (camping, food, navigation gear) given the remote, multi-day nature of the approach"
+   },
+   "approachTime": "Expect at least two days of approach from the Hannegan Pass Trailhead before the summit push",
+   "requiredSkills": [
+    "off-trail/bushwhack route-finding and navigation",
+    "loose rock and Class 4 scrambling competence",
+    "wilderness backcountry camping and permit logistics (North Cascades NP)",
+    "self-arrest / basic glacier-adjacent travel awareness for the surrounding Picket terrain",
+    "sound judgment on remote, rescue-far-away terrain"
+   ],
+   "experienceLevel": "Experienced alpine scrambler/mountaineer with prior North Cascades cross-country travel; comfortable being unroped on Class 4 terrain with loose rock and exposure, and self-sufficient on multi-day off-trail approaches"
+  }
+ }
+}

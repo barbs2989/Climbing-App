@@ -1,0 +1,353 @@
+{
+ "file": "t184.json",
+ "results": [
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Round-trip distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~14 miles round trip",
+   "evidence": "Four row fields agree on 14 mi (itinerary miles, totalNote, dist_km 22.53 km, summit pin 7 mi one-way); only watch_out says ~16. Externally the whole five-summit Green Creek Circuit from the same trailhead is about 13 mi (Mountain Project) / 11-13 mi (a 2021 trip report), so a Skookum-only round trip of ~16 mi is too high; ~14 is the closer figure.",
+   "sources": [
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Round-trip distance",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      1
+     ],
+     "find": "~16 miles round trip",
+     "replace": "~14 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Which side of the crest to stay on",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: travelling south, climber's left is east, so 'left/west' cannot both be right. The only published descriptions of Skookum from this side are of the 5.4 north ridge, which stays on the crest; none describe a Class 3-4 side-of-crest line, and the row's own pins put the summit west-northwest of the ridge gain point, not south. Settling it needs a description of the scramble line naming which flank it uses.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Season start",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Jul-Sep",
+   "evidence": "best_season, itinerary.cal and climate.summer all say July-September and the guidance marks July optimal; only the header says 'Late Jul'. Green Creek Circuit parties have climbed these summits as early as late June (trip reports dated 22 Jun 2013 and 30 Jun 2019), so July is in season. Also removed a doubled 'September-September' typo in optimalWindow.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/91834-tr-twin-sisters-range-green-creek-circuit-6222013/",
+    "https://cascadeclimbers.com/forum/topic/102909-tr-south-twin-jaws-tooth-skookum-kloke-little-sister-cinderella-green-creek-circuit-06302019/"
+   ],
+   "patches": [
+    {
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Season start",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Late Jul-Sep",
+     "value": "Jul-Sep"
+    },
+    {
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Season start",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "September-September",
+     "replace": "September"
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Time from the trail junction to the ridge crest",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: +1 hr for ~4 mi and ~3,400 ft through the cirque and loose 3rd/4th class is implausible, while +2-3 hr for the first 2.5 mi of maintained trail is slow. One 2021 party reached the base of the Green Creek Arete in the cirque about 2 hr after leaving the car, but no source gives junction-to-crest or car-to-crest times for this line. Settling needs a timed trip report to the Skookum ridge from the Green Creek path.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Total gain of the approach",
+   "verdict": "fixed",
+   "correct_value": "~6,100 ft car-to-car gain from the gate",
+   "evidence": "A 2020s trip report measured 6,102 ft of gain over 21.4 mi gate-to-summit-and-back; another party reports 5,400 ft earned on foot/bike plus 800 ft driven past the gate, ~6,200 ft from the 1,200-ft bridge. gain_ft and the itinerary already say 6,100; the 4,600 ft figure in approach and approach_variants is the stale copy.",
+   "sources": [
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister",
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Total gain of the approach",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "combined bike + foot gain for the full approach runs about 4,600 ft",
+     "replace": "combined bike + foot gain for the full approach runs about 6,100 ft"
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Total gain of the approach",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "combined bike and foot gain around 4,600 ft",
+     "replace": "combined bike and foot gain around 6,100 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "False summit elevation vs its distance from the top",
+   "verdict": "fixed",
+   "correct_value": "The ~6,500 ft dihedral is in the cliff band below the false summit; the false summit is ~50 yd from the 7,004 ft top",
+   "evidence": "One party describes a cliffy band around 6,500 ft with a large dihedral, then topping an unnamed point and finding the true summit 50 yards away; another describes several high points along the summit ridge with the highest at the southeast end. So the dihedral and the false summit are different features; the pin was named and described as if they were one. Also corrected the notch note's 'roughly 1,300 ft below the false summit' (that was 6,500 minus 5,200) to ~1,800 ft below the summit, matching the 5,200 ft notch and 7,004 ft summit.",
+   "sources": [
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "False summit elevation vs its distance from the top",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "name"
+     ],
+     "expect": "False Summit Dihedral",
+     "value": "Dihedral in the upper cliff band"
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "False summit elevation vs its distance from the top",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "Prominent dihedral feature repeatedly mistaken for the true summit;",
+     "replace": "Prominent dihedral in the cliffy band around 6,500 ft, below the false summit that parties often mistake for the true top;"
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "False summit elevation vs its distance from the top",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "find": "The high point at the dihedral is not the top",
+     "replace": "The first high point above the dihedral is not the top"
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "False summit elevation vs its distance from the top",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "roughly 1,300 ft below the false summit",
+     "replace": "roughly 1,800 ft below the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Where parties stash bikes",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is only with bivy[1] (Dailey Prairie road end, which describes the North Twin path). The waypoint is right: both trip reports stash bikes at the road terminus by Orsino Creek/the large pipe after ~6-7 mi. bivy[1] does not serve this route's bike stash; bivy[0] Orsino Creek Basin, bivy[2] col and bivy[3] summit do serve it. No bivy patch per the camping clean-up rule.",
+   "sources": [
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Whether most parties rappel the crux",
+   "verdict": "fixed",
+   "correct_value": "Most parties bypass the step by traversing south off the crest; a rappel is needed only if the crest is followed",
+   "evidence": "The route listing says that at the notch the crest becomes class 4/low 5th and parties traverse south to gullies or a snowfield; the Mountaineers route notes say to leave the ridge to the right ~200 yd from the false summit and that the ridge becomes technical ('be prepared to rappel') only if the crest proper is followed; a trip report also traversed right to the second gully. Patched the itinerary note, totalNote, the short descent line and rappels to match descent_text and watch_out.",
+   "sources": [
+    "https://www.mountainproject.com/route/111256616/west-ridge",
+    "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Whether most parties rappel the crux",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "that most parties rope up and rappel.",
+     "replace": "that most parties bypass by traversing right (south) off the crest; parties who stay on the crest may rope up and rappel it."
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Whether most parties rappel the crux",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "with one short roped rappel near the top.",
+     "replace": "with an optional short rappel near the top only if the ridge crest is followed."
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Whether most parties rappel the crux",
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Reverse the route with a short rappel",
+     "value": "Reverse the route, using the south-side bypass below the false summit; a short rappel only if the crest is followed"
+    },
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Whether most parties rappel the crux",
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "1",
+     "value": "0 on the standard south-side bypass; 1 short optional rappel if the ridge crest is followed"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Climb length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "758 m (2,500 ft)",
+   "evidence": "The notch (5,200 ft in approach, pitch_detail, waypoints and baseFinding) to the 7,004 ft summit is ~1,800 ft of vertical alone, so 244 m (800 ft) is impossible; 244 m is the length listed for the neighbouring Northeast Ridge. The West Ridge route listing gives 2,500 ft (758 m).",
+   "sources": [
+    "https://www.mountainproject.com/route/111256616/west-ridge",
+    "https://www.mountainproject.com/route/126696210/northeast-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Climb length",
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 244,
+     "value": 758
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "Dihedral elevation vs the high notch",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The bypass leaves the ~6,600 ft high notch and traverses across the south face to the gullies, so meeting a cliff band with a dihedral around 6,500 ft on that face is consistent given both figures are approximate; a party that climbed the West Ridge-South Face line reports exactly that dihedral band around 6,500 ft.",
+   "sources": [
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Hardest rock on the route",
+   "verdict": "fixed",
+   "correct_value": "4th class with low-5th variations; the final rise is usually bypassed",
+   "evidence": "The Northeast Ridge listing rates it 4th class with 'some low 5th variations'; the Mountaineers traverse notes say the final steep rise is usually bypassed on climber's right by gullies, while the crest itself is high-end 4th with some 5th moves. rock_grade's 'easy 3rd class' contradicted grade (Class 4) and both sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/126696210/northeast-ridge",
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Hardest rock on the route",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "3rd class (sometimes rated 4th class; most parties describe it as easy 3rd class)",
+     "value": "4th class (low 5th variations on the upper crest; the final rise is usually bypassed by south-side gullies)"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Rappel on the descent",
+   "verdict": "fixed",
+   "correct_value": "No rappel on the standard West Ridge descent via the south-side bypass",
+   "evidence": "The West Ridge listing and the Mountaineers route notes both have parties bypass the steep crest section on the south side, needing a rappel only if the crest proper is followed; rappels and descent_text already say 0. Patched the schedule line.",
+   "sources": [
+    "https://www.mountainproject.com/route/111256616/west-ridge",
+    "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Rappel on the descent",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "Reverse the West Ridge line (short rappel near the top) back to the bikes.",
+     "replace": "Reverse the West Ridge line, taking the south-side bypass below the false summit, back to the bikes."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Best month",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real tension: the trip plan says July is best (bergschrund still filled) while the guidance rates August optimal (driest rock). The Mountaineers notes only say the bergschrund may be problematic later in the season; no source names a best month. Settling needs a source weighing glacier/moat condition against rock for this route.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "pitch_detail and climbing_route list route sections (glacier, lower ridge, upper ridge), not rope-length pitches; the route listing itself records this ridge as a single-pitch scramble, so 'pitches: 1' is the catalog convention for it.",
+   "sources": [
+    "https://www.mountainproject.com/route/126696210/northeast-ridge"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,478 @@
+{
+ "batches": ["batches/b169.json", "batches/b170.json", "batches/b171.json", "batches/b172.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Forbidden Peak",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "8"},
+      {"field": "pitch_detail", "says": "6 numbered rows (pitch 1-6), lengths summing to 455m"}
+     ],
+     "why": "The headline pitch count (8) does not match the 6 rows in the ROUTE BREAKDOWN, whose summed length (455m) already matches length_m (457m), leaving no room for 2 more pitches.",
+     "internal_resolution": "pitch_detail's 6 rows sum to ~455m, matching length_m=457m almost exactly; pitches=8 is the likely outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "6640"},
+      {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt", "says": "2800 + 2415 = 5215"}
+     ],
+     "why": "The headline TECHNICAL STATS gain (6640 ft) is ~21% higher than the day-by-day itinerary gain total (5215 ft) for the same round trip.",
+     "internal_resolution": "Waypoint elevations (trailhead 3200 ft to summit 8815 ft) imply a net gain around 5600-5700 ft, closer to the itinerary sum than to gain_ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "glacier/crevasse exposure on approach",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel; the approach couloir/gully is a snow-and-scree feature, not a glacier."},
+      {"field": "hazards", "says": "Glacier crossing from Boston Basin to reach the couloir, then a lower and an upper bergschrund at its base..."},
+      {"field": "approach", "says": "make an ascending traverse across talus and the Quien Sabe Glacier remnant toward Forbidden's south face... Rope up if the glacier is crevassed or snow-covered."}
+     ],
+     "why": "seasonal_hazards.crevasses flatly denies any glacier travel, but the route's own hazards list and approach prose both describe crossing the Quien Sabe Glacier remnant and bergschrunds and instruct roping up for crevasses.",
+     "internal_resolution": "hazards and approach agree with each other (glacier crossing is real); seasonal_hazards.crevasses is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "5.6 (≈3.5 mi)"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "3.3 + 4.7 = 8.0 mi round trip"}
+     ],
+     "why": "The header would show the itinerary's round-trip mileage (8.0 mi) while Overview TECHNICAL STATS distance shows dist_km (3.5 mi) for the same trip - a convention mismatch (one-way vs round-trip).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "name": "Northeast Face",
+   "area": "Forbidden Peak",
+   "contradictions": [
+    {
+     "fact": "descent route off the Northeast Face",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend via the standard descent route, retracing the ascent when possible."},
+      {"field": "descent_text", "says": "Do not reverse the Northeast Face. From the summit, descend via the West Ridge: downclimb or make a short rappel to the West Ridge notch, then descend the approach couloir/'Cat Scratch Gullies'..."},
+      {"field": "pitch_detail[2].notes (Upper face)", "says": "Do not plan to reverse the face: the descent is by another route, and Forbidden has no easy way off by any line."},
+      {"field": "climbing_route[2].notes (n=3, Upper face to the summit)", "says": "Descent is not by reversing the face — the normal descent is a high traverse below the east ridge that skirts the ridge gendarmes rather than following the crest..."}
+     ],
+     "why": "Four fields on the same route give three different, mutually exclusive descent stories: retrace the ascent, descend the West Ridge couloir, or take a high traverse below the east ridge (which is actually how the separate East Ledges route is described elsewhere in this dataset).",
+     "internal_resolution": "descent_text, rappel_detail, rappel_count_note, and approach_variants.baseFinding all independently and consistently describe a West Ridge/Cat Scratch Gullies descent; the 'retracing the ascent' (descent) and 'east ridge gendarme traverse' (climbing_route) claims are outliers, apparently contaminated from the separate East Ledges route.",
+     "needs_research": false
+    },
+    {
+     "fact": "1975 fatality attribution",
+     "severity": "high",
+     "claims": [
+      {"field": "hazards", "says": "do not confuse this route with the East Ledges (wa_forbidden_peak_east_ledges), the loose ledge-traverse descent on the same aspect that carries a documented 1975 fatality"},
+      {"field": "obj_haz", "says": "documented fatal fall on the traverse (1975)"}
+     ],
+     "why": "The route's own hazards field explicitly warns that the 1975 fatality belongs to the separate East Ledges route, not this one - yet obj_haz lists that same 1975 fatality as this route's own hazard.",
+     "internal_resolution": "hazards' explicit disclaimer is the clearer statement; obj_haz appears to have copied the East Ledges fact onto this route.",
+     "needs_research": false
+    },
+    {
+     "fact": "climbing season window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "Late spring to early summer for the best face ice and snow."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late spring to early summer, for the best face ice and snow."},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "covers only April-July, with June marked 'optimal' and July marked 'marginal' - no August/September entries at all"}
+     ],
+     "why": "The headline season (Jul-Sep) and the best_season/seasonal_guidance fields (late spring-early summer, June optimal) name almost entirely non-overlapping windows, and the month breakdown doesn't even cover two of the three months the season field claims.",
+     "internal_resolution": "best_season and seasonal_guidance agree with each other (both say spring/early summer, June optimal); season='Jul-Sep' is the likely outlier, plausibly copied from the two other Forbidden routes that do climb Jul-Sep.",
+     "needs_research": false
+    },
+    {
+     "fact": "\"NE Ledge\" naming collision",
+     "severity": "medium",
+     "claims": [
+      {"field": "face", "says": "Northeast Face (NE Ledge)"},
+      {"field": "wa_forbidden_peak_east_ledges.overview", "says": "The East Ledges (also called the 'NE Ledge' in older and casual usage - a naming overlap that has caused confusion with the distinct, genuinely technical Northeast Face ice route on the same aspect)..."}
+     ],
+     "why": "The East Ledges route's own overview warns that calling it 'NE Ledge' is exactly the confusing alias that gets mixed up with this Northeast Face ice route - yet this route's own 'face' field embeds that very alias in parentheses.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8.5 (≈5.3 mi)"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "3.4 + 4.8 = 8.2 mi"}
+     ],
+     "why": "dist_km and itinerary mileage represent the trip differently (one-way vs round-trip convention), producing different header/stats numbers for the same route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "name": "Northwest Face",
+   "area": "Forbidden Peak",
+   "contradictions": [
+    {
+     "fact": "trip length (days)",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "Most parties treat this as a 3-day trip."},
+      {"field": "approach_variants[0].notes", "says": "This is the hardest-to-reach established line on the peak and most parties treat it as three days."},
+      {"field": "itinerary.totalNote", "says": "A 2-day trip: hike in and camp in Boston Basin, then a long, complex ~12 hr face day...descending the standard West Ridge couloir; very fit parties have linked it car-to-car in ~17 hrs."},
+      {"field": "itinerary.days", "says": "only 2 day entries are listed (approach day, climb/descend day)"}
+     ],
+     "why": "The approach text and its own approach_variants entry both state most parties take 3 days, but the itinerary structure only has 2 days and its totalNote explicitly frames the trip as 2-day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "10 (≈6.2 mi)"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "3.4 + 4.8 = 8.2 mi"}
+     ],
+     "why": "dist_km and itinerary mileage disagree on the round-trip distance (one-way vs round-trip convention).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "name": "East Ledges",
+   "area": "Forbidden Peak",
+   "contradictions": [
+    {
+     "fact": "which routes use East Ledges as their descent",
+     "severity": "low",
+     "claims": [
+      {"field": "itinerary", "says": "Used as the descent leg after climbing the West Ridge, East Ridge Direct, or Northwest Face; not typically a stand-alone objective."},
+      {"field": "wa_forbidden_peak_northwest_face.rappel_count_note", "says": "The ~5-rappel / 400 ft East Ledges figure belongs to the EAST side descent, not this route [Northwest Face]."},
+      {"field": "wa_forbidden_peak_northwest_face.descent_text", "says": "From the summit, descend via the standard West Ridge route rather than reversing the approach...This means NW Face parties do not need to re-cross the Boston or Forbidden Glaciers..."}
+     ],
+     "why": "This route's itinerary field names Northwest Face as a route that descends via East Ledges, but the Northwest Face route's own page explicitly disclaims that figure and states its descent is the West Ridge couloir.",
+     "internal_resolution": "Northwest Face's own descent fields are unambiguous that it uses the West Ridge, not East Ledges; East Ledges' itinerary list appears to be wrong about including it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_east_ridge",
+   "name": "East Ridge Direct",
+   "area": "Forbidden Peak",
+   "contradictions": [
+    {
+     "fact": "whether the East Ridge itself can be reversed by rappel",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend the West Ridge to its notch and couloir, or reverse the East Ridge with rappels."},
+      {"field": "descent_text", "says": "The East Ridge is not reversed as a rappel line in its own right; two descent options are used instead [West Ridge reversal, or the East Ledges descent]."}
+     ],
+     "why": "The short descent field offers 'reverse the East Ridge with rappels' as a real option, but descent_text explicitly states the East Ridge is not reversed as a rappel line and only describes two other options.",
+     "internal_resolution": "descent_text is the detailed, internally-consistent account (matches rappel_detail's NE-trending rappels toward the East Ledges, and approach_variants.baseFinding's explicit warning not to confuse the ridge with the Ledges); the 'reverse the East Ridge with rappels' clause in descent is the wrong outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "glacier/crevasse exposure on this route",
+     "severity": "high",
+     "claims": [
+      {"field": "watch_out", "says": "Glacier approach with crevasse field—continuous rope essential; probe every step; bergschrund crossing required at ridge base"},
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel documented for this approach/ridge line."},
+      {"field": "obj_haz", "says": "crevassed glacier terrain encountered on the East Ledges descent traverse"},
+      {"field": "descent_text", "says": "...several hundred meters of loose, sandy/grassy class 3-4 ledges and slabs...descend above the crevassed Boston Glacier before regaining the glacier and the walk back to Boston Basin."}
+     ],
+     "why": "watch_out claims a full glacier approach with a required bergschrund crossing, and obj_haz/descent_text mention crevassed Boston Glacier on the alternate descent option, while seasonal_hazards.crevasses flatly states no glacier travel is documented for this route. The gear list also lacks crevasse-rescue gear, unlike the peak's genuinely glaciated routes (North Ridge, Northeast Face, Northwest Face).",
+     "internal_resolution": "The approach text and gear list describe a choss/scree/snow-gully approach with no glacier; watch_out's glacier/bergschrund claim looks contaminated from a different (glaciated) route on this peak. The crevassed-Boston-Glacier mentions apply only to the optional East Ledges descent, not the ridge climb itself, so seasonal_hazards.crevasses is arguably correct for the ascent but should not read as an unqualified 'N/A' given the descent option.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Forbidden Peak",
+   "contradictions": [
+    {
+     "fact": "rock grade of the route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Grade III, 5.6"},
+      {"field": "rock_grade", "says": "5.6"},
+      {"field": "beta", "says": "Grade III, 5.7 climbing."},
+      {"field": "pitch_detail[1] (Crux)", "says": "5.6"}
+     ],
+     "why": "The route's grade and rock_grade both say 5.6, and the crux pitch in pitch_detail also says 5.6, but the beta paragraph explicitly opens with 'Grade III, 5.7 climbing.'",
+     "internal_resolution": "grade, rock_grade, and pitch_detail's crux all agree on 5.6; beta's '5.7' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "season/character of the route (summer rock vs winter ice)",
+     "severity": "high",
+     "claims": [
+      {"field": "watch_out", "says": "Winter route requiring ice climbing or snow climbing skills\\nShort ice pitch potential in winter conditions\\nAlpine terrain exposure in winter conditions\\nRemote location increases rescue difficulty"},
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "Mid to late summer for dry rock and a more stable approach glacier."},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "only covers June-September (no winter months)"}
+     ],
+     "why": "watch_out describes this as a winter ice route, while every other seasonal field (season, best_season, seasonal_guidance) frames it purely as a Jul-Sep summer alpine rock climb.",
+     "internal_resolution": "season, best_season, and seasonal_guidance are mutually consistent; watch_out's 'winter route' text appears to be contaminated from an unrelated route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boston Basin high camp elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "hike to Boston Basin high camp (~5700 ft)"},
+      {"field": "waypoints (Boston Basin High Camp)", "says": "elev 6400"},
+      {"field": "bivy[0] (Boston Basin upper (high) camp)", "says": "elev 6400"}
+     ],
+     "why": "The approach prose puts the 'high camp' at ~5,700 ft, 700 ft below the elevation given for the same named camp in the route's own waypoints and bivy list (6,400 ft) - closer to what the peak's other routes call the LOW camp (~5,300 ft).",
+     "internal_resolution": "waypoints and bivy agree at 6,400 ft; the approach text's 5,700 ft figure looks like it conflates the low and high camps.",
+     "needs_research": false
+    },
+    {
+     "fact": "length of the Sharkfin Col rappel onto the Boston Glacier",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "~100 ft rappel from Sharkfin Col onto Boston Glacier"},
+      {"field": "waypoints (Rappel to Boston Glacier)", "says": "~150-ft rappel down a loose gully off the col to reach the Boston Glacier"},
+      {"field": "approach_variants[0].hazards", "says": "A rappel of about 150 ft down a loose gully off the col..."}
+     ],
+     "why": "The rappels summary states ~100 ft for the same rappel that the waypoint note and the approach_variants hazard both put at ~150 ft - a 50% difference that matters for whether a single 60m rope doubled (~98 ft reach) will make the rappel.",
+     "internal_resolution": "Two independent fields (waypoint, approach_variants) agree on ~150 ft; the rappels field's ~100 ft is the likely outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {"field": "pitches", "says": "8"},
+      {"field": "pitch_detail", "says": "only 4 unnumbered sections (Approach, Crux, Mid-ridge, Upper ridge)"}
+     ],
+     "why": "pitches=8 is not corroborated by the ROUTE BREAKDOWN, which only names 4 sections with no pitch numbering that would sum to 8 (unlike sibling routes that use combined labels like '1-2').",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6 (≈3.7 mi)"},
+      {"field": "itinerary.days[*].miles", "says": "3.6 + 2 + 3.4 = 9 mi"}
+     ],
+     "why": "dist_km and the itinerary's total round-trip mileage disagree by roughly 2.4x (one-way vs round-trip convention).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "name": "Torment-Forbidden Traverse",
+   "area": "Mount Torment",
+   "contradictions": [
+    {
+     "fact": "total elevation loss",
+     "severity": "medium",
+     "claims": [
+      {"field": "loss_ft", "says": "5215"},
+      {"field": "itinerary.days[*].lossFt", "says": "0 + 500 + 5900 = 6400"}
+     ],
+     "why": "The headline loss_ft (5215) is about 18.5% lower than the sum of the itinerary's day-by-day loss (6400) for the same trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "land manager listed as both known and unknown",
+     "severity": "low",
+     "claims": [
+      {"field": "access.landManager", "says": "N/A"},
+      {"field": "access.land_manager", "says": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"}
+     ],
+     "why": "Two access fields for the land manager of the same route disagree on whether it's known: one says N/A, the other gives the full agency name (every sibling route on this peak fills both consistently).",
+     "internal_resolution": "land_manager (filled) is clearly correct; landManager=N/A is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "whether a backcountry permit is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.permit", "says": "N/A"},
+      {"field": "permit (top-level)", "says": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."},
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov...the remaining 40% are walk-up..."}
+     ],
+     "why": "access.permit says N/A (no permit info), but the route's own top-level permit field and access.notes both describe a required overnight backcountry permit in detail - and this route is a multi-day trip requiring at least one bivy.",
+     "internal_resolution": "permit and access.notes agree a permit is required; access.permit='N/A' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "4.8 (≈3.0 mi)"},
+      {"field": "itinerary.days[*].miles", "says": "3.5 + 2.5 + 5.5 = 11.5 mi"}
+     ],
+     "why": "dist_km (3.0 mi) is roughly a quarter of the itinerary's round-trip total (11.5 mi) for the same multi-day traverse.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "name": "South Ridge",
+   "area": "Mount Torment",
+   "contradictions": [
+    {
+     "fact": "hardest rock grade on the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade II, 5.4"},
+      {"field": "rock_grade", "says": "5.4"},
+      {"field": "pitch_detail[0]", "says": "5.5"},
+      {"field": "pitch_detail[1] (crux)", "says": "5.4-5.5"},
+      {"field": "pitch_detail[2]", "says": "5.5"}
+     ],
+     "why": "The headline grade and rock_grade both cap the route at 5.4, but three of the four pitch_detail rows (including the labeled crux) rate individual pitches at 5.5.",
+     "internal_resolution": "Most of pitch_detail agrees on 5.5 as the true crux difficulty; grade/rock_grade appear to undersell it.",
+     "needs_research": false
+    },
+    {
+     "fact": "land manager listed as both known and unknown",
+     "severity": "low",
+     "claims": [
+      {"field": "access.landManager", "says": "N/A"},
+      {"field": "access.land_manager", "says": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"}
+     ],
+     "why": "Same pattern as the neighboring Torment-Forbidden Traverse route: landManager says N/A while land_manager gives the full agency name.",
+     "internal_resolution": "land_manager is correct; landManager=N/A is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "whether a backcountry permit is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.permit", "says": "N/A"},
+      {"field": "permit (top-level)", "says": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit..."},
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov..."}
+     ],
+     "why": "access.permit=N/A contradicts the route's own top-level permit field and access.notes, both of which describe a required overnight permit for this route's 3-day Boston Basin itinerary.",
+     "internal_resolution": "permit and access.notes agree a permit is required; access.permit='N/A' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "4.8 (≈3.0 mi)"},
+      {"field": "itinerary.days[*].miles", "says": "3.5 + 3 + 3.5 = 10 mi"}
+     ],
+     "why": "dist_km is about a third of the itinerary's round-trip mileage total for the same trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sahale_mountain_sahale_glacier",
+   "name": "Sahale Arm / Sahale Glacier",
+   "area": "Sahale Mountain",
+   "contradictions": [
+    {
+     "fact": "whether the summit-block rappel is required or optional",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Optional single rappel off a slung summit block to regain the scramble ledge; otherwise downclimb"},
+      {"field": "descent_text", "says": "Getting off the summit block itself, however, requires a rappel rather than a downclimb."}
+     ],
+     "why": "rappels calls the summit-block rappel optional with downclimbing as an alternative, while descent_text is explicit that a rappel is required and downclimbing is not an option - this affects whether a party needs to carry a rope/rap device.",
+     "internal_resolution": "descent_text is the detailed, specific account and matches the pitch_detail note that the block has a 'slung block on top serves as a rappel anchor'; rappels' 'otherwise downclimb' appears to be the wrong claim.",
+     "needs_research": false
+    },
+    {
+     "fact": "whether a parking pass is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.passRequired", "says": "None — there are no trailhead or parking fees for trails that begin on National Park Service land, and there is no fee to enter the North Cascades National Park Service Complex."},
+      {"field": "access._raw.parking_pass_required", "says": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass"}
+     ],
+     "why": "passRequired states flatly that no parking pass is needed, while the route's own access._raw block explicitly requires a Northwest Forest Pass or Interagency Pass to park at the trailhead.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "headline grade omits the 5.0 crux",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade II, Class 3, glacier"},
+      {"field": "rock_grade", "says": "5.0"},
+      {"field": "pitch_detail[3] (Summit block)", "says": "5.0 / 3rd-4th class"},
+      {"field": "descent_text", "says": "requires a rappel rather than a downclimb"}
+     ],
+     "why": "The headline grade caps the route at 'Class 3' scrambling, but rock_grade and pitch_detail both describe a genuine 5.0 (5th-class) chimney move at the summit block requiring a rappel to descend - materially harder than the 'Class 3' the grade field implies.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "name": "Quien Sabe Glacier",
+   "area": "Sahale Mountain",
+   "contradictions": [
+    {
+     "fact": "hardest technical grade of the summit block",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Grade II, glacier + Class 3-4/5.0-5.4 summit block"},
+      {"field": "rock_grade", "says": "4th class"},
+      {"field": "pitch_detail[2] (Boston-Sahale col to summit block)", "says": "Exposed snow traverse + Class 3...loose rock scramble to the top"},
+      {"field": "climbing_route[3] (Summit block)", "says": "class 3-4"},
+      {"field": "gear", "says": "A few slings/light rock gear for the col traverse or the optional roped pitches on the summit block"}
+     ],
+     "why": "The headline grade claims up to 5.0-5.4 roped climbing at the summit, but rock_grade, pitch_detail, and climbing_route all independently cap the same summit block at Class 3-4 scrambling with no 5th-class rating.",
+     "internal_resolution": "rock_grade, pitch_detail, and climbing_route agree on Class 3-4; the '5.0-5.4' in the headline grade is the outlier, possibly carried over from the sibling Sahale Arm route which does have a genuine 5.0 move.",
+     "needs_research": false
+    },
+    {
+     "fact": "wilderness zone / camp contaminated from the wrong route",
+     "severity": "high",
+     "claims": [
+      {"field": "access.permitZone", "says": "North Cascades National Park (Cascade Pass area)"},
+      {"field": "access._raw.wilderness_zone", "says": "North Cascades National Park (Cascade Pass area)"},
+      {"field": "access._raw.altitude_restrictions", "says": "Sahale Glacier Camp at 7,600 feet (one of highest elevation campsites in park)"},
+      {"field": "waypoints / approach / bivy", "says": "route entirely uses the Boston Basin Trailhead and Boston Basin high/low camps; no waypoint or bivy entry mentions Cascade Pass or Sahale Glacier Camp"}
+     ],
+     "why": "This route's own waypoints, approach text, and bivy list are all Boston Basin (a different trailhead/zone entirely), yet its access.permitZone and access._raw fields name 'Cascade Pass area' and 'Sahale Glacier Camp' - the sibling Sahale Arm route's zone and camp, not this one's.",
+     "internal_resolution": "The route's own approach/waypoints/bivy are unambiguously Boston Basin; the access._raw block (and permitZone) appear to be a verbatim copy from the Sahale Arm/Sahale Glacier route.",
+     "needs_research": false
+    },
+    {
+     "fact": "camping fee amount",
+     "severity": "low",
+     "claims": [
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+      {"field": "access._raw.cost_structure", "says": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free"}
+     ],
+     "why": "The top-level fees field says there is no fee beyond parking, but the route's own access._raw block gives a specific $10+$6 per-person overnight fee (consistent with what every other Boston Basin route in this dataset charges).",
+     "internal_resolution": "Other Boston Basin routes uniformly charge $10/person + $6 reservation fee for overnight camping, so access._raw.cost_structure is likely correct and access.fees is the outlier (compounding the access._raw contamination noted above).",
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

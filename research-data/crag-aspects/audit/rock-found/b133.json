@@ -1,0 +1,357 @@
+[
+ {
+  "pid": "ma_needham_town_forest",
+  "crag": "Needham Town Forest",
+  "groups": [
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/115317407/needham-town-forest",
+  "quote": "Crag page names no rock; Illusive Cliff only 'I believe the rock type is granite' (hedged)"
+ },
+ {
+  "pid": "ma_neverland",
+  "crag": "Neverland",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Neverland Crag, The": "SE"
+  },
+  "url": "https://www.mountainproject.com/area/110507646/the-neverland-crag",
+  "quote": "No rock named on crag or wall pages; 'The Neverland Crag is Southeast-facing'"
+ },
+ {
+  "pid": "ma_spring_pond_woods",
+  "crag": "Spring Pond Woods",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/111852625/spring-pond-woods",
+  "quote": "'Many erratics sit in the woods' - no rock named (Peabody Granite only on parent Lynn Woods)"
+ },
+ {
+  "pid": "me_4_grand_slab_area_aka_home_base",
+  "crag": "Grand Slab Area (aka \"Home Base\")",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120288077/grand-slab-area-aka-home-base",
+  "quote": "Crag and all 5 wall pages name no rock; only parent South Freeport says 'The granite is sharp'"
+ },
+ {
+  "pid": "mn_bouldering_blue_mounds",
+  "crag": "Bouldering @ Blue Mounds",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/110040664/bouldering-at-blue-mounds",
+  "quote": "Crag page is placeholder text; Forest/HuckleBerry/Sixth Sign pages name no rock"
+ },
+ {
+  "pid": "mn_duluth_rock_climbs",
+  "crag": "Duluth Rock Climbs",
+  "groups": [
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "anorthosite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Angel Wall": "basalt"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107247435/angel-wall",
+  "quote": "Angel Wall: 'vertical basalt wall on 3rd Street in Duluth'; other wall pages name no rock"
+ },
+ {
+  "pid": "mo_em_closed",
+  "crag": "EM: (closed)",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/126602552/em-closed",
+  "quote": "Crag, Hiker's, Hide and seek, Turtle pages name no rock"
+ },
+ {
+  "pid": "nc_trailside_boulderfield",
+  "crag": "Trailside Boulderfield",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/116351857",
+  "quote": "Most of the boulders are well featured, but with plenty of bullet quartzite"
+ },
+ {
+  "pid": "nh_movie_gallery_the",
+  "crag": "Movie Gallery, The",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/113709216/the-movie-gallery",
+  "quote": "Crag, 5-0 block and Darkness Falls pages name no rock (park page only loose 'granite')"
+ },
+ {
+  "pid": "nm_gilman_tunnels",
+  "crag": "Gilman Tunnels",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "wrong",
+    "correct": "gneiss"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://geoinfo.nmt.edu/tour/home.cfml?id=77",
+  "quote": "The Gilman Tunnels were carved out of 1.6 billion-year-old granitic gneiss (MP crag: 'granite sport climbing')"
+ },
+ {
+  "pid": "nm_new_mexico_i_40_corridor",
+  "crag": "New Mexico, I-40 Corridor",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok"
+   },
+   {
+    "held": "mudstone (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/107549696/ute-lake-mine-canyon",
+  "quote": "Ute Lake: 'exposing several sandstone cliffs'; El Malpais 'soft sandstone'; Tucumcari 'rock quality is sandstone'"
+ },
+ {
+  "pid": "nm_south_central",
+  "crag": "South Central",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Spanky's Love Shack": "S"
+  },
+  "url": "https://www.mountainproject.com/area/105900356/spankys-love-shack",
+  "quote": "No rock named on crag or 8 wall pages; Spanky's: 'Its south-facing aspect'"
+ },
+ {
+  "pid": "nv_ash_spring",
+  "crag": "Ash Spring",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/123850782/ash-spring-boulders",
+  "quote": "Crag description names no rock; sandstone only in region-wide wet-rock boilerplate"
+ },
+ {
+  "pid": "nv_universal_wall",
+  "crag": "Universal Wall",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Southeast Face": "SE"
+  },
+  "url": "https://www.mountainproject.com/area/110601692",
+  "quote": "The huge wall of limestone sitting above the Mary Jane Falls parking lot"
+ },
+ {
+  "pid": "nv_west_shoulder_of_kraft_mountain",
+  "crag": "West Shoulder of Kraft Mountain",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Spy Cliff, The": "W",
+   "The Lighthouse": "S"
+  },
+  "url": "https://www.mountainproject.com/area/107046340/west-shoulder-of-kraft-mountain",
+  "quote": "Crag and 5 wall descriptions name no rock; sandstone only in region-wide boilerplate"
+ },
+ {
+  "pid": "ny_first_set",
+  "crag": "First Set",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107414196/first-set",
+  "quote": "Crag page names no rock"
+ },
+ {
+  "pid": "oh_veterans_park",
+  "crag": "Veterans Park",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/107522447/veterans-park",
+  "quote": "'a few large freestanding limestone boulders' - loose limestone cannot confirm or refute dolomite"
+ },
+ {
+  "pid": "oh_zephyr_road_boulders",
+  "crag": "Zephyr Road Boulders",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/200456249/zephyr-road-boulders",
+  "quote": "Crag page names no rock; only parent Salt Fork SP says 'solid sandstone bouldering'"
+ },
+ {
+  "pid": "ok_avery_drive",
+  "crag": "Avery Drive",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107286155/avery-drive",
+  "quote": "Crag-wide 'short limestone cliffs' decides no group (two rocks held); wall pages name none"
+ },
+ {
+  "pid": "ok_desperate_reality_cliff_bouldering",
+  "crag": "Desperate Reality Cliff Bouldering",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "JIZEN": "SW"
+  },
+  "url": "https://www.mountainproject.com/area/108227637/desperate-reality-cliff-bouldering",
+  "quote": "Crag and all 10 wall pages name no rock; JIZEN: 'JIZEN is a southwest facing boulder'"
+ }
+]

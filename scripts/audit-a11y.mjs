@@ -23,6 +23,7 @@
 // noisy; a manual keyboard pass is the right tool.
 
 import { chromium } from "playwright-core";
+import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
@@ -33,6 +34,8 @@ const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
 
 const tap = async (label) => {
+  // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+  if (MENU_SCREENS[label]) return openFromMenu(page, label, 500);
   const el = page.locator(`text="${label}"`).first();
   try { await el.click({ timeout: 4000 }); await page.waitForTimeout(500); return true; }
   catch { return false; }
@@ -144,7 +147,7 @@ const record = (screen, rows) => {
   }
 };
 
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"];
 await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
 await page.waitForTimeout(3500);
 

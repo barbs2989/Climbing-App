@@ -1,0 +1,38 @@
+{
+ "id": "wa_pernod_spire_standard",
+ "name": "Standard Rock Route",
+ "waypoints": [
+  {
+   "lat": 48.545,
+   "lng": -120.629,
+   "name": "SR-20 Wine Spires pullout / Burgundy Col climbers' trail",
+   "note": "",
+   "type": "Trailhead",
+   "directions": "Park at the roadside pullout on SR-20, about seven-tenths of a mile past the Cutthroat Lake Road turnoff and directly across the highway from the Wine Spires. The boot and climbers' trail for Burgundy Col begins right at this pullout, dropping off the road shoulder."
+  },
+  {
+   "lat": 48.546,
+   "lng": -120.585,
+   "name": "Burgundy Col",
+   "note": "7,770-ft notch separating the Wine Spires from Vasiliki Ridge, reached via steep talus/scree above the Bench camp.",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "From the pullout a boot/climbers' trail drops off the shoulder, crosses Early Winters Creek on logs or a rock-hop (a wet ford in early-season snowmelt), and climbs a timbered rib on the climber's-left side of the Burgundy Creek drainage, gaining about 2,000 ft over the first 1.5-2 miles to a broad flat bench at 6,400-6,600 ft. The bench is the last reliable water and can run dry by late summer; above it the trail continues up steep talus and scree to the col."
+  },
+  {
+   "lat": 48.5526,
+   "lng": -120.5903,
+   "name": "Pernod Spire Summit",
+   "type": "Summit",
+   "directions": "From Burgundy Col, cross to the east side and traverse south below the east walls, then climb obliquely up to the notch between Pernod and Chianti; from the notch the line goes up the northeast corner to the small summit block, which carries old first-ascent bolts worth backing up."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.5526,
+  "peakLng": -120.5903,
+  "trailhead": "SR-20 Wine Spires pullout / Burgundy Col climbers' trail",
+  "trailheadLat": 48.545,
+  "trailheadLng": -120.629
+ }
+}

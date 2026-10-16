@@ -1,0 +1,51 @@
+{
+ "id": "wa_ruth_icy_traverse",
+ "name": "Ruth-Icy Traverse",
+ "waypoints": [
+  {
+   "lat": 48.9101,
+   "lng": -121.5927,
+   "elev": 3100,
+   "name": "Hannegan Trailhead (Hannegan Pass Trail #674 road end)",
+   "note": "Road end of Forest Road 32 (Ruth Creek/Hannegan Pass Rd) at Hannegan Campground, ~12.5 mi east of Glacier, WA on Mt Baker Hwy SR 542 then 5.3 mi up FR 32. Hike Hannegan Pass Trail 4 mi to Hannegan Pass (5,056 ft), then climbers' trail east/south onto the north side of the Ruth Glacier to the summit.",
+   "type": "Trailhead",
+   "elevFt": 3100,
+   "directions": "From Glacier, drive the Mount Baker Highway (SR 542) east about 12.5 miles and turn left onto Hannegan Pass Road (Forest Road 32). Follow it 5.3 miles to the road end at Hannegan Campground and the trailhead at about 3,100 ft. A Northwest Forest Pass is required to park."
+  },
+  {
+   "lat": 48.885,
+   "lng": -121.535,
+   "elev": 5066,
+   "name": "Hannegan Pass",
+   "note": "Leave the maintained trail; climbers path heads east/south around a shoulder toward Ruth Glacier.",
+   "type": "Junction",
+   "distMi": 4.2
+  },
+  {
+   "lat": 48.895,
+   "lng": -121.555,
+   "elev": 5800,
+   "name": "Ruth Glacier Camp",
+   "note": "Common high camp on Ruth Mountain's north slope.",
+   "type": "Campsite",
+   "distMi": 6
+  },
+  {
+   "lat": 48.85,
+   "lng": -121.555,
+   "elev": 5800,
+   "name": "Ruth-Icy Saddle",
+   "note": "Descend a west-facing snow slope from Ruth to this connecting saddle.",
+   "type": "Junction",
+   "distMi": 8.5
+  },
+  {
+   "lat": 48.8597,
+   "lng": -121.5328,
+   "elev": 7115,
+   "name": "Ruth Mountain",
+   "type": "Summit",
+   "elevFt": 7115
+  }
+ ]
+}

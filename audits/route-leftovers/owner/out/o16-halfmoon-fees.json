@@ -1,0 +1,84 @@
+{
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_half_fast",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "None."
+    }
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_astral_projection",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "None."
+    }
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_astroglide",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "None."
+    }
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_asymptotic",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "None."
+    }
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_artic_rose",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "None."
+    }
+   ]
+  }
+ ]
+}

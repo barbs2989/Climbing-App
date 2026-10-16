@@ -1,0 +1,122 @@
+{
+ "file": "r622.json",
+ "results": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The official park trail-conditions page (updated 14 Sep 2026) lists the North Fork Skokomish trail from Staircase to First Divide (12.5 mi) AND the Home Sweet Home trail from First Divide to the Duckabush River trail junction (2.6 mi) as closed for the Bear Gulch Fire; the July 2026 reopening notices (park release, county paper, Hood Canal tourism story, peninsula travel alerts) confirm only the Staircase developed area reopened and all wilderness trails there stay closed. So the row's 'practical' Duckabush alternative (approach, approach_variants[0], descent_text, road.driveNote, pro_tips, overview) itself crosses the closed Home Sweet Home trail to reach First Divide, while the itinerary/waypoints/trailhead/pitch_detail describe the closed Staircase line. Neither side can be made correct with a minimal patch; the row needs an owner decision on how to present a route whose every trail approach is currently closed.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+    "https://www.nps.gov/olym/learn/news/staircase-developed-area-to-reopen-july-8-after-year-long-closure.htm",
+    "https://www.masoncounty.com/story/2026/07/09/news/sports-and-outdoors-a-year-later-staircase-entrance-areas-reopen/7457.html",
+    "https://www.explorehoodcanal.com/stories/2026/9/16/after-the-fire-the-forest-begins-again",
+    "https://olympicpeninsula.org/travel-alerts/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "One-way approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Staircase side: park lists Staircase to First Divide as 12.5 mi (other sources 13.1), so dist_km 22.5 (~14 mi) and the turnaround's ~14 mi match the Staircase line. Duckabush side: trailhead to park boundary 6.2 mi (WTA and NPS Duckabush page), boundary to the Home Sweet Home/O'Neil junction 10.3 mi, Home Sweet Home trail 2.6 mi to First Divide \u2014 roughly 19 mi to First Divide and ~21 mi to the summit, or ~25 via the Marmot Lake detour the approach describes; nothing supports '~29 miles one-way'. But no source states a one-way figure to Hopper via the Duckabush, and that alternative crosses the closed Home Sweet Home trail (see the trailhead finding), so no patch is written.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+    "https://www.wta.org/go-hiking/hikes/upper-duckabush",
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Where the Mount Hopper Way leaves the trail / high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One source puts the Mount Hopper Way junction 12.4 mi up the North Fork Skokomish trail with ~2 mi to the summit; another describes passing the trail to Mount Hopper and a small pond on the final stretch below the First Divide switchbacks; Two Bear Camp is given at 12.2 mi / 3,680 ft. Mileage conventions differ (First Divide is 12.5 mi in one source, 13.1 in another), so neither 'at First Divide' nor 'near Two Bear Camp at ~3,680 ft' can be confirmed by two agreeing sources.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-hopper",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=12937",
+    "https://www.trailrunproject.com/trail/7001975/north-fork-skokomish-river-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Route grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 2 scramble (harder variations near class 3); no class 3-4 crux",
+   "evidence": "grade, pitch_detail[2], rope_note, detailed_rack, seasonal_hazards.exposure and partner_requirements all describe a Class 2 scramble; only descent_text invents a class 3-4 headwall crux. The Mountaineers rate the Steel & Hopper scramble Technical 2 (a moderate scramble), agreeing with Class 2. The numerals in descent_text are removed; its optional-rappel sentence is left as written.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-steel-and-mt-hopper"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Route grade",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back down through the class 3-4 crux step, then the sustained class 3 terrain below it, back to the basin",
+     "replace": "back down through the steepest rock step, then the easier talus and heather below it, back to the basin"
+    },
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Route grade",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "facing in through the steeper class 3+/4 sections near the top",
+     "replace": "facing in through the steeper rocky steps near the top"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Home Sweet Home closed but recommended as camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park trail-conditions page (14 Sep 2026) lists the Home Sweet Home trail (First Divide to the Duckabush junction via Home Sweet Home) as closed for the Bear Gulch Fire, so access.closures is right and the approach/variant recommendation to camp there is currently wrong. But the same closure removes the whole First Divide link of the Duckabush alternative, so fixing only the camp sentence would leave an approach that still crosses the closed trail; this belongs with the trailhead/approach finding for an owner decision. bivy is owned by the camping clean-up and is not patched.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 4,400 matches the Mountaineers figure of 32 mi / 4,400 ft, but that is for the combined Steel & Hopper trip, not this route; the itinerary sums to 5,290 ft and Staircase (~850 ft) to the 6,120 ft summit is already ~5,270 ft net, so 4,400 looks too low. No outside source states a car-to-car gain for Hopper alone, so per the rules gain_ft is not changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-steel-and-mt-hopper"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Snow-free window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "mid-July through September",
+   "evidence": "season (Jul-Sep), seasonal_guidance.optimalWindow, the monthBreakdown (June risky, October marginal), best_season's 'most reliably snow-free' clause and approach_variants[0].season all say mid-July to September; only itinerary.cal calls late June to early October the snow-free window. Trip reports for the First Divide trail record 5+ ft of snow above 3,500 ft on 10 July in one year and a snow-free divide only by 14 July in another, which supports mid-July.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=12937",
+    "https://jaysjourneys.com/2011/07/08/duckabush-thru-north-fork-skokomish-backpack/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_hopper_standard",
+     "fact": "Snow-free window",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best snow-free window is roughly late June through early October",
+     "replace": "Best snow-free window is roughly mid-July through September"
+    }
+   ]
+  }
+ ]
+}

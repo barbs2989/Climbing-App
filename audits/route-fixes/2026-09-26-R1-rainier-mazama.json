@@ -1,0 +1,100 @@
+[
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "why": "access.permit called the climbing permit free; NPS charges an $82 climbing cost-recovery fee. Also drop the stale year tag from fees and correct the wilderness permit to $12/person/night per NPS.",
+  "set": {
+   "access.permit": {
+    "from": "Free climbing permit at Paradise WIC",
+    "to": "Climbing permit required ($82 cost-recovery fee per person); register at the Paradise WIC"
+   },
+   "access.fees": {
+    "from": "$82/climber climbing cost-recovery fee (2024) plus entrance fee",
+    "to": "$82/climber climbing cost-recovery fee plus park entrance fee"
+   },
+   "access.notes": {
+    "from": "Mount Rainier National Park climbing permit required ($82 per person through Pay.gov); registration through Recreation.gov mandatory for summit attempts; Paradise parking available year-round; wilderness permit ($10 per person per night, $6 transaction fee); no nonresident surcharge at this park in 2026 (the standard entrance fee applies); the Longmire–Paradise road stays open in winter, but its gate closes nightly from November and can stay shut on storm days; storms possible June-September",
+    "to": "Mount Rainier National Park climbing permit required ($82 per person through Pay.gov); registration through Recreation.gov mandatory for summit attempts; Paradise parking available year-round; wilderness permit ($12 per person per night, $6 transaction fee); no nonresident surcharge at this park in 2026 (the standard entrance fee applies); the Longmire–Paradise road stays open in winter, but its gate closes nightly from November and can stay shut on storm days; storms possible June-September"
+   }
+  }
+ },
+ {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "why": "access.permit called the climbing permit free; NPS charges an $82 climbing cost-recovery fee. Also drop the stale year tag from fees.",
+  "set": {
+   "access.permit": {
+    "from": "Free climbing permit required for glacier travel/above 10,000 ft",
+    "to": "Climbing permit required for glacier travel/above 10,000 ft ($82 cost-recovery fee per person)"
+   },
+   "access.fees": {
+    "from": "$82/climber climbing cost-recovery fee (2024) plus entrance fee",
+    "to": "$82/climber climbing cost-recovery fee plus park entrance fee"
+   }
+  }
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "why": "Yakama Nation visitor window is not a fixed Jul 1-Oct 1; it is set yearly (2020 mid-Sep-Oct 2, 2021 Aug 30-Oct 1 day use only, 2026 Jul 17-Sep 8 with dry camping). Fee is $20/vehicle/day at the Mirror Lake fee box; NW Forest Pass not valid.",
+  "set": {
+   "best_season": {
+    "from": "Summer, inside the Yakama Nation's visitor window for the Bird Creek side (historically about July 1 to October 1, and shorter in some years); earlier in that window holds more snow.",
+    "to": "Summer, during the Yakama Nation’s short visitor window for the Bird Creek side; the Nation sets the dates each year, recently anywhere from mid-July to October 1 and sometimes only about a month long, so confirm before planning. Earlier in the window holds more snow."
+   },
+   "seasonal_guidance.optimalWindow": {
+    "from": "Late August through September, while the Yakama Nation opens the Bird Creek side to visitors; earlier holds more snow",
+    "to": "August and September, while the Yakama Nation has the Bird Creek side open to visitors (the dates change each year); earlier holds more snow"
+   },
+   "seasonal_guidance.monthBreakdown.July": {
+    "to": {
+     "status": "marginal",
+     "reason": "The headwall carries its best snow, but the reservation side opens mid-July in some years and not until late August in others."
+    }
+   },
+   "seasonal_guidance.monthBreakdown.August": {
+    "to": {
+     "status": "good",
+     "reason": "Usually inside the visitor window at least part of the month; the headwall still holds snow though crevasses below Sunrise Camp open up."
+    }
+   },
+   "seasonal_guidance.monthBreakdown.September": {
+    "to": {
+     "status": "good",
+     "reason": "Firm snow or ice on the headwall and open crevasses; the visitor window has closed as early as the first week in some years, so check the dates."
+    }
+   },
+   "seasonal_guidance.monthBreakdown.October": {
+    "to": {
+     "status": "risky",
+     "reason": "The reservation area is closed to visitors by October in recent years, and early storms ice the headwall."
+    }
+   },
+   "approach": {
+    "from": "Start from the Bird Creek Road trailhead (~5,700 ft) on the Yakama Reservation side; route-finding across moraines and glacier fields begins around 6,700 ft, reaching Sunrise Camp at 8,300 ft.",
+    "to": "Start from the Bird Creek Road trailhead (~5,700 ft) on the Yakama Reservation side; route-finding across moraines and glacier fields begins around 6,700 ft, reaching Sunrise Camp at 8,300 ft. The Yakama Nation decides each year whether overnight stays are allowed, so plan a single-day push in day-use-only years."
+   },
+   "access.fees": {
+    "from": null,
+    "to": "$20 per vehicle per day Yakama Nation day-use fee for the Bird Creek side (cash or check, at the Mirror Lake fee box); camping, in years it is allowed, is charged per night on top. Northwest Forest Pass and Discovery Pass are not valid here."
+   },
+   "access.permit": {
+    "from": "Yakama Indian Reservation Tract-D tribal-use permit required to start from Bird Creek Meadows.",
+    "to": "Yakama Nation Tract D day-use permit required to start from Bird Creek Meadows; pay at the fee box at Mirror Lake."
+   },
+   "access.closures": {
+    "from": "Non-tribal-member season restricted to roughly July 1–October 1; the Mazama Glacier route and Bird Creek Meadows are among the few reservation-side areas open to public recreation.",
+    "to": "Closed to non-tribal visitors outside a short summer window the Yakama Nation sets each year; recent windows have opened between mid-July and mid-September and closed between early September and October 1."
+   },
+   "access.overnight_permit": {
+    "from": {
+     "url": null,
+     "what": "Yakama Nation Tract D recreation permit for the Bird Creek side, plus the Mount Adams Climbing Pass above 7,000 ft on national forest land",
+     "where": "Buy the Tract D permit at the fee station where the road enters the reservation; the area is open to non-tribal visitors only in summer, roughly July to September. The Climbing Pass is sold on Recreation.gov."
+    },
+    "to": {
+     "url": null,
+     "what": "Yakama Nation Tract D recreation permit for the Bird Creek side, plus the Mount Adams Climbing Pass above 7,000 ft on national forest land",
+     "where": "Pay the Tract D fee at the fee box at Mirror Lake (cash or check); the area is open to non-tribal visitors only during a short summer window the Yakama Nation sets each year. The Climbing Pass is sold on Recreation.gov."
+    }
+   }
+  }
+ }
+]

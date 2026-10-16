@@ -1,0 +1,327 @@
+wa_abernathy_peak_north_ridge: Approach mileage/gain figures citing the wrong route's trailhead (Scatter Lake)
+wa_abernathy_peak_north_ridge: Which approach/trailhead the North Ridge uses: approach/itinerary/timing say North Creek Trail #413 from the Gilbert (North Creek) trailhead at ~3,660 ft with a mine trail at mile 2; approach_variants/detailed_rack/what_to_bring say every recorded ascent comes via Wolf Creek and Gardner Meadows and the North Creek side is undescribed; the Trailhead waypoint is named Scatter Creek Trailhead at 3,150 ft (coordinates at Scatter Creek) yet its note calls it the start of North Creek Trail #413; bivy says the north ridge is reached from the Scatter Lake basin
+wa_agnes_mountain_west_route: overall grade (Class 3-4) vs the route's own technical crux (5.6-5.8, roped, rappelled)
+wa_agnes_mountain_west_route: route identity: claimed 1936 'West Fork of Agnes Creek' line vs the actual body content describing the Asa Peak NE Ridge/South Ridge line
+wa_agnes_mountain_west_route: Summit elevation: waypoint elev/elevFt and itinerary totalNote say 8,131 ft; schedule says 8,131-8,198; high_point_ft says 8,119; bivy says 8,115
+wa_agnes_mountain_west_route: Overnight permit on the Agnes Creek corridor: access.permit/access.fees say only the first ~2 mi need an NPS permit and the high camps take a free self-issue USFS permit; itinerary.cal and the Fivemile/Swamp Creek bivy permit texts say a North Cascades NP backcountry permit is required for camps along the Agnes Creek/PCT corridor; access.fees calls the NPS permit free while the NPS lists $10/person + $6
+wa_south_face_12: Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass
+wa_argonaut_peak_east_ridge: Pitch count: 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)
+wa_argonaut_peak_east_ridge: Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col
+wa_argonaut_peak_east_ridge: Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157
+wa_buck_mountain_south_ridge: Approach/camp line: King Lake + east-ridge notch vs. Buck Creek Pass + Liberty Cap + Louis Creek Basin
+wa_cannon_mountain_south_slopes: Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)
+wa_cashmere_mountain_west_ridge: 'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp
+wa_cashmere_mountain_west_ridge: Recommended start time from high camp — 5:00 AM vs ~6:00 AM
+wa_chalangin_peak_southwest_face: Climbing season: 'May-Jun' header vs. a season description running through September
+wa_clark_mountain_west_ridge: Aspect/face of the documented Walrus Glacier line
+wa_nw_ridge_2: Approach side of Colchuck Lake - waypoint routes via Aasgard Pass while approach/approach_variants say EAST shoreline
+wa_nw_ridge_2: Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it
+wa_colchuck_balanced_rock_west_face: Commitment grade - Grade IV (in `grade`) vs commitment III
+wa_full_tilt_tempest_wall_free_version: Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east
+wa_leche_la_vaca: Pitch count
+wa_scarface_3: Pitch count
+wa_the_tempest: Side of the summit the slung-horn rappel leaves from: rappels says south/southwest, descent/descent_text say east
+wa_colchuck_balanced_rock_col_east_lake_side_approch: dist_km 17.06 (10.6 mi) is shown as the one-way approach but equals the itinerary's round trip; the col waypoint is at 5.3 mi
+wa_colchuck_peak_northeast_couloir: Summit-day length and start time: partner_requirements vs timing/itinerary
+wa_colchuck_peak_holsten_hilden: Commitment grade: IV vs III
+wa_colchuck_peak_holsten_hilden: Season window: Jan-Feb vs a wider Dec-March window
+wa_courtney_peak_scramble: Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)
+wa_courtney_peak_scramble: Wilderness permit: itinerary.cal 'self-issue wilderness permit' vs permit/access.permit 'no wilderness permit required'
+wa_courtney_peak_scramble: Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass
+wa_devore_peak_west_ridge: Round-trip distance (dist_km vs itinerary miles)
+wa_devore_peak_west_ridge: Elevation of the higher unofficial camp above Bird Creek Camp
+wa_dragontail_peak_r3: Steepest angle of the couloir
+wa_der_dihedral: Day-2 climb duration
+wa_this_my_friend: dist_km holds the round trip, not the one-way approach
+wa_dragontail_peak_r1: Rope length
+wa_dragontail_peak_r1: Rack cam-size upper limit
+wa_dragontail_peak_r2: Rope length
+wa_enchantment_peak_southwest_scramble: Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)
+wa_flora_mountain_southwest_slope: season window (Jun-Sep) doesn't include the best_season's recommended October
+wa_lichtenberg_mountain_southeast_ridge: Round-trip distance (dist_km vs. stated mileage)
+wa_lichtenberg_mountain_southeast_ridge: Waypoint list includes a landmark from a different trail/approach
+wa_lichtenberg_mountain_se_route: Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint
+wa_luahna_peak_east_slopes: Total round-trip distance
+wa_luahna_peak_east_slopes: Header gain_ft/loss_ft 6,150 vs itinerary day totals 6,520 ft (and totalNote ~6,500 ft)
+wa_mount_berge_southwest_route: Waypoint distance jump at the summit
+wa_mount_mastiff_south_route: Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi
+wa_mount_mastiff_south_route: Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction
+wa_needle_peak_south_route: Crux/route grade (Class 4, 5.0) vs. the pitch-by-pitch breakdown's max grade (Class 3)
+wa_needle_peak_south_route: Whether a permit office exists at Stehekin
+wa_needle_peak_south_route: Where the crux is: partner_requirements/seasonal_hazards.exposure put it at a 'narrow, exposed summit step'; the rest of the row puts it in the 7,300-7,400 ft cliff bands/notch
+wa_needle_peak_south_route: Route identity: the 'South Route' row climbs the north ridge from Swamp Creek, the same line as wa_needle_peak_north_ridge
+wa_needle_peak_north_ridge: Route scope: this route's own trip plan/hazards describe summiting a different peak (Bonanza Peak) than its own waypoints reach
+wa_rock_mountain_west_route: Slope aspect of the switchbacks: 'southeast-facing' (itinerary note, sectionBreakdown note) vs 'south/southwest-facing' (approach, face, descent_text)
+wa_saska_peak_emerald_saska_col: Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)
+wa_saska_peak_emerald_saska_col: Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction
+wa_seven_fingered_jack_southwest_slopes: Elevation where the two basin entry lines (gully vs ridge) merge
+wa_spectacle_buttes_west_route: Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)
+wa_spectacle_buttes_west_route: dist_km stores the round trip but renders as the one-way approach
+wa_star_peak_sawtooth_scramble: total gain: gain_ft/loss_ft 5,200 vs itinerary/approach/totalNote 4,730
+wa_switchback_mountain_scramble: distance to camp: itinerary day 1 6.2 mi vs Cooney Lake waypoint at 8 mi
+wa_tupshin_peak_scramble: rappel/rope length: 30 m vs 60 m
+wa_union_peak_se_route: Car-to-car distance: waypoint distMi (summit 2.7 mi one way) and itinerary 5.4 mi round trip look too long for the geometry
+wa_union_peak_se_route: Parking pass: access.fees / access.passRequired say no Northwest Forest Pass, while permit, the Trailhead waypoint note and the Smithbrook bivy entry say one is required
+wa_alta_mountain_scramble: Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)
+wa_bryant_peak_southeast_slopes: Total elevation gain (gain_ft/itinerary vs approach prose & approach_variant's own gainFt)
+wa_bryant_peak_southeast_slopes: Which trailhead/approach the route uses (Alpental vs Denny Creek), incl. trailhead waypoint elev 2,300 vs its own directions ~3,100 ft
+wa_burnt_boot_peak_north_route: Distance from the Point 5,841 pass to the summit
+wa_japanese_gardens: Crux-flagged pitch vs actual hardest pitch
+wa_cathedral_rock_northeast_ridge_2003_variation: Crux grade vs headline grade
+wa_sisu: Total route length vs sum of pitch lengths
+wa_east_face_6: Total elevation gain/loss for the route
+wa_east_face_6: Hardest grade of the summit pitches
+wa_east_face_6: Overall commitment/alpine grade of the route
+wa_chimney_rock_west_face: Hardest technical rock grade on the route
+wa_chimney_rock_west_face: Route identity: pitch, rappel and descent details describe a different peak (Chimney Rock, Idaho Selkirks)
+wa_leave_my_flake_alone: Which pitch is bolted (pitch_detail[2] says 'Fully bolted' with bolts:0; gear says to protect the reach)
+wa_denny_mountain_north_slopes: Round-trip and ascent/descent times
+wa_denny_mountain_north_slopes: Permit: 'None required' vs 'self-issue day-use permit'
+wa_vanishing_point: approach distance to the tower base
+wa_deep_blue: discipline label vs fully-bolted description
+wa_deep_blue: descent: rappel-only vs walk-off, and rope length
+wa_eagle_rock_scramble: access.fees claims no fee; access.passRequired states an explicit dollar fee
+wa_project_crack: Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag
+wa_glacier_view_temple: Rope length needed to lower off (30 m rope vs a stated 60 m requirement)
+wa_glacier_view_temple: Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag
+wa_esmeralda_peaks_scramble: which approach this route describes — Esmeralda Basin/Fortune Creek Pass vs. De Roux Creek Trail
+wa_esmeralda_peaks_scramble: gain_ft 3,300 vs itinerary gainFt/lossFt 2,500
+wa_fortress_mountain_east_ridge: Gain vs loss for an out-and-back route
+wa_grotto_mountain_e_route: total gain/loss: gain_ft vs itinerary vs approach prose
+wa_grotto_mountain_e_route: trailhead waypoint coordinates are geometrically impossible for this route
+wa_grotto_mountain_e_route: Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower
+wa_gunn_peak_southeast_route: Round-trip / total hiking distance
+wa_gunn_peak_southeast_route: Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)
+wa_lewis_creek_route: Which approach/line this route actually follows
+wa_blood_sport: Elevation gain for the route
+wa_guye_peak_improbable_traverse: Total car-to-car time
+wa_guye_peak_r1: Location, grade and structure of the route's crux
+wa_half_fast: Whether trailhead parking requires a fee/pass
+wa_half_fast: Rappel distance vs route length
+wa_half_fast: Permit field names the Wild Sky Wilderness
+wa_astral_projection: Whether trailhead parking requires a fee/pass
+wa_astral_projection: Permit field names the Wild Sky Wilderness
+wa_astroglide: Whether trailhead parking requires a fee/pass
+wa_astroglide: Permit field names the Wild Sky Wilderness
+wa_asymptotic: Whether trailhead parking requires a fee/pass
+wa_asymptotic: Rappel distance vs route length
+wa_asymptotic: Permit field names the Wild Sky Wilderness
+wa_artic_rose: Whether trailhead parking requires a fee/pass
+wa_artic_rose: Permit field names the Wild Sky Wilderness
+wa_hibox_mountain_standard: 'Rampart Lakes' waypoint on the Hibox route
+wa_ingalls_peak_south_ridge: pitch count on the South Ridge
+wa_east_ridge_9: rappel sequence/count on the shared South Ridge descent
+wa_iron_cap_mountain_south_route: Total elevation gain/loss vs the itinerary's own day-by-day figures
+wa_kaleetan_peak_south_ridge: Elevation/location of the route's rock-chimney crux
+wa_kendall_peak_standard: Mileage along the PCT to the stump/boot-path turnoff (4.6-5 mi vs 5.5-6 mi vs mile 5.75)
+wa_la_bohn_peak_southwest_slopes: Which side of the peak the route climbs from the gap (east ridge/face vs southwest slopes 'staying left of the broad west ridge')
+wa_little_annapurna_south_slopes: Distance and gain to a Core Enchantments camp (partner_requirements 8-9 mi / ~6,200 ft vs waypoints ~6.5 mi and pass at 7,841 ft from a 3,500 ft trailhead)
+wa_and_say: Route grade vs crux pitch grade
+wa_traverse_of_mount_index: Total gain 4,500 ft is less than the trailhead-to-summit rise
+wa_mount_index_north_peak_traverse: Descent line: reverse the North Face vs descend the East Route/Hourglass Gully
+wa_hourglass_gully_winter: Total gain/loss: gain_ft 6,000 vs loss_ft 5,500 vs approach '~5,500 ft' on an out-and-back
+wa_baring_mountain_northwest_ridge: round-trip distance and gain figures disagree
+wa_baring_mountain_south_route: round-trip distance: dist_km vs itinerary/approach_variants
+wa_baring_mountain_r1: access.permit says 'None required' but the top-level permit field says a free self-issue Wild Sky Wilderness permit or trailhead registration
+wa_baring_mountain_south_route: access.permit says 'None required' but the top-level permit field says a free self-issue Wild Sky Wilderness permit or trailhead registration
+wa_martin_peak_west_ridge: summit elevation: waypoint 8,509 ft vs itinerary schedule 'Summit (8,511 ft)'
+wa_martin_peak_west_ridge: distance and gain: dist_km 25.75 km (16 mi, shown as the one-way approach) and gain_ft 5300 vs itinerary days 7 + 3.5 + 7 mi and 3,200 + 2,200 = 5,400 ft gain, and totalNote '~16 mi and ~5,400 ft round trip'
+wa_massie_peak_west_route: Which approach and camp are used to reach Massie Peak's West Ridge
+wa_massie_peak_west_route: Elevation of Massie Lake
+wa_merchant_peak_south_route: Elevation of the Waterfall 3 crux
+wa_mount_fernow_southeast_face: Whether a parking pass/fee is required at this trailhead
+wa_mount_lyall_south_route: Which approach reaches Mount Lyall (High Bridge/Agnes-Swamp Creek vs Holden/Railroad Creek) and the route's class
+wa_mount_maude_r1: Ice grade of the route (header grade pill)
+wa_mount_price_north_route: Round-trip distance
+wa_mount_price_north_route: Whether a parking pass/fee is required at the trailhead
+wa_mount_roosevelt_standard: Climbing season window (Jul-Sep chip vs a stated Jul-Oct/May-Oct window elsewhere)
+wa_mount_stuart_north_ridge: Total pitch count
+wa_mount_stuart_north_ridge: Trailhead pin vs the approach the waypoints and itinerary describe
+wa_gorillas_direct: Bergschrund/glacier hazard on a rock-route approach that has no glacier
+wa_sherpa_glacier: Round-trip car-to-car distance
+wa_mount_stuart_stuart_glacier_couloir: Maximum slope angle
+wa_mount_stuart_west_ridge: Commitment grade
+wa_mount_stuart_west_ridge: Round-trip distance
+wa_king_kong_gorillas_direct_direct: Hardest/crux rock grade
+wa_king_kong_gorillas_direct_direct: Total elevation gain
+wa_king_kong_gorillas_direct_direct: Round-trip distance
+wa_navaho_peak_south_slopes: Elevation of the Standup Creek Trail junction waypoint
+wa_mount_index_north_norwegian_buttress: Itinerary descent total (5,491 ft loss) vs gain_ft/loss_ft 5,000
+wa_lone_wolf: The Obelisk's own elevation disagreement across waypoints
+wa_philadelphia_mountain_scramble: Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window
+wa_philadelphia_mountain_scramble: Best time of year: rope_note says May/June is best, best_season says avoid late April-May
+wa_boving_christensen: total route length
+wa_stanley_burgner: total route length
+wa_energizer_bunny: total route length
+wa_prusik_peak_taylor_wood_route: number of sections/pitches on the route
+wa_prusik_peak_west_ridge: overall commitment grade (roman numeral)
+wa_red_mountain_snoqualmie_standard: Waypoint list names 'Red Pass' as a mid-route junction, but the route's own prose never goes there
+wa_east_ridge_7: Route's own approach names a saddle belonging to a different peak (Lundin/East Lundin) rather than Red Mountain
+wa_sherpa_balanced_rock_standard: face 'West Ridge' vs a route that reaches the block along the crest from the east and starts on its east-side pedestal
+wa_sherpa_balanced_rock_standard: access.permit/group_limit/notes put this route in the Enchantment Permit Area Stuart Zone, while the approach is via Longs Pass/Ingalls Creek (Cle Elum RD)
+wa_sherpa_peak_north_ridge: dist_km (Approach, one way) 22 km vs itinerary day-1 approach 7 mi
+wa_sherpa_peak_west_ridge: Sherpa south basin camp waypoint elev 6200 vs elevFt 6300
+wa_sherpa_peak_east_ridge: rock_grade undersells the technical climbing
+wa_new_york_gully: Overview's stated route length (~1,300 ft) is roughly double length_m and the pitch-length total
+wa_new_york_gully: ice grade: ice_grade/alpine_grade WI3 vs grade WI4 and pitch 4 WI4
+wa_new_york_gully: pitches 5 vs 4 ROUTE BREAKDOWN rows
+wa_drilling_me_softly: Elevation gain to the crag
+wa_drilling_me_softly: Season / when the access road is open
+wa_spraying_mantis: Elevation gain to the crag
+wa_spraying_mantis: Season / when the access road is open
+wa_spinnaker_peak_s_route: Wilderness permit requirement
+wa_spinnaker_peak_s_route: Summit elevation
+wa_spire_mountain_scramble: Whether a wilderness permit is needed
+wa_tailgunner_peak_w_route: Whether a wilderness permit is needed
+wa_the_temple_south_ridge: climbing season window
+wa_the_temple_south_ridge: crux grade (3-way disagreement)
+wa_the_temple_south_ridge: number/type of summit rappels
+wa_the_temple_south_ridge: one-way / round-trip approach distance
+wa_the_temple_south_ridge: Total elevation gain/loss
+wa_treen_peak_scramble: loss_ft (800) vs car-to-car loss
+wa_tye_peak_e_route: Season this route is actually climbed in
+wa_tye_peak_e_route: Total elevation gain
+wa_smears_jugs_and_rock_roll: total elevation gain to the crag
+wa_wing_peak_northwest_ridge: How long consolidated/climbable snow lasts on the route
+wa_e_se_face: route grade — 4th class vs a roped 5.6 pitch
+wa_e_se_face: descent line
+wa_witches_tower_south_face: crux grade — rock_grade omits it, and 5.4 vs 5.5 elsewhere
+wa_glacier_peak_cool_glacier_gerdine: Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi
+wa_glacier_peak_sitkum_glacier: Commitment/technical grade disagrees across three fields (II vs I-II vs III)
+wa_glacier_peak_sitkum_glacier: Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose
+wa_big_four_mountain_spindrift_couloir: Maximum ice difficulty on the route
+wa_del_campo_peak_standard: Descent duration
+wa_don_t_climb_that_she_said: one-way approach distance (dist_km 0.97 km shown as 'Approach (one way)' vs ~8+ mile walk in)
+wa_glacier_peak_disappointment_peak_cleaver: waypoints[1] 'Buck Creek Pass' and waypoints[2] 'Cool/Gerdine Basin Camp' belong to an eastern approach
+wa_glacier_peak_disappointment_peak_cleaver: total elevation gain for the trip
+wa_glacier_peak_kennedy_glacier: total one-way/round-trip distance
+wa_glacier_peak_kennedy_glacier: summit-day descent line (Sitkum vs Frostbite Ridge/Vista Glacier)
+wa_kololo_peaks_standard: Total elevation gain and loss for the round trip
+wa_le_conte_mountain_northern_aspect: Total elevation gain for the route
+wa_lemah_mountain_east_route: Elevation of the glacier-exit / moat transition below the col
+wa_lemah_two_scramble: Elevation of the Lemah Meadows camp: waypoint 4,800 ft vs prose meadow camp ~3,600 ft
+wa_little_big_chief_mountain_west_route: Crux location and approach: beta/pitch_detail describe a NE-ridge/SW-face/E-face route from a Williams Lake camp, but this route's own approach/climbing_route/descent_text/waypoints describe a west-ridge/west-face route from a Chief Creek camp
+wa_lizard_mountain_south_route: Waypoint distance chain splices two unconnected trailheads
+wa_lizard_mountain_south_route: Outing shape: out-and-back from Downey Creek vs one-way traverse from Cascade Pass
+wa_lizard_mountain_south_route: Route between Itswoot Ridge and Lizard/White Rock Lakes named as the South Cascade Glacier
+wa_gunsight_peak_standard: recommended/actual start time from high camp
+wa_monte_cristo_peak_scramble: Total elevation gain (gain_ft/loss_ft 5200 vs itinerary 4,800)
+wa_marvin_s_ear: Sunrise Mine Trailhead location
+wa_morning_star_peak_standard: which notch/direction the route uses
+wa_morning_star_peak_standard: total car-to-car time / one-way time to summit
+wa_morning_star_peak_standard: Sunrise Mine Trailhead location
+wa_morning_star_peak_standard: Whether the scramble goes via Headlee Pass or up the South Fork Stillaguamish drainage
+wa_mile_high_club: total elevation gain
+wa_moss_out_for_harambe: which tier (upper/lower) the route climbs
+wa_mount_daniel_daniel_glacier: pitch_detail leg distances above Peggy's Pond (2 + 1 + 1 + 0.5 mi) vs ~2 mi pond-to-summit
+wa_mount_hinman_hinman_glacier: Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)
+wa_mount_pilchuck_standard_route: climb/route length
+wa_mount_saul_se_route: which side of the mountain the route climbs
+wa_mount_stickney_scramble: road-walk and One Acre Lake distances from the current gate
+wa_mount_thomson_west_ridge: Car-to-car total time vs its own schedule
+wa_west_face_2: which ranger district / county administers the route (emergency.rangerStation says Mount Baker Ranger District; access.land_manager says Darrington Ranger District; emergency.county Snohomish)
+wa_overcoat_peak_southeast_route: Which side of the summit block the route climbs (south/west vs east/northeast)
+wa_overcoat_peak_southeast_route: Approach-day (day 1) duration vs its own schedule
+wa_overcoat_peak_southeast_route: dist_km vs one-way and round-trip distance figures elsewhere
+wa_overcoat_peak_southeast_route: Waypoint mileages vs the approach text's mileages
+wa_painted_mountain_scramble: Expected car-to-car time
+wa_rimrock_ridge_scramble: Which drainage/trail the approach to Rimrock Ridge uses
+wa_sentinel_peak_standard: Total round-trip distance for the Standard Route
+wa_sheep_gap_mountain_scramble: Total elevation loss for the trip
+wa_sheep_gap_mountain_scramble: Round-trip mileage
+wa_sinister_peak_southwest_route: Total elevation gain and loss for the Southwest Route
+wa_south_ridge: commitment grade (alpine_grade III vs commitment II)
+wa_summit_chief_mountain_south_route: Approach distance from Pete Lake Trailhead to Vista Lakes camp
+wa_three_queens_standard: One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT
+wa_north_ridge_7: Approach distance to Boston Basin high camp: itinerary '~2.5 mi' vs approach prose 'roughly 3-4 miles one-way'
+wa_south_ridge_6: Descent method: rappels/itinerary say descend via the North Ridge (1 rappel), but descent/descent_text/bail describe reversing the South Ridge itself
+wa_ragged_ridge: Total elevation gain for the traverse
+wa_austera_peak_southwest_ridge: dist_km (4.5 km) is the camp-to-Austera leg, not the one-way approach
+wa_austera_peak: Total route gain/loss/distance vs. the multi-day trip
+wa_austera_peak_chockstone_route: Total route gain/distance vs. approach-to-camp leg only
+wa_direct_north_buttress: gain_ft/loss_ft/dist_km (5,950 ft, 14.5 km) fit the Chilliwack Lake (BC) start, while the row's trailhead is Hannegan Pass and its approach says 30+ miles and 10,000+ ft
+wa_bear_mountain_chilliwack_north_buttress: Trailhead: itinerary/timing start at Chilliwack Lake (BC) while the trailhead card, waypoints, approach and primary variant start at Hannegan Pass; approach prose also gives Chilliwack-side times (9-9.5 hr, 4,500 ft to camp) for the Hannegan walk it says is 17 mi / 8-9 hr to Bear Creek alone
+wa_buckner_mountain_north_face: Season window: `season`/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July
+wa_cascade_peak_east_ridge: glacier/crevasse hazard on this route
+wa_cascade_peak_east_ridge: distance to the East Ridge/col area
+wa_southwest_buttress: trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)
+wa_forbidden_peak_west_ridge: pitch count
+wa_forbidden_peak_northeast_face: climbing season window
+wa_forbidden_peak_northwest_face: trip length (days)
+wa_forbidden_peak_north_ridge: length of the Sharkfin Col rappel onto the Boston Glacier
+wa_horseshoe_peak_scramble: Round-trip distance: three disagreeing figures
+wa_horseshoe_peak_scramble: Day-2 (summit push and exit) duration
+wa_hozomeen_mountain_southeast_face: Which approach/route the waypoints describe
+wa_hozomeen_mountain_southeast_face: Round-trip distance
+wa_hozomeen_mountain_southeast_face: Total gain: gain_ft vs itinerary gain
+wa_hozomeen_mountain_northeast_buttress: Total elevation gain vs. loss for a car-to-car round trip
+wa_hurry_up_peak_south_ridge: Round-trip distance: dist_km vs. itinerary total
+wa_hurry_up_peak_south_ridge: Scramble grade: Class 3-4 vs Class 2-3
+wa_hurry_up_peak_south_ridge: Kool-Aid Lake elevation: 6,200 (waypoint, approach_variants) vs 6,320 (approach, itinerary day 1 note)
+wa_jack_mountain_nohokomeen_headwall: total gain figure vs overview's stated gain
+wa_jack_mountain_nohokomeen_headwall: round-trip distance vs overview's stated mileage
+wa_johannesburg_mountain_northeast_buttress: pitch count vs numbered ROUTE BREAKDOWN rows
+wa_johannesburg_mountain_cj_couloir: approach time stated two different ways
+wa_northeast_ridge_1963_route: approach routed via Cascade Pass in waypoints, but never mentioned in the approach prose
+wa_kimtah_peak_scramble: Length of the downclimb at the Grotesque Gendarmes
+wa_klawatti_peak_sw_buttress: First ascent of Klawatti Peak
+wa_klawatti_peak_southeast_face: First ascent of Klawatti Peak
+wa_magic_mountain_south_ridge: Trailhead to Kool-Aid Lake distance: itinerary day 1 (6.5 mi) vs the Kool-Aid Lake waypoint and dist_km (5.5 mi)
+wa_tepeh_towers: Header/area elevation vs. this route's actual summit
+wa_eldorado_peak_northeast_face: Summit-day duration vs. its own timestamped schedule
+wa_goode_mountain_megalodon_ridge: gain_ft 7,500 vs loss_ft 8,700 on a trip that returns to the same car; itinerary hike-out day shows 0 gain
+wa_mount_logan_r1: Easy Pass approach length: itinerary day 1 12.5 mi vs beta/access '~10 mi one-way via Easy Pass'
+wa_mount_spickard_southwest: Total one-way/round-trip distance
+wa_mutchler_peak_scramble: Whether the route involves glacier travel / needs a rope and crevasse-rescue gear
+wa_mutchler_peak_scramble: Round-trip distance
+wa_primus_peak_south_ridge: Primary trailhead and one-way distance
+wa_primus_peak_south_ridge: One-way distance: approach says 18-20 miles one way; itinerary totals about 20 miles round trip
+wa_sahale_mountain_r1: hardest technical grade of the summit block
+wa_sharkfin_tower_southeast_ridge: parking pass at the Boston Basin trailhead
+wa_sitkum_spire_standard: Best/optimal season window extends past the stated season
+wa_sitkum_spire_standard: saddle waypoint higher than the summit it leads to
+wa_southeast_mox_peak_se_rib: Approach/trailhead used for this route
+wa_spire_point_southwest_face: Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux
+wa_spire_point_southwest_face: Itswoot Ridge camp elevation: waypoint 6,600 ft vs approach ~6,400 ft vs bivy 5,880 ft
+wa_tenpeak_mountain_southeast: Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)
+wa_tenpeak_mountain_southeast: Itinerary day-mile sum vs. totalNote's stated round-trip mileage
+wa_three_fingers_r1: gain_ft/loss_ft (5,600) vs itinerary gain total and totalNote (5,400)
+wa_whitehorse_mountain_nw_shoulder: crowds.peakTraffic 'Weekends in July-August' vs season Apr-Jun and seasonal_guidance July marginal / August risky
+wa_berdeen_peak_scramble: Total round-trip gain and loss
+wa_berdeen_peak_scramble: Elevation of the high camp above Berdeen Lake
+wa_berdeen_peak_scramble: Day-1 gain to the Berdeen Lake camp stated in the bivy entry
+wa_crooked_thumb_peak_south_route: First ascent of this route/peak
+wa_crooked_thumb_peak_south_route: Crooked Thumb Glacier moraine camp elevation
+wa_davis_peak_nc_southwest: Climbing season
+wa_davis_peak_nc_north_face: First ascent party
+wa_davis_peak_nc_north_face: Hardest pitch grade
+wa_elephant_butte_standard_route: Total trip time vs its own approach/summit/descent legs
+wa_ghost_peak_south_route: distance to the high camp
+wa_ghost_peak_south_route: high camp location: Crooked Thumb Glacier moraine vs Luna Cirque/Lousy Lake
+wa_ghost_peak_south_route: dist_km (shown as one-way approach) holds the round-trip total
+wa_ghost_peak_south_route: Ross Lake described as serving only Luna/Fury
+wa_mesahchie_peak_west_ridge: which approach the trip plan uses, and the one-way distance
+wa_mix_up_peak_east_face: commitment grade of the route
+wa_mount_challenger_challenger_glacier: crux rock grade
+wa_mount_crowder_southwest_route: Total elevation gain
+wa_mount_crowder_southwest_route: Round-trip distance
+wa_mount_crowder_southwest_route: ROUTE BREAKDOWN 'Crowder Bypass' row and beta treat a traverse bypass as part of the SW Flank climb
+wa_mount_despair_east_route: Crux grade shown in TECHNICAL STATS vs actual crux difficulty
+wa_mount_fury_east_southeast_glaciers: total elevation loss vs. gain and vs. the itinerary's own days
+wa_goode_mountain_northeast_face: total elevation gain
+wa_goode_mountain_northeast_face: commitment grade: grade 'IV' vs commitment 'III' vs alpine_grade 'Grade III'
+wa_goode_mountain_northeast_face: trailhead elevation (waypoint elev 4855 vs elevFt 4500 on the same pin)
+wa_mount_goode_northeast_buttress: total elevation gain/loss
+wa_goode_mountain_southwest_couloir: total elevation gain/loss
+wa_mount_prophet_east: Distance to the Big Beaver Trail junction waypoint
+wa_mount_triumph_northeast_ridge: Total time vs its own sub-components
+wa_east_ridge_2: Total gain: gain_ft vs itinerary day gains
+wa_snowking_mountain_standard: Climbing season window
+wa_storm_king_southwest_scramble: Where the climbers' path leaves the maintained trail (Park Creek Pass traverse vs the ~4,100 ft washout on the Park Creek trail)
+wa_the_triad_east_peak: Total gain figure
+wa_the_triad_east_peak: Number and length of the summit rappel
+wa_trapper_mountain_south_slopes: Trapper Lake camp elevation (~5,000 ft in itinerary/climate vs 4,170 ft waypoint)
+wa_trapper_mountain_south_slopes: dist_km (Approach one way) holds the round-trip figure
+wa_trapper_mountain_north_couloir: Whether the route tops out on Trapper Mountain's summit
+wa_tricouni_peak_southwest_slopes: September: 'outside the best season' vs best_season/season Jul-Sep
+wa_tricouni_peak_southwest_slopes: Total gain: gain_ft 6862 vs itinerary 7,100 (5000+2000+100)

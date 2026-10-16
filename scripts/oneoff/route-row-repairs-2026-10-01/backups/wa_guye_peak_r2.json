@@ -1,0 +1,90 @@
+{
+ "id": "wa_guye_peak_r2",
+ "name": "North Route (\"Hidden Ridge\" variation)",
+ "approach": "The documented north-side line to Guye Peak leaves from the Alpental/Snow Lake trailhead (~3,080-3,120 ft) via the separate, signed Cave Ridge/Snoqualmie Mountain boot path, which splits off about 100 ft south of the Snow Lake Trail sign — this is a different trailhead path than the West Face/Improbable Traverse talus approach. Follow it up to the saddle between Cave Ridge and Guye Peak (roughly 1.5 miles, reported around 4,500-4,600 ft). From the saddle, turn right (north) and follow the ridge toward Guye's north summit; the standard line follows a steep gully system rated class 3 in summer. Climber-triggered rockfall is common on the talus and gully sections, so a helmet is worth wearing once off-trail. A short 'Hidden Ridge' variation near the north summit traverses right to an outcropping where a horn can be slung for a single ~30 ft rappel into the north/middle notch, adding one 5.4 move of class 4/low-5th climbing.",
+ "approach_variants": [
+  {
+   "name": "Cave Ridge saddle from Alpental",
+   "notes": "From the Alpental / Snow Lake trailhead area (about 3,080-3,120 ft), take the unmarked climbers' boot path that leaves the pavement close to the Snow Lake trail sign — the one that serves Snoqualmie Mountain and Cave Ridge, not the west-face talus approach. Follow it up to the saddle between Cave Ridge and Guye Peak, roughly a mile and a half in and reported around 4,500-4,600 ft.\n\nFrom the saddle, turn right (north) and work toward Guye's north summit. Helmets are worth wearing from the point you leave the trail; climber-triggered rockfall is common on the talus and in the gully.\n\nThis peak is also reached from the northbound PCT trailhead through Commonwealth Basin, which is the east side of the mountain — a different approach to a different aspect.",
+   "season": "Jul-Oct; also done as a winter scramble with axe and traction",
+   "hazards": [
+    "moat against a large rock face around 4,840 ft if you take the right-hand line",
+    "steep snow traverse on the left-hand bypass",
+    "climber-triggered rockfall on the talus and in the gully",
+    "very steep gully - class 3 in summer, considerably more serious under snow"
+   ],
+   "baseFinding": "The Cave Ridge / Guye saddle is your fix. From it, Guye's north summit is directly to your right and north, and a scramble gully runs from the saddle area up to a point just north of the north peak. It is very steep but reported as class 3 in summer. If you are at a col and the ground to the north is walkable ridge rather than a steep gully, you are looking at the wrong side of the saddle.\n\nThe decision point is around 4,840 ft, where the gully runs into a large rock face. Going right there leads into a moat, and parties have found it very awkward and had to reverse. Going left — a steep snow traverse in season — is the better option. If you are fighting a moat against rock, you took the right-hand option: back off and cross left.\n\nHigher, near the north summit, the Hidden Ridge variation traverses right to an outcrop where a horn can be slung for a single rappel of about 30 ft into the notch between the north and middle summits. That rappel into a notch is the confirmation you found the variation; without it you are on the ordinary scramble."
+  }
+ ],
+ "itinerary": {
+  "cal": "The 2021 Alpental Community Club road closure affects the West Face/Improbable Traverse talus approach, not this route — the North Route uses the established Cave Ridge Trail from the Snow Lake trailhead and is unaffected. Climb June-October.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Snow Lake trailhead, take the climbers' path shared with Snoqualmie Mountain and Cave Ridge up to the Cave Ridge-Guye saddle, then turn north and scramble the steep class 3 gully and ridge to the north summit, optionally by the Hidden Ridge variation with its one 5.4 move and short rappel into the north-middle notch. Descend by reversing the route to the saddle and down the climbers' path.",
+    "hours": 7,
+    "miles": 3,
+    "title": "Car-to-car: Cave Ridge saddle, North Route, summit",
+    "gainFt": 2000,
+    "lossFt": 2000,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave Snow Lake trailhead",
+      "detail": "Start up the unsigned climbers' path near the Snow Lake trail sign, shared with Snoqualmie Mountain and Cave Ridge."
+     },
+     {
+      "time": "+1.5 hr",
+      "label": "Reach the Cave Ridge-Guye saddle",
+      "detail": "Steep boot path past a clearing near 4,000-4,200 ft to the saddle."
+     },
+     {
+      "time": "+3.5 hr",
+      "label": "Scramble to the north summit",
+      "detail": "Turn north at the saddle and follow the steep class 3 gully and ridge; the Hidden Ridge variation adds one 5.4 move and a ~30 ft rappel."
+     },
+     {
+      "time": "+4 hr",
+      "label": "Summit (5,169 ft)",
+      "detail": ""
+     },
+     {
+      "time": "+4.5 to 7 hr",
+      "label": "Descend the way you came",
+      "detail": "Reverse the route to the Cave Ridge saddle and down the climbers' path to the Snow Lake trailhead."
+     }
+    ],
+    "objective": "Summit Guye Peak via the North Route"
+   }
+  ],
+  "totalNote": "A roadside day similar in scope to Guye Peak's other lines: roughly 6-7 hrs car-to-car for about 2,000 ft of gain."
+ },
+ "waypoints": [
+  {
+   "lat": 47.44542,
+   "lng": -121.42353,
+   "elev": 3120,
+   "name": "Alpental / Snow Lake Trailhead",
+   "note": "Cave Ridge/Snoqualmie Mountain boot path leaves about 100 ft south of the signed Snow Lake Trail sign.",
+   "type": "Trailhead",
+   "elevFt": 3120,
+   "directions": "Take I-90 to Exit 52 (Snoqualmie Pass West), turn left (north) under the freeway onto Alpental Road and follow it about 1.3 miles to its end at the Alpental ski area parking and the Snow Lake trailhead, around 3,100 ft. A Northwest Forest Pass is required, and a free self-issue Alpine Lakes Wilderness permit is available at the trailhead."
+  },
+  {
+   "elev": 4600,
+   "name": "Cave Ridge – Guye Peak saddle",
+   "note": "Reached via the Cave Ridge Trail (~1.5 mi); turn right (north) along the ridge toward Guye's north summit.",
+   "type": "Junction",
+   "elevFt": 4600,
+   "directions": "Take the climbers' path that leaves the pavement about 100 ft south of the Snow Lake Trail sign, the one that serves Snoqualmie Mountain and Cave Ridge rather than the West Face talus. It climbs steeply through forest past a clearing near 4,000 to 4,200 ft to the saddle between Cave Ridge and Guye Peak, about 1.5 miles in."
+  },
+  {
+   "name": "Guye Peak north summit",
+   "note": "Standard North Route tops out here; the 'Hidden Ridge' variation adds a short rappel/toprope pitch nearby.",
+   "type": "Summit",
+   "directions": "From the saddle, scramble the steep gully and ridge up to Guye's north summit, class 3 when snow-free and considerably more serious under snow. Around 4,840 ft the gully runs into a large rock face: take the left-hand option (a steep snow traverse in season), not the right, which leads into an awkward moat."
+  }
+ ],
+ "beta": "Park at Alpental near the Snow Lake Trailhead and start up the unsigned Cave Ridge/Snoqualmie Mountain climbers' trail beginning about 100 ft south of the Snow Lake Trail. From a large clearing around 4000-4200 ft, climb to the saddle between Cave Ridge and Guye Peak, then turn right (north) and follow the ridge to Guye's north summit — class 3 in summer. The 'Hidden Ridge' variation continues from the north summit around an outcropping to a hidden ridge with one 5.4 move (otherwise class 4), rappelling ~30 ft off a slung horn to the notch between the north and middle summits; this was found to be a more direct, more enjoyable line than the standard gully descent in winter/spring conditions."
+}

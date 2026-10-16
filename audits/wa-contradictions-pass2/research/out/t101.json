@@ -1,0 +1,362 @@
+{
+ "file": "t101.json",
+ "results": [
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": "null (time to summit not established; the stored figure is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg is published, so summitTimeHrs = totalHrs is not double-counted; settled convention nulls only when a leg is also published.] Reference: the route's own totalHrs, itinerary day hours, sectionBreakdown ('Car-to-car day climb') and totalNote all label this figure as the car-to-car total, so it cannot also be the time to reach the summit; the established repair for this class is to null summitTimeHrs rather than compute a replacement. Externally, a trip report gives a bit over 8 hours round trip car-to-car for this route, confirming a ~8-9.5 hr figure is the whole day, not the summit time.",
+   "sources": [
+    "https://climberkyle.com/2019/08/03/liberty-bell-nw-face-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "fact": "Break-off point elevation vs the notch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real: the break-off is described as a few hundred feet below the Liberty Bell-Concord notch yet carries 7,300 ft, the notch's own elevation (notch ~7,300 ft is supported externally), and the bench above it is 7,350. A trip report places the break-off 'a few hundred feet before the start of the Beckey Route' (along the path, not an elevation) and gives no heights; no source states the elevation of the break-off or the northwest plateau. A topo reading of the break-off and bench locations would settle it.",
+   "sources": [
+    "https://climberkyle.com/2019/08/03/liberty-bell-nw-face-5-9/",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 1 mile (0.75-0.8 mi) west of Washington Pass",
+   "evidence": "The only outlier is the shared regional bivy entry ('roughly half a mile'); the route's own non-bivy fields say about 1 mile, which agrees with a hiking guide (trailhead 0.8 mi west of the Washington Pass overlook, a little under a mile) and a local newspaper (about three quarters of a mile west of the pass). No bivy patch is written, per the camping clean-up ownership.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (4 km = 2.5 mi) is the labelled one-way approach and agrees with the approach text (2-2.5 mi one-way) and the summit pin (2.7 mi); itinerary miles (5.4) are the per-day round trip. Different, labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": "4 pitches",
+   "evidence": "Two sources agree the route is 4 pitches (about 120 m / 390 ft), so pitches=4, the itinerary and the approach note are right; the pro tip's '3 pitches of quality 5.7 cracks' matches a guide-service description of 3 crack pitches within the 4-pitch route and is not wrong. The real gap is that ROUTE BREAKDOWN has only 3 rows; no source gives a pitch-by-pitch breakdown (where the pitch breaks fall between the Beckey ledge, the open-book corners and the rejoin), so a fourth row cannot be written without inventing it. A topo with the pitch breaks would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509842/rapple-grapple",
+    "https://www.thecrag.com/climbing/united-states/north-cascade-mountains/route/16772107",
+    "https://www.ncmountainguides.com/blog/sean-baughn-trifecta-of-fun-liberty-bell-july-25-26th-2007"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": "null (time to summit not established; the stored figure is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg is published, so summitTimeHrs = totalHrs is not double-counted; settled convention nulls only when a leg is also published.] Reference: the route's own totalHrs, itinerary day hours, sectionBreakdown ('Car-to-car day climb') and totalNote all label this figure as the car-to-car total, so it cannot also be the time to reach the summit; the established repair for this class is to null summitTimeHrs rather than compute a replacement. Externally the route is described as about a 2 hour approach and 2-6 hours to the summit, so 8 hr is not the time to summit.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509842/rapple-grapple"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "about 1 mile west of Washington Pass",
+   "evidence": "A hiking guide places the trailhead 0.8 mi west of the Washington Pass overlook ('a little under a mile'), a local newspaper says about three quarters of a mile west of the pass, and the Forest Service says just beyond the overlook. None supports 1.5 miles, so trailheadDirection is corrected to ~1 mile to match access.passRequired and the sibling routes. The bivy entry's 'half a mile' is left to the camping clean-up (no bivy patch).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_rapple_grapple",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "(~1.5 miles west of Washington Pass",
+     "replace": "(~1 mile west of Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (4.02 km = 2.5 mi) is the labelled one-way approach; the summit pin at 2 mi and itinerary 5 mi round trip are consistent with that. Different, labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "fact": "Largest cam / wide crux protection",
+   "verdict": "not_a_contradiction",
+   "correct_value": "doubles to #3 plus one #4",
+   "evidence": "The same route description says a party brought doubles to #3, bumped a #3 at eye level at the start of the wide section, and found one #4 sufficed for the bulge on the crux second pitch; the #3 and the #4 protect different parts of pitch 2, and the anchor field describes the belay, not the largest piece. The gear list and pitch notes are compatible.",
+   "sources": [
+    "https://www.mountainproject.com/route/106528613/serpentine-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 1 mile (0.75-0.8 mi) west of Washington Pass",
+   "evidence": "The only outlier is the shared regional bivy entry ('roughly half a mile'); the route's own non-bivy fields say about 1 mile, which agrees with a hiking guide (trailhead 0.8 mi west of the Washington Pass overlook, a little under a mile) and a local newspaper (about three quarters of a mile west of the pass). No bivy patch is written, per the camping clean-up ownership.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real (schedule spans 14-15.5 hr; hours 10.5; note 10-12). The free-ascent account describes about a 13-hour day from the car (late start, back around midnight) and another report gives ~11+ hours on the route alone; no two sources agree on a car-to-car figure for this free line, so no number is adopted. Two independent car-to-car times would settle it.",
+   "sources": [
+    "https://blakeclimbs.blogspot.com/2016/07/liberty-crack-firstthird-free-ascent.html",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/liberty-crack/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Crux pitch 2 grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": "5.13b",
+   "evidence": "Two sources grade the free Lithuanian Lip pitch 5.13b; the same route description grades only the lead-in corner (11-) and the finishing moves to the stance (12-), with the ungraded powerful traverse over the lip being the 5.13b crux. The pitch note describes parts of the pitch, not its overall grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/113539421/liberty-crack-free",
+    "https://blakeclimbs.blogspot.com/2016/07/liberty-crack-firstthird-free-ascent.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": "null (time to summit not established; the stored figure is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg is published, so summitTimeHrs = totalHrs is not double-counted; settled convention nulls only when a leg is also published.] Reference: the route's own totalHrs, itinerary day hours, sectionBreakdown ('Car-to-car day climb') and totalNote all label this figure as the car-to-car total, so it cannot also be the time to reach the summit; the established repair for this class is to null summitTimeHrs rather than compute a replacement. The row's own schedule puts the top-out at 2:30 PM, ~10.5 hr after leaving, but that is a derived time, not a sourced one; the free-ascent account describes a ~13 hr car-to-car day.",
+   "sources": [
+    "https://blakeclimbs.blogspot.com/2016/07/liberty-crack-firstthird-free-ascent.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Bolts on pitches 7-8",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The original-line description puts the 'shiny good bolt with a long runner' on the ramp/overlap pitch (this row's P8, stored bolts 0) and describes the big-block pitch (this row's P7) only as climbing to bolted anchors, so P7's 'single shiny bolt' may be misattributed. The row's bolts column also mixes conventions (anchor bolts on some rows, protection bolts on P3). Only one source describes these pitches' hardware; a second topo would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106512297/liberty-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 1 mile (0.75-0.8 mi) west of Washington Pass",
+   "evidence": "The only outlier is the shared regional bivy entry ('roughly half a mile'); the route's own non-bivy fields say about 1 mile, which agrees with a hiking guide (trailhead 0.8 mi west of the Washington Pass overlook, a little under a mile) and a local newspaper (about three quarters of a mile west of the pass). No bivy patch is written, per the camping clean-up ownership.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is labelled one-way and the itinerary miles are the per-day round trip; the two are different, labelled quantities (see the discovered entry about the East Face one-way distance itself).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "One-way approach distance for the East Face",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 4.02 (2.5 mi one-way) is far longer than the row's own approach (about 1 hour from the hairpin pullout); one route page describes the East Face path as about a mile from the pond. Only one source states the distance, so dist_km is not changed.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "fact": "Approach line in the waypoints",
+   "verdict": "unresolved",
+   "correct_value": "East Face approach from the SR-20 hairpin pond pullout (about 1 mile of cairned path to the talus)",
+   "evidence": "Confirmed real: approach, approach_variants, approach_logistics and waypoints[0] use the hairpin pond pullout and East Face path (about a mile, no water), while waypoints[1]-[4] (Blue Lake Trail water stop, Blue Lake junction, west-side bench, a mid-wall pin at the west-side bench coordinate) are copied from a west-side route. The correct fix is to remove those four pins, which is a pin/array edit outside this pass's patch scope; rewriting their names and notes cannot make a Blue Lake water stop true for this approach.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312",
+    "https://www.mountainproject.com/route/106512297/liberty-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule spans 13.5-15 hr versus 10.5 hr / 10-11 hr. The only detailed account is a first-redpoint report that included a hammock bivouac, and no source gives a single-day car-to-car time for the route. Two independent car-to-car times would settle it.",
+   "sources": [
+    "https://jensholsten.blogspot.com/2009/01/independence-route-v-512a-r.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": "null (time to summit not established; the stored figure is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg is published, so summitTimeHrs = totalHrs is not double-counted; settled convention nulls only when a leg is also published.] Reference: the route's own totalHrs, itinerary day hours, sectionBreakdown ('Car-to-car day climb') and totalNote all label this figure as the car-to-car total, so it cannot also be the time to reach the summit; the established repair for this class is to null summitTimeHrs rather than compute a replacement. Externally the East Face approach alone is about an hour and the 12-pitch grade V climb follows, so a 10.5 hr figure is the whole day.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 1 mile (0.75-0.8 mi) west of Washington Pass",
+   "evidence": "The only outlier is the shared regional bivy entry ('roughly half a mile'); the route's own non-bivy fields say about 1 mile, which agrees with a hiking guide (trailhead 0.8 mi west of the Washington Pass overlook, a little under a mile) and a local newspaper (about three quarters of a mile west of the pass). No bivy patch is written, per the camping clean-up ownership.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is labelled one-way and the itinerary miles are the per-day round trip; different, labelled quantities (see the discovered entry on the East Face one-way distance).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "fact": "One-way approach distance for the East Face",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 4.02 (2.5 mi one-way) and the summit pin at 2.7 mi exceed the row's own approach (about a mile, roughly an hour, from the pond). Only one source states the East Face path distance, so dist_km is not changed.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": "null (time to summit not established; the stored figure is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg is published, so summitTimeHrs = totalHrs is not double-counted; settled convention nulls only when a leg is also published.] Reference: the route's own totalHrs, itinerary day hours, sectionBreakdown ('Car-to-car day climb') and totalNote all label this figure as the car-to-car total, so it cannot also be the time to reach the summit; the established repair for this class is to null summitTimeHrs rather than compute a replacement. The row's own schedule has the summit at 11:30 AM after a 5:00 AM start, and externally the approach to the notch is 1.5-2.5 hr and the climb four short pitches, so 9 hr is the whole day.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 1 mile (0.75-0.8 mi) west of Washington Pass",
+   "evidence": "The only outlier is the shared regional bivy entry ('roughly half a mile'); the route's own non-bivy fields say about 1 mile, which agrees with a hiking guide (trailhead 0.8 mi west of the Washington Pass overlook, a little under a mile) and a local newspaper (about three quarters of a mile west of the pass). No bivy patch is written, per the camping clean-up ownership.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (4 km = 2.5 mi) is the labelled one-way approach, close to the approach's ~2 mi to the notch; itinerary 5 mi is the round trip. Different, labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "fact": "Hardest pitch grade vs headline grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": "5.12b",
+   "evidence": "One route page grades the route 5.12b overall while describing both cruxes as 5.12-, and the first-ascent report and a magazine piece give 5.12-. A 5.12- crux spans 5.12a/b, so a 5.12b headline and 5.12- pitch grades are the same difficulty written two ways.",
+   "sources": [
+    "https://www.mountainproject.com/route/109462722/liberty-and-injustice-for-all",
+    "https://cascadeclimbers.com/forum/topic/95712-tr-liberty-bell-east-face-fa-liberty-and-injustice-for-all-512-200m-952014/",
+    "https://www.climbing.com/places/the-dark-side-of-liberty-shanjean-lee-and-mikey-schaefers-first-ascent-on-washingtons-liberty-bell/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": "null (time to summit not established; the stored figure is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg is published, so summitTimeHrs = totalHrs is not double-counted; settled convention nulls only when a leg is also published.] Reference: the route's own totalHrs, itinerary day hours, sectionBreakdown ('Car-to-car day climb') and totalNote all label this figure as the car-to-car total, so it cannot also be the time to reach the summit; the established repair for this class is to null summitTimeHrs rather than compute a replacement. Externally the East Face approach is about an hour, the climb 5 pitches, and the descent rappels the route, so 9.5 hr is the whole day.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 1 mile (0.75-0.8 mi) west of Washington Pass",
+   "evidence": "The only outlier is the shared regional bivy entry ('roughly half a mile'); the route's own non-bivy fields say about 1 mile, which agrees with a hiking guide (trailhead 0.8 mi west of the Washington Pass overlook, a little under a mile) and a local newspaper (about three quarters of a mile west of the pass). No bivy patch is written, per the camping clean-up ownership.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "fact": "One-way approach distance stored as the round trip",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 8.05 km is exactly 5.0 mi, the itinerary's round-trip miles, while the row's own approach says the East Face path is about a mile from the pond; the stored value looks like the round trip. Only one source states the East Face approach distance (about a mile), so dist_km is not changed; a second source for the one-way distance would settle it.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312"
+   ],
+   "patches": []
+  }
+ ]
+}

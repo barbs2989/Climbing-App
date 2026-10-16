@@ -1,0 +1,2376 @@
+[
+ {
+  "id": "wa_chiwawa_mountain_southwest",
+  "name": "Southwest Route / Standard",
+  "area_id": "wa_chiwawa_mountain",
+  "findings": [
+   "r002.json: The beta's east-northeast leg is travel FROM the col toward Chiwawa's summit, which agrees with the overview (Fortress 1.1 mi west across the col, so the summit is east of it) and with a route guide that says to reach the col and then turn east toward the summit; pitch_detail says the same ('traverse northeast from col toward summit ridge'). The reader's inference relies on the col waypoint pin, which sits EAST of the summit pin and so cannot be a col between Chiwawa and Fortress (1.12 mi west) - that pin placement is the anomaly, and pins are out of scope. The beta's phrase 'aiming for the col' is clumsy but not a directional contradiction."
+  ],
+  "gpx_summary": "1158 points; 0 of 8 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_chiwawa_mountain_southwest",
+   "area_id": "wa_chiwawa_mountain",
+   "name": "Southwest Route / Standard",
+   "discipline": "mountaineering",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": 0,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Lorenz A. Nelson and a Mountaineers party, 1921 (first ascent of the peak)",
+   "lat": 48.163424,
+   "lng": -120.907616,
+   "aspect": "SW",
+   "season": "Jun-Oct",
+   "description": null,
+   "gear": [
+    "ice axe (early-season/snow, into early-mid summer)",
+    "sturdy mountaineering or hiking boots",
+    "trekking poles for scree/talus",
+    "map, compass, GPS (route-finding near the col)",
+    "overnight/camping gear (2-3 day trip typical)",
+    "water filter/treatment (seasonal sources at high camp)"
+   ],
+   "hazards": [
+    "loose rock/talus on the west ridge and upper mountain",
+    "early-season snow and cornices near the Fortress-Chiwawa col",
+    "misidentifying the correct gully near the col — the wrong line leads to an exposed low-5th-class dead end",
+    "long remote approach with no reliable cell coverage",
+    "rough, high-clearance-only Chiwawa River Road (FR 6200) access"
+   ],
+   "verif": null,
+   "overview": "Chiwawa Mountain (8,459') is a remote summit in the Glacier Peak Wilderness. Its parent peak, Fortress Mountain (8,760'), lies about 1.1 miles west across the Fortress-Chiwawa col, and the two are commonly combined from a shared high camp. A small remnant of the Lyman Glacier clings to Chiwawa's northeast slope above Lyman Lake, but that is a separate, more involved approach on the far side of the mountain; the standard southwest route described here is a non-glaciated, largely cross-country scramble (Class 2-3) up scree, heather, and early-season snow to the west ridge, finishing on cairned Class 2 terrain to the summit. First climbed in 1921 by a Mountaineers party led by Lorenz A. Nelson.",
+   "beta": "Ascend the southwest snowfield and scree slopes to reach the summit at 8,459 feet. The route follows the path of least resistance from Fortress-Chiwawa Col, traversing east-northeast aiming for the col, then ascending the final south ridge. Navigate snow or scree to within 100 feet of the summit, then traverse the west side to avoid steep rock sections on the final approach.",
+   "turnaround": "The turnaround point from camp should be mid-afternoon to ensure safe descent in daylight. In early summer with longer daylight hours, routes should still descend before darkness, with particular attention to safe river crossing and trail navigation.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": "5.0",
+   "ice_grade": null,
+   "gain_ft": 5659,
+   "loss_ft": 5659,
+   "dist_km": 30.58,
+   "max_angle": 38,
+   "rappels": "0",
+   "commitment": "I-II",
+   "face": "Southwest slopes",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota.",
+   "comms": "No reliable cell coverage on the approach or summit area; carry a satellite messenger/PLB.",
+   "descent": "Down-climb the cairned west ridge back to the Fortress-Chiwawa col basin, then descend scree/snow to high camp; no rappels needed on the standard line.",
+   "obj_haz": [
+    "avalanche",
+    "loose-rock",
+    "exposure",
+    "weather"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.071966,
+     "lng": -120.84999,
+     "elev": 2800,
+     "name": "Trinity Trailhead",
+     "note": "End of Chiwawa River Road FR 6200; self-issue wilderness permit and a Northwest Forest Pass or $5/day recreation pass required at the kiosk; vault toilet, no potable water.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Chiwawa River Road (FR 6200) to its end at the old Trinity mine site. The road is rough and high clearance is worth having; it commonly stays snowbound until early summer, which sets the start of the season here more than conditions on the peak do. Carry water from home — there is none at the trailhead."
+    },
+    {
+     "lat": 48.140239,
+     "lng": -120.851631,
+     "elev": 3000,
+     "name": "Buck Creek Trail / Chiwawa River Trail fork",
+     "note": "Bear right off Buck Creek Trail #1513 onto Chiwawa River Trail #1550, which follows an old mining-road grade up the valley.",
+     "type": "Junction",
+     "distMi": 1.5,
+     "directions": "Start up-valley on Buck Creek Trail #1513 for about a mile and a half. Bear right at the fork; #1550 takes over an old mining-road grade and stays close to the river, so water is reliable along this whole stretch."
+    },
+    {
+     "lat": 48.157861,
+     "lng": -120.868596,
+     "elev": 4000,
+     "name": "Red Mountain Trail junction",
+     "note": "Stay on Chiwawa River Trail #1550 toward Chiwawa Basin; the other fork climbs to Red Mountain and Buck Creek Pass instead.",
+     "type": "Junction",
+     "distMi": 3.7,
+     "directions": "A couple more easy miles on the old road bed beside the river. This is the last water that is both obvious and easy to reach before the basin, so fill here — the tread beyond the junction gets rougher and braids in places."
+    },
+    {
+     "lat": 48.164791,
+     "lng": -120.881549,
+     "elev": 4400,
+     "name": "Chiwawa River ford",
+     "note": "Cold, knee-deep ford of the Chiwawa River (crossed once in, once out); tread gets brushy and faint beyond this point.",
+     "type": "Water",
+     "distMi": 5,
+     "directions": "Past the junction the trail deteriorates and climbs through forest toward the basin. The crossing is unbridged and there is no way around it; it is manageable at typical summer flow but higher and pushier early in the season, so take the time to pick a line rather than accepting the first one. Note the spot, since you cross it again on the way out."
+    },
+    {
+     "lat": 48.16706,
+     "lng": -120.889303,
+     "elev": 5500,
+     "name": "Leave trail in upper Chiwawa Basin",
+     "note": "Maintained tread peters out in the basin's upper meadows; begin cross-country travel toward the 6,300 ft camp benches, following sporadic flagging.",
+     "type": "Junction",
+     "distMi": 6,
+     "directions": "Above the ford the brush thickens and the tread fades and braids. Favour the more open, less-timbered ground along the east side of the basin — drifting into the timber turns this into a bushwhack. Watch for a faint branch near the meadow edge that is easy to walk straight past; if you miss it, aim for the obvious basin above and pick your way up through the generally open forest."
+    },
+    {
+     "lat": 48.165841,
+     "lng": -120.896283,
+     "elev": 6300,
+     "name": "Chiwawa Basin high camp benches",
+     "note": "Small dirt benches with just enough flat ground for two tents; water from small trickling streams nearby; the standard overnight base for the col.",
+     "type": "Campsite",
+     "distMi": 6.5,
+     "directions": "Several lines reach the bench from the basin. The left-trending gully is the most direct and the easiest going, though it is wet; the vegetated slopes beside the talus gullies are the alternative and are the better choice coming down. Early season these are snow gullies, faster than the loose summer scree but worth an ice axe."
+    },
+    {
+     "lat": 48.164634,
+     "lng": -120.903268,
+     "elev": 7200,
+     "name": "Fortress-Chiwawa col (notch on Fortress's east ridge)",
+     "note": "Moderate snow slope steepens noticeably near the notch (ice axe recommended); rock off to the sides is loose and sandy.",
+     "type": "Hazard",
+     "distMi": 7,
+     "directions": "From the bench traverse steep heather and aim for the notch in Fortress's east ridge. The snow slope leading up to it is moderate but steepens noticeably in the last stretch below the notch, and the rock flanking it is loose and sandy — stay on the snow or the most solid line you can find rather than escaping onto the sides."
+    },
+    {
+     "lat": 48.163424,
+     "lng": -120.907616,
+     "elev": 8459,
+     "name": "Chiwawa Mountain summit",
+     "note": "Two summit rocks about 30 ft apart with little to distinguish which is the true high point; views of Glacier Peak and Fortress Mountain.",
+     "type": "Summit",
+     "distMi": 7.3,
+     "directions": "From the col work up the southwest side on slabs, gullies and talus, taking the path of least resistance rather than any single line. The crux is the short step gaining the summit ridge — loose, exposed Class 2-3 — after which an easy traverse of about 100 ft to the west/right reaches the top. Picking the wrong gully near the col is the standard mistake here and leads to an exposed low-fifth-class dead end, so back off and re-read the terrain rather than forcing it."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 20,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 4.5,
+    "approachTimeHrs": 5.5,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 5.5,
+      "note": "From the Chiwawa River / Trinity trailhead (2,800 ft), follow Chiwawa River Trail #1550 along the old Red Mountain mining road, passing the Buck Creek and Chiwawa Basin trail junct…",
+      "fromTo": "Approach to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "From camp, cross crusty morning snow slopes up to the broad saddle near 8,200 ft between Chiwawa and Fortress, then work up the southwest snowfield/talus with a short Class 2-3 led…",
+      "fromTo": "Summit day: Chiwawa Mountain via SW snowfield",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4.5,
+      "note": "Retrace the Red Mountain mining road/Chiwawa River Trail back down through the brushy lower miles to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack is needed on the standard Class 2-3 line; bring an ice axe (light traction optional) for firm snow on the approach and near the col into early-mid summer. A rope/small rack only comes into play if combining with Fortress Mountain's Class 3-4 east ridge, or if you stray off the cairned line into the low-5th-class gully some parties have mistakenly followed.",
+   "what_to_bring": [
+    "ice axe (early-season/snow)",
+    "sturdy boots",
+    "trekking poles",
+    "map/compass/GPS",
+    "overnight camping gear",
+    "water treatment"
+   ],
+   "pro_tips": [
+    "Commonly combined with Fortress Mountain (8,760', Class 3-4 east ridge) from the same high camp near the Fortress-Chiwawa col — this is a different basecamp than Lyman Lake/Spider Gap, which serves the separate, glaciated NE side of Chiwawa",
+    "Cairns mark the normal Class 2 line on the west ridge; parties report a nearby gully that dead-ends in low-5th-class rock — don't follow it",
+    "High camp is typically on benches around 6,300' with small, seasonal water sources",
+    "The final 10-12 miles of Chiwawa River Road (FR 6200) to Trinity Trailhead is rough gravel/dirt — a high-clearance vehicle is recommended"
+   ],
+   "watch_out": [
+    "loose rock/talus on the upper mountain and west ridge",
+    "misidentifying the col gully — the wrong line leads to an exposed low-5th-class dead end",
+    "early-season snow and cornices near the col",
+    "long rough access road limiting vehicle options",
+    "this is not the glaciated Lyman Glacier route — no crevasse hazard on the standard SW line, but also no glacier descent shortcut"
+   ],
+   "pro_needs": "Non-technical Class 2-3 scramble on the standard line; an ice axe covers firm snow on the approach and col through early-mid summer. No rope, rack, or crevasse-rescue gear is needed on this side of the mountain unless you detour onto the glaciated NE (Lyman Glacier) side or add Fortress Mountain's Class 3-4 east ridge.",
+   "best_season": "Late June through September is the reliable window. The Chiwawa River Road (FR 6200) to Trinity Trailhead typically isn't fully open/melted out until around mid-June, and the upper mountain and col can hold snow into July in heavy-snow years.",
+   "high_point_ft": 8459,
+   "aid_grade": null,
+   "approach": "Park at Trinity Trailhead (~2,800 ft), at the end of Chiwawa River Road/FR-6200 by the old Trinity mine site. From the trailhead, hike the Buck Creek Trail #1513 up the valley; at roughly 1.4–1.5 miles, bear right (northeast) at the junction onto the Chiwawa River Trail #1550, an old mining-road grade that continues up-valley along the river (reliable water the whole way here). Follow the Chiwawa River Trail about 3.7 more miles to the signed Red Mountain Trail junction at Chiwawa Mountain's southeastern foot — roughly 5 miles and the last easy, obvious water before the basin. Most parties bear left here into Chiwawa Basin rather than taking the right-hand switchbacks up Red Mountain. The tread beyond the junction is rougher and sometimes braided; it climbs about a mile-plus through forest and then subalpine meadow toward the ~5,500 ft basin below the Fortress-Chiwawa col. Expect a shallow ford of the Chiwawa River/headwater creek in this stretch, and favor the more open, less-timbered ground along the east side of the basin to avoid brush-whacking. Above the basin, gain the ~6,300 ft bench via talus/scree gullies or vegetated slopes just left of them — early-season parties will find snow gullies here (ice axe/crampons recommended) that are faster than the loose summer scree. From the bench, the standard finish is a class 2 scramble up slabs and gullies on the southwest face; the short section gaining the summit ridge is the route's crux — loose, exposed class 2–3 rock — after which an easy ~100 ft rightward (west) traverse leads to the summit. One-way distance from Trinity is roughly 7–8 miles with about 5,700 ft of gain; most parties camp in Chiwawa Basin or on the 6,300 ft bench and treat it as an overnight, though fit parties do it car-to-car in a long day. A less-traveled alternate approach starts at the Phelps Creek Trailhead, bushwhacking to about 5,500 ft and following a gully right of Point 5971 up to the col west of the summit, then easy Class 2 along the west ridge.",
+   "descent_text": "Descend by reversing the ascent line: down the southwest scree/gully slopes to the 6,300 ft bench, staying off the looser climber's-left skyline gully in favor of the main descent gullies/vegetated slopes used on the way up. Continue down into Chiwawa Basin, re-ford the creek, and retrace the Chiwawa River Trail #1550 and Buck Creek Trail #1513 back to the Trinity Trailhead. This is a walk-off/downclimb route with no rappelling anywhere on it — none is typically required. Watch for loose rock and scree underfoot on the upper southwest slopes (a common complaint on nearby Fortress Mountain's gullies applies here too), and in early season the same gullies used for the ascent can be glissaded or skied for a much faster descent when snow-covered.",
+   "bail": "The standard line is reversible almost anywhere without rappelling — retreat down the cairned west ridge and scree slopes to camp. The main retreat hazard is losing the cairned line in the gully system near the col; if the terrain steepens into low-5th-class rock, back off and find the easier line.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2 hiking + bushwhacking",
+     "notes": "From Fortress-Chiwawa Col, the terrain is moderate. Bushwhacking section from river to col can be steep and brushy. Establish camp at 6,300-foot bench.",
+     "pitch": "Approach to Col (5,500-6,300 feet)"
+    },
+    {
+     "grade": "Class 2-3 scrambling + snow",
+     "notes": "Ascend snow and rock traverse northeast from col toward summit ridge. Route finding can be tricky in poor visibility. Snow provides good climbing conditions early season; transitions to scree by late summer.",
+     "pitch": "Col to Summit Ridge (6,300-8,000 feet)"
+    },
+    {
+     "grade": "Class 3-4 scrambling",
+     "notes": "Climb southeast along ridge, then traverse west side to avoid steep rock on final 100 feet. Shattered rock with loose sections; careful footwork required. Traverse around west side to reach summit block.",
+     "pitch": "Final Ridge and Summit (8,000-8,459 feet)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Chiwawa River Road (FR 6200) typically isn't fully snow-free/passable until mid-June, and the route holds snow into summer, so most ascents happen late June through September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Chiwawa River / Trinity trailhead (2,800 ft), follow Chiwawa River Trail #1550 along the old Red Mountain mining road, passing the Buck Creek and Chiwawa Basin trail junctions around 4,800 ft. The lower trail is brushy/overgrown in summer; expect a long, steady climb through forest into open basin terrain for camp.",
+      "hours": 5.5,
+      "miles": 7,
+      "title": "Approach to high camp",
+      "gainFt": 3300,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach high camp near 5,900-6,300 ft on the old Red Mountain mining road"
+     },
+     {
+      "n": 2,
+      "note": "From camp, cross crusty morning snow slopes up to the broad saddle near 8,200 ft between Chiwawa and Fortress, then work up the southwest snowfield/talus with a short Class 2-3 ledge traverse to the summit ridge. Many parties tag Fortress Mountain's Class 3-4 east ridge from the same col on the same day.",
+      "hours": 10,
+      "miles": 6,
+      "title": "Summit day: Chiwawa Mountain via SW snowfield",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave high camp",
+        "detail": "Cross firm morning snow before it softens."
+       },
+       {
+        "time": "+3 hr",
+        "label": "Reach Chiwawa-Fortress saddle (~8,200 ft)",
+        "detail": "Broad, gently inclined snow ramp leads to the col."
+       },
+       {
+        "time": "+5-6 hr",
+        "label": "Southwest snowfield and ledge traverse",
+        "detail": "Class 2+ ledges round the south rib onto the SW slopes."
+       },
+       {
+        "time": "~3:45 PM",
+        "label": "Summit (8,459 ft)",
+        "detail": "Typical summit arrival on a full-value day."
+       },
+       {
+        "time": "+2.5-3 hr",
+        "label": "Back at high camp",
+        "detail": "Descend the same snow/talus line; glissade where safe."
+       }
+      ],
+      "objective": "Climb Chiwawa Mountain (8,459 ft) and return to high camp"
+     },
+     {
+      "n": 3,
+      "note": "Retrace the Red Mountain mining road/Chiwawa River Trail back down through the brushy lower miles to the trailhead.",
+      "hours": 4.5,
+      "miles": 7,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 3300,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to Chiwawa River trailhead"
+     }
+    ],
+    "totalNote": "A 2-3 day trip for most parties: ~19-20 miles round trip with roughly 5,700 ft cumulative gain/loss; camp sits near 5,900-6,300 ft on the old mining road, with a long (7+ hr) summit push on day two. Very strong parties have done it car-to-car in a single ~14-16 hr day."
+   },
+   "access": {
+    "fees": "$5 per vehicle per day, or $30 for an annual pass, at Trinity Trailhead.",
+    "rules": "Glacier Peak Wilderness rule: no wood campfires above 3,500 ft elevation — this covers essentially the entire route and approach, so stoves only. Camping is also restricted within 200 ft of Lyman Lake/Holden Lake shorelines and 1/4 mile of Image Lake if approaching via those basins. Free self-issue wilderness permit required at the trailhead.",
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota or reservation system for this area.",
+    "closures": "Forest Road 6200 is closed under Forest Service order 06-17-07-2026-11 from the Atkinson Flats Campground junction north to Trinity — Trinity Trailhead is NOT accessible by vehicle. The closure took effect May 20, 2026 (damage from a December 2025 storm/rain event: washouts, slides, plugged culverts) and runs through December 31, 2027 unless rescinded sooner, with no reopening estimate given. The Little Giant Fire closure (order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner, also closes FR 6200 and the Chiwawa River Trail. Check current Wenatchee River Ranger District alerts before planning a trip.",
+    "group_limit": 12,
+    "landManager": "Wenatchee River Ranger District, Okanogan-Wenatchee National Forest (Glacier Peak Wilderness); (509) 548-2550",
+    "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District) — Glacier Peak Wilderness",
+    "parking_pass": "Northwest Forest Pass required at some trailheads (fee day-use sites) — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass, Digital Day Pass, or Interagency Recreation Pass accepted at Trinity Trailhead",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk (Phelps Creek, Trinity, Entiat River, or the Holden trailheads). Holden Village and its access road are closed to hikers through at least summer 2026."
+    }
+   },
+   "road": {
+    "name": "Chiwawa River Road / Forest Road 6200",
+    "status": "paved for roughly the first 8-11 miles from Chiwawa Loop Road, then rough gravel/dirt for the final ~10-12 miles to Trinity Trailhead",
+    "driveNote": "From Coles Corner on US-2, take WA-207 north 4.4 miles, then Chiwawa Loop Road and FR 6200 about 23 miles total to Trinity Trailhead (2,800'); the final stretch is not recommended for low-clearance vehicles.",
+    "seasonalGate": "Usually not fully accessible until the road melts out/is cleared, often mid-to-late June. The road is additionally closed from Atkinson Flats Campground north to Trinity under Forest Service order 06-17-07-2026-11 (effective May 20, 2026 through Dec 31, 2027), due to December 2025 storm damage — Trinity Trailhead is NOT reachable by vehicle. The Little Giant Fire closure (order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner, also closes the road and the Chiwawa River Trail. Check Wenatchee River Ranger District alerts before driving."
+   },
+   "climate": {
+    "typical": "East-slope North Cascades climate: drier and sunnier than the west-side crest, but the elevation still holds a substantial snowpack into summer; afternoon thunderstorms are common in July-August.",
+    "bySeason": {
+     "fall": "Good stable weather often persists into September/early October, then increasing chance of new snow at elevation.",
+     "spring": "Full snow cover on the approach and upper mountain; avalanche hazard on slopes near the col; Chiwawa River Road usually still gated or snowed in.",
+     "summer": "Prime season; snow retreats from the trail and lower slopes by July, though the col and upper ridge can hold snow into July in heavy years.",
+     "winter": "Road closed/snowed in; full winter mountaineering conditions, essentially inaccessible."
+    },
+    "forecastZone": "No NWAC zone covers this drainage specifically; the nearest official avalanche guidance is NWAC's Stevens Pass (east-side) zone — treat it as approximate for the Chiwawa/Buck Creek Pass area."
+   },
+   "emergency": {
+    "notes": "Chiwawa Mountain sits on the Chelan/Snohomish county line within the Glacier Peak Wilderness, but the standard SW-route trailheads (Trinity, Phelps Creek) are reached from the Chelan County side via the Chiwawa River drainage. Cell coverage is unreliable to absent for the entire approach and climb — carry a satellite messenger/PLB.",
+    "county": "Chelan",
+    "rangerStation": "Wenatchee River Ranger District, Okanogan-Wenatchee National Forest — (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA — 24-hour Emergency Department; the closest hospital to the Chiwawa River Road trailheads.",
+    "sheriffDispatch": "911 for emergencies; Chelan County Sheriff non-emergency (509) 667-6851, dispatched via RiverCom 911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in late July and August when the approach trail is snow-free",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low - likely a small handful of roped parties per season; the Spider Meadows/Lyman Lakes approach trail is a popular backpacking destination, but very few of those hikers continue onto the glacier and summit route"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strenuous multi-day approach (Trinity Trailhead up the Chiwawa River Trail to a high camp on the ~6,300 ft benches) with significant elevation gain before the climb even begins",
+     "packWeight": "Overnight camping kit plus ice axe (and light traction early season); no rope, harness or crevasse-rescue gear on the standard line; roughly 35-40 lb"
+    },
+    "approachTime": "Long - typically a full day to reach a high camp on the benches above Chiwawa Basin before a summit push",
+    "requiredSkills": [
+     "Ice axe self-arrest and crampon technique",
+     "Class 3-4 scrambling on loose/rotten alpine rock",
+     "Route-finding in remote, unmarked terrain",
+     "Backcountry camping/overnight logistics"
+    ],
+    "experienceLevel": "Intermediate to advanced - solid off-trail scrambling experience; comfort on exposed Class 3-4 rock while tired from a long approach"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through early September, once the approach is largely melted out and before early fall storms",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The approach is usually open, though snow often lingers in the gullies and near the col, especially early in the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Access road/trail may still be snowed in or gated, and lingering deep snowpack makes travel and route-finding harder",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Best combination of stable weather and a mostly snow-free approach",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Days shorten and early fall storms can return",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Central Cascades alpine climate with heavy winter snowpack that lingers in the upper basin; the best summer window is stable but short",
+     "probability": "Afternoon thunderstorms/convective buildup are a common summer hazard in this part of the North Cascades, especially July-August"
+    },
+    "exposure": "Exposed Class 3-4 scrambling on loose, rotten rock on the summit ridge; combined with the long, committing, remote approach, any fall or injury here carries serious consequences given the distance from help",
+    "avalanche": {
+     "zone": "No NWAC zone specifically covers this peak, and NWAC's daily forecasts are only issued for the winter season (roughly Nov-Apr), which does not overlap the Jul-Sep climbing window for this route",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "N/A - the standard southwest route is non-glaciated and does not cross the Lyman Glacier remnant, which lies on a separate, more involved approach on the mountain's northeast side (see overview)"
+   },
+   "data_quality": {
+    "gaps": [
+     "Round-trip mileage varies significantly by source depending on whether Fortress Mountain is combined into the same trip (roughly 14-16 mi for Chiwawa alone vs. ~20 mi in combined Chiwawa+Fortress trip reports) — no single dist_km value was reliable enough to record",
+     "No verified GPS coordinates for the high camp or Fortress-Chiwawa col beyond the summit waypoint already on file",
+     "NWAC does not publish a forecast zone specific to this drainage, so avalanche-forecast applicability is approximate",
+     "GPS track sourced from https://caltopo.com/m/4EVK",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.163424,
+    "peakLng": -120.907616,
+    "trailhead": "Trinity Trailhead (end of Chiwawa River Road)",
+    "trailheadLat": 48.071966,
+    "trailheadLng": -120.84999,
+    "trailheadDirection": "Park at Trinity Trailhead (~2,800 ft), at the end of Chiwawa River Road/FR-6200 by the old Trinity mine site."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Trinity and the Chiwawa River Trail to Chiwawa Basin and the 6,300 ft benches",
+     "notes": "Park at Trinity Trailhead near 2,800 ft at the end of Chiwawa River Road/FR-6200 by the old mine site. Start up-valley on Buck Creek Trail #1513 for about a mile and a half and BEAR RIGHT at the fork onto Chiwawa River Trail #1550, which takes over an old mining-road grade close to the river — water is reliable along all of this.\n\nAbout 3.7 more miles brings the signed Red Mountain Trail junction near 4,000 ft. This is the last water that is both obvious and easy to reach before the basin, so fill here. Bear LEFT into Chiwawa Basin rather than taking the right-hand switchbacks up Red Mountain.\n\nBeyond the junction the tread deteriorates, braids and climbs through forest toward the basin, with an unbridged ford of the Chiwawa headwater around 4,400 ft — manageable at summer flow, higher and pushier early. Above the ford the brush thickens and the tread fades: favour the more open, less-timbered ground along the EAST side of the basin, because drifting into the timber turns this into a bushwhack.\n\nCamp is on benches around 6,300 ft. Several lines reach them: the left-trending gully is the most direct and easiest going though it is wet, and the vegetated slopes beside the talus gullies are the better choice coming down.\n\nFR-6200 has been closed to vehicles beyond Atkinson Flat since May 20, 2026 under storm-damage order 06-17-07-2026-11 (through December 31, 2027), so Trinity is not reachable by vehicle. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and the trails from Trinity through October 31, 2026 unless lifted sooner.",
+     "season": "Late Jun-Sep. The road to Trinity is often not melted out until mid-June, and the upper mountain and col hold snow into July in heavy years",
+     "hazards": [
+      "Misidentifying the gully near the col, which leads to an exposed low-fifth-class dead end",
+      "Loose, sandy rock flanking the col and loose talus on the upper mountain",
+      "Cornices and early-season snow at the Fortress-Chiwawa col",
+      "An unbridged ford of the Chiwawa headwater, and fading braided tread that becomes a bushwhack if you drift into timber",
+      "FR-6200 closed beyond Atkinson Flat since May 20, 2026 (order 06-17-07-2026-11, through December 31, 2027), so Trinity is unreachable by vehicle"
+     ],
+     "primary": true,
+     "baseFinding": "THE BASE IS A NOTCH IN SOMEBODY ELSE'S RIDGE, AND SAYING IT THAT WAY IS WHAT MAKES IT FINDABLE: the Fortress-Chiwawa col at about 7,200 ft is the NOTCH IN FORTRESS MOUNTAIN'S EAST RIDGE. From the 6,300 ft benches, traverse steep heather and aim for that notch. You are walking toward a gap on the skyline of the mountain NEXT DOOR, not toward the peak you are climbing.\n\nWHAT THE LAST STRETCH FEELS LIKE, so you know you are on it: the snow slope up to the col is moderate and then steepens noticeably in the final section below the notch, and the rock flanking it is loose and sandy. Stay on the snow or on the most solid line you can find rather than the flanking rock. A slope that stays uniformly moderate all the way to a gap is not this one.\n\nFROM THE COL THE ROUTE HAS NO SINGLE LINE AND THAT IS THE CORRECT ANSWER, NOT A GAP IN THE BETA: work up the south-west side on slabs, gullies and talus taking the path of least resistance. Nothing here is cairned or named.\n\nTHE NEGATIVE MARKER IS EXPLICIT AND IT HAS A STATED CONSEQUENCE: misidentifying the correct gully near the col leads to an exposed low-fifth-class DEAD END. If the ground you are on has stopped offering an easy option and is committing you to fifth-class moves, reverse and pick a different line — this route never needs them.\n\nTHE CRUX IS SHORT AND IT IS AT THE TOP: the step gaining the SUMMIT RIDGE is loose and exposed Class 2-3 and is the hardest ground on the route. After it, an easy traverse of about 100 ft to the WEST — to your right — reaches the top. If you gain a ridge and the summit is to your left, you are on the wrong section of crest.\n\nGOING BACK DOWN, USE A DIFFERENT LINE THAN YOU CAME UP FOR ONE STRETCH ONLY: below the benches, the vegetated slopes beside the talus gullies are the better descent, and the loose climber's-left skyline gully should be avoided."
+    },
+    {
+     "name": "Phelps Creek variant to the col west of the summit",
+     "notes": "A less-travelled alternative starts at the Phelps Creek Trailhead rather than Trinity. It bushwhacks to about 5,500 ft and follows a gully to the right of Point 5971 up to the col WEST of the summit, then takes easy Class 2 ground along the west ridge to the top.\n\nThis is the shorter line on paper and the rougher one on the ground: there is no tread on the bushwhack and no camp equivalent to the Chiwawa Basin benches. It is genuinely used, but not recommended over the Trinity approach.",
+     "season": "Late Jun-Sep, as for the main line",
+     "hazards": [
+      "An unmaintained bushwhack with no tread from about 5,500 ft and no published landmarks below the gully",
+      "No established camp on this side, so it commits you to a long day",
+      "Early-season snow in the gully and at the col",
+      "Loose rock on the west ridge, as everywhere on this peak"
+     ],
+     "baseFinding": "THIS VARIANT'S BASE IS A DIFFERENT COL FROM THE MAIN ROUTE'S, AND CONFUSING THE TWO PUTS YOU ON THE WRONG SIDE OF THE MOUNTAIN. The standard line goes to the FORTRESS-CHIWAWA col, which is SOUTH-WEST of the summit and is a notch in Fortress's east ridge. This variant goes to the col WEST of the summit, gained from Phelps Creek by a gully to the RIGHT of Point 5971.\n\nTHE TEST IS WHAT LIES ABOVE THE COL YOU REACH. From this one, the WEST RIDGE runs to the summit on easy Class 2 ground — a walk, essentially. From the Fortress-Chiwawa col you face slabs, gullies and talus on the south-west FACE with a loose Class 2-3 step at the top. If you have reached a col and the way on is a broad easy crest, you are on this variant. If it is a face with no obvious line, you are on the standard one.\n\nTHE APPROACH MARKER IS A NUMBERED POINT AND THAT IS ALL THERE IS: the gully is to the RIGHT of Point 5971. Nothing else about the bushwhack below it is published, which is why this is the second variant and not the first. Carry a track."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Talus/scree gullies to the ~6,300 ft bench",
+     "notes": "Above the basin, gain the ~6,300 ft bench via talus/scree gullies or the vegetated slopes just left of them. Early-season parties will find snow gullies here — ice axe/crampons recommended — that are faster than the loose summer scree."
+    },
+    {
+     "n": 2,
+     "class": "class 2",
+     "label": "Southwest face slabs and gullies",
+     "notes": "From the bench, the standard finish is a scramble up slabs and gullies on the southwest face."
+    },
+    {
+     "n": 3,
+     "class": "class 2–3",
+     "label": "Crux section gaining the summit ridge",
+     "notes": "The short section gaining the summit ridge is the route's crux — loose, exposed rock."
+    },
+    {
+     "n": 4,
+     "label": "Summit traverse",
+     "notes": "An easy ~100 ft rightward (west) traverse along the ridge leads to the summit."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Chiwawa Basin high camp benches",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "elev": 2800,
+     "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+     "role": "route",
+     "type": "camp",
+     "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how parties end up starting the walk in tired and late. Phelps Creek Campground sits near the confluence of Phelps Creek and the Chiwawa a short distance below the Phelps Creek trailhead, and the Trinity trailhead at about 2,800 ft — the start of the Buck Creek trail toward Buck Creek Pass and Fortress Mountain — is a mile or so away, so one night here stages either objective. The road is the fragile part of this whole side of the zone. Storm damage has closed it above Atkinson Flat under a multi-year order, and a 2026 fire closure covered the Chiwawa River road and the Phelps Creek spur on top of that, so check whether you can drive to the trailhead at all before planning around it. When the road is shut above Atkinson Flat the lower campgrounds are still a reasonable base but the trailhead becomes a long walk or ride further on.",
+     "water": "The Chiwawa River is right there but these are primitive campgrounds — treat water and expect no potable supply or trash service",
+     "permit": "Small nightly fee at the developed sites, first come first served with no reservations, so arrive early on a summer Friday. A Northwest Forest Pass or America the Beautiful pass covers trailhead parking the next morning, and the free self-issue wilderness permit is picked up at the trailhead itself. Fire restrictions bite here in late summer and often ban all open flame including in the fire rings.",
+     "capacity": "Phelps Creek Campground has roughly seven tent sites plus half a dozen equestrian sites; Atkinson Flat, Schaefer Creek, Rock Creek and the other small forest campgrounds strung along the road below it each hold a handful more"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_south_face_12",
+  "name": "South Face",
+  "area_id": "wa_argonaut_peak",
+  "findings": [
+   "r006.json: On this row, the approach and approach_variants put camp at about 6 mi (distMi 6.5), and the summit waypoint sits at distMi 7.5. The two itinerary days total 15 mi, so about 7.5 mi one way. One external account of the south approach gives 6 miles from the Beverly/Bean Creek trailhead to the Ingalls Creek camp. A 2024 party covered 16 miles round trip on the same Fourth Creek Pass approach to a point high on the peak. dist_km's 5.5 mi is shorter than the trailhead-to-camp leg alone, so it cannot be the one-way figure. | About 7.5 mi (12.07 km) one way"
+  ],
+  "gpx_summary": "221 points; 0 of 7 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_south_face_12",
+   "area_id": "wa_argonaut_peak",
+   "name": "South Face",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 3,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep (snow often lingers in the approach gully into early/mid-July)",
+   "description": null,
+   "gear": [
+    "rock shoes",
+    "helmet",
+    "small-to-mid rack (nuts + cams ~0.4-2in)",
+    "60m single rope",
+    "webbing/cordelette for the chockstone rappel anchor"
+   ],
+   "hazards": [
+    "Loose rock low on the route",
+    "Extended off-trail travel through brush and talus on approach"
+   ],
+   "verif": null,
+   "overview": "The South Face climbs the broad, blocky wall directly below Argonaut's summit on generally solid granite, with several plausible lines up short corners and cracks to the top — a moderate, fairly direct way to the summit from the south side of the peak. Watch for loose blocks low on the face.",
+   "beta": "Start in the rightmost and larger of two short left-facing corners on the wall base; follow blocky, generally solid rock 'to the summit' with several viable variations up the face. Watch for a few loose blocks low on the route. The grade (5.6) is an old-school rating and climbs sustained, comparable to roughly 5.9-5.10- by modern gym standards.",
+   "turnaround": "Given the long brushy approach and slow, route-finding-heavy descent, set a firm turnaround time from camp that leaves ample daylight margin for the descent - parties consistently report the approach/exit terrain as harder and slower than the climbing itself.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 6257,
+   "loss_ft": 6157,
+   "dist_km": 12.07,
+   "max_angle": null,
+   "rappels": "One 50-ft rappel at a chockstone crux on the descent",
+   "commitment": "III",
+   "face": "South Face",
+   "permit": "Free self-issued USFS wilderness permit at the trailhead — no quota, no lottery. This Teanaway-side (Beverly Creek/Ingalls Creek) approach sits entirely outside the Enchantment Permit Area boundary, which covers only the Stuart Lake/Colchuck/Snow Lakes/Eightmile/Core zones reached via the Icicle Creek corridor.",
+   "comms": "No reliable cell coverage through the Teanaway/Ingalls Creek approach or on the peak itself.",
+   "descent": "Downclimb the south-side gully system on the ascent line (or an easier variant gully); one 50-ft rappel is used to get around a chockstone crux.",
+   "obj_haz": [
+    "Loose/blocky rock low on the face",
+    "Lingering snow in the approach gully before mid-July",
+    "Long brushy/bushwhack approach",
+    "Exposure on unroped class 3-4 approach terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.3892,
+     "lng": -120.8725,
+     "elev": 3600,
+     "name": "Beverly Turnpike Trailhead",
+     "note": "Shared trailhead with Bean Creek Basin at the end of the rough, overgrown FR 9737-112 spur road.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the North Fork Teanaway River Road, turn onto the FR-9737-112 spur and follow it to its end at the Beverly Turnpike trailhead, around 3,650 ft. The spur is rough and overgrown, and the gravel access opens with spring snowmelt; that plus the Ingalls Creek ford further along makes July through September the practical window. It is the shared lot with Bean Creek Basin, so at about half a mile bear left onto signed Trail #1391 rather than taking the Bean Creek fork, which is a commonly reported mistake here."
+    },
+    {
+     "lat": 47.445194,
+     "lng": -120.866447,
+     "elev": 5200,
+     "name": "Beverly Creek Trail (FST 1391) / Fourth Creek Trail (FST 1226.1) junction",
+     "note": "Faint fork in forested/open terrain; bear toward Fourth Creek Trail for the pass rather than continuing up Beverly Creek.",
+     "type": "Junction",
+     "distMi": 2.6
+    },
+    {
+     "lat": 47.456595,
+     "lng": -120.864103,
+     "elev": 5800,
+     "name": "Fourth Creek Pass",
+     "note": "Low, treed pass on the drainage divide reached via a steep final 0.3-mile push; descends into the Fourth Creek drainage on the far side.",
+     "type": "Junction",
+     "distMi": 3.1
+    },
+    {
+     "lat": 47.411068,
+     "lng": -120.881313,
+     "elev": 4250,
+     "name": "Fourth Creek / Ingalls Creek confluence camp",
+     "note": "Established basecamp near the creek confluence used by most south-side parties before the summit push.",
+     "type": "Campsite",
+     "distMi": 6.5
+    },
+    {
+     "lat": 47.408861,
+     "lng": -120.882363,
+     "elev": 4200,
+     "name": "Ingalls Creek ford",
+     "note": "Potentially dangerous ford — cold and swift in early season, can be partially frozen with slick ice-covered rocks.",
+     "type": "Hazard",
+     "distMi": 6.6
+    },
+    {
+     "lat": 47.399081,
+     "lng": -120.882605,
+     "elev": 6800,
+     "name": "South-side gully, west of the main gully",
+     "note": "Class 2 scrambling up loose rock in the gully just west of Argonaut's main south gully, heading for the summit ridge.",
+     "type": "Hazard",
+     "distMi": 7
+    },
+    {
+     "lat": 47.470119,
+     "lng": -120.861477,
+     "elev": 8453,
+     "name": "Argonaut Peak summit (west summit, true)",
+     "note": "Final moves onto the true (west) summit ridge are harder than the class 2 approach suggests, often low class 3/4.",
+     "type": "Summit",
+     "distMi": 7.5
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 17.5,
+    "summitTimeHrs": 14.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 3,
+    "recommendedStart": "3:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3,
+      "note": "Hike in from the Beverly Creek trailhead over Fourth Creek trail and down to Ingalls Creek, fording to camp around 4,200 ft.",
+      "fromTo": "Approach to Ingalls Creek camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 14.5,
+      "note": "Bushwhack and scramble up to the base of the South Face, climb 3 pitches to the summit, then reverse with rappels/downclimbing back to camp, break camp, and hike out the same day.",
+      "fromTo": "South Face to the summit, then out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Short route — 300ft/3 pitches of blocky Class 5.6 on generally good granite directly below the summit. A single set of nuts plus cams in the 0.4-2in range (with extra pieces in the 0.75-1in range, reported as the most useful crux size) is sufficient; nothing larger is recorded as needed. Bring webbing or a cordelette for backing up the worn rappel anchor above the chockstone on the descent.",
+   "what_to_bring": [
+    "Ten essentials",
+    "Extra water for the long, exposed south-side approach"
+   ],
+   "pro_tips": [
+    "The brush and route-finding through the Ingalls Creek drainage is widely reported as harder than the actual climbing.",
+    "The face has multiple viable lines - don't expect one obvious corridor to the top."
+   ],
+   "watch_out": [
+    "loose blocks low on the face",
+    "variable rock quality near the base",
+    "afternoon thunderstorms",
+    "fording Ingalls Creek on approach"
+   ],
+   "pro_needs": "Protection is adequate in the crack/corner systems on this face (start in a short left-facing corner and follow cracks up), but rock quality is inconsistent — good overall, with reported loose blocks near the base, so test holds low on the route. The face is wide enough that parties pick their own line.",
+   "best_season": "July through September, for dry rock",
+   "high_point_ft": 8457,
+   "aid_grade": null,
+   "approach": "From the Beverly Turnpike Trailhead (Bean Creek/Beverly Creek TH) off the North Fork Teanaway River Road (FR-9737-112), the approach is well-documented with concrete checkpoints: at about 0.5 mile, bear left onto signed Trail #1391 (Beverly Turnpike Trail) — a wrong fork onto the Bean Creek Trail here is a commonly reported mistake, so double-check the sign. At about 3.1 miles, turn right onto Trail #1226.1 (Fourth Creek Trail). At about 3.6 miles you crest Fourth Creek Pass with the first open views of Argonaut, Colchuck, and Dragontail. Continue down the far side to about 6 miles and ~4,200 ft, where you ford Ingalls Creek (wading or a footlog) to reach good flat camping at the Fourth Creek/Ingalls Creek confluence — day one is roughly 6 miles and 2,000 ft of gain. From camp, follow the Ingalls Creek Trail west for about half a mile, then cut sharply left (north) and start climbing straight upslope toward Argonaut's south face: expect brushy 'jackstraw' forest for the first 300 vertical feet and then dense slide alder for close to 1,000 feet above that (progress can slow to a few hundred feet per hour in the thick of it — stay right/climber's-right to minimize brush where possible). At about 5,200 ft the brush relents onto open slopes; ascend the left side of a large drainage gully up to about 6,600 ft, then continue up the gully itself. At about 7,100 ft the gully forks — the standard line is the left branch (the right also goes but is less traveled). At the base of the summit face, start in the rightmost and larger of two short left-facing corners and climb about three pitches of blocky rock to the summit. The 50-foot chockstone gully that tops out on the east ridge (Class 4, stepping right at the overhang) is the finish of the scramble route, not part of this climb; it is the usual way down. Hazards: the Ingalls Creek ford, sustained brush-bashing on the lower slopes, and possible snow in the gully in shoulder season (carry an axe/crampons if conditions warrant).",
+   "descent_text": "Descend by reversing the ascent gully. The single technical obstacle is the 50-foot chockstone gully near the top: rappel it rather than downclimbing (a webbing/sling anchor is typically found immediately above the chockstone — inspect and consider backing it up with fresh webbing, as reports note it sees heavy wear). A 40 m rope is ideal for this rappel and a 30 m rope will also reach; be careful feeding/pulling the rope past the chockstone, as trip reports specifically warn the rope can get stuck on it and that a pendulum is possible if you're off to one side. Below the chockstone, downclimb the gully and continue down through the two gully forks and open slopes back to about 5,200 ft, then re-enter the brush band and pick your way back down through the slide alder and jackstraw forest to the Ingalls Creek Trail. Reverse the approach from there: re-ford Ingalls Creek, climb back over Fourth Creek Pass, and follow Trail #1226.1/#1391 back to the Beverly Turnpike Trailhead. This is a full, long descent day (figure roughly 4 hours from summit back to camp) — start down with a solid daylight margin.",
+   "bail": "Retreat by rappelling the 50-ft chockstone gully, then downclimb class 2-4 terrain toward Ingalls Creek.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Start in the short left-facing corner with a crack in it and follow blocky, generally solid granite up the lower face; watch for loose blocks right at the base.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Continue up the broad face on good rock — climbers can pick their own line here since the face is featured almost anywhere.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "up to 5.6",
+     "notes": "Finish up the upper face on blocky rock to the summit. The face goes almost anywhere, so the difficulty depends on the line you pick.",
+     "pitch": 3,
+     "anchor": "Gear",
+     "lengthM": 20
+    }
+   ],
+   "itinerary": {
+    "cal": "Approach via Beverly Creek/Ingalls Creek trailheads (Teanaway side, gravel road access opens with spring snowmelt); Ingalls Creek must be forded — best done July-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike in from the Beverly Creek trailhead over Fourth Creek trail and down to Ingalls Creek, fording to camp around 4,200 ft.",
+      "hours": 3,
+      "miles": 6,
+      "title": "Approach to Ingalls Creek camp",
+      "gainFt": 2000,
+      "lossFt": 1350,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach camp at the Ingalls Creek crossing"
+     },
+     {
+      "n": 2,
+      "note": "Bushwhack and scramble up to the base of the South Face, climb 3 pitches to the summit, then reverse with rappels/downclimbing back to camp, break camp, and hike out the same day.",
+      "hours": 14.5,
+      "miles": 9,
+      "title": "South Face to the summit, then out",
+      "gainFt": 4257,
+      "lossFt": 4807,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "3:30 AM",
+        "label": "Leave camp",
+        "detail": "Bushwhack and scramble toward the face."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base of South Face",
+        "detail": "Rack up for 3 pitches."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Reach summit",
+        "detail": ""
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Begin descent",
+        "detail": "Rappels/downclimbing back toward camp."
+       },
+       {
+        "time": "3:30 PM",
+        "label": "Back at camp",
+        "detail": "Break camp for the hike out."
+       },
+       {
+        "time": "6:00 PM",
+        "label": "Reach trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb the South Face and exit to the trailhead"
+     }
+    ],
+    "totalNote": "A 2-day trip: a moderate approach to an Ingalls Creek camp, then one long summit day (~14-15 hrs) that climbs the 3-pitch South Face and hikes all the way back to the car."
+   },
+   "access": {
+    "fees": "Free — no fee for a day climb or an overnight camp here; this approach (Ingalls Creek Trail or Longs Pass/Ingalls Way from the Teanaway) sits entirely outside the Enchantment Permit Area lottery boundary, so the paid Enchantments lottery ($6 application + $5/person/night) does not apply.",
+    "notes": "Do not confuse this approach with the actual Enchantment Permit Area lottery (Stuart/Colchuck/Snow Lakes/Eightmile/Core zones, reached via the Stuart Lake or Snow Lakes trailheads) — Argonaut Peak's standard approaches are separate, non-quota Alpine Lakes Wilderness trailheads.",
+    "rules": "Standard USFS Alpine Lakes Wilderness group-size limit of 12 (people + stock). Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Free self-issue wilderness permit at the trailhead — no lottery, no reservation needed, even for an overnight camp.",
+    "closures": "Beverly Creek/Fourth Creek Pass (FR-9737-112, Beverly Turnpike Trailhead) and several nearby Teanaway trails (Longs Pass, Ingalls Way, Standup Creek, etc.) were closed under a USFS order effective May 20-Dec 31, 2026 following the 2025 Labor Mountain Fire — confirm current status with the Cle Elum Ranger District before planning a Teanaway-side approach.",
+    "group_limit": 12,
+    "landManager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass ($5/day or $30/annual) at the Teanaway/Ingalls Creek trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead."
+    }
+   },
+   "road": {
+    "name": "Beverly Creek Road (FR-9737-112)",
+    "status": "Closed under the 2025 Labor Mountain Fire order, effective May 20 through December 31, 2026 (see closures); normally a rough gravel spur off the Teanaway River Road",
+    "driveNote": "From the North Fork Teanaway River Road (FR-9737) north of Cle Elum, turn onto the signed FR-9737-112 (Beverly Creek) and follow about 1.4 miles to the Beverly Turnpike trailhead when open.",
+    "seasonalGate": "Even in normal years snow can keep the upper trail unworkable into early summer; the road and trail are also closed for Labor Mountain Fire damage repair, effective May 20 through December 31, 2026."
+   },
+   "climate": {
+    "fall": "Early snow is possible by October and days shorten quickly.",
+    "spring": "Snow typically still covers the approach gully and upper mountain into June.",
+    "summer": "Warm and usually the most stable, driest window for rock climbing.",
+    "winter": null,
+    "typical": "General Cascades continental alpine pattern: drier, more stable weather June-September; spring and fall bring more precipitation and faster-changing conditions.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "Remote terrain with little to no cell service; carry a satellite communicator. SAR coordination may involve either Chelan or Kittitas County depending on where an incident occurs.",
+    "county": "Chelan County (summit); the approach trailhead is in Kittitas County",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest",
+    "nearestHospital": "Cle Elum area hospital via the Teanaway, or Cascade Medical Center, Leavenworth"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "One public trip report on record, from 2018",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Genuinely low — single digits to roughly a dozen parties per season at most"
+   },
+   "partner_requirements": {
+    "fitnessSpec": "Fit for a 17.5-hour car-to-car day",
+    "requiredSkills": [
+     "Comfortable on runout, blocky, loose terrain",
+     "Competent unroped 3rd/4th-class scrambling for the approach gully",
+     "Creek ford (Ingalls Creek) plus off-trail approach navigation",
+     "No snow/ice skills needed in-season"
+    ],
+    "experienceLevel": "Trad leader solid at 5.7-5.8 (variable rock quality near the base)"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August-early September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can have residual wet/snow and higher creek flow",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Creek high/cold; face may hold wet snow",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Driest rock, lowest creek flow",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Shortening days, early snow risk",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Optimal early-to-mid month; late September marginal as days shorten and early snow risk rises",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Continental east-slopes climate (drier than the west side) but still produces fast-building afternoon thunderstorms/lightning"
+    },
+    "exposure": "Moderate — short 3-pitch/~300 ft face, but loose blocks low on the route and runout climbing raise the consequence beyond the grade",
+    "avalanche": {
+     "zone": "NWAC East Slopes Central",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "no confirmed first-ascent record",
+     "exact approach mileage/elevation gain not sourced",
+     "full pitch-by-pitch breakdown not documented",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/QBFRE",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "Real named Mountain Project page (1 trip report, 2018) plus Mountaineers/SummitPost descriptions corroborate the on-file text (blocky wall, corner/crack lines, loose blocks low); no Beckey guide text located, no confirmed FA, only 1 substantive trip report."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 5,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.470119,
+    "peakLng": -120.861477,
+    "trailhead": "Beverly Turnpike Trailhead (Trail #1391, FR-9737-112)",
+    "trailheadLat": 47.3892,
+    "trailheadLng": -120.8725,
+    "trailheadDirection": "From the Beverly Turnpike Trailhead at the end of FR-9737-112 (~3,650 ft) off the North Fork Teanaway River Road, via Trail #1391 up Beverly Creek"
+   },
+   "sling_rack": {
+    "cams": "0.3-2 in",
+    "nuts": "small-medium set",
+    "slings": 3
+   },
+   "alpine_draws": 2,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "~300 ft, 5.6 blocky rock face directly below Argonaut Peak's summit; watch for loose rock near the base. Light-to-standard trad rack over roughly 3 pitches.",
+   "ascender": null,
+   "corrections": " 2026-08-05: top-level permit corrected — wrongly claimed an Enchantment Permit Area lottery requirement, contradicting this row's own access.fees/access.notes/access.permit fields, which already correctly state no lottery applies to this Teanaway-side approach. 2026-08-05: gain_ft corrected from 6000 to 6257 and loss_ft corrected from 1400 to 6157, to match this row's own itinerary day-by-day gain/loss sums for this car-to-car out-and-back trip.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Nuts, small-medium set",
+    "Cams 0.4-2in (extra pieces in 0.75-1in)",
+    "Webbing/cordelette for the chockstone rappel anchor",
+    "Single 60m rope"
+   ],
+   "features": [
+    "Face",
+    "Crack",
+    "Dihedral",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Beverly Turnpike and Fourth Creek Pass to an Ingalls Creek camp, then straight up the south side",
+     "notes": "From the Beverly Turnpike trailhead at the end of FR-9737-112 off the North Fork Teanaway Road, at about 0.5 mile bear left onto signed Trail #1391. Taking the Bean Creek fork here is a commonly reported mistake, so read the sign.\n\nAt about 3.1 miles turn right onto Trail #1226.1, the Fourth Creek Trail; at about 3.6 miles you crest Fourth Creek Pass with the first open views of Argonaut, Colchuck and Dragontail. Descend the far side to roughly 6 miles and 4,200 ft, ford Ingalls Creek, and camp at the Fourth Creek confluence. Day one is about 6 miles and 2,000 ft.\n\nFrom camp, follow the Ingalls Creek Trail west about half a mile, then cut sharply left and north and climb straight upslope. Expect roughly 300 vertical feet of tangled forest and then close to 1,000 ft of dense slide alder above that — progress can drop to a few hundred feet an hour.\n\nAt about 5,200 ft the brush relents. Climb the LEFT side of a large drainage gully to about 6,600 ft, then the gully itself.",
+     "distMi": 6.5,
+     "gainFt": 2000,
+     "season": "Roughly Jul-Sep. The brush is the reason: it is impassably wet in early season and the gully may hold snow in the shoulders",
+     "hazards": [
+      "Close to 1,000 ft of dense slide alder above 300 ft of jackstraw forest — the defining feature of the day",
+      "An Ingalls Creek ford that can be cold and swift early, and ice-covered in the shoulders",
+      "Loose blocks low on the route",
+      "Possible snow in the gully in the shoulder seasons — carry axe and crampons if in doubt",
+      "The descent rappels a chockstone gully where ropes are reported to hang up on the chockstone",
+      "A heavily worn sling anchor above that chockstone: inspect and back it up"
+     ],
+     "baseFinding": "TWO TESTS, ONE AT THE GULLY FORK AND ONE AT THE WALL, AND YOU NEED BOTH.\n\nFIRST, THE FORK AT ABOUT 7,100 FT. The gully you have been climbing splits. The standard line is the LEFT branch. The right branch also reaches the mountain but is far less travelled, so a party that drifts right will find progressively less sign of passage — that absence is the signal to come back down and cross over.\n\nSECOND, THE WALL ITSELF, and this is the one that matters in fog because the gully fork can be ambiguous under snow. At the base of the south face there are TWO SHORT LEFT-FACING CORNERS side by side. The route starts in the RIGHTMOST AND LARGER of the two. Not a corner — two corners, and you take the bigger, right-hand one. If there is only one corner in front of you, you are not at the start.\n\nWHAT THE CLIMBING SHOULD FEEL LIKE, as a check on all of the above: blocky, generally solid rock, three pitches, graded 5.6 — but an old-school 5.6 that parties consistently report climbing like modern 5.9 or harder. So sustained-feeling climbing is NOT evidence you are off route here. Watch for a few loose blocks low down.\n\nA SEPARATE FEATURE WORTH NOT CONFUSING WITH THE START: high on the mountain there is a 50-foot gully with a chockstone near its top, Class 4, taken by stepping right at the overhang, which tops out on the east ridge a short way from the summit. That is the finish of the ordinary scramble line, and the approach description on this route describes it as though it were the route. It is not the base of the 5.6 face climb, and a party navigating to it will end up on the scramble."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Fourth Creek / Ingalls Creek confluence camp",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "name": "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the base for the south side of both Argonaut and Sherpa, and it is what makes those peaks feasible as overnights rather than brutal single pushes. Two ways in. From Esmeralda you climb to Longs Pass at about 6,200 feet and drop roughly 1,400 feet to the valley, then walk east along the trail until you are under your peak; Sherpa's south basin is about a mile down, Argonaut's exit gully perhaps three. From the low trailhead off US 97 you walk in flat but far, upwards of ten miles to reach the same ground, which trades the pass for distance and suits a party with time. A third link comes over Fourth Creek from the Beverly Creek trailhead in the Teanaway and requires fording Ingalls Creek, which is genuinely dangerous in June. The valley is low and sheltered, so it is buggy through midsummer and warm at night, and the brush between the trail and the open slopes above is the real work of the approach. Sites are dispersed rather than built, so pick an existing one instead of clearing new ground. The elevation of the trail changes across the several miles covered here, so no single figure is given.",
+     "water": "Ingalls Creek runs strongly all season and side streams come in from the north wall; the only dry stretch is the climb over Longs Pass, which carries no water at all in either direction",
+     "permit": "Alpine Lakes Wilderness under the Cle Elum Ranger District, entirely OUTSIDE the Enchantment Permit Area. A free self-issued wilderness permit from the trailhead box covers day and overnight use, there is no lottery, no quota and no reservation. A Northwest Forest Pass or day fee is needed to park at Esmeralda; the low Ingalls Creek trailhead off US 97 has its own parking requirement. Campfires are restricted seasonally and are a poor idea in any case; the valley is dry and forested. Camp at least 200 feet from the creek.",
+     "capacity": "Numerous flat, well-used sites strung along several miles of valley floor and its side creeks; there is no quota and no realistic crowding, so a party can nearly always find its own ground"
+    },
+    {
+     "name": "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+     "role": "route",
+     "type": "camp",
+     "notes": "This is what most parties on Ingalls Peak actually use, because all three Ingalls summits are comfortably a long day from the car and there is no reason to carry a camp. Sleeping on the road puts you at the Esmeralda trailhead in minutes rather than driving up from Cle Elum in the dark. The Ingalls group sits entirely OUTSIDE the Enchantment Permit Area, in the Cle Elum Ranger District, so the whole permit problem that dominates the Icicle Creek side simply does not exist here: a free self-issued slip at the trailhead, a parking pass, and you go. Access is by pavement to the end of Teanaway Road and then gravel Forest Road 9737 for the last several miles; the surface is rough enough to want patience in a low car, holds snow into early summer, and washboards badly by August. Beverly is roughly four miles up the gravel and De Roux about eight, with Esmeralda a mile beyond that. If you do want to sleep high for the South Ridge, the designated sites in Headlight Basin are the legal option and camping is prohibited at Ingalls Lake itself; expect the goats there, which are bold, unbothered by people and interested in anything salty, so relieve yourself well away from camp and do not leave sweaty gear out.",
+     "water": "No potable water at either campground, so bring what you need. The North Fork Teanaway River runs alongside and is easy to filter from.",
+     "permit": "No wilderness permit at all, and nothing to do with the Enchantment lottery. Both campgrounds charge a modest per-night fee paid on site. Roadside dispersed camping is legal on National Forest ground along Forest Road 9737 but is NOT permitted inside the Teanaway Community Forest lower down the valley, where camping is confined to its designated campgrounds. Fire restrictions are common here from midsummer and are taken seriously; this valley is dry and burns. A Northwest Forest Pass is required to park at Esmeralda the next morning.",
+     "capacity": "Beverly holds around fourteen small tent sites; De Roux is smaller still. Both are first come, first served with no reservations. Dispersed pullouts along the road hold many more parties informally."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_buck_mountain_south_ridge",
+  "name": "South Ridge",
+  "area_id": "wa_buck_mountain",
+  "findings": [
+   "r007.json: Both lines are real, documented routes: one source describes climbing from King Lake directly south to a notch (~7,140 ft) on the east ridge, crossing to the south side and contouring onto the low-angle SE slopes to the middle summit (the beta/pitch_detail/itinerary line); other sources describe the long 'normal' route to the west side via Buck Creek Pass and the High Pass high route to a Louis Creek Basin camp (the approach/descent_text/approach_variants line), and note King Lake is also used for the NE face. The row welds two different routes together; choosing which one this route id represents means rewriting beta, pitch_detail, three itinerary days and timing notes (or the approach, des"
+  ],
+  "gpx_summary": "189 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_buck_mountain_south_ridge",
+   "area_id": "wa_buck_mountain",
+   "name": "South Ridge",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1948 — Carl Suback and Ray Rigg",
+   "lat": 48.09363,
+   "lng": -120.9122,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Helmet",
+    "Ice axe and crampons if snow present"
+   ],
+   "hazards": [
+    "loose rock",
+    "ridge exposure",
+    "lingering snow on approach",
+    "loose black schist on the upper scramble slopes",
+    "short Class 3-4 step near a rock horn just below the true summit",
+    "stream crossings on the Buck Creek Trail approach",
+    "afternoon thunderstorms possible in late summer"
+   ],
+   "verif": null,
+   "overview": "Buck Mountain (8,534 ft) is the high point of the peaks ringing Buck Creek Pass in the Glacier Peak Wilderness, named for pioneer USFS surveyor Albert H. Sylvester. Its north and east faces are composed of dark, almost black schist that gives the summit a brooding look above the pass; the summit affords sweeping views of Glacier Peak (about 9 miles west), Clark Mountain (its taller parent peak, ~4 miles southwest), Liberty Cap, and Helmet Butte. First climbed in 1948 by Carl Suback and Ray Rigg, the peak is now one of the most popular scrambles in the area — typically climbed as a side trip from a multi-day backpack based at Buck Creek Pass, and rated as an Alpine Scramble.",
+   "beta": "The usual way up comes from the west, which means a long way round even though the peak stands only about three miles from Trinity. From the Trinity Trailhead, the Buck Creek Trail (#1513) climbs about 9.6 miles and 3,100 ft to Buck Creek Pass. From the pass an unmaintained high route winds around the west side of Liberty Cap and south to High Pass; contour through the pass and under Mount Berge, climb a short Class 3 step onto the ridge just south of Point 7839, and walk down into Louis Creek Basin to camp. From the basin, broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, and loose, slabby schist with one short Class 3-4 step near a horn goes to the summit. Some parties come in over Little Giant Pass and the Napeequa valley instead. A direct line from King Lake on the east side exists but is brushy, involves a river ford, and is seldom used.",
+   "turnaround": "Set a firm turnaround time before starting the summit push from camp and honor it — afternoon thunderstorms, the long remote approach, and loose schist on the exposed Class 3 terrain make a late or rushed descent significantly more hazardous.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 5700,
+   "loss_ft": 5700,
+   "dist_km": 38.62,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "South Ridge",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": null,
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "loose/slabby schist rock",
+    "creek crossing (Buck Creek)",
+    "brush/bushwhacking off-trail",
+    "route-finding above the trail",
+    "lingering snowfields and avalanche terrain into early summer",
+    "exposed Class 3 moves near the summit",
+    "remoteness / long wilderness approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.072,
+     "lng": -120.85,
+     "elev": 2800,
+     "name": "Trinity Trailhead",
+     "note": "End of Chiwawa River Road/FR-6200 (last 12 mi rough gravel); pay day-use fee or NW Forest Pass and self-issue a free Glacier Peak Wilderness permit at the kiosk.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.076579,
+     "lng": -120.854449,
+     "elev": 2800,
+     "name": "Chiwawa River footbridge",
+     "note": "Plank/log bridge crossing the Chiwawa River just beyond the trailhead — solid underfoot despite an ominous warning sign posted at the trailhead.",
+     "type": "Water",
+     "distMi": 0.2
+    },
+    {
+     "lat": 48.144,
+     "lng": -120.9629,
+     "elev": 5900,
+     "name": "Buck Creek Pass",
+     "note": "Established camps in scattered trees and meadows; most parties base camp here for the climb, with a junction to the Flower Dome Trail #799 a half mile north.",
+     "type": "Campsite",
+     "distMi": 9.6
+    },
+    {
+     "lat": 48.088007,
+     "lng": -120.87463,
+     "elev": 7400,
+     "name": "Basin below Buck's south/southwest slopes",
+     "note": "Leave the maintained trail at the pass and contour/ascend cross-country into the open basin beneath the peak's south and southwest slopes — start of the actual scramble.",
+     "type": "Junction",
+     "distMi": 11
+    },
+    {
+     "lat": 48.078141,
+     "lng": -120.856978,
+     "elev": 8300,
+     "name": "Snowfield and loose schist below the summit",
+     "note": "A firm, sometimes icy snowfield crossing leads into loose, exfoliating Class 2-3 schist blocks just right of the obvious white scar — significant rockfall risk for parties below.",
+     "type": "Hazard",
+     "distMi": 11.7
+    },
+    {
+     "lat": 48.09363,
+     "lng": -120.9122,
+     "elev": 8534,
+     "name": "Buck Mountain",
+     "note": "True summit; sweeping views of Glacier Peak, Clark Mountain, and the Napeequa valley — first climbed in 1948 by Carl Suback and Ray Rigg.",
+     "type": "Summit",
+     "distMi": 12
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 4,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 10,
+    "recommendedStart": "6:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 10,
+      "note": "Trinity trailhead up the Buck Creek Trail to Buck Creek Pass, then the High Pass high route around Liberty Cap, through High Pass and under Mount Berge to a camp in Louis Creek Basin.",
+      "fromTo": "Backpack in to Louis Creek Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 4,
+      "note": "From the basin, up the south and southwest slopes to the crest and along loose schist to the summit, then back to camp.",
+      "fromTo": "Summit Buck Mountain",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Reverse the high route to Buck Creek Pass and walk out the Buck Creek Trail to Trinity.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No roped rock rack is needed for the standard scramble line; it is climbed unroped in typical dry summer conditions. Some parties carry a light rope, a few slings, and basic protection for added security on the more exposed class 3 steps or if conditions are wet, icy, or snow-covered.",
+   "what_to_bring": [
+    "ice axe (early season)",
+    "helmet",
+    "satellite communicator",
+    "trekking poles (stream crossings on the Buck Creek Trail approach)"
+   ],
+   "pro_tips": [
+    "Pair with a Buck Creek Pass basecamp",
+    "Watch the exposure on the ridge steps",
+    "Fill out the free self-issue wilderness permit at the Trinity Trailhead kiosk",
+    "Check the Okanogan-Wenatchee NF road-conditions page before driving — Chiwawa River Road has been closed short of Trinity Trailhead since a Dec. 2025 storm",
+    "The short Class 3-4 step near the summit horn can be skirted via ledges to the west for an easier passage."
+   ],
+   "watch_out": [
+    "loose blocks",
+    "exposed moves on the crest",
+    "a brief harder (Class 3-4) step near a dark rock horn below the summit",
+    "snow-covered gully terrain persisting later than expected in big-snow years"
+   ],
+   "pro_needs": "This is an unroped Class 2-3 scramble with no fixed protection or established rappel anchors; parties uncomfortable with the exposed schist moves near the summit sometimes carry a rope and a few slings for a hip-belay or short rappel, but it is not standard gear for this line.",
+   "best_season": "August",
+   "high_point_ft": 8534,
+   "aid_grade": null,
+   "approach": "From the Trinity Trailhead (Glacier Peak Wilderness, self-issue wilderness permit at the kiosk) at the end of the Chiwawa River Road/FR-6200 (~2,800 ft), follow Buck Creek Trail #1513. The trail splits from the Chiwawa River Trail #1550 within the first mile and climbs steadily through forest; around mile 2.75-3 it crosses the upper Chiwawa River on a footbridge that is weathered/damaged, so treat it with care in high runoff and have a wading backup plan in early season. Above the crossing the trail is a long, fairly shadeless, grinding ascent (mosquitoes/black flies are heavy in July) through forest and then subalpine meadow along the flank of Middle Ridge, opening into increasingly good wildflower and Glacier Peak views as you climb. At roughly 9.25-10 miles and about 3,000-3,300 ft of gain, the trail tops out at Buck Creek Pass (~5,800-5,900 ft) - one of the most scenic passes in the Cascades, with a reliable spring near the pass for water (last dependable source before the basin). Beyond the pass there is no maintained trail: pick up the well-used climbers'/boot path that switchbacks up toward Liberty Cap and the High Pass Trail junction, then leave that path to contour and traverse west/southwest, staying below Liberty Cap, into the upper basin below Buck Mountain's south and west aspects (Louis Creek Basin, ~6,700 ft) - the standard camp for a two-day trip. Follow the ridge crest through Class 2-3 terrain (stepping to locally 3-4 near a horn/gendarme close to the true summit) on loose, rubbly, slabby schist to the top; the summit crest has several bumps within feet of each other, so take care identifying the true high point. Primary approach hazards: rockfall/loose schist (helmet recommended, especially with parties above or below), the river crossing in high water, no reliable water source between the pass and the basin in a dry year, and route-finding above Buck Creek Pass since the climbers' path is intermittent. An alternate historic approach reaches Buck Mountain via Little Giant Pass and the Napeequa Valley, used for longer traverses.",
+   "descent_text": "This is a walk-off/downclimb - no rappelling is involved on the standard South Ridge route. Reverse the ascent line: downclimb the Class 2-3 (locally 3-4 near the summit horn) loose, rubbly schist back down the ridge crest to the low-angle snowfield/basin around 7,400 ft, then descend the pumice and talus slopes back to the Louis Creek Basin camp (~6,700 ft). From there, traverse back east below Liberty Cap to rejoin the boot path down to Buck Creek Pass, and finish on the maintained Buck Creek Trail #1513 for the roughly 9.25-10 mile, ~3,000-3,300 ft descent back to the Trinity Trailhead. Trip reports on this route put summit-day round trip from a Buck Creek Pass/Louis Creek Basin camp at roughly 4 hours; given a car-to-car round trip of roughly 30 miles, most parties treat this as an overnight (camp at Buck Creek Pass or the upper basin) rather than a single push, though strong parties have done it in a long day. The main descent hazard is the same loose schist encountered on the way up - downclimbing loose rock is generally more dangerous than ascending it, so descend deliberately, test holds, and keep the group tight (or move one at a time) through the Class 3-4 band near the summit to avoid kicking rock onto climbers below. Rappels: 0.",
+   "bail": "Retreat is straightforward on this unroped scramble: descend the same slopes to Louis Creek Basin and reverse the high route to Buck Creek Pass. No technical or rope descent is needed on the standard line, but the high route itself is long and dry, so a retreat from the basin is still a full day out.",
+   "pitch_detail": [
+    {
+     "grade": "Trail",
+     "notes": "Trinity Trailhead up the Buck Creek Trail #1513 to Buck Creek Pass (~5,800 ft), about 9.6 miles and 3,100 ft",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Unmaintained high route around the west side of Liberty Cap to High Pass, then under Mount Berge and over a short Class 3 step on the ridge south of Point 7839 into Louis Creek Basin",
+     "pitch": "High route"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Pumice, talus and low-angle snow from the basin up the south and southwest slopes to the crest around 7,400 ft",
+     "pitch": "South/southwest slopes"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Loose, slabby schist along the crest to the summit, with a short Class 3-4 step near a horn; several bumps of nearly equal height",
+     "pitch": "Summit scramble"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best mid-July through September, once the high route beyond Buck Creek Pass and the basin have melted out; a free self-issue Glacier Peak Wilderness permit is required and is available at the trailhead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513) about 9.6 miles and 3,100 ft to Buck Creek Pass, and fill up with water there. Follow the old High Pass trail around the west side of Liberty Cap and south to High Pass, where the tread fades into talus and snow, then contour through the pass and under Mount Berge and climb a short Class 3 step onto the ridge just south of Point 7839. An easy walk-off drops into Louis Creek Basin to camp. A long, dry, exposed day once past the pass.",
+      "hours": 10,
+      "miles": 13.5,
+      "title": "Backpack in to Louis Creek Basin",
+      "gainFt": 4800,
+      "lossFt": 900,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Trinity trailhead",
+        "detail": "Buck Creek Trail No. 1513."
+       },
+       {
+        "time": "~12:00 PM",
+        "label": "Buck Creek Pass (~5,800 ft)",
+        "detail": "Last reliable water for about four miles; fill up."
+       },
+       {
+        "time": "~2:00 PM",
+        "label": "High Pass",
+        "detail": "Tread fades into talus and hard snow; crampons can help."
+       },
+       {
+        "time": "~4:00 PM",
+        "label": "Louis Creek Basin camp",
+        "detail": "Stay high on the traverse from the Berge saddle to avoid waterfall slabs."
+       }
+      ],
+      "objective": "Reach camp in Louis Creek Basin below Buck's southwest side"
+     },
+     {
+      "n": 2,
+      "note": "Climb with a light pack from the basin: broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, then loose, slabby schist with a short Class 3-4 step near a horn below the top. The crest has several bumps of nearly equal height, so walk it to find the high point. Return the same way to camp.",
+      "hours": 4,
+      "miles": 3,
+      "title": "Summit Buck Mountain",
+      "gainFt": 1900,
+      "lossFt": 1900,
+      "packLb": 12,
+      "schedule": [
+       {
+        "time": "6:30 AM",
+        "label": "Leave camp",
+        "detail": "Early start to beat afternoon thunderstorm risk."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Gain the crest (~7,400 ft)",
+        "detail": "Pumice, talus and low-angle snow."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Summit",
+        "detail": "Class 2-3 schist, locally 3-4 near a horn below the top."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Back at camp",
+        "detail": "Downclimb carefully; the schist is loose."
+       }
+      ],
+      "objective": "Climb Buck Mountain (8,534 ft) and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and reverse the approach: back over the ridge south of Point 7839, under Mount Berge and through High Pass, around Liberty Cap to Buck Creek Pass, then down the Buck Creek Trail to Trinity. Carry enough water for the dry stretch before the pass.",
+      "hours": 8,
+      "miles": 13.5,
+      "title": "Hike out",
+      "gainFt": 900,
+      "lossFt": 4800,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to Trinity trailhead"
+     }
+    ],
+    "totalNote": "A 3-day backpack of roughly 30 miles round trip: a long first day over Buck Creek Pass and the High Pass high route to a camp in Louis Creek Basin, a summit day of about four hours round trip from camp, and a long walk out. Buck is remote and lightly visited; expect loose rock, route-finding and a dry ridge rather than a trail."
+   },
+   "access": {
+    "rules": "Leave No Trace practices and Glacier Peak Wilderness group-size/stock limits apply; no mechanized or wheeled equipment permitted in wilderness.",
+    "permit": "Free self-issue wilderness permit, filled out at the Trinity Trailhead kiosk (required for all Glacier Peak Wilderness users, day or overnight).",
+    "closures": "Chiwawa River Road (FR 6200) is closed to vehicles at milepost 18.2, just beyond Atkinson Flat Campground, due to December 2025 storm damage; the Okanogan-Wenatchee NF conditions page (updated July 1, 2026) lists it as unlikely to reopen this season. The Little Giant Fire closure (order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner, also closes FR 6200 and the Buck Creek Trail. Check fs.usda.gov/r06/okanogan-wenatchee/conditions before driving out.",
+    "landManager": "Glacier Peak Wilderness, Wenatchee River Ranger District, Okanogan-Wenatchee National Forest",
+    "passRequired": "Northwest Forest Pass or National Forest Day Pass required for Trinity Trailhead parking ($5/day or $30 annual); Interagency/America the Beautiful and National Park passes also honored.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Chiwawa River Road (Forest Road 6200) to Trinity Trailhead",
+    "status": "Closed beyond MP 18.2 (2026 season) — not a normal seasonal closure",
+    "driveNote": "From Coles Corner (US-2) take SR-207 toward Lake Wenatchee ~4.2 mi, bear right onto Chiwawa Loop Road, then left onto Chiwawa River Road (FR 6200); pavement ends near mile 10.8, and the final stretch is rough gravel/dirt not suited to low-clearance vehicles. Since May 20, 2026 the road has been closed to vehicles at MP 18.2 beyond Atkinson Flat Campground under Forest Service order 06-17-07-2026-11 (through December 31, 2027) — plan for extra road-walking miles to reach Trinity Trailhead. While the Little Giant Fire closure (order 06-17-07-2026-40) is in force, September 3 through October 31, 2026 unless lifted sooner, the road and the Buck Creek Trail are closed to all entry.",
+    "seasonalGate": "Normally opens as snow clears in late May/June and stays open into fall; currently closed beyond Atkinson Flat under USFS closure order #06-17-07-2026-11 (effective May 20, 2026 through December 31, 2027 unless rescinded sooner) after December 2025 storm damage, rather than a routine seasonal gate."
+   },
+   "climate": {
+    "typical": "East-slope Cascades transitional climate: Pacific storm systems drop heavy, wet snow on the approach through winter and spring via orographic lift as they hit the peaks, while summers are drier and more settled than the west side of the range; afternoon thunderstorms are possible in late summer.",
+    "bySeason": {
+     "fall": "Short, often clear weather window; first snow can arrive by late September/October",
+     "spring": "Deep, avalanche-prone snowpack on the approach slopes and summit gullies",
+     "summer": "Best window, generally dry rock from mid/late July through September, but watch for afternoon thunderstorms",
+     "winter": "Full snow cover; road access to Trinity Trailhead typically closed by snow even in normal years"
+    },
+    "forecastZone": "No confirmed dedicated NWAC zone for this specific peak; nearest coverage is from NWAC's East Slopes North and Stevens Pass forecast zones — check nwac.us for the current zone map before a spring trip."
+   },
+   "emergency": {
+    "notes": "Remote wilderness terrain with no cell coverage past the trailhead; a satellite communicator is strongly advised. All 911 calls in Chelan County route through RiverCom dispatch; the Chelan County Sheriff's Office Search & Rescue unit is the primary responder for the area. Note the active 2026 Chiwawa River Road closure adds significant time/distance to any self-rescue or evacuation.",
+    "county": "Chelan County",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth, WA 98826 — (509) 548-2550 (closed Wednesdays)",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA — 24/7 emergency department, closer to the Chiwawa Valley trailhead than Lake Chelan Community Hospital; advanced trauma cases are transported to Wenatchee, Seattle, or Spokane."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; what traffic exists clusters around the Aug optimal window, often parties already based at Buck Creek Pass/Trinity for backpacking",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely fewer than 10 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong and sustained - roughly 10 miles / 3,100+ ft gain on the Buck Creek Trail #1513 just to reach Buck Creek Pass, plus additional off-trail elevation and cross-country travel to the summit ridge",
+     "packWeight": "Typically an overnight/multi-day pack (30-40 lb) since most parties camp near Buck Creek Pass/Trinity rather than attempting a single push"
+    },
+    "approachTime": "Long - about 10 miles/3,100 ft to Buck Creek Pass from the Trinity trailhead on Chiwawa River Road; most parties treat this as a 2-3 day backpack trip with a scramble day rather than a single long car-to-summit push",
+    "requiredSkills": [
+     "Class 3 scrambling with exposure management",
+     "Off-trail / cross-country route-finding (no maintained summit trail)",
+     "Loose rock (talus/blocky terrain) awareness",
+     "Basic snow travel/self-arrest for lingering early-season snowfields",
+     "Wilderness navigation (map, compass, or GPS)"
+    ],
+    "experienceLevel": "Comfortable, competent Class 3 scrambler with exposure tolerance and remote-wilderness self-sufficiency; not a beginner objective given the long approach and loose rock"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August the most reliable window",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snowfields on the approach and ridge; conditions improve through late July as the season window opens",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "In season - the route is typically snow-free with the most stable transitional east-side weather",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still climbable and usually melted out, but shorter days and an increasing chance of early fall weather narrow the margin",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Transitional east-side climate - summer offers the most stable weather with warm days and cool nights; overall a short, dry high-pressure window bracketed by snow in spring/fall",
+     "probability": "Afternoon thunderstorms/isolated convective buildups are possible on east-side Cascades ridgelines in Aug, raising lightning risk on the exposed ridge"
+    },
+    "exposure": "Ridge exposure and loose blocks: a slip on exposed Class 3 sections could result in a serious fall, so staying on the easiest line and testing loose rock is important",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route climbed outside the NWAC forecast season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; the South Ridge scramble line stays off the peak's glaciated aspects"
+   },
+   "data_quality": {
+    "gaps": [
+     "Elevation is cited as both 8,534 ft (current USGS/GNIS-derived figure, Wikipedia/Peakbagger) and 8,573 ft (older triangulated maps, some WTA trip reports) — used 8,534 ft as the more authoritative modern figure.",
+     "Exact NWAC avalanche forecast zone boundary for this specific peak not confirmed from a primary source.",
+     "No confirmed reopening date for the Chiwawa River Road closure beyond \"unlikely in 2026\" per the Forest Service.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/97CC",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.09363,
+    "peakLng": -120.9122,
+    "trailhead": "Trinity Trailhead (end of Chiwawa River Road)",
+    "trailheadLat": 48.071966,
+    "trailheadLng": -120.84999,
+    "trailheadDirection": "From the Trinity Trailhead (~2,800 ft) at the end of Chiwawa Valley Road 6200"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Described generically as 'Class 3, exposed scrambling — gear and experience recommended.' Route-specific South Ridge trip reports were sparse; inferred that a rope is not typically carried for the ridge scramble itself given comparable Class 3 Cascades scrambles, though some parties may carry a short rope/sling for exposed moves.",
+   "ascender": null,
+   "corrections": "Limited South Ridge-specific source data. Gear profile inferred from the Class 3 rating and regional norms.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Trinity to Buck Creek Pass, then the High Pass high route around the west side",
+     "hours": "6",
+     "notes": "Start at Trinity at the end of the Chiwawa River Road, FR 62, at about 2,800 ft. Take the Buck Creek trail #1513, which splits off the Chiwawa River trail within the first mile and climbs steadily to Buck Creek Pass — roughly six hours and about 3,100 ft of gain.\n\nWhy this way round at all is worth understanding before you commit: Buck sits only about three miles from Trinity as the crow flies and is Class 2-3 from the south-west, but a long rugged ridge runs north and south of it and there is no road or trail up the Napeequa on the west, so the normal route is a very long way round. The two documented ways to reach that west side are the high route north from Buck Creek Pass and Little Giant Pass from the south.\n\nAt the pass there is a large established camp with toilets just before the switchbacks up toward Liberty Cap. FILL UP WITH WATER THERE — there is none for the next four miles and the ridge walk is fully sun-exposed.\n\nFollow the old High Pass trail as it winds high around the side of Liberty Cap, then south for several miles until the tread dies out in talus and hard snowfields at High Pass; crampons are worth having for that. Contour through the pass and under Mount Berge, then angle up to the ridge crest just south of Point 7839. A short section of Class 3 reaches a faint saddle from which there is an easy walk-off down into Louis Creek Basin.",
+     "gainFt": 3100,
+     "season": "Roughly Jul-Sep; the traverse from the Berge saddle crosses steep heather that is nasty when wet, and holds snow into summer",
+     "hazards": [
+      "No water for four miles beyond Buck Creek Pass on an exposed ridge",
+      "Steep heather ledges at the Berge saddle, very sketchy when wet",
+      "Waterfall slabs below the traverse line if you lose too much height",
+      "Hard snowfields at High Pass wanting crampons",
+      "Loose rubbly schist on the summit crest, with a fatal fall on record on this peak",
+      "Burn scar on the lower Buck Creek trail — hot, and blowdown"
+     ],
+     "baseFinding": "The critical instruction on the traverse is about HEIGHT, and it comes with a stated consequence: from the saddle south of Berge, curving right around the bowl toward the mountain, STAY HIGH. Drop too low and you end up in steep waterfall slabs. If you are looking at running water over slabby ground, you have lost too much elevation and should climb back.\n\nThe arrival is unmistakable and it is not rock: you reach a beautiful forested bench with larches — good enough that parties note it as a campsite — and CROSS A RIVER. Once across that river you are at the base of Buck.\n\nAbove there the ground is broad pumice, talus and low-angle snowfield up to the south ridge around 7,400 ft, and then rubbly slabby schist along the crest with a short step up to Class 3-4 near a horn close to the top.\n\nSUMMIT WARNING, and it is a genuine unresolved disagreement rather than a caution: parties do not agree how many summits Buck has or which is highest. One party climbed the middle of the long crest, found the register there, and judged it higher than both the north point and the south by twenty feet or more. Another says the south is the true one. A third found the register — dated 1967 — on the NORTH horn and reported the two tops as roughly equal. Only one of those parties actually measured anything. The summit crest holds several bumps within a few feet of each other, so expect to walk the crest rather than to arrive at an obvious high point, and do not treat a register as proof.\n\nA useful sighting cue from a party approaching by a different line: the summit does not come into view until you reach the flat ground around 8,000 ft, in an upper cirque one climber described as looking like the flying bridge of a boat.\n\nThis mountain has killed someone — a climber fell fifty feet scrambling on a route on the east side, direct from Trinity, in 2018. The direct east line involves a river ford and a savage brushy bushwhack and is generally recommended as a descent rather than an ascent."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Pumice and talus slopes to the south ridge",
+     "notes": "From the basin, ascend broad pumice and talus slopes and a low-angle snowfield to gain the south ridge around 7,400 ft; an ice axe, and crampons in early season, are worth carrying."
+    },
+    {
+     "n": 2,
+     "class": "Class 2-3",
+     "label": "South ridge crest to the summit",
+     "notes": "Follow the ridge crest through Class 2-3 terrain, stepping to locally 3-4 near a horn/gendarme close to the true summit, on loose, rubbly, slabby schist. Rockfall/loose schist is the main hazard - helmet recommended, especially with parties above or below. The summit crest has several bumps within feet of each other, so take care identifying the true high point."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5800,
+     "name": "Buck Creek Pass and the High Pass camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the shortest objective from here. Buck Mountain rises directly south across the valley and is normally taken by leaving the Buck Creek trail lower down for the east ridge of Cleator and the Buck–Berge col, which also gives Mount Berge. From the pass a way trail continues north over Flower Dome to High Pass, which is both a fine high camp in its own right and the link over into the Napeequa, tying this side of the zone to Clark and Luahna. Getting here is around ten miles and three thousand feet of steady forest walking up Buck Creek from Trinity, so it is a full first day. It is a scenic and genuinely popular pass, which for a climbing party means arriving early enough to get a site. When the Chiwawa road is shut at Atkinson Flat the trailhead itself is roughly eleven road miles further on, which turns a two-day trip into a four-day one or a long bike shuttle.",
+     "water": "A stream at the pass is the main supply and is reliable through the season; the higher camps toward High Pass run on snowmelt only and can be dry by September",
+     "permit": "Free self-issue Glacier Peak Wilderness permit at the Trinity trailhead, twelve-person party limit, Northwest Forest Pass for parking. Fires are prohibited where posted and the meadow ground here is exactly the kind of place that gets posted — carry a stove. Camp on the bare established sites rather than in the heather. The road is the real permit question: the Chiwawa River road is closed from Atkinson Flat north to Trinity under a storm order running through the end of 2027, with no reopening estimate, and a large 2026 fire closure covered the same road on top of it.",
+     "capacity": "Several established forested and meadow-edge sites at the pass itself, enough for a few parties, with rougher and more exposed ground higher toward Flower Dome and High Pass"
+    },
+    {
+     "name": "Buck Creek Pass",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_cannon_mountain_south_slopes",
+  "name": "South Slopes",
+  "area_id": "wa_cannon_mountain",
+  "findings": [
+   "r007.json: Research agrees the camp for this Snow Lakes/Prusik Pass line is in the core Enchantment lakes near Perfection/Inspiration Lake (itinerary, bivy, approach, and route descriptions that reach Prusik Pass from the north end of Perfection Lake). But the 'Basin below Cannon' Campsite pin (and the 'Base of south slopes' pin) sit north-northeast of the summit, on the far side of the mountain from this route, so renaming or re-elevating it would label a pin at the wrong place; pin positions are out of scope. Lake elevations are also unsettled: one mapping source puts Perfection Lake at 7,556 ft (the waypoint's value), others at ~7,000-7,170 ft, so the itinerary's '~7,500 ft' and bivy's 7,190 ft cann"
+  ],
+  "gpx_summary": "1490 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_cannon_mountain_south_slopes",
+   "area_id": "wa_cannon_mountain",
+   "name": "South Slopes",
+   "discipline": "scrambling",
+   "grade": "Grade II, Class 2 to 3",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": 0,
+   "length_m": 5,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S/W",
+   "season": "late Jun-late Oct",
+   "description": null,
+   "gear": [
+    "ice axe early season",
+    "trekking poles",
+    "helmet for loose rock"
+   ],
+   "hazards": [
+    "loose talus and scree on the slopes",
+    "route-finding through benches and brush",
+    "cliffing out on descent",
+    "afternoon thunderstorms",
+    "a steep, often snow-filled gully below Druid Plateau on the north-slope (Coney Lake) approach that can hold snow into July"
+   ],
+   "verif": null,
+   "overview": "Cannon Mountain is a remote Stuart Range summit in the Alpine Lakes Wilderness, rising about one mile north of Enchantment Peak on the north side of the core Enchantment Lakes basin, near McClellan Peak and Little Annapurna. First climbed in 1921, it remains one of the least-visited of Washington's 100 highest peaks despite sitting in the middle of the heavily permitted Enchantments, largely because it requires leaving the maintained trail. The standard scramble climbs from Prusik Pass across benches and rock/talus slopes to the 8,350-ft Druid Plateau, crosses the plateau, and finishes on the south side of the summit block via a short friction slab with a natural ramp. While not technically difficult (roughly YDS class 2, with a brief class 3 move to top out the summit boulder), the route demands solid route-finding through brush, benches, and cliff bands, and a big day of elevation gain from either trailhead. The summit gives views across the Enchantment basin to Prusik Peak, Dragontail Peak, and Mount Stuart.",
+   "beta": "Cannon has no maintained trail. The most-documented approaches reach a common staging area near Druid Plateau (east of the summit) either from Stuart Lake Trailhead via the Mountaineer Creek valley and Cannon Creek basin (cross-country, brushy lower section with cliff bands), or from the Core Enchantment Zone via Prusik Pass after the longer Snow Lakes Trail approach. From Druid Plateau, parties contour/scramble to the base of the summit block and finish on class 2-3 friction slab and boulders. Snow and verglass can linger on shaded sections into July, adding real exposure to otherwise easy terrain.",
+   "turnaround": "On a long scramble like this, set a turnaround based on your pace and the weather. If thunderstorms are forecast, be off the open upper slopes by early afternoon.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": "Class 2, with one short class 2/3 friction move at the very top",
+   "ice_grade": null,
+   "gain_ft": 8600,
+   "loss_ft": 8600,
+   "dist_km": 22.1,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "Druid Plateau approach; final scramble on the south side of the summit boulder",
+   "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+   "comms": "Cell service is unreliable to nonexistent through most of the Alpine Lakes Wilderness backcountry approach and on the mountain; a satellite communicator/PLB is recommended.",
+   "descent": "Reverse the route down the south slopes back toward the approach drainage.",
+   "obj_haz": [
+    "rockfall",
+    "routeFindingDifficulty",
+    "lightning",
+    "lingeringSnowIce"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.512,
+     "lng": -120.795,
+     "elev": 6200,
+     "name": "Basin below Cannon",
+     "type": "Campsite",
+     "distMi": 8,
+     "elevFt": 6200
+    },
+    {
+     "lat": 47.507,
+     "lng": -120.8,
+     "elev": 6800,
+     "name": "Base of south slopes",
+     "type": "Junction",
+     "distMi": 8.6,
+     "elevFt": 6800
+    },
+    {
+     "lat": 47.4776193,
+     "lng": -120.8134206,
+     "elev": 7556,
+     "name": "Perfection Lake",
+     "type": "Water",
+     "distMi": null,
+     "elevFt": 7556
+    },
+    {
+     "lat": 47.4873419,
+     "lng": -120.7906426,
+     "elev": 7497,
+     "name": "Prusik Pass",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 7497
+    },
+    {
+     "lat": 47.5441,
+     "lng": -120.7096,
+     "elev": 1300,
+     "name": "Snow Lakes Trailhead",
+     "note": "Standard approach: Snow Lakes Trail #1553 (~4.2 mi up Icicle Creek Rd from US-2 in Leavenworth) into the Enchantment Lakes basin, then via Perfection Lake to Prusik Pass, traverse NW to the Druid Plateau, then to the summit block (roughly 13-14 mi and over 7,300 ft of gain one-way).",
+     "type": "Trailhead",
+     "elevFt": 1300
+    },
+    {
+     "lat": 47.502801,
+     "lng": -120.802476,
+     "elev": 8638,
+     "name": "Cannon Mountain summit",
+     "type": "Summit",
+     "elevFt": 8638
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 22.9,
+    "summitTimeHrs": 9.4,
+    "descentTimeHrs": 6,
+    "approachTimeHrs": 7.5,
+    "recommendedStart": "7:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7.5,
+      "note": "From the Snow Lakes trailhead (~1,300 ft), climb the long, steadily steepening Snow Lakes Trail past Nada and Snow Lakes and up into the core Enchantment basin, camping near Perfec…",
+      "fromTo": "Hike in to core Enchantment basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9.4,
+      "note": "A long out-and-back day-climb from camp: up past Talisman/Rune Lakes to Prusik Pass, northwest around Lorelei Lakelets and up onto Druid Plateau, then west up scree/snow to the sum…",
+      "fromTo": "Climb Cannon Mountain from camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6,
+      "note": "Reverse the approach: descend from the core basin back down the Snow Lakes Trail past Snow and Nada Lakes to the trailhead. Knees take a beating on the steep switchbacks below Snow…",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock gear is needed. An ice axe is worthwhile early in the season for snow on the upper slopes, and trekking poles help on the long talus.",
+   "what_to_bring": [
+    "trekking poles",
+    "ice axe early season",
+    "helmet for loose rock",
+    "3 liters of water",
+    "sun protection",
+    "wind layer",
+    "headlamp",
+    "navigation tools",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "Study the route to avoid the worst brush and cliff bands.",
+    "Carry an ice axe early season for the upper snow.",
+    "Camp in the basin to break up the big elevation gain.",
+    "Track your ascent line to retrace it cleanly on descent."
+   ],
+   "watch_out": [
+    "loose talus underfoot",
+    "navigation errors leading to cliffs",
+    "afternoon storms on the open slopes",
+    "underestimating the elevation gain"
+   ],
+   "pro_needs": "There is no protectable climbing on the standard route; this is unroped scrambling. The challenge is navigation and stamina rather than gear.",
+   "best_season": "Late June through October for a mostly snow-free scramble; late May starts are possible only in low-snow years. The steep gully below Druid Plateau on the north-slope (Coney Lake) approach can hold snow well into July, and light snow can return to the upper mountain by October.",
+   "high_point_ft": 8638,
+   "aid_grade": null,
+   "approach": "Start at the Snow Lakes Trailhead (paved, day-use permit required, ~4 miles up Icicle Creek Road from Leavenworth). Follow the Snow Lakes Trail (#1553) as it climbs through burn-scarred forest and switchbacks above Icicle Creek, passing Nada and Snow Lakes (roughly 6-7 miles in) before continuing up into the core Enchantment Lakes basin — Lake Viviane, then Leprechaun Lake, Sprite Lake, and Perfection Lake. By the time you reach Perfection Lake you have covered on the order of 10-11 miles and about 6,000 ft of gain from the trailhead, all on maintained but rocky, sometimes eroded tread with several creek crossings that can run high with snowmelt in early season. At the north side of Perfection Lake, leave the main trail on the climbers'/scramblers' path that switchbacks up to Prusik Pass (~7,463 ft) — this junction is easy to miss and is the last reliable water before the cross-country section. From Prusik Pass the route leaves all trail: contour northwest across talus and heather benches at roughly 7,300-7,400 ft, staying on the left (west) side of the Lorelei Lakelets, then continue north to a broad rib at about 7,900-8,000 ft. From just below 8,000 ft, turn northwest and climb steep talus/scree (snow-covered into mid-summer) up onto the Druid Plateau (~8,350 ft), where Cannon's summit block comes into view across the plateau. Cross the plateau and take the western slopes to the base of the summit block; the final ~15 ft to the true summit is a low-angle but exposed friction slab climbed via a ramp on the block's south side, with almost no positive holds — approach shoes with good rubber, or rock shoes, make a real difference here. Because the round trip from the trailhead is roughly 30+ miles with 7,300+ ft of gain, essentially all parties camp in or near the core Enchantment zone (competitive overnight permits required in season) rather than attempting it car-to-car; treat the whole cross-country section above Prusik Pass as serious route-finding terrain with no cairns or tread, frequently holding snow into July, and exposed to sun/lightning with no bail-out shelter.",
+   "descent_text": "Descend by reversing the ascent line: downclimb the exposed friction-slab ramp off the summit block (often the psychological crux of the day, since downclimbing low-angle slab is harder to read than ascending it), cross back over the Druid Plateau, and pick your way back down the talus/scree slopes to the rib at ~7,900-8,000 ft. From there reverse the contouring traverse at 7,300-7,400 ft past the Lorelei Lakelets to Prusik Pass, then drop back down the scrambler's path to Perfection Lake and rejoin the maintained Snow Lakes Trail for the long hike out past Sprite, Leprechaun, and Viviane Lakes, Snow Lakes, and down to the trailhead. This is a pure scramble/downclimb with no fixed rappel anchors on the standard South Slopes line — no rope or rappel gear is needed for typical summer conditions, though some parties carry a short rope/sling for confidence on the summit block slab. The main descent hazards are the same as the approach in reverse: losing the faint route back to Prusik Pass in whiteout or dusk, loose talus on the plateau slopes, and lingering snow/verglass on the slab or upper gullies in early season, which has turned some ascents into technical downclimbs requiring crampons and careful footwork on rock. A minority of strong parties link Cannon into a longer Enchantments traverse (continuing on to McClellan Peak or exiting via Aasgard Pass to Colchuck Lake) rather than reversing to Snow Lakes, but that is a route variation, not the standard descent.",
+   "bail": "Retreat is simple at any point by reversing the scramble, since there is no committing technical ground. The main hazard in a hasty retreat is route-finding errors leading into cliff bands on the benches below Druid Plateau, or losing the gully line above Coney Lake on the north-slope approach.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Trail to the Enchantment Lakes basin via Snow Lakes Trail or Colchuck Lake Trail/Aasgard Pass; typically an overnight backpack given permit rules.",
+     "pitch": "Trailhead to Enchantment core"
+    },
+    {
+     "grade": "Class 1-2",
+     "notes": "Trail/use-path past Inspiration, Perfection, Leprechaun and Sprite Lakes to the Prusik Pass side trail (~7,497 ft).",
+     "pitch": "Basin to Prusik Pass"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Contour NW around 7,300-7,400 ft past the Lorelei Lakelets, climb a rib to ~7,900-8,000 ft, then turn NW up steep slopes to the ~8,350 ft Druid Plateau.",
+     "pitch": "Prusik Pass to Druid Plateau"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Cross the plateau (seasonal meltwater pools early season) to the peak's western slopes below the summit block.",
+     "pitch": "Druid Plateau to summit block"
+    },
+    {
+     "grade": "Class 3 (exposed)",
+     "notes": "Friction-slab ramp on the south side of the summit boulder leads to the true summit; low-angle but exposed and holdless in places.",
+     "pitch": "Summit block"
+    }
+   ],
+   "itinerary": {
+    "cal": "Core Enchantment Zone overnight permits (required for the basin camp, May 15-Oct 31) are lottery/walk-up only and are among the hardest to get in Washington; plan well ahead or be ready to camp lower and day-trip the summit instead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Snow Lakes trailhead (~1,300 ft), climb the long, steadily steepening Snow Lakes Trail past Nada and Snow Lakes and up into the core Enchantment basin, camping near Perfection or Inspiration Lake (~7,500 ft). A Core Enchantment Zone overnight permit is required in season and is hard to draw/walk up for.",
+      "hours": 7.5,
+      "miles": 10.5,
+      "title": "Hike in to core Enchantment basin",
+      "gainFt": 6000,
+      "lossFt": 300,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Establish camp near Perfection/Inspiration Lake"
+     },
+     {
+      "n": 2,
+      "note": "A long out-and-back day-climb from camp: up past Talisman/Rune Lakes to Prusik Pass, northwest around Lorelei Lakelets and up onto Druid Plateau, then west up scree/snow to the summit block and a final friction-slab scramble. This typically takes roughly 9-9.5 hours round trip in good conditions; expect longer if snow lingers on the plateau or the summit block is wet/icy.",
+      "hours": 9.4,
+      "miles": 6.5,
+      "title": "Climb Cannon Mountain from camp",
+      "gainFt": 2300,
+      "lossFt": 2300,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave camp",
+        "detail": "Depart Perfection/Inspiration Lake camp after breakfast, heading toward Talisman and Rune Lakes."
+       },
+       {
+        "time": "8:45 AM",
+        "label": "Reach Prusik Pass",
+        "detail": "~7,463 ft; contour northwest from here staying high (7,300-7,400 ft) past the Lorelei Lakelets."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Gain Druid Plateau",
+        "detail": "Climb the rib to ~7,900-8,000 ft then up to the plateau at ~8,350 ft; summit comes into view."
+       },
+       {
+        "time": "1:45 PM",
+        "label": "Reach the summit",
+        "detail": "West slopes to the summit block, then the friction-slab ramp on its south side to the top (~8,600+ ft)."
+       },
+       {
+        "time": "2:15 PM",
+        "label": "Begin descent",
+        "detail": "Reverse the route down through Druid Plateau and Lorelei Lakelets to Prusik Pass."
+       },
+       {
+        "time": "4:30 PM",
+        "label": "Back at camp",
+        "detail": "Round trip typically ~9-9.5 hours; strong parties can be faster in firm snow conditions."
+       }
+      ],
+      "objective": "Tag the Cannon Mountain summit and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Reverse the approach: descend from the core basin back down the Snow Lakes Trail past Snow and Nada Lakes to the trailhead. Knees take a beating on the steep switchbacks below Snow Lakes; many parties budget extra time versus the hike in.",
+      "hours": 6,
+      "miles": 10.5,
+      "title": "Hike out",
+      "gainFt": 300,
+      "lossFt": 6000,
+      "packLb": 28,
+      "schedule": [],
+      "objective": "Break camp and return to the Snow Lakes trailhead"
+     }
+    ],
+    "totalNote": "A standard 3-day, 2-night trip: ~9-10.5 mile carries on the in/out days (~6,000 ft each way) bracketing a long ~9-9.5 hour, ~2,300 ft round-trip summit day from a core Enchantment basecamp; very fit parties compress the summit push and hike-out into one very long single day."
+   },
+   "access": {
+    "fees": "Trailhead parking at both Snow Lakes and Stuart Lake trailheads requires a Northwest Forest/Interagency Pass or the site-specific day fee ($5 per vehicle per day, or $30 annual), payable via the Recreation.gov 'Scan & Pay' app at the trailhead kiosk.",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Overnight camping anywhere in the Enchantment Permit Area (Colchuck, Core, Snow, and Stuart zones) requires a permit May 15-Oct 31. Most are awarded through the Recreation.gov advance lottery (opens Feb 15 and closes Mar 1 for the 2026 season; $6 nonrefundable application fee plus $11 per person if drawn); unclaimed or cancelled permits are released daily via a walk-in lottery. Day use requires only a free self-issued day-use permit available at the trailhead.",
+    "group_limit": 8,
+    "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District (the district formerly called the Leavenworth Ranger District)",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+     "what": "Enchantment Permit Area overnight permit (Snow zone), required May 15 to October 31 — limited, not free",
+     "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season."
+    }
+   },
+   "road": {
+    "name": "Icicle Creek Road (continuing on FR 7600/FR 7601 for the Stuart Lake Trailhead)",
+    "driveNote": "The Snow Lakes Trailhead is paved and about 4 miles up Icicle Creek Road from Leavenworth (elev. ~1,300-1,350 ft). For the Stuart Lake/Colchuck Lake Trailhead, continue about 8.5 miles up Icicle Creek Road, turn left on Eightmile Road (FR 7600), then stay right on FR 7601 for about 4 more miles of steep, washboarded gravel to the trailhead (elev. ~3,400 ft); parking fills early on summer weekends and overflow parkers may end up walking extra distance from designated lots."
+   },
+   "climate": {
+    "typical": "A long summer-to-fall scramble best done July through October once the upper slopes are largely snow-free.",
+    "bySeason": {
+     "fall": "Fine and stable with cool temperatures and shorter days.",
+     "spring": "Snow-covered upper slopes and a long snowy approach.",
+     "summer": "Best with mostly dry slopes and a melted-out route.",
+     "winter": "A long, snowbound objective requiring full winter skills."
+    },
+    "forecastZone": "Washington Cascades east slopes"
+   },
+   "emergency": {
+    "notes": "Carry a satellite communicator; cell service is unreliable in the basin and on the upper mountain. SAR is coordinated through the Chelan County Sheriff's Office; Cascade Medical's ambulance service routinely assists on backcountry rescues in the Enchantments.",
+    "rangerStation": "Wenatchee River Ranger District, Okanogan-Wenatchee National Forest, 600 Sherbourne St, Leavenworth, WA 98826, (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, Leavenworth — 24-hour Emergency Department, critical-access hospital"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July-September, especially once Colchuck/Snow Lakes access is snow-free; day-hikers and Enchantments through-hikers pass below on the approach",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low-moderate for the summit itself (roughly a few dozen parties per season) — Cannon sees far less traffic than Colchuck or Dragontail Peak, but the Snow Lakes/Enchantments approach corridor it shares is one of the most heavily used trailheads in the Cascades, so parking and camping pressure near the base can be high even though the summit stays quiet"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Able to sustain a 7.5-hour car-to-car day with significant approach elevation gain into the Enchantments basin",
+     "packWeight": "Day-pack weight (10-20 lb) if day-tripping; overnight pack (30-40 lb) if using the Enchantment Permit Area"
+    },
+    "approachTime": "Long approach via Icicle Creek Road/Snow Lakes into the Enchantments basin before the scramble itself begins; most parties treat this as a full day or split it with an overnight permit",
+    "requiredSkills": [
+     "Class 2-3 scrambling on loose talus",
+     "off-trail route-finding/navigation",
+     "basic backcountry permit logistics (Enchantment Permit Area lottery/overnight permit)",
+     "sound judgment on loose rock to avoid dislodging debris on partners below"
+    ],
+    "experienceLevel": "Comfortable, self-sufficient Class 2-3 scrambler; should have prior off-trail talus/scree scrambling experience and be able to route-find without a marked trail"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, once the south-facing slopes are snow-free",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-month snow patches can linger on the approach and lower slopes ('spring: snow-covered'); conditions firm up and improve through the month",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Peak of the Best summer window — driest, most stable talus conditions",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Edge of the season window; early snowfall, shorter daylight, and freeze-thaw on talus increase difficulty and reduce the margin for the 7.5-hour day",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Still within the best-season range; stable fall weather, fewer bugs, and lighter crowds than peak summer",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Long summer-to-fall scramble weather; generally dry and stable within the July-October window, snow-covered outside it",
+     "probability": "Afternoon thunderstorms are a normal Cascades summer risk on exposed talus slopes; not separately documented for this specific route"
+    },
+    "exposure": "Primarily a fall/twisted-ankle hazard from the loose talus, rather than high-angle exposure; consequence is moderate (rockfall onto party members below, unstable footing) rather than severe cliff exposure, consistent with the Class 2-3 grade",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route (regionally covered by NWAC's East Slopes Central zone outside the July-October season)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No route-specific crowd/party-count data was found (e.g. trailhead registers, permit-usage statistics for Cannon specifically); the traffic estimate is inferred from the shared Enchantments/Snow Lakes approach and general trip-report commentary rather than hard numbers",
+     "No NWAC forecast zone directly names Cannon Mountain or the Stuart Range by boundary; East Slopes Central is the nearest regional match but is not confirmed against an official NWAC zone map for this exact peak",
+     "No documented injury/fall incident history specific to this route was found to quantify exposure risk beyond the on-file loose-talus hazard note",
+     "Partner-skill expectations are derived from the on-file grade/access data rather than a route-specific partner-finder or forum consensus",
+     "GPS track available (see gpx field).",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.502801,
+    "peakLng": -120.802476,
+    "trailhead": "Snow Lakes Trailhead",
+    "trailheadLat": 47.5441,
+    "trailheadLng": -120.7095,
+    "trailheadDirection": "Start at the Snow Lakes Trailhead (paved, day-use permit required, ~4 miles up Icicle Creek Road from Leavenworth)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Snow Lakes trail to Perfection Lake, Prusik Pass and the Druid Plateau",
+     "notes": "Start at the Snow Lakes trailhead, about four miles up Icicle Creek Road from Leavenworth. Follow Snow Lakes Trail #1553 through burn-scarred forest and switchbacks above Icicle Creek, past Nada and Snow Lakes at roughly six to seven miles, and on into the core basin — Lake Viviane, Leprechaun, Sprite, then Perfection Lake, by which point you have covered ten or eleven miles and about 6,000 ft.\n\nAt the north side of Perfection Lake, leave the main trail on the scramblers' path that switchbacks up to Prusik Pass at about 7,460-7,500 ft. That junction is easy to miss and the pass is the last reliable water.\n\nFrom the pass everything is cross-country. Contour northwest across talus and heather benches at roughly 7,300-7,400 ft, keeping to the WEST side of the Lorelei Lakelets, then north to a broad rib at about 7,900-8,000 ft. From just below 8,000 ft turn northwest and climb steep talus and scree onto the Druid Plateau at about 8,350 ft.\n\nThere are no cairns and no tread above Prusik Pass. Round trip is 30-plus miles with 7,300-plus ft of gain, so essentially everyone camps.",
+     "gainFt": 6000,
+     "season": "Roughly Jul-Sep; the cross-country section above Prusik Pass frequently holds snow into July",
+     "hazards": [
+      "No cairns and no tread above Prusik Pass — serious route-finding on talus and heather",
+      "Snow frequently lingering on the cross-country section into July",
+      "An exposed, holdless friction slab for the final fifteen feet, harder to downclimb than to climb",
+      "Verglas on shaded ground into July, adding real exposure to otherwise easy terrain",
+      "No bail-out shelter: sun, lightning and afternoon storms on open high ground",
+      "Core Zone overnight permits are competitive and effectively required"
+     ],
+     "primary": true,
+     "baseFinding": "THE SUMMIT BLOCK IS A SEPARATE OBJECT AND THE PLATEAU IS NOT THE TOP. This is the failure mode on Cannon: parties gain the Druid Plateau at about 8,350 ft, find themselves on broad high ground, and treat arriving there as arriving. The actual climbing is a distinct BLOCK that only comes into view once you are on the plateau, across it to the west.\n\nSO THE TEST IS: can you see a discrete block of rock standing above the plateau surface? If you are on flat or gently rolling ground with nothing obviously above you, you have not crossed the plateau yet. Cross it and take the WESTERN slopes to the foot of the block.\n\nWHICH SIDE OF THE BLOCK, AND THIS IS THE PART THAT MATTERS IN CLOUD: the way up is a RAMP on the block's SOUTH side. It is the last fifteen feet or so to the true summit, low-angle friction slab with almost no positive holds. If you have walked round the block and found only steep unfriendly rock, you are on the wrong aspect — keep going round to the south.\n\nWHAT THE RIGHT GROUND FEELS LIKE: this is a friction problem, not a hold problem. Approach shoes with good rubber, or rock shoes, make a real difference, and the downclimb of the same ramp is the psychological crux of the day for most parties because low-angle slab is harder to read going down.\n\nSTAGING CHECK BELOW THE PLATEAU: from Prusik Pass you should pass the Lorelei Lakelets on their WEST side and reach a broad rib around 7,900-8,000 ft before turning northwest. If you passed the lakelets on their east, you are drifting toward the wrong drainage."
+    },
+    {
+     "name": "Stuart Lake trailhead and the Cannon Creek basin — the shorter, rougher side",
+     "notes": "The documented alternative reaches the same staging ground near the Druid Plateau from the north instead, out of the Stuart Lake trailhead: up the Mountaineer Creek valley and then cross-country into the Cannon Creek basin.\n\nThis is much shorter than the Snow Lakes walk, and that is the whole of its appeal. It is also markedly rougher: the lower section is brushy and there are cliff bands to negotiate, and there is no trail for any of it.\n\nCannon has no maintained trail to its summit by any line, so both approaches end in the same cross-country problem. What differs is how much of the day is spent on tread before that starts — nearly all of it on the Snow Lakes side, very little on this one.\n\nNo reliable published time or distance exists for this variant and none is given. Treat it as a full day of navigation rather than a walk with a scramble at the end.",
+     "season": "Roughly Jul-Sep; the lower cross-country section is brushy and holds snow later than the trail does",
+     "hazards": [
+      "Brushy lower cross-country with cliff bands to negotiate and no trail",
+      "No cairns or tread anywhere on the upper mountain",
+      "An exposed holdless friction ramp on the summit block",
+      "Snow and verglas on shaded ground into July",
+      "No published timing for this variant — plan conservatively",
+      "No bail-out shelter on the high ground"
+     ],
+     "baseFinding": "BOTH APPROACHES CONVERGE ON THE DRUID PLATEAU, SO THE BASE TEST IS IDENTICAL AND THE ARRIVAL TEST IS NOT. Coming from the north you reach the plateau area from the Cannon Creek basin rather than from Prusik Pass, so the Lorelei Lakelets and the broad rib are NOT on your route and cannot be used to confirm position — do not try to apply the southern approach's landmarks here.\n\nWHAT STILL HOLDS: the summit block is a distinct object standing above the plateau, reached across the plateau on its WESTERN slopes, and the way up it is a low-angle friction ramp on its SOUTH side, roughly the last fifteen feet to the true summit. Almost no positive holds. That is the base, and it is the same base for anyone who gets here.\n\nTHE NORTH-SIDE-SPECIFIC WARNING: the ground below the basin has CLIFF BANDS in it. Unlike the southern route, where the navigation problem is featureless open talus, here it is possible to be cliffed out and to have to lose height to get round. If you are on steepening ground with the basin still above you, come down and traverse rather than pushing on.\n\nAND A ROUTE-CHOICE NOTE: the northeast ridge is a separate line on this mountain and is described as an ascent route only, with most parties descending the Prusik Pass side. If you have come up from the north expecting to reverse it, check which line you are actually on before committing to that plan."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Druid Plateau to the base of the summit block",
+     "notes": "From just below 8,000 ft turn northwest and climb steep talus/scree — snow-covered into mid-summer — onto the Druid Plateau (~8,350 ft), where Cannon's summit block comes into view. Cross the plateau and take the western slopes to the base of the block. Serious route-finding terrain: no cairns and no tread, snow frequently holding into July, exposed to sun and lightning with no bail-out shelter."
+    },
+    {
+     "n": 2,
+     "label": "Summit block friction slab",
+     "notes": "The final ~15 ft to the true summit is a low-angle but exposed friction slab, climbed via a ramp on the block's south side with almost no positive holds. Approach shoes with good rubber, or rock shoes, make a real difference."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Snow Lakes",
+     "role": "main",
+     "type": "camp",
+     "notes": "Common base for climbing Cannon from the Snow Lakes side, about 6.5 miles up the trail; the summit day continues past Lake Viviane into the upper basin.",
+     "water": "Lakes and inlet streams; filter",
+     "permit": "Enchantment Permit Area overnight permit (Snow zone) from May 15 to October 31",
+     "capacity": "Many established sites around Upper and Lower Snow Lake"
+    },
+    {
+     "elev": 5000,
+     "name": "Nada Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "The eastern staging camp, five and a half miles and about seventeen hundred feet of gain up the Snow Lakes trail from Icicle Creek Road, and the only road in the region that is open year round rather than gated through winter. It is the base for Cannon Mountain's southeast approach, which continues past Snow Lakes and climbs the peak's south slopes, and it is the first night for anyone reaching Enchantment Peak or Witches Tower from the east rather than over Aasgard Pass. Be clear about the trade: from here the Core basin peaks are a long second day and the shorter approach to both is from Colchuck Lake over Aasgard, so this camp suits a party doing a through-trip or one that drew a Snow permit and nothing better. The trail is hot, exposed and steep on the lower half, hiker only, and holds snow in May, June and again from late September. Cannon can also be climbed from the north out of Mountaineer Creek, which is a different trailhead and a different permit question entirely.",
+     "water": "The lake is reliable all season, as is the creek below it; treat it, since the shoreline is heavily used",
+     "permit": "Snow zone of the Enchantment Permit Area. An overnight permit is REQUIRED May 15 through October 31, from the February advance lottery on the federal reservation system or from the daily lottery, which is run through a mobile app and demands that you be physically inside a one-mile radius of the ranger station in Leavenworth to apply, for the following day's entry. A Core Enchantment permit is valid in every zone including this one; a Snow permit is not valid in the Core. Outside the season no overnight permit is needed. Day use anywhere in the permit area needs only the free self-issued slip at the trailhead, which is what a party climbing car to car uses and is entirely legal. Northwest Forest Pass at the Snow Lakes trailhead. Dogs are prohibited throughout the permit area and campfires are banned.",
+     "capacity": "Many well-established sites along the east shore; the Snow zone quota is larger than most, so it is the easiest of the western zones to draw"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_nw_ridge_2",
+  "name": "NW Ridge",
+  "area_id": "wa_colchuck_balanced_rock",
+  "findings": [
+   "r009.json: Settled on the fact: a trip report of the NW Ridge approaches from the E side of Colchuck Lake up the obvious gully to the notch above Jabberwocky Tower, and the peak's route listing describes the Aasgard-path/brush approach as the one to the west-face gully. So the 'Aasgard Pass Gully Break' waypoint belongs to the west-face approach. Left unpatched because the fix is to move or remove the pin itself (lat/lng out of scope); renaming it in place would label a pin that still sits on the west-face approach line."
+  ],
+  "gpx_summary": "317 points; 0 of 5 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_nw_ridge_2",
+   "area_id": "wa_colchuck_balanced_rock",
+   "name": "NW Ridge",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 0,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "light trad rack",
+    "a single 60 m rope, which also covers the ~25 m descent rappel"
+   ],
+   "hazards": [
+    "Rock is solid but fractured — watch for loose blocks and gravelly ledges; loose material is specifically reported at the notch above Jabberwocky Tower.",
+    "Exposed low-5th to 5.6 climbing along the sharp ridge crest, finishing with a boulder-problem move onto the balanced summit block.",
+    "Descent requires a rappel down the east face followed by loose talus and broken rock around to the south saddle."
+   ],
+   "verif": null,
+   "overview": "A moderate scramble/low-5th-class ridge route on the northwest side of the formation, approached from the east side of Colchuck Lake. Class 3 terrain leads to a notch above Jabberwocky Tower, followed by a few pitches of low 5th class up to 5.6 along the exposed ridge crest to the summit area.",
+   "beta": "The Northwest Ridge is the moderate line on Colchuck Balanced Rock and the route of choice for parties who want the summit rather than the west face's hard free climbing. The line gains an obvious gully from Colchuck Lake to the notch above Jabberwocky Tower, then third-class terrain leading to the ridge proper, followed by the sharp ridge at 5.6 to the summit. Total gain from the Stuart Lake Trailhead to the summit is about 4,760 ft, and a relaxed car-to-car time is roughly 12 hours. The final obstacle is the balanced summit block itself, a short boulder problem that most parties protect. Descent from the summit was a single 25 m rappel off an anchor down the east side, then scrambling talus around to the south saddle and back past Jabberwocky Tower to Colchuck Lake. The rock is granodiorite. The peak's first ascent was made in 1958 by Gene Prater and Thomas Quin, though not necessarily by this line.",
+   "turnaround": "Because the descent is a rappel plus talus scrambling rather than a technical retreat, the binding constraint is daylight for the traverse back around the peak and the hike out. Work backwards from getting past Jabberwocky Tower and onto the Colchuck Lake Trail before dark. Use the notch above Jabberwocky Tower as your checkpoint on the way up: if reaching it has taken far longer than planned, the ridge above and the descent traverse will too. Storms are a real trigger on a sharp exposed ridge with no shelter — descend rather than continue when cumulus builds.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 4760,
+   "loss_ft": 4760,
+   "dist_km": 8,
+   "max_angle": null,
+   "rappels": "A single 25 m rappel from an anchor down the east side of the summit, then talus scrambling around to the south saddle. One 60 m rope is ample.",
+   "commitment": null,
+   "face": "Northwest Ridge",
+   "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+   "comms": "No reliable cell coverage at the Stuart Lake Trailhead, in the Mountaineer Creek valley, or at Colchuck Lake. Intermittent signal is sometimes reported from the summit and the upper ridge, where the terrain opens east, but it is not something to depend on. Carry a satellite messenger and leave a written itinerary with someone at home.",
+   "descent": "A single rappel down the east face, then a scramble down talus and broken rock slopes around to the saddle on the south side, back past Jabberwocky Tower, and down to Colchuck Lake.",
+   "obj_haz": [
+    "loose rock",
+    "rockfall",
+    "snow in approach gully",
+    "exposed summit block",
+    "route-finding",
+    "afternoon thunderstorms",
+    "benightment"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.52779,
+     "lng": -120.82082,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Trail #1599 up Mountaineer Creek.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.513,
+     "lng": -120.833,
+     "elev": 4200,
+     "name": "Stuart/Colchuck Trail Split",
+     "note": "Colchuck Lake Trail breaks left from the Stuart Lake Trail.",
+     "type": "Junction",
+     "distMi": 2.3
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5574,
+     "name": "Colchuck Lake",
+     "note": "Popular camp/bivy at the lake outlet, below Dragontail and Colchuck Peak.",
+     "type": "Water",
+     "distMi": 4.2
+    },
+    {
+     "lat": 47.487,
+     "lng": -120.825,
+     "elev": 6000,
+     "name": "East-shore gully to the Jabberwocky notch",
+     "note": "From the lake's eastern shoreline and talus, climb the obvious loose gully toward the notch above Jabberwocky Tower; the upper part is rope-up terrain, and Class 3 ground leads from the notch onto the NW Ridge.",
+     "type": "Junction",
+     "distMi": 4.8
+    },
+    {
+     "lat": 47.491356,
+     "lng": -120.818863,
+     "elev": 8240,
+     "name": "Colchuck Balanced Rock",
+     "note": "Summit via the NW Ridge.",
+     "type": "Summit",
+     "distMi": 5.5
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 12.5,
+    "summitTimeHrs": 12.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "2:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 12.5,
+      "note": "Easier and faster than the technical free routes, so it's a popular single-day objective, sometimes linked with Colchuck or Dragontail Peak in the same outing. Approach via the gul…",
+      "fromTo": "Car-to-car ridge climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A light alpine rack suffices for 5.6 ridge climbing on granodiorite: a single set of cams roughly from small to #2 Camalot, a set of nuts, a good number of long slings for the ridge's horns and blocks, and a 60 m rope, which also covers the 25 m descent rappel. Bring a cordelette and some spare tat for building or backing up belays and the rappel anchor. Helmets throughout — the gully and the talus descent are loose. Before mid-July add an ice axe and traction for the approach gully and the descent slopes.",
+   "what_to_bring": [
+    "Helmet — the gully and the talus descent are loose",
+    "Approach shoes or light boots for the trail, gully and talus",
+    "Headlamp for a 12-hour day",
+    "2-3 L water capacity and a filter; Colchuck Lake is the last reliable water",
+    "Wind shell and warm layer for an exposed northwest ridge",
+    "Sun protection",
+    "Ice axe and microspikes before mid-July",
+    "Satellite messenger",
+    "Northwest Forest Pass or interagency pass"
+   ],
+   "pro_tips": [
+    "The approach is via the gully to the notch above Jabberwocky Tower, not the west basin traverse the hard routes use — it makes for a substantially shorter day.",
+    "Save the summit block for last and belay it; it is a genuine V1 boulder problem with enormous exposure.",
+    "The descent is a single 25 m rappel down the east side, so a 60 m rope covers everything on the route.",
+    "Long slings matter more than cams on the sharp ridge — bring plenty of runners.",
+    "Pay attention to the terrain around the south saddle and Jabberwocky Tower on the way in; the descent reverses that traverse and is easy to lose.",
+    "This route pairs naturally with Colchuck Peak or Dragontail Peak from a Colchuck Lake camp for a weekend of moderate objectives.",
+    "One party took about 12 hours car to car at a relaxed pace — a useful benchmark."
+   ],
+   "watch_out": [
+    "The approach gully holds steep hard snow into July.",
+    "Talus on the descent traverse is loose and the route-finding back around to the south saddle is not obvious.",
+    "The summit block is short but the exposure is severe.",
+    "The ridge is fully exposed to weather with no shelter.",
+    "Rockfall from parties above in the gully.",
+    "Losing the descent line past Jabberwocky Tower after dark is the classic way this day goes long."
+   ],
+   "pro_needs": "Minimal and mostly slung. The sharp ridge takes long slings over horns and blocks more than it takes cam placements, so weight the rack toward runners. A single set of cams and nuts covers the occasional crack. The only place where protection genuinely matters is the summit block itself, which is a short but seriously exposed V1 boulder problem — most parties belay it rather than solo it.",
+   "best_season": "July through September. Earlier in the season the gully from Colchuck Lake to the notch holds steep snow and the talus descent is a snow slope, both of which change the character of the day and call for an axe and traction. Late July through August gives dry rock and the most reliable weather. September is excellent — cool, firm, and with larch colour around Colchuck Lake — but the days shorten quickly for a 12-hour outing. FR 7601 is normally closed November through May, which bounds the season.",
+   "high_point_ft": 8240,
+   "aid_grade": null,
+   "approach": "Hike the Colchuck Lake Trail (#1599) from the Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road) — 4 miles and 2,280 ft gain, crossing Mountaineer Creek on a log bridge at 1.5 miles and staying right at the Lake Stuart Trail junction — to reach Colchuck Lake (2.5-3 hours). Unlike the west-side routes, the NW Ridge is approached from the east side of the lake: work around the eastern shoreline/talus to the base of the obvious gully that splits toward the notch above Jabberwocky Tower, the granite spire between the lake and Colchuck Balanced Rock. Ascend this gully (loose in spots, rope-up terrain for the upper section) to the notch, then move onto class-3 ground on the NW Ridge proper before the climbing begins. One documented ascent clocked roughly 4,760 ft of total gain and a 12-hour car-to-car day, consistent with the route's ~18.5 km round-trip distance.",
+   "descent_text": "From the ridge's high point (below the exposed summit boulder problem, which most parties do not attempt due to thin protection), descend via a single ~25m rappel down the east face off a fixed anchor — a natural sling/horn setup rather than bolts, so inspect it before committing. After the rappel, scramble down talus and broken rock slopes, contouring around to a saddle on the south side, back past Jabberwocky Tower, and down to Colchuck Lake to rejoin the standard hike-out. Loose rock and route-finding through the talus are the main descent hazards; this is not a walk in fading light without a headlamp given the boulder-hopping involved.",
+   "bail": "This is the most retreat-friendly route on the peak: the ridge is low fifth class, the terrain below the notch is third class, and the gully from Colchuck Lake can be reversed on foot at any point. If weather comes in or the party is moving slowly, downclimbing back to the notch above Jabberwocky Tower and descending the gully to the lake is straightforward. The main bail considerations are hard snow in the gully early in the season and the exposure on the summit block, which can simply be skipped if the party is not comfortable on it.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2-3",
+     "notes": "From Colchuck Lake, ascend the obvious gully to the notch above Jabberwocky Tower. Holds steep snow into July.",
+     "pitch": "Approach gully",
+     "lengthM": null
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Third-class terrain from the notch onto the northwest ridge proper.",
+     "pitch": "Notch to ridge",
+     "lengthM": null
+    },
+    {
+     "grade": "Low fifth to 5.6",
+     "notes": "Multiple pitches of low fifth class to 5.6 along the sharp, exposed ridge to the summit area. Protection is largely long slings over horns and blocks.",
+     "pitch": "Northwest ridge",
+     "lengthM": null
+    },
+    {
+     "grade": "V1",
+     "notes": "The balanced top-block: a short boulder problem, extremely exposed, and the crux of the route. Most parties belay it. No source publishes pitch lengths for this route, so lengthM is left unset consistently across all sections.",
+     "pitch": "Summit block",
+     "lengthM": null
+    }
+   ],
+   "itinerary": {
+    "cal": "Day-use only needs a self-issue trailhead permit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Easier and faster than the technical free routes, so it's a popular single-day objective, sometimes linked with Colchuck or Dragontail Peak in the same outing. Approach via the gully to the notch above Jabberwocky Tower, then Class 3 to the 5.6 ridge crest.",
+      "hours": 12.5,
+      "miles": 11.5,
+      "title": "Car-to-car ridge climb",
+      "gainFt": 4760,
+      "lossFt": 4760,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "2:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "4:15 AM",
+        "label": "Reach Colchuck Lake",
+        "detail": ""
+       },
+       {
+        "time": "5:30 AM",
+        "label": "Reach the notch above Jabberwocky Tower",
+        "detail": ""
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Summit via the NW Ridge",
+        "detail": ""
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Rappel the east face",
+        "detail": "Followed by a long talus scramble around to the south saddle, back past Jabberwocky Tower."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb the NW Ridge (5.6) to the summit and descend around Jabberwocky Tower"
+     }
+    ],
+    "totalNote": "A single long day, roughly 12-13 hrs car-to-car — the circuitous descent around Jabberwocky Tower adds real time even though the climbing itself is moderate."
+   },
+   "access": {
+    "_raw": {
+     "permit_cost": "$5 per person per day (May 15 - Oct 31)",
+     "permit_type": "Overnight wilderness permit (advanced lottery + daily lottery + first-come first-served)",
+     "land_manager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+     "wilderness_zone": "Enchantments (Alpine Lakes Wilderness), Stuart Range, Chelan County",
+     "permit_pickup_hours": "N/A (Recreation.gov online; daily lottery must apply from location or previous day online)",
+     "special_requirements": "Max 8 people per permit in Colchuck Zone. Advanced lottery (75% of permits, Feb 15 - Mar 1): <10% success rate. Dogs prohibited. Campfires prohibited. Trail closed to stock.",
+     "parking_pass_required": "Northwest Forest Pass ($5 day pass or $30 annual) at Stuart Lake Trailhead",
+     "permit_pickup_location": "Recreation.gov online or within 1 mile of Wenatchee River Ranger District (Leavenworth, WA)",
+     "seasonal_closure_dates": "May 15 - Oct 31 (overnight); open for day use year-round",
+     "permit_application_method": "Recreation.gov (advanced lottery, daily lottery, or first-come first-served)"
+    },
+    "fees": "Day climbs: free. Overnight lottery: $6 non-refundable application fee, then $5/person/day if selected.",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Overnight wilderness permit (advanced lottery + daily lottery + first-come first-served)",
+    "closures": "May 15 - Oct 31 (overnight); open for day use year-round",
+    "permitZone": "Enchantments (Alpine Lakes Wilderness), Stuart Range, Chelan County",
+    "group_limit": 8,
+    "landManager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "passRequired": "Northwest Forest Pass ($5 day pass or $30 annual) at Stuart Lake Trailhead",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/233273",
+     "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+     "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+    }
+   },
+   "road": {
+    "name": "Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road/FR-7600), Leavenworth",
+    "status": "Steep and washboarded as the season progresses; high-clearance (4x4 if possible) recommended. Closed to vehicles every winter.",
+    "driveNote": "Roughly 2.5-3 hours from Seattle via US-2 to Leavenworth then Icicle Creek Road/FR-7601.",
+    "seasonalGate": "FR-7601 is closed to vehicles every winter to protect the roadbed."
+   },
+   "climate": {
+    "fall": "September is excellent — cool, firm and colourful — but short days squeeze a 12-hour outing, and early storms end the season.",
+    "spring": "Snowbound. Road closed, trail buried, gully and talus slopes are avalanche terrain.",
+    "summer": "The season. July through August, with the gully melting out through July. Afternoon convection on an exposed ridge is the main daily hazard.",
+    "winter": "Not a season for this route as a rock climb.",
+    "typical": "Most Pacific moisture falls west of the Cascade crest, so the Stuart Range is comparatively dry: clear summers under high pressure and cloudy, stormy winters. A northwest aspect means this ridge holds shade and snow longer than the west face does.",
+    "forecastZone": "No summer avalanche product — NWAC forecasts run roughly mid-November to mid-April. Use the NOAA/NWS point forecast for the Colchuck Lake area of the Stuart Range plus a summit-elevation mountain forecast."
+   },
+   "emergency": {
+    "notes": "No cell coverage on the approach or at the lake. Carry a satellite messenger and leave a written itinerary and a hard call-for-help time with someone at home. Colchuck Lake is a busy trail corridor in summer, but the gully and ridge are not travelled.",
+    "county": "Chelan County, Washington",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth, WA 98826 — (509) 548-2550.",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA 98826 — (509) 548-5815, 24-hour emergency department.",
+    "sheriffDispatch": "911 via RiverCom 911, Chelan County's 24/7 dispatch centre; the Chelan County Sheriff's Office coordinates SAR. Non-emergency (509) 667-6851."
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, when the notch gully is snow-free and the ridge is dry, before FR 7601 closes",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow leaves the notch gully through the month; early July can still need an axe, late July brings dry rock.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "The gully to the notch holds steep snow and the talus descent is a snow slope, so axe and traction are needed.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Dry granite along the sharp ridge and a snow-free descent, though heat on the Colchuck trail and wildfire smoke are common.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early snow can return to the gully and ridge; FR 7601 is normally closed from November, ending the season.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cool firm rock and larch colour at Colchuck Lake, but days shorten quickly for a 12-hour outing and trailhead parking fills.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/031S",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.4914,
+    "peakLng": -120.8188,
+    "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+    "trailheadLat": 47.5282,
+    "trailheadLng": -120.82036,
+    "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft)"
+   },
+   "sling_rack": {
+    "cordelette": true,
+    "double_slings_120cm": 2,
+    "shoulder_slings_60cm": 3
+   },
+   "alpine_draws": 4,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Class 3 to gain the ridge, then exposed 5.6 ridge climbing to a summit boulder-problem block; one party describes a single 25m rappel off a sling anchor on descent (consistent with a 60m rope doubled).",
+   "ascender": null,
+   "corrections": "Route-specific rack beta was thin; rack sizing inferred from 5.6 grade and typical CBR-area granite protection.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Light trad rack (small-to-medium cams and nuts)",
+    "Cordelette",
+    "2 double-length slings (120cm), 3 shoulder-length slings (60cm)",
+    "4 alpine quickdraws",
+    "Single 60 m rope (covers the ~25 m descent rappel)"
+   ],
+   "features": [
+    "Exposed",
+    "Face",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Colchuck Lake east shore to the Jabberwocky Tower notch",
+     "hours": "3-4",
+     "notes": "Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road). Colchuck Lake Trail #1599 for 4 miles and 2,280 ft — Mountaineer Creek log bridge at 1.5 miles, stay RIGHT at the Lake Stuart Trail junction — to Colchuck Lake in about two and a half to three hours. Last water.\n\nThis route is NOT approached through the west basin. Work around the EASTERN shoreline and talus instead. One documented ascent recorded roughly 4,760 ft of total gain and a twelve-hour car-to-car day.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "Loose rock in the gully below the notch",
+      "Rope-up terrain in the upper gully",
+      "No water above Colchuck Lake",
+      "Long day — twelve hours car to car is documented"
+     ],
+     "baseFinding": "The marker is a piece of rock, not a path: JABBERWOCKY TOWER, the granite spire standing between Colchuck Lake and Colchuck Balanced Rock. From the east shore, find the obvious gully that splits toward the NOTCH ABOVE that spire and ascend it — loose in places, with rope-up terrain in its upper section — to the notch. From the notch you step onto class 3 ground on the NW Ridge proper, and the climbing starts there.\n\nNegative marker: the cairned climbers' path that leads left off the Aasgard trail through slide alder into the west basin goes to the West Face, The Scoop and the rest of the wall routes, and it leads AWAY from this one. If you are bushwhacking through alder you are on the west-side approach and on the wrong side of the formation."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+     "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+     "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+     "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+    },
+    {
+     "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+     "role": "main",
+     "type": "camp",
+     "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+     "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+     "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+     "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

@@ -1,0 +1,382 @@
+{
+ "applied": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel required or not"
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "column": "hazards",
+   "path": [
+    5
+   ],
+   "fact": "Glacier travel required or not"
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "column": "beta",
+   "path": [],
+   "fact": "Which summit the summit gully reaches (beta)"
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Rope length vs gully rappel"
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Summit time"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach line (Nooksack Cirque vs Hannegan Pass and Ruth Mountain)"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "pitch"
+   ],
+   "fact": "Approach line (Nooksack Cirque vs Hannegan Pass and Ruth Mountain)"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "gear",
+   "path": [
+    4
+   ],
+   "fact": "Rope length for the summit-gully rappel"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rope length for the summit-gully rappel"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Ruth-Icy saddle elevation"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Ruth-Icy saddle elevation"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Which summit the gully reaches"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Which summit the gully reaches"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Day-two timing and single-push length"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Day-two timing and single-push length"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Day-two timing and single-push length"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Day-two timing and single-push length"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Water at the notch camp"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Wet maritime west-side climate with dense approach vegetation; full winter conditions outside the summer window",
+      "probability": "Afternoon thunderstorms possible during summer season"
+     },
+     "exposure": "Loose rock scrambling and routefinding among multiple summits are the primary consequence drivers; fall exposure is typical of Class 2-3 terrain rather than extreme, but remoteness and lack of cell coverage raise the stakes of any injury or wrong-turn epic",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route",
+      "byMonth": {
+       "July": "N/A",
+       "June": "Moderate",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "The standard route makes a crevasse/moat-aware traverse around the ice apron of the Hagan Glacier to reach the col between Hagan's twin summits - rope and crampons are recommended even in summer, not just for parties extending toward Mount Blum or Bacon Peak."
+    },
+    "hazards": [
+     "routefinding among Hagan's several summits",
+     "afternoon thunderstorms",
+     "steep, trail-less bushwhacking through two forest cliff bands on the approach",
+     "loose rock in the summit scree/talus couloir",
+     "biting insects (blackflies, mosquitoes) in mid-summer",
+     "crevasse/glacier hazard on the adjacent Hagan Glacier for parties extending toward Mount Blum or Bacon Peak"
+    ]
+   }
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "before": {
+    "beta": "From Hannegan Pass, parties gain Ruth Mountain (via its glacier/snow slopes), then descend south and west from Ruth's summit toward a gully on its west side and continue down to the Ruth-Icy Saddle, from which Icy Peak is clearly visible. From the saddle, cross talus and slabs below a rock ridge onto Icy's glacier and climb firm snow to a notch just west of Icy's Northwest Spire, near 6,500 ft; from there, 2nd-3rd class climbing on mostly good rock leads to a 100-ft 4th-class summit gully and the true (Southeast) summit. A harder, rarely climbed alternative goes from the notch between the Northwest and Southeast summits up the Southeast Peak's steep, loose, very exposed Northwest Ridge to a Class 4 knife-edge summit ridge.",
+    "pro_tips": [
+     "A 75-ft/23m rope is enough for the short belays/lowers this route calls for — no need to carry a full-length rope",
+     "Bring pickets specifically for the Ruth and Icy Glacier crossings, not just the ridge",
+     "Go early-to-mid summer, before the glaciers reported 'down to bare ice' in some years"
+    ],
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": 4.7,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": null
+    }
+   }
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 2 / cross-country",
+      "notes": "Riverbed and brush travel up Nooksack Cirque, then moraine debris onto Icy's western arm - the route's hardest navigation.",
+      "pitch": "Cirque to moraine"
+     },
+     {
+      "grade": "Glacier travel",
+      "notes": "Wind between crevasses to a point southwest of the peak's northwest rock horn.",
+      "pitch": "Icy Glacier crossing"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "At roughly 6,500 ft, step through a notch in the ridge coming west off the summit and continue about 500 more feet toward the base of the summit gully.",
+      "pitch": "Notch and upper slope"
+     },
+     {
+      "grade": "Class 4",
+      "notes": "Exposed scramble up a gully worn clean by traffic, with some slabby, loose rock, to the twin summit blocks.",
+      "pitch": "Summit gully"
+     }
+    ],
+    "gear": [
+     "Ice axe and crampons for the Icy Glacier approach and glacier travel",
+     "Rope and a light crevasse rescue kit for the glacier crossing",
+     "A couple of slings plus rap rings/cord for the horn anchor atop the summit gully",
+     "Small rock rack (a few nuts, 1-2 small cams) for the exposed, sometimes-loose class 3-4 summit towers",
+     "Short rope (30m is enough) for the single ~100 ft rappel off the summit gully — many parties downclimb it instead",
+     "Helmet — loose rock in the gully"
+    ],
+    "rappels": "75 feet (single rappel possible on descent)",
+    "approach": "Start at the Hannegan Pass Trailhead (Trail #674) at road's end on FS Road 32 (Hannegan Pass Road), off SR 542 (Mt. Baker Highway), elevation ~3,100 ft. Hike Trail #674 roughly 4 miles, switchbacking up through forest along Ruth Creek to Hannegan Pass (5,066 ft), gaining ~2,000 ft. The signed Hannegan Camp (~3.5 mi in) is the last reliable water on the trail — fill up there, as there is no running water past it for the rest of the route. From the pass, leave the maintained trail and go cross-country east/northeast, climbing open heather meadows and scattered timber onto Ruth Mountain's north side (3rd-class terrain through trees in spots), then rope up and ascend the moderate slopes of the Ruth Glacier — crevasses open up here in late season, especially on the upper mountain — to Ruth Mountain's summit (7,115 ft). Most parties treat this as a 5–6 hour trailhead-to-camp day, camping on Ruth's summit plateau or in the saddle beyond it. From camp, descend Ruth's south/west side about 800 ft; there are two common lines down — a steep, loose gully some parties call the 'death gully,' or safer heather slopes and a game trail on climber's left (2nd–3rd class) — down to the Ruth–Icy saddle (~6,600 ft). From the saddle, traverse talus and slabs below a rock ridge to gain the Icy Glacier, rope up again, and climb the glacier's northwest slope gradually southeast, keeping the rock ridge on your left and crevasses on your right, to about 6,500 ft. Traverse the upper glacier below Icy's west face, skirting the west notch (watch for a bergschrund near the top some seasons), to reach a notch/saddle west of Icy's Northwest Spire (~6,500 ft). From there climb roughly 500 ft of 2nd–3rd class talus and snow up Icy's south side to the base of a light-colored, ~100-ft 4th-class summit gully with solid jugs and ledges; this leads to the northwest summit. Note the true high point is a separate southeast tower about 11 ft higher, reached by additional 3rd/4th class scrambling — many parties only tag the northwest summit, which holds the register. Hazards throughout: crevasses on both the Ruth and Icy Glaciers, occasional rockfall on Icy's south-side scramble terrain, black flies and mosquitoes on the lower trail in summer, and essentially no water source after Hannegan Camp. A few moves in the summit gully feel low-fifth class rather than straightforward 4th class, depending on the exact line chosen.",
+    "approach_variants": [
+     {
+      "name": "Hannegan Pass, over Ruth Mountain, then the Icy Glacier's northwest slope to the west notch",
+      "notes": "From the Hannegan Pass Trailhead at road's end on FS Road 32, near 3,100 ft, hike Trail #674 roughly four miles and 2,000 ft to Hannegan Pass at 5,066 ft. Hannegan Camp about 3.5 miles in is the LAST reliable water on the route — fill up there, because there is nothing running past it.\n\nFrom the pass go cross-country east and northeast up heather meadows and scattered timber onto Ruth's north side, with some third-class ground through trees, then rope up for the Ruth Glacier to Ruth's summit at 7,115 ft. Most parties treat trailhead-to-camp as a five to six hour day and camp on Ruth's summit plateau or in the saddle beyond.\n\nFrom camp, descend Ruth's south and west side about 800 ft to the Ruth-Icy saddle near 6,600 ft, taking the heather slopes and game trail on climber's LEFT rather than the steep loose gully. From the saddle, traverse talus and slabs below a rock ridge to gain the Icy Glacier.",
+      "season": "Roughly Jun-Aug",
+      "hazards": [
+       "No water source at all after Hannegan Camp",
+       "Crevasses on both the Ruth and the Icy Glaciers, and a bergschrund near the west notch in some seasons",
+       "Loose rock in the summit gully with the whole party funnelled through it — helmets are standard",
+       "The steep loose 'death gully' off Ruth, which is the natural fall line and the wrong option",
+       "Roughly 2,000 ft of regain over Ruth on the way home"
+      ],
+      "baseFinding": "ON THE ICY GLACIER, KEEP THE ROCK RIDGE ON YOUR LEFT AND THE CREVASSES ON YOUR RIGHT. That is the navigation instruction for the whole glacier and it works without seeing the summit: climb the northwest slope gradually southeast to about 6,500 ft with a rock ridge as your left-hand handrail. If the rock swings round to your right, you have crossed the glacier and are heading for the wrong side of the peak.\n\nTHE NOTCH IS THE BASE, AND IT IS WEST OF THE NORTHWEST SPIRE at roughly 6,500 ft. Traverse the upper glacier below Icy's west face, skirting the west notch — some seasons there is a bergschrund near the top of it — to reach the notch or saddle just west of the Northwest Spire.\n\nTHERE IS A LONG HORIZONTAL CREVASSE NEAR THE TOP OF THE GLACIER, right below the Icy towers, and it is a useful landmark rather than only a hazard: it runs across your line just where the glacier ends beneath the peak. Meeting it means you are at the top of the glacier.\n\nTHE CLIMBING STARTS AT THE FIRST PROMINENT GULLY. From the notch, about 500 ft of second and third class talus and snow up Icy's south side reaches the base of a LIGHT-COLOURED, roughly 100 FT FOURTH-CLASS GULLY on the LEFT, with solid jugs and ledges. There are rappel slings around a horn at its top, left by previous parties. Colour, length and the slings at the top are three independent confirmations, which is more than most gullies in the Cascades offer.\n\nWHICH SUMMIT: the gully leads to the NORTHWEST summit, which holds the register. The true high point is a separate southeast tower about 11 ft higher, reached by more third and fourth class scrambling. Many parties only tag the northwest one — decide in advance rather than at the notch.\n\nA FEW MOVES IN THE GULLY FEEL LOW FIFTH RATHER THAN FOURTH, depending on the exact line taken. That is not a sign you are off route; it is the route."
+     }
+    ],
+    "overview": "Icy Peak is a remote, heavily glaciated summit at the head of the Nooksack Cirque in the North Cascades, geologically a remnant of the ancient Hannegan Caldera volcano. Small glaciers cling to every flank, with an icefall dropping into the northeast cirque. The peak has two summits — a lower, more-frequently-visited Northwest Peak and the true, higher Southeast summit (7,073 ft) reached by this route — separated by an exposed ridge. High connecting ridges tie it to Ruth Mountain, Seahpo Peak, and Mount Shuksan. It sees very light traffic (summit registers suggest roughly one party a year), and most parties combine it with an ascent of Ruth Mountain on the same trip since the two share the same approach via Hannegan Pass.",
+    "itinerary": {
+     "cal": "Ruth Mountain's summit and the Ruth-Icy col lie inside North Cascades National Park, so an overnight wilderness permit (pick up at the Glacier ranger station) is required for the camp; FR 32 to Hannegan Trailhead is typically snow-free and open by mid-to-late June.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy, well-graded trail to Hannegan Pass gives way to a steeper, looser climbers' path up Ruth Arm and a short root/rock gully with scramble moves, then snow/glacier travel up the Ruth Glacier to a flat camp at the notch. Most parties take 5-6 hours with overnight packs and set up before evening.",
+       "hours": 5.5,
+       "miles": 8,
+       "title": "Approach to Ruth Glacier notch camp",
+       "gainFt": 3600,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Hannegan Trailhead",
+         "detail": "3,100 ft; FR 32 road end near Hannegan Campground."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach Hannegan Pass",
+         "detail": "5,056 ft, ~4 mi of mellow forest trail with a few easy creek crossings."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Climb the Ruth Arm gully",
+         "detail": "Loose rock-and-root gully with a few scramble moves gaining the ridge toward Ruth."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Arrive at Ruth Glacier notch camp",
+         "detail": "~6,600 ft; set up tents and rope up gear for tomorrow's early start."
+        }
+       ],
+       "objective": "Establish camp at the Ruth Glacier notch (~6,600 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Drop from camp to the Ruth-Icy saddle, cross the Icy Glacier to the notch below Icy's Northwest Spire, then scramble to the base of the summit gully and climb the 100-ft Class 4 gully to the top. After returning to camp (roughly 4-5 hours round trip), break down camp and hike the full way back out to the trailhead the same day — a long but standard finish to the trip.",
+       "hours": 10.5,
+       "miles": 8.5,
+       "title": "Icy Peak summit push and hike out",
+       "gainFt": 2200,
+       "lossFt": 4300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave camp for Icy Peak",
+         "detail": "Descend the loose boot path toward the Ruth-Icy saddle in the dark/early light."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Cross the Ruth-Icy saddle",
+         "detail": "~5,700 ft; about a 900-ft drop from camp, roughly an hour."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach the notch below Icy's NW Spire",
+         "detail": "~6,500 ft via talus/slabs and roped Icy Glacier travel; watch the one known crack near the boot path."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Summit Icy Peak",
+         "detail": "7,073 ft, via ~500 ft of 2nd-3rd class then the 100-ft Class 4 summit gully; helmets on for rockfall."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Back at camp, break it down",
+         "detail": "Reverse gully/glacier/saddle (~4-5 hr round trip), rappel or downclimb the summit gully off the rock horn anchor, then pack up camp."
+        },
+        {
+         "time": "4:30 PM",
+         "label": "Out at Hannegan Trailhead",
+         "detail": "Reverse the Ruth Arm gully and Hannegan Pass trail, ~4-5 hr descent with full packs."
+        }
+       ],
+       "objective": "Climb Icy Peak via the Ruth-Icy col and Icy Glacier, then break camp and hike all the way out"
+      }
+     ],
+     "totalNote": "A classic 2-day, 1-night trip: ~5-6 hrs up to the Ruth Glacier notch camp on day one, then a long ~12-13 hr day two that combines the Icy Peak summit push (Ruth-Icy saddle, Icy Glacier, 100-ft Class 4 summit gully) with breaking camp and hiking all the way out; very strong parties occasionally link it car-to-car in one long (15-20 hr) day instead."
+    },
+    "season": "Jun-Aug",
+    "pro_tips": [
+     "Camp at the notch just NW of Ruth Mountain's summit (~6,600 ft) rather than pushing straight through — it's a reliable late-season water source and cuts the summit day to about 3-5 hours round trip",
+     "Rope teams already carrying a glacier rope and rack for Ruth Mountain don't need separate rock gear — a few cams/nuts and slings cover the summit gully",
+     "Early-July trips get firmer, better-bridged snow on the Ruth Glacier at the cost of more hidden crevasses; September trips trade that for bare, loose talus on the upper mountain"
+    ],
+    "timing": {
+     "totalHrs": 16,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "An easy, well-graded trail to Hannegan Pass gives way to a steeper, looser climbers' path up Ruth Arm and a short root/rock gully with scramble moves, then snow/glacier travel up t…",
+       "fromTo": "Approach to Ruth Glacier notch camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "Drop from camp to the Ruth-Icy saddle, cross the Icy Glacier to the notch below Icy's Northwest Spire, then scramble to the base of the summit gully and climb the 100-ft Class 4 gu…",
+       "fromTo": "Icy Peak summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

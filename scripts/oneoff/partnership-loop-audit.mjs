@@ -509,6 +509,42 @@ try {
     }
   }
 
+  // ---- step 9b: the float plan lists the people who are actually going -------------------
+  // safetyMembers built its roster with CLIMBERS.find(...).filter(Boolean), which DROPS
+  // anyone the seed array does not know. For a real crew that silently removed the partner
+  // and left a float plan naming only you. Not a cosmetic bug: this screen is the one that
+  // says who is on the mountain.
+  if (!memConfirmed) {
+    record("the safety plan lists the real partner", "blocked", "no crew with two members");
+  } else if (!(await goTab(pageA, "Crew", "My Crews"))) {
+    record("the safety plan lists the real partner", "blocked", "A could not reach the Crew tab");
+  } else {
+    const sp = pageA.getByRole("button", { name: /^Safety plan/i }).first();
+    if (!(await sp.count())) {
+      record("the safety plan lists the real partner", "blocked", `no "Safety plan" control on A's crew card. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+    } else {
+      await sp.scrollIntoViewIfNeeded();
+      await sp.click();
+      await pageA.waitForTimeout(4000);
+      const t = await snap(pageA, "A:safety-plan");
+      const bFirst = B.name.split(" ")[0];
+      // Confirm we are on the safety screen before judging an absence — otherwise a screen
+      // that never opened reads as "the partner is missing".
+      if (!/float plan|safety|who.s going|party/i.test(t)) {
+        record("the safety plan lists the real partner", "blocked", "could not confirm the safety screen opened, so an absent name proves nothing");
+      } else if (t.includes(bFirst)) {
+        record("the safety plan lists the real partner", "ok");
+      } else {
+        record("the safety plan lists the real partner", "defect", `the float plan for a two-person crew never names ${bFirst} — safetyMembers resolves ids against the seed CLIMBERS array and drops everyone it cannot match, so a real partner is silently left off the plan that says who is on the mountain`);
+      }
+      // The safety plan REPLACES the crew list, so leaving it open cost the next step its
+      // precondition and the chat check reported "no Crew chat button" — a scaffold failure
+      // wearing the costume of a product one. Walk back out.
+      const back = pageA.getByRole("button", { name: /Back to crews/i }).first();
+      if (await back.count()) { await back.click(); await pageA.waitForTimeout(3000); }
+    }
+  }
+
   // ---- step 10: the two of them can actually talk ---------------------------------------
   if (!memConfirmed) {
     record("A and B can message inside the crew", "blocked", "they are not in a crew together");
@@ -553,6 +589,118 @@ try {
             screens["B:received"] = t;
             if (t.includes(msg)) record("B receives A's crew message", "ok", "sent by A, visible to B");
             else record("B receives A's crew message", "defect", "A's crew message was sent and shown to A, but B never sees it");
+          }
+        }
+      }
+    }
+  }
+
+  // ---- steps 11-12: the two surfaces #778 fixed WITHOUT proving them ------------------
+  // #778 fixed three seed-lookup defects and only ONE (the float plan) was driven with real
+  // accounts. The trip recap and the vouch row were fixed from reading the code and verified
+  // by build alone, which is the standard this audit exists to replace. Both are reachable:
+  // the recap notification is created by logging a crew climb, and a vouch is given from a
+  // crew member's own profile.
+  const bFirst = B.name.split(" ")[0];
+
+  // ---- step 11: the trip recap names the partner, not "Member" ------------------------
+  if (!memConfirmed) {
+    record("the trip recap names the real partner", "blocked", "no crew with two members");
+  } else if (!(await goTab(pageA, "Crew", "My Crews"))) {
+    record("the trip recap names the real partner", "blocked", "A could not reach the Crew tab");
+  } else {
+    const logBtn = pageA.getByRole("button", { name: /Climbed it\? Log the climb/i }).first();
+    if (!(await logBtn.count())) {
+      record("the trip recap names the real partner", "blocked", `no log control on A's crew card. Buttons: ${(await buttonNames(pageA)).slice(0, 25).join(" | ")}`);
+    } else {
+      await logBtn.scrollIntoViewIfNeeded();
+      await logBtn.click();
+      await pageA.waitForTimeout(3000);
+      const save = pageA.getByRole("button", { name: /^(Done|Save)$/ }).first();
+      if (!(await save.count())) {
+        record("the trip recap names the real partner", "blocked", "the quick-log sheet did not offer a Save control");
+      } else {
+        await save.click();
+        await pageA.waitForTimeout(4000);
+        // The recap opens from its notification ("Did your crew make it?").
+        const bell = pageA.getByRole("button", { name: /^Notifications/ }).first();
+        if (await bell.count()) { await bell.click(); await pageA.waitForTimeout(3000); }
+        const notif = pageA.getByText(/Did your crew make it/i).first();
+        if (!(await notif.count())) {
+          record("the trip recap names the real partner", "blocked", "logging the climb produced no recap notification to open");
+        } else {
+          await notif.click();
+          await pageA.waitForTimeout(3500);
+          const t = await snap(pageA, "A:trip-recap");
+          // Scope to the modal. "Member" and a first name both appear elsewhere on the page,
+          // and a page-wide test is exactly the false pass this audit already shipped once.
+          const rs = t.indexOf("Trip recap");
+          const modal = rs >= 0 ? t.slice(rs, rs + 700) : "";
+          if (!modal) {
+            record("the trip recap names the real partner", "blocked", "the Trip recap sheet never opened, so an absent name proves nothing");
+          } else if (modal.includes(bFirst)) {
+            record("the trip recap names the real partner", "ok");
+          } else if (/\bMember\b/.test(modal)) {
+            record("the trip recap names the real partner", "defect", `the trip recap calls B "Member" instead of ${bFirst} — the roster resolves ids against the seed CLIMBERS array, which a real member's uuid never matches`);
+          } else {
+            record("the trip recap names the real partner", "blocked", "the recap opened but named neither B nor the generic fallback");
+          }
+        }
+      }
+    }
+  }
+
+  // ---- step 12: a vouch given to a real partner names them ----------------------------
+  // The row resolved the recipient with cById(v._targetId) and fell back to v.avatar — which
+  // is ME.avatar — plus the literal string "Climber". So a vouch given to a real connection
+  // rendered as an anonymous climber wearing the voucher's own face.
+  if (!memConfirmed) {
+    record("a vouch given to a real partner names them", "blocked", "no crew with two members");
+  } else if (!(await goTab(pageA, "Crew", "My Crews"))) {
+    record("a vouch given to a real partner names them", "blocked", "A could not reach the Crew tab");
+  } else {
+    const hits = pageA.getByText(bFirst, { exact: true });
+    const tries = Math.min(await hits.count(), 4);
+    let opened = false;
+    for (let i = 0; i < tries && !opened; i++) {
+      try {
+        await hits.nth(i).scrollIntoViewIfNeeded();
+        await hits.nth(i).click();
+        await pageA.waitForTimeout(2500);
+        opened = (await pageA.getByRole("button", { name: new RegExp("Vouch for " + bFirst, "i") }).count()) > 0;
+        if (!opened) {
+          // Close whatever opened instead, so the next candidate is clickable.
+          const close = pageA.getByRole("button", { name: /^(Close|×)/ }).first();
+          if (await close.count()) { await close.click(); await pageA.waitForTimeout(1200); }
+        }
+      } catch { /* element detached between count and click — try the next */ }
+    }
+    if (!opened) {
+      record("a vouch given to a real partner names them", "blocked", `tried ${tries} element(s) reading "${bFirst}" and none opened a profile offering "Vouch for ${bFirst}". The roster chip is a bare <div onClick> with no role, so there is nothing stabler to aim at. Buttons: ${(await buttonNames(pageA)).slice(0, 20).join(" | ")}`);
+    } else {
+      await pageA.getByRole("button", { name: new RegExp("Vouch for " + bFirst, "i") }).first().click();
+      await pageA.waitForTimeout(3000);
+      const post = pageA.getByRole("button", { name: /Post vouch/i }).first();
+      if (!(await post.count())) {
+        record("a vouch given to a real partner names them", "blocked", "the vouch sheet opened but offered no Post control");
+      } else {
+        await post.click();
+        await pageA.waitForTimeout(4000);
+        if (!(await goTab(pageA, "Profile", null))) {
+          record("a vouch given to a real partner names them", "blocked", "A could not reach the Profile tab to read the vouch back");
+        } else {
+          await pageA.waitForTimeout(3000);
+          const t = await snap(pageA, "A:vouches-given");
+          const vs = t.indexOf("Vouches you've given");
+          const sec = vs >= 0 ? t.slice(vs, vs + 400) : "";
+          if (!sec) {
+            record("a vouch given to a real partner names them", "blocked", "the \"Vouches you've given\" section never rendered, so nothing was read back");
+          } else if (sec.includes(bFirst)) {
+            record("a vouch given to a real partner names them", "ok");
+          } else if (/\bClimber\b/.test(sec)) {
+            record("a vouch given to a real partner names them", "defect", `a vouch A gave ${bFirst} renders as "Climber" — the row resolves the recipient against seed data and falls back to the voucher's own avatar`);
+          } else {
+            record("a vouch given to a real partner names them", "blocked", "the section rendered but named neither B nor the generic fallback");
           }
         }
       }

@@ -1,0 +1,191 @@
+{
+ "file": "t206.json",
+ "results": [
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "season Jul-Oct (best window mid-July through October; July marginal early in the month while snow lingers)",
+   "evidence": "The Forest Service trail page lists the season as summer-fall and says early-summer snow makes the trail better suited to fall hiking. SummitPost says most parties plan the hike for August-October because snow lingers into July/August. The row's own optimal window and October \"good\" rating agree; only the Jul-Sep header (and a copy in the approach variant) cut off October. July marked marginal inside a Jul-Oct season is not a conflict.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/winchester-mountain-trail-685",
+    "https://www.summitpost.org/winchester-mountain/154144"
+   ],
+   "patches": [
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jul-Oct"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Roughly Jul-Sep",
+     "replace": "Roughly Jul-Oct"
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Road walk from the Yellow Aster Butte trailhead",
+   "verdict": "fixed",
+   "correct_value": "about 2.5 miles of rough road from the Yellow Aster Butte trailhead (mile 4.5) to Twin Lakes (mile 7.0)",
+   "evidence": "WTA gives Yellow Aster Butte TH at 4.5 mi and the road end between the lakes at 7.0 mi (2.5 mi). Visit Bellingham says the final 2.5 miles beyond the Yellow Aster Butte trailhead are jarring; TrailChick says continue another 2.5 miles past it. The Forest Service page alone says \"remaining two miles\" (6.5 mi total). Adopted 2.5 and patched every \"2 miles\" copy of that stretch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+    "https://www.bellingham.org/tackling-twin-lakes-road-in-the-north-cascades",
+    "https://www.trailchick.com/wa-state-fire-lookouts/winchester-mountain-lookout/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/winchester-mountain-trail-685"
+   ],
+   "patches": [
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "final ~2 miles to Twin Lakes",
+     "replace": "final ~2.5 miles to Twin Lakes"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then about 2 more miles",
+     "replace": "then about 2.5 more miles"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "final ~2 miles of FS Road 3065",
+     "replace": "final ~2.5 miles of FS Road 3065"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The final two miles are rough",
+     "replace": "The final two and a half miles are rough"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the rough final 2 miles of FS-3065",
+     "replace": "the rough final 2.5 miles of FS-3065"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "the last two miles of FS-3065",
+     "replace": "the last two and a half miles of FS-3065"
+    },
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      0
+     ],
+     "find": "The last two miles of FS-3065",
+     "replace": "The last two and a half miles of FS-3065"
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "One-way time to the summit",
+   "verdict": "fixed",
+   "correct_value": "roughly 1-1.5 hours one-way (timing.approachTimeHrs 1.5; 2.5-3 hr car-to-car)",
+   "evidence": "Explore With Alec reports about one hour up and 35-40 minutes down; The Outbound review says the hike to the lookout takes around an hour; a blog trip report took under 2 hours up with many photo stops. The row's timing (1.5 up, 1 down, 2.8 total) and itinerary (2.5-3 hr) agree; the partner range 1.5-2.5 hr one-way was the outlier.",
+   "sources": [
+    "https://explorewithalec.com/winchester-mountain-lookout/",
+    "https://www.theoutbound.com/washington/hiking/hike-to-winchester-mountain-fire-lookout",
+    "https://mariaadey.com/2023/12/20/hiking-winchester-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "One-way time to the summit",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "roughly 1.5-2.5 hours one-way",
+     "replace": "roughly 1-1.5 hours one-way"
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Avalanche hazard in July",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The avalanche byMonth table reports NWAC forecast coverage, and its zone text states the zone is not actively forecast during the July-October season; that is compatible with the hazards noting avalanche-prone lingering snow crossings into mid-July.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Which slopes hold the hazardous snow",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "the lingering steep snow lies on the slopes the trail itself crosses (southeast-facing switchbacks and the traverse to the pass/west side), not on north/east-facing slopes",
+   "evidence": "The trail climbs southeast-facing slopes from Twin Lakes (which lie SE of the summit) and crests a pass to the western side at 1.3 mi (WTA); the snow hazard is the slope above the 0.9 mi junction that may be too dangerous to traverse (WTA), and the Forest Service describes steep, exposed snowfields on the trail lingering into August. Approach, waypoint directions, seasonal_hazards, partner requirements and the July note all place the snow on the south/southeast/west side the trail crosses; only hazards[0] said north/east. Rewrote that phrase neutrally rather than asserting an unsourced single aspect; \"southeast slopes\" vs \"south/west traverse\" describe consecutive parts of the same trail and were left.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/winchester-mountain-trail-685"
+   ],
+   "patches": [
+    {
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Which slopes hold the hazardous snow",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "Steep, exposed snowfields on north/east-facing slopes below the summit",
+     "replace": "Steep, exposed snowfields on the slopes the trail traverses below the summit"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,515 @@
+{
+ "batches": ["b097.json", "b098.json", "b099.json", "b100.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_traverse_of_mount_index",
+   "name": "Traverse of Mount Index",
+   "area": "Main Peak (Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Season / water-availability window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jul-Aug (dry rock across all three summits; earlier season has more snow/rockfall risk, later season has minimal water)"},
+      {"field": "best_season", "says": "Mid to late season (July-September) for water availability and less snow. Early season (May-June) offers better route definition with snow but requires avalanche understanding."},
+      {"field": "pro_tips[0]", "says": "Water and conditions are the main cruxes—scout water availability before committing."},
+      {"field": "watch_out[3]", "says": "Water becomes critical crux in late season."}
+     ],
+     "why": "season's own parenthetical and watch_out/pro_tips agree that LATE season (including Aug-Sep) has minimal/critical water, but best_season claims Jul-Sep is good specifically 'for water availability' and also recommends an early-season (May-June) window that season excludes entirely.",
+     "internal_resolution": "season + pro_tips + watch_out (3 fields) agree late season has a water shortage; best_season's 'for water availability' framing of Jul-Sep is the outlier and is likely wrong or mis-worded.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length vs rope range in gear",
+     "severity": "low",
+     "claims": [
+      {"field": "rope_length_m", "says": "60"},
+      {"field": "gear", "says": "60-70m rope"}
+     ],
+     "why": "A single 60m value is stated while gear allows a 60-70m range; 60 is within the range so this is only a minor precision mismatch, not a true conflict.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade IV vs 'Grade III' quoted in the approach text",
+     "severity": "medium",
+     "claims": [
+      {"field": "commitment", "says": "IV"},
+      {"field": "alpine_grade", "says": "IV"},
+      {"field": "approach", "says": "The standard North Face Route is a long, moderate alpine rock climb (Grade III, 5.6-5.7) on featured but sometimes rotten rock with significant brush; parties typically climb it car-to-car in a very long day (12-15+ hours) or with a bivy."}
+     ],
+     "why": "The approach field, rendered on this route's own Plan tab, states the grade as III for the line it describes, while the route's own commitment/alpine_grade fields (shown in the header and Overview) say IV. This text appears to be copied from the sibling 'North Face' sub-route rather than describing the full traverse.",
+     "internal_resolution": "commitment and alpine_grade agree (both IV) and are the route's dedicated grade fields, so 'Grade III' embedded in the approach prose is likely contaminated text describing a different, easier line on the same peak.",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager / permitting agency (NPS vs USFS)",
+     "severity": "high",
+     "claims": [
+      {"field": "access._raw.land_manager", "says": "National Park Service - North Cascades National Park (presumed)"},
+      {"field": "access._raw.permit_type", "says": "Backcountry wilderness permit"},
+      {"field": "access._raw.cost_structure.per_person_per_night", "says": "$10 per person"},
+      {"field": "access.landManager", "says": "Mount Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."}
+     ],
+     "why": "access._raw claims the land manager is the National Park Service with a paid backcountry wilderness permit ($10/person/night), while the two other landManager fields (both non-hedged) say Mt. Baker-Snoqualmie National Forest, and access.fees says there is no fee beyond parking. A climber could apply for the wrong agency's permit.",
+     "internal_resolution": "landManager and land_manager (2 fields, unhedged) agree on Mt. Baker-Snoqualmie National Forest; access._raw itself is marked '(presumed)' and admits 'Limited specific information available', so it is the likely outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Field describing a different area (Persis/Gunn/Baring) under this route's own access notes",
+     "severity": "low",
+     "claims": [
+      {"field": "access.notes", "says": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain."}
+     ],
+     "why": "This access.notes text discusses other, unrelated peaks (Persis, Gunn, Baring) rather than Mount Index, suggesting a shared/copied boilerplate note rather than route-specific access info; low priority since it does not itself assert a false fact about this route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Lake Serene Trailhead elevation",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0].elev / waypoints[0].elevFt", "says": "1000 (Lake Serene Trailhead)"},
+      {"field": "approach_variants[0].notes", "says": "US-2 at milepost 35.2, south on Mount Index Road 0.3 miles to the Lake Serene trailhead at about 600 ft."}
+     ],
+     "why": "The route's own waypoint places the trailhead at 1,000 ft, but the route's own approach_variants text places the same trailhead at about 600 ft — a 400 ft (>250 ft) discrepancy for the same named point.",
+     "internal_resolution": "600 ft is corroborated by the approach text's own arithmetic ('roughly 2,000 ft to the lake basin' ending at the 2,526 ft lake-basin waypoint implies a ~526-600 ft start), so the 1,000 ft waypoint figure is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "name": "Main Peak via North Approach",
+   "area": "Main Peak (Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Total route distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "5.8 (≈3.6 mi)"},
+      {"field": "itinerary.days[*].miles (sum)", "says": "4.2 + 1.5 + 3.8 = 9.5 mi"},
+      {"field": "itinerary.totalNote", "says": "A committing ~10-mile, ~5,800-6,000 ft round trip"}
+     ],
+     "why": "The header/TECHNICAL STATS distance (dist_km, 3.6 mi) is less than half the itinerary's own summed daily mileage (9.5 mi) and totalNote's own 'roughly 10-mile' claim, a >100% discrepancy for the same route.",
+     "internal_resolution": "itinerary.days and totalNote agree with each other (~9.5-10 mi), so dist_km (3.6 mi) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time to the base of North Peak's North Face",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.approachTimeHrs", "says": "5"},
+      {"field": "itinerary.days[0].hours", "says": "5"},
+      {"field": "approach_variants[0].hours", "says": "2-3"}
+     ],
+     "why": "Both approach_variants entries for this exact leg (Lake Serene Trail #1068 to the North Peak north face) state 2-3 hours, while timing.approachTimeHrs and itinerary day 1 both say 5 hours for what is described as reaching the same base-of-route point — a 66-150% difference.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count on the North Face section",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "4"},
+      {"field": "itinerary.days[1].note", "says": "Alpine start up the North Face (5.7, ~12 pitches of 3rd/4th class slabs and low-5th climbing with a brushy 'hidden ledge' traverse)..."},
+      {"field": "itinerary.totalNote", "says": "North Peak's North Face (5.7, 12 pitches) climbed and then reversed by rappel/downclimb toward the Main Peak high point"},
+      {"field": "pitch_detail", "says": "4 entries total (North Face ascent / North to Middle traverse / Middle Peak section / Middle to Main traverse)"}
+     ],
+     "why": "The route's own pitches field and its ROUTE BREAKDOWN table both say 4, but the itinerary's own day-2 description and totalNote both explicitly say the North Face alone is '~12 pitches' / '12 pitches'.",
+     "internal_resolution": "itinerary.days[1] and totalNote agree with each other (12 pitches on the North Face alone), so pitches=4 / the 4-row pitch_detail table appears to be an aggregated 'legs' summary rather than actual pitch count.",
+     "needs_research": false
+    },
+    {
+     "fact": "Turnaround plan vs. the route's own multi-day schedule",
+     "severity": "high",
+     "claims": [
+      {"field": "turnaround", "says": "Turn around by 2 PM if still climbing after 5 hours; summit will not be reached by safe descent time."},
+      {"field": "timing", "says": "totalHrs 29, summitTimeHrs 11, descentTimeHrs 13, approachTimeHrs 5"},
+      {"field": "itinerary.days[1].schedule", "says": "Leave camp 1:30 AM ... Top out North Peak's North Face 12:00 PM ... Reach a ridge bivy short of Main Peak 6:00 PM"}
+     ],
+     "why": "The turnaround field describes a short single-day objective ('if still climbing after 5 hours'), but this route's own timing/itinerary describe a 3-day, 29-hour push with an overnight bivy on day 2 that is still climbing well past 5 hours and past 2 PM by design.",
+     "internal_resolution": "timing and itinerary.days agree with each other on a 3-day plan; the turnaround field appears to be copied from a different, shorter route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Aspect vs. face description",
+     "severity": "medium",
+     "claims": [
+      {"field": "aspect", "says": "N"},
+      {"field": "face", "says": "North side approach and connecting ridge over the North, Middle, and Main summits, transitioning across a multi-aspect ridge crest"}
+     ],
+     "why": "aspect states a single direction (N) while the route's own face field explicitly describes the climb as crossing a 'multi-aspect ridge crest', i.e., not a single-aspect line.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window vs. seasonal_guidance optimal window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late June through September, with August the most reliable month for dry rock and manageable brush."},
+      {"field": "seasonal_guidance.monthBreakdown.June.status", "says": "marginal"}
+     ],
+     "why": "seasonal_guidance's own optimalWindow starts in late June, before the stated season (Jul-Sep) begins; and June is simultaneously called part of the 'optimal window' and rated only 'marginal' in the same object's own monthBreakdown.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of rappel slings/runners needed",
+     "severity": "medium",
+     "claims": [
+      {"field": "sling_rack.runners", "says": "6-8 shoulder-length + 2 double-length"},
+      {"field": "rack", "says": "2 shoulder-length slings"},
+      {"field": "detailed_rack", "says": "2 slings"}
+     ],
+     "why": "sling_rack calls for 6-8 shoulder-length plus 2 double-length slings (8-10 total), while rack and detailed_rack both say only 2 slings — a large gap in a kit-planning field.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "name": "Hourglass Gully (Winter)",
+   "area": "Main Peak (Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Pitch count vs. the ROUTE BREAKDOWN table",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "0"},
+      {"field": "pitch_detail", "says": "12 named entries, e.g. 'East Ridge crux: 60-degree pitch', 'Hourglass Gully constriction' ('crux of the entire route')"}
+     ],
+     "why": "The header/TECHNICAL STATS would show 'pitches: 0' while the Plan tab's ROUTE BREAKDOWN table lists 12 distinct named pitch entries including an explicit roped crux pitch.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total route distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "5.8 (≈3.6 mi)"},
+      {"field": "waypoints[1].distMi", "says": "5.5 (Mount Index Main Peak Summit, one-way)"}
+     ],
+     "why": "dist_km (3.6 mi) is less than the route's own one-way distance to the summit (5.5 mi per its own waypoint), so a round trip would be roughly 11 mi — dist_km understates the true distance by 3x or more.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time to the route",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.approachTimeHrs", "says": "2.5"},
+      {"field": "approach_variants[0].hours", "says": "5-8"},
+      {"field": "approach_variants[0].notes", "says": "Plan on 12+ hours car to car and over 6,000 ft of gain despite the peak being under 6,000 ft."}
+     ],
+     "why": "timing.approachTimeHrs says 2.5 hours, but the route's own approach_variants entry for the same trailhead-to-route approach states 5-8 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window for a route named '(Winter)'",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Late Apr-Oct for the general scramble; best as a snow climb roughly May-Jun ... not recommended in mid-late summer ... or unstable winter conditions"},
+      {"field": "best_season", "says": "The optimal window is early March through early May ... Winter ascents (December-February) are possible but require extreme caution"},
+      {"field": "beta", "says": "the window for this route is narrow (early March through early May). After May, melted conditions expose loose rock and create severe bushwhacking challenges."},
+      {"field": "approach_variants[0].season", "says": "Snow cover — roughly late winter through May; not recommended once melted out"}
+     ],
+     "why": "The route is literally named 'Hourglass Gully (Winter)', yet its own season field's primary window (Late Apr-Oct) excludes winter and December-February entirely, directly contradicting best_season, beta, and approach_variants, which all identify this as fundamentally a Dec-May (ideally Mar-Apr) snow/ice route and say October conditions are 'not recommended'/'bare wet rock'.",
+     "internal_resolution": "best_season, beta, and approach_variants (3 fields) agree the route window is roughly Dec-May with peak conditions Mar-Apr; season's 'Late Apr-Oct... general scramble' framing appears to describe a different (non-winter) variant and is the outlier for this specific route entry.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope count/length",
+     "severity": "high",
+     "claims": [
+      {"field": "rope_length_m", "says": "60"},
+      {"field": "rope_type", "says": "single dynamic (for rappels)"},
+      {"field": "gear", "says": "2×30m ropes"},
+      {"field": "detailed_rack", "says": "Two 30-meter ropes (single-rope rappels, doubled for security)"},
+      {"field": "rack", "says": "2×30m ropes for rappels"},
+      {"field": "rappel_detail", "says": "2 rappels, each lengthM 30"}
+     ],
+     "why": "rope_length_m/rope_type describe a single 60m rope, while gear, detailed_rack, rack, and rappel_detail (4 fields) consistently describe carrying TWO 30m ropes for rappelling — a materially different kit requirement.",
+     "internal_resolution": "gear/detailed_rack/rack/rappel_detail (4 fields) agree on 2×30m ropes; rope_length_m=60/rope_type='single' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Timing component hours don't sum to totalHrs",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "15"},
+      {"field": "timing.approachTimeHrs", "says": "2.5"},
+      {"field": "timing.summitTimeHrs", "says": "4"},
+      {"field": "timing.descentTimeHrs", "says": "3"}
+     ],
+     "why": "approachTimeHrs+summitTimeHrs+descentTimeHrs = 9.5, but totalHrs=15, a 5.5-hour (58%) gap; every other route in this batch has these three components sum exactly to totalHrs.",
+     "internal_resolution": "the route's own prose itinerary sums closer to totalHrs (15+), so the individual component fields (especially summitTimeHrs and descentTimeHrs) appear understated relative to totalHrs.",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager: 'N/A' vs a named agency in the same access object",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "N/A"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"}
+     ],
+     "why": "Two near-duplicate keys in the same access object give different answers about whether a land manager is known.",
+     "internal_resolution": "land_manager gives a specific answer, so landManager='N/A' is the stale/unfilled duplicate.",
+     "needs_research": false
+    },
+    {
+     "fact": "Field describing a different area (Persis/Gunn/Baring)",
+     "severity": "low",
+     "claims": [
+      {"field": "access.notes", "says": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain."}
+     ],
+     "why": "This access note discusses unrelated peaks rather than Mount Index; likely shared boilerplate, low priority.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_j_tnar",
+   "name": "Jötnar",
+   "area": "Jötunheim (crag, Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Overall grade (5.9) vs. crux pitch grades in the ROUTE BREAKDOWN",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.9"},
+      {"field": "rock_grade", "says": "5.9"},
+      {"field": "pitch_detail (pitch 8, Fang Roof)", "says": "150 feet; A2 from belay, C1 up beautiful splitter hand crack through overhang (5.10), 5.9 free climbing to belay - classic pitch"},
+      {"field": "pitch_detail (pitch 14-16).grade", "says": "5.7-5.10"}
+     ],
+     "why": "The route's overall/crux grade fields both say 5.9, but the ROUTE BREAKDOWN's own pitch 14-16 grade field states up to 5.10, and pitch 8's notes mention a 5.10 free option — exceeding the stated route grade.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager: 'N/A' vs a named agency in the same access object",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "N/A"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"}
+     ],
+     "why": "Two near-duplicate keys in the same access object disagree about whether a land manager is known.",
+     "internal_resolution": "land_manager gives a specific answer, so landManager='N/A' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether a recreation pass/permit is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "permit", "says": "No wilderness permit applies - the Lake Serene trailhead is south of US-2 on Mt. Index Road, outside the Wild Sky Wilderness, which lies north of the highway. A recreation pass is required for day use."},
+      {"field": "access.permit", "says": "N/A"},
+      {"field": "access.permitZone", "says": "N/A"},
+      {"field": "access.passRequired", "says": "N/A"}
+     ],
+     "why": "The route's own top-level permit field explicitly states a recreation pass IS required for day use, while the nested access object's permit/permitZone/passRequired all say 'N/A' (implying nothing is required or known).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Field describing a different area (Persis/Gunn/Baring)",
+     "severity": "low",
+     "claims": [
+      {"field": "access.notes", "says": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain."}
+     ],
+     "why": "This access note discusses unrelated peaks rather than Mount Index/Jötunheim; likely shared boilerplate, low priority.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "name": "North Norwegian Buttress",
+   "area": "North Norwegian Buttress (crag, Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Route stats (grade/pitches) blend two different named routes on the same wall (Jötnar vs. Bluebell)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade / rock_grade", "says": "5.9"},
+      {"field": "pitches", "says": "16"},
+      {"field": "aid_grade", "says": "A3+"},
+      {"field": "pitch_detail (Roofs/'3D Dike'/Big Overhang, ~P12-13).grade", "says": "up to 5.13- / V5-V6 boulder problem"},
+      {"field": "pitch_detail (Headwall, ~P12-15).grade", "says": "5.11-5.13-"},
+      {"field": "pitch_detail (Summit pitches).pitch", "says": "~P16-17"},
+      {"field": "descent", "says": "using a single uncut 70m rope on the bolted lines (per the Bluebell first free ascent); older aid lines share similar rappel anchors down the same buttress"}
+     ],
+     "why": "The top-level grade/pitches/aid_grade fields (5.9, 16 pitches, A3+) match Jötnar, the VI 5.9 A3+ aid line described in overview, but the pitch_detail ROUTE BREAKDOWN shows crux grades up to 5.13- and implies a 17th pitch — figures that match Bluebell (5.13-, 21 pitches), a different, much harder free route on the same buttress that overview and descent explicitly name separately.",
+     "internal_resolution": "overview/descent explicitly distinguish Jötnar from Bluebell as two different lines; the structured fields should represent one specific line but currently mix stats from both.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time to the base of the wall",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.approachTimeHrs", "says": "16"},
+      {"field": "approach", "says": "Plan roughly 2-3 hours from the trailhead to the base of the wall, more with a loaded pack for a multi-day ascent."},
+      {"field": "approach_variants[0].notes", "says": "Two to three hours from the car with a light pack, appreciably more with a loaded haul bag for a multi-day ascent."}
+     ],
+     "why": "timing.approachTimeHrs (16 hours) is over 5x the route's own approach/approach_variants text (2-3 hours) for reaching the same wall base.",
+     "internal_resolution": "The 16-hour figure appears to be a mislabeled sum of sectionBreakdown entries 1 (6h, genuine approach) and 2 (10h, actually described as climbing 'Rack up and start up the buttress...'), whose own 'section' tag is wrongly set to 'Approach' instead of 'Climb'.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total route distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "5.8 (≈3.6 mi)"},
+      {"field": "itinerary.days[*].miles (sum)", "says": "4 + 0.3 + 4 = 8.3 mi"},
+      {"field": "itinerary.totalNote", "says": "roughly 8 miles and 5,000 ft round trip"}
+     ],
+     "why": "dist_km (3.6 mi) is well under half the itinerary's own summed mileage (8.3 mi) and totalNote's own '~8 miles' claim.",
+     "internal_resolution": "itinerary.days and totalNote agree with each other; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade (VI) vs. 'Grade III+' quoted in access notes",
+     "severity": "high",
+     "claims": [
+      {"field": "commitment", "says": "VI"},
+      {"field": "access.notes", "says": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective."}
+     ],
+     "why": "The route's own commitment field states Grade VI (one of the most serious big walls in the state per overview), but access.notes on the same route calls it a 'Grade III+ alpine objective' — a huge understatement likely copied from a much easier sibling route.",
+     "internal_resolution": "commitment=VI is corroborated throughout overview/beta/pro_needs (Grade VI big wall); 'Grade III+' in access.notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "sectionBreakdown labels don't match their own content",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.sectionBreakdown[1].section", "says": "Approach"},
+      {"field": "timing.sectionBreakdown[1].note", "says": "Rack up and start up the buttress at first light; established free/aid lines on this wall (Jotnar, Bluebell) run 16-21 pitches of sustained, often loose or seepy climbing."},
+      {"field": "timing.sectionBreakdown[2].section", "says": "Climb"},
+      {"field": "timing.sectionBreakdown[2].note", "says": "Finish the remaining pitches to the summit, then reverse the route with a single uncut 70m rope on the bolted rappel line ... expect a long, rop[e-eating descent]"}
+     ],
+     "why": "Entry 2 is tagged 'Approach' but its note describes climbing the wall; entry 3 is tagged 'Climb' but its note describes both topping out AND descending. This mislabeling is what produces the inflated approachTimeHrs contradiction above.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_index_north_face",
+   "name": "North Face (North Peak)",
+   "area": "North Peak (Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Route grade (5.6, up to 5.7 reported) vs. the ROUTE BREAKDOWN's highest explicit grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.6"},
+      {"field": "rock_grade", "says": "5.6 (5.7 reported on some pitches, some consider it sandbagged)"},
+      {"field": "pitch_detail (North Rib).grade", "says": "5.5"},
+      {"field": "pitch_detail", "says": "no other entry states a numeric YDS grade (others read 'Roped, very exposed', 'Exposed slab traverse', 'Snow or slabby rock', etc.)"}
+     ],
+     "why": "The only explicit numeric grade anywhere in the ROUTE BREAKDOWN table is 5.5 (North Rib), yet the route's own grade/rock_grade fields claim 5.6-5.7 — the crux move implied by the header grade is not identifiable in the pitch-by-pitch table.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_index_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area": "North Peak (Mount Index)",
+   "contradictions": [
+    {
+     "fact": "Single-rope vs. double-rope rappel descent",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "Descend via double-rope rappels down the route line; fixed slings/bolts exist but are reported worn or rockfall-damaged in places"},
+      {"field": "descent", "says": "Downclimb via the same line, or descend via nearby gullies to regain the talus. Single rappels may be used on steeper sections."},
+      {"field": "descent_text", "says": "Rappels (single 40-50 ft pitches) can speed descent"},
+      {"field": "gear", "says": "60m rope (singular; no second rope listed)"}
+     ],
+     "why": "rappels explicitly calls for double-rope rappels, while descent, descent_text, and the single-item gear list (one 60m rope) all describe single-rope, single-strand short rappels — a real kit/technique discrepancy.",
+     "internal_resolution": "3 fields (descent, descent_text, gear) agree on a single rope/single-strand technique; 'rappels' claiming double-rope technique is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count vs. numbered rows in pitch_detail",
+     "severity": "low",
+     "claims": [
+      {"field": "pitches", "says": "12"},
+      {"field": "pitch_detail", "says": "3 grouped entries: P1-2, P3-9 ('the jungle'), P10-12"}
+     ],
+     "why": "Only 3 rows appear in the ROUTE BREAKDOWN, but their own pitch ranges (P1-2, P3-9, P10-12) sum correctly to 12, so this is likely an intentional grouped summary rather than a true undercount.",
+     "internal_resolution": "the 3 rows' own ranges add up to 12, so pitches=12 is probably correct; flagged only because a climber counting rows would see 3, not 12.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_persis_the_hexorcist",
+   "name": "The Hexorcist",
+   "area": "Mount Persis",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "name": "West Ridge",
+   "area": "Mount Persis",
+   "contradictions": [
+    {
+     "fact": "Whether a special access permit is required (private Hampton Resources timberland)",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."},
+      {"field": "access.fees", "says": "Recreational access permit/fee required for the private-timberland portion of the approach."},
+      {"field": "access.permit", "says": "Hampton Resources recreational access permit (program formerly run by Weyerhaeuser) required to drive/hike FR-62; verify current permit requirements and gate status before the trip."},
+      {"field": "access.passRequired", "says": "Hampton Resources recreation permit (private land); no federal pass required beyond that for the trailhead itself."},
+      {"field": "pro_tips[0]", "says": "Check current Hampton Resources (formerly Weyerhaeuser) gate/permit status before driving in"}
+     ],
+     "why": "The top-level permit field tells a climber that only a standard Northwest Forest Pass is needed, but the access object (3 fields) and pro_tips both say a separate private-timberland recreational permit (Hampton Resources) is specifically required to drive/hike the approach road — a climber relying on the top permit field could show up without the required permit.",
+     "internal_resolution": "access.fees/access.permit/access.passRequired and pro_tips (4 fields) agree a Hampton Resources permit is required; the top-level 'permit' field is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Philadelphia Mountain",
+   "contradictions": [
+    {
+     "fact": "Total route distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "5.8 (≈3.6 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "11"},
+      {"field": "itinerary.totalNote", "says": "~11 miles round trip and ~3,650 ft gain"}
+     ],
+     "why": "dist_km (3.6 mi) is roughly a third of the itinerary's own stated round-trip mileage (11 mi), which is independently corroborated by the schedule ('~11-mile round-trip day').",
+     "internal_resolution": "itinerary.days[0] and totalNote agree with each other (11 mi); dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Nov-Jun"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through September, within the broader late-spring-to-October window"},
+      {"field": "seasonal_guidance.monthBreakdown.July.status", "says": "optimal"},
+      {"field": "seasonal_guidance.monthBreakdown.August.status", "says": "optimal"},
+      {"field": "best_season", "says": "A July-September ascent is driest underfoot but means fighting through dense brush and downed timber the whole way."}
+     ],
+     "why": "season states the climbing window is Nov-Jun only, entirely excluding July-September, yet seasonal_guidance explicitly names July and August 'optimal' and best_season discusses a viable July-September ascent — a climber reading only 'season' would think summer is unclimbable.",
+     "internal_resolution": "seasonal_guidance and best_season agree the route is climbable (even optimal in parts) July-September; season's 'Nov-Jun' framing appears to describe only the preferred snow-covered window, not the full climbable range, and should not read as excluding summer entirely.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

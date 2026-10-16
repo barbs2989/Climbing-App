@@ -1,0 +1,84 @@
+{
+  "id": "wa_spectre_peak_south_route",
+  "area_id": "wa_spectre_peak",
+  "waypoints": [
+    {
+      "lat": 48.9102,
+      "lng": -121.5941,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Matches existing DB entry almost exactly (existing 48.9101,-121.5927 vs. FS/WTA-sourced 48.9102,-121.5941, ~100m diff, within trailhead/parking-area noise). Confirmed as the start point for the 2-day approach (Hannegan Pass -> Easy Ridge -> Pickell Pass) described in the AAC/theclimbingguides trip reports for this route's first ascent.",
+      "type": "Trailhead",
+      "elevFt": 3120,
+      "directions": "Drive Forest Road 32, the Hannegan Pass Road, to its end at the Hannegan Pass Trailhead at about 3,120 ft. The road is normally open to the trailhead through summer and early fall but has a documented history of washout damage needing bypass construction, so confirm current status with the Glacier Public Service Center before driving in. Park with a Northwest Forest or interagency pass displayed; the overnight wilderness permit for everything past Hannegan Pass is a separate Park Service permit picked up in Glacier or Marblemount."
+    },
+    {
+      "lat": 48.8829219,
+      "lng": -121.5342754,
+      "elev": 5100,
+      "name": "Hannegan Pass",
+      "note": "High point of the maintained Hannegan Pass Trail (#674); leave the trail here to traverse cross-country toward Easy Ridge rather than continuing to Copper Ridge.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Follow the maintained Hannegan Pass Trail #674 up the Ruth Creek valley, about 4 miles and roughly 2,000 ft of gain to the 5,050 ft pass, with Mount Sefrit and Nooksack Ridge across the valley. The grade is gentle and the tread is good the whole way, and the Ruth Creek crossings in the first couple of miles carry reliable water."
+    },
+    {
+      "lat": 48.8727739,
+      "lng": -121.487756125,
+      "elev": 3600,
+      "name": "Chilliwack River ford",
+      "note": "Ford the Chilliwack River below Easy Ridge on the climbers' path past Copper Creek before switchbacking back up; can be a cold, thigh-deep crossing in early season.",
+      "type": "Water",
+      "distMi": 7
+    },
+    {
+      "lat": 48.8474039,
+      "lng": -121.37145793750001,
+      "elev": 6600,
+      "name": "Bivy beyond Easy Peak",
+      "note": "Established climbers' bivy near the summit of Easy Peak (6,613'), reached via the Easy Ridge climbers' path gained above Hannegan Pass; typical end of day one.",
+      "type": "Campsite",
+      "distMi": 14.5,
+      "directions": "From the river, switchback steeply back up onto Easy Ridge and then follow the crest itself. This is a hot, dry, open, south-facing ridge with almost no shade; flowing water shows up relatively early along it, but the first-ascent party warned this stretch would be brutal later in the season and in dry years, so fill up while you can. Continue along and over Easy Peak to the established bivy beyond it, roughly a ten-hour day with a full pack from the trailhead."
+    },
+    {
+      "lat": 48.844021233333336,
+      "lng": -121.35595151250001,
+      "elev": 7000,
+      "name": "Imperfect Impasse",
+      "note": "A notch on Easy Ridge that must be downclimbed and re-ascended to continue toward the Pickets proper; exposed and slower than it looks from a distance.",
+      "type": "Hazard",
+      "distMi": 15.5,
+      "directions": "Leave camp and keep going along the ridge off-trail toward the Pickets, dropping to the cleft known as the Imperfect Impasse. This leg is route-finding and exposed scrambling rather than walking, and the notch has to be downclimbed and then re-ascended on the far side; parties consistently find it slower than it looks from a distance."
+    },
+    {
+      "lat": 48.837497425,
+      "lng": -121.347398725,
+      "elev": 8000,
+      "name": "Challenger Col",
+      "note": "Snow/glacier col that gains the western slope of the range; parties have noted a bergschrund forming near its top by mid-to-late season.",
+      "type": "Junction",
+      "distMi": 16.5,
+      "directions": "Out of the notch, regain elevation onto the flank of Mount Challenger and climb through Challenger Col. This is snow and glacier ground rather than rock, so rope up and treat it as crevassed terrain; parties have reported a bergschrund opening near the top of the col by mid to late season."
+    },
+    {
+      "lat": 48.827832475,
+      "lng": -121.345799575,
+      "elev": 7300,
+      "name": "Pickle Pass",
+      "note": "Gap below Spectre's serrated south ridge of hoodoos, visible from Frenzel Camp, where the technical climbing on the route begins.",
+      "type": "Junction",
+      "distMi": 17.5,
+      "directions": "From the col, traverse the southern Challenger cirque toward the west ridge of Phantom Peak, staying roped near the pocket glacier. Phantom's west and south ridge is the usual second bivy and where most parties stop for the night. Pickle Pass itself can hold snow well into the season, and the first-ascent party found it snowed over and skirted it rather than crossing."
+    },
+    {
+      "lat": 48.812,
+      "lng": -121.343,
+      "elev": 7952,
+      "name": "Spectre Peak",
+      "type": "Summit",
+      "elevFt": 7952,
+      "directions": "From the base of the south ridge, start up right of the entry notch: about 100 ft of fourth class leads into blocky 5.7 climbing, then low-fifth ground to a large tree-dotted ledge and a traverse left onto the crest proper. The crest gives sustained 5.4 to 5.8 climbing past the crux third pitch, a short overhanging band of 5.9 choss above sparse gear on the face right of a mossy gully, and past a shattered gendarme at pitch 7 where a 25 m rappel into the gap is followed by a self-belayed ascent of the far wall. The last pitch weaves through narrow, chalky hoodoo towers to a 30 m rappel off the final tower onto a big grassy ledge, from which about 600 ft of third and fourth class with a couple of low-fifth moves leads to the top."
+    }
+  ]
+}

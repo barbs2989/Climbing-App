@@ -24,8 +24,11 @@ const byNumber = new Map();
 const malformed = [];
 
 for (const f of files) {
-  const m = f.match(/^(\d{4})_/);
-  // A file that does not start with four digits and an underscore cannot be ordered at all,
+  // Four digits, or FIVE for the 28 files that shared 13 numbers until 2026-09-30: each group was
+  // renumbered NNNN0, NNNN1, … so the Supabase CLI (which keys a migration by its digit prefix) sees
+  // one version per file. A new migration still takes the next four-digit number.
+  const m = f.match(/^(\d{4,5})_/);
+  // A file that does not start with digits and an underscore cannot be ordered at all,
   // which is its own bug — flag rather than skip, so a typo is not silently exempt.
   if (!m) { malformed.push(f); continue; }
   const n = m[1];
@@ -33,11 +36,12 @@ for (const f of files) {
   byNumber.get(n).push(f);
 }
 
-// Historical duplicates are grandfathered through a baseline, the same shape as
-// undefined-refs-baseline.json and session-claims-baseline.json. Eleven pairs predate this
-// guard — mostly July's gear-audit batches, all long applied. Renumbering someone else's
-// applied migration churns history to no benefit, and a guard that fails on day one for
-// reasons nobody will fix is a guard people learn to ignore.
+// Historical duplicates were grandfathered through a baseline, the same shape as
+// undefined-refs-baseline.json and session-claims-baseline.json. They are all gone now: once the
+// Supabase GitHub integration was switched on (2026-09-26), a shared number stopped being a
+// documentation problem and became a hard failure — every preview branch replays the directory
+// keyed by number and dies on the first repeat. So they were renumbered (see above) and the
+// baseline is empty. Keep it that way.
 //
 // The baseline is keyed by number -> the exact file list. If a NEW file joins a
 // grandfathered number, the list stops matching and it fails — so the baseline forgives
@@ -67,7 +71,8 @@ if (dupes.length) {
   console.error(`
 These files get pasted into the SQL editor by hand, so a shared number turns
 "run 0091" into a question rather than an instruction — and any code comment
-citing that number now points at two different migrations.
+citing that number now points at two different migrations. And a Supabase
+preview branch replays the directory keyed by number, so it fails outright.
 
 Renumber the one that is NOT yet applied to the live database to the next free
 number, and update any comment referencing it. If BOTH are already applied,
@@ -76,7 +81,7 @@ applied state does not depend on it.`);
 }
 
 if (malformed.length) {
-  console.error(`\n${malformed.length} migration file(s) do not start with a 4-digit number:\n`);
+  console.error(`\n${malformed.length} migration file(s) do not start with a 4- or 5-digit number:\n`);
   for (const f of malformed.sort()) console.error(`    ${f}`);
   console.error("\nWithout a leading NNNN_ the apply order is undefined.");
 }

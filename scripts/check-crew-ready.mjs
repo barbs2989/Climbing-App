@@ -56,7 +56,7 @@ const mod = new Function(
 
 const UID = "me-uuid-0000", PARTNER = "partner-uuid-1111";
 const base = {
-  id: "crew1", route_id: "wa_x", cap: 4, dates: ["2026-08-01"], dismissed: false,
+  id: "crew1", route_id: "wa_x", area_id: null, discipline: null, cap: 4, dates: ["2026-08-01"], dismissed: false,
   meet_place: "Trailhead", meet_time: "Dawn", float_plan: null,
   crew_members: [
     { user_id: UID, status: "confirmed", note: "" },
@@ -92,6 +92,23 @@ if (crew.members.length !== 2) failures.push(`hydration dropped members — got 
 if (!crew.members.some(m => m.climberId === 0)) failures.push("current user not mapped to climberId 0");
 if (!crew.members.some(m => m.climberId === PARTNER)) failures.push("partner not carried through hydration");
 console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries all crew_members`);
+
+// A crew has ONE place (0302): a route, or an area + the session's discipline. The hydration must carry
+// both halves, and Ready must not care which — the day/meet/confirm rules read neither.
+{
+  const areaRow = { ...base, route_id: null, area_id: "ut_hellgate_cliffs", discipline: "sport", crew_day_acks: [...base.crew_day_acks, { user_id: PARTNER, date: "2026-08-01" }] };
+  let a;
+  try { a = mod(areaRow, UID); } catch (e) { failures.push(`area crew — hydration threw: ${e.message}`); }
+  if (a) {
+    const okA = a.crew.areaId === "ut_hellgate_cliffs" && a.crew.discipline === "sport" && a.crew.routeId === null && a.ready === true;
+    if (!okA) failures.push(`area crew — got areaId=${a.crew.areaId} discipline=${a.crew.discipline} routeId=${a.crew.routeId} ready=${a.ready}; want the area, the discipline, no route, ready`);
+    console.log(`  ${okA ? "ok  " : "FAIL"}  an AREA crew hydrates areaId + discipline, no routeId, and still computes Ready`);
+    const r = mod(base, UID).crew;
+    const okR = r.areaId === null && r.discipline === null && r.routeId === "wa_x";
+    if (!okR) failures.push(`route crew — got areaId=${r.areaId} discipline=${r.discipline} routeId=${r.routeId}; want null, null, wa_x`);
+    console.log(`  ${okR ? "ok  " : "FAIL"}  a ROUTE crew hydrates with no area and no discipline`);
+  }
+}
 
 if (failures.length) {
   console.error(`\n${failures.length} crew-ready check failure(s):\n`);

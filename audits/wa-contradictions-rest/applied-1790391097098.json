@@ -1,0 +1,46 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel on the route"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel on the route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool, wet maritime Olympic climate that can deteriorate quickly even in the July-September window",
+      "probability": "Rain shadow location (east side of the Olympics, per Jefferson County terrain) means somewhat drier than the west-side Olympics, but fast-moving Pacific frontal systems can still bring sudden rain/wind even in summer"
+     },
+     "exposure": "Serious fall consequences on the exposed, unroped summit block; compounded by rotten, tilted pillow-basalt rock that pulls loose readily (a 2022 fatality occurred here tied to route-finding errors onto cliffy ground)",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route; nearest NWAC coverage (Olympics zone) is oriented toward winter/spring forecasting and does not specifically model this route's approach gullies",
+      "byMonth": {
+       "July": "Low",
+       "June": "Considerable",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on the standard Deception Creek/Royal Basin route itself; this is steep snow gullies and rock, not glacier crossing"
+    }
+   }
+  }
+ ]
+}

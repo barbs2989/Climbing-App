@@ -1,0 +1,159 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Rainy Pass trailhead parking type"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Location of the A0 aid section"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    1
+   ],
+   "fact": "Location of the A0 aid section"
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Whether June is in season"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Cam range"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "before": {
+    "access": {
+     "fees": "None for the climb itself; a Northwest Forest Pass ($5 day / $30 annual) is the standard fee for National Forest trailhead parking in the district.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No climbing permit required. There is no fee specific to this off-trail summit route; the Rainy Pass PCT-Northbound trailhead and the Swamp Creek pullout are both informal highway-shoulder parking areas.",
+     "closures": "SR 20 (North Cascades Highway) closes for winter between the Ross Dam trailhead (MP 134) and the Silver Star gate (MP 171) — a zone that includes both the Rainy Pass and Swamp Creek trailheads. Typical closure runs early December through April or May depending on avalanche conditions and any DOT repair work; check WSDOT's mountain pass report before planning a trip.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass recommended for National Forest trailhead parking in this district ($5/day or $30/year); not separately booth-enforced at either pullout.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful pass, or a Recreation.gov day pass covers parking at the Rainy Pass PCT North trailhead; no permit paperwork is needed to camp anywhere along this stretch of the Pacific Crest Trail."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_2",
+   "before": {
+    "descent_text": "This is not a walk-off — the way down is by rappel. From the summit area, one commonly used anchor is a two-piton station equalized with cord; lower on the route (the short aid section) anchors have been a mix of one newer bolt and one old quarter-inch bolt with an aging hanger — treat the old bolt with real suspicion. Rappel the south face to the Pernod-Chablis notch on two ropes (60m ropes recommended; a single 70m can just barely work, but a 60m single can leave you several meters short of the notch). Watch for rope-eating cracks a few feet below a slung-horn rap station — build that anchor as high as practical so the rope doesn't jam on the pull. From the notch, a short 4th-class scramble regains the East Face rappel line on Chablis, and two double-rope rappels down that line reach the base, rather than re-climbing back over to Burgundy Col. If you're descending independently instead of via Chablis, reverse the traverse below Chianti back to Burgundy Col and follow the climbers' path down the scree gullies to the bench camp and boot path to the highway.",
+    "approach_variants": [
+     {
+      "name": "Burgundy Col, then the loose fourth-class traverse round the east side below Chianti to the Pernod-Chablis notch",
+      "notes": "From the SR-20 pullout near milepost 166, the climbers' trail drops off the highway, crosses Early Winters Creek almost immediately at around 4,080 ft via logs, and climbs steeply, gaining nearly 2,400 ft, to the bench camp at roughly 6,460-6,500 ft, the standard staging area for all the Wine Spires. From there the trail works up scree gullies to Burgundy Col at 7,770 ft.\n\nTwo pitches at 5.9 A0, Grade II. Carry a rope for the final approach moves and expect loose rock underfoot the whole way in.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Loose fourth-class traverse around the east side of the ridge below Chianti",
+       "A two-piton summit anchor equalized with cord, and a mix of one newer bolt and one old quarter-inch bolt with an aging hanger lower down",
+       "A single 60 m rope can leave a party several metres short of the notch on the descent",
+       "Rope-eating cracks a few feet below a slung-horn rap station; build that anchor as high as practical",
+       "Loose rock underfoot for the whole approach"
+      ],
+      "baseFinding": "THE BASE IS THE NOTCH BETWEEN PERNOD AND CHABLIS, AND THERE ARE TWO WAYS TO IT THAT ARRIVE FROM OPPOSITE DIRECTIONS. Both are worth knowing before you leave camp, because the choice is made at the col and not at the base.\n\nOPTION ONE, FROM BURGUNDY COL: rather than dropping straight to Pernod's south side, most parties continue traversing and scrambling around the EAST, Silver Star Creek, side of the ridge BELOW CHIANTI, aiming for the Pernod-Chablis notch. Expect LOOSE FOURTH-CLASS TERRAIN on this stretch, which is itself the confirmation: if the ground you are on is walkable, you have not started the traverse.\n\nOPTION TWO, AND IT IS THE COMMON ONE BECAUSE THE ROUTE IS SHORT: climb CHABLIS SPIRE'S EAST FACE first, then downclimb or make a short rappel across loose rock to reach the base of Pernod's south face. That approach arrives from above rather than along.\n\nSO THE NEGATIVE TEST IS ABOUT WHICH SPIRE IS ABOVE YOU: this route sits TUCKED BETWEEN PERNOD'S BIGGER WEST FACE AND CHABLIS. If the wall above you is the tallest in the group, you are under Pernod's west face and on the Direct West Face ground, not here. That route is reached from the BENCH, not from the col.\n\nAND THE NOTCH IS A NAMED GAP BETWEEN TWO NAMED SPIRES, which is the most reliable kind of feature in this basin: Pernod on one side, Chablis on the other.\n\nDESCENT IS BY RAPPEL AND IT LINKS BACK ONTO CHABLIS: rappel the south face to the notch on two 60 m ropes. A single 70 m can just barely work, but a single 60 m can leave you several metres short of the notch. From the notch a short fourth-class scramble regains the East Face rappel line on Chablis, and two double-rope rappels down it reach the base rather than re-climbing back over to Burgundy Col."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "before": {
+    "rappel_count_note": "Best-documented account (a South Face description plus the 1989 first-ascent note): 1 rappel off the true summit on a bolted anchor down to a notch/ledge near Chablis Spire, then a short 4th-class scramble to regain Chablis's east-face rappel line, then 2 double-rope rappels down that line to the base.",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Dry, warm North Cascades summer alpine rock conditions during the July-September window",
+      "probability": "Afternoon thunderstorms are a known hazard on this route - start early to be off the summit and exposed sections before storms build"
+     },
+     "exposure": "Sustained exposure on a ~6-pitch Grade III spire with exposed belays; combined with loose rock on the spire itself, this raises both fall consequence and rockfall risk for the belayer/second and any party below. The approach and descent are also described as committing, meaning retreat once established on route is nontrivial",
+     "avalanche": {
+      "zone": "Washington Pass (NWAC forecast zone) - relevant only outside this route's summer climbing season",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; the Wine Spires are dry granite towers reached via a talus/scramble approach"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "mid-July through September, with late July-August offering the most consistent conditions",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Falls within the best-season window; approach mostly snow-free by mid-month and rock dries out, though early July can still carry residual snow at the col",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Outside the established season - lingering snow on the approach and col, and cold/wet rock are likely before mid-July",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Peak dry-rock conditions and longest daylight window for this long approach-plus-6-pitch day",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within season; stable rock but shorter days and higher chance of an early-season storm or first snow late in the month",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_direct_west_face",
+   "before": {
+    "sling_rack": {
+     "cams": "0.3-3 in single rack",
+     "nuts": "full set incl. small wires/RPs"
+    }
+   }
+  }
+ ]
+}

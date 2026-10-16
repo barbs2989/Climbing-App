@@ -1,0 +1,382 @@
+{
+ "takenAt": "2026-10-01T15:02:15.133Z",
+ "rows": [
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "waypoints": [
+    {
+     "lat": 46.326559,
+     "lng": -121.923912,
+     "elev": 4700,
+     "name": "Pinto Rock base (end of NF-77)",
+     "note": "Approach via NF-25 to Mosquito Meadows, then NF-28/NF-77 (rough road) to the base of the ~400' cliff, Gifford Pinchot National Forest.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Randle, take SR-131 south and follow NF-25 about 19 miles into the Mosquito Meadows area, then turn onto NF-28 for 2.7 miles. Turn onto NF-77, a rough gravel road, and drive it slowly to the roadside pullout at the end, directly below the formation at about 4,700 feet. This is Gifford Pinchot National Forest, and the pullout sits at the base of the roughly 400-foot cliff."
+    },
+    {
+     "lat": 46.326559,
+     "lng": -121.923912,
+     "elev": 5118,
+     "name": "Pinto Rock summit",
+     "note": "4-pitch regular route through a basalt band and chimney to the summit; descend via 2 raps (60m) or 1 double-rope rap off the north end of the east face.",
+     "type": "Summit",
+     "distMi": 0.2
+    },
+    {
+     "lat": 46.32649,
+     "lng": -121.92364,
+     "name": "South Face / route start",
+     "type": "Base",
+     "distMi": null,
+     "elevFt": null
+    }
+   ],
+   "approach": "From the NF-77 pullout, a well-used trail runs along the base of the formation. The West Face and North Side are different aspects of the same rock reached via short spurs off this main trail, generally under 15 minutes' walk from the parking pullout.",
+   "approach_logistics": {
+    "peakLat": 46.32649,
+    "peakLng": -121.92365,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   }
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "waypoints": [
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "name": "Pinto Rock Pullout (North Side)",
+     "note": "Roadside pullout on NF-77 (via NF-25 -> NF-28 -> NF-77 from Randle, WA) directly below Pinto Rock;",
+     "type": "Trailhead",
+     "directions": "From Randle on US Highway 12, head south on SR 131 and follow NF-25 for 19.2 miles. Just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 and follow it 2.7 miles, then turn left onto NF-77. That last stretch is rough gravel, so drive it slowly; after about 2 miles Pinto Rock comes into view at a large pullout, and that pullout is the parking."
+    },
+    {
+     "lat": 46.32799,
+     "lng": -121.92374,
+     "elev": 4864,
+     "name": "North Side wall (GPS pin)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4864
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4821,
+     "name": "Pinto Rock topout (approximate)",
+     "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found.",
+     "type": "Topout",
+     "distMi": 0.3
+    },
+    {
+     "lat": 46.3265018,
+     "lng": -121.9237007,
+     "elev": 5118,
+     "name": "Pinto Rock",
+     "type": "Summit",
+     "elevFt": 5118
+    }
+   ],
+   "approach": "From Randle, WA on US Hwy 12: head south on SR 131, then follow NF-25 for 19.2 miles; just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 for 2.7 miles; turn left onto NF-77 (rough gravel, drive slowly) for about 2 miles until Pinto Rock comes into view at a large pullout. An evident use trail leads north from the pullout to the base of the formation (~0.3 mi/0.47 km). For North Side, hike around the formation's east side to the base, or summit and rappel the fixed rings to reach the route.",
+   "approach_logistics": {
+    "peakLat": 46.32448,
+    "peakLng": -121.92476,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   }
+  },
+  {
+   "id": "wa_cobbles_101",
+   "waypoints": [
+    {
+     "lat": 46.326559,
+     "lng": -121.923912,
+     "elev": 4700,
+     "name": "Pinto Rock base (end of NF-77)",
+     "note": "Same forest-road approach as Bowling Alley.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Randle, take SR-131 south and follow NF-25 about 19 miles into the Mosquito Meadows area, then turn onto NF-28 for 2.7 miles. Turn onto NF-77, a rough gravel road, and drive it slowly to the roadside pullout at the end, directly below the formation at about 4,700 feet."
+    },
+    {
+     "lat": 46.326559,
+     "lng": -121.923912,
+     "elev": 5118,
+     "name": "Pinto Rock summit",
+     "note": "Starts on the prow left of the Bowling Alley gully; 5.7, shares the same summit/rappel descent.",
+     "type": "Summit",
+     "distMi": 0.2
+    },
+    {
+     "lat": 46.32649,
+     "lng": -121.92364,
+     "name": "South Face / route start",
+     "type": "Base",
+     "distMi": null,
+     "elevFt": null
+    }
+   ],
+   "approach": "From the NF-77 pullout, a well-used trail runs along the base of the formation. The West Face and North Side are different aspects of the same rock reached via short spurs off this main trail, generally under 15 minutes' walk from the parking pullout.",
+   "approach_logistics": {
+    "peakLat": 46.32649,
+    "peakLng": -121.92365,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   }
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "waypoints": [
+    {
+     "lat": 48.7063,
+     "lng": -120.9185,
+     "elev": 1900,
+     "name": "Canyon Creek Trailhead",
+     "note": "Large parking lot on SR 20 just east of milepost 141, west of Rainy Pass. The trail follows Canyon Creek about 6 miles to the Mill Creek Trail junction, the start of this route's approach. The east-side line up the East Ridge starts elsewhere, at a locked gate on the Slate Creek road below Harts Pass (about 3,800 ft).",
+     "type": "Trailhead",
+     "elevFt": 1900
+    },
+    {
+     "lat": 48.726226,
+     "lng": -120.830383,
+     "elev": 2750,
+     "name": "Mill Creek ford",
+     "note": "Ford Mill Creek just below the trail junction — last reliable, easy-to-reach water before the long climb toward Azurite.",
+     "type": "Water",
+     "distMi": 5.7
+    },
+    {
+     "lat": 48.7302,
+     "lng": -120.831381,
+     "elev": 2800,
+     "name": "Mill Creek Trail junction",
+     "note": "Leave the Canyon Creek tread here and turn up the Mill Creek/Azurite Pass Trail; maintained trail effectively ends beyond this point.",
+     "type": "Junction",
+     "distMi": 6
+    },
+    {
+     "lat": 48.688171,
+     "lng": -120.81229,
+     "elev": 4350,
+     "name": "Overgrown Mill Creek Trail",
+     "note": "Tread disappears under heavy slide alder and downed timber left from the mine-era trail's disuse — expect a slow, scratchy alder-hacking bushwhack for several miles.",
+     "type": "Hazard",
+     "distMi": 8.5
+    },
+    {
+     "lat": 48.68278,
+     "lng": -120.78111,
+     "elev": 5899,
+     "name": "Azurite Mine",
+     "note": "Flat ground amid the old defunct copper/silver mine workings on Mill Creek; the common overnight camp before pushing toward the Ballard basin.",
+     "type": "Campsite",
+     "distMi": 11
+    },
+    {
+     "lat": 48.686458,
+     "lng": -120.767274,
+     "elev": 6600,
+     "name": "Azurite–Ballard basin",
+     "note": "Reached via roughly 3 more brush-choked miles above the mine; open basin at the base of Ballard's south slopes and a typical bivy before the summit push.",
+     "type": "Campsite",
+     "distMi": 14
+    },
+    {
+     "lat": 48.687683,
+     "lng": -120.762661,
+     "elev": 7400,
+     "name": "South-face brush and gully route-finding",
+     "note": "Steep, loose terrain with several look-alike chutes low on the south face — picking the wrong gully here is the main way parties get cliffed out or turned back.",
+     "type": "Hazard",
+     "distMi": 15
+    },
+    {
+     "lat": 48.7206918,
+     "lng": -120.6701073,
+     "elev": 6191,
+     "name": "Harts Pass",
+     "type": "Pass",
+     "distMi": null,
+     "elevFt": 6191
+    },
+    {
+     "lat": 48.6885416,
+     "lng": -120.759433,
+     "elev": 8371,
+     "name": "Mount Ballard summit (south/true peak)",
+     "type": "Summit",
+     "elevFt": 8371
+    }
+   ],
+   "approach": "Standard approach: drive Highway 20 to the Canyon Creek Trailhead near milepost 141, west of Rainy Pass and follow the Mill Creek/Azurite Pass Trail (#755) up Canyon Creek then Mill Creek — about 11 miles (roughly 6 along Canyon Creek, then 5 up Mill Creek) to the site of the defunct Azurite Mine, then a further ~3 increasingly faint, brush-choked miles (slide alder and downed timber are common since the trail has seen little maintenance since the mine closed) to roughly the 14-mile mark, where a boot path continues about 1.5 more miles to Azurite Pass (6,680+ ft). A longer alternate, more often used for combined Azurite-Ballard trips, starts at the West Fork Methow River Trailhead (#480) near River Bend Campground: follow that trail ~8 miles to the PCT, then the PCT south ~1.5 miles to Horse Heaven Camp before joining the Mill Creek Trail to the pass — this option runs closer to 25 miles round trip with about 6,000 ft of elevation gain.",
+   "approach_logistics": {
+    "peakLat": 48.686066,
+    "peakLng": -120.757928,
+    "trailhead": "Canyon Creek Trailhead",
+    "trailheadLat": 48.7063,
+    "trailheadLng": -120.9185,
+    "trailheadDirection": "Drive Highway 20 to the Canyon Creek Trailhead near milepost 141, west of Rainy Pass"
+   }
+  },
+  {
+   "id": "wa_sidewinder_4",
+   "waypoints": [
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "name": "Pinto Rock Pullout (North Side)",
+     "note": "Same pullout as the other North Side routes; the approach trail is extremely steep and loose.",
+     "type": "Trailhead",
+     "directions": "From Randle on US Highway 12, head south on SR 131 and follow NF-25 for 19.2 miles. Just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 and follow it 2.7 miles, then turn left onto NF-77. That last stretch is rough gravel, so drive it slowly; after about 2 miles Pinto Rock comes into view at a large pullout, and that pullout is the parking."
+    },
+    {
+     "lat": 46.32799,
+     "lng": -121.92374,
+     "elev": 4864,
+     "name": "North Side wall (GPS pin)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4864
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4821,
+     "name": "Pinto Rock topout (approximate)",
+     "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found.",
+     "type": "Topout",
+     "distMi": 0.3
+    },
+    {
+     "lat": 46.3265018,
+     "lng": -121.9237007,
+     "elev": 5118,
+     "name": "Pinto Rock",
+     "type": "Summit",
+     "elevFt": 5118
+    }
+   ],
+   "approach": "From Randle, WA on US Hwy 12: head south on SR 131, then follow NF-25 (Forest Road 25) for 19.2 miles; just past milepost 21, turn left at the sign for Mosquito Meadows onto NF-28 and follow it 2.7 miles; turn left onto NF-77 (rough gravel, drive slowly) for about 2 miles until Pinto Rock comes into view at a large pullout. An evident use trail leads north from the pullout to the base of the formation (~0.3 mi/0.47 km). For the North Side wall specifically, either hike around the formation's east side to the base, or summit via the standard trail/scramble and rappel the fixed rings, which meet the route partway.",
+   "approach_logistics": {
+    "peakLat": 46.32448,
+    "peakLng": -121.92476,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   }
+  },
+  {
+   "id": "wa_the_devils_club",
+   "waypoints": [
+    {
+     "lat": 49.01,
+     "lng": -121.36,
+     "elev": 3200,
+     "name": "Depot Creek Falls",
+     "note": "Steep, ice-cold ford-and-bushwhack section past the falls.",
+     "type": "Water",
+     "distMi": 3
+    },
+    {
+     "lat": 48.9623,
+     "lng": -121.2633,
+     "elev": 5700,
+     "name": "Ouzel Lake",
+     "note": "Common camp before the Redoubt Glacier.",
+     "type": "Water",
+     "distMi": 6
+    },
+    {
+     "lat": 48.96,
+     "lng": -121.28,
+     "elev": 7300,
+     "name": "Redoubt Glacier Camp",
+     "note": "Flat bivy on the Redoubt Glacier used to access the Mox massif.",
+     "type": "Campsite",
+     "distMi": 8
+    },
+    {
+     "lat": 48.95,
+     "lng": -121.26,
+     "elev": 6800,
+     "name": "Base of East Face Headwall",
+     "note": "Bivy ledge below the 1,500-ft near-vertical headwall of the Devil's Club route.",
+     "type": "Junction",
+     "distMi": 9.5
+    },
+    {
+     "lat": 48.7278,
+     "lng": -121.0628,
+     "elev": 1600,
+     "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "note": "US-side approach, opposite the Depot Creek approach used for the West Ridge/Beckey route. Climbers take a water taxi (or boat, portaging Diablo Lake to Ross Lake) up Ross Lake ~15 miles to the Little Beaver landing/dock, then hike/bushwhack up the Perry Creek drainage to reach the base of Southeast Mox Peak's East Face.",
+     "type": "Trailhead",
+     "elevFt": 1600
+    },
+    {
+     "lat": 48.9475,
+     "lng": -121.2556,
+     "elev": 8504,
+     "name": "Southeast Mox Peak (Hard Mox) summit / East Face high point",
+     "type": "Summit",
+     "elevFt": 8504
+    }
+   ],
+   "approach": "Access starts on Ross Lake: from the Ross Dam trailhead on SR-20 (near milepost 134), hike the short Ross Dam Trail down to Ross Lake Resort, then take the resort's water taxi (or paddle a canoe) roughly 20+ miles up-lake to the Little Beaver Creek dock at the lake's north end. From the dock, follow the maintained (but lightly traveled) Little Beaver Trail west, paralleling Little Beaver Creek through cedar-fir forest with several brushy meadows and creek crossings, about 4.6-5 miles to Perry Creek Camp/Shelter, a three-sided log shelter that marks the effective end of maintained tread for climbers headed toward the Mox massif. From Perry Creek Camp there is no trail: the standard line follows the Perry Creek drainage south, and staying in or right beside the creekbed itself gives the fastest travel (easy rock-hopping and scrambling) up to about 3,600 ft, where dense slide alder chokes the creek and forces climbers up onto a bank. The south (true left) side of the drainage is preferred here — it holds older, more open forest and fewer avalanche paths, while the north side is a nearly impenetrable slide-alder thicket. Above the alder band the forest opens into blueberry meadows and sparser timber where travel speed improves to roughly 2-3 mph, eventually gaining the upper Perry Creek/Mox basin cirque below the connecting ridge to Southeast Mox, with talus and (season-dependent) snowfields and moats guarding the final approach to the toe of the 2,400-2,500 ft East Face. This is a genuinely serious approach, not a formality: the FA party (Layton/Wolfe, 2005) spent a full two days and roughly 14 hours of actual travel time in the rain covering under two miles from the lake to the base, and described it as one of the worst approaches in the Cascades. Expect cold creek fords, soaked gear, torn-up skin from devil's club and slide alder (the plant the route is named for), and real route-finding judgment calls about which side of the drainage to commit to. Water is abundant the entire way (Little Beaver Creek, Perry Creek) but should be treated.",
+   "approach_logistics": {
+    "peakLat": 48.947089,
+    "peakLng": -121.256998,
+    "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+    "trailheadLat": 48.7278,
+    "trailheadLng": -121.0628,
+    "trailheadDirection": "From the Ross Dam Trailhead on SR-20 near milepost 134, down to Ross Lake and the water-taxi/trail network"
+   }
+  },
+  {
+   "id": "wa_top_gun",
+   "waypoints": [
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "name": "Pinto Rock Pullout (North Side)",
+     "note": "Same pullout/approach as Sidewinder and Clast from the Past; Top Gun is a toprope reached by lowering from Sidewinder's anchor chains to the roof lip, i.e. same base approach, not a separate trailhead.",
+     "type": "Trailhead",
+     "directions": "From Randle on US Highway 12, head south on SR 131 and follow NF-25 for 19.2 miles. Just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 and follow it 2.7 miles, then turn left onto NF-77. That last stretch is rough gravel, so drive it slowly; after about 2 miles Pinto Rock comes into view at a large pullout, and that pullout is the parking."
+    },
+    {
+     "lat": 46.32799,
+     "lng": -121.92374,
+     "elev": 4864,
+     "name": "North Side wall (GPS pin)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4864
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4821,
+     "name": "Pinto Rock topout (approximate)",
+     "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found.",
+     "type": "Topout",
+     "distMi": 0.3
+    },
+    {
+     "lat": 46.3265018,
+     "lng": -121.9237007,
+     "elev": 5118,
+     "name": "Pinto Rock",
+     "type": "Summit",
+     "elevFt": 5118
+    }
+   ],
+   "approach": "From Randle, WA on US Hwy 12: head south on SR 131, then follow NF-25 for 19.2 miles; just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 for 2.7 miles; turn left onto NF-77 (rough gravel, drive slowly) for about 2 miles until Pinto Rock comes into view at a large pullout. An evident use trail leads north from the pullout to the base of the formation (~0.3 mi/0.47 km). Top Gun is set up from the same location as Sidewinder on the North Side wall.",
+   "approach_logistics": {
+    "peakLat": 46.32448,
+    "peakLng": -121.92476,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   }
+  }
+ ]
+}

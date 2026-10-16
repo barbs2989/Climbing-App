@@ -1,7 +1,9 @@
 // Network-first app-shell cache: online users always get the latest deploy;
 // only a genuinely offline request falls back to whatever was cached last.
 // Deliberately does NOT touch cross-origin requests (Supabase, map tiles, images) —
-// those aren't part of the app shell and shouldn't be cached here.
+// those aren't part of the app shell and shouldn't be cached here. ONE exception: the pinned
+// Leaflet files (see the fetch handler), without which no map opens offline. Offline map TILES
+// live in IndexedDB (lib/offlineTiles.js), never here: `activate` below deletes other caches.
 const SHELL_CACHE = "climbmatch-shell-v1";
 
 // Vite emits content-hashed asset names, so every deploy produces a completely new set of
@@ -156,7 +158,26 @@ self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+  // THE ONE CROSS-ORIGIN EXCEPTION: Leaflet, so a packed climb's map opens with no signal
+  // (lib/offlineTiles.js holds the tiles; lib/mapKit.jsx warmLeafletOffline() fetches these when
+  // a climb is packed). Version-pinned cdnjs files with an integrity hash the page checks, so a
+  // cached copy can only ever be the exact bytes it asked for. Network-first, like the shell.
+  // Kept in SHELL_CACHE outside /assets/, so the per-deploy prune leaves it alone.
+  if (url.host === "cdnjs.cloudflare.com" && url.pathname.startsWith("/ajax/libs/leaflet/")) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res && res.ok) { const copy = res.clone(); caches.open(SHELL_CACHE).then((c) => c.put(req.url, copy)); }
+          return res;
+        })
+        .catch(async () => (await caches.match(req.url, { ignoreVary: true })) || Response.error())
+    );
+    return;
+  }
   if (url.origin !== self.location.origin) return;
+  // The offline state files (dist/states/, ~10 MB per large state) are written into IndexedDB by
+  // lib/offline.js. Caching them here as well would store every downloaded state twice.
+  if (url.pathname.includes("/states/")) return;
 
   event.respondWith(
     fetch(req)

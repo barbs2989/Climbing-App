@@ -1,0 +1,94 @@
+{
+ "applied": [
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking location in access.notes (Rainy Pass trailhead lot vs SR 20 pullout)"
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "column": "beta",
+   "path": [],
+   "fact": "Beta describes a different route"
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "column": "beta",
+   "path": [],
+   "fact": "Beta describes a different route"
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking location in access.notes (Rainy Pass trailhead lot vs SR 20 pullout)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Day-use only, no permits required",
+      "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+      "cost_structure": {
+       "person_fee": "None",
+       "parking_pass": "$5 per vehicle per day or $30 annually"
+      },
+      "wilderness_zone": "North Cascades Scenic Highway corridor",
+      "seasonal_closures": "Not accessible during winter when State Route 20 is closed",
+      "permit_pickup_hours": "Monday-Friday 8:00 AM - 4:00 PM (lunch 12:30-1:30 PM)",
+      "special_restrictions": "Bicycles only permitted to Cutthroat Pass; no camping within 1/4 mile of Cutthroat Lake; parking very limited and fills quickly",
+      "parking_pass_required": "Northwest Forest Pass or Digital Day Pass via Recreation.gov",
+      "permit_pickup_location": "Methow Valley Ranger District Office"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No permits required. Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October. Hazards: Steep terrain, loose rock in approach gully, exposure.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "Day-use only, no permits required",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "North Cascades Scenic Highway corridor",
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or Digital Day Pass via Recreation.gov",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "before": {
+    "beta": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "No permits required. Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October. Hazards: Steep terrain, loose rock in approach gully, exposure.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "Dependent on Highway 20 seasonal closure.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass if using a developed FS trailhead lot.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  }
+ ]
+}

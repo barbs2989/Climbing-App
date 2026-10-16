@@ -1,0 +1,1108 @@
+{
+ "file": "t321.json",
+ "results": [
+  {
+   "id": "wa_notta_slab",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_notta_slab",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_notta_slab",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_notta_slab",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_bachelor_party",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_moe",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_moe",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_moe",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_moe",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_thunder",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_incoming",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_incoming",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_incoming",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_incoming",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_redtail_arete",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton; the dikes are ~18 mi (1.1-1.5 mi past it); The Castle parking is 1.2 mi BEFORE the trailhead, ~15-16 mi from Dayton",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 15-16 miles) from Dayton"
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "fact": "Route length",
+   "verdict": "fixed",
+   "correct_value": "About 40 ft (12 m), on a ~45 ft pinnacle",
+   "evidence": "The route page lists a length of 40 ft (12 m), and the Dikes climbing guide describes The Castle as a pinnacle about 45 ft high. length_m 12 and descent_text ~40 ft are correct; rope_note claiming no published length is the stale copy.",
+   "sources": [
+    "https://www.mountainproject.com/route/113648796/unknown-climb-up-the-castle",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Route length",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "No published length; 70m recommended",
+     "replace": "The pitch is about 40 ft; 70m recommended"
+    }
+   ]
+  },
+  {
+   "id": "wa_firearms",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_firearms",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_firearms",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_firearms",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_cordwood",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_cordwood",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_cordwood",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_cordwood",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_czech_it_out",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_monkey_on_a_woodpile",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_henpecked",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_henpecked",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_henpecked",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_henpecked",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_internal_combustion",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_a_little_something",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_a_little_something",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_a_little_something",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_a_little_something",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_face_farce",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_face_farce",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_red_zinger",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_red_zinger",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_red_zinger",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_red_zinger",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_safety_dance",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_safety_dance",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_safety_dance",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_safety_dance",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_just_enough",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_ahoot",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_ahoot",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_joe_s_route",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_lady_slipper",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_just_for_fun",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  },
+  {
+   "id": "wa_heinous_thing",
+   "fact": "Driving distance from Dayton to the crag",
+   "verdict": "fixed",
+   "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+   "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(about 20 miles) from Dayton",
+     "replace": "(about 18 miles) from Dayton"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "roughly 16-17 miles in (about 1-2 miles past the Middle Point Ridge Trailhead)",
+     "replace": "roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton)"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Driving distance from Dayton to the crag",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "~16-17 mi south of Dayton, WA",
+     "replace": "~18 mi south of Dayton, WA"
+    }
+   ]
+  }
+ ]
+}

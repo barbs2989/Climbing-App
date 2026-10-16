@@ -1,0 +1,53 @@
+{
+ "id": "wa_miracle_ramps",
+ "area_id": "wa_south_face",
+ "stations": 6,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "two-bolt stainless in-line chain anchor",
+    "station": "The anchor at the top of pitch 6.",
+    "notes": "Rappel 1 of 6 on the rope, down pitch 6 to the anchor at the top of pitch 5."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "two-bolt stainless in-line chain anchor",
+    "station": "The anchor at the top of pitch 5.",
+    "notes": "Rappel 2 of 6 on the rope, down pitch 5 to the anchor at the top of pitch 4."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "two-bolt stainless in-line chain anchor",
+    "station": "The anchor at the top of pitch 4.",
+    "notes": "Rappel 3 of 6 on the rope, down pitch 4 to the anchor at the top of pitch 3."
+   },
+   {
+    "n": 4,
+    "lengthM": null,
+    "anchor": "two-bolt stainless in-line chain anchor",
+    "station": "The anchor at the top of pitch 3.",
+    "notes": "Rappel 4 of 6 on the rope, down pitch 3 to the anchor at the top of pitch 2."
+   },
+   {
+    "n": 5,
+    "lengthM": null,
+    "anchor": "two-bolt stainless in-line chain anchor",
+    "station": "The anchor at the top of pitch 2.",
+    "notes": "Rappel 5 of 6 on the rope, down pitch 2 to the anchor at the top of pitch 1."
+   },
+   {
+    "n": 6,
+    "lengthM": null,
+    "anchor": "two-bolt stainless in-line chain anchor",
+    "station": "The anchor at the top of pitch 1.",
+    "notes": "Rappel 6 of 6 on the rope, down pitch 1 to the ground."
+   }
+  ],
+  "rappels": "6 rappels down the route, one per pitch, from two-bolt stainless in-line chain anchors",
+  "rappel_count_note": "One rappel per pitch from the chain belays. Rappel lengths are not published."
+ }
+}

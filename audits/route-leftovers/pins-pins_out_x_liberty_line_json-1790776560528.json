@@ -1,0 +1,56 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "op": "clear_line",
+   "points": 3,
+   "why": "sketch along the wrong approach"
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "waypoints": [
+    {
+     "lat": 46.9024,
+     "lng": -121.6438,
+     "elev": 4300,
+     "name": "White River Campground (Glacier Basin Trailhead)",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 46.8885,
+     "lng": -121.7212,
+     "elev": 7420,
+     "name": "St. Elmo Pass",
+     "type": "Pass",
+     "distMi": null
+    },
+    {
+     "lat": 46.86298,
+     "lng": -121.77486,
+     "elev": 14112,
+     "name": "Liberty Cap",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     46.95,
+     -121.82
+    ],
+    [
+     46.8885,
+     -121.7212
+    ],
+    [
+     46.849,
+     -121.769
+    ]
+   ]
+  }
+ ]
+}

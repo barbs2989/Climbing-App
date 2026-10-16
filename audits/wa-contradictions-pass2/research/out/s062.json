@@ -1,0 +1,333 @@
+{
+ "file": "s062.json",
+ "results": [
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Which side of the crest to climb",
+   "verdict": "fixed",
+   "correct_value": "Lower ridge: on or right (south) of the crest, detouring about 100 ft right past the drop-off crag; from the small headwall below the false summits the line goes LEFT, and drifting right up there is what leads into harder Class 4-5 ground.",
+   "evidence": "Three independent parties put the lower west ridge on or right/south of the crest: one route description moves about 100 ft right of the crest past a drop-off crag, then climbs back left to a small headwall started on its left; a 2014 trip report stayed on or south of the crest on the lower ridge; a second trip report says the route follows the crest with detours mostly right, bypasses a pinnacle on the right two-thirds up, and takes the upper wall on the left via a down-sloping ledge. A fourth account's 'stay left, going right is harder' refers to the approach to the false summits. So 'stay left' is the upper-ridge rule, not the whole ridge, and 'south/left' was self-contradictory (south is climber's right on this eastbound ridge).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-twin-sister-w-ridge",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://stevensong.com/usa/washington/north-twin-sister/",
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the key beta repeated across trip reports is to stay LEFT (climber's left) on the crest; drifting right leads toward false summits and unintentional Class 4-5 terrain on loose, exposed rock.",
+     "replace": "the lower ridge goes on or just right (south) of the crest, but from the small headwall below the false summits stay LEFT (climber's left); drifting right up there leads toward false summits and unintentional Class 4-5 terrain on loose, exposed rock."
+    },
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "face",
+     "path": [],
+     "find": "West Ridge (stay-left / south-of-crest line)",
+     "replace": "West Ridge (right of the crest low, left of it near the false summits)"
+    },
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "staying south/left of the crest through",
+     "replace": "keeping on or south (climber's right) of the crest low down and left of it at the headwall, through"
+    },
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE ONE PIECE OF BETA THAT REPEATS IN EVERY ACCOUNT, AND IT IS THE FOG TEST FOR THE RIDGE ITSELF: STAY LEFT — CLIMBER'S LEFT — ON THE CREST. Cairns mark a Class 3 line that way. Drifting RIGHT leads to false summits",
+     "replace": "THE FOG TEST FOR THE RIDGE ITSELF: LOW ON THE RIDGE THE LINE RUNS ON OR JUST RIGHT OF THE CREST; FROM THE SMALL HEADWALL BELOW THE FALSE SUMMITS, STAY LEFT — CLIMBER'S LEFT. Cairns mark a Class 3 line that way. Drifting RIGHT up there leads to false summits"
+    },
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "find": "Drifting right on the crest into unintended Class 4-5 on loose, exposed rock",
+     "replace": "Drifting right near the false summits into unintended Class 4-5 on loose, exposed rock"
+    },
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "hazards",
+      2
+     ],
+     "find": "The same drift-right-into-Class-5 trap on the ridge crest",
+     "replace": "The same drift-right-into-Class-5 trap near the false summits"
+    },
+    {
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which side of the crest to climb",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "On the crest, STAY CLIMBER'S LEFT; drifting right puts you on false summits",
+     "replace": "Low on the ridge the line runs on or just right of the crest; from the headwall below the false summits STAY CLIMBER'S LEFT, because drifting right there puts you on false summits"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Aspect/face vs route name",
+   "verdict": "fixed",
+   "correct_value": "The summit scramble is on Old Snowy's north-west ridge: the PCT (Old Snowy alternate) climbs the north-west ridge to its ~7,600 ft high point, and an unsigned path follows the ridge south to the summit. aspect NW / face 'Northwest shoulder' are right; the south-ridge wording is wrong.",
+   "evidence": "A 2017 trip report says the PCT reaches Old Snowy's northwest ridge, splits, and the alternate climbs the ridge to the PCT's Washington high point near 7,600 ft, from which an unmarked path leads south along the ridge (the north ridge) to the summit. A hiking field guide independently says to follow the PCT to its ~7,650 ft crest and then follow the top of the ridge south on an unsigned trail. A 2023 trip report reached the summit 'via the steeper northern section'. The route NAME ('South Ridge / PCT approach') cannot be changed under these rules and remains the one outlier; the owner should rename it (e.g. 'Northwest Ridge / PCT approach'). descent_text's 'South Ridge/PCT route' only repeats that name and is left for the rename.",
+   "sources": [
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.oregonhikers.org/field_guide/Old_Snowy",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-04.6246660137",
+    "https://www.backpacker.com/trips/pacific-crest-trail-best-weekend-goat-rocks-crest-wa/"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "switchbacks up scree/talus on Old Snowy's south side to the summit;",
+     "replace": "switchbacks up scree/talus to the northwest ridge and follows it south to the summit;"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "increasingly exposed sidehill terrain below Old Snowy's south ridge -",
+     "replace": "increasingly exposed sidehill terrain on Old Snowy's west flank -"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "toward a rocky saddle on Old Snowy's south ridge; take it",
+     "replace": "toward a rocky saddle on Old Snowy's northwest ridge; take it"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "find": "Climbers' path to the south-ridge saddle",
+     "replace": "Climbers' path to the northwest-ridge saddle"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "toward a rocky saddle on Old Snowy's south ridge;",
+     "replace": "toward a rocky saddle on Old Snowy's northwest ridge;"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "the unmarked climbers' path to the south ridge",
+     "replace": "the unmarked climbers' path to the northwest ridge"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "exposed sidehill below Old Snowy's south ridge.",
+     "replace": "exposed sidehill on Old Snowy's west flank."
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "toward a rocky saddle on Old Snowy's south ridge.",
+     "replace": "toward a rocky saddle on Old Snowy's northwest ridge."
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Aspect/face vs route name",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "via PCT/south ridge",
+     "replace": "via the PCT and northwest ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Glacier crossing on the route",
+   "verdict": "fixed",
+   "correct_value": "The summit route does not cross the Packwood Glacier: the main PCT crosses it beyond the split, while the summit path leaves via the higher alternate trail that climbs Old Snowy's ridge. The crevasses panel ('no glacier travel') is correct; the lingering hazard is the snowfield on the PCT sidehill before the turn.",
+   "evidence": "A 2017 trip report says that at the northwest ridge the PCT splits, the main PCT traversing Old Snowy's north slopes above and on the Packwood Glacier while the alternate climbs the ridge toward the summit path. A hiking forum thread independently advises that a party wanting to avoid the Packwood crossing can take the trail uphill toward Old Snowy instead, and a PCT section guide calls the alternate the access trail for the Old Snowy summit, running above the regular trail with its glacier patch. The snowfield the summit route does meet is on the PCT sidehill before the turn, which the row already describes elsewhere.",
+   "sources": [
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=12240",
+    "https://www.backpacker.com/trips/pacific-crest-trail-best-weekend-goat-rocks-crest-wa/"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Glacier crossing on the route",
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "find": "early/mid-season snow and old glacier ice on the Packwood Glacier PCT crossing",
+     "replace": "early/mid-season snow on the PCT sidehill traverse below the summit turnoff"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Glacier crossing on the route",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "(persistent snow on the PCT alternate and the Packwood Glacier crossing)",
+     "replace": "(persistent snow on the PCT sidehill traverse and the climb up to the summit path)"
+    }
+   ]
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New sources still give no car-to-car gain for Osceola alone. One route page gives about 2,100 ft of gain each way between Slate Pass and Lake Doris plus about 1,700 ft from camp to the summit, but adding those is a computed total, which is not allowed; other trip totals (7,300 ft, 10,600 ft, 15,000 ft) include Rolo, Carru or more peaks. A GPS-recorded car-to-car gain for an Osceola-only trip via Freds Pass would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/",
+    "https://yellowleaf.org/scramble/g/r/2012-09-22-25-osceola-carru-rollo.html",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Distance to Lake Doris camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two independent trip reports (2021 and 2024) put the Eureka Creek trail junction about 10 miles from Slate Pass, matching the row's waypoint at mile 10, with Freds Lake, the pass and Lake Doris beyond it, so the itinerary's 10.5 miles to camp looks too short. But the full distance still disagrees: one route page gives 11.8 miles to Lake Doris, while the row's approach/waypoints give 13; no source states 13, and no two agree on a single figure. A GPS track distance from Slate Pass to Lake Doris via Freds Pass would settle it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-07-05-0271992606",
+    "https://hike2hike.com/summits/osceola-and-carru-north-cascades-washington/",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Lake Doris vs Lake Dorothy",
+   "verdict": "fixed",
+   "correct_value": "'Dorothy Lake' is a misnaming of Lake Doris; there is no separate Dorothy Lake at Shellrock Pass. The two camps are Lake Doris and Shellrock Pass.",
+   "evidence": "The multi-day traverse route page lists its camps as 'Dorothy Lake and Shellrock Pass' while its own Day 1 camp is Lake Doris (6,975 ft), i.e. it uses Dorothy for Doris. A 2016 trip report calls the lake above Freds Lake 'Lake Dorothy' and a commenter corrects it to Lake Doris. OpenStreetMap has Lake Doris (48.822, -120.592) and no Dorothy Lake anywhere in Okanogan County; the state's only 'Dorothy Lake' record is in King County. Other parties (2005, 2021, 2024) camped at Lake Doris / near Shellrock Pass.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://drdirtbag.com/2016/07/20/osceola/",
+    "https://www.openstreetmap.org/way/1080843259",
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/dorothy-lake",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/"
+   ],
+   "patches": [
+    {
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Lake Doris vs Lake Dorothy",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Camp at Lake Doris/Freds Pass or Dorothy Lake/Shellrock Pass to combine",
+     "replace": "Camp at Lake Doris or near Shellrock Pass to combine"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Rappels on the south side of the Otto-Himmel col",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No rappels in early season, when snow fills the gully below the south side of the col; later in the summer the snow melts back and parties rappel the top of the gully (chockstone/moats) from fixed anchors before kicking down the remaining snow.",
+   "evidence": "A route page for the neighbouring Himmelhorn climb, which uses the same gully from Crescent Creek Basin to the Himmel-Otto col, says the gully is all snow early season but by late season has icy snow, chossy moats and an overhanging boulder near the top, and that descent is trivial early but rap anchors in the moats may be needed late. An August traverse party rappelled from three anchors on the south side of the col before kicking down the snow finger, and the 2017 first-ascent party rappelled from a station above a giant chockstone in the same gully. So 'none required' is only true in early season.",
+   "sources": [
+    "https://www.mountainproject.com/route/122905014/wild-hair-crack",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+    "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Rappels on the south side of the Otto-Himmel col",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "None required on the standard south-side descent — the east ridge is normally downclimbed to the col.",
+     "replace": "None on the east ridge, which is normally downclimbed to the col. The south-side gully below the col needs none in early season while snow fills it; later in the summer, as the snow melts back, parties rappel the chockstone and moats at its top from fixed anchors before kicking down the remaining snow."
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Rappels on the south side of the Otto-Himmel col",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Scout the crossing on the way up and remember where it was.",
+     "replace": "Scout the crossing on the way up and remember where it was; late in the season parties rappel this upper section from fixed anchors."
+    }
+   ]
+  }
+ ]
+}

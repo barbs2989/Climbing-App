@@ -1,0 +1,967 @@
+{
+ "file": "r722.json",
+ "results": [
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Which slope of Plummer the route climbs",
+   "verdict": "fixed",
+   "correct_value": "North slopes (from the tarn shelf, the boot path climbs Plummer's north side).",
+   "evidence": "Wikipedia (Denman Peak) says the climbers' path traverses the north slope of Plummer; the tarn sits on Plummer's north flank and a guide describes branching right past the saddle to the tarn shelf, then a sharp left uphill to the summit, which from the north flank climbs the north side. aspect, face, beta, approach and baseFinding already say north; only climbing_route and descent_text said southeast.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Denman_Peak",
+    "https://thefroggyadventures.com/plummer-peak-mount-rainier/",
+    "https://www.summitpost.org/plummer-peak/151691"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the boot path climbing the open, rocky southeast-facing slopes",
+     "replace": "the boot path climbing the open, rocky north-facing slopes",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Which slope of Plummer the route climbs"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "facing outward on the steeper southeast slope",
+     "replace": "facing outward on the steeper north slope",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Which slope of Plummer the route climbs"
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Round-trip time",
+   "verdict": "fixed",
+   "correct_value": "About 3 hours car to car (2-3 hours for most parties).",
+   "evidence": "One hiking guide gives about 3 hours for the 3.2-mile out-and-back; a separate hike report gives a 2-3 hour trip for about 2.8 miles and 1,470 ft; another route page says it can easily be done in 5 hours or less, consistent with ~3 h. turnaround (2-3 h) and partner card (2.5-3 h) already agreed; timing, itinerary hours, schedule and notes said 4-5 h. summitTimeHrs held the car-to-car total, so it is nulled rather than recomputed.",
+   "sources": [
+    "https://thefroggyadventures.com/plummer-peak-mount-rainier/",
+    "https://peakfever.com/hike-info-03.php",
+    "https://www.summitpost.org/plummer-peak/151691"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 4.5,
+     "value": 3,
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 4.5,
+     "value": null,
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "hrs"
+     ],
+     "expect": 4.5,
+     "value": 3,
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "hours"
+     ],
+     "expect": 4.5,
+     "value": 3,
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Most parties are back at the car in well under 5 hours.",
+     "replace": "Most parties are back at the car in about 3 hours.",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "time"
+     ],
+     "find": "+2.5-3 hr",
+     "replace": "+2.25 hr",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "time"
+     ],
+     "find": "+4.5 hr",
+     "replace": "+3 hr",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "Round trip typically finishes in 4-5 hours.",
+     "replace": "Round trip typically takes about 3 hours.",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 4-5 hours round trip",
+     "replace": "roughly 3 hours round trip",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Round-trip time"
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Summit size",
+   "verdict": "fixed",
+   "correct_value": "Small summit (about 50 x 15 ft).",
+   "evidence": "The summit is described as a 50 x 15 ft patch of rock on one route page, and another hiking guide calls Plummer a small summit. beta, baseFinding and the itinerary schedule (\"small summit patch\") agree; only the summit waypoint note said broad.",
+   "sources": [
+    "https://www.summitpost.org/plummer-peak/151691",
+    "https://www.10adventures.com/hikes/mount-rainier-national-park/plummer-peak-hike/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "Broad rocky summit",
+     "replace": "Small rocky summit",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Summit size"
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Direction of paths at Pinnacle Saddle",
+   "verdict": "fixed",
+   "correct_value": "Arriving at the saddle, Plummer (and beyond it Denman) is right/west; Pinnacle and The Castle are left/east. At the tarn shelf the straight fork goes toward Denman and Plummer is left/uphill.",
+   "evidence": "Guides say to continue past the saddle and take a path branching right (west) toward Plummer, reach the tarn shelf, then turn sharply left uphill to Plummer; a hike report also goes westward (rightward) from the saddle. Denman Peak lies west of Pinnacle (46.7572, -121.7433) and is reached by a climbers' path across Plummer's north slope, so Denman is west, not east, of the saddle; Pinnacle is east.",
+   "sources": [
+    "https://thefroggyadventures.com/plummer-peak-mount-rainier/",
+    "https://peakfever.com/hike-info-03.php",
+    "https://en.wikipedia.org/wiki/Denman_Peak",
+    "https://en.wikipedia.org/wiki/Pinnacle_Peak_(Lewis_County,_Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "climber's boot path continues right/east to Pinnacle, left/west toward Plummer",
+     "replace": "climber's boot path continues left/east to Pinnacle, right/west toward Plummer",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Direction of paths at Pinnacle Saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "unmaintained user paths fork east toward Denman Peak/The Castle and west toward Plummer Peak",
+     "replace": "unmaintained user paths fork east toward Pinnacle Peak/The Castle and west toward Plummer and Denman peaks",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Direction of paths at Pinnacle Saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "fork east toward Denman and The Castle and west toward Plummer",
+     "replace": "fork east toward Pinnacle and The Castle and west toward Plummer and Denman",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Direction of paths at Pinnacle Saddle"
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Pinnacle Saddle pin location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit pin (46.753364, -121.739524) matches the published Plummer summit coordinate, and Pinnacle Peak is at about -121.7326, so the Pinnacle-Plummer saddle lies east of Plummer; the saddle pin sits ~80 m north of the summit and is misplaced. Its stored elevation (5,920 ft) and distance (1.25 mi) match the saddle as described, so the fault is the pin coordinate, which is out of scope here.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Plummer_Peak",
+    "https://en.wikipedia.org/wiki/Pinnacle_Peak_(Lewis_County,_Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Total gain",
+   "verdict": "fixed",
+   "correct_value": "About 1,500 ft of gain.",
+   "evidence": "A hiking guide gives roughly 1,500 ft of gain for the 3.2-mile round trip and a hike report gives 1,470 ft; gain_ft, the itinerary and waypoints already say 1,500. Only the partner card said 1,050-1,450.",
+   "sources": [
+    "https://thefroggyadventures.com/plummer-peak-mount-rainier/",
+    "https://peakfever.com/hike-info-03.php"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~1,050-1,450 ft gain",
+     "replace": "~1,500 ft gain",
+     "id": "wa_plummer_peak_r1",
+     "fact": "Total gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Overnight camping",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is between the access card (no camping along the Pinnacle Peak Trail) and the bivy list's Reflection Lakes winter snow camp; bivy[] is owned by the camping clean-up. Cougar Rock is a drive-in campground (serves the route as a base); the Reflection Lakes snow camp is a winter-only permitted camp at the trailhead, not on the trail.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "fact": "Summit-block rappel anchor",
+   "verdict": "fixed",
+   "correct_value": "Rappel from the slung block/rock horn with tat and rings; the old bleached snag is dead and ageing and should not be relied on.",
+   "evidence": "An older route page says to rap off the old bleached snag \"still solid ... for now\"; a 2024-era route page offers the snag or a slung block; a later club trip report says references to the old bleached snag are not current (dead and sketchy) and the rappel station is now a large rock horn on the south side; another report notes a dead tree many parties used and a horn with newer slings and rap rings. All agree the snag is old and dead and the horn/block with rings is the current station.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-6",
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-5"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "from the bleached snag or the slung block with rings;",
+     "replace": "from the slung block with rings (the old bleached snag beside it is dead and ageing; do not rely on it);",
+     "id": "wa_fantasy_falls",
+     "fact": "Summit-block rappel anchor"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "from the bleached snag or the slung block with tat and rings at the top;",
+     "replace": "from the slung block with tat and rings at the top (the old bleached snag beside it is dead and ageing; do not rely on it);",
+     "id": "wa_fantasy_falls",
+     "fact": "Summit-block rappel anchor"
+    }
+   ]
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "fact": "Face height vs approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is 3 pitches of 50 m, 50 m and 30 m (about 425 ft of climbing) finishing on the 6,971 ft summit, so the base of the ice should sit well above ~6,000 ft; from a ~4,550 ft trailhead that implies roughly 2,000 ft to the base, not ~1,500 ft. No source was found stating the car-to-base gain, so the \"1,500 ft\" figure cannot be replaced with a sourced value.",
+   "sources": [
+    "https://www.mountainproject.com/route/123494402/fantasy-falls",
+    "https://www.nps.gov/mora/planyourvisit/bench-snow-lake-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Rappel anchor (bleached snag)",
+   "verdict": "fixed",
+   "correct_value": "Rappel from the slung rock horn on the south side; the old bleached snag is dead and ageing and should not be relied on.",
+   "evidence": "An older route page says to belay and rap off the old bleached snag \"still solid ... for now\"; a later club trip report says snag references are not current (dead and sketchy) and the station is now a large rock horn on the south side of the block; another report describes a horn with newer slings and rap rings as the alternative to the dead tree. All agree the snag is old/dead; the horn is the current station.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-6",
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-5",
+    "https://www.mountainproject.com/route/119135747/the-roof"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "from the bleached snag on top of the summit block.",
+     "replace": "from the slung rock horn on the south side of the summit block; the old bleached snag is dead and ageing; do not rely on it.",
+     "id": "wa_classic_route_2",
+     "fact": "Rappel anchor (bleached snag)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(old bleached snag)",
+     "replace": "(slung rock horn; the old bleached snag is dead and ageing; do not rely on it)",
+     "id": "wa_classic_route_2",
+     "fact": "Rappel anchor (bleached snag)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Check the bleached snag anchor's condition before weighting it",
+     "replace": "Rappel from the slung rock horn; the old bleached snag is dead and ageing; do not rely on it",
+     "id": "wa_classic_route_2",
+     "fact": "Rappel anchor (bleached snag)"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "Aging wooden-snag rappel anchor - inspect before trusting it",
+     "replace": "Old wooden snag on the summit block is dead and ageing - rappel from the rock horn instead",
+     "id": "wa_classic_route_2",
+     "fact": "Rappel anchor (bleached snag)"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Rope length",
+   "verdict": "fixed",
+   "correct_value": "A 30 m rope usually covers the lead and the ~50 ft rappel, but can come up just short depending on the rappel line and the moat; 35-40 m removes the doubt.",
+   "evidence": "Route pages and a forum thread say a 30 m rope is adequate for the lead and rappel and 35 m is plenty; one route page says 40 m is plenty for the rap. One trip report found a 30 m rope fell short on one station, and another carried 60 m after hearing a 30 m rappel may not reach the ground. So 30 m is usually but not always enough.",
+   "sources": [
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.mountainproject.com/forum/topic/114778842/beta-on-unicorn-peak-in-the-tatoosh",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm",
+    "https://www.hippohamster.com/posts/unicorn-peak",
+    "https://www.mountainproject.com/route/119135747/the-roof"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "a single 30m rope is more than sufficient.",
+     "replace": "a single 30m rope usually suffices, though it can come up just short on the rappel.",
+     "id": "wa_classic_route_2",
+     "fact": "Rope length"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "A 30m rope covers both the lead and the rappel",
+     "replace": "A 30m rope covers the lead and usually the rappel; 35-40m removes any doubt",
+     "id": "wa_classic_route_2",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Number of lines on the summit block",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Three named rock lines (The Roof, Classic Route, Open Book) among \"three or four\" established lines on the south face.",
+   "evidence": "A trip report says there are three or four established routes on the ~50 ft south face, and the route database lists three named rock lines on the block (plus an ice route on the northwest face). \"~4 lines\" and \"three named lines\" are both approximations of the same fact.",
+   "sources": [
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.mountainproject.com/area/117385903/unicorn-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Park entrance pass",
+   "verdict": "fixed",
+   "correct_value": "Mount Rainier NP entrance pass (or America the Beautiful pass) required.",
+   "evidence": "The park charges a $30 per-vehicle 7-day entrance pass and the route row itself lists that fee in parking_pass and notes; a hiking guide for the same area also states the entrance pass is required. passRequired \"None\" was the outlier.",
+   "sources": [
+    "https://visitrainier.com/park-entrances/",
+    "https://thefroggyadventures.com/plummer-peak-mount-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "None",
+     "value": "Mount Rainier National Park entrance pass or America the Beautiful interagency pass.",
+     "id": "wa_classic_route_2",
+     "fact": "Park entrance pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Gain from the trailhead to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "Snow Lake is about 1-1.25 mi from the trailhead with roughly 600-700 ft of gain ROUND TRIP (about 300-370 ft of up-and-down each way); the lake is only ~130-185 ft above the trailhead.",
+   "evidence": "The park service gives the Bench and Snow Lake trail as 2.5 mi round trip with 700 ft of elevation gain, and another trail guide gives 2.5 mi round trip, 610 ft gain and a 4,725 ft high point. The ~700 ft is the round-trip cumulative figure, not the one-way climb to the lake.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/bench-snow-lake-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 1 mile, gaining roughly 700 ft, to Snow Lake",
+     "replace": "about 1 mile, with roughly 350 ft of up-and-down, to Snow Lake",
+     "id": "wa_classic_route_2",
+     "fact": "Gain from the trailhead to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Rappel anchor (bleached snag)",
+   "verdict": "fixed",
+   "correct_value": "Rappel from the shared block/horn with tat and rings; the old bleached snag is dead and ageing and should not be relied on.",
+   "evidence": "A club trip report says snag references are not current (dead and sketchy) and the rappel station is now a large rock horn; older route pages describe the snag as old (\"still solid ... for now\") beside a slung block with tat and rings shared by the routes. All agree the snag is old/dead and the block with rings is the shared station.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-6",
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.mountainproject.com/route/119176566/open-book",
+    "https://www.mountainproject.com/route/119135747/the-roof"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "a block with tat and rings, or the bleached snag.",
+     "replace": "a block with tat and rings (the old bleached snag beside it is dead and ageing; do not rely on it).",
+     "id": "wa_open_book_2",
+     "fact": "Rappel anchor (bleached snag)"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Which side of the summit block the route climbs",
+   "verdict": "fixed",
+   "correct_value": "Open Book starts about 50 ft to the RIGHT (east) of the Classic Route, so from the base of the horn stay climber's-right/east.",
+   "evidence": "The route page places the start at two wide left-leaning cracks about 50 ft right of the Classic Route's base, climbing up and left to the shared anchor; a trip report describes going far right, starting with class 4, then up left into a corner system. Facing the south face, right is east, so \"climber's-left/east\" was self-contradictory; left/right is fixed. Whether the line faces south-east or east was not settled by a second source and is left as written.",
+   "sources": [
+    "https://www.mountainproject.com/route/119176566/open-book",
+    "https://www.mountainproject.com/forum/topic/114778842/beta-on-unicorn-peak-in-the-tatoosh",
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "stay slightly climber's-left/east before starting",
+     "replace": "stay slightly climber's-right/east before starting",
+     "id": "wa_open_book_2",
+     "fact": "Which side of the summit block the route climbs"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Rack (cam sizes)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Large cams (#3-#4 Camalot size) for the wide cracks.",
+   "evidence": "The route page says the big cracks take #3 or #4 cams \"but not much else\". detailed_rack, hazards, watch_out and baseFinding all agree the wide cracks want large cams; only rack[0] and sling_rack.cams said small-medium.",
+   "sources": [
+    "https://www.mountainproject.com/route/119176566/open-book"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "1-2 small-medium cams",
+     "value": "1-2 large cams (#3-#4 Camalot size)",
+     "id": "wa_open_book_2",
+     "fact": "Rack (cam sizes)"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "find": "1-2 small-to-medium cams",
+     "replace": "1-2 large cams (#3-#4 Camalot size)",
+     "id": "wa_open_book_2",
+     "fact": "Rack (cam sizes)"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Park entrance pass",
+   "verdict": "fixed",
+   "correct_value": "Mount Rainier NP entrance pass (or America the Beautiful pass) required.",
+   "evidence": "The park charges a $30 per-vehicle 7-day entrance pass and the row lists that fee in parking_pass and notes; a hiking guide in the same area states the entrance pass is required.",
+   "sources": [
+    "https://visitrainier.com/park-entrances/",
+    "https://thefroggyadventures.com/plummer-peak-mount-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "None",
+     "value": "Mount Rainier National Park entrance pass or America the Beautiful interagency pass.",
+     "id": "wa_open_book_2",
+     "fact": "Park entrance pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Gain from the trailhead to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "Snow Lake is about 1-1.25 mi from the trailhead with roughly 600-700 ft of gain ROUND TRIP (about 300-370 ft of up-and-down each way); the lake is only ~130-185 ft above the trailhead.",
+   "evidence": "The park service gives the Bench and Snow Lake trail as 2.5 mi round trip with 700 ft of elevation gain, and another trail guide gives 2.5 mi round trip, 610 ft gain and a 4,725 ft high point. The ~700 ft is the round-trip cumulative figure, not the one-way climb to the lake.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/bench-snow-lake-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "~1 mile (about 700 ft gain) to Snow Lake",
+     "replace": "~1 mile (about 350 ft of up-and-down) to Snow Lake",
+     "id": "wa_open_book_2",
+     "fact": "Gain from the trailhead to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Rappel anchor (bleached snag)",
+   "verdict": "fixed",
+   "correct_value": "Rappel from the slung block/rock horn with tat and rings on the right; the old bleached snag on the left is dead and ageing and should not be relied on.",
+   "evidence": "The route page lists the bleached snag on the left or a slung block on the right; an older page calls the snag old and \"still solid ... for now\"; a later club trip report says snag references are not current (dead and sketchy) and the station is now the rock horn on the south side. All agree the snag is old/dead.",
+   "sources": [
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-6",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-5"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "from either the bleached snag on the left or the slung block with tat and rings on the right,",
+     "replace": "from the slung block with tat and rings on the right (the old bleached snag on the left is dead and ageing; do not rely on it),",
+     "id": "wa_the_roof",
+     "fact": "Rappel anchor (bleached snag)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "- either works for the rappel",
+     "replace": "- rappel from the slung block; the old bleached snag is dead and ageing; do not rely on it",
+     "id": "wa_the_roof",
+     "fact": "Rappel anchor (bleached snag)"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Rope length",
+   "verdict": "fixed",
+   "correct_value": "A 40 m rope (35-40 m) for the ~50 ft rappel; 30 m can come up short.",
+   "evidence": "This route's own page says a 40 m rope is plenty for the rap; a trip report found a 30 m rope fell short on one station and another carried 60 m after hearing a 30 m rappel may not reach; a forum thread says 35 m is plenty. The row's rappels, descent and baseFinding already say 40 m removes the guesswork; rope_length_m and the rack said 30.",
+   "sources": [
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm",
+    "https://www.hippohamster.com/posts/unicorn-peak",
+    "https://www.mountainproject.com/forum/topic/114778842/beta-on-unicorn-peak-in-the-tatoosh"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_length_m",
+     "path": [],
+     "expect": 30,
+     "value": 40,
+     "id": "wa_the_roof",
+     "fact": "Rope length"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "find": "30-35m rope",
+     "replace": "35-40m rope",
+     "id": "wa_the_roof",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Where overnight camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Overnight: the designated Snow Lake sites or the cross-country zone higher in the basin below Unicorn/The Castle, both with a wilderness permit.",
+   "evidence": "Park rules divide the backcountry into designated camps and cross-country zones (camp at least 1/4 mile from roads and trails, 100 ft from water, permit required); a backpacking guide recommends continuing past the designated Snow Lake sites to camp in the backcountry zone below Unicorn Peak or The Castle. The access.rules line limiting camping to the Snow Lake sites was the outlier against overnight_permit and the bivy list.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-guidelines-and-regulations.htm",
+    "https://www.backpacker.com/trips/mount-rainier-national-park-tatoosh-range/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "camp only at the designated Snow Lake sites if overnighting,",
+     "replace": "camp at the designated Snow Lake sites or in the cross-country zone higher in the basin (wilderness permit either way) if overnighting,",
+     "id": "wa_the_roof",
+     "fact": "Where overnight camping is allowed"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Gain from the trailhead to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "Snow Lake is about 1-1.25 mi from the trailhead with roughly 600-700 ft of gain ROUND TRIP (about 300-370 ft of up-and-down each way); the lake is only ~130-185 ft above the trailhead.",
+   "evidence": "The park service gives the Bench and Snow Lake trail as 2.5 mi round trip with 700 ft of elevation gain, and another trail guide gives 2.5 mi round trip, 610 ft gain and a 4,725 ft high point. The ~700 ft is the round-trip cumulative figure, not the one-way climb to the lake.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/bench-snow-lake-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "~1 mile (~700 ft gain) to Snow Lake",
+     "replace": "~1 mile (~350 ft of up-and-down) to Snow Lake",
+     "id": "wa_the_roof",
+     "fact": "Gain from the trailhead to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Summit-block grade",
+   "verdict": "fixed",
+   "correct_value": "The summit block is Class 4 to low 5th at its easiest (lines run easy 5th to 5.6; Classic 5.4).",
+   "evidence": "A route page says the easiest summit-block route is 4th/low 5th class; a trip report calls the horn 30 ft of class 4 to 5.0; the route database lists Open Book easy 5th, Classic 5.4, The Roof 5.6. No source rates it Class 3, so grade and rope_note understated it.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/unicorn_peak/tatoosh_range_105.htm",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm",
+    "https://www.mountainproject.com/area/117385903/unicorn-peak",
+    "https://www.mountainproject.com/forum/topic/114778842/beta-on-unicorn-peak-in-the-tatoosh"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3-4 summit block",
+     "value": "Class 4-low 5th summit block",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Summit-block grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "a short (~50ft) Class 3 scramble/technical step",
+     "replace": "a short (~50ft) Class 4-low 5th technical step",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Summit-block grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Rope",
+   "verdict": "fixed",
+   "correct_value": "A single 30-35 m rope for the one ~50 ft rappel (and any lead); not none, and no double-rope rappel.",
+   "evidence": "A forum thread says a 35 m rope is plenty and 30 m sufficient; route pages say a 30 m rope does the lead and the single ~50 ft rappel; most parties rope up and rappel. descent_text, pro_tips and what_to_bring already agree on 30-35 m for one rappel; rope_type \"none\", pro_needs (60 m, double-rappel) and rappels (\"1-2 raps, 30-60m\") disagreed.",
+   "sources": [
+    "https://www.mountainproject.com/forum/topic/114778842/beta-on-unicorn-peak-in-the-tatoosh",
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "none",
+     "value": "single dynamic",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Rope"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Single 30m rope minimum (60m recommended to reduce rope-stretch concerns on double-rappel descent)",
+     "replace": "Single 30-35m rope for the one short rappel",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Rope"
+    },
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "1-2 raps, 30-60m",
+     "value": "One rappel of about 50 ft off the summit block; a 30-35 m rope is enough.",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Rope"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Gully gain from Snow Lake",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The chute gains far less than 2,500 ft (Snow Lake ~4,685 ft to the west saddle ~6,400 ft is ~1,700 ft).",
+   "evidence": "A route page gives about 2,500 ft of gain for the whole 3-mile outing, so 2,500 ft cannot be the chute alone; the row's waypoints, gain_ft and itinerary agree. The unsupported number is removed rather than replaced with a computed one.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/unicorn_peak/tatoosh_range_105.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Steep chute gaining 2500 ft from Snow Lake to upper basin.",
+     "replace": "Steep chute climbing from Snow Lake to the upper basin.",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Gully gain from Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Distance and gain to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "Snow Lake is about 1 mile in, with only a few hundred feet of up-and-down (~350 ft); the lake sits ~130-185 ft above the trailhead.",
+   "evidence": "The park service gives 2.5 mi round trip and 700 ft gain for the Snow Lake trail; another trail guide gives 2.5 mi round trip, 610 ft gain and puts Snow Lake Camp one mile from the trailhead; a route page and a trip report both say the lake is about one mile in.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/bench-snow-lake-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "http://www.willhiteweb.com/washington_climbing/unicorn_peak/tatoosh_range_105.htm",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to Snow Lake at about 1.3-1.5 miles in (roughly 400-500 ft of the day's gain banked by here)",
+     "replace": "to Snow Lake at about 1-1.25 miles in (only around 350 ft of up-and-down by here)",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Distance and gain to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Trailhead parking capacity and location",
+   "verdict": "fixed",
+   "correct_value": "Pullout about 1.5 mi east of Reflection Lakes, room for about 15-20 cars.",
+   "evidence": "The park service places the trailhead 1.5 miles east of the Reflection Lakes parking area; a trail guide says there is room for 15-20 vehicles and no amenities. road.driveNote already agrees on both.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/bench-snow-lake-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "~2.7 mi east of Paradise/Reflection Lakes",
+     "replace": "~1.5 mi east of Reflection Lakes",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Trailhead parking capacity and location"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The lot holds only ~25 cars",
+     "replace": "The lot holds only ~15-20 cars",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Trailhead parking capacity and location"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 4 (~2.5 mi) is the one-way approach and matches the 2.4 mi one-way in approach and waypoints, so it is not in conflict. The round trip itself is disputed: the itinerary says 4.8 mi, while the route database gives ~6 mi round trip from the Snow Lake trailhead and another page gives 3 miles (one-way); no two sources agree on 4.8, so neither figure is changed.",
+   "sources": [
+    "https://www.mountainproject.com/area/117385903/unicorn-peak",
+    "http://www.willhiteweb.com/washington_climbing/unicorn_peak/tatoosh_range_105.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Summit-block rappel anchor (tree)",
+   "verdict": "fixed",
+   "correct_value": "The old tree/snag is dead and ageing and should not be relied on; parties rappel from the slung rock horn with slings and rings on the south side.",
+   "evidence": "A club trip report says old-snag references are not current (dead and sketchy) and the rappel station is now a large rock horn on the south side; another describes the dead tree used historically and a horn with newer slings and rap rings; an older route page calls the snag old and \"still solid ... for now\".",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-6",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-unicorn-peak-5",
+    "https://www.mountainproject.com/route/117385955/classic-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The traditional anchor is a stout but aging/dead tree at the top of the block; many recent parties instead sling a rock horn",
+     "replace": "The traditional anchor was an aging, dead tree at the top of the block that should no longer be relied on; parties now sling a rock horn",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Summit-block rappel anchor (tree)"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Side of the summit block the approach reaches",
+   "verdict": "fixed",
+   "correct_value": "Traverse east from the west saddle around to the south side of the summit block.",
+   "evidence": "A route page says to approach the summit pinnacle from the south side, and the single rappel goes down the south side of the pinnacle; approach, beta, climbing_route and baseFinding agree.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/unicorn_peak/tatoosh_range_105.htm",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "then around the west side of the summit block",
+     "replace": "then east and around to the south side of the summit block",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Side of the summit block the approach reaches"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Where overnight camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Overnight: the designated Snow Lake sites or the cross-country zone higher in the basin below Unicorn/The Castle, both with a wilderness permit.",
+   "evidence": "Park rules divide the backcountry into designated camps and cross-country zones (camp at least 1/4 mile from roads and trails, 100 ft from water, permit required); a backpacking guide recommends continuing past the designated Snow Lake sites to camp in the backcountry zone below Unicorn Peak or The Castle. The access.rules line limiting camping to the Snow Lake sites was the outlier against overnight_permit and the bivy list.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-guidelines-and-regulations.htm",
+    "https://www.backpacker.com/trips/mount-rainier-national-park-tatoosh-range/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "camp only at the designated Snow Lake sites if overnighting,",
+     "replace": "camp at the designated Snow Lake sites or in the cross-country zone higher in the basin (wilderness permit either way) if overnighting,",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Where overnight camping is allowed"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "wa_north_face_var_right_directisimo",
+ "area_id": "wa_concord_tower",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "Concord south face rappel 1 of 2, about 30 m on a single 60 m rope, to the bolted mid-face station.",
+    "anchor": "summit anchor, Concord Tower",
+    "hazards": [
+     "Keep this south-face line distinct from Concord’s North Face rappels; their stations must not be mixed."
+    ],
+    "lengthM": 30,
+    "station": "The top of Concord Tower, on the south side toward Lexington Tower."
+   },
+   {
+    "n": 2,
+    "notes": "Concord south face rappel 2 of 2, about 30 m, into the Concord-Lexington notch.",
+    "anchor": "bolted mid-face station",
+    "lengthM": 30,
+    "station": "The bolted station partway down Concord’s south face."
+   }
+  ],
+  "rappels": "2 single-rope rappels of about 30 m down the south face from the summit chains to the Concord-Lexington notch, the second from a bolted mid-face station (two ropes make it one). The north face also goes, in three stages, but ropes tend to stick there.",
+  "rappel_count_note": "Two single-rope rappels of roughly 30 m each down the south face, with a bolted station partway down. This is a separate line from the North Face rappels into the Liberty Bell-Concord notch."
+ }
+}

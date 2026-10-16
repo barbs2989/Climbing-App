@@ -1,0 +1,1208 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_fast",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_half_fast",
+   "area_id": "wa_half_moon_crag",
+   "name": "Half Fast",
+   "discipline": "trad",
+   "grade": "5.8+",
+   "grade_system": "yds",
+   "grade_num": 8,
+   "pitches": 1,
+   "length_m": 15,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Toproped by David Whitelaw & Ron Cotman (2004); led ground-up by David Whitelaw, Leland Windham & David Wolfe (September 2006)",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "Locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Heat and dehydration on south face",
+    "Rockfall potential",
+    "Loose rock below"
+   ],
+   "verif": null,
+   "overview": "A solid moderate route with good flow and continuous climbing on slab and crack. Excellent for building confidence.",
+   "beta": "Mix of sport bolts and trad placements. South-facing provides good sun exposure. Straightforward climbing with consistent protection.",
+   "turnaround": "Retreat if conditions deteriorate.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.8+",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 48,
+   "rappels": "1 rappel from a 3-bolt chain anchor",
+   "commitment": "II",
+   "face": "Furthest right on the crag",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Satellite communicator recommended due to poor cell coverage in area.",
+   "descent": "Single rappel down fixed anchors.",
+   "obj_haz": [
+    "reachy moves may be harder for shorter climbers"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.25,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Standard sport rack with 10-12 quickdraws, wired stoppers (sizes 1-4), medium nuts (sizes 1-3), 60m rope, belay device, locking carabiners.",
+   "what_to_bring": [
+    "Water (2L)",
+    "Food and snacks",
+    "Sunscreen and hat",
+    "Layer jacket",
+    "Headlamp",
+    "First aid kit",
+    "Route beta"
+   ],
+   "pro_tips": [
+    "Great warm-up for stronger climbers",
+    "Good flow and positive holds throughout",
+    "Excellent afternoon route when temps moderate"
+   ],
+   "watch_out": [
+    "Solar exposure on south face",
+    "Rockfall hazard from upper parties",
+    "Afternoon heat can be intense"
+   ],
+   "pro_needs": "Lead climber comfortable on 5.8+ with mixed protection (bolts and natural gear). Solid footwork and crack skills.",
+   "best_season": "June to September for dry, warm conditions.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel 85 feet from anchors to ground.",
+   "bail": "Rappel off at any station on the route.",
+   "pitch_detail": [
+    {
+     "grade": "5.8+",
+     "notes": "Slab and crack climbing with positive holds and good gear placements. Well-protected line with bolts and natural anchors throughout.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Day trip with driving and approach totaling 3-4 hours round trip.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "Recreation pass"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling trend with increasing precipitation.",
+    "spring": "Cool with possible precipitation and snow.",
+    "summer": "Warm and relatively dry with occasional thunderstorms.",
+    "winter": "Heavy snow restricts access.",
+    "typical": "Continental mountain climate. Summer highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Approximately 45 minutes to hospital. Helicopter evacuation available. Satellite communication recommended.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": null,
+   "alpine_draws": 8,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Bolted sport, single-pitch; quickdraws only.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Crack"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "half fast",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_astral_projection",
+   "area_id": "wa_half_moon_crag",
+   "name": "Astral Projection",
+   "discipline": "trad",
+   "grade": "5.9-",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Chris Greyell and David Whitelaw, 1987",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "Locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Solar exposure leading to fluid loss",
+    "Loose rock hazard below climb",
+    "Rockfall potential"
+   ],
+   "verif": null,
+   "overview": "A slightly easier variant of the other 5.9 routes, featuring juggy slab and positive edges with excellent protection throughout.",
+   "beta": "Bolted and naturally protected route with good flow. Ideal warm-up climb on the crag. South-facing with reliable protection points.",
+   "turnaround": "Standard prudent turnaround if weather or conditions change.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9-",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 50,
+   "rappels": "1 rappel from chain anchors",
+   "commitment": "II",
+   "face": "Left side of the crag, right of Arctic Rose",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell service unreliable in area; satellite communication device recommended for safety.",
+   "descent": "Single 85-foot rappel from fixed anchors.",
+   "obj_haz": [
+    "offwidth start requires care",
+    "loose bush/vegetation near the start"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.25,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Sport rack with 10-12 quickdraws, wired stoppers (sizes 1-4), medium nuts (sizes 1-3), 60m dynamic rope, rappel device, locking carabiners.",
+   "what_to_bring": [
+    "Water (2L)",
+    "Food/snacks",
+    "Sunscreen and hat",
+    "Wind jacket",
+    "Headlamp",
+    "First aid kit",
+    "Route beta"
+   ],
+   "pro_tips": [
+    "Excellent warm-up route",
+    "Positive holds throughout build confidence",
+    "Perfect introduction to Half Moon Crag for moderates"
+   ],
+   "watch_out": [
+    "Sun and dehydration on south-facing wall",
+    "Rockfall from higher climbing parties",
+    "Heat can be significant in afternoon"
+   ],
+   "pro_needs": "Comfortable leading 5.9- with mix of bolt and natural gear protection. Good slab footwork and basic crack climbing fundamentals.",
+   "best_season": "June through September.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel directly down using fixed anchors at climb exit to return to base.",
+   "bail": "Rappel at any point via anchors on the route.",
+   "pitch_detail": [
+    {
+     "grade": "5.9-",
+     "notes": "Slab with positive edges and pockets. Well-bolted with natural gear placements available. Straightforward climbing with solid protection throughout.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Day trip: 0.5 hour drive, 1.25 hour approach, 1-1.5 hours climbing, 0.5 hour descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "Recreation pass"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling and increasingly wet.",
+    "spring": "Cold with possible snow until June.",
+    "summer": "Dry and warm with occasional afternoon thunderstorms.",
+    "winter": "Heavy snow closes access.",
+    "typical": "Mountain climate with occasional thunderstorms. Summer highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Satellite communicator recommended.",
+    "county": "King County",
+    "rangerStation": "Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": {
+    "cams": "rack to ~3in with doubles in finger/hand sizes",
+    "nuts": "stopper set",
+    "runners": "4-6 slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Trad, single-pitch; 60m rope covers the climb and descent.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "10–12 quickdraws",
+    "Wired stoppers (sizes 1–4)",
+    "Nuts (sizes 1–3)",
+    "Cams to ~3in, doubles in finger/hand sizes",
+    "4–6 slings",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Face",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "astral projection",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_astroglide",
+   "area_id": "wa_half_moon_crag",
+   "name": "Astroglide",
+   "discipline": "trad",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 27,
+   "sort_order": null,
+   "stars": null,
+   "fa": "David Whitelaw and Chris Greyell, 1987",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "4-6 locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Sun exposure and dehydration risk",
+    "Loose rock hazard below",
+    "Rockfall from climbing parties above"
+   ],
+   "verif": null,
+   "overview": "A classic moderate crack and slab route with excellent gear placements and straightforward climbing.",
+   "beta": "Excellent mix of bolted anchors and natural protection points. Slab features positive holds and consistent climbing angle. South-facing receives good sun exposure.",
+   "turnaround": "Descend if weather or conditions change.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 50,
+   "rappels": "1 rappel, using the shared chain anchor atop Astral Projection",
+   "commitment": "II",
+   "face": "Left edge of Refrigerator Crack",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell service unreliable; satellite communicator recommended for emergencies.",
+   "descent": "Single 85-foot rappel from fixed anchors.",
+   "obj_haz": [
+    "blank-looking slab can obscure gear placements",
+    "older bolts at the original anchor"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.5,
+    "summitTimeHrs": 1.75,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Medium sport rack: 10-12 quickdraws for bolts, set of wired stoppers (sizes 1-4) for slab cracks, medium nuts (sizes 1-3), 60m dynamic rope, belay device, 4-6 locking carabiners.",
+   "what_to_bring": [
+    "Water (2L minimum)",
+    "Food and snacks",
+    "Sunscreen and hat",
+    "Wind jacket",
+    "Headlamp (for emergencies)",
+    "First aid kit",
+    "Topo or route beta"
+   ],
+   "pro_tips": [
+    "Great warm-up before harder routes on the crag",
+    "Positive holds make this fun and relatively easy for the grade",
+    "First ascent by two legendary local climbers from 1987"
+   ],
+   "watch_out": [
+    "Sun exposure can dehydrate",
+    "Rockfall hazard from upper parties",
+    "South face can get hot in afternoon"
+   ],
+   "pro_needs": "Lead climber comfortable on 5.9 with mix of bolt and natural gear protection. Good slab footwork and crack climbing fundamentals essential.",
+   "best_season": "June through September for optimal climbing conditions.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel directly down the route using anchors at climb exit.",
+   "bail": "Safe bail points at any belay location via rappel.",
+   "pitch_detail": [
+    {
+     "grade": "5.9",
+     "notes": "Mix of slab and crack with bolted anchors and gear placements. Positive holds and straightforward climbing progression. Well-protected line throughout.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Full day outing: 0.5 hour drive from Seattle, 1.25 hour hike, 1.5-2 hours climbing, 0.5 hour descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "Recreation pass"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling with increasing precipitation.",
+    "spring": "Cool, possible snow until June.",
+    "summer": "Warm and relatively dry with occasional thunderstorms.",
+    "winter": "Heavy snow, restricts access.",
+    "typical": "Continental mountain with moderate precipitation. Summer highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Satellite communicator recommended.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": {
+    "cams": "rack to ~3in",
+    "nuts": "stopper set",
+    "runners": "4-6 slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Trad, single-pitch; 60m rope covers the climb and descent.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "10–12 quickdraws",
+    "Wired stoppers (sizes 1–4)",
+    "Nuts (sizes 1–3)",
+    "Cams to ~3in",
+    "4–6 slings",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Crack",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "astroglide",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_asymptotic",
+   "area_id": "wa_half_moon_crag",
+   "name": "Asymptotic",
+   "discipline": "trad",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 1,
+   "length_m": 18,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Toproped by David Whitelaw & Ron Cotman (2004); led ground-up by David Whitelaw, Leland Windham & David Wolfe (September 2006)",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "12+ quickdraws",
+    "Wired stoppers",
+    "Nuts (sizes 1-2)",
+    "4-6 locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes",
+    "Rappel device"
+   ],
+   "hazards": [
+    "Rockfall potential from parties climbing above",
+    "Sun exposure on south face can lead to dehydration"
+   ],
+   "verif": null,
+   "overview": "The steepest line on Half Moon Crag, featuring sustained slab climbing with positive holds and consistent gear placements.",
+   "beta": "Predominantly bolted with mixed trad protection. Single 60m rope adequate. South-facing provides good sun exposure.",
+   "turnaround": "Descend if weather deteriorates, if conditions look unsafe, or if you are not comfortable with the difficulty.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 55,
+   "rappels": "1 rappel from the route's own bolted anchors",
+   "commitment": "II",
+   "face": "Between Refrigerator Crack and Half Fast",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell service unreliable in crag area beneath Stevens Pass ridge. Satellite communicator recommended for emergencies.",
+   "descent": "Single rappel down the route using fixed anchors at top of climb.",
+   "obj_haz": [
+    "hard, low crux close to the ground"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.25,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Light sport rack with 12+ quickdraws for bolted protection. Bring wired stoppers and medium-sized nuts for occasional slab placements. Single 60m dynamic rope, belay device, 4-6 locking carabiners.",
+   "what_to_bring": [
+    "Water (2L minimum)",
+    "Food and snacks",
+    "Sun protection (sunscreen, hat)",
+    "Layers (wind jacket)",
+    "Headlamp (for emergencies)",
+    "First aid kit",
+    "Topo or phone with beta"
+   ],
+   "pro_tips": [
+    "The huge Refrigerator Crack at the base stays cool even in summer heat",
+    "Start early to avoid afternoon crowds and heat",
+    "South aspect makes this ideal for spring climbing"
+   ],
+   "watch_out": [
+    "Watch for rockfall from higher climbing parties",
+    "Route can be hot on sunny days despite south exposure",
+    "Approach has minimal trail; easy to navigate incorrectly in fog"
+   ],
+   "pro_needs": "Lead climber comfortable on 5.10b slab with bolted protection. Basic trad skills for occasional nut placements helpful but not essential.",
+   "best_season": "June through September provides the most stable and dry conditions. May can be wet, October may have early snow.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rap down from the bolted anchors at the top of the climb using a single 85-foot rappel to the base.",
+   "bail": "Rappel off the route at any belay station.",
+   "pitch_detail": [
+    {
+     "grade": "5.10b",
+     "notes": "Sustained slab climbing with positive edges and consistent crack protection. Mix of bolted anchors and natural gear placements. Ends at fixed anchor at top of crag.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Day trip: 0.5 hour drive from Seattle, 1-1.5 hour approach hike, 1-2 hours for climb and setup, 30 minutes descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "Recreation pass"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling trend, increasing precipitation. September still good, October increasingly wet/snowy.",
+    "spring": "Cool to cold with possible snow above 4000 feet until June.",
+    "summer": "Dry and warm with occasional afternoon thunderstorms. 70-78F highs, minimal precipitation.",
+    "winter": "Heavy snow, sub-freezing temperatures. Road access can be compromised.",
+    "typical": "Continental mountain climate with significant precipitation. Summer highs 70-78F, lows 48-55F. Afternoon winds common.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Approximately 45 minutes to hospital. Helicopter evacuation possible via King County Sheriff Air Support Unit.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": null,
+   "alpine_draws": 10,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Bolted sport, single-pitch (~85ft or less); quickdraws only, no trad rack needed.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "12+ quickdraws",
+    "Wired stoppers and nuts (optional, for occasional slab placements)",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Sustained",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "asymptotic",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_artic_rose",
+   "area_id": "wa_half_moon_crag",
+   "name": "Artic Rose",
+   "discipline": "trad",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "David Whitelaw and Chris Greyell, 1987",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "8-10 quickdraws",
+    "Wired stoppers (sizes 1-3)",
+    "Nuts (sizes 1-2)",
+    "Locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Solar heat and dehydration risk",
+    "Rockfall hazard from upper parties",
+    "Potential for loose rock below"
+   ],
+   "verif": null,
+   "overview": "The easiest route on Half Moon Crag, offering perfect intro to the area with positive holds and excellent protection throughout.",
+   "beta": "Well-bolted with good natural gear opportunities. Ideal first route on the crag. South-facing provides good sun exposure.",
+   "turnaround": "Safe escape via rappel at any belay station on the route.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 45,
+   "rappels": "1 rappel from chain anchors (shared with Astral Projection)",
+   "commitment": "I",
+   "face": "Left-hand edge of the crag",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell coverage unreliable; carry satellite communicator if available.",
+   "descent": "Single 85-foot rappel from fixed anchors.",
+   "obj_haz": [
+    "runout climbing in the middle section",
+    "loose stacked blocks low on the route"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 2.75,
+    "summitTimeHrs": 1,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Light sport rack with 8-10 quickdraws, wired stoppers (sizes 1-3), few medium nuts, 60m rope, rappel device, carabiners.",
+   "what_to_bring": [
+    "Water (2L)",
+    "Food and energy snacks",
+    "Sunscreen and hat",
+    "Wind layer jacket",
+    "Headlamp for emergencies",
+    "Basic first aid kit",
+    "Route beta or topo"
+   ],
+   "pro_tips": [
+    "Perfect beginner route on the crag for introducing partners",
+    "Great views from the start of the climb",
+    "Positive holds throughout build climber confidence",
+    "Local classic since first ascent in 1987"
+   ],
+   "watch_out": [
+    "Sun exposure can be intense on afternoon",
+    "Rockfall from parties climbing above",
+    "South-facing wall can get very hot"
+   ],
+   "pro_needs": "Comfortable on 5.6 slab with bolted protection. Good footwork and basic crack skills helpful.",
+   "best_season": "June through September for best weather and access.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel directly down the fixed anchors to return to base.",
+   "bail": "Rappel off route at any point.",
+   "pitch_detail": [
+    {
+     "grade": "5.6",
+     "notes": "Positive slab with easy crack features. Well-bolted and naturally protected throughout entire route. Straightforward progression with good holds and solid protection.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Casual day trip: 0.5 hour drive, 1.25 hour approach, 1 hour climbing, 0.5 hour descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "Recreation pass"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling trend with increasing precipitation. September still climbs well, October increasingly wet/snowy.",
+    "spring": "Cool with potential snow above 4000 feet until June.",
+    "summer": "Warm and mostly dry with rare thunderstorms in afternoon.",
+    "winter": "Heavy snow restricts access and may close Tye Road.",
+    "typical": "Moderate temperature with occasional summer storms. Highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Approximately 45 minutes to nearest hospital. Helicopter evacuation available through King County Sheriff Air Support Unit. Satellite communicator strongly recommended for any backcountry climbing.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+    "sheriffDispatch": "911 - King County Sheriff"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": {
+    "cams": "small-to-mid rack to ~3in",
+    "nuts": "stopper set",
+    "runners": "4-6 shoulder-length slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Trad, single-pitch (~85ft or less); one 60m rope covers the climb and lower/rappel.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "8–10 quickdraws",
+    "Wired stoppers, small set",
+    "Cams, small-to-mid rack to ~3in",
+    "4–6 shoulder-length slings",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Face",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "artic rose",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

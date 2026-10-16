@@ -1,0 +1,1813 @@
+{
+ "file": "r640.json",
+ "results": [
+  {
+   "id": "wa_a_little_something",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_a_little_something",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_a_little_something",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_a_little_something",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_a_little_something",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_notta_slab",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_notta_slab",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_notta_slab",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_notta_slab",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_notta_slab",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_firearms",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_firearms",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_firearms",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_firearms",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_firearms",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_firearms",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_firearms",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bachelor_party",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_bachelor_party",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_moe",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_moe",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_moe",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_moe",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_moe",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_moe",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_moe",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_moe",
+   "fact": "Parking distance past Middle Point Ridge Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Megadike South parking is 1.2 mi past the Middle Point Ridge trailhead (1.5 mi is Minidike)",
+   "evidence": "The Dikes area page lists parking at 1.2 mi past the trailhead for Megadike South and 1.5 mi for Minidike; the Dikes climbing guide says to drive 1.2 mi past the Middle Point Ridge trailhead and park just before the bridge for the south megadike. The row's approach and trailhead waypoint already say 1.2 mi.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_moe",
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "the dikes cross the road about 1.5 miles above",
+     "replace": "Megadike South crosses the road about 1.2 miles above"
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_thunder",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_morning_thunder",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_face_farce",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources. The chip's inversion note belongs to The Castle (south-facing), not this shaded Megadike North line, and best_season never explained it, so the chip is reduced to May-Oct.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "May-Oct (occasional winter access during inversions; see bestSeason)",
+     "value": "May-Oct"
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "USFS season of use for the access road/trail is April-November",
+     "replace": "Climbing runs roughly May through October, sometimes from April"
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "; becomes climbable per the official April-November USFS season of use",
+     "replace": "; climbing usually starts in May"
+    },
+    {
+     "id": "wa_face_farce",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "winter"
+     ],
+     "find": "at this elevation; road not maintained.",
+     "replace": "at this elevation, though the road stays in use for the ski area."
+    }
+   ]
+  },
+  {
+   "id": "wa_face_farce",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "By the row's own length (11 m / 35 ft) a 60 m rope is ample, and rope_length_m 70 plus the rope_note are a crag-wide default. The route page could not be fetched to confirm the route length (web tools hit their limit), so no patch. Also the rope_note's '~120 ft' walls is supported by a 120 ft two-pitch Megadike North route (Slabtastic), which contradicts descent_text's 'longest route here is 100 ft' — see discovered item.",
+   "sources": [
+    "https://www.mountainproject.com/route/117792017/unk"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_face_farce",
+   "fact": "Megadike North longest route / all single-pitch (descent_text vs rope_note)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "descent_text says every Megadike North route is single-pitch and the longest is 100 ft, while rope_note says walls run to ~120 ft; Slabtastic on Megadike North is listed as 120 ft, 2 pitches (and Lady Slipper in this batch is 2 pitches). Only one outside source reached, so not patched.",
+   "sources": [
+    "https://www.mountainproject.com/route/117792017/unk"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_red_zinger",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_red_zinger",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_red_zinger",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_red_zinger",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_red_zinger",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_cordwood",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_cordwood",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_cordwood",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_cordwood",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_cordwood",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_monkey_on_a_woodpile",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    },
+    {
+     "id": "wa_monkey_on_a_woodpile",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "winter"
+     ],
+     "find": "Often snowbound, road unmaintained",
+     "replace": "Often snowbound on the crags; the road stays in use for the ski area"
+    }
+   ]
+  },
+  {
+   "id": "wa_internal_combustion",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_internal_combustion",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_internal_combustion",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_safety_dance",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_safety_dance",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_safety_dance",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_safety_dance",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_safety_dance",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_safety_dance",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_safety_dance",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_safety_dance",
+   "fact": "Parking distance past Middle Point Ridge Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Megadike South parking is 1.2 mi past the Middle Point Ridge trailhead (1.5 mi is Minidike)",
+   "evidence": "The Dikes area page lists parking at 1.2 mi past the trailhead for Megadike South and 1.5 mi for Minidike; the Dikes climbing guide says to drive 1.2 mi past the Middle Point Ridge trailhead and park just before the bridge for the south megadike. The row's approach and trailhead waypoint already say 1.2 mi.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_safety_dance",
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "the dikes cross the road about 1.5 miles above",
+     "replace": "Megadike South crosses the road about 1.2 miles above"
+    }
+   ]
+  },
+  {
+   "id": "wa_incoming",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_incoming",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_incoming",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_incoming",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_incoming",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_redtail_arete",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_redtail_arete",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_redtail_arete",
+   "fact": "Parking distance past Middle Point Ridge Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Megadike South parking is 1.2 mi past the Middle Point Ridge trailhead (1.5 mi is Minidike)",
+   "evidence": "The Dikes area page lists parking at 1.2 mi past the trailhead for Megadike South and 1.5 mi for Minidike; the Dikes climbing guide says to drive 1.2 mi past the Middle Point Ridge trailhead and park just before the bridge for the south megadike. The row's approach and trailhead waypoint already say 1.2 mi.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "the dikes cross the road about 1.5 miles above",
+     "replace": "Megadike South crosses the road about 1.2 miles above"
+    }
+   ]
+  },
+  {
+   "id": "wa_redtail_arete",
+   "fact": "Watch-out text describes a different (alpine, trad) route",
+   "verdict": "fixed",
+   "correct_value": "watch_out should describe a short bolted basalt sport pitch at ~4,000 ft in the Blue Mountains, lowered on a single strand",
+   "evidence": "The Dikes are fin-like basalt crags at about 4,000 ft in the Blue Mountains (Umatilla NF) with mossy rock in less-travelled sections, and every Dikes route listed on the area pages is a sport route; the climbing guide describes the Dikes as basalt fins on the flank of Chase Mountain. The watch_out text (granite, no bolts, two-rope rappels, 7000+ ft gain, eastern Cascades storms) belongs to a different route; it is replaced by the two points the sources and the row (hazards, obj_haz, pro_needs, descent) support.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.mountainproject.com/area/122638325/megadike-north",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_redtail_arete",
+     "fact": "Watch-out text describes a different (alpine, trad) route",
+     "op": "set",
+     "column": "watch_out",
+     "path": [],
+     "expect": "Occasionally loose rock throughout—typical of Dikes granite; variable rock quality requires cautious climbing; always test holds and placements\nNo continuous crack systems—protection limited and often minimal; runouts between protection; bold climbing required\nExposed arete climbing—significant consequence if protection fails; narrow ridge exposure with drops on both sides; maintains climber focus requirement\nDirty/mossy sections possible—rock quality variable season-to-season; lichen growth and moisture affect climbing texture; clean before climbing if needed\nRoute-finding complexity on arete variations—multiple lines possible; easy to wander off established route; study topo and photos\nWeather exposure on open ridge—afternoon thunderstorms common in eastern Cascades; exposed to wind and lightning; start early\nDescent route-finding—rappel anchor locations must be confirmed; two-rope descent may be necessary; descent terrain exposed\nLower altitude but exposed position—7000+ ft elevation gain from trailhead; sustained climbing with exposure; fatigue on descent increases risk",
+     "value": "Loose, fractured basalt is typical of the Dikes; test holds before weighting them\nDirty or mossy sections are possible and rock texture varies season to season; clean holds before climbing if needed"
+    }
+   ]
+  },
+  {
+   "id": "wa_czech_it_out",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_czech_it_out",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_czech_it_out",
+   "fact": "Parking distance past Middle Point Ridge Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Megadike South parking is 1.2 mi past the Middle Point Ridge trailhead (1.5 mi is Minidike)",
+   "evidence": "The Dikes area page lists parking at 1.2 mi past the trailhead for Megadike South and 1.5 mi for Minidike; the Dikes climbing guide says to drive 1.2 mi past the Middle Point Ridge trailhead and park just before the bridge for the south megadike. The row's approach and trailhead waypoint already say 1.2 mi.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_czech_it_out",
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "the dikes cross the road about 1.5 miles above",
+     "replace": "Megadike South crosses the road about 1.2 miles above"
+    }
+   ]
+  },
+  {
+   "id": "wa_czech_it_out",
+   "fact": "Aspect of the wall",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source for this route's aspect was reached before web tools hit their limit. The Megadike South waypoint note mentions south-facing walls and the neighbouring Redtail Arete is on the south edge of a pinnacle, but that does not fix this route's own face.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_henpecked",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_henpecked",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_henpecked",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_henpecked",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_henpecked",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "fact": "Season / year-round access vs road snow closure",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources. The season chip must be a short window, so the year-round note moves out of it; best_season keeps the explanation that the south-facing Castle can be climbed on clear winter days, which is now consistent with a road that is open in winter.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Season / year-round access vs road snow closure",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Season / year-round access vs road snow closure",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Season / year-round access vs road snow closure",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Season / year-round access vs road snow closure",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Year-round possible (routes established in winter conditions); best May-Oct for easier approach footing",
+     "value": "May-Oct"
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Season / year-round access vs road snow closure",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "USFS season of use is April-November; per the local guide, all Castle routes",
+     "replace": "Climbing normally runs about May through October, sometimes from April; all Castle routes"
+    },
+    {
+     "id": "wa_unknown_climb_up_the_castle",
+     "fact": "Season / year-round access vs road snow closure",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "winter"
+     ],
+     "find": "but the guide notes climbable",
+     "replace": "but climbable"
+    }
+   ]
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "fact": "Parking distance past Middle Point Ridge Trailhead",
+   "verdict": "unresolved",
+   "correct_value": "The Castle is reached by driving about 1.2 mi back DOWN (north of) the Middle Point Ridge trailhead, not 1.5 mi above it",
+   "evidence": "The Dikes climbing guide says to turn around at the Middle Point Ridge trailhead, drive 0.6 mi until the Castle is visible and another 0.6 mi to park at the Spangler Creek dirt road — matching the row's approach. The TRAILHEAD card's '1.5 miles above the trailhead' is the Minidike figure and points the wrong way for the Castle. Only one independent source found (no second before web tools hit their limit), and the row has no waypoints to corroborate, so no patch.",
+   "sources": [
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "fact": "Commitment grade for a 40 ft sport pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row (one ~40 ft pitch, length_m 12) makes a grade II chip look inflated, but no outside source states a commitment grade for this route and the approach is a long steep hillside; not patched without a sourced value.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_just_enough",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page (mountainproject.com/route/114414838/just-enough) was located but could not be fetched before web tools hit their session limit, so the pitch count and total length could not be checked against two sources. Row: pitches 1 / one pitch_detail row / length_m 21 vs pro_needs, descent, descent_text, hazards and what_to_bring describing two linked pitches to 70 ft and a 70 m rope.",
+   "sources": [
+    "https://www.mountainproject.com/route/114414838/just-enough"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Rope needed to lower",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page (mountainproject.com/route/114414838/just-enough) was located but could not be fetched before web tools hit their session limit, so the pitch count and total length could not be checked against two sources. Row: pitches 1 / one pitch_detail row / length_m 21 vs pro_needs, descent, descent_text, hazards and what_to_bring describing two linked pitches to 70 ft and a 70 m rope.",
+   "sources": [
+    "https://www.mountainproject.com/route/114414838/just-enough"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_joe_s_route",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Plan on the road being passable roughly April through November, and expect snow to linger on it into early summer.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_joe_s_route",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_lady_slipper",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The road is generally passable from about April to November and can hold snow into early summer, so expect a later opening in a heavy year.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_lady_slipper",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_ahoot",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_ahoot",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_ahoot",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_just_for_fun",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_just_for_fun",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_heinous_thing",
+   "fact": "Season window and when the FR-64 access road is open",
+   "verdict": "fixed",
+   "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+   "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+    "https://en.wikipedia.org/wiki/Ski_Bluewood"
+   ],
+   "patches": [
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "The upper Touchet/FR-64 corridor toward Bluewood is only reliably snow-free roughly mid-June through October; expect snow to block it in winter and spring.",
+     "replace": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "is only reliably snow-free roughly mid-June through October;",
+     "replace": "stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October;"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the road is passable roughly April-November and can hold snow into early summer",
+     "replace": "the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "FR 64 is generally passable about April through November and can hold snow into early summer, so plan an early-season trip around that.",
+     "replace": "The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April."
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Season window and when the FR-64 access road is open",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "April-November per USFS season of use",
+     "replace": "Roughly May through October, sometimes from April"
+    }
+   ]
+  },
+  {
+   "id": "wa_heinous_thing",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_heinous_thing",
+   "fact": "Parking distance past Middle Point Ridge Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Megadike South parking is 1.2 mi past the Middle Point Ridge trailhead (1.5 mi is Minidike)",
+   "evidence": "The Dikes area page lists parking at 1.2 mi past the trailhead for Megadike South and 1.5 mi for Minidike; the Dikes climbing guide says to drive 1.2 mi past the Middle Point Ridge trailhead and park just before the bridge for the south megadike. The row's approach and trailhead waypoint already say 1.2 mi.",
+   "sources": [
+    "https://www.mountainproject.com/area/107487344/the-dikes",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Parking distance past Middle Point Ridge Trailhead",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "the dikes cross the road about 1.5 miles above",
+     "replace": "Megadike South crosses the road about 1.2 miles above"
+    }
+   ]
+  }
+ ]
+}

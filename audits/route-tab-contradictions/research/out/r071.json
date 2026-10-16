@@ -1,0 +1,101 @@
+{"file": "r071.json", "results": [
+ {"id": "wa_forbidden_peak_west_ridge", "fact": "pitch count", "verdict": "unresolved", "correct_value": null,
+  "evidence": "External sources do not agree on a pitch count for the West Ridge. One alpine-club route page calls it a four-pitch climb, a guide service describes eight pitches of mid-5th class, and the main route database gives only a length (1500 ft / 455 m) with no pitch count. No source supports the six numbered rows in the breakdown, so neither pitches=8 nor the 6-row breakdown can be shown wrong.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://www.mountainproject.com/route/106450596/west-ridge", "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge"],
+  "patches": []},
+ {"id": "wa_forbidden_peak_west_ridge", "fact": "total elevation gain", "verdict": "fixed",
+  "correct_value": "5615 ft car to car (trailhead 3,200 ft to high camp 6,400 ft = 3,200; camp to 8,815 ft summit = 2,415)",
+  "evidence": "The trailhead is at 3,200 ft and the summit at 8,815 ft, so the round trip cannot gain less than about 5,615 ft. That makes the itinerary's 5,215 too low and gain_ft 6,640 far too high. A guide service gives the approach as 3,200 ft of gain to a 6,400 ft high camp, a detailed trip report gives about 5,700 ft gained and lost for the whole outing, and another says car to summit is just over a vertical mile. Day 1 is corrected to 3,200 ft and the totals are set to the trailhead-to-summit figure.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://trailcatjim.com/forbidden-peak-via-west-ridge/", "https://en.wikipedia.org/wiki/Forbidden_Peak", "https://climberkyle.com/2019/06/12/forbidden-peak-west-ridge-5-6/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_west_ridge", "fact": "total elevation gain", "op": "set", "column": "gain_ft", "path": [], "expect": 6640, "value": 5615},
+   {"id": "wa_forbidden_peak_west_ridge", "fact": "total elevation gain", "op": "set", "column": "loss_ft", "path": [], "expect": 5700, "value": 5615},
+   {"id": "wa_forbidden_peak_west_ridge", "fact": "total elevation gain", "op": "set", "column": "itinerary", "path": ["days", 0, "gainFt"], "expect": 2800, "value": 3200},
+   {"id": "wa_forbidden_peak_west_ridge", "fact": "total elevation gain", "op": "set", "column": "itinerary", "path": ["days", 1, "lossFt"], "expect": 5215, "value": 5615}
+  ]},
+ {"id": "wa_forbidden_peak_west_ridge", "fact": "glacier/crevasse exposure on approach", "verdict": "fixed",
+  "correct_value": "Glacier travel is involved: the approach crosses the remnant glacier below Forbidden's south face, with a lower and an upper bergschrund and deep moats at the couloir.",
+  "evidence": "One trip report describes an ascending traverse to the glacier beneath Forbidden and stepping over the opening lower bergschrund below the couloir. Another describes a 40-ft-deep bergschrund and 30-ft moats on both sides of the narrowed couloir. Both agree with the row's own hazards and approach, so the 'no glacier travel' statement is the outlier.",
+  "sources": ["https://climberkyle.com/2019/06/12/forbidden-peak-west-ridge-5-6/", "https://trailcatjim.com/forbidden-peak-via-west-ridge/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_west_ridge", "fact": "glacier/crevasse exposure on approach", "op": "set", "column": "seasonal_hazards", "path": ["crevasses"], "expect": "N/A - no glacier travel; the approach couloir/gully is a snow-and-scree feature, not a glacier.", "value": "The approach crosses the remnant glacier below the south face, with a lower and an upper bergschrund at the foot of the couloir. Late season these open into deep moats and slots down to rock; rope up while the glacier is snow-covered or crevassed."}
+  ]},
+ {"id": "wa_forbidden_peak_west_ridge", "fact": "approach distance to Boston Basin camp (partner requirements)", "discovered": true, "verdict": "fixed",
+  "correct_value": "roughly 3-4 miles to Boston Basin high camp",
+  "evidence": "PARTNER REQUIREMENTS says about 7 miles to camp, but the row's own itinerary says 3.3 mi and its waypoint says 3 mi. A guide service gives 3-4 miles and 3,200 ft to the 6,400 ft high camp. Trip reports give about 10 miles and 9.8 miles for the entire round trip including the summit, which rules out 7 miles one way to camp.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://trailcatjim.com/forbidden-peak-via-west-ridge/", "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-08.1017434332"],
+  "patches": [
+   {"id": "wa_forbidden_peak_west_ridge", "fact": "approach distance to Boston Basin camp (partner requirements)", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "roughly 7 miles", "replace": "roughly 3-4 miles"}
+  ]},
+ {"id": "wa_forbidden_peak_northeast_face", "fact": "descent route off the Northeast Face", "verdict": "fixed",
+  "correct_value": "Do not reverse the face. Descend by the West Ridge notch and couloir/Cat Scratch Gullies (the row's primary account), or by the East Ledges as the alternative.",
+  "evidence": "The 1961 first-ascent report says the party descended 'the normal route'. Its editorial note explains that the loosely named 'northeast face route' is a high traverse under the east ridge, a different line that the climbing_route text mistook for this route's descent. Route databases for the West Ridge and the North Ridge both list Forbidden's two descents: the West Ridge (downclimbing and rappels, then the couloir) or the East Ledges (five single-rope rappels, then loose ledges). No source reverses the face. The short descent field ('retracing the ascent') and the climbing_route sentence now match descent_text and the rappels field.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face", "https://www.mountainproject.com/route/106450596/west-ridge", "https://www.mountainproject.com/route/108482756/north-ridge", "https://spokalpine.com/2023/08/01/forbidden-peak-east-ridge-direct-iii-5-8/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_northeast_face", "fact": "descent route off the Northeast Face", "op": "replace_text", "column": "climbing_route", "path": [2, "notes"], "find": "the normal descent is a high traverse below the east ridge that skirts the ridge gendarmes rather than following the crest, and it is a long committing exit in its own right", "replace": "descend by the West Ridge notch and its couloir, or by the East Ledges off the northeast side; either is a long, committing exit in its own right"},
+   {"id": "wa_forbidden_peak_northeast_face", "fact": "descent route off the Northeast Face", "op": "replace_text", "column": "descent", "path": [], "find": "Descend via the standard descent route, retracing the ascent when possible.", "replace": "Do not reverse the face: descend via the West Ridge notch and couloir, or by the East Ledges."}
+  ]},
+ {"id": "wa_forbidden_peak_northeast_face", "fact": "1975 fatality attribution", "verdict": "fixed",
+  "correct_value": "The 1975 fatality happened on the East Ledges descent traverse, not on the Northeast Face. It applies to this route only if the party descends that way.",
+  "evidence": "The accident report describes a July 1975 party that finished the Torment-Forbidden traverse, rappelled 150 ft down the east face, traversed east too high on loose ledges and lost a member in a fall onto the glacier. The state fatalities list records the same incident. It belongs to the East Ledges descent, which the row's own hazards and rappels fields name as an optional descent for this route.",
+  "sources": ["http://publications.americanalpineclub.org/articles/13197601000/Involuntary-Glissade-Fall-Into-a-Crevasse-UnropedWashington-Forbidden-Peak", "https://en.wikipedia.org/wiki/List_of_mountaineering_fatalities_in_Washington_(state)"],
+  "patches": [
+   {"id": "wa_forbidden_peak_northeast_face", "fact": "1975 fatality attribution", "op": "set", "column": "obj_haz", "path": [1], "expect": "documented fatal fall on the traverse (1975)", "value": "a documented fatal fall (1975) on the East Ledges descent traverse, if you descend that way"}
+  ]},
+ {"id": "wa_forbidden_peak_northeast_face", "fact": "climbing season window", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Only one primary account of this face was found: the first ascent on 15 September 1961. That late-season date fits season 'Jul-Sep' and cuts against the 'late spring to early summer' guidance. No second source gives a recommended window for the Northeast Face (modern write-ups cover the North Ridge and Northwest Face instead), so neither side can be settled.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"],
+  "patches": []},
+ {"id": "wa_forbidden_peak_northwest_face", "fact": "trip length (days)", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Sources disagree. A guide service runs the Northwest Face as a 3-day trip, two independent trip reports did it car to car in one day (about 15-17 hrs), and a guide for the neighbouring North Ridge offers 2 or 3 days. No two sources agree on how many days 'most parties' take, so the wording cannot be settled by research.",
+  "sources": ["https://mountainmadness.com/trips/washington-forbidden-peak-northwest-face", "https://spokalpine.com/2020/07/29/forbidden-peak-nw-face-iv-5-8/", "https://www.jeffreyjhebert.com/adventures/nw-face-on-forbidden-peak"],
+  "patches": []},
+ {"id": "wa_forbidden_peak_east_ledges", "fact": "which routes use East Ledges as their descent", "verdict": "fixed",
+  "correct_value": "Used as a descent after the West Ridge, East Ridge Direct or North Ridge; Northwest Face parties descend the West Ridge.",
+  "evidence": "The North Ridge route database lists the East Ledges as one of its two descents, and East Ridge Direct trip reports descend the East Ledges. Northwest Face trip reports descend the West Ridge and the Cat Scratch gullies, which matches that route's own page. Replacing 'Northwest Face' with 'North Ridge' also makes this line agree with the East Ledges overview.",
+  "sources": ["https://www.mountainproject.com/route/108482756/north-ridge", "https://dashertonclimbs.com/2019/08/04/forbidden-peak-east-ridge-direct-5-8/", "https://spokalpine.com/2020/07/29/forbidden-peak-nw-face-iv-5-8/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_east_ledges", "fact": "which routes use East Ledges as their descent", "op": "replace_text", "column": "itinerary", "path": [], "find": "East Ridge Direct, or Northwest Face", "replace": "East Ridge Direct, or North Ridge"}
+  ]},
+ {"id": "wa_forbidden_peak_east_ridge", "fact": "whether the East Ridge itself can be reversed by rappel", "verdict": "fixed",
+  "correct_value": "Descend by the West Ridge notch and couloir, or by the East Ledges. The East Ridge itself is not reversed.",
+  "evidence": "Two East Ridge Direct trip reports both descend by the East Ledges (rappels off the summit, then loose ledges back to the start of the route). Route databases give the peak's descents as the West Ridge or the East Ledges. No source describes rappelling the East Ridge itself.",
+  "sources": ["https://dashertonclimbs.com/2019/08/04/forbidden-peak-east-ridge-direct-5-8/", "https://spokalpine.com/2023/08/01/forbidden-peak-east-ridge-direct-iii-5-8/", "https://www.mountainproject.com/route/106450596/west-ridge"],
+  "patches": [
+   {"id": "wa_forbidden_peak_east_ridge", "fact": "whether the East Ridge itself can be reversed by rappel", "op": "replace_text", "column": "descent", "path": [], "find": "or reverse the East Ridge with rappels.", "replace": "or rappel off the northeast side to the East Ledges."}
+  ]},
+ {"id": "wa_forbidden_peak_east_ridge", "fact": "glacier/crevasse exposure on this route", "verdict": "fixed",
+  "correct_value": "The East Ridge approach is not a glacier approach. It climbs loose gullies beside, not on, the glacier on Forbidden's east side and finishes up a snow patch and gully. Crevassed glacier appears only below the optional East Ledges descent.",
+  "evidence": "One trip report reaches the ridge by a snow patch and gully using crampons and microspikes, with no glacier crossing. Another stays well right of the Unnamed Glacier and never below it because of icefall, scrambling loose gullies on a bearing of about 58° to a bivy near 8,000 ft. The watch_out line about a crevasse field and a bergschrund at the ridge base is the outlier; seasonal_hazards.crevasses already agrees with the sources.",
+  "sources": ["https://dashertonclimbs.com/2019/08/04/forbidden-peak-east-ridge-direct-5-8/", "https://gethighonaltitude.com/2023/07/24/forbidden-peak-east-ridge/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_east_ridge", "fact": "glacier/crevasse exposure on this route", "op": "replace_text", "column": "watch_out", "path": [], "find": "Glacier approach with crevasse field—continuous rope essential; probe every step; bergschrund crossing required at ridge base", "replace": "Approach climbs loose gullies beside the glacier, not on it—stay well clear of icefall from the glacier above; the snow gully near the top wants crampons"}
+  ]},
+ {"id": "wa_forbidden_peak_north_ridge", "fact": "rock grade of the route", "verdict": "fixed",
+  "correct_value": "Grade III, 5.6 (the only 5.7 is the ~10 ft step gaining Sharkfin Col on the approach)",
+  "evidence": "The main route database rates the North Ridge Grade III, 5.6, with the crux a short left-facing corner at 5.6. An alpine-club route page calls it grade 3, 5.6 and separately notes 10 ft of 5.7 rock to reach Sharkfin Col. A guide service and a trip report also give 5.6. One guide lists 5.7, most likely counting the col step.",
+  "sources": ["https://www.mountainproject.com/route/108482756/north-ridge", "https://www.mountaineers.org/activities/routes-places/forbidden-peak-north-ridge", "https://blackbirdguides.com/products/forbidden-peak-north-ridge", "https://spokalpine.com/2022/08/25/forbidden-peak-north-ridge-iii-5-6/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_north_ridge", "fact": "rock grade of the route", "op": "replace_text", "column": "beta", "path": [], "find": "Grade III, 5.7 climbing.", "replace": "Grade III, 5.6 on the ridge."}
+  ]},
+ {"id": "wa_forbidden_peak_north_ridge", "fact": "season/character of the route (summer rock vs winter ice)", "verdict": "fixed",
+  "correct_value": "A summer alpine rock ridge reached across the crevassed Boston Glacier, not a winter ice route.",
+  "evidence": "Guide services run the North Ridge as a summer 2-3 day glacier-and-rock trip (crevasse rescue gear, light alpine rack), and trip reports climb it in July and August. The route database describes a summer rock ridge with a glacier approach. The 'winter route' lines match no source; they are replaced with hazards taken from this route's own approach record.",
+  "sources": ["https://www.mountainproject.com/route/108482756/north-ridge", "https://ncmountainguides.com/routes/climbing-routes/forbidden-peak-north-ridge", "https://spokalpine.com/2022/08/25/forbidden-peak-north-ridge-iii-5-6/"],
+  "patches": [
+   {"id": "wa_forbidden_peak_north_ridge", "fact": "season/character of the route (summer rock vs winter ice)", "op": "set", "column": "watch_out", "path": [], "expect": "Winter route requiring ice climbing or snow climbing skills\nShort ice pitch potential in winter conditions\nAlpine terrain exposure in winter conditions\nRemote location increases rescue difficulty", "value": "Committing rappel off Sharkfin Col; retreat means re-climbing to the col\nHeavily crevassed Boston Glacier traverse to the foot of the ridge\nMoat where the glacier meets the ridge rock, worse late season\nRemote location increases rescue difficulty"}
+  ]},
+ {"id": "wa_forbidden_peak_north_ridge", "fact": "Boston Basin high camp elevation", "verdict": "fixed", "correct_value": "~6,400 ft",
+  "evidence": "A guide service puts Boston Basin high camp at 6,400 ft (3,200 ft above the trailhead), and an alpine-club route description places the designated upper camps at 6,400 ft. The row's own waypoint and bivy entry agree.",
+  "sources": ["https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/", "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-northwest-face-of-north-ridge"],
+  "patches": [
+   {"id": "wa_forbidden_peak_north_ridge", "fact": "Boston Basin high camp elevation", "op": "replace_text", "column": "approach", "path": [], "find": "high camp (~5700 ft)", "replace": "high camp (~6400 ft)"}
+  ]},
+ {"id": "wa_forbidden_peak_north_ridge", "fact": "length of the Sharkfin Col rappel onto the Boston Glacier", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Sources disagree, and the length clearly varies with snow depth. An alpine-club route description gives a 150 ft rappel down a loose gully, a guide service gives 100 ft, one trip report made a 20 m rappel and another made two 30 m rappels. No two sources agree on one value.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/forbidden-peak-north-ridge", "https://ncmountainguides.com/routes/climbing-routes/forbidden-peak-north-ridge", "https://climberkyle.com/2024/03/30/forbidden-tour/", "https://spokalpine.com/2022/08/25/forbidden-peak-north-ridge-iii-5-6/"],
+  "patches": []},
+ {"id": "wa_forbidden_peak_north_ridge", "fact": "pitch count", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "The four pitch_detail rows are labelled stages (Approach, Crux, Mid-ridge, Upper ridge), not numbered pitches, so they state no pitch count and cannot contradict pitches=8.",
+  "sources": [], "patches": []}
+]}

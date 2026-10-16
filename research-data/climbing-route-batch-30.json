@@ -1,0 +1,91 @@
+{
+  "wa_raven_ridge_standard_route": {
+    "area": "wa_raven_ridge",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops at the Libby Lake basin, never reaching the gully or ridge: it ends 'A dilapidated cabin sits beside the trail at about 7,170 ft, used by some parties as a base camp.' No climbing is described."
+  },
+  "wa_rock_mountain_west_route": {
+    "area": "wa_rock_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Ridge scramble path to the false (south) summit",
+        "class": "Class 1-2",
+        "notes": "Past the Snowy Creek Trail #1531 junction the tread thins into more of a ridge scramble path leading to a false (south) summit. No technical climbing when snow-free, but expect loose scree on sections of the switchbacks and essentially no shade or water above the creek crossing."
+      },
+      {
+        "n": 2,
+        "label": "Connecting ridge to the true summit (~6,850 ft)",
+        "class": "Class 1-2",
+        "notes": "Use real caution on the short, narrow connecting ridge over to the true summit, which can hold a cornice or residual snow into early summer; genuine route-finding/exposure caution on the false-summit-to-true-summit ridge, especially with snow present. The old lookout foundation and true summit (~6,850 ft) is reached around 3.95-4.0 miles one-way."
+      }
+    ]
+  },
+  "wa_ruby_mountain_south_ridge": {
+    "area": "wa_ruby_mountain",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops at the pass, below any climbing: 'continue steeply up the west slopes about 5.2 miles total (2,629 ft gain) to Fourth of July Pass.' Nothing about the South Ridge itself."
+  },
+  "wa_ruth_mountain_south_slopes": {
+    "area": "wa_ruth_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower Ruth Glacier from the toe of the north slope",
+        "notes": "Rope up and get on glacier gear where the broad ridge feeds the toe of the Ruth Glacier's north slope (~6,000-6,200 ft). The lower glacier is a moderate, welcoming-looking snow/ice slope, but it has produced at least one documented crevasse fall in years with thin or soft cover, so treat it as glaciated terrain the entire way rather than a snow walk."
+      },
+      {
+        "n": 2,
+        "label": "Up and climber's-left to the broad notch northwest of the summit",
+        "notes": "Continue up and climber's-left to the broad notch just northwest of Ruth's summit (~6,600 ft); most parties camp on the far (south) side of this notch on snow to minimize impact before the final push. No reliable running water above Hannegan Camp/Ruth Creek in a typical snow year."
+      }
+    ]
+  },
+  "wa_ruth_peak_olympics_scramble": {
+    "area": "wa_ruth_peak_olympics",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Talus/scree north to the summit",
+        "class": "class 2-3",
+        "notes": "From camp at Eleven Bull Basin, a meadow on Ruth Peak's south flank, scramble class 2-3 talus/scree north to the summit."
+      }
+    ]
+  },
+  "wa_scramble_route": {
+    "area": "wa_eagle_peak",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops at the saddle where the maintained trail ends and only notes that a route exists: 'routes onto Eagle Peak itself continue past the saddle as a scramble.' No description of the scramble is given."
+  },
+  "wa_sentinel_peak_standard": {
+    "area": "wa_sentinel_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Snow basin against the west face",
+        "notes": "From the Le Conte-Sentinel Col (~7,300 ft), easy scrambling leads onto snow filling the basin against Sentinel's west face; climb increasingly steep snow (can exceed 35-40 degrees, crampons/axe useful) to its top."
+      },
+      {
+        "n": 2,
+        "label": "Ledge leftward (north) across the face",
+        "notes": "Follow an obvious ledge leftward (north) across the face past a short cliff band."
+      },
+      {
+        "n": 3,
+        "label": "Gravelly/scree terrain to a short step",
+        "class": "upper class 3 / low class 5",
+        "notes": "Turn straight up steep, gravelly/scree terrain to a short step of upper-class-3/low-class-5 climbing."
+      },
+      {
+        "n": 4,
+        "label": "Broad west ridge to the summit",
+        "notes": "Finish with roughly 600 ft up the broad west ridge to the summit."
+      }
+    ]
+  },
+  "wa_sharkfin_tower_southeast_ridge": {
+    "area": "wa_sharkfin_tower",
+    "climbing_route": [],
+    "skip_reason": "The text treats the gully as approach ('the tower's obvious approach gully', 'Route-finding here is the crux of the approach') and stops at the base of the climb: 'Follow it up to a notch/terrace at the base of the southeast ridge proper.' The 3-pitch southeast ridge itself is never described."
+  }
+}

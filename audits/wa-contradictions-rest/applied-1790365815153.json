@@ -1,0 +1,25 @@
+{
+ "applied": [
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "column": "watch_out",
+   "path": [
+    2
+   ],
+   "fact": "Approach mileage one-way vs round trip"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "before": {
+    "watch_out": [
+     "Wilderness fire restrictions/area closures commonly begin around mid-July in the Pasayten",
+     "Afternoon thunderstorms are frequent in summer over this exposed terrain",
+     "Long, remote approach (15-20+ miles round trip to base camp) with no cell coverage anywhere en route"
+    ]
+   }
+  }
+ ]
+}

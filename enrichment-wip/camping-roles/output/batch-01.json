@@ -1,0 +1,837 @@
+{
+  "zones": [
+    {
+      "zone": "adams",
+      "overnightPermit": {
+        "what": "Mount Adams Climbing Pass above 7,000 ft (May to September), plus a free self-issue wilderness permit below 7,000 ft",
+        "where": "Buy the Climbing Pass on Recreation.gov before arriving, since cell coverage is poor; fill out the wilderness permit at the trailhead.",
+        "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit"
+      }
+    },
+    {
+      "zone": "alpine-lakes-interior",
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk and carry your copy.",
+        "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie"
+      }
+    },
+    {
+      "zone": "anderson-bacon-creek",
+      "overnightPermit": {
+        "what": "No overnight permit required on the national forest side; camp only in designated sites at Watson Lakes",
+        "where": "A recreation pass is required to park at the Watson Lakes trailhead.",
+        "url": "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness"
+      }
+    },
+    {
+      "zone": "arrowhead-mountain",
+      "overnightPermit": {
+        "what": "No overnight permit required for the roadside route; a free self-issue wilderness permit applies if you camp inside the Alpine Lakes Wilderness",
+        "where": "Self-issue permits are at Alpine Lakes Wilderness trailheads; this route has no kiosk.",
+        "url": null
+      }
+    },
+    {
+      "zone": "azurite-ballard",
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at the trailhead.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "adams_avalanche_glacier",
+      "main": [
+        "Cold Springs / South Climb trailhead"
+      ],
+      "onRoute": [
+        "Lunch Counter",
+        "Morrison Creek Campground"
+      ],
+      "drop": [
+        "High Camp (Adams Creek Meadows)",
+        "Adams Glacier moraine bivy"
+      ],
+      "add": [
+        {
+          "name": "Avalanche Glacier high bivy",
+          "type": "bivy",
+          "elev": null,
+          "capacity": "A few small tent sites on rock and snow benches",
+          "water": "None; melt snow",
+          "permit": "Mount Adams Climbing Pass (above 7,000 ft)",
+          "notes": "Reached by the Round the Mountain trail west from Cold Springs and then up the ridge beside the Avalanche Glacier. Parties usually place camp somewhere above 9,000 ft to shorten summit day.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Camp is an unnamed bivy on the southwest side, so no elevation is given; Lunch Counter sits on the usual South Spur descent; Morrison Creek is on the approach road only if the upper road is blocked."
+    },
+    {
+      "id": "adams_northwest_ridge",
+      "main": [
+        "High Camp (Adams Creek Meadows)"
+      ],
+      "onRoute": [
+        "Adams Glacier moraine bivy"
+      ],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "North-side High Camp is the standard base; the Adams Glacier moraine bivy lies below the face and is a plausible higher camp."
+    },
+    {
+      "id": "wa_mount_adams_adams_glacier",
+      "main": [
+        "High Camp (Adams Creek Meadows)"
+      ],
+      "onRoute": [
+        "Adams Glacier moraine bivy"
+      ],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground",
+        "High Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'High Camp' is a duplicate of High Camp (Adams Creek Meadows); the moraine bivy is a common higher camp below the icefall."
+    },
+    {
+      "id": "wa_mount_adams_lava_glacier_headwall",
+      "main": [
+        "High Camp (Adams Creek Meadows)"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground",
+        "Adams Glacier moraine bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lava Glacier is reached east of High Camp around Lava Ridge; the Adams Glacier moraine is off to the west."
+    },
+    {
+      "id": "wa_mount_adams_lyman_glacier",
+      "main": [
+        "High Camp (Adams Creek Meadows)"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground",
+        "Adams Glacier moraine bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties go from High Camp to the Lyman Glacier in about an hour; no other listed camp is on the line."
+    },
+    {
+      "id": "wa_mount_adams_mazama_glacier_headwall",
+      "main": [
+        "Sunrise Camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground",
+        "High Camp (Adams Creek Meadows)",
+        "Adams Glacier moraine bivy"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Yakama Nation Tract D recreation permit for the Bird Creek side, plus the Mount Adams Climbing Pass above 7,000 ft on national forest land",
+        "where": "Buy the Tract D permit at the fee station where the road enters the reservation; the area is open to non-tribal visitors only in summer, roughly July to September. The Climbing Pass is sold on Recreation.gov.",
+        "url": null
+      },
+      "note": "Approach is from Bird Creek Meadows on Yakama land; a flat basin near 7,600 ft is a lower alternative not in the list."
+    },
+    {
+      "id": "wa_mount_adams_north_ridge",
+      "main": [
+        "High Camp (Adams Creek Meadows)"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground",
+        "Adams Glacier moraine bivy",
+        "High Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'High Camp' is a duplicate of High Camp (Adams Creek Meadows); some parties bivy higher on the ridge itself, but no such site is listed."
+    },
+    {
+      "id": "wa_mount_adams_northwest_ridge",
+      "main": [
+        "High Camp (Adams Creek Meadows)"
+      ],
+      "onRoute": [
+        "Adams Glacier moraine bivy"
+      ],
+      "drop": [
+        "Lunch Counter",
+        "Cold Springs / South Climb trailhead",
+        "Morrison Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same approach as the North Ridge; placing the moraine bivy on this line is a reasonable inference, not confirmed."
+    },
+    {
+      "id": "wa_mount_adams_south_climb",
+      "main": [
+        "The Lunch Counter"
+      ],
+      "onRoute": [
+        "Morrison Creek drainage"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Many parties also sleep at the Cold Springs trailhead the night before; that camp is not in this route's list."
+    },
+    {
+      "id": "wa_mount_adams_wilson_glacier_headwall",
+      "main": [],
+      "onRoute": [
+        "Cold Springs / South Climb trailhead"
+      ],
+      "drop": [
+        "Lunch Counter",
+        "Morrison Creek Campground",
+        "High Camp (Adams Creek Meadows)",
+        "Adams Glacier moraine bivy"
+      ],
+      "add": [
+        {
+          "name": "Avalanche Valley",
+          "type": "camp",
+          "elev": 6600,
+          "capacity": "Several tent sites in a meadow basin",
+          "water": "Glacial streams in the valley",
+          "permit": "Yakama Nation Tract D permit",
+          "notes": "Meadow basin on the east side of the mountain below the Rusk and Wilson glaciers, reached from Bird Creek Meadows or by the Highline Trail. The closest established camp to the Wilson Glacier headwall.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Yakama Nation Tract D recreation permit for the Bird Creek side, plus the Mount Adams Climbing Pass above 7,000 ft on national forest land",
+        "where": "Buy the Tract D permit at the fee station where the road enters the reservation; the area is open to non-tribal visitors only in summer, roughly July to September. The Climbing Pass is sold on Recreation.gov.",
+        "url": null
+      },
+      "note": "Very little recent documentation of this route; the east-side base is inferred from the geography, and Cold Springs only applies if the party walks the Round the Mountain trail east from it."
+    },
+    {
+      "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+      "main": [
+        "Upper Hardscrabble Lake"
+      ],
+      "onRoute": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The Hardscrabble boot path leaves the road half a mile short of the horse camp, so the horse camp is a short detour rather than strictly on the line."
+    },
+    {
+      "id": "wa_big_snow_mountain_north_slope_dingford_route",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [
+        {
+          "name": "Myrtle Lake",
+          "type": "camp",
+          "elev": 3777,
+          "capacity": "Several established sites around the lake",
+          "water": "Lake",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit",
+          "notes": "End of the Dingford Creek trail and the usual place to split this route; Big Snow Lake, higher up, has two or three more sites. Many parties do the climb in one long day.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "No listed camp is on the Dingford approach; the route is often done in a day."
+    },
+    {
+      "id": "wa_burnt_boot_peak_north_ridge",
+      "main": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Route has no documented approach; assumed to share the north route's Middle Fork ford from the horse camp."
+    },
+    {
+      "id": "wa_burnt_boot_peak_north_route",
+      "main": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually done car-to-car by biking the road to the horse camp and fording the river; Upper Hardscrabble Lake is across the valley on the Big Snow side."
+    },
+    {
+      "id": "wa_cathedral_rock_northwest_couloir",
+      "main": [
+        "Peggy's Pond — standard base camp and water source"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Peggy's Pond and Squaw Lake, Cathedral Pass' is a duplicate of the Peggy's Pond base camp."
+    },
+    {
+      "id": "wa_cathedral_rock_standard",
+      "main": [
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Peggy's Pond is the standard base; many parties climb it as a day trip from the Cathedral Rock trailhead."
+    },
+    {
+      "id": "wa_chimney_rock_east_face_direct",
+      "main": [
+        "Chimney Glacier hanging basin — the big boulder bivy"
+      ],
+      "onRoute": [
+        "Pete Lake and the Lemah Meadows camps"
+      ],
+      "drop": [
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Pete Lake is the usual first-night fallback on the way in."
+    },
+    {
+      "id": "wa_chimney_rock_west_face",
+      "main": [
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Sunrise Knob"
+      ],
+      "onRoute": [
+        "Pete Lake and the Lemah Meadows camps"
+      ],
+      "drop": [
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Sunrise Knob is the rock promontory just above the glacier basin bivy; the two are close but distinct."
+    },
+    {
+      "id": "wa_east_face_6",
+      "main": [
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Sunrise Knob"
+      ],
+      "onRoute": [
+        "Pete Lake and the Lemah Meadows camps"
+      ],
+      "drop": [
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Sunrise Knob is the rock promontory just above the glacier basin bivy; the two are close but distinct."
+    },
+    {
+      "id": "wa_iron_cap_mountain_south_route",
+      "main": [
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap"
+      ],
+      "onRoute": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Pedro Camp / steel bridge"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Upper Hardscrabble Lake",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass",
+        "Hardscrabble Horse Camp",
+        "Williams Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Hardscrabble Horse Camp' and 'Williams Lake' are duplicates of the longer-named entries; the exact Iron Cap line from the Middle Fork is thinly documented."
+    },
+    {
+      "id": "wa_lemah_mountain_east_route",
+      "main": [
+        "Pete Lake and the Lemah Meadows camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass",
+        "Pete Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Pete Lake' is a duplicate of the Pete Lake and Lemah Meadows entry; parties usually climb in one long day from Pete Lake or Lemah Meadow."
+    },
+    {
+      "id": "wa_lemah_two_goatshead_spire",
+      "main": [
+        "Pete Lake and the Lemah Meadows camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Barely documented tower; assumed to use the same Lemah Meadow approach and camps as the rest of the Lemah massif."
+    },
+    {
+      "id": "wa_lemah_two_scramble",
+      "main": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Lemah Meadows basin camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lemah Meadows basin camp is the higher climbers' bivy under the east face; which of the two is more used is unclear."
+    },
+    {
+      "id": "wa_little_big_chief_mountain_northeast_face",
+      "main": [
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap"
+      ],
+      "onRoute": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Upper Hardscrabble Lake",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties camp at Williams Lake or in the meadows below Dutch Miller Gap and climb from the gap."
+    },
+    {
+      "id": "wa_little_big_chief_mountain_west_route",
+      "main": [
+        "Talus Basin Below the Summit Chief Group"
+      ],
+      "onRoute": [
+        "Hour Creek Camp",
+        "Waptus Lake, with Spade Lake above it"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Unsure whether the route leaves the Waptus trail before or after Waptus Lake; placed as on the way."
+    },
+    {
+      "id": "wa_northwest_face_4",
+      "main": [],
+      "onRoute": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [
+        {
+          "name": "Summit Chief Valley gravel flats",
+          "type": "camp",
+          "elev": 4650,
+          "capacity": "A few low-impact sites on a gravel wash",
+          "water": "Creek",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit",
+          "notes": "Leave the Middle Fork trail at the small steel bridge and go cross-country south into Summit Chief Valley to a flat gravel wash below the face. The descent returns here.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "The face is climbed from Summit Chief Valley, not from Dutch Miller Gap as the route's approach text says."
+    },
+    {
+      "id": "wa_overcoat_peak_southeast_route",
+      "main": [
+        "Overcoat Lake",
+        "Rock benches above Overcoat Glacier"
+      ],
+      "onRoute": [
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties bike to near the old trailhead, ford the river and camp at Overcoat Lake; the glacier benches are a higher option."
+    },
+    {
+      "id": "wa_summit_chief_mountain_south_route",
+      "main": [
+        "Vista Lakes (upper lake)"
+      ],
+      "onRoute": [
+        "Pete Lake and the Lemah Meadows camps"
+      ],
+      "drop": [
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Park Lakes Basin",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Escondido Ridge tarns' is a duplicate of the Vista Lakes camp on the same PCT switchbacks."
+    },
+    {
+      "id": "wa_three_queens_middle_peak",
+      "main": [
+        "Park Lakes Basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day route that leaves the trail at the Mineral Creek crossing; Park Lakes is the nearest camp if split but is not on the line."
+    },
+    {
+      "id": "wa_three_queens_standard",
+      "main": [
+        "Park Lakes Basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Often done in a day; Park Lakes at the top of the Mineral Creek trail is the camp when split."
+    },
+    {
+      "id": "wa_three_queens_west_peak",
+      "main": [],
+      "onRoute": [
+        "Park Lakes Basin"
+      ],
+      "drop": [
+        "Pete Lake and the Lemah Meadows camps",
+        "Chimney Glacier hanging basin — the big boulder bivy",
+        "Escondido Ridge tarns",
+        "Waptus Lake, with Spade Lake above it",
+        "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+        "Upper Hardscrabble Lake",
+        "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+        "Peggy's Pond and Squaw Lake, Cathedral Pass"
+      ],
+      "add": [
+        {
+          "name": "Spectacle Point high camp",
+          "type": "bivy",
+          "elev": 5800,
+          "capacity": "Small; a few tent sites on the ridge",
+          "water": "Uncertain late in the season; carry water up from Park Lakes",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit",
+          "notes": "High camp on the ridge above Park Lakes, used as the base for the West Peak.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Spectacle Point high camp comes from the route's own approach text and is not independently confirmed."
+    },
+    {
+      "id": "wa_bacon_peak_diobsud",
+      "main": [
+        "Upper Diobsud Lakes"
+      ],
+      "onRoute": [
+        "Anderson Creek road end, Watson Lakes trailhead",
+        "Lower Anderson Lake",
+        "Watson Lakes designated camps",
+        "Diobsud basin",
+        "Northeast Bacon camp, above the glacier"
+      ],
+      "drop": [
+        "Berdeen Lake benches",
+        "Bacon Creek road end and Porkbelly Ridge",
+        "Watson Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Watson Lakes' duplicates the designated-camps entry; 'Diobsud basin' may be the same place as Upper Diobsud Lakes; the listed 6,000 ft for the lakes looks high."
+    },
+    {
+      "id": "wa_berdeen_peak_scramble",
+      "main": [
+        "High camp above Berdeen Lake",
+        "Berdeen Lake benches"
+      ],
+      "onRoute": [
+        "Bacon Creek road end and Porkbelly Ridge"
+      ],
+      "drop": [
+        "Watson Lakes designated camps",
+        "Lower Anderson Lake",
+        "Anderson Creek road end, Watson Lakes trailhead",
+        "Northeast Bacon camp, above the glacier",
+        "Upper Diobsud Lakes"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "North Cascades National Park wilderness permit for the Berdeen cross-country zone",
+        "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      },
+      "note": "Some parties camp at the lake itself rather than the higher camp."
+    },
+    {
+      "id": "wa_mount_watson_scramble",
+      "main": [
+        "Watson Lakes designated camps",
+        "Camp on slopes below Mount Watson (~5,400 ft)"
+      ],
+      "onRoute": [
+        "Anderson Creek road end, Watson Lakes trailhead",
+        "Lower Anderson Lake"
+      ],
+      "drop": [
+        "Northeast Bacon camp, above the glacier",
+        "Upper Diobsud Lakes",
+        "Berdeen Lake benches",
+        "Bacon Creek road end and Porkbelly Ridge"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day scramble; whether the route passes Lower Anderson Lake depends on which side of the ridge a party takes."
+    },
+    {
+      "id": "wa_arrowhead_mountain_south_route",
+      "main": [
+        "Tumwater Canyon campgrounds on US 2"
+      ],
+      "onRoute": [
+        "The US 2 pullout by the maintenance yard",
+        "The lower spur and Henry Creek flat",
+        "The clearcut benches on the north ridge, around 4,200 feet"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "A day scramble; the only overnight is a drive-in campground, and the route's own sites are contingencies."
+    },
+    {
+      "id": "wa_azurite_peak_southeast",
+      "main": [
+        "Horse Heaven Camp, West Fork Methow",
+        "Azurite Pass"
+      ],
+      "onRoute": [
+        "River Bend and Ballard campgrounds, Lost River Road"
+      ],
+      "drop": [
+        "Canyon Creek trailhead, SR 20",
+        "Mill Creek valley and the old Azurite Mine",
+        "Horse Heaven Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Horse Heaven Camp' duplicates the West Fork Methow entry; some parties camp at the pass instead."
+    },
+    {
+      "id": "wa_mount_ballard_south",
+      "main": [
+        "Azurite Mine",
+        "Azurite–Ballard basin"
+      ],
+      "onRoute": [
+        "Canyon Creek trailhead, SR 20"
+      ],
+      "drop": [
+        "Mill Creek valley and the old Azurite Mine",
+        "Azurite Pass",
+        "River Bend and Ballard campgrounds, Lost River Road",
+        "Horse Heaven Camp, West Fork Methow"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Mill Creek valley and the old Azurite Mine' duplicates 'Azurite Mine'; Azurite Pass is past the turnoff to Ballard's basin."
+    }
+  ],
+  "misassigned": [
+    "wa_mount_adams_mazama_glacier_headwall: five of six listed camps are on the south or north side; only Sunrise Camp serves the east-side Mazama Glacier",
+    "wa_mount_adams_wilson_glacier_headwall: every listed camp serves the south or north side; the Wilson Glacier is approached on the east side from Bird Creek Meadows / Avalanche Valley",
+    "wa_big_snow_mountain_north_slope_dingford_route: all listed camps belong to other approaches; the Dingford route's camp is Myrtle Lake",
+    "wa_northwest_face_4: the listed camps do not include the Summit Chief Valley base this face is climbed from"
+  ]
+}

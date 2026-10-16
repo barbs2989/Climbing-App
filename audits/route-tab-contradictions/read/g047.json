@@ -1,0 +1,339 @@
+{
+ "batches": ["b185.json", "b186.json", "b187.json", "b188.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "name": "Southwest Slopes / Gully",
+   "area": "Kimtah Peak",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "23.17 (≈14.4 mi round trip; matches waypoints.summit distMi 7.2 mi one-way ×2)"},
+      {"field": "itinerary.totalNote", "says": "roughly 15 miles and ~4,600 ft round-trip gain overall"},
+      {"field": "itinerary.days[0].miles + days[1].miles + days[2].miles", "says": "7.5 + 5 + 7.5 = 20 miles"},
+      {"field": "waypoints (Ragged Ridge Camp).distMi", "says": "5.3 mi from trailhead"},
+      {"field": "itinerary.days[0].miles", "says": "7.5 (Day 1 destination is the same camp, at only 5.3 mi per waypoints)"}
+     ],
+     "why": "dist_km and the itinerary's own totalNote agree the round trip is ~14-15 miles, but the day-by-day itinerary miles sum to 20 — 33-40% higher — and Day 1's 7.5 mi to camp doesn't match the waypoint chain's 5.3 mi to the same camp.",
+     "internal_resolution": "dist_km and totalNote agree (~14-15 mi); the day-by-day miles appear to be the inflated outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Best/optimal climbing window",
+     "severity": "medium",
+     "claims": [
+      {"field": "best_season", "says": "typically mid-to-late July into August — but before the route's water sources dry up later in the season"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through September"},
+      {"field": "seasonal_guidance.monthBreakdown.September", "says": "status: good — 'Stable weather but shorter days and increasing chance of early storms'"}
+     ],
+     "why": "best_season frames climbing beyond August as undesirable (water sources dry up), while seasonal_guidance calls September part of the optimal window and rates it 'good' with no mention of the water problem.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier/crevasse hazard on this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel required on the standard SW Slopes/Gully route; the nearby Kimtah Glacier is only encountered if continuing the Ragged Ridge traverse toward Cosho, which is a separate objective from this route"},
+      {"field": "obj_haz", "says": "crevasses on Kimtah Glacier (winter approach variant)"}
+     ],
+     "why": "obj_haz lists a crevasse hazard tied to a winter approach variant of THIS route, while seasonal_hazards.crevasses flatly declares crevasses N/A for the route and attributes any glacier exposure only to a separate objective (continuing to Cosho), never mentioning a winter variant of this route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent terrain (class/features near the summit)",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent", "says": "down-climb the class-4 summit block via its west side, cross back through the snow moat/snowfield on the southwest face..."},
+      {"field": "face", "says": "South Face"},
+      {"field": "beta / pitch_detail[2]", "says": "gully to the ridge just west of the summit, finishing with class 3 scrambling across a scree saddle to the true (east) summit — no moat/snowfield mentioned"}
+     ],
+     "why": "The descent field's opening sentence describes a 'class-4 summit block' and a 'snow moat/snowfield on the southwest face' that appear nowhere else in the route (which is consistently described as a south-facing class-3 gully-to-scree-saddle finish, per face, beta, and pitch_detail) — reads like contaminated text from a different route.",
+     "internal_resolution": "Majority of fields (face, beta, pitch_detail, waypoints) describe a south-face class-3 gully/scree-saddle finish with no moat; the descent field's opening clause looks like the outlier/contamination.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "name": "Klawatti Peak SW Buttress",
+   "area": "Klawatti Peak",
+   "contradictions": [
+    {
+     "fact": "Which summit this route tops out on",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "...climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours."},
+      {"field": "high_point_ft", "says": "8485"},
+      {"field": "approach (same field, later sentence)", "says": "IMPORTANT — this route is NOT on Eldorado Peak itself... continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col"}
+     ],
+     "why": "The approach field first describes the route climbing to Eldorado's 8,868 ft summit, then immediately contradicts itself saying the route is NOT Eldorado and continues past its summit to Klawatti — while high_point_ft (8485) confirms Klawatti, not Eldorado, is this route's actual top.",
+     "internal_resolution": "high_point_ft (8485) and the route's own name/area confirm Klawatti is the summit; the first sentence's '8,868-foot summit' reference is the contaminated/incorrect claim, corrected later in the same field.",
+     "needs_research": false
+    },
+    {
+     "fact": "First ascent of Klawatti Peak",
+     "severity": "low",
+     "claims": [
+      {"field": "fa", "says": "Lloyd Anderson, Karl Boyer, Tom Gorton — July 7, 1940 (also the peak's first ascent)"},
+      {"field": "wa_klawatti_peak_southeast_face.fa (same area)", "says": "Lloyd Anderson, Karl Boyer, Tom Gorton - July 7, 1940 (also the peak's first ascent)"}
+     ],
+     "why": "Two different named routes on the same peak (SW Buttress and Southeast Face) each independently claim the identical party/date as 'also the peak's first ascent' — only one line can be the actual first-ascent route.",
+     "internal_resolution": "Cannot determine from either row alone which route was the true FA line; looks like a duplicated/copy-pasted fa field.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Klawatti Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest terrain on the route",
+     "severity": "high",
+     "claims": [
+      {"field": "rock_grade", "says": "Class 3 (Class 4 in spots)"},
+      {"field": "bail", "says": "Terrain is Class 3 scrambling throughout; retreat by reversing the ridge at any point..."},
+      {"field": "approach_variants[0].baseFinding", "says": "The LOWEST notch is class 5 downclimbing; a crossing to the RIGHT (southeast) of the lowest notch is class 4."}
+     ],
+     "why": "rock_grade caps the route at Class 4 and bail explicitly calls it 'Class 3 scrambling throughout,' but the route's own approach_variants baseFinding says the moat crossing at the Klawatti-Austera col can require Class 5 downclimbing — a materially harder grade than advertised.",
+     "internal_resolution": "approach_variants.baseFinding is the more detailed, route-specific source and explicitly documents the class-5 option; rock_grade/bail appear to understate the difficulty.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cost of the required wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.fees", "says": "A wilderness/backcountry permit is required for overnight camping and costs $10 per person plus a $6 fee, youth 15 and under free."},
+      {"field": "access.permit", "says": "Free backcountry permit required for overnight stays in the Eldorado/Inspiration cross-country zone..."}
+     ],
+     "why": "access.fees states the permit costs $10/person plus a $6 fee, while access.permit on the same route calls it a 'Free backcountry permit' — direct disagreement about whether the permit costs money.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crevasse/glacier hazard on this route",
+     "severity": "high",
+     "claims": [
+      {"field": "obj_haz", "says": "[\"exposure\",\"loose rock\",\"routefinding around The Smokestack\"] — no crevasse/glacier entry"},
+      {"field": "approach_variants[0].hazards", "says": "Crevasses on the Inspiration and the upper McAllister lobe"}
+     ],
+     "why": "The route's own approach hazards explicitly list crevasses on the Inspiration/McAllister glacier crossing used to reach this route, but the main obj_haz safety-hazard list (rendered under KNOWN HAZARDS) omits crevasses entirely.",
+     "internal_resolution": "approach_variants.hazards documents the crevasse hazard directly; obj_haz appears to be missing it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "name": "Southeast Face / Klawatti Glacier",
+   "area": "Klawatti Peak",
+   "contradictions": [
+    {
+     "fact": "Technical difficulty of the crux",
+     "severity": "high",
+     "claims": [
+      {"field": "rock_grade", "says": "Class 3-4 (scrambling)"},
+      {"field": "grade", "says": "Grade III, Class 4 / low 5th"},
+      {"field": "pitch_detail[0]", "says": "grade 5.2 (Class 4-5), crux:true, 'the technical crux of the route,' belayed off slung horns/gear, 30m"}
+     ],
+     "why": "rock_grade labels the whole route 'scrambling' capped at Class 3-4, but the route's own crux pitch is rated 5.2 (Class 4-5) and requires a roped belay off gear — well beyond mere scrambling.",
+     "internal_resolution": "pitch_detail's crux entry (5.2, roped belay) is the more specific source; rock_grade appears to undersell the technical difficulty.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of pitches/sections in the route breakdown",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "2"},
+      {"field": "pitch_detail", "says": "2 entries (matches pitches)"},
+      {"field": "climbing_route", "says": "3 numbered entries (n:1 bergschrund/rock step, n:2 south-facing snow face, n:3 summit ridge)"}
+     ],
+     "why": "pitches (2) agrees with pitch_detail's 2 rows, but the route also carries a separate climbing_route array with 3 numbered sections describing the same climb differently — whichever populates ROUTE BREAKDOWN, the section/pitch count shown would disagree with the other field.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether avalanche ratings apply during the climbing season",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "NWAC does not issue forecasts during the July-September climbing season for this route, so seasonal avalanche danger ratings are not directly applicable"},
+      {"field": "seasonal_hazards.avalanche.byMonth", "says": "July: Moderate, August: Low, September: Low (ratings given for exactly the months just called not applicable)"}
+     ],
+     "why": "The zone note says avalanche ratings don't apply for Jul-Sep, then byMonth immediately assigns specific danger levels to July, August and September.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "First ascent of Klawatti Peak",
+     "severity": "low",
+     "claims": [
+      {"field": "fa", "says": "Lloyd Anderson, Karl Boyer, Tom Gorton - July 7, 1940 (also the peak's first ascent)"},
+      {"field": "wa_klawatti_peak_sw_buttress.fa (same area)", "says": "Lloyd Anderson, Karl Boyer, Tom Gorton — July 7, 1940 (also the peak's first ascent)"}
+     ],
+     "why": "Same duplicate-FA issue as the SW Buttress route: two different named lines on the same peak both claim to be 'also the peak's first ascent.'",
+     "internal_resolution": "Cannot determine from either row alone which route was the true FA line.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Standard descent from the summit",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend the ascent route."},
+      {"field": "descent_text", "says": "Reverse the short NW-face scramble to the notch, then downclimb the chimney and steep rock back to the easy slopes below."},
+      {"field": "itinerary", "says": "...climb it and the northwest face to the summit, descend the South Ridge back to camp, pack up and hike out over Cache Col."},
+      {"field": "pro_tips", "says": "Plan the South Ridge descent in advance, including the 80 ft dirty gully off the false summit, so you are not route-finding a descent you have never seen."},
+      {"field": "turnaround", "says": "...if the party is moving slowly enough that you would reach the notch with less than a comfortable margin for the South Ridge descent and the Cache Col crossing..."}
+     ],
+     "why": "descent/descent_text (the fields that actually render as DESCENT) say to reverse the ascent line back down the same NW ridge/face, while itinerary, pro_tips, and turnaround all describe descending via the separate South Ridge route instead — a climber could plan for the wrong way down.",
+     "internal_resolution": "Three fields (itinerary, pro_tips, turnaround) independently describe a South Ridge descent vs. two (descent, descent_text) describing reversal — the rendered DESCENT text looks like the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel gear for the Cache Glacier crossing",
+     "severity": "high",
+     "claims": [
+      {"field": "gear", "says": "[\"Helmet\",\"Light rack/slings\"] — no ice axe, crampons, rope, or crevasse rescue gear"},
+      {"field": "hazards", "says": "The Cache Glacier on the approach is crevassed and reaches about 35 degrees, going to bare ice with open marginal moats late in the season."},
+      {"field": "pro_needs", "says": "The genuinely protectable moments on the day are on the Cache Glacier during the approach and exit."}
+     ],
+     "why": "The route's own hazards and pro_needs flag the crevassed, 35-degree Cache Glacier crossing as a real hazard needing protection, but the gear list carries no ice axe, crampons, rope, or crevasse rescue equipment.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "name": "Southwest Cirque",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Standard descent from the summit",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend the ascent route."},
+      {"field": "descent_text", "says": "Reverse the heathery gully back down into the southwest cirque."},
+      {"field": "bail", "says": "Retreat down the ascent gully into the cirque is straightforward at any point."},
+      {"field": "itinerary", "says": "...take a gully to the summit ridge and the top (2-3 hours), descend the South Ridge to camp, then pack and exit over Cache Col."},
+      {"field": "pro_tips", "says": "Combine it with the South Ridge as an up-one-down-the-other loop — it makes a much better outing than an out-and-back and costs no extra ground."}
+     ],
+     "why": "descent/descent_text/bail (three fields) all say the route reverses its own ascent gully, while itinerary states the actual 2-day plan descends via the separate South Ridge route instead, and pro_tips reinforces the South Ridge-loop idea.",
+     "internal_resolution": "descent, descent_text and bail agree (reverse the gully); itinerary's stated plan and pro_tips point the other way — genuinely unresolved within the row.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel gear for the Cache Glacier crossing",
+     "severity": "high",
+     "claims": [
+      {"field": "gear", "says": "[\"Helmet\"] — no rope, ice axe, crampons, or crevasse rescue gear"},
+      {"field": "pro_needs", "says": "The one place a rope earns its weight is the Cache Glacier on the approach and exit, where roped travel and a crevasse-rescue system are appropriate."},
+      {"field": "hazards", "says": "The Cache Glacier on the approach is crevassed, reaches about 35 degrees and goes to bare ice with open moats late in the season."}
+     ],
+     "why": "pro_needs explicitly recommends roped travel and a crevasse-rescue system for the Cache Glacier crossing on this route, but gear lists only a helmet — no rope, axe, or rescue gear at all.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "name": "North Face",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "End of the climbing season",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Aug"},
+      {"field": "best_season", "says": "Jul-Sep, with route conditions (glacier cover, couloir snow/ice) varying more year to year than the South Ridge route."},
+      {"field": "climate.summer", "says": "Late June to early August gives the best combination... By late summer the glacier goes to bare ice at its margins and the schrund opens."}
+     ],
+     "why": "season states the route is in condition only through August, but best_season claims the best window runs into September — and climate.summer directly contradicts that by saying late summer (which includes September) means bare ice and an open schrund, i.e. worse, not best, conditions.",
+     "internal_resolution": "climate.summer supports season's Jun-Aug window over best_season's claim that Sep is part of the best period.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "name": "Northeast Couloir",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Total time for the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "9"},
+      {"field": "timing.approachTimeHrs + summitTimeHrs + descentTimeHrs", "says": "3 + 2 + 3 = 8"}
+     ],
+     "why": "The stated total (9 hrs) doesn't match the sum of the route's own approach/summit/descent time breakdown (8 hrs) — a 1-hour, ~12% gap on a route whose own turnaround guidance is built around tight sun/freeze timing.",
+     "internal_resolution": "The three sub-times sum to 8, not 9; totalHrs appears to be the inconsistent figure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "name": "West Ridge",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Whether a South Ridge descent/walk-off is possible from this route",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend the ascent route or the South Ridge, per party preference/conditions."},
+      {"field": "descent_text", "says": "Reverse the chimney and slab, downclimb the open book, and re-cross the schrund back to the pocket glacier. (no South Ridge option mentioned)"},
+      {"field": "itinerary", "says": "...scramble to the summit, descend the South Ridge to camp, then pack out over Cache Col."},
+      {"field": "approach_variants[0].baseFinding", "says": "...the descent reverses the chimney and slab, downclimbs the open book and re-crosses the schrund. ...there is no walk-off from this side."}
+     ],
+     "why": "The route's own baseFinding explicitly states 'there is no walk-off from this side,' and descent_text (the field that actually renders, being longer) matches that by only describing reversal — yet the shorter descent field and the itinerary both claim a South Ridge descent is used/available.",
+     "internal_resolution": "approach_variants.baseFinding directly denies a walk-off from this route's side of the mountain, and descent_text agrees with it; the descent field and itinerary's South Ridge claim appear to be the error.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "name": "South Ridge / Southeast Slopes",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Total round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "8.9 (≈5.5 mi)"},
+      {"field": "itinerary.totalNote", "says": "roughly 16-17 miles and 5,000+ ft of gain/loss total"},
+      {"field": "itinerary.days[0].miles + days[1].miles + days[2].miles", "says": "6.5 + 3.5 + 6.5 = 16.5 miles"}
+     ],
+     "why": "dist_km states the route is 5.5 miles, roughly a third of the 16-17 miles the itinerary's own day-by-day breakdown and totalNote agree on — a climber checking the header/TECHNICAL STATS distance vs. the Plan tab's itinerary would see wildly different trip lengths.",
+     "internal_resolution": "itinerary.totalNote and the summed itinerary.days independently agree at ~16.5 mi; dist_km (5.5 mi) is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Number of pitches/sections in the route breakdown",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "1"},
+      {"field": "pitch_detail", "says": "5 entries (Cascade Pass to Cache Col; Cache Col to Kool-Aid Lake; Kool-Aid Lake to 7,100 ft col; South Ridge to false summit; False summit to true summit)"}
+     ],
+     "why": "pitches states there is 1 pitch, but the ROUTE BREAKDOWN (pitch_detail) lists 5 numbered rows — even allowing that most are approach/hiking segments rather than roped pitches, the stated count sharply understates the number of rows shown.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

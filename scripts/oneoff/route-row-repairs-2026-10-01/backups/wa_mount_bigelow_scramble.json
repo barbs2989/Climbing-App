@@ -1,0 +1,112 @@
+{
+ "id": "wa_mount_bigelow_scramble",
+ "name": "Standard Scramble",
+ "pitch_detail": [
+  {
+   "grade": "Trail",
+   "notes": "Crater Creek Trailhead (4,750 ft) via Eagle Lakes Trail #431; crosses Crater Creek and passes the Crater Creek Trail #416 junction at 0.7 mi",
+   "pitch": "1"
+  },
+  {
+   "grade": "Trail/Class 1",
+   "notes": "Continue on Eagle Lakes Trail #431 to an overlook of Eagle Lake (~5.5 mi, 7,110 ft), then the Upper Eagle Lake Trail #431A junction at 5.7 mi, reaching Upper Eagle Lake (~6.2 mi, 7,110 ft)",
+   "pitch": "2"
+  },
+  {
+   "grade": "Class 2",
+   "notes": "Leave the trail at Upper Eagle Lake; boulder-hop/ascend talus and scree northwest toward the base of the summit cliffs",
+   "pitch": "3"
+  },
+  {
+   "grade": "Class 3",
+   "notes": "Work through the cliff bands, then climb talus/scree below the east face toward the northeast face, staying near the ridge crest on the right side of the cliffs where a class 3 weakness/dihedral-like feature breaks through",
+   "pitch": "4"
+  },
+  {
+   "grade": "Class 3",
+   "notes": "Short, exposed final scramble to the summit block, on climber's left near the top",
+   "pitch": "5"
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.2204,
+   "lng": -120.2678,
+   "elev": 4750,
+   "name": "Crater Creek Trailhead",
+   "note": "End of FR 4340-300; vault toilet and stock facilities, no potable water — start Eagle Lakes Trail #431 here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Twisp, take WA-20 east 2 miles to WA-153, then go south 12 miles to County Road 1029/1034, signed for Foggy Dew Campground. Follow that about 6 miles as it becomes FR 4340 — the pavement ends around mile 4, where you bear right — then continue on FR 4340-300 for roughly 4.6 more miles to the Crater Creek Trailhead at 4,750 ft. The lot has a vault toilet and stock facilities but no potable water, and Eagle Lakes Trail #431 starts here. Fill out the self-issue wilderness permit at the trailhead; no advance reservation is needed. Road and trail are typically snow-free and accessible roughly July through October."
+  },
+  {
+   "lat": 48.21863905,
+   "lng": -120.27910493,
+   "elev": 4900,
+   "name": "Crater Creek Trail junction",
+   "note": "Bridge crosses Crater Creek; Eagle Lakes Trail #431 continues straight, Crater Creek Trail #416 splits off.",
+   "type": "Junction",
+   "distMi": 0.7,
+   "directions": "Start up Eagle Lakes Trail #431 and cross Crater Creek on a bridge. Where the Crater Creek Trail #416 splits off, continue straight on #431."
+  },
+  {
+   "lat": 48.2125245,
+   "lng": -120.3155597,
+   "name": "Eagle Lakes Trail backcountry camp",
+   "note": "Established campsite roughly at the halfway point, a common overnight stop before pushing on to Upper Eagle Lake.",
+   "type": "Campsite",
+   "distMi": 3,
+   "directions": "Stay on Eagle Lakes Trail #431 as it climbs steadily through forest to an established campsite about halfway to the lakes."
+  },
+  {
+   "lat": 48.211972,
+   "lng": -120.339562,
+   "elev": 7050,
+   "name": "Upper Eagle Lake Trail (431A) junction",
+   "note": "Leave the main Eagle Lakes Trail here and follow the 431A spur 0.5 mi to Upper Eagle Lake.",
+   "type": "Junction",
+   "distMi": 5.7,
+   "directions": "Continue up #431 through subalpine fir and larch, past an overlook of Lower Eagle Lake, to a junction. The left branch goes to Lower Eagle Lake and Horsehead Pass. The Upper Eagle Lake spur, #431A, goes right."
+  },
+  {
+   "lat": 48.21361,
+   "lng": -120.34688,
+   "elev": 7110,
+   "name": "Upper Eagle Lake",
+   "note": "Cirque lake with established campsites; last reliable water and staging point before the off-trail summit push.",
+   "type": "Water",
+   "distMi": 6.2,
+   "directions": "Take the right-hand spur, Trail #431A, about half a mile up to Upper Eagle Lake. This is the last reliable water."
+  },
+  {
+   "lat": 48.215581944444445,
+   "lng": -120.35003361111112,
+   "elev": 7600,
+   "name": "Cliff band notch above Upper Eagle Lake",
+   "note": "From the lake's NW shore ascend talus/snow and thread a notch through the lower cliff band — route-finding is tricky, especially with snow lingering into summer.",
+   "type": "Junction",
+   "distMi": 6.4,
+   "directions": "From the lake's northwest shore, climb northwest through the larch stand, staying right of the prominent rock wall above the lake. Veer right to a notch, then take easy slabby rock above the lower cliff band. Route-finding is tricky while snow lingers in the notch."
+  },
+  {
+   "lat": 48.217596388888886,
+   "lng": -120.35304672222223,
+   "elev": 8300,
+   "name": "Summit block notch step",
+   "note": "An exposed ~8-ft step down into a sandy gully guards the final summit block; the crux of the scramble, watch footing on the return downclimb.",
+   "type": "Hazard",
+   "distMi": 6.6,
+   "directions": "Above the lower band, traverse left beneath the next cliff band rather than drifting right onto the better rock, which cliffs out at the end of the ridge. Then climb steep, loose scree and rock to just below the summit block, where an exposed chimney step of about 8 ft and a sandy gully guard the finish."
+  },
+  {
+   "lat": 48.218615,
+   "lng": -120.353895,
+   "elev": 8449,
+   "name": "Mount Bigelow summit",
+   "note": "True summit rises over 1,300 ft above Upper Eagle Lake in just 0.35 mile; register with views along the Sawtooth crest toward Switchback and Martin Peaks.",
+   "type": "Summit",
+   "distMi": 6.65,
+   "directions": "Climb the chimney step and the sandy gully to the saddle. The top holds on the step are poor, set in sand and small pebbles. From the saddle, turn right and follow the easy ridge to the true summit."
+  }
+ ]
+}

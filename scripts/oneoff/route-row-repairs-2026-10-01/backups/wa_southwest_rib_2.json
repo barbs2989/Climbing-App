@@ -1,0 +1,43 @@
+{
+ "id": "wa_southwest_rib_2",
+ "name": "Southwest Rib",
+ "waypoints": [
+  {
+   "lat": 47.4629,
+   "lng": -120.67301,
+   "elev": 1900,
+   "name": "Ingalls Creek Trailhead (Trail #1215)",
+   "note": "Off Hwy 97 near Blewett Pass.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 97 between Leavenworth and Blewett Pass, about 7 miles south of the US 2 junction (near milepost 178), turn west onto Ingalls Creek Road. Cross Peshastin Creek, bear left, and drive to the trailhead at the road's end, about 1,900 ft. A Northwest Forest Pass or Interagency pass is required to park; fill out the free self-issued wilderness permit at the trailhead."
+  },
+  {
+   "lat": 47.44768,
+   "lng": -120.814,
+   "elev": 3780,
+   "name": "Crystal Creek Junction",
+   "note": "Leave Ingalls Creek Trail ~100 ft before it crosses Crystal Creek.",
+   "type": "Junction",
+   "distMi": 6.5
+  },
+  {
+   "lat": 47.47434,
+   "lng": -120.80271,
+   "elev": 7030,
+   "name": "Crystal Lake",
+   "note": "Basin camp below the SW Rib; also reachable descending from the Enchantments plateau.",
+   "type": "Junction",
+   "distMi": 8.5
+  },
+  {
+   "lat": 47.47,
+   "lng": -120.792,
+   "elev": 7800,
+   "name": "Crystal Lake Tower",
+   "note": "Westernmost point on McClellan Peak's summit ridge; SW Rib forms a continuous ~1,400-ft line down into Crystal Creek Basin.",
+   "type": "Summit",
+   "distMi": 9.3
+  }
+ ]
+}

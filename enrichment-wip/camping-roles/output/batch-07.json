@@ -1,0 +1,813 @@
+{
+  "zones": [
+    {
+      "zone": "entiat-holden",
+      "overnightPermit": {
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk (Phelps Creek, Trinity, Entiat River, or the Holden trailheads). Holden Village and its access road are closed to hikers through at least summer 2026.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee"
+      }
+    },
+    {
+      "zone": "entiat-river-crest",
+      "overnightPermit": {
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the North Fork Entiat, Entiat River or Phelps Creek trailhead kiosk.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee"
+      }
+    },
+    {
+      "zone": "foss-necklace-dutch-miller",
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk and carry your copy.",
+        "url": "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+      }
+    },
+    {
+      "zone": "gardner-methow",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Nothing to obtain for camping in the Lake Chelan-Sawtooth Wilderness; parking at the trailhead needs a recreation pass or day pass.",
+        "url": null
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_bonanza_peak_mary_green_glacier",
+      "main": [
+        "Holden Pass",
+        "Holden Lake"
+      ],
+      "onRoute": [
+        "Holden Village ballfield campground",
+        "Bivy below the waterfall slabs"
+      ],
+      "drop": [
+        "Holden Pass high camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Holden Pass and Holden Lake are the standard camps; 'Holden Pass high camp' duplicates 'Holden Pass'. Holden Village and FR 8301 are closed to hikers through summer 2026, so the approach is unavailable this season."
+    },
+    {
+      "id": "wa_bonanza_peak_north_ridge",
+      "main": [
+        "Holden Pass and the slab bivies above",
+        "Holden Lake"
+      ],
+      "onRoute": [
+        "Holden Village",
+        "Holden Ballpark Campground"
+      ],
+      "drop": [
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Holden Pass / Holden Lake camps as the standard route; Holden access closed through summer 2026."
+    },
+    {
+      "id": "wa_bonanza_peak_northeast_buttress",
+      "main": [
+        "Holden Pass and the slab bivies above",
+        "Holden Lake"
+      ],
+      "onRoute": [
+        "Holden Village",
+        "Holden Ballpark Campground"
+      ],
+      "drop": [
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds",
+        "Holden Pass high camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Holden Pass is the high camp; the waypoint 'Holden Pass high camp' duplicates the Holden Pass entry. Holden access closed through summer 2026."
+    },
+    {
+      "id": "wa_buckskin_mountain_southwest_slopes",
+      "main": [
+        "Entiat Meadows camp (5,100' clearing)"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approached up the Entiat River trail to Entiat Meadows; every pooled Holden/Phelps camp is on another approach."
+    },
+    {
+      "id": "wa_carne_mountain_trail_route",
+      "main": [
+        "Carne Basin"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually done car-to-car; Carne Basin is the only camp on the trail, Phelps Creek Campground the staging camp."
+    },
+    {
+      "id": "wa_chiwawa_mountain_southwest",
+      "main": [
+        "Chiwawa Basin high camp benches"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The 6,300 ft bench in the upper Chiwawa basin is the usual camp; Lyman Lakes serves the north-side approach."
+    },
+    {
+      "id": "wa_cloudy_peak_southwest_slopes",
+      "main": [
+        "Lyman Lakes and Cloudy Pass"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds",
+        "Spider Meadow and Phelps Basin"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Spider Meadow"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lyman Lakes / Cloudy Pass is the base via Spider Gap; 'Spider Meadow' duplicates the Spider Meadow and Phelps Basin entry. Holden-side approach closed through 2026."
+    },
+    {
+      "id": "wa_copper_peak_south_route",
+      "main": [
+        "Copper Creek basin camp"
+      ],
+      "onRoute": [
+        "Holden Village",
+        "Holden Ballpark Campground"
+      ],
+      "drop": [
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Copper Creek basin at about 5,600 ft is the standard camp; Holden access closed through summer 2026."
+    },
+    {
+      "id": "wa_dumbell_mountain_west",
+      "main": [
+        "Lower Phelps Basin Bivy",
+        "Spider Meadow and Phelps Basin"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Spider Meadow (lower end)"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Most parties camp in lower Phelps Basin; 'Spider Meadow (lower end)' duplicates the Spider Meadow and Phelps Basin entry."
+    },
+    {
+      "id": "wa_fortress_mountain_east_ridge",
+      "main": [],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes"
+      ],
+      "add": [
+        {
+          "name": "Chiwawa Basin bench",
+          "type": "camp",
+          "elev": 6300,
+          "capacity": "Several tent sites, some with rock windbreaks",
+          "water": "Small streams on the bench; they can run low late in the season",
+          "permit": "Free self-issue Glacier Peak Wilderness permit",
+          "notes": "A flat heather bench in the upper Chiwawa basin between Fortress and Chiwawa, reached by a short climb from the end of the Chiwawa River trail. The usual high camp for the east side of Fortress and for Chiwawa.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Whole pooled list belonged to other approaches; added the upper Chiwawa basin bench used for the east side of Fortress."
+    },
+    {
+      "id": "wa_fortress_mountain_northeast_face",
+      "main": [],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes"
+      ],
+      "add": [
+        {
+          "name": "Chiwawa Basin bench",
+          "type": "camp",
+          "elev": 6300,
+          "capacity": "Several tent sites, some with rock windbreaks",
+          "water": "Small streams on the bench; they can run low late in the season",
+          "permit": "Free self-issue Glacier Peak Wilderness permit",
+          "notes": "A flat heather bench in the upper Chiwawa basin between Fortress and Chiwawa, reached by a short climb from the end of the Chiwawa River trail. The usual high camp for the east side of Fortress and for Chiwawa.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Normally climbed in a link-up from the Chiwawa basin side; the added bench is inferred from the East Ridge approach, not confirmed for this line."
+    },
+    {
+      "id": "wa_fortress_mountain_southwest_face",
+      "main": [],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes"
+      ],
+      "add": [
+        {
+          "name": "Basin below Pass No Pass",
+          "type": "camp",
+          "capacity": "A few sites in a grove of trees and in the meadows",
+          "water": "Stream in the basin",
+          "permit": "Free self-issue Glacier Peak Wilderness permit",
+          "notes": "The small basin reached by the unmarked way trail that leaves the Buck Creek trail about a mile below Buck Creek Pass. The closest camp to the southwest face; the scramble starts above it.",
+          "role": "main"
+        },
+        {
+          "name": "Buck Creek Pass",
+          "type": "camp",
+          "elev": 5800,
+          "capacity": "Several forested sites near the pass",
+          "water": "Stream near the pass",
+          "permit": "Free self-issue Glacier Peak Wilderness permit",
+          "notes": "The popular camp at the top of the Buck Creek trail, roughly ten miles from Trinity. From here drop back down the trail about a mile to the Pass No Pass way trail.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Parties camp in the basin below Pass No Pass or at Buck Creek Pass; both added. Elevation of the Pass No Pass basin camp not confirmed, so omitted."
+    },
+    {
+      "id": "wa_martin_peak_west_ridge",
+      "main": [
+        "Holden Pass and the slab bivies above",
+        "Holden Lake"
+      ],
+      "onRoute": [
+        "Holden Village",
+        "Holden Ballpark Campground"
+      ],
+      "drop": [
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The west ridge starts at Holden Pass, so Holden Pass and Holden Lake are the camps; Holden access closed through summer 2026."
+    },
+    {
+      "id": "wa_mount_maude_r1",
+      "main": [
+        "Leroy Basin",
+        "Upper Ice Lake"
+      ],
+      "onRoute": [],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Most parties camp in Leroy Basin and cross the Seven Fingered Jack-Maude col to the Entiat Glacier; Upper Ice Lake serves the longer eastern approach."
+    },
+    {
+      "id": "wa_mount_maude_r2",
+      "main": [
+        "Leroy Basin"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Ice Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Leroy Basin is the stated camp for this north-side line; Ice Lakes is on the east side, off this approach."
+    },
+    {
+      "id": "wa_mount_maude_r3",
+      "main": [
+        "Leroy Basin"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Ice Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Leroy Basin is the stated camp for the west-side couloir."
+    },
+    {
+      "id": "wa_north_star_mountain_cloudy_peak_traverse",
+      "main": [
+        "Lyman Lakes and Cloudy Pass"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds",
+        "Spider Meadow and Phelps Basin",
+        "Holden Village",
+        "Holden Ballpark Campground"
+      ],
+      "drop": [
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Leroy Basin",
+        "Ice Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lyman Lakes is the base; onRoute lists the open west approach first, then the Holden approach, closed through summer 2026."
+    },
+    {
+      "id": "wa_north_star_mountain_east_route",
+      "main": [
+        "Lower Lyman Lake",
+        "Lyman Lakes and Cloudy Pass"
+      ],
+      "onRoute": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Rebel Camp",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds",
+        "Spider Meadow and Phelps Basin"
+      ],
+      "drop": [
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Leroy Basin",
+        "Ice Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lower Lyman Lake is the standard camp; the pooled Lyman Lakes entry overlaps it (upper lakes, Cloudy Pass). Holden approach closed through summer 2026, so the Spider Gap approach camps are kept as alternatives."
+    },
+    {
+      "id": "wa_seven_fingered_jack_southwest_slopes",
+      "main": [
+        "Leroy Basin"
+      ],
+      "onRoute": [
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "drop": [
+        "Holden Village",
+        "Holden Ballpark Campground",
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Ice Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Leroy Basin is the standard camp."
+    },
+    {
+      "id": "wa_soviet_route",
+      "main": [
+        "High camp near North Star-Bonanza pass (~7,100 ft)"
+      ],
+      "onRoute": [
+        "Holden Village",
+        "Holden Ballpark Campground"
+      ],
+      "drop": [
+        "Holden Lake",
+        "Holden Pass and the slab bivies above",
+        "Lyman Lakes and Cloudy Pass",
+        "Spider Meadow and Phelps Basin",
+        "Leroy Basin",
+        "Ice Lakes",
+        "Phelps Creek Campground and the Chiwawa River road campgrounds"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The high camp above the Hart Lake terraces is the route's own camp; Holden Lake and Holden Pass are on the other side of the peak. Holden access closed through summer 2026."
+    },
+    {
+      "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+      "main": [
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Fox Camp, North Fork Entiat trail"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Climbed from the Emerald-Saska basin as part of the crest traverse."
+    },
+    {
+      "id": "wa_cardinal_peak_se_slopes",
+      "main": [
+        "West-side basin camp below Cardinal Peak",
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Fox Camp, North Fork Entiat trail"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Route-specific basin camp first; the Emerald-Saska basin is also commonly used for Cardinal. Unsure the two basins are distinct places."
+    },
+    {
+      "id": "wa_emerald_peak_se_ridge",
+      "main": [
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Fox Camp, North Fork Entiat trail"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows",
+        "Fox Camp",
+        "Emerald-Saska basin camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Fox Camp' and 'Emerald-Saska basin camp' duplicate the pooled Fox Camp and Emerald-Saska basin entries."
+    },
+    {
+      "id": "wa_emerald_peak_west_route",
+      "main": [
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Fox Camp, North Fork Entiat trail"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The Emerald-Saska basin is the base for Emerald from the North Fork Entiat."
+    },
+    {
+      "id": "wa_fifth_of_july_mountain_scramble",
+      "main": [
+        "Cow Creek Meadows",
+        "Larch Lakes meadow camps"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Myrtle Lake"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows",
+        "Fox Camp, North Fork Entiat trail",
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "This route goes up Cow Creek to the meadows; Larch Lakes is the other common base. The pooled Myrtle Lake and Cow Creek Meadows entry duplicates the two waypoints."
+    },
+    {
+      "id": "wa_mount_fernow_southeast_face",
+      "main": [
+        "Leroy Basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows",
+        "Fox Camp, North Fork Entiat trail",
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "A Phelps Creek / Leroy Basin route; every pooled Entiat-side camp is on another approach."
+    },
+    {
+      "id": "wa_pinnacle_mountain_entiat_scramble",
+      "main": [
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Pyramid Mountain Trail (#1433) junction camp",
+        "Fox Camp, North Fork Entiat trail"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually climbed from the Emerald-Saska basin with Emerald and Saska; the Entiat River / sheep driveway alternative has no listed camp."
+    },
+    {
+      "id": "wa_saska_peak_emerald_saska_col",
+      "main": [
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "onRoute": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Fox Camp, North Fork Entiat trail"
+      ],
+      "drop": [
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows",
+        "Fox Camp (Pyramid Creek Trail junction)",
+        "Basin between Emerald and Saska"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Basin between Emerald and Saska' and 'Fox Camp (Pyramid Creek Trail junction)' duplicate the pooled entries."
+    },
+    {
+      "id": "wa_spectacle_buttes_west_route",
+      "main": [
+        "Leroy Basin camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Cottonwood Camp and the Entiat River road campgrounds",
+        "Myrtle Lake and Cow Creek Meadows",
+        "Larch Lakes meadow camps",
+        "Snow Brushy Creek junction camps, Entiat River trail",
+        "Entiat Meadows",
+        "Fox Camp, North Fork Entiat trail",
+        "The basin between Emerald and Saska, and Milham Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "A Phelps Creek / Leroy Basin route; every pooled Entiat-side camp is on another approach."
+    },
+    {
+      "id": "wa_bald_eagle_peak_scramble",
+      "main": [
+        "Money Creek and Miller River campgrounds, Foss River roadhead"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Necklace Valley — Jade, Emerald and Opal Lakes",
+        "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+        "Tank Lakes basin",
+        "Big Heart Lake, with Copper and Little Heart below",
+        "Bald Eagle Lake cirque",
+        "Peggy's Pond, below Cathedral Rock",
+        "Hyas Lake and Upper Hyas Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "A day scramble from the Foss River road with no camp on the north ridge; the car campground is the staging camp. Unsure whether the Bald Eagle Lake cirque lies on the north-ridge line, so it was dropped."
+    },
+    {
+      "id": "wa_la_bohn_peak_southwest_slopes",
+      "main": [
+        "Necklace Valley — Jade, Emerald and Opal Lakes",
+        "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches"
+      ],
+      "onRoute": [
+        "Money Creek and Miller River campgrounds, Foss River roadhead"
+      ],
+      "drop": [
+        "Tank Lakes basin",
+        "Big Heart Lake, with Copper and Little Heart below",
+        "Bald Eagle Lake cirque",
+        "Peggy's Pond, below Cathedral Rock",
+        "Hyas Lake and Upper Hyas Lake",
+        "Jade Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Necklace Valley lakes and La Bohn Gap are the camps; 'Jade Lake' duplicates the Necklace Valley entry."
+    },
+    {
+      "id": "wa_mount_daniel_daniel_glacier",
+      "main": [
+        "Peggys Pond"
+      ],
+      "onRoute": [
+        "Squaw Lake",
+        "East summit bivouac"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Peggys Pond is the standard base camp; Squaw Lake is a short spur off the approach."
+    },
+    {
+      "id": "wa_mount_daniel_lynch_glacier",
+      "main": [
+        "Peggy's Pond, below Cathedral Rock"
+      ],
+      "onRoute": [
+        "Hyas Lake and Upper Hyas Lake"
+      ],
+      "drop": [
+        "Necklace Valley — Jade, Emerald and Opal Lakes",
+        "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+        "Tank Lakes basin",
+        "Big Heart Lake, with Copper and Little Heart below",
+        "Bald Eagle Lake cirque",
+        "Money Creek and Miller River campgrounds, Foss River roadhead"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Most parties climb the Lynch Glacier from Peggy's Pond; Hyas Lake is only on the stated Deception Pass / Dip Top Gap approach."
+    },
+    {
+      "id": "wa_mount_hinman_hinman_glacier",
+      "main": [
+        "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+        "Necklace Valley — Jade, Emerald and Opal Lakes"
+      ],
+      "onRoute": [
+        "Money Creek and Miller River campgrounds, Foss River roadhead"
+      ],
+      "drop": [
+        "Tank Lakes basin",
+        "Big Heart Lake, with Copper and Little Heart below",
+        "Bald Eagle Lake cirque",
+        "Peggy's Pond, below Cathedral Rock",
+        "Hyas Lake and Upper Hyas Lake",
+        "Jade Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "La Bohn Gap is the high camp and the Necklace lakes the lower base; 'Jade Lake' duplicates the Necklace Valley entry. Peggy's Pond serves the eastern approach."
+    },
+    {
+      "id": "wa_gardner_mountain_west_ridge",
+      "main": [
+        "Gardner Meadows, Wolf Creek trail",
+        "High basin camp above Gardner Meadows"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Klipchuck Campground and the Highway 20 road-head campgrounds",
+        "Cedar Creek meadow camps above the falls",
+        "Upper Cedar Creek head basin",
+        "Gardner Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Gardner Meadows is the standard base; the waypoint 'Gardner Meadows' duplicates the pooled entry. Cedar Creek camps and Klipchuck serve the western approach."
+    },
+    {
+      "id": "wa_north_gardner_mountain_nw_couloir",
+      "main": [
+        "Cedar Creek meadow camps above the falls",
+        "Upper Cedar Creek head basin"
+      ],
+      "onRoute": [
+        "Klipchuck Campground and the Highway 20 road-head campgrounds"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Cedar Creek side camps; unsure whether the meadow camps above the falls lie before the route leaves the trail."
+    },
+    {
+      "id": "wa_north_gardner_mountain_southwest",
+      "main": [
+        "High basin camp above Gardner Meadows",
+        "Gardner Meadows, Wolf Creek trail"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Klipchuck Campground and the Highway 20 road-head campgrounds"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The approach names the high basin as the typical camp; Klipchuck is on the Highway 20 side, not the Wolf Creek approach."
+    }
+  ],
+  "misassigned": [
+    "wa_fortress_mountain_east_ridge: pooled list is all Holden, Phelps and Entiat camps; the real camp (upper Chiwawa basin bench) was missing and is added",
+    "wa_fortress_mountain_northeast_face: same as East Ridge; Chiwawa basin bench added",
+    "wa_fortress_mountain_southwest_face: pooled list holds no Buck Creek camp; Pass No Pass basin and Buck Creek Pass added",
+    "wa_mount_fernow_southeast_face: filed in the Entiat-crest zone but approached from Phelps Creek; only its own Leroy Basin waypoint applies",
+    "wa_spectacle_buttes_west_route: filed in the Entiat-crest zone but approached from Phelps Creek; only its own Leroy Basin waypoint applies",
+    "wa_buckskin_mountain_southwest_slopes: filed in the Holden/Phelps zone but approached up the Entiat River; only its own Entiat Meadows waypoint applies",
+    "wa_mount_daniel_lynch_glacier: pooled list is Foss River side; only Peggy's Pond and Hyas Lake apply"
+  ]
+}

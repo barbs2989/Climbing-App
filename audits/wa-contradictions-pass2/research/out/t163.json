@@ -1,0 +1,104 @@
+{
+ "file": "t163.json",
+ "results": [
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "Where the maintained trail ends",
+   "verdict": "fixed",
+   "correct_value": "The maintained Chain Lakes Trail continues up to Herman Saddle; the scramble leaves it at the last switchback below the saddle.",
+   "evidence": "The Mount Herman route page describes following the Bagley Lakes trail toward Herman Saddle and leaving the trail at the last switchback to reach the Mazama Dome-Herman ridge. The Mountaineers' Mount Herman route likewise follows the Bagley/Chain Lakes trail to Herman Saddle before going off-trail on the south ridge. Approach, waypoints, variant and descent already say this; only watch_out[0] placed the trail end at the lake junction.",
+   "sources": [
+    "https://www.summitpost.org/mt-herman/1063604",
+    "https://www.mountaineers.org/activities/routes-places/mount-herman"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "No maintained trail above the Chain Lakes/Bagley Lakes junction",
+     "replace": "No maintained trail once you leave Chain Lakes Trail at the last switchback below Herman Saddle",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Where the maintained trail ends"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "SR 542 reopening in heavy years",
+   "verdict": "fixed",
+   "correct_value": "The Heather Meadows-Artist Point section typically opens late June to July and slips to mid-July or later in heavy-snow years.",
+   "evidence": "WSDOT's spokesperson in 2022 said the road is typically open by late June or early July, and in that late-snow year it opened July 11. The SR 542 encyclopedia entry gives the Artist Point end as open roughly July through October. access.closures and road.seasonalGate already say heavy years slip into July; climate.bySeason.spring's 'May or June' was the outlier.",
+   "sources": [
+    "https://www.cascadiadaily.com/2022/jul/11/road-to-artist-point-remains-closed-above-heather-meadows/",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542",
+    "https://wsdot.wa.gov/about/news/2024/sr-542-road-artist-point-will-open-season-friday-june-21"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "spring"
+     ],
+     "find": "may not open until May or June in a heavy-snow year",
+     "replace": "may not open until July or later in a heavy-snow year",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "SR 542 reopening in heavy years"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Wilderness permit",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No wilderness permit is required in the Mount Baker Wilderness (only a voluntary climbing register and a trailhead recreation pass); the permit fields are right and the bivy entries' 'free self-issue wilderness permit' text is the outlier.",
+   "evidence": "The Forest Service Mt. Baker Wilderness page lists only a voluntary climbing register ('Registration is optional') and a recreation pass at some trailheads; the free self-issue overnight permit found in searches belongs to the Alpine Lakes Wilderness, not Mount Baker. The route's permit, access.permit and access.overnight_permit fields agree with this; only bivy[0], bivy[1] and bivy[2] permit text claims a self-issue wilderness permit. Only one authoritative source found, and the wrong copies live in bivy, which is owned by the camping clean-up, so no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Time to reach technical terrain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly half a day (pre-dawn start, gully by about midday) on a single car-to-car day.",
+   "evidence": "Itinerary (one day, 4:30 AM start, gully at midday, summit 1-2 PM), timing (12 hr car-to-car), recommendedStart and totalNote all describe a single day; partner_requirements.approachTime ('a full day or more') is the lone outlier. A S/SW-face trip report from the Nooksack Cirque trailhead did it in a single day and budgets about 6 hours trailhead to summit. No second independent timing source for this exact line was found.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/mount-sefrit-s-sw-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "plan for a full day or more to reach the base of technical terrain",
+     "replace": "plan on roughly half a day, starting before dawn, to reach the base of technical terrain",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Time to reach technical terrain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Distance from Mount Shuksan",
+   "verdict": "unresolved",
+   "correct_value": "about four miles north of Mount Shuksan",
+   "evidence": "[Held: two sources say three miles; the four-mile figure rests on coordinates plus one blog.] Sefrit's summit coordinate (48.8915, -121.5942) and Shuksan's (48.8315, -121.6032) are about 4.1 mi apart, almost due north-south; the route's own summit pin gives 4.2 mi. A trip-report blog states Sefrit is four miles north of Shuksan. The 'three miles' figure in some encyclopedia text does not survive the coordinates (Sefrit's own isolation to Nooksack Tower is 3.85 mi, and Shuksan's summit is farther).",
+   "sources": [
+    "https://peakvisor.com/peak/mount-sefrit.html",
+    "https://en.wikipedia.org/wiki/Mount_Shuksan",
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/"
+   ],
+   "patches": []
+  }
+ ]
+}

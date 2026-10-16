@@ -1,0 +1,361 @@
+{
+ "file": "t203.json",
+ "results": [
+  {
+   "id": "wa_the_monk_le_gibet",
+   "fact": "Loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this Monk/Cathedral route; the Andrews Creek approach loses height after Andrews Pass on the way in and regains it on the way out, so the stored loss_ft is plainly incomplete, but per the standing rule loss_ft is changed only to a sourced car-to-car figure. Settled by a published round-trip loss for the Andrews Creek approach plus the climb.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "fact": "Loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this Monk/Cathedral route; the Andrews Creek approach loses height after Andrews Pass on the way in and regains it on the way out, so the stored loss_ft is plainly incomplete, but per the standing rule loss_ft is changed only to a sourced car-to-car figure. Settled by a published round-trip loss for the Andrews Creek approach plus the climb.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ne_ridge",
+   "fact": "Loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this Monk/Cathedral route; the Andrews Creek approach loses height after Andrews Pass on the way in and regains it on the way out, so the stored loss_ft is plainly incomplete, but per the standing rule loss_ft is changed only to a sourced car-to-car figure. Settled by a published round-trip loss for the Andrews Creek approach plus the climb.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "fact": "Loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this Monk/Cathedral route; the Andrews Creek approach loses height after Andrews Pass on the way in and regains it on the way out, so the stored loss_ft is plainly incomplete, but per the standing rule loss_ft is changed only to a sourced car-to-car figure. Settled by a published round-trip loss for the Andrews Creek approach plus the climb.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "fact": "Loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this Monk/Cathedral route; the Andrews Creek approach loses height after Andrews Pass on the way in and regains it on the way out, so the stored loss_ft is plainly incomplete, but per the standing rule loss_ft is changed only to a sourced car-to-car figure. Settled by a published round-trip loss for the Andrews Creek approach plus the climb.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "fact": "Loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this Monk/Cathedral route; the Andrews Creek approach loses height after Andrews Pass on the way in and regains it on the way out, so the stored loss_ft is plainly incomplete, but per the standing rule loss_ft is changed only to a sourced car-to-car figure. Settled by a published round-trip loss for the Andrews Creek approach plus the climb.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_10",
+   "fact": "Free grade of the crux",
+   "verdict": "fixed",
+   "correct_value": "5.8 with some A1 aid (5.8/A1), possible to lead free; no free grade of 5.9 is published",
+   "evidence": "The route page lists South Face at 5.8/A1, Grade III-IV, 7 pitches, 'originally done with some aid, possible to lead free'. The 1969 first-ascent account rates the free climbing F5-F8 (hardest F8 = 5.8) with the curving chimney climbed on aid. Neither gives a free grade of 5.9; the 5.9 figures were unsourced.",
+   "sources": [
+    "https://www.mountainproject.com/route/109095893/south-face",
+    "http://publications.americanalpineclub.org/articles/12196939001/North-America-United-States-Washington-Cascade-Mountains-Cathedral-Peak-Okanogan-South-Face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "grade"
+     ],
+     "find": "5.8/A1 (free at ~5.9 per some parties)",
+     "replace": "5.8/A1",
+     "id": "wa_south_face_10",
+     "fact": "Free grade of the crux"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "a classic mixed free/aid granite climb, now commonly led free in the 5.8-5.9 range.",
+     "replace": "a classic granite climb at 5.8 with some original A1 aid, which can be led free.",
+     "id": "wa_south_face_10",
+     "fact": "Free grade of the crux"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "led free around 5.8/5.9, avoiding",
+     "replace": "led free, avoiding",
+     "id": "wa_south_face_10",
+     "fact": "Free grade of the crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Drive distance Winthrop to trailhead",
+   "verdict": "fixed",
+   "correct_value": "about 23 miles from Winthrop to the Andrews Creek Trailhead",
+   "evidence": "One Pasayten guide says the road is paved for 23.5 miles to the Andrews Creek Trailhead; another says drive 23 miles up the Chewuch River road to the Andrews Creek trail. The Forest Service text ('6 miles ... then 22 miles') is ambiguous and was read as 28; the straight-line distance Winthrop to trailhead is about 21 miles along a fairly straight valley, consistent with ~23. Sibling Monk/NE Ridge rows still say 28 miles consistently (not patched here; same class).",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "http://www.willhiteweb.com/pasayten_wilderness/cathedral_lakes/trail_loop_235.htm",
+    "https://www.wta.org/go-hiking/hikes/andrews-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead",
+     "replace": "about 23 miles from Winthrop, the first ~6 on Okanogan County Rd 1213/West Chewuch Rd and the rest on Forest Road 51 to the trailhead",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Drive distance Winthrop to trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 paved miles to the trailhead",
+     "replace": "then continue on pavement to the trailhead, about 23 miles from Winthrop in all",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Drive distance Winthrop to trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Descent grade and time",
+   "verdict": "fixed",
+   "correct_value": "3rd-class scramble whose crux is a Class 4 step across the summit gap",
+   "evidence": "Two route descriptions rate the summit gap crossing Class 4 ('cross the gap (Class 4)'), and scramble summaries describe Class 3 to near the summit with a Class 4 crux move; the peak's easiest line is rated class 3 overall. The row's own Southwest Route (the same terrain) says 'Class 3 with one Class 4 step-across'. The TIME part stays open: one 2024 trip report took 1h10m summit to camp, fitting the prose's '45 min to just over an hour' but not the schedule's 1.5-2.5 h; a second summit-to-camp time is needed to settle the schedule.",
+   "sources": [
+    "https://mazamas.org/activity/instance/13868/detail/",
+    "https://www.mountaineers.org/activities/routes-places/cathedral-peak-amphitheater-mountain",
+    "https://en.wikipedia.org/wiki/Cathedral_Peak_(Washington)",
+    "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Standard descent is a 4th-class scramble",
+     "replace": "Standard descent is a 3rd-class scramble",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Descent grade and time"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "including a short, exposed gap crossing",
+     "replace": "including a short, exposed Class 4 gap crossing",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Descent grade and time"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "rated easy class 3 when dry but genuinely no-fall terrain",
+     "replace": "rated Class 4 and genuinely no-fall terrain",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Descent grade and time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Descend via the 4th-class scramble route, including a short, exposed gap crossing",
+     "replace": "Descend via the 3rd-class scramble route, including a short, exposed Class 4 gap crossing",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Descent grade and time"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "4th-class scramble trending west/southwest, including the exposed notch",
+     "replace": "3rd-class scramble trending west/southwest, including the exposed Class 4 notch",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Descent grade and time"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Descent time (schedule vs prose)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Split out from 'Descent grade and time': the prose says about 45 min to just over an hour summit to camp; the day-2 schedule allows 4:00 PM to 5:30-6:30 PM. One 2024 trip report gives 1h10m summit to camp; no second source found. A second published summit-to-camp time would settle it.",
+   "sources": [
+    "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "When snow clears",
+   "verdict": "fixed",
+   "correct_value": "snow typically clears the approach and route by early July",
+   "evidence": "A 2024 trip report (June 30-July 6) found the snow almost entirely gone as June ends and the ice axes and microspikes unnecessary. A 2016 conditions thread reports the route itself snow-free by late May with the approach and descent clearing through June in hot weather. Both support early July, not mid-July.",
+   "sources": [
+    "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/",
+    "https://www.mountainproject.com/forum/topic/111910330/cathedral-peak-southeast-buttress-conditions",
+    "https://havetent.com/2021/07/12/cathedral-se-buttress-amphitheatre-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "Snow typically clears from the route and approach by mid-July",
+     "replace": "Snow typically clears from the route and approach by early July",
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "When snow clears"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "fact": "Rack for the final crack",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page gives only 'wide range of nuts/cams'; a photo caption calls the last pitch a 4-inch splitter. No source found for doubles to #3 plus a #4, nor for a single set to 3 in. Settled by a published rack for this route.",
+   "sources": [
+    "https://www.mountainproject.com/route/109095922/the-monk-odine"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "fact": "Size of the finishing crack",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One source (a photo caption on the route page: 'Final 4\" splitter ... amazing rock quality') supports the pitch table's ~4-inch crack against the overview's hand/finger; the description says only 'jam crack'. No second independent source found; the row has only two fields on each side, too few for the internal rule.",
+   "sources": [
+    "https://www.mountainproject.com/route/109095922/the-monk-odine"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "fact": "High point / top-out",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is 1-2 pitches low on the tower's south face; no source gives the elevation of the route's top or of The Monk's top, so neither high_point_ft (8,606, Cathedral's summit) nor the 8,300-ft topout pin can be corrected from research. Settled by a sourced elevation for the base/top of the West Cracks or the Monk.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "fact": "Descent from the top of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page (1-2 pitches, 5.7) documents no descent at all; no source was found for 'most parties rappel the route from pitch two'. Two sources describing the actual descent would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "fact": "High point / top-out",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is 1-2 pitches on the lower left of the tower; no source gives the elevation of its top or of The Monk's top, so neither the 8,606 high point nor the 8,300 topout pin can be corrected from research.",
+   "sources": [
+    "https://www.mountainproject.com/route/109095909/the-monk-west-cracks-left-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "fact": "Grade of the step-across",
+   "verdict": "fixed",
+   "correct_value": "Class 3 route with one Class 4 step-across at the summit chasm",
+   "evidence": "Two route descriptions rate the gap crossing just below the summit Class 4, and the peak's standard line is rated class 3 overall. The beta's closing sentence muddled the two; it now states the route is Class 3 with the one Class 4 move, matching rock_grade and the pitch table.",
+   "sources": [
+    "https://mazamas.org/activity/instance/13868/detail/",
+    "https://www.mountaineers.org/activities/routes-places/cathedral-peak-amphitheater-mountain",
+    "https://en.wikipedia.org/wiki/Cathedral_Peak_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "It is Class 3 with exposure that makes it Class 4-.",
+     "replace": "Overall the route is Class 3, with that one Class 4 move at the chasm and exposure well beyond the grade.",
+     "id": "wa_cathedral_peak_southwest_route",
+     "fact": "Grade of the step-across"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "fact": "Where the route starts",
+   "verdict": "fixed",
+   "correct_value": "starts on the open South Face left of the Cathedral-Monk gully, between the central (Beckey) line and the Doorish route",
+   "evidence": "The first-ascent report says the route begins between the Beckey and Doorish routes on the highly featured face, crosses the Beckey ramp to a headwall crack and finishes on the Southeast Buttress's last pitch. The Southeast Buttress description places that route on the ridge behind The Monk, i.e. in the Cathedral-Monk gully, so the gully is not this route's start.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12201209200/North-America-United-States-Washington-Pasayten-Wilderness-Amphitheater-Peak-Cathedral-Peak-Deacon-Peak-Three-New-Routes",
+    "https://www.mountainproject.com/route/109095874/se-buttress"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "then into the Cathedral-Monk gully to the base of the South Face.",
+     "replace": "then toward the Cathedral-Monk gully and along the base to its left, to the open South Face.",
+     "id": "wa_cathedral_peak_last_rites",
+     "fact": "Where the route starts"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,259 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "July conditions (snow-covered vs snow-free)"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "comms",
+   "path": [],
+   "fact": "Cell coverage on the route"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "When the climbing permit is required"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "byMonth",
+    "June"
+   ],
+   "fact": "Avalanche hazard in the route's season"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche hazard in the route's season"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Car-to-car time vs the day schedule"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Car-to-car time vs the day schedule"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Car-to-car time vs the day schedule"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Car-to-car time vs the day schedule"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Early summer (late June-July), while snow lingers on the upper mountain, is best for efficient climbing and glissade descent; the route remains open and permitted through October but is loose and tedious once snow-free",
+     "monthBreakdown": {
+      "May": {
+       "reason": "The road to Climbers Bivouac is normally still snowbound, so climbs this month usually start lower at Marble Mountain Sno-Park via Worm Flows",
+       "status": "marginal"
+      },
+      "July": {
+       "reason": "Typically snow-free — route becomes loose volcanic ash and boulders; hot and exposed",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Prime snow-climbing/glissade conditions once the road to Climbers Bivouac opens, usually mid-to-late month; high weekend demand under the tighter 110/day quota",
+       "status": "optimal"
+      },
+      "August": {
+       "reason": "Driest, hottest month; heat and lack of water called out as a specific hazard",
+       "status": "good"
+      },
+      "October": {
+       "reason": "Early snow and storms can return; permit quota season ends Oct 31, after which the route effectively transitions toward Worm Flows winter conditions",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Cooler temperatures than midsummer, still dry/loose underfoot, generally stable weather",
+       "status": "good"
+      }
+     }
+    },
+    "comms": "Cell coverage is unreliable on the drive in and through the forested lower trail; parties report intermittent-to-good reception (especially Verizon) above treeline and on the summit, but do not rely on a phone for emergencies — carry a satellite communicator/PLB or leave a detailed trip plan with a contact.",
+    "itinerary": {
+     "cal": "Climbers Bivouac and the summer route are typically open/snow-free late June through October; permits sell on Recreation.gov and release on the 1st of the prior month.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Nearly everyone climbs Monitor Ridge in a single push from Climbers Bivouac (3,700 ft) - no camp needed. Ptarmigan Trail #216A climbs through forest to timberline (~4,800 ft), then the route follows rock ribs and volcanic rubble up Monitor Ridge before finishing up the loose pumice/ash 'Vertical Beach' to the crater rim.",
+       "hours": 9,
+       "miles": 10,
+       "title": "Car-to-car summit day",
+       "gainFt": 4600,
+       "lossFt": 4600,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Climbers Bivouac",
+         "detail": "Most parties start pre-dawn; permit required Apr 1-Oct 31."
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Clear timberline (~4,800 ft)",
+         "detail": "End of Ptarmigan Trail #216A, start of the open ridge."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Ascend Monitor Ridge",
+         "detail": "Scramble rock ribs and rubble; wooden route markers guide the way."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Vertical Beach to crater rim",
+         "detail": "Final steep loose pumice/ash slog to the summit rim, ~8,363 ft."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit break",
+         "detail": "Views into the crater and lava dome; stay well back from the corniced rim."
+        },
+        {
+         "time": "2:00-4:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Descend the same route; total car-to-car typically 7-10 hrs."
+        }
+       ],
+       "objective": "Reach the crater rim via Monitor Ridge and return to Climbers Bivouac"
+      }
+     ],
+     "totalNote": "A single long day: about 9 hrs car-to-car, 4,600 ft gain over 10 miles round trip, no camp required."
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Warm, dry, and exposed above treeline with no shade and no water on route",
+      "probability": ""
+     },
+     "exposure": "Moderate fall exposure on the boulder/scree slopes themselves, but severe consequence at the crater rim — huge overhanging cornices and a sheer drop into the crater, requiring climbers to stay well back from the edge",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route (dry ridge west of Swift Glacier); avalanche hazard mainly applies to the winter Worm Flows route",
+      "byMonth": {
+       "May": "Low",
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; Monitor Ridge stays on dry boulder/ash terrain west of Swift Glacier"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "before": {
+    "itinerary": {
+     "cal": "Standard winter/spring route Dec-May when snow covers the volcanic rubble; requires a WA Sno-Park permit Dec 1-Mar 31 in addition to the climbing permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Worm Flows is climbed as a single long day from Marble Mountain Sno-Park, not backpacked - no established high camp. The route climbs through forest, crosses Swift Creek above Chocolate Falls, then follows a long open ridge of packed snow/lava rubble to the crater rim; most parties glissade much of the descent.",
+       "hours": 9.5,
+       "miles": 12,
+       "title": "Car-to-car summit day",
+       "gainFt": 5700,
+       "lossFt": 5700,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30-5:00 AM",
+         "label": "Leave Marble Mountain Sno-Park",
+         "detail": "Early start typical; Washington Sno-Park permit required Dec 1-Mar 31, plus climbing permit."
+        },
+        {
+         "time": "6:00-6:30 AM",
+         "label": "Cross Swift Creek above Chocolate Falls",
+         "detail": "~2 miles in, exit forest around 3,750 ft near the falls."
+        },
+        {
+         "time": "8:00-9:00 AM",
+         "label": "Gain the ridge / treeline",
+         "detail": "Open snow slopes begin; put on crampons as conditions dictate."
+        },
+        {
+         "time": "12:00-1:00 PM",
+         "label": "Reach crater rim",
+         "detail": "Trip reports commonly show rim arrival around 12:45 PM on a dawn start; summit ~8,363 ft."
+        },
+        {
+         "time": "1:00-2:00 PM",
+         "label": "Summit break",
+         "detail": "Rest, food, views before the long glissade descent."
+        },
+        {
+         "time": "2:00-4:30 PM",
+         "label": "Glissade/descend to sno-park",
+         "detail": "Snow slopes make for a fast glissade descent back to the trailhead."
+        }
+       ],
+       "objective": "Reach the crater rim via Worm Flows and return to Marble Mountain Sno-Park"
+      }
+     ],
+     "totalNote": "A single long day: about 9-10 hrs car-to-car, 5,700 ft gain over roughly 12 miles round trip, no camp required."
+    }
+   }
+  }
+ ]
+}

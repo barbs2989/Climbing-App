@@ -1,0 +1,1446 @@
+{
+ "batches": [
+  "b413.json",
+  "b414.json",
+  "b415.json",
+  "b416.json",
+  "b417.json",
+  "b418.json",
+  "b419.json"
+ ],
+ "routes_read": 38,
+ "routes": [
+  {
+   "id": "wa_mount_lincoln_standard",
+   "name": "Standard Scramble (Flapjack Lakes / Sawtooth Ridge)",
+   "area": "Mount Lincoln",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11"
+      },
+      {
+       "field": "timing.sectionBreakdown[1].hrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "4:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "6:30 PM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].time",
+       "says": "9:30 AM"
+      }
+     ],
+     "why": "The day-2 schedule runs 4:00 AM to 6:30 PM (14.5 h) and reaches the summit block after 5.5 h, but the day's hours, the section breakdown and summitTimeHrs all say 11 h.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Hike-in time to Flapjack Lakes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "4.5"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "4.5"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Most parties take five to seven hours in with climbing gear"
+      }
+     ],
+     "why": "The camp card says 5-7 hours in while the itinerary and timing say 4.5 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "name": "Standard Scramble (Putvin Trail / Lake of the Angels approach)",
+   "area": "Mount Skokomish",
+   "contradictions": [
+    {
+     "fact": "Route distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "5.2"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 12 miles round trip"
+      },
+      {
+       "field": "approach",
+       "says": "Total round-trip stats commonly cited are roughly 9-12 miles"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~3.5 mi, ~3,400 ft gain"
+      }
+     ],
+     "why": "dist_km 5.2 km (3.2 mi) is shorter than even the 3.5 mi to Lake of the Angels, while the itinerary (3.5 + 8.7 mi) and approach give ~9-12 mi round trip.",
+     "internal_resolution": "itinerary, totalNote and approach agree on ~12 mi round trip; dist_km is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain from trailhead to Lake of the Angels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2900"
+      },
+      {
+       "field": "approach",
+       "says": "about 3.5 miles and roughly 3,400 ft of gain from the trailhead"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~3.5 mi, ~3,400 ft gain"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "About 3.5 miles and 3,400 ft from the Putvin trailhead"
+      }
+     ],
+     "why": "Day 1 gain of 2,900 ft is 500 ft short of the 3,400 ft every prose field gives for the same hike to the lake.",
+     "internal_resolution": "approach, pitch_detail, beta and bivy all say ~3,400 ft; itinerary day 1 is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-push time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].time",
+       "says": "9:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "5:00 AM"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole day-2 total (summit plus hike out) while the schedule reaches the summit 4.5 h after the 5:00 AM start.",
+     "internal_resolution": "schedule shows ~4.5 h to summit; 10 h is the whole day 2",
+     "needs_research": false
+    },
+    {
+     "fact": "Basin the Putvin Trail climbs through",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "via Boulder Creek basin"
+      },
+      {
+       "field": "approach",
+       "says": "the trail breaks into the open, grassy Whitehorse Creek basin"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "open grassy Whitehorse Creek basin"
+      }
+     ],
+     "why": "The route breakdown names a different creek basin for the same Putvin approach.",
+     "internal_resolution": "approach and approach_variants agree on Whitehorse Creek",
+     "needs_research": true
+    },
+    {
+     "fact": "Permit note names another lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Upper Lena Lake is quota-limited, so book early"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Lake of the Angels"
+      }
+     ],
+     "why": "The overnight-permit note for this route talks about Upper Lena Lake's quota, a camp this route never uses.",
+     "internal_resolution": "the route camps at Lake of the Angels (bivy, itinerary)",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "name": "Sawtooth Range Scramble",
+   "area": "The Fin",
+   "contradictions": [
+    {
+     "fact": "Rope length vs chimney rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "rack[4]",
+       "says": "Single 60m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "sling a chockstone/horn for a single ~120 ft (37 m) rappel"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "37"
+      }
+     ],
+     "why": "A single 60 m rope rappels only 30 m doubled, so it cannot make the stated 37 m (120 ft) rappel of the chimney.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "October in the climbing season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "typically safest to scramble July through September/October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "risky"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.reason",
+       "says": "Outside the established best-season window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July through September"
+      }
+     ],
+     "why": "The season text calls the high country safest through September/October while the monthly guidance rates October risky and outside the window.",
+     "internal_resolution": "best_season, optimalWindow, climate and approach_variants all end the season in September; the season field's 'October' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Early-season avalanche/wet-slide hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "N/A"
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "postholing and wet-slide hazard are common on the approach"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Lingering snowpack commonly covers the steep Sawtooth Pass slope"
+      }
+     ],
+     "why": "The avalanche table marks June N/A while the climate text warns of common wet-slide hazard on the snow-covered approach in that season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge",
+   "name": "North Ridge",
+   "area": "Steeple Rock",
+   "contradictions": [
+    {
+     "fact": "Whether a rope is carried",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "none"
+      },
+      {
+       "field": "gear[2]",
+       "says": "Rope (for the steeper steps only)"
+      },
+      {
+       "field": "pro_needs",
+       "says": "a scramble with occasional roped steps"
+      }
+     ],
+     "why": "The rope field says no rope while the gear list and protection text call for a rope on the steeper steps.",
+     "internal_resolution": "gear, pro_needs and detailed_rack all assume a rope for the steeper steps",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge",
+   "name": "East Ridge",
+   "area": "Steeple Rock",
+   "contradictions": []
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "name": "The Dirty",
+   "area": "Goose Egg Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "May through November"
+      },
+      {
+       "field": "approach",
+       "says": "climbable from May through November"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "May to October."
+      }
+     ],
+     "why": "The season chip ends in October while best_season and the approach extend the window through November.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "name": "Ride the Lightning",
+   "area": "Goose Egg Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct"
+      },
+      {
+       "field": "best_season",
+       "says": "May through November when snow-free"
+      },
+      {
+       "field": "approach",
+       "says": "climbable from May through November"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "May to October"
+      }
+     ],
+     "why": "The season chip ends in October while best_season and the approach extend the window through November.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_notta_slab",
+   "name": "Notta Slab",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bachelor_party",
+   "name": "Bachelor Party",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_moe",
+   "name": "Moe",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_thunder",
+   "name": "Morning Thunder",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_incoming",
+   "name": "Incoming",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_redtail_arete",
+   "name": "Redtail Arete",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unknown_climb_up_the_castle",
+   "name": "Unknown Climb Up the Castle",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "No published length; 70m recommended"
+      },
+      {
+       "field": "length_m",
+       "says": "12"
+      },
+      {
+       "field": "descent_text",
+       "says": "Single short pitch (~40 ft) to the ~45 ft spire's summit"
+      }
+     ],
+     "why": "The rope note says the route has no published length while length_m and the descent text give ~40 ft.",
+     "internal_resolution": "length_m, descent_text and the overview's 45-foot pinnacle agree",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_firearms",
+   "name": "Firearms",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cordwood",
+   "name": "Cordwood",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_czech_it_out",
+   "name": "Czech it Out",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_monkey_on_a_woodpile",
+   "name": "Monkey On A Woodpile",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_henpecked",
+   "name": "Henpecked",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_internal_combustion",
+   "name": "Internal Combustion",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_a_little_something",
+   "name": "A Little Something",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_face_farce",
+   "name": "Face Farce",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_red_zinger",
+   "name": "Red Zinger",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_safety_dance",
+   "name": "Safety Dance",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_just_enough",
+   "name": "Just Enough",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ahoot",
+   "name": "Ahoot",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_joe_s_route",
+   "name": "Joe's Route",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lady_slipper",
+   "name": "Lady Slipper",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_just_for_fun",
+   "name": "Just For Fun",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_heinous_thing",
+   "name": "Heinous Thing",
+   "area": "Dikes, The",
+   "contradictions": [
+    {
+     "fact": "Driving distance from Dayton to the crag",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 25-30 minutes (about 20 miles) from Dayton"
+      },
+      {
+       "field": "access.notes",
+       "says": "~16-17 mi south of Dayton, WA"
+      },
+      {
+       "field": "road.status",
+       "says": "the climbing dikes sit right along this road roughly 16-17 miles in"
+      }
+     ],
+     "why": "The drive note puts the crag about 20 miles from Dayton while the access note and road status say 16-17 miles.",
+     "internal_resolution": "access.notes and road.status agree on 16-17 mi, and the approach arithmetic (15-16 mi paved, then 1-2 mi past the trailhead) supports it; the drive note is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "name": "Meade Glacier",
+   "area": "Gilbert Peak",
+   "contradictions": [
+    {
+     "fact": "Camping restriction names the other side of the range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "there is no sensible way to reach either from the Snowgrass trailheads — the two approaches are separated by the whole crest"
+      }
+     ],
+     "why": "The overnight-permit note gives the Snowgrass Flat camping rule for a route whose camp card says it is approached from Conrad Meadows, across the crest from Snowgrass.",
+     "internal_resolution": "approach, bivy and waypoints all use Conrad Meadows / South Fork Tieton; the Snowgrass note belongs to the west-side routes",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "name": "Conrad Glacier",
+   "area": "Gilbert Peak",
+   "contradictions": [
+    {
+     "fact": "Camping restriction names the other side of the range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "there is no sensible way to reach either from the Snowgrass trailheads — the two approaches are separated by the whole crest"
+      }
+     ],
+     "why": "The overnight-permit note gives the Snowgrass Flat camping rule for a route approached from Conrad Meadows on the other side of the crest.",
+     "internal_resolution": "approach, bivy and climbing_route all use Conrad Meadows; the Snowgrass note belongs to the west-side routes",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "name": "West Route",
+   "area": "Gilbert Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest grade (class 3 vs class 4)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "4th class"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "Class 3, loose blocks"
+      },
+      {
+       "field": "beta",
+       "says": "a safer Class 2-3 passage to the summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "Downclimb the Class 2-3 summit section"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the class 4 finish begins there"
+      },
+      {
+       "field": "bail",
+       "says": "the final class 4 notch"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "A class 4 downclimb through the notch"
+      }
+     ],
+     "why": "The header pill shows 4th class from rock_grade while the crux grade, the route breakdown, beta and descent call the finish class 2-3, and the approach variant and bail call the notch class 4.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "name": "Northeast Slopes / Goat Rocks crest",
+   "area": "Ives Peak",
+   "contradictions": [
+    {
+     "fact": "Base camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "dropping a light camp in the upper Snowgrass basin around 7,100-7,200 ft"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "an upper Snowgrass basin camp (~7,100-7,200 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6200"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the legal camping is in the timber and on the benches a little below it, around 6,000 to 6,300 feet"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "7250 (Old Snowy - Ives col)"
+      }
+     ],
+     "why": "The itinerary camps at 7,100-7,200 ft, practically at the 7,250 ft col, while the camp card puts the legal camps 1,000 ft lower at 6,000-6,300 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which side of Ives the route climbs",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Northeast Slopes / Goat Rocks crest"
+      },
+      {
+       "field": "aspect",
+       "says": "NE"
+      },
+      {
+       "field": "face",
+       "says": "Northwest ridge and upper south face of Ives Peak"
+      },
+      {
+       "field": "beta",
+       "says": "follows the northwest ridge and a short south-face scramble to the summit"
+      },
+      {
+       "field": "climbing_route[2].label",
+       "says": "Upper south face to summit"
+      }
+     ],
+     "why": "The name and aspect say northeast slopes, but every route description climbs the northwest ridge and finishes on the south face.",
+     "internal_resolution": "face, beta, approach, climbing_route and waypoints all describe the NW ridge + south face; name/aspect are the outliers",
+     "needs_research": false
+    },
+    {
+     "fact": "When the access road opens",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "the Snowgrass Flats approach road and upper basin are typically not fully snow-free until mid-to-late July"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "closed to wheeled vehicles ... roughly November-early June"
+      },
+      {
+       "field": "access.closures",
+       "says": "gated and closed to wheeled vehicles each winter ... typically into early June"
+      }
+     ],
+     "why": "The trip plan says the approach road is not snow-free until mid-to-late July while the road and access fields say it opens in early June.",
+     "internal_resolution": "road.seasonalGate and access.closures agree on early June",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.43"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~14.2 mi / 3,400 ft round trip total"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7"
+      }
+     ],
+     "why": "dist_km (7.1 mi, one-way to the summit) is shown in TECHNICAL STATS while the header distance is the 14.2 mi round-trip itinerary total.",
+     "internal_resolution": "dist_km is one-way; the itinerary is round trip",
+     "needs_research": false
+    },
+    {
+     "fact": "Which ridge of Old Snowy connects to the PCT",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "up to the PCT and Old Snowy's north ridge ... downclimb the south ridge to the Old Snowy-Ives col"
+      },
+      {
+       "field": "descent_text",
+       "says": "traverse back over to Old Snowy Mountain and descend its established south-ridge boot path to the PCT near the Packwood Glacier bench"
+      },
+      {
+       "field": "descent",
+       "says": "reclimb Old Snowy's south ridge to close the loop over its summit"
+      }
+     ],
+     "why": "The itinerary reaches Old Snowy from the PCT by its north ridge and uses the south ridge only to reach the col, while the descent text says the south-ridge boot path is what leads down to the PCT.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "name": "Liberty Cap via Ptarmigan Ridge",
+   "area": "Liberty Cap",
+   "contradictions": [
+    {
+     "fact": "High camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "on the crest of Ptarmigan Ridge near 10,000 ft"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "From high camp near 10,000 ft"
+      },
+      {
+       "field": "itinerary",
+       "says": "establish a high camp (~10,300 ft) on the ridge crest"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "levels out at about 10,200 to 10,300 ft"
+      }
+     ],
+     "why": "The camp card and route breakdown put high camp near 10,000 ft while the itinerary and both approach variants put it at 10,200-10,300 ft.",
+     "internal_resolution": "itinerary and both approach variants agree on 10,200-10,300 ft",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "name": "Liberty Cap via Liberty Ridge",
+   "area": "Liberty Cap",
+   "contradictions": [
+    {
+     "fact": "Height of the summit bergschrund ice",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "bergschrund navigation (25-30 feet of vertical ice)"
+      },
+      {
+       "field": "watch_out",
+       "says": "Vertical ice pitches at bergschrund crossing (5-8 ft sections)"
+      },
+      {
+       "field": "waypoints[7].directions",
+       "says": "from a walk up a ramp to a short vertical ice step"
+      }
+     ],
+     "why": "The route breakdown gives the bergschrund 25-30 ft of vertical ice while the watch-out list gives 5-8 ft sections for the same crossing.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "name": "East Shoulder",
+   "area": "Little Tahoma Peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep (best early July-early Aug)"
+      },
+      {
+       "field": "best_season",
+       "says": "Early July into early August is the genuinely optimal window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-June through August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "good"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jun through Aug, best early July to early August"
+      }
+     ],
+     "why": "The season chip and best_season start in July and run into September, while the seasonal guidance calls mid-June to August optimal and rates June good.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day timing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[3].time",
+       "says": "Late morning"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].time",
+       "says": "~12:00 PM (Back at camp)"
+      },
+      {
+       "field": "turnaround",
+       "says": "aim to be on and off it by mid-morning"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "a pre-dawn summit push (~9 hrs round trip from high camp)"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "1:00 AM"
+      }
+     ],
+     "why": "The schedule reaches the summit in the late morning yet is back at camp 3,000+ ft lower by noon, contradicting the mid-morning turnaround; its 1:00 AM-noon camp-to-camp span (11 h) also disagrees with the ~9 h round trip in partner requirements.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.3"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "10.1"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "7.54"
+      }
+     ],
+     "why": "dist_km (7.0 mi, one-way) is shown in TECHNICAL STATS while the header distance is the 14.1 mi round-trip itinerary total.",
+     "internal_resolution": "dist_km is one-way; the itinerary is round trip",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "name": "Frying Pan / Whitman Glaciers",
+   "area": "Little Tahoma Peak",
+   "contradictions": [
+    {
+     "fact": "Distance between Summerland and the trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "A short, easy morning hike back down through Summerland and the forest to the trailhead."
+      },
+      {
+       "field": "approach",
+       "says": "reaching that popular alpine backcountry camp ... at about 4.5 miles"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Continue to Summerland at about 4.5 miles"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "a little over four miles up the Wonderland Trail"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4.5"
+      }
+     ],
+     "why": "Day 3 hikes out from Summerland in 3.2 mi, but every approach field puts Summerland 4.5 mi from the trailhead (and day 1 reaches the higher Meany Crest camp in the same 4.5 mi).",
+     "internal_resolution": "approach, approach_variants and bivy agree Summerland is ~4.5 mi in; 3.2 mi is the footlog crossing, not Summerland",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

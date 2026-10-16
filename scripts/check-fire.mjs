@@ -238,7 +238,52 @@ console.log("\n--- a future-onset product is not presented as current ---");
 }
 
 console.log("\n--- an empty result and a failed read cannot render alike ---");
-for (const f of [MAP, PANEL]) {
+
+// The PANEL answers this differently from the MAP since it became alert-only, and the
+// difference is the point rather than an exemption. A map is a surface you OPENED to ask
+// the question, so it owes you an answer and says "no active wildfires". The route panel
+// is one section of a Safety tab you opened for other reasons, so on the ~all routes with
+// nothing burning nearby it renders nothing at all.
+//
+// That silence is only honest while a failed read is LOUD. If the error branch were ever
+// deleted, a dead federal service and a clean forecast would both render as an absent
+// section — the precise "an empty result and a failed read render alike" defect this
+// whole block exists to forbid, arrived at from the opposite direction. So the panel gets
+// the same ordering rule, asserted against its `return null` instead of against a claim:
+// the no-fires branch must return null, and must sit after both an error branch and a
+// read of the query's .data.
+{
+  const s = raw[PANEL];
+  const b = blank(s);
+  const nullAt = b.search(/if\s*\(\s*!\s*fires\.length\s*\)\s*return\s+null\s*;/);
+  const claim = s.match(/No active wildfire[^"'<]*/);
+  if (claim) {
+    fail(`${PANEL}:${lineOf(PANEL, s.indexOf(claim[0]))} the panel makes an affirmative "no wildfires" claim again — it is alert-only, so an empty result must render nothing`);
+  } else if (nullAt < 0) {
+    fail(`${PANEL}: the no-fires branch is not \`if (!fires.length) return null;\` — this guard cannot see how an empty result renders, so it cannot tell it apart from a failed read`);
+  } else {
+    ok(`${PANEL}: an empty result renders nothing (alert-only), not a "no wildfires" claim`);
+    const errAt = b.search(/\.error\b/);
+    const dataAt = b.search(/\.data\b/);
+    if (!/not a report that nothing is burning/.test(s)) {
+      fail(`${PANEL}: the error copy is gone — with no empty state left, a failed read would render an absent section exactly like a clean one`);
+    } else if (errAt < 0 || errAt > nullAt) {
+      fail(`${PANEL}:${lineOf(PANEL, nullAt)} the silent empty branch is not preceded by an error branch — a failed fetch would fall through to rendering nothing`);
+    } else if (dataAt < 0 || dataAt > nullAt) {
+      fail(`${PANEL}:${lineOf(PANEL, nullAt)} the silent empty branch is not preceded by a read of the query's .data — it cannot know the query settled`);
+    } else {
+      ok(`${PANEL}: the silent empty branch sits after both an error branch (line ${lineOf(PANEL, errAt)}) and a .data read (line ${lineOf(PANEL, dataAt)})`);
+    }
+    // The loading branch is load-bearing for the same reason, and it is also the anchor
+    // check:bare matches to prove the panel is mounted on the Safety tab at all — under
+    // renderToStaticMarkup no effect runs, so "checking" is the only thing it can ever see.
+    if (!/Checking federal fire reports/.test(s)) {
+      fail(`${PANEL}: the loading line is gone — an in-flight query would render as an absent section, and check:bare loses its only anchor for this panel`);
+    } else ok(`${PANEL}: an in-flight query still renders its checking line`);
+  }
+}
+
+for (const f of [MAP]) {
   const s = raw[f];
   // The affirmative "nothing is burning" claim...
   const claim = s.match(/No active wildfire[^"'<]*/);
@@ -315,10 +360,44 @@ console.log("\n--- the panel is actually reachable, on every route ---");
   } else {
     // The element is built once and rendered by name, so look for the rendered symbol
     // rather than the JSX tag.
-    const el = (h.match(/const\s+(\w+)\s*=\s*\(function\s*\(\)\s*\{[^]*?<FireNearRoute/) || [])[1];
+    /* THE NEAREST PRECEDING IIFE, NOT THE FIRST ONE IN THE FILE. This was a lazy match from the
+       first `const X = (function () {` to `<FireNearRoute`, so ANY IIFE-assigned const added
+       earlier in a 480,000-character file silently became the symbol this guard hunts for. That
+       happened: a `const _avyNote=(function(){…})()` in the avalanche panel made it look for
+       `{_avyNote}` on the Safety tab and report the fire panel as unmounted — accusing correct
+       code, which is the direction that teaches people to ignore a guard. Search backwards from
+       the tag instead, so the binding found is the one that actually builds it. */
+    /* The FIRST occurrence of the tag is inside a COMMENT that explains this very hazard, so
+       anchoring on it looked backwards from the wrong place. Take the first occurrence that is
+       not inside a block comment, then the nearest preceding IIFE binding — the one that actually
+       builds the element rather than the first in a 480,000-character file. */
+    const realTagAt = (() => {
+      for (const m of h.matchAll(/<FireNearRoute/g)) {
+        const open = h.lastIndexOf("/*", m.index), close = h.lastIndexOf("*/", m.index);
+        if (open === -1 || close > open) return m.index;   // not inside a block comment
+      }
+      return -1;
+    })();
+    const before = realTagAt >= 0 ? h.slice(0, realTagAt) : "";
+    const iifes = [...before.matchAll(/const\s+(\w+)\s*=\s*\(function\s*\(\)\s*\{/g)];
+    const el = iifes.length ? iifes[iifes.length - 1][1] : null;
     const sym = el || "FireNearRoute";
-    const safetyAt = h.search(/tab===["']safety["']\s*\?/);
-    const overviewAt = h.search(/tab===["']overview["']\s*\?/);
+    /* SKIP BLOCK COMMENTS, exactly as realTagAt above already does for the tag — this locator
+       did not, and that asymmetry is a latent false FAILURE rather than a false pass. A comment
+       explaining this area naturally quotes the branch it is about (`{tab==="safety"?<div>…`),
+       and because it sits ABOVE the code it explains, a raw search returns the PROSE; the segment
+       taken from there holds no mount and the guard reports the fire panel as missing from a tab
+       it is plainly on. Met for real when a comment was added above the Safety branch. Same rule
+       check:ci-cancel states from the other side: a guard must not fail on documentation. */
+    const firstOutsideComment = (re) => {
+      for (const m of h.matchAll(new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g"))) {
+        const open = h.lastIndexOf("/*", m.index), close = h.lastIndexOf("*/", m.index);
+        if (open === -1 || close > open) return m.index;   // not inside a block comment
+      }
+      return -1;
+    };
+    const safetyAt = firstOutsideComment(/tab===["']safety["']\s*\?/);
+    const overviewAt = firstOutsideComment(/tab===["']overview["']\s*\?/);
     if (safetyAt < 0 || overviewAt < 0) {
       fail(`${HOST}: could not find both the safety and overview sub-tab branches — this reachability check has gone blind`);
     } else {

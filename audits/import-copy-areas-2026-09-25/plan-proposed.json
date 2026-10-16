@@ -1,0 +1,7404 @@
+[
+ {
+  "st": "usa.alaska",
+  "km": 0.03,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_19_mile_wall_2",
+   "name": "19 Mile Wall",
+   "parent": "ak_valdez_area_rock",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "ak_19_mile_wall_3",
+   "name": "19 Mile Wall",
+   "parent": "ak_valdez_2",
+   "kids": false,
+   "n": 4
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ak_19_mile_wall_3_unknown_1",
+    "name": "Unknown 1",
+    "area": "ak_19_mile_wall_3"
+   },
+   {
+    "id": "ak_19_mile_wall_3_oosik",
+    "name": "Oosik",
+    "area": "ak_19_mile_wall_3"
+   },
+   {
+    "id": "ak_19_mile_wall_3_matinee",
+    "name": "Matinee",
+    "area": "ak_19_mile_wall_3"
+   },
+   {
+    "id": "ak_19_mile_wall_3_matinee_right",
+    "name": "Matinee Right",
+    "area": "ak_19_mile_wall_3"
+   }
+  ]
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ak_because_it_s_there_wall",
+   "name": "Because it's there Wall",
+   "parent": "ak_glacier_creek_drainage_and_snowbird_glacier",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "ak_because_it_s_there_wall_2",
+   "name": "Because it's there Wall",
+   "parent": "ak_glacier_creek_drainage_and_snowbird_glacier_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [
+   {
+    "copy": "ak_because_it_s_there_wall_2_toothy",
+    "keep": "ak_toothy",
+    "name": "Toothy",
+    "keepName": "Toothy"
+   },
+   {
+    "copy": "ak_because_it_s_there_wall_2_lost_zero",
+    "keep": "ak_lost_zero",
+    "name": "Lost Zero",
+    "keepName": "Lost Zero"
+   },
+   {
+    "copy": "ak_because_it_s_there_wall_2_alaskan_vermin",
+    "keep": "ak_alaskan_vermin",
+    "name": "Alaskan Vermin",
+    "keepName": "Alaskan Vermin"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ak_bellicose_peak",
+   "name": "Bellicose Peak",
+   "parent": "ak_anchorage_south_central_alaska_ice",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ak_bellicose_peak_2",
+   "name": "Bellicose Peak",
+   "parent": "ak_south_central_alaska_ice_and_alpine",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ak_bellicose_peak_2_north_east_face_freer_s_cheers",
+    "keep": "ak_north_east_face_freer_s_cheers",
+    "name": "North East Face (Freer's Cheers)",
+    "keepName": "North East Face (Freer's Cheers)"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_byron_glacier_wall",
+   "name": "Byron Glacier Wall",
+   "parent": "ak_portage_2",
+   "kids": false,
+   "n": 27
+  },
+  "copy": {
+   "id": "ak_byron_glacier_wall_2",
+   "name": "Byron Glacier Wall",
+   "parent": "ak_portage_3",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ak_byron_glacier_wall_2_pork_cell",
+    "name": "Pork Cell",
+    "area": "ak_byron_glacier_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_cracked_ice",
+   "name": "Cracked Ice",
+   "parent": "ak_thompson_pass",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ak_cracked_ice_3",
+   "name": "Cracked Ice",
+   "parent": "ak_thompson_pass_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ak_cracked_ice_3_west_ridge",
+    "keep": "ak_west_ridge_2",
+    "name": "West Ridge",
+    "keepName": "West Ridge"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ak_cracked_ice_3_cracked_ice",
+    "name": "Cracked Ice",
+    "area": "ak_cracked_ice_3"
+   }
+  ]
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ak_deep_water_bay",
+   "name": "Deep Water Bay",
+   "parent": "ak_anchorage_south_central_alaska",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ak_deep_water_bay_2",
+   "name": "Deep Water Bay",
+   "parent": "ak_south_central_alaska",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ak_deep_water_bay_2_hard_rain",
+    "keep": "ak_hard_rain",
+    "name": "Hard rain",
+    "keepName": "Hard rain"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_goat_rock",
+   "name": "Goat Rock",
+   "parent": "ak_anchorage_south_central_alaska",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ak_goat_rock_2",
+   "name": "Goat Rock",
+   "parent": "ak_south_central_alaska",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ak_goat_rock_2_north_couloir",
+    "name": "North Couloir",
+    "area": "ak_goat_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_lefty_area",
+   "name": "Lefty Area",
+   "parent": "ak_pivot_point",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ak_lefty_area_2",
+   "name": "Lefty Area",
+   "parent": "ak_pivot_point_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ak_lefty_area_2_coffee_cup",
+    "name": "Coffee Cup",
+    "area": "ak_lefty_area_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ak_little_matterhorn",
+   "name": "Little Matterhorn",
+   "parent": "ak_thompson_pass",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ak_little_matterhorn_2",
+   "name": "Little Matterhorn",
+   "parent": "ak_thompson_pass_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ak_little_matterhorn_2_north_ridge",
+    "keep": "ak_north_ridge",
+    "name": "North Ridge",
+    "keepName": "North Ridge"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ak_loveland_pk",
+   "name": "Loveland PK",
+   "parent": "ak_thompson_pass",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ak_loveland_pk_2",
+   "name": "Loveland PK",
+   "parent": "ak_thompson_pass_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ak_loveland_pk_2_dot_glacier",
+    "keep": "ak_dot_glacier",
+    "name": "DOT Glacier",
+    "keepName": "DOT Glacier"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_main_area",
+   "name": "Main Area",
+   "parent": "ak_boy_scout_rocks",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ak_main_area_2",
+   "name": "Main Area",
+   "parent": "ak_boy_scout_rocks_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ak_main_area_2_scout_s_honor",
+    "keep": "ak_scout_s_honor",
+    "name": "Scout's Honor",
+    "keepName": "Scout's Honor"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ak_main_area_2_the_first_aid_route",
+    "name": "The First Aid Route",
+    "area": "ak_main_area_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ak_sapphire_pk",
+   "name": "Sapphire PK",
+   "parent": "ak_thompson_pass",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ak_sapphire_pk_2",
+   "name": "Sapphire PK",
+   "parent": "ak_thompson_pass_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [
+   {
+    "copy": "ak_sapphire_pk_2_east_ridge",
+    "keep": "ak_east_ridge_3",
+    "name": "East Ridge",
+    "keepName": "East Ridge"
+   },
+   {
+    "copy": "ak_sapphire_pk_2_south_tooth",
+    "keep": "ak_south_tooth",
+    "name": "South Tooth",
+    "keepName": "South Tooth"
+   },
+   {
+    "copy": "ak_sapphire_pk_2_south_ridge",
+    "keep": "ak_south_ridge_2",
+    "name": "South Ridge",
+    "keepName": "South Ridge"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.alaska",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ak_sky_pilot",
+   "name": "Sky Pilot",
+   "parent": "ak_sky_pilot_areas",
+   "kids": false,
+   "n": 11
+  },
+  "copy": {
+   "id": "ak_sky_pilot_2",
+   "name": "Sky Pilot",
+   "parent": "ak_sky_pilot_areas_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ak_sky_pilot_2_captain_hook",
+    "name": "Captain Hook",
+    "area": "ak_sky_pilot_2"
+   },
+   {
+    "id": "ak_sky_pilot_2_auto_pilot",
+    "name": "Auto Pilot",
+    "area": "ak_sky_pilot_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "az_bell_rock",
+   "name": "Bell Rock",
+   "parent": "az_bell_rock_courthouse_butte",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "az_bell_rock_2",
+   "name": "Bell Rock",
+   "parent": "az_courthouse_butte_bell_rock",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "az_bell_rock_2_jim_n_i",
+    "name": "Jim-N-I",
+    "area": "az_bell_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "az_courthouse_butte",
+   "name": "Courthouse Butte",
+   "parent": "az_bell_rock_courthouse_butte",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "az_courthouse_butte_2",
+   "name": "Courthouse Butte",
+   "parent": "az_courthouse_butte_bell_rock",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "az_courthouse_butte_2_central_south_rib",
+    "keep": "az_central_south_rib",
+    "name": "Central South Rib",
+    "keepName": "Central South Rib"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "az_courthouse_butte_2_failure_to_appear",
+    "name": "Failure to Appear",
+    "area": "az_courthouse_butte_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "az_flying_buttress",
+   "name": "Flying Buttress",
+   "parent": "az_moose_s_butte_area",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "az_flying_buttress_2",
+   "name": "Flying Buttress",
+   "parent": "az_mitten_ridge",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "az_flying_buttress_2_a_m_aidline",
+    "name": "A-M aidline",
+    "area": "az_flying_buttress_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "az_hell_s_hole",
+   "name": "Hell's Hole",
+   "parent": "az_pinaleno_mtns_mt_graham",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "az_hell_s_hole_2",
+   "name": "Hell's Hole",
+   "parent": "az_pinale_o_mountains_mt_graham",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "az_hell_s_hole_2_angels_on_horseback_that_one_time",
+    "keep": "az_angels_on_horseback_that_one_time",
+    "name": "Angels on horseback/ That one time",
+    "keepName": "Angels on horseback/ That one time"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0.01,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "az_monument_creek_pinnacle",
+   "name": "Monument Creek Pinnacle",
+   "parent": "az_others",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "az_monument_creek_pinnacle_2",
+   "name": "Monument Creek Pinnacle",
+   "parent": "az_colorado_river_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "az_monument_creek_pinnacle_2_north_face",
+    "keep": "az_north_face_10",
+    "name": "North Face",
+    "keepName": "North Face"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "az_ultimates_west",
+   "name": "Ultimates West",
+   "parent": "az_ultimates_the",
+   "kids": false,
+   "n": 28
+  },
+  "copy": {
+   "id": "az_ultimates_west_2",
+   "name": "Ultimates West",
+   "parent": "az_the_ultimates",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "az_ultimates_west_2_the_mediocre_tips_crack",
+    "name": "The Mediocre Tips Crack",
+    "area": "az_ultimates_west_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.arizona",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "az_west_face",
+   "name": "West Face",
+   "parent": "az_druid_the",
+   "kids": false,
+   "n": 16
+  },
+  "copy": {
+   "id": "az_west_face_2",
+   "name": "West Face",
+   "parent": "az_the_druid",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "az_west_face_2_druid_roof",
+    "keep": "az_druid_roof",
+    "name": "Druid Roof",
+    "keepName": "Druid Roof"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.arkansas",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ar_plaque_wall_the",
+   "name": "Plaque Wall, The",
+   "parent": "ar_6_the_throne",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ar_the_plaque_wall",
+   "name": "The Plaque Wall",
+   "parent": "ar_7_the_throne",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ar_the_plaque_wall_natty_dread",
+    "name": "Natty Dread",
+    "area": "ar_the_plaque_wall"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_bald_eagle_peak",
+   "name": "Bald Eagle Peak",
+   "parent": "ca_needles_kern_river_the",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "ca_bald_eagle_peak_2",
+   "name": "Bald Eagle Peak",
+   "parent": "ca_southern_sierra_the_needles_kern_river_domelands_etc",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_bald_eagle_peak_2_sky_blue",
+    "name": "Sky Blue",
+    "area": "ca_bald_eagle_peak_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_bard_harrington_wall",
+   "name": "Bard Harrington Wall",
+   "parent": "ca_lee_vining_ice_and_mixed",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_bard_harrington_wall_2",
+   "name": "Bard Harrington Wall",
+   "parent": "ca_lee_vining_ice_and_mixed_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_bard_harrington_wall_2_bard_harrington",
+    "name": "Bard Harrington",
+    "area": "ca_bard_harrington_wall_2"
+   },
+   {
+    "id": "ca_bard_harrington_wall_2_photoshop",
+    "name": "Photoshop",
+    "area": "ca_bard_harrington_wall_2"
+   },
+   {
+    "id": "ca_bard_harrington_wall_2_the_chimney_route",
+    "name": "The Chimney Route",
+    "area": "ca_bard_harrington_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_billy_s_pillar",
+   "name": "Billy's Pillar",
+   "parent": "ca_south_lake",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_billy_s_pillar_2",
+   "name": "Billy's Pillar",
+   "parent": "ca_south_lake_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_billy_s_pillar_2_the_tongue",
+    "name": "The Tongue",
+    "area": "ca_billy_s_pillar_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_blob_east_face_the",
+   "name": "Blob - East Face, The",
+   "parent": "ca_blob_the",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "ca_the_blob_east_face",
+   "name": "The Blob - East Face",
+   "parent": "ca_the_blob",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_the_blob_east_face_perfidious",
+    "keep": "ca_perfidious",
+    "name": "Perfidious",
+    "keepName": "Perfidious"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_blue_crag",
+   "name": "Blue Crag",
+   "parent": "ca_mammoth_lakes_area",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_blue_crag_2",
+   "name": "Blue Crag",
+   "parent": "ca_mammoth_lakes_area_2",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [
+   {
+    "copy": "ca_blue_crag_2_why_ya_sufferin",
+    "keep": "ca_why_ya_sufferin",
+    "name": "Why Ya Sufferin'?",
+    "keepName": "Why Ya Sufferin'?"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ca_blue_crag_2_the_mccramer",
+    "name": "The McCramer",
+    "area": "ca_blue_crag_2"
+   },
+   {
+    "id": "ca_blue_crag_2_cascade_classic",
+    "name": "Cascade Classic",
+    "area": "ca_blue_crag_2"
+   },
+   {
+    "id": "ca_blue_crag_2_the_beholder",
+    "name": "The Beholder",
+    "area": "ca_blue_crag_2"
+   },
+   {
+    "id": "ca_blue_crag_2_mafic_mistress",
+    "name": "Mafic Mistress",
+    "area": "ca_blue_crag_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_carson_peak_alpine",
+   "name": "Carson Peak Alpine",
+   "parent": "ca_carson_peak",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_carson_peak_alpine_2",
+   "name": "Carson Peak Alpine",
+   "parent": "ca_carson_peak_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_carson_peak_alpine_2_pete_s_dream",
+    "keep": "ca_pete_s_dream",
+    "name": "Pete's Dream",
+    "keepName": "Pete's Dream"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_8_sun_wall_area",
+   "name": "8 - Sun Wall Area",
+   "parent": "ca_fortress_the_2",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "ca_8_sun_wall_area_2",
+   "name": "8 - Sun Wall Area",
+   "parent": "ca_the_fortress",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_8_sun_wall_area_2_cobwebs_of_my_mind",
+    "name": "Cobwebs of my Mind",
+    "area": "ca_8_sun_wall_area_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_elderberry_buttress",
+   "name": "Elderberry Buttress",
+   "parent": "ca_scheelite_crags_psom_slab",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ca_elderberry_buttress_2",
+   "name": "Elderberry Buttress",
+   "parent": "ca_scheelite_crags_psom_slab_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_elderberry_buttress_2_poomerang",
+    "keep": "ca_poomerang",
+    "name": "Poomerang",
+    "keepName": "Poomerang"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_electric_eagle",
+   "name": "Electric Eagle",
+   "parent": "ca_shuteye_creek_area",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_electric_eagle_2",
+   "name": "Electric Eagle",
+   "parent": "ca_c_shuteye_creek_area",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_electric_eagle_2_taipan_rising",
+    "keep": "ca_taipan_rising",
+    "name": "Taipan Rising",
+    "keepName": "Taipan Rising"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_elephant_knob",
+   "name": "Elephant Knob",
+   "parent": "ca_needles_kern_river_the",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_elephant_knob_2",
+   "name": "Elephant Knob",
+   "parent": "ca_southern_sierra_the_needles_kern_river_domelands_etc",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_elephant_knob_2_e_c_s_flying_circus",
+    "name": "E.C.'s Flying Circus",
+    "area": "ca_elephant_knob_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_emerald_city_2",
+   "name": "Emerald City",
+   "parent": "ca_oz",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_emerald_city_3",
+   "name": "Emerald City",
+   "parent": "ca_oz_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_emerald_city_3_gypsy_boots",
+    "name": "Gypsy Boots",
+    "area": "ca_emerald_city_3"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_fast_food_wall",
+   "name": "Fast Food Wall",
+   "parent": "ca_benches_the",
+   "kids": false,
+   "n": 12
+  },
+  "copy": {
+   "id": "ca_fast_food_wall_2",
+   "name": "Fast Food Wall",
+   "parent": "ca_the_benches",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_fast_food_wall_2_dry_mcfry_drytooling",
+    "name": "Dry McFry (drytooling)",
+    "area": "ca_fast_food_wall_2"
+   },
+   {
+    "id": "ca_fast_food_wall_2_mcshinskinner_drytooling",
+    "name": "McShinskinner (drytooling)",
+    "area": "ca_fast_food_wall_2"
+   },
+   {
+    "id": "ca_fast_food_wall_2_mcdesperation_drytooling",
+    "name": "McDesperation (drytooling)",
+    "area": "ca_fast_food_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_finch_dome",
+   "name": "Finch Dome",
+   "parent": "ca_galapagos_the",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_finch_dome_2",
+   "name": "Finch Dome",
+   "parent": "ca_the_galapagos",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_finch_dome_2_ontology_recapitulates_phylogeny",
+    "keep": "ca_ontology_recapitulates_phylogeny",
+    "name": "Ontology Recapitulates Phylogeny",
+    "keepName": "Ontology Recapitulates Phylogeny"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_first_ascent_land",
+   "name": "First Ascent Land",
+   "parent": "ca_south_mt_woodson",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_first_ascent_land_2",
+   "name": "First Ascent Land",
+   "parent": "ca_mount_woodson_south",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_first_ascent_land_2_widows_rears",
+    "name": "Widows Rears",
+    "area": "ca_first_ascent_land_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_fish_creek_rock",
+   "name": "Fish Creek Rock",
+   "parent": "ca_sherman_pass",
+   "kids": false,
+   "n": 14
+  },
+  "copy": {
+   "id": "ca_fish_creek_rock_2",
+   "name": "Fish Creek Rock",
+   "parent": "ca_sherman_pass_road",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_fish_creek_rock_2_fugu",
+    "name": "Fugu",
+    "area": "ca_fish_creek_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_gargoyle_the",
+   "name": "Gargoyle, The",
+   "parent": "ca_so_so_grotto",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_the_gargoyle",
+   "name": "The Gargoyle",
+   "parent": "ca_so_so_grotto_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_the_gargoyle_the_gargoyle",
+    "keep": "ca_the_gargoyle",
+    "name": "The Gargoyle",
+    "keepName": "The Gargoyle"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_grey_towers",
+   "name": "Grey Towers",
+   "parent": "ca_wheeler_crest",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ca_grey_towers_2",
+   "name": "Grey Towers",
+   "parent": "ca_wheeler_crest_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_grey_towers_2_for_shits_and_giggles_mog_tower",
+    "keep": "ca_for_shits_and_giggles_mog_tower",
+    "name": "For Shits And Giggles - MOG Tower",
+    "keepName": "For Shits And Giggles - MOG Tower"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_grizzly_lake",
+   "name": "Grizzly Lake",
+   "parent": "ca_trinity_alps",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_grizzly_lake_2",
+   "name": "Grizzly Lake",
+   "parent": "ca_trinity_alps_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_grizzly_lake_2_grizzly_crack",
+    "keep": "ca_grizzly_crack_2",
+    "name": "Grizzly Crack",
+    "keepName": "Grizzly Crack"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_half_day_dome",
+   "name": "Half Day Dome",
+   "parent": "ca_chilkoot_lake",
+   "kids": false,
+   "n": 10
+  },
+  "copy": {
+   "id": "ca_half_day_dome_2",
+   "name": "Half Day Dome",
+   "parent": "ca_a_chilkoot_lake_area",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_half_day_dome_2_chipless_treat",
+    "keep": "ca_chipless_treat",
+    "name": "Chipless Treat",
+    "keepName": "Chipless Treat"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_lower_tier",
+   "name": "Lower Tier",
+   "parent": "ca_light_colored_cliffs",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_lower_tier_8",
+   "name": "Lower Tier",
+   "parent": "ca_light_colored_cliffs_2",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_lower_tier_8_choss_and_moss",
+    "name": "Choss and moss",
+    "area": "ca_lower_tier_8"
+   },
+   {
+    "id": "ca_lower_tier_8_one_hitter",
+    "name": "One Hitter",
+    "area": "ca_lower_tier_8"
+   },
+   {
+    "id": "ca_lower_tier_8_the_prow_left",
+    "name": "The Prow, Left",
+    "area": "ca_lower_tier_8"
+   },
+   {
+    "id": "ca_lower_tier_8_the_prow_right",
+    "name": "The Prow, Right",
+    "area": "ca_lower_tier_8"
+   },
+   {
+    "id": "ca_lower_tier_8_30_seconds_of_remorse",
+    "name": "30 Seconds of Remorse",
+    "area": "ca_lower_tier_8"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_madness_wall",
+   "name": "Madness Wall",
+   "parent": "ca_wedge_the",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_madness_wall_2",
+   "name": "Madness Wall",
+   "parent": "ca_the_wedge",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ca_madness_wall_2_being_and_nothingness",
+    "keep": "ca_being_and_nothingness",
+    "name": "Being and Nothingness",
+    "keepName": "Being and Nothingness"
+   },
+   {
+    "copy": "ca_madness_wall_2_chouca",
+    "keep": "ca_chouca",
+    "name": "Chouca",
+    "keepName": "Chouca"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_main_area_5",
+   "name": "Main Area",
+   "parent": "ca_buck_s_bar_dome",
+   "kids": false,
+   "n": 22
+  },
+  "copy": {
+   "id": "ca_main_area_10",
+   "name": "Main Area",
+   "parent": "ca_bucks_bar_dome",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_main_area_10_whatchamadigit_crack",
+    "keep": "ca_whatchamadigit_crack",
+    "name": "Whatchamadigit Crack",
+    "keepName": "Whatchamadigit Crack"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_main_slab_lower",
+   "name": "Main Slab - Lower",
+   "parent": "ca_main_slab",
+   "kids": false,
+   "n": 41
+  },
+  "copy": {
+   "id": "ca_main_slab_lower_2",
+   "name": "Main Slab - Lower",
+   "parent": "ca_big_rock_main_slab",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ca_main_slab_lower_2_beanstalk",
+    "keep": "ca_beanstalk",
+    "name": "Beanstalk",
+    "keepName": "Beanstalk"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ca_main_slab_lower_2_corn_flake",
+    "name": "Corn Flake",
+    "area": "ca_main_slab_lower_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_main_wall_7",
+   "name": "Main Wall",
+   "parent": "ca_j_hawk_dome",
+   "kids": false,
+   "n": 15
+  },
+  "copy": {
+   "id": "ca_main_wall_25",
+   "name": "Main Wall",
+   "parent": "ca_j_hawk_dome_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_main_wall_25_you_aren_t_bragging_if_you_can_t_do_it",
+    "keep": "ca_you_aren_t_bragging_if_you_can_t_do_it",
+    "name": "You aren't bragging if you can't do it",
+    "keepName": "You aren't bragging if you can't do it"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_mammoth_rock",
+   "name": "Mammoth Rock",
+   "parent": "ca_mammoth_lakes_area",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ca_mammoth_rock_4",
+   "name": "Mammoth Rock",
+   "parent": "ca_mammoth_lakes_area_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_mammoth_rock_4_west_chimney",
+    "name": "West Chimney",
+    "area": "ca_mammoth_rock_4"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0.52,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_mussel_rock",
+   "name": "Mussel Rock",
+   "parent": "ca_patrick_s_point_state_park",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ca_mussel_rock_2",
+   "name": "Mussel Rock",
+   "parent": "ca_sue_meg_state_park",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_mussel_rock_2_mussel_crack",
+    "name": "Mussel Crack",
+    "area": "ca_mussel_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_neptune_tower",
+   "name": "Neptune Tower",
+   "parent": "ca_wheeler_crest",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_neptune_tower_2",
+   "name": "Neptune Tower",
+   "parent": "ca_wheeler_crest_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_neptune_tower_2_stormy_petrel",
+    "keep": "ca_stormy_petrel",
+    "name": "Stormy Petrel",
+    "keepName": "Stormy Petrel"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_north_face_9",
+   "name": "North Face",
+   "parent": "ca_mt_morrison",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_north_face_17",
+   "name": "North Face",
+   "parent": "ca_mount_morrison",
+   "kids": false,
+   "n": 8
+  },
+  "dups": [
+   {
+    "copy": "ca_north_face_17_north_buttress",
+    "keep": "ca_north_buttress_4",
+    "name": "North Buttress",
+    "keepName": "North Buttress"
+   },
+   {
+    "copy": "ca_north_face_17_torre_couloir_nw_ridge_var",
+    "keep": "ca_torre_couloir_nw_ridge_var",
+    "name": "Torre Couloir (NW Ridge Var)",
+    "keepName": "Torre Couloir (NW Ridge Var)"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ca_north_face_17_northwest_couloir",
+    "name": "Northwest Couloir",
+    "area": "ca_north_face_17"
+   },
+   {
+    "id": "ca_north_face_17_cowardice",
+    "name": "Cowardice",
+    "area": "ca_north_face_17"
+   },
+   {
+    "id": "ca_north_face_17_learning_to_walk",
+    "name": "Learning to Walk",
+    "area": "ca_north_face_17"
+   },
+   {
+    "id": "ca_north_face_17_caught_inside",
+    "name": "Caught Inside",
+    "area": "ca_north_face_17"
+   },
+   {
+    "id": "ca_north_face_17_psychopomp",
+    "name": "Psychopomp",
+    "area": "ca_north_face_17"
+   },
+   {
+    "id": "ca_north_face_17_deception",
+    "name": "Deception",
+    "area": "ca_north_face_17"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_northwest_slab",
+   "name": "Northwest Slab",
+   "parent": "ca_darwin_dome",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "ca_northwest_slab_2",
+   "name": "Northwest Slab",
+   "parent": "ca_darwin_dome_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_northwest_slab_2_kp_s_pot_belly",
+    "keep": "ca_kp_s_pot_belly",
+    "name": "KP's Pot Belly",
+    "keepName": "KP's Pot Belly"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_owl_rock",
+   "name": "Owl Rock",
+   "parent": "ca_lower_kern_river_canyon",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "ca_owl_rock_3",
+   "name": "Owl Rock",
+   "parent": "ca_lower_kern_river_canyon_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ca_owl_rock_3_yesterday_s_hangover",
+    "keep": "ca_yesterday_s_hangover",
+    "name": "Yesterday's Hangover",
+    "keepName": "Yesterday's Hangover"
+   },
+   {
+    "copy": "ca_owl_rock_3_the_roost",
+    "keep": "ca_the_roost",
+    "name": "The Roost",
+    "keepName": "The Roost"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_pacific_ocean_cliff",
+   "name": "Pacific Ocean Cliff",
+   "parent": "ca_patrick_s_point_state_park",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_pacific_ocean_cliff_2",
+   "name": "Pacific Ocean Cliff",
+   "parent": "ca_sue_meg_state_park",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_pacific_ocean_cliff_2_california_coast",
+    "name": "California Coast",
+    "area": "ca_pacific_ocean_cliff_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_patterson_left",
+   "name": "Patterson Left",
+   "parent": "ca_patterson_bluff",
+   "kids": false,
+   "n": 17
+  },
+  "copy": {
+   "id": "ca_patterson_left_2",
+   "name": "Patterson Left",
+   "parent": "ca_patterson_bluff_2",
+   "kids": false,
+   "n": 4
+  },
+  "dups": [
+   {
+    "copy": "ca_patterson_left_2_millenium_falcon",
+    "keep": "ca_millenium_falcon",
+    "name": "Millenium Falcon",
+    "keepName": "Millenium Falcon"
+   },
+   {
+    "copy": "ca_patterson_left_2_the_way_of_the_dragon",
+    "keep": "ca_the_way_of_the_dragon",
+    "name": "The Way of the Dragon",
+    "keepName": "The Way of the Dragon"
+   },
+   {
+    "copy": "ca_patterson_left_2_under_the_gun",
+    "keep": "ca_under_the_gun",
+    "name": "Under the Gun",
+    "keepName": "Under the Gun"
+   },
+   {
+    "copy": "ca_patterson_left_2_raptors_of_the_steep",
+    "keep": "ca_raptors_of_the_steep",
+    "name": "Raptors of the Steep",
+    "keepName": "Raptors of the Steep"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_radiant_dome",
+   "name": "Radiant Dome",
+   "parent": "ca_domeland_wilderness",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ca_radiant_dome_2",
+   "name": "Radiant Dome",
+   "parent": "ca_domeland_wilderness_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_radiant_dome_2_return_to_forever",
+    "name": "Return to Forever",
+    "area": "ca_radiant_dome_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_schoerner_wall",
+   "name": "Schoerner Wall",
+   "parent": "ca_june_lake_area",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_schoerner_wall_2",
+   "name": "Schoerner Wall",
+   "parent": "ca_june_lake_area_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_schoerner_wall_2_go_for_it",
+    "keep": "ca_go_for_it",
+    "name": "Go for it!",
+    "keepName": "Go for it!"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_6_franosch",
+   "name": "6-Franosch",
+   "parent": "ca_silver_lake",
+   "kids": false,
+   "n": 16
+  },
+  "copy": {
+   "id": "ca_6_franosch_2",
+   "name": "6-Franosch",
+   "parent": "ca_silver_lake_3",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_6_franosch_2_left_alongside_right_gully",
+    "keep": "ca_left_alongside_right_gully",
+    "name": "Left alongside Right Gully",
+    "keepName": "Left alongside Right Gully"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_6_liebacks_area",
+   "name": "6 - Liebacks Area",
+   "parent": "ca_fortress_the_2",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "ca_6_liebacks_area_2",
+   "name": "6 - Liebacks Area",
+   "parent": "ca_the_fortress",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_6_liebacks_area_2_winter_prime",
+    "keep": "ca_winter_prime",
+    "name": "Winter Prime",
+    "keepName": "Winter Prime"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_sixth_canyon",
+   "name": "Sixth Canyon",
+   "parent": "ca_wheeler_crest",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_sixth_canyon_2",
+   "name": "Sixth Canyon",
+   "parent": "ca_wheeler_crest_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_sixth_canyon_2_bush_the_imbecile_tranquility_wall",
+    "keep": "ca_bush_the_imbecile_tranquility_wall",
+    "name": "Bush the Imbecile - Tranquility Wall",
+    "keepName": "Bush the Imbecile - Tranquility Wall"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_south_face_11",
+   "name": "South Face",
+   "parent": "ca_skull_the",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "ca_south_face_18",
+   "name": "South Face",
+   "parent": "ca_the_skull",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_south_face_18_step_right_up_to_the_skull",
+    "keep": "ca_step_right_up_to_the_skull",
+    "name": "Step right up to the Skull",
+    "keepName": "Step right up to the Skull"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_stevens_canyon_boulder",
+   "name": "Stevens Canyon Boulder",
+   "parent": "ca_san_francisco_bay_area",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "ca_stevens_canyon_boulder_2",
+   "name": "Stevens Canyon Boulder",
+   "parent": "ca_steven_s_canyon",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_stevens_canyon_boulder_2_hang_nail",
+    "name": "Hang Nail",
+    "area": "ca_stevens_canyon_boulder_2"
+   },
+   {
+    "id": "ca_stevens_canyon_boulder_2_tooth_and_claw_aid",
+    "name": "Tooth and Claw (Aid)",
+    "area": "ca_stevens_canyon_boulder_2"
+   },
+   {
+    "id": "ca_stevens_canyon_boulder_2_effluvia_aid",
+    "name": "Effluvia (Aid)",
+    "area": "ca_stevens_canyon_boulder_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_thundercat",
+   "name": "Thundercat!",
+   "parent": "ca_lion_s_den_the",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_thundercat_2",
+   "name": "Thundercat!",
+   "parent": "ca_the_lion_s_den",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_thundercat_2_cat_in_the_squal",
+    "name": "Cat In The Squal",
+    "area": "ca_thundercat_2"
+   },
+   {
+    "id": "ca_thundercat_2_cat_scratch_fever",
+    "name": "Cat Scratch Fever",
+    "area": "ca_thundercat_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_western_wilderness",
+   "name": "Western Wilderness",
+   "parent": "ca_indian_cove",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ca_western_wilderness_2",
+   "name": "Western Wilderness",
+   "parent": "ca_indian_cove_cg_west",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_western_wilderness_2_kentucky_waterfall",
+    "name": "Kentucky Waterfall",
+    "area": "ca_western_wilderness_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_whitney_portal_buttress",
+   "name": "Whitney Portal Buttress",
+   "parent": "ca_whitney_portal",
+   "kids": false,
+   "n": 8
+  },
+  "copy": {
+   "id": "ca_whitney_portal_buttress_2",
+   "name": "Whitney Portal Buttress",
+   "parent": "ca_whitney_portal_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [
+   {
+    "copy": "ca_whitney_portal_buttress_2_gangway",
+    "keep": "ca_gangway",
+    "name": "Gangway",
+    "keepName": "Gangway"
+   },
+   {
+    "copy": "ca_whitney_portal_buttress_2_mean_streak",
+    "keep": "ca_mean_streak",
+    "name": "Mean Streak",
+    "keepName": "Mean Streak"
+   },
+   {
+    "copy": "ca_whitney_portal_buttress_2_beckey_callis",
+    "keep": "ca_beckey_callis",
+    "name": "Beckey-Callis",
+    "keepName": "Beckey-Callis"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ca_wrinkled_lady_the",
+   "name": "Wrinkled Lady, The",
+   "parent": "ca_whitney_portal",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ca_the_wrinkled_lady",
+   "name": "The Wrinkled Lady",
+   "parent": "ca_whitney_portal_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ca_the_wrinkled_lady_ummagumma",
+    "keep": "ca_ummagumma",
+    "name": "Ummagumma",
+    "keepName": "Ummagumma"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.california",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ca_y_boulder_the",
+   "name": "Y Boulder, The",
+   "parent": "ca_buttermilk_crags",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ca_the_y_boulder",
+   "name": "The Y Boulder",
+   "parent": "ca_buttermilk_crags_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ca_the_y_boulder_bolt_ladder_to_heaven",
+    "name": "Bolt Ladder to Heaven",
+    "area": "ca_the_y_boulder"
+   },
+   {
+    "id": "ca_the_y_boulder_unknown_aid",
+    "name": "Unknown Aid",
+    "area": "ca_the_y_boulder"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 1.24,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_ames_wall",
+   "name": "Ames Wall",
+   "parent": "co_telluride_norwood_area",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "co_ames_wall_2",
+   "name": "Ames Wall",
+   "parent": "co_telluride",
+   "kids": false,
+   "n": 6
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_ames_wall_2_belly_of_the_beast",
+    "name": "Belly of the Beast",
+    "area": "co_ames_wall_2"
+   },
+   {
+    "id": "co_ames_wall_2_ames_ice_chode",
+    "name": "Ames Ice Chode",
+    "area": "co_ames_wall_2"
+   },
+   {
+    "id": "co_ames_wall_2_ames_upper_falls",
+    "name": "Ames Upper Falls",
+    "area": "co_ames_wall_2"
+   },
+   {
+    "id": "co_ames_wall_2_ames_falls_practice_area",
+    "name": "Ames Falls Practice Area",
+    "area": "co_ames_wall_2"
+   },
+   {
+    "id": "co_ames_wall_2_ames_falls",
+    "name": "Ames Falls",
+    "area": "co_ames_wall_2"
+   },
+   {
+    "id": "co_ames_wall_2_ames_ice_hose",
+    "name": "Ames Ice Hose",
+    "area": "co_ames_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0.62,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_arrowhead",
+   "name": "Arrowhead",
+   "parent": "co_glacier_gorge",
+   "kids": false,
+   "n": 25
+  },
+  "copy": {
+   "id": "co_arrowhead_2",
+   "name": "Arrowhead",
+   "parent": "co_glacier_gorge_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_arrowhead_2_the_hourglass_couloir",
+    "name": "The Hourglass Couloir",
+    "area": "co_arrowhead_2"
+   },
+   {
+    "id": "co_arrowhead_2_sister_on_crack",
+    "name": "Sister on Crack",
+    "area": "co_arrowhead_2"
+   },
+   {
+    "id": "co_arrowhead_2_deborah",
+    "name": "Deborah",
+    "area": "co_arrowhead_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_black_wall_the",
+   "name": "Black Wall, The",
+   "parent": "co_mt_evans",
+   "kids": false,
+   "n": 23
+  },
+  "copy": {
+   "id": "co_the_black_wall",
+   "name": "The Black Wall",
+   "parent": "co_mt_blue_sky_formerly_mt_evans",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "co_the_black_wall_undertow",
+    "keep": "co_undertow_2",
+    "name": "Undertow",
+    "keepName": "Undertow"
+   },
+   {
+    "copy": "co_the_black_wall_parallel_universe",
+    "keep": "co_parallel_universe_2",
+    "name": "Parallel Universe",
+    "keepName": "Parallel Universe"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 1.58,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_block_2",
+   "name": "Block 2",
+   "parent": "co_warm_up_blocks_the",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "co_block_2_2",
+   "name": "Block 2",
+   "parent": "co_the_warm_up_blocks",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_block_2_2_black_dike",
+    "keep": "co_black_dike",
+    "name": "Black Dike",
+    "keepName": "Black Dike"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_dome_the_2",
+   "name": "Dome, The",
+   "parent": "co_boulder_canyon",
+   "kids": false,
+   "n": 28
+  },
+  "copy": {
+   "id": "co_the_dome",
+   "name": "The Dome",
+   "parent": "co_boulder_canyon_ice",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_the_dome_frozen_black_plague",
+    "name": "Frozen Black Plague",
+    "area": "co_the_dome"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_falls_wall",
+   "name": "Falls Wall",
+   "parent": "co_castlewood_canyon_sp",
+   "kids": false,
+   "n": 21
+  },
+  "copy": {
+   "id": "co_falls_wall_2",
+   "name": "Falls Wall",
+   "parent": "co_castlewood_canyon_sp_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_falls_wall_2_gherkin_spire",
+    "name": "Gherkin Spire",
+    "area": "co_falls_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_gladstone_peak",
+   "name": "Gladstone Peak",
+   "parent": "co_northern_san_juans",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "co_gladstone_peak_2",
+   "name": "Gladstone Peak",
+   "parent": "co_san_miguel_mountains",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_gladstone_peak_2_lucky_strike",
+    "keep": "co_lucky_strike",
+    "name": "Lucky Strike",
+    "keepName": "Lucky Strike"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_grocery_store_walls_the",
+   "name": "Grocery Store Walls, The",
+   "parent": "co_castlewood_canyon_sp",
+   "kids": false,
+   "n": 46
+  },
+  "copy": {
+   "id": "co_the_grocery_store_walls",
+   "name": "The Grocery Store Walls",
+   "parent": "co_castlewood_canyon_sp_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "co_the_grocery_store_walls_gatoraide",
+    "keep": "co_gatoraide",
+    "name": "Gatoraide",
+    "keepName": "Gatoraide"
+   },
+   {
+    "copy": "co_the_grocery_store_walls_the_cornucopia",
+    "keep": "co_the_cornucopia",
+    "name": "The Cornucopia",
+    "keepName": "The Cornucopia"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_hidden_valley_wall",
+   "name": "Hidden Valley Wall",
+   "parent": "co_access_fund_trailhead_the",
+   "kids": false,
+   "n": 29
+  },
+  "copy": {
+   "id": "co_hidden_valley_wall_2",
+   "name": "Hidden Valley Wall",
+   "parent": "co_the_access_fund_trailhead",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_hidden_valley_wall_2_koko_b_ware",
+    "keep": "co_koko_b_ware",
+    "name": "Koko B. Ware",
+    "keepName": "Koko B. Ware"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_lincoln_lake_slabs",
+   "name": "Lincoln Lake Slabs",
+   "parent": "co_mt_evans",
+   "kids": false,
+   "n": 34
+  },
+  "copy": {
+   "id": "co_lincoln_lake_slabs_2",
+   "name": "Lincoln Lake Slabs",
+   "parent": "co_mt_blue_sky_formerly_mt_evans",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_lincoln_lake_slabs_2_ewoks_don_t_sport_climb",
+    "keep": "co_ewoks_don_t_sport_climb",
+    "name": "Ewoks Don't Sport Climb",
+    "keepName": "Ewoks Don't Sport Climb"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0.03,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_little_black_cliff",
+   "name": "Little Black Cliff",
+   "parent": "co_big_meadows",
+   "kids": false,
+   "n": 15
+  },
+  "copy": {
+   "id": "co_little_black_cliff_2",
+   "name": "Little Black Cliff",
+   "parent": "co_big_meadows_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "co_little_black_cliff_2_headwaters_of_denial",
+    "keep": "co_headwaters_of_denial",
+    "name": "Headwaters of Denial",
+    "keepName": "Headwaters of Denial"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "co_little_black_cliff_2_damn_if_i_know_aka_damifino",
+    "name": "Damn If I Know aka Damifino",
+    "area": "co_little_black_cliff_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0.02,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_lover_s_leap",
+   "name": "Lover's Leap",
+   "parent": "co_morrison_evergreen_littleton",
+   "kids": false,
+   "n": 15
+  },
+  "copy": {
+   "id": "co_lover_s_leap_2",
+   "name": "Lover's Leap",
+   "parent": "co_co_ice_mixed",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_lover_s_leap_2_route_number_9",
+    "name": "Route Number 9",
+    "area": "co_lover_s_leap_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_mears_peak",
+   "name": "Mears Peak",
+   "parent": "co_northern_san_juans",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "co_mears_peak_2",
+   "name": "Mears Peak",
+   "parent": "co_northern_san_juans_sneffels_range",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_mears_peak_2_north_face_couloir_submitted_as_wet_n_wild",
+    "keep": "co_north_face_couloir_submitted_as_wet_n_wild",
+    "name": "North Face Couloir (submitted as Wet 'n' Wild)",
+    "keepName": "North Face Couloir (submitted as Wet 'n' Wild)"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_miscellaneous_castlewood_boulder_problems",
+   "name": "Miscellaneous Castlewood Boulder problems",
+   "parent": "co_bouldering_problems",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "co_miscellaneous_castlewood_boulder_problems_2",
+   "name": "Miscellaneous Castlewood Boulder problems",
+   "parent": "co_bouldering_problems_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_miscellaneous_castlewood_boulder_problems_2_little_devil",
+    "keep": "co_little_devil",
+    "name": "Little Devil",
+    "keepName": "Little Devil"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_pope_s_nose_the",
+   "name": "Pope's Nose, The",
+   "parent": "co_pine_river_trad",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "co_the_pope_s_nose",
+   "name": "The Pope's Nose",
+   "parent": "co_pine_river_area",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [
+   {
+    "copy": "co_the_pope_s_nose_central_buttress",
+    "keep": "co_central_buttress_2",
+    "name": "Central Buttress",
+    "keepName": "Central Buttress"
+   },
+   {
+    "copy": "co_the_pope_s_nose_arkansas_route",
+    "keep": "co_arkansas_route",
+    "name": "Arkansas Route",
+    "keepName": "Arkansas Route"
+   },
+   {
+    "copy": "co_the_pope_s_nose_chalice_wall",
+    "keep": "co_chalice_wall",
+    "name": "Chalice Wall",
+    "keepName": "Chalice Wall"
+   },
+   {
+    "copy": "co_the_pope_s_nose_contraceptive_cracks",
+    "keep": "co_contraceptive_cracks",
+    "name": "Contraceptive Cracks",
+    "keepName": "Contraceptive Cracks"
+   },
+   {
+    "copy": "co_the_pope_s_nose_thunder_road",
+    "keep": "co_thunder_road_2",
+    "name": "Thunder Road",
+    "keepName": "Thunder Road"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0.42,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_powell_peak",
+   "name": "Powell Peak",
+   "parent": "co_rmnp_rock",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "co_powell_peak_2",
+   "name": "Powell Peak",
+   "parent": "co_glacier_gorge_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_powell_peak_2_main_squeeze",
+    "name": "Main Squeeze",
+    "area": "co_powell_peak_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_schoolyard_the",
+   "name": "Schoolyard, The",
+   "parent": "co_narrows_the",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "co_the_schoolyard",
+   "name": "The Schoolyard",
+   "parent": "co_the_narrows",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_the_schoolyard_kairaid",
+    "keep": "co_kairaid",
+    "name": "Kairaid",
+    "keepName": "Kairaid"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_shakespearean_theatre_revolution_buttress_the",
+   "name": "Shakespearean Theatre & Revolution Buttress, The",
+   "parent": "co_castlewood_canyon_sp",
+   "kids": false,
+   "n": 12
+  },
+  "copy": {
+   "id": "co_the_shakespearean_theatre_revolution_buttress",
+   "name": "The Shakespearean Theatre & Revolution Buttress",
+   "parent": "co_castlewood_canyon_sp_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_the_shakespearean_theatre_revolution_buttress_lives_of_quiet_desperation",
+    "keep": "co_lives_of_quiet_desperation",
+    "name": "Lives of Quiet Desperation",
+    "keepName": "Lives of Quiet Desperation"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "co_snowdon_peak_2",
+   "name": "Snowdon Peak",
+   "parent": "co_west_needle_mountains",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "co_snowdon_peak_3",
+   "name": "Snowdon Peak",
+   "parent": "co_west_needle_mountains_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "co_snowdon_peak_3_direct_ne_ridge",
+    "name": "Direct NE Ridge",
+    "area": "co_snowdon_peak_3"
+   }
+  ]
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_sunday_wall",
+   "name": "Sunday Wall",
+   "parent": "co_access_fund_trailhead_the",
+   "kids": false,
+   "n": 59
+  },
+  "copy": {
+   "id": "co_sunday_wall_2",
+   "name": "Sunday Wall",
+   "parent": "co_the_access_fund_trailhead",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "co_sunday_wall_2_upper_deck_1",
+    "keep": "co_upper_deck_1",
+    "name": "Upper Deck 1",
+    "keepName": "Upper Deck 1"
+   },
+   {
+    "copy": "co_sunday_wall_2_unknown_reach",
+    "keep": "co_unknown_reach",
+    "name": "Unknown Reach",
+    "keepName": "Unknown Reach"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_tan_buttresses_the",
+   "name": "Tan Buttresses, The",
+   "parent": "co_mt_evans",
+   "kids": false,
+   "n": 16
+  },
+  "copy": {
+   "id": "co_the_tan_buttresses",
+   "name": "The Tan Buttresses",
+   "parent": "co_mt_blue_sky_formerly_mt_evans",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_the_tan_buttresses_astro_goat",
+    "keep": "co_astro_goat",
+    "name": "Astro Goat",
+    "keepName": "Astro Goat"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_tradistan_tower",
+   "name": "Tradistan Tower",
+   "parent": "co_pine_river_trad",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "co_tradistan_tower_2",
+   "name": "Tradistan Tower",
+   "parent": "co_pine_river_area",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_tradistan_tower_2_thundercats_are_go",
+    "keep": "co_thundercats_are_go",
+    "name": "Thundercats are Go!",
+    "keepName": "Thundercats are Go!"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.colorado",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "co_vestal_peak",
+   "name": "Vestal Peak",
+   "parent": "co_grenadiers_the",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "co_vestal_peak_2",
+   "name": "Vestal Peak",
+   "parent": "co_the_grenadiers",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "co_vestal_peak_2_east_face",
+    "keep": "co_east_face_2",
+    "name": "East Face",
+    "keepName": "East Face"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.idaho",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "id_baron_spire_aka_old_smoothie",
+   "name": "Baron Spire aka Old Smoothie",
+   "parent": "id_sawtooth_range_the",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "id_baron_spire_aka_old_smoothie_2",
+   "name": "Baron Spire aka Old Smoothie",
+   "parent": "id_the_sawtooth_range",
+   "kids": false,
+   "n": 4
+  },
+  "dups": [
+   {
+    "copy": "id_baron_spire_aka_old_smoothie_2_tall_boys_and_breakfast_burritos",
+    "keep": "id_tall_boys_and_breakfast_burritos",
+    "name": "Tall Boys and Breakfast Burritos",
+    "keepName": "Tall Boys and Breakfast Burritos"
+   },
+   {
+    "copy": "id_baron_spire_aka_old_smoothie_2_lawdogs_lament",
+    "keep": "id_lawdogs_lament",
+    "name": "Lawdogs' Lament",
+    "keepName": "Lawdogs' Lament"
+   },
+   {
+    "copy": "id_baron_spire_aka_old_smoothie_2_se_face",
+    "keep": "id_se_face",
+    "name": "SE Face",
+    "keepName": "SE Face"
+   },
+   {
+    "copy": "id_baron_spire_aka_old_smoothie_2_deliverance",
+    "keep": "id_deliverance",
+    "name": "Deliverance",
+    "keepName": "Deliverance"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.idaho",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "id_elephant_s_perch_the",
+   "name": "Elephant's Perch, The",
+   "parent": "id_sawtooth_range_the",
+   "kids": false,
+   "n": 18
+  },
+  "copy": {
+   "id": "id_the_elephant_s_perch",
+   "name": "The Elephant's Perch",
+   "parent": "id_the_sawtooth_range",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "id_the_elephant_s_perch_chasing_the_dragon",
+    "keep": "id_chasing_the_dragon",
+    "name": "Chasing the Dragon",
+    "keepName": "Chasing the Dragon"
+   },
+   {
+    "copy": "id_the_elephant_s_perch_e_p_arete",
+    "keep": "id_e_p_arete",
+    "name": "E.P. Arete",
+    "keepName": "E.P. Arete"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.idaho",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "id_horstmann_peak",
+   "name": "Horstmann Peak",
+   "parent": "id_sawtooth_range_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "id_horstmann_peak_2",
+   "name": "Horstmann Peak",
+   "parent": "id_the_sawtooth_range",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "id_horstmann_peak_2_freaking_frazzled",
+    "keep": "id_freaking_frazzled",
+    "name": "Freaking Frazzled",
+    "keepName": "Freaking Frazzled"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.idaho",
+  "km": 0.63,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "id_manning_crevice_bridge_area",
+   "name": "Manning Crevice Bridge Area",
+   "parent": "id_riggins",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "id_manning_crevice_bridge_area_2",
+   "name": "Manning Crevice Bridge Area",
+   "parent": "id_riggins_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [
+   {
+    "copy": "id_manning_crevice_bridge_area_2_salmon_river_quiver",
+    "keep": "id_salmon_river_quiver",
+    "name": "Salmon River Quiver",
+    "keepName": "Salmon River Quiver"
+   },
+   {
+    "copy": "id_manning_crevice_bridge_area_2_the_obelisk",
+    "keep": "id_the_obelisk",
+    "name": "The Obelisk",
+    "keepName": "The Obelisk"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "id_manning_crevice_bridge_area_2_that_crack_on_the_salmon_river",
+    "name": "That Crack on the Salmon River",
+    "area": "id_manning_crevice_bridge_area_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.idaho",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "id_north_face_gunsight_peak",
+   "name": "North Face Gunsight Peak",
+   "parent": "id_gunsight_peak",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "id_north_face_gunsight_peak_2",
+   "name": "North Face Gunsight Peak",
+   "parent": "id_gunsight_peak_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "id_north_face_gunsight_peak_2_shields_lunceford",
+    "keep": "id_shields_lunceford",
+    "name": "Shields-Lunceford",
+    "keepName": "Shields-Lunceford"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.kentucky",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ky_turkey_foot",
+   "name": "Turkey Foot",
+   "parent": "ky_nolin_river_dam",
+   "kids": false,
+   "n": 11
+  },
+  "copy": {
+   "id": "ky_turkey_foot_2",
+   "name": "Turkey Foot",
+   "parent": "ky_western_kentucky",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ky_turkey_foot_2_alcove_falls_ice",
+    "name": "Alcove Falls Ice",
+    "area": "ky_turkey_foot_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.maine",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "me_cavern_the",
+   "name": "Cavern, The",
+   "parent": "me_great_head",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "me_the_cavern",
+   "name": "The Cavern",
+   "parent": "me_great_head_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "me_the_cavern_agitator",
+    "name": "Agitator",
+    "area": "me_the_cavern"
+   }
+  ]
+ },
+ {
+  "st": "usa.maine",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "me_otter_cliffs",
+   "name": "Otter Cliffs",
+   "parent": "me_acadia_national_park",
+   "kids": false,
+   "n": 72
+  },
+  "copy": {
+   "id": "me_otter_cliffs_2",
+   "name": "Otter Cliffs",
+   "parent": "me_acadia_national_park_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "me_otter_cliffs_2_otter_cliff_ice",
+    "name": "Otter Cliff Ice",
+    "area": "me_otter_cliffs_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.maine",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "me_test_sub_area_to_contain_routes",
+   "name": "test sub area to contain routes",
+   "parent": "me_test_area_the",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "me_test_sub_area_to_contain_routes_2",
+   "name": "test sub area to contain routes",
+   "parent": "me_nick_wilder_s_test_area",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "me_test_sub_area_to_contain_routes_2_test_route",
+    "keep": "me_test_route",
+    "name": "test route",
+    "keepName": "test route"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.michigan",
+  "km": 0.04,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mi_little_presque_isle",
+   "name": "Little Presque Isle",
+   "parent": "mi_marquette_and_central_up_bouldering",
+   "kids": false,
+   "n": 33
+  },
+  "copy": {
+   "id": "mi_little_presque_isle_2",
+   "name": "Little Presque Isle",
+   "parent": "mi_marquette_ice",
+   "kids": false,
+   "n": 4
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mi_little_presque_isle_2_north_steps",
+    "name": "North Steps",
+    "area": "mi_little_presque_isle_2"
+   },
+   {
+    "id": "mi_little_presque_isle_2_north_gully",
+    "name": "North Gully",
+    "area": "mi_little_presque_isle_2"
+   },
+   {
+    "id": "mi_little_presque_isle_2_the_wall",
+    "name": "The wall",
+    "area": "mi_little_presque_isle_2"
+   },
+   {
+    "id": "mi_little_presque_isle_2_the_crevasse",
+    "name": "The Crevasse",
+    "area": "mi_little_presque_isle_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.michigan",
+  "km": 0.16,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mi_wolf_s_den",
+   "name": "Wolf's Den",
+   "parent": "mi_550_roped",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "mi_wolfs_den",
+   "name": "Wolfs Den",
+   "parent": "mi_marquette_ice",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mi_wolfs_den_wolfs_den_smear",
+    "name": "wolfs den smear",
+    "area": "mi_wolfs_den"
+   },
+   {
+    "id": "mi_wolfs_den_mixed_gully",
+    "name": "Mixed Gully",
+    "area": "mi_wolfs_den"
+   }
+  ]
+ },
+ {
+  "st": "usa.minnesota",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mn_little_foxx",
+   "name": "Little Foxx",
+   "parent": "mn_little_foxx_canyon",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "mn_little_foxx_2",
+   "name": "Little Foxx",
+   "parent": "mn_little_foxx_canyon_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mn_little_foxx_2_bush",
+    "name": "Bush",
+    "area": "mn_little_foxx_2"
+   },
+   {
+    "id": "mn_little_foxx_2_blow_pop",
+    "name": "Blow Pop",
+    "area": "mn_little_foxx_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.minnesota",
+  "km": 0.03,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mn_main_flow_area_2",
+   "name": "Main Flow Area",
+   "parent": "mn_robinson_park",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "mn_main_flow_area",
+   "name": "Main Flow Area",
+   "parent": "mn_sandstone_ice_park",
+   "kids": false,
+   "n": 7
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mn_main_flow_area_matrix",
+    "name": "Matrix",
+    "area": "mn_main_flow_area"
+   },
+   {
+    "id": "mn_main_flow_area_main_flow_area_ice",
+    "name": "Main Flow Area Ice",
+    "area": "mn_main_flow_area"
+   },
+   {
+    "id": "mn_main_flow_area_quick_silver",
+    "name": "Quick Silver",
+    "area": "mn_main_flow_area"
+   },
+   {
+    "id": "mn_main_flow_area_brewmeister",
+    "name": "Brewmeister",
+    "area": "mn_main_flow_area"
+   },
+   {
+    "id": "mn_main_flow_area_wahtusi_crack",
+    "name": "Wahtusi Crack",
+    "area": "mn_main_flow_area"
+   },
+   {
+    "id": "mn_main_flow_area_breaking_away",
+    "name": "Breaking Away",
+    "area": "mn_main_flow_area"
+   },
+   {
+    "id": "mn_main_flow_area_ice_spray",
+    "name": "Ice Spray"
+   }
+  ]
+ },
+ {
+  "st": "usa.minnesota",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mn_trailside_boulders",
+   "name": "Trailside Boulders",
+   "parent": "mn_ely_s_peak_bouldering",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "mn_trailside_boulders_2",
+   "name": "Trailside Boulders",
+   "parent": "mn_ely_s_peak_bouldering_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mn_trailside_boulders_2_militant_mind",
+    "name": "Militant Mind",
+    "area": "mn_trailside_boulders_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.minnesota",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "mn_willie_wall",
+   "name": "Willie Wall",
+   "parent": "mn_m_m_hill_crane_lake",
+   "kids": false,
+   "n": 16
+  },
+  "copy": {
+   "id": "mn_willie_wall_2",
+   "name": "Willie Wall",
+   "parent": "mn_m_m_hill",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "mn_willie_wall_2_mammas_don_t_let_your_babies_grow_up_to_be_aid_climbers",
+    "keep": "mn_mammas_don_t_let_your_babies_grow_up_to_be_aid_climbers",
+    "name": "Mammas, Don't Let Your Babies Grow Up To Be Aid Climbers",
+    "keepName": "Mammas, Don't Let Your Babies Grow Up To Be Aid Climbers"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.montana",
+  "km": 0.18,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mt_firewalls",
+   "name": "Firewalls",
+   "parent": "mt_northwest_region",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "mt_firewalls_2",
+   "name": "Firewalls",
+   "parent": "mt_mount_sentinel",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mt_firewalls_2_mickey_mouse",
+    "name": "Mickey Mouse",
+    "area": "mt_firewalls_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.montana",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "mt_tiger_stripe",
+   "name": "Tiger Stripe",
+   "parent": "mt_mill_creek_north_rim",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "mt_tiger_stripe_2",
+   "name": "Tiger Stripe",
+   "parent": "mt_mill_creek_north_rim_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "mt_tiger_stripe_2_a_climb_before_it_s_time",
+    "name": "A Climb Before It's Time",
+    "area": "mt_tiger_stripe_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.nevada",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nv_aeolian_wall",
+   "name": "Aeolian Wall",
+   "parent": "nv_mt_wilson",
+   "kids": false,
+   "n": 12
+  },
+  "copy": {
+   "id": "nv_aeolian_wall_2",
+   "name": "Aeolian Wall",
+   "parent": "nv_mount_wilson",
+   "kids": false,
+   "n": 6
+  },
+  "dups": [
+   {
+    "copy": "nv_aeolian_wall_2_resolution_arete",
+    "keep": "nv_resolution_arete",
+    "name": "Resolution Arete",
+    "keepName": "Resolution Arete"
+   },
+   {
+    "copy": "nv_aeolian_wall_2_aeolian_wall_original_route",
+    "keep": "nv_aeolian_wall_original_route",
+    "name": "Aeolian Wall (Original Route)",
+    "keepName": "Aeolian Wall (Original Route)"
+   },
+   {
+    "copy": "nv_aeolian_wall_2_jedi_mind_tricks",
+    "keep": "nv_jedi_mind_tricks",
+    "name": "Jedi Mind Tricks",
+    "keepName": "Jedi Mind Tricks"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nv_aeolian_wall_2_evolution_arete",
+    "name": "Evolution Arete",
+    "area": "nv_aeolian_wall_2"
+   },
+   {
+    "id": "nv_aeolian_wall_2_taco_tuesday",
+    "name": "Taco Tuesday",
+    "area": "nv_aeolian_wall_2"
+   },
+   {
+    "id": "nv_aeolian_wall_2_salami_wand_kenobi",
+    "name": "Salami Wand Kenobi",
+    "area": "nv_aeolian_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.nevada",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nv_hawk_rock",
+   "name": "Hawk Rock",
+   "parent": "nv_moon_aka_knob_hill_the",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "nv_hawk_rock_2",
+   "name": "Hawk Rock",
+   "parent": "nv_the_moon_aka_knob_hill",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nv_hawk_rock_2_sim_sim_salabim",
+    "keep": "nv_sim_sim_salabim",
+    "name": "Sim Sim Salabim",
+    "keepName": "Sim Sim Salabim"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.nevada",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nv_overlook_the",
+   "name": "Overlook, The",
+   "parent": "nv_calico_basin",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "nv_the_overlook",
+   "name": "The Overlook",
+   "parent": "nv_ash_canyon_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nv_the_overlook_redbud_roof",
+    "name": "Redbud Roof",
+    "area": "nv_the_overlook"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_02_main_face_aka_south_face_lower",
+   "name": "02. Main Face (aka South Face - Lower)",
+   "parent": "nh_7_mt_willard_ice",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "nh_02_main_face_aka_south_face_lower_2",
+   "name": "02. Main Face (aka South Face - Lower)",
+   "parent": "nh_6_mt_willard_ice",
+   "kids": false,
+   "n": 9
+  },
+  "dups": [
+   {
+    "copy": "nh_02_main_face_aka_south_face_lower_2_freeze_frame",
+    "keep": "nh_freeze_frame",
+    "name": "Freeze Frame",
+    "keepName": "Freeze Frame"
+   },
+   {
+    "copy": "nh_02_main_face_aka_south_face_lower_2_gully_2",
+    "keep": "nh_gully_2",
+    "name": "Gully   2",
+    "keepName": "Gully   2"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_cinema_gully",
+    "name": "Cinema Gully",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   },
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_gully_2_1_2",
+    "name": "Gully   2-1/2",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   },
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_coin_de_la_souris",
+    "name": "Coin de la Souris",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   },
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_gully_1",
+    "name": "Gully   1",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   },
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_gully_1_1_2",
+    "name": "Gully   1-1/2",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   },
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_rikki_tikki_tavi",
+    "name": "Rikki Tikki Tavi",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   },
+   {
+    "id": "nh_02_main_face_aka_south_face_lower_2_great_madness",
+    "name": "Great Madness",
+    "area": "nh_02_main_face_aka_south_face_lower_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_04_east_face_lower",
+   "name": "04. East Face - Lower",
+   "parent": "nh_7_mt_willard_ice",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "nh_04_east_face_lower_2",
+   "name": "04. East Face - Lower",
+   "parent": "nh_6_mt_willard_ice",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [
+   {
+    "copy": "nh_04_east_face_lower_2_hitchcock_gully_lower",
+    "keep": "nh_hitchcock_gully_lower",
+    "name": "Hitchcock Gully (Lower)",
+    "keepName": "Hitchcock Gully (Lower)"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nh_04_east_face_lower_2_unknown",
+    "name": "Unknown",
+    "area": "nh_04_east_face_lower_2"
+   },
+   {
+    "id": "nh_04_east_face_lower_2_right_hand_squirrel_nuts_aka_lhmw_bypass",
+    "name": "Right Hand Squirrel Nuts (aka LHMW Bypass)",
+    "area": "nh_04_east_face_lower_2"
+   },
+   {
+    "id": "nh_04_east_face_lower_2_left_hand_monkey_wrench",
+    "name": "Left Hand Monkey Wrench",
+    "area": "nh_04_east_face_lower_2"
+   },
+   {
+    "id": "nh_04_east_face_lower_2_willard_slab_right",
+    "name": "Willard Slab Right",
+    "area": "nh_04_east_face_lower_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_05_east_face_upper",
+   "name": "05. East Face - Upper",
+   "parent": "nh_7_mt_willard_ice",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "nh_05_east_face_upper_2",
+   "name": "05. East Face - Upper",
+   "parent": "nh_6_mt_willard_ice",
+   "kids": false,
+   "n": 17
+  },
+  "dups": [
+   {
+    "copy": "nh_05_east_face_upper_2_damsel_in_distress",
+    "keep": "nh_damsel_in_distress",
+    "name": "Damsel in Distress",
+    "keepName": "Damsel in Distress"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nh_05_east_face_upper_2_the_cleft",
+    "name": "The Cleft",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_upper_hitchcock_gully",
+    "name": "Upper Hitchcock Gully",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_east_face_slab",
+    "name": "East Face Slab",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_east_face_slab_right",
+    "name": "East Face Slab Right",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_just_left_of_rear_window",
+    "name": "\"Just Left of Rear Window\"",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_unknown_slab",
+    "name": "Unknown Slab",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_yard_goats",
+    "name": "Yard Goats",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_a_woman_s_right_to_choose",
+    "name": "A Woman's Right to Choose",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_read_between_the_lines",
+    "name": "Read Between The Lines",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_rear_window",
+    "name": "Rear Window",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_dial_m_for_murder",
+    "name": "Dial M for Murder",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_out_of_touch",
+    "name": "Out of Touch",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_chivalry",
+    "name": "Chivalry",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_spring_fling",
+    "name": "Spring Fling",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_the_gusher",
+    "name": "The Gusher",
+    "area": "nh_05_east_face_upper_2"
+   },
+   {
+    "id": "nh_05_east_face_upper_2_dial_n_for_nonsense",
+    "name": "Dial N for Nonsense",
+    "area": "nh_05_east_face_upper_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nh_the_balcony_2",
+   "name": "The Balcony",
+   "parent": "nh_russell_crags",
+   "kids": false,
+   "n": 10
+  },
+  "copy": {
+   "id": "nh_the_balcony_3",
+   "name": "The Balcony",
+   "parent": "nh_russell_crags_in_merriam_woods",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nh_the_balcony_3_astro_cat",
+    "keep": "nh_astro_cat",
+    "name": "Astro Cat",
+    "keepName": "Astro Cat"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_band_m_rock",
+   "name": "Band M Rock",
+   "parent": "nh_band_m_re_opened",
+   "kids": false,
+   "n": 20
+  },
+  "copy": {
+   "id": "nh_band_m_rock_2",
+   "name": "Band M Rock",
+   "parent": "nh_band_m",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_band_m_rock_2_general_hospital",
+    "name": "General Hospital",
+    "area": "nh_band_m_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.41,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_bonsai",
+   "name": "Bonsai",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 23
+  },
+  "copy": {
+   "id": "nh_bonsai_2",
+   "name": "Bonsai",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_bonsai_2_cops_and_robbers",
+    "name": "Cops and Robbers",
+    "area": "nh_bonsai_2"
+   },
+   {
+    "id": "nh_bonsai_2_flirtin_curtain",
+    "name": "Flirtin' Curtain",
+    "area": "nh_bonsai_2"
+   },
+   {
+    "id": "nh_bonsai_2_paws_and_claws",
+    "name": "Paws and Claws",
+    "area": "nh_bonsai_2"
+   },
+   {
+    "id": "nh_bonsai_2_socially_awkward",
+    "name": "Socially Awkward",
+    "area": "nh_bonsai_2"
+   },
+   {
+    "id": "nh_bonsai_2_pillar_killer",
+    "name": "Pillar Killer",
+    "area": "nh_bonsai_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.8,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_the_crow_s_nest",
+   "name": "The Crow's Nest",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 24
+  },
+  "copy": {
+   "id": "nh_crow_s_nest",
+   "name": "Crow's Nest",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_crow_s_nest_go_deep_or_go_home",
+    "name": "Go Deep or Go Home",
+    "area": "nh_crow_s_nest"
+   },
+   {
+    "id": "nh_crow_s_nest_crow_s_nest_gully_left",
+    "name": "Crow's Nest Gully Left",
+    "area": "nh_crow_s_nest"
+   },
+   {
+    "id": "nh_crow_s_nest_jeezum_crow",
+    "name": "Jeezum Crow",
+    "area": "nh_crow_s_nest"
+   },
+   {
+    "id": "nh_crow_s_nest_crow_s_nest_gully_right",
+    "name": "Crow's Nest Gully Right",
+    "area": "nh_crow_s_nest"
+   },
+   {
+    "id": "nh_crow_s_nest_crows_nest_gully",
+    "name": "Crows Nest Gully",
+    "area": "nh_crow_s_nest"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.33,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_5_8_crag",
+   "name": "5.8 Crag",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 21
+  },
+  "copy": {
+   "id": "nh_5_8_crag_2",
+   "name": "5.8 Crag",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_5_8_crag_2_granny_s_bolted_slab",
+    "name": "Granny's Bolted Slab",
+    "area": "nh_5_8_crag_2"
+   },
+   {
+    "id": "nh_5_8_crag_2_crystal_balls",
+    "name": "Crystal Balls",
+    "area": "nh_5_8_crag_2"
+   },
+   {
+    "id": "nh_5_8_crag_2_road_side_diner",
+    "name": "Road Side Diner",
+    "area": "nh_5_8_crag_2"
+   },
+   {
+    "id": "nh_5_8_crag_2_dining_cart",
+    "name": "Dining cart",
+    "area": "nh_5_8_crag_2"
+   },
+   {
+    "id": "nh_5_8_crag_2_right_side_diner",
+    "name": "Right Side Diner",
+    "area": "nh_5_8_crag_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.09,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_the_g_spot",
+   "name": "The G-Spot",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "nh_g_spot",
+   "name": "G Spot",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 7
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_g_spot_blue_amber",
+    "name": "Blue Amber",
+    "area": "nh_g_spot"
+   },
+   {
+    "id": "nh_g_spot_boulder_problems",
+    "name": "Boulder Problems",
+    "area": "nh_g_spot"
+   },
+   {
+    "id": "nh_g_spot_approach_slab",
+    "name": "Approach Slab",
+    "area": "nh_g_spot"
+   },
+   {
+    "id": "nh_g_spot_ragamuffin",
+    "name": "Ragamuffin",
+    "area": "nh_g_spot"
+   },
+   {
+    "id": "nh_g_spot_vee_minus_zero",
+    "name": "Vee Minus Zero",
+    "area": "nh_g_spot"
+   },
+   {
+    "id": "nh_g_spot_v8_juice",
+    "name": "V8 Juice",
+    "area": "nh_g_spot"
+   },
+   {
+    "id": "nh_g_spot_pizzazz",
+    "name": "Pizzazz",
+    "area": "nh_g_spot"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.79,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_the_hinterlands",
+   "name": "The Hinterlands",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 33
+  },
+  "copy": {
+   "id": "nh_hinterlands",
+   "name": "Hinterlands",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 6
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_hinterlands_prestor_john",
+    "name": "Prestor John",
+    "area": "nh_hinterlands"
+   },
+   {
+    "id": "nh_hinterlands_the_next_right_thing",
+    "name": "The Next Right Thing",
+    "area": "nh_hinterlands"
+   },
+   {
+    "id": "nh_hinterlands_what_lies_between",
+    "name": "What Lies Between",
+    "area": "nh_hinterlands"
+   },
+   {
+    "id": "nh_hinterlands_prestor_pillar",
+    "name": "Prestor Pillar",
+    "area": "nh_hinterlands"
+   },
+   {
+    "id": "nh_hinterlands_geographic_factor",
+    "name": "Geographic Factor",
+    "area": "nh_hinterlands"
+   },
+   {
+    "id": "nh_hinterlands_john_s_pillar",
+    "name": "John’s Pillar",
+    "area": "nh_hinterlands"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.25,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_mt_lincoln",
+   "name": "Mt Lincoln",
+   "parent": "nh_wm_franconia_notch",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "nh_mt_lincoln_2",
+   "name": "Mt. Lincoln",
+   "parent": "nh_franconia_notch",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_mt_lincoln_2_falling_water",
+    "name": "Falling Water",
+    "area": "nh_mt_lincoln_2"
+   },
+   {
+    "id": "nh_mt_lincoln_2_lincoln_s_throat",
+    "name": "Lincoln's Throat",
+    "area": "nh_mt_lincoln_2"
+   },
+   {
+    "id": "nh_mt_lincoln_2_mixed_idiot",
+    "name": "Mixed Idiot",
+    "area": "nh_mt_lincoln_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.13,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_main_cliff_right",
+   "name": "Main Cliff Right",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 27
+  },
+  "copy": {
+   "id": "nh_main_cliff_right_2",
+   "name": "Main Cliff Right",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_main_cliff_right_2_learning_disabilities",
+    "name": "Learning Disabilities",
+    "area": "nh_main_cliff_right_2"
+   },
+   {
+    "id": "nh_main_cliff_right_2_artificial_intelegence",
+    "name": "Artificial Intelegence",
+    "area": "nh_main_cliff_right_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.05,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_newfound_lake",
+   "name": "Newfound Lake",
+   "parent": "nh_lakes_region",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "nh_newfound_lake_2",
+   "name": "Newfound Lake",
+   "parent": "nh_lakes_region_ice",
+   "kids": false,
+   "n": 6
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_newfound_lake_2_blood_line",
+    "name": "Blood line",
+    "area": "nh_newfound_lake_2"
+   },
+   {
+    "id": "nh_newfound_lake_2_pikeline",
+    "name": "Pikeline",
+    "area": "nh_newfound_lake_2"
+   },
+   {
+    "id": "nh_newfound_lake_2_duofold",
+    "name": "Duofold",
+    "area": "nh_newfound_lake_2"
+   },
+   {
+    "id": "nh_newfound_lake_2_slim_jim",
+    "name": "Slim Jim",
+    "area": "nh_newfound_lake_2"
+   },
+   {
+    "id": "nh_newfound_lake_2_the_red_headwall",
+    "name": "The Red Headwall",
+    "area": "nh_newfound_lake_2"
+   },
+   {
+    "id": "nh_newfound_lake_2_newfound_offwidth",
+    "name": "Newfound Offwidth",
+    "area": "nh_newfound_lake_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_test_sub_area",
+   "name": "Test sub area",
+   "parent": "nh_zztemp_holding",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "nh_test_sub_area_2",
+   "name": "Test sub area",
+   "parent": "nh_zztemp_holding_for_out_of_the_way",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_test_sub_area_2_test_route_2",
+    "name": "Test route 2",
+    "area": "nh_test_sub_area_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.43,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_upper_cliff",
+   "name": "Upper Cliff",
+   "parent": "nh_pawtuckaway",
+   "kids": false,
+   "n": 31
+  },
+  "copy": {
+   "id": "nh_upper_cliff_2",
+   "name": "Upper Cliff",
+   "parent": "nh_pawtuckaway_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nh_upper_cliff_2_pawns_on_ice",
+    "name": "Pawns on Ice",
+    "area": "nh_upper_cliff_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.58,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nh_waimea",
+   "name": "Waimea",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 59
+  },
+  "copy": {
+   "id": "nh_waimea_2",
+   "name": "Waimea",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "nh_waimea_2_long_board",
+    "keep": "nh_long_board",
+    "name": "Long Board",
+    "keepName": "Long Board"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nh_waimea_2_china_shop",
+    "name": "China Shop",
+    "area": "nh_waimea_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_hampshire",
+  "km": 0.19,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nh_wonderland",
+   "name": "Wonderland",
+   "parent": "nh_rumney",
+   "kids": false,
+   "n": 13
+  },
+  "copy": {
+   "id": "nh_wonderland_2",
+   "name": "Wonderland",
+   "parent": "nh_rumney_ice_climbs",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nh_wonderland_2_wendall_s_dike",
+    "keep": "nh_wendall_s_dike",
+    "name": "Wendall's Dike",
+    "keepName": "Wendall's Dike"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_jersey",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nj_i_triumverate_wall",
+   "name": "i. Triumverate Wall",
+   "parent": "nj_mt_tammany",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "nj_i_triumverate_wall_2",
+   "name": "i. Triumverate Wall",
+   "parent": "nj_mt_tammany_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nj_i_triumverate_wall_2_dougher_direct",
+    "name": "Dougher Direct",
+    "area": "nj_i_triumverate_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_jersey",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nj_k_eldorado_wall_aka_rad_dudes_area",
+   "name": "k. Eldorado Wall aka Rad Dudes Area",
+   "parent": "nj_mt_tammany",
+   "kids": false,
+   "n": 10
+  },
+  "copy": {
+   "id": "nj_k_eldorado_wall_aka_rad_dudes_area_2",
+   "name": "k. Eldorado Wall aka Rad Dudes Area",
+   "parent": "nj_mt_tammany_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nj_k_eldorado_wall_aka_rad_dudes_area_2_v_the_final_battle",
+    "keep": "nj_v_the_final_battle",
+    "name": "\"V\" The Final Battle",
+    "keepName": "\"V\" The Final Battle"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_jersey",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nj_m_the_great_arch",
+   "name": "m. The Great Arch",
+   "parent": "nj_mt_tammany",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "nj_m_the_great_arch_2",
+   "name": "m. The Great Arch",
+   "parent": "nj_mt_tammany_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nj_m_the_great_arch_2_flail_bopp_flake",
+    "keep": "nj_flail_bopp_flake",
+    "name": "Flail Bopp Flake",
+    "keepName": "Flail Bopp Flake"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_castle_the",
+   "name": "Castle, The",
+   "parent": "nm_chimney_canyon",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "nm_the_castle",
+   "name": "The Castle",
+   "parent": "nm_cc_couloir_ridge",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nm_the_castle_crujida_puta",
+    "keep": "nm_crujida_puta",
+    "name": "Crujida Puta",
+    "keepName": "Crujida Puta"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_columns_south_the",
+   "name": "Columns South, The",
+   "parent": "nm_dona_ana_mountains",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "nm_the_columns_south",
+   "name": "The Columns South",
+   "parent": "nm_dona_ana_mountains_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nm_the_columns_south_cheap_thrills",
+    "keep": "nm_cheap_thrills",
+    "name": "Cheap Thrills",
+    "keepName": "Cheap Thrills"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nm_frontera",
+   "name": "Frontera",
+   "parent": "nm_needle_and_squaretops",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "nm_frontera_2",
+   "name": "Frontera",
+   "parent": "nm_needle_and_squaretops_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nm_frontera_2_space_oddity",
+    "name": "Space Oddity",
+    "area": "nm_frontera_2"
+   },
+   {
+    "id": "nm_frontera_2_orion",
+    "name": "Orion",
+    "area": "nm_frontera_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nm_jemez_falls",
+   "name": "Jemez Falls",
+   "parent": "nm_jemez_mountains_and_jemez_valley",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "nm_jemez_falls_2",
+   "name": "Jemez Falls",
+   "parent": "nm_jemez_area",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "nm_jemez_falls_2_renovation_of_expectation",
+    "keep": "nm_renovation_of_expectation",
+    "name": "Renovation of Expectation",
+    "keepName": "Renovation of Expectation"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nm_jemez_falls_2_jemez_falls",
+    "name": "Jemez Falls",
+    "area": "nm_jemez_falls_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_lesser_spire",
+   "name": "Lesser Spire",
+   "parent": "nm_rabbit_ears_area",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "nm_lesser_spire_2",
+   "name": "Lesser Spire",
+   "parent": "nm_rabbit_ears_area_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nm_lesser_spire_2_cacahuate",
+    "keep": "nm_cacahuate",
+    "name": "Cacahuate",
+    "keepName": "Cacahuate"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_middle_rabbit_ear",
+   "name": "Middle Rabbit Ear",
+   "parent": "nm_rabbit_ears_area",
+   "kids": false,
+   "n": 10
+  },
+  "copy": {
+   "id": "nm_middle_rabbit_ear_2",
+   "name": "Middle Rabbit Ear",
+   "parent": "nm_rabbit_ears_area_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "nm_middle_rabbit_ear_2_south_face_cutoff",
+    "keep": "nm_south_face_cutoff",
+    "name": "South Face Cutoff",
+    "keepName": "South Face Cutoff"
+   },
+   {
+    "copy": "nm_middle_rabbit_ear_2_church_key",
+    "keep": "nm_church_key",
+    "name": "Church Key",
+    "keepName": "Church Key"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_north_buttress",
+   "name": "North Buttress",
+   "parent": "nm_diamond_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "nm_north_buttress_2",
+   "name": "North Buttress",
+   "parent": "nm_the_diamond",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nm_north_buttress_2_run_through_the_jungle",
+    "keep": "nm_run_through_the_jungle",
+    "name": "Run Through the Jungle",
+    "keepName": "Run Through the Jungle"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_north_rabbit_ear",
+   "name": "North Rabbit Ear",
+   "parent": "nm_rabbit_ears_area",
+   "kids": false,
+   "n": 17
+  },
+  "copy": {
+   "id": "nm_north_rabbit_ear_2",
+   "name": "North Rabbit Ear",
+   "parent": "nm_rabbit_ears_area_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nm_north_rabbit_ear_2_surprise_buttress",
+    "keep": "nm_surprise_buttress",
+    "name": "Surprise Buttress",
+    "keepName": "Surprise Buttress"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "nm_rabbit_ears_slabs",
+   "name": "Rabbit Ears Slabs",
+   "parent": "nm_rabbit_ears_area",
+   "kids": false,
+   "n": 10
+  },
+  "copy": {
+   "id": "nm_rabbit_ears_slabs_2",
+   "name": "Rabbit Ears Slabs",
+   "parent": "nm_rabbit_ears_area_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "nm_rabbit_ears_slabs_2_keyhole_ridge",
+    "keep": "nm_keyhole_ridge",
+    "name": "Keyhole Ridge",
+    "keepName": "Keyhole Ridge"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0.02,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nm_science_friction",
+   "name": "Science Friction",
+   "parent": "nm_la_cueva_canyon_upper",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "nm_science_friction_2",
+   "name": "Science Friction",
+   "parent": "nm_la_cueva_canyon_upper_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nm_science_friction_2_like_tears_in_rain",
+    "name": "Like Tears in Rain",
+    "area": "nm_science_friction_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_mexico",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nm_shield",
+   "name": "Shield",
+   "parent": "nm_juan_tabo_canyon",
+   "kids": false,
+   "n": 17
+  },
+  "copy": {
+   "id": "nm_shield_2",
+   "name": "Shield",
+   "parent": "nm_juan_tabo_canyon_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "nm_shield_2_purple_haze",
+    "keep": "nm_purple_haze",
+    "name": "Purple Haze",
+    "keepName": "Purple Haze"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "nm_shield_2_standard_s_winter",
+    "name": "Standard S (Winter)",
+    "area": "nm_shield_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.65,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_baker_mountain",
+   "name": "Baker Mountain",
+   "parent": "ny_k_northern_region",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "ny_baker_mountain_2",
+   "name": "Baker Mountain",
+   "parent": "ny_b_climbs_near_lake_placid",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_baker_mountain_2_baker_chimney",
+    "name": "Baker Chimney",
+    "area": "ny_baker_mountain_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.01,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_frontiertown_crag",
+   "name": "Frontiertown Crag",
+   "parent": "ny_a_lake_champlain_region",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ny_frontiertown_crag_2",
+   "name": "Frontiertown Crag",
+   "parent": "ny_f_the_central_region",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_frontiertown_crag_2_beaver_bite",
+    "name": "Beaver Bite",
+    "area": "ny_frontiertown_crag_2"
+   },
+   {
+    "id": "ny_frontiertown_crag_2_hot_diaper",
+    "name": "Hot Diaper",
+    "area": "ny_frontiertown_crag_2"
+   },
+   {
+    "id": "ny_frontiertown_crag_2_a_touch_of_glass",
+    "name": "A Touch of Glass",
+    "area": "ny_frontiertown_crag_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.45,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_gothics",
+   "name": "Gothics",
+   "parent": "ny_e_high_peaks_region",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ny_gothics_2",
+   "name": "Gothics",
+   "parent": "ny_e_interior_high_peaks",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_gothics_2_north_face",
+    "name": "North Face",
+    "area": "ny_gothics_2"
+   },
+   {
+    "id": "ny_gothics_2_four_rings_of_saturn",
+    "name": "Four Rings of Saturn",
+    "area": "ny_gothics_2"
+   },
+   {
+    "id": "ny_gothics_2_titan",
+    "name": "Titan",
+    "area": "ny_gothics_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_honey_pot_the",
+   "name": "Honey Pot, The",
+   "parent": "ny_a_lake_champlain_region",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ny_the_honey_pot",
+   "name": "The Honey Pot",
+   "parent": "ny_d_keene_valley_and_chapel_pond",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_the_honey_pot_super_sweet",
+    "name": "Super Sweet",
+    "area": "ny_the_honey_pot"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_hurricane_crag",
+   "name": "Hurricane Crag",
+   "parent": "ny_c_keene_region",
+   "kids": false,
+   "n": 11
+  },
+  "copy": {
+   "id": "ny_hurricane_crag_2",
+   "name": "Hurricane Crag",
+   "parent": "ny_d_keene_valley_and_chapel_pond",
+   "kids": false,
+   "n": 5
+  },
+  "dups": [
+   {
+    "copy": "ny_hurricane_crag_2_old_route",
+    "keep": "ny_old_route_2",
+    "name": "Old Route",
+    "keepName": "Old Route"
+   },
+   {
+    "copy": "ny_hurricane_crag_2_squeeze_box",
+    "keep": "ny_squeeze_box",
+    "name": "Squeeze Box",
+    "keepName": "Squeeze Box"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ny_hurricane_crag_2_the_maw",
+    "name": "The Maw",
+    "area": "ny_hurricane_crag_2"
+   },
+   {
+    "id": "ny_hurricane_crag_2_sunyata",
+    "name": "Sunyata",
+    "area": "ny_hurricane_crag_2"
+   },
+   {
+    "id": "ny_hurricane_crag_2_no_name_chimney",
+    "name": "No Name Chimney",
+    "area": "ny_hurricane_crag_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.01,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_king_wall_the",
+   "name": "King Wall, The",
+   "parent": "ny_b_chapel_pond_pass",
+   "kids": false,
+   "n": 10
+  },
+  "copy": {
+   "id": "ny_king_wall",
+   "name": "King Wall",
+   "parent": "ny_d_keene_valley_and_chapel_pond",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_king_wall_cheese_and_crackers",
+    "name": "Cheese and Crackers",
+    "area": "ny_king_wall"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.36,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_panther_gorge",
+   "name": "Panther Gorge",
+   "parent": "ny_e_high_peaks_region",
+   "kids": false,
+   "n": 49
+  },
+  "copy": {
+   "id": "ny_panther_gorge_2",
+   "name": "Panther Gorge",
+   "parent": "ny_e_interior_high_peaks",
+   "kids": false,
+   "n": 24
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_panther_gorge_2_chimaera",
+    "name": "Chimaera",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_fly_by",
+    "name": "Fly By",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_needle_in_a_haystack",
+    "name": "Needle in a Haystack",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_manky_lynx",
+    "name": "Manky Lynx",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_pi_day",
+    "name": "Pi Day",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_orson_s_tower",
+    "name": "Orson's Tower",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_skip_the_lightning",
+    "name": "Skip the Lightning",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_agharta",
+    "name": "Agharta",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_just_nickel_and_iron",
+    "name": "Just Nickel and Iron",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_panther_gorge_falls",
+    "name": "Panther Gorge Falls",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_charybdis",
+    "name": "Charybdis",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_scylla",
+    "name": "Scylla",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_john_3_16",
+    "name": "John 3:16",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_pg_13",
+    "name": "PG-13",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_apex_predator",
+    "name": "Apex Predator",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_wrestling_the_darkness",
+    "name": "Wrestling the Darkness",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_bytooth_and_claw",
+    "name": "ByTooth and Claw",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_sorry_kevin",
+    "name": "Sorry, Kevin",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_spiritus_draconis",
+    "name": "Spiritus Draconis",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_one_for_me_llord",
+    "name": "One for Me'Llord",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_ride_the_lightning",
+    "name": "Ride the Lightning",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_waking_cerberus",
+    "name": "Waking Cerberus",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_passion_and_warfare",
+    "name": "Passion and Warfare",
+    "area": "ny_panther_gorge_2"
+   },
+   {
+    "id": "ny_panther_gorge_2_seasons_in_the_abyss",
+    "name": "Seasons in the Abyss",
+    "area": "ny_panther_gorge_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.78,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_summit_cliff",
+   "name": "Summit Cliff",
+   "parent": "ny_silver_lake",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ny_summit_cliff_3",
+   "name": "Summit Cliff",
+   "parent": "ny_silver_lake_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_summit_cliff_3_violent_stems",
+    "name": "Violent Stems",
+    "area": "ny_summit_cliff_3"
+   }
+  ]
+ },
+ {
+  "st": "usa.new_york",
+  "km": 0.01,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ny_underwood_canyon",
+   "name": "Underwood Canyon",
+   "parent": "ny_a_lake_champlain_region",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "ny_underwood_canyon_2",
+   "name": "Underwood Canyon",
+   "parent": "ny_d_keene_valley_and_chapel_pond",
+   "kids": false,
+   "n": 8
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ny_underwood_canyon_2_three_stooges",
+    "name": "Three Stooges",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_london_calling",
+    "name": "London Calling",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_call_of_the_wild",
+    "name": "Call of the Wild",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_failure_to_communicate",
+    "name": "Failure to Communicate",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_emseepee",
+    "name": "Emseepee",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_cool_hand_luke",
+    "name": "Cool Hand Luke",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_big_blue",
+    "name": "Big Blue",
+    "area": "ny_underwood_canyon_2"
+   },
+   {
+    "id": "ny_underwood_canyon_2_white_fang",
+    "name": "White Fang",
+    "area": "ny_underwood_canyon_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.north_carolina",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "nc_cougar_crag_the",
+   "name": "Cougar Crag, The",
+   "parent": "nc_dark_side_closed_to_climbing_included_for_historic_refe",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "nc_the_cougar_crag",
+   "name": "The Cougar Crag",
+   "parent": "nc_the_dark_side_closed_to_climbing_included_for_historic_",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "nc_the_cougar_crag_the_succubus",
+    "name": "The Succubus",
+    "area": "nc_the_cougar_crag"
+   }
+  ]
+ },
+ {
+  "st": "usa.oklahoma",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ok_zoo_wall",
+   "name": "Zoo Wall",
+   "parent": "ok_narrows_the",
+   "kids": false,
+   "n": 36
+  },
+  "copy": {
+   "id": "ok_zoo_wall_2",
+   "name": "Zoo Wall",
+   "parent": "ok_the_narrows",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ok_zoo_wall_2_shake_and_bake",
+    "name": "Shake and Bake",
+    "area": "ok_zoo_wall_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.oregon",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "or_broken_top",
+   "name": "Broken Top",
+   "parent": "or_three_sisters_wilderness",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "or_broken_top_2",
+   "name": "Broken Top",
+   "parent": "or_e_three_sisters_wilderness",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "or_broken_top_2_high_noon",
+    "keep": "or_high_noon_3",
+    "name": "High Noon",
+    "keepName": "High Noon"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "or_broken_top_2_full_richardson",
+    "name": "Full Richardson",
+    "area": "or_broken_top_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.oregon",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "or_garden_cliffs",
+   "name": "Garden Cliffs",
+   "parent": "or_garden_the",
+   "kids": false,
+   "n": 49
+  },
+  "copy": {
+   "id": "or_garden_cliffs_2",
+   "name": "Garden Cliffs",
+   "parent": "or_the_garden",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "or_garden_cliffs_2_the_vine_open_project",
+    "keep": "or_the_vine_open_project",
+    "name": "The Vine (Open Project)",
+    "keepName": "The Vine (Open Project)"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.oregon",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "or_illumination_rock",
+   "name": "Illumination Rock",
+   "parent": "or_mt_hood_national_forest",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "or_illumination_rock_2",
+   "name": "Illumination Rock",
+   "parent": "or_a_mt_hood",
+   "kids": false,
+   "n": 6
+  },
+  "dups": [
+   {
+    "copy": "or_illumination_rock_2_iron_maiden",
+    "keep": "or_iron_maiden",
+    "name": "Iron Maiden",
+    "keepName": "Iron Maiden"
+   },
+   {
+    "copy": "or_illumination_rock_2_se_buttress",
+    "keep": "or_se_buttress",
+    "name": "SE Buttress",
+    "keepName": "SE Buttress"
+   },
+   {
+    "copy": "or_illumination_rock_2_west_ridge",
+    "keep": "or_west_ridge_3",
+    "name": "West Ridge",
+    "keepName": "West Ridge"
+   },
+   {
+    "copy": "or_illumination_rock_2_rime_dog",
+    "keep": "or_rime_dog",
+    "name": "Rime Dog",
+    "keepName": "Rime Dog"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "or_illumination_rock_2_march_madness",
+    "name": "March Madness",
+    "area": "or_illumination_rock_2"
+   },
+   {
+    "id": "or_illumination_rock_2_skylight",
+    "name": "Skylight",
+    "area": "or_illumination_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.oregon",
+  "km": 2.21,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "or_north_sister",
+   "name": "North Sister",
+   "parent": "or_three_sisters_wilderness",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "or_north_sister_2",
+   "name": "North Sister",
+   "parent": "or_e_three_sisters_wilderness",
+   "kids": false,
+   "n": 4
+  },
+  "dups": [
+   {
+    "copy": "or_north_sister_2_south_ridge",
+    "keep": "or_south_ridge",
+    "name": "South Ridge",
+    "keepName": "South Ridge"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "or_north_sister_2_thayer_glacier_headwall",
+    "name": "Thayer Glacier Headwall",
+    "area": "or_north_sister_2"
+   },
+   {
+    "id": "or_north_sister_2_east_buttress",
+    "name": "East Buttress",
+    "area": "or_north_sister_2"
+   },
+   {
+    "id": "or_north_sister_2_kids",
+    "name": "KIDS",
+    "area": "or_north_sister_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.oregon",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "or_orphan_rock",
+   "name": "Orphan Rock",
+   "parent": "or_callahans_the",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "or_orphan_rock_2",
+   "name": "Orphan Rock",
+   "parent": "or_the_callahans",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "or_orphan_rock_2_jacob_s_ladder",
+    "name": "Jacob's Ladder",
+    "area": "or_orphan_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.oregon",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "or_rodeo_and_matrix_formations",
+   "name": "Rodeo and Matrix formations",
+   "parent": "or_callahans_the",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "or_rodeo_and_matrix_formations_2",
+   "name": "Rodeo and Matrix formations",
+   "parent": "or_the_callahans",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "or_rodeo_and_matrix_formations_2_matrix",
+    "keep": "or_matrix_2",
+    "name": "Matrix",
+    "keepName": "Matrix"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.oregon",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "or_south_sister",
+   "name": "South Sister",
+   "parent": "or_three_sisters_wilderness",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "or_south_sister_2",
+   "name": "South Sister",
+   "parent": "or_e_three_sisters_wilderness",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "or_south_sister_2_silver_couloir",
+    "name": "Silver Couloir",
+    "area": "or_south_sister_2"
+   },
+   {
+    "id": "or_south_sister_2_north_face_of_the_northwest_ridge",
+    "name": "North Face of the Northwest Ridge",
+    "area": "or_south_sister_2"
+   },
+   {
+    "id": "or_south_sister_2_north_face_couloir",
+    "name": "North Face Couloir",
+    "area": "or_south_sister_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.pennsylvania",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "pa_kennedy_s_mill",
+   "name": "Kennedy's Mill",
+   "parent": "pa_northwest_the",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "pa_kennedy_s_mill_2",
+   "name": "Kennedy's Mill",
+   "parent": "pa_the_northwest",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "pa_kennedy_s_mill_2_hepc",
+    "keep": "pa_hepc",
+    "name": "hepC",
+    "keepName": "hepC"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.south_dakota",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "sd_twisted_tree",
+   "name": "Twisted Tree",
+   "parent": "sd_chessmen_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "sd_twisted_tree_2",
+   "name": "Twisted Tree",
+   "parent": "sd_the_chessmen",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "sd_twisted_tree_2_twisted_tree_aka_kenyon_s_shoulder",
+    "keep": "sd_twisted_tree_aka_kenyon_s_shoulder",
+    "name": "Twisted Tree AKA Kenyon's Shoulder",
+    "keepName": "Twisted Tree AKA Kenyon's Shoulder"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 1.49,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_bride_the",
+   "name": "Bride, The",
+   "parent": "ut_little_valley",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ut_the_bride",
+   "name": "The Bride",
+   "parent": "ut_little_valley_3",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ut_the_bride_shotgun_wedding",
+    "keep": "ut_shotgun_wedding_3",
+    "name": "Shotgun Wedding",
+    "keepName": "Shotgun Wedding"
+   },
+   {
+    "copy": "ut_the_bride_honeymoon",
+    "keep": "ut_honeymoon",
+    "name": "Honeymoon",
+    "keepName": "Honeymoon"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_bride_s_tower_the",
+   "name": "Bride's Tower, The",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_bride_s_tower",
+   "name": "The Bride's Tower",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_bride_s_tower_the_off_width_of_convenience",
+    "keep": "ut_the_off_width_of_convenience",
+    "name": "The Off-Width of Convenience",
+    "keepName": "The Off-Width of Convenience"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_bridesmaid_the",
+   "name": "Bridesmaid, The",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_bridesmaid",
+   "name": "The Bridesmaid",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_bridesmaid_debriding_agent",
+    "keep": "ut_debriding_agent",
+    "name": "Debriding  Agent",
+    "keepName": "Debriding  Agent"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_cleopatra_s_chair",
+   "name": "Cleopatra's Chair",
+   "parent": "ut_maze_district_the",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ut_cleopatra_s_chair_2",
+   "name": "Cleopatra's Chair",
+   "parent": "ut_the_maze_district",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_cleopatra_s_chair_2_regular_route",
+    "keep": "ut_regular_route_7",
+    "name": "Regular Route",
+    "keepName": "Regular Route"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_dickfour",
+   "name": "Dickfour",
+   "parent": "ut_sunshine_wall",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_dickfour_2",
+   "name": "Dickfour",
+   "parent": "ut_salt_valley",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_dickfour_2_original_route",
+    "keep": "ut_original_route_2",
+    "name": "Original Route",
+    "keepName": "Original Route"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_east_bell_tower",
+   "name": "East Bell Tower",
+   "parent": "ut_bell_s_canyon",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ut_east_bell_tower_2",
+   "name": "East Bell Tower",
+   "parent": "ut_bells_canyon",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_east_bell_tower_2_mcquarrie_route",
+    "keep": "ut_mcquarrie_route",
+    "name": "McQuarrie Route",
+    "keepName": "McQuarrie Route"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_gash_the",
+   "name": "Gash, The",
+   "parent": "ut_indian_creek",
+   "kids": false,
+   "n": 17
+  },
+  "copy": {
+   "id": "ut_the_gash",
+   "name": "The Gash",
+   "parent": "ut_indian_creek_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_gash_trouser_snake",
+    "keep": "ut_trouser_snake",
+    "name": "Trouser Snake",
+    "keepName": "Trouser Snake"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ut_goldfish_canyon",
+   "name": "Goldfish Canyon",
+   "parent": "ut_state_highway_313",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_goldfish_canyon_2",
+   "name": "Goldfish Canyon",
+   "parent": "ut_191_north",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "ut_goldfish_canyon_2_sunfish_tower",
+    "name": "Sunfish Tower",
+    "area": "ut_goldfish_canyon_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "ut_graffiti_cave",
+   "name": "Graffiti Cave",
+   "parent": "ut_schoolroom_the",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "ut_graffiti_cave_2",
+   "name": "Graffiti Cave",
+   "parent": "ut_the_schoolroom",
+   "kids": false,
+   "n": 6
+  },
+  "dups": [
+   {
+    "copy": "ut_graffiti_cave_2_lunchbox_r_i_p",
+    "keep": "ut_lunchbox_r_i_p",
+    "name": "Lunchbox R.I.P.",
+    "keepName": "Lunchbox R.I.P."
+   },
+   {
+    "copy": "ut_graffiti_cave_2_take_care_of_her",
+    "keep": "ut_take_care_of_her",
+    "name": "Take Care of Her",
+    "keepName": "Take Care of Her"
+   },
+   {
+    "copy": "ut_graffiti_cave_2_mia",
+    "keep": "ut_mia",
+    "name": "MIA",
+    "keepName": "MIA"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "ut_graffiti_cave_2_graffiti_slab",
+    "name": "Graffiti Slab",
+    "area": "ut_graffiti_cave_2"
+   },
+   {
+    "id": "ut_graffiti_cave_2_cuervo",
+    "name": "Cuervo",
+    "area": "ut_graffiti_cave_2"
+   },
+   {
+    "id": "ut_graffiti_cave_2_not_immune_to_propaganda",
+    "name": "Not Immune to Propaganda",
+    "area": "ut_graffiti_cave_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_groom_the",
+   "name": "Groom, The",
+   "parent": "ut_little_valley",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_groom",
+   "name": "The Groom",
+   "parent": "ut_little_valley_3",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_groom_just_show_up",
+    "keep": "ut_just_show_up",
+    "name": "\"Just Show Up\"",
+    "keepName": "\"Just Show Up\""
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_john_daniels",
+   "name": "John Daniels",
+   "parent": "ut_whisky_caps_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_john_daniels_2",
+   "name": "John Daniels",
+   "parent": "ut_the_whisky_caps",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_john_daniels_2_i_drink_alone",
+    "keep": "ut_i_drink_alone",
+    "name": "I Drink Alone",
+    "keepName": "I Drink Alone"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_land_of_standing_rocks_the",
+   "name": "Land of Standing Rocks, The",
+   "parent": "ut_hite_area",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ut_the_land_of_standing_rocks",
+   "name": "The Land of Standing Rocks",
+   "parent": "ut_the_maze_district",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [
+   {
+    "copy": "ut_the_land_of_standing_rocks_standing_rock_chortler_s_joy",
+    "keep": "ut_standing_rock_chortler_s_joy",
+    "name": "Standing Rock: Chortler's Joy",
+    "keepName": "Standing Rock: Chortler's Joy"
+   },
+   {
+    "copy": "ut_the_land_of_standing_rocks_sewing_machine_needle_the_treadle",
+    "keep": "ut_sewing_machine_needle_the_treadle",
+    "name": "Sewing Machine Needle - The Treadle",
+    "keepName": "Sewing Machine Needle - The Treadle"
+   },
+   {
+    "copy": "ut_the_land_of_standing_rocks_the_middle_finger_tower",
+    "keep": "ut_the_middle_finger_tower",
+    "name": "The Middle Finger Tower",
+    "keepName": "The Middle Finger Tower"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_little_miss_sunshine",
+   "name": "Little Miss Sunshine",
+   "parent": "ut_sunshine_wall",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_little_miss_sunshine_2",
+   "name": "Little Miss Sunshine",
+   "parent": "ut_salt_valley",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_little_miss_sunshine_2_hawaii_superferry",
+    "keep": "ut_hawaii_superferry",
+    "name": "Hawaii Superferry",
+    "keepName": "Hawaii Superferry"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_middle_bell_tower",
+   "name": "Middle Bell Tower",
+   "parent": "ut_bell_s_canyon",
+   "kids": false,
+   "n": 11
+  },
+  "copy": {
+   "id": "ut_middle_bell_tower_2",
+   "name": "Middle Bell Tower",
+   "parent": "ut_bells_canyon",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ut_middle_bell_tower_2_demon_s_dance",
+    "keep": "ut_demon_s_dance",
+    "name": "Demon's Dance",
+    "keepName": "Demon's Dance"
+   },
+   {
+    "copy": "ut_middle_bell_tower_2_winged_warrior",
+    "keep": "ut_winged_warrior",
+    "name": "Winged Warrior",
+    "keepName": "Winged Warrior"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_million_dollar_draw",
+   "name": "Million Dollar Draw",
+   "parent": "ut_cottonwood_wash",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "ut_million_dollar_draw_2",
+   "name": "Million Dollar Draw",
+   "parent": "ut_cottonwood_wash_4",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_million_dollar_draw_2_million_dollar_tower",
+    "keep": "ut_million_dollar_tower",
+    "name": "Million Dollar Tower",
+    "keepName": "Million Dollar Tower"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_needles_district_the",
+   "name": "Needles District, The",
+   "parent": "ut_southeast_utah",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ut_the_needles_district",
+   "name": "The Needles District",
+   "parent": "ut_san_juan_county",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ut_the_needles_district_angel_arch",
+    "keep": "ut_angel_arch",
+    "name": "Angel Arch",
+    "keepName": "Angel Arch"
+   },
+   {
+    "copy": "ut_the_needles_district_druid_arch",
+    "keep": "ut_druid_arch",
+    "name": "Druid Arch",
+    "keepName": "Druid Arch"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_north_minaret",
+   "name": "North Minaret",
+   "parent": "ut_minarets_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_north_minaret_2",
+   "name": "North Minaret",
+   "parent": "ut_the_minarets",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_north_minaret_2_cruisin_for_a_muezzin",
+    "keep": "ut_cruisin_for_a_muezzin",
+    "name": "Cruisin' for a Muezzin",
+    "keepName": "Cruisin' for a Muezzin"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_north_six_shooter_peak",
+   "name": "North Six Shooter Peak",
+   "parent": "ut_indian_creek",
+   "kids": false,
+   "n": 8
+  },
+  "copy": {
+   "id": "ut_north_six_shooter_peak_2",
+   "name": "North Six-shooter Peak",
+   "parent": "ut_indian_creek_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "ut_north_six_shooter_peak_2_southeast_chimney_route",
+    "keep": "ut_southeast_chimney_route_2",
+    "name": "Southeast Chimney Route",
+    "keepName": "Southeast Chimney Route"
+   },
+   {
+    "copy": "ut_north_six_shooter_peak_2_perfect_hands_all_the_way",
+    "keep": "ut_perfect_hands_all_the_way",
+    "name": "Perfect Hands All the Way",
+    "keepName": "Perfect Hands All the Way"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_northern_groomsman_the",
+   "name": "Northern Groomsman, The",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_northern_groomsman",
+   "name": "The Northern Groomsman",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_northern_groomsman_the_northern_groomsman",
+    "keep": "ut_the_northern_groomsman",
+    "name": "The Northern Groomsman",
+    "keepName": "The Northern Groomsman"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_old_grand_dad",
+   "name": "Old Grand Dad",
+   "parent": "ut_whisky_caps_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_old_grand_dad_2",
+   "name": "Old Grand Dad",
+   "parent": "ut_the_whisky_caps",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_old_grand_dad_2_whisky_river",
+    "keep": "ut_whisky_river",
+    "name": "Whisky River",
+    "keepName": "Whisky River"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_orthrus_the",
+   "name": "Orthrus, The",
+   "parent": "ut_comb_ridge",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_orthrus",
+   "name": "The Orthrus",
+   "parent": "ut_comb_ridge_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_orthrus_geryon_s_cattle",
+    "keep": "ut_geryon_s_cattle",
+    "name": "Geryon's Cattle",
+    "keepName": "Geryon's Cattle"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_roundhouse_canyon",
+   "name": "Roundhouse Canyon",
+   "parent": "ut_bluff",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "ut_roundhouse_canyon_2",
+   "name": "Roundhouse Canyon",
+   "parent": "ut_bluff_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_roundhouse_canyon_2_trident_tower_north_chimney",
+    "keep": "ut_trident_tower_north_chimney",
+    "name": "Trident Tower--North Chimney",
+    "keepName": "Trident Tower--North Chimney"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_sandwalker_buttress",
+   "name": "Sandwalker Buttress",
+   "parent": "ut_cottonwood_wash",
+   "kids": false,
+   "n": 8
+  },
+  "copy": {
+   "id": "ut_sandwalker_buttress_2",
+   "name": "Sandwalker Buttress",
+   "parent": "ut_cottonwood_wash_4",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_sandwalker_buttress_2_men_at_work",
+    "keep": "ut_men_at_work",
+    "name": "Men at Work",
+    "keepName": "Men at Work"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_silver_ghost_the",
+   "name": "Silver Ghost, The",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_silver_ghost",
+   "name": "The Silver Ghost",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_silver_ghost_nibbly_bits",
+    "keep": "ut_nibbly_bits",
+    "name": "Nibbly Bits",
+    "keepName": "Nibbly Bits"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_south_minaret",
+   "name": "South Minaret",
+   "parent": "ut_minarets_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_south_minaret_2",
+   "name": "South Minaret",
+   "parent": "ut_the_minarets",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_south_minaret_2_getting_the_sand_back_together",
+    "keep": "ut_getting_the_sand_back_together",
+    "name": "Getting the Sand Back Together",
+    "keepName": "Getting the Sand Back Together"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_southern_groomsman",
+   "name": "Southern Groomsman",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_southern_groomsman_2",
+   "name": "Southern Groomsman",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_southern_groomsman_2_a_gentleman_s_line",
+    "keep": "ut_a_gentleman_s_line",
+    "name": "A Gentleman's Line",
+    "keepName": "A Gentleman's Line"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_step_mom_the",
+   "name": "Step Mom, The",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_step_mom",
+   "name": "The Step Mom",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_step_mom_better_than_she_looks",
+    "keep": "ut_better_than_she_looks",
+    "name": "Better Than She Looks",
+    "keepName": "Better Than She Looks"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_tower_143",
+   "name": "Tower 143",
+   "parent": "ut_sunshine_wall",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_tower_143_2",
+   "name": "Tower 143",
+   "parent": "ut_salt_valley",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_tower_143_2_burning_shoes_a_k_a_shattered_illusions_of_love",
+    "keep": "ut_burning_shoes_a_k_a_shattered_illusions_of_love",
+    "name": "Burning Shoes (a.k.a. Shattered Illusions of Love)",
+    "keepName": "Burning Shoes (a.k.a. Shattered Illusions of Love)"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_unwanted_guests",
+   "name": "Unwanted Guests",
+   "parent": "ut_desert_wedding_site_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_unwanted_guests_2",
+   "name": "Unwanted Guests",
+   "parent": "ut_the_desert_wedding_site",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_unwanted_guests_2_unwanted_guests",
+    "keep": "ut_unwanted_guests",
+    "name": "Unwanted Guests",
+    "keepName": "Unwanted Guests"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_upper_fin",
+   "name": "Upper Fin",
+   "parent": "ut_fin_the",
+   "kids": false,
+   "n": 8
+  },
+  "copy": {
+   "id": "ut_upper_fin_2",
+   "name": "Upper Fin",
+   "parent": "ut_the_fin",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_upper_fin_2_the_ventral_fin",
+    "keep": "ut_the_ventral_fin",
+    "name": "The Ventral Fin",
+    "keepName": "The Ventral Fin"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_wall_the",
+   "name": "Wall, The",
+   "parent": "ut_indian_creek",
+   "kids": false,
+   "n": 39
+  },
+  "copy": {
+   "id": "ut_the_wall",
+   "name": "The Wall",
+   "parent": "ut_indian_creek_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_wall_the_schoolmaster",
+    "keep": "ut_the_schoolmaster",
+    "name": "The Schoolmaster",
+    "keepName": "The Schoolmaster"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0.19,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_west_bell_tower",
+   "name": "West Bell Tower",
+   "parent": "ut_bell_s_canyon",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "ut_west_bell_tower_2",
+   "name": "West Bell Tower",
+   "parent": "ut_bells_canyon",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_west_bell_tower_2_the_sting",
+    "keep": "ut_the_sting_2",
+    "name": "The Sting",
+    "keepName": "The Sting"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.utah",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "ut_woodford_reserve_the",
+   "name": "Woodford Reserve, The",
+   "parent": "ut_whisky_caps_the",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "ut_the_woodford_reserve",
+   "name": "The Woodford Reserve",
+   "parent": "ut_the_whisky_caps",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "ut_the_woodford_reserve_five_o_clock",
+    "keep": "ut_five_o_clock",
+    "name": "Five O'Clock",
+    "keepName": "Five O'Clock"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.vermont",
+  "km": 0.04,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "vt_marshfield_ledge",
+   "name": "Marshfield Ledge",
+   "parent": "vt_1_northern_vermont",
+   "kids": false,
+   "n": 36
+  },
+  "copy": {
+   "id": "vt_marshfield_ledge_2",
+   "name": "Marshfield Ledge",
+   "parent": "vt_vt_ice_and_mixed",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "vt_marshfield_ledge_2_wankers_in_the_kingdom",
+    "name": "Wankers in the Kingdom",
+    "area": "vt_marshfield_ledge_2"
+   },
+   {
+    "id": "vt_marshfield_ledge_2_homecoming_dance",
+    "name": "Homecoming Dance",
+    "area": "vt_marshfield_ledge_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.vermont",
+  "km": 0.37,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "vt_nebraska_notch_2",
+   "name": "Nebraska Notch",
+   "parent": "vt_1_northern_vermont",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "vt_nebraska_notch",
+   "name": "Nebraska Notch",
+   "parent": "vt_vt_ice_and_mixed",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "vt_nebraska_notch_the_itsy_bitsy_spider",
+    "name": "The Itsy Bitsy Spider",
+    "area": "vt_nebraska_notch"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.04,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_alphabet_rock",
+   "name": "Alphabet Rock",
+   "parent": "wa_icicle_creek",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "wa_alphabet_rock_2",
+   "name": "Alphabet Rock",
+   "parent": "wa_icicle_creek_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_alphabet_rock_2_z_crack_aid",
+    "name": "Z Crack Aid",
+    "area": "wa_alphabet_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_argonaut_peak",
+   "name": "Argonaut Peak",
+   "parent": "wa_stuart_range",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "wa_argonaut_peak_2",
+   "name": "Argonaut Peak",
+   "parent": "wa_stuart_enchantments",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_argonaut_peak_2_northeast_couloir",
+    "keep": "wa_argonaut_peak_northeast_couloir",
+    "name": "Northeast  Couloir",
+    "keepName": "Northeast Couloir"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.08,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_boston_peak",
+   "name": "Boston Peak",
+   "parent": "wa_boston_basin",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "wa_boston_peak_2",
+   "name": "Boston Peak",
+   "parent": "wa_boston_basin_peaks_forbidden_johannesburg_etc",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_boston_peak_2_west_face_of_boston",
+    "keep": "wa_boston_peak_west_face",
+    "name": "West Face of Boston",
+    "keepName": "West Face of Boston"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.21,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_colchuck_peak",
+   "name": "Colchuck Peak",
+   "parent": "wa_stuart_range",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "wa_colchuck_peak_2",
+   "name": "Colchuck Peak",
+   "parent": "wa_stuart_enchantments",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_colchuck_peak_2_holsten_hilden",
+    "keep": "wa_colchuck_peak_holsten_hilden",
+    "name": "Holsten-Hilden",
+    "keepName": "Holsten-Hilden"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.08,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_colchuck_balanced_rock",
+   "name": "Colchuck Balanced Rock",
+   "parent": "wa_stuart_range",
+   "kids": false,
+   "n": 14
+  },
+  "copy": {
+   "id": "wa_colchuck_balanced_rock_2",
+   "name": "Colchuck Balanced Rock",
+   "parent": "wa_stuart_enchantments",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_colchuck_balanced_rock_2_the_tempest",
+    "keep": "wa_the_tempest",
+    "name": "The Tempest",
+    "keepName": "The Tempest"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_diamond_the_2",
+   "name": "Diamond, The",
+   "parent": "wa_diamond_area_the",
+   "kids": false,
+   "n": 12
+  },
+  "copy": {
+   "id": "wa_the_diamond",
+   "name": "The Diamond",
+   "parent": "wa_the_diamond_area",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_the_diamond_dihedral_route",
+    "name": "Dihedral Route",
+    "area": "wa_the_diamond"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.03,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_dragontail_peak",
+   "name": "Dragontail Peak",
+   "parent": "wa_stuart_range",
+   "kids": false,
+   "n": 9
+  },
+  "copy": {
+   "id": "wa_dragontail_peak_2",
+   "name": "Dragontail Peak",
+   "parent": "wa_stuart_enchantments",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [
+   {
+    "copy": "wa_dragontail_peak_2_triple_couloirs",
+    "keep": "wa_dragontail_peak_r4",
+    "name": "Triple Couloirs",
+    "keepName": "Triple Couloirs"
+   },
+   {
+    "copy": "wa_dragontail_peak_2_gerber_sink",
+    "keep": "wa_dragontail_peak_r2",
+    "name": "Gerber-Sink",
+    "keepName": "Gerber-Sink"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "wa_dragontail_peak_2_direct_north_buttress",
+    "name": "Direct North Buttress",
+    "area": "wa_dragontail_peak_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_flagpole_the",
+   "name": "Flagpole, The",
+   "parent": "wa_stuart_range",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "wa_the_flagpole",
+   "name": "The Flagpole",
+   "parent": "wa_stuart_enchantments",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_the_flagpole_west_face",
+    "keep": "wa_west_face_6",
+    "name": "West Face",
+    "keepName": "West Face"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.05,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_glacier_peak",
+   "name": "Glacier Peak",
+   "parent": "wa_glacier_peak_region",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "wa_glacier_peak_2",
+   "name": "Glacier Peak",
+   "parent": "wa_glacier_peak_wilderness",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_glacier_peak_2_frostbite_ridge",
+    "keep": "wa_glacier_peak_frostbite_ridge",
+    "name": "Frostbite Ridge",
+    "keepName": "Frostbite Ridge"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.05,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_lower_castle",
+   "name": "Lower Castle",
+   "parent": "wa_castle_rock_2",
+   "kids": false,
+   "n": 19
+  },
+  "copy": {
+   "id": "wa_lower_castle_2",
+   "name": "Lower Castle",
+   "parent": "wa_castle_rock_4",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_lower_castle_2_mr_clean_aid",
+    "name": "Mr Clean Aid",
+    "area": "wa_lower_castle_2"
+   },
+   {
+    "id": "wa_lower_castle_2_smut_aid",
+    "name": "Smut Aid",
+    "area": "wa_lower_castle_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_madsen_s_buttress",
+   "name": "Madsen's Buttress",
+   "parent": "wa_icicle_creek",
+   "kids": false,
+   "n": 8
+  },
+  "copy": {
+   "id": "wa_madsen_s_buttress_2",
+   "name": "Madsen's Buttress",
+   "parent": "wa_madsen_s_buttress_area",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_madsen_s_buttress_2_the_visor",
+    "keep": "wa_the_visor",
+    "name": "The Visor",
+    "keepName": "The Visor"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_main_peak",
+   "name": "Main Peak",
+   "parent": "wa_eldorado_peak",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "wa_main_peak_4",
+   "name": "Main Peak",
+   "parent": "wa_eldorado_peak_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_main_peak_4_northwest_ice_couloir",
+    "name": "Northwest Ice Couloir",
+    "area": "wa_main_peak_4"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.04,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_mount_maude",
+   "name": "Mount Maude",
+   "parent": "wa_chiwawa_entiat_region",
+   "kids": false,
+   "n": 3
+  },
+  "copy": {
+   "id": "wa_mt_maude",
+   "name": "Mt. Maude",
+   "parent": "wa_entiat_mountain_range",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [
+   {
+    "copy": "wa_mt_maude_north_face",
+    "keep": "wa_mount_maude_r1",
+    "name": "North Face",
+    "keepName": "North Face"
+   },
+   {
+    "copy": "wa_mt_maude_entiat_ice_fall",
+    "keep": "wa_mount_maude_r2",
+    "name": "Entiat Ice Fall",
+    "keepName": "Entiat Ice Fall"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.08,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "parent": "wa_gunsight_range_the",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "wa_middle_peak_3",
+   "name": "Middle Peak",
+   "parent": "wa_the_gunsight_range",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_middle_peak_3_gunrunner",
+    "keep": "wa_gunrunner",
+    "name": "Gunrunner",
+    "keepName": "Gunrunner"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_northern_section",
+   "name": "Northern Section",
+   "parent": "wa_squire_creek_walls",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "wa_northern_section_2",
+   "name": "Northern Section",
+   "parent": "wa_squire_creek_wall",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_northern_section_2_slab_daddy",
+    "name": "Slab Daddy",
+    "area": "wa_northern_section_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_piton_tower",
+   "name": "Piton Tower",
+   "parent": "wa_tumwater_canyon",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "wa_piton_tower_2",
+   "name": "Piton Tower",
+   "parent": "wa_tumwater_canyon_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_piton_tower_2_south_face",
+    "keep": "wa_south_face_13",
+    "name": "South Face",
+    "keepName": "South Face"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_punk_rock",
+   "name": "Punk Rock",
+   "parent": "wa_tumwater_mountain_crest",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "wa_punk_rock_2",
+   "name": "Punk Rock",
+   "parent": "wa_tumwater_mountain_crest_2",
+   "kids": false,
+   "n": 2
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_punk_rock_2_beatin_round_the_bush",
+    "name": "Beatin' Round the Bush",
+    "area": "wa_punk_rock_2"
+   },
+   {
+    "id": "wa_punk_rock_2_dirty_deeds",
+    "name": "Dirty Deeds",
+    "area": "wa_punk_rock_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.01,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_sloan_peak",
+   "name": "Sloan Peak",
+   "parent": "wa_henry_m_jackson_wilderness",
+   "kids": false,
+   "n": 7
+  },
+  "copy": {
+   "id": "wa_sloan_peak_2",
+   "name": "Sloan Peak",
+   "parent": "wa_glacier_peak_wilderness",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_sloan_peak_2_borrowed_time",
+    "keep": "wa_borrowed_time",
+    "name": "Borrowed Time",
+    "keepName": "Borrowed Time"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.25,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "parent": "wa_stuart_range",
+   "kids": false,
+   "n": 13
+  },
+  "copy": {
+   "id": "wa_mt_stuart",
+   "name": "Mt Stuart",
+   "parent": "wa_stuart_enchantments",
+   "kids": false,
+   "n": 4
+  },
+  "dups": [
+   {
+    "copy": "wa_mt_stuart_girth_pillar",
+    "keep": "wa_mount_stuart_girth_pillar",
+    "name": "Girth Pillar",
+    "keepName": "Girth Pillar"
+   },
+   {
+    "copy": "wa_mt_stuart_stuart_glacier_couloir",
+    "keep": "wa_mount_stuart_stuart_glacier_couloir",
+    "name": "Stuart Glacier Couloir",
+    "keepName": "Stuart Glacier Couloir"
+   },
+   {
+    "copy": "wa_mt_stuart_ice_cliff_glacier",
+    "keep": "wa_mount_stuart_ice_cliff_glacier",
+    "name": "Ice Cliff Glacier",
+    "keepName": "Ice Cliff Glacier"
+   }
+  ],
+  "uniques": [
+   {
+    "id": "wa_mt_stuart_always_the_cowboy_never_the_cow",
+    "name": "Always the Cowboy, Never the Cow",
+    "area": "wa_mt_stuart"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.01,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_mount_washington_olympic",
+   "name": "Mount Washington",
+   "parent": "wa_eastern_olympics",
+   "kids": false,
+   "n": 4
+  },
+  "copy": {
+   "id": "wa_mt_washington",
+   "name": "Mt. Washington",
+   "parent": "wa_olympic_national_forest",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_mt_washington_winter_direct",
+    "keep": "wa_mount_washington_olympic_winter_direct",
+    "name": "Winter Direct",
+    "keepName": "Winter Direct"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.washington",
+  "km": 0.01,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wa_wayne_s_world",
+   "name": "Wayne’s World",
+   "parent": "wa_wayne_s_world_dry_tooling",
+   "kids": false,
+   "n": 1
+  },
+  "copy": {
+   "id": "wa_wayne_s_world_2",
+   "name": "Wayne’s World",
+   "parent": "wa_public_land_for_sale_wayne_s_world",
+   "kids": false,
+   "n": 17
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wa_wayne_s_world_2_highstepping_for_jesus",
+    "name": "Highstepping For Jesus",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_schwing_left",
+    "name": "Schwing Left",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_the_aspirant",
+    "name": "The Aspirant",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_party_on_wayne",
+    "name": "Party on, Wayne",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_party_on_garth",
+    "name": "Party on, Garth",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_netscape_navigator",
+    "name": "Netscape Navigator",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_psycho_hose_beast",
+    "name": "Psycho Hose Beast",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_painted_ruins",
+    "name": "Painted Ruins",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_party_time_excellent",
+    "name": "Party Time! Excellent!",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_cold_therapy",
+    "name": "Cold Therapy",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_crag_daddy",
+    "name": "Crag Daddy",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_schwing_right",
+    "name": "Schwing Right",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_social_distancing",
+    "name": "Social Distancing",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_quarantine",
+    "name": "Quarantine",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_chewbaccerotica",
+    "name": "Chewbaccerotica",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_imperial_march",
+    "name": "Imperial March",
+    "area": "wa_wayne_s_world_2"
+   },
+   {
+    "id": "wa_wayne_s_world_2_wolves_in_the_throne_room",
+    "name": "Wolves in the throne room",
+    "area": "wa_wayne_s_world_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.washington",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wa_white_fang",
+   "name": "White Fang",
+   "parent": "wa_icicle_creek",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "wa_white_fang_2",
+   "name": "White Fang",
+   "parent": "wa_icicle_creek_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wa_white_fang_2_sleeping_with_giants",
+    "keep": "wa_sleeping_with_giants",
+    "name": "Sleeping with Giants",
+    "keepName": "Sleeping with Giants"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.west_virginia",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wv_j_snake_buttress",
+   "name": "J) Snake Buttress",
+   "parent": "wv_endless_wall",
+   "kids": false,
+   "n": 20
+  },
+  "copy": {
+   "id": "wv_j_snake_buttress_2",
+   "name": "J) Snake Buttress",
+   "parent": "wv_endless_wall_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wv_j_snake_buttress_2_vulcan_block",
+    "keep": "wv_vulcan_block",
+    "name": "Vulcan Block",
+    "keepName": "Vulcan Block"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.west_virginia",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wv_land_of_the_lost",
+   "name": "Land of the Lost",
+   "parent": "wv_cotton_hill",
+   "kids": false,
+   "n": 6
+  },
+  "copy": {
+   "id": "wv_land_of_the_lost_2",
+   "name": "Land of the Lost",
+   "parent": "wv_cotton_hill_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wv_land_of_the_lost_2_first_aid_arete",
+    "name": "First Aid Arete",
+    "area": "wv_land_of_the_lost_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.west_virginia",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wv_long_point",
+   "name": "Long Point",
+   "parent": "wv_summersville_gauley_river_area",
+   "kids": false,
+   "n": 57
+  },
+  "copy": {
+   "id": "wv_long_point_2",
+   "name": "Long Point",
+   "parent": "wv_summersville_gauley_river_area_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wv_long_point_2_chopping_bloc",
+    "keep": "wv_chopping_bloc",
+    "name": "Chopping Bloc",
+    "keepName": "Chopping Bloc"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.west_virginia",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wv_u_upper_endless",
+   "name": "U) Upper Endless",
+   "parent": "wv_endless_wall",
+   "kids": false,
+   "n": 2
+  },
+  "copy": {
+   "id": "wv_u_upper_endless_2",
+   "name": "U) Upper Endless",
+   "parent": "wv_endless_wall_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wv_u_upper_endless_2_fiesta_grande",
+    "keep": "wv_fiesta_grande",
+    "name": "Fiesta Grande",
+    "keepName": "Fiesta Grande"
+   }
+  ],
+  "uniques": []
+ },
+ {
+  "st": "usa.wyoming",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wy_douglas_park",
+   "name": "Douglas Park",
+   "parent": "wy_book_pages_mound_the",
+   "kids": false,
+   "n": 16
+  },
+  "copy": {
+   "id": "wy_douglas_park_2",
+   "name": "Douglas Park",
+   "parent": "wy_the_book_pages_mound",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wy_douglas_park_2_project_alcove",
+    "name": "Project \"Alcove\"",
+    "area": "wy_douglas_park_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.wyoming",
+  "km": 0.03,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wy_john_s_tower",
+   "name": "John's Tower",
+   "parent": "wy_upper_blair",
+   "kids": false,
+   "n": 30
+  },
+  "copy": {
+   "id": "wy_john_s_tower_2",
+   "name": "John's Tower",
+   "parent": "wy_upper_blair_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wy_john_s_tower_2_in_the_flat_field",
+    "name": "In the Flat Field",
+    "area": "wy_john_s_tower_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.wyoming",
+  "km": 0,
+  "cls": "import-copy:move-new-routes-in",
+  "keep": {
+   "id": "wy_medicine_bow_peak_area",
+   "name": "Medicine Bow Peak Area",
+   "parent": "wy_snowy_range",
+   "kids": false,
+   "n": 5
+  },
+  "copy": {
+   "id": "wy_medicine_bow_peak_area_2",
+   "name": "Medicine Bow Peak Area",
+   "parent": "wy_snowy_range_2",
+   "kids": false,
+   "n": 3
+  },
+  "dups": [],
+  "uniques": [
+   {
+    "id": "wy_medicine_bow_peak_area_2_grunge_gully",
+    "name": "Grunge Gully",
+    "area": "wy_medicine_bow_peak_area_2"
+   },
+   {
+    "id": "wy_medicine_bow_peak_area_2_bombs_away",
+    "name": "Bombs Away",
+    "area": "wy_medicine_bow_peak_area_2"
+   },
+   {
+    "id": "wy_medicine_bow_peak_area_2_gooseneck_couloir",
+    "name": "Gooseneck Couloir",
+    "area": "wy_medicine_bow_peak_area_2"
+   }
+  ]
+ },
+ {
+  "st": "usa.wyoming",
+  "km": 0,
+  "cls": "import-copy:all-duplicates",
+  "keep": {
+   "id": "wy_poland_hill",
+   "name": "Poland Hill",
+   "parent": "wy_vedauwoo",
+   "kids": false,
+   "n": 29
+  },
+  "copy": {
+   "id": "wy_poland_hill_2",
+   "name": "Poland Hill",
+   "parent": "wy_vedauwoo_2",
+   "kids": false,
+   "n": 1
+  },
+  "dups": [
+   {
+    "copy": "wy_poland_hill_2_cool_jet",
+    "keep": "wy_cool_jet",
+    "name": "Cool Jet",
+    "keepName": "Cool Jet"
+   }
+  ],
+  "uniques": []
+ }
+]

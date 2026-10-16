@@ -1,0 +1,29 @@
+{"file": "r444.json", "results": [
+ {"id": "wa_monument_peak_pasayten_scramble", "fact": "Total gain", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Two trip reports of the same three-day Monument + Lake Mountain outing give different car-to-car totals: one 31 mi and 13,200 ft gained and lost, the other 32.2 mi and 12,136 ft. Both support the itinerary totalNote range (~12,000-13,200 ft) and show gain_ft 7,567 and the day sum 9,900 are both too low for the itinerary as written, but the two sources do not agree on one figure, and no source states a Monument-only car-to-car total. Per the rules gain_ft is not recomputed and day figures are not traded; left open.",
+  "sources": ["https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/", "https://www.lucasmountainknowledge.com/post/lake-mountain-and-monument-peak"],
+  "patches": []},
+ {"id": "wa_monument_peak_pasayten_scramble", "fact": "Summit-day gain", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: the day-2 schedule (camp ~7,000-7,100 -> 7,400 saddle -> 6,100 basin -> 8,597 summit and back over the saddle) implies roughly 4,000+ ft of gain, not 2,600. One trip report confirms the same saddle (7,400) and basin (6,100) elevations but states no summit-day gain figure. Changing the day's gainFt would break the itinerary total against gain_ft, which is itself unresolved, so no patch.",
+  "sources": ["https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/"],
+  "patches": []},
+ {"id": "wa_monument_peak_pasayten_scramble", "fact": "Pistol Pass to Lake of the Woods", "verdict": "fixed",
+  "correct_value": "About a mile down from Pistol Pass on the trail, finishing on a short (~1/4 mi) spur to the lake; not 3 miles of cross-country side-hilling.",
+  "evidence": "One trip report describes reaching Pistol Pass and then 'a mile down to camp' at Lake of the Woods. A second describes losing about 700 ft beyond the pass on the main trail and then taking a spur trail about a quarter mile to the lake. Both agree it is ~1 mile and on trail, matching the waypoints (11 -> 12 mi) and the 12-mile day-1 total; the approach's '3 miles cross-country south' and the lake waypoint's 'side-hill cross-country' wording are wrong.",
+  "sources": ["https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/", "https://www.lucasmountainknowledge.com/post/lake-mountain-and-monument-peak"],
+  "patches": [
+   {"id": "wa_monument_peak_pasayten_scramble", "fact": "Pistol Pass to Lake of the Woods", "op": "replace_text", "column": "approach", "path": [],
+    "find": "From the pass, angle roughly 3 miles cross-country/side-hilling south to the Monument–Lake Mountain basin and Lake of the Woods, a common high camp",
+    "replace": "From the pass, descend about a mile on the trail, finishing on a short spur, to Lake of the Woods in the Monument–Lake Mountain basin, a common high camp"},
+   {"id": "wa_monument_peak_pasayten_scramble", "fact": "Pistol Pass to Lake of the Woods", "op": "replace_text", "column": "waypoints", "path": [3, "directions"],
+    "find": "From the pass, side-hill cross-country down into the Monument and Lake Mountain basin to the small alpine lake, roughly a mile below the pass.",
+    "replace": "From the pass, drop about a mile down the trail and take a short spur to the small alpine lake in the Monument and Lake Mountain basin."}
+  ]},
+ {"id": "wa_monument_peak_pasayten_scramble", "fact": "Parking pass", "verdict": "bivy_zone_list",
+  "correct_value": "No parking fee or Northwest Forest Pass at Monument Creek Trailhead; only the free self-issue wilderness permit.",
+  "evidence": "The Forest Service trailhead page states no fees are required for this site and that a free permit is filled out at the trailhead to enter the Pasayten; the WTA hike page lists only the free self-issue wilderness permit. access.parking_pass is correct; the wrong line is bivy[0].permit ('Northwest Forest Pass or Interagency pass to park'), which is owned by the camping clean-up, so no patch is written here.",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/monument-creek-trailhead", "https://www.wta.org/go-hiking/hikes/monument-creek"],
+  "patches": []}
+]}

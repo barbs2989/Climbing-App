@@ -1,0 +1,256 @@
+{
+ "batches": ["b205.json", "b206.json", "b207.json", "b208.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "name": "Southwest Route",
+   "area": "Mount Crowder",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6582"},
+      {"field": "itinerary.days[*].gainFt (sum)", "says": "13980 (5000+1200+1800+4480+1500+0)"},
+      {"field": "itinerary.totalNote", "says": "on the order of 14,000+ ft of cumulative gain"}
+     ],
+     "why": "The Overview TECHNICAL STATS / header Gain figure (gain_ft = 6,582 ft) is less than half of what the route's own Trip Plan itinerary shows: the six day-by-day gainFt values sum to 13,980 ft, and the itinerary's totalNote independently states 'on the order of 14,000+ ft of cumulative gain.'",
+     "internal_resolution": "itinerary.days sum and itinerary.totalNote agree with each other (~14,000 ft); gain_ft (6,582) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "61.15 (≈38.0 mi)"},
+      {"field": "itinerary.days[*].miles (sum)", "says": "32.3 (7+3+3.5+5.8+6+7)"},
+      {"field": "itinerary.totalNote", "says": "~32-mile round trip"}
+     ],
+     "why": "dist_km implies a ~38-mile round trip, about 18% longer than the itinerary's own day-by-day mileage (32.3 mi) and its totalNote's explicit '~32-mile round trip.'",
+     "internal_resolution": "itinerary.days sum and totalNote agree at ~32 mi; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach-ridge pitch description names a different peak's terrain",
+     "severity": "high",
+     "claims": [
+      {"field": "pitch_detail[0].notes", "says": "Baker River Trail to Perfect Pass via Icy/Ruth/Mineral/Easy Peak and Easy Ridge; mostly off-trail ridge travel"},
+      {"field": "approach", "says": "Parties reach it via one of two corridors...the Goodell Creek climbers' path...From the north/east: the Big Beaver Trail...climb Access Creek..."},
+      {"field": "waypoints", "says": "Terror Basin Camp / The Barrier / McMillan Cirque glacier traverse / Wild Pass-Wild Lake / Col between Phantom Peak and Crowder"}
+     ],
+     "why": "The first ROUTE BREAKDOWN ('pitch_detail') row names Baker River Trail, Perfect Pass, Icy/Ruth/Mineral peaks and Easy Ridge/Easy Peak — all Mount Challenger/Whatcom Peak-area features, miles away and unrelated to Crowder — while every other field on this route (approach text, waypoints) consistently describes the Goodell Creek/Big Beaver approach through Terror Basin and Wild Pass.",
+     "internal_resolution": "approach text and waypoints (both naming Terror Basin, Wild Pass, the Barrier) agree with each other; pitch_detail[0] appears to be contaminated text copied from a different peak's route.",
+     "needs_research": false
+    },
+    {
+     "fact": "CAMPING & BIVY list does not match this route's own camps",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy", "says": "Luna Camp, Beaver Pass Camp, Luna Col bivy, Perfect Pass, Whatcom Camp, Twin Rocks/Stillwell Camps, Challenger Arm camp, Eiley Lake benches, East Wiley Basin, Easy Ridge bivy, Tapto Lakes, Luna Cirque floor"},
+      {"field": "waypoints / itinerary", "says": "Terror Basin Camp, Wild Pass / Wild Lake, Pickell Pass camp"}
+     ],
+     "why": "Every entry in the CAMPING & BIVY section describes Mount Challenger/Whatcom Peak/Luna Peak-area camps (Perfect Pass, Whatcom Camp, Wiley Ridge, Tapto Lakes, etc.), none of which are on this route's actual approach; meanwhile the camps the route's own waypoints and itinerary actually use — Terror Basin Camp, Wild Pass, and the Pickell Pass camp — appear nowhere in the bivy list.",
+     "internal_resolution": "waypoints/itinerary establish the real camps used (Terror Basin, Wild Pass, Pickell Pass); the bivy array looks copied from a Northern Pickets/Challenger-area route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Terror Basin Camp",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[Terror Basin Camp].distMi", "says": "4.5"},
+      {"field": "itinerary.days[0].miles", "says": "7"}
+     ],
+     "why": "The waypoint places Terror Basin Camp 4.5 mi from the trailhead, but Day 1 of the itinerary ('Approach to Terror Basin') logs 7 miles to reach the same camp — a ~55% difference.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_crowder_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Mount Crowder",
+   "contradictions": [
+    {
+     "fact": "CAMPING & BIVY list does not match this route's own (nonexistent separate) approach",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy", "says": "same Northern Pickets/Challenger camp list as the Southwest Route (Luna Camp, Beaver Pass, Perfect Pass, Whatcom Camp, Wiley Ridge camps, Tapto Lakes, etc.)"},
+      {"field": "approach", "says": "Reached only by first climbing Mount Crowder (typically via the Southwest Route/SW Flank from Wild Lake) and continuing down the far side; there is no separate trailhead approach to this ridge on its own."},
+      {"field": "approach_logistics.trailhead", "says": "No separate trailhead — over Mount Crowder (Southwest Route, Wild Lake)"}
+     ],
+     "why": "This route explicitly has no approach of its own — it is reached via the sibling Southwest Route through Wild Lake/Wild Pass — yet its CAMPING & BIVY list is the same Challenger/Whatcom/Wiley Ridge camp list as the Southwest Route, none of which this route's own text ever mentions.",
+     "internal_resolution": "approach text (and the sibling route's waypoints) point to Wild Pass/Wild Lake/Pickell Pass as the real camps in play; the bivy array appears copied from elsewhere.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "name": "East Route / Standard",
+   "area": "Mount Despair",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain/loss",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "12000"},
+      {"field": "loss_ft", "says": "12000"},
+      {"field": "itinerary.days[*].gainFt/lossFt (sum)", "says": "gain 6000 (3200+2800+0), loss 6000 (0+2800+3200)"},
+      {"field": "itinerary.totalNote", "says": "roughly 10,000-12,000 ft of cumulative gain/loss"},
+      {"field": "approach", "says": "trip reports covering the full round trip (trailhead to summit and back) log roughly 24 miles and 12,000+ ft of cumulative gain and loss, consistent with this route's recorded ~38.6 km distance"}
+     ],
+     "why": "gain_ft/loss_ft, the itinerary's own totalNote, and the approach prose all agree the round trip gains/loses roughly 12,000 ft, but the itinerary's day-by-day gainFt/lossFt values (the numbers that would actually sum in a Trip Plan TOTAL row) add up to only 6,000 ft each — half that.",
+     "internal_resolution": "gain_ft/loss_ft, totalNote, and approach text agree at ~12,000 ft; the itinerary's day-by-day entries are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count vs ROUTE BREAKDOWN rows",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "3"},
+      {"field": "pitch_detail", "says": "2 rows (\"Approach scramble (SE face, lower)\", \"Summit block\")"},
+      {"field": "rock_grade", "says": "5.0 (crux dihedral; mostly Class 3-4 scrambling with two short 5th-class pitches)"}
+     ],
+     "why": "The stats show 3 pitches, and rock_grade's own prose describes 'two short 5th-class pitches' (plus the lower scramble pitch) — consistent with a count of 3 — but the ROUTE BREAKDOWN (pitch_detail) shows only 2 rows, merging the two 5th-class pitches into one 'Summit block' entry.",
+     "internal_resolution": "pitches (3) and rock_grade's 'two short 5th-class pitches' are consistent with each other; pitch_detail under-itemizes by combining two pitches into one row.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux grade shown in TECHNICAL STATS vs actual crux difficulty",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Class 4"},
+      {"field": "rock_grade", "says": "5.0 (crux dihedral; mostly Class 3-4 scrambling with two short 5th-class pitches)"},
+      {"field": "pitch_detail[1].grade", "says": "5.0"},
+      {"field": "beta", "says": "short sections of low-5th-class rock (to about 5.0) on the final summit block, including a vertical dihedral"}
+     ],
+     "why": "TECHNICAL STATS' 'crux grade' is sourced from `grade` (Class 4), understating the actual 5.0 rock crux that rock_grade, the ROUTE BREAKDOWN crux pitch, and beta all describe.",
+     "internal_resolution": "rock_grade, pitch_detail, and beta agree the crux is 5.0; `grade` (Class 4) undersells it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_despair_northeast_buttress",
+   "name": "Northeast Buttress (\"Bipolar Buttress\")",
+   "area": "Mount Despair",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_prophet_southwest_rib",
+   "name": "Southwest Rib",
+   "area": "Mount Prophet",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "name": "South Ridge / Southeast Ridge",
+   "area": "Mount Prophet",
+   "contradictions": [
+    {
+     "fact": "Round-trip / total distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "14.5 (≈9.0 mi)"},
+      {"field": "approach", "says": "Round trip is roughly 18 miles with 7,000+ ft of elevation gain, typically done over 2-3 days"},
+      {"field": "waypoints[Mount Prophet summit].distMi", "says": "16.8 (cumulative one-way distance from the trailhead)"}
+     ],
+     "why": "The header Dist figure implied by dist_km (~9.0 mi) is roughly half of the approach prose's explicit 'roughly 18 miles' round trip, and the waypoints' own cumulative one-way distance to the summit (16.8 mi) implies an even longer round trip (~33.6 mi) if the descent reverses the ascent — three different figures for what should be the same round-trip distance.",
+     "internal_resolution": "the approach prose's gain figure ('7,000+ ft') matches gain_ft (7200), so the prose is likely reliable on distance too; dist_km (9.0 mi) looks too short to be the round-trip figure and gain_ft/approach/waypoints all point to a much longer trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_triumph_west_route",
+   "name": "West Route",
+   "area": "Mount Triumph",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Mount Triumph",
+   "contradictions": [
+    {
+     "fact": "Total time vs its own sub-components",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "13"},
+      {"field": "timing.approachTimeHrs", "says": "5"},
+      {"field": "timing.summitTimeHrs", "says": "6"},
+      {"field": "timing.descentTimeHrs", "says": "6"}
+     ],
+     "why": "On every other route in this batch, totalHrs equals the sum of approachTimeHrs+summitTimeHrs+descentTimeHrs. Here the three sub-times sum to 17 hrs, not the stated totalHrs of 13 — a 4-hour (~31%) discrepancy that would show up as PUBLISHED TIMES fields not adding up.",
+     "internal_resolution": "summitTimeHrs+descentTimeHrs (12) matches the itinerary text's '12-13+ hour day' for the climbing day alone; totalHrs (13) appears to cover only that day and to omit approachTimeHrs (5), unlike the pattern on sibling routes in this set.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_crooked_thumb_peak_east_face",
+   "name": "East Face",
+   "area": "Crooked Thumb Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "name": "South Route",
+   "area": "Crooked Thumb Peak",
+   "contradictions": [
+    {
+     "fact": "First ascent of this route/peak",
+     "severity": "medium",
+     "claims": [
+      {"field": "fa", "says": "Ardussi, Magnusson, Mech, Swanson (The Mountaineers) — July 31, 1963"},
+      {"field": "overview", "says": "Fred and Helmy Beckey made the first ascent in 1940...Phil Sharpe, Vic Josendal, and Warren Spickard's second ascent 18 years later in 1958...Joe and Joan Firey made the third the following year"},
+      {"field": "beta", "says": "This classic Beckey-era first ascent combines a 54-mile round-trip backpacking approach with technical alpine climbing."}
+     ],
+     "why": "The `fa` field (rendered in TECHNICAL STATS) credits a 1963 Mountaineers party, but the overview's own ascent chronology puts the peak's first ascent at 1940 (Beckey), second at 1958, and third at 1959 — with no mention of the 1963 party at all — and beta explicitly calls this 'the...Beckey-era first ascent,' implying this route IS Beckey's 1940 line.",
+     "internal_resolution": "overview's detailed, internally-consistent chronology (1940/1958/1959) and beta's 'Beckey-era first ascent' phrasing point to Beckey; fa's 1963 Mountaineers party conflicts with both.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux headwall grade",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[Crooked Thumb Peak].note", "says": "True summit gained via the south ridge and a 5.6 headwall"},
+      {"field": "grade", "says": "Grade IV, 5.8+ (or 5.2 A1)"},
+      {"field": "rock_grade", "says": "5.8+ (or 5.2 with A1 aid at the crux headwall, per a 2016 repeat)"},
+      {"field": "aid_grade", "says": "A1 (optional aid alternative to the free 5.8+ headwall crack)"},
+      {"field": "descent_text", "says": "make one single-strand rappel down the ~10-ft near-vertical crack (roughly 5.8+ or 5.2/A1)"}
+     ],
+     "why": "The summit waypoint calls the crux headwall '5.6,' while grade, rock_grade, aid_grade, and descent_text all consistently describe it as 5.8+ (or 5.2 with A1 aid) — a full letter grade harder than the waypoint states.",
+     "internal_resolution": "four other fields (grade, rock_grade, aid_grade, descent_text) agree on 5.8+/5.2 A1; the waypoint's '5.6' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "beta", "says": "combines a 54-mile round-trip backpacking approach"},
+      {"field": "itinerary.totalNote", "says": "roughly 48-50 mi round trip"},
+      {"field": "itinerary.days[*].miles (sum)", "says": "46.5 (15.9+4.5+3.5+1.5+4.5+16.6)"},
+      {"field": "dist_km", "says": "37.4 (≈23.2 mi)"}
+     ],
+     "why": "beta's '54-mile' figure, the itinerary's own totalNote ('48-50 mi'), and the itinerary's day-by-day mileage total (46.5 mi) all disagree with each other by several miles, and dist_km (~23.2 mi, close to the waypoints' one-way cumulative distance of 22.5 mi to the summit) is roughly half of all of them.",
+     "internal_resolution": "itinerary.days sum (46.5 mi) and totalNote (48-50 mi) are close to each other; beta's 54 mi is a ~15% outlier on the high side, and dist_km looks like a one-way figure that would be mislabeled if presented as the round-trip distance.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crooked Thumb Glacier moraine camp elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[West Challenger Notch / Crooked Thumb Glacier moraine camp].elev", "says": "7800"},
+      {"field": "bivy[Crooked Thumb Glacier lateral moraine].elev", "says": "7200"}
+     ],
+     "why": "Both entries describe the same lateral-moraine base camp reached by descending through West Challenger Notch off the ~8,100 ft Challenger Glacier bench, but give elevations 600 ft apart.",
+     "internal_resolution": "itinerary day 2's gainFt/lossFt from Whatcom Pass (5210 ft) computes to ~7,710 ft, matching the waypoint's 7,800 ft; the bivy entry's 7,200 ft is the outlier.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

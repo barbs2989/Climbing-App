@@ -1,0 +1,103 @@
+{
+ "id": "wa_mount_rainier_sunset_ridge",
+ "name": "Sunset Ridge",
+ "approach": "From the Westside Road gate (~2,900 ft, about a mile past the Nisqually entrance), walk the road roughly 3.5 miles to Round Pass, then follow the South Puyallup River Trail to the Wonderland Trail and on to Saint Andrews Park. Leave the trail and climb north through alpine meadows to the Puyallup Cleaver (passing Tokaloo Spire), then leave the cleaver at about 8,500 ft to traverse the Puyallup and South Mowich glaciers into the Sunset Amphitheater.",
+ "approach_variants": [
+  {
+   "name": "Westside Road, Round Pass, St Andrews Park and the Puyallup Cleaver",
+   "notes": "Park at the Westside Road gate near 2,900 ft, about a mile past the Nisqually entrance. The road is gravel and open to vehicles only for the first few miles; beyond that it is foot or bike travel, and has been that way for years because of flood damage in the Tahoma Creek drainage. Treat the walk as part of the route rather than as an inconvenience that might be lifted.\n\nWalk the road roughly 3.5 miles to Round Pass, then take the South Puyallup River Trail to the Wonderland Trail and on to St Andrews Park. Leave the trail there and climb north through alpine meadows onto the Puyallup Cleaver, passing Tokaloo Spire.\n\nLeave the cleaver at about 8,500 ft and traverse the Puyallup and South Mowich glaciers into the Sunset Amphitheater. Camps are used on Colonnade Ridge, on the Puyallup Cleaver near 9,000 ft, in the open near 9,600 ft, and at the bergschrund in the amphitheater itself.",
+   "season": "Roughly May-Jun, best frozen; typically out of condition by July",
+   "hazards": [
+    "Serac and icefall hazard above the Sunset Amphitheater",
+    "Rockfall in the amphitheater headwall",
+    "A long crevassed traverse of the Puyallup and South Mowich glaciers just to reach the base",
+    "Rotten volcanic rock on the knife-edge ridge between the gendarmes",
+    "Remote west-side position with a road walk at both ends of a very long day"
+   ],
+   "baseFinding": "The decision is a leaving, not an arriving, and it happens at about 8,500 ft on the Puyallup Cleaver. Up to there you are simply walking a ridge. At 8,500 ft you step off it onto glacier and traverse. If you keep climbing the cleaver you will end up over on the Tahoma Glacier side and this route is gone.\n\nPassing Tokaloo Spire is the confirmation that you are on the right cleaver. It is the named rock feature on the way up from St Andrews Park. No spire, no cleaver — you left the trail in the wrong place.\n\nThe positive test at the base is that the ground closes around you. The Sunset Amphitheater is a bowl shut off by a headwall, with the serac band above it. If you are traversing open glacier that does not close into a bowl, you are still contouring and have not arrived — or you have dropped too low and are heading out across the South Mowich toward the Mowich Face, which is a different climb reached from a different trailhead on the far side of the mountain.\n\nThe climb's own signature is two gendarmes, and it confirms the route rather than the base. Above the steep ground the ridge runs as a knife edge between two prominent gendarmes on notably loose, rotten volcanic rock. If the ridge above you has no pair of towers on it, you are on a neighbouring feature.\n\nWhat the crux looks like, so you know you are on it: roughly 1,000–1,300 ft of 55- to 60-degree neve or ice, and it is the only sustained steep ground on the route. Anything shorter and you have not started; anything that keeps going far past that and you are on the amphitheater headwall rather than the ridge."
+  }
+ ],
+ "itinerary": {
+  "cal": "Westside Road is gated at Dry Creek most of the year, adding roughly 3.5 miles of road walking to the approach.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Westside Road gate, walk the road to Round Pass, then the South Puyallup River Trail and Wonderland Trail to a camp around 6,000 ft.",
+    "hours": 6.5,
+    "miles": 8,
+    "title": "Long approach to St. Andrews Park",
+    "gainFt": 3200,
+    "packLb": 55,
+    "objective": "Reach a camp near St. Andrews Park"
+   },
+   {
+    "n": 2,
+    "note": "Climb the Puyallup Cleaver past Tokaloo Spire, then traverse north across the Puyallup and South Mowich glaciers to a high camp on the South Mowich Glacier (~9,600 ft).",
+    "hours": 5.5,
+    "miles": 3.5,
+    "title": "Move to high camp",
+    "gainFt": 3600,
+    "packLb": 50,
+    "objective": "Reach a high camp below Sunset Amphitheater"
+   },
+   {
+    "n": 3,
+    "note": "Climb steep gullies and snowfields through Sunset Amphitheater — in a dry year a thin choss-wall/gully transition on the ridge can need an improvised belay or stop the climb — then descend a standard route.",
+    "hours": 12,
+    "miles": 6,
+    "title": "Summit day",
+    "gainFt": 4700,
+    "lossFt": 4900,
+    "packLb": 30,
+    "schedule": [
+     {
+      "time": "~2:00 AM",
+      "label": "Leave high camp"
+     },
+     {
+      "label": "Gully/choss-wall transition",
+      "detail": "Reported thin in dry years, sometimes needing an improvised belay"
+     },
+     {
+      "label": "Reach the Sunset Amphitheater headwall"
+     },
+     {
+      "label": "Summit"
+     },
+     {
+      "label": "Descend standard route"
+     }
+    ],
+    "objective": "Climb the ridge through Sunset Amphitheater to the summit"
+   },
+   {
+    "n": 4,
+    "note": "Descend to Camp Schurman or Camp Muir depending on the descent route, then arrange transport back to Westside Road since the standard descents exit on the opposite side of the mountain.",
+    "hours": 6,
+    "miles": 8,
+    "title": "Exit",
+    "lossFt": 4000,
+    "objective": "Hike out the far side and shuttle back to Westside Road"
+   }
+  ],
+  "totalNote": "A remote 4-day trip (~11,500 ft gain) on the mountain's least-visited side; plan a car shuttle since the standard descent exits far from the Westside Road start."
+ },
+ "waypoints": [
+  {
+   "lat": 46.7424,
+   "lng": -121.8995,
+   "elev": 2900,
+   "name": "West Side Road gate / Dry Creek Trailhead",
+   "type": "Trailhead",
+   "elevFt": 2900
+  },
+  {
+   "lat": 46.86298,
+   "lng": -121.77486,
+   "elev": 14112,
+   "name": "Liberty Cap (explicit route high point)",
+   "type": "Summit",
+   "elevFt": 14112
+  }
+ ]
+}

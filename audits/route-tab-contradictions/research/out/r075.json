@@ -1,0 +1,478 @@
+{
+ "file": "r075.json",
+ "results": [
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Round-trip distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 5 miles each way between the trailhead and the Mesahchie-basin camp (3.5 mi trail to Easy Pass plus ~1.5-2 mi cross-country); ~15 mi round trip.",
+   "evidence": "Easy Pass is 3.5 mi and ~2,800 ft from the trailhead (WTA, and the Ragged Ridge trip reports); the basin camp is a short cross-country traverse beyond it. On the row, the camp waypoint (5.3 mi), the approach text (5-6 mi), dist_km (14.4 mi RT) and totalNote (~15 mi) all agree; only itinerary days 1 and 3 (7.5 mi each) disagree. Set them to 5 so the TOTAL reads 15 mi, matching totalNote.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/easy-pass",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/",
+    "https://www.lemkeclimbs.com/ragged-ridge---katsuk-kimtah-and-cosho-peaks.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 7.5,
+     "value": 5,
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 7.5,
+     "value": 5,
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Best/optimal climbing window",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "best_season (mid-late Jul-Aug, before water dries) is a narrower preference inside the Mid-July-September optimal window and the late Jun-Sep season; best_season is not rendered because seasonal_guidance exists, and September is rated 'good', not 'optimal'. The late-season water caveat is already stated in hazards and waypoint notes.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Glacier/crevasse hazard on this route",
+   "verdict": "fixed",
+   "correct_value": "The Kimtah Glacier lies on the peak's north/northwest side and is crossed only by north-side approaches (e.g. the winter approach from Kitling Creek), not by the south-side route from Easy Pass.",
+   "evidence": "A documented winter ascent approached from Kitling Creek and travelled along the Kimtah Glacier to the summit, so a glacier-bearing winter/north-side variant exists (matching obj_haz). Wikipedia places the Kimtah Glacier on the peak's northwest slopes; a Kitling-to-Cosho traverse report also gets onto the Kimtah Glacier from the north side. The Kimtah-to-Cosho traverse on the south side crosses a snowfield, not the Kimtah Glacier, so seasonal_hazards' 'only if continuing toward Cosho' was the wrong scope.",
+   "sources": [
+    "https://www.countryhighpoints.com/kimtah-peak-winter-ascent/",
+    "https://en.wikipedia.org/wiki/Kimtah_Peak",
+    "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "the nearby Kimtah Glacier is only encountered if continuing the Ragged Ridge traverse toward Cosho, which is a separate objective from this route",
+     "replace": "the Kimtah Glacier on the peak's northwest side is crossed only by north-side approaches, such as the winter approach from Kitling Creek, not by this south-side route from Easy Pass",
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Glacier/crevasse hazard on this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Descent terrain (class/features near the summit)",
+   "verdict": "fixed",
+   "correct_value": "The summit is reached by class 3 scrambling from the top of a solid-granite gully across a scree saddle; there is no class-4 summit block or southwest-face moat on this route.",
+   "evidence": "A trip report on this exact line describes the final gully as class 3 on solid granite to the ridge west of the summit and the summit block as class 3; another describes a broad third-class gully to the top. Neither mentions a moat or snowfield crossing on the southwest face. The row's beta, pitch_detail, waypoint notes and descent_text agree; the descent's opening clause was the outlier.",
+   "sources": [
+    "https://www.lemkeclimbs.com/ragged-ridge---katsuk-kimtah-and-cosho-peaks.html",
+    "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "down-climb the class-4 summit block via its west side, cross back through the snow moat/snowfield on the southwest face, and descend the blocky granite-and-slate gully",
+     "replace": "scramble back west across the class 3 scree saddle from the true summit, then descend the solid-granite summit gully",
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Descent terrain (class/features near the summit)"
+    }
+   ]
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Which Ragged Ridge Bulger is westernmost",
+   "verdict": "fixed",
+   "correct_value": "Cosho is the westernmost; from east to west the order is Mesahchie, Katsuk, Kimtah, Cosho, so Kimtah is third from the east.",
+   "evidence": "A Kitling-to-Cosho traverse report lists the summits east to west as Kitling, Mesahchie, Katsuk, Kimtah, Cosho; another report traverses west from Kimtah's summit to reach Cosho. The overview's own list says the same, contradicting its 'westernmost' claim.",
+   "sources": [
+    "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/",
+    "https://www.lemkeclimbs.com/ragged-ridge---katsuk-kimtah-and-cosho-peaks.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Kimtah is the westernmost of the four standard Ragged Ridge Bulgers",
+     "replace": "Kimtah is the third from the east of the four standard Ragged Ridge Bulgers",
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Which Ragged Ridge Bulger is westernmost"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Direction of the traverse from Easy Pass to camp",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "West (west-northwest) from Easy Pass along the south side of Ragged Ridge.",
+   "evidence": "The approach text, the waypoint directions, the bivy notes and the waypoint coordinates (camp west of the pass) all say west; the itinerary day-1 note and the timing section note say 'east'. The east-to-west peak order (Mesahchie is west of Easy Pass) confirms west.",
+   "sources": [
+    "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "sidehill east along",
+     "replace": "sidehill west along",
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Direction of the traverse from Easy Pass to camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "sidehill east along",
+     "replace": "sidehill west along",
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Direction of the traverse from Easy Pass to camp"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Day-1 gain to camp vs its own note",
+   "verdict": "fixed",
+   "correct_value": "At least ~2,800 ft on day 1 (trailhead to Easy Pass alone is ~2,800 ft); the hike-out loses the same.",
+   "evidence": "Easy Pass is ~2,800 ft above the trailhead in every account, and the day-1 note itself says 'about 2,800 ft up to Easy Pass', yet day 1 gainFt is 2,600 and day 3 lossFt 2,600. Raising both to 2,800 makes the itinerary total 4,850 ft, within rounding of gain_ft/loss_ft (4,950, which includes the waterfall dip); totalNote's ~4,600 updated to ~4,900.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/easy-pass",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2600,
+     "value": 2800,
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Day-1 gain to camp vs its own note"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 2600,
+     "value": 2800,
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Day-1 gain to camp vs its own note"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,600 ft round-trip gain",
+     "replace": "~4,900 ft round-trip gain",
+     "id": "wa_kimtah_peak_scramble",
+     "fact": "Day-1 gain to camp vs its own note"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "fact": "Length of the downclimb at the Grotesque Gendarmes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "hazards, the gendarmes waypoint note and descent say 250-300 ft; beta, pitch_detail[1] and detailed_rack say ~150 ft (down a buttress, then a class 4 gully). One trip report gives 250-300 ft of descent through gullies and ledges; no second independent source found, and the two figures may measure different things (the buttress alone vs the whole bypass). No patch.",
+   "sources": [
+    "https://www.lemkeclimbs.com/ragged-ridge---katsuk-kimtah-and-cosho-peaks.html"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "fact": "Which summit this route tops out on",
+   "verdict": "fixed",
+   "correct_value": "Klawatti Peak (8,485 ft); the approach passes Eldorado but does not climb to its 8,868-ft summit.",
+   "evidence": "The SW Buttress is a route on Klawatti Peak, 8,485 ft, reached from Klawatti Col after the Eldorado/Inspiration approach. The first approach sentence describing the climb up Eldorado's snow ridge to its 8,868-ft summit is the Eldorado route's text; replaced with the leg to the ice-cap camp so it agrees with the rest of the field.",
+   "sources": [
+    "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress",
+    "https://en.wikipedia.org/wiki/Klawatti_Peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours.",
+     "replace": "climbing the Eldorado Glacier to the high camp on the Eldorado-Inspiration ice cap, typically another 3-5 hours.",
+     "id": "wa_klawatti_peak_sw_buttress",
+     "fact": "Which summit this route tops out on"
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "fact": "First ascent of Klawatti Peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "All sources agree Lloyd Anderson, Karl Boyer and Tom Gorton made the peak's first ascent on July 7, 1940, but none found states which line they climbed; one route database lists that party under the SW Buttress, and no second source confirms a route for either row. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress",
+    "https://en.wikipedia.org/wiki/Klawatti_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "fact": "Backcountry permit cost",
+   "verdict": "fixed",
+   "correct_value": "Not free: $10 per person (15 and under free) plus a $6 non-refundable fee in the summer season.",
+   "evidence": "The park's fees and permits pages state $10 per person plus a $6 fee, youth 15 and under free (in effect since March 2024 for the mid-May to early-October season); WTA's Klawatti page gives the same. The approach and trailhead directions call it free, contradicting access.fees and the bivy entries.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://www.wta.org/go-hiking/hikes/klawatti-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "requires a free North Cascades National Park backcountry permit",
+     "replace": "requires a North Cascades National Park backcountry permit",
+     "id": "wa_klawatti_peak_sw_buttress",
+     "fact": "Backcountry permit cost"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "requires a free North Cascades National Park backcountry permit",
+     "replace": "requires a North Cascades National Park backcountry permit",
+     "id": "wa_klawatti_peak_sw_buttress",
+     "fact": "Backcountry permit cost"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "fact": "Hardest terrain on the route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Mostly class 3, class 4 in spots; the moat at the Klawatti-Austera col is class 4 to the right (southeast) of the lowest notch and class 5 at the notch itself.",
+   "evidence": "The route description for the col says receding snow makes the crossing class 5 downclimbing at the lowest notch and class 4 to its southeast. rock_grade ('Class 3 (Class 4 in spots)') and the approach-variant hazards already allow the class 4 crossing; the class 5 notch is an avoidable option. Only bail's 'Class 3 scrambling throughout' is wrong, so bail is corrected.",
+   "sources": [
+    "https://www.summitpost.org/klawatti-peak/152520"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Terrain is Class 3 scrambling throughout;",
+     "replace": "Terrain is mostly Class 3 scrambling, with Class 4 in spots and at the moat crossing at the Klawatti-Austera col;",
+     "id": "wa_klawatti_peak_north_ridge",
+     "fact": "Hardest terrain on the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "fact": "Cost of the required wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "$10 per person (15 and under free) plus a $6 non-refundable fee in the summer season, not free.",
+   "evidence": "The park's fees and permits pages and its fee-change news release state $10 per person plus a $6 fee, youth 15 and under free; WTA's Klawatti page gives the same. access.fees is right; access.permit's 'Free' is wrong.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://www.wta.org/go-hiking/hikes/klawatti-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Free backcountry permit required",
+     "replace": "Backcountry permit required",
+     "id": "wa_klawatti_peak_north_ridge",
+     "fact": "Cost of the required wilderness permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "fact": "Crevasse/glacier hazard on this route",
+   "verdict": "fixed",
+   "correct_value": "Crevasses on the Inspiration Glacier and the McAllister Glacier lobe used to reach the col belong in the known hazards.",
+   "evidence": "Klawatti is a nunatak ringed by the Klawatti, McAllister and Inspiration glaciers, and reaching the Klawatti-Austera col means crossing the Inspiration Glacier and a McAllister lobe; WTA describes the route as involving glacier crossings. The row's own approach-variant hazards, gear (crampons) and turnaround text name the crevasse hazard, so obj_haz gains it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Klawatti_Peak",
+    "https://www.wta.org/go-hiking/hikes/klawatti-peak",
+    "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "obj_haz",
+     "path": [],
+     "expect": [
+      "exposure",
+      "loose rock",
+      "routefinding around The Smokestack"
+     ],
+     "value": [
+      "exposure",
+      "loose rock",
+      "routefinding around The Smokestack",
+      "crevasses on the Inspiration and McAllister glacier approach"
+     ],
+     "id": "wa_klawatti_peak_north_ridge",
+     "fact": "Crevasse/glacier hazard on this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "fact": "Technical difficulty of the crux",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 4 to low 5th (a short ~5.2 rock step over the bergschrund).",
+   "evidence": "A trip report on this face describes leading a short class 4-5 rock pitch to clear the bergschrund, then 40-55 degree snow. On the row, grade, pitch_detail (5.2), the summit and bergschrund waypoint notes, watch_out, pro_needs, partner_requirements and the approach-variant all say 4th to low 5th; rock_grade 'Class 3-4 (scrambling)' is the single outlier.",
+   "sources": [
+    "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 3-4 (scrambling)",
+     "value": "Class 4 / low 5th",
+     "id": "wa_klawatti_peak_southeast_face",
+     "fact": "Technical difficulty of the crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "fact": "Number of pitches/sections in the route breakdown",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "pitches=2 counts the two roped pitches (rock step, then a rope-length of snow), matching pitch_detail; climbing_route's three entries are descriptive sections, the third being an unroped walk/scramble along the summit ridge that pitch_detail[1] also mentions ('short unroped snow walk to the summit').",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "fact": "First ascent of Klawatti Peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "All sources agree Lloyd Anderson, Karl Boyer and Tom Gorton made the peak's first ascent on July 7, 1940, but none found states which line they climbed; one route database lists that party under the SW Buttress, and no second source confirms a route for either row. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress",
+    "https://en.wikipedia.org/wiki/Klawatti_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "fact": "Permit is self-issue",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No self-issue permit exists; overnight permits for Cascade River Road/Eldorado must be picked up in person at the Marblemount Wilderness Information Center (or reserved in advance).",
+   "evidence": "The park's permits page says there are no self-issue options and Cascade River Road/Eldorado walk-up permits must be picked up in person; WTA's Klawatti page also says permits come from the Marblemount center. The row's bivy permit entries say the same; only the trailhead waypoint says self-issue.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-hiking/hikes/klawatti-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue wilderness permit required",
+     "replace": "wilderness permit (from the Marblemount Wilderness Information Center) required",
+     "id": "wa_klawatti_peak_southeast_face",
+     "fact": "Permit is self-issue"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "A self-issue wilderness permit is required",
+     "replace": "A wilderness permit, picked up in person at the Marblemount Wilderness Information Center, is required",
+     "id": "wa_klawatti_peak_southeast_face",
+     "fact": "Permit is self-issue"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "fact": "Beta describes two rock pitches (SW Buttress text)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "One short class 4-5 rock step over the bergschrund, then several hundred feet of 40-55 degree snow.",
+   "evidence": "The beta says '2 pitches of Class 4-5 rock climbing', class 4 lower and class 3 upper; that is the SW Buttress's description. A trip report on this face gives one short class 4-5 pitch then 40-55 degree snow, as do the row's pitch_detail, climbing_route, waypoint notes and approach-variant.",
+   "sources": [
+    "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "2 pitches of Class 4-5 rock climbing and 45-50 degree snow slopes. Lower sections feature Class 4 rock; upper sections Class 3 scrambling.",
+     "replace": "one short Class 4-5 rock step over the bergschrund followed by several hundred feet of 40-55 degree snow.",
+     "id": "wa_klawatti_peak_southeast_face",
+     "fact": "Beta describes two rock pitches (SW Buttress text)"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_worthington_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Parking pass at the Tubal Cain Trailhead"
+  },
+  {
+   "id": "wa_mount_worthington_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee / overnight permit"
+  },
+  {
+   "id": "wa_mount_worthington_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "what"
+   ],
+   "fact": "Entrance fee / overnight permit"
+  },
+  {
+   "id": "wa_mount_worthington_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Trail gain to the Buckhorn Lake spur"
+  },
+  {
+   "id": "wa_mount_worthington_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Trail gain to the Buckhorn Lake spur"
+  },
+  {
+   "id": "wa_mount_worthington_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Summit block difficulty"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_worthington_standard",
+   "before": {
+    "access": {
+     "fees": "No day-use fee; no NW Forest Pass required at this trailhead.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Buckhorn Wilderness caps group size at 12 people / 8 head of stock; open fires (and gathering wood for them) are prohibited above 3,500 ft elevation; gear/food may not be cached or left unattended more than 24 hours.",
+     "permit": "Free, self-issued wilderness permit at the Tubal Cain Trailhead register.",
+     "closures": "FR-2870 can be gated or snow-blocked in winter and spring; check Olympic National Forest road alerts before heading out.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest — Buckhorn Wilderness, Hood Canal (Quilcene) Ranger District",
+     "land_manager": "Olympic National Forest — Buckhorn Wilderness, Hood Canal (Quilcene) Ranger District",
+     "parking_pass": "None required.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Buckhorn Wilderness",
+      "where": "Camps outside Olympic National Park need no permit; a recreation pass is required to park at the national forest trailheads."
+     }
+    },
+    "approach": "Start at the Tubal Cain Trailhead (elev. ~3,300 ft, reached via FR 2870/2880), and follow the Tubal Cain Trail #840 (Copper Creek drainage) south. The trail climbs gently through second-growth and old-growth conifer forest, gaining roughly 2,800 ft over the first ~5.5-6 miles. At about 3 miles, pass the signed junction with the Tull Canyon Trail #847 (a steep 0.6-mile side spur to a 1952 B-17 crash site) and continue straight on #840. Around 0.5 mile past that junction the trail crosses Copper Creek near the historic Tubal Cain Mine tailings (last reliable, easy water before the lake), then switchbacks up through subalpine meadows toward Buckhorn Pass. Watch for the unsigned or lightly-signed spur (near ~5,200 ft, roughly 5.5-6 miles in) that drops left/southwest to Buckhorn Lake -- it's easy to miss ('don't miss the left turn to Buckhorn Lake'). Follow this spur down to the lake, which is the last dependable water source before the summit push. From the south end of Buckhorn Lake the maintained tread disappears; cross the inlet stream/waterfall at the head of the lake and pick up a faint boot path heading southwest into avalanche-damaged timber (expect blowdown and light bushwhacking). This opens into a broad, flat bench of avalanche debris about 200 ft above the lake -- the true start of the off-trail scramble. From there climb a wide talus/scree gully trending south then curving east, breaking treeline around 5,800 ft (roughly 700 ft above the lake), where the going turns to loose rock and light class 2-3 scrambling. Angle east/southeast up increasingly loose slopes to gain the Iron-Worthington col at approximately 6,420 ft. Hazards on this leg: avalanche debris and blowdown near the lake, sustained loose scree/talus underfoot above treeline (helmet recommended for rockfall from parties above), and route-finding through the faint, unmarked path -- a GPS track or detailed written beta is strongly advised since cairns are sparse. From the Iron-Worthington col, angle northeast up open slopes to the base of Worthington's summit fin; the final class 3 scramble drops a few feet left of the ridge crest to a short (~10 ft) crack, then follows the top of the fin to the true summit.",
+    "descent_text": "Reverse the ascent line rather than continuing the Iron-Worthington ridge traverse. From the summit plateau, downclimb the short technical step below the true summit -- a class 3-4 face with good holds, done as an 'up-and-down climb' on the same line used to ascend (an alternate, slightly easier low-exposure line exists around the NE corner of the summit block for parties that want to avoid re-downclimbing the ascent face). There are no fixed rappel anchors, bolts, or established rappel stations on this route -- this is a walk-off/downclimb peak, not a rappel route. From the base of the summit block, descend southwest back to the Iron-Worthington col, then drop into the wide scree/talus gully on the west side of the col -- this is the standout feature of the descent, offering a fast, low-angle boot-ski through loose scree and talus back down to treeline and the avalanche-debris bench above Buckhorn Lake. Below treeline, re-cross the inlet stream, pick up the boot path back to the Buckhorn Lake spur, and rejoin the maintained Tubal Cain Trail #840 for the ~5.5-6 mile, ~2,800 ft-loss walk out to the trailhead. Because the summit block is a short, low-exposure downclimb rather than a rappel, and no rope is needed for the descent (a rope is optional/prudent for less confident scramblers on the way up, not for a rappel), rappels = 0."
+   }
+  }
+ ]
+}

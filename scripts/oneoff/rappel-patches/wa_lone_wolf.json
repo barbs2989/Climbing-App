@@ -1,0 +1,23 @@
+{
+ "id": "wa_lone_wolf",
+ "area_id": "wa_obelisk_the",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 30,
+    "anchor": "bolted chain anchor",
+    "station": "The chain anchor at the top of pitch 2.",
+    "notes": "Rappel (or lower) 1 of 2, about 30 m, to the chain anchor atop pitch 1."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "anchor": "bolted chain anchor",
+    "station": "The chain anchor at the top of pitch 1.",
+    "notes": "Rappel 2 of 2, about 30 m, to the base of the face."
+   }
+  ]
+ }
+}

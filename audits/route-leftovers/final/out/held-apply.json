@@ -1,0 +1,129 @@
+{
+ "results": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 'do the rest': a header figure that matches nothing is cleared (Three Queens / Gunn precedent)",
+   "fact": "dist_km 38.62 km (24 mi) matches no figure on the row or in any source",
+   "evidence": "Row: summit pin 15 mi one way, days 13.5 + 3 + 13.5 with a stated ~30 mi round trip; the one report gives 40 mi round trip. 24 mi is neither a one-way nor a round-trip figure for any of them. Day miles and gain untouched.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": 38.62,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_project_crack",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 'do the rest': a pin the row itself proves impossible loses the impossible part; nothing is computed",
+   "fact": "Trailhead pin sits ~60 m from the crag and 100 ft ABOVE the crag base, yet the approach is a 25-30 min uphill hike",
+   "evidence": "The approach states a 25-30 minute uphill walk from the pullout; the pin is 0.0009 deg from the crag pin and 4,700 ft against a 4,601 ft base. A club crag page gives a ~4,600 ft crag with ~200 ft of approach gain, so the parking is below the crag. No source states the parking coordinate or height, so both are cleared, not replaced; the drive directions stay.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_project_crack",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4700,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_project_crack",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4700,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_project_crack",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": " pullout at about 4,700 feet.",
+     "replace": " pullout."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "clear_coord",
+     "id": "wa_project_crack",
+     "index": 0,
+     "expect": {
+      "lat": 47.365,
+      "lng": -121.31444
+     },
+     "why": "pin ~60 m from the crag and above its base, against a 25-30 min uphill approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 'do the rest': same shared pin as Project Crack",
+   "fact": "Trailhead pin sits ~60 m from the crag and 100 ft ABOVE the crag base, yet the approach is a 25-30 min uphill hike",
+   "evidence": "Same pin and same evidence as Project Crack; the pin's own note says ~25-30 min uphill to the wall.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_glacier_view_temple",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4700,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_view_temple",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4700,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_view_temple",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": " on the right at about 4,700 feet.",
+     "replace": " on the right."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "clear_coord",
+     "id": "wa_glacier_view_temple",
+     "index": 0,
+     "expect": {
+      "lat": 47.365,
+      "lng": -121.31444
+     },
+     "why": "pin ~60 m from the crag and above its base, against a 25-30 min uphill approach"
+    }
+   ]
+  }
+ ]
+}

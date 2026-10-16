@@ -1,0 +1,254 @@
+{
+ "file": "t021.json",
+ "results": [
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Rope set-up for the Eye Col gully descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The reported East Twin Needle descent (downclimb and rappel to Eye Col, then several rappels down the south gullies to Crescent Creek Basin) gives no rope length or single-vs-double setup. The only published double-60 m account is for the Himmelhorn-West Twin Needle notch exit, not the Eye Col gullies. No source states the gullies go on a single rope, so gear[1]/rack[4]/rappels/detailed_rack (two ropes) vs descent_text/rope_note (single rope for the gullies) cannot be settled; a trip report naming the rope used on the Eye Col gully raps would settle it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Crescent Creek Basin camp elevation",
+   "verdict": "fixed",
+   "correct_value": "waypoints[3] is the ~6,400 ft saddle camp northeast of the Chopping Block; the Crescent Creek Basin camp lies ~200+ ft lower (about 6,050 ft)",
+   "evidence": "Two independent trip reports describe a 6,400 ft saddle northeast of the Chopping Block used as a camp, with a ~200 ft drop from it into Crescent Creek Basin; one also records a basin camp below Mount Terror at 6,050 ft. So the 6,400 ft waypoint is the saddle camp and its basin label is the error; renaming it to the saddle camp (keeping 6,400) makes it agree with the approach text, which keeps the two camps separate.",
+   "sources": [
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Crescent Creek Basin camp elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "Crescent Creek Basin (Chopping Block Camp)",
+     "value": "Chopping Block saddle camp (above Crescent Creek Basin)"
+    },
+    {
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Crescent Creek Basin camp elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "Established bivy sites on the saddle below Mount Terror, used as base camp for both Twin Needles; talus/scree basin below the south-facing summit gullies.",
+     "replace": "Established bivy sites on the saddle northeast of the Chopping Block, used as base camp for both Twin Needles; Crescent Creek Basin, the talus/scree basin below the south-facing summit gullies, lies about 200 ft below."
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Base camp for the climb",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Only bivy[] disagrees: its 'main' entry is Terror Basin and it has no Crescent Creek Basin entry, while approach, itinerary and timing all climb from a Crescent Creek Basin camp (the Blob stands above Crescent Creek Basin). Terror Basin and the Goodell roadhead/roadbed entries are en-route camps, not the base for this climb. Left to the camping clean-up; no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Whether the overnight permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin and Crescent Creek cross-country zones are walk-up only, issued in person at Marblemount the day of or the day before",
+   "evidence": "The park's cross-country zone list says only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and all other zones (Terror Basin and Crescent Creek among them) are walk-up only; the park's reservations FAQ repeats this and says walk-up zones must be obtained in person the day of or day before. A Pickets trip report describes having to pick the permit up in person at the station. The route's permit and access text that offered advance reservation is patched; the sibling Frenzel Spitz row already says walk-up only.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://climberkyle.com/2024/07/04/pickets-high-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin and Crescent Creek zones are walk-up only, issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip)"
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "The Terror Basin and Crescent Creek cross-country zones cannot be booked in advance: get the permit in person at the Marblemount Wilderness Information Center the day of or the day before the trip."
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "replace": "Parkwide about 60% of backcountry sites can be booked in advance, but the cross-country zones this route camps in are not among them: they are walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before."
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_application_method"
+     ],
+     "find": "(reserved on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(walk-up only for the Terror Basin and Crescent Creek zones, issued in person at the Marblemount Wilderness Information Center)"
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Recommended timing (late June)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "July",
+   "evidence": "season (Jul-Sep), best_season (late July-September), seasonal_guidance optimalWindow (late July-mid August) and its June 'marginal' rating (basins under deep snow with avalanche runout) all agree against pro_tips[0]'s late June. An external Picket Range overview gives summer as the season, with July good but early, August best and September good, and does not recommend June.",
+   "sources": [
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Recommended timing (late June)",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Go early in the season (late June-July) while snow",
+     "replace": "Go in July while snow"
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Barrier crossing on climb day",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Climb day returns to the Crescent Creek Basin camp; the Barrier is crossed only on the approach and hike-out",
+   "evidence": "approach, itinerary (Day 3 climb and return to camp, Day 4 hike out) and timing.recommendedStart all put the climb day between the Crescent Creek Basin camp and the route, so turnaround's 'back across the Barrier' is the outlier. Trip reports for neighbouring Crescent Creek Basin objectives likewise camp in the basin and return to that camp on the climb day, crossing the Barrier only going in and out.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Barrier crossing on climb day",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "and to be back across the Barrier crossing before afternoon thunderstorms typically build",
+     "replace": "and to be back in camp before afternoon thunderstorms typically build"
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Which way the step below the Ottohorn-Himmelhorn col is rappelled",
+   "verdict": "fixed",
+   "correct_value": "Rappelled on the way in (descending the north side toward Frenzel Spitz), reclimbed on the way back",
+   "evidence": "A first-hand account of an attempt on Frenzel Spitz's south face describes building an equalized pin/sling/nut anchor and rappelling off the north side of the Himmelhorn/Ottohorn col into the broken couloir and glacier while heading toward the peak. A separate AAC account records a single-rope rappel from a station about 150 ft below the Otto-Himmel col when descending its north side toward the Mustard Glacier. Both place the rappel on the descent from the col, matching waypoints[6], the itinerary and descent_text.",
+   "sources": [
+    "http://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-6.html",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment"
+   ],
+   "patches": [
+    {
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Which way the step below the Ottohorn-Himmelhorn col is rappelled",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "directions"
+     ],
+     "find": "the step below the col is commonly rappelled from natural anchors on the way back.",
+     "replace": "the step below the col is commonly rappelled from natural anchors on the way in and reclimbed on the way back."
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Time from trailhead to Terror Basin",
+   "verdict": "fixed",
+   "correct_value": "About 7 hours (a long day), not 3+",
+   "evidence": "One party reached the Terror Creek crossing (~2,000 ft) only 3.9 hours from the car and the ridge crest above 6.4 hours from the car; another took 6.5 hours from the trailhead to the camp near the Chopping Block. Terror Basin (~5,700 ft) sits well above the creek, so '3+ hours' is far too short; the 7 hours in the itinerary and timing agree with the reports.",
+   "sources": [
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Time from trailhead to Terror Basin",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "roughly 3+ hours in.",
+     "replace": "roughly a 7-hour day in."
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Single pitch vs multi-pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only published description found rates Frenzel Spitz's route II 5.6 and gives no pitch count or length; no other route description was found. detailed_rack ('single moderate pitch') and rope_note ('multi-pitch') are both inferred; a route description giving the pitch count would settle it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Days to walk out",
+   "verdict": "fixed",
+   "correct_value": "About 1.5 days in and usually one long day out",
+   "evidence": "One party walked from a Stump Hollow camp (~6,000 ft) to the car in 7.6 hours; another went from the camp near the Chopping Block to the trailhead in 4 hours; a third exited from the Crescent Creek Basin camp to the car in a single day. The itinerary (Days 1-2 in, one 9.5-hour exit day, optionally split) agrees; the 'roughly 1.5-2 days each way' in partner_requirements overstates the exit.",
+   "sources": [
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Days to walk out",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "(roughly 1.5-2 days each way)",
+     "replace": "(roughly 1.5 days in and usually one long day out)"
+    }
+   ]
+  }
+ ]
+}

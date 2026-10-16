@@ -1,0 +1,2361 @@
+[
+ {
+  "id": "wa_buckner_mountain_north_face",
+  "name": "North Face",
+  "area_id": "wa_buckner_mountain",
+  "findings": [
+   "Trailhead/camp pins sit at the wrong place (research note)."
+  ],
+  "gpx_summary": "261 points; 0 of 7 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_buckner_mountain_north_face",
+   "area_id": "wa_buckner_mountain",
+   "name": "North Face",
+   "discipline": "mountaineering",
+   "grade": "Grade II, AI2-3",
+   "grade_system": "yds",
+   "grade_num": 3,
+   "pitches": 12,
+   "length_m": 396,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe and second tool",
+    "crampons",
+    "ice screws",
+    "glacier travel and crevasse rescue kit",
+    "pickets"
+   ],
+   "hazards": [
+    "bergschrund crossing",
+    "rockfall on warming",
+    "variable ice",
+    "summit cornices"
+   ],
+   "verif": null,
+   "overview": "Buckner's north face is a classic alpine ice and snow climb, holding a sustained slope of moderate steepness that comes into the best shape in late spring and early summer. It is a coveted line for climbers wanting a north-side adventure on one of the range's high summits, often approached from Horseshoe Basin.",
+   "beta": "The North Face is 1,300 feet of 40-50 degree snow and ice climbed in approximately 8-13 pitches, most belayed. Work left of any bergschrund, back right to center of lower face and straight up. Upper rock cliffs force several pitches leftward in a rising traverse. Within 200 feet of summit go left around a craggy-looking outcrop at the end of upper cliffs, then back rightward to gain the summit. The face is wind-scoured in places requiring careful assessment of stability. Route quality varies significantly by conditions; some ascents report ice-hard wind-scoured snow while others encounter moderate powder.",
+   "turnaround": "Establish hard turnaround times based on daylight and climbing pace. Summit must be reached by mid-afternoon to allow safe descent in daylight. If halfway up face by noon, consider retreat.",
+   "auto_generated": true,
+   "alpine_grade": "AD",
+   "rock_grade": null,
+   "ice_grade": "AI2-3",
+   "gain_ft": 7000,
+   "loss_ft": 6800,
+   "dist_km": 29.93,
+   "max_angle": 50,
+   "rappels": "1",
+   "commitment": "II",
+   "face": "North Face (above the Boston Glacier)",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "Cell service is absent in Boston Basin and on Boston Glacier. Satellite communicators or personal locator beacons essential for emergency communication. No reliable communication until return to trailhead.",
+   "descent": "Descend the southwest slopes (standard route)",
+   "obj_haz": [
+    "crevassed glacier travel on the Quien Sabe and Boston Glaciers",
+    "bergschrund crossing near the base of the face",
+    "cornices reported near common bivy sites on the ridge above Boston Basin",
+    "wind-loaded slab on the face/adjacent couloirs after storms",
+    "loose, crumbly rock on the Boston Peak shoulder traverse"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "elev": 3600,
+     "name": "Cascade Pass Trailhead",
+     "note": "End of Cascade River Road (FR-15); self-issue wilderness permit required for overnight camping.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Cascade River Road (FR-15) runs east from Marblemount to the road-end loop, a couple of miles past the Boston Basin trailhead at mile 21.7, where the usual approach to this face starts; this road-end start is the Sahale Arm way in, which is also the usual way out. The upper road is narrow gravel and holds snow into early summer."
+    },
+    {
+     "lat": 48.4683,
+     "lng": -121.06,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "Leave the PCT/Stehekin trail and climb the Sahale Arm climbers' path north toward Sahale Glacier Camp.",
+     "type": "Junction",
+     "distMi": 3.7,
+     "directions": "From the road-end loop the maintained trail switchbacks up through forest, roughly three dozen short zigzags for about 1,500 ft in the first two miles, then breaks out of the trees and contours east across open slopes to the pass at 3.7 miles. Graded and obvious the whole way."
+    },
+    {
+     "lat": 48.4892,
+     "lng": -121.0465,
+     "elev": 7600,
+     "name": "Sahale Glacier Camp",
+     "note": "High camp used as the base for the north-side approach; permit required, exposed site with no reliable shelter from weather.",
+     "type": "Campsite",
+     "distMi": 5.9,
+     "directions": "Turn north (left) at the pass onto the Sahale Arm path, which switchbacks steeply out of the pass at first. About 0.8 mile up, a signed split sends the right-hand branch down to Doubtful Lake; stay left. Above that the path follows the crest of the arm and steepens near the top, where the tread fades into moraine boulders marked by cairns. Roughly 2.2 miles from the pass."
+    },
+    {
+     "lat": 48.4935,
+     "lng": -121.04,
+     "elev": 8200,
+     "name": "Sahale-Boston col",
+     "note": "Skirt the top of Sahale and cross this saddle (a small 2-person bivy exists here) onto exposed third-class choss en route toward Boston Peak.",
+     "type": "Junction",
+     "distMi": 7,
+     "directions": "Rope up and work up the Sahale Glacier toward the summit pyramid, bearing right onto the gentlest part of the upper slope, then climb over or skirt the summit block and drop down the far side to the saddle. This is where the standard Boston Basin approach joins, having come up the Quien Sabe Glacier from high camp."
+    },
+    {
+     "lat": 48.471253,
+     "lng": -121.060763,
+     "elev": 7900,
+     "name": "Boston Glacier crossing",
+     "note": "Rope up here — the upper Boston Glacier is described by climbers as viciously crevassed with cracks scattered randomly across the ice.",
+     "type": "Hazard",
+     "distMi": 7.6,
+     "directions": "Follow the loose ridge crest toward Boston Peak over a series of rock humps until an easy ledge system breaks off the ridge and leads down to the ice. Below the ledges is steep snow — take it down in the direction of Buckner rather than continuing along the ridge toward Boston."
+    },
+    {
+     "lat": 48.477583,
+     "lng": -121.067672,
+     "elev": 7900,
+     "name": "North Face bergschrund",
+     "note": "Work left around the bergschrund/moat at the base of the face, then back right to the center of the lower face before starting the ~1,300 ft of 40-50 degree snow and ice.",
+     "type": "Hazard",
+     "distMi": 8,
+     "directions": "Hold a high line across the glacier straight toward the base of the north face rather than losing height into the middle of the basin. Nearer the face, zig-zag around the large crevasses at its toe; getting past the 'schrund itself often takes some scrambling on rock at the edge of the ice. Parties who want a shorter summit day bivy on the glacier around 7,800 ft."
+    },
+    {
+     "lat": 48.4951,
+     "lng": -120.9979,
+     "elev": 9114,
+     "name": "Buckner Mountain (southwest summit)",
+     "note": "Face climb tops out on the summit ridge just below the true summit; upper rock cliffs force a rising traverse leftward to finish.",
+     "type": "Summit",
+     "distMi": 8.6,
+     "directions": "About 1,300 ft of 40-50 degree snow and ice, typically 8-13 pitches and mostly belayed, though strong parties solo it when the face is in good nick. Climb straight up the centre of the lower face until the upper cliffs cut it off, then take several pitches of rising traverse leftward. Within roughly 200 ft of the top, go left around a craggy outcrop at the end of those cliffs before cutting back right to finish. The face is wind-scoured in places and conditions swing between hard scoured ice and moderate powder, so judge it before committing to climbing unroped."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "ice",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 20,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 6,
+    "recommendedStart": "~3:30-4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "From the Boston Basin trailhead, hike into Boston Basin, ascend the Quien Sabe Glacier to the Boston-Sahale col, then traverse/scramble behind Boston Peak and descend (some steep s…",
+      "fromTo": "Approach to Boston Glacier camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "Rope up and cross the Boston Glacier to the base of the face, then climb 8-13 pitches of moderate 40-50 degree snow/ice to the 9,114 ft summit. Descend the standard SW slopes into …",
+      "fromTo": "Climb the North Face and traverse to a second camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Descend Sahale Arm to Cascade Pass and out to the Cascade Pass trailhead — a different trailhead than the Boston Basin start, so this route is a point-to-point traverse requiring a…",
+      "fromTo": "Exit via Cascade Pass",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Ice screws, a few pickets, two tools per climber, and a glacier rescue kit for the approach.",
+   "what_to_bring": [
+    "two ice tools",
+    "crampons",
+    "ice screws",
+    "pickets",
+    "rope and rescue kit",
+    "overnight gear"
+   ],
+   "pro_tips": [
+    "Climb in late spring for the most reliable neve",
+    "Start in the dark to top out before the sun warms the face",
+    "In lean, late-season conditions the face can bare out to ice, with the upper exit requiring short 5.8-5.9 rock moves for some parties — assess current conditions before committing"
+   ],
+   "watch_out": [
+    "warming rockfall",
+    "thin late-season ice",
+    "cornice on summit ridge",
+    "possible low 5th-class (5.8-5.9) rock moves near the summit exit in low-snow/late-season conditions",
+    "full-width bergschrund some seasons, requiring a zig-zag detour around large cracks"
+   ],
+   "pro_needs": "Snow and ice anchors as conditions dictate; protection is sparse on open snow.",
+   "best_season": "Late May through early July",
+   "high_point_ft": 9114,
+   "aid_grade": null,
+   "approach": "Start from the Boston Basin Trailhead (~3,200 ft), about 21.7 miles up Cascade River Road from Marblemount (a separate, shorter-drive trailhead than the Cascade Pass TH used for the SW route). The unmaintained climbers' path follows an old, overgrown mining road for about 1 mile to a former mine site, then becomes a steep boot-path through old-growth forest with roughly four creek/stream crossings, emerging above treeline around 5,300 ft into Boston Basin — about 2.5 miles and 3,100 ft of gain, typically 3-4 hours. Boston Basin has two designated backcountry camps used as base for this route: low camp (~5,300 ft) and high camp (~6,300-6,400 ft); an NPS permit is required and camping is restricted to these established sites. From high camp, follow the Quien Sabe Glacier route, roping up for crevasses, and climb toward Sharkfin Col (rather than the loose class 3-4 scramble around Boston Peak). Many parties gain the ridge just east of Sharkfin Col, where a natural/fixed sling anchor is commonly used to make a short rappel — or, in leaner conditions, a steep no-fall-zone downclimb on crumbly mixed rock — down onto the Boston Glacier; multiple trip reports flag this as the technical crux of the approach, sometimes harder than the climbing above. Once on the Boston Glacier (one of the largest glaciers in the lower 48), rope up and traverse south toward the base of Buckner's north face, zig-zagging around a bergschrund and large crevasses near the toe of the face, with some rock scrambling to bypass the 'schrund. Many parties bivy on the glacier itself (~7,800 ft) to shorten summit day. From the base, the North Face climbs about 1,300 ft of 40-50 degree snow/ice: work left of the bergschrund, then back right to the center of the lower face and straight up until upper rock cliffs force a rising traverse leftward; within about 200 ft of the summit, go left around a craggy rock outcrop, then back right to the top. Competent parties in good nick conditions often solo this face; less experienced or larger parties belay it with pickets/ice screws. Glacier travel, the Sharkfin Col rappel/downclimb, and typical alpine hazards (rockfall, afternoon softening, weather) are the main approach concerns.",
+   "descent_text": "The standard descent does not reverse the North Face — parties continue over the summit and go down Buckner's southwest slopes. From the top, descend gullies, scree, and snow on the fall line to about 7,200 ft, then traverse down and right across Horseshoe Basin on a broad ledge system at 6,200-6,400 ft (passing near the old Davenport Mine) to a snow finger; ascend the snow finger about 100 ft to regain the rounded ridge above the toe of Sahale's south ridge. Scramble roughly 40 ft up short rock steps, then follow paths through heather and rock for about 300 ft along the ridge crest (with the Davenport Glacier in view), before traversing up and left on slabs and snow above the glacier debris to the moraine flats beneath Sahale. From here, parties who arranged a car shuttle can continue over Sahale Arm and out Cascade Pass; most parties who started at Boston Basin instead re-climb Sahale's south ridge back toward Sharkfin Col and reverse the Quien Sabe Glacier approach to Boston Basin and the trailhead — some elect to 'carry over' with full packs and skip returning to a Boston Basin camp entirely. The southwest-slopes portion of the descent itself is a scree/snow walk-off with no rappelling (0 rappels). However, on the return leg back through Sharkfin Col, expect the same technical step encountered on approach: many parties make one short rappel (a single rope length off the natural/fixed sling anchor at the col is sufficient — no multi-pitch rappelling reported) to get back down onto or off the glacier side, while others downclimb it unroped depending on conditions and party comfort; in bad weather/whiteout, at least one party describes rappelling a steep ice gully near a nearby col with pickets as an alternate exit. Treat this Sharkfin Col step, not the summit slopes, as the route's real technical/rappel hazard.",
+   "bail": "Bailing off the face is committing; retreat usually means downclimbing or building snow anchors. Assess conditions before committing above the bergschrund.",
+   "pitch_detail": [
+    {
+     "grade": "40-50 degree snow/ice",
+     "notes": "Continuous or simul-climbed snow-ice face above the Boston Glacier bergschrund; the steepest climbing has been reported near a rock outcrop about halfway up and in the final couloir just below the summit.",
+     "pitch": "1-13 (roped/simul-climbed sections)",
+     "lengthM": 396
+    }
+   ],
+   "itinerary": {
+    "cal": "Best conditions are July-September after avalanche danger passes; since this is a point-to-point route between the Boston Basin and Cascade Pass trailheads, plan a car shuttle or hitch for the exit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Boston Basin trailhead, hike into Boston Basin, ascend the Quien Sabe Glacier to the Boston-Sahale col, then traverse/scramble behind Boston Peak and descend (some steep snow and low-grade mixed down-climbing near Sharkfin Col) onto the Boston Glacier to camp roughly an hour from the face.",
+      "hours": 6,
+      "miles": 5.5,
+      "title": "Approach to Boston Glacier camp",
+      "gainFt": 4600,
+      "lossFt": 300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach a camp near the base of the North Face"
+     },
+     {
+      "n": 2,
+      "note": "Rope up and cross the Boston Glacier to the base of the face, then climb 8-13 pitches of moderate 40-50 degree snow/ice to the 9,114 ft summit. Descend the standard SW slopes into Horseshoe Basin and continue to a second camp rather than exiting same-day, carrying full overnight gear over the top.",
+      "hours": 10,
+      "miles": 5,
+      "title": "Climb the North Face and traverse to a second camp",
+      "gainFt": 2200,
+      "lossFt": 2500,
+      "packLb": 35,
+      "schedule": [
+       {
+        "time": "~3:30-4:30 AM",
+        "label": "Alarm at Boston Glacier camp",
+        "detail": ""
+       },
+       {
+        "time": "~5:00-6:00 AM",
+        "label": "Rope up and cross to the face",
+        "detail": "About an hour from camp to the base of the North Face"
+       },
+       {
+        "time": "",
+        "label": "Climb the North Face",
+        "detail": "8-13 pitches of 40-50 degree snow/ice; one fast solo party climbed this section in about an hour on an existing bootpack, but roped teams typically take several hours longer"
+       },
+       {
+        "time": "",
+        "label": "Summit",
+        "detail": "9,114 ft"
+       },
+       {
+        "time": "",
+        "label": "Descend SW into Horseshoe Basin",
+        "detail": "Roughly 2 hours on the standard SW slopes"
+       },
+       {
+        "time": "",
+        "label": "Continue to Horseshoe Basin / Sahale Glacier camp",
+        "detail": "Set up night 2 camp before exiting the next day"
+       }
+      ],
+      "objective": "Summit via the North Face, descend SW to camp in Horseshoe Basin or at Sahale Glacier"
+     },
+     {
+      "n": 3,
+      "note": "Descend Sahale Arm to Cascade Pass and out to the Cascade Pass trailhead — a different trailhead than the Boston Basin start, so this route is a point-to-point traverse requiring a car shuttle or hitch between trailheads.",
+      "hours": 4,
+      "miles": 6,
+      "title": "Exit via Cascade Pass",
+      "gainFt": 0,
+      "lossFt": 4000,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Hike out to the Cascade Pass trailhead"
+     }
+    ],
+    "totalNote": "A 3-day technical traverse (~18-19 mi point-to-point, an estimated ~6,800+ ft of total gain): approach via Boston Basin to a Boston Glacier camp, climb 8-13 pitches of 40-50 degree snow/ice up the North Face, then continue over the summit to a Horseshoe Basin/Sahale camp and exit via Cascade Pass; exceptionally fast parties have linked the whole thing in one very long day, but 3 days with 2 camps is standard."
+   },
+   "access": {
+    "fees": "No fee for day use; overnight backcountry permits cost roughly $10/person per night plus a one-time $6 nonrefundable reservation fee, charged only in the summer season (mid-May-early October) — free the rest of the year.",
+    "rules": "Group size limit is 12 in trail corridors and camps and in the eleven named cross-country zones — Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration, Nooksack, Price, Sulphide Glacier, Torment Basin and Triad — one of which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+    "permit": "Wilderness permit required for overnight stays. Sahale Glacier Camp and Cascade Pass camps are among the most in-demand sites in the park; 60% of permits are reservable in advance via Recreation.gov (Early-Access lottery in Feb-Mar, general on-sale in spring), and 40% are held for walk-up. Permits must be picked up/activated in person at the Marblemount Wilderness Information Center the day of or day before the trip.",
+    "closures": "Cascade River Road (FR-15) is typically snow-gated in winter and spring and may not open to the trailhead until early-mid summer; it has also suffered repeated storm washouts in recent years (e.g., August 2025). Check the NPS road-conditions page before driving.",
+    "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+    "group_limit": 12,
+    "landManager": "North Cascades National Park Service Complex (Stephen Mather Wilderness)",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/4675322",
+     "what": "North Cascades National Park wilderness permit for Boston Basin and Sahale Glacier Camp — quota, reservable, not free",
+     "where": "Both are high-demand cross-country zones; apply to the March early-access lottery for the best odds, or book the general on-sale release in late April on Recreation.gov. Permits reached from Cascade River Road must be picked up in person at the Wilderness Information Center in Marblemount."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Gravel, summer-passable",
+    "driveNote": "Rough, washboarded gravel for the final miles to the Cascade Pass Trailhead, about 22.9-23 miles from Marblemount; has experienced washouts requiring temporary closures in recent years.",
+    "seasonalGate": "Snow closure in winter/spring; opening date varies year to year with snowpack and road damage."
+   },
+   "climate": {
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "county": "Skagit (summit sits on the Chelan-Skagit county line; trailhead access and SAR coordination are on the Skagit County/Marblemount side)",
+    "nearestHospital": "PeaceHealth United General Medical Center, Sedro-Woolley (closest full ED to the Marblemount trailhead area; a 24/7 Level IV emergency department); Skagit Valley Hospital (Skagit Regional Health), Mount Vernon, for higher-level trauma care."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Narrow weather windows in June when snow/ice conditions are most stable",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Low - a handful of parties per season; considered a classic but committing objective, not a high-traffic route"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very strenuous full day (~9.5 hrs route time) on top of a multi-day glaciated approach with significant elevation gain",
+     "packWeight": "Overnight mountaineering pack with technical rack, roughly 35-45 lbs"
+    },
+    "approachTime": "Multi-day approach: hike to Boston Basin, then glacier travel across the Boston Glacier to reach the base of the face; most parties plan 2+ days",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue",
+     "front-pointing/cramponing on 40-50 degree snow and ice (AI2-3)",
+     "ice tool technique",
+     "bergschrund negotiation",
+     "comfort with very early alpine starts"
+    ],
+    "experienceLevel": "Advanced - prior glacier travel and technical snow/ice climbing experience required; not a route for a first alpine ice outing"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late May through early July, with June generally offering the best balance of ice quality and access",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Best ice conditions, but wet, heavy maritime spring snow on the glacier approach raises avalanche concern",
+      "status": "good"
+     },
+     "July": {
+      "reason": "Face 'bares out' as summer progresses, increasing rockfall risk and degrading ice quality; route becomes progressively less in-condition",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Typically the most reliable window - snow/ice generally consolidated on the face while the Boston Glacier approach is still manageable",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Cold, north-facing conditions; the route holds snow/ice longer than surrounding aspects but degrades quickly once temperatures rise",
+     "probability": "Condition window is highly weather- and temperature-dependent; a warm spell can bare out the face and destabilize the approach glacier within days"
+    },
+    "exposure": "Sustained 40-50 degree snow/ice climbing (AI2-3) with rockfall exposure as the face warms, plus fall/crevasse consequence at the bergschrund; rockfall is a recognized hazard here",
+    "avalanche": {
+     "zone": "West Slopes North (NWAC) - approximate coverage; this specific glaciated approach is remote and not precisely zoned by NWAC forecasts",
+     "byMonth": {
+      "May": "Considerable",
+      "July": "Low",
+      "June": "Moderate"
+     }
+    },
+    "crevasses": "Significant - the Boston Glacier approach involves real crevasse hazard, and there is a bergschrund crossing near the top of the face"
+   },
+   "data_quality": {
+    "gaps": [
+     "No NWAC zone precisely covers this remote glaciated route, so avalanche ratings by month are estimated rather than sourced directly from a forecast",
+     "No published party-per-season counts were found",
+     "Year-to-year bergschrund/glacier condition variability was not quantified in available sources",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/CVN1",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.4951282,
+    "peakLng": -120.9978898,
+    "trailhead": "Cascade Pass Trailhead",
+    "trailheadLat": 48.47544,
+    "trailheadLng": -121.07503
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Boston Basin, Sharkfin Col rappel, and south across the Boston Glacier to the schrund",
+     "notes": "Start from the BOSTON BASIN trailhead near 3,200 ft, about 21.7 miles up Cascade River Road — a different and shorter drive than the Cascade Pass trailhead used for the southwest route. The climbers' path follows an old overgrown mining road about a mile to a former mine site, then a steep boot path through old growth with roughly four creek crossings, emerging above treeline near 5,300 ft into Boston Basin: about 2.5 miles and 3,100 ft, typically three to four hours. Camp low at about 5,300 ft or high at 6,300-6,400 ft; NPS permit required and camping restricted to the established sites.\n\nFrom high camp, follow the Quien Sabe Glacier route roped, and climb toward SHARKFIN COL rather than taking the loose class 3-4 scramble around Boston Peak. Many parties gain the ridge just east of the col, where a natural or fixed sling anchor is used for a short rappel — or, in leaner conditions, a steep no-fall-zone downclimb on crumbly mixed rock — onto the BOSTON GLACIER. Multiple trip reports flag this as the technical crux of the approach, sometimes harder than the climbing above.\n\nOnce on the Boston Glacier, rope up and traverse SOUTH toward the base of Buckner's north face, zig-zagging around the schrund and large crevasses near the toe, with some rock scrambling to bypass the gap. Many parties bivy on the glacier itself around 7,800 ft to shorten summit day.\n\nA second way in reaches the same glacier over Sahale and the Boston-Sahale col from Sahale Glacier Camp.",
+     "season": "Late May through early July for the best face conditions",
+     "hazards": [
+      "A short rappel or a steep no-fall-zone downclimb off Sharkfin Col on crumbly mixed rock — the crux of the approach, and it has to be reversed",
+      "A viciously crevassed upper Boston Glacier with cracks scattered randomly across the ice",
+      "A bergschrund at the toe of the face that can run its full width, needing rock scrambling to bypass",
+      "Wind-scoured ice on some ascents and moderate powder on others — the face's character changes completely with conditions",
+      "Cornices on the summit ridge, and rockfall as the day warms"
+     ],
+     "baseFinding": "THE BASE IS THE BERGSCHRUND AT THE TOE OF THE FACE, ON THE BOSTON GLACIER, AND THE POSITION TEST IS DIRECTIONAL: from the col you traverse SOUTH across the glacier. If you turned north you are heading for Forbidden's north side.\n\nTHE ENTRY MOVE IS A ZIG-ZAG AND IT IS THE POSITIVE TEST: WORK CLIMBER'S LEFT OF THE BERGSCHRUND, THEN BACK RIGHT INTO THE CENTRE OF THE LOWER FACE, AND THEN STRAIGHT UP. Left, right, up. A party that crossed the schrund directly and started climbing where it stood has not found the line the face is climbed on.\n\nWHAT YOU ARE CLIMBING CONFIRMS IT: about 1,300 ft of 40-50 degree snow and ice, continuous, with no rock pitches. If you are on rock below the summit ridge, you have drifted off the face.\n\nTHE FINISH IS THE OTHER COUNTABLE POINT, AND GETTING IT WRONG COSTS TIME AT THE WORST MOMENT: continue straight up until UPPER ROCK CLIFFS force a rising traverse to the LEFT. Then, within about 200 ft of the summit, GO LEFT AROUND A CRAGGY ROCK OUTCROP at the end of those cliffs, and only then back right to the top. Both moves are left. A party that goes right at the cliff band has misread the finish.\n\nAND THE APPROACH ITSELF IS THE STRONGEST NEGATIVE TEST AGAINST THIS PEAK'S OTHER ROUTE: the Southwest Face is reached over Cascade Pass, Sahale Arm and Horseshoe Basin, on the opposite side of the mountain, and the two share no ground until the summit ridge. IF YOU WALKED PAST AN OLD MINE IN A BASIN AT 7,000 FT, YOU ARE ON THE SOUTHWEST ROUTE."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Lower north face snow/ice",
+     "notes": "About 1,300 ft of 40-50 degree snow and ice overall. From the base, work left of the bergschrund, then back right into the center of the lower face and straight up. Competent parties in good conditions often solo the face; less experienced or larger parties belay with pickets and ice screws. Rockfall, afternoon softening and weather are the standing hazards."
+    },
+    {
+     "n": 2,
+     "label": "Rising leftward traverse under the upper cliffs",
+     "notes": "Continue straight up until upper rock cliffs force a rising traverse to the left."
+    },
+    {
+     "n": 3,
+     "label": "Summit exit around the rock outcrop",
+     "notes": "Within about 200 ft of the summit, go left around a craggy rock outcrop, then back right to the top."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6300,
+     "name": "Boston Basin high camp",
+     "role": "main",
+     "notes": "The comfortable planned camp, roughly 6,300 to 6,400 ft on a sandy flat below a permanent snowfield, about three to four hours from the road. Everything on this route beyond it is committing, because the way onto the Boston Glacier goes over Sharkfin Col and that involves a rappel or a steep downclimb on poor rock that many parties describe as harder than the face itself. Coming back to this camp means reversing it. A lower camp at about 5,300 ft with its own composting toilet is the alternative if the upper sites are full.",
+     "water": "Meltwater creeks and the permanent snowfield behind camp, reliable through the season",
+     "permit": "A National Park Service backcountry permit is required. Boston Basin is one of the small number of zones that accepts advance reservations, and composting toilets serve both the upper and lower camp areas.",
+     "capacity": "Hardened sites; the zone allows six parties per night and up to twelve people per party"
+    },
+    {
+     "elev": 7800,
+     "name": "Boston Glacier bivy",
+     "role": "route",
+     "notes": "A planned but fully exposed glacier bivy used to shorten summit day, on one of the largest glaciers in the lower 48. You are camping on a crevassed surface, so probe the platform and its surroundings before dropping the rope, and mark the perimeter. There is no shelter, no running water and no ground: everything is melted, and wind or a change in weather has nowhere to be dodged. The serious point is that it sits past Sharkfin Col — retreat from here means reclimbing that col, so committing to this bivy commits you to the route in a way that camping in Boston Basin does not.",
+     "water": "Melted snow only",
+     "permit": "The glacier is its own cross-country zone on the park permit system, capped at six people per party and six parties per night; human waste on snow and glacier terrain has to be packed out in a blue bag",
+     "capacity": "Whatever platform you cut; the Boston Glacier cross-country zone allows six parties per night, six people per party"
+    },
+    {
+     "name": "Sahale–Boston col bivy",
+     "role": "route",
+     "notes": "A tiny, spectacular perch on the col between Sahale and Boston, used by parties linking this face with other climbs in the basin or descending over Sahale Arm. It is an emergency-sized site, not a camp: there is room for one small tent, and cornices overhang the Davenport side, so probe out from the sleeping platform before settling in and do not wander in the dark. Wind exposure is total.",
+     "water": "Melted snow",
+     "capacity": "One small two-person tent's worth of flat ground"
+    },
+    {
+     "name": "Sahale Glacier Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_grotto_mountain_e_route",
+  "name": "East Ridge Scramble",
+  "area_id": "wa_grotto_mountain",
+  "findings": [
+   "Trailhead/camp pins sit at the wrong place (research note)."
+  ],
+  "gpx_summary": "154 points; 0 of 7 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_grotto_mountain_e_route",
+   "area_id": "wa_grotto_mountain",
+   "name": "East Ridge Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": 47.763162,
+   "lng": -121.4206589,
+   "aspect": "N/NE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe early season",
+    "trekking poles for brush and talus",
+    "sturdy boots or gaiters (brush and loose talus)"
+   ],
+   "hazards": [
+    "steep timber",
+    "loose rock",
+    "brush",
+    "standing dead timber (snags) and debris-flow potential in the 2022 Bolt Creek Fire burn scar on Klinger Ridge and the south side of the peak",
+    "morning valley fog that can obscure route-finding on an unmarked, off-trail line",
+    "slick, mossy rock on downclimbs"
+   ],
+   "verif": null,
+   "overview": "Grotto Mountain (5,618 ft) is a rugged, lightly-visited peak in the Wild Sky Wilderness (Mount Baker-Snoqualmie National Forest), rising east of Baring Mountain above the South Fork Skykomish River near the US-2 communities of Baring and Grotto. There is no maintained trail to the summit. The line described here follows the east ridge through steep timber and heather bands to a craggy, boulder-strewn summit block overlooking US-2 and the Skykomish valley, with views to Baring, Merchant, and Gunn Peaks. Recent (2024-2025) parties have used an alternate approach via Klinger Ridge — the peak's south ridge — reached from Beckler River Road, crossing to a notch just below the summit block; treat this as a variation on the same peak rather than a confirmed identical line. The 2022 Bolt Creek Fire burned the entire south side of Klinger Ridge, leaving standing dead timber, heavier brush regrowth, and altered route-finding that persist years later — expect more sun exposure and less shade than before the fire.",
+   "beta": "There is no trail beyond the Forest Service road-end. Parties describe pushing through huckleberry brush toward talus (a brushy streambed gives easier passage than the surrounding vegetation), then rising traverses across talus and heathered benches past a small basin/tarn around 4,300ft, up toward the ridge crest near 5,400ft. From there the route works up and right along minor ledges to a talus basin below the summit, then a gully to a col between the summit block and a minor knob to its east, finishing with an exposed class 3-4 scramble to the top. Parties note the literal east ridge crest itself does not go as a through-route.",
+   "turnaround": "Set a firm turnaround time given the off-trail nature of the route and the lack of shade on burned terrain — afternoon fog or thunderstorm buildup can make an already unmarked descent much harder.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 2138,
+   "loss_ft": 2138,
+   "dist_km": 3.86,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": null,
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Retrace the east ridge down to the approach.",
+   "obj_haz": [
+    "rockfall on loose talus",
+    "dense brush/slide alder",
+    "route-finding in fog (no trail)",
+    "fire-damaged/unstable deadfall"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.776833,
+     "lng": -121.344633,
+     "elev": 3480,
+     "name": "NF-6514-410 road's end",
+     "note": "Park at the end of the spur off Beckler River Road (FS-65)/FS-6514, about 5 miles past the Eagle Lake trailhead fork; no maintained trail beyond this point.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Roughly 6.5 miles of gravel and dirt Forest Service road from pavement. The drive-in is variable and worth confirming with the Skykomish Ranger District before committing to it."
+    },
+    {
+     "elev": 3700,
+     "name": "Brushy drainage / streambed",
+     "note": "Route starts by climbing a mossy, brush-choked streambed that is slick when wet; poor footing before the terrain opens.",
+     "type": "Hazard",
+     "distMi": 0.3,
+     "directions": "There is no trail from the car; the line goes straight into thick huckleberry toward the talus above. Rather than fighting the brush, drop into the streambed running alongside it, which is much easier going even though the rock underfoot is slick."
+    },
+    {
+     "elev": 4300,
+     "name": "Saddle east of Grotto Lake basin",
+     "note": "Huckleberry-covered saddle where the route angles right off the drainage onto the ridge proper before contouring toward Klinger Ridge.",
+     "type": "Junction",
+     "distMi": 0.8,
+     "directions": "Follow the drainage and the talus beside it up into the rock basin around 4,300 ft. Route-finding is entirely on you here, with no trail and no markers, and morning fog frequently sits in this basin well past sunrise, so carry a track you can navigate to."
+    },
+    {
+     "lat": 47.76511,
+     "lng": -121.41621,
+     "elev": 4705,
+     "name": "Klinger Lake",
+     "note": "Small tarn at the top of the basin below Klinger Ridge; snowmelt-fed and a reliable early-season water source before the final push.",
+     "type": "Water",
+     "distMi": 1.3
+    },
+    {
+     "lat": 47.76475426363636,
+     "lng": -121.41701651818181,
+     "elev": 4600,
+     "name": "Klinger Ridge meadow gain",
+     "note": "Meadowy ridge crest reached via a rising talus traverse; fog commonly lingers here into mid-morning, obscuring the correct line.",
+     "type": "Junction",
+     "distMi": 1.5,
+     "directions": "From the tarn and basin below the ridge, make a rising traverse across talus into a gully, then climb a heathered slope beneath a cliff band, which dodges a slide-alder tangle, to reach the open meadow crest above 4,600 ft. A cairn near here has pulled parties off the direct line; staying in the gully to about 4,800 ft is the more direct way."
+    },
+    {
+     "lat": 47.76369275454545,
+     "lng": -121.41944477272727,
+     "elev": 5300,
+     "name": "Notch below summit tower",
+     "note": "Steep talus leads to a notch west of a prominent rock tower; a short vertical downclimb on the south side is exposed and helmet-recommended.",
+     "type": "Hazard",
+     "distMi": 2.1,
+     "directions": "Follow the meadow and boulder crest upward, but do not try to hold the literal east ridge crest, which cliffs out and does not go as a through-route. From about 4,800 ft, weave up through steep granite blocks and cross a final talus field to reach the notch."
+    },
+    {
+     "lat": 47.76321,
+     "lng": -121.42058,
+     "elev": 5618,
+     "name": "Grotto Mountain summit",
+     "note": "Class 4 scramble up a final gully off the notch gains the summit block; views south into the Bolt Creek Fire-burned drainage and across to Mount Baring.",
+     "type": "Summit",
+     "distMi": 2.4,
+     "directions": "Downclimb the short, steep, near-vertical step on the south side of the notch. This is the most exposed move on the route and the rock is loose in places. Then move a short way west into the gully below the summit block and scramble Class 3-4 to the top."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "7:00 AM from the trailhead (leave Seattle about 5:30 AM)",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "From the Eagle Creek/Beckler River road-end, climbers push through huckleberry brush to a streambed, cross talus around 4,000 ft, then work up heathered slopes and granite steps to…",
+      "fromTo": "East Ridge scramble, car to car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "map/compass or GPS track — no trail or signage on route",
+    "10 essentials",
+    "extra water — little reliable water source after early-season snowmelt, and post-fire slopes offer less shade",
+    "bug/insect protection for brushy sections in July"
+   ],
+   "pro_tips": [
+    "Start early to beat summer valley fog and give yourself daylight margin on an unmarked, off-trail scramble.",
+    "Carry more water than a typical shaded Cascades scramble — burned terrain on the south side offers little shade.",
+    "Summit views take in Baring, Merchant, and Gunn Peaks across the Skykomish valley."
+   ],
+   "watch_out": [
+    "No maintained trail — this is off-trail scrambling with real route-finding demands.",
+    "2022 Bolt Creek Fire burned the south side of Klinger Ridge: expect standing dead snags, possible debris flows, and heavier brush regrowth.",
+    "Morning fog in the Skykomish valley can obscure the route until it burns off later in the day."
+   ],
+   "pro_needs": "Most parties scramble this unroped and there is no fixed protection, but the Class 4 moves at the summit have been protected with a short rope, a few slings and a couple of small cams. A helmet is strongly advised for rockfall on the loose talus and in the gully/col below the summit block.",
+   "best_season": "Jul-Sep",
+   "high_point_ft": 5618,
+   "aid_grade": null,
+   "approach": "Grotto Mountain (5,618') sits east of the more famous Baring Mountain, above the South Fork Skykomish River near the Wild Sky Wilderness boundary. The drive-in is variable and should be reconfirmed with the Skykomish Ranger District, but the trailhead itself is the end of FS spur NF-6514-410, off Beckler River Road (FR-65) — roughly 6.5 miles of gravel/dirt FS road from pavement, ending at a small pullout at about 3,480 ft. There is no maintained trail from here; this is an off-trail scramble the entire way (about 2.4 miles/3,900 ft one-way to the 5,618 ft high point). From road's end, the line immediately enters dense huckleberry brush heading toward talus — a brushy, moss-lined streambed just to the side of the huckleberry slope offers noticeably easier (if slick when wet) passage and is the preferred line reported by recent parties. Follow this drainage/talus combination up into a rock basin around 4,300 ft, where the route makes a rising traverse across talus into a gully, then climbs a heathered slope below a cliff band to avoid a slide-alder tangle. This gains Klinger Ridge at roughly 4,600 ft — open meadow and boulder terrain with pikas and clear views back to Baring Mountain. Continue along/near the ridge crest toward the east summit; from about 4,800 ft below the summit, weave through steep granite blocks and a final talus traverse to a notch just west of a prominent rock tower, then downclimb a short, steep/near-vertical step (exposed, loose in places — helmet warranted) to gain the south side and the true summit. Water is generally abundant from snowmelt streams in the lower basin (below ~4,300 ft) but can dry up by late summer; carry what you need for the upper mountain. Key hazards: thick brush and slick moss low down, sustained off-trail route-finding (fog/whiteout is a real risk with no trail to follow), loose rock and a burn-scarred south-facing slope on Klinger Ridge from the 2022 Bolt Creek Fire, and exposed granite/talus near the summit notch.",
+   "descent_text": "This is a walk-off/downclimb — no rappelling is required or commonly used on this route. Descend by reversing the ascent line: downclimb the steep step back through the summit notch, reverse the granite-block and talus traverse back to about 4,800 ft, then follow Klinger Ridge's meadow/boulder terrain back down. Because the true east ridge crest was found to cliff out / not reasonably traverse in recent trip reports, most parties drop off the ridge into the small basin/tarn area below Klinger Ridge rather than trying to hold the crest, then pick up the ascent streambed line back to the 4,300 ft rock basin. From there, reverse the talus-and-streambed line down through the heathered slope and huckleberry brush to road's end at 3,480 ft, favoring the mossy streambed over bashing straight through brush (watch footing on wet moss). No technical rope work has been reported on this route; a short handline could be a reasonable option for less-confident parties at the summit notch step, but it is a downclimb, not a rappel. Primary hazards on the way down are the same as the approach in reverse — brush, slick streambed rock, and route-finding in fog on a trail-less, partly fire-scarred mountainside — plus the general scramble hazard of downclimbing loose granite steps.",
+   "bail": "If you need to bail, retreat via the ridge crest back toward the drainage/road rather than cutting down through the burned, brushy south-facing slopes off-route, where footing is unstable and visibility is poor.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Best attempted July-September once brush has dried out and snow has cleared from the upper talus and summit gully.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Eagle Creek/Beckler River road-end, climbers push through huckleberry brush to a streambed, cross talus around 4,000 ft, then work up heathered slopes and granite steps to a talus basin below the summit block. Since the true east ridge crest is unsuitable for direct travel, most parties detour through the basin and scramble the class 3-4 col from the north ridge to reach the top; morning fog often lingers into mid-morning.",
+      "hours": 9,
+      "miles": 4.8,
+      "title": "East Ridge scramble, car to car",
+      "gainFt": 3400,
+      "lossFt": 3400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Seattle",
+        "detail": "~1.5-2 hr drive to Baring via US-2, then Beckler River Rd/NF-6514-410 to road's end."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Start hiking",
+        "detail": "Trailless start; push through huckleberry brush toward a brushy streambed."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Cross talus at ~4,000 ft",
+        "detail": "Route-find across talus and heathered slopes, avoiding dense slide alder."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Reach talus basin below summit block",
+        "detail": "Fog can linger here past 10 AM in some seasons; wait out clouds if needed."
+       },
+       {
+        "time": "12:30 PM",
+        "label": "Summit via north ridge col",
+        "detail": "Class 3-4 scramble up the bouldered east summit; helmet recommended for loose rock."
+       },
+       {
+        "time": "3:30-4:30 PM",
+        "label": "Back at road-end",
+        "detail": "Descend by mostly retracing the ascent line, correcting around brushy sections."
+       }
+      ],
+      "objective": "Summit via the north ridge/talus basin col and return same day"
+     }
+    ],
+    "totalNote": "A long single day: about 8-10 hrs car-to-car, roughly 3,400 ft gain over 4.8 miles round trip, done entirely off-trail."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass required to park at Skykomish Ranger District trailheads ($5 day pass / $30 annual, available at the ranger station or REI).",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "rules": "Within Wild Sky Wilderness, Forest Service Pacific Northwest Region wilderness rules apply: groups limited to 12 people and 12 head of stock, and no mechanized or wheeled equipment (including bikes and drones).",
+    "permit": "None required.",
+    "closures": "The approach crosses part of the 2022 Bolt Creek Fire burn scar; fallen timber and debris flows have caused intermittent closures on Skykomish-area FS roads in the years since. Check current road/trail status with the Skykomish Ranger Station before heading out.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "US-2 / local spur roads",
+    "status": "Closed to vehicles: the Forest Service's Skykomish District road-damage alert of June 30, 2026 lists FR 6514 (Eagle Creek Road), which the NF-6514-410 spur to this trailhead leaves, gated closed at milepost 0 with a blown culvert at MP 1.6, and FR 6510 (Bolt Creek Road) closed at its gate at milepost 1.0; no reopening date is given. Skykomish Ranger District: (360) 677-2414.",
+    "driveNote": "Access varies; private land near the base.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "typical": "Snow lingers on shaded, north-facing terrain into June; the route is generally snow-free and driest July through September, consistent with the current Jul-Sep season window. Morning fog is common in the South Fork Skykomish valley and usually clears by mid-to-late morning. Post-fire, south-facing slopes on Klinger Ridge see more direct sun and faster snowmelt than before the 2022 Bolt Creek Fire."
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable through most of the South Fork Skykomish valley off US-2. Standing dead timber (snags) in the Bolt Creek Fire burn scar and occasional debris flows are an added road/trail hazard when accessing the trailhead.",
+    "rangerStation": "Skykomish Ranger District — Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288 (Wed-Fri, 9am-12pm & 1-4pm, closed for lunch; closed federal holidays; call (360) 677-2414 to confirm)",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe, WA"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "No distinct peak-weekend pattern documented; rarely climbed even in mid-summer",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely well under 20 parties per season; only two trip reports are on record for this route, indicating it sees little traffic compared to nearby popular scrambles"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Steep, brushy ~4.8 mile round trip gaining roughly 2100 ft with no maintained trail for much of the route - moderate-to-strong fitness needed for sustained bushwhack/talus travel",
+     "packWeight": "Light day pack (~15-20 lb); no technical rack required for the Class 3 scrambling"
+    },
+    "approachTime": "Steep wooded/brushy approach before gaining the ridge; plan on 3-4+ hours to the summit given lack of trail and dense vegetation",
+    "requiredSkills": [
+     "off-trail routefinding/bushwhacking",
+     "Class 2-3 scrambling on loose rock",
+     "judgment around rockfall (helmet recommended)",
+     "comfort navigating without a trail through burn-scar and huckleberry brush"
+    ],
+    "experienceLevel": "Intermediate scrambler comfortable with sustained off-trail travel and unmarked routefinding; not a first-scramble outing given the bushwhacking and Class 3 summit block"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Jul-Sep; mid-summer (Aug) is the most reliably passable window",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically cleared from the ridge but brush and any lingering saturated lower slopes can still slow the approach",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Warmest, driest conditions of the season; brush is fully leafed out but the route stays consistently passable",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Drier air and fewer bugs, but shorter daylight and higher chance of an early-season storm cutting the window short",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Warm, humid mid-summer conditions with dense vegetation on approach; the mountain's southern aspect was significantly altered by the 2022 Bolt Creek Fire, changing footing and brush character on that side",
+     "probability": "Afternoon thunderstorms are possible in late summer; the exposed east ridge/summit block offers little shelter, so an early start and weather check are advisable"
+    },
+    "exposure": "Loose rock near the summit combined with steep timbered and brushy slopes below creates real rockfall and slip exposure on the Class 2-3 terrain; a helmet is recommended per available trip reports",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; the season (Jul-Sep) places climbing entirely outside the region's avalanche season, so no NWAC zone forecast is practically applicable",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official guidebook (e.g., Beckey's Cascade Alpine Guide) or Mountaineers route page was found that explicitly documents an 'East Ridge' line by that name; current online beta (2024-2025 trip reports) documents a Klinger Ridge/south-side approach instead — confirm current beta before relying on the east-ridge description.",
+     "Area prominence (836 ft) could not be independently corroborated from a second source; left unchanged.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.76326,
+    "peakLng": -121.42055,
+    "trailhead": "NF-6514-410 spur end (Beckler River road network)",
+    "trailheadLat": 47.776833,
+    "trailheadLng": -121.344633,
+    "trailheadDirection": "From the end of FS spur NF-6514-410 off Beckler River Road (FR-65) — confirm current road status with the Skykomish Ranger District"
+   },
+   "sling_rack": {
+    "cams": "small set to ~2in",
+    "nuts": "small stopper set",
+    "runners": "2-3 shoulder-length slings + webbing for anchors"
+   },
+   "alpine_draws": 2,
+   "rope_type": "single dynamic",
+   "rope_length_m": 30,
+   "rope_note": "Parties describe a Class 4 step near the summit col; parties have carried and used a rope plus webbing/slings for protection or a short rappel.",
+   "ascender": null,
+   "corrections": "Listed grade is Class 3 but multiple trip reports describe a Class 4 scramble step near the summit; flagging discrepancy for review.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Spur road end to Klinger Ridge",
+     "notes": "There is no trail from the car. The line goes straight into thick huckleberry toward the talus above, but the mossy streambed running alongside that brush is far easier travel even though the rock underfoot is slick. Follow the drainage and its talus up into a rock basin around 4,300 ft, then make a rising traverse across talus into a gully and climb a heathered slope beneath a cliff band, which dodges a slide-alder tangle, onto the open meadow crest above 4,600 ft. Fog sits in the lower basin well past sunrise, and there are no markers to steer by.",
+     "season": "July to October",
+     "hazards": [
+      "Slick moss in the lower streambed",
+      "Standing dead timber and heavy regrowth across the burned south side of Klinger Ridge",
+      "Morning valley fog on ground with no trail to follow",
+      "Loose, exposed granite at the summit notch",
+      "A short near-vertical downclimb with loose rock at the notch"
+     ],
+     "baseFinding": "The climbing starts at a notch just WEST of a prominent standing rock tower at about 5,300 ft, and the way to it is not the obvious one. Do not try to hold the literal east ridge crest — it cliffs out and does not go through as a route. From roughly 4,800 ft weave up through steep granite blocks and cross a final talus field to the notch, which is the gap immediately beside the one unmistakable tower on that stretch of crest. There is a decoy lower down: a single cairn near the meadow crest around 4,600 ft pulls parties off the direct line, and staying in the gully to about 4,800 ft is the straighter way. The move that confirms you are at the base is a DOWNclimb rather than a climb — a short, steep, near-vertical step drops off the south side of the notch, loose in places and the most exposed ground on the route, and only once you are through it does the gully below the summit block open up for the final class 3-4 scramble to the top."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Klinger Ridge crest toward the east summit",
+     "notes": "From Klinger Ridge at roughly 4,600 ft - open meadow and boulder terrain - continue along/near the ridge crest toward the east summit. Loose rock and a burn-scarred south-facing slope on Klinger Ridge from the 2022 Bolt Creek Fire; sustained off-trail route-finding, with fog/whiteout a real risk since there is no trail to follow."
+    },
+    {
+     "n": 2,
+     "label": "Granite blocks and talus traverse to the notch",
+     "notes": "From about 4,800 ft below the summit, weave through steep granite blocks and a final talus traverse to a notch just west of a prominent rock tower. Exposed granite/talus near the summit notch."
+    },
+    {
+     "n": 3,
+     "label": "Downclimb the step to the true summit",
+     "notes": "Downclimb a short, steep/near-vertical step - exposed and loose in places, helmet warranted - to gain the south side and the true summit."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 1000,
+     "name": "Beckler River Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6510 and FR 6514, is what gets you to Eagle Rock, to the road end at roughly 3,500 ft used for Grotto Mountain, and to the gentle back-door approach to Eagle Lake. If the campground is full or closed for the season, the upper Beckler road corridor and its spurs are national forest land where dispersed camping is allowed with no permit — the standing rules are to camp at least 100 ft from water, use an existing pullout rather than making a new clearing, stay a maximum of fourteen days in one spot, and obey whatever fire restriction is current. Those spurs are rough, gated in places, and can be locked without warning, so check the gate on your way in rather than discovering it on your way out. Being a valley campground it says nothing about conditions up high; expect snow on the FR 6514 spurs well into spring.",
+     "water": "Potable water from a solar pump at the campground, and the Beckler River itself.",
+     "permit": "Standard national forest campground fee through the federal reservation system. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Open roughly May through September, so it is not a winter option. Fourteen-day stay limit, no fireworks, and a food storage order applies — check the current campfire ban.",
+     "capacity": "26 sites, 22 single and four double, all reservable. Picnic tables and vault toilets. No stock or pack animals."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_hibox_mountain_standard",
+  "name": "Standard Scramble",
+  "area_id": "wa_hibox_mountain",
+  "findings": [
+   "A pin named 'Rampart Lakes' sits at the wrong place (research note)."
+  ],
+  "gpx_summary": "1228 points; 0 of 3 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_hibox_mountain_standard",
+   "area_id": "wa_hibox_mountain",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": 47.431745,
+   "lng": -121.300825,
+   "aspect": "S",
+   "season": "Jul-Oct",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe early season",
+    "rope optional for summit block"
+   ],
+   "hazards": [
+    "exposed Class 3 notch/chimney on the summit block",
+    "loose talus and scree above ~4,600 ft on Box Ridge's south face, with real rockfall risk onto parties below",
+    "a deceptive gully on the SW side of the summit block that cliffs out at Class 4 — a common wrong-turn trap; stay climber's right of it",
+    "unsigned, easy-to-lose boot path through brushy avalanche clearings just beyond Rachel Lake, especially confusing in fog or on descent",
+    "lingering snow and ice in the upper gully and basin into early summer"
+   ],
+   "verif": null,
+   "overview": "Hibox Mountain (6,548 ft) is the high point of Box Ridge, a rugged sub-ridge of the Alpine Lakes Wilderness about 5 miles east of Snoqualmie Pass, rising above the popular Rachel Lake basin. It's one of the most-climbed scrambles near I-90, combining an easy trail approach with a steep, loose Class 2-3 boot path up Box Ridge and a short, exposed Class 3 summit block. Summit views take in Rampart Ridge, Alta Mountain, Three Queens, Mount Thompson, Rachel Lake, and the Stuart Range.",
+   "beta": "From the Rachel Lake trailhead, follow the maintained Rachel Lake Trail for roughly 2 miles to the first avalanche-chute clearing. A boot path for Hibox leaves the main trail here (or at the second chute crossing) and climbs steeply but stays class 2 through timber to near treeline. Above the trees, go right around the first band of cliffs, then left around a rock outcrop, continue through more timber to a second cliff band, and take the gully on the right to gain the upper mountain. From there head right (east) along the south side of the summit rocks to a gully on the east side, which is climbed with a bit of class 3 near the top to reach the summit. Route-finding is the main challenge; there is no continuous trail above the boot path.",
+   "turnaround": "Turn around at the summit block if exposure feels beyond your comfort.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 3",
+   "ice_grade": null,
+   "gain_ft": 3900,
+   "loss_ft": 3800,
+   "dist_km": 5.6,
+   "max_angle": 47,
+   "rappels": "None; the route is down-climbed via the same line as the ascent.",
+   "commitment": "II",
+   "face": "South Face / Southwest Ridge",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": null,
+   "descent": "Reverse the boot path down Box Ridge to Rachel Lake, then out the Rachel Lake Trail to the trailhead.",
+   "obj_haz": [
+    "routefinding",
+    "off-trail travel",
+    "scrambling exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.4007,
+     "lng": -121.2839,
+     "elev": 2800,
+     "name": "Rachel Lake Trailhead",
+     "note": "",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.4157642,
+     "lng": -121.340643,
+     "name": "Rampart Lakes",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.431745,
+     "lng": -121.300825,
+     "elev": 6548,
+     "name": "Hibox Mountain Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6548
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 8.5,
+    "summitTimeHrs": 8.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "Hike the Rachel Lake Trail to the first avalanche clearing, pick up the unmarked but well-used Hibox boot path climbing north up steep timber and talus onto Box Ridge, then follow …",
+      "fromTo": "Rachel Lake to Hibox summit, car-to-car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No real rack; a short rope and a sling optional for the exposed summit block.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "navigation"
+   ],
+   "pro_tips": [
+    "Bring a helmet for the whole talus/boot-path section, not just the summit block — rockfall from parties above is a known hazard",
+    "If you lose the boot path near the avalanche clearings past Rachel Lake, backtrack rather than bushwhacking blind — the real trail reappears under tree canopy a short distance past the obvious false path",
+    "Keep climber's right of the gully below the summit block on both ascent and descent; it cliffs out at Class 4 and is a frequent source of epics"
+   ],
+   "watch_out": [
+    "The correct boot path junction beyond Rachel Lake is easy to miss — a false trail through brush appears first; keep going until you're back under tree canopy to find the real path",
+    "Don't be lured into the SW gully below the summit block — it cliffs out at Class 4/5; the standard line stays climber's right",
+    "Loose talus above 4,600 ft sheds rock easily; space parties out and wear a helmet the whole way up, not just at the summit block"
+   ],
+   "pro_needs": "Minimal.",
+   "best_season": "July through early October; snow can linger in the upper gully and basin into July in heavy-snowpack years",
+   "high_point_ft": 6548,
+   "aid_grade": null,
+   "approach": "Start at the Rachel Lake Trailhead (Trail #1313, elev. ~2,800 ft) at the end of Box Canyon Road/FR-4930. Follow the Rachel Lake Trail as it climbs gently through forest along the Box Canyon Creek drainage — the grade is easy and well-graded here, mostly Class 1 hiking. At roughly 2–2.2 miles and about 450–500 ft of gain (~3,300 ft elevation), the trail crosses a brushy avalanche-path clearing where Hibox's summit block comes into view on the ridge to the northeast; this clearing is the key landmark. Just past it (some parties note it's after the second such clearing), watch on the right/climber's-right side of the trail for an unmarked but well-established boot path (the 'Hibox climbers' path') leaving the maintained trail and heading northeast/uphill into the forest — it's easy to walk past if you're not looking for it. From here the character changes completely: the bootpath climbs steeply (mostly Class 2, with fallen timber to step over) for about 500 vertical feet before breaking out of the trees near a band of cliffs around 5,300 ft. Stay right of this first rock band, then work left around a rock outcrop, continuing through patchy timber to a second, higher cliff band; a gully on the right provides passage through it. Above this the trail opens into a large sloping subalpine meadow (wildflowers in season) that funnels into a loose talus/scree slope — this is the most tedious and slip-prone section of the route, so careful foot placement matters more than pace. A thready boot path threads up through the talus to the south side of the summit block. There is no reliable water past the lower forest/creek section, so carry what you need from the car or treat water low on the mountain. The route-finding through the two cliff bands and the avalanche-path junction low on the trail are the two spots parties most often go astray; a GPS track or recent trip report beta is worth having.",
+   "descent_text": "Descend by reversing the ascent line rather than glissading the scree, which is loose and eroded. From the summit, downclimb the short exposed notch/cleft back to the south side of the summit block (good rock, low exposure, easy Class 3 moves), then pick your way back down through the loose talus/scree field to the sloping meadow. Some parties descend via a slightly different line on the east side of the summit block/east ridge before rejoining the ascent boot path lower down — functionally the same route, just avoid cutting new paths through the scree to limit erosion. Continue down through the two cliff bands (reversing right/left as on the way up) and back into the timber, staying alert for the boot path's exit point onto the maintained Rachel Lake Trail near the ~3,300 ft avalanche clearing — it's easy to miss in the trees when descending. Once back on Rachel Lake Trail #1313, it's an easy, well-graded 2+ miles back to the trailhead. This is a walk-off/downclimb route with no rappelling required — the summit block's only technical move is a short, low-exposure Class 3 downclimb, not a rappel. Watch the weather: afternoon thunderstorms are common in this range and parties often report hurrying off the loose upper slopes ahead of incoming storms.",
+   "bail": "Reverse the boot path down Box Ridge to the Rachel Lake Trail and walk out the trail to the trailhead.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1 (trail)",
+     "notes": "~2 miles of maintained Rachel Lake Trail from the trailhead to the first avalanche-chute clearing.",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Unmarked boot path leaves the main trail near the avalanche-chute crossing and climbs steeply through timber; stays class 2 to near the forest edge.",
+     "pitch": "Boot path to treeline"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Go right around the first cliff band, left around a rock outcrop, through more timber to a second cliff band, then up a gully on the right to gain the upper mountain.",
+     "pitch": "Cliff bands"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Traverse east along the south side of the summit rocks to a gully on the east side; climb it with a short class 3 section near the top to reach the true summit (map-measured up to ~47 degrees in the steepest section).",
+     "pitch": "Summit gully"
+    }
+   ],
+   "itinerary": {
+    "cal": "Snow-free and easiest roughly July through October; the boot path can hold snow into early summer in big years, so check recent trip reports before a June/early-July attempt.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Rachel Lake Trail to the first avalanche clearing, pick up the unmarked but well-used Hibox boot path climbing north up steep timber and talus onto Box Ridge, then follow the ridge crest east to a short Class 3 scramble on solid rock at the summit block. Reverse the same line to descend. Snow-free bootpath is easy to follow in summer season; the whole outing is a long single day, not an overnight.",
+      "hours": 8.5,
+      "miles": 7,
+      "title": "Rachel Lake to Hibox summit, car-to-car",
+      "gainFt": 3900,
+      "lossFt": 3900,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Start at ~2,800 ft on the Rachel Lake Trail (FR 4930 trailhead)."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Reach boot-path junction",
+        "detail": "About 2 mi in, near the first avalanche clearing where the unmarked Hibox climbers' path breaks off north."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Top out on Box Ridge",
+        "detail": "Steep, sustained boot path through timber and loose talus gains the ridge crest."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit block",
+        "detail": "Short Class 3 scramble on solid rock to the 6,548 ft summit; broad views of Rampart Ridge and the Stuart Range."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the boot path down Box Ridge to the Rachel Lake Trail."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Total roughly 8-9 hours car-to-car for a fit party."
+       }
+      ],
+      "objective": "Summit Hibox Mountain via Box Ridge boot path"
+     }
+    ],
+    "totalNote": "A single long day car-to-car: ~7 mi round trip, 3,900 ft gain, typically 6-10 hours depending on pace and summit time — this is not an overnight trip for the standard route."
+   },
+   "access": {
+    "fees": "$5/vehicle/day fee, or a Northwest Forest Pass / America the Beautiful Interagency Pass, required at the Rachel Lake Trailhead",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Campfires prohibited within 0.5 mile of Rachel Lake and everywhere above 5,000 ft; standard wilderness group-size and Leave No Trace rules apply",
+    "permit": "Free self-issue wilderness permit required at the trailhead kiosk when entering the Alpine Lakes Wilderness (day or overnight); non-quota for this trailhead",
+    "closures": "FR 4930 (Box Canyon Rd) and Kachess Lake Rd are not maintained in winter and can be snowed-in or gated from late fall through late spring depending on snowpack",
+    "group_limit": 12,
+    "landManager": "Okanogan-Wenatchee National Forest — Cle Elum Ranger District; the upper route and summit lie within the Alpine Lakes Wilderness",
+    "land_manager": "Okanogan-Wenatchee National Forest — Cle Elum Ranger District; the upper route and summit lie within the Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Forest Road 4930 (Box Canyon Road)",
+    "status": "gravel, unmaintained/gated in winter",
+    "driveNote": "From I-90 Exit 62, follow Kachess Lake Rd north ~5 miles toward Kachess Campground, continuing onto FR 4930 for about 4.2 miles to the Rachel Lake Trailhead (el. ~2,800 ft)."
+   },
+   "climate": {
+    "forecastZone": "NWAC Snoqualmie Pass zone (nearest official avalanche/mountain weather forecast zone)"
+   },
+   "emergency": {
+    "county": "Kittitas",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest — 803 W 2nd St, Cle Elum, WA 98922, (509) 852-1100",
+    "nearestHospital": "Kittitas Valley Healthcare (24-hr ER), Ellensburg, WA — roughly 35 miles / 45 min from the Rachel Lake Trailhead via I-90",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "weekends July-August, driven by Rachel/Rampart Lakes day-hikers and backpackers rather than Hibox scramblers specifically",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Rachel Lake trailhead itself is heavily used (one of the busier Alpine Lakes Wilderness trailheads, often full on summer weekends), but traffic thins sharply once climbers leave the maintained trail for the off-trail scramble to Hibox's summit; likely on the order of a few dozen scramble parties per season based on trip-report frequency, well under the lake/basin hiker volume"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Able to sustain a ~7 mile round trip with roughly 3,900 ft of gain, including a steep, loose off-trail ascent above Rachel Lake",
+     "packWeight": "Light day pack (~15-20 lb) with layers, since the route is a long day-trip push rather than an overnight carry"
+    },
+    "approachTime": "Approach on the Rachel Lake Trail for about 2 miles before leaving the trail for Hibox's south-slope scramble; full day round trip (~8 hrs)",
+    "requiredSkills": [
+     "Class 3 scrambling on loose/exposed rock",
+     "off-trail route-finding through talus and boot-track that is easy to lose",
+     "comfort on an exposed summit block with real fall consequence",
+     "early-season snow travel judgment if attempting before the basin fully melts out"
+    ],
+    "experienceLevel": "Comfortable with sustained Class 3 scrambling and route-finding off-trail through talus, including an exposed summit block near the top; not a beginner's first scramble"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "July through September, once the basin has melted out enough for stable talus and dry rock on the summit block",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Basin can still hold lingering snow early in the month; conditions firm up as July progresses",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Prime scramble season — driest talus and rock, most stable footing on the summit block",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Good conditions until snow returns; watch for an early season-ending storm",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Transitional east-slope climate; can be snow-filled in the basin outside the summer window and turns snowbound again once fall storms return",
+     "probability": ""
+    },
+    "exposure": "Real fall consequence on the exposed Class 3 summit block, plus loose rock lower on the scramble; a slip on the summit block or in the loose upper section could result in a serious fall",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (Snoqualmie Pass is the nearest NWAC forecast zone but does not issue forecasts for this route's July-September climbing season)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed first-ascent history found",
+     "Reported round-trip mileage varies by source (8-10 mi) depending on where parties leave the maintained trail",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.431745,
+    "peakLng": -121.300825,
+    "trailhead": "Rachel Lake Trailhead",
+    "trailheadLat": 47.4012,
+    "trailheadLng": -121.2848,
+    "trailheadDirection": "Start at the Rachel Lake Trailhead (Trail #1313, elev. ~2,800 ft) at the end of Box Canyon Road/FR-4930."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Rachel Lake Trail to the avalanche clearing, then the Hibox climbers' path over two cliff bands",
+     "notes": "Start at the Rachel Lake trailhead, Trail #1313, about 2,800 ft, at the end of Box Canyon Road / FR-4930. The trail climbs gently through forest along Box Canyon Creek, easy class 1 walking.\n\nAt roughly 2 to 2.2 miles and about 3,300 ft the trail crosses a brushy avalanche-path clearing. That clearing is the key landmark, because Hibox's summit block comes into view on the ridge to the northeast from it.\n\nAbove the boot path the tread climbs steeply, mostly class 2 with fallen timber, about 500 vertical feet to a band of cliffs near 5,300 ft. Stay RIGHT of that first band, then work LEFT around a rock outcrop, continue through patchy timber to a SECOND, higher cliff band, and take the gully on the RIGHT through it. Above, a large sloping subalpine meadow funnels into loose talus and scree.\n\nNo reliable water past the lower forest. About 5.6 km and 3,900 ft.",
+     "distMi": 3.5,
+     "gainFt": 3900,
+     "season": "July to October",
+     "hazards": [
+      "An unsigned, easy-to-lose boot path through brushy avalanche clearings, especially confusing in fog and on descent",
+      "A deceptive gully on the southwest side of the summit block that cliffs out at class 4 — stay climbers' right of it",
+      "Loose talus and scree above about 4,600 ft with real rockfall risk onto parties below",
+      "An exposed class 3 notch and chimney on the summit block, whose downclimb is the part to think about before committing",
+      "Lingering snow and ice in the upper gully and basin into early summer"
+     ],
+     "baseFinding": "THE CLEARING IS THE FIRST TEST AND THE SUMMIT BLOCK IS ITS PROOF. At roughly 2 to 2.2 miles the maintained trail crosses a brushy avalanche clearing, and from it Hibox's summit block is visible on the ridge to the NORTHEAST. Just past that clearing — some parties say after the SECOND such clearing — watch the RIGHT, climbers'-right, side of the trail for an unmarked but well-established boot path heading northeast and uphill into the forest. It is easy to walk past if you are not looking.\n\nTHE TWO CLIFF BANDS ARE A COUNTED SEQUENCE, WHICH IS WHAT YOU WANT IN FOG: first band, pass it on the RIGHT; then LEFT around a rock outcrop; second band, take the gully on the RIGHT. Two bands, right then left then right. If you have passed only one band you are not yet on the upper mountain.\n\nAND HERE IS THE WRONG-TURN TRAP THAT MATTERS MOST, at the top: the talus tops out on the SOUTH side of the summit block, and the rock straight above you there is steeper and more broken than it looks. That is the spot where parties commit to the wrong line, and there is a deceptive gully on the SOUTHWEST side of the block that cliffs out at class 4. Do not climb what is above you.\n\nWHAT TO DO INSTEAD, WHICH IS THE ACTUAL BASE FINDING: work RIGHT, staying along the south side of the rock and heading EAST, on loose talus over a sloping bed, until a reasonable gully opens on the EAST side of the block. That east gully is the route. It stays easy until the top, where a short NOTCH or narrow chimney gives a bit of genuine class 3 on good, solid holds to a small summit platform.\n\nAND A DESCENT NOTE THAT BELONGS WITH THE FINDING: the boot path through the brushy avalanche clearings is easy to lose on the way down, especially in fog. Look back at the junction on the way up."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2",
+     "label": "South side of the summit block",
+     "notes": "The talus slope tops out on the south side of the summit block. Do not try to climb the rock straight above you here — the direct south side is steeper and more broken than it looks, and it is the spot where parties commit to the wrong line. Instead line yourself up with the south side of the block and prepare to traverse."
+    },
+    {
+     "n": 2,
+     "class": "Class 2",
+     "label": "Traverse east under the block",
+     "notes": "Work right, staying along the south side of the rock and heading east, until a reasonable gully opens on the east side. The traverse is on loose talus and scree over a sloping bed — the most slip-prone ground on the route, where deliberate foot placement matters more than speed. It is also the last place to turn around easily."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "East gully and summit notch",
+     "notes": "Ascend the gully on the east side of the block. It stays easy until the top, where a short notch or narrow chimney runs up to the summit rock and gives a bit of genuine Class 3 scrambling. The rock here is reported as good and the holds solid, but the position is exposed and the summit itself is a small platform with steep ground on several sides. The downclimb of this last step is the part to think about before committing to it, and wet or icy rock changes the character of the notch entirely."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4700,
+     "name": "Rachel Lake designated sites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800 ft. The trail runs an easy few miles up Box Canyon Creek and then climbs hard and rootily to the lake at four and a bit miles. Alta is reached by continuing over the ridge crest above the lake; Hibox leaves the trail lower down, at around 3,300 ft, on a steep boot path onto Box Ridge. Both are day scrambles from the car for a fit party, so a night here is about a civilised start or a plan that ran long. The honest caveat is the state of the basin: it is one of the most hammered lake basins in the wilderness, the parking lot fills by mid-morning in summer, and the designated sites exist because dispersed camping wrecked the shoreline. Snow-free window is roughly July into October.",
+     "water": "The lake and Box Canyon Creek are reliable all season. Treat it.",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the Rachel Lake trailhead, filled out at the box and carried for the trip. Camping is restricted to designated sites within half a mile of Rachel Lake and Rampart Lakes. Campfires are banned outright within half a mile of Rachel Lake and everywhere above 5,000 ft on this side of the crest, so plan on stoves regardless of where you end up. Party size capped at 12. Northwest Forest Pass or interagency pass for the trailhead, or a small daily fee. No drones. As of August 2026 the Box Canyon road and this trailhead were inside a wildfire closure order affecting a large part of the eastern Alpine Lakes; confirm the trailhead is actually open before driving to it.",
+     "capacity": "Multiple established sites around the lake, but the basin is visibly damaged from decades of overuse and the hardened sites are what is left"
+    },
+    {
+     "elev": 2275,
+     "name": "Kachess Campground, I-90 exit 62",
+     "role": "main",
+     "type": "camp",
+     "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving over the pass at four in the morning. It is a lakeside family campground rather than anything resembling a climbers' camp, and it fills on summer weekends, so book rather than arrive hopeful. It sits low, on the shore of Kachess Lake, well below the trailhead. If it is full there is unreserved dispersed camping along the logging road toward the Rachel Lake trailhead, which is rough and unimproved but free and closer to the walk-in.",
+     "water": "Drinking water is provided during the operating season.",
+     "permit": "Standard campground fee, most sites reservable in advance and the remainder first-come. No wilderness permit required to sleep here and no trailhead pass needed for the campground itself. Seasonal operation only — it closes outside the summer months, so it is not a winter option. As of August 2026 this campground was among those closed by the wildfire order covering the north end of Kachess Lake; check it is open before relying on it.",
+     "capacity": "Large developed Forest Service campground of roughly 150 tent and RV sites plus a group site; a mix of reservable and first-come, and very busy in summer"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_skokomish_standard",
+  "name": "Standard Scramble (Putvin Trail / Lake of the Angels approach)",
+  "area_id": "wa_mount_skokomish",
+  "findings": [
+   "Waypoints sit on the Mildred Lakes trail; the route now uses the Putvin trail / Lake of the Angels approach."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_mount_skokomish_standard",
+   "area_id": "wa_mount_skokomish",
+   "name": "Standard Scramble (Putvin Trail / Lake of the Angels approach)",
+   "discipline": "scrambling",
+   "grade": "Class 3 (steep snow early season)",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 463,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "SE/S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "trekking poles"
+   ],
+   "hazards": [
+    "Notoriously rotten, loose rock ('Olympic choss') throughout every approach and the summit scramble - test holds",
+    "Steep snow-filled gullies below the summit saddle hold avalanche/sluffing potential well into summer (even August/September slides have been reported)",
+    "Unmaintained, brushy, easy-to-lose way-paths on the Mildred Lakes and Flapjack Lakes sides requiring off-trail navigation",
+    "Post-fire hazards (standing dead/burned trees, rockfall, landslides) in the Bear Gulch Fire closure area",
+    "Exposed 'hanging'/'fingertip traverse' section near the true summit on the standard route",
+    "Mountain goats near Lake of the Angels and the peak's base"
+   ],
+   "verif": null,
+   "overview": "A rugged, three-summited peak (south summit is highest) in the southeastern Olympics within the Mount Skokomish Wilderness, straddling the Olympic National Park boundary near Mount Stone. Built of rotten Eocene pillow basalt, it is reached by a tough, largely off-trail approach and a loose Class 2-3 scramble to the broad summit block. The standard Putvin approach was never inside the 2025 Bear Gulch Fire closure; the Mildred Lakes trail reopened in July 2026, while the Flapjack Lakes side beyond the Staircase developed area stays closed for repairs.",
+   "beta": "From the Putvin Trailhead on Hamma Hamma River Road, the Putvin Trail climbs about 3,400 ft in roughly 3.5 miles to Lake of the Angels, including a very steep, sometimes near-vertical headwall requiring hand-and-foot scrambling on roots and rock. Beyond the lake, skirt the north/west shore and climb alpine slopes and a scree-and-snow gully (climber's-right gully) to a roughly 5,800 ft saddle at the peak's northeast/east side. From the saddle, cross scree, grass, and rock slopes southwest and scramble the southeast slope/south ridge on generally rotten, loose rock (Class 2, locally 3 to 3+) to the summit. The route has three summit horns; parties have mistaken a lower false summit for the true (south) high point. Snow lingers on the gully and saddle well into summer and is reported as firm/frail, so an ice axe is commonly carried into July.",
+   "turnaround": "Set a hard turnaround time before starting based on your pace on the steep Putvin Trail and the current snow/ice state of the saddle gully — the descent is long and exposed to loose rock and heat, and losing daylight on the headwall or ridge significantly raises the risk of a fall.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 2-3 (unroped scramble; exposed Class 3 ridge crest near the summit)",
+   "ice_grade": null,
+   "gain_ft": 5100,
+   "loss_ft": 5100,
+   "dist_km": 5.2,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "Southeast Slope / South Ridge",
+   "permit": null,
+   "comms": null,
+   "descent": "Reverse the route, carefully down-climbing the Class 3 summit section and descending the gullies/snow back toward camp.",
+   "obj_haz": [
+    "Rockfall / notoriously loose, rotten rock",
+    "Exposure on the summit ridge crest",
+    "Route-finding (Valley of Heaven approach and false NE summit horn)",
+    "Lingering early-season snow on alpine slopes above the lake"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.569916,
+     "lng": -123.273736,
+     "elev": 2000,
+     "name": "Huckleberry Creek crossing",
+     "note": "Trail drops into a brushy ravine to ford Huckleberry Creek — last reliable water before the root-ladder climb, and easy to lose in poor light.",
+     "type": "Water",
+     "distMi": 1.4
+    },
+    {
+     "lat": 47.565768,
+     "lng": -123.283656,
+     "elev": 4100,
+     "name": "Root-ladder ridge highpoint (4,100 ft)",
+     "note": "Crux of the approach: gains roughly 1,000 ft in about a half mile on hand-and-foot root and rock ladders (one pitch near 75-80 degrees) to the trail's high ridge crest.",
+     "type": "Junction",
+     "distMi": 2.5
+    },
+    {
+     "lat": 47.5589791,
+     "lng": -123.2998876,
+     "elev": 3850,
+     "name": "Mildred Lakes basin (Lower/Upper Mildred Lake)",
+     "note": "Trail drops ~250 ft off the ridge to Lower Mildred Lake then continues past Middle to Upper Mildred Lake in a wooded bowl between Mount Lincoln and Mount Cruiser; informal camps on rock benches, last dependable water before going off-trail.",
+     "type": "Campsite",
+     "distMi": 4.3
+    },
+    {
+     "lat": 47.565955,
+     "lng": -123.298602,
+     "elev": 4300,
+     "name": "Off-trail brush slope above the lakes",
+     "note": "Route leaves the lakeshore path entirely here; slide-alder and heather bushwhacking, very brushy as on neighboring Mt. Cruiser, and much easier with lingering snow cover.",
+     "type": "Hazard",
+     "distMi": 4.8
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5500,
+     "name": "Basin/saddle below Skokomish's south peak",
+     "note": "Gain the open basin and connecting saddle beneath the summit block; footing turns to loose, notoriously rotten rock from here up.",
+     "type": "Junction",
+     "distMi": 5.9
+    },
+    {
+     "lat": 47.583284,
+     "lng": -123.234276,
+     "name": "Putvin Trailhead (Trail #813, FR-25/Hamma Hamma Rd)",
+     "note": "",
+     "type": "Trailhead"
+    },
+    {
+     "lat": 47.591087,
+     "lng": -123.294132,
+     "elev": 6434,
+     "name": "Mount Skokomish (South Peak, true summit)",
+     "type": "Summit",
+     "elevFt": 6434
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 13.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 3.5,
+    "recommendedStart": "5:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3.5,
+      "note": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone.",
+      "fromTo": "Backpack in to Lake of the Angels camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "An early start lets you cache overnight gear at camp and climb light: scramble talus and side-hill terrain up toward the summit ridge, then a short class 2-3 section (rock is notor…",
+      "fromTo": "Summit push and hike out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack is needed for the standard scramble; an ice axe (and light crampons in early season) substitute for gear on the upper snow/gully sections.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "sturdy boots",
+    "navigation (map/GPS)",
+    "extra layers"
+   ],
+   "pro_tips": [
+    "Expect a rough, brushy approach — budget extra time off-trail.",
+    "Carry an ice axe early season for the snow gullies.",
+    "Helmet up for the loose Class 3 summit rock.",
+    "Near the summit, some parties cross an exposed section referred to as the 'hanging' or 'fingertip traverse' — respect it when wet or hurried."
+   ],
+   "watch_out": [
+    "Exposed loose Class 3 summit",
+    "Steep snow gullies early season",
+    "Brushy route-finding",
+    "Rockfall"
+   ],
+   "pro_needs": "No technical rock pro on the standard line; an ice axe is useful for early-season snow in the gullies.",
+   "best_season": "Mid-July through September after the gully snow has largely melted.",
+   "high_point_ft": 6434,
+   "aid_grade": null,
+   "approach": "The standard-route trailhead is the Putvin Trailhead (Trail #813) on Hamma Hamma Road (FR-25), about 11.8-12.1 miles west of Hwy 101, just past the lower Lena Lake trailhead across a concrete bridge, at roughly 1,600 ft elevation. Mount Skokomish's standard route goes via Putvin Trail and Lake of the Angels, not Mildred or Flapjack Lakes - those serve neighboring Mount Cruiser/Mount Lena out of the North Fork Skokomish/Staircase side. From the trailhead, Putvin Trail #813 is unmaintained for its last ~1.6 miles but well-traveled and easy to follow when snow-free; the tread is notably steep and narrow with unstable footing in spots as it climbs through forest. Around 1.5-2 miles in, the trail breaks into the open, grassy Whitehorse Creek basin and continues up to Lake of the Angels (about 3.5 miles and roughly 3,400 ft of gain from the trailhead, 2-2.5 hours at a moderate pace), a scenic alpine lake sitting in a cirque below Mount Stone and the Skokomish massif - this is the last reliable water source and the standard camp for an overnight trip. From the lake, climb westerly up pleasant alpine/heather slopes to a broad 5,800-ft saddle at the northeastern end of Mount Skokomish. From the saddle, a boot path/way-trail contours south and southwest across scree, grass, and rock benches around the east and south flanks of the peak, passing a large tarn, before turning to climb the final scree/rock slopes to the summit ridge. Total round-trip stats commonly cited are roughly 9-12 miles and about 5,000-5,100 ft of gain, with climbing parties reporting 3.5-5 hours up. Hazards: the narrow, eroded lower Putvin tread; lingering steep snow and real avalanche exposure on the upper slopes well into summer (reports note hazard even in August/September); and notoriously rotten 'Olympic choss' rock and loose scree/talus on the upper mountain and summit block, which is the crux of the route more than any single technical move.",
+   "descent_text": "Descend by reversing the ascent line: down the summit scree/rock to the saddle, then back along the boot path traverse across scree/grass/rock benches around the south and east flanks to the 5,800-ft saddle above Lake of the Angels, down to the lake, and out the Putvin Trail to the trailhead. This is a walk-off/downclimb - there is no rappelling anywhere on the standard scramble route. The main descent hazard is the same rotten rock and loose scree that makes the ascent tricky: downclimbing the exposed class 3 sections near the summit ridge crest is generally regarded as harder and more hazard-prone than climbing them, and parties should stay well left/south of the steeper cliffy drop-off noted on the north side of the upper mountain (parties specifically warn that contouring too far right/north near the ridge crest 'gets sketchy, exposed, and dangerous' and to cut west over the ridge instead). Watch for rockfall onto climbers below on the scree/talus sections, expect residual snow in the gullies and on the traverse into early summer (ice axe/crampons may be warranted), and budget real time for careful downclimbing rather than assuming a fast glissade-style descent - one party logged about 2.5 hours from summit back to the trailhead, but that was in good, snow-free conditions.",
+   "bail": "Retreat by reversing the route; bail from the approach basins if weather or snow conditions are poor.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2 (steep trail)",
+     "notes": "~3.5 mi, ~3,400 ft gain up along Boulder Creek, then into the Whitehorse Creek drainage; crosses three drainages early, then a steep, sometimes near-vertical headwall with root/rock scrambling.",
+     "pitch": "Trailhead to Lake of the Angels"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Skirt the lake's north/west shore, then ascend alpine slopes and a scree-and-snow gully (climber's-right) to the saddle NE/E of the peak; snow often lingers here into summer.",
+     "pitch": "Lake of the Angels to ~5,800 ft saddle"
+    },
+    {
+     "grade": "Class 2-3 (3+ in spots)",
+     "notes": "Cross scree, grass and rock slopes, then scramble loose, rotten rock up the south ridge to the true (south) summit; watch for a lower false summit/horn.",
+     "pitch": "Saddle to summit (southeast slope / south ridge)"
+    }
+   ],
+   "itinerary": {
+    "cal": "The Putvin trailhead sits on FR-25, the Hamma Hamma River road; check Olympic National Forest alerts before going, as this area has been affected by wildfire closures in recent years.",
+    "days": [
+     {
+      "n": 1,
+      "note": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone.",
+      "hours": 3.5,
+      "miles": 3.5,
+      "title": "Backpack in to Lake of the Angels camp",
+      "gainFt": 3400,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Set up basecamp at Lake of the Angels"
+     },
+     {
+      "n": 2,
+      "note": "An early start lets you cache overnight gear at camp and climb light: scramble talus and side-hill terrain up toward the summit ridge, then a short class 2-3 section (rock is notoriously rotten) to the top. After descending to camp, break camp and hike the brutal trail back out the same afternoon - a long but standard weekend pattern for this approach.",
+      "hours": 10,
+      "miles": 8.7,
+      "title": "Summit push and hike out",
+      "gainFt": 1700,
+      "lossFt": 5300,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Alpine start from camp",
+        "detail": "Light daypacks, overnight gear cached at camp."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base of summit scramble terrain",
+        "detail": "Talus, side-hilling, and contouring below the summit ridge on loose, rotten rock."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Summit",
+        "detail": "Class 2-3 finish; take care on the rotten rock near the top."
+       },
+       {
+        "time": "12:00 PM",
+        "label": "Back at camp",
+        "detail": "Down-climb the summit section carefully, then break camp and re-pack for the hike out."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Begin hike out",
+        "detail": "Full overnight pack back down the steep, rooted Putvin Trail."
+       },
+       {
+        "time": "4:00 PM",
+        "label": "Trailhead",
+        "detail": "End of trip."
+       }
+      ],
+      "objective": "Climb Mount Skokomish (6,434 ft) and return to the trailhead"
+     }
+    ],
+    "totalNote": "A 2-day, 1-night weekend trip: roughly 12 miles round trip with about 5,100 ft of cumulative gain, most parties backpacking in on day one and combining the summit push with the full hike-out on day two."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass required to park at the Mildred Lakes trailhead; no pass or fee is needed to park at the Putvin trailhead. Entering via Staircase/Olympic NP requires the $30 park entrance fee (7-day private-vehicle pass; $15 for a walk-in/bike individual pass) or an interagency pass, plus an $8 per person per night backcountry camping fee (booked via Recreation.gov) for Flapjack Lakes.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Standard Wilderness regulations apply (no bikes/motorized use, max group size limits, camp 200 ft from water). Mountain goats are frequently encountered around the peak's base and Lake of the Angels basin — do not approach or feed them; give them a wide berth as they can be aggressive toward hikers seeking salt.",
+    "permit": "No wilderness permit is required for day trips on Olympic National Forest land (Mildred Lakes, Putvin Trail). Camping at Lake of the Angels, which lies inside Olympic National Park, requires an Olympic National Park wilderness camping permit. If approaching via Flapjack Lakes inside Olympic National Park, an overnight wilderness camping permit is required, reservable on Recreation.gov for the Flapjack Lakes zone (bookable mid-April, camping dates mid-June through mid-October); contact the Wilderness Information Center at (360) 565-3100.",
+    "closures": "UPDATED (as of July 8, 2026): the Mildred Lakes Trail (#822) and Mildred Lakes Trailhead on FS-25 — along with the Mt. Rose Trail/Trailhead, Dry Creek East Trailhead, and the Staircase developed area (campground, ranger station, Rapids Loop Trail) — REOPENED on July 8, 2026 per a joint Olympic National Forest/Olympic National Park press release, ending the closure tied to the 2025 Bear Gulch Fire. Still CLOSED pending hazard-tree removal and infrastructure repair: wilderness trails beyond the developed Staircase area, including the North Fork Skokomish River Trail (from the Staircase Rapids Loop to Home Sweet Home) and the Flapjack Lakes Trail, with no reopening date on the park's fire-conditions page updated September 18, 2026, plus FS-2451 and the Copper Creek Trail (Olympic National Forest alert updated July 8, 2026). The Putvin Trail/Lake of the Angels approach, on a different drainage further north off Hamma Hamma River Road, was never part of this closure and remains the standard approach to Mount Skokomish. Always check the Olympic National Forest alerts page and NPS Olympic fire-conditions page before a trip, as backcountry trail status keeps changing as repair work continues through summer 2026.",
+    "group_limit": 12,
+    "landManager": "Olympic National Forest (Hood Canal Ranger District) for the Mildred Lakes and Putvin trailheads; Olympic National Park (Wilderness Information Center) for the Staircase/North Fork Skokomish/Flapjack Lakes side.",
+    "land_manager": "Olympic National Forest (Hood Canal Ranger District)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "passRequired": "None for day use; NPS wilderness permit for overnight camping.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness camping permit",
+     "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center."
+    }
+   },
+   "road": {
+    "name": "Hamma Hamma Road (FS Road 25)",
+    "status": "Paved for the first ~8 miles to the Lena Lake Trailhead, then gravel for ~4 more miles to the Putvin Trailhead",
+    "driveNote": "Trailheads are commonly accessed via the Hamma Hamma Road; confirm current road and trailhead status with Olympic National Forest.",
+    "seasonalGate": "Not actively gated but not maintained/plowed in winter; washouts can necessitate higher clearance after storms"
+   },
+   "climate": {
+    "fall": "Shortening days with increasing rain/snow by October.",
+    "spring": "Significant avalanche hazard on steep gully/headwall terrain; heavy, wet snow.",
+    "summer": "Best climbing window (Jun-Sep); snow patches can persist in the saddle gully into July.",
+    "winter": "Heavy snowfall, high avalanche danger, and the access road is not maintained.",
+    "typical": "Southeastern-Olympic climate; wetter than the eastern rain shadow with rapid weather changes.",
+    "bySeason": {
+     "fall": "Short shoulder season; early storms possible.",
+     "spring": "Heavy snow in gullies and basins; full snow conditions.",
+     "summer": "Best window; snow gives way to rock and brush.",
+     "winter": "Full winter conditions; rarely attempted."
+    },
+    "forecastZone": "Olympic Mountains (southeast)"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to nonexistent on all approaches once off Hamma Hamma River Road/FS-25; the Flapjack Lakes and North Fork Skokomish trails beyond the Staircase developed area remain closed after the 2025 Bear Gulch Fire, so check closure status before using that side.",
+    "county": "Mason County, WA",
+    "rangerStation": "Olympic National Forest, Hood Canal Ranger District - Quilcene Office, 295142 Highway 101 S, Quilcene, WA 98376, (360) 765-2200; for the Staircase/Flapjack side, Olympic NP Wilderness Information Center, (360) 565-3100",
+    "nearestHospital": "Mason General Hospital (Mason Health), 901 Mountain View Dr, Shelton, WA 98584 - 24/7 Level IV trauma emergency department",
+    "sheriffDispatch": "Mason County Sheriff's Office non-emergency: (360) 426-4441 (dial 911 for emergencies)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; even peak midsummer weekends see minimal traffic because of the brutal, unmaintained approach",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Unknown exact count - trip-report scarcity suggests well under 50 parties per season, making it one of the least-traveled standard routes in the Olympics"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long, sustained approach on a rough, brushy, unmaintained trail (commonly described as among the toughest unmaintained trails in the Olympics) with significant elevation gain to the basin below the peak; commonly done as an overnight/multi-day trip rather than a single push",
+     "packWeight": "Overnight-capable pack (camping gear plus scrambling kit) since the approach is typically spread over 2-3 days; expect 30-40+ lb loads"
+    },
+    "approachTime": "Multi-hour to multi-day; frequently done as a 2-3 day trip given the brushy, unmaintained approach into the basins below the peak - allow a long half-day or more just to reach camp before any scrambling",
+    "requiredSkills": [
+     "Exposed Class 3 scrambling on loose, rotten Olympic rock",
+     "Off-trail route-finding through brush with map/compass or GPS (trail is unmaintained/hard to follow)",
+     "Steep snow travel and self-arrest with an ice axe for early-season gully conditions",
+     "Self-sufficiency / remote self-rescue judgment given the terrain is far from help",
+     "Comfort with rockfall-prone terrain"
+    ],
+    "experienceLevel": "Solid Class 3 scrambler with genuine off-trail/bushwhack route-finding experience - not a beginner objective given the remote, unmaintained approach and loose summit scrambling"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, after gully snow has largely melted",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow is usually clearing through the month, but early-to-mid July can still carry lingering steep snow in the gullies; conditions improve steadily as the month progresses",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Steep snow typically still fills the approach gullies and basins, and brush lower down may not yet be passable; significant slip/slide exposure without full snow-travel skills",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Driest, most stable window with gully snow generally melted out and the best rock/brush travel conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still favorable and typically dry, but shorter daylight and increasing chance of early fall weather changes",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Olympics-influenced maritime weather: wetter, cloudier conditions can linger into early summer before drier, warmer patterns take over July-September",
+     "probability": "Sudden marine fog or weather changes can roll in with little warning even in summer; afternoon thunderstorms are less common here than in the Cascades but not impossible"
+    },
+    "exposure": "Exposed Class 3 scrambling on loose, rotten Olympic rock near the summit where a fall would be serious given the poor rock quality and remoteness; the steep snow gullies on the approach carry real slip/slide fall risk into early summer and require ice axe and self-arrest competence",
+    "avalanche": {
+     "zone": "N/A for non-glaciated terrain, but the summit-saddle gullies carry real wet-slide/sluffing avalanche potential well into the summer climbing season (slides have been reported even in August/September) — assess snow conditions on-site rather than assuming off-season safety",
+     "byMonth": {
+      "July": "Steep snow in the saddle gullies - wet slides and sluffs possible",
+      "June": "Steep snow in the saddle gullies - wet slides and sluffs possible",
+      "August": "Lingering gully snow can still slide - assess on site",
+      "September": "Lingering gully snow can still slide - assess on site"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No recent (post-2020) trip reports specifically documenting the Mildred Lakes-to-summit gully line as named in this route's title - most current beta describes the Putvin/Lake of the Angels line instead",
+     "Exact reopening date for the Bear Gulch Fire closure (currently set to expire Oct 1, 2026) is subject to change - verify with Olympic National Forest alerts before planning a trip",
+     "Precise prominence figure varies slightly by source (1,154-1,174 ft); used PeakVisor/Peakbagger's 357 m (~1,171 ft) as most consistent",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.591067,
+    "peakLng": -123.293972,
+    "trailhead": "Putvin Trailhead",
+    "trailheadDirection": "The real standard-route trailhead is the Putvin Trailhead (Trail #813) on Hamma Hamma Road (FR-25), about 11.8-12.1 miles west of Hwy 101, just past the lower Lena Lake trailhead across a concrete bridge, at roughly 1,600 ft elevation."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none (unroped)",
+   "rope_length_m": null,
+   "rope_note": "Typical Class 2-3(3+) Olympic scramble: side-hilling, contouring, talus, rotten rock via Putvin Trail/Lake of the Angels. Steep snow lingers in the approach gully/headwall into early summer.",
+   "ascender": null,
+   "corrections": "Ice axe need for early-season steep snow is inferred from the grade note, not from an explicit trip-report gear list.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Putvin Trail to Lake of the Angels, then west to the saddle north of Point 5945",
+     "notes": "THIS IS THE STANDARD APPROACH AND THE ROUTE'S WAYPOINT LIST DESCRIBES A DIFFERENT ONE. Published and trip-report accounts are consistent that Mount Skokomish's standard route goes via the Putvin Trail and Lake of the Angels. The Putvin Trailhead (Trail #813) is on Hamma Hamma Road (FR-25), about 11.8-12.1 miles west of US-101, just past the lower Lena Lake trailhead across a concrete bridge, at roughly 1,600 ft. The trail is unmaintained for its last stretch but well-travelled and easy to follow when snow-free — steep, narrow, unstable footing in places through forest. Around 1.5-2 miles it breaks into the open grassy Whitehorse Creek basin, then climbs to Lake of the Angels at about 4,850-4,920 ft, roughly 3.5 miles and 3,400 ft of gain, 2-2.5 hours at a moderate pace. That is the last reliable water and the standard camp.",
+     "season": "Roughly Jun-Sep, and this peak holds avalanche-capable snow in its upper gullies later than most — slides have been reported in August and September",
+     "hazards": [
+      "Notoriously rotten, loose rock throughout the upper mountain and summit scramble — test holds",
+      "Steep snow-filled gullies below the summit saddle carry avalanche and sluffing potential well into summer, with August and September slides reported",
+      "An exposed hanging or fingertip traverse section near the true summit",
+      "Three summit horns, and a false one has fooled parties",
+      "The narrow, eroded lower Putvin tread, and the root-and-rock headwall on it",
+      "Mountain goats near Lake of the Angels and the peak's base"
+     ],
+     "primary": true,
+     "baseFinding": "STAND AT LAKE OF THE ANGELS AND THE CIRQUE ITSELF TELLS YOU WHICH WAY TO GO: MOUNT STONE IS ON YOUR RIGHT, ANOTHER PEAK IS ON YOUR LEFT, AND MOUNT SKOKOMISH IS STRAIGHT AHEAD. That three-way check is the arrival test, and it fixes your orientation before you leave the lake.\n\nTHE TURN IS AROUND THE RIGHT-HAND SIDE OF THE LAKE, on a way trail heading WEST to the ridge. Then take a broad gully SOUTHWEST and up toward the SADDLE JUST NORTH OF POINT 5945. That is the base of the climb and it is a named, mapped point — the saddle you want is the one immediately north of 5945, not the next gap along. A map point is the strongest thing you can navigate to in cloud, which is why it is quoted here rather than a description of the terrain.\n\nSECOND TEST, past the saddle: the route does not go straight up from it. From the saddle a boot path contours SOUTH and SOUTHWEST across scree, grass and rock benches around the EAST and SOUTH flanks of the peak, PASSING A LARGE TARN. The tarn is the confirmation. TURN RIGHT AND START CLIMBING WHEN YOU ARE ABOVE THE LARGE TARN — that is the published trigger, and it works because a tarn is a thing you stand beside rather than a thing you see from a distance. Turning up before the tarn puts you on the steeper cliffy ground on the north side of the upper mountain.\n\nTHIRD TEST, near the top: the final ground passes through rock bands and scrubby trees across a section known as the hanging or fingertip traverse, then goes up and around LEFT to the true summit, which is large and broad. This peak has THREE SUMMIT HORNS and parties have mistaken a lower false summit for the true south high point. A broad top is the right one; a narrow horn is not.\n\nEXPLICIT WARNING FROM A TRIP REPORT, and it is directional: contouring too far RIGHT (north) near the ridge crest gets sketchy, exposed and dangerous. Cut WEST over the ridge instead."
+    },
+    {
+     "name": "Mildred Lakes Trail from Hamma Hamma Road, the west-side approach",
+     "notes": "RECORDED BECAUSE THE ROUTE'S OWN WAYPOINTS DESCRIBE THIS APPROACH, not because it is the standard one. It is a real approach into the Skokomish-Cruiser-Lincoln group, and it is the usual way to Mount Cruiser and Mount Lincoln. From the Mildred Lakes trailhead on Hamma Hamma Road, the trail drops into a brushy ravine to ford HUCKLEBERRY CREEK at about 2,000 ft near 1.4 miles — the last reliable water before the hard part, and easy to lose in poor light. It then gains roughly 1,000 ft in about half a mile on hand-and-foot ROOT AND ROCK LADDERS, one pitch near 75-80 degrees, to a ridge high point at about 4,100 ft near 2.5 miles. From the ridge the trail drops about 250 ft to Lower Mildred Lake and continues past Middle to Upper Mildred Lake in a wooded bowl between Mount Lincoln and Mount Cruiser at about 3,850 ft near 4.3 miles, with informal camps on rock benches and the last dependable water before going off-trail. Above the lakes the route leaves the lakeshore path entirely into slide-alder and heather bushwhacking that neighbouring-peak accounts describe as very brushy, climbing to an open basin and connecting saddle beneath Skokomish's south peak at about 5,500 ft.",
+     "season": "Roughly Jul-Sep; the off-trail brush above the lakes is much easier with lingering snow cover",
+     "hazards": [
+      "Unmaintained, brushy, easy-to-lose way-paths above the lakes requiring off-trail navigation",
+      "Root and rock ladders on the approach trail, one pitch near vertical, dangerous when wet",
+      "Slide-alder bushwhacking that is far worse without snow cover",
+      "The same rotten upper-mountain rock and avalanche-capable gullies as the standard side",
+      "Post-fire hazards — standing dead and burned trees, rockfall and landslides — in the Bear Gulch Fire closure area"
+     ],
+     "baseFinding": "THE BASE ON THIS SIDE IS THE OPEN BASIN AND SADDLE BENEATH THE SOUTH PEAK AT ABOUT 5,500 FT, AND THE TEST FOR IT IS UNDERFOOT: THE FOOTING TURNS TO LOOSE, ROTTEN ROCK FROM THERE UP. Below the saddle you are fighting brush and heather; at and above it you are on scree and shattered rock. That transition is the arrival cue and it does not require seeing anything. THE TEST FOR THE APPROACH ITSELF IS THE ROOT LADDER, because it is the one unmistakable feature on this trail: about a thousand feet of hand-and-foot climbing on roots and rock in roughly half a mile, one pitch near vertical, topping out on a ridge at about 4,100 ft. If you have not used your hands, you are not on the Mildred Lakes trail. And the trail then DESCENDS off that ridge to the lakes — a trail that keeps climbing past 4,100 ft is not this one. HONEST LIMIT, AND IT IS THE REASON THIS VARIANT IS SECOND: the ground between the Mildred Lakes and Skokomish's south peak is unmaintained, brushy and easy to lose, with no marker sequence published for it. Published and trip-report accounts put the standard route on the Putvin side. Take this approach only if you have a reason to be at the Mildred Lakes, and expect to navigate rather than to follow."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Heather slopes to the 5,800-ft saddle",
+     "notes": "From Lake of the Angels, climb westerly up pleasant alpine/heather slopes to a broad 5,800-ft saddle at the northeastern end of Mount Skokomish. Lingering steep snow and real avalanche exposure on the upper slopes persist well into summer, with hazard noted even in August/September."
+    },
+    {
+     "n": 2,
+     "label": "Contour around the east and south flanks",
+     "notes": "From the saddle a boot path/way-trail contours south and southwest across scree, grass, and rock benches around the east and south flanks of the peak, passing a large tarn."
+    },
+    {
+     "n": 3,
+     "label": "Final scree/rock slopes to the summit ridge",
+     "notes": "Turn up to climb the final scree/rock slopes to the summit ridge. Notoriously rotten 'Olympic choss' rock and loose scree/talus on the upper mountain and summit block are the crux of the route more than any single technical move."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4900,
+     "name": "Lake of the Angels",
+     "role": "main",
+     "type": "camp",
+     "notes": "The base for Mount Skokomish and for the south side of Mount Stone, and one of the best-placed camps in the Olympics for a climber. About 3.5 miles and 3,400 ft from the Putvin trailhead, which understates it badly — the trail is notoriously steep, with hand-over-hand sections on rock and root where a slip has real consequence, and it is slow going with an overnight pack. From the basin the east slopes of Mount Skokomish are a straightforward scramble, and Mount Stone is gained by working north toward St. Peter's Gate, so a fit party can take both peaks in one day from these tents. The four sites and the meadow are the constraint: this is a fragile alpine basin that has been loved hard, so camp only on the designated ground and expect company. Best from mid-July, once the steep upper trail is clear of snow, through September. Early season the last pitch to the basin holds snow and the trail is genuinely hazardous when wet.",
+     "water": "The lake, but READ THIS ONE CAREFULLY. It is a shallow basin lake fed by snowmelt with no significant inlet, so it draws down through the summer and by a dry late season it can be low, warm and unappealing, and the meadow seeps around it disappear entirely. There is a good spring roughly two miles up the Putvin trail that is often the last dependable water on a dry year. Late-season parties should plan to carry water up from lower on the trail rather than count on finding it in the basin",
+     "permit": "OLYMPIC NATIONAL PARK WILDERNESS PERMIT REQUIRED — the trail crosses the park boundary shortly before the final climb into the basin, having already passed through the Mount Skokomish Wilderness on Forest Service ground below. Book through Recreation.gov or obtain the permit from a park wilderness information office; per-person nightly fees apply. An animal-resistant food container is required. NO CAMPFIRES — the basin is far above the 3,500 ft fire limit and this is stove-only ground. No dogs. No Northwest Forest Pass or other parking pass is needed at the Putvin trailhead itself, which is unusual for this road and worth knowing",
+     "capacity": "Four designated sites in the upper basin. Four. It is a small hanging meadow and there is no overflow ground that is acceptable to camp on"
+    },
+    {
+     "elev": 700,
+     "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+     "role": "route",
+     "type": "camp",
+     "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so a party arriving late can sleep at the car and start walking at first light instead of driving the gravel in the dark. This is a CONTINGENCY AND STAGING SITE RATHER THAN THE NORMAL PLAN for anyone climbing here — the objectives are all hours above it — but it is the right answer for a party that arrives after dark, gets weathered off, or comes out late and does not want to drive home tired. Being at 700 ft it is usable long before the high camps melt out, which makes it the practical base for an early-season Brothers attempt.",
+     "water": "NO POTABLE WATER AT EITHER CAMPGROUND — this catches people out. The Hamma Hamma River runs alongside both and can be filtered, but bring drinking water from Hoodsport",
+     "permit": "Modest per-night Forest Service fee with an extra vehicle charge, paid at the fee machine, which is cashless. No reservation system and no wilderness permit — this is developed Forest Service camping. Fire rings and picnic tables at each site, vault toilets, no hookups. Typically open from mid-May into late October and gated the rest of the year",
+     "capacity": "Lena Creek has around thirteen well-spaced sites at the Lena Lake trailhead junction; Hamma Hamma has around fifteen a couple of miles further down the river. Both first come, first served, no reservations"
+    },
+    {
+     "name": "Mildred Lakes basin (Lower/Upper Mildred Lake)",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_terror_north_face",
+  "name": "North Face / North Buttress",
+  "area_id": "wa_mount_terror",
+  "findings": [
+   "waypoints[5] 'Terror Glacier crossing' is pinned on the Terror Glacier south of the summit; the crossing to the north-face base is on the Mustard Glacier."
+  ],
+  "gpx_summary": "208 points; 0 of 8 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_mount_terror_north_face",
+   "area_id": "wa_mount_terror",
+   "name": "North Face / North Buttress",
+   "discipline": "mountaineering",
+   "grade": "Grade III, 5.7",
+   "grade_system": "yds",
+   "grade_num": 7,
+   "pitches": null,
+   "length_m": 762,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Charles Bell, Ed Cooper, David Hiser, and Mike Swayne, 1961 (original North Buttress line, III 5.7)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Rock rack to 3in",
+    "60m rope",
+    "Glacier travel gear (axe, crampons, thin rope) for the Mustard Glacier",
+    "Helmet",
+    "Bivy/carry-over gear for a multi-day approach"
+   ],
+   "hazards": [
+    "Heavily crevassed Mustard Glacier ice on the way to the base, mostly unbridged by late summer",
+    "Extreme remoteness — a multi-day, off-trail carry-over just to reach the base",
+    "Loose rock in the approach gullies and on both the Cooper line and Stoddard Buttress",
+    "Complex descent, typically down the opposite (south) side of the mountain",
+    "Essentially no cell coverage; among the most rescue-difficult terrain in North Cascades NP"
+   ],
+   "verif": null,
+   "overview": "Mount Terror is the highest peak of the savage Southern Pickets. Its north side is the serious side: a 2,500-foot wall of rock, snow, and broken glacier ice dropping into McMillan Cirque, one of the most remote and rarely-visited big walls in the North Cascades. By contrast the south side rises only about 2,000 feet from the Crescent Creek Basin camps. This route line covers Terror's original north-side ascent line; a separate, harder and more sustained buttress (the Stoddard Buttress, 5.8) climbs the same wall further along the crest.",
+   "beta": "Climb above the initial snowfield and make a long, ascending 3rd-class traverse rightward as the face steepens into dihedrals and cracks. Aim for the west (right) crest of the buttress about two-thirds up where the rock darkens, staying on the crest only briefly (no harder than 5.7), then move back left onto the face toward a chimney above an awkward belay — the technical crux is near the top of this chimney; some parties report a harder 5.8 traverse variant there.",
+   "turnaround": "Given the multi-hour glacier and col crossing required just to reach the base, and the exposed, loose upper chimney, set a firm turnaround time that guarantees re-crossing the Ottohorn-Himmel col and Barrier terrain in daylight and before afternoon snow softening.",
+   "auto_generated": true,
+   "alpine_grade": "III",
+   "rock_grade": "5.7",
+   "ice_grade": null,
+   "gain_ft": 6000,
+   "loss_ft": null,
+   "dist_km": 28.97,
+   "max_angle": null,
+   "rappels": "West Ridge notch rappels (2x ~30m) then a loose gully with several more rappels back down to Crescent Creek Cirque",
+   "commitment": "III",
+   "face": "North Face / above McMillan Cirque",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center).",
+   "comms": "Cell service is largely absent in the Terror Basin/Crescent Creek cirques, but has been reported reachable from near the summit — a call from the summit area was critical in a 2009 rescue after a rockfall accident on this face.",
+   "descent": "Descend the West Ridge to the notch above the descent gully, then rappel and downclimb the gully into Crescent Creek Basin.",
+   "obj_haz": [
+    "rockfall",
+    "loose rock",
+    "icy snowfields",
+    "moat crossing at the base of the face",
+    "remote/committing approach",
+    "exposure on knife-edge sections"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.68276,
+     "lng": -121.26928,
+     "elev": 600,
+     "name": "Goodell Creek Group Camp Trailhead",
+     "note": "Off SR-20 near Newhalem; park at Upper Goodell Creek Group Camp and pick up the old roadbed/climbers' path paralleling Goodell Creek — North Cascades NP wilderness permit required for overnight camping.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Turn north off Highway 20 directly across from Newhalem Campground onto the unpaved Goodell Creek Road and follow it to the Upper Goodell Creek Group Camp trailhead, at about 600 feet. Park at the group camp and pick up the old roadbed and climbers' path paralleling Goodell Creek. A North Cascades National Park wilderness permit is required for overnight camping; pick it up in person at the Marblemount Wilderness Info Center, since this zone cannot be reserved in advance."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 1700,
+     "name": "Terror Creek cairned crossing",
+     "note": "Cairn on the old roadbed marks the log crossing of Terror Creek and the unmarked turnoff onto the Terror Basin climbers' path; a small campsite sits here, easy to walk past in fog.",
+     "type": "Junction",
+     "distMi": 3.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5000,
+     "name": "Treeline stream break (~5,000')",
+     "note": "Last reliable running water before the climb steepens above treeline; parties report long dry stretches on the ridge above here in late summer.",
+     "type": "Water",
+     "distMi": 6
+    },
+    {
+     "lat": 48.770167,
+     "lng": -121.304239,
+     "elev": 6200,
+     "name": "~6,200' notch above Terror Basin",
+     "note": "Climbers' path tops out at heather benches and a rock notch on the spur ridge overlooking Terror Basin — the col to descend into camp; often holds moderate snow into midsummer.",
+     "type": "Junction",
+     "distMi": 6.3
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Terror Basin bivy",
+     "note": "Small flat gravelly basin just below the notch with running water; the zone takes only 6 parties a night and cannot be reserved, so be at Marblemount early in peak season.",
+     "type": "Campsite",
+     "distMi": 7
+    },
+    {
+     "lat": 48.768571,
+     "lng": -121.303544,
+     "elev": 6500,
+     "name": "Terror Glacier crossing",
+     "note": "Crevasse hazard traversing toward the north face base; snow bridges change through the season so probe and rope up per current conditions.",
+     "type": "Hazard",
+     "distMi": 7.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7700,
+     "name": "5.7 crux chimney/dihedral",
+     "note": "Exposed technical crux on the right (west) rib of the north face where the route breaks from Class 3-4 scrambling into a short 5.7 chimney/dihedral before the summit snow finger.",
+     "type": "Hazard",
+     "distMi": 7.8
+    },
+    {
+     "lat": 48.7742935,
+     "lng": -121.2995734,
+     "elev": 8151,
+     "name": "Mount Terror summit",
+     "note": "True summit of the Southern Pickets' highest peak; standard descent goes back over the top and down the West Ridge gully into Crescent Creek Basin rather than reversing the face.",
+     "type": "Summit",
+     "distMi": 8
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 35,
+    "summitTimeHrs": 14,
+    "descentTimeHrs": 8.5,
+    "approachTimeHrs": 12.5,
+    "recommendedStart": "2:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 9.5,
+      "note": "From the Goodell Creek Trailhead (600 ft), follow the old road bed to the cairn near 1,700 ft, then turn hard right up the steep Terror Basin climbers' path to a…",
+      "fromTo": "Approach to Terror Basin / Stump Hollow",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3,
+      "note": "Cross the Barrier and traverse into Crescent Creek Basin (~5,800 ft), staying high along the bushy ridge. Short mileage but slow, exposed sidehill travel; many parties treat this a…",
+      "fromTo": "Move to Crescent Creek Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 14,
+      "note": "A long alpine day: cross the Otto-Himmel col and traverse below the Twin Spires and the Rake to reach the base of the North Face, then climb the face and its right-hand buttress (5.7, much of it…",
+      "fromTo": "North Face / North Buttress summit push",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8.5,
+      "note": "Reverse the approach: back over the Barrier, down through Terror Basin, and down the Terror Basin climbers' path to the trailhead. Brush is easier to push through downhill but navig…",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "A standard alpine rock rack (cams and stoppers to ~3in, several slings/draws) covers the technical ground; add ice axe, crampons, and glacier travel gear (rope, pickets/screws as conditions dictate) for the Ottohorn-Himmel col and Mustard Glacier crossing.",
+   "what_to_bring": [
+    "alpine rack",
+    "glacier/snow kit",
+    "navigation",
+    "expedition provisions"
+   ],
+   "pro_tips": [
+    "Study the Southern Pickets topo carefully to avoid wrong summits",
+    "Pick a long high-pressure window"
+   ],
+   "watch_out": "Remote mountain - long approach and difficult rescue access\nMixed ice and rock climbing requiring versatile skills\nAlpine terrain with weather exposure\nComplex route-finding among Terror's true/false summits and neighboring Southern Pickets peaks (wrong-summit risk)\nLoose rock typical of Cascade peaks",
+   "pro_needs": "Protection is moderate for the grade — mid-size cams and stoppers protect the cracks and dihedrals on the traverse, with natural gear/slung horns useful near the crux chimney; the rock is described as generally solid but with isolated loose blocks.",
+   "best_season": "Late July through August — enough of the season's snow has melted off the approach slabs and gullies for safe travel, while the Mustard Glacier is usually still crossable before crevasses open up too much later in the season. Earlier July trips can find firmer snow bridges but far more bugs and brush.",
+   "high_point_ft": 8151,
+   "aid_grade": null,
+   "approach": "From the Goodell Creek Group Camp trailhead (elev. ~600 ft, reached via the unpaved Goodell Creek Road that turns north off Highway 20 directly across from Newhalem Campground), follow the old abandoned roadbed/boot path northeast along Goodell Creek for roughly 4 to 4.5 miles — gentle grade, easy walking — to a stone-cairn/arrow junction near 1,700 ft marking the start of the climbers' path up toward Terror Basin. Do not continue straight past the cairn; that fainter track follows Terror Creek toward Crescent Creek Basin and is a separate (and notoriously brushier) approach. Instead take the hard right and start up the steep, well-beaten Terror Basin boot path, which climbs directly and relentlessly through old-growth forest — roughly 3,000+ ft of gain in about 1.5 miles — before breaking out above treeline around 5,000–5,200 ft. Above the trees, a rising traverse across heather benches, slabs, and (early-season) snowfields leads to a broad saddle near 6,200 ft; the standard high camp is in a gravelly, wildflower basin about 400 ft below and beyond the saddle, around 5,800 ft, fed by several small streams (reliable water). From this Terror Basin camp, parties continue over the Barrier into Crescent Creek Basin and camp again there before the climb. Hazards: the boot path itself is the crux of the approach — steep, root-and-dirt, unrelentingly brushy in places, and physically punishing (widely regarded as one of the harder approaches in the Pickets); expect loose rock and route-finding on the upper slabs approaching the saddle; if the alternate Terror Creek/Crescent Creek Basin line is used, a creek ford or logjam crossing of Terror Creek is required. Most parties treat this as a two-day approach with a high camp rather than a car-to-base push. The technical start of the North Face is reached from the Crescent Creek Basin camp by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque to the foot of Terror's wall, a 2-3 hour trip even for fast parties. By mid-to-late summer the Mustard Glacier below the face is heavily crevassed with mostly unbridged, broken ice; carry glacier travel gear even though it's a small glacier.",
+   "descent_text": "The North Face and any north-side buttress lines are steep and complex enough that essentially no one reverses them — virtually all parties, regardless of which route they climbed, descend via the West Ridge. From the summit, downclimb/scramble the West Ridge crest westward toward the low notch between Terror and The Rake, where a large chockstone marks the top of the descent gully system. From there, work down a narrow, loose, rockfall-prone gully back into Crescent Creek Basin. The exact count varies with snow coverage and route-finding — figure roughly 3–5 rappels total: commonly one or two shorter raps off slung horns/chockstones or fixed pitons-and-a-nut near the ridge crest, followed by two or three more rappels down the gully itself with down-climbing in between. A single 50–60m rope is sufficient for every station reported; anchors are a mix of pre-existing fixed slings/rap rings and natural chockstone/horn anchors that may need backing up with your own gear. The gully is narrow with little shelter from rockfall, frequently has an undercut, melted-out snow moat by mid-to-late season, and the final ~100 ft is loose and marginal — expect stuck ropes in the confined terrain and manage rope ends carefully. Once down in Crescent Creek Basin, parties either regain the Barrier saddle to return to a Terror Basin camp, or exit directly via the Crescent Creek Basin/Terror Creek climbers' path, which follows the Barrier crest south before dropping to rejoin the Goodell Creek Trail for the hike out.",
+   "bail": "Escape is difficult; the Southern Pickets are among the hardest places in the range to retreat from.",
+   "pitch_detail": [
+    {
+     "grade": "3rd class",
+     "notes": "Above the initial snowfield, long simulclimbable/3rd-class ground traversing rightward",
+     "pitch": "Lower face"
+    },
+    {
+     "grade": "4th-low 5th",
+     "notes": "Ascending traverse through dihedrals and cracks as the face steepens",
+     "pitch": "Mid face"
+    },
+    {
+     "grade": "5.7",
+     "notes": "Brief section directly on the west (right) crest ~2/3 up where rock darkens; crux ground, do not linger here",
+     "pitch": "Buttress crest"
+    },
+    {
+     "grade": "5.7 (5.8 variant reported)",
+     "notes": "Move back left onto the face to a chimney above an awkward belay — historically the technical crux near the top of the face",
+     "pitch": "Chimney"
+    }
+   ],
+   "itinerary": {
+    "cal": "No advance permit reservation needed for this zone — pick up a walk-up wilderness permit in person at the Marblemount Wilderness Info Center; best conditions are typically late July through September once Terror Creek and the approach gullies have melted out.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Goodell Creek Trailhead (600 ft), follow the old road bed to the cairn near 1,700 ft, then turn hard right up the steep Terror Basin climbers' path to camp in Terror Basin (about 5,800 ft). This is widely considered one of the harder approaches in the Cascades; expect route-finding and heavy brush even in good conditions.",
+      "hours": 9.5,
+      "miles": 8,
+      "title": "Approach to Terror Basin / Stump Hollow",
+      "gainFt": 5400,
+      "lossFt": 100,
+      "packLb": 48,
+      "schedule": [],
+      "objective": "Reach camp in Terror Basin below the Southern Pickets"
+     },
+     {
+      "n": 2,
+      "note": "Cross the Barrier and traverse into Crescent Creek Basin (~5,800 ft), staying high along the bushy ridge. Short mileage but slow, exposed sidehill travel; many parties treat this as a half-day and use the rest to scout the route or rest before the summit push.",
+      "hours": 3,
+      "miles": 1.5,
+      "title": "Move to Crescent Creek Basin",
+      "gainFt": 500,
+      "lossFt": 300,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Position camp below the peak's south/east side"
+     },
+     {
+      "n": 3,
+      "note": "A long alpine day: cross the Otto-Himmel col and traverse below the Twin Spires and the Rake to reach the base of the North Face, then climb the face and its right-hand buttress (5.7, much of it simul-climbed) to the 8,151 ft summit before descending the West Ridge gully to get back to camp.",
+      "hours": 14,
+      "miles": 4,
+      "title": "North Face / North Buttress summit push",
+      "gainFt": 3000,
+      "lossFt": 3000,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "2:30 AM",
+        "label": "Leave Crescent Creek Basin camp",
+        "detail": "Alpine start with headlamps toward the Otto-Himmel col."
+       },
+       {
+        "time": "+2.5-3 hr",
+        "label": "Cross the col, traverse to the north side",
+        "detail": "Even fast parties need 2-3 hr from Crescent Creek Basin to reach the base of the north face."
+       },
+       {
+        "time": "~6:00 AM",
+        "label": "Rope up at the base of the North Face",
+        "detail": "Start of the 2,500 ft North Face / North Buttress line, 5.7."
+       },
+       {
+        "time": "~1:00 PM",
+        "label": "Top out on the summit",
+        "detail": "8,151 ft; a long, sustained buttress climb."
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Begin the descent",
+        "detail": "Descend the West Ridge and rappel the gully back into Crescent Creek Basin."
+       },
+       {
+        "time": "~8:00 PM",
+        "label": "Back at Crescent Creek Basin camp",
+        "detail": "A 15+ hr day; build in a weather/rest buffer if possible."
+       }
+      ],
+      "objective": "Climb the 2,500 ft North Face and return to camp"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the approach: back over the Barrier, down through Terror Basin, and down the Terror Basin climbers' path to the trailhead. Brush is easier to push through downhill but navigation errors are still common.",
+      "hours": 8.5,
+      "miles": 8.5,
+      "title": "Hike out",
+      "gainFt": 100,
+      "lossFt": 5900,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to the Goodell Creek Trailhead"
+     }
+    ],
+    "totalNote": "A 4-day trip: two hard bushwhack approach days to Crescent Creek Basin, one very long (14-15 hr) technical day on the 2,500 ft North Face / North Buttress line, and a day to hike out."
+   },
+   "access": {
+    "fees": "$10 per person plus a $6 fee per permit (youth 15 and under free); walk-up permits cost the same.",
+    "rules": "Bear canisters required or strongly recommended in this zone (available to borrow at the WIC); pack out all waste; group size limits apply in cross-country zones.",
+    "permit": "A wilderness permit is required for any overnight stay in the park backcountry, at $10 per person plus a $6 fee per permit (youth 15 and under free). The Terror Basin and Crescent Creek cross-country zones cannot be reserved in advance: the permit is walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+    "group_limit": 6,
+    "landManager": "North Cascades National Park (National Park Service)",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+     "where": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip."
+    }
+   },
+   "road": {
+    "name": "Goodell Creek access",
+    "status": "Seasonal",
+    "driveNote": "The Terror Creek approach is infamous for brush and steepness",
+    "seasonalGate": "Winter closures"
+   },
+   "climate": {
+    "typical": "Wet, maritime North Cascades climate — the Pickets sit on the range's wet west side and catch heavy Pacific moisture, so fast-moving storms and low cloud/whiteout conditions can move in with little warning even in mid-summer."
+   },
+   "emergency": {
+    "notes": "Cell coverage in the Pickets is essentially absent — a signal has occasionally been found on high summits, but never count on it. This is one of the most remote and rescue-difficult areas in North Cascades NP — a satellite communicator (InReach/PLB) is strongly advised, and self-rescue should be assumed as the first line of response.",
+    "county": "Whatcom County (summit); trailhead access and services are in Skagit County along SR-20",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA 98267 — (360) 854-7245",
+    "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA — (360) 856-6021 (closest ER via SR-20; Skagit Valley Hospital's Level III ED in Mount Vernon is a larger facility somewhat further west)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; if any pattern exists it's clustered in late July-August during the brief snow-free window, often as part of a full Southern Pickets traverse",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic; likely single-digit to low-teens parties per season based on general Southern Pickets traffic reports"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high - multi-day approach through trailless terrain (Crescent Creek/McMillan Cirque basins) with heavy off-trail bushwhacking, talus, and glacier travel to reach high camp",
+     "packWeight": "Heavy multi-day alpine kit (camping, glacier gear, rock rack, bivy food) typically 40-50+ lb for the approach"
+    },
+    "approachTime": "Multi-day approach (typically 2+ days to high camp) given extreme remoteness; not a single-push objective",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue",
+     "off-trail/bushwhack route-finding in trailless terrain",
+     "5.7 rock climbing in mountain boots with a pack",
+     "loose rock and complex ridge route-finding (wrong-summit hazard)",
+     "multi-pitch alpine rope work and rappelling",
+     "self-sufficiency for remote extraction (no easy bail)"
+    ],
+    "experienceLevel": "Experienced alpine climbers only, with prior North Cascades glacier/bushwhack approach experience and demonstrated route-finding on complex, loose alpine terrain; not a route for a first Cascades alpine objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through early September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still hold lingering snow/moat issues on approach snowfields; conditions firm up by mid-month",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Peak window - most consistent snow-free rock and stable approach conditions for this remote north-side objective",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Early September still workable; later in the month increasing chance of early-season storms/snow at this elevation and aspect",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North Cascades alpine weather typical of the range: can shift quickly from clear to socked-in/rain even in summer; north aspect retains snow/ice later into the season",
+     "probability": ""
+    },
+    "exposure": "High consequence - loose protection and loose rock, combined with extreme remoteness, mean a fall or rockfall injury is a serious self-rescue/evacuation problem; wrong-summit route-finding errors on complex ridgelines add to exposure risk",
+    "avalanche": {
+     "zone": "N/A - summer route (avalanche forecasting does not cover this remote Southern Pickets objective during its Jul-Sep climbing season)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Approach through the Crescent Creek/McMillan Cirque basins may involve glacier/permanent snowfield crossings depending on route to high camp; treat as glaciated approach terrain and rope up where warranted"
+   },
+   "data_quality": {
+    "gaps": [
+     "No route-specific crowd/traffic count found in sources; solitude rating is inferred from general Southern Pickets remoteness reporting, not route-specific data",
+     "No NWAC or other avalanche forecast zone covers this specific remote alpine objective",
+     "No precise glacier/crevasse hazard detail specific to the north-side approach was found beyond general basin/cirque references already on file",
+     "No incident/accident database search performed beyond general web search; partner skill requirements are inferred from grade and on-file hazards rather than a dedicated source",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/7H3U",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 4,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.7748,
+    "peakLng": -121.2993,
+    "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "trailheadLat": 48.68664,
+    "trailheadLng": -121.27121,
+    "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft)"
+   },
+   "sling_rack": {
+    "cams": "medium alpine rack, emphasis on medium sizes for the offwidth section",
+    "nuts": "small-medium set",
+    "ice_screws": "1-2 for the moat"
+   },
+   "alpine_draws": 6,
+   "rope_type": "single 60m dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Approach via the Mustard Glacier requiring ice axe/crampons. Lower face ascending traverse mostly 3rd class stepping to 5.7 near the buttress crest; upper face has a long offwidth crack below the false summit.",
+   "ascender": null,
+   "corrections": "None — consistent across sources.",
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First rappel off the ridge crest working down toward the notch by the large chockstone that marks the top of the descent gully.",
+     "anchor": "Slung horn/chockstone near West Ridge crest",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel finishing the ridge-crest section; some parties do only one here and downclimb/simul-downclimb the rest.",
+     "anchor": "Fixed piton-and-nut or slung horn",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "First rappel down the loose, rockfall-prone gully into Crescent Creek Basin; a single 50-60m rope is sufficient for every reported station.",
+     "anchor": "Natural chockstone/horn anchor in the descent gully",
+     "lengthM": null
+    },
+    {
+     "n": 4,
+     "notes": "Final gully rappel; the last ~100 ft below this is loose and marginal and is downclimbed.",
+     "anchor": "Natural chockstone/horn anchor, lower gully",
+     "lengthM": null
+    }
+   ],
+   "rappel_count_note": "Expect 3-5 rappels total depending on snow coverage and route-finding; commonly 1-2 near the ridge crest plus 2-3 more down the gully. 4 is a representative middle count.",
+   "rack": [
+    "Cams and stoppers to 3in (medium sizes for the offwidth section)",
+    "Small-medium nut set",
+    "6 alpine draws/slings",
+    "1-2 ice screws for the moat",
+    "Ice axe, crampons, thin glacier rope for the Mustard Glacier approach",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Crack",
+    "Offwidth",
+    "Chimney",
+    "Dihedral",
+    "Committing",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Goodell Creek and the Terror Basin boot path, then over the Barrier to Crescent Creek Basin and the Ottohorn-Himmelhorn col to the foot of the wall",
+     "notes": "From the Goodell Creek Group Camp trailhead at about 600 ft, reached via the unpaved Goodell Creek Road that turns north off Highway 20 directly across from Newhalem Campground, follow the old abandoned roadbed and boot path northeast along Goodell Creek for roughly 4-4.5 miles of gentle grade to a stone-cairn and arrow junction near 1,700 ft.\n\nDO NOT CONTINUE STRAIGHT PAST THE CAIRN. That fainter track follows Terror Creek toward Crescent Creek Basin and is a separate, notoriously brushier approach. Instead take the HARD RIGHT and start up the steep, well-beaten Terror Basin boot path, which climbs directly through old-growth forest, roughly 3,000-plus ft of gain in about 1.5 miles, before breaking out above treeline around 5,000-5,200 ft.\n\nAbove the trees a rising traverse across heather benches, slabs and early-season snowfields leads to a broad saddle near 6,200 ft; the standard high camp is in a gravelly, wildflower basin about 400 ft below and beyond the saddle, around 5,800 ft, fed by several small streams.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "Committing to the wrong rib on a 2,000 ft face with limited options to reverse",
+      "A heavily crevassed, mostly unbridged Mustard Glacier below the face by mid-season",
+      "Steep, extremely loose rock near the top; a fatal-consequence rockfall accident on this buttress involved a block that had appeared solid",
+      "A narrow, rockfall-prone descent gully with an undercut melted-out moat by mid to late season",
+      "Stuck ropes in the confined descent gully, and a loose, marginal final 100 ft",
+      "Retreat from high on the route is genuinely difficult"
+     ],
+     "baseFinding": "THE START IS JUST LEFT OF THE SNOWFIELD AT THE BOTTOM OF THE FACE, AFTER THE WALL IS ACCESSED FROM ITS WEST SIDE. From the Crescent Creek Basin camp the technical start is reached by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque, then rounding into position under Terror's wall. Cross the glacier remnant beneath the face, then start JUST LEFT OF THE SNOWPATCH at the bottom.\n\nTHE MOAT WHERE SNOW MEETS ROCK AT THE BASE IS THE USUAL OBSTACLE, AND IT IS ALSO THE MARKER: you are at the base when you are standing at the gap between the snowpatch and the wall, on its left.\n\nTHE DECISION THAT DEFINES THIS ROUTE, AND IT IS MADE BEFORE THE HARD CLIMBING RATHER THAN DURING IT: THE FACE IS SPLIT BY TWO RIBS, AND THIS ROUTE TAKES THE RIGHT, OR WESTERN, ONE. The main risk on the lower face is not difficulty but committing to the wrong rib. Long, mostly third-class pitches climb above the snowfield while TRAVERSING STEADILY RIGHTWARD; the face is over 2,000 ft tall with limited options to reverse. If your traverse is taking you left, you are on the wrong half of the wall.\n\nTWO CONFIRMATIONS HIGHER, BOTH VISUAL AND BOTH USABLE IN THIN CLOUD: aim for the right or western crest of the buttress about TWO THIRDS OF THE WAY UP THE LOWER FACE, IDENTIFIABLE BY THE ROCK DARKENING. And A SHARP PROW marks roughly the lower third of the buttress. Darkening rock and a sharp prow are features of this rib and not of its neighbour.\n\nWHAT THE UPPER FACE GIVES YOU: a LONG SNOW FINGER forming a ramp that carries the route a good distance, then scrambling on a wildly exposed crest, a traverse around a small tower to the notch between the false and true summits, an exposed easy-fifth hand traverse over the false summit, a downclimb, and the short climb to the true 8,151 ft top.\n\nOn the approach, when crossing from Stump Hollow into Crescent Creek Basin: DO NOT DROP INTO THE LOW NOTCH NORTH OF THE CHOPPING BLOCK. The correct line into Crescent Creek Basin is ABOUT 100 YARDS NORTH OF THAT NOTCH, AT A FLAT, BIVY-SITE SHELF ON THE RIDGE."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Glacier crossing and start of the face",
+     "notes": "The wall is accessed from its west side after crossing the glacier remnant beneath it, and the start is just left of the snowfield at the bottom of the face. Third and fourth class scrambling on comparatively solid rock leads up to and above that snowpatch. The ice below is small but broken and mostly unbridged by mid-season, so it is treated as glacier travel; the moat where snow meets rock at the base is the usual obstacle."
+    },
+    {
+     "n": 2,
+     "class": "3",
+     "label": "Lower face rising traverse",
+     "notes": "Long, mostly third class pitches climb above the snowfield while traversing steadily rightward. The route takes the right, or western, of the two ribs that split the north face. Parties simul-climb much of this. The main risk here is not difficulty but committing to the wrong rib — the line is defined by where you exit at the top, and the face is over 2,000 ft tall with limited options to reverse."
+    },
+    {
+     "n": 3,
+     "class": "5.7",
+     "label": "Dihedrals to the buttress crest",
+     "notes": "The ascending traverse steepens and follows dihedrals and cracks, aiming for the right or western crest of the buttress about two thirds of the way up the lower face, identifiable by the rock darkening. A sharp prow marks roughly the lower third of the buttress. Time on the crest itself is brief and reported as no harder than 5.7 on generally clean, solid rock."
+    },
+    {
+     "n": 4,
+     "label": "Chimney back on the face",
+     "notes": "Move back left off the crest onto the face and aim for a chimney above an awkward belay. Reported difficulty here varies with the exact line: some parties keep it to about 5.4, while a variation that traverses further right lower down and takes the true buttress hits a 5.8 traverse crux near the top of the chimney. Upper pitches on this part of the wall have been described as 5.7 to 5.8 on good rock, with the original line as a whole graded III, 5.7."
+    },
+    {
+     "n": 5,
+     "label": "Snow finger, exposed crest and the summits",
+     "notes": "The long snow finger on the upper face forms a ramp that carries the route for a good distance; carry what you need to climb it. Above its top, the climbing turns to scrambling on a wildly exposed ridge crest, then a traverse around a small tower to the notch between the false and true summits. The false summit is taken directly on an exposed easy fifth class hand traverse, then downclimbed before the short climb to the true 8,151 ft top. Rock quality deteriorates near the top, with steep, extremely loose ground reported; a fatal-consequence rockfall accident on this buttress involved a sizeable block that had appeared solid tearing loose. Descent is normally the West Ridge gully. This is one of the longest and most committing lines in the range and retreat from high on it is genuinely difficult."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6050,
+     "name": "Crescent Creek Basin camp",
+     "role": "main",
+     "type": "camp",
+     "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between them; Frenzel Spitz sits off the main chain near the Ottohorn's north side. Parties camp at several benches at different heights.",
+     "water": "Snowmelt streams and pools fed by the basin's snowfields, reliable early and mid season and unreliable late once the snow has pulled back. Plan on melting snow in a lean year.",
+     "permit": "This is the SEPARATE Crescent Creek cross-country zone, not Terror Basin — a trip camping in both needs both zones written onto the same permit, night by night. Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance.",
+     "capacity": "A few parties on gravel, slab and snow; the zone is capped at 6 people per party"
+    },
+    {
+     "elev": 500,
+     "name": "Goodell Creek Campground, roadhead staging",
+     "role": "route",
+     "type": "camp",
+     "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+     "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+     "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+     "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+    },
+    {
+     "elev": 2000,
+     "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+     "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+     "permit": "A wilderness permit is required, and this spot is LEGALLY AWKWARD: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+     "capacity": "One or two small parties on flat ground beside the old grade"
+    },
+    {
+     "elev": 5800,
+     "name": "Terror Basin camp",
+     "role": "route",
+     "type": "camp",
+     "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+     "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+     "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+     "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+    },
+    {
+     "elev": 6000,
+     "name": "Stump Hollow bench",
+     "role": "route",
+     "type": "camp",
+     "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeast of the Chopping Block near 6,400 ft and drops into Crescent Creek Basin from there. Camp on rock, gravel or snow rather than the heather — this is thin alpine ground that shows every night somebody spends on it.",
+     "water": "Snowmelt only. Trickles and small pools are dependable through early summer while snow lingers, and can dry up or retreat entirely by late season; late-summer parties should expect to search or carry.",
+     "permit": "Cross-country zone permit from the Wilderness Information Center. This bench sits close to the divide between the Terror Basin and Crescent Creek zones, so ask which zone the rangers are writing you into rather than assuming — the answer decides what the rest of your itinerary can say.",
+     "capacity": "Small — a couple of parties on heather benches and slabs, and it is easy to end up spread out"
+    },
+    {
+     "name": "Terror Basin bivy",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

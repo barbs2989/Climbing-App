@@ -1,0 +1,174 @@
+{
+ "applied": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance (one-way and round trip)"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "overview",
+   "path": [],
+   "fact": "Whether the summit spur is signed"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "beta",
+   "path": [],
+   "fact": "Whether the summit spur is signed"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Whether the summit spur is signed"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Whether the summit spur is signed"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Whether the summit spur is signed"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass at Snowgrass Flats trailhead"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Goat Lake elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "before": {
+    "gain_ft": 3100,
+    "approach": "From the Snowgrass Flats Trailhead (end of FR-2150, elev. ~4,600 ft), start on Trail 96 (Snowgrass Flat Trail). The first stretch climbs gently through forest for roughly 2 miles to a junction with the old Bypass Trail/Trail 96A (stay right on 96 for the more direct, less eroded line). Around 2.4-2.6 miles in you'll hear and then reach the springs that form the head of Snowgrass Creek just off the trail to the right - the last reliable, easy water source before treeline. About 0.8 mile past that the trail fords Snowgrass Creek itself; there's no bridge, but logs and rocks usually allow a dry crossing except during heavy snowmelt, when it can run fast enough to require care. Just beyond the ford (~3.9-4 miles, ~6,400 ft) the trail breaks out of forest into the open heather meadows and wildflower bogs of Snowgrass Flat, a scenic rest and water-filter stop before the climb — note that camping is prohibited within Snowgrass Flat itself under Gifford Pinchot wilderness regulations (36 CFR 261.58(e)); parties camp instead at designated sites above/below the flats. Continue past the Trail 97 junction (west to Cispus Basin/PCT) and the Trail 86 junction (Goat Lake), staying on the main track as it climbs in long benches with Mount Adams and the Goat Rocks opening up behind you. At about 4.7 miles the trail meets the Pacific Crest Trail at roughly 7,100 ft; turn right (north) onto the PCT. Follow the PCT north for about 1.8 miles, traversing rocky, increasingly exposed sidehill terrain below Old Snowy's south ridge - snow patches can linger here into midsummer and may require an ice axe/traction for a secure traverse in early season. Watch for an unmarked climbers' path branching right (east) off the PCT toward a rocky saddle on Old Snowy's south ridge; take it and switchback steeply uphill for about a half mile. Many parties stash poles here for the final scramble: the last few hundred feet to the 7,880 ft summit are Class 2-3 hand-and-foot scrambling on loose rock, moderately exposed but not technical. Loose talus and rockfall kicked down by parties above are the main hazard on this final pitch, so avoid stacking directly below other climbers. Total one-way distance is approximately 6.5 miles with about 3,600 ft of gain; round trip is roughly 15.5 miles, typically taking 8.5-9.5 hours car to car.",
+    "overview": "Old Snowy Mountain sits on the Goat Rocks volcanic crest immediately next to the Pacific Crest Trail, at its highest point in Washington. It's one of the most accessible Goat Rocks summits precisely because the PCT does most of the elevation work: from Snowgrass Flats the trail climbs to a signed spur (in place since 2013) that leaves the PCT and switchbacks up scree and snow to a short, loose, mildly exposed Class 2-3 scramble at the top. The small McCall Glacier lies on the east face and a distinctive natural rock arch (~20 ft) stands near the summit. Old Snowy is frequently combined with a traverse to nearby Ives Peak.",
+    "beta": "From the Snowgrass Flats trailhead, hike ~4.7 miles through forest and meadows to the PCT, then follow the PCT north/west around the mountain's flank to its high point. Leave the PCT on a boot path signed (as of 2013) that switchbacks up scree/talus on Old Snowy's south side to the summit; the last ~50 feet is loose Class 2–3 rock with real but manageable exposure. An alternate line gains the col between Old Snowy and Ives Peak and follows the ridge crest/just-south-of-crest to the top.",
+    "waypoints": [
+     {
+      "lat": 46.4644,
+      "lng": -121.5178,
+      "elev": 4600,
+      "name": "Snowgrass Flats Trailhead (#96)",
+      "note": "Trail 96 begins here on FR 2150; Northwest Forest Pass required and self-issue Goat Rocks Wilderness permit at the trailhead kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead sits at the end of Forest Road 2150, at about 4,600 feet, where the Snowgrass Flat Trail (#96) begins. A Northwest Forest Pass is required, and a free self-issue Goat Rocks Wilderness permit is available at the trailhead kiosk. The access road has taken washout damage in past winters, so confirm current conditions before driving in."
+     },
+     {
+      "lat": 46.483746,
+      "lng": -121.481789,
+      "elev": 6400,
+      "name": "Snowgrass Flats meadows",
+      "note": "Trail 96 opens into heather meadows and wildflower bogs with reliable creek water; camping is prohibited within Snowgrass Flat itself per Gifford Pinchot wilderness regulations (36 CFR 261.58(e)) — use designated sites above/below the flats instead. Trail 86 splits here and drops 0.8 mi/500 ft to Goat Lake.",
+      "type": "Landmark",
+      "distMi": 3
+     },
+     {
+      "lat": 46.489239,
+      "lng": -121.476662,
+      "elev": 6550,
+      "name": "Trail 97 junction",
+      "note": "Trail 97 forks off Trail 96 and climbs west toward the PCT; stay on 97 to continue toward Old Snowy rather than continuing on 96.",
+      "type": "Junction",
+      "distMi": 4
+     },
+     {
+      "lat": 46.495711,
+      "lng": -121.472097,
+      "elev": 6900,
+      "name": "PCT junction",
+      "note": "Trail 97 tops out on the Pacific Crest Trail; turn north and climb a series of open benches with views of Mt. Adams and the Goat Rocks crest.",
+      "type": "Junction",
+      "distMi": 4.7
+     },
+     {
+      "lat": 46.513694,
+      "lng": -121.462348,
+      "elev": 7190,
+      "name": "Old Snowy climbers'-path junction",
+      "note": "Signed junction where an unmaintained climbers' path leaves the PCT for Old Snowy; many parties stash trekking poles/packs here before the scramble.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 46.51352,
+      "lng": -121.458623,
+      "elev": 7550,
+      "name": "Summit scree/talus scramble",
+      "note": "Final ~0.5 mi/350 ft leaves the tread for loose scree and talus with a short Class 3 hand-climbing section; watch for rockfall dislodged by climbers above and lingering steep snow into early summer.",
+      "type": "Hazard",
+      "distMi": 7.3
+     },
+     {
+      "lat": 46.51194,
+      "lng": -121.45389,
+      "elev": 7880,
+      "name": "Old Snowy Mountain",
+      "note": "True summit (7,880+ ft); panoramic views of Mt. Adams, Mt. Rainier, Mt. St. Helens and the McCall, Conrad and Meade Glaciers, with Packwood Glacier visible just below to the northwest.",
+      "type": "Summit",
+      "distMi": 7.6
+     }
+    ],
+    "watch_out": [
+     "The summit spur trail has been signed since 2013 but is easy to lose in poor visibility — don't wander off the PCT onto random scree",
+     "Blocks near the summit are loose underfoot; test holds before weighting them",
+     "The natural rock arch near the summit is a scenic landmark but the ground around it is loose and exposed — watch footing while photographing it"
+    ],
+    "crowds": {
+     "peakTraffic": "Weekends late July through August, compounded by PCT thru-hiker traffic passing directly below the summit spur",
+     "solitudeRating": 2,
+     "estimatePerSeason": "Moderate-high — Old Snowy is described by multiple trip-report sources as likely the most-visited summit in the Goat Rocks Wilderness, since a signed spur trail leaves the PCT right at its high point. Nearby Goat Lake/Snowgrass Flat camps see 40+ parties on peak summer weekends; the Old Snowy summit spur itself sees fewer but still frequent traffic, roughly a steady stream of parties (PCT thru-hikers plus dayhikers/scramblers) on summer weekends, thinning quickly on weekdays and after Labor Day."
+    },
+    "access": {
+     "fees": "$5 per vehicle per day, or a $30 annual Northwest Forest Pass, required at the Snowgrass Flats (Trail #96) trailhead; payable by cash/check envelope, Recreation.gov Scan & Pay, or a valid Recreation Pass.",
+     "notes": "Straddles Gifford Pinchot NF (west) and Okanogan-Wenatchee NF (east, White Pass side); the standard approach (Snowgrass Flat, Berry Patch trailheads) is on the Gifford Pinchot side.",
+     "rules": "Group size (people plus stock) capped at 12. No camping at Snowgrass Flat itself or in Shoe Lake Basin, and no camping within 100 ft of any lakeshore. Campfires are banned in Shoe Lake Basin, at the Dana Yelverton Shelter, and within a quarter-mile of Goat Lake's shoreline. Leave No Trace / pack out all waste.",
+     "permit": "Free, self-issued Goat Rocks Wilderness permit at the Snowgrass Flats trailhead kiosk — no quota, reservation, or fee for the wilderness permit itself.",
+     "closures": "Forest Road 21, the access road to Snowgrass Flats, was washed out near milepost 3 from US-12 in the December 2025 atmospheric-river floods (with a second washout reported further south); the Forest Service was still assessing repairs. Confirm current road status with the Cowlitz Valley Ranger District, (360) 497-1103, before driving in. FR-2150 is separately closed to wheeled vehicles roughly Dec 1–Apr 1 for winter recreation.",
+     "group_limit": 12,
+     "landManager": "Gifford Pinchot National Forest — Cowlitz Valley Ranger District, 10024 US-12, Randle, WA 98377, (360) 497-1100",
+     "land_manager": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District) — Goat Rocks Wilderness",
+     "parking_pass": "Not required at Snowgrass Flat; required at Berry Patch trailhead — $5/day or $30/year Northwest Forest Pass.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Goat Rocks Wilderness permit",
+      "where": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+     }
+    }
+   }
+  }
+ ]
+}

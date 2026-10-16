@@ -1,0 +1,1845 @@
+[
+ {
+  "zone": "staircase-sawtooth",
+  "routes": [
+   {
+    "id": "wa_mount_cruiser_nw_face_corner",
+    "name": "Northwest Face/Corner",
+    "peak": "Mount Cruiser",
+    "area_id": "wa_mount_cruiser",
+    "discipline": "alpine",
+    "grade": "5.7 PG13",
+    "high_point_ft": 6104,
+    "overview": "A short, sporty pitch (5.7 PG13) on the northwest aspect of Cruiser's summit pinnacle, reached by continuing along the crest of Sawtooth Ridge past the South Corner start. It is a separate, established 1-pitch route alongside the 2-pitch South Corner — the mountain's only two recorded technical line…",
+    "approach": "Same approach as the South Corner (Staircase → Flapjack Lakes → Needle Pass, currently closed — see Closures). From Needle Pass, continue along or near the crest of Sawtooth Ridge past the South Corner start line to reach the northwest side of Cruiser's summit pinnacle via exposed 3rd/4th-class ridg…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_cruiser_south_corner",
+    "name": "South Corner",
+    "peak": "Mount Cruiser",
+    "area_id": "wa_mount_cruiser",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.3",
+    "high_point_ft": 6104,
+    "overview": "The classic and easiest technical line up Mount Cruiser (6,104 ft), the highest summit on the Olympic Mountains' Sawtooth Ridge and the objective most parties travel to the ridge for. From Needle Pass the route follows a Class 4 gully past a large chockstone ('Cannon Hole,' passed via a short squeez…",
+    "approach": "From the Staircase Ranger Station (~770-850 ft, at the end of Lake Cushman Rd/North Fork Skokomish Rd), the approach starts on the North Fork Skokomish River Trail, a gently graded old decommissioned roadbed that runs up-valley through old-growth forest for about 3.7-3.8 miles to the former road-end…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_duckabush_standard",
+    "name": "Standard Scramble (Marmot Lake / O'Neil Pass approach)",
+    "peak": "Mount Duckabush",
+    "area_id": "wa_mount_duckabush",
+    "discipline": "scrambling",
+    "grade": "Class 2-3 (steep snow early season)",
+    "high_point_ft": 6254,
+    "overview": "Mount Duckabush (6,232 ft) is a remote, multi-summit peak in the Skokomish–LaCrosse group of the central Olympic Mountains, within Olympic National Park's Daniel J. Evans Wilderness, on the divide between the Duckabush River headwaters and La Crosse Basin near Marmot Lake and O'Neil Pass. LIDAR surv…",
+    "approach": "From the Duckabush Trailhead (end of Forest Service Road 2510, ~440 ft, reached via US-101 south of Quilcene), follow the Duckabush River Trail #803 upriver. The first ~2.4 miles run at an easy grade along the river through old-growth forest, then the trail climbs steadily and at times steeply (~1,0…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "10-Mile Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1471,
+      "notes": "Established riverside camp with fire rings and toilet; reliable water from the Duckabush River, but the final approach has heavy blowdown requiring scrambling a…"
+     },
+     {
+      "name": "Upper Duckabush Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2673,
+      "notes": "Established camp with toilet near the LaCrosse Basin trail junction; a common second-night stop before pushing on to Marmot Lake or O'Neil Pass."
+     },
+     {
+      "name": "Marmot Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4921,
+      "notes": "Large subalpine lake with several established sites around the shore; the standard high camp for the summit push, about 1.3 mi and 1,300 ft below Mount Duckabus…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_hopper_standard",
+    "name": "Standard Scramble (First Divide / Marmot Lake approach)",
+    "peak": "Mount Hopper",
+    "area_id": "wa_mount_hopper",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 6120,
+    "overview": "Mount Hopper (6,120 ft) is a deep-interior Olympic summit in the Daniel J. Evans Wilderness of Olympic National Park, on the Skokomish–Duckabush divide near First Divide. Its line parent is Mount Steel (6,612 ft), about 1.96 miles west-northwest; Mount Duckabush, Mount LaCrosse, and White Mountain a…",
+    "approach": "With the historic Staircase (North Fork Skokomish) approach currently closed, the practical way in is now from the Duckabush Trailhead via Duckabush Trail #803. The tread starts easy for about 2.4 miles to Little Hump, then climbs the steep, loose-rock switchbacks of Big Hump before mellowing again …",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "Camp Pleasant",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "Established riverside camp beside the North Fork Skokomish with reliable water, roughly the halfway point to First Divide."
+     },
+     {
+      "name": "Nine Stream Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "Last reliable camp and water before the trail turns steeply uphill; gains about 2,600 ft over the next 3 miles to First Divide."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_lincoln_harniss_chute",
+    "name": "Harniss Chute",
+    "peak": "Mount Lincoln",
+    "area_id": "wa_mount_lincoln",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 5868,
+    "overview": "A class 3 gully variation to Mount Lincoln's standard south-ridge scramble, also approached from Flapjack Lakes.",
+    "approach": "Same approach as the standard route: Staircase trailhead to Flapjack Lakes via the North Fork Skokomish and Flapjack Lakes Trails, then off-trail toward Mount Lincoln.",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_lincoln_standard",
+    "name": "Standard Scramble (Flapjack Lakes / Sawtooth Ridge)",
+    "peak": "Mount Lincoln",
+    "area_id": "wa_mount_lincoln",
+    "discipline": "scrambling",
+    "grade": "Class 3-4 (low 5th-class chockstone crux near summit)",
+    "high_point_ft": 5868,
+    "overview": "Mount Lincoln (5,868 ft) is the second-highest summit on Sawtooth Ridge in the southeastern Olympic Mountains, on the shared boundary of Olympic National Park and the Mount Skokomish Wilderness (Olympic National Forest), Mason County. Its parent peak, Mount Cruiser (6,104 ft), sits 1.1 miles northea…",
+    "approach": "Approach via the Staircase / North Fork Skokomish trail (7.5 mi to Flapjack Lakes, ~3,100 ft gain) to Flapjack Lakes, then off-trail into the Sawtooth Ridge to the base of the climbing. Usually an overnight trip. CURRENT STATUS (verified via NPS trail conditions, updated 6/5/26): both the North Fork…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "Flapjack Lakes basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "Established Olympic NP backcountry camp (permit + $8/person/night, no fires); standard overnight staging spot for the Lincoln scramble."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_olson_standard",
+    "name": "Standard Scramble",
+    "peak": "Mount Olson",
+    "area_id": "wa_mount_olson",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 5289,
+    "overview": "Mount Olson is a peak in the southeastern Olympic interior above the South Fork Skokomish valley (Mason County), within Olympic National Park. The standard route follows the primitive Six Ridge Trail to a brushy, largely unmaintained boot path along the ridge crest (known as the \"Mount Olson Way\") t…",
+    "approach": "Multi-day approach: hike the Skokomish Lower/Upper South Fork Trail (Olympic National Forest Trail #873) to the Six Ridge Trail and Sundown Pass/Lake, then follow the primitive \"Mount Olson Way\" boot path along Six Ridge off-trail to Olson's upper slopes. Expect significant brush and blowdowns low, …",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "Lake Sundown",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3810,
+      "notes": "Short spur off the pass to a subalpine basin lake on Six Ridge's western flank; last dependable water and the standard base camp for an Olson attempt."
+     },
+     {
+      "name": "Tarn below Olson's summit block",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Boulder-field tarn just below the summit block is the last water and a common bivy spot; the final gully above it to the top is steep, loose, and exposed."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_steel_first_divide",
+    "name": "First Divide Route (North Fork Skokomish / Staircase approach)",
+    "peak": "Mount Steel",
+    "area_id": "wa_mount_steel",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6225,
+    "overview": "A shorter, though still remote, Class 1 approach to Mount Steel from the Staircase/North Fork Skokomish side, gaining the ridge at First Divide before a cross-country push to the summit.",
+    "approach": "From the Staircase trailhead area on the North Fork Skokomish River, follow the North Fork Skokomish River Trail 12.7 miles to First Divide (elevation about 4,688 ft), passing through lowland and montane forest into subalpine meadow with views of the La Crosse Peaks. From First Divide, continue cros…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_steel_standard",
+    "name": "Standard Scramble (Marmot Lake / Duckabush approach)",
+    "peak": "Mount Steel",
+    "area_id": "wa_mount_steel",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3 (steep snow early season)",
+    "high_point_ft": 6225,
+    "overview": "Mount Steel is a deep-interior Olympic summit in the Daniel J. Evans Wilderness of Olympic National Park, near Marmot Lake and the head of the Duckabush. It sits about 1.4 miles northeast of its higher neighbor, Mount Duckabush, and was named in 1902 for William Gladstone Steel; the peak's first rec…",
+    "approach": "Start at the Duckabush Trailhead (FR 2510-060) off US 101 and follow the Duckabush River Trail #803. The first real test is Big Hump at mile 3.9: a steep, loose-rock push of about 1,000 ft in roughly 30 switchbacks, then a 800 ft drop back down to river level on the far side — this is the trail's te…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "Ten-Mile Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Established Duckabush River camp with a privy and bear wires; last easy, reliable water and legal campsite before the climb into subalpine terrain."
+     },
+     {
+      "name": "Marmot Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4921,
+      "notes": "Standard backcountry basecamp for this route, 1.2 mi below O'Neil Pass, with views across the basin to Mts. Duckabush and Steel."
+     }
+    ]
+   },
+   {
+    "id": "wa_the_fin_scramble",
+    "name": "Sawtooth Range Scramble",
+    "peak": "The Fin",
+    "area_id": "wa_the_fin",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 5599,
+    "overview": "The Fin is one of roughly a dozen named rock towers strung along Sawtooth Ridge, which runs from Mount Cruiser (6,104') southeast to Mount Lincoln above the Flapjack Lakes / Gladys Divide basin in the Skokomish-Duckabush divide of southeastern Olympic National Park. It sits on the ridge crest betwee…",
+    "approach": "From Hoodsport, WA drive ~16 miles northwest to the Staircase Ranger Station / North Fork Skokomish River Trailhead. Hike the North Fork Skokomish River Trail ~3.4-3.7 mi to the Flapjack Lakes Trail junction, then climb ~3.6-3.8 mi more to Flapjack Lakes (~3,850-3,900'). From the lakes go east ~1.5 …",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "Flapjack Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "Designated backcountry camp in a subalpine basin (bear wire, pit toilet); campfires banned above 3,500 ft and lake water must be treated."
+     }
+    ]
+   },
+   {
+    "id": "wa_the_horn_scramble",
+    "name": "Sawtooth Range Scramble",
+    "peak": "The Horn",
+    "area_id": "wa_the_horn",
+    "discipline": "alpine",
+    "grade": "5.5 R",
+    "high_point_ft": 5536,
+    "overview": "The Horn is a rugged basalt pinnacle on Sawtooth Ridge, in the far southeastern corner of Olympic National Park on the crest between Mount Cruiser and Mount Lincoln — east of Flapjack Lakes, not in the Lake of the Angels/Putvin drainage to the north (a different part of the southeastern Olympics). I…",
+    "approach": "Drive Hwy 101 to Hoodsport, then SR-119 (North Lake Cushman Road, becomes FR-24 past the lake) roughly 9 miles to the Staircase Ranger Station/trailhead (~800 ft) in the SE corner of Olympic National Park. Hike the North Fork Skokomish River Trail ~3.4 miles to the Spike Camp junction, then climb st…",
+    "camps": [
+     {
+      "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Sp…"
+     },
+     {
+      "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it…"
+     },
+     {
+      "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1550,
+      "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves NONE of the Sawtooth peaks directly — t…"
+     },
+     {
+      "name": "Nine Stream — last low camp before the First Divide climb",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2040,
+      "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail le…"
+     },
+     {
+      "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4288,
+      "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile wes…"
+     },
+     {
+      "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2694,
+      "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the…"
+     },
+     {
+      "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mou…"
+     },
+     {
+      "name": "Belview and the Six Ridge camps — for Mount Olson only",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself …"
+     },
+     {
+      "name": "Spike Camp junction",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1473,
+      "notes": "Primitive riverside camp where the North Fork Skokomish River Trail forks toward Flapjack Lakes; last easy river-level water before the steep climb begins."
+     },
+     {
+      "name": "Flapjack Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "Established backcountry camp at twin subalpine lakes below Sawtooth Ridge; bear canisters mandatory, camping permit reservation required mid-June-Sept 30, no ca…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "stehekin-agnes",
+  "routes": [
+   {
+    "id": "wa_agnes_mountain_west_route",
+    "name": "West Route",
+    "peak": "Agnes Mountain",
+    "area_id": "wa_agnes_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8119,
+    "overview": "Agnes Mountain is a dramatic, Matterhorn-shaped peak above Agnes Creek near the Stehekin/Suiattle divide, with a north face that drops 1,800 ft to Agnes Creek in only 1.5 miles. First climbed in 1936 by W. Ronald Frazier and Dan O'Brien via the West Fork of Agnes Creek, it remains rarely visited — h…",
+    "approach": "Start at the High Bridge Guard Station & Campground on Stehekin Valley Road (elev. ~1,600 ft) — reached from Stehekin by the NPS shuttle bus (about 11.3 miles) or on foot, since there is no through road; Stehekin itself is reached only by the Lady of the Lake/Lady Express ferry up Lake Chelan or by …",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dark_peak_dark_glacier_route",
+    "name": "Dark Glacier Route",
+    "peak": "Dark Peak",
+    "area_id": "wa_dark_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8507,
+    "overview": "The standard route climbs Dark Peak's north-side Dark Glacier from a remote upper basin above Swamp Creek, then crosses a bergschrund/moat onto the summit rock ridge for a short scramble to the top -- a moderate glacier climb whose real difficulty is the long, brushy, multi-day approach rather than …",
+    "approach": "Access begins in Chelan via the Lady of the Lake passenger ferry (Lady Express ~2.5 hrs or Lady II ~4 hrs) or floatplane to the roadless village of Stehekin, then a scheduled valley shuttle bus/van up the Stehekin Valley Road to High Bridge (~1,700 ft), the trailhead for the Agnes Creek Trail/PCT an…",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     }
+    ]
+   },
+   {
+    "id": "wa_flora_mountain_southwest_slope",
+    "name": "Southwest Slope (Standard Route)",
+    "peak": "Flora Mountain",
+    "area_id": "wa_flora_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8323,
+    "overview": "An unroped Class 2 talus and scree walk up Flora's southwest ridge/slope — the peak's easiest line and by far its most commonly climbed route, reached via a multi-day off-trail approach from the Devore Creek Trail out of Stehekin.",
+    "approach": "From Chelan, take the Lady of the Lake ferry (or a floatplane) to Stehekin Landing. Ride the NPS shuttle bus 4.4 miles up Stehekin Valley Road to Harlequin Bridge ($5 fare), cross the bridge, and follow the road past Harlequin Camp and the Stehekin Airport to pick up the Stehekin River Trail. Follow…",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mcgregor_mountain_scramble",
+    "name": "Summit Block Scramble (from Stehekin)",
+    "peak": "McGregor Mountain",
+    "area_id": "wa_mcgregor_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8143,
+    "overview": "McGregor Mountain is the highest and most prominent summit overlooking the Stehekin Valley, gaining over a vertical mile from the valley floor above Lake Chelan. The standard route follows the McGregor Mountain Trail from High Bridge past Howard Lake (historically Coon Lake) to Heaton Camp at 7,000 …",
+    "approach": "McGregor Mountain is only reachable via Stehekin, at the head of Lake Chelan, which has no outside road access — get there by the Lady of the Lake ferry, floatplane, or the long trail from Cascade Pass/Bridge Creek. From Stehekin Landing, take the NPS shuttle bus (or walk/bike) 11 miles up the Stehe…",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     },
+     {
+      "name": "Heaton Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": "This is the long stretch: close to a hundred switchbacks up an open southwest-facing shoulder that bakes in the afternoon, then into stunted subalpine fir and p…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_lyall_south_route",
+    "name": "Southwest Ridge Route",
+    "peak": "Mount Lyall",
+    "area_id": "wa_mount_lyall",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 7911,
+    "overview": "Mount Lyall is a remote, seldom-climbed summit above the Agnes Creek and Swamp Creek drainages south of Stehekin, sitting near the boundary of the Stephen Mather Wilderness (North Cascades National Park) and the Glacier Peak Wilderness. It is reached by a long trail approach from the head of Lake Ch…",
+    "approach": "Via passenger ferry or floatplane from Chelan to Stehekin, then the PCT/Stehekin Valley Road to High Bridge; follow the Agnes Creek Trail and Swamp Creek drainage to Lyall's west basin. Roughly 35-40 miles round trip from High Bridge, so most parties camp en route. From the west basin, climb talus a…",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5282,
+      "notes": "Glacial basin lake with established camping and reliable water; Bonanza Mountain's Mary Green Glacier is visible across the valley — good base camp for the summ…"
+     }
+    ]
+   },
+   {
+    "id": "wa_needle_peak_north_ridge",
+    "name": "North Ridge",
+    "peak": "Needle Peak",
+    "area_id": "wa_needle_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": null,
+    "overview": "Needle Peak's North Ridge is the peak's one well-documented technical line, climbed in a single push as the opening stage of a two-day, multi-summit traverse (Needle Peak → Anonymity Towers → Dark Peak → Bonanza Peak) that produced the first ascent of Bonanza Peak's Northwest Ridge.",
+    "approach": "From Stehekin (reached only by passenger boat or floatplane up Lake Chelan — no road access), follow the Agnes Creek Trail upstream and leave the maintained trail at Swamp Creek to travel cross-country onto Needle Peak's north side and gain the North Ridge.",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     }
+    ]
+   },
+   {
+    "id": "wa_needle_peak_south_route",
+    "name": "South Route",
+    "peak": "Needle Peak",
+    "area_id": "wa_needle_peak",
+    "discipline": "scrambling",
+    "grade": "Class 4 (5.0 crux)",
+    "high_point_ft": 7896,
+    "overview": "A slender granite spire in the North Cascades backcountry above Stehekin, standing just west of Mount Lyall and linked south to Dark Peak by the jagged, largely unclimbed Anonymity Towers ridge. The peak is not in the Entiat Mountains as earlier described — it rises above the Agnes Creek/Swamp Creek…",
+    "approach": "Needle Peak is only reachable by boat or floatplane: ride the Lady of the Lake ferry (or a Chelan Airways floatplane) up 50-mile-long Lake Chelan from the town of Chelan to Stehekin Landing — there is no road access from the outside world. From Stehekin Landing, take the Stehekin Valley Road (or the…",
+    "camps": [
+     {
+      "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, …"
+     },
+     {
+      "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1600,
+      "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the br…"
+     },
+     {
+      "name": "Fivemile Camp, Agnes Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2200,
+      "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West …"
+     },
+     {
+      "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Cre…"
+     },
+     {
+      "name": "West Fork Agnes Creek — the bivy under Agnes Mountain",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the working bivy zone for AGNES MOUNTAIN and it needs to be described honestly: THE TRAIL HAS ALL BUT VANISHED. What is marked on maps as the West Fork Agnes Creek trail is now a rough bushwhack up the drainage, …"
+     },
+     {
+      "name": "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "FLORA MOUNTAIN is the peak in this zone that does not start at High Bridge, and sending a party up the valley for it wastes a day. The Company Creek road leaves the Stehekin road about five and a half miles from the land…"
+     },
+     {
+      "name": "Swamp Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Keep heading south on the PCT for roughly another three miles of easy valley walking to the fork where Swamp Creek comes in. The peak shows itself up-valley alo…"
+     },
+     {
+      "name": "Ridgeline camp above 5,400 ft",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "Do not force the polished slab directly. The usual line escapes west through the taller rock, and parties belay off a tree for roughly 200 ft to regain the top …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "stevens-pass-tye",
+  "routes": [
+   {
+    "id": "wa_lichtenberg_mountain_se_route",
+    "name": "Southeast Slopes Scramble",
+    "peak": "Lichtenberg Mountain",
+    "area_id": "wa_lichtenberg_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 5844,
+    "overview": "A roughly 9-mile round trip, off-trail scramble up Lichtenberg Mountain's southeast slopes, gaining about 2,500 ft. No maintained trail reaches the summit: from the Smithbrook Trailhead, climbers follow the Smithbrook Trail and Pacific Crest Trail past Lake Valhalla, then leave the trail near the la…",
+    "approach": "Park at the Smithbrook Trailhead (elev. ~3,800 ft) on Smithbrook Road (FR 6700), about 2.7 miles up from Hwy 2. Start on the signed Smithbrook Trail (part of the Henry M. Jackson Wilderness trail system) and climb via nearly 20 short switchbacks, gaining about 650 ft in 1.2 miles to Union Gap on the…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lichtenberg_mountain_west_face_west_rib",
+    "name": "West Face - West Rib (Lichtenhorn / West Peak)",
+    "peak": "Lichtenberg Mountain",
+    "area_id": "wa_lichtenberg_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 5844,
+    "overview": "A little-documented technical rock line up the west face and rib of Lichtenberg's western sub-summit (the ~5,800+ ft 'Lichtenhorn'), the rocky pinnacle overlooking Lake Valhalla, approached via Lichtenberg Pass and descended via the northeast slope.",
+    "approach": "From the Old Lake Valhalla/Lake Janus Trailhead on Smith Brook Road (~4,150 ft), follow the trail toward Union Gap and continue to Lichtenberg Pass, then leave the trail to approach the base of the west face.",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_mccausland_n_route",
+    "name": "North Slopes from Lake Valhalla",
+    "peak": "Mount McCausland",
+    "area_id": "wa_mount_mccausland",
+    "discipline": "mountaineering",
+    "grade": "Class 2 scramble",
+    "high_point_ft": 5747,
+    "overview": "Mount McCausland rises just above scenic Lake Valhalla near Stevens Pass and is among the most accessible scrambles in the corridor. An unmarked climber's path leaves the PCT at a saddle just before the trail drops to the lake, climbing steeply through heather, brush, and loose rock to the broad sum…",
+    "approach": "From US Highway 2 about 4 miles east of Stevens Pass, turn onto Smith Brook Road (Forest Road 6700) and follow the gravel road roughly 2.6-2.8 miles to the Smithbrook Trailhead (el. ~4,000 ft; no fee, no Northwest Forest Pass required). Hike Smithbrook Trail #1590 through old-growth forest, entering…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sky_mountain_s_route",
+    "name": "South Slopes Scramble",
+    "peak": "Sky Mountain",
+    "area_id": "wa_sky_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 5482,
+    "overview": "Sky Mountain is the informal name for the true high point of Skyline Ridge (also called Heather Ridge on older maps), the horseshoe-shaped crest that arcs immediately north of Stevens Pass between the Tye River and Nason Creek valleys. It's the tallest summit on the ridge but is bypassed by most day…",
+    "approach": "From the Stevens Pass Ski Area's north (uphill) lot, walk to the far east end of the parking area near the small gray electrical substation/WSDOT building — this is the unsigned Skyline Lake trailhead. In summer, take the gravel service road on the left side of the substation, passing beneath the po…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_slippery_slab_tower_ne_face",
+    "name": "Slippery Slab Tower NE Face",
+    "peak": "Thunder Mountain and Slippery Slab Tower",
+    "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "high_point_ft": 6356,
+    "overview": "A short, moderate two-pitch rock climb up the northeast arete/shoulder of Slippery Slab Tower, a slender granite pinnacle near Thunder Mountain above Trap Pass, ending at a summit register after a long, scenic wilderness approach.",
+    "approach": "From either trailhead, climbers first gain the Pacific Crest Trail — via the Tunnel Creek Trail climbing about 1,170 ft in 1.45 miles to Hope Lake, or via the Surprise Creek Trail past Surprise and Glacier Lakes — then follow the PCT south several miles to Trap Pass (~5,800 ft). From Trap Pass an un…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_spinnaker_peak_s_route",
+    "name": "South Slopes Scramble",
+    "peak": "Spinnaker Peak",
+    "area_id": "wa_spinnaker_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 5645,
+    "overview": "A little-visited summit on the Cascade Crest near Stevens Pass, WA. Spinnaker Peak rises above the headwaters of the Tye River between Lichtenberg Mountain and Tye Peak, about a mile from the Pacific Crest Trail. It's rarely climbed, largely because the surrounding terrain is a thick, brushy bushwha…",
+    "approach": "Park at the Yodelin lot on US 2 (the former Yodelin ski area's lot, now used for overflow parking, roughly 1.7 miles from the Stevens Pass Ski Area pedestrian overpass, around milepost 60). Cross the highway and follow the old ski-area road south into the valley, staying near Nason Creek where cross…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     },
+     {
+      "name": "Spinnaker–Tye Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "Open valley basin between Spinnaker and Tye Peak; a well-known winter camping bowl for ski tourers and climbers staging for either summit."
+     }
+    ]
+   },
+   {
+    "id": "wa_thunder_mountain_north_face",
+    "name": "Thunder Mountain North Face",
+    "peak": "Thunder Mountain and Slippery Slab Tower",
+    "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6556,
+    "overview": "A relatively obscure, rarely-repeated 600-foot class 5 granite line up Thunder Mountain's north face, above the Thunder Mountain Lakes basin, first climbed in 1972 — in contrast to the standard 3rd-class scramble route to the same 6,556 ft summit via the SE slopes.",
+    "approach": "Reached via the same Trap Pass approach used for Slippery Slab Tower (Tunnel Creek or Surprise Creek trailheads to the PCT at Trap Pass), continuing past Slippery Slab Meadows toward Thunder Mountain Pass and the Thunder Mountain Lakes basin, then approaching the peak's north side. The standard SE-s…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_tye_peak_e_route",
+    "name": "East Slopes Scramble",
+    "peak": "Tye Peak",
+    "area_id": "wa_tye_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 5476,
+    "overview": "Tye Peak (Pt. 5,476') is an unofficial name — it doesn't appear on USGS quads — for the summit rising directly above Stevens Pass on Skyline/Tye Ridge, between the Stevens Pass Ski Area and the Pacific Crest Trail corridor. The name comes from nearby Tye Lake and the Tye River. There's no maintained…",
+    "approach": "Park in the large day-use lot on the north side of US 2 right at the Stevens Pass summit (signed for the PCT/Skyline Lake trailhead); a Northwest Forest Pass or Forest Service day-use fee applies here. Leave from the east end of the lot near the ski area's substation and climb directly up the open e…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   },
+   {
+    "id": "wa_union_peak_se_route",
+    "name": "Southeast Slopes Scramble",
+    "peak": "Union Peak",
+    "area_id": "wa_union_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 5696,
+    "overview": "Union Peak is a minor but scenic summit on the ridge crest just northeast of Stevens Pass, reached by a short approach up the Smithbrook Trail to Union Gap on the Pacific Crest Trail before a bushwhack/use-trail ascent of the peak's southeast ridge. It sits between Lichtenberg Mountain (to the south…",
+    "approach": "Drive US 2 to Smithbrook Road (Forest Road 6700); the turnoff is about 4.2 miles east of Stevens Pass summit (roughly half a mile east of milepost 69 coming from the Leavenworth/Wenatchee side, or about 68 miles from Everett/Seattle). Follow FR 6700 about 2.7-3 miles to the Smithbrook Trailhead (~4,…",
+    "camps": [
+     {
+      "name": "Lake Valhalla",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4838,
+      "notes": "The natural base for both Lichtenberg Mountain and Mount McCausland, which stand on opposite sides of the bowl the lake fills. Lichtenberg's broad face rises straight out of the water on the south side and is the peak ev…"
+     },
+     {
+      "name": "Lichtenwasser Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The direct camp for Lichtenberg Mountain, and quieter by an order of magnitude than Lake Valhalla on the other side of the peak. The fishing path leaves the first switchback on Smithbrook Road and is unsigned; it is a ge…"
+     },
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to…"
+     },
+     {
+      "name": "Skyline Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "The camp for Sky Mountain and Tye Peak, and the single most convenient high camp on this stretch of highway. The path leaves the north lot beside the buildings, and there are two ways up: the switchbacking service road, …"
+     },
+     {
+      "name": "The basin between Tye Peak and Spinnaker Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old roa…"
+     },
+     {
+      "name": "Trap Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5143,
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a co…"
+     },
+     {
+      "name": "Surprise Lake and Glacier Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the rai…"
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,258 @@
+{
+ "wa_mount_baker_coleman_headwall": {
+  "confirmedProblem": true,
+  "approach": "Start from the Heliotrope Ridge Trailhead (~3,700 ft, reached via Glacier Creek Rd 39, which reopened to vehicles all the way to the trailhead in August 2026 after flood repairs; it has washed out before, so check its status with the Mount Baker Ranger District before you go). Trail 677 climbs through old-growth forest and flower-filled avalanche chutes; watch for a couple of unbridged creek crossings that can be awkward early season or after rain. At roughly 2.25 mi the maintained trail forks — the left fork continues to the Coleman Glacier overlook, the right fork is the climbers' path that drops toward the moraine and begins the real work. Past Kulshan Cabin's former site (~4,800–5,000 ft, last reliable running water before camp), the trail climbs steeply up the crest of the lateral moraine known as the Hogsback. Most parties establish high camp somewhere on or near the Hogsback between about 6,500 and 7,200 ft — either on the ridge itself or on the flat benches toward the Black Buttes/Roman Nose — roughly 3–3.5 mi and ~3,000 ft above the trailhead. Above camp there is no water except what you melt. From camp, rope up for glacier travel and cross the broken lower Coleman Glacier: the line generally trends up toward ~8,000 ft to meet the North Ridge tracks before dropping back down and cutting under the Roman Nose to reach the base of the headwall near 8,500 ft. This glacier crossing is a genuine route-finding crux that changes year to year — it can involve weaving around large crevasses, crossing questionable snow bridges, and occasionally a committing, barely-reversible crevasse jump or a short vertical step to get established at the base. Because the headwall and the Black Buttes shed rock and ice as the day warms, most parties leave camp in the pre-dawn hours (11 p.m.–4:30 a.m. starts are typical) specifically to be on or past the exposed glacier crossing and lower headwall before the sun hits it.",
+  "approach_variants": [
+   {
+    "name": "Heliotrope Ridge to a high Hogsback camp",
+    "notes": "Heliotrope Ridge trailhead via Glacier Creek Road. Trail 677 through old growth and avalanche chutes with a couple of unbridged creek crossings, then at about two and a quarter miles take the right-hand climbers' fork off the maintained trail onto the moraine. Past the old Kulshan Cabin site — the last running water — climb the Hogsback crest.\n\nParties on this route camp higher than the standard Coleman-Deming crowd, commonly around 6,700 ft and sometimes as high as 7,200, either on the ridge itself or on the flats toward the Black Buttes and the Roman Nose. Above camp everything is melted snow.\n\nFrom camp the line goes up the centre of the broken Coleman. This is the real crux of the day: weaving round large crevasses, crossing bridges of uncertain quality, and occasionally a committing jump or a short vertical step to get established. It changes materially from season to season.\n\nStarts are early — anything from late evening to half past four in the morning — specifically to be through the exposed glacier and onto the lower headwall before the sun loosens the wall and the Black Buttes above.\n\nGlacier Creek Road has washed out more than once, most recently in the December 2025 floods, and it reopened to the trailhead in August 2026. When it is closed low it adds several miles on foot or bike before the kiosk, so check its status before a trip.",
+    "distMi": 3,
+    "gainFt": 3000,
+    "season": "late Apr-Jun",
+    "hazards": [
+     "the Coleman Glacier crossing itself — large crevasses, questionable bridges, occasionally a barely reversible move",
+     "rockfall and icefall off the headwall and the Black Buttes once the sun is on them",
+     "bergschrund at the base of the wall every season",
+     "no water above camp"
+    ],
+    "baseFinding": "The base sits at about 8,500 ft, immediately LEFT of the Roman Nose — the rock prow that bounds the headwall on its south side. Use the Roman Nose as the handrail: you want to be tucked under the face just past it, not out in the middle of the glacier.\n\nThe positive confirmation is that there is always a bergschrund here, and above it the slope kicks up into sustained forty-five to fifty degree ground that does not lie back again until around 10,200 ft. If the ground above you eases off within a couple of rope lengths, you are not on the headwall.\n\nThe negative marker matters because the two features are neighbours: the Coleman Headwall is a broad FACE, and the North Ridge is the defined arete bounding it. If you find yourself at the foot of a narrow crest with a double bergschrund rather than a wide slope, you have gone too far and you are at the North Ridge. Some parties deliberately trend up toward the North Ridge tracks around 8,000 ft to use the broken trail, then drop back down and cut under the Roman Nose — if you are following that plan, the drop back down is not optional."
+   }
+  ],
+  "why": "USFS news release 'Forest Service Has Opened Glacier Creek Road' (fs.usda.gov/r06/mbs/newsroom/releases/forest-service-has-opened-glacier-creek-road) and Cascadia Daily News 2026-08-20 (cascadiadaily.com/2026/aug/20/glacier-creek-road-reopens-following-washout-repairs/): repairs complete, vehicles can reach Heliotrope Ridge TH; WTA trip report 2026-08-26 confirms open (potholed). Approach paragraph stated the washout as current; variant notes gave the washout as an undated caveat and also contained 'Trip reports consistently describe' (source voice) which I removed while touching the same array. trailheadDirection has no stale text (unchanged). The road column is already current. The bivy note 'Hogsback Camp' still says the road 'has been under a repair closure' - stale, but bivy is outside this file's schema; flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_mt_baker_coleman_headwall": {
+  "confirmedProblem": false,
+  "why": "Second Coleman Headwall row (ice, area wa_mt_baker) has approach, approach_variants, approach_logistics, road and bivy all NULL - no stale washout text to fix.",
+  "confidence": "high"
+ },
+ "wa_mount_seattle_south": {
+  "confirmedProblem": true,
+  "approach": "Two realistic approach corridors exist, both multi-day: (1) North Fork Quinault side — from the North Fork Quinault Trailhead at the end of the North Shore Road (not the South Shore Road, which leads to Graves Creek and the East Fork instead), follow the North Fork Quinault River Trail or the higher, rougher Skyline Ridge Primitive Trail (via Three Lakes and Kimta Peak) to Low Divide, roughly 16-20 miles one-way depending on the line chosen, then cross-country/climbers'-path to Seattle Meadows below the peak's south side. (2) Elwha side — from the Whiskey Bend trailhead (the road to it has been closed to vehicles at Madison Falls since a 2021 washout, adding about seven miles each way on foot or bike), follow the Elwha River Trail up the Elwha valley toward Elwha Basin/Low Divide (on the order of 20+ miles one-way), then leave trail to climb into Seattle Creek Basin or Noyes Basin on the peak's northeast side. Either way, plan on a multi-day backpack just to reach a base camp, with several thousand feet of trail gain before any scrambling begins. The Seattle Creek Basin approach (Elwha side) follows the creek's waterfalls until the drainage steepens, forcing a steep, brushy bushwhack up onto the Mt. Noyes-Mt. Seattle ridge — expect slow going in heavy brush low down.",
+  "approach_logistics": {
+   "peakLat": 47.730995,
+   "peakLng": -123.577965,
+   "trailhead": "North Fork Quinault Trailhead (North Shore Road)",
+   "trailheadLat": 47.5759,
+   "trailheadLng": -123.648,
+   "trailheadDirection": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101)"
+  },
+  "why": "NPS North Fork Quinault River Trail page (home.nps.gov/olym/planyourvisit/north-for-quinault.htm): turn onto North Shore Road, road ends at the trailhead and ranger station; 16 mi to Low Divide; Skyline reached from Three Lakes or NF Quinault trails. Graves Creek is the South Shore Road end and the East Fork Quinault/Enchanted Valley trailhead, not an NF Quinault start. Stored coords 47.5676,-123.6553 are exactly OSM 'Irely Lake (Big Creek) Trailhead' (node 3012396897, 47.56770,-123.65524), a different trailhead; OSM 'North Fork Trailhead' node 13121441024 is 47.575875,-123.647966, matching sibling rows wa_mount_seattle_noyes_basin / _seattle_creek (47.5761,-123.6479). Name, coords and trailheadDirection now copy the sibling rows. Also added the Madison Falls closure to the Elwha option because 'from the Whiskey Bend trailhead' is not drivable (NPS current road conditions: Olympic Hot Springs Rd and Whiskey Bend Rd closed to vehicles since the 2021 washout; the route's own access.closures says ~7 mi each way). approach_variants have no stale trailhead text - unchanged.",
+  "confidence": "high"
+ },
+ "wa_glacier_peak_kennedy_glacier": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.1072,
+   "peakLng": -121.113,
+   "trailhead": "North Fork Sauk Trailhead (FR-49, Sloan Creek Road)",
+   "trailheadLat": 48.0583,
+   "trailheadLng": -121.2879,
+   "trailheadDirection": "From Darrington, south on the Mountain Loop Highway about 16 miles to Sloan Creek Road (FR-49), then east about 6.4 miles to the North Fork Sauk Trailhead (~2,100 ft); North Fork Sauk Trail #649 to the PCT, then north over Red Pass toward the Glacier Creek camps"
+  },
+  "why": "FR-23 (White Chuck) is closed from MP 3.7 to its end (USFS release 'Current and Upcoming Road Closures', 2026-07-01), and the Suiattle Rd FR-26 is closed at MP 4 under an order running 2026-04-02 to 2028-01-01 (fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure), so neither White Chuck nor Suiattle is a drivable start. North Fork Sauk: WTA trip report 2026-05-25 drove Sloan Creek Rd to the trailhead (potholes, small washouts, passable), and the route's own approach/variant already name NF Sauk + PCT over Red Pass as the reliably open line. Trailhead coords: OSM node 50625380 'North Fork Sauk Trailhead' 48.0583431,-121.28793 and WTA hike page 48.0584,-121.2866 agree within ~100 m; USGS EPQS gives 2,069 ft and 2,113 ft respectively -> '~2,100 ft'. Drive: WTA 'Mountain Loop Highway 16 miles south of Darrington ... Forest Road 49 ... 6.4 miles'. The OLD stored pin 48.10876,-121.17787 is not the White Chuck trailhead at all: EPQS 3,857 ft, up-valley near the Kennedy Hot Springs area. WAYPOINTS (not touched): the route's waypoints[0] is type 'Trailhead', name 'White Chuck River Trailhead', at that same 48.10876,-121.17787 with elev 1700 and a note calling it the road end on Suiattle River Rd FR 26 - wrong name, wrong position and wrong road; the note itself gives NF Sauk as 48.05832,-121.28793. The next waypoints follow the White Chuck #643 / Kennedy Ridge #639 line. Approach text and variants already call FR-23 closed and name NF Sauk as the open option, so they are left unchanged. The bivy note describes the Suiattle side, which is also closed - flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_playing_not_spraying": {
+  "confirmedProblem": true,
+  "approach": "The Silver Horn is a sub-summit on the east ridge of Silver Star Mountain, east of the main summit, and both of its routes are on the clean white granite of its south face. That face is not reached from the Wine Spires pullout or Burgundy Col, which serve the other side of the crest. Instead, walk the Cedar Creek Trail from its trailhead at the end of FR 5310-200, off SR-20 about half a mile east of the Klipchuck Campground turnoff. After roughly five miles, turn off to the right below the old burn and follow a rough path up the right-hand side of the creek that drains the south side of the Silver Horn. Meadows at about 6,200 ft give good camping below the face.",
+  "approach_variants": [
+   {
+    "name": "Cedar Creek trail from the highway, then the creek draining the south side",
+    "notes": "THE APPROACH THAT MATTERS HERE IS THE SOUTHERN ONE, AND IT IS NOT THE SPIRES TRAIL. The climbers' path from the unsigned pullout further west serves the spires and the col on the other side of the crest. It does not put you under this face.\n\nFor the south face, walk the Cedar Creek trail from its own trailhead off the highway. After roughly five miles, turn off to the RIGHT below the old burn, where a rough path follows the RIGHT-HAND side of the creek that drains the south side of the formation.\n\nThere are good meadows for camping at about 6,200 ft. This is a rarely visited corner and there is no established climbers' camp, no fixed gear on the approach and very little traffic — expect to see nobody.\n\nA parking pass or day fee covers the trailhead. This is national forest, so there is no permit system and no quota, and the general dispersed-camping rules apply.",
+    "season": "Roughly mid-June through late September; July and August are the driest and most reliable",
+    "hazards": [
+     "The Wine Spires pullout and its climbers' trail lead to the far side of the crest, not to this face",
+     "Rarely climbed, so there is no traffic, no chalk and essentially no current conditions information",
+     "Rappel anchors on the descent are sparse and some must be built; carry extra webbing",
+     "Two long routes share this face and its summit",
+     "Remote enough that a retreat from high on the face is slow"
+    ],
+    "baseFinding": "The face is CLEAN WHITE GRANITE, which is the first confirmation and a good one — it is visibly paler than the rock either side and it is why the formation gets climbed at all. Follow the creek up to the meadows and then to the foot of that white wall. Two long routes share it and they share a summit, so the identification has to be done at the ground and re-checked on the climb.\n\nTHE START IS A FLAKE, AND IT IS A BIG ONE. This route begins with a LAYBACK OFF A LARGE CLEAN FLAKE that leads into a LONG LEFT-FACING CORNER SYSTEM carrying finger cracks. Large detached flake at the bottom, left-facing corner above it: that pairing is the whole identification and there is nothing else on this face like it.\n\nCONFIRM WITH THE ROOFS, IN ORDER. Above the corner system the route crosses RIGHT beneath a ROOF into a SPLITTER CRACK that reaches a ledge partway up the face. Higher, a SECOND ROOF leads to a hand crack and then stemming corners with a hard exit. Two roofs, the first crossed rightward and the second climbed through, is the sequence.\n\nTHE SUMMIT PITCH IS THE CLEANEST TEST OF ALL, and it is worth knowing before you leave the ledge: this route tops out THROUGH A DEEP SUMMIT CHIMNEY. You finish inside the chimney. The other long route on this face finishes on blocky ground JUST RIGHT OF that chimney and never enters it. If you are stemming a deep slot to the top, you are on this route; if you are scrambling blocks beside one, you are on the neighbour.\n\nNEGATIVE MARKER at the start to match it: if you began on the RIGHT-HAND side of the face on flakes, corners and splitters and arrived at a BROAD LEDGE running most of the way across the face at about half height, you are on the neighbouring line. This route has no such crossing ledge low down; its mid-height ledge is reached from a splitter after a rightward move under a roof.\n\nProtection throughout is cams and nuts to about three inches. Descent is a series of rappels down the south-east side; a seventy-metre rope is the standard, fixed anchors are sparse, and you should expect to build some — carry extra webbing."
+   }
+  ],
+  "approach_logistics": {
+   "peakLat": 48.55186,
+   "peakLng": -120.59014,
+   "trailhead": "Cedar Creek Trailhead (Trail #476, FR 5310-200)",
+   "trailheadLat": 48.5792,
+   "trailheadLng": -120.4787,
+   "trailheadDirection": "From Winthrop, west on SR-20 about 18 miles to FR 5310-200, about half a mile east of the Klipchuck Campground turnoff, then to the trailhead by the gravel pit at the road's end (~3,000 ft)"
+  },
+  "why": "Mountain Project area 'The Silver Horn' (mountainproject.com/area/106255336): sub-summit of Silver Star east of the main summit; south face of clean white granite; 'Hike up the Cedar Creek Trail for ~5 miles, and turn off and right below the recent forest fire burn. A rough trail follows the right side of the creek which drains the south side of the Silver Horn'; meadows ~6,200 ft; area GPS 48.55186,-120.59014 = stored peak pin. SummitPost Silver Star page: Silver Horn lies on the east ridge of Silver Star's east peak. So the old approach paragraph (north ridge, Wine Spires, Burgundy Col, plus pipeline voice 'thin in public trip reports') and the Wine Spires trailhead pin were wrong; the Cedar Creek variant was right. Cedar Creek trailhead: OSM node 50047578 ('Cedar Falls Trailhead') 48.579175,-120.4787167 and WTA 'Abernathy Pass via Cedar Creek' 48.5792,-120.4787 agree; EPQS 2,985 ft -> '~3,000 ft'; drive per WTA: 'From Winthrop drive SR 20 west for 18 miles to Forest Service Road 5310-200 (about 0.5 miles east of the turn off for Klipchuck Campground). The trail begins near the gravel pit at the end of the road.' Variant: only hazards[0] changed (it was pipeline voice and described the now-corrected stored approach); primary/longForm flags absent before and after. NOT in scope: road column still describes the Wine Spires pullout, and bivy[0] is 'Bench Camp above the Wine Spires pullout' - both wrong for this face; flag for road/camp passes.",
+  "confidence": "high"
+ },
+ "wa_the_chalice": {
+  "confirmedProblem": true,
+  "approach": "The Silver Horn is a sub-summit on the east ridge of Silver Star Mountain, east of the main summit, and both of its routes are on the clean white granite of its south face. That face is not reached from the Wine Spires pullout or Burgundy Col, which serve the other side of the crest. Instead, walk the Cedar Creek Trail from its trailhead at the end of FR 5310-200, off SR-20 about half a mile east of the Klipchuck Campground turnoff. After roughly five miles, turn off to the right below the old burn and follow a rough path up the right-hand side of the creek that drains the south side of the Silver Horn. Meadows at about 6,200 ft give good camping below the face.",
+  "approach_variants": [
+   {
+    "name": "Cedar Creek trail from the highway, then the creek draining the south side",
+    "notes": "THE SPIRES TRAIL IS THE WRONG APPROACH FOR THIS FACE. The unsigned pullout further west and the col above it serve the spires on the other side of the crest, not the southern wall this route is on.\n\nTake the Cedar Creek trail from its own trailhead off the highway. At roughly five miles, turn off to the RIGHT below the old burn; a rough path then follows the RIGHT-HAND side of the creek draining the south side of the formation. Meadows at about 6,200 ft give good camping.\n\nThis is a quiet corner by the standards of this highway. There is no established climbers' camp, no fixed approach gear and effectively no traffic.\n\nA parking pass or day fee covers the trailhead; there is no permit system and no quota on national forest ground here.",
+    "season": "Roughly mid-June through late September; July and August are typically driest",
+    "hazards": [
+     "The Wine Spires pullout and its climbers' trail lead to the far side of the crest, not to this face",
+     "Its own descent is not separately documented; the shared rappel line is an inference from the shared summit",
+     "Rappel anchors are sparse and some must be built; carry extra webbing",
+     "Rarely climbed, so there is no chalk, no traffic and no current conditions information",
+     "Two long routes on one face that share a mid-height ledge and a summit"
+    ],
+    "baseFinding": "The wall is CLEAN WHITE GRANITE and it is visibly paler than what surrounds it, which is the first check that you are under the right formation. Follow the creek to the meadows and then up to the foot of it.\n\nTHIS ROUTE IS THE RIGHT-HAND LINE. Start on the RIGHT SIDE of the south face, on flakes, corners and splitters. Its neighbour begins with a layback off a LARGE CLEAN FLAKE into a long LEFT-FACING corner system; if that is what is above you, walk right.\n\nTHE DEFINING FEATURE IS A BROAD LEDGE AT HALF HEIGHT, and it is the strongest thing this route has. Roughly halfway up the face the climbing arrives at a wide ledge that runs across the wall. That ledge is the route's hinge: from it you WALK LEFTWARD before starting the upper half. A route that reaches a broad crossing ledge and then requires you to walk left along it is this one.\n\nCONFIRM ON THE UPPER FACE. The first pitch above the ledge heads for the LEFT SIDE OF THE MOST PROMINENT ARETE OR PILLAR in the middle of the upper wall. That arete is the biggest feature up there and being on its left is the check. Two more pitches, then the line trends RIGHTWARD to the summit.\n\nTHE SUMMIT PITCH SEPARATES THE TWO ROUTES ABSOLUTELY. This one finishes on BLOCKY GROUND JUST RIGHT OF A PROMINENT CHIMNEY. It does not go into the chimney. The neighbouring route tops out THROUGH a deep summit chimney. So: blocky ground beside a slot means this route; stemming up inside the slot means you have crossed onto the other line.\n\nNEGATIVE MARKER lower down, since the two lines are close: if there was no broad crossing ledge and instead you moved rightward under a roof into a splitter to reach a smaller ledge, you are on the neighbour.\n\nDescent is not separately documented for this line. Because it shares the summit and the mid-face ledge with its neighbour, parties use that route's rappels down the south-east side: a seventy-metre rope, sparse fixed anchors, and enough webbing to build your own. Treat that as an inference rather than a described descent and go up prepared to make anchors."
+   }
+  ],
+  "approach_logistics": {
+   "peakLat": 48.55186,
+   "peakLng": -120.59014,
+   "trailhead": "Cedar Creek Trailhead (Trail #476, FR 5310-200)",
+   "trailheadLat": 48.5792,
+   "trailheadLng": -120.4787,
+   "trailheadDirection": "From Winthrop, west on SR-20 about 18 miles to FR 5310-200, about half a mile east of the Klipchuck Campground turnoff, then to the trailhead by the gravel pit at the road's end (~3,000 ft)"
+  },
+  "why": "Mountain Project area 'The Silver Horn' (mountainproject.com/area/106255336): sub-summit of Silver Star east of the main summit; south face of clean white granite; 'Hike up the Cedar Creek Trail for ~5 miles, and turn off and right below the recent forest fire burn. A rough trail follows the right side of the creek which drains the south side of the Silver Horn'; meadows ~6,200 ft; area GPS 48.55186,-120.59014 = stored peak pin. SummitPost Silver Star page: Silver Horn lies on the east ridge of Silver Star's east peak. So the old approach paragraph (north ridge, Wine Spires, Burgundy Col, plus pipeline voice 'thin in public trip reports') and the Wine Spires trailhead pin were wrong; the Cedar Creek variant was right. Cedar Creek trailhead: OSM node 50047578 ('Cedar Falls Trailhead') 48.579175,-120.4787167 and WTA 'Abernathy Pass via Cedar Creek' 48.5792,-120.4787 agree; EPQS 2,985 ft -> '~3,000 ft'; drive per WTA: 'From Winthrop drive SR 20 west for 18 miles to Forest Service Road 5310-200 (about 0.5 miles east of the turn off for Klipchuck Campground). The trail begins near the gravel pit at the end of the road.' Variant: only hazards[0] changed (it was pipeline voice and described the now-corrected stored approach); primary/longForm flags absent before and after. NOT in scope: road column still describes the Wine Spires pullout, and bivy[0] is 'Bench Camp above the Wine Spires pullout' - both wrong for this face; flag for road/camp passes.",
+  "confidence": "high"
+ },
+ "wa_cutthroat_cauthorn_wilson": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.526495,
+   "peakLng": -120.703655,
+   "trailhead": "SR-20 South Buttress Pullout (Cutthroat Peak)",
+   "trailheadLat": 48.5162,
+   "trailheadLng": -120.6836,
+   "trailheadDirection": "From the long pullout on the north side of SR-20 about 1.5 miles west of Washington Pass, via the South Buttress climbers' trail"
+  },
+  "why": "All Cutthroat PEAK routes correctly start from the SR-20 pullout ~1.5 mi W of Washington Pass / ~0.5 mi W of the Blue Lake Trailhead and cross State Creek; all Cutthroat WALL / Little Liberty Bell routes (Perfect Crime, Easy Getaway, Narcos, One Piece at a Time, Wright-Pond) correctly start from the Cutthroat Creek (Lake) Trailhead on FR-400; their text is correct. What is wrong is the trailhead PIN on the peak rows. OSM Blue Lake Trailhead is node 9181916060 at 48.51899,-120.67435; measured 0.5 mi (805 m) west along the OSM SR-20 polyline, that puts the pullout at about 48.5162,-120.6836 (EPQS 5,227 ft, on the highway; the climbers' trail then drops to State Creek near 5,000 ft). Stored pins: 48.5144,-120.6902 is 225 m off the highway at 4,987 ft (creek level, not a parking spot); 48.51973,-120.69632 is 938 m off the highway at 5,996 ft; 48.529,-120.692 is 1.5 km off the highway at 6,792 ft. Name strings are left as they are: they differ in wording but all name the same pullout. This row's pin was (48.5144, -120.6902). It is 225 m off the road at creek level, so it is borderline; the move is ~0.35 mi east along the highway.",
+  "confidence": "medium"
+ },
+ "wa_cutthroat_west_ridge": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.5264,
+   "peakLng": -120.7036,
+   "trailhead": "SR 20 / State Creek Pullout",
+   "trailheadLat": 48.5162,
+   "trailheadLng": -120.6836
+  },
+  "why": "All Cutthroat PEAK routes correctly start from the SR-20 pullout ~1.5 mi W of Washington Pass / ~0.5 mi W of the Blue Lake Trailhead and cross State Creek; all Cutthroat WALL / Little Liberty Bell routes (Perfect Crime, Easy Getaway, Narcos, One Piece at a Time, Wright-Pond) correctly start from the Cutthroat Creek (Lake) Trailhead on FR-400; their text is correct. What is wrong is the trailhead PIN on the peak rows. OSM Blue Lake Trailhead is node 9181916060 at 48.51899,-120.67435; measured 0.5 mi (805 m) west along the OSM SR-20 polyline, that puts the pullout at about 48.5162,-120.6836 (EPQS 5,227 ft, on the highway; the climbers' trail then drops to State Creek near 5,000 ft). Stored pins: 48.5144,-120.6902 is 225 m off the highway at 4,987 ft (creek level, not a parking spot); 48.51973,-120.69632 is 938 m off the highway at 5,996 ft; 48.529,-120.692 is 1.5 km off the highway at 6,792 ft. Name strings are left as they are: they differ in wording but all name the same pullout. This row's pin was (48.51973, -120.69632). It is nowhere near the road; confidence is high that it is wrong. The replacement coordinate is derived, so it is medium.",
+  "confidence": "medium"
+ },
+ "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.5264,
+   "peakLng": -120.7036,
+   "trailhead": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)",
+   "trailheadLat": 48.5162,
+   "trailheadLng": -120.6836
+  },
+  "why": "All Cutthroat PEAK routes correctly start from the SR-20 pullout ~1.5 mi W of Washington Pass / ~0.5 mi W of the Blue Lake Trailhead and cross State Creek; all Cutthroat WALL / Little Liberty Bell routes (Perfect Crime, Easy Getaway, Narcos, One Piece at a Time, Wright-Pond) correctly start from the Cutthroat Creek (Lake) Trailhead on FR-400; their text is correct. What is wrong is the trailhead PIN on the peak rows. OSM Blue Lake Trailhead is node 9181916060 at 48.51899,-120.67435; measured 0.5 mi (805 m) west along the OSM SR-20 polyline, that puts the pullout at about 48.5162,-120.6836 (EPQS 5,227 ft, on the highway; the climbers' trail then drops to State Creek near 5,000 ft). Stored pins: 48.5144,-120.6902 is 225 m off the highway at 4,987 ft (creek level, not a parking spot); 48.51973,-120.69632 is 938 m off the highway at 5,996 ft; 48.529,-120.692 is 1.5 km off the highway at 6,792 ft. Name strings are left as they are: they differ in wording but all name the same pullout. This row's pin was (48.5144, -120.6902). It is 225 m off the road at creek level, so it is borderline; the move is ~0.35 mi east along the highway.",
+  "confidence": "medium"
+ },
+ "wa_cutthroat_peak_southeast_buttress": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.5264,
+   "peakLng": -120.7036,
+   "trailhead": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)",
+   "trailheadLat": 48.5162,
+   "trailheadLng": -120.6836
+  },
+  "why": "All Cutthroat PEAK routes correctly start from the SR-20 pullout ~1.5 mi W of Washington Pass / ~0.5 mi W of the Blue Lake Trailhead and cross State Creek; all Cutthroat WALL / Little Liberty Bell routes (Perfect Crime, Easy Getaway, Narcos, One Piece at a Time, Wright-Pond) correctly start from the Cutthroat Creek (Lake) Trailhead on FR-400; their text is correct. What is wrong is the trailhead PIN on the peak rows. OSM Blue Lake Trailhead is node 9181916060 at 48.51899,-120.67435; measured 0.5 mi (805 m) west along the OSM SR-20 polyline, that puts the pullout at about 48.5162,-120.6836 (EPQS 5,227 ft, on the highway; the climbers' trail then drops to State Creek near 5,000 ft). Stored pins: 48.5144,-120.6902 is 225 m off the highway at 4,987 ft (creek level, not a parking spot); 48.51973,-120.69632 is 938 m off the highway at 5,996 ft; 48.529,-120.692 is 1.5 km off the highway at 6,792 ft. Name strings are left as they are: they differ in wording but all name the same pullout. This row's pin was (48.5144, -120.6902). It is 225 m off the road at creek level, so it is borderline; the move is ~0.35 mi east along the highway.",
+  "confidence": "medium"
+ },
+ "wa_cutthroat_south_buttress": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.5264,
+   "peakLng": -120.7036,
+   "trailhead": "SR 20 pullout (1.5 mi W of pass)",
+   "trailheadLat": 48.5162,
+   "trailheadLng": -120.6836
+  },
+  "why": "All Cutthroat PEAK routes correctly start from the SR-20 pullout ~1.5 mi W of Washington Pass / ~0.5 mi W of the Blue Lake Trailhead and cross State Creek; all Cutthroat WALL / Little Liberty Bell routes (Perfect Crime, Easy Getaway, Narcos, One Piece at a Time, Wright-Pond) correctly start from the Cutthroat Creek (Lake) Trailhead on FR-400; their text is correct. What is wrong is the trailhead PIN on the peak rows. OSM Blue Lake Trailhead is node 9181916060 at 48.51899,-120.67435; measured 0.5 mi (805 m) west along the OSM SR-20 polyline, that puts the pullout at about 48.5162,-120.6836 (EPQS 5,227 ft, on the highway; the climbers' trail then drops to State Creek near 5,000 ft). Stored pins: 48.5144,-120.6902 is 225 m off the highway at 4,987 ft (creek level, not a parking spot); 48.51973,-120.69632 is 938 m off the highway at 5,996 ft; 48.529,-120.692 is 1.5 km off the highway at 6,792 ft. Name strings are left as they are: they differ in wording but all name the same pullout. This row's pin was (48.529, -120.692). It is nowhere near the road; confidence is high that it is wrong. The replacement coordinate is derived, so it is medium.",
+  "confidence": "medium"
+ },
+ "wa_cutthroat_peak_northeast_face": {
+  "confirmedProblem": true,
+  "approach_logistics": {
+   "peakLat": 48.5264,
+   "peakLng": -120.7036,
+   "trailhead": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)",
+   "trailheadLat": 48.5162,
+   "trailheadLng": -120.6836
+  },
+  "why": "All Cutthroat PEAK routes correctly start from the SR-20 pullout ~1.5 mi W of Washington Pass / ~0.5 mi W of the Blue Lake Trailhead and cross State Creek; all Cutthroat WALL / Little Liberty Bell routes (Perfect Crime, Easy Getaway, Narcos, One Piece at a Time, Wright-Pond) correctly start from the Cutthroat Creek (Lake) Trailhead on FR-400; their text is correct. What is wrong is the trailhead PIN on the peak rows. OSM Blue Lake Trailhead is node 9181916060 at 48.51899,-120.67435; measured 0.5 mi (805 m) west along the OSM SR-20 polyline, that puts the pullout at about 48.5162,-120.6836 (EPQS 5,227 ft, on the highway; the climbers' trail then drops to State Creek near 5,000 ft). Stored pins: 48.5144,-120.6902 is 225 m off the highway at 4,987 ft (creek level, not a parking spot); 48.51973,-120.69632 is 938 m off the highway at 5,996 ft; 48.529,-120.692 is 1.5 km off the highway at 6,792 ft. Name strings are left as they are: they differ in wording but all name the same pullout. This row's pin was (48.5144, -120.6902). It is 225 m off the road at creek level, so it is borderline; the move is ~0.35 mi east along the highway.",
+  "confidence": "medium"
+ },
+ "wa_complete_south_buttress": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_north_ridge_3": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_cutthroat_the_swarm": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_cutthroat_peak_a_virtuous_circle": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_the_perfect_crime_with_variations": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_easy_getaway": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_narcos": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_wright_pond": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_one_piece_at_a_time": {
+  "confirmedProblem": false,
+  "why": "Start is correct for this route (Cutthroat Peak: SR-20 pullout and State Creek; Cutthroat Wall/Little Liberty Bell: Cutthroat Creek Trailhead on FR-400). Complete South Buttress and North Ridge have no trailhead lat/lng (not wrong, just absent); The Swarm and A Virtuous Circle have null logistics. The real defect in this cluster is in the SHARED BIVY records, outside this file's schema: 'Cutthroat basin climbers' bivy - SOUTH-SIDE routes only' says the way-path 'leaves the Cutthroat Lake trail' (wrong: the south basin is reached from the SR-20 pullout via State Creek) and that the 'North Ridge is normally approached from the State Creek side' and this bivy does not help it (contradicts wa_north_ridge_3, whose standard approach IS the State Creek/SE-basin line); 'Cutthroat Lake basin' says 'the climbers' path branches off well before the lake' (wrong for the same reason). Flag for the camp pass.",
+  "confidence": "high"
+ },
+ "wa_white_mountain_olympics_scramble": {
+  "confirmedProblem": true,
+  "approach": "Dosewallips approach (north): from the vehicle road end on the Dosewallips Road (about 8.5 mi from US-101), hike or bike the closed roadbed ~6.5-7 mi (~1,900 ft gain) to the former Dosewallips Ranger Station, then continue on the West Fork Dosewallips Trail to Honeymoon Meadows camp (~mile 15, established campsite). Total approach gain to camp is roughly 5,300 ft. Duckabush approach (south/west): from the Duckabush River trailhead (Brinnon, drivable year-round, no washout), hike the Duckabush River Trail 6.2 mi to the park boundary and on toward O'Neil Pass (16.1 mi park-boundary-to-pass), camping at Marmot Lake (established site, toilet, bear wire), or continuing up past Hart Lake to Lake La Crosse in the basin directly below the peak.",
+  "approach_logistics": {
+   "peakLat": 47.67654,
+   "peakLng": -123.328475,
+   "trailhead": "Dosewallips Road end (closed-road parking)",
+   "trailheadLat": 47.7415,
+   "trailheadLng": -123.049,
+   "trailheadDirection": "From US-101 at Brinnon, drive the Dosewallips Road about 8.5 miles to the vehicle road end and park on the roadside; walk or bike the closed road to the old Dosewallips Ranger Station, then the West Fork Dosewallips Trail to Honeymoon Meadows and Anderson Pass"
+  },
+  "why": "The reported problem (Anderson Pass is wrong) is NOT real: the Mountaineers route 'White Mountain (6400 ft)' and Wikipedia put White Mountain ~1.5 mi south of Anderson Pass; approach up the West Fork Dosewallips, camp at Honeymoon Meadows, then an 8-mile round-trip scramble day. OSM: Anderson Pass 47.69539,-123.32692, White Mountain 47.67648,-123.32823 (1.3 mi due south), Honeymoon Meadows camp 47.7080,-123.3111. So the variant and baseFinding stand unchanged. La Crosse basin is the Duckabush-side base (the route's bivy already says so). Real, smaller errors fixed: (a) the approach paragraph put Marmot Lake 'at the base of White Mountain's south buttresses' - OSM Marmot Lake Camp 47.64906,-123.36375 is ~2.5 mi SW of the summit; Lake La Crosse, past Hart Lake, is the basin under the peak (bivy record). (b) 'road closure near the old Elkhorn Campground' - OSM Elkhorn is 47.7286,-123.0941, ~2 mi beyond the road end; WTA: 'Continue 8.5 miles to reach the new vehicle road end', 6.5 mi to the ranger station/campground; Mountaineers ~7 mi/1,900 ft by bike. (c) trailhead pin 47.740259,-123.065764 sits ~1.2 km up the closed road; WTA 47.7413,-123.0474 and OSM 'Dosewallips River Trailhead' node 48578834 47.74161,-123.04951 / parking way 965039432 47.74158,-123.04917 agree -> 47.7415,-123.0490 (EPQS ~507 ft). The Duckabush trail is open in 2026 (WTA reports March and April 2026: blowdown and one washout near Ten Mile to scramble round, no closure). approach_variants unchanged.",
+  "confidence": "medium"
+ },
+ "wa_mount_buckindy_scramble": {
+  "confirmedProblem": true,
+  "approach": "From Darrington, drive north on SR 530 roughly 7-8 miles and turn right onto the Suiattle River Road (FR 26) just after crossing the Sauk River bridge. Follow FR 26 (pavement then gravel) about 20 miles, turn left onto FR 2680, and continue 6 miles to the Green Mountain Trailhead (~3,200 ft). Hike Green Mountain Trail #782 (about 4 miles, ~3,000 ft gain) through old growth and subalpine meadows to the lookout area, then go cross-country along the connecting ridge system east and southeast past the Horse Lake saddle, with slow sidehill travel toward Misch, to Buckindy's north slopes and glacier remnants. THIS WAY IN IS CURRENTLY CUT: flood damage closed FR 26 to all motor vehicles at milepost 4, and the closure takes in the Green Mountain Road (FR 2680). The closure order runs until January 1, 2028 unless it is lifted sooner, which leaves the trailhead roughly twenty miles of closed road past the gate. Check with the Darrington Ranger District before counting on it. The way in that is open comes from the north. Drive Cascade River Road about 14 miles east of Marblemount to Kindy Creek Road (FR 1570), then about 2 miles up that rough spur to a small pullout near 1,850 ft. A climbers' trail climbs Kindy Ridge to a saddle near 4,800 ft south of Point 5116, the same start as for Snowking Mountain. From there, continue south through the Buckindy Range high country to the basins at the head of Kindy Creek or the pass between the Kindy and Buck Creek drainages, where parties camp below Buckindy's north side. That ground is a second or third night out.",
+  "why": "Closure verified: USFS alert 'Suiattle River Road Washout Closure' (fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure, last updated 2026-06-05): 'The Suiattle River Road (at milepost 4) and associated spur roads are closed', order effective 2026-04-02 to 2028-01-01, all motorized access prohibited, spurs listed include Green Mountain Road #2680. The USFS 2026-07-01 release also schedules temp-bridge construction at MP 4.5 from July 15 to Aug 30, 2026, so it may reopen early - hence 'unless lifted sooner' and 'check'. The old text already mentioned the closure and a Kindy option, but framed the Kindy line as 'documented primarily as the approach to Snowking' (pipeline voice) and never said how it reaches the camps. The Kindy route and camps come from this route's own road column (Cascade River Rd ~14.2 mi E of Marblemount, then ~2 mi up FR-1570 to a pullout) and its bivy ('head of Kindy Creek', 'Kindy-Buck Creek pass', 'second or third night out' from road 1570, 'well beyond the Cyclone Lake ground'). A June 2026 trip drove Cascade River Rd to the FR-1570 junction (climberkyle.com/2026/06/19/buckindy-high-route/), so that side was drivable in 2026. Green Mountain side 'Horse Lake saddle ... toward Misch' comes from the route's own bivy[1]. 'Roughly twenty miles of closed road' = FR 26 about 20 mi from SR 530, minus the first 4, plus 6 on FR 2680 (existing figures). Standard route: Class 4 north slopes from Green Mtn TH (Mazamas 'Mt. Buckindy, North Side'). approach_variants stays null and approach_logistics is unchanged: the trailhead name is still the route's standard trailhead, and no trailhead coordinate exists to be wrong.",
+  "confidence": "medium"
+ },
+ "wa_ridge_traverse_from_east_fury": {
+  "confirmedProblem": true,
+  "approach": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead and walk down to Ross Lake, where most parties take the paid water taxi from Ross Lake Resort to the Big Beaver landing rather than walking the lakeshore trail. From the landing it is about 9.4 miles of nearly flat old-growth trail up the Big Beaver valley to Luna Camp, the usual first night. A short way beyond camp, leave the trail on a small boot path and cross Big Beaver Creek just north of where Access Creek comes in, around 2,460 ft. Depending on the year this is a log or a wade. Then climb the north side of Access Creek on a faint, brushy climbers' path through Access Creek basin, up the south gully and around the south side of Luna Peak to Luna Col, the usual high camp. From Luna Col, follow the ridge toward Fury over class 3 ground with many short ups and downs. Drop to traverse heather slopes on its south side to the Southeast Glacier near 6,700 ft, then climb the right side of the glacier to steeper snow and a possible bergschrund below East Fury's summit, where the traverse to the West Peak begins. Allow about a week for the round trip. In summer 2026 wildfire closed the Big Beaver Trail from Big Beaver Stock Camp to Stillwell Camp, including Luna Camp, with no cross-country travel from closed trails, so check current closures with North Cascades National Park before planning.",
+  "why": "Old paragraph was the Challenger Glacier approach (Beaver Pass, Wiley Ridge/Whatcom Pass/Easy Ridge/Perfect Pass, 'crosses the crevassed Challenger Glacier'), which does not reach Fury. The East Fury line comes from the Mountaineers 'Mount Fury/Southeast Glacier' route page and trip reports (trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/; onehikeaweek.com/2020/08/02/mount-fury/): water taxi to Big Beaver, 9.4 mi to Luna Camp; cross Big Beaver Creek just north of the Access Creek confluence ~2,460 ft by log or wade; north side of Access Creek; Access Creek basin, south gully, round the south side of Luna Peak to Luna Col; class 3 ridge toward Fury; heather traverse to the Southeast Glacier ~6,700 ft; right side of the glacier, possible bergschrund; allow a week. This matches the route's own variant (Access Creek, Access Col, Luna Col, Southeast Glacier) and its bivies (Luna Camp, Luna Col). Fire closure: Cascadia Daily News 2026-07-31, the NPS NOCA fire-closures page, and the route's own access.closures (read 2026-09-17): Big Beaver Trail closed from Big Beaver Stock Camp to Stillwell Camp, Luna Camp and Beaver Pass camps closed, and cross-country access from closed trails prohibited. approach_variants (the single East Fury variant) and approach_logistics (Ross Dam TH) are correct and unchanged.",
+  "confidence": "high"
+ }
+}

@@ -1,0 +1,1808 @@
+{
+ "results": [
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_little_big_chief_mountain_northeast_face; the Salmon La Sac / Waptus River hike-in is carried over as a new approach variant that reaches Dutch Miller Gap, a sentence in the approach, and the Waptus Lake camp",
+   "summary": "There is no separate west-side route on Little Big Chief: the Waptus River hike-in this row describes goes over Chief Creek and past Lake Ivanhoe to Dutch Miller Gap and the Northeast Face, so the row is merged into that route and its hike-in is kept as a second approach.",
+   "evidence": "The peak's reference entry and the route database list only the Northeast Face (class 3-4, the easiest) and the 5.9 Falcon Route. The Dutch Miller Gap trail from Waptus Lake fords Chief Creek, switchbacks up and passes Lake Ivanhoe to the gap. The one trip report from the Waptus side (4,000+ ft above the Chief Creek crossing) meets its crux at the exposed class 4 notch on the northeast ridge, which is the Northeast Face line; a second Northeast Face report, from a Williams Lake camp, describes the same notch. No source describes a west ridge or west face route from Chief Creek. The only variant near Lake Ivanhoe (a creek a third of a mile south of the lake) is given for Little Chief, not this peak, so it was not carried over. Adjusted: the carried-over approach is written as reaching Dutch Miller Gap, not as an off-trail line up the west side. Target check: the peak has only the Northeast Face and the Falcon Route, so the merge target is right and no duplicate is created.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+    "https://www.mountainproject.com/area/119745933/little-big-chief",
+    "https://trailcatjim.com/la-bohn-tank-loop-and-little-big-chief-peak/",
+    "https://www.summitpost.org/little-big-chief-mountain/421526",
+    "https://www.hikingproject.com/trail/7023659/dutch-miller-gap-trail",
+    "https://www.fs.usda.gov/recarea/okawen/recreation/recarea/?recid=57487&actid=104"
+   ],
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_little_big_chief_mountain_west_route",
+     "into": "wa_little_big_chief_mountain_northeast_face"
+    },
+    {
+     "op": "set",
+     "id": "wa_little_big_chief_mountain_northeast_face",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "Middle Fork Snoqualmie to Dutch Miller Gap",
+       "notes": "The standard way. From the Middle Fork Snoqualmie road end, follow the Dutch Miller Gap trail up the valley for a long day — roughly fourteen to fifteen miles — passing the horse camp and the Williams Lake trail junction on the way to the gap. Most parties break this over two days and camp near Williams Lake or at the gap. There is no cross-country detour for this route: stay on the trail to the top.",
+       "season": "July to September; recorded ascents cluster in August and September. The upper cirque holds snow well into summer, so carry an axe.",
+       "hazards": [
+        "Snow lingering in the approach cirque well into summer, with variable soft, icy or moat-riddled conditions",
+        "Loose rock on the heather and rock steps, on the ridge and on the face",
+        "No cell coverage, and a remote position that makes rescue difficult",
+        "The gap is a trail high point with several ways off it — confirm you are on the southwest side before committing"
+       ],
+       "primary": true,
+       "baseFinding": "The climbing starts DIRECTLY ABOVE THE GAP. From the low point of Dutch Miller Gap, turn onto the peak immediately southwest of it — the first ground above the trail that needs hands is the start, roughly five hundred feet of heather and rock steps rising onto the northeast ridge. The physical test is the sequence: heather steps give way to an OPEN BENCH, and above the bench you cross a SNOWFIELD into a cirque below the east face; if you have not crossed snow you have not reached the cirque, and the two short belayed pitches to the summit start from it. At the top of the first of those pitches, move climber's LEFT for the direct finish. Negative markers: if you left the trail at a small steel bridge well below the gap and dropped south into a side valley, you are heading for the long gully-and-crack route on the far side of the mountain; if you are looking up nine hundred feet of talus at a prominent left-trending gully, you are under that route and not this one."
+      },
+      {
+       "name": "Necklace Valley and La Bohn Gap from the north",
+       "notes": "A longer alternative from the other side of the divide: the Necklace Valley trail off the Foss River road, over La Bohn Gap, then down to Dutch Miller Gap. It joins the standard line at the gap, so everything above is identical. Worth knowing about mainly as a through-trip option or if the Middle Fork road end is not usable.",
+       "season": "July to September.",
+       "hazards": [
+        "Long approach over a second pass, with snow on La Bohn Gap into summer",
+        "Loose rock above the gap",
+        "Remote, rescue-difficult terrain with no cell coverage"
+       ],
+       "baseFinding": "You are aiming for the same point as the standard approach: the low saddle of Dutch Miller Gap, with the peak on its southwest side. Coming from the north you drop TO the gap rather than climbing to it, so the check is that you have finished descending and the peak is now above you on the left. The climbing begins at the first hands-on heather-and-rock steps above the gap, leading to an open bench and then a snowfield crossing into the cirque below the east face. Negative marker: if you are still descending and the ground ahead keeps dropping into a valley, you have passed the gap and are heading down the Middle Fork."
+      },
+      {
+       "name": "Pete Lake and Summit Chief camp from the east",
+       "notes": "The eastern option, from a camp near Pete Lake and Summit Chief. It does not reach Dutch Miller Gap at all — it comes at the peak's northeast basin from the other side and joins the route higher up. It is the approach that puts the ridge notch in your path, which the trail-to-the-gap line avoids.",
+       "season": "July to September.",
+       "hazards": [
+        "Exposed low-fifth-class crux move at the ridge notch, which most parties belay",
+        "Route-finding through the northeast basin's cliff bands",
+        "Loose rock throughout",
+        "Remote with no cell coverage"
+       ],
+       "baseFinding": "From camp, work into the peak's NORTHEAST BASIN. The route is guarded by a RIDGE NOTCH, and the notch is identified by a single feature: a LARGE VERTICAL CRACK forming a low-fifth-class step that most parties rope up for. If the notch you have reached can be walked through, it is not this one. Above the notch the ground eases and joins the snowfield and cirque used by the trail approach. Negative marker: if you are standing in a broad trail saddle with tread underfoot, you are at Dutch Miller Gap and on the standard line, where no such crack step exists."
+      }
+     ],
+     "value": [
+      {
+       "name": "Middle Fork Snoqualmie to Dutch Miller Gap",
+       "notes": "The standard way. From the Middle Fork Snoqualmie road end, follow the Dutch Miller Gap trail up the valley for a long day — roughly fourteen to fifteen miles — passing the horse camp and the Williams Lake trail junction on the way to the gap. Most parties break this over two days and camp near Williams Lake or at the gap. There is no cross-country detour for this route: stay on the trail to the top.",
+       "season": "July to September; recorded ascents cluster in August and September. The upper cirque holds snow well into summer, so carry an axe.",
+       "hazards": [
+        "Snow lingering in the approach cirque well into summer, with variable soft, icy or moat-riddled conditions",
+        "Loose rock on the heather and rock steps, on the ridge and on the face",
+        "No cell coverage, and a remote position that makes rescue difficult",
+        "The gap is a trail high point with several ways off it — confirm you are on the southwest side before committing"
+       ],
+       "primary": true,
+       "baseFinding": "The climbing starts DIRECTLY ABOVE THE GAP. From the low point of Dutch Miller Gap, turn onto the peak immediately southwest of it — the first ground above the trail that needs hands is the start, roughly five hundred feet of heather and rock steps rising onto the northeast ridge. The physical test is the sequence: heather steps give way to an OPEN BENCH, and above the bench you cross a SNOWFIELD into a cirque below the east face; if you have not crossed snow you have not reached the cirque, and the two short belayed pitches to the summit start from it. At the top of the first of those pitches, move climber's LEFT for the direct finish. Negative markers: if you left the trail at a small steel bridge well below the gap and dropped south into a side valley, you are heading for the long gully-and-crack route on the far side of the mountain; if you are looking up nine hundred feet of talus at a prominent left-trending gully, you are under that route and not this one."
+      },
+      {
+       "name": "Necklace Valley and La Bohn Gap from the north",
+       "notes": "A longer alternative from the other side of the divide: the Necklace Valley trail off the Foss River road, over La Bohn Gap, then down to Dutch Miller Gap. It joins the standard line at the gap, so everything above is identical. Worth knowing about mainly as a through-trip option or if the Middle Fork road end is not usable.",
+       "season": "July to September.",
+       "hazards": [
+        "Long approach over a second pass, with snow on La Bohn Gap into summer",
+        "Loose rock above the gap",
+        "Remote, rescue-difficult terrain with no cell coverage"
+       ],
+       "baseFinding": "You are aiming for the same point as the standard approach: the low saddle of Dutch Miller Gap, with the peak on its southwest side. Coming from the north you drop TO the gap rather than climbing to it, so the check is that you have finished descending and the peak is now above you on the left. The climbing begins at the first hands-on heather-and-rock steps above the gap, leading to an open bench and then a snowfield crossing into the cirque below the east face. Negative marker: if you are still descending and the ground ahead keeps dropping into a valley, you have passed the gap and are heading down the Middle Fork."
+      },
+      {
+       "name": "Pete Lake and Summit Chief camp from the east",
+       "notes": "The eastern option, from a camp near Pete Lake and Summit Chief. It does not reach Dutch Miller Gap at all — it comes at the peak's northeast basin from the other side and joins the route higher up. It is the approach that puts the ridge notch in your path, which the trail-to-the-gap line avoids.",
+       "season": "July to September.",
+       "hazards": [
+        "Exposed low-fifth-class crux move at the ridge notch, which most parties belay",
+        "Route-finding through the northeast basin's cliff bands",
+        "Loose rock throughout",
+        "Remote with no cell coverage"
+       ],
+       "baseFinding": "From camp, work into the peak's NORTHEAST BASIN. The route is guarded by a RIDGE NOTCH, and the notch is identified by a single feature: a LARGE VERTICAL CRACK forming a low-fifth-class step that most parties rope up for. If the notch you have reached can be walked through, it is not this one. Above the notch the ground eases and joins the snowfield and cirque used by the trail approach. Negative marker: if you are standing in a broad trail saddle with tread underfoot, you are at Dutch Miller Gap and on the standard line, where no such crack step exists."
+      },
+      {
+       "name": "Waptus River and Lake Ivanhoe from Salmon La Sac",
+       "notes": "The long southeastern way in, usually spread over two or three days. From the Salmon La Sac road end north of Cle Elum, follow the Waptus River trail up its gentle valley to Waptus Lake, roughly nine miles. The old hiker bridge over the river below the lake is gone, so this is a real ford, about knee deep at normal summer flow. Past the lake the trail follows the southeast shore, which can hold steep snow into early summer, to a ford of Chief Creek near the head of the lake, about twelve miles from the car. From Chief Creek the Dutch Miller Gap trail switchbacks up the forested slope, passes Lake Ivanhoe and reaches the gap, roughly five more miles and about 2,000 ft higher. At the gap it meets the standard approach, and the climbing above is the same.",
+       "season": "July to September. The river ford and the lakeshore snow are both much more serious during snowmelt.",
+       "hazards": [
+        "Unbridged Waptus River ford below the lake: cold and swift, and serious in snowmelt",
+        "Chief Creek ford near the head of Waptus Lake",
+        "Steep snowfields on the lake's southeast shore into early summer",
+        "Very long approach far from help, with no cell coverage"
+       ],
+       "baseFinding": "You are aiming for the same point as the standard approach: the low saddle of Dutch Miller Gap, with the peak on its southwest side. Coming up from Lake Ivanhoe you climb to the gap from the east, so the check is that the trail has stopped climbing and starts to drop west toward the Middle Fork, with the peak above you on the left. The climbing starts at the first heather and rock steps above the gap and leads to an open bench, then a snowfield crossing into the cirque below the east face. Negative marker: if you are still beside Lake Ivanhoe or below it, you have not reached the gap yet."
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_little_big_chief_mountain_northeast_face",
+     "column": "approach",
+     "path": [],
+     "find": "crossing La Bohn Gap before dropping to Dutch Miller Gap.",
+     "replace": "crossing La Bohn Gap before dropping to Dutch Miller Gap. A second long approach comes from the southeast: the Waptus River Trail from Salmon La Sac to Waptus Lake (with an unbridged river ford below the lake), a ford of Chief Creek near the head of the lake, then the Dutch Miller Gap trail up past Lake Ivanhoe to the gap."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_big_chief_mountain_northeast_face",
+     "column": "bivy",
+     "path": [],
+     "expect": [
+      {
+       "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+       "role": "main",
+       "type": "camp",
+       "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the valley — the last stretch through avalanche slopes, wildflowers and deep bracken fern depending on the season — to the Williams Lake junction. Williams Lake sits about half a mile off the main trail and is genuinely secluded, with a good view across to Little Big Chief. From these meadows the route to Iron Cap climbs toward La Bohn Gap and then takes the ridge, with a bit of exposure but generally easy scrambling to the true summit. Two things to be honest about. First, this is a fourteen-mile approach before any climbing starts, so Iron Cap from here is a three-day objective for most parties. Second, La Bohn Gap is equally reachable from Necklace Valley on the East Fork Foss River off Highway 2, on the north side of the divide — a completely separate drive and a shorter approach to the gap, and the right choice if Iron Cap alone is the objective. Come this way when Big Snow, Burnt Boot or the western side of Chimney Rock and Overcoat are also on the list. The same trail continues over Dutch Miller Gap to the Waptus valley, so the Middle Fork and Cle Elum halves of this zone are linked on foot even though they are hours apart by road. Beyond Camp Pedro the route toward Overcoat and Chimney Rock climbs steeply and brushily into the rocky corridor between the Chief summits and crosses a pass at about 6,140 ft to reach the Overcoat Glacier — long, committing, and the reason the Pete Lake side is the standard for Chimney Rock.",
+       "water": "Williams Lake, the Middle Fork Snoqualmie River, and tarns and snowmelt in the meadows toward the gap",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park. Group limit twelve. Campfires prohibited on the higher benches above 5,000 ft; keep to durable ground and stay off the boggy meadow.",
+       "capacity": "Williams Lake holds a small number of quiet sites, a party or two; the heather and huckleberry benches nearer the gap are informal and can absorb a few more"
+      },
+      {
+       "elev": 2828,
+       "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+       "role": "route",
+       "type": "camp",
+       "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is GATED AT DINGFORD CREEK, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. BURNT BOOT PEAK is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+       "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+       "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+      }
+     ],
+     "value": [
+      {
+       "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+       "role": "main",
+       "type": "camp",
+       "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the valley — the last stretch through avalanche slopes, wildflowers and deep bracken fern depending on the season — to the Williams Lake junction. Williams Lake sits about half a mile off the main trail and is genuinely secluded, with a good view across to Little Big Chief. From these meadows the route to Iron Cap climbs toward La Bohn Gap and then takes the ridge, with a bit of exposure but generally easy scrambling to the true summit. Two things to be honest about. First, this is a fourteen-mile approach before any climbing starts, so Iron Cap from here is a three-day objective for most parties. Second, La Bohn Gap is equally reachable from Necklace Valley on the East Fork Foss River off Highway 2, on the north side of the divide — a completely separate drive and a shorter approach to the gap, and the right choice if Iron Cap alone is the objective. Come this way when Big Snow, Burnt Boot or the western side of Chimney Rock and Overcoat are also on the list. The same trail continues over Dutch Miller Gap to the Waptus valley, so the Middle Fork and Cle Elum halves of this zone are linked on foot even though they are hours apart by road. Beyond Camp Pedro the route toward Overcoat and Chimney Rock climbs steeply and brushily into the rocky corridor between the Chief summits and crosses a pass at about 6,140 ft to reach the Overcoat Glacier — long, committing, and the reason the Pete Lake side is the standard for Chimney Rock.",
+       "water": "Williams Lake, the Middle Fork Snoqualmie River, and tarns and snowmelt in the meadows toward the gap",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park. Group limit twelve. Campfires prohibited on the higher benches above 5,000 ft; keep to durable ground and stay off the boggy meadow.",
+       "capacity": "Williams Lake holds a small number of quiet sites, a party or two; the heather and huckleberry benches nearer the gap are informal and can absorb a few more"
+      },
+      {
+       "elev": 2828,
+       "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+       "role": "route",
+       "type": "camp",
+       "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is GATED AT DINGFORD CREEK, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. BURNT BOOT PEAK is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+       "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+       "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+      },
+      {
+       "elev": 2792,
+       "name": "Waptus Lake, with Spade Lake above it",
+       "role": "route",
+       "type": "camp",
+       "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it is the eastern gateway to LITTLE BIG CHIEF MOUNTAIN, which sits immediately southwest of Dutch Miller Gap. The useful camps for that peak are not at the lake but a couple of miles further up the valley, near the bridge over the Waptus River above the lake and near the ford of Chief Creek — call it twelve miles in — and from there the Dutch Miller Gap trail climbs past Lake Ivanhoe to the gap, where the northeast face scramble starts. Spade Lake is the other well-known destination above Waptus and it is worth being clear about what it is and is not: the spur trail gains nearly 3,000 ft in about three miles of steep, downed-timber forest with scrambly and overgrown sections, and it lands in a rocky cirque on the flank of Mount Daniel. It is a superb, lonely camp and it is NOT a base for Chimney Rock, which lies across the valley on the other side of the crest. Snow lingers in the Spade cirque into July. Honest caveat for 2026: the Waptus and Spade trails were both inside the Cle Elum Ranger District fire closure through the summer — check the status of the closure order before driving to Salmon la Sac.",
+       "water": "Waptus Lake, the Waptus River and Chief Creek at the lower camps; the lake and small inlet streams at Spade",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit. Northwest Forest Pass at the Salmon la Sac trailhead. Group limit twelve including stock — this is horse country and the trail is shared. Campfires are permitted at Waptus but banned at Spade and everywhere else above 5,000 ft. Camp at least a hundred feet back from water and off the meadows.",
+       "capacity": "Large — Waptus has upwards of two dozen established sites strung along the shore and near the outlet, first come first served. Spade Lake above is the opposite: scattered bluff sites for a party or two."
+      }
+     ]
+    }
+   ],
+   "pin_followups": [
+    "The retired row's Waptus River approach pins (Salmon La Sac trailhead 47.409521,-121.106776; wilderness boundary; Hour Creek camp; Waptus Lake / Chief Creek ford 47.5034,-121.17795) were not copied to the Northeast Face row. If its map should show that approach, add them there together with pins for Lake Ivanhoe and Dutch Miller Gap.",
+    "The retired row's 'Talus Basin Below the Summit Chief Group' and 'Exposed Summit Notch' pins had no coordinates and described a west-side line that does not exist; they are dropped with the row."
+   ]
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: the Buck Creek Pass / High Pass high route to Louis Creek Basin and the south-southwest slopes; beta, pitch_detail, itinerary, timing and bail rewritten from the King Lake line, and the descent's round-trip distance corrected",
+   "summary": "Buck Mountain's usual route really is the long way round from the west, over Buck Creek Pass and the High Pass high route to a camp in Louis Creek Basin, so the parts that described the King Lake shortcut have been rewritten to match.",
+   "evidence": "A trip report that climbed the northeast face calls the established route a roundabout one from the west, by Little Giant Pass or a high route from Buck Creek Pass, because there is no trail up the lower Napeequa; it describes King Lake as a little-visited cirque below the small northeast glacier. A second report climbed the broad western slope from a Louis Creek Basin camp in about three hours round trip. The club's route for the peak is the 'Southwest Route', from the Napeequa and up Louis Creek. Trail figures: Buck Creek Pass is 9.6 miles and 3,100 ft from Trinity, and High Pass about 3 miles and 1,400 ft beyond. Not changed: gain_ft (5,700, the net trailhead-to-summit rise) and dist_km (38.62) have no published car-to-car figure for this line; the itinerary's day figures are estimates built from the trail figures above. The row keeps its name 'South Ridge'; the owner may prefer 'Southwest Route'.",
+   "sources": [
+    "https://drdirtbag.com/2021/08/12/buck-loop-ne-face-to-buck-pass/",
+    "https://trailcatjim.com/high-giant-traverse-buck-mountain/",
+    "https://www.mountaineers.org/activities/routes-places/buck-mountain-8-528-southwest-route",
+    "https://wenatcheeoutdoors.org/2016/06/20/high-pass/",
+    "https://www.wta.org/go-hiking/hikes/high-pass"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "beta",
+     "path": [],
+     "expect": "From the Trinity Trailhead, follow the Buck Creek Trail (#1513) about 1.5 miles past the Chiwawa River Trail junction (3,200 ft), then leave the trail and climb forested, brushy, and open slopes southwestward to King Lake (5,940 ft), which has good camping. From the lake, climb directly south to a notch on Buck's east ridge, cross to the south side of the ridge, contour around the next ESE ridge onto the low-angle southeast slopes, and bear WNW to the saddle between the south and middle summits before scrambling up rubbly, slabby schist to the middle (highest) or north summit. An alternative, longer approach reaches the peak's west/southwest slopes via Buck Creek Pass and High Pass.",
+     "value": "The usual way up comes from the west, which means a long way round even though the peak stands only about three miles from Trinity. From the Trinity Trailhead, the Buck Creek Trail (#1513) climbs about 9.6 miles and 3,100 ft to Buck Creek Pass. From the pass an unmaintained high route winds around the west side of Liberty Cap and south to High Pass; contour through the pass and under Mount Berge, climb a short Class 3 step onto the ridge just south of Point 7839, and walk down into Louis Creek Basin to camp. From the basin, broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, and loose, slabby schist with one short Class 3-4 step near a horn goes to the summit. Some parties come in over Little Giant Pass and the Napeequa valley instead. A direct line from King Lake on the east side exists but is brushy, involves a river ford, and is seldom used."
+    },
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Trail/off-trail",
+       "notes": "Trinity Trailhead via Buck Creek Trail #1513 to the Chiwawa River Trail junction area (~3,200 ft), then off-trail southwest to King Lake (5,940 ft)",
+       "pitch": "Approach"
+      },
+      {
+       "grade": "Class 2",
+       "notes": "From King Lake, climb south to a notch on Buck's east ridge and cross to its south side",
+       "pitch": "Lower slopes"
+      },
+      {
+       "grade": "Class 2",
+       "notes": "Contour around the ESE ridge onto low-angle southeast slopes, bearing WNW toward the saddle between the south and middle summits",
+       "pitch": "Southeast slopes"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "Exposed Class 2-3 scrambling up loose, slabby schist to the middle (highest) or north summit",
+       "pitch": "Summit scramble"
+      }
+     ],
+     "value": [
+      {
+       "grade": "Trail",
+       "notes": "Trinity Trailhead up the Buck Creek Trail #1513 to Buck Creek Pass (~5,800 ft), about 9.6 miles and 3,100 ft",
+       "pitch": "Approach"
+      },
+      {
+       "grade": "Class 2-3",
+       "notes": "Unmaintained high route around the west side of Liberty Cap to High Pass, then under Mount Berge and over a short Class 3 step on the ridge south of Point 7839 into Louis Creek Basin",
+       "pitch": "High route"
+      },
+      {
+       "grade": "Class 2",
+       "notes": "Pumice, talus and low-angle snow from the basin up the south and southwest slopes to the crest around 7,400 ft",
+       "pitch": "South/southwest slopes"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "Loose, slabby schist along the crest to the summit, with a short Class 3-4 step near a horn; several bumps of nearly equal height",
+       "pitch": "Summit scramble"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Best mid-July through September once the Buck Creek Trail brush and snowfields on the approach have melted out; no permit required but self-issue Glacier Peak Wilderness permits are at the trailhead.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513), passing the Chiwawa River Trail junction at 1.5 miles, then leave the maintained trail for a brushy, steep climbers' path that crosses Buck Creek and contours around Mt. Berge's east side toward King Lake (5,940 ft) and on to an upper basin camp near 6,800 ft on Buck's south flank. Expect forest, brush, and talus with no reliable tread for the upper portion.",
+        "hours": 7,
+        "miles": 9.5,
+        "title": "Backpack in to high camp",
+        "gainFt": 4000,
+        "lossFt": 0,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Reach high camp below Buck's south side (~6,800 ft)"
+       },
+       {
+        "n": 2,
+        "note": "Drop the overnight gear and climb with a light pack. The route climbs south from camp to a notch on Buck's east ridge, crosses to the south side, contours around a lower ESE ridge onto low-angle southeast slopes, then trends WNW to the saddle between the south and middle summits for a final Class 2-3 scramble on loose, slabby schist to the true summit.",
+        "hours": 6,
+        "miles": 4,
+        "title": "Summit push via the South Ridge",
+        "gainFt": 1700,
+        "lossFt": 1700,
+        "packLb": 12,
+        "schedule": [
+         {
+          "time": "5:30 AM",
+          "label": "Leave high camp",
+          "detail": "Early start to have firm/frozen ground on the SE slopes and beat afternoon thunderstorm risk."
+         },
+         {
+          "time": "+1.5 hr",
+          "label": "Reach notch on the East Ridge",
+          "detail": "Cross to the south side of the ridge above King Lake basin."
+         },
+         {
+          "time": "+1 hr",
+          "label": "Contour the ESE ridge onto SE slopes",
+          "detail": "Low-angle scrambling and talus; route-finding is the crux of the day."
+         },
+         {
+          "time": "+1 hr",
+          "label": "Gain the saddle between south and middle summits",
+          "detail": "Bear WNW off the SE slopes to reach the summit ridge."
+         },
+         {
+          "time": "+1 hr",
+          "label": "Summit",
+          "detail": "Final Class 2-3 scramble on loose, rubbly schist to the true (middle) summit."
+         },
+         {
+          "time": "Early afternoon",
+          "label": "Back at high camp",
+          "detail": "Reverse the route; most parties are back at camp by early-to-mid afternoon."
+         }
+        ],
+        "objective": "Climb Buck Mountain (8,534 ft) and return to camp"
+       },
+       {
+        "n": 3,
+        "note": "Break camp and reverse the approach: down through King Lake basin, around Mt. Berge, back across Buck Creek, and out the Buck Creek/Chiwawa River Trail to the trailhead. Straightforward but tedious brush and steep descent in the upper section.",
+        "hours": 5.5,
+        "miles": 9.5,
+        "title": "Hike out",
+        "gainFt": 0,
+        "lossFt": 4000,
+        "packLb": 30,
+        "schedule": [],
+        "objective": "Return to Trinity trailhead"
+       }
+      ],
+      "totalNote": "A 3-day backpack: roughly 24 miles and ~5,700 ft one-way gain (2,800 ft trailhead to 8,534 ft summit), with a light-and-fast summit day from a high camp near King Lake / Buck's south basin. Buck is remote and lightly visited (roughly a handful of parties per year) — expect brush, loose rock, and real route-finding rather than a trail."
+     },
+     "value": {
+      "cal": "Best mid-July through September, once the high route beyond Buck Creek Pass and the basin have melted out; a free self-issue Glacier Peak Wilderness permit is required and is available at the trailhead.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513) about 9.6 miles and 3,100 ft to Buck Creek Pass, and fill up with water there. Follow the old High Pass trail around the west side of Liberty Cap and south to High Pass, where the tread fades into talus and snow, then contour through the pass and under Mount Berge and climb a short Class 3 step onto the ridge just south of Point 7839. An easy walk-off drops into Louis Creek Basin to camp. A long, dry, exposed day once past the pass.",
+        "hours": 10,
+        "miles": 13.5,
+        "title": "Backpack in to Louis Creek Basin",
+        "gainFt": 4800,
+        "lossFt": 900,
+        "packLb": 38,
+        "schedule": [
+         {
+          "time": "6:00 AM",
+          "label": "Leave Trinity trailhead",
+          "detail": "Buck Creek Trail No. 1513."
+         },
+         {
+          "time": "~12:00 PM",
+          "label": "Buck Creek Pass (~5,800 ft)",
+          "detail": "Last reliable water for about four miles; fill up."
+         },
+         {
+          "time": "~2:00 PM",
+          "label": "High Pass",
+          "detail": "Tread fades into talus and hard snow; crampons can help."
+         },
+         {
+          "time": "~4:00 PM",
+          "label": "Louis Creek Basin camp",
+          "detail": "Stay high on the traverse from the Berge saddle to avoid waterfall slabs."
+         }
+        ],
+        "objective": "Reach camp in Louis Creek Basin below Buck's southwest side"
+       },
+       {
+        "n": 2,
+        "note": "Climb with a light pack from the basin: broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, then loose, slabby schist with a short Class 3-4 step near a horn below the top. The crest has several bumps of nearly equal height, so walk it to find the high point. Return the same way to camp.",
+        "hours": 4,
+        "miles": 3,
+        "title": "Summit Buck Mountain",
+        "gainFt": 1900,
+        "lossFt": 1900,
+        "packLb": 12,
+        "schedule": [
+         {
+          "time": "6:30 AM",
+          "label": "Leave camp",
+          "detail": "Early start to beat afternoon thunderstorm risk."
+         },
+         {
+          "time": "+1 hr",
+          "label": "Gain the crest (~7,400 ft)",
+          "detail": "Pumice, talus and low-angle snow."
+         },
+         {
+          "time": "+2 hr",
+          "label": "Summit",
+          "detail": "Class 2-3 schist, locally 3-4 near a horn below the top."
+         },
+         {
+          "time": "+4 hr",
+          "label": "Back at camp",
+          "detail": "Downclimb carefully; the schist is loose."
+         }
+        ],
+        "objective": "Climb Buck Mountain (8,534 ft) and return to camp"
+       },
+       {
+        "n": 3,
+        "note": "Break camp and reverse the approach: back over the ridge south of Point 7839, under Mount Berge and through High Pass, around Liberty Cap to Buck Creek Pass, then down the Buck Creek Trail to Trinity. Carry enough water for the dry stretch before the pass.",
+        "hours": 8,
+        "miles": 13.5,
+        "title": "Hike out",
+        "gainFt": 900,
+        "lossFt": 4800,
+        "packLb": 30,
+        "schedule": [],
+        "objective": "Return to Trinity trailhead"
+       }
+      ],
+      "totalNote": "A 3-day backpack of roughly 30 miles round trip: a long first day over Buck Creek Pass and the High Pass high route to a camp in Louis Creek Basin, a summit day of about four hours round trip from camp, and a long walk out. Buck is remote and lightly visited; expect loose rock, route-finding and a dry ridge rather than a trail."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 18.5,
+      "summitTimeHrs": 6,
+      "descentTimeHrs": 5.5,
+      "approachTimeHrs": 7,
+      "recommendedStart": "5:30 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 7,
+        "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513), passing the Chiwawa River Trail junction at 1.5 miles, then leave the …",
+        "fromTo": "Backpack in to high camp",
+        "section": "Approach"
+       },
+       {
+        "hrs": 6,
+        "note": "Drop the overnight gear and climb with a light pack. The route climbs south from camp to a notch on Buck's east ridge, crosses to the south side, contours around a lower ESE ridge …",
+        "fromTo": "Summit push via the South Ridge",
+        "section": "Climb"
+       },
+       {
+        "hrs": 5.5,
+        "note": "Break camp and reverse the approach: down through King Lake basin, around Mt. Berge, back across Buck Creek, and out the Buck Creek/Chiwawa River Trail to the trailhead. Straightfo…",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": 22,
+      "summitTimeHrs": 4,
+      "descentTimeHrs": 8,
+      "approachTimeHrs": 10,
+      "recommendedStart": "6:30 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 10,
+        "note": "Trinity trailhead up the Buck Creek Trail to Buck Creek Pass, then the High Pass high route around Liberty Cap, through High Pass and under Mount Berge to a camp in Louis Creek Basin.",
+        "fromTo": "Backpack in to Louis Creek Basin",
+        "section": "Approach"
+       },
+       {
+        "hrs": 4,
+        "note": "From the basin, up the south and southwest slopes to the crest and along loose schist to the summit, then back to camp.",
+        "fromTo": "Summit Buck Mountain",
+        "section": "Climb"
+       },
+       {
+        "hrs": 8,
+        "note": "Reverse the high route to Buck Creek Pass and walk out the Buck Creek Trail to Trinity.",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "bail",
+     "path": [],
+     "expect": "Retreat is straightforward on this unroped scramble route — descend the same slopes back toward King Lake or the Buck Creek Pass/High Pass basin; no technical/rope descent is required on the standard line.",
+     "value": "Retreat is straightforward on this unroped scramble: descend the same slopes to Louis Creek Basin and reverse the high route to Buck Creek Pass. No technical or rope descent is needed on the standard line, but the high route itself is long and dry, so a retreat from the basin is still a full day out."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "descent_text",
+     "path": [],
+     "find": "given the near-24-mile car-to-car round trip distance",
+     "replace": "given a car-to-car round trip of roughly 30 miles"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[3] 'Basin below Buck's south/southwest slopes' (48.088007,-120.87463) sits east of the summit toward Trinity; it should be in Louis Creek Basin on the peak's southwest side.",
+    "waypoints[4] 'Snowfield and loose schist below the summit' (48.078141,-120.856978) is also east of the summit near Trinity; move it to the upper south/southwest slopes below the crest.",
+    "There are no pins for High Pass, the ridge crossing south of Point 7839, or the Louis Creek Basin camp; the waypoints' distMi (summit at 12 mi) is shorter than the ~15 mi one-way of this line."
+   ]
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: the De Roux Creek scree scramble; renamed 'Southwest Slope (De Roux Creek)', and every field that sent climbers over Fortune Creek Pass from Esmeralda Basin rewritten; gain/loss 3,100 ft and dist_km 5.6 (one-way, matching the row's convention)",
+   "summary": "Esmeralda Peaks' standard scramble starts at the De Roux trailhead and leaves the trail at a house-sized boulder for about 1,100 ft of scree, so the parts that routed climbers through Esmeralda Basin and Fortune Creek Pass have been rewritten and the name changed.",
+   "evidence": "Three independent trip reports and the hiking-association page all use the Boulder-De Roux trail: leave it at the house-sized boulder on the last switchback (~5,500-5,600 ft) and climb Class 2 scree northeast to the summits. One gives 7 miles and 3,100 ft round trip from the 3,800 ft trailhead; another, from the same trailhead, crossed De Roux Creek at a log jam and went up the snow-filled basins. The trailhead is about 8 miles up FR 9737 from the end of pavement. No source found describes a scramble from Fortune Creek Pass. dist_km 6.4 matched the old 4-mile one-way figure, so the new value keeps the one-way convention (3.5 mi = 5.6 km).",
+   "sources": [
+    "https://trailcatjim.com/high-esmerelda-peak-via-southwest-slope/",
+    "https://www.wta.org/go-hiking/hikes/esmerelda-peak",
+    "https://kuresman.com/2008/Trip_Reports/Esmerelda_Peak/Report_Esmerelda_Peak.html",
+    "https://www.summitpost.org/esmeralda-peak-via-de-roux-creek-trailhead/461944",
+    "https://www.trailmeister.com/trails/de-roux-trailhead/"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_esmeralda_peaks_scramble",
+     "expect_name": "Standard Scramble (Esmeralda Basin)",
+     "name": "Southwest Slope (De Roux Creek)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "overview",
+     "path": [],
+     "find": "The line described here climbs out of Esmeralda Basin toward Fortune Creek Pass before leaving the trail for a Class 2 talus-and-heather scramble to the summit ridge; the peaks can also be reached from the east via the De Roux Creek Trail, a separate, steeper scree scramble on their south side.",
+     "replace": "The standard line described here comes from the De Roux Creek valley to the south: a valley trail to a house-sized boulder at its last switchback, then a sustained Class 2 scree and talus slope to the west summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "approach",
+     "path": [],
+     "expect": "Start at the Esmeralda Basin / Ingalls Lake Trailhead (aka Esmeralda Trailhead, elev. ~4,300 ft) at the end of FR-9737, and take Esmeralda Basin Trail #1394. At about 0.4 mi you'll hit a signed junction with the Ingalls Way / Longs Pass Trail (#1390); stay straight/left to remain on the Esmeralda Basin Trail (the right fork climbs to Lake Ingalls and is off-limits to dogs). From here the trail follows an old mining road up the North Fork Teanaway drainage through subalpine forest, crossing a couple of small side-creeks (these are the last dependable water before the basin opens up — fill up here in late season). Around 2-3 mi the trail breaks out into the wildflower meadows of Esmeralda Basin proper, with the craggy Esmeralda Peaks visible directly ahead. From roughly 3 mi (~5,600-5,800 ft) the trail begins climbing via rockier switchbacks, skirting the north side of Ingalls Peak, and tops out at Fortune Creek Pass (~5,900-6,000 ft, ~3.5 mi from the TH) — a barren, open saddle with views toward Mt. Stuart, Hawkins Mountain, and (on a clear day) Rainier. Leave the maintained trail at or just below the pass and angle east/northeast off-trail onto the open talus and scree slopes on the south/southwest aspect of Esmeralda's west (true) summit. This last stretch is roughly 900-1,100 ft of unmaintained, sustained Class 2 talus/scree scrambling with some minor route-finding through boulder bands — parties note a rockier crux band partway up that's easiest skirted to the west, and a boulder-field alternative exists farther west if the direct scree gully is too loose. Watch for rockfall from parties above/below on this loose terrain, lingering snow patches in the gully into early summer (traction/axe useful then), and generally no water once you leave the basin meadows.",
+     "value": "Start at the De Roux trailhead and campground (~3,800 ft), on the left about 8 miles up gravel FR-9737 beyond the end of the paved North Fork Teanaway Road. Take the Boulder-De Roux Trail #1392 west, crossing the North Fork Teanaway and then De Roux Creek on bridges. About a mile in, keep right where the De Roux spur branches left, on the trail signed for Gallagher Head Lake. The trail climbs steadily up the valley between Esmeralda Peaks and Koppen Mountain, crosses the creek again on rocks or logs (awkward in snowmelt), passes several waterfalls, and makes its last switchback across a talus ridge at roughly 5,500-5,600 ft, where a house-sized boulder sits beside the tread. Leave the trail there on the boulder's climber's left and head up the hillside on a northeast bearing. Above is about 1,100 ft of sustained Class 2 scree and talus with no marked path; the line beneath the southwest ridge and the talus farther to climber's right both go, and a boulder field farther west is an alternative if the direct slope is too loose. The top 100-150 ft is loose broken rock. The west summit is a walk-up and very slightly higher than the east summit, which is the one the maps mark; most parties tag both. The round trip is about 7 miles with roughly 3,100 ft of gain, and there is no water once you leave the valley trail."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "descent",
+     "path": [],
+     "expect": "Downclimb the same talus/heather line back to the vicinity of Fortune Creek Pass, then rejoin the Esmeralda Basin Trail for the walk out; parties carrying an axe sometimes glissade or plunge-step an early-season snow gully above the basin to save time.",
+     "value": "Downclimb the same scree and talus slope to the house-sized boulder at the trail's last switchback, then walk out the Boulder-De Roux Trail. Keeping to the trees beside the boulder field on the way down avoids most of the loose talus."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "descent_text",
+     "path": [],
+     "expect": "This is a walk-off/downclimb scramble with no rappelling. Retrace the ascent line: descend the same Class 2 talus/scree slope back down to Fortune Creek Pass, taking care on the loose scree (many parties find it faster and safer to plunge-step or glissade lingering snow in the gully in early season rather than fighting the talus). From the pass, drop back onto the maintained Esmeralda Basin Trail #1394 and follow it back down through the meadows and forest to the trailhead, retracing the ~3.5 mi hike-in. The two summits of Esmeralda Peaks are close enough that some parties traverse between the east and west high points along the connecting ridge before descending the same southwest gully — this adds minor Class 2-3 ridge scrambling but no additional technical gear. No fixed anchors, bolts, or rope work are reported on this route; the only real descent hazards are loose rock underfoot and reduced visibility route-finding back to the correct gully in whiteout/low-cloud conditions given the broad, similar-looking talus slopes above Fortune Creek Pass.",
+     "value": "This is a walk-off/downclimb scramble with no rappelling. Retrace the ascent line down the Class 2 scree and talus slope, aiming back for the trail's last switchback; staying in the trees beside the boulder field on the way down avoids most of the loose talus. Rejoin the Boulder-De Roux Trail at the house-sized boulder and follow it back down the valley to the De Roux trailhead. The east and west summits are close enough to link along the connecting ridge before descending. No fixed anchors or rope work are reported; the hazards are loose rock underfoot, rockfall onto parties below, and finding the right line back to the switchback in low cloud, since the open slopes look alike."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "climbing_route",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "class": "Class 2",
+       "label": "South/southwest talus and scree slopes",
+       "notes": "Leave the maintained trail at or just below Fortune Creek Pass and angle east/northeast off-trail onto the open talus and scree slopes on the south/southwest aspect of Esmeralda's west (true) summit. Roughly 900-1,100 ft of unmaintained, sustained talus/scree scrambling with some minor route-finding through boulder bands. Watch for rockfall from parties above/below on this loose terrain, lingering snow patches in the gully into early summer (traction/axe useful then), and no water once you leave the basin meadows."
+      },
+      {
+       "n": 2,
+       "label": "Rockier crux band",
+       "notes": "A rockier crux band partway up is easiest skirted to the west; a boulder-field alternative exists farther west if the direct scree gully is too loose."
+      }
+     ],
+     "value": [
+      {
+       "n": 1,
+       "class": "Class 2",
+       "label": "Scree and talus above the house-sized boulder",
+       "notes": "Leave the trail at the boulder on the last switchback (~5,500-5,600 ft), on its climber's left, and climb northeast up about 1,100 ft of sustained, loose scree and talus. No path is marked and many faint ones lead up; the line under the southwest ridge and the talus farther to climber's right both go, and a boulder field farther west is an alternative when the direct slope is too loose. Lingering snow early in the season may call for an axe."
+      },
+      {
+       "n": 2,
+       "class": "Class 2",
+       "label": "Upper slope and the two summits",
+       "notes": "The upper 100-150 ft is loose broken rock. The western knob is a walk-up and very slightly higher; the eastern one, a couple of hundred yards away, is the one marked on maps. Tag both."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "bail",
+     "path": [],
+     "expect": "From anywhere on the ridge, retreat the way you came to Fortune Creek Pass; from the pass it's a straightforward, well-established trail all the way back to the car.",
+     "value": "From anywhere on the slope, retreat the way you came to the trail's last switchback; from there it is maintained trail all the way back to the De Roux trailhead."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "pro_tips",
+     "path": [],
+     "expect": [
+      "Tag both the east and west summits — topos disagree on the true high point, and the summit register sits on the west summit",
+      "Use Fortune Creek Pass as a natural turnaround/bail point if the scramble above looks snow-loaded or storms are building",
+      "Filter water low in the basin — the upper mountain and ridge are dry"
+     ],
+     "value": [
+      "Tag both the east and west summits — topos disagree on the true high point, and the summit register sits on the west summit",
+      "Note the house-sized boulder at the last switchback on the way up; it is your target on the way back down",
+      "Filter water along the valley trail — the scree slope and summits are dry"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "NW Forest Pass required; the trailhead lot is small and fills early on summer weekends, and the route is typically snow-free and in best condition July-September.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the Esmeralda/Ingalls Lake trailhead, follow the Esmeralda Basin Trail up through wildflower meadows and a rocky headwall to Fortune Creek Pass, then leave the trail for a Class 2 talus/heather scramble onto the ridge. Tag the west summit (register) and traverse to the nearby east summit before retracing the same line back down. Done entirely in a day — no camp is needed.",
+        "hours": 7,
+        "miles": 8.6,
+        "title": "Car-to-car: both Esmeralda summits",
+        "gainFt": 2500,
+        "lossFt": 2500,
+        "packLb": 0,
+        "schedule": [
+         {
+          "time": "6:00 AM",
+          "label": "Leave trailhead (4,269 ft)",
+          "detail": "The small Esmeralda/Ingalls Lake trailhead lot fills early on summer weekends, so an early start is standard."
+         },
+         {
+          "time": "6:15 AM",
+          "label": "Esmeralda Basin / Ingalls Way junction",
+          "detail": "Stay left onto the Esmeralda Basin Trail (~0.4 mi in)."
+         },
+         {
+          "time": "8:30 AM",
+          "label": "Reach Fortune Creek Pass (5,960 ft)",
+          "detail": "~3 miles of trail through the basin and up the headwall switchbacks; this is where maintained tread ends."
+         },
+         {
+          "time": "9:30 AM",
+          "label": "West summit (6,776 ft)",
+          "detail": "Class 2 talus/heather scramble up onto the Esmeralda ridge from at or below the pass."
+         },
+         {
+          "time": "10:15 AM",
+          "label": "East summit",
+          "detail": "Short ridge traverse to the second, slightly lower summit; many parties tag both."
+         },
+         {
+          "time": "1:00 PM",
+          "label": "Back at trailhead",
+          "detail": "Downclimb the same talus/heather line to the pass, then walk out the trail."
+         }
+        ],
+        "objective": "Tag the west (true, 6,776 ft) and east summits via Fortune Creek Pass"
+       }
+      ],
+      "totalNote": "A single long day car-to-car: roughly 6-9 hours, ~8.6 miles round trip with 2,500 ft of gain — no backpacking or camp required."
+     },
+     "value": {
+      "cal": "Northwest Forest Pass required at the De Roux trailhead; the route is typically snow-free and in best condition July-September.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the De Roux trailhead, walk the Boulder-De Roux Trail up the valley to the house-sized boulder at its last switchback, then scramble the Class 2 scree and talus slope to the west summit. Walk the connecting ridge to the east summit and retrace the same line down. Done in a day; no camp is needed.",
+        "hours": 6,
+        "miles": 7,
+        "title": "Car-to-car: both Esmeralda summits",
+        "gainFt": 3100,
+        "lossFt": 3100,
+        "packLb": 0,
+        "schedule": [
+         {
+          "time": "7:00 AM",
+          "label": "Leave De Roux trailhead (3,800 ft)",
+          "detail": "Cross the North Fork Teanaway and De Roux Creek on the lower trail."
+         },
+         {
+          "time": "~8:30 AM",
+          "label": "House-sized boulder at the last switchback (~5,600 ft)",
+          "detail": "Leave the trail on the boulder's climber's left and head northeast."
+         },
+         {
+          "time": "~10:00 AM",
+          "label": "West summit (~6,775 ft)",
+          "detail": "About 1,100 ft of sustained Class 2 scree and talus; the top is loose broken rock."
+         },
+         {
+          "time": "~10:30 AM",
+          "label": "East summit",
+          "detail": "Short ridge walk to the second summit; many parties tag both."
+         },
+         {
+          "time": "~1:00 PM",
+          "label": "Back at trailhead",
+          "detail": "Down the same slope to the boulder, then out the trail."
+         }
+        ],
+        "objective": "Tag the west and east summits by the De Roux Creek scree slope"
+       }
+      ],
+      "totalNote": "A single day car-to-car: about 7 miles round trip with roughly 3,100 ft of gain, typically 5-7 hours; no camp required."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 7,
+      "summitTimeHrs": 7,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "6:00 AM from the trailhead",
+      "sectionBreakdown": [
+       {
+        "hrs": 7,
+        "note": "From the Esmeralda/Ingalls Lake trailhead, follow the Esmeralda Basin Trail up through wildflower meadows and a rocky headwall to Fortune Creek Pass, then leave the trail for a Cla…",
+        "fromTo": "Car-to-car: both Esmeralda summits",
+        "section": "Climb"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": 6,
+      "summitTimeHrs": 6,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "7:00 AM from the trailhead",
+      "sectionBreakdown": [
+       {
+        "hrs": 6,
+        "note": "From the De Roux trailhead, up the Boulder-De Roux Trail to the house-sized boulder at its last switchback, then the Class 2 scree slope to both summits and back the same way.",
+        "fromTo": "Car-to-car: both Esmeralda summits",
+        "section": "Climb"
+       }
+      ]
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3300,
+     "value": 3100
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 3300,
+     "value": 3100
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "dist_km",
+     "path": [],
+     "expect": 6.4,
+     "value": 5.6
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "routefinding among the multiple Esmeralda summits",
+      "afternoon thunderstorms",
+      "loose talus and scree on the upper ridge",
+      "lingering snow/ice in the north-facing headwall gully into early summer",
+      "early-season creek crossings in Esmeralda Basin"
+     ],
+     "value": [
+      "routefinding among the multiple Esmeralda summits",
+      "afternoon thunderstorms",
+      "loose talus and scree on the upper ridge",
+      "lingering snow on the upper scree slope into early summer",
+      "early-season De Roux Creek crossings"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (early season, if the headwall gully is still snow-filled)",
+      "trekking poles (creek crossings, scree)"
+     ],
+     "value": [
+      "helmet",
+      "ice axe (early season)",
+      "crampons (early season, if the upper slope is still snow-covered)",
+      "trekking poles (creek crossings, scree)"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "what_to_bring",
+     "path": [],
+     "expect": [
+      "10 essentials",
+      "helmet",
+      "trekking poles",
+      "early-season ice axe/crampons",
+      "sun protection — the basin headwall has little shade"
+     ],
+     "value": [
+      "10 essentials",
+      "helmet",
+      "trekking poles",
+      "early-season ice axe/crampons",
+      "sun protection — the south-facing scree slope has little shade"
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "for the last ~9–10 miles",
+     "replace": "beyond the end of pavement"
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "From WA-970, follow the paved North Fork Teanaway Road about 13 miles, then gravel FR-9737 about 9.6 miles to the Esmeralda/Ingalls Lake trailhead (elev. 4,269 ft)",
+     "value": "From WA-970, follow the paved North Fork Teanaway Road about 13 miles to the end of pavement, then continue on gravel FR-9737 about 8 miles to the De Roux trailhead and campground (elev. ~3,800 ft) on the left."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dogs are permitted on the Esmeralda Basin Trail itself but prohibited beyond the 0.4-mi junction with Ingalls Way/Longs Pass Trail; stay on trail through the wildflower basin.",
+     "replace": "Stay on the trail through the valley meadows up to the departure point."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "in Esmeralda Basin and on the summit ridge",
+     "replace": "in the De Roux Creek valley and on the summit ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Full-day car-to-car objective via Esmeralda Basin; exact trailhead mileage/hours not specified",
+     "value": "Full-day car-to-car objective from the De Roux trailhead: about 3 to 3.5 miles and 1,800 ft of trail to the departure boulder, then about 1,100 ft of off-trail scree"
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "spring"
+     ],
+     "expect": "Basin and approach are often still snow-covered into June; an ice axe may be needed on the headwall.",
+     "value": "The approach trail and scree slope are often still snow-covered into June; an ice axe may be needed on the upper slope."
+    },
+    {
+     "op": "set",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "expect": "No firm party count is known; trailhead/basin corridor is a popular Teanaway destination (shared access with Lake Ingalls) and sees heavy weekend hiker traffic, but the Esmeralda Peaks summit itself is comparatively lightly visited — parties describe overflow parking and crowded basin trails while reporting solitude on the actual summit block",
+     "value": "No firm party count is known; the summit is comparatively lightly visited, and parties commonly report having it to themselves."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_esmeralda_peaks_scramble",
+     "column": "rope_note",
+     "path": [],
+     "find": "from De Roux Creek/Esmeralda Basin",
+     "replace": "from De Roux Creek"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[0]-[4] (Ingalls Way junction, Esmeralda Basin camps, Lake Ann junction, Fortune Creek Pass, the talus slope above the pass) trace the Esmeralda Basin line; remove them and add pins for the De Roux spur / Gallagher Head Lake junction (~1 mi) and the house-sized boulder at the last switchback (~5,500-5,600 ft).",
+    "waypoints[5] 'Esmeralda Basin Trailhead (FR-9737)' at 47.43656,-120.93697, 4,269 ft is the road-end trailhead; it should be the De Roux trailhead and campground (~3,800 ft, about 8 miles up FR-9737), and its pipeline-voice note replaced.",
+    "approach_logistics still names the Esmeralda Basin trailhead with its coordinates and 'via the Ingalls Way Trail'; point it at the De Roux trailhead once its coordinate is fixed.",
+    "bivy lists the Lake Ann bench / Esmeralda Basin camps as main camp; for this route the only camp is the De Roux campground at the trailhead, and none is needed for a day climb."
+   ]
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: the summer scramble from Denny Creek over Hemlock Pass up the southwest side; renamed 'Southwest Ridge (Hemlock Pass)', face/aspect SW, approach/climbing_route/descent/hazards/road/fees rewritten, the Alpental gully kept as a secondary approach variant, gain 3,600 ft (Bryant only)",
+   "summary": "Bryant Peak's summer scramble goes from the Denny Creek trail over Hemlock Pass and up the southwest ridge, so the row is renamed and the parts that sent climbers up the Alpental / Source Lake gully now describe that line, with the gully kept as a steeper alternative.",
+   "evidence": "The club's published route (Bryant & Hemlock Peaks) starts at the Denny Creek trailhead (2,300 ft) via Exit 47, FR 58 and FR 5830, follows Trail 1014 to Hemlock Pass, then the ridge on a 33° bearing to a meadow and the talus field, with a late-season variant straight up the ridge; it gives 9.5 miles and 3,900 ft for both peaks. The route database for the peak describes the scramble as being on the southwest side from Hemlock Pass by the Melakwa Lake trail, and the Alpental / Source Lake / Great Scott Basin approach as reaching the east and north sides. A separate trip log from Denny Creek gives 10.8 miles and 2,280-5,801 ft for Bryant plus Hemlock. The Bryant-only 9 mi / 3,600 ft figure comes from the club's page as read by the earlier research and matches the 3,500 ft net rise; dist_km (7.25 km = 4.5 mi one-way) already fits it and is unchanged.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks",
+    "https://www.mountainproject.com/area/117096449/bryant-peak",
+    "https://onehikeaweek.com/2013/06/29/bryant-peak/",
+    "https://en.wikipedia.org/wiki/Bryant_Peak"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "expect_name": "Southeast Slopes",
+     "name": "Southwest Ridge (Hemlock Pass)"
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "face",
+     "path": [],
+     "expect": "Southeast Slopes",
+     "value": "Southwest Ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "aspect",
+     "path": [],
+     "expect": "SE",
+     "value": "SW"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "overview",
+     "path": [],
+     "find": "The standard line climbs a steep gully directly from Source Lake to the summit ridge.",
+     "replace": "The standard summer line comes up the southwest side from Hemlock Pass, reached by the Denny Creek trail, and is often paired with nearby Hemlock Peak."
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "approach",
+     "path": [],
+     "expect": "From the Alpental day-use trailhead (~3,120 ft, at the end of Alpental Road via I-90 Exit 52), start on the Snow Lake Trail (#1013), a wide, well-graded trail that climbs through old avalanche-path brush and second-growth forest below the ski area's lower lift line. At roughly 1.8 miles and about 720 ft of gain, leave the main Snow Lake Trail where a boot path splits left (southwest) toward Source Lake rather than continuing right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water before the basin steepens, and worth treating and topping off here — then follow the use trail along the lake's north/east shore into the open basin beneath The Tooth and Chair Peak (Source Lake, ~3,400 ft). From the lake the tread becomes an intermittent boot-track over boulder-hop terrain and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south), staying beneath the broken cliff bands on Bryant Peak's east side, and cross a talus field below the rock spire known locally as \"the Thumbtack\" to reach the mouth of a steep scree-and-talus gully splitting Bryant's southeast face — this is the same drainage backcountry skiers call the \"Bryant Couloir\"/\"wonder gully,\" and it is an active avalanche path in winter and spring, so avoid it in unstable snow or soon after a storm. Ascend the gully favoring its far climber's-right side, which has noticeably firmer footing than the loose center and left. The gully tops out on the Bryant–Chair connecting ridge; from there work south over blocky ridge and talus to the base of the summit block. If the block still holds snow, the final scramble is easy Class 3 with little real exposure; in bare/dry conditions the only reasonable line is around the north (climber's left) side on exposed, distinctly loose Class 3 rock — test every hold. Overall this is about a 9.5-mile round trip with on the order of 3,000–3,400 ft of net gain to the 5,801 ft summit; plan 4–6 hours trailhead-to-summit for a fit party, more if the gully still holds snow requiring axe/crampons.",
+     "value": "From I-90 Exit 47, take Denny Creek Road (FR 58) about 3 miles, past Denny Creek Campground, then turn left onto FR 5830 to the Denny Creek trailhead (~2,300 ft). Follow the Denny Creek Trail (#1014, the Melakwa Lake trail) up the valley past waterfalls, then up steeper switchbacks to Hemlock Pass, about 4 miles and roughly 2,300 ft above the car. At the crest of the pass turn right and follow the ridge on a bearing of about 33°, skirting cliff bands mainly on the left, to a plateau and meadow on the ridge. Early in the season, while snow still covers the brush, a brushy notch behind trees on the right leads about 170 ft up and then northeast to a meadow at the foot of the talus field that wraps about three-quarters of the peak's base; later in the season that line is choked with brush, so stay on the ridge and go straight up it to the summit block. The final scramble is loose rock on the left, or when snow-free around the exposed north side; helmets are recommended. The round trip is about 9 miles with roughly 3,600 ft of gain for Bryant alone; adding nearby Hemlock Peak makes it about 9.5 miles and 3,900 ft."
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "climbing_route",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "label": "Southeast face gully",
+       "notes": "Steep scree-and-talus gully splitting Bryant's southeast face, entered at its mouth past a talus field below the rock spire known locally as \"the Thumbtack\". Ascend favoring its far climber's-right side, which has noticeably firmer footing than the loose center and left. This is the drainage backcountry skiers call the \"Bryant Couloir\"/\"wonder gully\" and it is an active avalanche path in winter and spring — avoid it in unstable snow or soon after a storm; axe and crampons if it still holds snow."
+      },
+      {
+       "n": 2,
+       "label": "Bryant-Chair connecting ridge",
+       "notes": "The gully tops out on the Bryant-Chair connecting ridge; from there work south over blocky ridge and talus to the base of the summit block."
+      },
+      {
+       "n": 3,
+       "class": "Class 3",
+       "label": "Summit block",
+       "notes": "If the block still holds snow the final scramble is easy Class 3 with little real exposure. In bare/dry conditions the only reasonable line is around the north (climber's left) side on exposed, distinctly loose Class 3 rock — test every hold. Summit 5,801 ft."
+      }
+     ],
+     "value": [
+      {
+       "n": 1,
+       "label": "Ridge from Hemlock Pass",
+       "notes": "From the crest of Hemlock Pass turn right and follow the ridge on a bearing of about 33°, skirting cliff bands mainly on the left, to a plateau and meadow on the ridge. Early in the season a brushy notch behind trees on the right leads about 170 ft up and then northeast to a meadow; once the snow is gone that notch is choked with brush, so stay on the ridge."
+      },
+      {
+       "n": 2,
+       "class": "Class 2",
+       "label": "Talus to the summit block",
+       "notes": "A talus field wraps about three-quarters of the peak's base; cross it, or follow the ridge above the plateau, to the base of the summit block."
+      },
+      {
+       "n": 3,
+       "class": "Class 3",
+       "label": "Summit block",
+       "notes": "Scramble up loose rock on the left, or when snow-free around the exposed north side. The first high point may be a false summit, with a short exposed traverse to the true top. Loose holds and rockfall are the main hazard; helmets recommended. Summit 5,801 ft."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "descent_text",
+     "path": [],
+     "expect": "This is a walk-off/downclimb scramble — there is no rappelling and no fixed anchors on the standard Southeast Slopes route; rappels = 0. Reverse the ascent line: downclimb the same exposed, loose Class 3 stretch on the summit block's north side (or the easier snow-covered line if it's still in), then pick back across the ridge and talus to the head of the southeast gully. Stay on the ascent line — climber's right — on the way down; parties who drift climber's-left in this gully have gotten cliffed out above steep, loose dirt and been forced to down-scramble exposed, vegetated terrain to regain the route, so don't try to shortcut the fall line. Descend the gully facing in (plunge-stepping or using an axe if snow remains) through its steeper upper section, easing into a talus/boulder walk-down lower down. Because this gully doubles as a backcountry-ski descent and documented avalanche path, avoid it in the morning after a hard freeze-thaw cycle or following fresh snow loading in shoulder-season conditions. From the gully base, retrace the traverse beneath Bryant's cliffs back through Great Scott Basin to Source Lake, then rejoin the Snow Lake Trail (#1013) for the final descent to the Alpental trailhead. Note for context: a separate, considerably harder winter line up Bryant's northeast ridge has been descended with three 60m rappels (summit anchor to a ridge col/gendarme, a second 60m lowering past steep terrain, and a final rap down an ice step) — but that is a distinct technical route, not this standard Southeast Slopes scramble, and does not apply here.",
+     "value": "This is a walk-off/downclimb scramble with no rappels and no fixed anchors. Reverse the ascent: downclimb the loose Class 3 summit block carefully, facing in where it is steep, then return across the talus and down the ridge to Hemlock Pass, keeping to the ascent line around the cliff bands rather than cutting down the fall line. From the pass, follow the Denny Creek Trail back down to the trailhead. The steep gully between Bryant and Chair Peak on the Source Lake side is a separate line and an avalanche path in winter and spring; it is not a descent from this route."
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "Source Lake and Great Scott Basin to the gully splitting Bryant's southeast face",
+       "notes": "From the Alpental day-use trailhead at about 3,120 ft, take the Snow Lake Trail #1013 through old avalanche brush and second growth. At roughly 1.8 miles and 720 ft of gain, a boot path splits LEFT (southwest) toward Source Lake while the main trail continues right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water — and follow the use trail along the lake's north and east shore into the open basin below The Tooth and Chair Peak. From there the tread becomes intermittent boot-track over boulders and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south) beneath the broken cliff bands on Bryant's east side and cross a talus field to the foot of the gully. About 9.5 miles round trip and on the order of 3,000 to 3,400 ft of gain; four to six hours trailhead to summit for a fit party.",
+       "gainFt": 3400,
+       "season": "Roughly July to September once the gully has melted out; earlier the gully holds snow and needs an axe and crampons",
+       "hazards": [
+        "The gully is an active avalanche path in winter and spring; avoid it in unstable snow or soon after a storm",
+        "Loose scree, with the centre and left of the gully markedly worse than the right",
+        "The gully funnels rockfall from parties above",
+        "Lingering early-season snow, requiring axe and crampons",
+        "Exposed and loose class 3 on the north side of the summit block when the block is dry"
+       ],
+       "baseFinding": "THE THUMBTACK IS THE LANDMARK YOU WALK PAST, AND THE GULLY IS THE ONE IMMEDIATELY BEYOND IT. Contouring south beneath Bryant's east side you cross a talus field below the rock spire known locally as the Thumbtack. The mouth of the route's gully is at the far side of that talus. Spire behind you, steep scree-and-talus gully splitting the face in front of you.\n\nWHAT THE GULLY IS, IN OTHER WORDS: this is the same drainage backcountry skiers call the Bryant Couloir or the wonder gully. If your winter partner knows the ski line, they know the route.\n\nTHE FOOTING TEST TELLS YOU WHERE TO BE WITHIN IT: climb favouring the FAR CLIMBERS' RIGHT side of the gully, which is noticeably firmer than the loose centre and left. A party grinding up loose ground in the middle is in the correct gully and in the wrong part of it.\n\nWHERE IT DELIVERS YOU: the gully tops out on the BRYANT-CHAIR CONNECTING RIDGE, not on a summit. From there you work SOUTH over blocky ridge and talus to the base of the summit block. A gully that finishes on a summit is not this one.\n\nAND THE LAST STEP CHANGES CHARACTER WITH THE SNOW, which is worth knowing before you commit: with snow on the block the final scramble is easy class 3 with little real exposure. Dry, the only reasonable line goes round the NORTH — climbers' left — side on exposed and distinctly loose class 3. Test every hold."
+      }
+     ],
+     "value": [
+      {
+       "name": "Denny Creek Trail to Hemlock Pass, then the ridge",
+       "primary": true,
+       "notes": "The standard summer approach. From the Denny Creek trailhead (~2,300 ft), reached from I-90 Exit 47 by Denny Creek Road and FR 5830, follow the Denny Creek Trail #1014 toward Melakwa Lake past waterfalls and up steeper switchbacks to Hemlock Pass, about 4 miles and roughly 2,300 ft of gain. Leave the trail at the pass for the ridge on the right.",
+       "gainFt": 3600,
+       "season": "Late July to September for a dry scramble; earlier the ridge and talus hold snow and an axe is needed",
+       "hazards": [
+        "Loose rock and rockfall on the summit block",
+        "Lingering snow on the ridge and talus early in the season",
+        "Brush in the notch below the talus once the snow has gone",
+        "Exposure on the north side of the summit block"
+       ],
+       "baseFinding": "HEMLOCK PASS IS WHERE THE TRAIL STOPS CLIMBING. At its crest, before the trail drops toward Melakwa Lake, turn right onto the ridge and hold a bearing of about 33°, skirting the cliff bands mainly on their left. The check that you are on line is a plateau and meadow on the ridge, then a talus field wrapping most of the peak's base with the summit block above. Negative marker: if you are descending toward a lake, you stayed on the trail past the pass."
+      },
+      {
+       "name": "Alpental, Source Lake and Great Scott Basin to the Bryant-Chair gully",
+       "notes": "A steeper alternative from the Alpental side, better known as a winter and spring snow climb than as a summer scramble. From the Alpental day-use trailhead at about 3,120 ft, take the Snow Lake Trail #1013 through old avalanche brush and second growth. At roughly 1.8 miles and 720 ft of gain, a boot path splits LEFT (southwest) toward Source Lake while the main trail continues right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water — and follow the use trail along the lake's north and east shore into the open basin below The Tooth and Chair Peak. From there the tread becomes intermittent boot-track over boulders and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south) beneath the broken cliff bands on Bryant's east side and cross a talus field to the foot of the gully.",
+       "season": "Roughly July to September once the gully has melted out; earlier the gully holds snow and needs an axe and crampons",
+       "hazards": [
+        "The gully is an active avalanche path in winter and spring; avoid it in unstable snow or soon after a storm",
+        "Loose scree, with the centre and left of the gully markedly worse than the right",
+        "The gully funnels rockfall from parties above",
+        "Lingering early-season snow, requiring axe and crampons",
+        "Exposed and loose class 3 on the north side of the summit block when the block is dry"
+       ],
+       "baseFinding": "THE THUMBTACK IS THE LANDMARK YOU WALK PAST, AND THE GULLY IS THE ONE IMMEDIATELY BEYOND IT. Contouring south beneath Bryant's east side you cross a talus field below the rock spire known locally as the Thumbtack. The mouth of the route's gully is at the far side of that talus. Spire behind you, steep scree-and-talus gully splitting the face in front of you.\n\nWHAT THE GULLY IS, IN OTHER WORDS: this is the same drainage backcountry skiers call the Bryant Couloir or the wonder gully. If your winter partner knows the ski line, they know the route.\n\nTHE FOOTING TEST TELLS YOU WHERE TO BE WITHIN IT: climb favouring the FAR CLIMBERS' RIGHT side of the gully, which is noticeably firmer than the loose centre and left. A party grinding up loose ground in the middle is in the correct gully and in the wrong part of it.\n\nWHERE IT DELIVERS YOU: the gully tops out on the BRYANT-CHAIR CONNECTING RIDGE, not on a summit. From there you work SOUTH over blocky ridge and talus to the base of the summit block. A gully that finishes on a summit is not this one.\n\nAND THE LAST STEP CHANGES CHARACTER WITH THE SNOW, which is worth knowing before you commit: with snow on the block the final scramble is easy class 3 with little real exposure. Dry, the only reasonable line goes round the NORTH — climbers' left — side on exposed and distinctly loose class 3. Test every hold."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "loose scree",
+      "lingering snow early season",
+      "steep loose gully between Bryant and Chair Peak funnels rockfall from parties above"
+     ],
+     "value": [
+      "loose scree",
+      "lingering snow early season",
+      "loose, exposed summit block with rockfall from parties above"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "pro_tips",
+     "path": [],
+     "expect": [
+      "Often part of a skyline traverse",
+      "Pair with Chair Peak or the Tooth",
+      "Alternate SW approach via Hemlock Pass and the Melakwa Lake Trail avoids the steep Source Lake gully",
+      "A quieter NE/east line goes from Source Lake through Great Scott Basin to Bryant Col"
+     ],
+     "value": [
+      "Often part of a skyline traverse",
+      "Pair with Chair Peak or the Tooth",
+      "Nearby Hemlock Peak is a short add-on from the same ridge",
+      "A quieter NE/east line goes from Source Lake through Great Scott Basin to Bryant Col"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "what_to_bring",
+     "path": [],
+     "expect": [
+      "ice axe (early season)",
+      "trekking poles",
+      "helmet (loose rock in the gully)"
+     ],
+     "value": [
+      "ice axe (early season)",
+      "trekking poles",
+      "helmet (loose rock on the summit block)"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3900,
+     "value": 3600
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 3900,
+     "value": 3600
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Best late June through September once the Denny Creek Trail and upper snowfields have melted out; earlier-season ascents involve more snow travel and require an ice axe.",
+      "days": [
+       {
+        "n": 1,
+        "note": "This is done in a single long day car-to-car — no camping. Hike the Denny Creek Trail to Hemlock Pass, then follow the ridge and talus slopes on the standard route to the class 2-3 summit block, and reverse the same line to descend. Helmets recommended for loose rock and minor exposure near the top.",
+        "hours": 9,
+        "miles": 9.5,
+        "title": "Car-to-car scramble",
+        "gainFt": 3900,
+        "lossFt": 3900,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "5:30 AM",
+          "label": "Leave Denny Creek Trailhead",
+          "detail": "Start at ~2,300 ft; trailhead lot fills early on summer weekends."
+         },
+         {
+          "time": "+2 hr",
+          "label": "Reach Hemlock Pass",
+          "detail": "About 4 miles up Denny Creek Trail No. 1014, gaining roughly 2,300 ft."
+         },
+         {
+          "time": "+3.5 hr",
+          "label": "Base of the summit talus field",
+          "detail": "From the pass, follow the ridge on a 33° bearing, skirting cliff bands, to the meadow below Bryant's talus slopes."
+         },
+         {
+          "time": "+5 to 5.5 hr",
+          "label": "Summit Bryant Peak",
+          "detail": "Final class 2-3 scramble, typically around the north side of the summit block; rock is loose."
+         },
+         {
+          "time": "+6 hr",
+          "label": "Begin descent",
+          "detail": "Reverse the ascent line back through the talus, ridge, and Hemlock Pass."
+         },
+         {
+          "time": "+9 to 9.5 hr",
+          "label": "Back at trailhead",
+          "detail": "Most parties finish the full round trip in 8-10 hours car-to-car."
+         }
+        ],
+        "objective": "Summit Bryant Peak via Denny Creek Trail and Hemlock Pass, then return"
+       }
+      ],
+      "totalNote": "A single long day car-to-car: about 9.5 miles round trip with roughly 3,900 ft of gain/loss, typically 8-10 hours total; no backpacking or camping involved."
+     },
+     "value": {
+      "cal": "Best late June through September once the Denny Creek Trail and upper snowfields have melted out; earlier-season ascents involve more snow travel and require an ice axe.",
+      "days": [
+       {
+        "n": 1,
+        "note": "This is done in a single long day car-to-car — no camping. Hike the Denny Creek Trail to Hemlock Pass, then follow the ridge and talus slopes on the standard route to the class 2-3 summit block, and reverse the same line to descend. Helmets recommended for loose rock and minor exposure near the top.",
+        "hours": 9,
+        "miles": 9,
+        "title": "Car-to-car scramble",
+        "gainFt": 3600,
+        "lossFt": 3600,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "5:30 AM",
+          "label": "Leave Denny Creek Trailhead",
+          "detail": "Start at ~2,300 ft; trailhead lot fills early on summer weekends."
+         },
+         {
+          "time": "+2 hr",
+          "label": "Reach Hemlock Pass",
+          "detail": "About 4 miles up Denny Creek Trail No. 1014, gaining roughly 2,300 ft."
+         },
+         {
+          "time": "+3.5 hr",
+          "label": "Base of the summit talus field",
+          "detail": "From the pass, follow the ridge on a 33° bearing, skirting cliff bands, to the meadow below Bryant's talus slopes."
+         },
+         {
+          "time": "+5 to 5.5 hr",
+          "label": "Summit Bryant Peak",
+          "detail": "Final class 2-3 scramble, typically around the north side of the summit block; rock is loose."
+         },
+         {
+          "time": "+6 hr",
+          "label": "Begin descent",
+          "detail": "Reverse the ascent line back through the talus, ridge, and Hemlock Pass."
+         },
+         {
+          "time": "+9 to 9.5 hr",
+          "label": "Back at trailhead",
+          "detail": "Most parties finish the full round trip in 8-10 hours car-to-car."
+         }
+        ],
+        "objective": "Summit Bryant Peak via Denny Creek Trail and Hemlock Pass, then return"
+       }
+      ],
+      "totalNote": "A single long day car-to-car: about 9 miles round trip with roughly 3,600 ft of gain/loss for Bryant alone (about 9.5 miles and 3,900 ft with Hemlock Peak added), typically 8-10 hours total; no camping involved."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "road",
+     "path": [],
+     "expect": {
+      "name": "Alpental Road, Snoqualmie Pass",
+      "driveNote": "From I-90 Exit 52 (Snoqualmie Pass), go north on Alpental Road about 1.3 miles to its end at the Alpental Ski Area / Snow Lake trailhead parking lot (~3,100 ft). The lot is large but fills early on summer weekends — arrive before mid-morning.",
+      "seasonalGate": "none for the road itself; the lot's fee structure changes for ski season (~Nov 25–Apr 30)"
+     },
+     "value": {
+      "name": "Denny Creek Road (FR 58) and FR 5830",
+      "driveNote": "From I-90 Exit 47, take Denny Creek Road (FR 58) about 3 miles, past Denny Creek Campground, then turn left onto FR 5830 and continue to the Denny Creek trailhead (~2,300 ft). The lot fills early on summer weekends — arrive before mid-morning."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$5/day (cash or Scan & Pay QR code) or $30 annual Northwest Forest Pass at the automated fee station; America the Beautiful/Interagency passes also accepted for summer day use. During ski season the Alpental lot now uses Summit at Snoqualmie's paid parking, but the policy changed for 2025-26: instead of a flat ~$55/day charged every day from late Nov through April, fee parking (about $25/vehicle at Alpental) now applies only on weekends and holidays starting late November; the Northwest Forest Pass is not accepted for this resort-operated lot.",
+     "value": "$5/day or $30 annual Northwest Forest Pass; America the Beautiful/Interagency passes are also accepted."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "from Source Lake up through the gully and summit block",
+     "replace": "on the ridge and summit block"
+    },
+    {
+     "op": "set",
+     "id": "wa_bryant_peak_southeast_slopes",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Full alpine day out of Alpental Road trailhead",
+     "value": "Full day out of the Denny Creek trailhead: about 4 miles of trail to Hemlock Pass, then off-trail ridge and talus to the summit"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[0] is named 'Alpental / Snow Lake Trailhead' at the Alpental coordinate (47.44542,-121.42353) with elev 2,300; it should be the Denny Creek trailhead (~2,300 ft, off FR 5830) with its own coordinate and directions.",
+    "waypoints[1]-[6] (Source Lake junction, stream crossing, 'secret passage', Thumbtack, Bryant-Chair gully, summit block traverse) trace the Alpental gully line; replace them with pins for Hemlock Pass, the ridge plateau/meadow and the base of the talus field.",
+    "approach_logistics names the Alpental trailhead with its coordinate; point it at the Denny Creek trailhead once that pin exists."
+   ]
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: the West Fork Foss / Chetwoot Lake approach to the west and north ridges; renamed 'West Ridge / North Ridge via Chetwoot Lake', aspect W, and approach, descent, itinerary, timing, road, access, emergency, bivy and related fields rewritten from the Middle Fork / Williams Lake corridor; dist_km 19.3 (one-way); gain_ft 4,707 kept (it equals the net rise from this trailhead)",
+   "summary": "Iron Cap is climbed from the West Fork Foss lakes off US 2, camping at Chetwoot Lake and scrambling the west and north ridges, so the parts that described a long Middle Fork Snoqualmie / Williams Lake approach have been rewritten and the route renamed.",
+   "evidence": "The peak's reference entry gives the easiest route as class 2-3 on the North Ridge. A trip report from the West Fork Foss trailhead (1,640 ft) went over Atrium Ridge to Chetwoot Lake, past Point 6077 on the east to the west ridge, and down the north ridge to Iron Cap Lake: about 24 miles round trip over three days. A second report climbed from the Iron Cap Lake outlet on ledges around the north ridge; a 1986 account camped at the Chetwoot outlet and went up the north side; a hiking-association report from Big Heart also headed for Iron Cap. Trail figures: Trout Lake 1.6 mi, Copper 4.2 mi / 2,400 ft, Big Heart 7.3 mi / 3,300 ft; the trailhead is on FR 6835 off Foss River Road. The one report from the Middle Fork reached Iron Cap on a high route from Big Snow via Chetwoot and only walked out past Williams Lake. gain_ft 4,707 equals 6,347 minus the 1,640 ft trailhead, so it is kept. Not written: the reported damage to FR 6835 and road walk, which could not be confirmed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Iron_Cap_Mountain",
+    "https://onehikeaweek.com/2015/08/24/west-fork-foss-river-valley/",
+    "https://trailcatjim.com/alpine-lakes-traverse-2021/",
+    "https://climberkyle.com/2021/09/01/big-snow-iron-cap-high-route/",
+    "https://www.wta.org/go-hiking/hikes/west-fork-foss-river-and-lakes",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-07-25.8798406797",
+    "https://en.wikipedia.org/wiki/Chetwoot_Lake"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_iron_cap_mountain_south_route",
+     "expect_name": "South Route",
+     "name": "West Ridge / North Ridge via Chetwoot Lake"
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "aspect",
+     "path": [],
+     "expect": "S",
+     "value": "W"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "overview",
+     "path": [],
+     "find": "its south side (this route's approach) sheds",
+     "replace": "its south side sheds"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "overview",
+     "path": [],
+     "find": "This South Route follows the long Middle Fork Snoqualmie / Dutch Miller Gap Trail corridor to Williams Lake, then finishes on Iron Cap's west and north ridges.",
+     "replace": "This route comes in from the north on the West Fork Foss River trail off US 2, past Trout, Copper and Big Heart lakes to a camp at Chetwoot Lake, and finishes on Iron Cap's west and north ridges."
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "approach",
+     "path": [],
+     "expect": "The South Route begins at the Dingford Creek Trailhead (also signed/known as the Dutch Miller Gap Trailhead, ~1,550 ft), reached via I-90 Exit 34 and the rough, high-clearance/4WD-recommended Middle Fork Snoqualmie Road (FR 56) — the old Dutch Miller Gap Trailhead further up the road is no longer vehicle-accessible, so Dingford Creek is now the actual start. Self-issue Alpine Lakes Wilderness permits (free, required May 15–Oct 31) are at the trailhead register; there's a vault toilet but no potable water. From the trailhead, follow the Middle Fork Trail (#1003), which becomes the Dutch Miller Gap Trail (#1030), east up the Middle Fork Snoqualmie valley: a footbridge crossing of the Middle Fork at about 4.5 miles, then a steady, moderate climb to Hardscrabble Horse Camp (~7.7 mi) with open views of rockslides, waterfalls, and jagged peaks including Iron Cap itself across the valley (bikes and stock traffic are permitted only up to this point). Beyond Hardscrabble the trail crosses several avalanche-path openings and re-enters forest, reaching a steel bridge at Pedro Camp (~13 mi) and the Williams Lake Trail (#1031) junction at 14.2 mi (Williams Lake is a worthwhile water source/camp detour 1 mile off-route if backpacking in). The main trail continues through heather-and-huckleberry meadows to Dutch Miller Gap itself (~15.2 mi, ~5,000 ft), the low pass separating the Snoqualmie and Foss/Skykomish drainages. From the gap, leave the maintained trail and go cross-country north-northwest, contouring and ascending open talus, heather benches, and scree/dirt slopes on Iron Cap's south aspect toward the Iron Cap Lake basin, then up onto the west ridge for the final class 2–3 scramble to the 6,347 ft summit. This upper cross-country section is unmarked and route-finding is the crux of the approach — expect loose rock and dirt underfoot, occasional steep heather ('veggie') sections, and limited cairning; a map/GPS track is strongly advised since visibility-dependent cliff bands can cliff out a poorly chosen line. Water is reliable along the Middle Fork and at creek crossings/Williams Lake but scarce once you leave the valley floor above the gap, so tank up before the final push. Given the ~34-mile round trip and ~4,700–5,000 ft of cumulative gain, most parties treat this as a backpack (camping near Hardscrabble, Pedro Camp, or Williams Lake) rather than a single push, though strong parties have done it car-to-car. From the ridge, a short 3rd-class downclimb drops into a notch; beyond it a wide ramp traverses (no sidehilling) below the summit block to meet the broad north ridge, which leads via easy red-rock/dirt scrambling to the true summit.",
+     "value": "Start at the West Fork Foss River trailhead (~1,650 ft): from US 2 at Skykomish, turn south on Foss River Road (FR 68), then left on FR 6835 (signed for Trail 1064) for its last 1.9 miles to the trailhead. Self-issue Alpine Lakes Wilderness permits are at the trailhead. The West Fork Foss Lakes Trail #1064 reaches Trout Lake at 1.6 miles, then climbs to Copper Lake (4.2 miles, about 2,400 ft of gain) and continues past Little Heart Lake to Big Heart Lake (7.3 miles, about 3,300 ft), where the maintained trail ends. From Big Heart, go cross-country over the south end of Atrium Ridge, past small tarns and Little Chetwoot Lake, to Chetwoot Lake, the usual camp. From Chetwoot, climb talus and heather toward Point 6077, pass it on the east through more talus, and gain Iron Cap's west ridge for easy Class 3 scrambling. A short third-class downclimb drops into a notch; beyond it a wide ramp traverses below the summit block, without sidehilling, to the broad north ridge, and easy red-tinged rock and dirt lead to the 6,347 ft summit. A variation climbs from the Iron Cap Lake outlet on ledges around the nose of the north ridge. Route-finding through the boulder fields is the crux of the approach: cairns are sparse, and a map or GPS track is strongly advised. Most parties take two to three days, about 24 miles round trip."
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descent reverses the ascent line: downclimb the loose red-tinged rock, dirt, and scree of the summit ridges back to the talus benches above Iron Cap Lake basin, then drop back down to Dutch Miller Gap and rejoin the maintained Dutch Miller Gap/Middle Fork Trail (#1030/#1003) for the long walk out to the Dingford Creek Trailhead. This is a class 2–3 scramble route with no fixed anchors or rappel stations — it is a walk-off/downclimb, not a rappel descent. The main hazards on the way down are the same loose, dirt-over-rock terrain that makes the ascent's crux (test holds carefully, especially when wet or in the early season with residual snow patches), plus the route-finding challenge of picking the correct gully/ledge system back down to the basin rather than getting cliffed out on the steeper east-side rock bands — parties in this area have reported wandering into steep 'veggie' terrain when they lost the correct line, so retracing your ascent track (or using a GPS track) is the most reliable way down. Once back at Dutch Miller Gap, it's a straightforward, well-graded trail walk of roughly 15 miles back to the trailhead with the elevation loss front-loaded near the gap and gentler grades through the lower valley.",
+     "value": "Descent reverses the ascent or loops through the Iron Cap Lake basin. From the summit, follow the broad north ridge down on easy red-tinged rock and dirt, then either return across the ramp and up out of the notch onto the west ridge and down the talus to Chetwoot Lake, or continue down the north ridge to Iron Cap Lake and work back to camp through the lake basin. This is a Class 2-3 walk-off with no fixed anchors or rappels. The main hazards are loose dirt over rock, especially when wet or with snow patches early in the season, and picking the wrong line: parties who lose the ramp or wander east end up cliffed out on the steeper east-side rock bands or in steep heather, so retrace your ascent track. From Chetwoot, reverse the cross-country leg over Atrium Ridge to Big Heart Lake and walk the West Fork Foss trail about 7.3 miles back to the trailhead."
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "The high basin and La Bohn Gap area typically aren't fully snow-free until mid-to-late July, so August-September is the most reliable window.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the Dutch Miller Gap Trailhead (Dingford Creek, Middle Fork Snoqualmie Rd), follow the Middle Fork Snoqualmie / Dutch Miller Gap Trail roughly 14-15 miles, mostly gentle valley grade until a steeper final push past Lake Ivanhoe, then a short spur to Williams Lake. It's a long first day but not technical.",
+        "hours": 9,
+        "miles": 15.2,
+        "title": "Backpack in to Williams Lake / La Bohn Gap",
+        "gainFt": 3800,
+        "lossFt": 300,
+        "packLb": 38,
+        "schedule": [
+         {
+          "time": "6:00 AM",
+          "label": "Leave Dutch Miller Gap Trailhead",
+          "detail": "Long valley approach along the Middle Fork Snoqualmie River."
+         },
+         {
+          "time": "~11:00 AM",
+          "label": "Pass Hardscrabble/Lake Ivanhoe area",
+          "detail": "Grade steepens for the final climb toward Dutch Miller Gap."
+         },
+         {
+          "time": "3:00 PM",
+          "label": "Arrive Williams Lake camp",
+          "detail": "Small camp on the west side of the lake; set up and rest for summit day."
+         }
+        ],
+        "objective": "Reach high camp at Williams Lake below La Bohn Gap"
+       },
+       {
+        "n": 2,
+        "note": "Day-climb from Williams Lake with a light pack: gain La Bohn Gap, then follow talus/heather slopes and the connecting ridge onto Iron Cap's upper west or north ridge for a Class 2-3 scramble to the summit. Return the same way to camp.",
+        "hours": 6,
+        "miles": 4.5,
+        "title": "Climb Iron Cap Mountain",
+        "gainFt": 2000,
+        "lossFt": 2000,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "6:00 AM",
+          "label": "Leave Williams Lake camp",
+          "detail": "Head up toward La Bohn Gap on the steep but well-cairned climber's path."
+         },
+         {
+          "time": "~7:15 AM",
+          "label": "Top out at La Bohn Gap",
+          "detail": "~700 ft climb from camp; views open up toward Iron Cap and Chimney Rock."
+         },
+         {
+          "time": "~8:00 AM",
+          "label": "Traverse onto Iron Cap's ridge",
+          "detail": "Talus and heather leading to the west/north ridge scramble."
+         },
+         {
+          "time": "~9:30 AM",
+          "label": "Summit",
+          "detail": "Class 2-3 scrambling near the top; broad views over the Alpine Lakes basins."
+         },
+         {
+          "time": "~1:00 PM",
+          "label": "Back at Williams Lake camp",
+          "detail": "Reverse the route; rest, refill water, enjoy the afternoon."
+         }
+        ],
+        "objective": "Summit Iron Cap Mountain via La Bohn Gap and the west/north ridge"
+       },
+       {
+        "n": 3,
+        "note": "Retrace the Dutch Miller Gap Trail back down the Middle Fork Snoqualmie valley to the trailhead - a long but straightforward descent day.",
+        "hours": 8,
+        "miles": 15.2,
+        "title": "Hike out",
+        "gainFt": 300,
+        "lossFt": 3800,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Return to the trailhead"
+       }
+      ],
+      "totalNote": "A 3-day, roughly 34-mile round-trip backpack: ~15 miles in, a day-climb of Iron Cap via La Bohn Gap, and ~15 miles back out. Very fit/fast parties sometimes compress this into 2 days or even a single huge car-to-car push, but 3 days with a Williams Lake camp is the standard way it's done."
+     },
+     "value": {
+      "cal": "The lake basins and the ridge typically aren't snow-free until mid-to-late July, so August-September is the most reliable window.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the West Fork Foss trailhead, follow Trail 1064 past Trout, Copper and Little Heart lakes to Big Heart Lake, where the trail ends, then go cross-country over the south end of Atrium Ridge, past Little Chetwoot Lake, to camp at Chetwoot Lake. The trail miles are steady; the off-trail leg is slow.",
+        "hours": 8,
+        "miles": 10,
+        "title": "Backpack in to Chetwoot Lake",
+        "gainFt": 4000,
+        "lossFt": 700,
+        "packLb": 38,
+        "schedule": [
+         {
+          "time": "7:00 AM",
+          "label": "Leave West Fork Foss trailhead",
+          "detail": "Trout Lake at 1.6 miles."
+         },
+         {
+          "time": "~11:30 AM",
+          "label": "Big Heart Lake",
+          "detail": "About 7.3 miles and 3,300 ft; the maintained trail ends."
+         },
+         {
+          "time": "~3:00 PM",
+          "label": "Chetwoot Lake camp",
+          "detail": "Cross-country over Atrium Ridge past small tarns and Little Chetwoot Lake."
+         }
+        ],
+        "objective": "Reach camp at Chetwoot Lake below Iron Cap's west side"
+       },
+       {
+        "n": 2,
+        "note": "Climb from Chetwoot Lake with a light pack: talus and heather toward Point 6077, around it on the east, onto the west ridge, down into the notch, across the ramp to the north ridge and up to the summit. Return the same way or loop down the north ridge past Iron Cap Lake.",
+        "hours": 5,
+        "miles": 4,
+        "title": "Climb Iron Cap Mountain",
+        "gainFt": 1700,
+        "lossFt": 1700,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "7:00 AM",
+          "label": "Leave Chetwoot Lake camp",
+          "detail": "Talus and heather toward Point 6077."
+         },
+         {
+          "time": "~8:30 AM",
+          "label": "West ridge",
+          "detail": "Pass Point 6077 on the east and gain the ridge."
+         },
+         {
+          "time": "~9:30 AM",
+          "label": "Summit",
+          "detail": "Downclimb into the notch, take the ramp to the north ridge, then easy scrambling to the top."
+         },
+         {
+          "time": "~12:00 PM",
+          "label": "Back at camp",
+          "detail": "Retrace the ramp exactly on the way down."
+         }
+        ],
+        "objective": "Summit Iron Cap Mountain by the west and north ridges"
+       },
+       {
+        "n": 3,
+        "note": "Break camp, cross Atrium Ridge back to Big Heart Lake, and walk out the West Fork Foss trail to the trailhead.",
+        "hours": 6.5,
+        "miles": 10,
+        "title": "Hike out",
+        "gainFt": 700,
+        "lossFt": 4000,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Return to the West Fork Foss trailhead"
+       }
+      ],
+      "totalNote": "A 3-day backpack of about 24 miles round trip: a trail day to Big Heart Lake and cross-country to Chetwoot Lake, a summit day of about five hours from camp, and a day out. Strong parties sometimes do it in two days."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 23,
+      "summitTimeHrs": 6,
+      "descentTimeHrs": 8,
+      "approachTimeHrs": 9,
+      "recommendedStart": "6:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 9,
+        "note": "From the Dutch Miller Gap Trailhead (Dingford Creek, Middle Fork Snoqualmie Rd), follow the Middle Fork Snoqualmie / Dutch Miller Gap Trail roughly 14-15 miles, mostly gentle valle…",
+        "fromTo": "Backpack in to Williams Lake / La Bohn Gap",
+        "section": "Approach"
+       },
+       {
+        "hrs": 6,
+        "note": "Day-climb from Williams Lake with a light pack: gain La Bohn Gap, then follow talus/heather slopes and the connecting ridge onto Iron Cap's upper west or north ridge for a Class 2-…",
+        "fromTo": "Climb Iron Cap Mountain",
+        "section": "Climb"
+       },
+       {
+        "hrs": 8,
+        "note": "Retrace the Dutch Miller Gap Trail back down the Middle Fork Snoqualmie valley to the trailhead - a long but straightforward descent day.",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": 19.5,
+      "summitTimeHrs": 5,
+      "descentTimeHrs": 6.5,
+      "approachTimeHrs": 8,
+      "recommendedStart": "7:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 8,
+        "note": "West Fork Foss trail to Big Heart Lake, then cross-country over Atrium Ridge to Chetwoot Lake.",
+        "fromTo": "Backpack in to Chetwoot Lake",
+        "section": "Approach"
+       },
+       {
+        "hrs": 5,
+        "note": "From Chetwoot Lake past Point 6077 to the west ridge, the notch and ramp, and the north ridge to the summit, then back to camp.",
+        "fromTo": "Climb Iron Cap Mountain",
+        "section": "Climb"
+       },
+       {
+        "hrs": 6.5,
+        "note": "Back over Atrium Ridge to Big Heart Lake and out the West Fork Foss trail.",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "dist_km",
+     "path": [],
+     "expect": 28.1,
+     "value": 19.3
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "loose rock",
+      "long approach",
+      "route-finding through boulder fields between sparse cairns",
+      "creek crossings along the Middle Fork Snoqualmie / Dingford Creek approach",
+      "lingering snow and ice on north-facing terrain into early-to-mid July"
+     ],
+     "value": [
+      "loose rock",
+      "long approach",
+      "route-finding through boulder fields between sparse cairns",
+      "slow, unmarked cross-country travel between Big Heart and Chetwoot lakes",
+      "lingering snow and ice on north-facing terrain into early-to-mid July"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "obj_haz",
+     "path": [],
+     "expect": [
+      "Small glacial remnant (locally called the 'Iron Cap Glacier') and lingering snow/ice on the peak's north side into summer",
+      "Loose talus and boulder terrain typical of Alpine Lakes Wilderness cross-country approaches",
+      "Brushy, indistinct off-trail sections reported near Necklace Valley and La Bohn Gap"
+     ],
+     "value": [
+      "Small glacial remnant (locally called the 'Iron Cap Glacier') and lingering snow/ice on the peak's north side into summer",
+      "Loose talus and boulder terrain typical of Alpine Lakes Wilderness cross-country approaches",
+      "Steep, brushy and indistinct off-trail sections over Atrium Ridge between Big Heart and Chetwoot lakes"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "pro_tips",
+     "path": [],
+     "expect": [
+      "Many parties climb Iron Cap as part of a longer traverse (Big Snow Mountain, Chetwoot/Tank Lakes, La Bohn Gap) rather than as an isolated day trip, since the approach is so long",
+      "Water is available at Williams Lake and along much of the approach, but the Dingford Creek Trailhead itself has no potable water or facilities beyond parking",
+      "The Dingford Creek Trailhead lot is small and fills on summer weekends — arrive early"
+     ],
+     "value": [
+      "Many parties climb Iron Cap as part of a longer traverse (Big Snow Mountain, Chetwoot/Tank Lakes, La Bohn Gap) rather than as an isolated day trip, since the approach is so long",
+      "Water is plentiful at the lakes along the approach but scarce on the ridge above Chetwoot and Iron Cap lakes; fill up before the climb",
+      "Big Heart Lake is a popular, busy destination; the camps beyond it at Chetwoot Lake are much quieter"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "partner_requirements",
+     "path": [],
+     "expect": {
+      "fitnessSpec": {
+       "hiking": "Strong, sustained uphill fitness — long unmaintained approach through the Foss River drainage to the Williams Lake/La Bohn Gap basins before any scrambling begins",
+       "packWeight": "Most parties camp near Williams Lake or La Bohn Gap given the approach length, so plan for an overnight pack (roughly 20-35 lbs) rather than a single big day"
+      },
+      "approachTime": "Long — multi-hour approach, often broken into an overnight, via Foss River trail into the Williams Lake/La Bohn Gap basins before the south-side scramble itself",
+      "requiredSkills": [
+       "Class 3 scrambling on loose talus and short rock steps",
+       "off-trail routefinding (route is not signed/maintained)",
+       "comfort with loose/exposed footing",
+       "self-sufficiency on a long approach far from help"
+      ],
+      "experienceLevel": "Advanced scrambler comfortable with sustained off-trail travel and unmaintained wilderness approaches; not a beginner objective"
+     },
+     "value": {
+      "fitnessSpec": {
+       "hiking": "Strong, sustained uphill fitness: about 7.3 trail miles and 3,300 ft to Big Heart Lake, then slow cross-country travel to Chetwoot Lake before any scrambling begins",
+       "packWeight": "Most parties camp at Chetwoot Lake given the approach length, so plan for an overnight pack (roughly 20-35 lbs) rather than a single big day"
+      },
+      "approachTime": "Long: a full day on the West Fork Foss trail and over Atrium Ridge to Chetwoot Lake before the climb itself",
+      "requiredSkills": [
+       "Class 3 scrambling on loose talus and short rock steps",
+       "off-trail routefinding (route is not signed/maintained)",
+       "comfort with loose/exposed footing",
+       "self-sufficiency on a long approach far from help"
+      ],
+      "experienceLevel": "Advanced scrambler comfortable with sustained off-trail travel and unmaintained wilderness approaches; not a beginner objective"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "road",
+     "path": [],
+     "expect": {
+      "name": "Middle Fork Snoqualmie Road (FR 56)",
+      "status": "Rough native-surface forest road; high-clearance vehicle recommended; periodic washout closures reported near the Taylor River",
+      "driveNote": "From I-90 Exit 34, go north 0.6 mi on 468th Ave SE, then continue about 17 miles on FR 56 to the Dingford Creek Trailhead"
+     },
+     "value": {
+      "name": "Foss River Road (FR 68) and FR 6835",
+      "status": "Gravel forest roads; check Mt. Baker-Snoqualmie NF road alerts before driving",
+      "driveNote": "From US 2 at Skykomish, turn south on Foss River Road (FR 68), then left on FR 6835 (signed for Trail 1064) for its last 1.9 miles to the West Fork Foss trailhead."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "access",
+     "path": [],
+     "expect": {
+      "fees": "A Northwest Forest Pass ($5/day or $30/annual) or America the Beautiful pass covers most Mt. Baker-Snoqualmie NF trailheads in this corridor; the Dingford Creek Trailhead itself is currently posted as a no-fee site, but carry a pass in case that changes.",
+      "notes": "",
+      "rules": "No bikes beyond the old Dutch Miller Gap Horse Camp (trail mile 7.7); no motorized or mechanized travel within the Alpine Lakes Wilderness; groups larger than 12 must split into separate parties with at least one mile of separation.",
+      "permit": "Free self-issue day-use/overnight wilderness permit required at the trailhead for all of the Alpine Lakes Wilderness; group size is capped at 12 (people and stock combined).",
+      "closures": "The old Dutch Miller Gap Trailhead is no longer reachable by vehicle — Dingford Creek Trailhead is now the standard starting point. The lower Middle Fork Snoqualmie Trail below Dingford Creek has been closed since a 2018 landslide. FR 56 has had periodic washout closures near the Taylor River; check current Mt. Baker-Snoqualmie NF alerts before driving.",
+      "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+      "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+      "overnight_permit": {
+       "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+       "what": "Free self-issue Alpine Lakes Wilderness permit",
+       "where": "Fill one out at the trailhead kiosk and carry your copy."
+      }
+     },
+     "value": {
+      "fees": "A Northwest Forest Pass ($5/day or $30/annual) or America the Beautiful pass is required to park at the West Fork Foss trailhead.",
+      "notes": "",
+      "rules": "No motorized or mechanized travel within the Alpine Lakes Wilderness; groups larger than 12 must split into separate parties with at least one mile of separation.",
+      "permit": "Free self-issue day-use/overnight wilderness permit required at the trailhead for all of the Alpine Lakes Wilderness; group size is capped at 12 (people and stock combined).",
+      "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+      "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+      "overnight_permit": {
+       "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+       "what": "Free self-issue Alpine Lakes Wilderness permit",
+       "where": "Fill one out at the trailhead kiosk and carry your copy."
+      }
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "emergency",
+     "path": [],
+     "expect": {
+      "notes": "No cell coverage in the Middle Fork Snoqualmie valley or the basin below Iron Cap; the approach is remote, so plan for a multi-hour hike/drive to reach help in an emergency.",
+      "county": "King County",
+      "rangerStation": "Snoqualmie Ranger District, Mount Baker-Snoqualmie National Forest (administers the Dingford Creek / Dutch Miller Gap Trailhead used for this route)",
+      "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie"
+     },
+     "value": {
+      "notes": "No cell coverage in the West Fork Foss valley or the lake basins below Iron Cap; the approach is remote, so plan for a long hike and drive to reach help in an emergency.",
+      "county": "King County",
+      "rangerStation": "Skykomish Ranger District, Mount Baker-Snoqualmie National Forest (on US 2 at Skykomish; administers the West Fork Foss trailhead)",
+      "nearestHospital": "EvergreenHealth Monroe, Monroe (24-hour emergency department), west on US 2"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_iron_cap_mountain_south_route",
+     "column": "bivy",
+     "path": [],
+     "expect": [
+      {
+       "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+       "role": "main",
+       "type": "camp",
+       "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the valley — the last stretch through avalanche slopes, wildflowers and deep bracken fern depending on the season — to the Williams Lake junction. Williams Lake sits about half a mile off the main trail and is genuinely secluded, with a good view across to Little Big Chief. From these meadows the route to Iron Cap climbs toward La Bohn Gap and then takes the ridge, with a bit of exposure but generally easy scrambling to the true summit. Two things to be honest about. First, this is a fourteen-mile approach before any climbing starts, so Iron Cap from here is a three-day objective for most parties. Second, La Bohn Gap is equally reachable from Necklace Valley on the East Fork Foss River off Highway 2, on the north side of the divide — a completely separate drive and a shorter approach to the gap, and the right choice if Iron Cap alone is the objective. Come this way when Big Snow, Burnt Boot or the western side of Chimney Rock and Overcoat are also on the list. The same trail continues over Dutch Miller Gap to the Waptus valley, so the Middle Fork and Cle Elum halves of this zone are linked on foot even though they are hours apart by road. Beyond Camp Pedro the route toward Overcoat and Chimney Rock climbs steeply and brushily into the rocky corridor between the Chief summits and crosses a pass at about 6,140 ft to reach the Overcoat Glacier — long, committing, and the reason the Pete Lake side is the standard for Chimney Rock.",
+       "water": "Williams Lake, the Middle Fork Snoqualmie River, and tarns and snowmelt in the meadows toward the gap",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park. Group limit twelve. Campfires prohibited on the higher benches above 5,000 ft; keep to durable ground and stay off the boggy meadow.",
+       "capacity": "Williams Lake holds a small number of quiet sites, a party or two; the heather and huckleberry benches nearer the gap are informal and can absorb a few more"
+      },
+      {
+       "elev": 2828,
+       "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+       "role": "route",
+       "type": "camp",
+       "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is GATED AT DINGFORD CREEK, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. BURNT BOOT PEAK is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+       "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+       "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+      },
+      {
+       "name": "Hardscrabble Horse Camp",
+       "role": "hidden"
+      },
+      {
+       "name": "Williams Lake",
+       "role": "hidden"
+      }
+     ],
+     "value": [
+      {
+       "name": "Chetwoot Lake",
+       "role": "main",
+       "type": "camp",
+       "notes": "The base for the climb: reached off-trail from Big Heart Lake over the south end of Atrium Ridge, past small tarns and Little Chetwoot Lake. Much quieter than Big Heart. The climb to Iron Cap's west ridge starts from here.",
+       "water": "Chetwoot Lake",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the West Fork Foss trailhead. Northwest Forest Pass to park. Group limit twelve."
+      },
+      {
+       "name": "Big Heart Lake",
+       "role": "route",
+       "type": "camp",
+       "notes": "The end of the maintained West Fork Foss trail, about 7.3 miles and 3,300 ft from the trailhead; popular and often crowded, but a reasonable first-night stop for slower parties.",
+       "water": "Big Heart Lake",
+       "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead. Northwest Forest Pass to park. Group limit twelve."
+      }
+     ]
+    }
+   ],
+   "pin_followups": [
+    "waypoints[0]-[5] (Middle Fork footbridge, Hardscrabble Horse Camp, Pedro Camp, Williams Lake junction, Williams Lake, Williams Lake saddle) trace the Middle Fork corridor; replace them with pins for Trout Lake, Copper Lake, Big Heart Lake, the Atrium Ridge crossing and Chetwoot Lake.",
+    "waypoints[6] 'Dingford Creek Trailhead' (47.5172,-121.45437, 1,500 ft) should be the West Fork Foss River trailhead (~1,640 ft, end of FR 6835).",
+    "approach_logistics names the Dingford Creek trailhead with its coordinate; point it at the West Fork Foss trailhead once that pin exists."
+   ]
+  }
+ ]
+}

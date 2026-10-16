@@ -1,0 +1,25 @@
+{
+ "results": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Chiwawa River footbridge: pin note 'solid underfoot' vs approach 'weathered/damaged'",
+   "evidence": "An August 2024 report says the damaged Chiwawa River bridge was no longer there, with a log crossing about 20 ft upstream. Both copies on the row are brought into line with it.",
+   "ops": [
+    {"op": "replace_text", "id": "wa_buck_mountain_south_ridge", "column": "waypoints", "path": [1, "note"], "find": "Plank/log bridge crossing the Chiwawa River about three miles up the trail — solid underfoot despite an ominous warning sign posted at the trailhead.", "replace": "Crossing of the Chiwawa River about three miles up the trail. The old footbridge was reported gone in 2024; a log crossing sits about 20 ft upstream, and early-season parties may need to wade."},
+    {"op": "replace_text", "id": "wa_buck_mountain_south_ridge", "column": "approach", "path": [], "find": "it crosses the upper Chiwawa River on a footbridge that is weathered/damaged, so treat it with care in high runoff and have a wading backup plan in early season.", "replace": "it crosses the upper Chiwawa River, where the old footbridge was reported gone in 2024; look for a log crossing about 20 ft upstream and have a wading backup plan in early season."}
+   ]
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "access.closures omits the current fire closure of Mineral Creek Trail 1331",
+   "evidence": "Forest closure order 06-17-03-2026-44 (Three Queens Fire, effective September 18 through October 31, 2026 unless rescinded sooner) lists Mineral Creek Trail 1331 as closed.",
+   "ops": [
+    {"op": "set", "id": "wa_three_queens_standard", "column": "access", "path": ["closures"], "expect": "FR 4600 is typically snow-closed into early summer; the trailhead ford of the Kachess River can be hazardous during high spring runoff", "value": "Three Queens Fire area closure (order 06-17-03-2026-44): Mineral Creek Trail 1331 is closed through October 31, 2026 unless the order is rescinded sooner. Otherwise FR 4600 is typically snow-closed into early summer, and the trailhead ford of the Kachess River can be hazardous during high spring runoff."}
+   ]
+  }
+ ]
+}

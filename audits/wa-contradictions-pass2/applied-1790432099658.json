@@ -1,0 +1,177 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "season",
+   "path": [],
+   "fact": "Best season window"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Best season window"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best season window"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "typical"
+   ],
+   "fact": "Best season window"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "National-park rules in access.rules"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "before": {
+    "season": "Jun-Sep (best Jul-Aug)",
+    "approach_variants": [
+     {
+      "name": "FR-2419 up the Big Creek drainage to the road-end trailhead",
+      "notes": "From the T-intersection at the end of North Lake Cushman Road, go right onto FS Road 24 for about 1.5 miles, then left onto FS Road 2419 and follow it up the Big Creek drainage roughly 6.6 miles to its end at a small trailhead at about 3,026 ft. Northwest Forest Pass to park; no wilderness permit is needed.\n\nFrom here the trail quickly becomes a boot path and then largely off-trail scrambling — there is no numbered maintained trail for most of the route. It climbs directly and steeply through forest, hand-over-hand on roots and rock in places, to a couple of open meadow benches around 3,800 ft. That meadow band holds the most reliable early-season water via snowmelt seeps; by mid-to-late summer expect it dry, so carry what you need from the car.",
+      "season": "Roughly Jun-Sep, best Jul-Aug. Spring and early summer put avalanche-capable snow in the gully",
+      "hazards": [
+       "Loose rock and rockfall in the entry gullies and on the talus — spread the group out rather than stacking above and below",
+       "Sustained exposure on the Dog Walk Ledge / Catwalk, where the tread is one boot wide with drops on both sides",
+       "Steep avalanche-prone snow in the gullies and on the saddle in spring and early season",
+       "The scree field below the false summit is greasy and slick when wet",
+       "Significant elevation loss on descent, hard on knees and ankles, and slower than the climb",
+       "Route-finding through the forested lower section, meadows and talus in poor visibility",
+       "Little shade above treeline; the route gets hot"
+      ],
+      "primary": true,
+      "baseFinding": "THE ROUTE IS A SEQUENCE OF THREE TERRAIN CHANGES AND EACH ONE IS A CHECK YOU CAN MAKE WITHOUT SEEING ANYTHING. First: forest gives way to OPEN MEADOW BENCHES around 3,800 ft — that is where the ridgeline and neighbouring Mount Ellinor come into view on a clear day, and where the ground briefly eases. Second: above the meadows you enter SCREE AND TALUS and the rule is to stay primarily on the CLIMBER'S-LEFT side of a large loose rocky gully. Left side of the gully, all the way. Third: the path winds above the gully until it GAINS THE SOUTHERN RIDGELINE, and from there the ground drops away on BOTH sides.\n\nTHE ARRIVAL TEST FOR THE REAL CLIMBING IS THE SOUTH SADDLE AT ABOUT 5,950 FT, AND IT HAS TWO MARKERS: it is a KNOWN BIVY SITE, and it is the FIRST POINT ON THE ROUTE WHERE THE TRUE SUMMIT BECOMES VISIBLE. Flat ground you could sleep on, high on a ridge, is a thing you can identify by standing on it.\n\nSECOND TEST, above the saddle: a STONE WIND SHELTER sits on the ridge. A built structure is unambiguous in any weather. From the wind shelter a final short Class 3-4 scramble gains the true 6,255 ft summit. If you have topped out without passing a stone shelter, you are on the false summit below it.\n\nTHE SECTION IN BETWEEN IS THE ONE PEOPLE REMEMBER: the ridge-crest traverse called the Dog Walk Ledge or the Catwalk, where in several spots the tread narrows to barely one boot-width with real exposure on both sides. Class 3 with a couple of Class 3+/4 moves. If the crest you are on is comfortably wide the whole way, you have not reached it yet.\n\nWHAT GOING TOO FAR LOOKS LIKE: a trip report warns specifically that contouring too far RIGHT (north) near the crest gets sketchy, exposed and dangerous. Stay left of the drop-off on the north side."
+     },
+     {
+      "name": "From Mount Ellinor, across the connecting ridge or the west-side basin",
+      "notes": "Recorded as an approach because parties do reach Washington from Ellinor rather than from Big Creek, usually as half of a traverse. Ellinor is reached by Trail #812 from its Upper or Lower Trailhead, both on the same North Lake Cushman Road corridor, and from Ellinor's summit the connecting ridge runs northeast toward Washington. It is not a walk. The crest is fractured, weathered pillow basalt with sustained Class 4 scrambling past a series of gendarmes, and it carries a loose 50 ft downclimb that most parties call the least enjoyable part of the day. The alternative that several parties prefer is the west-side basin traverse: drop into the basin below the crest and cross it, rejoining Ellinor's standard winter route line rather than fighting the ridge. Used as an approach to Washington this is a long way round for a peak with a 3.2 km trail of its own, and it is here for traverse parties.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Fractured, weathered pillow basalt on the connecting ridge with a crux gendarme downclimb of notably poor rock and severe exposure",
+       "Sustained Class 4 scrambling past gendarmes with a loose 50 ft downclimb",
+       "Committing terrain between two summits with no quick exit",
+       "All the Washington summit-ridge hazards at the end of it"
+      ],
+      "baseFinding": "COMING FROM ELLINOR THE ARRIVAL TEST FOR WASHINGTON'S SUMMIT GROUND IS THE SAME STONE WIND SHELTER on the ridge, with the final short Class 3-4 scramble above it to the 6,255 ft top. THE TEST ON THE CONNECTING RIDGE ITSELF, WHICH IS WHERE THE DAY IS DECIDED: hidden ledges keep the difficulty at Class 4 or below on most of the gendarmes, so if you are pulling harder than that you have taken the crest where a ledge existed. Look below the obvious line before committing to it. Where the ridge gets too difficult or exposed to continue unroped, the usual answer is to DROP INTO THE BASIN BELOW and either downclimb a technical sequence or bypass it on a snow finger. HONEST LIMIT: the usual advice on the crux gendarme downclimb is to avoid it — the rock is notably poor and the exposure severe, and several parties recommend the west-side basin instead of the direct ridge. That is a recommendation to change route, not a marker, and this variant is written down mainly so a party knows the option exists before they are standing on it."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "July through October for the standard dry scramble; late spring (roughly May-June) for the steep-snow variation, which requires an ice axe and self-arrest skills rather than being an easier option",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Steep, firm snow variation in the upper gully; requires ice axe/self-arrest skill and is not a substitute for the summer route",
+       "status": "marginal"
+      },
+      "July": {
+       "reason": "Season start; snow typically mostly melted out, dry Class 3 scrambling on schedule",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Lingering snow on north/upper aspects can still make the gully steep and firm; conditions vary year to year",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Peak dry-season conditions and peak crowd traffic; most reliable month for the standard route",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Tail end of best season; earlier snow/storms possible at this elevation, watch weather windows",
+       "status": "good"
+      },
+      "November": {
+       "reason": "Outside the best-season window; early-season snow and storms make the exposed summit ridge hazardous",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Still within best-season window; stable dry scrambling with fewer parties than midsummer",
+       "status": "optimal"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Pacific maritime climate typical of the southeastern Olympics: wet, cloudy, and mild most of the year with snow lingering into early summer on shaded aspects; the best-season (July-Oct dry / late spring for snow) reflects this pattern",
+      "probability": "Low-elevation Olympic weather is dominated by marine cloud cover and rain outside summer rather than convective storms; brief afternoon buildups are possible but not a dominant hazard here the way they are in the Cascades"
+     },
+     "exposure": "High-consequence exposure on the Class 3 summit ridge — a fall here has serious injury/fatality potential; the steep firm snow in the upper gully early season adds a second fall-and-slide hazard on hard snow; the scree/summit gully is also a rockfall chokepoint where parties must move single-file to avoid hitting climbers below",
+     "avalanche": {
+      "zone": "NWAC Olympics forecast zone (regional proxy — no peak-specific NWAC product exists for Mount Washington)",
+      "byMonth": {
+       "May": "Moderate",
+       "July": "N/A",
+       "June": "Low",
+       "April": "Moderate",
+       "March": "Considerable",
+       "August": "N/A",
+       "January": "Considerable",
+       "October": "N/A",
+       "December": "Considerable",
+       "February": "Considerable",
+       "November": "Considerable",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on this route"
+    }
+   }
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+      "land_manager": "Olympic National Park (park side) / Olympic National Forest (forest side)",
+      "cost_structure": "Day hike: free. Overnight camping: $6 reservation fee + $8 per person per night (adults 16+); youth 15 and under free",
+      "special_hazards": "Alpine weather, potential closures due to fire impacts, snow at higher elevations, bear country",
+      "wilderness_zone": "Olympic National Park Daniel J. Evans Wilderness (if using park trailhead)",
+      "group_size_limits": "Not specified in sources; recommend contacting park",
+      "seasonal_closures": "Staircase and adjacent wilderness areas closed due to Bear Gulch Fire impacts; high country areas seasonally restricted by snow",
+      "permit_pickup_hours": "Port Angeles: 9:00 AM - 5:00 PM daily (closed Thanksgiving and Christmas); Quinault: 9:00 AM - 5:00 PM Thursday-Monday",
+      "altitude_restrictions": "Mount Washington summit 6,278 feet; day hike accessible year-round (3.2-mile out-and-back)",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+      "permit_pickup_location": "Port Angeles Visitor Center (year-round) or Quinault Ranger Station (seasonal: Memorial Day - end of September)"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the Northwest Forest Pass for parking applies.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+     "closures": "N/A",
+     "permitZone": "Mount Skokomish Wilderness, Olympic National Forest",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Mount Skokomish Wilderness)",
+     "land_manager": "USDA Forest Service — Olympic National Forest (Mount Skokomish Wilderness)",
+     "parking_pass": "Northwest Forest Pass ($5 day / $30 annual) or America the Beautiful/Interagency pass.",
+     "passRequired": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the national forest side",
+      "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit."
+     }
+    }
+   }
+  }
+ ]
+}

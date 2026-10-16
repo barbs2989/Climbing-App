@@ -1,0 +1,27 @@
+-- Drop routes.source. The app must not carry sources, and this column is one.
+--
+-- It held an INGEST TAG rather than a citation — 417 of 205,543 rows populated, with values like
+-- 'wa-enrich-batch' (343), 'fourteeners' (40), 'fifty-classics-roster' (16), 'mountainproject' (2).
+-- It recorded which pipeline or batch loaded a row.
+--
+-- Nothing in the app ever read it: `lib/db.js` contains zero references, so `dbRouteToCamel` never
+-- mapped it and it reached no screen. Dropping it therefore changes nothing a climber sees, and
+-- `check:schema` (which asserts lib/db.js never reads a column the database lacks) stays green by
+-- construction.
+--
+-- Removed alongside it, in the same commit, so nothing writes a column that no longer exists:
+--   scripts/pipeline/load-state.mjs        rRow
+--   scripts/pipeline/import-alpine.mjs     rRow
+--   scripts/pipeline/load-wa-rock-safe.mjs rRow
+-- and the two readers that would 400 on a dropped column:
+--   scripts/audit-distances.mjs            selected it and printed "source:null"
+--   scripts/audit-crag-merge-loss.mjs      named it in a SKIP set
+--
+-- `areas.source` is a SEPARATE column and is NOT dropped here. It is populated on 84 of 47,638
+-- areas, written by the same three loaders' aRow builders, and was not in scope for this change.
+-- If it should go too, it needs its own migration and the same three loaders edited again.
+--
+-- The 417 values were dumped outside the repository before this ran. They are not recoverable from
+-- git, because they only ever lived in the database.
+
+alter table public.routes drop column if exists source;

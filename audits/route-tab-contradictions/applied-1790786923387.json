@@ -1,0 +1,228 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "grade",
+   "path": [],
+   "fact": "Ice grade of the route (header grade pill)"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "Ice grade of the route (header grade pill)"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Ice grade of the route (header grade pill)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "before": {
+    "beta": "Most parties start from the Merritt Lake Trailhead, hike the maintained trail to Merritt Lake, then leave the trail and work cross-country toward the Crescent Lake basin. From the head of the basin, scree/talus slopes lead up to the ridge connecting Mount Howard and Mount Mastiff (an alternate, less-documented line climbs Mastiff's northeast ridge via Lost Lake instead). From the ridge, follow the crest -- staying just below it to avoid small cliffs and dense subalpine trees -- to the summit. The route is entirely unmarked past Merritt Lake, so navigation, not climbing difficulty, is the main challenge. Many parties combine the peak with Mount Howard (1 mile west) as a single long day.",
+    "descent_text": "Descend by the same southeast-ridge line back to the Howard-Mastiff saddle, staying close to the ridge crest and again favoring the east side to reverse the gendarme bypass near 6,125 ft (loose rock and talus underfoot - go slow, this is the section most prone to kicking rocks onto anyone below). From the saddle, down-climb the talus and scree slopes into the Crescent Lake basin below, then pick up the Nason Ridge Trail and follow it roughly three and a half miles east to the Merritt Lake junction, and take the maintained Merritt Lake Trail down to the trailhead. This is entirely a walk-off/downclimb - no rappelling is involved anywhere on this route; the terrain throughout is Class 2-3 scrambling on talus, scree, and broken rock. The only real descent hazards are loose rock (helmet recommended, especially in groups), the boot path off the ridge fading into open heather and talus with no maintained tread - fog or flat late-day light makes it genuinely hard to relocate - and the fact that the route should not be down-climbed wet or icy since the rock gets slick.",
+    "itinerary": {
+     "cal": "Lower slopes are south/east-facing and melt out early, but patchy snow above ~4,400 ft can persist into June-July, so an ice axe/microspikes are worth carrying for early-season attempts.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single long day: hike the Merritt Lake trail through second-growth forest and past the lake, then traverse scree/talus slopes up to the saddle on the Howard-Mastiff ridge before a short class 2-3 scramble along the ridge crest to the summit. Return the same way. Expect lingering snow on the upper slopes into early summer, which slows travel and can require an axe/microspikes.",
+       "hours": 8.5,
+       "miles": 10,
+       "title": "Car-to-car scramble",
+       "gainFt": 4900,
+       "lossFt": 4900,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Start on the Merritt Lake trail; earlier starts are common in summer to beat heat and afternoon thunderstorms."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach Merritt Lake",
+         "detail": "About 2.5 mi and ~2,000 ft of the day's gain to the lake basin."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Traverse toward Crescent Lake and gain the ridge",
+         "detail": "Cross scree/talus slopes and ascend to the saddle between Mount Howard and Mount Mastiff; snow patches common through June."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Summit Mount Mastiff",
+         "detail": "Short class 2-3 scramble along the ridge crest to the 6,747 ft summit."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent route back through the saddle, traverse, and Merritt Lake."
+        },
+        {
+         "time": "+8.5 hr",
+         "label": "Back at trailhead",
+         "detail": "Typical car-to-car time for a fit party is 8-9 hours; parties combining Mastiff with neighboring Mount Howard often take 12-14 hours."
+        }
+       ],
+       "objective": "Summit Mount Mastiff via Merritt Lake and the Howard-Mastiff ridge"
+      }
+     ],
+     "totalNote": "A single, long car-to-car scramble day: roughly 8-9 hours, 10 miles, and 4,900 ft of gain - no camp is used on the standard South Route."
+    },
+    "timing": {
+     "totalHrs": 8.5,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8.5,
+       "note": "A single long day: hike the Merritt Lake trail through second-growth forest and past the lake, then traverse scree/talus slopes up to the saddle on the Howard-Mastiff ridge before …",
+       "fromTo": "Car-to-car scramble",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "before": {
+    "grade": "Moderate alpine ice, AI2-3",
+    "pitch_detail": [
+     {
+      "grade": "Roped glacier travel",
+      "notes": "Descending traverse across the (South) Entiat Glacier beneath an icefall to the base of the face; multiple areas of wide, open crevasses.",
+      "pitch": "Glacier approach"
+     },
+     {
+      "grade": "35-45° snow",
+      "notes": "Broad snow/ice runnel between two prominent rock buttresses; often soloed or simul-climbed in good neve conditions.",
+      "pitch": "Lower face"
+     },
+     {
+      "grade": "Up to 55-65° snow/ice (AI2-3 in harder conditions)",
+      "notes": "Steepens sharply near the top; possible short sections of hard alpine ice; watch for a cornice on the summit ridge.",
+      "pitch": "Upper face"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Short scramble from the top of the face to the true summit.",
+      "pitch": "Summit finish"
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very long approach day into the Entiat Mountains via Phelps Creek/Leroy Basin or Ice Lakes before even starting the climb; typically a multi-day car-to-car trip with a high camp",
+      "packWeight": "Moderate-heavy overnight pack for the approach (camp gear, rack, rope) plus a light summit-day kit"
+     },
+     "approachTime": "1-2 days in; commonly climbed from a high camp in Leroy Basin or near Ice Lakes with an alpine-start summit push",
+     "requiredSkills": [
+      "steep snow and alpine ice technique (front-pointing, picket and screw placements)",
+      "bergschrund crossing/route-finding around the base of the face",
+      "early-start discipline to beat rockfall as the face warms",
+      "self-arrest and glacier-adjacent travel judgment even though this is not full glacier travel"
+     ],
+     "experienceLevel": "Experienced alpine climber comfortable leading/following moderate alpine ice (AI2-3) with prior steep snow/ice mileage"
+    },
+    "grade_num": 3
+   }
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+{
+ "file": "r447.json",
+ "results": [
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car gain for Osceola alone from Slate Pass. One route page gives about 2,100 ft of gain for the day in to Lake Doris only; published trip totals (7,300 ft, 9,814 ft, 10,600 ft) all include extra peaks such as Rolo or Carru. Computing a total from segments is not allowed, and only two row fields (itinerary days, totalNote) back ~5,600 ft, so gain_ft is left as is.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/",
+    "https://yellowleaf.org/scramble/g/r/2012-09-22-25-osceola-carru-rollo.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Distance to Lake Doris camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The sources disagree. One route description gives 11.8 miles from Slate Pass to Lake Doris (0.6 mi on trail 498, then the Middle Fork, then about 3 mi up the Ferguson Lake trail spur). Another report says the first 9 miles are on good trail before the Freds Lake climb. A report giving 28 miles round trip also includes Mt Rolo. No two sources agree on 10.5, 11.8 or 13 miles for the Freds Lake line.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://drdirtbag.com/2016/07/20/osceola/",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "6,900 ft",
+   "evidence": "The Forest Service Slate Pass Trailhead page gives the elevation as 6,900 ft. An independent trip report gives the Buckskin Ridge Trailhead on Slate Peak Road as 6,900 ft. This agrees with the row's approach, directions and approach_logistics; the waypoint's 7,170 ft is the outlier.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/"
+   ],
+   "patches": [
+    {
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 7170,
+     "value": 6900
+    }
+   ]
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jul-Sep",
+   "evidence": "The Forest Service lists the Slate Pass and Harts Pass trailheads as typically accessible July through September. A Harts Pass road guide says the road opens in early July as the snow clears and is closed through June. That makes a June start wrong, and Jul-Sep matches best_season, the approach card's season and the month breakdown (October risky).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/harts-pass-trailhead",
+    "https://ordealist.com/guides/harts-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Oct",
+     "value": "Jul-Sep"
+    }
+   ]
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Name of the pass above Freds Lake",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Freds Pass and Rolo Pass are two names for the same ~7,100 ft saddle between Freds Lake and Lake Doris",
+   "evidence": "One route page calls it 7,100-ft Freds Pass, above Freds Lake and before Lake Doris. Trip reports call the same crossing past Fred's Lake 7,100-ft Rolo Pass. The approach text already says 'Rolo (Fred's) Pass', so the pin name and the itinerary name refer to one place. The bivy note's wording is part of the camping clean-up (bivy_zone_list class) and is not patched here.",
+   "sources": [
+    "https://www.summitpost.org/osceola-peak/151497",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Parking pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The sources conflict. The Forest Service Slate Pass Trailhead page says 'No fees required', and Slate Pass/Harts Pass are absent from the Region 6 day-use fee site list, while Andrews Creek and Chewuch are on it. A hiking-association page for Slate Peak and the PNT Harts Pass trailhead page both say a Northwest Forest Pass (or $5/day) is required. The access.parking_pass text names unrelated trailheads (Andrews Creek, Chewuch), but which rule applies at Slate Pass is not settled. The bivy permit text is left to the camping clean-up.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.wta.org/go-hiking/hikes/harts-pass-and-slate-peak",
+    "https://www.pnt.org/locations/harts-pass-trailhead/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Lake Doris vs Lake Dorothy",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A trip report calls the lake above Freds Lake on the Shellrock trail 'Lake Dorothy', and a commenter corrects it to Lake Doris. That supports the approach card's note that they are one lake. A traverse route page, though, lists Dorothy Lake/Shellrock Pass as a camp separate from Lake Doris/Freds Pass, and the only Washington 'Dorothy Lake' found in state fish records is in King County. A second independent source was not found, so the pro tip is left as is.",
+   "sources": [
+    "https://drdirtbag.com/2016/07/20/osceola/",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/dorothy-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Current Harts Pass Road status",
+   "verdict": "fixed",
+   "correct_value": "Flood-closed road reopened in early July 2026 (not mid-June). Ptarmigan Fire (lightning, mid-July 2026) closed it at Monument Creek from late July; it reopened by early September, while fire closures on Pasayten trails incl. Robinson Creek #478 and Eureka Creek #474 run through Oct 31, 2026.",
+   "evidence": "A June 17, 2026 news report says the road was still out from Monument Creek until mid-July at the earliest. A July 9, 2026 report says the Forest Service reopened it on July 2. An Aug 20, 2026 report says it was closed again at Monument Creek because of the Ptarmigan Fire (lightning-caused, discovered July 17). A Sep 3, 2026 report says the road reopened but most Pasayten trails stayed closed. The Forest Service order of Sep 9, 2026 closes trails including Robinson Creek #478 and Eureka Creek #474 through Oct 31, 2026. road.status and access.closures are corrected; bivy[1] is left to the camping clean-up (its fire note is accurate).",
+   "sources": [
+    "https://www.spokesman.com/stories/2026/jun/17/wa-mountain-access-faces-long-road-to-recovery-as-/",
+    "https://methowvalleynews.com/2026/07/09/photo-harts-pass-is-passable/",
+    "https://methowvalleynews.com/2026/08/20/a-roundup-of-regional-trails-closures-that-remain-in-effect/",
+    "https://methowvalleynews.com/2026/09/03/more-recreational-trails-are-opening-up",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/ptarmigan-fire-closure-methow-valley-ranger-district-0"
+   ],
+   "patches": [
+    {
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Current Harts Pass Road status",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Reopened to vehicles around mid-June 2026 after Dec 2025 storm/flood damage closed it from Monument Creek Trailhead to Harts Pass; confirm current status with the Methow Valley Ranger District before driving.",
+     "value": "Storm and flood damage in Dec 2025 closed it from Monument Creek Trailhead to Harts Pass; it reopened to vehicles in early July 2026. The Ptarmigan Fire shut it again at Monument Creek from late July, and it was open again by early September 2026, although fire closures kept most Pasayten trails beyond Harts Pass shut, including the Robinson Creek (Middle Fork Pasayten) and Eureka Creek trails, with the order running through Oct 31, 2026. Confirm current road and trail status with the Methow Valley Ranger District before driving."
+    },
+    {
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Current Harts Pass Road status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "and reopened after repairs around mid-June 2026.",
+     "replace": "and reopened after repairs in early July 2026; the Ptarmigan Fire closed it again at Monument Creek from late July until early September 2026."
+    }
+   ]
+  }
+ ]
+}

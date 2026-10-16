@@ -1,0 +1,378 @@
+{
+ "file": "r241.json",
+ "results": [
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Heaton Camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's own trail page puts Heaton Camp at 7,000 ft; the WTA hike page and a 2024 traverse trip report both put it at about 6,700 ft, and a regional hiking guide says about 6,500 ft. External sources split, so neither the four 7,000 ft fields nor the two ~6,700 ft fields can be settled with two agreeing independent sources.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://trailcatjim.com/mcgregor-mtn-summit-traverse-rainbow-pass-to-heaton-basin-2024/",
+    "https://wenatcheeoutdoors.org/2016/06/01/mcgregor-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Gain to Heaton Camp",
+   "verdict": "fixed",
+   "correct_value": "Well over 5,000 ft to Heaton Camp (not 6,500 ft, which is the whole trailhead-to-summit figure)",
+   "evidence": "The park page gives 6,600 ft of gain for the whole 7.7 miles to the summit and says the summit rises about 1,000 ft above Heaton Camp; WTA gives 6,200 ft to the 8,122 ft summit with camp near 6,700 ft. Both make ~6,500 ft to camp impossible; the exact camp figure differs between sources, so the wrong numbers are replaced with a bound both support rather than a new figure.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "gaining roughly 6,500 ft over the next",
+     "replace": "gaining well over 5,000 ft over the next",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Gain to Heaton Camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "with roughly 5,700-6,700 ft of gain to its end",
+     "replace": "with well over 5,000 ft of gain to its end",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Gain to Heaton Camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~5,700-6,700 ft gain to trail's end/Heaton Camp",
+     "replace": "well over 5,000 ft gain to trail's end/Heaton Camp",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Gain to Heaton Camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Order of the McGregor junction vs Coon/Howard Lakes",
+   "verdict": "fixed",
+   "correct_value": "Coon Lake and Howard Lake are the same lake (renamed 2015); the trail reaches Howard Lake at ~1.3 mi and the signed McGregor junction is just beyond the lake on the right.",
+   "evidence": "The park's trail page says Howard Lake is at 1.3 miles and the signed McGregor junction is just beyond the lake on the right; WTA likewise says to continue past the lake to the signed junction. News coverage of the 2015 federal naming decision confirms Howard Lake is the former Coon Lake, so the row's 'past Coon Lake to Howard Lake' wording describes one lake as two.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://www.kuow.org/stories/call-it-howard-lake-park-service-reverses-stand-racist-name/",
+    "https://en.wikipedia.org/wiki/Howard_Lake_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "follow the Old Wagon Road/PCT north; at about 1.3 miles reach the signed junction where the McGregor Mountain Trail forks right and climbs past Coon Lake toward Howard Lake — Howard Lake",
+     "replace": "follow the Old Wagon Road/PCT north to Howard Lake at about 1.3 miles; the signed junction where the McGregor Mountain Trail forks right is just beyond the lake — Howard Lake",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Order of the McGregor junction vs Coon/Howard Lakes"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "the tread climbs steadily, passes Coon Lake and reaches Howard Lake.",
+     "replace": "the tread climbs steadily and reaches Howard Lake.",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Order of the McGregor junction vs Coon/Howard Lakes"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climbs steadily past Coon Lake to Howard Lake,",
+     "replace": "climbs steadily to Howard Lake,",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Order of the McGregor junction vs Coon/Howard Lakes"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "No glacier travel: the scramble crosses a snowfield/talus shelf above the Sandalee Glacier, not the glacier itself.",
+   "evidence": "WTA describes the scramble crossing a snowfield above the Sandalee Glacier; a 2024 traverse report confirms the standard trail/scramble route does not cross the glacier proper; the park page places the Sandalee Glacier on the north slope below the summit. The 'glacier traverse' wording is replaced with the shelf above the glacier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://trailcatjim.com/mcgregor-mtn-summit-traverse-rainbow-pass-to-heaton-basin-2024/",
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "if snow still covers the talus or the glacier traverse",
+     "replace": "if snow still covers the talus or the shelf above the glacier",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Glacier travel"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "if snow still covers the talus or the glacier traverse",
+     "replace": "if snow still covers the talus or the shelf above the glacier",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Glacier travel"
+    },
+    {
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "snow/glacier terrain",
+     "value": "lingering snowfields",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Backcountry permit: where issued and whether it costs",
+   "verdict": "fixed",
+   "correct_value": "An NPS backcountry permit (fee charged) is required for any overnight, including Heaton Camp; there is no permit office in Stehekin (Golden West Visitor Center closed), so it must be reserved or arranged before boarding the boat.",
+   "evidence": "The park's permits page states there are no permit services in Stehekin, that walk-up permits come from Marblemount/Glacier, and that permits cost a per-person fee plus a reservation fee. The park's news release says the Golden West Visitor Center remains closed, and WTA's Chelan-area guidance says permits must be in hand before the boat. The McGregor trail page confirms a permit is required for all overnight stays at Heaton Camp.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.nps.gov/noca/learn/news/golden-west-visitor-center-in-lake-chelan-national-recreation-area-to-remain-closed-this-season.htm",
+    "https://www.wta.org/news/signpost/backpackers-heres-the-deal-for-the-chelan-lakeshore-trail-this-year",
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "value": "No climbing permit. An NPS backcountry permit is required for any overnight stay, including Heaton Camp; arrange it before you travel, since there is no permit office in Stehekin. No vehicle pass is needed, as the trailhead is reached by the valley shuttle.",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Backcountry permit: where issued and whether it costs"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Free NPS backcountry permit required for any overnight stay",
+     "replace": "NPS backcountry permit required for any overnight stay",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Backcountry permit: where issued and whether it costs"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "; walk-up permits are issued at the Golden West Visitor Center in Stehekin, or reserved ahead for $20 plus a non-refundable $6 fee",
+     "replace": "; there is no permit office in Stehekin, so reserve it online or arrange it with the park before boarding the boat (a per-person fee plus a reservation fee applies)",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Backcountry permit: where issued and whether it costs"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "a free backcountry permit for Heaton Camp is required from the Golden West Visitor Center.",
+     "replace": "a backcountry permit for Heaton Camp is required and must be arranged before boarding the boat, since there is no permit office in Stehekin.",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Backcountry permit: where issued and whether it costs"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "a free NPS backcountry permit (Golden West Visitor Center) is required.",
+     "replace": "an NPS backcountry permit, arranged before you travel, is required.",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Backcountry permit: where issued and whether it costs"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "backcountry permit required for overnight stays at the Golden West Visitor Center.",
+     "replace": "backcountry permit required for overnight stays, arranged before you travel (there is no permit office in Stehekin).",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Backcountry permit: where issued and whether it costs"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Parking pass / highway closure copied from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass applies (trailhead reached by the NPS valley shuttle, no road to Stehekin); the seasonal constraint is the valley shuttle schedule, not the SR-20 closure.",
+   "evidence": "The park's trail page and WTA both say the trailhead is reached by ferry to Stehekin and then the valley shuttle to High Bridge, with no road connection; the Washington Pass trailheads and the SR-20 winter gate belong to another corridor. The row's own road.seasonalGate already gives the shuttle season.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "value": "None — there is no road to Stehekin; the High Bridge trailhead is reached by the NPS valley shuttle.",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Parking pass / highway closure copied from Washington Pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "value": "The Stehekin valley shuttle runs a full schedule roughly June through September, with limited service in spring and late season; outside that the 11-mile road to High Bridge must be walked or biked.",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Parking pass / highway closure copied from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Stehekin Landing to High Bridge distance",
+   "verdict": "bivy_zone_list",
+   "correct_value": "11 miles",
+   "evidence": "The only dissenting figure (fourteen miles) is in the bivy[1] High Bridge Camp notes; bivy is owned by the separate camping clean-up, so no patch. The approach, approach variant and waypoint note all give 11 miles. Heaton Camp serves this route; High Bridge Camp is the trailhead camp and serves it; Purple Point/Harlequin are landing camps that serve the logistics only.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Length of the final scramble",
+   "verdict": "fixed",
+   "correct_value": "Well under a mile (roughly a quarter to a third of a mile above the trail's end).",
+   "evidence": "WTA puts the unmaintained scramble at about a third of a mile from where the trail ends on a rocky outcropping; a regional hiking guide calls the final exposed scramble the last quarter mile. One valley lodge page says just under a mile, so the number is removed from rope_note rather than replaced.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://wenatcheeoutdoors.org/2016/06/01/mcgregor-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "The final ~1-mile summit scramble",
+     "replace": "The final summit scramble",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Length of the final scramble"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Best months",
+   "verdict": "fixed",
+   "correct_value": "August through early September is the reliable window; July often still has snow on the upper route.",
+   "evidence": "The park's trail page warns that snow can linger into August; a regional hiking guide recommends mid-to-late summer once snow has melted off the top. The row's own watch_out, climate, best_season and approach variant all say snow lingers into August. July is downgraded from optimal and the garbled optimalWindow is set to the window the row already states.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://wenatcheeoutdoors.org/2016/06/01/mcgregor-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through September-September window",
+     "value": "August through early September",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Best months"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "good",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Best months"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Primary scramble window - snow largely cleared from the summit block while trail/water access is generally reliable",
+     "value": "Trail generally open, but snow often still lies on the upper trail and the shelf above the glacier into August; carry an ice axe",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Best months"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Heaton Camp mileage in approach prose",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "6.8 miles from High Bridge",
+   "evidence": "The approach says Heaton Camp is at mile 7 while the Heaton Camp waypoint (6.8), itinerary day 1 miles (6.8), day 2 schedule ('~6.8 miles back') and day 2 note all say 6.8; a Stehekin valley ranch trail page also gives 6.8 miles from High Bridge to Heaton Camp.",
+   "sources": [
+    "https://stehekinvalleyranch.com/mcgregor-mt/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(mile 7 of 7.7)",
+     "replace": "(mile 6.8 of 7.7)",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Heaton Camp mileage in approach prose"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

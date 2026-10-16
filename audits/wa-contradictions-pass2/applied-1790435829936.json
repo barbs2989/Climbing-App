@@ -1,0 +1,89 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)"
+  },
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Whether June is prime season"
+  },
+  {
+   "id": "wa_easy_getaway",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)"
+  },
+  {
+   "id": "wa_easy_getaway",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Whether June is prime season"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Route difficulty class"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "before": {
+    "road": {
+     "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+     "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    },
+    "climate": {
+     "fall": "Cools quickly by late September/October; early snow can force the seasonal road closure by November-December",
+     "spring": "Snow lingers into June on the approach and upper pitches",
+     "summer": "June-September is prime season; hot, dry, with occasional afternoon storms",
+     "winter": "SR-20 is closed for the season and the area is inaccessible",
+     "typical": "Dry, warm summer days with cool nights typical of the east-slope Cascades rain shadow; afternoon thunderstorms are possible",
+     "forecastZone": "North Cascades East / Washington Pass corridor"
+    }
+   }
+  },
+  {
+   "id": "wa_easy_getaway",
+   "before": {
+    "road": {
+     "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+     "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    },
+    "climate": {
+     "fall": "Cools quickly by late September/October; early snow can force the seasonal road closure by November-December",
+     "spring": "Snow lingers into June and Zebra Corner is most likely to be wet/seeping",
+     "summer": "June-September is prime season; hot, dry, with occasional afternoon storms",
+     "winter": "SR-20 is closed for the season and the area is inaccessible",
+     "typical": "Dry, warm summer days with cool nights typical of the east-slope Cascades rain shadow; afternoon thunderstorms are possible",
+     "forecastZone": "North Cascades East / Washington Pass corridor"
+    }
+   }
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "before": {
+    "rope_note": "West Ridge/Saddle Traverse is Class 3-4 depending on line/conditions; snow-covered sections call for an ice axe rather than a rope."
+   }
+  }
+ ]
+}

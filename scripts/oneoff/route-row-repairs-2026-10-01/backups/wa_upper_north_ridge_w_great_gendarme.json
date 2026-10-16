@@ -1,0 +1,33 @@
+{
+ "id": "wa_upper_north_ridge_w_great_gendarme",
+ "name": "Upper North Ridge w/Great Gendarme",
+ "waypoints": [
+  {
+   "lat": 47.43656,
+   "lng": -120.93697,
+   "elev": 4243,
+   "name": "Esmeralda Basin / Ingalls Lake Trailhead (North Fork Teanaway Rd, FR 9737)",
+   "note": "DB currently lists Stuart Lake TH (Eightmile Creek Rd) — appears to be an error; this specific 'Upper' route variant is guided/documented via the Ingalls Lake side to skip the lower ridge",
+   "type": "Trailhead",
+   "elevFt": 4243,
+   "directions": "From I-90 Exit 85, take Highway 970 east 7 miles to Teanaway Road, then bear right onto the North Fork Teanaway Road — 22.5 miles in total — to the Esmeralda Basin / Ingalls Lake Trailhead at the end of FR 9737, about 4,240 ft. Make sure you are driving to the Teanaway side: this route is also listed against the Stuart Lake Trailhead on Eightmile Creek Road, on the far side of the range, but this upper-ridge variant is the one documented from the Ingalls Lake side. The Ingalls Way trail leaves from the parking area."
+  },
+  {
+   "lat": 47.47227,
+   "lng": -120.89263,
+   "elev": 7600,
+   "name": "Top of Sherpa Glacier notch",
+   "note": "Ascend Sherpa Glacier to this notch to gain the upper North Ridge, bypassing the lower ridge's early pitches.",
+   "type": "Junction",
+   "distMi": 6.5
+  },
+  {
+   "lat": 47.4751179,
+   "lng": -120.9031444,
+   "elev": 9415,
+   "name": "Mount Stuart summit",
+   "type": "Summit",
+   "elevFt": 9415
+  }
+ ]
+}

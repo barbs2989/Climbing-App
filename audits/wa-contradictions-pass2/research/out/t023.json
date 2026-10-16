@@ -1,0 +1,206 @@
+{
+ "file": "t023.json",
+ "results": [
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Walk-up permit fee",
+   "verdict": "fixed",
+   "correct_value": "Walk-up permits carry the same fees as reserved ones ($10 per person plus a $6 permit fee; 15 and under free); there are no free walk-up permits.",
+   "evidence": "The park permits page gives one fee structure for all backcountry permits, $10 per person plus a $6 fee with youth free, making no exception for walk-up permits. A park-partner explainer states the $6 fee is also charged for first-come, first-served permits issued in person, plus the per-person recreation fee. So \"free walk-up permits\" is wrong; the zone being walk-up only and the permit carrying a fee are both correct.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "Walk-up permit fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": " (free walk-up permits also available)",
+     "replace": " (the same fees apply to walk-up permits issued in person)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Number of runners",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "sling_rack lists 6 slings (4 single + 2 double) and the row separately carries alpine_draws: 4, which are themselves shoulder-length runners; together that is 10 runners, matching the 8-10 in gear, rack and detailed_rack.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Shape of the lower approach (4-mile roadbed vs immediate climb)",
+   "verdict": "fixed",
+   "correct_value": "About 4 miles of old roadbed along Goodell Creek (heavy blowdown) to a cairned turnoff near 1,700 ft, then a steep climbers' path gaining roughly 4,000 ft in about 2 miles to treeline/heather benches.",
+   "evidence": "One detailed trip report puts a stream crossing and cairned Terror Basin turnoff at about 3.5 miles and ~1,700 ft after the flat valley walk, with the steep path then climbing a spur ridge to talus near 4,000 ft and on to the 6,200 ft notch. A second climber describes four miles to the base of the hill climb, then a 4,000 ft climb in just 2 miles; a third route write-up gives ~4.5 miles of old road bed to a flat spot with cairns, then the steep climb. The approach prose (and its copy in approach_variants) started the climb at the boulder and measured the 4,000 ft from 3,200 ft; both are corrected to the roadbed-then-turnoff shape the itinerary and waypoints already use.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Shape of the lower approach (4-mile roadbed vs immediate climb)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The path switchbacks up through second-growth and old-growth forest along a spur ridge south of Terror Creek and is notorious for blowdown — expect to climb over or duck under dozens of downed logs for the first couple of miles. Around 3,200 ft the trail gains the crest of the forested ridge and settles into a steady, unrelenting climb (roughly 4,000 ft of gain over about 2 miles is typical for this stretch).",
+     "replace": "The path first follows the old Goodell Creek roadbed up the valley for about 4 miles at a gentle grade and is notorious for blowdown — expect to climb over or duck under dozens of downed logs. At a cairned turnoff near 1,700 ft it turns uphill and switchbacks through forest along a spur ridge south of Terror Creek; around 3,200 ft it gains the crest of the forested ridge, and the whole climb from the turnoff is a steady, unrelenting 4,000 ft of gain in about 2 miles."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Shape of the lower approach (4-mile roadbed vs immediate climb)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The path switchbacks up through second-growth and old-growth forest along a spur ridge south of Terror Creek and is notorious for blowdown; expect to climb over or duck under dozens of downed logs for the first couple of miles. Around 3,200 ft it gains the crest of the forested ridge and settles into roughly 4,000 ft of gain over about 2 miles.",
+     "replace": "The path first follows the old Goodell Creek roadbed up the valley for about 4 miles at a gentle grade and is notorious for blowdown; expect to climb over or duck under dozens of downed logs. At a cairned turnoff near 1,700 ft it turns uphill and switchbacks through forest along a spur ridge south of Terror Creek; around 3,200 ft it gains the crest of the forested ridge, and the whole climb from the turnoff is roughly 4,000 ft of gain in about 2 miles."
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Water between the trailhead and Terror Basin",
+   "verdict": "fixed",
+   "correct_value": "Water is available along the roadbed and at a stream crossing just before the steep climb; no dependable water from there to Terror Basin.",
+   "evidence": "One climber reports a great water source right before the start of the hill climb and no real water from the base of the climb to Terror Basin. A second report records a stream crossing at about 3.5 miles where the cairned turnoff is (it also found a trickle near 5,200 ft in its season, so \"reliable\" is the operative word). The prose and hazard saying there is no water after the trailhead are corrected to agree with the Last-water waypoint at 4.2 mi.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Water between the trailhead and Terror Basin",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "There is reliable running water right at the start, then none again until Terror Basin, so top off bottles early.",
+     "replace": "There is reliable running water along the roadbed and at a stream crossing just before the steep climb begins, then none reliable again until Terror Basin, so top off bottles there."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Water between the trailhead and Terror Basin",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "There is reliable running water right at the start and then none again until Terror Basin.",
+     "replace": "There is reliable running water along the roadbed and at a stream crossing just before the steep climb begins, and then none reliable again until Terror Basin."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Water between the trailhead and Terror Basin",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      1
+     ],
+     "expect": "No water between the trailhead and Terror Basin",
+     "value": "No reliable water between the foot of the steep climb and Terror Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Time for the first 4 miles",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only timed external account found covered the four miles to the base of the hill climb in 1 hour (a fast, light single-day push), which agrees with the road note rather than the 2-4 hours in the waypoint directions and pro tips. Other reports describe 100+ downed logs and washouts but give no elapsed time for this stretch. Settling it needs two timed accounts for a loaded party on the roadbed.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Difficulty of the summit step",
+   "verdict": "fixed",
+   "correct_value": "4th class overall: a 3rd-4th class scramble with a few 4th-class moves to an exposed summit block; no fifth-class climbing.",
+   "evidence": "The route listing rates it 4th class, Grade II, and describes a mellow 3rd-4th class scramble up scree and talus to the exposed summit block, with no fifth-class section. A club trip account reports a few moves of 4th class but mostly easy scrambling, climbed without a rope; another report calls the final ridge exposed but easy. Nothing found supports a 5.6 or low-fifth step, so those qualifiers are removed and the 3rd-class-only descriptions widened to 3rd-4th.",
+   "sources": [
+    "https://www.mountainproject.com/route/112189946/west-ridge",
+    "https://www.mountainwerks.org/cma/2003/mcmillan.html",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Difficulty of the summit step",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "4th class (up to low 5th in spots)",
+     "value": "4th class"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Difficulty of the summit step",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "Class 3-4, short 5.6 step reported by some parties",
+     "value": "Class 3-4"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Difficulty of the summit step",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "a short, exposed class 3 (occasionally cited as low 5th on variations) move onto the summit block",
+     "replace": "a short, exposed class 3-4 move onto the summit block"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Difficulty of the summit step",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "the short exposed class 3 (occasionally low 5th) step",
+     "replace": "the short exposed class 3-4 step"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Difficulty of the summit step",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "then class 2-3 ridge scrambling",
+     "replace": "then class 3-4 ridge scrambling"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Difficulty of the summit step",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "A short section of exposed 3rd-class climbing",
+     "replace": "A short section of exposed 3rd- to 4th-class climbing"
+    }
+   ]
+  }
+ ]
+}

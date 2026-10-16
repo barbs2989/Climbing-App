@@ -1,0 +1,67 @@
+{
+ "applied": [
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass at Copper Glance Trailhead"
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Copper Glance Creek crossing position"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "before": {
+    "permit": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads.",
+    "waypoints": [
+     {
+      "lat": 48.7411,
+      "lng": -120.2923,
+      "elev": 3800,
+      "name": "Copper Glance Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 3800,
+      "directions": "From Winthrop, drive north about 8 miles on West Chewuch Road (County Road 1213) to Eightmile Road (Forest Road 5130). Follow Eightmile Road roughly 12 to 15 miles northwest along Eightmile Creek to the Copper Glance Trailhead, at about 3,800 feet. There is no fee here."
+     },
+     {
+      "lat": 48.75264,
+      "lng": -120.32883,
+      "elev": 6400,
+      "name": "Copper Glance Creek crossing",
+      "type": "Water",
+      "distMi": 1.6,
+      "elevFt": 6400
+     },
+     {
+      "lat": 48.75495,
+      "lng": -120.33296,
+      "elev": 6600,
+      "name": "Copper Glance Basin camp",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": 6600
+     },
+     {
+      "lat": 48.7625,
+      "lng": -120.3456,
+      "elev": 8366,
+      "name": "West Craggy Peak summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 8366
+     }
+    ]
+   }
+  }
+ ]
+}

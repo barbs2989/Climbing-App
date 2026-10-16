@@ -1,0 +1,160 @@
+{
+  "wa_liberty_bell_freedom_rider": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.8", "notes": "Start in the loose corner system roughly 100 ft left of Liberty Crack. Protection is sparse and much of what exists is in suspect rock, so treat it as a runout 5.8; the belay stance at the top is awkward. Test holds and keep the rope out of the loose blocks." },
+      { "pitch": "P2", "grade": "5.10", "notes": "A short stretch of wider crack gives way to thinner climbing above. There is a choice of belays: stop on the broken ledge, or continue to the foot of the offwidth, which is where both P3 options start." },
+      { "pitch": "P3a", "grade": "5.10d", "crux": true, "notes": "The easier of the two crux options: thin, discontinuous cracks left of the offwidth, balancy and technical, with small and mediocre gear, then a traverse right into a finger crack. Extra small nuts help. It sees less traffic than P3b and is dirtier for it. Choose this OR P3b, not both." },
+      { "pitch": "P3b", "grade": "5.11b", "notes": "The direct alternative to P3a: an offwidth in the mid-5.10 range that pulls a small roof on a 7-inch-plus crack, then hand stacks into a splitter finger-to-hands crack. Bring cams to 6 in; without the big pieces the offwidth is effectively unprotected. Choose this OR P3a." },
+      { "pitch": "P4", "grade": "5.8+", "notes": "An easy hand crack leads to an exposed step left that is far more solid than it looks, then thin cracks finish the pitch. Protect the move left well for the follower." },
+      { "pitch": "P5", "grade": "5.10b", "notes": "Steep hand cracks on large crystals, sustained for the grade. The pitch ends on a big ledge with a tree to anchor on, a good place to regroup before the traverse." },
+      { "pitch": "P6", "grade": "5.6", "notes": "Drop down slightly from the ledge and traverse beneath the feature known as the Rotten Block to reach the Liberty Crack line. Stay under the block rather than pulling on it; it earns its name." },
+      { "pitch": "P7-P9", "grade": "5.10+", "notes": "The route now shares Liberty Crack's upper pitches for roughly two and a half rope lengths, stopping below Liberty Crack's final 5.9 corner. That ground starts with steep moves off a ledge to a bolt (commonly french-freed; the grade here is the free grade), then goes left through quartz and easier chimneys to a sheltered, treed triangular ledge." },
+      { "pitch": "P10", "grade": "5.10a", "notes": "Leave Liberty Crack by traversing right into a thin crack. There are two traverse options, a higher easy one and a lower hard one, and each has a bolt. Can be linked with P11 if rope drag allows." },
+      { "pitch": "P11", "grade": "5.10b", "notes": "Mostly an enjoyable hand crack heading toward the chimney above. Belay at the base of the chimney, where there are scattered fixed pins; back them up." },
+      { "pitch": "P12", "grade": "5.8+", "notes": "Medusa's Roof: exposed but secure climbing up and around a chockstone at the top of the chimney. The position is the memorable part; the moves are well within the grade of the pitches below." },
+      { "pitch": "P13", "grade": "5.8", "notes": "Climb up and right from the belay into a right-facing corner. It starts simply but thins toward the top, where the feet become smears. Keep something small handy for the upper corner." },
+      { "pitch": "P14", "grade": "4th class", "notes": "Scramble to the summit. The first 50 ft or so is Class 4, after which it is mostly Class 2-3; it can take several rope lengths if belayed throughout. From the summit, use the standard descent." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Grouped 6-row table (P1-P2, P3a, P3b-P6, P7-P11, P12, P13-P14) split into one entry per pitch (13 entries), with both P3 crux options as alternatives. Dropped the grouped lengthM values: no source gives per-pitch lengths and the groups no longer exist.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109496572/freedom-rider",
+        "http://iannicholsonslife.blogspot.com/2011/10/freedom-rider-v-511b-or-510d-scary.html",
+        "https://www.mountainproject.com/route/106512297/liberty-crack",
+        "https://www.mountainproject.com/route/113539421/liberty-crack-free"
+      ],
+      "other_findings": "Stored P12 (Medusa's Roof) grade '5.10-5.11' is contradicted: the sources grade it 5.8+. The stored note placing an 'offwidth section' in P7-P11 is wrong: the offwidth is the P3b crux option (5.11b). The P7-P9 grade 5.10+ is inferred from Liberty Crack's own P7, which Freedom Rider follows; Freedom Rider's own description gives no grade for that section. Stored route grade 5.10d reflects the P3a option; the direct P3b goes at 5.11b."
+    }
+  },
+  "wa_liberty_bell_sidewinder": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.7", "lengthM": 24, "notes": "Three starts are possible: a 5th-class traverse in from the left onto the main shelf, a ramp past a tree, or broken ground below a cave. They meet at an awkward, slabby mantel with the last piece below your feet, then a short runout reaches the base of the crack and a small belay stance." },
+      { "pitch": "P2", "grade": "5.7", "notes": "Climb the widening hand crack. Either belay at a slung chockstone, or continue about 35 ft higher to a large alcove that has good cracks for an anchor. The choice decides which P3 variation is convenient." },
+      { "pitch": "P3", "grade": "5.9", "lengthM": 24, "notes": "Two options to the same spacious ledge. 3a takes a clean, wider crack in a flaring feature, then easy face climbing right and back left to lower-angled ground below a bulge. 3b steps about 10 ft right from the alcove to a thin finger crack; the moves where that crack runs out are the spiciest on the route, before easy face to the ledge." },
+      { "pitch": "P4", "grade": "5.7", "lengthM": 18, "notes": "Go up the bulge on a crack; the ground eases steadily above it and several lines are possible. Several cracks go; any of them leads to the easier ground above." },
+      { "pitch": "P5", "grade": "4th class", "notes": "Mostly 4th-class scrambling toward the summit. Many parties move together here; watch for others on the Beckey Route converging on the same ground." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same 5 pitches and labels; notes expanded with the three P1 starts, the P2 belay choice, both P3 variations and where the belays are. lengthM corrected to the stated pitch lengths (P1 ~80 ft, P3 ~80 ft, P4 ~60 ft); P2 (stated as 50-85 ft depending on belay) and P5 (stated only as 100+ ft) left without a length.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/121381412/sidewinder-southwest-corner"
+      ],
+      "other_findings": "Stored lengths (30/30/33/27/32 m) did not match the route description's pitch lengths; they were replaced or dropped as above. Rack: doubles tips to wide hands plus one #4 is the standard recommendation, if a gear field is being revisited."
+    }
+  },
+  "wa_liberty_bell_girl_next_door": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.7", "lengthM": 40, "notes": "Start from the treed ledge reached by walking part way up the side gully with the large cave, on climber's left below the Liberty-Concord notch. Climb the low-angle face of the rock rib to a good stance directly below the steeper second pitch." },
+      { "pitch": "P2", "grade": "5.9", "lengthM": 60, "crux": true, "notes": "Follow a steepening finger crack up and right until it fades, then find feet out left and make a committing, balancy move across to a second crack system. Easier ground above passes the very sandy ledge called Kitty Litter Pillar, then a traverse reaches the tree at the top of the Beckey Route's second pitch. Extra finger-size pieces are useful." },
+      { "pitch": "P3", "grade": "5.6", "lengthM": 52, "notes": "Cross low-angle slabs to the steeper crack system on the left and climb it to the top of the arete, where the route rejoins the Beckey Route for the finish. The easier climbing on this pitch is on poorer rock than P2, so test holds." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same 3 pitches, labels, grades and lengths carried over; notes rewritten from fragments into climbing directions (start location, the move left on P2, where it meets the Beckey Route).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109196914/the-girl-next-door",
+        "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6 (search excerpt only)"
+      ],
+      "other_findings": "The per-pitch grades (5.7/5.9/5.6) and lengths (40/60/52 m) are carried over but could not be corroborated: the only reachable description gives the route as 5.9, 500 ft, 3 pitches, with P2 as the crux, and no per-pitch grades or lengths. Rack given as a single set to 3 in plus extra finger sizes."
+    }
+  },
+  "wa_south_early_winter_spire_southwest_couloir": {
+    "area": "wa_south_early_winters_spire",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Lower couloir", "grade": "25-30° snow", "notes": "Enter the obvious couloir about 100 ft below the start of the South Arete. A large boulder/chockstone sits near the base; in good snow it is buried, but in a thin year it has to be climbed on its left through a narrow chimney, often with the pack hauled or passed up. The wide lower section is gentle; late in the season it is scree and loose rock instead of snow." },
+      { "pitch": "Upper couloir (right fork)", "grade": "40-50° snow/ice", "notes": "At the fork take the right branch, which steepens and narrows through a constriction into a corridor of rock walls. This is usually the crux: a moat or broken snow at the constriction can force awkward moves, and ice or exposed rock steps may need pickets or rock gear to about 2 in. Solid rock anchors are available on the walls. Once the snow melts out, rockfall knocked down by parties above is the main hazard." },
+      { "pitch": "Summit exit", "grade": "low 5th", "notes": "The corridor ends at a small saddle about 50 ft below the top. A single low 5th-class move, then easier gravelly slabs and blocks, gains the summit. Descend by downclimbing or rappelling the couloir; fixed rappel anchors exist and a 60 m rope works." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same 3 sections and labels; notes expanded with the entry point, the chockstone and how it is passed in a thin year, the constriction and rock corridor, protection needs, the summit saddle and descent. Dropped the null lengthM keys.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108102127/southwest-couloir",
+        "https://onehikeaweek.com/2022/07/01/south-early-winters-spire/",
+        "https://www.ncmountainguides.com/routes/climbing/south-early-winter-spire-southwest-couloir"
+      ],
+      "other_findings": "Stored grade and pitches are null; the route is usually listed as a moderate snow climb, Grade I, ~600 ft, with snow/ice to 50 degrees and a low 5th-class summit move. Best within about a month of the highway opening."
+    }
+  },
+  "wa_cutthroat_west_ridge": {
+    "area": "wa_cutthroat_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "grade": "low 5th", "lengthM": 15, "notes": "From the saddle at the foot of the west ridge, traverse ledges east along the south face about 100 ft to a shallow, blocky gully. Scramble the lower gully (Class 3-4, mostly solid), then belay the last section up to the ridge crest past two fixed pitons; a double-bolt station sits in the gully. Do not take the second, harder southwest gully by mistake." },
+      { "pitch": 2, "grade": "4th class", "notes": "Follow the exposed crest east over and around a series of horns toward the summit block. Most parties use running belays; small nuts and cams of any size take slings well. Keep to the crest rather than dropping into the southwest-facing gullies." },
+      { "pitch": 3, "grade": "low 5th", "notes": "At the summit block, traverse an obvious ledge across its northwest face to the upper North Ridge. A wide ledge at the base gives room to belay. One belayed pitch of low 5th-class rock on good holds, then easy scrambling, reaches the top. The first rappel station is just west of the summit." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same 3 entries and labels (kept as numbers, as stored). Pitch 1 now describes the traverse, gully and pitoned step with its stated ~50 ft length; pitch 2 the horned crest on running belays; pitch 3 the ledge traverse to the North Ridge and the summit pitch. Grades replaced with what sources give (low 5th / Class 4 / low 5th).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110174839/west-ridge",
+        "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/",
+        "https://onehikeaweek.com/2018/08/25/cutthroat-peak/",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-09-08.4167031446 (search excerpt only)"
+      ],
+      "other_findings": "The stored per-pitch grades (5.4 / 5.6 / 5.5) are not supported: sources describe low 5th-class belayed steps (one calls the gully crux 5.2, another the summit pitch 5.0) and Class 4 crest. The route grade 5.6 appears in one source; the stored beta says '5.7', which none do. length_m 975 matches the 3,200 ft given for the whole outing from the road, not the technical route. The stored beta text ('Grade II, 5.7 climbing. Short approach from highway...') is also copied verbatim onto wa_cutthroat_peak_cauthorn_wilson_couloir."
+    }
+  },
+  "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+    "area": "wa_cutthroat_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1 (approach snow/neve)", "grade": "Steep snow/névé", "lengthM": 122, "notes": "From the basin east of the peak, climb the snow in the big couloir splitting the East Face up to where it pinches down. The snow firms up with height. On warm days meltwater can carve deep runnels, and the whole face takes sun early, so start at first light." },
+      { "pitch": "2", "grade": "WI3", "notes": "At the pinch, climb the waterfall on the right side of the couloir. Grades given for this pitch range from WI3 to WI3+. It ends at a fixed piton anchor at the foot of the crux pitch; back it up. A short step at its base shows the ice quality before committing." },
+      { "pitch": "3 (crux)", "grade": "WI4", "crux": true, "notes": "Sustained WI4 for a stretch, then easing to about WI3+ before the ice lets out onto lower-angled snow. Once sun-baked the ice turns aerated and screws hold poorly; if it looks that way from below, this is the place to turn around." },
+      { "pitch": "4-7", "grade": "Snow, ice or mixed", "notes": "From the top of the crux, three or four pitches of snow, ice or mixed ground lead to the ridgeline. Rock anchors, some fixed, and V-threads where ice allows let most parties rappel the line from the ridge with two 60 m ropes. The east face is avalanche-prone in warm weather." },
+      { "pitch": "Summit pitches (optional)", "grade": "5.4", "notes": "Parties continuing to the true summit climb short pitches of about 5.4 rock from the ridgeline, then descend by the West Ridge rappel route instead of the couloir. Small rock gear and pitons are the useful pieces." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Stored '4 (WI3+ easing back off the crux)' and '5-7' merged into one '4-7' entry: the sources describe the WI3+ as the top of the crux pitch itself, not a separate pitch, and 3-4 pitches above it to the ridge. Added the optional 5.4 summit pitches, so the count stays at 5. Added the ~400 ft snow length to entry 1.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109740367/cauthorn-wilson",
+        "https://www.summitpost.org/east-face-wilson-cauthorn-route/157682 (search excerpt only)",
+        "https://www.jeffreyjhebert.com/adventures/attempt-on-cauthorn-wilson"
+      ],
+      "other_findings": "The stored beta ('Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge...') describes the West Ridge rock route and is a verbatim copy of wa_cutthroat_west_ridge's beta; it is wrong for this ice route. The route is WI4, Grade III, ~800 ft, 7 pitches; rack is screws, nuts, pitons and cams to 1 in, two 60 m ropes. The stored grade 'III+' carries no ice grade."
+    }
+  },
+  "wa_direct_north_buttress": {
+    "area": "wa_bear_mountain_chilliwack",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1-2", "grade": "5.8", "notes": "From the toe of the buttress, go right up slabs, then trend left into a broken slabby wall seamed with cracks. Climb the cracks to a recessed belay. The rock low on the buttress is poor in places; the couloir to the left is the loose, rockfall-prone alternative this start avoids." },
+      { "pitch": "P3", "grade": "5.10-", "crux": true, "notes": "Climb the crack in the dihedral to a roof. The crack widens toward the roof; stay in it until below the roof, then move out right, where a good hold helps. Pull through to a small ledge belay. A #4 cam is the piece that makes this pitch comfortable." },
+      { "pitch": "P4-5", "notes": "Continue up the corner system to the base of a chimney, then climb the chimney system; the two pitches can be linked. Stacked flakes lead into the chimney, so test before weighting." },
+      { "pitch": "P6-8", "notes": "Traverse left past loose blocks, which is the most unpleasant ground on the route, then back right through thin cracks with sparse protection. Ledge systems and easy but poorly protected ground follow. Protect the follower on the traverses and keep the rope clear of loose blocks." },
+      { "pitch": "P9-12", "notes": "Climb the ridge toward the snow patch; the rock here is often wet from melt. Beyond the snow, climb the face behind it by a left-hand crack to join the original 1967 North Buttress line. Crampons are recommended and a light axe helps for the snow." },
+      { "pitch": "P13", "grade": "5.10-", "notes": "A strenuous left-facing corner with a crack running from hands to fists, steep and sustained for much of a long pitch. The rock quality improves markedly from here up. Bring wide hand and fist sizes." },
+      { "pitch": "P14-15", "notes": "Two pitches up the buttress crest to the ledge at the base of the offwidth, where the 1967 party bivouacked." },
+      { "pitch": "P16a-16b", "grade": "5.10-", "notes": "16a climbs the offwidth, awkward with a pack, past some fixed gear; it is graded from 5.10a to 5.10-. 16b is the bypass: start up the offwidth, then trend right around the corner onto easier ground at about 5.8 and belay above the wide section." },
+      { "pitch": "P17", "grade": "5.9", "notes": "Climb the buttress crest on steep, airy face holds with big exposure. Belay below the long crack system above." },
+      { "pitch": "P18", "grade": "5.10-", "notes": "A long series of thin cracks, close to a full rope length, to a small stance. The rock here is lichen-covered; expect it to feel harder when damp." },
+      { "pitch": "P19-21", "notes": "Easier blocky ground up the buttress to the ridgeline. Many parties leave the rope here and move up Class 4 and easy 5th, trending right to the summit ridge. Descend west on Class 3-4 ground, then snow and cliff bands back to camp." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "8 grouped rows split to 11 where the sources separate pitches with different grades (P13 from P14-15, P17 and P18 from P17-21); all rows now carry route-finding and hazard notes. Groups with no sourced grade (P4-5, P6-8, P9-12, P14-15, P19-21) are left ungraded rather than guessed.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+        "http://publications.americanalpineclub.org/articles/12198112000/Bear-Mountains-Forgotten-Face",
+        "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+        "https://skisickness.com/2005/08/22/ (search excerpt only)"
+      ],
+      "other_findings": "discipline is 'mountaineering' for a Grade V, 21-pitch 5.10- rock route; that should be 'alpine'. It matters here because bare-numbered ungraded rows render as travel stages on a mountaineering route. Pitch grades on the shared upper buttress differ by source (for example the corner above the snow patch is given as 5.9 or 5.10-, the offwidth as 5.10a or 5.10-). The existing climbing_route prose gives grades for the chimneys (5.8-5.9) and mid-buttress (around 5.9) that no source consulted supports."
+    }
+  },
+  "wa_big_kangaroo_kearney_thomas": {
+    "skip_reason": "No pitch-level description found. Every reachable source gives only the whole-route facts (5.11a, 7-8 pitches, ~900 ft, a 5.11 finger-crack crux, cams tips to #4 plus a #5) and points to guidebook topos for the pitches. Sources even disagree on where the finger crack sits (one has the Skinny Start variation joining at the finger-crack pitch low on the route, another has the route finishing on a 5.11 fingers variation). Worth a human look: the stored table looks fabricated. Its lengths are the route length divided evenly (39 m x 6 plus 40 m), P1-P6 have no grades and filler notes, and 'P7 crux' is not supported by any source. Consider clearing it rather than leaving it standing."
+  }
+}

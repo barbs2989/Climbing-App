@@ -1,0 +1,431 @@
+{
+ "batches": ["b157.json", "b158.json", "b159.json", "b160.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_inspiration_traverse",
+   "name": "Inspiration Traverse",
+   "area": "Alpine and Technical Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "name": "Ptarmigan Traverse",
+   "area": "Alpine and Technical Traverses",
+   "contradictions": [
+    {
+     "fact": "Kool-Aid Lake elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary", "says": "Kool-Aid Lake bivouac (elevation ~7,000 ft)"},
+      {"field": "waypoints[3].elev (Kool-Aid Lake)", "says": "6320"},
+      {"field": "bivy[0].elev (Kool-Aid Lake)", "says": "6120"}
+     ],
+     "why": "The itinerary states the first bivy is at ~7,000 ft, but the route's own waypoint and bivy entries for the identical named camp (Kool-Aid Lake) both put it 700-900 ft lower.",
+     "internal_resolution": "waypoints and bivy agree closely (6320 vs 6120, both far from 7,000); the itinerary's '~7,000 ft' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance from trailhead to Cascade Pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary", "says": "Hike Cascade Pass Trail to the pass (5.7 miles)"},
+      {"field": "approach", "says": "A well-maintained trail switchbacks 3.7 miles to Cascade Pass (5,392 ft)"},
+      {"field": "waypoints[1].distMi (Cascade Pass)", "says": "3.6"},
+      {"field": "pitch_detail[0].notes", "says": "Established trail from trailhead to Cascade Pass (3.7 miles, 1,691 ft gain)"}
+     ],
+     "why": "Three fields (approach, the Cascade Pass waypoint, and pitch_detail) agree the maintained trail to Cascade Pass is 3.6-3.7 miles; the itinerary states 5.7 miles for the same leg.",
+     "internal_resolution": "3 of 4 fields agree at ~3.6-3.7 mi; itinerary's 5.7 mi is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Overall trip duration",
+     "severity": "high",
+     "claims": [
+      {"field": "watch_out", "says": "2-3 day alpine commitment with multiple peaks crossed"},
+      {"field": "beta", "says": "Most ascents take 4-8 days, with 6-7 days typical for guided trips."},
+      {"field": "itinerary", "says": "Day 1 ... Day 2 ... Day 3 ... Day 4 ... Day 5 ... Day 6 (Itswoot to Downey Creek TH)"}
+     ],
+     "why": "watch_out calls this a 2-3 day trip while beta and the itinerary's own day-by-day plan describe a 4-8 day (typically 6-7 day) traverse, a large mismatch that would badly mis-set trip-planning expectations.",
+     "internal_resolution": "beta and the 6-day itinerary agree with each other; watch_out's '2-3 day' figure is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Which jurisdiction Cascade Pass itself sits in",
+     "severity": "low",
+     "claims": [
+      {"field": "access.notes", "says": "the southern Cascade Pass-to-Yang Yang Lakes stretch is Mount Baker-Snoqualmie/Okanogan-Wenatchee National Forest ... and the northern Cascade Pass/Cache Col/Ptarmigan Traverse proper runs through North Cascades National Park"}
+     ],
+     "why": "The same sentence names 'Cascade Pass' as part of both the 'southern ... National Forest' segment and the 'northern ... National Park' segment, which is self-contradictory about which agency governs the pass.",
+     "internal_resolution": "the bivy note for Kool-Aid Lake ('The national park boundary runs at Cache Col just above') implies Cascade Pass itself, north of Cache Col, is inside the park -- consistent with only the 'northern' half of the sentence",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "name": "Ragged Ridge",
+   "area": "Alpine and Technical Traverses",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain for the traverse",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "2900"},
+      {"field": "waypoints[0].elev (Easy Pass Trailhead)", "says": "3678"},
+      {"field": "waypoints[1].elev (Mesahchie Peak)", "says": "8795"}
+     ],
+     "why": "Reaching just the first of the traverse's four 8,000+ ft summits from the trailhead already requires ~5,117 ft of net gain (3,678 to 8,795), before any of the up-and-down to Katsuk, Kimtah and Cosho; a stated total gain_ft of 2,900 ft is impossible given the route's own waypoint elevations.",
+     "internal_resolution": "the route's own trailhead and summit waypoint elevations rule out gain_ft=2900",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length carried",
+     "severity": "medium",
+     "claims": [
+      {"field": "gear", "says": "30m rope for glacier travel/short technical sections"},
+      {"field": "rope_length_m", "says": "60"},
+      {"field": "rack", "says": "Single 60m rope"}
+     ],
+     "why": "The main gear list calls for a 30m rope, but rope_length_m and the separate rack field both specify 60m -- a doubled difference that changes what a climber packs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "rope_note names the wrong peak",
+     "severity": "high",
+     "claims": [
+      {"field": "rope_note", "says": "Short 5.5 rock scramble/climb on Red Mountain's ridge; single 60m rope sufficient for the low-5th-class sections, many parties simul-climb or scramble sections unroped."}
+     ],
+     "why": "This route is Ragged Ridge (Mesahchie/Katsuk/Kimtah/Cosho), not 'Red Mountain' -- the rope_note (and, evidently, the sling_rack/rack/alpine_draws fields it accompanies) appears to be copied from an unrelated route.",
+     "internal_resolution": "every other field on this route (overview, beta, pitch_detail, waypoints) consistently names Ragged Ridge/Mesahchie/Katsuk/Kimtah/Cosho; only rope_note names 'Red Mountain'",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager and permit requirement",
+     "severity": "high",
+     "claims": [
+      {"field": "access.permit", "says": "No overnight wilderness permit required; day-use only"},
+      {"field": "access.landManager", "says": "USDA Forest Service (Mount Baker-Snoqualmie National Forest)"},
+      {"field": "bivy (Mesahchie basin, below the col).permit", "says": "NORTH CASCADES NATIONAL PARK backcountry permit required, without exception."},
+      {"field": "bivy (Ragged Ridge crest bivy).permit", "says": "North Cascades National Park backcountry permit required, reserved in advance and issued by park staff before the trip."},
+      {"field": "bivy (Fisher Camp).permit", "says": "North Cascades National Park backcountry permit required and reserved for this specific named site, not for a zone."}
+     ],
+     "why": "access states this route needs no overnight permit and is Forest Service land, but every actual camp this route uses (Mesahchie basin, the crest bivy, Fisher Camp) is explicitly described as requiring a North Cascades NP backcountry permit -- a climber reading only access would show up without one.",
+     "internal_resolution": "3 of 3 camp entries agree an NPS permit is required; access.permit/landManager are the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking-pass trailhead named in access",
+     "severity": "medium",
+     "claims": [
+      {"field": "access._raw.parking_pass_required", "says": "Northwest Forest Pass ($5 day pass or $30 annual) at Commonwealth Basin trailhead"},
+      {"field": "approach_logistics.trailhead", "says": "Easy Pass Trailhead (SR-20)"}
+     ],
+     "why": "Commonwealth Basin is a trailhead near Snoqualmie Pass/I-90, unrelated to this route's actual Easy Pass Trailhead on SR-20 in the North Cascades.",
+     "internal_resolution": "approach_logistics, waypoints and the road field all agree the trailhead is Easy Pass on SR-20; the Commonwealth Basin reference is contaminated from elsewhere",
+     "needs_research": false
+    },
+    {
+     "fact": "Highway named in climate access notes",
+     "severity": "medium",
+     "claims": [
+      {"field": "climate.notes", "says": "heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year"},
+      {"field": "road.name", "says": "North Cascades Highway (SR 20)"}
+     ],
+     "why": "The route is reached via SR-20, not I-90; I-90 avalanche control (Snoqualmie Pass) has nothing to do with this trailhead's access.",
+     "internal_resolution": "road.driveNote and approach_logistics both correctly name SR-20; the I-90 reference is contaminated from elsewhere",
+     "needs_research": false
+    },
+    {
+     "fact": "Bivy list includes camps for a different peak/trailhead (Black Peak/Corteo via Rainy Pass)",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy (Wing Lake).notes", "says": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well."},
+      {"field": "bivy (Lewis Lake).notes", "says": "It is also where the Corteo approach commits..."},
+      {"field": "bivy (Rainy Pass trailhead lots).notes", "says": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend."}
+     ],
+     "why": "Wing Lake, Lewis Lake and the Rainy Pass trailhead entries describe camps and an approach for Black Peak and Corteo, reached from the Rainy Pass trailhead -- a different trailhead than this route's own Easy Pass Trailhead. A climber reading CAMPING & BIVY on this route's Plan tab would see three camps that have nothing to do with Ragged Ridge.",
+     "internal_resolution": "this route's own approach/itinerary/other bivy entries (Mesahchie basin, crest bivy, Fisher Camp) all use Easy Pass; the Wing Lake/Lewis Lake/Rainy Pass entries are for a different peak pair reached elsewhere",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "name": "Direct North Buttress",
+   "area": "Bear Mountain",
+   "contradictions": [
+    {
+     "fact": "High camp elevation and approach line",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "leave the maintained trail near the Copper Ridge junction and bushwhack/scramble up Bear Mountain's west ridge to a high camp near 4,600 ft"},
+      {"field": "itinerary", "says": "Day 1: approach to saddle camp (~6,480 ft)"},
+      {"field": "approach_variants[0].notes", "says": "to the broad 6,480 ft saddle with running water and heather tent sites"},
+      {"field": "approach_variants[0].baseFinding", "says": "From the saddle you first go DOWN..."}
+     ],
+     "why": "The approach field describes a different camp elevation (4,600 ft) and a different path (via a 'Copper Ridge junction' and the west ridge) than the itinerary and approach_variants, which both describe a 6,480 ft saddle reached via Bear Creek and Ruta Lake with no mention of Copper Ridge.",
+     "internal_resolution": "itinerary, approach_variants, and this route's own bivy entry ('Basin below the Bear Mountain saddle', 6,500 ft) all agree on the ~6,480 ft Bear Creek/Ruta Lake saddle camp; the approach field's '4,600 ft via Copper Ridge junction' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "ice_grade claims technical ice climbing not described anywhere else",
+     "severity": "medium",
+     "claims": [
+      {"field": "ice_grade", "says": "WI5+"},
+      {"field": "gear", "says": "crampons, lightweight ice axe"},
+      {"field": "pitch_detail[4].notes", "says": "Crampons are recommended and a light axe helps for the snow."}
+     ],
+     "why": "WI5+ is a serious, technical water-ice grade, but every other mention of snow/ice on this summer alpine-rock route describes only a low-angle snow patch crossed with a light axe -- no water-ice pitch is described anywhere in overview, beta, or pitch_detail.",
+     "internal_resolution": "overview/beta/pitch_detail consistently describe this as a rock route (21 pitches to 5.10-) with one easy snow-crossing pitch; ice_grade=WI5+ is unsupported and looks like a stray/contaminated value",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip gain and distance",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5950"},
+      {"field": "dist_km", "says": "14.5"},
+      {"field": "approach", "says": "Round trips typically run 4-6 days with 30+ miles and well over 10,000 ft of gain."}
+     ],
+     "why": "The header/technical-stats fields put the round trip at 5,950 ft of gain and 14.5 km (~9 mi), but the route's own approach paragraph explicitly states the round trip is '30+ miles' with 'well over 10,000 ft of gain' -- both numbers are roughly double the stored fields.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Bivy list includes a camp for different peaks reached by a different approach",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy (Ouzel Lake basin, head of Depot Creek).notes", "says": "For Redoubt and Spickard this is the standard high camp..."},
+      {"field": "bivy (Ouzel Lake basin).permit", "says": "THIS ONE IS DIFFERENT. The approach starts in BRITISH COLUMBIA — up Chilliwack Lake Road and onto the rough Depot Creek spur..."},
+      {"field": "approach_logistics.trailhead", "says": "Hannegan Pass Trailhead (Trail #674, FR-32)"}
+     ],
+     "why": "Ouzel Lake is explicitly the camp for Mount Redoubt and Mount Spickard, reached via a cross-border Depot Creek approach from British Columbia; this route (Bear Mountain) is reached entirely via the Hannegan Pass Trailhead and never mentions Depot Creek or a border crossing anywhere else.",
+     "internal_resolution": "this route's own approach/itinerary/other bivy entries never mention Depot Creek or Canada; the Ouzel Lake entry describes a camp for unrelated peaks",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "name": "North Buttress",
+   "area": "Bear Mountain",
+   "contradictions": [
+    {
+     "fact": "Whether the standard descent involves rappels",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "None — 3rd/4th class walk-off descent"},
+      {"field": "rappel_detail", "says": "2 entries: 'First of two rappels protecting a short, sometimes-loose 3rd class gully...' / 'Second rappel finishing the descent to the saddle camp.'"},
+      {"field": "descent_text", "says": "expect to rappel it in two short pitches, for which a single 30m rope is sufficient per rappel"},
+      {"field": "rappel_count_note", "says": "Lengths aren't stated beyond 'a single 30m rope is sufficient per rappel'..."}
+     ],
+     "why": "The top-level rappels field flatly states there are none on this route's walk-off descent, directly contradicting the rappel_detail table (2 rappels), descent_text, and rappel_count_note, all of which describe and discuss two actual rappels -- these all render together in the RAPPELS section of the Plan tab.",
+     "internal_resolution": "rappel_detail, descent_text, and rappel_count_note all agree on 2 rappels; the rappels field's 'None' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "14.5"},
+      {"field": "approach", "says": "the route's recorded 30.58 km distance matches this ~19-mile one-way haul"},
+      {"field": "itinerary.totalNote", "says": "roughly 19-21 miles round trip"},
+      {"field": "itinerary.days[*].miles", "says": "9, 3, 9 (sum 21)"}
+     ],
+     "why": "The approach paragraph explicitly cites 'the route's recorded 30.58 km distance' as matching its own mileage estimate, but the actual dist_km field on this row is 14.5, not 30.58 -- and the itinerary's own day-by-day miles sum to 21, also disagreeing with dist_km. Three different distance figures (14.5 km, 30.58 km as quoted, ~19-21 mi itinerary) are given for what should be one round-trip distance.",
+     "internal_resolution": "the itinerary days and totalNote agree with each other (~19-21 mi); dist_km=14.5 does not match either the itinerary or the prose's own self-citation of '30.58 km'",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5950"},
+      {"field": "itinerary.days[*].gainFt", "says": "4500, 2500, 300 (sum 7300)"}
+     ],
+     "why": "The header/technical-stats gain_ft (5,950 ft) understates the itinerary's own day-by-day gain total (7,300 ft) by roughly 23%.",
+     "internal_resolution": "the itinerary is the more granular, internally-summed source; gain_ft appears to be a stale or wrong total",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_custer_standard",
+   "name": "Standard Route / South Side",
+   "area": "Mount Custer",
+   "contradictions": [
+    {
+     "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy (Hannegan Camp, below Hannegan Pass).notes", "says": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early."},
+      {"field": "bivy (Boundary Camp).notes", "says": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park..."},
+      {"field": "bivy (Copper Lake Camp, Copper Ridge).notes", "says": "...the sensible high camp for anyone using the ridge as a high traverse toward the Chilliwack drainage..."},
+      {"field": "bivy (US Cabin Camp, Chilliwack River).notes", "says": "...it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail."},
+      {"field": "approach_logistics.trailhead", "says": "Depot Creek Trailhead"}
+     ],
+     "why": "Hannegan Camp, Boundary Camp, Copper Lake Camp and US Cabin Camp are all reached via the Hannegan Pass Trailhead (used for Bear Mountain/Copper Ridge), a completely different trailhead system from this route's own Depot Creek/Chilliwack Lake Road (BC) approach, which never mentions Hannegan Pass at all. Only the 'Ouzel Lake basin' entry in the same bivy list is actually this route's camp.",
+     "internal_resolution": "this route's own approach, waypoints, and approach_variants consistently describe only the Depot Creek/Canada approach; 5 of the 6 bivy entries describe camps for a different trailhead/peak group",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rahm_south_side",
+   "name": "South Side",
+   "area": "Mount Rahm",
+   "contradictions": [
+    {
+     "fact": "Which of Mount Rahm's two summits is the true/high point",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0].name", "says": "Mount Rahm summit (west/high point)"},
+      {"field": "pitch_detail[2].notes", "says": "Roughly 700 ft of talus/scree via the south spur to the east (true) summit; a moderate-angle snowfield occupies the upper basin"},
+      {"field": "wa_mount_rahm_custer_traverse.watch_out", "says": "Rahm has two summits of similar height — the true (higher) summit is roughly 200 yards east of the first one reached"}
+     ],
+     "why": "This route's own waypoint labels its destination the 'west/high point,' but its own pitch_detail describes the same climb ending at the 'east (true) summit' -- directly contradicting itself about which summit is higher/true, and disagreeing with the sibling Custer-Rahm Traverse route, which states the true, higher summit is the EAST one.",
+     "internal_resolution": "pitch_detail (same route) and the sibling traverse route both say the true/higher summit is east; the waypoint's 'west/high point' label appears to be the error",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rahm_standard",
+   "name": "Standard Route / Glacier",
+   "area": "Mount Rahm",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "8 (5.0 mi)"},
+      {"field": "itinerary.days[*].miles", "says": "6, 5, 6 (sum 17)"},
+      {"field": "waypoints[6].distMi (Trailhead / border return)", "says": "16"}
+     ],
+     "why": "dist_km puts the round trip at only 5 miles, but the itinerary's own day-by-day miles sum to 17, and the cumulative waypoint distance back at the trailhead is 16 miles -- more than 3x the stored dist_km.",
+     "internal_resolution": "itinerary and the cumulative waypoint distance agree closely (16-17 mi); dist_km=8 km is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Depot Creek Falls crossing elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[1].elev (Depot Creek Falls crossing)", "says": "4760"},
+      {"field": "wa_mount_custer_standard.waypoints (Depot Creek Falls handline crossing).elev", "says": "3800"},
+      {"field": "wa_mount_redoubt_south_face.waypoints (Depot Creek Falls).elev", "says": "3800"}
+     ],
+     "why": "This route, Mount Custer, and Mount Redoubt all share the identical Depot Creek approach trail and each names a waypoint at the Depot Creek Falls crossing, but this route puts it at 4,760 ft while the other two both put the same crossing at 3,800 ft -- a 960 ft disagreement about the same physical landmark.",
+     "internal_resolution": "two independent sibling routes on the same shared trail agree on 3,800 ft; this route's 4,760 ft is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy (Hannegan Camp, below Hannegan Pass).notes", "says": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early."},
+      {"field": "bivy (Boundary Camp).notes", "says": "Boundary sits just over Hannegan Pass..."},
+      {"field": "bivy (Copper Lake Camp, Copper Ridge).notes", "says": "...the sensible high camp for anyone using the ridge as a high traverse..."},
+      {"field": "bivy (US Cabin Camp, Chilliwack River).notes", "says": "...it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops..."},
+      {"field": "approach_logistics.trailhead", "says": "Depot Creek Road trailhead (via Chilliwack, BC)"}
+     ],
+     "why": "As with Mount Custer, four of the six bivy entries describe camps reached from the unrelated Hannegan Pass Trailhead, while this route's own approach is entirely via Depot Creek from the Canadian side; only 'Ouzel Lake basin' is this route's actual camp.",
+     "internal_resolution": "this route's approach/waypoints/approach_variants never mention Hannegan Pass; 4 of 6 bivy entries are for a different trailhead/peak group",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rahm_custer_traverse",
+   "name": "Custer-Rahm Traverse",
+   "area": "Mount Rahm",
+   "contradictions": [
+    {
+     "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy (Hannegan Camp, below Hannegan Pass).notes", "says": "The obvious staging camp for a party that drives up Ruth Creek late..."},
+      {"field": "bivy (Boundary Camp).notes", "says": "Boundary sits just over Hannegan Pass..."},
+      {"field": "bivy (Copper Lake Camp, Copper Ridge).notes", "says": "...the sensible high camp for anyone using the ridge as a high traverse..."},
+      {"field": "bivy (US Cabin Camp, Chilliwack River).notes", "says": "...it is roughly where a party bound for Bear Mountain..."},
+      {"field": "approach", "says": "Reached from the summit of either Mount Rahm (via the Standard Route/Glacier or South Side) or Mount Custer (via its South Ridge), not from a trailhead directly."}
+     ],
+     "why": "This link route is only ever reached via the Depot Creek approach used by the Rahm/Custer routes it connects, yet its bivy list carries the same four Hannegan-Pass-trailhead camps that belong to the unrelated Bear Mountain approach.",
+     "internal_resolution": "this route's own approach/road fields only reference the Depot Creek/Chilliwack Lake Road approach shared with Rahm and Custer",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "name": "South Face / Redoubt Glacier",
+   "area": "Mount Redoubt",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5000"},
+      {"field": "itinerary.days[*].gainFt", "says": "3100, 3300, 0 (sum 6400)"}
+     ],
+     "why": "gain_ft (5,000 ft) understates the itinerary's own day-by-day gain total (6,400 ft) by 28%.",
+     "internal_resolution": "the itinerary is the more granular source and is internally consistent; gain_ft appears stale/wrong",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "17.7 (11.0 mi)"},
+      {"field": "itinerary.days[*].miles", "says": "7, 3.5, 7 (sum 17.5)"},
+      {"field": "itinerary.totalNote", "says": "~17 miles and ~6,400 ft round trip"}
+     ],
+     "why": "dist_km converts to only 11.0 miles, but the itinerary's own days and totalNote both put the round trip at ~17.5 miles -- a 60% gap.",
+     "internal_resolution": "itinerary days and totalNote agree with each other at ~17.5 mi; dist_km is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Rock/ice difficulty quoted in beta belongs to a different route variant",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "Grade II-III alpine rock/glacier route, up to 5.7 rock and 60-degree ice possible. Two documented routes: 1) Northeast Face - 60-degree ice plus low 5th class rock (Grade III); 2) South route - glacier walk plus scree/snow slopes to summit (Grade II)."},
+      {"field": "access.notes", "says": "Hazards: Steep ice (60+ degrees), low 5th class rock, avalanche potential, remote location."},
+      {"field": "rock_grade", "says": "5.0"},
+      {"field": "pitch_detail[1].notes", "says": "Narrow couloir with crumbling red Skagit gneiss... occasional 5.0"},
+      {"field": "pitch_detail[0].notes", "says": "Approximately 300 feet of sustained snow climbing... Class 3, 50-degree snow"}
+     ],
+     "why": "This route object (named 'South Face / Redoubt Glacier', matching beta's easier 'South route - Grade II') carries a rock_grade of only 5.0 and pitch_detail that maxes out at 5.0 rock / 50-degree snow, yet its own beta and access.notes headline '5.7 rock and 60-degree ice' -- figures beta itself attributes to the separate Northeast Face (Grade III) line, not this route.",
+     "internal_resolution": "this route's own rock_grade and pitch_detail cap out well below the 5.7/60-degree figures; those numbers describe the different Northeast Face route mentioned in the same beta paragraph",
+     "needs_research": false
+    },
+    {
+     "fact": "A 'Depot Glacier' crossing not corroborated by the detailed approach",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "Approach via Depot Glacier to Redoubt Glacier."},
+      {"field": "itinerary.days[1].note", "says": "From camp, cross Depot Creek and scramble the broken buttress southwest of the lake to gain the Redoubt Glacier..."},
+      {"field": "waypoints", "says": "Ouzel Lake -> Redoubt Glacier snout -> High camp -> Col below the flying buttress -> summit (no Depot Glacier waypoint)"}
+     ],
+     "why": "The short approach summary claims the route goes 'via Depot Glacier to Redoubt Glacier,' but the detailed itinerary, pitch_detail, and full waypoint list all describe gaining the Redoubt Glacier by scrambling a rock buttress above Ouzel Lake -- none mention crossing a 'Depot Glacier.'",
+     "internal_resolution": "the detailed itinerary/waypoints/pitch_detail all agree on a buttress-scramble access with no Depot Glacier crossing; the terse approach field's claim is unsupported",
+     "needs_research": true
+    },
+    {
+     "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy (Hannegan Camp, below Hannegan Pass).notes", "says": "The obvious staging camp for a party that drives up Ruth Creek late..."},
+      {"field": "bivy (Boundary Camp).notes", "says": "Boundary sits just over Hannegan Pass..."},
+      {"field": "bivy (Copper Lake Camp, Copper Ridge).notes", "says": "...the sensible high camp for anyone using the ridge as a high traverse..."},
+      {"field": "bivy (US Cabin Camp, Chilliwack River).notes", "says": "...it is roughly where a party bound for Bear Mountain..."},
+      {"field": "approach_logistics.trailhead", "says": "Depot Creek Road washout"}
+     ],
+     "why": "As with Custer and Rahm, four of the six bivy entries describe camps for the unrelated Hannegan Pass Trailhead approach, while this route is reached entirely via Depot Creek from British Columbia.",
+     "internal_resolution": "this route's own approach/waypoints/road fields never mention Hannegan Pass; 4 of 6 bivy entries are for a different trailhead/peak group",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

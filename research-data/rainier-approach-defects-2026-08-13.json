@@ -1,0 +1,44 @@
+{
+  "_README": [
+    "Two Mount Rainier approach defects, both fixed by REPLACING ONE SPAN of the stored text.",
+    "Neither needed research: each replacement is re-homed from data already in the catalog.",
+    "",
+    "1. wa_mount_rainier_ingraham_direct said the Skyline Trail runs 'through subalpine meadows",
+    "   and Parmigan Ridge'. The trail passes PANORAMA POINT. Ptarmigan Ridge is an unrelated",
+    "   Grade IV route on the mountain's NORTH side with its own row — so this is a route-name",
+    "   leak into another route's approach, the same shape as The Tooth carrying Forbidden's Cat",
+    "   Scratch. The correction is grounded in the two SIBLING routes that share this exact",
+    "   walk-in: wa_mount_rainier_disappointment_cleaver and wa_mount_rainier_gibraltar_ledges",
+    "   both describe the Skyline Trail past PANORAMA POINT and Pebble Creek to Camp Muir.",
+    "",
+    "2. wa_mount_rainier_ptarmigan_ridge stored a LIVE CLOSURE as durable route data: 'As of",
+    "   2026, the Mowich Lake approach is not drivable'. A dated notice in a permanent field goes",
+    "   stale silently and then misinforms. Replaced with the durable seasonal pattern, taken from",
+    "   this route's own researched approach_variants: the Mowich Lake road is summer-only and in",
+    "   a normal year opens well after the route comes into condition, while the White River side",
+    "   is reachable earlier.",
+    "",
+    "NOT fixed, deliberately: ingraham_direct's dist_km of 6.8 is too small for its own text",
+    "(Paradise to Camp Muir alone is ~7.2 km one way, and the row describes continuing 3,400 ft",
+    "above Muir), and its siblings on the same walk-in carry 11.3 and 20.1. But dist_km holds TWO",
+    "CONVENTIONS in this catalog — some rows store one-way, some store half a round trip — and",
+    "CLAUDE.md says never to normalise it in bulk. Picking a number here would be a guess dressed",
+    "as a repair, so it is reported instead."
+  ],
+  "wa_mount_rainier_ingraham_direct": {
+    "area": "wa_mount_rainier",
+    "_why": "The Skyline Trail passes Panorama Point. 'Parmigan Ridge' is a mangling of Ptarmigan Ridge, which is a different route on the opposite side of the mountain and has its own row.",
+    "_grounding": "sibling rows wa_mount_rainier_disappointment_cleaver and wa_mount_rainier_gibraltar_ledges, which describe the same walk-in past Panorama Point",
+    "set": {
+      "approach": "The Ingraham Direct on Mount Rainier begins at Paradise (5,400 ft). Follow the paved Skyline Trail through subalpine meadows and past Panorama Point (~5-7 hours) to Camp Muir (10,080 ft), gaining 4,000 ft. Above Camp Muir, traverse the heavily crevassed Ingraham Glacier—rope-team travel mandatory. A hard overnight freeze is essential for safe glacier travel; start the summit push at 1-2 AM to climb the final 3,400 ft while snow is firm. Non-technical but exposed; the crux is route-finding through crevasse fields and steep snowfield sections."
+    }
+  },
+  "wa_mount_rainier_ptarmigan_ridge": {
+    "area": "wa_mount_rainier",
+    "_why": "A dated notice stored in a permanent field. It goes stale silently and then misinforms — the transient-condition trap this sweep exists to avoid.",
+    "_grounding": "this route's own approach_variants, whose season field already states that the Mowich Lake road opens well after the route is in condition",
+    "set": {
+      "approach": "Historically approached either from the west via Mowich Lake (shorter) or from the east via White River Campground (longer, typically requiring a car shuttle or carryover with descent via the Emmons Glacier). Which of the two is actually available is a seasonal question rather than a fixed one: the Mowich Lake road is summer-only and in a normal year opens well after this route comes into condition, so the shorter approach and the season rarely line up. The White River side is reachable earlier, at the cost of a much longer walk. Check the road status before planning around Mowich Lake."
+    }
+  }
+}

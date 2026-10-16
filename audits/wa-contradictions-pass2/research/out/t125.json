@@ -1,0 +1,310 @@
+{
+ "file": "t125.json",
+ "results": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Snowy Lakes turnoff relative to Methow Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only dissenting field is bivy[1] (the Methow Pass meadow camp card), which places the lakes path about a mile beyond Methow Pass; the waypoints, approach, itinerary and approach variant all put the Snowy Lakes turnoff (about 6,200 ft) before Methow Pass northbound, matching a trip report that reached Methow Pass by returning from the lakes camp. The camp card belongs to the camping clean-up; no patch.",
+   "sources": [
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Day-2 elevation from camp to Methow Pass and summit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The figures are cumulative gain, not net elevation differences: from Upper Snowy Lake (~6,900 ft) the route drops to the PCT turnoff (~6,200 ft) and then climbs ~350-400 ft to Methow Pass, and the off-trail leg undulates, giving ~1,850 ft cumulative for ~1,500 ft net. The same numbers (+350 ft camp to pass, +1,850 ft pass to summit) are recorded in a trip report of this exact itinerary.",
+   "sources": [
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Last reliable water",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only dissenting field is bivy[2].water (Cutthroat Pass camp card, 'roughly three miles'); the waypoint puts Porcupine Creek at mile 2. A PCT hike guide puts the last good water at the Porcupine Creek waterfall/crossing about 2.5 mi up. Camp card owned by the camping clean-up; no patch.",
+   "sources": [
+    "https://explorenborgen.com/cutthroat-pass-north-cascades/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Rainy Pass trailhead parking type",
+   "verdict": "fixed",
+   "correct_value": "Rainy Pass PCT north trailhead is a developed parking lot (short access road, vault toilets) on the north side of SR 20; Swamp Creek is a highway pullout.",
+   "evidence": "The PCTA trailhead/trip pages describe a short access road on the north side of Highway 20 to a fairly large parking lot with vault toilets, the PCT running through the lot. A separate hike guide describes two pit toilets at the trailhead lot (with overflow cars lining the road in larch season). Only access.permit called it informal shoulder parking.",
+   "sources": [
+    "https://explore.pcta.org/trips/rainy-pass-to-cutthroat-pass",
+    "https://explore.pcta.org/trailheads/rainy-pass-north-trailhead",
+    "https://explorenborgen.com/cutthroat-pass-north-cascades/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "the Rainy Pass PCT-Northbound trailhead and the Swamp Creek pullout are both informal highway-shoulder parking areas.",
+     "replace": "the Rainy Pass PCT-Northbound trailhead is a developed parking lot with vault toilets, while the Swamp Creek pullout is informal highway-shoulder parking.",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Rainy Pass trailhead parking type"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "fact": "Bench spring reliability",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dissenting field is bivy[0].water only. Sources split by water source: one route page says bench-camp water is limited or non-existent late summer (the creek), while climbers report a small spring about ten minutes north of camp that is 'very reliable' and was running in mid-September, and another party found a spring on the contour toward Paisano on Aug 1. The approach's 'spring near the bench' claim matches the spring reports; the camp card describes the creek. Camp card owned by the camping clean-up; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/forum/topic/114587941/water-situation-near-bench-camp-below-burgundy-col-in-wa-pass",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rampage",
+   "fact": "Bench spring reliability",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dissenting field is bivy[0].water only. Sources split by water source: one route page says bench-camp water is limited or non-existent late summer (the creek), while climbers report a small spring about ten minutes north of camp that is 'very reliable' and was running in mid-September, and another party found a spring on the contour toward Paisano on Aug 1. The approach's 'spring near the bench' claim matches the spring reports; the camp card describes the creek. Camp card owned by the camping clean-up; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/forum/topic/114587941/water-situation-near-bench-camp-below-burgundy-col-in-wa-pass",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Day-1 gain to Burgundy Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pullout ~4,250 ft, creek ~4,080 ft, col ~7,770 ft means day 1 alone is ~3,500-3,700 ft, so 2,600 is too low; but raising it breaks the itinerary total that now equals gain_ft (3,500), and no source states the per-day split or the summit-day gain. Would be settled by a source stating the car-to-car gain for this route including the summit day.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Climbing time for a 2-pitch route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is 2 pitches, 150 ft (45 m), Grade II; the 4-4.5 hr schedule appears carried over from the 6-pitch Standard Route itinerary. No published climbing time for this route was found, and writing a new schedule would invent times. A published time (including the traverse from the col to the notch) would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394671/south-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Water at Burgundy Col",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dissent is bivy[0].water vs the itinerary. Route pages describe Burgundy Col bivy sites 'with year-round snow for water', while other reports say one may have to break off hard snow or find a trickle late season. The itinerary matches the year-round-snow description; the camp card's caveat is owned by the camping clean-up; no patch.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Location of the A0 aid section",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The A0 section is the ~12 ft summit block, protected by one newer bolt and one old 1/4-inch bolt; the rappel anchor on top is two equalized pitons.",
+   "evidence": "The route page says the summit involves a 12-foot aid block with a new bolt and an original quarter-inch bolt with an old hanger, and the summit rappel anchor is two solid pitons equalized with cord. On the row, pitch_detail, watch_out, beta and pro_needs all put the A0 move at the summit; descent_text (and the matching approach-variant hazard) wrongly placed the bolts 'lower on the route'.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394671/south-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "lower on the route (the short aid section) anchors have been a mix of",
+     "replace": "the short aid block just below the top is protected by a mix of",
+     "id": "wa_south_face_2",
+     "fact": "Location of the A0 aid section"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      1
+     ],
+     "find": "with an aging hanger lower down",
+     "replace": "with an aging hanger on the short summit aid block",
+     "id": "wa_south_face_2",
+     "fact": "Location of the A0 aid section"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Burgundy Col elevation (7,770 vs ~7,950 ft)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoint, approach and approach variant give 7,770 ft; itinerary.days[0].objective says ~7,950 ft. Published figures range from about 7,720 to 7,950 ft and no two independent topo-derived sources were found to agree. A topo-derived col elevation would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "First-ascent year",
+   "verdict": "fixed",
+   "correct_value": "1952 (Beckey, McGowan, Wilde) for the spire; the rappel note's '1989 first-ascent note' is a source citation (the 1988 South Face first ascent), not an FA date for this route.",
+   "evidence": "The 1953 AAJ account records the September 1952 first ascent of Pernod by Don Wilde, Dick McGowan and Fred Beckey, with bolts placed from a shoulder-stand to reach the summit. The South Face was first climbed July 10, 1988 (Jewitt, Leight, Waters), which is the note the rappel text cited. The rappel note's parenthetical is a source citation and is removed; fa and overview are unchanged.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "https://www.mountainproject.com/route/119394671/south-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "Best-documented account (a South Face description plus the 1989 first-ascent note): 1 rappel",
+     "replace": "1 rappel",
+     "id": "wa_pernod_spire_standard",
+     "fact": "First-ascent year"
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "The descent reaches the névé/glacier edge on the east side; brief snow travel back to Burgundy Col.",
+   "evidence": "The 1952 first-ascent account describes long rappels from the notch 'to the glacier below'. The Direct West Face description of the Pernod descent raps east to the Pernod-Chablis notch and down slabs 'to the neve below', then trends north around Chianti up to Burgundy Col. So the east-side descent does touch glacier/névé; the 'no glacier travel' line was the outlier against hazards[1] and descent_text.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "https://www.mountainproject.com/route/108106040/direct-west-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; the Wine Spires are dry granite towers reached via a talus/scramble approach",
+     "value": "Minor - no glacier is climbed, but the east-side rappels end on the snow and névé at the edge of the Silver Star Glacier basin, which is crossed on the way back to Burgundy Col; watch for moats along the rock late in the season.",
+     "id": "wa_pernod_spire_standard",
+     "fact": "Glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Whether June is in season",
+   "verdict": "fixed",
+   "correct_value": "Season Jun-Sep with late June as the early edge; best mid-July-September.",
+   "evidence": "A Washington Pass climbing guide gives the season as 'latish June through latish September' with snow and ice expected early; a Wine Spires page gives mid-June to late September with July-September best. June is the marginal early edge, not outside the season, so the guidance line is reworded; season chip and best_season stay.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "Outside the established season - lingering snow",
+     "replace": "The early edge of the season - lingering snow",
+     "id": "wa_pernod_spire_standard",
+     "fact": "Whether June is in season"
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Last water",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The bench is the last flowing water; the col offers only snow to melt. 'Last reliable water' and 'snow for water' at the col describe different things and do not conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Burgundy Col elevation (7,770 vs ~7,950 ft)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[1].note gives 7,770 ft; itinerary.days[0].objective and totalNote give ~7,950 ft. Published figures range from about 7,720 to 7,950 ft; no two independent topo-derived sources found. A topo-derived col elevation would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Day-1 gain to the bench",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pullout ~4,250 ft to creek ~4,080 ft to bench ~6,460-6,500 ft is ~2,400 ft, so 1,100 is too low; but raising day 1 breaks the itinerary total that equals gain_ft (3,400), and no source states the day split or the summit-day gain. A source stating car-to-car gain for this route would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Water at the bench",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dissent is bivy[1].water vs the approach. Sources split by water source: the creek/bench water is described as limited or non-existent late season, while a spring ten minutes north of camp is reported 'very reliable' and running in mid-September. Both statements have support; camp card owned by the camping clean-up; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/forum/topic/114587941/water-situation-near-bench-camp-below-burgundy-col-in-wa-pass",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Role of the fixed-nut ridge anchor",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent party's description says the narrow ridge is blocked, they 'rapped down to benches below the summit', and there are no fixed anchors 'except for the rap anchor on the summit ridge where we left a couple nuts' — which supports pitch_detail (mid-route rap) over rappel_detail[0] (descent rap 1). Only this one source exists; rappel_detail, descent_text and an approach-variant hazard repeat the ambiguous wording, so there is no internal majority either. A second account of the route would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/108106040/direct-west-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Cam range",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "2-3 small cams (green Alien size) up to a #4 Camalot",
+   "evidence": "The route page lists '2-3x green alien - #4 camalot' and two 60 m ropes. On the row, gear, rack, detailed_rack and pro_tips all agree on 2-3 small cams through #4; sling_rack.cams was the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/108106040/direct-west-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "0.3-3 in single rack",
+     "value": "2-3 small cams (green Alien size) up to a #4 Camalot",
+     "id": "wa_direct_west_face",
+     "fact": "Cam range"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,598 @@
+{
+  "zones": [
+    {
+      "zone": "staircase-sawtooth",
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+        "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first.",
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+      }
+    },
+    {
+      "zone": "stehekin-agnes",
+      "overnightPermit": {
+        "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+        "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    },
+    {
+      "zone": "stevens-pass-tye",
+      "overnightPermit": {
+        "what": "Free self-issue wilderness permit (Henry M. Jackson or Alpine Lakes Wilderness)",
+        "where": "Fill one out at the trailhead kiosk.",
+        "url": null
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_mount_cruiser_nw_face_corner",
+      "main": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Flapjack Lakes is the clear base; Black and White Lakes is a side-trail overflow camp, not on the line. The Staircase trails are closed after the Bear Gulch Fire."
+    },
+    {
+      "id": "wa_mount_cruiser_south_corner",
+      "main": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Flapjack Lakes is the standard base for Needle Pass and the South Corner; Black and White Lakes kept as the overflow camp, a judgment call."
+    },
+    {
+      "id": "wa_mount_duckabush_standard",
+      "main": [
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush"
+      ],
+      "onRoute": [
+        "10-Mile Camp",
+        "Upper Duckabush Camp"
+      ],
+      "drop": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out",
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Belview and the Six Ridge camps — for Mount Olson only",
+        "Marmot Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Marmot Lake is the standard high camp; the zone Upper Duckabush entry and the Marmot Lake waypoint are duplicates of kept entries."
+    },
+    {
+      "id": "wa_mount_hopper_standard",
+      "main": [
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper"
+      ],
+      "onRoute": [
+        "Camp Pleasant",
+        "Nine Stream Camp",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head"
+      ],
+      "drop": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out",
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The Hopper way trail leaves the main trail near First Divide, so Home Sweet Home is the base from either side; the Skokomish valley camps are on the historic line and Upper Duckabush on the Duckabush line the route now describes. Zone copies of Camp Pleasant and Nine Stream dropped as duplicates of the waypoints."
+    },
+    {
+      "id": "wa_mount_lincoln_harniss_chute",
+      "main": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Flapjack Lakes base as the standard Lincoln route."
+    },
+    {
+      "id": "wa_mount_lincoln_standard",
+      "main": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only",
+        "Flapjack Lakes basin"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Flapjack Lakes basin is a second entry for the same lakes, dropped as a duplicate of the zone entry."
+    },
+    {
+      "id": "wa_mount_olson_standard",
+      "main": [
+        "Lake Sundown"
+      ],
+      "onRoute": [
+        "Belview and the Six Ridge camps — for Mount Olson only",
+        "Tarn below Olson's summit block"
+      ],
+      "drop": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out",
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lake Sundown is the usual base; unsure exactly where the Belview/Six Ridge camps fall relative to the Olson way, kept as on-route since they are on the same ridge trail."
+    },
+    {
+      "id": "wa_mount_steel_first_divide",
+      "main": [
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper"
+      ],
+      "onRoute": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb"
+      ],
+      "drop": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Home Sweet Home is the standard camp for Steel from the Skokomish side; Camp Pleasant and Nine Stream are on the valley trail. Upper Duckabush is on the far side of First Divide, off this line."
+    },
+    {
+      "id": "wa_mount_steel_standard",
+      "main": [
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush"
+      ],
+      "onRoute": [
+        "Ten-Mile Camp",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head"
+      ],
+      "drop": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out",
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Belview and the Six Ridge camps — for Mount Olson only",
+        "Marmot Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Marmot Lake is the standard high camp; the Marmot Lake waypoint duplicates it and carries a doubtful 4,921 ft elevation (the lake is near 4,400 ft)."
+    },
+    {
+      "id": "wa_the_fin_scramble",
+      "main": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only",
+        "Flapjack Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Flapjack Lakes waypoint dropped as a duplicate of the zone entry."
+    },
+    {
+      "id": "wa_the_horn_scramble",
+      "main": [
+        "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+        "Black and White Lakes — the fallback when Flapjack is booked out"
+      ],
+      "onRoute": [
+        "Spike Camp junction"
+      ],
+      "drop": [
+        "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+        "Nine Stream — last low camp before the First Divide climb",
+        "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+        "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+        "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+        "Belview and the Six Ridge camps — for Mount Olson only",
+        "Flapjack Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Spike Camp sits at the Flapjack Lakes trail fork on the approach; Flapjack waypoint is a duplicate of the zone entry."
+    },
+    {
+      "id": "wa_agnes_mountain_west_route",
+      "main": [
+        "Fivemile Camp, Agnes Creek",
+        "West Fork Agnes Creek — the bivy under Agnes Mountain"
+      ],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain"
+      ],
+      "drop": [
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Fivemile is the junction camp for the West Fork and the West Fork bivy is the working camp; very few recent parties, and some approach Agnes from Swamp Creek and the south instead."
+    },
+    {
+      "id": "wa_dark_peak_dark_glacier_route",
+      "main": [
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge"
+      ],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+        "Fivemile Camp, Agnes Creek"
+      ],
+      "drop": [
+        "West Fork Agnes Creek — the bivy under Agnes Mountain",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain"
+      ],
+      "add": [
+        {
+          "name": "Upper Swamp Creek basin",
+          "type": "bivy",
+          "elev": 5100,
+          "capacity": "A few tent spots on heather and rock",
+          "water": "Snowmelt and streams in the basin",
+          "permit": "Same overnight permit as the rest of the trip",
+          "notes": "Upper basin reached by the abandoned Swamp Creek trail and a Class 2-3 climb left of the waterfall. It puts the Dark Glacier in view and shortens the summit day. Brushy and slow to reach.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Swamp Creek Camp is the standard base; the upper basin is the usual high camp but its elevation is approximate."
+    },
+    {
+      "id": "wa_flora_mountain_southwest_slope",
+      "main": [],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip"
+      ],
+      "drop": [
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+        "Fivemile Camp, Agnes Creek",
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+        "West Fork Agnes Creek — the bivy under Agnes Mountain",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain"
+      ],
+      "add": [
+        {
+          "name": "Bird Creek Camp",
+          "type": "camp",
+          "elev": 4200,
+          "capacity": "About three tents and a cook area",
+          "water": "Bird Creek, beside camp",
+          "permit": "Same overnight permit as the rest of the trip",
+          "notes": "The only designated camp on the upper Devore Creek trail, just before the Bird Creek crossing. Parties base here and climb Flora in a long day, 4 to 5 hours up. Higher camps are possible in the larch basin around 6,500 to 6,900 ft.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Real base is Bird Creek Camp on the Devore Creek trail, which was missing; its 4,200 ft elevation comes from one description only. The Company Creek entry describes a different approach."
+    },
+    {
+      "id": "wa_mcgregor_mountain_scramble",
+      "main": [
+        "Heaton Camp",
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain"
+      ],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip"
+      ],
+      "drop": [
+        "Fivemile Camp, Agnes Creek",
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+        "West Fork Agnes Creek — the bivy under Agnes Mountain",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Heaton Camp is the standard high camp and High Bridge the staging camp."
+    },
+    {
+      "id": "wa_mount_lyall_south_route",
+      "main": [
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge"
+      ],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+        "Fivemile Camp, Agnes Creek"
+      ],
+      "drop": [
+        "West Fork Agnes Creek — the bivy under Agnes Mountain",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+        "Holden Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Swamp Creek Camp is the base; Holden Lake is on the Holden side under Bonanza and does not serve this approach."
+    },
+    {
+      "id": "wa_needle_peak_north_ridge",
+      "main": [
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge"
+      ],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+        "Fivemile Camp, Agnes Creek"
+      ],
+      "drop": [
+        "West Fork Agnes Creek — the bivy under Agnes Mountain",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Swamp Creek Camp is the base; the ridge has no reliable water for a high camp."
+    },
+    {
+      "id": "wa_needle_peak_south_route",
+      "main": [
+        "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge"
+      ],
+      "onRoute": [
+        "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+        "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+        "Fivemile Camp, Agnes Creek",
+        "Ridgeline camp above 5,400 ft"
+      ],
+      "drop": [
+        "West Fork Agnes Creek — the bivy under Agnes Mountain",
+        "Company Creek and Hilgard Pass — the lower-valley approach to Flora Mountain",
+        "Swamp Creek Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Swamp Creek Camp waypoint dropped as a duplicate of the zone entry; the ridgeline spot is dry."
+    },
+    {
+      "id": "wa_lichtenberg_mountain_se_route",
+      "main": [
+        "Lake Valhalla"
+      ],
+      "onRoute": [
+        "Smithbrook trailhead and Union Gap"
+      ],
+      "drop": [
+        "Lichtenwasser Lake",
+        "Skyline Lake",
+        "The basin between Tye Peak and Spinnaker Peak",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day climb; Lake Valhalla is the camp on this line. Lichtenwasser Lake serves the separate fishing-path approach and was dropped."
+    },
+    {
+      "id": "wa_lichtenberg_mountain_west_face_west_rib",
+      "main": [
+        "Lake Valhalla"
+      ],
+      "onRoute": [
+        "Smithbrook trailhead and Union Gap"
+      ],
+      "drop": [
+        "Lichtenwasser Lake",
+        "Skyline Lake",
+        "The basin between Tye Peak and Spinnaker Peak",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The Lichtenhorn stands over Lake Valhalla, the natural camp; unsure this rarely climbed line is ever done overnight."
+    },
+    {
+      "id": "wa_mount_mccausland_n_route",
+      "main": [
+        "Lake Valhalla"
+      ],
+      "onRoute": [
+        "Smithbrook trailhead and Union Gap"
+      ],
+      "drop": [
+        "Lichtenwasser Lake",
+        "Skyline Lake",
+        "The basin between Tye Peak and Spinnaker Peak",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day trip; Lake Valhalla is the only camp on the line."
+    },
+    {
+      "id": "wa_sky_mountain_s_route",
+      "main": [
+        "Skyline Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lake Valhalla",
+        "Lichtenwasser Lake",
+        "Smithbrook trailhead and Union Gap",
+        "The basin between Tye Peak and Spinnaker Peak",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Skyline Lake is outside the wilderness; no permit is needed to camp there.",
+        "url": null
+      },
+      "note": "Skyline Lake is the obvious and only camp."
+    },
+    {
+      "id": "wa_slippery_slab_tower_ne_face",
+      "main": [
+        "Trap Lake"
+      ],
+      "onRoute": [
+        "Surprise Lake and Glacier Lake"
+      ],
+      "drop": [
+        "Lake Valhalla",
+        "Lichtenwasser Lake",
+        "Smithbrook trailhead and Union Gap",
+        "Skyline Lake",
+        "The basin between Tye Peak and Spinnaker Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Trap Lake is the usual camp; Surprise and Glacier Lakes lie on the alternate Surprise Creek approach."
+    },
+    {
+      "id": "wa_spinnaker_peak_s_route",
+      "main": [
+        "The basin between Tye Peak and Spinnaker Peak"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lake Valhalla",
+        "Lichtenwasser Lake",
+        "Smithbrook trailhead and Union Gap",
+        "Skyline Lake",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake",
+        "Spinnaker–Tye Basin"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Rarely climbed; the Tye-Spinnaker basin is mainly a winter camp and summer parties likely do it in a day. Waypoint basin entry dropped as a duplicate. Unsure whether the basin is inside a wilderness."
+    },
+    {
+      "id": "wa_thunder_mountain_north_face",
+      "main": [
+        "Trap Lake"
+      ],
+      "onRoute": [
+        "Surprise Lake and Glacier Lake"
+      ],
+      "drop": [
+        "Lake Valhalla",
+        "Lichtenwasser Lake",
+        "Smithbrook trailhead and Union Gap",
+        "Skyline Lake",
+        "The basin between Tye Peak and Spinnaker Peak"
+      ],
+      "add": [
+        {
+          "name": "Thunder Mountain Lakes",
+          "type": "camp",
+          "capacity": "A few small sites on durable ground",
+          "water": "The lakes",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit",
+          "notes": "Lake basin under the granite of Slippery Slab Tower and Thunder Mountain, reached by the unofficial trail south from Trap Pass. The closest camp to the north face. Fragile ground; camp only on rock or bare sites.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Added Thunder Mountain Lakes as the closest camp to the north face (elevation not confirmed, left out); Trap Lake kept as the common camp."
+    },
+    {
+      "id": "wa_tye_peak_e_route",
+      "main": [
+        "Skyline Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lake Valhalla",
+        "Lichtenwasser Lake",
+        "Smithbrook trailhead and Union Gap",
+        "The basin between Tye Peak and Spinnaker Peak",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Skyline Lake is outside the wilderness; no permit is needed to camp there.",
+        "url": null
+      },
+      "note": "Short day scramble from the pass; Skyline Lake is the nearby camp if split."
+    },
+    {
+      "id": "wa_union_peak_se_route",
+      "main": [
+        "Smithbrook trailhead and Union Gap"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lake Valhalla",
+        "Lichtenwasser Lake",
+        "Skyline Lake",
+        "The basin between Tye Peak and Spinnaker Peak",
+        "Trap Lake",
+        "Surprise Lake and Glacier Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "A short day climb from Union Gap; Lake Valhalla is off the line toward McCausland, so dropped."
+    }
+  ],
+  "misassigned": [
+    "wa_flora_mountain_southwest_slope: every listed camp except the Stehekin landing camps serves the Agnes Creek or Company Creek approaches; the route's real base, Bird Creek Camp on the Devore Creek trail, was missing and is added"
+  ]
+}

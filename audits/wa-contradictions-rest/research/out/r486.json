@@ -1,0 +1,38 @@
+{"file": "r486.json", "results": [
+ {"id": "wa_ruth_peak_olympics_scramble", "fact": "Distance and gain to Eleven Bull Basin", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Only one independent source gives the Sol Duc-to-Eleven Bull Basin figures: a Bailey Range Traverse trip report describing a single first day of about 15 miles and nearly 6,000 ft to Eleven Bull Basin (matching the approach text). A 2011 report gives about 11 miles and ~5,000 ft to Mount Carrie's summit, which is a different endpoint. No second source states the camp distance or gain, so neither the waypoint's 12 mi nor the itinerary's 4,200 ft can be confirmed or refuted.",
+  "sources": ["https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse", "https://www.turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth"],
+  "patches": []},
+ {"id": "wa_ruth_peak_olympics_scramble", "fact": "Total gain framing", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "gain_ft (6541) equals the itinerary day sum, so internally 'each way' reads as wrong; but the only outside figure found (nearly 6,000 ft in one day from Sol Duc to Eleven Bull Basin) suggests the one-way cumulative gain alone approaches 6,000 ft, i.e. the itinerary days may undercount rather than the note overstating. With no route-specific car-to-car total from two sources, neither gain_ft nor the note can be safely changed.",
+  "sources": ["https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse"],
+  "patches": []},
+ {"id": "wa_ruth_peak_olympics_scramble", "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)", "verdict": "fixed",
+  "correct_value": "Heart Lake is about 8 mi from the Sol Duc Trailhead; itinerary days 1 and 5 should be 8 mi, making the itinerary round trip ~31 mi",
+  "evidence": "The trail guide for the Sol Duc River trail gives 8.0 mi to Heart Lake and 8.4 mi to the High Divide; a separate trail-distance guide gives 7.85 mi to Heart Lake, matching the stored waypoint. The itinerary's 9 mi for the Heart Lake leg (days 1 and 5) is the outlier. The Heart Lake-to-Eleven Bull leg (itinerary 6 mi vs waypoints 4.15 mi) remains unsourced and is left unchanged (see the unresolved Eleven Bull Basin item).",
+  "sources": ["https://www.wta.org/go-hiking/hikes/sol-duc-river", "https://www.protrails.com/trail/842/olympic-national-park-heart-lake"],
+  "patches": [
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)", "op": "set", "column": "itinerary", "path": ["days", 0, "miles"], "expect": 9, "value": 8},
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)", "op": "set", "column": "itinerary", "path": ["days", 4, "miles"], "expect": 9, "value": 8},
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "roughly 33-mile round trip", "replace": "roughly 31-mile round trip"}
+  ]},
+ {"id": "wa_ruth_peak_olympics_scramble", "fact": "Wilderness permit method", "verdict": "fixed",
+  "correct_value": "No self-registration at trailheads; Bailey Range cross-country permits are arranged by phone with the Wilderness Information Center, trail camps via Recreation.gov",
+  "evidence": "The park's wilderness reservations page states there are no longer paper self-registration permits at trailheads and that cross-country trips such as the Bailey Range must be booked by contacting the WIC at (360) 565-3100. The park fund's permit guide likewise states self-registration permits at trailheads are not available. The trailhead waypoint's 'self-register here' is wrong; the permit column and itinerary.cal imply Recreation.gov covers the whole trip, which it does not.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm", "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"],
+  "patches": [
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Wilderness permit method", "op": "replace_text", "column": "waypoints", "path": [0, "note"], "find": "self-register for a wilderness camping permit here before starting up the Sol Duc River Trail.", "replace": "overnight permits are not issued here, so arrange the wilderness camping permit in advance before starting up the Sol Duc River Trail."},
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Wilderness permit method", "op": "replace_text", "column": "permit", "path": [], "find": "all overnight wilderness stays require a wilderness camping permit via Recreation.gov.", "replace": "all overnight wilderness stays require a wilderness camping permit; trail camps are booked on Recreation.gov, while cross-country zones such as the Bailey Range are arranged by phone with the Wilderness Information Center."},
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Wilderness permit method", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "requires a wilderness permit (recreation.gov quota) for the Sol Duc/High Divide corridor;", "replace": "requires a wilderness permit for the Sol Duc/High Divide quota corridor, and a trip continuing cross-country into the Bailey Range is arranged by phone with the Wilderness Information Center;"}
+  ]},
+ {"id": "wa_ruth_peak_olympics_scramble", "fact": "Sol Duc Road winter closure", "verdict": "fixed",
+  "correct_value": "Closed typically mid-November to mid-March",
+  "evidence": "A park visiting guide states the Sol Duc road typically closes from mid-November through mid-March depending on snowfall. A park news release records the Sol Duc road open and the Hot Springs resort opening for the season on March 23, and the campground's own season runs late March to late October — all inconsistent with a gate shut until May.",
+  "sources": ["https://wereintherockies.com/when-to-visit-olympic/", "https://www.nps.gov/olym/learn/news/spring-update-on-park-roads-trails-and-facilities.htm", "https://www.recreation.gov/camping/campgrounds/251906"],
+  "patches": [
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Sol Duc Road winter closure", "op": "replace_text", "column": "access", "path": ["closures"], "find": "typically November-May depending on snowpack", "replace": "typically mid-November to mid-March depending on snowpack"},
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Sol Duc Road winter closure", "op": "replace_text", "column": "road", "path": ["seasonalGate"], "find": "typically November through May depending on snowpack", "replace": "typically mid-November through mid-March depending on snowpack"}
+  ]}
+]}

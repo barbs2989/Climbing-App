@@ -1,0 +1,96 @@
+{
+ "id": "wa_mount_la_crosse_scramble",
+ "name": "Mount La Crosse Scramble",
+ "approach_variants": [
+  {
+   "name": "Duckabush River Trail to La Crosse Pass",
+   "notes": "A long valley walk to the La Crosse Pass junction, then a steep switchbacking climb of roughly three thousand feet in about a mile to the pass — loose and eroded in places and considerably harder coming down on tired legs. The West Fork Dosewallips reaches the same pass on a gentler grade and is the kinder exit if you are through-hiking.",
+   "season": "Mid-July to September",
+   "hazards": [
+    "No water at the pass or above it — carry from a creek far below",
+    "Open, sparsely cairned country that is easy to lose in fog",
+    "Snow on north-facing slopes and gullies into early July",
+    "Loose talus that is more hazardous descending than climbing",
+    "Bear canisters required and a self-rescue distance measured in days"
+   ],
+   "baseFinding": "La Crosse Pass is a bald, waterless saddle on the Duckabush–Dosewallips divide, with maintained trail crossing it and dropping steeply away on both sides — there is nothing else like it for miles and you cannot arrive at it by accident. Leave the tread at the top of the pass and head north onto open heather and talus. There is no gully mouth or rock step to find here: the climb begins straight off the trail, so the thing to identify is the correct ridge rather than a base. The line is the broad crest running north out of the saddle, and once the heather benches give way to talus that crest is the handrail all the way to the top. Two things pull people the wrong way. White Mountain stands less than a mile southwest and is the more obvious summit from the pass. And the Anderson massif filling the northern skyline is much further off than it looks, so do not use it as your aiming point. In early summer lingering snowfields bury the ground around the pass and the tread is routinely lost on the way back down — take a bearing off the saddle before you leave it."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.685162,
+   "lng": -123.039683,
+   "elev": 270,
+   "name": "Duckabush Trailhead",
+   "note": "Northwest Forest Pass or $5 day-use fee required at this vault-toilet trailhead; overnight parties need an Olympic NP wilderness permit once the trail crosses the park boundary.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 about 15 miles south of Quilcene, turn west at the Duckabush Recreation Area sign onto Duckabush Road (FR 2510); the pavement ends at 3.6 miles. About 6 miles in, pass the horse parking area and bear right uphill onto spur FR 2510-060, reaching the trailhead in 0.1 mile. A Northwest Forest Pass or day-use fee is required to park."
+  },
+  {
+   "lat": 47.69273,
+   "lng": -123.10875,
+   "elev": 1100,
+   "name": "Five Mile Camp",
+   "note": "Established riverside camp along the Duckabush River Trail; reliable river water, treat before drinking.",
+   "type": "Campsite",
+   "distMi": 5,
+   "directions": "Follow the Duckabush River Trail up the valley, climbing over Little Hump and then the steeper Big Hump at about 4.2 miles before dropping back to the river at Five Mile Camp."
+  },
+  {
+   "lat": 47.676317,
+   "lng": -123.201467,
+   "elev": 1400,
+   "name": "Ten Mile Camp",
+   "note": "Last established campsite before the trail turns south for La Crosse Pass; sits at 1,400 ft with river water nearby.",
+   "type": "Campsite",
+   "distMi": 10.7,
+   "directions": "Continue up the Duckabush River Trail, entering Olympic National Park at about 6.2 miles, on a gentle grade along the river to Ten Mile Camp."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2600,
+   "name": "La Crosse Pass Trail Junction",
+   "note": "Duckabush River Trail forks here onto the La Crosse Pass Trail, which immediately switchbacks steeply up the valley wall toward the pass.",
+   "type": "Junction",
+   "distMi": 16.7,
+   "directions": "Continue up the Duckabush River Trail through the upper valley, which can be brushy with blowdown early in the season, to the signed junction where the La Crosse Pass Trail branches north and immediately begins switchbacking up the valley wall."
+  },
+  {
+   "lat": 47.6858925,
+   "lng": -123.2907027,
+   "elev": 5566,
+   "name": "La Crosse Pass",
+   "note": "No water at the pass (dry for miles either direction); leave the maintained trail here and start the cross-country climb north across heather and talus toward the summit ridge.",
+   "type": "Junction",
+   "distMi": 23.1
+  },
+  {
+   "lat": 47.684773,
+   "lng": -123.312194,
+   "elev": 6417,
+   "name": "Mount La Crosse",
+   "note": "True summit reached via open heather benches and talus on the broad ridge crest, Class 2-3; best climbed mid-July through September before snow returns.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Trail",
+   "notes": "Duckabush Trailhead to the LaCrosse Pass Trail junction via Duckabush River Trail #803, roughly 15-16 miles with about 3,600 ft of gain over the Little/Big Hump benches.",
+   "pitch": "Approach"
+  },
+  {
+   "grade": "Class 1",
+   "notes": "LaCrosse Pass Trail over the Duckabush/West Fork Dosewallips divide, about 6.4 miles; from the Duckabush side it climbs roughly 3,000 ft to the pass.",
+   "pitch": "Pass crossing"
+  },
+  {
+   "grade": "Class 2",
+   "notes": "Off-trail talus and heather ridge running roughly a mile south from near LaCrosse Pass to the summit; no roped climbing, straightforward route-finding in good visibility.",
+   "pitch": "Summit scramble"
+  }
+ ]
+}

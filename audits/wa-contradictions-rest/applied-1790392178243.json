@@ -1,0 +1,266 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_ridge_8",
+   "column": "rappels",
+   "path": [],
+   "fact": "Whether a single 60 m rope makes the south-face rappel"
+  },
+  {
+   "id": "wa_east_ridge_8",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Whether a single 60 m rope makes the south-face rappel"
+  },
+  {
+   "id": "wa_east_ridge_8",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    2
+   ],
+   "fact": "Whether a single 60 m rope makes the south-face rappel"
+  },
+  {
+   "id": "wa_east_ridge_8",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Whether a single 60 m rope makes the south-face rappel"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "beta",
+   "path": [],
+   "fact": "Direction from Pinnacle Saddle to the summit gully"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "North vs south gully"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "North vs south gully"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "North vs south gully"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Pinnacle's rank in the Tatoosh Range"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_ridge_8",
+   "before": {
+    "rappels": "1 rappel from the Pitch 2 bench down the south face (rope-stretching; a 60m rope may not reach the ground depending on anchor placement)",
+    "detailed_rack": "5-8 double-length runners; 2-4 small-to-mid cams (~0.4-0.75in); a few nuts; single rope (a 60m may not reach the true summit from the pitch-2 anchor depending on rope length and placement).",
+    "approach_variants": [
+     {
+      "name": "Pinnacle Saddle, then east behind Pinnacle to the Castle-Pinnacle col",
+      "notes": "From the Reflection Lakes trailhead, follow the maintained Pinnacle Saddle Trail 1.3 miles and about 1,000-1,050 ft to the Pinnacle-Plummer saddle. From there, continue on unmaintained boot path east and behind Pinnacle toward Castle Peak to reach the Castle-Pinnacle col. That segment typically takes roughly 2 to 3 hours and about 1,500 ft of gain.\n\nThe east ridge rises directly from the col. Pitch 1 scrambles mostly fourth-class ground to a belay ledge at a large dead tree. Pitch 2 is the crux: blocky mid-fifth climbing with an exposed traverse to a sandy belay bench carrying a fixed rappel anchor down the south face. Pitch 3 is mellow ground to the true summit, often simul-climbed or soloed.\n\nLoose rock and scree are a serious and repeatedly noted concern throughout.\n\nDescent is either the rappel off the pitch-2 bench down the south face, or over the summit and down the standard south-side scramble to Pinnacle Saddle — the second is only sensible if the leader already knows that line.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Loose rock and scree throughout — a serious and repeatedly noted concern on this route",
+       "An old, unreliable piton at the pitch-2 crux traverse",
+       "A rope-stretching rappel that a 60 m rope may not complete",
+       "Exposure on the pitch-2 traverse with sparse natural protection",
+       "Rockfall onto the col and onto anyone approaching The Castle from the same place"
+      ],
+      "baseFinding": "THE BASE IS THE CASTLE-PINNACLE COL, NOT PINNACLE SADDLE, AND THE TWO ARE HALF A MILE AND ONE PEAK APART. The maintained trail ends at the saddle; you keep going EAST, on boot path, behind Pinnacle, toward The Castle.\n\nWHEN YOU ARE AT THE COL YOU CANNOT MISS THE ROUTE: THE EAST RIDGE RISES DIRECTLY FROM IT. If you are at a col and no defined ridge crest goes up from it toward Pinnacle, you are at the wrong col.\n\nTHE CONFIRMATIONS ARE OBJECTS, IN ORDER, AND EACH IS ONE OF A KIND ON THIS ROUTE:\nPITCH 1 — mostly fourth-class scrambling ending at a belay ledge AT A LARGE DEAD TREE. One tree, one ledge. If you have run out a full pitch and found no tree, you are not on the ridge.\nPITCH 2 — blocky mid-fifth climbing with an exposed traverse, an OLD PITON partway up, ending on a SANDY BELAY BENCH with a FIXED RAPPEL ANCHOR dropping the south face. Piton, then sand, then an anchor, in that order. Treat the piton as a backup clip and not as protection.\nPITCH 3 — mellow ground to the true summit.\n\nTHE NEGATIVE THAT MATTERS AT THE COL, BECAUSE TWO PEAKS SHARE IT: The Castle's own route also starts here. IF WHAT IS IN FRONT OF YOU IS A CRACK-CHIMNEY SYSTEM ON A ROCK FLANK RATHER THAN A DEFINED RIDGE CREST, YOU ARE FACING THE CASTLE AND YOU NEED TO TURN AROUND — Pinnacle is the other side of the col.\n\nTHE SECOND NEGATIVE, FOR PARTIES WHO CAME UP THE PEAK'S OTHER LINE BEFORE: this route does not start from Pinnacle Saddle and does not touch the south-face chute. If you are on scree below the south face you are on the scramble route.\n\nROPE PLANNING AS PART OF THE FINDING: the rappel off the pitch-2 bench is rope-stretching, and a 60 m rope may not reach the ground depending on where the anchor sits. Know that before you commit to it as your descent."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "before": {
+    "beta": "From Pinnacle-Plummer saddle, scramble west/southwest up obvious gullies with multiple line options. Stay on most-traveled route for least loose rock. Route-finding is straightforward but exposure increases with altitude. Final push to summit is the steepest and most difficult section, with some variations described as low 5th class.",
+    "itinerary": {
+     "cal": "Snow can linger in the gully well into early summer, so an ice axe (and caution on the steep, exposed sections) is worth carrying into July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A short, popular half-day outing from Reflection Lake: a well-marked trail switchbacks 1.3 miles up to Pinnacle Saddle, then a class 2 (with a few class 3 moves) scramble path climbs the gully directly to the summit. Most parties are back at the car in 3-5 hours, often with a summit lunch stop.",
+       "hours": 4,
+       "miles": 2.6,
+       "title": "Car-to-car scramble",
+       "gainFt": 1700,
+       "lossFt": 1700,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave Reflection Lake trailhead",
+         "detail": "Small paved pullout lot fills early on weekends."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Reach Pinnacle Saddle",
+         "detail": "1.3 mi, ~1,050 ft gain on maintained switchbacking trail between Pinnacle and Plummer Peaks."
+        },
+        {
+         "time": "+1:15",
+         "label": "Start the gully scramble",
+         "detail": "Climber's path up loose rock/scree gully; mostly class 2 with a few class 3 exposed moves near the top."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Summit (6,562 ft)",
+         "detail": "Views of Rainier, the rest of the Tatoosh Range, and Mt Adams; many parties have it to themselves."
+        },
+        {
+         "time": "+2:30",
+         "label": "Begin descent",
+         "detail": "Reverse the gully and trail back to Pinnacle Saddle, then down to the trailhead."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Pinnacle Peak via Pinnacle Saddle and the North/South Gully"
+      }
+     ],
+     "totalNote": "A short single-day car-to-car scramble: about 2.6 miles round trip with roughly 1,700 ft gain, typically 3-5 hours including the class 2-3 gully above Pinnacle Saddle."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate — roughly 3 miles round trip and ~1,050 ft to the saddle, plus additional scrambling elevation to the true summit; a fit hiker in normal trail shape is sufficient",
+      "packWeight": "Light daypack, ~10-20 lbs (water, layers, helmet); no overnight or technical rack needed"
+     },
+     "approachTime": "~1-1.5 hrs on trail from Reflection Lakes to the saddle, plus 30-45 min of scrambling to the summit",
+     "requiredSkills": [
+      "class 3-4 scrambling on loose/exposed rock",
+      "basic routefinding above the saddle (gully is not signed/maintained)",
+      "comfort turning back or waiting out afternoon thunderstorms",
+      "early-season snow/step-kicking competence if attempting before the gully melts out"
+     ],
+     "experienceLevel": "Intermediate scrambler — comfortable and confident on unroped class 3-4 terrain with real exposure; the saddle approach itself is an easy trail, so the skill bar is specifically for the summit push through the North Gully"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Gully typically melting out through the month; conditions improve steadily but can still hold patchy snow early July",
+       "status": "good"
+      },
+      "June": {
+       "reason": "North-facing gully commonly still holds snow this early; the snow gully is hazardous before it melts out, and avalanche/slip potential is elevated",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Peak dry-rock conditions, most reliable month for the scramble",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still generally dry and stable, though shorter days and earlier weather turnover begin",
+       "status": "good"
+      }
+     }
+    },
+    "gain_ft": 1050,
+    "waypoints": [
+     {
+      "lat": 46.7683,
+      "lng": -121.7314,
+      "elev": 4870,
+      "name": "Reflection Lakes Trailhead",
+      "note": "South side of Stevens Canyon Road at the Reflection Lakes parking pullouts; Mount Rainier NP entrance fee applies, no water at the lot.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, at about 4,860 ft. It is a small paved pullout lot and it fills early on weekends, so plan an early arrival. A Mount Rainier National Park entrance fee applies, and there is no water at the lot, so fill up before you get here. The trail is signed but unnumbered and starts directly across Stevens Canyon Road from the parking. When the road is snow-gated, winter parties start instead from the Narada Falls pullout."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5350,
+      "name": "Seasonal Stream Crossing",
+      "note": "Small seasonal stream crosses the trail; often dry by late summer so don't rely on it for resupply.",
+      "type": "Water",
+      "distMi": 0.6
+     },
+     {
+      "lat": 46.757321,
+      "lng": -121.733304,
+      "elev": 5600,
+      "name": "Cliff Bands Below Trail",
+      "note": "Trail runs directly beneath exposed cliff bands here; watch for rockfall and loose debris, especially if goats or other hikers are above.",
+      "type": "Hazard",
+      "distMi": 0.9
+     },
+     {
+      "lat": 46.757782,
+      "lng": -121.732663,
+      "elev": 5920,
+      "name": "Pinnacle Saddle",
+      "note": "Maintained NPS trail ends at this 5,920-ft saddle between Pinnacle and Plummer Peaks; unmarked climber's path to the summit gully begins on the south side.",
+      "type": "Junction",
+      "distMi": 1.3
+     },
+     {
+      "lat": 46.757797,
+      "lng": -121.732683,
+      "elev": 6150,
+      "name": "Base of Summit Gully",
+      "note": "Climber's path traverses goat trails and loose scree around the peak's south side to reach the start of the class 3-4 ascent gully.",
+      "type": "Junction",
+      "distMi": 1.5
+     },
+     {
+      "lat": 46.757517,
+      "lng": -121.733062,
+      "elev": 6400,
+      "name": "Summit Gully Scramble",
+      "note": "NPS warns this is a precipitous scramble on loose, unstable rock; a few class 3 moves carry real exposure, so avoid climbing directly below other parties.",
+      "type": "Hazard",
+      "distMi": 1.7
+     },
+     {
+      "lat": 46.7581647,
+      "lng": -121.7325932,
+      "elev": 6562,
+      "name": "Pinnacle Peak Summit",
+      "note": "True summit and second-highest point in the Tatoosh Range, with sweeping views of Rainier, Adams, and St. Helens.",
+      "type": "Summit",
+      "distMi": 1.9
+     }
+    ]
+   }
+  }
+ ]
+}

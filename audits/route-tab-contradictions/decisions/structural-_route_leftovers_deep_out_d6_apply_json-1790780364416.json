@@ -1,0 +1,444 @@
+{
+ "applied": [
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "area_id": "wa_cinderella_peak",
+   "name": "Twin Sisters Olivine Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": 0,
+   "length_m": 122,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "optional rope for exposed steps"
+   ],
+   "hazards": [
+    "short exposed Class 3-4 steps on steep olivine/dunite slabs",
+    "unmaintained, flagging-only climbers' trail with real route-finding",
+    "log crossing of the Middle Fork Nooksack River — can be difficult or washed out at high water",
+    "loose talus/scree in the Green Creek cirque",
+    "spring avalanche hazard off the nearby 'Mythic Wall' for parties descending on snow"
+   ],
+   "verif": null,
+   "overview": "Cinderella Peak (roughly 6,400-6,500 ft) is a minor summit on the south side of the Green Creek cirque in the Twin Sisters Range, immediately west of Mount Baker and within/adjacent to the Mount Baker Wilderness (Mt. Baker-Snoqualmie National Forest). The Twin Sisters massif is the largest exposed body of dunite/olivine rock in the Western Hemisphere, giving Cinderella and its neighbors (Little Sister, South Twin, Skookum, Jaws' Tooth) their signature reddish, ultra-grippy slabs. The standard route is a long approach via the Elbow Lake Trail and the unmaintained, blue-flagged Green Creek climbers' trail, gaining a saddle near Little Sister and following the connecting ridge onto Cinderella's west ridge for a final Class 3-4 scramble to the summit. Technical alternatives exist for parties wanting a real climb: a North Face route (5.2, Grade II, ~8 pitches) and an East Buttress line have both been climbed and reported. Cinderella is also a common link-up on the 'Green Creek Circuit,' which strings together South Twin, Jaws' Tooth, Skookum, Little Sister and Cinderella into a long (~11-13 mile, ~8,000 ft gain) day.",
+   "beta": "A short but rugged Twin Sisters Range outing combining glacier travel with class 3-4 scrambling on famously high-friction olivine rock. Parties reach the peak via the Green Creek cirque in one long day or with a night in the basin, and climb it either as a stand-alone objective or as part of the longer Green Creek Circuit traverse linking South Sister, Skookum, Little Sister, and Cinderella.",
+   "turnaround": "Set a hard turnaround time based on your slowest team member's pace and current glacier/weather conditions rather than a fixed clock time — the long cross-country approach, glacier crossing, and unbridged river ford make an unplanned late exit especially serious on this route.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "3rd-4th class (unroped scramble)",
+   "ice_grade": null,
+   "gain_ft": 5400,
+   "loss_ft": 5400,
+   "dist_km": 19.31,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "West Ridge",
+   "permit": "No climbing permit; a Northwest Forest Pass or interagency pass is required to park at the Elbow Lake Trailhead.",
+   "comms": null,
+   "descent": "Reverse the scramble.",
+   "obj_haz": [
+    "loose rock (dunite/olivine talus)",
+    "unbridged river crossing",
+    "glacier/crevasse hazard nearby",
+    "routefinding on unmaintained terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.737355,
+     "lng": -121.931444,
+     "elev": 2060,
+     "name": "Elbow Lake Trailhead (FR-38)",
+     "note": "North end of Elbow Lake Trail #697 off Mosquito Lake Rd/FS-38, ~11 mi in; no bridge over the Middle Fork Nooksack near here, so high flows can strand you at the car.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take SR-542 from Bellingham through Deming to Mosquito Lake Road, then turn off onto FS-38 and follow it about 11 miles to the road end. It is gravel and normally in reasonable shape, but the lower Middle Fork Nooksack road has washed out in sections in the past and parties then bike the flat closed miles rather than walk them. Check the current road status before counting on driving to the trailhead."
+    },
+    {
+     "lat": 48.705110924528306,
+     "lng": -121.92848443396227,
+     "elev": 2750,
+     "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+     "note": "First open view of the Twin Sisters Range near a switchback by Hildebrand Creek; the unofficial, sparsely-blazed Green Creek climbers' trail branches off the maintained tread here.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "The trail meets the Middle Fork Nooksack within a few minutes of the car and there is no bridge — it has been gone for decades, and any log that replaces it tends to wash out. The marked ford can be dangerous or impossible at high flow, so most parties use an unofficial crossing about a quarter mile downstream, logs lashed between two boulders. Once across, bushwhack the short distance back up to the Elbow Lake Trail proper and start climbing through old growth. Stay on the maintained tread as it climbs above the Green Creek valley through old-growth forest, roughly a mile and a half from the crossing. Near 2,600 ft the trail swings into the Hildebrand Creek drainage, and it is at a switchback here that the unofficial Green Creek climbers' trail branches off. It is marked only by small blue markers on the trees — they are easy to walk straight past, so start looking for them before you think you need to."
+    },
+    {
+     "lat": 48.70299353584906,
+     "lng": -121.93491201886793,
+     "elev": 2300,
+     "name": "Green Creek crossing",
+     "note": "The climbers' trail reaches Green Creek, which parties ford at the best spot they can find; there is no bridge, and the crossing is harder at high runoff.",
+     "type": "Hazard",
+     "distMi": 2.6
+    },
+    {
+     "lat": 48.69165,
+     "lng": -121.97395,
+     "elev": 6050,
+     "name": "Little Sister saddle",
+     "note": "Col between Little Sister (6,600') and Cinderella Peak gained via boulder fields and scree above the Green Creek cirque; marks the start of Cinderella's west ridge.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Follow the blue-blazed climbers' trail up into the Green Creek cirque; Green Creek runs clear and is the water source along this stretch. Above the trees the path gives out into talus, boulder fields and then loose, unstable scree, with Class 3 rock steps needed to reach the toe of the Green (Sisters) Glacier — route-finding through here is the crux of the approach and the least-loose line has to be hunted for rather than followed. Cross the low-angle glacier, carrying basic glacier gear, to the low notch on the ridge between Cinderella and Little Sister. Gain from the river to the notch runs to several thousand feet, which is why some parties break the trip up with a camp in the basin rather than pushing car-to-car."
+    },
+    {
+     "lat": 48.69240659245283,
+     "lng": -121.96704994339622,
+     "elev": 6150,
+     "name": "West ridge scramble section",
+     "note": "Class 3-4 exposed scrambling on the range's signature red olivine rock, which is grippy but the ridge narrows with real exposure; take care downclimbing if wet.",
+     "type": "Hazard",
+     "distMi": 5.6,
+     "directions": "From the notch climb onto the blunt ridge crest above. The olivine here is exceptionally high-friction on the shaded north aspects and many parties solo it or run the rope, but the crest narrows and the exposure is genuine, and the same rock is far less secure when wet. Do not treat the connecting ridge back toward Little Sister as a traverse option — it is loose enough that the standard practice is to drop to the glacier from this notch instead."
+    },
+    {
+     "lat": 48.69092,
+     "lng": -121.97153,
+     "elev": 6431,
+     "name": "Cinderella Peak",
+     "note": "True summit at the west end of the Green Creek circuit; olivine rock underfoot is among the best scrambling texture in the Cascades.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "The last Class 3-4 steps go on grippy dunite to the small summit block; where a step looks blank, working slightly left or right generally finds a passable line and nothing is sustained. Stay on the crest and the shaded aspects — south-facing rock in this range is markedly chossier and rocks pick up speed fast on it."
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 12,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 12,
+      "note": "Fit parties often do this as one long car-to-car day: Elbow Lake Trail, the Green Creek climbers' trail, the glacier to the Cinderella-Little Sister notch, and the west ridge.",
+      "fromTo": "Bike/hike approach and ridge scramble to the summit",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Trip reports on Twin Sisters outings involving Cinderella describe a minimal rack: a thin rope (e.g. 30m), a small set of nuts/stoppers, small-to-mid-size cams, a few tricams, and slings — enough to protect the low-5th-class North Face pitches or exposed moves on the West Ridge. Many confident scramblers solo or use running belays on the 4th-class ridge itself.",
+   "what_to_bring": [
+    "helmet",
+    "sturdy boots or approach shoes with good friction for grippy olivine rock",
+    "map/compass/GPS track (climbers' trail is flagging-only and easy to lose)",
+    "Northwest Forest Pass for trailhead parking",
+    "optional light rope for exposed steps",
+    "ice axe if snow lingers into early season"
+   ],
+   "pro_tips": [
+    "Often combined with Little Sister given their proximity, or linked into the full 'Green Creek Circuit' (South Twin, Jaws' Tooth, Skookum, Little Sister, Cinderella) for an ~11-13 mile, ~8,000 ft day",
+    "The Green Creek climbers' trail branches off the Elbow Lake Trail near a switchback by Hildebrand Creek — watch for small blue flagging, not cairns",
+    "An alternate unofficial log crossing of the Middle Fork Nooksack exists about 1/4 mile downstream of the main crossing if that log is out",
+    "Parties wanting a real climb rather than a scramble can look at the North Face (5.2, Grade II, ~8 pitches) or East Buttress routes",
+    "Verify Forest Road 38's gate status at Wallace Creek before driving in shoulder season"
+   ],
+   "watch_out": [
+    "exposure on slabs",
+    "flagging-only climbers' trail — easy to lose, especially in fog",
+    "log crossing of the Middle Fork Nooksack can be sketchy at high flow",
+    "long day — plan 10-12+ hours if combining with Little Sister or the full Green Creek Circuit"
+   ],
+   "pro_needs": "The olivine/dunite rock is extremely high-friction (\"velcro-like\"), so natural gear placements hold well; a light trad rack covers the North Face's 5.2 pitches, while the West Ridge is often climbed with minimal or no protection by experienced scramblers.",
+   "best_season": "Roughly August through mid-September is most reliable for a dry scramble, once snow patches on the approach and ridge melt out and the Middle Fork Nooksack log crossing is at low water. Late May-June can offer good corn-snow ski descents off the north bowl, but that requires glacier-travel gear and avalanche awareness per spring trip reports.",
+   "high_point_ft": 6431,
+   "aid_grade": null,
+   "approach": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme). The trail immediately meets the Middle Fork Nooksack River — there is no bridge at the marked crossing, and fording can be dangerous or outright impassable during high water; many parties instead use an unofficial log crossing roughly 1/4 mile downstream from the official ford, made of logs lashed between two boulders. Once across, pick up the Elbow Lake Trail proper and climb through forest for about 1.5 miles to a switchback near Hildebrand Creek, where an unmaintained but well-trodden, blue-blazed 'Green Creek Climber's Trail' splits off to the left into the Green Creek cirque (look closely for the small blue markers — it's easy to walk past). Follow this climber's trail up into the basin; Green Creek itself runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with class 3 rock steps required to reach the toe of the Green Creek (Sisters) Glacier — route-finding through this section is the crux of the approach, and parties should expect to hunt for the least-loose line. Cross the low-angle glacier (crevasse hazard is generally low here but rises later season; carry basic glacier gear) up to the low notch on the ridge between Cinderella and Little Sister, which is the jumping-off point for Cinderella's west ridge/north face. Elevation gain from the river crossing to this notch is substantial — roughly 4,000 ft over about five miles — and fit parties often go car-to-car in one long day, while others split it with a camp in the Green Creek basin.",
+   "descent_text": "Descend the same way you climbed: reverse the short scrambling section of the west ridge back into the easier 'return to hiking' terrain, then downclimb the exposed but high-friction olivine slabs on Cinderella's north side back down to the edge of the Green Creek/Sisters Glacier — parties describe finding a passable line at each small crux by working slightly left or right, nothing sustained. This is a walk-off/downclimb descent with no rappelling required (0 rappels); the extremely grippy dunite/olivine rock that defines the whole Twin Sisters Range makes downclimbing secure even on the steeper steps. Do not attempt to continue along the connecting ridge toward Little Sister — at least one party found that ridgeline dangerously loose (a missile zone) and recommends dropping back down to the glacier from the Cinderella-Little Sister notch rather than traversing it, which is the standard practice. From the glacier, retrace your boot track down through the scree and boulder fields, back onto the Green Creek Climber's Trail, rejoin the Elbow Lake Trail at the Hildebrand Creek switchback, and re-ford (or use the unofficial log crossing of) the Middle Fork Nooksack back to the trailhead.",
+   "bail": "From the ridge, the quickest bail is back down to the Little Sister saddle and the Green Creek climbers' trail rather than continuing any traverse; retreat the same climbers' trail and log crossing to the Elbow Lake Trail.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Climbers' trail, scree/talus, and glacier travel across the Green Glacier to the low notch between Cinderella and Little Sister.",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "4th class",
+     "notes": "West Ridge: blunt, exposed ridge crest on extremely high-friction olivine to the small summit block; many parties solo or use running belays. (The North Face, a separate 3-pitch 5.2 line up the broad face left/south of the glacier, is not part of this scramble route.)",
+     "pitch": "1-2"
+    }
+   ],
+   "itinerary": {
+    "cal": "The Middle Fork Nooksack bridge/log crossing at the start of the Elbow Lake Trail washes out periodically - check recent trip reports before relying on a dry crossing.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Fit parties often do this as one long car-to-car day; others camp in the Green Creek basin. While FS Road 38 is closed by its washout, biking the closed road miles saves the legs. From the trailhead, cross the Middle Fork Nooksack, hike the Elbow Lake Trail through old growth to the Hildebrand Creek switchback, and follow the blue-blazed Green Creek climbers' trail into the cirque, across the low-angle glacier to the Cinderella-Little Sister notch and up the west ridge on grippy olivine rock to the summit. Descend by reversing the route, including re-biking the closed road miles at the end.",
+      "miles": 12,
+      "title": "Bike/hike approach and ridge scramble to the summit",
+      "gainFt": 5400,
+      "lossFt": 5400,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave car, bike the logging road",
+        "detail": "FS Road 38 is closed by a washout at milepost 7, about 4 miles short of the trailhead; biking those closed miles saves time and legs."
+       },
+       {
+        "time": "5:15 AM",
+        "label": "Stash bikes, start Elbow Lake Trail on foot",
+        "detail": "Cross the Middle Fork Nooksack right at the trailhead (no bridge), then climb through old growth above the Green Creek valley about 1.5 mi to the Hildebrand Creek switchback, where the blue-blazed Green Creek climbers' trail branches off."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach the Green Creek cirque",
+        "detail": "Talus, loose scree and Class 3 rock steps lead to the toe of the glacier; cross it to the notch between Cinderella and Little Sister."
+       },
+       {
+        "time": "10:30 AM - 12:00 PM",
+        "label": "Ridge/gully scramble to Cinderella summit",
+        "detail": "Class 3-4 scrambling on solid, high-friction olivine rock; some exposed ridge sections and route-finding around gendarmes."
+       },
+       {
+        "time": "12:00 PM - 3:00 PM",
+        "label": "Reverse the scramble and hike back to bikes",
+        "detail": "Downclimb the ridge, retrace the glacier, the Green Creek climbers' trail and the Elbow Lake Trail."
+       },
+       {
+        "time": "3:00 PM - 4:30 PM",
+        "label": "Bike out to the car",
+        "detail": "Mostly downhill/flat closed-road miles back to the vehicle."
+       }
+      ],
+      "objective": "Summit Cinderella Peak via the west ridge olivine scramble, car-to-car"
+     }
+    ],
+    "totalNote": "A long single push: roughly 11-12 hours car-to-car, ~12 miles and ~5,400 ft of gain, done in a day, as many fit parties do."
+   },
+   "access": {
+    "fees": "Day-use requires a Northwest Forest Pass or equivalent interagency pass; no separate climbing permit or fee for this unmaintained scramble route.",
+    "rules": "Standard Wilderness-adjacent Leave No Trace ethics apply. The Green Creek climbers' trail is unofficial and unmaintained (blue flagging only) — stay on the existing boot path where possible, since the Twin Sisters' exposed olivine (dunite) supports a rare serpentine-adapted plant community.",
+    "permit": "Northwest Forest Pass (or America the Beautiful/interagency annual pass) required to park at the Elbow Lake Trailhead; self-pay iron ranger at the trailhead, or purchase in advance at the Mt. Baker Ranger District office.",
+    "closures": "Forest Road 38 has a seasonal closure gate at Wallace Creek, about 1.3 miles before the Elbow Lake Trailhead, typically shut roughly Dec 1-Jun 15 (exact dates vary by year/snowpack) — and FR 38 is separately closed at milepost 7 by a washout, per a Forest Service alert dated 27 July 2026, which blocks vehicle access to the trailhead entirely. Check MBS National Forest road status before driving. No gated logging-road network on the standard approach.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District (810 SR-20, Sedro-Woolley, WA); the Twin Sisters peaks sit within/immediately adjacent to the Mount Baker Wilderness — not private industrial timberland.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land; no wilderness permit or registration is needed."
+    }
+   },
+   "road": {
+    "name": "Forest Road 38 (Mosquito Lake Road to Elbow Lake Trailhead)",
+    "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead, which is about 11 miles in. Good gravel and paved forest road when open; check the forest's alerts page before driving.",
+    "driveNote": "From Mosquito Lake Road near Deming/Acme, turn east onto FS Road 38 and drive about 11 miles of forest road to the Elbow Lake Trailhead.",
+    "seasonalGate": "Gated at Wallace Creek, about 1.3 miles before the trailhead, roughly Dec 1-Jun 15."
+   },
+   "climate": {
+    "fall": "Rock is dry, but scree/talus becomes looser as lingering summer snow patches melt out; early-season storms and shortening daylight become a factor.",
+    "spring": "Deep, often unstable snowpack on the Green Glacier and approach slopes; avalanche hazard and a high, dangerous Middle Fork Nooksack crossing are significant.",
+    "summer": "Primary climbing season; late July–September usually offers the driest rock and most manageable glacier crossing.",
+    "winter": "Heavy snow, avalanche terrain, and gated/closed access roads make a winter ascent a serious mountaineering undertaking, not a scramble.",
+    "typical": "Maritime North Cascades climate — the Twin Sisters catch heavy orographic precipitation off the Salish Sea and the Mount Baker massif; expect frequent rain/fog even in summer, with lingering snow on north-facing terrain into July.",
+    "bySeason": {
+     "fall": "Often a good, clearer window in September before fall storms arrive; days shorten quickly.",
+     "spring": "Snow-covered; some parties ski or climb corn snow off Cinderella's north bowl in late May-June, but this requires glacier-travel gear and avalanche awareness (including hazard from the nearby Mythic Wall).",
+     "summer": "Main scramble season (Jul-Sep); best rock conditions once approach and ridge snow patches melt out, typically by August.",
+     "winter": "Snowbound and effectively inaccessible; FS Road 38 is gated well below the trailhead."
+    },
+    "forecastZone": "West Slopes North (NWAC)"
+   },
+   "emergency": {
+    "notes": "Bellingham Mountain Rescue Council (volunteer, dispatched by the Whatcom County Sheriff's Office) is the primary SAR resource for the Twin Sisters Range, Mt. Baker, and Mt. Shuksan area — call 911 to activate. Cell coverage is unreliable in the Green Creek cirque, so expect delayed response and consider carrying a satellite communicator.",
+    "county": "Whatcom",
+    "rangerStation": "Mt. Baker Ranger District, 810 SR-20, Sedro-Woolley, WA 98284 — (360) 854-2553",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA — the only hospital in Whatcom County, roughly 1.5-2 hours' drive from the trailhead.",
+    "sheriffDispatch": "911 for emergencies; Whatcom County Sheriff's Office non-emergency line (360) 676-6911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional weekend traffic July-August from parties doing the Green Creek Circuit or Twin Sisters traverse; otherwise rarely climbed",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low - likely fewer than 10-20 parties per season; Cinderella is usually climbed as part of a longer Twin Sisters traverse/circuit rather than as a standalone objective, and trip reports for it specifically are sparse"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long, full approach-plus-summit day (likely 8-12+ miles round trip with significant elevation gain) on a maintained trail, an unmaintained climbers' trail and a glacier to the notch near Little Sister; extra road mileage on foot or bike when FS Road 38 is gated or closed",
+     "packWeight": "Light scrambling pack (roughly 15-25 lb) - helmet and light rack useful for the slabs; plus basic glacier gear for the Green Creek Glacier crossing"
+    },
+    "approachTime": "Long - multi-hour approach via the Elbow Lake Trail, the Green Creek climbers' trail and a glacier crossing to the notch near Little Sister; a full-day objective, more while road closures add mileage",
+    "requiredSkills": [
+     "unroped Class 3-4 scrambling on steep slabs",
+     "route-finding on unmaintained/informal approach terrain",
+     "comfort with exposure on dunite/olivine slabs",
+     "crossing the unbridged Middle Fork Nooksack and basic glacier travel",
+     "self-rescue readiness given remote, low-traffic terrain"
+    ],
+    "experienceLevel": "Experienced scramblers only - comfortable with sustained unroped Class 3-4 travel, route-finding on an unmaintained approach, and self-sufficient remote travel; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Scramble season opens; early-month snow patches possible on shaded slabs, improving through the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow typically still lingers on the ridge and approach ('spring: snow on the ridge; not in season'); generally too early",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Core dry-rock scramble season - most stable conditions for the slabs and approach",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms and shortening days push the range out of season; not covered by the best-season window",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still reliably dry and in-season before fall storms arrive",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime range catching heavy precipitation off Baker; can be wet/socked-in outside the summer window",
+     "probability": "Afternoon thunderstorms/quick weather changes possible in late summer given proximity to Baker"
+    },
+    "exposure": "Real fall exposure on the steep dunite/olivine slabs; a slip on the slabs could mean a long, consequential fall, compounded by the remote, low-traffic setting where help is far away",
+    "avalanche": {
+     "zone": "N/A - summer scramble route; no NWAC forecast zone specifically covers this range/peak",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Low-angle Green Creek (Sisters) Glacier crossed on the way to the Cinderella-Little Sister notch; crevasse hazard is generally low but grows later in the season, and the moat at the glacier margin must be crossed in both directions"
+   },
+   "data_quality": {
+    "gaps": [
+     "Summit elevation is reported inconsistently across sources — 6,431 ft on file vs. roughly 6,480-6,500 ft on Peakbagger/ListsOfJohn — not resolved to one authoritative figure this session; left unchanged rather than guess.",
+     "No verified prominence figure or exact summit GPS coordinates found; Mountain Project lists an approximate area centroid (48.69092, -121.97156), not a confirmed summit fix.",
+     "Round-trip mileage/elevation gain for Cinderella alone (isolated from the full Green Creek Circuit linkup) was not found in available sources.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.690995,
+    "peakLng": -121.971335,
+    "trailhead": "Elbow Lake Trailhead",
+    "trailheadDirection": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme)."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Class 3-4 scramble on Twin Sisters olivine, an exceptionally high-friction rock. No rope typically needed on the standard scramble line; a party doing the East Buttress variant reported some easy technical moves where a short rope could be prudent.",
+   "ascender": null,
+   "corrections": "General Twin Sisters/olivine terrain character confirmed via multiple sources; no route-specific gear list found for this exact route name, so inferred from the range's documented Class 3-4 character.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Elbow Lake Trail and the Green Creek path to the low notch on the Cinderella-Little Sister ridge",
+     "notes": "Start at the Elbow Lake Trailhead (Trail #697) at the end of FS Road 38. The trail immediately meets the Middle Fork Nooksack — there is no bridge at the marked crossing, and fording can be dangerous or impassable at high water. Many parties use an unofficial log crossing roughly a quarter mile downstream of the official ford, made of logs lashed between two boulders. Once across, climb through forest about 1.5 miles to a switchback near Hildebrand Creek, where the unmaintained, blue-blazed Green Creek Climber's Trail splits LEFT into the Green Creek cirque. Look closely for the small blue markers; it is easy to walk past. Follow it up into the basin — Green Creek runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with Class 3 rock steps to reach the toe of the Green Creek (Sisters) Glacier. Route-finding through that section is the crux of the approach. Cross the low-angle glacier to the low notch on the ridge between Cinderella and Little Sister. Fit parties often do it car-to-car in one long day; others camp in the Green Creek basin.",
+     "season": "Roughly Jul-Sep",
+     "hazards": [
+      "A bridgeless Middle Fork Nooksack crossing, impassable at high water",
+      "An easy-to-miss blue-blazed junction near Hildebrand Creek",
+      "Loose unstable scree and Class 3 steps to reach the glacier — the crux of the approach",
+      "A moat at the glacier margin in both directions",
+      "A connecting ridge toward Little Sister that accounts describe as a missile zone"
+     ],
+     "baseFinding": "THE LOW NOTCH ON THE CINDERELLA-LITTLE SISTER RIDGE IS THE BASE, AND IT IS WHERE YOU STOW GLACIER GEAR. Cross the low-angle Green Creek (Sisters) Glacier and step off ice onto rock at the notch. It is a col: a low point with a peak at each end of it, Cinderella one way and Little Sister the other.\n\nTHE MOAT AT THE GLACIER MARGIN IS THE LAST OBSTACLE AND IT IS SEASONAL, NOT STRUCTURAL — trivial in a heavy snow year, a real step late in the season, and exactly the same problem in reverse on the way down. Plan for it in both directions rather than being surprised at 4pm.\n\nFROM THE NOTCH, GO EAST, NOT WEST. Cinderella's WEST RIDGE rises eastward from the notch and is the route — a long ridge, mostly straightforward walking on broken ground with a short section of enjoyable scrambling to the true summit. Turning the other way out of the notch heads for Little Sister.\n\nDO NOT BE TEMPTED ALONG THE CREST TOWARD LITTLE SISTER. This is not mere caution: at least one party calls that connecting ridgeline a missile zone and recommends dropping back to the glacier from this notch instead of traversing it. The notch serves two peaks and connects neither.\n\nON THE WEST RIDGE, THE CREST DIRECT IS THE TRAP. Taking it absolutely direct runs into stretches of committing downclimbing; the standard escape is to DROP INTO A GULLY ON THE SOUTH SIDE and regain easier ground above. Committing downclimbing on a Class 3-4 scramble means you have stayed on the crest too long.\n\nTHE ROCK IS DUNITE AND IT BEHAVES TWO WAYS AT ONCE, which is the single most useful thing to know about holds here: notably grippy on WEATHERED surfaces, and greasy where a block has FRESHLY BROKEN. Judge each hold on its surface, not on the rock type."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Notch to the west ridge",
+     "notes": "From the low notch on the Cinderella-Little Sister ridge, step off the Green Creek (Sisters) Glacier and onto rock. This is where parties stow glacier gear. Watch the moat at the glacier margin: it is trivial in a heavy snow year and a real obstacle late in the season, and it is the same problem in reverse on the way down. Do not be tempted along the crest toward Little Sister — that continuation has been judged loose and hazardous and is normally avoided."
+    },
+    {
+     "n": 2,
+     "label": "West ridge to the true summit",
+     "notes": "The long west ridge is mostly straightforward walking on broken ground with a short section of enjoyable scrambling to reach the true summit. Taking the crest absolutely direct runs into stretches of committing downclimbing; the standard escape is to drop into a gully on the south side and regain easier terrain above. The rock here is dunite, unusual in the Cascades — it is notably grippy on weathered surfaces but greasy where a block has freshly broken, so judge each hold on its surface rather than on the rock type."
+    },
+    {
+     "n": 3,
+     "label": "Descent to the glacier",
+     "notes": "Two descents are in use off the north side. Parties have downclimbed clean slabs directly to the edge of the glacier — steeper-looking from above than it climbs, with a passage at each apparent crux — and parties have also rappelled the north face, which has gone with a single double-rope rappel landing on a steep snow panel above the glacier. Carry two ropes if the rappel is the plan. On the snow panel below, an axe and crampons are wanted; the moat at its base is the last obstacle."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Green Creek cirque dispersed camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for the circuit that links them to South Twin. It is reached by branching off the Elbow Lake trail at a switchback onto a blazed climbers path, then working up into the cirque. There are no developed campsites; parties use sandy patches beneath protecting boulders and small flat spots in the heather, and the area holds a wilderness feel that low impact camping is the only way to keep. The springs here are worth planning around, because once you are on the crest above there is nothing. Getting into the basin involves a long loose talus slope where most of what you stand on moves, which is slow and hazardous when wet. Midsummer through early autumn; early season snow makes the approach faster but the river crossing more dangerous.",
+     "water": "Two springs of running water in the basin, plus Green Creek lower down. The most dependable water anywhere on the southeast side of the range and the reason this basin is used at all",
+     "permit": "National forest, largely within the wilderness unit. Dispersed camping legal, no overnight permit currently required, party size limit twelve, no developed sites and no facilities. A Northwest Forest Pass or interagency pass is needed at the trailhead. Fire restrictions are common from midsummer. Access from this side does not cross the private timberland, but it does require fording the Middle Fork Nooksack, and the roads serving the trailhead have their own closures.",
+     "capacity": "Small dispersed sites, sandy patches under boulders; two or three parties spread out"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "name_search": "twin sisters olivine scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

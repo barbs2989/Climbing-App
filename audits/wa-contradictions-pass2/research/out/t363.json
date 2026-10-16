@@ -1,0 +1,348 @@
+{
+ "file": "t363.json",
+ "results": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Which trail reaches the PCT (96 vs 97)",
+   "verdict": "fixed",
+   "correct_value": "Stay on Trail 96 past the Trail 97 (bypass) junction at ~4 mi; Trail 96 itself meets the PCT at ~4.7 mi.",
+   "evidence": "The trail agency's Trail 96 page says Trail 96 ends on the PCT, with the Bypass Trail 97 junction at mile 4. The Old Snowy hike description says to continue straight at the Trail 97 junction (97 heads west to the PCT and Cispus Basin), pass the Trail 86 junction, and meet the PCT at ~4.7 mi on Trail 96. The approach, approach variant and descent already say this; only the two waypoint notes were wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-96-snowgrass",
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Which trail reaches the PCT (96 vs 97)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "expect": "Trail 97 forks off Trail 96 and climbs west toward the PCT; stay on 97 to continue toward Old Snowy rather than continuing on 96.",
+     "value": "Trail 97, the bypass trail, forks west here toward Cispus Basin; stay on Trail 96, which continues up through the meadows to the PCT."
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Which trail reaches the PCT (96 vs 97)",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "Trail 97 tops out on the Pacific Crest Trail",
+     "replace": "Trail 96 tops out on the Pacific Crest Trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Published figures disagree: one route page gives about 14 miles round trip with ~3,600 ft; a GPS-recorded day gives 15 miles/3,500 ft; a mapping app lists 15.5 miles. The hike description's segments (PCT at 4.7 mi, then ~1.8 mi on the PCT and ~0.5 mi of climbers' path) sum to ~7 mi one way (~14 RT), but no two independent sources state the same total. A measured track from trailhead to summit would settle it.",
+   "sources": [
+    "https://www.summitpost.org/old-snowy-mountain/150873",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.alltrails.com/trail/us/washington/old-snowy-mountain-via-snowgrass-trail",
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Total loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source found that states a car-to-car descent figure for this route; published figures give only gain (3,100-3,800 ft depending on trailhead and source). Per the loss_ft rule it cannot be set from the out-and-back assumption. A source stating total descent for the Snowgrass-Old Snowy round trip would settle it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Avalanche forecast zone",
+   "verdict": "fixed",
+   "correct_value": "NWAC West Slopes South zone covers Pinnacle Peak/the Tatoosh.",
+   "evidence": "The avalanche center's own published zone polygons (map-layer API) place Pinnacle Peak's summit coordinate inside the West Slopes South zone and no other. A snow-forecast site's Mount Rainier National Park avalanche page likewise links the park to the West Slopes South forecast. The climate panel already said this; the avalanche panel's 'no zone' claim was wrong.",
+   "sources": [
+    "https://api.avalanche.org/v2/public/products/map-layer/NWAC",
+    "https://opensnow.com/location/mount-rainier-national-wa-us/avalanche-forecast",
+    "https://nwac.us/forecasts/avalanche/west-slopes-south"
+   ],
+   "patches": [
+    {
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "Avalanche forecast zone",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "expect": "No dedicated NWAC forecast zone covers the Tatoosh Range/Pinnacle Peak specifically; nearest general guidance would come from Mount Rainier NPS/climbing ranger advisories rather than a standard NWAC zone",
+     "value": "NWAC West Slopes South zone, which takes in the Tatoosh Range and Paradise; its forecasts run through winter and spring and do not cover the summer scramble season"
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "fact": "Snow on the boot path in July",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A snowfield often still crosses the boot path near the saddle in early July; typically melted out by mid-to-late July.",
+   "evidence": "Five fields on the row (approach variant season, itinerary cal, best_season, gear, pro_tips) say snow lingers on the boot path into early/mid July; only the July month row says it is typically clear. Outside: the park-area trail page warns lingering snow on steep sections makes the trail dangerous in early season, and trip reports describe a steep hard-snow section from the saddle toward Plummer in early July.",
+   "sources": [
+    "https://visitrainier.com/pinnacle-saddle-plummer-peak-2/",
+    "https://www.summitpost.org/plummer-peak/151691"
+   ],
+   "patches": [
+    {
+     "id": "wa_plummer_peak_r1",
+     "fact": "Snow on the boot path in July",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Snow typically cleared from the boot path; core of the best-season window",
+     "value": "A snowfield often still crosses the boot path near the saddle in early July; by mid-to-late July it has usually melted out, opening the core of the season"
+    }
+   ]
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Glacier travel and crevasse rescue",
+   "verdict": "fixed",
+   "correct_value": "The route reaches Point Success without crossing a glacier (it joins the Kautz Cleaver ~12,200 ft on snow); crevassed glacier lies close by only on the summit plateau toward Columbia Crest.",
+   "evidence": "A guide-service account calls Success Cleaver the route that reaches the summit without crossing a glacier; they roped briefly only from Point Success toward Columbia Crest, noting that section doesn't seem to get crevasses but the crevassed upper Nisqually is close by. A ranger trip report describes step-kicking snow in gullies merging onto the Kautz Cleaver ~12,200 ft with no glacier crossing, and route pages describe it as one of two Rainier routes without significant glacier travel. The schedule's 'glacier terrain' at 12,200 ft and the blanket 'crevasses present near the summit' were wrong; carrying rope/rescue kit for the plateau stays reasonable.",
+   "sources": [
+    "https://traskwildernessco.com/blog2/success-cleaver",
+    "https://mountrainierclimbing.blogspot.com/2017/06/success-cleaver-june-26-2017.html",
+    "https://www.summitpost.org/success-cleaver/467582"
+   ],
+   "patches": [
+    {
+     "id": "wa_point_success_south_side",
+     "fact": "Glacier travel and crevasse rescue",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "onto the Kautz Cleaver/glacier terrain near 12,200 ft",
+     "replace": "onto the Kautz Cleaver near 12,200 ft"
+    },
+    {
+     "id": "wa_point_success_south_side",
+     "fact": "Glacier travel and crevasse rescue",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "Present near the summit despite Success Cleaver being one of the only two Rainier routes without significant sustained glacier travel",
+     "value": "None on the cleaver: the route reaches Point Success without crossing a glacier. Crossing the summit plateau on to Columbia Crest, crevassed glacier lies close to the line, so keep to the direct path"
+    },
+    {
+     "id": "wa_point_success_south_side",
+     "fact": "Glacier travel and crevasse rescue",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "(crevasses present near the summit)",
+     "replace": "(for the summit plateau beyond Point Success, where crevassed glacier lies close to the line)"
+    }
+   ]
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Location of the first night's camp",
+   "verdict": "fixed",
+   "correct_value": "First camp at Point 6631 / the ~6,400 ft saddle by Pyramid Peak, ~10 mi and ~4,100 ft from Longmire.",
+   "evidence": "A route page gives the Longmire approach as 10 miles and 4,100 ft to Point 6631 just north of Pyramid Peak, the usual first camp. A ranger trip report camped the first night on rock slabs below Pyramid Peak at ~6,300 ft. Indian Henry's (~6.3-7 mi, 5,300 ft) is passed through, not camped at; the itinerary, approach and bivy already agree.",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://mountrainierclimbing.blogspot.com/2017/06/success-cleaver-june-26-2017.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_point_success_south_side",
+     "fact": "Location of the first night's camp",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "to high camp near Indian Henry's Hunting Ground (~10 miles",
+     "replace": "via Indian Henry's Hunting Ground to the first camp at the ~6,400 ft saddle by Pyramid Peak (~10 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "1 roped pitch (plus unroped scrambling below and above)",
+   "evidence": "The route database lists EZ Way as 5.6 trad, 1 pitch. The first-ascent party's own report describes one roped pitch, with class 3-4 scrambling to the belay and an unroped knife-edge summit scramble above, and a single 90 ft rappel.",
+   "sources": [
+    "https://www.mountainproject.com/area/113734269/shark-rock",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": [
+    {
+     "id": "wa_ez_way",
+     "fact": "Pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 3,
+     "value": 1
+    },
+    {
+     "id": "wa_ez_way",
+     "fact": "Pitch count",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Exact pitch count/length not published.",
+     "replace": "One roped pitch, with unroped scrambling below and above it."
+    }
+   ]
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Approach terrain (trail vs cross-country)",
+   "verdict": "fixed",
+   "correct_value": "About 5 miles on the Boundary Trail past Badger Lake, then a short off-trail traverse to the west face.",
+   "evidence": "The route database's approach: Boundary Trail 2.25 mi to Badger Lake, 2.75 mi more to the last switchback below the crest, then ~200 ft through open timber to the west face. The first-ascent report likewise used the Boundary Trail past Badger Lake and Kirk Rock, leaving it only for a short steep game trail to the face.",
+   "sources": [
+    "https://www.mountainproject.com/area/113734269/shark-rock",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": [
+    {
+     "id": "wa_ez_way",
+     "fact": "Approach terrain (trail vs cross-country)",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "Given the long, mostly cross-country approach",
+     "replace": "Given the long trail approach"
+    },
+    {
+     "id": "wa_ez_way",
+     "fact": "Approach terrain (trail vs cross-country)",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "in this remote, trail-less terrain",
+     "replace": "in this remote terrain"
+    },
+    {
+     "id": "wa_ez_way",
+     "fact": "Approach terrain (trail vs cross-country)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "hike several miles largely cross-country via the Boundary Trail and Badger Lake",
+     "replace": "hike about five miles on the Boundary Trail past Badger Lake, then a short traverse off the trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Grade: 5.6 (grade) vs 5.5 (rock_grade)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's grade says 5.6 and rock_grade (which drives the header pill) says 5.5, and the rappels prose calls it 'the 5.5 pitch'. The route database lists 5.6; the first-ascent party's report rated its one pitch 5.5. No two sources agree; a second independent rating would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/113734269/shark-rock",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cobbles_101",
+   "fact": "Season window (spring access)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route and area pages say only that access is open and to check forest road alerts; no source found states when NF-25/NF-28/NF-77 or the formation (~4,700-5,100 ft) usually melt out. A dated early-season trip report or a forest road-opening note would settle whether late spring is climbable.",
+   "sources": [
+    "https://www.mountainproject.com/area/109294508/pinto-rock",
+    "https://www.mountainproject.com/route/110852598/cobbles-101"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Season window (spring access)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found stating when the forest roads to Pinto Rock or the formation usually melt out; the route and area pages only point to forest road alerts. A dated early-season trip report or road-opening note would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/109294508/pinto-rock",
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Protection: fully bolted vs knob threads",
+   "verdict": "fixed",
+   "correct_value": "Bolted throughout to chain anchors (12 draws); a few knobs can optionally be slung. No trad gear.",
+   "evidence": "The route page lists quickdraws and alpine draws (12 total) as the protection, with bolts on every pitch and chains; it mentions slinging a few rocks on P3. A club trip report calls the route so heavily bolted it is hard to get lost, with chicken heads slung only by choice for practice and almost no use for nuts or cams. So the route is bolted throughout; knob threads are optional, not part of a 'mixed' protection scheme.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-pinto-rock-bowling-alley"
+   ],
+   "patches": [
+    {
+     "id": "wa_bowling_alley_aka_regular_route",
+     "fact": "Protection: fully bolted vs knob threads",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "mixed bolt + knob-thread protection.",
+     "replace": "bolted throughout, with the option to sling an occasional knob."
+    }
+   ]
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Descent time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One club trip report summited about 2.5 hours from the car and was back at the base about 2.5 hours later including a summit break and one double-rope rappel, which suggests 3 hours of descent is too long, but no second source gives a descent or total time. A second dated account with times would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-pinto-rock-bowling-alley"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "P2 said to join the route it is on",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route's own published pitch description has P2 climb a vertical groove over large features and then traverse a hump back onto the 'Regular Route' line — a pitch that briefly leaves the main line and rejoins it, not a different route. The row paraphrases that faithfully.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route"
+   ],
+   "patches": []
+  }
+ ]
+}

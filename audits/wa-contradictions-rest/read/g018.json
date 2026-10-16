@@ -1,0 +1,2176 @@
+{
+ "batches": [
+  "b069.json",
+  "b070.json",
+  "b071.json",
+  "b072.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "name": "White Salmon Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Difficulty / steepness of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II, Easy Snow"
+      },
+      {
+       "field": "overview",
+       "says": "An easy glacier ascent/descent on Shuksan's north side"
+      },
+      {
+       "field": "max_angle",
+       "says": "45"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "150-200 ft step of steep 40-45° snow/ice onto the Upper Curtis Glacier"
+      },
+      {
+       "field": "beta",
+       "says": "Grade II-III alpine ice/mixed route, up to 50-degree ice. Route to summit via Winnies Slide (50+ degree ice)"
+      }
+     ],
+     "why": "The beta describes a II-III alpine ice/mixed route with 50+ degree ice, while the grade, overview, max_angle and waypoint call it easy snow topping out at 40-45 degrees.",
+     "internal_resolution": "grade, overview, max_angle, waypoint note and pitch_detail ('40-45 deg snow') agree on an easy snow route with a 40-45° step; the beta is the outlier (reads like a harder north-side route).",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7500"
+      },
+      {
+       "field": "description",
+       "says": "Gains 2,000 ft through moderate snow slopes."
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3573"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "9131"
+      }
+     ],
+     "why": "Trailhead 3,573 ft to summit 9,131 ft is ~5,560 ft net; gain_ft 7,500 and the (unrendered) description's 2,000 ft both disagree with it and each other.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp list includes Fisher Chimneys camps (different route, Lake Ann trailhead)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[1].name",
+       "says": "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "these camps are inside the park, past the signed boundary above Lake Ann ... A Northwest Forest Pass covers only the parking at the Lake Ann trailhead."
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Going south past Lake Ann and over Austin Pass is not the way parties reach the White Salmon Glacier"
+      }
+     ],
+     "why": "A camp card describes the Fisher Chimneys/Lake Ann approach while the route's approach explicitly rejects Lake Ann as the way in.",
+     "internal_resolution": "approach, approach_variants, waypoints and approach_logistics all use the White Salmon Lodge road; the Fisher Chimneys bivy text is copied from another route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "County vs sheriff agency",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Whatcom County, WA"
+      },
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "Skagit County Sheriff (360) 336-9450"
+      }
+     ],
+     "why": "The emergency card names Whatcom County but lists the Skagit County Sheriff as the sheriff contact.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season of the approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "spring; snow cover strongly preferred"
+      },
+      {
+       "field": "approach_variants[1].season",
+       "says": "winter/spring, on skis"
+      },
+      {
+       "field": "climate.winter",
+       "says": "Not a climbing season; avalanche terrain"
+      }
+     ],
+     "why": "The approaches are recommended for spring/winter while the season column is Jun-Sep and the climate card says winter is not a climbing season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "name": "North Face",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Approach line and trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Same approach as Fisher Chimneys: over Austin Pass, past Lake Ann, and up through the chimneys to a high camp near Winnie's Slide (~7,300 ft)"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Reverse the Fisher Chimneys/Lake Ann approach back to the car."
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "Same approach as Fisher Chimneys: over Austin Pass, past Lake Ann"
+      },
+      {
+       "field": "approach",
+       "says": "Park near the White Salmon day-lodge area on SR 542 ... continue up to the 5,500 ft saddle at the base of the North Face"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "White Salmon Road (hairpin) TH"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "White Salmon Day-Lodge Area (FR-3075, Mt. Baker Ski Area)"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the approach leaves Forest Service ground shortly past Lake Ann"
+      }
+     ],
+     "why": "The itinerary and timing send the party from the Lake Ann trailhead through the Fisher Chimneys, while the approach, waypoints, trailhead card and approach_variants use the White Salmon Lodge road.",
+     "internal_resolution": "approach, approach_variants (primary), waypoints and approach_logistics all agree on the White Salmon Lodge road; itinerary/timing (and the bivy permit note) are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp / bivy location and elevation",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "bivy[0].elev",
+       "says": "5500"
+      },
+      {
+       "field": "approach",
+       "says": "continue up to the 5,500 ft saddle at the base of the North Face"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "North Face Base Camp, elev 7000"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach high camp at Winnie's Slide"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a high camp near Winnie's Slide (~7,300 ft)"
+      }
+     ],
+     "why": "The camp is given as the 5,500 ft shoulder, a 7,000 ft base camp, and a 7,300 ft camp at Winnie's Slide on the other side of the mountain.",
+     "internal_resolution": "approach, approach_variants and bivy[0] agree on the ~5,500 ft shoulder above Price Lake; the waypoint (7,000) and itinerary (Winnie's Slide ~7,300) disagree.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 2-3 hours from the car"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "7"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "roughly 6-10+ hrs to the base of the face depending on approach taken"
+      }
+     ],
+     "why": "The approach prose says 2-3 hours to the base while timing/itinerary budget 7 hours and partner requirements 6-10+.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Most parties descend via White Salmon Glacier route due to better established terrain."
+      },
+      {
+       "field": "descent_text",
+       "says": "descend via Fisher Chimneys/Lake Ann Trail, or down the White Salmon Glacier back toward the ski area"
+      },
+      {
+       "field": "bail",
+       "says": "Descent is via the Sulphide once high."
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "descending back to camp via the Fisher Chimneys side"
+      }
+     ],
+     "why": "The descent is named as White Salmon Glacier, Fisher Chimneys/Lake Ann, and the Sulphide in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-May through early July"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "risky"
+      }
+     ],
+     "why": "The best window starts in May, outside the Jun-Aug season, while the season runs through August even though July is already rated risky.",
+     "internal_resolution": "best_season, seasonal_guidance, itinerary.cal and pro_tips ('Climb in late spring') agree on mid-May to early July; the season column is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Maximum face angle / ice grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "max_angle",
+       "says": "50"
+      },
+      {
+       "field": "ice_grade",
+       "says": "AI2-3"
+      },
+      {
+       "field": "beta",
+       "says": "Climb 45-50 degree snow/ice until steepening to 50+ degrees"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "Sustained snow/ice climbing to AI3 (50-60°) with two tools"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "High - 6-8 pitches of sustained 50-60° ice"
+      }
+     ],
+     "why": "The face is 45-50° with max_angle 50 in some fields and sustained 50-60° ice in others.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass / permit fees",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "No parking pass required, but parking at the base of the road is very limited"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass"
+      },
+      {
+       "field": "access.fees",
+       "says": "free NPS permit only if camping overnight past the park boundary"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free"
+      }
+     ],
+     "why": "The road card says no parking pass while access requires a Northwest Forest Pass; access.fees calls the NPS permit free while the permit card and bivy say it is not free.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 13 miles round trip"
+      },
+      {
+       "field": "dist_km",
+       "says": "20.92"
+      }
+     ],
+     "why": "The summit waypoint sits 8 mi one-way (16 mi round trip), while the itinerary and dist_km give ~13 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "name": "Northwest Arete",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Which route the 2007 ascent / first ascent belongs to",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Distinct from the newer 'Northwest Arayete' (5.9, established 2007 by Darin Berdinka and Matt Alford), this is an older-school Cascades line"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "It was climbed in 2007 by a party who took sixteen hours on the 1,300 ft arête alone"
+      },
+      {
+       "field": "approach_variants[0].hazards[3]",
+       "says": "A very long day: the first-ascent party took sixteen hours on the arête itself"
+      }
+     ],
+     "why": "The beta says the 2007 line is a different, newer route, but the approach variant quotes a 2007 party as this route's first-ascent party.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time on route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "10-12 hours, Serious"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "took sixteen hours on the 1,300 ft arête alone"
+      }
+     ],
+     "why": "The commitment field gives 10-12 hours for the whole route while the approach variant says the arête alone took sixteen hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bivy card is the North Face bivy (different route and approach)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].name",
+       "says": "North Face bivy, where the rib meets the face"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "This is a spring-into-early-summer route in most years."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the approach leaves Forest Service ground shortly past Lake Ann"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jul-Sep"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "Long, sustained route — bivying on route is considered undesirable"
+      }
+     ],
+     "why": "The main bivy card describes another route's camp, calls the climb a spring route and a Lake Ann approach, contradicting this route's Jul-Sep season and White Salmon approach.",
+     "internal_resolution": "approach, approach_variants, waypoints and approach_logistics agree on the White Salmon approach; the bivy card is copied from the North Face row.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking location / land manager notes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Lake Ann trailhead — $30/year or $5/day."
+      },
+      {
+       "field": "access.notes",
+       "says": "the lower approach (Lake Ann Trail, Sulphide Glacier forest approach) is USFS"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "White Salmon Road (hairpin) TH / Lower White Salmon Lodge"
+      }
+     ],
+     "why": "The access card describes parking and approach at Lake Ann/Sulphide while this route starts at the White Salmon Lodge.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "NPS overnight permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "free NPS permit only if camping overnight past the park boundary"
+      },
+      {
+       "field": "access.permit",
+       "says": "a free NPS backcountry permit is required"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "quota, not free"
+      }
+     ],
+     "why": "The access card calls the NPS overnight permit free in two places and not free in another.",
+     "internal_resolution": "overnight_permit (and bivy permit notes 'fees apply') agree it is not free.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "name": "Southeast Ridge (SE Corner)",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.3 (guide services describe two steps at 5.6/5.7)"
+      },
+      {
+       "field": "beta",
+       "says": "Grade 5.3-5.7"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "~600 vertical ft of 5.3-5.7 to the summit"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "stays at or below 5.3 throughout"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "some low-5th-class (up to 5.4) moves"
+      }
+     ],
+     "why": "The crux is given as 5.3 (and 'never above 5.3'), up to 5.4, and 5.6/5.7.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Sulphide Glacier camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Sulphide Glacier camp, elev 5400"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Sulphide Glacier camp, elev 6400"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Most parties camp on the large flat plateau around 6,400 ft"
+      }
+     ],
+     "why": "The same named camp is at 5,400 ft on the waypoint list and 6,400 ft in the bivy card and approach.",
+     "internal_resolution": "bivy[0] and approach_variants agree on ~6,400 ft; the waypoint (5,400, at 'the pass') is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach line (Shannon Ridge vs Fisher Chimneys/Lake Ann)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "East-northeast up Shannon Ridge, then traverse Sulphide Glacier"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Shannon Ridge Trailhead (Sulphide Glacier approach)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Camp-to-summit reported around 7-8 hrs one way via Fisher Chimneys; a bivy at Winnie's Slide is commonly recommended"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass (or equivalent) for parking at Lake Ann Trailhead"
+      },
+      {
+       "field": "what_to_bring[2]",
+       "says": "approach shoes/boots for the chimneys"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Route crosses glaciers three times"
+      }
+     ],
+     "why": "The Plan tab's approach, trailhead and waypoints use Shannon Ridge, while partner requirements, access, gear list and hazards assume the Lake Ann/Fisher Chimneys approach.",
+     "internal_resolution": "approach, approach_variants, waypoints, approach_logistics and bivy all use Shannon Ridge/Sulphide; the Fisher Chimneys references are presented as if they were the default.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "5.5"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec",
+       "says": "Trailhead to camp ~2-3 hrs (Fisher Chimneys) ... camp-to-summit ~7-8 hrs"
+      }
+     ],
+     "why": "Timing gives 5.5 h to camp while partner requirements give 2-3 h, and a 7-8 h camp-to-summit for a 600 ft rock finish.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "County vs sheriff agency",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Whatcom County, WA"
+      },
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "if unreachable, Skagit County Sheriff (360) 336-9450"
+      }
+     ],
+     "why": "The emergency card names Whatcom County but falls back to the Skagit County Sheriff.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "name": "Fisher Chimneys",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Gain from trailhead to the base of the chimneys",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 5.5-6 miles and 3,800-4,300 ft of gain from the trailhead, where the Fisher Chimneys begin"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "roughly 5.5-6 miles and 3,800-4,300 ft of gain from the trailhead"
+      },
+      {
+       "field": "gain_ft",
+       "says": "5100"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 5,100 ft of gain to the summit"
+      }
+     ],
+     "why": "If the chimneys begin after 3,800-4,300 ft of gain, only ~800-1,300 ft remain for the chimneys, glaciers and summit pyramid (~3,000+ ft of climbing), contradicting the 5,100 ft total.",
+     "internal_resolution": "gain_ft, loss_ft and the itinerary days (800+2500+1800) agree on ~5,100 ft total; the 3,800-4,300 ft to-the-chimneys figure is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "High camp location / elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "a high camp near the toe of the Upper Curtis Glacier below Winnie's Slide (~7,300 ft)"
+      },
+      {
+       "field": "bivy[1]",
+       "says": "Rock rib above Winnie's Slide, elev 7200"
+      },
+      {
+       "field": "bivy[2]",
+       "says": "Top of the Chimneys rock outcrop, elev 6700"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "White Salmon Glacier Lower Bivouac, elev 5500, distMi 3.5"
+      },
+      {
+       "field": "approach",
+       "says": "Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft)"
+      }
+     ],
+     "why": "The camp waypoint sits at 5,500 ft and 3.5 mi although the chimneys only begin after 5.5-6 mi; the itinerary camp is below Winnie's Slide while the bivy card of that elevation is above it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lake Ann camp: elevation, distance and day-1 gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0]",
+       "says": "miles 3.5, gainFt 800, lossFt 300; camp near the lake (~4,800 ft)"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Lake Ann, elev 4700, about four miles in"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4770"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~4-5 miles/3-4 hrs to Lake Ann camp"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "over Austin Pass down to a camp near the lake"
+      }
+     ],
+     "why": "A net +500 ft day ending at a lake ~70 ft below the 4,770 ft trailhead does not add up, and the distance to Lake Ann is given as 3.5, ~4 and 4-5 mi; the Lake Ann trail does not cross Austin Pass per the approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Winnie's Slide angle",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "max_angle",
+       "says": "45"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "the 40-degree Winnie's Slide"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "angles quoted range from about 45° to near 60° at the top"
+      }
+     ],
+     "why": "Winnie's Slide is 40°, 45° max, and up to near 60° in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best climbed June through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September"
+      }
+     ],
+     "why": "The itinerary calls June part of the best window while the season starts in July and seasonal guidance rates June risky.",
+     "internal_resolution": "season, best_season and seasonal_guidance agree on July onward; itinerary.cal is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "3"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "7 rows (Section 1-6 plus 'Sulphide Glacier to the summit pyramid')"
+      }
+     ],
+     "why": "The header shows 3 pitches while the route breakdown lists 7 sections.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 15-16 miles round trip"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "7.5"
+      }
+     ],
+     "why": "dist_km (6.8 mi) matches neither the itinerary's 15-16 mi round trip nor clearly the 7.5 mi one-way to the summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit process",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[11]",
+       "says": "Self-registration required at Glacier ranger station for multi-day attempts"
+      },
+      {
+       "field": "permit",
+       "says": "all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)"
+      },
+      {
+       "field": "access.fees",
+       "says": "it is not free: $10 per person plus a $6 fee"
+      }
+     ],
+     "why": "A watch-out item describes self-registration at Glacier, while permit/access describe a reserved, fee-paid NPS permit.",
+     "internal_resolution": "permit, access and bivy permit notes agree on the reserved NPS permit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Season vs the approach/bivy it depends on",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Jul-Aug, when the connecting glacier terrain and rock are most consolidated."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "This is a spring-into-early-summer route in most years."
+      },
+      {
+       "field": "approach",
+       "says": "Typically reached after climbing the North Face or Hanging Glacier route"
+      }
+     ],
+     "why": "The route's season is Jul-Aug, but its main bivy card (copied from the North Face) calls it a spring-into-early-summer route, and its approach routes' best windows are May-June.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bivy approach vs trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "White Salmon Day-Lodge area (FR-3075, Mt. Baker Ski Area)"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the approach leaves Forest Service ground shortly past Lake Ann"
+      }
+     ],
+     "why": "The trailhead is White Salmon Lodge, while the bivy card places the approach past Lake Ann.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "name": "Sulphide Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Distance to high camp and summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "4"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "8"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach to high camp is roughly 7-8 miles one-way"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~7 miles/5-7 hrs to high camp"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 16 miles round trip"
+      }
+     ],
+     "why": "The trailhead-to-camp distance is 4, 5 and 7-8 mi in different fields, and dist_km (5 mi) matches neither the 8 mi one-way summit waypoint nor the 16 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6600"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3200"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "2500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 5,500-6,000 ft of total gain"
+      },
+      {
+       "field": "approach",
+       "says": "about 4,000-4,700 ft of gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2551"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "6245"
+      }
+     ],
+     "why": "The itinerary days sum to 5,700 ft and put camp 3,200 ft above a 2,551 ft trailhead (5,750, below the 6,245 camp), the approach says 4,000-4,700 ft to camp, and gain_ft is 6,600.",
+     "internal_resolution": "gain_ft 6,600 matches trailhead 2,551 to summit 9,131; the itinerary's per-day gains are too low.",
+     "needs_research": false
+    },
+    {
+     "fact": "SE Ridge alternative finish grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "3rd class (4th class / low 5th on the SE Ridge finish)"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "or SE Ridge, 4th/low-5th, as an alternative finish"
+      },
+      {
+       "field": "beta",
+       "says": "the alternate Southeast Ridge (5.3-5.7) ... has two unavoidable pitches rated 5.6 and 5.7"
+      },
+      {
+       "field": "descent_text",
+       "says": "the Southeast Ridge (5.3-5.7, with two unavoidable pitches at 5.6 and 5.7)"
+      }
+     ],
+     "why": "The same alternative finish is low 5th in the grade chip and route breakdown but 5.6/5.7 in the beta and descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late May (ski) through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "good"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "The Shannon Creek/FR-1152 approach road usually isn't reliably snow-free and driveable until late June"
+      }
+     ],
+     "why": "May is rated good and part of the best window though outside the season, and the itinerary says the road is not driveable until late June.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "name": "Price Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Standard descent / exit trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "The standard descent is NOT back to the Ruth Creek car — it's over the top and down the Fisher Chimneys to Lake Ann"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Descend via the Sulphide Glacier route (with a rappel off the summit pyramid) rather than reversing the Price - the standard and much safer way down."
+      },
+      {
+       "field": "itinerary.days[2].title",
+       "says": "Hike out via the Sulphide Glacier trailhead"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "the standard descent comes out at the Sulphide Glacier trailhead, so leave a shuttle vehicle or a second car there"
+      },
+      {
+       "field": "descent",
+       "says": "Descend back to Price Glacier and retrace ascent route via ice climbing down the 40-50 degree slopes."
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Descend the Sulphide or Fisher Chimneys, never reverse the Price"
+      }
+     ],
+     "why": "The standard descent is given as Fisher Chimneys to Lake Ann, the Sulphide to Shannon Ridge, and reversing the Price — which decides where the shuttle car goes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (heavy early-season snowpack often preferred)"
+      },
+      {
+       "field": "best_season",
+       "says": "May to June"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "optimal"
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "Narrow May-June window in good ice years"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Most trip reports cluster in July-August"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Late July–August is prime climbing season with the most settled weather."
+      },
+      {
+       "field": "climate.spring",
+       "says": "Heavy snowpack and unsettled weather in June often leave the couloir/bergschrund loaded with unstable snow, making early-season ascents questionable."
+      }
+     ],
+     "why": "The best window is May-June (outside the season's start) in three fields, while the itinerary and climate card call July-August prime and June questionable.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp elevation and day gains",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Price Glacier Base Camp, elev 6500, distMi 4"
+      },
+      {
+       "field": "approach",
+       "says": "first bivy sites on flat granite slabs around 6,000–6,500 ft"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2200"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "3800"
+      }
+     ],
+     "why": "A 2,200 ft gain from a 2,200 ft trailhead reaches only ~4,400 ft, not the 6,000-6,500 ft camp, and 3,800 ft from that camp overshoots the 9,131 ft summit.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit pyramid side used",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "4th-5th class (west ridge of summit pyramid)"
+      },
+      {
+       "field": "beta",
+       "says": "Ascend easy gullies (4th-5th class) on south side to summit."
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Summit pyramid gullies on the south side to the top."
+      }
+     ],
+     "why": "The summit finish is the west ridge in the grade chip and south-side gullies in the beta and route breakdown.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road numbering to the trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Ruth Creek Road (FS-32) off the Mount Baker Highway near the Hannegan Pass Road junction"
+      },
+      {
+       "field": "road.name",
+       "says": "Hannegan Pass Road (FS 32) to FS 34, Ruth Creek/Nooksack Cirque Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Nooksack Cirque Trailhead at the end of FR-34 off Hannegan Pass Road (FR-32)"
+      }
+     ],
+     "why": "FS-32 is called Ruth Creek Road in the approach but Hannegan Pass Road elsewhere, with the trailhead on FS 34.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "NPS overnight permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "free NPS permit only if camping overnight past the park boundary"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "quota, not free"
+      }
+     ],
+     "why": "The access card calls the NPS overnight permit free and not free.",
+     "internal_resolution": "overnight_permit (and bivy permit 'fees apply') agree it is not free.",
+     "needs_research": false
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "name": "SW Couloir and Face",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Descent duration vs round-trip duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "8"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "Early start to have full daylight for the ~8-hour Hourglass descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "round trip from Lake Ann is roughly 8 hours"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the whole thing is commonly cited at around eight hours round trip from Lake Ann"
+      }
+     ],
+     "why": "Eight hours is the descent alone in timing but the whole round trip from Lake Ann in the descent text and approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6600"
+      },
+      {
+       "field": "loss_ft",
+       "says": "6600"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4700"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "9127"
+      }
+     ],
+     "why": "Lake Ann trailhead 4,700 ft to summit 9,127 ft is ~4,400 ft net (~5,200 ft with the dip to the lake), well below 6,600 ft (the Shannon Ridge figure).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route breakdown repeats the icefall/headwall section",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "100 ft of steep snow leads to a large transverse crevasse ... then 300 ft of steep ice/snow ... to the headwall base. Traverse left at the headwall"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "300 ft through the lower icefall to the headwall base."
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "300 ft of steep ice/snow to the headwall."
+      }
+     ],
+     "why": "The route breakdown reaches the headwall base twice (sections 2 and 5) with an ice chimney and 5.0 step between, while the beta has a single 300 ft section.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Aug"
+      },
+      {
+       "field": "watch_out[2]",
+       "says": "mid-June through August primary season"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      }
+     ],
+     "why": "A watch-out item calls mid-June part of the primary season while the season is Jul-Aug and June is rated risky.",
+     "internal_resolution": "season, best_season and seasonal_guidance agree on July-August.",
+     "needs_research": false
+    },
+    {
+     "fact": "Retreat line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Retreat down the couloir/face to the Lower Curtis Glacier before committing to the upper 1,000-ft rock buttress."
+      },
+      {
+       "field": "watch_out[4]",
+       "says": "check conditions before committing to retreat via East Buttress"
+      }
+     ],
+     "why": "Bail says retreat down the couloir, a watch-out item refers to retreating via an East Buttress.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "County vs sheriff agency",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Whatcom County, WA"
+      },
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "Skagit County Sheriff (360) 336-9450"
+      }
+     ],
+     "why": "The emergency card names Whatcom County but lists the Skagit County Sheriff.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "name": "Hanging Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Approach side / trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the Hanging Glacier/North Face approach lies in the White Salmon Creek drainage ... rather than on the Nooksack/Ruth Creek side"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "White Salmon Day-Lodge Area (FR-3075, Mt. Baker Ski Area)"
+      },
+      {
+       "field": "road.name",
+       "says": "Mount Baker Highway (SR 542) / Nooksack Cirque & Price Lake approaches"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "North-side ice routes approached from the Nooksack/Price Lake side"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Demanding approach from the north (Nooksack/Price Lake) side"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Same Lake Ann / Fisher Chimneys approach used for the North Face"
+      }
+     ],
+     "why": "The approach explicitly rules out the Nooksack/Ruth Creek side, but the road card and partner requirements send parties there, and the itinerary uses the Lake Ann/Fisher Chimneys alternate as the plan.",
+     "internal_resolution": "approach, approach_variants (primary), waypoints and approach_logistics agree on the White Salmon Lodge road; the Lake Ann plan is the documented alternate; the Nooksack/Price Lake road references are wrong for this route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Aug"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jul-Aug."
+      },
+      {
+       "field": "best_season",
+       "says": "May to June"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "May to June"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "best done early season or after a hard overnight freeze"
+      }
+     ],
+     "why": "The season is Jul-Aug while best_season and seasonal guidance put the only good window in May-June, entirely outside it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4430"
+      },
+      {
+       "field": "loss_ft",
+       "says": "6000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 6,000 ft of total gain"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3000"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "3000"
+      }
+     ],
+     "why": "gain_ft 4,430 disagrees with loss_ft 6,000 on a return-to-car trip and with the itinerary's 6,000 ft.",
+     "internal_resolution": "loss_ft and the itinerary agree on ~6,000 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "many parties then reverse west from the Upper Curtis ... out the same valley to the White Salmon Lodge trailhead"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Descend back to camp via the Fisher Chimneys side."
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Reverse the Fisher Chimneys/Lake Ann approach back to the car."
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Descend the Sulphide or Fisher Chimneys"
+      }
+     ],
+     "why": "The descent returns to the White Salmon Lodge in the descent text but to Lake Ann via Fisher Chimneys in the itinerary, and to the Sulphide or Fisher Chimneys in the tips.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Backcountry permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "get a free backcountry permit at the Glacier Public Service Center (required)"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "stop at the Glacier Public Service Center for the free backcountry permit"
+      },
+      {
+       "field": "access.fees",
+       "says": "it is not free: $10 per person plus a $6 fee"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "quota, not free"
+      }
+     ],
+     "why": "The approach and trailhead directions call the permit free, the access card says it costs $10/person + $6.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Bivy / technical start elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Ascend the glacier and moraine to a bivy around 6,000–6,500 ft ... reach the base of the shoulder dividing the White Salmon and Price Glacier cirques (roughly 7,500–8,000 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5500"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a high camp near Winnie's Slide (~7,300 ft)"
+      }
+     ],
+     "why": "The bivy is 5,500, 6,000-6,500 and ~7,300 ft in different fields, and the dividing shoulder is 7,500-8,000 ft here but 5,500 ft in the related North Face row.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ice steepness",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "ice_grade",
+       "says": "AI4 (up to 65 degrees)"
+      },
+      {
+       "field": "gear[0]",
+       "says": "Ice screws for the steep (up to ~65 degree) ice section"
+      },
+      {
+       "field": "rope_note",
+       "says": "~3,000 ft of 40-50 deg snow/glacial ice"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb steep snow, low-angle ice, and a short mixed rock band"
+      }
+     ],
+     "why": "The ice is AI4 to 65° in the grade chip and gear but 40-50° or low-angle in the rope note and itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group size limit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.rules",
+       "says": "No published numeric group-size cap found for Shuksan specifically."
+      }
+     ],
+     "why": "One access field states a group limit of 12, another says no numeric cap was found.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "name": "South/East Scramble",
+   "area": "Mount Watson",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2400"
+      },
+      {
+       "field": "loss_ft",
+       "says": "3800"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2900"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "900"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~3,500-4,000 ft total gain"
+      },
+      {
+       "field": "approach",
+       "says": "Total round trip runs roughly 7-9.5 miles with 2,500-3,000 ft gain"
+      }
+     ],
+     "why": "Gain is 2,400, 2,500-3,000 and 3,800 ft in different fields, and gain_ft differs from loss_ft on an out-and-back.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.8"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "4.7"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~9-10 mi round trip"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4.7"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "6.2"
+      },
+      {
+       "field": "approach",
+       "says": "Total round trip runs roughly 7-9.5 miles"
+      }
+     ],
+     "why": "dist_km (3.0 mi) is far below the 4.7 mi one-way summit waypoint and the 7-10.9 mi round-trip figures.",
+     "internal_resolution": "waypoints (4.7 mi one-way) and itinerary/approach (~9-10 mi round trip) agree; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which summit is the true summit / side of approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "work up open slopes/ridge on the mountain's south side toward the notch between the West and true (East) summits ... scramble ... around the south side of the West Summit ... to the true summit"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "the ~5,900 ft col between Watson's East Peak and the true summit"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "traverses to the large col near 5,900 ft between the East Peak and the jumbled western summits, then takes heather and treed slopes west to the basin under the true summit"
+      },
+      {
+       "field": "approach",
+       "says": "climb talus ... on Watson's north/west slopes toward Watson Pass and the ridge crest"
+      }
+     ],
+     "why": "The beta calls the East summit the true summit and approaches from the south, while the itinerary and bivy put the true summit west of an East Peak and the approach climbs the north/west slopes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route"
+      },
+      {
+       "field": "beta",
+       "says": "Cross a short but steep snow finger / remnant glacier apron in the notch ... some instead drop east onto the shrinking Watson Glacier"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Some parties carry a short rope/basic glacier gear for the small Watson Glacier remnant"
+      },
+      {
+       "field": "obj_haz[1]",
+       "says": "Small glacier/snowfield crossing"
+      }
+     ],
+     "why": "Safety says no glacier travel and a non-glaciated route, while the beta, rack and hazards describe a glacier apron and Watson Glacier crossing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best time to go",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "Go early summer if possible - by mid-to-late summer melt-out opens moats"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July through mid-September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "best_season",
+       "says": "many parties prefer August for a drier trail and less bug pressure"
+      }
+     ],
+     "why": "The itinerary recommends early summer while seasonal guidance rates June marginal and puts the optimal window in late July-September.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Noisy-Diobsud Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness entry permit or quota — just the day-use recreation pass."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No overnight permit is required or issued."
+      }
+     ],
+     "why": "The permit field requires a self-issue wilderness permit while access and the camp card say no permit is required or issued.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to the Watson Lakes saddle",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Trail 611 climbs steeply (~1.4 mi to a ~4,800 ft saddle above Watson Lakes)"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Watson Pass (saddle), elev 4800, distMi 2.5"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "about two miles from the road end ... over a saddle at around 4,700 ft"
+      }
+     ],
+     "why": "The saddle is 1.4 mi, ~2 mi and 2.5 mi from the trailhead in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which lake the route passes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1.5-2.5 hrs on trail to Upper Anderson Lake"
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "the summit scramble beyond Upper Anderson Lake"
+      },
+      {
+       "field": "approach",
+       "says": "the left fork climbs 0.5 mile to a small saddle ... before dropping to the Watson Lakes"
+      }
+     ],
+     "why": "Partner requirements and crowds route the scramble via Upper Anderson Lake while the approach and waypoints go via the Watson Lakes (left fork, away from Anderson Lake).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "name": "South Face",
+   "area": "Nooksack Tower",
+   "contradictions": [
+    {
+     "fact": "Descent rappels and rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "traverse to the north face for descent via the standard Beckey-Schmidtke rappel line (10+ rappels to glacier)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "The one first-hand account of this descent records four rappels on two 60 m ropes, ending at the col rather than continuing to the glacier"
+      },
+      {
+       "field": "gear[2]",
+       "says": "60-meter rope"
+      }
+     ],
+     "why": "The descent needs 10+ rappels to the glacier in one field and four rappels to the col on two 60 m ropes in another, while the gear list carries a single 60 m rope.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "NPS overnight permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "a free NPS backcountry permit is required only if camping overnight past the boundary"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades NP wilderness permit for camps inside the park — not free"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "with per-person and transaction fees"
+      }
+     ],
+     "why": "The access rules call the NPS permit free while the permit card and bivy say it carries fees.",
+     "internal_resolution": "overnight_permit and bivy agree it is not free.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip time from high camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "The first ascensionists completed the entire round trip from their high camp in about 17 hours."
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8"
+      },
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "4"
+      }
+     ],
+     "why": "Timing implies ~12 h from the face base and back, versus 17 h round trip from high camp in the itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "Depart bivouac or camp by 3-4 am"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Start this climb extremely early (2-3 am)"
+      }
+     ],
+     "why": "Recommended start is 3-4 am in timing and 2-3 am in pro tips.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "name": "North Face (Beckey-Schmidtke Route)",
+   "area": "Nooksack Tower",
+   "contradictions": [
+    {
+     "fact": "Route identity: North Face vs East Ridge",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "North Face (Beckey-Schmidtke Route)"
+      },
+      {
+       "field": "overview",
+       "says": "The East Ridge (Beckey-Schmidtke) route is the classic line"
+      },
+      {
+       "field": "itinerary.days[1].title",
+       "says": "Summit push via the East Ridge couloir"
+      },
+      {
+       "field": "beta",
+       "says": "800-foot, 50-degree ice couloir on the north face ... fourth-class rock climbing along the north arête to the summit"
+      },
+      {
+       "field": "aspect",
+       "says": "N/NE"
+      }
+     ],
+     "why": "The same line is called the North Face/north arête in the name, beta and aspect but the East Ridge in the overview and itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip duration / summit-day hours",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "20"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "20"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "strong parties are back at camp 18-21 hours after leaving"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "a long summit day (10+ hrs round trip)"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "gains the top after roughly 10 hours of climbing"
+      }
+     ],
+     "why": "Timing gives 20 h for the whole trip (7 h climb), the itinerary gives a 20 h summit day alone (33 h total, ~10 h to the summit), and partner requirements say 10+ h.",
+     "internal_resolution": "itinerary, totalNote and descent_text agree on an 18-21 h summit day; timing and partner_requirements understate it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Couloir steepness",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "800-foot, 50-degree ice couloir"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "historically up to about 45-50 degrees"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[3]",
+       "says": "Steep snow/ice couloir climbing (reported up to ~50 degrees)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "an 800 ft, 50-60 degree (one 70 degree step) snow/ice couloir"
+      },
+      {
+       "field": "max_angle",
+       "says": "70"
+      },
+      {
+       "field": "ice_grade",
+       "says": "AI1-2 (early-season sections)"
+      }
+     ],
+     "why": "The couloir is 45-50° in the beta, breakdown and partner requirements but 50-60° with a 70° step in the itinerary and max_angle.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "First rappel off the summit area on double ropes, capped near 30m."
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "Cited range is 10-12 rappels to 30m"
+      },
+      {
+       "field": "descent_text",
+       "says": "parties describe roughly ten 60m rappels"
+      },
+      {
+       "field": "what_to_bring[3]",
+       "says": "Two 60m ropes for rappelling"
+      }
+     ],
+     "why": "Rappels are ~30 m in the rappel table and count note but ten 60 m rappels in the descent text, with double 60 m ropes carried.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jun-Aug."
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September is the reliable window."
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "climate.typical",
+       "says": "a short practical window for the route roughly mid-July through September"
+      }
+     ],
+     "why": "The season includes June and ends in August, while best_season, seasonal guidance and climate put the window at mid-July through September.",
+     "internal_resolution": "best_season, seasonal_guidance, climate and itinerary.cal ('July-August') agree the window starts mid-July; June in the season column is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where to park / trailhead location",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Passenger cars can usually reach the trailhead in dry conditions"
+      },
+      {
+       "field": "road.status",
+       "says": "Road #34 is short (about 1 mile) and dead-ends at the trailhead."
+      },
+      {
+       "field": "approach",
+       "says": "Continue to the washout at 2.3 miles from the highway and park at Ruth Creek (elevation 2,156 feet). Hike the abandoned road beyond the washout for two miles to the Nooksack Cirque trailhead at 2,550 feet."
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "Nooksack Cirque Trailhead (Trail #750), elev 2200, distMi 0"
+      }
+     ],
+     "why": "The road card says cars reach the trailhead on FR 34, while the approach says you park at the FR 32 washout and walk two miles to the 2,550 ft Nooksack Cirque trailhead; the waypoint puts that trailhead at the 2,200 ft parking spot.",
+     "internal_resolution": "approach, approach_variants and waypoint directions agree you park at the Ruth Creek washout; the road card is stale.",
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "it does not apply at the Nooksack Cirque (Ruth Creek) trailhead itself, where no pass is currently required"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the parking pass at the road end and the park permit are two separate things you need at once"
+      }
+     ],
+     "why": "Access says no parking pass is required at this trailhead, while the camp card says you need one.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "alpine rock rack to 3 inches"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "An alpine rack to three inches"
+      },
+      {
+       "field": "what_to_bring[1]",
+       "says": "Light alpine rock rack to about 2 in"
+      }
+     ],
+     "why": "The rack goes to 3 in in the gear and rack fields but about 2 in in what-to-bring.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Hardest rock grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.4"
+      },
+      {
+       "field": "pro_tips[4]",
+       "says": "crux moves around 5.4-5.5"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "Multi-pitch traditional leading up to 5.6"
+      }
+     ],
+     "why": "The crux is 5.4 in the grade and breakdown, 5.4-5.5 in tips, and 5.6 in partner requirements.",
+     "internal_resolution": "grade, rock_grade and pitch_detail agree on 5.4.",
+     "needs_research": false
+    },
+    {
+     "fact": "Saddle / high bivy position along the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6]",
+       "says": "Nooksack Bivouac saddle, elev 7900, distMi 6 — used as a high bivy and as the rappel-anchor point on the descent"
+      },
+      {
+       "field": "waypoints[5]",
+       "says": "Steep snow/ice gully, elev 7300, distMi 5.7"
+      },
+      {
+       "field": "approach",
+       "says": "From the bivouac, gain the glacier, traverse climber's right along the glacier to an exposed snow saddle below Nooksack Tower, then drop down and work onto the main lobe of the Price Glacier."
+      },
+      {
+       "field": "beta",
+       "says": "reach the bergschrund at 6,500 ft"
+      }
+     ],
+     "why": "The approach reaches the saddle before dropping to the glacier and the 6,500 ft bergschrund, while the waypoints place the saddle at 7,900 ft above the couloir.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

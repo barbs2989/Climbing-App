@@ -1,0 +1,177 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach-ridge pitch description names a different peak's terrain"
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain/loss"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 2-3",
+      "notes": "Baker River Trail to Perfect Pass via Icy/Ruth/Mineral/Easy Peak and Easy Ridge; mostly off-trail ridge travel",
+      "pitch": "Approach ridge"
+     },
+     {
+      "grade": "Steep snow / Class 3-4",
+      "notes": "West-side traverse of steep snow, trees, and gullies; no real alternative, much worse when wet",
+      "pitch": "Crowder Bypass"
+     },
+     {
+      "grade": "Class 3-4",
+      "notes": "Final scramble on open slopes/ledges to the summit",
+      "pitch": "Southwest Flank"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "before": {
+    "itinerary": {
+     "cal": "No permits needed; best conditions are typically late July-September once the Thornton Creek brush has dried out and the Despair Lakes snowfields have consolidated.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy mile of trail to Thornton Creek gives way to a steep, brushy bushwhack through cliff bands and dense cedar thickets to a rocky shoulder at ~5,300 ft. Parties typically push on to flat benches on the Thornton Pass crest for camp, arriving in the evening after a long, hot day.",
+       "hours": 7.5,
+       "miles": 5,
+       "title": "Bushwhack to Thornton Pass camp",
+       "gainFt": 3200,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "Mid-morning",
+         "label": "Leave Thornton Lakes trailhead",
+         "detail": "Trailhead sits at ~2,500 ft."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Leave trail at Thornton Creek",
+         "detail": "Begin off-trail bushwhack up steep forest and cliff bands."
+        },
+        {
+         "time": "+7.5 hr",
+         "label": "Reach rocky shoulder, 5,300 ft",
+         "detail": "Above the worst of the brush on Thornton Ridge."
+        },
+        {
+         "time": "6:00 PM",
+         "label": "Make camp",
+         "detail": "Flat benches on the Thornton Pass crest."
+        }
+       ],
+       "objective": "Reach a benched camp on the Thornton Ridge crest"
+      },
+      {
+       "n": 2,
+       "note": "A grueling camp-to-camp day: descend heather and brush toward Triumph Pass, drop to the Despair Lakes basin, then climb heathery ridge and talus to a cliff band below the SE Face, finishing with roped pitches to the summit. The return retraces the whole route, often finishing well after dark.",
+       "hours": 17,
+       "miles": 14,
+       "title": "Long summit push via Triumph Pass and Despair Lakes",
+       "gainFt": 2800,
+       "lossFt": 2800,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "6:20 AM",
+         "label": "Leave camp",
+         "detail": "Descend heather slopes toward Mt. Triumph's SW buttress."
+        },
+        {
+         "time": "10:10 AM",
+         "label": "Reach Triumph Pass",
+         "detail": "~3.8 hrs from camp, after brushy traverse and stream descent to ~4,600 ft."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Arrive Despair Lakes, lunch",
+         "detail": "Traverse around Lake Regret to the upper lake basin before the final climb."
+        },
+        {
+         "time": "3:40 PM",
+         "label": "Reach the summit",
+         "detail": "Via heathery ridge, talus, and a roped cliff band on the SE Face; ~9.3 hrs from camp."
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Back at Despair Lakes",
+         "detail": "Regroup with the full party before the long return."
+        },
+        {
+         "time": "12:20 AM",
+         "label": "Return to camp",
+         "detail": "Final talus and stream crossings done by headlamp; ~18 hrs car-to-car... camp-to-camp."
+        }
+       ],
+       "objective": "Climb the SE Face to the summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Pack up camp and reverse the Thornton Ridge descent and brushy creek bushwhack back to the trailhead, often in low clouds or light rain. Many parties stop to rest at the lowest Thornton Lake on the way down.",
+       "hours": 5.5,
+       "miles": 5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3200,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Break camp and descend to the trailhead"
+      }
+     ],
+     "totalNote": "A real 3-day backpack for most parties: ~24 miles round trip with roughly 10,000-12,000 ft of cumulative gain/loss, capped by a brutal 15-18 hr camp-to-camp summit day; very fit/experienced parties have compressed it to 2 days."
+    }
+   }
+  }
+ ]
+}

@@ -4,20 +4,28 @@
 // + minor-in-party flag, and only lets a climber review a guide they actually have a
 // real inquiry with. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
 import { useMemo, useState, lazy, Suspense } from "react";
+import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useSession } from "./auth";
+import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
-  submitInquiry, submitReview,
-  dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS,
+  submitInquiry, submitReview, withdrawInquiry,
+  dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS, publicNameOf,
 } from "./db";
+import { POP_BACK } from "./popupChrome.js";
+import { askConfirm } from "./ConfirmSheet.jsx";
+import { photoThumb } from "./photoThumb";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
 function Check({ checked, onClick, children, C }) {
+  // role="checkbox", not "button" — this toggles between two states and a screen reader has
+  // to be able to say which one it is in, so aria-checked is as load-bearing as the tab
+  // stop. Announcing it as a button would lose the state entirely.
   return (
-    <div onClick={onClick} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
-      <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blue : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
+    <div {...clickable(onClick, { role: "checkbox" })} aria-checked={!!checked} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
+      <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blueSolid : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
       <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{children}</span>
     </div>
   );
@@ -25,9 +33,9 @@ function Check({ checked, onClick, children, C }) {
 
 function GuideCard({ g, verified, onOpen, C }) {
   return (
-    <div onClick={onOpen} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
+    <div {...clickable(onOpen)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-        {g.avatar ? <img src={g.avatar} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
+        {g.avatar ? <img src={photoThumb(g.avatar, 46)} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 14.5, fontWeight: 700, color: C.text }}>{g.name}</span>
@@ -51,27 +59,45 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const { data: credentials, isLoading: credsLoading, isError: credsError } = useGuideCredentials(guide.id);
-  const { data: reviews, isLoading: revLoading, isError: revError } = useGuideReviews(guide.id);
-  const { data: myInquiries } = useMyInquiriesWithGuide(uid, guide.id);
+  const { data: reviews, isLoading: revLoading, isError: revError, refetch: refetchReviews } = useGuideReviews(guide.id);
+  const { data: myInquiries, refetch: refetchMyInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
 
   const [obj, setObj] = useState(""); const [dates, setDates] = useState(""); const [party, setParty] = useState(1); const [msg, setMsg] = useState("");
   const [minor, setMinor] = useState(false); const [disclaimerOk, setDisclaimerOk] = useState(false);
-  const [sent, setSent] = useState(false); const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false); const [sending, setSending] = useState(false); const [sentId, setSentId] = useState(null); const [withdrawing, setWithdrawing] = useState(false);
 
-  const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false);
-  const reviewableInquiry = (myInquiries || []).find(i => !i.reviews || !i.reviews.length);
+  const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false); const [reviewBusy, setReviewBusy] = useState(false);
+  const reviewableInquiry = (myInquiries || []).find(i => i.status !== "withdrawn" && (!i.reviews || !i.reviews.length));
+  // An inquiry still waiting on the guide can be taken back -- the one just sent, or one from an
+  // earlier visit (0226). Nothing could withdraw one before; it just sat in the guide's inbox.
+  const openInquiryId = sentId || ((myInquiries || []).find(i => i.status === "new") || {}).id || null;
+  const withdraw = async () => {
+    if (!openInquiryId || withdrawing) return;
+    if (!(await askConfirm({ title: "Withdraw your inquiry to " + guide.name.split(" ")[0] + "?", confirmLabel: "Withdraw" }))) return;
+    setWithdrawing(true);
+    try {
+      await withdrawInquiry(openInquiryId);
+      setSent(false); setSentId(null); refetchMyInquiries && refetchMyInquiries();
+      notify && notify("Inquiry withdrawn — " + guide.name.split(" ")[0] + " sees it as withdrawn.");
+    } catch (e) {
+      refetchMyInquiries && refetchMyInquiries();
+      notify && notify("Couldn't withdraw that inquiry — " + ((e && e.message) || "try again."));
+    } finally {
+      setWithdrawing(false);
+    }
+  };
 
   const send = async () => {
     if (!uid || !disclaimerOk || sending) return;
     setSending(true);
     try {
-      await submitInquiry({
+      const row = await submitInquiry({
         guide_id: guide.id, climber_id: uid,
         objective: obj, requested_dates: dates, party_size: party, message: msg,
         includes_minor: minor,
       });
-      setSent(true);
+      setSent(true); setSentId(row && row.id || null); refetchMyInquiries && refetchMyInquiries();
       notify && notify("Inquiry sent to " + guide.name.split(" ")[0] + " — they'll reply in the app.");
     } catch (e) {
       notify && notify("Couldn't send that inquiry — please try again.");
@@ -81,13 +107,19 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   };
 
   const postReview = async () => {
-    if (!reviewableInquiry) return;
+    // A second tap used to post again while the first was in flight, and the new review never
+    // appeared in the list because nothing re-read it.
+    if (!reviewableInquiry || reviewBusy || reviewSent) return;
+    setReviewBusy(true);
     try {
       await submitReview({ inquiry_id: reviewableInquiry.id, guide_id: guide.id, climber_id: uid, rating, text: reviewText });
       setReviewSent(true);
+      refetchReviews && refetchReviews();
       notify && notify("Review posted.");
     } catch (e) {
-      notify && notify("Couldn't post that review.");
+      notify && notify("Couldn't post that review — try again.");
+    } finally {
+      setReviewBusy(false);
     }
   };
 
@@ -96,13 +128,13 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const primaryCred = (credentials || []).find(c => c.kind === "primary_track");
 
   return createPortal((
-    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto" }}>
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto", overscrollBehavior: "contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          {guide.avatar ? <img src={guide.avatar} alt="" style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
+          {guide.avatar ? <img src={photoThumb(guide.avatar, 56)} alt="" style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
           <div>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <span style={{ fontSize: 17, fontWeight: 700, color: C.text }}>{guide.name}</span>
@@ -131,7 +163,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
         {(reviews || []).length ? reviews.map(r => (
           <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginBottom: 8 }}>
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, fontWeight: 700, color: C.text }}>
-              <span>{r.profiles && r.profiles.name || "Climber"}</span><span>{"★".repeat(r.rating)}</span>
+              <span>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span>
             </div>
             <div style={{ fontSize: 13, color: C.textSub, marginTop: 4 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}>
@@ -145,14 +177,15 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
           <select aria-label="Star rating" value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
           <textarea aria-label="How did it go?" value={reviewText} onChange={e => setReviewText(e.target.value)} rows={2} placeholder="How did it go?" style={{ ...inp, marginTop: 6, resize: "vertical", fontFamily: "inherit" }} />
-          <button onClick={postReview} style={{ marginTop: 6, width: "100%", background: C.blue, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
+          <button onClick={postReview} disabled={reviewBusy} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
         </div> : null}
 
         <div style={label}>Send an inquiry</div>
         {sent ? (
-          <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>Sent — you'll agree on dates and price together before anything is booked. No payment now.</div>
+          <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>Sent — you'll agree on dates and price together before anything is booked. No payment now.{openInquiryId ? <button onClick={withdraw} disabled={withdrawing} style={{ display: "block", marginTop: 8, width: "100%", background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 0", fontSize: 12.5, fontWeight: 700, cursor: withdrawing ? "default" : "pointer" }}>{withdrawing ? "Withdrawing…" : "Withdraw inquiry"}</button> : null}</div>
         ) : (
           <>
+            {openInquiryId ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: "8px 10px", marginBottom: 8 }}><span style={{ flex: 1 }}>{"You have an inquiry waiting on " + guide.name.split(" ")[0] + "."}</span><button onClick={withdraw} disabled={withdrawing} style={{ flexShrink: 0, background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: withdrawing ? "default" : "pointer" }}>{withdrawing ? "Withdrawing…" : "Withdraw"}</button></div> : null}
             <textarea aria-label="What's your objective?" value={obj} onChange={e => setObj(e.target.value)} rows={2} placeholder="What's your objective?" style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
             <input aria-label="Dates you're thinking of" value={dates} onChange={e => setDates(e.target.value)} placeholder="Dates you're thinking of" style={{ ...inp, marginTop: 8 }} />
             <select aria-label="Party size" value={party} onChange={e => setParty(Number(e.target.value))} style={{ ...inp, marginTop: 8 }}>
@@ -164,7 +197,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
             <Check checked={disclaimerOk} onClick={() => setDisclaimerOk(v => !v)} C={C}>{DISCLAIMER_TEXT}</Check>
             <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>No payment now. You'll confirm dates and price directly with the guide.</div>
             {!uid ? <div style={{ fontSize: 12.5, color: C.textSub }}>Sign in to send an inquiry.</div> :
-              <button onClick={send} disabled={!disclaimerOk || sending} style={{ width: "100%", background: disclaimerOk ? C.blue : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: disclaimerOk ? "pointer" : "default" }}>{sending ? "Sending…" : "Send inquiry"}</button>}
+              <button onClick={send} disabled={!disclaimerOk || sending} style={{ width: "100%", background: disclaimerOk ? C.blueSolid : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: disclaimerOk ? "pointer" : "default" }}>{sending ? "Sending…" : "Send inquiry"}</button>}
           </>
         )}
         <button onClick={() => { onClose(); onDash && onDash(); }} style={{ width: "100%", marginTop: 16, background: "none", border: "none", color: C.textMuted, fontSize: 12, cursor: "pointer" }}>Already listed? Open your guide dashboard →</button>
@@ -181,7 +214,8 @@ export default function DbGuides({ onDash, notify, C }) {
 
   const guides = useMemo(() => {
     let list = (rows || []).map(g => ({ ...dbGuideToCamel(g), _verified: isGuideVerified(g.guide_credentials || []) }));
-    if (q.trim()) { const s = q.trim().toLowerCase(); list = list.filter(g => g.name.toLowerCase().includes(s) || (g.title || "").toLowerCase().includes(s) || g.regions.some(r => r.toLowerCase().includes(s))); }
+    // Same spelling rules as every other search box (lib/search.js): "mt hood" finds a guide who lists "Mount Hood".
+    if (q.trim()) list = list.filter(g => searchMatches(q, [g.name, g.title || "", ...g.regions].join(" ")));
     if (disc) list = list.filter(g => g.disciplines.includes(disc));
     list = list.slice().sort((a, b) => sort === "price" ? a.rate - b.rate : (b.rating || 0) - (a.rating || 0));
     return list;
@@ -208,7 +242,7 @@ export default function DbGuides({ onDash, notify, C }) {
       <div style={{ marginTop: 16, textAlign: "center" }}>
         <div style={{ fontSize: 13, color: C.textSub, marginBottom: 8 }}>Are you a certified guide?</div>
         <button onClick={() => setApplyOpen(true)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 10, padding: "9px 16px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Apply to guide</button>
-        <div onClick={onDash} style={{ marginTop: 10, fontSize: 12, color: C.textMuted, cursor: "pointer" }}>Already listed? Open your guide dashboard →</div>
+        <div {...clickable(onDash)} style={{ marginTop: 10, fontSize: 12, color: C.textMuted, cursor: "pointer" }}>Already listed? Open your guide dashboard →</div>
       </div>
       {sel ? <GuideDetail guide={sel} onClose={() => setSel(null)} onDash={onDash} notify={notify} C={C} /> : null}
       {applyOpen ? <DbGuideApplyLazy onClose={() => setApplyOpen(false)} notify={notify} C={C} /> : null}

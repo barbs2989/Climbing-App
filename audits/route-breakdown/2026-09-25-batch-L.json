@@ -1,0 +1,183 @@
+{
+  "wa_nw_face_var_remsberg_variation": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.5", "lengthM": 46, "anchor": "ledge, gear", "notes": "Shared with the standard Northwest Face. Follow a gully and crack system that trends left, passing a couple of small trees, to a roomy belay ledge. The climbing is low-angle but more thoughtful than the grade suggests, and protection is straightforward." },
+      { "pitch": "P2", "grade": "5.7", "lengthM": 46, "notes": "Shared with the standard Northwest Face. Climb the crack system just left of a narrow chimney, passing old pitons near the top, then go over or around a 4-5 ft horn and scramble 4th-class ground rightward. Some parties belay soon after the horn instead of running out the scramble." },
+      { "pitch": "P3", "grade": "5.10d", "bolts": 2, "crux": true, "notes": "Three crack systems rise above this belay: the standard route takes the loose right-hand flakes, the Remsberg goes straight up the clean crack on the left. A well-protected 5.7 crack trends slightly left and steepens; place a last solid 1-2 in piece where it goes vertical, then climb a flared groove past two bolts and a tricky slab to the belay ledge." },
+      { "pitch": "P4", "grade": "5.9", "notes": "Back on the standard Northwest Face: a long, cold, north-facing dihedral with varied laybacks, finger jams and stemming, protected by nearby cracks (doubles in finger sizes help). Near the top the crack pinches out and there is a 20-30 ft runout before the angle eases to the next belay." },
+      { "pitch": "P5", "grade": "5th class", "notes": "Easy climbing up and left to the west summit of Liberty Bell. To reach the main summit, scramble down into the notch and back up; from there, head for the Beckey Route rappel line to descend." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Rewrote all five thin notes with direction, features and hazards. Corrected P1/P2 lengths to the sourced 150 ft (46 m) each; dropped the unsourced lengths on P3 (30), P4 (30) and P5 (35) — no source gives the Remsberg pitch length, and sources disagree on P4 (one trip report calls it over 60 m). Added bolts: 2 and crux on P3.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+        "https://www.mountainproject.com/route/107238596/northwest-face",
+        "https://climberkyle.com/2019/08/03/liberty-bell-nw-face-5-9/"
+      ],
+      "other_findings": "One trip report found the Remsberg crack goes through a hand-crack roof (about 5.9+) before the blank 10d slab. The source that calls the variation a 'single-pitch variation' matches the stored approach text."
+    }
+  },
+  "wa_liberty_traverse": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Section 1: Beckey Route (Liberty Bell)", "grade": "5.6", "notes": "From the Liberty Bell–Concord gully, climb four pitches: a blocky 5.3 chimney to a treed ledge, a longer 5.5 chimney past chockstones, a 5.5 finger traverse under a small roof (fixed pin) into a dihedral, and a short 5.6 slab boulder problem below the summit. Downclimb and rappel back into the Liberty Bell–Concord notch." },
+      { "pitch": "Section 2: North Face (Concord Tower)", "grade": "5.7", "lengthM": 91, "notes": "Three pitches straight from the Liberty Bell–Concord notch: a 5.6 crack to a ledge with small trees, 5.7 up flaky, hollow-sounding rock with big holds, then cracks and a bear-hug flake just under the summit. Can stay wet after rain and icy in shoulder season. Two short rappels down the south face reach the Concord–Lexington notch." },
+      { "pitch": "Section 3: North Face (Lexington Tower)", "grade": "5.7", "lengthM": 91, "notes": "The crux is the first move: an awkward, rightward-trending hand crack right off the ground, easing to 5.6 stemming in a chimney. A blocky 5.7 pitch trends right to a notch, then an exposed 4th-class summit traverse where a fall would be serious. From the top: rappel the south side, cross exposed 3rd class, make one more short rappel and walk to North Early Winters Spire." },
+      { "pitch": "Section 4: Northwest Corner (North Early Winter Spire)", "grade": "5.9", "lengthM": 152, "crux": true, "notes": "Five pitches: a 5.8 crack and corner with a thinly protected short chimney, 5.9 through trees and up a corner, a 5.9 left-leaning flake and wide crack, then the crux wide crack (smear the face, arm-bar for balance) to a sloping ledge under a roof. Go left around the roof to the summit. Carry a couple of larger cams. Descend by several rappels down the west face." },
+      { "pitch": "Section 5: Southwest Rib (South Early Winter Spire)", "grade": "5.8", "lengthM": 274, "notes": "From the base below the west face (about 20-30 minutes of scrambling from North Early Winters Spire), seven pitches: a 5.8+ crack through a bulge, the wide left-leaning Wavy Crack, the twin-offwidth Bear Hug (5.7+), a poorly protected arête slab to the Rabbit Ears, and a downclimb into a gully before easy cracks to the summit blocks." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Replaced the 'approximate, consult a topo' placeholders and '5.8ish' grades with each link's real pitch sequence, crux and the rappels between summits. Dropped the unsourced lengths (Beckey 152, and the uniform 120 m on three sections — Concord and Lexington are ~300 ft = 91 m each, NW Corner 500 ft = 152 m, SW Rib ~900 ft = 274 m). Marked the NW Corner as crux.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/115148381/liberty-traverse",
+        "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+        "https://www.mountainproject.com/route/106543279/north-face",
+        "https://www.mountainproject.com/route/109194342/north-face",
+        "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+        "https://www.mountainproject.com/route/106416669/southwest-rib"
+      ],
+      "other_findings": "The traverse page grades the SW Rib 5.7 and the NW Corner 5.9+; the routes' own pages grade them 5.8 and 5.9. I used the routes' own grades. The stored descent_text says the SEWS finish uses 'that peak's standard South Arête rappel line'; the SW Rib page describes three rappels from chains on the SW arête (Rabbit Ears), so this is probably the same line — worth checking."
+    }
+  },
+  "wa_flycatcher_buttress": {
+    "area": "wa_north_early_winters_spire",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "notes": "Head mostly straight up the natural features. The climbing is straightforward, but good gear placements are harder to find than the angle suggests. Belay at a slung tree, or continue to the next ledge above." },
+      { "pitch": "P2", "notes": "Downclimb to below the steep face, then traverse hard right for a full rope-length. Several ledges at the end of the traverse offer a belay; protect the follower as well as the leader on this sideways ground." },
+      { "pitch": "P3", "notes": "Mostly walking with a little easy climbing, heading to the right side of a big ledge." },
+      { "pitch": "P4", "notes": "Step right and make an awkward step up into a slabby corner. Build a solid anchor near the chimney, or continue left to a large ledge instead." },
+      { "pitch": "P5", "notes": "Several lines are possible. A good choice is a low-angle hand crack that leads to a big ledge right below the crux pitch." },
+      { "pitch": "P6", "crux": true, "notes": "The crux pitch. Where the wall shows a pair of cracks, take the left one." },
+      { "pitch": "P7", "notes": "Climb mostly straight up to a good ledge." },
+      { "pitch": "P8", "notes": "Traverse left to an exposed, wider crack. Do not go straight up off the belay, which is the easy mistake to make here." },
+      { "pitch": "P9", "notes": "Choose a variation: climb cracks and make an awkward step left to reach a hand crack, or take the squeeze chimney. A #5 cam is useful on the wide options." },
+      { "pitch": "P10", "notes": "Easy climbing to the summit plateau. To descend, cross to the west side of the peak for the rappels." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Split the combined rows 'P5-P6' and 'P8-P9' into single pitches so there is one entry per pitch (8 → 10), which matches the stored pitches = 10. Corrected P7: the stored 'Sustained climbing' is not supported — the crux is P6 (P5 ends 'below the crux pitch'). No per-pitch grades or lengths exist in any source, so none were added. Notes are short because the only detailed source is itself brief — anything more would be invented.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/118228852/flycatcher-buttress",
+        "https://cascadeclimbers.com/forum/topic/62767-tr-north-early-winter-spire-flycatcher-route-9272008/ (did not load)",
+        "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Flycatcher-Buttress (did not load)"
+      ],
+      "other_findings": "Per-comment labels 'P5-P6' and 'P8-P9' no longer exist after the split; check whether any comments are keyed on them."
+    }
+  },
+  "wa_mojo_rising": {
+    "area": "wa_south_early_winters_spire",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.11b", "lengthM": 32, "crux": true, "anchor": "bolted", "notes": "Starts on the obvious bolt line about 20 ft downhill from the chockstone feature, left of the first pitch of the Northwest Face. Runout 5.6 leads to the first bolt, then a bolted face. The first ascent used aid (A0) here; the bolts are spaced too far apart to aid or French-free easily." },
+      { "pitch": "P2", "grade": "C1+", "notes": "Aid up a thin, very flared seam past one bolt, then one last 5.6 move to the anchor. The placements are fiddly: small cams, offsets and brass nuts are the useful pieces. Not yet reported free." },
+      { "pitch": "P3", "grade": "C1", "lengthM": 26, "notes": "From the right side of the ledge, climb a short wide crack (5.10a), then cut back left into an alcove with a steep corner crack above a sloping ledge. Aid the seam, where a blown piece could deck you on the ledge. Free climb the crack to a foot rail and make a hard traverse left to the belay. Could go free as a stemming problem." },
+      { "pitch": "P4", "grade": "5.8", "lengthM": 23, "notes": "The Skywalker Traverse. The first ascent tension-traversed and lowered out onto Skywalker ledge (5.8 A0). Plan how you will protect the follower on the sideways moves." },
+      { "pitch": "P5", "grade": "5.10a", "lengthM": 53, "notes": "An awkward 10a seam leads right off the belay into a corner. Climb carefully up and around a huge block that is completely detached, keeping the rope and the follower out of its fall line. Then good 5.9 finger crack climbing leads to a belay on hand and finger pieces." },
+      { "pitch": "P6", "grade": "5.7", "notes": "Climb blocky terrain and pass through some trees to reach the crest of the Southwest Rib." },
+      { "pitch": "P7-9", "grade": "5.4", "notes": "Finish up the well-traveled Southwest Rib to the summit, easy ground that parties either simul-climb or pitch out. To bail instead, rappel the first three pitches with a single 60 m rope from the bolted anchors." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Grades are now single tokens: the aid grades moved into notes, and P2/P3 take their aid grade (C1+/C1) because those pitches are aided. Lengths converted from the sourced feet (105/85/75/175 ft). Added the start landmark, the P3 deck hazard and the detached-block warning on P5. Marked P1 as crux (the hardest free climbing; the route grade comes from it).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/117067715/mojo-rising",
+        "https://www.mountainproject.com/route/117392467/free-mojo",
+        "https://cascadeclimbers.com/forum/topic/45758-tr-wa-pass-south-early-winter-spire-fa-mojo-rising-iii-511-a1-10142006/ (did not load)"
+      ],
+      "other_findings": "The route is listed 5.11b/C1+ and described as 'still yet to be freed'. The stored overview says 'the 5.11b grade reflects later free ascents of the aid section', which that page does not support. A separate route, Free Mojo (5.11, 6 pitches, Herrington/Zimmerman), exists nearby. Stored discipline 'alpine' with grade '5.11b' hides the C1+ aid."
+    }
+  },
+  "wa_labor_pains": {
+    "area": "wa_north_early_winters_spire",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "lengthM": 60, "notes": "Start up the Chockstone Route, then break up and left toward a ledge beneath a clean slab. A full rope-length on a 60 m rope." },
+      { "pitch": "P2", "notes": "Follow clean cracks up the slab to a corner. A wide section in the corner pinches down to the belay. Tiny cams and brass nuts matter on this route." },
+      { "pitch": "P3", "anchor": "bolted", "notes": "A steep pitch working up and left through overhangs on good flakes. The anchor at the top now has two solid bolts where rusty pitons used to be." },
+      { "pitch": "P4", "grade": "5.11a", "crux": true, "notes": "The crux, and it is not obvious. Climb up to a wild overhang, pull through it, then move left and up onto easy slabs. The route is rated PG13, so expect some spaced protection on the hard sections." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Fixed a misassignment: the 'full 60 m' length belongs to P1, not P2. Removed the unsourced per-pitch grades '5.9ish', '5.10' and '5.10-5.11'; no source grades individual pitches, and the three are described only as progressively harder 5.10/5.11 pitches. Added the P3 bolted anchor. Kept 4 entries: the description covers only four pitches, and P4 ends on easy slabs.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110902345/labor-pains",
+        "https://cascadeclimbers.com/forum/topic/104052-tr-north-early-winters-spire-labor-pains-retro-bolt-06212021/ (did not load)",
+        "https://www.summitpost.org/north-early-winters-spire/151550 (403)"
+      ],
+      "other_findings": "The stored overview says 'three sustained 5.11a pitches'. Another summary says the route has five pitches, two of them 5.10 and 5.11. The route is also placed differently: stored text and one source say it is between the Chockstone Route and the West Face, another says between the West Face and the Southwest Face. The stored rappels and descent_text fields also contradict each other (descent_text: Chockstone line; rappels: mostly the West Face bolted line)."
+    }
+  },
+  "wa_complete_south_buttress": {
+    "area": "wa_cutthroat_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "lower section", "grade": "Class 3–4, easy 5th", "notes": "Starts on easy, ledgy slabs at the southwest edge of the lower buttress, reached by contouring southeast off the South Buttress trail near 6,500 ft. Follow the rock ridge up its crest on enjoyable 3rd, 4th and easy 5th class ground; most parties simul-climb or scramble much of it." },
+      { "pitch": "Lower ridge rappels", "grade": "2 half-rope rappels", "notes": "The ridge drops into two gaps or cols along the crest, each reached by a half-rope rappel from fixed tat anchors. The tat is old: inspect it and bring webbing and a knife to back it up or replace it." },
+      { "pitch": "upper pitches", "grade": "5.7", "notes": "The ridge merges with the regular South Buttress line. Its upper crest crosses blocky ledges and an awkward slabby step onto an exposed ledge system, and passes under a large chockstone in a chimney, which confirms you are on route. Crack and flake climbing follows, with good protection." },
+      { "pitch": "Crux stembox", "grade": "5.8", "crux": true, "notes": "Climb a ramp to a wide chimney or stembox with little protection, stem up it, then step right onto a face with good hand cracks. An awkward move back left and down tops out into a sandy gully." },
+      { "pitch": "Notch and summit crack", "grade": "5.8", "notes": "Downclimb into the notch, which is easier than it looks. Go left and down the loose gully, climb a short face with good holds but little protection into a gully that leads up and right, and belay under a corner. Climb the corner, then a slabby lieback boulder move into the obvious hand and offwidth crack (a #4 cam protects it). Cross the big slab to the summit." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Went from 2 → 5 entries. Separated the lower-ridge rappels (with the warning about the old tat) and broke the vague 'upper pitches' row into the regular route's upper crest, its crux stembox, and the notch and summit crack. The stored '3rd/4th class, easy 5th' and '5.7-5.8' were replaced by a chip and single grade tokens. No lengths were added because none are sourced.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/111086430/complete-south-buttress",
+        "https://www.mountainproject.com/route/109326651/south-buttress",
+        "https://spokalpine.com/2018/06/20/cutthroat-peak-south-buttress-iii-5-8/"
+      ],
+      "other_findings": "No source says exactly where the lower ridge joins the regular South Buttress, so the 'upper pitches' entry describes the regular route's upper crest. If the junction is above the chockstone chimney, that feature should come out of the entry — a reviewer who knows the ridge should check. Sources disagree on which 5.8 is the crux: one route page names the P8 stembox, one trip report names the final lieback and offwidth."
+    }
+  },
+  "wa_cutthroat_the_swarm": {
+    "area": "wa_cutthroat_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.7", "lengthM": 40, "anchor": "gear", "notes": "Scramble 4th class on the right side of the prominent ledge system, traverse left to a smaller ledge, then climb the obvious left-facing dihedral through two small roofs. Belay on gear in a horizontal crack." },
+      { "pitch": "2", "grade": "5.6", "lengthM": 37, "anchor": "gear or tree", "notes": "Move right over loose blocks, taking care not to drop them on anyone below, into 4th-class ground. This reaches the large treed ledge at the base of the headwall, with plenty of gear and tree belay options." },
+      { "pitch": "3", "grade": "5.10b", "lengthM": 37, "anchor": "bolted", "notes": "The standout pitch. The crux is the first 25 ft, a left-facing dihedral; extend the last piece with a long sling. Downclimb slightly left to a splitter finger crack that widens to hands and gets easier. Where it pinches out, a second crack starts 4 ft right. Follow it to a bolted anchor on a small stance. No protection bolts." },
+      { "pitch": "4", "grade": "5.11a/b", "lengthM": 21, "anchor": "bolted", "notes": "Climb hollow rock below a roof and place gear carefully, then move left to a pedestal, up the left-facing dihedral, and exit right. Belay at the bolted anchor next to a dead tree on a large flat ledge." },
+      { "pitch": "5", "grade": "5.10c/d", "lengthM": 24, "anchor": "bolted", "notes": "Start up the corner, then move right onto flared cracks that cross the face. The cracks steepen into an obvious short crux before a bolted anchor at a rest. Harder than it looks from below." },
+      { "pitch": "6", "grade": "5.11c/d", "lengthM": 30, "bolts": 1, "crux": true, "anchor": "bolted", "notes": "The hardest moves of the route: jamming and stemming up a demanding dihedral. Plug a 0.75 cam in a pod, span hard out left to a good edge, and clip the route's only protection bolt on the left wall. Bolted anchor." },
+      { "pitch": "7", "grade": "5.8/5.9", "lengthM": 27, "anchor": "tree or gear", "notes": "Climb easy blocky ground, traverse about 20 ft right into a chimney, exit onto a ledge, then traverse about 15 ft left. Climb a short seam on small gear to a large ledge with a tree and a cave." },
+      { "pitch": "8", "grade": "5.6", "lengthM": 61, "notes": "Exit through the keyhole at the top of the cave. The ground eases steadily to 4th class and scrambling. Belay on the ridge top, then descend via the South Buttress, or via the West Ridge if the buttress is busy." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same 8 pitches. Lengths rounded from the source's feet (130/120/120/70/80/100/90/200 ft). Added anchors on every pitch, the single protection bolt and crux flag on P6, the P3 sequence (dihedral crux, downclimb left, second crack), and the loose-block, hollow-rock and route-finding notes. Dropped the pitch name 'The Gem', which I could not confirm in any source.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/124537013/the-swarm",
+        "https://publications.americanalpineclub.org/articles/13201216751"
+      ],
+      "other_findings": "Several grades keep a slash (5.11a/b, 5.10c/d, 5.11c/d, 5.8/5.9) because that is how the route's only topo grades them; a reviewer may want these as single tokens. The stored beta says 'four bolted headwall pitches'; the anchors are bolted, but there is only one protection bolt on the whole route (P6). The FA report says anchors were bolted on every pitch 5.9+ and gives the FA date as July 3."
+    }
+  },
+  "wa_ultramega_ok": {
+    "area": "wa_burgundy_spire",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "crux": false, "bolts": 0, "grade": "5.8", "pitch": 1, "anchor": "Gear (ledge)", "lengthM": 30, "notes": "Start at the twin-crack system below Burgundy's north side, recognisable by obvious loose blocks about 60 ft up. Climb the twin cracks, moving carefully over the loose blocks and keeping the belayer out of their fall line. Step left and continue to a good ledge." },
+      { "crux": false, "bolts": 0, "grade": "5.8", "pitch": 2, "anchor": "Gear (small stance)", "lengthM": 55, "notes": "Step right into a chimney, then follow a right-facing crack up to another twin-crack system. The belay is a small stance, so manage the rope carefully." },
+      { "crux": false, "bolts": 0, "grade": "5.9", "pitch": 3, "anchor": "Gear (alcove)", "lengthM": 20, "notes": "Delicate face moves trend up and left toward an obvious finger-crack roof. Belay in a small alcove beneath the tricky bulge that starts the next pitch." },
+      { "crux": true, "bolts": 0, "grade": "5.11a", "pitch": 4, "anchor": "Gear (stance)", "lengthM": 25, "notes": "Pull over the bulge right off the belay and climb a thin corner to the roof. Work left around it on decent holds and jams, then jam upward to a stance belay." },
+      { "crux": false, "bolts": 0, "grade": "5.9", "pitch": 5, "anchor": "Gear", "lengthM": 30, "notes": "Trend up and right on the easiest line, protecting in occasional seams. Bring plenty of nuts. Belay below a large corner." },
+      { "crux": false, "bolts": 0, "grade": "5.9", "pitch": 6, "anchor": "Gear", "lengthM": 55, "notes": "A tricky move gets you into the corner, which can be dirty and lichen-covered, and then good hand and finger jams take over. Continue to the buttress crest and traverse left to belay." },
+      { "crux": false, "bolts": 0, "grade": "5.9", "pitch": 7, "anchor": "Gear", "lengthM": 35, "notes": "Step left into a big corner and chimney system. Thrutch up easy wide cracks and tight chimneys back to the buttress crest. Above here parties have lost the line and traversed ledges onto the North Face route; check the next pitch before you commit." },
+      { "crux": false, "bolts": 1, "grade": "5.8", "pitch": 8, "lengthM": 60, "notes": "Climb left past an old bolt, then up a rail or hand crack toward the summit. Downclimb a little, step right, and finish up an offwidth crack to the top. A #4 cam is on the rack for the wide finish." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Kept all 8 pitches, their labels (integers, as stored), lengths and grades, which match the source. Rewrote the notes in more detail. P8: bolts 0 → 1 (it passes an old bolt); removed the unsourced 'Walk-off (no belay)' anchor; replaced the note's claim that the route 'merges with upper North Face terrain near Burgundy Ledge' — that describes a party that went off route after P7, now a warning on P7. P4 anchor: 'Gear' → 'Gear (stance)'. P5 anchor: 'Gear (nuts)' → 'Gear' (the nuts are for protection).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/114960561/ultramega-ok",
+        "https://cascadeclimbers.com/forum/topic/33439-tr-wa-pass-burgundy-spire-ultramega-ok-northeast-buttress-724/ (did not load)"
+      ],
+      "other_findings": "The stored length_m is 310, but the source gives 900 ft (273 m). Another listing gives the route as 7 pitches (5.8, 5.9, 5.8, 5.11, 5.9+, 5.9, 5.8) and 5.10c/d A0 or 5.11. The stored descent_text treats merging into the North Face as the normal finish; the source treats it as going off route. The FA date is 24 July 2004 (stored fa has only the year)."
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+ "applied": [
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    0,
+    "lat"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    0,
+    "lng"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLat"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLng"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "approach",
+   "path": [],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "approach",
+   "path": [],
+   "fact": "trailhead is the Silver Star Creek pullout"
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "partner card approach via hairpin; route is approached from Blue Lake"
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "partner card approach via hairpin; route is approached from Blue Lake"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_clean_break",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4300,
+      "name": "SR-20 Wine Spires pullout (milepost 166)",
+      "note": "Start of the steep climbers' trail toward Burgundy Col, the usual way down from Clean Break. The Silver Star Creek approach starts from a separate pullout about 8.5 miles east of Washington Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.56281,
+      "lng": -120.59725,
+      "elev": 7920,
+      "name": "Juno Tower - Summit",
+      "note": "Clean Break, 15-pitch route on the east walls above Silver Star Creek.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.56281,
+     "peakLng": -120.59725,
+     "trailhead": "SR-20 Wine Spires pullout (milepost 166)",
+     "trailheadLat": 48.549,
+     "trailheadLng": -120.630965,
+     "trailheadDirection": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+    },
+    "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 ft (roughly 2 hours from the car), then continues up to Burgundy Col (~7,720 ft, ~3 hours). Good camping and a late-season spring are near 6,400-6,500 ft. For Clean Break this trail is the usual way down; the more direct way in to Juno Tower's east face is up Silver Star Creek from a separate pullout about 8.5 miles east of Washington Pass."
+   }
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "grade": "Grade IV, 900 ft, 9 pitches",
+      "carToCar": "~8 hrs of climbing, plus the approach and descent"
+     },
+     "approachTime": "~1.5–2 hrs via the east-side hairpin/Spire Gully (shared approach with neighboring routes, not fully route-specific-confirmed); descent is a downclimb plus 3 rappels down South Arete, ~1 hr",
+     "requiredSkills": [
+      "Mixed dihedrals, thin slabs, flakes, and roofs",
+      "~20 bolts but still needs a real trad rack (doubles to 2\", 60m rope)",
+      "One documented party needed an aider on a section — be ready for occasional aid if needed"
+     ],
+     "experienceLevel": "Solid 5.11 trad/face leader"
+    },
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5400,
+      "name": "Blue Lake Trailhead (SR-20)",
+      "note": "Route is on the south/southeast face near Direct East Buttress; the route's name itself references hitchhiking back to a car left at the hairpin after descending the other side of the mountain.",
+      "type": "Trailhead",
+      "elevFt": 5400
+     },
+     {
+      "lat": 48.51216,
+      "lng": -120.65513,
+      "elev": 7807,
+      "name": "South Early Winters Spire",
+      "type": "Summit",
+      "elevFt": 7807
+     }
+    ]
+   }
+  }
+ ]
+}

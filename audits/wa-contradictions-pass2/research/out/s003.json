@@ -1,0 +1,215 @@
+{
+ "file": "s003.json",
+ "results": [
+  {
+   "id": "wa_baldy_standard",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found no source stating a Jul-Sep or Jun-Oct window for this route. A June 25, 2020 trip report found only intermittent, easily crossed snow in late June, and aggregate hiking pages give a broad May/June-October window; neither states a best window. What would settle it: a route/hike page or two dated trip reports stating when the upper ridge is normally snow-free.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-06-25-5987146461",
+    "https://www.wta.org/go-hiking/hikes/baldy"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_baldy_standard",
+   "fact": "False summit Pt 6537",
+   "verdict": "fixed",
+   "correct_value": "The path climbs over the false summit (the low peak on Gray Wolf Ridge) and continues west along the ridge to Baldy; it does not traverse below it.",
+   "evidence": "The hike description says that where the trail ends a rough path climbs about 300 ft in 0.15 mi to a low peak on Gray Wolf Ridge, after which Baldy rises over the saddle ahead. A separate June 2020 trip report says the trail climbs to the top of the ridge and then up to the false summit, whose views precede the ridge to the main summit. Both put the path on top of the bump; the row's approach, beta, pitch_detail and itinerary already say so, so only the waypoint note and baseFinding change.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/baldy",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-06-25-5987146461"
+   ],
+   "patches": [
+    {
+     "id": "wa_baldy_standard",
+     "fact": "False summit Pt 6537",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "traverse below it through open talus rather than over the top to save effort.",
+     "replace": "the path climbs over its top before continuing west along the ridge."
+    },
+    {
+     "id": "wa_baldy_standard",
+     "fact": "False summit Pt 6537",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "the path traverses beneath it through open talus rather than over it,",
+     "replace": "the path climbs over it,"
+    }
+   ]
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "fact": "Road status",
+   "verdict": "fixed",
+   "correct_value": "FS 31 is open (high clearance recommended); no current closure at mile 4.",
+   "evidence": "A dated June 22, 2026 trip report drove Canyon Creek Road (FS 31) past a minor washout near mile 10 all the way to the Damfino Lakes trailhead at its end, rating it high-clearance recommended, so it was not closed at mile 4. The Forest Service's current alerts listing (Sept 2026) and its current road-closures release (updated July 8, 2026) list no closure on FS 31. The mile-4 landslide note is stale; road.status (open, high clearance) is correct, so only access.closures changes.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-22.170659990125",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/newsroom/releases/current-and-upcoming-road-closures-mt-baker-snoqualmie-national-forest"
+   ],
+   "patches": [
+    {
+     "id": "wa_bearpaw_mountain_scramble",
+     "fact": "Road status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Recent Forest Service road-status reports note FS 31 (Canyon Creek Road) closed at mile 4 by landslide debris, which also blocks the FS 3160 spur used for this route.",
+     "replace": "No closure is currently posted for FS 31 (Canyon Creek Road) or the FS 3160 spur, but the road has a history of slide and washout damage."
+    }
+   ]
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "fact": "Which side of the lake and basin",
+   "verdict": "fixed",
+   "correct_value": "Keep left = east: along the east shore, then up the basin rim on the left (east/southeast) side toward Point 6066.",
+   "evidence": "The mapped Church Lake Trail arrives at the lake from the north and meets it at its east end; the mapped continuation path then runs south along the lake's east edge and up the slope south-southeast of it (to about 48.942, -121.847). Trip reports agree parties keep LEFT after the lake and climb the left rim; arriving from the north, left is east. So '(west)' is the outlier; the shoreline's 'east/left' is right. Note: the stored pin for 'Left Rim of Church Lake Basin' sits west of the lake (coordinates out of scope).",
+   "sources": [
+    "https://www.openstreetmap.org/way/970189428",
+    "https://www.openstreetmap.org/way/1301858276",
+    "https://bivouac.com/TripPg.asp?TripId=8906",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-31.0277478985"
+   ],
+   "patches": [
+    {
+     "id": "wa_bearpaw_mountain_scramble",
+     "fact": "Which side of the lake and basin",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "keep left (west) up the basin rim",
+     "replace": "keep left (east) up the basin rim"
+    },
+    {
+     "id": "wa_bearpaw_mountain_scramble",
+     "fact": "Which side of the lake and basin",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "find": "the rim of the basin on the left (west) toward",
+     "replace": "the rim of the basin on the left (east) toward"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_kearney_thomas",
+   "fact": "First-ascent party",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One detailed route history says the route was first climbed by Alan Kearney and Jeff Thomas in August 1984; Jeff's father Bill Thomas came on the trip but stayed in camp, and the ascent used two short aid sections (graded 5.11b or 5.10b C1). That contradicts the beta's 'with Jeff and Bill Thomas' as well as the fa line's 'unknown'. The route database page gives only 'Kearney, Thomas' with no first names or year, and no second source naming the party/year was found. What would settle it: a second record (guidebook-derived page, AAJ note or forum thread) naming Alan Kearney and Jeff Thomas, 1984.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Big-Kangaroo-Kearney-Thomas",
+    "https://www.mountainproject.com/route/201663639/kearney-thomas"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Wall aspect",
+   "verdict": "fixed",
+   "correct_value": "South-facing (aspect S).",
+   "evidence": "A climber's trip report on this route describes the wall's 'steep clean and south facing aspect'. USGS 1/3-arc-second elevation samples on a 60 m grid below the summit show the steep wall dropping about 670 ft in 60 m with a downslope bearing of roughly 164 degrees (SSE, far nearer S than SE). The route pages call it the south face. The one SE claim (a single trip report) is outweighed; aspect S stays and the schedule line is corrected.",
+   "sources": [
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.6175&y=48.5188&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/route/114423730/beckey-tate"
+   ],
+   "patches": [
+    {
+     "id": "wa_beckey_tate",
+     "fact": "Wall aspect",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "southeast-facing wall",
+     "replace": "south-facing wall"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_going_down_under",
+   "fact": "Number and position of the corner pitches",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: the current pitch_detail has exactly two corner pitches (P2 first corner, P3 second corner through the crux bulge), then P4 slabs and wide crack and P5 easy cracks, matching the beta and overview.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Order of the creek crossing and the talus edge",
+   "verdict": "fixed",
+   "correct_value": "The west-face line leaves the Kangaroo Temple/Kangaroo Pass climbers' trail BY crossing Early Winters Creek; after the crossing it climbs through forest/brush to the gully base. No trail toward Kangaroo Pass remains after the crossing.",
+   "evidence": "The route page says to follow the cairned route toward Kangaroo Temple and then cut east across the creek to the approach gully; the area page says to cross the creek and walk uphill through forest until entering one of the gullies. A 2019 trip report likewise crossed Early Winters Creek, returned to the trees and worked through brush into the gully. So the split from the Kangaroo Pass trail is the creek crossing, not a later talus fork; the waypoint notes that place the split after the crossing are corrected. The stored crossing distance (0.4 mi) vs the approach's 0.5-0.7 mi is left open (see discovered entry).",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo",
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Order of the creek crossing and the talus edge",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Easy crossing of Early Winters Creek on the cairned climbers' trail before it splits toward the west-face gullies.",
+     "replace": "Easy crossing of Early Winters Creek, where the west-face line leaves the cairned climbers' trail and heads east toward the west-face gullies."
+    },
+    {
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Order of the creek crossing and the talus edge",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "bear into the west-face approach gully rather than continuing on toward Kangaroo Pass",
+     "replace": "bear into the west-face approach gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Distance to the Early Winters Creek crossing",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach (and approach variant) put the crossing at roughly 0.5-0.7 mi; the crossing waypoint says 0.4 mi. No source gives a distance for the crossing (trip reports give only totals, e.g. about 4 mi round trip). The pin is about 0.3 mi straight-line from the trailhead, so either figure is possible. What would settle it: a GPS track or trip report stating the mileage at the crossing.",
+   "sources": [
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,357 @@
+{
+ "applied": [
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total route gain/loss/distance vs. the summit-day glacier traverse leg"
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total route gain/loss/distance vs. the summit-day glacier traverse leg"
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Summit-day length: partner_requirements says 7 hrs round trip and 2+ days to a McAllister Glacier camp; itinerary/timing say one ~6 hr day to the Inspiration camp and an ~11 hr summit day"
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Summit-day length: partner_requirements says 7 hrs round trip and 2+ days to a McAllister Glacier camp; itinerary/timing say one ~6 hr day to the Inspiration camp and an ~11 hr summit day"
+  },
+  {
+   "id": "wa_austera_peak",
+   "column": "approach",
+   "path": [],
+   "fact": "Which peak this route summits"
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "High camp elevation and approach line"
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "column": "ice_grade",
+   "path": [],
+   "fact": "ice_grade claims technical ice climbing not described anywhere else"
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass"
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass"
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "rappel_detail",
+   "path": [],
+   "fact": "Whether the standard descent involves rappels"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Whether the standard descent involves rappels"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether the standard descent involves rappels"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether the standard descent involves rappels"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Whether the standard descent involves rappels"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "before": {
+    "gain_ft": 1280,
+    "loss_ft": 592,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day fitness; capable of sustained roped glacier travel plus a long summit push (7 total hrs from high camp) after a multi-day approach",
+      "packWeight": "Heavy — full glacier/crevasse-rescue kit, camping gear for multi-day stay, roughly 35-50 lbs depending on days out"
+     },
+     "approachTime": "Multi-day — typically 2+ days from Cascade River Road/Eldorado trailhead to a McAllister Glacier high camp before the 7-hour round-trip summit day",
+     "requiredSkills": [
+      "Roped glacier travel",
+      "Crevasse rescue (self and team)",
+      "Snow bridge / crevasse route-finding, especially with afternoon softening",
+      "Class 4 scrambling on loose blocky rock, including near-summit exposure",
+      "Backcountry/glacier navigation in remote terrain",
+      "Self-sufficiency — very remote, no cell coverage, satellite communicator recommended"
+     ],
+     "experienceLevel": "Advanced alpine climbers only — must have prior roped glacier travel and crevasse rescue experience; not appropriate for a first glacier route"
+    }
+   }
+  },
+  {
+   "id": "wa_austera_peak",
+   "before": {
+    "approach": "From Seattle, drive I-5 north and then WA-20 (North Cascades Highway) east through Sedro-Woolley, Concrete, and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles — paved for the first 10 miles, gravel and washboard the rest of the way — to the Eldorado parking area near mile 20. From the trailhead, hikers backtrack a short distance along the road to find a safe crossing of the Cascade River (historically a large log or braided ford, which shifts year to year), then pick up a steep, unmaintained climbers' boot path that gains roughly 3,000-3,500 feet through old-growth forest to a boulder field, crosses Eldorado Creek, and opens into the alpine meadows of the Eldorado Creek basin, a common camp area roughly 5-6 hours from the car. From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours. Any overnight stay requires a free North Cascades National Park backcountry permit — Eldorado is managed as a high-use cross-country zone with advance reservations available on Recreation.gov plus a limited walk-up allocation issued in person at the Marblemount Wilderness Information Center. IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area: from the Eldorado/Inspiration Glacier high camp (~7,600ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col; Tepeh Towers are passed along this same glacier traverse, and Austera Peak requires further travel across the Klawatti Glacier (including a short rappel from the col) beyond Klawatti Peak — meaningfully further and more committing than simply topping out on Eldorado."
+   }
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "before": {
+    "approach": "Bear Mountain sits deep in the Chilliwack Range and is reached almost entirely on foot from the Hannegan Pass Trailhead: hike over Hannegan Pass, descend the Chilliwack River Trail down-valley, then leave the maintained trail near the Copper Ridge junction and bushwhack/scramble up Bear Mountain's west ridge to a high camp near 4,600 ft. The summit goes via the west ridge and upper north ridge (Class 4-5 scrambling) or the Northwest Ridge, the most commonly cited standard route. Round trips typically run 4-6 days with 30+ miles and well over 10,000 ft of gain.",
+    "ice_grade": "WI5+",
+    "road": {
+     "name": "Depot Creek Road (BC) via Chilliwack River Road, from Chilliwack, BC",
+     "status": "Chilliwack River Road is paved; Depot Creek Road itself is a narrow, increasingly rough and overgrown dirt spur — parking at the large turnout near the start is recommended, though high-clearance 4WD vehicles may continue about 2.5 miles further.",
+     "driveNote": "Requires crossing into Canada via Chilliwack, BC, then driving Chilliwack River Road ~31.7 miles to the Depot Creek Road turnoff, plus the US-Canada border crossing time; a long approach hike up Depot Creek valley follows.",
+     "seasonalGate": "Typically opens after snowmelt in late spring/early summer and closes with the return of snow in fall"
+    }
+   }
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "before": {
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of two rappels protecting a short, sometimes-loose 3rd class gully back to the saddle camp; no fixed anchors, back up any existing tat.",
+      "anchor": "Natural anchor (horn/gear/slung block), upper gully",
+      "lengthM": null
+     },
+     {
+      "n": 2,
+      "notes": "Second rappel finishing the descent to the saddle camp.",
+      "anchor": "Natural anchor, lower gully",
+      "lengthM": null
+     }
+    ],
+    "rappel_count_note": "Lengths aren't stated beyond 'a single 30m rope is sufficient per rappel', so no per-station length is shown.",
+    "descent": "Descend via the standard (non-buttress) route with rappels.",
+    "descent_text": "The standard descent off Bear Mountain's summit is a walk-off, not a rappel-mandatory line: traverse west/southwest staying on the south side of the summit crest, cross a notch/gap, and work across a snowfield that breaks the cliff bands above the Bear Creek drainage, then continue down easier 3rd-4th class terrain. A short, sometimes-loose 3rd class gully drops back down to the saddle camp at ~6,480 ft — about 1 hour and 1,400-1,500 ft of descent in good conditions. That said, this gully is exposed enough that a meaningful number of parties choose to back it up rather than down-climb it, especially with wet rock, a less-experienced partner, or an alpine-start-to-dusk timeline: expect to rappel it in two short pitches, for which a single 30m rope is sufficient per rappel. There are no fixed bolted anchors on this remote, lightly-trafficked route — build natural anchors (horns, gear placements, slung blocks) and back up any old tat you find in place before weighting it. Below the gully, reverse the approach: regain the saddle, traverse back past Points 6822/6592 into the meadows above Ruta Lake, descend through brush and timber to re-ford Bear Creek, and rejoin the Chilliwack River Trail for the long hike back over Hannegan Pass to the trailhead.",
+    "waypoints": [
+     {
+      "lat": 48.9101,
+      "lng": -121.5927,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead (Trail 674)",
+      "note": "End of FS-32 (Hannegan Pass Road) off Mt. Baker Highway; Northwest Forest Pass required at the kiosk, and this is the start of the long multi-day approach toward Bear Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive the Mount Baker Highway to Hannegan Pass Road (FS-32) and follow it to the road end at about 3,100 ft, where Hannegan Pass Trail #674 starts. A Northwest Forest Pass is required at the kiosk here."
+     },
+     {
+      "lat": 48.8829219,
+      "lng": -121.5342754,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "Broad meadow saddle where Hannegan Pass Trail meets the Chilliwack River Trail; leave the maintained tread here and drop north into the Chilliwack River valley toward Canada.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Follow Trail #674 up the valley, nearly level for the first mile and then at a steady grade, roughly 4 miles and 2,000 ft to the broad meadow saddle of the pass. Figure 2.5 to 3 hours."
+     },
+     {
+      "lat": 48.964256,
+      "lng": -121.386028,
+      "elev": 2300,
+      "name": "Bear Creek Camp (Chilliwack River Trail)",
+      "note": "Established camp at the Bear Creek confluence on the Chilliwack River Trail, the jump-off point for the Bear Mountain approach; NPS closed this camp after the 2021 Bear Creek Fire, so verify current access before counting on it.",
+      "type": "Campsite",
+      "distMi": 17,
+      "directions": "Drop off the east side of the pass and continue about 5 miles down into the Chilliwack valley, bearing right at the national park boundary where the Chilliwack River Trail proper begins. The tread loses elevation past U.S. Cabin camp to the Chilliwack River crossing, historically a hand-cable car and a serious ford in high water, then runs down-valley past the Copper Creek and Brush Creek camps to the Bear Creek confluence, roughly 17 miles and 8 to 9 hours from the car. Check current status of the Bear Creek camp, which the Park Service closed after the 2021 fire."
+     },
+     {
+      "lat": 48.95025716666667,
+      "lng": -121.36732783333333,
+      "elev": 5800,
+      "name": "Meadows above Ruta Lake",
+      "note": "From Bear Creek, climb steep timber then huckleberry slopes east to treeline; the route gains the divide crest in open meadowland just above Ruta Lake.",
+      "type": "Junction",
+      "distMi": 19.5,
+      "directions": "Leave the maintained trail at Bear Creek and ford the creek, which can be a genuinely committing crossing during snowmelt. Climb east into steep, brushy timber; higher the brush gives way to huckleberry and slide alder before opening into meadows at about 5,800 ft above Ruta Lake."
+     },
+     {
+      "lat": 48.9375,
+      "lng": -121.3473,
+      "elev": 6480,
+      "name": "NW Ridge saddle high camp (6,480')",
+      "note": "Traverse loose south-facing slopes below Points 6592 and 6822, crossing a rock rib, to this saddle on Bear's NW ridge — the standard bivy for the North Buttress, roughly 9 hours from the trailhead.",
+      "type": "Campsite",
+      "distMi": 21,
+      "directions": "Traverse the divide from the meadows, skirting the loose south-facing slopes below Points 6592 and 6822 and crossing a rock rib, to the broad saddle at 6,480 ft on Bear's northwest ridge. This is the standard high camp, with running water and heather tent sites, and roughly 9 hours of walking from the trailhead."
+     },
+     {
+      "lat": 48.939040500000004,
+      "lng": -121.3523725,
+      "elev": 5700,
+      "name": "Glacier couloir base below North Buttress",
+      "note": "About 1.5 hours below camp; loose rock and occasional icefall/rockfall off the shrinking glacier remnant in the couloir make early starts and helmets essential here.",
+      "type": "Hazard",
+      "distMi": 21.5,
+      "directions": "The route begins by losing height: drop down steep scree trending climbers' right off the saddle and cross several minor gullies to the toe of the small glacier remnant spilling out of the couloir below the north buttress, about 60 to 90 minutes. An axe and crampons are worth their weight here even in summer. Loose rock and occasional icefall out of the shrinking glacier make an early start and helmets the norm."
+     },
+     {
+      "lat": 48.93061,
+      "lng": -121.34104,
+      "elev": 7931,
+      "name": "Bear Mountain summit",
+      "note": "True summit horn gained via seven pitches of 5.10 climbing up the buttress above the couloir; descend west/south on the standard route with downclimbing and short rappels back toward the saddle camp.",
+      "type": "Summit",
+      "distMi": 23,
+      "directions": "Climb the glacier or neve on the climber's-left side of the buttress and work into the slabs leading to the corner system where the technical climbing starts, watching for a moat where the snow meets rock. Seven pitches up to 5.10a follow the crest, with the off-width crux on pitch four and easier alternatives on the crest, to the top of the buttress; a scramble from there gains the true summit."
+     }
+    ],
+    "approach": "From the Hannegan Pass Trailhead (~3,100 ft, end of Ruth Creek Rd/FR-32) follow Hannegan Pass Trail #674 — nearly level for the first mile, then a steady grade — about 4 miles and 2,000 ft of gain to Hannegan Pass (5,100 ft), roughly 2.5-3 hours. Drop off the back (east) side of the pass and continue about 5 more miles, bearing right at the North Cascades National Park boundary onto the Chilliwack River Trail proper; this section loses elevation into the valley, passes U.S. Cabin backcountry camp, and reaches the Chilliwack River crossing (historically a hand-cable car — verify current status with the NPS, since a high-water ford here is a real hazard). Continue down-valley past Copper Creek/Brush Creek camps to the Bear Creek confluence, roughly 17 miles and 8-9 hours from the trailhead including the pass. At Bear Creek, leave the maintained trail: ford Bear Creek (can be a genuine, sketchy crossing during snowmelt) and climb steep, brushy timber eastward. Above treeline the brush turns to huckleberry and slide alder before opening into meadows above Ruta Lake; from there traverse the divide, skirting the south slopes of Points 6592 and 6822 and crossing a rock rib, to a broad saddle at about 6,480 ft — the standard high camp, with running water and heather tent sites. All told this is roughly 9-9.5 hours and 4,500+ ft of gain from the trailhead to camp, so most parties split it over two days (the route's recorded 30.58 km distance matches this ~19-mile one-way haul). A shorter but more logistically complex alternative exists via Chilliwack Lake Road in BC (~9 miles to camp) but requires a border crossing/passport and follows an overgrown, unmaintained tread after the first 1.7 miles — most US-based parties use the Hannegan approach instead. From high camp, the route itself begins with a descent: drop down steep scree trending climbers' right off the saddle, cross several minor gullies, and reach the toe of the small glacier/névé spilling from the couloir below the North Buttress (about 60-90 minutes); crampons and an axe are genuinely useful here even in summer. Climb the glacier/névé on the climber's-left side of the buttress and work into slabs leading to the corner system that marks the start of the technical climbing, staying alert for a moat where the névé meets rock.",
+    "gain_ft": 5950,
+    "loss_ft": 5950,
+    "itinerary": {
+     "cal": "Best climbed July-September once the Chilliwack River Trail and approach gullies are snow-free; the US-side trailhead is reached via Hannegan Pass or Chilliwack Lake Road (partly in BC), so check current border-crossing/trail-access conditions before going.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Chilliwack Lake trailhead, follow the Chilliwack River Trail roughly 6 miles (about 5 hours) to Bear Creek Camp at 2,300'. Just past Bear Creek, leave the trail and climb steep timber and huckleberry slopes on the unmarked 'Bear Creek High Route' past Ruta Lake to meadows on the NW ridge, then traverse below Points 6592 and 6822 to a good camping saddle at 6,480'.",
+       "hours": 9,
+       "miles": 9,
+       "title": "Approach to high camp",
+       "gainFt": 4500,
+       "lossFt": 200,
+       "packLb": 45,
+       "schedule": [
+        {
+         "time": "",
+         "label": "Leave trailhead",
+         "detail": "South end of Chilliwack Lake, on the Chilliwack River Trail."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Reach Bear Creek Camp",
+         "detail": "~6 miles in, elevation 2,300'; trail is faint/overgrown near the border."
+        },
+        {
+         "time": "+9 hr total",
+         "label": "Arrive high camp",
+         "detail": "Saddle at 6,480' on the NW ridge past Ruta Lake, below Points 6592/6822."
+        }
+       ],
+       "objective": "Reach the 6,480' saddle camp on Bear's NW ridge"
+      },
+      {
+       "n": 2,
+       "note": "Descend a gully from camp to the toe of the North Buttress, then climb the glacier-couloir/buttress line to the summit before reversing the descent gully back to camp. This is the long day of the trip — most of it spent on 5th-class rock with some 3rd/4th-class terrain low and high on the route.",
+       "hours": 10.5,
+       "miles": 3,
+       "title": "Summit via the North Buttress",
+       "gainFt": 2500,
+       "lossFt": 1450,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave high camp",
+         "detail": "Descend the approach gully toward the toe of the buttress."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Rope up at base of buttress",
+         "detail": "Glacier couloir gains the start of the technical climbing."
+        },
+        {
+         "time": "+8 hr climbing",
+         "label": "Top out / reach summit",
+         "detail": "Sustained 5th-class pitches on the buttress lead to the 7,931' summit."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Back at high camp",
+         "detail": "3rd/4th-class descent gully reverses the morning approach."
+        }
+       ],
+       "objective": "Climb the North Buttress and tag the 7,931' summit"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Bear Creek High Route back down through timber and brush to Bear Creek Camp, then follow the Chilliwack River Trail out to the trailhead.",
+       "hours": 9,
+       "miles": 9,
+       "title": "Hike out",
+       "gainFt": 300,
+       "lossFt": 4600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Chilliwack Lake trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: a long bushwhack-and-scramble approach to a 6,480' saddle camp, a big 10+ hour summit day on the North Buttress, and a full day hiking out — roughly 19-21 miles round trip."
+    }
+   }
+  }
+ ]
+}

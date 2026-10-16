@@ -1,0 +1,93 @@
+{
+ "id": "wa_mount_saul_se_route",
+ "name": "East Slopes (via Airplane Lake)",
+ "waypoints": [
+  {
+   "lat": 47.9627,
+   "lng": -120.945,
+   "elev": 2300,
+   "name": "White River / Indian Creek Trailhead",
+   "note": "End of White River Road/FS-6400 past Coles Corner; self-issue wilderness permit and a Northwest Forest Pass are required at the kiosk here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Leavenworth take US-2 west 15 miles to Coles Corner, turn onto SR-207 (Lake Wenatchee Highway) for 10.5 miles, then follow White River Road/FS-6400 the final 10 miles to its end at the White River Trailhead, also called the Indian Creek Trailhead, at 2,300 ft. A Northwest Forest Pass is required, and there is a self-issue wilderness permit at the kiosk. The Indian Creek Trail leaves from the road end."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2350,
+   "name": "White River bridge crossing",
+   "note": "Trail crosses the glacier-fed White River on a footbridge here; the bridge has washed out in past years, forcing hikers to ford instead.",
+   "type": "Junction",
+   "distMi": 0.3,
+   "directions": "Follow Indian Creek Trail #1502 from the road end about 0.3 mile to the footbridge over the glacier-fed White River. The bridge has washed out in the past; if it is gone, the river must be forded, which is easiest in the morning."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3300,
+   "name": "Leave-trail point near Airplane Creek",
+   "note": "Party leaves maintained Indian Creek Trail #1502 here to bushwhack up the Airplane Creek drainage toward Airplane Lake; unflagged and easy to lose route in brush or fog.",
+   "type": "Junction",
+   "distMi": 4.5,
+   "directions": "Continue up the Indian Creek valley on the mostly flat trail through old growth and stretches of burned forest for about 4 miles to near Airplane Creek, where you leave the maintained trail. Nothing marks the departure."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4300,
+   "name": "Snow line on Airplane Creek bushwhack",
+   "note": "Snow cover typically begins near 4,000 ft and becomes continuous by about 4,700 ft on this steep, brushy climb; step-kicking needed on firm snow.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Climb steeply north up the Airplane Creek drainage through devil's club, vine maple, blowdown and burned standing timber; keeping to the drainage about a quarter mile downstream of Airplane Creek avoids the worst of the brush. In early season snow begins around 4,000 ft."
+  },
+  {
+   "lat": 48.002594,
+   "lng": -121.006674,
+   "elev": 5282,
+   "name": "Airplane Lake",
+   "note": "9-acre alpine basin lake and the last reliable water/flat camp before the summit push; roughly a 2,000-ft bushwhack gain from Airplane Creek.",
+   "type": "Campsite",
+   "distMi": 6,
+   "directions": "Keep climbing the drainage, on continuous snow above about 4,700 ft in early season, to Airplane Lake at about 5,280 ft, roughly 2,000 ft above the trail. The flat peninsula on the north side of the lake is the usual camp."
+  },
+  {
+   "lat": 48.004196,
+   "lng": -121.0183,
+   "elev": 6200,
+   "name": "Base of upper east face",
+   "note": "Three lines diverge here toward the summit — the northeast ridge, a direct ascent of the upper east face, and a connecting gully; choose based on snow coverage.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Boulder-hop across the lake's outlet and head west up open slopes toward the low point on the ridge east of the summit, to the foot of the upper east face at about 6,200 ft."
+  },
+  {
+   "lat": 48.001823,
+   "lng": -121.023293,
+   "elev": 7293,
+   "name": "Mount Saul",
+   "note": "True summit with a short exposed Class 3 rock scramble for the final feet; nearly all parties descend the same ascent line back to the trailhead.",
+   "type": "Summit",
+   "distMi": 7.5,
+   "directions": "Choose a line by snow cover; the direct ascent of the clean, continuous east-face slabs is the one to aim for, and on a snowy year it is a snow climb wanting an axe. Finish with a short, exposed Class 3 scramble to the broad, rocky summit; the register sits among rocks about 15 ft below and west of the true high point."
+  }
+ ],
+ "approach": "Drive to the White River Trailhead (also called the Indian Creek Trailhead) at the end of White River Road/FS-6400: from Leavenworth take US-2 west 15 miles to Coles Corner, turn onto SR-207 (Lake Wenatchee Highway) for 10.5 miles, then continue on White River Road/FS-6400 for a final 10 miles to the trailhead (2,300 ft). Follow the Indian Creek Trail north/west, crossing the White River and Indian Creek bridge, for roughly 4.5 miles. Near Airplane Creek, leave the maintained trail and bushwhack/scramble about 2,000 ft up to Airplane Lake (this leg runs 1.5-2 miles); from the lake, continue off-trail to the upper east slopes and summit via one of the three route options. Round trip is roughly 16 miles with about 5,300 ft of gain; a logged first-hand ascent recorded closer to 12 miles and 5,000 ft via a more direct Airplane Creek line, taking about 7.3 hours up and 4.4 hours down. From Airplane Lake, three lines reach the summit: the northeast ridge (working around a hidden, non-obvious cliff band north of the lake), a direct ascent of the clean upper east face slabs, or a looser steep-talus variation. Favoring the drainage about a quarter-mile downstream of Airplane Creek reportedly avoids the worst of the brush on the bushwhack in.",
+ "approach_variants": [
+  {
+   "name": "Indian Creek Trail and the Airplane Creek bushwhack to Airplane Lake",
+   "notes": "From the road-end trailhead above Lake Wenatchee, the Indian Creek Trail crosses the White River on a footbridge — which has washed out in past years, forcing a ford — and runs up the valley through old growth and sections of burned, dead forest. Somewhere near Airplane Creek you leave the maintained tread; nothing marks the departure and it is easy to lose in brush or fog. The bushwhack from there to the lake is the hard part of the day: roughly two thousand feet of gain through devil's club, vine maple and blowdown, made worse by the standing dead timber. Favouring the drainage about a quarter mile downstream of Airplane Creek reportedly avoids the worst of the brush. Snow cover typically begins around 4,000 ft and becomes continuous near 4,700 ft in early season, so step-kicking on firm snow is normal here into July. Airplane Lake is the last reliable water and the only sensible flat camp. Time the White River and Indian Creek crossings for the morning, when the water is lower.",
+   "season": "Late July through September is the reliable window. In July expect snow from around 4,000 ft and continuous cover above 4,700 ft, which makes the upper slopes a snow climb and calls for an axe.",
+   "hazards": [
+    "off-trail bushwhacking through devil's club, vine maple and blowdown, worsened by burned standing timber",
+    "White River and Indian Creek crossings that get harder through the afternoon as snowmelt rises",
+    "hidden cliff bands north of Airplane Lake that can cliff out a party working toward the northeast ridge",
+    "lingering snow on the upper east slopes into July",
+    "loose rock and steep talus on some summit variations",
+    "a sheer northwest face that is not a descent or a bail option"
+   ],
+   "baseFinding": "Go east-facing and clean, not north and broken. From Airplane Lake the summit push starts at the foot of the upper east face at roughly 6,200 ft, where three distinct lines diverge and you have to pick one. The one to aim for is the direct ascent of the clean upper east-face slabs — recognisable because the rock is continuous and relatively clean rather than piled and broken, and because it faces the morning sun squarely. The other two are a steep, looser talus variation and the northeast ridge. The northeast ridge is the one to be careful of, and it carries its own negative marker: gaining it means working around a cliff band north of the lake that is not visible until you are on it and that has cliffed parties out. So if you find yourself traversing north of the lake into broken ground and then meeting a wall you did not expect, you are on the northeast-ridge variation, not the direct line. Snow coverage should decide the choice; on a snowy year the direct slabs may be a snow climb wanting an axe. The summit itself is broad with jagged rocks at the top, and the register sits west of the highest point among rocks about fifteen feet below it — worth knowing, because the true high point is not where the register is."
+  }
+ ]
+}

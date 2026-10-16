@@ -1,0 +1,447 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Marmot Lake elevation"
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Marmot Lake elevation"
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Elevation of the 'Steep push below Marmot Lake' pin"
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trip length in days"
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Walk-up permits and copied Staircase text"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_steel_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.685162,
+      "lng": -123.039683,
+      "elev": 270,
+      "name": "Duckabush Trailhead",
+      "note": "Road-end trailhead on Duckabush Trail #803 (FR 2510-060); self-issue day pass/NW Forest Pass at the kiosk, plus an Olympic NP wilderness permit once you cross the park boundary.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.676343,
+      "lng": -123.20179,
+      "elev": 1400,
+      "name": "Ten-Mile Camp",
+      "note": "Established Duckabush River camp with a privy and bear wires; last easy, reliable water and legal campsite before the climb into subalpine terrain.",
+      "type": "Campsite",
+      "distMi": 10.7
+     },
+     {
+      "lat": 47.65405,
+      "lng": -123.318004,
+      "elev": 3900,
+      "name": "Duckabush Camp creek turnoff",
+      "note": "Leave the maintained Duckabush Trail here, about 3 mi below Marmot Lake, and follow the unmarked feeder creek toward the amphitheater below Steel's west face.",
+      "type": "Junction",
+      "distMi": 18.3
+     },
+     {
+      "lat": 47.65065,
+      "lng": -123.348421,
+      "elev": 4600,
+      "name": "Steep push below Marmot Lake",
+      "note": "The final mile up to Marmot Lake gains elevation fast on loose, eroded tread; it is the most exhausting stretch of the approach.",
+      "type": "Hazard",
+      "distMi": 20.3
+     },
+     {
+      "lat": 47.64895,
+      "lng": -123.36363,
+      "elev": 4921,
+      "name": "Marmot Lake",
+      "note": "Standard backcountry basecamp for this route, 1.2 mi below O'Neil Pass, with views across the basin to Mts. Duckabush and Steel.",
+      "type": "Campsite",
+      "distMi": 21.3
+     },
+     {
+      "lat": 47.642204,
+      "lng": -123.343442,
+      "elev": 5450,
+      "name": "Amphitheater below west face",
+      "note": "From camp, drop back roughly 3 mi to the creek junction and climb into this open basin; easy slopes lead to the summit from here but can hold snow into July, requiring an ice axe.",
+      "type": "Junction",
+      "distMi": 24
+     },
+     {
+      "lat": 47.639705,
+      "lng": -123.335965,
+      "elev": 6225,
+      "name": "Mount Steel Summit",
+      "note": "True summit (Class 2-3); the peak rises over 3,400 ft above the Duckabush River in roughly one mile, giving abrupt views into the LaCrosse Basin and toward Mt. Duckabush.",
+      "type": "Summit",
+      "distMi": 25
+     }
+    ],
+    "itinerary": {
+     "cal": "Best climbed early July through late September; cornices and avalanche-prone slopes linger near the summit ridge into late June.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Duckabush trailhead (~300 ft), the trail climbs gently through old-growth forest along the Duckabush River. Most parties break the 21-mile approach into two days, camping around the Ten Mile Camp area the first night.",
+       "hours": 6,
+       "miles": 10,
+       "title": "Hike in to Ten Mile Camp",
+       "gainFt": 2000,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a mid-route camp on the Duckabush River Trail"
+      },
+      {
+       "n": 2,
+       "note": "Continue upriver, passing the Duckabush/Marmot Lake junction about 3 miles below the lake. The final 3 miles are the steepest of the whole approach, gaining roughly 1,500 ft to Marmot Lake, the standard base camp for climbing Steel.",
+       "hours": 7.5,
+       "miles": 11.3,
+       "title": "Push to Marmot Lake base camp",
+       "gainFt": 2600,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Establish camp at Marmot Lake (4,921 ft)"
+      },
+      {
+       "n": 3,
+       "note": "Leave the trail near camp and climb open talus/heather slopes onto Steel's south/west flank — an unroped class 2-3 scramble in summer, though snow lingers into July and cornices can guard the summit ridge into late June. Round trip from camp is a half-day to full day depending on conditions.",
+       "hours": 7,
+       "miles": 4.5,
+       "title": "Summit day: Mount Steel",
+       "gainFt": 1500,
+       "lossFt": 1500,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Marmot Lake camp",
+         "detail": "Light daypack; leave the trail for open slopes toward Steel's flank."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach base of summit slopes",
+         "detail": "Cross talus and any remaining snowfields below the ridge."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Gain the summit ridge",
+         "detail": "Watch for cornices on the ridge in early season."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Summit Mount Steel",
+         "detail": "6,225 ft; views of Mount Duckabush and the Duckabush Glacier."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at Marmot Lake camp",
+         "detail": "Reverse the ascent slopes; rest and refuel for the hike out."
+        }
+       ],
+       "objective": "Climb Mount Steel (6,225 ft) from Marmot Lake camp"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the approach, dropping off the steep upper section and continuing down-valley to a camp near the Ten Mile area.",
+       "hours": 7,
+       "miles": 11.3,
+       "title": "Hike out to Ten Mile Camp",
+       "gainFt": 100,
+       "lossFt": 2600,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Descend the Duckabush Trail toward the trailhead"
+      },
+      {
+       "n": 5,
+       "note": "Finish the descent through old-growth forest back to the car.",
+       "hours": 5.5,
+       "miles": 10,
+       "title": "Hike out to trailhead",
+       "gainFt": 0,
+       "lossFt": 2000,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to the Duckabush trailhead"
+      }
+     ],
+     "totalNote": "A remote ~50-mile, 5-day round trip: two long days backpacking up the Duckabush to Marmot Lake camp, a class 2-3 scramble day to Steel's 6,225-ft summit, and two days back out — not a car-to-car outing."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - must sustain a 20+ mile, 6,000+ ft-gain approach over multiple days on trail and off-trail terrain (Duckabush or Dosewallips/Anderson Pass approach to a high camp near Marmot Lake or First Divide)",
+      "packWeight": "Overnight/multi-day pack, roughly 30-45 lb, for the long approach and high camp"
+     },
+     "approachTime": "Typically a 2-3 day trip; roughly 14+ miles one-way to a high camp near Marmot Lake/First Divide before the summit push, plus additional cross-country miles to the summit block",
+     "requiredSkills": [
+      "Off-trail route-finding across broad, featureless upper slopes",
+      "Steep snow travel and self-arrest for early-season conditions",
+      "Short, exposed Class 3 scrambling near the summit",
+      "Multi-day backcountry travel and camp craft in a remote wilderness setting",
+      "Map/compass or GPS navigation - route becomes indistinct beyond the maintained trail near Marmot Lake/First Divide"
+     ],
+     "experienceLevel": "Experienced scrambler with multi-day wilderness backpacking background; comfortable with off-trail route-finding and short, exposed Class 3 moves near the summit. Not a beginner or single-day-trip objective given the remoteness."
+    },
+    "access": {
+     "fees": "NPS entrance: $30/vehicle (7-day) or $15 per person walk-in/bike-in; wilderness camping permit: $8/person/night plus a flat $6 reservation fee (or a $45 Annual Wilderness Pass covering nightly fees)",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters required for all overnight food storage in this backcountry unit; Leave No Trace camping; treat/filter all water",
+     "permit": "NPS wilderness camping permit required year-round for any overnight stay, reserved through Recreation.gov (bulk-release quota areas open April 15 for the May 15-Oct 15 summer season; non-quota areas including this drainage can generally be booked year-round or picked up at a Wilderness Information Center)",
+     "closures": "Check the NPS Olympic Wilderness Trip Planner and Olympic National Forest alerts for trail washouts or blowdown, particularly in burned sections of the lower Duckabush valley",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness) for the trail/climb above the park boundary; Olympic National Forest, Hood Canal Ranger District, for the Duckabush Trailhead and access road below it",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Duckabush Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land, so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "NPS entrance pass at the park boundary; a Northwest Forest Pass or interagency pass may be requested for day use at the Forest Service trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2970,
+      "name": "Upper Dungeness Trailhead",
+      "note": "USFS trailhead off FR 2870; Northwest Forest Pass required at the self-issue kiosk, and a wilderness permit is needed for Royal Basin camping.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive to the Upper Dungeness Trailhead at about 2,960 ft at the end of FR 2870. A Northwest Forest Pass is required at the self-issue kiosk, and Royal Basin camping needs a wilderness permit (quota season runs May through September)."
+     },
+     {
+      "lat": 47.871756,
+      "lng": -123.147433,
+      "elev": 3120,
+      "name": "Royal Basin Trail junction",
+      "note": "Dungeness River Trail forks here; leave the river trail and climb south on the Royal Basin Trail toward Royal Creek.",
+      "type": "Junction",
+      "distMi": 1,
+      "directions": "Start on Upper Dungeness Trail 833.2, a gentle and nearly level mile through old growth alongside the Dungeness River to a well-signed fork. Leave the river trail and bear right, east then south, onto Royal Basin Trail 840."
+     },
+     {
+      "lat": 47.852422,
+      "lng": -123.178433,
+      "elev": 4200,
+      "name": "Royal Creek",
+      "note": "Trail parallels Royal Creek for several miles with multiple crossings; reliable water but can run high with snowmelt in early season.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Settle into a steady, moderate climb up the Royal Creek valley for roughly five miles, crossing several tributary creeks along the way. These are the last reliable water before the high basin and can run high with early-season snowmelt."
+     },
+     {
+      "lat": 47.830518,
+      "lng": -123.213102,
+      "elev": 5100,
+      "name": "Royal Lake designated camp",
+      "note": "Established sites with a composting toilet near the lake outlet; no campfires above 3,500 ft and bear canisters are required.",
+      "type": "Campsite",
+      "distMi": 7.2,
+      "directions": "The forest opens into wildflower meadows around the six-mile mark, with the 7,000 ft summits of Mount Clark and Mount Walkinshaw in view ahead. The trail then steepens through switchbacks into Royal Basin to reach Royal Lake at 5,100 ft, about 7.2 miles in and 2,500 ft above the car. Established sites and a composting toilet sit near the outlet; bear canisters are required and no fires are allowed above 3,500 ft."
+     },
+     {
+      "lat": 47.834718,
+      "lng": -123.215964,
+      "elev": 5400,
+      "name": "Arrowhead Meadow",
+      "note": "Open meadow between Royal Lake and Upper Royal Basin where the trail becomes fainter; watch for the climbers' path branching toward the basin's west side.",
+      "type": "Junction",
+      "distMi": 7.6,
+      "directions": "Above the lake a climbers' path crosses willow flats and boulder benches. Tread becomes fainter through this open meadow, so watch for the path branching toward the west side of the basin."
+     },
+     {
+      "lat": 47.837636,
+      "lng": -123.220429,
+      "elev": 5700,
+      "name": "Upper Royal Basin",
+      "note": "Seasonal ranger station and the last reliable water before heading cross-country; the Needles' craggy west wall rises directly above.",
+      "type": "Campsite",
+      "distMi": 8,
+      "directions": "Continue on the climbers' path a total of roughly 0.8 to 1 mile and 500 ft of gain above Royal Lake to Upper Royal Basin at about 5,600 to 5,700 ft. Camping is not permitted in the upper basin, but it is the staging point for every Needles objective and holds the last reliable water before the cross-country travel, with the craggy west wall of the Needles rising directly above."
+     },
+     {
+      "lat": 47.844931,
+      "lng": -123.23159,
+      "elev": 6600,
+      "name": "West-side scree/talus gully system",
+      "note": "Loose, rotten Olympic shale in several parallel gullies below the ridge; rockfall risk is high, especially with parties above — helmets recommended.",
+      "type": "Hazard",
+      "distMi": 9,
+      "directions": "Beyond Upper Royal Basin there is no maintained tread. Traverse cross-country north, contouring on talus and boulder benches below Mount Clark's east flank toward Walkinshaw at the north end of the chain; this stretch adds roughly 1.5 miles of rough sidehill travel with several hundred feet of ascent and descent, and demands real route-finding since krummholz and short cliff bands hide the best line. Aim for the prominent talus tongue and gully system below the ridge, where loose, rotten Olympic shale makes rockfall the defining hazard, so keep the party tight and helmets on."
+     },
+     {
+      "lat": 47.848515,
+      "lng": -123.237105,
+      "elev": 7378,
+      "name": "Mount Walkinshaw summit",
+      "note": "Northernmost summit of the Needles, reached via class 3-4 moves up the final gully to the ridge crest; exposed, loose rock near the top.",
+      "type": "Summit",
+      "distMi": 9.5,
+      "directions": "Climb the loose, blocky gully with care, then follow Class 2-3 terrain up the ridge above, including a few short Class 3 moves past steepened pinnacles, to the small summit block roughly ten feet across at 7,378 ft. The rock is looser than typical Cascades granite, so test holds and keep the party out from under each other."
+     }
+    ],
+    "approach": "From the Upper Dungeness Trailhead (~2,960 ft, end of FR 2870), start on the Upper Dungeness Trail #833.2, which runs a gentle, mostly level mile through old-growth forest along the Dungeness River to a well-signed junction. Bear right (east, then south) onto the Royal Basin Trail #840 and settle into a steady, moderate climb up the Royal Creek valley for about 5 miles, crossing several tributary creeks — the last reliable water before the high basin — through forest that opens into wildflower meadows around the 6-mile mark, with Mount Clark and Mount Walkinshaw's 7,000-ft summits visible ahead. The trail steepens for the final push through switchbacks into Royal Basin, reaching Royal Lake (5,100 ft, ~7.2 mi, ~2,500 ft gain) — the established backcountry camp area (bear canisters required, no fires, permits needed May-Sept). From the lake, a climbers' path continues roughly another 0.8-1 mile and 500 ft of gain across willow flats and boulder benches to Upper Royal Basin (~5,600 ft, ~8 mi from the trailhead), the day-use staging area for all Needles-area objectives (camping is not permitted in the upper basin). Beyond Upper Royal Basin there is no maintained tread: traverse cross-country north, contouring below Mount Clark's east flank on talus and boulder benches toward Mount Walkinshaw, the northernmost peak in the Needles chain — this stretch is rough, adds roughly 1.5 miles and several hundred feet of ascending/descending sidehill travel, and involves genuine route-finding (krummholz and short cliff bands can obscure the best line, as noted by parties working this same traverse from the Gray Wolf Ridge side). Aim for the prominent talus tongue and gully system on Walkinshaw's east/southeast side — this is the 'West Side' class-3 scramble route. Ascend the loose, blocky gully (described firsthand as 'rotten Olympic shale' — notably looser than typical Cascades granite) with care, then follow class 2-3 terrain along the upper ridge, including a few short class-3 moves past steepened pinnacles, to the small (~10-ft-diameter) rocky summit at 7,378 ft. Keep parties tight and helmets on through the entire gully/ridge section — loose rock and rockfall onto climbers below are the defining hazard of this route. Total round-trip distance from the trailhead is on the order of 19 miles (matching the route's recorded 30.58 km), reflecting the extra cross-country mileage beyond Upper Royal Basin that standard figures for the closer Royal Basin peaks (Deception/Mystery, ~14 mi RT) don't include."
+   }
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2700,
+      "name": "Upper Dungeness / Royal Basin Trailhead",
+      "note": "Large parking area at end of FR 2870 off Palo Alto Rd/FR 28; $5 NW Forest day-use fee, self-issue permit envelope, pit toilets.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Take Highway 101 to just before Sequim Bay State Park and turn onto Louella Road, then follow Palo Alto Road, which becomes Forest Road 28, for about 6 miles. Turn right on FR 2880 along the Dungeness River, and 1.7 miles later turn left on FR 2870 and stay on it for roughly 6.5 to 9 miles of gravel that winds steeply down to a river crossing. It ends at the large Dungeness/Royal Basin trailhead lot, with a picnic table and a vault toilet. There is a $5 Northwest Forest day-use fee, paid with the self-issue permit envelope at the trailhead."
+     },
+     {
+      "lat": 47.864143,
+      "lng": -123.164693,
+      "elev": 3400,
+      "name": "Royal Creek / Dungeness River crossings",
+      "note": "Trail parallels and repeatedly crosses Royal Creek on log bridges after the first easy mile along the Dungeness River; reliable water throughout.",
+      "type": "Water",
+      "distMi": 3
+     },
+     {
+      "lat": 47.849469,
+      "lng": -123.19434,
+      "elev": 4900,
+      "name": "Shelter Rock",
+      "note": "Massive overhanging rock on the left just below Royal Lake, a well-known trail landmark and informal rest stop.",
+      "type": "Junction",
+      "distMi": 6.2
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5107,
+      "name": "Royal Lake",
+      "note": "Designated backcountry campsites at the outlet; overnight permit and bear canister required, no campfires.",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.843508,
+      "lng": -123.206384,
+      "elev": 5345,
+      "name": "Arrowhead Meadow",
+      "note": "Trail crosses a log bridge, climbs steeply, then levels into this open alpine meadow below Upper Royal Basin.",
+      "type": "Junction",
+      "distMi": 7.5
+     },
+     {
+      "lat": 47.840757,
+      "lng": -123.211942,
+      "elev": 5695,
+      "name": "Upper Royal Basin tarns",
+      "note": "First of several milky-blue tarns fed by snowmelt off the Needles; last reliable water before the talus climb.",
+      "type": "Water",
+      "distMi": 8.1
+     },
+     {
+      "lat": 47.835712,
+      "lng": -123.222133,
+      "elev": 6600,
+      "name": "East flank talus/scree gully below the Needles",
+      "note": "Loose, unstable talus and scree on the exposed east side; rockfall risk increases with parties above, especially in shoulder-season conditions.",
+      "type": "Hazard",
+      "distMi": 9.2
+     },
+     {
+      "lat": 47.832961,
+      "lng": -123.227692,
+      "elev": 7209,
+      "name": "Sundial summit block",
+      "note": "Final class 3 scramble up a short, exposed ridge-top pitch to the true summit; loose rock and steep drop-offs on the east side.",
+      "type": "Summit",
+      "distMi": 9.8
+     }
+    ]
+   }
+  }
+ ]
+}

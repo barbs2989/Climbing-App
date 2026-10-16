@@ -1,0 +1,86 @@
+{
+ "id": "wa_mount_rainier_ptarmigan_ridge",
+ "name": "Ptarmigan Ridge",
+ "approach": "The road to Mowich Lake is closed indefinitely: WSDOT permanently closed the Fairfax Bridge on SR 165 on April 22, 2025, and the park's road-status page (updated September 18, 2026) lists no public access to Mowich Lake from SR 165, so the White River side is the only start a car can reach. Historically approached either from the west via Mowich Lake (shorter) or from the east via White River Campground (longer, typically requiring a car shuttle or carryover with descent via the Emmons Glacier). Even before the closure, the summer-only Mowich Lake road usually opened well after this route came into condition, so the White River side, with its much longer walk, was often the practical start anyway.",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike from White River via Glacier Basin and St. Elmo Pass, across the Winthrop Glacier, Curtis Ridge and the Carbon Glacier toward the base of the ridge, camping partway up.",
+    "hours": 6,
+    "miles": 6,
+    "title": "Approach to lower camp",
+    "gainFt": 3800,
+    "packLb": 55,
+    "objective": "Cross toward the base of the ridge"
+   },
+   {
+    "n": 2,
+    "note": "Continue up the ridge to a high bivy around 10,300 ft, with time to melt water, eat, and watch avalanche activity on the surrounding faces before the push.",
+    "hours": 4.5,
+    "miles": 2,
+    "title": "Move to high camp",
+    "gainFt": 2900,
+    "packLb": 45,
+    "objective": "Reach the 10,300 ft high bivy"
+   },
+   {
+    "n": 3,
+    "note": "About 7 hours of technical climbing from high camp to the summit plateau, then tag the summit and descend the Emmons-Winthrop.",
+    "hours": 10,
+    "miles": 5,
+    "title": "Summit day",
+    "gainFt": 2800,
+    "lossFt": 4900,
+    "packLb": 30,
+    "schedule": [
+     {
+      "label": "Leave high camp",
+      "detail": "Early, to get a quick start onto the lower ridge"
+     },
+     {
+      "label": "Technical ridge climbing",
+      "detail": "~7 hours from high camp to the summit plateau"
+     },
+     {
+      "label": "Summit"
+     },
+     {
+      "label": "Descend Emmons-Winthrop"
+     }
+    ],
+    "objective": "Climb the technical upper ridge to the summit"
+   }
+  ],
+  "totalNote": "A 3-day trip (~9,500 ft gain): an approach day, a move to the 10,300 ft high camp, then a single summit day with about 7 hours of technical climbing."
+ },
+ "waypoints": [
+  {
+   "lat": 46.9022,
+   "lng": -121.6442,
+   "elev": 4400,
+   "name": "White River Campground",
+   "type": "Trailhead",
+   "elevFt": 4400,
+   "directions": "From Enumclaw, drive SR 410 east to the White River Entrance of the park and turn west onto the Sunrise Road. After about 5 miles, cross the White River and turn left onto the White River Campground road, following it to its end. Park in the day-hiking and climbing lot at about 4,400 ft; the Glacier Basin Trail starts in the campground's D loop. The road is open in summer only, and a park entrance pass is required."
+  },
+  {
+   "lat": 46.87017,
+   "lng": -121.73333,
+   "elev": 9440,
+   "name": "Camp Schurman",
+   "type": "Campsite",
+   "distMi": null,
+   "elevFt": 9440
+  },
+  {
+   "lat": 46.86298,
+   "lng": -121.77486,
+   "elev": 14112,
+   "name": "Liberty Cap (commonly the route's summit point)",
+   "type": "Summit",
+   "elevFt": 14112
+  }
+ ]
+}

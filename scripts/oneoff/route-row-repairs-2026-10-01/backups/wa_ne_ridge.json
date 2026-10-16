@@ -1,0 +1,72 @@
+{
+ "id": "wa_ne_ridge",
+ "name": "NE Ridge",
+ "approach_variants": [
+  {
+   "name": "Upper Cathedral Lake camp, then the grassy south-east slope onto the ridge",
+   "camps": [
+    "Upper Cathedral Lake basin",
+    "Andrews Pass",
+    "Cathedral Pass benches and the tarn slabs"
+   ],
+   "notes": "Reach Upper Cathedral Lake at about 7,380 ft by any of the long trails — Andrews Creek #504 is the shortest drive, the Cathedral Driveway #510A the shortest walk, Thirtymile via the Chewuch #510 the middle option. All are multi-day and all put you in the same basin.\n\nFrom the Boundary Trail below the peak, this route does not go into the Cathedral–Monk gully at all. Scramble up the grassy south-east slope directly from the main trail to gain the ridge.",
+   "season": "Roughly Jul-Sep",
+   "hazards": [
+    "Continuing north along the ridge toward The Pope and the Canadian border",
+    "Loose rock on a long broken ridge",
+    "Very long walk out from a remote basin if anything goes wrong",
+    "A no-fall step-across on the standard walk-off descent"
+   ],
+   "baseFinding": "You are aiming for the long broken ridge that runs between Cathedral Peak and The Pope, a separate small peak further north along the same crest, sitting right on the Canada–United States border.\n\nThat relationship is the base-finding and it is also the warning. The ridge has a peak at each end. If you keep working north along the crest past the point where the ground starts descending away from Cathedral, you are heading for The Pope and, shortly after that, for an international border it is illegal to cross here.\n\nThe route itself confirms as you go rather than at a single spot: each pitch has a move or two of old-school 5.3 with scrambling between, so seven pitches of mostly-easy ground with occasional short difficulties is correct here and is not a sign you have wandered onto the walk-up. The real crux announces itself — about 400 feet below the summit you cross a dike, and the two short pitches immediately above that dike are the hardest climbing on the route. A final airy fourth-class scramble finishes it.\n\nNegative marker for the start: if you find yourself entering a deep gully with a detached tower on your right, you have walked to the SE Buttress start. The NE Ridge is gained from open grassy slope off the main trail, with no gully involved.\n\nDescent is the ordinary walk-up route to the west, and a short rappel may be wanted to get off the summit ridge."
+  },
+  {
+   "name": "Cathedral Driveway trail #510A from Loomis via Toats Coulee",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 7400,
+      "name": "Upper Cathedral Lake basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+      "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+      "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+      "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+     }
+    ],
+    "gainM": 1128,
+    "gainFt": 3700,
+    "approachLogistics": {
+     "trailhead": "Cathedral Driveway Trailhead (Toats Coulee Road)",
+     "trailheadLat": 48.8555,
+     "trailheadLng": -119.9453
+    }
+   },
+   "notes": "From the Cathedral Driveway Trailhead on the Toats Coulee road out of Loomis, the trail drops to join the Chewuch trail and then climbs the valley to the Cathedral Lakes basin. The eastern way in, with less climbing than Andrews Creek."
+  },
+  {
+   "name": "Thirtymile Trailhead and the Chewuch River trail toward Remmel Lake",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 7400,
+      "name": "Upper Cathedral Lake basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+      "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+      "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+      "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Thirtymile Trailhead (end of the Chewuch River Road)",
+     "trailheadLat": 48.8231,
+     "trailheadLng": -120.0197,
+     "trailheadElevFt": 3400
+    }
+   },
+   "notes": "Follow the Chewuch River trail north from the Thirtymile Trailhead nearly to Remmel Lake, then climb to the Cathedral Lakes basin. A longer way round than Andrews Creek, used when combining the Remmel Lake country with the climb."
+  }
+ ]
+}

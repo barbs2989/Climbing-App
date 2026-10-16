@@ -1,0 +1,27 @@
+{
+ "id": "wa_east_face",
+ "area_id": "wa_middle_peak",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "south-facing rappel anchor near the summit",
+    "station": "Traverse south along the summit ridge from the top to the south-facing rappel anchors.",
+    "notes": "Rappel 1 of 2, double-rope, to the notch between Middle and South Gunsight."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "anchor at the Middle-South Gunsight notch",
+    "station": "The notch between Middle and South Gunsight.",
+    "notes": "Rappel 2 of 2, double-rope, into the moat at the base of the notch.",
+    "hazards": [
+     "Loose, dirty and cold. Then navigate the crevasse field on the Chickamin Glacier back to camp."
+    ]
+   }
+  ],
+  "rappels": "2 double-rope rappels: one from near the summit to the notch between Middle and South Gunsight, one more into the moat at the base of the notch. With only one 60 m rope expect roughly twice as many; no single-rope count is published."
+ }
+}

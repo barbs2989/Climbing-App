@@ -1,0 +1,110 @@
+{
+ "applied": [
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Pistol Pass to Lake of the Woods"
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Pistol Pass to Lake of the Woods"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "before": {
+    "approach": "Four approaches reach Monument Peak, all long and remote — this is deep in the Pasayten Wilderness near the Canadian border, and most parties treat it as a 2-3 day trip with a high camp. The most common is via the Monument Creek Trailhead on Lost River Road/FR 5400 (about 22 miles northwest of Winthrop via Mazama), starting at roughly 2,400 ft. From the trailhead, follow Monument Creek Trail No. 484 up the Lost River valley; the first ~4 miles are well-maintained through old-growth forest and along rock slopes to the Eureka Creek confluence (Eureka Falls Camp) — this is your last easy, reliable water before a long dry stretch. Beyond Eureka Creek the trail has been essentially unmaintained for 25+ years, brushy and choked with deadfall, and route-finding becomes real work. Ford Eureka Creek (can run thigh-to-waist deep during snowmelt — a genuine early-summer hazard) then pick up the abandoned tread climbing onto Pistol Ridge, following it up to 7,100-ft Pistol Pass around mile 11. From the pass, angle roughly 3 miles cross-country/side-hilling south to the Monument–Lake Mountain basin and Lake of the Woods, a common high camp — about 12 miles and 5,300 ft of gain from the trailhead. From camp, traverse cross-country south to the ~7,400-ft saddle below Lake Mountain, then descend into Lower Monument Basin (~6,100 ft); the lake-outlet creek here is your last dependable water for the summit push and can shrink to a trickle late in the season. From the basin, climb a left-angling ramp system to gain Monument Peak's south/southeast ridge at about 6,900 ft, then follow a long talus traverse toward the summit. The final section involves roughly a half-pitch of Class 3 (locally Class 3-4) scrambling where the ridge merges with the southeast slopes, sometimes complicated by a steep snowfield just below the true summit that can still require an ice axe (or a class 3/4 rock detour around its left side) into midsummer. Three alternative approaches exist: dropping in from 6,960-ft Slate Pass on the Harts Pass Road down to the Robinson Creek Trail No. 478 and Ferguson Lake Trail No. 474A (reportedly the easiest, though not shortest, reaching the same basin from the north); via the Buckskin Ridge Trailhead just past Harts Pass on Trail No. 498, crossing the Middle Fork Pasayten River and picking up Robinson Creek Trail No. 478 then Ferguson Lake Trail No. 474A; or a longer approach from the Lost Creek/Monument Creek trailhead side. Whichever line is used, expect long, remote travel with significant off-trail brush and route-finding on the final miles — carry a map/GPS and budget extra time.",
+    "waypoints": [
+     {
+      "lat": 48.65617,
+      "lng": -120.51276,
+      "elev": 2430,
+      "name": "Monument (Lost River) Trailhead",
+      "note": "Free self-issue wilderness permit required at trailhead kiosk; FR-5400 gravel spur reached via Lost River Road out of Mazama.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Lost River Road out of Mazama, about 22 miles northwest of Winthrop, onto the FR-5400 gravel spur to the trailhead. Fill out the free self-issue wilderness permit at the kiosk."
+     },
+     {
+      "lat": 48.701025,
+      "lng": -120.492968,
+      "elev": 2900,
+      "name": "Eureka Creek Ford",
+      "note": "Bridge here washed out in 2006 and was never replaced; ford can be a tricky, thigh-deep crossing in early-season high water, last reliable water before the long dry climb to Pistol Ridge.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Follow Monument Creek Trail No. 484 up the Lost River valley. The first 4 miles are well maintained, running through old-growth forest and along rock slopes to the confluence and Eureka Falls Camp. The bridge here washed out in 2006 and was never replaced, so the crossing is a ford; it can run thigh-deep and cold during snowmelt. This is the last easy, reliable water before a long dry climb."
+     },
+     {
+      "lat": 48.76153,
+      "lng": -120.49899,
+      "elev": 7100,
+      "name": "Pistol Pass",
+      "note": "Abandoned, brushy tread climbs ~4,700 ft from the ford onto Pistol Ridge before improving near the pass; from here the maintained trail effectively ends and route-finding begins.",
+      "type": "Junction",
+      "distMi": 11,
+      "directions": "Beyond the ford the trail has been essentially unmaintained for over 25 years, brushy and choked with deadfall, and route-finding becomes real work. Pick up the abandoned tread climbing onto Pistol Ridge and follow it for about 4,700 ft of gain; the tread improves near the top. Expect 4 to 5 hours from the creek and plan on running out of water."
+     },
+     {
+      "lat": 48.77274,
+      "lng": -120.49948,
+      "elev": 7000,
+      "name": "Lake of the Woods",
+      "note": "Small alpine lake about a mile below Pistol Pass with established campsites; the standard staging camp for the Monument Peak / Lake Mountain 'Monumental Slam.'",
+      "type": "Campsite",
+      "distMi": 12,
+      "directions": "From the pass, side-hill cross-country down into the Monument and Lake Mountain basin to the small alpine lake, roughly a mile below the pass. Established campsites here make the standard staging camp for the peak."
+     },
+     {
+      "lat": 48.77813485,
+      "lng": -120.510163025,
+      "elev": 7400,
+      "name": "Lake Mountain South Ridge Saddle",
+      "note": "Cross-country gain from Lake of the Woods over Lake Mountain's south ridge saddle, the start of the side-hill traverse toward Monument Peak.",
+      "type": "Junction",
+      "distMi": 13,
+      "directions": "Traverse cross-country from the lake, gaining ground over Lake Mountain's south ridge saddle. Reckon on about 2 hours from camp; this is where the side-hill traverse toward Monument Peak begins."
+     },
+     {
+      "lat": 48.783521900000004,
+      "lng": -120.52086435,
+      "elev": 6100,
+      "name": "Lower Monument Basin",
+      "note": "Descend off the saddle into this basin below Monument's south side; used as a bivy/staging spot by parties splitting the peak from Lake Mountain.",
+      "type": "Campsite",
+      "distMi": 14,
+      "directions": "Drop off the saddle into the basin below Monument's south side, losing about 1,300 ft. The lake-outlet creek here is the last dependable water for the summit push and can be down to a trickle late in the season, so fill up."
+     },
+     {
+      "lat": 48.787292835,
+      "lng": -120.5283552775,
+      "elev": 6900,
+      "name": "South Ridge Crest (Ramp System)",
+      "note": "Left-angling ramp system out of Lower Monument Basin gains the crest of the south ridge; this is the ramp used by the descent.",
+      "type": "Junction",
+      "distMi": 14.7,
+      "directions": "From the basin, climb the left-angling ramp system that gains the crest of the south ridge, about 800 ft of ascent. This is the ramp the descent beta also refers to, so note where you topped out."
+     },
+     {
+      "lat": 48.793975,
+      "lng": -120.543485,
+      "elev": 8597,
+      "name": "Monument Peak Summit",
+      "note": "Long talus traverse along the south ridge ends at the 'leaning summit horn,' with Class 3 scrambling on the final blocks (first ascent Beckey/Roper, 1978).",
+      "type": "Summit",
+      "distMi": 16,
+      "directions": "Follow the broad ridge for over a mile of class 2 talus walking toward the summit, with light class 3 in spots. A short class 3 scramble surmounts the false summit near 8,000 ft, then one or two more class 3 moves on the steep upper mountain reach the leaning summit horn. A steep snowfield just below the top sometimes lingers into midsummer and either needs an axe or a class 3-4 rock detour around its left side. Roughly 3 hours from the ridge crest."
+     }
+    ]
+   }
+  }
+ ]
+}

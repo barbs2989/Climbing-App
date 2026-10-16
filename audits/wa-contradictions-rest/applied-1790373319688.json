@@ -1,0 +1,464 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Route aspect / line"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Route aspect / line"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Route aspect / line"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Route aspect / line"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Route aspect / line"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Order of Cameron Basin and Cameron Pass"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Order of Cameron Basin and Cameron Pass"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Order of Cameron Basin and Cameron Pass"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Order of Cameron Basin and Cameron Pass"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Order of Cameron Basin and Cameron Pass"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Order of Cameron Basin and Cameron Pass"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "approach_variants",
+   "path": [
+    2,
+    "baseFinding"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "season",
+   "path": [],
+   "fact": "Season start vs road opening"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "what"
+   ],
+   "fact": "Overnight permit quota area"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Overnight permit quota area"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Obstruction Point trailhead elevation"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Dosewallips washout location"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "approach_variants",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Dosewallips washout location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_cameron_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Snow can linger on Cameron Pass into late July/August, and a wilderness permit plus bear canister is required for the Cameron Basin camp zone.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Obstruction Point trailhead, follow Lillian Ridge over rolling, view-packed alpine terrain to Grand Pass (~6 mi), then drop a few hundred feet into the cirque below Lost Peak before climbing back up roughly 1,000 ft in a mile to Cameron Pass. Descend into Cameron Basin and set up camp in the designated zone (bear canister required, no fires).",
+       "hours": 6.5,
+       "miles": 9.9,
+       "title": "Backpack in to Cameron Basin",
+       "gainFt": 2400,
+       "lossFt": 2900,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Obstruction Point trailhead",
+         "detail": "Already starting near 6,450 ft; ridge walking with modest ups and downs."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Reach Grand Pass",
+         "detail": "Steepest trail in the park drops from here into the Cameron Creek cirque."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Top out at Cameron Pass (~6,500 ft)",
+         "detail": "Views of Mt. Anderson and Olympus open up."
+        },
+        {
+         "time": "~2:30 PM",
+         "label": "Make camp in Cameron Basin",
+         "detail": "Old-growth, mossy, sheltered basin below the pass; snow can linger here into late July."
+        }
+       ],
+       "objective": "Reach the permitted camp zone below Cameron Pass"
+      },
+      {
+       "n": 2,
+       "note": "Leave the tent up and climb light. The standard line gains the long, gradual southeast ridge above Cameron Basin — mostly class 1-2 hiking/scrambling to the main summit, with the harder class 3-4 terrain reserved for parties continuing the ridge to Cameron's Middle and East peaks. Return to camp by early-mid afternoon.",
+       "hours": 5.5,
+       "miles": 5,
+       "title": "Climb Mount Cameron and return to camp",
+       "gainFt": 1500,
+       "lossFt": 1500,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Early start to beat afternoon weather buildup, common in the Olympics."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Gain the SE ridge crest",
+         "detail": "Class 1-2 talus and heather slopes lead up the gradual ridgeline."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Summit (7,190 ft)",
+         "detail": "Views across the Cameron/Grey Wolf and Dosewallips drainages; East and Middle Cameron summits visible along the class 3-4 ridge if extending the day."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at camp",
+         "detail": "Rest, refill water, reset for the hike out."
+        }
+       ],
+       "objective": "Summit the main peak (7,190 ft) via the SE slopes/long gradual ridge"
+      },
+      {
+       "n": 3,
+       "note": "Reverse Day 1: climb back out of Cameron Basin over Cameron Pass, drop into and back out of the cirque below Lost Peak, cross Grand Pass, and follow Lillian Ridge back to the trailhead. Poles help on the steep, sometimes loose descent/reascent at Grand Pass.",
+       "hours": 6.5,
+       "miles": 9.9,
+       "title": "Hike out to Obstruction Point",
+       "gainFt": 2900,
+       "lossFt": 2400,
+       "packLb": 32,
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night backpack (~25 miles round trip including the summit day): roughly 20 miles of trail hiking to and from a Cameron Basin camp, plus a class 1-2 scramble day to Mount Cameron's 7,190 ft main summit."
+    },
+    "timing": {
+     "totalHrs": 18.5,
+     "summitTimeHrs": 5.5,
+     "descentTimeHrs": 6.5,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From the Obstruction Point trailhead, follow Lillian Ridge over rolling, view-packed alpine terrain to Grand Pass (~6 mi), then drop a few hundred feet into the cirque below Lost P…",
+       "fromTo": "Backpack in to Cameron Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Leave the tent up and climb light. The standard line gains the long, gradual southeast ridge above Cameron Basin — mostly class 1-2 hiking/scrambling to the main summit, with the h…",
+       "fromTo": "Climb Mount Cameron and return to camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6.5,
+       "note": "Reverse Day 1: climb back out of Cameron Basin over Cameron Pass, drop into and back out of the cirque below Lost Peak, cross Grand Pass, and follow Lillian Ridge back to the trail…",
+       "fromTo": "Hike out to Obstruction Point",
+       "section": "Descent"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 47.9183,
+      "lng": -123.3822,
+      "elev": 6135,
+      "name": "Obstruction Point Trailhead",
+      "note": "End of Obstruction Point Road (highest road in Olympic NP, gravel, no trailers), 8 mi east of Hurricane Ridge Visitor Center; Grand Pass Trail begins here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Obstruction Point Road is the way in, and it is the highest road in Olympic National Park: from the Hurricane Ridge Visitor Center follow it 8 miles east to its end at the Obstruction Point trailhead, topping out around 6,135 ft. It is narrow, one-lane gravel the whole way and no place for trailers. The road is usually open only from early-to-mid July through mid-October, so it is not a road you can count on before July — confirm it is open before committing to the drive. The Grand Pass Trail starts at the road end, and an online wilderness camping permit plus a bear canister are required for the Cameron Basin camp zone."
+     },
+     {
+      "lat": 47.86565,
+      "lng": -123.35546,
+      "elev": 6450,
+      "name": "Grand Pass",
+      "note": "Grand Pass Trail crests the divide here between the Grand/Lillian River drainages and Cameron Creek; the descent to the Cameron side is steep and can be dangerously slick in wet weather or lingering snow.",
+      "type": "Junction",
+      "distMi": 6
+     },
+     {
+      "lat": 47.84656418421053,
+      "lng": -123.34266464736842,
+      "elev": 5900,
+      "name": "Cameron Creek meadow crossings",
+      "note": "Trail drops off Grand Pass through brushy overgrowth and crosses several unbridged branches of Cameron Creek in a wet meadow; reliable water but the tread is easy to lose in fog or high brush.",
+      "type": "Water",
+      "distMi": 7.8
+     },
+     {
+      "lat": 47.8412637631579,
+      "lng": -123.33911141052631,
+      "elev": 6000,
+      "name": "Cameron Basin camp",
+      "note": "Established backcountry sites in the upper basin below Cameron Pass along Cameron Creek; bear canister required (no trees to hang food), no campfires above 3,500 ft, and an online wilderness camping permit is mandatory.",
+      "type": "Campsite",
+      "distMi": 8.3
+     },
+     {
+      "lat": 47.825718,
+      "lng": -123.358249,
+      "elev": 6448,
+      "name": "Cameron Pass snow slopes",
+      "note": "Steep snow can persist on the pass into late July or August; ice axe and self-arrest skills recommended, and the climbers' path is frequently obscured under snow here.",
+      "type": "Hazard",
+      "distMi": 9.3
+     },
+     {
+      "lat": 47.825825,
+      "lng": -123.33409,
+      "elev": 7190,
+      "name": "Mount Cameron - East Peak (true summit)",
+      "note": "True 7,190 ft highpoint of triple-summited Mount Cameron, reached from Cameron Basin/Pass by Class 2 scree and talus slopes on the east peak's southeast side.",
+      "type": "Summit",
+      "distMi": 9.8
+     }
+    ],
+    "beta": "Mount Cameron is a remote, triple-summited peak well off any maintained trail. The standard way up is a long, mostly-easy ridge scramble gained from Cameron Pass via the Grand Pass/Badger Valley trail system out of Obstruction Point (or, on a longer approach, via Deer Park and the Cameron Creek Trail). From the pass, climbers leave the trail and follow the broad ridge, crossing numerous false summits on mostly Class 1-2 terrain before a short Class 3-4 section leads to the Middle/true summit; some parties continue the traverse east to Cameron's East Peak or west to its Southwest Peak. Remnant patches of the Cameron Glaciers and old snow can linger on the ridge's north side into mid-summer.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2 (short Class 3-4 sections)",
+      "notes": "Off-trail ridge scramble from Cameron Pass (6,418 ft) to Cameron's summit ridge — broad, mostly Class 1-2 terrain over numerous false summits, with harder Class 3-4 moves reported near the Middle/true summit; the length shown is approximate.",
+      "pitch": "1",
+      "lengthM": 229
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Obstruction Point Road, Grand Pass and the Cameron Pass Trail",
+      "notes": "READ THE NAME ON THIS ROUTE WITH CARE — it says Southeast Slopes, and Cameron Pass lies WEST of the summit. The climb is a west-ridge walk gained at the pass. A party that reads the title and heads southeast off the pass is walking into the Dosewallips headwaters. Drive the narrow one-lane gravel Obstruction Point Road — Olympic National Park's highest road, topping out at 6,135 ft — 8 miles east from the Hurricane Ridge Visitor Center to the Obstruction Point trailhead. Hike the Grand Pass Trail roughly 6 miles to Grand Pass at about 6,450 ft; the drop off the far side toward Cameron is steep and slick in wet weather or lingering snow. The trail then crosses several unbridged branches of Cameron Creek in a wet meadow — reliable water, and tread that is easy to lose in fog or high brush — to the Cameron Basin camps at about 6,000 ft near 8.3 miles, and on up to Cameron Pass at roughly 6,450-6,500 ft near 9.3 miles. Bear canister required in the basin; there are no trees to hang food. Steep snow can persist on the pass into late July or August and the climbers' path is frequently buried there.",
+      "season": "Roughly Jul-Sep, and gated by the road: Obstruction Point Road is usually open only early-to-mid July through mid-October",
+      "hazards": [
+       "Route-finding on open off-trail slopes above Cameron Basin, and faint brushy tread on the Cameron Pass Trail beyond the basin",
+       "Steep lingering snow on Cameron Pass into late July or August, over a buried climbers' path",
+       "Loose rock, scree and talus on the summit slopes and along the ridge connecting the three summits",
+       "No reliable water above Cameron Basin and minimal to no cell coverage",
+       "Obstruction Point Road closes for most of the year and is not a route you can count on before July"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE IS CAMERON PASS AND THE TEST IS THE DIRECTION YOU TURN OUT OF IT: THE RIDGE YOU CLIMB RISES TO THE EAST. The pass is west of the summit. From it, leave the trail and follow the broad ridge crest EAST and UP. If the ground under you is falling away, or you are contouring around a slope rather than walking a crest, you are not on the route — the correct line is a ridge, and a ridge in cloud is identifiable by the fact that the ground drops on both sides of you. SECOND TEST, AND IT IS THE ONE THAT MATTERS MOST HERE: THE RIDGE IS A SEQUENCE OF FALSE SUMMITS. It is mostly Class 1-2 and it crosses many bumps before the true summit. So a high point that arrives sooner and more easily than you expected is a false one. Do not stop on the first thing that stops going up; keep the crest under you and keep going until a short Class 3-4 section leads to the top — that step is the deciding feature of the peak. THIRD TEST, for the far end: Cameron is a triple summit and the crest continues past the true top toward the Middle Peak, which has spots of Class 3-4, and then to the East Peak. If you have started descending steeply and then re-climbing on harder ground, you have gone past the true summit and are onto the traverse. That is a legitimate outing; it is not this route. HONEST LIMIT AND A LIVE DISAGREEMENT: this route's own summit waypoint calls the EAST Peak the true 7,190 ft high point, while traverse accounts reach the true summit FIRST from Cameron Pass and then go on to Middle and East. Those cannot both be right. Carry a map, count your summits, and do not treat either the route title or the waypoint name as settled."
+     },
+     {
+      "name": "Deer Park and the Cameron Creek Trail",
+      "notes": "The other trail-based way into Cameron Basin, and the one worth knowing when Obstruction Point Road is still closed. From Deer Park, the Grand Ridge and Cameron Creek trail system leads into the Cameron Creek drainage and up to Cameron Basin and Cameron Pass from the northeast.\n\nIt is longer than the Obstruction Point line and much of the Cameron Creek tread receives little to no maintenance — parties describe bushwhacking through dense growth, chest-high berry bushes, and log crossings barricaded by jams. Long sleeves and trousers are universally recommended.\n\nOnce at Cameron Pass the climb is identical to the Obstruction Point variant.",
+      "season": "Roughly Jul-Sep, and it opens earlier than Obstruction Point in some years because Deer Park Road is a different road on a different aspect",
+      "hazards": [
+       "Long stretches of unmaintained, brushy tread with log jams at creek crossings",
+       "Route-finding in wet meadow where the tread disappears",
+       "All the summit-ridge hazards of the standard variant, reached after a longer approach",
+       "Bear canister required; no reliable water above the basin"
+      ],
+      "baseFinding": "IDENTICAL ONCE YOU ARE AT CAMERON PASS: leave the trail and follow the broad ridge crest EAST and UP, over many false summits, until a short Class 3-4 step leads to the top. The pass is WEST of the summit whatever the route title says. THE EXTRA TEST THIS SIDE NEEDS is in Cameron Basin, because you arrive up the creek rather than over Grand Pass. The Cameron Creek tread crosses several unbridged branches of the creek in wet meadow and is genuinely easy to lose in brush or fog. The handrail is the creek: stay with the drainage and keep climbing it toward the basin at about 6,000 ft. The established camps in the upper basin are the confirmation that you are in the right cirque, and the pass is above them. WHAT GOING TOO FAR LOOKS LIKE: if you crest a pass and the ground beyond drops steeply into a large river valley to the south, you are looking at the Dosewallips headwaters and you have crossed Cameron Pass rather than turning up the ridge at it."
+     },
+     {
+      "name": "Dosewallips road walk and the long push up-valley into Cameron Basin",
+      "notes": "Recorded because it is a real historical approach — but it is rarely chosen today and is not the recommended way in. From Brinnon, the Dosewallips River Road has been closed to vehicles at a washout about a mile in since 2002. That forces a long walk or bike up the old roadbed before you even reach the Dosewallips River Trail, and then a multi-day push up-valley into Cameron Basin. It adds many miles over either northern approach. If you take it, the climb from Cameron Pass is unchanged.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Many extra miles including a long closed-road walk at each end",
+       "A multi-day valley approach with fords and blowdown",
+       "The southeast face of Cameron is not a route and the approach passes beneath it",
+       "All the summit-ridge hazards of the standard variant"
+      ],
+      "baseFinding": "IDENTICAL AT THE PASS: the ridge rises EAST out of Cameron Pass, over many false summits, to a short Class 3-4 step and the true top. THE TEST THIS SIDE NEEDS IS ABOUT WHICH VALLEY YOU ARE IN, because approaching from the south you come up beneath the peak's southeast face — the aspect the route's title wrongly names — and it does not go. Cameron's southeast side rises over 3,300 ft above the Dosewallips River in about one horizontal mile. If you are standing under that and looking for a line up it, you are on the wrong side of the mountain: the route is the west ridge, gained at the pass, and getting there from this side means continuing up-valley and round into Cameron Basin first. HONEST LIMIT: this approach is not the one the trailhead record names."
+     }
+    ],
+    "season": "Jun-Sep",
+    "access": {
+     "fees": "Park entrance: $30 per private vehicle (7 consecutive days) or $55 Olympic NP annual pass. Overnight Wilderness Camping Permit (required for any approach, since this is inherently a multi-day trip): $6 reservation fee plus $8 per person per night, booked through Recreation.gov; no cash accepted in the park.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "No pets on the Grand Valley/Grand Pass/Cameron Pass trails. Bury human waste 6-8 inches deep and at least 200 ft from water; group size limited to 12.",
+     "permit": "Wilderness/backcountry camping permit required for any overnight stay supporting the climb (day climbs need none). Reserved online via Recreation.gov — paper self-registration at trailheads has been discontinued.",
+     "closures": "Obstruction Point Road (the main approach road) is snow-gated in winter/spring, typically opening early-to-mid July and closing again by mid-October — check the NPS Current Road Conditions page before driving. The Dosewallips River Road has been closed to vehicles since a January 2002 washout, which sits about a mile beyond the road-end parking some 8.5 miles from US-101, adding about 6.5 miles of road-walking or biking each way to that southern approach.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic NP entrance pass plus a reserved Wilderness Camping Permit (Recreation.gov) for any overnight stay; bear canisters (available to borrow at Wilderness Information Centers) are required for camping in the Cameron Basin/Grand Valley zone due to sparse tree cover.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    },
+    "approach": "Primary approach: drive the narrow, one-lane gravel Obstruction Point Road (Olympic NP's highest road, topping out at 6,135 ft; usually open only early/mid-July through mid-October) 8 miles east from the Hurricane Ridge Visitor Center to the Obstruction Point trailhead. Hike the Grand Pass Trail roughly 6 miles to Grand Pass, then continue on the Cameron Pass Trail about 3.5 more miles, climbing to Cameron Pass (~6,450-6,500 ft) and the camp sites in the basin below it (roughly 9-10 miles one-way to a base camp, off-trail beyond that to the summit ridge). Alternative southern approach: from Brinnon, the Dosewallips River Road is closed to vehicles at a washout about 1 mile in (closed since 2002), forcing a long walk/bike up the old roadbed before even reaching the Dosewallips River Trail proper and then the multi-day push up-valley into Cameron Basin — this route adds many extra miles and is rarely used as the primary option today."
+   }
+  }
+ ]
+}

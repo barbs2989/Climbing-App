@@ -1,0 +1,287 @@
+{
+ "applied": [
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Direction along Vasiliki Ridge from Burgundy Col"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Direction along Vasiliki Ridge from Burgundy Col"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Nature of the technical climbing / pitch count"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Nature of the technical climbing / pitch count"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Partner requirements describe a harder, multi-rappel objective"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Partner requirements describe a harder, multi-rappel objective"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Partner requirements describe a harder, multi-rappel objective"
+  },
+  {
+   "id": "wa_south_face_direct",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest grade"
+  },
+  {
+   "id": "wa_south_face_direct",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_south_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Burgundy Col elevation"
+  },
+  {
+   "id": "wa_south_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Burgundy Col elevation"
+  },
+  {
+   "id": "wa_south_face",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Grade vs protection description"
+  },
+  {
+   "id": "wa_south_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text names a different formation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Only feasible once North Cascades Highway 20 opens over Washington Pass for the season (typically mid-April to ~mid-November, weather dependent).",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Wine Spires pullout on Hwy 20 (~3.7 mi east of Washington Pass), drop steeply down to and cross Early Winters Creek, then climb the well-used climber's trail through timber and talus to the Bench, an established camp at ~6,460 ft with a nearby spring. Stronger parties push on another ~1,300 ft to camp at Burgundy Col itself (~7,800 ft) to shorten summit day.",
+       "hours": 4.5,
+       "miles": 3.3,
+       "title": "Approach to high camp",
+       "gainFt": 4400,
+       "lossFt": 200,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach the Bench camp below Burgundy Col"
+      },
+      {
+       "n": 2,
+       "note": "From camp, gain Burgundy Col and traverse south along Vasiliki Ridge on scramble terrain to the base of Ares Tower; climb the 4th-class ridge with its short low-5th-class summit step, then rappel back to the ridge. Most parties break camp and descend the full approach back to the car the same day rather than a second night out; strong parties tag The Acropolis and Niki Tower en route.",
+       "hours": 11,
+       "miles": 7,
+       "title": "Traverse to Ares Tower and out",
+       "gainFt": 1400,
+       "lossFt": 6000,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Break camp / leave the Bench",
+         "detail": "Alpine start to be off the ridge before afternoon thunderstorms build."
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Reach Burgundy Col",
+         "detail": "Cache overnight gear here if camped lower at the Bench."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach base of Ares Tower",
+         "detail": "Ridge traverse over/around intermediate towers (Acropolis, Niki Tower) on 3rd-4th class terrain."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit Ares Tower",
+         "detail": "Short low-5th-class step guards the final summit block."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Rappel back to the ridge",
+         "detail": "Single-rope rappel off fixed/new anchors reported by recent parties."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Full reversal of the approach, re-crossing Early Winters Creek."
+        }
+       ],
+       "objective": "Climb Ares Tower via the ridge traverse, then hike all the way out to the car"
+      }
+     ],
+     "totalNote": "A 2-day trip: ~7 mi and ~5,800 ft one-way to the summit, with an established high camp at the Bench (or Burgundy Col) and a long car-to-car summit/exit day."
+    },
+    "timing": {
+     "totalHrs": 15.5,
+     "summitTimeHrs": 4.5,
+     "descentTimeHrs": 11,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "From the Wine Spires pullout on Hwy 20 (~3.7 mi east of Washington Pass), drop steeply down to and cross Early Winters Creek, then climb the well-used climber's trail through timbe…",
+       "fromTo": "Approach to high camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 11,
+       "note": "From camp, gain Burgundy Col and traverse south along Vasiliki Ridge on scramble terrain to the base of Ares Tower; climb the 4th-class ridge with its short low-5th-class summit st…",
+       "fromTo": "Traverse to Ares Tower and out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout to the Bench, then NORTH along the ridge crest to Ares Tower",
+      "notes": "Park at the unsigned Wine Spires pullout on SR-20, about 3.7 miles east of Washington Pass, roughly 0.7 mile past the Cutthroat Lake Road turnoff near milepost 166, at about 4,300 ft. A boot path drops down loose scree-covered talus into the trees, passes a trail register, and crosses Early Winters Creek on logs at about 4,080 ft.\n\nThe trail then climbs steadily through forest, steepening between two side creeks, gaining roughly 3,700-plus ft to Burgundy Col at about 7,800 ft. A flat bench campsite, the Bench, at about 6,460 ft sits about halfway up AND IS THE MORE COMMON CAMP FOR THIS OBJECTIVE than the col itself.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A class 4 ridge traverse with real exposure to reach the tower",
+       "Loose scree-covered talus on the initial drop from the highway",
+       "A log crossing of Early Winters Creek",
+       "The whole approach shares a trail with the Wine Spires objectives and then deliberately departs from it"
+      ],
+      "baseFinding": "VASILIKI RIDGE AND ARES TOWER RISE DIRECTLY NORTH OF BURGUNDY COL AND THE WINE SPIRES CAMP AREA. SO THE TEST IS DIRECTIONAL AND IT IS THE OPPOSITE OF EVERY OTHER ROUTE FROM THIS TRAILHEAD: FROM THE BENCH OR THE COL, GO NORTH.\n\nEvery Wine Spires objective, Burgundy, Chianti, Pernod, Chablis, is reached by going to Burgundy Col and then SOUTH or EAST from it. Ares Tower is the one you reach by contouring and scrambling NORTH along the ridge crest. IF YOU HAVE DROPPED ONTO SNOW BENEATH AN EAST-FACING WALL, YOU HAVE GONE SOUTH AND YOU ARE UNDER THE WINE SPIRES.\n\nARRIVAL: Ares Tower is the HIGH POINT of Vasiliki Ridge at about 8,190 ft. Following the crest north, you are at the base when the ridge stops being scrambleable and rises into a tower. Two pitches, Grade II-III, fifth class.\n\nCONFIRM BY THE HARDWARE, AND ON THIS ridge IT IS THE ONE PIECE OF FIXED GEAR WORTH KNOWING ABOUT: THERE IS A FIXED ANCHOR AT THE ARES TOWER SUMMIT, and the standard descent is a single rappel from it down to the notch to retrieve stashed gear, then a reversal of the fourth-class ridge scramble.\n\nSO THE PATTERN OF THE DAY IS: stash gear at a notch below the tower, climb two pitches, rappel back to your gear. If there is nowhere sensible to leave a pack, you are not at the tower yet.\n\nCAMP CHOICE AS A PLANNING FACT: the Bench at about 6,460 ft is the more common camp for this objective than Burgundy Col, which is 1,300 ft higher and in the wrong direction."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Fit enough for a technical off-trail approach carrying a rock rack, rope, and rappel gear to the base of the Wine Spires",
+      "packWeight": "Moderate - rack, rope(s), helmet, approach shoes/rock shoes, rappel/rescue gear, layers for exposed afternoon weather"
+     },
+     "approachTime": "Not specified in existing beta; treat as a multi-hour technical approach from the Washington Pass / Silver Star area to the base of the Wine Spires (verify current approach beta before attempting)",
+     "requiredSkills": [
+      "Multi-pitch trad leading and efficient belay/anchor transitions",
+      "Route-finding on featured, ledgy, occasionally loose alpine granite",
+      "Multi-rappel descent competence (raps off towers/spires)",
+      "Comfort with exposure on technical pitches",
+      "Basic self-rescue / ability to bail given loose rock and afternoon thunderstorm risk"
+     ],
+     "experienceLevel": "Solid alpine rock climber comfortable leading moderate (5.7-5.8-ish) multi-pitch trad routes with route-finding on featured but sometimes loose granite; prior towers/spires or North Cascades alpine rock experience strongly preferred"
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_direct",
+   "before": {
+    "grade": "5.10",
+    "pitches": 0,
+    "grade_num": 10
+   }
+  },
+  {
+   "id": "wa_south_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4300,
+      "name": "SR-20 Wine Spires pullout (milepost 166)",
+      "note": "Roadside pull-off on SR-20 near milepost 165-166, ~4 mi east of Washington Pass; cross Early Winters Creek then climb ~3 mi to Burgundy Col.",
+      "type": "Trailhead",
+      "elevFt": 4300,
+      "directions": "Drive SR-20 to the unsigned Wine Spires pullout east of Washington Pass, near milepost 165-166 at about 4,300 feet — a plain roadside pull-off roughly 4 miles east of the pass. There is no sign, so watch your mileposts. This is the parking for the whole Wine Spires group; the climbers' path toward Early Winters Creek and Burgundy Col leaves straight from the shoulder."
+     },
+     {
+      "lat": 48.54,
+      "lng": -120.595,
+      "elev": 6000,
+      "name": "The Ledge Bivy",
+      "note": "Common bivy area partway up to Burgundy Col.",
+      "type": "Campsite",
+      "distMi": 2
+     },
+     {
+      "lat": 48.554323,
+      "lng": -120.591969,
+      "elev": 7950,
+      "name": "Burgundy Col",
+      "note": "Separates the Wine Spires from Vasiliki Ridge; Vasiliki Tower stands on the left entering the col.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 48.55552,
+      "lng": -120.59304,
+      "elev": 7663,
+      "name": "Vasiliki Tower",
+      "type": "Summit",
+      "elevFt": 7663
+     }
+    ],
+    "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 ft (roughly 2 hours from the car), then continues up to Burgundy Col (~7,720 ft, ~3 hours). Burgundy Spire is reached from the basin/col area with a short additional scramble; good camping and a late-season spring are near 6,400-6,500 ft.",
+    "gear": [
+     "5.8-5.9 protection",
+     "quickdraws",
+     "slings",
+     "carabiners",
+     "belay device"
+    ]
+   }
+  }
+ ]
+}

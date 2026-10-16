@@ -1,0 +1,49 @@
+{
+ "id": "wa_south_ridge_4",
+ "name": "South Ridge",
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek / Cascade River Road TH",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Seattle, take I-5 north to WA-20 and follow the North Cascades Highway east through Sedro-Woolley, Concrete, and Rockport to Marblemount. Turn south onto Cascade River Road and drive about 20 miles to the Eldorado parking area near mile 20, at roughly 2,100 feet. The first 10 miles are paved; the rest is gravel and washboard. Any overnight stay needs a free North Cascades National Park backcountry permit, so either reserve one on Recreation.gov ahead of time or stop at the Marblemount Wilderness Information Center on your way in for one of the limited walk-up spots."
+  },
+  {
+   "lat": 48.51,
+   "lng": -121.125,
+   "elev": 5200,
+   "name": "Roush Creek Basin / Eldorado Glacier toe",
+   "note": "Snowfields lead onto the Eldorado Glacier, staying left (west) of the rocky ridge.",
+   "type": "Junction",
+   "distMi": 3
+  },
+  {
+   "lat": 48.533,
+   "lng": -121.129,
+   "elev": 7600,
+   "name": "Eldorado camp (Inspiration Glacier flat)",
+   "note": "Good camps on rocks near the broad flat of the Inspiration Glacier.",
+   "type": "Campsite",
+   "distMi": 5.5
+  },
+  {
+   "lat": 48.5375,
+   "lng": -121.1342,
+   "elev": 8868,
+   "name": "Eldorado Peak",
+   "note": "Broad, snow-covered ridge to the spectacular knife-edge summit; the standard/easiest route.",
+   "type": "Summit",
+   "distMi": 6.3,
+   "directions": "From camp, traverse the steep, exposed snow on the glacier's flank (crampons mandatory) to the lowest point of the south ridge, the left-hand skyline from camp, below an obvious crack leading to a U-shaped notch. Climb the crack to the notch, cross to the far side and climb cracks back to the knife-edge crest, follow the crest two pitches to a short downclimb, then scramble the broad upper ridge to the summit."
+  }
+ ],
+ "approach_logistics": {
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+ }
+}

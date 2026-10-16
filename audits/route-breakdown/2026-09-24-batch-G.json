@@ -1,0 +1,118 @@
+{
+  "wa_mount_adams_south_climb": {
+    "area": "wa_mount_adams",
+    "climbing_route": [
+      { "n": 1, "label": "Trail's end to Lunch Counter", "class": "Snow or scree", "notes": "The trail gives out in the snowfield around 8,500 ft. From there it is open snow, or loose scree once the snow melts, beside the Crescent Glacier up to Lunch Counter. This is the broad, rock-strewn bench on Suksdorf Ridge at roughly 9,250–9,400 ft, with stone wind shelters where most parties camp. Hold the ridge and keep off the glacier to the east." },
+      { "n": 2, "label": "South Spur to Piker's Peak", "class": "Up to 30° snow", "notes": "Cross the low moraine ridges on the bench, then go straight up the main south-facing snowfield. You can climb it in crampons or scramble the rubbly crest of Suksdorf Ridge on the left, where the old telegraph wire lies. It is about 2,400 ft of relentless slope with no break. The snow firms overnight and turns to deep mush by afternoon, so parties leave Lunch Counter in the small hours." },
+      { "n": 3, "label": "Piker's Peak and the summit saddle", "class": "Snow, gentle", "notes": "Piker's Peak (11,657 ft) is a false summit. Traverse its southern slope or go over the top, then drop to the shallow saddle below the summit cone. The plateau has no features, and parties have become badly lost here in cloud. Take a compass bearing or GPS track back to Piker's before you continue, because the wind is often strongest here." },
+      { "n": 4, "label": "Summit cone to the lookout", "class": "Snow / Class 2", "notes": "From the saddle a rocky, exposed ridge climbs steeply for the last 600 ft or so, and the boot path switchbacks where it can. Near the top it eases onto a gentler snowfield. Head straight for the old lookout building on the broad summit (about 12,276 ft). Crampons are needed on the frozen snow early in the day, and the thin air makes this slow going." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "New: 4 sections from trail's end to the summit (none stored before).",
+      "sources_consulted": [
+        "https://www.oregonhikers.org/field_guide/Mount_Adams_Summit_Hike",
+        "https://www.onxmaps.com/hiking/o47zmyr2xzrj/mount-adams-south-climb-lunch-counter-approach (search summary)",
+        "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-183-south-climb (search summary)",
+        "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+        "https://globalsummitguide.com/mountains-mount-adams-washington-state-usa/ (search summary, whiteout/timing)",
+        "https://hike2hike.com/mountaineering/mount-adams-south-climb-washington/"
+      ],
+      "other_findings": "Sources give Lunch Counter as 9,250 ft or 9,400 ft and the summit as 12,276 ft or 12,280 ft, so the notes use approximate values. SummitPost and Mountaineers pages returned 403 and could not be read."
+    }
+  },
+  "wa_mount_adams_mazama_glacier_headwall": {
+    "area": "wa_mount_adams",
+    "climbing_route": [
+      { "n": 1, "label": "Sunrise Camp up the Mazama Glacier", "class": "Glacier, to 40°", "notes": "From Sunrise Camp on the moraine (about 8,300–8,600 ft), go straight up the Mazama Glacier. It steepens to around 40° and has a bergschrund near 9,500 ft. There are more crevasses on the lower glacier than you might expect, and they open further as summer goes on. Rope up and weave around them." },
+      { "n": 2, "label": "Headwall at about 11,300 ft", "class": "45° snow", "notes": "Around 11,300 ft, veer right onto the headwall, which is about 45° and heads toward the south summit. Some parties place two or three pickets here. The slope gets the early sun, so cross it while the snow is still firm." },
+      { "n": 3, "label": "Upper glacier strip to Piker's Peak", "class": "25–30° or 60–70°", "notes": "Above the headwall, a strip of glacier narrows toward Piker's Peak. The easy exit bears left onto a 25–30° snowfield. The optional finish goes right and climbs about 40 ft of 60–70° snow or ice up the southeast corner, protected with two or three screws. Near the top, the traverse passes below the bergschrund, above a steep slope whose lower edge has wide-open crevasses." },
+      { "n": 4, "label": "Piker's Peak to the true summit", "class": "Snow / Class 2", "notes": "From Piker's Peak (the false south summit), descend its back side to the saddle. Then climb the last 600–700 ft of the summit cone to the high point on the east side of the summit plateau. The wind and rime on this final stretch are often much worse than on the sheltered glacier below. The plateau has no landmarks in cloud." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 4 sections from Sunrise Camp to the summit (none stored before).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107760356/mazama-glacier-headwall",
+        "https://www.summitpost.org/mazama-glacier-headwall/158532 (search summary; page 403)",
+        "https://www.summitpost.org/mt-adams-mazama-glacier-unroped/325189 (search summary)",
+        "https://www.whereiskylemiller.com/volcanoes-cascade-mountains/mount-adams-mazama-glacier/",
+        "https://www.oregonhikers.org/field_guide/Mount_Adams_Summit_Hike (summit cone from Piker's Peak)"
+      ],
+      "other_findings": "Sources disagree on Sunrise Camp's elevation (8,300 ft vs 8,600 ft). The stored grade and pitch count are null. The route is usually given as an easy glacier climb with an optional short AI/steep-snow step."
+    }
+  },
+  "wa_mount_shuksan_northwest_arete": {
+    "skip_reason": "No usable section-level description found. The SummitPost page returned 403 and the CascadeClimbers thread did not load. Search summaries give only that the line runs north of the Hanging Glacier, covers about 1,500 ft of 4th/low-5th ground on an ill-defined crest, and joins the upper Northwest Face / 1939 finish at the summit pyramid. That is not enough to order sections safely. Sources also mix this line up with the Northwest Rib (5.7 III, between the White Salmon and Hanging Glaciers, which does have a detailed profile). The stored overview places the arete 'above the White Salmon Glacier' and may conflate the two, so a human should confirm which line this row means."
+  },
+  "wa_mount_shuksan_northeast_ridge": {
+    "skip_reason": "No section-level description found. One guide profile mentions 'the NE Ridge of the Summit Pyramid (5.7)' as an alternate top-out above the Upper Curtis Glacier after the NW Rib, but gives no pitch or section detail. Mountain Project, the Mountaineers and general Shuksan pages do not describe it. Not enough to write the technical ground without inventing it."
+  },
+  "wa_silver_star_ne_ridge": {
+    "skip_reason": "No route description found. The Wikipedia summit table lists 'Northeast Ridge 5.9 Grade III' on the west summit, but gives no other detail. Mountain Project lists only the East Ridge, Silver Star Glacier and West Face Couloir. Other finding: the stored beta runs two things together. The 1952 first ascent climbed the west peak's northeast side from the glacier, via a snow finger from the col and a Class 4 summit block. The separate modern 5.9 Northeast Ridge is not the same climb, so the stored beta and grade may describe two different climbs."
+  },
+  "wa_snoqualmie_mountain_standard_route": {
+    "area": "wa_snoqualmie_mountain",
+    "climbing_route": [
+      { "n": 1, "label": "Open slope above the creek crossing", "class": "Class 2", "notes": "About a quarter mile past the waterfall ford, the path leaves the trees onto the open, west-facing slope below Cave Ridge. From there it switchbacks steeply upward. The footing is loose dirt and scree, and the gully holds snow well into summer, so an ice axe and traction are usual into June. In winter and spring this slope is avalanche terrain." },
+      { "n": 2, "label": "Upper slopes to the summit ridge", "class": "Class 2–3", "notes": "Keep climbing the switchbacks and short rock steps toward the ridge. About two-thirds to three-quarters of the way up, the path crosses a stretch with real exposure beside it. Parties coming down find this loose ground harder to control than it seemed on the way up." },
+      { "n": 3, "label": "Summit ridge to the west summit", "class": "Class 3", "notes": "The last stretch follows a narrowing ridge to the popular west summit (6,278 ft), with exposed, steep ground on both sides. Seen from the side, the summit block is strikingly thin. Take care with footing here, especially on wet rock or lingering snow." },
+      { "n": 4, "label": "Optional: east (true) summit", "class": "Exposed Class 3", "notes": "The east summit is about 550 ft east and, by a 2023 survey, about 3 ft higher. Following the ridge directly soon runs into a 5th-class downclimb. The easier way drops down steep heather and rock on the south side, traverses east along the base of the cliff, and climbs a 3rd-class gully onto the narrow, exposed east ridge to the small top." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 4 sections from treeline to the summit, including the optional east summit (none stored before).",
+      "sources_consulted": [
+        "https://www.theoutbound.com/washington/hiking/hike-snoqualmie-mountain (search summary)",
+        "https://www.wta.org/go-hiking/hikes/mount-snoqualmie",
+        "https://www.mountaineers.org/activities/trip-reports/snoqualmie-guye-cave-ridge-scramble-loop (search summary; page 403)",
+        "https://www.countryhighpoints.com/snoqualmie-mtn-survey/",
+        "https://www.peakbagger.com/peak.aspx?pid=130627 (search summary)"
+      ],
+      "other_findings": "The stored overview says the east summit requires 'down-climbing into a notch and an exposed 4th-class move across a gap'. The survey party describes the direct ridge as having a 5th-class downclimb, with the easier way being an exposed 3rd-class route around the south side and up the east ridge. The overview may overstate or misdescribe the easier option."
+    }
+  },
+  "wa_icy_peak_ruth_icy_traverse": {
+    "area": "wa_icy_peak",
+    "climbing_route": [
+      { "n": 1, "label": "Ruth Glacier to Ruth Mountain", "class": "Glacier", "notes": "From Hannegan Pass (about 5,000 ft), traverse around the 5,700-ft point onto Ruth's north ridge. The glacier begins where the ridge steepens, and this is where to put on crampons and rope up. Climb the glacier right of a rock outcrop near 7,000 ft to Ruth's flat summit. Crevasses open more as late summer arrives." },
+      { "n": 2, "label": "Ruth summit down to the Ruth-Icy saddle", "class": "Class 2–3", "notes": "From Ruth, descend about 800 ft south and west along a bench toward a gully on the peak's west side. Then go down another 800 ft or so on a steep, sometimes exposed ramp and a faint path to the low saddle between Ruth and Icy. You have to regain this height on the way back." },
+      { "n": 3, "label": "Talus and slabs onto Icy's glacier", "class": "Class 2", "notes": "From the saddle, climb talus and slabs beneath a rock ridge until you can step onto Icy's glacier. The rock here is generally sound. The glacier has several crevasses depending on the season, including a long horizontal one just below the towers near the top." },
+      { "n": 4, "label": "Glacier to the notch near 6,500 ft", "class": "Glacier, firm snow", "notes": "Climb the glacier, often on firm snow in the morning, to the notch on the ridge just west of Icy's Northwest Spire (about 6,500–6,600 ft). This is where the rock scramble starts. Parties carry pickets, a rope, crampons and an axe for the snow and glacier." },
+      { "n": 5, "label": "Ridge scramble to the summit gully", "class": "Class 2–3", "notes": "From the notch, about 500 ft of 2nd–3rd class scrambling up through the towers leads to the base of the summit gully. The rock is mostly good and the climbing relaxed, but other parties above can knock rock down, so wear helmets." },
+      { "n": 6, "label": "Summit gully", "class": "Class 4", "crux": true, "notes": "The crux is a gully about 100 ft high up the middle of the summit towers. It is low 4th class on mostly solid rock and fairly sheltered from exposure. Some parties rappel it on descent, but downclimbing is also common. With a big party, allow time on the way down, since loose stones in the gully land on people below." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 6 sections from Hannegan Pass over Ruth to Icy's summit (none stored before).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+        "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+        "https://www.summitpost.org/icy-peak-via-ruth-mountain/855906 (search summary; page 403)",
+        "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse (search summary; page 403)",
+        "https://www.wta.org/go-hiking/trip-reports/tripreport-2005043003 (title only; page 403)"
+      ],
+      "other_findings": "The stored beta says the traverse descends Ruth's 'south ridge' and climbs to 'the notch between Icy's Northwest and Southeast summits' via a 'steep, loose, wildly exposed' Northwest Ridge. The sources describe descending south and west toward a west-side gully, reaching a notch just west of the Northwest Spire, and 'mostly pretty good' rock with 'casual' climbing. Sources disagree on the notch elevation (6,500 vs 6,600 ft) and the summit elevation (about 6,900 ft vs 7,073 ft). Stored grade is null; Mountain Project gives Grade II, 4th class."
+    }
+  },
+  "wa_cardinal_peak_nw_couloir_north_ridge": {
+    "area": "wa_cardinal_peak",
+    "climbing_route": [
+      { "n": 1, "label": "Northwest couloir to the north ridge", "class": "Class 2 scree", "notes": "Above the talus basin on the Saska side, climb the broad scree-and-talus couloir on Cardinal's northwest flank to the crest of the north ridge. It is loose and tiring rather than technical. Early-season snow in the basin and couloir covers much of the scree, and kicking steps up it is usually easier than the rubble." },
+      { "n": 2, "label": "North ridge", "class": "Class 2–3", "notes": "Scramble on the north ridge or just east of it toward the summit. There are some slabby moves that make you stop and think in boots, and big exposure down the east side toward Lake Chelan. The ridge can hold snow and verglas well into the season, which can make the direct crest unsafe." },
+      { "n": 3, "label": "Summit (or east-slope bypass)", "class": "Class 3", "notes": "The final easy class 3 goes up and right along the crest from the notch between the north summit and the higher middle summit (about 8,590 ft). If the ridge is snowed up, parties drop onto the steep east slopes below the summit ridge, traverse south, and climb back up to the notch for the final scramble." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 3 sections from the couloir to the summit (none stored before).",
+      "sources_consulted": [
+        "https://trailcatjim.com/grouse-pass-loop-pyramid-mtn-squaretop-mtn-gopher-mtn-cardinal-peak-emerald-peak/",
+        "https://trailcatjim.com/milham-pass-traverse-cardinal-peak-emerald-peak-saska-peak-pinnacle-mountain/",
+        "https://www.countryhighpoints.com/cardinal-peak/",
+        "https://onehikeaweek.com/2016/07/04/cardinal-peak/",
+        "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/"
+      ],
+      "other_findings": "Only one source names the notch between the north and middle (true) summits. That report came up from the meadow below the peak and may have used a neighbouring gully, so section 3's notch detail is the least certain. The stored grade is null. Sources describe the route as Class 2–3."
+    }
+  }
+}

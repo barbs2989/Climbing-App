@@ -1,0 +1,363 @@
+{
+  "wa_mount_rainier_liberty_ridge": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Carbon Glacier approach",
+        "grade": "Glacier, crevassed",
+        "notes": "Drop off Curtis Ridge onto the Carbon Glacier at about 7,600 ft and cross to the toe of the ridge near 8,600 ft. In May and June several lines usually go; later the glacier breaks up. The usual crux is the moat between glacier and ridge, which has turned strong parties back. The ridge can be gained from either flank or directly at the toe."
+      },
+      {
+        "pitch": "Lower ridge → Thumb Rock",
+        "grade": "Steep snow, rockfall",
+        "notes": "The crest proper from the toe has loose rocky steps and uneven climbing; a flank gives steadier snow but sits under rockfall. The east flank is steeper with more rock bands, so parties starting there cross over the crest to the west side and continue to Thumb Rock, the obvious gendarme near 10,500 ft. Rocks come down without warning here, so climb it early in the day."
+      },
+      {
+        "pitch": "Thumb Rock high camp",
+        "grade": "Bivy saddle, ~10,700 ft",
+        "notes": "The small saddle just above Thumb Rock is the only real bivouac on the ridge, limited to twelve people. Dig platforms and build a wall against wind and the small rocks that fall from the cliff above. Above this point no safe bivy exists, and retreat grows harder than continuing up, so settle the weather forecast and team condition here."
+      },
+      {
+        "pitch": "Upper ridge",
+        "grade": "Steep snow/ice",
+        "notes": "Above camp a rock band (the Gun Sight) blocks the crest. The easiest line goes out left (east) around it and up the east side of the ridge; when it is formed, a short water-ice pitch goes straight through the middle. The right-hand bypass crosses under loose rock and is the poorest choice. Rockfall off the Gun Sight has triggered a very large slab avalanche on the slope below."
+      },
+      {
+        "pitch": "Black Pyramid",
+        "grade": "Snow/ice to ~60°",
+        "notes": "Climb up and left to pass the Black Pyramid, a dark rock buttress over 1,000 ft tall, on its left (east) side from about 11,800 to 12,800 ft. The ground is steep snow or low-angle alpine ice depending on the season, on exposed faces reported up to 60°. Screws and pickets for running protection; regain the rounded crest above the Pyramid at 12,800 ft."
+      },
+      {
+        "pitch": "Bergschrund & summit ice cap",
+        "grade": "Snow ramp to steep ice",
+        "crux": true,
+        "notes": "The bergschrund near 13,800 ft is the last and usually hardest obstacle. In some years it is a step over a small crack and a snow ramp; in others an offset gap with a thin, awkward bridge and a near-vertical wall above. Anchor the belayer and pitch it out when it is dicey, and belay out of the fall line, since sun-baked or wind-hammered ice here breaks off in large plates."
+      },
+      {
+        "pitch": "Upper slopes to Liberty Cap",
+        "grade": "Glacier, thin bridges",
+        "notes": "Above the schrund, slopes ease to Liberty Cap at about 14,110 ft; fast or grinding depending on the surface. Columbia Crest is over a mile away: most parties drop about 600 ft to Liberty Saddle to join the Emmons-Winthrop descent, and the Crest adds about 800 ft of climbing from the saddle. Stay roped through the saddle, where crevasses are thinly bridged and cornices form on its east side."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "5 -> 7 entries. Stored labels kept for the five sections that still name the same ground; added the Thumb Rock high-camp stage and a final Liberty Cap/Liberty Saddle section. Replaced unsupported angle chips (e.g. 'ice to 60–70° (AI3)') with terrain chips; the only angle kept (to ~60°) is sourced to the Black Pyramid faces. Gun Sight variations, elevations (7,600 / 8,600 / 10,500 / 11,800–12,800 / 13,800 / 14,110 ft) and the bergschrund range of difficulty are from the NPS route brief.",
+      "sources_consulted": [
+        "https://www.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+        "https://www.summitpost.org/liberty-ridge/638715",
+        "https://www.mountaineers.org/activities/routes-places/new-routes-places-for-beta-brews/mount-rainier-liberty-ridge",
+        "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/",
+        "https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml"
+      ],
+      "other_findings": "The stored `rappels` field says '1-2 fixed rappels on upper ridge'. The NPS route brief states there are no established fixed anchors on the route, and the route's own descent_text says the ridge has no rappel anchors and is not descended. The `beta` field also mentions '5.7 pitches'; no source consulted describes graded rock pitches on the route (the rock bands are bypassed on snow/ice). NPS puts Thumb Rock at 10,500 ft (the stored bivy note said ~10,700; other sources give 10,775 for the saddle)."
+    }
+  },
+  "wa_mount_rainier_emmons_glacier": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "White River → Glacier Basin",
+        "grade": "trail",
+        "notes": "From White River Campground the Glacier Basin Trail runs about 3.5 mi up the north side of the Inter Fork of the White River, mostly under forest, with several creek crossings and slide paths. The maintained trail ends at Glacier Basin Campground (six sites, toilet, bear-proof food locker), the last forested camp and last reliable running water."
+      },
+      {
+        "pitch": "Inter Glacier",
+        "grade": "snow 25–35°",
+        "notes": "A climbers' path continues up the lateral moraine to the toe of the Inter Glacier; ascend the glacier between two prominent nunataks, then trend toward the rocky ridge on the left to Camp Curtis (about 8,700 ft), a few rock rings on the crest. The Inter is the tamest glacier on the route, but it opens real crevasses as summer goes on; rope up late in the season."
+      },
+      {
+        "pitch": "Camp Schurman",
+        "grade": "camp",
+        "notes": "From Camp Curtis traverse down and right off the ridge onto the Emmons Glacier and around Steamboat Prow, about half a mile, to Camp Schurman (about 9,500 ft): ranger hut, toilet, and tent platforms dug into snow beside the rocky mound, limit 48 people. The talus line shifts as crevasses open; late in the season it can be easier to go over the top of Steamboat Prow."
+      },
+      {
+        "pitch": "Emmons Flats",
+        "grade": "Glacier bench, ~9,800 ft",
+        "notes": "In most years the route leaves Camp Schurman straight up to Emmons Flats, a level bench on the Emmons just above Steamboat Prow, usually free of open crevasses in the main season and a second camp for up to 24 people. Above it, head straight up toward the crater rim, weaving around crevasses, until a snow ramp between them lets you move left, usually near 10,200 ft."
+      },
+      {
+        "pitch": "The Corridor",
+        "grade": "snow 30°",
+        "notes": "The Corridor is a long rib of glacier snow running with the fall line from about 10,200 to 11,600 ft, the least crevassed and most straightforward ground on the route. It is a big open slope, so assess it for avalanche after new snow or wind loading. At its top, crevasses and large seracs block the direct line to the crater."
+      },
+      {
+        "pitch": "Upper Emmons to summit",
+        "grade": "snow 35–40°",
+        "notes": "Angle climber's right into the broad apron (the 'alpine meadow') below the saddle between Liberty Cap and the crater, switchbacking around crevasses to a ramp across the final bergschrund. Some years the ramp is far out near Liberty Cap, adding hours. Reach the rim and traverse to Columbia Crest (14,410 ft) on the northwest side. The line changes weekly: keep a GPS track for the descent."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "5 -> 6 entries. All five stored labels kept (the stored table already treats the approach and camps as sections); added Emmons Flats. Notes now carry the sequence, elevations and route-finding from the NPS route brief (Camp Curtis 8,700, Schurman ~9,500, Flats 9,800, Corridor 10,200–11,600, alpine meadow and bergschrund ramp). Trail length corrected in notes from ~3 mi to 3.5 mi. Existing grade chips carried over unchanged.",
+      "sources_consulted": [
+        "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+        "https://www.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+        "http://mountrainierclimbing.blogspot.com/2019/07/emmons-winthrop-route-update-7142019.html"
+      ],
+      "other_findings": "The stored `approach` puts Camp Curtis at ~9,000 ft and Camp Schurman at 9,460–9,600 ft; the NPS Emmons-Winthrop brief gives Camp Curtis 8,700 ft and Camp Schurman 9,500 ft (the NPS Liberty Ridge brief says 9,600). The brief describes the route's difficulties as steep snow and alpine ice of 40–50° in places, steeper than the stored 'snow 35–40°' chip on the final section; the chip was carried over, not changed."
+    }
+  },
+  "wa_mount_rainier_kautz_glacier": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Paradise → Camp Hazard",
+        "grade": "glacier/snow",
+        "notes": "Cross the heavily crevassed Nisqually Glacier roped (about 6,300 ft), climb the Fan or the Wilson gully to the bench at 7,300–7,400 ft, then follow snow up Wapowety Cleaver past the Castle camps (9,200–9,500 ft). The Turtle Snowfield reaches 45°; keep to its west side by the rock ridge, since the centre and east are raked by ice and rockfall. Camp Hazard sits at 10,800 ft."
+      },
+      {
+        "pitch": "Rock Step",
+        "grade": "5th class",
+        "anchor": "fixed rope",
+        "notes": "From the top bivy sites a climbers' trail leads up and left to a notch on the ridge (about 11,000–11,250 ft) with a fixed rope on rock anchors. The short, technical rock step directly below it is down-climbed on belay using the rope, or rappelled, onto the Kautz Glacier. Early season it may be buried in snow. Coming back up it is awkward 5th-class moves on old slings and fixed line."
+      },
+      {
+        "pitch": "Traverse into the chute",
+        "grade": "Icefall zone",
+        "notes": "From the base of the step, traverse onto the Kautz Glacier and into the ice chute directly beneath the Kautz Ice Cliff. This is a very active zone littered with ice and rock debris of every size: do not stop, regroup, or take breaks here. Move through it quickly and watch above. The same traverse must be crossed again on the way back to the Rock Step."
+      },
+      {
+        "pitch": "Kautz ice chute (lower)",
+        "grade": "Steep snow to alpine ice",
+        "notes": "The first and easier step: anything from a short pitch of steep snow to about 250 ft of alpine ice depending on season, with narrow crevasses sometimes crossing the slope. Later in summer water runs over it, so place screws out of the flow. Most parties pitch it or short-pitch it; on descent it takes one or two rappels on ice threads."
+      },
+      {
+        "pitch": "Middle snow",
+        "grade": "Steep névé or sun cups",
+        "notes": "Between the steps the chute is snow-covered all year, anywhere from firm névé to slushy sun cups, over roughly 200–400 vertical ft. Most parties simul-climb or short-rope it. It is generally free of crevasses but exposed to ice and rock knocked down from above, especially by parties climbing overhead, so do not linger below others."
+      },
+      {
+        "pitch": "Kautz ice chute (upper)",
+        "grade": "AI3",
+        "anchor": "ice screws",
+        "crux": true,
+        "notes": "The technical crux: from a short pitch to more than 300 ft of sustained AI3 near 12,000 ft. Most parties take the centre; late season, penitentes on the climber's right go easier. Night brings brittle refrozen ice, daytime a slushy skin; clear the surface for screws. Alpine ice breaks off in plates, so belay out of the leader's fall line. Descend by one to three rappels on ice threads."
+      },
+      {
+        "pitch": "Upper Kautz Glacier to summit",
+        "grade": "Glacier, large crevasses",
+        "notes": "Regroup near 12,000 ft and rope for glacier travel; the next 1,000 ft are mellow but hold some of the mountain's biggest, bell-shaped crevasses, so probe every bridge. Trend up and right to Wapowety Cleaver near 13,000 ft, watching for moats. Onto the Nisqually, work east to about 13,500 ft, then west to the saddle with Point Success; just under 500 ft more past the bergschrund reaches the crater rim."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "4 -> 7 entries. All four stored labels kept; added the Rock Step, the icefall traverse into the chute and the middle snow section between the two ice steps, which the NPS brief describes as distinct ground. Upper step graded AI3 (NPS); the stored lower-step chip 'screws for pro'/35–40° replaced with the brief's description (steep snow to up to 250 ft of alpine ice). No lengthM added: both ice steps vary from a short pitch to 250/300+ ft by season.",
+      "sources_consulted": [
+        "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+        "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+        "https://www.summitpost.org/kautz-glacier/155648",
+        "https://mountrainierclimbing.blogspot.com/2018/07/kautz-route-update.html"
+      ],
+      "other_findings": "The stored `grade` ('Grade III, ice to ~40–45°') understates the NPS brief, which grades the upper ice step AI3 and the route's cruxes 35–50°. The stored `approach` sentence about Camp Hazard ('stick to the west/climber's-right-avoiding side') is garbled: NPS says the centre and climber's right (east) of the Turtle are threatened and to stay on the west side near the rock ridge."
+    }
+  },
+  "wa_mount_rainier_fuhrer_finger": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Paradise to base of Finger",
+        "grade": "Glacier, crevassed",
+        "notes": "Cross the Nisqually Glacier roped from the moraine and climb the Wilson gully (rockfall) onto the Wilson Glacier. Follow its left edge to about 9,000 ft, then cut right toward the cleaver between the Wilson and Nisqually, where camps sit around 9,100–9,500 ft. From camp cross the upper Wilson Glacier to the foot of the couloir; debris from the Kautz Ice Cliff can reach this ground."
+      },
+      {
+        "pitch": "The Finger",
+        "grade": "30–45° snow couloir",
+        "notes": "The couloir climbs between the Wilson Glacier Headwall and the Finger rock, starting around 30–35° and steepening to 40–45° through a narrowing hourglass. It gets early sun and has a rock and ice band above, so start in the dark and be high in it before rocks thaw loose. After a cold night the south-facing snow can be refrozen to hard ice; helmets and a few pickets."
+      },
+      {
+        "pitch": "Exit onto the upper Nisqually",
+        "grade": "Steep roll, up to ~50°",
+        "notes": "Above the hourglass the route veers left out of the couloir onto the upper Nisqually/Wilson headwall above 11,000 ft, avoiding the cliffs at its head. A steep roll of about 50° for a few hundred feet guards the top near 12,000 ft, and a bergschrund or large crevasse across the glacier (reported from about 12,100 to 12,700 ft) has blocked parties outright; carry screws and be ready to belay."
+      },
+      {
+        "pitch": "Upper mountain to summit",
+        "grade": "30-45° glacier",
+        "notes": "Near 13,000 ft the route meets the top of Wapowety Cleaver and the upper Kautz line. Either scramble loose rock up the cleaver or, more commonly, stay on the Nisqually Glacier, end-running crevasses to the saddle between the crater rim and Point Success and up the last few hundred feet to the rim. The long rolling dome is slower than it looks."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 -> 4 entries. All three stored labels kept; split the exit (hourglass, ~50° roll, bergschrund/crevasse band near 12,000–12,700 ft) out of 'The Finger'. Camp elevations and couloir angles cross-checked across a guide description, a ranger conditions post and several trip reports; no single authoritative topo exists, so elevations are given as ranges.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+        "http://mountrainierclimbing.blogspot.com/2018/05/furher-finger-update.html",
+        "http://www.ericsbasecamp.net/trips/FuhrerFinger/FuhrerFinger.htm",
+        "https://simplyluke.com/2023/02/10/success_on_the_fuhrer_finger.html",
+        "https://engineeredforadventure.com/fuhrer-finger/",
+        "https://skimo.co/rainier-fuhrer-finger",
+        "https://climberkyle.com/2026/05/03/mt-rainier-fuhrer-finger/",
+        "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+      ],
+      "other_findings": "The stored `overview` and `approach` start the route from Camp Muir; the sources consulted approach from Paradise across the Nisqually Glacier to a camp on the Wilson Glacier/cleaver (9,100–9,500 ft); starting from Camp Muir is an up-and-over or ski variant. The overview's '60° section along the Wilson Cleaver' was not found in any source. `pitches` is 0 on a route with no roped pitches, which is fine."
+    }
+  },
+  "wa_mount_rainier_sunset_ridge": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Glacier approach",
+        "grade": "Glacier, icefall crossing",
+        "notes": "Leave the Puyallup Cleaver near 8,500 ft and traverse the Puyallup and South Mowich glaciers into the Sunset Amphitheater side of the ridge, crossing below South Mowich icefall. Bivy on a flat spot on the South Mowich Glacier around 8,500 ft (some parties go higher, to about 9,600 ft). The glacier crossing to the base is usually straightforward early season."
+      },
+      {
+        "pitch": "Névé-ice slope",
+        "grade": "45–55° névé",
+        "notes": "Pass the bergschrund at the base, usually on the climber's right, where two axes help; it collapses as summer warms. Then climb roughly 1,800–2,000 ft of steep gullies and open face (the lower 'pyramid') averaging about 45°, with steps of 50–55° and some easy ice near the top, to gain the ridge crest near 11,650 ft."
+      },
+      {
+        "pitch": "Knife-edge ridge",
+        "grade": "Loose 4th class rock",
+        "notes": "A short, technical stretch on the crest, which is volcanic rubble with almost no solid rock and few natural anchors. A knife-edge cut by a deep gully and notch lies along it; with good snow cover it goes, but in a dry year the descent into that notch is a steep choss wall that has turned parties back. More exposed rock means far looser climbing."
+      },
+      {
+        "pitch": "Upper Mowich Face traverse",
+        "grade": "55–60° snow/ice",
+        "crux": true,
+        "notes": "At about 12,800 ft the ridge forces the route left onto the upper Mowich Face. Traverse onto it and front-point roughly 1,300 ft of firm 55–60° snow, often with glacier ice a few inches down that takes screws, regaining the ridge near 13,200 ft. The face is exposed to rockfall once the sun reaches it."
+      },
+      {
+        "pitch": "To Liberty Cap",
+        "grade": "Moderate snow",
+        "notes": "Back on the crest, easier snow leads to Liberty Cap (14,112 ft); tall penitentes can cover this ground and slow progress badly. From Liberty Cap cross the saddle to Columbia Crest or drop to Liberty Saddle for the Emmons-Winthrop descent, staying roped through the thinly bridged saddle."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 -> 5 entries. Stored labels kept; added the upper Mowich Face traverse (12,800–13,200 ft, 55–60°) that the stored table omitted. The stored 'Névé-ice slope ~60°, ~1,000 ft' chip appears to conflate the lower face with the upper Mowich Face; the lower face is now described as ~1,800–2,000 ft at ~45° with 50–55° steps, and the 55–60° figure moved to the upper face.",
+      "sources_consulted": [
+        "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+        "https://www.mountainproject.com/route/112479245/sunset-ridge",
+        "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/",
+        "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+        "https://publications.americanalpineclub.org/articles/12193931000/A-New-Route-Up-Rainiers-West-Side"
+      ],
+      "other_findings": "The stored `descent_text` ('Descend Emmons-Winthrop to White River') is a carryover to the far side of the mountain and needs a shuttle; no other stored field contradicts the research. The stored note that the ridge is 'between two prominent gendarmes' was not confirmed in detail by the sources read (one describes a castle-like gendarme at a col over Sunset Amphitheater), so it was dropped rather than repeated."
+    }
+  },
+  "wa_mount_rainier_mowich_face": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach to base",
+        "grade": "Glacier",
+        "notes": "From the bivy sites on lower Ptarmigan Ridge (about 9,600 ft, near the North Mowich and Edmunds glaciers), rope up and drop onto the North Mowich Glacier and cross it to the foot of the face. Watch for fresh rockfall debris on the ice: it marks the fall lines coming off the face. Start in the dark so the face is climbed before sun hits it."
+      },
+      {
+        "pitch": "Bergschrund",
+        "grade": "Crevassed, snow bridge",
+        "notes": "The bergschrund under the central face is large and can be impassable late season. It is usually bypassed through a rock band on the climber's left; earlier in the year a snow bridge may go after weaving around the biggest crevasses. Belay the crossing if the bridge is thin."
+      },
+      {
+        "pitch": "Mowich Face",
+        "grade": "35–45° snow",
+        "notes": "The lower two-thirds of the face runs at roughly 35–42° on solid snow in good conditions, climbed with running protection on pickets. Near 12,000 ft the surface turns to harder ice and demands more careful technique. The whole face is exposed to rockfall and ice shards; climbing before the sun arrives reduces but does not remove the hazard."
+      },
+      {
+        "pitch": "Upper face variations",
+        "grade": "40–60° snow/ice",
+        "crux": true,
+        "notes": "Around 12,500 ft the line splits. The original (Grade III) cuts left into an hourglass of snow, ice and rock, gains a snow ledge around the rock, then a 40–50° ramp. The harder (Grade IV) variation cuts right over one or two AI2–3 ice steps and 4–6 pitches of 50–60° snow. Wrong gullies here dead-end in cliffs; carry screws."
+      },
+      {
+        "pitch": "Exit to Liberty Cap",
+        "grade": "Steep snow, windlip",
+        "notes": "The face tops out on a bench near 13,300 ft; high up a windlip or choke often needs a short traverse on firmer snow. From the bench, slushy sun cups or penitentes lead to Liberty Cap (14,112 ft). The descent is a carryover down the Emmons-Winthrop or Disappointment Cleaver, not the face."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 -> 5 entries. Stored labels kept; added the bergschrund (with the rock-band bypass on the left) and the 12,500 ft split into the left (III) and right (IV) variations. Replaced the stored chip '40-55° ice, AI/WI2-3, some 5.x rock' with the sourced angles; no source gave a 5.x rock grade.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106703081/central-mowich-face",
+        "http://www.alpinedave.com/mt_rainier/mowich/mowich.htm",
+        "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+        "https://www.summitpost.org/mt-rainier-mowich-headwall-face/297239",
+        "https://turns-all-year.com/trip-reports/jul-3-5-mt-rainier-edmunds-headwall-mowich-face"
+      ],
+      "other_findings": "This row is a generic 'Mowich Face' whose beta says the Central and North Mowich lines are catalogued separately; the breakdown follows the Central Mowich Face variations its own overview describes. The stored beta's '~4,000 ft sustained ice/mixed wall' and 'some 5.x rock' were not supported by sources (the face runs roughly 9,600–13,300 ft of mostly snow and ice)."
+    }
+  },
+  "wa_mount_rainier_edmunds_headwall": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Camp to the headwall",
+        "grade": "Glacier",
+        "notes": "From the bivy near 9,600 ft between the North Mowich and Edmunds glaciers (reached over Ptarmigan Ridge from Mowich Lake), cross volcanic scree and then the lower Edmunds Glacier to the foot of the headwall near 9,900 ft. Overhead seracs on this side of the mountain do calve; keep moving under them and start before dawn."
+      },
+      {
+        "pitch": "Bergschrund bypass",
+        "grade": "Steep snow/ice",
+        "notes": "The bergschrund at the foot of the headwall is often impassable. It has been passed on the climber's left, near a twin gendarme, or through broken crevasses on the left. Expect a short steep step onto the face; belay it when the snow bridge or ice is marginal."
+      },
+      {
+        "pitch": "Main headwall",
+        "grade": "Sustained 45–50° snow/ice",
+        "crux": true,
+        "notes": "A long, sustained slope from about 9,900 to 13,000 ft, reported at 45° with 50° sections. Conditions decide the character: penitente-textured névé that gives steps without front-pointing, or a thin skin of snow over hard alpine ice with shiny blue patches. Rockfall comes down the face once sun hits it; carry screws for the icy years."
+      },
+      {
+        "pitch": "Upper Sunset Ridge traverse",
+        "grade": "Steep snow, penitentes",
+        "notes": "Above the steepest climbing near 13,000 ft, the route joins upper Sunset Ridge and the bench atop the Edmunds, then heads for Liberty Cap (14,112 ft). Penitentes up to about 3 ft tall can cover this ground and turn it into slow, exhausting work. Descend by carryover down the Emmons-Winthrop or a west-side route."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 -> 4 entries. Stored labels kept; added the camp-to-headwall glacier stage. The main-headwall chip gains a sourced angle (45°, 50° sections) and moves the elevation range into notes to keep the chip short. Sources are mostly ranger conditions posts and ski trip reports: the route is better documented as a ski descent than as a climb.",
+      "sources_consulted": [
+        "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+        "https://engineeredforadventure.com/edmunds-headwall-mt-rainier/",
+        "https://wildsnow.com/10311/rainier-edmunds-headwall-ski/",
+        "https://turns-all-year.com/trip-reports/jul-3-5-mt-rainier-edmunds-headwall-mowich-face",
+        "https://cascadeclimber.com/edmunds_headwall.htm"
+      ],
+      "other_findings": "The stored `grade` is null; sources describe 45° slopes with 50° sections (roughly a Grade III snow/ice face), which a reviewer may want to fill. The stored `approach` ('traverse to the Edmunds/South Mowich glaciers') differs from the sources, which approach over Ptarmigan Ridge to the North Mowich/Edmunds glaciers."
+    }
+  },
+  "wa_little_tahoma_east_shoulder": {
+    "area": "wa_little_tahoma",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Fryingpan Glacier to Whitman Notch",
+        "grade": "Glacier, crevassed",
+        "notes": "From the high camp at the rock outcrops near 7,000–7,350 ft above Meany Crest, climb a steep slope of about 300 ft onto the Fryingpan Glacier, rope up, and angle southwest up gentler slopes to Whitman Notch (9,100 ft) in Whitman Crest, where the Whitman Glacier comes into view. Crevasses open on the Fryingpan as the season goes on."
+      },
+      {
+        "pitch": "Upper Whitman Glacier",
+        "grade": "Snow to ~45°",
+        "notes": "Traverse the upper Whitman Glacier at low angle to get past cliffs, then turn uphill on steepening snow, reported at 45° or more on its upper part, stepping over a bergschrund. Big sun cups make it slow and tiring later in the season; in soft snow pickets need burying as deadmen, and some parties run belays here."
+      },
+      {
+        "pitch": "Summit gully and shoulder",
+        "grade": "Loose rock and snow",
+        "notes": "The glacier ends near 10,500 ft in a steep gully of loose rock and scree, followed by a steep snowfield below a cliff band and one more rocky gully onto the high southeast shoulder. Late season this is nearly snow-free: step carefully, keep the party out of each other's fall line, and wear helmets."
+      },
+      {
+        "pitch": "Summit block scramble",
+        "grade": "Class 3-4 (loose andesite)",
+        "notes": "A short, exposed scramble across a tiny notch and up the final face to the summit (11,138 ft), graded Class 3 to 4; many parties rope up. The east ridge is a narrow fin of rotten andesite dropping about 2,000 ft to the Emmons Glacier on the north. There are two lines up the final step; old anchors may be found, and a rappel is common on the way down."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "2 -> 4 entries. The first stored row ('Fryingpan/Whitman glacier crossing and steep snow to the shoulder') covered three distinct stages and is split into Fryingpan to Whitman Notch, the upper Whitman Glacier and the summit gully; 'Summit block scramble' kept. Dropped both stored lengthM values (335 and 183 m): no source supports them, and 183 m contradicts the row's own beta, which puts the summit block at 30–40 ft.",
+      "sources_consulted": [
+        "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/",
+        "https://www.climber.org/reports/2006/1481.html",
+        "https://www.summitpost.org/2021-05-30-little-tahoma-trip-report/1061304",
+        "https://www.mountaineers.org/activities/trip-reports/glacier-climb-little-tahoma-east-shoulder-6",
+        "https://www.summitpost.org/little-tahoma/climbers-log/151666"
+      ],
+      "other_findings": "The stored pitch_detail lengthM values (335 m, 183 m) are unsupported and conflict with the row's own beta (a 30–40 ft summit block); they feed the planner's time estimate. The summit block is graded Class 3 by one report and Class 4 by others; the stored 'Class 3-4' chip was kept."
+    }
+  }
+}

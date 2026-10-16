@@ -1,0 +1,320 @@
+{
+ "applied": [
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Ridge crest (Tyler-Baldy saddle) elevation"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Ridge crest (Tyler-Baldy saddle) elevation"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Saddle to Baldy summit"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Saddle to Baldy summit"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "hazards",
+   "path": [
+    0
+   ],
+   "fact": "Gray Wolf River ford on the approach"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Gray Wolf River ford on the approach"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    5
+   ],
+   "fact": "Gray Wolf River ford on the approach"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead road"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead road"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead road"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "label"
+   ],
+   "fact": "Trailhead road"
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.8829,
+      "lng": -123.1427,
+      "elev": 3300,
+      "name": "Lower Maynard Burn Trail #816 Trailhead",
+      "note": "Northwest Forest Pass required; road-end parking at the top of FR 2860-120 where a dirt berm blocks further vehicle travel.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US-101 near Sequim, follow Palo Alto Road to Lost Mountain Road (Forest Road 2870), then continue onto Forest Road 2860-120 and drive it to its end. The road stops at a dirt berm that blocks further vehicle travel, at roughly 3,300 feet, where there is room to park. A Northwest Forest Pass is required."
+     },
+     {
+      "lat": 47.882681885,
+      "lng": -123.14388939166668,
+      "elev": 3300,
+      "name": "Feeder creek crossing",
+      "note": "Small creek crossing roughly 200 yards below the unmarked trail junction — last reliable water before the dry ridge climb to Baldy.",
+      "type": "Water",
+      "distMi": 0.1,
+      "directions": "Lower Maynard Burn Trail #816 leaves the road-end berm along an old roadbed and crosses the creek almost straight away. This is the last easy, dependable water for a long stretch, so fill up here before the climb."
+     },
+     {
+      "lat": 47.877010895,
+      "lng": -123.174813575,
+      "elev": 5400,
+      "name": "Ridge crest gained",
+      "note": "The climbers' boot path fades and tops out on Gray Wolf Ridge's open crest here; navigation shifts from trail-following to ridge route-finding.",
+      "type": "Junction",
+      "distMi": 2.7,
+      "directions": "Past the crossing the trail narrows to single-track and turns relentlessly steep, gaining roughly 3,000 ft in a little over two miles of fall-line tread with essentially no switchbacks. In places it is barely a boot-width across eroded, crumbly ravine crossings and slopes of packed dirt and shattered shale — a climber's path, not a graded trail. It tops out on the saddle between Tyler Peak and Baldy, where a short, steep side path drops off the crest to a snowmelt spring, the last dependable water on the route."
+     },
+     {
+      "lat": 47.875702205,
+      "lng": -123.181949925,
+      "elev": 6537,
+      "name": "Point 6537 (false summit below Baldy)",
+      "note": "Rocky gendarme/false summit marked on maps as Pt. 6537 — Class 2 scramblers typically skirt it on the south side rather than climb straight over.",
+      "type": "Junction",
+      "distMi": 3.3,
+      "directions": "From the saddle turn northwest onto the open ridge crest; navigation shifts from following tread to reading the ridge, so have a map or GPS out. The rocky gendarme ahead is normally skirted on its south side rather than climbed straight over."
+     },
+     {
+      "lat": 47.895015,
+      "lng": -123.189275,
+      "elev": 6827,
+      "name": "Baldy summit",
+      "note": "True summit of Baldy; the route turns and continues northwest along the open ridge crest toward Gray Wolf Mountain.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Rejoin the crest beyond the gendarme — a sign in the saddle marks the Olympic National Park boundary — and walk up the far side to Baldy's top. This stretch is straightforward going on packed dirt and shattered shale, with no scrambling."
+     },
+     {
+      "lat": 47.872866710000004,
+      "lng": -123.19741201666666,
+      "elev": 6227,
+      "name": "Loose scree/talus saddle",
+      "note": "Steep, loose scree and talus dropping roughly 600 ft off Baldy's north side before Peak 7076 — trekking poles recommended, exposed to wind and fog.",
+      "type": "Hazard",
+      "distMi": 4.6,
+      "directions": "From Baldy the route continues northwest and immediately drops about 600 ft off the north side on steep, loose scree and talus, where poles earn their keep. The crest is fully open here and exposed to wind and to fast-moving cloud, so fix the line of the ridge in your mind before committing to the descent."
+     },
+     {
+      "lat": 47.871339905,
+      "lng": -123.20573775833333,
+      "elev": 7076,
+      "name": "Peak '7076' false summit",
+      "note": "Prominent false summit often mistaken for Gray Wolf Mountain from below; the ridge crest continues north over loose talus to the true summit.",
+      "type": "Junction",
+      "distMi": 5.3,
+      "directions": "Climb back out of the saddle and up the crest over loose talus to the prominent bump ahead. Staying close to the ridgeline is generally the cleanest way through the scree. From below this bump reads as the summit, but the crest keeps going north."
+     },
+     {
+      "lat": 47.88148,
+      "lng": -123.20629,
+      "elev": 7218,
+      "name": "Gray Wolf Mountain summit",
+      "note": "True summit (7,218 ft), the highest point in Clallam County; views to Vancouver Island, Mt. Olympus, Baker, Rainier, and Glacier Peak.",
+      "type": "Summit",
+      "distMi": 6,
+      "directions": "Continue north along the crest over the last of the talus, detouring briefly around the occasional gendarme, and finish with a short class 2-3 scramble on loose rock to the true summit. North-facing gullies on this final stretch can hold steep snow into July."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Lower Maynard Burn Trail #816 over Baldy and along the crest",
+      "notes": "There is no roadside access to this ridge; the drive only gets you to the trailhead at the end of FR-2860-120, off FR-2870 / Lost Mountain Road, itself off Palo Alto Road south of US-101 near Sequim. Road-end parking at a dirt berm, about 3,300 ft, Northwest Forest Pass required.\n\nLower Maynard Burn Trail #816 leaves the berm on an old roadbed and crosses Mueller Creek almost immediately — the last easy reliable water for a long stretch, so fill up. The trail narrows to single-track around 0.3 mile and then turns relentlessly steep, gaining roughly 3,000 ft in a little over two miles of fall-line tread with essentially no switchbacks, in places barely a boot-width across eroded crumbly ravine crossings and slopes of packed dirt and shattered shale. It is a climber's path, not a graded trail.\n\nAt about 2.7 miles and 5,400-6,200 ft it tops out on the saddle between Tyler Peak and Baldy, where a short steep side path drops off the crest to a snowmelt spring — the last dependable water on the route.",
+      "season": "Roughly Jul-Sep. North-facing gullies on the last stretch hold steep snow into July",
+      "hazards": [
+       "Sudden fast-moving whiteouts and lightning on an open above-treeline ridge with miles of exposure",
+       "Loose shale and scree with occasional exposed steps along the crest",
+       "Lingering steep snowfields in north-facing gullies into July, warranting an ice axe",
+       "No reliable water once past the Baldy saddle spring",
+       "Long unmarked ridge navigation with route-finding around gendarmes and false summits",
+       "The Gray Wolf River bridge on the alternative approach is out — a required and hazardous ford at high water",
+       "Bear canister required within Olympic National Park"
+      ],
+      "primary": true,
+      "baseFinding": "THE CLIMB BEGINS WHERE THE TREAD ENDS, AND THE ARRIVAL TEST IS THE SADDLE BETWEEN TYLER PEAK AND BALDY. You know you are there because the trail stops going up in a line and the ground opens on both sides — navigation shifts from following tread to reading a ridge. There is also a signed Olympic National Park boundary marker in a saddle on this stretch and a spring path dropping off the crest. From here on you are on the crest and the crest is the route.\n\nTHE TEST THAT ACTUALLY MATTERS ON THIS ROUTE IS AT THE FAR END, AND IT IS A FALSE SUMMIT WITH A NAME AND A NUMBER: POINT 7076. From below, 7076 reads as the summit. It is not. The true summit of Gray Wolf is 7,218 ft and it lies FURTHER NORTH along the crest and is HIGHER. So the fog rule is simple: after Baldy you drop about 600 ft, climb back up over a prominent bump, and THAT BUMP IS NOT THE TOP. Keep going north over the last of the talus, detouring briefly round the occasional gendarme, and finish with a short Class 2-3 scramble on loose rock. If you turned round on the first big bump past Baldy, you turned round on 7076.\n\nSECOND TEST, on the way to 7076 itself: the crest gets steeper and broken approaching it. The published avoidance is to TRAVERSE WEST at about 6,500 ft and then swing back to gain 7076 by its NORTHWEST aspect, and to stay in the basin below and RIGHT of the broken rock ridge until you can gain the saddle between the twin summits — 7076 has twin tops with snowfields between them. There is no trail at these decision points, which is why they are written down.\n\nTHIRD TEST, earlier: Point 6537 is a rocky gendarme and false summit below Baldy, normally SKIRTED ON ITS SOUTH SIDE rather than climbed over. If you are scrambling straight over a tower before you have reached Baldy, you have taken the crest too literally.\n\nHONEST LIMIT: long stretches of this crest are unmarked and off-trail and the whole thing is above treeline. Carry a map or GPS; the ridge is the handrail but the summit identification is not obvious by eye."
+     },
+     {
+      "name": "Royal Basin and the east face, for a traverse rather than an out-and-back",
+      "notes": "The other end of the same ridge, and the reason to know it is that it turns this route into a traverse instead of a there-and-back over Baldy twice. From the Upper Dungeness Trailhead, the Royal Basin Trail leads to Royal Lake and Upper Royal Basin. From the ridge, the east face drops roughly 3,000 ft to intersect the Royal Basin Trail.\n\nIt is steep, loose and only lightly travelled: packed dirt and shattered shale, brushy notches, and picking through timber looking for blazes and cairns. Some parties scree-ski the looser upper sections rather than rope up at all. It is not a bolted or standardised line — where parties do rope down a short cliffy step, anchors are improvised from trees or natural rock horns.\n\nMost commonly this is used as the EXIT after climbing from Maynard Burn, closing a loop out Royal Basin or back over the ridge.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Steep, loose, lightly travelled ground with no established line and improvised anchors if roped",
+       "Roughly 3,000 ft of descent or ascent on packed dirt and shattered shale",
+       "Brushy notches and timber navigation looking for blazes and cairns",
+       "Committing: once on the east face there is no easy return to the crest",
+       "Every ridge-crest hazard above, in a longer day"
+      ],
+      "baseFinding": "USED AS AN APPROACH, THE ARRIVAL TEST IS GAINING THE CREST — and this side has no marker sequence for doing it. Parties describe finding blazes and cairns through timber rather than following a line. Treat it as navigation, not route-following. THE SUMMIT TESTS ONCE ON THE CREST ARE THE SAME AND THEY ARE THE VALUABLE PART: POINT 7076 IS A FALSE SUMMIT. Coming from the Royal Basin side you meet the true 7,218 ft summit from the north-east rather than from the south, so the trap runs the other way — the bump you must not stop on lies SOUTH of the true summit on this approach. Fix which side of you 7076 should be before you commit to the crest in cloud. HONEST LIMIT AND A RECOMMENDATION: this variant is known as a descent far more than as an ascent, and there is no fixed, repeatable rappel count for the cliffy step — expect at most one or two short rappels well under 60 m if you choose to rope, and expect most parties to downclimb or scree-ski instead. Confirm current conditions before relying on it either way."
+     }
+    ],
+    "approach": "The Southeast Slopes route is approached via the Upper Dungeness/Maynard Burn trail system, not by any direct road-side access - the drive only gets you to the trailhead at the end of FR-2860-120 (off FR-2870/Lost Mountain Rd, itself off Palo Alto Rd south of US-101 near Sequim). From the trailhead, the Lower Maynard Burn Trail #816 crosses Mueller Creek right away (the last easy, reliable water for a while) and follows an old roadbed before narrowing to single-track around 0.3 mile in. From there the trail turns and stays steep, gaining roughly 3,000 ft in a bit over 2 miles on tread that narrows to barely a boot-width across eroded, crumbly ravine crossings and packed-dirt/shattered-shale slopes - a legitimate climber's-path pitch, not a graded trail. Around the 2.7-mile mark (about 6,200 ft) the trail tops out on the saddle/ridge crest between Tyler Peak and Baldy; a short, steep side path drops off the ridge here to the last dependable water (snowmelt-fed) before the high traverse. From the saddle it's about 0.15 mile and 300 vertical feet more to Baldy's summit (reported as 6,797-6,827 ft). For the Gray Wolf Ridge extension, continue past Baldy: drop about 600 ft off its far side, then follow the long, open, mostly-unmarked ridge crest - packed dirt, shattered shale, and short talus/scree sections - over intermediate high points (including Pt. 7076) to Gray Wolf Peak's 7,218-ft summit, roughly 6-7 miles and up to 7,000 cumulative ft of gain from the trailhead depending on how much re-ascent the ridge undulations add. Because the line stays on or near an exposed above-treeline crest for miles, wind, afternoon thunderstorms, and lingering snow patches into July (which can bury the intermittent boot path and warrant an axe) are the main approach-specific hazards. There is no reliable water once you commit to the ridge crest past the Baldy saddle, so tank up at Mueller Creek and the saddle spring beforehand. Expect to detour briefly around occasional gendarmes and false summits along the ridge crest, and carry a map or GPS since long stretches of the crest are unmarked and off-trail.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Saddle to Baldy's summit",
+      "notes": "From the saddle/ridge crest between Tyler Peak and Baldy (about 6,200 ft), it is about 0.15 mile and 300 vertical feet more to Baldy's summit, reported as 6,797-6,827 ft."
+     },
+     {
+      "n": 2,
+      "label": "Ridge crest over Pt. 7076 to Gray Wolf Peak",
+      "notes": "Drop about 600 ft off Baldy's far side, then follow the long, open, mostly-unmarked ridge crest - packed dirt, shattered shale, and short talus/scree sections - over intermediate high points including Pt. 7076 to Gray Wolf Peak's 7,218-ft summit. Expect to detour briefly around occasional gendarmes and false summits. The line stays on or near an exposed above-treeline crest for miles, so wind, afternoon thunderstorms, and lingering snow patches into July (which can bury the intermittent boot path and warrant an axe) are the main hazards; long stretches are unmarked, so carry a map or GPS, and there is no reliable water once you commit to the crest past the Baldy saddle."
+     }
+    ],
+    "hazards": [
+     "Gray Wolf River bridge on the approach is out — required ford, hazardous at high water",
+     "loose shale and scree with occasional exposed steps along the ridge crest",
+     "sudden, fast-moving whiteouts and lightning on the open, above-treeline ridge",
+     "lingering steep snowfields on north-facing gullies into July, requiring an ice axe",
+     "long off-trail, unmarked ridge navigation with route-finding around gendarmes and false summits",
+     "black bear and mountain goat encounters — bear canister required within Olympic National Park"
+    ],
+    "access": {
+     "fees": "Northwest Forest Pass: $30 annual or $5 daily. NPS wilderness camping permit: $6 flat reservation fee plus $8 per person per night (ages 16+), booked through recreation.gov.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "No campfires above 3,500 ft; groups capped at 12 people / 8 stock animals in the Buckhorn Wilderness; dogs prohibited once the route crosses the Olympic National Park boundary near Baldy; bear canisters required for overnight food storage within the Park.",
+     "permit": "Northwest Forest Pass required at the Forest Service trailhead; free self-issue wilderness permit for the Buckhorn Wilderness portion; an NPS wilderness camping permit (reserved via recreation.gov) is required for any overnight camping once the route crosses into Olympic National Park near/above Baldy",
+     "closures": "The Gray Wolf River bridge on the Maynard Burn approach is out with no NPS/USFS rebuild planned — expect a ford. Access roads FR 2880/2927/2870 are unmaintained gravel and subject to washouts; verify current road status before driving.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Wilderness) for the summit ridge / Olympic National Forest – Buckhorn Wilderness, Quilcene Ranger District for the approach",
+     "land_manager": "Olympic National Park (Wilderness) for the summit ridge / Olympic National Forest – Buckhorn Wilderness, Quilcene Ranger District for the approach",
+     "parking_pass": "Northwest Forest Pass ($30 annual or $5 daily) required for trailhead parking; no Olympic National Park entrance fee applies here since the standard trailhead is on Olympic National Forest land, not inside the Park.",
+     "passRequired": "Northwest Forest Pass ($30/yr or $5/day) at the trailhead; NPS wilderness permit if camping within Olympic National Park",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the Buckhorn Wilderness side",
+      "where": "The approach is on national forest land; a park wilderness permit is needed only to camp inside Olympic National Park."
+     }
+    },
+    "road": {
+     "name": "FR 2870 (via FR 2880 and FR 2927 from Palo Alto Road)",
+     "status": "Unmaintained, rough gravel beyond the pavement; high-clearance vehicle recommended; very limited trailhead parking (roughly 3 spaces at the upper hairpin turnout)",
+     "driveNote": "From Sequim: US-101 east, then Palo Alto Road south ~8 miles, then FR 2880 → FR 2927 → FR 2870 to the trailhead; check current Olympic National Forest road-status reports before driving, as these roads are subject to washouts."
+    },
+    "itinerary": {
+     "cal": "Snow lingers above 6,000 ft into July; most parties wait for August-September for a snow-free ridge and reliable water at the meadow below the Tyler Peak/Baldy saddle.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is done as one very long day, not a backpack: up the Upper Maynard Burn Trail to alpine meadows, cross-country along the ridge crest over Baldy to the Gray Wolf high point, then descend through timber to the Royal Basin Trail and out the Lower Maynard Burn Trail. Two parties (a father-son dayhike and a solo peakbagger push) both did this exact loop car-to-car, finishing after dark both times.",
+       "hours": 13.5,
+       "miles": 15,
+       "title": "Full ridge loop, car-to-car",
+       "gainFt": 7000,
+       "lossFt": 7000,
+       "packLb": 16,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave FR 2870 trailhead",
+         "detail": "Start up the Upper Maynard Burn Trail, a steep fall-line trail with essentially no switchbacks."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Break into alpine meadows",
+         "detail": "Reach open meadows below the Tyler Peak/Baldy saddle and pick up the ridge crest cross-country; last reliable water here in late season."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Summit Baldy (6,797 ft)",
+         "detail": "Straightforward walk-up; first major high point of the traverse."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Reach Gray Wolf summit (7,218 ft)",
+         "detail": "T2 ridge-crest scrambling; high point of the route with views toward Deception and the Needles."
+        },
+        {
+         "time": "~3:00 PM",
+         "label": "Begin descent off the ridge",
+         "detail": "Drop east through timber and steep ground toward the Royal Basin Trail; some parties downclimb or short-rappel steep sections."
+        },
+        {
+         "time": "~8-9 PM",
+         "label": "Reach trailhead",
+         "detail": "Finish via the Lower Maynard Burn Trail; most parties cover the last stretch by headlamp."
+        }
+       ],
+       "objective": "Baldy + Gray Wolf summit + loop back via Royal Basin/Lower Maynard Burn"
+      }
+     ],
+     "totalNote": "A long, remote single-day loop, not a backpack: roughly 15 miles and 7,000 ft of gain/loss car-to-car, typically 12-15 hours and often finishing after dark."
+    }
+   }
+  }
+ ]
+}

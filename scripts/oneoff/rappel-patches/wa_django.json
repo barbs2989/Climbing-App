@@ -1,0 +1,24 @@
+{
+ "id": "wa_django",
+ "area_id": "wa_summertime_crag",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "chain anchor",
+    "station": "The anchor at the top of pitch 2.",
+    "notes": "Rappel 1 of 2 on a single rope (or lower), down pitch 2 to the anchor at the top of pitch 1."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "chain anchor",
+    "station": "The anchor at the top of pitch 1.",
+    "notes": "Rappel 2 of 2 on a single rope (or lower), down pitch 1 to the ground."
+   }
+  ],
+  "rappels": "2 single-rope rappels or lowers from the chain anchors, one per pitch"
+ }
+}

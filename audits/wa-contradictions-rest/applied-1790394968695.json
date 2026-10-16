@@ -1,0 +1,254 @@
+{
+ "applied": [
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    4,
+    "miles"
+   ],
+   "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Leg distances (Sol Duc Trailhead to Heart Lake)"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Wilderness permit method"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit method"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Wilderness permit method"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Sol Duc Road winter closure"
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Sol Duc Road winter closure"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "Olympic NP requires a wilderness permit (recreation.gov quota) for the Sol Duc/High Divide corridor; the Catwalk and Eleven Bull Basin traverse usually aren't safely snow-free until mid-to-late July, and water sources up high are most reliable through August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Follow the Sol Duc River trail past Sol Duc Falls and Deer Lake, then climb through subalpine meadows to the High Divide/Heart Lake area. This is the standard first-night camp for any Bailey Range approach, on trail the whole way.",
+       "hours": 5.5,
+       "miles": 9,
+       "title": "Approach to High Divide / Heart Lake",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach the Heart Lake / High Divide camp"
+      },
+      {
+       "n": 2,
+       "note": "Leave the maintained trail at High Divide and sidehill past Cat Peak, across the narrow, exposed 'Catwalk' ridge, then drop into the meadows of Eleven Bull Basin — the standard camp for parties tagging Ruth Peak without continuing the full Bailey Range Traverse. Off-trail, with route-finding and steep sidehilling.",
+       "hours": 6.5,
+       "miles": 6,
+       "title": "Over the Catwalk to Eleven Bull Basin",
+       "gainFt": 1300,
+       "lossFt": 800,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Eleven Bull Basin camp"
+      },
+      {
+       "n": 3,
+       "note": "Drop the overnight gear and scramble up the slopes above Eleven Bull Basin toward Ruth Peak — mostly open talus/heather with a short, looser section near the top. Most parties are back at camp by early-to-mid afternoon.",
+       "hours": 5,
+       "miles": 3,
+       "title": "Climb Ruth Peak",
+       "gainFt": 1541,
+       "lossFt": 1541,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Eleven Bull Basin camp",
+         "detail": "Light daypack; leave the heavy overnight gear cached at camp."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach the base of Ruth Peak's south-facing slopes",
+         "detail": "Terrain steepens from open meadow into talus and heather bands."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit Ruth Peak",
+         "detail": "Views of Mt. Olympus, the Bailey Range crest, and the Hoh drainage."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line back toward camp."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at Eleven Bull Basin camp",
+         "detail": "Rest of the day free to relax, filter water, or explore the basin."
+        }
+       ],
+       "objective": "Summit Ruth Peak (6,841 ft) and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Reverse yesterday's off-trail line back over the Catwalk and past Cat Peak to the Heart Lake/High Divide camp, rejoining the maintained trail there.",
+       "hours": 6.5,
+       "miles": 6,
+       "title": "Return to High Divide / Heart Lake",
+       "gainFt": 800,
+       "lossFt": 1300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Retrace to Heart Lake/High Divide camp"
+      },
+      {
+       "n": 5,
+       "note": "Descend the trail back through Deer Lake and Sol Duc Falls to the Sol Duc Trailhead, closing out the trip.",
+       "hours": 4.5,
+       "miles": 9,
+       "title": "Exit to Sol Duc Trailhead",
+       "gainFt": 0,
+       "lossFt": 2900,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike out to the trailhead"
+      }
+     ],
+     "totalNote": "A 5-day, roughly 33-mile round trip from Sol Duc via Heart Lake/High Divide and Eleven Bull Basin, with about 6,500 ft of cumulative gain each way plus a dedicated day to tag the Ruth Peak summit itself."
+    },
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1900,
+      "name": "Sol Duc Trailhead",
+      "note": "Road's-end trailhead past Sol Duc Hot Springs; self-register for a wilderness camping permit here before starting up the Sol Duc River Trail.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.90981,
+      "lng": -123.73438,
+      "elev": 4744,
+      "name": "Heart Lake",
+      "note": "Subalpine, heart-shaped lake below the High Divide reached via old-growth forest on the Sol Duc River Trail; reliable water and the last established camp before leaving maintained trail.",
+      "type": "Water",
+      "distMi": 7.85,
+      "directions": "The Sol Duc River Trail runs nearly level through old-growth forest past Sol Duc Falls, then climbs steadily through the subalpine meadows of Sol Duc Park to the lake basin. It is maintained tread the whole way, roughly eight miles and about 2,800 ft of gain, so most parties treat this as a full first day under an overnight pack. Stream crossings lower on the Sol Duc can run high and cold early in the season."
+     },
+     {
+      "lat": 47.90782,
+      "lng": -123.738013,
+      "elev": 5042,
+      "name": "High Divide / Cat Basin Junction",
+      "note": "Trail junction where the High Divide Trail meets the primitive Cat Basin route; scramblers leave the maintained trail here and head cross-country toward the Bailey Range.",
+      "type": "Junction",
+      "distMi": 8.3,
+      "directions": "A short half mile of switchbacks above the lake gains about 300 ft onto the crest of the High Divide to reach the junction. It is brief, but it is the end of maintained tread — everything past this point is unmarked cross-country travel, so fix your position on the map here rather than after the tread runs out."
+     },
+     {
+      "lat": 47.89246995421687,
+      "lng": -123.67473292650602,
+      "elev": 5800,
+      "name": "The Catwalk (below Cat Peak)",
+      "note": "Narrow, jumbled rock arete on the ridge between Cat Peak and Mount Carrie with exposed class 2-3 moves; full packs make balance and route-finding tricky, especially in fog.",
+      "type": "Hazard",
+      "distMi": 10.5,
+      "directions": "Follow the High Divide Trail east from the junction until the maintained tread ends, then pick up an obvious boot path that climbs steeply toward the ridge crest past Cat Peak. Snow lingers on these north-facing slopes into early July and an ice axe is worth carrying that early. Crossing the arete itself takes roughly 45 minutes with a full pack — the low point sits in the middle, and it is balance and route-finding on the exposed class 2-3 moves that slow parties down, not the climbing."
+     },
+     {
+      "lat": 47.8822744,
+      "lng": -123.6412633,
+      "elev": 5200,
+      "name": "Eleven Bull Basin",
+      "note": "Heather benches and streams gushing off the hillside beneath Mount Carrie and Ruth Peak make this the standard camp for a Ruth Peak push; no reliable water again until Cream Lake, roughly an hour further on.",
+      "type": "Campsite",
+      "distMi": 12,
+      "directions": "There is a meltwater source at the east end of the arete, known as Boston Charlie's, worth topping off at before the traverse. From there faint herd paths sidehill below the crest, losing about 600 ft over a mile and a half through a string of gullies that need hands-on scrambling with an overnight pack. Count on one to two hours before the slope eases into the basin's heather benches and streams."
+     },
+     {
+      "lat": 47.886895,
+      "lng": -123.633101,
+      "elev": 6841,
+      "name": "Ruth Peak",
+      "note": "True summit of Ruth Peak, third-highest peak in the Bailey Range; final pitch above Eleven Bull Basin is class 2-3 scrambling with views to Mount Olympus and the Fairchild Glacier.",
+      "type": "Summit",
+      "distMi": 13,
+      "directions": "Leave the overnight gear at camp and climb north out of the basin on open talus and heather, gaining roughly 1,600 ft in about a mile. The terrain steepens from meadow into talus bands and gets noticeably looser near the top, but stays class 2-3 throughout. Cairns and boot paths are effectively nonexistent up here, so pick the path of least resistance and expect route-finding rather than difficulty to be the work."
+     }
+    ],
+    "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+    "access": {
+     "fees": "$8 per adult (16+) per night wilderness camping fee plus a non-refundable $6 reservation fee per permit (youth 15 and under free); standard Olympic NP entrance fee of $30/vehicle (7-day) or an America the Beautiful pass.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for the Seven Lakes Basin/Bailey Range cross-country zone (free loan available at the WIC); groups of 7+ in the Sol Duc/Seven Lakes area must use designated group campsites; practice Leave No Trace off-trail travel and camp at established sites such as Eleven Bull Basin.",
+     "permit": "NPS wilderness permit required for all overnight stays, reserved via Recreation.gov; summer-season (May 15-Oct 15) reservations open April 15. Because the Bailey Range/Ruth Peak approach is a cross-country zone, it can't be booked through the standard online system — call the Wilderness Information Center at (360) 565-3100 to arrange it.",
+     "closures": "Sol Duc Road closes seasonally for winter, typically November-May depending on snowpack; check the NPS current road-conditions page before driving in.",
+     "group_limit": 12,
+     "landManager": "National Park Service - Olympic National Park (designated Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, per person per night; Sol Duc and Seven Lakes Basin is a quota area",
+      "where": "Reserve on Recreation.gov, or get one in person at a park Wilderness Information Center such as Port Angeles."
+     }
+    },
+    "road": {
+     "name": "Sol Duc Road",
+     "status": "Paved, open seasonally to the Sol Duc Trailhead/Sol Duc Hot Springs area",
+     "seasonalGate": "Gated shut for winter, typically November through May depending on snowpack; check the NPS current road-conditions page before driving out."
+    }
+   }
+  }
+ ]
+}

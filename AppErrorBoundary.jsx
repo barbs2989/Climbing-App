@@ -35,12 +35,17 @@ export default class AppErrorBoundary extends Component {
   render() {
     if (!this.state.err) return this.props.children;
     const msg = String((this.state.err && this.state.err.message) || this.state.err);
+    // A lazily-loaded screen whose file could not be fetched is not a bug in the screen: main.jsx
+    // already reloaded once for a stale deploy, so reaching here means no connection or a second
+    // failure. Chrome, Firefox and Safari each word the failure differently.
+    const chunk = /dynamically imported module|Importing a module script failed/i.test(msg);
     return (
       <div style={WRAP} role="alert">
         <div style={CARD}>
-          <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>This screen hit a bug</div>
+          <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{chunk ? "This screen couldn’t be downloaded" : "This screen hit a bug"}</div>
           <div style={{ fontSize: 13.5, color: "#99a3ad", lineHeight: 1.55 }}>
-            Reloading usually clears it. Nothing you had saved to your account is affected — anything
+            {chunk ? "Either the connection dropped or ClimbMatch was just updated. Reload once you have signal. " : "Reloading usually clears it. "}
+            Nothing you had saved to your account is affected — anything
             entered on this screen and not yet saved is lost.
           </div>
           <div style={{ marginTop: 12, padding: "9px 11px", background: "#0d1117", border: "1px solid #30363d",

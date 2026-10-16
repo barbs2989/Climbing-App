@@ -6,10 +6,10 @@
 // accepted, toasted as recorded, written to the contributions table, and then never read by
 // anything. The climber sees a success message and the route never changes.
 //
-// This is not hypothetical: the bailout/startLocation comment in ClimbMatch.jsx documents
+// This is not hypothetical: the startLocation comment in ClimbMatch.jsx documents
 // exactly this shape ("a contributions row for them would be written and never read"), and
-// those two are handled by returning BEFORE the field-edit path — which is why they are the
-// only legitimate exemptions here.
+// it is handled by returning BEFORE the field-edit path — which is why it is the
+// only legitimate exemption here.
 //
 // Static and fast (no DB, no browser), so it sits in `npm run build` with the other gates.
 //
@@ -32,6 +32,13 @@ for (const f of ["RouteDetail.jsx", "ClimbMatch.jsx"]) {
   }
 }
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
+// lib/objKeys.js is not an app source (appSources walks the .jsx tree), so its absence would
+// throw a raw ENOENT that reads as a broken guard rather than a moved anchor. Say which it is.
+if (!fs.existsSync(path.join(ROOT, "lib/objKeys.js"))) {
+  console.error("ANCHOR LOST: lib/objKeys.js is missing — the road/access/timing sub-key lists");
+  console.error("live there and are shared by SuggestFix and AddRoute. Nothing below was checked.");
+  process.exit(1);
+}
 const rd = read("RouteDetail.jsx"), cm = read("ClimbMatch.jsx");
 
 // Anchored on the real declarations. A rename must fail loudly rather than yield an empty
@@ -58,15 +65,15 @@ if (!form.length || !ss.size) {
 
 // There are TWO ways a field reaches onContribute, and checking only the first was this
 // guard's own first-draft bug. Besides the FIELDS list, RouteDetail calls onSubmit directly
-// with a literal field name — that is how bailout and startLocation are filed, and they are
-// NOT in FIELDS, so a FIELDS-only scan can never see that path at all.
+// with a literal field name — that is how startLocation is filed (bailout was too, until bail
+// points were removed), and it is NOT in FIELDS, so a FIELDS-only scan can never see that path at all.
 const direct = [...rd.matchAll(/onSubmit\(\{[^)]{0,120}?field:\s*"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
 
 // Exempt from the SS requirement because onContribute returns BEFORE the field-edit path for
-// them: they are additive, geo-clustered lists read back through bailoutEdits /
+// them: they are additive, geo-clustered lists read back through
 // startLocationConsensus, not scalar fields. A name here that stops being filed that way
 // must fail, so the list cannot rot.
-const EXEMPT = ["bailout", "startLocation"];
+const EXEMPT = ["startLocation"];
 const stale = EXEMPT.filter((k) => !direct.includes(k) && !form.includes(k));
 if (stale.length) {
   console.error(`stale exemption(s): ${stale.join(", ")} — no longer submitted anywhere. Remove from EXEMPT.`);
@@ -84,6 +91,215 @@ if (dead.length) {
   process.exit(1);
 }
 
+// ---- the same question, one level down: object fields have SUB-keys -------------------
+//
+// `road` and `access` are jsonb objects, so passing the check above only proves the COLUMN is
+// applied — it says nothing about whether the individual keys the form offers are keys any
+// reader looks at. Get one wrong and the failure is the exact shape this guard exists to stop:
+// accepted, stored, consensus reached, displayed nowhere.
+//
+// It is a live risk rather than a hypothetical, because the readers and the key lists sit ~400
+// lines apart in RouteDetail.jsx and nothing ties them together. `access` in particular carries
+// TWO spellings for the same fact — `land_manager` on 399 of 400 sampled rows and `landManager`
+// on 8, with display reading `ac.land_manager||ac.landManager` — so "which spelling does the
+// form write?" has a right answer and a silently-wrong one.
+//
+// Deliberately a SUBSTRING test against the whole file rather than a scoped one: a sub-key can
+// legitimately be read as `ac.foo`, `route.road.foo`, `road.foo` or destructured, and demanding
+// a single shape would fail on correct code. The claim here is only "something, somewhere,
+// mentions this key" — weak, but it is exactly strong enough to catch a typo or a rename, which
+// is the failure that actually happens.
+// The three lists moved to lib/objKeys.js when AddRoute started needing them too: core
+// cannot import RouteDetail (lazy-loaded, and it already imports FROM core), so a shared
+// module is the only way both forms can name one thing the same way. The READER side is
+// still searched across RouteDetail — that is where the panels live — but the DECLARATION
+// now lives in lib. Both files are required, so losing either is ANCHOR LOST rather than a
+// quietly narrower run.
+const objKeys = read("lib/objKeys.js");
+/* Every file that renders one of these objects. A reader outside this list is invisible, and an
+   invisible reader reads as a dead sub-key — the direction that tells an author to delete working
+   wiring, so a file that cannot be read is fatal rather than skipped. */
+const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx"];
+const readerCorpus = READER_FILES.map((f) => {
+  try { return read(f); } catch {
+    console.error(`check:contrib-fields: cannot read ${f}, which holds panel readers — the scan would under-report.`);
+    process.exit(1);
+  }
+}).join("\n");
+if (readerCorpus.length < 200000) {
+  console.error(`check:contrib-fields: reader corpus is only ${readerCorpus.length} chars — the walk broke.`);
+  process.exit(1);
+}
+/* A destructure names the key with no dot in front of it, so collect the names bound out of
+   `= <anything>.field` and treat those as reads too. Scoped to that field's own destructuring
+   rather than to every `{a,b}` in 1.5MB of JSX, which would make the test vacuous. */
+/* Is this object read WITHOUT naming its keys? Two shapes do that, and both called correct rows
+   dead when the guard only looked for `.key`:
+     Object.entries(x) / keys / values   — renders every key, names none (fitnessSpec)
+     const c = route.x; ... c[k]         — a dynamic index driven by a table (climate seasons) */
+function readsGenerically(corpus, obj) {
+  if (new RegExp("Object\\.(entries|keys|values)\\(\\s*" + obj + "\\s*\\)").test(corpus)) return true;
+  /* `const cl=route.climate` ... `cl[k]`. EVERY binding, not the first: `.match()` returns the
+     earliest, which here was the contribute form's own `const climateV=vals.climate` — so the
+     check asked whether the EDITOR's state was dynamically indexed and answered no about a
+     reader that plainly is. Same trap as taking the first commit from a log instead of the right
+     one. */
+  for (const m of corpus.matchAll(new RegExp("(?:const|let|var)\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*[A-Za-z_$][\\w$]*\\." + obj + "\\b", "g"))) {
+    if (new RegExp("\\b" + m[1] + "\\[[A-Za-z_$][\\w$]*\\]").test(corpus)) return true;
+  }
+  return new RegExp("\\.\\s*" + obj + "\\s*\\[[A-Za-z_$][\\w$]*\\]").test(corpus);
+}
+
+function readsSubKey(corpus, field, key) {
+  /* A DOTTED key is read if its leaf is named, OR if something enumerates the parent —
+     `Object.entries(fitnessSpec).map(([k,v]) => k+": "+v)` renders every key and names none of
+     them, so a by-name test calls a working row dead. Requiring the enumeration (not merely the
+     parent being present) keeps this from excusing a parent nobody reads. */
+  if (key.indexOf(".") >= 0) {
+    const [parent, leaf] = key.split(".");
+    if (new RegExp("\\." + leaf + "\\b").test(corpus)) return true;
+    return readsGenerically(corpus, parent) && readsSubKey(corpus, field, parent);
+  }
+  /* A key can also be read GENERICALLY off the field itself. CLIMATE & SEASON does
+     `const cl=route.climate; const sv=k=>cl[k]||_bs[k]` and drives it from a table of quoted
+     season names — so `.summer` appears nowhere and a by-name test called four working rows dead.
+     Requiring the key to appear as a quoted literal AS WELL keeps this from waving through a key
+     nothing mentions: the generic read proves the mechanism, the literal proves this key is one of
+     the ones fed to it. */
+  if (readsGenerically(corpus, field) && new RegExp('"' + key + '"').test(corpus)) return true;
+  if (new RegExp("\\." + key + "\\b").test(corpus)) return true;
+  const pats = [...corpus.matchAll(new RegExp("\\{([^{}]{0,300})\\}\\s*=\\s*[A-Za-z_$][\\w$]*\\." + field + "\\b", "g"))];
+  return pats.some((m) => m[1].split(",").some((n) => n.trim().split(":")[0].trim() === key));
+}
+
+/* EVERY EDIT PENCIL MUST OPEN A SECTION THAT EXISTS. A section heading's pencil calls
+   setFixOpenSection(id), and the sheet scrolls with querySelector("#sf-section-"+id) — ids come
+   from each FIELDS key, plus two hardcoded ones. A name with no field returns null, so the sheet
+   opens at the top and scrolls NOWHERE, and the climber has to find the field themselves.
+
+   Four pencils did exactly that with "gear": `gear` is in SS but the form's field is `rack` (M
+   renames gear->rack). Nothing threw, nothing rendered wrong, and the only symptom was a pencil
+   that did four fifths of its job. A separate defect had the CLIMBING ROUTE pencil open
+   "pitchDetail" — a section that exists but edits a DIFFERENT column, so the correction landed
+   under ROUTE BETA while CLIMBING ROUTE kept its old text. This catches the first shape; only
+   reading the reader catches the second. */
+/* Since 0307–0309 every pencil calls openFix(id), which checks the field's confidence level and opens the flag sheet for a locked (high) field before falling through to setFixOpenSection(id). Both spellings count; a pencil that bypasses openFix would skip the lock, so the raw call is also reported below. */
+const pencilIds = [...rd.matchAll(/(?:openFix|setFixOpenSection)\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+const rawPencils = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+if (rawPencils.length) {
+  console.error(`check:contrib-fields: ${rawPencils.length} pencil(s) call setFixOpenSection directly and skip the confidence lock (openFix): ${[...new Set(rawPencils)].join(", ")}`);
+  process.exit(1);
+}
+if (pencilIds.length < 10) {
+  console.error(`check:contrib-fields: found only ${pencilIds.length} edit pencil(s) — the scan broke.`);
+  process.exit(1);
+}
+/* A FIELD THAT IS DEFINED IS NOT A FIELD THAT RENDERS. The sheet draws only what GROUPS lists
+   (GROUPED = GROUPS.map(… FIELDS.find …)), and this check used to accept any `{k:"…"}` in FIELDS as
+   a section. Eleven editors sat in FIELDS and in no group — the WAYS IN editor, Trailhead &
+   directions, Camping & bivy, the Climbing route sections, Emergency, Crowds and five more — so
+   their pencils ("Edit the approaches") opened a sheet that scrolled nowhere, and no climber could
+   add a missing way in, fix a trailhead, or add a camp, while this guard printed ok. Measured
+   2026-10-01. The section ids are now the GROUPED keys; a FIELDS key in no group fails outright. */
+const _fieldsLine = rd.slice(rd.indexOf("const FIELDS="), rd.indexOf("\n", rd.indexOf("const FIELDS=")));
+const _groupsSrc = rd.slice(rd.indexOf("const GROUPS="), rd.indexOf(";", rd.indexOf("const GROUPS=")));
+if (!_fieldsLine.length || !_groupsSrc.length) { console.error("check:contrib-fields: could not find FIELDS or GROUPS in RouteDetail.jsx — the scan broke."); process.exit(1); }
+const _fieldKeys = [...new Set([..._fieldsLine.matchAll(/\{k:"([A-Za-z0-9_]+)"/g)].map((m) => m[1]))];
+const _grouped = new Set([..._groupsSrc.matchAll(/"([A-Za-z0-9_]+)"/g)].map((m) => m[1]));
+const ungrouped = _fieldKeys.filter((k) => !_grouped.has(k));
+if (_fieldKeys.length < 20) { console.error(`check:contrib-fields: found only ${_fieldKeys.length} FIELDS keys — the scan broke.`); process.exit(1); }
+if (ungrouped.length) {
+  console.error(`check:contrib-fields: ${ungrouped.length} editor(s) defined in FIELDS but in no GROUPS section, so they never render: ${ungrouped.join(", ")}`);
+  console.error("Add each to the GROUPS section it belongs in — its pencil otherwise opens a sheet without it.");
+  process.exit(1);
+}
+console.log(`  ${_fieldKeys.length} editor field(s), every one in a section the sheet renders`);
+const sectionIds = new Set(_fieldKeys);
+// One section is rendered with a literal id rather than from a FIELDS key (bail points, the
+// other, were removed from the app on 2026-10-07).
+for (const extra of ["startLocation"]) sectionIds.add(extra);
+const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
+if (orphanPencils.length) {
+  const n = pencilIds.filter((id) => orphanPencils.includes(id)).length;
+  console.error(`check:contrib-fields: ${n} edit pencil(s) open a section that does not exist: ${orphanPencils.join(", ")}`);
+  console.error('The sheet opens at the top and scrolls nowhere — querySelector("#sf-section-<id>") returns null.');
+  process.exit(1);
+}
+console.log(`  ${pencilIds.length} edit pencil(s) open a section that exists`);
+
+/* THE THREE LISTS MUST AGREE, and a mismatch is a BLANK SHEET rather than a missing field.
+   renderInput does `OBJ_STATE[f.type][0]` for any type in OBJ_KEYS, so a type registered in
+   OBJ_KEYS with no OBJ_STATE entry throws on the first render of the contribute sheet — the
+   climber taps a pencil and gets nothing. And a type with no FIELDS entry is a section id that
+   scrolls nowhere, which is the defect that had four `gear` pencils opening a section the form
+   never rendered. Cheap to assert, invisible until somebody opens the sheet. */
+const objKeysTypes = [...(rd.match(/const OBJ_KEYS=\{([^}]*)\}/) || [, ""])[1]
+  .matchAll(/([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
+const objStateTypes = [...(rd.match(/const OBJ_STATE=\{([^;]*?)\};/) || [, ""])[1]
+  .matchAll(/([A-Za-z_$][\w$]*)\s*:\s*\[/g)].map((m) => m[1]);
+if (objKeysTypes.length < 3) {
+  console.error("check:contrib-fields: parsed fewer than 3 OBJ_KEYS types — ANCHOR LOST.");
+  process.exit(1);
+}
+const noState = objKeysTypes.filter((t) => !objStateTypes.includes(t));
+if (noState.length) {
+  console.error(`check:contrib-fields: ${noState.length} OBJ_KEYS type(s) have no OBJ_STATE entry: ${noState.join(", ")}`);
+  console.error("renderInput reads OBJ_STATE[f.type][0], so opening the contribute sheet throws.");
+  process.exit(1);
+}
+const noField = objKeysTypes.filter((t) => !new RegExp('\\{k:"' + t + '"').test(rd));
+if (noField.length) {
+  console.error(`check:contrib-fields: ${noField.length} OBJ_KEYS type(s) are in no FIELDS entry: ${noField.join(", ")}`);
+  console.error("The editor exists and the form never offers it, so nothing can reach the column.");
+  process.exit(1);
+}
+console.log(`  ${objKeysTypes.length} keyed-object type(s): each has state and a form field`);
+
+const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"],
+  ["CROWDS_KEYS", "crowds"], ["PARTNER_KEYS", "partnerRequirements"],
+  ["SEASONAL_KEYS", "seasonalGuidance"], ["EMERGENCY_KEYS", "emergency"],
+  ["LOGISTICS_KEYS", "approachLogistics"],
+  ["CLIMATE_KEYS", "climate"], ["SEASHAZ_KEYS", "seasonalHazards"]];
+for (const [constName, field] of OBJ_FIELDS) {
+  const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));
+  if (!m) {
+    console.error(`check:contrib-fields: ANCHOR LOST — ${constName} not found in lib/objKeys.js.`);
+    console.error(`The sub-keys of the \`${field}\` field went unchecked, so this run proved less than it claims.`);
+    process.exit(1);
+  }
+  /* The dot matters: a DOTTED sub-key (`fitnessSpec.hiking`) writes into a nested object, and a
+     pattern without `.` skipped those silently — this printed "3 sub-key(s) offered" against a
+     list of five and passed. A parser that quietly drops entries is the vacuous-coverage shape
+     this file exists to prevent, so the count is asserted against the list below. */
+  const subKeys = [...m[1].matchAll(/\["([a-zA-Z_][a-zA-Z_.]*)","/g)].map((x) => x[1]);
+  const declared = (m[1].match(/\["/g) || []).length;
+  if (subKeys.length !== declared) {
+    console.error(`check:contrib-fields: parsed ${subKeys.length} of ${declared} entries in ${constName} — the sub-key pattern is dropping some.`);
+    process.exit(1);
+  }
+  if (!subKeys.length) {
+    console.error(`check:contrib-fields: parsed 0 sub-keys out of ${constName} — the scan broke.`);
+    process.exit(1);
+  }
+  // TWO WAYS A SUB-KEY IS READ, and testing only the first reported five correct panels as
+  // dead. `.key` is the obvious one. But CrowdsPanel, PartnerRequirementsPanel and
+  // SeasonalGuidancePanel DESTRUCTURE — `const {estimatePerSeason, peakTraffic,
+  // solitudeRating} = route.crowds` — which contains no `.estimatePerSeason` anywhere. And
+  // those panels live in EnrichmentPanels.jsx while this scanned RouteDetail.jsx alone, so the
+  // readers were in a file the guard never opened. Same shape as this repo's "grep the app, not
+  // just lib/db.js".
+  const unread = subKeys.filter((k) => !readsSubKey(readerCorpus, field, k));
+  if (unread.length) {
+    console.error(`check:contrib-fields: ${unread.length} sub-key(s) of \`${field}\` are offered by the form and read by nothing:\n`);
+    for (const k of unread) console.error(`  ${field}.${k}`);
+    console.error(`\nA climber can fill these in, reach consensus, and see nothing change.`);
+    console.error(`Check the spelling against the panel's own reader — \`access\` has two`);
+    console.error(`land-manager spellings and the form must write the canonical one.`);
+    process.exit(1);
+  }
+  console.log(`  ${field}: ${subKeys.length} sub-key(s) offered, all read`);
+}
+
 const orphan = [...ss].filter((k) => !submitted.includes(k));
 console.log(`check:contrib-fields: ok — all ${submitted.length} submittable fields are applied by the merge.`);
 console.log(`  ${form.length} from the SuggestFix form, ${direct.length} filed directly (${[...new Set(direct)].join(", ") || "none"})`);
@@ -95,3 +311,14 @@ if (orphan.length) console.log(`  ${orphan.length} in SS but not in the form, se
 //   rename `var SS={` in ClimbMatch.jsx   -> ANCHOR LOST, exit 1 (does not pass vacuously)
 //   rename `const FIELDS=[{k:`            -> ANCHOR LOST, exit 1
 //   add a bogus name to EXEMPT            -> fails as a stale exemption
+//
+// Sub-key extension, injection-tested 2026-08-12:
+//   typo a sub-key (land_manager -> land_managr) -> fails naming access.land_managr
+//   rename ROAD_KEYS                             -> ANCHOR LOST, exit 1 (not a vacuous pass)
+//   empty the key list                           -> "parsed 0 sub-keys", exit 1
+//   swap land_manager for the legacy landManager -> PASSES, deliberately. Both spellings are
+//     read (display is `ac.land_manager||ac.landManager`), so the legacy one is not BROKEN,
+//     just worse. This guard's claim is "a reader looks at this key", not "you picked the
+//     better key" — encoding the editorial preference here would make it fail on code that
+//     works, and the reasoning for preferring the canonical spelling lives in the comment
+//     beside ACCESS_KEYS where the next person will actually read it.

@@ -1,0 +1,836 @@
+{
+  "_README": [
+    "Approach variants — WASHINGTON OLYMPIC PENINSULA alpine, 2026-08-19. 27 routes, 45 variants, every one carrying a baseFinding.",
+    "",
+    "`area` on every entry was READ FROM THE LIVE ROW (routes.area_id), not typed from the route name. Four of these ids carry no",
+    "peak name at all — wa_se_ridge_aka_shield_wall and wa_washington_ellinor_traverse_ridge are both filed under MOUNT WASHINGTON",
+    "(the Olympic one, wa_mount_washington_olympic, not the Exit-38 crag of the same name), wa_lena_lake_to_mt_stone_traverse is",
+    "filed under MOUNT STONE, and wa_olympus_traverse under MOUNT OLYMPUS. A name-shaped id is not evidence of which peak you are on.",
+    "",
+    "Scope was the 20 peaks named in the request. Three of those are not in the catalog under an Olympic parent and were not touched:",
+    "SAWTOOTH RIDGE (the only `Sawtooth` area in WA is wa_sawtooth_chelan, Central-East Cascades, a different range), LOST PEAK (the",
+    "only `Lost Peak` is wa_lost_peak_pasayten, Okanogan), and INNER CONSTANCE / MOUNT CONSTANCE / THE BROTHERS etc. are present and",
+    "were covered. wa_andersons_thumb was included as a sub-feature area of the Anderson massif. 37 routes exist in those areas;",
+    "30 had an EMPTY approach_variants, 27 are written here and 3 were deliberately skipped — see _SKIPPED.",
+    "",
+    "Contamination rejected during research, recorded so it is not re-introduced:",
+    "  - 'Mount Cameron' — the first search result for a Cameron west-ridge route is 14ers.com, which is COLORADO's 14,238 ft Mount",
+    "    Cameron on the Lincoln group. Nothing from that page was used. Only the Olympic peak (7,190 ft, 47.8253 N 123.3284 W,",
+    "    Jefferson County, triple-summited, class 2) is described here.",
+    "  - 'Mount Christie' — there is a Mount Christie in ALBERTA and a Christie Mountain ski area; both surfaced in the same search.",
+    "    Only Olympic National Park's 6,177-6,182 ft Christie above Martins Park and Low Divide was used.",
+    "  - 'Mount Washington' — WA has at least four: the Olympic peak above Lake Cushman (this one), the Exit-38 crag area",
+    "    (wa_mt_washington_2), the university campus area, and Oregon's Cascade Mount Washington. Only Big Creek / FR-2419 sources",
+    "    describing a 6,255 ft Olympic summit were used.",
+    "  - 'Lake Constance' — there is a Lake Constance in New Zealand and the European Bodensee; both appeared in the coordinate",
+    "    search. Only the Olympic lake at the mouth of Avalanche Canyon was used. See _DEFECTS: this catalog holds two disagreeing",
+    "    copies of its coordinate.",
+    "  - 'Deception' — WA has Deception Pass (Whidbey), Deception Crags and Deception Wall (Exit 38), Deception Falls (Stevens) and",
+    "    Mount Deception (Olympic). Only the Olympic peak's basin names were used, and only where a source named Royal Basin or the",
+    "    Dungeness.",
+    "  - 'Mount Stone' — the name-matched area list also returned Tumblestone, Cobblestone Wall, Blackstone, Tombstone and Gem Stone,",
+    "    none of them this peak. Only Hamma Hamma / Putvin / Lake of the Angels sources were used.",
+    "",
+    "TWO KNOWN FINDINGS ARE HONOURED RATHER THAN RE-LITIGATED, and both mean the route's NAME points the wrong way:",
+    "  - wa_mount_christie_west is titled 'West Slopes (Standard)' and every published line on the peak climbs the NORTH side —",
+    "    the north couloir out of Martins Park to a 5,600 ft north-ridge saddle, across the Christie Glacier to the east col, then",
+    "    the southeast summit ridge. The variants below describe that line. Do not follow the name west.",
+    "  - wa_mount_cameron_standard is titled 'Standard Route (Southeast Slopes)' and Cameron Pass lies WEST of the summit; the",
+    "    climb is a west-ridge walk gained at the pass. The variants below describe that line. Anyone reading 'southeast slopes'",
+    "    off the row title and descending east off the pass is walking into the Dosewallips headwaters.",
+    "",
+    "No time, distance or gain figure is averaged. Where two sources disagreed, the field is omitted. Most entries carry none —",
+    "Olympic mileages are quoted from three different starting points (highway, road washout, actual trailhead) far more often",
+    "than they are quoted consistently."
+  ],
+
+  "wa_olympus_blue_glacier_east_ramps": {
+    "area": "wa_mount_olympus",
+    "approach_variants": [
+      {
+        "name": "Hoh River Trail to Glacier Meadows, Blue Glacier and Snow Dome",
+        "season": "Roughly Jun-Aug. Earlier and the trail above Elk Lake is steep snow; later and the moat at the base of the summit rock opens and the ramps go from snow-covered to loose",
+        "notes": "From the Hoh Rain Forest Visitor Center (about 578 ft) the Hoh River Trail runs east up the valley for roughly 17.4 miles to Glacier Meadows at about 4,300 ft, past Five Mile Island, the Olympus Guard Station and High Hoh Bridge near mile 9, Lewis Meadow near mile 11 (the usual overnight if you split the walk in), and Elk Lake near mile 15. A washed-out cliffside stretch around mile 16 is crossed on a fixed ladder; rungs have been reported missing in recent seasons, so look at it before you commit weight. Water is frequent the whole way.\n\nFrom Glacier Meadows a way path climbs about 0.8 mile to the crest of the Blue Glacier's lateral moraine and follows it roughly 0.2 mile before dropping onto the ice. That drop is loose and rockfall-prone; some parties fix a short line. Rope up on the ice. Cross the flat lower glacier and climb moderate snow, threading the rock islands to the right of the main icefall before swinging back left below the massif, to the crest of Snow Dome at about 6,600-6,800 ft. Snow Dome is the standard high camp, a thousand feet below the summit.\n\nFrom Snow Dome the standard line goes up to and over Crystal Pass, then traverses just south of and below Five Fingers Ridge and over a false summit to the summit pyramid. A large crevasse near Crystal Pass is usually bridged through midsummer.",
+        "baseFinding": "THE ARRIVAL TEST IS A FLAT TOP AT THE FOOT OF AN 80 FT TOWER, AND IT WORKS IN CLOUD BECAUSE IT IS UNDERFOOT, NOT ON THE HORIZON. Off the false summit you drop into a sharp saddle, then climb a short steep snow slope with a clean runout. That slope ENDS FLAT. The moment the ground stops rising and you are standing on a small flat platform of snow with an 80 ft rock tower directly above you, you are at the base of the summit block, on its NORTHEAST side. There is nothing else on this mountain that is a flat snow top under an 80 ft tower.\n\nSECOND TEST, and it is the one that separates this finish from the two other rows on this same block: from that platform the East Face Ramps line goes RIGHT, around the corner onto the east face, and climbs a series of ramps angling up and across it before joining the last Class 4 / 5.4 step. If you are climbing straight up the face directly above the platform you are on the North Face Direct, and if you have walked round to the far side you are on the Northwest Edge. All three finish on the same 80 ft tower and all three start from this platform; the only thing that tells them apart is which way you turn.\n\nWHAT GOING TOO FAR LOOKS LIKE: if you are still gaining height on snow with no rock tower over you, you are on the five-fingered false summit east of the true one and have not yet dropped into the saddle. If you can see the Blue Glacier below you on your right the whole way, you are still on the traverse and have not reached Crystal Pass.\n\nHONEST LIMIT: the ramps themselves are loose and the correct one is chosen by eye. A fog test can get you to the foot of the block; it cannot pick the ramp for you.",
+        "hazards": [
+          "Crevasses on the Blue Glacier and a large one near Crystal Pass, usually snow-bridged and not always",
+          "Rockfall on the moraine descent onto the ice, and a fixed-ladder washout around mile 16 of the trail",
+          "Loose rock on the east-face ramps and rockfall from parties above on them",
+          "A developing moat at the base of the summit rock in warm or late-season conditions, forcing a committing step onto rock",
+          "Whiteout on Snow Dome — the crevassed plateau is where the 1993 fatal unroped fall happened",
+          "A 17-mile walk out with no cell coverage"
+        ]
+      },
+      {
+        "name": "From the Bailey Range: Queets Basin, Blizzard Pass and the Humes Glacier",
+        "season": "Roughly Jul-Sep, once the Bailey Range crest is walkable and the Humes is not avalanching",
+        "notes": "This is the approach of parties already on the Bailey Range Traverse rather than a way anyone drives to. It comes at Olympus from the SOUTH instead of the north: from the High Divide out of Sol Duc, along the Bailey crest through Cat Basin, Ferry Basin and Stephen Peak, then down into Queets Basin, and up over Blizzard Pass onto the Humes Glacier. From the Humes the summit massif is gained from the south side and the summit block is reached from the opposite direction to the Snow Dome line.\n\nIt is longer by days and it exists in the record because traverse parties use it, not because it is easier. A party carrying glacier gear can also run it the other way and exit down the Blue Glacier to the Hoh, which is how most traverses finish.\n\nNothing about the approach shortens the climb: the last five hundred feet, the false summit, the saddle and the summit block are the same ground the Hoh parties cross.",
+        "baseFinding": "THE ARRIVAL TEST IS THE SAME FLAT SNOW TOP UNDER THE 80 FT TOWER — the block does not care which side of the mountain you walked in from. What changes coming from the south is which way you meet the false summit: from the Humes side you are working up toward the summit ridge from below rather than dropping onto it from Crystal Pass, so the sharp saddle between the false summit and the true one is reached from the opposite end.\n\nThe test that you have not overshot on this side is Five Fingers Ridge. The standard line runs just SOUTH of and BELOW it. If Five Fingers Ridge is below you rather than above you, you are on the crest itself and too high; drop back under it and keep the ridge on your uphill side until the false summit is passed and the saddle opens.\n\nHONEST LIMIT: this approach is thinly documented as an approach — it is described in traverse accounts, which are about the traverse. Treat the Hoh variant as the one with detail and this one as the one that gets a traverse party to the same platform.",
+        "hazards": [
+          "Multi-day committing wilderness travel with no bail options once on the Bailey crest",
+          "Crevasses and icefall on the Humes Glacier",
+          "Blizzard Pass holds steep snow and is named for what happens there",
+          "Route-finding on the Bailey crest in cloud, where the ridge is the only handrail",
+          "No resupply and no reliable rescue access; NPS has reported multiple helicopter rescues per season among permitted Bailey parties"
+        ]
+      }
+    ]
+  },
+
+  "wa_olympus_summit_block_north_face": {
+    "area": "wa_mount_olympus",
+    "approach_variants": [
+      {
+        "name": "Hoh River Trail, Blue Glacier and Snow Dome to the base of the summit block",
+        "season": "Roughly Jun-Aug; early or late season this face can carry ice, which changes it from a 5.4 pitch into something else",
+        "notes": "Identical to the standard approach for every route on this peak: Hoh River Trail from the Hoh Rain Forest Visitor Center about 17.4 miles to Glacier Meadows at roughly 4,300 ft, the moraine way path and the drop onto the Blue Glacier, roped glacier travel across the flat lower ice and up through the rock islands right of the icefall to Snow Dome at about 6,600-6,800 ft, then Crystal Pass, the traverse below Five Fingers Ridge, the false summit, and the sharp saddle beneath the true summit pyramid.\n\nThe only thing this row changes is what you do once you are standing at the foot of the tower.",
+        "baseFinding": "THE SHARED ARRIVAL TEST IS THE FLAT SNOW TOP AT THE FOOT OF THE 80 FT TOWER, on its northeast side, where the steep snow slope out of the saddle stops rising.\n\nTHE TEST THAT YOU ARE ON THIS FINISH AND NOT ONE OF THE OTHER TWO IS ROPE, NOT ROCK, AND IT IS THE BEST FOG MARKER ON THIS MOUNTAIN. Enough parties end up on this exact line that a semi-permanent rappel station has built up at the TOP of it — a boulder or horn wrapped in slings with a rap ring and a quick link. From the platform, look straight up the face above you. If there is tat hanging down the line you are about to climb, that is the North Face Direct and you are in the right place. If there is no tat above you, you are looking at the east-face ramps (round the corner to the right) or the northwest edge (round to the left), and you have not found this finish.\n\nThe fixed gear is not agency-maintained and slings weather fast, so back it up and do not lower onto it unexamined — but as a piece of route-finding evidence in cloud it is unambiguous, because it is the only fixed anchor on the block and it hangs down THIS face.\n\nSECOND TEST: the pitch is a single rope length of about 165 ft on generally solid rock at 5.4, steeper and more exposed than the ramps. If your first fifty feet is a wandering scramble across ledges rather than a face, you have drifted onto the ramp system.",
+        "hazards": [
+          "Fixed tat at the top of the pitch is old and unmaintained — inspect and back it up",
+          "The face is steeper and more exposed than either other summit-block finish, and holds ice early and late in the season",
+          "The descent rappel measures close to a full 165 ft, which eats nearly all of a 60 m rope doubled with nothing to spare",
+          "Everything on the approach: Blue Glacier crevasses, the Crystal Pass crevasse, moraine rockfall, whiteout on Snow Dome"
+        ]
+      }
+    ]
+  },
+
+  "wa_olympus_summit_block_west_edge": {
+    "area": "wa_mount_olympus",
+    "approach_variants": [
+      {
+        "name": "Hoh River Trail, Blue Glacier and Snow Dome to the base of the summit block",
+        "season": "Roughly Jun-Aug, on the same window as every other line on this block",
+        "notes": "The approach is the standard one and is identical to the point where you are standing on snow at the foot of the summit tower: Hoh River Trail about 17.4 miles to Glacier Meadows, the moraine and the Blue Glacier, Snow Dome at roughly 6,600-6,800 ft, Crystal Pass, the traverse below Five Fingers Ridge, over the false summit, down into the sharp saddle, and up the short steep snow slope to the platform.\n\nThe row's own approach text says as much in one line — same as the Blue Glacier / East Face route until the summit block base, approach time identical. The variants here exist to say what to do with your eyes once you are there.",
+        "baseFinding": "THE SHARED ARRIVAL TEST IS THE FLAT SNOW TOP AT THE FOOT OF THE 80 FT TOWER. You reach it on the tower's NORTHEAST side, which matters, because this finish is on the far side from where you arrive.\n\nTHE TEST FOR THIS FINISH IS THAT YOU HAVE TO WALK ROUND THE TOWER TO FIND IT. From the platform, the east-face ramps leave to your right and the north face rises directly above you with its rappel tat hanging down it. The Northwest Edge is neither: it is the arete on the opposite side, and reaching it means traversing round the base of the block anticlockwise until the face you are under is no longer the one with the tat on it and the ground has swung round to the northwest.\n\nSECOND TEST, and it is a feel test rather than a sight test, which is what you want in cloud: the rock on this edge is noticeably MORE SOLID than the east-face ramps. The ramps are loose, gravelly and rockfall-prone; the northwest edge is described consistently as clean rock, steeper and more exposed, with several 5.3-5.4 moves. If the first moves off the snow are on rubble-covered ledges you are on the ramps; if they are on positive holds on an exposed edge you are on this line.\n\nWHAT GOING TOO FAR LOOKS LIKE: keep traversing anticlockwise past the northwest edge and the ground under the block drops away steeply on the west side with no reasonable line above it. If you are downclimbing to keep going round, stop and come back.",
+        "hazards": [
+          "Significant exposure on the edge, with more air under you than on either other finish",
+          "Traversing the base of the block on snow to reach it, above the drop back into the saddle",
+          "A moat at the rock-snow junction late in the season",
+          "Everything on the approach: Blue Glacier crevasses, the Crystal Pass crevasse, moraine rockfall, whiteout on Snow Dome"
+        ]
+      }
+    ]
+  },
+
+  "wa_olympus_traverse": {
+    "area": "wa_mount_olympus",
+    "approach_variants": [
+      {
+        "name": "Hoh River Trail, Blue Glacier and Snow Dome — the traverse begins on the West Peak",
+        "season": "Roughly Jun-Aug. The Middle Peak's east-side moat is the thing that decides whether this goes at all, and it runs deep in some seasons",
+        "notes": "The approach is the standard Olympus approach and nothing else: Hoh River Trail from the visitor center about 17.4 miles to Glacier Meadows at roughly 4,300 ft, with Lewis Meadow near mile 11 the usual overnight; the moraine way path and the loose drop onto the Blue Glacier; roped glacier travel across the lower ice and up through the rock islands to Snow Dome at about 6,600-6,800 ft; then Crystal Pass, the traverse under Five Fingers Ridge, the false summit and the saddle to the West Peak.\n\nWhat the traverse adds is everything after that: West Peak (7,980 ft) to Middle Peak (7,929 ft) to East Peak (7,762 ft), all of it off-trail glacier and ridge ground, with crevasse and icefall exposure the whole way and a full rescue kit needed for the entire outing rather than just for the West Peak block. Standard exit is toward Glacier Pass and back down to Glacier Meadows.",
+        "baseFinding": "THIS ROUTE'S BASE IS A SUMMIT, WHICH IS THE ONE PIECE OF GOOD NEWS IN IT. The traverse starts on the WEST PEAK, and you know you are on the West Peak because you have just climbed an 80 ft rock tower off a flat snow platform — no other high point on this massif is gained that way. If you have not climbed a rock tower, you are on the five-fingered false summit east of the true one and the traverse has not started.\n\nTHE TEST THAT DECIDES WHETHER THE TRAVERSE GOES IS A MOAT, AND IT IS AT THE OTHER END. Between West and Middle Peaks the descent to the saddle is careful downclimbing on non-technical ground, but the Middle Peak's EAST side carries a snow moat that in some seasons is too deep to pass. That is the go / no-go, and it is checked by walking to it rather than by looking at it from the West Peak. Parties that find it impassable have exited via Glacier Pass instead, which carries its own icefall hazard — decide that at the moat, not after committing past it.\n\nSECOND TEST, for the icefall: the traverse line has to work around a heavily crevassed section of the upper Blue Glacier. Stay RIGHT of the icefall on the way across and swing back LEFT below the massif. If you are threading crevasses rather than skirting them, you are in the icefall and should back out to the right.\n\nHONEST LIMIT: route-finding between the three peaks is explicitly described as not straightforward, and there is no marker sequence for it. In poor visibility this is a route to turn round on, not to navigate.",
+        "hazards": [
+          "14-16+ hours of climbing from Glacier Meadows, so cumulative fatigue is itself a hazard",
+          "Sustained crevasse and icefall exposure across the whole traverse, not just on the approach",
+          "The Middle Peak east-side moat can be impassable and force a different exit",
+          "Route-finding between the peaks is poor in flat light and there is no easy retreat mid-traverse",
+          "A conditions-dependent short rappel or careful downclimb off the Middle Peak's loose upper rock in some seasons"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_anderson_eel_glacier": {
+    "area": "wa_mount_anderson",
+    "approach_variants": [
+      {
+        "name": "Dosewallips road walk, West Fork to Anderson Pass and the tarn camp",
+        "season": "Best spring to early summer, while the snow finger below Flypaper Pass is still continuous. By late summer that finger has thinned and steepened and the bergschrund above it has opened",
+        "notes": "From US-101 at Brinnon, drive Dosewallips Road to the washout gate — closed to vehicles since the 2002 flood and still closed. Park there. A mountain bike genuinely saves hours on the road miles. A short bypass trail with a few switchbacks gets round the washout, then the abandoned roadbed resumes for roughly 5.6 miles to the Dosewallips Ranger Station at about 1,600 ft.\n\nFrom the ranger station take the Dosewallips River Trail 1.4 miles to the West Fork junction, then the West Fork Trail upstream past Dose Forks, Big Timber and Diamond Meadows to Honeymoon Meadows at 3,527 ft, roughly 8 trail miles on. Expect at least one calf-to-knee ford of the West Fork depending on snowmelt, and substantial blowdown — maintenance has lagged since the road closed. Beyond Honeymoon Meadows the trail climbs past Camp Siberia to Anderson Pass at 4,464 ft.\n\nLeave the maintained trail at the pass and follow the climbers' path up the moraine to a camp on the snowy saddle above a small tarn at about 5,100 ft (Anderson or Valkyrie Lake). Most parties take 7-9 hours trailhead to camp. Fill up at the tarn; there is nothing above it.",
+        "baseFinding": "THE BASE OF THE CLIMB IS FLYPAPER PASS, AND THE TEST IS WHICH THINGS ARE ON WHICH SIDE OF IT. Flypaper Pass at about 6,500 ft is the notch between MOUNT ANDERSON on the east and ECHO ROCK (7,033 ft) on the west. Standing in the notch, Anderson is on your right and Echo Rock on your left when you are facing north through it. If both walls beside you are the same mountain, you are in a gully on a flank rather than in the pass.\n\nTHE APPROACH TEST, done before you can see the notch, is the tarn. From the camp saddle, traverse ABOVE the tarn — often still frozen — and take the single steep snow finger that runs up from the far side of it. There is one finger and it goes to one notch. If you are walking round the tarn at its level rather than above it, you have dropped too low and will meet cliffs.\n\nSECOND TEST, and it is the one that says the pass is in the condition you planned for: the finger's steepest section now runs 40 degrees or more. Glacier recession has steepened it well beyond the older guidebook figure of about 30 degrees over 300 vertical feet, so a party that finds it far steeper than the book has not gone the wrong way — the book is old. If it has melted out to bare scree and ice, that is the season telling you to come back earlier, not a route-finding error.\n\nWHAT GOING TOO FAR LOOKS LIKE: over the pass the ground drops onto the Eel Glacier and a bergschrund cuts across below the headwall, forcing an end-around to one side. If you are on glacier and looking for a way past a schrund, you are past the base and onto the climb.",
+        "hazards": [
+          "Crevasses on the upper Eel Glacier, including large ones on its eastern slopes",
+          "A bergschrund at the head of the Eel that is hardest to cross late in the season, with a short steep step above it",
+          "The Flypaper Pass snow finger at 40-45 degrees, firm or icy, steeper than older descriptions state",
+          "Glide avalanches and cornice-triggered slides off the cliffs above the glacier terminus",
+          "Loose, crumbly meta-sedimentary rock on the final summit scramble",
+          "Unbridged fords and heavy blowdown on the West Fork trail, plus roughly 11 miles of closed road at each end"
+        ]
+      },
+      {
+        "name": "East Fork Quinault and Enchanted Valley to Anderson Pass from the west",
+        "season": "Same window as the standard side — the pass and the snow finger above it decide the season, not the valley",
+        "notes": "Anderson Pass is a divide, and the Quinault side of it is a maintained trail too. From the Graves Creek trailhead at the end of the South Shore Quinault road, the East Fork Quinault Trail runs up the valley through Enchanted Valley to the pass. It is a longer valley walk than the Dosewallips side but it is a TRAIL the whole way, with no closed road at the start and no West Fork fords, which in a wet year is the difference between the two.\n\nAt Anderson Pass the two approaches become one: leave the maintained trail and follow the climbers' path up the moraine to the tarn camp at about 5,100 ft, then the snow finger to Flypaper Pass.\n\nMileages published for the Quinault side vary widely with where the count starts and with the current state of the road, so none is quoted here.",
+        "baseFinding": "IDENTICAL TO THE DOSEWALLIPS VARIANT ABOVE, because both arrive at Anderson Pass and everything above the pass is shared: traverse above the tarn, take the one steep snow finger from its far side, and know you are at Flypaper Pass when MOUNT ANDERSON is on one side of the notch and ECHO ROCK on the other.\n\nTHE EXTRA TEST THIS SIDE NEEDS is at the pass itself, because you arrive there from the opposite direction. Anderson Pass is a signed trail junction — the West Fork Dosewallips and East Fork Quinault trails meet there, with the Anderson Pass shelter (Camp Siberia) just below on the Dosewallips side at roughly 4,180 ft. The climbers' path leaves NORTH off the pass and up the moraine. If you have walked over the pass and begun descending the other valley, you have missed the turn; it is a boot path, not a signed one.",
+        "hazards": [
+          "Everything above the pass is the same: the 40-45 degree snow finger, the Eel Glacier crevasses and bergschrund, and loose summit rock",
+          "A long valley walk with river crossings and blowdown of its own",
+          "Arriving at the pass from the west means the shelter and the climbers' path are both below and behind you as you crest it",
+          "No cell coverage anywhere on either side"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_constance_terrible_traverse": {
+    "area": "wa_mount_constance",
+    "approach_variants": [
+      {
+        "name": "Lake Constance climbers' trail and Avalanche Canyon to the North Chute",
+        "season": "Roughly Jun-Sep. Steep hard snow persists longer on the Terrible Traverse than on any other crux on this mountain, which is exactly the point of it",
+        "notes": "Road-walk or bike about 5 miles up the washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail at roughly 1,450 ft. The trail is unmaintained and gains about 3,300-3,400 ft in under 2.2 miles to Lake Constance at 4,800 ft — steep from the first half-mile, exposed roots and rock steps needing hands, no real switchbacks. Budget 2.5-3.5 hours with a pack. Camp at the lake's north end.\n\nFrom camp, head up into Avalanche Canyon on scree and talus. Firm snow, when it is there, makes this whole section faster and safer than bare scree. This route does NOT take the South Chute: it stays in the canyon and climbs the North Chute higher up. Above the chute the line loses a little height and traverses north on ledges to reach the Terrible Traverse itself at about 7,435 ft.",
+        "baseFinding": "THE TEST IS THE CAT EARS, AND FOR THIS ROUTE IT IS A NEGATIVE TEST — YOU WANT TO WALK PAST THEM. The Cat Ears are a rock tower standing just LEFT of the notch at the top of the South Chute, and the standard advice on the South Chute is to start climbing east out of the canyon as soon as the Cat Ears come into view. This route bypasses that. Keep going NORTH up Avalanche Canyon on loose talus, past the South Chute entrance, to the mouth of the North Chute further into the canyon. If you have turned east and are climbing toward a notch with a tower just left of it, you are in the South Chute and on the Finger Traverse route instead.\n\nIn cloud the Cat Ears are not visible and the discriminator becomes the canyon itself: the South Chute leaves the canyon EARLY and low; the North Chute is reached by staying in the canyon bed and continuing up it. When in doubt, keep walking up the canyon — the error that puts you on the wrong route is turning uphill too soon.\n\nSECOND TEST, at the top of the chute: the Terrible Traverse is not the chute and it is not immediately above it. Above the North Chute the route LOSES a little elevation and traverses NORTH on ledges before it reaches the traverse at about 7,435 ft. If you have topped a chute and gone straight on up, you have not found it. The traverse itself is unmistakable when you arrive: a steep exposed snow crossing directly above a large cliff, or in late season a narrow rock ledge at the base of the icy slope above it. It is called the Terrible Traverse because a slip there does not stop.\n\nWHAT THE SEASON CHANGES: early to mid summer this is hard steep snow wanting an axe, crampons and, for many parties, pickets. Late season it often melts back to that rock ledge, which most parties find more secure. Neither is the wrong condition; they are different climbs.",
+        "hazards": [
+          "The Terrible Traverse crosses steep firm snow directly above a large cliff — an unprotected slip is very likely fatal",
+          "Hard, icy neve is common through June and early July; afternoon softening increases slip risk later in the day",
+          "Loose rock throughout the North Chute — classic Olympic choss, and rockfall from parties above is a real hazard",
+          "Avalanche hazard in Avalanche Canyon and its chutes, called out specifically for May-June conditions",
+          "One of the steepest approach trails in the Olympics, hard on the way down and slick when wet"
+        ]
+      },
+      {
+        "name": "Dosewallips road and Constance Pass, over Crystal Pass into upper Avalanche Canyon",
+        "season": "Roughly Jul-Sep, once the snow remnant below Crystal Pass is safe or gone",
+        "notes": "The long way in, and the one parties choose to avoid the Lake Constance trail. From the same Dosewallips washout, road-walk or bike roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground and decommissioned ranger station at the true road end, about 6.5 miles and 1,900 ft of cumulative gain from the gate.\n\nPick up the Constance Pass Trail, which climbs south and southwest through forest into subalpine parkland to Constance Pass at about 5,850 ft. Published trail mileages differ by several miles depending on where the count starts, so none is quoted. The upper stretch is open meadow and scree with the last reliable water at creek crossings below treeline.\n\nFrom Constance Pass leave the trail and travel cross-country west, dropping into the head of Crystal Basin and climbing to Crystal Pass, the windswept notch on the Constance-Warrior massif. From Crystal Pass descend into UPPER Avalanche Canyon — which is where this variant differs usefully from the lake approach, because it puts you in the canyon ABOVE the lake rather than below it.",
+        "baseFinding": "COMING IN FROM CRYSTAL PASS YOU ENTER AVALANCHE CANYON FROM ABOVE, SO THE CAT EARS TEST RUNS BACKWARDS AND YOU MUST NOT LET IT PULL YOU DOWNHILL. Dropping south into the canyon from Crystal Pass you meet the North Chute's mouth FIRST and the South Chute entrance further down toward the lake. So the discriminator here is: the first chute you can turn up out of the canyon on the Constance side is the one you want. If you are still descending the canyon and have passed a chute on your left, you have gone below it.\n\nTHE FIXED LANDMARK THIS SIDE SHARES with the lake approach is the Cat Ears tower and the Thumb formation, both of which sit in the canyon between the two lines. Keep them BELOW you.\n\nABOVE THE CHUTE THE TEST IS THE SAME AS THE LAKE APPROACH: the route loses a little height and traverses NORTH on ledges to the base of the Terrible Traverse at about 7,435 ft — a steep exposed snow crossing above a large cliff, or a narrow rock ledge in late season.\n\nHONEST LIMIT: the informal climbers' track fades near Crystal Pass and this stretch is talus, scree and lingering snow with real route-finding. This variant trades a brutal trail for a navigation problem; in cloud it is the harder of the two.",
+        "hazards": [
+          "The climbers' track fades near Crystal Pass and the descent into upper Avalanche Canyon is unmarked",
+          "Early-season snow remnant below Crystal Pass may want an axe and, for some parties, a rope",
+          "No water above Constance Pass except transient snowmelt — carry it",
+          "All the Terrible Traverse hazards above, reached by a longer and more committing line",
+          "Roughly 6.5 miles of closed road at each end"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_constance_finger_traverse": {
+    "area": "wa_mount_constance",
+    "approach_variants": [
+      {
+        "name": "Lake Constance climbers' trail, Avalanche Canyon and the South Chute",
+        "season": "Roughly Jun-Sep. Residual snow in the South Chute makes it a far better climb than bare scree does",
+        "notes": "From the Dosewallips River Road washout at roughly 700 ft, about 5 miles of road-walk or bike on the closed road, crossing Constance Creek on wooden footbridges near the start, to the unsigned, unmaintained Lake Constance climbers' trail at about 1,450 ft.\n\nThe trail gains roughly 3,300-3,400 ft in 1.8-2.2 miles to Lake Constance at 4,800 ft — one of the steepest approaches in the Olympics. The first half-mile is brutal and eases only slightly into denser forest with exposed roots and rock steps needing hands. Expect scramble-grade tread with no switchbacks and cairn-and-flagging route-finding in places. Budget 2.5-3.5 hours with a full pack. Water at Constance Creek partway and at the lake outlet; treat everything.\n\nThe trail skirts the lake's east shore to established campsites at the north end, in a rocky bowl at the mouth of Avalanche Canyon. Most parties camp there rather than going car to car. From camp, head north up scree into the canyon's lower basin, then bend east along a rib.",
+        "baseFinding": "THE TEST IS A TOWER CALLED THE CAT EARS, AND THE PUBLISHED INSTRUCTION IS A TRIGGER RATHER THAN A DESCRIPTION: BEGIN CLIMBING THE SOUTH CHUTE AS SOON AS THE CAT EARS ARE VISIBLE. Follow Avalanche Canyon north from the lake — roughly 0.6 mile — and watch east. The Cat Ears is the tower standing just LEFT of the notch you are aiming for at the top of the chute. The moment it comes into view, turn east and start up. Starting later means more scree; starting earlier puts you on the wrong ground.\n\nIN CLOUD, WHEN THE CAT EARS CANNOT BE SEEN, THE FALLBACK IS THE CHUTE'S OWN SHAPE. The South Chute is a long gully that NARROWS as it climbs, gaining about 1,900 ft from the lake to roughly 6,600 ft at the notch in the south ridge. It is the first substantial gully leaving the canyon eastward above the lake. If the gully you are in is widening rather than narrowing, or if you are still walking north up the canyon bed after well over half a mile, you have passed it and are heading for the North Chute and the Terrible Traverse instead.\n\nSECOND TEST, and it is what confirms you were right about the chute: above the notch you cross a saddle, DROP about 150 ft, and work up a second scree gully to a notch in the summit ridge. A route that only ever goes up is not this one — the deliberate loss of height above the first notch is part of the line. From there the route threads gaps and ledges marked in places by faded WHITE PAINT DOTS. Painted dots are man-made, they do not move, and they are visible at arm's length in fog; if you are seeing them you are on the line.\n\nTHE FINGER TRAVERSE ITSELF IS A TACTILE TEST, WHICH IS THE BEST KIND HERE: a downsloping ledge above a large cliff with a HORIZONTAL CRACK running along its top edge, which you jam your fingers into for balance because the footholds are thin. A rusty decades-old set of fixed pitons sits along it. If there is no continuous crack at hand height above the ledge you are standing on, that is not the Finger Traverse.",
+        "hazards": [
+          "The Finger Traverse is a highly exposed, downsloping narrow ledge; footholds are marginal even with the crack in hand",
+          "Reversing it on descent goes round a blind corner and most parties find that harder than the way up",
+          "1,900 ft of loose scree in the South Chute, which sluffs rock onto parties below",
+          "The fixed pitons on the traverse are decades old — do not trust them without inspection",
+          "One of the steepest approach trails in the Olympics; the descent takes many parties nearly as long as the climb"
+        ]
+      },
+      {
+        "name": "Dosewallips road and Constance Pass, over Crystal Pass into Avalanche Canyon",
+        "season": "Roughly Jul-Sep",
+        "notes": "The long alternative that avoids the Lake Constance trail entirely. From the Dosewallips washout, road-walk or bike roughly 5.5 miles past the Lake Constance turn-off to the old campground and decommissioned ranger station at the true road end. Take the Constance Pass Trail up through forest into subalpine parkland to Constance Pass at about 5,850 ft, then leave the trail and go cross-country west into the head of Crystal Basin and up to Crystal Pass on the Constance-Warrior massif.\n\nFrom Crystal Pass descend south into Avalanche Canyon on an intermittent climbers' path through scree and talus, staying toward the north side of the canyon, and continue DOWN the canyon toward the lake until the South Chute opens on your left (east).\n\nThis is considerably longer than the lake approach and it exists because the lake trail is brutally steep, unmaintained and blowdown-choked. Most parties on it are on a two or three day trip with a camp near Constance Pass or in upper Avalanche Canyon.",
+        "baseFinding": "ENTERING THE CANYON FROM CRYSTAL PASS PUTS THE CAT EARS TEST THE OTHER WAY UP: you must descend PAST the North Chute before the South Chute opens. The Cat Ears tower and the formation trip reports call the Thumb both sit in this stretch of canyon, and on this side you pass them going down rather than meeting them going up.\n\nTHE RELIABLE TEST ON THIS SIDE IS THE CHUTE'S TOP, NOT ITS BOTTOM. The South Chute tops out at a notch in the SOUTH ridge at roughly 6,600 ft, with the Cat Ears tower standing just left of that notch. Coming down the canyon from Crystal Pass you can pick your entry by which notch the gully above you leads to: the one with a tower just left of it is the South Chute. The chute that leads straight toward the Terrible Traverse without a tower beside its notch is the North Chute.\n\nABOVE THE CHUTE THE TESTS ARE IDENTICAL to the lake approach and they are the good ones: cross the saddle, LOSE about 150 ft, up a second scree gully to a notch in the summit ridge, then gaps and ledges marked with faded WHITE PAINT DOTS, then a downsloping ledge with a continuous horizontal finger crack along its top edge and old fixed pitons in it.\n\nHONEST LIMIT: the track fades near Crystal Pass and the drop into the canyon is unmarked. This variant is longer and navigationally harder; it is chosen for the trail it avoids, not for the ground it crosses.",
+        "hazards": [
+          "Unmarked cross-country travel between Constance Pass and Crystal Pass, on talus, scree and lingering snow",
+          "No water above Constance Pass beyond transient snowmelt",
+          "Every hazard on the Finger Traverse itself, reached at the end of a longer day",
+          "Roughly 6.5 miles of closed road at each end"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_constance_north_chute": {
+    "area": "wa_mount_constance",
+    "approach_variants": [
+      {
+        "name": "Lake Constance climbers' trail, then up Avalanche Canyon past the South Chute",
+        "season": "Roughly Jun-Sep. Snow in the chute is an improvement on the scree, but Avalanche Canyon is named for what runs down it in May and June",
+        "notes": "Bike or walk the closed Dosewallips Road (FS 2610) about 5 miles to the unsigned Lake Constance climbers' trail, then the steep, unmaintained trail roughly 3,300 ft in under 2.2 miles to Lake Constance at 4,800 ft. Camp at the north end of the lake.\n\nFrom the lake, head north into Avalanche Canyon. This route is the parallel couloir further into the canyon: where the standard South Chute line turns east and climbs out early, the North Chute keeps you in the canyon bed longer and climbs from higher up it.\n\nIt sees less traffic than the South Chute and is commonly used as one half of a loop — up one, down the other — rather than as a route in its own right. It rejoins the standard line at or just below the Terrible Traverse, and finishes over the summit block and the North Chimney.",
+        "baseFinding": "THE WHOLE ROUTE-FINDING PROBLEM ON THIS ROW IS TELLING THIS CHUTE FROM THE OTHER ONE, AND THE TEST IS: KEEP WALKING UP THE CANYON PAST THE FIRST CHUTE. The published instruction for the South Chute is to start climbing east as soon as the CAT EARS tower is visible, and trip reports describing this line say plainly that you bypass the South Chute entrance and continue up loose talus to the MOUTH OF THE NORTH CHUTE further into Avalanche Canyon. So the discriminator is temporal, not visual: the first opportunity to leave the canyon eastward is the wrong one.\n\nIN CLOUD, where the Cat Ears cannot be seen at all, this is still workable because the test is about the canyon floor under your feet rather than about a skyline. From the lake, follow the canyon NORTH. Do not turn uphill at the first gully. Keep going on the talus until the canyon delivers you to a second, more northerly couloir, and take that.\n\nTHE CONFIRMING TEST IS ABOVE THE CHUTE, and it is what proves you took the right one: the North Chute leads toward the Terrible Traverse, the steep exposed snow crossing above a large cliff at roughly 7,435 ft. The South Chute leads to a notch at about 6,600 ft with the Cat Ears tower just left of it and then, after a saddle and a 150 ft descent and a second gully, to the Finger Traverse — a downsloping ledge with a horizontal finger crack and old pitons. If you top out and find a finger crack, you took the South Chute; if you top out and find a snow traverse over a cliff, you took this one.\n\nHONEST LIMIT: this chute is documented mostly as a variation inside other parties' loops. It is long, loose and less travelled, and there is no marker sequence inside the gully itself.",
+        "hazards": [
+          "Avalanche hazard in Avalanche Canyon and its chutes is called out explicitly for May-June conditions",
+          "A long, loose gully with rockfall onto anyone below",
+          "It commits you to the Terrible Traverse rather than the Finger Traverse — the harder and more exposed of the two crossings",
+          "Less traffic means less boot track and fewer people to ask"
+        ]
+      },
+      {
+        "name": "Dosewallips road and Constance Pass, over Crystal Pass into upper Avalanche Canyon",
+        "season": "Roughly Jul-Sep",
+        "notes": "The alternative that avoids the Lake Constance trail. Road-walk or bike roughly 5.5 miles from the washout past the Lake Constance turn-off to the road end at the old campground and ranger station, then the Constance Pass Trail south and southwest to Constance Pass at about 5,850 ft. Leave the trail, travel cross-country west into the head of Crystal Basin, and climb to Crystal Pass on the Constance-Warrior massif.\n\nFrom Crystal Pass drop south into UPPER Avalanche Canyon. This is the variant that suits this route best of the three Constance rows, because the North Chute is the higher of the two chutes and coming in from Crystal Pass you meet it without walking the whole canyon up from the lake.",
+        "baseFinding": "THIS IS THE ONE APPROACH WHERE THE NORTH CHUTE IS THE EASY ONE TO FIND, BECAUSE YOU ARRIVE ABOVE IT. Dropping into Avalanche Canyon from Crystal Pass on the intermittent climbers' path, the FIRST couloir that offers a line up onto the Constance side is the North Chute. Take it. If you keep descending the canyon you will next pass the Cat Ears and the Thumb and eventually reach the South Chute entrance and then the lake — every one of which means you have gone below the route.\n\nTHE CONFIRMING TEST IS THE SAME AS ON THE LAKE APPROACH: this chute delivers you toward the TERRIBLE TRAVERSE, a steep exposed snow crossing directly above a large cliff at roughly 7,435 ft, reached after the line loses a little height and traverses north on ledges. If you top out on a notch with a tower just to its left and then find a saddle, a 150 ft drop and a ledge with a horizontal finger crack, you have found the South Chute and the Finger Traverse instead.\n\nHONEST LIMIT: the climbers' track fades near Crystal Pass, so this variant's own approach is the navigationally hard part, not the chute.",
+        "hazards": [
+          "Unmarked cross-country between Constance Pass and Crystal Pass on talus, scree and lingering snow",
+          "No water above Constance Pass except transient snowmelt",
+          "Avalanche and rockfall in the canyon and the chute",
+          "Commits to the Terrible Traverse at the end of a long approach day",
+          "Roughly 6.5 miles of closed road at each end"
+        ]
+      }
+    ]
+  },
+
+  "wa_inner_constance_standard": {
+    "area": "wa_inner_constance",
+    "approach_variants": [
+      {
+        "name": "Lake Constance and Avalanche Canyon to the South Gully",
+        "season": "Roughly Jun-Sep, and snow-dependent in a way most Olympic scrambles are not — this line wants snow still bridging the moats in the defile, so early to mid season is better than late",
+        "notes": "The shorter of the two ways in, at roughly 8 miles one-way. Bike or walk about 5 miles of closed Dosewallips Road to the unsigned Lake Constance climbers' trail at about 1,425 ft, then the steep unmaintained boot path up the narrow Constance Creek canyon. At roughly 3,100 ft the tread briefly levels on the valley floor beside the creek at a flat bench with an established fire ring and running water — a common rest stop. From there the last 1,700 ft to Lake Constance at 4,800 ft. Camping at the lake is quota-limited May 1 to September 30.\n\nFrom the lake head north into Avalanche Canyon, barren and rocky in stark contrast to the rainforest below, on faint intermittent climbers' track and snow patches, and continue up-canyon to the broad couloir below the Thumb.",
+        "baseFinding": "THE BASE OF THIS CLIMB IS A FORK, AND THE FORK IS MARKED BY A ROCK FORMATION CALLED THE THUMB. Head up Avalanche Canyon to the broad couloir below the Thumb. That is where the South Chute (which belongs to MOUNT Constance) and the South Gully (which belongs to INNER Constance, this route) diverge. Two summits sit above one canyon and the Thumb is the thing that tells the two lines apart.\n\nTHE FOG TEST THAT DOES NOT NEED THE THUMB, AND IT IS THE BETTER ONE, IS THE SHAPE OF THE GULLY YOU END UP IN. From the broad couloir, veer RIGHT into a steeper secondary couloir, which narrows into a snow-filled DEFILE. That defile constricts to roughly a two-foot gap with moats five to ten feet deep opening on either side of the snow by mid-to-late season. Nothing else in this canyon does that. If your gully stays broad and open all the way up, you are in the Mount Constance South Chute and climbing the wrong peak.\n\nSECOND TEST, higher: above the defile the snow finger goes discontinuous and you stem repeatedly between snow and rock to get round the moats, with short up- and downclimbs on rock where the snow runs out. A steep finger tops out at a notch on the East Ridge near 7,200 ft, gained by a short Class 3-4 rock step. If you are still on continuous snow with no stemming, you have not reached the defile yet.\n\nWHAT GOING TOO FAR LOOKS LIKE, AND IT IS THE RECORDED WAY THIS ROUTE GOES WRONG: from the East Ridge the line pulls naturally toward the SOUTHWEST summit, which has no easy connection across to the true NORTHEAST high point. Follow the East Ridge crest on Class 2-3 pillow basalt to the northeast top; if the ridge you are on is running away southwest, you are heading for the wrong summit.\n\nSAFETY NOTE THAT IS PART OF THE ROUTE-FINDING: snow blocks calve out of the defile constriction as the day warms — a refrigerator-sized block struck a climber there. Move through it quickly and probe the bridges over the moats before weighting them.",
+        "hazards": [
+          "Deep moats on both sides of the snow finger in the South Gully defile, needing repeated stemming to bypass",
+          "Collapsing or sliding snow blocks in the constriction as the day warms — a documented injury",
+          "Notoriously loose, rotten Olympic pillow basalt with rockfall on warm days",
+          "Easy to be drawn onto the southwest summit, which has no easy access to the true northeast high point",
+          "Steep snowfields and a small glacier high on the route early season",
+          "The Lake Constance trail is one of the steepest and least maintained in the range"
+        ]
+      },
+      {
+        "name": "Dosewallips road to Constance Pass, then Crystal Basin and Crystal Pass",
+        "season": "Roughly Jul-Sep, once the snow below Crystal Pass is safe",
+        "notes": "About 16 miles one-way and worth it to some parties precisely because it avoids the Lake Constance trail's brutally steep, unmaintained, blowdown-choked lower section. From the Dosewallips washout at roughly 600 ft, bike or walk the closed roadbed — working round the washout on a riverside bypass — roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground and decommissioned ranger station at the true road end, about 6.5 miles and 1,900 ft of cumulative gain from the gate.\n\nPick up the Constance Pass Trail and climb south and southwest through forest into subalpine parkland to Constance Pass at about 5,850 ft. The upper stretch is steep open meadow and scree, with the last reliable water at creek crossings below treeline.\n\nFrom Constance Pass leave the trail, travel cross-country west into the head of Crystal Basin and climb to Crystal Pass, the windswept notch on the Constance-Warrior massif that divides the Dosewallips side from Avalanche Canyon. Expect a two or three day trip with a camp near Constance Pass or in upper Avalanche Canyon.",
+        "baseFinding": "FROM CRYSTAL PASS THE BASE OF THE CLIMB IS DIRECTLY BELOW YOU RATHER THAN ABOVE YOU, WHICH IS THE ONE REAL ADVANTAGE OF THIS SIDE. Descend south into upper Avalanche Canyon on the intermittent climbers' path through scree and talus, keeping to the RIGHT (north) side of the canyon, past the Thumb, and then contour and climb toward Inner Constance's northeast side.\n\nTHE TEST IS STILL THE THUMB AND THE DEFILE, and it still works from above: the fork you want is the one where the South Gully leaves the broad couloir and veers into a steeper secondary couloir that NARROWS to a two-foot gap with deep moats. Coming from Crystal Pass you can also take the northeast side directly — a short step just above the pass leads into a rising traverse along the RIGHT side of the north ridge crest, broken blocky Class 2-3 with occasional Class 4 and low fifth where the crest steepens.\n\nTHE FOG TEST FOR THAT NORTHEAST LINE IS WHICH SIDE OF THE CREST YOU ARE ON. Stay on the crest's RIGHT-hand side as you climb. If you have crossed over and are traversing on the other flank, you are off the line, and the rock over there is worse.\n\nWHAT GOING TOO FAR LOOKS LIKE: the same trap as the other variant — the mountain pulls toward the SOUTHWEST summit, which does not connect easily to the true northeast high point. Keep working toward the NORTHEAST top.\n\nHONEST LIMIT: the informal climbers' track fades near Crystal Pass and this stretch is talus, scree and early-season snow with real route-finding demands. A rope and axe may be prudent on the snow remnant below the pass early in the year.",
+        "hazards": [
+          "The climbers' track fades near Crystal Pass; unmarked talus, scree and snow between there and Constance Pass",
+          "Notoriously rotten pillow basalt with constant rockfall on warm days",
+          "A steep, committing chimney and roof section high on the peak that trip reports call the cave of despair",
+          "Being drawn onto the southwest summit",
+          "No water above Constance Pass except transient snowmelt",
+          "Roughly 6.5 miles of closed road at each end"
+        ]
+      }
+    ]
+  },
+
+  "wa_inner_constance_northwest_buttress": {
+    "area": "wa_inner_constance",
+    "approach_variants": [
+      {
+        "name": "Upper Dungeness Trail to Home Lake, then the Home Creek basin to the boulder camp",
+        "season": "Roughly Jul-Sep",
+        "notes": "From US 101 near Sequim Bay State Park turn onto Louella Road, go about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the Upper Dungeness Trailhead just across the Dungeness River bridge. Large parking area, vault toilet, no potable water, Northwest Forest Pass or Interagency pass required.\n\nHike Upper Dungeness Trail #833 up the river — easy, shaded, river-grade — to Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles and about 4,890 ft. Continue on the Constance Pass trail as it climbs out of the timber into rocky flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and drop to Home Lake at about 9.3 miles and roughly 5,308-5,330 ft, some 500 ft below Constance Pass.\n\nFrom the lake, work up the Home Creek basin south-southwest toward the peak. Camp at the LARGE BOULDERS directly northwest of the summit, just south of Home Creek. That boulder camp is the documented basecamp for this route and it is where the first-ascent party camped.",
+        "baseFinding": "THE ROUTE STARTS AT THE TOP OF A SCREE FIELD WHERE AN OBVIOUS RAMP BEGINS, AND THE THING THAT IDENTIFIES THE RAMP IS THE BIGGEST CORNER ON THE FACE. From the boulder camp, climb the scree field to the base of the wall and pick up the obvious ramp. Follow it round CLIMBER'S RIGHT of the PROMINENT DIHEDRAL — the one large, unmistakable corner in that section of face — to a steep Class 3/4 gully. If the ramp you are on is taking you LEFT of the big corner, you are on the wrong side of it.\n\nTHE SECOND TEST IS AT THE TOP OF PITCH ONE AND IT IS A COLOUR YOU CAN READ AT ARM'S LENGTH: after the first pitch this route turns CLIMBER'S LEFT onto an obvious ledge running along a GREEN-LICHEN-COVERED FACE. Green lichen on rock is visible in cloud in a way a skyline feature is not. If your first pitch does not end at a ledge beneath a lichen-green face, you are not on the Northwest Buttress — and specifically, if you have carried straight on up a crack system instead of stepping left, you are on Sean's Route / Second Wind, which shares this start and diverges exactly here.\n\nWHAT THE ROW'S OWN TEXT ALREADY TELLS YOU, AND IT IS THE HONEST LIMIT: the face is in full view from the boulder camp and from below, and that is described as the only reliable chance you get to pick out the ramp and the green-lichen ledge. Look at it, photograph it and fix the line in your head from camp. This is a route to identify in the evening and climb in the morning; there is no marker sequence that will find it for you if you walk up into the wall in cloud having never seen it.",
+        "hazards": [
+          "Rock quality described by climbers who have scouted it as among the worst in the Olympic Mountains, and as bad as anything in the range near the summit ridge",
+          "No fixed gear anywhere on the route — every rappel station on descent has to be built and left",
+          "Sparse protection with long runouts",
+          "The guidebook description for this line is thin and climbers who know it advise ground-truthing it in person",
+          "A 9+ mile approach with meaningful re-ascent over Constance Pass on the way out"
+        ]
+      }
+    ]
+  },
+
+  "wa_inner_constance_seans_route": {
+    "area": "wa_inner_constance",
+    "approach_variants": [
+      {
+        "name": "Upper Dungeness Trail to Home Lake and the boulder camp — the same start as the Northwest Buttress",
+        "season": "Roughly Jul-Sep",
+        "notes": "Identical to the Northwest Buttress: Upper Dungeness Trailhead at the end of FS 2870, Trail #833 to Camp Handy at about 3.4 miles and Boulder Camp at roughly 6.1-6.4 miles, then the Constance Pass trail over into Olympic National Park and down to Home Lake at about 9.3 miles. Basecamp is the large boulders directly northwest of the summit, just south of Home Creek. Published approach distance is usually given as about 8.5 miles from the trailhead to basecamp; the northwest face comes into view from below the lake.\n\nThis route and the Northwest Buttress share their approach, their camp, their scree field and their first pitch. They are one climb until the top of that pitch. The first-ascent party's round trip from camp — climb plus the descent into Avalanche Canyon and back round to the Home Lake cirque — ran about 12.5 hours.",
+        "baseFinding": "THE BASE IS SHARED WITH THE NORTHWEST BUTTRESS AND SO IS THE TEST FOR IT: from the boulder camp, up the scree field to the OBVIOUS RAMP, and follow it round CLIMBER'S RIGHT of the PROMINENT DIHEDRAL to a steep Class 3/4 gully. Right of the big corner, not left.\n\nTHE TEST THAT SEPARATES THIS ROUTE FROM THE BUTTRESS COMES AT THE TOP OF PITCH ONE, AND IT IS A DECISION RATHER THAN A LANDMARK — WHICH IS WHY IT IS WORTH KNOWING BEFORE YOU LEAVE THE GROUND. At that point the Northwest Buttress steps CLIMBER'S LEFT onto an obvious ledge along a green-lichen-covered face. Sean's Route does NOT. It stays with the crack system and follows it straight on up rotten loose rock for roughly three pitches in total.\n\nTHE CONFIRMING TEST IS TACTILE, OVERHEAD AND UNMISTAKABLE IN ANY VISIBILITY: about three pitches up, the crack system ends at a CAVE BENEATH AN OVERHANGING ROOF. You cannot mistake being under a roof. That cave is the route's crux and its identity — you build an anchor in it and make a committing move out by underclinging the roof and traversing right about 10 to 15 feet onto the ramp leading to the slab above. If you have climbed three pitches and there is no roof over you, you are on the Buttress or on neither.\n\nHONEST LIMIT: this is a shared base with a pitch-one divergence rather than a route with a base of its own, and it is recorded that way rather than dressed up. Above the roof it is a few pitches of Class 4 to low fifth to the southwest false summit, then it rejoins the Northwest Buttress for the last pitch to the true top. Protection averages one usable placement every 20 to 100 feet.",
+        "hazards": [
+          "Sparse, widely spaced protection — roughly one usable placement per 20 to 100 feet — so fall consequences are severe on the crux pitches",
+          "Persistent rockfall on typical loose Olympic basalt, and the first three pitches are explicitly rotten",
+          "The move out of the cave is exposed and committing, and retreat from it is not simple",
+          "No fixed gear; descent stations must be built",
+          "The descent is not the ascent line — it drops into Avalanche Canyon on loose sandy ledges and traverses back round to the Home Lake cirque"
+        ]
+      }
+    ]
+  },
+
+  "wa_the_brothers_traverse": {
+    "area": "wa_the_brothers",
+    "approach_variants": [
+      {
+        "name": "Lena Lake Trail and the Valley of the Silent Men to the climbers' camp, then the North Peak side",
+        "season": "June is the usual recommendation, with consolidated snow in the Great Basin; conditions vary a lot year to year",
+        "notes": "From the Lena Lake Trailhead on FR-25 (Hamma Hamma Road) at roughly 685-750 ft, take Lena Lake Trail #810 about 3 miles to Lena Lake at about 1,800 ft. Past the lake the trail runs up a remote forested canyon known as the Valley of the Silent Men to the climbers' camp roughly 6 miles from the trailhead. Most parties camp at Lena Lake or at the climbers' camp rather than trying it in a day.\n\nFrom camp this route splits away from the ordinary South Couloir line: cross the creek westward, cross a slide meadow and old burn scar, and climb a wide gully north to about 5,500 ft to gain the North Peak side of the mountain. The traverse is recommended north to south, so the North Peak is the start and the South Brother is the finish.",
+        "baseFinding": "THE ARRIVAL TEST IS A STEP IN THE RIDGE CREST AT ABOUT 6,100 FT, AND THE WAY YOU KNOW IT IS THE RIGHT ONE IS THE THING THAT HAPPENS IF YOU GO 100 FT HIGHER. Working up and rightward from camp on scree, heather and lumpy basalt, crossing many small ribs and gullies, you meet the crest. There are two places you can meet it. The higher one, at about 6,200 ft, is a small notch whose FAR SIDE IS A 200-FOOT CLIFF — a party that tops out there has to back off and traverse out on exposed ledges with Class 3-4 slots between them. The one you want is the small STEP in the crest at about 6,100 ft, from which the ground drops steeply but climbably into the snow-filled Great Basin.\n\nSO THE FOG TEST IS: TOP OUT, THEN LOOK DOWN. If the far side goes, you are at the step and on route. If the far side is a cliff, you are a hundred feet too high — do not try to force it, come back down and traverse.\n\nSECOND TEST, once in the Great Basin: from it you climb a moderately steep snow couloir angling toward the North Brother, narrowing to a snow finger that reaches the summit ridge. If your couloir is running away from the north summit rather than toward it, you crossed the basin in the wrong direction.\n\nWHAT THE TRAVERSE ITSELF FEELS LIKE, so nobody mistakes the connecting ridge for a mistake: the crest between the two Brothers is giant boulders forming a jagged run of horns and pinnacles, and traversing it is slow. Slow is correct here. The route is roughly seven roped pitches — fourth class to the notch, steep snow into the Great Basin, moderate snow on the east ridge, a sparsely protected rock traverse on the west side, mixed ground with moat belays, and a final steep couloir to the South Brother.",
+        "hazards": [
+          "The 6,200 ft notch drops onto a 200 ft cliff — a documented dead end that costs time and exposes a party on retreat ledges",
+          "Steep snow descent into the Great Basin",
+          "Exposed fourth-class scrambling to the notch",
+          "A sparsely protected rock traverse on the west side of the ridge",
+          "Moat belays on the mixed sections, which move with the season",
+          "A long committing day with no easy bail once across the Great Basin"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_christie_west": {
+    "area": "wa_mount_christie",
+    "approach_variants": [
+      {
+        "name": "North Fork Quinault to Low Divide, then Martins Park and the north couloir",
+        "season": "Roughly Jul-Sep. Firm morning snow in the couloir is what makes this line reasonable; late season it thins to loose rock",
+        "notes": "READ THE NAME ON THIS ROW WITH CARE — it says West Slopes and the climb is on the NORTH side. Every published account climbs the north couloir out of Martins Park to a north-ridge saddle, crosses the Christie Glacier to a col east of the summit, and finishes up the southeast ridge.\n\nFrom the North Fork Quinault Ranger Station at roughly 500 ft, at the end of the North Fork Quinault River Road about 17 miles east of US-101 at Lake Quinault, follow the North Fork Quinault River Trail upstream past Wolf Bar at about 2.5 miles, Halfway House Camp near 5 miles, Elip Creek near 6.5 miles, Trapper Shelter near 8.1 miles (day and emergency use only), a ford of the North Fork at Sixteen Mile Camp near 13.2 miles that can run thigh-deep in high water, and Low Divide near 15.3-16.7 miles, which sits on the actual Quinault-Elwha drainage divide.\n\nFrom Low Divide take the rough fisherman's path into Martins Park and the Martin Lakes basin and camp there.",
+        "baseFinding": "FROM LOWER MARTINS PARK THERE IS ONE BROAD SNOW-AND-ROCK COULOIR AND IT RUNS SOUTH TOWARD THE PEAK. That is the whole arrival test and it is why parties consistently report finding it easily: you walk out of the lower meadows and over to the base of the snowfield. You are at the base when the meadow ends and continuous snow begins, with the couloir running away from you SOUTH — not west. If the drainage you are looking up runs any other direction, it is not this one.\n\nTHE CONFIRMING TEST IS A NUMBER AND A DURATION: the couloir gains about 2,100 ft and tops out at a SADDLE ON THE NORTH RIDGE near 5,600 ft, and parties consistently report about three and a half hours for it. If you have climbed far more than 2,100 ft without reaching a saddle, you are in the wrong gully.\n\nSECOND TEST, past the saddle, and it is the one that catches the real trap on this peak: from the saddle you DROP down loose gravelly slopes to the lower edge of the CHRISTIE GLACIER. A route that only ever climbs is not this one. Rope up — reports describe few or no open crevasses but the angle is enough that parties treat it as glacier ground anyway. At the top of the glacier a MOAT forms where ice meets rock; in a good year it is a single easy step across to the high col. Check it before committing, because it is the thing that changes year to year.\n\nWHAT WAITS AT THE COL, so it is not a surprise: the barrier above it is a chossy eroded cliff band, very steep to locally overhanging, and it is the crux of the peak, not a formality. It has changed between recent seasons — one party found the expected weakness gone and had to force a line to the right across an extremely loose, essentially unprotectable ledge on a tight rope. Expect dense krummholz above it before the rock improves and the Class 2-3 southeast ridge leads to the summit.",
+        "hazards": [
+          "A loose, chossy, poorly protected Class 4 step above the high col that has changed between seasons — treat published descriptions of it as provisional",
+          "Glacier travel on the Christie Glacier with a moat at its top whose width varies year to year and by time of day",
+          "Steep snow in the entry couloir with runout risk, and refreezing snow in it on a late return",
+          "Dense subalpine krummholz above the col",
+          "A thigh-deep ford of the North Fork Quinault at Sixteen Mile Camp in high water",
+          "Extreme remoteness — an injury near the summit means a multi-day self-extraction or a helicopter"
+        ]
+      },
+      {
+        "name": "Elwha side to Low Divide, from Whiskey Bend",
+        "season": "Roughly Jul-Sep, on the same window as the Quinault side",
+        "notes": "Low Divide is a divide, and the Elwha reaches it from the north just as the Quinault does from the south. Historically this meant the Elwha River Trail from the Whiskey Bend Trailhead. Since the September 2024 Olympic Hot Springs Road washout, Whiskey Bend has been closed to vehicles, which adds an extra 6.2 miles each way on foot or by bike from the Madison Falls parking area simply to reach the trailhead — check current road status before choosing this side, because that closure is what decides whether it is competitive with the Quinault.\n\nFrom Low Divide the route is identical to the Quinault variant: the fisherman's path into Martins Park and the Martin Lakes basin, camp, and the north couloir.\n\nNo mileage is quoted for this side because published figures assume Whiskey Bend is drivable and most currently are not.",
+        "baseFinding": "IDENTICAL TO THE QUINAULT VARIANT ONCE YOU ARE AT LOW DIVIDE, and that shared test is a good one: from LOWER Martins Park there is ONE broad snow-and-rock couloir and it runs SOUTH toward the peak. Walk to where the meadow ends and the snow begins. Up it about 2,100 ft, roughly three and a half hours, to a saddle on the NORTH ridge near 5,600 ft; then DOWN loose gravel to the Christie Glacier; then the moat at the glacier's top and the high col east of the summit.\n\nTHE EXTRA TEST THIS SIDE NEEDS is at Low Divide itself, because you arrive from the opposite direction. Low Divide is a trail junction and the site of the historic ranger station, and it is where the climbers' route LEAVES maintained trail for Martins Park. Coming up from the Elwha, that turn is on your right as you crest the divide and it is a rough fisherman's path, not a signed one. If you have started descending toward the Quinault, you have walked past it.",
+        "hazards": [
+          "Road closure at Olympic Hot Springs Road adds 6.2 miles each way and may change season to season",
+          "Everything above Low Divide is the same as the Quinault variant: the Class 4 step above the col, the Christie Glacier moat, and the entry couloir",
+          "A long Elwha valley walk with river crossings",
+          "No cell coverage and multi-day self-rescue exposure"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_cameron_standard": {
+    "area": "wa_mount_cameron",
+    "approach_variants": [
+      {
+        "name": "Obstruction Point Road, Grand Pass and the Cameron Pass Trail",
+        "season": "Roughly Jul-Sep, and gated by the road: Obstruction Point Road is usually open only early-to-mid July through mid-October",
+        "notes": "READ THE NAME ON THIS ROW WITH CARE — it says Southeast Slopes, and Cameron Pass lies WEST of the summit. The climb is a west-ridge walk gained at the pass. A party that reads the title and heads southeast off the pass is walking into the Dosewallips headwaters.\n\nDrive the narrow one-lane gravel Obstruction Point Road — Olympic National Park's highest road, topping out at 6,135 ft — 8 miles east from the Hurricane Ridge Visitor Center to the Obstruction Point trailhead. Hike the Grand Pass Trail roughly 6 miles to Grand Pass at about 6,450 ft; the drop off the far side toward Cameron is steep and slick in wet weather or lingering snow. The trail then crosses several unbridged branches of Cameron Creek in a wet meadow — reliable water, and tread that is easy to lose in fog or high brush — to the Cameron Basin camps at about 6,000 ft near 8.3 miles, and on up to Cameron Pass at roughly 6,450-6,500 ft near 9.3 miles. Bear canister required in the basin; there are no trees to hang food. Steep snow can persist on the pass into late July or August and the climbers' path is frequently buried there.",
+        "baseFinding": "THE BASE IS CAMERON PASS AND THE TEST IS THE DIRECTION YOU TURN OUT OF IT: THE RIDGE YOU CLIMB RISES TO THE EAST. The pass is west of the summit. From it, leave the trail and follow the broad ridge crest EAST and UP. If the ground under you is falling away, or you are contouring around a slope rather than walking a crest, you are not on the route — the correct line is a ridge, and a ridge in cloud is identifiable by the fact that the ground drops on both sides of you.\n\nSECOND TEST, AND IT IS THE ONE THAT MATTERS MOST HERE: THE RIDGE IS A SEQUENCE OF FALSE SUMMITS. It is mostly Class 1-2 and it crosses many bumps before the true summit. So a high point that arrives sooner and more easily than you expected is a false one. Do not stop on the first thing that stops going up; keep the crest under you and keep going until a short Class 3-4 section leads to the top — that step is the deciding feature of the peak.\n\nTHIRD TEST, for the far end: Cameron is a triple summit and the crest continues past the true top toward the Middle Peak, which has spots of Class 3-4, and then to the East Peak. If you have started descending steeply and then re-climbing on harder ground, you have gone past the true summit and are onto the traverse. That is a legitimate outing; it is not this route.\n\nHONEST LIMIT AND A LIVE DISAGREEMENT: this row's own summit waypoint calls the EAST Peak the true 7,190 ft high point, while traverse accounts reach the true summit FIRST from Cameron Pass and then go on to Middle and East. Those cannot both be right. Carry a map, count your summits, and do not treat either the row title or the waypoint name as settled — see _DEFECTS.",
+        "hazards": [
+          "Route-finding on open off-trail slopes above Cameron Basin, and faint brushy tread on the Cameron Pass Trail beyond the basin",
+          "Steep lingering snow on Cameron Pass into late July or August, over a buried climbers' path",
+          "Loose rock, scree and talus on the summit slopes and along the ridge connecting the three summits",
+          "No reliable water above Cameron Basin and minimal to no cell coverage",
+          "Obstruction Point Road closes for most of the year and is not a route you can count on before July"
+        ]
+      },
+      {
+        "name": "Deer Park and the Cameron Creek Trail",
+        "season": "Roughly Jul-Sep, and it opens earlier than Obstruction Point in some years because Deer Park Road is a different road on a different aspect",
+        "notes": "The other trail-based way into Cameron Basin, and the one worth knowing when Obstruction Point Road is still closed. From Deer Park, the Grand Ridge and Cameron Creek trail system leads into the Cameron Creek drainage and up to Cameron Basin and Cameron Pass from the northeast.\n\nIt is longer than the Obstruction Point line and much of the Cameron Creek tread receives little to no maintenance — trip reports describe bushwhacking through dense growth, chest-high berry bushes, and log crossings barricaded by jams. Long sleeves and trousers are recommended by everyone who has written it up.\n\nOnce at Cameron Pass the climb is identical to the Obstruction Point variant.",
+        "baseFinding": "IDENTICAL ONCE YOU ARE AT CAMERON PASS: leave the trail and follow the broad ridge crest EAST and UP, over many false summits, until a short Class 3-4 step leads to the top. The pass is WEST of the summit whatever the row title says.\n\nTHE EXTRA TEST THIS SIDE NEEDS is in Cameron Basin, because you arrive up the creek rather than over Grand Pass. The Cameron Creek tread crosses several unbridged branches of the creek in wet meadow and is genuinely easy to lose in brush or fog. The handrail is the creek: stay with the drainage and keep climbing it toward the basin at about 6,000 ft. The established camps in the upper basin are the confirmation that you are in the right cirque, and the pass is above them.\n\nWHAT GOING TOO FAR LOOKS LIKE: if you crest a pass and the ground beyond drops steeply into a large river valley to the south, you are looking at the Dosewallips headwaters and you have crossed Cameron Pass rather than turning up the ridge at it.",
+        "hazards": [
+          "Long stretches of unmaintained, brushy tread with log jams at creek crossings",
+          "Route-finding in wet meadow where the tread disappears",
+          "All the summit-ridge hazards of the standard variant, reached after a longer approach",
+          "Bear canister required; no reliable water above the basin"
+        ]
+      },
+      {
+        "name": "Dosewallips road walk and the long push up-valley into Cameron Basin",
+        "season": "Roughly Jul-Sep",
+        "notes": "Recorded because it is what the row's own approach_logistics still points at, and because it is a real historical approach — but it is rarely chosen today and this batch does not recommend it over the two above.\n\nFrom Brinnon, the Dosewallips River Road has been closed to vehicles at a washout about a mile in since 2002. That forces a long walk or bike up the old roadbed before you even reach the Dosewallips River Trail, and then a multi-day push up-valley into Cameron Basin. It adds many miles over either northern approach.\n\nIf you take it, the climb from Cameron Pass is unchanged.",
+        "baseFinding": "IDENTICAL AT THE PASS: the ridge rises EAST out of Cameron Pass, over many false summits, to a short Class 3-4 step and the true top.\n\nTHE TEST THIS SIDE NEEDS IS ABOUT WHICH VALLEY YOU ARE IN, because approaching from the south you come up beneath the peak's southeast face — the aspect the row's title wrongly names — and it does not go. Cameron's southeast side rises over 3,300 ft above the Dosewallips River in about one horizontal mile. If you are standing under that and looking for a line up it, you are on the wrong side of the mountain: the route is the west ridge, gained at the pass, and getting there from this side means continuing up-valley and round into Cameron Basin first.\n\nHONEST LIMIT: this is the approach the on-file trailhead record names and it is not the one the on-file approach prose describes. See _DEFECTS.",
+        "hazards": [
+          "Many extra miles including a long closed-road walk at each end",
+          "A multi-day valley approach with fords and blowdown",
+          "The southeast face of Cameron is not a route and the approach passes beneath it",
+          "All the summit-ridge hazards of the standard variant"
+        ]
+      }
+    ]
+  },
+
+  "wa_warrior_peak_standard": {
+    "area": "wa_warrior_peak",
+    "approach_variants": [
+      {
+        "name": "Upper Dungeness Trail, Camp Handy and Boulder Shelter to the southeast cirque",
+        "season": "Roughly Jul-Sep. Snow in the summit couloir into early season is an improvement on the scree that replaces it",
+        "notes": "From US-101 near Sequim Bay State Park turn on Louella Road for a mile, then Palo Alto Road for 1.1 miles to the forest boundary, where Palo Alto becomes FS Road 28. Right on FS 2880 past Dungeness Forks Campground, then left on FS 2870 for 8.7 miles to the Upper Dungeness Trailhead. Northwest Forest Pass or interagency pass required at the kiosk.\n\nTrail #833.2 is the shortest and easiest approach. Hike 3.2-3.4 miles and about 600 ft to Camp Handy at roughly 3,100 ft, a riverfront meadow with a cedar-shingle shelter, then take the uphill fork and continue about 3 miles and 1,850 ft to Boulder Camp / Boulder Shelter at 6.3-6.4 miles and roughly 4,890-4,950 ft. The creek there is the most reliable water on the approach.\n\nFrom Boulder Shelter hike SOUTH about 2 miles on the Dungeness / Constance Pass trail, crossing several creeks, toward Home Lake.",
+        "baseFinding": "THE FIRST TEST IS A CREEK YOU MUST NOT CROSS. Leave the trail BEFORE crossing the major stream that drains the Warrior / Inner Constance cirque. That stream is the last and largest of the several you meet going south from Boulder Shelter. Then climb EAST — steep forest, then steep open meadow, then talus — STAYING NORTH OF THE STREAMBED the whole way. The streambed is the handrail and it stays on your right. If you have crossed it and it is now on your left, you are on the wrong side of the drainage.\n\nTHE ARRIVAL TEST IS THE CIRQUE AT ABOUT 5,900 FT, and it is unambiguous because it is a closed basin: the ground stops rising in front of you and the headwall closes round. From there, head NORTH to the obvious COULOIR BETWEEN THE TWO PEAKS. Warrior has twin summits and the couloir runs up between them to a saddle at about 7,000 ft. There is one gully in that headwall with a summit on each side of it. If the gully you are in has a summit on only one side, it is not the one.\n\nTHE TEST AT THE TOP OF THE COULOIR IS WHICH WAY TO TURN, AND IT IS THE SINGLE MOST USEFUL SENTENCE FOR THIS PEAK IN FOG: AT THE SADDLE, THE HIGHER PEAK IS ON YOUR RIGHT. The southeast summit is the true top; the northwest summit at roughly 7,285 ft is the lower one. Coming up the couloir from the cirque, the true summit is to the RIGHT. Turn left and you will climb the wrong peak on ground just as loose.\n\nSECOND TEST, on the summit block: above the saddle there is 20 to 50 feet of exposed, poor-quality rock rated Class 4 to low fifth on the block's NORTHWEST side, often gained over steep snow or a snow moat, and many parties fix a hand line on it. If your last obstacle before the top is a walk rather than a short difficult rock step, you are on the wrong summit.\n\nWHAT THE SEASON CHANGES: the couloir is steep but straightforward when snow-filled, common early season; melted out it is a brutal scree slog to the same saddle. Both are the route.",
+        "hazards": [
+          "Loose, poor-quality rock on the final headwall above the 7,000 ft saddle — a recurring theme in every account",
+          "Rockfall in the couloir between the twin summits, worst with parties above or after freeze-thaw",
+          "Glissade and uncontrolled-slide risk descending the snow chute if the runout is not fully visible — one party described nearly going over a cliff band on nearby terrain",
+          "Faint use-trail-only route-finding above the trail through forest, meadow and talus",
+          "Fast-moving Pacific frontal systems and late-summer afternoon thunderstorms"
+        ]
+      },
+      {
+        "name": "Home Lake basecamp, from either the Dungeness or the Dosewallips side",
+        "season": "Roughly Jul-Sep",
+        "notes": "Home Lake at about 5,308-5,330 ft, walled in by Mount Constance and Warrior Peak just below Constance Pass, is the standard basecamp for this climb and it is reachable from two directions: north up the Upper Dungeness / Constance Pass trail at roughly 9.3 miles from the Upper Dungeness Trailhead, or south from the Dosewallips road end over Constance Pass. An Olympic National Park wilderness permit is required.\n\nCamping at Home Lake rather than pushing from Boulder Shelter turns this into a comfortable two-day trip and puts you a mile from the cirque. It is also the camp shared with Mount Fricaba, Mount Mystery and Mount Deception parties, so it is well-used ground with an established site.\n\nFrom the lake, leave the basin and climb EAST into the Warrior / Inner Constance cirque through meadow and talus.",
+        "baseFinding": "FROM HOME LAKE THE TEST IS THE SAME STREAMBED, WORKED FROM THE OTHER END: leave the lake basin heading EAST into the cirque, STAYING NORTH OF THE STREAM that drains it. The stream is the handrail either way — approaching from Boulder Shelter you must not cross it, and approaching from the lake you must keep it below and to your right as you climb.\n\nTHE ARRIVAL TEST IS THE SAME CLOSED CIRQUE AT ABOUT 5,900 FT, and then the obvious COULOIR BETWEEN THE TWO PEAKS running north to the saddle at about 7,000 ft — the one gully with a summit on each side of it.\n\nAND THE SAME TURN AT THE TOP: AT THE SADDLE THE HIGHER, TRUE SUMMIT IS ON YOUR RIGHT (southeast). The 20 to 50 ft Class 4 / low fifth step on the block's northwest side is the last obstacle; if there is no step, you are on the northwest summit.\n\nHONEST LIMIT: this variant differs from the one above only in where you sleep and which direction you walk in. It is recorded separately because the row is titled for the Home Lake approach and a reader should not have to reconcile that with an approach description that starts from Boulder Shelter.",
+        "hazards": [
+          "Same as the Boulder Shelter variant: loose summit rock, couloir rockfall, glissade runout, faint route-finding",
+          "Home Lake sits below Constance Pass, so an exit north regains meaningful height before the long descent",
+          "Wilderness permit required and the site is popular with parties climbing four different peaks"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_stone_lake_of_angels": {
+    "area": "wa_mount_stone",
+    "approach_variants": [
+      {
+        "name": "Putvin Trail from Hamma Hamma Road to Lake of the Angels",
+        "season": "Roughly Jun-Sep. Snow lingers in the north-facing basin above the lake well into summer",
+        "notes": "From the Putvin Trailhead on Hamma Hamma River Road (FS 25) at about 1,565-1,600 ft — an unmarked roadside pullout, roughly 4.5 miles past the Lena Lake Trailhead — the Putvin Trail is an unmaintained, primitive user trail that climbs steeply and directly from the first steps. Expect root-staircase steps and boot-track tread through forest for the first mile. In recent years a slide near road mile 10.5 has at times blocked the last 1.2 miles of road, adding a road-walk; check Forest Service status.\n\nAbout halfway up the trail meets a rock headwall requiring hand-over-hand climbing, with a large tree root as the key handhold and, historically, a fixed handline on the steepest pitch. Above it the trail eases into subalpine forest and heather meadows, passing near Whitehorse Basin and the Pond of the False Prophet, and reaches Lake of the Angels at roughly 4,850-4,920 ft in a cirque below Mount Stone's south face — about 3 to 3.5 miles and 3,000 ft of gain. Little to no reliable water on the lower trail; carry enough to reach the lake.",
+        "baseFinding": "THE BASE OF THE CLIMB IS A NOTCH IN MOUNT STONE'S WEST RIDGE, AND THE TEST FOR IT IS A TURN YOU MAKE BEFORE A GATE. From Lake of the Angels contour and climb toward ST. PETER'S GATE — the obvious notch above the basin. JUST BEFORE THE GATE, TURN SHARPLY LEFT (SOUTH) and traverse along the BASE OF THE CLIFFS to a notch in the west ridge. If you walk through St. Peter's Gate, you have gone too far; the Gate is the marker you turn short of, not the one you pass through.\n\nThat works in cloud because the cliff base is a tactile handrail: once you have made the turn, you keep rock on one side of you the whole traverse. Lose contact with the cliff and you have drifted downhill.\n\nSECOND TEST, at the notch: turn RIGHT and climb toward a first sub-summit rock, then up a short LOW CLASS 3 CHIMNEY to its top. A chimney is a shape you can feel with both hands. If the first difficulty above the notch is a face or a slab rather than a chimney you can bridge, you are not on the line.\n\nTHIRD TEST, on the summit spire: from the sub-summit cross a brief, somewhat exposed ridge to the base of the true summit spire, then follow a GROOVE on the LEFT side that BENDS RIGHT, where a faint climbers' path leads the last steps to the top. Left then right — a groove that runs straight up is not it.\n\nWHAT THE ROW'S OWN TIMING SAYS: about 2.5 hours up from the Lake of the Angels camp and about 1.5 hours back down. If you have been on the ground above the lake far longer than that without finding the notch, you have most likely missed the turn short of the Gate.\n\nFOG WARNING SPECIFIC TO THIS MOUNTAIN: Mount Stone has more than one summit, and parties have confused the true south summit with the Middle and North summits in cloud. Count your ridges.",
+        "hazards": [
+          "Trail-less, route-finding-dependent terrain above Lake of the Angels",
+          "Near-vertical root and rock steps on the lower Putvin Trail, genuinely exposed when wet, and worse descending on tired legs",
+          "Loose rock on the headwall and summit block with rockfall onto parties below",
+          "An ambiguous Class 3/4 crux near the summit",
+          "Fog is common here and multiple parties have lost the route on the upper mountain"
+        ]
+      },
+      {
+        "name": "Lena Lake and Upper Lena Lake, the St. Peter's traverse from the east",
+        "season": "Roughly Jul-Sep, once the off-trail benches and passes are largely clear",
+        "notes": "The other side of the same notch. From the Lena Lake Trailhead on FS 25 at roughly 600-750 ft, take the well-graded Lena Lake Trail #810 about 3 miles to Lena Lake at about 1,800 ft, then the steep primitive tread up the West Fork Lena Creek drainage roughly 3.5 more miles to Upper Lena Lake at about 4,550 ft, some 6.5 miles and 4,000 ft from the trailhead. Upper Lena Lake is the last maintained-trail camp and the last reliable water before the traverse goes cross-country; wilderness permit and bear canister required.\n\nFrom Upper Lena Lake, leave the trail and head west on the Scout Lake way-trail across meadows and heather past Lena Tarn to Scout Pass at about 5,200 ft, down slightly to Upper Scout Lake, round it into Scout Basin, and up to Ullin's Pass at about 5,000 ft above the tarns known as Ullin's Bathtubs. From there a rising traverse above the small lakes leads to a snow ramp across a steep hillside below Mount Stone that ends at a loose moraine, and then exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft.\n\nThis is a two- or three-day trip and it is chosen for the country it crosses, not because it is quicker.",
+        "baseFinding": "COMING FROM THE EAST YOU ARRIVE AT ST. PETER'S GATE ITSELF, WHICH IS THE HIGH POINT OF THE TRAVERSE AT ABOUT 5,950 FT AND AN OBVIOUS ROCKY NOTCH IN MOUNT STONE'S SOUTHEAST RIDGE. That is the arrival test and it is unmistakable in any weather: the ground stops rising, the notch pinches, and the Lake of the Angels basin opens on the far side.\n\nFROM THE GATE THERE ARE TWO WAYS ONTO THE PEAK AND THEY ARE DIFFERENT CLIMBS. The one this row describes is the west-ridge notch: go THROUGH the Gate and drop toward the Lake of the Angels basin, then work back up and turn the corner onto the cliff-base traverse to the notch in the WEST ridge — the same notch the Putvin parties reach by turning sharply left just short of the Gate. The other is the south-face gully, which starts by descending about 300 ft from the Gate to the base of a basalt cliff; that is the Lena Lake traverse row's line, not this one.\n\nSO THE FOG TEST FOR THIS VARIANT IS WHICH SIDE OF THE GATE YOU END UP ON: this route goes over to the Lake of the Angels side and approaches the west ridge from the south-west, keeping the cliff base at your shoulder.\n\nABOVE THE NOTCH THE TESTS ARE IDENTICAL to the Putvin variant: turn right, low Class 3 CHIMNEY to a sub-summit, a brief exposed ridge, then a GROOVE on the LEFT that BENDS RIGHT to the true south summit.",
+        "hazards": [
+          "Extensive off-trail way-trail route-finding over multiple passes and basins with faint tread",
+          "Loose glacial moraine of all sizes near St. Peter's Gate and exposed dirt-and-mud slopes on the final ramp",
+          "Fog on the upper mountain — multiple parties have lost the route here and ended up in harder terrain",
+          "No dependable water between Upper Lena Lake and the tarns near Ullin's Pass",
+          "A very long approach with limited bail options partway through"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_stone_putvin": {
+    "area": "wa_mount_stone",
+    "approach_variants": [
+      {
+        "name": "Putvin Trail #813 to Lake of the Angels, then the rock rib above the basin",
+        "season": "Roughly Jun-Sep. Consolidated snow has been reported from about 4,500 ft up well into summer in the north-facing basin above the lake",
+        "notes": "SEE _DEFECTS — this row and wa_mount_stone_lake_of_angels appear to be the same climb entered twice. The variants here are written for the ground the row itself describes.\n\nPark at the Putvin Trailhead (FST 813) at about 1,565 ft on Hamma Hamma Road (FR 25). A slide near road mile 10.5 has at times blocked the last 1.2 miles; check Forest Service status. The trail follows the west side of Boulder Creek a few hundred feet, then starts a long unrelenting climbing traverse west, gaining nearly 3,000 ft in under 4 miles without easing.\n\nAround 1.3 miles it crosses an OLD LOGGING ROAD, and the tread is easy to lose there — look for the continuation slightly DOWNHILL. Around 4,200 ft comes the short headwall with an old hand-line or a large exposed tree root as the handhold, the crux of the trail and a common turnaround point when wet. Maintained tread ends in a basin around 3.9 miles at about 4,500 ft, and a rougher way-trail continues up steep rocky ground to Lake of the Angels at about 4,900 ft near 4 miles.",
+        "baseFinding": "THE CLIMB STARTS WHERE THE TRAIL ENDS, AND THE ARRIVAL TEST IS A RIB, NOT A SUMMIT VIEW. From Lake of the Angels the route leaves any trail: climb roughly 800 ft up onto the ROCK RIB above the lake's basin and CROSS TO ITS NORTH SIDE. A rib is a shape underfoot — the ground rises to a spine and falls away on both sides — so it is identifiable in cloud, and the instruction to cross to the far side of it is a check you can perform without seeing anything.\n\nSECOND TEST: from the north side of the rib, Class 2-3 terrain leads up toward a NOTCH ON MOUNT STONE'S WEST RIDGE, BELOW the feature called ST. PETER'S GATE. Below, not through. St. Peter's Gate is the notch in the SOUTHEAST ridge and it belongs to the traverse from Lena Lake; the notch you want is on the WEST ridge and sits lower and to the south of it. If you have walked up to a notch that opens onto an entirely different basin to the east, that is the Gate and you are past your turn.\n\nTHIRD TEST, on the summit block: the final 150 to 200 ft is mostly Class 3 but contains one well-documented 15 to 20 ft CLASS 4 STEP up a SHALLOW CRACK, often marked by a CAIRN. A cairn is man-made and does not move. If you have reached the top without meeting a short crack step, you are on a sub-summit — this mountain has three, and parties confuse them in fog.\n\nWHAT THE ROW'S OWN TIMING SAYS: Mountaineers reports for this line log around 5.5 hours up and 4 hours down, roughly 10 hours car to car.\n\nCAUTION FROM A TRIP REPORT, and it is route-finding advice rather than a hazard note: at least one party took a steep mossy waterfall gully as a descent shortcut and found it far worse than reversing the ascent. Reverse the rib; do not improvise a line down the south side.",
+        "hazards": [
+          "Exposed scramble moves near the summit block and a 15-20 ft Class 4 crack step with no fixed anchor",
+          "Lingering steep snow in the north-facing basin above the lake into early-mid summer",
+          "Route-finding above Lake of the Angels is loose and nontrivial in cloud or fresh snow",
+          "The 4,200 ft headwall on the trail is greasy when wet and the hand-line is not maintained",
+          "The tread is easy to lose where it crosses the old logging road at about 1.3 miles"
+        ]
+      },
+      {
+        "name": "Lena Lake and the St. Peter's traverse, arriving at the Gate from the east",
+        "season": "Roughly Jul-Sep",
+        "notes": "The long way to the same mountain, kept here because it is a genuinely different approach rather than a variation of the Putvin walk. Lena Lake Trail #810 about 3 miles to Lena Lake, then the steep primitive tread up the West Fork to Upper Lena Lake at about 4,550 ft and 6.5 miles. From there, off-trail west past Lena Tarn and Scout Lake to Scout Pass at about 5,200 ft, down to Upper Scout Lake and round into Scout Basin, over Ullin's Pass at about 5,000 ft above Ullin's Bathtubs, then a rising traverse to a snow ramp across a steep hillside below Mount Stone, ending on loose moraine, and finally exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft.\n\nMost parties then continue southwest about half a mile into the Lake of the Angels basin, which is where this approach rejoins the Putvin ground, and exit down the Putvin Trail — a different trailhead about 4 road miles from Lena Lake, so plan a shuttle or a stashed bike.",
+        "baseFinding": "THE ARRIVAL TEST IS ST. PETER'S GATE AT ABOUT 5,950 FT: the traverse's high point, an obvious rocky notch in Mount Stone's SOUTHEAST ridge, reached up a steep snow-and-dirt ramp over loose moraine. Ground stops rising, notch pinches, and the Lake of the Angels basin opens beyond.\n\nTHE TEST THAT PUTS YOU ON THIS ROW'S LINE RATHER THAN THE GULLY LINE: from the Gate, continue southwest into the Lake of the Angels basin and pick the route up from there — the rock rib above the lake, crossed to its NORTH side, and Class 2-3 ground to the notch on the WEST ridge below the Gate. The alternative from the Gate is to drop about 300 ft directly to the base of a basalt cliff and take the south-face gully; that is the Lena Lake traverse row, a Class 3-4 gully, and a different climb.\n\nABOVE THE WEST-RIDGE NOTCH THE TEST IS THE SAME: a short Class 4 step up a shallow crack, often cairned, in the last 150 to 200 ft, on a mountain with three summits.\n\nHONEST LIMIT: coming from the east adds a day and several passes of unmarked way-trail. It is chosen for the country, not for the climb.",
+        "hazards": [
+          "Extensive off-trail route-finding across Scout Pass, Scout Basin and Ullin's Pass on faint tread",
+          "Loose glacial moraine and exposed dirt slopes below St. Peter's Gate",
+          "Requires a car shuttle or stashed bike between two trailheads about 4 road miles apart",
+          "Fog on the upper mountain, where parties have repeatedly lost the route",
+          "Unbridged stream crossings on the way-trail sections"
+        ]
+      }
+    ]
+  },
+
+  "wa_lena_lake_to_mt_stone_traverse": {
+    "area": "wa_mount_stone",
+    "approach_variants": [
+      {
+        "name": "Lena Lake, Upper Lena Lake and the way-trails to St. Peter's Gate",
+        "season": "Roughly Jul-Sep, once Scout Pass and Ullin's Pass are largely clear; many parties still carry an axe",
+        "notes": "From the Lena Lake Trailhead on FS 25 at about 750 ft, the well-maintained Lena Lake Trail #810 runs about 3 miles through second- and old-growth forest along Lena Creek to Lena Lake at about 1,800 ft. Beyond the lake the trail narrows to steep primitive tread up the West Fork Lena Creek drainage, roughly 3.5 more miles and 2,200 ft to Upper Lena Lake at about 4,550 ft — 6.5 miles and about 4,000 ft from the road, the last reliable water and the last maintained-trail camp.\n\nFrom Upper Lena Lake the traverse goes cross-country: the Scout Lake way-trail west across meadows and huckleberry-heather past Lena Tarn to Scout Pass at about 5,200 ft, down to Upper Scout Lake, contour high round it into Scout Basin, then up to Ullin's Pass at about 5,000 ft overlooking Ullin's Bathtubs. From Ullin's Pass a rising traverse above the small lakes leads to a snow ramp angling across a steep hillside below Mount Stone, ending at a loose grungy moraine, then exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft — roughly 2.2 miles and 2,200 ft above Upper Lena Lake.\n\nNo dependable water between Upper Lena Lake and the tarns near Ullin's Pass.",
+        "baseFinding": "THE BASE OF THE SUMMIT CLIMB IS 300 FT BELOW ST. PETER'S GATE, AND THE FIRST MOVE IS DOWNHILL — WHICH IS THE WHOLE TEST. Reach the Gate (the traverse's high point at about 5,950 ft, an obvious rocky notch in Mount Stone's southeast ridge). Cache your overnight packs there. Then DESCEND ABOUT 300 FT to the BASE OF A BASALT CLIFF. The climber's path up the south-face gully starts at the foot of that cliff. A route that goes up from the Gate is not this one.\n\nThat is a good fog test precisely because it is counter-intuitive: standing in a notch with the summit above you, the instruction is to lose height first and pick the line up from underneath the cliff band.\n\nSECOND TEST, in the gully: it is a vague climber's path up a Class 3-4 gully on Mount Stone's SOUTH face, and it leads into a ROCK BOWL below the summit block. The bowl is the confirmation — an enclosed basin of rock, not a ridge and not open slope. From it the line joins the standard west-ridge route for a final 100 ft or so of Class 2-3 scrambling on SOLID PILLOW BASALT to the true south summit. That last detail is worth trusting: the rock at the top of this peak is noticeably better than anything below it, so if the last hundred feet is still rubble you have not reached the summit ridge.\n\nWHAT GOES WRONG HERE, AND IT IS RECORDED RATHER THAN HYPOTHETICAL: fog is common on Mount Stone's upper mountain and multiple parties have lost the route and ended up in unplanned harder terrain, and in cloud the true south summit is confused with the Middle and North summits. Count your summits and do not accept the first one.\n\nEXIT NOTE THAT IS PART OF THE PLAN, NOT AN AFTERTHOUGHT: the standard finish continues southwest half a mile to the Lake of the Angels basin and out the Putvin Trail — a DIFFERENT trailhead about 4 road miles from Lena Lake. Arrange a shuttle or stash a bike before you start.",
+        "hazards": [
+          "Extensive off-trail and way-trail route-finding over multiple ridges and passes",
+          "Loose glacial moraine of all sizes near St. Peter's Gate",
+          "A very long outing, up to about 16 miles and 9,000 ft of gain, with limited bail options partway through",
+          "Fog and whiteout navigation on Mount Stone's upper mountain — multiple parties have lost the route",
+          "Exposed headwall sections with several-hundred-foot drops near the Lena Lake / Lake of the Angels transition, some using a fixed handline or tree roots",
+          "Unbridged stream crossings requiring downclimbing to the bed and back out",
+          "The exit is at a different trailhead and needs a shuttle"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_skokomish_standard": {
+    "area": "wa_mount_skokomish",
+    "approach_variants": [
+      {
+        "name": "Putvin Trail to Lake of the Angels, then west to the saddle north of Point 5945",
+        "season": "Roughly Jun-Sep, and this peak holds avalanche-capable snow in its upper gullies later than most — slides have been reported in August and September",
+        "notes": "THIS IS THE STANDARD APPROACH AND THE ROW'S WAYPOINT LIST DESCRIBES A DIFFERENT ONE — see _DEFECTS. Guidebook and trip-report sources are consistent that Mount Skokomish's standard route goes via the Putvin Trail and Lake of the Angels.\n\nThe Putvin Trailhead (Trail #813) is on Hamma Hamma Road (FR-25), about 11.8-12.1 miles west of US-101, just past the lower Lena Lake trailhead across a concrete bridge, at roughly 1,600 ft. The trail is unmaintained for its last stretch but well-travelled and easy to follow when snow-free — steep, narrow, unstable footing in places through forest. Around 1.5-2 miles it breaks into the open grassy Whitehorse Creek basin, then climbs to Lake of the Angels at about 4,850-4,920 ft, roughly 3.5 miles and 2,800-3,000 ft of gain, 2-2.5 hours at a moderate pace. That is the last reliable water and the standard camp.",
+        "baseFinding": "STAND AT LAKE OF THE ANGELS AND THE CIRQUE ITSELF TELLS YOU WHICH WAY TO GO: MOUNT STONE IS ON YOUR RIGHT, ANOTHER PEAK IS ON YOUR LEFT, AND MOUNT SKOKOMISH IS STRAIGHT AHEAD. That three-way check is the arrival test, and it fixes your orientation before you leave the lake.\n\nTHE TURN IS AROUND THE RIGHT-HAND SIDE OF THE LAKE, on a way trail heading WEST to the ridge. Then take a broad gully SOUTHWEST and up toward the SADDLE JUST NORTH OF POINT 5945. That is the base of the climb and it is a named, mapped point — the saddle you want is the one immediately north of 5945, not the next gap along. A map point is the strongest thing you can navigate to in cloud, which is why it is quoted here rather than a description of the terrain.\n\nSECOND TEST, past the saddle: the route does not go straight up from it. From the saddle a boot path contours SOUTH and SOUTHWEST across scree, grass and rock benches around the EAST and SOUTH flanks of the peak, PASSING A LARGE TARN. The tarn is the confirmation. TURN RIGHT AND START CLIMBING WHEN YOU ARE ABOVE THE LARGE TARN — that is the published trigger, and it works because a tarn is a thing you stand beside rather than a thing you see from a distance. Turning up before the tarn puts you on the steeper cliffy ground on the north side of the upper mountain.\n\nTHIRD TEST, near the top: the final ground passes through rock bands and scrubby trees across a section known as the hanging or fingertip traverse, then goes up and around LEFT to the true summit, which is large and broad. This peak has THREE SUMMIT HORNS and parties have mistaken a lower false summit for the true south high point. A broad top is the right one; a narrow horn is not.\n\nEXPLICIT WARNING FROM A TRIP REPORT, and it is directional: contouring too far RIGHT (north) near the ridge crest gets sketchy, exposed and dangerous. Cut WEST over the ridge instead.",
+        "hazards": [
+          "Notoriously rotten, loose rock throughout the upper mountain and summit scramble — test holds",
+          "Steep snow-filled gullies below the summit saddle carry avalanche and sluffing potential well into summer, with August and September slides reported",
+          "An exposed hanging or fingertip traverse section near the true summit",
+          "Three summit horns, and a false one has fooled parties",
+          "The narrow, eroded lower Putvin tread, and the root-and-rock headwall on it",
+          "Mountain goats near Lake of the Angels and the peak's base"
+        ]
+      },
+      {
+        "name": "Mildred Lakes Trail from Hamma Hamma Road, the west-side approach",
+        "season": "Roughly Jul-Sep; the off-trail brush above the lakes is much easier with lingering snow cover",
+        "notes": "RECORDED BECAUSE THE ROW'S OWN WAYPOINTS DESCRIBE THIS APPROACH, not because it is the standard one. It is a real approach into the Skokomish-Cruiser-Lincoln group, and it is the usual way to Mount Cruiser and Mount Lincoln.\n\nFrom the Mildred Lakes trailhead on Hamma Hamma Road, the trail drops into a brushy ravine to ford HUCKLEBERRY CREEK at about 2,000 ft near 1.4 miles — the last reliable water before the hard part, and easy to lose in poor light. It then gains roughly 1,000 ft in about half a mile on hand-and-foot ROOT AND ROCK LADDERS, one pitch near 75-80 degrees, to a ridge high point at about 4,100 ft near 2.5 miles. From the ridge the trail drops about 250 ft to Lower Mildred Lake and continues past Middle to Upper Mildred Lake in a wooded bowl between Mount Lincoln and Mount Cruiser at about 3,850 ft near 4.3 miles, with informal camps on rock benches and the last dependable water before going off-trail.\n\nAbove the lakes the route leaves the lakeshore path entirely into slide-alder and heather bushwhacking that neighbouring-peak accounts describe as very brushy, climbing to an open basin and connecting saddle beneath Skokomish's south peak at about 5,500 ft.",
+        "baseFinding": "THE BASE ON THIS SIDE IS THE OPEN BASIN AND SADDLE BENEATH THE SOUTH PEAK AT ABOUT 5,500 FT, AND THE TEST FOR IT IS UNDERFOOT: THE FOOTING TURNS TO LOOSE, ROTTEN ROCK FROM THERE UP. Below the saddle you are fighting brush and heather; at and above it you are on scree and shattered rock. That transition is the arrival cue and it does not require seeing anything.\n\nTHE TEST FOR THE APPROACH ITSELF IS THE ROOT LADDER, because it is the one unmistakable feature on this trail: about a thousand feet of hand-and-foot climbing on roots and rock in roughly half a mile, one pitch near vertical, topping out on a ridge at about 4,100 ft. If you have not used your hands, you are not on the Mildred Lakes trail. And the trail then DESCENDS off that ridge to the lakes — a trail that keeps climbing past 4,100 ft is not this one.\n\nHONEST LIMIT, AND IT IS THE REASON THIS VARIANT IS SECOND: the ground between the Mildred Lakes and Skokomish's south peak is unmaintained, brushy and easy to lose, with no marker sequence published for it. Guidebook and trip-report sources put the standard route on the Putvin side. Take this approach only if you have a reason to be at the Mildred Lakes, and expect to navigate rather than to follow.",
+        "hazards": [
+          "Unmaintained, brushy, easy-to-lose way-paths above the lakes requiring off-trail navigation",
+          "Root and rock ladders on the approach trail, one pitch near vertical, dangerous when wet",
+          "Slide-alder bushwhacking that is far worse without snow cover",
+          "The same rotten upper-mountain rock and avalanche-capable gullies as the standard side",
+          "Post-fire hazards — standing dead and burned trees, rockfall and landslides — in the Bear Gulch Fire closure area"
+        ]
+      }
+    ]
+  },
+
+  "wa_gray_wolf_ridge_se_slopes": {
+    "area": "wa_gray_wolf_ridge",
+    "approach_variants": [
+      {
+        "name": "Lower Maynard Burn Trail #816 over Baldy and along the crest",
+        "season": "Roughly Jul-Sep. North-facing gullies on the last stretch hold steep snow into July",
+        "notes": "There is no roadside access to this ridge; the drive only gets you to the trailhead at the end of FR-2860-120, off FR-2870 / Lost Mountain Road, itself off Palo Alto Road south of US-101 near Sequim. Road-end parking at a dirt berm, about 3,300 ft, Northwest Forest Pass required.\n\nLower Maynard Burn Trail #816 leaves the berm on an old roadbed and crosses Mueller Creek almost immediately — the last easy reliable water for a long stretch, so fill up. The trail narrows to single-track around 0.3 mile and then turns relentlessly steep, gaining roughly 3,000 ft in a little over two miles of fall-line tread with essentially no switchbacks, in places barely a boot-width across eroded crumbly ravine crossings and slopes of packed dirt and shattered shale. It is a climber's path, not a graded trail.\n\nAt about 2.7 miles and 5,400-6,200 ft it tops out on the saddle between Tyler Peak and Baldy, where a short steep side path drops off the crest to a snowmelt spring — the last dependable water on the route.",
+        "baseFinding": "THE CLIMB BEGINS WHERE THE TREAD ENDS, AND THE ARRIVAL TEST IS THE SADDLE BETWEEN TYLER PEAK AND BALDY. You know you are there because the trail stops going up in a line and the ground opens on both sides — navigation shifts from following tread to reading a ridge. There is also a signed Olympic National Park boundary marker in a saddle on this stretch and a spring path dropping off the crest. From here on you are on the crest and the crest is the route.\n\nTHE TEST THAT ACTUALLY MATTERS ON THIS ROUTE IS AT THE FAR END, AND IT IS A FALSE SUMMIT WITH A NAME AND A NUMBER: POINT 7076. From below, 7076 reads as the summit. It is not. The true summit of Gray Wolf is 7,218 ft and it lies FURTHER NORTH along the crest and is HIGHER. So the fog rule is simple: after Baldy you drop about 600 ft, climb back up over a prominent bump, and THAT BUMP IS NOT THE TOP. Keep going north over the last of the talus, detouring briefly round the occasional gendarme, and finish with a short Class 2-3 scramble on loose rock. If you turned round on the first big bump past Baldy, you turned round on 7076.\n\nSECOND TEST, on the way to 7076 itself: the crest gets steeper and broken approaching it. The published avoidance is to TRAVERSE WEST at about 6,500 ft and then swing back to gain 7076 by its NORTHWEST aspect, and to stay in the basin below and RIGHT of the broken rock ridge until you can gain the saddle between the twin summits — 7076 has twin tops with snowfields between them. There is no trail at these decision points, which is why they are written down.\n\nTHIRD TEST, earlier: Point 6537 is a rocky gendarme and false summit below Baldy, normally SKIRTED ON ITS SOUTH SIDE rather than climbed over. If you are scrambling straight over a tower before you have reached Baldy, you have taken the crest too literally.\n\nHONEST LIMIT: long stretches of this crest are unmarked and off-trail and the whole thing is above treeline. Carry a map or GPS; the ridge is the handrail but the summit identification is not obvious by eye.",
+        "hazards": [
+          "Sudden fast-moving whiteouts and lightning on an open above-treeline ridge with miles of exposure",
+          "Loose shale and scree with occasional exposed steps along the crest",
+          "Lingering steep snowfields in north-facing gullies into July, warranting an ice axe",
+          "No reliable water once past the Baldy saddle spring",
+          "Long unmarked ridge navigation with route-finding around gendarmes and false summits",
+          "The Gray Wolf River bridge on the alternative approach is out — a required and hazardous ford at high water",
+          "Bear canister required within Olympic National Park"
+        ]
+      },
+      {
+        "name": "Royal Basin and the east face, for a traverse rather than an out-and-back",
+        "season": "Roughly Jul-Sep",
+        "notes": "The other end of the same ridge, and the reason to know it is that it turns this route into a traverse instead of a there-and-back over Baldy twice. From the Upper Dungeness Trailhead, the Royal Basin Trail leads to Royal Lake and Upper Royal Basin. From the ridge, the east face drops roughly 3,000 ft to intersect the Royal Basin Trail.\n\nIt is steep, loose and only lightly travelled: packed dirt and shattered shale, brushy notches, and picking through timber looking for blazes and cairns. Some parties scree-ski the looser upper sections rather than rope up at all. It is not a bolted or standardised line — where parties do rope down a short cliffy step, anchors are improvised from trees or natural rock horns.\n\nMost commonly this is used as the EXIT after climbing from Maynard Burn, closing a loop out Royal Basin or back over the ridge.",
+        "baseFinding": "USED AS AN APPROACH, THE ARRIVAL TEST IS GAINING THE CREST — and this side has no marker sequence for doing it, which is the honest state of the record. Trip reports describe finding blazes and cairns through timber rather than following a line. Treat it as navigation, not route-following.\n\nTHE SUMMIT TESTS ONCE ON THE CREST ARE THE SAME AND THEY ARE THE VALUABLE PART: POINT 7076 IS A FALSE SUMMIT. Coming from the Royal Basin side you meet the true 7,218 ft summit from the north-east rather than from the south, so the trap runs the other way — the bump you must not stop on lies SOUTH of the true summit on this approach. Fix which side of you 7076 should be before you commit to the crest in cloud.\n\nHONEST LIMIT AND A RECOMMENDATION: this variant is documented as a descent far more thoroughly than as an ascent, and the sources give no fixed, repeatable rappel count for the cliffy step — expect at most one or two short rappels well under 60 m if you choose to rope, and expect most parties to downclimb or scree-ski instead. Confirm current conditions against a recent trip report before relying on it either way.",
+        "hazards": [
+          "Steep, loose, lightly travelled ground with no established line and improvised anchors if roped",
+          "Roughly 3,000 ft of descent or ascent on packed dirt and shattered shale",
+          "Brushy notches and timber navigation looking for blazes and cairns",
+          "Committing: once on the east face there is no easy return to the crest",
+          "Every ridge-crest hazard above, in a longer day"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_mystery_standard": {
+    "area": "wa_mount_mystery",
+    "approach_variants": [
+      {
+        "name": "Upper Dungeness and Royal Basin, over the Royal-Deception divide into Deception Basin",
+        "season": "Roughly Jul-Sep. The notch below the divide holds 35-40 degree snow and an axe is worth carrying outside late season",
+        "notes": "From the Upper Dungeness Trailhead on FR-2870 — large parking area, vault toilet, self-issue Olympic National Park wilderness permit at the kiosk — take Upper Dungeness Trail #833.2 about a mile. The trail forks just before the Royal Creek footlog bridge; BEAR RIGHT onto the Royal Basin Trail #832. The Maynard Burn Trail continues straight and is easy to mistake in early light.\n\nRoyal Creek Camp at about 3.4 miles is a common first night. Royal Lake at about 7.2 miles and 5,100 ft is the main basecamp, with designated sites and a seasonal ranger post — the last dependable water before the dry climb. Many parties push on to camps around 5,800-6,200 ft in upper Royal Basin.\n\nFrom upper Royal Basin, climb a moraine and a snowfield of roughly 35-40 degrees to the notch on the Royal-Deception divide at about 6,500-6,560 ft, then descend shower-tile scree to grass and heather benches above Deception Basin.",
+        "baseFinding": "THE BASE OF THE CLIMB IS THE LOWER LEFT CORNER OF THE MYSTERY GLACIER, AND THE THING THAT MARKS IT IS A LAKE YOU CANNOT MISTAKE FOR ANYTHING ELSE: A JADE-GREEN MORAINE-BOUNDED LAKE SITS AT THE GLACIER'S BASE. Drop off the benches into Deception Basin, cross a dark moraine, and the lake is at the foot of the ice. Get on the glacier at its LOWER LEFT corner. Colour is a fog-usable marker at short range and there is one such lake here.\n\nTHE TEST FOR THE GLACIER CROSSING IS A DIAGONAL: you enter at the lower LEFT and exit at the upper RIGHT, at a COL at about 6,700 ft on the peak's EAST side. The ice is stagnant and low-angle with a few small crevasses to step over — this is a walk with a rope on, not a serious glacier. If you are climbing straight up the fall line rather than trending right, you are not heading for the col.\n\nSECOND TEST, above the col, and it is a specific distance and a specific side: from the col traverse mixed rock and snow to reach OPEN SNOW ABOUT 200 FT SOUTH OF THE COL, then climb those slopes STAYING SOUTH OF the blocky rock band immediately above. South of the rock band, not through it. Snow angles reach around 40 degrees and take pickets well. The gullies feeding this section are where the rockfall comes from, so move one at a time and keep the party to three or fewer.\n\nTHIRD TEST, and it is the commitment point: a short CLASS 4 STEP on poor rock, with steep runout dirt below it, gains a NOTCH NEAR 7,500 FT. Trend CLIMBER'S LEFT on the approach to it. This step has to be downclimbed on the way out, usually unroped, and one party rated a single move on the reverse at 5.8 — so it is worth being certain about before you commit. A moat over 30 ft deep has been reported below the gully late in the season, which changes how the section is entered and exited.\n\nWHAT CONFIRMS YOU ARE THROUGH: beyond the notch a clean Class 3 gully leads to the summit block, and THE ROCK GETS MARKEDLY BETTER than anything below it. Good rock on this peak means you are nearly there.",
+        "hazards": [
+          "Rotten, tilted pillow basalt that breaks away readily, with rockfall funnelled by the gullies above the col",
+          "A Class 4 step on poor rock over steep runout dirt that must be reversed on descent — one party graded a move on the downclimb at 5.8",
+          "A reported moat over 30 ft deep below the gully late in the season",
+          "Lingering steep snow on the approach gullies and Mystery Glacier into summer, and a 35-40 degree snow slope below the Royal-Deception notch",
+          "Remote terrain — a solo traveller died in a fall near the peak's south end in July 2022"
+        ]
+      },
+      {
+        "name": "Home Lake and Constance Pass, reaching Deception Basin from the south",
+        "season": "Roughly Jul-Sep",
+        "notes": "The other side, and the one that suits a party already camped at Home Lake for Fricaba or Warrior. From the Upper Dungeness Trailhead, Trail #833.2 to Camp Handy at about 3.4 miles and Boulder Shelter at about 6.4 miles and 4,890 ft, then the Home Lake / Constance Pass Trail to Home Lake at roughly 9.3 miles and 5,308-5,330 ft. From camp, climbers' paths lead up to Constance Pass at about 5,750-5,800 ft, and from there the route traverses and descends west into upper Deception Basin.\n\nThis is the same basin the Royal Basin parties drop into, reached from the opposite end. It is the approach a high-route party is already on, and one detailed account describes exiting this way over Gunsight Pass toward Constance Pass and out the Dosewallips and Del Monte Ridge trail system with no rappels — a valid variant exit, distinct from reversing the ascent.",
+        "baseFinding": "IDENTICAL ONCE YOU ARE IN DECEPTION BASIN, and the shared test is the good one: the JADE-GREEN MORAINE-BOUNDED LAKE at the foot of the Mystery Glacier. Get on the ice at its LOWER LEFT corner and cross diagonally to the COL AT ABOUT 6,700 FT at its UPPER RIGHT, on the peak's EAST side.\n\nTHE EXTRA TEST THIS SIDE NEEDS is at Constance Pass, because you arrive at Deception Basin along its length rather than dropping into its head. Leave the maintained trail at the pass and work WEST and DOWN into the upper basin. Loose scree on the descent is normal here. If you are contouring without losing height you have not committed to the basin; if you are climbing again you have crossed it and are heading for the Fricaba-Hal Foss ridge instead.\n\nABOVE THE COL THE TESTS ARE THE SAME: open snow about 200 ft SOUTH of the col, climbed staying SOUTH of the blocky rock band; then a short Class 4 step approached CLIMBER'S LEFT to a notch near 7,500 ft; then a clean Class 3 gully on markedly better rock to the summit.",
+        "hazards": [
+          "Loose scree traverses between Constance Pass and Deception Basin",
+          "All the summit-block hazards of the standard variant, including the reversible Class 4 step",
+          "Steep snow lingering on the Constance Pass and Deception Basin traverse into July",
+          "Long committing backcountry travel far from help"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_fricaba_standard": {
+    "area": "wa_mount_fricaba",
+    "approach_variants": [
+      {
+        "name": "Upper Dungeness Trail to Home Lake and Constance Pass",
+        "season": "Roughly Jul-Oct per NPS guidance for the Constance Pass and Home Lake corridor; earlier trips should expect lingering snow",
+        "notes": "From the Upper Dungeness Trailhead at about 2,880 ft at the end of FR 2870, follow Upper Dungeness Trail #833.2 south along the Dungeness River. The first mile is mostly flat; STAY LEFT at the Royal Basin Trail junction near a mile. Camp Handy — riverside meadow with a cedar shingle shelter — comes at about 3.4 miles.\n\nJust past Camp Handy the trail forks; take the UPHILL fork and begin a sustained, largely switchback-free climb of about 3 miles and 1,800 ft to Boulder Shelter at 6.4 miles and about 4,890 ft. The creek there is the most reliable water on the whole approach — treat it as the last sure fill-up. Bear right at the shelter onto the Home Lake / Constance Pass Trail. The park boundary is about a mile beyond, after which brush closes in from both sides.\n\nThe final 2.9 miles to Home Lake at 5,330 ft, roughly 9.3-9.6 miles from the trailhead, climb another 700-900 ft through subalpine forest into heather meadows, crossing two or three small streams; one waterfall crossing is awkward to keep feet dry and is slick with a full pack early season. Home Lake is the standard basecamp for Fricaba, Hal Foss, Mystery and Deception.\n\nFrom camp continue on climbers' paths — no maintained tread — up to Constance Pass at about 5,750-5,800 ft, then traverse and descend west into upper Deception Basin.",
+        "baseFinding": "THE BASE OF THE CLIMB IS THE COL BETWEEN FRICABA AND HAL FOSS, AND THE PUBLISHED TEST FOR IT IS THE ONE THING ABOUT THIS PEAK THAT WORKS WITHOUT SEEING ANYTHING: FROM DECEPTION BASIN, ASCEND EASTWARD AIMING FOR THE LOWEST POINT IN THE RIDGE CONNECTING FRICABA WITH HAL FOSS. Lowest point. Not the nearest gully, not the most obvious scree fan — the lowest saddle on that connecting ridge. In cloud you can still tell which way a skyline sags by walking toward the direction the ground stops climbing soonest.\n\nSECOND TEST, once at the col: turn AWAY from Hal Foss and follow the ridge up to Fricaba. The North and SW ridges are the two most readily ascended and this is the SW one. The first 500 to 600 vertical feet off the pass is the STEEPEST part of the climb; after that it eases into a straightforward scree hike. So the shape of the effort is a check on the line: steep first, easy after. A route that stays uniformly moderate is not this one.\n\nTHIRD TEST, AND IT IS WHICH SUMMIT: FRICABA'S SW PEAK IS THE TRUE, HIGHER TOP. The NE peak lies about half a mile away along the NE ridge and is noticeably lower. If you have walked half a mile of ridge from the top you reached and are now standing somewhere higher, you were on the NE peak.\n\nWHAT THE GROUND FEELS LIKE, so it does not read as a wrong turn: Fricaba is extremely shattered, rotten shale. Two steps up and one slide back is the normal experience, not evidence you are off route. Brief Class 2-3 scrambling appears near the ridge crest.",
+        "hazards": [
+          "Extremely shattered rotten shale with real rockfall and ankle-turn hazard the whole way up",
+          "Loose talus and scree on the upper slopes, with the steepest 500-600 ft immediately off the pass",
+          "Lingering steep snow on the Constance Pass to Deception Basin traverse into July, warranting an axe",
+          "Brief exposed Class 3 downclimbing near the ridge crest and col on the way out",
+          "A long, committing backcountry approach far from help",
+          "Boulder Shelter sits at the foot of an avalanche chute with snapped trees in the scar"
+        ]
+      },
+      {
+        "name": "Royal Basin and the Royal-Deception divide into Deception Basin",
+        "season": "Roughly Jul-Sep",
+        "notes": "The other way into the same basin, and the one that suits a party doing Fricaba alongside Mystery and Deception. From the Upper Dungeness Trailhead take Trail #833.2 about a mile and BEAR RIGHT onto the Royal Basin Trail #832 at the fork just before the Royal Creek footlog bridge. Royal Lake at about 7.2 miles and 5,100 ft is the basecamp; upper Royal Basin camps sit around 5,800-6,200 ft.\n\nFrom upper Royal Basin climb the moraine and a 35-40 degree snowfield to the notch on the Royal-Deception divide at about 6,500-6,560 ft, then descend scree to the grass and heather benches above Deception Basin. Fricaba is then across the basin to the east.\n\nOne published day-2 description of this side has parties angling up toward the pass going east for Fricaba, then round to the LEFT of some gendarmes and up a steep scree route the account calls self-explanatory.",
+        "baseFinding": "SAME BASE, SAME TEST, APPROACHED ACROSS THE BASIN RATHER THAN DOWN INTO IT: from Deception Basin, ascend EASTWARD aiming for the LOWEST POINT IN THE RIDGE CONNECTING FRICABA WITH HAL FOSS.\n\nTHE EXTRA TEST THIS SIDE NEEDS is the gendarmes on the way up: the published line goes round them to the LEFT, then up steep scree. If you are scrambling over towers rather than skirting them, you have taken the crest instead of the scree.\n\nAND THE SAME SUMMIT TEST: THE SW PEAK IS THE TRUE TOP. The NE peak, half a mile off along the NE ridge, is lower.\n\nHONEST LIMIT: the scree route above the col is described in the sources as self-explanatory, which is another way of saying nobody has written down a marker for it. It is a walk-up on rubbish rock; the navigation problem is getting to the col, not what happens above it.",
+        "hazards": [
+          "A 35-40 degree snowfield below the Royal-Deception notch, wanting an axe outside late season",
+          "Shattered shale and scree on Fricaba itself",
+          "Gendarmes on the approach ridge that must be skirted rather than climbed",
+          "Long approach with the last dependable water at Royal Lake"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_ellinor_standard": {
+    "area": "wa_mount_ellinor",
+    "approach_variants": [
+      {
+        "name": "Upper Trailhead on NFR 24, Trail #812 summer route",
+        "season": "Roughly Jul-Oct for the snow-free summer trail; outside that the chute fills and the upper switchbacks are buried",
+        "notes": "From the Upper Trailhead at about 3,500 ft, at the end of FS Road 2419-014 off FS 24 / FS 2419 — vault toilet, picnic table, Northwest Forest Pass required — Trail #812 climbs immediately. The first 0.3 mile is stacked stairstep switchbacks through forest, merging with the longer lower-trailhead trail at roughly 3,900 ft.\n\nFrom the merge, continue up the south ridge through increasingly open forest to timberline at about 4,500 ft, roughly a mile in. In summer conditions the trail is snow-free and well cut essentially to the top, switchbacking across rock-strewn slopes and gravelly subalpine meadows, threading a narrow notch and crossing west-facing slopes to the 5,944 ft summit. Total gain from the Upper Trailhead is 2,444 ft over 1.6 miles one way. No water on the upper route; carry all you need.",
+        "distMi": 1.6,
+        "gainFt": 2444,
+        "baseFinding": "THE DECISION POINT ON THIS MOUNTAIN IS A SIGNED JUNCTION AT TIMBERLINE, ROUGHLY 4,500 FT, AND A SIGN IS THE BEST FOG MARKER THERE IS BECAUSE IT DOES NOT DEPEND ON VISIBILITY BEYOND ARM'S LENGTH. At that junction the WINTER CLIMBING ROUTE BREAKS RIGHT, straight up the prominent scree-and-snow chute, and the MAINTAINED SUMMER TRAIL SWITCHBACKS LEFT across rock-strewn slopes and gravelly meadows. This variant is the LEFT one.\n\nIf you find yourself climbing a single steep funnel-shaped gully rather than working a series of switchbacks, you have taken the right-hand branch and you are on the winter route.\n\nSECOND TEST, higher: the summer trail threads a NARROW NOTCH and then crosses WEST-FACING slopes before the final approach to the summit. Many of its switchbacks have stairstep risers built into them. Built steps are man-made and unambiguous underfoot. If you are on trackless scree you have left the trail.\n\nHONEST LIMIT, AND IT IS SEASONAL RATHER THAN NAVIGATIONAL: outside roughly November to June, snow fills the chute and buries the upper switchbacks, and most parties then climb the chute directly because the summer trail is not there to be found. That is not a route-finding failure; it is a different route, and it demands an ice axe and traction. The rocks in and bordering the chute are notoriously slick when wet even outside full winter conditions — that is an official Forest Service warning, not a trip-report opinion.",
+        "hazards": [
+          "The southeast-facing chute is an avalanche funnel that becomes sun-soaked and prone to wet slides by early-mid afternoon — start early and check NWAC in spring",
+          "Chute-bordering rocks are extremely slick when wet or in fog",
+          "Losing the trail under snow leads onto steeper, looser ground",
+          "A very popular and crowded trail with kicked-loose rock from parties above",
+          "No water on route",
+          "Fragile subalpine vegetation on the open upper slopes"
+        ]
+      },
+      {
+        "name": "Lower Trailhead, the long approach to the same trail",
+        "season": "Roughly Jun-Oct, and it is snow-free earlier than the upper road in some years",
+        "notes": "The Lower Trailhead sits at about 2,600 ft, 3.1 miles one way, and takes no fee. It welcomes you with an easy grade rather than the upper trailhead's near-immediate jolt, and it is the sensible choice when FS Road 2419-014 to the upper lot is snowed in or gated.\n\nIt climbs steadily through forest and joins the upper-trailhead trail at roughly 3,900 ft. Everything above the merge is identical.",
+        "distMi": 3.1,
+        "baseFinding": "THE FIRST TEST IS THE MERGE AT ABOUT 3,900 FT, where the lower trail joins the upper-trailhead trail. From below, that junction is the confirmation you are on the right path at all; from above it is the fork you take DOWNHILL to get back to the lower lot rather than the upper one. Parties have descended to the wrong car here.\n\nTHE DECISION POINT IS THE SAME SIGNED JUNCTION AT TIMBERLINE, ROUGHLY 4,500 FT, about 2.5 miles from the lower trailhead: the WINTER CLIMBING ROUTE BREAKS RIGHT up the chute, the SUMMER TRAIL SWITCHBACKS LEFT. Take the left.\n\nAND THE SAME CONFIRMATIONS ABOVE IT: stairstep risers built into the switchbacks, a narrow notch, and west-facing slopes before the summit.",
+        "hazards": [
+          "Same as the upper-trailhead variant, over a longer and gentler approach",
+          "The 3,900 ft merge is where parties descend to the wrong trailhead",
+          "No water on the upper route"
+        ]
+      },
+      {
+        "name": "The winter chute, direct from the timberline junction",
+        "season": "Roughly Nov-Jun, while the chute holds a firm continuous snowpack",
+        "notes": "Not a different trailhead but a genuinely different climb, and it is what most parties are on outside core summer because the summer switchbacks are buried. From either trailhead, follow Trail #812 to the signed timberline junction at about 4,500 ft and take the right-hand branch straight up the prominent scree-and-snow chute below the summit saddle.\n\nThis demands an ice axe and traction — crampons or microspikes — and it is steep, funnel-shaped slide-path terrain with real avalanche potential. Check avalanche conditions before going up.\n\nIt is also the fast descent when conditions allow: with an axe carried in self-arrest position, parties glissade roughly 1,000 ft in a couple of minutes. That is consequential terrain rather than a casual slide.",
+        "baseFinding": "THE BASE IS THE SIGNED TIMBERLINE JUNCTION AT ABOUT 4,500 FT AND THE RIGHT-HAND BRANCH OUT OF IT. That is the whole test and it is the same sign the summer parties turn left at. The chute is the prominent scree-and-snow funnel that runs straight up toward the summit saddle from there — there is one, it is obvious, and it is the reason the junction is signed at all.\n\nTHE CONFIRMING TEST IS THAT THE GROUND STOPS SWITCHBACKING. The summer trail traverses; the chute goes up the fall line. If you are still zig-zagging you took the left branch.\n\nTHE TEST FOR WHETHER YOU SHOULD BE THERE AT ALL, which matters more on this route than finding it: the chute is south-east facing and sun-soaked, and by early-to-mid afternoon in spring it is prone to wet slides. Start early. Later in the season, as the snow thins and exposes talus, rock and ice bulges, the chute stops being the fast line and becomes the dangerous one — at that point the correct call is the summer switchbacks for the whole descent.",
+        "hazards": [
+          "A steep funnel-shaped slide path with real avalanche potential; check NWAC before going",
+          "Wet-slide danger by early-mid afternoon in spring on a sun-soaked southeast aspect",
+          "Exposed rocks and ice bulges lower in the chute as snow thins — glissading then becomes dangerous",
+          "An uncontrolled glissade or a fall on hard snow without self-arrest skill on genuinely consequential terrain",
+          "Slick chute-bordering rocks when wet or in fog"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_washington_olympic_standard": {
+    "area": "wa_mount_washington_olympic",
+    "approach_variants": [
+      {
+        "name": "FR-2419 up the Big Creek drainage to the road-end trailhead",
+        "season": "Roughly Jun-Sep, best Jul-Aug. Spring and early summer put avalanche-capable snow in the gully",
+        "notes": "From the T-intersection at the end of North Lake Cushman Road, go right onto FS Road 24 for about a mile, then left onto FS Road 2419 and follow it up the Big Creek drainage roughly 6.6 miles to its end at a small trailhead at about 3,026 ft. Self-issue Mt. Skokomish Wilderness permit and Northwest Forest Pass at the kiosk.\n\nFrom here the trail quickly becomes a boot path and then largely off-trail scrambling — there is no numbered maintained trail for most of the route. It climbs directly and steeply through forest, hand-over-hand on roots and rock in places, to a couple of open meadow benches around 3,800 ft. That meadow band holds the most reliable early-season water via snowmelt seeps; by mid-to-late summer expect it dry, so carry what you need from the car.",
+        "baseFinding": "THE ROUTE IS A SEQUENCE OF THREE TERRAIN CHANGES AND EACH ONE IS A CHECK YOU CAN MAKE WITHOUT SEEING ANYTHING. First: forest gives way to OPEN MEADOW BENCHES around 3,800 ft — that is where the ridgeline and neighbouring Mount Ellinor come into view on a clear day, and where the ground briefly eases. Second: above the meadows you enter SCREE AND TALUS and the rule is to stay primarily on the CLIMBER'S-LEFT side of a large loose rocky gully. Left side of the gully, all the way. Third: the path winds above the gully until it GAINS THE SOUTHERN RIDGELINE, and from there the ground drops away on BOTH sides.\n\nTHE ARRIVAL TEST FOR THE REAL CLIMBING IS THE SOUTH SADDLE AT ABOUT 5,950 FT, AND IT HAS TWO MARKERS: it is a KNOWN BIVY SITE, and it is the FIRST POINT ON THE ROUTE WHERE THE TRUE SUMMIT BECOMES VISIBLE. Flat ground you could sleep on, high on a ridge, is a thing you can identify by standing on it.\n\nSECOND TEST, above the saddle: a STONE WIND SHELTER sits on the ridge. A built structure is unambiguous in any weather. From the wind shelter a final short Class 3-4 scramble gains the true 6,255 ft summit. If you have topped out without passing a stone shelter, you are on the false summit below it.\n\nTHE SECTION IN BETWEEN IS THE ONE PEOPLE REMEMBER: the ridge-crest traverse called the Dog Walk Ledge or the Catwalk, where in several spots the tread narrows to barely one boot-width with real exposure on both sides. Class 3 with a couple of Class 3+/4 moves. If the crest you are on is comfortably wide the whole way, you have not reached it yet.\n\nWHAT GOING TOO FAR LOOKS LIKE: a trip report warns specifically that contouring too far RIGHT (north) near the crest gets sketchy, exposed and dangerous. Stay left of the drop-off on the north side.",
+        "hazards": [
+          "Loose rock and rockfall in the entry gullies and on the talus — spread the group out rather than stacking above and below",
+          "Sustained exposure on the Dog Walk Ledge / Catwalk, where the tread is one boot wide with drops on both sides",
+          "Steep avalanche-prone snow in the gullies and on the saddle in spring and early season",
+          "The scree field below the false summit is greasy and slick when wet",
+          "Significant elevation loss on descent, hard on knees and ankles, and slower than the climb",
+          "Route-finding through the forested lower section, meadows and talus in poor visibility",
+          "Little shade above treeline; the route gets hot"
+        ]
+      },
+      {
+        "name": "From Mount Ellinor, across the connecting ridge or the west-side basin",
+        "season": "Roughly Jun-Sep",
+        "notes": "Recorded as an approach because parties do reach Washington from Ellinor rather than from Big Creek, usually as half of a traverse. Ellinor is reached by Trail #812 from its Upper or Lower Trailhead, both on the same North Lake Cushman Road corridor, and from Ellinor's summit the connecting ridge runs northeast toward Washington.\n\nIt is not a walk. The crest is fractured, weathered pillow basalt with sustained Class 4 scrambling past a series of gendarmes, and it carries a loose 50 ft downclimb that most accounts call the least enjoyable part of the day. The alternative that several sources prefer is the west-side basin traverse: drop into the basin below the crest and cross it, rejoining Ellinor's standard winter route line rather than fighting the ridge.\n\nUsed as an approach to Washington this is a long way round for a peak with a 3.2 km trail of its own, and it is here for traverse parties.",
+        "baseFinding": "COMING FROM ELLINOR THE ARRIVAL TEST FOR WASHINGTON'S SUMMIT GROUND IS THE SAME STONE WIND SHELTER on the ridge, with the final short Class 3-4 scramble above it to the 6,255 ft top.\n\nTHE TEST ON THE CONNECTING RIDGE ITSELF, WHICH IS WHERE THE DAY IS DECIDED: hidden ledges keep the difficulty at Class 4 or below on most of the gendarmes, so if you are pulling harder than that you have taken the crest where a ledge existed. Look below the obvious line before committing to it. Where the ridge gets too difficult or exposed to continue unroped, the published answer is to DROP INTO THE BASIN BELOW and either downclimb a technical sequence or bypass it on a snow finger.\n\nHONEST LIMIT: the guidebook-level advice on the crux gendarme downclimb is to avoid it — the rock is notably poor and the exposure severe, and several sources recommend the west-side basin instead of the direct ridge. That is a recommendation to change route, not a marker, and this variant is written down mainly so a party knows the option exists before they are standing on it.",
+        "hazards": [
+          "Fractured, weathered pillow basalt on the connecting ridge with a crux gendarme downclimb of notably poor rock and severe exposure",
+          "Sustained Class 4 scrambling past gendarmes with a loose 50 ft downclimb",
+          "Committing terrain between two summits with no quick exit",
+          "All the Washington summit-ridge hazards at the end of it"
+        ]
+      }
+    ]
+  },
+
+  "wa_se_ridge_aka_shield_wall": {
+    "area": "wa_mount_washington_olympic",
+    "approach_variants": [
+      {
+        "name": "FR-2419 past the second Big Creek crossing, the way trail to the Shield Wall",
+        "season": "Roughly Jun-Sep",
+        "notes": "From US 101 turn west onto Lake Cushman Road and in about 1.5 miles turn right onto Forest Road 2419. Continue up the Big Creek drainage to just past the SECOND CROSSING OF BIG CREEK, at about 3,100 ft. This is NOT the standard route's trailhead: the way trail for this route leaves the road roughly 1,000 ft BEYOND the standard route's trail entrance, so if you have parked where everybody else parks, you are in the wrong place by a thousand feet of road.\n\nFollow an old roadbed across Big Creek and a climbers' trail up a rock rib, gaining roughly 1,600 ft toward the bowl below the Shield Wall. A small way trail leads to the base of the large rock section of the southeast ridge at about 3,700 ft; bear RIGHT (east) around those rocks and follow the ridgeline until you are forced RIGHT (north) by prominent gendarmes. A gully then ascends up and left to a notch at the wall's LEFT corner at about 4,850 ft, where the technical climbing begins.",
+        "baseFinding": "THE ARRIVAL TEST IS A NOTCH AT THE LEFT-HAND CORNER OF THE WALL AT ABOUT 4,850 FT, AND THE THING THAT PROVES IT BEYOND ARGUMENT IS BOLTS. This route's first pitch carries TWO FIXED BOLTS mid-pitch and a BOLTED BELAY STATION at its top. That is the only fixed hardware on the lower mountain and it is on this pitch. So: if you have climbed a rope length and there is no bolt anywhere on it, you are not on the Shield Wall — go back down and find the notch. Bolts are man-made, they do not move with the season, and you can find them by hand.\n\nTHE SEQUENCE THAT GETS YOU THERE IS THREE FORCED TURNS AND EACH IS A CHECK: (1) the base of the large rock section of the SE ridge at about 3,700 ft — bear RIGHT, east, AROUND the rocks rather than up them; (2) follow the ridgeline until PROMINENT GENDARMES FORCE YOU RIGHT (north) — you are not choosing to go right, the terrain makes you; (3) the gully then goes UP AND LEFT to the notch. Right, right, then left. If you have made only rightward moves, you have not found the gully.\n\nWHAT WRONG LOOKS LIKE AT THE START: taking the standard route's trail entrance instead of the one a thousand feet further up the road puts you on the walk-up scramble, which is the DESCENT for this climb. That is not a disaster — it is the way down — but it will not deliver you to the Shield Wall.\n\nWHAT CONFIRMS THE ROUTE ABOVE PITCH ONE: the Shield Wall proper is seven pitches of low fifth to 5.7, and the crux is a WELL-PROTECTED FINGER CRACK passing the second tower ON THE RIGHT. On a route where most pitches take only one to five pieces, a pitch that protects well is itself a marker. Above the wall the ridge continues through rock parapets and gendarmes with three 30 m rappels interleaved with about six more pitches of third class to 5.7 to the summit.\n\nDESCENT NOTE THAT BEARS ON THE APPROACH: you come down Mount Washington's standard Class 3-4 scramble to the same FR-2419 trailhead area, so the two trail entrances are a thousand feet apart at the road and you will use both in one day.",
+        "hazards": [
+          "Generally poor rock for much of the route, with only one to five placements available on many pitches",
+          "Retreat from partway up is reported as difficult and potentially dangerous — commit only in good weather with a competent party",
+          "Loose blocks on the parapets of the upper SE ridge above the Shield Wall proper",
+          "Few opportunities to sling horns or blocks despite what older guidebooks suggest",
+          "Three rappels interleaved with climbing high on the route, on loose ground",
+          "The descent is an exposed Class 3-4 scramble at the end of thirteen pitches"
+        ]
+      }
+    ]
+  },
+
+  "wa_washington_ellinor_traverse_ridge": {
+    "area": "wa_mount_washington_olympic",
+    "approach_variants": [
+      {
+        "name": "Climb Mount Washington first from FR-2419 — the traverse starts on its summit",
+        "season": "Roughly Jun-Sep",
+        "notes": "This route has no trailhead and no approach of its own. It begins on Mount Washington's summit and runs southwest along the connecting ridge to Mount Ellinor, rather than descending Washington's standard route.\n\nSo the approach is Washington's standard south route: FS Road 24 off North Lake Cushman Road for about a mile, left onto FS Road 2419 and up the Big Creek drainage roughly 6.6 miles to the road-end trailhead at about 3,026 ft; steep boot path through forest to the meadow benches; scree and talus staying climber's-left of the large loose gully; the southern ridgeline and the exposed Dog Walk Ledge; the scree field below the false summit and the goat trail up its climber's-right edge to the stone wind shelter; and a final short Class 3-4 scramble to the 6,255 ft summit.\n\nMost parties finish at Ellinor and walk out its standard trail from the upper trailhead, which is a different parking area on the same road corridor — plan the shuttle. Reversing the traverse back over Washington is possible but nobody recommends it.",
+        "baseFinding": "THE BASE OF THIS ROUTE IS A SUMMIT, AND THE TEST THAT YOU ARE ON THE RIGHT ONE IS A BUILDING: you passed a STONE WIND SHELTER on the ridge just below and then made a short Class 3-4 scramble to a top with a summit register on it. If you have not passed a stone shelter, you are on Washington's false summit and the traverse has not started.\n\nTHE TEST THAT YOU ARE ON THE TRAVERSE AND NOT ON A DESCENT IS THE FIRST FEATURE, AND IT IS THE BEST SECTION OF THE ROUTE RATHER THAN THE WORST: from the summit, follow the narrow crest of fractured pillow basalt SOUTHWEST. The first thing you meet is THE WEDGE, about 150 ft of POSITIVE low-fifth / Class 4 climbing on good holds. Positive holds on this mountain are unusual enough to be diagnostic. If the first 150 ft off the summit feels loose and unpleasant and you are losing height fast, you have dropped off the crest into the standard descent gully instead of onto the ridge.\n\nSECOND TEST, further along: past the Wedge the ridge continues as sustained Class 4 past a series of gendarmes, and HIDDEN LEDGES usually keep the difficulty at Class 4 or below. So if a gendarme is presenting you with fifth-class moves, look below the obvious line before you commit — the ledge is probably there and you have not found it. One loose 50 ft downclimb is the section everybody dislikes; it is part of the route, not a sign you are off it.\n\nTHE DECISION POINT: where the crest becomes too hard or too exposed to continue unroped, the published answer is to DROP INTO THE BASIN BELOW and either downclimb a technical sequence or bypass it on a SNOW FINGER, rejoining Ellinor's standard winter route line to that summit. Several sources recommend taking the west-side basin traverse into Ellinor's northeast couloir over the direct ridge from the start, specifically because the crux gendarme downclimb has poor rock and severe exposure.",
+        "hazards": [
+          "Fractured, weathered pillow basalt the whole length of the crest",
+          "A crux gendarme downclimb with notably poor rock and severe exposure that guides often advise bypassing entirely",
+          "Sustained Class 4 with hidden ledges — the difficulty depends on finding them",
+          "A loose 50 ft downclimb",
+          "Committing ground between two summits with no quick exit",
+          "The exit is at a different trailhead from the start; plan a shuttle"
+        ]
+      }
+    ]
+  },
+
+  "wa_mount_olson_standard": {
+    "area": "wa_mount_olson",
+    "approach_variants": [
+      {
+        "name": "South Fork Skokomish Trail #873 to Sundown Pass, then the Six Ridge crest and the Mount Olson Way",
+        "season": "Roughly Jul-Sep, and gated by two fords that are only reliably safe in late summer and early autumn low water",
+        "notes": "Mount Olson sees very few ascents and is normally reached as a side trip off the long Six Ridge traverse. From the Upper South Fork Skokomish Trailhead (Trail #873), reached via Skokomish Valley Road, FS-23 and FS-2361 from Shelton — FS-2361 is gated 1 October to 30 April — the trail runs up the valley. There is an unbridged FORD of the South Fork at about 2.4 miles and 1,450 ft that is only ankle-deep and safely crossable in late summer or early autumn low water; at other times it is a serious hazard. The Olympic National Park boundary comes near 5.1 miles, after which tread grows fainter and a self-issue backcountry permit is required.\n\nSundown Pass, a forested saddle marked by a broken signpost, comes at about 7.2 miles and 4,125 ft — this is the junction with the Six Ridge Trail heading east along the crest. Lake Sundown is a short spur off the pass at about 7.6 miles and 4,030 ft: the last dependable water and the standard basecamp.\n\nFollow the Six Ridge Trail east along its sawtooth crest — a ridge either side with a gully in the middle, and brutal uphill for every downhill — to about 8.7 miles and 4,650 ft, where an unsigned, unofficial boot path known as the MOUNT OLSON WAY leaves the trail for the peak. It is faint and overgrown with blowdown and lingering snowfields into midsummer. A boulder-field tarn at about 5,100 ft below the summit block is the last water and a common bivy.",
+        "baseFinding": "THE BASE OF THE CLIMB IS THE PASS IMMEDIATELY EAST OF THE SUMMIT, AND THE TEST IS THAT THE CLIMBING STARTS THE MOMENT YOU STAND IN IT. From the pass, the final ascent to Olson's 5,289 ft top is a steep, unmarked scramble up a GRASSY AND HEATHER SLOPE pitched around 55-60 degrees in places — hands-on, solid Class 3 — directly above you. Grass and heather at that angle is a distinctive surface: it is neither talus nor rock, and you are either on it or you are not.\n\nSECOND TEST, and it is what tells you the slope is easing correctly rather than that you have wandered: the pitch EASES AND CURVES ROUND THE NORTH SIDE of the peak onto a HEATHER BENCH, and then it is an easy stroll to the true summit. So the sequence is steep grass, then a bench that takes you leftward round the peak, then a walk. If the ground stays steep all the way to a top, or if you are on rock and scree rather than heather, you are on the wrong side.\n\nTHE APPROACH TEST BEFORE ANY OF THAT is the departure from Six Ridge, because it is the thing people miss: the Mount Olson Way leaves the Six Ridge Trail at the point on the sawtooth crest CLOSEST TO OLSON, at about 4,650 ft, and it is UNSIGNED. It is faint, overgrown and blowdown-choked. If you are still on obvious trail after passing the point where the crest is nearest the peak, you have walked past the turn.\n\nHONEST LIMIT: there is no documented roped climbing route, rack or pitch-by-pitch description for this peak in any source checked — Mountain Project and SummitPost have no page for it, and Peakbagger and Peakery list it without a route write-up. This is a bushwhack and scramble objective for peak-baggers, and the markers above are the sum of what has been written down. Treat the notch and the upper summit meadow as the crux going both ways: both are loose and exposed and better handled with an axe or a pole for self-arrest, especially wet or under late snow.",
+        "hazards": [
+          "Two unbridged fords only safely crossable in late summer and early autumn low water",
+          "Route-finding on trail-less and boot-path terrain with an unsigned departure from Six Ridge",
+          "Dense brush and blowdown along the Six Ridge approach",
+          "A 55-60 degree grass and heather summit pitch that is loose and exposed, and worse descending",
+          "FS-2361 is gated 1 October to 30 April",
+          "Afternoon weather on an exposed crest, and a multi-day return from a very lightly visited peak"
+        ]
+      }
+    ]
+  },
+
+  "_SKIPPED": {
+    "_note": "Three routes with an empty approach_variants were deliberately left empty. An empty result is a real result; each reason is a statement about what is published, not about effort.",
+    "wa_andersons_thumb_standard": "POSITIONED ONLY RELATIVE TO ITS NEIGHBOURS, which the brief rules out as a fog test. The row's own beta says it plainly: Anderson's Thumb has no dedicated guidebook route description and no topo, and the only accounts are trip-report asides from parties climbing Mount Anderson — one pair was tempted to scramble it on the way out from the Anderson Glacier moraine and turned back when heavy rain started. Every published fix on it is of the form 'the prominent pinnacle in the Flypaper Pass / Echo Rock vicinity', i.e. it is located by naming two other features. In cloud a party could reach Flypaper Pass reliably (see the Mount Anderson entry) and would then have nothing at all to tell them which of the rock towers around the col is the Thumb, where its base is, or which side of it goes. Writing a baseFinding here would mean inventing a marker on a pinnacle nobody has described, on rock a single sentence calls 'good sandstone'. The honest state of the record is: this is an optional unrated scramble bolted onto a Mount Anderson trip, identified by eye in good weather.",
+    "wa_mount_washington_olympic_winter_direct": "THE ROUTE'S OWN DOCUMENTATION SAYS THE BASE CANNOT BE FOUND, WHICH IS THE STRONGEST POSSIBLE REASON NOT TO CLAIM OTHERWISE. The line is described as trail walking, bushwhacking and snow travel from Jefferson Pass until 'a hidden gully near the top' gives one pitch of about 180 ft of steep snow and chossy rock. The only detailed account attached to it is a trip report whose author got off track on the ascent from Jefferson Pass and whose advice is to keep trending west toward the drainage rather than heading up — that is a correction to a navigational error, not a marker. A gully described by its own sources as HIDDEN, on an approach where parties are on record getting lost, has no published fog test. It is also a winter route, where the terrain the markers would sit on is under snow. Anything written here would be invention.",
+    "wa_mount_barnes_scramble": "NO PUBLISHED MARKER FOR WHERE THE CLIMBING STARTS. Barnes is a cross-country side trip off the Bailey Range Traverse with no maintained trail to it, and the entire published summit description is that from a camp near Bear Pass or a nearby meadow you contour scree and lingering snow southeast, then curl north on a boot track up a moderate scree slope to a Class 2 top, a few hours round trip. Every noun in that is generic — scree, snow, a boot track, a moderate slope — and none of it distinguishes the correct slope from the several others off that crest. The one fixed thing is Bear Pass itself, and locating a climb by naming the pass a mile away is exactly the neighbour-relative fix the brief excludes. Note also that reaching Barnes at all is the hard part and it is well documented: 'the maze' of slide alder between the Elwha River and Elwha Basin can take hours on a known route, the Elwha Snowfinger has largely melted out and is no longer a dependable ramp, and NPS reported 9 helicopter rescues among roughly 150 permitted Bailey Range parties in 2018. A party on this peak has navigation problems far larger than finding the base, and a fabricated marker would not help with any of them."
+  },
+
+  "_DEFECTS": {
+    "_note": "Data defects noticed in passing while reading these rows. Reported, not fixed — this batch writes only approach_variants.",
+    "duplicate_mount_stone_rows": "wa_mount_stone_lake_of_angels ('South Route via Lake of the Angels', Class 3) and wa_mount_stone_putvin ('Putvin Trail / Lake of the Angels Scramble', Class 3-4) look like one climb entered twice. Both are filed under wa_mount_stone, both start at the Putvin Trailhead on FR-25, both go to Lake of the Angels, both finish by the west-ridge notch below St. Peter's Gate, and both carry identical gain_ft (5000) and dist_km (8.9) and the same aspect/face strings. The grades differ (Class 3 vs Class 3-4) and the prose differs in emphasis, so confirm before deleting either half. Variants were written for both rather than picking a winner.",
+    "mount_stone_lake_of_angels_two_coordinates": "The two Mount Stone rows disagree about where Lake of the Angels is. wa_mount_stone_lake_of_angels stores it at 47.5966, -123.2736; wa_mount_stone_putvin stores it at 47.6024, -123.2611. That is roughly 1.2 km apart, and the second sits noticeably closer to the summit pin (47.6063, -123.2666) than a lake in a cirque below the south face should. A third figure, 47.602443/-123.261067, appears in the second row's own waypoint while its summit waypoint is 47.606275/-123.266425. One of these is wrong and it is the standard camp for two peaks.",
+    "lake_constance_two_coordinates": "The Constance rows disagree about Lake Constance by about 2.5 km. wa_mount_constance_terrible_traverse and wa_mount_constance_finger_traverse both pin it at 47.7615, -123.108. wa_inner_constance_standard pins it at 47.750725, -123.1422 and its Lake Constance Trailhead at 47.744270, -123.142091. Independent sources put the lake near -123.14 longitude, so the -123.108 pin is the outlier and it also sits on the wrong side of the ridge for a lake at the mouth of Avalanche Canyon, which runs north from the lake toward the summit at 47.7728, -123.1273. Three routes on two peaks share this camp.",
+    "mount_skokomish_waypoints_describe_a_different_approach": "wa_mount_skokomish_standard's approach prose says in as many words that the on-file 'Mildred Lakes / Flapjack Lakes' trailhead is wrong and that the standard route goes via the Putvin Trail and Lake of the Angels — but the WAYPOINT LIST was never updated to match. It still walks the Mildred Lakes approach step by step (Huckleberry Creek crossing, the root-ladder ridge high point at 4,100 ft, the Mildred Lakes basin between Mount Lincoln and Mount Cruiser, the off-trail brush slope above the lakes) with a Putvin trailhead pin bolted on at the end carrying a note that the existing DB trailhead 'appears to be a mismatched/incorrect entry'. The hazards array likewise still names Mildred and Flapjack. So the row currently describes two different approaches in two different columns. Both are real approaches and both are written as variants here, but the row should say which one its waypoints are for.",
+    "mount_cameron_trailhead_records_disagree": "wa_mount_cameron_standard's approach_logistics names the Dosewallips Road washout (47.740259, -123.065764) as the trailhead while its approach prose calls Obstruction Point the PRIMARY approach and its entire waypoint list runs from the Obstruction Point Trailhead (47.9738, -123.4767) over Grand Pass to Cameron Basin. That is the two-copies-of-the-trailhead shape: the logistics blob and the waypoint list point at opposite sides of the range, roughly 33 km apart, and the two surfaces that read them will send a party to different roads.",
+    "mount_cameron_true_summit_disputed": "The same row's summit waypoint is labelled 'Mount Cameron - East Peak (true summit)' at 7,190 ft, while its own `face` field describes a traverse 'from Cameron Pass toward the Main, Middle, and East/Southwest summits' and published traverse accounts reach the true summit FIRST from Cameron Pass and then continue to the Middle Peak and then to the East Peak. On a triple-summited peak that is a real ambiguity, and the row asserts a resolution it does not support.",
+    "mount_cameron_name_points_the_wrong_way": "Recorded here as well as in the README because it is a data defect and not just a naming preference: the row is titled 'Standard Route (Southeast Slopes)' and every source describes a west-ridge walk gained at Cameron Pass, which lies west of the summit. The row's own `face` field already says 'West ridge'. Title and face contradict each other in the same row.",
+    "mount_christie_name_points_the_wrong_way": "wa_mount_christie_west is titled 'West Slopes (Standard)' and its own `face` field says 'North Couloir / Christie Glacier / Southeast Ridge ... approaching via its north side', and `aspect` is N. Every published account climbs the north side. Title and face contradict each other in the same row.",
+    "anderson_trailhead_records_disagree": "wa_mount_anderson_eel_glacier's approach_logistics stores trailheadLat/Lng 47.7413, -123.0474, while wa_andersons_thumb_standard — the neighbouring route on the same massif, reached by the same road — stores 47.740259, -123.065764 and carries an explicit waypoint note saying the first value 'is misplaced near the Dosewallips Road washout gate off Hwy 101, ~8-9 trail miles short of the real trailhead'. Two rows, one road, two answers, and one of them is annotated as wrong without being changed.",
+    "truncated_trailhead_directions": "Two rows carry an approach_logistics.trailheadDirection that has been cut off mid-sentence. wa_mount_ellinor_standard stores 'From the Upper Trailhead (elev.' — five words, ending at an open parenthesis. wa_mount_stone_putvin stores a string ending '...forcing an extra road-walk to the actual trailhead, ' with a trailing comma and space. Both render as directions.",
+    "mount_barnes_dist_km": "wa_mount_barnes_scramble stores dist_km 85.3 (about 53 miles) against gain_ft 3200, while its approach prose describes a 26-mile round trip from Whiskey Bend with about 6,100 ft of gain, plus 6.2 miles each way added by the road washout. 85.3 km may be intended as a full Bailey Range traverse figure rather than a route distance, but paired with 3,200 ft of gain it will render as a 53-mile walk that climbs a third of a vertical kilometre.",
+    "mount_washington_summit_elevation": "wa_mount_washington_olympic's routes disagree about the summit by five feet: the standard-route prose and waypoint say 6,255 ft, while wa_se_ridge_aka_shield_wall's and wa_washington_ellinor_traverse_ridge's summit waypoints say 6,260, and the area row's elevation_ft is 6260. Trivial in itself, but it is three rows on one peak.",
+    "sawtooth_ridge_and_lost_peak_absent": "Two peaks named in the brief have no Olympic area in the catalog. The only 'Sawtooth' area is wa_sawtooth_chelan (Sawtooth / Lake Chelan, filed under wa_centraleast) — a different range entirely, and out of this batch's scope. The only 'Lost Peak' is wa_lost_peak_pasayten (Okanogan, 8,464 ft). The Olympic Sawtooth Ridge, in the Mount Skokomish Wilderness near Mount Cruiser, and the Olympic Lost Peak near Cameron are absent rather than misfiled — no area row for either exists under wa_olympics. Nothing was created; this is reported so a future pass does not conclude they were skipped."
+  }
+}

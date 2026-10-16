@@ -1,0 +1,384 @@
+{
+ "file": "r041.json",
+ "results": [
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "fact": "Approach side and base camp",
+   "verdict": "fixed",
+   "correct_value": "Approach through Crescent Creek Basin and over the Ottohorn-Himmelhorn col onto the north side; the Eye Col is where the couloir tops out, not the approach",
+   "evidence": "The first-ascent report describes camping on the Chopping Block ridge, traversing Crescent Creek Basin and climbing through the Otto-Himmel col to reach the north side of the Twin Needles, with the couloir starting ~1000 ft below the col and ending at Eye Col. The 2011 ski-descent report likewise went from the Chopping Block camp down into Crescent Creek basin and up to the Otto-Himmel col; the 2022 AAJ note uses the same Crescent Creek Basin -> Ottohorn-Himmelhorn col -> Mustard Glacier approach to the adjacent buttress. The approach text wrongly says the route avoids Crescent Creek Basin. The bivy note's 'north side of the crest' is left to the camping clean-up.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "https://wildsnow.com/5477/cascades-pickets-thread-ice-ski/",
+    "http://publications.americanalpineclub.org/articles/13201216383"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Approached from the north side of the Twin Needles rather than the standard Crescent Creek Basin/Eye Col south approach; specific trailhead-to-base beta beyond the first-ascent account has not been published.",
+     "replace": "From a camp on the Chopping Block ridge, traverse Crescent Creek Basin and climb to the Ottohorn-Himmelhorn col, then descend its north side onto the Mustard Glacier; the couloir starts roughly 1,000 ft below the col and tops out at the Eye Col between the two Needles. The usual way down is by the gullies on the south side of the Eye Col back into Crescent Creek Basin.",
+     "id": "wa_east_twin_needle_thread_of_ice",
+     "fact": "Approach side and base camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "fact": "Whether the permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only (Southern Picket cross-country zones are not reservable)",
+   "evidence": "The park's cross-country zones page states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that the remaining cross-country zones are walk-up only; its table lists Crescent Creek and Terror Basin (6/6). The park's backcountry-reservations page repeats the same list and says most cross-country zones are walk-up only, issued in person. So the ACCESS/permit text telling climbers to reserve online is the wrong copy; the camp card's walk-up-only statement is right (bivy itself untouched).",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "Walk-up only: pick it up in person at the Marblemount Wilderness Information Center on the day of or the day before your start. The Southern Picket cross-country zones are not among the few zones that can be booked in advance.",
+     "id": "wa_east_twin_needle_thread_of_ice",
+     "fact": "Whether the permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(walk-up only, issued in person at the Marblemount Wilderness Information Center; the Southern Picket cross-country zones cannot be reserved in advance)",
+     "id": "wa_east_twin_needle_thread_of_ice",
+     "fact": "Whether the permit can be reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "fact": "County vs sheriff",
+   "verdict": "unresolved",
+   "correct_value": "County is Whatcom; backup sheriff line not established",
+   "evidence": "The Twin Needles are in Whatcom County (Wikipedia infobox/category, citing GNIS; the route rows themselves agree). The stored value leads with North Cascades NP dispatch and names the Skagit County Sheriff line only as an after-hours backup — the same pattern used on ~50 other Pickets rows, which a 2026-09-16 sheriff-number sweep deliberately refused to change (this exact row was named there). No agency page was found that states which sheriff line NPS uses as its after-hours backup for this part of the park, so replacing the number is not established; flagged for the owner, no patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twin_Needles"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_north_buttress",
+   "fact": "County vs sheriff",
+   "verdict": "unresolved",
+   "correct_value": "County is Whatcom; backup sheriff line not established",
+   "evidence": "The Twin Needles are in Whatcom County (Wikipedia infobox/category, citing GNIS; the route rows themselves agree). The stored value leads with North Cascades NP dispatch and names the Skagit County Sheriff line only as an after-hours backup — the same pattern used on ~50 other Pickets rows, which a 2026-09-16 sheriff-number sweep deliberately refused to change (this exact row was named there). No agency page was found that states which sheriff line NPS uses as its after-hours backup for this part of the park, so replacing the number is not established; flagged for the owner, no patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twin_Needles"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Which line this is (moderate South Route vs the II 5.10a East Arete)",
+   "verdict": "unresolved",
+   "correct_value": "Probably the moderate Eye Col line (crux ~5.7), with the II 5.10a east arête a separate route; not settled by two sources",
+   "evidence": "Two different lines are merged in this row. The 2003 AAJ account lists East Twin Needle (II 5.10a) as one of three first ascents on the east-to-west Southern Pickets traverse and describes the 'tremendously exposed east arête' — that is where the grade, rock_grade, fa, face and beta come from. Separately, the 2009 first-ascent report of Thread of Ice climbed East Twin Needle directly from the Eye Col with a crux 5.7 hand crack, and the 2022 AAJ note descended the peak's south face to the Eye Col by downclimbing and rappels — the moderate Eye Col line that overview, pro_needs, pro_tips, partner requirements and itinerary describe. Only one source grades the Eye Col line (5.7), so the row's grade/fa/face/beta cannot yet be rewritten to it with two agreeing sources; which line this row is (name 'South Route' vs the 5.10a data) is an owner decision. No patch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "http://publications.americanalpineclub.org/articles/13201216383"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Where the east arete starts relative to the Eye Col",
+   "verdict": "unresolved",
+   "correct_value": "The east arête is not gained from the Eye Col (the col is the notch on East Twin Needle's west side); the approach's last clause and climbing_route[1] belong to the other line",
+   "evidence": "The Eye Col is the notch between East and West Twin Needle (2022 AAJ note; 2009 first-ascent report), i.e. on East Twin Needle's west side, and the 2003 party reached the east arête while traversing east to west from The Rake. So approach_variants[0].baseFinding is right and climbing_route[1]/the approach's final clause are wrong — but the correct replacement text (the Eye Col line's own description) depends on the unresolved identity question above, so no patch is written.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "https://www.climbing.com/news/better-than-lucky/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "First ascent of this line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2003 party (Wallace, Haley, Bunker, July 27, 2003) is credited with East Twin Needle's II 5.10a east arête. No source names a first-ascent party for the Eye Col line; the 1932 Degenhardt party is credited with 'Twin Needles' generally (the higher West Twin). Depends on the identity decision; no patch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://en.wikipedia.org/wiki/Twin_Needles",
+    "http://publications.americanalpineclub.org/articles/12196206500/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Overview says both needles were first climbed together in 1932",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The overview states both Twin Needles were first climbed on August 17, 1932, but the 2003 AAJ account lists East Twin Needle among the traverse's three first ascents. The 1932 date is sourced to 'Twin Needles' as a whole (the West Twin summit carried the 1932 cairn). One source each way on whether East Twin was summited in 1932; no patch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://en.wikipedia.org/wiki/Twin_Needles",
+    "http://publications.americanalpineclub.org/articles/12196206500/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": "II if this is the 2003 east arête; unknown for the Eye Col line",
+   "evidence": "The only published commitment grade for East Twin Needle is II (with 5.10a) from the 2003 account; nothing grades the Eye Col line's commitment. rope_note and seasonal_hazards.exposure say Grade III (left over from the row's earlier 'Grade III, 5.7'). Depends on the identity decision; no patch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Rope: single vs double 60 m",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "One 60 m rope covers the Eye Col gully rappels; a second 60 m rope is needed for the double-rope rappels of the Himmelhorn-West Twin Needle notch exit",
+   "evidence": "descent_text already distinguishes the two descents (1-3 short single-rope rappels in the Eye Col gullies; two double-60 m rappels below the Himmelhorn-West Twin notch), and gear, rack, what_to_bring, detailed_rack and rappels all carry two 60 m ropes. A 2023 West Twin Needle trip lists two 60 m ropes as essential gear and used them for the double-rope rappels past vertical slabs on that descent. Only the rope note implied a single rope was all that is needed, so it is extended rather than the rope card changed.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "60m rope for multi-pitch rock.",
+     "replace": "60m rope for multi-pitch rock, plus a second 60m rope for the double-rope rappels if you descend by the Himmelhorn-West Twin Needle notch.",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Rope: single vs double 60 m"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Terrain into the Eye Col",
+   "verdict": "fixed",
+   "correct_value": "Loose gully; small chockstones low are scrambled, larger chockstones higher are fifth class and pitched, then a short scree walk to the col",
+   "evidence": "A 2023 party found the lower small chockstones easy, the larger ones higher 'put us in the class 5 terrain, where we needed to start pitching', and then walked up scree briefly to the Eye Col. The 2022 AAJ note descended these same south-facing gullies with repeated rappels, and the 2009 report records a chockstone rappel — not plain 4th-class ground. So the waypoint note, baseFinding and variant notes are consistent (each describes a different stretch); only the itinerary's '4th-class scrambling' understates it.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Mix of snow and 4th-class scrambling between the two Needles.",
+     "replace": "Loose gully between the two Needles: small chockstones low down are scrambled, the bigger ones higher up are fifth class and usually pitched out, then a short scree walk to the col.",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Terrain into the Eye Col"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Days of approach / when the climb happens",
+   "verdict": "fixed",
+   "correct_value": "One long day in to a camp on the Chopping Block ridge / Crescent Creek Basin, climb the next day, one day out",
+   "evidence": "The 2022 AAJ party reached a col near the Chopping Block on day one (6+ miles, 6,000 ft) and climbed the next day; the 2009 first-ascent party camped on the Chopping Block ridge, climbed the next day and walked out to the car in 5 hours on day three; the 2018 Mount Terror trip was likewise 3 days. The itinerary and published times are right; partner_requirements' '~2 days each way' and the approach's mandatory 'day two' camp move are the outliers. The move to the lower 6,050 ft camp is kept as an option.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Multi-day approach (commonly ~2 days each way) via",
+     "replace": "One long, strenuous day each way via",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Days of approach / when the climb happens"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "On day two, drop about 200-250'",
+     "replace": "Parties wanting a camp nearer the Needles can instead drop about 200-250'",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Days of approach / when the climb happens"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to a second camp below Mount Terror",
+     "replace": "to a camp below Mount Terror",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Days of approach / when the climb happens"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "best_season, seasonal_guidance and access.closures say mid-July to early September; the header season says late Jul-Aug and the approach variant late Jul-Sep. Documented ascents (2003: July 25-28; 2022: July 30-31; 2009 Twin Needles: June; 2023 West Twin: August) fall inside all of these, so no source decides the window's edges. Low severity; no patch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Terror Creek crossing",
+   "verdict": "fixed",
+   "correct_value": "Terror Creek is forded, or crossed on a big log just upstream when one is in place",
+   "evidence": "A 2018 trip crossed at about 2,040 ft and notes a big log 500 ft upstream at 2,100 ft; a 2023 trip forded at a shallow spot; the 2011 party crossed on a long log about 15 ft above the water. The waypoint's flat 'cross on a large logjam' is too certain for a crossing that changes year to year, while the approach's 'scout for a safe crossing' is right.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://wildsnow.com/5477/cascades-pickets-thread-ice-ski/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "cross Terror Creek on a large logjam",
+     "replace": "cross Terror Creek by fording, or on a big log just upstream when one is in place",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Terror Creek crossing"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Height of the Barrier descent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "roughly 4,300 ft from the Chopping Block ridge (~6,400 ft) down to Terror Creek (~2,100 ft)",
+   "evidence": "The row's own waypoints (Terror Creek 2,100; Barrier crossing 6,100; camp 6,400), the approach (~6,400 ft camp) and itinerary day 1 (5,800 ft gain from a 600 ft trailhead) all put the drop at ~4,000-4,300 ft. A 2018 trip gives the creek crossing at 2,040 ft (log at 2,100) and the Chopping Block camp at 6,400 ft; the 2022 AAJ note gives 6,000 ft total from the trailhead to the col. 3,200 ft is the outlier.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "http://publications.americanalpineclub.org/articles/13201216383"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "roughly 3,200' of descent to Terror Creek",
+     "replace": "roughly 4,300' of descent to Terror Creek",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Height of the Barrier descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Which side of the crest Crescent Creek Basin is on",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The approach and baseFinding are right: Crescent Creek Basin lies below the south-facing Eye Col gullies (the 2022 AAJ party descended south-facing gullies to reach it). The camp card's 'north side of the crest' is the wrong statement, but bivy[] belongs to the camping clean-up; no patch. For this route, Crescent Creek Basin camp, Stump Hollow, the Goodell roadhead and the Terror Creek roadbed spot serve the approach; Terror Basin camp is off-route (south-side base for Terror/Degenhardt); the western-crest bivouacs are marginal.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Whether the permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only",
+   "evidence": "The park's cross-country zones page states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that the remaining cross-country zones are walk-up only; its table lists Crescent Creek and Terror Basin (6/6). The park's backcountry-reservations page repeats the same list and says most cross-country zones are walk-up only, issued in person. So the ACCESS/permit text telling climbers to reserve online is the wrong copy; the camp card's walk-up-only statement is right (bivy itself untouched).",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "reserve in advance via Recreation.gov or obtain a first-come, first-served permit in person",
+     "replace": "these zones are walk-up only, so obtain a first-come, first-served permit in person",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Whether the permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained",
+     "replace": "The Southern Picket cross-country zones cannot be booked in advance; permits for them are walk-up only, obtained",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Whether the permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "Walk-up only: pick it up in person at the Marblemount Wilderness Information Center on the day of or the day before your start. The Southern Picket cross-country zones are not among the few zones that can be booked in advance.",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Whether the permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(walk-up only, issued in person at the Marblemount Wilderness Information Center; the Southern Picket cross-country zones cannot be reserved in advance)",
+     "id": "wa_east_twin_needle_south_route",
+     "fact": "Whether the permit can be reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "fact": "Distance (column vs itinerary)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 31.4 km = 19.5 mi, which matches a published ROUND-TRIP figure for West Twin Needle (19.5 mi; 19 mi for Mount Terror) rather than a one-way approach. The one-way figure is not pinned: the 2022 AAJ note says 'more than six miles' to the Chopping Block col, the approach says 6-7.5 mi, the waypoints put the Eye Col at 7.8 mi. No two sources agree on a one-way number, so dist_km is left; the itinerary's 16 mi total is also below the published 19-19.5 mi round trips.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "http://publications.americanalpineclub.org/articles/13201216383"
+   ],
+   "patches": []
+  }
+ ]
+}

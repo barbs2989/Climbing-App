@@ -1,0 +1,64 @@
+{
+ "applied": [
+  {
+   "id": "wa_clast_from_the_past",
+   "column": "sling_rack",
+   "path": [],
+   "fact": "Discipline / protection style"
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Pitch count and descent method in rope note"
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Gear list says lowering is an option while watch_out says rappelling is required"
+  },
+  {
+   "id": "wa_top_gun",
+   "column": "watch_out",
+   "path": [],
+   "fact": "watch_out describes a different route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_clast_from_the_past",
+   "before": {
+    "sling_rack": {
+     "cams": "small rack supplementing bolts for knob placements",
+     "nuts": "small nut set",
+     "runners": "2-4 slings for knob hitches"
+    },
+    "rope_note": "Single-pitch basalt route on the North Side of Pinto Rock; 60m rope sufficient to lower off.",
+    "gear": [
+     "Quickdraws — the route is fully bolted up the lichen-covered basalt band on Pinto Rock's north face; bring a standard sport rack for the pitch length rather than a trad rack",
+     "60m rope — single rope is fine; descent is either a walk-off around the east side or a bolted rappel line that shares anchors partway with the neighboring route Sidewinder",
+     "Helmet — basalt is knobby and generally solid, but loose blocks and other parties above are a real concern on this face",
+     "Alpine quickdraws/slings for the anchor stations if lowering rather than rappelling"
+    ]
+   }
+  },
+  {
+   "id": "wa_top_gun",
+   "before": {
+    "watch_out": "Route-finding complexity—alpine rock climbing with terrain variations; easy to wander off established line; study topo and photos\nLoose and friable rock—typical Cascades granite; test holds and placements; helmet essential\nExposed scrambling on upper sections—significant consequences if climbing protection fails; runout potential between bolts\nWeather exposure on open ridge—afternoon storms common; exposed position dangerous with lightning; start early\nDescent route-finding—rappel and down-climbing required; terrain confusing in poor light; headlamp essential\nAltitude exposure—7200+ feet; sustained climbing; altitude sickness possible; hydration management critical\nLimited bailout options once committed to upper pitches—terrain becomes more serious as altitude increases; commit only in good conditions\nGlacier/snow approach possible—seasonal variation; microspikes may be needed; assess conditions before approach"
+   }
+  }
+ ]
+}

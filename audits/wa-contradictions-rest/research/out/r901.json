@@ -1,0 +1,47 @@
+{"file": "r901.json", "results": [
+{"id":"wa_mount_mystery_standard","fact":"Rope length","verdict":"unresolved","correct_value":null,
+ "evidence":"No source states a 60 m rope. One high-route account lists 'a 30m rope may be useful'; a Mountaineers report on the East Col climbed on 40 m rope teams; the Mountaineers report that describes two single-rope rappels to the saddle gives no rope length. Per-rappel lengths are unknown, so no two sources agree on a length to adopt.",
+ "sources":["https://ericsbasecamp.net/trips/Mystery/Mystery.htm","https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-mystery-east-col","https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-mystery-little-mystery"],
+ "patches":[]},
+{"id":"wa_mount_mystery_standard","fact":"How the summit section is descended","verdict":"unresolved","correct_value":null,
+ "evidence":"One Mountaineers party made two single-rope rappels back to the saddle and downclimbed the rest; another party (2023 blog) left a bail anchor of nuts and a sling at the 4th-class notch step rather than downclimb a 5.8 move; another party made a careful roped descent of class 3-4 rock. Parties handle it differently and it is not established whether the 'saddle' of the rappel report is the ~7,500 ft notch, so the conflicting descriptions cannot be reconciled to one line from sources.",
+ "sources":["https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-mystery-little-mystery","https://alpinismproject.com/2023/07/04/mount-mystery-chossneering-at-its-finest/","https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"],
+ "patches":[]},
+{"id":"wa_mount_mystery_standard","fact":"Location and rock quality of the crux","verdict":"unresolved","correct_value":null,
+ "evidence":"A 2023 account puts a 4th-class step on poor rock below a notch near 7,500 ft, with a clear class 3 gully above to good summit-block rock. Another account (east face line) roped a short Class 4 slot in a crumbly breccia cliff band low above the col, then scree, then a nice Class 4 dihedral and class 3 ledges near the top; a third calls it a 4th-class scramble from the notch to the summit. The accounts follow different lines, so no two agree on where the crux sits.",
+ "sources":["https://alpinismproject.com/2023/07/04/mount-mystery-chossneering-at-its-finest/","https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/","https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/"],
+ "patches":[]},
+{"id":"wa_mount_mystery_standard","fact":"Elevation of the Mystery Glacier foot","verdict":"fixed_internal_plus_one","correct_value":"about 6,000 ft",
+ "evidence":"A Mountaineers route description has parties drop from 6,200 ft camps in Deception Basin to about 6,000 ft to reach the glacier, which is then climbed to the ~6,700 ft col at its upper right. Row-internal: climbing_route[0], pitch_detail[2] and beta all have the party DESCEND from the ~6,560 ft divide into Deception Basin before climbing the glacier to a 6,700 ft col, so a 6,650 ft terminus is impossible; USGS 3DEP ground at the terminus pin itself reads ~5,810 ft and the basin floor around it 5,700-5,900 ft.",
+ "sources":["https://www.mountaineers.org/activities/routes-places/deception-mystery-fricaba-hal-foss","https://epqs.nationalmap.gov/v1/json?x=-123.21821883720929&y=47.80685084883721&units=Feet&wkid=4326","https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"],
+ "patches":[
+  {"id":"wa_mount_mystery_standard","fact":"Elevation of the Mystery Glacier foot","op":"set","column":"waypoints","path":[5,"elev"],"expect":6650,"value":6000}
+ ]},
+{"id":"wa_mount_mystery_standard","fact":"Trailhead forest road","verdict":"fixed","correct_value":"Upper Dungeness Trailhead is on Forest Road 2870, reached via FR 2880",
+ "evidence":"The Forest Service trailhead page: turn onto FSR 2880, drive 1 mile past Dungeness Forks, stay left onto FSR 2870 for 8.7 miles to the trailhead. WTA: turn right onto FSR 2880, in 1.6 miles stay left onto FSR 2870, continue ~9.5 miles to the trailhead lot across the Dungeness River bridge. Neither mentions FR 2860.",
+ "sources":["https://www.fs.usda.gov/recarea/olympic/null/recarea/?recid=48103&actid=51","https://www.wta.org/go-hiking/hikes/upper-dungeness-river"],
+ "patches":[
+  {"id":"wa_mount_mystery_standard","fact":"Trailhead forest road","op":"replace_text","column":"road","path":["name"],"find":"Forest Road 2860","replace":"Forest Road 2870"},
+  {"id":"wa_mount_mystery_standard","fact":"Trailhead forest road","op":"replace_text","column":"road","path":["driveNote"],"find":"then FR 2860 for about 11 miles","replace":"then FR 2880 and FR 2870 for about 11 miles"},
+  {"id":"wa_mount_mystery_standard","fact":"Trailhead forest road","op":"replace_text","column":"approach","path":[],"find":"(Forest Road 2860,","replace":"(Forest Road 2870,"}
+ ]},
+{"id":"wa_mount_mystery_standard","fact":"How the overnight permit is obtained","verdict":"fixed","correct_value":"Advance reservation only; no self-issue or walk-up permits at the trailhead",
+ "evidence":"NPS wilderness reservations page lists Royal Basin/Royal Lake as a quota area, says paper self-registration permits are no longer available at trailheads and that no sites are held as same-day walk-ups. WTA says Royal Lake/Royal Meadow permits are obtained on Recreation.gov (outside the online season through the Wilderness Information Center).",
+ "sources":["https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm","https://www.wta.org/go-hiking/hikes/royal-basin"],
+ "patches":[
+  {"id":"wa_mount_mystery_standard","fact":"How the overnight permit is obtained","op":"replace_text","column":"waypoints","path":[0,"note"],"find":"self-issue Olympic National Park wilderness permit required at the kiosk before starting up the Royal Basin Trail.","replace":"any night in Royal Basin needs an Olympic National Park wilderness permit booked in advance, since none are issued at the trailhead."},
+  {"id":"wa_mount_mystery_standard","fact":"How the overnight permit is obtained","op":"replace_text","column":"waypoints","path":[0,"directions"],"find":"A self-issue Olympic National Park wilderness permit is required at the kiosk before starting up the Royal Basin Trail.","replace":"Overnight stays in Royal Basin need an Olympic National Park wilderness permit booked in advance; none are issued at the trailhead."},
+  {"id":"wa_mount_mystery_standard","fact":"How the overnight permit is obtained","op":"replace_text","column":"approach_variants","path":[0,"notes"],"find":"vault toilet, self-issue Olympic National Park wilderness permit at the kiosk —","replace":"vault toilet; an overnight stay needs an Olympic National Park wilderness permit booked in advance —"}
+ ]},
+{"id":"wa_mount_mystery_standard","fact":"Where camping is allowed","verdict":"unresolved","correct_value":null,
+ "evidence":"The current NPS Royal Basin page lists camp locations as Royal Creek, Lower Royal Meadow and Royal Lake and says to camp in designated sites only in Royal Basin; WTA and a 2019 blog likewise say camping is only at designated sites. Other sources (ProTrails summary, climber trip reports camping at 5,800 ft in the upper basin) say Upper Royal Basin has no designated sites and permits camping on bare ground/gravel, booked by calling the Wilderness Information Center. Whether upper-basin camping is currently permitted cannot be settled from agreeing current sources; confirm with the Wilderness Information Center.",
+ "sources":["https://home.nps.gov/olym/planyourvisit/royal-basin.htm","https://www.wta.org/go-hiking/hikes/royal-basin","https://moderatelyadventurous.com/washington-backpacking-royal-basin/","http://www.protrails.com/trail/570/olympic-national-park-royal-basin","https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"],
+ "patches":[]},
+{"id":"wa_mount_mystery_standard","fact":"Cause of the 2022 fatality","verdict":"fixed","correct_value":"A fall, ruled accidental; no source attributes it to route-finding errors",
+ "evidence":"The county coroner ruled the death accidental from blunt-force injuries, with the climber believed to have slipped while traversing a rock face and fallen about 30 ft (Port Townsend Leader). Outside reported officials believed he fell about 40 ft, likely in poor visibility. The NPS release gives no cause. No source mentions route-finding errors onto cliffy ground.",
+ "sources":["https://www.ptleader.com/stories/climbers-death-in-olympics-ruled-accidental,85015","https://www.outsideonline.com/outdoor-adventure/climbing/washington-climber-found-dead-in-olympic-national-park/","https://www.nps.gov/olym/learn/news/recovery-efforts-completed-for-missing-climber.htm"],
+ "patches":[
+  {"id":"wa_mount_mystery_standard","fact":"Cause of the 2022 fatality","op":"replace_text","column":"hazards","path":[3],"find":" — exact cause of the fall was not publicly detailed by NPS beyond that visibility/conditions were a factor","replace":" — the death was ruled an accidental fall"},
+  {"id":"wa_mount_mystery_standard","fact":"Cause of the 2022 fatality","op":"replace_text","column":"seasonal_hazards","path":["exposure"],"find":"a 2022 fatality occurred here tied to route-finding errors onto cliffy ground","replace":"a solo climber died in a fall near the peak's south end in July 2022"}
+ ]}
+]}

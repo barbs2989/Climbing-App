@@ -1,0 +1,388 @@
+{
+  "wa_mount_rainier_disappointment_cleaver": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "Paradise to Camp Muir, then Cathedral Gap and Ingraham Flats",
+        "season": "Late May through September, once guide services have the boot track in",
+        "distMi": 4.5,
+        "gainFt": 4700,
+        "notes": "Paradise (5,420 ft) is the trailhead. Maintained tread on the Skyline Trail runs past Panorama Point (~6,800 ft) and Pebble Creek (~7,200 ft) — Pebble Creek is the last running water on the route — and ends near McClure Rock (~7,385 ft). Everything above that is the Muir Snowfield, which the Park Service does not mark or maintain; the trench you follow is boot-packed and wanded by the guide services and is erased by wind or new snow within hours.\n\nThe snowfield is the part of this route that kills people who are not climbing. It is a narrow tongue with heavily crevassed glaciers on both flanks — Nisqually to the west, Cowlitz to the north and east, Paradise to the south and east — and the cliff band between McClure Rock and Anvil Rock is corniced and snow-covered in winter. A modest navigation error puts you on a glacier or over an edge. The Park Service publishes bearings for this ground for that reason: north of Pebble Creek the line to Moon Rocks runs 355 degrees true. Carry map and compass and know the bearings before the visibility goes.\n\nCamp Muir (10,080 ft) is the high camp: stone huts, a public shelter, a ranger station and toilets on a saddle between the snowfield and the Cowlitz Glacier. Nightly capacity is capped and the camp fills, especially Friday and Saturday. Ingraham Flats and the snowfield itself are the sanctioned overflow, each with a much smaller cap.\n\nPermits: everyone on a glacier or above roughly 10,000 ft needs a per-person climbing permit for the calendar year, obtained online or at a ranger station. Overnights during the high-use season need a wilderness permit for the specific camp, with roughly half the capacity reservable in advance and the balance held for walk-ups; a reservation still has to be picked up in person. Party size is two or more unless you hold a rare solo authorisation.\n\nFrom Camp Muir the day begins roped. Cross the upper Cowlitz Glacier eastward toward the Cathedral Rocks, pass through Cathedral Gap — the breach in that rock ridge — and drop into Ingraham Flats (~11,200 ft), a bench under the Ingraham icefall used both as a rest stop and as an alternative high camp.",
+        "baseFinding": "The climbing starts where you step off snow onto the rock of the Cleaver, and there are three checks that you are in the right place.\n\nFirst, direction out of Camp Muir. You should be crossing the Cowlitz eastward and gaining a notch in a rock ridge — Cathedral Gap. If instead you are climbing a rock ridgeline immediately northwest of camp, out of the tents, you are on the Cowlitz Cleaver and you are on the Gibraltar Ledges approach, a different route.\n\nSecond, the Flats. Ingraham Flats is genuinely flat — a bench with dug tent platforms and the Ingraham icefall hanging above and to the west. If you are still gaining steadily and have not walked across level ground, you have not reached it.\n\nThird, the Cleaver itself. From the Flats you traverse to the Cleaver's lower southern side. You do not climb the nose. The nose is the low rock toe pointing down at the Flats, and the boot track passes it and gains rock roughly 300 ft above it, on the Ingraham side. If you are pulling onto rock at the very lowest point of the rib you are off the track. Once on it, you are on a rock rib with glacier on both sides and you follow it to its top at about 12,300 ft.\n\nNegative marker: if the whole way from the Flats stays on snow with the icefall directly overhead and you never touch rock, you are on the Ingraham Direct, not the Cleaver.",
+        "hazards": [
+          "Whiteout navigation on the Muir Snowfield — unmarked, unmaintained, glaciers and cliffs on both flanks, boot track erased by wind",
+          "Corniced cliff band between McClure Rock and Anvil Rock, hidden under snow in winter",
+          "Crevasses on the Cowlitz crossing between Camp Muir and Cathedral Gap",
+          "Rockfall in Cathedral Gap and off the Cleaver, worst once the sun is on it",
+          "Serac fall from the Ingraham icefall above Ingraham Flats"
+        ]
+      },
+      {
+        "name": "High camp at Ingraham Flats instead of Camp Muir",
+        "season": "Same window; used when Camp Muir is full or to shorten summit day",
+        "notes": "Ingraham Flats (~11,200 ft) is a permitted camp with a much smaller nightly cap than Camp Muir, and it is the sanctioned overflow when Muir is booked out. The approach is identical as far as Camp Muir; you then rope up and continue over the Cowlitz and through Cathedral Gap with camp gear, which turns the carry into a longer day but removes about 1,100 ft and the Cathedral Gap crossing from summit morning.\n\nThe trade is exposure. The Flats sit under the Ingraham icefall, and the camp is chosen and re-sited by the rangers with that in mind. There is no water, no shelter and no toilet building; the Camp Muir facilities are 1,100 ft below you.",
+        "baseFinding": "Camping here puts you within a few hundred metres of the Cleaver's base, so the recognition problem changes shape: you are looking for the traverse line off the bench rather than for the bench itself. From the tents, the Cleaver is the rock rib bounding the Flats on the north and west. Walk toward its lower southern flank and expect to gain rock a few hundred feet above its lowest toe, not at the toe. Icefall debris on the snow between camp and the rib is a sign you are crossing under the serac line rather than skirting it — that ground is to be crossed quickly and not lingered on.",
+        "hazards": [
+          "Serac fall from the Ingraham icefall onto the camp and the ground immediately above it",
+          "No water source and no shelter at the Flats",
+          "Camp capacity is small and separately permitted from Camp Muir"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "https://www.summitpost.org/disappointment-cleaver/155670",
+      "https://home.nps.gov/mora/planyourvisit/upload/Camp-Muir-Route-with-Get-Your-Bearings-map-Jan18.pdf",
+      "https://www.backpacker.com/skills/america-s-10-most-dangerous-hikes-muir-snowfield-mt-rainier-wa/",
+      "https://mountrainierclimbing.blogspot.com/2019/07/full-camps.html"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_ingraham_direct": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "Paradise to Camp Muir, then straight up the Ingraham",
+        "season": "Roughly January through the end of May, while the Ingraham is filled in and before the Cleaver route opens",
+        "distMi": 4.5,
+        "gainFt": 4700,
+        "notes": "The walk in is identical to the Disappointment Cleaver: Paradise (5,420 ft), Skyline Trail past Panorama Point and Pebble Creek, then the Muir Snowfield above McClure Rock to Camp Muir (10,080 ft). Pebble Creek is the last water. The snowfield is unmarked and unmaintained and is bounded by crevassed glaciers and by the corniced cliff band between McClure Rock and Anvil Rock; the Park Service's published bearing from Pebble Creek toward Moon Rocks is 355 degrees true.\n\nWhat is different is the season. This is the winter and spring line, so the snowfield is more often a navigation problem than a walk, the camp is colder and quieter, and self-registration for the climbing permit is done at the Paradise old station kiosk in the winter season rather than at a staffed wilderness desk.\n\nAbove Camp Muir the route crosses the upper Cowlitz eastward, passes through Cathedral Gap and reaches Ingraham Flats (~11,200 ft). From there it stays on the glacier the whole way instead of stepping onto rock. Between roughly 11,800 and 12,300 ft it weaves back and forth, end-running large crevasses. Large seracs overhang the western side of the glacier near 12,500 ft. The route rejoins the standard line at the top of the Cleaver (~12,300 ft), or in some conditions trends toward the top of Gibraltar Rock at about 12,600 ft on slopes up to 50 degrees.\n\nA hard overnight freeze is what makes this route reasonable; without one the bridges are unreliable and the seracs are active. Parties leave camp in the small hours for that reason, not for the view.",
+        "baseFinding": "The decision point — and the thing to recognise — is at Ingraham Flats, because up to there this route and the Disappointment Cleaver are the same walk.\n\nStand on the bench. The rock rib rising on your north and west is Disappointment Cleaver. The Direct does not touch it. Your line goes up and right of that rib, staying on snow and ice, aiming into the broken ground below the Ingraham icefall.\n\nThe test that you are on the Direct and not the Cleaver: after leaving the Flats you should never put a crampon on rock. If you find yourself scrambling a rock rib, you have joined the Cleaver.\n\nThe test that you are too far west: seracs. The western portion of the Ingraham near 12,500 ft has large overhanging ice above it. If ice blocks and debris are lying on the snow around you, you are under the icefall's fall line and need to be moving, not navigating.\n\nThe end of the crevasse maze is legible: at about 12,300 ft the ground you are on merges with the top of the Cleaver and the weaving stops. If you are still end-running individual crevasses well above that, you have drifted west toward Gibraltar Rock — a legitimate finish on steeper ground, but a different one.",
+        "hazards": [
+          "Whiteout navigation on the Muir Snowfield, with crevassed glaciers on both flanks",
+          "Winter cornices and hidden cliffs between McClure Rock and Anvil Rock",
+          "Overhanging seracs on the western Ingraham near 12,500 ft",
+          "Crevasse bridges dependent on a hard overnight freeze",
+          "Avalanche hazard on the glacier slopes in winter and spring conditions"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/ingraham-glacier-direct/158122",
+      "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-ingraham-glacier",
+      "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "https://home.nps.gov/mora/planyourvisit/upload/Camp-Muir-Route-with-Get-Your-Bearings-map-Jan18.pdf"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_gibraltar_ledges": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "Paradise to Camp Muir, then the Cowlitz Cleaver",
+        "season": "Winter and spring, while snow and ice cover the ledges; documented into early June",
+        "distMi": 4.5,
+        "gainFt": 4700,
+        "notes": "Paradise (5,420 ft) to Camp Muir (10,080 ft) by the Skyline Trail and the Muir Snowfield, the same carry as the Disappointment Cleaver. Pebble Creek (~7,200 ft) is the last running water; melt snow at Muir. Because this is a cold-season route the snowfield is very often a compass problem — unmarked, unmaintained, glaciers on both flanks, and a corniced cliff band between McClure Rock and Anvil Rock. The Park Service's published bearing from Pebble Creek to Moon Rocks is 355 degrees true.\n\nSome parties carry past Muir to a camp near 10,800 ft on the cleaver, which shortens the summit day and gets you above the first section.\n\nThis route is short on approach and long on exposure: unlike the Cleaver and the Ingraham Direct, the technical ground starts within minutes of leaving the tent. The ledges face southwest and stay in shade until roughly mid-morning, which is the whole timing argument — the ledges and the chute above them are a rockfall funnel once the sun reaches them, and the route is only recommended when everything up there is frozen.",
+        "baseFinding": "You leave camp and you are on the route. There is no walk-in phase, which is exactly why people get this one wrong in the dark.\n\nThe start is the ridgeline immediately northwest of Camp Muir — the Cowlitz Cleaver. Not east across the Cowlitz Glacier: east is Cathedral Gap and the Disappointment Cleaver, the opposite side of camp. If the first thing you are doing is a roped glacier traverse away from the huts toward a rock notch, you have turned the wrong way out of Muir.\n\nOn the cleaver you gain roughly 1,600 ft of moderate to steep snow, threading around rock gendarmes, passing beneath the Beehive and crossing the crest through a notch. The section ends where it runs into the base of Gibraltar Rock at about 11,800 ft — that is unmistakable, a large rock mass you cannot go through.\n\nThe ledges are the confirmation. At the base of Gib Rock you should find an exposed shelf of snow and rock that traverses horizontally along the rock's southwest-facing base for about a third of a mile. If you are climbing rather than traversing, you have not found the ledge system. The ledges deliver you to the foot of the Gibraltar Chute, and the chute is about 400 ft of 45-degree snow ending at the top of Gibraltar Rock at roughly 12,300 ft. Above that, most parties trend onto the upper Ingraham for another 1,200 ft to avoid crevasses and join the standard route near 13,800 ft.\n\nThe timing test matters as much as the location test: you want to be across the ledges and out of the chute before the sun hits that southwest aspect.",
+        "hazards": [
+          "Rockfall onto the ledges and into the Gibraltar Chute once the sun reaches the southwest aspect",
+          "Exposed, narrow, sometimes icy traverse with no easy retreat once committed",
+          "Whiteout navigation on the Muir Snowfield in winter conditions",
+          "Large crevasses separating the top of the route from the glacier above",
+          "Avalanche hazard on the cleaver and in the chute after loading"
+        ]
+      }
+    ],
+    "_sources": [
+      "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+      "https://mountrainierclimbing.blogspot.com/2019/05/gibraltar-ledges-may-8-2019.html",
+      "https://www.mountainproject.com/route/107467946/gibraltar-ledges",
+      "https://home.nps.gov/mora/planyourvisit/upload/Camp-Muir-Route-with-Get-Your-Bearings-map-Jan18.pdf"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_fuhrer_finger": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "Paradise, Glacier Vista and the Nisqually crossing to a Wilson Glacier camp",
+        "season": "Spring, while the couloir is snow-filled and the rock above is still frozen",
+        "notes": "From Paradise (5,400 ft) take the paved Skyline Trail about a mile to the Glacier Vista overlook (~6,300 ft). This is where the route leaves the tourist ground: a climbers' path drops several hundred feet west off the moraine onto the Nisqually Glacier, crossing at roughly 6,200 ft. Most parties rope up before stepping onto the ice — the crossing threads crevassed terrain under an icefall and is genuinely committing in poor visibility.\n\nOn the far side, a boulder-filled gully angles up and right onto the left-hand side of the Wilson Glacier. About 700 ft up that gully there is a sheltered rest point with bivy sites. The more usual choice is to continue onto the Wapowety Cleaver and follow its crest to a high camp at roughly 9,000–9,200 ft at the edge of the Wilson Glacier, where there are rock windbreaks and a large rock buttress for shelter.\n\nUse the daylight from camp. The traverse of the Wilson Glacier under the Wilson Headwall to the foot of the couloir has real route-finding, and you will be doing it in the dark. Scope the line the evening before.\n\nThe route is climbed early in the day for one reason: the ground above the couloir catches sun very early, and the couloir is the drain for everything it loosens.",
+        "baseFinding": "The base of the climbing is the mouth of the Fuhrer Finger, on the eastern side of the Wilson Headwall at around 9,500–10,000 ft, and the identification problem is that there is more than one gully there.\n\nThe Finger is the WIDE one, with an hourglass constriction partway up. The Fuhrer Thumb is the narrower gully immediately west of it — steeper, more constricted, and it can cliff out. If the gully you have entered pinches down immediately, walls closing on both sides, with no wide apron below the constriction, you are in the Thumb, not the Finger.\n\nPositive test: from the base, you should be looking up roughly 2,000–3,000 ft of continuous snow at about 40 degrees, wide at the bottom, narrowing to an hourglass, and widening again. That is the Finger. It runs out onto the west side of the upper Nisqually Glacier and eventually joins the upper Kautz Glacier ground near 13,000 ft.\n\nNegative marker on the approach itself: if you have crossed the Wilson and are directly beneath a broad steep ice face rather than beneath a gully system, you have gone too far and are under the Wilson Headwall proper.\n\nThe other test is time of day. If the sun is on the rock above the couloir and you are still in the lower half of it, you are in the fall line of the day's rockfall and the correct decision is to be out of it, not to keep climbing.",
+        "hazards": [
+          "Crevasses and icefall exposure on the Nisqually Glacier crossing at about 6,200 ft",
+          "Route-finding on the Wilson Glacier traverse, normally done in the dark",
+          "Rockfall funnelled down the couloir once the sun reaches the ground above it",
+          "Avalanche hazard in the couloir",
+          "Large crevasses on the upper slopes that can force long end-runs late in the season"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "https://www.summitpost.org/fuhrer-finger-thumb/159008",
+      "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "https://skimo.co/rainier-fuhrer-finger"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_kautz_glacier": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "Paradise, the Nisqually crossing and the Wilson bench",
+        "season": "Mid-May into early August; the approach and glaciers deteriorate quickly after that",
+        "notes": "From Paradise (5,420 ft) follow the paved trail about a mile to Glacier Vista, then the Nisqually Moraine climbers' path to roughly 6,300 ft where boot paths drop onto the Nisqually Glacier. Rope up here — the crossing is through crevassed ground exposed to icefall from above and is dangerous in poor visibility.\n\nFrom the east side of the glacier there are two ways onto the Wapowety Cleaver ground. One is a flat traverse to the base of a gully known as The Fan, climbed directly to a bench at about 7,300 ft; The Fan carries avalanche, rockfall and steep-snow hazard. The other climbs the Nisqually/Wilson margin at about 6,800 ft through an often-crevassed gully to the same 7,300–7,400 ft bench.\n\nAbove the bench, snow slopes lead to a string of established camps: Wilson Moraine (8,200–8,600 ft), Lower Castle (9,250 ft) and Upper Castle (9,400–9,500 ft), the most common base, with running water from about mid-June. Higher again, rock islands along the west edge of the Turtle snowfield between roughly 9,500 and 10,500 ft hold good bivouacs, and there is usually flowing water at the snowfield edges in warm weather.\n\nCamp Hazard (about 11,000–11,100 ft) is the traditional high camp and is named for what sits above it: the Kautz Ice Cliff. Many parties deliberately camp lower and climb through Camp Hazard early rather than sleep under the cliff. On the Turtle, keep to the western, climber's-right side — the centre and east are raked by ice and rock off the cliff.\n\nRainier permits apply: a per-person climbing permit for glacier travel or ground above roughly 10,000 ft, and a wilderness permit for each overnight camp in the high-use season.",
+        "baseFinding": "The single most useful fact about this route is that the technical climbing starts BELOW Camp Hazard, not above it. Parties who expect to walk out of camp and start climbing walk straight under the ice cliff.\n\nFrom camp, pick up the climbers' path on the rock and follow it to a short rappel, which often has a fixed line on it. That rappel is the confirmation you are on the right line — it drops you about 150 ft into the drainage gully at the bottom of the ice cliff. You should be LOSING height before you gain any.\n\nFrom the bottom of that gully, traverse west, underneath the ice cliff, until you can see an obvious snow-and-ice ramp running up on your left. That ramp is the Kautz ice chute, and it is the start of the route. The older description of the same ground is: down over the ridge, down the gully about 150 ft, then either cross the icefall into the broad chute or continue down and around the toe of the icefall to reach the bottom of the chute.\n\nWhat you should find in the chute: a first pitch of roughly 400 ft at 35–40 degrees on stepped ground that most parties climb with a single tool, then a second pitch of roughly 400 ft at 45–50 degrees where a second tool earns its place. In lean years the ice can be thin, rotten or frozen dirt rather than good ice; the angle, not the quality, is what identifies it.\n\nNegative marker: if you are climbing directly up from Camp Hazard toward the ice cliff, stop. That is the serac fall line, and it is the reason the camp has its name.",
+        "hazards": [
+          "Serac fall from the Kautz Ice Cliff onto Camp Hazard and the traverse beneath it",
+          "Crevasses and icefall exposure on the Nisqually Glacier crossing",
+          "Avalanche, rockfall and steep snow in The Fan gully",
+          "Ice and rockfall raking the centre and east side of the Turtle snowfield",
+          "Thin or rotten ice in the chute late in the season"
+        ]
+      },
+      {
+        "name": "Comet Falls and Van Trump Park",
+        "season": "Same window; avoids the Nisqually Glacier crossing entirely",
+        "notes": "Start at the Comet Falls trailhead (3,650 ft) on the Longmire–Paradise road. The maintained Comet Falls Trail climbs 2.2 miles and about 2,000 ft to a junction, then continues toward Van Trump Park for another 0.6 miles to the end of maintained tread. From there unmaintained social trails climb a steep moraine crest to about 6,500 ft and onto the permanent snow of the Van Trump Glacier remnant, which is followed to the Upper Castle at roughly 9,500 ft where this approach merges with the Paradise line.\n\nThe advantage is that it never crosses the Nisqually Glacier. The cost is a lower start, a steeper carry and a descent that is genuinely hard to reverse: the Park Service's own advice is to save a GPS track, because relocating the correct moraine and the treeline trail junction on the way down is difficult even in clear weather. Several parties a season lose that junction and end up bushwhacking.",
+        "baseFinding": "This variant's finding problem is the reverse of most: the hard recognition is on the way down, not the way up. On the way up, the sequence is trail to a junction, more trail to the end of maintained tread, then a steep moraine crest — if you are still on graded tread above about 6,500 ft you have followed the wrong branch toward Van Trump Park's meadows rather than the climbers' line.\n\nThe merge point is the Upper Castle at about 9,400–9,500 ft, a rock rib with established camp sites and, from mid-June, running water. Once you are there the route ahead is the same as the Paradise approach: up the Turtle keeping to its western edge, to Camp Hazard, and then DOWN a short rappel into the gully beneath the ice cliff to reach the chute.",
+        "hazards": [
+          "Losing the moraine crest and the treeline trail junction on descent — carry a saved track",
+          "Steep unmaintained moraine travel above the end of maintained trail",
+          "Same serac and ice-cliff exposure above the Castle and at Camp Hazard"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/105906991/kautz-glacier",
+      "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+      "https://www.alpineinstitute.com/route-profile-kautz-glacier/",
+      "http://www.willhiteweb.com/washington_climbing/mount_rainier/camp_hazard_route_262.htm",
+      "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_emmons_glacier": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "White River Campground, Glacier Basin, Inter Glacier and Camp Schurman",
+        "season": "Late spring through August, once the White River road and campground are open and before summer melt opens the upper crevasse fields",
+        "distMi": 3.1,
+        "gainFt": 1600,
+        "notes": "The Glacier Basin trailhead is in Loop D of White River Campground (about 4,300–4,400 ft), reached by the White River road off SR 410. That road and the campground are seasonal and open on the snowpack, not on a date.\n\nThe trail follows the Inter Fork of the White River on an old mining road grade, 3.1 miles to Glacier Basin Campground (~5,935 ft): six designated sites, a toilet and a bear-proof food cache. This is the last reliable water and the last forested camp.\n\nAbove Glacier Basin a climbers' path continues about a mile up the lateral moraine — conspicuously yellowish once it melts out — to the toe of the Inter Glacier at roughly 7,000 ft. The Inter Glacier is about 1,500 ft of moderate snow; it is the mildest glacier on the route but it opens real crevasses as the season goes on, and roped travel is standard. It leads to Camp Curtis on the rim at about 8,500–9,000 ft.\n\nFrom Camp Curtis the route drops slightly and traverses onto the lower Emmons Glacier, rounding the southern side of Steamboat Prow to Camp Schurman (about 9,460 ft), where the Emmons and Winthrop glaciers split around the Prow. There is an NPS ranger hut, an emergency radio on the front of it, toilets and a blue-bag barrel; tent platforms are dug into snow on the Emmons side.\n\nCamp Schurman's nightly capacity is small — far smaller than Camp Muir's — so a permit here is worth reserving. The same Rainier permit structure applies: a per-person climbing permit for glacier travel or ground above roughly 10,000 ft, plus a wilderness permit for each overnight.",
+        "baseFinding": "Three recognition points, in order.\n\nAt 0.9 mile from the trailhead there is a signed junction where the Emmons Moraine Trail branches LEFT and crosses the Inter Fork on a seasonal footbridge. If you cross a bridge over the river this early, you have left the climbers' route. The way to Glacier Basin stays right, on the old mining road grade, and does not cross the river there.\n\nThe start of glacier travel is the toe of the Inter Glacier, roughly a mile past Glacier Basin and about 7,000 ft. You get there by following the moraine crest; the test is that the ground turns from rubble and moraine to continuous snow, and there is no more path. Rope up when it does.\n\nCamp Schurman is the third. It sits at the foot of Steamboat Prow, on the saddle where the Emmons and Winthrop split, with a hut on it. If you have topped out on the Prow's rocky summit you are ABOVE camp — there is a short, steep, very loose scramble down the front of the Prow to the huts, and the more usual line drops from Camp Curtis onto the lower Emmons and comes at the camp along the Prow's southern side instead. Coming back down in cloud, the Prow is the handrail: keep it on your side and you will find the camp.\n\nAbove camp the climbing starts as soon as you step off the platform — the first thing under your boots is the Emmons. The feature to find is the Corridor: a smooth, wide ramp of about 30 degrees trending slightly east, running from camp up to roughly 12,000 ft. The test is smoothness. If the slope you are on is broken by parallel crevasse trains and you are already end-running, you have drifted out of the Corridor into the icefall on either side of it. Above 12,000 ft the smooth ground ends and the glacier does become a maze — that is expected, not a sign you are lost. The bergschrund is crossed near 13,000 ft, and late in the season it can force a long traverse onto the upper Winthrop toward Liberty Saddle.",
+        "hazards": [
+          "Crevasses on the Inter Glacier, which open through the season despite its mild reputation",
+          "Loose, brittle volcanic rock on the direct scramble down the Prow into Camp Schurman",
+          "Rockfall onto the moraine path above Glacier Basin",
+          "Crevasse maze above 12,000 ft where the Corridor ends",
+          "Bergschrund near 13,000 ft, which can be impassable direct in late season",
+          "Creek crossings and old slide paths on the Glacier Basin trail"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/105982534/emmons-glacier",
+      "https://www.summitpost.org/emmons-winthrop-glacier/156360",
+      "https://www.nps.gov/places/glacier-basin-trailhead.htm",
+      "https://mountrainierclimbing.blogspot.com/p/camp-schurman.html",
+      "https://mountrainierclimbing.blogspot.com/2019/07/full-camps.html",
+      "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_liberty_ridge": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "White River, St Elmo Pass, Curtis Ridge and the Carbon Glacier",
+        "season": "May and June — after the winter storm cycle and before the ridge melts out to loose rock",
+        "notes": "Start at the Glacier Basin trailhead in White River Campground and follow the Glacier Basin trail. At about 6,700 ft leave the trail to the right and climb snow slopes to St Elmo Pass (7,400 ft). There are bivouac sites in this area.\n\nFrom the pass, descend onto the lower Winthrop Glacier and traverse west across it, holding elevation, to the broad slopes of Curtis Ridge. Cross Curtis Ridge and aim for the ramp that drops onto the Carbon Glacier at roughly 7,300 ft. Then ascend the Carbon southward toward the toe of Liberty Ridge, negotiating the crevasse fields on the way.\n\nAccess onto the ridge is somewhere between about 8,600 and 8,800 ft, and either flank can be used depending on conditions. Above that it is 30–40 degree snow with scree and rock traverses up to Thumb Rock at about 10,500 ft — the standard bivouac, with additional sites just above in the saddle. There are also bivouacs around 11,000 ft.\n\nMost parties do not reverse this. The usual plan is a carry-over: finish at Liberty Cap and descend the Emmons–Winthrop to Camp Schurman and out to White River, which is why this route is often permitted as a multi-camp itinerary rather than an out-and-back.\n\nRainier permits apply: per-person climbing permit and a wilderness permit for each night.",
+        "baseFinding": "The base is the toe of the ridge on the Carbon Glacier, and the whole approach is a sequence of things you must leave rather than things you arrive at — so the negative markers do the work.\n\nLeave the Glacier Basin trail at about 6,700 ft. If you reach Glacier Basin Campground you have walked past the turn; the branch is a climbers' line up snow to the right, aiming at the notch of St Elmo Pass at 7,400 ft.\n\nAfter St Elmo Pass you should be LOSING height onto the Winthrop Glacier and then traversing, not climbing. If you are gaining, you are heading up the Winthrop toward the Emmons ground and Camp Schurman — the wrong side of the mountain for this route.\n\nThe crossing under Willis Wall is the marker that you are close and the marker that you are exposed. Between Curtis Ridge and Liberty Ridge you pass beneath a huge dark face capped with ice cliffs. That is Willis Wall, it is not your route, and its summit seracs discharge onto the ground you are crossing. If you are still under that face, you have not reached the toe yet — and this is ground to cross without stopping, not ground to navigate on.\n\nThe positive test: Liberty Ridge is the rib that divides the Carbon Glacier from Willis Wall. When Willis Wall is behind and to your east and there is a defined rock-and-snow rib rising in front of you out of the Carbon, you are at the toe. Start looking for access between roughly 8,600 and 8,800 ft; take whichever flank is in condition rather than insisting on the crest.\n\nThumb Rock at 10,500 ft is the confirmation you got it right — the first real flat ground on the crest, with established bivouac platforms and a saddle just above.",
+        "hazards": [
+          "Serac and icefall discharge from Willis Wall onto the traverse below it",
+          "Crevasse fields on the Carbon Glacier below the toe",
+          "Rockfall from the bands above Thumb Rock, worse as the season melts the ridge out",
+          "Committing terrain — retreat down the ridge is difficult, most parties carry over and descend the Emmons",
+          "Bergschrund and short vertical ice gaining the Liberty Cap Glacier near 13,500 ft"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106459197/liberty-ridge",
+      "https://www.summitpost.org/liberty-ridge/638715",
+      "https://www.mountaineers.org/activities/routes-places/new-routes-places-for-beta-brews/mount-rainier-liberty-ridge",
+      "https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_rainier_ptarmigan_ridge": {
+    "area": "wa_mount_rainier",
+    "approach_variants": [
+      {
+        "name": "Mowich Lake and Spray Park",
+        "season": "The route is often in condition by May, but the Mowich Lake road is a summer-only road that in a normal year opens well after that — the two rarely line up",
+        "notes": "From Mowich Lake, follow the trail roughly 3 miles to Spray Park, then climb the lower slopes of Ptarmigan Ridge. The ridge narrows above Observation Rock; continue along it until you find bivouac sites. High camp is normally somewhere between about 9,500 and 10,300 ft, at the point where Ptarmigan Ridge runs into the main cone below the Liberty Cap icefall. Higher camps are worth the extra carry because they let you look at the bergschrund and pick a line the evening before.\n\nThis is the shorter of the two approaches, and it is the one most parties would choose if the road cooperated. The Mowich Lake road is unpaved, seasonal and typically opens later than the White River road — mid-summer rather than late spring in a normal snow year. Since the route is best when there is still winter snow on it, the road schedule is a structural problem with this variant rather than an occasional inconvenience. Check the road's status before planning around it.\n\nThe approach to high camp is normally split over two days.",
+        "baseFinding": "High camp is not the start of the climbing — and the mistake this route invites is treating the ridge you camped on as the ridge you climb.\n\nFrom camp at around 10,000–10,300 ft you DESCEND, on loose rock or steep snow, onto the Mowich Glacier. If you are gaining height straight out of the tents along a rocky crest, you are still on the approach ridge.\n\nThe first real feature is the bergschrund, usually crossed by a bridge just left of a rock outcropping near the centre. Above it the climbing is 40–45 degree snow for about 1,000 ft, and it ends in an obvious way: you run up under large rock cliffs. That is the signal to traverse left into an hourglass-shaped snow face rather than to keep going up.\n\nThe next decision point is a rock buttress at about 11,500 ft, where the route splits — left and around toward Liberty Cap between the buttress and the icefall, or right through mixed ground, a minor rock rib and the left margin of the Mowich Face to a second rock gully. Either way there is a short section of real rock or mixed climbing above 12,000 ft; if you have got that high on pure snow, you have probably drifted onto the Liberty Cap glacier ground.\n\nDescent is normally the Emmons, not this route.",
+        "hazards": [
+          "Bergschrund crossing off the Mowich Glacier, conditions-dependent",
+          "Loose rock descending from high camp onto the glacier",
+          "Icefall exposure below the Liberty Cap icefall near high camp",
+          "Verglassed rock and water ice on the upper mixed ground",
+          "Committing position with a descent by a different route — plan the carry-over"
+        ]
+      },
+      {
+        "name": "White River, St Elmo Pass and Curtis Ridge",
+        "season": "Available earlier in the season than the Mowich Lake road, at the cost of a much longer approach",
+        "notes": "Follow the Glacier Basin trail from White River Campground and leave it for St Elmo Pass (7,400 ft), about 4 miles in. Descend onto the Winthrop Glacier and traverse west toward Curtis Ridge, holding elevation. Cross Curtis Ridge, cross the Carbon Glacier, then climb moderate snow slopes onto Ptarmigan Ridge below its 10,200 ft high point, where there are good bivouac sites.\n\nThis is the long way around the north side of the mountain and it shares its first half with the Liberty Ridge approach. It usually implies a car shuttle or, more often, a carry-over with descent by the Emmons–Winthrop back to White River — which conveniently is also the standard descent from the route itself.",
+        "baseFinding": "Up to the Carbon Glacier this is the Liberty Ridge approach, and the same negative markers apply: leave the Glacier Basin trail rather than walking into Glacier Basin, lose height off St Elmo Pass rather than gaining it, and treat the ground under Willis Wall as a crossing rather than a place to stand.\n\nWhere it diverges: instead of turning up the Carbon toward the toe of Liberty Ridge, you continue west across the Carbon and climb snow onto Ptarmigan Ridge below its 10,200 ft high point. If you find yourself gaining a defined rib immediately above the Carbon with Willis Wall right behind you, you have stopped at Liberty Ridge — Ptarmigan is further round to the west.\n\nOnce camped on Ptarmigan Ridge the start of the climbing is the same as from the Mowich side: down off the ridge onto the Mowich Glacier, then the bergschrund, then 40–45 degree snow to the base of the rock cliffs.",
+        "hazards": [
+          "Serac discharge from Willis Wall on the traverse between Curtis Ridge and the Carbon",
+          "Crevasse fields on the Winthrop and Carbon glaciers",
+          "Long committing traverse with no quick exit",
+          "Same bergschrund and upper mixed-ground hazards as the Mowich approach"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+      "https://www.summitpost.org/ptarmigan-ridge/156184",
+      "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+      "https://www.nps.gov/places/mowich-lake.htm"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_point_success_south_side": {
+    "area": "wa_point_success",
+    "approach_variants": [
+      {
+        "name": "Longmire, the Wonderland Trail and Indian Henry's Hunting Ground",
+        "season": "June through September; the lower cleaver is best while it still holds snow, since it becomes loose scree once bare",
+        "notes": "Longmire (2,762 ft) is the start, on the Wonderland Trail heading southwest. About 3 miles out the trail drops steeply to cross Kautz Creek — a braided glacial outwash channel whose crossing is periodically wrecked by debris flows off the Kautz Glacier. Ask at the Longmire wilderness desk before you leave, because a failed crossing means a long reroute rather than a wet foot.\n\nBeyond Kautz Creek the trail switchbacks through old growth, fords Fisher's Hornpipe Creek and passes Devil's Dream camp (about 5 miles, reliable water) before opening into the meadows of Indian Henry's Hunting Ground at roughly 6.3–7 miles and 5,300 ft, marked by the 1915 patrol cabin.\n\nAt Indian Henry's leave the Wonderland for the Mirror Lakes spur — plank walkways over marshy meadow, then the end of maintained tread. The path fades into a boot track at about 5,600 ft in the basin between Copper Peak and Pyramid Peak. From there it is cross-country on the southwest and west slopes of Pyramid Peak, between roughly 6,000 and 6,300 ft, to Point 6631 just north of the peak. Snowmelt water is often available here into early summer, and the rock-slab camp below Pyramid Peak at about 6,300 ft is a common first night.\n\nThis is one of only two routes on Rainier that avoids significant glacier travel, which is its whole appeal; the cost is that it is long, loose and unfrequented, with about 12–13 miles and over 8,000 ft of gain to Point Success. Most parties take two days, often with a second camp dug into the cleaver crest around 10,700 ft.",
+        "baseFinding": "The climbing starts at the col north of Pyramid Peak, at about 6,400 ft, and getting into that col is where people go wrong.\n\nFrom Point 6631 you drop north-northeast a short way to a saddle. It is a scree and loose-boulder col, and it is ugly — that is the correct place. There is an easier descent line into it than the obvious one, and trip reports record missing it and taking the worst ground; look for the line before you commit, and note it for the way back.\n\nFrom the col the cleaver rises continuously in front of you and does not stop. There is no single track and no cairned line: the lower cleaver is loose choss and scree with short bursts of class 3 scrambling, and the route-finding is yours.\n\nThe test that you are on the cleaver and not off it is what is on either side. You should be on a broad rubbly crest with the South Tahoma Glacier falling away to your north (climber's left) and the Pyramid and Success glaciers to your south (climber's right). If a glacier is underfoot you have left the cleaver — this route is defined by not being on one.\n\nAn easy, clean start is the wrong sign. If the ground out of the col is pleasant walking on solid rock, you are probably contouring around the peak rather than gaining the cleaver. Travel only improves higher, above about 7,000 ft, where the rock firms up and, early in the season, continuous snow and goat tracks take over.\n\nHigher still the crest includes a knife-edge section that needs genuine scrambling once the snow melts off it, and the route then angles climber's right up snow gullies onto the Kautz Cleaver at roughly 12,200–12,600 ft.",
+        "hazards": [
+          "Kautz Creek crossing washed out by glacial debris flows",
+          "Rockfall from parties above on the loose lower cleaver",
+          "Sustained loose choss and scree with no established line",
+          "Knife-edge crest section, exposed once melted out",
+          "Very long approach with no bail-out — a retreat is the full walk back to Longmire"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.summitpost.org/success-cleaver/467582",
+      "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+      "https://www.williswall.com/willis-wall-blog/2017/8/3/success-cleaver-mt-rainier-national-park",
+      "https://npshistory.com/publications/mora/m-v11-1918.pdf"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_adams_south_climb": {
+    "area": "wa_mount_adams",
+    "approach_variants": [
+      {
+        "name": "Cold Springs trailhead and the Lunch Counter",
+        "season": "Late May through September; earlier in the season the whole route is a snow climb from the parking lot",
+        "notes": "From Trout Lake, drive north on Mt Adams Road to the Forest Road 23 junction, bear right about a mile to the signed FR 80 turn for South Climb, then FR 80 for 3.7 miles to FR 8040, and FR 8040 for 8.1 miles — steep, narrow, sharp switchbacks, no RVs or trailers — to the South Climb / Cold Springs trailhead at 5,600 ft.\n\nPermits: a Cascade Volcano Pass is required to travel above 7,000 ft in the Mount Adams Wilderness during the summer season (June 1 to September 30 per the Forest Service), and a free wilderness permit is needed for the trailhead. Both can be self-issued at the trailhead, or the volcano pass can be obtained from the Mount Adams Ranger Station in Trout Lake or by mail. Weekend and weekday rates differ and an annual option exists.\n\nThe trail begins on an old roadbed through burn scar, enters subalpine forest and meadow, crosses the Round-the-Mountain Trail and the PCT, then climbs Crescent Ridge toward the snowfields. In early season there is often no trail at all — just a snow slope leading out of the parking lot. Above the Crescent Glacier the way is meandering snowfields to the Lunch Counter.\n\nThe Lunch Counter (roughly 9,250–9,400 ft) is the standard camp: a broad rocky bench with hand-built rock windbreaks. Water is snowmelt. This is a route where the crowd itself is a factor — it is the most-climbed line on the mountain and the bench fills on summer weekends.",
+        "baseFinding": "There is no bergschrund and no ice step on this route, so the question 'where does the climbing start' has two answers, and the second one is the one that turns people around short of the top.\n\nThe first: the Lunch Counter is the transition. You are there when the meandering snowfields end at a broad, flat, rocky bench with rock walls built on it and the South Spur rising directly above as one continuous slope. Above the bench there is no more wandering — it is 2,400 ft of steepening snow on a bearing of roughly north-northeast.\n\nThe second, and the important one: what you top out on is NOT the summit. The rounded high point at 11,644 ft is Piker's Peak, the false summit. The test is unmistakable if you know to look for it — the ground ahead of you FLATTENS into a broad saddle and plateau, and a separate dome rises about 600 ft beyond it to the north. If the slope has stopped and the true top is still visibly above and away from you, you are on Piker's. Parties turn around here every season believing they have finished.\n\nNegative marker on the way up: if you are scrambling on a rocky crest rather than kicking steps on snow, you have drifted onto Suksdorf Ridge. That is a legitimate alternative when the snow is soft, but when the snow is firm it is the slower choice, and in a whiteout it is the wrong handrail.",
+        "hazards": [
+          "Rockfall and soft-snow postholing on the Crescent Glacier slopes in warm afternoons",
+          "Whiteout on the featureless snowfields between Crescent Glacier and the Lunch Counter",
+          "Turning around at Piker's Peak believing it is the summit",
+          "Uncontrolled glissading — the standard descent line has caused injuries",
+          "No water above the Lunch Counter; snowmelt only",
+          "Sharp switchbacks and rough surface on FR 8040, and snow blocking it early in the season"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+      "https://www.oregonhikers.org/field_guide/Mount_Adams_Summit_Hike",
+      "https://www.hikingproject.com/trail/7036712/mount-adams-south-climb-lunch-counter-approach",
+      "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trail-113-killen-creek"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_adams_adams_glacier": {
+    "area": "wa_mount_adams",
+    "approach_variants": [
+      {
+        "name": "Killen Creek trailhead and High Camp",
+        "season": "June into early July, while the icefall is still filled in",
+        "distMi": 4.1,
+        "gainFt": 2300,
+        "notes": "Killen Creek trailhead (~4,600 ft) is reached by Forest Roads 23, 21 and 2329 from either the Randle or the Trout Lake side. FR 2329 is gravel, runs north from Takhlakh Lake along the northwest edge of the wilderness, and is commonly still under snow into early summer — parties have had to park low and walk or bushwhack an extra mile or more of road to reach the trailhead. Call the Mount Adams Ranger District rather than assuming.\n\nKillen Creek Trail #113 runs about 3.1 miles through lodgepole forest and wildflower meadow to the Pacific Crest Trail at roughly 6,100 ft, in the area known as Adams Creek Meadows. Cross straight over the PCT onto High Camp Trail #10 and continue about 1.0 mile to its end at roughly 6,900 ft at the edge of the Adams Glacier's lateral moraine. Small cairns mark the upper section when it is under snow.\n\nCamping: High Camp at about 7,000 ft has established flat dry sites; there are more between 7,000 and 7,600 ft; a glacial lake camp at about 7,650 ft gives the easiest glacier access; and some parties push to sheltered bivouacs around 7,100 ft in a shallow snow gully just left of the moraine.\n\nKillen Creek, crossed low on the trail, is the last dependable running water — above camp, melt snow. The tread thins to a moraine and gully scramble above treeline and is easy to lose in the dark or under snow, so record landmarks or a track on the way up.\n\nPermits: free self-issue wilderness permit at the trailhead, plus a Cascade Volcano Pass for travel above 7,000 ft in the summer season.",
+        "baseFinding": "This is the rare approach where the objective is in full view the whole way, and that is the strongest tool you have: as you walk up the High Camp Trail the Adams Glacier is directly in front of you, tumbling from the summit icecap, with the enormous crevasses of the main icefall facing you. If you cannot see a broken icefall ahead, you are not on the right side of the mountain.\n\nThe base is the toe of the glacier at roughly 7,000–7,300 ft, above camp. The test is underfoot: while you are still on rubble, moraine crest and scree you have not reached it. The toe is where continuous snow and ice begins and the scrambling stops — that is where you rope up.\n\nStarting position matters. Begin on the RIGHT (climber's right, west) side of the glacier at its base and stay in the right third for most of the climb; the standard line then works left higher up to avoid crevasses.\n\nThe route above has its own confirmations. The angle steepens noticeably at about 8,500 ft. Around 9,500 ft you traverse toward a ramp beneath seracs. The real icefall — the crux, roughly 4,000 ft of tortured ice between about 9,200 and 11,800 ft — is where the maze of seracs begins and where screws and belays get used. Near 10,800 ft a large crevasse commonly forces an eastward traverse before a crossing appears. Above roughly 11,400 ft the ground relents to easy névé and you are on the summit plateau.\n\nNegative marker for the descent: the North Ridge is the usual way down and it is very loose volcanic rock. If you are descending on ice with crevasses you are still on the Adams Glacier, not on the ridge.",
+        "hazards": [
+          "Serac collapse in the icefall between roughly 9,200 and 11,800 ft",
+          "Large crevasse near 10,800 ft that can force a long traverse to find a crossing",
+          "Losing the thin moraine tread above treeline in dark or whiteout",
+          "FR 2329 snow-blocked into early summer, adding road walking to the approach",
+          "No running water above Killen Creek",
+          "Very loose volcanic rock on the North Ridge descent"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/107707699/adams-glacier",
+      "https://www.summitpost.org/adams-glacier/686134",
+      "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm",
+      "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trail-113-killen-creek",
+      "https://www.outdoorproject.com/united-states/washington/mount-adams-high-camp-killen-creek"
+    ],
+    "_confidence": "corroborated"
+  },
+  "wa_mount_adams_north_ridge": {
+    "area": "wa_mount_adams",
+    "approach_variants": [
+      {
+        "name": "Killen Creek trailhead and High Camp",
+        "season": "June through September; a snow route early, a loose rock route once it melts out",
+        "distMi": 4.1,
+        "gainFt": 2300,
+        "notes": "The same walk in as the Adams Glacier and the Northwest Ridge, and High Camp is the shared base for all three. Killen Creek Trail #113 from the trailhead (~4,600 ft) runs about 3.1 miles to the PCT junction at roughly 6,100 ft; cross straight over onto High Camp Trail #10 for another mile to its end at about 6,900 ft on the edge of the Adams Glacier moraine. Camping is spread between 7,000 and 7,600 ft, including a glacial lake camp near 7,650 ft.\n\nAccess is by FR 23, 21 and 2329; FR 2329 is gravel and holds snow into early summer. Killen Creek low on the trail is the last dependable water.\n\nPermits: free self-issue wilderness permit at the trailhead, plus a Cascade Volcano Pass for travel above 7,000 ft in the summer season.\n\nThis is a longer and more committing day than the South Climb from a much quieter side of the mountain, and it involves more crevassed ground — roped travel and glacier skills are expected, unlike the South Spur.",
+        "baseFinding": "From High Camp the line is southeast, toward the foot of the ridge, and in clear weather you can see the whole thing from the approach — trip reports describe it as impossible to miss.\n\nThe recognition problem is entirely a poor-visibility one, and the test is what is under your boots. The North Ridge is the rubble-and-cinder rib that separates the Adams Glacier on its west from the Lava Glacier ground on its east. You should be on loose volcanic rock and scree, on a defined crest, with glacier falling away on BOTH sides. If you are on ice with crevasses, you have slid off the rib onto one glacier or the other, and which one tells you which way to correct.\n\nA smooth, clean, snow-only ascent is the wrong sign on this route: it is a choss pile, and the loose rock is the confirmation rather than the complaint. Expect short easy scrambling steps low down.\n\nThe angle eases noticeably around 11,000 ft, which is the sign the ridge proper is behind you and the summit plateau ground is ahead.",
+        "hazards": [
+          "Very loose volcanic rock the length of the ridge — helmets, and spacing between climbers",
+          "Crevassed glacier on both flanks if you leave the crest",
+          "Exposed snow travel between rock sections",
+          "Thin moraine tread above treeline, easy to lose in dark or whiteout",
+          "No running water above Killen Creek"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/107707699/adams-glacier",
+      "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm",
+      "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trail-113-killen-creek"
+    ],
+    "_confidence": "single-source"
+  },
+  "wa_mount_adams_mazama_glacier_headwall": {
+    "area": "wa_mount_adams",
+    "approach_variants": [
+      {
+        "name": "Bird Creek Meadows and Sunrise Camp, on the Yakama Reservation side",
+        "season": "Summer; non-tribal access to this side has historically been limited to a mid-summer to early-autumn window",
+        "hours": "3-4",
+        "gainFt": 2600,
+        "notes": "This is the southeast side of the mountain and the approach crosses Yakama Nation land, which makes it an access problem before it is a climbing problem. A tribal-use permit for Tract D is required, bought at the fee station on entry at the Mirror Lake gate — it cannot be obtained in advance — and it is only available when the area is open to non-tribal use. Historically that window has run from about the start of July to the start of October for non-members. The area has also been closed outright in some years, so confirm with the Yakama Nation before building a trip around this approach; there is no alternative way in from this side.\n\nFrom the Bird Creek Meadows parking area (about 5,576–5,700 ft), the trail is easy to follow to roughly 6,700 ft. Above that it is route-finding: any number of lines through moraine, scree and glacier remnants lead up to Sunrise Camp at about 8,300 ft. Carry a map — locating the camp is the part people get wrong. Trailhead to camp is about 3–4 hours.\n\nSunrise Camp sits at the base of the Mazama Glacier, tucked between the glacier and a small rock hill, with hand-built rock shelters. It is a fine fair-weather camp and a poor one otherwise: it is exposed to winds that can reach hurricane strength, and to rockfall off the glacier. The rock walls help, but only somewhat.\n\nFrom camp to summit is about 5 hours.",
+        "baseFinding": "The climbing starts directly above camp — the first ground you cross after leaving Sunrise Camp is the glacier itself, so the recognition problem here is finding CAMP, not finding the base.\n\nSunrise Camp: at roughly 8,300 ft, a flat with rock wind shelters, wedged between the toe of the Mazama Glacier on one side and a small rock hill on the other. If you are on open moraine with no rock hill beside you, you are short of it or off to one side; the terrain between 6,700 and 8,300 ft has many plausible lines and only some of them end at the camp.\n\nAbove camp the sequence is legible. Long stretches of glacier at about 40 degrees, then bear RIGHT onto the headwall proper, which runs about 45 degrees and is where pickets earn their place. Bergschrunds appear around 9,500 ft. The glacier narrows as it climbs.\n\nThe top is where the route makes you choose. Nearing Piker's Peak — the south summit at 11,644 ft — you can exit left onto easy 25–30 degree ground, or stay right for a short technical finish: roughly 40 ft of 60–70 degree snow and ice on the southeast corner, worth two or three screws.\n\nCritical negative marker at the top: Piker's Peak is NOT the summit of Mount Adams. When the ground flattens out you have reached the south summit; the true summit is a further dome across the plateau to the north, with the geographic high point to the east. This route tops out on the false summit by design, so treat the flattening as a halfway signal rather than an arrival.",
+        "hazards": [
+          "Tribal-use permit required and only sold at the gate, in a limited seasonal window — no advance purchase, and the area has been closed in some years",
+          "Route-finding through moraine and scree above 6,700 ft to locate Sunrise Camp",
+          "Rockfall off the glacier onto Sunrise Camp",
+          "Extreme wind exposure at camp",
+          "Bergschrunds around 9,500 ft",
+          "Mistaking Piker's Peak, where the route tops out, for the true summit"
+        ]
+      }
+    ],
+    "_sources": [
+      "https://www.mountainproject.com/route/107760356/mazama-glacier-headwall",
+      "https://www.summitpost.org/mazama-glacier-headwall/158532",
+      "https://www.mountaineers.org/activities/routes-places/mount-adams-mazama-glacier",
+      "https://en.wikipedia.org/wiki/Mount_Adams_Recreation_Area",
+      "http://science.halleyhosting.com/nature/cascade/mtadams/places/flwrhikes/se/hellroaringview.htm"
+    ],
+    "_confidence": "corroborated"
+  }
+}

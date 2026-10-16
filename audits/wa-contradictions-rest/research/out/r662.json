@@ -1,0 +1,756 @@
+{
+ "file": "r662.json",
+ "results": [
+  {
+   "id": "wa_bread_loaf",
+   "fact": "Climbing permit instructions",
+   "verdict": "fixed",
+   "correct_value": "No climbing registration, fee or check-out applies to this forest boulder; only park entry applies.",
+   "evidence": "The park climbing page says a climbing permit is needed only on a glacier or above the normal high camps (~10,000 ft); the park Kautz route brief permit card likewise applies registration to climbing above 10,000 ft or on glaciers. The registration how-to and check-out rule were copied from glacier routes and contradict the row's own permit and fees fields.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. ",
+     "replace": "Nothing needs registering or paying for beyond park entry: climbing registration and its fee cover only glacier travel or climbing above about 10,000 ft. ",
+     "id": "wa_bread_loaf",
+     "fact": "Climbing permit instructions"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "value": "No climbing registration or check-out applies to this boulder; those rules are for glacier and high-mountain climbs. Pack out all trash.",
+     "id": "wa_bread_loaf",
+     "fact": "Climbing permit instructions"
+    }
+   ]
+  },
+  {
+   "id": "wa_bread_loaf",
+   "fact": "Start point for the loop",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The approach gives the normal start and then plainly states the 2026 closure of the campground trailhead and the alternative from the Grove of the Patriarchs lot; the park confirms the Silver Falls Trailhead in the campground is closed for 2026 construction and the Eastside/Silver Falls trails stay open from the Grove lot. The boulder pin lies closer to the Grove end, so the ~1 mile figure is not undermined.",
+   "sources": [
+    "https://nps.gov/mora/planyourvisit/upload/Ohanapecosh-Area-Trails-2026-closures-w-Map_508.pdf",
+    "https://home.nps.gov/mora/planyourvisit/park-construction-faqs.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "Best season",
+   "verdict": "fixed",
+   "correct_value": "Apr-Jun (spring)",
+   "evidence": "Spring corn season (late April-May) is the recommended window for the Fuhrer Finger/Thumb lines, and the upper Nisqually is often impassable past mid-May as crevasses open; the Thumb FA and documented descents are late May. Season, best_season, climate and approach_variants already say Apr-Jun; only the beta said June-September.",
+   "sources": [
+    "https://www.whereiskylemiller.com/mt-rainier/fuhrer-finger-success-glacier/",
+    "https://climberkyle.com/2026/05/03/mt-rainier-fuhrer-finger/",
+    "https://www.whereiskylemiller.com/mt-rainier/fuhrer-thumb/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "best season June-September",
+     "replace": "best season April-June",
+     "id": "wa_mount_rainier_fuhrer_thumb",
+     "fact": "Best season"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "II",
+   "evidence": "The Fuhrer Thumb route page grades it \"Snow, Alpine, 2300 ft, Grade II\"; a separate route listing describes it as \"a Grade II climb featuring glacier travel on 30-45 degree snow and ice slopes\". No source found gives Grade III.",
+   "sources": [
+    "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+    "https://www.mountaineers.org/activities/routes-places/@@faceted_query?version=15d3e398a645f706d8d8c424d15b0fd7&b_start:int=1460"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "III",
+     "value": "II",
+     "id": "wa_mount_rainier_fuhrer_thumb",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "Season vs access closure",
+   "verdict": "fixed",
+   "correct_value": "The Paradise road is open in winter by day (gate at Longmire closes nightly from November and may stay shut on storm days); there is no November-May season closure.",
+   "evidence": "The park winter-travel page and road-status page say the Longmire-Paradise road is kept open through winter, with the Longmire gate closing nightly and opening daily as conditions allow; a regional visitor site says the same. So \"season closure November-May\" is wrong and the climate card's \"accessible via Paradise\" is right.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/winter-travel.htm",
+    "https://www.nps.gov/mora/planyourvisit/road-status.htm",
+    "https://visitrainier.com/longmire-to-paradise/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "typical season closure November-May due to snow",
+     "replace": "the Longmire–Paradise road stays open in winter, but its gate closes nightly from November and can stay shut on storm days",
+     "id": "wa_mount_rainier_fuhrer_thumb",
+     "fact": "Season vs access closure"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "Entrance fee",
+   "verdict": "fixed",
+   "correct_value": "Standard entrance fee ($30/vehicle or a pass); Rainier is not one of the parks charging the 2026 nonresident surcharge.",
+   "evidence": "The park service nonresident-fee page lists 11 parks charging the 2026 nonresident fee and Mount Rainier is not among them; a 2026 fee guide confirms Rainier charges the standard $30 vehicle fee with no surcharge. Fees are not waived for anyone, so \"waived for nonresidents\" was a misreading.",
+   "sources": [
+    "https://www.nps.gov/aboutus/nonresident-fees.htm",
+    "https://parkadventurer.com/national-park-fees-2026/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "entrance fees waived for nonresidents in 2026",
+     "replace": "no nonresident surcharge at this park in 2026 (the standard entrance fee applies)",
+     "id": "wa_mount_rainier_fuhrer_thumb",
+     "fact": "Entrance fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Camp Hazard elevation",
+   "verdict": "fixed",
+   "correct_value": "10,800 ft",
+   "evidence": "The waypoint now reads 10,800 (already resolved), but approach_variants still said 11,000-11,100 ft. The park route brief puts today's Camp Hazard at 10,800 ft (the original, unused site nearer 11,000 ft); a trip report also reached Camp Hazard at about 10,800 ft.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://www.desktodirtbag.com/mount-rainier-kautz/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Camp Hazard (about 11,000–11,100 ft) is the traditional high camp",
+     "replace": "Camp Hazard (about 10,800 ft) is the traditional high camp",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Camp Hazard elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Wilson Gully elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "7300",
+   "evidence": "The park route brief: the gully is climbed from 6,800 ft where the Wilson meets the Nisqually to the large bench at 7,300 ft. The waypoint's own directions, the approach, approach_variants and pitch_detail all agree on 6,800-7,400 ft; 8,800 is the lone outlier. Pin set to the bench at the gully top (7,300 ft).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 8800,
+     "value": 7300,
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Wilson Gully elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Rope length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "60 m rope per rope team",
+   "evidence": "gear, rappels, rappel_count_note and descent_text all assume a single 60 m rope; a trip report on the route carried a 60 m rope for a three-person team. No source recommends 30-40 m.",
+   "sources": [
+    "https://www.desktodirtbag.com/mount-rainier-kautz/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Per rope team: 30–40 m rope,",
+     "replace": "Per rope team: 60 m rope,",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Turtle Snowfield side",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "west (climber's-left) side",
+   "evidence": "The park route brief: the centre and climber's right (east) side of the Turtle is threatened by icefall, so stay on the west side near the rock ridge; it also puts Camp Hazard on the climber's left of the snowfield. Heading uphill (north), west is climber's left; the approach and waypoint already say so.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "keep to the western, climber's-right side",
+     "replace": "keep to the western, climber's-left side",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Turtle Snowfield side"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Approach line on day 1",
+   "verdict": "fixed",
+   "correct_value": "Skyline Trail to Glacier Vista / Nisqually Moraine, cross the Nisqually Glacier, up Wapowety Cleaver to Camp Hazard",
+   "evidence": "The park route brief: the Paradise approach follows the Skyline Trail and Nisqually Moraine Trail, drops onto and crosses the Nisqually Glacier, then climbs to the Castle and Camp Hazard. A trip report describes the same line: Paradise to Glacier Vista, down 400 ft to the Nisqually, across to the Fan and up. Neither goes up the Muir Snowfield. Fixed in itinerary day 1 and the matching timing section note.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "http://www.ericsbasecamp.net/trips/Kautz/Kautz.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard",
+     "replace": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Approach line on day 1"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard",
+     "replace": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Approach line on day 1"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Ice chute grade",
+   "verdict": "fixed",
+   "correct_value": "Upper step AI3 (the crux); lower step easier",
+   "evidence": "The park route brief states \"the technical grade of AI3\" and calls the upper step up to over 300 ft of AI3; it does not rate it only AI2 and short. A trip report also grades the route \"III, AI2-3\" and another describes two AI3 steps. The gear line (which also named a source) was the error; grade, ice_grade and pitch_detail stand.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://gethighonaltitude.com/2019/07/21/mt-rainier-kautz-glacier/",
+    "https://nickhoernle.com/travel/2018/08/15/mt-rainier.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "find": "which the NPS route brief rates only AI2 and short",
+     "replace": "whose upper step is the route's AI3 crux",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Ice chute grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Ice pitch lengths and angles",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree and vary by year: the park brief gives a lower step from a short pitch to ~250 ft and an upper step from a short pitch to 300+ ft; one route page describes two ~400 ft pitches at 35-40 and 45-50 degrees; a trip report gives a first step to 50 degrees under a pitch and a second to 60 degrees a bit over a pitch; the 2020 ranger update calls the main ice 300 ft in two 60 m pitches. No two sources agree on one set of lengths.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://www.mountainproject.com/route/105906991/kautz-glacier",
+    "http://www.ericsbasecamp.net/trips/Kautz/Kautz.htm",
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Commitment grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "III",
+   "evidence": "grade and commitment say III; a trip report grades the route \"Grade: III, AI2-3\", and two others call it \"Grade II or III\" / \"II-III\". No source found gives Grade IV, so the III-IV alpine_grade is the outlier.",
+   "sources": [
+    "https://gethighonaltitude.com/2019/07/21/mt-rainier-kautz-glacier/",
+    "https://www.danielarndt.com/trips/69-mount-rainier-climb-via-kautz-glacier",
+    "https://www.shedreamsofalpine.com/blog/2014/07/18/mt-rainier-a-mountain-to-be-respected"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "III-IV",
+     "value": "III",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Distance to Camp Hazard",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park brief gives only 1.8-2 miles to the Nisqually and 11-12 mi for the whole route; no source states the Paradise-to-Camp Hazard mileage, so neither 5 nor 7 can be confirmed. The waypoint order (0, 1.5, 3.5, 7, 13) is monotonic, so it is not nulled.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "fact": "Approach line",
+   "verdict": "fixed",
+   "correct_value": "Mowich Lake, Spray Park and lower Ptarmigan Ridge to a bivy near 9,600 ft between the North Mowich and Edmunds glaciers",
+   "evidence": "The park climbing-ranger report on the Edmunds Headwall approached from Mowich Lake and bivied at 9,600 ft between the North Mowich and Edmunds glaciers; a ski trip report approached from the Mowich Lake trailhead past Ptarmigan Ridge. The Westside Road / South Puyallup / Puyallup Cleaver line is a ski-descent exit used by a different party, not this route's approach.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+    "https://turns-all-year.com/trip-reports/jul-3-5-mt-rainier-edmunds-headwall-mowich-face",
+    "https://engineeredforadventure.com/edmunds-headwall-mt-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Long approach (~10+ mi) via Westside Rd, South Puyallup Trail, Wonderland Trail to St. Andrews Park, then Puyallup Cleaver",
+     "value": "Approach through Spray Park and up lower Ptarmigan Ridge to a bivy near 9,600 ft between the North Mowich and Edmunds glaciers",
+     "id": "wa_mount_rainier_edmunds_headwall",
+     "fact": "Approach line"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "fact": "Mowich Lake road access",
+   "verdict": "fixed",
+   "correct_value": "No public access to Mowich Lake Road since the SR 165 Fairfax Bridge closed permanently in April 2025.",
+   "evidence": "The state transportation department announced the permanent closure of the SR 165 Fairfax Bridge in April 2025, and regional coverage confirms there is no public access from SR 165 to Mowich Lake or Carbon River and no funded replacement. The road and access cards were right; the approach variant still described a July opening.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed",
+    "https://visitrainier.com/carbon-river-fairfax-bridge-closed/",
+    "https://www.mountaineers.org/blog/access-update-fairfax-bridge-closure-and-the-future-of-the-carbon-river-corridor"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Mowich Lake Road is unpaved and typically opens around July; highway access from the north has been interrupted for extended periods.",
+     "replace": "Mowich Lake Road has had no public access since the SR 165 Fairfax Bridge closed permanently in April 2025.",
+     "id": "wa_mount_rainier_edmunds_headwall",
+     "fact": "Mowich Lake road access"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "fact": "Glacier dropped onto from camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only disputing field is bivy[0].notes (drop onto the North Mowich Glacier), which is owned by the camping clean-up; no bivy patch written. The camp itself (lower Ptarmigan Ridge / 9,600 ft divide) does serve this route, but for the Edmunds Headwall parties cross to the Edmunds Glacier, as the approach, pitch_detail and the ranger report say.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Trailhead elevation / identity",
+   "verdict": "fixed",
+   "correct_value": "Paradise lot, ~5,400 ft",
+   "evidence": "The park route brief starts the Paradise approach at 5,420 ft and puts the Comet Falls trailhead (Van Trump approach) at 3,600-3,650 ft; the ranger/route descriptions also start at Paradise (5,400 ft). The pin sits at the Paradise lot and approach_logistics says \"From the Paradise parking lot\", so the 3,600 ft elevation and Van Trump note belonged to the Comet Falls alternative.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 3600,
+     "value": 5400,
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Trailhead elevation / identity"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 3600,
+     "value": 5400,
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Trailhead elevation / identity"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Distinct from Paradise lot; route goes via Van Trump Park then unmaintained ridge to Wapowety Cleaver/Kautz Glacier",
+     "value": "Paradise lot; the route crosses the Nisqually Glacier to the Wilson Glacier and Wapowety Cleaver. The lower alternative start is the Comet Falls Trailhead (about 3,650 ft) via Van Trump Park.",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Trailhead elevation / identity"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Ice step angles",
+   "verdict": "fixed",
+   "correct_value": "Lower step ~35-40°, upper step ~45-50°, steepest ~50°",
+   "evidence": "The 2020 ranger update calls the main ice headwall 300 ft, two pitches on a 60 m rope, steepest about 50 degrees; a route page describes the first ice slope at 35-40 degrees and the second at 45-50, never more than 45-50. No source gives 70 degrees. Fixed approach, climbing_route, baseFinding, itinerary and timing notes, and max_angle; overview and pitch_detail already agreed.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html",
+    "https://www.mountainproject.com/route/105906991/kautz-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the lower step runs around 50°, the upper around 70°",
+     "replace": "the lower step runs around 35-40°, the upper around 45-50°",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the lower step runs around 50°",
+     "replace": "the lower step runs around 35-40°",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "The upper step runs around 70°",
+     "replace": "The upper step runs around 45-50°",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "the lower step around 50 degrees, the upper around 70",
+     "replace": "the lower step around 35-40 degrees, the upper around 45-50",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Up to ~40°",
+     "replace": "Up to ~50°",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "(not exceeding ~40°)",
+     "replace": "(up to ~50°)",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "(not exceeding ~40°)",
+     "replace": "(up to ~50°)",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    },
+    {
+     "op": "set",
+     "column": "max_angle",
+     "path": [],
+     "expect": 70,
+     "value": 50,
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Ice step angles"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Headwall length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2020 ranger update gives 300 ft (two pitches); the park route brief gives a lower step up to ~250 ft and an upper step from a short pitch to over 300 ft; a route page describes two ~400 ft pitches. The length is strongly year-dependent and no two sources agree on a figure matching 259 m or 400-450 ft.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html",
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://www.mountainproject.com/route/105906991/kautz-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Route line: headwall instead of chute, or both",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "In the ranger update the \"main ice climbing headwall\" is the Kautz route's own ice section (the chute), so the itinerary's \"headwall pitches then the ice chute\" and the beta's \"instead of the ice-chute crux\" both misdescribe it; a separate ski line also called the Kautz Headwall runs through rockbands elsewhere on the face. Which line this row is meant to be is an identity question that research did not settle, so no patch.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html",
+    "https://turns-all-year.com/trip-reports/6-26-08-mt-rainier-kautz-headwall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source grades a separate \"Kautz Headwall\" climbing route; sources for the Kautz ice route give II, II-III and III. With the route identity unsettled, the three grade fields (III-IV, III, II-III) cannot be aligned to a sourced value.",
+   "sources": [
+    "https://gethighonaltitude.com/2019/07/21/mt-rainier-kautz-glacier/",
+    "https://www.danielarndt.com/trips/69-mount-rainier-climb-via-kautz-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Upper step ice grade",
+   "verdict": "fixed",
+   "correct_value": "Upper step AI2-AI3 (AI3 crux)",
+   "evidence": "The park route brief rates the upper step of the ice chute AI3 (the technical crux); a trip report grades the route AI2-3 and another describes two AI3 steps. The climbing_route AI1-AI2 on the upper step and the approach's \"AI1-AI2 in typical conditions\" disagree with ice_grade and pitch_detail and are corrected.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://gethighonaltitude.com/2019/07/21/mt-rainier-kautz-glacier/",
+    "https://nickhoernle.com/travel/2018/08/15/mt-rainier.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "class"
+     ],
+     "expect": "AI1-AI2",
+     "value": "AI2-AI3",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Upper step ice grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(AI1-AI2 in typical conditions, harder if thin)",
+     "replace": "(up to AI3 on the upper step, harder if thin)",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Upper step ice grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)",
+   "verdict": "fixed",
+   "correct_value": "Skyline Trail to Glacier Vista and the Nisqually Moraine, then across the Nisqually Glacier",
+   "evidence": "The park route brief: the Paradise approach follows the Skyline Trail to the Nisqually Moraine Trail and drops onto the Nisqually Glacier; a trip report likewise goes Paradise to Glacier Vista then down to the Nisqually. The row's \"Camp Muir route via the Muir Snowfield partway\" contradicts its own \"crosses the lower Nisqually\" and the Kautz Glacier row.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "http://www.ericsbasecamp.net/trips/Kautz/Kautz.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the most common approach uses the Camp Muir route via the Skyline Trail and Muir Snowfield partway, then cuts west",
+     "replace": "the most common approach follows the Skyline Trail to Glacier Vista and the Nisqually Moraine, then drops west onto the Nisqually Glacier",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Paradise and the Muir route partway, then west to the Turtle and Camp Hazard",
+     "value": "Paradise and Glacier Vista, across the Nisqually to the Turtle and Camp Hazard",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the common approach follows the Camp Muir route via the Skyline Trail and the Muir Snowfield partway, then cuts west.",
+     "replace": "the common approach follows the Skyline Trail to Glacier Vista and the Nisqually Moraine, then drops west onto the glacier.",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Paradise and the Muir route cutting west",
+     "replace": "Paradise via Glacier Vista and the Nisqually Moraine",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard",
+     "replace": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard",
+     "replace": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Camp Hazard elevation in itinerary",
+   "verdict": "fixed",
+   "correct_value": "~10,800 ft",
+   "evidence": "The park route brief puts Camp Hazard at 10,800 ft and a trip report reached it at about 10,800 ft; the row's approach and bivy also say 10,800, while the itinerary objective said ~11,100.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://www.desktodirtbag.com/mount-rainier-kautz/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "~11,100 ft",
+     "replace": "~10,800 ft",
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Camp Hazard elevation in itinerary"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Parking pass requirement"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Water on the trail"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Extra cost of starting at the Lower Trailhead"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Upper Trailhead lot size"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Upper Trailhead lot size"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Any scrambling near the summit"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee / camping permit in access.notes"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_townsend_standard",
+   "before": {
+    "access": {
+     "fees": "No fees.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Wilderness regulations apply: groups limited to 12 people/8 head of stock, dogs must be leashed or under control, no mountain bikes, and campfires (including gathering wood) are prohibited above 3,500 ft - carry a stove if camping at or above Camp Windy.",
+     "permit": "None required to hike - no Northwest Forest Pass or Discover Pass needed at either trailhead.",
+     "closures": "The trail crosses the Big Quilcene River watershed, which supplies drinking water for eastern Jefferson County - stay on-trail near creek crossings. FR 27 is not plowed and can be gated or storm-damaged in winter/shoulder season; check Olympic NF road status before driving.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest, Hood Canal (Quilcene) Ranger District - 295142 US Hwy 101 S, Quilcene, WA 98376, (360) 765-2200",
+     "land_manager": "USDA Forest Service — Olympic National Forest (Buckhorn Wilderness)",
+     "parking_pass": "No fees; no Northwest Forest Pass or Discover Pass needed at either trailhead.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Buckhorn Wilderness",
+      "where": "Camps outside Olympic National Park need no permit; a recreation pass is required to park at the national forest trailheads."
+     }
+    },
+    "approach": "Start at the Mt. Townsend Upper Trailhead (elev. ~3,400 ft), reached via Forest Road 27 off Penny Creek Road out of Quilcene — the trailhead has a large gravel lot and a Buckhorn Wilderness boundary sign where Trail #839 begins. From the lot, the trail climbs immediately into dense, heavily wooded second-growth forest via the first of three switchback sets; this opening stretch is the steepest sustained grade on the route (roughly 20% grade for the first ~3 miles) and stays shaded most of the way. After the initial switchbacks the trail eases through forest before a second switchback section, then a third set of steep, fully sun-exposed switchbacks that break out onto the crest of a ridge — this exposed stretch is the hottest, most water-demanding part of the hike in summer, so carry all the water you need (there is no reliable creek crossing directly on-trail; snowmelt seeps near Windy Lake may run early-season only). At about 5,300 ft, roughly 2.3 miles in, an unmarked spur trail branches off to Windy Lake/Camp Windy, a common rest stop and the last reliable flat ground before the alpine section. Continuing on the main trail, at about 5,500 ft you reach the junction with the Silver Lakes Trail #842 — stay right (straight/uphill) to continue to the summit; the left fork toward Silver Lakes involves loose, unmaintained scrambling and is not the standard route. From this junction the forest opens into subalpine meadow and the trail's grade eases considerably for the final ~1.3 miles to the broad, flat summit ridge (6,282 ft), passing through increasingly open wildflower meadows with the last quarter-mile crossing mostly open, low-angle grassy/rocky tundra. No technical terrain or exposure is encountered on the standard route; the main hazards are heat/sun exposure on the third switchback set, lingering snow patches on the upper meadows into early summer (which can obscure the tread and create a slip hazard on a steep sidehill), and occasional route-finding uncertainty at the Silver Lakes junction if signage is missing.",
+    "pro_tips": [
+     "Start from the Upper Trailhead rather than the Lower to save 2.4 mi/800 ft round trip",
+     "Arrive before 8am on summer weekends - the small Upper TH lot fills fast",
+     "The true summit high point is a short use-path beyond the more-photographed south summit viewpoint",
+     "Rhododendrons peak in the lower forest in late May/June; wildflowers peak in the upper meadows June-August, followed by huckleberries and fall color in September"
+    ],
+    "approach_logistics": {
+     "peakLat": 47.867445,
+     "peakLng": -123.059505,
+     "trailhead": "Mt. Townsend Upper Trailhead",
+     "trailheadDirection": "Start at the Mt. Townsend Upper Trailhead (elev. ~3,400 ft), reached via Forest Road 27 off Penny Creek Road out of Quilcene - the trailhead has a large gravel lot and a Buckhorn Wilderness boundary sign where Trail #839 begins."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate day-hike fitness for roughly 8 miles round trip with ~3,000 ft gain from the Upper Trailhead",
+      "packWeight": "Day-hike weight (layers, water, wind shell for the exposed summit)"
+     },
+     "approachTime": "Short approach; trailhead-to-summit typically 2-3 hours up, whole day hike commonly done in 3-5 hours round trip",
+     "requiredSkills": [
+      "Trail navigation on a well-maintained, well-signed path",
+      "Wind/weather layering judgment for the exposed, shelterless summit",
+      "Basic snow-travel caution for lingering early-season snow on the upper switchbacks (no technical gear needed once truly snow-free)"
+     ],
+     "experienceLevel": "Beginner-friendly; suited to hikers with no scrambling/technical background, though comfort scrambling short easy sections near the summit is a plus"
+    }
+   }
+  }
+ ]
+}

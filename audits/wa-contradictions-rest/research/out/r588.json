@@ -1,0 +1,48 @@
+{"file": "r588.json", "results": [
+ {"id": "wa_warrior_peak_standard", "fact": "Rock grade of the summit step", "verdict": "fixed",
+  "correct_value": "Class 4 / low 5th",
+  "evidence": "The Mountaineers route page describes the climb as trail, snow, scree and a 4th to low 5th class short rock pitch, needing one rope. SummitPost notes the step is disputed (an older guide calls it Class 3, rated low by habit) but that it is closer to Class 4 and warrants a rope for one short pitch. rock_grade (header pill) was the only field at 3rd class; the itinerary day-2 note, its schedule label and the timing breakdown called it Class 3-4, and are aligned too.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit", "https://www.summitpost.org/warrior-peak/816121"],
+  "patches": [
+   {"id": "wa_warrior_peak_standard", "fact": "Rock grade of the summit step", "op": "set", "column": "rock_grade", "path": [], "expect": "3rd class (YDS) scrambling", "value": "Class 4 / low 5th"},
+   {"id": "wa_warrior_peak_standard", "fact": "Rock grade of the summit step", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "note"], "find": "genuinely Class 3-4 rock step", "replace": "genuinely Class 4 to low 5th rock step"},
+   {"id": "wa_warrior_peak_standard", "fact": "Rock grade of the summit step", "op": "set", "column": "itinerary", "path": ["days", 1, "schedule", 3, "label"], "expect": "Class 3-4 rock step", "value": "Class 4 / low 5th rock step"},
+   {"id": "wa_warrior_peak_standard", "fact": "Rock grade of the summit step", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 1, "note"], "find": "genuinely Class 3-4 rock s", "replace": "genuinely Class 4 to low 5th rock s"}
+  ]},
+ {"id": "wa_warrior_peak_standard", "fact": "Distance to Home Lake", "verdict": "fixed",
+  "correct_value": "9.3 mi from the Upper Dungeness Trailhead",
+  "evidence": "ProTrails puts Home Lake 9.3 mi from the Upper Dungeness Trailhead (Constance Pass at 9.8 mi). Outdoor Project's route page likewise gives Home Lake at 9.3 mi (its successor onX listing's 9.8 mi one way is to Constance Pass). The itinerary day 1 (8.5 mi) and its total note were the only fields off.",
+  "sources": ["http://www.protrails.com/trail/664", "https://www.outdoorproject.com/united-states/washington/constance-pass-home-lake-upper-dungeness-trail", "https://www.onxmaps.com/hiking/k1mzjnnv2qd7/constance-pass-home-lake-via-upper-dungeness-trail"],
+  "patches": [
+   {"id": "wa_warrior_peak_standard", "fact": "Distance to Home Lake", "op": "set", "column": "itinerary", "path": ["days", 0, "miles"], "expect": 8.5, "value": 9.3},
+   {"id": "wa_warrior_peak_standard", "fact": "Distance to Home Lake", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "~8.5 mi backpack", "replace": "~9.3 mi backpack"}
+  ]},
+ {"id": "wa_warrior_peak_standard", "fact": "Approach gain to Home Lake", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: trailhead ~2,500 ft to Home Lake ~5,308-5,330 ft is ~2,800 ft net, while pro_tips calls ~4,800 ft the one-way approach (that is the trailhead-to-summit figure) and partner_requirements says 4,000-5,000 ft to Home Lake. No source states the one-way gain to Home Lake for this trail: onX gives 4,782 ft for its Constance Pass route and a Home Lake write-up gives 5,800 ft round trip from a different (Big Quilcene) trailhead, neither usable. Per the rules, no gain is computed from elevations.",
+  "sources": ["https://www.onxmaps.com/hiking/k1mzjnnv2qd7/constance-pass-home-lake-via-upper-dungeness-trail", "https://www.explorehoodcanal.com/stories/2026/9/16/home-lake"],
+  "patches": []},
+ {"id": "wa_warrior_peak_standard", "fact": "Best season for the couloir", "verdict": "fixed_internal_plus_one",
+  "correct_value": "July-September",
+  "evidence": "season, best_season, seasonal_guidance (June risky), itinerary.cal and both approach_variants seasons all say July-September; only one watch_out clause calls May-June best. Wikipedia gives July-September as the most favorable climbing months, and SummitPost notes the couloir holds snow late and can be icy, which does not support a May-June best window. No second source states a season for this route specifically.",
+  "sources": ["https://en.wikipedia.org/wiki/Warrior_Peak", "https://www.summitpost.org/warrior-peak/816121"],
+  "patches": [
+   {"id": "wa_warrior_peak_standard", "fact": "Best season for the couloir", "op": "replace_text", "column": "watch_out", "path": [], "find": "spring (May-June) typically best", "replace": "July-September is the usual window"}
+  ]},
+ {"id": "wa_warrior_peak_standard", "fact": "Entrance fee", "verdict": "fixed",
+  "correct_value": "Trailhead recreation pass (Northwest Forest / Interagency / $5 day) plus wilderness camping permit; no park entrance fee",
+  "evidence": "The Forest Service trailhead page says the Upper Dungeness Trailhead requires a $5/day or $30/yr recreation pass (Northwest Forest Pass, Interagency, or Scan & Pay). WTA likewise lists a Northwest Forest Pass or Interagency Pass as the pass required. The trailhead is on national forest land and the approach passes no park entrance station, so access.notes' 'standard entrance fee' is template text.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/upper-dungeness-trailhead", "https://www.wta.org/go-hiking/hikes/upper-dungeness-river"],
+  "patches": [
+   {"id": "wa_warrior_peak_standard", "fact": "Entrance fee", "op": "replace_text", "column": "access", "path": ["notes"], "find": "only the standard entrance fee and wilderness camping permit apply.", "replace": "only the trailhead recreation pass and the wilderness camping permit apply."}
+  ]},
+ {"id": "wa_warrior_peak_standard", "fact": "Trailhead road and address", "verdict": "fixed",
+  "correct_value": "Palo Alto Road / FR 28 to FR 2880 and FR 2870; 295142 Hwy 101 S is the Quilcene ranger office, not the trailhead",
+  "evidence": "The Forest Service trailhead page and Hike of the Week both give the drive as Louella Rd, Palo Alto Rd, FR 2880, then FR 2870 to the trailhead past the Dungeness River bridge, with no FR 2860 (it is a former number of 2870). Multiple listings (Forest Service office, Mountaineers, Waze) place 295142 US-101, Quilcene at the Quilcene ranger station, so the approach text wrongly attaches it to the trailhead.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/upper-dungeness-trailhead", "https://www.hikeoftheweek.com/2021/11/04/upper-dungeness-river/", "https://www.fs.usda.gov/r06/olympic/offices/quilcene-office", "https://www.mountaineers.org/activities/routes-places/quilcene-ranger-station"],
+  "patches": [
+   {"id": "wa_warrior_peak_standard", "fact": "Trailhead road and address", "op": "replace_text", "column": "approach", "path": [], "find": "to Upper Dungeness Trailhead (295142 Highway 101 S, Quilcene, WA 98376).", "replace": "to Upper Dungeness Trailhead."},
+   {"id": "wa_warrior_peak_standard", "fact": "Trailhead road and address", "op": "set", "column": "road", "path": ["name"], "expect": "Palo Alto Road / FR 2860-2870 to the Upper Dungeness Trailhead", "value": "Palo Alto Road / FR 2880-2870 to the Upper Dungeness Trailhead"},
+   {"id": "wa_warrior_peak_standard", "fact": "Trailhead road and address", "op": "replace_text", "column": "road", "path": ["driveNote"], "find": "Forest Roads 2880/2870/2860", "replace": "Forest Roads 2880 and 2870"}
+  ]}
+]}

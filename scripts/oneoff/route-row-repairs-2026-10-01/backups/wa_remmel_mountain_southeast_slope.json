@@ -1,0 +1,48 @@
+{
+ "id": "wa_remmel_mountain_southeast_slope",
+ "name": "Southeast Slope (Standard Route)",
+ "approach": "From the Thirtymile Trailhead (end of FR 5160, ~3,400 ft) or the Andrews Creek Trailhead (end of FR 51, ~3,050 ft), hike into the Pasayten Wilderness. Via Thirtymile: follow the Chewuch River Trail and Four Point Creek Trail to Four Point Lake (6,850 ft), then pick up the abandoned Coleman Ridge Trail; at roughly 7,070 ft a cairn marks the point to leave the trail and climb open meadow/talus up-valley to the summit on a well-trodden unofficial path. Via Andrews Creek: hike the Andrews Creek Trail roughly 9-11 miles (crossing heavy deadfall in an old 2003 burn in the lower miles) to a low saddle between Remmel and Coleman Ridge, then contour the west side of Coleman Ridge to reach the same upper slopes; alternatively continue to Andrews Pass (~6,700 ft) and climb one of several Class 3 west-facing gullies directly to the summit ridge.",
+ "road": {
+  "name": "West Chewuch Road (County Rd 1213) to Forest Road 51 / FR 5160",
+  "status": "Improved gravel Forest Service road; high-clearance recommended near the trailheads, especially early season",
+  "driveNote": "From Winthrop, drive north on West Chewuch Road (County Rd 1213) about 6 miles to where it becomes Forest Road 51; continue roughly 22 miles to the Andrews Creek Trailhead at road's end, or fork onto FR 5160 near mile 20 and continue about 11 miles total to the Thirtymile Trailhead.",
+  "seasonalGate": null
+ },
+ "waypoints": [
+  {
+   "lat": 48.8228,
+   "lng": -120.0197,
+   "elev": 3400,
+   "name": "Thirtymile Trailhead",
+   "type": "Trailhead",
+   "distMi": null,
+   "elevFt": 3400
+  },
+  {
+   "lat": 48.7837,
+   "lng": -120.1086,
+   "elev": 3050,
+   "name": "Andrews Creek Trailhead",
+   "type": "Trailhead",
+   "distMi": null,
+   "elevFt": 3050
+  },
+  {
+   "lat": 48.9183,
+   "lng": -120.1818,
+   "name": "Unofficial summit trail junction (off abandoned Coleman Ridge Trail)",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 48.923342,
+   "lng": -120.196887,
+   "elev": 8685,
+   "name": "Remmel Mountain Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8685
+  }
+ ]
+}

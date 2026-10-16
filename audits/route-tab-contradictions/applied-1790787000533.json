@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_glacier_view_temple",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_glacier_view_temple",
+   "before": {
+    "rope_note": "Probably like its East Face/Keechelus Ridge neighbours: a single-pitch bolted sport line on blocky andesite, likely 60-90 ft with a chain anchor."
+   }
+  }
+ ]
+}

@@ -1,0 +1,428 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Wilderness permit fee stated wrong"
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "column": "permit",
+   "path": [],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Wilderness permit fee stated wrong"
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "column": "permit",
+   "path": [],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Rainier climbing fee: per climb, not annual"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "Climbing Fee: $82 per person; Climbing Permit required (one per party) for glacier access and climbing above 10,000 ft - available via Recreation.gov (June-September) or in-person at ranger station; Wilderness Permit: $10 per person per night (youth 15 and under free); National Park entrance fee required; White River Campground at 4,232 ft offers parking and camping; climbing best May 27 - June 8; winter conditions into July possible; absolutely requires crevasse rescue training, multi-pitch ice climbing experience, and established belay/anchor skills",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "seasonal": null,
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "Westside Road closed to vehicles beyond the Dry Creek gate (~3 miles in); subject to further temporary closures from debris flows",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Mount Rainier NP entrance pass (covered by park entrance fee / America the Beautiful pass) — Northwest Forest Pass does not apply inside the park",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "None specific to this route",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "None specific to this route",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Mount Rainier NP entrance pass (covered by park entrance fee / America the Beautiful pass) — Northwest Forest Pass does not apply inside the park",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "White River Road closed in winter; unaffected by the SR 165 Fairfax Bridge closure",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "seasonal": null,
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "$82 climbing registration per person (Pay.gov), $12-26 wilderness permit per person/night (May 1-Sept 15). Mount Rainier National Park requires backcountry permit. CRITICAL: Mowich Lake Road is CLOSED — WSDOT permanently closed the SR 165 Fairfax Bridge on April 22, 2025, and the park's road-status page (updated September 18, 2026) lists no public access to Mowich Lake from SR 165. When open: mid-July to mid-October. Helmet and rescue gear essential. Permit advance planning required via Recreation.gov.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Climbing permit (the permit itself is free, but each climber must pay the climbing cost recovery fee first)",
+     "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+     "group_limit": 12,
+     "landManager": "National Park Service - Mount Rainier National Park",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Annual Climbing Cost Recovery Fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    },
+    "permit": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's annual climbing pass plus climbing registration; overnight high camps also need a wilderness permit."
+   }
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Climbing permit (the permit itself is free, but each climber must pay the climbing cost recovery fee first)",
+     "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+     "group_limit": 12,
+     "landManager": "National Park Service - Mount Rainier National Park",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Annual Climbing Cost Recovery Fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    },
+    "permit": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's annual climbing pass plus climbing registration; overnight high camps also need a wilderness permit."
+   }
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "seasonal": null,
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "A park entrance pass covers the car; every climber also needs a climbing permit, since the route travels on glaciers and above 10,000 ft.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "Westside Road closed to vehicles beyond the Dry Creek gate (~3 miles in); subject to additional temporary closures from debris flows",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Mount Rainier NP entrance pass (covered by park entrance fee / America the Beautiful pass) — Northwest Forest Pass does not apply inside the park",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "before": {
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "White River Road is closed in winter (typically until late May); not affected by the SR 165 Fairfax Bridge closure",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Mount Rainier NP entrance pass (covered by park entrance fee / America the Beautiful pass) — Northwest Forest Pass does not apply inside the park",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass ($30/vehicle 7-day or $55 annual as of 2026)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  }
+ ]
+}

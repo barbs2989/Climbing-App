@@ -1,0 +1,407 @@
+{
+ "file": "t161.json",
+ "results": [
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Day 2 duration",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Day 2 is about 12.5 hours (4:00 AM leave camp to 4:30 PM at the trailhead); timing total 5.5 + 12.5 = 18 hr",
+   "evidence": "The row's own day-2 schedule (4:00 AM to 4:30 PM), its day-2 note (8-9 hr camp-summit-camp plus a 4-5 hr hike out) and the totalNote (~12-13 hr day two) all agree on ~12.5 hr; only days[1].hours and the timing breakdown say 10.5. Externally, camp-to-Icy-summit is quoted at 3-5 hours from a Ruth camp, consistent with the schedule's 4-hour ascent and an 8.5-hour return to camp.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "hours"
+     ],
+     "expect": 10.5,
+     "value": 12.5,
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day 2 duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "hrs"
+     ],
+     "expect": 10.5,
+     "value": 12.5,
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day 2 duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 16,
+     "value": 18,
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day 2 duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle",
+   "verdict": "fixed",
+   "correct_value": "Ruth-Icy saddle ~5,700 ft: about 1,400 ft below Ruth's summit and about 900 ft below the ~6,600 ft notch camp; the regain from the saddle back over Ruth is about 1,400 ft",
+   "evidence": "A route description gives the lowest point of the Ruth-Icy ridge as 5,700 ft; a USGS 3DEP elevation grid between the two summits puts the connecting saddle at ~5,700 ft and Ruth's summit near 7,100 ft. From the summit that is ~1,400 ft of loss (and ~900 ft from the notch camp, as the itinerary already says), so 'about 800 ft' down and '2,000 ft' of regain to Ruth are both inconsistent with the stated 5,700 ft saddle. One trip report quotes ~2,000 ft of regain, but it does not start from the saddle; the saddle-to-summit figure is fixed by the two elevations.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP grid sampled 48.833-48.884N, 121.510-121.550W; saddle ~5,715 ft)",
+    "https://en.wikipedia.org/wiki/Ruth_Mountain"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "descend Ruth's south/west side about 800 ft;",
+     "replace": "descend Ruth's south/west side about 1,400 ft from the summit (about 900 ft from the notch camp);",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "descend Ruth's south and west side about 800 ft to",
+     "replace": "descend Ruth's south and west side about 1,400 ft from the summit (about 900 ft from the notch camp) to",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "roughly 2,000 ft of regain back up to Ruth Mountain's summit/camp",
+     "replace": "roughly 1,400 ft of regain back up to Ruth Mountain's summit (about 900 ft to the notch camp)",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "Roughly 2,000 ft of regain over Ruth on the way home",
+     "replace": "Roughly 1,400 ft of regain from the Ruth-Icy saddle over Ruth on the way home",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Single-push car-to-car time",
+   "verdict": "fixed",
+   "correct_value": "A single push is typically 15-20 hours car-to-car; about 12 hours is the moving time of a fast party",
+   "evidence": "One route description gives 15-20 hours for the one-day trip depending on weather, fitness and roping; a 2020 trip report logged 19.5 hours car-to-car over ~16.8 mi. The ~12-hour figure matches another report's 'just under 12 hrs of moving', not elapsed car-to-car time. The descent_text is reworded so both numbers are stated for what they are.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1440619870",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(parties report ~12 hours car-to-car when done in a single push)",
+     "replace": "(done in a single push it is typically 15-20 hours car-to-car, with a fast party moving for about 12 of them)",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Single-push car-to-car time"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "National Park boundary / park permit",
+   "verdict": "fixed",
+   "correct_value": "Mount Baker Wilderness (national forest) only; no national park land",
+   "evidence": "Lincoln Peak (West Butte of the Black Buttes) lies on Mount Baker's southwest flank inside the Mount Baker Wilderness of Mt. Baker-Snoqualmie National Forest; North Cascades National Park's boundary is far to the east, beyond Shuksan. A detailed trip report of the Rankin Creek approach likewise treats it as wilderness, not park land. The NCNP sentence is copied boilerplate and contradicts the row's own landManager, permit and overnight_permit fields.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Buttes",
+    "https://www.lemkeclimbs.com/lincoln-peak.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": " Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "replace": "",
+     "id": "wa_lincoln_peak_standard",
+     "fact": "National Park boundary / park permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": " — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "replace": " — Mount Baker Wilderness",
+     "id": "wa_lincoln_peak_standard",
+     "fact": "National Park boundary / park permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Only route on the peak",
+   "verdict": "fixed",
+   "correct_value": "The X Couloir is the historic standard route, but a second route (Wilkes-Booth, NW Face, IV WI4) was climbed on 13 March 2015",
+   "evidence": "The American Alpine Journal reports the Wilkes-Booth route (2,000 ft, IV WI4) on Lincoln Peak's northwest face, climbed by Daniel Coltrane and Michal Rynkiewicz on March 13, 2015, descending the southwest face; the first-ascent party's own trip report (Wilkes-Booth Route, NW Face, 3/13/2015) is separately published. So 'the only remotely feasible route' is stale; the beta is reworded to call it the standard route.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The standard and only remotely feasible route on Lincoln Peak.",
+     "replace": "The historic standard route on Lincoln Peak; the only other line is a rarely formed northwest-face ice route.",
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Only route on the peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Glacier crossed to reach the face",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent account says only that the party started from the Heliotrope Ridge trailhead and began right of the prominent hanging glacier at the Shooting Gallery start; it does not name the glacier crossed. The Thunder Glacier is described as descending west on the NORTH side of the Black Buttes, which would put the northwest-face start above the Thunder Glacier (supporting approach/pro_needs), while the itinerary, waypoints and approach variant route it via the Coleman and call the Thunder side wrong. Settling it needs a topo check of which glacier fills the Lincoln-Assassin/Colfax amphitheater and an approach description naming it; both may be true (lower Coleman, then Thunder).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://en.wikipedia.org/wiki/Thunder_Glacier_(Washington)",
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only documented ascent reports time (18.5 hr car-to-car from Heliotrope Ridge) but no distance. The row's summit pin at 5.2 mi and dist_km 9 (5.6 mi one way) imply ~10.5-11 mi round trip, against the itinerary's 14 mi; no outside source states the mileage of this approach. A GPS track or an approach description stating the one-way distance would settle it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Route described as a ridge",
+   "verdict": "fixed",
+   "correct_value": "A ~2,000 ft northwest-face ice route (IV WI4), finishing on a short rime-covered ridge — not a ridge line/variant",
+   "evidence": "The American Alpine Journal describes Wilkes-Booth as a 2,000 ft IV WI4 route on Lincoln's northwest face: a WI4 pitch right of the hanging glacier, simul-climbing in the upper amphitheater, about four roped ice pitches with 70-degree snowfields, then some rime-covered ridge climbing. The first-ascent trip report is titled 'Wilkes-Booth Route (NW Face)'. The Partners/crowds text calling it a ridge line and 'a minor variant' is left over from an older north-ridge record; only the ridge-as-the-route wording is changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "sustained scrambling/climbing on the ridge",
+     "replace": "sustained steep ice and snow climbing on the face",
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route described as a ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "before the technical ridge climbing begins",
+     "replace": "before the technical face climbing begins",
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route described as a ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "this ridge line is a minor variant of an already obscure peak",
+     "replace": "this northwest-face ice line on an already obscure peak rarely comes into condition",
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route described as a ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "before the ridge climbing begins",
+     "replace": "before the face climbing begins",
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route described as a ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "National Park boundary / park permit",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Mount Baker Wilderness (national forest) only; no national park land",
+   "evidence": "Lincoln Peak (West Butte of the Black Buttes) lies on Mount Baker's southwest flank inside the Mount Baker Wilderness of Mt. Baker-Snoqualmie National Forest; North Cascades National Park's boundary is far to the east, beyond Shuksan. A detailed trip report of the Rankin Creek approach to the same peak likewise treats it as wilderness, not park land. The NCNP sentence is copied boilerplate and contradicts the row's own landManager, permit and overnight_permit fields. This row carries the same boilerplate against its own landManager/permit fields.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Buttes",
+    "https://www.lemkeclimbs.com/lincoln-peak.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": " Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "replace": "",
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "National Park boundary / park permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": " — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "replace": " — Mount Baker Wilderness",
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "National Park boundary / park permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "fact": "Approach season start",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly Jul-Sep",
+   "evidence": "The row's season (Jul-Sep), best_season and seasonal_guidance (June 'risky'/runoff makes the unbridged Middle Fork Nooksack ford dangerous; July 'marginal' until the river drops) all start the window in July; only the approach variant says June. The Forest Service states FR 38 is gated Dec 1 - June 15 at Wallace Creek, 1.3 mi before the Elbow Lake trailhead, and that the unbridged river may not be fordable at high flows, which rules out most of June.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697",
+    "https://www.wta.org/go-hiking/hikes/elbow-lake"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Roughly Jun-Sep",
+     "value": "Roughly Jul-Sep",
+     "id": "wa_little_sister_southeast_ridge",
+     "fact": "Approach season start"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 4,
+   "evidence": "The route listing for Little Sister gives the North Face as 5.4, 4 pitches; the row's beta (600 ft, 4 pitches), itinerary (four pitches) and pitch_detail P1-P4 all agree, the fifth pitch_detail entry being an unroped scramble. Note the first-ascent trip report title says '5.4 3p', so the count depends on rope length; 4 is the figure the rest of the row uses.",
+   "sources": [
+    "https://www.mountainproject.com/area/126693811/little-sister",
+    "https://cascadeclimbers.com/forum/topic/99716-tr-twin-sisters-range-little-sister-north-face-54-3p-fa-7242016/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 5,
+     "value": 4,
+     "id": "wa_little_sister_north_face",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "High point",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on Little Sister's summit height: several range descriptions give 6,600 ft (the area's elevation_ft), one peak list gives 6,620 ft, and a USGS 3DEP sample at the summit pin reads ~6,516 ft with nothing higher within ~1 km, closer to the stored 6,526. No two independent sources agree on a single figure, and the peak elevation shown in the header is an areas-table value outside this route row. A surveyed/listed summit elevation (e.g. the USGS quad's spot height or contour) would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-range-green-glacier",
+    "https://listsofjohn.com/peak/49872",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.9765&y=48.6924&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "Approach season start",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly Jul-Sep",
+   "evidence": "The row's season (Jul-Sep), best_season and seasonal_guidance (June 'risky'/runoff makes the unbridged Middle Fork Nooksack ford dangerous; July 'marginal' until the river drops) all start the window in July; only the approach variant says June. The Forest Service states FR 38 is gated Dec 1 - June 15 at Wallace Creek, 1.3 mi before the Elbow Lake trailhead, and that the unbridged river may not be fordable at high flows, which rules out most of June.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697",
+    "https://www.wta.org/go-hiking/hikes/elbow-lake"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Roughly Jun-Sep",
+     "value": "Roughly Jul-Sep",
+     "id": "wa_little_sister_north_face",
+     "fact": "Approach season start"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "fact": "High point",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on Little Sister's summit height: several range descriptions give 6,600 ft (the area's elevation_ft), one peak list gives 6,620 ft, and a USGS 3DEP sample at the summit pin reads ~6,516 ft with nothing higher within ~1 km, closer to the stored 6,526. No two independent sources agree on a single figure, and the peak elevation shown in the header is an areas-table value outside this route row. A surveyed/listed summit elevation (e.g. the USGS quad's spot height or contour) would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-range-green-glacier",
+    "https://listsofjohn.com/peak/49872",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.9765&y=48.6924&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  }
+ ]
+}

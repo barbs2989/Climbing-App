@@ -1,0 +1,110 @@
+{
+ "results": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "unresolved",
+   "resolution": "No published coordinate or track for 'First summit view point' (index 2) or 'Regain North Ridge crest' (index 3); neither is provably off the described line, and the ground agrees with both stated heights. Left as is.",
+   "summary": "Still no published position for the two remaining ridge pins; both sit at about the heights they claim on the line the route describes, so they stay.",
+   "evidence": "Eighth pass, 2026-10-01. Live row re-read: after r15 removed the old pin 3, the two interpolated pins are now index 2 'First summit view point' (47.61587372727273, -121.2663476, 5,267 ft) and index 3 'Regain North Ridge crest' (47.616701454545456, -121.2707496, 6,100 ft); the row has no gpx line. New angle this pass: a web search surfaced an NWHikers thread not tried before ('Bald Eagle Peak (Point 6,259) 7.14.06'); it answers only a bot-check page ('Please refresh this page') and the Wayback Machine holds no capture of it (availability API and CDX both empty), so it was not read and no bypass was attempted. The other hits are the ones already exhausted in r9/r12/r15: the peak's route page (403), a 2000 WTA report (403), the 2019 and 2021 blog reports (the 2019 'GPS track' link is a Flickr album with no geotags; the 2021 one exposes no file), and unrelated Bald Eagle peaks. Ground check (USGS 3DEP point query, measurement only, from r15): index 2 ground 5,220 ft vs 5,267 stated; index 3 ground 6,032 ft vs 6,100 stated, about 70 m from the summit pin, consistent with regaining the crest just below the top. Both lie on the east-side line the written account describes (open rocky crest from ~5,200 ft; bypass east into a gully and upper basin; regain the crest below the summit), so rule 1 (provably >500 m off the line) does not apply, and no written account contradicts either position. No move (no coordinate from any source, let alone two); no removal.",
+   "sources": [
+    "NWHikers: Bald Eagle Peak (Point 6,259) 7.14.06 (bot check, not read; no archived copy)",
+    "onehikeaweek: Bald Eagle Peak North Ridge (2019) and Silver Eagle Peak by Bald Eagle Peak (2021)",
+    "USGS 3DEP elevation point query (ground heights only)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "verdict": "unresolved",
+   "resolution": "Day 2 miles (7.7) left as is: no source states a day-2 figure, and the Goat Flat to lookout segment itself has no two sources agreeing.",
+   "summary": "Nobody publishes a figure for the summit-and-out day, and sources disagree on how far the lookout is from Goat Flat, so day 2's 7.7 mi stays for the owner to judge.",
+   "evidence": "Eighth pass, 2026-10-01. Live row: day 1 4.5 mi (r14), day 2 miles 7.7 with the note already restating the sourced '~4.5 miles back out'; dist_km null. Day 2 is Goat Flat -> lookout -> Goat Flat -> trailhead, so only a source stating that whole day, or the segments in words, could settle it without a sum. Found: (1) Washington Hiking / Pacific Northwest Hiking (one author, several editions; Internet Archive full-text search): from Goat Flats the trail 'continues 1 mile to Tin Can Gap and another mile to an old lookout atop Three Fingers' (about 2 mi one way). (2) A 2026 trip report from Goat Flats camp: '2.7 miles + 2150 feet' from camp to the lookout (one way), on a three-day trip whose days start at the road washout. (3) A WTA trip report summary (search extract only) has the lookout as about 3-3.5 mi beyond Goat Flats; another search extract gives 4.5 mi round trip. (4) A bike-and-hike overnight account gives only the totals (about seven miles of hiking each way, 33 mi round trip with the bike). (5) 75 Scrambles in Washington lists Tin Can Gap at 6 mi (r14) but its lookout entry was not readable (lend-only scan). Goat Flat -> lookout is therefore ~2 / 2.7 / 3-3.5 mi one way, one author each, and no source states a day-2 total; writing one would need arithmetic. The note's '~4.5 miles back out' is already the sourced segment. No ops.",
+   "sources": [
+    "Washington Hiking / Pacific Northwest Hiking (Leonard), Three Fingers entry, Internet Archive full-text search",
+    "trailcatjim.com: Three Fingers Mtn South Peak / Lookout via Meadow Mtn (2026)",
+    "WTA trip reports for Three Fingers / Goat Flats (search extracts)",
+    "angelatravels.com: Bike to Hike, an Overnight Trip to Three Fingers Lookout",
+    "75 Scrambles in Washington (2001), Internet Archive full-text search"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "verdict": "confirmed",
+   "resolution": "The 7,000 ft vs ~8,025 ft ground mismatch is already fixed: r5 (applied) moved waypoint 5 onto the ~6,700 ft rope-up bench on Clark's eastern arm, elev 6,700 (ground 6,617). What remained wrong was its text: the note put the rope-up 'east of Boulder Pass', and the directions put it at the glacier toe after a further traverse. Both now say the party ropes up on the bench.",
+   "summary": "Waypoint 5 is the rope-up bench on Clark's eastern arm, and its position and 6,700 ft height were already fixed; its note and directions now say to rope up on that bench instead of 'east of Boulder Pass' and at the glacier toe.",
+   "evidence": "Eighth pass, 2026-10-01. Live waypoint 5: 'Walrus (Clark) Glacier rope-up / crevasse zone' at 48.05036669713597, -120.93634128570551, elev 6700, moved there by r5 (README section 8) from 48.04725024,-120.96234512 (8,025 ft ground). The task's '7,000 vs 8,025' description is stale. What the point is: two independent accounts put the rope-up on a bench on Clark's eastern arm reached after dropping off the far side of Boulder Pass. (1) A 2013 trip report: 'headed northeasterly to 6300-foot Boulder Pass. We dropped down steep snow on the other side of the pass, then ascended to a 6700-foot bench on Clark's eastern arm. This bench provided a good place to rope up ... We wrapped around the eastern arm and got our first view of the Walrus Glacier.' (2) The Walrus Glacier route page (archived): trip stats '12:00 6100' left camp for summit; 12:40 6760' roped up; 2:30 8000' col; 3:15 8600' reached summit ... 6:30 6760' unroped'. A third (2019 report behind the GPS track used in r5): dropped ~150 ft from the pass, crossed the basin north-west, climbed ~500 ft to the top of the ridge, reached the glacier, roped up. The pin's position (published map marker '6700' + recorded track, r5) and its 6,700 elev match these; USGS reads 6,617 ft there. Text defects: (a) note 'Rope up here east of Boulder Pass' - the accounts reach the bench over the pass and across the basin to the north-west, not east of the pass, so the bearing is replaced by the named place (no computed bearing written). (b) directions said to traverse on from the bench, 'turn back west ... to the toe of the glacier', and 'Rope up here' - i.e. rope up at the toe; both accounts rope up on the bench itself (as the row's own climbing_route step 1 and itinerary day 2 already say). The traverse wording beneath Peak 7242 is kept unchanged; only where the rope goes on is corrected. Name and type are left (owner may prefer 'Rope-up bench on Clark's eastern arm'). No pin op: the coordinate is already sourced.",
+   "sources": [
+    "http://trailcatjim.com/clark-mountain-via-walrus-glacier-dakobed-range/",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/walrus-glacier/588296",
+    "https://web.archive.org/web/20191017083223/http://www.nwhikers.net/forums/viewtopic.php?t=8029973 (via r5)"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_clark_mountain_west_ridge",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "Rope up here east of Boulder Pass before stepping onto",
+     "replace": "Rope up here on the bench on Clark's eastern arm, across Boulder Pass, before stepping onto"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_clark_mountain_west_ridge",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "find": "Drop over the far side of the pass on steep snow to a bench around 6,700 ft on Clark's eastern arm, then traverse",
+     "replace": "Go down steep snow on the far side of the pass, then climb to a bench around 6,700 ft on Clark's eastern arm and rope up there with crampons and axe. From the bench, traverse"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_clark_mountain_west_ridge",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "find": "Rope up here with crampons and axe: the non-glacier south-side line diverges back at the pass, so stepping onto the ice is the committing choice.",
+     "replace": "The non-glacier south-side line diverges back at the pass, so roping up here is the committing choice."
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "verdict": "confirmed",
+   "resolution": "access.permit scoped: the ski-area slopes the route climbs lie outside the Alpine Lakes Wilderness, but the boundary runs at the summit, so the free self-issue permit is still the thing to carry. access.fees and access._raw untouched.",
+   "summary": "The permit line now says the route climbs outside the wilderness but tops out right on its boundary, so the free trailhead wilderness permit is still worth filling out; this also squares it with the fee note that says the route stays outside.",
+   "evidence": "Eighth pass, 2026-10-01. Live access.permit: 'Free self-issue Alpine Lakes Wilderness permit, filled out at the trailhead; required for day use as well as overnight, no quota.'. access.fees (not touched) says 'no wilderness permit needed since this route stays outside the adjacent Alpine Lakes Wilderness', so the two fields contradict. Boundary (land manager's own data, USFS EDW wilderness layer, point queries): every pin, index 0-6 including the summit block (index 5) and the summit (index 6, 47.439074,-121.44408), returns no wilderness polygon, while a 25 m search radius around the summit returns Alpine Lakes Wilderness. So the climb is outside and the summit is within 25 m of the line. OpenStreetMap independently puts a point about 240 m north-west of the summit inside the Alpine Lakes Wilderness (the summit query itself timed out on both Overpass servers). Permit rule (land manager): MBS 'Wilderness Regulations' page: 'Day-use and overnight visitors to the Alpine Lakes Wilderness will need to fill-out a free, self-issue permit available at ranger stations and trailheads'; the Snow Lake Trail 1013 page (same trailhead lot) says permits are required for day use and overnight trips. Climbing sources list the peak under the wilderness: the club route page's land-manager field reads 'Mount Baker-Snoqualmie National Forest Alpine Lakes Wilderness' (it says nothing about a permit), and the peak database lists the Alpine Lakes Wilderness (r1). No written source says a permit is not needed. Since the summit sits on the line and a wrong 'no permit' risks a citation while carrying a free permit costs nothing, the sentence keeps the permit and scopes the wilderness fact: outside on the way up, boundary at the summit. Row + land-manager data suffice for a permit fact; the boundary fact also has the row's own pins and access.fees. Season dates (May 15-Oct 31, one land-manager page) are not added. The overnight_permit object already names the same permit and is left. NOT touched: access.fees ('no wilderness permit needed ...') - owner, drop that clause or leave it; with this wording it no longer contradicts on where the route runs, only on whether the permit is needed. access._raw not touched.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0 (USFS wilderness boundary, point queries)",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/snow-lake-trail-1013",
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/denny-5520",
+    "OpenStreetMap Alpine Lakes Wilderness boundary (Overpass is_in)",
+    "https://www.peakbagger.com/peak.aspx?pid=2113 (via r1)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_denny_mountain_north_slopes",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free self-issue Alpine Lakes Wilderness permit, filled out at the trailhead; required for day use as well as overnight, no quota.",
+     "value": "The ski-area slopes this route climbs are outside the Alpine Lakes Wilderness, but the wilderness boundary runs right at the summit, so fill out the free self-issue wilderness permit at the trailhead; it covers day use as well as overnight, with no quota."
+    }
+   ],
+   "pin_ops": []
+  }
+ ]
+}

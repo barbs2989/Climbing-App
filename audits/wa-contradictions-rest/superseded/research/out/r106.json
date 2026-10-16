@@ -1,0 +1,202 @@
+{
+ "file": "r106.json",
+ "results": [
+  {
+   "id": "wa_leave_my_flake_alone",
+   "fact": "Route grade vs crux pitch grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": "5.8",
+   "evidence": "A route's grade is its hardest pitch climbed, including a shared start; the published route lists 5.8 overall with P1 (via Mourning Star) 5.8 and P2/P3 5.7, and describes P3 as the tricky, reachy pitch. The row matches that exactly.",
+   "sources": [
+    "https://www.mountainproject.com/route/117285474/leave-my-flake-alone"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Total route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": "2.35 mi one way / 4.7 mi round trip",
+   "evidence": "Already resolved: dist_km is now 3.78 km (2.35 mi one way), matching the approach text (2.3-2.4 mi one way), the summit waypoint distMi 2.35 and the 4.7 mi round-trip itinerary.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Best/actual climbing season",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Apr-Sep",
+   "evidence": "Already resolved: season now reads Apr-Sep, and seasonal_guidance, itinerary.cal and approach all describe a spring snow window plus a mid-July-September dry window; best_season is hidden when seasonal_guidance exists.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Avalanche hazard on the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: seasonal_hazards.avalanche.zone now describes real hazard on the spring snow ascent and byMonth covers April-June, agreeing with hazards, obj_haz and turnaround.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Whether the route uses the named International/Edelweiss/Armstrong ski runs",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: overview now says this route climbs those same runs, agreeing with beta, approach and face.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Wilderness permit: access.fees says the route stays outside Alpine Lakes Wilderness, while access.permit names a self-issue day-use permit and overnight_permit names an Alpine Lakes Wilderness permit",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Noticed while reviewing; the wilderness boundary relative to the Alpental ski area and Denny's summit was not researched to two sources, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "7600",
+   "evidence": "loss_ft, the itinerary day gains (3100+4200+300), and totalNote all agree on 7,600 ft; gain_ft 3500 is the only outlier (it roughly matches a single summit-day figure). Bird Creek Camp sits at 4,200 ft about 4 mi above Weaver Point (~1,100 ft), and the camp-to-summit climb is about 4,800 ft of gain, so car-to-car totals ~7,500-7,900 ft. Descent_text's '~4,000+ ft' loss back to Weaver Point also understates the ~7,200 ft drop from 8,383 ft.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "patches": [
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3500,
+     "value": 7600
+    },
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "~4,000+ ft of elevation loss",
+     "replace": "~7,000+ ft of elevation loss"
+    }
+   ]
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Round-trip distance (dist_km vs itinerary miles)",
+   "verdict": "fixed",
+   "correct_value": "17.7 km (~11 mi one way from the Harlequin Bridge stop)",
+   "evidence": "dist_km 5.6 km (3.5 mi) is the camp-to-summit leg only (a 7 mi round trip from the Bird Creek bivy). The one-way approach is ~3.5 mi Harlequin Bridge to Weaver Point, ~4 mi up Devore Creek Trail to Bird Creek Camp, then ~3.5 mi to the summit — about 11 mi, which matches the route's own summit waypoint distMi 11 and the ~25 mi round-trip itinerary.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "patches": [
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Round-trip distance (dist_km vs itinerary miles)",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 5.6,
+     "value": 17.7
+    }
+   ]
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Whether fixed rappel anchors exist on the crux/summit step",
+   "verdict": "fixed",
+   "correct_value": "Left-in-place (slung) rappel anchors exist at the edge of the summit ridge, above the 20-ft crux step, and at the summit block; no bolts or chains",
+   "evidence": "One trip report found a rap anchor at the summit-ridge edge, another on top of the 20-ft crux, and a good rap anchor at the summit block, and rappelled from them. A second report describes a conveniently located rap station at the top of the 4th-class step and a second rap below. Descent_text's claim of no fixed hardware and building your own natural anchor is the outlier.",
+   "sources": [
+    "https://www.countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain/",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "patches": [
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Whether fixed rappel anchors exist on the crux/summit step",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "there are no fixed bolts, chains, or any other fixed hardware on this route, so if you choose to rappel it rather than downclimb, you'll build a natural anchor (webbing/cord around a horn or block) and retrieve your gear, or downclimb it with a spot/handline",
+     "replace": "there are no bolts or chains, but slung rappel anchors have been found left in place at the edge of the summit ridge, above the crux step and at the summit block — inspect any webbing and carry spare cord to back it up or build your own, or downclimb it with a spot/handline"
+    }
+   ]
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Bird Creek Camp's elevation and position",
+   "verdict": "fixed",
+   "correct_value": "Bird Creek Camp ~4,200 ft, about 4 mi up the Devore Creek Trail from Weaver Point",
+   "evidence": "Bird Creek Campground is about 4 miles from Weaver Point on the Devore Creek Trail at 4,200 ft; a second report camps at the 4,200 ft Devore/Bird Creek junction. The waypoint's 5,800 ft, and the beta and pitch_detail[0] copies saying ~5,400 ft, are wrong (5,400 ft is the unofficial higher camp). Waypoint distMi left as is (distance counted from Harlequin Bridge).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "patches": [
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Bird Creek Camp's elevation and position",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 5800,
+     "value": 4200
+    },
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Bird Creek Camp's elevation and position",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "From Bird Creek Camp (~5,400 ft)",
+     "replace": "From Bird Creek Camp (~4,200 ft)"
+    },
+    {
+     "id": "wa_devore_peak_west_ridge",
+     "fact": "Bird Creek Camp's elevation and position",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Bird Creek Camp (~5,400 ft)",
+     "replace": "Bird Creek Camp (~4,200 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Rope length (rope_length_m vs gear/pro_needs range)",
+   "verdict": "not_a_contradiction",
+   "correct_value": "30",
+   "evidence": "30 m lies within the 30-60 m range offered, and descent_text says a single 30 m rope is enough; the range is an option, not a conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Overnight permit: access.permit says an NPS backcountry permit is needed for off-trail camping on the route, while overnight_permit says Bird Creek camps need only a free self-issue Glacier Peak Wilderness permit",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Noticed while reviewing; the Lake Chelan NRA / Glacier Peak Wilderness boundary on the Devore Creek Trail was not researched to two sources, so no patch.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Day trip or multi-day"
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "Search-and-rescue county"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Staircase access status"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "before": {
+    "descent_text": "This is a walk-off/downclimb — no rappelling is involved. From the summit, reverse the class 2–3 scramble down to the shoulder on the Cameron–Claywood divide, then descend back into the upper Cameron Creek/Lillian Basin drainage on the same talus and open benches used on the way up. Regain Grand Pass by climbing the loose scree/shale slope on the basin's west side; this slope is notably looser and more insecure on the reascent than it felt going down, so expect slow, careful travel with some hand use, and glissadeable snow patches here in early season instead. From Grand Pass, follow the Grand Pass Trail back over Lillian Ridge to the Obstruction Point Trailhead. Watch for afternoon thunderstorm buildup over the exposed ridge on the final miles, and budget real time for the cross-country middle section in both directions — at roughly 21.5 mi / 34.6 km round trip with a significant off-trail component, this is a long single day or a trip built around a basin camp, and parties should reverse-navigate carefully rather than assume the outbound track is easy to retrace.",
+    "emergency": {
+     "notes": "No cell coverage in this interior basin. Rescues are coordinated through Olympic National Park Dispatch working with Clallam County Search and Rescue and Olympic Mountain Rescue; make sure your wilderness permit lists an accurate emergency contact and itinerary given the multi-day remoteness of this objective.",
+     "county": "Jefferson County",
+     "rangerStation": "Olympic National Park Wilderness Information Center (Port Angeles), (360) 565-3100",
+     "nearestHospital": "Olympic Medical Center, Port Angeles — one of Washington's two Level III trauma centers and the standard receiving hospital for Olympic NP wilderness rescues.",
+     "sheriffDispatch": "911"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.5155,
+      "lng": -123.3295,
+      "elev": 900,
+      "name": "Staircase Ranger Station",
+      "note": "Approach via Flapjack Lakes Trail to Gladys Divide/Needle Pass. Note: Staircase area is currently closed post-2025 Bear Gulch Fire.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "name": "Needle Pass",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 47.56445,
+      "lng": -123.31552,
+      "elev": 6104,
+      "name": "Mount Cruiser",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 6104
+     }
+    ],
+    "itinerary": {
+     "cal": "Some parties split day 2 into a more relaxed 3-day trip (rest/scope day at Flapjack Lakes camp) rather than the long single-push summit-and-hike-out day described here; snow can linger in the Needle Pass couloir into July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the North Fork Skokomish River Trail (3.8 mi) then the Flapjack Lakes Trail (4.1 mi) up through old-growth forest to camp at East Flapjack Lake (~3,850-3,900 ft). Well-graded trail, moderate grind with an overnight/rock rack pack.",
+       "hours": 5,
+       "miles": 8,
+       "title": "Hike in to Flapjack Lakes",
+       "gainFt": 3000,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Flapjack Lakes camp"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start toward Gladys Divide, up the couloir to Needle Pass, then the two-pitch 5.0-5.3 South Corner to the summit. Rappel back to the platform, descend to camp, break camp, and hike all 8 miles back out to the trailhead the same day — a long but standard single push.",
+       "hours": 13,
+       "miles": 12,
+       "title": "Summit push and hike all the way out",
+       "gainFt": 2250,
+       "lossFt": 5250,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp with headlamps",
+         "detail": "Toward Gladys Divide, then the couloir to Needle Pass."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Reach Needle Pass",
+         "detail": "About 1,850 ft above camp; rack up here."
+        },
+        {
+         "time": "~8:00-10:00 AM",
+         "label": "Climb the South Corner",
+         "detail": "Two pitches, low 5th class, runout but easy per multiple trip reports."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Summit",
+         "detail": "About 5 hours after leaving camp."
+        },
+        {
+         "time": "11:00 AM-1:00 PM",
+         "label": "Rappel and descend to camp",
+         "detail": "Reverse the ridge, rappel the bolted anchor, hike down to Flapjack Lakes."
+        },
+        {
+         "time": "~1:00-8:00 PM",
+         "label": "Break camp and hike out",
+         "detail": "Full 8-mile, 3,000 ft descent back to the Staircase trailhead."
+        }
+       ],
+       "objective": "Climb the South Corner, then break camp and hike out"
+      }
+     ],
+     "totalNote": "A 2-day trip for most parties: an easy hike-in day to Flapjack Lakes, then one long (12-14 hr) alpine-start day that climbs the South Corner and hikes all the way back to the trailhead — 5,250 ft gain and about 17-18 miles round trip."
+    },
+    "dist_km": 12.4
+   }
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+{
+ "wa_burnt_boot_peak_north_route": {
+  "approach_logistics": {
+   "peakLat": 47.5009,
+   "peakLng": -121.3276,
+   "trailhead": "Dutch Miller Gap Trailhead",
+   "trailheadLat": 47.5104,
+   "trailheadLng": -121.3495,
+   "trailheadDirection": "Park at the Dingford Creek Trailhead, where Middle Fork Snoqualmie Road (FS Road 56) is gated to vehicles - high-clearance is strongly recommended for the potholed last miles - then walk or bike about 7.5 mi of closed road to the old Dutch Miller Gap Trailhead at its end."
+  },
+  "road": {
+   "name": "Middle Fork Snoqualmie Road (FS Road 56) to Dutch Miller Gap/Dingford Creek Trailhead",
+   "driveNote": "From North Bend/I-90 Exit 34, follow 468th Ave SE 0.6 mi to FS Road 56, then continue ~12 mi to a fork and ~5 more mi to the vehicle gate at Dingford Creek Trailhead; the road beyond is closed to vehicles. Notoriously rough and pothole-scarred past Garfield Ledges — high-clearance vehicles recommended."
+  },
+  "timing": {
+   "totalHrs": 18.5,
+   "summitTimeHrs": 8.5,
+   "descentTimeHrs": 4.5,
+   "approachTimeHrs": 5.5,
+   "recommendedStart": "5:30 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 5.5,
+     "note": "Drive FS-56 to the Dingford Creek/Dutch Miller Gap trailhead (check current road-closure point) and follow the Dutch Miller Gap Trail up the Middle Fork Snoqualmie valley — a gradu…",
+     "fromTo": "Approach to Hardscrabble camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 8.5,
+     "note": "Ford the river, ascend boulder/gully terrain to about 5,200 ft, then follow the key snow gully up to the Point-5,841 pass — parties describe steep snow in the final 200-300 ft…",
+     "fromTo": "Burnt Boot Peak via the North Route",
+     "section": "Climb"
+    },
+    {
+     "hrs": 4.5,
+     "note": "Break camp and retrace the Dutch Miller Gap Trail back down to the trailhead/road.",
+     "fromTo": "Hike out",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ "wa_huckleberry_mountain_west_route": {
+  "road": {
+   "name": "Middle Fork Snoqualmie Road",
+   "status": null,
+   "driveNote": "Access via Middle Fork Snoqualmie Road east of North Bend",
+   "seasonalGate": null
+  }
+ },
+ "wa_kyes_peak_northeast_ridge": {
+  "approach_logistics": {
+   "trailhead": "North Fork Sauk River / Quartz Creek Trailhead",
+   "trailheadDirection": "From the North Fork Sauk River / Quartz Creek Trailhead (Darrington Ranger District)"
+  },
+  "road": {
+   "name": "North Fork Sauk River Rd / Quartz Creek Trailhead access (Darrington Ranger District)",
+   "status": null,
+   "driveNote": "Approached via logging roads on the North Fork Sauk River on the Darrington (east) side of the range, rather than the Skykomish/Blanca Lake side used by the standard route.",
+   "seasonalGate": null
+  },
+  "approach_variants": [
+   {
+    "name": "Quartz Creek Trail over Curry Gap and the Pride Glacier",
+    "notes": "This is a different trailhead from the peak's scramble route — do not start at the Blanca Lake road end. Begin at the North Fork Sauk and Quartz Creek trailhead on the Darrington side and follow the Quartz Creek trail about four miles to Curry Gap, at the junction with the Bald Eagle Mountain trail. From the gap, head west and southwest along an up-and-down ridge toward the peak, leaving the ridge where the ground allows to cross the glacier west-northwest toward the cliffs below the neighbouring summit. The route-finding hazard on this leg is the cliff bands in the basin, not the glacier.",
+    "season": "June to September; spring ski ascents and descents of this side are also recorded.",
+    "hazards": [
+     "Crevasse-fall hazard on the glacier crossing",
+     "Cliff-band route-finding in the basin between the gap and the glacier",
+     "Rockfall on the third-class band above the glacier",
+     "The up-and-down ridge between the gap and the glacier is longer in practice than it looks on a map"
+    ],
+    "baseFinding": "The base of the climbing is where the glacier meets rock on the peak's northeast side, at about six thousand feet, and the physical test is which hand the ice is on. The line climbs third-class rock along the climber's-left edge of the glacier, so once you are on rock the ice should stay on your right the whole way up to the summit's southeast corner. If the ice is on your left, you have crossed to the wrong edge. The second confirmation is what you passed: the cliffs below the neighbouring summit are an aiming mark on the crossing, not the objective — you traverse beneath them and then turn up onto rock. Negative markers: if you are still on low-angle ice with cliffs directly overhead and the summit well off to one side, you are under the neighbouring peak rather than this one; if you have come up a faint climbers' path from a small lake with a subsidiary point beside you, you are on the south-ridge scramble from the other side of the mountain."
+   }
+  ]
+ },
+ "wa_northeast_face_direct": {
+  "approach": "Mount Formidable is a deep objective on the Ptarmigan Traverse, reached from the same Cascade Pass Trailhead as Mix Up Peak but with a much longer approach. From Cascade Pass, descend to Pelton Basin, cross below Cache Col, and traverse over glaciated and talus terrain past Kool-Aid Lake toward Yang Yang Lakes — typically a full day or more of travel with no maintained trail. From a Yang Yang Lakes camp, climbers make a rising traverse to the notch between Formidable and Spider Mountain, cross the Middle Cascade Glacier, and climb the South Route to the summit. This is a full multi-day mountaineering objective requiring glacier travel skills, generally undertaken alongside the Ptarmigan Traverse.",
+  "road": {
+   "name": "Stehekin (via Lake Chelan ferry/floatplane, no road access) or Cascade River Road/Cascade Pass approach",
+   "status": "No direct road reaches Stehekin — access is by ferry, floatplane, or on foot; alternatively via the Cascade River Road to Cascade Pass Trailhead and a long cross-country approach.",
+   "driveNote": "Either a multi-hour ferry ride from Chelan, or roughly 3.5-4 hours from Seattle to the Cascade River Road trailhead, followed by a long wilderness approach either way.",
+   "seasonalGate": "Closed by snow in winter (historically near Eldorado Creek, around MP 20); NPS reopens the road to the trailhead as snowmelt and repairs allow, typically over late spring/early summer."
+  }
+ },
+ "wa_goode_mountain_northeast_face": {
+  "approach_logistics": {
+   "peakLat": 48.4829,
+   "peakLng": -120.911,
+   "trailhead": "Rainy Pass PCT Trailhead",
+   "trailheadLat": 48.5181,
+   "trailheadLng": -120.7331
+  }
+ },
+ "wa_goode_mountain_southwest_couloir": {
+  "approach_logistics": {
+   "peakLat": 48.4829,
+   "peakLng": -120.9109,
+   "trailhead": "Rainy Pass PCT North Trailhead",
+   "trailheadLat": 48.5181,
+   "trailheadLng": -120.7331,
+   "trailheadDirection": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"
+  }
+ },
+ "wa_mount_sefrit_southeast_ridge": {
+  "approach_logistics": {
+   "trailhead": "Ruth Creek Road pullout near milepost 3 (FS 32)",
+   "trailheadLat": 48.91049444,
+   "trailheadLng": -121.5894222,
+   "trailheadDirection": "From a pullout near milepost 3 on Ruth Creek Road, just past a creek flowing over a concrete weir (~2,950 ft), off Hannegan Pass Road (FS 32) from the Mt. Baker Highway"
+  }
+ },
+ "wa_south_early_winter_spire_east_buttress": {
+  "road": {
+   "name": "WA-20 (North Cascades Highway) to the hairpin pullout below Washington Pass",
+   "status": "Open seasonally",
+   "driveNote": "From the east (Mazama/Winthrop) or west via Highway 20 to the Blue Lake Trailhead near Washington Pass.",
+   "seasonalGate": "Washington Pass closed in winter (typically late fall to spring)"
+  }
+ },
+ "wa_three_fingers_south_peak_lookout": {
+  "approach_logistics": {
+   "peakLat": 48.16992,
+   "peakLng": -121.68781,
+   "trailhead": "Goat Flats Trailhead (via Tupso Pass Road FS 41/FS 4160)",
+   "trailheadLat": 48.1972,
+   "trailheadLng": -121.7742,
+   "trailheadDirection": "East-northeast from Mountain Loop Highway milepost 7; FS Road 41 then FS 4160 approximately 17.5 miles"
+  },
+  "road": {
+   "name": "Tupso Pass Road (FR 41)",
+   "status": "Permanently closed to vehicle travel beyond the Canyon Creek bridge (~mile 8.5)",
+   "driveNote": "From the vehicle closure gate it's roughly 9 additional miles of road walking or mountain biking to reach the signed Goat Flats trailhead at ~mile 17.5-18",
+   "seasonalGate": "Vehicle gate at Canyon Creek bridge is a standing closure, not seasonal, pending any Forest Service repair"
+  },
+  "timing": {
+   "totalHrs": 13.5,
+   "summitTimeHrs": 9,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 4.5,
+   "recommendedStart": "5:30 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 4.5,
+     "note": "From the Saddle Lake Trailhead, climb through old-growth forest past Saddle Lake and up into the alpine meadows of Goat Flats, the standard camp for a Three Fingers trip. Bears fre…",
+     "fromTo": "Hike in to Goat Flats camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 9,
+     "note": "Leave camp early for the push over Tin Can Gap/Camp Saddle: a steep snow slope (ice axe, crampons advisable even late season) followed by a rock scramble and a short rebarred ladde…",
+     "fromTo": "Summit push and hike out",
+     "section": "Climb"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,774 @@
+[
+ {
+  "id": "wa_bonanza_peak_west_ridge",
+  "area_id": "wa_bonanza_peak",
+  "name": "West Ridge Approach",
+  "discipline": "scrambling",
+  "grade": "Class 2-3",
+  "grade_system": "class",
+  "grade_num": 3,
+  "pitches": null,
+  "length_m": null,
+  "sort_order": null,
+  "stars": null,
+  "fa": null,
+  "lat": null,
+  "lng": null,
+  "aspect": "W",
+  "season": "Jul-Oct",
+  "description": null,
+  "gear": [
+   "sturdy approach/hiking boots",
+   "trekking poles",
+   "ice axe (early-season snow)"
+  ],
+  "hazards": [
+   "Volcanic rock stability — loose red/orange rock with poor friction, especially when wet",
+   "Steeper pitches — Class 2-3 sections with 30-40 degree angles, higher exposure than North Ridge",
+   "Descent route-finding — west ridge descent options are less obvious than return via ascent route",
+   "Weather risk — exposed ridge collects afternoon electrical activity"
+  ],
+  "verif": null,
+  "overview": "The West Ridge approach to Bonanza Peak is longer and more secluded than the North Ridge. It involves more Class 2-3 scrambling with steeper sections and better views of the surrounding mountains. Popular for parties seeking less crowded access.",
+  "beta": "Approach via the west slopes through subalpine terrain. The ridge becomes steeper above 8,000 ft with Class 2-3 scrambling on red volcanic rock. Stay on stable sections and use caution on steeper pitches. Multiple descent options available.",
+  "turnaround": "Turn around if rock becomes loose or exposure feels uncomfortable. Several escape routes available on west face.",
+  "auto_generated": true,
+  "alpine_grade": null,
+  "rock_grade": null,
+  "ice_grade": null,
+  "gain_ft": 4200,
+  "loss_ft": 4200,
+  "dist_km": 14.8,
+  "max_angle": 38,
+  "rappels": null,
+  "commitment": "II-III",
+  "face": null,
+  "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+  "comms": null,
+  "descent": "Reverse the approach: descend from the 7,100 ft pass back to Hart Lake and out via the Railroad Creek Trail.",
+  "obj_haz": null,
+  "waypoints": [
+   {
+    "lat": 48.1993,
+    "lng": -120.7741,
+    "name": "Holden Village (Railroad Creek)",
+    "type": "Trailhead"
+   }
+  ],
+  "gpx": null,
+  "elev_pts": null,
+  "disciplines": null,
+  "timing": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 2.5,
+   "approachTimeHrs": 2.5,
+   "recommendedStart": "Early morning from Hart Lake camp"
+  },
+  "detailed_rack": null,
+  "what_to_bring": [
+   "camping gear for Hart Lake basecamp",
+   "navigation tools (no maintained trail above Hart Lake)"
+  ],
+  "pro_tips": [
+   "Use this approach to reach the base of the Soviet Route, Oregonian Route, or Cascadian Route on the Southwest/West Peaks rather than as a summit route in its own right",
+   "In early season, the gully below the pass holds avalanche hazard and should be assessed before committing"
+  ],
+  "watch_out": [
+   "Loose volcanic rock — red volcanic rock is notably unstable and slick when wet; test handholds carefully",
+   "Exposure increase — steeper than North Ridge with 30-50 ft exposure in places, significant falling risk",
+   "Route-finding descent — west side offers multiple descent gullies, but wrong choice adds hours; stay oriented",
+   "Weather window critical — afternoon thunderstorms more likely on exposed ridge; start early"
+  ],
+  "pro_needs": null,
+  "best_season": "August-September for best rock stability (volcanic rock dries more slowly than granite)",
+  "high_point_ft": 9511,
+  "aid_grade": null,
+  "approach": "From Holden Village, follow the Railroad Creek Trail roughly 3-3.5 miles to Hart Lake (3,956 ft). From the lake, climb cross-country (no maintained trail) approximately 2.5 hours to the 7,100 ft pass on Bonanza's west ridge, which gives access to the base of the Southwest/West Peak routes.",
+  "descent_text": "Parties finishing routes on the west side (e.g., the Soviet Route) typically descend via talus and short rappels on the northwest side back toward this pass, then retrace the approach down to Hart Lake and the Railroad Creek Trail to Holden Village.",
+  "bail": "Straightforward retreat back down to Hart Lake at any point below the pass; above the pass, bail options depend on which technical route is being accessed.",
+  "pitch_detail": [
+   {
+    "grade": "Class 2-3 hiking/scrambling",
+    "notes": "Open terrain giving way to rockier ground near the 7,100 ft col.",
+    "pitch": "Hart Lake to pass"
+   }
+  ],
+  "itinerary": "Day 1: hike in to Hart Lake and establish camp. Day 2: climb to the 7,100 ft pass and continue to the chosen west-side route/summit; descend back to camp. Day 3: hike out.",
+  "access": {
+   "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+   "rules": "Group size capped at 12 (people + stock combined) — same Glacier Peak Wilderness system that covers Glacier Peak itself (one contiguous wilderness spanning both Mt. Baker-Snoqualmie and Okanogan-Wenatchee National Forests).",
+   "permit": "None required — free self-issue wilderness permit at the trailhead, no reservation.",
+   "closures": "Holden Village/FSR 8301 closed and boat shuttle suspended under USFS order #06-17-05-26-04, in effect 28 January 2026 through 31 December 2027.",
+   "group_limit": 12,
+   "landManager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District), Glacier Peak Wilderness",
+   "land_manager": "Okanogan-Wenatchee National Forest (Chiwawa/Entiat Ranger Districts) — Glacier Peak Wilderness",
+   "parking_pass": "Northwest Forest Pass required at some trailheads (fee day-use sites) — $5/day or $30/year.",
+   "passRequired": "Northwest Forest Pass where applicable"
+  },
+  "road": {
+   "name": "Railroad Creek Road / Forest Service Road 8301",
+   "status": "Closed",
+   "driveNote": "Same closure as other Bonanza routes: FSR 8301 and the Lucerne-Holden boat shuttle are closed/suspended for the 2026 season (closure order through Dec 31, 2027) following December 2025 flood and landslide damage.",
+   "seasonalGate": null
+  },
+  "climate": {
+   "fall": "Narrowing weather windows.",
+   "spring": "Avalanche hazard in the gully below the pass.",
+   "summer": "Primary access season.",
+   "winter": "Used historically only for ski approaches into the Company Glacier basin; not a summer route.",
+   "typical": "East-slope Cascades climate.",
+   "forecastZone": null
+  },
+  "emergency": {
+   "notes": "Remote, off-trail approach terrain; same helicopter-rescue considerations as other Bonanza routes.",
+   "county": "Chelan County, WA",
+   "rangerStation": "Chelan Ranger District / Wenatchee River Ranger District",
+   "nearestHospital": "Lake Chelan Health Hospital, Chelan, WA",
+   "sheriffDispatch": "Chelan County Sheriff's Office (911)"
+  },
+  "lists": null,
+  "crowds": null,
+  "partner_requirements": null,
+  "seasonal_guidance": null,
+  "seasonal_hazards": null,
+  "data_quality": null,
+  "difficulty": null,
+  "approach_logistics": {
+   "peakLat": 48.238217,
+   "peakLng": -120.866415,
+   "trailhead": "Holden Village (Railroad Creek)",
+   "trailheadLat": 48.1993,
+   "trailheadLng": -120.7741,
+   "trailheadDirection": "From Holden Village (~3,300 ft) — reached by Lake Chelan ferry to Lucerne and the village shuttle — via the Railroad Creek Trail"
+  },
+  "sling_rack": null,
+  "alpine_draws": null,
+  "rope_type": null,
+  "rope_length_m": null,
+  "rope_note": null,
+  "ascender": null,
+  "corrections": "No primary source documents a named, independently graded 'West Ridge' summit climb on WA's Bonanza Peak distinct from this approach line. This entry is filled as the well-documented Hart Lake-to-7,100 ft-pass approach used to access the west-facing technical routes (Soviet, Oregonian, Cascadian) on the Southwest/West Peaks; fields specific to a technical summit climb (grade, pitches, FA) are left null accordingly. gainFt (3,144 ft) is a direct calculation from two independently sourced elevations (Hart Lake 3,956 ft; pass 7,100 ft), not an estimate.",
+  "gear_confidence": null,
+  "rappel_detail": null,
+  "rappel_count_note": null,
+  "rack": null,
+  "features": null,
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": "outback",
+  "approach_variants": [
+   {
+    "name": "Railroad Creek Trail past the Holden Lake fork to Hart Lake, then the terraces to the 7,100 ft pass",
+    "notes": "This route is the APPROACH to the west side of the peak rather than a climb in its own right — it is how parties reach the base of the routes on the Southwest and West Peaks. Its own beta describes what happens above the pass in terms that nothing else on this mountain supports, so treat it with caution. From Holden Village, follow Railroad Creek Trail #1256 west up the valley about 3 to 3.5 miles to Hart Lake at 3,956 ft. Then leave the maintained trail and climb cross-country — roughly two and a half hours, about 3,000 ft — up the rock and heather terraces on the west side of the drainage to the 7,100 ft pass between North Star Mountain and Bonanza's Southwest Peak. There is no trail above Hart Lake and no reliable water between the lake and the tarns at the pass, so fill at both.",
+    "season": "Roughly Jul-Oct; Aug-Sep for the driest ground on the terraces",
+    "hazards": [
+     "Wholly untrailed terraces above Hart Lake with waterfalls and cliff bands to be skirted on the left, loose rock and brush throughout",
+     "No reliable water between Hart Lake and the tarns at the pass",
+     "Taking the Holden Lake fork by mistake, which commits you to the far side of the mountain",
+     "Exposed high camp at 7,100 ft that collects afternoon electrical activity",
+     "Boat-and-bus access to Holden Village that has been closed since the December 2025 flood"
+    ],
+    "baseFinding": "THE ONE DECISION THAT MATTERS IS MADE ONE MILE FROM THE VILLAGE, AND IT IS A FORK. About a mile up Railroad Creek Trail the Holden Lake Trail branches off. TAKE THE MAIN VALLEY TRAIL, NOT THE FORK. The fork leads to Holden Lake, Holden Pass and the Mary Green Glacier — the routes on the OTHER SIDE of the mountain. Every hour you spend on the wrong branch is an hour walking away from this side of the peak, and the two never rejoin. THE HANDRAIL IS THE VALLEY AND THE MARKER IS A LAKE. Stay beside Railroad Creek to Hart Lake, at about 3,956 ft, roughly three and a half miles in. Reaching a lake on the valley floor with maintained trail all the way to it means you took the correct branch. Reaching a lake after four miles of switchbacks climbing 1,700 ft out of the valley means you took the wrong one. ARRIVAL: the flat ground of the 7,100 ft PASS between North Star Mountain and Bonanza's Southwest Peak, with snowmelt and tarns for water. It is a col, so it has ground falling away on two sides, and the wall you came for stands directly above it — under an hour of talus from camp to the foot of the buttress. THE ROUTE-FINDING RULE ON THE TERRACES, AND IT IS THE ONLY ONE: waterfalls and cliff bands come down off the west-facing buttress. STAY LEFT OF THEM. Open forest gives way to heather benches and then blocky loose ground; there is no tread and no cairned line, so the negative marker is your handrail — if running water or a cliff band is on your left, you have drifted right and need to correct before the ground steepens. WHAT THIS ROUTE DOES NOT SETTLE: it describes Class 2-3 scrambling above 8,000 ft on this ridge, and no other account of this peak supports a scramble line there. Treat the pass as the destination and choose a documented route from it, rather than starting up the ridge on the strength of this route."
+   }
+  ],
+  "climbing_route": null,
+  "bivy": [
+   {
+    "elev": 3200,
+    "name": "Holden Village",
+    "type": "hut",
+    "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak, which no other approach in this zone offers. The catch is that the whole thing runs on a schedule you do not control: a passenger ferry roughly forty miles up Lake Chelan from Chelan or Fields Point Landing, then a bus about ten miles up a single forest road, with the bus historically running only on certain days. Miss a boat and you lose a day at each end, so the practical trip length is dictated by the sailing schedule rather than by the climb. As of the 2026 season the village is CLOSED to all guests including hikers and the road up Railroad Creek is closed by order after December 2025 flooding and slides destroyed sections of it — using the Lucerne dock or travelling that road in any form is prohibited while the order stands, repairs are expensive and slow, and reopening may slip beyond 2026. Treat any Bonanza plan as unbookable until that order is lifted, and confirm directly rather than assuming a summer has reopened it.",
+    "water": "Village water supply, hot showers, laundry — the only fully serviced lodging anywhere near these peaks",
+    "permit": "No wilderness permit needed to sleep here, but a confirmed reservation is mandatory and so is a booked seat on both the Lake Chelan passenger boat to Lucerne and the shuttle bus up Railroad Creek. Rates are per person per night and include all meals, with a lower long-stay rate and a higher rate in the peak weeks of high summer. A wilderness permit and the usual campfire rules still apply the moment you leave the village on any trail.",
+    "capacity": "Dormitory-style lodge rooms in the old mining town, tens of guests at a time; individual bookings and group bookings are handled separately and both fill for the summer months"
+   },
+   {
+    "elev": 3300,
+    "name": "Holden Ballpark Campground",
+    "type": "camp",
+    "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is exposed and has no shelter, and with only a site or two you cannot count on it if another party arrived on the same boat. It sits at the practical start of the walk to Hart Lake, Holden Lake and Copper Basin, so it works as a first night after a late ferry and again as a last night waiting for a morning bus out. It is subject to exactly the same road closure as the village — while Railroad Creek road is closed by order there is no legal way to reach it.",
+    "water": "Railroad Creek is close by and needs treating; the village's services are a mile back down the road and are not yours to use unless you are a paying guest",
+    "permit": "Free national forest campground with no fee and no reservation, but a free self-issue wilderness permit is required for the trails above it. Reaching it at all depends on the ferry and the Railroad Creek road, so the ferry booking is the real constraint. Standard forest fire restrictions apply and are usually tightened to no open flame by late summer.",
+    "capacity": "Tiny — one or two primitive tent sites in an open field, so it is a place to sleep rather than a place to stage a large party"
+   },
+   {
+    "elev": 5278,
+    "name": "Holden Lake",
+    "type": "camp",
+    "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and climbs four miles of switchbacks to the lake, which puts most of the day's work behind you before the climbing starts. From here a typical Mary Green day is around eleven hours camp to camp with several thousand feet of gain, so parties either accept a long day from the lake or push a high camp higher. It is also the launching point for Martin Peak and for traverses toward Holden Pass. The whole basin is remote enough that self-rescue is the realistic plan — there is no road within a day of you, and the way out is a boat.",
+    "water": "Reliable — the lake and its inlet streams, plus snowmelt high into the summer",
+    "permit": "Free self-issue Glacier Peak Wilderness permit, filled in at the trailhead. Camping and campfires are both prohibited within 200 feet of the lakeshore, which is enforced and is the reason the good sites sit back in the trees and benches. Group size limits apply. Getting here at all depends on the ferry, the bus and the Railroad Creek road being open.",
+    "capacity": "Several established sites spread around the basin, enough for a few parties, but they are the obvious base for every Bonanza attempt so expect company in July and August"
+   },
+   {
+    "elev": 6400,
+    "name": "Holden Pass and the slab bivies above",
+    "type": "bivy",
+    "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfall slabs at roughly 6,900 ft, which is a genuine bivouac rather than a campsite and is worth scouting in daylight before committing to it in the dark. From either, the route makes a rising traverse west to the snowfield below the slabs, scrambles onto the northern edge of the Mary Green Glacier and works southwest under the northeast ridge. The trade is comfort and water for time: an early start off wet slabs in the dark from the pass is a very different proposition to the same ground at first light, so choose the higher camp only if the party is competent moving on that terrain unlit. Exposed to weather with nothing to hide behind.",
+    "water": "Snowmelt and running water off the slabs early in the season; by late summer this can dry up entirely and you may have to carry water from Holden Lake",
+    "permit": "Free self-issue wilderness permit. No campfires at this elevation on bare ground and in fragile alpine terrain — carry a stove. Camp on rock, snow or existing bare ground rather than on the heather benches, which do not recover.",
+    "capacity": "A handful of small pitches at the pass, and higher up only ledges — one or two tents at best above the pass, and parties frequently sleep two to a ledge"
+   },
+   {
+    "name": "Lyman Lakes and Cloudy Pass",
+    "type": "camp",
+    "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft above Spider Meadow over Spider Gap, crossing the permanent snowfield below the gap and dropping onto the Lyman Glacier, which puts an ice axe and traction on the packing list even in August. From the east it is a long valley walk up Railroad Creek from Holden, with intermediate camps at Hart Lake and at Rebel Camp about a mile beyond it that break the approach in two. North Star and Cloudy are scrambles off the Cloudy Pass trail from here; Chiwawa is reached by traversing the Lyman Glacier to its east ridge, which is a roped glacier objective rather than a walk. Cloudy Pass itself is scenic and thoroughly exposed to wind and lightning. With the Holden road closed and the Chiwawa road under its own closures, both ends of this corridor have been unreachable at times through 2026.",
+    "water": "Reliable — the lakes, the Lyman Glacier outflow and creeks all through the basin",
+    "permit": "Free self-issue Glacier Peak Wilderness permit. Camping and campfires are prohibited within 200 feet of Lyman Lake's shoreline, so pitch back from the water; carry a stove rather than planning on a fire. Reached from the west, no recreation pass is needed at the Phelps Creek trailhead, which the Forest Service lists as a no-fee site; reached from the east it needs the ferry and bus booking instead.",
+    "capacity": "Established sites at Lower Lyman Lake, more scattered ground toward the upper lakes, and a small number of exposed camps at Cloudy Pass; a popular corridor, so plan on sharing"
+   },
+   {
+    "elev": 4750,
+    "name": "Spider Meadow and Phelps Basin",
+    "type": "camp",
+    "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes and so serves North Star, Cloudy and Chiwawa; Phelps Basin half a mile above the head of the meadow is the base for Dumbell Mountain, whose route climbs northwest out of the upper basin, steepens around 6,100 ft and works up talus and a weakness to the notch west of the summit. Higher bivouac ground exists at Larch Knob, about 1,600 ft above the meadow on the switchbacks toward Spider Gap, with a few platforms partly sheltered from the wind pouring through the gap. The same trailhead also serves the Carne Mountain trail, whose basin at about 6,100 ft holds several camps with good water and is the link to the saddle above Ice Lakes and across to Leroy — those saddle camps have no water other than snowmelt. Road access is the weak point here: the Chiwawa River road is long, the final twelve miles are rough gravel unfriendly to low clearance, and the last two miles of the Phelps Creek spur are rougher still.",
+    "water": "Reliable — Phelps Creek runs the length of the meadow and the basin above holds snowmelt streams well into the season",
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead, which is entered about two and a half miles up. A Northwest Forest Pass or America the Beautiful pass covers parking at Phelps Creek. Camp on established bare sites rather than in the meadow itself, and expect fire restrictions from midsummer onward on top of the usual high-elevation limits.",
+    "capacity": "Numerous established sites through a mile-long meadow, plus quieter ground in Phelps Basin above it — the meadow absorbs a lot of parties but is genuinely busy on summer weekends"
+   },
+   {
+    "elev": 6100,
+    "name": "Leroy Basin",
+    "type": "camp",
+    "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy Creek at around 4,140 ft, then taking the steep unmaintained climbers' path up the north side of the creek to the flat at 6,100 ft. The ford is the crux of the approach rather than an afterthought: Leroy Creek runs high and fast through early summer and often does not settle until August, so an early-season party should plan the crossing for morning and be prepared to turn round. From camp, Seven Fingered Jack's southwest slopes and Maude's south side are both reasonable days, and the two are frequently combined. Maude's north-side lines, including the ice fall and the couloir, are a different proposition entirely and are approached from the far side of the peak. Larch colour makes this a heavily visited basin in the first half of October.",
+    "water": "Reliable — clear streams through the basin, though upper snowfields are what feed them and a very late-season camp may need to walk down for water",
+    "permit": "Free self-issue Glacier Peak Wilderness permit; Northwest Forest Pass or America the Beautiful at the trailhead. No campfires this high — carry a stove. Use the existing sites; the basin is small and the meadow ground scars quickly.",
+    "capacity": "Several established sites in a flat basin, comfortably a few parties, and the standard climbers' base for this side of the crest"
+   },
+   {
+    "elev": 7173,
+    "name": "Ice Lakes",
+    "type": "camp",
+    "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the road end at Cottonwood Campground at about 3,140 ft, then a rough side path climbing through boulders for another mile and a half or two to the upper lake, with the upper lake sitting about a mile and four hundred feet above the lower one, directly under Maude's face. From the upper lake Maude's shoulder is a walk-up by the standards of this range. The same valley head serves the Entiat Meadows under Fernow, Seven Fingered Jack and Maude, and Buckskin Mountain sits on the divide above, reachable either from here or from Copper Basin on the Holden side, which is also how Copper Peak is normally climbed. The whole Entiat corridor has burned repeatedly and much of the trail is exposed, dry and dusty with little shade and no reliable water between the river and the lakes. In 2026 a very large fire in this valley destroyed structures and closed the trail and road outright for months; assume nothing about access here without checking, and expect standing dead timber and blowdown for years afterwards.",
+    "water": "Reliable — both lakes, with inlet snowmelt through most of the summer",
+    "permit": "Free self-issue Glacier Peak Wilderness permit; Northwest Forest Pass or America the Beautiful pass at the Entiat River trailhead. Campfires are prohibited within half a mile of the Ice Lakes, so a stove is mandatory here. Camp on the pumice flats and bare benches rather than the fragile meadow, and honour the closure on the lower lake's peninsula.",
+    "capacity": "Established sites on benches and pumice flats around both lakes; the upper lake takes a fair number of tents in season and the lower lake has room, though the peninsula on the lower lake is closed to camping"
+   },
+   {
+    "elev": 2800,
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "type": "camp",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how parties end up starting the walk in tired and late. Phelps Creek Campground sits near the confluence of Phelps Creek and the Chiwawa a short distance below the Phelps Creek trailhead, and the Trinity trailhead at about 2,800 ft — the start of the Buck Creek trail toward Buck Creek Pass and Fortress Mountain — is a mile or so away, so one night here stages either objective. The road is the fragile part of this whole side of the zone. Storm damage has closed it above Atkinson Flat under a multi-year order, and a 2026 fire closure covered the Chiwawa River road and the Phelps Creek spur on top of that, so check whether you can drive to the trailhead at all before planning around it. When the road is shut above Atkinson Flat the lower campgrounds are still a reasonable base but the trailhead becomes a long walk or ride further on.",
+    "water": "The Chiwawa River is right there but these are primitive campgrounds — treat water and expect no potable supply or trash service",
+    "permit": "Small nightly fee at the developed sites, first come first served with no reservations, so arrive early on a summer Friday. A Northwest Forest Pass or America the Beautiful pass covers trailhead parking the next morning, and the free self-issue wilderness permit is picked up at the trailhead itself. Fire restrictions bite here in late summer and often ban all open flame including in the fire rings.",
+    "capacity": "Phelps Creek Campground has roughly seven tent sites plus half a dozen equestrian sites; Atkinson Flat, Schaefer Creek, Rock Creek and the other small forest campgrounds strung along the road below it each hold a handful more"
+   }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": "2026-08-27T12:00:00+00:00",
+  "name_search": "west ridge rdg approach",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+ },
+ {
+  "id": "wa_little_sister_scramble",
+  "area_id": "wa_little_sister",
+  "name": "Twin Sisters Olivine Scramble",
+  "discipline": "scrambling",
+  "grade": "Class 3-4",
+  "grade_system": "class",
+  "grade_num": 4,
+  "pitches": 7,
+  "length_m": 213,
+  "sort_order": null,
+  "stars": null,
+  "fa": null,
+  "lat": null,
+  "lng": null,
+  "aspect": "S/SE",
+  "season": "Jul-Sep (winter ascents documented but require full snow/ice kit)",
+  "description": null,
+  "gear": [
+   "helmet",
+   "ice axe (early season)",
+   "optional rope for exposed steps"
+  ],
+  "hazards": [
+   "loose, decomposing dunite/olivine rock on south-facing gullies and ridges (chossy terrain typical of this side of the range)",
+   "unbridged ford of the Middle Fork Nooksack River at the FR 38 trailhead, which can be dangerous or impassable at high flow",
+   "complex routefinding on connecting ridges to neighboring summits, worsened by frequent whiteout/cloud common to this marine-exposed range",
+   "lingering snow and possible avalanche exposure on approach slopes into July in high-snow years",
+   "very remote setting — long, multi-hour carry-out for any injury/rescue"
+  ],
+  "verif": null,
+  "overview": "Little Sister (6,536 ft) sits in the southern Twin Sisters Range, immediately north of Skookum Peak and south of South Twin Sister, overlooking the Green Creek Glacier basin on its east side. Like its neighbors it is built entirely of Twin Sisters dunite, one of the largest exposed masses of mantle-derived ultramafic rock in the world; the rock's reddish-orange 'olivine' weathering gives it an exceptionally high-friction, almost sandpaper-like surface prized by scramblers. Little Sister is seldom climbed as a standalone objective — most ascents happen as part of the classic Green Creek Circuit traverse (Green Creek Arete–South Twin–Jaws' Tooth–Skookum–Little Sister–Cinderella) or as a side trip from a Green Creek basin camp. A separate, more technical NW Face route (roughly 5.4, ~1,000 ft, with two prominent aretes) exists on the peak but is a distinct line from this Class 3-4 scramble.",
+  "beta": "From the Green Creek Glacier basin, gain the West Face and climb generally sound rock with many possible variations — consistent 4th and low-5th climbing for about 1,000 ft (7 short pitches or one long simul-climb). Parties solo, simul-climb, or pitch it out depending on comfort; debris litters the ledges low on the route, and both rock quality and exposure improve higher up.",
+  "turnaround": "Set a hard turnaround time based on the Green Creek Glacier crossing, not the climbing itself — softening snow bridges and moat exposure in the afternoon are the route's real time pressure, especially in a party moving unroped over 4th-class terrain.",
+  "auto_generated": true,
+  "alpine_grade": "Grade II",
+  "rock_grade": "3rd-4th class (low 5th in spots)",
+  "ice_grade": null,
+  "gain_ft": 5000,
+  "loss_ft": 5000,
+  "dist_km": 16.42,
+  "max_angle": null,
+  "rappels": "Optional single rappel from scattered tat/pin anchors on the North Face side if descending that way instead of downclimbing.",
+  "commitment": "II",
+  "face": "Southeast side, from the Cinderella-Little Sister col",
+  "permit": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+  "comms": "No reliable cell coverage inside the Green Creek cirque or on the peak; carry a satellite communicator or PLB.",
+  "descent": "Reverse the ascent gully/ridge back down into the Green Creek basin. Parties continuing the Green Creek Circuit toward Cinderella instead downclimb Little Sister's SE ridge — often sustained, full-on downclimbing — then cross to Cinderella's west ridge, drop its north face, and hike out via the standard Green Creek approach. South-facing terrain on Little Sister is notably chossy (loose, decomposing rock), so downclimb deliberately and watch for rockfall onto parties below.",
+  "obj_haz": [
+   "rockfall",
+   "river-crossing",
+   "glacier-travel",
+   "routefinding"
+  ],
+  "waypoints": [
+   {
+    "lat": 48.6797,
+    "lng": -121.897,
+    "elev": 2060,
+    "name": "Elbow Lake Trailhead (FR 38, north access)",
+    "note": "North trailhead for Elbow Lake Trail 697, ~11 mi up FR 38 from Mosquito Lake Rd; FR 38 is gated Dec 1–Jun 15 at Wallace Creek and there's no bridge over the Middle Fork Nooksack from here.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Reach the trailhead by way of Mosquito Lake Road and Forest Road 38, on the north side of the Twin Sisters range. FR 38 runs roughly 11 miles of gravel from the Mosquito Lake Road junction to the trailhead. The road is gated at Wallace Creek from December 1 through June 15 for elk winter range, so this approach only works as a summer and fall objective."
+   },
+   {
+    "lat": 48.680448,
+    "lng": -121.901676,
+    "elev": 1950,
+    "name": "Middle Fork Nooksack River ford",
+    "note": "Unofficial log/boulder crossing (sometimes a placed logjam) just downstream of the trailhead; can be unfordable at high flow, check recent conditions before committing.",
+    "type": "Hazard",
+    "distMi": 0.3
+   },
+   {
+    "lat": 48.68294,
+    "lng": -121.917262,
+    "elev": 2300,
+    "name": "Green Creek Climbers' Trail split",
+    "note": "Flagged climbers' path branches off the Elbow Lake Trail near Hildebrand Creek and drops into the Green Creek drainage; easy to miss, watch for blue trail markers.",
+    "type": "Junction",
+    "distMi": 1.3
+   },
+   {
+    "lat": 48.68618,
+    "lng": -121.937524,
+    "elev": 3800,
+    "name": "\"The Spa\" bivy basin",
+    "note": "Sandy bivy pockets among big boulders (some overhead-sheltered) with two reliable fresh-water springs; the standard base camp for Green Creek Cirque objectives.",
+    "type": "Campsite",
+    "distMi": 2.6
+   },
+   {
+    "lat": 48.687924,
+    "lng": -121.948435,
+    "elev": 4200,
+    "name": "Green Creek Arete base (5.6 crux)",
+    "note": "Foot of the roughly 2-hour-from-trailhead arete that stairsteps up to the upper cirque; mostly solid 3rd/4th class olivine broken by one distinct 5.6 move.",
+    "type": "Hazard",
+    "distMi": 3.3
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5700,
+    "name": "Green Creek (Sisters) Glacier crossing",
+    "note": "Glacial slabs above the arete lead onto the Green Creek/Sisters Glacier; crevasses and perched snow open up by late summer — rope up if snow-covered.",
+    "type": "Junction",
+    "distMi": 4.2
+   },
+   {
+    "lat": 48.691662,
+    "lng": -121.971814,
+    "elev": 6150,
+    "name": "Little Sister NW Face base",
+    "note": "About 100 ft of sustained 5.4 face climbing on the NW aretes before the angle eases into 3rd/4th class scrambling to the top; exposed, and route-finding gets tricky if clouds move in.",
+    "type": "Hazard",
+    "distMi": 4.8
+   },
+   {
+    "lat": 48.692311,
+    "lng": -121.976485,
+    "elev": 6536,
+    "name": "Little Sister",
+    "note": "True summit above the Green Creek Cirque; most parties descend by reversing the NW Face or dropping the SE Ridge back toward the glacier.",
+    "type": "Summit",
+    "distMi": 5.1
+   }
+  ],
+  "gpx": [
+   [
+    48.6797,
+    -121.897
+   ],
+   [
+    48.680448,
+    -121.901676
+   ],
+   [
+    48.68294,
+    -121.917262
+   ],
+   [
+    48.68618,
+    -121.937524
+   ],
+   [
+    48.687924,
+    -121.948435
+   ],
+   [
+    48.690167,
+    -121.962462
+   ],
+   [
+    48.691662,
+    -121.971814
+   ],
+   [
+    48.692311,
+    -121.976485
+   ]
+  ],
+  "elev_pts": null,
+  "disciplines": [
+   "scrambling"
+  ],
+  "timing": {
+   "totalHrs": 11,
+   "summitTimeHrs": 11,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "5:00 AM from the trailhead",
+   "sectionBreakdown": [
+    {
+     "hrs": 11,
+     "note": "This is a long, roadside single-day scramble, not a backpack — nearly every party goes car-to-car in one push. From the Elbow Lake trailhead, ford or log-cross the Middle Fork Nook…",
+     "fromTo": "Car-to-car ascent via Green Creek",
+     "section": "Climb"
+    }
+   ]
+  },
+  "detailed_rack": "A small rack to about 2 inches is all that's needed — mostly gear for the short low-5th crux, since the bulk of the route is unroped or simul-climbed 4th class.",
+  "what_to_bring": [
+   "helmet",
+   "sturdy boots for grippy olivine rock",
+   "map/compass/GPS",
+   "optional light rope"
+  ],
+  "pro_tips": [
+   "Frequently paired with Cinderella Peak on the same outing",
+   "Plan a long day and confirm gate/road status"
+  ],
+  "watch_out": [
+   "exposure on slabs",
+   "gated/uncertain road access",
+   "long day"
+  ],
+  "pro_needs": "Minimal: small cams/nuts to 2 in for the low-5th sections; most parties place little to no gear on the surrounding 4th-class terrain.",
+  "best_season": "Late July through September is the most reliable window for snow-free scrambling; an ice axe is recommended for lingering approach snow into July in high-snow years, and the range is generally climbable from late May to early October depending on snowpack.",
+  "high_point_ft": 6536,
+  "aid_grade": null,
+  "approach": "Drive to the north (Elbow Lake) trailhead via Mosquito Lake Road and Forest Road 38 (roughly 11 miles of gravel from the Mosquito Lake Road junction; FSR 38 is gated/closed Dec 1–Jun 15 for elk winter range, so this is a summer-fall objective). From the trailhead, Elbow Lake Trail #697 drops within a few minutes to the Middle Fork Nooksack River — there is no reliable bridge here; the old log crossing washes out regularly, so expect either a ford (dangerous at high flow, best done early morning on a cool day when the glacial melt is lowest) or an unofficial log/boulder crossing that may be located up to a quarter mile off the main trail. Once across, the trail climbs through old-growth forest above the Green Creek valley, gaining about 1,000 ft over the first 3.5 miles to the Bell Pass Trail junction. Around 2,600 ft the maintained trail bends east into the Hildebrand Creek drainage; leave it here (near a switchback) for the unofficial, flagged 'Green Creek climber's path' (small blue markers) that traverses south into the Green Creek cirque beneath Little Sister's northwest face — this use-trail is unmaintained, brushy in places, and easy to lose in fog. The path crosses an unstable lateral moraine at the head of the cirque (loose blocks, exercise care) before reaching the base of the west ridge/upper scramble terrain. From the moraine, gain the west ridge and follow it up through class 2-3 talus and blocky olivine to the summit rocks (short class 3-4 steps near the top); the rock is famously high-friction but loose in spots, and route-finding through several false summits in the upper third is the main crux in poor visibility. Total car-to-summit distance is roughly 8 miles one way (16+ km round trip) with on the order of 5,000-6,000 ft of cumulative gain given the Elbow Lake Trail's undulating profile plus the moraine and ridge climb — carry water for the dry ridge scramble since Green Creek is the last reliable source.",
+  "descent_text": "Descend by reversing the ascent line: downclimb the west ridge/upper scramble terrain back through the false-summit area to the top of the lateral moraine above Green Creek cirque, staying alert for loose olivine blocks that are easier to kick loose on the way down. Cross back over the moraine and pick up the flagged Green Creek climber's path to rejoin Elbow Lake Trail #697 near the Hildebrand Creek switchback, then follow the maintained trail back down through old growth to the Middle Fork Nooksack crossing and out to the FSR 38 trailhead. This is a walk-off/downclimb scramble route with no fixed rappel stations reported on the standard line. That said, parties on adjacent Twin Sisters summits occasionally encounter short steep gully sections where a single-rope rappel or handline is used for extra security on wet or snow-covered rock; if conditions or a party's comfort level warrant it, a short single-rope rappel (30m single-strand off a natural anchor — block, horn, or sling around a boulder, since there is no fixed/bolted hardware on this peak) could substitute for a downclimb on the steepest step, but this is optional and not part of the standard descent. The biggest descent hazards are the loose moraine crossing and losing the unmarked climber's path in whiteout/dusk conditions — note landmarks on the way up, and the Middle Fork Nooksack ford should be re-evaluated for rising afternoon glacial melt before crossing back.",
+  "bail": "Descend the ridge to the approach roads and walk out.",
+  "pitch_detail": [
+   {
+    "grade": "4th class",
+    "notes": "Debris and loose rock common on ledges; least protectable section.",
+    "pitch": "Lower face"
+   },
+   {
+    "grade": "Low 5th (~5.4)",
+    "notes": "Rock quality and protection improve; short sustained crux before easier ground to the summit.",
+    "pitch": "Upper face"
+   }
+  ],
+  "itinerary": {
+   "cal": "The Middle Fork Nooksack crossing near the Elbow Lake trailhead has had no reliable bridge for years — check recent trip reports for current ford/log conditions before going.",
+   "days": [
+    {
+     "n": 1,
+     "note": "This is a long, roadside single-day scramble, not a backpack — nearly every party goes car-to-car in one push. From the Elbow Lake trailhead, ford or log-cross the Middle Fork Nooksack, follow the Elbow Lake trail to about 2,850 ft, then pick up the flagged climbers'/fishermen's trail into the Green Creek basin. From the basin, ascend snow/talus to the col southeast of Little Sister, traverse the south-facing slope, and finish on 3rd/4th-class (locally 5.4-ish) terrain to the summit. Expect loose rock, some exposure near the top, and a long tiring return by the same line.",
+     "hours": 11,
+     "miles": 10.2,
+     "title": "Car-to-car ascent via Green Creek",
+     "gainFt": 5000,
+     "lossFt": 5000,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Leave trailhead",
+       "detail": "Cross the Middle Fork Nooksack (no reliable bridge in recent years — expect a ford or a sketchy log)."
+      },
+      {
+       "time": "~7:30 AM",
+       "label": "Pick up climbers' trail",
+       "detail": "Flagged/blue-diamond marked trail branches off the Elbow Lake trail around 2,850 ft into the Green Creek drainage."
+      },
+      {
+       "time": "~9:30 AM",
+       "label": "Gain the col SE of Little Sister",
+       "detail": "Ascend snow or talus out of the Green Creek basin to the col."
+      },
+      {
+       "time": "~11:00 AM",
+       "label": "Summit",
+       "detail": "Traverse the south-facing slope then final 3rd/4th-class scrambling to the top; some parties rappel a short section near the summit."
+      },
+      {
+       "time": "~1:00 PM",
+       "label": "Begin descent",
+       "detail": "Reverse the route; downclimb or short-rappel the crux sections."
+      },
+      {
+       "time": "~4:30-5:00 PM",
+       "label": "Back at trailhead",
+       "detail": "Total car-to-car typically 10-12 hours depending on conditions and party size."
+      }
+     ],
+     "objective": "Summit Little Sister via the Green Creek basin and the col southeast of the peak"
+    }
+   ],
+   "totalNote": "A long but standard single day: roughly 10 miles and 5,000 ft round trip, 10-12 hours car-to-car for a fit scrambling party."
+  },
+  "access": {
+   "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+   "rules": "Pack out human waste (blue bags) — no burial or glacier deposition.",
+   "permit": "No wilderness permit required (outside designated Wilderness). Day-use fee requirements vary by trailhead facility level — check current signage at the Elbow Lake/Pioneer Camp trailhead; a Northwest Forest Pass or America the Beautiful pass may be requested at developed sites.",
+   "closures": "FR 38 is gated and closed December 1–June 15 at Wallace Creek, about 1.3 miles below the Elbow Lake trailhead, to protect elk winter range. The alternate south approach via FR 12 to Pioneer Camp closes seasonally near Wanlick Pass (Nov 1–Jun 30) and has been subject to washout closures — check current Mt. Baker Ranger District alerts before driving in.",
+   "landManager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District). The standard modern approach (FR 38 + Elbow Lake Trail + Green Creek climbers' path) stays on national forest land; older west-side approaches into the range crossed gated private/DNR timberland roads and are less commonly used today.",
+   "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District)",
+   "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+   "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass"
+  },
+  "road": {
+   "name": "Twin Sisters logging road network",
+   "status": "Closed/washed out as of mid-2026 — no repair timeline announced",
+   "driveNote": "Approach roads vary by ownership; gates may add significant walking distance.",
+   "seasonalGate": "Gated in places"
+  },
+  "climate": {
+   "fall": "Shortening weather windows; early snow possible by October.",
+   "spring": "Deep, consolidating snowpack on the approach into June; wet-slide/avalanche hazard on gullies and slopes.",
+   "summer": "Best climbing window (Jul-Sep); some snow can linger on the approach and glacier crossing into July.",
+   "winter": "Heavy snowfall; road access typically gated Nov-Jun even without storm damage.",
+   "typical": "Wet, marine-influenced Cascades weather typical of the Baker/Nooksack drainages: frequent cloud and precipitation outside the Aug-Sept dry window; whiteout on the upper peak and connecting ridges is common even in summer, which compounds the routefinding hazard on this complex terrain.",
+   "forecastZone": "NWAC West Slopes North"
+  },
+  "emergency": {
+   "notes": "No cell coverage in the Green Creek basin; the nearest reliable signal is along Mosquito Lake Rd/WA-542. Given the multi-hour, complex approach, leave a detailed trip plan/turnaround time with someone.",
+   "county": "Whatcom",
+   "rangerStation": "Mt. Baker Ranger District, 810 State Route 20, Sedro-Woolley, WA 98284 — (360) 854-2553",
+   "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham — the only hospital in Whatcom County, with a Level II trauma center (Haggen Family Emergency and Trauma Center).",
+   "sheriffDispatch": "911 for emergencies; Whatcom County Sheriff's Office non-emergency line (360) 676-6911 dispatches Whatcom County Search & Rescue (WCSAR), the volunteer team covering this area."
+  },
+  "lists": null,
+  "crowds": {
+   "peakTraffic": "Weekends July-August, but low overall — Twin Sisters Range access requires navigating gated/permit logging roads that filter out casual traffic",
+   "solitudeRating": 4,
+   "estimatePerSeason": "Roughly 10-25 parties per season (estimate, not directly sourced) — low relative to popular Seattle-area scrambles like Sahale or Mailbox Peak"
+  },
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Long, sustained approach day with off-trail/bushwhack sections and a gated road walk or bike-in — expect a full, strenuous day",
+    "packWeight": "Light scramble pack (~15-25 lb) — food, water, layers, helmet; no technical rack needed for the standard line"
+   },
+   "approachTime": "Long — multi-hour approach via gated logging roads (sometimes requiring a bike leg) plus off-trail ridge/gully travel before the scrambling begins; full-day-plus objective",
+   "requiredSkills": [
+    "Unroped Class 3-4 movement on steep slab with exposure",
+    "Route-finding on an unmarked, remote approach through gated timberland roads and open ridge terrain",
+    "Comfort turning back or route-finding around false summits in clouds/weather",
+    "Self-sufficiency — remote area with long extraction time if injured"
+   ],
+   "experienceLevel": "Solid Class 3-4 scrambler comfortable on exposed, unroped slab; prior experience on Twin Sisters olivine or similar friction rock is a plus since holds and exposure differ from typical volcanic scree peaks"
+  },
+  "seasonal_guidance": {
+   "optimalWindow": "July through September",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Early main scramble season; some residual snow patches possible on shaded aspects but slabs generally dry out",
+     "status": "good"
+    },
+    "June": {
+     "reason": "Likely lingering snow on approach slopes and the ridge; not yet in the established scramble season",
+     "status": "risky"
+    },
+    "August": {
+     "reason": "Peak of the main scramble season — driest rock, most stable weather, best window",
+     "status": "optimal"
+    },
+    "October": {
+     "reason": "Outside the best season; increasing chance of storms and snow returning to the range",
+     "status": "marginal"
+    },
+    "September": {
+     "reason": "Good pre-storm window; days shortening and early-season storms becoming more likely late in the month",
+     "status": "good"
+    }
+   }
+  },
+  "seasonal_hazards": {
+   "weather": {
+    "typical": "Maritime range that catches heavy precipitation off Baker; expect fast-moving fog/cloud and wet rock potential even in the main season",
+    "probability": "Localized cloud/whiteout on the ridge is reportedly common (false summits obscured in cloud); afternoon buildup possible on hot summer days"
+   },
+   "exposure": "Significant fall exposure on the steep, solid but slabby dunite/olivine terrain; a slip on exposed slabs would be a serious to fatal fall, compounded by the remoteness and long evacuation time",
+   "avalanche": {
+    "zone": "N/A - non-glaciated summer route",
+    "byMonth": {
+     "July": "N/A",
+     "June": "N/A",
+     "August": "N/A",
+     "September": "N/A"
+    }
+   },
+   "crevasses": "N/A - no glacier travel"
+  },
+  "data_quality": {
+   "gaps": [
+    "No hard per-season party-count numbers found; crowd estimate is inferred from general trip-report commentary about low traffic, not a cited count",
+    "No NWAC or other official avalanche zone covers this specific summer-dry scramble route",
+    "No official party-size or permit-count data from the land manager/timberland company was found",
+    "Partner skill/fitness requirements are inferred from the route grade and existing hazards/access notes rather than a dedicated guide source",
+    "No public GPS track found for this route as of this research pass.",
+    "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+   ],
+   "confidence": "LOW",
+   "lastVerified": "2026 research pass"
+  },
+  "difficulty": {
+   "exposure": 4,
+   "physical": 4,
+   "technical": 2,
+   "commitment": 1,
+   "routefinding": 5
+  },
+  "approach_logistics": {
+   "peakLat": 48.692311,
+   "peakLng": -121.976485,
+   "trailhead": "Elbow Lake Trailhead (Trail #697, FR-38)",
+   "trailheadLat": 48.6797,
+   "trailheadLng": -121.897,
+   "trailheadDirection": "From the Elbow Lake Trailhead ~11 miles up FR-38 off Mosquito Lake Road (road gated Dec 1 - Jun 15 for elk winter range), crossing the Middle Fork Nooksack toward the Green Creek basin"
+  },
+  "sling_rack": null,
+  "alpine_draws": 0,
+  "rope_type": "none",
+  "rope_length_m": null,
+  "rope_note": "No rope typically needed for Class 3-4 scrambling on this rock type.",
+  "ascender": null,
+  "corrections": "Twin Sisters Range is dunite/olivine — extremely grippy rock. Specific Little Sister trip reports were not found; North Twin Sister (same range, comparable terrain) used as basis for this inference.",
+  "gear_confidence": "inferred",
+  "rappel_detail": null,
+  "rappel_count_note": null,
+  "rack": [],
+  "features": [
+   "Slab",
+   "Exposed",
+   "Scenic"
+  ],
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": null,
+  "approach_variants": [
+   {
+    "name": "Elbow Lake Trail #697, the blue-blazed Green Creek path, and the moraine to the west ridge",
+    "notes": "Drive to the north (Elbow Lake) trailhead via Mosquito Lake Road and Forest Road 38 — roughly 11 miles of gravel from the Mosquito Lake Road junction. From the trailhead, Elbow Lake Trail #697 drops within a few minutes to the Middle Fork Nooksack River. There is no reliable bridge. The old log crossing washes out regularly, so expect either a ford — dangerous at high flow, best early on a cool morning when glacial melt is lowest — or an unofficial log or boulder crossing that may be up to a quarter mile off the main trail. Once across, the trail climbs through old growth above the Green Creek valley, gaining about 1,000 ft over the first 3.5 miles toward the Bell Pass Trail junction. Around 2,600 ft the maintained trail bends east into the Hildebrand Creek drainage. Leave it there, near a switchback, for the flagged Green Creek climbers' path with its small blue markers, which traverses south into the Green Creek cirque beneath Little Sister's northwest side. Carry water for the ridge: Green Creek is the last reliable source.",
+    "season": "Roughly Jul-Sep. FR-38 is gated 1 December to 15 June for elk winter range, so this is a summer and autumn objective",
+    "hazards": [
+     "A bridgeless Middle Fork Nooksack crossing whose log washes out regularly, worst at high flow",
+     "An unsigned, blue-blazed junction at ~2,600 ft that is easy to walk past",
+     "An unstable lateral moraine with loose blocks at the head of the cirque",
+     "Several false summits on the upper ridge and no maintained tread to return on",
+     "FR-38 gated 1 December to 15 June, and reported flood damage on the network"
+    ],
+    "baseFinding": "THE SMALL BLUE DIAMOND MARKERS ARE THE WHOLE APPROACH, AND THE JUNCTION IS EASY TO WALK STRAIGHT PAST. Around 2,600 ft, near a switchback where Elbow Lake Trail #697 bends EAST into the Hildebrand Creek drainage, the unmaintained Green Creek climbers' path splits off. It is blazed with small blue diamonds. Every account says the same thing about it: look closely, because it is easy to miss. If the maintained trail has turned east and you are climbing toward Bell Pass, you have gone past it.\n\nTHE PATH ITSELF IS UNMAINTAINED, BRUSHY IN PLACES AND EASY TO LOSE IN FOG. Its direction is SOUTH into the Green Creek cirque. Blue markers going south is the confirmation.\n\nTHE UNSTABLE LATERAL MORAINE AT THE HEAD OF THE CIRQUE IS THE END OF THE APPROACH AND THE START OF THE ROUTE. Loose blocks, care needed, and the tread ends there. Above the moraine you gain the WEST RIDGE and follow it up through Class 2-3 talus and blocky olivine to the summit rocks, with short Class 3-4 steps near the top.\n\nTHE ROCK IS THE RANGE CHECK AND IT IS UNMISTAKABLE: dunite, olivine-rich, famously high-friction — but loose in spots, which is a different thing from being unsound. Grippy where it is attached.\n\nTHE ROUTE-FINDING CRUX IS NOT AT THE BASE, IT IS IN THE UPPER THIRD, AND THIS IS WHAT THE FOG ACTUALLY COSTS YOU HERE: there are SEVERAL FALSE SUMMITS on the upper west ridge, and in poor visibility telling them apart is the hardest part of the day. There is no single marker for the true top; the honest advice is to note the shape of each bump as you pass it, because you will meet them again on the way down and the moraine and the unmarked path below are the things you have to find again.\n\nWHICH PEAK AM I ON? Five summits share the Green Creek basin and the same climbers' path. LITTLE SISTER is the one dominating the SOUTHERN part of the cirque. CINDERELLA is reached from the low notch on the Cinderella-Little Sister ridge. SKOOKUM is further round the circuit. If you are at a col with a peak on each side, you are not on this route — this one goes straight up a ridge from the moraine."
+   }
+  ],
+  "climbing_route": [
+   {
+    "n": 1,
+    "class": "class 2-3",
+    "label": "West ridge",
+    "notes": "From the unstable lateral moraine at the head of the cirque (loose blocks, exercise care), gain the west ridge and follow it up through talus and blocky olivine to the summit rocks. The rock is famously high-friction but loose in spots; carry water for the dry ridge scramble since Green Creek is the last reliable source."
+   },
+   {
+    "n": 2,
+    "class": "class 3-4",
+    "label": "Summit rocks",
+    "notes": "Short steps near the top; route-finding through several false summits in the upper third is the main crux in poor visibility."
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 3170,
+    "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+    "type": "bivy",
+    "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes to here and leaves the bike, which turns a brutal road walk into a fast coast on the way out. It reads like the obvious basecamp and it is not one: under the current landowner rules this ground is day use only, no camping and no fire, and vehicles must never block the road or the gate. Treat it as a staging point where you shoulder the pack for the last three thousand feet, and push on to the wilderness ground above if you want to sleep out. Snow lingers on the path above roughly four thousand feet well into early summer. The road is also subject to closure on short notice for active logging, quarry work or fire danger, and signs posting a closure have appeared with no warning.",
+    "water": "None reliable at the prairie itself; carry what you need up from the valley",
+    "permit": "Private industrial timberland. The gate at the Middle Fork river bridge is locked and keys are no longer issued for this northern entrance, so the road is foot and bicycle only. The landowner now runs a fee recreation permit covering this block of forestland, with a hard cap on the number of non-motorized permits issued, daylight-only entry of roughly an hour and a half either side of sunrise and sunset, no campfires at any time, and no camping. Ownership of these roads has changed hands more than once and the terms have changed with it, so confirm the current permit and gate situation with the landowner before you go.",
+    "capacity": "Open ground with room for several parties, but overnight use is not permitted"
+   },
+   {
+    "elev": 4900,
+    "name": "Orsino Creek Basin",
+    "type": "bivy",
+    "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and following a brushy old road that fades into a path through timber, then traversing up red talus past the ruins of an old cabin into the basin. From the camp a steep and thoroughly unpleasant slog up dirt, scree and talus gains an obvious notch on the west ridge at around five thousand two hundred feet. The ground is coarse and drains fast, so pitch on the flat gravel benches rather than hunting for soft ground. Fill everything here. Above this point the only water is snowmelt and glacier runoff, and in a dry August there may be none at all. Best from July through September; earlier the basin holds snow and the creek runs high and cold.",
+    "water": "Orsino Creek, the most reliable water on the west side of the range. It is the last dependable source for the summits and for the higher camps, and it shrinks noticeably by late summer",
+    "permit": "The basin sits close to the boundary between private timberland below and national forest wilderness above. Camping is legal on the forest side and not on the timber company side, and the line is not signed on the ground, so camp high in the basin rather than low. No overnight permit is currently required on the forest side; standard wilderness rules apply, including a party size limit of twelve. Campfires are a poor idea anywhere here and are banned outright on the private ground below; late summer fire restrictions are routine.",
+    "capacity": "A handful of small dispersed sites among talus and heather; two to three tents"
+   },
+   {
+    "elev": 5800,
+    "name": "Col between the Twins and the Sisters Glacier margin",
+    "type": "bivy",
+    "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twins over two days camp in this area, and it is the natural high camp if you have come up from Orsino Creek Basin and want an early start on the traverse. The attraction is water: the glacier margin and the slabs below it carry running meltwater when nothing else on the crest does, and this is the last chance to fill before committing to the ridge south. It is a genuinely exposed spot with no shelter, and weather here can be far worse than in the valley. Later in the season the ice recedes, the slab runoff dries up, and the whole plan depends on melting snow instead. Check that there is still snow or ice water before relying on this camp in August or September.",
+    "water": "Running water at the edge of the glacier and on the glacial slabs below the col in season. This is meltwater, so it flows on warm afternoons and can vanish on a cold morning or after the snow has gone",
+    "permit": "National forest wilderness. Dispersed camping is legal with no overnight permit currently required, party size limited to twelve. Camp on rock, gravel or snow rather than on the thin heather, and pack out everything including waste. Campfires are inappropriate at this elevation and are usually prohibited under late season fire restrictions. A Northwest Forest Pass or an interagency pass is needed at the forest service trailheads on the southeast side.",
+    "capacity": "Two or three small tents on gravel benches and slabs; exposed and windy"
+   },
+   {
+    "elev": 6932,
+    "name": "South Twin Sister summit bivies",
+    "type": "bivy",
+    "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. There are a number of flat gravel and rubble bivy spots scattered among the summit blocks, built up by parties over the years, and the view across to Mount Baker at dawn is the reason people do it. It is entirely waterless. The dunite the range is made of is dense and unfractured and sheds or swallows water rather than holding it, so there are no springs on the crest and no tarns near the summit; whatever you drink here you carried or melted. Exposed to everything, with no wind shelter beyond the blocks themselves. Reasonable from July into September once the snow has consolidated. Do not plan on finding snow to melt in a dry late summer.",
+    "water": "None. Melt snow if there is any, otherwise carry every litre from Orsino Creek, the glacier margin or Green Creek",
+    "permit": "National forest wilderness, dispersed camping legal, no overnight permit currently required, party size limit twelve. No fires. The whole approach to this summit crosses private timberland where the current landowner permit applies, so the camp itself is legal while the walk to it may not be without the right paperwork.",
+    "capacity": "Several small hand-built gravel platforms among the summit blocks; one or two tents plus tarps or bags"
+   },
+   {
+    "name": "Green Creek cirque dispersed camp",
+    "type": "bivy",
+    "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for the circuit that links them to South Twin. It is reached by branching off the Elbow Lake trail at a switchback onto a blazed climbers path, then working up into the cirque. There are no developed campsites; parties use sandy patches beneath protecting boulders and small flat spots in the heather, and the area holds a wilderness feel that low impact camping is the only way to keep. The springs here are worth planning around, because once you are on the crest above there is nothing. Getting into the basin involves a long loose talus slope where most of what you stand on moves, which is slow and hazardous when wet. Midsummer through early autumn; early season snow makes the approach faster but the river crossing more dangerous.",
+    "water": "Two springs of running water in the basin, plus Green Creek lower down. The most dependable water anywhere on the southeast side of the range and the reason this basin is used at all",
+    "permit": "National forest, largely within the wilderness unit. Dispersed camping legal, no overnight permit currently required, party size limit twelve, no developed sites and no facilities. A Northwest Forest Pass or interagency pass is needed at the trailhead. Fire restrictions are common from midsummer. Access from this side does not cross the private timberland, but it does require fording the Middle Fork Nooksack, and the roads serving the trailhead have their own closures.",
+    "capacity": "Small dispersed sites, sandy patches under boulders; two or three parties spread out"
+   },
+   {
+    "name": "Elbow Lake hiker camps",
+    "type": "camp",
+    "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide east of the crest rather than under it, so treat them as a legal and comfortable staging camp on public ground rather than as a climbing basecamp. They are most useful for a party coming in from the south with an awkward road situation, or for anyone who wants a settled night before or after a long day on the ridge. The lake is buggy in early summer and the surrounding ground is boggy in places. Because the road access on both ends of this trail has been unreliable and at least one vehicle closure has been in force recently, check the current status of the forest roads and of the river ford before planning a trip around this camp.",
+    "water": "The lake, filtered. Reliable all season, though shallow and warm by late summer",
+    "permit": "Mount Baker-Snoqualmie National Forest, within or adjoining the wilderness unit. No overnight permit currently required, party size limit twelve, Northwest Forest Pass or interagency pass at the trailhead. Fires may be restricted or banned in late summer. Access is the problem rather than the permit: there is no bridge over the Middle Fork Nooksack at the northern trailhead and has not been for decades, so that side requires a ford that is not safe at high flow, and the southern road approach has been subject to a vehicle closure part way in. Confirm both roads and the crossing before committing.",
+    "capacity": "Two established hiker sites on the east shore"
+   }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": "2026-08-27T12:00:00+00:00",
+  "name_search": "twin sisters olivine scramble",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+ }
+]

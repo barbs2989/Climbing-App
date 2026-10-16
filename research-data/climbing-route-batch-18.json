@@ -1,0 +1,111 @@
+{
+  "wa_spectacle_buttes_west_route": {
+    "area": "wa_spectacle_buttes",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "West Ridge from the toe",
+        "class": "2-3",
+        "notes": "From the toe of the ridge, follow it upward on class 2-3 terrain."
+      },
+      {
+        "n": 2,
+        "label": "Forced ledge traverses on the south side",
+        "class": "class 3, a short section regarded by some as low class 4",
+        "notes": "Broken crags and short cliff bands along the crest repeatedly force the route off the true ridgeline onto looser, chossy ledges on the south side; the north side of the ridge is cliffy and should not be attempted. These traverses are the crux: rock is loose and ledges are narrow, so parties should move one at a time to avoid raining rock on those below."
+      },
+      {
+        "n": 3,
+        "label": "Final 400 ft scree-and-talus ramp",
+        "notes": "The final roughly 400 ft to the summit is a scree-and-talus ramp; cairns mark the line but blend into the surrounding rock and are easy to lose, so expect some route-finding on the way up."
+      }
+    ]
+  },
+  "wa_sundial_northeast": {
+    "area": "wa_sundial",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Northeast-facing gully/couloir",
+        "notes": "From Upper Royal Basin, aim for the northeast-facing gully/couloir on climber's right of The Needles group; it holds snow into July, so an axe and crampons are helpful. The gully doglegs left below a notch on the summit ridge."
+      },
+      {
+        "n": 2,
+        "label": "Summit ridge scramble to the true summit",
+        "class": "Class 3",
+        "notes": "From the notch, a short, exposed Class 3 scramble leads south to the true summit."
+      }
+    ]
+  },
+  "wa_table_mountain_standard_scramble": {
+    "area": "wa_table_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Rocky switchbacks through the southeast-face cliff band",
+        "notes": "A tight set of rocky switchbacks blasted directly into the cliff band on Table Mountain's southeast face: a narrow, exposed catwalk with steep drop-offs toward the Chain Lakes basin and Swift Creek drainage 400-800 ft below. Footing is loose rock and gravel over hard-packed tread, and snow or verglas frequently lingers in this cliff section into July, making it the most hazardous stretch of the whole route; many parties turn back here in early season without traction devices. After roughly 400 ft of gain the switchbacks top out on the summit plateau."
+      },
+      {
+        "n": 2,
+        "label": "Summit plateau west/northwest along the south rim",
+        "notes": "Follow the well-trodden tread west/northwest along the south rim; numerous braided use-trails cross the plateau but the main route hugs the south side. At about 1.2 mi the east side of the tabletop gives views of Mount Baker and Ptarmigan Ridge, and by 1.3 mi two small tarns are the high point/turnaround and the last easily identified landmark before the trail degrades into a sketchy, unmaintained scramble path descending toward the Table Mountain Glacier. No reliable water: the summit tarns are shallow, silty, and not worth treating."
+      }
+    ]
+  },
+  "wa_tooth_chair_traverse": {
+    "area": "wa_the_tooth",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "The Tooth via any Tooth route",
+        "notes": "Begin via any Tooth route, historically the South Face, from the Alpental/Source Lake approach."
+      },
+      {
+        "n": 2,
+        "label": "Crest toward Chair Peak",
+        "class": "4th/low-5th-class",
+        "notes": "A short forested walking section right after the Tooth, then exposed 4th/low-5th-class ridge travel along the crest toward Chair Peak."
+      },
+      {
+        "n": 3,
+        "label": "Rappel off Bryant",
+        "notes": "A mandatory rappel off Bryant."
+      }
+    ]
+  },
+  "wa_agnes_mountain_south_ridge": {
+    "area": "wa_agnes_mountain",
+    "climbing_route": [],
+    "skip_reason": "The approach text stops at the high camp near Icy-Spruce Pass (~6,760 ft) 'for the summit push' and describes none of the climbing above it."
+  },
+  "wa_austera_peak": {
+    "area": "wa_austera_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Inspiration Glacier traverse to Klawatti col",
+        "notes": "From the Eldorado/Inspiration Glacier high camp (~7,600 ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col; Tepeh Towers are passed along this same glacier traverse. Glaciated terrain — roped travel and crevasse-rescue gear required."
+      },
+      {
+        "n": 2,
+        "label": "Klawatti Glacier to Austera Peak",
+        "notes": "A short rappel from the col, then further travel across the Klawatti Glacier beyond Klawatti Peak to Austera Peak — meaningfully further and more committing than simply topping out on Eldorado. This route is NOT on Eldorado Peak itself, despite being filed under the same area."
+      }
+    ]
+  },
+  "wa_big_four_mountain_dry_creek_route": {
+    "area": "wa_big_four_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Exposed red slabs to the east ridge",
+        "notes": "From the upper basin, traverse the exposed red slabs to gain the east ridge below the couloir/gully system."
+      },
+      {
+        "n": 2,
+        "label": "Couloir/gully system to the summit ridge",
+        "notes": "The couloir/gully system above the east ridge leads to the summit ridge."
+      }
+    ]
+  }
+}

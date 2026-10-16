@@ -1,0 +1,60 @@
+{
+ "zone": "Pasayten — Cathedral Peak and Amphitheater Mountain",
+ "_areas_note": "NATIONAL FOREST, not national park — this zone inverts the permit expectation of every other zone in this dataset: free self-issue at the trailhead, no quota, no reservation. The research also flagged that 'Cathedral Peak' searches collide heavily with YOSEMITE's Cathedral Peak and its Cathedral Lakes, which sit under a completely different quota system in another state; any elevation or permit fact from those sources is wrong here.",
+ "areas": ["wa_cathedral_peak_pasayten", "wa_amphitheater_mountain"],
+ "sites": [
+  {
+   "name": "Upper Cathedral Lake basin",
+   "type": "camp",
+   "elev": 7400,
+   "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season",
+   "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+   "permit": "FREE self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+   "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August."
+  },
+  {
+   "name": "Cathedral Pass benches and the tarn slabs",
+   "type": "bivy",
+   "elev": 7600,
+   "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind",
+   "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+   "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+   "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain."
+  },
+  {
+   "name": "Andrews Pass",
+   "type": "camp",
+   "elev": 6700,
+   "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up",
+   "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+   "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+   "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is BURN — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes."
+  },
+  {
+   "name": "Remmel Lake and the Spanish Camp meadows",
+   "type": "camp",
+   "elev": 6800,
+   "capacity": "Broad grassy meadows with room for multiple parties, but the sites are dispersed rather than developed and horse parties use this area heavily",
+   "water": "Reliable — the lake plus the creeks draining the meadows. Along with Upper Cathedral, the other place on the approach where you can count on filling.",
+   "permit": "Free self-issue trailhead permit, no quota. The cabin at Spanish Camp is a Forest Service ADMINISTRATIVE structure, not a public shelter, and should not be treated as available lodging.",
+   "notes": "This sits a short way off the main line to Cathedral Pass and works well as a base if Remmel Mountain is on the list alongside Cathedral and Amphitheater. The meadow ground is soft and easily damaged, so pull back onto the timber edge rather than pitching in the open grass. There is a signed spur from near the guard station running up toward the Cathedral basin, which makes this a workable alternative if the lakes above are full or posted closed. Being lower and more sheltered, it is a considerably kinder camp in bad weather than anything at the pass."
+  },
+  {
+   "name": "Amphitheater Mountain upper basin",
+   "type": "bivy",
+   "capacity": "One or two parties on scree and grass benches; informal ground, no established sites",
+   "water": "Snowmelt only, and only early. Once the last patches go there is nothing up here, so plan on carrying everything up from the lake. This is the driest camp option in the zone.",
+   "permit": "Free self-issue trailhead permit covers it; no quota, no reservation, and no designated-site system in this wilderness.",
+   "notes": "Reached by following the trail southeast around Amphitheater's west ridge from Upper Cathedral Lake and then a boot path up scree and grass into the basin. Worth considering only if you want to be on the ridge at first light, because the water problem is real and it gains you very little over camping at the lake. The ground is loose and sparsely vegetated, which makes it easy to occupy without leaving a mark if you are careful. Treat it as an emergency or tactical bivy rather than a planned camp. No elevation is recorded — none was confidently sourced."
+  },
+  {
+   "name": "Tungsten Mine camp",
+   "type": "hut",
+   "elev": 6800,
+   "capacity": "Good camping around the mine site; the standing bunkhouse and cabin are historic structures that some parties shelter in, though their condition is not maintained for that purpose",
+   "water": "Poor and getting worse as the season goes on. The trail between Cathedral Pass and the mine is reported dry along its whole length, with one small stream roughly a quarter mile short of the site, so fill lower down before starting the climb.",
+   "permit": "Free self-issue wilderness permit, no quota and no reservation. The historic structures are protected cultural resources — leave the machinery and the buildings alone.",
+   "notes": "This sits on the LOOP leg between Apex Pass and the Chewuch drainage rather than on the direct Andrews Creek line, so it matters if you are traversing out rather than going in and back the same way — a party going in and out via Andrews Creek will never see it. The old bunkhouse and mine hardware from the early 1900s are still standing and the site survived the recent fires. Whether it is genuinely useful shelter is a judgement call and reports differ; plan to be self-sufficient in a tent. The water situation is the deciding factor for most parties, not the buildings."
+  }
+ ]
+}

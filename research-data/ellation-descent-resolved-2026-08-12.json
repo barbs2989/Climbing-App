@@ -1,0 +1,74 @@
+{
+  "_README": [
+    "Ellation's descent, settled from the first ascensionist's own hand-drawn topo — a source no",
+    "previous pass had opened. It labels a rappel arrow WITH A DISTANCE at every station, so the",
+    "lengths this sweep nulled as unsourced are in fact published.",
+    "",
+    "Nulling them was right for what was known at the time: the stored 8 x 70m were the rope's",
+    "capacity, and 70m is impossible on a single 70m rope doubled (that reaches 35m). But 'no",
+    "source gives a distance' was an assumption about the search, not a fact about the world.",
+    "",
+    "The table is also REPLACED rather than merged, because its rows were in the wrong order. The",
+    "stored content is sequenced by PITCH: it put the tree at rappel 4 (it is rappel 6) and the",
+    "rope-eating crack at rappel 6 (it is rappel 3). The descent is 5 rappels down the main wall,",
+    "then a 3rd/4th-class downscramble, then 3 rappels down the approach slabs — so rappels do not",
+    "map one-for-one onto pitches, which is exactly the fusion that produced the wrong order.",
+    "",
+    "Lengths are the topo's own figures in feet, converted, with the source figure kept in each",
+    "note so the conversion stays auditable and nobody silently re-rounds it."
+  ],
+
+  "wa_ellation": {
+    "area": "wa_mamie_peak",
+    "replace_rappels": true,
+    "_why": "Stored as 8 rows of 70m (the rope's capacity) in pitch order. Replaced with the 8 rappels the FA topo draws, in descent order, with its published distances. Corroborated three ways: the route page warns that several rappels come close to the doubled rope's limit, which matches the topo's 115/110/105/105 ft arrows; a 2015 party recorded that a 60m rope comes up short, which is true of seven of the eight; and the Big Treed Ledge tree carries a 100 ft arrow while station 3 — a real belay you do not rappel from — carries no arrow at all, which only makes sense if the labels are rappel distances rather than pitch lengths.",
+    "rappel_detail": [
+      { "n": 1, "lengthM": 32, "anchor": "Bolted station at the top of the route", "notes": "105 ft on the first ascensionist's topo. First rappel of the main wall." },
+      { "n": 2, "lengthM": 33.5, "anchor": "Fixed station with rings or chains", "notes": "110 ft on the topo." },
+      {
+        "n": 3, "lengthM": 30.5, "anchor": "Fixed station with rings or chains",
+        "station": "The rappel down pitch 6. The crack that causes the trouble is at the top of the pitch-6 ramp, just below the face that leads up to the station.",
+        "hazards": ["This is the rope eater, and it is the best-documented hazard on the route. Parties have had to re-climb the pitch to free a jammed rope, and one found a bail biner already left on the bolt by an earlier party who had the same problem."],
+        "pull": "Clip the pull strand through a leaver biner on the second bolt below the station, with the last person down doing the clipping. The first ascensionist confirms this makes it a non-issue.",
+        "notes": "100 ft on the topo."
+      },
+      { "n": 4, "lengthM": 32, "anchor": "Fixed station with rings or chains", "notes": "105 ft on the topo." },
+      {
+        "n": 5, "lengthM": 30.5, "anchor": "Gear belay at the toe of the main wall (station 3b), not a fixed station",
+        "station": "Lands on scrambling terrain rather than at hardware — do not expect rings here.",
+        "notes": "100 ft on the topo. Below this the descent leaves the rappel line: downscramble the 3rd/4th-class gully to the big treed ledge. No source describes that section in prose; it is read off the topo's ascent notation, so treat the ground as unverified."
+      },
+      {
+        "n": 6, "lengthM": 30.5, "anchor": "Slings around a tree — the one station on the route with no fixed metal",
+        "station": "From the big treed ledge, walk roughly 30-40 ft climber's left of the top of pitch 3. Sources disagree on the offset: the route page says about 30 ft, the topo and a 2017 party about 40 ft. The direction is unanimous.",
+        "hazards": ["Slings rather than rings or chains, so inspect and back up what you find before committing to it."],
+        "notes": "100 ft on the topo. First rappel of the lower slabs."
+      },
+      { "n": 7, "lengthM": 26, "anchor": "Fixed station with rings or chains", "notes": "85 ft on the topo — the shortest of the eight." },
+      {
+        "n": 8, "lengthM": 35, "anchor": "Fixed station with rings or chains",
+        "hazards": ["The longest rappel on the route at 115 ft, which is the entire reach of a 70m rope doubled. There is no margin here — knot the ends."],
+        "notes": "115 ft on the topo. Reaches the ground."
+      }
+    ],
+    "set": {
+      "rappels": "Eight rappels down the line of ascent on a single 70m rope used doubled, split by a short 3rd/4th-class downscramble: five rappels bring you down the main wall, then you scramble a gully to the big treed ledge, then three more reach the ground. The last one is 115 ft — everything a doubled 70m has — so tie knots in the ends. A 60m rope is not enough for seven of the eight. The rappel down pitch 6 jams ropes; clip the pull strand through a leaver biner.",
+      "descent_text": "Rappel the line of ascent on a single 70m rope used doubled. The descent is not one continuous rappel line and does not map onto the pitches: five rappels bring you down the main wall to a gear belay at its toe, then you downscramble a 3rd/4th-class gully to the big treed ledge, then three more rappels reach the ground. Seven of the eight are too long for a 60m rope, and the last is 115 ft — the whole reach of a doubled 70 — so knot the ends.\n\nTwo stations need naming in advance. The rappel down pitch 6 is where ropes jam: a crack at the top of the ramp catches the pull, and parties have had to re-climb the pitch to free it. Clip the pull strand through a leaver biner on the second bolt below that station and it stops being a problem. And the station off the big treed ledge is a tree on slings, roughly 30-40 ft to climber's left of the top of pitch 3 — the only anchor on the route without fixed metal, so inspect what you find.\n\nFrom the base, retrace the brushy climbers' path down through timber and mossy slabs to the Hannegan Pass Trail and out to the trailhead.",
+      "rappel_count_note": "The count and every distance come from the first ascensionist's hand-drawn topo, which labels a rappel arrow at each station; the figures here are its own, given in feet and converted, with the original kept in each row's note. No prose source anywhere states a rappel count for this route, so a report that disagrees is not necessarily wrong — but nothing found so far describes a different descent. Two things sources do not agree on or do not cover: the tree's offset from the top of pitch 3 is given as about 30 ft in one place and about 40 ft in two others, and no account describes the downscramble between the main wall and the treed ledge. The most recent first-hand descent report found is from 2017 and the topo is from 2010, so treat anchor condition as unverified."
+    },
+    "_sources": [
+      "first ascensionist's hand-drawn topo (rappel arrow and distance at every station)",
+      "route page (leaver-biner mitigation for the pitch-6 rope eater; several rappels near the doubled rope's limit)",
+      "2014 trip report (rope caught at the top of pitch 6; partner re-climbed the pitch to free it)",
+      "2015 trip report (found a bail biner on the pitch-6 bolt, then jammed a rope themselves; 60m comes up short)",
+      "2017 trip report (70m required for the rappels; tree offset about 40 ft)",
+      "photo-documented station survey (all stations equipped with rings or chains apart from the tree above pitch 3)"
+    ],
+    "_confidence": "corroborated",
+    "_followups": [
+      "The 'precarious flake' does NOT belong in the rappel data and is not written here. It is at the START OF PITCH 5, and it is a CLIMBING hazard: the first ascensionist jumped on it, bounce-tested cams behind it, pried at it, and expects it to stay. The stored text fused it with the pitch-6 rope eater into one rope-pull warning. It belongs in pitch_detail for pitch 5, which this batch cannot write.",
+      "Two more climbing-side hazards for pitch_detail, not for here: pitch 5 has been found dirty with fridge-sized hollow blocks, and there is an undercling flake about 10 ft above the anchor at the start of pitch 8.",
+      "Blake Herrington's Cascades Rock covers Mamie Peak and could not be read online. It is the one unchecked print source that might state a count independently."
+    ]
+  }
+}

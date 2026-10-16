@@ -1,0 +1,105 @@
+{
+ "applied": [
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "before": {
+    "itinerary": {
+     "cal": "Best attempted July-September once brush has dried out and snow has cleared from the upper talus and summit gully.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Eagle Creek/Beckler River road-end, climbers push through huckleberry brush to a streambed, cross talus around 4,000 ft, then work up heathered slopes and granite steps to a talus basin below the summit block. Since the true east ridge crest is unsuitable for direct travel, most parties detour through the basin and scramble the class 3-4 col from the north ridge to reach the top; morning fog often lingers into mid-morning.",
+       "hours": 9,
+       "miles": 4.8,
+       "title": "East Ridge scramble, car to car",
+       "gainFt": 3400,
+       "lossFt": 3400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Seattle",
+         "detail": "~1.5-2 hr drive to Baring via US-2, then Beckler River Rd/NF-6514-410 to road's end."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Start hiking",
+         "detail": "Trailless start; push through huckleberry brush toward a brushy streambed."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Cross talus at ~4,000 ft",
+         "detail": "Route-find across talus and heathered slopes, avoiding dense slide alder."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Reach talus basin below summit block",
+         "detail": "Fog can linger here past 10 AM in some seasons; wait out clouds if needed."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Summit via north ridge col",
+         "detail": "Class 3-4 scramble up the bouldered east summit; helmet recommended for loose rock."
+        },
+        {
+         "time": "3:30-4:30 PM",
+         "label": "Back at road-end",
+         "detail": "Descend by mostly retracing the ascent line, correcting around brushy sections."
+        }
+       ],
+       "objective": "Summit via the north ridge/talus basin col and return same day"
+      }
+     ],
+     "totalNote": "A long single day: about 8-10 hrs car-to-car, roughly 3,400 ft gain over 4.8 miles round trip, done entirely off-trail."
+    }
+   }
+  }
+ ]
+}

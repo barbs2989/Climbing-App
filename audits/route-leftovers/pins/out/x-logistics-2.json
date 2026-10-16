@@ -1,0 +1,5 @@
+{"results":[
+ {"id":"wa_rimrock_ridge_scramble","verdict":"confirmed","summary":"Peak coordinate in the trailhead record now matches the corrected summit pin.","ops":[
+  {"op":"set","id":"wa_rimrock_ridge_scramble","column":"approach_logistics","path":["peakLat"],"expect":48.3720712,"value":48.37557},
+  {"op":"set","id":"wa_rimrock_ridge_scramble","column":"approach_logistics","path":["peakLng"],"expect":-121.0001074,"value":-120.97826}]}
+]}

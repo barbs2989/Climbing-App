@@ -1,0 +1,1578 @@
+{
+ "batches": [
+  "b089.json",
+  "b090.json",
+  "b091.json",
+  "b092.json"
+ ],
+ "routes_read": 16,
+ "routes": [
+  {
+   "id": "wa_remmel_mountain_southeast_slope",
+   "name": "Southeast Slope (Standard Route)",
+   "area": "Remmel Mountain",
+   "contradictions": [
+    {
+     "fact": "Total distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "25.7"
+      },
+      {
+       "field": "itinerary",
+       "says": "Strong parties have also completed the whole round trip (25+ miles, 5,500-6,800 ft gain) as a single very long day"
+      },
+      {
+       "field": "turnaround",
+       "says": "Given the remoteness (16+ miles one-way)"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "Long, remote approach (16+ miles one-way) with no quick bailout"
+      }
+     ],
+     "why": "The header Dist shows 25.7 km (16 mi) while prose gives both '25+ miles' round trip and '16+ miles one-way' (32+ mi round trip); these cannot all describe the same trip.",
+     "internal_resolution": "The 25.7 km figure numerically matches the '25+' in the itinerary, suggesting a km/mile mix-up; the one-way 16+ mi prose (twice) implies ~32+ mi round trip. Not resolvable from the row alone.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "name": "NW Ridge",
+   "area": "Remmel Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Andrews Creek Trailhead (Trail #504)"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Thirtymile Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "From here, follow Chewuch River Trail #510 to Remmel Lake, then go off-trail south (~2 miles bushwhack) to reach the NW Ridge; this is the line of the 2011 ascent."
+      }
+     ],
+     "why": "The Plan tab's TRAILHEAD card names Andrews Creek while the Trailhead waypoint and its note send the party from Thirtymile up the Chewuch to Remmel Lake.",
+     "internal_resolution": "Waypoint note, approach ('From Remmel Lake'), pro_tips and itinerary all use the Chewuch/Remmel Lake line from Thirtymile; approach_logistics (Andrews Creek) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach line to the NW Ridge high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Remmel Lake, bushwhack roughly 2 miles up the forested slope due south of the lake"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Bivy on Remmel's NW Ridge itself, reached via ridge travel from the Four Point Lake basin."
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Multiple good campsites with views of Remmel; standard bivy."
+      }
+     ],
+     "why": "The approach, itinerary and pro_tips reach the 7,500 ft ridge camp by bushwhacking south from Remmel Lake, but the waypoints route it via Four Point Lake (a 'standard bivy') and ridge travel from that basin.",
+     "internal_resolution": "approach, itinerary, pro_tips and waypoints[0].note all say Remmel Lake; the Four Point Lake waypoints look carried over from the Southeast Slope route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope for the rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "50"
+      },
+      {
+       "field": "rope_type",
+       "says": "Single dynamic rope"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Rappel the west side of the ridge (single 50-60m rope)"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Two 60m ropes or one 70m rope for rappels"
+      },
+      {
+       "field": "pro_needs",
+       "says": "some descriptions call a single 50-60 m rope sufficient for the rappels, others recommend two 60 m ropes. Carry doubles if you want the full-length option."
+      }
+     ],
+     "why": "The kit fields say a single 50 m rope, while the rack list says two 60 m ropes or a 70 m for the same two rappels.",
+     "internal_resolution": "rappel_detail gives both rappels as 15 m (about 30 m total), which a single 50 m rope covers; the rack line asking for doubles or a 70 m is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "4 numbered pitches (1-4) plus 2 'Rappel' rows"
+      },
+      {
+       "field": "overview",
+       "says": "combining sections of 3rd-class scrambling with two short 5.1-5.2 pitches over gendarmes"
+      }
+     ],
+     "why": "The header says 6 pitches, but the breakdown has 4 numbered climbing pitches plus 2 rappels, and the overview describes only two roped pitches.",
+     "internal_resolution": "pitches=6 equals the pitch_detail row count including the two rappel rows; the climbing pitches number 4 (2 of them technical).",
+     "needs_research": false
+    },
+    {
+     "fact": "Nearest hospital location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.nearestHospital",
+       "says": "North Valley Hospital in Tonopah, UT is further"
+      },
+      {
+       "field": "emergency.county",
+       "says": "Okanogan County, WA"
+      }
+     ],
+     "why": "The emergency card puts a named hospital in Tonopah, Utah, which cannot be a nearby option for an Okanogan County, WA route.",
+     "internal_resolution": "North Valley Hospital is in Tonasket, WA; 'Tonopah, UT' is a corrupted place name.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_robinson_mountain_north_couloir",
+   "name": "North Couloir",
+   "area": "Robinson Mountain",
+   "contradictions": [
+    {
+     "fact": "Approach described in the camp notes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "Robinson Mountain is climbed from here by walking a little over two miles to the Beauty Creek bridge and picking up an unmaintained path just beyond it, then leaving that for open slopes above; it is fourteen miles round trip with over six thousand feet of gain"
+      },
+      {
+       "field": "approach",
+       "says": "From a backcountry camp several miles up the Robinson Creek Trail (past the 'Porcupine Camp' area, beyond which there is no maintained tread), leave the trail and climb roughly 2,000 ft cross-country to the saddle between Robinson Mountain and Devils Peak"
+      }
+     ],
+     "why": "The camp card describes the Southeast Ridge's Beauty Creek approach, while this route leaves the Robinson Creek trail much farther up-valley for the Robinson-Devils saddle.",
+     "internal_resolution": "approach, itinerary and road.driveNote all describe the up-valley Porcupine Camp/saddle line; the shared bivy text describes the standard SE Ridge route.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Robinson Mountain",
+   "contradictions": [
+    {
+     "fact": "Direction of the ridge from the gap to the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "climb the loose scree slope ... to a gap in the southeast ridge, then turn left (south) and follow the ridge about a mile"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "About 1 mile of ridge crest south to the summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "reverse the ridge scramble north along the crest back to the gap"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE FALSE SUMMIT IS POINT 8,280. It sits north-west of the tarn ... a higher point about half a mile to the north-west"
+      }
+     ],
+     "why": "Beta and the breakdown send the party south along the ridge to the summit (and north on descent), while the approach variant puts the summit north-west of the tarn and of the 8,280 false summit.",
+     "internal_resolution": "The pins agree with the variant: the summit (48.7268) is north-west of the trailhead (48.6623) and the SE-cirque tarn, so a southeast ridge leads north-west to the top. 'south' in beta/pitch_detail and 'north' in descent_text are reversed.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.85"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "5.5"
+      },
+      {
+       "field": "turnaround",
+       "says": "the long approach (11+ miles round trip with 6,000+ ft of gain)"
+      },
+      {
+       "field": "itinerary",
+       "says": "~11-14 miles round trip"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Total for the peak is fourteen to fifteen miles"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "it is fourteen miles round trip"
+      }
+     ],
+     "why": "The header shows 8.85 km (5.5 mi) and the summit pin sits at 5.5 mi, but the prose gives 11+, 11-14 and 14-15 miles round trip; the stated legs (2.8 + 1.5 mi of trail plus the tarn and ~1 mi of ridge) come to about 6-7 mi one way.",
+     "internal_resolution": "dist_km and the waypoint look like a one-way figure. Several prose sources agree on ~14 mi round trip, which makes the 11-mile figures and the 5.5 mi one-way both low.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "name": "Standard Route (South Ridge / South Gully via Copper Glance Basin)",
+   "area": "West Craggy Peak",
+   "contradictions": [
+    {
+     "fact": "Parking pass at Copper Glance Trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None required at this trailhead per USFS"
+      },
+      {
+       "field": "access.fees",
+       "says": "No fees required at the Copper Glance Trailhead"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "There is no fee here."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or Interagency pass to park at the Copper Glance trailhead."
+      },
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass at some trailheads."
+      }
+     ],
+     "why": "The ACCESS and trailhead fields say no pass or fee is needed, while the camp card says a Northwest Forest Pass is required to park at this same trailhead.",
+     "internal_resolution": "access, road.status and the waypoint (three fields) say no fee; the bivy note is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Copper Glance Creek crossing position",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Copper Glance Creek crossing, elev 6400, distMi 1.6"
+      },
+      {
+       "field": "approach",
+       "says": "for about 1.5 miles to the historic Copper Glance mine, crosses Copper Glance Creek ... to Copper Glance Lake and the open upper basin ... (about 3.3-3.5 miles one-way, ~6,260-6,600 ft)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the lake at 6,100 feet"
+      }
+     ],
+     "why": "The waypoint puts the creek crossing at 6,400 ft only 1.6 mi from a 3,800 ft trailhead, higher than the lake the trail reaches at 3.3+ mi; the prose puts the (bridge-out) crossing near the mine at about 1.5 mi, far lower.",
+     "internal_resolution": "The pin's coordinates sit beside the basin camp, so its 6,400 ft elevation fits the upper-basin water source named in approach_variants ('creek crossing near 6,400 ft'); distMi 1.6 is wrong for that point.",
+     "needs_research": true
+    },
+    {
+     "fact": "Length of the mining-road section",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "begins on an old mining-claim jeep track/tramway grade (FSR 505) for about 1.5 miles to the historic Copper Glance mine"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "The first 1.5 miles follow an old mining tramway/jeep grade"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "The trail climbs steeply for roughly two and a half miles on an old gated mining road past a washed-out bridge and the mine"
+      }
+     ],
+     "why": "The camp card says 2.5 miles on the mining road, but the approach and pro tips say 1.5 miles.",
+     "internal_resolution": "approach, pro_tips and pitch_detail agree on 1.5 mi; the bivy figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.9"
+      },
+      {
+       "field": "approach",
+       "says": "about 3.3-3.5 miles one-way"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~3.3-3.5 mi"
+      }
+     ],
+     "why": "The header's 8.9 km (5.5 mi) matches neither the 3.3-3.5 mi one-way approach nor the ~6.6-7 mi round trip, before adding the summit leg.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ridge used to reach the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "descending to the 7,600 foot saddle and picking a gully onto West Craggy's east ridge"
+      },
+      {
+       "field": "name",
+       "says": "Standard Route (South Ridge / South Gully via Copper Glance Basin)"
+      }
+     ],
+     "why": "The camp card routes the party onto West Craggy's east ridge, while every other field and the route name use the south gully/south ridge.",
+     "internal_resolution": "The bivy text describes the combined Big Craggy traverse. The approach variant's saddle alternative still finishes on the south side.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_windy_peak_iron_gate_trail",
+   "name": "Windy Peak via Iron Gate Trailhead (Boundary Trail / Sunny Pass Approach)",
+   "area": "Windy Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_windy_peak_windy_creek_trail",
+   "name": "Windy Peak via Windy Creek Trail (Cathedral Driveway Approach)",
+   "area": "Windy Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "name": "Windy Peak Trail (Standard Walk-up)",
+   "area": "Windy Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Cathedral Driveway Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "follow it roughly 20 miles to the junction with FR-3900-300 at Long Swamp Campground — the standard trailhead for Windy Peak Trail #342. The Windy Creek/Cathedral Driveway trailhead is about 3 miles farther west"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Windy Peak Trailhead / Long Swamp Campground"
+      }
+     ],
+     "why": "The TRAILHEAD card names Cathedral Driveway, the start of a different trail, while the approach, waypoints, beta and itinerary all start at Long Swamp Campground and explicitly say not to confuse the two.",
+     "internal_resolution": "approach, beta, waypoints[0], itinerary and approach_variants all name Long Swamp; approach_logistics is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time holds the car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "+6 hr — Reach the summit"
+      }
+     ],
+     "why": "summitTimeHrs equals the whole 9.5 h car-to-car day, while the itinerary schedule reaches the summit at +6 h.",
+     "internal_resolution": "The itinerary gives 9.5 h for the whole round trip, with the summit at +6 h; summitTimeHrs = 9.5 is the total, not the ascent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ranger district",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Methow Valley Ranger District — the Long Swamp/Windy Peak Trail #342 corridor and trailhead fall within this district's Pasayten Wilderness portion, not the neighboring Tonasket Ranger District."
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Methow Valley Ranger District, Winthrop, WA — (509) 996-4000"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "call Tonasket Ranger District for a current road report"
+      }
+     ],
+     "why": "The access and emergency cards assign the trailhead to Methow Valley RD and explicitly deny Tonasket, while the road card sends parties to Tonasket RD.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance for partners",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "on the order of 10-14 miles round trip with sustained elevation gain via the Windy Creek or Long Swamp approach"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "22"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "long trail mileage (11 mi one-way via the standard route)"
+      }
+     ],
+     "why": "The partner requirements put the outing at 10-14 miles round trip, but the itinerary, hazards and dist_km give 22 miles round trip (11 one way).",
+     "internal_resolution": "itinerary (22), dist_km 17.7 km = 11 mi one way, hazards and watch_out all agree; the partner_requirements figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Grade of the summit finish",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 1 (trail)"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "Class 2 (easy, unroped)"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[3]",
+       "says": "No technical or scrambling skills required - standard maintained-trail walk-up"
+      },
+      {
+       "field": "waypoints[5].directions",
+       "says": "some parties find easy class 3 moves near the top"
+      }
+     ],
+     "why": "The header grade is Class 1 and the partner card says no scrambling skills are needed, but the breakdown's only row and the beta make the final 200-300 ft a Class 2 talus scramble.",
+     "internal_resolution": "beta, pitch_detail, rope_note and approach_variants all describe a Class 2 finish; the route's hardest terrain is Class 2, not Class 1.",
+     "needs_research": false
+    },
+    {
+     "fact": "Side of the summit climbed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "standard route is a Class 2 hike up the west slope via trail from Long Swamp Campground"
+      },
+      {
+       "field": "aspect",
+       "says": "S"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "take the cairned, braided path up open talus on the south side of that pyramid"
+      }
+     ],
+     "why": "The rope note says the standard route climbs the west slope, while the aspect and the approach variant put the scramble on the south side.",
+     "internal_resolution": "aspect and approach_variants agree on south; the rope_note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Optimal season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July through October, with the most reliable conditions in July and August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid/late July through September for reliable snow-free travel"
+      }
+     ],
+     "why": "The optimal window includes October, but the same field's month breakdown rates October marginal, and best_season ends in September.",
+     "internal_resolution": "best_season and the monthBreakdown agree October is outside the best window; optimalWindow is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pack weight",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].packLb",
+       "says": "12"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "Day-hike weight (roughly 15-20 lb including extra water...)"
+      }
+     ],
+     "why": "The itinerary gives a 12 lb pack, while the partner requirements say 15-20 lb for the same day hike.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass example trailheads",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual."
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Windy Peak Trailhead / Long Swamp Campground"
+      }
+     ],
+     "why": "The parking-pass line names trailheads on a different road system (Chewuch), not this route's Long Swamp trailhead.",
+     "internal_resolution": "The line is boilerplate copied from Chewuch-side routes.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Wolframite Mountain",
+   "contradictions": [
+    {
+     "fact": "One-way approach distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "approach is roughly 10 miles one-way (Chewuch Trail #510 -> Tungsten Creek Trail #534 -> Boundary Trail #533)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "roughly 10 miles one-way on trail"
+      },
+      {
+       "field": "approach",
+       "says": "Total one-way distance from the trailhead is roughly 16-17 miles"
+      },
+      {
+       "field": "obj_haz[4]",
+       "says": "extremely remote location, 12-15 trail miles from the nearest trailhead"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.36"
+      }
+     ],
+     "why": "The partner requirements put the approach at ~10 miles one way, while the approach, waypoints (summit at 17 mi), itinerary (8.8 + 6.2 mi to camp) and dist_km give 15-17 miles.",
+     "internal_resolution": "approach, waypoints, itinerary days and dist_km (27.36 km = 17 mi) agree on 15-17 mi; partner_requirements is the outlier and obj_haz's 12-15 is low.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road to the trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "The FS-39-300 spur to Chewuch Trailhead is maintained for high-clearance vehicles only and is not recommended for use until late June."
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "FS Road 39 to the Thirtymile TH"
+      },
+      {
+       "field": "road.name",
+       "says": "West Chewuch Road (County Rd 1213) continuing as FR 51 (Chewuch River Road)"
+      },
+      {
+       "field": "road.status",
+       "says": "no 4WD required"
+      }
+     ],
+     "why": "The road card names FR 51 and says no 4WD is needed, but its seasonal-gate line and the itinerary route drivers via FR 39 / a high-clearance-only FS-39-300 spur, which belongs to the Toats Coulee road system.",
+     "internal_resolution": "road.name, road.driveNote, access.closures (FR 51) and the waypoint directions all use West Chewuch Road/FR 51; the FR 39 references are contamination.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of the Boundary Trail leg and the summit slope",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[5]",
+       "says": "Boundary Trail bend toward Apex Pass: lat 48.97833, lng -120.12488"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Tungsten Mine Camp: lat 48.977036, lng -120.132265"
+      },
+      {
+       "field": "beta",
+       "says": "follow the Boundary Trail roughly a mile west/northwest to where it bends south, then leave the trail and ascend cross-country, angling northeast"
+      },
+      {
+       "field": "descent_text",
+       "says": "then east on the Boundary Trail back to the Tungsten Mine Camp junction"
+      }
+     ],
+     "why": "The prose sends the party about a mile west from the mine camp to the bend and then northeast to the summit, but the bend pin sits east of the mine camp, and the summit (lng -120.1296) lies west-northwest of that pin.",
+     "internal_resolution": "beta, approach, descent_text, the variant and the itinerary all agree the bend is about a mile west of camp; the bend pin is misplaced.",
+     "needs_research": true
+    },
+    {
+     "fact": "Tungsten Creek junction elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "4450"
+      },
+      {
+       "field": "approach",
+       "says": "At roughly 8-8.8 miles (~4,700 ft) reach the signed junction with Tungsten Creek Trail #534"
+      },
+      {
+       "field": "itinerary.days[0]",
+       "says": "from ~3,600 ft, gainFt 1300, lossFt 100"
+      }
+     ],
+     "why": "The junction pin says 4,450 ft, while the approach says ~4,700 ft and Day 1's net gain puts it at ~4,800 ft; the 2,100 ft Day 2 climb to the 6,750 ft mine camp also only fits the higher figure.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Second-night camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "This is where a party climbing Wolframite from the Chewuch actually sleeps on the second night ... Breaking the climb here rather than pushing to the Boundary Trail junction"
+      },
+      {
+       "field": "itinerary.days[1].objective",
+       "says": "Reach Tungsten Mine Camp at the base of Wolframite"
+      },
+      {
+       "field": "approach",
+       "says": "most parties camp near here rather than pushing to the summit"
+      }
+     ],
+     "why": "The main camp card says parties sleep partway up the Tungsten Creek trail rather than at the Boundary Trail junction, while the itinerary and approach camp at Tungsten Mine Camp on the junction.",
+     "internal_resolution": "itinerary, approach and approach_variants all camp at the mine camp; the bivy note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "July to early October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October",
+       "says": "Outside the best season ... risky"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "The approach variant extends the season into early October, which the season chip and the seasonal guidance both exclude (October rated risky).",
+     "internal_resolution": "season, best_season and seasonal_guidance agree on Jul-Sep; the variant is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_arete",
+   "name": "Tower Arete",
+   "area": "North Face Tiffany Mountain",
+   "contradictions": [
+    {
+     "fact": "Rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "rope_note",
+       "says": "a short rope may be carried for exposed sections"
+      },
+      {
+       "field": "gear[0]",
+       "says": "60-meter rope"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "60-meter rope essential for belays on steeper sections and rappel anchors if needed."
+      },
+      {
+       "field": "rack[2]",
+       "says": "60m rope (many parties solo it unroped)"
+      }
+     ],
+     "why": "The rope fields show a 30 m short rope (optional), while gear, detailed rack, pro_needs and rack all call for a 60 m rope, one field calling it 'essential'.",
+     "internal_resolution": "Four fields say 60 m; rope_length_m 30 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / road",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop"
+      },
+      {
+       "field": "road.status",
+       "says": "becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Tiffany Springs Campground"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Tiffany Springs Trailhead"
+      }
+     ],
+     "why": "GETTING THERE directs parties to the Freezeout Ridge/Freezeout Pass trailhead, while the TRAILHEAD card, waypoints, approach and itinerary all start at Tiffany Springs Campground on Trail #373.",
+     "internal_resolution": "approach, approach_logistics, waypoints, itinerary and bivy all use Tiffany Springs; the road card is the outlier. Freezeout is only an alternate or loop exit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass (or day fee) to park at developed trailheads."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "a Northwest Forest Pass covers trailhead parking."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "N/A"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "A pass is not required to park at the campground trailhead across the road."
+      }
+     ],
+     "why": "Some fields say a Northwest Forest Pass is needed to park, one says a pass is not required at this campground trailhead, and ACCESS lists the pass as N/A.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.7"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3"
+      }
+     ],
+     "why": "The header shows 3.7 km (2.3 mi), but the summit pin is at 3 mi from the campground.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "name": "North Tower Ridge Route",
+   "area": "North Face Tiffany Mountain",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "VI-"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "6"
+      },
+      {
+       "field": "itinerary",
+       "says": "Single long day ... climb the 6-pitch route (a few hours for a competent party)"
+      }
+     ],
+     "why": "A Grade VI commitment chip is shown for a six-pitch route done in about 6 hours car-to-car from a campground under an hour away.",
+     "internal_resolution": "Timing, itinerary and the short approach show a one-day, Grade I-II outing; 'VI-' is wrong (the sibling Tower Arete carries 'I2').",
+     "needs_research": true
+    },
+    {
+     "fact": "Cam sizes for the offwidth crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "sling_rack.cams",
+       "says": "light rack 0.3-2in (small-mid)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "full range of cams from #00 to #4 (especially #2, #3, #4)"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams #00-#4 (emphasis on #2-#4 for the offwidth/chimney)"
+      }
+     ],
+     "why": "The sling-rack entry caps the cams at 2 inches, while the detailed rack and rack call for cams to #4, stressing #2-#4 for the offwidth crux.",
+     "internal_resolution": "gear, detailed_rack and rack agree on #00-#4; sling_rack.cams is the outlier and would leave a party without wide gear for the crux.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / road",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop"
+      },
+      {
+       "field": "road.status",
+       "says": "becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Tiffany Springs Campground"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Tiffany Springs Trailhead"
+      }
+     ],
+     "why": "GETTING THERE directs parties to the Freezeout Ridge/Freezeout Pass trailhead, while the TRAILHEAD card, waypoints, approach and itinerary all start at Tiffany Springs Campground on Trail #373.",
+     "internal_resolution": "approach, approach_logistics, waypoints, itinerary and bivy all use Tiffany Springs; the road card is the outlier. Freezeout is only an alternate or loop exit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass (or day fee) to park at developed trailheads."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "a Northwest Forest Pass covers trailhead parking."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "N/A"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "A pass is not required to park at the campground trailhead across the road."
+      },
+      {
+       "field": "approach",
+       "says": "An alternate trailhead at Freezeout Pass ... does not require a Northwest Forest Pass."
+      }
+     ],
+     "why": "Fields disagree on whether a Northwest Forest Pass is needed to park at Tiffany Springs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock quality",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "The rock quality on this route is excellent and generally solid, making this a great beginner alpine rock climb"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "Granite quality varies; some sections loose, particularly on P1-3"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "loose or unsafe placements are common"
+      }
+     ],
+     "why": "The pro tips call the rock excellent, solid and good for beginners, while the hazards and watch-outs warn of loose sections and common unsafe placements.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road opening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.spring",
+       "says": "roads may not be accessible until mid-May"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Snow-free roughly late June through end of September"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Roads are snowbound for much of the year and generally open around late June."
+      }
+     ],
+     "why": "The climate card says roads may open by mid-May, while the road card and approach variant say late June.",
+     "internal_resolution": "road.seasonalGate and approach_variants agree on late June.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.7"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3"
+      }
+     ],
+     "why": "The header shows 3.7 km (2.3 mi), but the summit pin is at 3 mi from the campground.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ne_couloir",
+   "name": "NE Couloir",
+   "area": "North Face Tiffany Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead / road",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop"
+      },
+      {
+       "field": "road.status",
+       "says": "becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Tiffany Springs Campground"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Tiffany Springs Trailhead"
+      }
+     ],
+     "why": "GETTING THERE directs parties to the Freezeout Ridge/Freezeout Pass trailhead, while the TRAILHEAD card, waypoints, approach and itinerary all start at Tiffany Springs Campground on Trail #373.",
+     "internal_resolution": "approach, approach_logistics, waypoints, itinerary and bivy all use Tiffany Springs; the road card is the outlier. Freezeout is only an alternate or loop exit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "4th class"
+      },
+      {
+       "field": "grade",
+       "says": "4th"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "NE Couloir is a moderate snow/scramble line (low 5th/AI1-2)"
+      }
+     ],
+     "why": "The summit waypoint calls the line low 5th class, while the grade fields say 4th class.",
+     "internal_resolution": "grade, rock_grade and pitch_detail agree on 4th class / AI1-2.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road opening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.spring",
+       "says": "roads may not be accessible until May"
+      },
+      {
+       "field": "access.closures",
+       "says": "FS Road 39 is gated by snow most of the year; typically drivable only late June through September"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Snow-free roughly late June through end of September"
+      }
+     ],
+     "why": "The climate card says roads may open in May, while the access and road cards say late June, which matters for a route that is only in condition in June.",
+     "internal_resolution": "access.closures, road.seasonalGate and approach_variants agree on late June.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.7"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3"
+      }
+     ],
+     "why": "The header shows 3.7 km (2.3 mi), but the summit pin is at 3 mi from the campground.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "name": "Junior's Farm",
+   "area": "Full Montey, The",
+   "contradictions": [
+    {
+     "fact": "Route grade and crux pitches",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.9 (pitch grades range roughly 5.5-5.10a/5.6-5.8; P1 and P8 are the cruxes)"
+      },
+      {
+       "field": "grade",
+       "says": "5.8+"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "hardest pitch 5.8+ (P1); P6 5.8; P7-8 5.6-5.7"
+      },
+      {
+       "field": "overview",
+       "says": "pitches ranging from 5.6 to 5.8"
+      },
+      {
+       "field": "beta",
+       "says": "Pitches 1 and 6 are notably stiff 5.8s."
+      }
+     ],
+     "why": "The header grade pill (rock_grade) reads 5.9 with a 5.10a pitch and P8 as a crux, while grade, the breakdown, overview and beta top out at 5.8+ with P1 and P6 as the cruxes.",
+     "internal_resolution": "grade, pitch_detail, overview and beta agree on 5.8+ with cruxes at P1 and P6; rock_grade is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "10"
+      },
+      {
+       "field": "overview",
+       "says": "an eight-pitch alpine climbing route"
+      },
+      {
+       "field": "itinerary",
+       "says": "climb the 8 roped pitches (5.5-5.9) plus 2 scramble sections"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "pitches 1 through 8"
+      }
+     ],
+     "why": "The header shows 10 pitches, while the overview, itinerary, breakdown and waypoint describe 8 pitches.",
+     "internal_resolution": "pitches=10 counts the 2 scramble sections; the roped pitch count is 8 by four fields.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope needed for the rappel descent",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappel_count_note",
+       "says": "A single 60 m rope does the whole thing PROVIDED you use every anchor station"
+      },
+      {
+       "field": "descent",
+       "says": "A single 60-70m rope is insufficient for complete descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "A single 60m rope is insufficient"
+      },
+      {
+       "field": "gear[3]",
+       "says": "Single rope 60-70m (consider double rope for rappels)"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "70"
+      }
+     ],
+     "why": "The rappel table says a single 60 m rope reaches every station, but the DESCENT text says a single 60-70 m rope is not enough.",
+     "internal_resolution": "rappel_detail shows six 30 m rappels and rappel_count_note confirms a single 60 m works; the descent/descent_text claim is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "5-8 rappels with a 60m rope"
+      },
+      {
+       "field": "descent_text",
+       "says": "at least 6-8 raps to 30m or longer"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "Six rappels"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "6 rows"
+      }
+     ],
+     "why": "The rappel prose gives 5-8 and 6-8 rappels, while the rappel table and count note give exactly six.",
+     "internal_resolution": "rappel_detail and rappel_count_note agree on six.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "rappelling the line already climbed back down to the boulder field — this is the same line used for the normal descent"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "one down the climbing line to where the descent diverges, then five on a dedicated rappel route to the ground"
+      },
+      {
+       "field": "rappel_detail[1].station",
+       "says": "The rappel route leaves the climb here and this is the station people get wrong."
+      }
+     ],
+     "why": "The bail text says the normal descent rappels the climbing line, while the rappel table says the descent leaves the line after one rappel for a separate gully rappel route.",
+     "internal_resolution": "rappel_detail and rappel_count_note describe the separate rappel route in detail; the bail line is wrong about the normal descent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach length and total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "~5-minute approach from the car up the boulder field"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.75"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2.5"
+      },
+      {
+       "field": "approach",
+       "says": "a steep, brushy bushwhack-and-boulder-hop of a few hundred vertical feet from the road"
+      },
+      {
+       "field": "gain_ft",
+       "says": "2700"
+      }
+     ],
+     "why": "The approach is given as 5 minutes, 45 minutes, and 2.5 miles, and the header gain of 2,700 ft far exceeds a few hundred feet of approach plus a ~1,000 ft (316 m) route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Topout vs base elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "4800 (The Full Montey (Junior's Farm topout))"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "4916 (The Full Montey / Junior's Farm base area)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "4916"
+      }
+     ],
+     "why": "The topout pin is 116 ft lower than the base pin for a ~1,000 ft route, and the high point equals the base elevation.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wall aspect",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "NE-E"
+      },
+      {
+       "field": "obj_haz[4]",
+       "says": "South-facing rock gets very hot by midday in summer"
+      }
+     ],
+     "why": "The aspect is NE-E, but a hazard calls the rock south-facing.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_peak_standard",
+   "name": "Standard Route",
+   "area": "Chimney Peak",
+   "contradictions": [
+    {
+     "fact": "Where the climb leaves the trail / base camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "the approach leaves the East Fork Quinault trail at about nine miles, which is where this camp sits. Push on to the chalet and you have walked four miles past your own turning"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Historic 1930s chalet ...; leave the maintained trail here and head north/off-trail toward Chimney Peak's southwest ridge."
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach the Enchanted Valley Chalet camp"
+      }
+     ],
+     "why": "The main camp card says the approach leaves the trail at Pyrites Creek (~mile 9), while the waypoints, approach and itinerary leave it at or near Enchanted Valley Chalet (~mile 13-13.5) and camp there.",
+     "internal_resolution": "waypoints, itinerary, beta and approach (chalet or mid-valley) agree; the bivy note is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Hardest grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "waypoints[6].name",
+       "says": "Southwest Ridge Class 4 Step"
+      }
+     ],
+     "why": "The header pill (from rock_grade) shows Class 3, while grade, overview and a waypoint name a Class 4 step.",
+     "internal_resolution": "grade, overview, hazards and the waypoint agree the route includes Class 4.",
+     "needs_research": false
+    },
+    {
+     "fact": "Location of the exposed step",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].note",
+       "says": "Short, exposed Class 4 step on loose rock near the top of the ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "Parties less comfortable reversing the short exposed step(s) low on the ridge"
+      }
+     ],
+     "why": "The waypoint puts the Class 4 step near the top of the ridge (6,700 ft), while the descent text puts it low on the ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trail gain to the chalet",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~13.2-13.6 mi, ~2,600 ft gain"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2000"
+      }
+     ],
+     "why": "The breakdown gives ~2,600 ft of trail gain to the chalet, while the itinerary's Day 1 gives 2,000 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction of the peak from the chalet",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "with a view of Chimney Peak's cliffs and waterfalls to the west"
+      },
+      {
+       "field": "overview",
+       "says": "It sits immediately north above Enchanted Valley"
+      }
+     ],
+     "why": "The itinerary puts the peak west of the chalet camp, while the overview, beta and approach put it immediately north above the valley.",
+     "internal_resolution": "The pins agree with north: the summit (47.6894, -123.4024) is north-northwest of the chalet (47.6718, -123.3879).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_peak_the_chimney",
+   "name": "The Chimney",
+   "area": "Chimney Peak",
+   "contradictions": [
+    {
+     "fact": "Trail gain to Enchanted Valley",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "It is 27.8 miles round trip and about 3,700 ft of gain to Enchanted Valley, so roughly 13.9 miles and a high point near 2,035 ft one way"
+      },
+      {
+       "field": "approach",
+       "says": "The gain figure is the sum of two figures (~3,700 ft of trail gain plus ~4,900 ft ...)"
+      },
+      {
+       "field": "gain_ft",
+       "says": "8600"
+      }
+     ],
+     "why": "The approach first gives 3,700 ft as the round-trip trail gain, then adds it as the one-way trail gain to get the 8,600 ft header figure.",
+     "internal_resolution": "A 550 ft trailhead to a ~2,035 ft valley is ~1,500 ft net one way, which fits 3,700 ft as the round-trip figure; gain_ft may overstate the one-way gain.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "name": "Mount La Crosse Scramble",
+   "area": "Mount La Crosse",
+   "contradictions": [
+    {
+     "fact": "Approach line and base camp for the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climbing out of the Duckabush drainage into the La Crosse Basin, where most parties camp at Marmot Lake or continue to Lake La Crosse itself, both near O'Neil Pass"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "climb open slopes and heather benches above the basin toward the ridge, following a faint use-trail ... near Fisher's Notch"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "leave the maintained trail here and start the cross-country climb north across heather and talus toward the summit ridge"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "Duckabush River Trail to La Crosse Pass"
+      }
+     ],
+     "why": "The itinerary and bivy camp in La Crosse Basin near O'Neil Pass and climb from the basin via Fisher's Notch, while the waypoints, approach variant and breakdown take the La Crosse Pass Trail and start the scramble at La Crosse Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction from La Crosse Pass to the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "start the cross-country climb north"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "head north onto open heather and talus ... The line is the broad crest running north out of the saddle"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Off-trail talus and heather ridge running roughly a mile south from near LaCrosse Pass to the summit"
+      }
+     ],
+     "why": "Two fields send climbers north from the pass and one sends them south along the ridge.",
+     "internal_resolution": "The pins place the summit (47.68477, -123.31219) about a mile west (slightly south) of the pass (47.68589, -123.29070), so neither 'north' nor 'south' matches.",
+     "needs_research": true
+    },
+    {
+     "fact": "La Crosse Pass Trail length and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the La Crosse Pass Trail (a steep 6.4-mile trail topping out at 5,566 ft at La Crosse Pass)"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "about 6.4 miles with roughly 2,000 ft of gain"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "a steep switchbacking climb of roughly three thousand feet in about a mile to the pass"
+      },
+      {
+       "field": "descent_text",
+       "says": "a knee-punishing, steep, switchbacking drop of about 3,000 ft in roughly a mile back to the Duckabush River Trail junction"
+      }
+     ],
+     "why": "The pass trail is given as 6.4 miles long in some fields and about a mile in others, and its gain as 2,000 ft in one field and 3,000 ft in others.",
+     "internal_resolution": "The waypoints (junction at 2,600 ft / 16.7 mi, pass at 5,566 ft / 23.1 mi) support 6.4 mi and ~3,000 ft; 'about a mile' and '2,000 ft' are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 48-mile round-trip backpack with about 9,000 ft of cumulative gain"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "gainFt 1500+3100+2200+100+100 = 7000"
+      }
+     ],
+     "why": "The itinerary's total note says about 9,000 ft of gain, while its own day rows and the header gain_ft sum to 7,000 ft.",
+     "internal_resolution": "The day rows and gain_ft agree on 7,000 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season: October",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "mid-July through October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October",
+       "says": "by October conditions are generally past that window ... risky"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best mid-July through September"
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      }
+     ],
+     "why": "best_season extends into October, which the season chip, itinerary and seasonal guidance (October risky) all exclude.",
+     "internal_resolution": "season, itinerary.cal, optimalWindow and climate.bySeason.summer agree the window ends in September.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season: June",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "High country typically still snowbound; not considered in season ... risky"
+      },
+      {
+       "field": "climate.typical",
+       "says": "La Crosse Pass and the summit slopes are not reliably clear of snow until mid-to-late July most years"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "best climbed June-September"
+      }
+     ],
+     "why": "The season chip and summit waypoint include June, while the seasonal guidance says June is not in season and the climate says the pass is not clear until mid-to-late July.",
+     "internal_resolution": "best_season, itinerary.cal, seasonal_guidance and climate agree the season starts mid/late July.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche rating in summer",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "NWAC issues forecasts only during the winter/spring avalanche season, so this does not apply to the late-July-September summer scramble window"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "Considerable"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.July",
+       "says": "Moderate"
+      }
+     ],
+     "why": "The avalanche section says no forecast applies in the summer window, yet gives June 'Considerable' and July 'Moderate' danger ratings.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

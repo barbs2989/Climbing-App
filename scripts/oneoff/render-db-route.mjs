@@ -6,8 +6,9 @@ import { createRequire } from "module";
 import fs from "fs";
 import os from "os";
 import path from "path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/rappels-rack-filter-class-audit";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
 const { SUPABASE_URL, anonKey, headers } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
 

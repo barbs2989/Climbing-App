@@ -1,0 +1,587 @@
+{
+  "zones": [
+    {
+      "zone": "nason-ridge",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Nason Ridge is national forest land outside any wilderness; a recreation pass may be needed at the trailheads.",
+        "url": null
+      }
+    },
+    {
+      "zone": "needles-royal-basin",
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+        "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin.",
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+      }
+    },
+    {
+      "zone": "nooksack-hannegan",
+      "overnightPermit": {
+        "what": "North Cascades NP wilderness permit for camps inside the park — not free",
+        "where": "Reserve on Recreation.gov, or pick up a walk-up permit at the Glacier Public Service Center. Camps in the Mount Baker Wilderness need only the free trailhead registration.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_alpine_lookout_round_mountain_trail",
+      "main": [
+        "Nason Creek Campground and the Lake Wenatchee drive-in camps"
+      ],
+      "onRoute": [
+        "Alpine Lookout — day use only, no overnight"
+      ],
+      "drop": [
+        "Rock Lake",
+        "Crescent Lake",
+        "Merritt Lake",
+        "Mount Howard summit-area bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day hike from the Round Mountain trailhead; Merritt Lake is three miles west of the lookout along the ridge, not on this line."
+    },
+    {
+      "id": "wa_mount_howard_south_slope",
+      "main": [
+        "Crescent Lake",
+        "Nason Creek Campground and the Lake Wenatchee drive-in camps"
+      ],
+      "onRoute": [
+        "Merritt Lake",
+        "Mount Howard summit-area bivouac"
+      ],
+      "drop": [
+        "Rock Lake",
+        "Alpine Lookout — day use only, no overnight"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Often done as a long day from the Merritt Lake trailhead; Crescent Lake is the camp when split."
+    },
+    {
+      "id": "wa_mount_mastiff_south_route",
+      "main": [
+        "Merritt Lake",
+        "Nason Creek Campground and the Lake Wenatchee drive-in camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Rock Lake",
+        "Crescent Lake",
+        "Alpine Lookout — day use only, no overnight",
+        "Mount Howard summit-area bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day climb from the Merritt Lake trailhead; Merritt Lake is the camp on the way when split. Crescent Lake lies beyond Mastiff to the west, off this line."
+    },
+    {
+      "id": "wa_rock_mountain_northeast_ridge",
+      "main": [
+        "Crescent Lake"
+      ],
+      "onRoute": [
+        "Merritt Lake",
+        "Mount Howard summit-area bivouac",
+        "Rock Lake"
+      ],
+      "drop": [
+        "Alpine Lookout — day use only, no overnight",
+        "Nason Creek Campground and the Lake Wenatchee drive-in camps"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Traverse Merritt-Mastiff-Howard-Rock; Crescent Lake is the midpoint camp, Rock Lake assumed on the descent via the Rock Mountain trail."
+    },
+    {
+      "id": "wa_rock_mountain_west_route",
+      "main": [
+        "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+        "Rock Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Crescent Lake",
+        "Merritt Lake",
+        "Alpine Lookout — day use only, no overnight",
+        "Mount Howard summit-area bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Normally a steep day hike; Rock Lake just beyond the summit shoulder is the backpacking camp."
+    },
+    {
+      "id": "wa_baldy_standard",
+      "main": [],
+      "onRoute": [
+        "Maynard Burn fire-line clearing"
+      ],
+      "drop": [
+        "Royal Lake",
+        "Upper Royal Basin",
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required on the Buckhorn Wilderness side",
+        "where": "The route is a day hike on national forest land; a recreation pass is needed at the trailhead.",
+        "url": null
+      },
+      "note": "Day hike via the Maynard Burn trails; none of the listed camps serves it, and no car campground was added."
+    },
+    {
+      "id": "wa_gray_wolf_ridge_se_slopes",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Royal Lake",
+        "Upper Royal Basin",
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required on the Buckhorn Wilderness side",
+        "where": "The approach is on national forest land; a park wilderness permit is needed only to camp inside Olympic National Park.",
+        "url": null
+      },
+      "note": "Day route via Maynard Burn and Baldy; Cedar Lake is reached from the Gray Wolf River, a different approach, so it is dropped. Unsure whether parties camp on the ridge crest."
+    },
+    {
+      "id": "wa_honeymoon_route",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Couloir climbed directly from Upper Royal Basin."
+    },
+    {
+      "id": "wa_mount_cameron_standard",
+      "main": [
+        "Cameron Basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Royal Lake",
+        "Upper Royal Basin",
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Dose Meadows",
+        "Cameron Basin camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Cameron Basin camp waypoint is the same basin as Cameron Basin; Dose Meadows via Lost Pass is the southern alternative approach, not this line."
+    },
+    {
+      "id": "wa_mount_clark_standard",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [
+        "Lower Royal Meadow Camp"
+      ],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Basin approach."
+    },
+    {
+      "id": "wa_mount_claywood_standard",
+      "main": [
+        "Upper Cameron Basin high camp",
+        "Dose Meadows"
+      ],
+      "onRoute": [
+        "Cameron Basin"
+      ],
+      "drop": [
+        "Royal Lake",
+        "Upper Royal Basin",
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Unsure: this route is described from Obstruction Point over Cameron Pass, while the long-standing base for Claywood is Dose Meadows on the Dosewallips side; both kept as main."
+    },
+    {
+      "id": "wa_mount_deception_standard",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [
+        "Royal Creek",
+        "Lower Royal Meadow"
+      ],
+      "drop": [
+        "Royal Basin / Royal Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Basin / Royal Lake waypoint dropped as a duplicate of Royal Lake."
+    },
+    {
+      "id": "wa_mount_fricaba_standard",
+      "main": [
+        "Home Lake"
+      ],
+      "onRoute": [
+        "Camp Handy",
+        "Boulder Shelter"
+      ],
+      "drop": [
+        "Royal Lake",
+        "Upper Royal Basin",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required in the Buckhorn Wilderness",
+        "where": "Camp Handy, Boulder Shelter and Home Lake are on national forest land; a recreation pass is needed to park. A park wilderness permit is needed only to camp across Constance Pass.",
+        "url": null
+      },
+      "note": "Home Lake below Constance Pass is the standard base; believed to be in the Buckhorn Wilderness, not the park."
+    },
+    {
+      "id": "wa_mount_johnson_standard",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [
+        "Royal Creek Camp"
+      ],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Basin approach."
+    },
+    {
+      "id": "wa_mount_mystery_standard",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [
+        "Royal Creek Camp"
+      ],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Basin approach as described; a Dosewallips/Deception Creek approach also exists but has no listed camp."
+    },
+    {
+      "id": "wa_mount_walkinshaw_scramble",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows",
+        "Royal Lake designated camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Lake designated camp dropped as a duplicate of Royal Lake; Cedar Lake is a different approach from the Gray Wolf side."
+    },
+    {
+      "id": "wa_sundial_northeast",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Basin approach."
+    },
+    {
+      "id": "wa_the_incisor_scramble",
+      "main": [
+        "Upper Royal Basin",
+        "Royal Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Handy",
+        "Boulder Shelter",
+        "Home Lake",
+        "Cedar Lake",
+        "Cameron Basin",
+        "Dose Meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Royal Basin approach."
+    },
+    {
+      "id": "wa_ellation",
+      "main": [
+        "Hannegan trailhead, end of the Ruth Creek road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Notch bivy on the Ruth-Icy ridge",
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required in the Mount Baker Wilderness",
+        "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park.",
+        "url": null
+      },
+      "note": "Crag route about an hour from the Hannegan trailhead, done as a day; the trailhead campground is the stage."
+    },
+    {
+      "id": "wa_icy_peak_ruth_icy_traverse",
+      "main": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp"
+      ],
+      "onRoute": [
+        "Hannegan trailhead, end of the Ruth Creek road",
+        "Notch bivy on the Ruth-Icy ridge"
+      ],
+      "drop": [
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Two-day trip is the norm with a camp at Ruth Arm or on Ruth's summit."
+    },
+    {
+      "id": "wa_icy_peak_southwest_route",
+      "main": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp"
+      ],
+      "onRoute": [
+        "Hannegan trailhead, end of the Ruth Creek road",
+        "Notch bivy on the Ruth-Icy ridge"
+      ],
+      "drop": [
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower",
+        "Ruth Mountain summit bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Ruth Mountain summit bivy dropped as a duplicate of Ruth Mountain summit camp."
+    },
+    {
+      "id": "wa_mount_sefrit_bloody_head_couloir",
+      "main": [
+        "Hannegan trailhead, end of the Ruth Creek road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp",
+        "Notch bivy on the Ruth-Icy ridge",
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required in the Mount Baker Wilderness",
+        "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park.",
+        "url": null
+      },
+      "note": "Day climb starting from the Ruth Creek road end."
+    },
+    {
+      "id": "wa_mount_sefrit_southeast_ridge",
+      "main": [
+        "Hannegan trailhead, end of the Ruth Creek road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp",
+        "Notch bivy on the Ruth-Icy ridge",
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required in the Mount Baker Wilderness",
+        "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park.",
+        "url": null
+      },
+      "note": "Day climb from Hannegan Campground across Ruth Creek."
+    },
+    {
+      "id": "wa_mount_sefrit_southwest_ridge",
+      "main": [
+        "Hannegan trailhead, end of the Ruth Creek road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp",
+        "Notch bivy on the Ruth-Icy ridge",
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required in the Mount Baker Wilderness",
+        "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park.",
+        "url": null
+      },
+      "note": "Unsure: starts from the Nooksack Cirque trailhead, and the Hannegan campground is kept only as the nearby car camp."
+    },
+    {
+      "id": "wa_nooksack_tower_beckey_route",
+      "main": [
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers"
+      ],
+      "onRoute": [
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "drop": [
+        "Hannegan trailhead, end of the Ruth Creek road",
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp",
+        "Notch bivy on the Ruth-Icy ridge",
+        "Moraine bivy at ~5,900 ft"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Moraine bivy at ~5,900 ft dropped as a duplicate of the shoulder camp (same flat spot on the ridge between the Price and East Nooksack glaciers)."
+    },
+    {
+      "id": "wa_nooksack_tower_south_face",
+      "main": [
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers"
+      ],
+      "onRoute": [
+        "Nooksack Cirque river bottom, below the tower"
+      ],
+      "drop": [
+        "Hannegan trailhead, end of the Ruth Creek road",
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp",
+        "Notch bivy on the Ruth-Icy ridge"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same approach as the north face to the shoulder camp."
+    },
+    {
+      "id": "wa_ruth_icy_traverse",
+      "main": [
+        "Ruth Arm ridge camps below the Ruth Glacier",
+        "Ruth Mountain summit camp"
+      ],
+      "onRoute": [
+        "Hannegan trailhead, end of the Ruth Creek road",
+        "Notch bivy on the Ruth-Icy ridge"
+      ],
+      "drop": [
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower",
+        "Ruth Glacier Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Ruth Glacier Camp dropped as a duplicate of Ruth Arm ridge camps (same high camp below the glacier)."
+    },
+    {
+      "id": "wa_ruth_mountain_south_slopes",
+      "main": [
+        "Ruth Arm ridge camps below the Ruth Glacier"
+      ],
+      "onRoute": [
+        "Hannegan trailhead, end of the Ruth Creek road",
+        "Hannegan Camp",
+        "Ruth Mountain summit camp"
+      ],
+      "drop": [
+        "Notch bivy on the Ruth-Icy ridge",
+        "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+        "Nooksack Cirque river bottom, below the tower",
+        "Ruth Arm"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No permit for Ruth Arm; North Cascades NP wilderness permit to camp on the summit",
+        "where": "Ruth Arm is in the Mount Baker Wilderness; fill out the free registration at the trailhead. For a summit camp, reserve on Recreation.gov or pick up a walk-up permit at the Glacier Public Service Center.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      },
+      "note": "Often done in a day; Ruth Arm is the usual camp and the listed Ruth Arm waypoint is dropped as its duplicate."
+    }
+  ],
+  "misassigned": []
+}

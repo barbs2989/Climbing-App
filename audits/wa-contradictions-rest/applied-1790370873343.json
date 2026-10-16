@@ -1,0 +1,320 @@
+{
+ "applied": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "what"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "url"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "overview",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "beta",
+   "path": [],
+   "fact": "How much class 4"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking-pass trailheads copied from another area"
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Elevation of the west-ridge saddle"
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Elevation of the west-ridge saddle"
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Elevation of the west-ridge saddle"
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit to camp at Wing Lake"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "approach",
+   "path": [],
+   "fact": "Lewis Lake elevation"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "approach",
+   "path": [],
+   "fact": "Lewis Lake elevation"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Lewis Lake elevation"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Lewis Lake elevation"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Lewis Lake elevation"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distance to Wing Lake camp and round trip"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Distance to Wing Lake camp and round trip"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance to Wing Lake camp and round trip"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Approach line from Wing Lake to the south col"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "before": {
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "Pasayten Wilderness regulations apply: group size limits, no bikes or mechanized travel past the wilderness boundary, Leave No Trace camping.",
+     "permit": "Self-issued wilderness permit required at the trailhead (route lies within the Pasayten Wilderness).",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or Interagency Pass required at the West Fork Methow/Rattlesnake Trailhead.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead."
+     }
+    },
+    "overview": "Azurite Peak is a high summit near the head of Mill Creek between the Methow and the upper Skagit divide, within the Pasayten Wilderness. The standard route climbs from Azurite Pass up the south ridge to roughly a 7,400-ft shoulder, then crosses loose ribs and gullies on the south/southwest face and west rib to the summit over talus and short Class 3-4 steps; the chief difficulty is the long approach.",
+    "beta": "From Azurite Pass, ascend krummholz, sand, scree, and talus up the south ridge to roughly a 7,400 ft shoulder, then continue up the ridge crest to about 7,600 ft. A lower south summit forces climbers off the ridge crest; traverse left (west) across ribs, gullies, and sandy slopes on the West Face, marked in places by ducks/cairns, working toward the peak's prominent west rib. Parties describe sustained 4th class climbing through this rib/traverse section. Avoid the imposing, steeper southwest face (Class 4-5); instead finish via the gully(ies) immediately southwest of the summit tower, described as loose but never more than Class 3 in its final section, for roughly the last 200 ft to the summit. Total technical scrambling from the pass/shoulder to the summit runs approximately 1,000-1,100 vertical feet."
+   }
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "before": {
+    "approach": "Park in a highway pullout on SR-20 about 3.5 miles east of the Washington Pass summit (roughly 4,320 ft elevation). Descend to and cross Early Winters Creek, then head up into the Willow Creek valley, staying on the north side of the creek. The first ~3/4 mile up the valley is steep and can be very brushy in summer. Around 5,000 ft the slope eases; continue up loose/open terrain into the upper basin near 7,000 ft, then traverse a loose scree or snow slope for about 400 ft to reach the saddle on the west ridge (~8,250 ft).",
+    "beta": "From a roadside pullout on SR-20 east of Washington Pass, descend/cross Early Winters Creek and climb steeply up the Willow Creek drainage (brushy, staying on the north side) to about 5,000 ft where the grade eases. Continue up open basin terrain to roughly 7,000 ft, then cross a loose scree or snow slope (~400 ft) to gain the west ridge at a saddle near 8,250 ft. Follow the class 2 ridge crest to the base of the summit block, climb a short class 4/low-5th chimney/crack (about 50 ft) to a stance below the final slab, then make an unprotected 5.7-5.8 boulder move (often boosted via a shoulder stand) onto the roughly 20-ft summit friction slab and the true summit.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2",
+      "notes": "West ridge crest from the ~8,250 ft saddle to the base of the summit block; scrambling, no rope typically needed.",
+      "pitch": "Approach ridge"
+     },
+     {
+      "grade": "Class 4 / low 5th",
+      "notes": "Short chimney/crack (~50 ft) to a stance below the final slab; the main protectable section, usually 2-3 small-medium cams.",
+      "pitch": "Lower step"
+     },
+     {
+      "grade": "5.7-5.8",
+      "notes": "~20 ft unprotectable friction/boulder move onto the true summit, commonly aided by a shoulder stand; airy but low exposure (~5 ft) if roped from below.",
+      "pitch": "Summit slab"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass required for trailhead parking ($5/day or $30/year); no separate climbing fee",
+     "permit": "Free backcountry/wilderness permit required for overnight camping within North Cascades National Park (e.g., at Wing Lake), issued by the NPS Wilderness Information Center in Marblemount",
+     "closures": "SR-20 seasonal winter closure cuts off vehicle access to the Rainy Pass trailhead for roughly half the year",
+     "landManager": "North Cascades National Park Service Complex (Stephen Mather Wilderness); Okanogan-Wenatchee National Forest at the trailhead",
+     "passRequired": "Northwest Forest Pass (day or annual)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required at Wing or Lewis Lake",
+      "where": "These camps are on national forest land outside the park; a Northwest Forest Pass is needed to park at Rainy Pass. Camping inside the park boundary needs a park wilderness permit."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "before": {
+    "approach": "Start at the Rainy Pass Picnic Area/Lake Ann trailhead on SR 20 (milepost ~157.5, elev. ~4,850 ft; 40-car lot with privy). Follow the Lake Ann/Maple Pass Trail (#740) about 1-1.5 miles to a signed junction and take the right fork toward Heather Pass (left continues to Lake Ann/Maple Pass loop). Climb through meadows to Heather Pass (~2.6 mi, ~6,100 ft), where the maintained trail ends. From the pass, pick up the unmarked climbers' path heading north, crossing two talus/boulder fields before dropping to Lewis Lake (~3 mi, ~6,600 ft; timbered campsites on the north side, water available) — this off-trail stretch is the main route-finding challenge of the approach, especially with cairns buried by early-season snow. From Lewis Lake, climb roughly 1,000 ft more of meadow and talus to Wing Lake (~3.5-4 mi, ~6,900 ft), the standard base camp, with sites in the trees on the right as you reach the lake and reliable water into late summer. From Wing Lake, go around the right (north) side of the lake and aim for the obvious talus/snow gully leading into the couloir just south of the summit; climb this gully, then angle climber's-right out of it to avoid cliff bands directly below the col, topping out at the south col on the crest of the south ridge — the true start of the climbing.",
+    "approach_variants": [
+     {
+      "name": "Rainy Pass and the Lake Ann/Maple Pass Trail to Heather Pass, then the unmarked path past Lewis Lake to Wing Lake",
+      "notes": "Start at the Rainy Pass Picnic Area and Lake Ann trailhead on SR-20 near milepost 157.5 at about 4,850 ft, a 40-car lot with a privy. THIS IS THE RAINY PASS LAKE ANN, NOT THE LAKE ANN BELOW MOUNT SHUKSAN ON THE MOUNT BAKER HIGHWAY; the two are about 80 km apart and share a name.\n\nFollow the Lake Ann and Maple Pass Trail #740 about 1-1.5 miles to a signed junction and TAKE THE RIGHT FORK TOWARD HEATHER PASS; the left continues on the Lake Ann and Maple Pass loop. Climb through meadows to Heather Pass at about 2.6 miles and 6,100 ft, WHERE THE MAINTAINED TRAIL ENDS.\n\nFrom the pass, pick up the unmarked climbers' path heading NORTH, crossing two talus and boulder fields before dropping to Lewis Lake at about 3 miles and 6,600 ft, with timbered campsites on the north side and water. THIS OFF-TRAIL STRETCH IS THE MAIN ROUTE-FINDING CHALLENGE OF THE APPROACH, especially with cairns buried by early-season snow. From Lewis Lake, climb roughly 1,000 ft more of meadow and talus to Wing Lake at about 3.5-4 miles and 6,900 ft, the standard base camp, with sites in the trees on the right as you reach the lake.",
+      "season": "May-Oct, best Jun-Sep",
+      "hazards": [
+       "An unmarked off-trail stretch between Heather Pass and Lewis Lake, the approach's main route-finding challenge, worse with cairns buried by snow",
+       "Cliff bands directly below the south col if you climb the gully straight up rather than angling right",
+       "An exposed cairned ledge traverse below the summit block",
+       "A short class 4 step at the summit",
+       "Two lakes in Washington named Lake Ann; this route uses the Rainy Pass one"
+      ],
+      "baseFinding": "TWO LAKES IN SEQUENCE ARE THE APPROACH'S SPINE, AND THEY ARE WATER FEATURES, WHICH IS WHY THIS APPROACH IS SURVIVABLE WHEN THE CAIRNS ARE BURIED. LEWIS LAKE FIRST, THEN A THOUSAND FEET OF CLIMBING, THEN WING LAKE. If you have reached only one lake you are not at camp.\n\nFROM WING LAKE, GO AROUND THE RIGHT, NORTH, SIDE OF THE LAKE AND AIM FOR THE OBVIOUS TALUS AND SNOW GULLY LEADING INTO THE COULOIR JUST SOUTH OF THE SUMMIT. Climb that gully, then ANGLE CLIMBER'S-RIGHT OUT OF IT TO AVOID CLIFF BANDS DIRECTLY BELOW THE COL, topping out at THE SOUTH COL ON THE CREST OF THE SOUTH RIDGE. THE SOUTH COL IS THE TRUE START OF THE CLIMBING.\n\nSO THE ONE INSTRUCTION THAT KEEPS YOU OUT OF TROUBLE IS THE EXIT FROM THE GULLY: ANGLE RIGHT NEAR THE TOP. Going straight up puts you under cliff bands below the col.\n\nARRIVAL AT THE COL: a gap on a ridge crest with the summit pyramid to the north of you. Above it the route is cairned class 3 along the ridge to the summit pyramid, then a CAIRNED CLASS 2 LEDGE SYSTEM traversing below the summit block, exposed near its end, and finally A SHORT CLASS 4 STEP OF ABOUT 15 FT to the true summit.\n\nSO THE COUNT ABOVE THE COL IS: cairned ridge, one ledge system, one 15 ft step. There is no other technical ground on this route. A BOULDER IS SLUNG AT THAT STEP for an optional short rappel or hand line; a 30 m rope is more than enough, and many parties skip the rope and downclimb it facing in.\n\nTHE DISCRIMINATOR AGAINST THE PEAK'S NORTHEAST RIDGE, WHICH LEAVES THE SAME CAMP: that route ascends snow toward the LOW POINT IN THE NORTHEAST RIDGE, following the HOGSBACK MORAINE WIDE RIGHT and then traversing back left to the notch. A moraine underfoot and a notch on the northeast side means you are on the other route."
+     }
+    ],
+    "itinerary": {
+     "cal": "Best conditions are typically mid-July through September once the Heather Pass talus and south-facing gullies have shed most of their snow; the route is climbable earlier with an ice axe if the snow gully is intact.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Rainy Pass trailhead, follow the Lake Ann trail past Heather Pass, cross the talus basin below Lewis Lake, and continue about 2.5 miles farther to camp at Wing Lake (~6,900 ft). Allow 4-6 hours.",
+       "hours": 5,
+       "miles": 6.2,
+       "title": "Approach to Wing Lake camp",
+       "gainFt": 2150,
+       "lossFt": 100,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach Wing Lake high camp"
+      },
+      {
+       "n": 2,
+       "note": "From camp, ascend a talus/snow gully to the south col, then follow cairns along the South Ridge (class 3-4, with a loose gully section staying just west of the crest) to the summit — a 4-7 hour round trip to camp. Most parties then break camp and hike straight out to the trailhead the same day, making for a long but complete final push.",
+       "hours": 10.5,
+       "miles": 9.8,
+       "title": "South Ridge summit push, then hike out",
+       "gainFt": 2150,
+       "lossFt": 4170,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp for the south col",
+         "detail": "Climb the talus/snow gully south of the peak toward the col."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Gain the South Ridge crest",
+         "detail": "Cairned class 3 scrambling, forced into a loose gully just west of the ridge crest higher up."
+        },
+        {
+         "time": "9:00-11:00 AM",
+         "label": "Reach the summit",
+         "detail": "4-7 hour round trip to camp is typical for this route."
+        },
+        {
+         "time": "Midday",
+         "label": "Descend to camp, break it down",
+         "detail": "Reverse the South Ridge and gully back to Wing Lake; snow sections are often glissaded or boot-skied."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Hike out",
+         "detail": "Retrace the approach via Lewis Lake and Heather Pass back to the trailhead."
+        },
+        {
+         "time": "Evening",
+         "label": "Arrive at Rainy Pass trailhead",
+         "detail": "A long final day, but the standard finish for this route."
+        }
+       ],
+       "objective": "Climb the South Ridge to the summit, then hike all the way out"
+      }
+     ],
+     "totalNote": "A 2-day, 1-night trip is standard (~13 mi round trip, ~5,100 ft total gain): an approach day to Wing Lake, then a summit day combining a 4-7 hour South Ridge round trip with the full hike back to the trailhead. Very fit parties skip the overnight and do the whole route car-to-car in about 10-12 hours."
+    }
+   }
+  }
+ ]
+}

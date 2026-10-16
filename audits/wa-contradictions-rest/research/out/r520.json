@@ -1,0 +1,958 @@
+{
+ "file": "r520.json",
+ "results": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft (7,500) is in line with outside figures for the car-to-summit climb: a published route summary gives about 7,400 ft for the 44-mile round trip, a club listing gives 7,300 ft, and the park gives the trail as 600-4,300 ft plus about 3,580 ft from Glacier Meadows to the summit. The itinerary days sum higher because day 2 carries 4,500 ft between the Guard Station (~950 ft) and Glacier Meadows (~4,300 ft), but no outside source states a per-day gain figure for that leg, and the rules forbid computing one from elevations, so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://mazamas.org/activity/instance/3603/detail/",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Glacier Meadows/glacier edge to Snow Dome distance and gain",
+   "verdict": "fixed",
+   "correct_value": "The 4-6 mi / ~3,700 ft figure runs from Glacier Meadows to the SUMMIT (via Snow Dome), not to Snow Dome",
+   "evidence": "The park's climbing page gives 4-6 miles from Glacier Meadows to the summit, 4,400 to 7,980 ft (about 3,580 ft). A detailed climb write-up gives about 3,680 ft of gain on summit day from a 4,300 ft camp and about 9.5 miles round trip. Both put the 4-6 mile / ~3,700 ft figure between camp and summit, matching approach_variants[1].gainFt and the waypoints (summit 4.5 mi past Glacier Meadows).",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the glacier's edge it is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel, up to Snow Dome (~6,600 ft) and the upper mountain;",
+     "replace": "From Glacier Meadows the summit is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel from the glacier's edge, by way of Snow Dome (~6,600 ft) and the upper mountain;",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Glacier Meadows/glacier edge to Snow Dome distance and gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the glacier's edge it is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel, up to Snow Dome (~6,600 ft) and the upper mountain.",
+     "replace": "From Glacier Meadows the summit is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel from the glacier's edge, by way of Snow Dome (~6,600 ft) and the upper mountain.",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Glacier Meadows/glacier edge to Snow Dome distance and gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Best season / September",
+   "verdict": "fixed",
+   "correct_value": "Late June to mid-August (season Jun-Aug; September outside the best window)",
+   "evidence": "The park's climbing page gives the season as late June through mid-August, and an independent detailed climb guide gives the same main season, late June to mid-August, noting crevasses open and the route gets more circuitous later. September is therefore outside the best window, as season and seasonal_guidance say; the approach prose, climbing_route note and variant season chips that extend it to September are the outliers.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "July-September is the best window for a straightforward glacier crossing.",
+     "replace": "Late June to mid-August is the best window for a straightforward glacier crossing.",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Best season / September"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "July-September is the best window for a straightforward glacier crossing.",
+     "replace": "Late June to mid-August is the best window for a straightforward glacier crossing.",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Best season / September"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jun-Sep",
+     "value": "Jun-Aug",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Best season / September"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "season"
+     ],
+     "expect": "Jul-Sep for straightforward glacier travel",
+     "value": "Late Jun-mid Aug for straightforward glacier travel",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Best season / September"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Rope needed for summit-block rappel",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two fields describe different end points: rappels says a 60 m rope is needed to reach the BASE of the block, while descent_text says a shorter rope reaches an intermediate notch/belay ledge and that a 60 m doubled is the safer bet to the base as snow recedes. Outside sources agree the full north-side rappel usually needs a 60 m rope (one route summary; a climb report used a 60 m for the rappel), consistent with both fields.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://onehikeaweek.com/2019/07/09/mount-olympus/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Bear canister requirement",
+   "verdict": "fixed",
+   "correct_value": "Bear canisters are required for all overnight camping; bear lines/hangs are not an alternative",
+   "evidence": "The park's Hoh River Trail page states all food, garbage and scented items must be stored in bear canisters for wilderness camping, and the park's climbing page says bear canisters are required. A trail-association notice says canisters are now required in most Olympic wilderness areas and hanging food is not compliant. pro_tips is right; access.rules and what_to_bring offering a bear line are outdated.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://www.pnt.org/olympic-national-park-requires-bear-cans-throughout-all-wilderness-areas/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Bear canister required unless camping where a bear line is provided;",
+     "replace": "Bear canister required for all overnight camping;",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Bear canister requirement"
+    },
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "expect": "bear canister or use bear-line camps",
+     "value": "bear canister (required for all overnight camping)",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Bear canister requirement"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Summit-day round-trip miles",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Itinerary day 3 gives 7 miles round trip from Glacier Meadows, while the approach (now) and the park give 4-6 miles each way (8-12 round trip) and one detailed write-up logged about 9.5 miles; the waypoints put the summit 4.5 mi past camp. Only one source gives a round-trip figure, so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Rock grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5.4",
+   "evidence": "The route's database entry grades the West Ridge 5.4, Grade II, 7 pitches, never harder than 5.4 and never easier than class 3. grade, overview, pitch_detail and descent_text all agree; rock_grade 'Class 2-4' (which drives the header pill) is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 2-4",
+     "value": "5.4",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Hardest climbing on route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Never harder than 5.4 on route; loose 5.6-5.7 only if off route on the crest",
+   "evidence": "The route description says the line is never harder than 5.4 and that loose 5.6-5.7 rock is met only off route. grade, overview, hazards, pitch_detail, pro_tips and descent_text agree; the itinerary day-3 note and totalNote are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "roughly 7 pitches of variable-quality rock up to 5.6-5.7 with high exposure",
+     "replace": "roughly 7 pitches of variable-quality rock, never harder than 5.4 on route (the crest itself is loose 5.6-5.7), with high exposure",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Hardest climbing on route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "(variable 5.6-5.7 rock)",
+     "replace": "(variable rock, 5.4 on route)",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Hardest climbing on route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Character/side of the route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A rock ridge of about 7 pitches (class 3 to 5.4), reached by a roughly level crossing of the Blue Glacier southwest from Snow Dome",
+   "evidence": "The route description has the party cross the Blue Glacier southwest from Snow Dome without gaining or losing much height, gain the ridge at a moat near 7,260 ft, then climb about 600 ft of ridge in 7 pitches plus the 100 ft block — a rock climb, not a southern-side snow and ice line. approach, approach_variants, pitch_detail, waypoints and itinerary agree; beta is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The West Ridge route approaches from the southern side of the mountain, ascending a series of seven pitches along the broad ridge crest. Snow slopes and ice climbing dominate with Class 5.4 rock scrambles on the final pitches to the summit block. This route is less frequently done than the Blue Glacier standard but offers excellent alpine climbing and less crevasse hazard.",
+     "replace": "The West Ridge is reached from Snow Dome by a roughly level crossing of the Blue Glacier to the southwest, gaining the ridge at a moat near its low point (~7,260 ft). About seven pitches of rock follow along and just south of the crest, class 3 to 5.4, to the summit block. It sees far fewer ascents than the Blue Glacier standard route, which is the usual way down.",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Character/side of the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Cross the Blue Glacier southwest from Snow Dome, roughly level, using Crystal Pass and Five Fingers only as landmarks; Crystal Pass is the descent line",
+   "evidence": "The route description says to head southwest across the Blue Glacier from Snow Dome without significant gain or loss, using Crystal Pass, Five Fingers and the West Summit as landmarks, and to descend via the standard route over Crystal Pass. approach and approach_variants agree; the itinerary note, sectionBreakdown note, partner_requirements and seasonal_hazards route the ascent via Crystal Pass.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "cross the Blue Glacier southwest toward Crystal Pass/Five Fingers to a moat",
+     "replace": "cross the Blue Glacier southwest, roughly level and using Crystal Pass and Five Fingers as landmarks, to a moat",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "cross the Blue Glacier southwest toward Crystal Pass/Five Fingers to a moat",
+     "replace": "cross the Blue Glacier southwest, roughly level and using Crystal Pass and Five Fingers as landmarks, to a moat",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "then a glacier crossing via Crystal Pass and the Five Fingers to reach the West Summit",
+     "replace": "then a roughly level glacier crossing southwest from Snow Dome to the foot of the West Ridge",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "crossing the Blue Glacier southwest toward the West Summit via Crystal Pass and the Five Fingers, plus a moat to gain the ridge and crevasses on the descent",
+     "replace": "crossing the Blue Glacier southwest from Snow Dome to the ridge, plus a moat to gain the ridge and crevasses on the descent via Crystal Pass",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Total gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "loss_ft 400 is clearly not a car-to-car figure for a return to the same trailhead, and gain_ft 7,500 disagrees with the itinerary day sum (10,300, inflated by day 2's 4,500 ft). But no outside source states a car-to-car descent figure or a total gain for THIS route (the route description gives only 600 ft of ridge plus 100 ft of block), and the rules forbid setting loss equal to gain or computing totals, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge",
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Climb length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "212 m (~700 ft)",
+   "evidence": "The route description gives the climb as 700 ft (212 m), 7 pitches: about 600 ft of ridge plus 100 ft of summit block. descent_text, approach_variants baseFinding and the pitch table (185 m) agree; length_m 543 is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 543,
+     "value": 212,
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Climb length"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Snow Dome distance from Glacier Meadows / summit distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route description says Snow Dome is about 2 more miles of glacier travel above Glacier Meadows, and the park gives 4-6 miles from Glacier Meadows to the summit, so the Snow Dome pin at 17.45 mi (the same as Glacier Meadows) and the summit pin at 19.68 mi both look short. They are track-derived and keep order among themselves; no source gives a cumulative mileage for any of the three pins, so nothing is set. The bivy 4-6 mi note is out of scope.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Permit / land manager",
+   "verdict": "fixed",
+   "correct_value": "Permit: Olympic NP wilderness permit for overnight travel; land manager: Olympic National Park (Olympic Wilderness); pass: Olympic NP entrance fee",
+   "evidence": "The park's wilderness and climbing pages and the federal booking page for Olympic wilderness permits all require a wilderness permit for overnight stays in the park, which is managed by the National Park Service. The row's own permit, overnight_permit, land_manager and parking_pass fields agree; the 'N/A' placeholders are wrong.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://www.recreation.gov/permits/4098362",
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "N/A",
+     "value": "Olympic National Park wilderness permit required for overnight travel",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Permit / land manager"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Olympic National Park (Olympic Wilderness)",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Permit / land manager"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "N/A",
+     "value": "Olympic National Park entrance fee ($30/vehicle for 7 days, or $55 annual pass)",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Permit / land manager"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade II",
+   "evidence": "The route's database entry grades the Blue Glacier standard route Grade II, and a climbing club's listing calls it grade II, 30-40 degree snow, glacier, low 5th alpine rock. commitment 'II' is right; grade 'Grade III' is the outlier (alpine_grade PD is a French grade, not a roman numeral, and is left alone).",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://mazamas.org/activity/instance/3603/detail/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "grade",
+     "path": [],
+     "find": "Grade III;",
+     "replace": "Grade II;",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Hardest rock move",
+   "verdict": "fixed",
+   "correct_value": "A 5.3-5.4 step",
+   "evidence": "The route's database entry gives the summit rock as 5.3 (5.4 on the north side), and a club listing calls it low 5th class. grade, pitch_detail, beta, approach and climbing_route agree on a 5.4 step; gear[2]'s 5.6/5.7 is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://mazamas.org/activity/instance/3603/detail/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "protects the exposed 5.6/5.7 moves",
+     "replace": "protects the exposed 5.4 moves",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Hardest rock move"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Rack",
+   "verdict": "fixed",
+   "correct_value": "A light rack (a few nuts, a tricam or two, or three-four small-to-medium cams, plus long runners) and a crevasse-rescue kit with ice screws, no pickets",
+   "evidence": "A club listing says to bring a few stoppers, tricams and long runners for the summit rock and two ice screws for crevasse rescue, no pickets. The route's database entry lists alpine draws, four cams (#0.5-#2) and a set of nuts, noting you can probably get by with less. The park states glacier travel requires crevasse-rescue skills and gear. So '6-10 cams' overstates the rack, and 'a full crevasse kit is overkill' contradicts both the park and the row's own what_to_bring.",
+   "sources": [
+    "https://mazamas.org/activity/instance/3603/detail/",
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "The summit block requires a small rack of 6-10 cams in sizes ranging from 0.4 to 1.5 inches (or equivalent).",
+     "replace": "The summit block needs only a light rack: a few nuts and a tricam or two, or three or four small-to-medium cams (roughly 0.5-2 inches).",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Rack"
+    },
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      6
+     ],
+     "find": "6-10 cams (sizes 0.4-1.5 BD or equivalent)",
+     "replace": "a few nuts and tricams or 3-4 small-to-medium cams",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Rack"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "(6-10 cams, slings, quickdraws)",
+     "replace": "(a few nuts or small cams, slings, quickdraws)",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Rack"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "expect": "6-10 cams, 0.4-1.5in",
+     "value": "A few nuts/tricams or 3-4 small-to-medium cams",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Rack"
+    },
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "find": "so a full crevasse kit is overkill",
+     "replace": "so pickets are not needed",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Rack"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Late June through August",
+   "evidence": "The park gives the Olympus season as late June through mid-August, and an independent climb guide gives the same main season. season, best_season and the May month entry ('marginal') agree May is not optimal; optimalWindow and the avalanche zone note are the outliers.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "May through August;",
+     "replace": "Late June through August;",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "this route's May-Aug climbing window",
+     "replace": "this route's Jun-Aug climbing window",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft (7,500) is in line with outside figures for the car-to-summit climb: a published route summary gives about 7,400 ft for the 44-mile round trip, a club listing gives 7,300 ft, and the park gives the trail as 600-4,300 ft plus about 3,580 ft from Glacier Meadows to the summit. The itinerary days sum higher because day 2 carries 4,500 ft between the Guard Station (~950 ft) and Glacier Meadows (~4,300 ft), but no outside source states a per-day gain figure for that leg, and the rules forbid computing one from elevations, so no patch. loss_ft (7,402) is likewise left alone.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://mazamas.org/activity/instance/3603/detail/",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Rappel side",
+   "verdict": "fixed",
+   "correct_value": "The rappel goes down the north side of the summit block",
+   "evidence": "The route's database entry says the rappel goes down the north side of the summit pyramid and usually requires a 60 m rope; a club trip report describes the same 60 m double-strand rappel down the north face. descent_text is right; rappels ('back toward the East Face ramps') is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/mount-olympus-blue-glacier-11"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "back toward the East Face ramps.",
+     "replace": "down the north side of the block.",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Rappel side"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Bear canister requirement scope",
+   "verdict": "fixed",
+   "correct_value": "Bear canisters are required for all overnight camping in the wilderness, including the whole Hoh River Trail",
+   "evidence": "The park's Hoh River Trail page requires bear canisters for all wilderness camping on the trail, and a trail association's notice says canisters are required in most Olympic wilderness areas with hanging not compliant. access.rules is right; what_to_bring's 'above Glacier Meadows' is too narrow.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.pnt.org/olympic-national-park-requires-bear-cans-throughout-all-wilderness-areas/",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      27
+     ],
+     "find": "(required by NPS for overnight stays above Glacier Meadows)",
+     "replace": "(required for all overnight camping)",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Bear canister requirement scope"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "fact": "Rope length for rappel",
+   "verdict": "fixed",
+   "correct_value": "A 60 m rope (doubled) is needed for the 25-30 m rappel",
+   "evidence": "The route's database entry says the summit-block rappel usually requires a 60 m rope, and a climb report used a 30 m rope to climb the pitch but a 60 m for the rappel. rappels and descent_text agree; gear[1]'s '30-50m is plenty' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://onehikeaweek.com/2019/07/09/mount-olympus/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "find": "(30-50m is plenty for the one pitch)",
+     "replace": "(a 60 m rope, doubled, is needed for the 25-30 m rappel)",
+     "id": "wa_olympus_summit_block_west_edge",
+     "fact": "Rope length for rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "The 30 m low end of this route's own gear note is enough to CLIMB",
+     "replace": "A 30 m rope is enough to CLIMB",
+     "id": "wa_olympus_summit_block_west_edge",
+     "fact": "Rope length for rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "fact": "Approach time and distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The walk in is the same 17.4-17.5 mile Hoh River Trail as the standard route (park trail page), normally two days in, and timing's 1.5 h approach / 15.5 h total cannot be right. No source gives hour figures for this variation, and the rules forbid computing them, so timing is left alone. dist_km is handled separately below.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.mountainproject.com/route/109143016/blue-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "fact": "Approach distance (dist_km)",
+   "verdict": "fixed",
+   "correct_value": "28 km (17.4 mi one way to Glacier Meadows)",
+   "evidence": "The park's Hoh River Trail page gives 17.4 miles to Glacier Meadows; a climbing club listing gives 17.2 miles and another write-up 17.5 miles. dist_km 16.8 km (~10.4 mi) matches none of them and disagrees with the row's own Glacier Meadows pin at 17.5 mi; sibling routes store 28 km.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 16.8,
+     "value": 28,
+     "id": "wa_olympus_summit_block_west_edge",
+     "fact": "Approach distance (dist_km)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Descent route after East Peak",
+   "verdict": "fixed",
+   "correct_value": "From the East Peak descend to Glacier Meadows via Glacier Pass",
+   "evidence": "A route summary for the three-peak traverse describes climbing the West, Middle and East peaks and descending to Glacier Meadows via Glacier Pass, and a peak overview notes parties summiting all three generally go over Glacier Pass. A traverse trip report describes Glacier Pass as the exit (with icefall hazard). descent, descent_text, itinerary, approach_variants and bail agree; pitch_detail rows 4-5 (retrace to the West Peak) are the outliers.",
+   "sources": [
+    "https://www.summitpost.org/mount-olympus/150427",
+    "https://www.mountaineers.org/activities/trip-reports/mount-olympus-traverse-1"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "pitch"
+     ],
+     "expect": "East Peak descent and return traverse",
+     "value": "East Peak descent toward Glacier Pass",
+     "id": "wa_olympus_traverse",
+     "fact": "Descent route after East Peak"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "expect": "Descend East Peak and retrace to West Peak. Time: 2-3 hours.",
+     "value": "Descend from the East Peak toward Glacier Pass, watching for icefall. Time: 2-3 hours.",
+     "id": "wa_olympus_traverse",
+     "fact": "Descent route after East Peak"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "pitch"
+     ],
+     "expect": "West Peak descent via standard route",
+     "value": "Glacier Pass to Glacier Meadows",
+     "id": "wa_olympus_traverse",
+     "fact": "Descent route after East Peak"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "grade"
+     ],
+     "expect": "Class 5.3-5.4 downclimb and rappels",
+     "value": "Glacier descent",
+     "id": "wa_olympus_traverse",
+     "fact": "Descent route after East Peak"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "expect": "Descend summit block and East Face ramps via standard descent. Time: 3-4 hours to Glacier Meadows.",
+     "value": "From Glacier Pass descend the glacier to Glacier Meadows, keeping clear of the icefall. Time: 3-4 hours to Glacier Meadows.",
+     "id": "wa_olympus_traverse",
+     "fact": "Descent route after East Peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Hardest rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The West Peak summit block is 5.3-5.4 (see the discovered item below). For the terrain between the summits, the row's pitch_detail, beta and pro_tips say class 3-4 while rock_grade says 5.4-5.6 on the harder ridge options; no outside source found gives a grade for the Middle or East peak or the connecting ridges, so rock_grade is left alone.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/mount-olympus-traverse-1"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Rock rack",
+   "verdict": "fixed",
+   "correct_value": "A light rack for the West Peak summit block (a few nuts or 3-4 small-to-medium cams, slings); scrambling between summits mostly unroped",
+   "evidence": "The route's database entry lists alpine draws, four cams (#0.5-#2) and a set of nuts for the summit block, and a club listing lists a few stoppers, tricams and long runners. Both say a small rack IS carried for the West Peak block, so 'optional' / 'most parties do not carry rock gear' is wrong, and nothing supports a wide piece or 5.7 move.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://mazamas.org/activity/instance/3603/detail/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Minimal rock climbing gear; most scrambling is unroped. Bring 3-4 slings for potential rappel anchors or protection on steep sections if needed.",
+     "replace": "A light rack for the West Peak summit block: a few nuts or three or four small-to-medium cams, plus 3-4 slings for anchors. Most of the scrambling between summits is done unroped.",
+     "id": "wa_olympus_traverse",
+     "fact": "Rock rack"
+    },
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      2
+     ],
+     "find": "Minimal rock climbing gear (optional; most scrambling does not require roped belays)",
+     "replace": "Light rock rack for the West Peak summit block (most scrambling between summits does not require roped belays)",
+     "id": "wa_olympus_traverse",
+     "fact": "Rock rack"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "find": "Most parties do not carry rock climbing gear for the peak traverse; the scrambling",
+     "replace": "Beyond a light rack for the West Peak summit block, parties rarely use rock gear on the traverse; the scrambling",
+     "id": "wa_olympus_traverse",
+     "fact": "Rock rack"
+    },
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "A wider piece/alpine rack for the summit block itself — the final crack/chimney move (~5.7)",
+     "replace": "Nuts and slings for the summit block itself — its final low-5th-class move (about 5.4)",
+     "id": "wa_olympus_traverse",
+     "fact": "Rock rack"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "West Peak summit-block grade in the gear note",
+   "verdict": "fixed",
+   "correct_value": "About 5.4",
+   "evidence": "The route's database entry grades the summit rock 5.3/5.4 and a club listing calls it low 5th class; a climber's report calls it 5.4. pitch_detail[0] says 5.3-5.4; gear[2]'s ~5.7 is the outlier (patched in the Rock rack result, same gear[2] edit).",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://mazamas.org/activity/instance/3603/detail/",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_olympus.html"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Bear canister scope",
+   "verdict": "fixed",
+   "correct_value": "Bear canisters required for all overnight camping",
+   "evidence": "The park's Hoh River Trail page requires bear canisters for all wilderness camping on the trail, and a trail association notice says canisters are required in most Olympic wilderness areas. access.rules limits it to beyond Glacier Meadows.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.pnt.org/olympic-national-park-requires-bear-cans-throughout-all-wilderness-areas/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Bear canisters beyond Glacier Meadows;",
+     "replace": "Bear canisters required for all overnight camping;",
+     "id": "wa_olympus_traverse",
+     "fact": "Bear canister scope"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "fact": "Pitch/rappel length",
+   "verdict": "fixed",
+   "correct_value": "About 80-100 ft (one pitch, ~30 m); a 60 m doubled rope reaches",
+   "evidence": "The route's database entry puts the summit rock at about 100 ft and says the north-side rappel usually requires a 60 m rope; a club trip report says a 60 m double-strand rappel down the north face reached with a few feet to spare, which caps it near 100 ft. A 165 ft rappel could not be made on a 60 m doubled at all. overview, pitch_detail, rappels, descent_text and partner_requirements agree on ~80 ft; the 165 ft figures and length_m 50 are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/109143016/blue-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/mount-olympus-blue-glacier-11"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "find": "The descent rappel measures close to a full 165 ft, which eats nearly all of a 60 m rope doubled with nothing to spare",
+     "replace": "The descent rappel is roughly 80-100 ft, which late in the season can take nearly all of a 60 m rope doubled",
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Pitch/rappel length"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "the pitch is a single rope length of about 165 ft",
+     "replace": "the pitch is about 80-100 ft",
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Pitch/rappel length"
+    },
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 50,
+     "value": 30,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Pitch/rappel length"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft (7,500) is in line with outside figures for the car-to-summit climb: a published route summary gives about 7,400 ft for the 44-mile round trip, a club listing gives 7,300 ft, and the park gives the trail as 600-4,300 ft plus about 3,580 ft from Glacier Meadows to the summit. The itinerary days sum higher because day 2 carries 4,500 ft between the Guard Station (~950 ft) and Glacier Meadows (~4,300 ft), but no outside source states a per-day gain figure for that leg, and the rules forbid computing one from elevations, so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://mazamas.org/activity/instance/3603/detail/",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "fact": "Summit waypoint elevation",
+   "verdict": "fixed",
+   "correct_value": "7,980 ft",
+   "evidence": "The park gives the summit as 7,980 ft and the encyclopedia entry for the peak gives 7,980 ft (USGS-derived). high_point_ft and sibling routes' summit pins say 7,980; this row's summit pin 7,973 is the outlier.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://en.wikipedia.org/wiki/Mount_Olympus_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 7973,
+     "value": 7980,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit waypoint elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 7973,
+     "value": 7980,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit waypoint elevation"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

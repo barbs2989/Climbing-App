@@ -1,0 +1,626 @@
+{
+ "items": [
+  {
+   "kind": "item",
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Round-trip distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v019.json",
+   "prior_evidence": "No source states a one-way distance to the West Face Wall; the only mileage on this line is the trail to Lake Ingalls, which stops short of the wall, so dist_km 7.2 is left. Lake Ingalls hike page gives 4.5 mi one way to the lake; route, first-ascent and forum accounts describe the walk past the lake toward Stuart Pass/Goat Pass in hours, not miles."
+  },
+  {
+   "kind": "item",
+   "id": "wa_three_fingers_r1",
+   "fact": "gain_ft/loss_ft (5,600) vs itinerary gain total and totalNote (5,400)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "The row's gain_ft 5,600 has one North Peak source, but the itinerary's 5,400 is the sum of its day figures (3,000 + 2,400 + 0), so aligning it would mean computing new day gains. One North Peak report gives 5,600 ft gained and lost over ~14 mi; the main peak page's 4,000+ ft is for the South Peak lookout. Changing only the totalNote to 5,600 would contradict the day rows."
+  },
+  {
+   "kind": "item",
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "gain_ft/loss_ft 5,700 vs the itinerary's day gains (4,800 + 1,900 + 900) and losses; dist_km 38.62 km (24 mi) vs ~13.5 mi one way / ~30 mi round trip",
+   "prior_file": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "One report of this exact out-and-back now reads (40 mi and 11,686 ft round trip, about 20 mi each way), but it contradicts every figure on the row, and adopting it would mean rewriting each day's miles and gain from computed splits, and leaving loss_ft (not writable) at 5,700. A September 2023 trip report of the Buck Creek Pass / High Pass line to a camp below Mount Berge, summit of Buck, and out the same way gives 'Our trip ended up being 40 miles with 11,686 ft elevation gain' and calls it 'the 20 mile one way circuitous way'. Every other figure found is for a different line (the traverse out by Little Giant Pass, or Buck Creek Pass alone at 19.2 mi round trip). Changing gain_ft or dist_km alone would leave the itinerary's 13.5 + 3 + 13.5 mi and 7,600 ft and the 5,700 ft loss contradicting them, so nothing is patched. Owner option: adopt 40 mi / 11,686 ft and rebuild the three itinerary days and timing by hand."
+  },
+  {
+   "kind": "item",
+   "id": "wa_crooked_thumb_peak_south_route",
+   "fact": "First ascent of this route/peak",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "Still a route-identity question for the owner: the named fa party climbed an east-face start that may share the upper ridge with this northwest-couloir line, and no source names who first climbed this start. AAJ note: the 1963 party's new routes were on the east face from a Challenger Arm camp; the row's line starts from the Crooked Thumb Glacier moraine on the west side. No source states the first ascent of the northwest-couloir start."
+  },
+  {
+   "kind": "item",
+   "id": "wa_tye_peak_e_route",
+   "fact": "Total elevation gain",
+   "prior_file": "audits/route-tab-contradictions/research/out/v027.json",
+   "prior_evidence": "Stated gains disagree (1,200, 1,500 and 3,300 ft) and none matches the row's 2,400 (gain_ft) or 1,800 (itinerary), so neither is changed. The club route page for Skyline Lake, Skyline Ridge & Tye Peak gives 4.0 mi and 1,200 ft with a 5,476 ft high point, which is below the net rise from the 4,060 ft lot and so is not a car-to-car figure for Tye; other listings (prior pass) give 1,500 and 3,300 ft."
+  },
+  {
+   "kind": "item",
+   "id": "wa_e_se_face",
+   "fact": "descent line",
+   "prior_file": "audits/route-tab-contradictions/research/out/v028.json",
+   "prior_evidence": "The row still names two descents (reverse the East Face in descent/bail; off the South Face/Southwest Corner side in descent_text), each backed by one source for its own line, so neither is preferred. A route database's East Face entry says the ledges are reversed on descent; the peak page's Southeast Face entry descends by the South Face/Southwest Corner. No source states the descent for the combined E/SE row."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "fact": "total elevation loss vs. gain and vs. the itinerary's own days",
+   "prior_file": "audits/route-tab-contradictions/research/out/v016.json",
+   "prior_evidence": "No source states a cumulative gain for East Fury alone; the totals found belong to longer itineraries (Luna-inclusive or survey trips), so neither gain_ft 6,200 nor the 13,000 ft figures can be settled. Whole-trip figures only: 40 mi with an elevation range, 54 mi with 10,000 or 15,000 ft, ~42 mi / 13,000 ft on a trip that also climbed Luna. descent_text's last sentence still names a published trip report and should be reworded by the owner."
+  },
+  {
+   "kind": "item",
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "gain_ft 7,500 vs loss_ft 8,700 on a trip that returns to the same car; itinerary hike-out day shows 0 gain",
+   "prior_file": "audits/route-tab-contradictions/research/out/v016.json",
+   "prior_evidence": "No source gives a car-to-car gain or loss for the Megalodon Ridge loop, so neither figure can be set without computing from the days. The 2023 repeat report gives only segment distances (7 mi to the North Fork split, 2.5 mi more, 13 mi out); the route database and the first-ascent note give length and grade only."
+  },
+  {
+   "kind": "item",
+   "id": "wa_blood_sport",
+   "fact": "Elevation gain for the route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v009.json",
+   "prior_evidence": "No source states the crag's height or the walk's gain; the route page gives only a half-mile, roughly 15-minute walk from the lot and a 50 ft pitch, so 1,200 ft looks high but cannot be replaced with a stated figure. Route database page: crag isolated near the base of Guye's South Rib, right of and below the west face, visible from the west Summit lots; 50 ft single pitch; no elevation or gain."
+  },
+  {
+   "kind": "item",
+   "id": "wa_astroglide",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "prior_file": "audits/route-tab-contradictions/research/out/v010.json",
+   "prior_evidence": "No source states Half Moon Crag's wilderness status or permit rule; the crag listing covers access and rope length only, so the replacement wording for the permit column is still unsourced. Crag database page: granite crag above Tye Road, faint traces of trail through old-growth, routes 85 ft or less; nothing on permits or wilderness. The earlier boundary measurement places the pin outside any wilderness and far from Wild Sky, but that is a measurement, not a stated rule."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sherpa_peak_west_ridge",
+   "fact": "Sherpa south basin camp waypoint elev 6200 vs elevFt 6300",
+   "prior_file": "audits/route-tab-contradictions/research/out/v022.json",
+   "prior_evidence": "No source gives an elevation for this informal basin camp, so neither 6,200 nor 6,300 ft can be confirmed; the rendered elev (6,200) already agrees with the bivy entry. Encyclopedia peak page and route write-ups give Longs Pass ~6,200 ft and no figure for the south-basin camp."
+  },
+  {
+   "kind": "item",
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Whether a wilderness permit is needed",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "The only statement found is general: many established trails in the Wild Sky Wilderness need a free trailhead registration; it does not say whether the off-trail Tailgunner line from the Barclay Creek trail (itself outside the wilderness) does, so neither permit text is changed. Wilderness encyclopedia page: 'Many established trails within Wild Sky Wilderness require a free registration at trailheads.' Trailhead page lists only the day-use fee."
+  },
+  {
+   "kind": "item",
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Summit-day gain 3,080 ft reaches the 7,727 ft central summit, not the 7,440 ft South Peak this row climbs",
+   "prior_file": "audits/route-tab-contradictions/research/out/v004.json",
+   "prior_evidence": "Still no source states the gain from the Sunrise Knob camp to the South Peak; the one South Peak report gives only whole-trip figures and times. The South Peak East Gully report gives about 19 mi and 5,000 ft gained and lost for the whole trip, about 5 h camp to summit and 3 h down, but no summit-day gain; the archived peak page's 3,100 ft is to the main summit. A figure from pin heights would be computed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "fact": "Summit-day length and start time: partner_requirements vs timing/itinerary",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "No source states a camp-to-camp time or a start time from a Colchuck Lake camp for the Northeast Couloir. The one Northeast Couloir report with times is a single-day ski ascent from the road (5:15 am start, a little over 4 h to the lake, summit about 4 pm), not a camp start; other timed reports concern the North Buttress Couloir. Neither partner_requirements' 04:00 / 8.5 h nor timing's 2:30 AM / 11 h is supported."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_berge_southwest_route",
+   "fact": "Waypoint distance jump at the summit",
+   "prior_file": "audits/route-tab-contradictions/research/out/v016.json",
+   "prior_evidence": "No source states a one-way distance from the Little Giant trailhead to Berge's summit, so the summit's 16.92 mi cannot be replaced, and the chain's other distances need review with the pins. Sources give only the Little Giant Pass leg (10.4 mi round trip, 4,100 ft to the pass) and a verbal description of the Napeequa continuation. Live row unchanged: waypoints run 0-7.5 mi to the gully below the summit, then 16.92 at the summit; itinerary days of 10.5 mi in, dist_km 19.31 and totalNote ~24 mi round trip."
+  },
+  {
+   "kind": "item",
+   "id": "wa_goode_mountain_southwest_couloir",
+   "fact": "total elevation gain/loss",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "No source states a total gain for the Southwest Couloir by the Bridge Creek / North Fork approach; the totals found belong to other lines or exits. The reports surfaced give 9,200 ft for a Northeast Buttress ascent with a Park Creek / Stehekin exit (38.7 mi) and a 3,800 ft first day to a high camp; the 8,400 ft in gain_ft is also a Northeast Buttress figure. None states this route's round-trip gain, so gain_ft 8,400, the itinerary days (4,600 + 2,400) and the ~6,500 ft totalNote stay as they are."
+  },
+  {
+   "kind": "item",
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "total one-way/round-trip distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "Still real: waypoint 0 is the North Fork Sauk trailhead but dist_km and the waypoint mileages are White Chuck figures, and no source states the North Fork Sauk mileage to the Kennedy Ridge junction or Glacier Creek. North Fork Sauk sources give only legs (trail to the PCT, PCT to Red Pass); a trailhead-to-Glacier-Creek figure would have to be summed from them, which is computed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "prior_file": "audits/route-tab-contradictions/research/out/v012.json",
+   "prior_evidence": "Still real (pitches 20 and a 20-pitch partner note vs 12 breakdown rows), and no account of the route gives a pitch count at all. Detailed trip reports of the 1951 and 1957 starts describe roping for one to a handful of pitches and climbing the rest unroped or simul; none states 20, 12 or any total, because parties pitch the vegetated lower route differently."
+  },
+  {
+   "kind": "item",
+   "id": "wa_three_queens_standard",
+   "fact": "One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "Still real; the one figure for this East-summit line is a round trip (7.7 mi), which cannot be turned into the one-way dist_km or the summit pin's mileage without halving, and changing only the round trip would contradict both. One report gives 7.7 mi round trip (2,360-6,687 ft) for the East summit by the southeast shoulder from the Mineral Creek trailhead; the row's 10 mi / 4,600 ft belongs to a Middle Peak ascent by the south face. No one-way figure is published. Separately, Mineral Creek Trail 1331 is listed closed under the current Three Queens Fire order through October 31, 2026."
+  },
+  {
+   "kind": "item",
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Approach mileage: itinerary days 1-3 (7.5 + 5.5 + 3 = 16 mi to White Rock Lakes) vs waypoints (Kool-Aid Lake 6.7 mi, White Rock Lakes 13.5 mi)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v013.json",
+   "prior_evidence": "The one stated leg (trailhead to Kool-Aid Lake 5.5 mi one way) matches neither the day-1 7.5 mi nor the 6.7 mi pin, and it would put the lake before the row's 5.7 mi Cache Col pin, while no source states the Kool-Aid to Yang Yang or White Rock Lakes legs; any change leaves the cumulative pins unsourced. Mapped hike listing 'Kool-Aid Lake via Cascade Pass Trail and Ptarmigan Traverse': 5.5 mi, one way, 3,307 ft gain. Park service: 3.7 mi to Cascade Pass."
+  },
+  {
+   "kind": "item",
+   "id": "wa_forbidden_peak_west_ridge",
+   "fact": "pitch count",
+   "prior_file": "audits/route-tab-contradictions/research/out/v007.json",
+   "prior_evidence": "pitches=8 is backed by one source (guide copy) and is kept, but the six ROUTE BREAKDOWN rows are simul-climbing sections that no source divides into eight (or four) pitches, so the rows cannot be rebuilt to match. Guide copy: eight pitches. Club route page: four-pitch 5.6. Route database: 1,500 ft, Grade III, no count. Trip reports: one to three pitched sections, the rest simul-climbed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_east_ridge_2",
+   "fact": "Total gain: gain_ft vs itinerary day gains",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "gain_ft 6,800 and the itinerary's 7,300 ft are each backed by one published total (from different parking spots), so the row holds two sourced values and the rule cannot pick one. Published totals: 6,800 ft (older start), ~7,100 ft, ~7,300 ft (2018 club trip from 1,850 ft), ~8,000 ft GPS from the 1,160 ft washout parking."
+  },
+  {
+   "kind": "item",
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Total gain: gain_ft 6862 vs itinerary 7,100 (5000+2000+100)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v027.json",
+   "prior_evidence": "The one detailed report gives 24 mi round trip and an elevation range (1,240-8,102 ft) but no gain; another gives 21 mi / 8,300 ft, which the row holds neither of; the summit-site trip report is the British Columbia peak. 2019 trip report: 'Round Trip: 24 miles, Elevation Range: 1240-8102'. One other report: 21 mi / 8,300 ft gain."
+  },
+  {
+   "kind": "item",
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "fact": "round-trip distance vs overview's stated mileage",
+   "prior_file": "audits/route-tab-contradictions/research/out/v012.json",
+   "prior_evidence": "The overview's 30 mi round trip is the club route page's figure and stands, but no source states a one-way distance, so dist_km (11 mi one-way) cannot be replaced or confirmed from a stated figure. Route page: 'Length: 30.0 mi'. Trip reports give 25-25.5 mi round trip (one on a different line) and East Bank Trail legs ('just under 8 miles' to May Creek). Halving a round trip or summing legs would be computed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_the_triad_east_peak",
+   "fact": "Total gain figure",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "No source states a cumulative gain for this line: the 2024 report gives only 9.3 mi round trip and an elevation range of 3,600-7,520 ft, and the 2022 East Ridge report gives time only. Hidden Lake trailhead report: 'Round Trip: 9.3 miles, Elevation Range: 3600-7520'. A 2022 East Ridge ascent gives 9-10 h round trip and no gain. A net difference would be computed, so gain_ft 3,920 vs the itinerary's 5,410 stays open."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_pilchuck_standard_route",
+   "fact": "climb/route length",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "No source states a height for the summit scramble or the lookout block: descriptions say only a steep boulder scramble and a ladder to the lookout, so neither length_m's 21 m nor the 20-30 ft in beta/pitch_detail can be confirmed or replaced. A newspaper hike description: 'a steep boulder scramble and final climb up a ladder to the shelter'; a hike guide: 'scramble across a few boulders and climb up the wooden ladder'. No figure in either. Zero sources."
+  },
+  {
+   "kind": "item",
+   "id": "wa_energizer_bunny",
+   "fact": "total route length",
+   "prior_file": "audits/route-tab-contradictions/research/out/v021.json",
+   "prior_evidence": "The one source (the first-ascent party: 5 pitches, 450 ft, 5.10+ A0) supports length_m and rope_note, but it gives no per-pitch lengths, so the five round pitch lengths (about 541 ft in all) cannot be corrected from a source. First-ascent party's report and journal note: 5 pitches, 450 ft. No pitch-by-pitch lengths in any source found; spreading 450 ft across the pitches would be computed."
+  }
+ ],
+ "fills": [
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "column": "pitches",
+   "path": [],
+   "cleared_value": 2,
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states a pitch count for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "column": "pitch_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Clean granite face and corner off the scramble base — the short technical crux of this quick summit add-on.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.2",
+     "notes": "Easier moves past a 4-ft summit slot to the top; parties sometimes find rappel slings wrapped on a horn just below the summit for the way down.",
+     "pitch": 2,
+     "anchor": "Sling (horn)",
+     "lengthM": 15
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states roped pitches for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "column": "detailed_rack",
+   "path": [],
+   "cleared_value": "A light rack of small to medium pieces protects the short pitches.",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states a rack for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "column": "pro_needs",
+   "path": [],
+   "cleared_value": "Minimal; a few placements on the granite.",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states protection for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "column": "rappels",
+   "path": [],
+   "cleared_value": "1",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states a rappel for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "timing",
+   "path": [],
+   "cleared_value": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, th…",
+      "fromTo": "Car-to-car scramble via Kangaroo Pass approach",
+      "section": "Climb"
+     }
+    ]
+   },
+   "cleared_in": "audits/route-leftovers/deep/out/d2.json",
+   "prior_evidence": "Not filled: the cleared timing described a southwest-slopes scramble, but the row now describes the seven-pitch North Ridge, and no source gives a time for that line. Cleared sectionBreakdown: 'Car-to-car scramble via Kangaroo Pass approach', 10.5 h; the live row is the North Ridge (5.7, about seven pitches) with no timing."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "climbing_route",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "class": "2-3",
+     "label": "Lower southwest gully",
+     "notes": "From the base of the gully, class 2-3 talus and loose scree — rockfall is a real concern with any party above you."
+    },
+    {
+     "n": 2,
+     "class": "4",
+     "label": "Narrow class 4 step",
+     "notes": "Roughly midway up, the gully narrows to a steeper class 4 step of cleaner rock."
+    },
+    {
+     "n": 3,
+     "label": "Scramble to the belay ledge",
+     "notes": "Above the step, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/d2.json",
+   "prior_evidence": "Not filled: the cleared steps (southwest gully, class 4 step) belong to a different line from the North Ridge the row now describes, so restoring them would re-create a contradiction. Live row: name 'North Ridge', pitch_detail and beta describe seven pitches from the notch north of the peak."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "commitment",
+   "path": [],
+   "cleared_value": "II",
+   "cleared_in": "audits/route-leftovers/deep/out/h1-apply.json",
+   "prior_evidence": "Not filled: no source states a commitment grade for Half Moon's North Ridge. Encyclopedia and route listings found give the peak's location and that the easiest route is fifth class; none gives a Grade numeral for the North Ridge."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 12.87,
+   "cleared_in": "audits/route-leftovers/deep/out/h1-apply.json",
+   "prior_evidence": "Not filled: no source states a one-way distance from the highway to the North Ridge notch, and the cleared 12.87 km (8 mi) does not fit the row's own 'about two miles' to leave the path. Encyclopedia: Half Moon is about two miles east of the highway at Washington Pass (a location, not an approach distance)."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "column": "ice_grade",
+   "path": [],
+   "cleared_value": "AI1",
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; the AI1 came from the range traverse's crux near South Twin, and no source grades the south couloir. Range traverse note (V class 4 AI1 50 degrees) applies to the whole traverse; the winter ascent page rates the gully 3rd class with no ice grade."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "column": "max_angle",
+   "path": [],
+   "cleared_value": 50,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; no source gives this gully an angle (the 50 degrees is the traverse's ice crux elsewhere). Winter ascent page: hard snow, steep last bit to the col, 3rd-class gully; no angle."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "column": "pitches",
+   "path": [],
+   "cleared_value": 3,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; the gully was climbed unroped and no source gives a pitch count. Winter ascent page: climbed unroped, rappels on descent; no pitch count."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "column": "length_m",
+   "path": [],
+   "cleared_value": 140,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; no source gives the south couloir's length. No stated length for the gully in any source found."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "commitment",
+   "path": [],
+   "cleared_value": "II",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: no source gives a commitment grade (II or otherwise) for the East Ridge. The peak's route page and the 2005 East Ridge report give only class (3-4, a few low-5th moves); the cleared 'II' had no source."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "pitches",
+   "path": [],
+   "cleared_value": 5,
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: the East Ridge is described as a class 3-4 scramble and no source gives a pitch count. No source divides the East Ridge into pitches; the cleared 5 came from the unsourced 5.4-5.7 pitch rows."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "pitch_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Gain the east ridge crest above the 8,000 ft notch and climb the first blocky steps on sound granite; mostly class 3-4 with occasional low-5th moves.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.7",
+     "notes": "A steeper tower of solid granite just below the Sherpa Balanced Rock obelisk provides the technical crux - a short crack/corner move rated 5.7.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Continue over and around a series of towers along the crest, passing directly beneath the Balanced Rock feature; route-finding among blocks is the main challenge here.",
+     "pitch": 3,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Moderate, more broken climbing across sandy benches toward the base of the summit block.",
+     "pitch": 4,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Short final pitch up the summit pinnacle to the true summit; most parties then traverse to the West Ridge for the descent rather than reversing this route.",
+     "pitch": 5,
+     "anchor": "Gear",
+     "lengthM": 25
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: no source gives a pitch breakdown, and the cleared rows graded the line 5.4-5.7 and put the 5.7 on the wrong feature. Sources put 5.7 only on the Balanced Rock obelisk and describe the East Ridge as class 3-4; restoring the cleared rows would reintroduce the contradiction."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints[2].distMi",
+   "prior_evidence": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 9.5 mi belonged to the old Hogsback-line position). The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints[3].distMi",
+   "prior_evidence": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 11 mi belonged to the old Hogsback-line position). The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints[4].distMi",
+   "prior_evidence": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 12.5 mi belonged to the old Hogsback-line position). The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "gain_ft",
+   "path": [],
+   "cleared_value": 1663,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v019.json",
+   "prior_evidence": "Not filled: the cleared 1,663 ft was provably too low, and no source states a car-to-car gain for the West Face Wall routes. Sources give the 2,500 ft gain to Lake Ingalls and the 900 ft route length, but nothing states the total for this climb; a sum would be computed."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "waypoints[5].distMi",
+   "prior_evidence": "Not filled: the waypoint list was reworked, so the cleared 22.3 and 22.4 mi no longer map to the same pins (index 5 is now the summit, index 6 no longer exists), and no source states a one-way mileage to the summit. Sources give only round trips (about 40 mi via Thunder Creek to Park Creek Pass; 27.0 mi via the Park Creek route) and leg mileages to Two Mile camp."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "waypoints[6].distMi",
+   "prior_evidence": "Not filled: the waypoint list was reworked, so the cleared 22.3 and 22.4 mi no longer map to the same pins (index 5 is now the summit, index 6 no longer exists), and no source states a one-way mileage to the summit. Sources give only round trips (about 40 mi via Thunder Creek to Park Creek Pass; 27.0 mi via the Park Creek route) and leg mileages to Two Mile camp."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_three_fingers_r1",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 22.53,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json",
+   "prior_evidence": "Not filled: no source states a one-way distance to North Peak; the only figure is a ~14 mi round trip, which may not be halved. North Peak report: ~14 mi round trip; peak page: 16 mi round trip to the South Peak lookout. No one-way figure for this line."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_buck_mountain_south_ridge",
+   "column": "waypoints[1].distMi",
+   "prior_evidence": "Footbridge pin distMi left null: no source states the mileage of the Chiwawa River crossing, and a 2024 report says the bridge itself is gone. A route guide gives about 2.75 mi to where the Buck Creek Trail veers left off the Chiwawa River Trail (a junction, not the crossing); an August 2024 report says the damaged Chiwawa River bridge 'was no longer there', with a log crossing 20 ft upstream. The pin's note ('solid underfoot') may now be stale; that is a separate finding for the owner."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_crooked_thumb_peak_south_route",
+   "column": "waypoints[6].elev",
+   "prior_evidence": "Still null; no source states the moraine camp's elevation (the detailed ascent report gives only time and gain from the previous camp, and its only 7,800 ft figure is a bivouac ledge on the north ridge). Ascent report: 'camp on a narrow lateral moraine at the glacier's southern edge (11.1 hours + 3700 feet from Camp 2)'; no elevation."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_three_fingers_r2",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 23.5,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json",
+   "prior_evidence": "Still null; no source gives a one-way distance to Three Fingers' Middle Peak. Sources give Goat Flats (4.5 mi of trail), the 16 mi lookout round trip, and road-walk additions, none for Middle Peak."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_three_fingers_r2",
+   "column": "waypoints[1].distMi",
+   "prior_evidence": "Still null; no source states the trail mileage to the Middle Peak summit pin. No published distance to Middle Peak, one way or round trip."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "pitch_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Scramble up loose scree and rock to reach the saddle. Moderate exposure as elevation increases. Route finding straightforward.",
+     "pitch": "Approach via northwest slope to col between Magic Mountain and Hurry-Up Peak"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Climb mixed broken rock ledges up the south ridge. Moderate to significant exposure. Watch for loose rock; test holds. Height of terrain: ~300 feet of actual climbing.",
+     "pitch": "South ridge from col to false summit"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Drop 80 feet into dirty gully on right side (east face). Climb Class 3-4 broken ledges that corkscrew around the east side of summit block. Exposed scrambling requires careful foot placement. Final 50 feet to true summit.",
+     "pitch": "False summit to true summit (via gully descent and east-side corkscrew)"
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not refilled: the cleared rows were Magic Mountain's south-ridge route (col, false summit, 80 ft gully, corkscrew), and no source gives a stage-by-stage breakdown of Hurry-up's own line; the climbing_route column already describes it. Trip reports for Hurry-up (Kool-Aid Lake, the Magic/Hurry-up saddle about 45 minutes from the lake, a Class 2-3 summit ridge; one 2012 party by the northwest slope) give no pitch-by-pitch division."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 5.9,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v011.json",
+   "prior_evidence": "No source states a one-way distance from the Cascade Pass trailhead to Hurry-up Peak; the stated figures are legs (3.5-3.7 mi to the pass, about 1 mi Cache Col to Kool-Aid Lake, 5.5 mi to the lake), and the cleared 5.9 km was only the trailhead-to-pass leg. A GPS route page gives Kool-Aid Lake as 5.5 mi one way; trip reports give legs only and no distance to the summit. Adding legs would be computed."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_northeast_ridge_1963_route",
+   "column": "waypoints[3].distMi",
+   "prior_evidence": "This pin is the Base of C-J Couloir (now index 2); sources give only time from the road (15-20 minutes of brush past the crossing), not a distance, so it stays null. 'bushwhack 15 minutes and you're at the base of the C-J Couloir'; another report: 'walked up the road for less than a mile ... within 20 minutes our crampons were on'. No mileage to the couloir foot."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_northeast_ridge_1963_route",
+   "column": "waypoints[4].distMi",
+   "prior_evidence": "This pin is the Hanging Glacier Traverse (now index 3); no source states a distance to it, so it stays null. Accounts of the NE Ridge give heights and times on the face, not mileage."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_route_c",
+   "column": "waypoints[1].distMi",
+   "prior_evidence": "No source states the walking distance from the SR-20 hairpin to the Ice Box; the cleared 1.8 mi was a Blue Lake figure. The crag's area page describes the approach (hairpin apex, Spire Gully trail, dry creek bed, slabs with a fixed line) without a distance or time."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "timing.approachTimeHrs",
+   "prior_evidence": "Not refilled: the timing block now describes the camp-to-camp summit day (total 8.5 h), and putting the 5 h hike-in back would make the tiles add to 13 h again, recreating the contradiction it was cleared for. Parties left Holden Pass or Holden Lake camp and summited 4-4.5 h later; no source states a whole-trip total that would let the approach tile sit beside them."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_route_d",
+   "column": "waypoints[1].distMi",
+   "prior_evidence": "Not filled: the same Ice Box Left Side approach has no published distance from the hairpin. The route database's Ice Box Left Side page gives the approach by landmarks only; the cleared 1.8 mi was a Blue Lake figure."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_mastiff_south_route",
+   "column": "timing.summitTimeHrs",
+   "prior_evidence": "Not filled: no source gives a timed ascent to Mastiff's summit; the route pages give only distance and gain. The club route page gives Mastiff from the Merritt Lake trailhead as a round-trip distance and gain with no times; the regional ski guide gives roughly 11 miles and no time. The cleared 8.5 equalled the car-to-car total, so it cannot return."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mutchler_peak_scramble",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 24.78,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json",
+   "prior_evidence": "Left null: no source states any distance to Mutchler Peak; the cleared 24.78 km was a round trip stored in the one-way slot. Mutchler has a peak record but no route description or trip report with a distance in any source searched; reports for Snowking on the same Kindy Ridge approach give round trips only, for a different summit."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "pitch_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "grade": "Class 1-2",
+     "notes": "Brushy forest with boot trail; 1.2-1.5 miles of elevation gain through mixed conifer forest to ridge base. Faint trail; route-finding experience helpful.",
+     "pitch": "1: Forest Approach"
+    },
+    {
+     "grade": "Class 2+",
+     "notes": "Ridge crest and slabs; stay climber's right to avoid 5,200-foot cliff band. Loose blocks and moderate exposure. Approximately 1,000 feet of elevation gain.",
+     "pitch": "2: South Ridge to Cliff Zone"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Leave ridge at 7,200 feet, scramble loose scree and granite blocks on east side of ridge toward summit block notch. Loose, steep terrain with exposure. 800+ feet of gain.",
+     "pitch": "3: Scree and Blocks to Summit Block Notch"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Shallow gully scramble from notch to summit. Loose rock, ~100 feet of scrambling to peak. Final exposed section with good granite.",
+     "pitch": "4: Summit Gully"
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/owner/out/o06-apply.json",
+   "prior_evidence": "Not refilled: the cleared four rows described the separate Swamp Creek south-ridge line; the row is now the Methow Pass southeast-slope route, whose two stages are already in climbing_route, and no source gives a stage-by-stage breakdown with grades for that line. Methow Pass write-ups: climbers' path west from the pass to the east ridge, the saddle below an eastern knob, then Class 2-3 scrambling to the summit; no pitch or stage division beyond that."
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "waypoints[1].distMi",
+   "prior_evidence": "No source states the distance from the White River trailhead to St. Elmo Pass; the park's route brief gives 3.5 mi to Glacier Basin camp and about 8 mi to Thumb Rock, and its key-waypoint table gives coordinates only. The cleared 0.5 belonged to a misplaced Mowich Lake pin. Park route description: 'follows the Glacier Basin Trail (3.5 miles) to the Glacier Basin Campground ... at around 6,400 feet ... start up climber's right towards St. Elmo's Pass (7,500 feet)'; 'trailhead to Thumb Rock (approximately 8 miles and 6,500 feet of gain)'. No mileage to the pass itself."
+  }
+ ]
+}

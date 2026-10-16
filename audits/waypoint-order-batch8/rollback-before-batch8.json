@@ -1,0 +1,394 @@
+{
+ "takenAt": "2026-10-01T06:09:08.707Z",
+ "rows": [
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "waypoints": [
+    {
+     "lat": 48.48055,
+     "lng": -121.07979,
+     "elev": 3200,
+     "name": "Boston Basin Trailhead",
+     "note": "Small pullout on Cascade River Road, mile ~21.7, opposite Johannesburg Mountain. The Southeast Face is reached by climbing up from Boston Basin high camp toward the Sahale/Quien Sabe Glacier area and traversing to the face, not via a separate road trailhead.",
+     "type": "Trailhead",
+     "elevFt": 3200,
+     "directions": "The start is a small pullout on Cascade River Road at about mile 21.7, roughly 3,200 ft, opposite Johannesburg Mountain. There is no separate road trailhead for the Southeast Face — the face is reached from Boston Basin high camp, so this pullout is where you park. Camping in the basin needs an NPS wilderness permit registered through Marblemount, and the sites are popular enough to be worth arranging ahead for July through September."
+    },
+    {
+     "lat": 48.492,
+     "lng": -121.065,
+     "elev": 6200,
+     "name": "Boston Basin",
+     "type": "Campsite",
+     "distMi": 3,
+     "elevFt": 6200
+    },
+    {
+     "lat": 48.4935,
+     "lng": -121.04,
+     "elev": 8200,
+     "name": "Sahale-Boston col",
+     "type": "col",
+     "distMi": 4.2,
+     "elevFt": 8200
+    },
+    {
+     "lat": 48.4683,
+     "lng": -121.06,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "type": "Junction",
+     "distMi": 4.2,
+     "elevFt": 5392
+    },
+    {
+     "lat": 48.49542,
+     "lng": -121.036161,
+     "elev": 8894,
+     "name": "Boston Peak summit",
+     "type": "Summit",
+     "elevFt": 8894
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "waypoints": [
+    {
+     "lat": 48.80223,
+     "lng": -121.895575,
+     "elev": 3700,
+     "name": "Heliotrope Ridge Trailhead",
+     "note": "End of Glacier Creek Road (FR 39), 8 mi from Hwy 542; Northwest Forest Pass required for parking, self-issue Mt. Baker Wilderness permit at the kiosk.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.731607,
+     "lng": -121.838836,
+     "elev": 4700,
+     "name": "Climbers' Trail / Hogsback Ridge junction",
+     "note": "Fork just past the old Kulshan Cabin site; take the climbers' path right, up the Hogsback, toward the Coleman Glacier.",
+     "type": "Junction",
+     "distMi": 2
+    },
+    {
+     "lat": 48.7893,
+     "lng": -121.867771,
+     "elev": 6000,
+     "name": "Hogsback Camp",
+     "note": "Standard moraine-crest bivy at 6,000-6,200 ft used for both Coleman Glacier and Colfax north-face objectives.",
+     "type": "Campsite",
+     "distMi": 3
+    },
+    {
+     "lat": 48.757209,
+     "lng": -121.840635,
+     "elev": 7200,
+     "name": "Coleman Glacier toward Colfax's north face",
+     "note": "Roped glacier travel across the Coleman toward the base of the face; watch for crevasses and serac fall from the icefall above.",
+     "type": "Hazard"
+    },
+    {
+     "lat": 48.751414,
+     "lng": -121.839301,
+     "elev": null,
+     "name": "Bergschrund / mixed traverse",
+     "note": "Cross the bergschrund via a mixed rock-and-ice traverse to gain the base of the ice line, per route beta.",
+     "type": "Hazard"
+    },
+    {
+     "lat": 48.755922,
+     "lng": -121.840338,
+     "elev": null,
+     "name": "Sustained AI4+ ice pitch",
+     "note": "A full ropelength of sustained steep ice leads up the line before the crux band.",
+     "type": "Hazard"
+    },
+    {
+     "lat": 48.759141,
+     "lng": -121.841079,
+     "elev": null,
+     "name": "WI6 hanging ice curtain crux",
+     "note": "Free-hanging ice dagger/curtain -- the route's defining pitch; only climbable when the dagger has fully formed, which it does not do every season.",
+     "type": "Hazard"
+    },
+    {
+     "lat": 48.77148,
+     "lng": -121.84396,
+     "elev": 9440,
+     "name": "Colfax Peak",
+     "note": "~1,000 ft, 4-pitch line tops out near the true summit; walk off around the south side of the lower eastern summit to the Colfax-Baker saddle.",
+     "type": "Summit",
+     "distMi": 4.5
+    }
+   ]
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "waypoints": [
+    {
+     "lat": 47.8025,
+     "lng": -121.0765,
+     "elev": 4000,
+     "name": "Smithbrook Trailhead (FR 6700, Smithbrook Trail #1590)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4000,
+     "directions": "Leave US 2 for Smith Brook Road (FR 6700) and drive to the Old Lake Valhalla / Lake Janus trailhead, also called the Smithbrook trailhead, at roughly 4,000 to 4,150 feet. Figure about 2 to 2.5 hours from Seattle, or about 45 minutes from Leavenworth."
+    },
+    {
+     "lat": 47.79369,
+     "lng": -121.08864,
+     "elev": 4683,
+     "name": "Lichtenberg Boulders (granitic boulder field off the Valhalla trail)",
+     "type": "Junction",
+     "distMi": 2.5,
+     "elevFt": 4683
+    },
+    {
+     "lat": 47.78972,
+     "lng": -121.10083,
+     "elev": 4836,
+     "name": "Lake Valhalla (below the west face; camping, no campfires)",
+     "type": "Junction",
+     "distMi": 3.5,
+     "elevFt": 4836
+    },
+    {
+     "lat": 47.7923562,
+     "lng": -121.076815,
+     "elev": 4708,
+     "name": "Lichtenwasser Lake (Northeast Slope descent basin)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4708
+    },
+    {
+     "lat": 47.7882093,
+     "lng": -121.0912723,
+     "elev": 5844,
+     "name": "Lichtenberg Mountain main summit (5,844 ft; the route tops out on the west peak at ~5,800 ft)",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 5844
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "waypoints": [
+    {
+     "lat": 47.9183,
+     "lng": -123.3822,
+     "elev": 6150,
+     "name": "Obstruction Point Trailhead",
+     "note": "End of the 8-mile Obstruction Point Road off Hurricane Ridge; a wilderness permit reserved in advance (there is no self-registration here) and a bear canister are required; canisters are loaned at the Wilderness Information Center in Port Angeles.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.8876598,
+     "lng": -123.3661394,
+     "elev": 6350,
+     "name": "Lillian Ridge crest",
+     "note": "Grand Pass Trail crests this narrow, wind-exposed ridge with steep drop-offs into the Badger and Lillian River valleys on either side.",
+     "type": "Junction",
+     "distMi": 0.7
+    },
+    {
+     "lat": 47.8771738,
+     "lng": -123.3572629,
+     "elev": 5490,
+     "name": "Gladys Lake",
+     "note": "Small subalpine lake roughly 1.5 miles and 1,000 ft below Grand Pass; treat before filling, it's the last reliable water before the final push to the pass.",
+     "type": "Water",
+     "distMi": 4.45
+    },
+    {
+     "lat": 47.8793929,
+     "lng": -123.3577144,
+     "elev": 6488,
+     "name": "Grand Pass",
+     "note": "High alpine col dividing the Grand Valley/Lillian Ridge drainage from Cameron Creek; trail turns south here and drops into Cameron Basin toward Cameron Pass.",
+     "type": "Junction",
+     "distMi": 5.95
+    },
+    {
+     "lat": 47.9485,
+     "lng": -123.2591,
+     "elev": 6448,
+     "name": "Cameron Pass",
+     "note": "Highest trail-served pass in Olympic National Park; the north-facing approach holds snow into late July/August and NPS advises carrying an ice axe for self-arrest.",
+     "type": "Hazard",
+     "distMi": 7.6
+    },
+    {
+     "elev": 5450,
+     "name": "Upper Cameron Basin high camp",
+     "note": "Established high camp in the Cameron Creek/Lost Basin area beyond the pass; bear canister required (trees too short to hang food) and notoriously buggy in season.",
+     "type": "Campsite",
+     "distMi": 9.9
+    },
+    {
+     "lat": 47.800795,
+     "lng": -123.370435,
+     "elev": 6836,
+     "name": "Mount Claywood Summit",
+     "note": "Class 2-3 scramble up open talus slopes from the high camp; cairns mark the easiest line through occasional Class 3 steps to the true summit.",
+     "type": "Summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "waypoints": [
+    {
+     "lat": 47.80931,
+     "lng": -123.453858,
+     "elev": 1500,
+     "name": "Hayes River Guard Station",
+     "note": "Historic Elwha River patrol cabin where the Hayes River joins the Elwha; reliable water and a junction with side trails into the upper valley.",
+     "type": "Junction",
+     "distMi": 16.1
+    },
+    {
+     "lat": 47.7366057,
+     "lng": -123.5293929,
+     "elev": 1900,
+     "name": "Chicago Camp / Elwha ford",
+     "note": "Established riverside camp; the Elwha River must be forded nearby to continue upvalley toward the basin, and can run cold and high with snowmelt.",
+     "type": "Water",
+     "distMi": 21.1
+    },
+    {
+     "lat": 47.75567,
+     "lng": -123.56692,
+     "elev": 3100,
+     "name": "Elwha Basin",
+     "note": "Traditional high base camp used by Mountaineers club expeditions since the early 1900s; braided channels and brush ('the maze') make routefinding into the basin confusing.",
+     "type": "Campsite",
+     "distMi": 26
+    },
+    {
+     "lat": 47.768789,
+     "lng": -123.578631,
+     "elev": 4300,
+     "name": "Elwha Snow Finger",
+     "note": "Steep, roughly 2-mile perennial snow/avalanche-debris gully gaining the Bailey Range crest from Elwha Basin; watch for hidden meltwater moats and rockfall off the flanking cliffs.",
+     "type": "Hazard",
+     "distMi": 28.5
+    },
+    {
+     "lat": 47.784532,
+     "lng": -123.592684,
+     "elev": 4760,
+     "name": "Dodwell-Rixon Pass",
+     "note": "Gains the Elwha-Queets divide atop the Bailey Range; open scree and heather traversing toward the Noyes-Meany group begins here.",
+     "type": "Junction",
+     "distMi": 31.5
+    },
+    {
+     "lat": 47.762059,
+     "lng": -123.596088,
+     "elev": 6000,
+     "name": "Noyes-Meany Col",
+     "note": "Class 2+ saddle between Mount Noyes and Mount Meany; the standard scramble line onto Meany's upper slopes leaves the col here.",
+     "type": "Junction",
+     "distMi": 33.5
+    },
+    {
+     "lat": 47.5761,
+     "lng": -123.6479,
+     "name": "North Fork Quinault Trailhead / Ranger Station",
+     "note": "End of North Fork Quinault River Road, south side of Olympic NP near Lake Quinault.",
+     "type": "Trailhead"
+    },
+    {
+     "lat": 47.750958,
+     "lng": -123.597855,
+     "elev": 6695,
+     "name": "Mount Meany",
+     "type": "Summit",
+     "elevFt": 6695
+    }
+   ]
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": 2280,
+     "name": "Barclay Lake Trailhead (FR-6024)",
+     "note": "End of FR-6024 (Barclay Creek Road); shared trailhead for Barclay Lake, Gunn Peak, Gunn Point, Tailgunner, and Wing Peak approaches via Barclay Creek and Tailgunner Pass.",
+     "type": "Trailhead",
+     "elevFt": 2280
+    },
+    {
+     "lat": 47.809636,
+     "lng": -121.452545,
+     "elev": 2400,
+     "name": "Barclay Creek crossing / leave trail",
+     "note": "About a quarter mile past the trailhead, cross Barclay Creek on a stout logjam ~200 yards upstream of an old spur road, then bushwhack toward an overgrown corrugated culvert marking the start of the Tailgunner climbers' path.",
+     "type": "Junction",
+     "distMi": 0.3
+    },
+    {
+     "lat": 47.802,
+     "lng": -121.4547,
+     "elev": 3600,
+     "name": "Rocky knob on climbers' path",
+     "note": "Old logging-road tread gives way to a rockier, more open knob roughly 2.8 hours up from the trailhead; route-finding gets easier here as the path steepens into Tailgunner Ravine. The knob sits at ~3,600 ft; position is estimated, not surveyed.",
+     "type": "Junction",
+     "distMi": 1.3
+    },
+    {
+     "lat": 47.8057,
+     "lng": -121.4529,
+     "elev": 4000,
+     "name": "Waterfall ravine",
+     "note": "The 'infamous waterfall ravine' cliff band at ~4,000 ft: a Class 2-3 scramble around a waterfall in the ravine that forces a short descent and re-ascent; slick rock when wet. Position is estimated, not surveyed.",
+     "type": "Hazard",
+     "distMi": 1.8
+    },
+    {
+     "lat": 47.80728,
+     "lng": -121.453451,
+     "elev": 4400,
+     "name": "Brushy cliff-band weakness",
+     "note": "Leave the Tailgunner Couloir here through a brushy weakness in the cliff band to gain the crest of the west ridge; grassy slopes and firm snow patches persist into early summer. Position is estimated, not surveyed.",
+     "type": "Junction",
+     "distMi": 2.3
+    },
+    {
+     "lat": 47.80886,
+     "lng": -121.454002,
+     "elev": 5320,
+     "name": "Tailgunner Pass",
+     "note": "Broad saddle between Gunn Point and Tailgunner reached after ~3,000 ft of gain; couloir approach and the upper Gunn Basin camps converge here. Position is estimated, not surveyed.",
+     "type": "Junction",
+     "distMi": 2.8
+    },
+    {
+     "lat": 47.80949,
+     "lng": -121.454223,
+     "elev": 5650,
+     "name": "West ridge gendarmes / cornice headwall",
+     "note": "Follow the ridge crest over minor gendarmes; a relic cornice headwall near the summit dome requires careful, exposed scrambling, especially with lingering snow. Position is estimated, not surveyed.",
+     "type": "Hazard",
+     "distMi": 3
+    },
+    {
+     "lat": 47.8101257,
+     "lng": -121.4544438,
+     "elev": 5842,
+     "name": "Tailgunner summit (Peak 5842)",
+     "type": "Summit",
+     "elevFt": 5842
+    }
+   ]
+  }
+ ]
+}

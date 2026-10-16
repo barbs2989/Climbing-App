@@ -1,0 +1,223 @@
+{
+ "applied": [
+  {
+   "id": "wa_clean_break",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Descent: walk-off vs rappels"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Descent: walk-off vs rappels"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Descent: walk-off vs rappels"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Descent: walk-off vs rappels"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "overview",
+   "path": [],
+   "fact": "How many pitches are 5.10"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "rope_note",
+   "path": [],
+   "fact": "How many pitches are 5.10"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Nature and protection of the final pitch"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "column": "pitch_detail",
+   "path": [
+    6,
+    "notes"
+   ],
+   "fact": "Nature and protection of the final pitch"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Nature and protection of the final pitch"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "column": "beta",
+   "path": [],
+   "fact": "Crux location"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Crux location"
+  },
+  {
+   "id": "wa_rampage",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Ropes needed for the rappels"
+  },
+  {
+   "id": "wa_rampage",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text describes the other Paisano route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_clean_break",
+   "before": {
+    "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 ft (roughly 2 hours from the car), then continues up to Burgundy Col (~7,720 ft, ~3 hours). Burgundy Spire is reached from the basin/col area with a short additional scramble; good camping and a late-season spring are near 6,400-6,500 ft.",
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4300,
+      "name": "SR-20 Wine Spires pullout (milepost 166)",
+      "note": "Climbers trail up the east side of Silver Star Creek drainage, crossing at ~5000ft.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.56281,
+      "lng": -120.59725,
+      "elev": 7920,
+      "name": "Juno Tower - Summit",
+      "note": "Clean Break, 15-pitch route on the east walls above Silver Star Creek.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "rope_note": "IV, 1500ft, 15-pitch splitter-crack route on Juno Tower's east buttress; 7 of 15 pitches are 5.10. Long multi-rappel descent — many parties use double ropes or plan extra raps with a single 60m.",
+    "rope_type": "single (double ropes common for the long rap descent)",
+    "rack": [
+     "Doubles of cams #0.75–#3",
+     "Single #4 cam (optional, useful P6-7)",
+     "Full single set of nuts",
+     "60m rope (two 60m or single 70m useful for the long rap descent)"
+    ],
+    "detailed_rack": "Bring a full set of nuts in all sizes and doubles of cams from #0.75 to #3. A #4 cam is useful for pitches 6-7 (fixed protection on P7 was present in 2014 but may not be reliable; bring your own). Two 60m ropes or single 70m rope is efficient for descent sections.",
+    "overview": "Clean Break rises 1,500 feet above the valley floor on the steep east buttress of Juno Tower, taking its name from the immaculate splitter-crack at pitch 1. With 7 of 15 pitches at 5.10 grade, this sustained granite route is regarded as one of the finest long multi-pitch climbs at this grade in Washington."
+   }
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "before": {
+    "sling_rack": {
+     "cams": "0.4-4 in; small cams work well on twin cracks P3-4; P8 wide crack has sparse pro",
+     "nuts": "set of nuts"
+    },
+    "pitch_detail": [
+     {
+      "grade": "5.8 / easy 5th",
+      "notes": "Mix of scrambling, tree navigation, and variable rock quality leading toward the ridge crest; can be linked.",
+      "pitch": "1-2"
+     },
+     {
+      "grade": "5.7",
+      "notes": "Splitter hand crack, widely noted as excellent climbing.",
+      "pitch": "3"
+     },
+     {
+      "grade": "5.8+/5.9-",
+      "notes": "Double/twin cracks — the technical crux of the route.",
+      "pitch": "4"
+     },
+     {
+      "grade": "5.8",
+      "notes": "Layback and wide corner, with multiple line options.",
+      "pitch": "5"
+     },
+     {
+      "grade": "5.4-5.6",
+      "notes": "Long pitch on a splitter along the crest; prone to rope drag if not managed.",
+      "pitch": "6"
+     },
+     {
+      "grade": "5.7-5.8",
+      "notes": "Twin cracks leading toward the final pitch.",
+      "pitch": "7"
+     },
+     {
+      "grade": "5.8",
+      "notes": "Exposed face climbing, the route's \"mental crux\" — runout with marginal protection.",
+      "pitch": "8"
+     }
+    ],
+    "pro_needs": "Gear to 4 inches protects most of the route well; the final 5.8 face pitch is the exception, with sparse, small-cam-only protection.",
+    "beta": "A hidden-gem moderate that has become cleaner and more popular over the years. The line rambles up cracks and the ridge crest with sustained mid-fifth-class climbing throughout; the crux comes about two-thirds of the way up on a short section of steep twin finger cracks, and the final pitch is an exposed, runout 5.8 face regarded by many parties as the route's real (\"mental\") crux. Often camped for and combined with the North Face of Burgundy Spire for a ~12-13 pitch link-up day.",
+    "approach_variants": [
+     {
+      "name": "Unsigned highway pullout east of Washington Pass, the timbered rib to the bench, then the contour right",
+      "notes": "Park in the broad unsigned pullout on the highway about four miles east of Washington Pass, at roughly 4,250 to 4,300 ft. It is signed for the mountain above rather than for the spires, and nothing marks the climbers' path.\n\nThe path drops down the talus and into the forest, crosses Early Winters Creek on a log, and then climbs steeply up the timbered rib on the LEFT — the north side — of the creek that drains the col above. Two hours or so of steep walking puts you on the basin bench at about 6,500 ft. There is a spring near the bench camp and it is the last reliable water.\n\nFrom the bench the trail continues another three-quarters of an hour to the col at about 7,720 ft, which is the hub for the whole cluster. This route does not need to go that far.\n\nThe pullout doubles as the overnight for most parties. Nothing there is developed — no toilet, no table, no water — and highway noise carries.",
+      "season": "Roughly June through September; the approach holds snow into June and access disappears when the highway closes",
+      "hazards": [
+       "Unsigned pullout and unmarked climbers' path with no trail signs anywhere",
+       "The start is a single jammed block; the lower ridge offers several plausible wrong starts",
+       "The final pitch is runout exposed face climbing with marginal protection",
+       "Rope drag on the long crest pitch if slings are not managed",
+       "Early Winters Creek is crossed on a log and is worse in high water"
+      ],
+      "baseFinding": "THIS ROUTE STARTS LOWER THAN EVERYTHING ELSE IN THE CLUSTER, and that is the fact to hold onto. The spires above the col get climbed from the col; this one does not.\n\nLeave the col trail at the BENCH, around 6,600 ft, and CONTOUR RIGHT — south — around the bench toward the pinnacle's lower section. You are aiming for the toe of the ridge rather than for anything above you. There is a DRY SANDY GULLY on this contour with a SPRING in it, which is a useful confirmation that you are on the right ground and the last water before the climb.\n\nThe start itself is marked by a CHOCKSTONE — a jammed block at the foot of the ridge. That chockstone is the identification, and it is the reason accounts of this route keep saying to pay attention to the topo: without it, the lower ridge offers several plausible ways on and parties have burned an hour sorting it out.\n\nIf you come at it from the col instead, drop about two hundred feet of mostly fourth-class rock to sandy ledges just left of the pinnacle's top and work down and along; that reaches the same ground from above.\n\nCONFIRM ON THE CLIMB. Seven or eight pitches of sustained mid-fifth-class hand and finger cracks along the ridge crest, with big comfortable belay ledges. The technical crux is about two-thirds of the way up on a short section of steep TWIN FINGER CRACKS. The last pitch is exposed, runout face climbing that most parties call the real crux for reasons that have nothing to do with the grade.\n\nNEGATIVE MARKER: if you walked all the way to the col, then dropped a few hundred feet along the pinnacle's flank onto a third-class LEDGE SYSTEM and walked it rightward to a steep clean corner, you are at the other route on this pinnacle, several number grades harder. A ledge system leading to a corner is not this climb; a chockstone at the toe of a ridge is.\n\nSECOND NEGATIVE MARKER: the neighbouring spire's north face is the usual link-up partner and its routes start from the col itself. Being at the col with rock above you is not evidence you are at this route.\n\nDescent is a few hundred feet of downclimbing, then two rappels of about thirty and twenty metres into the gully beneath the col, downclimbing between the anchors, then the trail back past the bench."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_rampage",
+   "before": {
+    "gear": [
+     "Nuts",
+     "Cams to 4 in (doubles in finger/hand sizes useful)",
+     "Small-to-medium cams for the P4 offwidth",
+     "60m ropes (two ropes needed for the 30m rappels)"
+    ],
+    "approach": "Follow the shared Wine Spires trail: boot path down talus to Early Winters Creek, cross on a log, then climb steeply up the timbered rib north of Burgundy Creek to the ~6,500 ft basin/camp (roughly 2 hours from the car). Paisano Pinnacle's West Ridge route starts lower than Burgundy Spire's and is commonly linked with Burgundy Spire's North Face in one long car-to-car day; fresh water is reported from a spring near the camp bench."
+   }
+  }
+ ]
+}

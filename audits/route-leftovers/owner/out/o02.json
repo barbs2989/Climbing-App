@@ -1,0 +1,139 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "The three camp cards on Mount Larrabee no longer tell climbers to fill out a wilderness permit, which this wilderness does not have.",
+   "evidence": "The Forest Service Mt. Baker Wilderness page lists only an optional climbing register and a recreation pass at some trailheads; the Forest Service High Pass Trail 676 page requires only a recreation pass at Twin Lakes Trailhead plus wilderness rules (party of 12, no campfires). Neither mentions any wilderness permit, and the row's own permit, access.permit and access.overnight_permit already say none is required. The self-issue permit sentence in bivy[0], bivy[1] and bivy[2] was the outlier; each is replaced, keeping the rest of each permit note.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://www.wta.org/go-hiking/hikes/twin-lakes-2"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_larrabee_south_ridge",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "Free self-issue wilderness permit at the Twin Lakes register. Mount Baker Wilderness rules:",
+     "replace": "No wilderness permit is required. Mount Baker Wilderness rules:"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_larrabee_south_ridge",
+     "column": "bivy",
+     "path": [
+      1,
+      "permit"
+     ],
+     "find": "Free self-issue wilderness permit at the register for anyone continuing onto the trails.",
+     "replace": "No wilderness permit is needed to continue onto the trails."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_larrabee_south_ridge",
+     "column": "bivy",
+     "path": [
+      2,
+      "permit"
+     ],
+     "find": "Free self-issue wilderness permit at the Twin Lakes register. No fires anywhere",
+     "replace": "No wilderness permit is required. No fires anywhere"
+    }
+   ],
+   "pin_followups": [
+    "High Pass and Low Pass waypoint pins look misplaced (High Pass sits almost on the trailhead; Low Pass lies southwest of the lakes) - carried over from earlier research, not changed here."
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "The Cougar Divide camp card now says the ridge leads southeast to Hadley Peak, matching the route description, instead of east.",
+   "evidence": "A geology field guide to Cougar Divide says the trail heads south from the trailhead along the north-south divide to Chowder Ridge; a 2025 hiking blog labels Chowder Ridge southwest and Hadley Peak southeast from the divide; a hiking guide says both approaches meet on Chowder Ridge and climb Hadley's northwest ridge, i.e. travelling southeast. The row's own pins put the summit south-southwest of the trailhead. Only the one word in bivy[0].notes is changed.",
+   "sources": [
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+    "https://www.withmytwofeet.com/post/cougar-divide-trail",
+    "https://besthikesbc.ca/hadley-peak/"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_hadley_peak_cougar_divide",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the connection east along the ridge leads to Hadley",
+     "replace": "the connection southeast along the ridge leads to Hadley"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "verdict": "unresolved",
+   "resolution": "leave",
+   "summary": "The stored climb of 2,818 ft is too low for this route, but published totals range from about 4,500 to 5,000 ft and no two agree, so the number is left for now.",
+   "evidence": "2,818 ft (one speed-record listing, 14.8 mi) is below the 3,265 ft rise between the route's own trailhead (4,250 ft) and summit (7,515 ft) pins, so it cannot be right one way or round trip. Other published totals disagree: 4,700 ft over 13 mi (club route listing), about 5,000 ft over 14+ mi (2016 forum report), 'perhaps 4,500 ft or more' over about 14 mi (a trip report), and ~2,989 ft one way from a mapping app (also below the net rise). With no two sources stating the same figure, gain_ft, loss_ft and the '3,300+' pro tip are not changed. Also noted, outside this item: permit, access.permit and what_to_bring still claim a self-issue wilderness permit that the Forest Service pages do not list (the same claim was removed from Mount Larrabee's camp cards in this batch).",
+   "sources": [
+    "https://fastestknowntime.com/route/hadley-peak-wa",
+    "https://www.mountaineers.org/activities/routes-places/hadley-peak",
+    "https://forums.clubtread.com/37-washington-state/76218-skyline-divide-chowder-ridge-hadley-peak-sept-11-16-a.html",
+    "https://www.gaiagps.com/hike/235506/hadley-peak/"
+   ],
+   "ops": [],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Clast from the Past is a fully bolted two-pitch route, so its type changes from trad to sport.",
+   "evidence": "The route's own page types it as sport with bolts as the only protection (7 bolts on P1, 9 on P2, rappel the route); the North Side area listing types it sport. The row's gear, pro_needs, detailed_rack, hazards and beta already describe a fully bolted sport route; only discipline said trad.",
+   "sources": [
+    "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+    "https://www.mountainproject.com/area/110928210/north-side"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_clast_from_the_past",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_sidewinder_4",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Sidewinder is a bolted single-pitch route, so its type changes from trad to sport.",
+   "evidence": "The route's own page types it as sport, protected by bolts about every four feet to a chain anchor; the North Side area listing types it sport. The row's gear, pro_needs, detailed_rack and rope_note already say fully bolted; only discipline said trad.",
+   "sources": [
+    "https://www.mountainproject.com/route/114937321/sidewinder",
+    "https://www.mountainproject.com/area/110928210/north-side"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_sidewinder_4",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

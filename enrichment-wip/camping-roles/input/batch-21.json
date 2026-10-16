@@ -1,0 +1,2221 @@
+[
+ {
+  "zone": "tatoosh",
+  "routes": [
+   {
+    "id": "wa_castle_peak_tatoosh_southeast_face",
+    "name": "Southeast Face (Standard Route)",
+    "peak": "The Castle",
+    "area_id": "wa_castle_peak_tatoosh",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "high_point_ft": 6440,
+    "overview": "Castle Peak's easiest and by far most-traveled line: a class 2-3 approach and traverse around Pinnacle Peak's south flank to the Castle-Pinnacle col, followed by a short, well-protected easy-5th-class crack-and-chimney pitch up the southeast/east flank to the exposed summit crest.",
+    "approach": "Park at the Reflection Lakes pullouts on Stevens Canyon Road (or, when the road is snowed in, at the year-round Narada Falls lot). Take the signed Pinnacle Peak Trail from the south side of the road; it climbs steadily through forest and subalpine meadow for about 1.3 miles and 1,050 ft of gain to t…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_classic_route_2",
+    "name": "Classic Route",
+    "peak": "Unicorn Peak",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 6971,
+    "overview": "The most-travelled line up Unicorn's summit block: one easy, blocky low-5th-class pitch up the south-southeast face of the horn.",
+    "approach": "Start at the Snow Lake Trailhead on Stevens Canyon Road (~1.5 miles east of Reflection Lakes, elev. ~4,500 ft). Follow the maintained Snow Lake Trail about 1 mile, gaining roughly 700 ft, to Snow Lake at ~4,600 ft — the last reliable water source. Skirt the west/north shore of the lake; the maintain…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_classic_route_3",
+    "name": "Classic Route",
+    "peak": "Lane Peak",
+    "area_id": "wa_lane_peak",
+    "discipline": "scrambling",
+    "grade": "3rd-4th class",
+    "high_point_ft": 6012,
+    "overview": "Also known as the South Face route, this is Lane Peak's non-technical standard line and the descent for the north-face couloirs. From the Tatoosh Creek drainage it climbs the broad talus/gully separating Lane and Denman Peaks, finishing with a narrow, sustained 3rd-class summit gully that has a few …",
+    "approach": "Start from the Reflection Lake pullout on Stevens Canyon Road (open roughly Memorial Day through mid-October) or, when the road is gated by snow, from the Narada Falls pullout — from Narada Falls a short, steep ~200 ft climb through open timber gets you up to Stevens Canyon Road. From either start, …",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_ridge_8",
+    "name": "East Ridge",
+    "peak": "Pinnacle Peak",
+    "area_id": "wa_pinnacle_peak_tatoosh",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "high_point_ft": 6562,
+    "overview": "A three-pitch alpine ridge climb up Pinnacle Peak's east side, starting from the saddle between The Castle and Pinnacle Peak. The route follows the obvious east ridge over blocky, sometimes loose rock, with climbing up to 5.5 on the crux second pitch, finishing on easy ground to the summit.",
+    "approach": "From the Reflection Lakes trailhead, follow the maintained Pinnacle Saddle Trail 1.3 mi (~1,000-1,050 ft gain) to the Pinnacle-Plummer saddle. From the saddle, continue on the unmaintained boot path east/behind Pinnacle toward Castle Peak to reach the Castle-Pinnacle col; the east ridge of Pinnacle …",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lane_peak_r1",
+    "name": "The Zipper (couloir)",
+    "peak": "Lane Peak",
+    "area_id": "wa_lane_peak",
+    "discipline": "alpine",
+    "grade": "Alpine ice/mixed couloir",
+    "high_point_ft": 6012,
+    "overview": "Lane Peak's north face holds three couloirs; The Zipper, the central and most popular line, is the classic short winter/spring ice-and-snow climb in the Tatoosh Range. It climbs directly up a narrowing gully (about 40 ft wide lower down, pinching to ~20 ft near the top) that steepens from ~40° to ~4…",
+    "approach": "Same trailhead as the Classic Route: park at the Reflection Lake pullout on Stevens Canyon Road when it's open, or at the Narada Falls pullout in winter/spring when the road is snow-gated (a short, steep ~200 ft climb from Narada Falls regains the road). Walk the road about half a mile to the 90-deg…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lane_peak_r2",
+    "name": "The Fly (couloir)",
+    "peak": "Lane Peak",
+    "area_id": "wa_lane_peak",
+    "discipline": "alpine",
+    "grade": "Alpine ice/mixed couloir",
+    "high_point_ft": 6012,
+    "overview": "The Fly is the easiest and broadest of Lane Peak's three north-face couloirs. Instead of the Zipper's narrow center line, it climbs a wide gully trending right to a notch in the west ridge, from which most parties continue onto the standard South Face route rather than descending the way they came.",
+    "approach": "Same as The Zipper: From Reflection Lakes pullout on Stevens Canyon Road (1.5 miles before Snow Lakes Trailhead), hike 2 miles with approximately 2,000 feet elevation gain. Walk briefly along Stevens Canyon Road, then drop into basin toward Tatoosh Creek. Climb up debris triangle and continue to bas…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lane_peak_r3",
+    "name": "Lover's Lane (couloir)",
+    "peak": "Lane Peak",
+    "area_id": "wa_lane_peak",
+    "discipline": "alpine",
+    "grade": null,
+    "high_point_ft": 6012,
+    "overview": "The steepest and narrowest of Lane Peak's three north-face couloirs, climbing sustained 40-60° snow/ice to a notch above and left of the Zipper, then rappelling into the Zipper for the descent/summit finish.",
+    "approach": "Begin at the Narada Falls parking area; travel via snowshoe/ski along the (closed, in winter) Reflection Lakes road, then traverse steep hillsides under Denman Peak toward Lane Peak's base, turning sharply uphill at the first steep avalanche funnel to reach the base of the couloir.",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_open_book_2",
+    "name": "Open Book",
+    "peak": "Unicorn Peak",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "high_point_ft": 6971,
+    "overview": "An easy, low-angle alternative up wide left-leaning cracks to the right of the Classic Route's base, sharing summit anchors with The Roof.",
+    "approach": "Identical trailhead-to-basin approach as the Classic Route and The Roof: from the Snow Lake Trailhead on Stevens Canyon Road, hike the maintained Snow Lake Trail ~1 mile (about 700 ft gain) to Snow Lake, the last water source. Continue past the lake on the fading tread over a wooded rise, then pick …",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_pinnacle_peak_tatoosh_r1",
+    "name": "Pinnacle Saddle / South Gully",
+    "peak": "Pinnacle Peak",
+    "area_id": "wa_pinnacle_peak_tatoosh",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6562,
+    "overview": "Pinnacle Peak (6,562 ft) is the signature summit of the Tatoosh Range and by far the most-climbed peak south of Mount Rainier, thanks to a short, spectacular approach from Reflection Lakes. It is not the range's high point — Unicorn Peak (6,971 ft) holds that distinction — but Pinnacle's central pos…",
+    "approach": "From the Pinnacle Peak Trailhead — a signed, unnumbered NPS trail directly across Stevens Canyon Road from the Reflection Lakes parking pullouts (trailhead elevation ~4,860 ft) — the maintained Pinnacle Saddle Trail climbs at a steady, fairly steep grade through sparse subalpine forest. Around 0.5 m…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_plummer_peak_r1",
+    "name": "Pinnacle Saddle / North Slopes",
+    "peak": "Plummer Peak",
+    "area_id": "wa_plummer_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 6374,
+    "overview": "Plummer Peak (6,374 ft) is the seventh-highest summit in the Tatoosh Range, a compact ridge of eroded Miocene granodiorite (the Tatoosh pluton) overlain by older Fifes Peak/Stevens Ridge volcanics, rising directly south of Paradise in Mount Rainier National Park. It's reached via the Pinnacle Peak T…",
+    "approach": "Park at the Reflection Lakes pullouts on Stevens Canyon Road (1.4 miles east of the Paradise-Longmire Road junction, roughly 1.9 miles from the Paradise turnoff). The signed Pinnacle Peak Trail (no official trail number; it's a Mount Rainier NP maintained trail) leaves from the south side of the roa…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_scramble_route",
+    "name": "Scramble Route",
+    "peak": "Eagle Peak",
+    "area_id": "wa_eagle_peak",
+    "discipline": "scrambling",
+    "grade": "3rd",
+    "high_point_ft": 5958,
+    "overview": "A scenic alpine scramble from Eagle Peak Saddle to the summit featuring Class 3 rock with an exposed section and optional Class 4 bypass. The route combines well-maintained trail approach with high-alpine scrambling on volcanic terrain with prominent Mount Rainier views.",
+    "approach": "The Eagle Peak Trailhead is about 300 feet past the suspension bridge on the east side of the Nisqually River. From there, a maintained trail (about 7.2 miles round trip, ~2,955 ft gain) climbs steeply through forest for roughly two miles to a stream crossing, continues about a mile to a meadow, the…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_southwest_scramble",
+    "name": "Southwest Scramble",
+    "peak": "Pinnacle Peak",
+    "area_id": "wa_pinnacle_peak_tatoosh",
+    "discipline": "scrambling",
+    "grade": "4th",
+    "high_point_ft": 6562,
+    "overview": "A short, popular 4th-class scramble up Pinnacle Peak's southwest side, reached from the end of the maintained Pinnacle Saddle Trail. The route follows scree and loose rock roughly along/below the ridge to an obvious chute just east of the peak's westernmost rock prominence, then climbs the chute on …",
+    "approach": "From the signed Pinnacle Saddle Trailhead on Stevens Canyon Road (across from the large Reflection Lakes parking area, ~35 spaces), follow the maintained trail south. It switchbacks up through subalpine forest and meadow, passes beneath cliffs around 0.9 mi, and gains about 1,000-1,050 ft over 1.3 m…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_roof",
+    "name": "The Roof",
+    "peak": "Unicorn Peak",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 6971,
+    "overview": "A steeper alternative just left of the Classic Route: a gully/chimney under a roof, stepped around to a ledge and the summit.",
+    "approach": "Same trailhead-to-basin approach as the other summit-block lines: from the Snow Lake Trailhead on Stevens Canyon Road, take the maintained Snow Lake Trail ~1 mile (~700 ft gain) to Snow Lake for the last reliable water. Past the lake the tread fades over a wooded hump; contour up and right into the …",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   },
+   {
+    "id": "wa_unicorn_peak_r1",
+    "name": "Snow Lake / Unicorn Creek approach",
+    "peak": "Unicorn Peak",
+    "area_id": "wa_unicorn_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4 summit block",
+    "high_point_ft": 6971,
+    "overview": "Unicorn Peak (6,971 ft) is the highest summit in the Tatoosh Range, a jagged sub-range of the Cascades immediately south of Mount Rainier and entirely within Mount Rainier National Park. Its distinctive rock horn — said to resemble a unicorn's head — was named by early park officials and formally ad…",
+    "approach": "Start at the Snow Lake Trailhead on Stevens Canyon Road, about 1.5 miles east of Reflection Lakes (roughly 20 minutes past the Stevens Canyon entrance station). The lot holds only ~25 cars and fills by 8am on summer weekends. Follow the maintained Snow Lake Trail as it climbs through subalpine fores…",
+    "camps": [
+     {
+      "name": "Snow Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4685,
+      "notes": "The only established camp close enough to matter for Unicorn Peak, sitting in the cirque directly under it, and the one Tatoosh objective where an overnight is genuinely worth the trouble. TWO SITES IS A HARD CEILING, so…"
+     },
+     {
+      "name": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Continuing past Snow Lake and sleeping higher in the basin puts you under the summit blocks of Unicorn and The Castle and dodges the two-site bottleneck at the lake. It costs you the toilet and the guaranteed water, and …"
+     },
+     {
+      "name": "Reflection Lakes area winter snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4858,
+      "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper a…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late…"
+     },
+     {
+      "name": "Paradise designated winter group camping area",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Relevant mainly to clubs and courses running Tatoosh objectives as a weekend rather than to a two- or three-person rope team. It is the plowed end of the road, so it is the one winter overnight you can reach without a ro…"
+     },
+     {
+      "name": "Ohanapecosh Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1914,
+      "notes": "The campground on the southeast corner of the park, reached from the Stevens Canyon Entrance, and it is a long drive up the canyon to the Tatoosh trailheads rather than a short one — a fallback, not a base. It has been c…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "teanaway",
+  "routes": [
+   {
+    "id": "wa_earl_peak_southwest_ridge",
+    "name": "Southwest Ridge",
+    "peak": "Earl Peak",
+    "area_id": "wa_earl_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 7036,
+    "overview": "On the southeastern edge of the Stuart Range above the Beverly-Turnpike country, Earl Peak is a friendly nontechnical summit offering broad views toward Mount Stuart. The southwest ridge is an enjoyable hike-and-scramble outing popular as a conditioner and viewpoint.",
+    "approach": "From the Beverly Creek Trailhead (end of FR-9737-112, at ~3,600 ft), start on the Beverly Turnpike Trail #1391. After a short, mellow half mile paralleling Beverly Creek, bear right at the signed junction onto the Bean Creek Trail (#1391A), leaving the Turnpike Trail behind. The Bean Creek Trail cli…",
+    "camps": [
+     {
+      "name": "Bean Creek Basin meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the overnight base for Earl Peak, and it is a contingency rather than the plan — Earl is a straightforward day from the car for most parties, and the reason to sleep here is a late start, a slow party, or a wish …"
+     },
+     {
+      "name": "Beverly Turnpike camps at the Fourth Creek junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The best all-round camp on the Beverly Creek side, ringed by the peaks it serves — Iron Peak stands to the southwest, Teanaway Peak to the northwest, and the Bean and Earl ridges close it in to the southeast. It sits two…"
+     },
+     {
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pu…"
+     },
+     {
+      "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune P…"
+     },
+     {
+      "name": "Iron Peak saddle dry camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile …"
+     },
+     {
+      "name": "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The low-valley drive-in option, on the paved and lower gravel stretches of the Teanaway River Road below the national forest boundary, and the practical answer for a party arriving late from the west side the night befor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_esmeralda_peaks_scramble",
+    "name": "Standard Scramble (Esmeralda Basin)",
+    "peak": "Esmeralda Peaks",
+    "area_id": "wa_esmeralda_peaks",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 6765,
+    "overview": "Esmeralda Peaks form a rugged, multi-summit ridge at the south end of the Teanaway Range in the Wenatchee Mountains, straddling the boundary of the Alpine Lakes Wilderness about 2.5 miles south of Ingalls Peak. The massif has an east and a west summit roughly 10 vertical feet apart, with older topos…",
+    "approach": "Start at the Esmeralda Basin / Ingalls Lake Trailhead (aka Esmeralda Trailhead, elev. ~4,300 ft) at the end of FR-9737, and take Esmeralda Basin Trail #1394. At about 0.4 mi you'll hit a signed junction with the Ingalls Way / Longs Pass Trail (#1390); stay straight/left to remain on the Esmeralda Ba…",
+    "camps": [
+     {
+      "name": "Bean Creek Basin meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the overnight base for Earl Peak, and it is a contingency rather than the plan — Earl is a straightforward day from the car for most parties, and the reason to sleep here is a late start, a slow party, or a wish …"
+     },
+     {
+      "name": "Beverly Turnpike camps at the Fourth Creek junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The best all-round camp on the Beverly Creek side, ringed by the peaks it serves — Iron Peak stands to the southwest, Teanaway Peak to the northwest, and the Bean and Earl ridges close it in to the southeast. It sits two…"
+     },
+     {
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pu…"
+     },
+     {
+      "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune P…"
+     },
+     {
+      "name": "Iron Peak saddle dry camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile …"
+     },
+     {
+      "name": "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The low-valley drive-in option, on the paved and lower gravel stretches of the Teanaway River Road below the national forest boundary, and the practical answer for a party arriving late from the west side the night befor…"
+     },
+     {
+      "name": "Esmeralda Basin camps",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Established campsites in open meadow/basin below the headwall, fed by small side streams cascading off the surrounding slopes."
+     }
+    ]
+   },
+   {
+    "id": "wa_fortune_peak_east_slope",
+    "name": "East Slope Route (Headlight Basin)",
+    "peak": "Fortune Peak",
+    "area_id": "wa_fortune_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7382,
+    "overview": "An alternate line up Fortune Peak's east side from Headlight Basin below Ingalls Pass; ascends moderate slopes (snow early season, talus/scree later) directly to the summit ridge.",
+    "approach": "From the Esmeralda Trailhead, hike the Esmeralda Basin Trail and Ingalls Way Trail up to Ingalls Pass (~6,500 ft), then traverse into Headlight Basin below the Ingalls/Fortune ridge.",
+    "camps": [
+     {
+      "name": "Bean Creek Basin meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the overnight base for Earl Peak, and it is a contingency rather than the plan — Earl is a straightforward day from the car for most parties, and the reason to sleep here is a late start, a slow party, or a wish …"
+     },
+     {
+      "name": "Beverly Turnpike camps at the Fourth Creek junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The best all-round camp on the Beverly Creek side, ringed by the peaks it serves — Iron Peak stands to the southwest, Teanaway Peak to the northwest, and the Bean and Earl ridges close it in to the southeast. It sits two…"
+     },
+     {
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pu…"
+     },
+     {
+      "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune P…"
+     },
+     {
+      "name": "Iron Peak saddle dry camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile …"
+     },
+     {
+      "name": "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The low-valley drive-in option, on the paved and lower gravel stretches of the Teanaway River Road below the national forest boundary, and the practical answer for a party arriving late from the west side the night befor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_fortune_peak_standard_route",
+    "name": "Standard Route (Esmeralda Basin – Lake Ann Pass)",
+    "peak": "Fortune Peak",
+    "area_id": "wa_fortune_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7382,
+    "overview": "A straightforward off-trail scramble up Fortune Peak's ridge from the pass above Lake Ann, reached via the Esmeralda Basin and Ingalls Way trails; considered the peak's easiest and most commonly climbed line.",
+    "approach": "From the Esmeralda Trailhead (#1394, 4,269 ft), hike the Esmeralda Basin Trail (shared with the Lake Ingalls/Ingalls Way trail for the first 0.4 mi), then continue on the Ingalls Way trail toward Lake Ann. At the trail junction below the pass, head up toward Lake Ann and the saddle above it, then le…",
+    "camps": [
+     {
+      "name": "Bean Creek Basin meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the overnight base for Earl Peak, and it is a contingency rather than the plan — Earl is a straightforward day from the car for most parties, and the reason to sleep here is a late start, a slow party, or a wish …"
+     },
+     {
+      "name": "Beverly Turnpike camps at the Fourth Creek junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The best all-round camp on the Beverly Creek side, ringed by the peaks it serves — Iron Peak stands to the southwest, Teanaway Peak to the northwest, and the Bean and Earl ridges close it in to the southeast. It sits two…"
+     },
+     {
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pu…"
+     },
+     {
+      "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune P…"
+     },
+     {
+      "name": "Iron Peak saddle dry camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile …"
+     },
+     {
+      "name": "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The low-valley drive-in option, on the paved and lower gravel stretches of the Teanaway River Road below the national forest boundary, and the practical answer for a party arriving late from the west side the night befor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_iron_peak_teanaway_scramble",
+    "name": "Standard Scramble",
+    "peak": "Iron Peak",
+    "area_id": "wa_iron_peak_teanaway",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 6510,
+    "overview": "Iron Peak (6,510 ft) is one of the more approachable summits on the Teanaway Ridge in the eastern Wenatchee Mountains, reached via Trail #1399 and a short Class 2 scramble. The trail climbs through mixed forest and the serpentine/peridotite terrain of the Eldorado Research Natural Area to a broad sa…",
+    "approach": "Start from the De Roux Creek Campground trailhead (~3,800 ft) at the end of Forest Road 9737 in the North Fork Teanaway drainage. Pick up the Iron Peak Trail, USFS Trail No. 1399, which climbs immediately and steeply alongside an unnamed creek on climbers-left — this creek is audible for roughly the…",
+    "camps": [
+     {
+      "name": "Bean Creek Basin meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the overnight base for Earl Peak, and it is a contingency rather than the plan — Earl is a straightforward day from the car for most parties, and the reason to sleep here is a late start, a slow party, or a wish …"
+     },
+     {
+      "name": "Beverly Turnpike camps at the Fourth Creek junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The best all-round camp on the Beverly Creek side, ringed by the peaks it serves — Iron Peak stands to the southwest, Teanaway Peak to the northwest, and the Bean and Earl ridges close it in to the southeast. It sits two…"
+     },
+     {
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pu…"
+     },
+     {
+      "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune P…"
+     },
+     {
+      "name": "Iron Peak saddle dry camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile …"
+     },
+     {
+      "name": "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The low-valley drive-in option, on the paved and lower gravel stretches of the Teanaway River Road below the national forest boundary, and the practical answer for a party arriving late from the west side the night befor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_navaho_peak_south_slopes",
+    "name": "South Slopes",
+    "peak": "Navaho Peak",
+    "area_id": "wa_navaho_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 7223,
+    "overview": "Navaho Peak is the fourth-highest summit in the Teanaway high country and sits on the boundary of the Alpine Lakes Wilderness, on the Kittitas/Chelan county line about 2 miles northeast of Earl Peak and 1.3 miles west of Three Brothers. The South Slopes/Southwest Ridge line is the standard non-techn…",
+    "approach": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of North Fork Teanaway River Road (FR 9737) past 29 Pines Campground — a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required). From the trailhead…",
+    "camps": [
+     {
+      "name": "Bean Creek Basin meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the overnight base for Earl Peak, and it is a contingency rather than the plan — Earl is a straightforward day from the car for most parties, and the reason to sleep here is a late start, a slow party, or a wish …"
+     },
+     {
+      "name": "Beverly Turnpike camps at the Fourth Creek junction",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The best all-round camp on the Beverly Creek side, ringed by the peaks it serves — Iron Peak stands to the southwest, Teanaway Peak to the northwest, and the Bean and Earl ridges close it in to the southeast. It sits two…"
+     },
+     {
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pu…"
+     },
+     {
+      "name": "Lake Ann bench and the upper Esmeralda Basin camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The Esmeralda-side camp that is not Headlight Basin, and the one that actually serves the two peaks at the head of this valley. Esmeralda Peaks are scrambled directly from the basin on their standard route, and Fortune P…"
+     },
+     {
+      "name": "Iron Peak saddle dry camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile …"
+     },
+     {
+      "name": "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The low-valley drive-in option, on the paved and lower gravel stretches of the Teanaway River Road below the national forest boundary, and the practical answer for a party arriving late from the west side the night befor…"
+     },
+     {
+      "name": "Upper meadow camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "Continue on Trail #1359 above the junction; the trail opens out into a large, marshy subalpine meadow with a feeder stream — another water source, and the usual…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "thunder-creek",
+  "routes": [
+   {
+    "id": "wa_booker_mountain_northeast_face",
+    "name": "Northeast Face",
+    "peak": "Booker Mountain",
+    "area_id": "wa_booker_mountain",
+    "discipline": "mountaineering",
+    "grade": "5.8 (historic NCCS 'F8' free rating; modern equivalent approximate)",
+    "high_point_ft": 8284,
+    "overview": "A rarely-repeated alpine rock route up the prominent central rib of Booker's 3,000+ foot Northeast Face, one of the steepest walls in Washington, first climbed via an icefall approach and a crumbly mid-face rock band to a notch just below the summit.",
+    "approach": "Approach via a multi-day backpack toward Park Creek Pass/the head of Park Creek (from the Thunder Creek Trail out of Colonial Creek Campground, or as part of a Buckner-area traverse), then camp near the base of the face for an alpine start.",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_booker_mountain_northwest_route",
+    "name": "Northwest Route",
+    "peak": "Booker Mountain",
+    "area_id": "wa_booker_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8284,
+    "overview": "An alternate Class 3 scramble reached from Park Creek Pass via the Booker-Buckner col, on the mountain's northwest side; used mainly by parties already in the Park Creek/Buckner area on a multi-day traverse rather than as a dedicated approach.",
+    "approach": "Reached via a multi-day backpack up the Thunder Creek Trail from Colonial Creek Campground to Park Creek Pass (roughly 40 miles round trip with on the order of 7,000 ft of cumulative gain including the bonus climb to Junction Camp), or as part of a Ptarmigan-style traverse linking Cascade Pass/Buckn…",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_booker_mountain_south_ridge",
+    "name": "South Ridge",
+    "peak": "Booker Mountain",
+    "area_id": "wa_booker_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8284,
+    "overview": "The standard route: hike the Cascade Pass/Sahale Arm trail, drop cross-country into Horseshoe Basin, traverse east below Mount Buckner, then climb the south-trending ridge/gully west of the summit to the top — a long Class 3 scramble with one short, exposed 3rd-class step.",
+    "approach": "Drive the Cascade River Road (paved then gravel) 23.1 miles from Marblemount to the Cascade Pass Trailhead (~3,600 ft). Hike the Cascade Pass Trail 3.7 miles/1,700 ft gain to Cascade Pass (5,392 ft), then continue up the Sahale Arm Trail toward Sahale Glacier/Sahale Camp. Leave the maintained trail …",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_logan_fremont_glacier",
+    "name": "Fremont Glacier",
+    "peak": "Mount Logan",
+    "area_id": "wa_mount_logan",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 9087,
+    "overview": "A massive multi-summited peak above Thunder Creek and Park Creek Pass, Mount Logan is one of the high Bulger summits of the North Cascades. The Fremont Glacier route is the standard line, climbing the glacier on the southwest side to a final scramble onto the true summit.",
+    "approach": "Start at Colonial Creek Campground trailhead on SR 20 mile 130 (elevation 1,060 ft). Follow Thunder Creek Trail north for approximately 16-18 miles to Thunder Basin camp around 6,000 ft. From Thunder Basin, cross meadows and begin ascending. Traverse gradually northward around a broad ridge through …",
+    "camps": [
+     {
+      "name": "Meadows north of Park Creek Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Broad sandy meadows a short way north of Park Creek Pass, which itself sits near 6,100 ft. This is where the long valley walk finally ends and the climbing terrain starts; parties either stop here or push the last 500 ft…"
+     },
+     {
+      "name": "Moraine camp above the pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Roughly 6,350 ft, gained by turning east from the meadows and climbing about 500 ft into the moraine of the glacier remnant. Flat, sandy and better protected than the open meadows, and the usual high camp for the Fremont…"
+     },
+     {
+      "name": "Fremont Glacier saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The highest option, on outcrops at the glacier's edge around 8,000 ft, about two miles past Park Creek Pass. It makes for the shortest summit day but commits you to a fully exposed alpine camp, and getting there is a lon…"
+     },
+     {
+      "name": "Valley camps on the walk in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The approach is long enough that most parties sleep at least one night in the forest before reaching climbing terrain — Thunder Basin in the upper Thunder Creek drainage from the Colonial Creek side, or Buckner Camp on P…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Established hiker/stock camp about 10 miles in; cross a log bridge to the creekside hiker camp with views of Boston Glacier."
+     },
+     {
+      "name": "Point 8248 / Fremont Glacier saddle camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 8248,
+      "notes": "Rock-outcrop bivy sites at the southern margin of the Fremont Glacier with nearby running water; standard high camp for the summit push."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_logan_r1",
+    "name": "Banded Glacier",
+    "peak": "Mount Logan",
+    "area_id": "wa_mount_logan",
+    "discipline": "mountaineering",
+    "grade": "Grade II-III, glacier + Class 3-4 summit",
+    "high_point_ft": 9087,
+    "overview": "Mount Logan is a remote North Cascades summit. The Banded Glacier route is the standard line, ascending the glacier on the north side to a Class 3-4 scramble to the summit.",
+    "approach": "Follow Thunder Creek Trail from Colonial Creek Campground (SR-20 MP130) about 9 miles to the Fisher Creek Trail junction, then Fisher Creek Trail about 3 miles to a lake camp near 5,160 ft below the Banded Glacier.",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_logan_r2",
+    "name": "Douglas Glacier",
+    "peak": "Mount Logan",
+    "area_id": "wa_mount_logan",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 4",
+    "high_point_ft": 9087,
+    "overview": "The Douglas Glacier route climbs Mount Logan from the southeast and is rated Grade II, Class 4. It's a well-regarded, reasonably-paced 3-day objective for a fit team, approached via the Easy Pass Trail and a cross-country descent into Fisher Basin.",
+    "approach": "Start at Easy Pass Trailhead at Highway 20 mile 151 (elevation 3,700 ft). Hike 3.5 miles gaining 2,800 feet to Easy Pass (6,500 ft). Descend into Fisher Basin via steep scenic trail through alpine meadows and forest (1.5 miles). Continue to Fisher Creek valley floor and established campsites. From c…",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_neve_glacier_west_ridge",
+    "name": "Neve Glacier / West Ridge",
+    "peak": "Snowfield Peak",
+    "area_id": "wa_snowfield_peak",
+    "discipline": "mountaineering",
+    "grade": "4th",
+    "high_point_ft": 8351,
+    "overview": "The West Ridge is the line taken by the 1931 first ascent party and remains the natural finish most climbers use off the Neve Glacier: gain the crest just west of the summit and scramble class 3-4 on gneiss to the top. It isn't a distinct technical line so much as the standard glacier route's summit…",
+    "approach": "From the Pyramid Lake Trailhead (~1,150 ft) on SR-20 (milepost 126.8, just east of Gorge Lake, about 7 miles east of Newhalem), follow the maintained Pyramid Lake Trail 2.1 miles and ~1,500 ft of gain to Pyramid Lake. Camping is prohibited at the lake, so continue on the rougher climbers' path along…",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_snowfield_peak_neve_glacier",
+    "name": "Neve Glacier / Standard Route",
+    "peak": "Snowfield Peak",
+    "area_id": "wa_snowfield_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8351,
+    "overview": "Snowfield Peak (8,351 ft) is the high point of the Colonial/Neve group in the North Cascades National Park core, about 5 miles ESE of Newhalem. Its defining feature is the roughly 750-acre Neve Glacier draping its north and northwest flanks — one of the larger non-volcanic glaciers in the Washington…",
+    "approach": "From the Pyramid Lake Trailhead (~1,150-1,200 ft, a signed gravel pullout on the north side of SR-20 near milepost 126.8, about 21 miles east of Marblemount just past the Diablo turnoff), follow the well-maintained Pyramid Lake Trail as it climbs steadily through old-growth forest. A rock-hop creek …",
+    "camps": [
+     {
+      "name": "Colonial Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Reached by the steep, narrow climbers' path above Pyramid Lake; you break out of trees near 5,600 ft and the basin opens below Colonial and Pyramid. It is a spectacular spot and a genuinely windy one — parties have neede…"
+     },
+     {
+      "name": "Colonial-Neve col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp, on the col between the Colonial and Neve glaciers, and the one most parties push to if they have the legs. Dry ground, better sheltered than the basin below, and it puts the Neve Glacier and the west ridge…"
+     },
+     {
+      "name": "Lower camp below the basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The bail-out option around 5,400 ft, just below where the climbers' path leaves the trees, used by parties who run out of daylight or energy on the steep section above Pyramid Lake. It leaves a long second day to the sum…"
+     },
+     {
+      "name": "Colonial Glacier moraine camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "Short of Pyramid Peak itself, do not climb it. Drop slightly off the ridge and traverse across scree and boulders, often on lingering snow, to the terminal mora…"
+     }
+    ]
+   },
+   {
+    "id": "wa_storm_king_north_face",
+    "name": "North Face",
+    "peak": "Storm King",
+    "area_id": "wa_storm_king",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8565,
+    "overview": "A rarely repeated technical line up Storm King's north face, first climbed in 1978 by Dick Emerson and Walt Grove. Unlike the walk-up-style Southwest Route, this is a genuine technical alpine rock climb, but little is known about its grade, pitch count, and exact line.",
+    "approach": "East/Northeast from High Bridge via Park Creek drainage",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_storm_king_southwest_scramble",
+    "name": "Southwest Scramble",
+    "peak": "Storm King",
+    "area_id": "wa_storm_king",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 4",
+    "high_point_ft": 8565,
+    "overview": "Storm King is a rugged, remote satellite peak just southwest of Mount Goode in North Cascades National Park's Stephen Mather Wilderness, and one of Washington's 'Bulger List' 100 highest summits. It has no easy access from any direction — approaches run roughly 13 to 20+ miles one-way via Thunder Cr…",
+    "approach": "Storm King sits at the head of Thunder Creek in the North Cascades and is one of the range's most remote 'Bulger/Top 100' summits — a three-day car-to-car trip is the norm, and three separate trailhead approaches converge on the same high basin below Mount Goode's south side. The most common line is…",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     },
+     {
+      "name": "Rib camp below Storm King/Goode basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7450,
+      "notes": "Leave the maintained trail at the pass and traverse cross-country west/southwest across snow and talus, favouring climber's left, toward the basin under Storm K…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_needle_neve_glacier",
+    "name": "Neve Glacier Approach / Standard",
+    "peak": "The Needle",
+    "area_id": "wa_the_needle",
+    "discipline": "mountaineering",
+    "grade": "Class 3 glacier + Class 4 summit",
+    "high_point_ft": 8079,
+    "overview": "A minor rock horn on the far western rim of the Neve Glacier icecap in North Cascades National Park, about a mile northwest of Snowfield Peak (USGS maps mislabel it immediately west of Snowfield). First climbed August 1, 1931 by William A. Degenhardt and Herbert V. Strandberg — the same party that f…",
+    "approach": "From the Pyramid Lake Trailhead (an unmarked gravel pullout on the north shoulder of WA-20, about 21 mi east of Marblemount and just west of Diablo Dam), follow the maintained Pyramid Lake Trail 2.1 mi and roughly 1,500 ft to Pyramid Lake. Pick up the unmaintained climbers' path around the right (ea…",
+    "camps": [
+     {
+      "name": "Neve Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1350,
+      "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep her…"
+     },
+     {
+      "name": "Junction Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading t…"
+     },
+     {
+      "name": "Skagit Queen Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3093,
+      "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit …"
+     },
+     {
+      "name": "Thunder Basin Hiker Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5108,
+      "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the …"
+     },
+     {
+      "name": "Fremont Glacier moraine high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6350,
+      "notes": "Reached by leaving the trail in the flat sandy meadows a short distance north of Park Creek Pass and climbing several hundred feet into old moraine, this is the high camp for the Fremont Glacier side of Mount Logan and t…"
+     },
+     {
+      "name": "Five Mile Camp, Park Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3921,
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs thr…"
+     },
+     {
+      "name": "Colonial Glacier moraine-lake camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "Flat bivy area on rock/snow beside the glacier's expanding moraine-dammed lake (formed mid-1990s) with running meltwater; standard base camp for the Snowfield/C…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "tiffany-mountain",
+  "routes": [
+   {
+    "id": "wa_north_tower_ridge_route",
+    "name": "North Tower Ridge Route",
+    "peak": "North Face Tiffany Mountain",
+    "area_id": "wa_north_face_tiffany_mountain",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 8245,
+    "overview": "An excellent six-pitch alpine climb on the North Tower ascending mostly quality granite rock on the right side of Tiffany's north face, with crack climbing, chimneys, and ridge scrambling.",
+    "approach": "From Tiffany Springs Campground (6,760 ft), hike trail #373 east past Tiffany Lake to Honeymoon Pass (7,150 ft, ~45 minutes). From the pass, either traverse south on the grassy east slope to the small cirque at the base of the North Face (7,360 ft) and climb the boulder field to the base of the clim…",
+    "camps": [
+     {
+      "name": "Tiffany Springs Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6760,
+      "notes": "This is the base for the north face and the trailhead in one, which is unusual and is what makes the face approachable at all: the walk to the bottom of the routes is under an hour, so a party can sleep at the car and st…"
+     },
+     {
+      "name": "Tiffany Lake and Little Tiffany Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Under a mile from the campground and directly on the approach, this is the camp for a party who would rather sleep on water than at a car, or who has arrived to find the campground full or closed. It is the last certain …"
+     },
+     {
+      "name": "Honeymoon Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7150,
+      "notes": "The pass is where the trail crosses onto the north side and the face comes into view, and it is the tactical camp rather than the comfortable one. Its argument is a dawn start: from here the base of the routes is a short…"
+     },
+     {
+      "name": "The talus and benches below the north face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The routes start here and, on a face six hundred and fifty feet high forty-five minutes from a campground, essentially nobody sleeps here. It is written down because a party reading a list of camps should not be left to …"
+     }
+    ]
+   },
+   {
+    "id": "wa_tower_arete",
+    "name": "Tower Arete",
+    "peak": "North Face Tiffany Mountain",
+    "area_id": "wa_north_face_tiffany_mountain",
+    "discipline": "alpine",
+    "grade": "4th",
+    "high_point_ft": 8245,
+    "overview": "A five-pitch alpine ridge route on the north face that follows the same ridge as the North Tower Ridge Route while avoiding its steeper, more technical pitches. Features excellent granite arete climbing with great exposure and views.",
+    "approach": "Drive to Tiffany Springs Campground (elev. ~6,760 ft) via Forest Road 39, accessed either from Conconully (south, via FR-37) or from Winthrop (north, via East Chewuch Road and FR-37) — both are long gravel-road drives of an hour or more. From the campground, hike the Tiffany Lake Trail #373 east pas…",
+    "camps": [
+     {
+      "name": "Tiffany Springs Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6760,
+      "notes": "This is the base for the north face and the trailhead in one, which is unusual and is what makes the face approachable at all: the walk to the bottom of the routes is under an hour, so a party can sleep at the car and st…"
+     },
+     {
+      "name": "Tiffany Lake and Little Tiffany Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Under a mile from the campground and directly on the approach, this is the camp for a party who would rather sleep on water than at a car, or who has arrived to find the campground full or closed. It is the last certain …"
+     },
+     {
+      "name": "Honeymoon Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7150,
+      "notes": "The pass is where the trail crosses onto the north side and the face comes into view, and it is the tactical camp rather than the comfortable one. Its argument is a dawn start: from here the base of the routes is a short…"
+     },
+     {
+      "name": "The talus and benches below the north face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The routes start here and, on a face six hundred and fifty feet high forty-five minutes from a campground, essentially nobody sleeps here. It is written down because a party reading a list of camps should not be left to …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "twin-lakes-larrabee",
+  "routes": [
+   {
+    "id": "wa_american_border_peak_northeast_face",
+    "name": "Northeast Face",
+    "peak": "American Border Peak",
+    "area_id": "wa_american_border_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7998,
+    "overview": "A more remote alternative to the standard route, gained from the glacier below the peak's northeast face and climbing mixed snow and rock — including a large, ~45-degree snow gully — via mostly class 3 with occasional class 4 rock to the summit.",
+    "approach": "",
+    "camps": [
+     {
+      "name": "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is. The first four and a half miles to the Tomyhoi Lake and Yellow Aster Butte trailhead are rough gra…"
+     },
+     {
+      "name": "Twin Lakes basin road-end camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water.…"
+     },
+     {
+      "name": "Winchester Mountain Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6521,
+      "notes": "A 1935 lookout on the 6,521 ft summit, kept standing by volunteers from a local hiking club rather than by the agency, and genuinely open for anyone to sleep in on a first-come basis. It is 1.7 miles and about 1,300 ft a…"
+     },
+     {
+      "name": "High Pass camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of…"
+     },
+     {
+      "name": "Gargett Mine basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west int…"
+     },
+     {
+      "name": "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "The standard camp for the southeast ridge of Tomyhoi Peak, and the reason Tomyhoi is a comfortable overnight rather than a very long day. From the Yellow Aster Butte trailhead at about 3,700 ft the trail climbs towards G…"
+     },
+     {
+      "name": "Tomyhoi Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3727,
+      "notes": "Worth knowing about mostly so you do not plan a climb around it. Despite the name, Tomyhoi Lake is not the camp for Tomyhoi Peak: the trail from the Yellow Aster Butte trailhead climbs to Gold Run Pass and then loses rou…"
+     }
+    ]
+   },
+   {
+    "id": "wa_american_border_peak_southeast_face",
+    "name": "Southeast Face / South Ridge",
+    "peak": "American Border Peak",
+    "area_id": "wa_american_border_peak",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.4",
+    "high_point_ft": 7998,
+    "overview": "A steep, prominent peak rising directly on the international boundary in the rugged Border Peaks group, American Border Peak is the higher and more frequently climbed of the namesake pair. The standard route works up the southeast side and west ridge, blending scrambling with short rock steps on not…",
+    "approach": "Start at the Twin Lakes trailhead (~5,200 ft), the rough, rutted end of Twin Lakes Road (many parties park short and walk the final rutted miles, as the road note indicates). From the parking area pick up the signed High Pass Trail; at about a quarter mile it splits from the short spur up Winchester…",
+    "camps": [
+     {
+      "name": "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is. The first four and a half miles to the Tomyhoi Lake and Yellow Aster Butte trailhead are rough gra…"
+     },
+     {
+      "name": "Twin Lakes basin road-end camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water.…"
+     },
+     {
+      "name": "Winchester Mountain Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6521,
+      "notes": "A 1935 lookout on the 6,521 ft summit, kept standing by volunteers from a local hiking club rather than by the agency, and genuinely open for anyone to sleep in on a first-come basis. It is 1.7 miles and about 1,300 ft a…"
+     },
+     {
+      "name": "High Pass camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of…"
+     },
+     {
+      "name": "Gargett Mine basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west int…"
+     },
+     {
+      "name": "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "The standard camp for the southeast ridge of Tomyhoi Peak, and the reason Tomyhoi is a comfortable overnight rather than a very long day. From the Yellow Aster Butte trailhead at about 3,700 ft the trail climbs towards G…"
+     },
+     {
+      "name": "Tomyhoi Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3727,
+      "notes": "Worth knowing about mostly so you do not plan a climb around it. Despite the name, Tomyhoi Lake is not the camp for Tomyhoi Peak: the trail from the Yellow Aster Butte trailhead climbs to Gold Run Pass and then loses rou…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_larrabee_south_ridge",
+    "name": "South Ridge",
+    "peak": "Mount Larrabee",
+    "area_id": "wa_mount_larrabee",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 7865,
+    "overview": "A striking reddish peak in the Border Peaks group of the Mount Baker Wilderness, 1.4 miles south of the Canada–US border and immediately southeast of taller American Border Peak. The rust color comes from oxidized iron in the peak's phyllite and greenstone rock. First climbed September 11, 1908 by J…",
+    "approach": "Park at the Twin Lakes Trailhead at the end of FS-3065 (the last 2 miles are rough, high-clearance terrain — many parties park lower and walk the road). From the trailhead, follow the Winchester Mountain Trail (#685) briefly; at about 0.5 mile a signed junction splits left to Winchester Lookout and …",
+    "camps": [
+     {
+      "name": "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is. The first four and a half miles to the Tomyhoi Lake and Yellow Aster Butte trailhead are rough gra…"
+     },
+     {
+      "name": "Twin Lakes basin road-end camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water.…"
+     },
+     {
+      "name": "Winchester Mountain Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6521,
+      "notes": "A 1935 lookout on the 6,521 ft summit, kept standing by volunteers from a local hiking club rather than by the agency, and genuinely open for anyone to sleep in on a first-come basis. It is 1.7 miles and about 1,300 ft a…"
+     },
+     {
+      "name": "High Pass camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of…"
+     },
+     {
+      "name": "Gargett Mine basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west int…"
+     },
+     {
+      "name": "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "The standard camp for the southeast ridge of Tomyhoi Peak, and the reason Tomyhoi is a comfortable overnight rather than a very long day. From the Yellow Aster Butte trailhead at about 3,700 ft the trail climbs towards G…"
+     },
+     {
+      "name": "Tomyhoi Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3727,
+      "notes": "Worth knowing about mostly so you do not plan a climb around it. Despite the name, Tomyhoi Lake is not the camp for Tomyhoi Peak: the trail from the Yellow Aster Butte trailhead climbs to Gold Run Pass and then loses rou…"
+     },
+     {
+      "name": "Twin Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5180,
+      "notes": "Continue up the rough upper road about two miles and roughly 1,500 feet of gain, on foot or in a high-clearance vehicle, to the lake basin between Winchester an…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_pleiades_scramble",
+    "name": "Glacier/Scramble Route",
+    "peak": "The Pleiades",
+    "area_id": "wa_the_pleiades",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 7371,
+    "overview": "The Pleiades are four jagged, loose-rock spires strung along the east ridge extension of Mount Larrabee, high above Twin Lakes near the Canadian border in the Mount Baker Wilderness — not on Mount Baker itself. Reached via the High Pass Trail out of Twin Lakes, the peaks (numbered 1 through 4, west …",
+    "approach": "From Glacier, WA, drive east about 12 miles on SR 542 (Mt. Baker Highway) to the WSDOT Shuksan maintenance facility and turn onto Twin Lakes Road (FS-3065). The first 4.5 miles to the Yellow Aster Butte/Tomyhoi Lake trailhead are passenger-car friendly; beyond that the road narrows, gets rocky, and …",
+    "camps": [
+     {
+      "name": "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is. The first four and a half miles to the Tomyhoi Lake and Yellow Aster Butte trailhead are rough gra…"
+     },
+     {
+      "name": "Twin Lakes basin road-end camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water.…"
+     },
+     {
+      "name": "Winchester Mountain Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6521,
+      "notes": "A 1935 lookout on the 6,521 ft summit, kept standing by volunteers from a local hiking club rather than by the agency, and genuinely open for anyone to sleep in on a first-come basis. It is 1.7 miles and about 1,300 ft a…"
+     },
+     {
+      "name": "High Pass camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of…"
+     },
+     {
+      "name": "Gargett Mine basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west int…"
+     },
+     {
+      "name": "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "The standard camp for the southeast ridge of Tomyhoi Peak, and the reason Tomyhoi is a comfortable overnight rather than a very long day. From the Yellow Aster Butte trailhead at about 3,700 ft the trail climbs towards G…"
+     },
+     {
+      "name": "Tomyhoi Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3727,
+      "notes": "Worth knowing about mostly so you do not plan a climb around it. Despite the name, Tomyhoi Lake is not the camp for Tomyhoi Peak: the trail from the Yellow Aster Butte trailhead climbs to Gold Run Pass and then loses rou…"
+     },
+     {
+      "name": "Isthmus between the Twin Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5180,
+      "notes": "Established primitive camp on the strip of ground between the two lakes; reliable water from both lakes but treat before drinking (basin often holds snow into J…"
+     }
+    ]
+   },
+   {
+    "id": "wa_tomyhoi_peak_southeast_ridge",
+    "name": "Southeast Ridge",
+    "peak": "Tomyhoi Peak",
+    "area_id": "wa_tomyhoi_peak",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 7439,
+    "overview": "Tomyhoi Peak (7,439 ft) is the high point of a long summit ridge in the Skagit Range of the North Cascades, rising immediately south of the Canada–U.S. border within the Mount Baker Wilderness. Its summit sits over 4,400 ft above Damfino Creek in barely a mile — some of the sharpest local relief in …",
+    "approach": "From the Yellow Aster Butte/Tomyhoi Lake trailhead (also called the \"Keep Kool\" trailhead, ~3,600-3,700 ft) on Twin Lakes Road (FR 3065), start on the well-maintained Yellow Aster Butte Trail (Trail #686). The trail climbs through forest switchbacks and crosses a couple of small seasonal creeks/seep…",
+    "camps": [
+     {
+      "name": "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is. The first four and a half miles to the Tomyhoi Lake and Yellow Aster Butte trailhead are rough gra…"
+     },
+     {
+      "name": "Twin Lakes basin road-end camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water.…"
+     },
+     {
+      "name": "Winchester Mountain Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6521,
+      "notes": "A 1935 lookout on the 6,521 ft summit, kept standing by volunteers from a local hiking club rather than by the agency, and genuinely open for anyone to sleep in on a first-come basis. It is 1.7 miles and about 1,300 ft a…"
+     },
+     {
+      "name": "High Pass camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of…"
+     },
+     {
+      "name": "Gargett Mine basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west int…"
+     },
+     {
+      "name": "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "The standard camp for the southeast ridge of Tomyhoi Peak, and the reason Tomyhoi is a comfortable overnight rather than a very long day. From the Yellow Aster Butte trailhead at about 3,700 ft the trail climbs towards G…"
+     },
+     {
+      "name": "Tomyhoi Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3727,
+      "notes": "Worth knowing about mostly so you do not plan a climb around it. Despite the name, Tomyhoi Lake is not the camp for Tomyhoi Peak: the trail from the Yellow Aster Butte trailhead climbs to Gold Run Pass and then loses rou…"
+     },
+     {
+      "name": "Yellow Aster tarns / meadows",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "Beyond the fork the grade eases and the trail traverses the south flank of the butte for a bit over two miles as the terrain opens into meadow. At an unsigned j…"
+     }
+    ]
+   },
+   {
+    "id": "wa_winchester_mountain_south_trail",
+    "name": "South Trail / Lookout Route",
+    "peak": "Winchester Mountain",
+    "area_id": "wa_winchester_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 1-2",
+    "high_point_ft": 6521,
+    "overview": "Winchester Mountain is one of the most popular short hikes in the Mount Baker Wilderness, capped by a historic 1935 L-4 fire lookout that volunteers with the Mount Baker Club saved from demolition and restored in 1982; it has been open to the public for day use and first-come, first-served overnight…",
+    "approach": "From the Twin Lakes trailhead (elev. ~5,200ft, parking area between the two lakes, vault toilet on site), pick up Winchester Mountain Trail #685 heading north-northwest. The trail starts as a moderately steep, well-graded tread through blueberry and heather slopes. At about 0.25-0.5 mile you reach t…",
+    "camps": [
+     {
+      "name": "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the road rather than a campsite, because on this approach the road is the variable that decides what the trip is. The first four and a half miles to the Tomyhoi Lake and Yellow Aster Butte trailhead are rough gra…"
+     },
+     {
+      "name": "Twin Lakes basin road-end camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water.…"
+     },
+     {
+      "name": "Winchester Mountain Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6521,
+      "notes": "A 1935 lookout on the 6,521 ft summit, kept standing by volunteers from a local hiking club rather than by the agency, and genuinely open for anyone to sleep in on a first-come basis. It is 1.7 miles and about 1,300 ft a…"
+     },
+     {
+      "name": "High Pass camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of…"
+     },
+     {
+      "name": "Gargett Mine basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west int…"
+     },
+     {
+      "name": "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5580,
+      "notes": "The standard camp for the southeast ridge of Tomyhoi Peak, and the reason Tomyhoi is a comfortable overnight rather than a very long day. From the Yellow Aster Butte trailhead at about 3,700 ft the trail climbs towards G…"
+     },
+     {
+      "name": "Tomyhoi Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3727,
+      "notes": "Worth knowing about mostly so you do not plan a climb around it. Despite the name, Tomyhoi Lake is not the camp for Tomyhoi Peak: the trail from the Yellow Aster Butte trailhead climbs to Gold Run Pass and then loses rou…"
+     }
+    ]
+   }
+  ]
+ }
+]

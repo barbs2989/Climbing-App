@@ -1,0 +1,247 @@
+{
+ "applied": [
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "One-way approach distance"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "One-way approach distance"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Road to the trailhead"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Road to the trailhead"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Tungsten Creek junction elevation"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season end"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day hiking fitness — approach is roughly 10 miles one-way (Chewuch Trail #510 -> Tungsten Creek Trail #534 -> Boundary Trail #533) before the off-trail summit push, typically done as a backpacking trip rather than a day climb",
+      "packWeight": "Overnight/multi-day pack weight (food, camp gear, navigation tools) given the remote approach; a fit party could attempt a very long single-push day but multi-day is standard"
+     },
+     "approachTime": "Long — roughly 10 miles one-way on trail (Chewuch -> Tungsten Creek -> Boundary Trail) before the off-trail scramble to the summit; commonly split over 2+ days",
+     "requiredSkills": [
+      "off-trail route-finding / map & compass or GPS navigation",
+      "talus and scree scrambling",
+      "self-rescue readiness given the remote, low-traffic setting",
+      "backcountry travel / wilderness camping competence",
+      "afternoon-thunderstorm awareness and turnaround discipline"
+     ],
+     "experienceLevel": "Comfortable with sustained off-trail Class 2 (occasional low Class 3) talus/scree scrambling and independent route-finding; should have backcountry/wilderness navigation experience since the summit block is unmarked and reached off-trail from the Boundary Trail"
+    },
+    "road": {
+     "name": "West Chewuch Road (County Rd 1213) continuing as FR 51 (Chewuch River Road)",
+     "status": "Mostly paved near Winthrop, then a typical washboarded dirt/gravel forest road; no 4WD required.",
+     "driveNote": "About 29 miles from Winthrop to Thirtymile Trailhead; the trailhead has a vault toilet, picnic tables, and stock ramp/hitch rails but no potable water.",
+     "seasonalGate": "The FS-39-300 spur to Chewuch Trailhead is maintained for high-clearance vehicles only and is not recommended for use until late June."
+    },
+    "itinerary": {
+     "cal": "Pasayten Wilderness requires only a self-issued permit at the trailhead; FS Road 39 to the Thirtymile TH and the high, open Boundary Trail slopes near Wolframite often don't fully clear of snow until late June/July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Thirtymile Trailhead (~3,600 ft), follow the Chewuch River Trail #510 north 8.8 miles to its junction with the Tungsten Creek Trail #534. Gentle, well-graded trail through forest along the Chewuch River; several established campsites near the junction make a natural first-night stop.",
+       "hours": 5,
+       "miles": 8.8,
+       "title": "Approach to the Tungsten Creek junction",
+       "gainFt": 1300,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike from Thirtymile TH toward Tungsten Mine Camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb the Tungsten Creek Trail #534 for 6.2 miles to its junction with the Boundary Trail #533 at historic Tungsten Mine Camp (~6,750 ft), site of two old cabins and mining relics on the south side of Wolframite. Most parties arrive by early-to-mid afternoon, leaving time to set up camp, filter water, and scout the west-side scramble line before dark.",
+       "hours": 4.5,
+       "miles": 6.2,
+       "title": "Up to Tungsten Mine Camp",
+       "gainFt": 2100,
+       "lossFt": 50,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Tungsten Mine Camp at the base of Wolframite"
+      },
+      {
+       "n": 3,
+       "note": "Leave camp with light daypacks, follow the Boundary Trail about 1 mile west to where it bends south, then leave the trail and ascend the broad, gentle west side of Wolframite (sustained Class 2, with occasional Class 3 variations depending on line) to the 8,136 ft summit. Many strong parties use this camp as a base to also tag Apex Mountain or Bauerman Ridge the same day or the next, but a straight Wolframite round trip comfortably fits a single day from camp.",
+       "hours": 6,
+       "miles": 4,
+       "title": "Summit day: Wolframite Mountain",
+       "gainFt": 1450,
+       "lossFt": 1450,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Tungsten Mine Camp",
+         "detail": "Light daypack; follow the Boundary Trail west."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Leave the Boundary Trail",
+         "detail": "Trail bends south; begin off-trail ascent up the open west slope."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Reach the summit",
+         "detail": "Broad Class 2 slope tops out at 8,136 ft; views into the Pasayten and across the Canadian border."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line back to the Boundary Trail."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at Tungsten Mine Camp",
+         "detail": "Rest, dry gear, and pack for the hike out."
+        }
+       ],
+       "objective": "Climb Wolframite Mountain's west side and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the full approach — Boundary/Tungsten Creek Trail down to the Chewuch River Trail junction and out to Thirtymile TH — in one long, mostly-downhill day. Fit parties often push straight through rather than splitting the exit into two days.",
+       "hours": 7.5,
+       "miles": 15,
+       "title": "Hike out to the trailhead",
+       "gainFt": 150,
+       "lossFt": 3150,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to Thirtymile TH"
+      }
+     ],
+     "totalNote": "A 4-day, ~34-mile round-trip backpack (net gain/loss roughly 4,600 ft each way) with a layover day for the Class 2 summit climb from Tungsten Mine Camp; very strong parties compress this to 2 days or even a single long car-to-car push."
+    },
+    "waypoints": [
+     {
+      "lat": 48.822956,
+      "lng": -120.019819,
+      "elev": 3400,
+      "name": "Thirtymile Trailhead",
+      "note": "Northwest Forest Pass and a free self-issue Pasayten Wilderness permit are required at the trailhead kiosk; no potable water on site.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the Thirtymile Trailhead, at the end of West Chewuch Road, about 29 miles north of Winthrop. A Northwest Forest Pass and a free self-issue Pasayten Wilderness permit, available at the trailhead kiosk, are both required, and there is no potable water on site. The road in and the high country beyond often don't fully clear of snow until late June or early July, so plan an early-season trip accordingly."
+     },
+     {
+      "lat": 48.90405,
+      "lng": -120.07455,
+      "elev": 4400,
+      "name": "Campsite below Tungsten Creek ford",
+      "note": "Established campsite on the Chewuch River roughly a quarter-mile before the Tungsten Creek ford — the last sheltered camp before the crossing.",
+      "type": "Campsite",
+      "distMi": 8.5
+     },
+     {
+      "lat": 48.90595470588235,
+      "lng": -120.0758405882353,
+      "elev": 4400,
+      "name": "Tungsten Creek ford",
+      "note": "Unbridged, knee-deep, fast-flowing ford of Tungsten Creek; a genuine hazard during snowmelt or after rain, best crossed early in the day.",
+      "type": "Hazard",
+      "distMi": 8.7
+     },
+     {
+      "lat": 48.923912,
+      "lng": -120.064765,
+      "elev": 4450,
+      "name": "Tungsten Creek Trail #534 junction",
+      "note": "Leave the Chewuch Trail #510 here onto Tungsten Creek Trail #534, climbing away from the river through young lodgepole regrowth from the 2001 burn.",
+      "type": "Junction",
+      "distMi": 8.8
+     },
+     {
+      "lat": 48.977036,
+      "lng": -120.132265,
+      "elev": 6750,
+      "name": "Tungsten Mine Camp / Boundary Trail #533 junction",
+      "note": "Site of the defunct early-1900s tungsten mine — two collapsed buildings and brick mill remnants remain; meets Boundary Trail #533 here.",
+      "type": "Campsite",
+      "distMi": 15
+     },
+     {
+      "lat": 48.97833352941176,
+      "lng": -120.12488294117648,
+      "elev": 7000,
+      "name": "Boundary Trail bend toward Apex Pass",
+      "note": "Boundary Trail bends south toward Apex Pass here; leave the trail and head off-trail north/northeast up Wolframite's broad, gentle west slopes (Class 2).",
+      "type": "Junction",
+      "distMi": 16.3
+     },
+     {
+      "lat": 48.98552,
+      "lng": -120.12955,
+      "elev": 8136,
+      "name": "Wolframite Mountain summit",
+      "note": "True summit on open talus/tundra; broad views over the Pasayten Wilderness backcountry and Canadian border peaks.",
+      "type": "Summit",
+      "distMi": 17
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Boundary Trail from Tungsten Mine Camp",
+      "notes": "The scramble here is trivial and the approach is not, so treat this as a multi-day backpack with a short walk-up at the end of it. From the road end at Thirtymile the Chewuch River trail runs north for eight or nine miles, passing a waterfall a couple of miles in and crossing a burn where standing snags are a real concern in wind, to a signed junction where the Tungsten Creek trail turns off. That trail climbs a further six miles and about two thousand feet to the old mine camp on the mountain's south side, where the Boundary Trail comes in. The creek the trail follows on its last stretch is the final dependable water; in dry years everything above it can be dry streambed and stagnant pools. Most parties camp near the mine and climb the peak the following morning.",
+      "season": "July to early October",
+      "hazards": [
+       "Extremely long remote approach with no cell coverage",
+       "Early or late season snow squalls above 7,000 ft arriving with little warning",
+       "Higher, more difficult fords of Tungsten Creek and the Chewuch in early season",
+       "Standing fire-killed snags through the burned section in wind",
+       "Unstable historic mine debris and equipment near the camp",
+       "Loose talus and scree on the summit slopes",
+       "Bear, cougar and wolf country - proper food storage required"
+      ],
+      "baseFinding": "The base is a bend in a trail, and it is about a mile beyond the place most people mistake for it. The Tungsten Creek trail ends at its junction with the Boundary Trail at roughly 6,750 ft at the old mine camp, and that camp is conspicuous, with iron pipe, timbers and collapsed structures scattered across the slope on the mountain's south side. That is not the start. From the camp, follow the Boundary Trail west and south for about a mile to around 7,000 ft, to the point where the trail stops running west along the flank and turns to head south toward Apex Pass. That turn is the marker; leave the trail there and go northeast, straight up. The confirmation is what you can see from the bend: the whole west slope of the mountain is laid out above you in one uninterrupted piece, broad and gentle, heather and talus with no cliff band anywhere across it. If you are looking at broken rock steps or a wall, you have left the trail at the wrong place. The way to know you have overshot is elevation, since once past the bend the Boundary Trail begins losing height toward Apex Pass, so if you are walking downhill, turn round. Lines further round to the north or south of this slope break into short sections of low class 3 and are not the recommended way; the west slope is the least steep and the one to use."
+     }
+    ]
+   }
+  }
+ ]
+}

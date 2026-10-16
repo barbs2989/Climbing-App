@@ -1,0 +1,3151 @@
+{
+ "applied": [
+  {
+   "id": "wa_marvin_s_ear",
+   "op": "patch",
+   "columns": [
+    "approach_logistics"
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "op": "patch",
+   "columns": [
+    "approach_logistics"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_marvin_s_ear",
+   "area_id": "wa_morning_star_peak",
+   "name": "Marvin's Ear",
+   "discipline": "alpine",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 7,
+   "length_m": 244,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Morgan Zentler and Sheila Zentler, September 16, 2017; Zentler and Imran Rahman equipped the line earlier that season.",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "quickdraws plus several alpine draws",
+    "70m rope (required — anchors are ~30m apart)",
+    "helmet"
+   ],
+   "hazards": [
+    "loose rock on belay ledges — avoid knocking debris onto the party below",
+    "increasing exposure on pitch 7's north-face traverse",
+    "spring snow low on the route"
+   ],
+   "verif": null,
+   "overview": "Marvin's Ear climbs the skyline ridge of Vega Tower — the sub-summit just east of Vega North Tower/Eros Tower — via a fully bolted 800-ft, 7-pitch alpine sport line (Grade III, 5.10b) through hard metaconglomerate rock. It was the first technical route up Vega Tower's west ridge proper (the only prior technical line, Starshot Ridge 5.8, was established in 1981 on a different aspect); climbing gets progressively more exposed as it skirts over the north face in the upper pitches.",
+   "beta": "800 feet, Grade III 5.10b, with well-protected cruxes though bolts are spaced further apart on easier (5.9-and-under) terrain. Prior to this route, only one other technical line (Starshot Ridge, 5.8, established 1981) existed on Vega Tower, and the west ridge itself was unclimbed until 2016/2017.",
+   "turnaround": "Plan around a full climbing day plus the shared talus approach/descent; retreat via the bolted anchors rather than pushing on if conditions or time run short.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.10b (6a+ / VII- / E2 5b)",
+   "ice_grade": null,
+   "gain_ft": 3400,
+   "loss_ft": 3400,
+   "dist_km": 9.01,
+   "max_angle": null,
+   "rappels": "Rappel the route with a 70m rope.",
+   "commitment": "III",
+   "face": "Vega Tower (skirts the north face in the upper pitches)",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No reliable cell coverage expected; carry a satellite communicator.",
+   "descent": "Rappel the route with a 70m rope — bolted anchors are spaced roughly 30m apart, so a 60m rope will come up short in places. Watch for loose rock and rope-catching pinches on the way down.",
+   "obj_haz": [
+    "loose rock throughout, especially on ledges",
+    "significant rope drag on Pitch 6",
+    "steep spring snow on the approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0247261,
+     "lng": -121.4778459,
+     "elev": 2350,
+     "name": "Sunrise Mine Trailhead",
+     "note": "Sunrise Mine Trail #707 off Sunrise Mine Rd (FR 4065); approach to Vegan/Vega Tower group.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ],
+   "gpx": [
+    [
+     48.02469877,
+     -121.47784643
+    ],
+    [
+     48.02443,
+     -121.47784
+    ],
+    [
+     48.02287,
+     -121.47778
+    ],
+    [
+     48.02207,
+     -121.47879
+    ],
+    [
+     48.02174,
+     -121.47923
+    ],
+    [
+     48.0218,
+     -121.48005
+    ],
+    [
+     48.02165,
+     -121.48018
+    ],
+    [
+     48.02086,
+     -121.48066
+    ],
+    [
+     48.02013,
+     -121.48079
+    ],
+    [
+     48.01963,
+     -121.4811
+    ],
+    [
+     48.01946,
+     -121.48129
+    ],
+    [
+     48.01909,
+     -121.48189
+    ],
+    [
+     48.01886,
+     -121.48338
+    ],
+    [
+     48.01875,
+     -121.48369
+    ],
+    [
+     48.01854,
+     -121.48402
+    ],
+    [
+     48.01833,
+     -121.48388
+    ],
+    [
+     48.01829,
+     -121.48426
+    ],
+    [
+     48.01795,
+     -121.48413
+    ],
+    [
+     48.01792,
+     -121.48478
+    ],
+    [
+     48.01813,
+     -121.48588
+    ],
+    [
+     48.01829,
+     -121.48682
+    ],
+    [
+     48.01858,
+     -121.48707
+    ],
+    [
+     48.0183,
+     -121.48735
+    ],
+    [
+     48.01798,
+     -121.48812
+    ],
+    [
+     48.01765,
+     -121.48877
+    ],
+    [
+     48.01746,
+     -121.48926
+    ],
+    [
+     48.01716,
+     -121.48968
+    ],
+    [
+     48.01666,
+     -121.49001
+    ],
+    [
+     48.01639,
+     -121.49002
+    ],
+    [
+     48.01563,
+     -121.49034
+    ],
+    [
+     48.0151,
+     -121.49074
+    ],
+    [
+     48.01495,
+     -121.49104
+    ],
+    [
+     48.01464,
+     -121.49154
+    ],
+    [
+     48.01439,
+     -121.49207
+    ],
+    [
+     48.01414,
+     -121.4924
+    ],
+    [
+     48.01394,
+     -121.49278
+    ],
+    [
+     48.01354,
+     -121.49368
+    ],
+    [
+     48.01335,
+     -121.49388
+    ],
+    [
+     48.01347,
+     -121.4943
+    ],
+    [
+     48.01348,
+     -121.49472
+    ],
+    [
+     48.01315,
+     -121.49521
+    ],
+    [
+     48.01257,
+     -121.49552
+    ],
+    [
+     48.01214,
+     -121.49568
+    ],
+    [
+     48.01167,
+     -121.49589
+    ],
+    [
+     48.01102,
+     -121.49599
+    ],
+    [
+     48.01071,
+     -121.49607
+    ],
+    [
+     48.0106,
+     -121.49614
+    ],
+    [
+     48.01054,
+     -121.49643
+    ],
+    [
+     48.01064,
+     -121.49665
+    ],
+    [
+     48.01053,
+     -121.49692
+    ],
+    [
+     48.01031,
+     -121.49729
+    ],
+    [
+     48.00997,
+     -121.49726
+    ],
+    [
+     48.01,
+     -121.49742
+    ],
+    [
+     48.00983,
+     -121.49743
+    ],
+    [
+     48.00962,
+     -121.49752
+    ],
+    [
+     48.00928,
+     -121.49765
+    ],
+    [
+     48.00856,
+     -121.4976
+    ],
+    [
+     48.00832,
+     -121.49763
+    ],
+    [
+     48.00794753,
+     -121.49665254
+    ],
+    [
+     48.00786139,
+     -121.49645137
+    ],
+    [
+     48.00784075,
+     -121.49633202
+    ],
+    [
+     48.00790715,
+     -121.49618181
+    ],
+    [
+     48.0079233,
+     -121.49611073
+    ],
+    [
+     48.00788469,
+     -121.49602222
+    ],
+    [
+     48.0078919,
+     -121.49595248
+    ],
+    [
+     48.00791433,
+     -121.49573388
+    ],
+    [
+     48.00786767,
+     -121.49549517
+    ],
+    [
+     48.00784065,
+     -121.4954147
+    ],
+    [
+     48.00786857,
+     -121.49532619
+    ],
+    [
+     48.00782012,
+     -121.49516257
+    ],
+    [
+     48.00788782,
+     -121.49500969
+    ],
+    [
+     48.00784165,
+     -121.49496007
+    ],
+    [
+     48.00787306,
+     -121.49491313
+    ],
+    [
+     48.00783716,
+     -121.494661
+    ],
+    [
+     48.00802199,
+     -121.49425867
+    ],
+    [
+     48.00813595,
+     -121.49395692
+    ],
+    [
+     48.00826694,
+     -121.49362298
+    ],
+    [
+     48.00833872,
+     -121.49338963
+    ],
+    [
+     48.00838627,
+     -121.49328905
+    ],
+    [
+     48.00840601,
+     -121.49301815
+    ],
+    [
+     48.00843921,
+     -121.49279552
+    ],
+    [
+     48.00850381,
+     -121.49260911
+    ],
+    [
+     48.00859353,
+     -121.4925434
+    ],
+    [
+     48.00862404,
+     -121.49241063
+    ],
+    [
+     48.00857648,
+     -121.49208474
+    ],
+    [
+     48.00866441,
+     -121.49207937
+    ],
+    [
+     48.00879092,
+     -121.49184602
+    ],
+    [
+     48.008895,
+     -121.49173873
+    ],
+    [
+     48.00895242,
+     -121.49154427
+    ],
+    [
+     48.00896318,
+     -121.49134579
+    ],
+    [
+     48.00890128,
+     -121.49106148
+    ],
+    [
+     48.00893268,
+     -121.49090993
+    ],
+    [
+     48.00899907,
+     -121.49081069
+    ],
+    [
+     48.00905291,
+     -121.49062025
+    ],
+    [
+     48.0090547,
+     -121.49033728
+    ],
+    [
+     48.00913814,
+     -121.49022999
+    ],
+    [
+     48.00920633,
+     -121.49022597
+    ],
+    [
+     48.00928708,
+     -121.49024206
+    ],
+    [
+     48.00934271,
+     -121.49028095
+    ],
+    [
+     48.00941628,
+     -121.49028363
+    ],
+    [
+     48.007948,
+     -121.49458408
+    ],
+    [
+     48.00714456,
+     -121.49316788
+    ],
+    [
+     48.00707996,
+     -121.49241686
+    ],
+    [
+     48.00694358,
+     -121.49236321
+    ],
+    [
+     48.00675695,
+     -121.49242759
+    ],
+    [
+     48.00626883,
+     -121.49241686
+    ],
+    [
+     48.00626883,
+     -121.49228811
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 11,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 11,
+      "note": "Approach via the Sunrise Mine Trail and Headlee Pass, then a talus/heather traverse to the base of Vega Tower. Climb 7 bolt-protected pitches (crux on pitch 6, exposed over the nor…",
+      "fromTo": "Car-to-car: Marvin's Ear",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Quickdraws plus several alpine draws; 70m rope recommended for both leading and the rappel descent.",
+   "what_to_bring": [
+    "Northwest Forest Pass",
+    "Water",
+    "Approach shoes for the talus traverse"
+   ],
+   "pro_tips": [
+    "A 70m rope is mandatory — a 60m will leave rappels short",
+    "Sees far less traffic than Mile High Club next door — expect looser rock on ledges",
+    "Approach is identical to Mile High Club/Beyond Redlining to the ~4,300 ft switchback, then a short additional traverse to Vega Tower"
+   ],
+   "watch_out": [
+    "loose rock on ledges",
+    "north-face exposure high on the route",
+    "early-season snow near the base"
+   ],
+   "pro_needs": "Fully bolted; quickdraws and a few alpine draws cover the whole route. A 70m rope is needed both to climb the longer pitches and to rappel.",
+   "best_season": "Roughly July through September",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "Same Sunrise Mine Trail approach as Mile High Club and Beyond Redlining: follow the trail roughly 2.5 miles to the last major switchback at about 4,300 ft, then leave the trail for a cairned talus traverse heading northeast across two talus fields toward the Vega towers (shared with the other Vega North Tower routes). Where the traverse for Mile High Club and Beyond Redlining continues toward the base of the main west face, Marvin's Ear branches off into a gully to the right (east) of Vega North Tower. Follow this gully up through cedar and heather — vegetated, sometimes loose ground — to a notch on the skyline ridge. From the notch, the last bit to the pitch-one belay involves loose 3rd-class terrain with some exposed 4th-class moves, landing on a grassy ledge that serves as the first belay. Because this gully approach is steeper and more vegetated than the open talus used by Mile High Club, expect a slower, more route-finding-dependent final approach, and be cautious of loose blocks in the gully, especially with parties above.",
+   "descent_text": "Marvin's Ear is rappelled back down its own line (not via Mile High Club). Bolted anchors are set roughly 30m apart along the route, so a single 60m rope will come up short in places — bring a 70m rope, which lets you link some of the 30m-spaced stations into longer raps and reduces the rappel count to roughly four full-length raps rather than seven pitch-by-pitch rappels. Beta from parties who've done the descent numbers them R1 through R4: R1 has notable rope friction on the pull; R2 requires looking right near the end of the rope to find the next station; R3 trends straight down; R4 is straightforward. One notable trap: partway down you'll see a shiny pair of rap chains that looks like the anchor — it isn't the one to use. Instead traverse left to find a hidden bolt behind a rock, then continue left to the actual bolted rappel anchor (no chains), which is the correct line down. Watch for loose rock and rope-catching pinches throughout the descent, consistent with the route's overall character on this face.",
+   "bail": "Any bolted anchor can serve as a bail point given the fully-bolted nature of the climb.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 4,
+     "grade": "5.9",
+     "notes": "Scramble up to a high first bolt with fun stemming on mostly good rock higher up.",
+     "pitch": 1,
+     "anchor": "Bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 6,
+     "grade": "5.10a",
+     "notes": "Edges and slab moves more or less straight up from the belay.",
+     "pitch": 2,
+     "anchor": "Bolted anchor",
+     "lengthM": 27
+    },
+    {
+     "crux": false,
+     "bolts": 1,
+     "grade": "5.0",
+     "notes": "Walk/scramble along ledges, clipping one bolt on the way to the anchor.",
+     "pitch": 3,
+     "anchor": "Bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 9,
+     "grade": "5.9",
+     "notes": "A sustained line of 9 bolts up the broad, golden-granite ridge crest, with pumpy dihedral moves easing off just before the two-bolt anchor.",
+     "pitch": 4,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 10,
+     "grade": "5.10-",
+     "notes": "Bolts trend left toward the end of the pitch to reach the next belay.",
+     "pitch": 5,
+     "anchor": "Bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 9,
+     "grade": "5.10b",
+     "notes": "The technical crux: a cruxy move over a bulge into another sustained, cruxy section; extend a few draws to manage rope drag.",
+     "pitch": 6,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 9,
+     "grade": "5.10-",
+     "notes": "A cool traverse left, then up through a fun corner to the anchor just below the summit.",
+     "pitch": 7,
+     "anchor": "Bolted anchor (near summit)",
+     "lengthM": 30
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach via the Sunrise Mine Trail and Headlee Pass, then a talus/heather traverse to the base of Vega Tower. Climb 7 bolt-protected pitches (crux on pitch 6, exposed over the north face up high) to the summit, then rappel the route itself on a 70m rope — bolted anchors are spaced roughly 30m apart, so a 60m rope will come up short in places.",
+      "hours": 11,
+      "miles": 5.6,
+      "title": "Car-to-car: Marvin's Ear",
+      "gainFt": 3400,
+      "lossFt": 3400,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach base of route",
+        "detail": "Via Headlee Pass and the cairned talus/heather traverse."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Start climbing",
+        "detail": "Pitch 1 of 7; bolts sometimes spaced on easier ground below 5.9."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Top out / summit",
+        "detail": "Crux pitch 6 (5.10b)."
+       },
+       {
+        "time": "1:15 PM",
+        "label": "Begin rappels",
+        "detail": "70m rope required; watch for loose rock and rope-catching on the pulls."
+       },
+       {
+        "time": "5:30 PM",
+        "label": "Back at trailhead",
+        "detail": "After rapping to the base and hiking out."
+       }
+      ],
+      "objective": "Climb 7-pitch Marvin's Ear (5.10b) on Vega Tower and rappel the route"
+     }
+    ],
+    "totalNote": "A full but manageable single day: roughly 11-12 hrs car-to-car for the 7-pitch (5.10b) climb plus about 5.6 mi and 3,400 ft of approach/return hiking."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Reached from the Mountain Loop Highway and Sunrise Mine Road (FR 4065), not through the Glacier Peak Wilderness access roads.",
+     "permit_cost": "Free",
+     "permit_type": "Free self-issue wilderness permit",
+     "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+     "wilderness_zone": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness.",
+     "group_size_limit": "Maximum 12 people per party",
+     "parking_pass_cost": "$5 per day or $30 annual; also accept America the Beautiful passes",
+     "seasonal_closures": "Open year-round; weather-dependent access",
+     "permit_pickup_hours": "Available 24/7 at trailhead",
+     "ranger_station_hours": "Monday-Friday 8:00am-4:00pm (closed 12:00-12:30pm lunch)",
+     "special_requirements": "Motorized equipment prohibited; campfire restrictions apply",
+     "parking_pass_required": "Northwest Forest Pass (some trailheads)",
+     "permit_pickup_location": "Self-issue at trailhead",
+     "ranger_station_address": "1405 Emens Avenue North, Darrington, WA 98241",
+     "ranger_district_contact": "(360) 436-1155"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "rules": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply.",
+    "permit": "No wilderness permit required.",
+    "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May.",
+    "permitZone": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness.",
+    "group_limit": 12,
+    "landManager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass (some trailheads)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required outside the wilderness",
+     "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+    }
+   },
+   "road": {
+    "name": "Sunrise Mine Trailhead (FR-4065), off Mountain Loop Highway",
+    "status": "Mountain Loop Highway is paved from Granite Falls to Barlow Pass; FR-4065 is a short gravel spur generally passable to standard cars in season, though subject to seasonal/weather closures and washouts like other Mt. Baker-Snoqualmie NF roads.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to the Sunrise Mine Trailhead near Big Four/Barlow Pass.",
+    "seasonalGate": "FR roads off the Mountain Loop Highway are typically only reliably open late spring through fall; check Darrington Ranger District/USFS alerts for current status."
+   },
+   "climate": {
+    "fall": "Good into September.",
+    "spring": null,
+    "summer": "Prime season.",
+    "winter": null,
+    "typical": "Marine west-coast climate typical of the west-slope Cascades.",
+    "forecastZone": "NWS 'West Slopes North Central Cascades and Passes' zone (WAZ568)"
+   },
+   "emergency": {
+    "notes": "No cell coverage expected; carry a satellite communicator/PLB.",
+    "county": "Snohomish County",
+    "rangerStation": "Darrington Ranger District, 1405 Emens Ave N, Darrington, WA 98241, (360) 436-1155",
+    "nearestHospital": "Cascade Valley Hospital (Skagit Regional Health), 330 S Stillaguamish Ave, Arlington, WA 98223, (360) 435-2133",
+    "sheriffDispatch": "Snohomish County Sheriff's Office, supported by SCVSAR"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July to mid-September, once the approach gully and talus are snow-free and the bolted pitches are dry",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow clears from the talus and the cedar-and-heather gully through the month; early July can still have snow patches low on the route.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Spring snow still fills the talus traverse and sits low on the route, and the vegetated gully to the notch is wet and slick.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Dry rock and a snow-free approach; start early, as the 4th-class gully to the notch is slow and parties above can knock loose blocks down.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early snow and wet heather make the steep vegetated gully and the exposed north-face traverse on pitch 7 hazardous.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still dry and cooler for the seven bolted pitches; shorter days and the first autumn snow usually arrive late in the month.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "current fixed-hardware condition not independently verified beyond posted trip reports",
+     "No public GPS track found for this route as of this research pass.",
+     "GPS track sourced from https://caltopo.com/m/NGTH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 5,
+    "technical": 4,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.003885,
+    "peakLng": -121.490955,
+    "trailhead": "Sunrise Mine Trailhead (Trail #707, FR-4065)",
+    "trailheadLat": 48.02388889,
+    "trailheadLng": -121.4741444,
+    "trailheadDirection": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+   },
+   "sling_rack": null,
+   "alpine_draws": 4,
+   "rope_type": "single dynamic",
+   "rope_length_m": 70,
+   "rope_note": "A 70 m rope is required rather than preferred: the bolted anchors sit roughly 30 m apart, so a 60 m leaves the rappels short. Quickdraws plus several alpine draws, and a helmet. The line is fully bolted but the spacing is not uniform - four bolts on pitch 1 and six on pitch 2, nine or ten through pitches 4 to 7 where the climbing is sustained at 5.9 to 5.10b, and pitch 3 is a 5.0 walk along ledges with a single bolt between the belays. The descent rappels the route itself on the 70, linking the 30 m stations into roughly four full-length raps.",
+   "ascender": null,
+   "corrections": "Mountain Project route page confirms: '70M rope' recommended for descent, and 'quick draws and a few alpine draws' as the full rack.",
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Notable rope friction reported on the pull.",
+     "anchor": "Bolted anchor (30m-spaced stations, linked via 70m rope)",
+     "lengthM": 35
+    },
+    {
+     "n": 2,
+     "notes": "A shiny pair of rap chains mid-route looks like the anchor but isn't; traverse left to a hidden bolt behind a rock, then further left to the true bolted anchor.",
+     "anchor": "Bolted anchor, requires looking right near rope's end",
+     "lengthM": 35
+    },
+    {
+     "n": 3,
+     "notes": "Trends straight down.",
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "n": 4,
+     "notes": "Straightforward final rappel to the ground.",
+     "anchor": "Bolted anchor at base",
+     "lengthM": 35
+    }
+   ],
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Arête",
+    "Exposed",
+    "Well-protected",
+    "Sustained"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Sunrise Mine Trail, then the east-side gully",
+     "notes": "Share the standard approach as far as the traverse: Sunrise Mine trailhead, two and a half miles of trail through the unbridged creek crossings to the LAST MAJOR SWITCHBACK before the pass zigzags, then the cairned northeast traverse across two talus fields. The difference comes at the end. Where the boot path for the other two routes carries on toward the open talus at the foot of the main west face, this one BRANCHES OFF into a gully on the RIGHT — the east side of the northern tower. The gully is steeper, more vegetated and slower than the open talus, and route-finding matters more on it than anywhere else on the approach.",
+     "season": "June to September; spring snow lies low on the route and in the gully.",
+     "hazards": [
+      "Loose blocks in the vegetated gully, particularly with parties above",
+      "Steeper and more route-finding-dependent final approach than the neighbouring routes",
+      "Loose rock on the belay ledges throughout the climb",
+      "Spring snow low on the route",
+      "Two unbridged creek crossings in the first mile of trail"
+     ],
+     "baseFinding": "Follow the gully on the east side of the tower up through CEDAR AND HEATHER — vegetation is the test, because the neighbouring routes' approach is bare talus and this one is not. The gully leads to a NOTCH ON THE SKYLINE RIDGE. From the notch, the last stretch is loose third-class with a few exposed fourth-class moves, landing on a GRASSY LEDGE that is the first belay. Confirm at the belay by looking up: the first bolt on this route is set notably HIGH above the stance and there are only about four bolts in the whole first rope length, so you scramble before you clip. Negative markers: if you are on open talus at the foot of the tower with two big boulders or a red gully in front of you, you never branched off and you are under the other tower's two routes; if you have found a single bolted belay on a narrow ledge past a lone fir, that is the arete route on the wrong tower."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+     "role": "main",
+     "type": "camp",
+     "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the valley. They are closer to the Sunrise Mine and Big Four trailheads than anything up-valley, at the cost of being low, wooded and busy with general campers rather than climbers. Weekend availability is genuinely tight in midsummer, so a reservation is worth having. Dispersed roadside pullouts along the corridor need no permit but are increasingly signed and patrolled.",
+     "water": "Verlot and Gold Basin generally have drinking water in season; the Stillaguamish runs alongside as a backup",
+     "permit": "Developed fee campgrounds, no permit. None are in wilderness. A Northwest Forest Pass is what you need for the trailheads up the road, not for the sites themselves.",
+     "capacity": "Large by the standards of this valley — dozens of developed sites across the three, tables, toilets, some with potable water; fee sites, reservable in part"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "marvins ear",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "area_id": "wa_morning_star_peak",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Sam Heller, 1940 (first ascent of the peak, via this easiest Class 3 line)",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe (useful through June/early July for the Headlee Pass chute and any lingering snow near the summit)",
+    "helmet (rockfall is common in the loose Headlee Pass chute)",
+    "trekking poles (talus and heather sidehilling)",
+    "sturdy boots with good ankle support"
+   ],
+   "hazards": [
+    "notorious rockfall chute immediately below Headlee Pass — helmet strongly recommended",
+    "difficult ford of the South Fork Stillaguamish ~0.5 mi from the trailhead; seasonal log crossings often washed out, especially during high runoff",
+    "lingering steep snow in the Headlee Pass gully and on north-facing terrain into July",
+    "loose talus and heather sidehilling above the pass with sparse cairns",
+    "exposure on the final summit scramble moves"
+   ],
+   "verif": null,
+   "overview": "Morning Star Peak (6,020 ft) sits above Headlee Pass and the Sunrise Mine basin between Sperry and Del Campo Peaks, in the Mountain Loop Highway corridor of the Mt. Baker-Snoqualmie National Forest (Darrington Ranger District). The standard route leaves the Sunrise Mine Trail about half a mile in, before the South Fork Stillaguamish crossing, and climbs the brushy river valley and snow-covered slabs to a notch in the southeast ridge, then a steep gully to the south ridge and the summit. The South Ridge scramble requires comfort on steep rock and snow and is tougher than the Class 2-3 label alone suggests, especially in early season. Route-finding takes some care, and the snow-covered slabs below the notch are the route's main avalanche concern.",
+   "beta": "The Standard Scramble represents the basic approach to Morning Star Peak's 6,020 ft summit. Multiple scramble options exist on the peak, including the South Ridge and Northwest Face routes, both of which involve Class 3 scrambling with sections of steep rock and snow.",
+   "turnaround": "Turn around if snow slopes are firm without an axe or weather closes in.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": "Class 2-3",
+   "ice_grade": null,
+   "gain_ft": 3670,
+   "loss_ft": 3800,
+   "dist_km": 4.35,
+   "max_angle": 45,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "South Ridge",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "Cell service is unreliable in the Stillaguamish River Valley and absent above ~4,000 feet. Assume no service; rely on satellite devices (Garmin inReach, PLB) for emergency communication.",
+   "descent": "Reverse the scramble toward Headlee Pass / Sunrise Mine Trail.",
+   "obj_haz": [
+    "steep snow/ice in gully and notch outside summer",
+    "loose rock on upper ledges",
+    "off-trail route-finding through talus/brush",
+    "short class 4 step on the NW variant"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0247261,
+     "lng": -121.4778459,
+     "name": "Sunrise Mine Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.003885,
+     "lng": -121.490955,
+     "elev": 6018.7,
+     "name": "Morning Star Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6018.7
+    }
+   ],
+   "gpx": [
+    [
+     48.02415,
+     -121.47784
+    ],
+    [
+     48.02411,
+     -121.47793
+    ],
+    [
+     48.0241,
+     -121.47772
+    ],
+    [
+     48.02396,
+     -121.4778
+    ],
+    [
+     48.02375,
+     -121.47778
+    ],
+    [
+     48.02348,
+     -121.47783
+    ],
+    [
+     48.02328,
+     -121.47773
+    ],
+    [
+     48.02314,
+     -121.4776
+    ],
+    [
+     48.02298,
+     -121.47782
+    ],
+    [
+     48.02287,
+     -121.4779
+    ],
+    [
+     48.02274,
+     -121.47788
+    ],
+    [
+     48.02253,
+     -121.47794
+    ],
+    [
+     48.02239,
+     -121.47813
+    ],
+    [
+     48.02233,
+     -121.47838
+    ],
+    [
+     48.02223,
+     -121.4785
+    ],
+    [
+     48.02204,
+     -121.47865
+    ],
+    [
+     48.02186,
+     -121.47884
+    ],
+    [
+     48.02175,
+     -121.47893
+    ],
+    [
+     48.02168,
+     -121.47914
+    ],
+    [
+     48.02161,
+     -121.4795
+    ],
+    [
+     48.02166,
+     -121.47978
+    ],
+    [
+     48.02174,
+     -121.4799
+    ],
+    [
+     48.02177,
+     -121.48002
+    ],
+    [
+     48.02191,
+     -121.4802
+    ],
+    [
+     48.02188,
+     -121.4802
+    ],
+    [
+     48.02184,
+     -121.48012
+    ],
+    [
+     48.02182,
+     -121.47995
+    ],
+    [
+     48.02168,
+     -121.47995
+    ],
+    [
+     48.02157,
+     -121.47991
+    ],
+    [
+     48.02148,
+     -121.48014
+    ],
+    [
+     48.02139,
+     -121.4803
+    ],
+    [
+     48.02128,
+     -121.48036
+    ],
+    [
+     48.02124,
+     -121.48042
+    ],
+    [
+     48.02124,
+     -121.48041
+    ],
+    [
+     48.02117,
+     -121.48047
+    ],
+    [
+     48.02107,
+     -121.48039
+    ],
+    [
+     48.02094,
+     -121.48034
+    ],
+    [
+     48.02075,
+     -121.48041
+    ],
+    [
+     48.02053,
+     -121.48051
+    ],
+    [
+     48.02043,
+     -121.48057
+    ],
+    [
+     48.02029,
+     -121.48068
+    ],
+    [
+     48.02016,
+     -121.4807
+    ],
+    [
+     48.02006,
+     -121.48054
+    ],
+    [
+     48.02,
+     -121.48024
+    ],
+    [
+     48.01997,
+     -121.47999
+    ],
+    [
+     48.01986,
+     -121.47991
+    ],
+    [
+     48.01974,
+     -121.47965
+    ],
+    [
+     48.01975,
+     -121.47941
+    ],
+    [
+     48.01958,
+     -121.47933
+    ],
+    [
+     48.01942,
+     -121.47924
+    ],
+    [
+     48.01925,
+     -121.47899
+    ],
+    [
+     48.01898,
+     -121.47885
+    ],
+    [
+     48.01886,
+     -121.47876
+    ],
+    [
+     48.01872,
+     -121.47869
+    ],
+    [
+     48.01866,
+     -121.4787
+    ],
+    [
+     48.01853,
+     -121.47865
+    ],
+    [
+     48.0184,
+     -121.47849
+    ],
+    [
+     48.01817,
+     -121.47812
+    ],
+    [
+     48.01799,
+     -121.47795
+    ],
+    [
+     48.01784,
+     -121.47784
+    ],
+    [
+     48.0177,
+     -121.47776
+    ],
+    [
+     48.0176,
+     -121.47781
+    ],
+    [
+     48.01752,
+     -121.47782
+    ],
+    [
+     48.01741,
+     -121.47777
+    ],
+    [
+     48.01725,
+     -121.47782
+    ],
+    [
+     48.01713,
+     -121.47784
+    ],
+    [
+     48.01695,
+     -121.47785
+    ],
+    [
+     48.01686,
+     -121.47775
+    ],
+    [
+     48.01685,
+     -121.47766
+    ],
+    [
+     48.0167,
+     -121.47758
+    ],
+    [
+     48.01657,
+     -121.47744
+    ],
+    [
+     48.01644,
+     -121.47743
+    ],
+    [
+     48.01641,
+     -121.47771
+    ],
+    [
+     48.01635,
+     -121.47787
+    ],
+    [
+     48.01614,
+     -121.47788
+    ],
+    [
+     48.01599,
+     -121.4779
+    ],
+    [
+     48.01582,
+     -121.47784
+    ],
+    [
+     48.01575,
+     -121.47763
+    ],
+    [
+     48.01564,
+     -121.47742
+    ],
+    [
+     48.01554,
+     -121.47728
+    ],
+    [
+     48.01539,
+     -121.47716
+    ],
+    [
+     48.01517,
+     -121.47711
+    ],
+    [
+     48.015,
+     -121.47711
+    ],
+    [
+     48.01477,
+     -121.47714
+    ],
+    [
+     48.01458,
+     -121.47726
+    ],
+    [
+     48.01434,
+     -121.47742
+    ],
+    [
+     48.01422,
+     -121.47743
+    ],
+    [
+     48.01415,
+     -121.47737
+    ],
+    [
+     48.01399,
+     -121.47724
+    ],
+    [
+     48.01385,
+     -121.47706
+    ],
+    [
+     48.01382,
+     -121.47692
+    ],
+    [
+     48.01383,
+     -121.47695
+    ],
+    [
+     48.01371,
+     -121.47685
+    ],
+    [
+     48.01358,
+     -121.47666
+    ],
+    [
+     48.01345,
+     -121.47656
+    ],
+    [
+     48.01327,
+     -121.47658
+    ],
+    [
+     48.01314,
+     -121.47642
+    ],
+    [
+     48.01304,
+     -121.47654
+    ],
+    [
+     48.01285,
+     -121.47649
+    ],
+    [
+     48.01276,
+     -121.47649
+    ],
+    [
+     48.01265,
+     -121.47644
+    ],
+    [
+     48.01251,
+     -121.47637
+    ],
+    [
+     48.01235,
+     -121.47635
+    ],
+    [
+     48.01215,
+     -121.47626
+    ],
+    [
+     48.01198,
+     -121.47624
+    ],
+    [
+     48.01179,
+     -121.47625
+    ],
+    [
+     48.01154,
+     -121.47638
+    ],
+    [
+     48.01141,
+     -121.47637
+    ],
+    [
+     48.0112,
+     -121.47631
+    ],
+    [
+     48.01106,
+     -121.4762
+    ],
+    [
+     48.01091,
+     -121.47617
+    ],
+    [
+     48.01079,
+     -121.47613
+    ],
+    [
+     48.0107,
+     -121.47604
+    ],
+    [
+     48.01054,
+     -121.47592
+    ],
+    [
+     48.01047,
+     -121.47583
+    ],
+    [
+     48.01038,
+     -121.4758
+    ],
+    [
+     48.0103,
+     -121.47577
+    ],
+    [
+     48.01019,
+     -121.47567
+    ],
+    [
+     48.00994,
+     -121.4756
+    ],
+    [
+     48.00983,
+     -121.4755
+    ],
+    [
+     48.00962,
+     -121.47547
+    ],
+    [
+     48.0095,
+     -121.47545
+    ],
+    [
+     48.0093,
+     -121.47539
+    ],
+    [
+     48.00914,
+     -121.47535
+    ],
+    [
+     48.009,
+     -121.47526
+    ],
+    [
+     48.00885,
+     -121.47521
+    ],
+    [
+     48.00874,
+     -121.47515
+    ],
+    [
+     48.00861,
+     -121.47503
+    ],
+    [
+     48.00846,
+     -121.47506
+    ],
+    [
+     48.00827,
+     -121.47504
+    ],
+    [
+     48.00819,
+     -121.47515
+    ],
+    [
+     48.00807,
+     -121.47506
+    ],
+    [
+     48.00794,
+     -121.47489
+    ],
+    [
+     48.00786,
+     -121.47477
+    ],
+    [
+     48.00768,
+     -121.47467
+    ],
+    [
+     48.00752,
+     -121.4747
+    ],
+    [
+     48.0074,
+     -121.47477
+    ],
+    [
+     48.0072,
+     -121.47493
+    ],
+    [
+     48.00701,
+     -121.47492
+    ],
+    [
+     48.00696,
+     -121.47496
+    ],
+    [
+     48.00678,
+     -121.47487
+    ],
+    [
+     48.00653,
+     -121.47476
+    ],
+    [
+     48.00644,
+     -121.47468
+    ],
+    [
+     48.00633,
+     -121.47468
+    ],
+    [
+     48.00624,
+     -121.47473
+    ],
+    [
+     48.00594,
+     -121.47451
+    ],
+    [
+     48.00581,
+     -121.47439
+    ],
+    [
+     48.00563,
+     -121.47427
+    ],
+    [
+     48.00545,
+     -121.47416
+    ],
+    [
+     48.00527,
+     -121.47418
+    ],
+    [
+     48.00514,
+     -121.47422
+    ],
+    [
+     48.00502,
+     -121.47418
+    ],
+    [
+     48.00479,
+     -121.4742
+    ],
+    [
+     48.00463,
+     -121.47415
+    ],
+    [
+     48.0044,
+     -121.47407
+    ],
+    [
+     48.00417,
+     -121.47396
+    ],
+    [
+     48.00403,
+     -121.47395
+    ],
+    [
+     48.00381,
+     -121.47393
+    ],
+    [
+     48.00368,
+     -121.47391
+    ],
+    [
+     48.00347,
+     -121.47407
+    ],
+    [
+     48.00343,
+     -121.47419
+    ],
+    [
+     48.00337,
+     -121.47454
+    ],
+    [
+     48.00333,
+     -121.47478
+    ],
+    [
+     48.00326,
+     -121.47499
+    ],
+    [
+     48.00317,
+     -121.47513
+    ],
+    [
+     48.0031,
+     -121.47532
+    ],
+    [
+     48.00312,
+     -121.47557
+    ],
+    [
+     48.0031,
+     -121.47593
+    ],
+    [
+     48.00302,
+     -121.47612
+    ],
+    [
+     48.00294,
+     -121.47646
+    ],
+    [
+     48.00289,
+     -121.47666
+    ],
+    [
+     48.00293,
+     -121.47692
+    ],
+    [
+     48.00288,
+     -121.47716
+    ],
+    [
+     48.0029,
+     -121.47736
+    ],
+    [
+     48.00284,
+     -121.47752
+    ],
+    [
+     48.00281,
+     -121.47786
+    ],
+    [
+     48.00277,
+     -121.47801
+    ],
+    [
+     48.00281,
+     -121.47818
+    ],
+    [
+     48.00276,
+     -121.47854
+    ],
+    [
+     48.00278,
+     -121.47869
+    ],
+    [
+     48.0028,
+     -121.47894
+    ],
+    [
+     48.00273,
+     -121.47924
+    ],
+    [
+     48.00275,
+     -121.47955
+    ],
+    [
+     48.00286,
+     -121.4797
+    ],
+    [
+     48.00291,
+     -121.47986
+    ],
+    [
+     48.00299,
+     -121.48001
+    ],
+    [
+     48.00298,
+     -121.48013
+    ],
+    [
+     48.00302,
+     -121.48041
+    ],
+    [
+     48.00295,
+     -121.48073
+    ],
+    [
+     48.00288,
+     -121.48096
+    ],
+    [
+     48.00295,
+     -121.48131
+    ],
+    [
+     48.00293,
+     -121.48171
+    ],
+    [
+     48.00296,
+     -121.482
+    ],
+    [
+     48.00306,
+     -121.48233
+    ],
+    [
+     48.00307,
+     -121.48265
+    ],
+    [
+     48.00325,
+     -121.48297
+    ],
+    [
+     48.00336,
+     -121.48326
+    ],
+    [
+     48.0034,
+     -121.48351
+    ],
+    [
+     48.00348,
+     -121.48374
+    ],
+    [
+     48.0035,
+     -121.48399
+    ],
+    [
+     48.00348,
+     -121.48422
+    ],
+    [
+     48.0035,
+     -121.4844
+    ],
+    [
+     48.00347,
+     -121.48454
+    ],
+    [
+     48.00342,
+     -121.4848
+    ],
+    [
+     48.00354,
+     -121.48507
+    ],
+    [
+     48.00354,
+     -121.48533
+    ],
+    [
+     48.00349,
+     -121.48546
+    ],
+    [
+     48.00348,
+     -121.48586
+    ],
+    [
+     48.00351,
+     -121.486
+    ],
+    [
+     48.0036,
+     -121.48622
+    ],
+    [
+     48.00355,
+     -121.4864
+    ],
+    [
+     48.00354,
+     -121.48661
+    ],
+    [
+     48.00337,
+     -121.48675
+    ],
+    [
+     48.00327,
+     -121.48704
+    ],
+    [
+     48.00317,
+     -121.48736
+    ],
+    [
+     48.0032,
+     -121.48793
+    ],
+    [
+     48.00326,
+     -121.48806
+    ],
+    [
+     48.00325,
+     -121.48829
+    ],
+    [
+     48.00329,
+     -121.48856
+    ],
+    [
+     48.00315,
+     -121.48865
+    ],
+    [
+     48.00319,
+     -121.48893
+    ],
+    [
+     48.0032,
+     -121.48929
+    ],
+    [
+     48.00322,
+     -121.48955
+    ],
+    [
+     48.00317,
+     -121.48984
+    ],
+    [
+     48.00313,
+     -121.49007
+    ],
+    [
+     48.00317,
+     -121.49029
+    ],
+    [
+     48.00318,
+     -121.49065
+    ],
+    [
+     48.00303,
+     -121.49092
+    ],
+    [
+     48.00308,
+     -121.49103
+    ],
+    [
+     48.00316,
+     -121.49118
+    ],
+    [
+     48.00328,
+     -121.4913
+    ],
+    [
+     48.00341,
+     -121.49136
+    ],
+    [
+     48.0035,
+     -121.49139
+    ],
+    [
+     48.00361,
+     -121.49129
+    ],
+    [
+     48.00367,
+     -121.49114
+    ],
+    [
+     48.00362,
+     -121.49089
+    ],
+    [
+     48.00379,
+     -121.49083
+    ],
+    [
+     48.00394,
+     -121.49104
+    ],
+    [
+     48.0039,
+     -121.49102
+    ],
+    [
+     48.0039,
+     -121.49099
+    ],
+    [
+     48.00369,
+     -121.4908
+    ],
+    [
+     48.00364,
+     -121.49092
+    ],
+    [
+     48.00359,
+     -121.49121
+    ],
+    [
+     48.00361,
+     -121.49135
+    ],
+    [
+     48.00353,
+     -121.49126
+    ],
+    [
+     48.00344,
+     -121.49141
+    ],
+    [
+     48.00334,
+     -121.49128
+    ],
+    [
+     48.00321,
+     -121.49122
+    ],
+    [
+     48.00311,
+     -121.49096
+    ],
+    [
+     48.00315,
+     -121.49069
+    ],
+    [
+     48.00317,
+     -121.49033
+    ],
+    [
+     48.00316,
+     -121.48987
+    ],
+    [
+     48.00323,
+     -121.48945
+    ],
+    [
+     48.00315,
+     -121.48909
+    ],
+    [
+     48.00317,
+     -121.48881
+    ],
+    [
+     48.00327,
+     -121.48843
+    ],
+    [
+     48.0033,
+     -121.48837
+    ],
+    [
+     48.00328,
+     -121.4881
+    ],
+    [
+     48.00338,
+     -121.48772
+    ],
+    [
+     48.00336,
+     -121.48743
+    ],
+    [
+     48.0034,
+     -121.48716
+    ],
+    [
+     48.00341,
+     -121.4869
+    ],
+    [
+     48.00353,
+     -121.48675
+    ],
+    [
+     48.00363,
+     -121.48637
+    ],
+    [
+     48.00365,
+     -121.48584
+    ],
+    [
+     48.00357,
+     -121.48565
+    ],
+    [
+     48.00355,
+     -121.48527
+    ],
+    [
+     48.00352,
+     -121.48513
+    ],
+    [
+     48.0035,
+     -121.48491
+    ],
+    [
+     48.00346,
+     -121.4848
+    ],
+    [
+     48.00338,
+     -121.48461
+    ],
+    [
+     48.00323,
+     -121.48448
+    ],
+    [
+     48.00335,
+     -121.4841
+    ],
+    [
+     48.00346,
+     -121.48354
+    ],
+    [
+     48.00328,
+     -121.48321
+    ],
+    [
+     48.00312,
+     -121.48272
+    ],
+    [
+     48.003,
+     -121.48219
+    ],
+    [
+     48.00294,
+     -121.48185
+    ],
+    [
+     48.0029,
+     -121.48144
+    ],
+    [
+     48.00289,
+     -121.48117
+    ],
+    [
+     48.00287,
+     -121.4809
+    ],
+    [
+     48.00297,
+     -121.48066
+    ],
+    [
+     48.00303,
+     -121.48056
+    ],
+    [
+     48.00312,
+     -121.48029
+    ],
+    [
+     48.0031,
+     -121.47993
+    ],
+    [
+     48.00305,
+     -121.47985
+    ],
+    [
+     48.00291,
+     -121.47964
+    ],
+    [
+     48.00279,
+     -121.47961
+    ],
+    [
+     48.00279,
+     -121.47947
+    ],
+    [
+     48.0027,
+     -121.47938
+    ],
+    [
+     48.00265,
+     -121.47913
+    ],
+    [
+     48.00268,
+     -121.4789
+    ],
+    [
+     48.00274,
+     -121.47868
+    ],
+    [
+     48.0027,
+     -121.47817
+    ],
+    [
+     48.00276,
+     -121.47792
+    ],
+    [
+     48.00279,
+     -121.47772
+    ],
+    [
+     48.00284,
+     -121.47759
+    ],
+    [
+     48.00285,
+     -121.47732
+    ],
+    [
+     48.00292,
+     -121.47695
+    ],
+    [
+     48.00286,
+     -121.47675
+    ],
+    [
+     48.00294,
+     -121.47661
+    ],
+    [
+     48.00301,
+     -121.47621
+    ],
+    [
+     48.00299,
+     -121.47589
+    ],
+    [
+     48.00297,
+     -121.47569
+    ],
+    [
+     48.00317,
+     -121.47532
+    ],
+    [
+     48.00329,
+     -121.47511
+    ],
+    [
+     48.00337,
+     -121.47499
+    ],
+    [
+     48.00352,
+     -121.47486
+    ],
+    [
+     48.00366,
+     -121.47472
+    ],
+    [
+     48.00386,
+     -121.4746
+    ],
+    [
+     48.00406,
+     -121.47441
+    ],
+    [
+     48.00418,
+     -121.47431
+    ],
+    [
+     48.00438,
+     -121.47428
+    ],
+    [
+     48.00448,
+     -121.47411
+    ],
+    [
+     48.0046,
+     -121.47415
+    ],
+    [
+     48.00476,
+     -121.47409
+    ],
+    [
+     48.00499,
+     -121.47403
+    ],
+    [
+     48.0052,
+     -121.4741
+    ],
+    [
+     48.00532,
+     -121.47415
+    ],
+    [
+     48.00555,
+     -121.47417
+    ],
+    [
+     48.00579,
+     -121.47417
+    ],
+    [
+     48.006,
+     -121.47429
+    ],
+    [
+     48.00622,
+     -121.47435
+    ],
+    [
+     48.00633,
+     -121.47447
+    ],
+    [
+     48.0064,
+     -121.47458
+    ],
+    [
+     48.00652,
+     -121.47472
+    ],
+    [
+     48.00671,
+     -121.47476
+    ],
+    [
+     48.00692,
+     -121.47471
+    ],
+    [
+     48.00704,
+     -121.47471
+    ],
+    [
+     48.00718,
+     -121.47471
+    ],
+    [
+     48.0074,
+     -121.47479
+    ],
+    [
+     48.00758,
+     -121.47475
+    ],
+    [
+     48.00774,
+     -121.47472
+    ],
+    [
+     48.00793,
+     -121.47476
+    ],
+    [
+     48.00793,
+     -121.47482
+    ],
+    [
+     48.00797,
+     -121.47486
+    ],
+    [
+     48.00802,
+     -121.47502
+    ],
+    [
+     48.00818,
+     -121.47501
+    ],
+    [
+     48.0083,
+     -121.47505
+    ],
+    [
+     48.00852,
+     -121.47508
+    ],
+    [
+     48.00872,
+     -121.47505
+    ],
+    [
+     48.00885,
+     -121.47518
+    ],
+    [
+     48.00894,
+     -121.47539
+    ],
+    [
+     48.00915,
+     -121.47536
+    ],
+    [
+     48.00934,
+     -121.47545
+    ],
+    [
+     48.00952,
+     -121.47547
+    ],
+    [
+     48.00962,
+     -121.47549
+    ],
+    [
+     48.00979,
+     -121.4755
+    ],
+    [
+     48.00995,
+     -121.4756
+    ],
+    [
+     48.01002,
+     -121.47573
+    ],
+    [
+     48.01015,
+     -121.47577
+    ],
+    [
+     48.01027,
+     -121.47574
+    ],
+    [
+     48.01043,
+     -121.47581
+    ],
+    [
+     48.01062,
+     -121.47598
+    ],
+    [
+     48.01077,
+     -121.47609
+    ],
+    [
+     48.01093,
+     -121.47617
+    ],
+    [
+     48.01105,
+     -121.47624
+    ],
+    [
+     48.01119,
+     -121.47632
+    ],
+    [
+     48.0114,
+     -121.47638
+    ],
+    [
+     48.0116,
+     -121.4764
+    ],
+    [
+     48.01175,
+     -121.47628
+    ],
+    [
+     48.01187,
+     -121.47612
+    ],
+    [
+     48.01197,
+     -121.47618
+    ],
+    [
+     48.01208,
+     -121.47617
+    ],
+    [
+     48.01229,
+     -121.47639
+    ],
+    [
+     48.01245,
+     -121.47649
+    ],
+    [
+     48.01252,
+     -121.47651
+    ],
+    [
+     48.01261,
+     -121.47654
+    ],
+    [
+     48.01269,
+     -121.47646
+    ],
+    [
+     48.01281,
+     -121.47654
+    ],
+    [
+     48.01291,
+     -121.47655
+    ],
+    [
+     48.01301,
+     -121.47655
+    ],
+    [
+     48.01316,
+     -121.4765
+    ],
+    [
+     48.01328,
+     -121.47659
+    ],
+    [
+     48.01344,
+     -121.47657
+    ],
+    [
+     48.01357,
+     -121.4766
+    ],
+    [
+     48.01374,
+     -121.47665
+    ],
+    [
+     48.01391,
+     -121.47668
+    ],
+    [
+     48.01398,
+     -121.47686
+    ],
+    [
+     48.01414,
+     -121.47693
+    ],
+    [
+     48.01416,
+     -121.47716
+    ],
+    [
+     48.01425,
+     -121.47737
+    ],
+    [
+     48.01434,
+     -121.47733
+    ],
+    [
+     48.0145,
+     -121.47738
+    ],
+    [
+     48.01466,
+     -121.4774
+    ],
+    [
+     48.01497,
+     -121.47753
+    ],
+    [
+     48.01512,
+     -121.47756
+    ],
+    [
+     48.01527,
+     -121.47772
+    ],
+    [
+     48.01538,
+     -121.47785
+    ],
+    [
+     48.01551,
+     -121.47784
+    ],
+    [
+     48.01567,
+     -121.47773
+    ],
+    [
+     48.01575,
+     -121.47778
+    ],
+    [
+     48.0158,
+     -121.47777
+    ],
+    [
+     48.01592,
+     -121.47789
+    ],
+    [
+     48.01611,
+     -121.47793
+    ],
+    [
+     48.01627,
+     -121.47789
+    ],
+    [
+     48.01657,
+     -121.47787
+    ],
+    [
+     48.01676,
+     -121.47802
+    ],
+    [
+     48.01686,
+     -121.47808
+    ],
+    [
+     48.01698,
+     -121.47804
+    ],
+    [
+     48.01712,
+     -121.47792
+    ],
+    [
+     48.01731,
+     -121.47783
+    ],
+    [
+     48.01744,
+     -121.47778
+    ],
+    [
+     48.01757,
+     -121.47785
+    ],
+    [
+     48.01773,
+     -121.47778
+    ],
+    [
+     48.01788,
+     -121.47788
+    ],
+    [
+     48.01803,
+     -121.47802
+    ],
+    [
+     48.01826,
+     -121.47823
+    ],
+    [
+     48.01846,
+     -121.47852
+    ],
+    [
+     48.01865,
+     -121.47873
+    ],
+    [
+     48.01877,
+     -121.4788
+    ],
+    [
+     48.01889,
+     -121.47877
+    ],
+    [
+     48.01903,
+     -121.47889
+    ],
+    [
+     48.01922,
+     -121.479
+    ],
+    [
+     48.01938,
+     -121.47913
+    ],
+    [
+     48.01942,
+     -121.47926
+    ],
+    [
+     48.01949,
+     -121.47926
+    ],
+    [
+     48.01961,
+     -121.47937
+    ],
+    [
+     48.01978,
+     -121.4795
+    ],
+    [
+     48.01971,
+     -121.47966
+    ],
+    [
+     48.01979,
+     -121.47986
+    ],
+    [
+     48.01994,
+     -121.47992
+    ],
+    [
+     48.0201,
+     -121.48007
+    ],
+    [
+     48.02025,
+     -121.48018
+    ],
+    [
+     48.02041,
+     -121.4803
+    ],
+    [
+     48.02035,
+     -121.48049
+    ],
+    [
+     48.0204,
+     -121.48062
+    ],
+    [
+     48.02051,
+     -121.48053
+    ],
+    [
+     48.02058,
+     -121.48055
+    ],
+    [
+     48.02067,
+     -121.48066
+    ],
+    [
+     48.02079,
+     -121.48067
+    ],
+    [
+     48.02092,
+     -121.48069
+    ],
+    [
+     48.02105,
+     -121.48083
+    ],
+    [
+     48.02121,
+     -121.48084
+    ],
+    [
+     48.02136,
+     -121.48069
+    ],
+    [
+     48.02145,
+     -121.48047
+    ],
+    [
+     48.02148,
+     -121.48023
+    ],
+    [
+     48.02161,
+     -121.48018
+    ],
+    [
+     48.0218,
+     -121.48028
+    ],
+    [
+     48.02199,
+     -121.48033
+    ],
+    [
+     48.02195,
+     -121.48014
+    ],
+    [
+     48.02184,
+     -121.47996
+    ],
+    [
+     48.02179,
+     -121.47978
+    ],
+    [
+     48.02175,
+     -121.47964
+    ],
+    [
+     48.02168,
+     -121.47943
+    ],
+    [
+     48.02179,
+     -121.4792
+    ],
+    [
+     48.02183,
+     -121.47902
+    ],
+    [
+     48.02198,
+     -121.47885
+    ],
+    [
+     48.022,
+     -121.47871
+    ],
+    [
+     48.02212,
+     -121.47867
+    ],
+    [
+     48.02225,
+     -121.47861
+    ],
+    [
+     48.02239,
+     -121.47845
+    ],
+    [
+     48.0224,
+     -121.47818
+    ],
+    [
+     48.02253,
+     -121.47806
+    ],
+    [
+     48.02267,
+     -121.47795
+    ],
+    [
+     48.02277,
+     -121.47794
+    ],
+    [
+     48.02287,
+     -121.47793
+    ],
+    [
+     48.02297,
+     -121.47784
+    ],
+    [
+     48.02312,
+     -121.47769
+    ],
+    [
+     48.02322,
+     -121.47769
+    ],
+    [
+     48.02337,
+     -121.47787
+    ],
+    [
+     48.02354,
+     -121.47786
+    ],
+    [
+     48.02371,
+     -121.47784
+    ],
+    [
+     48.02385,
+     -121.47787
+    ],
+    [
+     48.02405,
+     -121.47787
+    ],
+    [
+     48.02423,
+     -121.47786
+    ],
+    [
+     48.02441,
+     -121.47788
+    ],
+    [
+     48.02459,
+     -121.4779
+    ],
+    [
+     48.02468,
+     -121.47785
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "Standard scramble from the Sunrise Mine Trailhead: ford the South Fork Stillaguamish, climb to Headlee Pass, then traverse cairned talus and heather benches below the Mile High But…",
+      "fromTo": "Car-to-car scramble via Headlee Pass",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack; ice axe useful early season for snow in the basin.",
+   "what_to_bring": [
+    "ice axe (early-season/high-snow years)",
+    "helmet",
+    "trekking poles",
+    "Green Trails Mountain Loop Highway No. 111SX map",
+    "Northwest Forest Pass or day-use fee"
+   ],
+   "pro_tips": [
+    "Start early, both to beat other parties into the loose Headlee Pass chute and to keep daylight margin for the descent",
+    "Carry an ice axe even in July in high-snow years — the chute below Headlee Pass holds snow longest",
+    "Green Trails 'Mountain Loop Highway No. 111SX' is the standard paper map for this approach"
+   ],
+   "watch_out": [
+    "rockfall in the Headlee Pass chute — go early and space out from other parties",
+    "high/unbridged river ford during spring snowmelt",
+    "afternoon thunderstorms are common in the North Cascades in summer — start early"
+   ],
+   "pro_needs": "None.",
+   "best_season": "July through September",
+   "high_point_ft": 6020,
+   "aid_grade": null,
+   "approach": "From the Sunrise Mine Trailhead (2,350 ft, end of FR-4065 off the Mountain Loop Highway), follow the Sunrise Mine Trail (Trail #707) about half a mile. Just before the trail crosses the South Fork Stillaguamish River, leave it for a faint abandoned path on the river's east side, or take the line of least resistance along that side. The path soon fades into slide alder, brush and rock debris; fording the river to dodge the brush is hazardous in high runoff, especially in late spring and early summer. Work up the valley past a house-sized boulder near 3,100 ft, then either cross the river and climb a ridge ramp southwest to the upper basin (about 4,000 ft), or continue to a broad basin at about 3,700 ft and climb the steep gully (or the slabs to its right) directly east of it, leaving it to the right where that is easy. Climb snow-covered slabs to a notch in Morning Star's southeast ridge at about 5,600 ft; these slabs are the route's main avalanche concern. The round trip is roughly 5.5-6 miles with 3,700-4,200 ft of gain. The steep gully is often icy when snow-filled, so helmet, ice axe and crampons are standard early in the season; early-season snow makes this a basic alpine climb rather than a scramble.",
+   "descent_text": "This is a walk-off/downclimb — reverse the ascent line, there is no rappelling on the standard route (0 rappels). From the 6,020 ft summit, descend on or near the south ridge to the broad gully, downclimb it into the southeast basin, traverse back below the cliffs and climb about 200 ft through trees to the notch in the southeast ridge. The gully (icy in early/mid-season) is often easier to face in and downclimb than to descend facing out, and crampons make the icy sections much smoother; groups should stay tight and avoid stacking directly above one another. From the notch, descend the snow-covered slabs (watch for avalanche conditions) and the gully or ridge ramp back into the South Fork Stillaguamish valley, then retrace the brushy east-side path to the Sunrise Mine Trail and the trailhead.",
+   "bail": "Descend to the basin and trail.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, then brushy path",
+     "notes": "Follow the Sunrise Mine Trail about half a mile. Just before it crosses the South Fork Stillaguamish, leave it for a faint abandoned path on the river's east side. The path comes and goes and soon vanishes into slide alder and brush, worst around 2,700 ft. Fording the river to dodge the brush is not safe when the water is high.",
+     "pitch": "1"
+    },
+    {
+     "grade": "Brush, boulders, debris",
+     "notes": "Keep working up the east side of the valley past a house-sized boulder near 3,000–3,100 ft. One option crosses the river here and climbs a ridge ramp southwest to an upper basin at 4,000 ft, which is brushier. The other follows the river to the broad basin at about 3,700 ft below Del Campo's north face. In spring this ground is piled with hard, lumpy avalanche debris shed off the slabs.",
+     "pitch": "2"
+    },
+    {
+     "grade": "Steep gully or slabs",
+     "notes": "From the 3,700-ft basin turn sharply right up the steep gully directly east, or the slabs on its right. Leave it to the right once that is easy. At a headwall near 4,400 ft either climb straight up or go around through the trees, which is the easier line on snow and on the way down. The gully often holds snow into early summer, with water running down its middle.",
+     "pitch": "3"
+    },
+    {
+     "grade": "Snow-covered slabs",
+     "notes": "Climb the slabs east to a notch in Morning Star's southeast ridge at about 5,600 ft. The summit comes into view on this flatter ground. These slabs hold snow well into the season and are the route's main avalanche concern. Close to the notch the snow can be icy under fresh snow, so put crampons on before it steepens.",
+     "pitch": "4"
+    },
+    {
+     "grade": "Steep gully, ~45° snow",
+     "notes": "From the notch drop roughly 100–200 ft through trees into the southeast basin (about 5,400 ft). Traverse right below the cliffs to the first broad gully and climb it to the south ridge about 250 ft below the summit. Filled with snow, the gully runs near 45° and is often icy, so crampons are standard. When the snow is bad, the rocks on its right are an alternative, but they are exposed.",
+     "pitch": "5"
+    },
+    {
+     "grade": "Steep rock and snow",
+     "notes": "Climb north on or near the south ridge over the last 200–250 ft of steep ground to the 6,020-ft summit. Early in the day the west-facing slope below the top can stay icy, so mix rock, heather and snow to avoid the iced patches. Descend the same way, taking particular care in the gully below.",
+     "pitch": "6"
+    }
+   ],
+   "itinerary": {
+    "cal": "Sunrise Mine Trailhead requires a NW Forest Pass; the trail is typically snow-free and brushy June through October.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard scramble from the Sunrise Mine Trailhead: ford the South Fork Stillaguamish, climb to Headlee Pass, then traverse cairned talus and heather benches below the Mile High Buttress before a short scramble gully/ridge to the summit. Descent reverses the same line.",
+      "hours": 9,
+      "miles": 5.4,
+      "title": "Car-to-car scramble via Headlee Pass",
+      "gainFt": 3800,
+      "lossFt": 3800,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Ford the South Fork Stillaguamish at 0.5 mi; can be a difficult crossing after rain."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach Headlee Pass (4,600')",
+        "detail": "2.7 mi and 2,400 ft in, between Sperry and Morning Star Peaks."
+       },
+       {
+        "time": "8:15 AM",
+        "label": "Leave the pass trail, traverse talus/heather",
+        "detail": "Cairned route northeast toward the Mile High Buttress."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Summit Morning Star Peak",
+        "detail": "Final scramble gully/ridge right of the buttress."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the scramble to Headlee Pass / Sunrise Mine Trail."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Back at trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit Morning Star Peak (6,020')"
+     }
+    ],
+    "totalNote": "A long single day: about 9 hrs car-to-car, 3,800 ft gain over roughly 5.4 mi round trip via Headlee Pass."
+   },
+   "access": {
+    "fees": "$5/vehicle day-use fee or $30 annual site pass at the Sunrise Mine Trailhead; Northwest Forest Pass and Interagency (America the Beautiful) passes are honored. Washington's Discover Pass is NOT accepted here.",
+    "rules": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply.",
+    "permit": "No wilderness permit or self-issue permit required for day trips.",
+    "closures": "Sunrise Mine Road (FR 4065) and the trail have no formal gate but are typically snow-covered and impassable until roughly June; the South Fork Stillaguamish ford near the trailhead can become impassable during high runoff.",
+    "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May.",
+    "group_limit": 12,
+    "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (administered from Verlot Public Service Center)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass (or equivalent day-use fee) required for trailhead parking",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required outside the wilderness",
+     "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+    }
+   },
+   "road": {
+    "name": "Sunrise Mine Road (Forest Road 4065)",
+    "status": "Narrow gravel road, rough in spots but passable to most passenger cars in dry conditions",
+    "driveNote": "From Verlot Public Service Center, drive 17.1 mi east on the paved Mountain Loop Highway, then turn right onto FR 4065 and continue 2.2 mi to its end at the Sunrise Mine Trailhead (~2,350 ft).",
+    "seasonalGate": "No permanent gate; road and trail typically aren't clear of snow until June — check Mt. Baker-Snoqualmie NF alerts before driving out."
+   },
+   "climate": {
+    "typical": "Wet, west-slope North Cascades marine climate with heavy winter snowpack and a relatively narrow reliable snow-free window at elevation.",
+    "bySeason": {
+     "fall": "Good conditions can persist into early October; watch for early-season snow after storms and shrinking daylight for the descent.",
+     "spring": "Deep, unstable snow lingers in the Headlee Pass gully and on north aspects into June; the river ford runs high with snowmelt.",
+     "summer": "Best window, roughly July-September; trail and scramble terrain typically snow-free by mid-to-late July.",
+     "winter": "Road and trail generally inaccessible; the Headlee Pass chute is avalanche terrain."
+    },
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to nonexistent from the trailhead through Headlee Pass. The river ford near the trailhead and the loose chute below Headlee Pass are the most commonly reported hazard sites on this approach.",
+    "county": "Snohomish",
+    "rangerStation": "Verlot Public Service Center, 33515 Mountain Loop Highway, Granite Falls, WA 98252 — (360) 691-7791 (seasonal hours, Fri-Mon 8am-noon & 12:30-4pm; closed Tue-Thu)",
+    "nearestHospital": "Cascade Valley Hospital (Arlington, WA) — Level IV Emergency Department, the closest facility to the Mountain Loop Highway corridor; Providence Regional Medical Center Everett — Level II trauma center — for serious/major trauma",
+    "sheriffDispatch": "911 — Snohomish County Sheriff's Office dispatches Snohomish County Volunteer Search & Rescue (SCVSAR) for backcountry incidents"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July-September; drawn mostly by WA peak-bagging (Bulger list) parties and climbers using the same Sunrise Mine Trail/Headlee Pass approach as the much more popular Vesper Peak and Vesper Lake day hike, but Morning Star itself sees a fraction of that traffic since it requires leaving the trail into the basin",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Roughly a dozen to a few dozen parties per season (rough estimate) - one party in 2007 described only a single other car at the trailhead"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Full day out (9 hrs total) with significant elevation gain on trail followed by steep, loose off-trail terrain to Headlee Pass and into the Sunrise Mine basin",
+     "packWeight": "Light day-pack, roughly 15-25 lbs (water, layers, helmet, basic scramble gear) - no technical rack needed"
+    },
+    "approachTime": "Roughly 5 hrs one-way to the summit, within a 9-hr round trip from a 6:00 AM start",
+    "requiredSkills": [
+     "off-trail routefinding into the basin",
+     "steep loose talus and heather scrambling",
+     "judgment around the Headlee Pass chute, which is notorious for rockfall",
+     "comfort with exposure near the summit block",
+     "early-season snow/glissade judgment when the basin is still snow-filled",
+     "turnaround discipline given afternoon weather buildup"
+    ],
+    "experienceLevel": "Intermediate scrambler - comfortable leaving an established trail for unmarked off-trail routefinding and sustained Class 2-3 talus/heather scrambling; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September (July-September); July is prime once the basin clears of snow",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Prime scramble season; talus and heather are typically snow-free by this point",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "The basin typically holds snow into early summer ('snow-filled basin' in spring); early-season snow above Headlee Pass adds glissade/post-hole hazard and obscures the talus route",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most reliable dry footing on talus/heather; prime scramble season",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the best-season window; early snow can return above Headlee Pass and Sunrise Mine Road access becomes less reliable",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Early fall is good; still within the best season window but shortening days and higher chance of an early cold snap",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime Cascades weather the basin can still be holding snow into early summer, transitioning to dry talus/heather conditions through the July-September window and turning snowbound again once the road closes for winter",
+     "probability": "'afternoon weather' - convective buildups are common in the alpine on summer afternoons, so an early (06:00) start and summit-before-midday plan is advised"
+    },
+    "exposure": "Class 2-3 scrambling; exposure and fall consequence concentrate at the steep, loose Headlee Pass chute (notorious for rockfall onto parties below) and near the summit block, where exposure is the hazard - a slip on loose talus could produce a serious fall, though this is not sustained technical climbing",
+    "avalanche": {
+     "zone": "West Slopes Central (NWAC) covers the Mountain Loop Highway/Sunrise Mine area, but this is a dry-season (Jul-Sep) scramble outside NWAC's formal winter forecast window, so no meaningful avalanche advisory applies during the climbing season",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; this is a talus-and-heather scramble, not glaciated terrain"
+   },
+   "data_quality": {
+    "gaps": [
+     "precise round-trip mileage/elevation-gain for the summit itself (beyond the Vesper Lake trail figures) not independently confirmed",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/VUQF9",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.003885,
+    "peakLng": -121.490955,
+    "trailhead": "Sunrise Mine Trailhead (Trail #707, FR-4065)",
+    "trailheadLat": 48.02388889,
+    "trailheadLng": -121.4741444,
+    "trailheadDirection": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Sunrise Mine Trail over Headlee Pass",
+     "notes": "From the Sunrise Mine trailhead, take the trail the whole way. The first mile crosses two unbridged creeks — a log crossing, a root crossing and a more substantial ford — which need real caution in early season or after rain. Beyond them the trail climbs steadily through forest and then tightens into ever-sharper switchbacks up a narrow rocky couloir. The last quarter mile below the pass is the notorious part: steep, with tread periodically wrecked by snow and rockfall and a genuine risk from rock kicked down by parties above. Unlike the three rock routes on this peak, do NOT leave the trail at the switchback lower down.",
+     "season": "July to September. Snow lingers in the pass gully and on north-facing ground into July, and an ice axe is worth carrying until it has gone.",
+     "hazards": [
+      "Notorious rockfall chute immediately below the pass — a helmet is worth wearing on the trail here, not just above it",
+      "Difficult ford about half a mile from the trailhead; seasonal log crossings are often washed out in high runoff",
+      "Lingering steep snow in the pass gully and on north-facing terrain into July",
+      "Loose talus and heather sidehilling above the pass with only sparse cairns",
+      "A steep gully partway up the scramble is often icy; parties commonly move onto the rock rib to its right to avoid it"
+     ],
+     "baseFinding": "The scrambling starts at HEADLEE PASS itself — the notch where the trail finally tops out of the rockfall chute and the ground opens northward. The test that you are at the pass and not at a false top inside the chute is water: the outlet stream just beyond the pass runs strong for most of the season and is the last reliable water of the day, so if there is no stream on the far side you have not topped out yet. From the pass, leave the maintained tread and work north along and below the peak's south ridge over talus and heather benches. Cairns mark parts of the line and stop entirely higher up, so the real check is that the ground steepens continuously into rock and gully terrain rather than easing off. Negative marker: if you have left the trail lower down on open talus, following cairns northeast toward a rock tower, you are on the climbers' traverse to the towers north of the peak and you are heading for a bolted rock route, not the summit scramble."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "South Fork Stillaguamish valley",
+     "notes": "Leave the Sunrise Mine Trail about half a mile in, just before it crosses the South Fork Stillaguamish, and work up the east side of the valley through brush, slide alder and rock debris past a house-sized boulder near 3,100 ft. Either cross the river and climb a ridge ramp southwest to the upper basin (about 4,000 ft), or continue to the broad basin near 3,700 ft and climb the steep gully, or the slabs to its right, directly east."
+    },
+    {
+     "n": 2,
+     "label": "Slabs to the southeast-ridge notch (~5,600 ft)",
+     "notes": "Climb snow-covered slabs to the notch in Morning Star's southeast ridge. These slabs hold snow well into the season and are the route's main avalanche concern."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Gully and south ridge to the summit (6,020 ft)",
+     "notes": "From the notch drop about 200 ft through trees into the southeast basin, traverse right below the cliffs to the first broad gully, and climb it to the south ridge about 250 ft below the summit. Finish on or near the south ridge. The gully is steep and often icy when snow-filled; helmet, ice axe and crampons are standard early in the season."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+     "role": "main",
+     "type": "camp",
+     "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the valley. They are closer to the Sunrise Mine and Big Four trailheads than anything up-valley, at the cost of being low, wooded and busy with general campers rather than climbers. Weekend availability is genuinely tight in midsummer, so a reservation is worth having. Dispersed roadside pullouts along the corridor need no permit but are increasingly signed and patrolled.",
+     "water": "Verlot and Gold Basin generally have drinking water in season; the Stillaguamish runs alongside as a backup",
+     "permit": "Developed fee campgrounds, no permit. None are in wilderness. A Northwest Forest Pass is what you need for the trailheads up the road, not for the sites themselves.",
+     "capacity": "Large by the standards of this valley — dozens of developed sites across the three, tables, toilets, some with potable water; fee sites, reservable in part"
+    },
+    {
+     "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+     "role": "main",
+     "type": "camp",
+     "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchbacked chute below Headlee Pass at roughly 4,700 ft, which is loose and known for rockfall — parties should not stack up in it. Snow lingers in the chute and on the pass long after the valley is clear, and it is the section most likely to turn an overnight around. Camp on the durable benches rather than the meadow closest to the water. No elevation is recorded; none was confidently sourced.",
+     "water": "Reliable — the basin outlet stream runs all season and the lake itself is a backup, though it holds ice and snow cover well into July",
+     "permit": "Mt Baker-Snoqualmie National Forest but OUTSIDE any wilderness — no permit of any kind to camp. Northwest Forest Pass required at the Sunrise Mine trailhead.",
+     "capacity": "Several tents — grassy benches above the stream just past the pass, plus more spread around the lake basin"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

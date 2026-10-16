@@ -1,0 +1,254 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "bail",
+   "path": [],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Seasonal guidance names the wrong trail"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Seasonal guidance names the wrong trail"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    3
+   ],
+   "fact": "Seasonal guidance names the wrong trail"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent (reverse the pitch vs walk off)"
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Permit type at trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_fin_scramble",
+   "before": {
+    "approach": "From Hoodsport, WA drive ~16 miles northwest to the Staircase Ranger Station / North Fork Skokomish River Trailhead. Hike the North Fork Skokomish River Trail ~3.4-3.7 mi to the Flapjack Lakes Trail junction, then climb ~3.6-3.8 mi more to Flapjack Lakes (~3,850-3,900'). From the lakes go east ~1.5 mi to Gladys Divide (~5,000'), then follow the Sawtooth Ridge crest southeast (via Needle Pass, ~5,720') past Alpha, Beta, Mount Cruiser, The Blob, The Needle, and the Castle Peaks to The Fin. About 17 miles round trip with roughly 5,500' of total gain to the base of the climbing.",
+    "waypoints": [
+     {
+      "lat": 47.5161,
+      "lng": -123.3282,
+      "elev": 785,
+      "name": "Staircase Ranger Station / North Fork Skokomish Trailhead",
+      "note": "Wilderness permit required (self-issue reservation system); trail departs above the ranger station past the stock corral.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Hoodsport, drive about 16 miles northwest past Lake Cushman on FR 24 to the Staircase Ranger Station and the North Fork Skokomish River Trailhead at roughly 785 feet. The trail leaves from above the ranger station, past the stock corral. A wilderness permit is required, and because Flapjack Lakes is a limited-use overnight zone you should reserve one on recreation.gov ahead of time."
+     },
+     {
+      "lat": 47.5462056,
+      "lng": -123.3761067,
+      "elev": 1435,
+      "name": "Spike Camp Junction",
+      "note": "North Fork Skokomish Trail continues straight toward First Divide; right fork switchbacks steeply to Flapjack Lakes — last reliable creek water is ~100 yds past Spike Camp.",
+      "type": "Junction",
+      "distMi": 3.5
+     },
+     {
+      "lat": 47.5608411,
+      "lng": -123.3406606,
+      "elev": 3900,
+      "name": "Flapjack Lakes",
+      "note": "Designated backcountry camp in a subalpine basin (bear wire, pit toilet); campfires banned above 3,500 ft and lake water must be treated.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 47.56602,
+      "lng": -123.32013,
+      "elev": 4960,
+      "name": "Gladys Divide",
+      "note": "High saddle overlooking the Sawtooth spires (Mt. Lincoln to the south, Mt. Cruiser southwest); trail turns primitive/unmaintained beyond here and snow can linger into July.",
+      "type": "Junction",
+      "distMi": 9
+     },
+     {
+      "lat": 47.562405,
+      "lng": -123.331435,
+      "elev": 5700,
+      "name": "Needle Pass",
+      "note": "Notch on the Sawtooth Ridge crest southeast of Gladys Divide used to gain the ridgeline toward The Fin; loose talus and boulder-field route-finding.",
+      "type": "Junction",
+      "distMi": 9.8
+     },
+     {
+      "lat": 47.560298,
+      "lng": -123.323449,
+      "elev": 5400,
+      "name": "Exposed ridge crest below the NE face",
+      "note": "Short exposed scrambling/downclimbing sections along the crest approaching The Fin — the same steps most parties rappel or downclimb on the descent.",
+      "type": "Hazard",
+      "distMi": 10.3
+     },
+     {
+      "lat": 47.559455,
+      "lng": -123.320255,
+      "elev": 5599,
+      "name": "The Fin",
+      "note": "True summit (5.4); standard line face-climbs the northeast side through an unusually deep chimney to the top.",
+      "type": "Summit",
+      "distMi": 10.5
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Staircase and Flapjack Lakes to Sawtooth Pass",
+      "notes": "The only practical way in is from the Staircase Ranger Station on the North Fork Skokomish: about 3.5 miles of river trail to the Spike Camp fork, then a steep 3.6 miles to Flapjack Lakes, then a mile and a half of primitive tread to Gladys Divide. Flapjack Lakes is a limited-entry overnight basin, so a reserved permit has to be sorted out long before you drive out, and almost nobody does this tower as a day trip from the road. Beyond Gladys Divide the maintained trail ends and you travel the crest on goat paths and boulder fields. Check with the park before committing: fire damage in the Skokomish corridor has closed the approach trails for extended periods even while the Staircase road itself was open, and the tower is unreachable without them.",
+      "season": "Late July to September; snow lingers",
+      "hazards": [
+       "Frost-shattered pillow basalt on the outer faces and ledges, better in the chimney than out of it",
+       "Moss-slick slabs and holds after rain, which is most of the year here",
+       "No fixed protection on the ridge — rappel anchors are slung around horns and chockstones, so carry spare webbing and cord",
+       "Exposed downclimbing on the crest between Gladys Divide and the tower, the same steps you reverse on the way out",
+       "A dozen similar towers strung along one crest, so a wrong tower costs hours",
+       "Burn-scar rockfall and treefall along the lower approach corridor"
+      ],
+      "baseFinding": "Work southeast along the crest from Gladys Divide, past the Needle and the Castle Spires, until a narrow chute cuts the ridge immediately beside a blade-shaped tower. That chute is Sawtooth Pass, and the tower beside it is The Fin. From the pass, step east onto the northeast side of the tower and look for angled, bouldery moves leading up the face into a chimney you can genuinely walk into — a deep, dark slot with wedged chockstones jammed in it, and the only feature of its kind on this whole crest. That chimney is the confirmation: nothing else along Sawtooth Ridge has one, and the deeper you look into it the more obviously it goes. The Castle Spires just before it are a cluster of blockier pinnacles with an obvious north arete and no chimney, and they are the decoy most parties stop under. If you reach a notch with no chute below it, under a steep tower whose sides are clean and unslotted, you have passed The Fin and are standing under The Horn — turn back northwest one tower."
+     }
+    ],
+    "bail": "There's no quicker bail off Sawtooth Ridge — reverse the approach: down to Sawtooth Pass, then Gladys Divide, Flapjack Lakes, and out the North Fork Skokomish Trail to Staircase.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong backpacker — the Staircase approach is on-trail but long: ~7.5 mi and ~3,050 ft gain to Flapjack Lakes camp, then several more off-trail miles and ~2,450 ft over Gladys Divide and Sawtooth Pass on scramble day; most parties backpack in and base-camp at Flapjack Lakes rather than attempt car-to-summit-to-car",
+      "packWeight": "Light scrambling/rack pack for the summit day (helmet, minimal rack/webbing for the optional 5.4 chimney pitch, food/water); overnight backpacking pack for the approach to Flapjack Lakes camp"
+     },
+     "approachTime": "A full day (~5-6 hrs) to backpack in to Flapjack Lakes camp, then a long (~8-9 hr) summit day over Gladys Divide and Sawtooth Pass to The Fin and back — most parties treat this as a 3-day, 2-night trip with a base camp at Flapjack Lakes rather than a single push",
+     "requiredSkills": [
+      "Class 3-4 scrambling / exposed rock movement",
+      "loose rock and rockfall awareness (helmet mandatory, tight group spacing)",
+      "basic routefinding among the Sawtooth spires (limited beta, no marked route)",
+      "comfort self-arresting or downclimbing steep dirt/scree on the headwall approach",
+      "optional: short-rope/rappel skills if a party opts to protect any section"
+     ],
+     "experienceLevel": "Solid Class 3-4 scrambling experience with exposure; should be comfortable on loose, exposed rock with no fixed protection and able to reverse or downclimb committing terrain"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through September — this is when the Putvin Trail headwall and the Sawtooth scrambling are typically snow-free",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early July often still has snow patches on the approach and shaded scramble terrain; conditions generally firm up to match the late July-September window by the back half of the month",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Lingering snowpack commonly covers the steep Putvin Trail headwall and the Sawtooth approach into July in a normal year; snow travel skills and possibly an axe would be needed, and the scramble rock itself may still be snow-covered or wet",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Peak dry-rock conditions, longest daylight, and the most reliable weather window of the season for the exposed scrambling",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Outside the established best-season window; Olympic weather turns wet and unstable, and new snow can make the loose rock and exposed sections considerably more hazardous",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Still within the optimal window — generally dry and stable, though days are shorter and early-season snow/weather can arrive late in the month",
+       "status": "good"
+      }
+     }
+    },
+    "descent": "Reverse the route, downclimbing or rappelling exposed steps."
+   }
+  }
+ ]
+}

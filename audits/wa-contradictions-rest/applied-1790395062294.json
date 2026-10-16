@@ -1,0 +1,268 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Which ridge / direction from the pass"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Which ridge / direction from the pass"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Days required"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Days required"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Days required"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Days required"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Trailhead the party returns to"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Wilderness permit method"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Wilderness permit method"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Boulder Lake location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_appleton_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Trail is typically snow-free July through October; an overnight at Oyster Lake near Appleton Pass (wilderness permit required) is a common easier alternative to the single-day push, giving an early start on dry rock before afternoon cloud builds.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Almost everyone does this as a single long day: hike the Sol Duc River Trail to the Appleton Pass junction, climb switchbacks to the 5,100 ft pass, then follow a boot path along the ridge crest east toward Appleton, with Class 2-3 scrambling and a short, narrow, exposed 'knife ridge' section guarding the true summit. Reverse the same line to descend, dropping into the heather/talus on the southeast side near the notch to avoid the worst of the ridge exposure on the way down.",
+       "hours": 9,
+       "miles": 17,
+       "title": "Sol Duc Trailhead to summit and back, car-to-car",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Sol Duc Trailhead",
+         "detail": "Follow the Sol Duc River Trail west/north about 4.9 miles to the Appleton Pass Trail junction."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Reach Appleton Pass (~5,100 ft)",
+         "detail": "2.3 miles and about 2,000 ft of the trail's steepest switchbacks above the river trail; 7.3 mi in from the car."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Pick up the climber's path on the ridge",
+         "detail": "Difficult, slow walking/scrambling on steep heather and loose sandstone/slate up to about 5,800 ft, then Class 2 ground onto the broad summit ridge."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Summit Mount Appleton (6,017 ft)",
+         "detail": "Narrow, rocky summit with a short exposed knife-ridge move just below the top; views of Olympus, Fairchild, Carrie and the Bailey Range."
+        },
+        {
+         "time": "+6 hr",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge to the notch above Appleton Pass, dropping into the heather/talus basin on the southeast side where it's faster and less exposed than the crest."
+        },
+        {
+         "time": "9 hr",
+         "label": "Back at Sol Duc Trailhead",
+         "detail": "Typical car-to-car time for a fit party."
+        }
+       ],
+       "objective": "Summit Mount Appleton via Appleton Pass and the East Ridge climber's path, round trip from the Sol Duc Trailhead"
+      }
+     ],
+     "totalNote": "A long, strenuous single day: about 17 miles round trip and roughly 4,000-4,500 ft of net gain (trip reports cite up to 6,000 ft cumulative given the undulating ridge), typically 9 hours car-to-car for a fit party."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Multi-day backpacking fitness — approach to a backcountry camp near the pass is long (Sol Duc/Appleton Pass or Boulder Lake trail) before the scramble day itself",
+      "packWeight": "Overnight backpacking load (shelter, food, bear-resistant storage) for the approach; light daypack for the actual summit scramble from camp"
+     },
+     "approachTime": "Long multi-hour approach best split over 2+ days: hike in via Sol Duc/Appleton Pass or Olympic Hot Springs/Boulder Lake trail to a backcountry camp near Appleton Pass, then a separate scramble day to the summit and back",
+     "requiredSkills": [
+      "Off-trail/cross-country navigation (map, compass or GPS) beyond the pass",
+      "Class 2 talus and loose-rock scrambling",
+      "Comfort on steep heather and chossy, sharp-edged sandstone/slate",
+      "Backcountry camping logistics (permit, bear-resistant food storage)",
+      "Early-season snow travel awareness for lingering snow near the pass"
+     ],
+     "experienceLevel": "Comfortable with off-trail Class 2 talus/heather scrambling and self-sufficient backcountry travel; should have some route-finding experience since the summit push leaves the maintained trail at Appleton Pass"
+    },
+    "turnaround": "Set a firm turnaround time before leaving camp and honor it: this is off-trail Class 3 terrain in a range known for fast-changing, unpredictable weather, and the long trail approach back to Madison Falls means you need real daylight margin for the descent, not just enough time to tag the summit.",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool, moist northern-Olympic climate; weather coming off the Strait of Juan de Fuca can change quickly even in summer",
+      "probability": "Early-season (July) risk of lingering snow near the pass; early-season storms become more likely again by September"
+     },
+     "exposure": "Low-to-moderate fall exposure typical of Class 2 terrain, but loose talus and chossy, sharp-edged sandstone/slate on the upper slopes raise the consequence of a slip beyond a typical clean talus scramble; the remote, backcountry setting means help is far away",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route (falls within NWAC's broader Olympics forecast zone, but this route is only climbed in the dry mid-July-September window, well outside the winter/spring avalanche season)",
+      "byMonth": {
+       "July": "N/A",
+       "June": "Moderate",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1650,
+      "name": "Sol Duc Trailhead (Olympic NP)",
+      "note": "Road-end trailhead past Sol Duc Hot Springs Resort (14 mi up Sol Duc Hot Springs Rd from US-101); self-issue wilderness permit required for any overnight stay.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Sol Duc Hot Springs Road off US-101 and follow it about 13 to 14 miles past Sol Duc Hot Springs Resort, near Sol Duc Falls, to the road-end Sol Duc Trailhead in Olympic National Park. Any overnight stay needs a self-issue wilderness permit, filled out at the trailhead. The trail is typically snow-free July through October. Do not plan on the Boulder Lake side instead: Olympic Hot Springs Road washed out and is permanently closed to vehicles beyond Madison Falls, which adds 8 miles each way of road walking or biking just to reach the old Boulder Creek Trailhead."
+     },
+     {
+      "lat": 47.932233,
+      "lng": -123.750183,
+      "elev": 3082,
+      "name": "Appleton Pass Trail junction (Sol Duc River Trail split)",
+      "note": "Sol Duc River Trail forks here; cross the Sol Duc River on a footlog just before the split, then head uphill (stay right) onto the Appleton Pass Trail.",
+      "type": "Junction",
+      "distMi": 4.9
+     },
+     {
+      "lat": 47.9319907,
+      "lng": -123.748658,
+      "elev": 3425,
+      "name": "Rocky Creek footbridge",
+      "note": "Two-part log bridge over Rocky Creek — the last dependable, easy water refill before the long climb up into the Appleton Pass meadows.",
+      "type": "Water",
+      "distMi": 5.25
+     },
+     {
+      "lat": 47.938564,
+      "lng": -123.719422,
+      "elev": 5050,
+      "name": "Appleton Pass camp area",
+      "note": "Scattered established tent pads just below the pass, some fully exposed to wind with views, others tucked in trees; water is from Oyster Lake or lingering snowfields, unreliable by late summer.",
+      "type": "Campsite",
+      "distMi": 7.1
+     },
+     {
+      "lat": 47.93842,
+      "lng": -123.72269,
+      "elev": 5114,
+      "name": "Appleton Pass (the gap)",
+      "note": "True saddle/pass; maintained trail continues north to Boulder Lake/Olympic Hot Springs and east toward Oyster Lake — leave the trail here and head north up open slopes toward Appleton's south ridge.",
+      "type": "Junction",
+      "distMi": 7.3
+     },
+     {
+      "lat": 47.94701285714285,
+      "lng": -123.73019285714285,
+      "elev": 5950,
+      "name": "6,000-ft notch below the summit block",
+      "note": "Heather/talus/grass slope steepens sharply into a Class 3 notch between Appleton's two summit humps — the exposed section climbers report needing to concentrate through, both up and down.",
+      "type": "Hazard",
+      "distMi": 7.8
+     },
+     {
+      "lat": 47.950555,
+      "lng": -123.732785,
+      "elev": 6017,
+      "name": "Mount Appleton summit",
+      "note": "True summit (6,017 ft), the higher of two rocky humps; open views west/north down the South Fork Boulder Creek valley toward Mt. Olympus.",
+      "type": "Summit",
+      "distMi": 8
+     }
+    ],
+    "beta": "This is a non-technical (Class 3) scramble, not a roped climb. Approach on trail to either Boulder Lake (below Appleton's south side) or Appleton Pass (just southeast of the peak), then leave the trail and scramble cross-country up open, steep terrain to the summit ridge and the 6,017-ft high point; the sub-summit South Appleton lies a third of a mile further south along the same ridge."
+   }
+  }
+ ]
+}

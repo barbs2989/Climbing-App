@@ -1,0 +1,74 @@
+{
+ "id": "wa_iron_peak_teanaway_scramble",
+ "name": "Standard Scramble",
+ "approach": "Start from the De Roux Creek Campground trailhead (~3,800 ft) at the end of Forest Road 9737 in the North Fork Teanaway drainage. Pick up the Iron Peak Trail, USFS Trail No. 1399, which climbs immediately and steeply alongside an unnamed creek on climbers-left — this creek is audible for roughly the first half of the hike and is your only reliable water source, since the trail rides a rib between two drainages that stay out of reach the rest of the way; tank up here, especially on hot summer days when this south-facing trail gets exposed and dry. The trail switchbacks up through forest, crosses the small creek at about 1/8 mile, then keeps climbing along the ridge toward Eldorado Creek and Eldorado Pass. Around the halfway point the trail crosses onto the ridge crest proper; tread gets rockier and uneven here, with some short, tight switchbacks. Continue to a broad saddle at roughly 6,100 ft (about 3 miles in, ~2,300-2,700 ft of gain from the trailhead), where the maintained trail fades and a well-worn boot/climbers' path takes over. From the saddle, leave the Eldorado Creek/Beverly Turnpike trail junctions behind and head south-southeast along the open ridge — this is Iron Peak's north ridge, so you climb it heading south (the higher summit a short distance north-northwest is Teanaway Peak) for about 0.7 mile of class 1-2 hiking/scrambling over a boot path with a few short rock patches near the top, gaining the last few hundred feet to the 6,510 ft summit. No technical climbing is required, but the upper ridge has some loose rock and mild exposure on the west (Teanaway River) side — stay on or east of the crest.",
+ "approach_logistics": {
+  "peakLat": 47.415365,
+  "peakLng": -120.900985,
+  "trailhead": "De Roux Creek Campground Trailhead",
+  "trailheadDirection": "Start from the De Roux Creek Campground trailhead (~3,800 ft) at the end of Forest Road 9737 in the North Fork Teanaway drainage."
+ },
+ "descent_text": "Descend by reversing the ascent ridge and boot path back to the 6,100 ft saddle — this is a walk-off/scramble down-climb with no rappelling required (rappels: 0). From the summit, favor staying on the crest of the north ridge rather than dropping onto the loose scree/gully slopes to the west; the direct scree line below the summit is reportedly steep, loose, and slower than it looks, and the gully drop-in around 6,250 ft that is sometimes suggested is worse than simply staying on the ridge the whole way down. Once back at the saddle, rejoin the maintained Iron Peak Trail (No. 1399) and follow it down the rib, re-crossing onto the ridge tread and back down along the creek drainage to the De Roux Creek Campground trailhead. Watch footing on the rocky, uneven upper tread and the short switchbacks lower down; there is no water again until you near the trailhead creek crossing.",
+ "waypoints": [
+  {
+   "lat": 47.421416,
+   "lng": -120.937261,
+   "elev": 3800,
+   "name": "Iron Peak Trailhead (Trail #1399)",
+   "note": "USFS trailhead on FR 9737, 0.5 mi past De Roux Campground; no fee/permit and no water or restrooms on site.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From I-90 Exit 85, take SR 970 east about 7 miles and turn left onto Teanaway Road. After 7.1 miles bear right onto North Fork Teanaway Road, and where the pavement ends keep right onto Forest Road 9737. Continue up the road toward Esmeralda Basin; Trail 1399 leaves the right side of the road about half a mile past De Roux Campground, at about 3,800 ft. Parking is roadside, with no pass, water or restrooms."
+  },
+  {
+   "lat": 47.42140910810811,
+   "lng": -120.93634381081081,
+   "elev": 3900,
+   "name": "Unnamed creek crossing",
+   "note": "Trail climbs alongside a steep unnamed creek for about the first eighth-mile before turning away from it for good — last reliable water, so carry what you need from here.",
+   "type": "Water",
+   "distMi": 0.1,
+   "directions": "The tread pitches up the moment it leaves the lot — there is no flat warm-up — with the creek audible on your left through the trees for the first few hundred yards. Above the crossing the trail rides a rib between two drainages, which is why the water goes out of reach and stays there."
+  },
+  {
+   "lat": 47.41905862162162,
+   "lng": -120.92259316216216,
+   "elev": 5200,
+   "name": "Ridge crest / Eldorado Creek drainage",
+   "note": "Trail bumps over a minor ridge with Koppen Mountain and the Esmeralda Peaks in view, and Eldorado Creek becomes audible in the drainage below to the east.",
+   "type": "Junction",
+   "distMi": 1.5,
+   "directions": "Above the crossing the trail switchbacks steadily up a south-facing forested slope, gaining around 1,300 ft in a little over a mile. The switchbacks tighten and the tread turns rocky and uneven as the trees begin to thin. This aspect bakes on hot afternoons and there is no shade once you are out of the timber."
+  },
+  {
+   "lat": 47.42212,
+   "lng": -120.90591,
+   "elev": 6140,
+   "name": "Eldorado Pass (saddle)",
+   "note": "Broad saddle between Iron and Teanaway Peaks inside the Eldorado Research Natural Area (est. 1972); leave the maintained trail here and head south (to the right) on the open ridge boot path for Iron Peak.",
+   "type": "Junction",
+   "distMi": 3,
+   "directions": "Stay on the maintained trail as it works up the ridge above the Eldorado Creek drainage at a steady moderate grade for another mile and a half. Snow lies across these upper slopes into late June and can bury the tread on the last open stretch below the saddle."
+  },
+  {
+   "lat": 47.41620445945946,
+   "lng": -120.90589594594596,
+   "elev": 6300,
+   "name": "Snow patches on the north ridge",
+   "note": "Lingering snow lingers on the open ridge above the pass into early summer; reported as easy to kick-step across but can hide the boot path in June.",
+   "type": "Hazard",
+   "distMi": 3.2,
+   "directions": "The boot path climbs the open crest in the clear, on low brush and rock with nothing to obstruct the view of where you are going. It is faint in places, but the crest itself is the line — if you lose the tread, simply keep to the high ground."
+  },
+  {
+   "lat": 47.41514,
+   "lng": -120.9005,
+   "elev": 6510,
+   "name": "Iron Peak summit",
+   "note": "Broad open summit ridge-top (47°24'55\"N 120°54'01\"W) with views of Mount Stuart, Sherpa, Colchuck, Dragontail, and Little Annapurna.",
+   "type": "Summit",
+   "distMi": 3.7,
+   "directions": "The last half mile is open ridge walking on rocky ground and needs no scrambling. Stay on the crest rather than drifting onto the scree slopes falling away to the west, which are steeper, looser and slower than they look from above."
+  }
+ ]
+}

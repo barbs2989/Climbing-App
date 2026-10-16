@@ -1,0 +1,36 @@
+{
+ "applied": [
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Overnight temperature called freezing"
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "climate",
+   "path": [
+    "typical"
+   ],
+   "fact": "Overnight temperature called freezing"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_north_ridge_west_side",
+   "before": {
+    "climate": {
+     "fall": "September cooling, increasing snow chance. Clouds increase, visibility decreases. October brings first significant snow at high elevation.",
+     "spring": "Snowmelt dominates; trails muddy; avalanche danger on slopes; not ideal for climbing.",
+     "summer": "July-August optimal: highs 70°F, lows 45°F. Alpine 55-75°F. Minimal precipitation (1.7 inches), light winds, 24% rain chance. Clear skies with 40-50°F overnight freezing for early-morning frozen gully conditions.",
+     "winter": "Heavy precipitation, significant snowpack, avalanche danger. Routes inaccessible; highway often closed east of Washington Pass.",
+     "typical": "Maritime climate with heavy precipitation October-April. Summers relatively dry. Alpine temperatures 55-75°F in July-August with overnight freezing common (40-50°F).",
+     "forecastZone": "West Slopes North Cascades and Passes (WAZ567)"
+    }
+   }
+  }
+ ]
+}

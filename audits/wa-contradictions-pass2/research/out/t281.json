@@ -1,0 +1,241 @@
+{
+ "file": "t281.json",
+ "results": [
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 11.1 km (6.9 mi) is shorter than the one-way walk to Lake Constance alone (about 5 mi of closed road plus the ~2.2 mi climbers' trail), before the ~1.5 mi of canyon to Crystal Pass. One trip report gives ~20 mi round trip from the washout for this route; no second source states a one-way figure, and the rules forbid computing one. Settled by a second source stating the one-way washout-to-Crystal-Pass/summit distance.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Camp description describes the South Chute route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Lake Constance does serve this route as its base camp, but its notes describe the South Chute summit day; bivy[] is owned by the separate camping clean-up, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Crux pitch and its grade",
+   "verdict": "fixed",
+   "correct_value": "The groove (5.4) begins the crux step/wall; the single hardest move is the 5.5 hand traverse higher up, as pitch_detail has it",
+   "evidence": "One detailed report calls the whole section beginning with the up-and-right groove past pitons (5.4) the 'crux step' on the arete; a separate route description calls the same upper section the 'crux wall' and names the hand traverse near its top (5.5) as the crux of the route. Both agree the groove opens the crux section and neither makes the groove the hardest move, so beta's 'crux pitch' is reworded to 'crux step' and pitch_detail is left as is.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://www.summitpost.org/west-arete-5-5/851949",
+    "https://www.summitpost.org/mount-constance-west-arete/851872"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Crux pitch and its grade",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Reach the crux pitch on the arête proper",
+     "replace": "Reach the crux step on the arête proper"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Lake Constance waypoint distance",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The trailhead pin is the Dosewallips washout; the lake is about 5 mi of closed road plus the ~2.2 mi climbers' trail beyond it, so 2 mi is measured from the climbers' trail, not the listed trailhead. No source states a washout-to-lake figure directly, so per the rules the unsourced distMi is nulled rather than recomputed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.thewildoutsiders.com/adventure-journal/mount-constance",
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Lake Constance waypoint distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Parking fee at the Dosewallips washout",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Dosewallips hike page lists no parking pass/entry fee at the washout; the Mountaineers' West Arete route page lists 'National Park Entrance Fee'; NPS says all park visitors need an entrance pass but does not name Dosewallips; a search summary mentions a Northwest Forest Pass but no primary page confirms it. Sources disagree; settled by an NPS or USFS page stating the fee at the washout parking.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Which traverse the North Chute line crosses",
+   "verdict": "fixed",
+   "correct_value": "The North Chute tops out where the South Chute's gully joins; the shared line then crosses the Finger Traverse (usual ascent line), with the Terrible Traverse as the lower alternative",
+   "evidence": "A 2013 trip report climbed the North Chute, crossed a left-trending ledge where the South Chute comes in, went through a notch and snowfield and then crossed the Finger Traverse, descending later by the Terrible Traverse. A separate 2013 party likewise ascended the North Chute, reached the Finger Traverse just above its top, and descended the South Chute via the Terrible Traverse. The route breakdown already matches this; the approach variants, watch_out, descent and itinerary said the chute commits you to the Terrible Traverse and are corrected.",
+   "sources": [
+    "https://www.summitpost.org/you-ll-die-if-you-fall-here-mount-constance/870057",
+    "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "It rejoins the standard line at or just below the Terrible Traverse, and finishes",
+     "replace": "It rejoins the standard line where the South Chute's gully tops out, crosses the Finger Traverse (or the Terrible Traverse when conditions allow), and finishes"
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "find": "It commits you to the Terrible Traverse rather than the Finger Traverse — the harder and more exposed of the two crossings",
+     "replace": "It leads to the same exposed upper crossings as the standard route: the Finger Traverse ledge, or the Terrible Traverse's steep snow above a cliff"
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE CONFIRMING TEST IS ABOVE THE CHUTE, and it is what proves you took the right one: the North Chute leads toward the Terrible Traverse, the steep exposed snow crossing above a large cliff at roughly 7,435 ft. The South Chute leads to a notch at about 6,600 ft with the Cat Ears tower just left of it and then, after a saddle and a 150 ft descent and a second gully, to the Finger Traverse — a downsloping ledge with a horizontal finger crack and old pitons. If you top out and find a finger crack, you took the South Chute; if you top out and find a snow traverse over a cliff, you took this one.",
+     "replace": "THE CONFIRMING TEST IS AT THE TOP OF THE CHUTE: it narrows and eases, and the summit block comes into sight to the north for the first time. Just above, a narrow exposed ledge trending left meets the point where the South Chute's loose gully comes in from below. From there the two routes are the same line: north through a notch, across a snowfield, then the Finger Traverse (a downsloping ledge with a horizontal finger crack and old pitons), or the lower Terrible Traverse, the steep exposed snow crossing above a large cliff, when conditions allow."
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "this chute delivers you toward the TERRIBLE TRAVERSE, a steep exposed snow crossing directly above a large cliff at roughly 7,435 ft, reached after the line loses a little height and traverses north on ledges. If you top out on a notch with a tower just to its left and then find a saddle, a 150 ft drop and a ledge with a horizontal finger crack, you have found the South Chute and the Finger Traverse instead.",
+     "replace": "near its top the chute narrows and eases, the summit block comes into sight to the north, and a narrow exposed ledge trending left meets the point where the South Chute's gully joins from below. Above that the line is shared with the standard route and crosses the Finger Traverse, or the Terrible Traverse when conditions allow."
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "hazards",
+      3
+     ],
+     "find": "Commits to the Terrible Traverse at the end",
+     "replace": "Commits to the exposed Finger or Terrible Traverse at the end"
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      1
+     ],
+     "find": "funnels into the same exposed Terrible Traverse near the summit.",
+     "replace": "funnels into the same exposed upper traverses near the summit: the Finger Traverse, or the Terrible Traverse."
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "re-cross the Terrible Traverse,",
+     "replace": "re-cross the Finger Traverse (or take the Terrible Traverse when conditions allow),"
+    },
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Which traverse the North Chute line crosses",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "cross the Terrible Traverse, summit",
+     "replace": "cross the Finger Traverse, summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 9.7 km (6.0 mi) is less than the ~7.2 mi one-way to Lake Constance (about 5 mi of road plus the ~2.2 mi trail). One 2013 report gives ~19.6 mi round trip for a North Chute loop, but on an older, shorter road walk; no source states the current one-way distance. Settled by two sources giving the one-way washout-to-summit distance.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Closed-road distance to the Dosewallips road end",
+   "verdict": "fixed",
+   "correct_value": "about 6.5 miles",
+   "evidence": "The Dosewallips River Road hike page puts the end of the road at 6.5 miles from the washout parking; a second hike write-up lists the washout-to-road-end hike as 13 mi round trip. The variant notes' 5.5 mi is corrected to match the hazards line and emergency field.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://hike734.com/hikingolympic/dosewallips-river-road/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Closed-road distance to the Dosewallips road end",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "roughly 5.5 miles from the washout",
+     "replace": "roughly 6.5 miles from the washout"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Difficulty of the chute",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report says the North Chute escalates from class 2 to class 4 (the row's pitch_detail follows it); another report of a gully on the standard approach says it never exceeds class 3, and the overall route is commonly rated class 3. No second source rates the North Chute itself; settled by a second North Chute description giving its class.",
+   "sources": [
+    "https://www.summitpost.org/you-ll-die-if-you-fall-here-mount-constance/870057",
+    "https://olypenpkbagger.wordpress.com/2015/08/19/mt-constance-finger-traverse-81615/"
+   ],
+   "patches": []
+  }
+ ]
+}

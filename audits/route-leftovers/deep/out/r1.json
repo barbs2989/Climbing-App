@@ -1,0 +1,97 @@
+{
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "verdict": "unresolved",
+   "evidence": "Held patch (passRequired 'Recreation pass' -> 'None at the crag's roadside pulloff') rests only on fee law and on the crag page's parking directions (pull off uphill of the double hairpin on Tye Road, ~1.4 mi from US 2), which say nothing about a pass. No USFS site page exists for this pull-off, and no trip report found states either way for this exact parking. The nearby Wellington/Iron Goat trailhead at the end of FR 050 off the same road IS a Northwest Forest Pass site, which is a different lot. Two spot-specific sources not found; leave 'Recreation pass' (a wrong 'no pass' costs a ticket).",
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "verdict": "unresolved",
+   "evidence": "Held patch (passRequired 'Recreation pass' -> 'None at the crag's roadside pulloff') rests only on fee law and on the crag page's parking directions (pull off uphill of the double hairpin on Tye Road, ~1.4 mi from US 2), which say nothing about a pass. No USFS site page exists for this pull-off, and no trip report found states either way for this exact parking. The nearby Wellington/Iron Goat trailhead at the end of FR 050 off the same road IS a Northwest Forest Pass site, which is a different lot. Two spot-specific sources not found; leave 'Recreation pass' (a wrong 'no pass' costs a ticket).",
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_astroglide",
+   "verdict": "unresolved",
+   "evidence": "Held patch (passRequired 'Recreation pass' -> 'None at the crag's roadside pulloff') rests only on fee law and on the crag page's parking directions (pull off uphill of the double hairpin on Tye Road, ~1.4 mi from US 2), which say nothing about a pass. No USFS site page exists for this pull-off, and no trip report found states either way for this exact parking. The nearby Wellington/Iron Goat trailhead at the end of FR 050 off the same road IS a Northwest Forest Pass site, which is a different lot. Two spot-specific sources not found; leave 'Recreation pass' (a wrong 'no pass' costs a ticket).",
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "verdict": "unresolved",
+   "evidence": "Held patch (passRequired 'Recreation pass' -> 'None at the crag's roadside pulloff') rests only on fee law and on the crag page's parking directions (pull off uphill of the double hairpin on Tye Road, ~1.4 mi from US 2), which say nothing about a pass. No USFS site page exists for this pull-off, and no trip report found states either way for this exact parking. The nearby Wellington/Iron Goat trailhead at the end of FR 050 off the same road IS a Northwest Forest Pass site, which is a different lot. Two spot-specific sources not found; leave 'Recreation pass' (a wrong 'no pass' costs a ticket).",
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_artic_rose",
+   "verdict": "unresolved",
+   "evidence": "Held patch (passRequired 'Recreation pass' -> 'None at the crag's roadside pulloff') rests only on fee law and on the crag page's parking directions (pull off uphill of the double hairpin on Tye Road, ~1.4 mi from US 2), which say nothing about a pass. No USFS site page exists for this pull-off, and no trip report found states either way for this exact parking. The nearby Wellington/Iron Goat trailhead at the end of FR 050 off the same road IS a Northwest Forest Pass site, which is a different lot. Two spot-specific sources not found; leave 'Recreation pass' (a wrong 'no pass' costs a ticket).",
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "verdict": "unresolved",
+   "evidence": "Day 1 miles=7.3 (Saddle Lake/Tupso Pass trailhead to Goat Flats) is wrong: every source puts Goat Flats 4.5-5 mi from the trailhead (same start, the FR 41 trailhead, excluding the ~8-9 mi road walk from the Canyon Creek closure). But no two independent sources STATE the same figure: WTA Goat Flats page states '4.5 miles of hiking on true trail' after the 8-mi road walk (the WTA Three Fingers page gives 2.5 + 2 segments, same author); USFS Trail 641 gives Saddle Lake 2.5 then 2.3 more (a 4.8 sum, computed); willhiteweb gives 2.5 + 2.5; summitpost gives 2.5 + 'about 2.5'; trailchick and hike2hike give 2.5 + 2 (segments only). Summing segments is computing, so no op. The row's own approach text and its siblings r1/r2 already say Goat Flats ~4.5 mi. Owner option: set days[0].miles to 4.5 (WTA's stated figure) and the totalNote '~7.3 mi' to '~4.5 mi', or null days[0].miles as provably wrong; day 2 (7.7 mi, '~7.5 miles back out') is also inconsistent with a 4.5-5 mi Goat Flats and would need the same review.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/goat-flats",
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+    "https://www.willhiteweb.com/hiking/granite_falls/three_fingers/goat_flats_trail_170.htm",
+    "https://www.summitpost.org/three-fingers/150549",
+    "https://www.trailchick.com/wa-state-fire-lookouts/three-fingers-lookout/",
+    "https://hike2hike.com/scrambling/three-fingers-lookout-washington/"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "verdict": "unresolved",
+   "evidence": "Day 1 miles=6.2 (Foggy Dew TH to Cooney Lake) is below every source, but sources give different figures and mostly round trips/segments: WTA Cooney Lake 17.6 mi RT (4.9 on Foggy Dew Creek + 2.7 on Martin Creek + 0.2 to the lake, via Martin Creek); Wenatchee Outdoors 16.25 mi RT (5 mi to the junction, then 2.1 + 0.9 via Merchants Basin or 3 via Martin Creek); Gaia listings 7.0 and 7.9 one way; a WTA trip report 17 mi RT. No two independent sources state the same one-way figure for the same line (the row's own line goes via Merchants Basin), and halving a round trip is computing. The row's own waypoints put Cooney Lake at distMi 8. Owner option: null days[0].miles as provably low, or adopt a figure once a second source states it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cooney-lake",
+    "https://wenatcheeoutdoors.org/2018/07/01/cooney-lake-2/",
+    "https://www.gaiagps.com/hike/249358/cooney-lake-via-foggy-dew-creek-trail-417-and-martin-creek-trail-429/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-10-07.1145014743"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "verdict": "confirmed",
+   "evidence": "Two independent records place Denny Mountain in the Alpine Lakes Wilderness: the peak's catalog record lists 'Wilderness/Special Area: Alpine Lakes Wilderness Area' (plus Alpental ski area), and the Mountaineers route/activity pages say the trip lies within the Alpine Lakes Wilderness with self-service wilderness permits at the trailhead; Wikidata also records it as in the Alpine Lakes Wilderness. (Corroboration, not a source: the USFS wilderness boundary layer puts the summit within 50 m of the ALW boundary, i.e. on its edge; the lower pins are outside.) access.permit currently contradicts itself ('None required' then 'free self-issue day-use permit'); corrected to the wilderness permit. NOT touched: access.fees still says 'no wilderness permit needed since this route stays outside the adjacent Alpine Lakes Wilderness' - that sentence is now contradicted but access.fees is an open product decision; owner should drop that clause.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=2113",
+    "https://www.mountaineers.org/activities/routes-places/denny-5520",
+    "https://www.mountaineers.org/activities/activities/winter-scramble-denny-mountain",
+    "https://www.wikidata.org/wiki/Q5259212"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_denny_mountain_north_slopes",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+     "value": "Free self-issue Alpine Lakes Wilderness permit, filled out at the trailhead; required for day use as well as overnight, no quota.",
+     "sources": [
+      "https://www.peakbagger.com/peak.aspx?pid=2113",
+      "https://www.mountaineers.org/activities/routes-places/denny-5520",
+      "https://www.wikidata.org/wiki/Q5259212"
+     ]
+    }
+   ],
+   "pin_ops": []
+  }
+ ]
+}

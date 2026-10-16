@@ -1,0 +1,173 @@
+{
+ "applied": [
+  {
+   "id": "wa_concord_tower_north_face",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "overview",
+   "path": [],
+   "fact": "Which way the variation leaves the standard line"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Which way the variation leaves the standard line"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Which way the variation leaves the standard line"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Which way the variation leaves the standard line"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "Pitch 2 and pitch 3 description"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Pitch 2 and pitch 3 description"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Pitch 2 and pitch 3 description"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Pitch 2 and pitch 3 description"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Pitch 2 and pitch 3 description"
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Grade of the standard North Face as referenced on this page"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_concord_tower_north_face",
+   "before": {
+    "grade": "5.6",
+    "grade_num": 6
+   }
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "before": {
+    "overview": "A harder, more direct variation of the standard North Face, sharing the same start and lower pitch but staying direct through steeper crack/corner terrain (5.8) rather than stepping right on the standard 5.6-5.7 line, before rejoining the standard route for the final pitch to the summit.",
+    "pro_tips": [
+     "From the tree ledge atop pitch 1, continue straight up the corner system instead of stepping right onto the standard 5.6-5.7 line."
+    ],
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Shares the standard North Face's opening crack-to-ledge pitch off the notch, though parties typically belay a bit further right on the ledge to line up for the direct finish above.",
+      "pitch": 1,
+      "anchor": "Tree ledge (gear)",
+      "lengthM": 25
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "The direct ('Directisimo') line: a sustained crack running hands to off-width to chimney size, steeper and more direct than the standard route's step-right option, with one section that breaks briefly onto the face where the crack pinches down partway up.",
+      "pitch": 2,
+      "anchor": "Gear anchor",
+      "lengthM": 50
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.7",
+      "notes": "Gain the arête and follow its exposed crest back up, rejoining the standard North Face's final moves near the summit block.",
+      "pitch": 3,
+      "anchor": "2-bolt summit anchor (rap chains, shared w/ North Face)",
+      "lengthM": 45
+     }
+    ],
+    "rope_note": "Single rack to 3 inches, stoppers and slings, on a 70 m rope. Do not rack off the standard North Face's grades: this variation shares the standard route's opening 5.6 crack off the notch, then takes a sustained 5.8 crack that runs hands to off-width to chimney size where the standard line steps right at 5.6-5.7, and rejoins it for a 5.7 arete pitch near the summit. Off the top, single-rope rappels work down either face; the south face is the better choice because ropes tend to snag on the north side.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach to the col/notch as the standard North Face. Share its first pitch, then break right into a sustained 5.8 crack-to-chimney crux pitch, finishing up an exposed arete pitch to the summit.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Car-to-car: North Face Var. Right (Directissimo)",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 16,
+       "schedule": [],
+       "objective": "Climb the Directissimo variant of the North Face"
+      }
+     ],
+     "totalNote": "A standard single day (about 9 hrs car-to-car); a bit slower than the easier 5.6 North Face due to the sustained 5.8 offwidth/chimney crux."
+    },
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn start",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "Same approach to the col/notch as the standard North Face. Share its first pitch, then break right into a sustained 5.8 crack-to-chimney crux pitch, finishing up an exposed arete p…",
+       "fromTo": "Car-to-car: North Face Var. Right (Directissimo)",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

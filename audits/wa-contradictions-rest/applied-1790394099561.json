@@ -1,0 +1,448 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Base camp for the climb"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Permit booking"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Permit booking"
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Sol Duc Road winter status"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "title"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "fromTo"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach line (Low Divide vs Chicago Camp)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "approach",
+   "path": [],
+   "fact": "Road walk to Whiskey Bend"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Road walk to Whiskey Bend"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Road walk to Whiskey Bend"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road walk to Whiskey Bend"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Road walk to Whiskey Bend"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "beta",
+   "path": [],
+   "fact": "Location relative to the Bailey Range"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Summit elevation (6,474 vs 6,476 ft)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "objective"
+   ],
+   "fact": "Summit elevation (6,474 vs 6,476 ft)"
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "column": "approach",
+   "path": [],
+   "fact": "Dodwell-Rixon Pass elevation (4,783 vs 4,763 ft)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "before": {
+    "overview": "Mount Pulitzer (also historically called Snagtooth) is the sixth-highest summit in the Bailey Range, about 0.6 mile from Mount Ferry in the Olympic interior. It is a distinct peak from the separate, higher Wellesley Peak elsewhere in the range, despite the two names sometimes being conflated. The standard line follows the east ridge (the 1961 first-ascent route), typically approached from a high camp near Lone Tree Pass, over heather, snow, and talus. The final scramble to the true summit crosses badly shattered, exposed rock that some parties have judged too loose to finish, opting instead for nearby Mount Ferry. The remote, multi-day Bailey Range approach remains the main challenge.",
+    "approach": "Begins on the High Divide Trail from the Sol Duc Trailhead, leaving maintained trail near the 'Catwalk' below Mount Carrie to join the cross-country Bailey Range traverse. A multi-day approach over rugged, mostly off-trail terrain reaches a high camp (commonly Lone Tree Pass) below Pulitzer and Mount Ferry, from which the east ridge is scrambled to the summit.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "East ridge to the summit",
+      "notes": "From the high camp (commonly Lone Tree Pass) below Pulitzer and Mount Ferry, the east ridge is scrambled to the summit."
+     }
+    ],
+    "access": {
+     "fees": "Park entrance fee",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "National Park wilderness regulations; approved bear-resistant food canisters (ARFCs) are required parkwide -- bear hangs/wires are not accepted; pack it in/pack it out",
+     "permit": "Wilderness camping permit required for all overnight stays; the Bailey Range is a cross-country zone not shown on the park's online trip-planner map, so permits must be arranged directly with the Wilderness Information Center at (360) 565-3100.",
+     "closures": "As of the Olympic National Park road-conditions page updated August 7, 2026, Sol Duc Road is open to vehicles, but the Elwha-side Whiskey Bend Road remains closed to vehicle traffic (foot/bike only) due to flood damage, with no end date given -- verify current status before planning your exit.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS wilderness camping permit (reserved via recreation.gov/WIC); America the Beautiful or Olympic NP entrance pass for the drive-in",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "road": {
+     "name": "Sol Duc Road (start) / Whiskey Bend Road, Elwha (exit)",
+     "status": "Paved, generally open year-round to Sol Duc Falls trailhead area; upper sections can close temporarily for winter storm damage or repair work",
+     "driveNote": "Sol Duc Road is paved and open to vehicles to the Sol Duc Trailhead, the standard start. The Elwha-side Whiskey Bend Road is closed to vehicles (open to foot/bike travel only) due to flood damage, with no end date given as of the Olympic National Park road-conditions page updated August 7, 2026, adding several miles if exiting that way -- verify current status before driving."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "before": {
+    "itinerary": {
+     "cal": "As of the last available report (Sept 2024) the Olympic Hot Springs/Whiskey Bend Road was closed indefinitely to vehicles beyond Madison Falls due to Elwha flood/washout damage, adding roughly 5-6 miles of extra biking/walking each way to reach the Whiskey Bend trailhead — check current NPS road-conditions page before planning.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Start at Whiskey Bend trailhead (or Madison Falls if the road is still washed out) and follow the Elwha River Trail south through old-growth forest and historic homestead sites. This is a long but gentle-grade trail day to bank miles before the terrain gets rougher.",
+       "hours": 6.5,
+       "miles": 12,
+       "title": "Approach up the Elwha River Trail",
+       "gainFt": 1500,
+       "lossFt": 300,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a mid-trail camp (Elkhorn/Stony Point area)"
+      },
+      {
+       "n": 2,
+       "note": "Continue up the Elwha River Trail past Elkhorn, Hayes River, and Camp Wilder to Chicago Camp, then leave the maintained trail and work up into upper Elwha Basin (the brushy, route-finding terrain locals call \"the maze\"). Camp gives a shorter summit push the next day.",
+       "hours": 8,
+       "miles": 14,
+       "title": "Push to a high camp in upper Elwha Basin",
+       "gainFt": 1800,
+       "lossFt": 200,
+       "packLb": 36,
+       "schedule": [],
+       "objective": "Establish high camp near Elwha Basin / Dodwell-Rixon Pass approach"
+      },
+      {
+       "n": 3,
+       "note": "Drop the overnight gear at camp and go light. Climb cross-country up and over Dodwell-Rixon Pass, descend into Queets Basin, then ascend the South Slopes to the summit before reversing the entire route back to camp. Mostly Class 2 walking/scrambling with route-finding through brush and moraine.",
+       "hours": 11,
+       "miles": 10,
+       "title": "Summit push over Dodwell-Rixon Pass",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": "Light daypack; aim to be over Dodwell-Rixon Pass by mid-morning."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Top of Dodwell-Rixon Pass (~4,760 ft)",
+         "detail": "Views open into Queets Basin; route-finding down the far side."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Enter Queets Basin",
+         "detail": "Cross moraines and streams to the base of the South Slopes."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Summit (6,474 ft)",
+         "detail": "Class 2 slopes to the top; short weather/photo window."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back through Queets Basin",
+         "detail": "Begin the long reversal over the pass."
+        },
+        {
+         "time": "4:30 PM",
+         "label": "Return to high camp",
+         "detail": "Long day — budget extra time for brush and route-finding fatigue."
+        }
+       ],
+       "objective": "Climb the South Slopes to the 6,474 ft summit and return to high camp"
+      },
+      {
+       "n": 4,
+       "note": "Break camp and descend out of Elwha Basin back to the maintained Elwha River Trail, retracing the route past Camp Wilder and Hayes River toward the Elkhorn area.",
+       "hours": 7,
+       "miles": 14,
+       "title": "Hike back down the Elwha",
+       "gainFt": 200,
+       "lossFt": 1800,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Retrace the approach toward the trailhead"
+      },
+      {
+       "n": 5,
+       "note": "Finish the descent of the Elwha River Trail back to the trailhead (plus the extra road walk/bike-out if Whiskey Bend Road is still closed to vehicles).",
+       "hours": 6,
+       "miles": 12,
+       "title": "Exit to the trailhead",
+       "gainFt": 300,
+       "lossFt": 1500,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to Whiskey Bend"
+      }
+     ],
+     "totalNote": "A serious 5-day, ~70-mile round-trip wilderness expedition to one of the most remote summits in Washington: two long days of trail approach up the Elwha River to a high camp in upper Elwha Basin, a long cross-country summit push over Dodwell-Rixon Pass into Queets Basin and up the South Slopes, then two days back out."
+    },
+    "timing": {
+     "totalHrs": 38.5,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 13,
+     "approachTimeHrs": 14.5,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Start at Whiskey Bend trailhead (or Madison Falls if the road is still washed out) and follow the Elwha River Trail south through old-growth forest and historic homestead sites. Th…",
+       "fromTo": "Approach up the Elwha River Trail",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "Continue up the Elwha River Trail past Elkhorn, Hayes River, and Camp Wilder to Chicago Camp, then leave the maintained trail and work up into upper Elwha Basin (the brushy, route-…",
+       "fromTo": "Push to a high camp in upper Elwha Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Drop the overnight gear at camp and go light. Climb cross-country up and over Dodwell-Rixon Pass, descend into Queets Basin, then ascend the South Slopes to the summit before rever…",
+       "fromTo": "Summit push over Dodwell-Rixon Pass",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7,
+       "note": "Break camp and descend out of Elwha Basin back to the maintained Elwha River Trail, retracing the route past Camp Wilder and Hayes River toward the Elkhorn area.",
+       "fromTo": "Hike back down the Elwha",
+       "section": "Descent"
+      },
+      {
+       "hrs": 6,
+       "note": "Finish the descent of the Elwha River Trail back to the trailhead (plus the extra road walk/bike-out if Whiskey Bend Road is still closed to vehicles).",
+       "fromTo": "Exit to the trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "There is no direct trailhead-to-summit trail. Vehicle access to the Elwha Valley has been closed since a May 2021 washout on Olympic Hot Springs Road; you now walk or bike an extra ~7 miles from the Madison Falls parking area (past the washout, then up Whiskey Bend Road) just to reach the Whiskey Bend trailhead. From Whiskey Bend, follow the Elwha River Trail 28.4 miles (with a ford of the Elwha River at Chicago Camp) to Low Divide (3,602 ft), then continue cross-country up into Elwha Basin and over Dodwell-Rixon Pass (4,783 ft) to reach the SE ridge/south side of Mount Queets. Most parties treat this as a multi-day (4+ day round trip) wilderness objective, commonly combined with the Bailey Range Traverse via Queets Basin to the west. The lower third of the SE ridge is mostly 2nd-class scrambling on crumbly rock and heather; where it becomes impassable, drop a few hundred feet to traverse steep, firm scree around 5,300 ft on the east side to bypass a cliff band, then regain the ridge for an easy 2nd-class scramble around its west side before a moderately steep snow slope on the east side leads to the summit. Microspikes and an axe have been used here even in late August.",
+    "approach_logistics": {
+     "peakLat": 47.762353,
+     "peakLng": -123.595195,
+     "trailhead": "Madison Falls Trailhead",
+     "trailheadLat": 48.04229,
+     "trailheadLng": -123.5887,
+     "trailheadDirection": "Via the Elwha Valley: Olympic Hot Springs Road is closed to vehicles at Madison Falls — walk or bike ~8 miles to the Whiskey Bend Trailhead"
+    },
+    "road": {
+     "name": "Olympic Hot Springs Road / Whiskey Bend Road",
+     "status": "Closed to vehicles since May 2021 washout; open to pedestrians, cyclists, and leashed dogs only",
+     "driveNote": "Park at Madison Falls trailhead (last vehicle access); walk or bike roughly 7 miles (partly pushing a bike around a washout) to reach the Whiskey Bend trailhead and start of the Elwha River Trail"
+    },
+    "access": {
+     "fees": "$8 per adult (16+) per night, free for youth 15 and under, plus a non-refundable $6 reservation fee per permit; a $45/person Annual Wilderness Pass covers per-night fees",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for all overnight stays anywhere in Olympic Wilderness (free loaners available at WIC); bear wires/hangs are not accepted",
+     "permit": "Wilderness camping permit required (reserve via Recreation.gov); cross-country zones like the Bailey Range/Elwha Basin should be booked by contacting the Wilderness Information Center (WIC), (360) 565-3100, since they aren't on the standard trip-planner map",
+     "closures": "Olympic Hot Springs Road and Whiskey Bend Road have been closed to vehicles since a May 7, 2021 washout; both remain open to foot and bicycle traffic only, adding roughly 7 miles each way to reach the Whiskey Bend trailhead",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance fee/pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "beta": "Mount Queets sits at the heart of the Bailey Range in the interior of Olympic National Park. There is no maintained trail to the summit — reaching it requires a multi-day cross-country wilderness approach, commonly combined with nearby Mount Meany and/or a longer Bailey Range or Queets Basin traverse."
+   }
+  }
+ ]
+}

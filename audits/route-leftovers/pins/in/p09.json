@@ -1,0 +1,2253 @@
+[
+ {
+  "id": "wa_cinderella_peak_scramble",
+  "name": "Twin Sisters Olivine Scramble",
+  "area_id": "wa_cinderella_peak",
+  "findings": [
+   "An 'Elbow Lake' waypoint the route never reaches (the lake is ~3.5 mi in)."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_cinderella_peak_scramble",
+   "area_id": "wa_cinderella_peak",
+   "name": "Twin Sisters Olivine Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": 0,
+   "length_m": 122,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "optional rope for exposed steps"
+   ],
+   "hazards": [
+    "short exposed Class 3-4 steps on steep olivine/dunite slabs",
+    "unmaintained, flagging-only climbers' trail with real route-finding",
+    "log crossing of the Middle Fork Nooksack River — can be difficult or washed out at high water",
+    "loose talus/scree in the Green Creek cirque",
+    "spring avalanche hazard off the nearby 'Mythic Wall' for parties descending on snow"
+   ],
+   "verif": null,
+   "overview": "Cinderella Peak (roughly 6,400-6,500 ft) is a minor summit on the south side of the Green Creek cirque in the Twin Sisters Range, immediately west of Mount Baker and within/adjacent to the Mount Baker Wilderness (Mt. Baker-Snoqualmie National Forest). The Twin Sisters massif is the largest exposed body of dunite/olivine rock in the Western Hemisphere, giving Cinderella and its neighbors (Little Sister, South Twin, Skookum, Jaws' Tooth) their signature reddish, ultra-grippy slabs. The standard route is a long approach via the Elbow Lake Trail and the unmaintained, blue-flagged Green Creek climbers' trail, gaining a saddle near Little Sister and following the connecting ridge onto Cinderella's west ridge for a final Class 3-4 scramble to the summit. Technical alternatives exist for parties wanting a real climb: a North Face route (5.2, Grade II, ~8 pitches) and an East Buttress line have both been climbed and reported. Cinderella is also a common link-up on the 'Green Creek Circuit,' which strings together South Twin, Jaws' Tooth, Skookum, Little Sister and Cinderella into a long (~11-13 mile, ~8,000 ft gain) day.",
+   "beta": "A short but rugged Twin Sisters Range outing combining glacier travel with class 3-4 scrambling on famously high-friction olivine rock. Parties reach the peak via the Green Creek cirque in one long day or with a night in the basin, and climb it either as a stand-alone objective or as part of the longer Green Creek Circuit traverse linking South Sister, Skookum, Little Sister, and Cinderella.",
+   "turnaround": "Set a hard turnaround time based on your slowest team member's pace and current glacier/weather conditions rather than a fixed clock time — the long cross-country approach, glacier crossing, and unbridged river ford make an unplanned late exit especially serious on this route.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "3rd-4th class (unroped scramble)",
+   "ice_grade": null,
+   "gain_ft": 5400,
+   "loss_ft": 5400,
+   "dist_km": 19.31,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "West Ridge",
+   "permit": "No climbing permit; a Northwest Forest Pass or interagency pass is required to park at the Elbow Lake Trailhead.",
+   "comms": null,
+   "descent": "Reverse the scramble.",
+   "obj_haz": [
+    "loose rock (dunite/olivine talus)",
+    "unbridged river crossing",
+    "glacier/crevasse hazard nearby",
+    "routefinding on unmaintained terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.6797,
+     "lng": -121.897,
+     "elev": 2000,
+     "name": "Elbow Lake Trailhead (FR-38)",
+     "note": "North end of Elbow Lake Trail #697 off Mosquito Lake Rd/FS-38, ~11 mi in; no bridge over the Middle Fork Nooksack near here, so high flows can strand you at the car.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take SR-542 from Bellingham through Deming to Mosquito Lake Road, then turn off onto FS-38 and follow it about 11 miles to the road end. It is gravel and normally in reasonable shape, but the lower Middle Fork Nooksack road has washed out in sections in the past and parties then bike the flat closed miles rather than walk them. Check the current road status before counting on driving to the trailhead."
+    },
+    {
+     "lat": 48.7096986,
+     "lng": -121.914558,
+     "elev": 2300,
+     "name": "Elbow Lake",
+     "note": "Trail's namesake lake passed early on boggy ground among old-growth trees; last reliable easy water before the climbers' trail leaves the maintained tread.",
+     "type": "Water",
+     "distMi": 0.7,
+     "directions": "The trail meets the Middle Fork Nooksack within a few minutes of the car and there is no bridge — it has been gone for decades, and any log that replaces it tends to wash out. The marked ford can be dangerous or impossible at high flow, so most parties use an unofficial crossing about a quarter mile downstream, logs lashed between two boulders. Once across, bushwhack the short distance back up to the Elbow Lake Trail proper and start climbing through old growth."
+    },
+    {
+     "lat": 48.705110924528306,
+     "lng": -121.92848443396227,
+     "elev": 2750,
+     "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+     "note": "First open view of the Twin Sisters Range near a switchback by Hildebrand Creek; the unofficial, sparsely-blazed Green Creek climbers' trail branches off the maintained tread here.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "Stay on the maintained tread as it climbs above the Green Creek valley through old-growth forest, roughly a mile and a half from the crossing. Near 2,600 ft the trail swings into the Hildebrand Creek drainage, and it is at a switchback here that the unofficial Green Creek climbers' trail branches off. It is marked only by small blue markers on the trees — they are easy to walk straight past, so start looking for them before you think you need to."
+    },
+    {
+     "lat": 48.70299353584906,
+     "lng": -121.93491201886793,
+     "elev": 2300,
+     "name": "Green Creek crossing",
+     "note": "The climbers' trail reaches Green Creek, which parties ford at the best spot they can find; there is no bridge, and the crossing is harder at high runoff.",
+     "type": "Hazard",
+     "distMi": 2.6
+    },
+    {
+     "lat": 48.69452398113208,
+     "lng": -121.96062235849057,
+     "elev": 5800,
+     "name": "Little Sister saddle",
+     "note": "Col between Little Sister (6,600') and Cinderella Peak gained via boulder fields and scree above the Green Creek cirque; marks the start of Cinderella's west ridge.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Follow the blue-blazed climbers' trail up into the Green Creek cirque; Green Creek runs clear and is the water source along this stretch. Above the trees the path gives out into talus, boulder fields and then loose, unstable scree, with Class 3 rock steps needed to reach the toe of the Green (Sisters) Glacier — route-finding through here is the crux of the approach and the least-loose line has to be hunted for rather than followed. Cross the low-angle glacier, carrying basic glacier gear, to the low notch on the ridge between Cinderella and Little Sister. Gain from the river to the notch runs to several thousand feet, which is why some parties break the trip up with a camp in the basin rather than pushing car-to-car."
+    },
+    {
+     "lat": 48.69240659245283,
+     "lng": -121.96704994339622,
+     "elev": 6150,
+     "name": "West ridge scramble section",
+     "note": "Class 3-4 exposed scrambling on the range's signature red olivine rock, which is grippy but the ridge narrows with real exposure; take care downclimbing if wet.",
+     "type": "Hazard",
+     "distMi": 5.6,
+     "directions": "From the notch climb onto the blunt ridge crest above. The olivine here is exceptionally high-friction on the shaded north aspects and many parties solo it or run the rope, but the crest narrows and the exposure is genuine, and the same rock is far less secure when wet. Do not treat the connecting ridge back toward Little Sister as a traverse option — it is loose enough that the standard practice is to drop to the glacier from this notch instead."
+    },
+    {
+     "lat": 48.69092,
+     "lng": -121.97153,
+     "elev": 6431,
+     "name": "Cinderella Peak",
+     "note": "True summit at the west end of the Green Creek circuit; olivine rock underfoot is among the best scrambling texture in the Cascades.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "The last Class 3-4 steps go on grippy dunite to the small summit block; where a step looks blank, working slightly left or right generally finds a passable line and nothing is sustained. Stay on the crest and the shaded aspects — south-facing rock in this range is markedly chossier and rocks pick up speed fast on it."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 12,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 12,
+      "note": "Fit parties often do this as one long car-to-car day: Elbow Lake Trail, the Green Creek climbers' trail, the glacier to the Cinderella-Little Sister notch, and the west ridge.",
+      "fromTo": "Bike/hike approach and ridge scramble to the summit",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Trip reports on Twin Sisters outings involving Cinderella describe a minimal rack: a thin rope (e.g. 30m), a small set of nuts/stoppers, small-to-mid-size cams, a few tricams, and slings — enough to protect the low-5th-class North Face pitches or exposed moves on the West Ridge. Many confident scramblers solo or use running belays on the 4th-class ridge itself.",
+   "what_to_bring": [
+    "helmet",
+    "sturdy boots or approach shoes with good friction for grippy olivine rock",
+    "map/compass/GPS track (climbers' trail is flagging-only and easy to lose)",
+    "Northwest Forest Pass for trailhead parking",
+    "optional light rope for exposed steps",
+    "ice axe if snow lingers into early season"
+   ],
+   "pro_tips": [
+    "Often combined with Little Sister given their proximity, or linked into the full 'Green Creek Circuit' (South Twin, Jaws' Tooth, Skookum, Little Sister, Cinderella) for an ~11-13 mile, ~8,000 ft day",
+    "The Green Creek climbers' trail branches off the Elbow Lake Trail near a switchback by Hildebrand Creek — watch for small blue flagging, not cairns",
+    "An alternate unofficial log crossing of the Middle Fork Nooksack exists about 1/4 mile downstream of the main crossing if that log is out",
+    "Parties wanting a real climb rather than a scramble can look at the North Face (5.2, Grade II, ~8 pitches) or East Buttress routes",
+    "Verify Forest Road 38's gate status at Wallace Creek before driving in shoulder season"
+   ],
+   "watch_out": [
+    "exposure on slabs",
+    "flagging-only climbers' trail — easy to lose, especially in fog",
+    "log crossing of the Middle Fork Nooksack can be sketchy at high flow",
+    "long day — plan 10-12+ hours if combining with Little Sister or the full Green Creek Circuit"
+   ],
+   "pro_needs": "The olivine/dunite rock is extremely high-friction (\"velcro-like\"), so natural gear placements hold well; a light trad rack covers the North Face's 5.2 pitches, while the West Ridge is often climbed with minimal or no protection by experienced scramblers.",
+   "best_season": "Roughly August through mid-September is most reliable for a dry scramble, once snow patches on the approach and ridge melt out and the Middle Fork Nooksack log crossing is at low water. Late May-June can offer good corn-snow ski descents off the north bowl, but that requires glacier-travel gear and avalanche awareness per spring trip reports.",
+   "high_point_ft": 6431,
+   "aid_grade": null,
+   "approach": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme). The trail immediately meets the Middle Fork Nooksack River — there is no bridge at the marked crossing, and fording can be dangerous or outright impassable during high water; many parties instead use an unofficial log crossing roughly 1/4 mile downstream from the official ford, made of logs lashed between two boulders. Once across, pick up the Elbow Lake Trail proper and climb through forest for about 1.5 miles to a switchback near Hildebrand Creek, where an unmaintained but well-trodden, blue-blazed 'Green Creek Climber's Trail' splits off to the left into the Green Creek cirque (look closely for the small blue markers — it's easy to walk past). Follow this climber's trail up into the basin; Green Creek itself runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with class 3 rock steps required to reach the toe of the Green Creek (Sisters) Glacier — route-finding through this section is the crux of the approach, and parties should expect to hunt for the least-loose line. Cross the low-angle glacier (crevasse hazard is generally low here but rises later season; carry basic glacier gear) up to the low notch on the ridge between Cinderella and Little Sister, which is the jumping-off point for Cinderella's west ridge/north face. Elevation gain from the river crossing to this notch is substantial — roughly 4,000 ft over about five miles — and fit parties often go car-to-car in one long day, while others split it with a camp in the Green Creek basin.",
+   "descent_text": "Descend the same way you climbed: reverse the short scrambling section of the west ridge back into the easier 'return to hiking' terrain, then downclimb the exposed but high-friction olivine slabs on Cinderella's north side back down to the edge of the Green Creek/Sisters Glacier — parties describe finding a passable line at each small crux by working slightly left or right, nothing sustained. This is a walk-off/downclimb descent with no rappelling required (0 rappels); the extremely grippy dunite/olivine rock that defines the whole Twin Sisters Range makes downclimbing secure even on the steeper steps. Do not attempt to continue along the connecting ridge toward Little Sister — at least one party found that ridgeline dangerously loose (a missile zone) and recommends dropping back down to the glacier from the Cinderella-Little Sister notch rather than traversing it, which is the standard practice. From the glacier, retrace your boot track down through the scree and boulder fields, back onto the Green Creek Climber's Trail, rejoin the Elbow Lake Trail at the Hildebrand Creek switchback, and re-ford (or use the unofficial log crossing of) the Middle Fork Nooksack back to the trailhead.",
+   "bail": "From the ridge, the quickest bail is back down to the Little Sister saddle and the Green Creek climbers' trail rather than continuing any traverse; retreat the same climbers' trail and log crossing to the Elbow Lake Trail.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Climbers' trail, scree/talus, and glacier travel across the Green Glacier to the low notch between Cinderella and Little Sister.",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "4th class",
+     "notes": "West Ridge: blunt, exposed ridge crest on extremely high-friction olivine to the small summit block; many parties solo or use running belays. (The North Face, a separate 3-pitch 5.2 line up the broad face left/south of the glacier, is not part of this scramble route.)",
+     "pitch": "1-2"
+    }
+   ],
+   "itinerary": {
+    "cal": "The Middle Fork Nooksack bridge/log crossing at the start of the Elbow Lake Trail washes out periodically - check recent trip reports before relying on a dry crossing.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Fit parties often do this as one long car-to-car day; others camp in the Green Creek basin. While FS Road 38 is closed by its washout, biking the closed road miles saves the legs. From the trailhead, cross the Middle Fork Nooksack, hike the Elbow Lake Trail through old growth to the Hildebrand Creek switchback, and follow the blue-blazed Green Creek climbers' trail into the cirque, across the low-angle glacier to the Cinderella-Little Sister notch and up the west ridge on grippy olivine rock to the summit. Descend by reversing the route, including re-biking the closed road miles at the end.",
+      "miles": 12,
+      "title": "Bike/hike approach and ridge scramble to the summit",
+      "gainFt": 5400,
+      "lossFt": 5400,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave car, bike the logging road",
+        "detail": "FS Road 38 is closed by a washout at milepost 7, about 4 miles short of the trailhead; biking those closed miles saves time and legs."
+       },
+       {
+        "time": "5:15 AM",
+        "label": "Stash bikes, start Elbow Lake Trail on foot",
+        "detail": "Cross the Middle Fork Nooksack right at the trailhead (no bridge), then climb through old growth above the Green Creek valley about 1.5 mi to the Hildebrand Creek switchback, where the blue-blazed Green Creek climbers' trail branches off."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach the Green Creek cirque",
+        "detail": "Talus, loose scree and Class 3 rock steps lead to the toe of the glacier; cross it to the notch between Cinderella and Little Sister."
+       },
+       {
+        "time": "10:30 AM - 12:00 PM",
+        "label": "Ridge/gully scramble to Cinderella summit",
+        "detail": "Class 3-4 scrambling on solid, high-friction olivine rock; some exposed ridge sections and route-finding around gendarmes."
+       },
+       {
+        "time": "12:00 PM - 3:00 PM",
+        "label": "Reverse the scramble and hike back to bikes",
+        "detail": "Downclimb the ridge, retrace the glacier, the Green Creek climbers' trail and the Elbow Lake Trail."
+       },
+       {
+        "time": "3:00 PM - 4:30 PM",
+        "label": "Bike out to the car",
+        "detail": "Mostly downhill/flat closed-road miles back to the vehicle."
+       }
+      ],
+      "objective": "Summit Cinderella Peak via the west ridge olivine scramble, car-to-car"
+     }
+    ],
+    "totalNote": "A long single push: roughly 11-12 hours car-to-car, ~12 miles and ~5,400 ft of gain, done in a day, as many fit parties do."
+   },
+   "access": {
+    "fees": "Day-use requires a Northwest Forest Pass or equivalent interagency pass; no separate climbing permit or fee for this unmaintained scramble route.",
+    "rules": "Standard Wilderness-adjacent Leave No Trace ethics apply. The Green Creek climbers' trail is unofficial and unmaintained (blue flagging only) — stay on the existing boot path where possible, since the Twin Sisters' exposed olivine (dunite) supports a rare serpentine-adapted plant community.",
+    "permit": "Northwest Forest Pass (or America the Beautiful/interagency annual pass) required to park at the Elbow Lake Trailhead; self-pay iron ranger at the trailhead, or purchase in advance at the Mt. Baker Ranger District office.",
+    "closures": "Forest Road 38 has a seasonal closure gate at Wallace Creek, about 1.3 miles before the Elbow Lake Trailhead, typically shut roughly Dec 1-Jun 15 (exact dates vary by year/snowpack) — and FR 38 is separately closed at milepost 7 by a washout, per a Forest Service alert dated 27 July 2026, which blocks vehicle access to the trailhead entirely. Check MBS National Forest road status before driving. No gated logging-road network on the standard approach.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District (810 SR-20, Sedro-Woolley, WA); the Twin Sisters peaks sit within/immediately adjacent to the Mount Baker Wilderness — not private industrial timberland.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land; no wilderness permit or registration is needed."
+    }
+   },
+   "road": {
+    "name": "Forest Road 38 (Mosquito Lake Road to Elbow Lake Trailhead)",
+    "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead, which is about 11 miles in. Good gravel and paved forest road when open; check the forest's alerts page before driving.",
+    "driveNote": "From Mosquito Lake Road near Deming/Acme, turn east onto FS Road 38 and drive about 11 miles of forest road to the Elbow Lake Trailhead.",
+    "seasonalGate": "Gated at Wallace Creek, about 1.3 miles before the trailhead, roughly Dec 1-Jun 15."
+   },
+   "climate": {
+    "fall": "Rock is dry, but scree/talus becomes looser as lingering summer snow patches melt out; early-season storms and shortening daylight become a factor.",
+    "spring": "Deep, often unstable snowpack on the Green Glacier and approach slopes; avalanche hazard and a high, dangerous Middle Fork Nooksack crossing are significant.",
+    "summer": "Primary climbing season; late July–September usually offers the driest rock and most manageable glacier crossing.",
+    "winter": "Heavy snow, avalanche terrain, and gated/closed access roads make a winter ascent a serious mountaineering undertaking, not a scramble.",
+    "typical": "Maritime North Cascades climate — the Twin Sisters catch heavy orographic precipitation off the Salish Sea and the Mount Baker massif; expect frequent rain/fog even in summer, with lingering snow on north-facing terrain into July.",
+    "bySeason": {
+     "fall": "Often a good, clearer window in September before fall storms arrive; days shorten quickly.",
+     "spring": "Snow-covered; some parties ski or climb corn snow off Cinderella's north bowl in late May-June, but this requires glacier-travel gear and avalanche awareness (including hazard from the nearby Mythic Wall).",
+     "summer": "Main scramble season (Jul-Sep); best rock conditions once approach and ridge snow patches melt out, typically by August.",
+     "winter": "Snowbound and effectively inaccessible; FS Road 38 is gated well below the trailhead."
+    },
+    "forecastZone": "West Slopes North (NWAC)"
+   },
+   "emergency": {
+    "notes": "Bellingham Mountain Rescue Council (volunteer, dispatched by the Whatcom County Sheriff's Office) is the primary SAR resource for the Twin Sisters Range, Mt. Baker, and Mt. Shuksan area — call 911 to activate. Cell coverage is unreliable in the Green Creek cirque, so expect delayed response and consider carrying a satellite communicator.",
+    "county": "Whatcom",
+    "rangerStation": "Mt. Baker Ranger District, 810 SR-20, Sedro-Woolley, WA 98284 — (360) 854-2553",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA — the only hospital in Whatcom County, roughly 1.5-2 hours' drive from the trailhead.",
+    "sheriffDispatch": "911 for emergencies; Whatcom County Sheriff's Office non-emergency line (360) 676-6911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional weekend traffic July-August from parties doing the Green Creek Circuit or Twin Sisters traverse; otherwise rarely climbed",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low - likely fewer than 10-20 parties per season; Cinderella is usually climbed as part of a longer Twin Sisters traverse/circuit rather than as a standalone objective, and trip reports for it specifically are sparse"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long, full approach-plus-summit day (likely 8-12+ miles round trip with significant elevation gain) on a maintained trail, an unmaintained climbers' trail and a glacier to the notch near Little Sister; extra road mileage on foot or bike when FS Road 38 is gated or closed",
+     "packWeight": "Light scrambling pack (roughly 15-25 lb) - helmet and light rack useful for the slabs; plus basic glacier gear for the Green Creek Glacier crossing"
+    },
+    "approachTime": "Long - multi-hour approach via the Elbow Lake Trail, the Green Creek climbers' trail and a glacier crossing to the notch near Little Sister; a full-day objective, more while road closures add mileage",
+    "requiredSkills": [
+     "unroped Class 3-4 scrambling on steep slabs",
+     "route-finding on unmaintained/informal approach terrain",
+     "comfort with exposure on dunite/olivine slabs",
+     "crossing the unbridged Middle Fork Nooksack and basic glacier travel",
+     "self-rescue readiness given remote, low-traffic terrain"
+    ],
+    "experienceLevel": "Experienced scramblers only - comfortable with sustained unroped Class 3-4 travel, route-finding on an unmaintained approach, and self-sufficient remote travel; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Scramble season opens; early-month snow patches possible on shaded slabs, improving through the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow typically still lingers on the ridge and approach ('spring: snow on the ridge; not in season'); generally too early",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Core dry-rock scramble season - most stable conditions for the slabs and approach",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms and shortening days push the range out of season; not covered by the best-season window",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still reliably dry and in-season before fall storms arrive",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime range catching heavy precipitation off Baker; can be wet/socked-in outside the summer window",
+     "probability": "Afternoon thunderstorms/quick weather changes possible in late summer given proximity to Baker"
+    },
+    "exposure": "Real fall exposure on the steep dunite/olivine slabs; a slip on the slabs could mean a long, consequential fall, compounded by the remote, low-traffic setting where help is far away",
+    "avalanche": {
+     "zone": "N/A - summer scramble route; no NWAC forecast zone specifically covers this range/peak",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Low-angle Green Creek (Sisters) Glacier crossed on the way to the Cinderella-Little Sister notch; crevasse hazard is generally low but grows later in the season, and the moat at the glacier margin must be crossed in both directions"
+   },
+   "data_quality": {
+    "gaps": [
+     "Summit elevation is reported inconsistently across sources — 6,431 ft on file vs. roughly 6,480-6,500 ft on Peakbagger/ListsOfJohn — not resolved to one authoritative figure this session; left unchanged rather than guess.",
+     "No verified prominence figure or exact summit GPS coordinates found; Mountain Project lists an approximate area centroid (48.69092, -121.97156), not a confirmed summit fix.",
+     "Round-trip mileage/elevation gain for Cinderella alone (isolated from the full Green Creek Circuit linkup) was not found in available sources.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.690995,
+    "peakLng": -121.971335,
+    "trailhead": "Elbow Lake Trailhead",
+    "trailheadDirection": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme)."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Class 3-4 scramble on Twin Sisters olivine, an exceptionally high-friction rock. No rope typically needed on the standard scramble line; a party doing the East Buttress variant reported some easy technical moves where a short rope could be prudent.",
+   "ascender": null,
+   "corrections": "General Twin Sisters/olivine terrain character confirmed via multiple sources; no route-specific gear list found for this exact route name, so inferred from the range's documented Class 3-4 character.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Elbow Lake Trail and the Green Creek path to the low notch on the Cinderella-Little Sister ridge",
+     "notes": "Start at the Elbow Lake Trailhead (Trail #697) at the end of FS Road 38. The trail immediately meets the Middle Fork Nooksack — there is no bridge at the marked crossing, and fording can be dangerous or impassable at high water. Many parties use an unofficial log crossing roughly a quarter mile downstream of the official ford, made of logs lashed between two boulders. Once across, climb through forest about 1.5 miles to a switchback near Hildebrand Creek, where the unmaintained, blue-blazed Green Creek Climber's Trail splits LEFT into the Green Creek cirque. Look closely for the small blue markers; it is easy to walk past. Follow it up into the basin — Green Creek runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with Class 3 rock steps to reach the toe of the Green Creek (Sisters) Glacier. Route-finding through that section is the crux of the approach. Cross the low-angle glacier to the low notch on the ridge between Cinderella and Little Sister. Fit parties often do it car-to-car in one long day; others camp in the Green Creek basin.",
+     "season": "Roughly Jul-Sep",
+     "hazards": [
+      "A bridgeless Middle Fork Nooksack crossing, impassable at high water",
+      "An easy-to-miss blue-blazed junction near Hildebrand Creek",
+      "Loose unstable scree and Class 3 steps to reach the glacier — the crux of the approach",
+      "A moat at the glacier margin in both directions",
+      "A connecting ridge toward Little Sister that accounts describe as a missile zone"
+     ],
+     "baseFinding": "THE LOW NOTCH ON THE CINDERELLA-LITTLE SISTER RIDGE IS THE BASE, AND IT IS WHERE YOU STOW GLACIER GEAR. Cross the low-angle Green Creek (Sisters) Glacier and step off ice onto rock at the notch. It is a col: a low point with a peak at each end of it, Cinderella one way and Little Sister the other.\n\nTHE MOAT AT THE GLACIER MARGIN IS THE LAST OBSTACLE AND IT IS SEASONAL, NOT STRUCTURAL — trivial in a heavy snow year, a real step late in the season, and exactly the same problem in reverse on the way down. Plan for it in both directions rather than being surprised at 4pm.\n\nFROM THE NOTCH, GO WEST, NOT EAST. Cinderella's WEST RIDGE is the route — a long ridge, mostly straightforward walking on broken ground with a short section of enjoyable scrambling to the true summit. Turning the other way out of the notch heads for Little Sister.\n\nDO NOT BE TEMPTED ALONG THE CREST TOWARD LITTLE SISTER. This is not mere caution: at least one party calls that connecting ridgeline a missile zone and recommends dropping back to the glacier from this notch instead of traversing it. The notch serves two peaks and connects neither.\n\nON THE WEST RIDGE, THE CREST DIRECT IS THE TRAP. Taking it absolutely direct runs into stretches of committing downclimbing; the standard escape is to DROP INTO A GULLY ON THE SOUTH SIDE and regain easier ground above. Committing downclimbing on a Class 3-4 scramble means you have stayed on the crest too long.\n\nTHE ROCK IS DUNITE AND IT BEHAVES TWO WAYS AT ONCE, which is the single most useful thing to know about holds here: notably grippy on WEATHERED surfaces, and greasy where a block has FRESHLY BROKEN. Judge each hold on its surface, not on the rock type."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Notch to the west ridge",
+     "notes": "From the low notch on the Cinderella-Little Sister ridge, step off the Green Creek (Sisters) Glacier and onto rock. This is where parties stow glacier gear. Watch the moat at the glacier margin: it is trivial in a heavy snow year and a real obstacle late in the season, and it is the same problem in reverse on the way down. Do not be tempted along the crest toward Little Sister — that continuation has been judged loose and hazardous and is normally avoided."
+    },
+    {
+     "n": 2,
+     "label": "West ridge to the true summit",
+     "notes": "The long west ridge is mostly straightforward walking on broken ground with a short section of enjoyable scrambling to reach the true summit. Taking the crest absolutely direct runs into stretches of committing downclimbing; the standard escape is to drop into a gully on the south side and regain easier terrain above. The rock here is dunite, unusual in the Cascades — it is notably grippy on weathered surfaces but greasy where a block has freshly broken, so judge each hold on its surface rather than on the rock type."
+    },
+    {
+     "n": 3,
+     "label": "Descent to the glacier",
+     "notes": "Two descents are in use off the north side. Parties have downclimbed clean slabs directly to the edge of the glacier — steeper-looking from above than it climbs, with a passage at each apparent crux — and parties have also rappelled the north face, which has gone with a single double-rope rappel landing on a steep snow panel above the glacier. Carry two ropes if the rappel is the plan. On the snow panel below, an axe and crampons are wanted; the moat at its base is the last obstacle."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Green Creek cirque dispersed camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for the circuit that links them to South Twin. It is reached by branching off the Elbow Lake trail at a switchback onto a blazed climbers path, then working up into the cirque. There are no developed campsites; parties use sandy patches beneath protecting boulders and small flat spots in the heather, and the area holds a wilderness feel that low impact camping is the only way to keep. The springs here are worth planning around, because once you are on the crest above there is nothing. Getting into the basin involves a long loose talus slope where most of what you stand on moves, which is slow and hazardous when wet. Midsummer through early autumn; early season snow makes the approach faster but the river crossing more dangerous.",
+     "water": "Two springs of running water in the basin, plus Green Creek lower down. The most dependable water anywhere on the southeast side of the range and the reason this basin is used at all",
+     "permit": "National forest, largely within the wilderness unit. Dispersed camping legal, no overnight permit currently required, party size limit twelve, no developed sites and no facilities. A Northwest Forest Pass or interagency pass is needed at the trailhead. Fire restrictions are common from midsummer. Access from this side does not cross the private timberland, but it does require fording the Middle Fork Nooksack, and the roads serving the trailhead have their own closures.",
+     "capacity": "Small dispersed sites, sandy patches under boulders; two or three parties spread out"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_liberty_bell_independence_route",
+  "name": "The Independence Route",
+  "area_id": "wa_liberty_bell",
+  "findings": [
+   "3 waypoints (stream crossing, climbers path junction, west face bench) were copied from a west-face route; this is an east-face climb."
+  ],
+  "gpx_summary": "491 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_liberty_bell_independence_route",
+   "area_id": "wa_liberty_bell",
+   "name": "The Independence Route",
+   "discipline": "alpine",
+   "grade": "Grade V, 5.12a free (orig. F8 A4)",
+   "grade_system": "yds",
+   "grade_num": 12.25,
+   "pitches": 12,
+   "length_m": 366,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Alex Bertulis & Don McPherson, 1966 (wall-style, 4 days, 180 pitons + 5 bolts); FFA Steve Risse & Keith Hertel, 1991",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Doubles from the smallest cams through #1, single #2 and #3 — this is the published rack for the full route",
+    "Single set of small offset nuts/wires",
+    "Small cams and wires to back up fixed pins at the P5 (5.11c) and P6 (5.11b/c) thin-crack cruxes — the pins themselves are already in place",
+    "A few extra slings/draws for the P8 hanging belay, where several old bolts from different eras are stacked together",
+    "Single 70m rope — long enough to rappel from pitch 8; a second rope is not needed",
+    "Helmet — long, popular multi-pitch granite route with rockfall and gear-drop risk from parties above"
+   ],
+   "hazards": [
+    "sustained face and crack climbing",
+    "exposure",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "One of Liberty Bell's three historic 1960s east-face aid lines (with Liberty Crack and Thin Red Line). Established in May 1966 by Alex Bertulis and Don McPherson as a 20-lead aid route at F8 A4 using roughly 180 pitons and 5 bolts; the line has since been substantially freed, with a full free ascent around 5.12a. A sustained, historically significant Cascadian rock outing on the same superb Washington Pass granite as its neighbors.",
+   "beta": "First climbed wall-style in 1966 by Bertulis and McPherson, freed in 1991 by Steve Risse and Keith Hertel without adding fixed gear (partly yo-yo style over 2 days), and given its first ground-up redpoint in 2009 by Jens Holsten and Max Hasson. Sustained 5.10-5.12 climbing through named features like the Baer Ceiling, Cascade Ceilings, and Well Hung Ceiling.",
+   "turnaround": "Turn around if storms build over the Pass in the afternoon.",
+   "auto_generated": true,
+   "alpine_grade": "D",
+   "rock_grade": "5.12a",
+   "ice_grade": null,
+   "gain_ft": 2500,
+   "loss_ft": 2400,
+   "dist_km": 4.02,
+   "max_angle": null,
+   "rappels": "2",
+   "commitment": "V",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell coverage.",
+   "descent": "Rappel the route from the top of pitch 8 with a single 70 m rope, or continue to the summit and descend the standard Beckey Route rappels to the Liberty Bell-Concord notch.",
+   "obj_haz": [
+    "rockfall",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5160,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Pullout on the north shoulder of SR-20 at the hairpin curve just east of Washington Pass, below Liberty Bell; walk back toward the pass to the small pond on the south side of the highway.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5750,
+     "name": "Stream crossing near meadow",
+     "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+     "type": "Water",
+     "distMi": 1.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Climbers' path junction",
+     "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward Liberty Bell's west side.",
+     "type": "Junction",
+     "distMi": 1.6
+    },
+    {
+     "lat": 48.514633,
+     "lng": -120.658546,
+     "elev": 7150,
+     "name": "West face base / sloping bench",
+     "note": "Scramble left off the approach gully onto Liberty Bell's broad sloping west-side bench, then traverse left at the base of the slabs to the start of the big-wall routes.",
+     "type": "Junction",
+     "distMi": 2.3
+    },
+    {
+     "lat": 48.514666,
+     "lng": -120.658696,
+     "elev": 7300,
+     "name": "Committing mid-wall position",
+     "note": "5.11 to 5.12a free crux pitches with sparse retreat once established above the bench; carry a topo and be ready to aid past the hard sections.",
+     "type": "Hazard",
+     "distMi": 2.4
+    },
+    {
+     "lat": 48.515435,
+     "lng": -120.658365,
+     "elev": 7720,
+     "name": "Liberty Bell summit",
+     "note": "Grade V outing tops out on the true summit; descend via the standard Beckey Route rappels/downclimb to the notch, not back down the route.",
+     "type": "Summit",
+     "distMi": 2.7
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": 10.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "Approach from the SR-20 hairpin pullout to the base of the East Face (about 1 hr), climb the 12-pitch line up the East Face, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "fromTo": "Long car-to-car day climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Single to double rack through hand size with a set of nuts; a few small pieces for thinner sections.",
+   "what_to_bring": [
+    "helmet",
+    "rock shoes",
+    "standard rack",
+    "extra slings"
+   ],
+   "pro_tips": [
+    "Smooth crack technique pays off on the sustained pitches.",
+    "Begin early to avoid afternoon storms.",
+    "Coordinate with parties on adjacent East Face lines to manage rockfall."
+   ],
+   "watch_out": [
+    "afternoon thunderstorms",
+    "exposure",
+    "rockfall in the descent gully",
+    "route-finding between adjacent lines"
+   ],
+   "pro_needs": "Standard rack; bring smaller pieces for the thin spots.",
+   "best_season": "Summer into early fall for dry, warm granite.",
+   "high_point_ft": 7720,
+   "aid_grade": null,
+   "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the highway, round its east end, and follow a cairned boot path north into the forest. The path climbs through timber and breaks out onto the talus field directly below the East Face after roughly an hour. From where the path reaches the talus, continue right (north) along the base past the Liberty Crack starts to the far right-hand end of the face, below the red Baer Ceiling roof about 85 m above. No water source along the way; watch for the cairned track being hard to follow in low light, and loose talus underfoot at the base.",
+   "descent_text": "The Independence Route is a serious, sustained 12-pitch line (first climbed wall-style with 180 pitons and 5 bolts, later freed at 5.12a/5.11) that tops out on Liberty Bell's upper mountain/summit area, so it funnels into the standard Liberty Bell descent used by other summit-finishing routes: downclimb east ~100 ft through trees and loose rock to the 2-bolt station, then one rappel to an intermediate stance followed by a double-rope rappel (or two single-rope raps) into the Liberty Bell-Concord notch — 2 rappels on bolted anchors — then downclimb the scree/boulder gully to the climbers' path and Blue Lake Trail. Given the route's length and serious character, plan for this being a long day-into-evening descent; loose rock in the notch gully is a real hazard when tired or descending in the dark.",
+   "bail": "Rappel the route or traverse to the Beckey descent.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Climbs the right edge of the East Face on horizontal breaks and cracks to a belay near a yellow lichen patch by a pine tree.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 3,
+     "grade": "5.10a/b",
+     "notes": "Crimp right then traverse left on a flake through a bolted section that follows the historic aid pendulum's line.",
+     "pitch": 2,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10b",
+     "notes": "A left-facing quartz corner with a hard right-stemming sequence near two bolts.",
+     "pitch": 3,
+     "anchor": "Gear (ledge with large horn)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Chimney/offwidth climbing for about 40 ft to a small alcove below the red 'Baer Ceiling,' an original aid pitch.",
+     "pitch": 4,
+     "anchor": "Gear (small alcove)",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.11c",
+     "notes": "A ramp into a shallow corner with cruxy face moves protected by a fixed pin and copperheads; a mantle and slab move reach the belay. A sneaky, often-underrated crux.",
+     "pitch": 5,
+     "anchor": "Gear (flake belay)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.11b/c",
+     "notes": "A thin, piton-protected crack passes three stacked 'Cascade Ceilings' via a mantle move.",
+     "pitch": 6,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.11",
+     "notes": "A technical rightward traverse into a shallow corner above a pine tree, with a reach-dependent boulder-problem section -- the original crux before the route's belays were repositioned.",
+     "pitch": 7,
+     "anchor": "Gear (above pine tree)",
+     "lengthM": 35
+    },
+    {
+     "crux": true,
+     "bolts": 4,
+     "grade": "5.12a",
+     "notes": "Technical, classic granite stemming and jamming up an exposed corner beneath the 'Well Hung Ceiling' -- the route's overall crux pitch, matching its full free grade.",
+     "pitch": 8,
+     "anchor": "Bolted hanging belay (aging bolts)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Short pitch moving the belay left onto M&M Ledge, shared with Liberty Crack and Thin Red Line.",
+     "pitch": 9,
+     "anchor": "M&M Ledge (large, sloping)",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Chimney and blocky corner climbing past red roofs to the base of a splitter wide crack; an alternate left-trending ramp also exists.",
+     "pitch": 10,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10",
+     "notes": "A nice splitter 2-3 inch crack leads to a clean slab and bolted anchor beneath the Hercan Roofs.",
+     "pitch": 11,
+     "anchor": "Bolted anchor (below Hercan Roofs)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "A slab traverse up and right gains the ridge crest, followed by 3rd-class scrambling to the summit.",
+     "pitch": 12,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 40
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach from the SR-20 hairpin pullout to the base of the East Face (about 1 hr), climb the 12-pitch line up the East Face, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "hours": 10.5,
+      "miles": 5,
+      "title": "Long car-to-car day climb",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:00 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "5:00 AM",
+        "label": "Reach base",
+        "detail": ""
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Start climbing",
+        "detail": "12 pitches"
+       },
+       {
+        "time": "3:30 PM",
+        "label": "Top out",
+        "detail": ""
+       },
+       {
+        "time": "5:30-7:00 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb the 12-pitch Independence Route"
+     }
+    ],
+    "totalNote": "A single long day given the 12 pitches, roughly 10-11 hrs car-to-car."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Parking required at Blue Lakes Trailhead (west side); no permit for climbing or hiking",
+     "permit_type": "No climbing permit required",
+     "land_manager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+     "special_hazards": "Rock climbing technical terrain",
+     "wilderness_zone": "Not in designated wilderness",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "N/A",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+     "permit_cost_structure": "No climbing permit; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "N/A",
+     "seasonal_closure_dates": "Typical alpine access June-October",
+     "ranger_district_contact": "Okanogan-Wenatchee National Forest main office, (509) 664-9200"
+    },
+    "fees": "No climbing permit; NW Forest Pass $5 (day) or $30 (annual)",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No climbing permit required",
+    "closures": "Typical alpine access June-October",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Not in designated wilderness",
+    "landManager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "WA-20 hairpin pullout east of Washington Pass",
+    "status": null
+   },
+   "climate": {
+    "typical": "Sunny east-slope granite; afternoon thunderstorms common in summer.",
+    "bySeason": {
+     "fall": "Crisp and dry; great climbing before the highway closes.",
+     "spring": "Snow lingering; highway may still be closed.",
+     "summer": "Prime season; warm dry granite, afternoon storm risk.",
+     "winter": "Highway closed; not accessible."
+    },
+    "forecastZone": "Washington East Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies. Note: Washington Pass straddles the Chelan/Okanogan county boundary; confirm jurisdiction locally.",
+    "county": "Chelan County / Okanogan County (summit straddles the line)",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional parties in peak summer; not a weekend draw like the Beckey Route",
+    "solitudeRating": 4,
+    "estimatePerSeason": "A serious grade V free line that sees comparatively low traffic - likely only a handful of ascents per season given the sustained 5.12a free grade"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Short, steep forest and talus approach from the SR-20 hairpin to the East Face",
+     "packWeight": "Trad rack for sustained crack/face climbing, roughly 18-22 lb"
+    },
+    "approachTime": "Roughly 1 hour from the SR-20 hairpin pullout to the East Face",
+    "requiredSkills": [
+     "5.11+ crack and face leading",
+     "multi-pitch endurance across 12 pitches in a day",
+     "route-finding among adjacent East Face lines",
+     "efficient descent management",
+     "comfort with serious commitment typical of a grade V route"
+    ],
+    "experienceLevel": "Strong 5.11+ trad/free climber comfortable with sustained face and crack pitches and the commitment of a grade V, 12-pitch outing"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer into early fall for dry, warm granite",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Warm dry granite, prime conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Snow can still linger on the approach and the highway may only just be reopening",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak conditions and afternoon storm risk typical of the season",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Crisp, dry, and stable before the highway closes for winter",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+     "probability": "Afternoon storm buildup typical"
+    },
+    "exposure": "High consequence - sustained exposure over 12 pitches, with route-finding uncertainty between adjacent lines raising the risk of a difficult mid-face retreat, plus rockfall in the descent gully",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Crowd estimate not found in dedicated sources - inferred from the route's grade and relative obscurity versus neighboring classics",
+     "No route-specific NWAC or trip-report data located",
+     "Total time-on-route not documented in the existing on-file data either",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/6PBH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 5,
+    "technical": 5,
+    "commitment": 5,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.515435,
+    "peakLng": -120.658365,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass, via the cairned climbers' path to the East Face"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "After downclimbing east ~100 ft through trees and loose rock from the summit area, first rappel down to an intermediate stance.",
+     "anchor": "2-bolt station (sloping ledge)",
+     "lengthM": 25
+    },
+    {
+     "n": 2,
+     "notes": "Continues down into the Liberty Bell-Concord Tower notch. Can be done as one double-rope rappel, or split into two single-rope raps.",
+     "anchor": "bolted anchor",
+     "lengthM": null
+    }
+   ],
+   "rappel_count_note": "Descent funnels into the standard Liberty Bell notch descent shared with other summit-finishing routes on the peak; the second stage is done as one long double-rope rappel or, alternatively, as two shorter single-rope rappels depending on rack.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "The hairpin pond pullout and the East Face path, then all the way RIGHT to the north edge of the face",
+     "notes": "Park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond on the south side of the road, and follow the cairned climbers' path from the pond's east end about a mile through forest to the talus below the East Face. TWELVE PITCHES, FIRST CLIMBED WALL-STYLE IN 1966 WITH 180 PITONS AND FIVE BOLTS OVER FOUR DAYS, and later freed. The line takes the profusely overhanging northeast corner of the East Face and joins Thin Red Line at M&M Ledge.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "A profusely overhanging corner, first climbed over four days with 180 pitons",
+      "A cairned forest path that is hard to follow before dawn",
+      "Several closely spaced starts on the same wall",
+      "Loose talus in the upper approach"
+     ],
+     "baseFinding": "START ON THE FAR RIGHT, THE NORTH EDGE, OF THE EAST FACE, AND CONFIRM IT BY LOCATING THE RED-COLOURED ROOF AND ALCOVE OF THE BAER CEILING ABOUT 85 M ABOVE. That is the marker, it is coloured, it is high enough to be visible when the base is in cloud, and no other route on this wall has one.\n\nSO THE TEST IS A COLOUR AND A HEIGHT: a red roof roughly 85 metres up, at the right-hand end of the face. If there is no red roof above you, keep walking right.\n\nTHE ORDER ALONG THE BASE, WHICH BOUNDS IT ON THE OTHER SIDE: FREEDOM RIDER about 100 ft LEFT of Liberty Crack, LIBERTY CRACK, FREEDOM OR DEATH on a leftward-trending ramp with bolts above, THIN RED LINE, LIBERTY AND INJUSTICE FOR ALL 10 m right of that, LIVE FREE OR DIE, and THIS ROUTE last. You cannot go further right and still be on the East Face; the ground beyond turns the corner onto the northeast aspect, where Dark Side of Liberty lives.\n\nA SECOND CONFIRMATION FROM THE SHAPE OF THE ROCK: this is the PROFUSELY OVERHANGING northeast corner. If the wall above your start leans back rather than out, you have not reached the corner.\n\nWHERE IT GOES, WHICH ALSO SETTLES THE DESCENT ARGUMENT: the route joins Thin Red Line at M&M Ledge, and fixed anchors let parties rappel from the top of pitch 8 back down the East Face to their packs on a single 70 m rope, rather than continuing to the true summit and finishing on the far side of the mountain."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_baker_cockscomb_ridge",
+  "name": "Cockscomb Ridge",
+  "area_id": "wa_mount_baker",
+  "findings": [
+   "Approach is now Heliotrope Ridge, but the trailhead coordinates are still at Artist Point."
+  ],
+  "gpx_summary": "5 points; 4 of 5 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "area_id": "wa_mount_baker",
+   "name": "Cockscomb Ridge",
+   "discipline": "mountaineering",
+   "grade": "III-IV",
+   "grade_system": "yds",
+   "grade_num": 3,
+   "pitches": 5,
+   "length_m": 914,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Chuck Murley, John Musser, and Klindt Vielbig, July 4, 1961 (first complete ascent of the ridge)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "spring-early summer",
+   "description": null,
+   "gear": [
+    "mountaineering boots",
+    "crampons",
+    "ice axe",
+    "glacier rope",
+    "pickets",
+    "light rock rack",
+    "crevasse rescue kit"
+   ],
+   "hazards": [
+    "Loose, exposed rock on the ridge crest, worst later in the season",
+    "Crevasses and bergschrunds crossing the Coleman and Roosevelt Glaciers on approach",
+    "Rockfall potential (PG13) below the Cockscomb Tower",
+    "Late-season parties may need to detour onto the Park Glacier and climb its AI3 headwall to bypass the Tower"
+   ],
+   "verif": null,
+   "overview": "Cockscomb Ridge is the true north ridge of Mount Baker — a long, prominent rock-and-ice ridge forming a skyline on the north side of the peak, distinct from the popular 'North Ridge' route (which is actually the NW spur). It sits between the North Ridge and the Park Glacier Headwall and is approached from the Heliotrope Ridge Trailhead across the Coleman and Roosevelt Glaciers. First climbed in its entirety on July 4, 1961 by Chuck Murley, John Musser, and a third climber, after a 1906 Mazama party had been turned back by the ridge's 300-ft Cockscomb Tower.",
+   "beta": "Grade: 4th class YDS, AI2-3 ice, M1b mixed, PG-13. Technical: 3,000 ft vertical gain over 5 pitches on the ridge itself. Hazards: Extremely loose and unstable rock (especially late season), bergschrunds, extensive crevassing, icefall terrain. Route: From the Heliotrope Ridge trailhead, cross Coleman and Roosevelt Glaciers northeastward, climb low-moderate snow ramps to ridge at ~7,500 ft, bypass Cockscomb Tower on left via steep snow, continue ridge to summit. Descent: Coleman-Deming Route (easy-moderate glacier). Required: Ice climbing competency, crevasse rescue skills, glacier travel experience, rock scrambling ability. Protection: Few ice screws/pickets, glacier gear essential. Best season: Spring or early summer (late season loose rock creates high hazard). First ascent: July 4, 1961 (Murley, Musser, Vielbig).",
+   "turnaround": "Set a turnaround given mixed-ground pace",
+   "auto_generated": true,
+   "alpine_grade": "Grade III",
+   "rock_grade": "4th class",
+   "ice_grade": "AI2-3",
+   "gain_ft": 7201,
+   "loss_ft": 7000,
+   "dist_km": 10.5,
+   "max_angle": 50,
+   "rappels": null,
+   "commitment": "II",
+   "face": "True north ridge/spur, between the Coleman/Roosevelt Glaciers and the Park Glacier",
+   "permit": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage on the glacier or ridge.",
+   "descent": "Descend the Coleman-Deming route: cross the summit plateau, go down the Roman Wall to the saddle below Colfax Peak, and follow the Coleman Glacier back to the Hogsback camp, then walk out the Heliotrope Ridge trail to the car.",
+   "obj_haz": [
+    "Loose rock",
+    "Crevasse field",
+    "Bergschrund"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.8465,
+     "lng": -121.6927,
+     "elev": 3700,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+    },
+    {
+     "lat": 48.795,
+     "lng": -121.885,
+     "elev": 6000,
+     "name": "Heliotrope Ridge Camp",
+     "type": "Campsite",
+     "distMi": 3
+    },
+    {
+     "lat": 48.785,
+     "lng": -121.868,
+     "elev": 7800,
+     "name": "Cockscomb Ridge Base (Coleman/Roosevelt Glacier Junction)",
+     "type": "Junction",
+     "distMi": 9.5
+    },
+    {
+     "lat": 48.782,
+     "lng": -121.865,
+     "elev": 9200,
+     "name": "Cockscomb Tower",
+     "type": "Hazard",
+     "distMi": 11
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 12.5
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "mountaineering",
+    "mixed"
+   ],
+   "timing": {
+    "totalHrs": 17.5,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "2:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft), the same camp used for Coleman-Deming and North Ridge parties. This positions you for th…",
+      "fromTo": "Approach to Coleman/Hogsback camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 13,
+      "note": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft, threading thin snow bridges through a maze of crevasses and contouring east…",
+      "fromTo": "Climb the ridge and descend",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A few ice screws and pickets plus standard glacier/crevasse-rescue kit; a light rock rack for the loose ridge crest.",
+   "what_to_bring": [
+    "helmet",
+    "pickets",
+    "small rack"
+   ],
+   "pro_tips": [
+    "Expect loose volcanic rock - test holds",
+    "A light rack protects the rock steps"
+   ],
+   "watch_out": [
+    "Loose volcanic rock",
+    "Mixed route-finding",
+    "Flanking-glacier crevasses"
+   ],
+   "pro_needs": "Pickets and a light rack for the mixed ridge",
+   "best_season": "May–June — the ridge's rock becomes progressively looser and more dangerous later in the season.",
+   "high_point_ft": 10781,
+   "aid_grade": null,
+   "approach": "From the Heliotrope Ridge Trailhead (~3,700 ft) at the end of Glacier Creek Road (FR 39), follow Trail 677 through old growth to the fork at about two miles and take the right-hand climbers' path up the Hogsback moraine to camp near 6,000 ft at the edge of the Coleman Glacier. From camp, rope up and cross the Coleman and then the Roosevelt Glacier heading northeast — roughly 2-3 hours of crevassed travel — and take low-to-moderate snow ramps to the foot of the ridge at about 7,500-7,800 ft. Thin snow bridges over a crevasse maze are the main hazard on this crossing.",
+   "descent_text": "Descend Coleman-Deming or Easton",
+   "bail": "Retreat to the glacier from the ridge if needed",
+   "pitch_detail": [
+    {
+     "grade": "Low-moderate snow",
+     "notes": "From the Heliotrope Ridge side, rope up and cross the Coleman and then the Roosevelt Glacier northeastward, about 2-3 hours of crevassed glacier, then take low-to-moderate snow ramps to the foot of the ridge at roughly 7,500-7,800 ft. Thin bridges over a crevasse maze are the main hazard here.",
+     "pitch": "Glacier approach"
+    },
+    {
+     "grade": "Moderate snow",
+     "notes": "Climb the lower ridge on moderate snow, passing a pinnacle on its right side. Keep on snow where you can; the rock here is poor.",
+     "pitch": "Lower ridge"
+    },
+    {
+     "grade": "4th class, loose rock",
+     "notes": "Junky towers and bergschrunds block the crest. Get around them to the left (east) on low-to-moderate ramps through the icefall; a long contour east near 9,000 ft skirts a schrund on the ridge. The rock before the Cockscomb is extremely loose out of season, so this ridge is a spring and early-summer climb.",
+     "pitch": "Towers/icefall"
+    },
+    {
+     "crux": true,
+     "grade": "Steep snow",
+     "notes": "The Cockscomb Tower, about 300 ft high, is passed on its left (east) side by steep snow, taking the most direct line around it. Late in the season, when that snow is gone, the alternative is to drop onto the Park Glacier and climb its headwall (AI3), which needs several screws.",
+     "pitch": "Cockscomb"
+    },
+    {
+     "grade": "Moderate snow",
+     "notes": "Regain the crest above the tower. The ridge broadens into the summit plateau; cross it to Grant Peak. Descend the Coleman-Deming route.",
+     "pitch": "Upper ridge to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Rock on the tower gets notably looser as the snow melts out through summer; the Park Glacier bypass becomes more relevant later in the season.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft), the same camp used for Coleman-Deming and North Ridge parties. This positions you for the long, technical ridge day ahead.",
+      "hours": 4.5,
+      "miles": 3,
+      "title": "Approach to Coleman/Hogsback camp",
+      "gainFt": 2900,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Establish glacier camp via Heliotrope Ridge"
+     },
+     {
+      "n": 2,
+      "note": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft, threading thin snow bridges through a maze of crevasses and contouring east around a bergschrund. Turn the crux Cockscomb Tower on its east side via steep snow (or drop onto the Park Glacier's AI3 headwall late-season), then continue up the glacier ridge to the summit and descend the standard Coleman-Deming route back to camp and out.",
+      "hours": 13,
+      "miles": 9,
+      "title": "Climb the ridge and descend",
+      "gainFt": 4600,
+      "lossFt": 7100,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "2:00 AM",
+        "label": "Leave camp, rope up",
+        "detail": ""
+       },
+       {
+        "time": "~4:00-5:00 AM",
+        "label": "Reach ridge crest (~7,500 ft)",
+        "detail": "After crossing the Coleman/Roosevelt glaciers."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Bypass bergschrund and Cockscomb Tower",
+        "detail": "East-side steep snow, or Park Glacier AI3 headwall if the Tower is unfeasible late-season."
+       },
+       {
+        "time": "Midday",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "Afternoon",
+        "label": "Descend Coleman-Deming to camp",
+        "detail": ""
+       },
+       {
+        "time": "Evening",
+        "label": "Hike out to trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Gain Cockscomb Ridge, turn the tower, summit, descend Coleman-Deming"
+     }
+    ],
+    "totalNote": "A serious, lightly-traveled grade III-IV alpine route; most modern parties do it as a 2-day trip with a Coleman Glacier camp rather than the historic 9,500 ft bivy, treating ridge day as a long 12-14 hour push."
+   },
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Northwest Forest Pass ($5 day use or $30 annual) or America the Beautiful Pass required. No climbing or wilderness permit is required; a voluntary climbing register may be at the trailhead. Group size limit 12 people maximum. Seasonal: Route becomes significantly more hazardous (loose rock) after early summer; spring/early summer strongly recommended. Glacier conditions variable year to year.",
+    "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+    "permit": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker.",
+    "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+    "group_limit": 12,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "what": "No overnight permit required",
+     "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+    }
+   },
+   "road": {
+    "name": "Glacier Creek Road (FR 39) to Heliotrope Ridge Trailhead",
+    "status": "Closed to vehicles at the Glacier Creek bridge (~MP 3.0), roughly 5 miles below the trailhead, due to December 2025 flood damage. Repairs scheduled to begin after July 15, 2026, targeting reopening by late September 2026 (subject to change).",
+    "driveNote": "Adds about 9 miles and 2,000 ft round trip on foot/bike beyond the washout."
+   },
+   "climate": {
+    "typical": "Heavily glaciated maritime volcano; high precipitation and rapid weather changes",
+    "bySeason": {
+     "fall": "Dry glaciers, shorter days, early storms",
+     "spring": "Strong snowpack; firm alpine ice/snow on the faces, good early-season conditions",
+     "summer": "Crevasses open, more rockfall on the headwalls; popular standard-route season",
+     "winter": "Severe maritime weather, heavy snow, few ascents"
+    },
+    "forecastZone": "NWS Seattle - Mount Baker area"
+   },
+   "emergency": {
+    "county": "Whatcom",
+    "rangerStation": "Mount Baker-Snoqualmie National Forest - Glacier Public Service Center (Mount Baker Ranger District)",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional attempts in May-June",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely single digits to low double digits of ascents per season; an obscure mixed line on Baker's north side"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong; glacier approach via Heliotrope Ridge, similar effort to other Coleman/Roosevelt-side routes",
+     "packWeight": "35-45 lb"
+    },
+    "approachTime": "~2-3 hrs of glacier travel via Heliotrope Ridge/Coleman-Roosevelt Glaciers to gain the ridge",
+    "requiredSkills": [
+     "Mixed snow/rock climbing at alpine Grade III-IV",
+     "Comfort and competence on loose volcanic rock",
+     "Independent route-finding on a sparsely-documented line",
+     "Glacier travel and crevasse rescue on the flanking glaciers",
+     "Placing protection in poor-quality rock"
+    ],
+    "experienceLevel": "Advanced alpine climber comfortable on loose rock, mixed terrain, and independent route-finding on an obscure line"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "May to June",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Strong snowpack, firmer conditions",
+      "status": "optimal"
+     },
+     "July": {
+      "reason": "Outside the best-season window; loose rock more exposed and rockfall risk increases as snow cover recedes",
+      "status": "risky"
+     },
+     "June": {
+      "reason": "Still climbable, though there is more rockfall as snow melts off in summer",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Heavily glaciated maritime volcano; high precipitation and rapid weather changes",
+     "probability": "Loose rock becomes more exposed and rockfall-prone as the season warms and snow recedes"
+    },
+    "exposure": "High - loose volcanic rock and mixed route-finding, with the remote, obscure position increasing the consequence of any incident",
+    "avalanche": {
+     "zone": "NWAC West Slopes North",
+     "byMonth": {
+      "May": "Moderate",
+      "July": "N/A",
+      "June": "Low"
+     }
+    },
+    "crevasses": "Moderate - crevasse hazard exists on the flanking glaciers rather than on the ridge crest itself"
+   },
+   "data_quality": {
+    "gaps": [
+     "No crowd, traffic, or recent-ascent data found - this appears to be an extremely obscure route with little indexed beta beyond what's already on file",
+     "No verified party-count data found",
+     "Month-by-month avalanche/rockfall risk not documented specifically for this ridge",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/4T07",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.7797,
+    "peakLng": -121.8204,
+    "trailhead": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+    "trailheadLat": 48.8465,
+    "trailheadLng": -121.6927,
+    "trailheadDirection": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "Heliotrope Ridge, the Hogsback and the Coleman-Roosevelt crossing",
+     "notes": "Glacier Creek Road (FR 39) to the Heliotrope Ridge trailhead, then Trail 677 through old growth to the fork at about two miles. Take the right-hand climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft beside the Coleman Glacier, the same camp used for the Coleman-Deming and the North Ridge.\n\nFrom camp the route ropes up and heads northeast, crossing the Coleman and then the Roosevelt Glacier. Expect two to three hours of glacier travel through a crevasse field before low-to-moderate snow ramps lead to the foot of the ridge.",
+     "season": "spring to early summer",
+     "hazards": [
+      "crevasses and thin snow bridges on the Coleman and Roosevelt Glaciers",
+      "bergschrunds below and on the ridge",
+      "loose rock on the ridge, worse as the snow melts out",
+      "icefall on the ramps that skirt the towers"
+     ],
+     "baseFinding": "The ridge is reached by traversing northeast from the Hogsback camps across the Coleman and then the Roosevelt Glacier. Aim for the foot of the ridge at about 7,500-7,800 ft, where low-angle snow ramps lead up onto the crest.\n\nThe Cockscomb Tower, about 300 ft high, stands well above the base and is passed on its east side by steep snow; if you are already beside it, you are far above the start. If you have crossed only the Coleman and are still west of the Roosevelt, you have not reached this ridge yet."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Park Glacier camp near the Portals",
+     "role": "main",
+     "type": "bivy",
+     "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb.",
+     "water": "Snowmelt only",
+     "permit": "No overnight permit required",
+     "capacity": "Snow or rock platforms for a few tents"
+    },
+    {
+     "name": "Camp Kiser, Ptarmigan Ridge",
+     "role": "route",
+     "type": "camp",
+     "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross.",
+     "water": "Snowmelt only; can be dry late in summer",
+     "permit": "No overnight permit required",
+     "capacity": "Dispersed sites among rock wind walls"
+    },
+    {
+     "name": "Heliotrope Ridge Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": 2,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "name": "Boulder–Park Cleaver",
+  "area_id": "wa_mount_baker",
+  "findings": [
+   "Camp pins (e.g. high camp) may sit on the wrong side of the mountain."
+  ],
+  "gpx_summary": "3 points; 1 of 3 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "area_id": "wa_mount_baker",
+   "name": "Boulder–Park Cleaver",
+   "discipline": "mountaineering",
+   "grade": "Grade III Snow",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 1585,
+   "sort_order": 2,
+   "stars": 3.2,
+   "fa": "Joe Morovits and party, July 2, 1894",
+   "lat": 48.7768,
+   "lng": -121.8145,
+   "aspect": "E",
+   "season": "Jul-Aug",
+   "description": "A moderate alpine snow route offering a quieter alternative to the heavily trafficked Coleman-Deming. The climb follows the Boulder–Park Cleaver across relatively crevasse-free terrain with multiple summit options: moderate snow slopes, 4th class rock north of the buttress, or a north-edge snow/ice slope. Earlier in season the terrain is less broken.",
+   "gear": {
+    "rack": [
+     "30m glacier rope (per team)",
+     "1 picket each",
+     "Crampons & ice axe",
+     "Crevasse rescue kit",
+     "Helmet (highly recommended)",
+     "Harness"
+    ],
+    "gearTiers": {
+     "optional": [
+      "Skis for descent (spring snow)",
+      "Wands to mark route in whiteout",
+      "Satellite communicator"
+     ],
+     "required": [
+      "Glacier rope (30m per team)",
+      "Mountaineering crampons & ice axe",
+      "1 picket anchor per person",
+      "Crevasse-rescue kit (4-6 pickets, 1 screw, slings, ascenders)",
+      "Helmet",
+      "Locking carabiners & belay device"
+     ],
+     "recommended": [
+      "Map and compass or GPS (route-finding can be tricky)",
+      "Second tool for direct line (early season)",
+      "Overnight kit for high camp on Boulder Ridge"
+     ]
+    }
+   },
+   "hazards": [
+    "Rockfall below 9,300 ft buttress",
+    "Rockfall on direct line north of buttress",
+    "Steep cliffs below Grant Peak",
+    "Crevasse danger (terrain becomes very broken by mid-summer)",
+    "Altitude (10,781 ft)"
+   ],
+   "verif": {
+    "status": "verified",
+    "updated": "2026-07-15",
+    "confirms": 16
+   },
+   "overview": "An east-side route climbing the rock/snow cleaver dividing the Boulder and Park Glaciers — more strenuous and remote than the standard routes but not technically difficult, with the lowest trailhead (2,700 ft) and among the largest elevation gains of any Baker route.",
+   "beta": "The route follows the Boulder Ridge Trail to its end, then climbs steep heather and a short class 3 rock step onto the ridge, reaching a high camp around 5,700 ft. From there it crosses onto the Park Glacier and ascends to the base of the cleaver (~6,800 ft), following the cleaver as the climbing steepens, becomes icy, and grows exposed to rockfall near crevasses, before joining the upper mountain near the Boulder Glacier's summit approach.",
+   "turnaround": "Start very early given the east-facing aspect — the route gets full sun early in the day, softening snow and increasing rockfall risk on the buttress sections.",
+   "auto_generated": false,
+   "alpine_grade": "Grade III",
+   "rock_grade": "3rd class (fixed-line rock band en route)",
+   "ice_grade": null,
+   "gain_ft": 8081,
+   "loss_ft": 8081,
+   "dist_km": 25.7,
+   "max_angle": 45,
+   "rappels": null,
+   "commitment": "III",
+   "face": "East side, via the cleaver ridge between the Boulder and Park Glaciers",
+   "permit": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage on this remote east-side approach; carry a satellite communicator.",
+   "descent": "Descend via the Boulder Glacier and cleaver back to the high camp below the cleaver at about 7,200-7,500 ft (described as one of the best bivouac sites on Mount Baker), then return to Boulder Ridge trailhead via the approach route.",
+   "obj_haz": [
+    "Rockfall"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.73525,
+     "lng": -121.71027,
+     "elev": 2700,
+     "name": "Boulder Ridge Trailhead (Trail #605, FR-1131)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Baker Lake Road to FR-1130, then follow FR-1131 to its end at the Boulder Ridge Trailhead, around 2,700 ft. Boulder Ridge Trail #605 starts from the road's end. This is the lowest trailhead on the mountain, which is why the climb adds up to about 8,000 ft of cumulative gain — the biggest of any Baker route."
+    },
+    {
+     "lat": 48.79,
+     "lng": -121.84,
+     "elev": 7500,
+     "name": "High Camp below Boulder-Park Cleaver",
+     "type": "Campsite",
+     "distMi": 5.5
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 8
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 8,
+    "summitTimeHrs": 3,
+    "descentTimeHrs": 2,
+    "approachTimeHrs": 3,
+    "recommendedStart": "5 AM"
+   },
+   "detailed_rack": "30m glacier rope (1 per team), 1 picket per person for belays, full crevasse-rescue kit (4-6 pickets, 1 ice screw, slings, carabiners, ascenders), crampons, ice axe, helmet, harness",
+   "what_to_bring": [
+    "Headlamp",
+    "2.5L water",
+    "Trail snacks",
+    "Sunscreen SPF 50+",
+    "Glacier glasses",
+    "Rain layer"
+   ],
+   "pro_tips": [
+    "Climb early (before 5 AM) to avoid mid-day rockfall hazard below the buttress",
+    "Route-finding: stay left to avoid rockfall exposure; hug the east side of Boulder-Park cleaver",
+    "Terrain is cleaner and less broken earlier in the season (July vs. September)",
+    "Most parties move together as a team on this snow route"
+   ],
+   "watch_out": [
+    "Rockfall hazard exists ALL season beneath the 9,300 ft buttress",
+    "Steep cliffs just below Grant Peak—don't wander too far right/west",
+    "Route becomes heavily crevassed and broken by mid-late summer",
+    "Midday sun causes rockfall and slushy snow"
+   ],
+   "pro_needs": "Glacier rope team dynamics, crevasse rescue setup, route-finding skills for mid-route navigation",
+   "best_season": "Mid-July through August; June is too early (deep snow, more rockfall), September and later has too many crevasses and broken terrain.",
+   "high_point_ft": 10781,
+   "aid_grade": null,
+   "approach": "Drive Baker Lake Highway to FR1130, then FR1131 to its end at the Boulder Ridge Trailhead (~2,700 ft). Hike the Boulder Ridge Trail #605 — nearly flat through an old clear-cut and timber for about 2 miles to a boggy clearing at the Mount Baker Wilderness boundary — then continue on a rougher user path up steep heather, including a class 3 rock step often protected with a fixed line, to a campsite around 5,700 ft where the ridge meets snow and ice.",
+   "descent_text": "Reverse the cleaver and Park Glacier terrain back to the 5,700 ft camp, downclimbing the class 3 step where the fixed line was left, then follow the Boulder Ridge Trail back to the trailhead; expect rockfall exposure near the 9,300 ft buttress on the way down as well as up.",
+   "bail": "Retreat down the cleaver and Park Glacier to the 5,700 ft camp is straightforward in good visibility; the class 3 rock step is the main technical obstacle to reverse and is often rigged with a fixed line.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Boulder Ridge Trail #605, ~2 miles to wilderness boundary/bog",
+     "pitch": "Approach trail"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Steep heather and a short fixed-line rock step to ~5,700 ft camp",
+     "pitch": "Ridge gain"
+    },
+    {
+     "grade": "Glacier, crevassed",
+     "notes": "From camp, rope up and cross to the toe of the Boulder-Park Cleaver near 6,800 ft, usually heading northwest across the lower Boulder Glacier; from a camp high on the ridge some parties step onto the Park Glacier side instead. A few crevasses and icefall bands lie on this crossing. Parties that instead climb the Boulder Glacier's central section meet far more broken ground and unreliable, undercut bridges by midsummer.",
+     "pitch": "Glacier to the cleaver toe"
+    },
+    {
+     "grade": "Snow and rock rib",
+     "notes": "Follow the cleaver, mostly on its north side, with a short rock scramble around 7,800 ft; this middle section is largely crevasse-free. Flat bivy sites along the rib (around 7,200-7,500 ft) allow a shorter summit day, and a flat spot near 8,800 ft is the place to study the upper mountain. Above the cleaver the snow steepens and can be icy and exposed to rockfall, with crevasses close below; pickets and a few ice screws protect it.",
+     "pitch": "Cleaver"
+    },
+    {
+     "grade": "25-35° snow",
+     "notes": "At the large rock buttress near 9,300 ft, head up toward its toe and traverse south toward Sherman Crater on moderate snow, weaving through crevasses; the pattern here dictates the line and is very broken by midsummer. The traverse passes beneath the buttress, so helmets and pace matter. From the crater side, finish up steep glacier between the vents and the summit plateau.",
+     "pitch": "Upper mountain (snow option)"
+    },
+    {
+     "grade": "4th class",
+     "notes": "Alternative to the snow traverse: climb the rock buttress above 9,300 ft directly on 4th-class ground, or skirt its north edge on a short snow or ice slope, then angle onto Grant Peak. Cliffs drop steeply near the summit, and the whole face gets early sun, so start early to be off it before rockfall begins.",
+     "pitch": "Upper mountain (rock option)"
+    }
+   ],
+   "itinerary": "Day 1: Hike Boulder Ridge Trail and climb to high camp (~5,700 ft). Day 2: Cross the Park Glacier, climb the cleaver, and summit (10,781 ft), then descend to camp and out.",
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Group size capped at 12 (see group_limit).",
+    "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+    "permit": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker.",
+    "closures": "Group size limited to 12 in Mt. Baker Wilderness; no campfires; no toilets — pack out human waste.",
+    "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+    "group_limit": 12,
+    "landManager": "Mt. Baker-Snoqualmie National Forest — Mt. Baker Wilderness / Mt. Baker National Recreation Area (USFS)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest — Mt. Baker Wilderness / Mt. Baker National Recreation Area (USFS)",
+    "parking_pass": "Northwest Forest Pass",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "what": "No overnight permit required",
+     "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+    }
+   },
+   "road": {
+    "name": "FR1130 / FR1131 (Boulder Ridge Trail access)",
+    "status": "Gravel forest road, can be rough",
+    "driveNote": "From Baker Lake Highway, drive 17.8 miles to FR1130, turn left 1.5 miles to FR1131, then FR1131 to its end (4.2 miles) at the Boulder Ridge Trailhead.",
+    "seasonalGate": "Snow-dependent; verify current conditions before driving"
+   },
+   "climate": {
+    "fall": "Weather deteriorates rapidly after early September",
+    "spring": "Deep, unstable snowpack; access roads may still be snowed in",
+    "summer": "Warmest, driest window (Jul-Aug) but the east aspect gets sun early — plan an early start",
+    "winter": "Very heavy snowfall; not a climbing season",
+    "typical": "Wet, cloudy maritime climate most of the year with a drier window July-September",
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "This is a remote, lightly-traveled route; no cell coverage, carry a satellite communicator. SAR response is volunteer-based through Whatcom County Search and Rescue.",
+    "county": "Whatcom County, WA",
+    "rangerStation": "Mt. Baker Ranger District, Sedro-Woolley: (360) 854-2553",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA",
+    "sheriffDispatch": "Whatcom County Sheriff's Office non-emergency: (360) 676-6911; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through August, after the Boulder Ridge snow retreats and before the Park Glacier becomes too broken",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Continuous snow reaches far down Boulder Ridge, making a long slog, and the east-facing cleaver carries more rockfall as the snowpack warms.",
+      "status": "marginal"
+     },
+     "July": {
+      "reason": "The trail melts out to high camp near 5,700 ft and snow still bridges most Park Glacier crevasses; expect flies and blowdown on the lower trail.",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Deep snow still buries the upper trail and heather step, and warming slopes below the 9,300 ft buttress shed more rock.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "The approach is fully melted out, but the glacier grows broken and the upper cleaver turns icy, so later trips need screws and careful routing.",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "The Park Glacier is heavily crevassed and the cleaver steep, icy and exposed to rockfall; parties have needed screws and pickets.",
+      "status": "risky"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "peakLat": 48.776797,
+    "peakLng": -121.814467,
+    "trailhead": "Boulder Ridge Trailhead (Trail #605, FR-1131)",
+    "trailheadLat": 48.73525,
+    "trailheadLng": -121.71027,
+    "trailheadDirection": "From the Boulder Ridge Trailhead at the end of FR-1131 (~2,700 ft) off Baker Lake Road, via Boulder Ridge Trail #605"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Boulder Ridge Trail #605 to ridge camp, then across the lower Boulder Glacier to the toe of the cleaver",
+     "notes": "The drive and the walk in are identical to the Boulder Glacier route: Baker Lake Road to FR-1130, then FR-1131 to the Boulder Ridge Trailhead near 2,700 ft, and Trail #605 for about two flat miles through clear-cut and timber to the boggy clearing at the wilderness boundary. Above that the user path climbs steep heather and takes a Class 3 rock step — the one parties have found with a fixed line on it — to a camp on the ridge where it meets snow and ice. A second, higher camp exists on a flat shelf sheltered by the cleaver itself around 7,500 ft, which shortens summit day considerably and is the reason some parties carry over. From camp the day begins with a glacier crossing rather than a glacier climb: cross the lower Boulder heading northwest to the toe of the cleaver, then follow the cleaver up to just below a large rock buttress near 9,300 ft, where several finishes are possible. This is Joe Morovits's 1894 line, and it is a different climb from the Boulder Glacier route despite sharing a trailhead, a camp and a name, and published first-ascent records for the two are muddled.",
+     "season": "Roughly May-Aug — a longer usable window than the pure glacier line beside it, because the cleaver stays climbable after the ice below it has broken up",
+     "hazards": [
+      "A Class 3 rock step on the approach with an unknown fixed line sometimes in place",
+      "Crevasse navigation on the short crossing of the lower Boulder to the toe, which changes year to year",
+      "Rockfall exposure near the 9,300 ft buttress, going up and coming down",
+      "The 7,500 ft high camp sits on the mountain with no bail-out short of reversing the cleaver",
+      "8,000 ft of cumulative gain — the biggest gain of any Baker route because the trailhead is the lowest"
+     ],
+     "baseFinding": "THE BASE IS A ROCK RIB THAT RISES OUT OF THE GLACIER, AND YOU FIND IT BY BEARING NORTHWEST OFF CAMP AND STOPPING WHEN THE ICE ENDS. That is the whole test and it works blind: from the ridge camp the crossing is a short one, the bearing is northwest, and the thing you are walking toward is the only rock rib coming down into the glacier on that side. Walk until the ice runs into rock. Do not look for a summit.\n\nCONFIRM IT: at the toe you should be able to get off the ice and onto rock without climbing anything — the cleaver's foot is a walk-on, not a step. If you are standing under a wall you have to climb to get established, you are somewhere else on the glacier margin.\n\nTHE DISCRIMINATOR AGAINST THE ROUTE THAT SHARES THIS CAMP: the Boulder Glacier route never leaves the ice. If you are still roped up on glacier at 8,000 ft with no rock under you, you are on that route rather than this one. Conversely if you are on a rock spine with glacier falling away on BOTH sides, you are on the cleaver and you are right.\n\nWHAT TOO HIGH LOOKS LIKE: the cleaver runs into a large rock buttress around 9,300 ft. That buttress is a decision point, not a base — it is where the finishes diverge, and if you have reached it you are about 2,500 ft above the toe of the cleaver."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Boulder Ridge high camp",
+     "role": "main",
+     "type": "camp",
+     "notes": "The usual camp at the top of the Boulder Ridge boot path, at roughly 5,500 to 5,700 ft just below the Boulder Glacier. Fully exposed to wind.",
+     "water": "Snowmelt and meltwater streams off the Boulder Glacier",
+     "permit": "No overnight permit required",
+     "capacity": "Scattered tent sites on the moraine and ridge crest"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_liberty_bell_thin_red_line",
+  "name": "Thin Red Line",
+  "area_id": "wa_liberty_bell",
+  "findings": [
+   "Waypoints 1-3 describe the Blue Lake west-face approach, not this climb's approach."
+  ],
+  "gpx_summary": "491 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_liberty_bell_thin_red_line",
+   "area_id": "wa_liberty_bell",
+   "name": "Thin Red Line",
+   "discipline": "alpine",
+   "grade": "Grade IV, 5.12 free (orig. aid V, 5.9 A3)",
+   "grade_system": "yds",
+   "grade_num": 12,
+   "pitches": 11,
+   "length_m": 335,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Jim Madsen & Kim Schmitz, 1967 (aid, A3); FFA Kate Rutherford & Mikey Schaefer, September 2008 (5.12c)",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Cams from a purple TCU up to a #2 Camalot, with doubles from blue TCU through 0.75",
+    "Small to medium stoppers — RPs are not needed",
+    "About 10 quickdraws for the bolted and fixed-pin sections",
+    "Extra slings — the route has a lot of fixed gear (mostly solid, some older pins), so budget for backing up or extending a questionable piece rather than just clipping through",
+    "Helmet",
+    "Approach shoes for the 3rd/4th class scramble to the base"
+   ],
+   "hazards": [
+    "sustained thin crack climbing",
+    "high exposure on the East Face",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "A classic sustained crack line up the steep East Face of Liberty Bell at Washington Pass — one of the area's renowned harder free climbs on superb golden granite. First climbed (aid) by Jim Madsen and Kim Schmitz on July 29, 1967; first freed by Kate Rutherford and Mikey Schaefer in September 2008, at 5.12c.",
+   "beta": "Grade: 5.12 (YDS), Grade IV overall. 11 pitches, approximately 1,100 feet of climbing. Route follows intricate crack systems and faces on East Face of Liberty Bell. Hazards: significant rock fall danger in approach gully (described as \"party-induced rock fall bowling alley\"); loose rock throughout approach; exposed alpine terrain; weather exposure on big wall. Required skills: advanced alpine rock climbing, 5.11+ crack climbing, self-rescue, anchor building, multi-pitch experience. First ascent: 1967 (aid climbing); free ascent variation established 2008 by Mikey Schaefer. Best season: June-September; July-September strongly preferred (late June requires ice axe, crampons). Notable: route features substantial fixed gear on most pitches; descent via two-rope rappel from M&M Ledge or summit traverse.",
+   "turnaround": "Watch the sky — turn around if afternoon storms build over Washington Pass.",
+   "auto_generated": true,
+   "alpine_grade": "D",
+   "rock_grade": "5.12",
+   "ice_grade": null,
+   "gain_ft": 1312,
+   "loss_ft": 2400,
+   "dist_km": 1.6,
+   "max_angle": null,
+   "rappels": "4",
+   "commitment": "IV",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell coverage.",
+   "descent": "Descend the standard Beckey Route rappels/downclimb on the southwest side back to the gully.",
+   "obj_haz": [
+    "rockfall",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5200,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Roadside pullout on the north side of SR-20 at the hairpin turn east of Washington Pass, beside a small pond; the East Face climbers' path starts here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Highway 20 to the hairpin curve on the east side of Washington Pass and look for the small pond on the south side of the road; the pullout you want is on the north side of the highway, at about 5,200 ft. Park there and pick up the cairned climbers' path leaving the pond, which runs east into the forest and up to the East Face talus. The season for this line is roughly June through September."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5750,
+     "name": "Stream crossing near meadow",
+     "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+     "type": "Water",
+     "distMi": 1.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Climbers' path junction",
+     "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward Liberty Bell's west side.",
+     "type": "Junction",
+     "distMi": 1.6
+    },
+    {
+     "lat": 48.514633,
+     "lng": -120.658546,
+     "elev": 7150,
+     "name": "West face base / sloping bench",
+     "note": "Scramble left off the approach gully onto the sloping west-side bench, then traverse left at the base of the slabs to the start of the west face lines.",
+     "type": "Junction",
+     "distMi": 2.3
+    },
+    {
+     "lat": 48.514666,
+     "lng": -120.658696,
+     "elev": 7300,
+     "name": "Sustained thin-crack pitches",
+     "note": "Sustained thin finger and hand cracks at 5.10-5.11 on excellent but highly exposed rock; retreating typically means leaving gear behind.",
+     "type": "Hazard",
+     "distMi": 2.4
+    },
+    {
+     "lat": 48.515435,
+     "lng": -120.658365,
+     "elev": 7720,
+     "name": "Liberty Bell summit",
+     "note": "Grade IV outing tops out on the true summit; from the summit descend via the standard Beckey Route rappels/downclimb into the gully (most parties instead rappel the East Face from M&M Ledge without topping out).",
+     "type": "Summit",
+     "distMi": 2.7
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 1,
+    "recommendedStart": "4:30-5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "Approach from the hairpin pullout to the East Face base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, cruxes on pitches 5 and 6), then rappel the route/stand…",
+      "fromTo": "Long car-to-car day climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Double rack of small to medium cams, a full set of nuts, and extra small pieces for the thin cracks.",
+   "what_to_bring": [
+    "helmet",
+    "rock shoes",
+    "double rack of small cams",
+    "extra slings"
+   ],
+   "pro_tips": [
+    "Bring plenty of small protection — the cracks are thin and sustained.",
+    "Start early to beat afternoon thunderstorms at the Pass.",
+    "The granite is superb; trust the friction on dry rock."
+   ],
+   "watch_out": "High-grade 5.12 sustained climbing with serious exposure\nRoute-finding complexity on higher pitches requires confident route choice\nWeather sensitivity - any precipitation makes 5.12 climbing unclimbable\nLoose rock hazard on mixed terrain between pitches\nAfternoon electrical activity on exposed summit sections creates electrical hazard",
+   "pro_needs": "Emphasis on small cams and nuts for thin, sustained crack protection.",
+   "best_season": "Summer into early fall for dry, warm granite.",
+   "high_point_ft": 7720,
+   "aid_grade": null,
+   "approach": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond eastward into forest",
+   "descent_text": "Two documented options. (1) From the top of the route near M&M Ledge, work climber's left to good bolts and make four double-rope rappels (2 ropes) essentially to the ground at the base of the East Face — this is the faster option and returns you directly to your pack/the East Face approach. (2) If you continue to the true summit instead, descend via the standard Liberty Bell notch route: downclimb east ~100 ft through trees/loose rock to the 2-bolt station, then make two roughly 25m rappels (the second off a bolted anchor) down into the Liberty Bell-Concord notch, then hike down the scree/snow gully to the climbers' trail along the base of the west faces — but this leaves you on the opposite (west) side of the mountain from your car at the East Face pullout, requiring a shuttle or road walk back.",
+   "bail": "Rappel the route or traverse to the Beckey descent; retreat is feasible but committing on the upper face.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 4,
+     "grade": "5.10-",
+     "notes": "Mellow slabbing up discontinuous cracks and bolts; the obvious four-bolt first pitch that ends at a set of chains is the standard orientation landmark for the route.",
+     "pitch": 1,
+     "anchor": "Chain anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.11",
+     "notes": "Easy initial moves to a small roof where insecure lie-backing provides the pitch's tricky bit, then easier ground to a gear belay below a roof-capped dihedral.",
+     "pitch": 2,
+     "anchor": "Gear belay",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.11",
+     "notes": "Sustained stemming and lie-backs up a beautiful corner; a sometimes-wet, wild crux move gains the roof before exiting left to bolts.",
+     "pitch": 3,
+     "anchor": "2-bolt anchor",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10",
+     "notes": "Move up and left to the roof lip, clip two bolts, then traverse right on a flake to a stance and bolted anchor.",
+     "pitch": 4,
+     "anchor": "2-bolt anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 4,
+     "grade": "5.12",
+     "notes": "A beautiful, techy rightward traverse on perfect stone accesses a left-facing corner; technical stemming through four bolts with a slight crux move to a good hold.",
+     "pitch": 5,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": true,
+     "bolts": 2,
+     "grade": "5.12c",
+     "notes": "The route's benchmark crux: climb the corner to a small roof, step right into a hanging finger crack, then a bouldery crux between two seams before easing off on a mellow finger crack. This is the pitch freed by Kate Rutherford and Mikey Schaefer in 2008 to complete the free line at 5.12c.",
+     "pitch": 6,
+     "anchor": "Bolted anchor",
+     "lengthM": 22
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10",
+     "notes": "Moderate crack climbing leads up and right to a two-bolt anchor on a large ledge system.",
+     "pitch": 7,
+     "anchor": "2-bolt anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.11",
+     "notes": "Thin, technical moves on more perfect rock protected by small gear and fixed heads/pitons; the last hard pitch before easier ground.",
+     "pitch": 8,
+     "anchor": "Gear (fixed heads/pins)",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.9",
+     "notes": "Engaging corner climbing with a brief thin move, then a mantle onto M&M Ledge, the mid-height junction shared with Live Free or Die and other East Face lines.",
+     "pitch": 9,
+     "anchor": "Gear (M&M Ledge)",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Easier corner and ledge climbing above M&M Ledge, working up the upper apron toward the summit block on golden, lower-angle granite.",
+     "pitch": 10,
+     "anchor": "Gear",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Rad, easy scrambling atop Liberty Bell to the true summit; most parties instead rappel from M&M Ledge (four double-rope raps via bolts) rather than finish this far.",
+     "pitch": 11,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 20
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach from the hairpin pullout to the East Face base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, cruxes on pitches 5 and 6), then rappel the route/standard Beckey-side descent back to the car.",
+      "hours": 10.5,
+      "miles": 5,
+      "title": "Long car-to-car day climb",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:30-5:00 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Start climbing",
+        "detail": ""
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Top out / begin rappels",
+        "detail": ""
+       },
+       {
+        "time": "4:30-6:00 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Free-climb Thin Red Line through the pitch 5-6 cruxes"
+     }
+    ],
+    "totalNote": "A single long day, roughly 10-11 hrs car-to-car."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Parking required at Blue Lakes Trailhead (west side); no permit for climbing or hiking",
+     "permit_type": "No climbing permit required",
+     "land_manager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+     "special_hazards": "Rock climbing technical terrain",
+     "wilderness_zone": "Not in designated wilderness",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "N/A",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+     "permit_cost_structure": "No climbing permit; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "N/A",
+     "seasonal_closure_dates": "Typical alpine access June-October",
+     "ranger_district_contact": "Okanogan-Wenatchee National Forest main office, (509) 664-9200"
+    },
+    "fees": "No climbing permit; NW Forest Pass $5 (day) or $30 (annual)",
+    "notes": "Northwest Forest Pass required for parking. Seasonal access: optimal late June through September (approach gully snow-filled until late June, autumn storms typically arrive in October). Parking: small pullout on north side of Highway 20 just east of Washington Pass near pond. Day permits available via Recreation.gov app ($5).",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No climbing permit required",
+    "closures": "Typical alpine access June-October",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Not in designated wilderness",
+    "landManager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "WA-20 (North Cascades Highway) to the hairpin pullout east of Washington Pass",
+    "status": "Open seasonally",
+    "driveNote": "From the east (Mazama/Winthrop) or west via Highway 20 to the hairpin turn just east of Washington Pass.",
+    "seasonalGate": "Washington Pass closed in winter (typically late fall to spring)"
+   },
+   "climate": {
+    "typical": "Sunny east-slope granite; afternoon thunderstorms common in summer.",
+    "bySeason": {
+     "fall": "Crisp and dry; great climbing before the highway closes.",
+     "spring": "Snow lingering; highway may still be closed.",
+     "summer": "Prime season; warm dry granite, afternoon storm risk.",
+     "winter": "Highway closed; not accessible."
+    },
+    "forecastZone": "Washington East Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies. Note: Washington Pass straddles the Chelan/Okanogan county boundary; confirm jurisdiction locally.",
+    "county": "Chelan",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Very rarely climbed",
+    "solitudeRating": 5,
+    "estimatePerSeason": "A serious grade IV test-piece with sustained thin cracks; likely only a few ascents logged per season among strong free climbers"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "East Face approach from the SR-20 hairpin pullout",
+     "packWeight": "Trad rack weighted toward thin gear (small cams/stoppers), roughly 18-20 lb"
+    },
+    "approachTime": "Roughly 45 minutes to 1 hour from the SR-20 hairpin pullout",
+    "requiredSkills": [
+     "5.12 sustained thin crack leading",
+     "big multi-pitch endurance across 11 pitches",
+     "expert rope management/efficiency to beat afternoon weather",
+     "confident retreat/bail judgment given serious commitment"
+    ],
+    "experienceLevel": "Expert-level 5.12 crack climber with prior big multi-pitch/alpine experience; must be comfortable on sustained thin cracks with high exposure across 11 pitches"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer into early fall for dry, warm granite",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Warm dry granite, prime conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Base can still be damp or affected by residual spring snow",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cooler and stable before the highway closes",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+     "probability": "Getting caught high on this long, hard route in a storm is a serious hazard given the sustained thin-crack climbing"
+    },
+    "exposure": "Very high consequence - sustained thin crack climbing at 5.12 with high exposure on the East Face and a long, complex rappel descent",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No documented party-count or crowd data found for this rarely-climbed line",
+     "Ascent-frequency estimate is inferred from grade/obscurity rather than a verified source",
+     "No NWAC or dedicated seasonal data specific to this route",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/6PBH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 5,
+    "technical": 5,
+    "commitment": 5,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.5154,
+    "peakLng": -120.6579,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond eastward into forest"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of four double-rope rappels down the East Face, starting near M&M Ledge.",
+     "anchor": "bolted anchor, climber's-left of M&M Ledge",
+     "hazards": [
+      "The M&M Ledge anchor is two pieces of old fixed gear, a pin and a wire. A large and reportedly bomber horn sits up and left of it that would make a much better station and nobody has rigged it - carry cord if you want to use it",
+      "Because the line trends left rather than dropping straight down, a rope end blown or thrown off line is awkward to recover"
+     ],
+     "lengthM": null,
+     "station": "The rappels begin at M&M Ledge. From it, work climber's LEFT to reach good bolts - the bolted stations are not directly beneath where the ledge drops you, and finding them is the only route-finding on this descent. If you rappel from the ledge's own anchor instead, that is a fixed piton and a fixed wire, and the rappel from it also trends climber's left."
+    },
+    {
+     "n": 2,
+     "notes": "Continues down the East Face line on double ropes.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Steep sustained face with nothing to stand on between stations - once on the rope you are committed to reaching the next anchor"
+     ],
+     "lengthM": null,
+     "station": "Second station on the bolted line down the East Face."
+    },
+    {
+     "n": 3,
+     "notes": "Continues down the East Face line on double ropes.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Anything knocked off a station here falls the full height of the wall"
+     ],
+     "lengthM": null,
+     "station": "Third station on the bolted line."
+    },
+    {
+     "n": 4,
+     "notes": "Final rappel, reaching the ground at the base of the East Face.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Talus and snow at the base of the face for much of the season"
+     ],
+     "lengthM": null,
+     "station": "Last rappel, essentially reaching the ground at the base of the East Face - the side you approached from, so this is where your pack is."
+    }
+   ],
+   "rappel_count_note": "Four rappels off bolts, reached by working climber's LEFT from M&M Ledge, and the description that gives that sequence assumes TWO ropes - four double-rope rappels essentially to the ground. Parties who first rappel from M&M Ledge's own fixed pin-and-wire anchor, which also trends climber's left, count five. No single-rope option is described for this line. The alternative descent, for parties who continue to the true summit rather than rappelling from the ledge, is the standard Liberty Bell notch route - a downclimb east to a two-bolt station and two rappels of about 25 m into the Liberty Bell-Concord notch - which is fewer rappels but lands on the opposite side of the mountain from the East Face approach and from your pack. Per-station distances are not published; the figures given assume near-full-length double-rope rappels.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "The hairpin pond pullout and the cairned East Face path, then RIGHT of Liberty Crack",
+     "notes": "From the Highway 20 hairpin curve on the east side of Washington Pass, locate the small pond on the south side of the road; the pullout is on the north side of the highway. Follow the cairned climbers' path from the pond eastward into forest and up to the East Face talus. Note that this route's stored trailhead coordinate does not agree with the one every other East Face route on this peak carries. Use the pond and the hairpin, not a stored point.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "A start that has to be sighted from a distance rather than found along the base",
+      "Snow travel at the base into early summer",
+      "Several route starts within a short distance of each other on the same wall",
+      "A summit descent that strands you on the opposite side of the mountain from your car"
+     ],
+     "baseFinding": "THE ROUTE IS CLIMBER'S RIGHT OF LIBERTY CRACK, AND THE PUBLISHED METHOD FOR FINDING IT IS TO WORK DOWNWARD FROM THE FEATURES ABOVE RATHER THAN ALONG THE BASE. Look climber's right of Liberty Crack and connect the line down from the features higher on the wall. Some mellow snow travel is usually necessary to reach the base.\n\nSO THIS IS THE ONE EAST FACE ROUTE WHOSE START IS HONESTLY DESCRIBED AS A SIGHTING PROBLEM, AND THAT IS WORTH KNOWING BEFORE THE CLOUD COMES DOWN. Fix the line from the talus while you can see the wall. If you cannot see the wall, you cannot locate this start by walking the base, and no description will change that.\n\nWHAT YOU CAN DO WITHOUT A VIEW IS BOUND IT, BECAUSE THE ORDER ALONG THE BASE IS KNOWN. Left to right: FREEDOM RIDER about 100 ft left of Liberty Crack, LIBERTY CRACK, FREEDOM OR DEATH just right of it on a leftward-trending ramp with bolts above, THIN RED LINE, LIBERTY AND INJUSTICE FOR ALL about 10 m right of Thin Red Line, LIVE FREE OR DIE, and THE INDEPENDENCE ROUTE at the far right or north edge of the face beneath a red roof and alcove called the Baer Ceiling about 85 m up.\n\nSO: IF YOU ARE STANDING AT A LEFTWARD-TRENDING RAMP WITH BOLTS ABOVE IT, YOU ARE ONE ROUTE LEFT, ON FREEDOM OR DEATH. IF YOU CAN SEE A RED ROOF ABOUT 85 M ABOVE YOU, YOU HAVE WALKED ALL THE WAY RIGHT TO THE INDEPENDENCE ROUTE.\n\nTHE DESCENT DECIDES WHICH CAR YOU END AT, AND THIS ROUTE HAS BOTH OPTIONS: from the top of the route near M&M Ledge, work climber's left to good bolts and make four double-rope rappels essentially to the ground at the base of the East Face, returning to your pack and the East Face approach. If you instead continue to the true summit and take the standard Liberty Bell notch descent, you finish on the WEST side of the mountain and need a shuttle or a road walk back."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

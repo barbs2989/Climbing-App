@@ -1,0 +1,42 @@
+{
+ "wa_windy_peak_trail": {
+  "approach_variants": [
+   {
+    "name": "Trail 342 from Long Swamp",
+    "camps": [
+     "Two Bear Camp"
+    ],
+    "notes": "This is the easternmost of the high peaks here and by far the least technical, being a trail walk with a very short scramble stapled on the end, so the real work is the drive. Long gravel forest roads out of Loomis reach Long Swamp Campground, where Trail 342 starts and climbs steadily through burned lodgepole and recovering meadow to a camp with water partway up and then out onto open, treeless ridge. A shorter trail comes in from the Cathedral Driveway trailhead a few miles further west but is overgrown in stretches from lack of use, and a third start at Iron Gate involves the roughest driving of the three. Water on the upper trail is limited and seasonal, so carry enough for a long day.",
+    "season": "Late June to early October",
+    "hazards": [
+     "Long trail mileage with limited seasonal water on the upper half",
+     "Fully exposed, treeless summit ridge in wind and lightning",
+     "Faint, braided cross-country tread over talus for the final stretch",
+     "Standing fire-killed snags along the burned lower trail in wind",
+     "Long gravel road driving far from any town"
+    ],
+    "primary": true,
+    "baseFinding": "The trail does not go to the top, which is the single most useful thing to know here. Tread climbs to a junction and high point below and south of the summit at roughly 8,100 ft and then begins contouring and descending onward toward Horseshoe Basin and the Boundary Trail. The base of the scramble is exactly where the trail stops climbing. Standing on the plateau at that point, the summit rocks are obvious: they stand up as a small blocky pyramid of about three hundred feet, and there is nothing else nearby that looks like it. Leave the constructed tread and take the cairned, braided path up open talus on the south side of that pyramid; it is easy blocky scrambling and takes only a few minutes. The confirmations at the top are physical and worth checking, because the plateau carries other rises. Benchmark nails are set in the summit rock at the site of the old lookout, and remnants of the lookout's telephone line still run down the northwest slope toward the saddle, so if you can find the wire you are on the right high point. The way to know you have overshot is comfort: if you are walking downhill on good graded tread with the summit rocks behind your shoulder, you have passed the turn and should come back to the trail's high point."
+   },
+   {
+    "name": "Windy Creek trail from Cathedral Driveway",
+    "trip": {
+     "approachLogistics": {
+      "trailhead": "Cathedral Driveway Trailhead",
+      "trailheadLat": 48.87224,
+      "trailheadLng": -120.00335
+     }
+    },
+    "notes": "The shortest way up. From the Cathedral Driveway trailhead, a few miles west of Long Swamp on the same road, climb the Windy Creek trail about five miles to its junction with the Windy Peak trail, then go a short distance more to the summit. Some maps wrongly show the trail starting from the Cathedral Driveway trail about half a mile west of the trailhead."
+   }
+  ]
+ },
+ "wa_windy_peak_iron_gate_trail": {
+  "approach_logistics": {
+   "peakLat": 48.928205,
+   "peakLng": -119.970556,
+   "trailhead": "Iron Gate Trailhead",
+   "trailheadDirection": "From Loomis, take County Road #9425 north 2 miles to County Road #4066/FR-39; follow FR-39 about 14 miles, then turn onto FR-3900-500 and follow it about 6 miles (high-clearance vehicle recommended, not advised for passenger cars) to the Iron Gate Trailhead."
+  }
+ }
+}

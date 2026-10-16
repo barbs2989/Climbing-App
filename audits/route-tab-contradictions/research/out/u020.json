@@ -1,0 +1,153 @@
+{
+ "file": "u020",
+ "results": [
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,582 still disagrees with the itinerary days (5,000+1,200+1,800+4,480+1,500+0 = 13,980 ft) and totalNote's '14,000+ ft'. A retry found no Crowder-only trip anywhere: a multi-day Pickets traverse report mentions Crowder only as a landmark seen from Pickell Pass, a Baker-Lake-to-Ross-Lake traverse never reached it, and the Mystery Ridge enchainment report gives only whole-enchainment totals. No car-to-car gain for this route exists to adopt, and a sum of the itinerary days would be a computed figure (resting on a day plan that itself descends to Pickell Pass then retraces).",
+   "sources": [
+    "https://www.adventuresnw.com/traversing-the-pickets-with-general-weakness/",
+    "https://climberkyle.com/2025/07/03/baker-lake-to-ross-lake/",
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 61.15 km (38 mi) renders as the one-way approach, while the itinerary totals ~32 mi round trip and day 1-4 miles sum to ~19 mi. The retry sources describe only multi-peak traverses (55-66 mi totals, or traverses that did not reach Crowder), so no source states a one-way distance to Crowder from Goodell Creek or Ross Lake, and halving a round trip or summing days is not allowed.",
+   "sources": [
+    "https://www.adventuresnw.com/traversing-the-pickets-with-general-weakness/",
+    "https://climberkyle.com/2025/07/03/baker-lake-to-ross-lake/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "fact": "ROUTE BREAKDOWN 'Crowder Bypass' row and beta treat a traverse bypass as part of the SW Flank climb",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one report that names the Crowder Bypass puts it on the west side of Crowder as a through-traverse passage of steep snow, trees and gullies, and that party turned back before it and never climbed Crowder. No second source was found that places the bypass on or off the approach to Crowder's SW Flank from Wild Pass; the Pickets traverse report found on retry does not mention it. Removing pitch_detail[1] and the beta clause may well be right but rests on one source, so it stays flagged.",
+   "sources": [
+    "https://climberkyle.com/2025/07/03/baker-lake-to-ross-lake/",
+    "https://www.adventuresnw.com/traversing-the-pickets-with-general-weakness/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "fact": "pitch_detail leg distances above Peggy's Pond (2 + 1 + 1 + 0.5 mi) vs ~2 mi pond-to-summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The ROUTE BREAKDOWN leg names still add to 4.5 mi from Peggy's Pond to the West Summit (10 mi one way), against the approach prose's ~1 mi from the pond to the Southeast Ridge, the itinerary's 5.5 mi to the pond and ~15 mi round trip, and dist_km 12.1 km (7.5 mi). Retry sources give only whole-trip totals (about 14.5 mi / 5,000 ft in one route description, 16 mi / 6,000 ft in another) and the pond's elevation; none states a pond-to-summit or per-leg distance, and deriving one by subtracting from a round trip is not allowed. The leg mileages were left unchanged.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-mt-daniel-via-the-southeast-ridge",
+    "https://www.summitpost.org/southeast-ridge/158954",
+    "https://www.mountaineers.org/activities/routes-places/mount-daniel"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "fact": "Crux grade shown in TECHNICAL STATS vs actual crux difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "`grade` says Class 4 while rock_grade, pitch_detail, hazards, beta and the summit waypoint put a 5.0 dihedral on the route, and descent_text / approach_variants call the east ridge a continuous Class 3 line with the dihedral only on a southeast-face variant. The one detailed ascent still says the east ridge is an easy Class 3 downclimb and that its party met a 5.0 dihedral only because it climbed the steeper southeast face. A 2007 spring ascent reached the summit by kicking steps up the 45-degree snow slope on the SE face and gives no rock rating; the encyclopedia entry and other pages give no rating either. With only one source rating the standard line, neither `grade` nor the 5.0 copies can be changed.",
+   "sources": [
+    "https://trailcatjim.com/mt-despair-via-southeast-face/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2007052704",
+    "https://en.wikipedia.org/wiki/Mount_Despair_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "fact": "Whether a parking pass/fee is required at this trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or fee at the Phelps Creek Trailhead",
+   "evidence": "The Forest Service's Pacific Northwest list of recreation sites where day-use fees are charged names the Okanogan-Wenatchee trailheads that need a Northwest Forest Pass; Trinity Trailhead is on it but Phelps Creek Trailhead is not. The Spider Meadow hike guide for the same Phelps Creek trailhead also lists the parking pass as None. The row's access.fees, access.permit and the Trailhead waypoint's note and directions already say no pass is required; only the `permit` column's generic 'Northwest Forest Pass at many trailheads' contradicts them, so that clause is made specific.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.wta.org/go-hiking/hikes/spider-meadows"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_fernow_southeast_face",
+     "fact": "Whether a parking pass/fee is required at this trailhead",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "no quota. Northwest Forest Pass at many trailheads.",
+     "replace": "no quota. No Northwest Forest Pass or parking fee is needed at the Phelps Creek Trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "fact": "total elevation loss vs. gain and vs. the itinerary's own days",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real in the live row: gain_ft 6,200 and loss_ft 13,000 on an out-and-back, itinerary days summing to 6,900 ft up and 7,200 ft down, and totalNote / descent_text quoting ~13,000 ft. Retry sources give only whole-trip figures for different itineraries: a 2020 trip that added West Fury gives 40 mi round trip from Ross Dam and an elevation range of 1,640-8,280 ft with no cumulative gain; a theodolite survey trip gives 54 mi (46 hiking, 9 by boat) and 10,000 ft; a 4-day trip that also climbed Luna gives ~42 mi and 13,000 ft. No two agree on a gain for East Fury alone, so nothing is adopted. Separately, the last sentence of descent_text credits its ~42-mile / 13,000-ft figure to a published trip report (a source mention, and that trip included Luna Peak); it should be reworded when this is settled.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.countryhighpoints.com/luna-east-fury-west-fury-theodolite-survey/",
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/",
+    "https://www.countryhighpoints.com/east-fury-survey/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "gain_ft 7,500 vs loss_ft 8,700 on a trip that returns to the same car; itinerary hike-out day shows 0 gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft 7,500 and loss_ft 8,700 match the itinerary day sums (4,700+2,800 up; 7,500+1,200 down), but a loop that ends at the same Highway 20 car must gain what it loses, and the itinerary also books 0 ft loss on day 1 (which descends Bridge Creek from the pass) and 0 ft gain on day 4 (which climbs back up Bridge Creek from the Park Creek junction). The first-ascent account gives the ridge length and the ~3,000 ft of bushwhacking but no car-to-car gain, and no other published ascent of this seldom-repeated route gives one. Balancing the numbers would mean computing gains from the days, which is not allowed.",
+   "sources": [
+    "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "4,875 ft",
+   "evidence": "The approach starts at the Rainy Pass trailhead ('large paved lot at ~4,800 ft') and approach_logistics.trailheadDirection gives ~4,860 ft, but the Trailhead waypoint on pin 48.5181, -120.7331 says 4,500 ft in both elev and elevFt. The USGS elevation service gives 4,878 ft of ground at that pin and the encyclopedia entry for Rainy Pass gives 4,875 ft, so both copies are set to 4,875. The waypoint's note ('a separate, slightly lower trailhead ~1 mi east of Rainy Pass') does not fit its own pin; pin placement is out of scope and is left for the trailhead audit.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.7331&y=48.5181&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Rainy_Pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4500,
+     "value": 4875
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4500,
+     "value": 4875
+    }
+   ]
+  }
+ ]
+}

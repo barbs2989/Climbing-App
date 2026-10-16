@@ -1,0 +1,818 @@
+{
+ "zones": [
+  {
+   "zone": "bailey-range-solduc",
+   "overnightPermit": {
+    "what": "Olympic National Park wilderness permit, per person per night; Sol Duc and Seven Lakes Basin is a quota area",
+    "where": "Reserve on Recreation.gov, or get one in person at a park Wilderness Information Center such as Port Angeles.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   }
+  },
+  {
+   "zone": "baker",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app.",
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing"
+   }
+  },
+  {
+   "zone": "baker-highway-front",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Camp only at designated sites where they exist, such as the Chain Lakes. Developed campgrounds on the highway take reservations on Recreation.gov.",
+    "url": null
+   }
+  },
+  {
+   "zone": "baker-lake-blum",
+   "overnightPermit": {
+    "what": "North Cascades NP wilderness permit, fee per person",
+    "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center or the Glacier Public Service Center.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "baker-satellites",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge and Park Butte trailheads; buy it ahead or on the Recreation.gov app.",
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing"
+   }
+  },
+  {
+   "zone": "bridge-creek-goode",
+   "overnightPermit": {
+    "what": "North Cascades NP wilderness permit, fee per person",
+    "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "bulls-tooth-chiwaukum",
+   "overnightPermit": {
+    "what": "Free self-issue Alpine Lakes Wilderness permit",
+    "where": "Fill one out at the trailhead kiosk.",
+    "url": null
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_mount_angeles_standard",
+   "main": [
+    "Heart o' the Hills campground"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sol Duc Hot Springs Resort campground",
+    "Deer Lake",
+    "Heart Lake",
+    "Cat Basin",
+    "Boston Charlie's Camp",
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Appleton Pass"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit needed for the day climb",
+    "where": "Heart o' the Hills is a fee campground inside the park; reserve a site on Recreation.gov or take a first-come site.",
+    "url": null
+   },
+   "note": "Day scramble from Hurricane Ridge; only the drive-in campground on the road up is relevant, every Sol Duc camp is on the far side of the park."
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "main": [
+    "Appleton Pass"
+   ],
+   "onRoute": [
+    "Sol Duc Hot Springs Resort campground"
+   ],
+   "drop": [
+    "Deer Lake",
+    "Heart Lake",
+    "Cat Basin",
+    "Boston Charlie's Camp",
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Heart o' the Hills campground",
+    "Appleton Pass camp area"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Appleton Pass is the base; the camp-area waypoint is the same place as the bivy entry."
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "main": [
+    "Heart Lake",
+    "Cat Basin"
+   ],
+   "onRoute": [
+    "Sol Duc Hot Springs Resort campground",
+    "Boston Charlie's Camp"
+   ],
+   "drop": [
+    "Deer Lake",
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Appleton Pass",
+    "Heart o' the Hills campground",
+    "Cat Basin / High Divide"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Route name implies Hurricane Ridge but its own approach is the Sol Duc one; parties camp at Heart Lake or Cat Basin, Boston Charlie's is cramped and a last resort. Deer Lake is on the Deer Lake trail, not the Sol Duc River trail this route uses."
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "main": [
+    "Heart Lake",
+    "Cat Basin"
+   ],
+   "onRoute": [
+    "Sol Duc Hot Springs Resort campground",
+    "Boston Charlie's Camp"
+   ],
+   "drop": [
+    "Deer Lake",
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Appleton Pass",
+    "Heart o' the Hills campground"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Approach text itself says most parties camp at Heart Lake or Cat Basin; Boston Charlie's is a cramped exposed site on the Catwalk."
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "main": [
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Cat Basin"
+   ],
+   "onRoute": [
+    "Sol Duc Hot Springs Resort campground",
+    "Deer Lake",
+    "Heart Lake",
+    "Boston Charlie's Camp"
+   ],
+   "drop": [
+    "Appleton Pass",
+    "Heart o' the Hills campground"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Approach goes via the Deer Lake trail and the High Divide; Heart Lake sits just below the divide near the Cat Basin junction, so kept as an alternative. Fairly confident Fairchild parties sleep beyond the Catwalk, but the order is a judgement."
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Sol Duc Hot Springs Resort campground",
+    "Deer Lake",
+    "Heart Lake",
+    "Cat Basin",
+    "Boston Charlie's Camp",
+    "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "Appleton Pass",
+    "Heart o' the Hills campground",
+    "Eleven Bull Basin",
+    "Ferry Basin",
+    "Camp Pan"
+   ],
+   "add": [
+    {
+     "name": "Glacier Meadows",
+     "type": "camp",
+     "elev": 4200,
+     "capacity": "Several designated tent sites in the forest at the end of the Hoh River Trail",
+     "water": "Creek beside camp",
+     "permit": "Olympic National Park wilderness permit",
+     "notes": "The standard base camp for climbs off the Blue Glacier, about 17 miles up the Hoh River Trail. Summit day starts with the short way trail to the Blue Glacier moraine.",
+     "role": "main"
+    },
+    {
+     "name": "Snow Dome high camp",
+     "type": "bivy",
+     "elev": 6600,
+     "capacity": "A few rock-sheltered tent sites on and below the crest of the Snow Dome",
+     "water": "Snowmelt only",
+     "permit": "Olympic National Park wilderness permit",
+     "notes": "Higher option on the rocks of the lower Snow Dome or on its crest, above the Blue Glacier. It shortens the day to Glacier Pass and Mathias; carry out human waste.",
+     "role": "onRoute"
+    }
+   ],
+   "overnightPermit": {
+    "what": "Olympic National Park wilderness permit, per person per night; some Hoh River Trail sites are quota",
+    "where": "Reserve on Recreation.gov, or get one in person at a park Wilderness Information Center.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   },
+   "note": "This route's approach is the Hoh River to Glacier Meadows and Snow Dome; every listed camp is on the Sol Duc side or the Bailey Range traverse, so all are dropped and Glacier Meadows added. Camp Pan does serve Mathias for traverse parties, but not on this line."
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "main": [
+    "Eleven Bull Basin and the Cream Lake cross-country camps"
+   ],
+   "onRoute": [
+    "Sol Duc Hot Springs Resort campground",
+    "Heart Lake",
+    "Cat Basin",
+    "Boston Charlie's Camp"
+   ],
+   "drop": [
+    "Deer Lake",
+    "Appleton Pass",
+    "Heart o' the Hills campground",
+    "Eleven Bull Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Eleven Bull Basin is this route's own stated camp; the waypoint of the same name is the same place."
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy",
+    "Sandy Camp, top of the Railroad Grade",
+    "Railroad Grade and Morovitz Meadow camps",
+    "North Ridge glacier bivy, upper Coleman"
+   ],
+   "add": [
+    {
+     "name": "Boulder Ridge high camp",
+     "type": "camp",
+     "capacity": "Scattered tent sites on the moraine and ridge crest",
+     "water": "Snowmelt and meltwater streams off the Boulder Glacier",
+     "permit": "No overnight permit required",
+     "notes": "The usual camp at the top of the Boulder Ridge boot path, at roughly 5,500 to 5,700 ft just below the Boulder Glacier. Fully exposed to wind.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Every listed camp is on the Heliotrope Ridge or Easton side; this route starts at the Boulder Ridge trailhead, so the Boulder Ridge high camp is added."
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "main": [],
+   "onRoute": [
+    "High Camp below Boulder-Park Cleaver"
+   ],
+   "drop": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy",
+    "Sandy Camp, top of the Railroad Grade",
+    "Railroad Grade and Morovitz Meadow camps",
+    "North Ridge glacier bivy, upper Coleman"
+   ],
+   "add": [
+    {
+     "name": "Boulder Ridge high camp",
+     "type": "camp",
+     "capacity": "Scattered tent sites on the moraine and ridge crest",
+     "water": "Snowmelt and meltwater streams off the Boulder Glacier",
+     "permit": "No overnight permit required",
+     "notes": "The usual camp at the top of the Boulder Ridge boot path, at roughly 5,500 to 5,700 ft just below the Boulder Glacier. Fully exposed to wind.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Listed Heliotrope and Easton camps are on other sides of the mountain; Boulder Ridge camp added as main. The higher cleaver camp is kept as the way to shorten summit day."
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy",
+    "Sandy Camp, top of the Railroad Grade",
+    "Railroad Grade and Morovitz Meadow camps",
+    "North Ridge glacier bivy, upper Coleman",
+    "Heliotrope Ridge Camp"
+   ],
+   "add": [
+    {
+     "name": "Park Glacier camp near the Portals",
+     "type": "bivy",
+     "capacity": "Snow or rock platforms for a few tents",
+     "water": "Snowmelt only",
+     "permit": "No overnight permit required",
+     "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb.",
+     "role": "main"
+    },
+    {
+     "name": "Camp Kiser, Ptarmigan Ridge",
+     "type": "camp",
+     "capacity": "Dispersed sites among rock wind walls",
+     "water": "Snowmelt only; can be dry late in summer",
+     "permit": "No overnight permit required",
+     "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross.",
+     "role": "onRoute"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Entire list is Heliotrope Ridge and Easton camps; this route approaches from Artist Point over Ptarmigan Ridge, so the Portals camp and Camp Kiser are added."
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "main": [
+    "Hogsback Camp"
+   ],
+   "onRoute": [
+    "Kulshan Cabin site"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard; Hogsback is the planned camp, Kulshan Cabin site the lower fallback on the same trail."
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "main": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "North Ridge glacier bivy, upper Coleman"
+   ],
+   "onRoute": [
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy"
+   ],
+   "drop": [
+    "Sandy Camp, top of the Railroad Grade",
+    "Railroad Grade and Morovitz Meadow camps",
+    "Heliotrope Ridge Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Headwall parties camp at the Hogsback or on the upper Coleman near 6,600 to 7,000 ft; the Coleman-Deming camps are kept because the usual descent is that route. Heliotrope Ridge Camp is the Hogsback again."
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "main": [
+    "Sandy Camp, top of the Railroad Grade"
+   ],
+   "onRoute": [
+    "Railroad Grade and Morovitz Meadow camps"
+   ],
+   "drop": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy",
+    "North Ridge glacier bivy, upper Coleman",
+    "Sandy Camp / Railroad Grade Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard; Sandy Camp is the planned high camp and the Railroad Grade sites are the lower ones on the same line."
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "main": [
+    "Hogsback"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Heliotrope Ridge Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Hogsback is the standard start; many parties also bivy on the upper Coleman, which this route's list does not carry."
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy",
+    "Sandy Camp, top of the Railroad Grade",
+    "Railroad Grade and Morovitz Meadow camps",
+    "North Ridge glacier bivy, upper Coleman"
+   ],
+   "add": [
+    {
+     "name": "Park Glacier camp near the Portals",
+     "type": "bivy",
+     "capacity": "Snow or rock platforms for a few tents",
+     "water": "Snowmelt only",
+     "permit": "No overnight permit required",
+     "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb.",
+     "role": "main"
+    },
+    {
+     "name": "Camp Kiser, Ptarmigan Ridge",
+     "type": "camp",
+     "capacity": "Dispersed sites among rock wind walls",
+     "water": "Snowmelt only; can be dry late in summer",
+     "permit": "No overnight permit required",
+     "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross.",
+     "role": "onRoute"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Entire list is Heliotrope Ridge and Easton camps; this route approaches over Ptarmigan Ridge, so the Portals camp and Camp Kiser are added. Unsure how often parties descend Coleman-Deming instead."
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "main": [
+    "Crag View Camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Hogsback Camp, Heliotrope Ridge",
+    "Kulshan Cabin site and Harrison Camp",
+    "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "Colfax-Grant saddle bivy",
+    "Sandy Camp, top of the Railroad Grade",
+    "Railroad Grade and Morovitz Meadow camps",
+    "North Ridge glacier bivy, upper Coleman"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crag View is this route's stated camp; no Easton or Coleman camp is on the Scott Paul trail approach."
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "main": [
+    "Church Lake",
+    "Douglas Fir Campground"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Artist Point and the Heather Meadows road end",
+    "Silver Fir Campground",
+    "Mazama Lake designated sites, Chain Lakes",
+    "Hayes Lake designated sites, Chain Lakes",
+    "Bearpaw Lake",
+    "Excelsior ridge camps and the high spring, Canyon Creek Road end"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short day scramble; Church Lake is the only camp on the line. Bearpaw Lake is a different lake reached by its own trail off FS 3170, not this route's FS 3160 path."
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "main": [
+    "Lake Ann",
+    "Silver Fir Campground"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Artist Point and the Heather Meadows road end",
+    "Douglas Fir Campground",
+    "Mazama Lake designated sites, Chain Lakes",
+    "Hayes Lake designated sites, Chain Lakes",
+    "Bearpaw Lake",
+    "Excelsior ridge camps and the high spring, Canyon Creek Road end"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake Ann is on this route's trail; Silver Fir is the nearest car campground. Artist Point has no camping."
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "main": [
+    "Silver Fir Campground"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Artist Point and the Heather Meadows road end",
+    "Douglas Fir Campground",
+    "Mazama Lake designated sites, Chain Lakes",
+    "Hayes Lake designated sites, Chain Lakes",
+    "Bearpaw Lake",
+    "Excelsior ridge camps and the high spring, Canyon Creek Road end"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day scramble; the route leaves the trail below Herman Saddle, so the Chain Lakes sites past the saddle are off its line."
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "main": [
+    "Silver Fir Campground"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Artist Point and the Heather Meadows road end",
+    "Douglas Fir Campground",
+    "Mazama Lake designated sites, Chain Lakes",
+    "Hayes Lake designated sites, Chain Lakes",
+    "Bearpaw Lake",
+    "Excelsior ridge camps and the high spring, Canyon Creek Road end"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short hike from Artist Point where camping is not allowed; only the nearest car campground is relevant."
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "main": [
+    "South Hagan bench",
+    "Hidden Lake, below the Blum-Hagan divide"
+   ],
+   "onRoute": [
+    "Sulphide Camp, end of the Baker River trail"
+   ],
+   "drop": [
+    "Lower Blum Lake",
+    "Middle Blum Lake",
+    "Upper Blum tarn, southeast of the main lakes",
+    "Blum Creek spur ridge, forest bivy",
+    "Upper Watson Lake",
+    "Uppermost Diobsud Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Follows this route's own approach, which leaves the Baker River trail near Sulphide Camp for Hidden Lake and the south benches, contradicting the Sulphide Camp entry's claim that it is off the way. Many parties instead reach Hagan from the Blum Lakes or from Watson Lakes via Diobsud; those camps are dropped as other approaches."
+  },
+  {
+   "id": "wa_mount_blum_north_ridge",
+   "main": [
+    "Middle Blum Lake",
+    "Lower Blum Lake"
+   ],
+   "onRoute": [
+    "Blum Creek spur ridge, forest bivy"
+   ],
+   "drop": [
+    "Upper Blum tarn, southeast of the main lakes",
+    "South Hagan bench",
+    "Hidden Lake, below the Blum-Hagan divide",
+    "Sulphide Camp, end of the Baker River trail",
+    "Blum Lakes"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Blum Lakes are the base; the upper tarn is southeast, away from the north side. The Blum Lakes waypoint is the same place as the lake entries."
+  },
+  {
+   "id": "wa_mount_blum_south_ridge",
+   "main": [
+    "Middle Blum Lake",
+    "Lower Blum Lake"
+   ],
+   "onRoute": [
+    "Blum Creek spur ridge, forest bivy",
+    "Upper Blum tarn, southeast of the main lakes"
+   ],
+   "drop": [
+    "South Hagan bench",
+    "Hidden Lake, below the Blum-Hagan divide",
+    "Sulphide Camp, end of the Baker River trail",
+    "Blum Lakes (Middle Blum Lake)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard; the waypoint is the same place as Middle Blum Lake."
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "main": [
+    "Hogsback Camp",
+    "Coleman Glacier bivy under the Black Buttes north faces"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow",
+    "Cougar Divide meadow camps",
+    "Skyline Divide crest camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Hogsback is the usual base; a glacier bivy below the north face shortens the day. Squak and Hadley camps are on other approaches."
+  },
+  {
+   "id": "wa_colfax_peak_kimchi_suicide_volcano",
+   "main": [],
+   "onRoute": [
+    "Coleman Glacier bivy under the Black Buttes north faces"
+   ],
+   "drop": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow",
+    "Cougar Divide meadow camps",
+    "Skyline Divide crest camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "add": [
+    {
+     "name": "Hogsback Camp",
+     "type": "camp",
+     "elev": 6000,
+     "capacity": "Many tent sites along the moraine crest",
+     "water": "Meltwater streams nearby",
+     "permit": "No overnight permit required",
+     "notes": "The standard camp on the moraine crest above the trees, used for the Coleman Glacier and all the Colfax north-face routes. No trees for hanging food.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Same approach as the other Colfax north-face lines; this route's list lacked the Hogsback, so it is added as main."
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "main": [
+    "Hogsback Camp",
+    "Coleman Glacier bivy under the Black Buttes north faces"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow",
+    "Cougar Divide meadow camps",
+    "Skyline Divide crest camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same as Cosley-Houston."
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "main": [
+    "Cougar Divide meadow camps"
+   ],
+   "onRoute": [
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "drop": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow",
+    "Coleman Glacier bivy under the Black Buttes north faces",
+    "Skyline Divide crest camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Cougar Divide is this route's own ridge; Deadhorse basin sits below the way onto Chowder Ridge. Unsure how close the basin is to the Cougar line."
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "main": [
+    "Skyline Divide crest camps"
+   ],
+   "onRoute": [
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "drop": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow",
+    "Coleman Glacier bivy under the Black Buttes north faces",
+    "Cougar Divide meadow camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Skyline Divide road has been closed for years, so this route is rarely possible now."
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "main": [
+    "Sandy Camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow",
+    "Coleman Glacier bivy under the Black Buttes north faces",
+    "Cougar Divide meadow camps",
+    "Skyline Divide crest camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "This route follows the Easton line; Sandy Camp is its high camp and every other listed camp is on the Squak, Coleman or Hadley approaches."
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "main": [
+    "Crag View, Squak Glacier",
+    "Upper Squak benches, Sulphur moraine and the rock prow"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Coleman Glacier bivy under the Black Buttes north faces",
+    "Cougar Divide meadow camps",
+    "Skyline Divide crest camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crag View is the standard camp; the higher benches match the stated high camp near 6,800 ft."
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "main": [],
+   "onRoute": [
+    "Fireweed Camp, Bridge Creek / PCT",
+    "North Fork Camp, Bridge Creek / PCT junction",
+    "Walker Park Camp"
+   ],
+   "drop": [
+    "Grizzly Creek Camp",
+    "Goode Glacier approach bivy, timbered knoll",
+    "Upper bivy in the rock bands east of the buttress toe"
+   ],
+   "add": [
+    {
+     "name": "Bench bivy below Megalodon Ridge",
+     "type": "bivy",
+     "capacity": "One or two parties",
+     "water": "None on the ridge; fill up at the creek",
+     "permit": "North Cascades NP wilderness permit",
+     "notes": "An exposed bench after a short fifth-class step at the toe of the ridge, below the technical climbing. More bivy ledges exist after the southeast peak and on the summit.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Parties leave the North Fork trail before Grizzly Creek and bivy on a bench below the technical climbing; that bench is added. The Goode Glacier camps serve the Northeast Buttress. Unsure exactly where Walker Park sits relative to the turn-off."
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "main": [
+    "Goode Glacier approach bivy, timbered knoll",
+    "Upper bivy in the rock bands east of the buttress toe"
+   ],
+   "onRoute": [
+    "Fireweed Camp, Bridge Creek / PCT",
+    "North Fork Camp, Bridge Creek / PCT junction",
+    "Walker Park Camp",
+    "Grizzly Creek Camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach as the Northeast Buttress to the Goode Glacier base; rarely climbed, so camp choice follows the buttress."
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "main": [
+    "5,500 ft bivy below the slabs",
+    "Goode Glacier toe"
+   ],
+   "onRoute": [
+    "5,200 ft camp to the west",
+    "West Tower ledge, upper mountain"
+   ],
+   "drop": [
+    "Lateral moraine camp above Goode Glacier"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lateral moraine waypoint looks like the same ground as the glacier toe entry; the approach text and the camp entries describe slightly different lines, so unsure which camp most use."
+  },
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "main": [
+    "Valley bivy below the buttress",
+    "Goode Glacier moraine"
+   ],
+   "onRoute": [
+    "Summit bivy"
+   ],
+   "drop": [
+    "High Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "High Camp waypoint at 6,600 ft is the Goode Glacier moraine camp."
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "main": [
+    "Chiwaukum Chain Lakes"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Doelle Lakes",
+    "Frosty Pass and the Wildhorse Creek headwaters",
+    "Whitepine Creek valley camps and the Wildhorse junction ford",
+    "White Pine road end trailhead"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "This route comes from Stevens Pass by the Icicle and Chain Lakes trails; the Frosty Pass and Whitepine camps are the western approach, and Doelle Lakes is over a gap off the line."
+  }
+ ],
+ "misassigned": [
+  "wa_mount_mathias_scramble: approach is the Hoh River via Glacier Meadows, but every listed camp is on the Sol Duc side or the Bailey Range traverse.",
+  "wa_mount_baker_boulder_glacier: listed camps are all Heliotrope Ridge or Easton camps; route starts at the Boulder Ridge trailhead.",
+  "wa_mount_baker_boulder_park_cleaver: bivy list is all Heliotrope Ridge or Easton camps; only its own high-camp waypoint belongs.",
+  "wa_mount_baker_cockscomb_ridge: listed camps are all Heliotrope Ridge or Easton camps; route approaches over Ptarmigan Ridge.",
+  "wa_mount_baker_park_glacier_headwall: listed camps are all Heliotrope Ridge or Easton camps; route approaches over Ptarmigan Ridge."
+ ]
+}

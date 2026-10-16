@@ -1,0 +1,414 @@
+[
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "why": "Window opened in May against the row's own best_season (mid-July-August; June too early).",
+  "set": {
+   "season": {
+    "from": "May-Aug",
+    "to": "Jul-Aug"
+   }
+  }
+ },
+ {
+  "id": "wa_colchuck_peak_east_ridge",
+  "why": "June snow ascents via the Colchuck Glacier are common and easiest; window and best_season were shifted a month late.",
+  "set": {
+   "season": {
+    "from": "Jul-Oct",
+    "to": "Jun-Sep"
+   },
+   "seasonal_guidance.monthBreakdown.June": {
+    "to": {
+     "status": "good",
+     "reason": "Snow still fills the glacier gully to the col, often the easiest going; carry axe and crampons and start early before wet slides on warm afternoons."
+    }
+   },
+   "best_season": {
+    "from": "Late July through September; snow persists longer on north slopes",
+    "to": "June through September; early season the Colchuck Glacier gully to the col is still snow, which is the easiest going, while by late August it can be bare ice where crampons bite poorly. Snow persists longer on north slopes."
+   }
+  }
+ },
+ {
+  "id": "wa_eldorado_peak_west_arete",
+  "why": "Window ended in August while the row's own best_season says roughly July-September.",
+  "set": {
+   "season": {
+    "from": "Jul-Aug",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_sloan_peak_r1",
+  "why": "season held a '(best ...)' parenthetical; best_season already carries it.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep (best Jul-Aug)",
+    "to": "Jun-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_chair_peak_east_face",
+  "why": "'Year-round' belongs to Chair's winter north-face routes, not this 5.2 rock route; bare window instead of prose.",
+  "set": {
+   "season": {
+    "from": "Year-round; best Jun-Sep (ice axe can help in shoulder-season snow)",
+    "to": "Jun-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_colfax_peak_kimchi_suicide_volcano",
+  "why": "A single FA month is not a window; Colfax north-face ice/mixed is in shape from late winter through spring, March at least as good as April.",
+  "set": {
+   "season": {
+    "from": "Apr",
+    "to": "Mar-May"
+   },
+   "seasonal_guidance.monthBreakdown.March": {
+    "to": {
+     "status": "good",
+     "reason": "North-face ice is usually well formed and glacier bridges solid; the approach often still starts well down the snowbound road."
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "why": "season held prose; best_season already explains the summer option.",
+  "set": {
+   "season": {
+    "from": "Feb-Apr (frozen); FA was July",
+    "to": "Feb-Apr"
+   }
+  }
+ },
+ {
+  "id": "wa_east_ridge_2",
+  "why": "May-June snow ascents and October ascents are recorded; window was too narrow (May and October stay marginal).",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "May-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_east_ridge_9",
+  "why": "Ingalls East Ridge is climbed regularly in June; window started a month late.",
+  "set": {
+   "season": {
+    "from": "Jul-Sep",
+    "to": "Jun-Sep"
+   },
+   "seasonal_guidance.monthBreakdown.June": {
+    "to": {
+     "status": "good",
+     "reason": "Regularly climbed: the gully holds snow needing axe and crampons early, then good plunge-stepping; the upper ridge rock is usually dry by late June."
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_east_slope",
+  "why": "season was prose with an unsupported 'year-round' claim; June is supported and already rated good.",
+  "set": {
+   "season": {
+    "from": "Year-round (winter ascents documented); best scrambling conditions Jul-Sep",
+    "to": "Jun-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_fish_whistle",
+  "why": "Window opened in June against best_season and approach (late July start).",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_flight_of_the_falcon",
+  "why": "Mid-June ascents are recorded; window and best_season started late.",
+  "set": {
+   "season": {
+    "from": "Jul-Sep",
+    "to": "Jun-Sep"
+   },
+   "best_season": {
+    "from": "Climbed in July and August; the basin's approach terrain holds snow into early summer at this elevation and the brush is markedly worse when wet, so a stretch of settled, dry weather is recommended.",
+    "to": "Climbed from mid-June through August; the basin's approach terrain holds snow into early summer at this elevation and the brush is markedly worse when wet, so a stretch of settled, dry weather is recommended."
+   }
+  }
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "why": "season was prose and ended in September while best_season recommends roughly August-October.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep (snow lingers on approach benches into early July; class 2-3 talus mostly melts out by late Jul-Aug)",
+    "to": "Jul-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "why": "Window opened in June while best_season says July-September like the peak's other rock routes.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_garfield_mountain_infinite_bliss",
+  "why": "Low south-facing slabs are climbed from May into early October; widened window and removed a source citation from best_season.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "May-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_inspiration_traverse",
+  "why": "June is well supported (solid snow bridges) and the value was not in Mon-Mon form.",
+  "set": {
+   "season": {
+    "from": "July-September",
+    "to": "Jun-Sep"
+   },
+   "seasonal_guidance.monthBreakdown.June": {
+    "to": {
+     "status": "good",
+     "reason": "Deep snow bridges the Eldorado and Inspiration glacier crevasses; check that Cascade River Road is open, and watch basin slopes after warm spells."
+    }
+   },
+   "best_season": {
+    "from": "July to early August, while snow bridges over crevasses and moats are still solid",
+    "to": "Late June to early August, while snow bridges over crevasses and moats are still solid"
+   }
+  }
+ },
+ {
+  "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+  "why": "May ascents are common and the route goes out of shape by early July; window widened to May (May stays marginal for road access).",
+  "set": {
+   "season": {
+    "from": "Jun-Jul",
+    "to": "May-Jul"
+   }
+  }
+ },
+ {
+  "id": "wa_little_sister_north_face",
+  "why": "Middle Fork Nooksack crossing is unsafe before late July and best_season favours late Aug/Sep; June start removed.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_little_sister_southeast_ridge",
+  "why": "Row's own best_season says Jul-Sep; June start removed.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_little_sister_west_face",
+  "why": "Row's own best_season says Jul-Sep; June start removed.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_mount_howard_south_slope",
+  "why": "best_season documents a popular late-April-to-early-June snow climb the window excluded.",
+  "set": {
+   "season": {
+    "from": "Jul-Sep",
+    "to": "May-Sep"
+   },
+   "seasonal_guidance.monthBreakdown.May": {
+    "to": {
+     "status": "good",
+     "reason": "A popular spring snow climb: consolidated snow fills the gullies and the Rock-Crescent col; axe and crampons, and watch cornices and wet slough."
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_mount_pilchuck_east_ridge",
+  "why": "season held a long parenthetical; best_season already carries it.",
+  "set": {
+   "season": {
+    "from": "Aug-Oct (best after snowmelt; blueberry and fall-color season in the Bathtub Lakes basin is a noted highlight; spring travel requires ice axe/crampons)",
+    "to": "Aug-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_mount_pilchuck_standard_route",
+  "why": "season held a parenthetical; best_season already carries it.",
+  "set": {
+   "season": {
+    "from": "Jul-Oct (trail typically snow-covered into early/midsummer some years)",
+    "to": "Jul-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_sherman_peak_baker_squak_glacier",
+  "why": "Chiefly an early-season climb that the bergschrund can shut; September (rated risky) removed from the window.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jun-Aug"
+   }
+  }
+ },
+ {
+  "id": "wa_sinister_peak_north_face",
+  "why": "Face is best on firm spring/early-summer snow and bares to ice by August; window moved a month earlier (May stays marginal for the approach).",
+  "set": {
+   "season": {
+    "from": "Jun-Aug",
+    "to": "May-Jul"
+   }
+  }
+ },
+ {
+  "id": "wa_south_face_2",
+  "why": "Window opened in June while best_season says mid-July onward and snow sits in the notch into July.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_traverse_of_mount_index",
+  "why": "season was prose and ended in August while best_season says July-September.",
+  "set": {
+   "season": {
+    "from": "Jul-Aug (dry rock across all three summits; earlier season has more snow/rockfall risk, later season has minimal water)",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+  "why": "season held prose about one ski ascent; best_season already records it.",
+  "set": {
+   "season": {
+    "from": "Jun-Oct (summer scramble); also documented as a January ski-mountaineering ascent",
+    "to": "Jun-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_alpine_lookout_round_mountain_trail",
+  "why": "season held prose; best_season already carries it.",
+  "set": {
+   "season": {
+    "from": "Jun-Oct (one of the first higher hikes in the area to lose its winter snowpack; ridge crest and Nine-mile Saddle can still hold snow in early season)",
+    "to": "Jun-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_argonaut_peak_northeast_couloir",
+  "why": "season held prose; the stated window is late May-early June.",
+  "set": {
+   "season": {
+    "from": "Late May-early June (best on consolidated, not-yet-melted-out snow)",
+    "to": "May-Jun"
+   }
+  }
+ },
+ {
+  "id": "wa_big_snagtooth_west_ridge",
+  "why": "season held a '(best ...)' parenthetical; full stated range kept.",
+  "set": {
+   "season": {
+    "from": "Apr-Oct (best May-Jun with snow cover)",
+    "to": "Apr-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_big_snow_mountain_north_slope_dingford_route",
+  "why": "season held a parenthetical; window kept.",
+  "set": {
+   "season": {
+    "from": "Jul-Sep (best after gullies/couloirs melt out)",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_black_peak_northeast_ridge",
+  "why": "season held a '(best ...)' parenthetical; full stated range kept.",
+  "set": {
+   "season": {
+    "from": "May-Oct (best Jun-Sep)",
+    "to": "May-Oct"
+   }
+  }
+ },
+ {
+  "id": "wa_blue_s_buttress",
+  "why": "'late Jun-Sep' is not a Mon-Mon window.",
+  "set": {
+   "season": {
+    "from": "late Jun-Sep",
+    "to": "Jun-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_southeast_face",
+  "why": "season held prose; the stated primary window is Jul-Sep (Jun/Oct are marginal snow shoulders, rated so).",
+  "set": {
+   "season": {
+    "from": "Jul-Sep (dry rock); scrambling feasible into Jun/Oct with snow on the approach",
+    "to": "Jul-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_chockstone_route",
+  "why": "season held a parenthetical; best_season already carries it.",
+  "set": {
+   "season": {
+    "from": "Jun-Sep (early-season ascents require ice axe/crampons for snow in the gully)",
+    "to": "Jun-Sep"
+   }
+  }
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "why": "'mid-Jun - Sep' is not a Mon-Mon window.",
+  "set": {
+   "season": {
+    "from": "mid-Jun - Sep",
+    "to": "Jun-Sep"
+   }
+  }
+ }
+]

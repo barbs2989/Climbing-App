@@ -62,7 +62,21 @@ const STOP = /\b(mount|mt|the|peak|mountain|spire|tower|dome|rock|group|massif|f
 // that holds it, for exactly that reason.
 const stem = w => w.replace(/s$/, "");
 const peakKey = s => norm(areaName(s)).replace(STOP, " ").split(/\s+/).filter(Boolean).map(stem).join(" ").trim();
-const routeKey = s => norm(s).replace(/\b(route|the|direct|complete|standard)\b/g, " ").split(/\s+/).filter(Boolean).join(" ").trim();
+// The same name with the spaces and the noise words LEFT IN. peakKey strips "rock" as a
+// generic descriptor, which is right for "Castleton Tower" and wrong for "Ship Rock": the
+// catalog spells it as two words, the book as one, and stripping "rock" left "ship" against
+// "shiprock". Comparing the raw, space-insensitive forms catches that without loosening
+// anything — it is still an exact string match.
+const rawKey = s => norm(areaName(s)).replace(/\s+/g, "");
+// "direct" is NOT a stopword. It is a meaningful qualifier in a route name — Devils Thumb
+// has both an "East Ridge (via Southeast face)" and a "Direct East Ridge", and stripping the
+// word made the direct variation an exact match for the book's plain "East Ridge" and let it
+// win. The book names the direct line explicitly when it means one (#27 Direct Exum Ridge).
+// `spire` is dropped here for the same reason peakKey drops it: the book writes the formation
+// into the route name ("Lost Arrow Spire Tip") where the catalog does not ("Lost Arrow Tip").
+// Without this the only candidate left was "Lost Arrow Spire Direct" — a different line, which
+// an earlier run of this script duly tagged. 0131 corrects that tag.
+const routeKey = s => norm(s).replace(/\b(route|the|complete|standard|spire)\b/g, " ").split(/\s+/).filter(Boolean).join(" ").trim();
 
 // Every US route id in this catalog is prefixed with its two-letter state. So a Canadian entry
 // matching a US-prefixed id is a name collision, not a find — that is how "Mount Temple"
@@ -70,6 +84,11 @@ const routeKey = s => norm(s).replace(/\b(route|the|direct|complete|standard)\b/
 const REGION_PREFIX = {
   Alaska: "ak", Washington: "wa", Wyoming: "wy", Colorado: "co",
   Utah: "ut", California: "ca", "New Mexico": "nm",
+  // Canadian provinces use their own two-letter codes for the same reason the states do, and
+  // none of them collide with a US prefix. `ca_` was the wrong choice for Canada — it is
+  // California here, and 0131 moves those rows off it. Matching positively rather than by
+  // "not a US prefix" is what makes that mistake impossible to repeat silently.
+  "British Columbia": "bc", Alberta: "ab", Yukon: "yt", "Northwest Territories": "nt",
 };
 const US_PREFIX = /^(a[klrz]|c[aot]|de|fl|ga|hi|i[adln]|k[sy]|la|m[adeinost]|n[cdehjmvy]|o[hkr]|pa|ri|s[cd]|t[nx]|ut|v[at]|w[aivy])_/;
 const regionOk = (routeId, region) => {
@@ -109,6 +128,7 @@ for (const c of FIFTY_CLASSICS) {
     const ak = peakKey(a.name);
     if (!ak) return false;
     if (ak === pk || ak.split(" ").join("") === pk.split(" ").join("")) return true;
+    if (rawKey(a.name) && rawKey(a.name) === rawKey(c.peak)) return true;
     const akTok = ak.split(" ").filter(Boolean);
     // Anchored on the LEADING token and at most one token apart. A bare token-subset test is
     // far too loose: "Needle Rock" is a subset of "Crestone Needle" on the word "needle" and
@@ -128,10 +148,23 @@ for (const c of FIFTY_CLASSICS) {
   const want = routeKey(c.route);
   for (const a of subtree.slice(0, 60)) {
     const rs = await q(`routes?select=id,name,area_id,lists,classic&area_id=eq.${encodeURIComponent(a.id)}&limit=1000`);
+    // A route on an area NAMED for the wanted feature can be called "Regular Route" and share
+    // no word at all with the book's phrasing — Fairview Dome's North Face line is exactly
+    // that. Collecting only on route-name overlap never let it become a candidate, so the
+    // face-area rule below never got to see it.
+    const isFace = routeKey(areaName(a.name)) === want;
+    // "Standard Route" normalises to nothing — both words are noise — which is the book saying
+    // "the ordinary way up", not naming a line. Shiprock is listed exactly that way. When the
+    // book names no distinguishing feature, the formation's own regular/standard route is the
+    // entry, and requiring a non-empty `want` silently dropped it.
+    const REGULAR = /^(regular|standard)(\s+route)?$/i;
     for (const r of rs) {
       const rk = routeKey(r.name);
-      if (!rk || !want) continue;
-      if (!(rk === want || rk.includes(want) || want.includes(rk))) continue;
+      if (!rk) continue;
+      if (!want) { if (REGULAR.test(String(r.name).trim()) && peakIds.has(a.id)) cands.push({ r, a }); continue; }
+      const byName = rk === want || rk.includes(want) || want.includes(rk);
+      const regularOnFace = isFace && /^(regular|regular route)$/i.test(String(r.name).trim());
+      if (!byName && !regularOnFace) continue;
       if (!regionOk(r.id, c.region)) { wrongRegion.push(`#${c.n} ${c.peak} · ${c.route} ~ ${r.id}`); continue; }
       cands.push({ r, a });
     }
@@ -147,7 +180,23 @@ for (const c of FIFTY_CLASSICS) {
   // name (The Nose, Durrance, D1, Traveler Buttress) is safe anywhere in the subtree; a
   // generic one has to be on the formation itself.
   const GENERIC = /^(north|south|east|west|northeast|northwest|southeast|southwest)?\s*(face|ridge|buttress|arete|couloir|slab|gully|rib|wall)$/;
-  if (GENERIC.test(want)) cands = cands.filter(x => peakIds.has(x.a.id));
+  if (GENERIC.test(want)) {
+    // …or on a child area that IS that face. The catalog often models the feature as an AREA
+    // and the line on it as "Regular Route": Half Dome's Regular Northwest Face sits on a child
+    // called "1. Northwest Face", and Fairview Dome's book route is "Regular Route" on a child
+    // called "North Face" — where the route name contains no compass word at all. Requiring the
+    // formation itself missed both. Matching the child's NAME against the wanted feature keeps
+    // out the neighbours that caused this rule in the first place: "2. Porcelain Wall" and
+    // "Leaning Towers" are not "Northwest Face" or "North Face".
+    const faceArea = a => routeKey(areaName(a.name)) === want;
+    cands = cands.filter(x => peakIds.has(x.a.id) || faceArea(x.a));
+    // On a face area, the line the book means may simply be called "Regular Route".
+    const onFace = cands.filter(x => faceArea(x.a));
+    if (onFace.length) {
+      const regular = onFace.filter(x => /^(regular|regular route)$/i.test(String(x.r.name).trim()) || routeKey(x.r.name).includes(want));
+      if (regular.length) cands = regular;
+    }
+  }
   if (!cands.length) {
     missing.push({ ...c, why: `formation present (${peakAreas.map(a => a.name).slice(0, 2).join(", ")}) but no route named "${c.route}" ON it — a generic feature name is only accepted on the formation itself, not a neighbour in its subtree` });
     continue;
@@ -155,7 +204,10 @@ for (const c of FIFTY_CLASSICS) {
   // Tie-break only: an "Alt. Start" or a named variation is not the line the book lists.
   // Applied as a preference, never as an exclusion — if a variation is the ONLY candidate it
   // still gets reported rather than silently dropped.
-  const VARIATION = /\balt\b|\balternate\b|\bvariation\b|\bvar\.?\b/i;
+  // A "Direct" counts as a variation only when the book did NOT ask for the direct line.
+  const wantsDirect = /\bdirect\b/i.test(c.route);
+  const VARIATION = wantsDirect ? /\balt\b|\balternate\b|\bvariation\b|\bvar\.?\b/i
+                                : /\balt\b|\balternate\b|\bvariation\b|\bvar\.?\b|\bdirect\b/i;
   if (cands.length > 1 && cands.some(x => !VARIATION.test(x.r.name))) cands = cands.filter(x => !VARIATION.test(x.r.name));
   const exact = cands.filter(x => routeKey(x.r.name) === want);
   const pick = exact.length === 1 ? exact[0] : (cands.length === 1 ? cands[0] : null);

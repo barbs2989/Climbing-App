@@ -1,0 +1,196 @@
+{
+ "results": [
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "The Red Ledge pin sat about 3.5 km too far south beside Yang Yang Lakes; it now sits on the ledge that cuts west below Arts Knoll just south of Kool-Aid Lake, where two independent maps put it.",
+   "evidence": "Live pin [4] Red Ledge at 48.400043,-121.043071 (ground ~5,680 ft) is ~3.5 km south of Kool-Aid Lake, next to Yang Yang Lakes, and >3 km off the ledge the row describes ('cutting west from Art's Knoll ... south of Kool-Aid Lake'). Source 1: a published CalTopo traverse map (map 10Q3, read via its JSON API) has a marker titled 'Red ledge' at 48.43093,-121.05071. Source 2 (independent, downloadable track): OpenStreetMap way 542390729 'Ptarmigan Traverse' (highway=path) leaves Kool-Aid Lake southward and at 48.4316,-121.0480 turns west along ~48.431 to -121.0498 before dropping south toward the Middle Cascade Glacier - the westward ledge below Arts Knoll (GNIS peak 48.43059,-121.04257). New point is OSM track vertex 48.43110,-121.04951: 110 m from the CalTopo marker and on the OSM track. USGS ground 6,403 ft, matching the row's stored 6,400 ft. The earlier one-source placement (48.4314,-121.0480) was ~200 m from the marker; the chosen vertex agrees with both sources better. distMi stays null (no source gives a mileage).",
+   "sources": [
+    "https://caltopo.com/api/v1/map/10Q3/since/0",
+    "https://www.openstreetmap.org/way/542390729",
+    "https://www.openstreetmap.org/node/348974311",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.0495115&y=48.4310958&units=Feet&wkid=4326"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_old_guard_peak_southwest_route",
+     "index": 4,
+     "expect": {
+      "name": "Red Ledge",
+      "lat": 48.400043,
+      "lng": -121.043071
+     },
+     "lat": 48.4311,
+     "lng": -121.04951,
+     "elev": 6400,
+     "sources": [
+      "https://caltopo.com/api/v1/map/10Q3/since/0",
+      "https://www.openstreetmap.org/way/542390729"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "confirmed",
+   "resolution": "rule 1: pins 2,3 >1 km off route and only a computed placement; removed. Pins 4,5 (within ~340 m) held as-is",
+   "summary": "Pins 2-5 sat on the east slopes on a straight line from an old wrong trailhead; they now sit on the north ridge crest at the heights three independent route descriptions give for each feature.",
+   "evidence": "Live pins [2]-[5] (47.6132,-121.2523 / 47.6154,-121.2637 / 47.6159,-121.2664 / 47.6162,-121.2681) are evenly spaced on a straight line from the old Necklace Valley trailhead to the summit; pin [2] is ~4 km and pin [3] ~1.6 km from the north ridge, and their ground heights (3,715 / 4,734 / 5,220 / 4,943 ft) do not match the stated 2,600 / 4,900 / 5,267 / 5,400. No downloadable GPS track exists (the 2019 blog lists one as 'available' but its link goes to a photo album with no geotags; peakbagger tracks are 403 and not archived). Instead each point is fixed by the intersection of the north ridge crest (USGS 3DEP grid, sampled at 0.001 deg: crest 2,586 ft at 47.6465,-121.2860; 4,889 at 47.6300,-121.2785; 5,247 at 47.6255,-121.2760; 5,420 at 47.6226,-121.2753) with an elevation stated by independent descriptions that agree: [2] top of deadfall/start of old growth at 2,600 ft (2000 trip report: 'At 2,600' the old growth forest starts'; 2019 blog: down trees 'to 2600'; 2012 route page: forest opens 'above 2700''); [3] brushiest knife-edge section 4,500-5,200 ft (2012 route page: '700 vertical feet of bushwhacking' from 4,500 to 5,200; 2019 blog: brushiest between 4500 and 5200) - placed mid-band at 4,890 ft; [4] first summit view: ridgetop opens with summit-ridge views at 5,200 ft (2012), first sighting from Point 5267 (2019), summit comes into view at 5,400 (2000) - placed at 5,250 ft, 330 m below the 5,400 ft point; [5] cliff wall at 5,400 ft that is bypassed on the east/left (all three sources name 5,400 ft) - placed where the crest reaches 5,420 ft. All three sources say the route stays on the north ridge crest from the road to 5,400 ft, and a ridge crest crosses each contour at one point, so each source independently fixes the same coordinate. Pin [6] (regain crest 6,100 ft) and summit left as already placed. distMi on these pins is already null.",
+   "sources": [
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000082300",
+    "https://web.archive.org/web/2025/https://www.summitpost.org/north-ridge/818487",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/node/349018392"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 2,
+     "expect": {
+      "name": "Deadfall zone below 2,600 ft",
+      "lat": 47.613225,
+      "lng": -121.25226119999999
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 3,
+     "expect": {
+      "name": "Brushy ridge section, 4,500-5,200 ft",
+      "lat": 47.61537709090909,
+      "lng": -121.2637064
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "The meadow camp pin sat 460 m off the trail about 2.4 miles below the pass; it now sits at the mapped backcountry camp beside the trail five miles in, where a trail guide puts the big camping meadow.",
+   "evidence": "Live pin [3] 'Upper meadow camp' at 47.409284,-120.799768 is 461 m off Stafford Creek Trail #1359 and nearest the trail at mile 3.1, i.e. 2.4 trail miles below Navaho Pass - contradicting its own note ('about half a mile below the pass') and distMi 5. Source 1: OpenStreetMap backcountry camp node 3793681186 (tourism=camp_site, backcountry=yes) at 47.41610,-120.81940, 80 m from the trail at trail mile 5.01 of 5.54 (0.53 mi below the pass, measured on the mapped #1359 geometry, which matches the Forest Service trail record). Source 2 (independent description): the WTA Navaho Pass trail guide says 'Five miles in you will reach a large meadow ... a popular camping area' beside a stream, with the pass 'less than a mile' further. Mile 5.0 on the trail is the same point as the OSM camp. USGS ground 5,667 ft (stored 5,500). A second mapped camp (47.40799,-120.80777, trail mile 3.4) is too low to be 'half a mile below the pass' and does not match the five-mile figure. distMi 5 is kept (it matches both sources).",
+   "sources": [
+    "https://www.openstreetmap.org/node/3793681186",
+    "https://www.wta.org/go-hiking/hikes/navaho-pass",
+    "https://www.openstreetmap.org/way/5924233",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%271359%27&outSR=4326&f=json",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.8194&y=47.4161&units=Feet&wkid=4326"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_navaho_peak_south_slopes",
+     "index": 3,
+     "expect": {
+      "name": "Upper meadow camp",
+      "lat": 47.409284,
+      "lng": -120.799768
+     },
+     "lat": 47.4161,
+     "lng": -120.8194,
+     "elev": 5670,
+     "sources": [
+      "https://www.openstreetmap.org/node/3793681186",
+      "https://www.wta.org/go-hiking/hikes/navaho-pass"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "verdict": "confirmed",
+   "resolution": "move_pin x3; distMi of the split nulled",
+   "summary": "The climbers' trail split and the Green Creek crossing each sat about 1.5 km off the route and the west ridge pin sat east of the summit; a downloadable GPS track of the route plus independent trip reports now place all three.",
+   "evidence": "Indexes shifted since the held file (Elbow Lake pin removed): split is now [1], crossing [2], west ridge [4]. Position source: a Coros GPS track (22,967 points, 2021-08-19) published as a download with a Green Creek circuit trip report. Split [1]: live pin 48.70511,-121.92848 is 1.51 km from the track and ~1 km off the trail. The track leaves the mapped Elbow Lake Trail (OSM way 183512681 / Forest Service trail 697) at 48.7219,-121.9345 (trail distance jumps from 3 m to 35 m to 111 m), 14 m from the switchback 48.72193,-121.93431; independent descriptions put the turnoff at a switchback near Hildebrand Creek at ~2,600 ft (ski trip report: 'blazed climber's trail branching off of Elbow Lake trail at a switchback near Hildebrand creek'; a trail page: at 2,600 ft the trail turns into the Hildebrand Creek drainage). USGS ground 2,699 ft. Its distMi 2 was measured to the old point; the mapped trail gives ~1.3 mi and the track ~1.6 mi including the downstream river detour, so it is set to null rather than guessed. Crossing [2]: live pin 48.70299,-121.93491 (stored 2,300 ft) is 1.46 km from the track, south of Lake Wiseman, where no route goes. The track meets Green Creek (OSM way 183507559) at 48.7126,-121.9514 after a 10-minute stop at the creek, 1.2 track-miles past the split, then climbs west; independently, a club glacier-climb trip report says the party followed trail then climbers' trail 'to the Green Creek crossing', waded it, then went up scree and talus to the upper basin. USGS ground 3,021 ft; distMi 2.6 is consistent with the track and kept. West ridge [4]: live pin 48.69241,-121.96705 lies ~330 m EAST of the summit, not on the west ridge. The track goes from the Cinderella-Little Sister notch (48.6912,-121.9742, 53 m from pin [3]) up the west ridge to the summit (6 m from pin [5]); new point 48.69128,-121.97274 is 54 m from the track, on the DEM crest between notch and summit (ground 6,178 ft), and matches the ridge described by several independent reports ('the west ridge of Cinderella'; 'going up the long west ridge of Cinderella').",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://drive.google.com/file/d/1GUQNKSxUKE612kQ2kZ3OgO2P51KTCYyM/view",
+    "https://turns-all-year.com/trip-reports/mythic-traverse-twin-sisters",
+    "http://www.willhiteweb.com/north_cascades/sister_divide/elbow_lake_trail_211.htm",
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-green-glacier-twin-sisters-range",
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/102909-tr-south-twin-jaws-tooth-skookum-kloke-little-sister-cinderella-green-creek-circuit-06302019/",
+    "https://www.openstreetmap.org/way/183512681",
+    "https://www.openstreetmap.org/way/183507559",
+    "https://www.openstreetmap.org/node/4271111544",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_cinderella_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": null
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 1,
+     "expect": {
+      "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+      "lat": 48.705110924528306,
+      "lng": -121.92848443396227
+     },
+     "lat": 48.72193,
+     "lng": -121.93431,
+     "elev": 2700,
+     "sources": [
+      "https://drive.google.com/file/d/1GUQNKSxUKE612kQ2kZ3OgO2P51KTCYyM/view",
+      "https://turns-all-year.com/trip-reports/mythic-traverse-twin-sisters",
+      "https://www.openstreetmap.org/way/183512681"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 2,
+     "expect": {
+      "name": "Green Creek crossing",
+      "lat": 48.70299353584906,
+      "lng": -121.93491201886793
+     },
+     "lat": 48.7126,
+     "lng": -121.9514,
+     "elev": 3020,
+     "sources": [
+      "https://drive.google.com/file/d/1GUQNKSxUKE612kQ2kZ3OgO2P51KTCYyM/view",
+      "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-green-glacier-twin-sisters-range",
+      "https://www.openstreetmap.org/way/183507559"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 4,
+     "expect": {
+      "name": "West ridge scramble section",
+      "lat": 48.69240659245283,
+      "lng": -121.96704994339622
+     },
+     "lat": 48.69128,
+     "lng": -121.97274,
+     "elev": 6180,
+     "sources": [
+      "https://drive.google.com/file/d/1GUQNKSxUKE612kQ2kZ3OgO2P51KTCYyM/view",
+      "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/102909-tr-south-twin-jaws-tooth-skookum-kloke-little-sister-cinderella-green-creek-circuit-06302019/",
+      "https://www.openstreetmap.org/node/4271111544"
+     ]
+    }
+   ]
+  }
+ ]
+}

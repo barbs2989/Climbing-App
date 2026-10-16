@@ -1,0 +1,43 @@
+{"file": "r480.json", "results": [
+ {"id": "wa_andersons_thumb_standard", "fact": "Where the Thumb is relative to Flypaper Pass / Eel Glacier", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: baseFinding puts the Thumb on the crest below Flypaper Pass on the Anderson basin side (no Eel Glacier crossing), while itinerary day 2, timing, descent, descent_text and hazards cross the Eel Glacier to reach it. The only public documentation is two trip reports by one author: one sees the Thumb on the way down from Echo Col toward the Anderson Glacier basin/Honeymoon Meadows, the other calls it a fun sandstone pinnacle; a basin photo caption lists it among features visible from ~5,252 ft above the Anderson Glacier. This leans toward the baseFinding (Anderson basin side), but no second independent source fixes its position, so no patch.",
+  "sources": ["https://trailcatjim.com/mt-anderson-west-peak-via-northeast-ridge/", "https://trailcatjim.com/mt-anderson-east-peak-west-peak-attempt/"],
+  "patches": []},
+ {"id": "wa_andersons_thumb_standard", "fact": "Rappel anchor", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Real: itinerary day 2 schedule[4] says 'fixed anchor/bollard' while descent_text and approach_variants[0].hazards say there is no fixed hardware. No external source describes the Thumb's rappel or anchors at all (only brief trip-report asides that it is a fun sandstone climb), and only two row fields oppose the itinerary, short of the 4+-field threshold for an internal fix.",
+  "sources": ["https://trailcatjim.com/mt-anderson-east-peak-west-peak-attempt/"],
+  "patches": []},
+ {"id": "wa_andersons_thumb_standard", "fact": "Trailhead elevation", "verdict": "fixed",
+  "correct_value": "about 530 ft at the Dosewallips Road washout parking",
+  "evidence": "A trip report gives the washout parking at 550 ft; a hiking field guide starts the road-walk trailhead at 520 ft; USGS 3DEP elevation at the stored pin is 530 ft. 1,600 ft is the elevation of the old Dosewallips Ranger Station ~5.5 mi further up (Mountaineers route page), not the washout parking, and 700 ft matches neither.",
+  "sources": ["https://trailcatjim.com/mt-anderson-west-peak-via-northeast-ridge/", "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike", "https://epqs.nationalmap.gov/v1/json?x=-123.065764&y=47.740259&units=Feet&wkid=4326", "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier"],
+  "patches": [
+   {"id": "wa_andersons_thumb_standard", "fact": "Trailhead elevation", "op": "set", "column": "waypoints", "path": [0, "elev"], "expect": 700, "value": 530},
+   {"id": "wa_andersons_thumb_standard", "fact": "Trailhead elevation", "op": "set", "column": "waypoints", "path": [0, "elevFt"], "expect": 1600, "value": 530}
+  ]},
+ {"id": "wa_andersons_thumb_standard", "fact": "Distances", "verdict": "fixed",
+  "correct_value": "About 17 mi each way between the washout and the tarn high camp (day 1 in = 17, day 3 out = 17); ~38 mi round trip with the 4-mile climbing day",
+  "evidence": "NPS gives 16 mi from the road end to Anderson Pass; the Mountaineers give 1.4 + 8 + 1.2 mi ranger station to Anderson Pass, plus the ~5.5 mi road, and describe the way trail from the pass to the tarn camp near 5,100 ft as about a mile. A family trip report put the Anderson Glacier overlook at 17-18 mi from the washout. So day 1 (washout to tarn camp) and day 3 (reverse) are each ~17 mi, matching the waypoint at mile 17; 15 and 20 were inconsistent. dist_km (19.5 mi one way to the spire) is left untouched as it is a one-way figure, not clearly a different quantity.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/west-fork-dosewallips.htm", "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier", "https://j3.org/2018/08/backpack-dosewallips-anderson-glacier/"],
+  "patches": [
+   {"id": "wa_andersons_thumb_standard", "fact": "Distances", "op": "set", "column": "itinerary", "path": ["days", 0, "miles"], "expect": 15, "value": 17},
+   {"id": "wa_andersons_thumb_standard", "fact": "Distances", "op": "set", "column": "itinerary", "path": ["days", 2, "miles"], "expect": 20, "value": 17},
+   {"id": "wa_andersons_thumb_standard", "fact": "Distances", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "roughly 39-mile round trip", "replace": "roughly 38-mile round trip"},
+   {"id": "wa_andersons_thumb_standard", "fact": "Distances", "op": "replace_text", "column": "descent_text", "path": [], "find": "~39-mile round-trip distance", "replace": "~38-mile round-trip distance"}
+  ]},
+ {"id": "wa_andersons_thumb_standard", "fact": "Anderson Glacier present or gone", "verdict": "fixed",
+  "correct_value": "The Anderson Glacier is gone (disappeared by ~2011); only the Eel Glacier carries crevasse hazard",
+  "evidence": "Wikipedia (citing USGS/NPS studies and NPR) says Anderson Glacier lost over 90% of its area 1927-2009 and was gone by 2011; NPS/NPCA and Olympic Park Advocates pages likewise describe it as disappeared. obj_haz[1] and seasonal_hazards.crevasses still list crevasses on the Anderson Glacier; reworded to the Eel Glacier only (whether this route crosses the Eel at all remains flagged under the location contradiction).",
+  "sources": ["https://en.wikipedia.org/wiki/Anderson_Glacier", "https://www.npca.org/articles/3702-requiem-for-melting-ice", "https://olympicparkadvocates.org/melting-glaciers/"],
+  "patches": [
+   {"id": "wa_andersons_thumb_standard", "fact": "Anderson Glacier present or gone", "op": "replace_text", "column": "obj_haz", "path": [1], "find": "(Anderson Glacier / Eel Glacier)", "replace": "(the Eel Glacier; the old Anderson Glacier basin is now bare rock and snowfield)"},
+   {"id": "wa_andersons_thumb_standard", "fact": "Anderson Glacier present or gone", "op": "replace_text", "column": "seasonal_hazards", "path": ["crevasses"], "find": "the route crosses the Anderson/Eel Glacier on approach", "replace": "the route crosses the Eel Glacier on approach (the Anderson Glacier itself is gone)"}
+  ]},
+ {"id": "wa_andersons_thumb_standard", "fact": "Total gain in itinerary totalNote vs gain_ft", "verdict": "unresolved", "discovered": true,
+  "correct_value": null,
+  "evidence": "itinerary.totalNote says about 6,200 ft of net gain/loss, while gain_ft/loss_ft are 6,400 and the itinerary days sum to 6,400 gain and 6,400 loss. No outside source states a car-to-car gain for this Thumb objective (the only trip total found, ~9,000 ft, is for a different West Peak itinerary), so no patch.",
+  "sources": ["https://trailcatjim.com/mt-anderson-west-peak-via-northeast-ridge/"],
+  "patches": []}
+]}

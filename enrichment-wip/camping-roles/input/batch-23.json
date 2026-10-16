@@ -1,0 +1,1858 @@
+[
+ {
+  "zone": "unzoned:wa_mount_custer",
+  "routes": [
+   {
+    "id": "wa_mount_custer_standard",
+    "name": "Standard Route / South Side",
+    "peak": "Mount Custer",
+    "area_id": "wa_mount_custer",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4 + glacier",
+    "high_point_ft": 8630,
+    "overview": "Mount Custer is a high, glaciated summit on the international border ridge near Mount Spickard and Mount Rahm, deep in the remote Chilliwack zone of North Cascades National Park. It's named for Henry Custer, a topographer who surveyed the US-Canada boundary through this area in the 1850s. The peak s…",
+    "approach": "From the Depot Creek trailhead (reached via the unsigned dirt spur off Chilliwack Lake Road in BC), follow the old trail south into the US: about 200 yards through old growth to the border obelisk and trail register, then continue on the fading Depot Creek path up the valley. The first stretch follo…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Ouzel Lake camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5659,
+      "notes": "Established bivy sites ringing Ouzel Lake, the standard base camp for Custer/Rahm/Redoubt/Spickard, with reliable water from the lake."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_despair",
+  "routes": [
+   {
+    "id": "wa_mount_despair_east_route",
+    "name": "East Route / Standard",
+    "peak": "Mount Despair",
+    "area_id": "wa_mount_despair",
+    "discipline": "alpine",
+    "grade": "Class 4",
+    "high_point_ft": 7296,
+    "overview": "Mount Despair is a remote, twin-summited granite peak in the North Unit of North Cascades National Park, its glaciated cirques draining north into Bacon Creek and south into Goodell Creek. Named by USFS surveyor Lage Wernstedt in the 1920s (the name first appeared on Forest Service maps in 1931), it…",
+    "approach": "Start at the Thornton Lakes Trailhead (~2,500 ft), reached via the rough spur road off SR-20 near milepost 117. Follow the Thornton Lakes Trail/old roadbed on a nearly flat first mile to a crossing of Thornton Creek — the last reliable, easy water source before the route goes fully off-trail. From t…",
+    "camps": [
+     {
+      "name": "Thornton Pass benches",
+      "store": "bivy",
+      "type": null,
+      "elev": 6050,
+      "notes": "PLANNED camp and effectively the only base for this route: flat rock-and-heather benches on the ridge crest just south of the pass. Parties take most of a day to reach it — around seven and a half hours of brush and clif…"
+     },
+     {
+      "name": "Upper Despair Lake",
+      "store": "bivy",
+      "type": null,
+      "elev": 5100,
+      "notes": "NOT a documented camp — reports use it as a rest and water stop on the long traverse to the peak, and no established sites are described there. It is the last reliable water before the cliff band below the southeast face…"
+     },
+     {
+      "name": "Thornton Pass (camp knob)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Flat benches on the crest are the standard base camp, reached roughly 7-8 hours from the trailhead."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_fury_east",
+  "routes": [
+   {
+    "id": "wa_mount_fury_east_direct_east_ridge",
+    "name": "Direct East Ridge",
+    "peak": "Mount Fury (East Peak)",
+    "area_id": "wa_mount_fury_east",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 8356,
+    "overview": "A more technical alternative to the standard glacier route, climbing directly up East Fury's east ridge over a subsidiary summit before joining the upper Fury Glacier to finish via the south ridge.",
+    "approach": "Drive State Route 20 to the Ross Dam trailhead between mileposts 134 and 135, 14.0 miles east of Newhalem (small lot, 4 standard plus 2 ADA spaces, no pass required). Hike the trail about a mile down to the Ross Lake water-taxi dock and take the Ross Lake Resort boat to Big Beaver Landing at about 1…",
+    "camps": [
+     {
+      "name": "Access Creek Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Where the Access Creek bushwhack finally lets go of you and opens onto talus, roughly 1,900 ft above the Big Beaver crossing. Parties reaching it late on day one commonly reported arriving around 7pm. It is the last wate…"
+     },
+     {
+      "name": "Luna Col (Luna Pass)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "The high camp for summit day, reached after the notorious steep heather-and-talus traverse from Access Col. The ground is glacier-polished slab with very little truly flat tent space, so most parties bivy rather than pit…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_fury_east_southeast_glaciers",
+    "name": "Southeast Glaciers (Standard)",
+    "peak": "Mount Fury (East Peak)",
+    "area_id": "wa_mount_fury_east",
+    "discipline": "mountaineering",
+    "grade": "Class 4, Glacier",
+    "high_point_ft": 8356,
+    "overview": "Mount Fury's East Peak is the standard-route summit of one of the most remote major peaks in the contiguous US, deep in North Cascades National Park's Northern Pickets. The Southeast Glacier route is technically moderate (Class 3-4 rock with a glaciated snow climb) but is guarded by one of the longe…",
+    "approach": "From the Ross Dam Trailhead at Happy Flats on SR 20 (~milepost 134, 2,150 ft), it's about 1 mile down to the Ross Lake water taxi dock; cross the lake by taxi (or paddle) to Big Beaver Landing. From the landing, follow the Big Beaver Creek Trail 11.5 miles up-valley — a dry, well-maintained, largely…",
+    "camps": [
+     {
+      "name": "Luna Col (Luna Pass)",
+      "store": "bivy",
+      "type": null,
+      "elev": 7200,
+      "notes": "The standard high camp and the base for summit day on Fury, reached after a long steep heather-and-talus traverse from Access Col. It is a planned camp but a rough one — glacially polished slabs with very few genuinely f…"
+     },
+     {
+      "name": "Access Basin camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 4300,
+      "notes": "A planned camp used to break the approach, at the head of Access Creek where the bushwhack finally opens onto talus. It is the last water before the long, hot, shadeless scree chute up to Access Col, and it is where most…"
+     },
+     {
+      "name": "Luna Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "Established NPS backcountry campsite on Big Beaver Creek about 11.5 mi up the trail from the landing; last reliable flowing water and flat tentsites before leav…"
+     },
+     {
+      "name": "Access Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "Steep, brushy mile-long climbers' path gains roughly 1,500 ft from the creek ford to a talus/heather basin at 4,300 ft, the standard high camp for the Access Cr…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_rahm",
+  "routes": [
+   {
+    "id": "wa_mount_rahm_custer_traverse",
+    "name": "Custer-Rahm Traverse",
+    "peak": "Mount Rahm",
+    "area_id": "wa_mount_rahm",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8630,
+    "overview": "A high, mostly Class 2/3 ridge-crest traverse directly connecting the summits of Mount Rahm and Mount Custer, with one short Class 4 gully bypassing an unclimbable arête near Custer's summit block.",
+    "approach": "Reached from the summit of either Mount Rahm (via the Standard Route/Glacier or South Side) or Mount Custer (via its South Ridge), not from a trailhead directly.",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rahm_standard",
+    "name": "Standard Route / Glacier",
+    "peak": "Mount Rahm",
+    "area_id": "wa_mount_rahm",
+    "discipline": "mountaineering",
+    "grade": "Class 3 + glacier",
+    "high_point_ft": 8485,
+    "overview": "Mount Rahm is a glaciated summit sitting essentially on the US-Canada border ridge on Custer Ridge, near Mount Custer and Mount Spickard, deep in the remote Chilliwack zone of North Cascades National Park. It's named for David Rahm, a Western Washington University geology professor, and the peak has…",
+    "approach": "Standard approach is via Depot Creek from the Canadian side: from Chilliwack, BC drive Chilliwack River Road ~31.7 mi to the narrow dirt Depot Creek Road, then (high-clearance/4WD recommended) another ~2.5 mi to a rough trailhead turnout. The unmaintained Depot Creek trail climbs the valley and pass…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Lake Ouzel (Ouzel Lake) camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Flat, sandy, treeless benches at the head of Depot Creek valley — the standard high camp for Spickard, Custer, Redoubt, and Rahm."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_redoubt",
+  "routes": [
+   {
+    "id": "wa_mount_redoubt_south_face",
+    "name": "South Face / Redoubt Glacier",
+    "peak": "Mount Redoubt",
+    "area_id": "wa_mount_redoubt",
+    "discipline": "mountaineering",
+    "grade": "Class 4 + glacier",
+    "high_point_ft": 8969,
+    "overview": "Mount Redoubt is one of the highest and most striking peaks in the remote Chilliwack (Custer-Chilliwack) group of the North Cascades, in the Stephen Mather Wilderness just 3 miles south of the Canadian border. Composed of resistant Skagit gneiss, it carries the Redoubt Glacier on its south/east slop…",
+    "approach": "Southeast via Depot Creek and Redoubt Glacier. International border crossing required (Canadian side). Approach via Depot Glacier to Redoubt Glacier.",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Ouzel Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Flat sandbar at the meadow's edge is the standard base camp for Redoubt and Spickard; reliable running water, well-cairned slabs lead up from here toward the gl…"
+     },
+     {
+      "name": "High camp, head of Redoubt Glacier",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7200,
+      "notes": "Rocky knoll with southern views used as an optional high camp roughly 2 hrs above Ouzel Lake, shortening summit day."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_spickard",
+  "routes": [
+   {
+    "id": "wa_mount_spickard_silver_glacier",
+    "name": "Silver Glacier",
+    "peak": "Mount Spickard",
+    "area_id": "wa_mount_spickard",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8979,
+    "overview": "The Silver Glacier route climbs Mount Spickard's glaciated north side: a wide gully gains the Custer-Spickard saddle, then glacier travel crosses the Silver Glacier to a notch just below the summit, finishing with a short Class 4 rock step.",
+    "approach": "Two camp options are used. Via Silver Creek: arrange a Ross Lake Resort water taxi (reservation required) roughly 25 miles up Ross Lake to a drop-off at the Silver Creek mouth (1,600 ft); a trail climbs the north side of Silver Creek about 2.5 miles to an old cabin at 2,900 ft, after which the route…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Silver Lake camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6763,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_spickard_southwest",
+    "name": "Southwest Route / Silver Lake",
+    "peak": "Mount Spickard",
+    "area_id": "wa_mount_spickard",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4 + glacier",
+    "high_point_ft": 8979,
+    "overview": "Mount Spickard is a massive, heavily glaciated peak straddling the Skagit/Fraser drainage divide just 2 miles south of the Canadian border, part of the Chilliwack Group of the Skagit Range. It is the 5th-highest summit in North Cascades National Park and the 16th-highest in Washington, and its rough…",
+    "approach": "From the Depot Creek Road washout (~2,600 ft, reached via a rough 4WD spur off Chilliwack Lake Road out of Chilliwack Lake Provincial Park, BC), the hike-in starts on the old roadbed: walk it about 9 minutes to an inconspicuous spur road on the left, follow that spur roughly 4 minutes to a T-junctio…",
+    "camps": [
+     {
+      "name": "Lower Depot Creek bench",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Where the valley flattens and opens out above the Depot Creek Falls headwall. Parties use it two ways: as a shorter first day when the falls have taken longer than expected, and on the way out to put an hour of walking b…"
+     },
+     {
+      "name": "Ouzel Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The standard high camp and the one that serves both Spickard and Redoubt, on flat sandy treeless benches and a gravel moraine at the head of the valley below the calving front of the Redoubt Glacier. Six to nine hours an…"
+     },
+     {
+      "name": "Ouzel Lake basecamp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Above the falls the path continues through Depot Creek Meadow and Upper Depot Creek to Ouzel (Silver) Lake at roughly 5,700 ft, a set of flat, sandy, mostly tre…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_triumph",
+  "routes": [
+   {
+    "id": "wa_mount_triumph_northeast_ridge",
+    "name": "Northeast Ridge",
+    "peak": "Mount Triumph",
+    "area_id": "wa_mount_triumph",
+    "discipline": "mountaineering",
+    "grade": "5.7 (crux offwidth; sometimes rated 5.6)",
+    "high_point_ft": 7270,
+    "overview": "A long, sustained alpine rock route climbing Mount Triumph's northeast-facing ridge from a high bivy col above Thornton Lakes to the small, airy summit — mostly 4th and low-5th class ridge climbing over towers and a knife-edge crest, capped by a well-known 5.7 offwidth crux near the top.",
+    "approach": "From Marblemount, drive SR-20 east to the Thornton Lakes Road spur (near milepost 117, just west of Newhalem) and follow the rough, unpaved, high-clearance road about 5 miles to the Thornton Lakes Trailhead (~2,700 ft). Hike the Thornton Lakes Trail — an old logging-road grade for the first ~2 miles…",
+    "camps": [
+     {
+      "name": "Thornton Lakes camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Where the maintained trail ends, about five and a half miles in, at the outlet of the lower lake. It is the easy, legal, reliable option and the one to take if you arrive late or the col is booked out — but it leaves a v…"
+     },
+     {
+      "name": "The Triumph col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The standard high camp, on the col northwest of the middle lake, gained by about 1,200 ft of steep talus and grass above the lakes — roughly seven and a half miles and 4,200 ft from the car. Flat ground, running water an…"
+     },
+     {
+      "name": "On-ridge bivy above the notch",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Small sites on the crest a hundred to two hundred feet above the notch, one or two pitches up the Northeast Ridge. Parties use them to shorten the climbing day, at the cost of carrying a full day's water onto the ridge. …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_north_early_winters_spire",
+  "routes": [
+   {
+    "id": "wa_chockstone_route",
+    "name": "Chockstone Route",
+    "peak": "North Early Winters Spire",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": 7760,
+    "overview": "Chockstone Route (II+ 5.7) climbs the gully and south face between North and South Early Winters Spire — the original 1950 first-ascent line up the peak. A low-angle slab/layback first pitch (often scrambled or simul-climbed) leads up the gully toward a massive chockstone, bypassed on the left via t…",
+    "approach": "From the Blue Lake Trailhead (5,400 ft) on SR-20, follow the Blue Lake Trail about 1.5 miles to the climbers' path, leave the trail into the basin below the Liberty Bell Group, and locate the obvious chasm/gully between North and South Early Winters Spire on the west side of the formations. Allow 1-…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_flycatcher_buttress",
+    "name": "Flycatcher Buttress",
+    "peak": "North Early Winters Spire",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "high_point_ft": 7760,
+    "overview": "Flycatcher Buttress (IV 5.10b) is a 10-pitch, roughly 1,100 ft (333 m) route on North Early Winters Spire, first climbed (with aid) by Steve Marts, Don McPherson, and King McPherson in 1965, with Bryan Burdo making the first free ascent — an onsight free solo — in 1990. The climbing is sustained but…",
+    "approach": "Start from the hairpin turn used for other Liberty Bell Group routes; stay right of the gully dividing the two spires and scramble up to the route's start ledge.",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_labor_pains",
+    "name": "Labor Pains",
+    "peak": "North Early Winters Spire",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11a",
+    "high_point_ft": 7760,
+    "overview": "Labor Pains, III 5.11a (PG13), is a 5-pitch, roughly 600 ft (182 m) line up clean rock between the Chockstone Route and The West Face on North Early Winters Spire, with three sustained 5.11a pitches, each a bit more devious than the last, including a committing overhang on Pitch 4.",
+    "approach": "Shares its start with the Chockstone Route; from there head up and left toward a ledge below a clean slab to begin Labor Pains, which climbs the clean face between the Chockstone Route and The West Face.",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_news_nw_corner",
+    "name": "Northwest Corner (Boving-Pollack Route)",
+    "peak": "North Early Winters Spire",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "high_point_ft": 7760,
+    "overview": "Northwest Corner (Boving-Pollack), 5.9+ III, is the classic moderate outing on North Early Winters Spire, the northern/lower of the two Early Winters Spires in the Liberty Bell Group at Washington Pass. First climbed by Paul Boving and Steve Pollack on September 25, 1976, it follows a corner system,…",
+    "approach": "Start at the Blue Lake Trailhead on the south side of Hwy 20 (elev. ~5,400 ft), about one mile west of the Washington Pass Overlook and roughly 30 miles west of Winthrop. Follow the well-graded Blue Lake Trail southwest through subalpine forest. At about 1.4-1.5 miles, watch for a signed junction: t…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_west_face",
+    "name": "The West Face",
+    "peak": "North Early Winters Spire",
+    "area_id": "wa_north_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "high_point_ft": 7760,
+    "overview": "The West Face (III 5.11-) is a 6-pitch, roughly 500 ft (152 m) route first climbed (with aid) by Fred Beckey and Dave Beckstad in 1965, with Steve Risse and Dave Tower making the first free ascent in 1985.",
+    "approach": "From the Blue Lake Trailhead (5,400 ft), follow the Blue Lake Trail about 1.5 miles to the climbers' path, leave the trail into the basin below the Liberty Bell Group, pass South Early Winters Spire, and traverse left along the base to the shared start with the Northwest Corner. Allow 1-2 hours car-…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_northwest_mox_peak",
+  "routes": [
+   {
+    "id": "wa_northwest_mox_peak_standard",
+    "name": "Standard Route / Northwest Spire",
+    "peak": "Northwest Mox Peak",
+    "area_id": "wa_northwest_mox_peak",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "high_point_ft": 8407,
+    "overview": "Northwest Mox Peak ('Easy Mox') is the lower of the Twin Spires (Mox Peaks), a remote and technical summit deep in the Chilliwack Range about four miles south of the Canadian border. Its standard route climbs class 4 to low-5th-class rock (roughly 5.5) in a committing, seldom-visited position, typic…",
+    "approach": "Drive 31.7 miles on Chilliwack River Road from Chilliwack, BC, then turn left onto narrow Depot Creek Road (high-clearance 4WD recommended for the upper 2.5 miles). Park at 2,350 ft where the road becomes impassable. Follow old logging road 2 miles to the Washington state border and official trail s…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_point_success",
+  "routes": [
+   {
+    "id": "wa_point_success_south_side",
+    "name": "Point Success via Success Cleaver",
+    "peak": "Point Success",
+    "area_id": "wa_point_success",
+    "discipline": "mountaineering",
+    "grade": "Grade III-IV, Class 4",
+    "high_point_ft": 14158,
+    "overview": "Point Success (14,158 ft) is Mount Rainier's second-highest summit and its southwesternmost point on the crater rim, sitting atop the crest of Success Cleaver — the long rock-and-snow rib that is one of only two named Rainier lines (with Ptarmigan Ridge) climbable to a true summit without ever setti…",
+    "approach": "From the Longmire Wilderness Information Center (2,762 ft), pick up the Wonderland Trail heading southwest. About 3 miles in, after climbing out of Longmire, the trail drops steeply (~400+ ft) to a log-bridge crossing of Kautz Creek — a braided glacial outwash channel whose crossing is periodically …",
+    "camps": [
+     {
+      "name": "Devil's Dream camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 4930,
+      "notes": "PLANNED low camp about five miles in on the Wonderland Trail, in trees below Indian Henry's. Useful mainly as a bail-out or a late-start first night — it is well below the climbing and adds a lot of gain to day two. Reli…"
+     },
+     {
+      "name": "Rock slabs below Pyramid Peak",
+      "store": "bivy",
+      "type": null,
+      "elev": 6300,
+      "notes": "PLANNED first camp for the standard two-day ascent, out past Indian Henry's and Mirror Lakes where the maintained tread ends. Open slab ground with running water all around it early in the season; once the snowmelt dries…"
+     },
+     {
+      "name": "Dug platform on the lower-mid cleaver",
+      "store": "bivy",
+      "type": null,
+      "elev": 9400,
+      "notes": "PLANNED alternative for parties who run out of daylight low on the cleaver. Reports describe digging in here specifically because the spot felt protected from the rockfall lines running down either side — the lower cleav…"
+     },
+     {
+      "name": "Cleaver crest col",
+      "store": "bivy",
+      "type": null,
+      "elev": 10700,
+      "notes": "PLANNED high camp and the best ground on the route: a broad saddle on the cleaver crest that is generally out of the rockfall lines, which very little else on this cleaver can claim. No water. Above it the crest includes…"
+     },
+     {
+      "name": "Point 6631 (base camp north of Pyramid Peak)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6631,
+      "notes": "From the tarns it is cross-country travel. Head north-east out of the basin and contour the south-west then west slopes of Pyramid Peak, staying roughly between…"
+     },
+     {
+      "name": "6,400 ft saddle below Success Cleaver",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Drop north-north-east from Point 6631 a short way to the saddle at about 6,400 ft, which is the start of Success Cleaver proper. It is a scree and loose-boulder…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_sahale_mountain",
+  "routes": [
+   {
+    "id": "wa_sahale_mountain_r1",
+    "name": "Quien Sabe Glacier",
+    "peak": "Sahale Mountain",
+    "area_id": "wa_sahale_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, glacier + Class 3-4/5.0-5.4 summit block",
+    "high_point_ft": 8680,
+    "overview": "The Quien Sabe Glacier is the direct line up Sahale's north side from Boston Basin, climbing beneath Sharkfin Tower to the col between Sahale and Boston Peak before a short technical finish to the same 8,680 ft summit reached by the Sahale Arm route. It's more committing and more remote than the Sah…",
+    "approach": "The Boston Basin approach starts at an unmarked climbers' pullout on Cascade River Road roughly 21.5-23 miles from Marblemount (about 3,200-3,300 ft) - there's no formal trailhead sign, so watch your odometer. From the pullout, follow an old mining road/track for about a mile with minimal elevation …",
+    "camps": [
+     {
+      "name": "Boston Basin high camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper of the basin's two camps, around 6,400 ft, with a composting toilet. It is the natural base for the Quien Sabe: the glacier starts more or less at the tent door, so summit day is short. Snow lingers here well i…"
+     },
+     {
+      "name": "Boston Basin low camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Around 5,300 ft on the edge of a moraine crest among small trees, below the polished slabs the Quien Sabe has left behind. Melts out earlier and is more sheltered than the high camp, at the cost of an extra thousand feet…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sahale_mountain_sahale_glacier",
+    "name": "Sahale Arm / Sahale Glacier",
+    "peak": "Sahale Mountain",
+    "area_id": "wa_sahale_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 3, glacier",
+    "high_point_ft": 8680,
+    "overview": "Sahale Mountain (8,680 ft) sits at the head of Cascade Pass in North Cascades National Park, and the Sahale Arm route is widely regarded as one of the most scenic moderate glacier climbs in the Cascades — a hike-heavy approach through wildflower meadows on the Sahale Arm leading to a short, low-angl…",
+    "approach": "From the Cascade Pass Trailhead (3,600 ft) at the end of Cascade River Road, follow the Cascade Pass Trail through old-growth timber via roughly 35 well-graded switchbacks, gaining about 1,800 ft in the first 2 miles before the grade eases through subalpine meadows to Cascade Pass (5,400 ft) at abou…",
+    "camps": [
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 7500,
+      "notes": "A planned camp and one of the highest in the park, where the maintained trail ends: flat gravel tent pads built onto rock mounds at the foot of the glacier, each ringed by a primitive dry-stone wall, plus a composting to…"
+     },
+     {
+      "name": "Doubtful Lake",
+      "store": "bivy",
+      "type": null,
+      "elev": 5393,
+      "notes": "The lower fallback, roughly a mile and a thousand feet down a signed spur off the arm. It has water when the high camp does not and it is far more sheltered in bad weather, at the cost of re-gaining that thousand feet to…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_south_early_winters_spire",
+  "routes": [
+   {
+    "id": "wa_boving_roofs",
+    "name": "Boving Roofs",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "high_point_ft": 7807,
+    "overview": "A well-regarded direct variation to the Southwest Rib, taking a striking double-roof ('money pitch') instead of the standard line before rejoining the Bear Hug pitch.",
+    "approach": "Same start as the Southwest Rib: Blue Lake Trailhead, Blue Lake Trail ~1.25 miles to the NW clearing, climber's path up into the basin to the Y-shaped larch tree at the base of the Southwest Rib (left of the Southwest Couloir). Climb the first 3 pitches of the Southwest Rib (or approach via the Nort…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dolphin_chimney",
+    "name": "Dolphin Chimney",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "high_point_ft": 7807,
+    "overview": "A short but serious offwidth/chimney pitch on SEWS — the unmistakable dark chasm midway up the wall, directly left of the Boving Roofs. Often climbed as a variation linking into the Southwest Rib rather than as a full independent route to the summit. First ascended by Fred Beckey and Jim Madsen in 1…",
+    "approach": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles (about an hour of easy hiking, modest gain) to the open meadow/clearing on the northwest side of the Liberty Bell massif marked by a wooden trail sign. Leave the ma…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_free_mojo",
+    "name": "Free Mojo",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "high_point_ft": 7807,
+    "overview": "A free variation eliminating the aid on Mojo Rising, giving a continuously free 5.11- line up this part of the Northwest Face.",
+    "approach": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the NW-side clearing, climber's path up talus into the basin below the west face. Free Mojo starts roughly 40 ft down and right of the large chockstone-filled chimney between the two spire formations, …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mojo_rising",
+    "name": "Mojo Rising",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11b",
+    "high_point_ft": 7807,
+    "overview": "A direct-start variation to the Northwest Face on SEWS, first climbed III 5.11 A1 (with a short section of aid) by Mark Allen, Joel Kauffman, and Tom Smith, October 13-14, 2006; the 5.11b grade reflects later free ascents of the aid section.",
+    "approach": "Approach as for the Northwest Face: Blue Lake Trailhead, Blue Lake Trail ~1-1.25 miles to the NW-side clearing, then the climber's path up talus into the basin below the west face. Mojo Rising starts on an obvious bolted face about 20 ft downhill from a large chockstone-filled chimney/notch feature,…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_northwest_face_boving_pollock",
+    "name": "Northwest Face (Boving-Pollock)",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11a/b",
+    "high_point_ft": 7807,
+    "overview": "A varied alpine free climb up the west face of South Early Winter Spire, beginning low on the northwest face and traversing into the famous double-roof 'Boving Roofs' pitch before finishing up the Southwest Rib. First ascended (aid) by Boving & Pollock in 1976; freed by Boving & Kerns in 1977.",
+    "approach": "From the Blue Lake Trailhead, follow the Blue Lake Trail about 1-1.25 miles (roughly an hour) to the clearing/meadow on the spire's northwest side. Leave the trail on the well-worn climber's path and ascend talus and heather into the basin directly below the northwest face — this is the same basin u…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sews_sw_rib",
+    "name": "Southwest Rib",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 7807,
+    "overview": "The Southwest Rib is one of the most popular moderate multipitch alpine rock climbs at Washington Pass, climbing excellent granite on the west face of South Early Winter Spire with a famous dual-offwidth Bear Hug pitch and an airy slabby arete.",
+    "approach": "From Blue Lake Trailhead (1 mile west of Washington Pass on Highway 20), hike Blue Lake Trail 1.25-1.5 miles to a clearing. At a small stream (possibly marked with cairns), leave the trail and ascend climber tracks through slabs parallel to the stream to reach the basin. Route base is identifiable b…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_arete",
+    "name": "South Arete",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "high_point_ft": 7807,
+    "overview": "The standard, most-climbed route on South Early Winters Spire and the second most popular route in the Liberty Bell Group after the Beckey Route on Liberty Bell — a short, moderate outing well suited to parties wanting the summit with minimal commitment. First ascended by Fred and Helmy Beckey, June…",
+    "approach": "Start at the Blue Lake Trailhead (elev. ~5,200 ft) on SR-20 just west of Washington Pass. Follow the well-built Blue Lake Trail (Trail #314) as it climbs gently through subalpine fir and larch forest, switchbacking up open slabs with good views back at the highway. After roughly 1.3-1.5 miles and ab…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_early_winter_spire_direct_east_buttress",
+    "name": "Direct East Buttress",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "Grade III+, 5.9 A0 (or 5.11 free), 9 pitches",
+    "high_point_ft": 7807,
+    "overview": "The direct version of South Early Winter Spire's classic East Buttress, climbing harder, steeper pitches low on the buttress before joining the upper line. A sustained, high-quality alpine rock route on excellent Washington Pass granite.",
+    "approach": "Park at the 'hairpin' pullout on Highway 20 (separate from the Blue Lake Trailhead), hike up Spire Gully following occasional cairns to the last large tree in the gully, then traverse right across talus (or snow early-season — bring crampons/axe) to the gully leading to the notch between North and S…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_early_winter_spire_east_buttress",
+    "name": "East Buttress",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 7807,
+    "overview": "One of the most popular alpine rock routes at Washington Pass — the moderate, classic East Buttress of South Early Winter Spire. Enjoyable, well-featured climbing on excellent granite leads up the buttress to the summit.",
+    "approach": "From the Blue Lake basin, hike up the gully below the col (occasional cairns) to the last large tree in the gully, traverse right across talus (or snow early season) to the gully leading to the NEWS-SEWS notch, then traverse left to the base of the east buttress.",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_early_winter_spire_passenger",
+    "name": "Passenger",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11d",
+    "high_point_ft": 7807,
+    "overview": "Widely regarded as one of the best free rock climbs in the Cascades: a sustained, steep line up the southeast face of South Early Winter Spire on excellent golden granite, with roof pulls and finger cracks low and cleaner crack/corner climbing up high. First ascent by Bryan Burdo, Pete Doorish & Gre…",
+    "approach": "From the South Arete base (reached via the Blue Lake Trailhead climber's trail, about an hour in), head down and right along the base of the wall, eventually dropping away to skirt steeper terrain, to reach the start at double cracks beside a fir tree — about 10 minutes of scrambling/traversing from…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_early_winter_spire_southwest_couloir",
+    "name": "Southwest Couloir",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "Grade I, snow to 50°",
+    "high_point_ft": 7807,
+    "overview": "The original 1937 first-ascent line and the quickest, most moderate route to the summit — a broad snow/ice couloir narrowing toward a fork before a short 5th-class exit move.",
+    "approach": "From the Blue Lake Trailhead (1 mile west of Washington Pass on SR-20), head into the woods, break treeline around 5,900 ft, and navigate toward the distinctive Y-shaped snow gully below the South Arete.",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_southern_man",
+    "name": "Southern Man",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11d",
+    "high_point_ft": 7807,
+    "overview": "Named after the Neil Young song, Southern Man splits off from the Direct East Buttress about halfway up and climbs the south-facing headwall on SEWS's upper south side to the summit. First ascended by Mark Allen, Joel Kauffman, and Leaghan Falley, August 2008 (aided at 5.9+ C1); freed by B. Matthews…",
+    "approach": "Same as Direct East Buttress: park at the hairpin pullout on Highway 20, hike Spire Gully (cairned) to the last large tree, traverse right across talus/snow to the gully leading to the notch between North and South Early Winters Spire, then traverse left to the base of the east buttress. Southern Ma…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_hitchhiker",
+    "name": "The Hitchhiker",
+    "peak": "South Early Winters Spire",
+    "area_id": "wa_south_early_winters_spire",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "high_point_ft": 7807,
+    "overview": "A long, sustained mixed free/bolted line up the steep southeast face of SEWS, starting about 100 yards right of The Passenger. Established over three visits between July and September 2007 by Bryan Burdo and Scott Johnston.",
+    "approach": "Approach as for the Passenger: Blue Lake Trailhead climber's trail (~1 hour) to the South Arete base, then traverse down and right along the base of the wall past the Passenger's fir-tree/double-crack start, continuing roughly another 100 ft to a small left-facing dihedral with 4 bolts — the Hitchhi…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_south_face",
+  "routes": [
+   {
+    "id": "wa_concerto_in_c_for_drill_and_hammer",
+    "name": "Concerto in C for Drill and Hammer",
+    "peak": "South Face",
+    "area_id": "wa_south_face",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": null,
+    "overview": "A long, 14-pitch alpine slab climb from a bivy bench up to the summit ridge, featuring sustained 5.8 friction on several pitches and a crusty ridge-running finish above Buckeye Basin.",
+    "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, un…",
+    "camps": [
+     {
+      "name": "Squire Creek Park & Campground, Snohomish County",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 463,
+      "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most c…"
+     },
+     {
+      "name": "Clear Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 650,
+      "notes": "Small campground on the Sauk River a few miles southeast of Darrington on the Mountain Loop Highway, sitting essentially at the mouth of the Clear Creek road that serves Three O'Clock Rock, Exfoliation Dome and Green Gia…"
+     },
+     {
+      "name": "Dispersed roadside camping, Clear Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Climbers routinely sleep in a vehicle or throw a tent down at a pullout on the Clear Creek road rather than pay for a site, and the trailhead turnaround at the end of the drivable road is the usual spot. This is disperse…"
+     },
+     {
+      "name": "Squire Creek road end / trailhead bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is lon…"
+     },
+     {
+      "name": "Squire Creek Wall on-route ledges",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them …"
+     },
+     {
+      "name": "Squire Creek Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4107,
+      "notes": "Reached by the unmaintained Eightmile trail off the Clear Creek road, this open pass under the Squire Creek walls is the only real high camp on this side of the granite. It is more often a hiking objective than a climbin…"
+     }
+    ]
+   },
+   {
+    "id": "wa_doorway_flake",
+    "name": "Doorway Flake",
+    "peak": "South Face",
+    "area_id": "wa_south_face",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": null,
+    "overview": "A 5-pitch, 700-ft route on the Far Western Wall reaching a distinctive hanging flake, with sculpted-knob face climbing low down and a bolt-protected 5.9 face crux on pitch two.",
+    "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, un…",
+    "camps": [
+     {
+      "name": "Squire Creek Park & Campground, Snohomish County",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 463,
+      "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most c…"
+     },
+     {
+      "name": "Clear Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 650,
+      "notes": "Small campground on the Sauk River a few miles southeast of Darrington on the Mountain Loop Highway, sitting essentially at the mouth of the Clear Creek road that serves Three O'Clock Rock, Exfoliation Dome and Green Gia…"
+     },
+     {
+      "name": "Dispersed roadside camping, Clear Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Climbers routinely sleep in a vehicle or throw a tent down at a pullout on the Clear Creek road rather than pay for a site, and the trailhead turnaround at the end of the drivable road is the usual spot. This is disperse…"
+     },
+     {
+      "name": "Squire Creek road end / trailhead bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is lon…"
+     },
+     {
+      "name": "Squire Creek Wall on-route ledges",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them …"
+     },
+     {
+      "name": "Squire Creek Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4107,
+      "notes": "Reached by the unmaintained Eightmile trail off the Clear Creek road, this open pass under the Squire Creek walls is the only real high camp on this side of the granite. It is more often a hiking objective than a climbin…"
+     }
+    ]
+   },
+   {
+    "id": "wa_skeena26",
+    "name": "Skeena26",
+    "peak": "South Face",
+    "area_id": "wa_south_face",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": null,
+    "overview": "A 12-pitch, 1,500-ft friction climb on immaculate, knobby grey granite, with a polished 5.9 crux on pitch one easing into mostly 5.4-5.6 climbing above, finishing on clean splitter cracks overlooking Whitehorse Mountain.",
+    "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, un…",
+    "camps": [
+     {
+      "name": "Squire Creek Park & Campground, Snohomish County",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 463,
+      "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most c…"
+     },
+     {
+      "name": "Clear Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 650,
+      "notes": "Small campground on the Sauk River a few miles southeast of Darrington on the Mountain Loop Highway, sitting essentially at the mouth of the Clear Creek road that serves Three O'Clock Rock, Exfoliation Dome and Green Gia…"
+     },
+     {
+      "name": "Dispersed roadside camping, Clear Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Climbers routinely sleep in a vehicle or throw a tent down at a pullout on the Clear Creek road rather than pay for a site, and the trailhead turnaround at the end of the drivable road is the usual spot. This is disperse…"
+     },
+     {
+      "name": "Squire Creek road end / trailhead bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is lon…"
+     },
+     {
+      "name": "Squire Creek Wall on-route ledges",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them …"
+     },
+     {
+      "name": "Squire Creek Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4107,
+      "notes": "Reached by the unmaintained Eightmile trail off the Clear Creek road, this open pass under the Squire Creek walls is the only real high camp on this side of the granite. It is more often a hiking objective than a climbin…"
+     }
+    ]
+   },
+   {
+    "id": "wa_western_dihedral",
+    "name": "Western Dihedral",
+    "peak": "South Face",
+    "area_id": "wa_south_face",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": null,
+    "overview": "A 5-pitch, 700-ft moderate slab line up the South Face with two distinct crux pitches sandwiched between easier friction climbing above and below.",
+    "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, un…",
+    "camps": [
+     {
+      "name": "Squire Creek Park & Campground, Snohomish County",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 463,
+      "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most c…"
+     },
+     {
+      "name": "Clear Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 650,
+      "notes": "Small campground on the Sauk River a few miles southeast of Darrington on the Mountain Loop Highway, sitting essentially at the mouth of the Clear Creek road that serves Three O'Clock Rock, Exfoliation Dome and Green Gia…"
+     },
+     {
+      "name": "Dispersed roadside camping, Clear Creek Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Climbers routinely sleep in a vehicle or throw a tent down at a pullout on the Clear Creek road rather than pay for a site, and the trailhead turnaround at the end of the drivable road is the usual spot. This is disperse…"
+     },
+     {
+      "name": "Squire Creek road end / trailhead bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is lon…"
+     },
+     {
+      "name": "Squire Creek Wall on-route ledges",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them …"
+     },
+     {
+      "name": "Squire Creek Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4107,
+      "notes": "Reached by the unmaintained Eightmile trail off the Clear Creek road, this open pass under the Squire Creek walls is the only real high camp on this side of the granite. It is more often a hiking objective than a climbin…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_southeast_mox_peak",
+  "routes": [
+   {
+    "id": "wa_southeast_mox_peak_se_rib",
+    "name": "West Ridge (Beckey Route)",
+    "peak": "Southeast Mox Peak",
+    "area_id": "wa_southeast_mox_peak",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "high_point_ft": 8504,
+    "overview": "Southeast Mox Peak (\"Hard Mox,\" 8,504 ft) is the true, higher summit of the Twin Spires and is generally regarded as the hardest peak on Washington's Bulger List (100 highest summits) and one of the state's \"Difficult Ten.\" This standard route climbs from the Col of the Wild — the notch separating H…",
+    "approach": "From the Depot Creek trailhead parking on the abandoned logging spur off Chilliwack Lake Road (BC) at roughly 2,350 ft, hike the old roadway grade uphill (left-hand fork) for about a mile to the Monument 65 border marker, where you cross into North Cascades National Park and should sign in at the wi…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Ouzel Lake camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Flat sandy/gravelly moraine benches above the lake outlet; established high-camp for Chilliwack-range climbs, ~9+ hrs / 3,550 ft above the cars."
+     }
+    ]
+   },
+   {
+    "id": "wa_the_devils_club",
+    "name": "The Devils Club",
+    "peak": "Southeast Mox Peak",
+    "area_id": "wa_southeast_mox_peak",
+    "discipline": "alpine",
+    "grade": "5.11",
+    "high_point_ft": 8504,
+    "overview": "The Devils Club is a serious, remote Grade V alpine rock route up the roughly 2,000-2,500 ft east face of Southeast Mox Peak (\"Hard Mox\"), one of the most committing big walls in the Lower 48 given its approach. First climbed by Mike Layton and Eric (Erik) Wolfe over August 31-September 1, 2005, wit…",
+    "approach": "Access starts on Ross Lake: from the Ross Dam trailhead on SR-20 (near milepost 134), hike the short Ross Dam Trail down to Ross Lake Resort, then take the resort's water taxi (or paddle a canoe) roughly 20+ miles up-lake to the Little Beaver Creek dock at the lake's north end. From the dock, follow…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     },
+     {
+      "name": "Redoubt Glacier Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7300,
+      "notes": "Flat bivy on the Redoubt Glacier used to access the Mox massif."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_wallaby_peak",
+  "routes": [
+   {
+    "id": "wa_wallaby_peak_standard",
+    "name": "Standard Route / Southwest Side",
+    "peak": "Wallaby Peak",
+    "area_id": "wa_wallaby_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7995,
+    "overview": "Wallaby Peak (Point 7995 on USGS maps) is the southernmost summit on Kangaroo Ridge and the ridge's only non-technical high point, rising above Washington Pass in the Okanogan-Wenatchee National Forest's Methow Valley Ranger District. It sits amid a cluster of dramatic granite towers — Kangaroo Temp…",
+    "approach": "Park at the large paved turnout at the first hairpin turn on SR-20 (North Cascades Highway), about 1 mile east of the Washington Pass summit (roughly 5,160 ft elevation). There's no formal trailhead sign or numbered trail here — the route to Kangaroo Pass is an unmaintained but well-cairned climbers…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   }
+  ]
+ }
+]

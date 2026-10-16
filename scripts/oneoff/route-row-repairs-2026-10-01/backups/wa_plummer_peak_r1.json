@@ -1,0 +1,66 @@
+{
+ "id": "wa_plummer_peak_r1",
+ "name": "Pinnacle Saddle / North Slopes",
+ "waypoints": [
+  {
+   "lat": 46.7683,
+   "lng": -121.7311,
+   "elev": 4870,
+   "name": "Reflection Lakes / Pinnacle Peak Trailhead",
+   "note": "~35-car unpaved pullout on the south side of Stevens Canyon Road, directly across from Reflection Lakes; trail sign for Pinnacle Peak/Plummer Peak starts here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, about 1.4 miles east of the Paradise-Longmire Road junction and roughly 1.9 miles from the Paradise turnoff — an unpaved pullout on the south side of the road with room for about 35 cars, directly across from the largest of the Reflection Lakes. The signed trail for Pinnacle Peak/Plummer Peak starts right there; it's a maintained Mount Rainier National Park trail with no official number. Stevens Canyon Road is open roughly late May through late October, and this small lot commonly fills by mid-morning on summer weekends."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5370,
+   "name": "Seasonal stream crossing",
+   "note": "A small seasonal stream crosses the switchbacks partway up; flows well early season but can run dry by late July-August.",
+   "type": "Water",
+   "distMi": 0.6,
+   "directions": "Follow the signed Pinnacle Peak Trail south from the road, climbing moderately through mountain hemlock and yellow cedar forest for about 0.6 mile to a seasonal cascading creek, the only water on the hike and often dry by late summer."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5710,
+   "name": "Cliff-band switchbacks below the saddle",
+   "note": "Trail steepens onto loose rock with exposed drop-offs on the final switchbacks before the saddle; NPS specifically warns of unstable rock and steep edges here, worse with lingering snow.",
+   "type": "Hazard",
+   "distMi": 1,
+   "directions": "Continue up the trail; by about 0.7 mile it breaks out of the forest into open talus and heather below Pinnacle's cliffs and steepens, switchbacking beneath the cliff bands on Pinnacle's north face. Lingering snow on these shaded switchbacks is the main hazard into July."
+  },
+  {
+   "lat": 46.7561418,
+   "lng": -121.7357068,
+   "elev": 5920,
+   "name": "Pinnacle Saddle",
+   "note": "T-intersection between Pinnacle and Plummer Peaks where the maintained trail ends; climber's boot path continues left/east to Pinnacle, right/west toward Plummer.",
+   "type": "Junction",
+   "distMi": 1.25,
+   "directions": "Switchback up the short, exposed final stretch to Pinnacle Saddle at about 1.25 miles and 5,920 ft, where the maintained trail ends."
+  },
+  {
+   "lat": 46.754853,
+   "lng": -121.740056,
+   "elev": 6150,
+   "name": "Heather-and-talus boot path to Plummer's summit block",
+   "note": "Unmaintained Class 2 boot path across heather and loose talus with sparse cairns; easy to lose the path in cloud or on the descent.",
+   "type": "Hazard",
+   "distMi": 1.4,
+   "directions": "At the saddle turn right (west) onto the climbers' path across a flat rocky shelf with a seasonal tarn. Where a fork continues straight toward Denman Peak, bear left (south, uphill) onto the thin boot path climbing the open, rocky north slopes of Plummer."
+  },
+  {
+   "lat": 46.753364,
+   "lng": -121.739524,
+   "elev": 6374,
+   "name": "Plummer Peak summit",
+   "note": "Small rocky summit (7th-highest in the Tatoosh Range) with views north to Rainier and south to Adams, St. Helens, and Hood on clear days.",
+   "type": "Summit",
+   "distMi": 1.55,
+   "directions": "Scramble the last few hundred feet of class 2-3 rock and loose blocks, with brief hands-on moves and mild exposure, to the small summit."
+  }
+ ]
+}

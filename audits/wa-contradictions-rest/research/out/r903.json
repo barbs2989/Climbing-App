@@ -1,0 +1,26 @@
+{"file": "r903.json", "results": [
+ {"id": "wa_the_horn_scramble", "fact": "Ropes for the rappel", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Horn's route page gives the climb as a single 130 ft (39 m) trad pitch with a standard alpine rack and says nothing about ropes or the rappel. The only external 'two ropes' statement found is the gear list of a party doing the complete Sawtooth Ridge traverse (2 ropes, rack to 3 in, pins, tat), which is not specific to The Horn; the Mountaineers route page describes the SE/SW 5.5 routes but gives no rope or rappel details. No source states the rappel length off The Horn or that a double-rope rappel is required, so whether the 60 m single-rope fields or the two-rope gear/rack/descent lines are wrong cannot be settled from two agreeing sources.",
+  "sources": ["https://www.mountainproject.com/route/124505266/the-horn", "https://waynewallace.wordpress.com/2016/06/22/sawtooth-traverse-olympics-2004/", "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"],
+  "patches": []},
+ {"id": "wa_the_horn_scramble", "fact": "Black and White Lakes junction location", "verdict": "fixed",
+  "correct_value": "The Black and White Lakes junction (with the waterfall) is on the Flapjack Lakes trail about 0.5-0.6 mile BELOW Flapjack Lakes, not above them; it is the first easy water on the steep climb up from the valley, not the last water before Gladys Divide.",
+  "evidence": "A trail description of the Flapjack Lakes hike says that just before a junction a trail on the left leads to Black and White Lakes and that Flapjack Lakes (basin at 3,850 ft) lie 0.6 mile straight ahead. A separate backpacking trip report says there is little water access until the waterfall at the Black and White Lakes junction, about 0.5 mile from Flapjack Lakes, on the way up. A third hike description confirms hikers pass the Black and White Lakes junction and continue up switchbacks to Flapjack Lakes. So the pin's elev 4100 (above the 3,850 ft lakes), distMi 7.5 (past the lakes at 7.0) and its note (water before the push toward Gladys Divide) are wrong; the two bivy entries are right. No two sources give the junction's exact elevation or its mileage on this row's scale, so elev and distMi are set to unknown rather than computed.",
+  "sources": ["https://www.explorehoodcanal.com/hikesandwalks/flapjack-lakes-in-olympic-national-park", "https://hohumhiking.wordpress.com/2021/07/12/backpacking-flapjack-lakes-with-trips-to-gladys-divide-black-and-white-lakes/", "https://hike734.com/hikingolympic/flapjack-lakes/"],
+  "patches": [
+   {"id": "wa_the_horn_scramble", "fact": "Black and White Lakes junction location", "op": "set", "column": "waypoints", "path": [3, "elev"], "expect": 4100, "value": null},
+   {"id": "wa_the_horn_scramble", "fact": "Black and White Lakes junction location", "op": "set", "column": "waypoints", "path": [3, "distMi"], "expect": 7.5, "value": null},
+   {"id": "wa_the_horn_scramble", "fact": "Black and White Lakes junction location", "op": "replace_text", "column": "waypoints", "path": [3, "note"], "find": "Waterfall at the Black and White Lakes spur junction is the last reliable, easy water before the dry push toward Gladys Divide.", "replace": "Waterfall at the Black and White Lakes spur junction, roughly half a mile below Flapjack Lakes, is the first reliable, easy water on the dry, steep climb up from the valley."}
+  ]},
+ {"id": "wa_just_enough", "fact": "Pitch count", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The route's page lists it as a single 100 ft (30 m) sport line (FA Kevin Pogue and Elisa Weinman Pogue, August 2002): a set of anchors a short way up lets you top-rope the base block, and the full route continues over easy ground and an exposed arete to a chain anchor on a huge ledge; it says a long rope is needed to top-rope it. That supports pitches=1 and suggests the 'two pitches' lines misread the intermediate anchor, but the route author's own guide topo only lists the name and grade (5.8), so there is no second independent source on pitch count, and the row's internal majority (pro_needs, descent, descent_text, hazards, what_to_bring) is on the other side.",
+  "sources": ["https://www.mountainproject.com/route/114414838/just-enough", "http://people.whitman.edu/~pogue/files/megnorth.pdf"],
+  "patches": []},
+ {"id": "wa_just_enough", "fact": "Rope needed to lower", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The one detailed source gives the route as 100 ft (30 m), not the row's 21 m / 70 ft, and says a long rope is needed to top-rope it, which would make the 70 m rope advice consistent and length_m the wrong field. The route author's guide material (Megadike North topo, area overview) gives no length or rope advice for this line, so the length cannot be confirmed by a second independent source; no patch.",
+  "sources": ["https://www.mountainproject.com/route/114414838/just-enough", "http://people.whitman.edu/~pogue/climbing/dikesguide.html"],
+  "patches": []}
+]}

@@ -1,0 +1,46 @@
+{
+ "id": "wa_gunrunner",
+ "name": "Gunrunner",
+ "access": {
+  "_raw": {
+   "permit_cost": "$0 for climbing/registration",
+   "permit_type": "Optional registration for alpine climbs; wilderness permit for overnight stays",
+   "land_manager": "USFS - Mount Baker-Snoqualmie National Forest",
+   "parking_pass": "Northwest Forest Pass ($5 day / $30 annual) or America the Beautiful Pass required for Downey Creek Trailhead",
+   "permit_pickup": "Self-issued at trailhead; optional registration at ranger stations; access via Downey Creek Trailhead",
+   "special_hazards": "Extremely difficult alpine ascent; Fred Beckey called it one of the most difficult summits to attain in the Cascades; exposed rock and ice",
+   "wilderness_zone": "Glacier Peak Wilderness",
+   "group_size_limit": "Max 12 people in Glacier Peak Wilderness",
+   "seasonal_closures": "Best June-October; winter/spring snow and avalanche hazards",
+   "altitude_restrictions": "None noted"
+  },
+  "fees": "None beyond the parking or entrance fee this route already lists.",
+  "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+  "permit": "Optional registration for alpine climbs; wilderness permit for overnight stays",
+  "closures": "Closed right now: Suiattle River Road (FR 26) is washed out and closed to vehicles at about milepost 4.5 after the December 2025 flood, under a closure order running to 1 January 2028 unless lifted sooner, so the Downey Creek Trailhead cannot be reached by car. The Downey Creek Trail itself is also closed through 31 December 2026 under a separate fire closure. Call the Darrington Ranger District, (360) 436-1155, before planning a trip.",
+  "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+  "permitZone": "Glacier Peak Wilderness",
+  "group_limit": 12,
+  "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+  "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+  "parking_pass": "Northwest Forest Pass required at the Downey Creek Trailhead on the Suiattle River Road — $5/day or $30/year.",
+  "passRequired": "Northwest Forest Pass recommended",
+  "overnight_permit": {
+   "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+   "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+   "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+  }
+ },
+ "road": {
+  "name": "Downey Creek Trailhead via Suiattle River Road (FR 26)",
+  "status": "Suiattle River Road (FR 26) suffered major flood/washout damage and is closed to vehicles at approximately milepost 4.5 under a closure order in effect April 2, 2026 through January 1, 2028. The Downey Creek Trail itself is also closed August 15 through December 31, 2026 under the Forest Service's Miner's Fire closure order. Vehicle access to the historic trailhead is not possible while the road order stands.",
+  "driveNote": "Normally about 2.5-3 hours from Seattle via Darrington and the Suiattle River Road when fully open; while the road closure order (April 2, 2026 through January 1, 2028) stands, it requires walking or biking the closed road from the MP 4.5 closure gate, adding several miles to the approach."
+ },
+ "approach_logistics": {
+  "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+  "trailheadLat": 48.2591,
+  "trailheadLng": -121.2244,
+  "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+ },
+ "descent_text": "The traverse climbs the north faces of the four Gunsight summits and rappels their south sides. From South Peak, a rappel descent leads to the Blue Glacier; the last rappel is free-hanging over a gaping moat onto the glacier, so look for the line that clears it. Check every rappel anchor on the granite thoroughly before trusting it. Parties often finish this descent in darkness. Allow 3-4 hours, depending on snow and crevasse conditions on the glacier."
+}

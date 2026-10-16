@@ -1,0 +1,328 @@
+{
+ "file": "t083.json",
+ "results": [
+  {
+   "id": "wa_spontaneous_distraction",
+   "fact": "Whether one 70 m rope reaches every rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's own description page states a single 70 m rope is required and that parties scramble back to the top of pitch 3 and rappel the route with it. A 2021 first-hand comment on the same page says a 70 m rope does NOT reach when rappelling pitch 3 from the trees directly above the last bolt, though pitches 1-2 rappel fine on a 70. These are the only two accounts found and they disagree; no independent second report exists. A second first-hand report of the pitch-3 rappel (or a measured pitch-3 length) would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/107745728/spontaneous-distraction"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "fact": "SR-20 winter closure window",
+   "verdict": "fixed",
+   "correct_value": "2025-26: closed Dec 4, 2025; reopened from the east over Washington Pass April 30, 2026; full highway June 14, 2026",
+   "evidence": "WSDOT's news release (and KOMO) report SR 20 closed for the 2025-26 winter at 6 p.m. Dec 4, 2025 between MP 134 and the Silver Star gate (MP 171), not Dec 12. WSDOT's release and blog (and KIRO) report limited access reopened from the east side up to MP 156.8 at Porcupine Creek (west of Rainy and Washington Passes) on April 30, 2026, with full reopening June 14, 2026. So Washington Pass was drivable from the east from April 30; the stored 'closed Dec 12-June 14' is wrong at both ends for this corridor, while the typical-window fields (roughly early Dec to mid/late April, 'roughly May-November') are rough ranges that agree with that.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://komonews.com/news/local/north-cascades-highway-state-route-20-closes-for-winter-season-december-2025-avalanche-danger-snow-fall-rain-weather-pacific-northwest",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://wsdotblog.blogspot.com/2026/04/north-cascades-highway-2026-opening.html",
+    "https://www.kiro7.com/news/local/sr-20-north-cascades-highway-partially-reopens/NT4S5RIDNBBLZPLZ3MOG7QQW44/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year",
+     "replace": "in the 2025-26 season it closed Dec 4, 2025 and reopened from the east side over Washington Pass on April 30, 2026, with the whole highway open again June 14; exact dates vary by year",
+     "id": "wa_spontaneous_distraction",
+     "fact": "SR-20 winter closure window"
+    }
+   ]
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+   "verdict": "fixed",
+   "correct_value": "14 consecutive days",
+   "evidence": "The Okanogan-Wenatchee forest order 06-17-00-25-01 (effective May 19, 2025-May 18, 2027) prohibits camping or occupying a single location for longer than 14 consecutive days (28 days total per calendar year). Independent camping guides give the same 14-days-in-30 limit. No 10-day limit applies; access.rules is the outlier (the bivy card's 14 days is correct and is not touched).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/occupancy-and-use-camping-restrictions-forestwide",
+    "https://dispersedapp.com/usfs-camping/washington/okanogan-wenatchee-national-forest/",
+    "https://thedyrt.com/camping/washington/near/okanogan-wenatchee-national-forest/with/dispersed"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days;",
+     "replace": "Dispersed camping capped at 14 consecutive days;",
+     "id": "wa_spontaneous_distraction",
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+    }
+   ]
+  },
+  {
+   "id": "wa_first_amendment",
+   "fact": "Rope setup for the rappel descent",
+   "verdict": "fixed",
+   "correct_value": "One 60 m rope; the Spontaneity Arete rappels are made on a single 60 m rope (some rope-stretching)",
+   "evidence": "First Amendment finishes on Spontaneity Arete, so its descent is that route's. The arete's route page says to descend the route with 'some rope stretching raps with a 60' (a single rope). An independent trip report says the raps are perfectly spaced for a 60 m rope and counted about 9 rappels. Nothing calls for a second rope, so the rack's 'double-rope rappel' and rope_note's 'rope length is not recorded ... double-rope rappel' are the outliers; gear, rope_length_m and descent_text already say 60 m.",
+   "sources": [
+    "https://www.mountainproject.com/route/107213171/spontaneity-arete",
+    "https://havetent.com/2018/07/02/le-petit-cheval-spontaneity-arete/",
+    "https://www.mountainproject.com/route/109581071/first-amendment"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "find": "Single 60m rope, double-rope rappel for descent",
+     "replace": "Single 60m rope, which also serves the rappel descent",
+     "id": "wa_first_amendment",
+     "fact": "Rope setup for the rappel descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Rope length is not recorded; 9-pitch Grade IV route, standard practice is 60m single with double-rope rappel for descent.",
+     "replace": "One 60m rope. The descent rappels down the neighbouring arete are spaced for a single 60m rope, and a few of them use its full length.",
+     "id": "wa_first_amendment",
+     "fact": "Rope setup for the rappel descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_first_amendment",
+   "fact": "SR-20 winter closure window",
+   "verdict": "fixed",
+   "correct_value": "2025-26: closed Dec 4, 2025; reopened from the east over Washington Pass April 30, 2026; full highway June 14, 2026",
+   "evidence": "WSDOT's news release (and KOMO) report SR 20 closed for the 2025-26 winter at 6 p.m. Dec 4, 2025 between MP 134 and the Silver Star gate (MP 171), not Dec 12. WSDOT's release and blog (and KIRO) report limited access reopened from the east side up to MP 156.8 at Porcupine Creek (west of Rainy and Washington Passes) on April 30, 2026, with full reopening June 14, 2026. So Washington Pass was drivable from the east from April 30; the stored 'closed Dec 12-June 14' is wrong at both ends for this corridor, while the typical-window fields (roughly early Dec to mid/late April, 'roughly May-November') are rough ranges that agree with that.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://komonews.com/news/local/north-cascades-highway-state-route-20-closes-for-winter-season-december-2025-avalanche-danger-snow-fall-rain-weather-pacific-northwest",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://wsdotblog.blogspot.com/2026/04/north-cascades-highway-2026-opening.html",
+    "https://www.kiro7.com/news/local/sr-20-north-cascades-highway-partially-reopens/NT4S5RIDNBBLZPLZ3MOG7QQW44/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year",
+     "replace": "in the 2025-26 season it closed Dec 4, 2025 and reopened from the east side over Washington Pass on April 30, 2026, with the whole highway open again June 14; exact dates vary by year",
+     "id": "wa_first_amendment",
+     "fact": "SR-20 winter closure window"
+    }
+   ]
+  },
+  {
+   "id": "wa_first_amendment",
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+   "verdict": "fixed",
+   "correct_value": "14 consecutive days",
+   "evidence": "The Okanogan-Wenatchee forest order 06-17-00-25-01 (effective May 19, 2025-May 18, 2027) prohibits camping or occupying a single location for longer than 14 consecutive days (28 days total per calendar year). Independent camping guides give the same 14-days-in-30 limit. No 10-day limit applies; access.rules is the outlier (the bivy card's 14 days is correct and is not touched).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/occupancy-and-use-camping-restrictions-forestwide",
+    "https://dispersedapp.com/usfs-camping/washington/okanogan-wenatchee-national-forest/",
+    "https://thedyrt.com/camping/washington/near/okanogan-wenatchee-national-forest/with/dispersed"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days;",
+     "replace": "Dispersed camping capped at 14 consecutive days;",
+     "id": "wa_first_amendment",
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "fact": "Notch elevation vs summit",
+   "verdict": "fixed",
+   "correct_value": "Lexington Tower summit is 7,560 ft; the notch/shoulder where the East Face ends is lower (its height is not published), so 7,621 ft is impossible",
+   "evidence": "Lexington Tower's area page and its encyclopedia entry both give the summit as 7,560 ft (2,304 m); no source gives 7,621 ft. A route overview notes the East Face routes end on a shoulder about 100 ft below the true summit, so the notch pin cannot be 61 ft above it. The notch's own height is unpublished, so the impossible value is cleared rather than replaced; high_point_ft (7,560 = summit) is left as is because the notch height is only approximately known ('about 100 ft below') -- that part stays open. The pin's type 'Summit' is out of scope for this pass.",
+   "sources": [
+    "https://www.mountainproject.com/area/106482003/lexington-tower",
+    "https://en.wikipedia.org/wiki/Lexington_Tower",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Lexington-Tower-North-Face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 7621,
+     "value": null,
+     "id": "wa_lexington_tower_east_face",
+     "fact": "Notch elevation vs summit"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 7621,
+     "value": null,
+     "id": "wa_lexington_tower_east_face",
+     "fact": "Notch elevation vs summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Where a party on 60 m ropes starts rappelling",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "On doubled 60 m ropes the first rappel from the top anchor cannot reach the pitch-5 anchor; stop at the fixed nut-and-sling anchor about halfway down pitch 6",
+   "evidence": "The route's description page says the top rappel is from a bolted anchor 20-30 ft above the old pitch-6 slung-block anchor (or partway through the 4th-class scrambling on P7 -- a description of where that TOP anchor sits), that two 70s reach the P5 anchor from it, and that doubled 60s do not, 'in this case you will need to stop at a fixed nut and sling anchor around halfway up P6'. The row's descent_text, rappels, detailed_rack, approach_variants hazards and rappel_detail[0].hazards all agree with that; rappel_count_note and rappel_detail[0].station misread the P7 phrase as a lower starting point for 60 m parties. No second independent source covers the 60 m detail (the other overview only says to rap with two ropes).",
+   "sources": [
+    "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Lexington-Tower-Tooth-and-Claw"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "a party on 60s has to start lower, from partway through the 4th-class scrambling on pitch 7.",
+     "replace": "a party on doubled 60s has to break the first rappel at a fixed nut-and-sling anchor about halfway down pitch 6.",
+     "id": "wa_tooth_and_claw",
+     "fact": "Where a party on 60 m ropes starts rappelling"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "station"
+     ],
+     "find": "Parties who do not want the full-length first rappel start instead from partway through the 4th-class scrambling on pitch 7.",
+     "replace": "Parties on doubled 60 m ropes cannot reach the pitch-5 anchor from here and must stop at the fixed nut-and-sling anchor about halfway down pitch 6.",
+     "id": "wa_tooth_and_claw",
+     "fact": "Where a party on 60 m ropes starts rappelling"
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Parking pass at the pond pullout",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route-page fields say no permit at the informal highway pullout while access.passRequired says Northwest Forest Pass (access.parking_pass itself only lists the Overlook, Blue Lake and Cutthroat trailheads). A regional climbing overview confirms a pass is required at the Washington Pass Overlook and Blue Lake trailheads but says nothing about the pond/hairpin pullout; only one secondary page (not retrievable to verify) says no pass is needed at the hairpin. A Forest Service statement or a second guide on the pond/hairpin pullout would settle it.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.summitpost.org/wallaby-peak/554133"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Rope length for the two rappels",
+   "verdict": "fixed",
+   "correct_value": "Two ~30 m rappels on a single 60 m rope",
+   "evidence": "A route overview says that from atop pitch 2 'two 30m raps' reach the base and the route can be rappelled at any time with one 60 m rope. The Mountaineers route page lists a 60 m rope, and a trip report describes two single-rope rappels off slung horns. A 30 m rope cannot make a 30 m retrievable rappel, so descent_text's '30m or 60m' is the outlier against rope_length_m, rope_note, rack and rappel_detail.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Lexington-Tower-North-Face",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(a 30m or 60m single-strand rope is sufficient for each)",
+     "replace": "(each is about 30m, so a single 60m rope reaches)",
+     "id": "wa_north_face_3",
+     "fact": "Rope length for the two rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Where the three pitches end",
+   "verdict": "fixed",
+   "correct_value": "Pitch 2 ends in the notch/nook below the summit ridge; pitch 3 follows the Stegosaur crest to the true summit",
+   "evidence": "A trip report describes pitch 2 ending in a nook below the summit ridge and pitch 3 going up the horned crest called the Stegosaur to the top. A route overview says the North Face goes to the true summit and its last pitch is 4th/low-5th ridge scrambling to the summit. The itinerary's '3 pitches ... to the notch' and 'notch between towers' are the outliers against pitch_detail, waypoints and descent.",
+   "sources": [
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Lexington-Tower-North-Face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "3 pitches (5.7 crux low, easing to 5.4-5.6) to the notch between the summits.",
+     "replace": "3 pitches (5.7 crux low, easing to 5.4-5.6), the last along the exposed ridge crest to the true summit.",
+     "id": "wa_north_face_3",
+     "fact": "Where the three pitches end"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Climb 3 pitches to the notch",
+     "replace": "Climb 3 pitches to the summit",
+     "id": "wa_north_face_3",
+     "fact": "Where the three pitches end"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "Summit / notch between towers",
+     "replace": "True summit",
+     "id": "wa_north_face_3",
+     "fact": "Where the three pitches end"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Bivy-only dispute: the shared 'Blue Lake trailhead roadside bivy' note says about half a mile west of the pass while this route's own trailhead fields say just under a mile (road.driveNote ~0.8 mi from the Overlook; a regional overview says about a mile west). The bivy entry itself serves this route; its distance wording belongs to the camping clean-up. No patch.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": []
+  }
+ ]
+}

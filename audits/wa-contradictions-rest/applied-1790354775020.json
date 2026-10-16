@@ -1,0 +1,175 @@
+{
+ "applied": [
+  {
+   "id": "wa_playing_not_spraying",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Cedar Creek Trailhead elevation"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager / ranger district / wilderness"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "column": "access",
+   "path": [
+    "_raw",
+    "land_manager"
+   ],
+   "fact": "Land manager / ranger district / wilderness"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "column": "access",
+   "path": [
+    "_raw",
+    "special_hazards"
+   ],
+   "fact": "Glacier travel on approach"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_the_chalice",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Cedar Creek Trailhead elevation"
+  },
+  {
+   "id": "wa_the_chalice",
+   "column": "rope_length_m",
+   "path": [],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_the_chalice",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Face aspect"
+  },
+  {
+   "id": "wa_the_chalice",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_playing_not_spraying",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5792,
+      "lng": -120.4787,
+      "elev": 4300,
+      "name": "Cedar Creek Trailhead (Trail #476, FR 5310-200)",
+      "note": "Hike Cedar Creek Trail ~5mi, then a rough climbers path follows the creek draining the south side of Silver Horn.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.55186,
+      "lng": -120.59014,
+      "elev": 8351,
+      "name": "The Silver Horn - Summit",
+      "note": "South/SE face rock climb; rarely climbed sub-summit of Silver Star.",
+      "type": "Summit",
+      "distMi": 7
+     }
+    ],
+    "rack": [
+     "Standard alpine rack to 3in, doubles in common mid sizes",
+     "Full stopper/nut set",
+     "8 alpine quickdraws",
+     "Single 60m rope"
+    ],
+    "access": {
+     "_raw": {
+      "approach": "Cedar Creek Trail ~5 miles from parking",
+      "permit_cost": "No additional permit fee",
+      "permit_type": "None required (day climbing)",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest (Wenatchee or Chelan Ranger District)",
+      "pickup_location": "Not applicable (self-issue at trailhead)",
+      "special_hazards": "Glacier travel on approach; exposed rock climbing",
+      "wilderness_zone": "Lake Chelan-Sawtooth Wilderness",
+      "group_size_limits": "Standard USFS 12-person group limit applies",
+      "parking_pass_cost": "$5 day pass or $30 annual",
+      "seasonal_closures": "Typically winter conditions Nov-May; check current conditions",
+      "parking_pass_required": "Northwest Forest Pass"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required (day climbing)",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Lake Chelan-Sawtooth Wilderness",
+     "landManager": "USFS Okanogan-Wenatchee National Forest (Wenatchee or Chelan Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "season": "Jul-Sep"
+   }
+  },
+  {
+   "id": "wa_the_chalice",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5792,
+      "lng": -120.4787,
+      "elev": 4300,
+      "name": "Cedar Creek Trailhead (Trail #476, FR 5310-200)",
+      "note": "Hike Cedar Creek Trail ~5mi, then a rough climbers path follows the creek draining the south side of Silver Horn.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.55186,
+      "lng": -120.59014,
+      "elev": 8351,
+      "name": "The Silver Horn - Summit",
+      "note": "The Chalice route on the SE face of Silver Horn.",
+      "type": "Summit",
+      "distMi": 7
+     }
+    ],
+    "rope_length_m": 60,
+    "season": "Jul-Sep"
+   }
+  }
+ ]
+}

@@ -20,7 +20,7 @@
 //
 // Before the fix, signing in with a profile named "Nathan Barber" put **Angels Landing, Oct
 // 2024, Summit, 5 stars** on your own résumé — a Zion hike the account never logged. It is not
-// only cosmetic: three Leaderboards badges (classics_b, highpoints_b, peaks_b) COUNT these
+// only cosmetic: the Classic climbs Leaderboards badge (classics_b) COUNTS these
 // rows, and `me` is in the leaderboard pool whenever showOnRanks is set, so a name collision
 // SCORES. That is the [[fabricated-activity-family]] lesson — check what the invented value
 // gates, not just what it prints.
@@ -36,6 +36,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -46,7 +47,7 @@ const fail = (msg) => { console.error("  FAIL " + msg); fails++; };
 const ok = (msg) => console.log("  ok   " + msg);
 
 // ---------------------------------------------------------------- static half
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 
 // Blank comments and string/template contents in ONE stateful pass, preserving offsets, so
 // line numbers stay true and prose that merely MENTIONS a pattern cannot trip the scan.
@@ -85,7 +86,7 @@ for (const m of re.exec ? [...core.matchAll(re)] : []) {
   if (!inGate) calls.push({ index: m.index, ctx: core.slice(Math.max(0, m.index - 90), m.index + 40).replace(/\s+/g, " ") });
 }
 for (const f of ["ClimbMatch.jsx", "RouteDetail.jsx"]) {
-  const s = fs.readFileSync(path.join(ROOT, f), "utf8");
+  const s = readAppFile(path.join(ROOT, f));
   for (const m of s.matchAll(/\bticksFor\s*\(/g)) {
     calls.push({ file: f, ctx: s.slice(Math.max(0, m.index - 90), m.index + 40).replace(/\s+/g, " ") });
   }
@@ -104,7 +105,7 @@ if (calls.length) {
 // silently re-weight a derived consensus. Must go through seedAuthor().
 const authorHits = [];
 for (const f of ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"]) {
-  const src = blank(fs.readFileSync(path.join(ROOT, f), "utf8"));
+  const src = blank(readAppFile(path.join(ROOT, f)));
   for (const m of src.matchAll(/===\s*ME\.name\s*\?\s*ME\b/g)) {
     authorHits.push(`${f}:${src.slice(0, m.index).split("\n").length}`);
   }
@@ -117,22 +118,68 @@ if (authorHits.length) {
   ok("no place resolves a seed activity author by comparing against ME.name");
 }
 
+/* THIRD SHAPE: matching a connection against a seed activity AUTHOR by display name, without
+   calling ticksFor and without writing `===ME.name`. Both tests above are blind to it, and it
+   shipped on Home:
+
+       _friendFeed = ROUTES.flatMap(...).filter(x => connections.some(c => c.name === x.a.user))
+
+   `a.user` is a display name belonging to neither id space, so a DB-backed friend called
+   "Maya Chen" was shown her 11 seed climbs as their recent activity — the #735 defect on a
+   surface #735's guard could not see. Crew:Friends' FriendsFeed does the same job correctly,
+   through seedHistoryFor(f).
+
+   The rule is precise rather than a keyword sweep: a comparison whose two sides are a `.name`
+   and a seed row's `.user` is ALWAYS an identity claim, so it must carry `seedIdentity`. Nothing
+   else in this codebase compares those two fields, which is why this can be exact rather than
+   heuristic. */
+const nameVsUser = [];
+for (const f of ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"]) {
+  const src = blank(readAppFile(path.join(ROOT, f)));
+  // Either order: `c.name===x.a.user` or `x.a.user===c.name`.
+  const RE = /(?:\w+(?:\.\w+)*\.name\s*===\s*\w+(?:\.\w+)*\.user|\w+(?:\.\w+)*\.user\s*===\s*\w+(?:\.\w+)*\.name)\b/g;
+  for (const m of src.matchAll(RE)) {
+    // The gate must be in the SAME expression, not merely somewhere in the file.
+    if (/seedIdentity\s*\(/.test(src.slice(m.index, m.index + 90))) continue;
+    nameVsUser.push(`${f}:${src.slice(0, m.index).split("\n").length}  ${m[0]}`);
+  }
+}
+if (!/const seedIdentity\s*=/.test(core)) {
+  fail("seedIdentity is gone from ClimbMatchCore.jsx — the shared identity gate no longer exists");
+} else ok("seedIdentity is present");
+if (nameVsUser.length) {
+  fail(`${nameVsUser.length} place(s) match a connection to a seed activity author by NAME with no identity gate. Add seedIdentity(c) to the comparison, or route it through seedHistoryFor:`);
+  for (const h of nameVsUser) console.error(`         ${h}`);
+} else {
+  ok("no place matches a seed activity author by name without seedIdentity");
+}
+
 // ---------------------------------------------------------------- render half
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOM from "react-dom";
+// Resume ends in createPortal(..., document.body), which the server renderer refuses: portals are
+// PLACEMENT, and check:overlays owns that. Flattened and \`document.body\` stubbed for THIS call only,
+// the same scoped patch check:units uses for FullProfile, so nothing else in the bundle moves.
+function flat(fn) {
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
+}
 import { Resume, ME, __set_DB_UID } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const noop = () => {};
 export function render(climber, uid) {
   __set_DB_UID(uid);
-  return renderToStaticMarkup(
+  return flat(() => renderToStaticMarkup(
     React.createElement(Resume, {
       climber, logs: [], courses: null, extra: null, headline: "",
       onClose: noop, onConnect: noop, onMessage: noop, onAddCourse: noop,
-      onRemoveCourse: noop, onVerifyCourse: noop, onAddExtra: noop,
+      onRemoveCourse: noop, onAddExtra: noop,
       onShare: noop, onExport: noop, onHeadline: noop,
       editable: false, fstate: "none", routeById: () => null,
-    }));
+    })));
 }
 export { ME };
 `;
@@ -176,6 +223,104 @@ if (!demo.includes(MARK)) {
   else ok("a seed climber (numeric id, no session) keeps their history");
 }
 
+// ------------------------------------------- the vouch picker must not OFFER seed climbs
+// Everything above asks whether seed history is ATTRIBUTED to a real account. This asks the
+// mirror: is a real climber INVITED to claim a seed climb as their own?
+//
+// GiveVouch asks "which climb did you two do together?" and the answer is PERSISTED -- the call
+// site does giveVouch(uid, targetId, JSON.stringify({route: v.route, ...})) and `route` is the
+// route's NAME (setRoute(sel?"":r.name)). Its list was ROUTES.filter(...), the SEED demo catalog,
+// and with no query typed that filter keeps everything, while useRouteSearch(USE_DB ? q : "") is
+// disabled on an empty query -- so the real catalog was never consulted for the default view. A
+// real climber vouching for a partner picked from demo climbs, and the pick was written onto a
+// trust record about somebody else.
+//
+// The picker no longer lists anything until you type, except the climber's own LOGBOOK, which App
+// passes in as `suggest`. That is the remaining way a seed climb can reach it under USE_DB: a
+// signed-out visitor's logbook is the seed one. So the control and the assertion both go through
+// `suggest`, fed the same seed routes -- the seed build must list them, the DB build must not.
+//
+// USE_DB is a module constant read from import.meta.env, so it is set here by STUBBING
+// ./lib/supabase rather than standing up a client -- which on node 20 would also need the
+// WebSocket constructor RealtimeClient builds at construction.
+{
+  const VOUCH_ENTRY = `
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import GiveVouch from ${JSON.stringify(path.join(ROOT, "lib", "GiveVouch.jsx"))};
+import { ROUTES } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+const noop = () => {};
+export function render(friend, names) {
+  const suggest = names ? ROUTES.filter((r) => names.includes(r.name)).map((route) => ({ route, date: "", together: false })) : undefined;
+  return renderToStaticMarkup(
+    React.createElement(QueryClientProvider, { client: qc },
+      React.createElement(GiveVouch, { friend, suggest, onClose: noop, onSave: noop })));
+}
+`;
+  const stub = (useDb) => ({
+    name: "stub-supabase",
+    setup(b) {
+      // `./lib/supabase` from core and `./supabase` from inside lib/ — GiveVouch moved to lib/ to
+      // load lazily, so matching only the first spelling silently left the picker in seed mode.
+      b.onResolve({ filter: /(^|\/)supabase$/ }, () => ({ path: "stub", namespace: "sb" }));
+      b.onLoad({ filter: /.*/, namespace: "sb" }, () => ({
+        // Every export lib/supabase.js has: the stub now also answers lib/auth.js's import.
+        contents: `export const USE_DB = ${useDb}; export const supabase = null; export const RECOVERY_LINK = false;`, loader: "js",
+      }));
+    },
+  });
+  const bundleFor = async (useDb) => {
+    const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-vouch-")), "b.cjs");
+    await build({
+      stdin: { contents: VOUCH_ENTRY, resolveDir: ROOT, loader: "js" },
+      bundle: true, format: "cjs", platform: "node", jsx: "automatic",
+      loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
+      plugins: [stub(useDb)], outfile: out, logLevel: "error",
+    });
+    return require_(out).render;
+  };
+  const flat = (html) => html.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
+
+  // A DB-derived friend: a uuid id and NO objectiveIds, which is why the shared-objectives
+  // pinning in that picker can never fire for a real connection.
+  const dbFriend = { id: "8f14e45f-ce9a-4b0e-9c1a-2b3c4d5e6f70", name: "Robin Belay", avatar: "" };
+  // Seed route names READ FROM THE APP rather than typed, so this cannot pass on a stale guess.
+  const seedNames = [...core.matchAll(/\{id:"(?:kings_hf|olympus_wf|lcc_[a-z_]+)",[^]{0,400}?name:"([^"]{4,60})"/g)]
+    .map((m) => m[1]).slice(0, 6).filter(Boolean);
+
+  if (seedNames.length < 3) fail(`ANCHOR LOST: only ${seedNames.length} seed route name(s) parsed — the comparison below would be vacuous`);
+  else {
+    const dbBody = flat(await (await bundleFor(true))(dbFriend, seedNames));
+    const seedBody = flat(await (await bundleFor(false))(dbFriend, seedNames));
+    const hits = (b) => seedNames.filter((n) => b.includes(n));
+
+    // CONTROL FIRST. Without it, "no seed route offered" is equally true of a component that
+    // rendered nothing at all — the vacuous pass this file's case 4 already records.
+    if (!hits(seedBody).length) fail("the seed build offered no routes either, so the USE_DB assertion below proves nothing");
+    else {
+      ok(`the vouch picker still lists seed climbs on the seed path (${hits(seedBody).length} of ${seedNames.length} sampled)`);
+
+      const offered = hits(dbBody);
+      if (offered.length) fail(`the vouch picker offers DEMO climbs to a real climber (${offered.join(", ")}) — and the pick is written onto the vouch`);
+      else ok("no seed climb is offered under USE_DB");
+
+      // ...and the empty list must not claim a search found nothing when none was run.
+      if (/No climbs match\./.test(dbBody)) fail('the empty picker says "No climbs match." before anything has been searched');
+      else ok("the empty picker does not claim a search came back empty");
+      // The prompt is DERIVED from the source, never restated here: a loose /search/i test is
+      // vacuous (the picker's own input placeholder is "Search by climb name or area…", 13
+      // matches in that component), and pinning the exact words would forbid rewording it. A
+      // reword now updates one place and this follows; deleting the branch fails closed.
+      const promptM = core.match(/:!q\?"([^"]{8,80})":"No climbs match\./);
+      if (!promptM) fail("ANCHOR LOST: the picker's unsearched-yet branch could not be read out of ClimbMatchCore.jsx");
+      else if (!dbBody.includes(promptM[1])) fail(`the empty picker does not render its own prompt ("${promptM[1]}") — it is blank with no way forward`);
+      else ok(`the empty picker asks the climber to search ("${promptM[1]}")`);
+    }
+  }
+}
+
 console.log(fails
   ? `\ncheck:seed-history: ${fails} failure(s)`
   : "\ncheck:seed-history: ok — seed climbing history is only ever attributed to seed identities.");
@@ -189,6 +334,10 @@ process.exit(fails ? 1 : 0);
 //   5. re-point MARK at a route with no seed activity       -> ANCHOR LOST, not a silent pass
 //   6. restore one `a.user===ME.name?ME:CLIMBERS.find(…)`   -> the author scan, naming file:line
 //   7. remove seedAuthor from ClimbMatchCore                -> the seedAuthor presence check
+//   8. revert `seedMs=USE_DB||!q?[]:ROUTES.filter(` to ROUTES.filter -> the vouch-picker section,
+//      which then names the demo climbs it offers a real climber
+//   9. drop `&&!(USE_DB&&ROUTES.some(` from GiveVouch's suggest loop -> the same section: the
+//      signed-out seed logbook is offered to a real climber (re-tested 2026-10-01)
 //
 // Case 4 is the one that shaped the render half: gating on `!c.id` looks equivalent and
 // silently empties EVERY seed climber, and a fixed length threshold would not have caught it

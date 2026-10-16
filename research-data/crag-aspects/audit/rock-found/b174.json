@@ -1,0 +1,675 @@
+[
+ {
+  "pid": "az_dromedary_peak",
+  "crag": "Dromedary Peak",
+  "groups": [
+   {
+    "held": "metasedimentary rock (mapped)",
+    "verdict": "wrong",
+    "correct": "rhyolite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105904757/dromedary-peak",
+  "quote": "The rock is volcanic and although it is classified as rhyolite, it is not of the same quality"
+ },
+ {
+  "pid": "az_dry_creek_road_area",
+  "crag": "Dry Creek Road Area",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106482314/s-canyon",
+  "quote": "H.S. Canyon: 'mostly super-hard coconino sandstone' (hedged); Fin/Lost Huecos/Secret Canyon pages name no rock",
+  "note": "Only H.S. Canyon names a rock and it is hedged ('mostly'), so no exception. Lost Huecos Wall page gives both 'south face' and 'west face' - no aspect."
+ },
+ {
+  "pid": "az_finger_rock_canyon",
+  "crag": "Finger Rock Canyon",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Little Bighorn Wall": "W"
+  },
+  "url": "https://www.mountainproject.com/area/118283193/little-bighorn-wall",
+  "quote": "Little Bighorn Wall: 'West facing single pitch (100') desert trad'; no rock named on any page",
+  "note": "Canyon, Finger Rock, Kimball Spires, Ignorance Is Bliss pages name no rock. Aspect recorded only for the exactly-named 'Little Bighorn Wall', not the 'Little Big Horn Wall' spelling."
+ },
+ {
+  "pid": "az_grand_canyon_bouldering",
+  "crag": "Grand Canyon Bouldering",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Moran Point": "limestone",
+   "Hermit Trail Horsethief Tank Cave": "limestone"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122200133/fern-glen-camp",
+  "quote": "Fern Glen: 'cave in the tapeats sandstone layer'; Moran Point: 'white porcelain Limestone'; Horsethief: 'a limestone cave'",
+  "note": "Wall pages: Moran Point (108928055) 'Amazing bouldering on perfect white porcelain Limestone'; Hermit Trail Horsethief Tank Cave (114334349) 'The wash pours off over a limestone cave'. Bright Angel, Grandview, South Rim Trail Boulder, Pipe Creek Beach name no rock; Ribbon Falls says 'limestone and sandstone boulders' (mixed). Crag page lists quartzite, sandstone, limestone and granite (multi-rock)."
+ },
+ {
+  "pid": "az_outback_the",
+  "crag": "Outback, The",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105838485/the-outback",
+  "quote": "No rock named on The Outback or any of its wall pages",
+  "note": "Way Back page says 'Faces SSE.' - not recorded (between S and SE). Green Wall 'Routes Mostly Face: South' is hedged; Livin Large / Mystery Pinnacle name only a face."
+ },
+ {
+  "pid": "az_raven_c",
+  "crag": "Raven C",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/124702528/east-face",
+  "quote": "No rock named on Raven C or its East Face page",
+  "note": "'The east face (home to El Curvo)' names a face, not a stated aspect."
+ },
+ {
+  "pid": "az_willow_canyon_crags",
+  "crag": "Willow Canyon Crags",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105738107/rose-hill-crag",
+  "quote": "Rose Hill Crag: 'The climbs face southeast'; no rock named on crag or wall pages"
+ },
+ {
+  "pid": "az_winslow_hwy_s_87_99_corridors",
+  "crag": "Winslow- Hwy’s 87 & 99 Corridors",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "limestone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107215638/powerline-crag",
+  "quote": "The Powerline Crag is a heavily forested limestone wall."
+ },
+ {
+  "pid": "bc_comic",
+  "crag": "Comic",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114531165/comic",
+  "quote": "Only grandparent Arrow Lake says 'compact version of Gneiss'; Comic, Gotham, Nuclear, Watchmen name no rock"
+ },
+ {
+  "pid": "bc_east_sooke_regional_park",
+  "crag": "East Sooke Regional Park",
+  "groups": [
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "diabase (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122391452/east-sooke-regional-park",
+  "quote": "No rock named on the park page or Copper Mine, Iron Mine, Park Heights, Tabasco Rock pages"
+ },
+ {
+  "pid": "bc_north_fork",
+  "crag": "North Fork",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "syenite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/126033327/north-fork",
+  "quote": "No rock named; North Fork: 'Home to the bolted pillars of the old Granby Dam'",
+  "note": "Granby Dam Crag may be bolted dam pillars (man-made?) - its own page does not say what the surface is."
+ },
+ {
+  "pid": "bc_road_rage",
+  "crag": "Road Rage",
+  "groups": [
+   {
+    "held": "quartz diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/202346259/road-rage",
+  "quote": "southwest-facing crag with nineteen trad, sport and mixed routes ... on quality granite",
+  "note": "Plain 'granite' does not confirm held quartz diorite. SW is crag-wide only; no tier page states an aspect."
+ },
+ {
+  "pid": "bc_the_zip",
+  "crag": "The Zip",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105941640/the-zip",
+  "quote": "No rock named; Burning Man Corner: 'Beautiful white rock left of the Zip'"
+ },
+ {
+  "pid": "bc_upper_badge_trail_boulders",
+  "crag": "Upper Badge Trail Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/126546701/upper-badge-trail-boulders",
+  "quote": "No rock named on Upper Badge Trail, Sheriff's Badge or North Wall Boulders pages"
+ },
+ {
+  "pid": "ca_3_third_tier",
+  "crag": "3-Third Tier",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/117639326/3-third-tier",
+  "quote": "No rock named on 3-Third Tier, Breeze Way, Shadow Wall or Mountaineer Walls pages"
+ },
+ {
+  "pid": "ca_atlantis_wall",
+  "crag": "Atlantis Wall",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105720669/atlantis-wall",
+  "quote": "No rock named on Atlantis Wall, Left or Right pages"
+ },
+ {
+  "pid": "ca_bond_boulders_the",
+  "crag": "Bond Boulders, The",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105721235/the-bond-boulders",
+  "quote": "'a collection of large chocolate brown boulders' - no rock named"
+ },
+ {
+  "pid": "ca_campground_cluster",
+  "crag": "Campground Cluster",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120334904/campground-cluster",
+  "quote": "No rock named; only parent Fairview Mountain says 'The rock is Monzonite'"
+ },
+ {
+  "pid": "ca_cemetery_bouldering",
+  "crag": "Cemetery Bouldering",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118709200/cemetery-bouldering",
+  "quote": "No rock named; parent Cemetery says 'fine granite reminiscent of the domes of Joshua Tree'"
+ },
+ {
+  "pid": "ca_checkerboard_area",
+  "crag": "Checkerboard Area",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106129148/checkerboard-area",
+  "quote": "No rock named on Checkerboard Area page",
+  "note": "Checkerboard Boulder has a 'slightly overhanging right (northwest) face' - a face, not an aspect."
+ },
+ {
+  "pid": "ca_chimney_rock_4",
+  "crag": "Chimney Rock",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105721034/chimney-rock",
+  "quote": "No rock named; 'The quartz dike is Pinched Rib.'"
+ },
+ {
+  "pid": "ca_cosumnes_river_gorge",
+  "crag": "Cosumnes River Gorge",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105733956/cosumnes-river-gorge",
+  "quote": "Nestled into the western Sierra near the town of Placerville, you will find this granite gem.",
+  "note": "Plain 'granite' does not confirm held granodiorite; no geology source found."
+ },
+ {
+  "pid": "ca_creamery_the",
+  "crag": "Creamery, The",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108446696/the-creamery",
+  "quote": "No rock named on The Creamery page"
+ },
+ {
+  "pid": "ca_deadwood_crags",
+  "crag": "Deadwood Crags",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Bandit Buttress": "S",
+   "Crystal Wall": "SE",
+   "Deadwood Wall": "SE"
+  },
+  "url": "https://www.mountainproject.com/area/107021027/deadwood-wall",
+  "quote": "Deadwood Wall: 'This southeast-facing, single pitch wall'; Crystal Wall: 'southeast-facing wall is of quality granite'",
+  "note": "Bandit Buttress (109221587): 'The south facing rock face is quite pleasant for winter climbing'. Crystal Wall (107793015): 'This two pitch southeast-facing wall is of quality granite'. Plain granite does not confirm granodiorite."
+ },
+ {
+  "pid": "ca_f_west_face_bulge_routes",
+  "crag": "West Face Bulge Routes",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105798960/west-face-bulge-routes",
+  "quote": "No rock named on West Face Bulge Routes, its three sub-walls or Tahquitz Rock page"
+ },
+ {
+  "pid": "ca_far_east_2",
+  "crag": "Far East",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Bighorn Dome": "N",
+   "White Elephant (aka Comet Wall), The": "SW"
+  },
+  "url": "https://www.mountainproject.com/area/110199930/the-white-elephant-aka-comet-wall",
+  "quote": "White Elephant: 'A 250' southwest-facing slabby wall'; no rock named on any page",
+  "note": "Bighorn Dome (105721070): 'A shady north facing wall with many clean cracks.' Poodle Smasher Area (105721022): 'The routes face north.' The Refrigerator (108053853) Getting There: 'Continue about 100 meters north to the obvious west-facing formation.'"
+ },
+ {
+  "pid": "ca_feather_fortress",
+  "crag": "Feather Fortress",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "The Catacombs": "N"
+  },
+  "url": "https://www.mountainproject.com/area/201723906/feather-fortress",
+  "quote": "This plug of granite sits high above Three Lakes Road on the side of Bald Eagle Mountain.",
+  "note": "Plain granite does not confirm granodiorite. Catacombs (203038152): 'This area is North facing'. Tombstone/Missouri Wall/Keep pages name only a face or side."
+ },
+ {
+  "pid": "ca_grand_canyon",
+  "crag": "Grand Canyon",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105720930/grand-canyon",
+  "quote": "No rock named on Grand Canyon or its four sub-wall pages",
+  "note": "Parent says 'This east-facing wall with the dike is the Grand Canyon Wall' - not matched to a sub-wall by name."
+ },
+ {
+  "pid": "ca_great_stone_face_rock_park",
+  "crag": "Great Stone Face Rock Park",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "rhyolite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://ncgeolsoc.org/wp-content/uploads/2003-2-Northbrae-Rhyolite.pdf",
+  "quote": "Great Stone Face Park (Northbrae Rhyolite) ... Great Stone Face, another Northbrae Rhyolite block",
+  "note": "NCGS 2003 Northbrae Rhyolite field-trip guide (geology source; PDF text extracted). MP crag page says only 'Standard Berkeley rock type'."
+ },
+ {
+  "pid": "ca_hetch_hetchy",
+  "crag": "Hetch Hetchy",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107751068/hetch-hetchy",
+  "quote": "Crag-wide only: 'find inspiration among its sheer granite walls'; no wall page names a rock"
+ },
+ {
+  "pid": "ca_jupiter_boulders",
+  "crag": "Jupiter Boulders",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Spaceman Spiff Boulder": "NE"
+  },
+  "url": "https://www.mountainproject.com/area/120146936/jupiter-boulders",
+  "quote": "Crag-wide only: 'High quality water polished granite'; no boulder page names a rock",
+  "note": "Spaceman Spiff Boulder (200462706): 'An obvious, 25-degree angled wall facing northeast.'"
+ },
+ {
+  "pid": "ca_lehi_s_wilderness",
+  "crag": "Lehi's Wilderness",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107785124/lehis-wilderness",
+  "quote": "No rock named on Lehi's Wilderness or its four wall pages",
+  "note": "Curelom Rock page names both West and South facing walls - no aspect."
+ },
+ {
+  "pid": "ca_lower_yosemite_falls_boulders",
+  "crag": "Lower Yosemite Falls Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/123528207/lower-yosemite-falls-boulders",
+  "quote": "No rock named on the Lower Yosemite Falls Boulders page"
+ },
+ {
+  "pid": "ca_manx_boulders",
+  "crag": "Manx Boulders",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/v/manx-boulders/106041703",
+  "quote": "'two oblong boulders separated by a narrow chimney/gap' - no rock named"
+ },
+ {
+  "pid": "ca_moonlight_crags",
+  "crag": "Moonlight Crags",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "rhyolite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112336533/moonlight-crags",
+  "quote": "The rock is porphyritic rhyolite, which is the same stuff that granite is made of",
+  "note": "Crag-wide 'eastern exposure' not carried to walls; The Moon 'facing east' is only a photo caption."
+ },
+ {
+  "pid": "ca_ranger_station_rock",
+  "crag": "Ranger Station Rock",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Dos Coyotes Crag": "NE"
+  },
+  "url": "https://www.mountainproject.com/area/121288534/dos-coyotes-crag",
+  "quote": "Dos Coyotes: 'This is a northeast facing wall with a trio of grainy and unpleasant cracks.'"
+ },
+ {
+  "pid": "ca_rock_craft_north_face",
+  "crag": "Rock Craft (North Face)",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120331179/rock-craft-north-face",
+  "quote": "The shady north face of Rock Craft is a large complex wall - no rock named",
+  "note": "North-face statement is crag-level; not carried to the Lower/Upper sub-walls."
+ },
+ {
+  "pid": "ca_rockview_park",
+  "crag": "Rockview Park",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119898445/rockview-park",
+  "quote": "No rock named on Rockview Park or its wall pages"
+ },
+ {
+  "pid": "ca_rotten_rock_valley_west",
+  "crag": "Rotten Rock Valley West",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Barbarian Rock": "S",
+   "Borderline Pinnacle": "SW"
+  },
+  "url": "https://www.mountainproject.com/area/113947060/barbarian-rock",
+  "quote": "Barbarian Rock: 'A large formation facing south'; Borderline: 'A southwest facing rock'; no rock named"
+ },
+ {
+  "pid": "ca_squirrel_creek",
+  "crag": "Squirrel Creek",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/116493174/squirrel-creek",
+  "quote": "The creek is obvious, as it has granite slabs and great looking swimming holes.",
+  "note": "Approach remark, plain granite; does not confirm granodiorite."
+ }
+]

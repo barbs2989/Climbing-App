@@ -1,0 +1,284 @@
+{
+ "batches": ["batches/b197.json", "batches/b198.json", "batches/b199.json", "batches/b200.json"],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "name": "Standard Route / Southeast Scramble",
+   "area": "Pyramid Peak",
+   "contradictions": [
+    {
+     "fact": "Total route distance (dist_km)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "3.4 (km, = 2.1 mi)"},
+      {"field": "waypoints[6] (Pyramid Peak Summit).distMi", "says": "6.2 (one-way trailhead to summit)"},
+      {"field": "itinerary.totalNote", "says": "~12.4 mi ... round trip total"}
+     ],
+     "why": "dist_km (2.1 mi) doesn't match the route's one-way distance (6.2 mi per waypoints) or round-trip distance (~12.4-12.6 mi per itinerary); it instead matches the sub-distance to Pyramid Lake alone (waypoint distMi 2.1), suggesting it was copied from the wrong leg rather than reflecting a one-way/round-trip convention difference.",
+     "internal_resolution": "Waypoints and itinerary agree with each other (~6.2 mi one-way / ~12.4-12.6 mi round trip); dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier crossing on the standard route (content contamination)",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[1].note", "says": "Break camp early, cross the Colonial-Neve glacier basin (rope up; it is crevassed with bergschrunds/moats late season) to the base of Pyramid's southeast slopes, then scramble a loose rock-and-snow finger to the summit ridge."},
+      {"field": "itinerary.days[1].schedule[0].detail", "says": "Cross the Colonial-Neve glacier basin toward Pyramid's southeast side."},
+      {"field": "timing.sectionBreakdown[1].note", "says": "Break camp early, cross the Colonial-Neve glacier basin (rope up; it is crevassed with bergschrunds/moats late season) to the base of Pyramid's southeast slopes..."},
+      {"field": "rope_note", "says": "Approach crosses the Colonial Glacier basin (crevasses, steep snow finger) - carry ice axe, crampons, and consider a rope for glacier travel; final ridge/summit is a Class 3 rock scramble, typically unroped."},
+      {"field": "itinerary.cal", "says": "...once the Colonial-Neve glacier crossing firms up but before it gets too bare/crevassed."},
+      {"field": "itinerary.totalNote", "says": "...then a long second day crossing the Colonial-Neve glacier basin to the 7,189 ft summit..."},
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel on the standard SE scramble route (unlike some neighboring Colonial Peak routes that cross the Colonial Glacier)"},
+      {"field": "beta / approach / descent_text / climbing_route / waypoints", "says": "South ridge via Pyramid Lake climbers' path and the Pinnacle-Pyramid saddle; no glacier anywhere in the described geography"}
+     ],
+     "why": "Six fields (itinerary days/schedule/cal/totalNote, timing.sectionBreakdown, rope_note) claim the route crosses the roped, crevassed Colonial-Neve glacier, directly contradicting the route's own seasonal_hazards.crevasses ('N/A - no glacier travel'), obj_haz (no crevasse hazard listed), and the entire overview/beta/approach/descent_text/waypoints/climbing_route, which describe only a south-ridge scramble via Pyramid Lake and the Pinnacle-Pyramid saddle. This reads as copy-pasted content from a different (glaciated) route, e.g. neighboring Colonial Peak, which the route's own text ironically name-checks as the glaciated exception.",
+     "internal_resolution": "The large majority of fields (overview, beta, approach, descent_text, waypoints, climbing_route, obj_haz, seasonal_hazards.crevasses, detailed_rack) agree there is no glacier on this route; itinerary/timing/rope_note are the contaminated outliers.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_south_ridge",
+   "name": "South Ridge Route",
+   "area": "Ruby Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "name": "Happy Creek Route",
+   "area": "Ruby Mountain",
+   "contradictions": [
+    {
+     "fact": "Route aspect/face vs. described side of the mountain",
+     "severity": "medium",
+     "claims": [
+      {"field": "aspect", "says": "E"},
+      {"field": "face", "says": "East Face / Happy Creek drainage"},
+      {"field": "overview", "says": "A winter/spring line up Ruby's north side following the Happy Creek drainage..."},
+      {"field": "beta", "says": "...continuing up the north-side slopes to the summit."},
+      {"field": "approach", "says": "...continue up the north-side terrain to the summit."},
+      {"field": "descent_text", "says": "Retrace the ascent down the north-side slopes..."},
+      {"field": "pitch_detail[3].notes", "says": "Snow cover typically begins near 2,800 ft; continue up the north-side terrain to the summit."}
+     ],
+     "why": "aspect and face both state the route is East-facing, but overview, beta, approach, descent_text and pitch_detail (5 separate mentions) all describe it as climbing the mountain's 'north side'/'north-side slopes' — a material difference for a winter/avalanche route where aspect drives loading and stability assessment.",
+     "internal_resolution": "The prose majority (5 fields) consistently says 'north side'; aspect/face ('E'/'East Face', 2 fields) are the likely outliers, though true geographic orientation was not independently verified.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_northwest_ridge",
+   "name": "Northwest Ridge Route",
+   "area": "Ruby Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "name": "East Ridge",
+   "area": "Snowking Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation loss (loss_ft) vs itinerary",
+     "severity": "high",
+     "claims": [
+      {"field": "loss_ft", "says": "1100"},
+      {"field": "itinerary.days[0].lossFt", "says": "300"},
+      {"field": "itinerary.days[1].lossFt", "says": "6100"},
+      {"field": "gain_ft", "says": "6800"}
+     ],
+     "why": "This is an out-and-back route (same trailhead in/out), so total loss should be close to total gain (6800 ft). The itinerary's own days sum to 6400 ft of loss (300+6100), consistent with that, but the route-level loss_ft field says only 1100 ft — off by roughly 5-6x from both the itinerary sum and the route's own gain_ft.",
+     "internal_resolution": "gain_ft (6800) and the itinerary day-by-day lossFt sum (6400) agree with each other and with the out-and-back geometry; loss_ft (1100) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cyclone Lake camp elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[0].objective", "says": "Reach camp near Cyclone Lake (~4,800 ft)"},
+      {"field": "waypoints (Cyclone Lake).elev", "says": "5354"},
+      {"field": "bivy[1] (Cyclone Lake and the lakes just north of it).elev", "says": "5442"}
+     ],
+     "why": "The itinerary states the Cyclone Lake camp sits at ~4,800 ft, but the route's own Cyclone Lake waypoint (5,354 ft) and bivy entry (5,442 ft) put it 550-650 ft higher. Day 1's own gainFt (4700, from a ~1250 ft trailhead net of a small loss) also implies an end elevation near 5,600-5,650 ft, not 4,800 ft.",
+     "internal_resolution": "Waypoint elevation, bivy entry, and day-1's own gain math all cluster around 5,350-5,650 ft; the itinerary objective's '~4,800 ft' figure is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "name": "Standard Route / Snowking Glacier",
+   "area": "Snowking Mountain",
+   "contradictions": [
+    {
+     "fact": "Commitment grade (commitment vs alpine_grade)",
+     "severity": "medium",
+     "claims": [
+      {"field": "commitment", "says": "III"},
+      {"field": "alpine_grade", "says": "II"}
+     ],
+     "why": "Both fields represent the same overall commitment/seriousness scale for this route (rendered as separate grade chips on Overview) but disagree by a full grade, which matters for how a party plans time and bail options.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "May-Jul"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through early September, once the approach brush/trail is snow-free and the Snowking Glacier is still well-covered"},
+      {"field": "seasonal_guidance.monthBreakdown.August.status", "says": "optimal"},
+      {"field": "best_season", "says": "Mid-summer through early fall once the approach is snow-free and the glacier is well-covered."},
+      {"field": "climate.bySeason.summer", "says": "July-September is the most reliable weather and travel window..."}
+     ],
+     "why": "The season field ends in July, but seasonal_guidance names August as the single optimal month and September as good — both entirely outside the stated season window. best_season and climate.bySeason.summer independently corroborate a July-September (not May-July) window. A climber reading only 'season: May-Jul' would believe the climbing season is over before the route's own data says the best month (August) even begins.",
+     "internal_resolution": "Four fields (seasonal_guidance, best_season, climate.bySeason.summer, pro_tips) agree the real window runs July-September with August optimal; the season field's 'May-Jul' is the outlier, possibly conflating this with the separate spring ski-mountaineering window mentioned under climate.bySeason.spring.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche zone claim on a glaciated route",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer route (climbed in the Jul-Sep snow-free/glacier-travel window, outside NWAC's Nov-Apr winter forecast season; nearest NWAC coverage for this area is the West Slopes North zone)"},
+      {"field": "seasonal_hazards.crevasses", "says": "Real hazard, not N/A - the existing hazards list names crevasse fall on the Snowking Glacier specifically..."},
+      {"field": "obj_haz", "says": "Wet-slide/avalanche potential on the glacier approach slopes in spring"},
+      {"field": "name / overview", "says": "Standard Route / Snowking Glacier ... roped travel is warranted..."}
+     ],
+     "why": "seasonal_hazards.avalanche.zone claims this is a 'non-glaciated' route, but this route is literally named for and built around crossing the Snowking Glacier — its own seasonal_hazards.crevasses field, obj_haz list, gear, and overview all describe glacier/crevasse hazard and roped travel. This looks like text copied from the sibling non-glaciated East Ridge route.",
+     "internal_resolution": "Every other field on this route (name, overview, gear, obj_haz, seasonal_hazards.crevasses) confirms the route is glaciated; the avalanche.zone 'non-glaciated' claim is the outlier and self-contradicts the adjacent seasonal_hazards.crevasses field in the same object.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cyclone Lake camp elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[0].objective", "says": "Reach camp in the meadows near Cyclone Lake (~4,800 ft)"},
+      {"field": "waypoints (Cyclone Lake meadows).elev", "says": "5354"},
+      {"field": "bivy[1] (Cyclone Lake and the lakes just north of it).elev", "says": "5442"}
+     ],
+     "why": "Same pattern as the sibling East Ridge route: the itinerary states the Cyclone Lake camp is at ~4,800 ft, while this route's own Cyclone Lake waypoint (5,354 ft) and bivy entry (5,442 ft) are 550-650 ft higher.",
+     "internal_resolution": "Waypoint and bivy elevations agree with each other; the itinerary's '~4,800 ft' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "grade_num vs stated grade text",
+     "severity": "low",
+     "claims": [
+      {"field": "grade", "says": "Class 2-3 + glacier"},
+      {"field": "grade_num", "says": "4"}
+     ],
+     "why": "grade_num (4) doesn't match the highest class named in the grade text ('Class 2-3'); rock_grade separately caps at 'Class 3 (summit block only)', so 4 doesn't clearly correspond to any stated class on this route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_spider_mountain_north_face",
+   "name": "North Face (Kloke-Tindall Route)",
+   "area": "Spider Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "name": "Southeast Gully / East Ridge (Spider-Formidable Col)",
+   "area": "Spider Mountain",
+   "contradictions": [
+    {
+     "fact": "Cache Col elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "...reach Cache Col (~6,900 ft)..."},
+      {"field": "bivy[0] (Cache Col and the Cache Glacier shoulder).elev", "says": "6400"}
+     ],
+     "why": "The approach prose puts Cache Col at ~6,900 ft, but the route's own bivy entry for the same named place gives 6,400 ft — a 500 ft gap that exceeds the bivy entry's own caveat that published figures 'vary by a couple of hundred feet.'",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "name": "Southwest Scramble",
+   "area": "Storm King",
+   "contradictions": [
+    {
+     "fact": "Trailhead identity and location",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0] (Colonial Creek Campground Trailhead).note", "says": "Drive-to trailhead on SR-20 at Rainy Pass (milepost ~158); hike south on the Bridge Creek Trail/PCT ~9.5 mi (with ~2000 ft loss) to North Fork Group Camp... The current DB trailhead (Thunder Creek Trailhead / Colonial Creek Campground, ~48.6855,-121.0925) is a different, unconnected drainage well north of here and is very likely wrong."},
+      {"field": "waypoints[0].elev", "says": "4875"},
+      {"field": "waypoints[0].directions", "says": "Drive SR-20 (the North Cascades Highway) to the Colonial Creek Campground trailhead... the Thunder Creek Trail... climbs only about 600 feet over its first 13 miles up-valley."},
+      {"field": "road.driveNote", "says": "For the Thunder Creek approach, the Colonial Creek Campground trailhead is on SR-20 about 24 miles east of Marblemount, just past milepost 130."},
+      {"field": "waypoints[1] (Skagit Queen Camp).directions", "says": "Follow the Thunder Creek Trail south from the Colonial Creek Campground trailhead on SR-20 — an easy, mostly-forested stock/hiker trail with only about 600 ft of gain — roughly 13 miles up-valley..."}
+     ],
+     "why": "The trailhead waypoint's own 'note' field flags itself as 'very likely wrong': it describes a Rainy Pass/Bridge Creek Trail/PCT start at milepost ~158 and 4,875 ft, but that same waypoint's 'directions' field, plus road.driveNote and every other waypoint in the route, describe the low-elevation (~1,200 ft) Thunder Creek Trailhead at Colonial Creek Campground, milepost 130 — a completely different location roughly 28 highway miles away. This is exactly the 'wrong trailhead' failure mode that could misdirect a party's whole trip.",
+     "internal_resolution": "The waypoint's own note self-flags as likely wrong, and it is outvoted by its own 'directions' field, road.driveNote, and all downstream waypoints (Skagit Queen Camp, Park Creek Pass, etc.), which consistently describe the Colonial Creek Campground / Thunder Creek Trailhead at MP130, ~1,200 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total round-trip mileage",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[0].miles", "says": "9.5"},
+      {"field": "itinerary.days[1].miles", "says": "5"},
+      {"field": "itinerary.days[2].miles", "says": "19"},
+      {"field": "itinerary.totalNote", "says": "A 3-day, roughly 40-45 mile round-trip trip..."}
+     ],
+     "why": "The three itinerary days sum to 33.5 mi, but totalNote claims 40-45 mi round trip. Waypoints put the high basin ~22 mi one-way from the trailhead (rib camp distMi 21, summit crux distMi 22.4), implying a ~44-45 mi round trip that matches totalNote, not the day-by-day sum — day 3 in particular ('summit day and full descent to trailhead,' 19 mi) looks too short to cover the ~15+ mi of remaining approach plus the full ~22 mi descent it claims to complete.",
+     "internal_resolution": "totalNote and the waypoint mileages agree on ~40-45 mi round trip; the itinerary day-by-day miles (summing to 33.5) are the outlier, likely undercounting day 3.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel count and rope length for the descent",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Normally downclimbed; at most one optional rappel off fixed slings near the summit back to the north-side ledge. Carry a 60 m rope for it"},
+      {"field": "rappel_count_note", "says": "Most parties downclimb this rather than rappel... If you use it, a single rappel off the east side returns you to the ledge on the north side, and even with a 60 m rope expect to downclimb some class 3 terrain."},
+      {"field": "descent_text", "says": "...parties typically make two short rappels off fixed slings... to get back down through the ~15-ft crux crack and the exposed, Class 4 ledge just below it. Each rappel is short enough that a single 30m rope is sufficient, though many parties carry a 60m anyway..."}
+     ],
+     "why": "rappels and rappel_count_note both describe at most ONE optional rappel and recommend a 60 m rope (even then some downclimbing remains). descent_text instead describes TWO rappels as typical and says a 30 m rope is sufficient — a materially different rope-length and rappel-count recommendation that a party would use to pack gear.",
+     "internal_resolution": "Two fields (rappels, rappel_count_note) agree on one rappel / 60 m rope; descent_text (two rappels / 30 m) is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_north_face",
+   "name": "North Face",
+   "area": "Storm King",
+   "contradictions": []
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "name": "Neve Glacier Approach / Standard",
+   "area": "The Needle",
+   "contradictions": [
+    {
+     "fact": "Summit descent method (rappel vs downclimb)",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "1 rappel (~25 ft) off a large flake on the summit, down the north face to a ledge, then walk back to the ledge below the gendarme"},
+      {"field": "waypoints (The Needle summit).note", "says": "...one unavoidable low 5th-class move — rappelling the final ridge is standard for the descent."},
+      {"field": "itinerary.days[1].schedule[3].label", "says": "Summit (7,433 ft)... 'Summit, then rappel off'"},
+      {"field": "descent_text", "says": "Reverse the ascent: down-climb the low 5th-class move and ridge back to the glacier rim, re-cross the Neve and Colonial Glaciers..."}
+     ],
+     "why": "rappels, the summit waypoint note, and the itinerary schedule all describe a standard ~25 ft rappel off a summit flake as part of the descent, but descent_text describes only downclimbing the low 5th-class move and ridge with no rappel mentioned at all — a real discrepancy about whether rappel gear/technique is needed off the summit.",
+     "internal_resolution": "Three fields (rappels, waypoint note, itinerary schedule) agree a rappel is standard; descent_text is the outlier, omitting it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Emergency/dispatch phone numbers",
+     "severity": "medium",
+     "claims": [
+      {"field": "comms", "says": "Park dispatch can be reached at (360) 873-4500 ext. 37 in emergency situations... The Wilderness Information Center in Marblemount at (360) 854-7200 can provide emergency coordination."},
+      {"field": "emergency.notes", "says": "...call (360) 856-5700 ext. 515 during business hours, or the North Cascades Communications Center after hours at (360) 873-4590 ext. 37."}
+     ],
+     "why": "comms gives the after-hours dispatch number as (360) 873-4500 and the Wilderness Information Center as (360) 854-7200, but this route's own emergency.notes field (and the consistent numbers used across other routes in this batch, e.g. Pyramid Peak, Storm King: 873-4590 / 854-7245) both disagree — a wrong digit in a listed emergency number is exactly the kind of detail a party might actually dial.",
+     "internal_resolution": "emergency.notes' '873-4590' matches the number used consistently elsewhere in the dataset; comms' '873-4500' and '854-7200' are the likely typoed outliers.",
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

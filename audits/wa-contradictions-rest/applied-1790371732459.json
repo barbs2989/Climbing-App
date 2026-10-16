@@ -1,0 +1,1950 @@
+{
+ "applied": [
+  {
+   "id": "wa_liberty_traverse",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Scope of the traverse (which summits, where it ends)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Scope of the traverse (which summits, where it ends)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Scope of the traverse (which summits, where it ends)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Scope of the traverse (which summits, where it ends)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Scope of the traverse (which summits, where it ends)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Scope of the traverse (which summits, where it ends)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Bail options mid-traverse"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Bail options mid-traverse"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    1
+   ],
+   "fact": "Bail options mid-traverse"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    4
+   ],
+   "fact": "Bail options mid-traverse"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Rope for the descent"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope for the descent"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Climbing time"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit/climb time vs car-to-car total"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Blue Lake Trailhead location"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Blue Lake Trailhead elevation (waypoint)"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "beta",
+   "path": [],
+   "fact": "Crowds"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    4,
+    "name"
+   ],
+   "fact": "Whether the approach enters the Liberty Bell-Concord gully/notch"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Whether the approach enters the Liberty Bell-Concord gully/notch"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Whether the approach enters the Liberty Bell-Concord gully/notch"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Protection on the crux"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Descent sequence from the summit"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead location/elevation"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead location/elevation"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead location/elevation"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead location/elevation"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead location/elevation"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead location/elevation"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Climbers' path signage"
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "directions"
+   ],
+   "fact": "Climbers' path signage"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "overview",
+   "path": [],
+   "fact": "Difficulty level / required leading grade"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Difficulty level / required leading grade"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Difficulty level / required leading grade"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Blue Lake Trailhead location/elevation (waypoint)"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Blue Lake Trailhead location/elevation (waypoint)"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "descent",
+   "path": [],
+   "fact": "Ropes needed for the descent"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Ropes needed for the descent"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Ropes needed for the descent"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Ropes needed for the descent"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Standard descent"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Aid grade"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Aid grade"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Aid grade"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Aid grade"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Aid grade"
+  },
+  {
+   "id": "wa_liberty_crack",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "Aid grade"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "time"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Ropes for the descent"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Ropes for the descent"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Ropes for the descent"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "overview",
+   "path": [],
+   "fact": "Which pitch is the Lithuanian Lip"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Headline difficulty in watch-out"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "rappel_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Blue Lake Trailhead elevation (waypoint)"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and side of the mountain"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and side of the mountain"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead and side of the mountain"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trailhead and side of the mountain"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "time"
+   ],
+   "fact": "Trailhead and side of the mountain"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time/distance"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time/distance"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Descent"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Face named in rack/tips"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Face named in rack/tips"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Face named in rack/tips"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "What the stored approach says"
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    1
+   ],
+   "fact": "What the stored approach says"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent sequence and anchors"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "rappel_detail",
+   "path": [
+    2,
+    "anchor"
+   ],
+   "fact": "Descent sequence and anchors"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead waypoint"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "beta",
+   "path": [],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Start location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_liberty_traverse",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5155,
+      "lng": -120.6588,
+      "elev": 7720,
+      "name": "Liberty Bell Mountain",
+      "note": "Traverse links Concord Tower and Lexington Tower before finishing at Liberty Bell's true summit.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "itinerary": {
+     "cal": "Best done in a long daylight window (June-Sept) for margin on the descent.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long linkup across the Liberty Bell group - typically Liberty Bell, Concord Tower, and Lexington Tower, sometimes extended toward the Early Winter Spires - moving over summits on 4th/low-5th class terrain and short rappels between towers rather than following one defined route.",
+       "hours": 13,
+       "miles": 7,
+       "title": "Full massif traverse",
+       "gainFt": 3500,
+       "lossFt": 3500,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30-4:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Early start for margin"
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach base, begin traverse",
+         "detail": ""
+        },
+        {
+         "time": "Midday",
+         "label": "Cross Liberty Bell to Concord Tower",
+         "detail": ""
+        },
+        {
+         "time": "Afternoon",
+         "label": "Continue to Lexington Tower (or turn around, depending on party)",
+         "detail": ""
+        },
+        {
+         "time": "5:00-7:00 PM",
+         "label": "Back at car",
+         "detail": "Final rappel/downclimb off the last tower"
+        }
+       ],
+       "objective": "Traverse the Liberty Bell group (Liberty Bell, Concord, Lexington towers)"
+      }
+     ],
+     "totalNote": "A single very long day for strong, efficient parties, roughly 12-14 hrs car-to-car across multiple summits."
+    },
+    "timing": {
+     "totalHrs": 13,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 2.5,
+     "recommendedStart": "3:30-4:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 13,
+       "note": "A long linkup across the Liberty Bell group - typically Liberty Bell, Concord Tower, and Lexington Tower, sometimes extended toward the Early Winter Spires - moving over summits on…",
+       "fromTo": "Full massif traverse",
+       "section": "Climb"
+      }
+     ]
+    },
+    "hazards": [
+     "Approach/connecting gully toward North and South Early Winter Spire is reported as loose underfoot — recommended to favor climber's-left low, then cross to climber's-right in the upper third.",
+     "Full traverse offers limited bail-out options once committed past the first tower; a late-September attempt was caught by fresh overnight snow to 6,500 ft and ice on low-angle slabs, forcing a rappel retreat rather than completion."
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "North Cascades afternoon thunderstorms and rapid weather changes are a standard summer hazard; a multi-summit day-long traverse has limited quick-bail options if weather turns mid-route",
+      "probability": "No published percentage found; one documented late-season (Sept) attempt was caught by an overnight snowfall to 6,500 ft"
+     },
+     "exposure": "High commitment: once past the first tower, retreat requires either continuing the traverse or technical rappels off unfamiliar terrain on subsequent towers. The connecting approach gully to North/South Early Winter Spire is reported as loose underfoot; a rappel station exists just below the South Early Winter Spire summit to avoid an exposed down-climb.",
+     "avalanche": {
+      "zone": "N/A — summer rock traverse, not avalanche terrain in the normal climbing window",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A"
+      }
+     },
+     "crevasses": {
+      "timing": "N/A",
+      "location": "None — granite spire group, no glacier travel"
+     }
+    },
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the Liberty Bell-Concord notch (traverse start)",
+      "hours": "1.5-2.5",
+      "notes": "The traverse starts by climbing Liberty Bell, so the walk in is the Beckey Route approach: Blue Lake Trailhead (~5,200 ft) on SR-20 about 1.5 miles west of Washington Pass, a mile and a half of maintained Blue Lake Trail to the signed Liberty Bell Trail #727 climbing-access junction just past a small stream and marked by a large cairn, then Trail #727 up slabs, talus and heather to the gully below the Liberty Bell-Concord notch (~7,300 ft).\n\nBecause the traverse ends on South Early Winters Spire and descends that peak's South Arete line back into the same Blue Lake basin, no car shuttle is needed — the whole link-up is a loop from one trailhead. Keep to climber's left in the lower gully and cross to the right side higher up; take the left fork of the boot path a couple of hundred feet below the notch.",
+      "distMi": 2,
+      "gainFt": 2100,
+      "season": "Jul-Sep",
+      "hazards": [
+       "rockfall in the notch gully, made worse by the number of parties using it",
+       "long committing link-up with no easy bail once past Concord",
+       "lingering snow in the notch gully into late June"
+      ],
+      "baseFinding": "The traverse's first climbing is the Beckey Route, so the start is the same tree about 30 feet below the crest of the Liberty Bell-Concord notch on the Liberty Bell side, with a short ledge running left to a blocky chimney. From the notch you can also see the whole rest of the day's line to the south: Concord Tower's wall immediately opposite, then Lexington, then the two Early Winters Spires beyond. If you cannot see that stepped southward skyline from where you are stood, you are in the wrong notch."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "stamina": "Full alpine day — documented ascents range from a fast 13-hour \"easy version\" to a 5-hour partial traverse finishing after dark; total ~2,000 ft over 26 pitches (Grade V)",
+      "climbing": "5.9 trad, comfortable soloing/simul-climbing easier terrain to move quickly"
+     },
+     "approachTime": "~1-2 hours via the Blue Lake Trail/climbers' path to the Beckey Route start on Liberty Bell; full traverse has taken documented parties anywhere from ~5 hours (partial, in poor conditions) to 13+ hours car-to-car",
+     "requiredSkills": [
+      "Simul-climbing / fast multi-pitch systems",
+      "Multiple technical rappel transitions between towers",
+      "Route-finding across 5 distinct summits (Liberty Bell, Concord Tower, Lexington Tower, North Early Winter Spire, South Early Winter Spire)",
+      "Efficient anchor-building",
+      "Willingness to continue in deteriorating conditions — bail options are limited mid-traverse"
+     ],
+     "experienceLevel": "Expert alpine climbers only — a full-day 5.9 enchainment across 5 summits demanding fast, efficient movement"
+    },
+    "rope_type": "single (two ropes recommended for multi-tower rappels)",
+    "rack": [
+     "Standard alpine rack of cams, plus a couple bigger pieces to 3-4in for North Early Winter Spire",
+     "Standard nut set",
+     "10 alpine quickdraws",
+     "Single rope; two ropes recommended for multi-tower rappels"
+    ],
+    "descent_text": "This is a link-up, not a single down-route: after topping out Liberty Bell via the Beckey Route, the traverse continues over the North Face of Concord Tower, then the North Face of Lexington Tower, then the NW Corner of North Early Winter Spire, finishing on the SW Rib of South Early Winter Spire — five summits total. Between summits: rappel the south face of Concord to reach Lexington, climb Lexington and rappel its south face, cross a short but exposed 3rd-class section, make one more short rappel, and walk to the base of North Early Winter Spire. After finishing on South Early Winter Spire, descend via that peak's standard South Arête rappel line — bolted chain anchors allow 2-3 single-rope rappels with a 60m rope back down its gully — then hike back to the Blue Lake Trail. Strong parties have done the whole traverse in under 1.5 hours of climbing time, but total car-to-car time with all the transitions and final descent typically runs much longer; a light rack, one 60m rope, and comfort simul-climbing/downclimbing 5.9 terrain are standard for parties doing it quickly.",
+    "beta": "Grade V alpine, 5.9 YDS, 26 pitches, approximately 2,000 ft (606 m) of climbing. Route composition: Beckey Route on Liberty Bell (5.3-5.6), North Face of Concord Tower, North Face of Lexington Tower, Northwest Corner of North Early Winter Spire (5.9+), Southwest Rib of South Early Winter Spire. Hazards include significant rockfall danger in approach gully (\"bowling alley for rocks\"), exposed alpine terrain, route finding challenges. Requires excellent trad climbing skills, solid alpine rock climbing experience, and good protection/anchor placement ability. Standard rack with couple bigger pieces for North Early Winter Spire. Short rappel descent from summits. Popular route—expect crowds on weekends. Best season: July-August during optimal weather windows. Typically done as 1-2 day alpine climb with experienced parties."
+   }
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The Blue Lake Trailhead is a signed pullout on SR-20 about 1.5 miles west of Washington Pass, at roughly 5,200 ft. Make sure you are on the west side of the pass: the hairpin pond pullout east of Washington Pass is a different lot, used by the East Face routes. A Northwest Forest Pass is required to park here, and there is a privy at the lot."
+     },
+     {
+      "lat": 48.51298,
+      "lng": -120.658866,
+      "elev": 5750,
+      "name": "Stream crossing near meadow",
+      "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+      "type": "Water",
+      "distMi": 1.5,
+      "directions": "Follow the maintained Blue Lake Trail from the lot, climbing at an easy grade through forest for about 1.5 miles until it opens out into a small meadow under the Liberty Bell group. The stream sits right at that clearing. Fill here: the climbers' path above is dry all the way to the base."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5800,
+      "name": "Climbers' path junction",
+      "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward the Liberty Bell-Concord notch.",
+      "type": "Junction",
+      "distMi": 1.6,
+      "directions": "Carry on a minute or two past the stream and watch on the left for the climbers' path leaving the graded tread. It is unsigned but well beaten once you are on it. If you are still walking smooth trail heading for Blue Lake, you have gone past it."
+     },
+     {
+      "lat": 48.514639,
+      "lng": -120.659478,
+      "elev": 7100,
+      "name": "Approach gully rockfall zone",
+      "note": "Gully below the notch holds snow into late June and sheds rock heavily once it melts out; stay on the boot path that breaks off before the loose gully proper.",
+      "type": "Hazard",
+      "distMi": 2.2,
+      "directions": "Follow the boot path up through slabs, talus and heather benches, trending toward Concord Tower. It steepens as it enters the drainage below the Liberty Bell-Concord notch. Put helmets on before you commit to that ground — anything released here funnels straight down the gully onto whoever is below."
+     },
+     {
+      "lat": 48.514666,
+      "lng": -120.658696,
+      "elev": 7300,
+      "name": "Liberty Bell-Concord Tower notch",
+      "note": "Rope up here; from a tree about 30 ft below the notch, scramble left onto the sloping west-side bench to reach the NW aspect instead of continuing up the SW-facing Beckey gully.",
+      "type": "Junction",
+      "distMi": 2.4,
+      "directions": "Stay on the climbers' trail as it climbs toward Concord for as long as it reasonably holds, rather than dropping into the gully bed and following it up. The break onto the northwest side comes below the notch, not in it: a couple of hundred feet short of where the Beckey Route starts, where the gully visibly splits."
+     },
+     {
+      "lat": 48.514677,
+      "lng": -120.658591,
+      "elev": 7350,
+      "name": "West-side bench traverse",
+      "note": "Exposed leftward traverse across slabs and thin timber below the face to gain the start of the NW cracks/corners; loose blocks noted in route descriptions.",
+      "type": "Hazard",
+      "distMi": 2.5,
+      "directions": "From the split, scramble up and left over one short step of easy fourth or low fifth class rock — about ten feet of it, and if you are climbing much more than that you have missed the spot. That gains the broad sloping bench on Liberty Bell's west side. Traverse left along the base of the slabs and up through thin timber and larch groves to the left-leaning crack and groove where the face begins."
+     },
+     {
+      "lat": 48.515435,
+      "lng": -120.658365,
+      "elev": 7720,
+      "name": "Liberty Bell summit",
+      "note": "True summit; standard descent downclimbs to bolts roughly 200 ft below the top, then one double-rope or two single-rope rappels back to the notch.",
+      "type": "Summit",
+      "distMi": 2.7,
+      "directions": "Five pitches: a left-trending gully and crack past a couple of trees, then a crack system left of the small chimney with a horn to pull over, then a left-facing corner of large thin flakes — stay right on the good flake rather than the middle splitter, which is much harder. The long north-facing dihedral above is the crux and can stretch a 60m rope. Easy ground up and left gains the west summit, and a short scramble from there reaches the true summit."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Approach via the Liberty Bell-Concord notch area, a gully approach similar to the Beckey Route",
+      "packWeight": "Standard alpine rack, roughly 15-18 lb"
+     },
+     "approachTime": "Roughly 1.5-2 hours to the notch area",
+     "requiredSkills": [
+      "5.9 crack/corner leading",
+      "independent route-finding (less cairned/documented than Beckey)",
+      "comfort on loose rock in the approach gully",
+      "rappelling / multi-pitch descent"
+     ],
+     "experienceLevel": "Competent 5.9 multi-pitch leader with independent route-finding ability, since the line is less obvious and less documented than the Beckey Route"
+    },
+    "pro_needs": "Moderate natural pro; the 5.9 crux is well protected.",
+    "approach": "From the Blue Lake Trailhead (5,200 ft, on WA-20 about 1.5 mi west of Washington Pass), follow the maintained Blue Lake Trail roughly 1.5 miles through forest to a small meadow/clearing below Liberty Bell. Leave the Blue Lake Trail here on the well-beaten climbers' path that splits left just past a small stream crossing, and follow it up through slabs, talus, and heather benches toward Concord Tower. Rather than dropping into the main Beckey/Liberty Bell-Concord gully, the NW Face approach stays on the climbers' trail as it climbs toward Concord as long as it reasonably can, then breaks left onto a short, well-trodden low-5th-class step (no more than about 10 ft of easy 4th/low-5th climbing — if you're doing more than that you've missed the spot) that gains the little-visited NW plateau of Liberty Bell, a bench of larch groves below the northwest face proper. Total gain to the base is on the order of 2,000+ ft over roughly 2-2.5 miles one-way; plan 1.5-2.5 hours. The gully section below the plateau can hold snow into early summer and sheds rockfall as it melts out, so helmet up through the talus and gully approach; the Access Fund/Washington Conservation Corps have done trail work here to reduce loose-rock exposure.",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail and the climbers' path toward Concord, then the ten-foot step onto the northwest plateau",
+      "notes": "From the Blue Lake Trailhead at about 5,200-5,400 ft on WA-20 roughly 1.5 miles WEST of Washington Pass, follow the maintained Blue Lake Trail about 1.5 miles through forest to a small meadow below Liberty Bell. THIS IS THE OPPOSITE TRAILHEAD FROM THE HAIRPIN POND PULLOUT USED BY THE EAST FACE ROUTES.\n\nLeave the Blue Lake Trail on the well-beaten climbers' path that splits LEFT just past a small stream crossing, and follow it up through slabs, talus and heather benches toward Concord Tower. Roughly 2,000-plus ft of gain over 2-2.5 miles one-way; plan 1.5-2.5 hours. The gully below the plateau can hold snow into early summer and sheds rockfall as it melts, so helmet up through the talus and gully.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A rockfall-prone approach gully that holds snow into early summer",
+       "A ten-foot step that is easy to overshoot, leading parties onto harder ground",
+       "Queues at the popular Beckey rappels in busy weather; parties have reported stacking up several deep",
+       "One pitch of the descent can run slightly over 60 m, so a single-rope party may have to downclimb a short section",
+       "A loose gully downclimb from the notch"
+      ],
+      "baseFinding": "THE ENTIRE FIND IS A TEN-FOOT STEP, AND THE ROUTE'S OWN DESCRIPTION MAKES IT A NEGATIVE TEST: IF YOU ARE CLIMBING MORE THAN ABOUT TEN FEET OF EASY FOURTH OR LOW-FIFTH CLASS TO GAIN THE PLATEAU, YOU HAVE MISSED THE SPOT.\n\nHOW YOU GET TO IT: rather than dropping into the main Beckey and Liberty Bell-Concord gully, STAY ON THE CLIMBERS' TRAIL AS IT CLIMBS TOWARD CONCORD FOR AS LONG AS IT REASONABLY CAN, then break LEFT onto that short, well-trodden step. The step gains the little-visited northwest plateau of Liberty Bell, a bench of LARCH GROVES below the northwest face proper.\n\nSO THERE ARE TWO CONFIRMATIONS AND BOTH WORK WITHOUT SEEING THE SUMMIT: the step is TEN FEET AND WELL-TRODDEN, and above it you are standing on a BENCH WITH LARCH TREES ON IT. Larches on a bench, on the northwest side, below a wall, is the plateau.\n\nTHE NEGATIVE TEST AGAINST THE OTHER ROUTES OFF THIS PATH, WHICH IS WHERE PARTIES ACTUALLY GO WRONG: if you have dropped into the gully between Liberty Bell and Concord and are climbing scree toward a notch, you are on the Beckey Route and Overexposure approach, not this one. THIS ROUTE NEVER ENTERS THAT GULLY.\n\nWHERE THE DAY ENDS UP, WHICH IS NOT WHERE IT STARTED: from the west summit you downclimb and scramble to the top of the Beckey Route line and descend that way rather than reversing the northwest face. Rappel about 20 ft down the upper Beckey pitch to a ledge, traverse left, east, to a TREE HUNG WITH RAP SLINGS, one single-rope 60 m rappel to a flatter stance, then a double-rope rappel from a bolted anchor to the Liberty Bell-Concord notch at about 7,300 ft, and downclimb the loose gully back to the climbers' path."
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.515435,
+     "peakLng": -120.658365,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "before": {
+    "overview": "A striking, winding crack line on Liberty Bell's west face giving sustained, well-protected crack climbing on excellent Washington Pass granite. A quality moderate at a friendly free grade.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Blue Lake Trailhead approach to the west face",
+      "packWeight": "Standard trad rack with extra finger-to-hand size protection, roughly 12-15 lb"
+     },
+     "approachTime": "Roughly 1.5-2 hours from the Blue Lake Trailhead",
+     "requiredSkills": [
+      "5.9-5.10 crack leading",
+      "gear placement in sustained thin-to-hand cracks",
+      "efficient multi-pitch transitions",
+      "rappel descent"
+     ],
+     "experienceLevel": "Solid 5.9-5.10 trad leader comfortable with sustained finger-to-hand crack climbing"
+    },
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 2.5,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "Approach from the Blue Lake Trailhead up into Liberty Bell Basin to the base of the west face (about 1.5-2 hr), climb the 4-pitch Serpentine Crack, then downclimb/rappel the standa…",
+       "fromTo": "Car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.515435,
+      "lng": -120.658365,
+      "elev": 7720,
+      "name": "Liberty Bell Summit",
+      "type": "Summit",
+      "distMi": 3.34,
+      "elevFt": 7720,
+      "distFrom": "track"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_crack",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Pre-dawn approach from Blue Lake TH; climb the 12-pitch aid/free line, then rappel the standard two-rope Liberty Crack/Beckey descent. Documented ascents run 9-10 hrs car-to-car for fit parties; some bivy at the base for an easier pre-dawn start.",
+       "hours": 10,
+       "miles": 5,
+       "title": "Big single day (some bivy at base)",
+       "gainFt": 2546,
+       "lossFt": 2546,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead (or wake at base bivy)",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "6:30 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb all 12 pitches of Liberty Crack"
+      }
+     ],
+     "totalNote": "A single long day: real trip reports show 9-10 hr car-to-car ascents; a base bivy is common for extra margin."
+    },
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "3:30-4:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "Pre-dawn approach from Blue Lake TH; some parties bivy at the base the night before to start at first light. Climb all 12 pitches, then rappel the Beckey-side descent with two rope…",
+       "fromTo": "Big single day (some bivy at base)",
+       "section": "Climb"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Similar steep talus/gully approach to the east face base as the Beckey Route",
+      "packWeight": "Aid rack or full trad rack plus aiders if aiding, roughly 20-25 lb"
+     },
+     "approachTime": "Roughly 1.5-2 hours to the base of the east face",
+     "requiredSkills": [
+      "5.10-5.11 crack/face leading or C1 aid climbing",
+      "big-wall-style rope and gear management across 12 pitches",
+      "efficient multi-pitch transitions to beat afternoon storms",
+      "rappelling a long, exposed descent",
+      "route-finding on a sustained, complex east face"
+     ],
+     "experienceLevel": "Experienced grade IV multi-pitch leader; confident free climbing 5.10+ or comfortable aid/French-freeing thin seams; needs stamina and composure for a full 12-pitch alpine day"
+    },
+    "approach": "Liberty Crack climbs the East Face, and its approach does NOT start from the Blue Lake Trailhead — that's the trailhead for the west-side Beckey Route. Instead, drive to the pullout on the north side of SR-20 at the hairpin curve a short distance east of Washington Pass (about 0.3-0.5 mile past the Washington Pass Overlook turnoff). Park there and walk back (west) along the road shoulder to a small pond on the south side of the highway. Skirt the pond's east end and pick up a boot path — cairned but easy to lose in the dark on an alpine start — heading north into the forest. The path climbs steeply through timber for 15-20 minutes before breaking out onto talus/boulder terrain directly beneath the East Face, roughly 0.5 mile and 600-800 ft of gain from the car (about 20-30 minutes total). There is no reliable water on this short approach, so fill up before leaving the car. The main hazards are losing the cairned track in the trees pre-dawn and loose talus/scree footing at the base.",
+    "approach_variants": [
+     {
+      "name": "East Face from the SR-20 hairpin pullout",
+      "hours": "0.5-1",
+      "notes": "This route is on the east side of the mountain and is NOT approached from the Blue Lake Trailhead. Drive to the hairpin turn on SR-20 a short way east of Washington Pass and park in the turnout there.\n\nWalk back along the road toward the pass until you see the small pond on the south side of the highway. The boot path starts at the pond's east end and goes north into the timber; it is cairned, but the cairns are easy to lose in the dark on a pre-dawn start, so scout the first few minutes in daylight the evening before if you can.\n\nThe path climbs steeply through forest and then breaks out onto the talus directly under the East Face. Reported times run from about half an hour to roughly three quarters of an hour of steep walking. There is no water on this approach — carry it from the car.\n\nOne consequence worth planning for: if you continue to the true summit and take the standard notch descent, you come down on the WEST side of the mountain and will need a shuttle or a road walk back to the hairpin. Most parties instead rappel the East Face and return directly to their packs.",
+      "season": "Jul-Sep (dry talus)",
+      "hazards": [
+       "loose talus and boulders at the base of the wall",
+       "cairned forest path is genuinely hard to follow before dawn",
+       "no water between the car and the wall",
+       "rockfall from parties on the East Face routes above"
+      ],
+      "primary": true,
+      "baseFinding": "From the talus, Liberty Crack is the obvious continuous vertical crack that passes to the RIGHT of the huge roof high on the wall — the roof is the Lithuanian Lip, and it is the single feature that identifies the line even in flat light. Do not scramble straight up beneath it. The standard entry traverses in from the LEFT for roughly 40 feet on third- and fourth-class ledges to reach the ledges directly under the true first-pitch crack; there is also a fourth-class alternative that goes up the right-hand side of the block at the base. Parties that head straight up the fall line from the talus end up on the neighbouring East Face lines rather than on Liberty Crack — the East Face here holds a whole cluster of routes within a few rope lengths of each other, so pick the line by the roof above you, not by whichever crack is nearest."
+     },
+     {
+      "name": "Early-season snow and moat at the East Face base",
+      "hours": "0.5-1",
+      "notes": "Same trailhead and same cairned path from the pond's east end, but early in the season the talus under the wall is buried in snow that firms up hard overnight. Parties have reported chipping steps in icy snow to reach the rock, and finding the snow lying steeply enough that a slip would carry you a long way down the slope.\n\nCarry an axe and traction, and expect to be in boots for the walk in even when the wall itself is dry.",
+      "season": "Late spring / early summer after the highway opens, while snow still covers the talus",
+      "hazards": [
+       "deep moat between snow and rock at the base of the wall",
+       "hard refrozen snow over talus — a slip runs out badly",
+       "SR-20 is gated all winter, so this window only opens once the highway reopens (typically mid-late April to early May)"
+      ],
+      "baseFinding": "The identifier is still the big roof — Liberty Crack is the continuous crack running past the right side of the Lithuanian Lip. What changes is the last few metres: a deep moat opens where the snow pulls away from the base of the wall, and getting from snow into the rock can mean a committing step across or a short stemming move down and back up out of the gap. Scout along the base rather than dropping into the first moat you meet; parties have found the moat mellowing out within about thirty feet of where they first reached it."
+     }
+    ],
+    "descent": "Rappel the Liberty Bell descent route (Beckey Route side) from the summit with two ropes.",
+    "detailed_rack": "A double rack of cams from tips to 3 inches, a full set of nuts, plus a small selection of aid gear (offset nuts, cam hooks) if climbing the Lithuanian Lip at C1; or a thin free rack if attempting the 5.11 free climbing. Two ropes for the rappel descent.",
+    "gear": [
+     "double rack of cams to 3 inches, with a second set of small/finger-size cams (aliens or equivalent) through #3",
+     "set of nuts",
+     "aid gear for C1 (or a 5.11-5.13 free rack)",
+     "two 60-70m ropes",
+     "helmet"
+    ],
+    "pro_tips": [
+     "Be solid at the grade you choose, whether 5.11 free or C1 aid",
+     "Start at first light for the twelve-pitch day",
+     "Fix the Lithuanian Lip strategy in advance",
+     "Watch the weather; the east face is fully exposed"
+    ],
+    "crowds": {
+     "peakTraffic": "Summer weekends, especially among parties attempting the free ascent or the classic aid line",
+     "solitudeRating": 3,
+     "estimatePerSeason": "A Fifty Classic Climb with strong reputation and steady traffic, but the sustained 5.11a/C1 grade filters out casual climbers; expect a handful of parties on route on a given weekend rather than the stacked queues seen on the Beckey Route"
+    },
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10+",
+      "notes": "A right-facing corner then a splitter crack lead straight up to a clean bolted belay shortly below the Lithuanian Lip; some parties aid/hybrid this pitch.",
+      "pitch": 1,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 8,
+      "grade": "5.11a (C1 aid) / 5.13- free",
+      "notes": "The historic Lithuanian Lip: go up and out the roof, get over the top, then aid a bolt ladder (or free climb it at 5.13- for strong parties) to a bolted belay. Most parties aid this section for the route's standard 5.11a grade.",
+      "pitch": 2,
+      "anchor": "Bolted anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.11+ (C2)",
+      "notes": "Face climbing or aid with fixed heads leads to a crack and old pitons, ending at a bolted anchor; freeing is fastest from here upward.",
+      "pitch": 3,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10",
+      "notes": "Jam a nice crack that hardens from 5.8 to 5.10 as it goes, ending at another bolted belay.",
+      "pitch": 4,
+      "anchor": "2-bolt anchor",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.8",
+      "notes": "Continue upward along a corner system to another bolted belay; a relatively relaxed pitch between harder sections.",
+      "pitch": 5,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10+",
+      "notes": "Mostly easy stemming (mind loose rock) leads to a brief crux surmounting a big block, protected by a single shiny bolt, to bolted anchors.",
+      "pitch": 6,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10+",
+      "notes": "Steep moves off the belay gain a ramp/corner with a long-runner bolt and 5.10- moves over an overlap to a decent seat; belay is built from pitons and small cams.",
+      "pitch": 7,
+      "anchor": "Gear (pins/small cams)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Go up and left through fun quartz features then 5.6 chimneys to a triangular ledge with a finger-crack gear anchor.",
+      "pitch": 8,
+      "anchor": "Gear (finger crack)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "A long, excellent pitch up a left-facing corner and slab with beautiful moments of exposure over the East Face; belay off a large tree.",
+      "pitch": 9,
+      "anchor": "Tree (sling)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Continue up easy terrain until reaching sandy ledges; a rappel anchor is available nearby in case a party strays onto the wrong terrain.",
+      "pitch": 10,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Third-class ledges allow unroping or simul-climbing toward the summit shoulder alcove.",
+      "pitch": 11,
+      "anchor": "Simul/walk (no belay)",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "4th class",
+      "notes": "Easy terrain leads to the bolted alcove near the summit shoulder, the start of the standard two-rappel descent into Beckey Gully shared with Liberty Crack (Free), Freedom Rider, and the Beckey Route.",
+      "pitch": 12,
+      "anchor": "2-bolt anchor (alcove)",
+      "lengthM": 25
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5200,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5155,
+      "lng": -120.6588,
+      "elev": 7720,
+      "name": "Liberty Bell Mountain",
+      "note": "Classic Liberty Crack finishes up the Beckey Route's upper pitches to the true summit.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Pre-dawn start from Blue Lake TH, approach to the base (about 1.5-2 hr), climb all 12 pitches of the free line, then rappel the standard two-rope Liberty Crack/Beckey descent back to the car. Most fit parties do it in a single big day; some bivy at the base to get first light on the route.",
+       "hours": 10.5,
+       "miles": 5.2,
+       "title": "Big single day (some bivy at base)",
+       "gainFt": 2546,
+       "lossFt": 2546,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30-4:00 AM",
+         "label": "Leave trailhead (or wake at base bivy)",
+         "detail": ""
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Reach base, gear up",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "12 pitches"
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "6:00-7:00 PM",
+         "label": "Back at car",
+         "detail": "Two-rope rappel descent"
+        }
+       ],
+       "objective": "Free-climb all 12 pitches of Liberty Crack"
+      }
+     ],
+     "totalNote": "A single long day for most parties, roughly 10-12 hrs car-to-car; a base bivy is a common way to buy an earlier, less crowded start."
+    },
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "3:30-4:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "Pre-dawn start from Blue Lake TH, approach to the base (about 1.5-2 hr), climb all 12 pitches of the free line, then rappel the standard two-rope Liberty Crack/Beckey descent back …",
+       "fromTo": "Big single day (some bivy at base)",
+       "section": "Climb"
+      }
+     ]
+    },
+    "overview": "A modern free variation to the historic Liberty Crack aid line. Liberty Crack was first freed in 1991 by Brooke Sandahl, who led the crux roof/crack pitch on gear and toproped the protectionless slab beside the old bolt ladder. Mikey Schaefer, Shanjean Lee, Blake Herrington, and Nathan Hadley later established a fully free variation around the bolt ladder (2016-2017): the new Pitch 3 slab moves right before the ladder, clips a higher bolt, crosses sloping ledges and mantels through cruxy foot moves (5.12), then rejoins the original line for the 5.11+ Pitch 4 below the Lithuanian Lip roof.",
+    "watch_out": "Sustained 5.11a crack climbing with serious exposure\nRoute-finding near summit; rappel anchor location critical to descent\nLoose rock hazard on descent and mixed terrain sections\nWeather exposure on sustained vertical climbing sections\nAfternoon thunderstorm development creates rapid deterioration of conditions"
+   }
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Shortest of the standard west-face lines at 3 pitches; approach into the basin, climb up to join the upper Beckey Route area, then rappel/downclimb the standard line to the Liberty Bell-Concord notch and out.",
+       "hours": 8,
+       "miles": 5,
+       "title": "Short car-to-car day climb",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 15,
+       "objective": "Climb Rapple Grapple to the Liberty Bell-Concord notch"
+      }
+     ],
+     "totalNote": "A short single day, roughly 8 hrs car-to-car."
+    },
+    "timing": {
+     "totalHrs": 8,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn start",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "Shortest of the standard west-face lines at 3 pitches; approach into the basin, climb up to join the upper Beckey Route area, then rappel/downclimb the standard line to the Liberty…",
+       "fromTo": "Short car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "descent": "Distinct exit east of the Beckey/notch line: downclimb the ridge and a short 5.6 boulder problem, follow an obvious tree-filled gully east to the first set of rappel bolts, then two single-rope rappels to the ground.",
+    "descent_text": "After finishing the route's scramble and short 5.6 slab to the ridge, downclimb the ridge and the 5.6 boulder problem, then follow an obvious, tree-filled gully east until you reach the first set of rappel bolts. From there, two single-rope rappels reach the ground. This is a distinct exit from the main Beckey/notch descent line — it drops climber's-right (east) into its own gully rather than back toward the Liberty Bell-Concord notch.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First single-rope rappel from the first set of bolts reached via the tree-filled gully east of the ridge.",
+      "anchor": "fixed rappel bolts",
+      "lengthM": null
+     },
+     {
+      "n": 2,
+      "notes": "Second single-rope rappel reaching the ground in a gully east of the Liberty Bell-Concord notch, a distinct exit from that notch.",
+      "anchor": "fixed rappel bolts",
+      "lengthM": 30
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail and the climbers' path, then RIGHT at the gully fork to the Beckey Route start",
+      "notes": "From the Blue Lake Trailhead, hike the Blue Lake Trail about 1.5 miles to the meadow, then take the climbers' path left past the small stream up through slabs and talus toward the Liberty Bell-Concord gully.\n\nFour pitches at 5.8. The route shares its FIRST PITCH with the Beckey Route, so the approach is the standard Beckey approach to the same base.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A gully fork where left and right lead to entirely different routes",
+       "Early-season snow and rockfall in the approach gully",
+       "A 5.6 boulder problem downclimbed on the descent",
+       "An exit gully separate from the peak's main descent line, so a party following the crowd will end up somewhere else"
+      ],
+      "baseFinding": "THE FORK IN THE GULLY IS THE DECISION, AND THIS ROUTE TAKES THE RIGHT-HAND BRANCH. Follow the standard Beckey approach and STAY RIGHT AT THE GULLY FORK to reach the same base the Beckey Route uses. This route's first pitch IS the Beckey Route's first pitch, so if you are on Beckey's first pitch you are on route.\n\nTHE NEGATIVE TEST, AND IT COVERS THE TWO WAYS PARTIES LEAVE THIS APPROACH: STAY LEFT AT THE FORK and you are heading for Serpentine Crack and the Independence-style ledges across the west face. NEVER DROP INTO THE GULLY AT ALL, staying instead on the climbers' trail toward Concord and breaking left onto a ten-foot step, and you are on the Northwest Face approach to the larch-covered northwest plateau. Both are different routes on the same mountain from the same trailhead.\n\nWHAT MAKES THIS ROUTE'S EXIT DIFFERENT, AND IT IS WORTH KNOWING BECAUSE IT IS THE ONE THING THAT SETS IT APART LATER: after the scramble and short 5.6 slab to the ridge, you downclimb the ridge and a 5.6 boulder problem, then follow AN OBVIOUS, TREE-FILLED GULLY EAST to the first set of rappel bolts, and two single-rope rappels reach the ground. THAT IS A DISTINCT EXIT FROM THE MAIN BECKEY AND NOTCH DESCENT LINE: it drops climber's RIGHT, east, into its own gully rather than back toward the Liberty Bell-Concord notch. A tree-filled gully heading east is the marker."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5155,
+      "lng": -120.6588,
+      "elev": 7720,
+      "name": "Liberty Bell Mountain",
+      "note": "True summit of Liberty Bell Mountain.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach from Blue Lake TH into the basin (about 1.5-2 hr), climb the 12-pitch line up the East Face, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+       "hours": 10.5,
+       "miles": 5,
+       "title": "Long car-to-car day climb",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach base",
+         "detail": ""
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Start climbing",
+         "detail": "12 pitches"
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "5:30-7:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the 12-pitch Independence Route"
+      }
+     ],
+     "totalNote": "A single long day given the 12 pitches, roughly 10-11 hrs car-to-car."
+    },
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "4:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "Approach from Blue Lake TH into the basin (about 1.5-2 hr), climb the 12-pitch line up the East Face, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+       "fromTo": "Long car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "approach_logistics": {
+     "peakLat": 48.515435,
+     "peakLng": -120.658365,
+     "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "trailheadLat": 48.51454,
+     "trailheadLng": -120.64332,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Blue Lake Trailhead approach to the west face, steep talus",
+      "packWeight": "Trad rack for sustained crack/face climbing, roughly 18-22 lb"
+     },
+     "approachTime": "Roughly 1.5-2 hours from the Blue Lake Trailhead to the west face",
+     "requiredSkills": [
+      "5.11+ crack and face leading",
+      "multi-pitch endurance across 12 pitches in a day",
+      "route-finding among adjacent west-face lines",
+      "efficient descent management",
+      "comfort with serious commitment typical of a grade V route"
+     ],
+     "experienceLevel": "Strong 5.11+ trad/free climber comfortable with sustained face and crack pitches and the commitment of a grade V, 12-pitch outing"
+    },
+    "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the highway, round its east end, and follow a cairned boot path north into the forest. The path climbs through timber and breaks out onto the talus field directly below the East Face after roughly 20-30 minutes and 0.5 mile (~600-800 ft gain). From where the path reaches the talus, continue right (north) along the base past the Liberty Crack starts to the far right-hand end of the face, below the red Baer Ceiling roof about 85 m above. No water source along the way; watch for the cairned track being hard to follow in low light, and loose talus underfoot at the base.",
+    "descent": "Descend the standard Beckey Route rappels/downclimb on the southwest side.",
+    "approach_variants": [
+     {
+      "name": "The hairpin pond pullout and the East Face path, then all the way RIGHT to the north edge of the face",
+      "notes": "Park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond on the south side of the road, and follow the cairned climbers' path from the pond's east end about a mile through forest to the talus below the East Face. TWELVE PITCHES, FIRST CLIMBED WALL-STYLE IN 1966 WITH 180 PITONS AND FIVE BOLTS OVER FOUR DAYS, and later freed. The line takes the profusely overhanging northeast corner of the East Face and joins Thin Red Line at M&M Ledge. THE ROUTE'S OWN STORED APPROACH DESCRIBES THE BLUE LAKE TRAILHEAD AND FOURTH-CLASS LEDGES ACROSS THE WEST FACE. That contradicts every published account of this route; the approach written here is the East Face one.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A profusely overhanging corner, first climbed over four days with 180 pitons",
+       "A stored approach description that sends parties to the wrong trailhead and the wrong side of the mountain",
+       "Several closely spaced starts on the same wall",
+       "Loose talus in the upper approach"
+      ],
+      "baseFinding": "START ON THE FAR RIGHT, THE NORTH EDGE, OF THE EAST FACE, AND CONFIRM IT BY LOCATING THE RED-COLOURED ROOF AND ALCOVE OF THE BAER CEILING ABOUT 85 M ABOVE. That is the marker, it is coloured, it is high enough to be visible when the base is in cloud, and no other route on this wall has one.\n\nSO THE TEST IS A COLOUR AND A HEIGHT: a red roof roughly 85 metres up, at the right-hand end of the face. If there is no red roof above you, keep walking right.\n\nTHE ORDER ALONG THE BASE, WHICH BOUNDS IT ON THE OTHER SIDE: FREEDOM RIDER about 100 ft LEFT of Liberty Crack, LIBERTY CRACK, FREEDOM OR DEATH on a leftward-trending ramp with bolts above, THIN RED LINE, LIBERTY AND INJUSTICE FOR ALL 10 m right of that, LIVE FREE OR DIE, and THIS ROUTE last. You cannot go further right and still be on the East Face; the ground beyond turns the corner onto the northeast aspect, where Dark Side of Liberty lives.\n\nA SECOND CONFIRMATION FROM THE SHAPE OF THE ROCK: this is the PROFUSELY OVERHANGING northeast corner. If the wall above your start leans back rather than out, you have not reached the corner.\n\nWHERE IT GOES, WHICH ALSO SETTLES THE DESCENT ARGUMENT: the route joins Thin Red Line at M&M Ledge, so the natural exit is Thin Red Line's bolted rappel line back down the East Face to your pack, rather than continuing to the true summit and finishing on the far side of the mountain."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5160,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Pullout on the north shoulder of SR-20 at the hairpin curve just east of Washington Pass, below Liberty Bell; walk back toward the pass to the small pond on the south side of the highway.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5750,
+      "name": "Stream crossing near meadow",
+      "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+      "type": "Water",
+      "distMi": 1.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5800,
+      "name": "Climbers' path junction",
+      "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward Liberty Bell's west side.",
+      "type": "Junction",
+      "distMi": 1.6
+     },
+     {
+      "lat": 48.514633,
+      "lng": -120.658546,
+      "elev": 7150,
+      "name": "West face base / sloping bench",
+      "note": "Scramble left off the approach gully onto Liberty Bell's broad sloping west-side bench, then traverse left at the base of the slabs to the start of the big-wall routes.",
+      "type": "Junction",
+      "distMi": 2.3
+     },
+     {
+      "lat": 48.514666,
+      "lng": -120.658696,
+      "elev": 7300,
+      "name": "Committing mid-wall position",
+      "note": "Mid-5.10 free crux pitches with sparse retreat once established above the bench; carry a topo and be ready to aid past the hard sections.",
+      "type": "Hazard",
+      "distMi": 2.4
+     },
+     {
+      "lat": 48.515435,
+      "lng": -120.658365,
+      "elev": 7720,
+      "name": "Liberty Bell summit",
+      "note": "Grade V outing tops out on the true summit; descend via the standard Beckey Route rappels/downclimb to the notch, not back down the route.",
+      "type": "Summit",
+      "distMi": 2.7
+     }
+    ],
+    "pro_needs": "Standard west-face rack; bring smaller pieces for the thin spots.",
+    "pro_tips": [
+     "Smooth crack technique pays off on the sustained pitches.",
+     "Begin early to avoid afternoon storms.",
+     "Coordinate with parties on adjacent west-face lines to manage rockfall."
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "before": {
+    "descent": "From the summit, downclimb and/or rappel back down the route to about 200 ft below the top, then break left (east) and downclimb roughly 100 ft through trees and loose rock to two bolted rappel stations on a steep wall above the Liberty Bell-Concord notch. One double-rope rappel or two single-rope rappels (a 60m rope is recommended) reach the notch at ~7,300 ft, from which parties descend the approach gully back to the climbers' path.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "A single 60 m rope reaches the ledge with room to spare. Knot both ends as a matter of habit.",
+      "notes": "Reached by downclimbing the upper pitch about 20 ft from the summit, then moving left (east). First of the three single-rope rappels.",
+      "anchor": "tree hung with rappel slings",
+      "hazards": [
+       "These trees are the only marker for the top of the descent and are easy to walk past on the summit ridge; a party that misses them commits itself to downclimbing the loose east gully instead.",
+       "The lower tree's slings are periodically found tired. Carry cord or webbing to replace rather than rappelling on whatever happens to be there.",
+       "Snow can linger on the landing ledge into early season."
+      ],
+      "lengthM": null,
+      "station": "Reverse the last pitch roughly 15-20 m (about 50 ft) from the summit and work toward the Concord Tower side of the crest. The anchor is a tree carrying fixed slings, tucked off the crest near a shallow groove in the rock; two slung trees stand close together and the upper one is the sounder of the pair. It is much easier to pick out while leading pitch 4 than from above, so note it on the way up. The rappel lands on a sandy, tree-dotted ledge."
+     },
+     {
+      "n": 2,
+      "pull": "A plumb pull off bolts. Keep the strands clear of the ledge lip and its trees so nothing catches on the retrieve.",
+      "notes": "Second station, on a large ledge reached by scrambling down and to the right from the first rappel.",
+      "anchor": "two bolts on solid rock",
+      "hazards": [
+       "Loose sand and grit on the ledge above slabby downclimbing.",
+       "If the chains are not found after the ropes are pulled, the party is stranded between stations with no anchor."
+      ],
+      "lengthM": 30,
+      "station": "Do not rappel straight on from the sandy ledge. Work right along the ledge, then down, then right again to reach a fixed station of bolts and chains on the steep wall. Parties consistently report this hardware as hard to spot, so scout it before pulling the first rope."
+     },
+     {
+      "n": 3,
+      "pull": "Because the rappel is diagonal, the pull strand drags across the wall and this descent has a documented history of jammed ropes. One party had to fix one strand, lead back up the climbable ground to free it, then ascend to the station and re-rig. Feed the pull strand out and away from the diagonal, and pull from the notch rather than from directly under the anchor.",
+      "notes": "Rappels somewhat diagonally into the Liberty Bell-Concord notch at about 7,300 ft. Downclimb the gully from there to the packs.",
+      "anchor": "tree with rappel slings (two trees present, the higher one is the better anchor)",
+      "hazards": [
+       "The line traverses, so anyone who loses the stance swings across the wall.",
+       "The notch and the gully below it are loose, and anything dislodged here funnels onto the climbers' path that other parties are walking up."
+      ],
+      "lengthM": 30,
+      "station": "The lowest fixed station on the wall, straight below the previous one. The rappel from it runs slightly diagonally rather than plumb and finishes in the Liberty Bell-Concord notch at roughly 7,300 ft, close to where most parties leave packs at the top of the approach gully."
+     }
+    ],
+    "overview": "The Beckey Route is the easiest line to the top of Liberty Bell and one of the most popular moderate alpine rock climbs in Washington Pass. First climbed in 1946 as the original ascent of the peak, it gains the summit in three short pitches of clean Golden Horn granite up the southwest face, with a famously airy and photogenic position above the highway corridor for very little technical difficulty.",
+    "detailed_rack": "A single rack of cams from about 0.4 to 3 inches, a set of nuts, six to eight alpine draws with a couple of double-length slings, and a single 60m rope. A light kit is plenty for the three short pitches.",
+    "approach": "From the Blue Lake Trailhead (FS Trail #314, ~5,140 ft, on SR-20 about 1.5 miles west of Washington Pass), follow the maintained, well-graded Blue Lake Trail north through forest and open meadow for about 1.5 miles to a small meadow just past a small stream crossing (the last reliable water). Leave the maintained trail here on a climbers' boot path heading left/north, ascending through granite slabs, talus, and heather meadow toward the gully that drops from the notch between Liberty Bell and Concord Tower. The path is steep in places with short sections of 3rd-class scrambling. At a fork roughly 200 ft below the notch, stay left to reach the Liberty Bell-Concord Tower notch (~7,300 ft) — about 2 miles and ~2,100 ft of gain total from the car, 1.5-2.5 hours. The approach gully commonly holds snow into late June, so carry an ice axe (and possibly crampons) for an early-season ascent.",
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 5200,
+      "directions": "Park at the Blue Lake Trailhead on the south side of SR-20, about 1.5 miles west of Washington Pass, at roughly 5,200 feet. A Northwest Forest Pass or other interagency pass is required, and the lot is small enough that it fills early on summer weekends, with only limited roadside parking as overflow. SR-20 is gated over Washington and Rainy Passes each winter, typically closing in late November or early December and reopening between mid-April and early May depending on snowpack, so there is no drive-up access until the highway reopens."
+     },
+     {
+      "lat": 48.515,
+      "lng": -120.658,
+      "elev": 7300,
+      "name": "Liberty Bell-Concord notch",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 7300
+     },
+     {
+      "lat": 48.515435,
+      "lng": -120.658365,
+      "elev": 7720,
+      "name": "Liberty Bell Mountain summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7720
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the Liberty Bell-Concord notch",
+      "hours": "1.5-2.5",
+      "notes": "Park at the Blue Lake Trailhead on the south side of SR-20, roughly 1.5 miles west of Washington Pass, at about 5,200 ft. A Northwest Forest Pass or interagency pass is required and the lot is small enough that it fills on summer weekends.\n\nWalk the maintained Blue Lake Trail for about a mile and a half. The turnoff is a signed junction — the sign points straight on for Blue Lake and left for Liberty Bell Trail #727, Climbing Access — and it sits just past a small stream in a meadow, with a large cairn beside it. That stream is the last water you can count on.\n\nTrail #727 climbs hard through granite slabs, talus and heather benches toward the gully that drains the notch between Liberty Bell and Concord Tower. In the gully itself the loose ground is least bad if you keep to climber's left for the lower two thirds, then cross and hug climber's right for the rest. Where the boot path forks a couple of hundred feet below the notch, take the left branch; the right branch leads on toward Lexington and Concord's south side.",
+      "distMi": 2,
+      "gainFt": 2100,
+      "season": "Jul-Sep (dry)",
+      "hazards": [
+       "loose rock and party-induced rockfall in the notch gully — helmets on before entering, and avoid stacking up under other parties",
+       "steep 3rd-class steps on the climbers' path when wet",
+       "trailhead lot fills early on summer weekends; roadside parking on SR-20 is limited"
+      ],
+      "primary": true,
+      "baseFinding": "Do not start climbing from the notch itself. The first pitch begins from a tree standing roughly 30 feet BELOW the crest of the Liberty Bell-Concord notch, on the Liberty Bell (north) side. From that tree a small ledge runs left; walk it and it delivers you to the foot of a blocky chimney, and that chimney is pitch one. If you are stood on the low point of the notch looking for a crack going straight up, you are too high and too far right — drop back down to the tree. Concord Tower's North Face starts from the top of the same notch, on the opposite (south) wall, so two parties can be at the same notch climbing in opposite directions; check which wall you are facing before you rack up."
+     },
+     {
+      "name": "Early-season snow gully to the notch",
+      "hours": "1.5-2.5",
+      "notes": "The same line as the summer approach, but the upper gully below the Liberty Bell-Concord notch commonly holds snow into late June and the boot path through the slabs and heather may be buried lower down. Parties carry an ice axe, and crampons if the snow has refrozen overnight.\n\nSR-20 over Washington and Rainy Passes is gated every winter — it typically closes in late November or early December and reopens somewhere between mid-April and early May, with the exact dates set by snowpack and avalanche conditions rather than a calendar. Until the gate opens there is no drive-up access to the Blue Lake Trailhead at all.",
+      "season": "Highway opening (typically mid-late Apr or early May) through late Jun",
+      "hazards": [
+       "firm or refrozen snow in the gully — a slip runs a long way over rock",
+       "moat at the transition from snow to rock at the base of the first pitch",
+       "wet-loose and cornice debris in the gully during spring melt",
+       "SR-20 gated in winter — no vehicle access to the trailhead until the highway reopens"
+      ],
+      "baseFinding": "Snow changes what the last hundred metres looks like. With the gully filled, the notch reads as a clean snow finish rather than a scree saddle, and the tree that marks the Beckey start — about 30 feet below the crest on the Liberty Bell side, with a small ledge running left to the blocky chimney — can be partly buried or standing above a moat. If you top out onto the notch crest and find no tree, you have gone above the start; downclimb the last stretch on the Liberty Bell side and look for it. Expect a moat where snow pulls away from the rock at the base of the chimney."
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.515435,
+     "peakLng": -120.658365,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5200,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5155,
+      "lng": -120.6588,
+      "elev": 7720,
+      "name": "Liberty Bell Mountain",
+      "note": "True summit of Liberty Bell Mountain.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "pitch_detail": [
+     {
+      "crux": true,
+      "bolts": 14,
+      "grade": "5.12b",
+      "notes": "A well-bolted pitch (14 draws plus long slings) with a short bouldery 5.12- crux right off the deck, easing above.",
+      "pitch": 1,
+      "anchor": "2-bolt anchor (fixed biners)",
+      "lengthM": 45
+     },
+     {
+      "crux": true,
+      "bolts": 8,
+      "grade": "5.12-",
+      "notes": "A second short bouldery crux near the start of the pitch on solid edges and thin crack features, then progressively easier climbing.",
+      "pitch": 2,
+      "anchor": "2-bolt anchor (fixed biners)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.11",
+      "notes": "Easier technical climbing; this is the top of the shorter variation -- parties bailing here skip the P2 anchor and rappel directly to the P1 anchor in two raps.",
+      "pitch": 3,
+      "anchor": "2-bolt anchor (fixed biners)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10",
+      "notes": "Continued easing of angle and difficulty on the same well-protected granite.",
+      "pitch": 4,
+      "anchor": "2-bolt anchor",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.9",
+      "notes": "The final pitch joins Thin Red Line at the top of its 7th pitch, about 200m (650 ft) of climbing from the ground; from here continue climbing or rappel Thin Red Line's exit.",
+      "pitch": 5,
+      "anchor": "Joins Thin Red Line's P7 anchor",
+      "lengthM": 37
+     }
+    ],
+    "beta": "About 200 m of sustained 5.12b climbing on solid edges and thin cracks; two pitches overlap the line of the older aid route Liberty Loop. Cruxes are mostly short boulder problems that lead to good holds, though protection sometimes requires committing above your last piece.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "climbing": "5.12b redpoint fitness; both cruxes come at the start of their pitches (boulder-problem-style) leading into easier, well-protected climbing above"
+     },
+     "approachTime": "~1 hour via the East Face climbers' path from the Hwy 20 hairpin pullout east of Washington Pass (same approach as Thin Red Line/Liberty Crack)",
+     "requiredSkills": [
+      "Trad leading at 5.12",
+      "Efficient multi-pitch transitions (5 pitches, 650 ft/200m)",
+      "Route-finding on East Face — shares its start with Thin Red Line and 2 pitches with the obscure 1975 aid route \"Liberty Loop\"",
+      "Two-rope rappel descent from the top of P3"
+     ],
+     "experienceLevel": "Advanced — solid 5.12 trad/face climbers comfortable with long pitches and mixed gear/fixed protection"
+    }
+   }
+  }
+ ]
+}

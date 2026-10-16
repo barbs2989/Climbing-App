@@ -1,0 +1,94 @@
+{
+ "id": "wa_argonaut_peak_east_ridge",
+ "name": "Southeast Ridge",
+ "waypoints": [
+  {
+   "lat": 47.3892,
+   "lng": -120.8725,
+   "name": "Beverly Turnpike Trailhead (#1391)",
+   "note": "South/Teanaway-side approach via Beverly Creek and Fourth Creek trails toward Ingalls Creek, then bushwhack/scramble up to the SE side of the peak. Matches this route's own recorded GPS track almost exactly.",
+   "type": "Trailhead",
+   "directions": "From I-90 Exit 85 east of Cle Elum, follow SR 970 about 7 miles and turn left onto Teanaway Road. Keep right onto North Fork Teanaway Road, which becomes gravel FR 9737 at 29 Pines Campground. Continue just under 4 miles and, just before the Beverly Creek bridge, turn right onto FR 9737-112, a rough one-lane spur best with high clearance, for about 1.4 miles to its end at about 3,650 ft."
+  },
+  {
+   "lat": 47.47,
+   "lng": -120.858,
+   "elev": 7700,
+   "name": "East end of ridge",
+   "type": "Junction",
+   "distMi": 6.3,
+   "elevFt": 7700,
+   "directions": "Take Beverly Turnpike Trail #1391 up Beverly Creek, bearing left at about 0.5 mile rather than onto the Bean Creek trail. At about 3.1 miles turn right onto Fourth Creek Trail #1226.1, cross Fourth Creek Pass (about 6,000 ft), and descend to Ingalls Creek at about 6 miles and ford it. Leave the Ingalls Creek Trail and climb north into the Porcupine Creek basin, working up beside the southeast ridge to its foot."
+  },
+  {
+   "lat": 47.4701186,
+   "lng": -120.8614768,
+   "elev": 8453,
+   "name": "Argonaut Peak summit (true/west summit)",
+   "type": "Summit",
+   "elevFt": 8453,
+   "directions": "Climb about eight pitches up the crest of the southeast ridge, blocky and lichen-covered low down, to the southeast spire. Make two single-rope rappels or one double-rope rappel into the notch beyond, then continue to the true summit on the west spire."
+  }
+ ],
+ "itinerary": {
+  "cal": "Ingalls Creek must be forded (no bridge) and the approach trail is brushy into early summer — most parties go July-September once the creek drops and snow gullies consolidate.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Beverly Creek/Ingalls Creek trailhead system, hike and ford Ingalls Creek, then climb steep, vegetated slopes toward the basin below Argonaut's southeast ridge. Expect real bushwhacking and slow going in the upper section.",
+    "hours": 6,
+    "miles": 9,
+    "title": "Long approach to basin bivy",
+    "gainFt": 2800,
+    "lossFt": 300,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Reach a bivy site in the basin below Argonaut's east side"
+   },
+   {
+    "n": 2,
+    "note": "Climb the 8-pitch Southeast Ridge to the summit, then descend the South Gully, return to camp, break camp, and hike the long approach out in the same push. This is a long day — many parties choose to camp a second night instead of finishing the exit.",
+    "hours": 13,
+    "miles": 9,
+    "title": "Southeast Ridge to the summit, then all the way out",
+    "gainFt": 1357,
+    "lossFt": 4157,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "4:30 AM",
+      "label": "Leave bivy",
+      "detail": "Light summit pack; camp gear stays behind."
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Rope up at base of ridge",
+      "detail": "Start of the 8-pitch Southeast Ridge."
+     },
+     {
+      "time": "11:00 AM",
+      "label": "Reach summit",
+      "detail": ""
+     },
+     {
+      "time": "12:30 PM",
+      "label": "Begin descent",
+      "detail": "Down the South Gully; rappel or belay its chockstone step."
+     },
+     {
+      "time": "3:30 PM",
+      "label": "Back at basin camp",
+      "detail": "Break camp, pick up overnight gear."
+     },
+     {
+      "time": "9:00 PM",
+      "label": "Reach trailhead",
+      "detail": "Full exit in one push; some parties instead re-camp here."
+     }
+    ],
+    "objective": "Climb the Southeast Ridge and descend to the trailhead"
+   }
+  ],
+  "totalNote": "A 2-day trip is standard: a long, brushy approach to a basin bivy, then a big second day that climbs the 8-pitch Southeast Ridge and pushes all the way back to the car (~13 hrs); a 3rd day is a common safety-margin option for the exit."
+ }
+}

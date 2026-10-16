@@ -1,0 +1,74 @@
+{
+ "id": "wa_white_mountain_olympics_scramble",
+ "name": "White Mountain Scramble",
+ "waypoints": [
+  {
+   "lat": 47.7415,
+   "lng": -123.049,
+   "name": "Dosewallips Road end (closed-road parking)",
+   "note": "From this road-end, the route continues via bike/foot up West Fork Dosewallips River to Honeymoon Meadows before the Class 2 scramble to White Mountain's summit.",
+   "type": "Trailhead",
+   "directions": "From US-101 at Brinnon, turn west onto the Dosewallips Road and drive about 8.5 miles to where it ends at the washout, and park along the road."
+  },
+  {
+   "lat": 47.74329,
+   "lng": -123.19362,
+   "elev": 1755,
+   "name": "Dose Forks",
+   "note": "West Fork Dosewallips Trail splits off the main Dosewallips Trail here at the river confluence; reliable water and a designated camp with toilet and bear wires.",
+   "type": "Junction",
+   "distMi": 7.6,
+   "directions": "Walk or bike the closed Dosewallips Road past the big washout to the old Dosewallips Ranger Station, then continue on foot on the Dosewallips River Trail to Dose Forks, where the West Fork trail splits off at the river confluence."
+  },
+  {
+   "lat": 47.720256,
+   "lng": -123.279354,
+   "elev": 2900,
+   "name": "Diamond Meadows Camp",
+   "note": "Last established backcountry camp before Honeymoon Meadows; river-adjacent water source, elevation estimated by interpolating between Dose Forks and Honeymoon Meadows.",
+   "type": "Campsite",
+   "distMi": 12.7,
+   "directions": "At Dose Forks take the West Fork Dosewallips Trail toward Anderson Pass, crossing the West Fork on the high bridge, and follow it up the forested valley about 5 miles to Diamond Meadows camp."
+  },
+  {
+   "lat": 47.707998,
+   "lng": -123.31109,
+   "elev": 3527,
+   "name": "Honeymoon Meadows Camp",
+   "note": "Forested backcountry campsite just below the actual meadows, the standard base camp for the White Mountain scramble day, at about mile 15.",
+   "type": "Campsite",
+   "distMi": 14.1,
+   "directions": "Continue up the West Fork Dosewallips Trail about 1.5 miles to Honeymoon Meadows camp, just below the meadows themselves."
+  },
+  {
+   "lat": 47.6961,
+   "lng": -123.3265,
+   "elev": 4464,
+   "name": "Anderson Pass",
+   "note": "Divide between the Quinault and Dosewallips drainages and trail junction toward Anderson Glacier; leave the maintained trail here and head south toward White Mountain — little to no water at the pass itself.",
+   "type": "Junction",
+   "distMi": 16,
+   "directions": "Climb the trail past the meadows about 950 ft to Anderson Pass, the wooded saddle on the Dosewallips-Quinault divide. Fill water before the pass; there is little to none above it."
+  },
+  {
+   "lat": 47.6814915,
+   "lng": -123.32810875,
+   "elev": 5800,
+   "name": "Heather/scree slopes below the summit ridge",
+   "note": "Steep heather and talus that often retains hard, unmarked snow patches into midsummer; carry an ice axe and expect route-finding on this class 2 terrain.",
+   "type": "Hazard",
+   "distMi": 17.5,
+   "directions": "Ignore the spur that climbs north toward the Anderson Glacier. Step off the trail on the south side of the saddle and climb south, with no path, through open subalpine forest and heather benches to treeline around 5,800 ft."
+  },
+  {
+   "lat": 47.676622,
+   "lng": -123.328645,
+   "elev": 6378,
+   "name": "White Mountain Summit",
+   "type": "Summit",
+   "elevFt": 6378,
+   "directions": "Continue south up steep heather and loose talus, with hard snow patches in the hollows into midsummer, to the summit. Note landmarks or track the line, since the open slopes all look alike on the way down."
+  }
+ ],
+ "approach": "Dosewallips approach (north): from the vehicle road end on the Dosewallips Road (about 8.5 mi from US-101), hike or bike the closed roadbed ~6.5-7 mi (~1,900 ft gain) to the former Dosewallips Ranger Station, then continue on the West Fork Dosewallips Trail to Honeymoon Meadows camp (~mile 15, established campsite). Total approach gain to camp is roughly 5,300 ft. Duckabush approach (south/west): from the Duckabush River trailhead (Brinnon, drivable year-round, no washout), hike the Duckabush River Trail 6.2 mi to the park boundary and on toward O'Neil Pass (16.1 mi park-boundary-to-pass), camping at Marmot Lake (established site, toilet, bear wire), or continuing up past Hart Lake to Lake La Crosse in the basin directly below the peak."
+}

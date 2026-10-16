@@ -1,0 +1,167 @@
+{
+ "applied": [
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Crux headwall grade"
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Crux headwall grade"
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain to the summit"
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total gain to the summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.9101854,
+      "lng": -121.59197074,
+      "elev": 3100,
+      "name": "Hannegan Trailhead",
+      "note": "USFS trailhead at the end of Hannegan Pass Road (FR 32); Northwest Forest Pass required, and this is the standard jump-off for the Chilliwack/Picket Range approach.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From SR-542 east of Glacier, turn north onto FR-32 (Hannegan Pass Road) and follow Ruth Creek to the end of the road. Every camp beyond the pass is inside the national park, so the wilderness permit has to be picked up before you drive — there is no way to sort it out from here."
+     },
+     {
+      "lat": 48.8829219,
+      "lng": -121.5342754,
+      "elev": 5050,
+      "name": "Hannegan Pass",
+      "note": "Gateway from Mt. Baker Wilderness into North Cascades National Park; trail drops off the far side into the Chilliwack River drainage toward Boundary/Copper Creek Camp.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Four miles and roughly 2,000-2,500 ft of steady climbing on good trail up the Ruth Creek valley through subalpine forest and meadow. This is the easiest walking of the whole trip and the last of it that feels like a hike."
+     },
+     {
+      "lat": 48.8808603,
+      "lng": -121.4890368,
+      "elev": 3400,
+      "name": "Copper Creek / Boundary Camp",
+      "note": "National-park backcountry camp on the Chilliwack River Trail near the park boundary; wilderness permit required, typical first-night camp on the way to Whatcom Pass.",
+      "type": "Campsite",
+      "distMi": 7,
+      "directions": "From the pass the trail drops off the north side into the Chilliwack River drainage, giving back most of the elevation just gained. The camp sits a few miles down near the park boundary and is the standard first night."
+     },
+     {
+      "lat": 48.90400514430451,
+      "lng": -121.43728844981081,
+      "elev": 2500,
+      "name": "Chilliwack River Cablecar Crossing",
+      "note": "Hand-pulled cable car is the only reliable crossing of the Chilliwack River when it's running high; awkward and exposed with a loaded pack.",
+      "type": "Hazard",
+      "distMi": null,
+      "directions": "Keep descending the Chilliwack River Trail down-valley. The tread is brushy near U.S. Cabin Camp, and in blowdown years the stretch beyond the crossing is an obstacle course of fallen trunks — parties have logged two hours to cover a mile and a half of it. The river is not reliably fordable, so the hand-pulled cable car is the crossing; sort out how a loaded pack rides and who pulls before anyone gets in."
+     },
+     {
+      "lat": 48.8756151,
+      "lng": -121.3637611,
+      "elev": 5210,
+      "name": "Whatcom Pass",
+      "note": "High pass reached via Brush Creek Trail; from here parties traverse the Whatcom Glacier east of Whatcom Peak to continue toward Perfect Pass.",
+      "type": "Junction",
+      "distMi": 17,
+      "directions": "Past the crossing, pick up the Brush Creek Trail and climb steadily up its valley. The tread here is in better shape than the Chilliwack — scattered blowdown rather than a wall of it — but the grade is long and sustained, and this is the biggest single climb of the trail approach. Whatcom Camp near the pass is the last established camp before the glaciers."
+     },
+     {
+      "lat": 48.84929,
+      "lng": -121.37458,
+      "elev": 6198,
+      "name": "Perfect Pass",
+      "note": "Reliable running water on open granite slabs; the last dependable water source and usual staging camp before committing to the glacier approach.",
+      "type": "Water",
+      "distMi": 19.5,
+      "directions": "Leave maintained trail at Whatcom Camp and traverse cross-country onto the Whatcom Glacier, working around Whatcom Peak's northeast flank. Reckon on four to five hours and about 1,750 ft for a leg that covers only a couple of miles; it is continuous snow in normal conditions, so rope up, and it softens badly by afternoon."
+     },
+     {
+      "lat": 48.833929133333335,
+      "lng": -121.3515762,
+      "elev": 7800,
+      "name": "West Challenger Notch / Crooked Thumb Glacier moraine camp",
+      "note": "Cross the high bench of the Challenger Glacier (watch for crevasses), then make one rappel down the ice- and rock-choked gully at West Challenger Notch to reach a narrow lateral-moraine camp on the Crooked Thumb Glacier's south edge, base for the summit push.",
+      "type": "Campsite",
+      "distMi": 21.5,
+      "directions": "From the pass climb firm snow to rock outcrops, then traverse steep slopes west onto the Challenger Glacier and climb it roped to the high bench near 8,100 ft, passing Solar Pass. Getting off the notch means one awkward rappel down a gully choked with rock and ice; soft snow below leads to the moraine. This is a full day on its own — the glacier alone has taken parties eight hours — and fog is common enough up here that the return legs should be on GPS before you commit."
+     },
+     {
+      "lat": 48.82662,
+      "lng": -121.34136,
+      "elev": 8129,
+      "name": "Crooked Thumb Peak",
+      "note": "True summit gained via the south ridge and a 5.6 headwall; descend by reversing the ridge to the north-ridge notch for two rappels off a rock horn.",
+      "type": "Summit",
+      "distMi": 22.5,
+      "directions": "Cross the glacier from camp to the foot of the northwest couloir and climb it: 40-45 degrees of snow, usually simul-climbed on pickets or flukes, and three to four hours of it. Above the couloir a narrow snow-and-rock gully gains the north ridge, then an exposed traverse around a line of pinnacles on loose Class 4-5 ledges leads to the headwall — a short, near-vertical crack at 5.8+ (or 5.2/A1). Ledges on the upper west face above it lead onto the south summit ridge. Treat every hold on the ridge as suspect and budget hard for the descent, because parties routinely run out of daylight here and end up bivouacking."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Capable of sustained multi-day cross-country travel (Whatcom Pass/Wiley Ridge or Big Beaver approaches) with brushy, unmaintained terrain and significant elevation gain/loss",
+      "packWeight": "Heavy - multi-day food/camp plus full glacier and rock rack; expect 40-50+ lb loads on the approach"
+     },
+     "approachTime": "Multi-day approach (typically 2-3 days to reach the Challenger Glacier/Luna Cirque high camp before a summit attempt)",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue (roped travel, picket/fluke anchors)",
+      "Comfortable leading/following 5.6 alpine rock with loose-rock exposure",
+      "Steep snow climbing and running-belay technique",
+      "Backcountry navigation/route-finding in trail-less, remote terrain",
+      "Self-sufficiency for multi-day self-rescue given extreme remoteness"
+     ],
+     "experienceLevel": "Advanced/expert alpinist with prior glaciated North Cascades objectives; not a route for a first alpine partner"
+    },
+    "beta": "This classic Beckey-era first ascent combines a 54-mile round-trip backpacking approach with technical alpine climbing. The route is accessed via the Hannegan Trailhead system, passing through the Chilliwack River drainage to Whatcom Pass, then crossing Whatcom Glacier and the heavily crevassed Crooked Thumb Glacier to reach the moraine basecamp. The summit push ascends the obvious northwest couloir with simul-climbing on 40-45 degree snow using snow flukes for protection, transitioning to Class 4-5 scrambling and exposed ledges on the narrow snow-and-rock gully accessing the north ridge. The route requires strong alpine climbing and scrambling skills, efficient rope management, and excellent route-finding in complex terrain.",
+    "road": {
+     "name": "Ruth Creek Road (FR 32) to Hannegan Trailhead, or SR-20/Ross Lake to Big Beaver Trailhead",
+     "status": "Seasonal",
+     "driveNote": "Hannegan Trailhead sits at 3,100 ft at the end of Ruth Creek Road (FR 32); the Big Beaver Trailhead alternative requires a Ross Lake water taxi crossing from SR-20. Both approaches are long (50+ mile round trips) multi-day approaches into the Northern Pickets.",
+     "seasonalGate": "Winter closures and periodic washout closures on both approach roads; check current NPS/USFS road status before driving in."
+    }
+   }
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "before": {
+    "gain_ft": 7400,
+    "loss_ft": 6000
+   }
+  }
+ ]
+}

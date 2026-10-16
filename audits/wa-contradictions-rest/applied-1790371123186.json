@@ -1,0 +1,124 @@
+{
+ "applied": [
+  {
+   "id": "wa_wright_pond",
+   "column": "beta",
+   "path": [],
+   "fact": "First ascent date"
+  },
+  {
+   "id": "wa_wright_pond",
+   "column": "beta",
+   "path": [],
+   "fact": "Cam rack"
+  },
+  {
+   "id": "wa_wright_pond",
+   "column": "obj_haz",
+   "path": [
+    0
+   ],
+   "fact": "Protection rating"
+  },
+  {
+   "id": "wa_wright_pond",
+   "column": "length_m",
+   "path": [],
+   "fact": "Route length vs pitch lengths"
+  },
+  {
+   "id": "wa_wright_pond",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass required"
+  },
+  {
+   "id": "wa_wright_pond",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Parking pass required"
+  },
+  {
+   "id": "wa_narcos",
+   "column": "bail",
+   "path": [],
+   "fact": "Which Wright-Pond anchors Narcos shares for bail"
+  },
+  {
+   "id": "wa_narcos",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass required"
+  },
+  {
+   "id": "wa_narcos",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Parking pass required"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_wright_pond",
+   "before": {
+    "beta": "4-pitch trad climbing route graded 5.11a/b (also 6c/23/VIII-/E3 in other systems). Granite climbing on Cutthroat Creek Wall. From parking, hike approximately 1/4 mile on old roadbed, look for cairns marking left turn uphill. Bushwhack through woods with no trail, gaining elevation quickly. Traverse leftward in open forest and on slabby benches to reach shoulder at base of wall's right-hand side. Expect lichen and loose rock (newer route, FA October 4, 2010). Trad protection: doubles from tips to #2 plus single #3 and #4 cams. Early season may have snow/ice hazards. Rock is granite of good quality.",
+    "obj_haz": [
+     "runout (R-rated) climbing",
+     "loose rock possible on an infrequently-climbed line"
+    ],
+    "length_m": 244,
+    "access": {
+     "_raw": "Highway 20, approximately 4.5 miles east of Washington Pass; Cutthroat Creek Trail trailhead",
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass or America the Beautiful Pass required ($5/day or $30 annually). Digital payment only via recreation.gov mobile app. Parking lot fills quickly, especially mid-season. Vault toilet available. No overnight parking allowed. FS-400 is semi-paved with potholes; navigate with caution. Highway 20 closed in winter, typically reopens by early June. Best season: late June through late September.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_narcos",
+   "before": {
+    "bail": "The upper pitches share bolted belay anchors with Wright-Pond (its P1/P2 stations), giving bail-out rappel options if needed; the lower, Narcos-specific pitches use gear belays only, so retreat there requires building gear anchors.",
+    "access": {
+     "_raw": "Highway 20, approximately 4.5 miles east of Washington Pass; Cutthroat Creek Trail trailhead",
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No wilderness camping permit required",
+      "where": "A Northwest Forest Pass, an America the Beautiful interagency pass, or a Recreation.gov day pass covers parking at the Cutthroat Creek and Blue Lake trailheads; no permit paperwork is needed to camp. Overnight camping is banned within a quarter mile of both Blue Lake and Cutthroat Lake."
+     }
+    }
+   }
+  }
+ ]
+}

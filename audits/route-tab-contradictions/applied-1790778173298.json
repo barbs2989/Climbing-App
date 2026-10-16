@@ -1,0 +1,75 @@
+{
+ "applied": [
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Distance and gain to a Core Enchantments camp (partner_requirements 8-9 mi / ~6,200 ft vs waypoints ~6.5 mi and pass at 7,841 ft from a 3,500 ft trailhead)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "before": {
+    "approach": "Park at the Smithbrook Trailhead (elev. ~3,800 ft) on Smithbrook Road (FR 6700), about 3 miles up from Hwy 2. Start on the signed Smithbrook Trail (part of the Henry M. Jackson Wilderness trail system) and climb via nearly 20 short switchbacks, gaining about 650 ft in about a mile to Union Gap on the PCT — Lichtenberg's summit is visible to the south for much of this stretch once the forest opens up. At Union Gap, turn left (south) onto the Pacific Crest Trail and follow it about 2 miles, contouring below Lichtenberg's east flank, to Lake Valhalla (~4,830 ft), passing through a mix of forest and open meadow/heather and crossing Smith Brook along the way (a reliable water source and a good place to filter before leaving the trail). From the north or east shore of Lake Valhalla, leave the PCT and begin the off-trail portion: contour and rising-traverse around the lake toward the peak's south/southwest side, picking through heather benches, boulder fields, and increasingly loose talus. There is no maintained trail above the lake — expect real route-finding, some bushwhacking through scattered subalpine fir, and a few short cliff bands that force minor backtracking; a GPS track or written beta is genuinely useful here. The standard line aims for a prominent gully on the south/southwest side of the summit tower (often snow-filled into early summer — an ice axe and sometimes light traction are worth carrying outside of peak summer), climbed as scree/talus with a bit of low third-class scrambling near the top to gain the final summit block. Total gain from the trailhead is roughly 2,000-2,500 ft over about 9 miles round trip, with 6-7 hours being a typical leisurely round-trip time.",
+    "road": {
+     "name": "Smithbrook Road (FR 6700)",
+     "status": "Gravel, generally passable to passenger cars in dry conditions; can be rough/washboarded and may hold snow into early summer.",
+     "driveNote": "3.1 miles of gravel from Hwy 2 (turnoff ~0.6 mile before milepost 68) to the Smithbrook Trailhead at about 3,800 ft."
+    },
+    "approach_logistics": {
+     "peakLat": 47.7882093,
+     "peakLng": -121.0912723,
+     "trailhead": "Smithbrook Trailhead",
+     "trailheadLat": 47.8025,
+     "trailheadLng": -121.0765,
+     "trailheadDirection": "Park at the Smithbrook Trailhead (elev. ~3,800 ft) on Smithbrook Road (FR 6700), about 3 miles up from Hwy 2."
+    }
+   }
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong — able to sustain 15+ mile, 5,000-6,000 ft days if day-tripping the whole loop, or carry overnight gear over Aasgard Pass to a Core camp and do the summit as a shorter 4-hr round trip from there",
+      "packWeight": "Overnight pack (roughly 30-40 lb) if camping in the Core zone; fast-and-light day pack only for parties attempting it as a single huge push"
+     },
+     "approachTime": "Long — the peak is reached from a Core Enchantments camp (itself roughly 8-9 mi and ~6,200 ft gain via Aasgard Pass from the Stuart Lake trailhead); the summit push from camp is about 4 hrs round trip",
+     "requiredSkills": [
+      "Class 2-3 scrambling on loose talus and slabs",
+      "off-trail routefinding across similar-looking granite terrain in the basin",
+      "steep, loose, unmaintained trail/scree competence for the Aasgard Pass approach",
+      "early-season snow travel and basic self-arrest if attempting before full melt-out"
+     ],
+     "experienceLevel": "Comfortable with sustained Class 2-3 off-trail scrambling and long alpine days; should already have Enchantments-caliber backcountry experience given the approach"
+    }
+   }
+  }
+ ]
+}

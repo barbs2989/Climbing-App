@@ -1,0 +1,1197 @@
+{
+ "file": "r541.json",
+ "results": [
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Which chute leads to the traverse (North vs South Chute)",
+   "verdict": "fixed",
+   "correct_value": "The Terrible Traverse is reached by the standard South Chute line: South Chute to the ~6,600 ft notch, a second gully to the ~7,300 ft notch, then down a little and north on ledges to the traverse at ~7,435 ft.",
+   "evidence": "Eric's Base Camp describes the standard route going up the South Chute to the ridge notch where the Terrible and Finger Traverses branch, reaching the Terrible Traverse by descending a snow chute and traversing north on ledges. A 2013 trip report says the Terrible Traverse is crossed at 7,435 ft on the South Chute route; a Mountaineers and an NWHikers trip report are both titled South Chute / Terrible Traverse. The row's own ROUTE BREAKDOWN, overview and itinerary already say South Chute; the North Chute text in approach, CLIMBING ROUTE, variants and descent is the outlier.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1023108",
+    "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Rather than the South Chute used for the Finger Traverse, this route climbs the North Chute higher in the basin, a long, loose gully leading toward the crest. Above the chute, the route loses a little elevation",
+     "replace": "Like the Finger Traverse, this route climbs the South Chute, a long, loose gully to a notch near 6,600 ft, then a second gully to a higher notch near 7,300 ft. From there the route loses a little elevation",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "find": "North Chute",
+     "replace": "South Chute",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Rather than the South Chute used for the Finger Traverse, this route climbs the North Chute higher in the basin — a long, loose gully leading toward the crest.",
+     "replace": "The same South Chute used for the Finger Traverse — a long, loose gully to a notch near 6,600 ft, then a second scree gully to a higher notch near 7,300 ft.",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Above the chute the route",
+     "replace": "From the upper notch the route",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "to the North Chute",
+     "replace": "to the South Chute",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This route does NOT take the South Chute: it stays in the canyon and climbs the North Chute higher up. Above the chute the line loses",
+     "replace": "This route takes the same South Chute as the Finger Traverse, then a second gully to a higher notch near 7,300 ft. From there the line loses",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "find": "Loose rock throughout the North Chute",
+     "replace": "Loose rock throughout the South Chute",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE TEST IS THE CAT EARS, AND FOR THIS ROUTE IT IS A NEGATIVE TEST — YOU WANT TO WALK PAST THEM. The Cat Ears are a rock tower standing just LEFT of the notch at the top of the South Chute, and the standard advice on the South Chute is to start climbing east out of the canyon as soon as the Cat Ears come into view. This route bypasses that. Keep going NORTH up Avalanche Canyon on loose talus, past the South Chute entrance, to the mouth of the North Chute further into the canyon. If you have turned east and are climbing toward a notch with a tower just left of it, you are in the South Chute and on the Finger Traverse route instead.\n\nIn cloud the Cat Ears are not visible and the discriminator becomes the canyon itself: the South Chute leaves the canyon EARLY and low; the North Chute is reached by staying in the canyon bed and continuing up it. When in doubt, keep walking up the canyon — the error that puts you on the wrong route is turning uphill too soon.\n\nSECOND TEST, at the top of the chute: the Terrible Traverse is not the chute and it is not immediately above it. Above the North Chute the route LOSES a little elevation and traverses NORTH on ledges before it reaches the traverse at about 7,435 ft. If you have topped a chute and gone straight on up, you have not found it. The traverse itself is unmistakable when you arrive: a steep exposed snow crossing directly above a large cliff, or in late season a narrow rock ledge at the base of the icy slope above it. It is called the Terrible Traverse because a slip there does not stop.\n\n",
+     "replace": "THE TEST IS THE CAT EARS, AND IT IS A TRIGGER: START UP THE SOUTH CHUTE AS SOON AS THAT TOWER COMES INTO VIEW. Walk north up Avalanche Canyon from the lake past the Thumb and watch east. The Cat Ears is a rock tower standing just LEFT of the notch at the top of the South Chute; once you can see it, turn east and climb. If you are still walking up the canyon bed well after it appeared, you are heading for the North Chute instead.\n\nIn cloud, when the tower is hidden, use the chute's shape: the South Chute is the first substantial gully leaving the canyon eastward above the lake, and it NARROWS as it climbs to the notch at about 6,600 ft.\n\nSECOND TEST, above that notch: the line drops a little, climbs a second scree gully to a higher notch near 7,300 ft, then loses height again and traverses NORTH on ledges. Here the two crossings part company. The Finger Traverse goes up and around a corner on a ledge with a horizontal finger crack along its top; the Terrible Traverse is reached over hard-packed scree to a cairned ledge heading north, and you meet the crossing itself at about 7,435 ft. It is unmistakable when you arrive: a steep exposed snow slope directly above a large cliff, or in late season a narrow rock ledge at the base of the icy slope above it. It is called the Terrible Traverse because a slip there does not stop.\n\n",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "COMING IN FROM CRYSTAL PASS YOU ENTER AVALANCHE CANYON FROM ABOVE, SO THE CAT EARS TEST RUNS BACKWARDS AND YOU MUST NOT LET IT PULL YOU DOWNHILL. Dropping south into the canyon from Crystal Pass you meet the North Chute's mouth FIRST and the South Chute entrance further down toward the lake. So the discriminator here is: the first chute you can turn up out of the canyon on the Constance side is the one you want. If you are still descending the canyon and have passed a chute on your left, you have gone below it.\n\nTHE FIXED LANDMARK THIS SIDE SHARES with the lake approach is the Cat Ears tower and the Thumb formation, both of which sit in the canyon between the two lines. Keep them BELOW you.\n\nABOVE THE CHUTE THE TEST IS THE SAME AS THE LAKE APPROACH: the route loses a little height and traverses NORTH on ledges to the base of the Terrible Traverse at about 7,435 ft — a steep exposed snow crossing above a large cliff, or a narrow rock ledge in late season.\n\n",
+     "replace": "COMING IN FROM CRYSTAL PASS YOU ENTER AVALANCHE CANYON FROM ABOVE, SO YOU MUST DESCEND PAST THE NORTH CHUTE BEFORE THE SOUTH CHUTE OPENS. Dropping south into the canyon, the first couloir you meet on the Constance side is the North Chute; keep going down the canyon toward the lake.\n\nTHE FIXED LANDMARKS on this stretch are the Cat Ears tower and the Thumb. The gully you want is the one whose top notch, at roughly 6,600 ft, has the Cat Ears tower standing just left of it: that is the South Chute. If you reach the lake you have gone below it.\n\nABOVE THE CHUTE THE TEST IS THE SAME AS THE LAKE APPROACH: a short drop and a second gully to the upper notch near 7,300 ft, then the route loses a little height and traverses NORTH on ledges to the Terrible Traverse at about 7,435 ft — a steep exposed snow crossing above a large cliff, or a narrow rock ledge in late season.\n\n",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Below the traverse, drop back down the North Chute's loose scree/talus into Avalanche Canyon",
+     "replace": "Below the traverse, return to the upper notch and drop back down the South Chute's loose scree/talus into Avalanche Canyon",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Which chute leads to the traverse (North vs South Chute)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Notch elevation",
+   "verdict": "fixed",
+   "correct_value": "The notch reached ~1,950 ft above camp is the top of the South Chute (~6,600 ft), not the base of the traverse (~7,435 ft).",
+   "evidence": "A 2025 trip report reached the South Chute notch at 6,600 ft after 1,950 ft of gain from the Lake Constance camp. Another description puts the South Chute terminus at ~6,600 ft with the traverses above a further gully. So the schedule line is right about the height but wrong to call it the base of the traverse.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "~1,950 ft above camp, base of the traverse.",
+     "replace": "Top of the South Chute, ~1,950 ft above camp.",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Notch elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Traverse crossed on ascent or descent",
+   "verdict": "fixed",
+   "correct_value": "On this route the Terrible Traverse is crossed on the way up and again on the way down unless the party descends by the Finger Traverse.",
+   "evidence": "Eric's Base Camp reaches the traverse on the ascent from the ridge notch; the row's approach, CLIMBING ROUTE, itinerary and descent_text all cross it going up and reverse it going down. The beta sentence saying it is typically met on the descent is the outlier.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The Terrible Traverse is typically encountered during descent from the summit.",
+     "replace": "The Terrible Traverse is crossed on the way up and again on the way down, unless the party descends by the Finger Traverse instead.",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Traverse crossed on ascent or descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Trailhead location and elevation",
+   "verdict": "fixed",
+   "correct_value": "The Trailhead pin sits at the Dosewallips Road washout parking (ground ~530 ft), not at the Lake Constance trail start (~1,400-1,450 ft, about 5 road miles farther). Name it for the washout and give it ~550 ft.",
+   "evidence": "USGS 3DEP elevation at the pin coordinates is 530 ft, i.e. the washout parking, not the 1,400 ft trail start. A 2025 trip report puts the road blockade parking at 550 ft and the Lake Constance trailhead ~4.75 road miles higher at ~1,450 ft; an Oregon hiking guide puts the Dosewallips washout trailhead at 520 ft. approach_logistics already names the washout parking, so the pin name/elevation are the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.065764&y=47.740259&units=Feet&wkid=4326",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Lake Constance Trailhead (Dosewallips Road)",
+     "value": "Dosewallips Road washout parking",
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_terrible_traverse",
+     "fact": "Trailhead location and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "fact": "Land manager / wilderness",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two fields describe different extents rather than disagreeing: Lake Constance, Avalanche Canyon and the climb lie in Olympic National Park (Olympic Wilderness), the closed Dosewallips Road below the park boundary (~4.9 mi from the washout) is Olympic National Forest, and the summit sits on the park boundary with the Buckhorn Wilderness. Both strings name Olympic NP as the manager of the route itself.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://en.wikipedia.org/wiki/Mount_Constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Which chute the Finger Traverse is on",
+   "verdict": "fixed",
+   "correct_value": "The Finger Traverse is reached by the South Chute (standard route), not the North Chute.",
+   "evidence": "Eric's Base Camp and a hiking/climbing guide both describe the standard route climbing the South Chute to the ridge notch, from which the Finger Traverse (c. 7,300 ft) and the Terrible Traverse branch. The row's approach, CLIMBING ROUTE, ROUTE BREAKDOWN, itinerary, variants and descent all say South Chute; the overview's North Chute wording is the outlier.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm",
+    "https://www.thewildoutsiders.com/adventure-journal/mount-constance"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "encountered on the North Chute side around",
+     "replace": "encountered above the South Chute around",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Which chute the Finger Traverse is on"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "; it's also sometimes referenced simply as crossing via the 'North Chute.'",
+     "replace": ".",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Which chute the Finger Traverse is on"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Traverse crossed on ascent or descent",
+   "verdict": "fixed",
+   "correct_value": "The Finger Traverse is crossed on the way to the summit and reversed on the descent.",
+   "evidence": "Eric's Base Camp and The Wild Outsiders both cross the Finger Traverse on the way up to the summit; the row's approach, CLIMBING ROUTE, itinerary and descent_text agree and reverse it on the way down. The beta sentence is the outlier.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "https://www.thewildoutsiders.com/adventure-journal/mount-constance"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "After summiting via the standard South Chute approach, the Finger Traverse is typically encountered on the descent.",
+     "replace": "On the standard South Chute approach, the Finger Traverse is crossed on the way to the summit and again on the descent.",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Traverse crossed on ascent or descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Round-trip distance and gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The ~8 mile / ~6,400 ft round trip counts from the Lake Constance trail start (~1,400 ft) and excludes the ~5-mile closed road walk each way that the header and itinerary include.",
+   "evidence": "Eric's Base Camp gives the Lake Constance trail as 2.2 mi and ~3,250 ft from a trailhead at 1,400 ft; a 2025 trip report puts that trailhead ~4.75 road miles above the washout. 1,400 ft to the 7,756 ft summit is ~6,400 ft, so the 8 mi / 6,400 ft figure excludes the road walk that the row's approach and itinerary include.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "A representative full round trip (trailhead to summit and back) runs about 8 miles with roughly 6,400 ft gained and lost.",
+     "replace": "Not counting the closed road walk, a round trip from the Lake Constance trail start to the summit and back runs about 8 miles with roughly 6,400 ft gained and lost.",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Round-trip distance and gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Finger Traverse grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside descriptions disagree: one 2004 party describes the Finger Traverse as 5.0 moves, while other accounts call the upper mountain exposed class 3 with some class 4 and describe the traverse as more exhilarating than technical. No two sources agree on a single grade for the traverse itself, so neither 5.0 nor Class 3 is written.",
+   "sources": [
+    "https://www.mountainwerks.org/cma/2004/constance.html",
+    "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm",
+    "https://www.thewildoutsiders.com/adventure-journal/mount-constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Lake Constance trail maintained or not",
+   "verdict": "fixed",
+   "correct_value": "The Lake Constance path is an unmaintained climbers' route, not a maintained trail.",
+   "evidence": "The sign at the trailhead reads 'Lake Constance Route', and a 2025 trip report notes the sign calls it a route rather than a trail; the row's approach and variants already say unmaintained. The itinerary's 'maintained' is the outlier.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "often called the hardest maintained approach in the Olympics",
+     "replace": "often called the hardest approach in the Olympics",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Lake Constance trail maintained or not"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Trailhead location and elevation",
+   "verdict": "fixed",
+   "correct_value": "The Trailhead pin sits at the Dosewallips Road washout parking (ground ~530 ft), not at the Lake Constance trail start (~1,400-1,450 ft, about 5 road miles farther). Name it for the washout and give it ~550 ft.",
+   "evidence": "USGS 3DEP elevation at the pin coordinates is 530 ft, i.e. the washout parking, not the 1,400 ft trail start. A 2025 trip report puts the road blockade parking at 550 ft and the Lake Constance trailhead ~4.75 road miles higher at ~1,450 ft; an Oregon hiking guide puts the Dosewallips washout trailhead at 520 ft. approach_logistics already names the washout parking, so the pin name/elevation are the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.065764&y=47.740259&units=Feet&wkid=4326",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Lake Constance Trailhead (Dosewallips Road)",
+     "value": "Dosewallips Road washout parking",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Where the Lake Constance climbers' trail leaves Dosewallips Road, ~8.5-13.5mi past Hwy 101/Brinnon; road-end washout itself is lower (~600ft).",
+     "replace": "Parking where the Dosewallips Road is closed at the washout. The Lake Constance climbers' trail leaves the closed road about 5 mi farther on, at roughly 1,450 ft.",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 700 ft",
+     "replace": "roughly 550 ft",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "at roughly 700 ft",
+     "replace": "at roughly 550 ft",
+     "id": "wa_mount_constance_finger_traverse",
+     "fact": "Trailhead location and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Land manager / wilderness",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two fields describe different extents rather than disagreeing: Lake Constance, Avalanche Canyon and the climb lie in Olympic National Park (Olympic Wilderness), the closed Dosewallips Road below the park boundary (~4.9 mi from the washout) is Olympic National Forest, and the summit sits on the park boundary with the Buckhorn Wilderness. Both strings name Olympic NP as the manager of the route itself.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://en.wikipedia.org/wiki/Mount_Constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "South Chute height",
+   "verdict": "fixed",
+   "correct_value": "The chute proper is ~1,200 ft from the canyon floor; the South Chute line gains ~1,900-1,950 ft from the lake to the ~6,600 ft notch. Make the 1,900 ft figures say they count from the lake.",
+   "evidence": "Eric's Base Camp gives the South Chute as ~1,200 ft from the base in Avalanche Canyon to the ridge; a 2025 trip report gained 1,950 ft from the Lake Constance camp to the 6,600 ft notch. Both numbers are right for different starting points, so the 1,900 ft copies are qualified as measured from the lake rather than changed.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The South Chute climbs about 1,900 ft of scree",
+     "replace": "From the lake, the South Chute line climbs about 1,900 ft of scree",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "South Chute height"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "~1,900 ft of loose scree/talus up the chute to roughly 6,600 ft.",
+     "replace": "Loose scree/talus up the chute (about 1,200 ft; roughly 1,900 ft above the lake) to roughly 6,600 ft.",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "South Chute height"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "About 1,900 ft of scree to a saddle/notch",
+     "replace": "About 1,900 ft of scree above the lake to a saddle/notch",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "South Chute height"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The chute climbs roughly 1,900 ft of scree to a saddle",
+     "replace": "From the lake the chute line climbs roughly 1,900 ft of scree to a saddle",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "South Chute height"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Finger and Terrible Traverses: alternatives or both",
+   "verdict": "fixed",
+   "correct_value": "The Finger Traverse and the Terrible Traverse are alternative crossings from the upper notch, not two traverses done in sequence.",
+   "evidence": "Eric's Base Camp describes the two traverses branching from the same ridge notch as options; another route description calls the Finger Traverse the rock alternative to the snow Terrible Traverse. The row's overview, approach, CLIMBING ROUTE and descent already treat them as either/or.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "https://www.summitpost.org/mount-constance/151586"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "notes"
+     ],
+     "find": "A second exposed ledge/tower traverse on the summit ridge; passability varies with snow/ice cover by season.",
+     "replace": "The alternative to the Finger Traverse: an exposed crossing of steep snow or scree above a large cliff; passability varies with snow/ice cover by season.",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Finger and Terrible Traverses: alternatives or both"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Road-walk distance from the washout",
+   "verdict": "fixed",
+   "correct_value": "About 5 miles from the washout to the Lake Constance trail start.",
+   "evidence": "A 2025 trip report measured 4.75 miles from the road blockade to the Lake Constance trailhead; The Wild Outsiders call it a 5-ish mile bike; WTA says 5+ miles of road above the washout. The 4-mile and 5-6 mile figures are both brought to ~5.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "https://www.thewildoutsiders.com/adventure-journal/mount-constance",
+    "https://www.wta.org/go-hiking/hikes/lake-constance"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 5-6 more miles",
+     "replace": "roughly 5 more miles",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "so the first 5-6 miles",
+     "replace": "so the first 5 miles",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "The 5-6 miles of closed roadbed",
+     "replace": "The roughly 5 miles of closed roadbed",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 5.5,
+     "value": 5,
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "~4-5 miles",
+     "replace": "~5 miles",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "adds ~4-5 miles each way",
+     "replace": "adds ~5 miles each way",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "~4-mile road-walk",
+     "replace": "~5-mile road-walk",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Road-walk distance from the washout"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Summit-block grade",
+   "verdict": "fixed",
+   "correct_value": "The summit block is 3rd class with at most a few 4th-class moves; no low-5th move.",
+   "evidence": "One route description gives the summit block as a 3rd-class chimney around the north side with some class 4 here and there; a climbers' log entry reports a few 4th-class moves on the block, and a West Arete party describes the summit horn as a class 3 scramble. None cites low 5th.",
+   "sources": [
+    "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm",
+    "https://www.summitpost.org/mount-constance/climbers-log/151586",
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rock_grade",
+     "path": [],
+     "find": "Class 3, with short low-5th-class moves on the final summit block",
+     "replace": "Class 3, with a few 4th-class moves on the final summit block",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Summit-block grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Parking/entrance pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: WTA's Dosewallips River Road page lists no parking pass at the washout, while WTA's Lake Constance page lists a Northwest Forest Pass or America the Beautiful pass; neither mentions an Olympic NP entrance fee being collected on this side. No two sources settle what is required.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.wta.org/go-hiking/hikes/lake-constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Lake Constance reservation season",
+   "verdict": "fixed",
+   "correct_value": "Summer wilderness permit season is May 15 - October 15 (reservations released April 15).",
+   "evidence": "The Olympic NP wilderness reservations page states the summer season runs May 15 through October 15 with reservations released April 15; National Parks Traveler reports the same May 15-October 15 window. Both stored windows (mid-June to mid-October; May through September) are wrong.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nationalparkstraveler.org/2025/04/time-grab-your-olympic-national-park-backcountry-permit"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "reservations available roughly mid-June to mid-October",
+     "replace": "reservations for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Lake Constance reservation season"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "reservable roughly mid-June to mid-October",
+     "replace": "reservable for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Lake Constance reservation season"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "well ahead for May through September",
+     "replace": "well ahead for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Lake Constance reservation season"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Lake Constance trail signed or unsigned",
+   "verdict": "fixed",
+   "correct_value": "The start of the Lake Constance path is signed (the sign names it a route, not a trail).",
+   "evidence": "Eric's Base Camp quotes the trailhead sign as reading 'Lake Constance Route', and a 2025 trip report notes a sign there calling it a route rather than a trail. (WTA's road page calls the trailhead unsigned, but the 2025 report is the most recent.)",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "at the unsigned start of the climbers",
+     "replace": "at the signed start of the climbers",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Lake Constance trail signed or unsigned"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Trailhead location and elevation",
+   "verdict": "fixed",
+   "correct_value": "The Trailhead pin sits at the Dosewallips Road washout parking (ground ~530 ft), not at the Lake Constance trail start (~1,400-1,450 ft, about 5 road miles farther). Name it for the washout and give it ~550 ft.",
+   "evidence": "USGS 3DEP elevation at the pin coordinates is 530 ft, i.e. the washout parking, not the 1,400 ft trail start. A 2025 trip report puts the road blockade parking at 550 ft and the Lake Constance trailhead ~4.75 road miles higher at ~1,450 ft; an Oregon hiking guide puts the Dosewallips washout trailhead at 520 ft. approach_logistics already names the washout parking, so the pin name/elevation are the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.065764&y=47.740259&units=Feet&wkid=4326",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Lake Constance Trailhead (Dosewallips Road)",
+     "value": "Dosewallips Road washout parking",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Trailhead location and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Approach and camp",
+   "verdict": "fixed",
+   "correct_value": "The West Arete is approached from the Lake Constance camp up Avalanche Canyon to Crystal Pass; there is no separate western-flank approach or high camp.",
+   "evidence": "Eric's Base Camp (West Arete, 2004) camped at Lake Constance and went up Avalanche Canyon to Crystal Pass; a Mountainwerks 2004 report did the same from a lake camp. The partner-requirements and weather text describing a separate western-flank approach to a high camp are the outlier.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://www.mountainwerks.org/cma/2004/constance.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Strong alpine fitness for a multi-day approach up the western flank to a high camp, distinct and reportedly less-traveled than the Lake Constance trail used for the standard route",
+     "replace": "Strong alpine fitness for the steep Lake Constance trail carrying a rack and rope, then a long climb up Avalanche Canyon to Crystal Pass before the roped climbing starts",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Approach and camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Multi-hour approach to a high camp on the western flank of the massif; less documented than the Lake Constance approach, so plan a full day for approach separate from the summit push (per the existing 14-hr round-trip summit timing)",
+     "replace": "A full day to reach camp at Lake Constance, then roughly 3-4 hours up Avalanche Canyon to Crystal Pass at the start of the climbing day",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Approach and camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": ", though the West Arête's western-flank approach may see slightly more moisture than the Lake Constance side",
+     "replace": "",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Approach and camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Rock type",
+   "verdict": "fixed",
+   "correct_value": "The rock is Olympic pillow basalt, loose and hard to protect with nuts; not granite.",
+   "evidence": "SummitPost describes Constance as pillow basalt that is poor for climbing and hard to protect, with slings often more practical than wedges; Climber Kyle describes the Crescent Formation pillow basalt running through Constance. The row's descent_text and obj_haz already say loose basalt.",
+   "sources": [
+    "https://www.summitpost.org/mount-constance/151586",
+    "https://climberkyle.com/2023/06/12/washington-ellinor-traverse/",
+    "https://en.wikipedia.org/wiki/Mount_Constance"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "find": "Full set of nuts/stoppers — this granite takes them well",
+     "replace": "Full set of nuts/stoppers, though placements in this basalt are often poor and slings get more use",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Rock type"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Character of the climbing",
+   "verdict": "fixed",
+   "correct_value": "Mostly broken class 2-4 ground with a few low-fifth-class steps; the hardest pitch about 5.4-5.5.",
+   "evidence": "Eric's Base Camp describes the arete as fairly broken class 2 and 3 with an occasional 4th or low 5th step and one 5.4 crux; a Mountainwerks party describes 4th class with occasional 5th-class terrain. Neither supports sustained 5.4-5.5 climbing, so the overview and the itinerary's 'five pitches of low-5th' are brought into line with the beta.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://www.mountainwerks.org/cma/2004/constance.html",
+    "https://www.summitpost.org/west-arete-5-5/851949"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "roughly 1,100 feet of class 3 to sustained 5.4-5.5 rock over 5+ pitches (harder than the 'low 5th' commonly cited)",
+     "replace": "roughly 1,100 feet of mostly broken class 3-4 rock with a few low-fifth-class steps over 5+ pitches, the hardest about 5.4-5.5",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Character of the climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "roughly 5 pitches of low-5th-class rock",
+     "replace": "roughly 5 pitches of mostly class 3-4 rock with a few low-5th-class steps",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Character of the climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "roughly 5 pitches of low-5th-class rock",
+     "replace": "roughly 5 pitches of mostly class 3-4 rock with a few low-5th-class steps",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Character of the climbing"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Which pitch is 5.4 up and left past pitons",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Pitch 1 goes around a small tower and up a crack with fixed webbing; the up-and-right groove past pitons to an alcove below a chimney is the later 5.4 crux pitch.",
+   "evidence": "Eric's Base Camp places the piton pitch (groove up and right, 5.4, back left to an alcove with pitons and a chockstone) after broken lower ground; another route description starts with a ledge around a corner to a crack with slung webbing around a chockstone. The row's overview, beta and ROUTE BREAKDOWN agree; the schedule line is the outlier.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://www.summitpost.org/west-arete-5-5/851949"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Pitch 1 (5.4) up and left past fixed pitons to a chimney belay.",
+     "replace": "Pitch 1 around a small tower and up a crack with fixed webbing onto the arête.",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Which pitch is 5.4 up and left past pitons"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Climb length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source gives a total length for the arete: one 2004 party led 4-5 rope lengths plus a couple of 3rd/4th-class pitches, another reports only two roped pitches amid scrambling. Neither the 335 m / 1,100 ft figure nor the 190 m pitch sum can be confirmed.",
+   "sources": [
+    "https://www.mountainwerks.org/cma/2004/constance.html",
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Cat Ears as target or wrong-way marker",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The arete approach walks past the Cat Ears (which sit above the South Chute, on the east side of the canyon) and stays in the canyon to Crystal Pass; the Cat Ears are not its target.",
+   "evidence": "Descriptions of the standard route put the Cat Ears above the South Chute notch, which leaves Avalanche Canyon eastward; Eric's Base Camp's West Arete party went straight up the canyon to Crystal Pass. The approach's 'heading for the Cat Ears' and the base-finding's 'west side of the canyon' are corrected.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Constance3/Constance3.htm",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "heading for the 'Cat Ears' landmark, following",
+     "replace": "passing below the 'Cat Ears' landmark, following",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Cat Ears as target or wrong-way marker"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "climbing a scree chute out of the west side of the canyon",
+     "replace": "climbing a scree chute out of the east side of the canyon",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Cat Ears as target or wrong-way marker"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Trailhead location and elevation",
+   "verdict": "fixed",
+   "correct_value": "The Trailhead pin sits at the Dosewallips Road washout parking (ground ~530 ft), not at the Lake Constance trail start (~1,400-1,450 ft, about 5 road miles farther). Name it for the washout and give it ~550 ft.",
+   "evidence": "USGS 3DEP elevation at the pin coordinates is 530 ft, i.e. the washout parking, not the 1,400 ft trail start. A 2025 trip report puts the road blockade parking at 550 ft and the Lake Constance trailhead ~4.75 road miles higher at ~1,450 ft; an Oregon hiking guide puts the Dosewallips washout trailhead at 520 ft. approach_logistics already names the washout parking, so the pin name/elevation are the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.065764&y=47.740259&units=Feet&wkid=4326",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Lake Constance Trailhead (Dosewallips Road)",
+     "value": "Dosewallips Road washout parking",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Trailhead location and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Land manager / wilderness",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two fields describe different extents rather than disagreeing: Lake Constance, Avalanche Canyon and the climb lie in Olympic National Park (Olympic Wilderness), the closed Dosewallips Road below the park boundary (~4.9 mi from the washout) is Olympic National Forest, and the summit sits on the park boundary with the Buckhorn Wilderness. Both strings name Olympic NP as the manager of the route itself.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://en.wikipedia.org/wiki/Mount_Constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Lake Constance reservation season",
+   "verdict": "fixed",
+   "correct_value": "Summer wilderness permit season is May 15 - October 15.",
+   "evidence": "The Olympic NP wilderness reservations page and National Parks Traveler both give the summer season as May 15 through October 15. The variant (mid-June to mid-October) and ACCESS (May through September) disagreed with each other and with both sources.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nationalparkstraveler.org/2025/04/time-grab-your-olympic-national-park-backcountry-permit"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "reservable roughly mid-June to mid-October",
+     "replace": "reservable for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Lake Constance reservation season"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "well ahead for May through September",
+     "replace": "well ahead for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_west_arete",
+     "fact": "Lake Constance reservation season"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Timing total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The components (3.5 + 6 + 5 = 14.5 h) do not sum to the 11 h total, but no outside source gives times for this variation, and the total may be meant as the summit day only. No sourced figure to adopt.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Camp description points to the South Chute",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The Lake Constance camp does serve this route (it is the base for both chutes); only its shared note describes the South Chute line. bivy[] is owned by the camping clean-up, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Trailhead location and elevation",
+   "verdict": "fixed",
+   "correct_value": "The Trailhead pin sits at the Dosewallips Road washout parking (ground ~530 ft), not at the Lake Constance trail start (~1,400-1,450 ft, about 5 road miles farther). Name it for the washout and give it ~550 ft.",
+   "evidence": "USGS 3DEP elevation at the pin coordinates is 530 ft, i.e. the washout parking, not the 1,400 ft trail start. A 2025 trip report puts the road blockade parking at 550 ft and the Lake Constance trailhead ~4.75 road miles higher at ~1,450 ft; an Oregon hiking guide puts the Dosewallips washout trailhead at 520 ft. approach_logistics already names the washout parking, so the pin name/elevation are the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.065764&y=47.740259&units=Feet&wkid=4326",
+    "https://trailcatjim.com/mt-constance-outer-peak-attempt-via-lake-constance-south-chute-2025/",
+    "https://www.oregonhikers.org/field_guide/Dosewallips_River_Hike",
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Lake Constance Trailhead (Dosewallips Road)",
+     "value": "Dosewallips Road washout parking",
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Trailhead location and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 1400,
+     "value": 550,
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Trailhead location and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Lake Constance reservation season",
+   "verdict": "fixed",
+   "correct_value": "Summer wilderness permit season is May 15 - October 15.",
+   "evidence": "The Olympic NP wilderness reservations page and National Parks Traveler both give May 15 through October 15. ACCESS said May 1-Sept 30 in one field and May through September in another.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nationalparkstraveler.org/2025/04/time-grab-your-olympic-national-park-backcountry-permit"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "early reservation recommended May 1-Sept 30",
+     "replace": "early reservation recommended for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Lake Constance reservation season"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "well ahead for May through September",
+     "replace": "well ahead for the May 15-October 15 summer season",
+     "id": "wa_mount_constance_north_chute",
+     "fact": "Lake Constance reservation season"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

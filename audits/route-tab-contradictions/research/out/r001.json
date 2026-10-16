@@ -1,0 +1,584 @@
+{
+ "file": "r001.json",
+ "results": [
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+   "verdict": "fixed",
+   "correct_value": "Early to mid July is the best window; from late July the glacier breaks up and the moat/bergschrund gets harder, with August-September still possible (more so in low-snow years).",
+   "evidence": "A July 13-14, 2024 ascent report states early to mid-July is the best time to keep the bergschrund crossing simple while the upper scramble is snow-free. The route's main description says it is best climbed mid-summer before the glacier gets so broken up that the glacier-to-rock transition becomes an issue, and that most climbers find good conditions in July. A late-July 2003 report adds that later in the season the moat crossing is harder with steeper ice. seasonal_guidance (August optimal) and crowds.peakTraffic (August as when the bergschrund is easiest) were the outliers against season, best_season, climate, watch_out, crevasses and itinerary.cal.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/mary-green-glacier-on-bonanza-peak",
+    "https://www.mountainproject.com/route/126644736/mary-green-glacier",
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Late July through early September month of August; early-to-mid July can also work in low-snow years for an easier bergschrund crossing",
+     "value": "Early to mid July, while the bergschrund is simple to cross; from late July the glacier breaks up and the moat gets harder, though August and September ascents still go in low-snow years"
+    },
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "good",
+     "value": "optimal"
+    },
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal"
+    },
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "In season; Prime summer, with the driest, most stable glacier and rock conditions",
+     "value": "Dry rock and settled weather, but the glacier is usually broken up by now and the moat and bergschrund are much harder to cross; more feasible in low-snow years"
+    },
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "Weekends in early-to-mid August, when the bergschrund crossing is easiest and weather is most settled",
+     "replace": "Weekends in early-to-mid July, when the bergschrund crossing is easiest"
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "fact": "Number of rappels on the standard descent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About three to four rappels on the upper rock (about four is the common count); the rest is downclimbed.",
+   "evidence": "A 2003 party made four rappels (one off the east ridge into the upper gully, then three toward the glacier) on two 30 m ropes, matching the row's descent, descent_text, rappel_count_note, itinerary day note and schedule, summit waypoint note and four-entry rappel_detail. A 2024 party made three rappels on a 60 m x 8 mm rope. Neither supports as few as one; only the rappels prose said 1-3.",
+   "sources": [
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm",
+    "https://www.jeffreyjhebert.com/adventures/mary-green-glacier-on-bonanza-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Number of rappels on the standard descent",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "1-3 rappels commonly used",
+     "replace": "About three to four rappels commonly used"
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "fact": "Spelling of the first-ascent climber's name (Ijames vs James)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Curtis Ijames",
+   "evidence": "The fa column names 'Curtis Ijames' while the overview names 'Curtis James'. The encyclopedia entry for the peak and the Mazamas club bulletin both name the 1937 party as Curtis Ijames, Joe Leuthold and Barrie James. (Separately, one encyclopedia entry says the 1937 party approached via the Company Glacier; that bears on whether this line is the FA route but was not settled by two sources, so it is not changed.)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bonanza_Peak_(Washington)",
+    "https://issuu.com/mazamas/docs/2025_may_june_mazama_bulletin/s/78987851"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_mary_green_glacier",
+     "fact": "Spelling of the first-ascent climber's name (Ijames vs James)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Curtis James, Barrie James",
+     "replace": "Curtis Ijames, Barrie James"
+    }
+   ]
+  },
+  {
+   "id": "wa_soviet_route",
+   "fact": "Pitch count for the route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "14 (modern count on 60 m ropes; the 1975 first ascent logged 22)",
+   "evidence": "The 2012 ascent report records the route climbed in 14 pitches plus 4 belay moves with full 60 m pitches, and notes the Soviet party logged 22 with shorter ropes. The first-ascent account records 22 pitches for 1975. The row's pitch_detail (14 rows), itinerary, timing notes, partner_requirements, beta and detailed_rack all use 14 as today's count; only the header pitches field used the FA figure.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bonanza-soviet/",
+    "http://publications.americanalpineclub.org/articles/12197634000/A-Soviet-First-Ascent-in-the-North-Cascades"
+   ],
+   "patches": [
+    {
+     "id": "wa_soviet_route",
+     "fact": "Pitch count for the route",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 22,
+     "value": 14
+    }
+   ]
+  },
+  {
+   "id": "wa_soviet_route",
+   "fact": "Timing breakdown sums to the stated total",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "approach 6, summit 13 (leave camp 5 AM, ~6 PM on the Southwest Peak), descent 14.5 (ridge and raps back to camp by 2:30 AM = 8.5 h, plus the 6 h hike out) = 33.5",
+   "evidence": "The 2012 ascent report: left camp 5 AM, about an hour of talus, just under 12 hours base to the Southwest Peak, back at camp 2:30 AM (21.5 hours). The row's itinerary schedule (5:00 AM, ~6:00 PM summit, 2:30 AM camp), sectionBreakdown (6 + 21.5 + 6) and fitnessSpec (33.5) all agree; only the approach/summit/descent split (5.5/6/27.5, summing to 39) did not, so it is re-derived from the row's own schedule. The sectionBreakdown section labels were shifted one row (ferry day labelled Climb, climb day labelled Descent) and are corrected too.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bonanza-soviet/"
+   ],
+   "patches": [
+    {
+     "id": "wa_soviet_route",
+     "fact": "Timing breakdown sums to the stated total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 5.5,
+     "value": 6
+    },
+    {
+     "id": "wa_soviet_route",
+     "fact": "Timing breakdown sums to the stated total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6,
+     "value": 13
+    },
+    {
+     "id": "wa_soviet_route",
+     "fact": "Timing breakdown sums to the stated total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 27.5,
+     "value": 14.5
+    },
+    {
+     "id": "wa_soviet_route",
+     "fact": "Timing breakdown sums to the stated total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "section"
+     ],
+     "expect": "Climb",
+     "value": "Approach"
+    },
+    {
+     "id": "wa_soviet_route",
+     "fact": "Timing breakdown sums to the stated total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "section"
+     ],
+     "expect": "Descent",
+     "value": "Climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_soviet_route",
+   "fact": "Which modern ascent compressed the route to 14 pitches, and its time",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": "The 14-pitches-plus-4-belay-moves count is from the 2012 ascent, which took just under 12 hours from the base to the Southwest Peak (21.5 h camp to camp), not 12 h car to car.",
+   "evidence": "beta credits the 14-pitch count to 'a 1996 ascent' and says a 2012 party took 'about 12 hours car-to-car from the buttress base', while detailed_rack, pitch_detail notes and the itinerary attribute the 14 pitches to the 2012 ascent and show 12 hours base-to-summit within a 21.5-hour camp-to-camp day and a 3-day trip. The 2012 ascent report gives exactly 14 pitches plus 4 belay moves, just under 12 hours base to summit, and 21.5 hours camp to camp; no 1996 ascent turned up.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bonanza-soviet/"
+   ],
+   "patches": [
+    {
+     "id": "wa_soviet_route",
+     "fact": "Which modern ascent compressed the route to 14 pitches, and its time",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "a 1996 ascent using modern gear",
+     "replace": "a 2012 ascent using modern gear"
+    },
+    {
+     "id": "wa_soviet_route",
+     "fact": "Which modern ascent compressed the route to 14 pitches, and its time",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "a 2012 party climbed it in about 12 hours car-to-car from the buttress base",
+     "replace": "that party took just under 12 hours from the buttress base to the Southwest Peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "fact": "Which trailhead/range this route describes",
+   "verdict": "fixed",
+   "correct_value": "Holden Village / Railroad Creek approach in the North Cascades (Glacier Peak Wilderness); Bonanza is Washington's highest non-volcanic peak and the Chelan County highpoint.",
+   "evidence": "Bonanza Peak is in the North Cascades in the Glacier Peak Wilderness, the highest non-volcanic peak in Washington and Chelan County's highpoint (encyclopedia entry; county-highpoint and peak-listing pages agree). Documented ascents approach from Holden Village via the Railroad Creek and Holden Lake trails to Holden Lake/Holden Pass and the Mary Green Glacier (2003 and 2024 reports). Nothing places it in the Wenatchee Mountains or near the Middle Fork Snoqualmie.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bonanza_Peak_(Washington)",
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm",
+    "https://www.jeffreyjhebert.com/adventures/mary-green-glacier-on-bonanza-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Which trailhead/range this route describes",
+     "op": "set",
+     "column": "overview",
+     "path": [],
+     "expect": "Bonanza Peak is the highest point in the Wenatchee Mountains, a popular mountaineering objective. The North Ridge is the most direct approach to the summit, a straightforward Class 2 scramble over talus and low-angle rock with good routefinding.",
+     "value": "Bonanza Peak is the highest non-volcanic summit in Washington and the Chelan County highpoint, deep in the Glacier Peak Wilderness above Holden Village. This line is the peak's standard east-side route: roped travel up the Mary Green Glacier, then loose Class 3-4 scrambling through a gully/rib system to a notch on the upper northeast ridge and a short, exposed crest to the summit."
+    },
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Which trailhead/range this route describes",
+     "op": "set",
+     "column": "beta",
+     "path": [],
+     "expect": "From the Middle Fork Snoqualmie trailhead, approach via the alpine meadows to the north ridge base. Follow the ridge crest, staying on solid rock and stable talus. Most routefinding is straightforward and well-marked by cairns. Descend the same route.",
+     "value": "From Holden Village, hike the Railroad Creek and Holden Lake trails to camp at Holden Lake or Holden Pass. Cross the Mary Green Glacier to the rock, weave between the two gully/rib lines to the notch on the upper ridge, and follow the crest to the summit. Descend the same route."
+    },
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Which trailhead/range this route describes",
+     "op": "set",
+     "column": "watch_out",
+     "path": [
+      3
+     ],
+     "expect": "Stream crossing — Middle Fork crossing can be dangerous high water (June-July); consider trekking poles",
+     "value": "Bergschrund and moat — the step from glacier to rock gets harder as the glacier breaks up later in summer; stay roped on the glacier."
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "fact": "Technical difficulty of the route",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 (glacier travel plus Class 3-4 rock)",
+   "evidence": "A 2003 report describes the rock above the glacier as mostly class 3 with a slabby class 4 dihedral and a class 3/4 finish near the East Ridge crest. A 2024 report calls it reasonably steep 4th class in places, and the encyclopedia entry gives the easiest route as Class 4. The row's pitch_detail, detailed_rack, gear and descent_text already say Class 3-4; grade, grade_num (2 -> 4, the value the app's parser gives 'Class 3-4'), the overview (rewritten above) and hazards[1] said Class/Grade 2.",
+   "sources": [
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm",
+    "https://www.jeffreyjhebert.com/adventures/mary-green-glacier-on-bonanza-peak",
+    "https://en.wikipedia.org/wiki/Bonanza_Peak_(Washington)"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Technical difficulty of the route",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2",
+     "value": "Class 3-4"
+    },
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Technical difficulty of the route",
+     "op": "set",
+     "column": "grade_num",
+     "path": [],
+     "expect": 2,
+     "value": 4
+    },
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Technical difficulty of the route",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Grade 2 scrambling but some exposure",
+     "replace": "Class 3-4 scrambling with exposure"
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "fact": "Timing breakdown sums to the stated total",
+   "verdict": "fixed",
+   "correct_value": "The timing block is a camp-to-camp summit day: ~4.5 h up, ~3.5 h down, 8.5 h total; the day-1 hike-in (approachTimeHrs 5) does not belong in that total.",
+   "evidence": "A 2024 party left Holden Pass camp at 5:30 AM, summited about 4 hours later and was back at camp by 1:30 PM (8 hours). A 2003 party left Holden Lake at 6 AM and summited at 10:30 (4.5 hours). Both match the row's itinerary (about 4.5 hrs up, climbing day ~8-9 hrs) and its alpine-start-from-high-camp recommendedStart, so totalHrs 8.5 = summit 4.5 + descent 3.5 + a summit break; the separate approachTimeHrs made the chips add to 13. It is removed rather than inventing a multi-day total.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/mary-green-glacier-on-bonanza-peak",
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_north_ridge",
+     "fact": "Timing breakdown sums to the stated total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "fact": "Total elevation gain/loss for the route",
+   "verdict": "fixed",
+   "correct_value": "~6,300 ft car to car (about 3,000 ft Holden Village to camp + about 3,300 ft camp to summit). gain_ft/loss_ft 6300 are right; itinerary day-1 4,000 ft and the '~7,500'' claim are the errors.",
+   "evidence": "Holden Village sits near 3,300 ft, Holden Pass near 6,360 ft and the summit at 9,511 ft (2003 report), about 3,060 ft to camp and 3,150 ft to the summit. A 2021 report gives 3,000 ft Holden to camp and 3,100 ft camp to summit, and a GPS-tracked 2018 trip logged 6,750 ft total; none supports 7,300-7,500 ft. The NE Buttress leaves the same camp for the same summit with no intervening descent, and the row's own waypoints (3,262 -> 6,400 -> 8,350 -> 9,516, monotonic) give ~6,250 ft net. The reader's internal resolution was reversed: day-1 gainFt 4,000 (and the matching day-3 lossFt) and the approach prose's '~7,500'' are the outliers.",
+   "sources": [
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm",
+    "https://havetent.com/2021/07/28/bonanza-peak/",
+    "https://mountainflamingo.com/2018-07-05-07-bonanza-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 3000
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 3000
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "about 4,000 ft of gain",
+     "replace": "about 3,000 ft of gain"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "about 4,000 ft up to camp",
+     "replace": "about 3,000 ft up to camp"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "about 4,000 ft of gain",
+     "replace": "about 3,000 ft of gain"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "around 8,350', which explains this route's noticeably larger overall gain (~7,500') compared to the standard Mary Green line.",
+     "replace": "around 8,350'. Total gain ends up close to the standard Mary Green line's, since both leave the same camp and finish on the same summit."
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Total elevation gain/loss for the route",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a lot of gain above the pass, which is why this route's total is so much larger than the standard's.",
+     "replace": "a long climb above the pass to reach the buttress toe."
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "fact": "Best window for the glacier approach (July vs August)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Early to mid July for the easiest Mary Green Glacier margin and bergschrund; the buttress rock tolerates a later start into August as the glacier breaks up.",
+   "evidence": "best_season and approach_variants[0].season say late June to mid-July is easiest for the glacier with August tolerable for the rock, but itinerary.cal says best mid-to-late July and seasonal_guidance calls August optimal because the glacier's crevasses and snow bridges are 'most stable' then. This route crosses the same Mary Green Glacier as the standard line: a 2024 report puts the best bergschrund timing in early to mid-July, and the route's main description says it is best before the glacier gets broken up mid-summer, with a late-July 2003 report noting the moat gets harder later. So August is not the most stable glacier month.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/mary-green-glacier-on-bonanza-peak",
+    "https://www.mountainproject.com/route/126644736/mary-green-glacier",
+    "http://www.ericsbasecamp.net/trips/Bonanza/Bonanza.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Best window for the glacier approach (July vs August)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best mid-to-late July, after the bergschrund is easy to cross but before the upper glacier gets too broken up",
+     "replace": "Best early-to-mid July, while the bergschrund is easy to cross and before the upper glacier gets too broken up"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Best window for the glacier approach (July vs August)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid to late summer (roughly July into August), when the Mary Green Glacier's crevasses and snow bridges are most stable",
+     "value": "Early to mid July for the easiest glacier margin and bergschrund; the buttress rock stays climbable into August, though the glacier is more broken up by then"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Best window for the glacier approach (July vs August)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "good",
+     "value": "optimal"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Best window for the glacier approach (July vs August)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Approaching the Primary summer window as snow bridges consolidate, though crevasses may still be partly snow-covered and harder to read",
+     "value": "Easiest glacier margin and bergschrund crossing of the year, with the buttress rock largely dry by mid-month"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Best window for the glacier approach (July vs August)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "good"
+    },
+    {
+     "id": "wa_bonanza_peak_northeast_buttress",
+     "fact": "Best window for the glacier approach (July vs August)",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Mid to late summer is the Primary season",
+     "value": "The buttress rock is dry, but the glacier margin is more broken up and the moat harder to cross than in July"
+    }
+   ]
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "fact": "CAMPING & BIVY options listed for this route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The bivy array is the identical nine-camp zone list stored on every route in this zone (the Bonanza North Ridge row carries the same nine entries in the same order), and no entry claims Buckskin is reached from Holden; each describes its own camp accurately, and the Ice Lakes entry covers the Entiat corridor. The Entiat approach itself is confirmed (2018 and 2020 reports use the Entiat River Trail and camp in upper Entiat Meadows). Trimming the list for one route is a data-model decision (zone list vs per-route list), not a factual correction; the real gap is that the Entiat Meadows camp is missing from it.",
+   "sources": [
+    "https://onehikeaweek.com/2018/07/29/buckskin-mountain/",
+    "https://www.countryhighpoints.com/buckskin-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "fact": "Avalanche hazard on the route",
+   "verdict": "fixed",
+   "correct_value": "No avalanche concern in the Jul-Sep window, but May-June ascents meet steep icy snow and cornices on the south-face avalanche path, with wet-slide potential.",
+   "evidence": "A May 16, 2020 ascent found icy snow needing crampons above about 4,300 ft, front-pointing on the upper ridge and large cornices on the east ridge. A June 21-23, 2020 party needed crampons on icy snow to reach the east ridge at 7,200 ft, while a late-July 2018 party found the same south-side rib snow-free and describes the face as a big open avalanche slope. This agrees with the row's obj_haz, climate.spring and May-June crampons; the avalanche zone text's blanket N/A was the outlier. byMonth (Jul-Sep N/A) is left as is.",
+   "sources": [
+    "https://www.countryhighpoints.com/buckskin-mountain/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1191727",
+    "https://onehikeaweek.com/2018/07/29/buckskin-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_buckskin_mountain_southwest_slopes",
+     "fact": "Avalanche hazard on the route",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "expect": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts this remote Entiat Mountains peak, and it is climbed outside the winter/spring avalanche forecasting season",
+     "value": "No NWAC zone forecasts this remote Entiat Mountains peak, and there is no forecast during the Jul-Sep season. In that window the south face is a snow-free scramble; May-June ascents instead climb steep, icy snow on the open south-face avalanche path, with wet-slide potential and cornices on the east ridge."
+    }
+   ]
+  }
+ ]
+}

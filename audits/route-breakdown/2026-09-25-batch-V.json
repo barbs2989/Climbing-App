@@ -1,0 +1,214 @@
+{
+  "wa_american_border_peak_northeast_face": {
+    "area": "wa_american_border_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Glacier below the northeast face",
+        "class": "Glacier",
+        "notes": "The climbing starts on the small glacier under the northeast face. Two ways onto the upper face are used: cut left across the glacier straight to the mixed ground of the upper face, or first climb toward the col northwest of the summit and work onto the face from there. The traverses in are best done while snow still covers the slopes."
+      },
+      {
+        "n": 2,
+        "label": "Traverse onto the rock to the big snow gully",
+        "notes": "The key to the face is a large snow gully that is not entered from its foot: reach it by traversing out across the rock face. The upper face is mixed rock and snow, and this seldom-travelled ground demands careful route-finding to locate the gully."
+      },
+      {
+        "n": 3,
+        "label": "The 45° snow gully",
+        "class": "45° snow",
+        "notes": "Climb the gully, which runs at about 45 degrees and is the central feature of the face. Ice axe and crampons are needed for this section; it is the steepest snow on the route."
+      },
+      {
+        "n": 4,
+        "label": "Upper face, trending south to the summit",
+        "class": "Class 3–4",
+        "notes": "Above the gully, work up and leftward to the south on moderate rock: mostly Class 3 with occasional Class 4 steps. Snow patches linger on this upper section until late summer, so keep the axe out. Exposure is continuous on this face even where the moves are easy."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New section (none existed): 4 sections from the base glacier to the summit. Single source — the one published description of this face, which the stored beta already paraphrases; no modern trip report of the NE Face was found. No lengths, no crux flag, no elevations added because the source gives none.",
+      "sources_consulted": [
+        "https://www.summitpost.org/american-border-peak/154887 (read via web.archive.org; quotes the Cascade Alpine Guide vol. 3 description and FA: Baker, Beckey, Dudra, 21 Sep 1952)",
+        "https://en.wikipedia.org/wiki/American_Border_Peak"
+      ],
+      "other_findings": "No stored fa for this route; the source gives Dwight Baker, Fred Beckey and John Dudra, 21 Sep 1952. Approach (none stored) is either down from the pass reached on the Southeast Route or via the Canadian Border Peak approach; best with snow cover."
+    }
+  },
+  "wa_big_four_mountain_northwest_ridge": {
+    "skip_reason": "No route description of the Northwest Ridge found anywhere online — only the 1931 first-ascent fact (Farr and Winder) and that it starts from the ice caves trail. Searched SummitPost (mountain page, via archive), Wikipedia, WTA, NWHikers, Mountain Project; all modern beta covers the Dry Creek/East Face, Tower Route and North Face instead. Nothing section-level to write without inventing."
+  },
+  "wa_black_peak_east_buttress": {
+    "skip_reason": "Only one sentence exists online (SummitPost Black Peak page: ascend from Wing Lake, easy lower portion, then a gully system of fairly solid Class 3-4 steps) — which the stored beta already carries. No trip report, no indication which gully, where it tops out, or how it reaches the summit. Two vague sections would add nothing actionable, so skipped."
+  },
+  "wa_jack_mountain_north_ridge": {
+    "area": "wa_jack_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Nohokomeen Glacier, ~6,700 ft to ~8,000 ft",
+        "class": "Glacier",
+        "notes": "From the camp on the slabs along the left side of the glacier's toe (~6,700 ft), climb the center of the Nohokomeen Glacier, just right of the large rock outcrop, toward the top of the glacier near 8,000 ft. In a good snow year it can be nearly crevasse-free by late July, but seracs on the glacier do release, so keep clear of the ice cliffs and move early."
+      },
+      {
+        "n": 2,
+        "label": "Glacier exit through the keyhole onto the ridge",
+        "class": "Mid 5th",
+        "notes": "Leaving the top of the glacier for the North Ridge left of the summit tower takes a short, often wet pitch on broken, poor rock of mid-fifth-class difficulty, then scrambling over wet slabs and squeezing through a keyhole (a hole through the ridge) onto the crest. Steep snow below the keyhole makes it easier; an easier way onto the ridge may exist lower down, short of the glacier's top."
+      },
+      {
+        "n": 3,
+        "label": "Knife-edge crest",
+        "notes": "Scramble the narrow crest of the North Ridge on solid rock toward the summit tower. The rock here is good and the line is obvious, but the ridge is a true knife edge with big exposure on both sides."
+      },
+      {
+        "n": 4,
+        "label": "Snow traverse south below the summit tower",
+        "class": "Steep snow",
+        "notes": "Where the tower blocks the crest, traverse south across the snow slope beneath it. The traverse is exposed but takes kicked steps; rock protection can be placed along the upper moat between the snow and the rock, so pickets are not needed while the moat is accessible."
+      },
+      {
+        "n": 5,
+        "label": "Final pitch up the East Ridge to the summit",
+        "class": "Low 5th",
+        "notes": "The traverse ends on the East Ridge; finish with a pitch of low fifth-class climbing straight up it to the 9,066-ft summit. The upper East Ridge rock is fractured and loose, so place protection with care and watch for rockfall onto the belayer."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New section (none existed): 5 sections from the Nohokomeen Glacier camp to the summit. Built from one detailed 2006 ascent report plus a 2007 party's reverse descent in the same thread (confirming the keyhole, steep snow below it, and the snow traverse between the East and North Ridges). No lengths given anywhere, so none added. No crux flag set (the source does not name one, although the mid-5th glacier exit is the hardest grade it gives). Class omitted on the knife edge (source says only 'scrambling').",
+      "sources_consulted": [
+        "https://cascadeclimbers.com/forum/topic/43937-tr-jack-mountain-up-the-north-ridge-down-the-east-ridge-7222006/ (via web.archive.org; 2006 ascent + 2007 reverse-direction reply)",
+        "https://www.summitpost.org/jack-mountain/151244 (via web.archive.org)",
+        "https://en.wikipedia.org/wiki/Jack_Mountain"
+      ],
+      "other_findings": "Stored overview calls the route 'Grade II, class 4', but the only detailed ascent describes a mid-fifth-class pitch leaving the glacier and a low-fifth finish up the East Ridge; a Class 4 label understates it (though an easier ridge access lower down may exist). Stored approach centres on the East Bank Trail/Devils Creek; the documented modern approach is the Ross Lake water taxi to May Creek camp (~1,600 ft), game trails through rock bands at ~3,500–4,100 ft, ridge crest ~5,000 ft, camp ~6,700 ft at the glacier toe. The 2007 reply also says descending the N Ridge and glacier is considerably easier than the East Ridge, which the stored descent_text frames the other way round only implicitly."
+    }
+  },
+  "wa_jack_mountain_southwest_ridge": {
+    "area": "wa_jack_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower ridge from the Little Jack saddle",
+        "class": "Class 2–3",
+        "notes": "From the saddle beyond Little Jack, stay on the obvious ridge rising northeast instead of making the standard route's traverse east toward the South Face. The lower ridge gains height quickly on reasonable Class 2–3 ground; in cloud, the crest is the easiest line to follow."
+      },
+      {
+        "n": 2,
+        "label": "Subpeak bypass",
+        "class": "Class 4",
+        "notes": "A subpeak on the ridge can cliff out on its far side. Getting past it takes a short Class 4 downclimb that turns muddy and slick when wet; look for the line before committing, as the ridge drops steeply here."
+      },
+      {
+        "n": 3,
+        "label": "Third-class crest to the false summit",
+        "class": "Class 3",
+        "notes": "Enjoyable Class 3 climbing leads to a cairned high point that looks like the summit but is not. Keep traversing the crest to the next high point at the southwest corner of the Nohokomeen Glacier; the true summit is at the far end of the glacier's rim."
+      },
+      {
+        "n": 4,
+        "label": "Rotten ridge above the Nohokomeen Glacier",
+        "notes": "The final stretch follows the ridge east-northeast along the glacier's rim. The rock is badly shattered, forming steep ledges covered in rubble on both flanks, and blocks come off easily onto the glacier below. Move carefully and keep the party out of each other's fall line to the summit register."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New section (none existed): 4 sections from the Little Jack saddle to the summit. Single source — one 2014 solo ascent report titled 'Jack (SW Ridge)', made largely in cloud; no other description of this ridge line was found. No lengths or elevations given, so none added; class omitted on the final rotten section (the source gives none).",
+      "sources_consulted": [
+        "https://drdirtbag.com/2014/07/23/jack-sw-ridge/",
+        "https://www.summitpost.org/jack-mountain/151244 (via web.archive.org; Little Jack approach)",
+        "https://trailcatjim.com/jack-mtn-via-south-face-west-ridge/ (South Face + summit ridge, for context only)"
+      ],
+      "other_findings": "Stored approach says to traverse from the notch 'across to the base of Jack Mountain proper and the start of the southwest ridge'; the only ascent report of this line simply stays on the ridge crest from the saddle. Treat the start point as loose. Descent_text's plan to downclimb the ridge is not described by any source — the reported party descended the South Face and side-hilled back to Little Jack."
+    }
+  },
+  "wa_klawatti_peak_north_ridge": {
+    "area": "wa_klawatti_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Klawatti–Austera Col, 7,900 ft",
+        "notes": "Start at the col between Klawatti and Austera, a short traverse from Klawatti Col. In late season the snow banks at this col shrink back and open a moat, and getting from snow to rock can mean an awkward step or Class 4–5 moves depending on where it is crossed; in early season it is a simple snow walk."
+      },
+      {
+        "n": 2,
+        "label": "Lower north ridge to the Smokestack",
+        "class": "Class 3",
+        "notes": "Get onto the lower ridge from the col, most easily on its east side, and scramble Class 3 rock up the crest to the Smokestack, the prominent rock tower at roughly 8,400 ft that blocks the ridge."
+      },
+      {
+        "n": 3,
+        "label": "Around the Smokestack on its west side",
+        "notes": "Do not climb the tower: bypass it on the west (right, going up), circling it across grassy ledges, then climb a short gully back onto the crest beyond the tower. The same ledges and gully are the line when descending the ridge."
+      },
+      {
+        "n": 4,
+        "label": "Summit crest",
+        "notes": "Follow the crest to the 8,485-ft summit. Snow can linger on and beside the crest, so crampons are worth carrying. Allow about an hour from the Klawatti–Austera Col to the summit."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New section (none existed): 4 sections from the col to the summit. Two sources agree on the line: the route description (east side from the col, Class 3 to the Smokestack, west-side bypass, short gully) and an independent descent description (down the gully to the Smokestack, around it clockwise on grassy ledges, down the north ridge). Class omitted on sections 1, 3 and 4 where no source states one for that ground; the col moat classes are from the Austera page's description of crossing the same col.",
+      "sources_consulted": [
+        "https://www.summitpost.org/klawatti-peak/152520 (via web.archive.org)",
+        "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress (north-ridge descent)",
+        "https://www.summitpost.org/austera-peak/152991 (via web.archive.org; Klawatti–Austera Col moat)"
+      ],
+      "other_findings": "None — stored beta, approach and descent agree with the sources. length_m 178 matches the col-to-summit rise (7,900 to 8,485 ft)."
+    }
+  },
+  "wa_mount_fairchild_standard": {
+    "skip_reason": "No section-level description of an ascent of Fairchild found. The only route description (Mountaineers route page, citing the Olympic climbing guide) is one sentence: from Mount Carrie's summit go NE down the Carrie Glacier, circle to the north of Fairchild and ascend its Southwest Ridge — no detail beyond that. See the finding below: the stored approach/descent text describes a different trip.",
+    "review": {
+      "other_findings": "IMPORTANT: the stored approach and descent_text describe the Fairchild Glacier 'wind-formed snow ridge, similar to the Hogsback on Mt. Hood' with a '35–40° exit section near an icy patch before gaining Fairchild's summit ridge'. That wording comes from a Mountaineers Bailey Range Traverse trip report (https://www.mountaineers.org/activities/trip-reports/bailey-range-traverse) in which the party did NOT climb Fairchild: they descended the Fairchild Glacier on that snow ridge from Carrie to an exit col on the shoulder of Ruth Peak (~6,430 ft), and the 35–40° section was the climb OUT to that col toward Stephen Lake. The stored text turns a traverse past Fairchild into a summit route; it should be reviewed and likely rewritten. The Mountaineers route page gives the summit at 6,950 ft, the ascent via the Southwest Ridge (after circling north of the peak from the Carrie Glacier), and an alternate approach from the Elwha over Mount Fitzhenry and up the north glacier remnant."
+    }
+  },
+  "wa_gilbert_peak_conrad_glacier": {
+    "area": "wa_gilbert_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Barren Lake to the Conrad Glacier",
+        "class": "Snow and rock bands",
+        "notes": "From the upper Conrad Creek benches, pass Barren Lake (6,416 ft) and climb snow slopes toward the notch between the Conrad and Meade Glaciers, crossing or skirting several rock bands. Dropping low around bands avoids blind ground on a high traverse. A steeper alternative goes SSW up a snow finger between cliff bands; it is steep and may be broken up."
+      },
+      {
+        "n": 2,
+        "label": "Conrad Glacier to the 7,200-ft saddle",
+        "class": "Glacier",
+        "notes": "Rope up on the glacier around 6,900 ft and climb its east side straight south to the low saddle (notch) at 7,200 ft east of the summit. The Conrad is a small, receding glacier but is treated as glacier travel: rope, harness and crampons."
+      },
+      {
+        "n": 3,
+        "label": "Across the Meade Glacier to the south ridge",
+        "class": "Glacier",
+        "notes": "Drop over the saddle onto the Meade Glacier and traverse west-southwest to the south ridge of Gilbert near the Klickton Divide. Holding a high line keeps elevation rather than losing it and then climbing steep snow back up; a rock moat along the upper edge near the saddle needs care."
+      },
+      {
+        "n": 4,
+        "label": "South ridge and the snow below the summit",
+        "class": "Steep snow, talus",
+        "notes": "Work up the rocky ridge, then cross a steep, firm snow slope on the west side below the summit (crampons on). A small rock step, taken on its left to avoid icy rock, leads to talus and a last short snow patch under the summit pyramid. Late in the season the snow here may be gone, leaving loose talus."
+      },
+      {
+        "n": 5,
+        "label": "Summit pyramid",
+        "class": "Scramble",
+        "notes": "Scramble the boulders and scree up the west side of the ridge to the rocky summit, the highest point in the Goat Rocks. Rock is loose throughout; on the way down, the upper snow can be bypassed on loose talus back to the rock step."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "New section (none existed): 5 sections from Barren Lake to the summit. Three sources agree on the line (Conrad Glacier east side to the 7,200-ft saddle, across the Meade Glacier, south ridge, scramble the west side to the top). No numeric class given anywhere for the summit scramble, so the chip reads 'Scramble'. No lengths given.",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/gilbert-peak-conrad-glacier (via web.archive.org)",
+        "https://www.mountaineers.org/activities/trip-reports/gilbert-peak-via-conrad-and-meade-glaciers (via web.archive.org)",
+        "https://mazamas.org/activity/192/"
+      ],
+      "other_findings": "The Mountaineers route page gives a 4,301-ft gain, ~22 mi round trip and an 8,201-ft high point (the peak is usually given as 8,184 ft). The Mazamas note that late in the season there may be no steep snow on the final section. Nothing contradicts the stored beta/approach/descent."
+    }
+  }
+}

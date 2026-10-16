@@ -1,0 +1,46 @@
+{
+ "applied": [
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "whether the route crosses the Goode Glacier / has crevasse hazard"
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "whether the route crosses the Goode Glacier / has crevasse hazard"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cold North Cascades alpine; afternoon clouds and showers common",
+      "probability": "Afternoon thunderstorms common in summer; the couloir acts as a funnel for both rockfall and lightning"
+     },
+     "exposure": "Moderate - loose rock and scree in the couloir create rockfall/rock-knock-down risk between party members, with a short technical section near the summit block adding fall exposure, consistent with the loose-rock warnings",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route (early-season wet-snow sluffing possible in the couloir but outside formal NWAC avalanche-season coverage)",
+      "byMonth": {
+       "July": "Low",
+       "June": "Moderate",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - route is snow/scree/rock with no documented glacier crossing"
+    }
+   }
+  }
+ ]
+}

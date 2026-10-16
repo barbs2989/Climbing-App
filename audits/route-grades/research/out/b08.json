@@ -1,0 +1,483 @@
+[
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "final_grade": "5.10",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/"
+  ],
+  "evidence": "FA trip report title: Dome Peak S. Face - Indian Summer (III 5.10), FA 9/2/2011; 8 pitches, ~1000 ft.",
+  "note": "FA party called it 5.10, not 5.10-; pitch count 8 per the TR summary vs 7 in the record."
+ },
+ {
+  "id": "wa_direct_southwest_buttress",
+  "final_grade": "5.10a",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/119781957/dorado-needle"
+  ],
+  "evidence": "MP Dorado Needle: Direct Southwest Buttress 5.10a."
+ },
+ {
+  "id": "wa_dorado_needle_east_ridge",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/112156952/dorado-needle-east-ridge",
+   "https://www.mountainproject.com/area/119781957/dorado-needle",
+   "https://www.alpineinstitute.com/route-profile-dorado-needle-east-ridge/"
+  ],
+  "evidence": "MP: East Ridge 5.7, Grade III, 800 ft; harder than NW Ridge, easier than SW Buttress."
+ },
+ {
+  "id": "wa_northwest_ridge",
+  "final_grade": "5.4",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/113288297/northwest-ridge",
+   "https://www.mountainproject.com/area/119781957/dorado-needle"
+  ],
+  "evidence": "MP: Northwest Ridge 5.4, Grade III, 3 pitches, Mod. Snow (Anderson/Boyer/Gorton 1940)."
+ },
+ {
+  "id": "wa_southwest_buttress",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/111927639/southwest-buttress",
+   "https://www.mountainproject.com/area/119781957/dorado-needle"
+  ],
+  "evidence": "MP: Southwest Buttress 5.8, Grade III, 9 pitches, 900 ft."
+ },
+ {
+  "id": "wa_dot_mountain_scramble",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/",
+   "https://www.countryhighpoints.com/pasayten-peakbagging/"
+  ],
+  "evidence": "Climber Kyle: 'Dot Mountain was an easy walkup'; the Class 3 (and bypassable Class 4) scrambling reported is on the Dot-Lago ridge traverse, not Dot's own summit.",
+  "fix": {
+   "rock_grade": "Class 2"
+  },
+  "note": "Record's Class 3 appears to come from the ridge traverse toward Lago."
+ },
+ {
+  "id": "wa_der_dihedral",
+  "final_grade": "5.9+",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/114288397/der-dihedral"
+  ],
+  "evidence": "MP: Der Dihedral 5.9+, 700 ft (Layton/Wolfe 2006)."
+ },
+ {
+  "id": "wa_dragontail_peak_2_direct_north_buttress",
+  "final_grade": "WI5",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/112066038/direct-north-buttress"
+  ],
+  "evidence": "MP: WI5 M4 PG13, Grade IV, 5 pitches ~900 ft; crux a 60 m stretch of thin vertical ice (Pope/Wright/Wright 2016).",
+  "note": "Also M4 mixed; MP description calls the crux pitch WI5+ but the route grade is WI5."
+ },
+ {
+  "id": "wa_dragontail_peak_backbone_ridge",
+  "final_grade": "5.9",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/106073405/backbone-ridge"
+  ],
+  "evidence": "MP: Backbone Ridge 5.9, Grade IV, 12 pitches 2000 ft; P2 5.9 offwidth; Fin variation."
+ },
+ {
+  "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/106015951/dragontail-peak",
+   "https://www.summitpost.org/dragontail-peak/150391",
+   "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-aasgard-pass"
+  ],
+  "evidence": "MP: East ridge 3rd; SummitPost: Aasgard Pass, Snow Creek Glacier (~30 deg), then easy class 3 scramble to summit.",
+  "fix": {
+   "commitment": null
+  },
+  "note": "commitment currently holds trip stats ('12.5 miles, 5,600 ft gain, 11-15 hours'), not a commitment grade."
+ },
+ {
+  "id": "wa_dragontail_peak_r1",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs",
+   "https://www.mountainproject.com/route/107059043/triple-couloirs"
+  ],
+  "evidence": "Hidden Couloir is the first couloir of Triple Couloirs: ~800 ft of 40-50 degree snow and ice; no separate ice grade found (Triple Couloirs overall WI3 M3, its crux is above this couloir).",
+  "note": "Mapped steep snow (40-50 deg, front-pointing) to Class 3; if the couloir is icy it may merit AI2 as the record says.",
+  "identity": "Hidden Couloir is only the entry third of Triple Couloirs, not a separate summit route; no source lists it as a standalone climb."
+ },
+ {
+  "id": "wa_dragontail_peak_r2",
+  "final_grade": "WI3+",
+  "scale": "wi",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/110245564/gerber-sink"
+  ],
+  "evidence": "MP: Gerber-Sink 5.7 WI3+ M4 Steep Snow; summer mostly 4th/low 5th with a couple of 5.7 cruxes, winter WI3-4 ~M4.",
+  "fix": {
+   "ice_grade": "WI3+ M4"
+  },
+  "note": "Record's beta describes the winter ice/mixed line (all WI/M pitches), so the ice crux is used; the summer rock version is 5.7. Headline 'Grade III-IV alpine rock' does not match the winter beta."
+ },
+ {
+  "id": "wa_dragontail_peak_r3",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/may-18-19-2012-dragontail-via-pandoras-box-couloir",
+   "https://engineeredforadventure.com/dragontailpeak/",
+   "https://www.mountaineers.org/activities/trip-reports/colchuck-peak-dragontail-peak-via-colchuck-col-and-pandoras-box"
+  ],
+  "evidence": "Pandora's Box: short steep snow couloir to ~45 degrees from Colchuck Col, crampons needed, no fall zone; then scramble.",
+  "note": "Mapped steep snow (MP 'Mod. Snow' for the West Route) to Class 3. ice_grade 'Moderate snow (Grade II)' and alpine_grade text are descriptions, not grades."
+ },
+ {
+  "id": "wa_dragontail_peak_r4",
+  "final_grade": "WI3",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/107059043/triple-couloirs"
+  ],
+  "evidence": "MP: Triple Couloirs WI3 M3 Steep Snow R, Grade IV, ~2,500 ft.",
+  "fix": {
+   "rock_grade": null
+  },
+  "note": "Also M3 mixed. No source gives a 5.8 rock pitch on the normal line; the record's rock_grade 5.8 looks wrong."
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/106015951/dragontail-peak"
+  ],
+  "evidence": "MP: Serpentine Arete 5.8."
+ },
+ {
+  "id": "wa_this_my_friend",
+  "final_grade": "5.10a",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/119518502/this-my-friend"
+  ],
+  "evidence": "MP: This, My Friend 5.10a."
+ },
+ {
+  "id": "wa_dumbell_mountain_west",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/west-route/234732",
+   "https://www.summitpost.org/dumbell-mountain/379457"
+  ],
+  "evidence": "SummitPost: easiest route Southwest Face Class 3; West Route exposed Class 3 scrambling with Class 3 all-hands moves near the summit.",
+  "fix": {
+   "rock_grade": "Class 3 (exposed)"
+  },
+  "note": "Record's rock_grade 5.0 and headline 'Class 3-4' not supported."
+ },
+ {
+  "id": "wa_scramble_route",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/108485632/scramble-route",
+   "https://en.wikipedia.org/wiki/Eagle_Peak_(Washington)"
+  ],
+  "evidence": "MP: Scramble Route 3rd class; crux a 3rd class ramp close to the summit.",
+  "note": "Optional Class 4 direct step is off the normal line."
+ },
+ {
+  "id": "wa_eagle_rock_scramble",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.summitpost.org/eagle-rock/805280"
+  ],
+  "evidence": "SummitPost: 0.8 mi approach, no harder than class 3; ~50 ft of slightly exposed class 3."
+ },
+ {
+  "id": "wa_earl_peak_southwest_ridge",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://wenatcheeoutdoors.org/2016/06/16/earl-peak/",
+   "https://en.wikipedia.org/wiki/Earl_Peak"
+  ],
+  "evidence": "Class 2 scramble along the southwest ridge to the top.",
+  "fix": {
+   "rock_grade": "Class 2 (scramble)"
+  }
+ },
+ {
+  "id": "wa_earl_peak_standup_creek_route",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://wenatcheeoutdoors.org/2016/06/16/earl-peak/",
+   "https://www.kuresman.com/2024/Earl_Peak_Standup/Report_Earl_Peak_Standup.html"
+  ],
+  "evidence": "Standup Creek joins the same upper ridge; summit described as a moderate class 2 scramble.",
+  "fix": {
+   "rock_grade": "Class 2 (scramble)"
+  }
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "final_grade": "5.10-",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12200911000/North-America-United-States-Washington-East-McMillan-Spire-Come-Over-to-the-Dark-Side"
+  ],
+  "evidence": "AAJ: Come Over to the Dark Side, V 5.10-, ~29 pitches on the NE buttress."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_west_ridge",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://drdirtbag.com/2014/07/",
+   "https://www.mountainproject.com/area/120232550/east-mcmillan-spire"
+  ],
+  "evidence": "Trip report: steep snow gully to the East-West col, some 4th class to reach the saddle, then 'easy 3rd class terrain to East McMillan's summit'. The 5.6-5.7 Beckey line cited online is the West McMillan side of the col.",
+  "fix": {
+   "rock_grade": "Class 3-4"
+  },
+  "note": "MP says there is no non-technical route; a short low-5th move may be met depending on line. Headline 'Grade III, 5.6' also clashes with commitment II."
+ },
+ {
+  "id": "wa_east_twin_needle_north_buttress",
+  "final_grade": "5.9",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/13201216383"
+  ],
+  "evidence": "AAJ 2023: North Buttress (Thread of Gneiss), 2,000 ft, 5.9, nine long pitches (Boyce/Wehrly 2022)."
+ },
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/13201216383"
+  ],
+  "evidence": "Only online description of the south side is the AAJ descent: downclimb/rap to Eye Col, then fourth-class gullies with raps; no grade found for the summit block above Eye Col, record's 5.7 kept."
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "final_grade": "AI3",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/67560-tr-southern-pickets-thread-of-ice-twin-needles-fa-6272009/",
+   "https://www.summitpost.org/thread-of-ice-on-twin-needles/525009"
+  ],
+  "evidence": "FA (Abegg/Wallace 2009): III AI3, 1200 ft couloir, 40 degrees steepening to ~60 at the top, ending with a bit of 5.7 rock.",
+  "fix": {
+   "ice_grade": "AI3"
+  },
+  "note": "Route is graded as an AI3 ice line; the short 5.7 rock finish is secondary. Record's AI2 understates the ice."
+ },
+ {
+  "id": "wa_plan_9_from_outer_space",
+  "final_grade": "5.9+",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/116791489/plan-9-from-outer-space",
+   "https://www.mountainproject.com/area/116791466/ed-wood-memorial-buttress"
+  ],
+  "evidence": "MP: Plan 9 from Outer Space 5.9+, 14-16 pitches on the buttress north of the Himmelhorn."
+ },
+ {
+  "id": "wa_eightmile_buttress_ice_2_buttress_left",
+  "final_grade": "WI3",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120322449/ice-climbing-in-icicle-creek"
+  ],
+  "evidence": "MP: Buttress Left WI3 M2, 2 pitches.",
+  "note": "Also M2."
+ },
+ {
+  "id": "wa_elephant_butte_standard_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://themtsarecalling.com/elephantbutte/",
+   "https://www.summitpost.org/elephant-butte/153837"
+  ],
+  "evidence": "Trip report: final cliff band 'described as class 4' (easy chimney moves), and one party used a short low-5th (5.3) step on the headwall; SummitPost mentions short class 3 rock steps.",
+  "fix": {
+   "rock_grade": "Class 3-4 (cliff band below summit)"
+  },
+  "note": "Record has no headline grade; the low-5th step is the avoidable direct line."
+ },
+ {
+  "id": "wa_emerald_peak_se_ridge",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/emerald-peak/152281",
+   "https://www.wta.org/go-hiking/hikes/emerald-peak"
+  ],
+  "evidence": "Emerald Peak: Class 3 exposed scrambling; erosion has opened an easy class 3 route to the summit."
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/emerald-peak/152281"
+  ],
+  "evidence": "SummitPost: erosion has allowed an easy class 3 route to the twin summit block."
+ },
+ {
+  "id": "wa_enchantment_peak_east_ridge",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/enchantment-peak",
+   "https://www.yellowleaf.org/scramble/g/r/2006-10-20-22-enchantments.html"
+  ],
+  "evidence": "Standard route east ridge from Prusik Pass: walk-up with ~15 ft of 3rd class to the NE summit; one report calls the block Class 4.",
+  "note": "Most reports say Class 3; one calls the 10-15 ft summit block Class 4."
+ },
+ {
+  "id": "wa_enchantment_peak_southwest_scramble",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Enchantment_Peak",
+   "https://www.yellowleaf.org/scramble/g/r/2006-10-20-22-enchantments.html"
+  ],
+  "evidence": "Wikipedia: easiest route class 2 scrambling; record and trip reports describe a short loose 3rd-class gully below the summit; top of Class 2-3.",
+  "note": "Record grade_num 2 disagrees with its own 'Class 2 to 3' headline."
+ },
+ {
+  "id": "wa_erikland_dank_sinatra",
+  "final_grade": "M7-",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/120822471/kyles-inflatable-corner"
+  ],
+  "evidence": "MP (Erikland listing): Dank Sinatra S 5.9+ M7-.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_erikland_kyle_s_inflatable_corner",
+  "final_grade": "M6+",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/120822471/kyles-inflatable-corner"
+  ],
+  "evidence": "MP: Kyle's Inflatable Corner 5.10+ M6+, 60 ft.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_esmeralda_peaks_east_gully",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "http://www.ericsbasecamp.net/trips/Esmeralda/Esmeralda.htm"
+  ],
+  "evidence": "Beckey (quoted): 'class 3 and 4 with the most difficult climbing at the bottom'; one party found wet class 4 to low 5th.",
+  "fix": {
+   "rock_grade": "Class 3-4 (wet, friable; may feel low 5th)"
+  },
+  "note": "Only one report calls it low 5th, so the guidebook Class 4 is kept."
+ },
+ {
+  "id": "wa_esmeralda_peaks_scramble",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/esmeralda-peak-via-de-roux-creek-trailhead/461944",
+   "https://www.wta.org/go-hiking/hikes/esmerelda-peak"
+  ],
+  "evidence": "SummitPost: YDS Class 2 talus and scree scramble from De Roux Creek; some reports note a ~40 ft class 3 section to the final summit block.",
+  "note": "If the class 3 summit-block step is on the normal line this would be Class 3."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_christian_s_side_hug",
+  "final_grade": "M4",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP: Christian's Side Hug S M4.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_eriks_throne_room",
+  "final_grade": "M5-",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall",
+   "https://www.mountainproject.com/route/121689228/eriks-throne-room"
+  ],
+  "evidence": "MP: Eriks Throne Room S 5.10- M5-.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_jenn_s_inflatable_funhouse",
+  "final_grade": "M3+",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall",
+   "https://www.mountainproject.com/route/120004500/jenns-inflatable-funhouse"
+  ],
+  "evidence": "MP: Jenn's Inflatable Funhouse S,TR 5.7 M3+.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ }
+]

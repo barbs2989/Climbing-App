@@ -1,0 +1,414 @@
+{
+ "applied": [
+  {
+   "id": "wa_e_se_face",
+   "op": "patch",
+   "columns": [
+    "descent_text"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_e_se_face",
+   "area_id": "wa_witches_tower",
+   "name": "E/SE Face",
+   "discipline": "alpine",
+   "grade": "4th",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": 1,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "E/SE",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe (crampons if climbed early season)",
+    "Light rock rack for occasional protection",
+    "Helmet — looser rock than the other lines"
+   ],
+   "hazards": [
+    "Looser, more blocky rock than the South Face/West Buttress lines",
+    "Possible lingering snow or low-angle ice (~WI2/M1) on the upper face into early summer",
+    "Little known and little traffic — route-finding is on you",
+    "A short, exposed slabby ledge near the summit carries real fall consequence despite the low technical grade (2006 first-hand account)"
+   ],
+   "verif": null,
+   "overview": "A less-traveled line up Witches Tower's east/southeast aspect, climbing broken, blocky Class 4 terrain; only a handful of ascents are on record (it is logged as a 4th-class rock route that's occasionally graded up to Ice 2/Mixed 1b, reflecting a short snow or low-angle ice step that can persist on the upper face into early summer).",
+   "beta": "From below the E side of the formation, work up a series of zig-zagging ledges to the summit; a short 4th-class perfect hand-crack section is one of the standard variations. Little to no protection is typically placed.",
+   "turnaround": "Set your turnaround based on remaining daylight and weather rather than a fixed clock time — the approach over Aasgard Pass and the basin traverse is long and exposed to afternoon thunderstorms, and descending it in the dark or in a storm is the main hazard on this peak.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "4th class (short 5th-class variation)",
+   "ice_grade": null,
+   "gain_ft": 5700,
+   "loss_ft": null,
+   "dist_km": 24.14,
+   "max_angle": 45,
+   "rappels": "1",
+   "commitment": null,
+   "face": "East/Southeast Face",
+   "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+   "comms": "No reliable cell service in the Enchantment Basin around Aasgard Pass; carry a satellite messenger (inReach/SPOT) for emergencies.",
+   "descent": "Reverse the E/SE Face route back down to the col near Aasgard Pass.",
+   "obj_haz": [
+    "loose rock/rubble on the lower ledges",
+    "rockfall on the approach snow slopes as the season warms",
+    "snow/ice-glazed ledges in early season"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Leavenworth, follow Icicle Creek Road southwest about 8.7 miles, then the FR-7601 spur to the road-end lot at roughly 3,400 ft."
+    },
+    {
+     "lat": 47.492,
+     "lng": -120.8336,
+     "elev": 5570,
+     "name": "Colchuck Lake",
+     "type": "Water",
+     "distMi": 4,
+     "directions": "Follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles bear left at the signed fork onto the Colchuck Lake Trail, where the Lake Stuart trail carries straight on, and cross Mountaineer Creek on logs and boulders that can be an awkward wet ford in early-season high water. The trail then climbs through forest and a boulder field to the lake. Fill and treat water here; it is the last easy source on the route."
+    },
+    {
+     "lat": 47.4803,
+     "lng": -120.8206,
+     "elev": 7841,
+     "name": "Aasgard Pass",
+     "note": "Steep pass into the Enchantment basin.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Skirt the lake along its east and south shore on climbers' trail through talus to the foot of the pass, then grind up the eroded boot-track, roughly 2,200-2,500 ft in well under a mile of loose scree and blocks. Snow and ice commonly linger on it into June or July and can call for an axe and traction. Rockfall from parties above is the main hazard, and the line is easy to lose in cloud."
+    },
+    {
+     "lat": 47.476586,
+     "lng": -120.82555,
+     "elev": 8566,
+     "name": "Witches Tower - Summit",
+     "note": "E/SE Face route; tower divides Snow Creek Glacier from the upper Enchantments.",
+     "type": "Summit",
+     "distMi": 5.7,
+     "directions": "From the pass, work uphill to the south and southwest across talus and boulders, staying high along the rim of the basin, until you are beneath the tower's east side; there is no water past the lake beyond snowmelt trickles. The face itself is a zig-zagging ledge system of 4th-class ground, with a short solid hand-crack variation partway up, finishing on a small and very exposed summit block. Early-season snow or thin ice on those ledges makes the footing far harder than the grade suggests."
+    },
+    {
+     "lat": 47.47648,
+     "lng": -120.82544,
+     "name": "East/SE Face base (below tower)",
+     "type": "Route-start",
+     "distMi": null,
+     "elevFt": null
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 17,
+    "summitTimeHrs": 17,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 17,
+      "note": "Same long approach as the South Face — trailhead to Colchuck Lake to Aasgard Pass into the Enchantment Basin — but continue around to the east/southeast side of the tower, adding d…",
+      "fromTo": "Car-to-car: Colchuck Lake, Aasgard Pass, E/SE Face",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A light rack (a few small-to-medium cams and nuts) can be carried for the short 4th-class hand-crack variation, but many parties climb this route with little to no protection.",
+   "what_to_bring": [
+    "Helmet",
+    "Ice axe (early-season snow)",
+    "Approach shoes or light mountaineering boots",
+    "Map/GPS for basin navigation",
+    "Satellite communicator (no cell coverage)"
+   ],
+   "pro_tips": [
+    "The route follows zig-zagging ledges with several viable variations — scoping the face from below helps pick the cleanest line.",
+    "Early-season parties commonly find moderate snow on the approach slope below the tower; bring an ice axe into early summer."
+   ],
+   "watch_out": [
+    "Ledges on the E/SE side can be loose despite the easy grade.",
+    "Snow/ice on the approach slope adds slip-and-slide hazard before the climbing even starts."
+   ],
+   "pro_needs": "The main gear requirement is simply sturdy boots; protection is optional given the low difficulty, though the short hand-crack section can be backed up with small cams if desired.",
+   "best_season": "Best once the east-facing snow/ice patches melt out, typically by mid-July; occasionally climbed in June by parties comfortable with a short snow/ice step (roughly WI2/M1).",
+   "high_point_ft": 8566,
+   "aid_grade": null,
+   "approach": "From the Stuart Lake Trailhead (~3,400 ft, reached via ~8.7 mi of Icicle Creek Road southwest of Leavenworth), follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles, bear left (south) at the signed junction onto the Colchuck Lake Trail (this junction is also where the Lake Stuart fork continues straight); the trail crosses Mountaineer Creek on a log/boulder crossing that can be a wet, awkward ford in early season high water. Continue climbing through forest and over a boulder field to Colchuck Lake (5,570 ft) at roughly 4.3 miles from the trailhead — this is the last reliable, easily accessed water source and most parties treat water here before pushing on. Skirt the lake's east/south shore on climbers' trail through talus to the base of the infamous Aasgard Pass climb: an unmaintained, badly eroded boot-path that gains roughly 2,200-2,500 ft in well under a mile of steep, loose scree, boulders and (through at least June, sometimes into July) lingering snow/ice that can require an ice axe and even crampons or micro-spikes — this is the single biggest approach hazard and crux of the day, with real rockfall risk from parties above and easy route-finding mistakes in cloud or whiteout. Top out at Aasgard Pass (~7,750-7,800 ft), roughly 5 miles and ~4,400 ft above the trailhead. From the pass, instead of contouring west toward Brynhild Lake and the col used for the South Face/Southwest Corner routes, work east/southeast across talus and boulders below Dragontail's south ridge toward the tower's east-facing aspect, staying high along the rim of the Enchantment basin; expect additional short snow patches and blocky talus underfoot right up to the base of the face, with no water beyond what you carried from Colchuck Lake or scooped from snowmelt trickles.",
+   "descent_text": "Witches Tower's E/SE Face is a short route — one pitch of low-5th-class climbing up the light-colored (\"white rock\") face to the small, exposed summit block — so full-rope-length rappelling is not mandatory, but most parties do not reverse the exposed 5.6 climbing unroped. The commonly used descent is to downclimb/scramble off the South Face or Southwest Corner side (Class 2-4, the same terrain used as the standard walk-up/scramble route) back down to the notch/col southwest of the tower, then rejoin the Aasgard Pass approach for the hike out. Where climbers do rope up for the final step off the summit or down the face itself, expect a single ~100-150 ft rappel from natural gear — a slung horn, block, or tree rather than fixed bolts (parties mention finding rappel slings near the base of the tower on this line, consistent with typical Enchantments-area natural-anchor ethics); a single 60m rope doubled (30m per strand) or even a 30m rope run single-strand is enough for this one rappel. Descent-specific hazards: exposed, sometimes loose/exfoliating granite on the upper face and summit block, fast-moving afternoon thunderstorms on the exposed summit with no quick retreat, and then the long, knee-jarring downclimb of Aasgard Pass's loose talus/scree back to Colchuck Lake, which many parties find harder and slower than the ascent, especially with residual snow/ice underfoot.",
+   "bail": "Retreat by downclimbing back the way you came to the col below Aasgard Pass; there is no fixed rappel line on this route, so avoid climbing above terrain your party cannot reverse.",
+   "pitch_detail": [
+    {
+     "grade": "4th class",
+     "notes": "Zig-zagging ledge system on the E/SE side of the tower from the base (near Aasgard Pass) to the summit; a short, solid 4th-class hand-crack variation exists partway up. Usually climbed unroped in sturdy boots; early-season snow/ice on the ledges can make footing harder.",
+     "pitch": "1",
+     "lengthM": 91
+    }
+   ],
+   "itinerary": {
+    "cal": "Same approach as the South Face — expect firm/icy snow on Aasgard Pass into July; a rope, small rack, and helmet are needed in addition to scrambling gear for the roped pitch.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Same long approach as the South Face — trailhead to Colchuck Lake to Aasgard Pass into the Enchantment Basin — but continue around to the east/southeast side of the tower, adding distance and time. Rope up for the 5.6 pitch, then rappel or downclimb back to the col and reverse the approach; this is a bigger day than the South Face and demands an earlier start or a very fit, efficient party.",
+      "hours": 17,
+      "miles": 15,
+      "title": "Car-to-car: Colchuck Lake, Aasgard Pass, E/SE Face",
+      "gainFt": 5700,
+      "lossFt": 5700,
+      "packLb": 22,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave trailhead",
+        "detail": "Earlier start than the South Face plan to cover the extra distance and roped pitch."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach Colchuck Lake",
+        "detail": "~4 miles and 2,000 ft in."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Top out Aasgard Pass",
+        "detail": "Steep, loose 2,200 ft headwall; often still holding snow."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Reach base of the E/SE Face",
+        "detail": "Continue around the basin past the standard South Face approach to the east/southeast aspect."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Rope up and climb the pitch, then summit",
+        "detail": "One pitch, 5.6; rack up, climb, and top out."
+       },
+       {
+        "time": "9:30 PM",
+        "label": "Back at the trailhead",
+        "detail": "Headlamps needed for the final miles; a long, full day."
+       }
+      ],
+      "objective": "Summit Witches Tower via the East/Southeast Face (incl. a roped 5.6 pitch) and return to the trailhead same day"
+     }
+    ],
+    "totalNote": "Also a single very long day (not an overnight): roughly 15 mi round trip with about 5,700 ft of gain, plus a roped 5.6 pitch, using the same Colchuck Lake/Aasgard Pass approach as the South Face."
+   },
+   "access": {
+    "fees": "$6 non-refundable lottery application fee; $5 per person per day for overnight permits.",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Dogs and pack animals prohibited in the Enchantment Permit core zone.",
+    "permit": "Same Enchantment Permit Area rules as the rest of Witches Tower: overnight permit required May 15-Oct 31 via Recreation.gov advance or daily lottery; free self-issue day-use permit otherwise.",
+    "closures": "FR 7601 access road closed to vehicles mid-fall through spring; dogs are prohibited on the Stuart/Colchuck Lake trails and within the Enchantment Permit Area",
+    "group_limit": 8,
+    "landManager": "Okanogan-Wenatchee National Forest, Leavenworth Ranger District (Enchantment Permit Area, Alpine Lakes Wilderness)",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "passRequired": "Northwest Forest Pass required to park at Stuart Lake Trailhead",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/233273",
+     "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+     "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+    }
+   },
+   "road": {
+    "name": "Icicle Creek Road (FR 7601) to Stuart Lake Trailhead",
+    "status": "Paved then gravel Forest Service road, generally passenger-car accessible in summer",
+    "driveNote": "From US-2 in Leavenworth, follow Icicle Creek Road about 8.7 miles to the Stuart Lake Trailhead (~3,400 ft).",
+    "seasonalGate": "FR 7601 is closed to vehicles mid-fall through spring"
+   },
+   "climate": {
+    "fall": "Stable weather windows can occur into October, but nights are cold and snow can arrive quickly.",
+    "spring": "Basin and approach slopes typically still snow-covered into June/early July.",
+    "summer": "Jul-Sep is the main climbing season; watch for building afternoon cumulus and thunderstorms.",
+    "winter": "Fully snowed-in and avalanche-prone; the access road (FR 7601) itself is gated.",
+    "typical": "East-slope Cascades rain-shadow climate: hot, dry summer days with cool nights above 8,000 ft.",
+    "bySeason": {
+     "fall": "September is usually the most stable window.",
+     "spring": "Snow/ice typically lingers on this shaded east aspect longer than on the South Face/West Buttress.",
+     "summer": "July-August is prime season; afternoon thunderstorms build regularly.",
+     "winter": "Effectively inaccessible."
+    }
+   },
+   "emergency": {
+    "notes": "This side of the tower sees little traffic, so a self-rescue plan and a satellite communicator are especially important.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Leavenworth Ranger District, 600 Sherbourne St, Leavenworth, WA 98826 — (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, Leavenworth — 24-hr ER with ambulance service; serious trauma flown to Central Washington Hospital (Wenatchee) or Harborview (Seattle).",
+    "sheriffDispatch": "Chelan County Sheriff's Office / Volunteer Search & Rescue — call 911; cell coverage is unreliable in the Enchantments, satellite messenger recommended."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "The Enchantments overall are extremely popular and permit-limited (Core Zone lottery success ≈2%, daily quota 24 people/day across advance-lottery + walk-up spots), but this specific face has almost no independent trip-report footprint — only one first-hand account (yellowleaf.org, 2006) describes climbing it; most other Witches Tower reports describe the West Buttress or an easy scramble instead.",
+    "solitudeRating": 4
+   },
+   "partner_requirements": {
+    "fitnessSpec": "Long alpine day: Colchuck Lake TH to Witches Tower via Aasgard Pass documented as ~14 mi RT with ~5,400 ft gain, often done as a single 14+ hour push to avoid the Core Zone permit",
+    "approachTime": "Long day via Colchuck Lake and Aasgard Pass (Aasgard alone gains ~2,200 ft in ~0.9 mi)",
+    "requiredSkills": [
+     "3rd–4th class scrambling with a short, exposed slabby ledge",
+     "Basic mixed/ice competency if attempted with lingering snow/ice (route graded as low as Ice 2/M1b in early-season conditions)",
+     "Comfort with heavy exposure on all sides near the summit"
+    ],
+    "experienceLevel": "Intermediate — comfortable with 3rd–4th class scrambling and significant summit exposure; low-5th-class/mixed skill needed if snow/ice lingers"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through August",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically clearing; core of the climbing season",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Aasgard Pass commonly holds significant snow into late June",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Best combination of snow-free approach and stable weather",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Shortened daylight and increasing snow risk — a documented late-October ascent finished its descent in the dark with failing headlamps",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Generally climbable but cooling with shorter days",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "High winter/spring precipitation as snow; summers typically clear/high-pressure, consistent with the July–August optimal window"
+    },
+    "exposure": "Consistently described as high relative to the technical grade — the SE-side slabby ledge and summit area are exposed even on the easiest line",
+    "avalanche": {
+     "zone": "Aasgard Pass is explicitly flagged as avalanche-prone in early season; avalanche debris has been recorded at the pass base after a Memorial Day snowfall"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "Pitch count and exact grade split between rock and snow/ice sections is unconfirmed — sources list it inconsistently as '4th class' vs '1-2 pitches, Ice 2/Mixed 1b'",
+     "No first-ascent record found",
+     "Very few trip reports exist for this specific aspect",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "Only one first-hand trip report (yellowleaf.org, Oct 2006) documents climbing this specific face; the route's own catalog record (Mountain Project) carries two conflicting grade descriptions ('4th class, 1 pitch' vs '2 pitches, Ice 2/M1b') for the same line — likely reflecting seasonal (dry-rock vs. snow/ice) variability rather than error.",
+     "SummitPost, Mountaineers.org, and CascadeClimbers.com sources returned HTTP 403 on direct fetch; only search-snippet corroboration was available for those.",
+     "FA audit: no first-ascent record found for the E/SE Face specifically in Mountain Project, SummitPost, Wikipedia, or AAC Publications/AAJ — appears genuinely undocumented. On-file 'unknown' left unchanged."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.4766,
+    "peakLng": -120.8255,
+    "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+    "trailheadLat": 47.5282,
+    "trailheadLng": -120.82036,
+    "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft)"
+   },
+   "sling_rack": {
+    "cams": "light rack 0.5-2in",
+    "nuts": "small set",
+    "slings": "2 single-length"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single 30-40m",
+   "rope_length_m": 35,
+   "rope_note": "Published descriptions list Witches Tower's east-facing route (matching E/SE Face) as a mixed-grade line: 4th class base with 5.6/5.10a/5.10b variations higher/direct. The 4th-class line noted here corresponds to the easiest (original) line up the white rock.",
+   "ascender": null,
+   "corrections": "The listed grade (4th) is the easiest variation on this face per Mountain Project; harder direct-start options up to 5.10b exist but aren't part of this route's stated grade.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Light cam rack 0.5–2in",
+    "Small nut set",
+    "2 single-length slings",
+    "30-40m rope"
+   ],
+   "features": [
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Aasgard Pass, then east and southeast to the light-coloured rock below Dragontail's south ridge",
+     "notes": "From the Stuart Lake trailhead at about 3,400 ft, the Stuart Lake Trail to the signed fork at about 2.5 miles, left onto the Colchuck Lake Trail and across Mountaineer Creek, then up through forest and a boulder field to Colchuck Lake at 5,570 ft, roughly 4.3 miles. Last reliable water.\n\nSkirt the lake's east and south shore on climbers' trail through talus to the foot of Aasgard Pass, then up the eroded boot path — 2,200 to 2,500 ft in well under a mile of loose scree, boulders and lingering snow. This is the biggest hazard of the day and the place route-finding errors happen in cloud.\n\nFrom the pass at roughly 7,750-7,800 ft, the split from the other Witches Tower routes happens immediately. Instead of contouring west toward the col used by the south face and southwest corner lines, work east and southeast across talus and boulders below Dragontail's south ridge, staying high along the rim of the basin, to reach the tower's east-facing side.\n\nNo water above Colchuck Lake beyond snowmelt trickles.",
+     "gainFt": 4400,
+     "season": "Roughly Jul-Sep once the talus is clear; snow patches persist right up to the base into midsummer",
+     "hazards": [
+      "Aasgard Pass: 2,200-2,500 ft of loose eroded scree, snow and ice into July, rockfall from parties above",
+      "Blocky talus and short snow patches right up to the base",
+      "Little or no protection on the climbing itself",
+      "A four-foot summit slot that must be jumped",
+      "The descent is normally down the south face or southwest corner, i.e. NOT the way you came — you finish on the other side of the tower",
+      "No water above Colchuck Lake"
+     ],
+     "baseFinding": "You never go to a col on this one, and that is the test. Every other route on the tower is reached by gaining a notch — the southwest col, or the col behind the tower. This line approaches the east side directly across talus, staying high along the rim of the basin under Dragontail's south ridge. If you find yourself climbing to a notch, you are on a different route.\n\nWhich direction from the pass: east to southeast. The col routes go west and southwest. That is a genuine fork at the top of Aasgard Pass and it is made within a few minutes of arriving there, so decide before you top out rather than after.\n\nThe rock is the marker: aim for the light-coloured, white granite face on the tower's east side. From below it, the route works up a series of zig-zagging ledges to the summit — that stepped, ledgy character is what identifies it. A face that is continuous and blank in front of you is not the line, and there is a well-known short hand crack on one of the standard variations through it.\n\nGrade check: this is fourth class, one pitch, with little or no protection typically placed. If you are looking at sustained fifth-class climbing you have picked the wrong start on the face.\n\nAnd the summit check common to the whole tower: the true summit is guarded by a four-foot slot that has to be jumped. No slot means no summit.\n\nHonest limit: the east side of the tower is less documented than the col routes, and published descriptions of the exact start line are thin. The direction from the pass, the white rock and the zig-zag ledges are solid; a precise first-move marker is not available and none is invented here."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+     "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+     "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+     "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+    },
+    {
+     "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+     "role": "main",
+     "type": "camp",
+     "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+     "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+     "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+     "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "east e southeast se face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

@@ -23,10 +23,11 @@
 // Portalled to document.body: #appscroll is a permanent stacking context beneath
 // the header's zIndex 30, so a position:fixed overlay rendered inside it paints
 // under the chrome no matter what z-index it asks for (see check:overlay-portals).
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
-import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi, FIRE_SOURCES } from "./fire";
+import { POP_CLOSE } from "./popupChrome.js";
+import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
+import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -48,6 +49,58 @@ function bboxOf(map) {
   return { minLat: b.getSouth(), maxLat: b.getNorth(), minLng: b.getWest(), maxLng: b.getEast() };
 }
 
+// The one place that decides where this map opens. Both the seed below and the real
+// `setView` read it, so a change to the framing cannot move one without the other —
+// and a drift between them is invisible (it costs a duplicate fetch, not an error).
+// The caller picks the zoom, because only it knows whether `focus` is a crag or a
+// whole state; clamped so a bad value cannot hand Leaflet an out-of-range zoom.
+function viewFor(focus) {
+  if (!focus || !Number.isFinite(focus.lat) || !Number.isFinite(focus.lng)) return [US.lat, US.lng, US.zoom];
+  return [focus.lat, focus.lng, Number.isFinite(focus.zoom) ? Math.min(14, Math.max(3, focus.zoom)) : 9];
+}
+
+// The viewport Leaflet WILL show, computed before Leaflet exists.
+//
+// Every one of the three federal queries is gated on `bbox`, and `bbox` was only
+// ever written from the live map — so the data could not start loading until the
+// Leaflet CDN had answered, the map had initialised and a 150ms settle had fired.
+// Measured on a warm CDN that put the first NIFC request 4.5s after the click with
+// ~460ms of it pure Leaflet download; on a cold or throttled connection the CDN leg
+// is the whole story. Nothing about "which fires are in this box" needs a map to be
+// on screen, so this reproduces Leaflet's own EPSG:3857 bounds arithmetic from the
+// container size and the view the map is about to be given. The queries then run in
+// PARALLEL with the CDN fetch rather than behind it.
+//
+// It has to be Leaflet's exact arithmetic rather than a rough box: `bboxKey` rounds
+// to 0.01deg, so a guess that lands on a different key costs a second round of
+// requests against NIFC and NOAA rather than saving anything. Verified equal to
+// map.getBounds() at mount — see scripts/oneoff/probe-firemap-timing.mjs.
+function bboxForView(el, lat, lng, zoom) {
+  if (!el) return null;
+  const w = el.clientWidth, h = el.clientHeight;
+  if (!w || !h) return null;
+  const scale = 256 * Math.pow(2, zoom);
+  const latRad = lat * Math.PI / 180;
+  const cx = (lng + 180) / 360 * scale;
+  const cy = (1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * scale;
+  const unLng = x => x / scale * 360 - 180;
+  const unLat = y => {
+    const n = Math.PI - 2 * Math.PI * y / scale;
+    return 180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n)));
+  };
+  // Leaflet ROUNDS its pixel origin to whole pixels (_getNewPixelOrigin) and takes the
+  // far corner as origin + size, so its bounds are pixel-snapped and an unrounded
+  // computation is off by the sub-pixel remainder. That sounds ignorable and is not:
+  // measured at zoom 4 the remainder was 0.29px, which is 0.025deg of longitude — two
+  // and a half times `bboxKey`'s 0.01deg rounding, so it produced a different key and
+  // fetched everything twice. Round here and the keys are identical.
+  const x0 = Math.round(cx - w / 2), y0 = Math.round(cy - h / 2);
+  return {
+    minLng: unLng(x0), maxLng: unLng(x0 + w),
+    minLat: unLat(y0 + h), maxLat: unLat(y0),
+  };
+}
+
 // `uDistMi` is the app's unit-aware distance FORMATTER (ClimbMatchCore.jsx), not a
 // boolean flag — `mi => "35.5 mi" | "57.2 km"` depending on the user's setting. This
 // component originally destructured it as `uDistMi = true` and branched on its
@@ -65,6 +118,17 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   const [show, setShow] = useState({ fires: true, perims: true, wx: true });
   const [sel, setSel] = useState(null);
 
+  // Seed the viewport before Leaflet is anywhere near ready, so the three federal
+  // queries below start on mount instead of waiting out the CDN. useLayoutEffect
+  // rather than useEffect because the map div only has a measurable size once the
+  // DOM is committed, and this needs to run at the FIRST opportunity after that —
+  // every millisecond here is a millisecond added to the fire list.
+  useLayoutEffect(() => {
+    const [vLat, vLng, vZoom] = viewFor(focus);
+    const seed = bboxForView(mapDiv.current, vLat, vLng, vZoom);
+    if (seed) setBbox(b => b || seed);
+  }, []);
+
   const firesQ = useActiveFires(bbox, show.fires);
   const perimQ = useFirePerimeters(bbox, show.perims);
   const wxQ = useFireWeather(bbox, show.wx);
@@ -79,17 +143,32 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     const init = () => {
       if (cancelled || !mapDiv.current || mapRef.current || !window.L) return;
       const L = window.L;
-      // The caller picks the zoom, because only it knows whether `focus` is a crag or
-      // a whole state. Clamped so a bad value cannot hand Leaflet an out-of-range zoom.
-      const fz = focus && Number.isFinite(focus.zoom) ? Math.min(14, Math.max(3, focus.zoom)) : 9;
-      const map = L.map(mapDiv.current, { attributionControl: false })
-        .setView(focus ? [focus.lat, focus.lng] : [US.lat, US.lng], focus ? fz : US.zoom);
+      // Same view the bbox was seeded from — see viewFor.
+      const [vLat, vLng, vZoom] = viewFor(focus);
+      // Zoom sits TOP-RIGHT, a corner nothing else on this map uses. It used to sit
+      // top-left under the base-layer toggle, pushed down by a hand-tuned 46px — which
+      // cleared the toggle's ~44px by two pixels, so any taller rendering of the
+      // toggle's text put the Satellite button over the + button on a phone.
+      const map = L.map(mapDiv.current, { attributionControl: false, zoomControl: false }).setView([vLat, vLng], vZoom);
+      L.control.zoom({ position: "topright" }).addTo(map);
       applyBaseLayer(map, tileRef, baseLayer);
       // Order matters: perimeters and weather zones are fills, incident points sit
       // on top so a marker inside a perimeter stays clickable.
       wxRef.current = L.layerGroup().addTo(map);
       perimRef.current = L.layerGroup().addTo(map);
       fireRef.current = L.layerGroup().addTo(map);
+      // The place the map was opened FOR, named on the map itself. A route page asks for
+      // this (focus.pin) because "zoom in until you can find Vesper Peak" was the job the
+      // climber was left with: the base layer labels peaks only from about zoom 12, a crag
+      // or a sector is never labelled at all, and Satellite labels nothing. An area focus
+      // does not get a pin — a state's or a range's centroid is not a place to point at.
+      if (focus && focus.pin && focus.name) {
+        try {
+          L.circleMarker([vLat, vLng], { radius: 7, color: "#ffffff", weight: 3, fillColor: C.blue, fillOpacity: 1, interactive: false })
+            .addTo(map)
+            .bindTooltip(focus.pinLabel || focus.name, { permanent: true, direction: "top", offset: [0, -8] });
+        } catch (e) {}
+      }
       mapRef.current = map;
       setReady(true);
       map.on("moveend", () => setBbox(bboxOf(map)));
@@ -177,19 +256,27 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   // geolocation was unavailable or the map had not loaded, and swallowed the error
   // callback too — so a denied permission, a timeout, and a browser without
   // geolocation all produced a button that visibly did nothing.
-  const [locateMsg, setLocateMsg] = useState("");
+  // The control is GPXMap's "📍 Me" button, and like it, locating draws where you are —
+  // a dot and an accuracy ring — rather than only moving the map, which left nothing
+  // on screen to say which point was you.
+  // GPXMap's "↺ Reset view", offered — as there — only once locating has moved the map
+  // away from where it opened. It returns to that opening view (viewFor), so a climber
+  // who located themselves 200 miles from the area they were browsing can get back.
+  const [locatedOnce, setLocatedOnce] = useState(false);
+  const resetView = () => {
+    const map = mapRef.current;
+    if (!map) return;
+    me.release();
+    const [vLat, vLng, vZoom] = viewFor(focus);
+    try { map.setView([vLat, vLng], vZoom, { animate: true }); } catch (e) {}
+  };
+  // Live, and refining: see useFollowMe in lib/mapKit.jsx for why one reading was "a little off".
+  const me = useFollowMe(mapRef, { C, zoom: 9, onFix: (f, first) => { if (first) setLocatedOnce(true); } });
+  const [mapMsg, setMapMsg] = useState("");
+  const locateMsg = me.err || mapMsg;
   const locate = () => {
-    if (!navigator.geolocation) { setLocateMsg("This browser can't share your location."); return; }
-    if (!mapRef.current) { setLocateMsg("The map isn't loaded, so there's nothing to centre."); return; }
-    setLocateMsg("Finding you…");
-    navigator.geolocation.getCurrentPosition(
-      p => {
-        setLocateMsg("");
-        try { mapRef.current.setView([p.coords.latitude, p.coords.longitude], 9); } catch (e) { setLocateMsg("Couldn't move the map."); }
-      },
-      err => setLocateMsg(err && err.code === 1 ? "Location permission is off for this site." : "Couldn't get your location."),
-      { timeout: 8000 }
-    );
+    if (!mapRef.current) { setMapMsg("The map isn't loaded, so there's nothing to centre."); return; }
+    setMapMsg(""); me.locate();
   };
 
   // Which product to headline. Priority order, and each step is load-bearing:
@@ -259,16 +346,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             Active wildfires &amp; fire weather
           </div>
         </div>
-        {/* Not offered at all when the map failed to load — there is nothing to centre,
-            and a button whose only possible outcome is an apology is worse than absent. */}
-        {mapFail ? null : (
-          <button onClick={locate} aria-label="Centre on my location"
-            style={{ padding: "8px 9px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.textSub, cursor: "pointer", display: "flex", alignItems: "center" }}>
-            <ActionIcon name="target" size={15} color={C.textSub} />
-          </button>
-        )}
-        <button onClick={onClose} aria-label="Close fire map"
-          style={{ padding: "8px 12px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Close</button>
+        <button onClick={onClose} aria-label="Close fire map" style={POP_CLOSE}>✕</button>
       </div>
 
       {/* headline fire-weather banner — the danger half, above the map so it is not
@@ -308,11 +386,25 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           <>
             <div ref={mapDiv} style={{ position: "absolute", inset: 0, background: C.card }} />
             <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
-            <div style={{ position: "absolute", bottom: 10, left: 10, right: 10, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
+            {/* right: 80 leaves the bottom-right corner to the Me button below. */}
+            <div style={{ position: "absolute", bottom: 26, left: 10, right: 80, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
               {chip("fires", "Fires", C.red, firesQ.data ? fires.length : null)}
               {chip("perims", "Perimeters", C.orange, perimQ.data ? perims.length : null)}
               {chip("wx", "Red flag", C.amber, wxQ.data ? zones.length : null)}
             </div>
+            {/* Inside the map branch, so it is not offered when the map failed to load —
+                there is nothing to centre, and a button whose only outcome is an apology
+                is worse than absent. Styled exactly as GPXMap's. */}
+            <button onClick={locate} aria-label="Show my location on the map"
+              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span>
+            </button>
+            {/* Top-right under the zoom buttons (which end ~73px down), not GPXMap's
+                bottom-left: that corner holds the layer chips here. */}
+            {locatedOnce ? (
+              <button onClick={resetView}
+                style={{ position: "absolute", top: 84, right: 10, zIndex: 1000, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>↺ Reset view</button>
+            ) : null}
           </>
         )}
       </div>
@@ -396,7 +488,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           {(show.fires ? fires.slice(0, LIST_CAP) : []).map(f => {
             const open = sel === f.id, color = fireColor(f, C), mi = ref ? fireDistMi(ref.lat, ref.lng, f.lat, f.lng) : null;
             return (
-              <button key={f.id} onClick={() => flyTo(f)}
+              <button key={f.id} onClick={() => flyTo(f)} aria-current={open ? "true" : undefined}
                 style={{ textAlign: "left", border: "1px solid " + (open ? color : C.border), background: open ? C.card : C.surface, borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 4, width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
                   <span style={{ width: 9, height: 9, borderRadius: "50%", background: color, flexShrink: 0 }} />
@@ -443,12 +535,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           </div>
 
           <div style={{ fontSize: 10.5, color: C.textMuted, lineHeight: 1.6, marginTop: 2 }}>
-            {FIRE_SOURCES.map(s => (
-              <div key={s.href}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: C.textSub, textDecoration: "none" }}>{s.label}</a>
-              </div>
-            ))}
-            <div style={{ marginTop: 3 }}>Acreage and containment are as last reported by the managing agency, not live measurements.</div>
+            <div>Acreage and containment are as last reported by the managing agency, not live measurements.</div>
           </div>
         </div>
       </div>

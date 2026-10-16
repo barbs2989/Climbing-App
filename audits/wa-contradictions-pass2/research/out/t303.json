@@ -1,0 +1,167 @@
+{
+ "file": "t303.json",
+ "results": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (17.3 km = 10.75 mi) is the one-way figure and is exactly half of the ~21.5 mi round trip in the itinerary total note and descent text; the itinerary days also sum to 21.5 mi. One-way vs round trip is the rendered convention (Approach (one way)), so the fields agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Day trip or multi-day",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A multi-day trip built around a basin camp, not a single day",
+   "evidence": "The itinerary (3 days), its total note, the overview ('the approach itself is a multi-day undertaking'), beta, timing breakdown and partner requirements all treat this as multi-day; only descent_text offers a single long day. An Obstruction Point to Dose Meadows through-hiker trip report shows the Grand Pass / Cameron Pass / Lost Pass leg alone (about 11 mi with three passes) took a full day, so a round trip to Claywood beyond Lost Pass is not a realistic single day.",
+   "sources": [
+    "https://musthikemusteat.com/olympic-peninsula/deer-grey-wolf-lost-cameron-grand-pass-loop/",
+    "https://peakery.com/mount-claywood-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Day trip or multi-day",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "this is a long single day or a trip built around a basin camp",
+     "replace": "this is a trip built around a basin camp rather than a single day"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Cameron Pass location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Cameron Pass pin (47.9485, -123.2591) does sit far northeast of both Grand Pass and the summit, but pin coordinates are out of scope for this pass and no patch is written. Settling it needs a pin-repair pass using the pass's mapped coordinate.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Search-and-rescue county",
+   "verdict": "fixed",
+   "correct_value": "Jefferson County (peak and rescue county)",
+   "evidence": "Wikipedia and PeakVisor both place Mount Claywood in Jefferson County, inside Olympic National Park. Washington law (RCW 38.52.400) makes the chief law enforcement officer of the political subdivision (the county sheriff) responsible for local search and rescue, so the county SAR named in the notes should be Jefferson, matching emergency.county.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Claywood",
+    "https://peakvisor.com/peak/mount-claywood.html",
+    "https://app.leg.wa.gov/rcw/default.aspx?cite=38.52.400"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Search-and-rescue county",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "Clallam County Search and Rescue",
+     "replace": "Jefferson County Search and Rescue"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Staircase access status",
+   "verdict": "fixed",
+   "correct_value": "Road and Staircase developed area reopened July 8, 2026; wilderness trails beyond the developed area remain closed",
+   "evidence": "The Olympic National Forest release says FS-24, Lake Cushman sites and the Staircase developed area reopened July 8, 2026 while wilderness trails beyond the developed area stay closed for hazard assessment and bridge/privy repair. A September 16, 2026 regional article says the road, campground, ranger station and Rapids Loop are open but wilderness trails farther in remain closed; the Flapjack Lakes trail page also shows the trail closed until further notice. The trailhead pin note saying the whole Staircase area is closed is stale.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/newsroom/releases/olympic-national-forest-park-reopen-fs-24-lake-cushman-recreation",
+    "https://www.explorehoodcanal.com/stories/2026/9/16/after-the-fire-the-forest-begins-again",
+    "https://www.wta.org/go-hiking/hikes/flapjack-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Staircase access status",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Note: Staircase area is currently closed post-2025 Bear Gulch Fire.",
+     "replace": "Note: the road and the Staircase developed area reopened on July 8, 2026, but wilderness trails beyond the developed area remain closed after the 2025 Bear Gulch Fire."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 18 mi round trip (about 9 mi / 14.5 km one way to the climb)",
+   "evidence": "The peak's route page gives the standard Flapjack Lakes / Needle Pass approach as 18 miles round trip, and an independent 2023 trip report measured 18.0 miles for the same line; the row's own total note (17-18 mi) and approach text (8-9 mi trailhead to base) agree. The itinerary days summed to 20 mi because day 2 carried 12 mi (8 mi out plus a short camp-to-summit round trip), and dist_km (12.4 km = 7.7 mi) is the trailhead-to-Flapjack-Lakes distance, not the one-way distance to the climb.",
+   "sources": [
+    "https://www.summitpost.org/mount-cruiser/151837",
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Round-trip distance",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 12,
+     "value": 10
+    },
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Round-trip distance",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 12.4,
+     "value": 14.5
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Distance to Spike Camp junction and Flapjack Lakes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely spread: the trail page gives 3.7 mi to the junction and 15.4 mi round trip (7.7 mi) to the lakes; a hiking blog gives about 3.5 mi then about 4 mi; a measured 2023 trip report gives 7.2 mi to the lakes; other listings give 3.4-3.6 mi to the junction and 7.45 mi to the lakes. No two independent sources agree on one figure, and the bivy copy (3.4 mi / 7.5 mi) is owned by the camping clean-up. Settling it needs the official park trail mileage for the North Fork Skokomish and Flapjack Lakes trails.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/flapjack-lakes",
+    "https://hohumhiking.wordpress.com/2021/07/12/backpacking-flapjack-lakes-with-trips-to-gladys-divide-black-and-white-lakes/",
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Direction from Needle Pass",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The line from Needle Pass angles up northeast onto Beta Peak and then follows the crest north to Cruiser's south side; the approach/baseFinding describe the first leg (turn left/east to Beta Peak) and the beta describes the crest trending north, so both are partial descriptions of one northeast-trending line.",
+   "sources": [
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Park and permit fees",
+   "verdict": "not_a_contradiction",
+   "correct_value": "$30/vehicle 7-day entrance; wilderness permit $6 reservation fee plus $8 per person (16+) per night",
+   "evidence": "[Held: no approach/descent leg published; settled convention.] The park's fees page lists the private-vehicle 7-day pass at $30 and wilderness camping at $8 per person per night plus a $6 permit fee; the park's wilderness reservations page gives the same $8 nightly fee for ages 16+ and a flat $6 non-refundable reservation fee. The stale access._raw.permit_cost ($10 entry, $5 group, $2/night) is updated to match the rendered access.fees and parking_pass (it does not render, so this is low priority).",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

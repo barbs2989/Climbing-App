@@ -1,0 +1,141 @@
+{
+ "applied": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Trapper Lake camp elevation (~5,000 ft in itinerary/climate vs 4,170 ft waypoint)"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "summer"
+   ],
+   "fact": "Trapper Lake camp elevation (~5,000 ft in itinerary/climate vs 4,170 ft waypoint)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "before": {
+    "itinerary": {
+     "cal": "Cascade River Road typically opens for the season in late May/June and the upper basin can hold snow into July, so verify current conditions before a bushwhack approach.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Start on the maintained Cascade Pass Trail, then continue past the pass toward Pelton Basin before dropping off-trail into the Trapper Lake basin. The final descent to the lake is an unmaintained fisherman's path that loses itself quickly and turns into a steep, brushy bushwhack, so budget extra time and daylight for route-finding.",
+       "hours": 6,
+       "miles": 7,
+       "title": "Approach via Cascade Pass to Trapper Lake camp",
+       "gainFt": 2400,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Cascade River Road trailhead",
+         "detail": "Popular trail, ~3.7 mi and 1,800 ft to Cascade Pass."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Cascade Pass",
+         "detail": "Continue cross-country/boot-path toward Pelton Basin."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Enter Pelton Basin area",
+         "detail": "Leave the beaten path and start angling toward the Trapper Lake drainage."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Begin bushwhack descent to Trapper Lake",
+         "detail": "Steep, brushy, and reportedly longer than it looks; losing and regaining the fisherman's path is common."
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Make camp near Trapper Lake",
+         "detail": "~5,000 ft basin below the peak's south side."
+        }
+       ],
+       "objective": "Reach a basin camp near Trapper Lake"
+      },
+      {
+       "n": 2,
+       "note": "From the lake camp, work up open slopes and heather/talus benches on the mountain's south side to the summit, then reverse the same line. This is the standard non-technical line up the peak (no pitches), but expect loose rock and possible lingering snow patches depending on season.",
+       "hours": 7,
+       "miles": 4,
+       "title": "South Slopes summit push",
+       "gainFt": 2700,
+       "lossFt": 2700,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Light alpine-start pack; carry an ice axe if snow lingers on the upper slopes."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Gain the south ridge/upper slopes",
+         "detail": "Terrain steepens into looser talus and broken rock benches."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit (7,530 ft)",
+         "detail": "Views across the Glacier Peak Wilderness / North Cascades NP boundary."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Reverse the South Slopes",
+         "detail": "Downclimb the ascent line, watching for loosened rock kicked from above."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at Trapper Lake camp",
+         "detail": "Rest, refill water, dry gear for the hike out."
+        }
+       ],
+       "objective": "Climb Trapper Mountain (7,530 ft) via the South Slopes and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the bushwhack back up out of the Trapper Lake basin to the Pelton Basin area, rejoin the Cascade Pass Trail, and hike out over the pass to the trailhead.",
+       "hours": 6,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 2400,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Cascade River Road trailhead"
+      }
+     ],
+     "totalNote": "A remote 3-day trip (~19 mi, ~5,800 ft round-trip gain) built around a genuine off-trail bushwhack to Trapper Lake — not a car-to-car outing."
+    },
+    "climate": {
+     "fall": "Shortening weather windows; snow can return to the high country by October.",
+     "spring": "Deep, lingering snowpack; Cascade Pass and Pelton Basin are typically snow-covered and NPS will not issue backcountry reservations for trips starting before July 1.",
+     "summer": "The best and most reliable climbing window, July through September.",
+     "winter": "Cascade River Road is closed at mile 20; the peak is effectively inaccessible except to ski/snowshoe mountaineers.",
+     "typical": "Marine-influenced North Cascades climate with a strong crest effect: heavy winter snowpack, wet springs, and a relatively dry, sunny summer window. Because the peak sits near the range crest close to Cascade Pass, weather can build quickly from the west even on an otherwise clear day.",
+     "bySeason": {
+      "fall": "Snow can return to the high basins by late September/October, complicated by shortened daylight.",
+      "spring": "Heavy lingering snowpack, high stream crossings below Pelton Basin, and difficult access make spring a poor season for this route.",
+      "summer": "July-September is the reliable weather and access window; warm days with cold nights at Trapper Lake (~5,000 ft) and cooler conditions near the 7,530 ft summit, plus afternoon thunderstorm risk by late summer.",
+      "winter": "Effectively inaccessible — Cascade River Road is closed well below the trailhead and the trails are snowed in."
+     },
+     "forecastZone": "Outside NWAC's routine avalanche-forecast coverage; the closest usable proxy zones are NWAC's East Slopes Central and NWS Cascades-East mountain weather forecasts, but treat both as approximations for this Stehekin-side terrain."
+    }
+   }
+  }
+ ]
+}

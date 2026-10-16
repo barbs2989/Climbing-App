@@ -1,0 +1,227 @@
+{
+ "file": "t003.json",
+ "results": [
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Protection on the dike-streaked shield (pitch 1)",
+   "verdict": "fixed",
+   "correct_value": "The first ~40 ft of pitch 1 on the dike shield is essentially unprotectable (R); gear appears from about half height; the rest of the route protects well.",
+   "evidence": "The first-ascent report in the AAJ rates pitch 1 5.9+ R and describes a 40-ft rightward tiptoe across parallel dikes. The route's database page states the dikes are unprotectable for 40 ft (crux) with cracks halfway up allowing protection, and that the rock is otherwise generally sound for gear. detailed_rack and pro_needs were the only fields claiming the shield holds gear throughout.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "rock is generally sound and holds gear well throughout, including on the dike-streaked shield.",
+     "replace": "rock is generally sound and takes gear well, except the first ~40 ft of the dike-streaked shield on pitch 1, which is essentially unprotectable.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Protection on the dike-streaked shield (pitch 1)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "the rock is sound and protects well.",
+     "replace": "the rock is sound and protects well, except the first ~40 ft of pitch 1 across the dike shield, which takes essentially no gear.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Protection on the dike-streaked shield (pitch 1)"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The description (not rendered) counts the long simul-climbed ridge as two pitches, while pitch_detail/climbing_route explicitly fold that ~270 m simul-climbed ridge into one row labelled 'section(s)'; pitches, pitch_detail, climbing_route and the itinerary all agree on 4 rows, so this is a counting convention in a non-rendered field, not a disagreement on screen.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Imperfect Impasse elevation",
+   "verdict": "fixed",
+   "correct_value": "~5,200 ft (a deep gorge well below Easy Ridge)",
+   "evidence": "A 2011 Easy Ridge-Perfect Pass trip report places the Impasse at about 5,200 ft and describes dropping to 4,400 ft to get under it. A 2020 trip report describes 'the deep gorge at 5100'' below Point 7037's south buttress, about 1,000 ft below the ridge. Both agree it is a cleft far below the ~6,600 ft Easy Peak bivy, not above it at 7,000 ft.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 7000,
+     "value": 5200,
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Imperfect Impasse elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Day 1 elevation loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's own waypoints imply ~2,350 ft of loss (Hannegan Pass ~5,100 ft to the ~2,750 ft ford) on day 1, and day 1 gainFt 4300 is also low for the climb back to ~6,600 ft. But itinerary day figures sum exactly to gain_ft/loss_ft (8100/8100), and no outside source states the day-1 gain/loss or a car-to-car loss for this route (the FA account gives only a 17,500 ft round-trip gain). Settling it needs a sourced per-day or car-to-car figure so the day and the totals can move together.",
+   "sources": [
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Approach mileage (waypoints vs itinerary)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The FA account gives only a 46-mile trip total and day durations (10 h, 8 h), no per-day miles. One trip report puts Easy Peak at about 10 mi of maintained trail plus 5 mi of the Easy Ridge path (~15 mi, consistent with the 14.5 mi waypoint and against the 13 mi day 1), but no second source gives the day-1 or day-2 distance and nothing sources the Easy Peak-to-Pickle Pass mileage. Needs two sources for the Easy Peak and Phantom-camp distances.",
+   "sources": [
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Grade of the final summit scramble",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The two first-ascent accounts disagree: the AAJ report says the party simul-climbed mostly 4th and low 5th class 'to 5.6' to the summit, while the first ascensionist's own blog calls it mostly 3rd class '5.0 terrain' with a couple of low-fifth moves. The schedule follows one, pitch_detail and the waypoint follow the other; a third independent ascent account would settle it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Where the Easy Ridge path starts",
+   "verdict": "fixed",
+   "correct_value": "The Easy Ridge climbers' path starts across the Chilliwack River ford, not above Hannegan Pass.",
+   "evidence": "One trip report found the unsigned Easy Ridge trail across the Chilliwack River from Easy Creek after ten miles of maintained trail; another describes crossing the Chilliwack River and finding the abandoned trail on the opposite shore. waypoints[1], waypoints[2], approach and approach_variants already say this; waypoints[3].note was the outlier.",
+   "sources": [
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "reached via the Easy Ridge climbers' path gained above Hannegan Pass",
+     "replace": "reached via the Easy Ridge climbers' path that climbs from the Chilliwack River ford",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Where the Easy Ridge path starts"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Total distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (37.02 km = 23 mi) is the one-way figure shown as 'Approach (one way)', and 46 mi / 74 km in the approach and totalNote are explicitly round-trip; they agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Which pitch is the crux (schedule P2 vs pitch_detail P3)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The day-3 schedule labels the crux 'P2' while pitch_detail, beta and obj_haz put the 5.9R choss crux on pitch 3. The AAJ report places the overhanging 5.9 choss on the second pitch, while the first ascensionist's blog lists pitch 3 as 5.9R; the difference likely comes from whether the opening 4th-class scramble counts as a pitch. Needs a third account or topo.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Whether the overnight permit can be reserved",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The cross-country zones this route camps in (Easy Ridge and beyond) are walk-up only.",
+   "evidence": "The park's cross-country zone page and its backcountry-reservations page both state that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that all other cross-country zones are walk-up only; Easy Ridge, Perfect Pass and Challenger appear as cross-country zones. access.permit and overnight_permit.where offered advance reservation, contradicting bivy[0]/bivy[2] (walk-up).",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/getinvolved/cua-sup-backcountry-permit-reservation-guide.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "; advance reservations via recreation.gov or by emailing noca_wilderness@nps.gov up to 3 days ahead.",
+     "replace": "; the cross-country zones this route camps in (Easy Ridge and beyond) are walk-up only and cannot be reserved in advance.",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Whether the overnight permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "The cross-country zones on this route are walk-up only: get the permit in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Whether the overnight permit can be reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "The Luna cross-country zone this route stages from is walk-up only; only trail-corridor camps (e.g. Luna Camp) are reservable.",
+   "evidence": "The park's cross-country zone page and backcountry-reservations page both state that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and all other cross-country zones, including Luna, are walk-up only. The bivy entries already say walk-up only; access.permit and overnight_permit.where offered reservation without that qualification.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/getinvolved/cua-sup-backcountry-permit-reservation-guide.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "(walk-up or Recreation.gov reservation)",
+     "replace": "(the Luna cross-country zone this route camps in is walk-up only and cannot be reserved in advance; trail-corridor camps on the approach can also be reserved)",
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Whether the overnight permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "Cross-country zones here are walk-up only: get the permit in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Whether the overnight permit can be reserved"
+    }
+   ]
+  }
+ ]
+}

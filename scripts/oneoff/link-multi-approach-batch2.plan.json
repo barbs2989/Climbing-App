@@ -1,0 +1,3247 @@
+[
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "verdict": "MULTI",
+  "reason": "Upper Cathedral Lake is reached either up Andrews Creek over Andrews Pass or up the Chewuch River from Thirtymile; different trailheads, both widely used.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Chewuch River trail from Thirtymile",
+    "notes": "Start at the Thirtymile trailhead at the end of the Chewuch road and follow the Chewuch River trail up the valley past the Tungsten Creek junction, then climb to Cathedral Pass and drop to Upper Cathedral Lake. It is longer than the Andrews Creek line but on a steady, well-used trail, and many parties walk in one way and out the other as a loop.",
+    "trailhead": {
+     "name": "Thirtymile Trailhead (end of Chewuch road, FR 51)"
+    },
+    "distMi": 19.9,
+    "gainFt": 4900
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Upper Cathedral Lake basin": [
+    "e0",
+    "n0"
+   ],
+   "Andrews Pass": [
+    "e0"
+   ],
+   "Remmel Lake and the Spanish Camp meadows": [
+    "n0"
+   ],
+   "Cathedral Pass benches and the tarn slabs": [
+    "e0",
+    "n0"
+   ],
+   "Amphitheater Mountain upper basin": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_azurite_peak_southeast",
+  "verdict": "MULTI",
+  "reason": "Azurite Pass is reached from the West Fork Methow and PCT (standard), from Harts Pass south on the PCT, or up Canyon Creek and Mill Creek from SR-20.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Harts Pass and the Pacific Crest Trail south",
+    "notes": "Start high at Harts Pass and follow the Pacific Crest Trail south to Horse Heaven Camp, where the old Mill Creek trail climbs to Azurite Pass. It avoids the lower West Fork Methow trail, which has been brushy and slow past its first few miles.",
+    "trailhead": {
+     "name": "Harts Pass (end of FR 5400)"
+    }
+   },
+   {
+    "ref": "n1",
+    "name": "Canyon Creek and Mill Creek from SR-20",
+    "notes": "From the Canyon Creek trailhead on SR-20, follow Canyon Creek to the Mill Creek trail and up past the old Azurite Mine to the west slopes of the peak or on to Azurite Pass. The Mill Creek trail is badly overgrown in places and route-finding through alder is slow, so most parties prefer the east-side starts.",
+    "trailhead": {
+     "name": "Canyon Creek Trailhead (SR-20)",
+     "lat": 48.7063,
+     "lng": -120.9185
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Horse Heaven Camp, West Fork Methow": [
+    "e0",
+    "n0"
+   ],
+   "Azurite Pass": [
+    "e0",
+    "n0",
+    "n1"
+   ],
+   "River Bend and Ballard campgrounds, Lost River Road": [
+    "e0",
+    "n0"
+   ],
+   "Horse Heaven Camp": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_blackcap_mountain_scramble",
+  "verdict": "MULTI",
+  "reason": "Standard high start from Slate Pass; Robinson Creek over Robinson Pass joins the same Middle Fork line, and Monument Creek is the second documented approach from the east.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Robinson Creek over Robinson Pass",
+    "notes": "From the Robinson Creek trailhead on the Lost River road, climb over Robinson Pass and descend into the Middle Fork Pasayten, joining the standard line up to Freds Lake and over Rolo Pass into Shellrock Basin. It starts much lower than Slate Pass but works when the upper Harts Pass road is not an option, and suits loop trips.",
+    "trailhead": {
+     "name": "Robinson Creek Trailhead (Lost River Road)",
+     "lat": 48.6617,
+     "lng": -120.54201
+    }
+   },
+   {
+    "ref": "n1",
+    "name": "Monument Creek and the Monument-Blackcap basin",
+    "notes": "Follow the Monument Creek trail toward Butte Pass, and a few miles short of the pass leave it where Monument Creek bends west into the basin between Monument Peak and Blackcap. The lower basin is slow going, but its upper part is open and pleasant, and the peak is climbed from there.",
+    "trailhead": {
+     "name": "Monument Creek Trailhead (Lost River Road)",
+     "lat": 48.65617,
+     "lng": -120.51276
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Doris Lake and Freds Lake basins": [
+    "e0",
+    "n0"
+   ],
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows": [
+    "e0",
+    "n0"
+   ],
+   "Harts Pass and Meadows campgrounds": [
+    "e0"
+   ],
+   "Fred's Lake": [
+    "e0",
+    "n0"
+   ],
+   "Shellrock Basin": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_booker_mountain_northeast_face",
+  "verdict": "MULTI",
+  "reason": "Head of Park Creek is reached from Thunder Creek over Park Creek Pass (stored) or up the Park Creek trail from the Stehekin valley road.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Park Creek trail from the Stehekin valley",
+    "notes": "Reach the Stehekin valley by boat and the valley shuttle, or on foot over Cascade Pass, then walk or bike the washed-out upper valley road to the Park Creek trailhead. The Park Creek trail climbs toward Park Creek Pass, and the face sits at the head of the valley below the pass. Much less walking than Thunder Creek once you are in the valley.",
+    "trailhead": {
+     "name": "Park Creek Trailhead (Stehekin Valley Road)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+   "lat": 48.6855,
+   "lng": -121.0925
+  },
+  "camps": {
+   "Thunder Basin Hiker Camp": [
+    "e0"
+   ],
+   "Neve Camp": [
+    "e0"
+   ],
+   "Junction Camp": [
+    "e0"
+   ],
+   "Skagit Queen Camp": [
+    "e0"
+   ],
+   "Five Mile Camp, Park Creek trail": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_buck_mountain_south_ridge",
+  "verdict": "MULTI",
+  "reason": "Besides Trinity and Buck Creek Pass, Little Giant Pass and the Napeequa valley is a documented way to the peak's southwest side from a separate Chiwawa-road trailhead.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Little Giant Pass and the Napeequa valley",
+    "notes": "Ford the Chiwawa River at the Little Giant trailhead, climb steeply over Little Giant Pass and drop into the Napeequa valley. Go upvalley, then leave the trail at Louis Creek and climb its brushy left side past a waterfall into the basin around 6,400 ft on the peak's southwest side. The river ford can be deep and swift in early summer.",
+    "trailhead": {
+     "name": "Little Giant Trailhead (Chiwawa River Road, Trail #1518)",
+     "lat": 48.0266,
+     "lng": -120.829
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Buck Creek Pass and the High Pass camps": [
+    "e0"
+   ],
+   "Buck Creek Pass": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_castle_peak_pasayten_the_drawbridge",
+  "verdict": "MULTI",
+  "reason": "Castle Peak is approached from Ross Lake and Freezeout Creek, from the provincial park to the north, or along the Pacific Crest Trail from Harts Pass to Castle Pass; the third has no card yet.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Lightning Lake, E.C. Manning Provincial Park (British Columbia)"
+    }
+   },
+   {
+    "ref": "n0",
+    "name": "Pacific Crest Trail north from Harts Pass",
+    "notes": "Follow the Pacific Crest Trail north from Harts Pass along the crest, about 27 miles to Castle Pass, then go cross-country onto the peak and around to the north side. It needs no boat and stays in the United States, but it is a very long high walk and the Harts Pass road usually opens only in July.",
+    "trailhead": {
+     "name": "Harts Pass (end of FR 5400)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+   "lat": 48.7278,
+   "lng": -121.0628
+  },
+  "camps": {}
+ },
+ {
+  "id": "wa_north_face_left_buttress",
+  "verdict": "MULTI",
+  "reason": "Castle Peak is approached from Ross Lake and Freezeout Creek, from the provincial park to the north, or along the Pacific Crest Trail from Harts Pass to Castle Pass; the third has no card yet.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Lightning Lake, E.C. Manning Provincial Park (British Columbia)"
+    }
+   },
+   {
+    "ref": "n0",
+    "name": "Pacific Crest Trail north from Harts Pass",
+    "notes": "Follow the Pacific Crest Trail north from Harts Pass along the crest, about 27 miles to Castle Pass, then go cross-country onto the peak and around to the north side. It needs no boat and stays in the United States, but it is a very long high walk and the Harts Pass road usually opens only in July.",
+    "trailhead": {
+     "name": "Harts Pass (end of FR 5400)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+   "lat": 48.7278,
+   "lng": -121.0628
+  },
+  "camps": {
+   "Castle Peak north-side glacier bivy": [
+    "e0",
+    "e1",
+    "n0"
+   ],
+   "Harts Pass and Meadows campgrounds": [
+    "n0"
+   ],
+   "Windy Pass and the crest camps north of Harts Pass": [
+    "n0"
+   ],
+   "Hopkins Lake and Castle Pass": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_columbia_peak_scramble",
+  "verdict": "SINGLE",
+  "reason": "The west-spur scramble is staged from Twin Lakes via Barlow Pass; the Blanca Lake side leads to the Columbia Glacier and Kyes, not to this route.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Twin Lakes basin, under the west face of Columbia": [
+    "e0"
+   ],
+   "Monte Cristo townsite campground, four miles up the closed road": [
+    "e0"
+   ],
+   "Barlow Pass roadhead": [
+    "e0"
+   ],
+   "Silver Lake, below Poodle Dog Pass": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_copper_peak_south_route",
+  "verdict": "MULTI",
+  "reason": "Holden is normally reached by boat and shuttle; the drive-in alternative from Phelps Creek over Spider Gap and Lyman Lakes descends Railroad Creek past Copper Creek.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Phelps Creek over Spider Gap",
+    "notes": "From the Phelps Creek trailhead, walk up through Spider Meadow and the Spider Glacier to Spider Gap, drop past the Lyman Glacier to Lyman Lake, then follow the Railroad Creek trail down the valley to Copper Creek. It avoids the boat and shuttle but is far longer, with a steep snow climb to the gap.",
+    "trailhead": {
+     "name": "Phelps Creek Trailhead (Trail #1511)",
+     "lat": 48.0829,
+     "lng": -120.835
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Copper Creek basin camp": [
+    "e0",
+    "n0"
+   ],
+   "Holden Village": [
+    "e0"
+   ],
+   "Holden Ballpark Campground": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_crooked_thumb_peak_south_route",
+  "verdict": "MULTI",
+  "reason": "Besides Hannegan and Whatcom Pass, parties reach the Challenger Glacier and West Challenger Notch from Ross Lake via Big Beaver valley and Wiley Ridge.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Big Beaver valley and Wiley Ridge",
+    "notes": "Take the water taxi from Ross Lake Resort to the Big Beaver landing and follow the Big Beaver trail up the valley toward Luna Camp. Leave the trail and climb Wiley Ridge off-trail to the basin on its south side, then continue to the Challenger Arm and cross to West Challenger Notch above the Crooked Thumb Glacier. Expect several days and serious bushwhacking.",
+    "trailhead": {
+     "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "lat": 48.7278,
+     "lng": -121.0628
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Crooked Thumb Glacier lateral moraine": [
+    "e0",
+    "n0"
+   ],
+   "Perfect Pass": [
+    "e0"
+   ],
+   "Whatcom Camp": [
+    "e0"
+   ],
+   "Ledge at 7,800 ft on the peak's ridge": [
+    "e0",
+    "n0"
+   ],
+   "West Challenger Notch / Crooked Thumb Glacier moraine camp": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_earl_peak_southwest_ridge",
+  "verdict": "MULTI",
+  "reason": "Bean Creek basin (Beverly Turnpike) and the Standup Creek trail both reach Earl's southwest ridge from separate Teanaway trailheads.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Standup Creek trail",
+    "notes": "From the Standup Creek trailhead, the trail runs up a gentle valley, then steepens through open hillside to the southwest ridge of Earl Peak, where a boot path leads to the summit. Quieter and gentler at first than the Bean Creek side, with the hard climbing saved for the upper slopes.",
+    "trailhead": {
+     "name": "Standup Creek Trailhead (Trail #1369)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Bean Creek Basin meadows": [
+    "e0"
+   ],
+   "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "verdict": "MULTI",
+  "reason": "Usually from the North Fork Entiat; the Emerald Park trail from Lucerne crosses Milham Pass into the same Emerald-Saska basin.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Emerald Park trail from Lucerne",
+    "notes": "Take the boat up Lake Chelan to Lucerne, follow the Domke Lake trail to the Emerald Park trail, and climb up Emerald Park to Milham Pass, which drops into the basin between Emerald and Saska. A boat-dependent alternative to the Entiat side, and the natural choice when coming from Lake Chelan.",
+    "trailhead": {
+     "name": "Lucerne (Lake Chelan boat landing)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "North Fork Entiat Trailhead",
+   "lat": 48.0112,
+   "lng": -120.5718
+  },
+  "camps": {
+   "The basin between Emerald and Saska, and Milham Pass": [
+    "e0",
+    "n0"
+   ],
+   "Cottonwood Camp and the Entiat River road campgrounds": [
+    "e0"
+   ],
+   "Fox Camp, North Fork Entiat trail": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_fifth_of_july_mountain_scramble",
+  "verdict": "MULTI",
+  "reason": "Basalt Pass and Basalt Ridge (the existing card, shorter and more common) versus the Entiat River and Larch Lakes, which is what the row's stored trailhead and numbers describe.",
+  "stored": "n0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "Basalt Pass Trailhead"
+    }
+   },
+   {
+    "ref": "n0",
+    "name": "Entiat River and Larch Lakes",
+    "notes": "From the trailhead at the end of the Entiat River road, follow the Entiat River trail up the valley and climb the side trail to the Larch Lakes meadows. From a camp between the lakes the summit is a modest day out along the ridge. Longer than the Basalt Ridge line, but on maintained trail with water, so it suits multi-day trips and loops."
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Cow Creek Meadows": [
+    "n0"
+   ],
+   "Larch Lakes meadow camps": [
+    "n0"
+   ],
+   "Cottonwood Camp and the Entiat River road campgrounds": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "verdict": "MULTI",
+  "reason": "Usually from Stehekin via Devore Creek; the Holden approach over Tenmile Pass joins the route in the Castle Creek basin and is used to link Flora with Riddle Peak.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Holden Village over Tenmile Pass",
+    "notes": "From Holden, climb to Tenmile Pass, descend the shoulder into upper Riddle Creek, then traverse northeast into the Castle Creek basin to join the standard line around 6,500 ft. Longer and more involved than Devore Creek; mostly used to combine Flora with Riddle Peak, or by parties exiting to Holden after climbing from Stehekin.",
+    "trailhead": {
+     "name": "Holden Village (Railroad Creek)",
+     "lat": 48.1993,
+     "lng": -120.7741
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Bird Creek Camp": [
+    "e0"
+   ],
+   "Purple Point and Harlequin — the landing camps, and the boat that decides the trip": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_glacier_peak_frostbite_ridge",
+  "verdict": "MULTI",
+  "reason": "Three cards already exist (White Chuck, Suiattle/Milk Creek, North Fork Sauk); the stored trailhead is the Sauk, which is the current standard.",
+  "stored": "e2",
+  "primary": "e2",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "White Chuck Trailhead (end of FR 23)"
+    }
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Suiattle River Trailhead (end of FR 26)"
+    }
+   },
+   {
+    "ref": "e2"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Kennedy Ridge high camp": [
+    "e0",
+    "e1",
+    "e2"
+   ],
+   "Vista-Kennedy saddle": [
+    "e0",
+    "e1",
+    "e2"
+   ],
+   "8,800 ft saddle at the foot of Frostbite Ridge": [
+    "e0",
+    "e1",
+    "e2"
+   ],
+   "Ledge near 9,900 ft below the ridge crux": [
+    "e0",
+    "e1",
+    "e2"
+   ]
+  }
+ },
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "verdict": "MULTI",
+  "reason": "The only card is the historic White Chuck line, while the stored trailhead is the North Fork Sauk, the current standard; the Sauk way needs its own card. The stored distance looks like the White Chuck figure.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "White Chuck Trailhead (end of FR 23)"
+    }
+   },
+   {
+    "ref": "n0",
+    "name": "North Fork Sauk and the crest trail north",
+    "notes": "Walk the North Fork Sauk trail up the valley and climb to the crest trail near White Pass, then follow it north past Red Pass, across the White Chuck basin and on toward Kennedy Creek, descending to the bench below the glacier. Long, with real elevation loss on the way, but this is how most parties now reach the Kennedy side."
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Kennedy Ridge and the Glacier Creek camps, Suiattle side": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_south_gully_south_spur",
+  "verdict": "MULTI",
+  "reason": "Both cards exist with different starts: the winter Commonwealth line from Summit West and the summer scramble from Alpental Road (stored).",
+  "stored": "e1",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "Summit West, Snoqualmie Pass (I-90 exit 52)"
+    }
+   },
+   {
+    "ref": "e1"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Denny Creek Campground, I-90 exit 47": [
+    "e0",
+    "e1"
+   ],
+   "Tinkham Campground, I-90 exit 42": [
+    "e0",
+    "e1"
+   ]
+  }
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "verdict": "MULTI",
+  "reason": "Both cards exist: the long ridge trail from the north (stored distance) and the short border-swath bushwhack from the ranger station at the head of Ross Lake.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Hozomeen ranger station and campground (head of Ross Lake)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {}
+ },
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "verdict": "UNSURE",
+  "reason": "The East Ridge is mostly met as a descent; only the Jerry Lakes side is documented as a way onto it, and no report confirms a lakeshore start for it.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   }
+  ],
+  "fillStored": null,
+  "camps": {}
+ },
+ {
+  "id": "wa_jack_mountain_north_ridge",
+  "verdict": "MULTI",
+  "reason": "May Creek Camp is reached either by water taxi from Ross Lake Resort or on foot along the East Bank Trail; two different starts.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "East Bank Trail on foot to May Creek",
+    "notes": "Walk the East Bank Trail from SR-20 north along the east shore of Ross Lake to May Creek Camp, where climbers leave the trail. Several hours of flat walking each way, but it needs no booking and works whenever the highway is open.",
+    "trailhead": {
+     "name": "East Bank Trailhead (SR-20)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+   "lat": 48.7278,
+   "lng": -121.0628
+  },
+  "camps": {
+   "May Creek Camp, Ross Lake": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_jack_mountain_northeast_glacier",
+  "verdict": "MULTI",
+  "reason": "The stored trailhead names both starts: water taxi to May Creek, or the East Bank Trail on foot; no card exists yet for either.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Water taxi up Ross Lake to May Creek",
+    "notes": "Book the water taxi from Ross Lake Resort, reached by the trail down from the Ross Dam trailhead on SR-20, and ride up the lake to May Creek Camp on the east shore. The usual choice, since it cuts out the lakeshore walk, but it must be booked and the boat does not run early or late in the season."
+   },
+   {
+    "ref": "n1",
+    "name": "East Bank Trail on foot to May Creek",
+    "notes": "Walk the East Bank Trail from SR-20 north along the east shore of Ross Lake to May Creek Camp, where climbers leave the trail. Several hours of flat walking each way, but it needs no booking and works whenever the highway is open.",
+    "trailhead": {
+     "name": "East Bank Trailhead (SR-20)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+   "lat": 48.7278,
+   "lng": -121.0628
+  },
+  "camps": {
+   "High camp below the Nohokomeen Glacier": [
+    "n0",
+    "n1"
+   ],
+   "May Creek Camp, Ross Lake": [
+    "n0",
+    "n1"
+   ]
+  }
+ },
+ {
+  "id": "wa_kololo_peaks_standard",
+  "verdict": "MULTI",
+  "reason": "Kololo has two long approaches of similar foot distance: North Fork Sauk to White Pass (stored) and the White River trail from Lake Wenatchee.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "White River trail from the east",
+    "notes": "From the White River trailhead beyond Lake Wenatchee, walk the White River trail about 10 miles up the valley to the Lightning Creek crossing, then go cross-country up into the high basin east of the peaks. About as far on foot as the Sauk side, with less trail and more off-trail travel.",
+    "trailhead": {
+     "name": "White River Trailhead (FR-6400, Lake Wenatchee)",
+     "lat": 47.9628,
+     "lng": -120.94501
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "White Chuck Glacier basin, under Kololo Peaks": [
+    "e0"
+   ],
+   "Sloan Creek Campground and the North Fork Sauk road end": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_lake_mountain_pasayten_scramble",
+  "verdict": "MULTI",
+  "reason": "Standard approach is Monument Creek and Pistol Pass; a longer approach from Slate Pass on the Harts Pass road is also used.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Slate Pass and the Pasayten side",
+    "notes": "Start high at Slate Pass on the Harts Pass road and drop toward the Middle Fork Pasayten, then work east by Eureka Creek and around into the basin below the peak. Longer and more cross-country than Pistol Pass, but it starts thousands of feet higher.",
+    "trailhead": {
+     "name": "Buckskin Ridge Trailhead (Slate Pass)",
+     "lat": 48.7323,
+     "lng": -120.6683
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Lake of the Woods and the Eureka Falls camp": [
+    "e0"
+   ],
+   "Lake of the Woods": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_little_big_chief_mountain_northeast_face",
+  "verdict": "MULTI",
+  "reason": "Middle Fork (standard), Necklace Valley over La Bohn Gap, Pete Lake from the east, and Waptus from Salmon La Sac all start at different trailheads",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Necklace Valley Trailhead (Foss River Road)"
+    }
+   },
+   {
+    "ref": "e2",
+    "trailhead": {
+     "name": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+     "lat": 47.435,
+     "lng": -121.1855
+    }
+   },
+   {
+    "ref": "e3",
+    "trailhead": {
+     "name": "Salmon La Sac / Waptus River Trailhead"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap": [
+    "e0"
+   ],
+   "Hardscrabble Horse Camp, Middle Fork Snoqualmie": [
+    "e0"
+   ],
+   "Waptus Lake, with Spade Lake above it": [
+    "e3"
+   ]
+  }
+ },
+ {
+  "id": "wa_lizard_mountain_south_route",
+  "verdict": "MULTI",
+  "reason": "Met mid-traverse; entered from Cascade Pass in the north or Downey and Bachelor Creeks in the south",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+     "lat": 48.2591,
+     "lng": -121.2244
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "White Rock Lakes": [
+    "e0",
+    "e1"
+   ],
+   "Sentinel Pass and Lizard Col": [
+    "e0"
+   ],
+   "Crest bivouacs above the South Cascade and Chickamin glaciers": [
+    "e0",
+    "e1"
+   ],
+   "Kool-Aid Lake": [
+    "e0"
+   ],
+   "Yang Yang Lakes": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_lundin_peak_west_ridge",
+  "verdict": "MULTI",
+  "reason": "Commonwealth Basin from the PCT North lot and the Cave Ridge traverse from the Alpental lot are separate trailheads",
+  "stored": "e1",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "PCT North Trailhead (Snoqualmie Pass, I-90 Exit 52)",
+     "lat": 47.4278,
+     "lng": -121.4135
+    },
+    "distMi": 3.75,
+    "gainFt": 2800
+   },
+   {
+    "ref": "e1"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Commonwealth Basin and Red Pond": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_east_face",
+  "verdict": "MULTI",
+  "reason": "Gunsight Range reached from Downey/Bachelor Creeks on the Suiattle side or from High Bridge up Agnes and Spruce Creeks on the Stehekin side",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Downey Creek, Bachelor Creek and Itswoot Ridge",
+    "notes": "From the Suiattle River Road, follow the Downey Creek trail up the valley, then turn up Bachelor Creek on a faint, brushy path toward Cub Lake and Itswoot Ridge. From the ridge, cross the glaciers east toward the Gunsight Range. Plan on a long two-day approach."
+   },
+   {
+    "ref": "n1",
+    "name": "From Stehekin up Agnes and Spruce Creeks",
+    "notes": "From High Bridge on the Stehekin Valley Road, follow the Pacific Crest Trail south up Agnes Creek about ten miles to the Spruce Creek confluence, crossing both creeks on logs. Then go cross-country, through dense brush, up toward the Icy-Spruce col for a high camp facing the Gunsights. Reaching Stehekin takes a boat or floatplane, so this is a multi-day trip.",
+    "trailhead": {
+     "name": "High Bridge (Stehekin Valley Road)",
+     "lat": 48.3807,
+     "lng": -120.8403
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Dome Glacier and Dome-Chickamin col high bivouacs": [
+    "n0"
+   ],
+   "Bachelor Creek forest and meadow camps": [
+    "n0"
+   ],
+   "Cub Lake": [
+    "n0"
+   ],
+   "Itswoot Ridge": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_monument_peak_pasayten_scramble",
+  "verdict": "MULTI",
+  "reason": "Monument Creek trail over Pistol Pass, or from Slate Pass down Robinson Creek and the Ferguson Lake trail to Eureka Creek",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "From Slate Pass by Robinson Creek and the Ferguson Lake trail",
+    "notes": "Gentler, though not shorter. Drop north from Slate Pass to the Robinson Creek trail along the Middle Fork Pasayten, then near the big meadow horse camp take the Ferguson Lake trail, which descends about seven miles to Eureka Creek just south of the peak. From there, pick a line up the south side or into the basin between Monument and Lake Mountain.",
+    "trailhead": {
+     "name": "Buckskin Ridge Trailhead (Slate Pass)",
+     "lat": 48.7323,
+     "lng": -120.6683
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Lake of the Woods and the Eureka Falls camp": [
+    "e0",
+    "n0"
+   ],
+   "Lake of the Woods": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "verdict": "UNSURE",
+  "reason": "Avalanche Valley is described from the south (Bird Creek side); a working northern approach from Killen Creek to this east-side glacier could not be established, and both cross tribal land"
+ },
+ {
+  "id": "wa_mount_appleton_standard",
+  "verdict": "MULTI",
+  "reason": "Appleton Pass is reached from the Sol Duc (usual) or up Boulder Creek from the Elwha side",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Boulder Creek from the Elwha",
+    "notes": "From the Elwha side, follow the Boulder Creek trail past the old hot springs and climb to Appleton Pass, where it meets the Sol Duc line. It is the longer way, since the road below the trailhead may have to be walked or biked. Boulder Lake makes a good side camp.",
+    "trailhead": {
+     "name": "Boulder Creek Trailhead (Olympic Hot Springs Road)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Appleton Pass": [
+    "e0",
+    "n0"
+   ],
+   "Sol Duc Hot Springs Resort campground": [
+    "e0"
+   ],
+   "Appleton Pass camp area": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "verdict": "MULTI",
+  "reason": "Reached west along the Bailey crest from the Sol Duc, or up the Elwha to Elwha Basin",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Up the Elwha to Elwha Basin",
+    "notes": "The eastern way: follow the Elwha River trail up the full length of the valley past Hayes River and Chicago Camp to Elwha Basin, then climb onto the peak from the basin. It takes several days, and a road walk or bike ride may be needed to reach the trailhead.",
+    "trailhead": {
+     "name": "Whiskey Bend Trailhead (Elwha)",
+     "lat": 47.968,
+     "lng": -123.583
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Elwha Basin, Queets Basin and the upper cross-country bivy zones": [
+    "e0",
+    "n0"
+   ],
+   "Lillian River and Mary's Falls — the first night out of Whiskey Bend": [
+    "n0"
+   ],
+   "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton": [
+    "n0"
+   ],
+   "Chicago Camp — the last established camp in the upper Elwha": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "verdict": "MULTI",
+  "reason": "Little Giant trailhead over the pass, or Trinity up Buck Creek, are separate Chiwawa Road trailheads",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Trinity Trailhead (end of Chiwawa River Road)",
+     "lat": 48.07197,
+     "lng": -120.84999
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Buck Creek Pass and the High Pass camps": [
+    "e1"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "verdict": "MULTI",
+  "reason": "Obstruction Point (usual), Deer Park via Cameron Creek, and the Dosewallips each start at a different trailhead",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Deer Park Trailhead"
+    }
+   },
+   {
+    "ref": "e2",
+    "trailhead": {
+     "name": "Dosewallips Road washout parking (FR-2610)",
+     "lat": 47.74026,
+     "lng": -123.06576
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Cameron Basin": [
+    "e0",
+    "e1",
+    "e2"
+   ],
+   "Cameron Basin camp": [
+    "e0",
+    "e1",
+    "e2"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_carru_scramble",
+  "verdict": "MULTI",
+  "reason": "Slate Pass down the Middle Fork Pasayten (most trips) or the longer Monument Creek trail; the row stores Monument Creek",
+  "stored": "e0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "From Slate Pass down the Middle Fork Pasayten",
+    "notes": "The shorter and more common start. From Slate Pass the trail drops north to the Middle Fork Pasayten; follow it up-valley past the Berk Creek junction, then climb toward Fred's Lake and Shellrock Basin below Carru. Most parties combine Carru with Osceola and Lago over two or three days.",
+    "trailhead": {
+     "name": "Buckskin Ridge Trailhead (Slate Pass)",
+     "lat": 48.7323,
+     "lng": -120.6683
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Shellrock Basin": [
+    "e0",
+    "n0"
+   ],
+   "The high bench southwest of Shellrock Pass": [
+    "e0",
+    "n0"
+   ],
+   "The Berk Creek junction and the Middle Fork Pasayten river camps": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_christie_west",
+  "verdict": "MULTI",
+  "reason": "Low Divide is reached from the North Fork Quinault (standard) or the Elwha",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Whiskey Bend Trailhead (Elwha)",
+     "lat": 47.968,
+     "lng": -123.583
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "North Fork Quinault Trailhead (North Shore Road)",
+   "lat": 47.57603,
+   "lng": -123.64793
+  },
+  "camps": {
+   "Low Divide — the pass camp for Mount Seattle and Mount Christie": [
+    "e0",
+    "e1"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "verdict": "MULTI",
+  "reason": "Cathedral Rock trail via Peggy's Pond and the Deception Pass trail via Dip Top Gap start at neighbouring but separate trailheads",
+  "stored": "e1",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "Cathedral Rock Trailhead (Cle Elum River Road)"
+    }
+   },
+   {
+    "ref": "e1"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Peggy's Pond, below Cathedral Rock": [
+    "e0"
+   ],
+   "Hyas Lake and Upper Hyas Lake": [
+    "e1"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_duckabush_standard",
+  "verdict": "SINGLE",
+  "reason": "The Duckabush trail to Marmot Lake is the way in; the Dosewallips and Anderson Pass line is a long loop option, not an approach climbers use for this peak"
+ },
+ {
+  "id": "wa_mount_hopper_standard",
+  "verdict": "MULTI",
+  "reason": "First Divide from Staircase up the North Fork Skokomish (the row's trailhead) or from the Duckabush; the existing card covers only the Duckabush",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Staircase and the North Fork Skokomish to First Divide",
+    "notes": "The historic and shortest way in. From Staircase, follow the North Fork Skokomish trail up the valley to Home Sweet Home and on to First Divide, where the scramble leaves the trail. Fire damage has affected this corridor, so check the park's trail status before planning."
+   },
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "Duckabush Trailhead (end of FS Road 2510-060)",
+     "lat": 47.68516,
+     "lng": -123.03968
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper": [
+    "n0"
+   ],
+   "Upper Duckabush junction camp — the link between First Divide and the Duckabush head": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "verdict": "MULTI",
+  "reason": "Slate Pass down the Middle Fork Pasayten or Robinson Creek over Robinson Pass; both reach Shellrock Basin",
+  "stored": "e0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "From Slate Pass down the Middle Fork Pasayten",
+    "notes": "The high start most parties use. From Slate Pass the trail drops north into the Middle Fork Pasayten; follow it up-valley past the Berk Creek junction, then climb to Fred's Lake or Shellrock Basin to camp. Lago is usually combined with Carru and Osceola.",
+    "trailhead": {
+     "name": "Buckskin Ridge Trailhead (Slate Pass)",
+     "lat": 48.7323,
+     "lng": -120.6683
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Shellrock Basin camp area": [
+    "e0",
+    "n0"
+   ],
+   "The high bench southwest of Shellrock Pass": [
+    "e0",
+    "n0"
+   ],
+   "The Berk Creek junction and the Middle Fork Pasayten river camps": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_rahm_standard",
+  "verdict": "MULTI",
+  "reason": "Depot Creek (standard), Maselpanik Creek from the north, and Silver Creek to Silver Lake are three separate approaches",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Maselpanik Creek from the north",
+    "notes": "Reaches the north side of the mountain at the head of Maselpanik Creek, starting from old logging roads off the Silver-Skagit Road in Canada. It is the shortest way to the summit, but the roads can be gated and overgrown. A long single day is possible, though most parties take two. Carry a passport for the border.",
+    "trailhead": {
+     "name": "Maselpanik Creek (Silver-Skagit Road, BC)"
+    }
+   },
+   {
+    "ref": "n1",
+    "name": "Silver Creek to Silver Lake",
+    "notes": "The one approach that stays in the United States, but it is longer and rougher. Follow Silver Creek up from Ross Lake to camp at Silver Lake, then climb to the peak from there.",
+    "trailhead": {
+     "name": "Silver Creek on Ross Lake"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Depot Creek Road washout",
+   "lat": 49.033,
+   "lng": -121.4025
+  },
+  "camps": {
+   "Lake Ouzel (Ouzel Lake) camp": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_rainier_ptarmigan_ridge",
+  "verdict": "MULTI",
+  "reason": "Mowich Lake via Spray Park or White River via St Elmo Pass and the Winthrop/Carbon crossing",
+  "stored": "e1",
+  "primary": "e1",
+  "ways": [
+   {
+    "ref": "e0",
+    "trailhead": {
+     "name": "Mowich Lake Trailhead",
+     "lat": 46.937,
+     "lng": -121.8628
+    }
+   },
+   {
+    "ref": "e1"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Ptarmigan Ridge high camp": [
+    "e0",
+    "e1"
+   ],
+   "Glacier Basin camp": [
+    "e1"
+   ],
+   "Curtis Ridge camp": [
+    "e1"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "verdict": "MULTI",
+  "reason": "Low Divide from the North Fork Quinault (the row's trailhead) or up the Elwha from Whiskey Bend",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Up the Elwha to Low Divide",
+    "notes": "The long northern way: follow the Elwha River trail up the whole valley past Hayes River and Chicago Camp, then climb to Low Divide. It takes several days, and a road walk or bike ride may be needed to reach the trailhead.",
+    "trailhead": {
+     "name": "Whiskey Bend Trailhead (Elwha)",
+     "lat": 47.968,
+     "lng": -123.583
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Low Divide — the pass camp for Mount Seattle and Mount Christie": [
+    "e0",
+    "n0"
+   ],
+   "Seattle Meadows": [
+    "e0",
+    "n0"
+   ],
+   "Lillian River and Mary's Falls — the first night out of Whiskey Bend": [
+    "n0"
+   ],
+   "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton": [
+    "n0"
+   ],
+   "Chicago Camp — the last established camp in the upper Elwha": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_steel_standard",
+  "verdict": "MULTI",
+  "reason": "Duckabush trail or First Divide from Staircase; two different trailheads",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Staircase Trailhead (North Fork Skokomish, Olympic NP)",
+     "lat": 47.5155,
+     "lng": -123.3295
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush": [
+    "e0"
+   ],
+   "Upper Duckabush junction camp — the link between First Divide and the Duckabush head": [
+    "e0"
+   ],
+   "Marmot Lake": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_upper_north_ridge_w_great_gendarme",
+  "verdict": "MULTI",
+  "reason": "The notch is reached from Esmeralda via Goat Pass (usual) or from the Stuart Lake trailhead up Mountaineer Creek and the Stuart Glacier",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Mountaineer Creek and the Stuart Glacier from the north",
+    "notes": "From the Stuart Lake trailhead, follow the trail up Mountaineer Creek, then leave it for the climbers' path into the basin below the Stuart and Sherpa glaciers. Climb the Stuart Glacier to the notch where the upper ridge begins. This suits parties camping in the north-side basin, but leaves the car on the opposite side from the Cascadian Couloir descent.",
+    "trailhead": {
+     "name": "Stuart Lake Trailhead (Trail #1599)",
+     "lat": 47.5282,
+     "lng": -120.82036
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Goat Pass bivies": [
+    "e0"
+   ],
+   "North Ridge notch bivy": [
+    "e0",
+    "n0"
+   ],
+   "Headlight Basin designated sites": [
+    "e0"
+   ],
+   "Upper Ingalls Creek meadows, below Stuart Pass": [
+    "e0"
+   ],
+   "Ingalls Creek basin camp, below Longs Pass": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_torment_south_ridge",
+  "verdict": "MULTI",
+  "reason": "Boston Basin climbers' trail or the separate Torment Basin path from the Cascade River bridge",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Cascade River Road at the river bridge, about a mile past the Eldorado Creek trailhead"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Boston Basin upper (high) camp": [
+    "e0"
+   ],
+   "Boston Basin lower camp": [
+    "e0"
+   ],
+   "Informal snow and rock bivouacs above the basins": [
+    "e0",
+    "e1"
+   ],
+   "Boston Basin": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_townsend_standard",
+  "verdict": "MULTI",
+  "reason": "Trail #839 from the Upper Trailhead, or the Little Quilcene trail over Little River Summit from its own trailhead; the Lower Trailhead is the same trail and already covered by the existing card",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Little Quilcene Trail over Little River Summit",
+    "notes": "The shortest way to the top, with the least gain. The trail climbs steadily through forest to Little River Summit, then follows an open, exposed ridge for the last mile to meet the main trail near the summit. Carry water, as the ridge is dry and sunny.",
+    "trailhead": {
+     "name": "Little Quilcene Trailhead"
+    },
+    "distMi": 3.4,
+    "gainFt": 2200
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Camp Windy, below Mount Townsend": [
+    "e0"
+   ],
+   "Camp Windy": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_pinnacle_mountain_entiat_scramble",
+  "verdict": "MULTI",
+  "reason": "Reached either from the North Fork Entiat over Saska Pass or from the Entiat River trail and the Snow Brushy Creek trail to Borealis Pass; different trailheads.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Entiat River trail and Snow Brushy Creek to Borealis Pass",
+    "notes": "From the Entiat River trailhead just past Cottonwood Campground, walk the Entiat River trail about six and a half miles to the Snow Brushy Creek trail, then follow it up-valley about five miles; the creek crossing there is a reliable place for water. A faint, sometimes hard-to-follow trail branches north and climbs to Borealis Pass in about a mile, below the easy south slopes of the peak. Much of the valley is burned, so expect downed timber.",
+    "trailhead": {
+     "name": "Entiat River Trailhead",
+     "lat": 48.0246,
+     "lng": -120.6508
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "North Fork Entiat Trailhead",
+   "lat": 48.0112,
+   "lng": -120.5718
+  },
+  "camps": {
+   "The basin between Emerald and Saska, and Milham Pass": [
+    "e0"
+   ],
+   "Cottonwood Camp and the Entiat River road campgrounds": [
+    "e0",
+    "n0"
+   ],
+   "Fox Camp, North Fork Entiat trail": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_north_ridge_4",
+  "verdict": "UNSURE",
+  "reason": "Very seldom climbed; both the Klawatti (Eldorado) side and the Thunder Creek/Borealis side are recorded, but the single existing card already combines them and no source establishes which way parties actually use."
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "verdict": "SINGLE",
+  "reason": "The south side is reached across the Eldorado ice cap; the Thunder Creek/Borealis approach leads to the east ridge, a different line, as the existing second card itself says."
+ },
+ {
+  "id": "wa_boving_christensen",
+  "verdict": "MULTI",
+  "reason": "Prusik is reached either over Aasgard Pass from Colchuck Lake or up the Snow Lakes trail from Icicle Creek; different trailheads, both widely used, Aasgard the more popular.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Snow Lakes and the lower Enchantments",
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the face below Prusik Pass. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "trailhead": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5441,
+     "lng": -120.7095
+    },
+    "distMi": 10
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Perfection Lake and Inspiration Lake basin camps": [
+    "e0",
+    "n0"
+   ],
+   "Gnome Tarn": [
+    "e0",
+    "n0"
+   ],
+   "Colchuck Lake designated campsites": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_energizer_bunny",
+  "verdict": "MULTI",
+  "reason": "Prusik is reached either over Aasgard Pass from Colchuck Lake or up the Snow Lakes trail from Icicle Creek; different trailheads, both widely used, Aasgard the more popular.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Snow Lakes and the lower Enchantments",
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to Prusik Pass and round onto the west face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "trailhead": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5441,
+     "lng": -120.7095
+    },
+    "distMi": 10
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Perfection Lake and Inspiration Lake basin camps": [
+    "e0",
+    "n0"
+   ],
+   "Gnome Tarn": [
+    "e0",
+    "n0"
+   ],
+   "Colchuck Lake designated campsites": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_prusik_peak_der_sportsman",
+  "verdict": "MULTI",
+  "reason": "Prusik is reached either over Aasgard Pass from Colchuck Lake or up the Snow Lakes trail from Icicle Creek; different trailheads, both widely used, Aasgard the more popular.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Snow Lakes and the lower Enchantments",
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "trailhead": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5441,
+     "lng": -120.7095
+    },
+    "distMi": 10
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Perfection Lake and Inspiration Lake basin camps": [
+    "e0",
+    "n0"
+   ],
+   "Gnome Tarn": [
+    "e0",
+    "n0"
+   ],
+   "Colchuck Lake designated campsites": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_prusik_peak_sail_away",
+  "verdict": "MULTI",
+  "reason": "Prusik is reached either over Aasgard Pass from Colchuck Lake or up the Snow Lakes trail from Icicle Creek; different trailheads, both widely used, Aasgard the more popular.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Colchuck Lake and Aasgard Pass",
+    "notes": "The usual way in. From the Stuart Lake trailhead walk the Colchuck Lake trail to Colchuck Lake, then climb the loose boulders and scree of Aasgard Pass into the Core Enchantments. Walk down through the basin past Perfection Lake toward Prusik Pass and scramble up to the base of the south face; Aasgard is steep and can hold snow into early summer."
+   },
+   {
+    "ref": "n1",
+    "name": "Snow Lakes and the lower Enchantments",
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "trailhead": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5441,
+     "lng": -120.7095
+    },
+    "distMi": 10
+   }
+  ],
+  "fillStored": {
+   "name": "Stuart Lake Trailhead (Trail #1599)",
+   "lat": 47.5282,
+   "lng": -120.82036
+  },
+  "camps": {}
+ },
+ {
+  "id": "wa_prusik_peak_solid_gold",
+  "verdict": "MULTI",
+  "reason": "Prusik is reached either over Aasgard Pass from Colchuck Lake or up the Snow Lakes trail from Icicle Creek; different trailheads, both widely used, Aasgard the more popular.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Snow Lakes and the lower Enchantments",
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "trailhead": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5441,
+     "lng": -120.7095
+    },
+    "distMi": 10
+   }
+  ],
+  "fillStored": {
+   "name": "Stuart Lake Trailhead (Trail #1599)",
+   "lat": 47.5282,
+   "lng": -120.82036
+  },
+  "camps": {}
+ },
+ {
+  "id": "wa_prusik_peak_south_face_burgner_stanley",
+  "verdict": "MULTI",
+  "reason": "Prusik is reached either over Aasgard Pass from Colchuck Lake or up the Snow Lakes trail from Icicle Creek; different trailheads, both widely used, Aasgard the more popular.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Snow Lakes and the lower Enchantments",
+    "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to Gnome Tarn and the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+    "trailhead": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5441,
+     "lng": -120.7095
+    },
+    "distMi": 10
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Perfection Lake and Inspiration Lake basin camps": [
+    "e0",
+    "n0"
+   ],
+   "Gnome Tarn": [
+    "e0",
+    "n0"
+   ],
+   "Colchuck Lake designated campsites": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_ptarmigan_peak_pasayten_scramble",
+  "verdict": "MULTI",
+  "reason": "Standard Slate Pass/Shellrock line, plus a documented start from the end of Eightmile Creek Road (Billy Goat) via Eightmile Pass and the Hidden Lakes, used for winter ascents too.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Eightmile Creek, Eightmile Pass and the Hidden Lakes",
+    "notes": "The shortest line on the map, but it starts below 3,500 ft instead of high on the Slate Pass road. From the trailhead at the end of Eightmile Creek Road, cross Eightmile Pass and follow the trail past the Hidden Lakes to Ptarmigan Creek, northeast of the peak, then go a further two or three miles to the base. Expect a long day of trail before any climbing.",
+    "trailhead": {
+     "name": "Billy Goat Trailhead (end of Eightmile Creek Road)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Slate Pass Trailhead",
+   "lat": 48.7323,
+   "lng": -120.6683
+  },
+  "camps": {
+   "Shellrock Pass bench": [
+    "e0"
+   ],
+   "Harts Pass and Meadows campgrounds": [
+    "e0"
+   ],
+   "Doris Lake and Freds Lake basins": [
+    "e0"
+   ],
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_remmel_mountain_nw_ridge",
+  "verdict": "MULTI",
+  "reason": "Remmel Lake, where the ridge starts, is reached from either the Andrews Creek trailhead or the Thirtymile trailhead up the Chewuch River trail.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Andrews Creek to Remmel Lake",
+    "notes": "The shortest line to the peak. Walk the Andrews Creek trail up the valley past the Meadow Lake and Peepsight junctions, then continue to Remmel Lake at the foot of the northwest ridge. The lower valley is burned and can hold a lot of blowdown."
+   },
+   {
+    "ref": "n1",
+    "name": "Chewuch River trail to Remmel Lake",
+    "notes": "A longer but gentler and generally better-kept trail. From the Thirtymile trailhead at the end of the Chewuch road, follow the Chewuch River trail north toward Four Point Lake and on to Remmel Lake. Most parties break the walk with a night along the river.",
+    "trailhead": {
+     "name": "Thirtymile Trailhead (Chewuch River Road)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "NW Ridge Camp": [
+    "n0",
+    "n1"
+   ],
+   "The lower Chewuch River camps out of Thirtymile": [
+    "n1"
+   ]
+  }
+ },
+ {
+  "id": "wa_reynolds_peak_scramble",
+  "verdict": "MULTI",
+  "reason": "Reynolds Creek is the short standard way; a second, well-trodden way starts at the Williams Creek trailhead and goes over Williams Lake and War Creek Ridge.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Williams Lake and War Creek Ridge",
+    "notes": "Longer, but on good trail at first and far more scenic. From the Williams Creek trailhead on the West Twisp River road at about 2,800 ft, follow the well-marked trail to Williams Lake at about 6,500 ft, then climb over Williams Butte and follow War Creek Ridge toward Camel's Hump. Drop through a boulder break in the cliffs into the upper South Fork Reynolds Creek basin and climb heather and scree to the summit pyramid.",
+    "trailhead": {
+     "name": "Williams Creek Trailhead (West Twisp River Road)",
+     "elevFt": 2800
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Reynolds Creek upper basin": [
+    "e0"
+   ],
+   "Upper Reynolds Creek basin": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_sentinel_peak_standard",
+  "verdict": "MULTI",
+  "reason": "Sentinel sits mid-Ptarmigan Traverse and is climbed from either end: from Cascade Pass in the north or from Downey Creek in the south via White Rock Lakes.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Downey Creek and the south end of the traverse",
+    "notes": "From the Downey Creek trailhead on the Suiattle River Road, walk the Downey Creek trail and the brushy Bachelor Creek path to Cub Lake and Itswoot Ridge, then cross the Dana Glacier country to White Rock Lakes. From the lakes, work back up onto the South Cascade Glacier to reach the peak. Plan on several days of off-trail and glacier travel.",
+    "trailhead": {
+     "name": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+     "lat": 48.2591,
+     "lng": -121.2244
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Sentinel Pass and Lizard Col": [
+    "e0",
+    "n0"
+   ],
+   "White Rock Lakes": [
+    "n0"
+   ],
+   "Cache Col and the Cache Glacier shoulder": [
+    "e0"
+   ],
+   "Spider-Formidable Col": [
+    "e0"
+   ],
+   "Le Conte Pass": [
+    "e0"
+   ],
+   "Crest bivouacs above the South Cascade and Chickamin glaciers": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "verdict": "MULTI",
+  "reason": "The Gunsights are reached from the west via Downey Creek or from the east by boat to Stehekin, the shuttle to High Bridge and the Agnes Creek trail; both are documented and used.",
+  "stored": "e0",
+  "primary": "e1",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "High Bridge (Stehekin Valley Road)",
+     "lat": 48.3807,
+     "lng": -120.8403
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Dome Glacier and Dome-Chickamin col high bivouacs": [
+    "e0"
+   ],
+   "Bachelor Creek forest and meadow camps": [
+    "e0"
+   ],
+   "Cub Lake": [
+    "e0"
+   ],
+   "Itswoot Ridge": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_storm_king_north_face",
+  "verdict": "UNSURE",
+  "reason": "Almost nothing is published on this face; the peak's basin is reachable from Thunder Creek, Stehekin or Cascade Pass, but no source says which way parties approach the north face itself."
+ },
+ {
+  "id": "wa_storm_king_southwest_scramble",
+  "verdict": "MULTI",
+  "reason": "The Goode-Storm King basin is reached from Thunder Creek over Park Creek Pass, from Stehekin up the Park Creek trail, or from Cascade Pass down to the Park Creek trail.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Stehekin and the Park Creek trail",
+    "notes": "Take the boat up the lake to Stehekin and the shuttle to High Bridge, then walk up the valley past Bridge Creek to the Park Creek trail and climb it past Two Mile Camp. About a mile before Five Mile Camp, look for cairns marking a class 2-3 climbers' path up to the basin below Goode at about 7,400 ft. The least climbing of the three ways if the boat and shuttle schedule suits.",
+    "trailhead": {
+     "name": "High Bridge (Stehekin Valley Road)",
+     "lat": 48.3807,
+     "lng": -120.8403
+    }
+   },
+   {
+    "ref": "n1",
+    "name": "Cascade Pass and the upper Stehekin valley",
+    "notes": "A drive-to start from the west side when the boat is impractical. Cross Cascade Pass and descend into the Stehekin valley, follow it down to the Park Creek trail, then climb Park Creek to the same cairned climbers' path up to the basin below Goode.",
+    "trailhead": {
+     "name": "Cascade Pass Trailhead (Cascade River Road)",
+     "lat": 48.47549,
+     "lng": -121.07504
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Rib camp below Storm King/Goode basin": [
+    "e0",
+    "n0",
+    "n1"
+   ],
+   "Neve Camp": [
+    "e0"
+   ],
+   "Junction Camp": [
+    "e0"
+   ],
+   "Skagit Queen Camp": [
+    "e0"
+   ],
+   "Thunder Basin Hiker Camp": [
+    "e0"
+   ],
+   "Five Mile Camp, Park Creek trail": [
+    "e0",
+    "n0",
+    "n1"
+   ]
+  }
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "verdict": "MULTI",
+  "reason": "Swiss is reached from the north via Big Beaver, Access Creek and Luna Col, or from the south via Bacon Creek Road and the ridges to Pickell Pass; both are recorded.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Bacon Creek Road (off SR-20 near Marblemount)"
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+   "lat": 48.7278,
+   "lng": -121.0628
+  },
+  "camps": {
+   "Luna Col bivy, Luna cross-country zone": [
+    "e0"
+   ],
+   "Luna Camp, Big Beaver Trail": [
+    "e0"
+   ],
+   "Luna Cirque floor": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_switchback_mountain_scramble",
+  "verdict": "MULTI",
+  "reason": "Cooney Lake, the base for the peak, is reached from the Foggy Dew trailhead or from the higher Crater Creek trailhead via the Eagle Lakes side.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Crater Creek and the Eagle Lakes side",
+    "notes": "A higher start at about 4,760 ft and a gentler grade, with a creek ford. From the Crater Creek trailhead follow the Eagle Lakes trail a little over two miles, then the Martin Creek trail to the Cooney Lake trail; parties can also base at Upper Eagle Lake and cross Horsehead Pass. Often used to make a loop with the Foggy Dew side.",
+    "trailhead": {
+     "name": "Crater Creek Trailhead",
+     "lat": 48.2204,
+     "lng": -120.2678,
+     "elevFt": 4760
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Cooney Lake": [
+    "e0",
+    "n0"
+   ],
+   "Upper Eagle Lake and Horsehead Pass": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_tenpeak_mountain_southeast",
+  "verdict": "SINGLE",
+  "reason": "Route descriptions and trip reports use the White River trail and Thunder Basin; the Little Giant Pass and Napeequa side appears only within longer traverses, not as an approach for this climb."
+ },
+ {
+  "id": "wa_thunder_mountain_north_face",
+  "verdict": "MULTI",
+  "reason": "Trap Pass and the Thunder Mountain lakes are reached from either the Surprise Creek trailhead or the Tunnel Creek trailhead via Hope Lake and the PCT.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Surprise Creek past Surprise and Glacier lakes",
+    "notes": "The more popular way in, from a trailhead that is easy to find near Scenic on US 2. Climb the Surprise Creek trail to Surprise Lake, join the Pacific Crest Trail and follow it north to Trap Pass, then take the unofficial path south from the pass to the Thunder Mountain lakes basin under the north face."
+   },
+   {
+    "ref": "n1",
+    "name": "Tunnel Creek, Hope Lake and the PCT",
+    "notes": "From the Tunnel Creek trailhead off US 2, climb about a mile and a half to Hope Lake on the Pacific Crest Trail. Follow the PCT south a couple of miles over meadowy ground and up the switchbacks to Trap Pass, then take the unofficial path south to the Thunder Mountain lakes basin.",
+    "trailhead": {
+     "name": "Tunnel Creek Trailhead (FR-6095 off US-2)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Trap Lake": [
+    "n0",
+    "n1"
+   ],
+   "Thunder Mountain Lakes": [
+    "n0",
+    "n1"
+   ],
+   "Surprise Lake and Glacier Lake": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_whistler_mountain_scramble",
+  "verdict": "MULTI",
+  "reason": "Two separate SR-20 starting points about three miles apart, both described and used: the Rainy Pass PCT lot and an unmarked pullout reaching the true south ridge.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "e1",
+    "trailhead": {
+     "name": "Unmarked SR-20 pullout about 3.1 miles east of Rainy Pass",
+     "elevFt": 5000
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Rainy Pass PCT north trailhead": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_windy_peak_trail",
+  "verdict": "MULTI",
+  "reason": "Trail 342 from Long Swamp is the most common; the Windy Creek trail from the Cathedral Driveway trailhead is the shortest way up.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Windy Creek trail from Cathedral Driveway",
+    "notes": "The shortest way up. From the Cathedral Driveway trailhead, a few miles west of Long Swamp on the same road, climb the Windy Creek trail about five miles to its junction with the Windy Peak trail, then go a short distance more to the summit. Some maps wrongly show the trail starting from the Cathedral Driveway trail about half a mile west of the trailhead.",
+    "trailhead": {
+     "name": "Cathedral Driveway Trailhead"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Two Bear Camp": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_direct_finish",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_accendo_lunae_lib_west_face_var",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": {
+   "name": "Stuart Lake Trailhead (Trail #1599)",
+   "lat": 47.5282,
+   "lng": -120.82036
+  }
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": {
+   "name": "High Bridge (Stehekin Valley Road)",
+   "lat": 48.3807,
+   "lng": -120.8403
+  }
+ },
+ {
+  "id": "wa_big_chiwaukum_west_ridge",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_buckhorn_marmot_pass",
+  "verdict": "SINGLE",
+  "reason": "Route is defined by its Upper Big Quilcene / Marmot Pass approach.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_chimney_rock_west_face",
+  "verdict": "SINGLE",
+  "reason": "East Gully is reached from the Chimney Glacier basin via Pete Lake; the Middle Fork side serves the west face, not this line.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+  "verdict": "SINGLE",
+  "reason": "Route name fixes the approach (Colchuck Lake and Aasgard Pass from Stuart Lake TH).",
+  "fillStored": null
+ },
+ {
+  "id": "wa_east_face_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_guye_peak_r2",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_icy_peak_ruth_icy_traverse",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_iron_cap_mountain_south_route",
+  "verdict": "SINGLE",
+  "reason": "Route is defined by its Chetwoot Lake approach from West Fork Foss; Necklace Valley appears only as a high-route loop, not a separate way to this line.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_liberty_cap_liberty_ridge_finish",
+  "verdict": "MULTI",
+  "reason": "White River via St. Elmo Pass is standard; Carbon River / Ipsut Creek up the Carbon Glacier is the established alternative when the White River road is closed.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Carbon River and the Wonderland Trail to Curtis Ridge",
+    "notes": "The older way in, used mainly early in the season when the White River road is still closed. From the Carbon River entrance, walk or bike the old road to Ipsut Creek, then follow the Wonderland Trail up the Carbon River to the snout of the Carbon Glacier and onto the ice toward Curtis Ridge. It starts lower and is noticeably longer than the White River approach, and the Carbon River crossing on the Wonderland Trail can be a problem.",
+    "trailhead": {
+     "name": "Carbon River Entrance (Carbon River Road)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Thumb Rock": [
+    "e0",
+    "n0"
+   ],
+   "Curtis Ridge / Carbon Glacier access bivy": [
+    "e0",
+    "n0"
+   ],
+   "Glacier Basin camp": [
+    "e0"
+   ],
+   "Glacier Basin": [
+    "e0"
+   ],
+   "Lower Curtis Ridge / Carbon Glacier camp": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mesahchie_peak_2_e_ridge_via_mesahchie_icefall_couloir_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_mount_carrie_se_route",
+  "verdict": "SINGLE",
+  "reason": "Essentially all parties use Sol Duc / High Divide; the row's own text rules out Hurricane Ridge.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_mount_rainier_wilson_headwall",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_new_york_gully",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_north_face_var_right_directisimo",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_nw_face_var_remsberg_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_olympus_summit_block_north_face",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": {
+   "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+   "lat": 47.86028,
+   "lng": -123.93472
+  }
+ },
+ {
+  "id": "wa_olympus_summit_block_west_edge",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_point_success_south_side",
+  "verdict": "MULTI",
+  "reason": "Indian Henry's is reached either from Longmire on the Wonderland Trail or by the shorter, steeper Kautz Creek Trail; both are used for Success Cleaver.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Kautz Creek Trail to Indian Henry's",
+    "notes": "From the Kautz Creek trailhead on the Longmire-Paradise road, follow Kautz Creek about a mile to a log-bridge crossing, then climb steeply through old growth and along the flank of Mount Ararat into the meadows of Indian Henry's Hunting Ground, about 5.75 miles and 3,000 ft. Shorter than the Longmire route but uphill nearly the whole way; from Indian Henry's the climb continues as from Longmire. The Kautz Creek crossing is periodically damaged by debris flows, so ask about its status before you go.",
+    "trailhead": {
+     "name": "Kautz Creek Trailhead"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Point 6631 (base camp north of Pyramid Peak)": [
+    "e0",
+    "n0"
+   ],
+   "Cleaver crest col": [
+    "e0",
+    "n0"
+   ],
+   "Devil's Dream camp": [
+    "e0"
+   ],
+   "Dug platform on the lower-mid cleaver": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_saska_peak_emerald_saska_col",
+  "verdict": "MULTI",
+  "reason": "North Fork Entiat is standard; the Emerald Park trail from Lucerne on Lake Chelan reaches Milham Pass at the head of the same basin.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Lake Chelan: Lucerne and Emerald Park to Milham Pass",
+    "notes": "Take the boat up Lake Chelan to Lucerne, then climb the trail past the Domke Lake junction and up Emerald Park Creek to Emerald Park, about 6.5 miles, and on another two miles to Milham Pass. Drop from the pass into the basin between Emerald and Saska and pick up the south-slopes route there. A long, remote approach that suits parties already on the Lake Chelan side.",
+    "trailhead": {
+     "name": "Lucerne (Lake Chelan boat landing)"
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "The basin between Emerald and Saska, and Milham Pass": [
+    "e0",
+    "n0"
+   ],
+   "Cottonwood Camp and the Entiat River road campgrounds": [
+    "e0"
+   ],
+   "Fox Camp, North Fork Entiat trail": [
+    "e0"
+   ],
+   "Fox Camp (Pyramid Creek Trail junction)": [
+    "e0"
+   ],
+   "Basin between Emerald and Saska": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_scramble",
+  "verdict": "SINGLE",
+  "reason": "South end of the Elbow Lake Trail (Pioneer Camp) is cut off by an FSR 12 washout; the north trailhead on FR-38 is the way in.",
+  "fillStored": {
+   "name": "Elbow Lake Trailhead (Trail #697, FR-38)",
+   "lat": 48.6797,
+   "lng": -121.897
+  }
+ },
+ {
+  "id": "wa_superalpine",
+  "verdict": "SINGLE",
+  "reason": "West-face ice line reached from Bedal Creek; the Sloan Creek pullout serves the Corkscrew side, not this face.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_switchback_mountain_west_ridge",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": {
+   "name": "Crater Creek Trailhead",
+   "lat": 48.2204,
+   "lng": -120.2678
+  }
+ },
+ {
+  "id": "wa_table_mountain_ice_east_face",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_the_l_h_route_free_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_three_queens_middle_peak",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_three_queens_west_peak",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_west_craggy_peak_standard_route",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_windy_peak_windy_creek_trail",
+  "verdict": "SINGLE",
+  "reason": "Route is defined by its Cathedral Driveway / Windy Creek trail approach; other trailheads belong to other routes on the peak.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_alt_right_and_extreme_right_wing_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_bachelor_party",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_bigwig_right_finish",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_blood_orgy",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_blue_ribbon_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_bolt_ladder_2_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_bowling_alley_aka_regular_route",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": {
+   "name": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+   "lat": 46.32448,
+   "lng": -121.92476
+  }
+ },
+ {
+  "id": "wa_breadline_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_bulldozer_jump_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_chitlins_con_carne",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_chubby_fairy_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_city_park_p2",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_cobbles_101",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": {
+   "name": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+   "lat": 46.32448,
+   "lng": -121.92476
+  }
+ },
+ {
+  "id": "wa_compound_w_variation",
+  "verdict": "SINGLE",
+  "reason": "Signal was only a variation/finish name; the row describes one way in and no second trailhead is used.",
+  "fillStored": null
+ },
+ {
+  "id": "wa_dod_s_jam_dastardly_crack_linkup",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_drury_lane_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_enchanting_puller_blind",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_even_steven_bottom_and_toxic_s_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_friction_therapy",
+  "verdict": "SINGLE",
+  "reason": "Single short approach from the Highway 20 pullout near Mazama; flag came from a finish named by another route."
+ },
+ {
+  "id": "wa_fridge_center_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_fridge_left_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_godzilla",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_golden_arch",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_good_girls_like_bad_boys",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_green_drag_on",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_hermes_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_hexxus_project_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_hi_jacking_left_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_japanese_gardens",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_japanese_gardens_to_1st_anchor",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_just_enough",
+  "verdict": "SINGLE",
+  "reason": "Roadside crag reached from Forest Road 64; flag came from a finish named by another route."
+ },
+ {
+  "id": "wa_lavaland_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_lovin_arms",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_medicine_wheel_left_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_mile_high_club",
+  "verdict": "SINGLE",
+  "reason": "Only approach is the Sunrise Mine trail; flag came from a finish named by another route."
+ },
+ {
+  "id": "wa_mourning_star",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_north_ridge",
+  "verdict": "SINGLE",
+  "reason": "Steeple Rock is a short roadside walk from Obstruction Point Road; flagged only because a direct finish variation exists."
+ },
+ {
+  "id": "wa_not_toe_be_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_notta_slab",
+  "verdict": "SINGLE",
+  "reason": "Roadside crag reached from Forest Road 64; flag came from a finish named by another route."
+ },
+ {
+  "id": "wa_peanuts_to_serve_you",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_piton_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_rise_and_fall",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_ross_bongo_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_schisthead_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_schizo_hard_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_sidewinder_4",
+  "verdict": "SINGLE",
+  "reason": "Both options (walk around the east side, or summit and rappel) start from the same NF-77 pullout."
+ },
+ {
+  "id": "wa_sky_fishermen_free_variation_of_grunge_book",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_the_balanced_rock",
+  "verdict": "SINGLE",
+  "reason": "Summit boulder reached only by climbing one of the peak's routes from the one Colchuck Lake approach (Stuart Lake trailhead); no second trailhead."
+ },
+ {
+  "id": "wa_the_big_finish",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_the_tempest",
+  "verdict": "SINGLE",
+  "reason": "Only approach is Stuart Lake trailhead via Colchuck Lake; the single existing card covers it."
+ },
+ {
+  "id": "wa_tommy_s_sandbox",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_town_crier",
+  "verdict": "SINGLE",
+  "reason": "Flag came from a finish shared with a neighbouring route on the same crag; one way in to the wall."
+ },
+ {
+  "id": "wa_traverse",
+  "verdict": "SINGLE",
+  "reason": "Single short approach from the roadside pullout below Osprey Wall."
+ },
+ {
+  "id": "wa_two_tiered_to_finish",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_v2_sit_start_variation",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_variation_face_left",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_variation_face_right",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_variation_high_right",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_variation_low_right",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_variation_to_dihedral",
+  "verdict": "SINGLE",
+  "reason": "Flag came from variation/finish/linkup wording in the route name, which describes the climbing line, not the approach; the crag has one way in."
+ },
+ {
+  "id": "wa_via_appia",
+  "verdict": "SINGLE",
+  "reason": "Bouldering problem; the name signal is not a second approach."
+ },
+ {
+  "id": "wa_wild_child_variation",
+  "verdict": "SINGLE",
+  "reason": "Crag variation; the name signal is not a second approach."
+ },
+ {
+  "id": "wa_woodland_critter_christmas",
+  "verdict": "SINGLE",
+  "reason": "Small crag off the Hannegan road; the FINISH signal is a shared finish, not a second trailhead."
+ },
+ {
+  "id": "wa_x_crack_left_finish",
+  "verdict": "SINGLE",
+  "reason": "Finish variant at one crag; same approach."
+ },
+ {
+  "id": "wa_x_crack_right_finish",
+  "verdict": "SINGLE",
+  "reason": "Finish variant at one crag; same approach."
+ },
+ {
+  "id": "wa_you_moss_be_joking",
+  "verdict": "SINGLE",
+  "reason": "Monte Cristo townsite crag; the Barlow Pass road walk is the only access."
+ },
+ {
+  "id": "wa_argonaut_peak_east_ridge",
+  "verdict": "MULTI",
+  "reason": "Ingalls Creek below Argonaut's south side is reached either over Fourth Creek Pass from Beverly Turnpike or over Longs Pass from Esmeralda; the row's own camp notes describe both.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Esmeralda over Longs Pass into Ingalls Creek",
+    "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway road, take the trail to Longs Pass at about 6,200 ft and drop roughly 1,400 ft to Ingalls Creek. Then follow the Ingalls Creek trail east, downstream, to the camps below Argonaut's south side and climb from there.",
+    "trailhead": {
+     "name": "Esmeralda Basin Trailhead (FR-9737)",
+     "lat": 47.43656,
+     "lng": -120.93697
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides": [
+    "e0",
+    "n0"
+   ],
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_argonaut_peak_northeast_couloir",
+  "verdict": "SINGLE",
+  "reason": "North-side route; only Mountaineer Creek from Stuart Lake TH is used. Beverly Turnpike serves the south side."
+ },
+ {
+  "id": "wa_northwest_arete",
+  "verdict": "SINGLE",
+  "reason": "North-side route; only Mountaineer Creek from Stuart Lake TH is used."
+ },
+ {
+  "id": "wa_bonanza_peak_northeast_buttress",
+  "verdict": "SINGLE",
+  "reason": "Holden Village / Holden Pass is the only practical approach to this side."
+ },
+ {
+  "id": "wa_needle_peak_north_ridge",
+  "verdict": "SINGLE",
+  "reason": "Agnes Creek from High Bridge is the approach; Holden serves Bonanza, not Needle Peak's north side."
+ },
+ {
+  "id": "wa_borrowed_time",
+  "verdict": "SINGLE",
+  "reason": "West-face ice line reached from Bedal Creek; the FR-49 pullout serves the Corkscrew on the other side."
+ },
+ {
+  "id": "wa_diamond_in_the_rough",
+  "verdict": "SINGLE",
+  "reason": "Recorded approach (incl. first ascent) is Bedal Creek over the notch to the southwest face; no second trailhead is actually described."
+ },
+ {
+  "id": "wa_boston_peak_west_face",
+  "verdict": "SINGLE",
+  "reason": "Winter ice line reached via the Cascade Pass trail from the road gate; the summer Boston Basin line is hypothetical, not a used way in."
+ },
+ {
+  "id": "wa_northwest_ridge_2",
+  "verdict": "SINGLE",
+  "reason": "Only ascent was by traverse; Boston Basin is the one logical approach."
+ },
+ {
+  "id": "wa_gunrunner",
+  "verdict": "MULTI",
+  "reason": "Gunsight is reached from Downey Creek over Itswoot Ridge, and the first-ascent party of this traverse came in from Stehekin up Agnes Creek to the Blue Glacier.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Downey Creek, Bachelor Creek and Itswoot Ridge",
+    "notes": "From the Downey Creek trailhead follow the trail to the Bachelor Creek crossing, then the climbers' path to Cub Lake and Itswoot Ridge. Rope up for the Dome Glacier to the high bivouacs that put the Gunsight peaks within reach."
+   },
+   {
+    "ref": "n1",
+    "name": "Stehekin, Agnes Creek and the Blue Glacier",
+    "notes": "Boat to Stehekin and the shuttle to High Bridge, then about ten miles south on the Agnes Creek trail. Cross Agnes Creek on a log and bushwhack roughly 5,000 ft up into the Blue Glacier basin on the east side of the peaks. It is a two-day approach.",
+    "trailhead": {
+     "name": "High Bridge (Stehekin Valley Road)",
+     "lat": 48.3807,
+     "lng": -120.8403
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Dome Glacier and Dome-Chickamin col high bivouacs": [
+    "n0"
+   ],
+   "Bachelor Creek forest and meadow camps": [
+    "n0"
+   ],
+   "Cub Lake": [
+    "n0"
+   ],
+   "Itswoot Ridge": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "verdict": "MULTI",
+  "reason": "Downey Creek over Itswoot Ridge to the Chickamin Glacier is common, and parties also come in from Stehekin up Agnes Creek and reach the Chickamin Glacier from the east.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Stehekin, Agnes Creek and Spruce Creek",
+    "notes": "Take the boat to Stehekin and the shuttle to High Bridge, then hike south on the Pacific Crest Trail up Agnes Creek about ten miles to the Spruce Creek confluence. Cross Agnes Creek and Spruce Creek on logs and scramble northwest to a high camp near Icy-Spruce Creek pass, then cross onto the Chickamin Glacier for the standard line. Expect a long off-trail day with real bushwhacking.",
+    "trailhead": {
+     "name": "High Bridge (Stehekin Valley Road)",
+     "lat": 48.3807,
+     "lng": -120.8403
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Chikamin-Dome col": [
+    "e0"
+   ],
+   "Itswoot Ridge camp": [
+    "e0"
+   ],
+   "Bachelor Flats / Bachelor Meadows": [
+    "e0"
+   ],
+   "Cub Lake meadows": [
+    "e0"
+   ],
+   "Chikamin Glacier bench below the west face": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_sw_ridge",
+  "verdict": "UNSURE",
+  "reason": "Recorded approach is Agnes Creek to the Blue Glacier; whether parties also reach this ridge from Downey Creek via the Chickamin Glacier was not established."
+ },
+ {
+  "id": "wa_mount_stuart_girth_pillar",
+  "verdict": "SINGLE",
+  "reason": "Ice Cliff Glacier approach from Stuart Lake TH only."
+ },
+ {
+  "id": "wa_mount_stuart_stuart_glacier_couloir",
+  "verdict": "MULTI",
+  "reason": "Standard north-side approach up Mountaineer Creek, or from Esmeralda via Ingalls Lake, Stuart Pass and Goat Pass onto the Stuart Glacier (the row's Goat Pass camp is that way in).",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Esmeralda, Ingalls Lake and Stuart Pass to Goat Pass",
+    "notes": "From the Esmeralda Basin trailhead, hike over Ingalls Pass to Ingalls Lake, then traverse toward Stuart Pass. Near 7,000 ft cross the scree gully north to Goat Pass at about 7,600 ft, where there is plenty of bivy ground. From the pass descend a short way onto the Stuart Glacier and traverse under the North Ridge to the couloir; the glacier passes above some large crevasses.",
+    "trailhead": {
+     "name": "Esmeralda Basin Trailhead (FR-9737)",
+     "lat": 47.43656,
+     "lng": -120.93697
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Basin below Sherpa Glacier": [
+    "e0"
+   ],
+   "Goat Pass bivies": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_inspiration_traverse",
+  "verdict": "SINGLE",
+  "reason": "Traverse starts from Eldorado Creek; the other trailheads belong to other traverses in the container area."
+ },
+ {
+  "id": "wa_ragged_ridge",
+  "verdict": "SINGLE",
+  "reason": "Traverse starts from Easy Pass; other trailheads belong to other traverses."
+ },
+ {
+  "id": "wa_luna_glacier",
+  "verdict": "SINGLE",
+  "reason": "Entered by the Big Beaver Trail from Ross Lake (Luna Creek or Access Creek share that trailhead); Hannegan is used for Phantom's west side, not Luna Cirque."
+ },
+ {
+  "id": "wa_phantom_peak_west_ridge",
+  "verdict": "SINGLE",
+  "reason": "West ridge reached from Hannegan Pass via Easy Ridge and Perfect Pass; the Ross Lake approach serves the Luna Cirque side."
+ },
+ {
+  "id": "wa_mount_adams_lava_glacier_headwall",
+  "verdict": "SINGLE",
+  "reason": "North-side route from Killen Creek only."
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "verdict": "MULTI",
+  "reason": "Bird Creek Meadows is the direct start, but the Mazama Glacier is also commonly reached from Cold Springs by the Round the Mountain trail east to Bird Creek Meadows.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Cold Springs and the Round the Mountain trail",
+    "notes": "From the Cold Springs trailhead, climb the South Climb trail to the Round the Mountain trail and follow it east across the lava flows to the reservation boundary and the edge of Bird Creek Meadows, then turn uphill onto the moraine toward the Mazama Glacier and Sunrise Camp. The turnoff is farther along the Round the Mountain trail than many descriptions suggest. A Recreation Pass is needed at Cold Springs.",
+    "trailhead": {
+     "name": "Cold Springs Camp (Forest Road 8040)",
+     "lat": 46.1359,
+     "lng": -121.4977
+    }
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "Sunrise Camp": [
+    "e0",
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "verdict": "SINGLE",
+  "reason": "Boulder Ridge trail only."
+ },
+ {
+  "id": "wa_mount_baker_cockscomb_ridge",
+  "verdict": "MULTI",
+  "reason": "Cockscomb is reached either from Heliotrope Ridge across the Coleman and Roosevelt glaciers, or from Artist Point out Ptarmigan Ridge to the Park Glacier; the row's camps include both.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Artist Point and Ptarmigan Ridge to the Park Glacier",
+    "notes": "From Artist Point at the end of the Mount Baker Highway, take the Chain Lakes trail to the Ptarmigan Ridge junction and follow Ptarmigan Ridge west to Camp Kiser where the trail ends. Cross the Rainbow Glacier onto the Park Glacier and camp near the Portals, the usual base for the Cockscomb from this side. It is a much longer approach than Heliotrope Ridge.",
+    "trailhead": {
+     "name": "Artist Point Trailhead",
+     "lat": 48.8465,
+     "lng": -121.6928
+    }
+   }
+  ],
+  "fillStored": {
+   "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+   "lat": 48.80218056,
+   "lng": -121.894725,
+   "replace": true
+  },
+  "camps": {
+   "Park Glacier camp near the Portals": [
+    "n0"
+   ],
+   "Camp Kiser, Ptarmigan Ridge": [
+    "n0"
+   ],
+   "Heliotrope Ridge Camp": [
+    "e0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_baker_coleman_deming",
+  "verdict": "SINGLE",
+  "reason": "Heliotrope Ridge only."
+ },
+ {
+  "id": "wa_mount_baker_coleman_headwall",
+  "verdict": "SINGLE",
+  "reason": "Heliotrope Ridge only."
+ },
+ {
+  "id": "wa_mount_baker_north_ridge",
+  "verdict": "SINGLE",
+  "reason": "Heliotrope Ridge only."
+ },
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "verdict": "SINGLE",
+  "reason": "Ptarmigan Ridge from Artist Point is the used approach."
+ },
+ {
+  "id": "wa_mount_baker_squak_glacier",
+  "verdict": "SINGLE",
+  "reason": "Schriebers Meadow / Scott Paul Trail only."
+ },
+ {
+  "id": "wa_mount_logan_r2",
+  "verdict": "SINGLE",
+  "reason": "Easy Pass and Fisher Creek is the standard approach to the Douglas Glacier."
+ },
+ {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "verdict": "SINGLE",
+  "reason": "Mowich Lake only."
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "verdict": "SINGLE",
+  "reason": "Paradise only."
+ },
+ {
+  "id": "wa_mount_rainier_gibraltar_ledges",
+  "verdict": "SINGLE",
+  "reason": "Paradise to Camp Muir only."
+ },
+ {
+  "id": "wa_mount_sefrit_bloody_head_couloir",
+  "verdict": "SINGLE",
+  "reason": "Ruth Creek from the Hannegan road end; Nooksack Cirque serves Sefrit's other side."
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "verdict": "UNSURE",
+  "reason": "Described only as reached after the North Face or Hanging Glacier routes; could not establish whether a Nooksack Cirque or Sulphide approach is actually used."
+ },
+ {
+  "id": "wa_sw_couloir_and_face",
+  "verdict": "SINGLE",
+  "reason": "Lake Ann and the Lower Curtis Glacier only."
+ },
+ {
+  "id": "wa_mount_steel_first_divide",
+  "verdict": "SINGLE",
+  "reason": "The route is defined by the Staircase approach; the Duckabush approach is a separate catalog route."
+ },
+ {
+  "id": "wa_north_gardner_mountain_nw_couloir",
+  "verdict": "SINGLE",
+  "reason": "Route is defined by the Cedar Creek approach; Wolf Creek serves the south side."
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "verdict": "SINGLE",
+  "reason": "Wolf Creek is the approach for the south side; Cedar Creek serves the NW couloir."
+ },
+ {
+  "id": "wa_sherpa_peak_north_ridge",
+  "verdict": "SINGLE",
+  "reason": "North Ridge reached from Mountaineer Creek; Esmeralda serves Sherpa's south side."
+ },
+ {
+  "id": "wa_summit_chief_mountain_north_face",
+  "verdict": "SINGLE",
+  "reason": "North face reached from the Middle Fork Snoqualmie; Pete Lake serves the other side."
+ }
+]

@@ -1,0 +1,117 @@
+{
+ "id": "wa_mount_howard_south_slope",
+ "name": "South Slope",
+ "waypoints": [
+  {
+   "lat": 47.775226,
+   "lng": -120.957757,
+   "elev": 2650,
+   "name": "Rock Mountain Trailhead (US-2, milepost 73)",
+   "type": "Trailhead",
+   "distMi": null,
+   "elevFt": 2650,
+   "directions": "From Stevens Pass, drive east on US-2 about 8.5 miles; from Leavenworth, drive about 26 miles west. Just past milepost 73, about 0.4 mile beyond the highway department buildings, turn north onto an inconspicuous, rutted dirt road to the Rock Mountain Trailhead. Parking is limited to a few cars, and there is no restroom. No pass or permit is required."
+  },
+  {
+   "lat": 47.8144,
+   "lng": -120.9547,
+   "elev": 7063,
+   "name": "Mount Howard Summit",
+   "type": "Summit",
+   "elevFt": 7063,
+   "directions": "Climb the Rock Mountain Trail to the Nason Ridge Trail junction at about 3.2 miles and turn right toward Rock Lake. Continue past the lake and over the col, losing height to Crescent Lake, the last water. From its northeast side, go up the talus below the cliff band and through brush to an upper talus field. Drift right around the cliff, climb a loose Class 3 gully, then follow talus and paths to the summit."
+  }
+ ],
+ "approach": "Two common trailheads on US-2 in Chelan County give access. Merritt Lake Trailhead (3,000 ft, high-clearance/AWD recommended on the access road): from Leavenworth take US-2 west about 24 miles (or from Stevens Pass, east about 11.5 miles) to milepost 76, turn onto Forest Road 657, and continue 1.5 miles to the trailhead; hike the Merritt Lake Trail (2,000 ft gain in 2.5 miles) then join the Nason Ridge Trail east to Crescent Lake. Rock Mountain Trailhead (2,650-2,675 ft, no fee): on US-2 near milepost 73, about 27 miles west of Leavenworth / 8.5 miles east of Stevens Pass; follow the Rock Mountain Trail up to Rock Lake (snow persists above ~5,000 ft into late spring), then over the Rock-Crescent col (~6,500 ft) and down about 900 ft to Crescent Lake. From either approach, water is available at Crescent Lake but is unreliable higher on the mountain.",
+ "approach_variants": [
+  {
+   "name": "Merritt Lake Trailhead and Nason Ridge Trail to Crescent Lake",
+   "camps": [
+    "Crescent Lake",
+    "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+    "Merritt Lake",
+    "Mount Howard summit-area bivouac"
+   ],
+   "notes": "The shorter and more direct way in. From the highway turn onto the rough forest road — high clearance is worth having — and drive to the Merritt Lake Trailhead. Climb the Merritt Lake trail to the lake, then join the Nason Ridge Trail and follow it east to Crescent Lake, which sits below the peak's south side. Water is available at Crescent Lake but is unreliable higher on the mountain, so fill there. The trail is well defined the whole way to the lake, and everything above it is your own route-finding.",
+   "season": "July into October once the ridge clears; snow persists above about 5,000 ft into late spring.",
+   "hazards": [
+    "Several little bowls look like the peak's south face and one of them is the wrong drainage entirely",
+    "A well-worn boot path leaves the ridge trail heading north — that is the climbers' route to the neighbouring summit, not this one",
+    "No established route above Crescent Lake, and the descent is the crux of the day",
+    "Loose, dirty Class 3 in whichever gully you pick through the cliff band",
+    "Slippery grass and dense alder low on the face when descending",
+    "Water unreliable above Crescent Lake"
+   ],
+   "primary": true,
+   "baseFinding": "Make sure you are in the right drainage before you climb — several little bowls look like this face, and the one to your east is Royal Creek. That is the single mistake worth guarding against here, and it is made before you gain any height. From the northeast side of Crescent Lake, take the talus field at the head of the lake, directly below the obvious cliff band; a short thrash through woody brush leads to an upper talus field, and from there drift right to get around the cliff. Several gullies break the band and there is no single correct one — parties pick the easiest-looking line and find it loose, dirty Class 3 for about a hundred feet. That crux band is the confirmation you are on the face, not a sign to retreat, but it is unpleasant to reverse, so note your line. Above it the ground eases onto talus and dirt climbers' paths to the top. Note also that a well-worn boot path leaves the ridge trail heading north on the way in: that is the climbers' route to the neighbouring peak and not the way to this one."
+  },
+  {
+   "name": "Rock Mountain Trailhead via Rock Lake and the Rock–Crescent col",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 5400,
+      "name": "Crescent Lake",
+      "role": "main",
+      "type": "camp",
+      "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slope around the intervening ridge and dropping about three hundred feet, or from the other direction three and a half miles west of Merritt Lake. From the lake the south slope route on Howard goes around the northeast side and straight up, skirting trees and slide alder to a rock band that is passed by any of several easy scrambling gullies onto a large bench; from the bench you can go directly up the south flank to Howard's summit or traverse east onto the southeast ridge. Mastiff stands a mile east of Howard along the crest and almost everyone who camps here takes both in one day. This is a genuine overnight destination rather than pure contingency — the two summits together are a long push from any trailhead in a day, and sleeping at the lake turns a grim outing into a good one. Bugs are heavy through June and early July, and the approach from either end holds snow on the north-facing traverses well into summer.",
+      "water": "The lake plus several small running streams in the immediate surroundings, which is unusually generous for this ridge and is exactly why parties fill their bottles here before going up. It is dependable through the season. Everything above the lake is dry, so the four quarts you want for a summit camp or a long crest day come from here.",
+      "permit": "None — no wilderness, no permit, no quota. No pass is required at the Rock Mountain or Merritt Lake trailheads; Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year. No campfires above 5,000 feet, which includes this lake, and expect a total burn ban most of the summer.",
+      "capacity": "Lakeside sites for a handful of tents, quieter than Merritt because it takes real effort to reach from either direction; use the existing spots rather than clearing new ground on the vegetation"
+     },
+     {
+      "name": "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+      "role": "main",
+      "type": "camp",
+      "notes": "The drive-in base for the whole ridge, and the honest recommendation for most parties climbing these peaks: all four summits are day objectives from the highway trailheads, and sleeping at a developed campground with water and driving fifteen or twenty minutes to a trailhead beats carrying an overnight load up two thousand feet of dry switchbacks. The season runs roughly May through mid-October. From here the Merritt Lake and Round Mountain trailheads are a short drive west and north along the highway and its spurs, with Rock Mountain and Snowy Creek further west toward the pass. It is also the sensible place to reorganise mid-trip: a party that has come off the crest at one end and needs to reposition to the other has this corridor to do it in. Note that the trailheads themselves have very limited parking — Rock Mountain and Snowy Creek in particular hold only a few cars — so an early start from a nearby campground is worth more here than the extra sleep of staying further out.",
+      "water": "Piped potable water at the developed campgrounds through the operating season, and Nason Creek itself alongside. This is the one place where water is a non-issue, which is why every party working this ridge should fill everything here before driving up to a trailhead rather than counting on anything above.",
+      "permit": "A per-night fee, currently around the high twenties at the forest campground, with advance reservations opening well ahead and closing a few days before arrival. The state park campgrounds have their own reservation system and their own fee. No wilderness permit is involved anywhere in this zone. Fire restrictions apply in the campgrounds through the summer and are commonly total bans in late season.",
+      "capacity": "Nason Creek is the closest and largest, laid out over four loops on both sides of the highway near the southeastern end of Lake Wenatchee, taking vehicles up to about thirty-five feet. Roughly sixty percent of sites are reservable in advance and the remainder are first come, first served. The state park campgrounds around the lake add substantially more capacity, and there are further national forest campgrounds spread along the highway corridor."
+     },
+     {
+      "name": "Mount Howard summit-area bivouac",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the crest at sunset and dawn, or to be positioned for a full ridge traverse taking in Mastiff to the east and Rock Mountain to the west in one push. It has been done and it works, but it commits you: there is no water, no shelter, no escape from wind, and the descent to the nearest water is a real drop. The route up from Crescent Lake goes around the lake's northeast side and directly up the slope, threading trees and slide alder to a rock band that is turned by easy scrambling gullies onto a broad bench, and the summit is straight up the south flank from there. In spring the upper slopes hold soft snow over a firm base and are booted rather than climbed, with crampons useful on the way down; that is the season a summit camp is most often chosen, and it is also when the exposure up here bites hardest.",
+      "water": "None, and no prospect of any. Every drop comes up from Crescent Lake, roughly two thousand feet below, and a party planning to cook and sleep here has historically carried something like four quarts each. Late-lying snow patches on the north side can be melted in early season and are gone by midsummer.",
+      "permit": "None — non-wilderness, no permit and no quota. No pass is required at the Rock Mountain or Merritt Lake trailheads; Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year. No campfires, and there is nothing up here to burn. Leave no constructed platform behind; the crest vegetation and thin soil do not recover.",
+      "capacity": "One or two people on scraped benches just below the summit. There is no flat ground for a tent, no shelter of any kind, and nothing you would call a site — this is bare ridge crest and you are making a ledge, not finding one."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Rock Mountain Trailhead (US-2 near milepost 73)",
+     "trailheadLat": 47.7757,
+     "trailheadLng": -120.9581,
+     "trailheadElevFt": 2675
+    }
+   },
+   "notes": "The longer and more scenic way in, and the one commonly used by parties who want the neighbouring summit in the same outing. From the highway near the milepost, climb the Rock Mountain trail to Rock Lake — snow persists above about 5,000 ft into late spring on this side — then cross the col between the two peaks near 6,500 ft and descend roughly nine hundred feet on the far side to Crescent Lake. From there the climb is the same as from the other trailhead. It costs a substantial descent that has to be regained on the return, which is the price of the extra ground it covers.",
+   "season": "July into October. Snow lingers above about 5,000 ft into late spring and the col holds it longest.",
+   "hazards": [
+    "A substantial descent to Crescent Lake that must be reclimbed on the way out",
+    "Snow persisting on the col into late spring",
+    "Several little bowls look like the peak's south face — confirm the drainage before climbing",
+    "The same cliff band and loose, dirty Class 3 gullies above the lake",
+    "A long day made longer by the added distance and the col crossing"
+   ],
+   "baseFinding": "Crescent Lake is the common starting point, and on this side you arrive at it from above. Cross the col between the two peaks and descend several hundred feet on the far side to the lake; the tell that you are on this variant rather than the direct one is that you reach the water losing height rather than gaining it. From the lake the climb is identical, and so is the mistake to guard against: several little bowls in this basin look like the peak's south face, and being sure of the drainage before you start upward matters more than anything higher on the route. Take the talus field at the head of the lake directly below the obvious cliff band, push through the woody brush to an upper talus field, then drift right to get round the cliff. Several gullies break the band, none of them the single correct one; expect about a hundred feet of loose, dirty Class 3 in whichever you choose. Above it, talus and dirt climbers' paths lead to the summit."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Trail, Class 1-2",
+   "notes": "Nason Ridge Trail via Merritt Lake TH (direct) or via Rock Lake and the Rock-Crescent col from Rock Mountain TH (longer, with ~900 ft loss into the Crescent Lake basin)",
+   "pitch": "Trailhead to Crescent Lake"
+  },
+  {
+   "grade": "Class 2",
+   "notes": "Open talus and meadow slopes on Howard's south side; ~1,400 ft of gain",
+   "pitch": "Crescent Lake to base of south slope"
+  },
+  {
+   "grade": "Class 2-3",
+   "notes": "Loose, dirty gully section is the crux, easing to talus and a climbers' trail to the summit ridge/high point",
+   "pitch": "South slope to summit"
+  }
+ ]
+}

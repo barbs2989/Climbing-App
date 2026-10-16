@@ -1,0 +1,1502 @@
+[
+ {
+  "id": "wa_whistler_mountain_scramble",
+  "name": "Southeast Slopes / Standard Scramble",
+  "area_id": "wa_whistler_mountain_okanogan",
+  "findings": [
+   "Trailhead pin is the Rainy Pass PCT lot; the itinerary now starts at the SR-20 turnout 3.1 mi east."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_whistler_mountain_scramble",
+   "area_id": "wa_whistler_mountain_okanogan",
+   "name": "Southeast Slopes / Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jul-Oct",
+   "description": null,
+   "gear": [
+    "ice axe (early season)",
+    "helmet",
+    "sturdy boots"
+   ],
+   "hazards": [
+    "Wet-slab and cornice avalanche danger in the gullies during spring snow season",
+    "Loose talus, scree, and some loose rock in the summit gullies",
+    "Seasonal waterfall/creek crossing at the base of the west gully descent line",
+    "Afternoon thunderstorms common on the exposed ridge in summer",
+    "No reliable cell coverage in the Rainy Pass/Washington Pass corridor"
+   ],
+   "verif": null,
+   "overview": "A non-technical summit on the Okanogan Range crest between Rainy Pass and Washington Pass, in Chelan County within the Okanogan-Wenatchee National Forest. Whistler is linked by a high ridge to Cutthroat Peak (8,050 ft), 0.8 mile north-northeast, and offers a broad, mostly-talus scramble popular as an early-season warm-up or a corn-snow ski descent in late spring. The standard route climbs the mountain's south ridge and southwest slope; a steeper alternative ascends a broad gully system visible from Rainy Pass.",
+   "beta": "From a roadside turnout on SR-20 (or alternatively the Rainy Pass PCT trailhead), a boot path climbs through open forest and a meadow basin, then rises on a traversing line to intersect the level part of Whistler's south ridge at about 6,180 ft. From there the route follows the ridge and adjoining gullies — staying north of a loose gully band and using a visible ramp near the headwall — to the 7,790 ft summit; an alternative continues the ridge to about 6,800 ft before cutting left across gullies onto gentler terrain on the southwest slope for the final push. It is class 3 scrambling throughout, with class 4 moves possible depending on line choice.",
+   "turnaround": "In spring/early summer when the gullies still hold snow, turn around by late morning to avoid wet-slab avalanche release as the sun softens the snowpack; on the dry-season south-ridge route, the main time pressure is afternoon thunderstorm buildup over the crest.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 3 (Class 3–4 on some lines)",
+   "ice_grade": null,
+   "gain_ft": 3000,
+   "loss_ft": 3000,
+   "dist_km": 3.2,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "South Ridge / Southwest Slope",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": null,
+   "descent": "Reverse the ascent route down the south ridge / southwest slope.",
+   "obj_haz": [
+    "Cornices along the upper ridge and gully rims in winter/spring",
+    "Wet, heavy maritime snow prone to wet-slab avalanches",
+    "Rockfall/loose rock in gully terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.517663,
+     "lng": -120.691157,
+     "elev": 5600,
+     "name": "Meadow rising traverse",
+     "note": "Boot path climbs through an open meadow then angles into a rising traverse aiming for the crest of Whistler's south ridge; faint tread, easy to lose in fog.",
+     "type": "Junction",
+     "distMi": 0.5
+    },
+    {
+     "lat": 48.517073,
+     "lng": -120.695613,
+     "elev": 6180,
+     "name": "South ridge gain point",
+     "note": "Boot path tops out on the level section of Whistler's south ridge here; from this point the route follows the ridge and connecting gullies toward the summit.",
+     "type": "Junction",
+     "distMi": 0.9
+    },
+    {
+     "lat": 48.516483,
+     "lng": -120.70007,
+     "elev": 6800,
+     "name": "6,800 ft ridge/gully split",
+     "note": "Ridge steepens; here parties can cut left across gullies onto the gentler southwest slope as an easier alternative to staying directly on the ridge crest.",
+     "type": "Junction",
+     "distMi": 1.3
+    },
+    {
+     "lat": 48.515893,
+     "lng": -120.704526,
+     "elev": 7400,
+     "name": "Summit ridge scramble band",
+     "note": "Class 2-3 terrain mixes downsloping slabs and loose gravel on ledges just below the summit ridge; a helmet is worth carrying for rockfall and slip potential here.",
+     "type": "Hazard",
+     "distMi": 1.7
+    },
+    {
+     "lat": 48.5181,
+     "lng": -120.7331,
+     "elev": 4855,
+     "name": "Rainy Pass Trailhead (PCT North parking lot, SR-20)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 4855
+    },
+    {
+     "lat": 48.5154506,
+     "lng": -120.7078688,
+     "elev": 7790,
+     "name": "Whistler Mountain summit",
+     "type": "Summit",
+     "elevFt": 7790
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 7,
+    "summitTimeHrs": 7,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "A single-day round trip from the SR-20 turnout east of Rainy Pass (about 5,000 ft): climb through a meadow to gain the south ridge around 6,180 ft, then follow rock and gully terra…",
+      "fromTo": "Car-to-car scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No roped protection is used on the standard scramble route; parties typically carry trekking poles for the meadow/traverse sections, a helmet for the loose ridge and gully terrain, and an ice axe (with willingness to turn back if conditions warrant crampons) when snow lingers in the gullies in early season.",
+   "what_to_bring": [
+    "Sturdy boots",
+    "Helmet (loose rock in gullies)",
+    "Ice axe and traction (crampons/microspikes) for snow-covered gullies in spring/early summer",
+    "Layers for an exposed, wind-prone ridge"
+   ],
+   "pro_tips": [
+    "The Rainy Pass PCT-lot gully approach doubles as a well-regarded spring corn-snow ski descent — go early enough to catch the snow softening but before it turns to mush",
+    "On the south-ridge route, cutting left across gullies at ~6,800 ft onto the southwest slope avoids the harder gully scrambling higher on the ridge crest"
+   ],
+   "watch_out": [
+    "Trailhead access disappears entirely once SR 20's winter gates close (roughly late Nov–late Apr/mid-May) — check WSDOT pass status first",
+    "The unmarked highway pullout for the south-ridge route is easy to miss; it's 3.1 miles east of Rainy Pass and 0.7 mile before the Blue Lake trailhead",
+    "Early-season (May-June) ascents will find the gullies holding consolidated snow — carry an ice axe and know how to self-arrest",
+    "The west-gully descent funnels toward a seasonal waterfall — exit right into the glades to avoid it"
+   ],
+   "pro_needs": "None — this is an unroped Class 3 scramble with no fixed protection or technical rack; a rope and basic protection could be carried by conservative parties for the class 4 variations, but are not standard.",
+   "best_season": "Mid-July through early October",
+   "high_point_ft": 7790,
+   "aid_grade": null,
+   "approach": "Two trailheads serve the Southeast Slopes / South Ridge scramble, both off SR-20 between Rainy Pass and Washington Pass. Option A (PCT approach, most commonly used): park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass (~4,850 ft, next to the Road 600 turnoff). From the lot, leave the PCT almost immediately and strike out cross-country/climber's-path east into open forest, gaining steeply through timber and over downed logs — there is no maintained tread once you leave the PCT. Continue up through the trees (expect lingering snow patches into early summer) to about 6,100 ft, where the forest opens into a meadow basin below the west ridge/gully complex. From the basin, trend south/southeast on a rising traverse to gain the col/basin between Whistler and the southwest peak of Cutthroat, then work up the broad west ridge or the shallow gully just north of it to the summit shoulder; the final short section involves a rock gully with a visible ramp along the headwall over downsloping slabs and loose gravel — a helmet is recommended here for rockfall from parties above. Round trip via this line runs roughly 3.7 miles with about 3,000 ft of gain (trailhead 4,850 ft to summit 7,790 ft). Option B (highway turnout approach, reaches the true south ridge): from the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass (0.7 mile before the Blue Lake trailhead, ~5,000 ft), walk back down/along the road shoulder to a boot path that starts at the west edge of a stand of trees. Follow the boot path up through a meadow, then rising-traverse to intersect the level portion of Whistler's south ridge at about 6,180 ft. From there, scramble up the ridge and connecting gullies to the summit; alternatively leave the ridge around 6,800 ft, cross a couple of gullies left (west) onto gentler southwest-facing slopes, and finish to the summit that way. This line is also about 4 miles round trip with ~3,000 ft gain. Both approaches are trail-less above the first stretch of forest — expect route-finding, loose talus/scree in the gullies, and class 2-3 terrain with occasional class 3-4 moves and real exposure near the ridge crest and summit gully; no reliable water source above the lower forest, so carry what you need from the car. No creek fords or avalanche paths of note on the standard summer line, but early-season snow lingers in the forest and basin and can make the gully sections firm or icy.",
+   "descent_text": "There is no rappelling on the standard Southeast Slopes/South Ridge route — it's a walk-off/downclimb, reversing whichever line was used on the way up. From the summit, downclimb the summit gully (loose gravel and downsloping slabs — take care with rockfall for anyone below) back to the shoulder, then descend either the west ridge/gully back into the meadow basin and forest (Option A) or drop onto the south ridge and retrace the rising traverse back to the meadow and boot path to the highway turnout (Option B). Loose rock and talus in the gullies is the main descent hazard — down-climb facing in on the steeper class 3 sections and stay alert for parties below. Some ski mountaineers descend a separate snow-filled west gully (~35°, over 1,000 ft of sustained fall-line terrain funneling to a waterfall lower down, requiring an exit right into the glades to avoid the falls) as a spring ski descent, but that is a snow-season variant, not part of the standard summer scramble descent, and should not be used as a hiking descent once snow is out. rappels: 0.",
+   "bail": "Retreat is straightforward by reversing the scramble at any point; no committing technical sections.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2",
+     "notes": "Boot path from the SR-20 turnout, leaving from the west edge of a stand of trees and climbing up through a meadow.",
+     "pitch": "1 (Trailhead to meadow basin)"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Rising traverse across the meadow/talus to intersect the level part of the south ridge at 6,180 ft.",
+     "pitch": "2 (Meadow to south ridge)"
+    },
+    {
+     "grade": "Class 3 (Class 4 variations)",
+     "notes": "Follow the ridge and adjoining gullies to the 7,790 ft summit, staying north of the loosest gully band and using a visible ramp to bypass rock near the headwall; an alternative cuts left at ~6,800 ft onto gentler southwest-slope terrain.",
+     "pitch": "3 (South ridge/gullies to summit)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Snow often lingers in the summit gullies into early-mid summer; best conditions are typically July-September once SR-20 (Rainy Pass) has been open a while and gullies have melted out.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A single-day round trip from the SR-20 turnout east of Rainy Pass (about 5,000 ft): climb through a meadow to gain the south ridge around 6,180 ft, then follow rock and gully terrain (class 3-4) to the 7,790 ft summit before reversing the same line back to the car. No camping is involved — this is done entirely car-to-car.",
+      "hours": 7,
+      "miles": 4,
+      "title": "Car-to-car scramble",
+      "gainFt": 3000,
+      "lossFt": 3000,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave the SR-20 turnout",
+        "detail": "Park at the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass (~5,000 ft), walk back along the shoulder and pick up the boot path at the west edge of a stand of trees."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Gain the south ridge / meadow bench",
+        "detail": "Rising traverse through meadow to intersect the level part of the south ridge near 6,180 ft."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Class 3-4 gully/ridge scrambling begins",
+        "detail": "Follow the ridge and connecting gullies, staying on rock where possible; snow may linger in gullies into early summer."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit (7,790 ft)",
+        "detail": "Views of Cutthroat Peak, Liberty Bell, and the Washington Pass area; typical lunch/break stop."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the ascent line down the south ridge."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Total car-to-car time roughly 6-8 hours depending on snow conditions and pace."
+       }
+      ],
+      "objective": "Summit Whistler Mountain via the South Ridge and return to the highway turnout"
+     }
+    ],
+    "totalNote": "A moderate single-day scramble: about 4 miles round trip with 3,000 ft of gain, typically 6-8 hours car-to-car from the highway turnout; no overnight component."
+   },
+   "access": {
+    "fees": "$5/vehicle/day at the Rainy Pass trailhead (cash/check or digital day pass); Northwest Forest Pass and Interagency (America the Beautiful) passes also honored.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No permit required for day scrambling.",
+    "closures": "Entire approach is inaccessible whenever SR 20 is under its winter closure (roughly late Nov through late Apr/mid-May); confirm current road status with WSDOT before driving in.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Winthrop, WA)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass or $5 day-use fee at Rainy Pass trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "No wilderness camping permit required",
+     "where": "A Northwest Forest Pass, an America the Beautiful pass, or a Recreation.gov day pass covers parking at the Rainy Pass PCT North trailhead; no permit paperwork is needed to camp anywhere along this stretch of the Pacific Crest Trail."
+    }
+   },
+   "road": {
+    "name": "North Cascades Highway (SR 20)",
+    "status": "Paved highway, open only when seasonal snow gates are up",
+    "driveNote": "Drive SR 20 over Rainy Pass; the two trailhead options (Rainy Pass PCT lot, or the unmarked pullout 3.1 mi east of the pass) are both directly off the highway with no additional dirt-road driving.",
+    "seasonalGate": "Gated closed for winter — gates at Diablo (west) and Early Winters near Mazama (east). Typically closes late November and reopens late April to mid-May depending on snowpack; check WSDOT's pass report before planning a trip."
+   },
+   "climate": {
+    "fall": "Cools quickly with possible early-season snow at elevation; SR-20 access can end abruptly with the season's first significant highway closure.",
+    "spring": "Snowpack still substantial into May/June on north- and gully-facing terrain; the west-facing gully is a documented corn-snow ski descent in late May.",
+    "summer": "Generally dry with occasional afternoon thunderstorms typical of the eastern Cascades crest; the standard scramble window.",
+    "winter": "SR-20 gated/closed through the Washington Pass-Rainy Pass corridor; the peak is inaccessible by the standard trailhead.",
+    "typical": "Marine west coast climate with a strong maritime influence even on this east-slope Cascades peak; winter and spring snow tends to be wet and heavy, producing high avalanche danger on the gullied approaches. Summers are typically dry with mostly clear skies, though afternoon thunderstorms can build over the Cascade crest.",
+    "bySeason": {
+     "fall": "Good scrambling into September/early October; watch for early-season snow and shortening daylight.",
+     "spring": "Deep, often unstable wet snow fills the gullies (used for ski descents); avalanche and cornice hazard is significant — check NWAC before going.",
+     "summer": "Typical dry-scramble season once snow clears the upper slopes, usually by mid-to-late July; talus and scree underfoot.",
+     "winter": "Inaccessible — SR 20 is gated closed."
+    },
+    "forecastZone": "NWAC – Washington Pass zone"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to absent in the Rainy Pass/Washington Pass corridor; the nearest reliable help is the highway itself — flag down traffic or drive to Mazama/Winthrop. This stretch of SR 20 is remote and, once winter gates close, entirely inaccessible.",
+    "county": "Chelan County (summit); the SR 20 approach corridor runs along the Chelan/Okanogan county line near Rainy and Washington Passes",
+    "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA, (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, 507 Hospital Way, Brewster, WA — 24-hour ER, (509) 689-2517",
+    "sheriffDispatch": "Okanogan County Sheriff (trailhead/highway side) — for backcountry incidents, contact via 911; confirm jurisdiction may hand off to Chelan County SAR depending on exact location"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "weekends July-September; the Rainy Pass PCT trailhead itself sees heavy thru-hiker and day-hiker traffic, but most of that traffic splits off and does not continue up toward Whistler's summit gully",
+    "solitudeRating": 3,
+    "estimatePerSeason": "roughly 20-50 parties per season (estimate) - a known but secondary North Cascades scramble objective, well behind trade routes like Mailbox Peak or Colchuck"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Able to sustain ~4 miles round trip with ~3,000 ft of gain at elevation (trailhead near 4,850 ft, summit 7,790 ft), typically a 6-9 hour round trip",
+     "packWeight": "Light day pack (10-20 lb) - water, layers, helmet; no technical rack needed in normal summer conditions"
+    },
+    "approachTime": "2-3 hours from the Rainy Pass PCT trailhead to the base of the summit gully, then additional time for the talus scramble to the top",
+    "requiredSkills": [
+     "loose-rock/talus footing and micro-routefinding",
+     "basic navigation off-trail once leaving the PCT",
+     "self-arrest/step-kicking awareness for lingering early-season snow patches",
+     "afternoon-thunderstorm judgment (turnaround discipline on an exposed summit)"
+    ],
+    "experienceLevel": "Comfortable, unroped Class 3 scrambler; should have prior experience on loose talus/scree and basic alpine routefinding, since the route is a gully/slope scramble rather than a maintained trail to the top"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through early October, once snow has melted off the upper slopes",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically clears from the upper gully by mid-July; long daylight and stable summer weather, though early-July ascents can still hit lingering snowfields",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Most reliable month - talus fully exposed, driest conditions, though afternoon thunderstorms are common and should be watched for",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early season snow can return to the high pass terrain at any time, days are short, and North Cascades Highway/access conditions become less predictable",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Still generally dry and clear with fewer bugs and crowds than midsummer, but shorter daylight and first frosts begin",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical North Cascades crest weather at ~7,800 ft: cool mornings, warm midday, and rapid weather swings; the Washington Pass area is prone to sudden cloud buildup even on otherwise clear forecasts",
+     "probability": "Afternoon thunderstorms are common in July-August - plan for an early start and to be off the summit before storms build"
+    },
+    "exposure": "Low-to-moderate: Class 2-3 scrambling terrain, but the loose talus and scree footing creates real twisted-ankle and rockfall-onto-partner risk, especially in the gully where parties stack above one another; lingering early-summer snowfields can add a slip hazard on the approach gully before full melt-out",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; NWAC does not issue forecasts for this zone/period since the route is climbed outside the Nov-May avalanche season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed first-ascent date or party found",
+     "No summit register information found",
+     "Exact county boundary (Chelan vs. Okanogan) at the summit itself not independently confirmed beyond Wikipedia",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.515555,
+    "peakLng": -120.707905,
+    "trailhead": "Rainy Pass PCT North Trailhead",
+    "trailheadLat": 48.5181,
+    "trailheadLng": -120.7331,
+    "trailheadDirection": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Non-technical: boot path from SR-20 near Rainy Pass up through meadows to the south ridge (6180ft), then ridge/gully scrambling to the summit. No roped climbing required.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Rainy Pass PCT lot, then cross-country east into the meadow basin and the col toward Cutthroat's southwest peak",
+     "notes": "Park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass at about 4,850 ft, next to the Road 600 turnoff. LEAVE THE PCT ALMOST IMMEDIATELY and strike out cross-country east into open forest, gaining steeply through timber and over downed logs. There is no maintained tread once you leave the PCT.\n\nThis is WHISTLER MOUNTAIN ABOVE RAINY PASS in Chelan County, not the Whistler Canyon trailhead area near Oroville, which is about 100 miles away and unrelated.\n\nRound trip runs roughly 3.7 miles with about 3,000 ft of gain.",
+     "season": "Jul-Oct",
+     "hazards": [
+      "No maintained tread above the PCT; route-finding the whole way",
+      "Downed logs in the lower forest",
+      "Loose talus and scree in the gullies, with class 3-4 moves and real exposure near the ridge crest",
+      "Downsloping slabs and loose gravel in the summit gully",
+      "No reliable water above the lower forest",
+      "Early-season snow lingering in the forest and basin, firming the gullies"
+     ],
+     "primary": true,
+     "baseFinding": "CLIMB UNTIL THE FOREST OPENS. At about 6,100 ft the timber gives way to A MEADOW BASIN BELOW THE WEST RIDGE AND GULLY COMPLEX, and that transition is the first reliable confirmation on a trail-less approach. Trees stopping is something you notice in any visibility.\n\nFROM THE BASIN, TREND SOUTH AND SOUTHEAST ON A RISING TRAVERSE TO GAIN THE COL AND BASIN BETWEEN WHISTLER AND THE SOUTHWEST PEAK OF CUTTHROAT. THAT COL IS THE AIMING POINT, and it is named by the two peaks either side of it.\n\nThen work up the BROAD WEST RIDGE, or the SHALLOW GULLY JUST NORTH OF IT, to the summit shoulder.\n\nTHE LAST SECTION IS THE ONE THAT CONFIRMS YOU ARE ON THE SUMMIT LINE RATHER THAN A NEIGHBOURING GULLY: A ROCK GULLY WITH A VISIBLE RAMP ALONG THE HEADWALL, OVER DOWNSLOPING SLABS AND LOOSE GRAVEL. A ramp cutting the headwall is the way through; helmet on here for rockfall from parties above."
+    },
+    {
+     "name": "The unmarked SR-20 turnout, then a boot path onto the true south ridge at 6,180 ft",
+     "notes": "The second option, and the one that reaches the true south ridge. From the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass, 0.7 mile BEFORE the Blue Lake trailhead, at about 5,000 ft, walk back down and along the road shoulder to a boot path that starts at the WEST EDGE OF A STAND OF TREES.\n\nAbout 4 miles round trip with roughly 3,000 ft of gain, the same as the PCT option.",
+     "season": "Jul-Oct",
+     "hazards": [
+      "An unmarked trailhead identified only by its distance from the Blue Lake trailhead",
+      "Trail-less above the first stretch of forest",
+      "Class 2-3 with occasional class 3-4 moves and real exposure near the ridge crest",
+      "Loose talus and scree in the connecting gullies",
+      "No reliable water on the route"
+     ],
+     "baseFinding": "THE TRAILHEAD IS UNMARKED AND THE PATH START IS A TREE-LINE EDGE, SO THE FIND IS AT THE ROAD RATHER THAN ON THE MOUNTAIN. The pullout is 0.7 MILE BEFORE THE BLUE LAKE TRAILHEAD coming from Rainy Pass. IF YOU HAVE REACHED THE BLUE LAKE TRAILHEAD, YOU HAVE DRIVEN 0.7 MILE TOO FAR. From the pullout, walk the shoulder to where a STAND OF TREES begins, and the boot path leaves from its WEST EDGE.\n\nFOLLOW THE BOOT PATH UP THROUGH A MEADOW, THEN RISING-TRAVERSE TO INTERSECT THE LEVEL PORTION OF WHISTLER'S SOUTH RIDGE AT ABOUT 6,180 FT. A LEVEL SECTION OF RIDGE IS THE ARRIVAL, and a level stretch on a ridge is something you can feel underfoot without seeing anything.\n\nFROM THERE, SCRAMBLE UP THE RIDGE AND CONNECTING GULLIES TO THE SUMMIT. THE ALTERNATIVE, WHICH IS ALSO CORRECT: leave the ridge around 6,800 ft, cross a couple of gullies LEFT, west, onto gentler southwest-facing slopes, and finish that way.\n\nSO THE DECISION AT 6,800 FT IS A REAL FORK AND BOTH BRANCHES WORK: stay on the crest for more exposure and directness, or cross two gullies west for easier ground.\n\nTHE NEGATIVE TEST AGAINST THE OTHER APPROACH, WHICH MATTERS BECAUSE BOTH START WITHIN THREE MILES OF EACH OTHER ON THE SAME HIGHWAY: the PCT option leaves from the marked PCT North lot at Rainy Pass and gains a MEADOW BASIN at 6,100 ft below the WEST ridge. This one leaves from an unmarked turnout and gains the SOUTH ridge at 6,180 ft. Marked lot and west ridge, or unmarked turnout and south ridge."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "class 2-3 with occasional class 3-4 moves",
+     "label": "Col to the summit shoulder via the west ridge (Option A)",
+     "notes": "From the meadow basin at about 6,100 ft trend south/southeast on a rising traverse to gain the col/basin between Whistler and the southwest peak of Cutthroat, then work up the broad west ridge or the shallow gully just north of it to the summit shoulder. Trail-less with route-finding and loose talus/scree in the gullies, and real exposure near the ridge crest; early-season snow can make the gully sections firm or icy."
+    },
+    {
+     "n": 2,
+     "label": "Final rock gully and headwall ramp",
+     "notes": "The final short section involves a rock gully with a visible ramp along the headwall over downsloping slabs and loose gravel — a helmet is recommended here for rockfall from parties above."
+    },
+    {
+     "n": 3,
+     "class": "class 2-3 with occasional class 3-4 moves",
+     "label": "South ridge from 6,180 ft (Option B)",
+     "notes": "Intersect the level portion of Whistler's south ridge at about 6,180 ft, then scramble up the ridge and connecting gullies to the summit; loose talus/scree in the gullies and real exposure near the ridge crest and summit gully."
+    },
+    {
+     "n": 4,
+     "label": "Southwest slopes variant",
+     "notes": "Alternatively leave the ridge around 6,800 ft, cross a couple of gullies left (west) onto gentler southwest-facing slopes, and finish to the summit that way."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4860,
+     "name": "Rainy Pass PCT north trailhead",
+     "role": "main",
+     "type": "camp",
+     "notes": "Everything starts from this lot. It is also the start of Whistler Mountain, which is unlike the rest: head east from the parking area into the second gully and follow it to the summit, about four miles round trip and three thousand feet of gain, and no camp helps in the slightest. There is a toilet and no water. Parties routinely sleep in the car here before a long PCT day. As with everything on this stretch of SR 20, access is governed by the winter closure — the highway shuts in late November or early December and normally reopens between mid April and early May, though a bad winter can push it very much later, so confirm before driving. Note also that this specific trailhead has been closed at times for roadwork in recent seasons, which strands the entire zone when it happens.",
+     "water": "None at the lot, and this matters more here than it looks. The crest north of the pass is dry, so what you carry out of the car is what you have until well down the far side.",
+     "permit": "Northwest Forest Pass or Interagency pass to park. No camping permit, no quota and nothing to reserve anywhere in this zone — this is national forest, and the park permit system that governs the country west of here does not apply.",
+     "capacity": "A large paved lot on the north-east side of the highway at the pass, shared between climbers, larch-season day hikers and long-distance walkers. It fills early on weekends from late summer onward and there is no overflow."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_iceman",
+  "name": "Iceman",
+  "area_id": "wa_ice_box_left_side",
+  "findings": [
+   "Ice Box: road/trailhead pin says Cutthroat/Blue Lake, not the SR-20 hairpin; approach text describes the Alpenkuhl crag."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_iceman",
+   "area_id": "wa_ice_box_left_side",
+   "name": "Iceman",
+   "discipline": "sport",
+   "grade": "5.10a/b",
+   "grade_system": "yds",
+   "grade_num": 10.25,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bryan Burdo and Gabe Grayum",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer — a shaded destination good for hot days when nearby Mazama crags are too warm.",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Slick approach slabs pose a fall hazard on the hike in, independent of the climbing itself.",
+    "Alpine granite setting means occasional loose rock off-route."
+   ],
+   "verif": null,
+   "overview": "A one-pitch 5.10a/b line up the shaded Ice Box (Left Side) buttress, the 'dead middle' finger-crack/roof line splitting sport routes Route C and Route D.",
+   "beta": "Climbs a steep face on good holds to a bolt guarding a thin finger-crack move, then finishes on horizontal cracks into an awkward but enjoyable left-facing corner. Mixed protection (3 bolts plus small-to-mid cams) makes it the trad line of the three Ice Box routes.",
+   "turnaround": "Start early enough to be off the exposed approach slabs and rock before afternoon thunderstorms, which are common in the North Cascades in summer; treat the slick granite slabs as more hazardous in rain.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10a/b",
+   "ice_grade": null,
+   "gain_ft": 500,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Ice Box (left side), Hairpin Crags — the finger-crack line between two of the sport routes",
+   "permit": null,
+   "comms": "No cell phone service is available at Washington Pass or along this stretch of the North Cascades Highway corridor per NPS and WSDOT; do not rely on a signal for emergencies.",
+   "descent": "Lower or rappel from the anchor back to the base.",
+   "obj_haz": [
+    "Smooth, slippery approach slabs above the dry creek bed (fall hazard, worse when wet)",
+    "Loose rock possible on unfeatured alpine granite"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Blue Lake Trailhead",
+     "note": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D; approach slabs are smooth and slippery.",
+     "type": "Topout",
+     "distMi": 1.8
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "3 fixed bolts protect the crux face and finger-crack section; supplement with a small rack of cams from about BD #0.3 to #1 for the horizontal-crack and corner finish. A single 60m rope and standard quickdraws/alpine draws are sufficient for this one-pitch route.",
+   "what_to_bring": [
+    "Approach shoes suited to slick granite slabs",
+    "Helmet (loose rock/approach hazard)"
+   ],
+   "pro_tips": [
+    "Good handholds on the initial face make the opening moves easier than they look — save gear placements for after the bolt-protected finger-crack crux.",
+    "Combine with neighboring Route C and Route D for a full day at this shaded, cooler crag."
+   ],
+   "watch_out": "Approach slabs above the dry creek bed are smooth and slippery, and the lower slab has no hand-line — worse when wet.\nOnly the crux face and finger crack are bolted; the horizontal cracks and left-facing corner above need your own small-to-mid cams.\nAlpine granite can shed occasional loose rock off-route.",
+   "pro_needs": "Mixed protection — 3 bolts plus a handful of small-to-medium cams (0.3-1 BD equivalent) placed in the horizontal cracks and finishing corner.",
+   "best_season": "Late June through September, matching the broader Washington Pass climbing season; the Ice Box's shaded, north-facing character keeps it cooler than sunnier Washington Pass walls and can hold wet rock or residual snow later into the early season.",
+   "high_point_ft": 5490,
+   "aid_grade": null,
+   "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+   "descent_text": "From the top anchor, lower on a single strand or rappel with a 60m rope directly back to the base of the route; no walk-off is required for this single-pitch line.",
+   "bail": "Straightforward retreat on a single-pitch route — lower or rappel off the highest gear/bolt placed at any point.",
+   "pitch_detail": [
+    {
+     "grade": "5.10a/b",
+     "notes": "Steep face on good holds to a bolt protecting a thin finger-crack section, then horizontal cracks into a left-facing corner finish.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": "A single-day cragging objective, typically combined with Route C and/or Route D at the same crag: drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail, climb, then lower/rappel and retrace the approach to the car.",
+   "access": {
+    "_raw": {
+     "permit_cost": "$0 for climbing/wilderness permit",
+     "permit_type": "Free self-issued wilderness permit for overnight stays",
+     "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+     "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+     "permit_pickup": "Self-issued at trailhead or ranger stations",
+     "special_hazards": "Smooth, slippery slabs; first slab without fixed line; approach requires scrambling",
+     "wilderness_zone": "Alpine/rock climbing area, day-use observation site available",
+     "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+     "seasonal_closures": "Best June-October; winter access difficult due to snow, spring access steep",
+     "altitude_restrictions": "None noted"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "Free self-issued wilderness permit for overnight stays",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Alpine/rock climbing area, day-use observation site available",
+    "landManager": "USFS - Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "None"
+   },
+   "road": {
+    "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+    "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+    "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+    "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+   },
+   "climate": {
+    "fall": "Climbable into September/early October with shortening days and increasing storm risk before the highway's winter closure.",
+    "spring": "Highway typically still gated or freshly reopened (mid-to-late April); snow and wet rock likely at the crag into early summer.",
+    "summer": "Best climbing window, late June through September; dry granite but watch for afternoon convective storms.",
+    "winter": "SR-20 is gated closed; the area is inaccessible by road.",
+    "typical": "Dry, warm alpine summers with afternoon thunderstorm risk; the shaded Ice Box stays notably cooler than sun-exposed Washington Pass faces.",
+    "forecastZone": "North Cascades / Washington Pass corridor (East Slopes Northern Cascades)"
+   },
+   "emergency": {
+    "notes": "No cell coverage at Washington Pass — plan for a satellite communicator; the highway is remote with no services in the immediate area.",
+    "county": "Chelan/Okanogan county line (Washington Pass straddles the two)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 West Chewuch Rd, Winthrop, WA; (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA, or Mid-Valley Hospital, Omak, WA (both roughly 30 mi from Winthrop, the nearest town)",
+    "sheriffDispatch": "Okanogan County Sheriff non-emergency: 509-422-7232 / 800-572-6604; Chelan County Sheriff: 509-667-6851"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_route_c",
+  "name": "Route C",
+  "area_id": "wa_ice_box_left_side",
+  "findings": [
+   "Ice Box: road/trailhead pin says Cutthroat/Blue Lake, not the SR-20 hairpin; approach text describes the Alpenkuhl crag."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_route_c",
+   "area_id": "wa_ice_box_left_side",
+   "name": "Route C",
+   "discipline": "sport",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 21,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bryan Burdo (uncertain)",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer — a shaded destination good for hot days when nearby Mazama crags are too warm.",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Slick approach slabs pose a fall hazard on the hike in, independent of the climbing itself."
+   ],
+   "verif": null,
+   "overview": "A fully bolted one-pitch 5.9 sport route on jugs, the second bolt line after the obvious prow at Ice Box (Left Side); the easiest of the three routes at this crag.",
+   "beta": "A well-bolted, slightly steep climb on jug holds. Climbers can follow the bolt line straight to the chains, or after clipping the 5th bolt, traverse right onto a solid horn and back left for a mellower ledge variation.",
+   "turnaround": "Start early enough to be off the exposed approach slabs before afternoon thunderstorms, common in the North Cascades in summer; the slick granite slabs are more hazardous in rain.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 500,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Lower off the fixed chain anchor (single pitch, 70 ft).",
+   "commitment": null,
+   "face": "Ice Box (left side), Hairpin Crags — second bolt line after the prow",
+   "permit": null,
+   "comms": "No cell phone service is available at Washington Pass or along this stretch of the North Cascades Highway corridor per NPS and WSDOT; do not rely on a signal for emergencies.",
+   "descent": "Lower off the chain anchors.",
+   "obj_haz": [
+    "Smooth, slippery approach slabs above the dry creek bed (fall hazard, worse when wet)"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Blue Lake Trailhead",
+     "note": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D.",
+     "type": "Topout",
+     "distMi": 1.8
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "Fully bolted with 8 bolts to chain anchors — carry roughly 8-9 quickdraws and a 60m rope; no traditional gear rack needed.",
+   "what_to_bring": [
+    "Approach shoes suited to slick granite slabs",
+    "Helmet (loose rock/approach hazard)"
+   ],
+   "pro_tips": [
+    "Good introductory grade for the crag — jug-hauling makes it approachable for climbers newer to steep terrain.",
+    "Use the traverse-right variation after bolt 5 for a mellower finish if the direct bolt line feels stiff."
+   ],
+   "watch_out": [
+    "Approach slabs are smooth and slippery, and the lower slab has no hand-line.",
+    "Slightly steep terrain on jugs can still pump out less-conditioned climbers."
+   ],
+   "pro_needs": "Sport-bolted line; no trad gear required beyond quickdraws.",
+   "best_season": "Late June through September, matching the broader Washington Pass season; the Ice Box's shaded character keeps it cooler and can hold wet rock later into early season than sunnier walls nearby.",
+   "high_point_ft": 5490,
+   "aid_grade": null,
+   "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+   "descent_text": "Lower on a single strand from the fixed chain anchor at the top of the route, or rappel with a 60m rope; no walk-off is required.",
+   "bail": "Lower off any bolt at any point — fully bolted sport route with straightforward retreat.",
+   "pitch_detail": [
+    {
+     "grade": "5.9",
+     "notes": "Well-bolted, slightly steep climb on jugs; either follow the bolt line straight to the chains, or after bolt 5 traverse right onto a solid horn and back left for a mellower ledge variation.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": "A single-day cragging objective, commonly linked with Route D and/or Iceman at the same crag: drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail, climb, then lower off and retrace the approach to the car.",
+   "access": {
+    "_raw": {
+     "permit_cost": "$0 for climbing/wilderness permit",
+     "permit_type": "Free self-issued wilderness permit for overnight stays",
+     "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+     "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+     "permit_pickup": "Self-issued at trailhead or ranger stations",
+     "special_hazards": "Smooth, slippery slabs; first slab without fixed line; approach requires scrambling",
+     "wilderness_zone": "Alpine/rock climbing area, day-use observation site available",
+     "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+     "seasonal_closures": "Best June-October; winter access difficult due to snow, spring access steep",
+     "altitude_restrictions": "None noted"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "Free self-issued wilderness permit for overnight stays",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Alpine/rock climbing area, day-use observation site available",
+    "landManager": "USFS - Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "None"
+   },
+   "road": {
+    "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+    "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+    "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+    "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+   },
+   "climate": {
+    "fall": "Climbable into September/early October before the highway's winter closure.",
+    "spring": "Highway typically still gated or freshly reopened (mid-to-late April); snow and wet rock likely at the crag into early summer.",
+    "summer": "Best climbing window, late June through September; dry granite but watch for afternoon convective storms.",
+    "winter": "SR-20 is gated closed; the area is inaccessible by road.",
+    "typical": "Dry, warm alpine summers with afternoon thunderstorm risk; the shaded Ice Box stays notably cooler than sun-exposed Washington Pass faces.",
+    "forecastZone": "North Cascades / Washington Pass corridor (East Slopes Northern Cascades)"
+   },
+   "emergency": {
+    "notes": "No cell coverage at Washington Pass — plan for a satellite communicator; the highway is remote with no services in the immediate area.",
+    "county": "Chelan/Okanogan county line (Washington Pass straddles the two)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 West Chewuch Rd, Winthrop, WA; (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA, or Mid-Valley Hospital, Omak, WA (both roughly 30 mi from Winthrop, the nearest town)",
+    "sheriffDispatch": "Okanogan County Sheriff non-emergency: 509-422-7232 / 800-572-6604; Chelan County Sheriff: 509-667-6851"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_route_d",
+  "name": "Route D",
+  "area_id": "wa_ice_box_left_side",
+  "findings": [
+   "Ice Box: road/trailhead pin says Cutthroat/Blue Lake, not the SR-20 hairpin; approach text describes the Alpenkuhl crag."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_route_d",
+   "area_id": "wa_ice_box_left_side",
+   "name": "Route D",
+   "discipline": "sport",
+   "grade": "5.10b/c",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 1,
+   "length_m": 23,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bryan Burdo (uncertain)",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer — a shaded destination good for hot days when nearby Mazama crags are too warm.",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Slick approach slabs pose a fall hazard on the hike in, independent of the climbing itself."
+   ],
+   "verif": null,
+   "overview": "A fully bolted one-pitch 5.10b/c sport route, the third bolt line right of the prow at Ice Box (Left Side).",
+   "beta": "Juggy steps lead into a slappy, very strenuous left-facing corner to a rest ledge, then a steep face on good holds finishes the pitch.",
+   "turnaround": "Start early enough to be off the exposed approach slabs before afternoon thunderstorms, common in the North Cascades in summer; the slick granite slabs are more hazardous in rain.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b/c",
+   "ice_grade": null,
+   "gain_ft": 500,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Lower off the fixed chain anchor (single pitch, 75 ft).",
+   "commitment": null,
+   "face": "Ice Box (left side), Hairpin Crags — third bolt line right of the prow",
+   "permit": null,
+   "comms": "No cell phone service is available at Washington Pass or along this stretch of the North Cascades Highway corridor per NPS and WSDOT; do not rely on a signal for emergencies.",
+   "descent": "Lower off the chain anchors.",
+   "obj_haz": [
+    "Smooth, slippery approach slabs above the dry creek bed (fall hazard, worse when wet)"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Blue Lake Trailhead",
+     "note": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D.",
+     "type": "Topout",
+     "distMi": 1.8
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "Fully bolted with 9 bolts to chain anchors — carry roughly 9-10 quickdraws and a 60m rope; no traditional gear rack needed.",
+   "what_to_bring": [
+    "Approach shoes suited to slick granite slabs",
+    "Helmet (loose rock/approach hazard)"
+   ],
+   "pro_tips": [
+    "The corner section is short but very strenuous for the grade — commit through it rather than pausing on it.",
+    "Pairs well with Route C on the same wall for a two-route day."
+   ],
+   "watch_out": [
+    "The left-facing corner is described as 'very strenuous' relative to its grade — don't underestimate it.",
+    "Approach slabs are smooth and slippery, and the lower slab has no hand-line."
+   ],
+   "pro_needs": "Sport-bolted line; no trad gear required beyond quickdraws.",
+   "best_season": "Late June through September, matching the broader Washington Pass season; the Ice Box's shaded character keeps it cooler and can hold wet rock later into early season than sunnier walls nearby.",
+   "high_point_ft": 5490,
+   "aid_grade": null,
+   "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+   "descent_text": "Lower on a single strand from the fixed chain anchor at the top of the route, or rappel with a 60m rope; no walk-off is required.",
+   "bail": "Lower off any bolt at any point — fully bolted sport route with straightforward retreat.",
+   "pitch_detail": [
+    {
+     "grade": "5.10b/c",
+     "notes": "Juggy start into a slappy, very strenuous left-facing corner to a rest ledge, then a steep face on good holds to the chain anchor.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": "A single-day cragging objective, commonly linked with Route C and/or Iceman at the same crag: drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail, climb, then lower off and retrace the approach to the car.",
+   "access": {
+    "_raw": {
+     "permit_cost": "$0 for climbing/wilderness permit",
+     "permit_type": "Free self-issued wilderness permit for overnight stays",
+     "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+     "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+     "permit_pickup": "Self-issued at trailhead or ranger stations",
+     "special_hazards": "Smooth, slippery slabs; first slab without fixed line; approach requires scrambling",
+     "wilderness_zone": "Alpine/rock climbing area, day-use observation site available",
+     "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+     "seasonal_closures": "Best June-October; winter access difficult due to snow, spring access steep",
+     "altitude_restrictions": "None noted"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "Free self-issued wilderness permit for overnight stays",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Alpine/rock climbing area, day-use observation site available",
+    "landManager": "USFS - Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "None"
+   },
+   "road": {
+    "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+    "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+    "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+    "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+   },
+   "climate": {
+    "fall": "Climbable into September/early October before the highway's winter closure.",
+    "spring": "Highway typically still gated or freshly reopened (mid-to-late April); snow and wet rock likely at the crag into early summer.",
+    "summer": "Best climbing window, late June through September; dry granite but watch for afternoon convective storms.",
+    "winter": "SR-20 is gated closed; the area is inaccessible by road.",
+    "typical": "Dry, warm alpine summers with afternoon thunderstorm risk; the shaded Ice Box stays notably cooler than sun-exposed Washington Pass faces.",
+    "forecastZone": "North Cascades / Washington Pass corridor (East Slopes Northern Cascades)"
+   },
+   "emergency": {
+    "notes": "No cell coverage at Washington Pass — plan for a satellite communicator; the highway is remote with no services in the immediate area.",
+    "county": "Chelan/Okanogan county line (Washington Pass straddles the two)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 West Chewuch Rd, Winthrop, WA; (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA, or Mid-Valley Hospital, Omak, WA (both roughly 30 mi from Winthrop, the nearest town)",
+    "sheriffDispatch": "Okanogan County Sheriff non-emergency: 509-422-7232 / 800-572-6604; Chelan County Sheriff: 509-667-6851"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_bearpaw_mountain_scramble",
+  "name": "Church Lake Scramble",
+  "area_id": "wa_bearpaw_mountain",
+  "findings": [
+   "Approach now says the trail passes the EAST side of the lake; waypoint[3] pin still sits west of the lake."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_bearpaw_mountain_scramble",
+   "area_id": "wa_bearpaw_mountain",
+   "name": "Church Lake Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "sturdy hiking boots or approach shoes",
+    "trekking poles",
+    "ice axe (seasonal — snowpack lingers in the basin into July)",
+    "helmet (optional, for loose rock on the final ~100m scramble)"
+   ],
+   "hazards": [
+    "exposed class 3 ridge near the summit",
+    "heather and slab when wet"
+   ],
+   "verif": null,
+   "overview": "Bearpaw Mountain (6,091 ft) is a short, steep scramble summit above Church Lake, just east of Church Mountain in the Nooksack Ridge high country north of Mount Baker. It's reached by an unmaintained boot path (not an official Forest Service trail) from the end of FS Road 3160, off Canyon Creek Road, climbing past Church Lake and up open ridge/meadow terrain to a narrow, sometimes-exposed class 3 finish.",
+   "beta": "From the Church Lake trailhead at the end of FS Road 3160, an easy but steep unofficial path climbs about 0.6 miles to Church Lake. From the lake the route continues around the shore and up through meadows toward a ridge/saddle above, then follows the ridge — which becomes steep but is 'nothing scary' — to a high point near peak 6066, with the final ~100 meters to the true summit requiring some class 3 scrambling on a narrow, occasionally exposed ridge. This is a hiker/scrambler route, not a roped climb; no technical gear is used on it.",
+   "turnaround": "Because the final ridge to the summit is narrow, loose, and exposed in places, turn around well before dusk and reassess if the ridge is wet, snow-covered, or if any party member is uncomfortable with unroped class 3 exposure — the terrain does not forgive a rushed or fatigued descent.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 1300,
+   "loss_ft": 1300,
+   "dist_km": 5.9,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "Southwest side/ridge",
+   "permit": null,
+   "comms": "Remote North Cascades terrain near the Canadian border with no cell coverage expected at the trailhead, Church Lake, or on the summit ridge; do not rely on a cell phone for emergency contact in this area.",
+   "descent": "Reverse the ridge and boot path back down to Church Lake and the FS Road 3160 trailhead.",
+   "obj_haz": [
+    "loose rock",
+    "exposed, narrow ridge scramble near the summit",
+    "lingering snowfields into early summer"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.957,
+     "lng": -121.851,
+     "elev": 4800,
+     "name": "FS Road 3160 End Trailhead",
+     "note": "End of the rough, single-lane FS Road 3160 (high-clearance/4x4 recommended); unmaintained boot path to Church Lake starts here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Canyon Creek Road (FS-31) north off SR-542 just east of Glacier, then FS-3160 to its end at about 4,800 ft. The upper road is single-lane and rough, high clearance is the usual advice, and the parking is no more than a wide spot at the end."
+    },
+    {
+     "lat": 48.95563333333333,
+     "lng": -121.85343333333333,
+     "elev": 5100,
+     "name": "Boot Path Junction / Old Roadbed",
+     "note": "Unmarked user-built path leaves the old roadbed and climbs through brush toward the lake basin.",
+     "type": "Junction",
+     "distMi": 0.2,
+     "directions": "Continue on the old roadbed past the parking area for a couple of hundred yards. The user-built path toward the lake basin leaves it unmarked, though motorbike use has worn the line in well enough to follow."
+    },
+    {
+     "lat": 48.94962,
+     "lng": -121.84918,
+     "elev": 5150,
+     "name": "Church Lake",
+     "note": "Emerald subalpine lake in a basin below Bearpaw; established rough camp spots on the shore, often overgrown approach.",
+     "type": "Campsite",
+     "distMi": 0.6,
+     "directions": "The path climbs steeply through forest — the steepest sustained grade of the day, about 400 ft — then rolls over a rise into the cirque holding the lake, 0.6 to 0.7 mile from the car."
+    },
+    {
+     "lat": 48.951086751999995,
+     "lng": -121.854669344,
+     "elev": 5450,
+     "name": "Left Rim of Church Lake Basin",
+     "note": "Keep left around the lake and start climbing the rim of the basin toward Point 6066 rather than following the lakeshore fully around.",
+     "type": "Junction",
+     "distMi": 1,
+     "directions": "Skirt the lake along its east/left shore rather than following the shoreline the whole way around, then start up the rim of the basin on the left (east) toward Point 6066. Fill water at the lake; there is none above it."
+    },
+    {
+     "lat": 48.948673504,
+     "lng": -121.854238688,
+     "elev": 5800,
+     "name": "Steep Heather/Meadow Ridge Below Point 6066",
+     "note": "Steep, loose tread through heather and meadow gains the ridge crest; described by hikers as steep but 'nothing scary' in dry conditions, slick when wet.",
+     "type": "Hazard",
+     "distMi": 1.4,
+     "directions": "Above the lake the tread fades into intermittent boot path and cairns through meadow and heather benches, and the rim steepens on loose footing. Straightforward when dry, genuinely slick when wet, and snow lingers on the shaded slopes here into midsummer."
+    },
+    {
+     "lat": 48.941,
+     "lng": -121.8525,
+     "elev": 6066,
+     "name": "Point 6066 Knoll",
+     "note": "Knoll with 270-degree views from Mount Baker eastward into Canada; the narrow summit ridge to Bearpaw's true top begins here.",
+     "type": "Junction",
+     "distMi": 1.7,
+     "directions": "Keep working up the rim to the broad high point on the ridge dividing Church Lake's basin from Bearpaw's summit block. This stretch accounts for most of the day's remaining gain."
+    },
+    {
+     "lat": 48.946260255999995,
+     "lng": -121.853808032,
+     "elev": 6060,
+     "name": "Exposed Summit Ridge",
+     "note": "Narrow, sometimes exposed ridgeline with loose footing for the final approach; use caution, easy to slip off either side.",
+     "type": "Hazard",
+     "distMi": 1.8,
+     "directions": "From the knoll drop slightly and traverse north across a rocky, heathery bowl toward the base of the summit block, picking up the narrow connecting ridge. Footing is loose and the crest is exposed on both sides in places."
+    },
+    {
+     "lat": 48.94605,
+     "lng": -121.85402,
+     "elev": 6091,
+     "name": "Bearpaw Mountain",
+     "note": "True summit; final ~100m from the ridge is a short Class 2-3 scramble over blocky rock.",
+     "type": "Summit",
+     "distMi": 1.85,
+     "directions": "The last stretch is a short Class 2-3 scramble, roughly 100 m, on generally solid blocky rock with mild exposure. Reverse the same ground to descend, or drop the scree-and-dirt chute that cuts straight from the ridge down to the lakeshore — quicker, but loose enough that it is no place to be below another party."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 4.5,
+    "summitTimeHrs": 4.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "8:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "A short, roadside scramble done entirely car-to-car in a half day. An easy, well-used boot path climbs steeply to Church Lake in well under an hour, then fainter tread continues up…",
+      "fromTo": "Church Lake to Bearpaw Mountain summit",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock rack applies to this route. It is an unroped Class 2-3 scramble — no cams, nuts, rope, or protection are used at any point, including the final steep section below the summit.",
+   "what_to_bring": [
+    "trekking poles for the short, steep boot path to Church Lake",
+    "ice axe or microspikes if attempting in spring/early summer while snow persists in the cirque (reported to linger into July)",
+    "sturdy trail shoes or light hiking boots",
+    "navigation aid (map/GPS) since the climbers' path fades to a boot-track past Church Lake through the alpine meadows/cirque",
+    "sun protection for the open alpine basin",
+    "helmet if concerned about loose rock on the final scramble (optional, not reported as standard practice)"
+   ],
+   "pro_tips": [
+    "This is a short, steep half-day trip (~3.7 mi round trip, ~1,300 ft gain from the FS 3160 road end) — not a long remote approach",
+    "Check Mt. Baker-Snoqualmie NF road status for Canyon Creek Road (FS 31) and spur FS 3160 before driving; this road has a history of slide closures",
+    "Helmet recommended for the loose rock and exposed ridge scrambling near the summit"
+   ],
+   "watch_out": [
+    "loose rock and route-finding on the unmaintained boot path",
+    "narrow, exposed class 3 ridge near the summit",
+    "lingering snowfields into early summer that can obscure the path"
+   ],
+   "pro_needs": "None. This is an unroped scramble; there are no protectable technical moves. The final ~100m to the summit is loose Class 2-3 terrain handled by careful route-finding and hand-and-foot scrambling, not by placing gear.",
+   "best_season": "July-September",
+   "high_point_ft": 6091,
+   "aid_grade": null,
+   "approach": "From the FS 3160 road-end parking (roughly 48.957°N, 121.851°W, reached via Canyon Creek Road/FS 31 then FS 3160 as noted above), the route follows an unmaintained but well-worn boot path — not a numbered Forest Service trail, just a heavily used user track — that climbs steeply through forest for about 0.6-0.7 mile and roughly 400 ft of gain to Church Lake, a small emerald subalpine lake sitting in a cirque directly below Bearpaw's north side. This first pitch is the steepest sustained grade of the day. Skirt the lake along its east/left shore (best flat campsites are on the far side, useful if splitting the trip). Beyond the lake the trail fades into intermittent boot-path and cairns through meadows and heather benches; keep left (east) up the basin rim toward a broad knoll around 6,066 ft on the ridge separating Church Lake's basin from Bearpaw's summit block — this stretch accounts for most of the remaining ~900 ft of the route's 1,300 ft total gain over roughly 1.5 mi one-way (matching the ~5.9 km round trip). From the 6,066 ft knoll, drop slightly and traverse north across a rocky/heather bowl toward the base of Bearpaw's summit block; the final approximately 300 ft to the 6,091 ft summit is easy class 2-3 scrambling on generally solid rock and blocks, with mild exposure in the last pitch. Church Lake is the last reliable water source — carry water from there for the upper mountain. There is no maintained tread past the lake, so route-finding by cairns and boot-path is necessary, and in early/mid-season lingering snow on the steep initial slope above the lake and in the summit gullies can require an ice axe and caution; parties often find snow patches into July on shaded sections.",
+   "descent_text": "Descend the same line: from the summit, downclimb the class 2-3 scramble terrain back to the 6,066 ft knoll above Church Lake basin. From there most parties either retrace the rim/boot-path back down into the basin, or drop via a direct scree/dirt gully (chute) that cuts straight down from the ridge to the lake's shore, shortcutting the traverse — this chute is loose underfoot (scree and dirt over rock) and warrants care with footing and any parties below; if snow lingers in the chute (common into early summer) an ice axe and basic self-arrest awareness are worthwhile. From Church Lake, retrace the 0.6-0.7 mile boot path back down to the FS 3160 trailhead. This is a non-technical walk-off/downclimb scramble — no rope or rappelling is used on this route.",
+   "bail": "Bail is short and simple — descend back to Church Lake and follow the boot path to the FS 3160 road end.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Road (FS 3160) and upper snow patches typically clear by mid-summer; best conditions are roughly July through September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A short, roadside scramble done entirely car-to-car in a half day. An easy, well-used boot path climbs steeply to Church Lake in well under an hour, then fainter tread continues up rolling alpine meadows and a ridge toward Point 6066 before a final short class 2-3 scramble gains the true summit. Most parties are back at the trailhead by early-to-mid afternoon.",
+      "hours": 4.5,
+      "miles": 3.7,
+      "title": "Church Lake to Bearpaw Mountain summit",
+      "gainFt": 1300,
+      "lossFt": 1300,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "8:00 AM",
+        "label": "Leave FS Road 3160 trailhead",
+        "detail": "High-clearance vehicle recommended for the last stretch of gravel road."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Reach Church Lake",
+        "detail": "Steep but short established trail; a common turnaround for hikers just visiting the lake."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Gain the ridge near Point 6066",
+        "detail": "Tread fades above the lake into open meadows and talus; route-find up the ridge."
+       },
+       {
+        "time": "10:15 AM",
+        "label": "Scramble to the summit",
+        "detail": "Final ~100m to the true summit is class 2-3 scrambling on exposed rock."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the ridge and boot path back toward Church Lake."
+       },
+       {
+        "time": "12:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Total round trip roughly 4-5 hours including a summit break."
+       }
+      ],
+      "objective": "Tag the Bearpaw Mountain summit (6,091 ft) via Church Lake and the ridge/scramble above"
+     }
+    ],
+    "totalNote": "A short single day: roughly 4-5 hours car-to-car, about 3.7 miles round trip with 1,300 ft of gain, including a short class 2-3 scramble to the true summit."
+   },
+   "access": {
+    "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+    "rules": "Standard Mt. Baker-Snoqualmie NF regulations apply. The Church Lake/Bearpaw Mountain route follows an unmaintained boot path (not an official FS trail); it's a short (~3.7 mi RT) outing from the FS 3160 road end, not a remote multi-day approach.",
+    "permit": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+    "closures": "No closure is currently posted for FS 31 (Canyon Creek Road) or the FS 3160 spur, but the road has a history of slide and washout damage. Verify current status with the Glacier Public Service Center or MBS road-conditions page before the trip.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Mount Baker Ranger District",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Camp only at designated sites where they exist, such as the established sites at Church Lake. Developed campgrounds on the highway take reservations on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "Canyon Creek Road (FS 31) to FS Road 3160",
+    "status": "Open (high-clearance recommended); historically subject to slide damage and repair",
+    "driveNote": "From Glacier, follow Canyon Creek Road (FS 31) to the first major fork, then FS Road 3160 to its end (~4.4 rough miles; high-clearance recommended). FS 31 has a recent history of slide closures beyond mile 4 — verify current road status before driving.",
+    "seasonalGate": "Typically drivable/snow-free roughly June–October; check current MBS road conditions."
+   },
+   "climate": {
+    "fall": "Cooling, wetter conditions from September on; hunting season begins August 1.",
+    "spring": "Persistent snow on the ridge and access road well into early summer; road may be snow-blocked.",
+    "summer": "Best window (roughly June/July-September) once trail and ridge are snow-free.",
+    "winter": "Heavy snow, road unmaintained/likely inaccessible, avalanche terrain on approach slopes.",
+    "typical": "Maritime border-country weather; snow lingers late at elevation.",
+    "bySeason": {
+     "fall": "short clear window",
+     "spring": "deep snow; not in season",
+     "summer": "scramble season once high country melts",
+     "winter": "remote winter mountaineering only"
+    },
+    "forecastZone": "West Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Use 911 for emergencies.",
+    "county": "Whatcom",
+    "rangerStation": "Glacier Public Service Center / Mt. Baker Ranger District",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; if any traffic occurs it would be on clear weekends in August-September",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic; likely a small handful of parties per season based on remoteness and lack of indexed trip reports"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Moderate all-day hiking fitness for a short, steep ~3.7 mi round-trip day scramble with about 1,300 ft of gain — not the long remote approach the previous text implied.",
+     "packWeight": "Day-pack only; this is a car-to-car outing, not an overnight trip."
+    },
+    "approachTime": "Short - the boot path reaches Church Lake in well under an hour, and the whole route is typically a 4-5 hour, ~3.7 mi round-trip car-to-car day trip.",
+    "requiredSkills": [
+     "Off-trail route-finding and navigation on a fading, unmaintained boot path/cairned route above Church Lake",
+     "Comfortable on Class 2-3 rock and heather slopes, including short exposed steps near the summit",
+     "Judgment for lingering snow patches at elevation early in the season",
+     "Basic self-sufficiency, since help is not immediately at hand despite the short approach"
+    ],
+    "experienceLevel": "Intermediate scrambler comfortable with off-trail route-finding and short Class 2-3 exposure; a good short day-trip objective, not a remote/overnight undertaking"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-August through September, once the high country has melted out",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow lingers late at this elevation; route-finding and footing are harder, and some slopes may still be snow-covered",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Deep snow still covers approach slopes and the summit scramble; not in season",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Scramble season is established once high country has melted; best combination of dry rock/heather and stable weather",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Border-country weather deteriorates and early snow can return, closing the short seasonal window",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Continuation of the short clear scramble window before fall weather moves in",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime border-country weather with snow lingering late at elevation; conditions can be colder and wetter than lower-elevation Cascades due to proximity to the Canadian border",
+     "probability": "Afternoon thunderstorms and fast-moving weather are possible in late summer; limited visibility on off-trail terrain compounds route-finding difficulty if weather closes in"
+    },
+    "exposure": "Moderate fall exposure on Class 2-3 rock steps and heather slopes that become slick when wet; the remote, isolated setting significantly raises the consequence of any injury given the long evacuation distance",
+    "avalanche": {
+     "zone": "NWAC Mt Baker zone covers the broader area, but no zone is published specifically for Bearpaw Mountain; treated as N/A for the typical Aug-Sept scramble ascent since it is climbed after snowmelt",
+     "byMonth": {
+      "July": "Moderate",
+      "June": "Considerable",
+      "August": "N/A",
+      "October": "Moderate",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel on this scramble route"
+   },
+   "data_quality": {
+    "gaps": [
+     "Current status of FS Road 31/3160 (a slide closure was reported in research but not independently field-verified) — check MBS road conditions before a trip",
+     "Exact trailhead mileage/coordinates vary slightly between trip reports and were not GPS-verified",
+     "Whether the Bearpaw Mountain/Church Lake area falls inside the Mount Baker Wilderness boundary could not be confirmed from available sources; landManager/Wilderness designation left as previously recorded",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.946165,
+    "peakLng": -121.854185,
+    "trailhead": "FS-3160 road-end (Canyon Creek Road FS-31)",
+    "trailheadLat": 48.957,
+    "trailheadLng": -121.851,
+    "trailheadDirection": "From the FS-3160 road-end parking (via Canyon Creek Road FS-31)"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Mostly trail hiking to Church Lake, then steep off-trail path; only the final ~100m to the summit is scrambling. No rope used in any trip reports found.",
+   "ascender": null,
+   "corrections": "None — consistent across WTA, Bivouac, and personal trip-report accounts as an easy Class 2-3 scramble.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "FS-3160 road-end boot path to Church Lake, then the basin rim to the 6,066 ft knoll",
+     "notes": "From the FS-3160 road-end parking, reached via Canyon Creek Road (FS-31) then FS-3160, the route follows an unmaintained but heavily used boot path — not a numbered Forest Service trail. It climbs steeply through forest for about 0.6-0.7 mile and roughly 400 ft to Church Lake, a small emerald subalpine lake in a cirque directly below Bearpaw's north side. This first stretch is the steepest sustained grade of the day.\n\nSkirt the lake along its east (left) shore; the best flat campsites are on the far side.\n\nBeyond the lake the tread fades into intermittent boot path and cairns through meadows and heather benches. Keep LEFT — west — up the basin rim toward a broad knoll around 6,066 ft on the ridge separating Church Lake's basin from Bearpaw's summit block. That stretch accounts for most of the remaining 900 ft of the route's 1,300 ft total gain over roughly 1.5 miles one way.\n\nChurch Lake is the last reliable water.",
+     "season": "Roughly Jul-Sep; snow patches persist into July on shaded ground and in the summit gullies",
+     "hazards": [
+      "An unmaintained boot path with no numbered trail and no maintained tread past the lake",
+      "Intermittent cairns through meadows and heather with nothing built to follow",
+      "Snow patches into July on shaded ground and in the summit gullies",
+      "A loose scree and dirt descent chute that parties use as a shortcut",
+      "Church Lake is the last water"
+     ],
+     "baseFinding": "CHURCH LAKE IS THE HANDRAIL AND IT IS UNMISSABLE — 0.6 TO 0.7 MILE UP, 400 FT OF GAIN, AND THE STEEPEST GROUND OF THE DAY IS BEHIND YOU WHEN YOU REACH IT. Everything about this route is oriented from the lake. Skirt it on its EAST, left-hand, shore.\n\nABOVE THE LAKE THE INSTRUCTION IS ONE WORD: LEFT. Keep left — west — up the basin rim. The tread is intermittent boot path and cairns through meadows and heather benches and there is nothing built to follow, so the bearing is what you navigate on.\n\nTHE 6,066 FT KNOLL IS THE TOP OF THE APPROACH: a broad high point on the ridge separating the Church Lake basin from the summit block, only a few tens of feet lower than the true summit. Arriving somewhere the ground falls away on every side is the confirmation.\n\nFROM THE KNOLL, DROP SLIGHTLY AND TRAVERSE NORTH. The base of the summit block is across a rocky heather bowl to the north. That short descent is the step people skip; a party that keeps climbing straight off the knoll is on the ridge rather than under the block.\n\nTHE CLIMBING IS THE LAST 300 FT AND NOTHING BELOW IT. From the base of the block, roughly 300 ft of easy Class 2-3 on generally solid rock and blocks, with mild exposure only in the last stretch, reaches the 6,091 ft summit. If you are scrambling for much more than 300 ft you are on the wrong feature.\n\nDESCENT SHORTCUT WORTH KNOWING, because it changes what you should look for on the way up: many parties come down a scree and dirt chute that cuts straight from the ridge to the lake shore, shortcutting the traverse. It is loose. Noting where it tops out on the way up is what makes it usable on the way down."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2–3",
+     "label": "Summit block from the north bowl",
+     "notes": "Roughly 300 ft from the base of the block to the 6,091 ft summit on generally solid rock and blocks, with mild exposure in the last stretch. Snow lingers in the summit gullies into July on shaded ground; early season that can mean an axe for this section."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Church Lake",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "elev": 1045,
+     "name": "Douglas Fir Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "Two and a half miles east of Glacier, low in the valley and a long way below anything you would climb — but it is the campground that serves BOTH halves of this zone, because the Canyon Creek Road turning is only a couple of miles back down the highway. A party bound for Bearpaw Mountain has a rough, slow forest road ahead of them in the morning and this is the sensible place to be the night before; a party bound for Heather Meadows has a longer drive up than they would from the higher campground but a guaranteed bed. Being at a thousand feet in dense timber it is warm, damp and mosquito-prone in early summer, and it gives you no acclimatisation and no view. The upside is that it is open when the high country is not, and that it is the only bookable option on this side of the mountain.",
+     "water": "Piped water in season plus the river. Treat river water.",
+     "permit": "Per-night campground fee, bookable ahead through the national reservation system, so unlike the higher campground you can arrive at ten at night and know you have a site. Campfire rings are provided and are subject to seasonal burn bans. A recreation pass does not cover camping here.",
+     "capacity": "Around thirty sites in old growth beside the North Fork Nooksack, with vault toilets and seasonal drinking water; reservable in advance, which is the reason to choose it over the campground higher up"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

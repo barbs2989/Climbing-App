@@ -1,0 +1,84 @@
+{
+ "id": "wa_mount_terror_north_face",
+ "name": "North Face / North Buttress",
+ "waypoints": [
+  {
+   "lat": 48.68276,
+   "lng": -121.26928,
+   "elev": 600,
+   "name": "Goodell Creek Group Camp Trailhead",
+   "note": "Off SR-20 near Newhalem; park at Upper Goodell Creek Group Camp and pick up the old roadbed/climbers' path paralleling Goodell Creek — North Cascades NP wilderness permit required for overnight camping.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Turn north off Highway 20 directly across from Newhalem Campground onto the unpaved Goodell Creek Road and follow it to the Upper Goodell Creek Group Camp trailhead, at about 600 feet. Park at the group camp and pick up the old roadbed and climbers' path paralleling Goodell Creek. A North Cascades National Park wilderness permit is required for overnight camping; pick it up in person at the Marblemount Wilderness Info Center, since this zone cannot be reserved in advance."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1700,
+   "name": "Terror Creek cairned crossing",
+   "note": "Cairn on the old roadbed marks the log crossing of Terror Creek and the unmarked turnoff onto the Terror Basin climbers' path; a small campsite sits here, easy to walk past in fog.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "Follow the old abandoned roadbed and boot path northeast along Goodell Creek on a gentle grade to a stone cairn and arrow near 1,700 ft that marks the unsigned start of the Terror Basin climbers' path. A small campsite sits here, and the spot is easy to walk past in fog."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5000,
+   "name": "Treeline stream break (~5,000')",
+   "note": "Last reliable running water before the climb steepens above treeline; parties report long dry stretches on the ridge above here in late summer.",
+   "type": "Water",
+   "distMi": 6,
+   "directions": "Take the hard right at the cairn rather than continuing straight on the fainter track along Terror Creek, and climb the steep, well-beaten Terror Basin boot path directly up through old-growth forest, over 3,000 ft in about 1.5 miles, until it breaks out above treeline around 5,000 ft."
+  },
+  {
+   "lat": 48.770167,
+   "lng": -121.304239,
+   "elev": 6200,
+   "name": "~6,200' notch above Terror Basin",
+   "note": "Climbers' path tops out at heather benches and a rock notch on the spur ridge overlooking Terror Basin — the col to descend into camp; often holds moderate snow into midsummer.",
+   "type": "Junction",
+   "distMi": 6.3,
+   "directions": "Above the trees, make a rising traverse across heather benches, slabs and early-season snowfields to the broad saddle and rock notch near 6,200 ft overlooking Terror Basin. Expect loose rock and some route-finding on the upper slabs."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5800,
+   "name": "Terror Basin bivy",
+   "note": "Small flat gravelly basin just below the notch with running water; the zone takes only 6 parties a night and cannot be reserved, so be at Marblemount early in peak season.",
+   "type": "Campsite",
+   "distMi": 7,
+   "directions": "Drop about 400 ft beyond the saddle into the gravelly, flower-filled basin at about 5,800 ft, where several small streams give reliable water."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7700,
+   "name": "5.7 crux chimney/dihedral",
+   "note": "Exposed technical crux on the right (west) rib of the north face where the route breaks from Class 3-4 scrambling into a short 5.7 chimney/dihedral before the summit snow finger.",
+   "type": "Hazard",
+   "distMi": 7.8,
+   "directions": "Cross the Barrier into Crescent Creek Basin, then cross the Ottohorn-Himmelhorn col and descend the crevassed Mustard Glacier into McMillan Cirque to the foot of the face. Start just left of the snowpatch, climb long rightward-traversing third-class ground onto the right (west) rib, follow dihedrals to the darkening west crest, then move back left onto the face to the chimney."
+  },
+  {
+   "lat": 48.7742935,
+   "lng": -121.2995734,
+   "elev": 8151,
+   "name": "Mount Terror summit",
+   "note": "True summit of the Southern Pickets' highest peak; standard descent goes back over the top and down the West Ridge gully into Crescent Creek Basin rather than reversing the face.",
+   "type": "Summit",
+   "distMi": 8,
+   "directions": "Above the chimney, follow the long snow finger up the upper face, scramble the wildly exposed crest, and traverse around a small tower to the notch between the false and true summits. Take the false summit on an exposed easy fifth-class hand traverse, downclimb it, and make the short climb to the true summit."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.7748,
+  "peakLng": -121.2993,
+  "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+  "trailheadLat": 48.68664,
+  "trailheadLng": -121.27121,
+  "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft)"
+ }
+}

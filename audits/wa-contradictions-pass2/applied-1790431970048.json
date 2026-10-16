@@ -1,0 +1,266 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "La Crosse Pass Trail length and gain"
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season: October"
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Where the maintained trail is left"
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Where the maintained trail is left"
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Where the maintained trail is left"
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Where the maintained trail is left"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "September",
+    "reason"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Season window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Trail",
+      "notes": "Duckabush Trailhead to the LaCrosse Pass Trail junction via Duckabush River Trail #803, roughly 15-16 miles with about 3,600 ft of gain over the Little/Big Hump benches.",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 1",
+      "notes": "LaCrosse Pass Trail over the Duckabush/West Fork Dosewallips divide, about 6.4 miles with roughly 2,000 ft of gain.",
+      "pitch": "Pass crossing"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Off-trail talus and heather ridge running roughly a mile south from near LaCrosse Pass to the summit; no roped climbing, straightforward route-finding in good visibility.",
+      "pitch": "Summit scramble"
+     }
+    ],
+    "best_season": "mid-July through October"
+   }
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Trail, Class 1-2",
+      "notes": "Maintained High Pass Trail via Low Pass then High Pass, roughly 2.3 miles one-way; can hold snow/avalanche debris into summer.",
+      "pitch": "Trailhead to High Pass"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Leave the trail near 6,400 ft, traverse/descend about 100-200 ft into the basin, then ascend boulder fields, scree, and dirt to the southwest spur near 6,900 ft.",
+      "pitch": "High Pass basin to SW spur"
+     },
+     {
+      "grade": "Class 3-4",
+      "notes": "Two narrow gully channels about 30 ft apart split the rocky face; take the right-hand one, ascending narrow then open gully through loose, broken rock to the ridge crest.",
+      "pitch": "Summit gully"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Follow the ridge crest, favoring the west side, to the summit.",
+      "pitch": "Ridge to summit"
+     }
+    ],
+    "itinerary": {
+     "cal": "Twin Lakes Rd (FS 3065) can be rough or seasonally gated below the lakes, and the gully often holds snow into July, favoring an ice axe/microspikes for early-season attempts.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Twin Lakes trailhead, follow the High Pass trail north over Low Pass and High Pass, then leave the trail around 6,400 ft and traverse/descend slightly into the basin below Larrabee's south face. Scramble scree and boulders to a gully system at ~6,900 ft (take the right-hand of two narrow chutes), climb loose rock to gain the south ridge, then follow the ridge crest (favoring the west side) to the summit. Descend by reversing the route — the loose, chossy rock makes the descent nearly as slow as the ascent, and a helmet is considered mandatory due to rockfall.",
+       "hours": 8,
+       "miles": 8,
+       "title": "Twin Lakes to summit and back, car-to-car",
+       "gainFt": 4225,
+       "lossFt": 4225,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead area",
+         "detail": "Twin Lakes Rd is rough/rutted and sometimes gated below the lakes; if impassable, park near Yellow Aster Butte TH, adding ~2.3 mi each way and ~1,500 ft of climbing on the walk in."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Twin Lakes, start High Pass trail",
+         "detail": "Head north past the lakes toward Low Pass then High Pass."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Leave trail, enter south-face basin",
+         "detail": "Around 6,400 ft, traverse and drop slightly into the basin facing Larrabee's south side."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Ascend the gully",
+         "detail": "At ~6,900 ft find the two narrow parallel chutes; take the right-hand one, staying climber's right on better rock, to broken terrain and the ridge crest."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit (7,865 ft)",
+         "detail": "Follow the ridge, favoring the west side, to the top."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Reverse the full route; loose rock makes downclimbing the gully slow and rockfall-prone."
+        }
+       ],
+       "objective": "Summit Mount Larrabee via the South Ridge gully"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: roughly 8 miles round trip with about 4,200 ft of gain, typically 7-9 hours including a slow, loose descent; strong parties have done it in 6, casual parties closer to 9-10."
+    },
+    "timing": {
+     "totalHrs": 8,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "From the Twin Lakes trailhead, follow the High Pass trail north over Low Pass and High Pass, then leave the trail around 6,400 ft and traverse/descend slightly into the basin below…",
+       "fromTo": "Twin Lakes to summit and back, car-to-car",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September; August is the most reliable window",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Season opens mid-July; early in the month snow can linger and rivers may still run high",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Trail network and approach terrain still largely snowbound at elevation; river fords are dangerous with peak snowmelt (outside the season window)",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Most stable weather and driest approach/scramble conditions of the year",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Falls outside the season; full winter conditions can arrive on this long, remote approach",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Still within the season; cooler and generally stable, but early-season snow becomes a real possibility by late month",
+       "status": "good"
+      }
+     }
+    },
+    "climate": {
+     "fall": "Cooling temperatures with increasing rain by October; fords can rise again with early storms.",
+     "spring": "Trail can still hold snow above the mid-elevation sections into June, and fords typically run high with snowmelt.",
+     "summer": "The driest and most reliable season (roughly June/July–September), though brush remains thick on the off-trail scramble portion.",
+     "winter": "Heavy valley rain and higher-elevation snow; the access road may be closed or restricted.",
+     "typical": "Marine west coast climate — Pacific storm fronts drive heavy orographic precipitation across the Olympic interior; the Quinault valley is one of the wettest corridors in the range",
+     "bySeason": {
+      "fall": "Rain returns by September/October and river fords become riskier with rising flows",
+      "spring": "Trail still snow-covered at upper elevations; North Shore Road can be affected by spring washouts",
+      "summer": "Driest and most reliable window (June–August); the ascent chute can still hold snow into June",
+      "winter": "Heavy snow and near-constant rain at low elevation; road/trail access frequently disrupted"
+     }
+    }
+   }
+  }
+ ]
+}

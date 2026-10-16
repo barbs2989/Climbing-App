@@ -1,0 +1,58 @@
+{
+ "id": "wa_mount_shuksan_white_salmon_glacier",
+ "name": "White Salmon Glacier",
+ "waypoints": [
+  {
+   "lat": 48.8589,
+   "lng": -121.659,
+   "elev": 3573,
+   "name": "White Salmon Lodge road gate (Mount Baker Highway hairpin)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Glacier, drive the Mount Baker Highway (SR-542) east about 18 miles to the hairpin switchback at roughly 3,500 ft, below the ski area, and park in the small pull-off at the gated White Salmon Road (FS 3075). Parking is very limited and is not allowed on the highway shoulder; do not block the gate. No parking pass is required."
+  },
+  {
+   "lat": 48.848,
+   "lng": -121.615,
+   "elev": 5200,
+   "name": "White Salmon Glacier toe",
+   "note": "Glacier travel begins where the road/approach ends.",
+   "type": "Water",
+   "distMi": 2.5
+  },
+  {
+   "lat": 48.838,
+   "lng": -121.608,
+   "elev": 6800,
+   "name": "Winnie's Slide",
+   "note": "150-200 ft step of steep 40-45° snow/ice onto the Upper Curtis Glacier; schrund can be tricky late season.",
+   "type": "Hazard",
+   "distMi": 4
+  },
+  {
+   "lat": 48.835,
+   "lng": -121.606,
+   "elev": 7800,
+   "name": "Hell's Highway",
+   "note": "Snow chute connecting to the west edge of the Sulphide Glacier.",
+   "type": "Junction",
+   "distMi": 4.5
+  },
+  {
+   "lat": 48.8314,
+   "lng": -121.6031,
+   "elev": 9131,
+   "name": "Mount Shuksan",
+   "type": "Summit",
+   "distMi": 5
+  },
+  {
+   "lat": 48.83444,
+   "lng": -121.6225,
+   "name": "White Salmon Glacier",
+   "type": "Feature",
+   "distMi": null,
+   "elevFt": null
+  }
+ ]
+}

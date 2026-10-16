@@ -1,0 +1,1727 @@
+{
+ "batches": [
+  "b093.json",
+  "b094.json",
+  "b095.json",
+  "b096.json"
+ ],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "name": "White Mountain Scramble",
+   "area": "White Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5706"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "5300 + 4000 + 300 = 9600"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5300"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "roughly 3,500-4,000 ft of hiking gain from the trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach gain to camp is roughly 5,300 ft"
+      }
+     ],
+     "why": "Header gain 5,706 ft disagrees with the itinerary total of 9,600 ft, and day 1's 5,300 ft gain disagrees with its own schedule's 3,500-4,000 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "loss_ft",
+       "says": "5706"
+      },
+      {
+       "field": "itinerary.days[*].lossFt",
+       "says": "300 + 4000 + 5300 = 9600"
+      }
+     ],
+     "why": "Loss column and itinerary loss total differ by ~3,900 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "33.8 (21 mi)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~42-mile round trip"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "17 + 8 + 17"
+      }
+     ],
+     "why": "dist_km is about half the itinerary round trip; page may present both as the trip distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary is round trip.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day 1 hours vs schedule",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "5:30 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "5:00 PM"
+      }
+     ],
+     "why": "5:30 AM to 5:00 PM is 11.5 h, not 9 h.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Honeymoon Meadows to Anderson Pass leg",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "~1.2 mi and 700 ft of gain from Honeymoon Meadows"
+      },
+      {
+       "field": "waypoints[2].elev / distMi",
+       "says": "3527 ft, 14.1 mi"
+      },
+      {
+       "field": "waypoints[3].elev / distMi",
+       "says": "4464 ft, 16 mi"
+      }
+     ],
+     "why": "Waypoints give ~1.9 mi and ~940 ft between camp and pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crevasse / glacier hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel on this route"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Remnant/unnamed glacier and permanent snowfield in the north cirque ... crevasse and steep-snow hazard"
+      }
+     ],
+     "why": "KNOWN HAZARDS lists a crevasse hazard while SEASONAL HAZARDS says N/A; the glacier is off the standard line but the page does not reconcile it.",
+     "internal_resolution": "approach_variants baseFinding says gaining a glacier basin means you are off route, so N/A for the route is likely right.",
+     "needs_research": false
+    },
+    {
+     "fact": "Days of approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "multi-day approach (likely 2+ days each way) via Duckabush / La Crosse Basin / O'Neil Pass"
+      },
+      {
+       "field": "itinerary.days[0]",
+       "says": "one 9-hour day to Honeymoon Meadows via West Fork Dosewallips"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day ... round trip up the West Fork Dosewallips"
+      }
+     ],
+     "why": "Partner requirements describe a 2+ day-each-way Duckabush approach; the itinerary, approach_logistics and waypoints use a one-day Dosewallips approach.",
+     "internal_resolution": "Itinerary, timing, waypoints and trailhead all agree on the one-day Dosewallips approach.",
+     "needs_research": false
+    },
+    {
+     "fact": "Scramble grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "Class 2-3 scrambling on unmarked terrain"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "moderate fall exposure on Class 2-3 terrain"
+      }
+     ],
+     "why": "Partner and seasonal-hazard fields say Class 2-3 where the grade is Class 2.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rope note describes a different White Mountain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "this particular White Mountain (Olympic Mountains, Grand Valley/Hurricane Ridge area)"
+      },
+      {
+       "field": "overview",
+       "says": "sits in the remote southern interior of Olympic National Park ... near O'Neil Pass, Anderson Pass"
+      }
+     ],
+     "why": "The rope note places the peak in the Grand Valley/Hurricane Ridge area, which is not where this peak is.",
+     "internal_resolution": "Overview, waypoints and coordinates put it in the southern interior near Anderson Pass.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "name": "Standard Scramble (Appleton Pass / Boulder Lake approach)",
+   "area": "Mount Appleton",
+   "contradictions": [
+    {
+     "fact": "Which ridge / direction from the pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow a climbers' path north up the ridge crest toward Mount Appleton"
+      },
+      {
+       "field": "rope_note",
+       "says": "South Ridge scramble via Appleton Pass"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "follow a boot path along the ridge crest east toward Appleton"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "via Appleton Pass and the East Ridge climber's path"
+      },
+      {
+       "field": "beta",
+       "says": "Appleton Pass (just southeast of the peak)"
+      }
+     ],
+     "why": "The itinerary calls the line the East Ridge heading east; other fields and coordinates put the summit north-northwest of the pass on the south ridge.",
+     "internal_resolution": "Pass (47.938,-123.723) to summit (47.951,-123.733) is NNW; approach, rope_note, waypoints and bivy agree on a north/south-ridge line.",
+     "needs_research": false
+    },
+    {
+     "fact": "Days required",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days",
+       "says": "single day, 9 hr car-to-car"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Long multi-hour approach best split over 2+ days ... then a separate scramble day"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Multi-day backpacking fitness"
+      },
+      {
+       "field": "turnaround",
+       "says": "Set a firm turnaround time before leaving camp"
+      }
+     ],
+     "why": "Partner requirements and turnaround assume an overnight camp; itinerary and timing are a single car-to-car day.",
+     "internal_resolution": "Itinerary and timing both give a 9-hour single day; itinerary.cal offers an overnight only as an alternative.",
+     "needs_research": false
+    },
+    {
+     "fact": "Scramble grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "Class 2 talus and loose-rock scrambling"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "typical of Class 2 terrain"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "then Class 2 ground onto the broad summit ridge"
+      }
+     ],
+     "why": "Partner and seasonal-hazard fields understate the Class 3 grade stated in grade, hazards and approach.",
+     "internal_resolution": "grade, hazards, approach and watch_out agree on Class 3.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead the party returns to",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "the long trail approach back to Madison Falls"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Sol Duc Trailhead (Olympic NP)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].label",
+       "says": "Back at Sol Duc Trailhead"
+      }
+     ],
+     "why": "Turnaround names Madison Falls (the Elwha-side closure) as the return point, but the route starts and ends at Sol Duc.",
+     "internal_resolution": "Every other field uses the Sol Duc trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit method",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue wilderness permit required for any overnight stay"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "a self-issue wilderness permit, filled out at the trailhead"
+      },
+      {
+       "field": "access.permit",
+       "says": "Overnight stays require a reserved Wilderness Permit via recreation.gov"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "quota-controlled, reserved for a specific night"
+      }
+     ],
+     "why": "Trailhead waypoint says self-issue at the trailhead; access and bivy say reserved, quota-controlled permits.",
+     "internal_resolution": "access, overnight_permit and bivy agree on advance reservation.",
+     "needs_research": true
+    },
+    {
+     "fact": "Boulder Lake location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Boulder Lake (below Appleton's south side)"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "maintained trail continues north to Boulder Lake"
+      }
+     ],
+     "why": "Beta puts Boulder Lake on Appleton's south side; the pass waypoint says it lies north of the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "1650"
+      },
+      {
+       "field": "approach",
+       "says": "NPS figures: trailhead 2,000 ft"
+      }
+     ],
+     "why": "350 ft disagreement on trailhead elevation.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction of the Sol Duc River Trail",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "Follow the Sol Duc River Trail west/north about 4.9 miles"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "junction at -123.750 vs trailhead -123.836 (east/southeast)"
+      }
+     ],
+     "why": "The river trail runs east/southeast from the trailhead, not west/north.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season start and June",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "late Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "risky — Full snow conditions ... outside the stated best-season window"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "only climbed in the dry mid-July-September window"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "Moderate"
+      }
+     ],
+     "why": "Season header includes late June while seasonal guidance calls June snowbound and outside the window, and the avalanche zone is N/A yet June is rated Moderate.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "name": "Southeast Route via Hurricane Ridge / Cat Basin",
+   "area": "Mount Carrie",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Aug-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July through August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July",
+       "says": "good"
+      },
+      {
+       "field": "best_season",
+       "says": "Late July through mid-September"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best mid-July through mid-September"
+      },
+      {
+       "field": "climate.bySeason.summer",
+       "says": "Jul–Sep is the reliable window"
+      }
+     ],
+     "why": "The season header excludes July while the optimal window and several fields include late July.",
+     "internal_resolution": "Most fields (best_season, seasonal_guidance, itinerary.cal, climate) include July; season 'Aug-Sep' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route name vs content",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Southeast Route via Hurricane Ridge / Cat Basin"
+      },
+      {
+       "field": "overview",
+       "says": "there is no trail or known route connecting Hurricane Ridge to Cat Basin or Mount Carrie"
+      },
+      {
+       "field": "aspect",
+       "says": "SE"
+      },
+      {
+       "field": "beta",
+       "says": "the route follows the southwest ridge of Mount Carrie"
+      }
+     ],
+     "why": "The name says Hurricane Ridge and SE, but the row says there is no Hurricane Ridge route and climbs the southwest ridge / south-facing basin.",
+     "internal_resolution": "Overview, approach, waypoints and approach_variants all use Sol Duc and the SW ridge.",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of Cat Basin and the Catwalk",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "across the airy \"Catwalk\" ridge (Class 3) to Cat Basin/Boston Charlie's Camp"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "across the CATWALK to Cat Basin"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "gain the High Divide, drop into Cat Basin, cross the exposed class 3 Catwalk past Boston Charlie's Camp"
+      },
+      {
+       "field": "pitch_detail[1].pitch",
+       "says": "Heart Lake to Cat Basin (before 'The Cat Walk')"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Cat Basin ... last sheltered ground on the approach before the route turns cross-country beneath Cat Peak"
+      }
+     ],
+     "why": "Approach and approach_variants put Cat Basin beyond the Catwalk; the itinerary, pitch_detail and bivy put it before.",
+     "internal_resolution": "Itinerary, pitch_detail, bivy and the Cat Basin waypoint (west of Cat Peak) put Cat Basin before the Catwalk.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction along the High Divide",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "traverses south along the High Divide for 3 miles"
+      },
+      {
+       "field": "approach",
+       "says": "south along High Divide (+3 mi) to the maintained trail's end near Bogachiel Peak"
+      },
+      {
+       "field": "waypoints",
+       "says": "Cat Basin -123.708 and Carrie -123.649, both east of the trailhead/Heart Lake"
+      }
+     ],
+     "why": "Prose sends parties south toward Bogachiel Peak (west of Heart Lake), but Cat Basin and Carrie lie east.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach days",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "typically a 2+ day backpack (roughly 15+ off-trail miles ...) to a high camp"
+      },
+      {
+       "field": "itinerary.days[0]",
+       "says": "7 mi on trail to Heart Lake in 4.5 hr"
+      },
+      {
+       "field": "approach",
+       "says": "One-way distance from the trailhead to the summit is roughly 13 miles"
+      }
+     ],
+     "why": "Partner requirements claim 2+ days and 15+ off-trail miles; itinerary reaches camp in one 7-mile trail day and the whole one-way trip is ~13 mi.",
+     "internal_resolution": "Itinerary, timing and approach agree on one approach day.",
+     "needs_research": false
+    },
+    {
+     "fact": "Water beyond Heart Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[3]",
+       "says": "No water between Heart Lake and the summit"
+      },
+      {
+       "field": "bivy[1].water",
+       "says": "Streams in the basin early in the season"
+      },
+      {
+       "field": "bivy[3].water",
+       "says": "a shallow sinkhole pond"
+      }
+     ],
+     "why": "Hazards say no water beyond Heart Lake; bivy entries list seasonal streams and a pond.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Camp for the Catwalk crossing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "Start early from Boston Charlie's Camp to ensure you cross the Catwalk in daylight"
+      },
+      {
+       "field": "bivy[3].notes",
+       "says": "first camp on the far side of the Catwalk"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].label",
+       "says": "Leave Heart Lake camp"
+      }
+     ],
+     "why": "The tip implies starting at Boston Charlie's and then crossing the Catwalk, but that camp is beyond the Catwalk and the itinerary starts from Heart Lake.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "name": "Standard Route (Carrie Glacier / High Divide)",
+   "area": "Mount Carrie",
+   "contradictions": [
+    {
+     "fact": "Aspect / face of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "SW"
+      },
+      {
+       "field": "face",
+       "says": "Southwest ridge / Catwalk approach"
+      },
+      {
+       "field": "beta",
+       "says": "this glacier variation gains the northeast cirque and Carrie Glacier ... rather than the direct southwest ridge scramble"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "gains the peak's NORTHEAST CIRQUE"
+      }
+     ],
+     "why": "Aspect and face say southwest, but the route climbs the northeast cirque and Carrie Glacier.",
+     "internal_resolution": "beta, baseFinding, itinerary and hazards agree on the NE-cirque glacier line.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the route crosses the Catwalk",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Summit approach similar to the SE route, but entry via glacier instead of exposed Catwalk"
+      },
+      {
+       "field": "approach",
+       "says": "an unmaintained boot path crosses ... the \"Catwalk\""
+      },
+      {
+       "field": "pitch_detail[1].pitch",
+       "says": "The Cat Walk"
+      },
+      {
+       "field": "hazards[4]",
+       "says": "exposed ledges on Cat Peak's south side just before the Catwalk"
+      }
+     ],
+     "why": "Beta says this route avoids the Catwalk; the approach, pitch_detail, waypoints and hazards route it over the Catwalk.",
+     "internal_resolution": "Approach, pitch_detail, waypoints and hazards include the Catwalk.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction and length of the High Divide leg",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow High Divide south/west about 3 miles to where the maintained trail ends near Bogachiel Peak"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "High Divide / Cat Basin Trail junction, distMi 8.3 (0.45 mi past Heart Lake), 'Maintained trail ends'"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "a boot path continues west along the divide crest toward Cat Peak"
+      },
+      {
+       "field": "waypoints[5]",
+       "says": "Cat Peak at -123.680, east of the junction (-123.738)"
+      }
+     ],
+     "why": "Prose puts the trail end ~4.5 mi past Heart Lake near Bogachiel Peak (west); the waypoint puts it 0.45 mi past Heart Lake, and Cat Peak lies east, not west.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp plan / number of days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "most parties camp at Heart Lake or Cat Basin and climb Carrie's summit as a long day from there"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 4-day ... two days of approach ... to a high camp near the Carrie Glacier's toe"
+      }
+     ],
+     "why": "The approach describes a Heart Lake/Cat Basin base camp; the itinerary uses a glacier-toe high camp over 4 days.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead pass and permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Northwest Forest Pass and a self-issue wilderness permit are required"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle ..."
+      },
+      {
+       "field": "access.permit",
+       "says": "reserved via Recreation.gov; the quota season runs May 15–Oct 15"
+      }
+     ],
+     "why": "The trailhead says NW Forest Pass and self-issue permit; access says NPS entrance fee and a reserved quota permit.",
+     "internal_resolution": "access, passRequired and overnight_permit agree on NPS entrance plus a reserved permit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "20.9 (13 mi)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 31-mile round trip"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "14.5"
+      }
+     ],
+     "why": "dist_km matches neither the 31-mi round trip nor the 14.5-mi one-way waypoint distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier head location / elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Carrie Glacier (6,800 ft) ... in the northeast cirque"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "glacier head just south of the summit"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "6400"
+      }
+     ],
+     "why": "Pitch detail puts the glacier head south of the summit, while beta places the glacier in the NE cirque flowing NNE.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "name": "Standard Route",
+   "area": "Mount Fairchild",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Start at the Whiskey Bend trailhead ... Long Ridge Trail"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "climb over or skirt Mount Fitzhenry ... ascend the remnant to Fairchild's summit"
+      },
+      {
+       "field": "timing.sectionBreakdown",
+       "says": "Whiskey Bend to Long Ridge camp / Fitzhenry traverse / Hike out to Whiskey Bend"
+      },
+      {
+       "field": "approach",
+       "says": "Start at the Sol Duc River Trailhead ... Deer Lake ... High Divide ... Cat Basin junction ... Fairchild Glacier"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Sol Duc Trailhead (Olympic NP)"
+      },
+      {
+       "field": "descent_text",
+       "says": "retrace the trail ... back down to Sol Duc Falls and the Sol Duc River Trailhead"
+      }
+     ],
+     "why": "The itinerary and timing describe an Elwha/Whiskey Bend/Long Ridge/Fitzhenry approach; the approach, waypoints, descent and trailhead describe Sol Duc/High Divide/Carrie.",
+     "internal_resolution": "Approach, approach_variants, descent_text, waypoints and trailhead all use Sol Duc; itinerary and timing are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trail used to reach the Bailey Range",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[2]",
+       "says": "Appleton Pass Trail junction, distMi 4.9"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Appleton Pass, distMi 7.3: leave the maintained trail here"
+      },
+      {
+       "field": "approach",
+       "says": "branch left onto the Deer Lake Trail ... High Divide ... leave the maintained trail system at the Cat Basin junction (~10.2 mi)"
+      }
+     ],
+     "why": "The waypoints route through Appleton Pass; the approach uses Deer Lake and the High Divide to the Cat Basin junction.",
+     "internal_resolution": "approach, approach_variants and descent_text agree on Deer Lake / High Divide.",
+     "needs_research": false
+    },
+    {
+     "fact": "What the Catwalk is",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the exposed, loose-talus sidehill traverse across Carrie's south face known as \"the Catwalk\""
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "The Cat Walk (Cat Peak traverse)"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "east end of the Cat Walk"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "exposed 'Catwalk' ridge traverse"
+      }
+     ],
+     "why": "The approach calls the Catwalk the sidehill across Carrie's south face; waypoints and hazards place it on Cat Peak, before Boston Charlie's.",
+     "internal_resolution": "Waypoints, bivy and sibling routes all put the Catwalk between Cat Peak and Boston Charlie's.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "38.6 (24 mi)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~24 mi RT"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "9 + 3.5 + 6 + 12.5 = 31"
+      },
+      {
+       "field": "approach",
+       "says": "One-way distance to this point is roughly 12 miles"
+      },
+      {
+       "field": "waypoints[8].distMi",
+       "says": "15.5"
+      }
+     ],
+     "why": "The header's itinerary sum (31 mi) disagrees with dist_km, the totalNote and the approach (24 mi), and the summit waypoint implies 31 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "9300"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "sum 9300"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~8,000 ft gain"
+      },
+      {
+       "field": "approach",
+       "says": "consistent with the ~8,000 ft round-trip gain"
+      }
+     ],
+     "why": "Prose says ~8,000 ft; the column and itinerary days say 9,300 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier / crevasse severity",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "Minor/localized - the route crosses lingering snowfields near the summit rather than a heavily crevassed glacier"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "crevassed Fairchild and Carrie Glaciers; snow bridges become unstable"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "Rope up ... crevasse hazard"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[2]",
+       "says": "Basic glacier/crevasse-hazard awareness for the snowfields"
+      }
+     ],
+     "why": "Seasonal hazards and partner requirements downplay the glacier to snowfields; hazards, gear and waypoints call for roped crevassed-glacier travel.",
+     "internal_resolution": "gear, hazards, approach and waypoints agree on roped glacier travel.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A demanding 4-day, 3-night"
+      },
+      {
+       "field": "watch_out[2]",
+       "says": "realistically a 3-5 day objective"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "multi-day (often 5-8 day)"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "food/fuel for a week"
+      }
+     ],
+     "why": "Partner requirements' 5-8 days and a week of food do not match the 4-day itinerary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead pass and permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Northwest Forest Pass required, self-issue wilderness permit at the kiosk"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee"
+      },
+      {
+       "field": "access.permit",
+       "says": "reserve on Recreation.gov ... or through the Wilderness Information Center"
+      }
+     ],
+     "why": "The trailhead waypoint names the wrong pass and a self-issue permit, contradicting the access fields.",
+     "internal_resolution": "access fields agree on NPS entrance and a reserved permit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Aspect / face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "SW"
+      },
+      {
+       "field": "face",
+       "says": "Southwest Ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "reach the upper Fairchild Glacier at roughly 6,700 ft on the northeast side of the Carrie–Fairchild ridge"
+      }
+     ],
+     "why": "Face/aspect say southwest; the described line is the NE-flowing Fairchild Glacier.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "name": "Bailey Range Scramble",
+   "area": "Mount Mathias",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Drive the paved Upper Hoh Road ... Hike the Hoh River Trail 17.2 miles to Glacier Meadows ... Blue Glacier ... Snow Dome"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Hoh Ranger Station (578 ft) to Glacier Meadows"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "point-to-point traverse from Sol Duc to the Hoh, roughly 55 miles"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "start of the Sol Duc/High Divide approach into the Bailey Range"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "High Divide ... distMi 9"
+      }
+     ],
+     "why": "The approach, trailhead and pitch_detail describe a Hoh River out-and-back via the Blue Glacier; the itinerary, timing and waypoints describe a 5-day Sol Duc-to-Hoh Bailey Range traverse, and the Hoh trailhead waypoint says it starts the Sol Duc approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel required",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel required on the Class 3 scramble route"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "gear",
+       "says": "Ice axe, Crampons, 30m glacier-travel rope, Crevasse rescue kit"
+      },
+      {
+       "field": "pro_needs",
+       "says": "rope, harness, and crevasse-rescue kit for the Blue Glacier and Hoh Glacier crossings"
+      },
+      {
+       "field": "what_to_bring[1]",
+       "says": "ice axe (early season)"
+      }
+     ],
+     "why": "Seasonal hazards say no glacier travel, but every approach variant crosses the Blue/Hoh Glaciers roped; what_to_bring treats the axe as early-season only.",
+     "internal_resolution": "gear, beta, approach, pro_needs and the itinerary all require roped glacier travel.",
+     "needs_research": false
+    },
+    {
+     "fact": "Scramble grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 4"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "exposed Class 3 scrambling with a pack"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Committing, remote Class 3 terrain"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "the Class 3 scramble route"
+      }
+     ],
+     "why": "Partner and seasonal fields say Class 3; the grade, rock_grade, beta and watch_out say Class 4.",
+     "internal_resolution": "grade, rock_grade, beta, pitch_detail and watch_out agree on Class 4.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6130"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "4000 + 2500 + 2500 + 2200 + 200 = 11400"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~11,000 ft of gain"
+      }
+     ],
+     "why": "The header gain is ~46% below the itinerary total.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "1950"
+      },
+      {
+       "field": "approach",
+       "says": "Hoh Ranger Station (578 ft)"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "Hoh River Trailhead (578 ft)"
+      }
+     ],
+     "why": "The Hoh trailhead is 1,950 ft in the waypoint vs 578 ft in the prose.",
+     "internal_resolution": "Approach, pitch_detail and trailheadDirection agree on 578 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to first camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "to a high camp near Eleven Bull Basin"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "15 (Eleven Bull Basin)"
+      }
+     ],
+     "why": "The day-1 itinerary reaches Eleven Bull Basin in 9 mi; the waypoint puts it at mile 15.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "cross the Hoh Glacier back to Camp Pan, then descend via the Blue Glacier ... to Glacier Meadows Camp"
+      },
+      {
+       "field": "itinerary.days[3].note",
+       "says": "Reverse the climb, re-rope for the Blue Glacier, and descend the moraine to camp at Glacier Meadows"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the ascent route."
+      }
+     ],
+     "why": "Descent text returns to Camp Pan (Bailey side) and then descends the Blue Glacier, mixing the two approaches; 'Reverse the ascent route' does not say which.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best conditions: snow vs snow-free",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "enough snow coverage on the approach gullies/snow finger before the Blue and Hoh Glaciers go to bare ... ice"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July through September - the short window when the Bailey Range is reliably snow-free"
+      }
+     ],
+     "why": "One field prefers the window while snow remains (mid-July to mid-Aug); the other defines optimal as snow-free, extending through September.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "name": "Ruth Peak Scramble",
+   "area": "Ruth Peak",
+   "contradictions": [
+    {
+     "fact": "Distance and gain to Eleven Bull Basin",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 15 mi and ~6,000 ft of cumulative gain from the trailhead"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0..1].gainFt",
+       "says": "2900 + 1300 = 4200"
+      }
+     ],
+     "why": "The approach's 15 mi / 6,000 ft to camp disagrees with the waypoint (12 mi) and the itinerary (4,200 ft gain to camp).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain framing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 6,500 ft of cumulative gain each way"
+      },
+      {
+       "field": "gain_ft",
+       "says": "6541"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "sum 6541 for the whole trip"
+      }
+     ],
+     "why": "The totalNote says 6,500 ft each way; the column and days total 6,541 ft for the whole round trip.",
+     "internal_resolution": "gain_ft equals the itinerary day sum, so 'each way' is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Leg distances",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "9 (to Heart Lake)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "7.85 (Heart Lake)"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "6 (Heart Lake to Eleven Bull)"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "12 (4.15 mi past Heart Lake)"
+      },
+      {
+       "field": "dist_km",
+       "says": "26.55 (16.5 mi)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 33-mile round trip"
+      }
+     ],
+     "why": "The itinerary legs are longer than the waypoint distances; the round trip of 33 mi vs waypoints about 26 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit method",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-register for a wilderness camping permit here"
+      },
+      {
+       "field": "access.permit",
+       "says": "reserved via Recreation.gov ... it can't be booked through the standard online system — call the Wilderness Information Center"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Book ... by phone with the WIC"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "wilderness permit (recreation.gov quota)"
+      }
+     ],
+     "why": "The trailhead says self-register; access, pro_tips and bivy say phone the WIC; itinerary.cal and part of access.permit say recreation.gov.",
+     "internal_resolution": "Cross-country zone permits by phone per pro_tips, watch_out and bivy; self-registration at the trailhead is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "commonly via Appleton Pass, Cat Basin, and Ferry Basin/Eleven Bull Basin"
+      },
+      {
+       "field": "approach",
+       "says": "Heart Lake ... High Divide/Bailey Range junction ... Catwalk ... Eleven Bull Basin"
+      }
+     ],
+     "why": "Beta names Appleton Pass and Ferry Basin; the approach, itinerary and waypoints go via Heart Lake and the High Divide, and Ferry Basin lies beyond Eleven Bull.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Sol Duc Road winter closure",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "typically November-May"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically November through May"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "It opens with the season, roughly late March into late October"
+      }
+     ],
+     "why": "The road is said to be gated until May while the campground on that road opens in late March.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "name": "Standard Route",
+   "area": "Anderson's Thumb",
+   "contradictions": [
+    {
+     "fact": "Where the Thumb is relative to Flypaper Pass / Eel Glacier",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you are standing in the notch of Flypaper Pass itself with the Eel Glacier falling away east, you have walked past it"
+      },
+      {
+       "field": "approach",
+       "says": "from the pass area, scramble talus and ledges a short distance to its base"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "traverse above Anderson Lake to Flypaper Pass, drop onto the Eel Glacier and cross to the base of the spire"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "rappel ... back to the glacier"
+      },
+      {
+       "field": "descent",
+       "says": "Rappel the spire, then reverse the Eel Glacier crossing"
+      }
+     ],
+     "why": "The baseFinding puts the Thumb short of Flypaper Pass on the Anderson basin side (no Eel Glacier crossing); the itinerary, timing and descent cross the Eel Glacier to reach it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel anchor",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "rappel off fixed anchor/bollard"
+      },
+      {
+       "field": "descent_text",
+       "says": "no documented fixed hardware, expect a natural anchor"
+      },
+      {
+       "field": "approach_variants[0].hazards[2]",
+       "says": "No fixed anchors on the spire"
+      }
+     ],
+     "why": "The itinerary says there is a fixed rappel anchor; the descent and approach variant say there is none.",
+     "internal_resolution": "descent_text and approach_variants agree on no fixed anchors.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit waypoint is another peak",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[6]",
+       "says": "Mount Anderson summit, Summit, 7330 ft"
+      },
+      {
+       "field": "area.elevation_ft",
+       "says": "6785"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "6785"
+      }
+     ],
+     "why": "The only Summit waypoint is Mount Anderson at 7,330 ft, so the weather panel/waypoints show a different summit and height than the 6,785 ft Thumb.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "700"
+      },
+      {
+       "field": "waypoints[0].elevFt",
+       "says": "1600"
+      }
+     ],
+     "why": "One waypoint carries two different elevations 900 ft apart.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distances",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "31.38 (19.5 mi)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 39-mile round trip"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "15"
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "20"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "17 (Anderson Tarn high camp)"
+      }
+     ],
+     "why": "Day 1 in (15 mi) and day 3 out (20 mi) cover the same line, while the waypoints put camp at mile 17; dist_km is half the round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Grade status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 4 / low 5th"
+      },
+      {
+       "field": "beta",
+       "says": "Treat it as an optional, unrated scramble"
+      }
+     ],
+     "why": "Beta calls it unrated, while the grade columns give Class 4 / low 5th.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel beta existence",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "No rappel/descent beta was found for this route"
+      },
+      {
+       "field": "descent_text",
+       "says": "a single rappel from the summit block back down to the notch/col ... 30m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "1"
+      }
+     ],
+     "why": "The rope note says there is no rappel beta while the descent describes a specific rappel.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Timing of the Flypaper Pass snow finger",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "this section is best done in spring or early summer before it melts out"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach recommends spring/early summer, while the season and guidance start in July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Anderson Glacier present or gone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[2]",
+       "says": "Anderson Glacier itself vanished by ~2011"
+      },
+      {
+       "field": "obj_haz[1]",
+       "says": "approach crosses glaciated terrain (Anderson Glacier / Eel Glacier) with crevasse and moat hazards"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "the route crosses the Anderson/Eel Glacier"
+      }
+     ],
+     "why": "Some fields say the Anderson Glacier is gone; others list crevasse hazard on it.",
+     "internal_resolution": "overview, hazards, pro_tips and watch_out agree it is gone.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wrong range in pro_needs",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_needs",
+       "says": "this kind of small, lesser-documented Cascades summit"
+      },
+      {
+       "field": "overview",
+       "says": "on the Mount Anderson massif in the central Olympics"
+      }
+     ],
+     "why": "pro_needs calls it a Cascades summit, but the peak is in the Olympics.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "name": "Standard Scramble (Switchback / Klahhane Ridge approach)",
+   "area": "Mount Angeles",
+   "contradictions": [
+    {
+     "fact": "Where the scramble leaves the trail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "continuing to Victor Pass (5,850 ft) where the true summit of Mount Angeles rises directly to the west. Leave the maintained trail here"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "bear left and uphill to the west, where the maintained tread carries on right along the ridge toward Victor Pass"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "the right fork continues along Klahhane Ridge toward Victor Pass/Lake Angeles and is not the summit route"
+      }
+     ],
+     "why": "Beta leaves the trail at Victor Pass; the waypoints and baseFinding say the Victor Pass branch is the wrong way.",
+     "internal_resolution": "Waypoints, approach, climbing_route and baseFinding agree on the unsigned fork ~2.3-2.5 mi from the visitor center.",
+     "needs_research": false
+    },
+    {
+     "fact": "Switchback Trail gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "about 1,500 ft in 1.5 miles"
+      },
+      {
+       "field": "approach",
+       "says": "gains about 700-800 ft in 0.6 mi"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "gains close to 1,000 ft in under a mile"
+      }
+     ],
+     "why": "Three different gain/distance figures are given for the same Switchback Trail.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Scramble grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3-4 (exposed scramble)"
+      },
+      {
+       "field": "beta",
+       "says": "scramble class 3-4 terrain"
+      },
+      {
+       "field": "pro_needs",
+       "says": "the crux is a short exposed Class 3 scramble"
+      }
+     ],
+     "why": "The grade column says Class 2-3, rock_grade and beta say Class 3-4, and the rest say Class 3.",
+     "internal_resolution": "Hazards, pro_needs, itinerary and partner_requirements agree on Class 3.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-block ascent vs descent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "do NOT reverse the ascent gully — ... downclimbing the left (west) side"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the route: downclimb the loose Class 3 summit block"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "reverse the same line to descend"
+      }
+     ],
+     "why": "The descent text forbids reversing the ascent line; the descent column and itinerary say to reverse it.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Gain vs loss on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2550"
+      },
+      {
+       "field": "loss_ft",
+       "says": "2100"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2100"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "the route's 2,100 ft of gain"
+      }
+     ],
+     "why": "A round trip to the same trailhead cannot gain 2,550 ft and lose 2,100 ft; the itinerary and prose say 2,100 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of fork and base of summit block",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "6150 (climbers' trail fork)"
+      },
+      {
+       "field": "approach",
+       "says": "this final push is only about 0.6 mi but does roughly 800 ... feet of gain ... topping out around 6,000 ft at the base of the summit block"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "6410 (crux step near top of scree bowl)"
+      }
+     ],
+     "why": "An 800-ft climb from a 6,150-ft fork cannot top out at 6,000 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Heart o' the Hills reservations",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "reserve a site on Recreation.gov or take a first-come site"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "first-come, first-served with no reservations"
+      }
+     ],
+     "why": "One field says the campground is reservable; the other says no reservations.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "5 (3.1 mi)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.3 round trip"
+      }
+     ],
+     "why": "dist_km is one-way while the itinerary is round trip.",
+     "internal_resolution": "Waypoint summit distMi 3.125 confirms dist_km is one-way.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

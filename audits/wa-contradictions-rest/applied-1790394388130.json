@@ -1,0 +1,334 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "Elwha Snowfinger exit"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    3,
+    "note"
+   ],
+   "fact": "Elwha Snowfinger exit"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Summit ascent line"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "title"
+   ],
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "fromTo"
+   ],
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking pass at Sol Duc"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit channel"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Wilderness permit channel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_ferry_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Olympic NP requires a wilderness camping permit (quota zones at Cream Lake, Ferry Basin, Elwha Basin) plus a bear canister; the range is typically snow-free and passable July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A moderate approach day up the maintained Sol Duc trail (or Boulder Creek/Appleton Pass if starting from Elwha/Madison Falls) to a camp at Heart Lake, staging for the cross-country push over High Divide the next day. Trail is well graded and shaded through old growth and meadow.",
+       "hours": 4,
+       "miles": 8,
+       "title": "Approach to Heart Lake",
+       "gainFt": 2844,
+       "lossFt": 300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Establish first camp below High Divide"
+      },
+      {
+       "n": 2,
+       "note": "The big cross-country day: up onto High Divide, over/around Cat Peak, across the exposed Catwalk arete to Mount Carrie's shoulder, then down into Ferry Basin. Most parties drop packs at a flat near Ferry Basin and do Mount Ferry as a side excursion via the southeast ridge (loose 'dagger' scree), descending the easier south slope back to the Bailey Range route before continuing to camp near Stephen/Cream Lake.",
+       "hours": 10.5,
+       "miles": 12,
+       "title": "High Divide, the Catwalk, and Mount Ferry",
+       "gainFt": 4500,
+       "lossFt": 3400,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Heart Lake",
+         "detail": "Climb to High Divide and begin cross-country travel toward Cat Peak."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Cross the Catwalk",
+         "detail": "Exposed arete linking Cat Peak and Mount Carrie; scramble with care, especially if wet."
+        },
+        {
+         "time": "+6 hr",
+         "label": "Drop packs in Ferry Basin",
+         "detail": "Stage below Mount Ferry for an unladen summit push."
+        },
+        {
+         "time": "+6.5 hr",
+         "label": "Ascend SE ridge scree",
+         "detail": "Loose talus/scree to the summit; the standard South Slopes/SE ridge line."
+        },
+        {
+         "time": "+7.5 hr",
+         "label": "Summit Mount Ferry",
+         "detail": "Round trip from Ferry Basin runs roughly 2-2.5 hours."
+        },
+        {
+         "time": "+8.5 hr",
+         "label": "Descend south slope, continue to camp",
+         "detail": "Easier, milder terrain regains the Bailey Range route toward Stephen/Cream Lake."
+        }
+       ],
+       "objective": "Cross into the Bailey Range and tag Mount Ferry's summit"
+      },
+      {
+       "n": 3,
+       "note": "Continue south along the Bailey Range crest past Stephen Peak's flanks and Bear Pass, dropping into the alpine bowls of Queets Basin. This is arguably the most scenic and remote stretch, entirely off-trail with intermittent snowfields.",
+       "hours": 9.5,
+       "miles": 10,
+       "title": "Stephen Lake / Cream Lake to Queets Basin",
+       "gainFt": 3000,
+       "lossFt": 2000,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Traverse the southern Bailey crest to Dodwell-Rixon Pass"
+      },
+      {
+       "n": 4,
+       "note": "From Dodwell-Rixon Pass, descend the Elwha Snowfinger (a permanent snow gully) to reconnect with maintained trail at Low Divide, then continue to a trail camp. Elevation loss dominates this day after three days of off-trail travel.",
+       "hours": 9,
+       "miles": 9,
+       "title": "Dodwell-Rixon Pass to Low Divide",
+       "gainFt": 400,
+       "lossFt": 4000,
+       "packLb": 36,
+       "schedule": [],
+       "objective": "Descend the Elwha Snowfinger to the Low Divide trail network"
+      },
+      {
+       "n": 5,
+       "note": "An easy, well-graded final day of maintained trail descending along the river to the trailhead, closing the loop/traverse.",
+       "hours": 5,
+       "miles": 5,
+       "title": "Exit to trailhead",
+       "gainFt": 0,
+       "lossFt": 2200,
+       "packLb": 30,
+       "objective": "Hike out via the North Fork Quinault (or Elwha) trail"
+      }
+     ],
+     "totalNote": "A 5-day, ~44-mile off-trail traverse of the Bailey Range with Mount Ferry summited as a side trip from Ferry Basin on day 2; most parties enter via Sol Duc and exit via Low Divide/North Fork Quinault (or reverse), with 3 nights of true wilderness camping."
+    },
+    "timing": {
+     "totalHrs": 38,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": 23.5,
+     "approachTimeHrs": 4,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4,
+       "note": "A moderate approach day up the maintained Sol Duc trail (or Boulder Creek/Appleton Pass if starting from Elwha/Madison Falls) to a camp at Heart Lake, staging for the cross-country…",
+       "fromTo": "Approach to Heart Lake",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "The big cross-country day: up onto High Divide, over/around Cat Peak, across the exposed Catwalk arete to Mount Carrie's shoulder, then down into Ferry Basin. Most parties drop pac…",
+       "fromTo": "High Divide, the Catwalk, and Mount Ferry",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9.5,
+       "note": "Continue south along the Bailey Range crest past Stephen Peak's flanks and Bear Pass, dropping into the alpine bowls of Queets Basin. This is arguably the most scenic and remote st…",
+       "fromTo": "Stephen Lake / Cream Lake to Queets Basin",
+       "section": "Descent"
+      },
+      {
+       "hrs": 9,
+       "note": "From Dodwell-Rixon Pass, descend the Elwha Snowfinger (a permanent snow gully) to reconnect with maintained trail at Low Divide, then continue to a trail camp. Elevation loss domin…",
+       "fromTo": "Dodwell-Rixon Pass to Low Divide",
+       "section": "Descent"
+      },
+      {
+       "hrs": 5,
+       "note": "An easy, well-graded final day of maintained trail descending along the river to the trailhead, closing the loop/traverse.",
+       "fromTo": "Exit to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "overview": "Mount Ferry (6,195 ft) is the eighth-highest peak in the Bailey Range, rising above the glacial tarns of Ferry Basin between Stephen Peak (2.3 mi NW) and Mount Pulitzer (0.6 mi SW, its nearest higher neighbor). Named by the 1889-90 Seattle Press Expedition for Governor Elisha P. Ferry. It is almost never climbed as a standalone objective -- nearly every ascent is a side-summit tagged mid-trip during the multi-day Bailey Range Traverse, the off-trail alpine high route linking Sol Duc's High Divide to the Elwha valley. The summit block itself is a straightforward walk-up over loose 'Olympics dagger' scree from the Ferry-Pulitzer col; the real difficulty of this route is the days of off-trail travel, routefinding, and exposed ridge traverses required just to reach its base.",
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1900,
+      "name": "Sol Duc Trailhead (Olympic NP)",
+      "note": "Northwest Forest Pass required for parking; wilderness permits (recreation.gov) needed for overnight camps on the Sol Duc/High Divide corridor.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.95144,
+      "lng": -123.81905,
+      "elev": 1927,
+      "name": "Sol Duc Falls",
+      "note": "Boardwalk viewpoint over the falls and junction with the Lover's Lane Trail; stay on the Deer Lake/High Divide Trail.",
+      "type": "Junction",
+      "distMi": 0.8
+     },
+     {
+      "lat": 47.9277,
+      "lng": -123.824,
+      "elev": 3550,
+      "name": "Deer Lake",
+      "note": "Established backcountry camp with bear wires; last easy water and flat tent sites before the steep climb to High Divide.",
+      "type": "Campsite",
+      "distMi": 3.4
+     },
+     {
+      "lat": 47.90981,
+      "lng": -123.73438,
+      "elev": 4744,
+      "name": "Heart Lake",
+      "note": "Last reliable water before the dry, exposed Cat Peak-Mt. Carrie ridge section - top off here.",
+      "type": "Water",
+      "distMi": 8
+     },
+     {
+      "lat": 47.898972,
+      "lng": -123.69335,
+      "elev": 4900,
+      "name": "High Divide - Cat Basin Trail Junction",
+      "note": "Maintained trail ends near here; the unmarked Bailey Range 'primitive route' splits off High Divide toward Cat Peak and off-trail routefinding begins.",
+      "type": "Junction",
+      "distMi": 9.5
+     },
+     {
+      "lat": 47.89104,
+      "lng": -123.661054,
+      "elev": 5900,
+      "name": "The Catwalk (Cat Peak-Mt. Carrie arete)",
+      "note": "Narrow, exposed ridge traverse on loose rock linking Cat Peak and Mount Carrie; a slip on the steep side-hill sections could mean a long uncontrolled fall.",
+      "type": "Hazard",
+      "distMi": 11
+     },
+     {
+      "lat": 47.858302,
+      "lng": -123.592262,
+      "elev": 5700,
+      "name": "Ferry Basin",
+      "note": "Open meadow basin below Mount Ferry's south slopes with glacial tarns for camping/swimming, reached via a col just south of Stephen Peak (~5,900 ft).",
+      "type": "Campsite",
+      "distMi": 15
+     },
+     {
+      "lat": 47.842435,
+      "lng": -123.570535,
+      "elev": 6195,
+      "name": "Mount Ferry",
+      "note": "Class 2-3 scramble off the main Bailey Range traverse near the Ferry-Pulitzer col; broad summit with views across Queets Basin to Mount Olympus.",
+      "type": "Summit",
+      "distMi": 16.5
+     }
+    ],
+    "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov."
+   }
+  }
+ ]
+}

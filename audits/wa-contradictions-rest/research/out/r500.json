@@ -1,0 +1,255 @@
+{
+ "file": "r500.json",
+ "results": [
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Approach trailhead and base camp",
+   "verdict": "fixed",
+   "correct_value": "Mount Barnes is reached either along the Bailey Range crest from the Sol Duc to a camp near Bear Pass (the route this page's trailhead, waypoints and itinerary follow) or up the Elwha River Trail to a camp in Elwha Basin; beta, pitch_detail and partner requirements should name both rather than only the Elwha.",
+   "evidence": "Trip reports of the Bailey Range Traverse run from the Sol Duc/High Divide along the crest to Bear Pass, with one party camping at a tarn just below the Bear Pass-Barnes saddle. Mount Barnes is described as rising about 3,200 ft above Elwha Basin and draining into the Elwha headwaters, so an Elwha Basin camp is also a genuine base. The Elwha-only wording presented one of two real approaches as the only one, against the page's own Sol Duc trailhead and itinerary; bail via the Elwha trail is correct for both and is left alone.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2003092402",
+    "https://en.wikipedia.org/wiki/Mount_Barnes_(Washington)"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Approach trailhead and base camp",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Parties approach via the long Elwha River Trail to a camp in or near Elwha Basin, then leave",
+     "replace": "Parties reach it either along the Bailey Range crest from the Sol Duc to a camp near Bear Pass, or via the long Elwha River Trail to a camp in or near Elwha Basin, then leave"
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Approach trailhead and base camp",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "from Elwha Basin camp to the summit",
+     "replace": "from a camp near Bear Pass or in Elwha Basin to the summit"
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Approach trailhead and base camp",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "long approach up the Elwha River trail to the upper basin (historically well over a full day of hiking each way)",
+     "replace": "several days along the Bailey Range crest from the Sol Duc, or a long approach up the Elwha River trail to the upper basin (well over a full day of hiking each way)"
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Approach trailhead and base camp",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "long approach mileage via the Elwha River trail to the upper basin",
+     "replace": "long approach mileage along the Bailey Range crest from the Sol Duc or via the Elwha River trail to the upper basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Elwha Snowfinger usable on the exit",
+   "verdict": "fixed",
+   "correct_value": "The Elwha Snowfinger is largely melted out; the exit descends its gully over scree, slabs and an icy snow hump rather than a snowfield.",
+   "evidence": "A 2025 photo blog describes that where parties once walked the whole Snowfinger on snow, only a sliver remains and the descent is on bare, slippery river rock with a melting 'snowhump' below. A 2021 traverse report calls the traditional Snowfinger exit 'non-existent'. The itinerary and timing still described a snowfield descent; hazards and descent already say it is melted out.",
+   "sources": [
+    "https://ajjphotoblog.com/2025/05/05/the-elwha-snow-finger/",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1286771"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Elwha Snowfinger usable on the exit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      5,
+      "note"
+     ],
+     "find": "down the Elwha Snowfinger snowfield into",
+     "replace": "down the largely melted-out Elwha Snowfinger gully (steep scree, slabs and an icy snow hump) into"
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Elwha Snowfinger usable on the exit",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      5,
+      "note"
+     ],
+     "find": "down the Elwha Snowfinger snowfield into",
+     "replace": "down the largely melted-out Elwha Snowfinger gully (steep scree, slabs and an icy snow hump) into"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 3,200 ft in gain_ft matches the peak's stated relief above Elwha Basin (about 3,200 ft in two miles), not a car-to-car figure for this multi-day trip. No outside source states a total gain for a Sol Duc-to-Barnes-to-Whiskey Bend outing, and the rules forbid computing one from the itinerary; the totalNote's 17,000+ vs the 15,700 day sum is likewise unsourced. Left open.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Barnes_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Whiskey Bend to Elwha Basin mileage",
+   "verdict": "fixed",
+   "correct_value": "Whiskey Bend to the trail's end near Elwha Basin (Chicago Camp) is about 26 mi one way, not round trip.",
+   "evidence": "The park gives the Elwha River Trail as 28.4 mi from Whiskey Bend to Low Divide, and independent trip reports put Chicago Camp 2.5-2.6 mi below Low Divide, i.e. roughly 26 mi one way. Another trail database gives 26.7 mi for the whole trail. Either way the figure is one-way, matching the row's own ~25 mi (bivy) and 25.5 mi exit day.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-10-09.1583216359",
+    "https://www.hikingproject.com/trail/7001969/elwha-river-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Whiskey Bend to Elwha Basin mileage",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "26 mi round trip with ~6,100 ft gain",
+     "replace": "about 26 mi one way with ~6,100 ft gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jul-Sep (best late July through September)",
+   "evidence": "A guide service runs the Bailey Range traverse July through September, and the Bailey Range reference article gives July-September as the favourable months. A 2021 traverse report advises against going earlier than mid-July because of steep snow sidehilling. The row's own seasonal_guidance (June risky, Sept good) and approach_variants agree; the Jun-Aug chip and the itinerary's mid-Aug-mid-Sep best window were the outliers.",
+   "sources": [
+    "https://www.pacificalpineguides.com/bailey-range-traverse",
+    "https://en.wikipedia.org/wiki/Bailey_Range",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Aug",
+     "value": "Jul-Sep"
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best mid-August through mid-September once",
+     "replace": "Best late July through September once"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "The approach to Bear Pass crosses small glaciers (Childs Glacier, and the glacier just below the pass) on firm snow with some blue ice; crevasse exposure is minor on the usual line.",
+   "evidence": "A 2021 traverse report crossed 'the small Childs Glacier' with some blue ice showing on the way into the Southern Baileys. Another traverse account crossed the glacier below Bear Pass to reach the pass, describing it as easy walking on a moderate slope away from crevasse danger. So 'no glacier travel' / 'non-glaciated' on the Safety tab is wrong for this route.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "http://cwillett.imathas.com/local/bailey/index.html",
+    "https://www.pacificalpineguides.com/bailey-range-traverse"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Glacier travel",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel",
+     "value": "Short crossings of small glaciers on the way to Bear Pass, on firm snow with some blue ice by late summer; crevasses are few on the usual line, but carry an ice axe and traction."
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Glacier travel",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer route;",
+     "replace": "N/A - summer route;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Permit booking channel and vetting",
+   "verdict": "fixed",
+   "correct_value": "Trail camps book on Recreation.gov; cross-country zones such as the Bailey Range must be booked by phone with the Wilderness Information Center.",
+   "evidence": "The park's reservations page says cross-country trips such as the Bailey Range, and camps not listed online, must be booked by calling the WIC. A 2021 traverse party also had to phone the rangers for their permit, and a park-support fund guide says the same. On vetting: nothing found says rangers refuse permits on experience, and 'asking about experience' (bivy, owned elsewhere) does not contradict 'will not deny', so only the booking channel is patched.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Permit booking channel and vetting",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+     "replace": "all overnight wilderness stays require a wilderness camping permit, booked on Recreation.gov for trail camps and by phone with the Wilderness Information Center for cross-country zones such as the Bailey Range and Elwha Basin."
+    },
+    {
+     "id": "wa_mount_barnes_scramble",
+     "fact": "Permit booking channel and vetting",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "via recreation.gov, and",
+     "replace": "booked by phone with the Wilderness Information Center for the cross-country zones, and"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Madison Falls to Whiskey Bend road walk",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: one trail site gives 6.2 mi one way from Madison Falls parking to Whiskey Bend, the park's Elwha River Trail page says the closure 'adds an additional 7 miles', and a trail database cites 5 mi (0.7 mi road + bypass trail + 4.5 mi Whiskey Bend Road). No two independent sources agree on one figure; the 7-mile wording sits in bivy[1], which is owned by the camping clean-up. No patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide",
+    "https://home.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.hikingproject.com/trail/7001969/elwha-river-trail"
+   ],
+   "patches": []
+  }
+ ]
+}

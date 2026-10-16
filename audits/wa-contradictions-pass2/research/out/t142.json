@@ -1,0 +1,386 @@
+{
+ "file": "t142.json",
+ "results": [
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Wilderness permit at the trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service's Mt. Baker climbing page says no permits are required for climbing Mt. Baker and that some trailheads may have a register; the Mount Baker Wilderness page recommends an optional climbing register; the Heliotrope Ridge Trail #677 page lists only a recreation pass, a winter Sno-Park permit and wilderness rules. None states explicitly whether a free self-issued wilderness permit/registration exists at the Heliotrope kiosk (same finding as the earlier pass on Goat Mountain and Skyline Divide). An explicit Mt. Baker Ranger District statement would settle it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Descent hardware",
+   "verdict": "fixed",
+   "correct_value": "V-thread hardware is for retreat (bail), not the descent; the descent is a walk-off",
+   "evidence": "A Cosley-Houston trip report describes descending by traversing to the Colfax-Baker saddle and down the Coleman Glacier with no rappels. A Polish Route (same summit) trip report says the party walked back down. The row's descent, descent_text, rappels, gear[4] and bail all agree: walk-off, with V-threads only for retreat.",
+   "sources": [
+    "https://climberkyle.com/2019/12/13/colfax-peak-cosley-houston-wi4/",
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Descent hardware",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "V-thread hardware for descent.",
+     "replace": "V-thread hardware for a retreat."
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Descent hardware",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "V-thread hardware for descent.",
+     "replace": "V-thread hardware for a retreat."
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Hogsback elevation",
+   "verdict": "fixed",
+   "correct_value": "~6,000 ft",
+   "evidence": "A guide service's Coleman-Deming article puts Hogsback camp at 6,000 ft; a trail-database POI/route summary gives Hogsback Camp at 6,000 ft with sites scattered 6,000-6,200 ft. The row's waypoint (6,000, note 6,000-6,200) and the neighbouring Polish Route row agree; only the schedule label said ~6,600.",
+   "sources": [
+    "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/",
+    "https://www.alltrails.com/poi/us/washington/deming/hogsback-camp"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Hogsback elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "(~6,600 ft)",
+     "replace": "(~6,000 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Descent method",
+   "verdict": "fixed",
+   "correct_value": "Walk-off descent; V-thread rappels only for retreat from partway up",
+   "evidence": "A Polish Route trip report says the party walked back down after topping out; a Cosley-Houston report (same summit) describes the walk-off to the Colfax-Baker saddle and down the Coleman with no rappels. descent, descent_text, rappels and gear[4] already say walk-off; only the approach-variant hazard described a V-thread descent.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak",
+    "https://climberkyle.com/2019/12/13/colfax-peak-cosley-houston-wi4/"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Descent method",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "A descent mixing short V-thread rappels with downclimbing, on threads you build yourself",
+     "replace": "A retreat from partway up by short V-thread rappels on threads you build yourself; the normal way down is a walk-off"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Which pitch is the WI6 crux",
+   "verdict": "fixed",
+   "correct_value": "Pitch 1 long WI4+ (AI4+) to a short snow slope; pitch 2 is the WI6 dagger crux; then a couple of steep ice steps; then the upper snowfield",
+   "evidence": "The route page describes crossing the schrund to one long WI4+ pitch to a snow slope and up to the crux pitch (30 ft steep ice, eases, free-hanging dagger WI6), then a couple more steep ice steps and the upper snowfield. A party's trip report: first true ice pitch AI4+ ending with a lip then snow, second pitch the dagger crux, then a couple of steep ice steps in the right gully. A third account lists one long pitch of AI4+ and a short snow slope before the crux pitch, then mellow snow slopes with occasional blue ice. ROUTE BREAKDOWN had an extra WI4 pitch 2 no source describes; the crux moves to pitch 2 and the later entries shift up.",
+   "sources": [
+    "https://www.mountainproject.com/route/110439392/polish-route",
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak",
+    "https://colinhaley.com/colfax-peak-and-the-heart-of-darkness/"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "grade"
+     ],
+     "expect": "WI4",
+     "value": "WI6"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "crux"
+     ],
+     "expect": false,
+     "value": true
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "lengthM"
+     ],
+     "expect": 70,
+     "value": 50
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "anchor"
+     ],
+     "expect": "Ice screws",
+     "value": "Ice screws (thin/hollow near dagger)"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "expect": "Continue up through the snow slope and shorter ice steps to gain the base of the crux pitch beneath the dagger.",
+     "value": "The signature pitch: 30 ft of steep ice easing before a transfer onto a free-hanging ice dagger - back-step off the main wall, hang off both tools, and move onto the dagger's vertical-to-overhanging face, which eases after a couple of body lengths."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "grade"
+     ],
+     "expect": "WI6",
+     "value": "WI3"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "crux"
+     ],
+     "expect": true,
+     "value": false
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "lengthM"
+     ],
+     "expect": 50,
+     "value": 70
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "anchor"
+     ],
+     "expect": "Ice screws (thin/hollow near dagger)",
+     "value": "Ice screws"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "expect": "The signature pitch: 30 ft of steep ice easing before a transfer onto a free-hanging ice dagger - back-step off the main wall, hang off both tools, and move onto the dagger's vertical-to-overhanging face, which eases after a couple of body lengths.",
+     "value": "Above the dagger, a couple more steep ice steps in the right-hand gully lead toward the upper snowfield."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "WI3",
+     "value": "Moderate snow"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Which pitch is the WI6 crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "expect": "A couple more steep ice steps lead into the upper snowfield; cut between rock buttresses and trend up and right to the summit, watching for afternoon sun softening this northwest-facing finish.",
+     "value": "The upper snowfield, with occasional patches of blue ice, cuts between rock buttresses and trends up and right to the summit; watch for afternoon sun softening this northwest-facing finish."
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Number of ropes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page's protection note lists only ice screws, pickets and pins; the trip reports found mention lowering off a V-thread but never state one rope or two. No source states the rope setup for this route. A trip report or route description naming the rope(s) carried would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110439392/polish-route",
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Car-to-car time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "12-13 hours car-to-car (the partner line drops the stale ~11-hour figure)",
+   "evidence": "timing.totalHrs 12.5, the itinerary hours 12.5, its schedule (3:00-3:30 AM start, back 4:30-5:30 PM) and totalNote (12-13 hrs) all agree; only the partner fitness line said ~11 hours. A trip report on the neighbouring Cosley-Houston, with the same approach and descent and an easier climb, took 12 hours car-to-car, so ~11 hours is short for the harder Polish Route. The number is removed from the partner line rather than a new one asserted.",
+   "sources": [
+    "https://climberkyle.com/2019/12/13/colfax-peak-cosley-houston-wi4/"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Car-to-car time",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "with an ~11-hour car-to-car day",
+     "replace": "with a 12-13 hour car-to-car day"
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Height of the East Peak above the West Peak",
+   "verdict": "fixed",
+   "correct_value": "East Peak (6,891 ft) is higher than the West Peak (~6,721-6,725 ft); the '~120 ft' figure is dropped",
+   "evidence": "One peak reference gives the West Peak as a 6,725 ft subsidiary summit (with the main summit at 6,844 ft, which is where 120 ft came from); another route page gives East 6,891 ft vs West 6,721 ft (~170 ft). USGS lidar sampled in the earlier pass puts the East summit near 6,886-6,890 ft, so against the row's 6,891 ft the 120 ft gap is wrong. The number is removed; both sources agree the East Peak is the higher one.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Height of the East Peak above the West Peak",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "~120 ft higher than the West Peak",
+     "replace": "higher than the West Peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Is the ~6,600 ft false summit the West Peak?",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The overview and hazards[5] call the ~6,600 ft false summit the West Peak, but two sources put the West Peak's top at 6,721-6,725 ft, and one route page describes a separate knoll (false summit) at 6,600 ft on the ridge. Whether the row's 'false (west) summit' means the knoll or the West Peak top is not settled by the row; the earlier pass left it open for the same reason. A topo reading of the knoll vs the West Peak top along the route line would settle it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Direction Cougar Divide arrives from",
+   "verdict": "fixed",
+   "correct_value": "Cougar Divide runs north-south and the route travels SOUTH from the trailhead to Chowder Ridge; Skyline Divide lies about 1.5 mi to the west across Deadhorse Creek; both join on Chowder Ridge and finish on the same northwest ridge",
+   "evidence": "A geology field guide says Cougar Divide runs north-south, the trail heads south to a 5,800 ft saddle then on to Chowder Ridge's crest, with Skyline Divide about 1.5 mi to the west across Deadhorse Creek and the Dobbs Creek basin seen from the trail, not travelled. A hiking guide says the two approaches meet on Chowder Ridge and follow the same northwest ridge to the summit, and a trip-report summary says the Cougar Divide Trail goes south to the top of Chowder Ridge. The row's own pins put the trailhead north-northeast of the summit and the approach text says south. The baseFinding's 'north-west via Dobbs Creek' is corrected. The camp card's 'east along the ridge' is in bivy[] and left to the camping clean-up (no bivy patch).",
+   "sources": [
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+    "https://besthikesbc.ca/hadley-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2008090706"
+   ],
+   "patches": [
+    {
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Direction Cougar Divide arrives from",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Cougar Divide comes in from the NORTH-WEST via Dobbs Creek; Skyline Divide comes in from the WEST along a much longer open ridge.",
+     "replace": "Cougar Divide comes in from the NORTH, straight down its own ridge; Skyline Divide comes in from the WEST, a parallel ridge about a mile and a half over across the Deadhorse Creek valley, and is the much longer walk."
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "SR-20 winter closure dates",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "WSDOT gives only extremes and single years: earliest closure Oct 17 (2007), latest Jan 3 (1990), the 2025 closure on Dec 4 (initial gates MP 134 and Silver Star gate MP 171, later moving to MP 120 and Early Winters MP 178), and a record-late ordinary opening of May 25 (2011), with the 2026 full reopening on June 14 after storm repairs. A second source only says it closes in late fall and reopens in spring with no fixed date. Neither 'mid-November' nor 'early December', nor a 'mid-April to mid-June' vs 'mid/late April' reopening, is stated as typical by any source. Note access.seasonal does not render on this row (access.closures takes precedence), so only road.seasonalGate is on screen. A multi-year WSDOT closure/opening table would settle it.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.511now.com/answers/is-the-north-cascades-highway-open-washington.html",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Overnight wilderness permit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The disputed value sits only in access._raw, which does not render (the rendered access.permit, overnight_permit, permit and bivy entries all say no permit). No source found states whether the Silver Star Creek / Burgundy Col approach lies inside the Lake Chelan-Sawtooth Wilderness or whether a self-issued overnight permit applies there; the Forest Service wilderness page and a guide service's route page are silent. An Okanogan-Wenatchee statement on the wilderness boundary near Silver Star, or on self-issue permits at this pullout, would settle it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/lake-chelan-sawtooth-wilderness",
+    "https://ncmountainguides.com/routes/climbing/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": []
+  }
+ ]
+}

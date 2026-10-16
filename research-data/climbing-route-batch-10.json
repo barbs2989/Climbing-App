@@ -1,0 +1,96 @@
+{
+  "wa_four_brothers_southwest_route": {
+    "area": "wa_four_brothers",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Southwest gully/slope system",
+        "notes": "From the base of the southwest-facing gully/slope system on Chikamin Ridge. Expect lingering snow in the gully well into July and loose stacked talus higher up. Real routefinding complexity picking a line through the pinnacle/cliff-band maze — trip reports flag this as the crux, more so than any single move. The four cliffy summit points are steep, technical terrain that should be flanked rather than climbed directly from below."
+      }
+    ]
+  },
+  "wa_hagan_mountain_south": {
+    "area": "wa_hagan_mountain",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Talus-and-scree couloir to the Hagan crags",
+        "notes": "From the open heather and grass benches on Hagan's south flank around 6000-6400 ft, ascend a broad talus-and-scree couloir to the southwest end of the Hagan Mountain crags. Loose scree."
+      },
+      {
+        "n": 2,
+        "label": "Hagan Glacier traverse to the col",
+        "notes": "Rising, crevasse/moat-aware traverse around the ice apron of the Hagan Glacier to reach the col between Hagan's twin summits. Rope and crampons recommended even in summer."
+      },
+      {
+        "n": 3,
+        "label": "Summit slabs",
+        "class": "2-3",
+        "notes": "Short Class 2-3 scramble on slabs from the col to the summit, listed 7067-7080 ft depending on source."
+      }
+    ]
+  },
+  "wa_half_moon_southwest_slopes": {
+    "area": "wa_half_moon",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower southwest gully",
+        "class": "2-3",
+        "notes": "From the base of the gully, class 2-3 talus and loose scree — rockfall is a real concern with any party above you."
+      },
+      {
+        "n": 2,
+        "label": "Narrow class 4 step",
+        "class": "4",
+        "notes": "Roughly midway up, the gully narrows to a steeper class 4 step of cleaner rock."
+      },
+      {
+        "n": 3,
+        "label": "Scramble to the belay ledge",
+        "notes": "Above the step, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+      }
+    ]
+  },
+  "wa_hibox_mountain_standard": {
+    "area": "wa_hibox_mountain",
+    "climbing_route": [],
+    "skip_reason": "The approach text stops at the south side of the summit block — it describes only trail, bootpath, the two cliff bands and the talus slope below the peak, and says nothing about climbing the summit block itself."
+  },
+  "wa_horseshoe_peak_scramble": {
+    "area": "wa_horseshoe_peak",
+    "climbing_route": [],
+    "skip_reason": "Both described options end at the base of Ripsaw Ridge below the summit notch (or a stance south/southeast of Horseshoe Peak below the crest); nothing in the text describes climbing above that point. The technical bits present — the short 4th-class step on Sahale Peak's southeast ridge and the Class 3/short Class 4 Black Warrior mine gully downclimb — are approach terrain on the way in, not this route's climbing."
+  },
+  "wa_hurry_up_peak_south_ridge": {
+    "area": "wa_hurry_up_peak",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Steep snow band on the south/southwest flank",
+        "notes": "From camp, head up toward Hurry-up Peak's south/southwest flank, crossing a band of steep snow around 7,100 ft — carry an axe/crampons even mid-summer."
+      },
+      {
+        "n": 2,
+        "label": "Broken granite slabs to the south ridge crest",
+        "notes": "Gain broken granite slabs and the south ridge crest. Route-finding on the granite benches is the main crux; parties report multiple viable gully lines, not all matching guidebook description exactly."
+      },
+      {
+        "n": 3,
+        "label": "South ridge crest and upper gully system",
+        "class": "2-3",
+        "notes": "Follow the crest/upper gully system with sustained Class 2-3 scrambling and a couple of exposed but short moves along the summit ridge to the 7,821 ft top — about 1 mile and 1,400-1,500 ft above camp, roughly 1-1.5 hours for a fit party."
+      }
+    ]
+  },
+  "wa_indian_mountain_baker_scramble": {
+    "area": "wa_indian_mountain_baker",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Heather/talus slopes and ridgelines to the summit",
+        "notes": "Leave the trail below or near Whatcom Pass and work up open heather/talus slopes and ridgelines to the summit. Sustained, often brushy or loose route-finding required in both directions; no maintained trail reaches the summit."
+      }
+    ]
+  }
+}

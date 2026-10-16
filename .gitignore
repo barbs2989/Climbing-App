@@ -21,13 +21,56 @@ after.json
 
 # regenerable catalog data — lives in Supabase, re-pull via etl-state.mjs
 catalog/**/*.json
+# Mountain Project exports fetched under licence (scripts/pipeline/fetch-ice-mixed-aid.mjs):
+# third-party data, never committed to this repo.
+catalog/_mp/
 supabase/seed-utah.sql
 
 # Supabase CLI scratch state — written by `supabase link` / `functions deploy`,
 # holds this machine's project-ref and the remote's component versions. Purely
 # local and regenerated on demand; committing it would hand every clone one
 # developer's linked project.
-supabase/.temp/
+#
+# NO TRAILING SLASH, deliberately. The slashed form matches a DIRECTORY only, and a
+# worktree reaches this state by SYMLINKING it from the main checkout — the same way
+# .env and .env.local already are. A symlink is not a directory to git, so the slashed
+# pattern let it show up as untracked, one `git add .` away from committing one
+# developer's project ref. Without that link a worktree cannot run the `--linked` guards
+# (check:function-drift, check:function-columns) at all.
+supabase/.temp
 
 # local Claude Code permissions — personal, not shared across clones
 .claude/settings.json
+scripts/oneoff/peak-reachability.json
+
+# Interrupted-run marker written by scripts/oneoff/inject-glued-name-cases.mjs.
+# Its presence means a harness was killed mid-injection; the harness restores from git on
+# the next start. It must never be committed.
+scripts/oneoff/.inject-glued-name-INPROGRESS
+
+# Raw DEM readings cached by scripts/oneoff/build-ground-disagreement-index.mjs so a re-run
+# costs no requests. Derived data — lib/ground-checked-pins.js is the committed product.
+.ground-readings-cache.json
+
+# Regenerable run artifact of scripts/oneoff/solve-camp-elevations.mjs (~10 min to rebuild).
+camp-elevation-proposals.json
+# check:waypoint-placement bundles its render probe INSIDE the project (node must resolve react
+# from the nearest node_modules). It removes the dir in a finally, but a killed run would leave one.
+.wpplace-*/
+.camp-geocode-cache.json
+.inject-offline-claims.lock
+.inject-offline-subtree.lock
+.inject-offline-area-jump.lock
+# The offline probes bundle INSIDE the project (node resolves react from the nearest
+# node_modules, and a temp dir has none). Each removes its own dir on the way out, but a run
+# that crashes or is killed leaves one — and it is then one `git add .` away from being
+# committed. Same reason .wpplace-*/ is here.
+.probe-jump-*/
+.probe-subtree-*/
+.probe-offline-*/
+# check:trailhead-directions bundles INSIDE the project for the same reason, and was missed when
+# the entries above were written. Found the way the comment above predicts: an OOM-killed build
+# left a 1.9 MB .cm-thdir-ZRgrwp/bundle.mjs sitting in `git status`. A SIGKILL never reaches a
+# finally, so the guard's own cleanup cannot be the only defence.
+.cm-thdir-*/
+.inject-reviewed-gate.lock

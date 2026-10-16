@@ -1,0 +1,351 @@
+{
+ "wa_roan_wall_center_stage": {
+  "area": "wa_waterfall_basin",
+  "pitch_detail": [
+   {
+    "grade": "5.8",
+    "notes": "Bolted slab, 30m.",
+    "pitch": "1"
+   },
+   {
+    "grade": "5.4",
+    "notes": "Approach-style pitch.",
+    "pitch": "2"
+   },
+   {
+    "grade": "5.10b",
+    "notes": "Edge climbing.",
+    "pitch": "3"
+   },
+   {
+    "grade": "5.9-5.10c",
+    "notes": "Bolted face/slab climbing.",
+    "pitch": "4-6"
+   },
+   {
+    "grade": "5.11a",
+    "notes": "Crux slab pitch.",
+    "pitch": "7"
+   },
+   {
+    "grade": "5.9-5.10-",
+    "notes": "Mixed climbing to the top.",
+    "pitch": "8-10"
+   }
+  ]
+ },
+ "wa_flight_of_the_falcon": {
+  "area": "wa_waterfall_basin",
+  "pitch_detail": [
+   {
+    "grade": "5.8",
+    "notes": "Bolted slab approach pitch at the base of Roan Wall.",
+    "pitch": "Approach P1"
+   },
+   {
+    "grade": "5th class",
+    "notes": "Low-fifth-class 'mungy' crack approach pitch.",
+    "pitch": "Approach P2"
+   },
+   {
+    "grade": "5.10",
+    "notes": "One of two crux pitches.",
+    "pitch": "P3"
+   },
+   {
+    "grade": "5.10",
+    "notes": "Main crux: face climbing up a green-tinted slab.",
+    "pitch": "P6"
+   },
+   {
+    "grade": "5.9-ish",
+    "notes": "Tops out at 'Falcon's Perch,' an exposed viewpoint with ~500 ft vertical dropoff; rappel anchor here.",
+    "pitch": "P7"
+   }
+  ]
+ },
+ "wa_technicians_of_the_sacred": {
+  "area": "wa_central_wall_area",
+  "pitch_detail": [
+   {
+    "crux": true,
+    "grade": "5.12b/c",
+    "notes": "Steep low moves, pumpy climbing on sloping edges/pockets.",
+    "pitch": 1
+   },
+   {
+    "crux": false,
+    "grade": "5.11-",
+    "notes": "Bolted ramp.",
+    "pitch": 2
+   },
+   {
+    "crux": false,
+    "grade": "5.12-",
+    "notes": "Sparsely bolted low-angle face.",
+    "pitch": 3
+   },
+   {
+    "crux": false,
+    "grade": "5.12b/c or 5.11b",
+    "notes": "Arete direct, or corner with traverse.",
+    "pitch": 4
+   },
+   {
+    "crux": false,
+    "grade": "5.11",
+    "notes": "Continuous corners/aretes.",
+    "pitch": 5
+   },
+   {
+    "crux": false,
+    "grade": "5.8",
+    "notes": "Hand crack, natural gear; only unbolted pitch.",
+    "pitch": 6
+   }
+  ]
+ },
+ "wa_sisu": {
+  "area": "wa_central_wall_area",
+  "pitch_detail": [
+   {
+    "crux": false,
+    "grade": "5.11+",
+    "notes": "16 bolts; knobs, tricky mantles, bit of slab.",
+    "pitch": 1,
+    "lengthM": 40
+   },
+   {
+    "crux": false,
+    "grade": "5.10+",
+    "notes": "6 bolts; traverse horizontal cracks then crimp to belay.",
+    "pitch": 2,
+    "lengthM": 18
+   },
+   {
+    "crux": false,
+    "grade": "5.10+",
+    "notes": "6 bolts; horizontal undercling of roof/flake system.",
+    "pitch": 3,
+    "lengthM": 15
+   },
+   {
+    "crux": true,
+    "grade": "5.11-",
+    "notes": "11 bolts; traverse left then first crux.",
+    "pitch": 4,
+    "lengthM": 25
+   },
+   {
+    "crux": true,
+    "grade": "5.11+",
+    "notes": "6 bolts; edges up/right before final crux.",
+    "pitch": 5,
+    "lengthM": 10
+   },
+   {
+    "crux": false,
+    "grade": "5.11",
+    "notes": "12 bolts; tenuous knobs/slopers into flake system.",
+    "pitch": 6,
+    "lengthM": 30
+   },
+   {
+    "crux": false,
+    "grade": "5.10-",
+    "notes": "~8 bolts; finishing pitch, two anchor options.",
+    "pitch": 7,
+    "lengthM": 35
+   }
+  ]
+ },
+ "wa_starfish_enterprise": {
+  "area": "wa_central_wall_area",
+  "pitch_detail": [
+   {
+    "crux": false,
+    "grade": "5.11d",
+    "notes": "Face/arete past 3 bolts to a steep corner crack; semi-hanging belay.",
+    "pitch": 1
+   },
+   {
+    "crux": false,
+    "grade": "5.11a",
+    "notes": "Joins P2 of Good Girls Like Bad Boys above its crux.",
+    "pitch": 2
+   },
+   {
+    "crux": true,
+    "grade": "5.11d",
+    "notes": "Climbs P3 of Good Girls Like Bad Boys to a corner belay.",
+    "pitch": 3
+   },
+   {
+    "crux": false,
+    "grade": "5.11c",
+    "notes": "Leaves corner onto exposed face; long, varied.",
+    "pitch": 4
+   },
+   {
+    "crux": false,
+    "grade": "5.10",
+    "notes": "Tenuous crux move above belay, then broken face.",
+    "pitch": 5
+   }
+  ]
+ },
+ "wa_crying_dragon": {
+  "area": "wa_central_wall_area",
+  "pitch_detail": [
+   {
+    "crux": false,
+    "grade": "5.9",
+    "notes": "5.9 start shared with Davis-Holland; jams/fingerlocks to 2-bolt belay.",
+    "pitch": 1,
+    "lengthFt": 90
+   },
+   {
+    "crux": false,
+    "grade": "5.10a",
+    "notes": "Continues Davis-Holland; fingers/thin hands in a corner.",
+    "pitch": 2,
+    "lengthFt": 100
+   },
+   {
+    "crux": false,
+    "grade": "5.10c",
+    "notes": "8 bolts; undercling roof, transitions to Rise and Fall, crystal edges up a dike.",
+    "pitch": 3,
+    "lengthFt": 100
+   },
+   {
+    "crux": false,
+    "grade": "5.10d",
+    "notes": "2 bolts; sustained 5.10 crack climbing.",
+    "pitch": 4,
+    "lengthFt": 75
+   },
+   {
+    "crux": true,
+    "grade": "5.11c/d",
+    "notes": "4 bolts; bouldery/balancy to Town Crier anchor.",
+    "pitch": 5,
+    "lengthFt": 40
+   },
+   {
+    "crux": true,
+    "grade": "5.11d",
+    "notes": "2 bolts; finishes on Green Drag-on, jugs and 5.10 crack.",
+    "pitch": 6,
+    "lengthFt": 105
+   }
+  ]
+ },
+ "wa_golden_age": {
+  "area": "wa_m_m_wall_aka_supercave_wall",
+  "pitch_detail": [
+   {
+    "grade": "5.11c",
+    "notes": "Technical corner climbing; loose chockstones at the crux",
+    "pitch": "1",
+    "lengthM": 35
+   },
+   {
+    "grade": "5.11d",
+    "notes": "Slab and roof work with bolts and gear",
+    "pitch": "2",
+    "lengthM": 35
+   },
+   {
+    "grade": "5.11a",
+    "notes": "Slab climbing to an orange corner",
+    "pitch": "3",
+    "lengthM": 25
+   },
+   {
+    "grade": "5.12b",
+    "notes": "Crack, liebacking, crimpy rails — best rock quality on the route",
+    "pitch": "4",
+    "lengthM": 20
+   },
+   {
+    "grade": "5.10+",
+    "notes": "Mantel and crack climbing",
+    "pitch": "5",
+    "lengthM": 15
+   },
+   {
+    "grade": "5.11a",
+    "notes": "Varied slab with choss; roof section",
+    "pitch": "6",
+    "lengthM": 35
+   },
+   {
+    "grade": "5.11c",
+    "notes": "Bolted crimping on the golden headwall",
+    "pitch": "7",
+    "lengthM": 15
+   }
+  ]
+ },
+ "wa_the_tiger": {
+  "area": "wa_m_m_wall_aka_supercave_wall",
+  "pitch_detail": [
+   {
+    "grade": "5.8",
+    "notes": "25m, slabby left-facing corner",
+    "pitch": "1"
+   },
+   {
+    "grade": "5.10+",
+    "notes": "45m, roof and thin crack features through a bulge",
+    "pitch": "2"
+   },
+   {
+    "grade": "5.11",
+    "notes": "45m, left-facing corner with finicky gear to a large ledge",
+    "pitch": "3"
+   },
+   {
+    "grade": "5.10",
+    "notes": "30m, left-facing corner, face moves, arete",
+    "pitch": "4"
+   },
+   {
+    "grade": "5.11-",
+    "notes": "35m, through the large cave (\"Belly's Lair\"), sustained technical climbing",
+    "pitch": "5"
+   },
+   {
+    "grade": "5.10-",
+    "notes": "15m, steep with positive holds; 5.12c \"Eye of the Tiger\" direct variation available",
+    "pitch": "6"
+   },
+   {
+    "grade": "5.12-",
+    "notes": "15m, crux: underclings under a roof with exposure",
+    "pitch": "7"
+   },
+   {
+    "grade": "5.11+",
+    "notes": "25m, layback corner, leftward hand traverse",
+    "pitch": "8"
+   },
+   {
+    "grade": "5.11",
+    "notes": "30m, cracks, flakes, balancy twin thin cracks",
+    "pitch": "9"
+   },
+   {
+    "grade": "5.10",
+    "notes": "30m, the giant \"Tiger Flake\" — sustained undercling/jamming",
+    "pitch": "10"
+   },
+   {
+    "grade": "5.10-",
+    "notes": "30m, broken cracks and blocky features to a final bulge on the ridge",
+    "pitch": "11"
+   }
+  ]
+ }
+}

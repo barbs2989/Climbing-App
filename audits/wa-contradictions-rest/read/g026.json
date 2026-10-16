@@ -1,0 +1,1824 @@
+{
+ "batches": [
+  "b101.json",
+  "b102.json",
+  "b103.json",
+  "b104.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "name": "Blue Glacier (Standard Route)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~7,400 ft gain to the 7,980 ft summit"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "1600+4500+3800+300 = 10200"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "4500"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "3700"
+      }
+     ],
+     "why": "The header/stats gain (7,500) and totalNote (~7,400) disagree with the itinerary TOTAL (10,200 ft); day 2 alone claims 4,500 ft from the Guard Station to Glacier Meadows while the whole trailhead-to-Glacier-Meadows variant gains 3,700.",
+     "internal_resolution": "Elevations (578 ft TH, Glacier Meadows 4,300, summit 7,980) support ~7,400-7,500 net; itinerary day 2 gainFt 4500 is the outlier inflating the sum.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "10"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "4:00-6:00 PM"
+      }
+     ],
+     "why": "The schedule runs from a 2-3 AM departure to a 4-6 PM return (13-16 h), but the day's hours and timing.summitTimeHrs say 10.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier Meadows/glacier edge to Snow Dome distance and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the glacier's edge it is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel, up to Snow Dome (~6,600 ft)"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "roughly 4-6 more miles and about 3,700 ft of gain ... up to Snow Dome (~6,600 ft)"
+      },
+      {
+       "field": "waypoints",
+       "says": "Glacier Meadows distMi 17.5 / 4300 ft; Summit distMi 22"
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "7"
+      }
+     ],
+     "why": "Snow Dome at ~6,600 ft is only ~2,300-2,900 ft above the glacier toe below Glacier Meadows (4,300), and the waypoints put the SUMMIT only 4.5 mi past Glacier Meadows, so 4-6 mi and 3,700 ft just to Snow Dome cannot be right.",
+     "internal_resolution": "Waypoint elevations and distances plus the 7-mile round-trip summit day agree; the approach/climbing_route sentence is the outlier (3,700 ft is the Glacier-Meadows-to-summit figure, as approach_variants[1].gainFt shows).",
+     "needs_research": false
+    },
+    {
+     "fact": "Best season / September",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September",
+       "says": "Outside the best-season window ... risky"
+      },
+      {
+       "field": "approach",
+       "says": "July-September is the best window for a straightforward glacier crossing."
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[1].season",
+       "says": "Jul-Sep for straightforward glacier travel"
+      }
+     ],
+     "why": "Approach prose and variant seasons call September part of the best window, while season and seasonal_guidance end the season in August and rate September risky.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed for summit-block rappel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "a 60 m rope is needed to reach the base"
+      },
+      {
+       "field": "descent_text",
+       "says": "A single-strand rappel with a 40-50m rope reaches the notch/belay ledge for most of the season"
+      }
+     ],
+     "why": "One field says a 60 m rope is needed, the other says a 40-50 m rope reaches for most of the season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bear canister requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[1]",
+       "says": "Carry blue bags and a bear canister — both are required by Olympic NP regulation on this route"
+      },
+      {
+       "field": "access.rules",
+       "says": "Bear canister required unless camping where a bear line is provided"
+      },
+      {
+       "field": "what_to_bring[0]",
+       "says": "bear canister or use bear-line camps"
+      }
+     ],
+     "why": "pro_tips says a canister is required, while access.rules and what_to_bring allow a bear line instead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "2:00-3:00 AM from camp"
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "an early (4-5am) start is recommended to beat the queue"
+      }
+     ],
+     "why": "Two different recommended start times are given for summit day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "9+8.3+7+17.3 = 41.6"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~41-44 mi"
+      }
+     ],
+     "why": "dist_km (17.4 mi) is one-way to Glacier Meadows while the itinerary/header distance is the ~42 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "name": "West Ridge",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Rock grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 2-4"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II, 5.4 PG13 (Easy Snow)"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "5.4"
+      },
+      {
+       "field": "overview",
+       "says": "Never harder than 5.4 and never easier than class 3"
+      }
+     ],
+     "why": "rock_grade (which drives the header grade pill) says Class 2-4, but the grade, overview and pitch_detail all say 5.4 with nothing easier than class 3.",
+     "internal_resolution": "grade, overview, pitch_detail and descent_text agree on 5.4 / class 3 minimum; rock_grade is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Hardest climbing on route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].note",
+       "says": "roughly 7 pitches of variable-quality rock up to 5.6-5.7 with high exposure"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "pitching out the ~7-pitch West Ridge (variable 5.6-5.7 rock)"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "loose class 5.6-5.7 rock if off route"
+      },
+      {
+       "field": "overview",
+       "says": "Never harder than 5.4"
+      }
+     ],
+     "why": "The itinerary says the route itself is 5.6-5.7, while every other field says it is never harder than 5.4 and 5.6-5.7 is only off-route.",
+     "internal_resolution": "grade, overview, hazards, pitch_detail and pro_tips agree 5.4 on route; the itinerary text is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Character/side of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The West Ridge route approaches from the southern side of the mountain ... Snow slopes and ice climbing dominate ... offers ... less crevasse hazard"
+      },
+      {
+       "field": "approach",
+       "says": "From Snow Dome ... head southwest across the Blue Glacier ... to gain the ridge directly at a moat/schrund near its lowest point (~7,260 ft)"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "7 rock pitches, class 3-5.4"
+      }
+     ],
+     "why": "beta describes an ice/snow climb from the south, but the approach and pitch_detail describe a rock ridge gained from Snow Dome across the Blue Glacier.",
+     "internal_resolution": "approach, approach_variants, pitch_detail, waypoints and itinerary agree on a Blue Glacier/Snow Dome approach to a rock ridge; beta is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "head southwest across the Blue Glacier ... rather than continuing on toward Crystal Pass"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you are GAINING height toward Crystal Pass, you have drifted onto the standard route"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "From Snow Dome, cross the Blue Glacier southwest toward Crystal Pass/Five Fingers to a moat"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "a glacier crossing via Crystal Pass and the Five Fingers to reach the West Summit"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "crossing the Blue Glacier southwest toward the West Summit via Crystal Pass and the Five Fingers"
+      }
+     ],
+     "why": "Some fields route the approach via Crystal Pass/Five Fingers while the approach and baseFinding explicitly say heading toward Crystal Pass means you are off route.",
+     "internal_resolution": "approach and approach_variants (the detailed descriptions) say the crossing is level and does not go to Crystal Pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain and loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7500"
+      },
+      {
+       "field": "loss_ft",
+       "says": "400"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "sum 10300"
+      },
+      {
+       "field": "itinerary.days[*].lossFt",
+       "says": "sum 10350"
+      }
+     ],
+     "why": "loss_ft 400 is impossible for a round trip that returns to the trailhead, and gain_ft disagrees with the itinerary total by ~37%.",
+     "internal_resolution": "Round trip to the same trailhead means loss equals gain; loss_ft 400 is clearly wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "13"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "1:30-2:30 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "6:30-8:30 PM"
+      }
+     ],
+     "why": "The schedule spans 16-19 hours but the day is listed as 13 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "543"
+      },
+      {
+       "field": "descent_text",
+       "says": "The ridge itself gains roughly 600 ft over 7 pitches ... to the base of the final ~100 ft summit block"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "35+20+30+25+20+25+30 = 185 m"
+      }
+     ],
+     "why": "length_m 543 m (~1,780 ft) is nearly three times the ~185 m / ~700 ft of the pitch table and prose.",
+     "internal_resolution": "pitch_detail sum and prose agree (~185-215 m); length_m is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Snow Dome distance from Glacier Meadows / summit distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Snow Dome (~6,700–6,800 ft, ~2 mi of glacier travel from Glacier Meadows"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "17.45 (Snow Dome high camp)"
+      },
+      {
+       "field": "approach",
+       "says": "Same 17.4–17.5-mi Hoh River Trail ... to Glacier Meadows"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "generally quoted as four to six miles and around 3,500 ft of gain each way"
+      }
+     ],
+     "why": "The Snow Dome waypoint sits at the same mileage as Glacier Meadows though prose puts it ~2 mi beyond, and the bivy's 4-6 mi to the summit disagrees with the waypoints' ~2.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit / land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "N/A"
+      },
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "permit",
+       "says": "all overnight wilderness stays require a wilderness camping permit"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — Olympic National Park (Olympic Wilderness)"
+      }
+     ],
+     "why": "access.permit and access.landManager say N/A while the same row requires an ONP wilderness permit and names NPS as land manager.",
+     "internal_resolution": "permit, overnight_permit and land_manager agree; the N/A values are placeholders.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III; Class 4 with a Class 5 step"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "PD"
+      }
+     ],
+     "why": "grade says Grade III while commitment says II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Hardest rock move",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "protects the exposed 5.6/5.7 moves on the chossy summit dihedral"
+      },
+      {
+       "field": "grade",
+       "says": "Class 4 with a Class 5 step"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "Class 4 / 5.4 step"
+      },
+      {
+       "field": "beta",
+       "says": "several Class 5.3-5.4 moves"
+      }
+     ],
+     "why": "gear describes 5.6/5.7 moves while grade, pitch_detail and beta put the crux at 5.3-5.4.",
+     "internal_resolution": "grade, pitch_detail, beta, approach and climbing_route agree on a 5.4 step; the gear note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rack",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "a small rack of 6-10 cams in sizes ranging from 0.4 to 1.5 inches"
+      },
+      {
+       "field": "gear[2]",
+       "says": "A few stoppers/nuts and a tricam or two, plus long runners — ... pocket-and-edge terrain rather than crack terrain"
+      },
+      {
+       "field": "rope_note",
+       "says": "Source explicitly recommends a few stoppers, tri-cams, and long runners"
+      },
+      {
+       "field": "gear[1]",
+       "says": "a full crevasse kit is overkill"
+      },
+      {
+       "field": "what_to_bring[5]",
+       "says": "Crevasse rescue kit: prusiks ..., mechanical ascenders ..., locking carabiners (at least 4), ice screws"
+      }
+     ],
+     "why": "The rendered rack (6-10 cams) contradicts the gear/rope note (a few nuts and tricams, not crack terrain), and gear calls a full crevasse kit overkill while what_to_bring lists one.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "May through August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May",
+       "says": "marginal"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through August most reliable"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "this route's May-Aug climbing window"
+      }
+     ],
+     "why": "optimalWindow calls May optimal-window while the season starts in June, best_season starts in late June, and May's own month entry says marginal.",
+     "internal_resolution": "season, best_season and the May month entry agree May is not optimal; optimalWindow is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7500"
+      },
+      {
+       "field": "loss_ft",
+       "says": "7402"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "sum 10200"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "4500"
+      },
+      {
+       "field": "approach",
+       "says": "about 3,700 ft of gain to Glacier Meadows"
+      }
+     ],
+     "why": "Header gain (7,500) disagrees with the itinerary total (10,200); day 2 claims 4,500 ft between the Guard Station and Glacier Meadows though the whole approach gains ~3,700.",
+     "internal_resolution": "Waypoint elevations (578 → 948 → 4,200 → 7,980) support ~7,400-7,500; itinerary day 2 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "10"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4].time",
+       "says": "5:00-6:00 PM"
+      }
+     ],
+     "why": "The schedule spans 14-16 hours but the day is listed as 10 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel side",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "from the summit anchor at the top of the block back toward the East Face ramps"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel the block's north side"
+      }
+     ],
+     "why": "rappels says the rappel goes back toward the East Face ramps; descent_text says down the north side.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "2:00-3:00 AM from camp"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Start summit day in pre-dawn darkness (3-4 AM)"
+      },
+      {
+       "field": "turnaround",
+       "says": "on busy weekends start at 4-5am"
+      }
+     ],
+     "why": "Three different start times are recommended.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Bear canister requirement scope",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "what_to_bring[21]",
+       "says": "Bear canister (required by NPS for overnight stays above Glacier Meadows)"
+      },
+      {
+       "field": "access.rules",
+       "says": "Bear-resistant food containers mandatory park-wide for overnight trips"
+      }
+     ],
+     "why": "One field limits the canister requirement to above Glacier Meadows; another says it is park-wide.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "name": "Summit Block — Northwest Edge Finish (variation)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Rope length for rappel",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "a short single rope (30-50m is plenty for the one pitch)"
+      },
+      {
+       "field": "gear[5]",
+       "says": "Single-rope rappel back down the northwest edge"
+      },
+      {
+       "field": "rappels",
+       "says": "a 25-30 m rappel needs a 60 m rope doubled ... a 50 m reaches 25 m with nothing spare"
+      },
+      {
+       "field": "descent_text",
+       "says": "Rappel 25-30m down the northwest edge using a single rope"
+      }
+     ],
+     "why": "gear says a 30-50 m rope is plenty, but the rappel described needs a 60 m rope doubled.",
+     "internal_resolution": "rappels does the arithmetic explicitly: 25-30 m doubled needs 60 m; the gear note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time and distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "15.5"
+      },
+      {
+       "field": "approach",
+       "says": "Same as Blue Glacier/East Face route approach until reaching the summit block base. Approach time is identical."
+      },
+      {
+       "field": "dist_km",
+       "says": "16.8"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "17.5 (Glacier Meadows Camp)"
+      },
+      {
+       "field": "gain_ft",
+       "says": "7402"
+      }
+     ],
+     "why": "timing gives a 1.5 h approach and 15.5 h total and dist_km 16.8 km (~10 mi), while the approach is the 17.5-mile Hoh trail identical to the standard route (multi-day) and gain_ft is the full trailhead-to-summit figure.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cam rack",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "3 to 4 small-to-medium cams"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Small rock rack of 6-10 cams, sizes 0.4-2.0 inches"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "slightly larger cams (up to 2.5 inch)"
+      }
+     ],
+     "why": "Rack size differs between gear (3-4 cams) and detailed_rack (6-10 cams to 2 in) / pro_tips (to 2.5 in).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Descent route after East Peak",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "From the East Peak, descend to Glacier Meadows via Glacier Pass."
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "continue to East Peak, then descend to Glacier Meadows via Glacier Pass"
+      },
+      {
+       "field": "pitch_detail[3]",
+       "says": "East Peak descent and return traverse — Descend East Peak and retrace to West Peak"
+      },
+      {
+       "field": "pitch_detail[4]",
+       "says": "West Peak descent via standard route — Descend summit block and East Face ramps via standard descent"
+      }
+     ],
+     "why": "descent/itinerary exit from the East Peak via Glacier Pass, while the route breakdown retraces the whole ridge to the West Peak and descends the standard summit-block route.",
+     "internal_resolution": "descent, descent_text, itinerary, approach_variants and bail agree on the Glacier Pass exit; pitch_detail rows 4-5 are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "the final crack/chimney move (~5.7)"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.4-5.6 on the harder ridge options between summits"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "Class 5.3-5.4"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "the scrambling is 3rd and 4th class, not technical rock climbing"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "Class 4-5 scrambling/climbing on each of the three summits"
+      }
+     ],
+     "why": "The crux is given as ~5.7, 5.4-5.6, 5.3-5.4, and 3rd/4th class in different fields, and between-summit terrain is class 3-4 in pitch_detail but 5.4-5.6 in rock_grade.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock rack",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "Small-to-medium cam rack (roughly 0.3-1, a #2 and #3 handy)"
+      },
+      {
+       "field": "gear[2]",
+       "says": "A wider piece/alpine rack for the summit block itself"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Minimal rock climbing gear; most scrambling is unroped. Bring 3-4 slings"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "Most parties do not carry rock climbing gear for the peak traverse"
+      }
+     ],
+     "why": "gear calls for a cam rack plus a wider piece, while detailed_rack (rendered) and pro_tips say minimal/no rock gear.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Length of the traverse day",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "hazards[1]",
+       "says": "The traverse requires 14-16+ hours of climbing from Glacier Meadows"
+      },
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "13"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "1:30-2:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "7:00-9:00 PM"
+      }
+     ],
+     "why": "The day is 13 h in the itinerary/timing but 14-16+ h in hazards and ~17.5-19.5 h by the schedule.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Time to West Peak summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Time: 2-2.5 hours to summit from Glacier Meadows base."
+      },
+      {
+       "field": "itinerary.days[2].schedule[1].time",
+       "says": "Morning (after a 1:30-2:00 AM start)"
+      }
+     ],
+     "why": "2-2.5 hours from Glacier Meadows to the West Peak is inconsistent with the alpine start/morning summit and the standard ~7-9 hour ascent.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "1:30-2:00 AM from camp"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Start very early (2-3 AM from Glacier Meadows)"
+      }
+     ],
+     "why": "Two different start windows.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "9+8.3+10+0+17.3 = 44.6"
+      }
+     ],
+     "why": "dist_km (17.4 mi) is one-way while the itinerary total is 44.6 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "name": "Summit Block — North Face Direct Finish (variation)",
+   "area": "Mount Olympus (West Peak)",
+   "contradictions": [
+    {
+     "fact": "Pitch/rappel length",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "a single ~80-ft pitch straight up the north face"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~80 ft directly up the north face"
+      },
+      {
+       "field": "rappels",
+       "says": "The north face of the summit block is about 80 ft, so a 60 m doubled (30 m per strand) reaches the snow"
+      },
+      {
+       "field": "approach_variants[0].hazards[2]",
+       "says": "The descent rappel measures close to a full 165 ft, which eats nearly all of a 60 m rope doubled"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the pitch is a single rope length of about 165 ft"
+      },
+      {
+       "field": "length_m",
+       "says": "50"
+      }
+     ],
+     "why": "The pitch/rappel is ~80 ft in most fields but ~165 ft (and length_m 50 m) in others; a 165 ft rappel cannot be made on a 60 m rope doubled (98 ft), contrary to what the hazard implies.",
+     "internal_resolution": "overview, pitch_detail, rappels, descent_text and partner_requirements agree on ~80 ft; the 165 ft figures and length_m are the outliers.",
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7500"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "sum 10200"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "4500"
+      }
+     ],
+     "why": "Header gain disagrees with the itinerary total by 36%; day 2's 4,500 ft between Guard Station and Glacier Meadows is impossible given ~4,300 ft camp and ~950 ft station.",
+     "internal_resolution": "Trail elevations support ~7,400-7,500; itinerary day 2 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "11"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4].time",
+       "says": "5:00-6:30 PM"
+      }
+     ],
+     "why": "The schedule spans 14-16.5 h but the day is 11 h.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Rock rack of 8-10 cams, sizes 0.4-1.5 inches"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "carry a small rack (a few cams/nuts) for this pitch"
+      }
+     ],
+     "why": "8-10 cams vs a few cams/nuts.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Hike-out days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "back to the trailhead, typically with another night at Lewis Meadow or Elk Lake"
+      },
+      {
+       "field": "itinerary.days[3]",
+       "says": "Hike out to trailhead — 17.3 miles in one 8-hour day"
+      }
+     ],
+     "why": "descent_text implies an extra night on the way out; the itinerary hikes out in one day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "28"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "41.6"
+      }
+     ],
+     "why": "dist_km is one-way (17.4 mi) while the itinerary is the ~42 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "name": "Standard Scramble",
+   "area": "Mount Pulitzer",
+   "contradictions": [
+    {
+     "fact": "Glacier travel / rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel on the Pulitzer scramble itself"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "parties carry full glacier travel kit for the approach: crampons, ice axe, a glacier rope, and basic crevasse-rescue hardware ... glaciers such as the one on Pulitzer's own north slope"
+      },
+      {
+       "field": "rack[1]",
+       "says": "Glacier rope + crevasse-rescue hardware (Tibloc/Micro Traxion) for Bailey Range glacier crossings"
+      },
+      {
+       "field": "rope_note",
+       "says": "rope not standard"
+      }
+     ],
+     "why": "Safety says no glacier travel and rope not standard, while the rendered rack calls for a full glacier kit including for Pulitzer's own north-slope glacier.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Base camp for the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "typically approached from a high camp near Lone Tree Pass"
+      },
+      {
+       "field": "approach",
+       "says": "reaches a high camp (commonly Lone Tree Pass) below Pulitzer and Mount Ferry"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "From the high camp (commonly Lone Tree Pass)"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Ferry Basin — The usual camp for Pulitzer and Ferry"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0]",
+       "says": "Leave Ferry Basin camp"
+      },
+      {
+       "field": "descent_text",
+       "says": "For an out-and-back side trip from Ferry Basin"
+      }
+     ],
+     "why": "The camp the climb starts from is Lone Tree Pass in the overview/approach/climbing_route but Ferry Basin in the bivy, itinerary and descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Reaching the true summit / grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 scramble (Class 3-4 exposed on the final ridge to the true summit)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "Class 3-4, exposed"
+      },
+      {
+       "field": "itinerary.days[2].schedule[2]",
+       "says": "7:15 AM Summit Mount Pulitzer — 6,283 ft; brief stop"
+      },
+      {
+       "field": "itinerary.days[2].schedule[1].detail",
+       "says": "Start of the class 2-3 scramble"
+      }
+     ],
+     "why": "The itinerary treats the summit as a quick class 2-3 tag 45 min from the col, while grade prose says the true summit needs exposed class 3-4 on shattered rock that stops many parties at the false summit.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit booking",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "the cross-country zones on this approach are not bookable online - they are hand-issued by the Wilderness Information Center over the telephone"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "NPS wilderness camping permit (reserved via recreation.gov/WIC)"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov or by phone ... and print it from your account"
+      }
+     ],
+     "why": "permit says cross-country zones cannot be booked online, while passRequired and overnight_permit direct climbers to Recreation.gov.",
+     "internal_resolution": "permit, access.permit and pro_tips agree the Bailey Range zones are phone-issued by the WIC.",
+     "needs_research": false
+    },
+    {
+     "fact": "Sol Duc Road winter status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved, generally open year-round to Sol Duc Falls trailhead area"
+      },
+      {
+       "field": "climate.bySeason.winter",
+       "says": "the Sol Duc approach road closes seasonally"
+      }
+     ],
+     "why": "Road is open year-round in one field and closes seasonally in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "name": "South Slopes",
+   "area": "Mount Queets",
+   "contradictions": [
+    {
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Climb cross-country up and over Dodwell-Rixon Pass, descend into Queets Basin, then ascend the South Slopes to the summit"
+      },
+      {
+       "field": "itinerary.days[2].schedule[2]",
+       "says": "Enter Queets Basin — Cross moraines and streams to the base of the South Slopes."
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the south slopes back into the Elwha Basin."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The southeast ridge is gained directly from the pass, so the base is the pass itself"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "leave the pass and gain the SE ridge of Queets here"
+      },
+      {
+       "field": "climbing_route",
+       "says": "Lower third of the SE ridge ... Scree traverse ... Upper ridge"
+      }
+     ],
+     "why": "The itinerary drops from the pass into Queets Basin and climbs the south slopes, while the approach, variant, waypoints and climbing_route go straight up the SE ridge from the pass.",
+     "internal_resolution": "approach, approach_variants, waypoints and climbing_route agree on the SE ridge from the pass; the itinerary is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach line (Low Divide vs Chicago Camp)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the Elwha River Trail 28.4 miles (with a ford of the Elwha River at Chicago Camp) to Low Divide (3,602 ft), then continue cross-country up into Elwha Basin"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "past Elkhorn, Hayes River, and Camp Wilder to Chicago Camp, then leave the maintained trail and work up into upper Elwha Basin"
+      },
+      {
+       "field": "bivy[3].notes",
+       "says": "Chicago Camp is where the trail effectively ends and the cross-country begins"
+      }
+     ],
+     "why": "The approach routes via Low Divide before entering Elwha Basin, while the itinerary and bivy leave the trail at Chicago Camp.",
+     "internal_resolution": "itinerary, bivy and the waypoints (Elwha Basin at 31 mi, short of Low Divide's 28.4 + detour) indicate leaving at Chicago Camp.",
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "12+14+10+14+12 = 62"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~70-mile round-trip"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "35.5 (summit, one-way)"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "31 (Elwha Basin)"
+      },
+      {
+       "field": "itinerary.days[0-1].miles",
+       "says": "26 to high camp"
+      }
+     ],
+     "why": "The itinerary sums to 62 mi but totalNote says ~70 and the waypoints put the summit 35.5 mi (71 RT) and Elwha Basin 31 mi out vs 26 mi in the itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road walk to Whiskey Bend",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "~6.2 mi of closed road"
+      },
+      {
+       "field": "approach",
+       "says": "an extra ~7 miles"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "roughly 5-6 miles of extra biking/walking each way"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "walk or bike ~8 miles to the Whiskey Bend Trailhead"
+      }
+     ],
+     "why": "The road walk is given as 5-6, 6.2, 7 and 8 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Difficulty of summit line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Mostly Class 2 walking/scrambling"
+      },
+      {
+       "field": "itinerary.days[2].schedule[3].detail",
+       "says": "Class 2 slopes to the top"
+      },
+      {
+       "field": "climbing_route",
+       "says": "all segments '2nd class'"
+      }
+     ],
+     "why": "The graded route is Class 3 but the itinerary and climbing_route describe only class 2.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September"
+      }
+     ],
+     "why": "Header season starts late July while best_season and optimalWindow start mid-July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Elwha Snowfinger usability",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "then the Elwha Snowfinger leads to Dodwell-Rixon Pass at 4,763 ft"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "The historic snow ramp near the pass is unreliable now and should not be counted on"
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "NPS has been discouraging its use"
+      }
+     ],
+     "why": "The bivy presents the snowfinger as the way to the pass while other fields say not to rely on it.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Location relative to the Bailey Range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Mount Queets sits at the heart of the Bailey Range"
+      },
+      {
+       "field": "overview",
+       "says": "just southwest of the Bailey Range"
+      }
+     ],
+     "why": "beta places Queets in the Bailey Range; overview puts it southwest of it.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_noyes_basin",
+   "name": "Noyes Basin Route",
+   "area": "Mount Seattle",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_seattle_seattle_creek",
+   "name": "Seattle Creek Basin Route",
+   "area": "Mount Seattle",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "name": "South Slopes (Standard)",
+   "area": "Mount Seattle",
+   "contradictions": [
+    {
+     "fact": "Trailhead / approach side",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "North Fork Quinault Trailhead (North Shore Road)"
+      },
+      {
+       "field": "waypoints",
+       "says": "North Fork Quinault TH → Three Lakes → Kimta Peak → Low Divide (27 mi)"
+      },
+      {
+       "field": "pitch_detail[0]",
+       "says": "Trailhead to Low Divide — North Fork Quinault River Trail ... ~16 mi"
+      },
+      {
+       "field": "beta",
+       "says": "reached via a multi-day approach up the North Fork Quinault River to Low Divide"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "unless you are traversing the range you should be coming from the Quinault"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From Whiskey Bend Trailhead the trail rolls gently up the forested Elwha valley"
+      },
+      {
+       "field": "itinerary.days[5].objective",
+       "says": "Return to Whiskey Bend Trailhead"
+      },
+      {
+       "field": "road.name",
+       "says": "Elwha River area access (Olympic Hot Springs Road)"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the south slopes back toward the Elwha Basin approach."
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Multi-day approach via the Elwha River trail into Elwha Basin"
+      }
+     ],
+     "why": "The trailhead card, waypoints, beta and route breakdown start at the North Fork Quinault trailhead, while the itinerary, timing, road and partner fields start from Whiskey Bend on the Elwha.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Late July to mid-September"
+      },
+      {
+       "field": "climate.typical",
+       "says": "June through August is the most favorable period ... driest and most snow-free from mid-July through September"
+      }
+     ],
+     "why": "The header season (Jun-Aug) includes June/early July and excludes September, while best_season and seasonal_guidance run mid-July to September.",
+     "internal_resolution": "best_season, seasonal_guidance, climate.summer and the variant all favour mid/late July-September; season is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of Promise Creek Bench vs Low Divide",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1]",
+       "says": "Low Divide to Seattle Meadows ... Via the Skyline Trail system ... over intermediate high points like Promise Creek Bench (~5,340 ft)"
+      },
+      {
+       "field": "waypoints",
+       "says": "Promise Creek Bench distMi 19, Low Divide distMi 27, Seattle Meadows 28.5"
+      }
+     ],
+     "why": "The route breakdown puts Promise Creek Bench between Low Divide and Seattle Meadows, but the waypoints put it 8 miles before Low Divide on the Skyline Trail.",
+     "internal_resolution": "Waypoints (Skyline Trail sequence ending at Low Divide) are internally ordered; pitch_detail row 2 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Low Divide mileage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "Trail, ~16 mi"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "27 (Low Divide)"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 16-20 miles one-way depending on the line chosen"
+      }
+     ],
+     "why": "Low Divide is 16-20 mi in prose but 27 mi in the waypoints drawn for this route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit line description",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "finishing with a class 2-3 scramble on the east ridge/side to the craggy summit"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "cross to the southwest couloir, then scramble loose talus on the south ridge/east side to the (slightly higher) south summit"
+      },
+      {
+       "field": "face",
+       "says": "West Slope - Southwest Couloir - South Ridge"
+      }
+     ],
+     "why": "The finish is the east ridge in beta/waypoints but the southwest couloir and south ridge to a 'south summit' in pitch_detail/face.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit quota",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not itself a quota area"
+      },
+      {
+       "field": "bivy[3].permit",
+       "says": "Not a quota area"
+      }
+     ],
+     "why": "The itinerary calls the camps quota-based while the bivy entries say they are not quota areas.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "name": "Glacier/Scramble Route",
+   "area": "Mount Tom",
+   "contradictions": [
+    {
+     "fact": "Wilderness permit booking",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Self-issue wilderness permit and register at the trailhead kiosk"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Glacier Meadows/Elk Lake wilderness permits are first-come, first-served"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "QUOTA-LIMITED, reserved on Recreation.gov"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve in advance on Recreation.gov ... Glacier Meadows and the Hoh River camps are quota sites"
+      },
+      {
+       "field": "permit",
+       "says": "require a wilderness camping permit via Recreation.gov"
+      }
+     ],
+     "why": "The waypoint and itinerary say permits are self-issued / first-come first-served, while permit, access and bivy say they are quota-limited and reserved in advance.",
+     "internal_resolution": "permit, access.permit, overnight_permit and three bivy entries agree on advance Recreation.gov reservation; the waypoint note and itinerary.cal are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit scramble grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "Class 3-4 scramble up from the col"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "one variation has a short 5.7-ish move ... an easier ~5.3 line just to the side"
+      }
+     ],
+     "why": "The summit is Class 3 in the grade fields, Class 3-4 in route prose, and ~5.3 at easiest in pro_tips.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "11"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4].time",
+       "says": "+7-8 hr (summit, from a 4:00 AM start)"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "By dark"
+      }
+     ],
+     "why": "Summit alone is reached 7-8 h after a 4 AM start and return is 'by dark', far longer than the 11-hour day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Best-season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "best conditions and snow-bridge coverage for the Tom traverse are typically late June-August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "marginal"
+      },
+      {
+       "field": "best_season",
+       "says": "Late July through August is generally favored"
+      }
+     ],
+     "why": "itinerary.cal puts the best conditions starting in late June, outside the Jul-Sep season and against June's marginal rating.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Lewis Meadow location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Five Mile Island / Lewis Meadow area — distMi 5.6"
+      },
+      {
+       "field": "approach",
+       "says": "5 Mile Island (mile 5) ... Lewis Meadow (mile 10.3)"
+      }
+     ],
+     "why": "The waypoint merges Five Mile Island and Lewis Meadow at mile 5.6, but the approach puts Lewis Meadow at mile 10.3.",
+     "internal_resolution": "approach (and bivy 'roughly ten miles in') agree Lewis Meadow is ~10 mi; the waypoint name is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "33.8"
+      },
+      {
+       "field": "approach",
+       "says": "The round-trip distance (~69 km/43 mi)"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "42"
+      }
+     ],
+     "why": "dist_km (21 mi) is one-way while the approach calls the ~69 km round trip the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "name": "Mount Wilder Scramble",
+   "area": "Mount Wilder",
+   "contradictions": [
+    {
+     "fact": "Base camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0]",
+       "says": "Chicago Camp — ... the standard last-trail-camp for ... MOUNT WILDER, ... reached by pushing on into the Elwha Basin above (role main)"
+      },
+      {
+       "field": "approach",
+       "says": "Continue upriver to Camp Wilder ... the logical base camp for the climb"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Camp Wilder, about 4 miles below Chicago Camp ... is the logical base camp"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0]",
+       "says": "Leave Camp Wilder"
+      }
+     ],
+     "why": "The bivy section's main camp is Chicago Camp (approach via Elwha Basin), while approach, pro_tips and the itinerary base the climb at Camp Wilder climbing directly from the river.",
+     "internal_resolution": "approach, pro_tips, itinerary and waypoints all use Camp Wilder; the bivy entry is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trail mileages to camps",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Mary's Falls around 6.9 mi ... Hayes River Guard Station around 12 mi ... Camp Wilder, roughly 16-17 miles from Whiskey Bend"
+      },
+      {
+       "field": "waypoints",
+       "says": "Mary's Falls 8.8, Hayes River Guard Station 16.1, Camp Wilder 19.8"
+      },
+      {
+       "field": "itinerary.days[0-1].miles",
+       "says": "9 (to Mary's Falls) + 15 = 24 to Camp Wilder"
+      },
+      {
+       "field": "descent_text",
+       "says": "retrace the Elwha River Trail roughly 16-17 miles back to Whiskey Bend"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "Hayes River about sixteen"
+      }
+     ],
+     "why": "Camp Wilder is 16-17 mi in the approach/descent, 19.8 mi in waypoints and 24 mi by the itinerary; Hayes River is 12 mi in the approach but ~16 elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Food storage rule",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "what_to_bring[3]",
+       "says": "canister or use camp bear wire — confirm which is required at your camp"
+      },
+      {
+       "field": "access.rules",
+       "says": "some Elwha camps have bear wires, others require a hard-sided canister"
+      },
+      {
+       "field": "bivy[*].permit",
+       "says": "Bear canister mandatory"
+      }
+     ],
+     "why": "The bivy entries say a canister is mandatory; what_to_bring and access allow bear wires at some camps.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[1]",
+       "says": "Wet maritime snowpack / avalanche danger into early summer"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route ... only climbed in the dry late-July-September window"
+      }
+     ],
+     "why": "obj_haz lists avalanche danger while seasonal_hazards says avalanche is N/A for the climbing season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road walk distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "roughly 6.9 mi of walking or biking each way"
+      },
+      {
+       "field": "approach",
+       "says": "an extra ~7-mile road-walk"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "walk or bike ~8 miles to the Whiskey Bend Trailhead"
+      }
+     ],
+     "why": "The trailhead card says ~8 miles; other fields say ~7.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

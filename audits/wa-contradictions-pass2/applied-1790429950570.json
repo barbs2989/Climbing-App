@@ -1,0 +1,127 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_face_center",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_south_face_center",
+   "column": "dist_km",
+   "path": [],
+   "fact": "One-way approach distance (dist_km) holds the round-trip figure"
+  },
+  {
+   "id": "wa_south_face_3",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Pitch 1 description"
+  },
+  {
+   "id": "wa_south_face_3",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Summit waypoint distance vs 6-mile round trip"
+  },
+  {
+   "id": "wa_south_face_3",
+   "column": "dist_km",
+   "path": [],
+   "fact": "One-way approach distance (dist_km) holds the round-trip figure"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_face_center",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5192,
+      "lng": -120.6743,
+      "elev": 5400,
+      "name": "Blue Lake Trailhead",
+      "note": "Signed trailhead on SR-20 ~1 mi west of Washington Pass; follow Blue Lake Trail then the climber's path up to the Concord-Lexington gully.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51465,
+      "lng": -120.65825,
+      "elev": 7560,
+      "name": "Concord Tower Summit",
+      "note": "Shared summit for all Concord Tower routes.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "dist_km": 9.66
+   }
+  },
+  {
+   "id": "wa_south_face_3",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "The 'price of admission' pitch: traverse rightward across gravelly, gently down-sloping class-2 ledges from the notch's east side, then easier climbing gains tree-lined terrain — unglamorous but necessary to reach the better rock above.",
+      "pitch": 1,
+      "anchor": "Tree/gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "A roped scramble up to the ridge crest, then across to a sandy stance near the base of the 'Shark Fin' — a #2 and #3 cam behind a flake back up the belay here.",
+      "pitch": 2,
+      "anchor": "Gear (flake)",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 2,
+      "grade": "5.6",
+      "notes": "The 'money pitch': climb up and over the Shark Fin, a striking free-standing wedge of granite, then continue up the summit block to bolted anchors — the most sustained and photogenic climbing on the route.",
+      "pitch": 3,
+      "anchor": "Bolted anchor (summit)",
+      "lengthM": 25
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.5192,
+      "lng": -120.6743,
+      "elev": 5400,
+      "name": "Blue Lake Trailhead",
+      "note": "Signed trailhead on SR-20 ~1 mi west of Washington Pass; follow Blue Lake Trail then the climber's path up to the Concord-Lexington gully.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51465,
+      "lng": -120.65825,
+      "elev": 7560,
+      "name": "Concord Tower Summit",
+      "note": "Shared summit for all Concord Tower routes.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "dist_km": 9.65
+   }
+  }
+ ]
+}

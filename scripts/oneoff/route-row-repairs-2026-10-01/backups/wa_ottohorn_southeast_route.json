@@ -1,0 +1,169 @@
+{
+ "id": "wa_ottohorn_southeast_route",
+ "name": "Southeast Route",
+ "waypoints": [
+  {
+   "lat": 48.68276,
+   "lng": -121.26928,
+   "name": "Goodell Creek Trailhead",
+   "note": "Unpaved pullout off Goodell Creek Rd, just before Goodell Creek Campground, across SR-20 from Newhalem; standard access for all Southern Pickets objectives via the Terror Creek climbers' trail.",
+   "type": "Trailhead",
+   "directions": "Take the gravel road that forks off Highway 20 across from Newhalem and follow it to where it dead-ends at a gravel pit, at about 600 feet — there is parking here but no trailhead sign. The unpaved pullout sits just before Goodell Creek Campground and is the standard access point for Southern Pickets objectives via the Terror Creek climbers' path. A North Cascades National Park backcountry permit for the Crescent Creek Basin zone is required."
+  },
+  {
+   "lat": 48.721092,
+   "lng": -121.288257,
+   "elev": 1700,
+   "name": "Large cairn off the old roadbed",
+   "note": "Cairn/arrow marks where the climbers' path leaves the Goodell Creek roadbed toward Terror Creek and Crescent Creek Basin.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Follow the old logging roadbed along the east bank of Goodell Creek. The first 1.5 miles thread through downed trees and washouts before a faint trail emerges in the timber and levels around 1,100 ft. Around mile 3.5, near 1,700 ft, the trail crosses a stream by a small campsite and a cairn marking the unsigned climbers' path; this is the last reliable water for a long way."
+  },
+  {
+   "lat": 48.724699,
+   "lng": -121.289851,
+   "elev": 2600,
+   "name": "Terror Creek ford",
+   "note": "Ford on foot near a cairn on the far bank; typically no more than calf-deep by midsummer but can run high and cold earlier in the season.",
+   "type": "Water",
+   "distMi": 4.3
+  },
+  {
+   "lat": 48.733115,
+   "lng": -121.293572,
+   "elev": 3800,
+   "name": "Forested ridge crest, toe of the Barrier",
+   "note": "Steep climbers' path tops out on the ridge between Terror and Crescent Creeks here; this is the base of 'the Barrier' rock rib you cross next.",
+   "type": "Junction",
+   "distMi": 5
+  },
+  {
+   "lat": 48.751149,
+   "lng": -121.301543,
+   "elev": 6100,
+   "name": "The Barrier crossing",
+   "note": "Loose, dirty Class 3 traverse with exposed moves crossing the Barrier's rock rib into the Terror/Crescent Creek basins; rockfall risk on the loose sections.",
+   "type": "Hazard",
+   "distMi": 6.5
+  },
+  {
+   "lat": 48.763172,
+   "lng": -121.306857,
+   "elev": 6200,
+   "name": "Crescent Creek Basin camp",
+   "note": "Established basin camp used for Ottohorn, Himmelhorn, and the Chopping Block; reached after crossing the Barrier.",
+   "type": "Campsite",
+   "distMi": 7.5,
+   "directions": "From the notch, descend about 250 ft into Stump Hollow, then make a long rising traverse across the snow, slabs and talus of Crescent Creek Basin to the camp below Mount Terror and the Himmelhorn."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7400,
+   "name": "Ottohorn-Himmelhorn col",
+   "note": "About an hour above camp with some dicey scrambling near the top; gain the col here then follow the 1961 line onto Ottohorn's east ridge (Class III). South side of the col is the easier descent, the north side turns to loose low-5th once melted out.",
+   "type": "Junction",
+   "distMi": 8,
+   "directions": "Continue the rising traverse of the basin toward the Ottohorn-Himmelhorn col and crampon up the final snow and scree pitch to the col. Late season it is loose class 3-4 scrambling, and an overhanging boulder near the top is bypassed on its left. Note where you cross the moat for the way down."
+  },
+  {
+   "lat": 48.7764,
+   "lng": -121.3125,
+   "elev": 7840,
+   "name": "Ottohorn summit",
+   "type": "Summit",
+   "elevFt": 7840,
+   "directions": "From the col, scramble the east ridge, mostly class 3, to the summit, roughly an hour round trip. A rockfall scar about 30 ft below the summit ridge has forced at least one party to rope up for about two pitches of 5.7, so look at the last 100 ft before committing."
+  }
+ ],
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Goodell Creek trailhead, follow the old roadbed and climbers' path up Terror Creek to gain the Barrier ridge crest, then cross the Barrier (loose ledges at the lower end of Terror Glacier, or moats/steep snow at the upper end) and drop into Crescent Creek Basin. Most parties camp on the heather/slab bench around 6,300-6,600 ft below the Chopping Block-Ottohorn massif.",
+    "hours": 9,
+    "miles": 7.5,
+    "title": "Approach to Crescent Creek Basin",
+    "gainFt": 5800,
+    "lossFt": 300,
+    "packLb": 45,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave Goodell Creek trailhead",
+      "detail": "Old roadbed, then climbers' path up Terror Creek drainage."
+     },
+     {
+      "time": "+4 hr",
+      "label": "Gain the Barrier crest",
+      "detail": "Brushy, faint boot path; timberline around 5,600 ft."
+     },
+     {
+      "time": "+6.5 hr",
+      "label": "Cross the Barrier",
+      "detail": "Loose ledges or upper snow/moat crossing, under an hour either way."
+     },
+     {
+      "time": "+8-9 hr",
+      "label": "Make camp in Crescent Creek Basin",
+      "detail": "Heather/slab benches near 6,300-6,600 ft, below the Ottohorn-Himmelhorn col."
+     }
+    ],
+    "objective": "Establish high camp below the Ottohorn-Himmelhorn col"
+   },
+   {
+    "n": 2,
+    "note": "Climb steep snow/talus from camp to the Ottohorn-Himmelhorn col, then scramble the class 3-4 east ridge/southeast side to the Ottohorn summit; parties report roughly an hour round trip from the col to the summit and back. Many groups use the same col to tag Frenzel Spitz and/or Himmelgeisterhorn (Düsseldorfspitz) the same day since the approach effort to the col is the crux of the outing.",
+    "hours": 9,
+    "miles": 2.5,
+    "title": "Ottohorn via the Ottohorn-Himmelhorn col",
+    "gainFt": 1900,
+    "lossFt": 1900,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "4:30 AM",
+      "label": "Leave camp",
+      "detail": "Light rack, rope, and a day's food; climbing gear only."
+     },
+     {
+      "time": "+2 hr",
+      "label": "Reach Ottohorn-Himmelhorn col",
+      "detail": "Steep snow or loose class 4-5.easy rock depending on season and snow coverage."
+     },
+     {
+      "time": "+3 hr",
+      "label": "Summit Ottohorn",
+      "detail": "Class 3-4 scramble along the east ridge/southeast face; roughly an hour round trip from the col."
+     },
+     {
+      "time": "+4-6 hr",
+      "label": "Optional: traverse to Frenzel Spitz",
+      "detail": "Southeast ridge/face, class 4-low 5th; common to combine on the same col day."
+     },
+     {
+      "time": "By dusk",
+      "label": "Return to camp",
+      "detail": "Reverse the col and snow/talus descent."
+     }
+    ],
+    "objective": "Summit Ottohorn (and often Frenzel Spitz) from high camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and reverse the approach: recross the Barrier, descend the Terror Creek drainage, and follow the roadbed back to the Goodell Creek trailhead.",
+    "hours": 7.5,
+    "miles": 7.5,
+    "title": "Exit to trailhead",
+    "gainFt": 300,
+    "lossFt": 5800,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Pack out via the Barrier and Terror Creek"
+   }
+  ],
+  "totalNote": "A standard 3-day trip: roughly 9 hrs / 5,800 ft to establish high camp in Crescent Creek Basin, a technical summit day over the Ottohorn-Himmelhorn col (often combined with Frenzel Spitz), and a 7-8 hr exit; only very fast, committed parties compress this to 2 days."
+ }
+}

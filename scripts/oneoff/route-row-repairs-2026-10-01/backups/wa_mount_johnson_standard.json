@@ -1,0 +1,160 @@
+{
+ "id": "wa_mount_johnson_standard",
+ "name": "Standard Route",
+ "approach": "From the Upper Dungeness Trailhead, start on Upper Dungeness Trail #833.2 through second-growth and then old-growth forest along the Dungeness River. At about 1 mile, bear right at the signed junction onto the Royal Basin Trail (the left fork continues up-valley toward Boulder Shelter/Constance Pass). The Royal Basin trail then climbs gradually for several miles alongside Royal Creek — the main water source for the approach — crossing it on log/plank bridges more than once; these crossings can run fast and cold during early-season snowmelt (June). Around mile 6 the grade steepens sharply for the push to Royal Lake (7.2 mi, roughly 2,500 ft gained from the trailhead), with the final mile gaining about 500 ft on looser, sometimes-eroded tread. From Royal Lake continue south up-valley on the scramblers'/climbers' path roughly another 0.8 mile and 500 ft to Upper Royal Basin (about 8 mi in, ~5,600 ft), a broad heather-and-tarn basin below Mount Deception's northeast face that most parties use as base camp (NPS wilderness permit and bear canister required; no fires; advance reservations cover June 15–Oct 15). From Upper Royal Basin the maintained trail ends; head cross-country west up heather benches and talus to the rim of the glacial moraine ringing Surprise Basin, the small hanging cirque between Mount Martin, Mount Johnson, and Mount Clark. Drop into Surprise Basin and cross its snowfields (crampons/axe often useful into July) toward the roughly 6,900 ft notch/col between Johnson (climber's left) and Clark (climber's right) — this is the standard gateway to Johnson's upper mountain. This off-trail stretch above Upper Royal Basin is loose talus and scree with genuine rockfall and route-finding hazard; helmets on from the moraine rim upward. Given the total distance (~19 miles / 30.9 km round trip) and elevation gain, most parties backpack in and camp at Upper Royal Basin, climbing Johnson as a long day from camp rather than attempting it car-to-car.",
+ "itinerary": {
+  "cal": "Royal Basin requires a reservable wilderness permit (online reservations cover June 15 through October 15 and are released each April 15) and a bear canister; best conditions are typically July-September once seasonal snow/ice in the Johnson-Clark notch and bowl has diminished.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Upper Dungeness trailhead, hike the Royal Basin trail past Royal Lake and up into Upper Royal Basin, camping near Imperial Tarn at roughly 5,800 ft. This is a moderate, well-graded backpack with no exposure — most parties take it at a leisurely pace and arrive with time to scout tomorrow's route.",
+    "hours": 4.5,
+    "miles": 8,
+    "title": "Hike in to Upper Royal Basin camp",
+    "gainFt": 1800,
+    "lossFt": 0,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Establish high camp near Imperial Tarn in Upper Royal Basin"
+   },
+   {
+    "n": 2,
+    "note": "Leave camp before dawn, climb to the ~6,900 ft notch between Johnson and Clark, drop about 100 ft and climb Johnson's lower snowfield to its upper-left corner, then take the narrow, exposed ledge south onto the upper snowfield. A loose, low-angle gully and the foot of a low wall lead around behind Sweat Spire and Gasp Pinnacle to the summit block, where the rightmost chimney (class 4) gains the crest just below the top. Reverse the entire route to descend, facing in on the chimney, and re-cross the notch back to camp.",
+    "hours": 9,
+    "miles": 3.2,
+    "title": "Summit day: Johnson via the ledges and summit chimney",
+    "gainFt": 2700,
+    "lossFt": 2700,
+    "packLb": 14,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave high camp",
+      "detail": "Light summit packs; climb toward the Johnson-Clark notch."
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Reach the 6,900 ft notch",
+      "detail": "Drop about 100 ft and climb Johnson's lower snowfield to its upper-left corner."
+     },
+     {
+      "time": "8:00 AM",
+      "label": "Pick up the ledge system",
+      "detail": "Traverse the narrow, exposed ledge south onto the upper snowfield."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Gully and summit chimney",
+      "detail": "Climb the loose gully around behind Sweat Spire and Gasp Pinnacle, then the rightmost chimney (class 4) on the summit block."
+     },
+     {
+      "time": "10:30 AM",
+      "label": "Summit",
+      "detail": "7,680 ft, high point of The Needles."
+     },
+     {
+      "time": "3:00 PM",
+      "label": "Back at camp",
+      "detail": "Full reversal of the route, including downclimbing the chimney and re-crossing the ledge."
+     }
+    ],
+    "objective": "Climb Mount Johnson (7,680 ft) and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and retrace the Royal Basin trail back down past Royal Lake to the trailhead.",
+    "hours": 4.5,
+    "miles": 8,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 1800,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Return to the Upper Dungeness trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip: two roughly 8-mile approach days on maintained trail bracket one long, technical summit day (~2,700 ft gain, class 3-4 terrain) between the Johnson-Clark notch and the summit block."
+ },
+ "waypoints": [
+  {
+   "lat": 47.877572,
+   "lng": -123.136927,
+   "elev": 2500,
+   "name": "Upper Dungeness Trailhead",
+   "note": "Northwest Forest Pass required; ~12-car lot at road end on FR 2870 just past the Dungeness River bridge.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 at Blyn, head west toward Sequim for 1.7 miles and turn left on Louella Road, then left on Palo Alto Road for about 5.8 miles. Turn right on FR 2880, cross the Dungeness River past Dungeness Forks Campground, and go straight onto FR 2870. Bear right after 2.5 miles to stay on FR 2870, take the left fork 4.9 miles later, and in 1.6 miles cross the Dungeness again to the trailhead lot. A Northwest Forest Pass is required."
+  },
+  {
+   "lat": 47.869049,
+   "lng": -123.15061,
+   "elev": 2650,
+   "name": "Royal Basin Trail junction",
+   "note": "Leave the easy Dungeness River Trail here and turn south onto the Royal Creek/Royal Basin Trail toward Royal Basin.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Start up the Upper Dungeness Trail through forest along the Dungeness River for about 1 mile to the signed Royal Basin Trail junction, just before the footlog bridge. Bear right onto the Royal Basin Trail; the left fork continues up-valley toward Boulder Shelter."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3500,
+   "name": "Royal Creek Camp",
+   "note": "First two designated trailside campsites on Royal Creek at ~3,500 ft with reliable creek water; fires allowed only here, not at the third site 3/4 mile farther up.",
+   "type": "Campsite",
+   "distMi": 3,
+   "directions": "Follow the Royal Basin Trail as it climbs gradually beside Royal Creek to the first designated trailside campsites at about 3,500 ft."
+  },
+  {
+   "lat": 47.83201,
+   "lng": -123.21073,
+   "elev": 5100,
+   "name": "Royal Lake",
+   "note": "Basecamp for the Johnson/Clark climb at 5,100 ft; composting toilet, bear canisters required, and campfires are prohibited throughout Royal Basin.",
+   "type": "Campsite",
+   "distMi": 7.2,
+   "directions": "Continue up the valley alongside Royal Creek, crossing it on log bridges. Around mile 6 the grade steepens sharply, and the last mile gains about 500 ft on loose, eroded tread to Royal Lake at 5,100 ft."
+  },
+  {
+   "lat": 47.831319199999996,
+   "lng": -123.2214404,
+   "elev": 5600,
+   "name": "Upper Royal Basin",
+   "note": "Maze of tarns, snowfields and meadows below the north faces of Johnson and Clark; leave the maintained trail here and go cross-country toward the Clark-Johnson col.",
+   "type": "Junction",
+   "distMi": 8,
+   "directions": "Continue up-valley past Shelter Rock and Arrowhead Meadow on the climbers' path, about 0.8 mile and 500 ft, to the tarns and meadows of Upper Royal Basin, where the maintained trail ends."
+  },
+  {
+   "lat": 47.83519,
+   "lng": -123.234024,
+   "elev": 6900,
+   "name": "Clark-Johnson col",
+   "note": "Obvious saddle between the two peaks gained via scree/ramps above the basin; Johnson is on climber's left, Clark on the right.",
+   "type": "Junction",
+   "distMi": 8.6,
+   "directions": "Head cross-country west up heather benches and talus to the moraine rim of Surprise Basin, drop into the basin, and cross its snowfields to the 6,900 ft notch between Johnson on the left and Clark on the right. The talus above the rim is loose; wear helmets from the rim up."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": null,
+   "name": "Narrow ledge traverse",
+   "note": "From the upper-left corner of Johnson's lower snowfield, a ledge only a few feet wide leads south past an outcrop onto the upper snowfield above a loose, outsloping drop.",
+   "type": "Hazard",
+   "distMi": 9.2,
+   "directions": "From the notch, drop about 100 ft and climb Johnson's lower snowfield to its upper-left corner. There a ledge only a few feet wide leads left (south), squeezing past an outcrop onto the upper snowfield above a loose, outsloping drop."
+  },
+  {
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elev": 7680,
+   "name": "Mount Johnson",
+   "note": "True summit, 4th-highest peak in the Olympics; sign the register, then reverse the ledge system and col to descend.",
+   "type": "Summit",
+   "distMi": 9.6,
+   "directions": "Cross the upper snowfield to a little left of its center and exit up a rubbly, low-angle gully, then follow the base of a low wall around behind Sweat Spire and Gasp Pinnacle to the summit block. Leaving the snowfield too far right lands you in gullies that steepen and are hard to reverse. Climb the rightmost chimney (Class 4) and walk the crest to the top."
+  }
+ ]
+}

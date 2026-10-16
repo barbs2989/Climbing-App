@@ -1,0 +1,587 @@
+{
+ "applied": [
+  {
+   "id": "wa_lexington_tower_south_face",
+   "op": "merge",
+   "into": "wa_south_face_3"
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_lexington_tower_south_face",
+   "area_id": "wa_lexington_tower",
+   "name": "South Face",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 3,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Donald Cramer, Donald Anderson, Bruce Schuler, and Fred Stanley, 1965",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m rope",
+    "Cams 0.4\"-3\" (doubles in finger sizes)",
+    "Nuts",
+    "Pink tricam",
+    "Helmet"
+   ],
+   "hazards": [
+    "Loose, gravelly rock on the initial traverse pitch",
+    "Exposed unroped-feeling scramble sections despite being roped"
+   ],
+   "verif": null,
+   "overview": "A short, moderate 3-pitch 5.6 up Lexington Tower's south side, starting from the Concord-Lexington notch and finishing over a distinctive rock fin to the true summit.",
+   "beta": "P1 is a gravelly, gently down-sloping traverse to trees, staying right — considered the 'price of admission' pitch. P2 climbs to the ridge crest then becomes a roped hike/scramble to a sandy spot near a feature called the 'shark fin,' with a gear anchor behind a flake. P3, the 'money pitch,' traverses up and over the shark fin and then up the summit block to bolted anchors at the top.",
+   "turnaround": "This is a short route, but the summit-block finish and exposed P2 scramble are still consequential — set a turnaround time appropriate to the day's weather rather than pushing through deteriorating conditions.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "From summit bolts: either a single-rope rappel to an intermediate anchor on the face, or a double-rope rappel all the way back to the Concord-Lexington notch.",
+   "commitment": "II",
+   "face": "South Face",
+   "permit": null,
+   "comms": null,
+   "descent": "From the summit bolts, either make a single-rope rappel to an intermediate anchor on the face, or a double-rope rappel all the way back down to the Concord-Lexington notch.",
+   "obj_haz": [
+    "Gravelly, down-sloping rock on P1 (\"the price of admission pitch\")",
+    "Exposed summit-block finish on P3"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51901,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 5400
+    },
+    {
+     "lat": 48.5144,
+     "lng": -120.6575,
+     "elev": 7560,
+     "name": "Lexington Tower summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7560
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Morning start; short route but plan around the shared Blue Lake/Liberty Bell approach and afternoon storm risk."
+   },
+   "detailed_rack": "60m rope; a modest rack with cams in the 0.4-3\" range (doubles in finger sizes recommended for confidence), nuts, and a pink tricam for a slot on the summit block. Fixed bolts exist at the summit belay.",
+   "what_to_bring": [
+    "Approach shoes for the notch approach",
+    "Helmet for gravelly P1 terrain"
+   ],
+   "pro_tips": [
+    "Stay right on the gravelly P1 traverse — it's the least protected section of the route.",
+    "The pink tricam is specifically useful for a slot on the summit block; don't skip it."
+   ],
+   "watch_out": [
+    "P1's down-sloping, gravelly rock has minimal protection",
+    "P2 becomes a roped hike/scramble over exposed terrain near the 'shark fin'",
+    "Summit block finish on P3 is exposed"
+   ],
+   "pro_needs": "Light rack overall; the key non-standard piece is a pink tricam for a specific slot on the summit block (P3).",
+   "best_season": "July through September for reliably dry rock; as a south-facing route it can come into condition earlier in the season than the north-facing routes on the tower.",
+   "high_point_ft": 7560,
+   "aid_grade": null,
+   "approach": "Reach the Concord-Lexington notch via the standard Blue Lake Trailhead approach (trending toward the col between Concord and Lexington Towers); the route's first belay starts from the far eastern edge of the notch.",
+   "descent_text": "From the bolted summit anchor, parties either make one single-rope rappel to an intermediate bolted anchor partway down the face and then continue down, or run a full double-rope rappel directly back to the Concord-Lexington notch, from which the standard approach gully/climbers' trail leads back to Blue Lake Trailhead.",
+   "bail": "P1 and P2 offer natural gear-anchor options (flakes/trees) for a rappel retreat back to the notch if needed before committing to the summit block on P3.",
+   "pitch_detail": null,
+   "itinerary": null,
+   "access": {
+    "fees": "$5/vehicle/day (or $30 annual) Northwest Forest Pass/Interagency pass required at Blue Lake Trailhead.",
+    "permit": "No climbing permit required; day-use fee only at the formal trailhead.",
+    "closures": "SR-20 closes seasonally for winter; the trailhead is unreachable by car during closure.",
+    "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+    "passRequired": "Northwest Forest Pass or America the Beautiful/Interagency Pass at Blue Lake Trailhead."
+   },
+   "road": {
+    "name": "North Cascades Highway (SR-20)",
+    "status": "Open seasonally",
+    "driveNote": "From Winthrop, drive ~31 miles west on SR-20 to Blue Lake Trailhead, just past Washington Pass, for the approach to the Concord-Lexington notch.",
+    "seasonalGate": "Gated for winter roughly mid/late November through mid/late April; check WSDOT mountain pass report before approach."
+   },
+   "climate": {
+    "fall": "Good conditions into September/early October before the highway closes for winter.",
+    "spring": "Highway often still gated by winter snow.",
+    "summer": "Prime season — south aspect dries out early and holds sun most of the day.",
+    "winter": "SR-20 closed to vehicles.",
+    "typical": "Dry, sunny alpine-rock weather July-September with occasional afternoon convective storms.",
+    "forecastZone": "NWS zone WAZ048 (Western Chelan County) covers the Washington Pass corridor."
+   },
+   "emergency": {
+    "notes": "Aero Methow Rescue Service (Twisp/Winthrop) provides local EMS; Okanogan County SAR coordinates technical mountain rescue.",
+    "county": "Okanogan County (near the Chelan County line)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee NF — (509) 996-4000, 24 W Chewuch Rd, Winthrop, WA",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA (509-826-1760) or Three Rivers Hospital, Brewster, WA",
+    "sheriffDispatch": "Okanogan County Sheriff/911 Dispatch: 509-422-7232 (non-emergency); dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, once the gully to the Concord-Lexington notch is snow-free",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The south face is dry and the notch gully melts out through the month; long days leave room for the gravelly first-pitch traverse.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "SR 20 is normally open by now, but snow and ice often fill the gully to the Concord-Lexington notch; an axe and crampons may be needed.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Snow-free approach and dry rock; the sunny south face gets hot midday and late-summer wildfire smoke can drift over Washington Pass.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "The south face stays climbable on clear days, but cold nights, short daylight and early snow before SR 20 closes cut the season off.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cool, stable days suit the sunny south aspect and the approach is dry; larches start turning late in the month.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the Concord-Lexington notch, then its far eastern edge",
+     "notes": "Reach the Concord-Lexington notch via the standard Blue Lake Trailhead approach, trending toward the col between Concord and Lexington Towers rather than toward the Liberty Bell-Concord gully. Higher in that gully a climbers' path appears along its left side and is better than the gully bed. Three pitches.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "Two notches a few hundred feet apart on one ridge",
+      "A gully bed better avoided in favour of the path along its left side",
+      "Far less traffic than the Liberty Bell-Concord col, so fainter tread"
+     ],
+     "baseFinding": "The route's first belay starts from the far eastern edge of the notch. So there are two finds and they nest: the right notch, then the right end of it.\n\nWhich notch: the Concord-Lexington notch is the one where Concord is on one side of you and Lexington on the other, and the Concord wall in front of you gives onto low-angle, gravelly ledges rather than a steep crack system. If you are facing a steep crack system, you are at the Liberty Bell-Concord notch, one saddle back, and looking at Concord's north face.\n\nWhich end of it: the far eastern edge. The notch is a gap with two ends; walk to the eastern one before racking up. Concord's south-face routes go the other way, up the wall on the notch's Concord side.\n\nConfirm by hardware, because this route has a distinctive one: there is a bolted summit anchor. Parties either make one single-rope rappel to an intermediate bolted anchor partway down the face and continue down, or run a full double-rope rappel directly back to the Concord-Lexington notch. A bolted top and a bolted mid-face station on a three-pitch route is what this line offers.\n\nFrom the notch the approach gully and climbers' trail lead back to the Blue Lake Trailhead, which is the same car you started from. That is not true of Lexington's east-side routes, which start at the hairpin pond pullout on the other side of the ridge."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_south_face_3",
+   "area_id": "wa_concord_tower",
+   "name": "South Face",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 3,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Donald Cramer, Donald Anderson, Bruce Schuler & Fred Stanley, 1965",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "cams 0.4-3 in",
+    "stoppers",
+    "double-length slings",
+    "pink tricam (for a slot on the summit block)"
+   ],
+   "hazards": [
+    "Loose rock and rockfall in the approach gully/notch, worst during spring snowmelt through late June",
+    "Exposed, small summit block shared with North Face and Cave Route parties",
+    "Rope drag on traversing sections if the final pitch isn't split"
+   ],
+   "verif": null,
+   "overview": "A sunnier, less-trafficked alternative to Concord's classic North Face, the South Face climbs broken corners and cracks up the peak's south side to the same small, exposed summit block. It's commonly linked with Lexington Tower's North Face or Liberty Bell's Beckey Route via the shared notch for an efficient multi-tower day.",
+   "beta": "The easiest of Concord's standard routes. Start with a class-2 walk across gravelly, gently down-sloping ledges to the first belay, then climb up and right toward trees. A roped scramble along the ridge crest leads to a sandy stance near a feature climbers call the 'shark fin.' The final pitch climbs up and over the shark fin and onto the summit block, belaying from bolts at the top. Rock quality and protection are good throughout.",
+   "turnaround": "Short route, but still plan to be off the exposed summit and clear of the gully before afternoon storms build.",
+   "auto_generated": false,
+   "alpine_grade": "II",
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 2300,
+   "loss_ft": 2300,
+   "dist_km": 4.83,
+   "max_angle": null,
+   "rappels": "Single-rope rap to an intermediate anchor, or double-rope rap to the notch",
+   "commitment": "II",
+   "face": "South Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "Washington Pass is a remote stretch of the North Cascades Highway corridor; cell coverage is unreliable to nonexistent at the trailhead and on the tower. Carry a satellite communicator or PLB rather than relying on a phone.",
+   "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+   "obj_haz": [
+    "rockfall in approach gully",
+    "route-finding among towers"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Signed trailhead on SR-20 ~1 mi west of Washington Pass; follow Blue Lake Trail then the climber's path up to the Concord-Lexington gully.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51465,
+     "lng": -120.65825,
+     "elev": 7560,
+     "name": "Concord Tower Summit",
+     "note": "Shared summit for all Concord Tower routes.",
+     "type": "Summit",
+     "distMi": 3
+    }
+   ],
+   "gpx": [
+    [
+     48.5192,
+     -120.6743
+    ],
+    [
+     48.51465,
+     -120.65825
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 3.2,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "Hike the Blue Lake Trail and climber's path to the Concord-Lexington col, then climb the South Face's sandy ledges, crack, V-groove and finger traverse to the summit block. Reverse…",
+      "fromTo": "Car-to-car: South Face",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A single rack of cams from 0.4 to 3 inches plus a set of stoppers and several double-length slings covers the wandering corners and cracks; two 60m ropes allow the full-length rappel from the summit back to the notch in one, and a party carrying a single rope makes two shorter rappels off the intermediate anchor stations partway down the south face instead.",
+   "what_to_bring": [
+    "helmet",
+    "approach shoes",
+    "60m rope",
+    "double-length slings",
+    "sun protection"
+   ],
+   "pro_tips": [
+    "Split the final pitch into two to cut down rope drag on the traverse",
+    "Carry extra double-length slings for wandering gear placements",
+    "Link with Lexington Tower's North Face via the shared notch for a two-tower day"
+   ],
+   "watch_out": [
+    "loose rock in the approach gully",
+    "rope drag on the long final pitch",
+    "afternoon thunderstorms common on the east-slope Cascades in summer"
+   ],
+   "pro_needs": "Modest rack; mostly moderate corners and cracks with occasional wandering protection.",
+   "best_season": "July through September, once the Concord-Lexington notch/gully has melted out (it commonly holds snow into late June).",
+   "high_point_ft": 7569,
+   "aid_grade": null,
+   "approach": "Drive Highway 20 (North Cascades Highway) to the Blue Lake Trailhead (~5,400 ft), on the south side of the highway about 30 miles west of Winthrop and roughly 1 mile west of the Washington Pass Overlook; pay the day-use fee or display a Northwest Forest/Interagency pass (the ~20-car lot fills early). Hike the Blue Lake Trail about 1.5 miles to a small meadow, then leave the trail on a climber's boot path that breaks off just past a small stream. Follow this path up through slabs, talus, and heather to the base of the gully between Concord and Lexington Towers, then climb that gully (often snow- or ice-filled into late June) to the Concord-Lexington notch. The South Face routes are reached from the notch or by working around the tower's east/south side from there.",
+   "descent_text": "Downclimb or make one full double-rope rappel from the summit back to the notch; with a single rope, use two shorter rappels off intermediate anchor stations partway down the south face instead.",
+   "bail": "Short, ledge-belayed pitches allow retreat to the notch from nearly any point on route.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "The 'price of admission' pitch: traverse rightward across gravelly, gently down-sloping class-2 ledges from the notch's east side, then a steep crack, a V-groove and a finger traverse lead to a small tree anchor — unglamorous but necessary to reach the better rock above.",
+     "pitch": 1,
+     "anchor": "Tree/gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "A roped scramble up to the ridge crest, then across to a sandy stance near the base of the 'Shark Fin' — a #2 and #3 cam behind a flake back up the belay here.",
+     "pitch": 2,
+     "anchor": "Gear (flake)",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 2,
+     "grade": "5.6",
+     "notes": "The 'money pitch': climb up and over the Shark Fin, a striking free-standing wedge of granite, then continue up the summit block to bolted anchors — the most sustained and photogenic climbing on the route.",
+     "pitch": 3,
+     "anchor": "Bolted anchor (summit)",
+     "lengthM": 25
+    }
+   ],
+   "itinerary": {
+    "cal": "Often combined with Lexington Tower's North Face or Liberty Bell's Beckey Route via the shared col for a multi-summit day — budget several extra hours if linking summits.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Blue Lake Trail and climber's path to the Concord-Lexington col, then climb the South Face's sandy ledges, crack, V-groove and finger traverse to the summit block. Reverse to the col and descend the gully back to the car.",
+      "hours": 9,
+      "miles": 6,
+      "title": "Car-to-car: South Face",
+      "gainFt": 2300,
+      "lossFt": 2300,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Blue Lake Trailhead",
+        "detail": "Blue Lake Trail then the climber's path into the basin below Concord/Lexington."
+       },
+       {
+        "time": "+2.2 hr",
+        "label": "Reach Concord-Lexington col",
+        "detail": "About 1,950 ft gained from the trailhead."
+       },
+       {
+        "time": "+30 min",
+        "label": "Rack up and start climbing",
+        "detail": "P1: rightward traverse on sandy ledges, steep crack, V-groove, finger traverse to a tree anchor."
+       },
+       {
+        "time": "~11:00 AM",
+        "label": "Summit",
+        "detail": "3 pitches, roughly 2.5 hrs from the col including the exposed 'Shark Fin' pitch."
+       },
+       {
+        "time": "+30 min",
+        "label": "Begin descent",
+        "detail": "Reverse to the notch, then downclimb/scramble the gully."
+       },
+       {
+        "time": "~3:00 PM",
+        "label": "Back at trailhead",
+        "detail": "About 3 hrs down; 6 miles and 2,300 ft round trip."
+       }
+      ],
+      "objective": "Climb the 3-pitch South Face and return to the trailhead"
+     }
+    ],
+    "totalNote": "A full but standard single day: about 9 hrs car-to-car, 6 miles, 2,300 ft gain/loss, and 3 pitches of 5.6-5.7ish climbing."
+   },
+   "access": {
+    "fees": "$5/vehicle day-use e-Pass or $30 annual Northwest Forest Pass, purchasable via Recreation.gov",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "Leave No Trace; no camping within 0.25 mile of Blue Lake; no stock or mechanized travel on the climbers' path",
+    "permit": "No climbing or wilderness permit required",
+    "closures": "SR-20 (North Cascades Highway) is gated and closed for winter, typically early-to-mid December through mid-April/May depending on snowpack",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass or Interagency (America the Beautiful) Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "North Cascades Highway (SR-20)",
+    "status": "Paved to the trailhead",
+    "driveNote": "Blue Lake Trailhead (~5,400 ft) is 0.5 mile past milepost 162 on the south side of SR-20, about 31 miles west of Winthrop and roughly 1 mile west of Washington Pass Overlook (5,477 ft); vault toilet, ~20 parking spots, no potable water, parking fills early on weekends.",
+    "seasonalGate": "Gated and closed in winter; typically closes early-to-mid December and reopens mid-April to May depending on snowpack (closed Dec. 4 in the 2025 season)."
+   },
+   "climate": {
+    "fall": "Good cool-weather climbing into Sept/early Oct",
+    "spring": "South-facing aspect sheds snow earlier than the north side, but can still hold snow in the approach gully through May",
+    "summer": "Prime season; watch for afternoon thunderstorm buildup",
+    "winter": "SR-20 closed; area not vehicle-accessible",
+    "typical": "Best July through September once the approach gully has melted out; it commonly holds snow into late June.",
+    "bySeason": {
+     "fall": "Cool and stable but shorter daylight; early-season snow possible at elevation",
+     "spring": "Approach gully typically still snow-filled; high rockfall risk during melt-out",
+     "summer": "Prime season; watch for typical East Cascades afternoon thunderstorms",
+     "winter": "SR-20 closed; access not feasible"
+    },
+    "forecastZone": "NWAC East Slopes Cascades / NWS Okanogan County zone forecast"
+   },
+   "emergency": {
+    "notes": "Cell coverage at Washington Pass and on the approach is unreliable; leave a trip plan since a rescue party will start from the Blue Lake Trailhead register.",
+    "county": "Okanogan County (Washington Pass sits almost exactly on the Chelan-Okanogan line; SR-20 crosses into Okanogan Co. right at the pass)",
+    "rangerStation": "Methow Valley Ranger District, 24 W. Chewuch Rd, Winthrop, WA (Okanogan-Wenatchee NF)",
+    "nearestHospital": "Three Rivers Hospital (24-hr ER, Level IV trauma), Brewster, WA - the typical air-evac destination for Washington Pass climbing accidents; serious trauma cases are usually forwarded to Harborview Medical Center, Seattle",
+    "sheriffDispatch": "911 for emergencies; Okanogan County Sheriff non-emergency dispatch 509-422-7232"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, after the Concord-Lexington notch gully melts out and stops shedding rock",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The gully usually clears during July; the short sunny route dries quickly, though loose rock in the gully remains a concern early in the month.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "The notch gully commonly holds snow into late June, and rockfall in the gully is worst while it melts; the Blue Lake trail is also still patchy snow.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "A dry gully and warm south-facing rock; the small Blue Lake lot fills early on summer weekends, and afternoon storms and smoke haze occur.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Fresh snow can fill the notch and ice the ledges, and SR 20 may close early after a storm.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cool temperatures, fewer crowds and stable weather make the short climb and exposed summit block most pleasant.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Modern free-climbing grade varies slightly by source (5.6 vs 5.6+/5.7); no first-hand pitch-by-pitch beta found specific to this route",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.514505,
+    "peakLng": -120.658265,
+    "trailhead": "Blue Lake Trailhead (SR-20)",
+    "trailheadLat": 48.518965,
+    "trailheadLng": -120.67436,
+    "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "Some general summaries describe the South Face as 5.6+/5.7, but Mountain Project's dedicated route page lists it precisely as 5.6 with FA by Cramer, Anderson, Schuler, and Stanley in 1965 — used here as the more specific, primary-source figure.",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the Concord-Lexington notch",
+     "hours": "1.5-2.5",
+     "notes": "The South Face is reached from the notch between Concord and Lexington, which is a different saddle from the Liberty Bell-Concord notch that the North Face and the Beckey Route use. From the Blue Lake Trailhead (~5,400 ft, about 1 mile west of Washington Pass) follow the maintained trail until it opens out, then take the well-established climbers' path on the left marked by a large cairn.\n\nInstead of trending toward the Liberty Bell-Concord gully, keep working up and left into the gully between Concord and Lexington Towers. Higher in that gully a reasonable climbers' path appears along its left side; take it rather than fighting up the gully bed. It leads to the Concord-Lexington notch.\n\nThis notch is the quieter of the two — it sees far less traffic than the Liberty Bell-Concord col.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "loose ground in the Concord-Lexington gully",
+      "easy to end up in the Liberty Bell-Concord gully instead — check which two towers flank your notch",
+      "no reliable water above the stream near the climbers'-path junction"
+     ],
+     "baseFinding": "You want the Concord-Lexington notch, meaning the saddle with Concord Tower on one side and Lexington Tower on the other. From it, the South Face is on the Concord (north) side, and it begins gently: a class-2 walk across gravelly, slightly down-sloping ledges gets you to the first belay, so if your first move is a hard pull you are on the wrong line. Higher, a roped scramble along the crest brings you to a sandy stance under a thin blade of rock that climbers call the shark fin, and the last pitch goes over that fin onto the summit block, belaying from bolts. The shark fin is the confirming feature — it is unmistakable and there is nothing like it on the North Face side.\n\nThe common error is arriving at the Liberty Bell-Concord notch instead. That col has Liberty Bell on its far side, not Lexington, and from there the Concord wall in front of you is the North Face crack system, not walkable ledges."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, about a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    },
+    {
+     "name": "Liberty Bell basin dispersed sites",
+     "role": "route",
+     "type": "camp",
+     "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes at first light rather than walking up from the road. Note the separate restriction around Blue Lake itself, where overnight camping is not allowed within a quarter mile of the lake — the basin sites are the ones to aim for, not the lakeshore. Treat it as a basin camp below the spires rather than a fixed spot.",
+     "water": "Snowmelt and seasonal runoff in the basin — unreliable once the snow has gone",
+     "permit": "No permit for dispersed camping; this is national forest, not the national park",
+     "capacity": "Scattered dispersed sites, small parties"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": [
+  "wa_lexington_tower_south_face"
+ ]
+}

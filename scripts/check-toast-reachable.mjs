@@ -1,0 +1,206 @@
+#!/usr/bin/env node
+// Every screen `App` can return must be able to SHOW A TOAST.
+//
+// `showToast` sets state; the toast only appears if the renderer is mounted in whatever App
+// returned. App returns early on nine screens — legal, session restore, auth, password
+// recovery, the profile editor, both guide screens, the calendar — and until now the toast
+// rendered ONLY in the final return. So on those nine screens the message was set into state
+// that nothing rendered, and the 2.6s timer then cleared it. Thirteen messages could never
+// reach a user:
+//
+//   * ALL 11 guide-dashboard messages, including four RLS-failure warnings. A guide edits
+//     their day rate, taps Save, and the screen does nothing whether the write succeeded or
+//     the database refused it. The handlers were wrapped in try/catch precisely because "the
+//     rejection became an unhandled promise and the button did nothing at all" — the wrap
+//     landed and the toast still could not render.
+//   * The guide application's SUBMIT FAILURE. Its success path calls onClose() and so the
+//     toast appears; the catch does not, so the one message that matters is the one that
+//     cannot render.
+//   * "Join a group to create events" — the DEFAULT outcome of the Calendar's "+ Create an
+//     event" button. `GROUPS` is empty behind DEMO_FILLERS and `joinedGroups` starts empty,
+//     and the early `return` skips setCalOpen(false). Not an edge case; it is the zero state.
+//
+// NO EXISTING GUARD COVERS THIS, and the near-misses are instructive: `check:zindex` enforces
+// that the toast beats every other z-index, and `check:overlay-portals` enforces that it
+// escapes the stacking context. Both are about whether a MOUNTED toast is visible. Neither
+// asks whether it is mounted at all. A toast can satisfy every ceiling and portal rule in the
+// app and still be absent from the screen that fired it.
+//
+// Static (no browser, no DB), so it sits in `npm run build`.
+
+import { readFileSync } from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { parse } from "@babel/parser";
+import _traverse from "@babel/traverse";
+
+const traverse = _traverse.default || _traverse;
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const FILE = path.join(ROOT, "ClimbMatch.jsx");
+
+const src = readFileSync(FILE, "utf8");
+const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false });
+
+// The toast element identifier. Named rather than inferred: if the declaration is renamed,
+// this must fail loudly instead of finding zero returns and reporting a clean app.
+const TOAST_ID = "_toastEl";
+
+let appFn = null;
+traverse(ast, {
+  FunctionDeclaration(p) { if (p.node.id && p.node.id.name === "App") appFn = p; },
+});
+if (!appFn) {
+  console.error("check:toast-reachable FAILED — no `function App(` found in ClimbMatch.jsx.");
+  console.error("The scan cannot have checked anything; this is a broken guard, not a clean app.");
+  process.exit(1);
+}
+
+// Is the toast declared at all, and declared ABOVE the first early return? Declaring it below
+// would be a ReferenceError at runtime, but a `var`-style hoist or a rename could make this
+// silently vacuous, so assert position rather than mere presence.
+const declIdx = src.indexOf(`const ${TOAST_ID}=`);
+if (declIdx < 0) {
+  console.error(`check:toast-reachable FAILED — no \`const ${TOAST_ID}=\` declaration.`);
+  console.error("Either the toast was inlined back into the final return, or it was renamed.");
+  process.exit(1);
+}
+
+// App's OWN top-level returns — not those of nested components or callbacks defined inside it.
+// Scoping matters: ClimbMatch.jsx defines several components and many inline arrow functions,
+// and a `return null` inside one of those is not a screen.
+const returns = [];
+appFn.traverse({
+  ReturnStatement(p) {
+    let fn = p.getFunctionParent();
+    if (fn && fn.node === appFn.node) returns.push(p);
+  },
+});
+
+// The count is PINNED, not floored, and the reason is that this guard has already been fooled
+// by the very PR that introduced it. #890 wrapped nine early returns in <>{_toastEl}…</> and
+// on the Calendar's return it opened the fragment and NEVER CLOSED IT. Everything after was
+// swallowed as JSX text — including `if(inboxOpen)return <Inbox …/>`, which stopped existing
+// as a ReturnStatement at all. App went from 10 top-level returns to 9, Messages became
+// unreachable, and this guard printed "9 (9 render a screen)" and passed, because 9 > 5.
+//
+// A DROP is the dangerous direction and is almost always a swallowed return: the code still
+// parses, every identifier is still bound, and the screen simply ceases to exist. Nothing else
+// in the suite can see it — that is why the Inbox defect masqueraded as a CI flake for days
+// (see the note in check:signed-in). A floor cannot catch a drop from 10 to 9; only a pin can.
+const EXPECTED_RETURNS = 10;
+if (returns.length !== EXPECTED_RETURNS) {
+  const dropped = returns.length < EXPECTED_RETURNS;
+  console.error(`check:toast-reachable FAILED — App has ${returns.length} top-level return(s), expected ${EXPECTED_RETURNS}.`);
+  if (dropped) {
+    console.error(`
+A return VANISHED from the AST. The usual cause is an unclosed JSX fragment or element on an
+earlier return, which swallows every statement after it as JSX text — the code still parses and
+every identifier is still bound, so nothing else in the suite will tell you. That is #890
+exactly: the Calendar's return ate the Inbox's, and Messages was unreachable for days.
+
+Find it by listing App's top-level returns and looking for the screen that is missing:
+  node -e 'see the ancestry probe in this file's injection notes'`);
+  } else {
+    console.error(`
+A return was ADDED. That is fine — a new screen — but it must be deliberate: confirm it renders
+{${TOAST_ID}} and then raise EXPECTED_RETURNS to ${returns.length} in this file.`);
+  }
+  process.exit(1);
+}
+
+// A return that yields no UI (`return null`, `return;`) cannot show a toast and is not
+// expected to — it is a guard clause, not a screen.
+const screens = returns.filter((p) => {
+  const a = p.node.argument;
+  return a && !(a.type === "NullLiteral") && !(a.type === "Identifier" && a.name === "undefined");
+});
+
+const bare = [];
+for (const p of screens) {
+  let has = false;
+  p.traverse({ Identifier(q) { if (q.node.name === TOAST_ID) has = true; } });
+  // traverse() skips the node itself, so check a bare `return _toastEl` too.
+  if (p.node.argument.type === "Identifier" && p.node.argument.name === TOAST_ID) has = true;
+  if (!has) bare.push(p.node.loc.start.line);
+}
+
+console.log(`  App top-level returns : ${returns.length}  (${screens.length} render a screen)`);
+console.log(`  rendering the toast   : ${screens.length - bare.length}`);
+
+if (bare.length) {
+  console.error(`\ncheck:toast-reachable FAILED — ${bare.length} screen(s) render no toast:`);
+  for (const l of bare) console.error(`  ClimbMatch.jsx:${l}  ${src.split("\n")[l - 1].trim().slice(0, 100)}`);
+  console.error(`\nAny showToast() reached from one of these sets state that nothing renders,`);
+  console.error(`and the dismiss timer then clears it. Wrap the return: return <>{${TOAST_ID}}…</>;`);
+  process.exit(1);
+}
+
+// ── #890's OTHER variant: a ternary that fell OUTSIDE the braces ─────────────────────────
+// The pinned count above catches a return that was SWALLOWED. It cannot catch this one, because
+// the return still exists — it just renders the wrong thing. Wrapping a return in
+// <>{_toastEl}…</> turns a JS ternary into JSX CHILDREN unless it is braced:
+//
+//   return <>{_toastEl}realAuthGate?<AuthModal/>:<LoginScreen/></>   // literal "realAuthGate?"
+//                                                                   // and BOTH branches mount
+//   return <>{_toastEl}{realAuthGate?<AuthModal/>:<LoginScreen/>}</> // right
+//
+// #890 shipped this on THREE returns at once (the sign-in gate and both guide screens), fixed
+// in #934. Nothing prevented a fourth until now. Detected structurally: a JSXExpressionContainer
+// holding the toast, whose next sibling is JSXText that is not just whitespace. React renders
+// that text; there is no legitimate reason for prose to sit directly beside {_toastEl}.
+const stray = [];
+for (const p of screens) {
+  const a = p.node.argument;
+  if (!a || (a.type !== "JSXFragment" && a.type !== "JSXElement")) continue;
+  const kids = a.children || [];
+  kids.forEach((k, i) => {
+    if (k.type !== "JSXExpressionContainer") return;
+    if (!(k.expression && k.expression.type === "Identifier" && k.expression.name === TOAST_ID)) return;
+    const next = kids[i + 1];
+    if (next && next.type === "JSXText" && next.value.trim()) {
+      stray.push({ line: p.node.loc.start.line, text: next.value.trim().slice(0, 60) });
+    }
+  });
+}
+
+if (stray.length) {
+  console.error(`\ncheck:toast-reachable FAILED — ${stray.length} return(s) render TEXT beside {${TOAST_ID}}:`);
+  for (const s of stray) console.error(`  ClimbMatch.jsx:${s.line}  renders the literal text: ${JSON.stringify(s.text)}`);
+  console.error(`
+That text is almost always a ternary or && that lost its braces when the return was wrapped.
+JSX renders the condition as prose AND mounts BOTH branches — two screens stacked, with the
+condition printed above them. Brace it: return <>{${TOAST_ID}}{cond?<A/>:<B/>}</>;`);
+  process.exit(1);
+}
+
+console.log(`  no stray text beside the toast : ${screens.length} return(s) clean`);
+console.log(`\ncheck:toast-reachable: ok — every screen App returns can show a toast.`);
+
+// INJECTION CASES (re-run after any change to the traversal):
+//   1. Unwrap one early return (drop `{_toastEl}` from the `calOpen` branch) -> must FAIL
+//      naming that line.
+//   2. Rename the declaration to `_toastX` -> must FAIL on the missing declaration, NOT pass
+//      with 0 screens checked.
+//   3. Rename `function App(` -> must FAIL saying the scan checked nothing.
+//   4. Add `if(x)return null;` inside App -> must still PASS (a guard clause is not a screen).
+//   5. Add a nested `function Foo(){return <div/>}` inside App -> must still PASS (its return
+//      is not App's).
+//   6. Delete one top-level return outright -> must FAIL saying a return VANISHED. This is the
+//      case the pinned count exists for; 4/4 verified 2026-08-14.
+//   7. Add a return (`if(false)return <>{_toastEl}<div/></>;`) -> must FAIL saying one was
+//      ADDED, and tell you to raise EXPECTED_RETURNS deliberately.
+//   8. Unbrace the auth-gate ternary (`{_toastEl}{realAuthGate?` -> `{_toastEl}realAuthGate?`,
+//      dropping the matching `}`) -> must FAIL quoting the literal text. This is #890's OTHER
+//      variant reproduced BYTE FOR BYTE, and unlike the swallowed-return one it reproduces
+//      cleanly. 4/4 verified 2026-08-14.
+//   9. Same on a guide screen (`{_toastEl}{USE_DB?`) -> must FAIL.
+//  10. Whitespace beside the toast (`{_toastEl}  <LegalView`) -> must still PASS. JSXText that
+//      is only whitespace is normal formatting; only non-blank prose is the defect.
+//
+// A NOTE ON REPRODUCING #890 EXACTLY, because it was tried and is a trap: removing only the
+// Calendar return's `</>` does NOT recreate the defect — it raises `SyntaxError: Unterminated
+// JSX contents`, because the Inbox return's own `</>` is then consumed closing the OUTER
+// fragment and its nested one is left open. #890 parsed only because the swallowed return
+// carried no fragment of its own. Recreating that needs several coordinated edits and would
+// test the harness more than the guard, so case 6 injects the INVARIANT (a return stopped
+// existing) rather than one syntax that can cause it.

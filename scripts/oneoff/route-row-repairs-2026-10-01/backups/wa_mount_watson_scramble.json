@@ -1,0 +1,155 @@
+{
+ "id": "wa_mount_watson_scramble",
+ "name": "South/East Scramble",
+ "approach": "Park at the Watson Lakes Trailhead at the end of FS Road 1107 (elev. ~4,200 ft), reached via Baker Lake Road (FS-11) south around Baker Lake on FS-1106 and out FS-1107 to road's end. From the trailhead, follow the Anderson-Watson Lakes Trail #611 into the woods; at about 1 mile you'll pass the junction with the Anderson Butte Trail #611.1 (stay straight/right for Watson Lakes). Around 1.5-2 miles, at roughly 4,700 ft, a second junction splits: right drops 0.5 mile to lower Anderson Lake, while the left fork climbs 0.5 mile to a small saddle entering the Noisy-Diobsud Wilderness before dropping to the Watson Lakes (4,400 ft) near 2.5-3 miles in. The lakes are notoriously buggy in summer and are the last reliable water — treat before filling up, since there's no dependable source higher on the mountain. From Watson Lakes the maintained trail ends and the route becomes an open, cairned/boot-path climbers' route: leave the basin and climb talus (and snow well into summer) on Watson's north/west slopes toward the ridge crest. The standard and easiest line follows the widest gully east of the peak up to a saddle at about 5,900 ft on the ridge; a western gully alternative has a dangerous moat and rotten snow bridge late-season and should be avoided. From the 5,900-ft saddle, traverse along the ridge and across a steep slope to wrap around the base of the summit block. A short, loose class 2-3 dirt-and-rock gully (10-15 ft) gains the true summit ridge, which is a narrow (~30 ft), exposed class 2-3 catwalk with real drop-off on both sides — a hand line is commonly carried and recommended for this final airy section. Total round trip runs roughly 7-9.5 miles with 2,500-3,000 ft gain depending on exact trailhead/camp and route-finding; parties camping partway (e.g., ~5,400 ft on the north slopes) shorten the summit day considerably. Route-finding above the lakes is the main approach hazard in poor visibility since the line is unmarked talus/snow rather than trail.",
+ "approach_logistics": {
+  "peakLat": 48.655665,
+  "peakLng": -121.576665,
+  "trailhead": "Watson Lakes Trailhead",
+  "trailheadLat": 48.6746,
+  "trailheadLng": -121.6147,
+  "trailheadDirection": "Park at the Watson Lakes Trailhead at the end of FS Road 1107 (elev. ~4,200 ft), reached via Baker Lake Road (FS-11) south around Baker Lake on FS-1106 and out FS-1107 to road's end."
+ },
+ "waypoints": [
+  {
+   "lat": 48.6746,
+   "lng": -121.6147,
+   "elev": 4300,
+   "name": "Watson Lakes Trailhead",
+   "note": "End of FS Rd 1107022; Northwest Forest Pass or digital day-use pass required, vault toilet but no potable water on site.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Park at the Watson Lakes Trailhead at the end of FS Road 1107, about 4,200 ft, reached via Baker Lake Road (FS-11) and then FS-1106 around Baker Lake. A Northwest Forest Pass or digital day-use pass is required to park here. There is a vault toilet at the trailhead but no potable water on site, and the first reliable water is at the Watson Lakes themselves. The Anderson-Watson Lakes Trail #611 leaves straight from the lot into the woods."
+  },
+  {
+   "lat": 48.670798,
+   "lng": -121.607127,
+   "elev": 4450,
+   "name": "Anderson Butte Trail 611.1 junction",
+   "note": "Trail 611 winds gently through forest to a meadow junction; stay right/straight on 611 toward Anderson-Watson Lakes rather than climbing left to the old Anderson Butte lookout site.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Follow the Anderson-Watson Lakes Trail #611 from the lot through forest for about a mile to the meadow junction with the Anderson Butte Trail #611.1."
+  },
+  {
+   "lat": 48.666695,
+   "lng": -121.598951,
+   "elev": 4700,
+   "name": "Anderson/Watson Lakes fork",
+   "note": "Second junction at ~4,700 ft: right fork drops 0.5 mi to lower Anderson Lake, left fork climbs 0.5 mi to the saddle (Watson Pass) — take the left/south fork for Mount Watson.",
+   "type": "Junction",
+   "distMi": 2,
+   "directions": "Stay right on Trail #611 toward the lakes rather than climbing left toward the old Anderson Butte lookout site, and continue to the next junction at about 4,700 ft."
+  },
+  {
+   "lat": 48.664643,
+   "lng": -121.594863,
+   "elev": 4800,
+   "name": "Saddle above Watson Lakes",
+   "note": "The trail climbs about half a mile from the fork to this saddle at the Noisy-Diobsud Wilderness boundary, then continues as maintained trail down to the Watson Lakes, where the scramble route leaves the tread. A boot path also heads south from here along the ridge toward Upper Anderson Lakes, a longer alternative way onto the north side of the peak.",
+   "type": "Junction",
+   "distMi": 2.5,
+   "directions": "Take the left fork, which climbs about half a mile to a small saddle at the Noisy-Diobsud Wilderness boundary; the right fork drops to lower Anderson Lake."
+  },
+  {
+   "lat": 48.662592,
+   "lng": -121.590775,
+   "elev": 4400,
+   "name": "Watson Lakes basin",
+   "note": "The trail descends off the saddle into the Watson Lakes basin; the lower (farther) lake is larger with clear blue water and is the recommended spot to filter water and camp nearby.",
+   "type": "Water",
+   "distMi": 3,
+   "directions": "Follow the trail down off the saddle to the Watson Lakes at about 4,400 ft. The maintained trail ends here, and the lakes are the last reliable water."
+  },
+  {
+   "lat": 48.659309,
+   "lng": -121.584234,
+   "elev": 5400,
+   "name": "Camp on slopes below Mount Watson (~5,400 ft)",
+   "note": "Established bivy sites on open slopes beneath the peak with views of Mt Baker and Mt Shuksan; last practical camp before the summit push.",
+   "type": "Campsite",
+   "distMi": 3.8,
+   "directions": "Leave the tread at the lakes and follow the open, cairned climbers' route up talus, heather and, into summer, snow on the slopes below the peak to the bivy sites around 5,400 ft."
+  },
+  {
+   "lat": 48.657258,
+   "lng": -121.580146,
+   "elev": 5900,
+   "name": "Moat / snow bridge below summit gullies",
+   "note": "In late season the west gully develops a large moat and an unstable snow bridge — parties have had to reroute to the more stable east gully instead.",
+   "type": "Hazard",
+   "distMi": 4.3
+  },
+  {
+   "lat": 48.655665,
+   "lng": -121.576665,
+   "elev": 6221,
+   "name": "Mount Watson summit",
+   "note": "Short, steep, tightly-treed Class 3 scramble gains an airy ~30 ft summit ridge with real exposure on both sides; a fixed hand-line is commonly used here, and descent reverses the same route down the east gully.",
+   "type": "Summit",
+   "distMi": 4.7,
+   "directions": "Climb the widest gully east of the peak to the saddle at about 5,900 ft, avoiding the west gully. From the saddle, head west along the south side of the ridge into the basin below the summit block, cross it to the heather-and-dirt gully on the block's south side, squeeze through the trees partway up, then scramble the short block and the narrow, exposed 30 ft ridge to the top."
+  }
+ ],
+ "itinerary": {
+  "cal": "Within the July-September window, earlier is easier on the snow finger and gullies - by mid-to-late summer melt-out opens moats between snow and rock (especially in the west gully) and can add ice to the glacier traverse, making the route harder and slower.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Anderson-Watson Lakes trailhead (~4,200 ft), Trail 611 climbs steeply (~2.5 mi to a ~4,800 ft saddle above Watson Lakes) before the route contours south past Watson/Anderson Lakes and up open heather, rock slabs and talus to a camp with views of Baker and Shuksan. Expect a hot, buggy, sometimes overgrown trail early in the day and route-finding once the maintained tread fades near the lakes.",
+    "hours": 4.5,
+    "miles": 4.7,
+    "title": "Backpack to high camp below Mount Watson",
+    "gainFt": 2900,
+    "lossFt": 100,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach a camp around 5,400-5,600 ft on the open slopes below Watson's north side"
+   },
+   {
+    "n": 2,
+    "note": "Leave camp early for the short push to the ~5,900 ft col between Watson's East Peak and the true summit, then traverse the basin to the gully below the summit block. Parties report the west gully often holds a nasty moat/snow bridge later in the season, so most now take the more stable east gully; the final airy Class 2-3 summit block has real but short exposure. After tagging the top, reverse the route, break camp, and hike out.",
+    "hours": 8.5,
+    "miles": 6.2,
+    "title": "Summit push via the east gully, then hike out",
+    "gainFt": 900,
+    "lossFt": 3700,
+    "packLb": 20,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Break camp",
+      "detail": "Quick breakfast, leave overnight gear staged or start packing it out."
+     },
+     {
+      "time": "6:00 AM",
+      "label": "Traverse to the col",
+      "detail": "Rising traverse across heather/rock slabs to the ~5,900 ft saddle between the East Peak and main summit."
+     },
+     {
+      "time": "7:00 AM",
+      "label": "East gully",
+      "detail": "Take the east gully over the west, which often has a moat/snow bridge by mid-summer."
+     },
+     {
+      "time": "8:30 AM",
+      "label": "Summit block",
+      "detail": "Short Class 2-3 exposed scramble to the small summit; only room for a few people at a time."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Begin descent",
+      "detail": "Reverse the route back to camp."
+     },
+     {
+      "time": "~2:00 PM",
+      "label": "Back at trailhead",
+      "detail": "Full pack out after breaking camp."
+     }
+    ],
+    "objective": "Tag the summit and return to the trailhead same day"
+   }
+  ],
+  "totalNote": "A moderate 2-day trip: backpack roughly 4.5-5 miles to a high camp near 5,400-5,600 ft below Mount Watson, then scramble to the 6,221 ft summit via the east gully and hike all the way out the next day (~9-10 mi round trip, ~3,500-4,000 ft total gain); fit, fast parties compress the whole thing into a single long car-to-car day (~9-10 hrs)."
+ }
+}

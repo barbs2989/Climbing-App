@@ -1,0 +1,84 @@
+{
+ "id": "wa_mount_clark_standard",
+ "name": "Standard Route",
+ "waypoints": [
+  {
+   "lat": 47.877572,
+   "lng": -123.136927,
+   "elev": 2500,
+   "name": "Upper Dungeness Trailhead",
+   "note": "USFS trailhead kiosk: $5 self-pay day-use fee or Northwest Forest/Interagency Pass (cash not accepted), and overnight stays in Royal Basin, past the park boundary, need an Olympic National Park wilderness permit reserved ahead of time.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The Upper Dungeness Trailhead sits at about 2,500 ft on FR-2870, in the Hood Canal Ranger District of Olympic National Forest, and Trail #833.2 leaves straight from the parking area. The kiosk asks for a $5 self-pay day-use fee or a Northwest Forest or Interagency Pass, and cash is not accepted, so bring the pass or a card. No wilderness permit is issued at the trailhead: camping in Royal Basin, past the park boundary, needs an Olympic National Park permit reserved ahead of time. If you plan to camp in Upper Royal Basin, call the Olympic Wilderness Information Center before your trip — that zone is reserved by phone and cannot be booked online like the lower zones."
+  },
+  {
+   "lat": 47.870028,
+   "lng": -123.157287,
+   "elev": 2850,
+   "name": "Royal Basin Trail Fork at Royal Creek",
+   "note": "Trail forks a few steps before a footlog bridge over Royal Creek — bear right for Royal Basin; do not cross the log bridge, that path leads elsewhere.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Follow the trail upstream along the Dungeness River about 1 mile to where it forks a few steps before a footlog bridge over Royal Creek."
+  },
+  {
+   "lat": 47.840376,
+   "lng": -123.211907,
+   "elev": 4695,
+   "name": "Lower Royal Meadow Camp",
+   "note": "One of the designated Royal Basin camping zones — three sites tucked in the trees (the farther two more secluded) beside a broad, stream-crossed meadow.",
+   "type": "Campsite",
+   "distMi": 6.2,
+   "directions": "Bear right at the fork onto the Royal Basin Trail without crossing the bridge, and follow it up the Royal Creek valley past the Royal Creek camp area to Lower Royal Meadow, a broad, stream-crossed meadow at about 4,700 ft."
+  },
+  {
+   "lat": 47.83201,
+   "lng": -123.21073,
+   "elev": 5100,
+   "name": "Royal Lake",
+   "note": "Designated camp zone with the only composting toilet on the approach; treat lake water for Giardia, and note camping beyond here falls in the Royal Basin wilderness permit zone.",
+   "type": "Campsite",
+   "distMi": 7.2,
+   "directions": "Continue up the trail about a mile and 400 ft more to Royal Lake at about 5,100 ft."
+  },
+  {
+   "lat": 47.831969,
+   "lng": -123.218423,
+   "elev": 5700,
+   "name": "Upper Royal Basin / Moraine Rim",
+   "note": "Leave the maintained trail here, climbing heather and talus to the rim of the glacial moraine ringing Surprise Basin before dropping to its snowfields.",
+   "type": "Junction",
+   "distMi": 8,
+   "directions": "Continue past the lake about a mile and 500 to 600 ft more into the meadows and tarns of Upper Royal Basin, where you leave the maintained trail."
+  },
+  {
+   "lat": 47.833782,
+   "lng": -123.225074,
+   "elev": 6400,
+   "name": "Surprise Basin Snowfields",
+   "note": "Traverse north through scree and lingering snowfields in the Martin–Johnson–Clark cirque; icy in early season, soft and postholing by afternoon in summer heat.",
+   "type": "Hazard",
+   "distMi": 9,
+   "directions": "Leave the trail and climb heather and talus to the rim of the glacial moraine ringing Surprise Basin, then drop onto its snowfields. They are icy early in the season and soft by afternoon."
+  },
+  {
+   "lat": 47.834688,
+   "lng": -123.228399,
+   "elev": 6920,
+   "name": "Surprise Col",
+   "note": "Gain this col below Clark's summit tower, only about 600 ft below the top; route-finding gets complex from here through ledges and Y-shaped gully systems (the 'corkscrew').",
+   "type": "Junction",
+   "distMi": 9.5
+  },
+  {
+   "lat": 47.835595,
+   "lng": -123.231725,
+   "elev": 7528,
+   "name": "Mount Clark Summit",
+   "note": "True summit is a block gained via an exposed Class 3-4 slot/dihedral on the north face; many parties make a single ~60-ft rappel off the summit block to retreat, then reverse the corkscrew.",
+   "type": "Summit",
+   "distMi": 10
+  }
+ ]
+}

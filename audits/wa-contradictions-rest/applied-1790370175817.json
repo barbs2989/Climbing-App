@@ -1,0 +1,90 @@
+{
+ "applied": [
+  {
+   "id": "wa_particulate_matter",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)"
+  },
+  {
+   "id": "wa_particulate_matter",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness, ranger district and permit"
+  },
+  {
+   "id": "wa_particulate_matter",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Wilderness, ranger district and permit"
+  },
+  {
+   "id": "wa_particulate_matter",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "Wilderness, ranger district and permit"
+  },
+  {
+   "id": "wa_ephemeral",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Watch-out list describes a waterfall ice climb"
+  },
+  {
+   "id": "wa_ephemeral",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_particulate_matter",
+   "before": {
+    "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+    "access": {
+     "_raw": {
+      "approach": "Box Creek Meadows area; Class 2 route to summit via Ice Creek Ridge",
+      "permit_cost": "No fee",
+      "permit_type": "Free self-issued wilderness permit (required)",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest (Chelan Ranger District)",
+      "permit_pickup": "Self-issue at trailhead",
+      "weed_free_feed": "Required if using pack animals",
+      "wilderness_zone": "Glacier Peak Wilderness",
+      "special_features": "North face has steep cliffs and glacier remnants; ideal season late Sept-Oct",
+      "fire_restrictions": "No fires within 1/2 mile of Ice Lakes, 1/4 mile of Image Lake, or above 4,000 feet on Lime Ridge",
+      "group_size_limits": "12 heartbeats maximum (humans + pack animals combined)",
+      "parking_pass_cost": "$5 day pass or $30 annual",
+      "seasonal_closures": "NOTE: April 2026 - extreme access limitations due to December 2025 storm damage",
+      "camping_restrictions": "No camping within 1/4 mile of Image Lake or 200 feet of Holden/Lyman Lakes",
+      "parking_pass_required": "Recreation Pass at trailhead (if developed recreation site)"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "Free self-issued wilderness permit (required)",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Glacier Peak Wilderness",
+     "landManager": "USFS Okanogan-Wenatchee National Forest (Chelan Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Recreation Pass at trailhead (if developed recreation site)"
+    }
+   }
+  },
+  {
+   "id": "wa_ephemeral",
+   "before": {
+    "watch_out": "Ultra-ephemeral ice formation—even less consistent than Iceman; highly dependent on unusual weather patterns; often forms only in coldest, snowiest years\nWater source limited and variable—snowmelt dependency means formation marginal in warm years; verify conditions from recent reports before committing\nHighly condition-dependent climbing—ice quality can range from nil to excellent depending on recent weather; check NWAC and recent trip reports before approach\nTechnical grade masks variable protection—WI3-4 rating assumes quality ice; poor ice conditions create unprotectable runouts with serious consequences\nAfternoon deterioration extreme—late morning climbing risky; even slight warming weakens ice; must climb in pre-dawn cold hours only\nSignificant avalanche exposure in approach—gully terrain subject to slides; assess stability; early start essential for safe approach\nApproach terrain variable and sometimes snow-choked—route-finding difficult; terrain traps in gullies; potential for slide; microspikes/crampons needed\nLimited climbing window in season—typically Dec-Jan only in most years; highly weather-dependent; low probability of climbable conditions",
+    "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer."
+   }
+  }
+ ]
+}

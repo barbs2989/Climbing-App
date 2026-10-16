@@ -1,0 +1,139 @@
+{
+ "applied": [
+  {
+   "id": "wa_vanishing_point",
+   "column": "commitment",
+   "path": [],
+   "fact": "commitment grade vs alpine grade"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "itinerary",
+   "path": [],
+   "fact": "pitch count (14 vs 20)"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "crux pitch location"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "collapsed-roof pitch location"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "route high point vs Topout waypoint elevation"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Topout waypoint note describes the route START, not the topout"
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "approach says the trailhead is 'nearly level with' the summit vs 4,150 ft trailhead and ~1,460 ft gain"
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "beta says ~600 vertical feet from parking to summit vs 1,464 ft gain"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_vanishing_point",
+   "before": {
+    "commitment": "V",
+    "itinerary": "Typically climbed as a 2-3 day trip mirroring the original ascent style: Day 1 — hike in and complete the ~3-3.5 hour technical approach (forested rib with fixed lines, roped slab) to the bivy caves below the tower; Day 2 — climb the full 20-pitch route (a very long day given sustained 5.10-5.12 climbing with few easy pitches); Day 3 (or same-day if fast) — descend via the ~3-hour descent route back to the trailhead. Strong parties also do the route car-to-car in one very long day (roughly 3 hours of approach, a full day on route, and about 3 hours of descent) with a pre-dawn start.",
+    "pro_tips": [
+     "Pitch 5 is the crux at 5.12+ (graded 5.11c on FA, but climbers report it as significantly harder). Scout the line on approach if possible.",
+     "The collapsed roof section on pitch 9/10 (rerouted in 2020) demonstrates route changes since FA—the route may still undergo evolution as weathering continues.",
+     "Pitch 8 is intentionally left with significant runout as a mental challenge; this is by design. Know your comfort level.",
+     "Start very early (4–5 am from trailhead) to maximize light on the climb and descent.",
+     "Water is usually available in the approach gully until early August; carry extra capacity if climbing later in season.",
+     "Bring a satellite communicator or PLB—cell service is unreliable in the Skykomish drainage.",
+     "The 2020 modernization improved the approach significantly; older trip reports may reference less secure sections.",
+     "Ben Gilkison's 2012 onsight of most pitches is impressive but not representative of typical climbing here—this is a serious, committing alpine route.",
+     "The approach gully has fixed ropes at its steepest sections — bring a sling or prusik to use them rather than free-climbing wet, loose rock.",
+     "Several pitches have variation options; review a topo or a recent trip report before committing to a given line."
+    ],
+    "waypoints": [
+     {
+      "lat": 47.7923,
+      "lng": -121.4592,
+      "elev": 2280,
+      "name": "Barclay Lake Trailhead (FR-6024)",
+      "note": "Barclay Lake Trailhead parking area; the approach follows the Barclay Lake trail before leaving it off-trail toward the tower.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 2280,
+      "directions": "Leave US-2 near Baring and follow FR-6024 to its end at the Barclay Lake Trailhead, listed as 74920 NE Stevens Pass Hwy, Skykomish. Parking is at about 2,280 ft and the level Barclay Creek trail starts from the lot. The technical approach beyond the trail takes competent parties two and a half to four hours even with good beta, so parties going car-to-car start pre-dawn."
+     },
+     {
+      "lat": 47.784586,
+      "lng": -121.426684,
+      "elev": 2422,
+      "name": "Barclay Lake",
+      "note": "Trail continues past the lake toward Baring's north side.",
+      "type": "Water",
+      "distMi": 2.2
+     },
+     {
+      "lat": 47.7805,
+      "lng": -121.429,
+      "elev": 5200,
+      "name": "Dolomite Tower Base",
+      "note": "Climbers trail circles around most of Dolomite Tower before reaching the gully separating it from Baring Mountain.",
+      "type": "Junction",
+      "distMi": 3.8
+     },
+     {
+      "lat": 47.781,
+      "lng": -121.43,
+      "elev": 5900,
+      "name": "Vanishing Point Topout",
+      "note": "Grade VI 5.12b established over many bolted pitches in the late 1990s; starts left of the prominent arete.",
+      "type": "Topout",
+      "distMi": 4
+     },
+     {
+      "lat": 47.77918,
+      "lng": -121.43599,
+      "elev": 5708,
+      "name": "Dolomite Tower",
+      "type": "Summit",
+      "elevFt": 5708
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "before": {
+    "approach": "Drive the Beckler River Road (FR-65) out of Skykomish and follow it into the FR-6510/FR-6514/FR-6517 spur network (about 10.8 miles of gravel/dirt forest road past the pavement) to road's end, roughly 0.5 mile east of and nearly level with Eagle Rock's summit — this is the trailhead; there is no maintained trail beyond it. From the parking area, leave the road and head west/southwest straight up the hillside cross-country. You break out of brush and into open forest within the first few hundred feet, then continue uphill through timber; after a few hundred yards the trees give way to open talus slopes below the cliff bands on Eagle Rock's northeast side. From the base of the talus, do not push straight up into the cliffs — instead make an ascending, counterclockwise (climber's-left) traverse across and around the north side of the peak to a broad bench/step at roughly 5,000 ft. From that step, angle southwest a few hundred yards to the base of the final summit slope, where the scramble proper begins. One-way distance from the car to the summit is only about 0.8 mile, but essentially all of the route's ~1,400 ft of gain is packed into that short distance, so it feels considerably steeper than the mileage implies. There is no reliable water source anywhere on the approach — carry all the water you need from the car. Hazards are mostly footing and route-finding: loose talus and scree on the traverse, brush low down, no trail or cairns to follow, and cliff bands that will cliff out parties who try to go straight up the northeast talus instead of arcing counterclockwise.",
+    "beta": "From a high parking area on FR6517 about 0.5 mile east of the summit, the route climbs roughly 600 vertical feet of open slope/talus to the top — easy class 2 if you stay to the right side, or class 2/3 up the center. Total distance is well under a mile each way, and the round trip from the car is typically under three hours. The peak sees very few visitors compared to nearby Beckler Peak and Evergreen Mountain."
+   }
+  }
+ ]
+}

@@ -1,0 +1,283 @@
+{
+ "file": "s015.json",
+ "results": [
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)",
+   "verdict": "fixed",
+   "correct_value": "Both lines are real options (col between the peaks, or drop into the basin and climb the gully). The ~1,400 ft of climbing belongs only to the basin/gully line; from the notch between the summits the remaining climb is well under 1,000 ft, so the '~1,400 ft' figure is removed from the notch-line text (no new number asserted).",
+   "evidence": "A detailed East Peak guide describes two lines from ~5,900 ft: up to the col between the west and east peaks, or a more direct line down open heather with a short gully; the gully/basin line (trail end ~5,600-5,700 ft, drop ~300 ft to the basin, Class 2 gully) is also the SummitPost description, so the two lines are genuine options. Topo-derived summit elevations give the West Peak 6,725 ft and East Peak ~6,844-6,891 ft; USGS 1 m lidar sampled across the ridge puts the saddle between them near 6,000-6,100 ft and the East summit area at ~6,890 ft, so a climb of ~1,400 ft from that notch is impossible (it would overshoot the summit by several hundred feet). The itinerary's 1,400 ft for the gully line (basin ~5,200-5,400 ft to ~6,890 ft) is consistent and left unchanged.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://epqs.nationalmap.gov/v1/json (USGS lidar grid 48.921-48.934N, 121.626-121.643W; summit 48.9287,-121.6265 = 6,886 ft)",
+    "https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "then climbs a final ~1,400 ft of mixed snow, rock, and short exposed steps",
+     "replace": "then climbs the final stretch of mixed snow, rock, and short exposed steps"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "then climbs a final ~1,400 ft of mixed snow",
+     "replace": "then climbs the final stretch of mixed snow"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "AFTER THE NOTCH it is a final 1,400 ft of mixed snow",
+     "replace": "AFTER THE NOTCH it is a final stretch of mixed snow"
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only the same split: one reference gives July-September as the most favourable months, while a detailed East Peak guide (and its companion West Peak page by the same author, which counts once) gives roughly July to October; the WTA page gives no season. No second independent source for either window. A second independent source (e.g. an October summit trip report pattern or a land-manager season statement) would settle it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+    "https://www.wta.org/go-hiking/hikes/goat-mountain-mount-baker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Ice axe requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states a permanent snowfield needing an axe at all times on the south route; a detailed guide mentions only microspikes year-round for steep wet heather, a club trip report notes some parties used axes on slippery heather, and the snowfield/glacier remnant cited in references lies on the NORTH slope between the summits. Two sources directly rating the axe as early-season-only vs always were not found (SummitPost and Mountaineers pages returned 403). A direct late-season (Aug-Sep) trip report of the East Peak describing snow on the route would settle it.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-goat-mountain-east-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Rock grade",
+   "verdict": "fixed",
+   "correct_value": "Class 2",
+   "evidence": "A detailed East Peak (true summit) guide rates it 'Some steep heather scrambling with mild exposure (Class 2)', hands mostly for stabilisation. SummitPost's East Peak description (the same basin-and-gully line the row's waypoints use) calls the finish an easy Class 2 gully that narrows and becomes exposed near the top. The Mountaineers route page also lists the scramble as Class 2. No source rates it Class 3; the row's rock_grade and waypoint notes already say Class 2.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+    "https://www.summitpost.org/goat-mountain/152742",
+    "https://www.mountaineers.org/activities/routes-places/goat-mountain-mount-baker"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2-3",
+     "value": "Class 2"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "grade"
+     ],
+     "expect": "Class 2-3 (snow)",
+     "value": "Class 2 (snow)"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "Class 2-3",
+     "value": "Class 2"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "exposed Class 2-3 terrain",
+     "replace": "exposed Class 2 terrain"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "Class 2-3 scrambling",
+     "replace": "Class 2 scrambling"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "loose Class 2-3 scrambling",
+     "replace": "loose Class 2 scrambling"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Rock grade",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "the Class 2-3 scramble",
+     "replace": "the Class 2 scramble"
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Wilderness permit: self-issue permit vs no permit",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "permit and access.permit say a free self-issued Mount Baker Wilderness permit is filled out at the trailhead, while access.overnight_permit says no permit is required. Forest Service pages for Mount Baker Wilderness and Goat Mountain Trail list only a recreation pass and wilderness rules (party size 12, no fires) and the Forest Service states it requires no permits for climbing Mt. Baker; WTA lists only a parking pass. But the Forest Service's own general wilderness page says day visitors 'may need' a self-issue permit, and no source states explicitly either way for this wilderness. An explicit Mt. Baker Ranger District statement would settle it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.wta.org/go-hiking/hikes/goat-mountain-mount-baker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "fact": "Descent: the east snow couloir was the way DOWN TO THE FACE, not the descent from the summit",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The east-side snow couloir is the approach down from the ridge to the foot of the face, not the descent from the top; no descent from the top is asserted.",
+   "evidence": "The AAJ report says the party scrambled up the ridge from Snowy Lakes and dropped east via a snow couloir (straightforward with crampons and axe) to reach the face, then climbed 11 pitches in 11 hours; Alpinist independently says they went up the southwest scree and down the east side to the face before starting to climb. Neither says the couloir was used to get off the route, and the row's own approach already says they descended to the base before roping up. The descent claims are rewritten to put the couloir on the approach and invent no summit descent (the FA's own descent is not stated in either source; cascadeclimbers TR is behind a script wall).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213719/Golden-Horn-East-Face",
+    "http://www.alpinist.com/doc/web15x/newswire-new-route-on-golden-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_golden_horn_east_face",
+     "fact": "Descent: the east snow couloir was the way DOWN TO THE FACE, not the descent from the summit",
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "A snow couloir on the east side provides a straightforward descent with crampons and an ice axe.",
+     "value": "The east-side snow couloir (crampons and axe) is the way down from the ridge to the foot of the face, not the way off the top."
+    },
+    {
+     "id": "wa_golden_horn_east_face",
+     "fact": "Descent: the east snow couloir was the way DOWN TO THE FACE, not the descent from the summit",
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "The first-ascent party descended via a snow couloir on Golden Horn's east side, described as a straightforward descent given crampons and an axe, back toward the Snowy Lakes basin.",
+     "value": "The snow couloir on Golden Horn's east side belongs to the approach: from the ridge above Snowy Lakes it drops to the foot of the east face and is easy going with crampons and an axe. It is not the way off the route, so work out the descent from the top before committing to the face."
+    }
+   ]
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "fact": "Parking pass vs land manager",
+   "verdict": "fixed",
+   "correct_value": "No Discover Pass at Goose Egg (national forest land); the Discover Pass applies only to the state (WDFW) lots at the lower-canyon crags.",
+   "evidence": "The Washington Climbers Coalition Tieton page says the lower Tieton cliffs (Royal Columns, The Bend, Moon Rocks) are WDFW land where a Discover Pass is required to park, while nearly all other crags including Goose Egg are on Forest Service land (Wenatchee National Forest). Mountain Project's Royal Columns page independently ties the Discover Pass to the Royal Columns (Oak Creek Wildlife Area) lot, and the Forest Service's Goose Egg Sno-Park page places Goose Egg on the Okanogan-Wenatchee NF. No source states whether a Northwest Forest Pass is needed at the FR-1200 roadside pullouts, so no pass requirement is asserted.",
+   "sources": [
+    "https://washingtonclimbers.org/index.php/2015/10/13/tieton/",
+    "https://www.mountainproject.com/area/105922165/royal-columns",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/goose-egg-sno-park-non-motorized"
+   ],
+   "patches": [
+    {
+     "id": "wa_dirty_sanchez",
+     "fact": "Parking pass vs land manager",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$30/year Washington Discover Pass (if required for parking)",
+     "value": "No Discover Pass needed: Goose Egg is national forest land, and the Discover Pass applies to the state-managed lots at the lower-canyon crags."
+    },
+    {
+     "id": "wa_dirty_sanchez",
+     "fact": "Parking pass vs land manager",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Discover Pass may be required in some parking areas",
+     "value": "No Discover Pass (national forest land)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searched the Mountain Project route page (Grade III, 7 pitches, ~500 ft; walk-off gully with one short rap), a separate photo trip report, and the 2007 cascadeclimbers TR (script-walled). None gives a car-to-car or climbing time; the only timed report remains the one previously found (9 AM to 6:30 PM with a bailout and stuck rope). A second timed ascent report of this route would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/108454104/ride-the-lightning",
+    "https://chossclimbers.com/testing/us/washington/tieton-cragging/ride-the-lightning/",
+    "https://cascadeclimbers.com/forum/topic/50297-tr-goose-egg-mountain-ride-the-lightning-4222007/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Wilderness permit: required self-issue vs none",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Forest Service Skyline Divide trail/trailhead pages and the Mt. Baker Wilderness page list only a recreation pass, wilderness rules (party 12, no fires) and a voluntary climbing register; the Forest Service says it requires no permits for climbing Mt. Baker; WTA, 10adventures, Grey Otter and Uprooted Traveler list only a parking pass. However none states explicitly that no wilderness permit exists, the Forest Service's general wilderness page says day visitors 'may need' a self-issue permit at trailheads, and one secondary page claims overnight permits are self-issued at Mount Baker Wilderness trailheads. Silence is not a statement; an explicit Mt. Baker Ranger District statement would settle it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.wta.org/go-hiking/hikes/skyline-divide",
+    "https://summitborn.com/mount-baker-mountain-guide/"
+   ],
+   "patches": []
+  }
+ ]
+}

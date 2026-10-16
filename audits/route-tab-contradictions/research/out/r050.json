@@ -1,0 +1,77 @@
+{"file": "r050.json", "results": [
+ {"id": "wa_bedal_peak_standard", "fact": "Elevation of the cliff-band crux", "verdict": "fixed",
+  "correct_value": "about 4,900-5,100 ft (hazards, turnaround, pro_tips and pro_needs move off 4,600-4,900 ft)",
+  "evidence": "A Merry Brook trip report puts the cliff band crux at about 4,900 ft; a ski trip report threads the obvious cliff band at ~4,800-5,000 ft; other reports describe the hidden key ramp at ~5,000-5,100 ft. None place the band at 4,600 ft (4,600 ft is where the lower talus levels out, which is likely where the stale figure came from). pro_needs carried the same stale range and is fixed with the others.",
+  "sources": ["https://www.musthikemusteat.com/mountain-loop-hwy/bedal-peak-scramble/", "https://turns-all-year.com/trip-reports/may-26-bedal-peak-darrington-district", "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-bedal-peak-via-merry-brook-1", "https://www.summitpost.org/bedal-peak/526647"],
+  "patches": [
+   {"id": "wa_bedal_peak_standard", "fact": "Elevation of the cliff-band crux", "op": "replace_text", "column": "hazards", "path": [1], "find": "4,600-4,900 ft", "replace": "4,900-5,100 ft"},
+   {"id": "wa_bedal_peak_standard", "fact": "Elevation of the cliff-band crux", "op": "replace_text", "column": "turnaround", "path": [], "find": "(~4,600-4,900 ft)", "replace": "(~4,900-5,100 ft)"},
+   {"id": "wa_bedal_peak_standard", "fact": "Elevation of the cliff-band crux", "op": "replace_text", "column": "pro_tips", "path": [2], "find": "around 4,600-4,900 ft", "replace": "around 4,900-5,100 ft"},
+   {"id": "wa_bedal_peak_standard", "fact": "Elevation of the cliff-band crux", "op": "replace_text", "column": "pro_needs", "path": [], "find": "around 4,600-4,900 ft", "replace": "around 4,900-5,100 ft"}
+  ]},
+ {"id": "wa_bedal_peak_standard", "fact": "Access route to the route's only listed overnight camp", "verdict": "bivy_zone_list",
+  "correct_value": null,
+  "evidence": "Bedal Basin is real and its entry's own facts check out: it is reached by the Bedal Creek Trail from the FR 4096 road end at about 2,800 ft, about 2.6 miles to the basin near 5,000 ft, and the remains of Harry Bedal's cabin lie among its boulders. But it is a separate approach from a different trailhead up the same road, used for Sloan Peak and for the Bedal Basin approach to Bedal. The Merry Brook line this route describes never enters the basin, so the entry does not serve this route as written. Left for the catalog-wide bivy class; no patch.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/bedal-creek", "https://www.hikeoftheweek.com/2026/08/27/bedal-basin/", "https://www.wta.org/go-hiking/hikes/bedal-peak"],
+  "patches": []},
+ {"id": "wa_bedal_peak_standard", "fact": "Which approach the route takes (beta and ROUTE BREAKDOWN describe the Bedal Creek / Bedal Basin approach; every other field describes Merry Brook)", "verdict": "fixed", "discovered": true,
+  "correct_value": "Merry Brook climbers' path from the FR 4096 pullout, over boulder fields past Nels Lake to the north-slope cliff band",
+  "evidence": "approach, all waypoints, itinerary, timing, descent_text ('reverses the ascent (Merry Brook) line') and approach_variants all describe the Merry Brook path, but beta opens 'From the Bedal Creek trailhead ... into Bedal Basin' and pitch_detail[0] puts the cliff band 'above Bedal Basin'. One route description calls the northwest Merry Brook route the easiest line on the mountain, starting at a faint path on FR 4096 about 1.3 miles up. Separate Merry Brook trip reports describe the pullout at the second switchback, the path up past Nels Lake, and the cliff band above the boulder fields on the north side. The Bedal Basin approach uses the separate Bedal Creek Trail from the road end.",
+  "sources": ["https://www.summitpost.org/bedal-peak/526647", "https://www.musthikemusteat.com/mountain-loop-hwy/bedal-peak-scramble/", "https://trailcatjim.com/bedal-peak-snowshoe-climb-north-slope-northeast-ridge/", "https://turns-all-year.com/trip-reports/may-26-bedal-peak-darrington-district"],
+  "patches": [
+   {"id": "wa_bedal_peak_standard", "fact": "Which approach the route takes", "op": "replace_text", "column": "beta", "path": [], "find": "From the Bedal Creek trailhead, a faint, brushy climbers' path climbs through old-growth forest into the Henry M. Jackson Wilderness, crosses an avalanche path, and within about 1.7-2 miles gives way to boulder-hopping up a creek drainage into Bedal Basin. Above the basin the route", "replace": "From an unsigned pullout on FR 4096, a faint, brushy climbers' path follows Merry Brook through old-growth forest, climbs a forested ridge, and crosses boulder fields past Nels Lake onto the peak's north slopes. Above the boulder fields the route"},
+   {"id": "wa_bedal_peak_standard", "fact": "Which approach the route takes", "op": "replace_text", "column": "pitch_detail", "path": [0, "notes"], "find": "lower cliff band above Bedal Basin", "replace": "lower cliff band above the upper boulder field"}
+  ]},
+ {"id": "wa_big_four_mountain_spindrift_couloir", "fact": "Maximum ice difficulty on the route", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The first-ascent account gives 'IV+ 5.9 WI5 mixed' in its statistics and calls the crux section 5.8 WI5 mixed in the text, so WI5 looks right and gear[0]'s 'WI4' looks like the outlier. But that account is the only independent record of the route's ice grade. The separate short new-route note grades it only 'IV+ 5.9 95°', and no other source for the route could be found. Only two row fields (ice_grade and pitch_detail) support WI5, which is short of the four the internal rule needs, so no patch.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades", "https://publications.americanalpineclub.org/articles/12199713800/North-America-United-States-Washington-Cascades-Big-Four-Mountain-North-Face-Spindrift-Couloir"],
+  "patches": []},
+ {"id": "wa_big_four_mountain_spindrift_couloir", "fact": "Anchor type for the first (col) rappel vs. the bowl rappels", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Trees: the short rappels on the way to the treed col and the rappels below it came off trees and shrubs, with bushes and snow bollards lower in the bowl. The outlier is rappel_detail[0].anchor's 'natural rock (horn/block)', and its own note says the anchor type was not recorded.",
+  "evidence": "The first-ascent account says the party went down the south side of the northwest ridge on moderate terrain and made a few short rappels off trees to the treed col. From the col they made numerous rappels off trees and shrubs, then a few more off bushes and bollards to the base. That matches the 'rappels' summary (tree anchors at the col, mixed anchors in the bowl). rappels, descent_text, rappel_detail[1-3], detailed_rack ('tree slings for the descent') and what_to_bring (webbing for tree-anchored rappels) all say trees. Only rappel_detail[0].anchor says rock, and its own note admits the type was unrecorded.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades"],
+  "patches": [
+   {"id": "wa_big_four_mountain_spindrift_couloir", "fact": "Anchor type for the first (col) rappel", "op": "set", "column": "rappel_detail", "path": [0, "anchor"], "expect": "natural rock (horn/block) near summit ridge", "value": "tree"},
+   {"id": "wa_big_four_mountain_spindrift_couloir", "fact": "Anchor type for the first (col) rappel", "op": "replace_text", "column": "rappel_detail", "path": [0, "notes"], "find": "exact anchor type not recorded", "replace": "short raps off trees"}
+  ]},
+ {"id": "wa_big_four_mountain_spindrift_couloir", "fact": "First-ascent climber's surname spelling", "verdict": "fixed",
+  "correct_value": "Bart Paull",
+  "evidence": "The first-ascent feature article is bylined 'by Bart Paull', and the separate new-route note in the same journal's climbs section names 'Bart Paull and Doug Littauer'. Only the article's statistics box misprints 'Pauli', which is where beta's spelling came from. The fa column already reads Paull.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades", "https://publications.americanalpineclub.org/articles/12199713800/North-America-United-States-Washington-Cascades-Big-Four-Mountain-North-Face-Spindrift-Couloir"],
+  "patches": [
+   {"id": "wa_big_four_mountain_spindrift_couloir", "fact": "First-ascent climber's surname spelling", "op": "replace_text", "column": "beta", "path": [], "find": "Bart Pauli", "replace": "Bart Paull"}
+  ]},
+ {"id": "wa_big_four_mountain_tower_route", "fact": "Hardest rock grade on the route", "verdict": "fixed_internal_plus_one",
+  "correct_value": "5.7",
+  "evidence": "The first-ascent report of the Tower Route (Guydelkon and Miller, July 25, 1972) grades it 'NCCS IV, F7', which is 5.7. In the row, grade ('IV 5.7'), both tower pitches in pitch_detail (5.7 and 5.6-5.7), pro_needs and detailed_rack ('rack to 5.7') all agree, so rock_grade '5.9' is the lone outlier. No second independent grading of this route could be found online, hence internal-plus-one. grade_num is derived and is not patched.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12197211404/North-America-United-States-WashingtonCascade-Mountains-Big-Four-Tower-Route"],
+  "patches": [
+   {"id": "wa_big_four_mountain_tower_route", "fact": "Hardest rock grade on the route", "op": "set", "column": "rock_grade", "path": [], "expect": "5.9", "value": "5.7"}
+  ]},
+ {"id": "wa_cadet_peak_scramble", "fact": "Season start month", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "best_season makes the same distinction as seasonal_guidance: late-June ascents go on snow with axe and crampons, and mid-July is when most parties find the scramble snow-free. Its 'late June' is a documented snow-climb shoulder, not a claim that June is a good scramble month, and it does not render anyway because seasonal_guidance exists. A late-June 2022 ascent confirms such climbs happen on steep snow from about 4,000-4,500 ft, and the gully is described as full of snow in June and often July.",
+  "sources": ["https://havetent.com/2022/06/28/cadet-peak/", "https://www.summitpost.org/cadet-peak-via-glacier-basin/210327"],
+  "patches": []},
+ {"id": "wa_del_campo_peak_standard", "fact": "Pitch count", "verdict": "fixed",
+  "correct_value": "null. It is an unroped Class 3-4 scramble; the four pitch_detail rows are scramble stages, not roped pitches.",
+  "evidence": "A club route description says the standard route goes left of the gully on Class 3 ledges and that a rope may be carried but has not been used on past climbs. A scramble trip report grades the Foggy Lake line 3rd class and describes an unroped ascent. The row agrees: discipline scrambling, rappels '0', 'No technical rack', pro_needs 'None.' So '2 pitches' in the header asserts roped pitches that do not exist, and changing it to 4 would be equally wrong.",
+  "sources": ["https://mazamas.org/activity/instance/8026/", "https://stephabegg.com/trip-reports/washington/gothic-del-campo/", "https://www.wta.org/go-hiking/hikes/del-campo-peak"],
+  "patches": [
+   {"id": "wa_del_campo_peak_standard", "fact": "Pitch count", "op": "set", "column": "pitches", "path": [], "expect": 2, "value": null}
+  ]},
+ {"id": "wa_del_campo_peak_standard", "fact": "Distance to Foggy Lake", "verdict": "fixed",
+  "correct_value": "about 4.7 miles one way from Barlow Pass (waypoint distMi 4.8 is within rounding and is kept; the prose '3.3 miles' is the outlier)",
+  "evidence": "One trail description gives Gothic Basin as 9.2 miles round trip with a 5,200 ft high point and Foggy Lake about 0.4 mile beyond the saddle, so roughly 4.6-5 miles one way. Another gives Barlow Pass to Gothic Basin as 4.3 miles and Foggy Lake 0.4 mile further (4.7 one way, 9.4 round trip). The row's own itinerary (11 mi round trip to the summit), approach_variants distMi 10.9 and dist_km 8.85 are also consistent with ~4.7 miles to the lake, not 3.3.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/gothic-basin", "https://www.hikeoftheweek.com/2021/08/26/gothic-basin/"],
+  "patches": [
+   {"id": "wa_del_campo_peak_standard", "fact": "Distance to Foggy Lake", "op": "replace_text", "column": "approach", "path": [], "find": "Foggy Lake (~5,200 ft, 3.3 miles from the trailhead)", "replace": "Foggy Lake (~5,200 ft, about 4.7 miles from the trailhead)"},
+   {"id": "wa_del_campo_peak_standard", "fact": "Distance to Foggy Lake", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "roughly 3.3 miles in", "replace": "roughly 4.7 miles in"}
+  ]},
+ {"id": "wa_del_campo_peak_standard", "fact": "Descent duration", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real. The schedule (begin descent 10:45 AM, trailhead 2:30 PM, so 3.75 h), totalHrs 9 and approachTimeHrs 2.5 hang together, and descentTimeHrs 2.5 does not. Published descent times vary widely: one report says the descent took about half the ascent time on snow, and others give car-to-car totals from 6 to 11 hours. No two sources agree on a summit-to-car descent time, and only three row fields back the schedule, so nothing is patched.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/gothic-del-campo/"],
+  "patches": []}
+]}

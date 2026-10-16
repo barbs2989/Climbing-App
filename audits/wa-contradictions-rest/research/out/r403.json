@@ -1,0 +1,442 @@
+{
+ "file": "r403.json",
+ "results": [
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach",
+   "verdict": "fixed",
+   "correct_value": "Non-glaciated single-day scramble from the Twin Lakes trailhead via the High Pass Trail, the col in Larrabee's south arm, the basin and the gully to the Peak 1-2 notch; no Ptarmigan Ridge, Camp Kiser or glacier travel.",
+   "evidence": "SummitPost's Pleiades page describes the approach from Twin Lakes Road 3065 via the High Pass trail, then scree/snow to the col in Larrabee's south arm, the basin and the gully to the notch between the 1st and 2nd Pleiades. A 2025 trip report drove to the Twin Lakes trailhead, went over High Pass and climbed all four peaks in a single day with no glacier. The Forest Service High Pass Trail page places the route out of Twin Lakes. Ptarmigan Ridge/Camp Kiser is on Mount Baker, unrelated.",
+   "sources": [
+    "https://www.summitpost.org/the-pleiades/931529",
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "expect": "strong, sustained multi-day alpine fitness; long approach via Ptarmigan Ridge to Camp Kiser plus additional glaciated approach to the Pleiades ridge before any technical climbing begins",
+     "value": "solid alpine day fitness: a long single day from Twin Lakes over High Pass, most of it slow off-trail travel and scrambling on loose rock",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "expect": "overnight/glacier kit expected - rope, crevasse rescue hardware, camping gear; roughly 35-45+ lb pack on the approach",
+     "value": "day pack with helmet, a short 30-40m rope and a few slings; roughly 20 lb",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "long, multi-day approach - miles of trail and glacier travel to Camp Kiser via Ptarmigan Ridge, then further glacier/snow travel toward the Pleiades ridge; not a day-trip from the trailhead for most parties",
+     "value": "about 2 miles of trail from Twin Lakes to High Pass, then off-trail scree, seasonal snow and a loose gully to the notch between the first and second peaks; done as a long single day from the trailhead",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills"
+     ],
+     "expect": [
+      "glacier travel and crevasse rescue",
+      "roped travel and self-arrest",
+      "Class 3 scrambling on loose/friable rock",
+      "route-finding in glaciated, unmarked terrain",
+      "judgment for rapid weather changes high on the Baker massif"
+     ],
+     "value": [
+      "Class 3-4 scrambling on loose/friable rock",
+      "down-climbing exposed loose terrain",
+      "basic rope handling and rappelling for the short roped section on Peak 1",
+      "ice axe travel on steep snow early in the season",
+      "route-finding in unmarked terrain",
+      "judgment for rapid weather changes on an exposed ridge"
+     ],
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "advanced/experienced alpine climber - comfortable with unroped Class 3 scrambling on loose rock and with roped glacier travel; not appropriate for a first alpine objective",
+     "value": "advanced/experienced alpine scrambler - comfortable with unroped Class 3-4 scrambling on loose rock and with short roped sections; not appropriate for a first alpine objective",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "Active glacier travel is required near the peak; roped travel and crevasse rescue skills are necessary, with snow bridges generally more solid early in the July-August window and weaker by late summer",
+     "value": "No glacier travel on this route; the way in from Twin Lakes over High Pass and across the basin below Larrabee's east side is trail, scree and seasonal snow.",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "expect": "Moderate-high: friable volcanic rock on the Class 3 summit scramble combines with glacier travel exposure below it - a slip on loose rock or an unroped misstep near crevasses could have serious consequences, compounded by the risk of rapid weather changes",
+     "value": "Moderate-high: friable rock on the exposed Class 3-4 scrambling and knife-edge sections, where a slip or a dislodged block could have serious consequences, compounded by the risk of rapid weather changes",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "expect": "Cascade volcanic-massif weather: conditions can change rapidly high on Baker's shoulder terrain",
+     "value": "North Cascades border-ridge weather: conditions can change rapidly on the exposed ridge",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "expect": "Afternoon cloud buildup and fast-moving weather deterioration are common on the Baker massif in summer; the exposed Ptarmigan Ridge approach adds wind exposure",
+     "value": "Afternoon cloud buildup and fast-moving weather deterioration are common in summer; the open ridge east of Larrabee adds wind exposure",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "more consolidated glacier travel and typically",
+     "replace": "snow may still linger in the approach gullies early in the month, and",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "glacier crossings can be more complex",
+     "replace": "steep snow on the approach can be more complex",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": ", though crevasses become more open late in the month",
+     "replace": "",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "the Pleiades is overshadowed by standard Mt. Baker routes and even by nearby named objectives like the Cockscomb and Border Peaks that share the Ptarmigan Ridge approach",
+     "replace": "the Pleiades are overshadowed by nearby Mount Larrabee and the Border Peaks, which share the High Pass approach",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "the July-August optimal window, likely as a side objective for parties already in Ptarmigan Ridge/Camp Kiser terrain",
+     "replace": "the late July-September window, likely as a side objective for parties already at Twin Lakes or High Pass for Mount Larrabee",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "avalanche (crevasse unlikely but snow is wet and heavy)",
+     "replace": "avalanche (snow is often wet and heavy)",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Rope needed",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A single short (30-40m) rope and a few slings are carried for the roped section on Peak 1; no rack needed.",
+   "evidence": "gear, pro_needs, what_to_bring and overview all say a short rope is carried for Peak 1. A 2025 trip report carried a 30 m rope and used it on Peak 1 (the hardest), rappelling a slabby crux from an existing station. SummitPost notes the first peak has slabby, high-consequence exposure. detailed_rack and rope_type were the outliers.",
+   "sources": [
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/",
+    "https://www.summitpost.org/the-pleiades/931529"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "No rope, protection, or belay gear needed.",
+     "replace": "No protection rack needed; carry a single 30-40m rope and a few slings for the short roped section on Peak 1.",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Rope needed"
+    },
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "none",
+     "value": "single (short section on Peak 1)",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Rope needed"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Which Pleiad is westernmost / easiest",
+   "verdict": "fixed",
+   "correct_value": "Peak 1 is the westernmost (and hardest); Peak 2, just east of the Peak 1-2 notch, is the easiest.",
+   "evidence": "SummitPost: from the notch between the 1st and 2nd Pleiades, the 2nd peak is an easy scramble to the east and the 1st peak is to the west. A 2025 trip report traversed eastwards from the notch to Peak 2, calls Peak 2 the lowest and easiest, and labels Peak 1 the western one.",
+   "sources": [
+    "https://www.summitpost.org/the-pleiades/931529",
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Tag Peak 2 (the easy, westernmost peak)",
+     "replace": "Tag Peak 2 (the easiest, second from the west)",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Which Pleiad is westernmost / easiest"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Trailhead / approach pass",
+   "verdict": "fixed",
+   "correct_value": "Twin Lakes Trailhead, via the High Pass Trail (over Low Pass) to High Pass; Gold Run Pass and the Tomyhoi Lake trailhead are not on this approach.",
+   "evidence": "The Forest Service High Pass Trail 676 page starts the trail from the Twin Lakes Trailhead via the Winchester Mountain Trail junction at 0.5 mile. SummitPost and a 2025 trip report both start at Twin Lakes and go over High Pass. Gold Run Pass lies on the Tomyhoi Lake trail from the lower trailhead.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://www.summitpost.org/the-pleiades/931529",
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Tomyhoi Lake Trailhead",
+     "value": "Twin Lakes Trailhead",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Trailhead / approach pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Twin Lakes / Gold Run Pass approach",
+     "replace": "Twin Lakes / High Pass approach",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Trailhead / approach pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "Reach Gold Run / Low Pass area",
+     "replace": "Reach High Pass",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Trailhead / approach pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "contour past Gold Run/Low Pass beneath",
+     "replace": "go over Low Pass and High Pass and cross the basin beneath",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Trailhead / approach pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "contour past Gold Run/Low Pass beneath",
+     "replace": "go over Low Pass and High Pass and cross the basin beneath",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Trailhead / approach pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Late July-September.",
+   "evidence": "The Forest Service High Pass Trail page warns that steep, exposed snowfields linger into August and an ice axe is needed before they melt, so early July is not optimal. A 2025 trip report climbed all four peaks on September 19 in good conditions, and a High Pass hike report is dated September 30. The glacier-based reasons for calling September risky do not apply; there is no glacier.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/",
+    "https://www.hikeoftheweek.com/2021/09/30/high-pass/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "July-August",
+     "value": "Late July-September",
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Season window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September"
+     ],
+     "expect": {
+      "reason": "Outside the best-season window; crevasses more open and snow bridges less reliable, shorter daylight, and higher chance of early-season snow at elevation",
+      "status": "risky"
+     },
+     "value": {
+      "reason": "Within the best-season window; dry rock and melted-out gullies, though shorter daylight and a rising chance of early snow late in the month",
+      "status": "optimal"
+     },
+     "id": "wa_the_pleiades_scramble",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Wilderness permit required",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service Twin Lakes Trailhead, High Pass Trail 676 and Winchester Mountain Trail 685 pages list only a recreation pass (NW Forest Pass/Interagency or day fee) plus Mount Baker Wilderness rules (party of 12, no campfires) and say nothing of a required wilderness permit; WTA lists only the pass. The Forest Service permits page names a required self-issue permit only for Alpine Lakes Wilderness. No source was found that states either that a Mount Baker Wilderness self-issue permit is required at Twin Lakes or explicitly that none is; absence from the pages is not two affirmative sources.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/twin-lakes-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/winchester-mountain-trail-685",
+    "https://www.wta.org/go-hiking/hikes/twin-lakes-2"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Extra cost of parking at Yellow Aster Butte TH",
+   "verdict": "not_a_contradiction",
+   "correct_value": "About 2 miles each way (4 miles round trip) and ~1,500 ft of gain on the way in.",
+   "evidence": "Both say the same thing: the upper road rises about 1,500 ft (lower lot ~3,700 ft to Twin Lakes 5,200 ft), which is 1,500 ft of gain going in and 1,500 ft of descent coming out; 'each way' in the bivy note refers to walking the road in each direction, not 3,000 ft of gain. The bivy list is also owned by the separate camping clean-up.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Gain: gain_ft/loss_ft 3,400 vs itinerary 3,200",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft and loss_ft are 3,400 ft while the itinerary day gainFt/lossFt and totalNote say 3,200 ft. No published figure for the car-to-car gain of the Pleiades from Twin Lakes was found to settle it.",
+   "sources": [
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Approach distance: dist_km 12.1 km (7.5 mi) vs one-way waypoint distance ~4 mi",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach but 12.1 km equals the itinerary's 7.5-mile round trip, while the summit waypoint sits at 4 mi one way. No two sources giving a one-way distance to the Pleiades were found.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "fact": "Rappel anchor on Peak 1 vs 'no established rappel route'",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "descent/bail say there is no rappel or bail infrastructure, while pro_needs carries rap rings for Peak 1. A 2025 trip report found an existing rappel station above Peak 1's slabby crux and rappelled it; only one source was found.",
+   "sources": [
+    "https://stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_ridge_9",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "rappel sequence/count on the shared South Ridge descent"
+  },
+  {
+   "id": "wa_east_ridge_9",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "rappel sequence/count on the shared South Ridge descent"
+  },
+  {
+   "id": "wa_kaleetan_peak_south_ridge",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Elevation/location of the route's rock-chimney crux"
+  },
+  {
+   "id": "wa_kaleetan_peak_south_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Elevation/location of the route's rock-chimney crux"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_ridge_9",
+   "before": {
+    "rappel_count_note": "Both counts are the same descent with a different rope setup. One published South Ridge description: \"The rappel can be done in four raps with a 60M rope.\" The three stations listed here are the two-rope sequence — a double-rope rappel from the summit bolts to the ledge atop pitch 2, a short single to the top of pitch 1, then one more to the base. Do not rappel straight from the summit to the top of pitch 2 on one rope: it falls about 15 ft short and the crack below the anchor jams ropes."
+   }
+  },
+  {
+   "id": "wa_kaleetan_peak_south_ridge",
+   "before": {
+    "turnaround": "Set a turnaround time before starting and stick to it; the descent involves down-climbing loose, exposed terrain (including the summit chimney) that is markedly harder and slower in poor visibility, rain, or fading light.",
+    "detailed_rack": "No rock rack is needed - this is an unroped Class 3 scramble. A helmet is recommended for the summit chimney and any loose rock below it, and many parties carry an ice axe and/or microspikes for lingering snow near Melakwa Pass early in the season."
+   }
+  }
+ ]
+}

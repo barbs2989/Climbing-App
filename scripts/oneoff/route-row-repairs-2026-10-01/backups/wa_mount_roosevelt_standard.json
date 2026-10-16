@@ -1,0 +1,160 @@
+{
+ "id": "wa_mount_roosevelt_standard",
+ "name": "Standard Scramble",
+ "approach": "Trailhead: Alpental Ski Area day-use lot at the end of Alpental Road, reached via I-90 Exit 52 (Snoqualmie Pass) — go north on Alpental Rd about 1.3 miles to the upper lot (~3,100 ft), the same trailhead used for Snow Lake, Denny Creek and Source Lake. Follow Snow Lake Trail #1013 about 2.6 miles (steady climbing through forest and brush) to Snow Lake at 3,832 ft. Skirt the north shore and continue the climbers' path roughly 2 more miles to Gem Lake, then pick up the unmaintained boot path on Gem Lake's west side that gains the ridge toward Roosevelt. From the ridge crest, the boot path skirts left (east) of a band of buttresses to reach a high snow/talus basin below the two summit humps, then a steep, semi-exposed climbers' trail leads to the base of the final ~20 ft Class 2-3 step — loose and essentially unprotectable, the route's crux. Be sure to top out on the higher, more southerly summit; the lower north peak is a common false-summit stopping point.",
+ "approach_variants": [
+  {
+   "name": "Gem Lake's west shore to the southeast gully",
+   "notes": "Snow Lake Trail from the Alpental lot to Snow Lake, then the climbers' path along the north shore and on to Gem Lake — the last reliable water before committing to the ridge. An unmaintained boot path leaves Gem Lake's west shore and climbs a steep westward-trending ridge toward Roosevelt's north sub-summit; it is easy to lose in fog or fresh snow. Weekend traffic and parking congestion on the shared lower trail are heavy enough to be worth planning around.",
+   "season": "Late July to September",
+   "hazards": [
+    "Loose dirt over rock in the gully",
+    "Snow persisting in the summit gully well into summer in heavy years",
+    "Brushy, poorly marked boot path above Gem Lake",
+    "An exposed, essentially unprotectable final step",
+    "No water on the upper ridge or in the gully"
+   ],
+   "baseFinding": "The base is the foot of the southeast gully, and the cairned traverse that reaches it is the crux of the route-finding rather than the crux of the climbing. From the ridge crest above Gem Lake the boot path skirts left (east) of a band of buttresses; near 5,400 ft it tops out, and a short scree slope and rising traverse — roughly two hundred feet of gain, cairn-marked — lead west into a small snow-and-talus basin beneath the two summit humps. The gully rising out of that basin is the peak's only non-technical line: loose rock, heather and dirt that turns north and steepens, dangerously slick when wet or under a skiff of snow, and essentially impossible to protect. Above it a short, semi-exposed ramp leads to a final step of about twenty feet at class 2-3. The decoy on this mountain is at the top rather than the bottom — Roosevelt has two summit humps, and the lower north one has turned parties around thinking they had finished. The true summit is the higher, more southerly hump."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.4454,
+   "lng": -121.423,
+   "elev": 3120,
+   "name": "Alpental Ski Area Trailhead (Snow Lake Trail #1013)",
+   "note": "North end of the Alpental day-use lot off I-90 Exit 52; Northwest Forest Pass required for parking and a free self-issue wilderness permit must be filled out at the trailhead kiosk (May 15-Oct 31).",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From I-90 Exit 52 at Snoqualmie Pass, go north under the freeway and take the second right onto Alpental Road, then drive about 1.3 miles to the Alpental Ski Area lot; the Snow Lake trailhead is at the north end of the day-use lot. A Northwest Forest Pass is required to park, and a free self-issue wilderness permit is filled out at the trailhead."
+  },
+  {
+   "lat": 47.467698,
+   "lng": -121.456444,
+   "elev": 4020,
+   "name": "Snow Lake",
+   "note": "Washington's most heavily-used wilderness lake; pick up the boot path along the north shore heading toward Gem Lake rather than the main loop trail around the outlet.",
+   "type": "Water",
+   "distMi": 2.6,
+   "directions": "Follow Snow Lake Trail #1013 up the valley past the Source Lake overlook spur at about 1.75 miles, then climb about 500 ft to the saddle at the wilderness boundary and descend about 400 ft to Snow Lake."
+  },
+  {
+   "lat": 47.469094,
+   "lng": -121.471247,
+   "elev": 4857,
+   "name": "Gem Lake",
+   "note": "Quieter basin above Snow Lake with established backcountry campsites on the west side; last reliable water before committing to the ridge climb toward Roosevelt.",
+   "type": "Campsite",
+   "distMi": 5,
+   "directions": "Continue around Snow Lake's north end toward Gem Lake, then climb about a mile through a rock field and meadows to Gem Lake."
+  },
+  {
+   "lat": 47.46921,
+   "lng": -121.472481,
+   "elev": 4950,
+   "name": "Boot path ridge gain (west shore of Gem Lake)",
+   "note": "Unmaintained climbers' boot path leaves Gem Lake's west shore and climbs a steep westward-trending ridge toward Roosevelt's north sub-summit; easy to lose in fog or fresh snow.",
+   "type": "Junction",
+   "distMi": 5.2,
+   "directions": "Walk to Gem Lake's west shore, where an unmaintained climbers' boot path leaves the lake and heads up the steep ridge to the west. It is easy to lose in fog or fresh snow."
+  },
+  {
+   "lat": 47.469442,
+   "lng": -121.474948,
+   "elev": 5500,
+   "name": "Scree traverse to route base",
+   "note": "Boot path tops out near 5,400 ft then a short scree slope and rising traverse (roughly 200 ft of gain) leads west to the base of the summit gully.",
+   "type": "Junction",
+   "distMi": 5.6,
+   "directions": "Follow the boot path up the steep, westward-trending ridge, skirting left (east) of a band of buttresses, to where it tops out near 5,400 ft."
+  },
+  {
+   "lat": 47.469559,
+   "lng": -121.476181,
+   "elev": 5700,
+   "name": "SE gully (dirt/heather, unprotectable)",
+   "note": "The route's only non-technical line: a Class 3 gully of loose rock, heather and dirt that turns north and steepens; dangerously slick when wet or under a skiff of snow, and largely unprotectable.",
+   "type": "Hazard",
+   "distMi": 5.8,
+   "directions": "Take the short, cairned scree slope and rising traverse west, about 200 ft of gain, into the small snow-and-talus basin below the two summit humps; the gully rises out of this basin."
+  },
+  {
+   "lat": 47.469617,
+   "lng": -121.476798,
+   "elev": 5800,
+   "name": "Exposed ramp below the summit block",
+   "note": "A short, semi-exposed ramp leads to a final Class 2-3 rock step (roughly 20 ft) just below the top; on descent, downclimb this step back to the ramp before dropping into the boulder field.",
+   "type": "Hazard",
+   "distMi": 5.9,
+   "directions": "Climb the loose gully of rock, heather and dirt as it turns north and steepens, to the short, semi-exposed ramp below the summit block."
+  },
+  {
+   "lat": 47.469675,
+   "lng": -121.477415,
+   "elev": 5835,
+   "name": "Mount Roosevelt",
+   "note": "Seldom-visited summit above Snow Lake's west shore with views of Chair Peak and Kaleetan Peak two miles to the south; retrace the same line to descend.",
+   "type": "Summit",
+   "distMi": 6,
+   "directions": "Follow the ramp to the final roughly 20 ft Class 2-3 rock step and climb it to the top. Make sure you are on the higher, southerly hump; the lower north hump is a common false summit."
+  }
+ ],
+ "itinerary": {
+  "cal": "Typically climbed May through October; avoid winter/early spring due to avalanche hazard and because the approach skirts the Alpental ski area's artillery control zone.",
+  "days": [
+   {
+    "n": 1,
+    "note": "This is a long single day, not a backpack — nearly all parties do it car-to-car from the Alpental trailhead. The trail is good to Gem Lake, then becomes faint social-trail/boot-path along the ridge with real route-finding through the SE basin to a loose class 2-3 summit gully.",
+    "hours": 10.5,
+    "miles": 12,
+    "title": "Car-to-car scramble via Snow Lake and Gem Lake",
+    "gainFt": 3500,
+    "lossFt": 3500,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave Alpental trailhead",
+      "detail": "Start early to beat afternoon heat/storms on the exposed upper mountain."
+     },
+     {
+      "time": "+1.5 hr",
+      "label": "Pass Snow Lake (3,832 ft, 2.6 mi)",
+      "detail": "Well-maintained trail to this point."
+     },
+     {
+      "time": "+2.5 hr",
+      "label": "Reach Gem Lake (~4.5 mi)",
+      "detail": "Trail becomes intermittent past here; many social trails and overgrown sections."
+     },
+     {
+      "time": "+4 hr",
+      "label": "Boot path up the ridge into the SE basin",
+      "detail": "Main route-finding crux of the day — trail disappears repeatedly."
+     },
+     {
+      "time": "+5.5 hr",
+      "label": "Class 2-3 summit gully to the true (south) summit",
+      "detail": "Loose rock, heather and dirt, exposed and largely unprotectable — the technical crux."
+     },
+     {
+      "time": "+10-11 hr",
+      "label": "Back at Alpental trailhead",
+      "detail": "Reverse the route; the gully and heather sections are most consequential on descent."
+     }
+    ],
+    "objective": "Summit Mount Roosevelt (true south summit, 5,835 ft) and return same day"
+   }
+  ],
+  "totalNote": "A long single day: roughly 12 miles round trip with about 3,500 ft cumulative gain, typically 8-9 hours for strong parties and 10-12 hours for most given the long approach and route-finding above Gem Lake."
+ },
+ "pitch_detail": [
+  {
+   "grade": "Class 2",
+   "notes": "Cairn-marked traverse below a cliff band near 5,400 ft into a small basin, then a class 2 gully of steep dirt/heather (often partly snow-filled) to the 5,835 ft summit.",
+   "pitch": "Final scramble",
+   "lengthM": 133
+  }
+ ],
+ "beta": "From the Alpental/Snow Lake trailhead (~3,100 ft), follow the Snow Lake Trail past Snow Lake to Gem Lake, then leave the maintained trail and traverse southwest up the ridge toward the peak. A cairn-marked traverse below cliffs near 5,400 ft leads into a small basin below the summit block, from which a class 2 gully of steep dirt and heather (often partly snow-filled) gains the final ~400+ ft to the 5,835 ft summit. Round trip is roughly 13 miles with about 2,700 ft of gain, commonly taking around 7 hours car-to-car; the crux is route-finding on the cairned traverse and footing in the gully when wet or snow-covered."
+}

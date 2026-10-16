@@ -1,0 +1,33 @@
+-- Rollback for all-states-tier5-applied.sql: clears ONLY the areas that pass wrote, and only while they still
+-- hold the lot it wrote (a later hand correction is left alone). Earlier batches are untouched.
+begin;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_bridwell_boulder' and parking_lat = 37.740728 and parking_lng = -119.602064;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_everlasting_light_boulder' and parking_lat = 37.740728 and parking_lng = -119.602064;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_i_m_pumped_boulder' and parking_lat = 37.740728 and parking_lng = -119.602064;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_sloth_boulder' and parking_lat = 37.740728 and parking_lng = -119.602064;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_swan_boulder_1' and parking_lat = 37.740728 and parking_lng = -119.602064;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_swan_slab_proper' and parking_lat = 37.740728 and parking_lng = -119.602064;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_ao_this_and_that_cliff' and parking_lat = 37.723874 and parking_lng = -119.712204;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_bb_the_jungle_gym' and parking_lat = 37.723874 and parking_lng = -119.712204;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_galen_s_crack' and parking_lat = 37.868711 and parking_lng = -119.429278;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_k_rock' and parking_lat = 34.484184 and parking_lng = -117.131424;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_razor_back' and parking_lat = 37.876058 and parking_lng = -119.410103;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_stately_pleasure_dome' and parking_lat = 37.834372 and parking_lng = -119.463258;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_teaching_rock' and parking_lat = 36.478525 and parking_lng = -121.183846;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ca_west_nile_boulder_aka_the_creek_boulder' and parking_lat = 34.456328 and parking_lng = -119.693273;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_clear_creek_crackhouse' and parking_lat = 39.743125 and parking_lng = -105.406374;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_cornerstone_the' and parking_lat = 39.99728 and parking_lng = -105.416471;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_electra_glide' and parking_lat = 39.99728 and parking_lng = -105.416471;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_high_energy_crag' and parking_lat = 39.99728 and parking_lng = -105.416471;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_higher_energy_crag' and parking_lat = 39.99728 and parking_lng = -105.416471;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_lookout_the' and parking_lat = 40.004483 and parking_lng = -105.405315;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_lost_flatiron' and parking_lat = 40.003103 and parking_lng = -105.398003;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_practice_rock' and parking_lat = 39.99728 and parking_lng = -105.416471;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_split_block' and parking_lat = 39.930352 and parking_lng = -105.290644;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'co_tungsten_mine_shaft' and parking_lat = 39.99728 and parking_lng = -105.416471;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'il_h_indian_head' and parking_lat = 42.127261 and parking_lng = -90.156692;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ut_enclosure_the' and parking_lat = 37.195997 and parking_lng = -113.645537;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'ut_practice_slab' and parking_lat = 41.248271 and parking_lng = -111.933263;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'wa_dental_dome' and parking_lat = 47.599736 and parking_lng = -120.713852;
+update public.areas set parking_lat = null, parking_lng = null, parking_name = null where id = 'wa_no_time_rock' and parking_lat = 47.599736 and parking_lng = -120.713852;
+commit;

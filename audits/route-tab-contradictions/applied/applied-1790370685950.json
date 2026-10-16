@@ -1,0 +1,413 @@
+{
+ "applied": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "overview",
+   "path": [],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "best_season",
+   "path": [],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "spring"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "fall"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "winter"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Which trailhead/valley is used to reach Trapper Lake"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elev"
+   ],
+   "fact": "Lucky Pass elevation"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Borealis Lake camp elevation"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Borealis Lake camp elevation"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Borealis Lake camp elevation"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "typical"
+   ],
+   "fact": "Borealis Lake camp elevation"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "rappels",
+   "path": [],
+   "fact": "Whether rappels are used on the descent"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "best_season",
+   "path": [],
+   "fact": "What gates the start of the climbing season"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "What gates the start of the climbing season"
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "spring"
+   ],
+   "fact": "What gates the start of the climbing season"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "before": {
+    "approach": "There is no road access to the Trapper Mountain area — reach Stehekin first via the Lady of the Lake ferry (Lake Chelan Boat Company) or floatplane (Chelan Airways) from Chelan, WA. From Stehekin Landing, take the Stehekin Valley Road (or park shuttle) about 4.5 miles to Harlequin Campground. Figure a full day of travel each way from Harlequin; most parties treat this as a 2-3 day trip with a camp at or below Trapper Lake.",
+    "overview": "Trapper Mountain (7,530 ft) rises on the crest of the North Cascades southeast of Cascade Pass, on the shared boundary of North Cascades National Park and the Glacier Peak Wilderness, about 0.7 mile east of Hurry-up Peak (7,821 ft) near the head of the Ptarmigan Traverse country. Runoff from the peak's basin and small glacial remnant feeds Trapper Lake and tributaries of the Stehekin River. It is a genuinely remote, seldom-visited scramble — access requires reaching Stehekin by boat or floatplane, then a long trail-and-bushwhack approach — so parties can expect real solitude even in peak season. First climbed in 1949 by George Bell, Andrew Griscom, Harry King, and W. V. Graham Matthews.",
+    "road": {
+     "name": "Stehekin Valley Road",
+     "status": "Gravel road within the Stehekin valley, drivable/shuttle-served roughly 4.5 miles to Harlequin Campground as of 2026; it is not connected to any outside highway — Stehekin itself is reachable only by boat, floatplane, or trail.",
+     "driveNote": "There is no drive-in option for this trip — budget a half-day just to reach Harlequin Campground via ferry or floatplane plus shuttle (or bike/hike) before the actual climbing approach even starts.",
+     "seasonalGate": "Shuttle/vehicle service is a summer operation (roughly May-October); the road is not maintained for winter travel."
+    },
+    "access": {
+     "fees": "No park entrance fee, but round-trip travel to Stehekin (Lady of the Lake ferry or a floatplane charter) is a paid service and the main real cost of this trip — check Lake Chelan Boat Company / Chelan Airways for current fares and schedules.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Food, garbage, and scented items must be hung 12 ft up / 5 ft out from a tree or stored in a bear canister where hanging isn't possible; free loaner canisters are available at the Wilderness Information Center and Golden West Visitor Center. Camping is restricted to the designated site/zone listed on your permit.",
+     "permit": "A wilderness/backcountry permit is required for any overnight stay, including a camp at Trapper Lake. Peak-season permits (roughly May 15-Oct 31) are reservable on Recreation.gov for $10/person plus a $6 non-refundable reservation fee; walk-up/self-issue permits are available at the Golden West Visitor Center in Stehekin or the Wilderness Information Center in Marblemount when not fully booked.",
+     "closures": "Stehekin Landing services (North Cascades Lodge showers, food service, laundry) were suspended for the 2026 season after December 2025 flood damage — plan to be self-sufficient. Check current NPS Stehekin trip-planning pages for trail/road washout updates before heading out, since the Stehekin Valley Road and river trails periodically wash out in flood events.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area (NPS) — Stehekin unit",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None beyond the wilderness camping permit; no separate NPS entrance pass is required for the Stehekin/Lake Chelan NRA side of the park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Parties starting from Stehekin can arrange the permit by email."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.347744,
+      "lng": -120.713821,
+      "elev": 1184,
+      "name": "Harlequin Campground / Stehekin River Trail trailhead",
+      "note": "Reached via Lady of the Lake ferry or floatplane from Chelan to Stehekin, then ~4.5 mi up Stehekin Valley Road to Harlequin Bridge, where the Stehekin River Trail begins.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.43996,
+      "lng": -121.00369,
+      "elev": 4170,
+      "name": "Trapper Lake",
+      "note": "Glacial lake fed by meltwater off Hurry-up Peak and Magic Mountain, reached by a steep, poorly-marked fisherman's path/bushwhack up from the Upper Stehekin River Trail; the standard unofficial base camp for the climb, no maintained trail.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.436721,
+      "lng": -121.009421,
+      "elev": 5600,
+      "name": "South basin above Trapper Lake",
+      "note": "Leave the lake basin and gain the broad south slopes/basin directly above Trapper Lake, aiming for the low point on the summit ridge; no cairns or path, route-find by terrain.",
+      "type": "Junction",
+      "distMi": 8.3
+     },
+     {
+      "lat": 48.433851,
+      "lng": -121.014506,
+      "elev": 6900,
+      "name": "Talus and heather benches below the summit ridge",
+      "note": "Loose, unconsolidated talus interspersed with heather benches on a steep grade; footing is unstable and there is no established tread, so descending parties should note their ascent line.",
+      "type": "Hazard",
+      "distMi": 9
+     },
+     {
+      "lat": 48.43169,
+      "lng": -121.01791,
+      "elev": 7530,
+      "name": "Trapper Mountain",
+      "note": "True summit; the last stretch off the ridge to the top is exposed Class 3 rock scrambling per the standard route description.",
+      "type": "Summit",
+      "distMi": 9.5
+     }
+    ],
+    "best_season": "Late July through September is most reliable. Early-season travel (June-early July) is slowed by lingering snow in the Trapper Lake basin and by high, cold creek crossings on the Devore Creek approach. The route sees very little traffic, so current-conditions reports are scarce — plan on breaking your own trail/route regardless of month.",
+    "climate": {
+     "fall": "Shortening weather windows; snow can return to the high country by October.",
+     "spring": "Deep, lingering snowpack; Cascade Pass and Pelton Basin are typically snow-covered and NPS will not issue backcountry reservations for trips starting before July 1.",
+     "summer": "The best and most reliable climbing window, July through September.",
+     "winter": "Cascade River Road is closed at mile 20; the peak is effectively inaccessible except to ski/snowshoe mountaineers.",
+     "typical": "Marine-influenced North Cascades climate with a strong crest effect: heavy winter snowpack, wet springs, and a relatively dry, sunny summer window. Because the peak sits near the range crest close to Cascade Pass, weather can build quickly from the west even on an otherwise clear day.",
+     "bySeason": {
+      "fall": "Snow can return to the high basins by late September/October, complicated by shortened daylight and reduced ferry schedules.",
+      "spring": "Heavy lingering snowpack, high stream crossings on Devore Creek and the Stehekin River, and difficult access make spring a poor season for this route.",
+      "summer": "July-September is the reliable weather and access window; warm days with cold nights at Trapper Lake (~5,000 ft) and cooler conditions near the 7,530 ft summit, plus afternoon thunderstorm risk by late summer.",
+      "winter": "Effectively inaccessible — the Stehekin Valley Road and trails are snowed in and ferry service is reduced."
+     },
+     "forecastZone": "Outside NWAC's routine avalanche-forecast coverage; the closest usable proxy zones are NWAC's East Slopes Central and NWS Cascades-East mountain weather forecasts, but treat both as approximations for this Stehekin-side terrain."
+    },
+    "emergency": {
+     "notes": "This is a no-road, largely no-cell-coverage area with very light party traffic; a satellite communicator or PLB is strongly recommended given the multi-day approach. Self-evacuation from an injury above Trapper Lake would be a very long carry, so confirm float plans and check-in times carefully when picking up your permit.",
+     "county": "Chelan County, WA",
+     "rangerStation": "Golden West Visitor Center, Stehekin (south unit of the North Cascades NP Complex / Lake Chelan NRA); Wilderness Information Center, Marblemount, for permits and trip planning",
+     "nearestHospital": "Lake Chelan Health (Lake Chelan Community Hospital), Chelan, WA — a 25-bed critical-access hospital with a 24-hour ER, reachable from Stehekin only by boat/floatplane (~50 lake miles) or by helicopter evacuation",
+     "sheriffDispatch": "Chelan County Sheriff via RiverCom regional dispatch, 509-663-9911 (or 911); search and rescue is coordinated by the Chelan County Sheriff's SAR unit with support from Chelan County Mountain Rescue"
+    }
+   }
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.6855,
+      "lng": -121.0925,
+      "elev": 1240,
+      "name": "Thunder Creek Trailhead (Colonial Creek Campground, South Loop)",
+      "note": "This is a legitimately long/remote approach (24-mile round trip: Thunder Creek Trail to McAllister camp, off-trail to Borealis Lake, across Borealis Glacier to Lucky Pass)",
+      "type": "Trailhead",
+      "elevFt": 1240,
+      "directions": "Colonial Creek Campground sits on SR-20 at Diablo Lake, milepost 130, roughly 25 miles east of Marblemount. Turn in on the campground's south side and park in the large lot above the boat ramp, around 1,240 ft. That lot is also the Thunder Creek Trailhead, and the maintained Thunder Creek Trail runs south from it."
+     },
+     {
+      "lat": 48.61,
+      "lng": -121.085,
+      "elev": 1700,
+      "name": "Thunder Creek log crossing",
+      "note": "The original footbridge over Thunder Creek near mile 6.6 washed out in fall 2017; parties cross via a log felled about 1,000 ft downstream of the old bridge site. Coordinates approximate.",
+      "type": "Hazard",
+      "distMi": 6.4
+     },
+     {
+      "lat": 48.619725,
+      "lng": -121.051383,
+      "elev": 1900,
+      "name": "McAllister Camp",
+      "note": "Backcountry stock camp where McAllister Creek meets Thunder Creek; leave the maintained trail here and pick up the unmaintained climbers' boot path at the first fork. Coordinates approximate.",
+      "type": "Campsite",
+      "distMi": 6.6
+     },
+     {
+      "lat": 48.588,
+      "lng": -121.072,
+      "elev": 4600,
+      "name": "Ridge viewpoint",
+      "note": "Boot path up the north ridge passes a viewpoint here with the first views of Primus, Tricouni, and neighboring peaks. Coordinates approximate.",
+      "type": "Viewpoint",
+      "distMi": 8.5
+     },
+     {
+      "lat": 48.578,
+      "lng": -121.066,
+      "elev": 5200,
+      "name": "Borealis Lake camp",
+      "note": "Standard base camp on a flat bench below the Borealis Glacier. Elevation and coordinates are approximate — not precisely surveyed.",
+      "type": "Campsite",
+      "distMi": 10
+     },
+     {
+      "lat": 48.582,
+      "lng": -121.073,
+      "elev": 7700,
+      "name": "Lucky Pass (Primus-Tricouni col)",
+      "note": "Reached via roped travel across the Borealis Glacier's west edge, which has retreated and split into upper/lower tiers separated by slabs and cliffs. Elevation and coordinates are approximate.",
+      "type": "Junction",
+      "distMi": 11.5
+     },
+     {
+      "lat": 48.5822,
+      "lng": -121.0783,
+      "elev": 8102,
+      "name": "Tricouni Peak",
+      "type": "Summit",
+      "elevFt": 8102
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous multi-day approach: ~6.5 miles on the Thunder Creek trail to McAllister Camp, then sustained off-trail/talus travel to a glacier camp near 5,200 ft before the summit push",
+      "packWeight": "Heavy overnight glacier-travel load (tent, rope, glacier gear, several days of food) - roughly 40-50 lbs typical for the approach"
+     },
+     "approachTime": "Multi-day (2+ days): day 1 to McAllister Camp/glacier camp near 5,200 ft, day 2 (or later) glacier crossing and summit push",
+     "requiredSkills": [
+      "Roped glacier travel and crevasse rescue",
+      "Snow travel / self-arrest with ice axe and crampons",
+      "Class 4 scrambling on loose rock",
+      "Route-finding on glaciated, unmarked terrain",
+      "Off-trail navigation and stream-crossing judgment"
+     ],
+     "experienceLevel": "Advanced - prior glacier travel and crevasse rescue experience required; not a beginner objective"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool, variable alpine weather typical of the North Cascades marine-influenced climate; cold nights at the ~5,200 ft glacier camp",
+      "probability": "Afternoon cloud buildup and occasional thunderstorms possible July-August, consistent with general Cascades summer patterns"
+     },
+     "exposure": "Class 4 loose summit rock above the glacier crossing - roped travel mitigates crevasse-fall risk, but the final scramble has real fall exposure compounded by loose rock",
+     "avalanche": {
+      "zone": "West Slopes North (closest NWAC forecast zone) - no dedicated seasonal avalanche forecast exists for this deep glacial interior terrain; NWAC's regular forecast season does not typically cover July-Sept climbing conditions",
+      "byMonth": {
+       "July": "Low",
+       "August": "Low",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Significant hazard - route crosses the McAllister/Klawatti/Borealis glacier system with open crevasses and a bergschrund at the base of the southwest side; snow bridges soften through the season"
+    },
+    "rappels": "Typically 1-2 rappels of 8-30m if using established anchors; downclimbing is possible without them on most sections",
+    "best_season": "Late July through September is the dependable window: it usually takes until roughly late June or July for snow to clear the Cascade River Road gate at Eldorado Creek and for the glacier approach to firm up, while by October fresh snow can start re-covering crevasses on the McAllister/Klawatti Glaciers in a dangerous half-bridged state.",
+    "access": {
+     "fees": "$10 per person plus a $6 reservation fee for advance permits (youth 15 and under free); no park entrance fee at North Cascades NP.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Overnight backcountry/wilderness permit required year-round for any camping on this route. About 60% of designated camps/zones are reservable in advance on Recreation.gov (requires watching a safety video and emailing the WIC within 3 days of your trip to confirm); the park holds roughly 40% of sites for walk-up permits issued in person at the WIC (Marblemount) or Glacier Public Service Center, day-of or day-before only.",
+     "closures": "Colonial Creek Campground and the Thunder Creek Trailhead are reached via SR-20, which stays open essentially year-round this far west (well before the highway's seasonal closure gate near Ross Dam, MP 134); Cascade River Road to Eldorado Creek is not needed for this route unless linking into the Inspiration Traverse. The original Thunder Creek Trail bridge near mile 6.6 washed out in fall 2017 and has not been replaced — parties cross via a log felled downstream of the old bridge site.",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (NPS) — Wilderness Information Center, Marblemount, WA, (360) 854-7245, noca_wilderness@nps.gov",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No entrance pass needed; wilderness camping permit is mandatory for overnight trips.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — limited, with a fee",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead. Camps above Thunder Creek fall in cross-country zones."
+     }
+    },
+    "climate": {
+     "spring": "Deep snowpack persists into June; Thunder Creek runs high and cold with snowmelt.",
+     "summer": "Primary climbing season (Jun-Sep in trip reports); glacier crevasses and moats open progressively through the season; afternoon wet-slide potential on sun-exposed snow.",
+     "winter": "Heavy snowfall and avalanche hazard; access road (SR-20) closes seasonally near Ross Dam/Diablo Lake.",
+     "typical": "Marine west coast climate typical of the North Cascades crest: wet, heavy-snow winters that build a deep, avalanche-prone snowpack on the approach slopes, and drier summers with more reliable clear-sky windows for glacier travel.",
+     "bySeason": {
+      "fall": "Early-season snow can return by October, re-covering crevasses in a dangerous half-bridged state and making route-finding on the southwest slopes harder.",
+      "spring": "Deep, unstable snowpack and avalanche hazard on approach slopes; Cascade River Road to Eldorado Creek TH is typically still gated.",
+      "summer": "Late July through September is the most reliable glacier-travel window, though crevasses have become more exposed in recent years as the McAllister/Klawatti/Borealis Glaciers retreat; afternoon thunderstorms are possible."
+     },
+     "forecastZone": "NWAC \"West Slopes North\" avalanche/mountain-weather zone covers this part of the range for spring conditions; NWAC issues daily forecasts roughly mid-November through mid-April."
+    }
+   }
+  }
+ ]
+}

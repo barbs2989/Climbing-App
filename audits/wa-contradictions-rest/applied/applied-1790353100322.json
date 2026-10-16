@@ -1,0 +1,263 @@
+{
+ "applied": [],
+ "rejected": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Distance to the summit vs. distance to the saddle below it",
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "Total to this point is roughly 6-6.5 miles and ~3,000 ft gain.",
+   "replace": "Total to this point is roughly 5-5.5 miles and ~3,000 ft gain.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "https://www.theoutbound.com/washington/backpacking/hike-alta-mountain",
+    "https://www.alltrails.com/trail/us/washington/alta-mountain-south-ridge-climbers-trail"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Distance to the summit vs. distance to the saddle below it",
+   "op": "replace_text",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "find": "About 6 to 6.5 miles and 3,000 ft to the saddle.",
+   "replace": "About 5 to 5.5 miles and 3,000 ft to the saddle.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "https://www.theoutbound.com/washington/backpacking/hike-alta-mountain",
+    "https://www.alltrails.com/trail/us/washington/alta-mountain-south-ridge-climbers-trail"
+   ],
+   "why": "find occurs 0x at approach_variants[0,\"notes\"]"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Round-trip distance",
+   "op": "set",
+   "column": "dist_km",
+   "path": [],
+   "expect": 6.9,
+   "value": 9.7,
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "https://www.theoutbound.com/washington/backpacking/hike-alta-mountain",
+    "https://www.alltrails.com/trail/us/washington/alta-mountain-south-ridge-climbers-trail"
+   ],
+   "why": "expect mismatch at dist_km[]: live 9.7"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Time to reach the summit (summitTimeHrs)",
+   "op": "set",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "expect": 10,
+   "value": null,
+   "sources": [
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+   ],
+   "why": "expect mismatch at timing[\"summitTimeHrs\"]: live null"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Land manager's ranger district",
+   "op": "replace_text",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "find": "Snoqualmie Ranger District",
+   "replace": "Skykomish Ranger District",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/expect-delays-foss-river-road-skykomish-district",
+    "https://www.fs.usda.gov/r06/mbs/recreation/skykomish-ranger-district",
+    "https://www.wta.org/go-hiking/hikes/west-fork-foss-river-and-lakes"
+   ],
+   "why": "find occurs 0x at access[\"land_manager\"]"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Distance up Foss River Road from US-2 to the pullout (2 miles vs mile 5.2)",
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "roughly 2 miles up FR 68 from US-2 at Skykomish",
+   "replace": "roughly 5 miles up from US-2 near Skykomish",
+   "sources": [
+    "https://www.summitpost.org/bald-eagle-peak/818481",
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Distance up Foss River Road from US-2 to the pullout (2 miles vs mile 5.2)",
+   "op": "replace_text",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "find": "about two miles to the shoulder pullout near mile 5.2",
+   "replace": "about five miles to the shoulder pullout near mile 5.2",
+   "sources": [
+    "https://www.summitpost.org/bald-eagle-peak/818481",
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+   ],
+   "why": "find occurs 0x at waypoints[0,\"directions\"]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "fact": "Distance to Waptus Lake",
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge",
+   "replace": "roughly 9 flat miles to Waptus Lake, then on to a camp near the Waptus River PCT bridge, about 12 miles one-way in all",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://www.wta.org/go-hiking/hikes/waptus-river",
+    "https://www.trailmeister.com/trails/waptus-lake/",
+    "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "fact": "Trailhead access during the 2026 fire closure",
+   "op": "replace_text",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "find": "Paved; trailhead open roughly late May through early November.",
+   "replace": "Paved; in a normal year the trailhead is open roughly late May through early November. Check Access for any active closure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-closure-cle-elum-ranger-district",
+    "https://lakechelannow.com/stronger-access-controls-in-place-for-three-queens-fire-area-on-the-cle-elum-ranger-district/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/updated-closure-issued-three-queens-fire"
+   ],
+   "why": "find occurs 0x at road[\"status\"]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb",
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "Total round-trip trail distance for the outing is about 22 miles.",
+   "replace": "Total round-trip trail distance for the outing is about 30 miles.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dutch-miller-gap",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dutch-miller-gap-trail-1030"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb",
+   "op": "replace_text",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "find": "The whole outing is about 22 miles of trail.",
+   "replace": "The whole outing is about 30 miles of trail.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dutch-miller-gap",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dutch-miller-gap-trail-1030"
+   ],
+   "why": "find occurs 0x at approach_variants[0,\"notes\"]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb",
+   "op": "set",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "expect": 11,
+   "value": null,
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dutch-miller-gap",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dutch-miller-gap-trail-1030"
+   ],
+   "why": "expect mismatch at waypoints[1,\"distMi\"]: live 16"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "fact": "Rappel rope length requirement",
+   "op": "replace_text",
+   "column": "rappels",
+   "path": [],
+   "find": "(60m rope, or two 50m ropes for parties of 3+)",
+   "replace": "(a single 50m rope is enough; a 60m or two 50m ropes help parties of 3+ reach belay stances)",
+   "sources": [
+    "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/"
+   ],
+   "why": "find occurs 0x at rappels[]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "fact": "Trailhead access during the 2026 fire closure",
+   "op": "replace_text",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "find": "Paved; trailhead open roughly late May through early November.",
+   "replace": "Paved; in a normal year the trailhead is open roughly late May through early November. Check Access for any active closure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-closure-cle-elum-ranger-district",
+    "https://lakechelannow.com/stronger-access-controls-in-place-for-three-queens-fire-area-on-the-cle-elum-ranger-district/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/updated-closure-issued-three-queens-fire"
+   ],
+   "why": "find occurs 0x at road[\"status\"]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "fact": "Distance to Waptus Lake",
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge",
+   "replace": "roughly 9 flat miles to Waptus Lake, then on to a camp near the Waptus River PCT bridge, about 12 miles one-way in all",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://www.wta.org/go-hiking/hikes/waptus-river",
+    "https://www.trailmeister.com/trails/waptus-lake/",
+    "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "fact": "Distance to Waptus Lake",
+   "op": "replace_text",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "find": "roughly twelve flat miles to Waptus Lake and a camp near the Waptus River PCT bridge",
+   "replace": "roughly nine flat miles to Waptus Lake, then on to a camp near the Waptus River PCT bridge, about twelve miles in all",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://www.wta.org/go-hiking/hikes/waptus-river",
+    "https://www.trailmeister.com/trails/waptus-lake/",
+    "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab"
+   ],
+   "why": "find occurs 0x at approach_variants[0,\"notes\"]"
+  }
+ ],
+ "rollback": []
+}

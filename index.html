@@ -22,9 +22,31 @@
     <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
     <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
+    <!-- Warm the connection to the database while the bundle downloads. Without this the first
+         data request pays DNS + TLS only after ~400 KB of JS has parsed and the app has
+         mounted. Vite substitutes %VITE_SUPABASE_URL% from the build env; in a build without
+         it (seed mode) the placeholder is left as-is and the hint is a harmless no-op. -->
+    <link rel="preconnect" href="%VITE_SUPABASE_URL%" crossorigin />
     <!-- Matches the app banner (C.surface), not the page background, so the Android
          status bar reads as an extension of the banner sitting directly below it. -->
     <meta name="theme-color" content="#161b22" />
+    <!-- Declared before the stylesheet so the very first paint (and iOS's scroll indicator) is dark. -->
+    <meta name="color-scheme" content="dark" />
+    <!-- What a shared link shows. A ?route= or ?list= link pasted into Messages, Slack or a
+         social app used to preview as a bare "ClimbMatch" with no text and no image, because
+         the page carried no description at all. og:image and og:url are ABSOLUTE on purpose:
+         link scrapers do not resolve a relative path, so %BASE_URL% would not do here. Like the
+         manifest's paths, these are tied to the Pages address in vite.config.js's `base`. -->
+    <meta name="description" content="Find climbing partners, plan your objectives and check route conditions before you go." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ClimbMatch" />
+    <meta property="og:title" content="ClimbMatch" />
+    <meta property="og:description" content="Find climbing partners, plan your objectives and check route conditions before you go." />
+    <meta property="og:url" content="https://barbs2989.github.io/Climbing-App/" />
+    <meta property="og:image" content="https://barbs2989.github.io/Climbing-App/icon-512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta name="twitter:card" content="summary" />
     <style>
       /* Mobile baseline */
       html { -webkit-text-size-adjust: 100%; }
@@ -35,8 +57,24 @@
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
       /* Smooth state changes: presses ease back, tab/selection colours & borders glide */
       button, a, input, select, textarea, [style*="cursor: pointer"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
-      /* Tappable cards & chips (not just <button>) press in on tap */
-      [style*="cursor: pointer"]:active { transform: scale(0.985); }
+      /* Tappable cards & chips (not just <button>) press in on tap. Matched by ROLE as well as
+         by cursor: a clickable() control announces itself with a role, and one that never set
+         cursor:pointer used to get no press feedback at all. An inline transform (a centring
+         translate, a rotated chevron) is inline and so outranks this rule — it is never undone. */
+      [style*="cursor: pointer"], [role="button"], [role="tab"], [role="switch"], [role="checkbox"], [role="option"], [role="menuitem"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
+      [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: scale(0.985); }
+      /* ...but NOT a map pin. Leaflet places each pin by rewriting its inline `transform` every pinch
+         frame and after every zoom, and a Climbs-map pin is role="button" (keyboard-reachable), so the
+         two rules above eased it 0.09s behind the map: pins wobbled while pinching and slid into place
+         after each zoom. Measured 16 of 16 pins carrying the transition. Leaflet's own zoom-animation
+         rule (.leaflet-zoom-anim .leaflet-zoom-animated) is more specific and still wins mid-zoom. */
+      .leaflet-marker-icon, .leaflet-marker-shadow { transition: none; }
+      /* The map-tile credit (lib/mapKit.jsx TILE_CREDIT) — the one credit the licences require. A thin
+         strip along the map's bottom edge, the full width of the map so a long credit WRAPS inside it
+         rather than running under the corner buttons. Those buttons sit at bottom:26 to clear it. */
+      .leaflet-bottom.leaflet-right { left: 0; }
+      .leaflet-container .leaflet-bottom .leaflet-control-attribution { font-size: 9px; line-height: 1.35; padding: 1px 5px; margin: 0; background: rgba(0,0,0,0.55); color: #d6d6d6; text-align: right; }
+      .leaflet-container .leaflet-bottom .leaflet-control-attribution a { color: #ffffff; }
       /* Motion — subtle life. Respect reduced-motion. */
       @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
       @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }
@@ -54,10 +92,23 @@
       @keyframes cm-puff { 0%{transform:translate(-50%,0) scale(.4);opacity:.65} 100%{transform:translate(-50%,-14px) scale(2.4);opacity:0} }
       @keyframes cm-countpop { 0%{transform:translateY(2px);opacity:.4} 100%{transform:translateY(0);opacity:1} }
       .cm-nudge { animation: cm-nudge .34s cubic-bezier(.2,.8,.2,1); }
-      .cm-note::placeholder { font-size: 10.5px; opacity: 0.6; }
+      /* Placeholder text is text (WCAG 1.4.3): #8b949e is >= 4.5:1 on every surface the app
+         puts an input on. Browser defaults depend on color-scheme and can land at ~3:1, and the
+         old opacity:0.6 put .cm-note at ~2.5:1. */
+      ::placeholder { color: #8b949e; opacity: 1; }
       /* Keyboard focus ring (only for keyboard nav, not mouse/touch) */
-      :focus-visible { outline: 2px solid #2f81f7; outline-offset: 2px; border-radius: 5px; }
+      /* !important is load-bearing (WCAG 2.4.7): ~54 inputs/selects carry an inline
+         outline:"none", and an inline style beats a stylesheet rule, so without it a keyboard
+         user tabbing into those fields saw no focus indicator at all. */
+      :focus-visible { outline: 2px solid #2f81f7 !important; outline-offset: 2px; border-radius: 5px; }
       button:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
+      /* File pickers (WCAG 2.1.1). Every photo/GPX upload is a styled <label> around — or
+         beside — a native file input, and those inputs were display:none: a display:none input
+         cannot take focus and a label never can, so nobody on a keyboard could attach a photo
+         anywhere in the app. Visually hidden instead, the input stays in the tab order and
+         Enter/Space opens the picker; the ring goes on the label a sighted user sees. */
+      .cm-file-input { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+      label:has(.cm-file-input:focus-visible), .cm-file-input:focus-visible + label { outline: 2px solid #2f81f7; outline-offset: 2px; }
       .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
       .cm-burst { animation: cm-burst .85s ease-out forwards; }
       .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
@@ -68,6 +119,23 @@
       .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
       .cm-puff { animation: cm-puff .6s ease-out forwards; }
       .cm-newitem { animation: cm-glow 1.6s ease-in-out 2; }
+      /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
+         dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
+         in the feed and in every popup (Add a climb was the report). One rule on :root reaches
+         every scroller because scrollbar-color is inherited. #6e7681 is 4.1:1 against the page
+         and 3.8:1 against a popup's #161b22 surface (WCAG 1.4.11 asks 3:1 for a UI component).
+         Chrome/Firefox read scrollbar-color; desktop Safari reads only the ::-webkit-scrollbar
+         rules, which Chrome ignores wherever scrollbar-color is set, so the two never fight.
+         A PHONE draws neither: iOS's overlay indicator is black unless the page declares itself
+         dark, and this page never did (computed color-scheme was "normal"). color-scheme: dark
+         is what turns it light -- and it also gives native pickers (date, time) the dark look
+         the rest of the app already has. */
+      :root { color-scheme: dark; scrollbar-color: #6e7681 transparent; }
+      ::-webkit-scrollbar { width: 10px; height: 10px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #6e7681; border-radius: 6px; border: 2px solid transparent; background-clip: padding-box; }
+      ::-webkit-scrollbar-thumb:hover { background: #8b949e; background-clip: padding-box; }
+      ::-webkit-scrollbar-corner { background: transparent; }
       /* Horizontal sliders: smooth touch scroll, no visible scrollbar */
       .cm-hscroll { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .cm-hscroll::-webkit-scrollbar { display: none; }
@@ -78,11 +146,32 @@
       .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
+      /* Links dim on press rather than shrink — scaling a run of inline text reads as a glitch. */
+      a[href]:active { opacity: 0.7; }
+      /* Switch knobs SLIDE between off and on instead of teleporting. The knob is the switch's
+         only child and is positioned by an inline left:3 / left:23. */
+      [role="switch"] > * { transition: left .18s cubic-bezier(.2,.8,.2,1); }
+      /* Reduced motion switches off MOTION, never layout. This used to be `* { transform: none
+         !important }`, which also stripped the translate(-50%) that centres the fix prompt and the
+         lightbox's Remove button, knocked the password eye out of its field, and froze the
+         swipe-to-delete row under the finger. The press rules are restated here WITHOUT
+         !important, so they win over the scale above (same selector, later) and still lose to an
+         element's own inline transform. */
       @media (prefers-reduced-motion: reduce) {
-        *, button:not(:disabled):active { animation: none !important; transform: none !important; }
+        *, *::before, *::after { animation: none !important; }
+        [role="switch"] > * { transition: none; }
+        button:not(:disabled):active, [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: none; }
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
+      /* iOS Safari draws a date/time input as a native control with its OWN minimum width and
+         ignores width:100%, so DATE CLIMBED ran past the right edge of its card and its value sat
+         centred inside a box wider than every field around it. Dropping the native appearance
+         (touch devices only — desktop keeps its picker icon) lets it take the width it is given. */
+      @supports (-webkit-touch-callout: none) {
+        input[type="date"], input[type="time"], input[type="datetime-local"] { -webkit-appearance: none; appearance: none; display: block; min-width: 0; max-width: 100%; min-height: 38px; }
+        input[type="date"]::-webkit-date-and-time-value, input[type="time"]::-webkit-date-and-time-value { text-align: left; margin: 0; }
+      }
       .cm-fsm { font-size: 13px !important; }
       /* Route/area cover photos hidden for now (pairs with SHOW_COVERS in ClimbMatch.jsx).
          Hide the image, and collapse boxes whose only child is the image so cards don't
@@ -93,22 +182,22 @@
          bundle downloads and React mounts. On a slow phone that gap is several
          seconds, and #root was empty for all of it: a black screen with no sign
          the app was coming. React's createRoot clears this on first render.
-         Mirrors the real banner + primary nav (same colours, paddings and item
+         Mirrors the real banner + bottom primary nav (same colours, paddings and item
          height) so the swap doesn't shift layout. Only the chrome that is
          genuinely about to appear is drawn — content areas are neutral shimmer,
          never placeholder numbers or names. */
-      #cm-boot { max-width: 520px; margin: 0 auto; min-height: 100vh; background: #0d1117; }
+      #cm-boot { max-width: 520px; margin: 0 auto; min-height: 100vh; background: #0d1117; display: flex; flex-direction: column; }
       #cm-boot .b-bar { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 12px; padding-top: calc(16px + env(safe-area-inset-top)); }
       #cm-boot .b-icons { display: flex; justify-content: flex-end; gap: 9px; }
       #cm-boot .b-icons i { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #30363d; background: #1c2330; display: block; }
       #cm-boot .b-mark { font-size: 35px; font-weight: 800; letter-spacing: -0.7px; text-align: center; color: #e6edf3; line-height: 1.1; }
       #cm-boot .b-mark span { color: #2f81f7; }
-      #cm-boot .b-nav { display: flex; background: #161b22; border-bottom: 1px solid #30363d; }
-      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 15px 2px 14px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 3.5vw); font-weight: 600; color: #99a3ad; border-bottom: 2px solid transparent; }
-      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; border-bottom-color: #2f81f7; }
+      #cm-boot .b-nav { display: flex; background: #161b22; border-top: 1px solid #30363d; position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
+      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 9px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #99a3ad; border-top: 2px solid transparent; }
+      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; border-top-color: #2f81f7; }
       #cm-boot .b-nav b { width: 24px; height: 24px; border-radius: 6px; background: #21262d; margin: 3px 13px; display: block; }
       #cm-boot .b-nav div:first-child b { background: #0d2044; }
-      #cm-boot .b-body { padding: 14px; display: flex; flex-direction: column; gap: 11px; }
+      #cm-boot .b-body { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 11px; }
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
     </style>
@@ -116,12 +205,12 @@
   <body style="margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
     <div id="root"><div id="cm-boot" role="status" aria-label="Loading ClimbMatch" aria-busy="true">
       <div class="b-bar"><div class="b-icons"><i></i><i></i></div><div class="b-mark">Climb<span>Match</span></div></div>
-      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crew</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
       <div class="b-body">
         <div class="b-card"><div class="b-line cm-shimmer" style="width:58%"></div><div class="b-line cm-shimmer" style="width:88%"></div><div class="b-line cm-shimmer" style="width:74%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:44%"></div><div class="b-line cm-shimmer" style="width:80%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:66%"></div><div class="b-line cm-shimmer" style="width:52%"></div></div>
       </div>
+      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div><b></b>Logbook</div><div><b></b>Ranks</div></div>
     </div></div>
     <script type="module" src="/main.jsx"></script>
   </body>

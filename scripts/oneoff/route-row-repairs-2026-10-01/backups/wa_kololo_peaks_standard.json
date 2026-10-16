@@ -1,0 +1,192 @@
+{
+ "id": "wa_kololo_peaks_standard",
+ "name": "Standard Route",
+ "waypoints": [
+  {
+   "lat": 48.0579,
+   "lng": -121.2882,
+   "elev": 2050,
+   "name": "North Fork Sauk Trailhead",
+   "note": "End of FR 49 (6.4 mi off the Mountain Loop Hwy area); Northwest Forest Pass required and a self-issue Glacier Peak Wilderness permit at the kiosk; start of North Fork Sauk Trail #649.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From the four-way stop in Darrington, drive the Mountain Loop Highway south about 16 miles and turn left onto FS Road 49, the North Fork Sauk Road. Follow it about 6.4 miles to the large trailhead lot near the road end at about 2,050 ft, where North Fork Sauk Trail #649 begins. A Northwest Forest Pass is required to park, and a free self-issued Glacier Peak Wilderness permit is filled out at the kiosk."
+  },
+  {
+   "lat": 48.0465622,
+   "lng": -121.25040584,
+   "elev": 2400,
+   "name": "Pilot Ridge Trail junction",
+   "note": "Trail #649 forks with Pilot Ridge Trail #652 here; stay on #649 (the lower, riverside route) toward Mackinaw Shelter.",
+   "type": "Junction",
+   "distMi": 2,
+   "directions": "The first two miles are the gentlest of the trip: an easy grade through old-growth forest along the North Fork Sauk River, gaining only a few hundred feet."
+  },
+  {
+   "lat": 48.042108,
+   "lng": -121.214073,
+   "elev": 2770,
+   "name": "Red Creek crossing",
+   "note": "Ford Red Creek on the climbers' path; it is engaging but not hard at normal flow, tougher during peak snowmelt.",
+   "type": "Water",
+   "distMi": 4,
+   "directions": "Two more nearly flat miles up the valley on good tread, crossing several small tributaries on the way. Red Creek is the first crossing that can actually stop you — it is manageable at normal flow but runs considerably higher during snowmelt or after heavy rain, and a pole or a sturdy stick helps with balance."
+  },
+  {
+   "lat": 48.0295555,
+   "lng": -121.1937146,
+   "elev": 2950,
+   "name": "Mackinaw Shelter",
+   "note": "Historic three-sided log shelter beside the North Fork Sauk River; the last easy, reliable camp before the trail turns steep and switchbacked toward White Pass.",
+   "type": "Campsite",
+   "distMi": 5.5,
+   "directions": "A last easy mile beside the river brings you to the shelter clearing. Flat ground here is limited and a larger party will find it tight. Fill water before moving on, because the trail leaves the river from this point."
+  },
+  {
+   "lat": 48.03317,
+   "lng": -121.14955,
+   "elev": 5900,
+   "name": "White Pass (PCT junction)",
+   "note": "Trail #649 tops out on the Pacific Crest Trail after ~3.2 steep miles from Mackinaw Shelter; broad meadow/basin here with camping and a view down into Foam Basin.",
+   "type": "Junction",
+   "distMi": 8.7,
+   "directions": "The trail turns uphill in earnest and gains roughly 3,000 ft in sustained switchbacks through subalpine forest to a meadow junction with the Pacific Crest Trail, where Glacier Peak and the White Chuck side of the massif first come into view. Turn north on the PCT and follow it about a quarter mile to the pass. This is the last easy, reliable water before the high traverse."
+  },
+  {
+   "lat": 48.05432819047619,
+   "lng": -121.11383184126983,
+   "elev": 6433,
+   "name": "Glacier Gap crevasse crossing",
+   "note": "Crossing point between the White Chuck Glacier and White River Glacier near a tarn-dotted basin; crevasses open by late season here — rope up before continuing toward Kololo.",
+   "type": "Hazard",
+   "distMi": 13,
+   "directions": "The maintained trail ends here. Traverse north below the White Mountain ridge into Foam Basin and White River Meadows, the usual base camp, either by way of Red Pass or by crossing snowfields to the notch west of Point 6770 and dropping into the White Chuck basin. From camp climb to Foam Pass and cross the White Chuck Glacier to the gap — this is glacier travel on largely featureless snow, so carry a track or the navigation skill to retrace it in cloud, and be roped for the crevasses low on the glacier, which can be fully open."
+  },
+  {
+   "lat": 48.064555,
+   "lng": -121.095305,
+   "elev": 8240,
+   "name": "Kololo Peaks (summit)",
+   "note": "Summit gained by a short rock scramble off the White River Glacier after the final low-angle ice/snow pitch; of the twin tops a short walk apart, the eastern one is the true high point by 10-15 ft, so tag both.",
+   "type": "Summit",
+   "distMi": 15,
+   "directions": "From the gap gain the flat shoulder at about 6,000 ft, then follow the connecting ridge north-northwest over a bulge near 7,200 ft, cross the small basin below the east summit, and continue west a quarter mile to a saddle at 7,400 ft. From the saddle, the ridge forming the east edge of the White River Glacier cirque leads to the final low-angle snow and a short talus-and-ledge scramble to the top. Expect a stretch of exposed blue ice a couple of hundred yards long on the White River Glacier — that section wants crampons and deliberate footwork rather than a plod."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Trail",
+   "notes": "White River Trail #1507 (or North Fork Sauk Trail #649 on the west side) for roughly 10-12 miles to the point you leave maintained trail.",
+   "pitch": "Approach trail"
+  },
+  {
+   "grade": "Class 2",
+   "notes": "Off-trail travel up open slopes and talus to the flat shoulder near 6,000 ft on the south ridge (or to White River Meadows/Foam Basin on the west-side variant).",
+   "pitch": "Cross-country ridge/talus"
+  },
+  {
+   "grade": "PD (glacier)",
+   "notes": "Roped travel across the upper White River Glacier (or White Chuck Glacier via Glacier Gap on the west variant), negotiating crevasses and, late season, a shallow icefall.",
+   "pitch": "Glacier crossing"
+  },
+  {
+   "grade": "Class 2-3",
+   "notes": "Scramble talus and ledges to the true summit; Kololo Peaks has twin summits a short scramble apart, and the eastern one is the true high point by 10-15 ft.",
+   "pitch": "Summit scramble"
+  }
+ ],
+ "itinerary": {
+  "cal": "Best climbed July-September once the North Fork Sauk trail, White Pass, and Foam Pass are snow-free enough for travel and glacier crevasses have opened up; a Northwest Forest Pass is required at the trailhead and the route lies in the Glacier Peak Wilderness.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the North Fork Sauk River Trailhead (2,080 ft), follow the North Fork Sauk Trail past Red Creek and the old Mackinaw Shelter site, then climb steeply (about 3,000 ft in 4 miles) to White Pass (5,900 ft). Continue over Foam Pass and drop into the White Chuck River basin, camping near Lake 6433 at roughly 6,700 ft. This is the longest, most grinding day of the trip.",
+    "hours": 7,
+    "miles": 13,
+    "title": "Approach to White Chuck Glacier basin camp",
+    "gainFt": 4900,
+    "lossFt": 300,
+    "packLb": 38,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave trailhead",
+      "detail": "North Fork Sauk River Trailhead, 2,080 ft"
+     },
+     {
+      "time": "~2.5 hr in",
+      "label": "Red Creek bridge",
+      "detail": "Roughly mile 4.5"
+     },
+     {
+      "time": "~5-6 hr in",
+      "label": "Reach White Pass",
+      "detail": "5,900 ft; steep climb from Red Creek"
+     },
+     {
+      "time": "~6.5-7 hr in",
+      "label": "Cross Foam Pass, descend to camp",
+      "detail": "Camp near Lake 6433, ~6,700 ft"
+     }
+    ],
+    "objective": "Reach high camp (~6,700 ft) in the White Chuck River basin near Foam Pass"
+   },
+   {
+    "n": 2,
+    "note": "Alpine start to cross the White Chuck Glacier with crampons, over Glacier Gap onto the White River Glacier, then scramble talus/ledges to the west summit before a short traverse to the higher east summit. Round trip from camp typically runs 9-10 hours.",
+    "hours": 9.5,
+    "miles": 4,
+    "title": "Summit push via White Chuck & White River Glaciers",
+    "gainFt": 1800,
+    "lossFt": 1800,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "5:30-6:30 AM",
+      "label": "Leave camp",
+      "detail": "Alpine start; crampons on for glacier crossing"
+     },
+     {
+      "time": "+2 hr",
+      "label": "Cross Glacier Gap onto White River Glacier",
+      "detail": ""
+     },
+     {
+      "time": "~4.5 hr from camp",
+      "label": "Reach west summit",
+      "detail": "~8,200 ft"
+     },
+     {
+      "time": "~30 min later",
+      "label": "Traverse to true east summit",
+      "detail": "High point, 8,240 ft"
+     },
+     {
+      "time": "shortly after summit",
+      "label": "Begin descent",
+      "detail": ""
+     },
+     {
+      "time": "~5-5.5 hr later",
+      "label": "Back at camp",
+      "detail": "Round trip reported as 9-10 hrs camp-to-camp"
+     }
+    ],
+    "objective": "Climb Kololo Peaks' true (east) summit, 8,240 ft"
+   },
+   {
+    "n": 3,
+    "note": "Reverse Day 1: back over Foam Pass and White Pass, then down the North Fork Sauk Trail to the car. Fast parties have reported under 5 hours; a more typical pace with full packs is 6+ hours.",
+    "hours": 6,
+    "miles": 13,
+    "title": "Hike out to trailhead",
+    "gainFt": 300,
+    "lossFt": 4900,
+    "packLb": 32,
+    "schedule": [],
+    "objective": "Return to North Fork Sauk River Trailhead"
+   }
+  ],
+  "totalNote": "A 3-day, ~28-30 mile round trip with roughly 6,150 ft of gain: one long approach day to a ~6,700 ft glacier-basin camp, an alpine-start summit day (9-10 hrs round trip) crossing the White Chuck and White River Glaciers, and a hike back out."
+ }
+}

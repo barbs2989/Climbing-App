@@ -1,0 +1,9 @@
+{"results":[
+ {"id":"wa_marvin_s_ear","verdict":"confirmed","ops":[
+  {"op":"set","id":"wa_marvin_s_ear","column":"approach_logistics","path":["trailheadLat"],"expect":48.02388889,"value":48.0247261},
+  {"op":"set","id":"wa_marvin_s_ear","column":"approach_logistics","path":["trailheadLng"],"expect":-121.4741444,"value":-121.4778459}],"pin_ops":[]},
+ {"id":"wa_morning_star_peak_standard","verdict":"confirmed","ops":[
+  {"op":"set","id":"wa_morning_star_peak_standard","column":"approach_logistics","path":["trailheadLat"],"expect":48.02388889,"value":48.0247261},
+  {"op":"set","id":"wa_morning_star_peak_standard","column":"approach_logistics","path":["trailheadLng"],"expect":-121.4741444,"value":-121.4778459}],"pin_ops":[]},
+ {"id":"wa_mile_high_club","verdict":"confirmed","ops":[],"pin_ops":[{"op":"move_pin","id":"wa_mile_high_club","index":0,"expect":{"name":"Sunrise Mine Trailhead","lat":48.02388889,"lng":-121.4741444},"lat":48.0247261,"lng":-121.4778459,"elev":2320,"sources":["https://nominatim.openstreetmap.org/search?q=Sunrise+Mine+Trailhead&format=json","https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake"]}]}
+]}

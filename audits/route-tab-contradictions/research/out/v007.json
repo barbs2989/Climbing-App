@@ -1,0 +1,155 @@
+{
+ "file": "v007",
+ "results": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "fact": "access.fees claims no fee; access.passRequired states an explicit dollar fee",
+   "verdict": "fixed",
+   "correct_value": "No parking pass is needed at the FR6517 road-end pull-off; a Northwest Forest Pass applies only at developed trailheads",
+   "evidence": "The peak's long-standing route page (archived 2024 copy) states in its Red Tape section that no parking pass is required for this area, and describes the start as an unmarked road-end parking spot on FR6517. Federal recreation-fee law (16 USC 6802(d),(f)) bars standard amenity fees solely for parking or undesignated parking along roads and allows them only at designated developed sites with a toilet, trash receptacle, kiosk and developed parking, matching the row's own permit and parking_pass fields ('at developed trailheads'). So passRequired's claim of a required pass at FR6517 was the outlier; access.fees (no climbing fee) is left untouched as an open product decision.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/eagle-rock/805280",
+    "https://www.law.cornell.edu/uscode/text/16/6802",
+    "https://www.fs.usda.gov/r06/mbs/passes"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass required at the FR6517 trailhead parking — $5/day or $30/year (also honored: America the Beautiful federal interagency pass)",
+     "value": "No pass needed at the FR6517 road-end parking, an undeveloped pull-off; a Northwest Forest Pass (or America the Beautiful pass) applies only at developed trailheads.",
+     "id": "wa_eagle_rock_scramble",
+     "fact": "access.fees claims no fee; access.passRequired states an explicit dollar fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_project_crack",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The crag's route-database area page still gives the crag at 4,632 ft and describes parking, crossing the road and walking a spur road uphill ~15 min then a trail ~10 min, but states no parking elevation. OpenStreetMap maps two candidate parking spots near the crag: a roadside layby at 47.36269,-121.31973 (USGS ground ~4,741 ft, only ~0.3 mi from the cliff) and an unpaved lot at 47.35620,-121.32229 (USGS ~4,429 ft, ~0.9 mi away); the latter fits a 25-min uphill walk and the row's 400 ft gain, but no source says which is THE parking, so choosing one would be inference. USGS ground at the mapped cliff (47.36505,-121.31441) is ~4,783 ft and at the row's crag pin ~4,743 ft, so the crag waypoint's 4,601 ft is itself doubtful. Not patched; the three East Face waypoint elevations (parking 4,700 / crag 4,601 / top-out 4,700) need one pin-and-elevation rework. Also noted: the route database currently shows the crag closed under the Three Queens Fire area closure through 31 Oct 2026.",
+   "sources": [
+    "https://www.mountainproject.com/area/114570429/keechelus-ridge",
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.3222850&y=47.3561982&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.3197345&y=47.3626923&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.3144056&y=47.3650471&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 40 ft (12 m), 4 bolts and a chain anchor; a 30 m rope lowers off",
+   "evidence": "The route IS listed on the route database's East Face sub-area (not the parent crag list the earlier passes read): Sport, 40 ft (12 m), 5.9-, 4 bolts, chain anchor, FA 2007. A crag database mirrored on an outdoor-activity site lists Glacier View Temple 5.9 at 12.19 m (possibly derived from the same data, so counted cautiously). The row's length_m 12, pitch_detail 12 m, rappels ~40 ft and descent_text (30 m is enough) all agree; only rope_note still guessed 60-90 ft. rope_note reworded to the stated length.",
+   "sources": [
+    "https://www.mountainproject.com/route/117594087/glacier-view-temple",
+    "https://www.mountainproject.com/area/117594078/east-face",
+    "https://www.outdooractive.com/en/climbingspot/crag/keechelus-ridge/225996792/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Probably like its East Face/Keechelus Ridge neighbours: a single-pitch bolted sport line on blocky andesite, likely 60-90 ft with a chain anchor.",
+     "replace": "A single-pitch bolted sport line on blocky andesite, about 40 ft (12 m) with four bolts to a chain anchor; a 30 m rope is enough to lower off.",
+     "id": "wa_glacier_view_temple",
+     "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)"
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same shared East Face waypoints as wa_project_crack. No source states the parking elevation; OpenStreetMap shows two candidate parking spots (USGS ground ~4,741 ft at a layby 0.3 mi from the cliff, ~4,429 ft at an unpaved lot 0.9 mi away) and no source says which is used. USGS ground at the mapped cliff is ~4,783 ft, which also questions the crag waypoint's 4,601 ft. Needs one pin-and-elevation rework across the East Face rows; not patched.",
+   "sources": [
+    "https://www.mountainproject.com/area/114570429/keechelus-ridge",
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.3222850&y=47.3561982&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.3197345&y=47.3626923&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "fact": "Total trip time vs its own approach/summit/descent legs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The peak's long-standing route page gives two to three days from Diablo to Elephant Butte with heavy packs (~10 mi one way) or one long day travelling light, with no hours; the new solo account found reached the Stetattle Ridge high point at 3 h 50 min elapsed with 3-5 mi and 2,500+ ft still to go, while earlier reports give ~10 h from a ridge camp to the summit and back, or 10-12 h each way with overnight packs. These do not agree on leg times or a total, so neither the 36 h elapsed total nor the 5/3/4 h legs can be set; the stored legs look short against every account but no replacement is stated.",
+   "sources": [
+    "https://www.summitpost.org/elephant-butte/153837",
+    "https://ryanrickerts.medium.com/in-the-record-97-degree-heat-of-late-june-i-walk-out-my-back-door-near-silver-lake-and-amble-76f3c12468a0",
+    "https://www.nwhikers.net/forums/viewtopic.php?t=8030175"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "STRUCTURAL: the row holds two lines and cannot be made consistent without a rename. The most documented line in current use is Prusik Pass then west up the peak's eastern arm to the NE summit (the peak's long-standing route page: 'an easy scramble from Prusik Pass' heading west up the shoulder; a 2020s Enchantment-slam trip report: from Prusik Pass west up the eastern arm, one steep step near 7,900 ft, class 3/4 summit block) - this is what beta and pitch_detail rows 3-4 describe. A different scramble leaving the basin directly between Lakes Reginleif and Sigrun is documented by one trail blog (class 2-3 with class 3-4 exposed spots, summit not identified) and the peak page's separate class 4 south-side line to the SW summit - this is what name 'Southwest Scramble', face, overview, approach and the variant baseFinding describe, while they also say the route ends on the NE summit. No source ties the Reginleif/Sigrun line to the NE summit. Owner should either (a) rename the row to the Prusik Pass / east-arm line to the NE summit and rewrite face, overview's last sentence, the approach's Reginleif/Sigrun sentence and baseFinding's 'does not lead to this scramble' to match beta and pitch_detail, or (b) keep 'Southwest Scramble' as the south-side line to the SW summit (class 4) and rewrite beta, pitch_detail rows 3-6 and descent_text; option (a) follows the delegated rule.",
+   "sources": [
+    "https://www.summitpost.org/enchantment-peak/151418",
+    "https://www.thewildoutsiders.com/adventure-journal/enchantment-slam",
+    "https://hike2hike.com/trail-run/enchantment-peak-leavenworth-washington/",
+    "https://www.countryhighpoints.com/enchantments-peakbagging/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "fact": "which approach this route describes — Esmeralda Basin/Fortune Creek Pass vs. De Roux Creek Trail",
+   "verdict": "not_a_contradiction",
+   "correct_value": "De Roux Creek approach (Boulder-De Roux Trail #1392 to the house-sized boulder at the last switchback)",
+   "evidence": "Already consistent: the live row has been reworked since the retry. Name, overview, beta, face, approach, approach_variants, pitch_detail, descent, descent_text, itinerary, timing, bail, waypoints (De Roux Trailhead, last-switchback boulder, west summit) and approach_logistics all describe the De Roux Creek line; the only Esmeralda Basin mention left is a variant note saying that trail connects on the far side of the massif, which is not a competing approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The route database confirms only 'Trad, Snow, Alpine, 1500 ft (455 m), Grade III' with no pitch count; a club route page calls it a four-pitch 5.6; guide copy says eight; the new trip reports (a 2010s blog with ten rappels on descent, and several club reports) describe simul-climbing with one to three pitched sections and give no fixed count. The count depends on style, no two independent sources give the same pitch-by-pitch division, and the six-row breakdown cannot be rebuilt to either 4 or 8 rows from a source, so pitches=8 vs six rows stays open.",
+   "sources": [
+    "https://www.mountainproject.com/route/106450596/west-ridge",
+    "https://www.lemkeclimbs.com/forbidden-peak-west-ridge.html",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-forbidden-peak-west-ridge-6"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "fact": "climbing season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The peak's long-standing page mentions the Northeast Face / NE Ledge only as a loose, unsavoury route (a fatal fall on the traverse in 1975) with no season; the park's Boston Basin conditions posts and guide pages describe the basin and the North Ridge/West Ridge generally, with snow firming to ice later in the season, and nothing on this face. The only route-specific date remains the September 1961 first ascent. No two sources give a window for this face, so 'Jul-Sep' vs 'late spring to early summer' (best_season, seasonal_guidance) stays open.",
+   "sources": [
+    "https://www.summitpost.org/forbidden-peak/150314",
+    "https://www.nps.gov/noca/blogs/climbing-conditions-boston-basin-area-2023.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "fact": "trip length (days)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. Two guide services (Mountain Madness and Miyar Adventures) both run the Northwest Face as 3 days / 2 nights, agreeing with the approach and approach_variants ('most parties treat this as three days'), while fast parties report 15-17 h car to car. The itinerary lists only 2 days and day 2 ends back at the Boston Basin camp with no hike-out; its day-2 figures are also internally odd (lossFt 5,200 on a day that returns to a 6,400 ft camp). Making it agree needs a third itinerary day with miles, loss and hours that no source states, and rewording totalNote alone would leave the TOTAL row describing two days, so no patch. Needs an itinerary rebuild from a sourced hike-out leg.",
+   "sources": [
+    "https://mountainmadness.com/trips/washington-forbidden-peak-northwest-face",
+    "https://www.miyaradventures.com/trip/nw-face-of-forbidden-peak/"
+   ],
+   "patches": []
+  }
+ ]
+}

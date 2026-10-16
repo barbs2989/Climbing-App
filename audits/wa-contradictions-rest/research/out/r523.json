@@ -1,0 +1,211 @@
+{
+ "file": "r523.json",
+ "results": [
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Base camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Only the bivy[] entry disagrees: approach, pro_tips, itinerary and waypoints all base the climb at Camp Wilder. Chicago Camp is a regional upper-Elwha camp list entry (serves Barnes/Meany/Noyes/Queets), about 4 mi beyond Camp Wilder; Mary's Falls and Hayes River entries do serve this route's approach. bivy is owned by the camping clean-up, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Trail mileages to camps",
+   "verdict": "fixed",
+   "correct_value": "Mary's Falls ~8.8 mi and Hayes River Guard Station ~16 mi from Whiskey Bend",
+   "evidence": "Mary's Falls Camp is 8.8 mi from Whiskey Bend on one trail guide and ~9 mi on a club route page; the Elwha River Trail runs 16.1 mi to the Hayes River Guard Station on one magazine guide, and the Hayes River station is ~16.8 mi up the trail on the NRHP listing. The waypoints (8.8, 16.1), day-1 miles (9) and bivy ('about sixteen') already agree; the approach's 6.9 and 12 are the outliers.",
+   "sources": [
+    "https://www.protrails.com/trail/553/",
+    "https://www.mountaineers.org/activities/activities/backpack-elwha-river-from-whiskey-bend-3",
+    "https://www.backpacker.com/trips/hiking-the-elwha-river-olympic-national-park/",
+    "https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Olympic_National_Park"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Mary's Falls around 6.9 mi",
+     "replace": "Mary's Falls around 8.8 mi"
+    },
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Hayes River Guard Station around 12 mi",
+     "replace": "Hayes River Guard Station around 16 mi"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Trail mileages to camps — Camp Wilder distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Camp Wilder ~20 mi from Whiskey Bend (~11 mi beyond Mary's Falls)",
+   "evidence": "No source states Camp Wilder's mileage from Whiskey Bend directly. A Press Traverse itinerary puts Camp Wilder about 4 mi from Hayes River (itself ~16 mi in, two sources above), and the Hayes River–Chicago Camp section is 8 mi, matching pro_tips' 'about 4 miles below Chicago Camp'. Internally the Camp Wilder waypoint (19.8, '3.7 mi past Hayes River') and pro_tips agree; the approach/descent '16-17' and the itinerary's 15-mile days (24 total) are outliers. Day 2/4 set to 11 mi (Mary's Falls 8.8 to Wilder 19.8) and the round-trip note to ~40 trail miles.",
+   "sources": [
+    "https://elevatedestinations.com/itineraries/historic-press-traverse/",
+    "https://ptleader.com/articles/local-news/olympic-national-park-wildfires-bring-trail-closures-camp-wilder-shelter-threatened/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps — Camp Wilder distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Camp Wilder, roughly 16-17 miles from Whiskey Bend",
+     "replace": "Camp Wilder, roughly 20 miles from Whiskey Bend"
+    },
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps — Camp Wilder distance",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "retrace the Elwha River Trail roughly 16-17 miles back",
+     "replace": "retrace the Elwha River Trail roughly 20 miles back"
+    },
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps — Camp Wilder distance",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 15,
+     "value": 11
+    },
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps — Camp Wilder distance",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "miles"
+     ],
+     "expect": 15,
+     "value": 11
+    },
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Trail mileages to camps — Camp Wilder distance",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 50+ trail miles round trip",
+     "replace": "roughly 40 trail miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Food storage rule",
+   "verdict": "fixed",
+   "correct_value": "A hard-sided bear canister is required at every Olympic wilderness camp, including the Elwha; bear wires are not an approved method",
+   "evidence": "The park's wilderness food-storage page says animal-resistant food containers are required in all wilderness areas of the park and lists only vehicles, park food lockers and approved canisters as methods. The park's Elwha River Trail page lists the food storage method as bear canisters, and a trail-association notice says hanging food is no longer compliant. The bivy entries were right; what_to_bring and access.rules were outdated.",
+   "sources": [
+    "https://nps.gov/olym/planyourvisit/wilderness-food-storage.htm",
+    "https://home.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.pnt.org/olympic-national-park-requires-bear-cans-throughout-all-wilderness-areas/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Food storage rule",
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      3
+     ],
+     "find": "a bear-resistant food storage plan (canister or use camp bear wire — confirm which is required at your camp)",
+     "replace": "a hard-sided bear canister (required at every wilderness camp in the park)"
+    },
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Food storage rule",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Food storage requirements vary by campsite — consult the current Olympic Wilderness Trip Planner map; some Elwha camps have bear wires, others require a hard-sided canister (free loaner",
+     "replace": "A hard-sided bear canister is required for food storage at every wilderness camp in the park, Elwha camps included — bear wires are not an approved method (free loaner"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Road closure date",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Closed beyond Madison Falls since November 2017 flood damage",
+   "evidence": "itinerary.cal says 'since a 2021 washout' while approach and access.closures say November 2017. The park's news release of Nov 30, 2017 says the road remains closed beyond the Madison Falls parking area after the late-November flood; a local newspaper (Dec 1, 2017) says it is closed indefinitely beyond Madison Falls after the November 2017 flooding.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/olympic-hot-springs-road-in-the-elwha-valley-remains-closed-due-to-flood-damage.htm",
+    "https://www.peninsuladailynews.com/news/olympic-hot-springs-road-wrestles-with-elwha-river/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Road closure date",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "since a 2021 washout",
+     "replace": "since November 2017 flood damage"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "Road walk to Whiskey Bend",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "~7 miles from Madison Falls to Whiskey Bend",
+   "evidence": "approach_logistics.trailheadDirection says ~8 miles while approach, itinerary.cal, access.closures and the trailhead waypoint say ~7 (6.9). A trip report gives 6.5-6.9 mi walking up the road from Madison Falls, and another description gives ~6.2 mi one-way plus the road-to-Whiskey-Bend spur; none approach 8.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-11.9813882583",
+    "http://visitonp.kaleberg.com/places-to-visit/elwha/elwha---out-of-whiskey-bend.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_wilder_scramble",
+     "fact": "Road walk to Whiskey Bend",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "walk or bike ~8 miles",
+     "replace": "walk or bike ~7 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "dist_km (one-way approach)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 84.5 km = 52.5 mi, which is the old itinerary round-trip total (9+15+4.5+15+9), not a one-way approach; the one-way trail distance to Camp Wilder is ~20 mi and the summit waypoint sits at 22.5 mi, but no outside source states the one-way distance to the summit, so no patch.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

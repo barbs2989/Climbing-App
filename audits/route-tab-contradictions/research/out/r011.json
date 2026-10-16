@@ -1,0 +1,366 @@
+{
+ "file": "r011.json",
+ "results": [
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+   "verdict": "fixed",
+   "correct_value": "The standard line is the Southeast Ridge of Courtney, climbed heading northwest from Fish Creek Pass; 'NW ridge' and 'SE/SW Ridge' are wrong names for it (northwest is the direction of travel up the southeast ridge, not the ridge's name).",
+   "evidence": "The SummitPost Courtney Peak page names the standard route 'Southeast Ridge - Class 2' from Fish Creek Pass and says to head northwest up the obvious ridge. Hike2Hike describes a simple straight climb up the SE ridge from Fish Creek Pass, and Jim Brisbine's 2014 traverse report lists Courtney 'via Southeast Ridge'. thirst4adventure describes the same line as an obvious northwest-trending ridge from the pass, consistent with travelling NW up the SE ridge; so face/beta/rope_note are right and the NW-ridge names are wrong.",
+   "sources": [
+    "https://www.summitpost.org/courtney-peak/728542",
+    "https://hike2hike.com/scrambling/star-courtney-and-oval-peaks-bulger-list/",
+    "http://trailcatjim.com/north-sawtooth-traverse-prince-creek-to-stehekin-2014/",
+    "https://thirst4adventure.com/2016/08/24/courtney-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "NW ridge talus/boulder field",
+     "value": "SE ridge talus/boulder field"
+    },
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Reverse the NW ridge back down",
+     "replace": "Reverse the SE ridge back down"
+    },
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "follow the use trail down the northwest ridge to Fish Creek Pass",
+     "replace": "follow the use trail down the southeast ridge to Fish Creek Pass"
+    },
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "From the pass the SE/SW Ridge to Courtney's summit",
+     "replace": "From the pass the Southeast Ridge to Courtney's summit"
+    },
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "scramble Courtney Peak's SE/SW Ridge",
+     "replace": "scramble Courtney Peak's Southeast Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "High camp location for this route (Star Lake vs Boiling Lake basin)",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Every narrative field names Star Lake (just over Fish Creek Pass on this route's own approach) as the camp, which matches SummitPost (camping on the far side of the pass around Star Lake) and thirst4adventure (campsites in the Star Lake basin). The bivy[] list is the shared Sawtooth regional list: Boiling Lake basin and Prince Creek (boat-in) serve Courtney only on the lake-side Chelan Summit trail approach, and Oval Lakes basin only on the northern Oval/Eagle Creek approach; Scatter Lake, Reynolds Creek, Libby Lake, Upper Eagle Lake/Horsehead Pass and Bird Creek Camp do not serve this route. The list lacks the Star Lake camp this route actually uses. Left for the catalog-wide bivy class.",
+   "sources": [
+    "https://www.summitpost.org/courtney-peak/728542",
+    "https://thirst4adventure.com/2016/08/24/courtney-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Which peaks this route links up with from one high camp (Oval+Bigelow vs Oval+Star)",
+   "verdict": "fixed",
+   "correct_value": "Combine with Oval and Star from one high camp",
+   "evidence": "Courtney is combined with Star and Oval from the Star Lake/Fish Creek Pass area: Hike2Hike's 'Star, Courtney, and Oval Peaks' trip, Jim Brisbine's Star + Oval + Courtney outings, and a WTA 2023 trip report (Oval, Star, Courtney via West Fork Buttermilk). Mount Bigelow is a southern Sawtooth summit seen in the distance from Star Peak (WTA 2024), not part of this link-up.",
+   "sources": [
+    "https://hike2hike.com/scrambling/star-courtney-and-oval-peaks-bulger-list/",
+    "http://trailcatjim.com/north-sawtooth-traverse-prince-creek-to-stehekin-2014/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-10-09.4012803807",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-11.203836564679"
+   ],
+   "patches": [
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Which peaks this route links up with from one high camp (Oval+Bigelow vs Oval+Star)",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Combine with Oval and Bigelow from one high camp",
+     "replace": "Combine with Oval and Star from one high camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Trailhead named in PARTNER REQUIREMENTS fitness spec (Eagle Creek/War Creek vs West Fork Buttermilk)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "the West Fork Buttermilk approach",
+   "evidence": "The row's trailhead, approach, waypoints and itinerary all use West Fork Buttermilk Trail #411, but partner_requirements.fitnessSpec.hiking names an 'Eagle Creek/War Creek approach'. SummitPost calls the West Fork Buttermilk Creek Trailhead the standard starting point for Courtney; thirst4adventure and the Forest Service West Fork Buttermilk trail page (Star and Courtney climbable from Fish Creek Pass) agree.",
+   "sources": [
+    "https://www.summitpost.org/courtney-peak/728542",
+    "https://thirst4adventure.com/2016/08/24/courtney-peak/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/west-fork-buttermilk-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "Trailhead named in PARTNER REQUIREMENTS fitness spec (Eagle Creek/War Creek vs West Fork Buttermilk)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "the Eagle Creek/War Creek approach",
+     "replace": "the West Fork Buttermilk approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "dist_km holds the round-trip distance, shown as Approach (one way)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "dist_km 12.07 (7.5 mi one way, trailhead to Fish Creek Pass, the base of the scramble)",
+   "evidence": "dist_km 27.36 km = 17.0 mi, exactly the row's own round-trip figure (approach, totalNote), yet it renders as 'Approach (one way)'. Best Hikes BC gives ~12 km (7.5 mi) and ~3,600 ft to Fish Creek Pass; WTA lists the West Fork Buttermilk hike as 15.0 mi round trip; the row's own approach text says 7-7.5 mi and the pass waypoint is at 7.4 mi. The Forest Service trail page quotes 9.5 mi for the trail as a whole, which appears to include trail beyond the pass.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-courtney-star-peak-in-the-chelan-sawtooth-wilderness/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-11.203836564679"
+   ],
+   "patches": [
+    {
+     "id": "wa_courtney_peak_scramble",
+     "fact": "dist_km holds the round-trip distance, shown as Approach (one way)",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 27.36,
+     "value": 12.07
+    }
+   ]
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "beta and pitch_detail say ~0.4 mi from the pass to the summit (the two pins are ~0.42 mi apart in a straight line), but the waypoints put the pass at 7.4 mi and the summit at 8.5 mi, and the round trip is stated as 17 mi. Sources give ~1,000 ft of gain from the pass but no pass-to-summit mileage, so the waypoint distMi values were not changed.",
+   "sources": [
+    "https://www.summitpost.org/courtney-peak/728542",
+    "https://thirst4adventure.com/2016/08/24/courtney-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Wilderness permit: itinerary.cal 'self-issue wilderness permit' vs permit/access.permit 'no wilderness permit required'",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.cal says to self-issue a wilderness permit at the trailhead, while permit and access.permit say no wilderness permit is required (only a trail register). The Forest Service West Fork Buttermilk page lists only recreation passes under Permits and says wilderness regulations apply; no second source settling whether a self-issued wilderness permit is required was found.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/west-fork-buttermilk-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "timing.approachTimeHrs is 4 while the itinerary schedule puts Fish Creek Pass at +5 to 6 hr and the day at 9.5 hr (timing.summitTimeHrs also 9.5). No source giving a trailhead-to-pass time was found, so nothing was changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "CAMPING & BIVY list is for a different drainage/route cluster",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "This route camps in Crystal Creek Basin (outside the Enchantment permit area) from the Ingalls Creek Trailhead, or at Crystal Lake from the plateau. The bivy[] list is the Colchuck/Dragontail regional list: Colchuck Lake designated sites, the Dragontail north-side bivies, Shield Lake and the Bridge Creek/Eightmile campgrounds do not serve this route; Perfection/Inspiration Lake and Gnome Tarn serve it only for a party coming in over the Enchantment Plateau to Crystal Lake. None covers the Crystal Creek Basin camp. Left for the catalog-wide bivy class.",
+   "sources": [
+    "https://www.summitpost.org/sw-rib-of-crystal-lake-tower/820097",
+    "https://www.mountainproject.com/area/119091796/crystal-lake-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "Descent place names disagree",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Fantasia Saddle/Fantasia Pond and Chessmen Notch are real features on the two genuine exits from the tower's top: traverse east to Fantasia Saddle and descend (likely with a rappel) to Fantasia Pond, or continue over the Westernmost Chessman and scramble around to Chessmen Notch, the Enchantment Plateau and Crystal Lake, which is the same Westernmost Chessman option the descent fields name. Eric's Base Camp independently places Fantasia Saddle (~7,600 ft) and Fantasia Pond on McClellan's west side.",
+   "sources": [
+    "https://www.summitpost.org/sw-rib-of-crystal-lake-tower/820097",
+    "http://ericsbasecamp.net/trips/McClellan/McClellan.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "Climbing season window",
+   "verdict": "fixed",
+   "correct_value": "season 'Jun-Sep'; approach variant season 'Late June to September; axe before mid-July'",
+   "evidence": "Documented June ascents exist: a CascadeClimbers trip report of the SW Rib dated 6/28/2012 and a Mountain Project photo of a June 2025 ascent; SummitPost advises an ice axe before mid-July, i.e. the route is climbed in early season. So the June start in best_season and climate is right, and season 'Jul-Sep' (and the approach variant's self-contradictory 'Mid-July to September; axe before Jul') are the outliers.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/87362-tr-crystal-lake-spire-sw-rib-19p-58-6282012/",
+    "https://www.mountainproject.com/route/119091853/southwest-rib",
+    "https://www.summitpost.org/sw-rib-of-crystal-lake-tower/820097"
+   ],
+   "patches": [
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "Climbing season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "Climbing season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Mid-July to September; axe before Jul",
+     "value": "Late June to September; axe before mid-July"
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "Summit named as part of a different peak",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Crystal Lake Tower is the westernmost point of McClellan Peak's summit ridge, so the waypoint note describes where the tower sits rather than renaming the summit; SummitPost states exactly this and Mountain Project places the tower on the ridge between the Chessmen and the Nightmare Needles.",
+   "sources": [
+    "https://www.summitpost.org/sw-rib-of-crystal-lake-tower/820097",
+    "https://www.mountainproject.com/area/119091796/crystal-lake-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "From Leavenworth, head east on US-2 for about 4 miles and turn south on US-97 toward Blewett Pass; after about 7 miles turn right onto Ingalls Creek Road, cross Peshastin Creek, keep left, and drive to the trailhead at the end of the road.",
+   "evidence": "The row's trailhead card, waypoints, approach variant, itinerary and what_to_bring all use the Ingalls Creek Trailhead off US-97 near Blewett Pass, but road.* describes the Snow Lakes Trailhead on Icicle Creek Road. WTA's Ingalls Creek page: from Leavenworth take US-2 east 4 mi, right on US-97S for 7 mi, right on Ingalls Creek Road, cross Peshastin Creek, bear left, trailhead at road's end. The Forest Service Ingalls Creek Trail page: US-97S then right on Ingalls Creek Road for about a mile to the trailhead.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ingalls-creek",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/ingalls-creek-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Snow Lakes Trailhead, Icicle Creek Road, Leavenworth",
+     "value": "Ingalls Creek Road off US-97, to the Ingalls Creek Trailhead"
+    },
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved Icicle Road for 4.2 miles from US-2 to the trailhead; a long maintained trail (~11 miles) then leads into the Enchantments core near Crystal Lake.",
+     "value": "About a mile of access road from US-97 to the trailhead at road's end; from there the Ingalls Creek trail and an off-trail climb up Crystal Creek lead to the basin below the rib."
+    },
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Roughly 2.5-3 hours from Seattle via US-2/US-97 to Leavenworth then Icicle Creek Road.",
+     "value": "From Leavenworth, head east on US-2 for about 4 miles and turn south on US-97 toward Blewett Pass; after about 7 miles turn right onto Ingalls Creek Road, cross Peshastin Creek, keep left, and drive to the trailhead at the end of the road."
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "Permit field puts the route in the Enchantment permit area; approach says it is outside it",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Crystal Creek Basin camps are outside the Enchantment permit area; a free self-issued wilderness permit at the Ingalls Creek Trailhead covers them.",
+   "evidence": "SummitPost: the route is most readily done from outside the permit area and camping in Crystal Creek Basin is not in the Enchantments permit zone. Mountain Project: no permits are needed for camping once far enough down Crystal Creek to reach the base of the SW Rib. The Forest Service Ingalls Creek page: a free wilderness permit is required at the trailhead for Alpine Lakes Wilderness entry. The row's own approach variant and what_to_bring already say this; only `permit` contradicted it.",
+   "sources": [
+    "https://www.summitpost.org/sw-rib-of-crystal-lake-tower/820097",
+    "https://www.mountainproject.com/area/119091796/crystal-lake-tower",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/ingalls-creek-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "Permit field puts the route in the Enchantment permit area; approach says it is outside it",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+     "value": "Camping in Crystal Creek Basin, reached from the Ingalls Creek Trailhead, lies outside the Enchantment permit area; fill out the free self-issued wilderness permit at the trailhead. Any overnight inside the Enchantment permit area (May 15-Oct 31) needs a quota permit from the advance lottery."
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "fact": "Parking pass names Stuart Lake/Eightmile/Snow Lakes trailheads, not Ingalls Creek",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass or America the Beautiful pass at the Ingalls Creek Trailhead",
+   "evidence": "access.parking_pass names the Stuart Lake, Eightmile and Snow Lakes trailheads, none of which this route uses. WTA's Ingalls Creek page lists an America the Beautiful Pass or Northwest Forest Pass; the Forest Service Ingalls Creek page lists a $5/day or $30 annual fee with Northwest Forest Pass and America the Beautiful passes accepted.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ingalls-creek",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/ingalls-creek-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_southwest_rib_2",
+     "fact": "Parking pass names Stuart Lake/Eightmile/Snow Lakes trailheads, not Ingalls Creek",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads \u2014 $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "value": "Northwest Forest Pass or America the Beautiful pass required to park at the Ingalls Creek Trailhead ($5/day or $30/annual)."
+    }
+   ]
+  }
+ ]
+}

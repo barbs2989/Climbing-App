@@ -1,0 +1,22 @@
+{
+  "_README": [
+    "'Cat Scratch' is a feature on FORBIDDEN PEAK's West Ridge — the gully a party could not find,",
+    "which is why this whole workstream exists. Five Forbidden and Torment rows name it correctly.",
+    "This row, on THE TOOTH, called its objective 'the Catscratch Couloir/NE Face'.",
+    "",
+    "The row corrects itself: its own `beta` already states that no source checked documents a route",
+    "on The Tooth named 'Catscratch Couloir', and that the physical description matches the",
+    "well-documented Northeast Slabs — which is this route's actual name. So the approach was",
+    "pointing at a feature name borrowed from a different peak, while the field beside it said so.",
+    "",
+    "Only that phrase is changed. The rest of the approach is the stored text byte for byte: it was",
+    "read from the DB and rewritten by string replacement, never retyped."
+  ],
+  "wa_the_tooth_r1": {
+    "area": "wa_the_tooth",
+    "_grounding": "this row's own `beta` field, which names the borrowed feature and identifies the real route as Northeast Slabs",
+    "set": {
+      "approach": "Start at the Alpental Ski Area parking lot (~3,100 ft; I-90 Exit 52, north on Alpental Rd). Follow the Snow Lake Trail north into the valley on climber's-left of the outlet creek. In summer, stay on the maintained tread about 1.8-2 miles to the signed Source Lake Trail junction (~4,100 ft); in winter/spring the standard line leaves the summer trail earlier and climbs directly up the valley bottom/climbers'-path toward Source Lake — do not follow the exact summer boot path once there's meaningful snow cover, since it crosses avalanche terrain. From the Source Lake junction, leave the maintained trail and pick up the cairned climbers' path/talus traverse that runs above and around the east side of Source Lake, staying below the cliff band, aiming toward The Tooth's northeast aspect. Continue into the basin beneath the NE Face and ascend the broad snow finger/gully (\"snow cone\") that leads directly to the base of the Northeast Slabs route on the NE Face — cache skis in the hollow below and left of the route start before racking up. Figure roughly 2-2.5 miles and 1,500-2,000 ft of gain from the trailhead to the base of the climb; parties commonly do trailhead-to-summit-and-back in 4-6 hours in good firm-snow conditions. Hazards: this valley (Source Lake basin and the slopes below The Tooth) carries a well-documented history of avalanche accidents, rated \"Challenging\" avalanche terrain — assess stability seriously, especially in the transitional April-June snowpack the route is often climbed in, and do not treat the summer path as safe once snow is present. There are one or two creek crossings near the Source Lake outlet that can require removing skis or careful rock-hopping in high early-season flow. Above the talus the route-finding is cairned/boot-track only (no maintained tread), which can be tricky in whiteout or fresh snow."
+    }
+  }
+}

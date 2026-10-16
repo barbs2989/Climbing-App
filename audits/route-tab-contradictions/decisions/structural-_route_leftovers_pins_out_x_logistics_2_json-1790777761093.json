@@ -1,0 +1,423 @@
+{
+ "applied": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "patch",
+   "columns": [
+    "approach_logistics"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "area_id": "wa_rimrock_ridge",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "Variable",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "sturdy scrambling boots"
+   ],
+   "hazards": [
+    "Thick, routefinding-heavy off-trail bushwhacking with no established boot path to the ridge",
+    "Loose, blocky rock on the Class 3 steps along the crest",
+    "No reliable water source once on the ridge crest itself",
+    "Aggressive bear activity reported at nearby PCT camps in 2026 (Fireweed, South Fork)",
+    "Afternoon thunderstorms typical of the dry east-Cascades summer",
+    "Remote self-rescue — no cell coverage; nearest help arrives via Chelan County SAR by boat or helicopter"
+   ],
+   "verif": null,
+   "overview": "Rimrock Ridge is a minor, infrequently climbed 7,255' crest in the Ptarmigan Mountains subgroup of the Glacier Peak Wilderness, rising above the headwaters of Agnes Creek in Chelan County. It sits near Agnes Mountain (8,115') and Devore Peak, on the dry east side of the Cascade crest above Lake Chelan and the Stehekin valley (USGS Agnes Mountain 7.5' quad). The ridge has essentially no recorded ascents or published trip reports online; most parties visiting this upper-Agnes-Creek basin are headed for the better-documented Agnes Mountain or Gunsight Peak via the same approach.",
+   "beta": "No published or online route beta exists specifically for Rimrock Ridge. It lies about 2.3 miles from Old Guard Peak in the same remote LeConte Glacier / Ptarmigan Traverse massif, so an ascent would likely involve terrain similar to nearby Old Guard and Sentinel Peaks: long, unmaintained approaches from Stehekin (via Agnes Creek or Flat Creek) or a cross-country detour off the Ptarmigan Traverse, followed by off-trail alpine scrambling to the summit.",
+   "turnaround": "No party-specific timing data exists for this peak. As on the surrounding Ptarmigan Traverse terrain, plan turnaround around weather, off-trail route-finding time, and the long unmaintained approach rather than a fixed clock time — afternoon thunderstorms and sudden whiteout conditions are common on this section of the North Cascades crest in summer.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4300,
+   "loss_ft": 4300,
+   "dist_km": 40.23,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "II",
+   "face": null,
+   "permit": null,
+   "comms": "This is deep wilderness with no maintained trail; expect no cell coverage for essentially the entire approach and climb, consistent with the rest of the Glacier Peak Wilderness / Stehekin backcountry. A satellite communicator or PLB is strongly advised.",
+   "descent": null,
+   "obj_haz": [
+    "loose rock",
+    "exposed ridge sections",
+    "remote terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.38025,
+     "lng": -120.83955,
+     "elev": 1600,
+     "name": "High Bridge Guard Station / Agnes Creek (PCT) Trailhead",
+     "note": "Reached by the Lady of the Lake ferry from Chelan to Stehekin Landing, then ~11 mi up Stehekin Valley Road (shuttle or bike); North Cascades NP backcountry permit required for overnight camping, available in Stehekin.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.342907,
+     "lng": -120.901771,
+     "elev": 2200,
+     "name": "Fivemile Camp",
+     "note": "First established dispersed camp along the Agnes Creek Trail with reliable water from Agnes Creek; common first-night stop for the long valley approach.",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 48.30964,
+     "lng": -120.92038,
+     "elev": 2800,
+     "name": "Swamp Creek Camp",
+     "note": "Established camp at the Swamp Creek confluence with year-round water; last reliably maintained camp before the trail begins climbing out of the valley bottom toward the upper basins.",
+     "type": "Campsite",
+     "distMi": 8.1
+    },
+    {
+     "lat": 48.37557,
+     "lng": -120.97826,
+     "elev": 7230,
+     "name": "Rimrock Ridge summit",
+     "note": "True summit of the ridge crest (listed 7,255-7,260 ft); descent reverses the crest, downclimbing rock steps and bypassing gendarme towers on the same side used on ascent.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.38025,
+     -120.83955
+    ],
+    [
+     48.342907,
+     -120.901771
+    ],
+    [
+     48.30964,
+     -120.92038
+    ],
+    [
+     48.37557,
+     -120.97826
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 16,
+    "summitTimeHrs": 7,
+    "descentTimeHrs": 9,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacen…",
+      "fromTo": "Backpack in to high camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9,
+      "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full …",
+      "fromTo": "Summit push and hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock rack is documented for this ridge; the route is a Class 3 scramble that never touches a glacier, so a helmet and, early in the season, an ice axe are the relevant gear rather than a rack or a glacier kit.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "navigation tools",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "Hold the crest for the cleanest line",
+    "Drop off the spine to bypass the harder towers"
+   ],
+   "watch_out": [
+    "No cairned route or published trip reports exist for this specific ridge — expect genuine routefinding on both the bushwhack and the crest",
+    "The Agnes Creek bridge at Hemlock Camp is out of service in 2026 — plan an alternate camp (Cedar Camp or South Fork Agnes Creek)",
+    "2026: the High Bridge shuttle bus is not running — budget extra time/mileage to reach the trailhead from Stehekin Landing"
+   ],
+   "pro_needs": "No rope or protection is needed for the Class 3 crest in dry conditions; the route stays off the glaciers. Carry a helmet, and an ice axe early in the season for lingering snow.",
+   "best_season": "Typically late July through September, once the approach brushfields and any lingering snow on the ridge have melted out. Earlier in the season expect mosquitoes in the lower Agnes Creek valley and possible snow on north-facing sections of the ridge. Check current NPS/USFS trail-condition reports before going, since bridges and camps in this corridor were still being repaired in 2026 after the December 2025 Stehekin flood.",
+   "high_point_ft": 7255,
+   "aid_grade": null,
+   "approach": "Access to the trailhead is by boat, floatplane, or trail only — no road connects Stehekin to the outside world. Take the Lady of the Lake ferry from Chelan up 50-mile-long Lake Chelan to Stehekin Landing (Lady Express ~2.5 hrs, Lady II ~4 hrs). From there it is 11 miles up-valley on Stehekin Valley Road to High Bridge Guard Station (1,600'), the trailhead for the Agnes Creek Trail (PCT); for the 2026 season the historic High Bridge shuttle bus is not scheduled to run, so plan to walk the road, bike it, or book a private shuttle. From High Bridge, follow the Agnes Creek Trail (PCT) roughly 8-9 miles up-valley (Three-Mile Camp near mile 3, Swamp Creek Camp near mile 8.5), then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage toward the base of the ridge. Off-trail brush is thick for roughly the first 1,000' of gain and eases above about 4,000'; fording Agnes Creek or Spruce Creek on downed logs is typically required to reach the basin.",
+   "descent_text": "Retrace the ridge crest, downclimbing the rock steps and bypassing towers on the same side used on ascent.",
+   "bail": null,
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Approach trails in this remote corner of the Stehekin backcountry are typically not reliably snow-free until mid-to-late July, with the best window July through September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacent camp spot below the ridge. The last part leaves the trail for thick brush and a creek crossing, so expect slow going with an overnight pack.",
+      "hours": 7,
+      "miles": 13,
+      "title": "Backpack in to high camp",
+      "gainFt": 2600,
+      "lossFt": 200,
+      "packLb": 34,
+      "schedule": [],
+      "objective": "Reach a camp near the base of the summit ridge"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full approach trail back out the same day, making for a long but standard single 'summit + out' day.",
+      "hours": 9,
+      "miles": 12,
+      "title": "Summit push and hike out",
+      "gainFt": 1700,
+      "lossFt": 4100,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave camp",
+        "detail": "Light day pack, headlamp start to catch cool morning temps on exposed rock."
+       },
+       {
+        "time": "+2.5 hr",
+        "label": "Gain the ridge crest",
+        "detail": "Cross-country travel on scree, slabs, and broken rock — no maintained trail on the ridge itself."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Reach Rimrock Ridge summit",
+        "detail": "Views across the Glacier Peak Wilderness; short break."
+       },
+       {
+        "time": "+5.5 hr",
+        "label": "Back at camp",
+        "detail": "Reverse the ascent line; break camp and shoulder full pack."
+       },
+       {
+        "time": "~6:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Full hike-out on trail after breaking camp."
+       }
+      ],
+      "objective": "Climb Rimrock Ridge and return to the trailhead"
+     }
+    ],
+    "totalNote": "A 2-day, 1-night trip: roughly 25 miles round trip and ~4,300 ft of cumulative gain to a 7,255 ft summit, with the second day combining the summit scramble and the full hike out."
+   },
+   "access": {
+    "fees": "2026 NPS backcountry fees: $6 non-refundable permit reservation fee plus $10/person/night camping fee within the park boundary (ages 15 and under free); the Forest Service wilderness permit beyond the park boundary is free. Ferry fare to/from Stehekin and any High Bridge shuttle fee are separate.",
+    "rules": "Leave No Trace travel required; camping is restricted to designated/permitted sites within the park/NRA portion of the approach. Food storage from bears is essential — aggressive bear activity has been reported in 2026 at PCT camps in this corridor (Fireweed and South Fork camps in particular).",
+    "permit": "An NPS wilderness permit is required for any overnight camping within the park/NRA boundary near High Bridge (reserve on recreation.gov or get a walk-up permit at the Golden West Visitor Center in Stehekin). Once across into the Glacier Peak Wilderness (Forest Service land), only a free self-issue wilderness permit is required, available at trailhead registration boxes.",
+    "closures": "As of mid-2026 the Stehekin area is still recovering from a historic December 2025 flood: Company Creek Road lost roughly 1,000 ft of roadbed and a levee (an elevated interim road was completed June 23, 2026); North Cascades Lodge at Stehekin is closed for the season (no lodging, dining, fuel, or showers, though ferry and postal service continue); the High Bridge shuttle bus is not running for 2026. On the trail itself, the Agnes Creek bridge at Hemlock Camp (south of the park boundary, in the Glacier Peak Wilderness) is out of service and camping at Hemlock Camp is considered unsafe due to hazard trees — use Cedar Camp or the South Fork Agnes Creek camp instead. Confirm current conditions with the Wilderness Information Center (360-854-7245) before going. Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes the Pacific Crest Trail (Trail 2000) along Agnes Creek on the Chelan Ranger District, along with Agnes Creek Trail 1272, Agnes Gorge Trail 1281 and Swamp Creek Trail 1242. North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) also close the Pacific Crest Trail from the park boundary down to High Bridge and on to Bridge Creek Camp, the High Bridge area, and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This approach cannot be used while these closures stand. Chelan Ranger District: (509) 682-4900. North Cascades National Park: (360) 854-7200.",
+    "group_limit": 12,
+    "landManager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area for roughly the first mile out of High Bridge, then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness, for the remainder of the approach and the peak itself.",
+    "land_manager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area (first mile out of High Bridge), then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness",
+    "parking_pass": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+    "passRequired": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP wilderness permit for the Stehekin valley camps — quota, fee",
+     "where": "Reserve on Recreation.gov and contact the park the day before, as there are no permit services in Stehekin. Camping beyond the park boundary in the Glacier Peak Wilderness needs no park permit."
+    }
+   },
+   "road": {
+    "name": "Stehekin Valley Road (boat landing to High Bridge)",
+    "status": "Not connected to any outside highway — Stehekin is accessible only by boat, floatplane, or trail. Within the valley, the road is a local shuttle/bike route from the boat landing to High Bridge (~11 mi). North Cascades National Park has closed the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire (park fire-closure list updated September 14, 2026; no end date given).",
+    "driveNote": "No road connects Stehekin to the outside highway network — access is by the Lady of the Lake ferry from Chelan (Lady Express ~2.5 hrs, Lady II ~4 hrs), by floatplane, or on foot over Cascade Pass; from Stehekin Landing it is roughly 11 miles up Stehekin Valley Road to the High Bridge/Agnes Creek trailhead.",
+    "seasonalGate": "Ferry and shuttle run year-round on a reduced winter schedule; the trail beyond High Bridge is typically snow-free from July into October."
+   },
+   "climate": {
+    "summer": "Summer is the working window: the approach brush and the ridge are usually snow-free from late July, with hot days, cool nights and a risk of afternoon thunderstorms; snow cover varies a lot from year to year.",
+    "typical": "Dry east-Cascades climate in the rain shadow of the crest — hot summer days, cool nights, and a much shorter, drier snow season than the west-side Cascades. Afternoon thunderstorms are common in July and August.",
+    "forecastZone": "Not covered by NWAC avalanche forecasts (this is a summer, snow-free-window scramble; no winter forecast zone applies)."
+   },
+   "emergency": {
+    "notes": "No road access and no cell coverage in this drainage — carry a satellite communicator. Any rescue will likely require a multi-hour boat evacuation and/or helicopter.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Golden West Visitor Center, Stehekin (NPS) for the park/NRA portion of the approach; Chelan Ranger District office, Okanogan-Wenatchee National Forest, in Chelan, for the Glacier Peak Wilderness portion.",
+    "nearestHospital": "Lake Chelan Community Hospital, Chelan, WA — roughly 50 lake-miles from Stehekin; backcountry rescues from this drainage are typically by helicopter given the lack of road access to Stehekin.",
+    "sheriffDispatch": "911, or Chelan County Sheriff/Rivercom Dispatch direct at 509-663-9911; technical mountain rescue support comes from the volunteer Chelan County Mountain Rescue."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed overall; what little traffic exists would cluster on August weekends within the Late July-September window",
+    "solitudeRating": 5,
+    "estimatePerSeason": "very low - likely single digits to low tens of parties per season; no trip-report volume or register data found for this summit"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long wilderness approach fitness - full-day (or overnight) endurance typical of Glacier Peak Wilderness access; exact approach mileage not confirmed in sources",
+     "packWeight": "Light scrambling kit for the ridge itself; overnight/backpacking load (roughly 20-30 lb) likely needed for the approach given the remote access"
+    },
+    "approachTime": "Long/remote approach consistent with Glacier Peak Wilderness (Okanogan-Wenatchee NF) access",
+    "requiredSkills": [
+     "route-finding on an unmaintained approach and along the ridge crest",
+     "exposed Class 3 scrambling, including negotiating rock steps and notches",
+     "sound judgment downclimbing loose rock",
+     "map/compass or GPS navigation in trail-less Glacier Peak Wilderness terrain"
+    ],
+    "experienceLevel": "Solid, independent Class 3 scrambler comfortable on an infrequently traveled ridge with loose rock and no fixed protection; not a beginner objective given the remote Glacier Peak Wilderness setting"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August as the prime month",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still carry lingering snow on the approach slopes; conditions typically firm up by late July when the season window opens",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Matches the best-season - snow-free approach and driest, most stable ridge conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Generally dry and stable, continuing August conditions, but shorter daylight and a rising chance of early-season snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical North Cascades/Glacier Peak Wilderness summer pattern - warm, dry days and cool nights during the July-September window",
+     "probability": "Afternoon thunderstorms are a general risk in the North Cascades summer season, but no peak-specific storm data was found for Rimrock Ridge"
+    },
+    "exposure": "Exposure is concentrated at the notches along the ridge crest, compounded by loose rock/blocks on the ridge; a slip near a notch would be consequential, though the route stays at Class 3 rather than sustained technical terrain",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts for this peak, and the route is only climbed in the snow-free late-July-September window",
+     "byMonth": {
+      "July": "Low",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; Rimrock Ridge is a non-glaciated ridge scramble"
+   },
+   "data_quality": {
+    "gaps": [
+     "No dedicated trip reports or route descriptions specific to Rimrock Ridge were found online; the approach/route detail above is inferred from the nearby, better-documented Agnes Mountain approach out of the same Agnes Creek/Blue Basin drainage.",
+     "Elevation for this peak is reported inconsistently across sources (roughly 7,050-7,260 ft depending on source/USGS interpolation); the prominence figure could not be independently verified.",
+     "Exact bushwhack line from the Agnes Creek Trail to the base of the ridge is unconfirmed by any first-hand account.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.3720712,
+    "peakLng": -121.0001074,
+    "trailhead": "High Bridge (Stehekin Valley Road)",
+    "trailheadLat": 48.3807,
+    "trailheadLng": -120.8403,
+    "trailheadDirection": "Via the Lady of the Lake ferry to Stehekin and the NPS shuttle to High Bridge, then the Agnes Creek / PCT trails"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 3 scramble; no rope required in dry conditions.",
+   "ascender": null,
+   "corrections": "No route-specific trip reports found beyond peak elevation (7,260ft); gear inferred purely from stated Class 3 grade.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 2275,
+     "name": "Park Creek Camp, at the valley road",
+     "role": "main",
+     "type": "camp",
+     "notes": "THIS IS THE CAMP THE PARK ITSELF POINTS OVERNIGHT PARTIES TO NOW THAT FLAT CREEK IS SHUT, and that closure is the single most important planning fact for this peak. The camp at the Flat Creek trailhead, which would otherwise be the obvious base, has its access trail closed for hazard trees and has dropped out of both the park's camp list and its booking system; no reopening date has been given anywhere. Park Creek sits lower down the same road, so using it lengthens an approach that is already long — you are walking further to the trailhead each morning rather than sleeping at it. Note this is the camp on the VALLEY ROAD where the Park Creek trail leaves it, not the stock camp several miles up that trail toward the pass. The four-person cap is worth checking against your party before you plan around it.",
+     "water": "Park Creek at the camp, reliable all season.",
+     "permit": "National Park Service backcountry permit, arranged by email before you travel as above. A TOTAL CAMPFIRE BAN has been in force across the entire Stehekin valley since the end of June, covering anything that produces ash including propane fire pits, with no end date announced — so the ring here is out of use regardless of what the camp table says about fires. Gas and propane STOVES are still allowed, with clearance around them and a working shut-off valve. Confirm the ban's status when you get the permit.",
+     "capacity": "Two sites, each capped at four people, so this is a small-party camp only. No stock. It has a fire ring, which is not the same as permission to use it right now."
+    },
+    {
+     "name": "Bivouacs in the upper Flat Creek basin, beyond the end of the trail",
+     "role": "main",
+     "type": "bivy",
+     "notes": "Rimrock Ridge is an obscure summit and should be described as one. It forms the southern rim of the upper Flat Creek valley — everything falling off its far side goes into the West Fork of Agnes Creek instead — and it looks across at the glaciated back of the crest that the classic traverse walks along. Accounts of that traverse do not mention it, because climbers up there are facing the other way, and no ascent account of it was found at all. The approach is the whole difficulty: boat, shuttle, most of a day walking the old road, a gentle valley trail of about four miles that gains only a few hundred feet through old growth and through forest still recovering from a fire early this century, and then trailless ground up the headwaters to whatever line goes. The trail ends well short of the head of the valley and the summit is beyond where it ends. Budget four days minimum for something that would be an afternoon if a road came near it, and build the itinerary around the boat timetable rather than the climbing, because a missed sailing costs a day at each end. Late summer into early autumn is the window; the valley walk is snow-free long before the head of it is.",
+     "water": "Creek and snowmelt throughout the basin, which is at least the easy part — this is a wet valley fed off the glaciers on the crest above it, and running water is not the problem here that it is on a ridge camp.",
+     "permit": "THE AGENCY CHANGES ON THIS TRAIL, and it is the thing most likely to be got wrong. The Flat Creek trail leaves the national park about two miles up and passes into the Glacier Peak Wilderness under the national forest, so the ground you actually camp and climb on is Forest Service. Checked against the boundary rather than assumed: the summit itself lies inside that wilderness. It takes a free self-issue permit filled in at the trailhead rather than a park permit, with no reservation and no fee, and a party limit of TWELVE counting people and pack animals together — larger than the park's limit down in the valley, and a rare case where walking further gets you a looser rule. Groups over twelve must split and stay a mile apart. Your park permit still covers the valley camps you slept in getting there, so a full trip needs both. There is NO park cross-country zone for Flat Creek; that is not a gap in the record, the zone system simply does not reach here because the ground is not the park's. Standard wilderness practice otherwise: durable surfaces, well back from the water, pack out what will not bury, and no fires.",
+     "capacity": "No established camping and no site count. THERE IS NOTHING UP HERE. The trail stops, and a party going on picks whatever flat gravel, slab or old moraine it can find in the head of the valley. Anyone describing a camp here is describing a place they happened to sleep."
+    },
+    {
+     "elev": 1687,
+     "name": "Tumwater Camp, Stehekin valley road",
+     "role": "route",
+     "type": "camp",
+     "notes": "The first camp of consequence above the shuttle's turnaround at High Bridge, and its job on this trip is to absorb the arrival day. The boat gets in around the middle of the day and the last shuttle up the valley goes in the late afternoon, so nobody sensibly starts a twenty-mile approach on day one — you ride to High Bridge, walk a short way up the old road, and sleep in flat riverside forest with no view and no alpine character at all. It has a history of high-water damage and was closed after a bad flood, though it stands in the park's current camp table; confirm it is genuinely open when you arrange the permit rather than assuming, because there are not many camps up here and losing one reshapes the whole itinerary.",
+     "water": "The Stehekin River is right there and runs all season. Treat it — it is a big glacial river carrying silt and everything else off the drainage.",
+     "permit": "National Park Service backcountry permit required, covering Lake Chelan National Recreation Area as well as the park. THERE IS NO PERMIT DESK IN STEHEKIN — the visitor centre at the landing does not issue them and is closed. For a trip starting in the valley the permit is arranged by EMAIL with the park's wilderness office, sent early on the morning BEFORE your start date, with a short mandatory video to watch and a signed copy to print and carry. There is no cell service in Stehekin, so all of that has to happen before you get on the boat. Food lockers are provided at these valley camps and no bear canister is required.",
+     "capacity": "Two sites, each taking up to six people, so six is the party ceiling. No stock. Assigned by night on the permit."
+    },
+    {
+     "elev": 1927,
+     "name": "Shady Camp, Stehekin valley road",
+     "role": "route",
+     "type": "camp",
+     "notes": "Further up the old road than Tumwater and the only camp on this stretch that is held back from the booking system entirely, which is exactly why it is worth knowing about. A party whose permit request comes back with a hole in the middle of the itinerary can often fill it here. It is another flat forested river camp with nothing to look at, used purely for position. Note that the road above the washout is closed to BICYCLES as well as vehicles — the upper section is decommissioned or maintained as a non-motorized, non-mechanized trail, so the obvious idea of riding the old roadbed to save a day is not permitted. It is walking or stock, and that is what makes this approach as long as it is.",
+     "water": "River water beside the camp, dependable through the season and needing treatment.",
+     "permit": "National Park Service backcountry permit required, arranged the same way as the rest of the valley — by email to the wilderness office the morning before you start, since nothing can be issued in Stehekin itself. Because the site is walk-up rather than reservable, it cannot be locked in months ahead; ask for it in that same email.",
+     "capacity": "A single site taking up to eight people. No stock. WALK-UP ONLY — this one takes no reservations at all, which makes it the useful fallback when everything else on the road is booked out."
+    },
+    {
+     "name": "Swamp Creek Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

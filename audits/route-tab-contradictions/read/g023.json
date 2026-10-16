@@ -1,0 +1,366 @@
+{
+ "batches": ["b089.json", "b090.json", "b091.json", "b092.json"],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_vanishing_point",
+   "name": "Vanishing Point",
+   "area": "Dolomite Tower",
+   "contradictions": [
+    {
+     "fact": "commitment grade vs alpine grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "commitment", "says": "V"},
+      {"field": "alpine_grade", "says": "VI"},
+      {"field": "fa", "says": "...graded VI 5.12b..."},
+      {"field": "waypoints[3] (Vanishing Point Topout).note", "says": "Grade VI 5.12b established over many bolted pitches..."}
+     ],
+     "why": "commitment states V while alpine_grade, the fa note and the topout waypoint note all independently say Grade VI for the same route.",
+     "internal_resolution": "Two other fields (fa, topout waypoint note) corroborate alpine_grade=VI, so commitment=V is the likely outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "pitch count (14 vs 20)",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "14"},
+      {"field": "pitch_detail", "says": "14 numbered pitches (1-14)"},
+      {"field": "beta", "says": "Published pitch counts vary between 14 and 20 depending on how the climbing is split or linked...the pitch-by-pitch breakdown here uses the 14-pitch convention."},
+      {"field": "itinerary", "says": "Day 2 — climb the full 20-pitch route (a very long day given sustained 5.10-5.12 climbing with few easy pitches)"}
+     ],
+     "why": "The route's own beta explicitly says this row uses the 14-pitch convention, but the itinerary field still calls it a '20-pitch route', which would mislead a party's pace/time planning.",
+     "internal_resolution": "pitches (14) and pitch_detail (14 rows) agree and beta explicitly states the convention used; itinerary's '20-pitch' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "crux pitch location",
+     "severity": "high",
+     "claims": [
+      {"field": "pro_tips[0]", "says": "Pitch 5 is the crux at 5.12+ (graded 5.11c on FA, but climbers report it as significantly harder)."},
+      {"field": "pitch_detail (pitch 11)", "says": "crux: true; ...the likely crux of the route (5.12b)."},
+      {"field": "beta", "says": "Notable features include the crux 5.12 pitch out a huge roof (pitch 11)..."}
+     ],
+     "why": "pro_tips names pitch 5 as the crux while pitch_detail's own crux flag and beta both name pitch 11.",
+     "internal_resolution": "pitch_detail's explicit crux:true flag and beta agree on pitch 11; pro_tips is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "collapsed-roof pitch location",
+     "severity": "medium",
+     "claims": [
+      {"field": "pro_tips[1]", "says": "The collapsed roof section on pitch 9/10 (rerouted in 2020) demonstrates route changes since FA..."},
+      {"field": "watch_out[0]", "says": "Rockfall risk is real, especially on pitch 5 area where the roof has partially collapsed since 1999 FA."},
+      {"field": "pitch_detail (pitch 5)", "says": "A large part of the original roof has fallen away."},
+      {"field": "pitch_detail (pitch 10)", "says": "...to the old death-flake anchor... The 2020 reroute avoids the loose death flake entirely."}
+     ],
+     "why": "pro_tips places the collapsed-roof feature at pitch 9/10, but watch_out and pitch_detail's own pitch-5 notes describe the collapsed roof there, while pitch 10's 2020 change is about a loose flake, not a roof collapse.",
+     "internal_resolution": "watch_out + pitch_detail (pitch 5) agree the roof collapse is at pitch 5; pro_tips is the outlier, likely conflating it with pitch 10's unrelated death-flake reroute.",
+     "needs_research": false
+    },
+    {
+     "fact": "approach distance to the tower base",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach_variants[0].distMi", "says": "2"},
+      {"field": "waypoints[2] (Dolomite Tower Base).distMi", "says": "3.8"},
+      {"field": "waypoints[3] (Vanishing Point Topout).distMi", "says": "4"}
+     ],
+     "why": "The approach_variants entry describes the full approach to the tower base as 2 miles, but the route's own waypoint list puts the tower base at 3.8 miles from the trailhead - nearly double.",
+     "internal_resolution": "The waypoint list is more granular (0, 2.2, 3.8, 4 mi) and self-consistent; approach_variants' 2 mi is the likely outlier, but not certain without more data.",
+     "needs_research": true
+    },
+    {
+     "fact": "route high point vs Topout waypoint elevation",
+     "severity": "low",
+     "claims": [
+      {"field": "high_point_ft", "says": "5708"},
+      {"field": "waypoints[3] (Vanishing Point Topout).elev", "says": "5900"},
+      {"field": "waypoints[4] (Dolomite Tower, Summit).elev", "says": "5708"}
+     ],
+     "why": "The waypoint literally named 'Topout' sits 192 ft above the stated route high point and the summit waypoint, which is physically odd for the point where the climbing ends; below the 250 ft materiality threshold but still the same specific fact stated two ways.",
+     "internal_resolution": "high_point_ft agrees with the Summit waypoint (5708); the Topout waypoint's 5900 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Topout waypoint note describes the route START, not the topout",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[3] (Vanishing Point Topout).note", "says": "Grade VI 5.12b established over many bolted pitches in the late 1990s; starts left of the prominent arete."},
+      {"field": "pitch_detail (pitch 1)", "says": "Starts just left of the prominent arete dividing Dolomite Tower..."}
+     ],
+     "why": "The note attached to the 'Topout' waypoint describes where the route STARTS (matching pitch 1's own notes almost verbatim), not what a climber finds at the topout - looks like contaminated/misplaced text.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_deep_blue",
+   "name": "Deep Blue",
+   "area": "Dolomite Tower",
+   "contradictions": [
+    {
+     "fact": "best-season start date vs season window",
+     "severity": "low",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "Same window as Vanishing Point: roughly late June/July through September..."}
+     ],
+     "why": "best_season hedges toward 'late June', which falls before the stated season window of Jul-Sep (the example pattern the brief calls out: a best/optimal window starting earlier than the stated season).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "discipline label vs fully-bolted description",
+     "severity": "medium",
+     "claims": [
+      {"field": "discipline", "says": "trad"},
+      {"field": "overview", "says": "A 12-pitch, fully-bolted 5.13c testpiece..."},
+      {"field": "pro_needs", "says": "Almost entirely bolt-protected; the small cam rack exists mainly for the shared roped approach pitches rather than the route proper."},
+      {"field": "detailed_rack", "says": "...essentially a big-wall sport route..."}
+     ],
+     "why": "discipline is labeled 'trad' but three other fields describe the climbing itself as fully bolted/essentially sport, with cams needed only on the shared non-technical approach pitches.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Main Peak (Baring Mountain)",
+   "contradictions": [
+    {
+     "fact": "round-trip distance and gain figures disagree",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[1] (summit).distMi", "says": "3.5 (one-way)"},
+      {"field": "beta", "says": "rated Hard at 7.0 miles round trip with 3,500 ft of gain to a 6,129-ft high point; it is elsewhere described as closer to two miles one way with 3,700 ft of gain, or roughly 4,000 ft. The discrepancy is real..."},
+      {"field": "approach_variants[0]", "says": "distMi: 5.3, gainFt: 3911 (notes: 'Distance and gain are round trip to the true summit')"},
+      {"field": "dist_km", "says": "5.6 (~3.48 mi)"},
+      {"field": "gain_ft", "says": "3847"}
+     ],
+     "why": "2x the waypoint one-way distance (3.5 mi) gives 7.0 mi round trip, matching beta's first citation, but approach_variants explicitly labels 5.3 mi as the round-trip figure - a 32% gap. Gain also spans 3,500 / 3,700-4,000 / 3,911 / 3,847 for the same climb.",
+     "internal_resolution": "The route's own beta text acknowledges the mileage discrepancy exists and attributes it to different start points/how much of the logging road is counted, but doesn't resolve which number the header should show; the waypoint-implied 7.0 mi round trip is corroborated by beta's own citation, making approach_variants' 5.3 mi the more likely outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_baring_mountain_east_face",
+   "name": "East Face",
+   "area": "Main Peak (Baring Mountain)",
+   "contradictions": []
+  },
+  {
+   "id": "wa_baring_mountain_r1",
+   "name": "North Face",
+   "area": "Main Peak (Baring Mountain)",
+   "contradictions": [
+    {
+     "fact": "climb length (length_m) appears to include the non-technical approach",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "1067 (~3,500 ft)"},
+      {"field": "pitch_detail", "says": "Step 1 (Lower) 300 ft, Step 2 (Crux) 400 ft, Step 3 220 ft, Step 4 (Upper) 250 ft — sums to 1,170 ft (~357 m)"},
+      {"field": "approach", "says": "...the lower approach involves fighting through approximately 2,300 vertical feet of dense brush...before any technical rock climbing begins..."}
+     ],
+     "why": "length_m (rendered as 'climb length' in TECHNICAL STATS) is over 3x the sum of the route's own four named technical steps (1,170 ft); the gap (~2,330 ft) closely matches the route's own stated 2,300 ft of non-technical brush approach, suggesting length_m was computed by folding the approach into the climb length.",
+     "internal_resolution": "The four named steps (300+400+220+250=1,170 ft) are corroborated by the waypoint directions text verbatim; length_m is the likely outlier, inflated by the approach distance.",
+     "needs_research": false
+    },
+    {
+     "fact": "access.fees claims no fee, other access fields require a pass/fee",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.fees", "says": "None — no climbing fee (National Forest, not Mount Rainier NP)"},
+      {"field": "access.passRequired", "says": "Northwest Forest Pass at the trailhead"},
+      {"field": "access.parking_pass", "says": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."},
+      {"field": "bivy[0] (Barclay Lake).permit", "says": "Parking at the trailhead takes a Northwest Forest Pass or Interagency pass, or a day fee; a Washington Discover Pass is not valid."}
+     ],
+     "why": "access.fees flatly says there is no fee, while the same route's own access.passRequired/parking_pass and its own bivy entry all say a pass or day fee is required at this exact trailhead.",
+     "internal_resolution": "Three fields (passRequired, parking_pass, bivy permit) agree a pass/fee is required; access.fees' 'None' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "turnaround implies a rappel descent; descent fields say it's a walk-off",
+     "severity": "medium",
+     "claims": [
+      {"field": "turnaround", "says": "Plan a turnaround time in early afternoon to ensure safe rappel descent before dark."},
+      {"field": "descent", "says": "Descend a non-technical route off the back/south side"},
+      {"field": "descent_text", "says": "Do not plan to reverse the technical wall...This walk-off is a scramble/hike, not a rappel descent, and no fixed rappel stations are established on it."},
+      {"field": "rappels", "says": "0"}
+     ],
+     "why": "turnaround frames the standard descent as a rappel to be completed before dark, but descent, descent_text and rappels=0 all agree the standard descent is a non-technical walk-off, with rappelling only a contingency if a party doesn't top out near the notch.",
+     "internal_resolution": "descent + descent_text + rappels=0 agree; turnaround's 'rappel descent' framing is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_baring_mountain_oatmeal_man",
+   "name": "Oatmeal Man",
+   "area": "Main Peak (Baring Mountain)",
+   "contradictions": [
+    {
+     "fact": "'1-14' pitch entry's stated face height vs its own numeric length",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitch_detail (pitch '1-14').notes", "says": "About fourteen pitches of mixed free climbing on the 2,600-ft north face, reported by Peter Doorish as 5.11c overall."},
+      {"field": "pitch_detail (pitch '1-14').lengthM", "says": "488 (~1,601 ft)"}
+     ],
+     "why": "The same pitch_detail entry's own note text describes climbing '2,600-ft' of face, but its lengthM value is only 1,601 ft - a ~1,000 ft (38%) gap within one field.",
+     "internal_resolution": "The note admits pitch lengths are undocumented, so lengthM is likely a partial/rough figure; the discrepancy is real either way.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "name": "South Route",
+   "area": "Main Peak (Baring Mountain)",
+   "contradictions": [
+    {
+     "fact": "commitment grade vs alpine grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "commitment", "says": "I"},
+      {"field": "alpine_grade", "says": "II"}
+     ],
+     "why": "commitment and alpine_grade are both single-point grade values (not ranges) and disagree by one step, with nothing else in the row to arbitrate.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance: dist_km vs itinerary/approach_variants",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "5.6 (~3.48 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "5.3"},
+      {"field": "approach_variants[0].distMi", "says": "5.3"},
+      {"field": "gain_ft", "says": "3847 (matches itinerary.days[0].gainFt: 3847)"}
+     ],
+     "why": "dist_km implies ~3.48 mi round trip, while itinerary and approach_variants both independently say 5.3 mi - a 34%+ gap, well past the 25% high-severity threshold.",
+     "internal_resolution": "itinerary and approach_variants agree at 5.3 mi; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "access.fees claims no fee, other access/permit fields require a pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.fees", "says": "None — no climbing fee (National Forest, not Mount Rainier NP)"},
+      {"field": "access.passRequired", "says": "Northwest Forest Pass at Barclay Lake trailhead"},
+      {"field": "access.parking_pass", "says": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."},
+      {"field": "permit", "says": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."}
+     ],
+     "why": "access.fees says there is no fee at all, while the same route's access.passRequired/parking_pass and the top-level permit field all say a Northwest Forest Pass is required at the trailhead.",
+     "internal_resolution": "passRequired + parking_pass + permit agree a pass is required; access.fees' 'None' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "rope_note claims a 5th-class crux; grade fields cap the route at Class 3-4",
+     "severity": "medium",
+     "claims": [
+      {"field": "rope_note", "says": "...Crux is ~8 ft of exposed 5th-class rock with no gear placed by parties climbing it..."},
+      {"field": "grade", "says": "Class 3-4"},
+      {"field": "rock_grade", "says": "Class 3-4"},
+      {"field": "pitch_detail[0].grade", "says": "Class 3-4"}
+      ],
+     "why": "rope_note describes the crux as 5th-class (roped technical) terrain, one full class above the Class 3-4 ceiling stated by grade, rock_grade and pitch_detail.",
+     "internal_resolution": "Three fields (grade, rock_grade, pitch_detail) agree on Class 3-4, and pro_needs describes protection as optional for 'one or two exposed class-4 steps'; rope_note's '5th-class' framing is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "name": "Standard Scramble",
+   "area": "Eagle Rock",
+   "contradictions": [
+    {
+     "fact": "distance: dist_km is one-way, itinerary miles is round trip",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "1.29 (~0.8 mi, one-way - matches waypoints[5].distMi: 0.8 and overview's '0.8 miles one-way')"},
+      {"field": "itinerary.days[0].miles", "says": "1.6 (round trip)"}
+     ],
+     "why": "dist_km is one-way while itinerary's miles figure is round trip for the same route; both could be presented as 'the distance' on different tabs of the same page.",
+     "internal_resolution": "Not a true numeric conflict — dist_km (0.8 mi) times 2 equals itinerary's 1.6 mi — but flagged per the brief's own guidance that a one-way/round-trip dist_km mismatch is low priority but reportable.",
+     "needs_research": false
+    },
+    {
+     "fact": "access.fees claims no fee; access.passRequired states an explicit dollar fee",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.fees", "says": "None — no climbing fee (National Forest, not Mount Rainier NP)"},
+      {"field": "access.passRequired", "says": "Northwest Forest Pass required at the FR6517 trailhead parking — $5/day or $30/year (also honored: America the Beautiful federal interagency pass)"},
+      {"field": "access.parking_pass", "says": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."}
+     ],
+     "why": "access.fees flatly denies any fee, while the same access object's passRequired field states a specific $5/day or $30/year cost for the very same trailhead.",
+     "internal_resolution": "passRequired + parking_pass agree a paid pass is required; access.fees' 'None' is the direct outlier within the same object.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "name": "East Ridge Scramble",
+   "area": "Grotto Mountain",
+   "contradictions": [
+    {
+     "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "2138 / 2138"},
+      {"field": "waypoints[0] (trailhead).elev / waypoints[-1] (summit).elev", "says": "3480 / 5618 (net diff = 2,138 ft, matching gain_ft)"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "3400 / 3400"},
+      {"field": "approach", "says": "...about 2.4 miles/3,900 ft one-way to the 5,618 ft high point..."}
+     ],
+     "why": "Three different gain totals (2,138 / 3,400 / 3,900) are given for the same climb; itinerary's Trip Plan day row and the header's gain_ft would both render on the page and disagree by 59-82%.",
+     "internal_resolution": "gain_ft (2,138) is corroborated by the route's own trailhead/summit waypoint elevations (5,618-3,480=2,138); itinerary's 3,400 and approach's 3,900 are unsupported outliers that also disagree with each other.",
+     "needs_research": false
+    },
+    {
+     "fact": "pro_needs/gear say no rack is used; sling_rack/rope fields describe an actual rack",
+     "severity": "high",
+     "claims": [
+      {"field": "pro_needs", "says": "This is an unroped scramble - no fixed protection or rack is used on the standard line."},
+      {"field": "gear", "says": "helmet, ice axe early season, trekking poles, sturdy boots or gaiters (no rack or rope listed)"},
+      {"field": "sling_rack", "says": "cams: small set to ~2in; nuts: small stopper set; runners: 2-3 shoulder-length slings + webbing for anchors"},
+      {"field": "rope_type / rope_length_m", "says": "single dynamic / 30"},
+      {"field": "rope_note", "says": "Parties describe a Class 4 step near the summit col; parties have carried and used a rope plus webbing/slings for protection or a short rappel."}
+     ],
+     "why": "The PROTECTION + RACK section of this route renders pro_needs' blanket 'no rack is used' claim right alongside a detailed cam/nut/sling rack and a 30m rope that rope_note itself says parties actually carry and use.",
+     "internal_resolution": "rope_note describes real usage at a specific Class 4 step, and the hazards/watch_out fields flag that step too, so the rack/rope fields look genuine; pro_needs' 'no rack' claim is the likely outdated outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "trailhead waypoint coordinates are geometrically impossible for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0] (NF-6514-410 road's end).lat/lng", "says": "47.776833, -121.344633"},
+      {"field": "waypoints[-1] (Grotto Mountain summit).lat/lng", "says": "47.76321, -121.42058"},
+      {"field": "approach_logistics.trailheadLat/trailheadLng", "says": "47.776833, -121.344633 (same value repeated)"},
+      {"field": "approach / itinerary.days[0]", "says": "one-way distance is about 2.4 miles (4.8 mi round trip)"}
+     ],
+     "why": "The straight-line distance between the trailhead's own coordinates and the summit's own coordinates on this route is roughly 3.6-3.7 miles - farther than the route's own stated 2.4-mile one-way trail distance, which is impossible (a trail can't be shorter than the straight line between its endpoints). All other waypoints on this route cluster correctly near the real peak; only the trailhead coordinate (and its duplicate in approach_logistics) is out of place.",
+     "internal_resolution": "The trailhead elevation (3,480 ft) matches the route's own approach text, so only the lat/lng pair looks wrong/contaminated, not the whole waypoint.",
+     "needs_research": true
+    },
+    {
+     "fact": "approach_variants season extends past the route's stated season",
+     "severity": "low",
+     "claims": [
+      {"field": "season / best_season", "says": "Jul-Sep"},
+      {"field": "approach_variants[0].season", "says": "July to October"},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "only July, August, September listed (no October)"}
+     ],
+     "why": "The approach variant claims the route is viable into October, while season, best_season and the seasonal_guidance month breakdown all stop at September with no October entry.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,431 @@
+{
+ "file": "r621.json",
+ "results": [
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Side of the peak climbed",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The standard lines go up the south side (South Ridge or Middle Peak's south side) from O'Neil Pass; the north side holds glaciers/permanent snowfields.",
+   "evidence": "The Olympic Mountain Rescue climbers' guide lists only two routes, both Grade I Class 4 'via O'Neil Pass and Middle Peak' and 'via O'Neil Pass and the South Ridge', and notes north-side glaciers/year-round snowfields. On the row, approach, descent_text, aspect (South / Southeast), hazards[1] (north/east cornices) and climate.bySeason.spring (north/east snow) all agree on the south side; only the itinerary notes/schedule (and the copied timing note) say north/northwest.",
+   "sources": [
+    "https://sites.google.com/site/climbersguideolympics/peaks/skokomish-duckabush-group/duckabush-mount"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "toward the peak's northwest slopes/ridge",
+     "replace": "toward the peak's south side and South Ridge",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Side of the peak climbed"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "toward the peak's northwest slopes/ridge",
+     "replace": "toward the peak's south side and South Ridge",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Side of the peak climbed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "toward Duckabush's north side.",
+     "replace": "toward Duckabush's south side.",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Side of the peak climbed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Mount Duckabush's north/northwest slopes within striking distance",
+     "replace": "Mount Duckabush's south-side routes within striking distance",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Side of the peak climbed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Route grade (Class 2-3 vs Class 4)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Olympic Mountain Rescue climbers' guide rates both standard routes (via O'Neil Pass and Middle Peak; via O'Neil Pass and the South Ridge) Grade I, Class 4, with the East and Middle subpeaks Class 3; this matches the approach text. No second independent source giving a class for the main-summit route could be found (Peakbagger/SummitPost blocked, no trip reports located; a 2005 forum post mentions a Class 3 arete route between the north-side glaciers from an older guide edition). Row stays split: grade/itinerary say Class 2-3, waypoint/partner requirements Class 3, approach/descent_text Class 4. Also note approach says 'in the regional climbers' guide' (a source mention) that should go when this is settled.",
+   "sources": [
+    "https://sites.google.com/site/climbersguideolympics/peaks/skokomish-duckabush-group/duckabush-mount",
+    "https://cascadeclimbers.com/forum/topic/35180-white-mountain-mt-duckabush-info/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Summit elevation / which summit is highest",
+   "verdict": "fixed",
+   "correct_value": "Main summit ~6,254 ft (NAVD88) is the high point; East Peak ~6,233 ft lies ~0.3 mi away and is lower.",
+   "evidence": "The Olympic Mountain Rescue climbers' guide gives the main summit 6,250 ft with subpeaks East Peak 6,233 ft and Middle Peak 6,225 ft. Peakery lists Mount Duckabush 6,250 ft and its East Peak 6,233 ft, 0.3 mi away; Wikipedia and PeakVisor give 6,254 ft (NAVD88), matching the row's summit waypoint and high_point_ft. The '3.4 mi NNE' figure matches White Mountain (5.4 km NNE per PeakVisor), not the East Peak; no source for an East Peak higher than the main summit was found (Peakbagger could not be read). NOTE: the area header elevation_ft (6232) lives on the areas row and is not patched here — it should become 6254.",
+   "sources": [
+    "https://sites.google.com/site/climbersguideolympics/peaks/skokomish-duckabush-group/duckabush-mount",
+    "https://peakery.com/mount-duckabush-washington/",
+    "https://peakery.com/mount-duckabush-east-peak-washington/",
+    "https://en.wikipedia.org/wiki/Mount_Duckabush",
+    "https://peakvisor.com/peak/mount-duckabush.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Mount Duckabush (6,232 ft) is",
+     "replace": "Mount Duckabush (6,254 ft) is",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Summit elevation / which summit is highest"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "LIDAR survey data actually puts a subsidiary East Peak, about 3.4 miles NNE, roughly 7 ft higher (6,239 ft) than the traditionally-climbed main summit — parties chasing the true high point sometimes tag both.",
+     "replace": "A subsidiary East Peak (about 6,233 ft), roughly 0.3 miles from the main summit, is slightly lower, and some parties tag both.",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Summit elevation / which summit is highest"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "Ambiguous true high point: LIDAR data lists the East Peak (6,239 ft, ~3.4 mi NNE) roughly 7 ft higher than the traditionally-climbed main summit (6,232 ft)",
+     "replace": "Several closely spaced summits: the main summit (6,254 ft) is the high point, with the slightly lower East Peak (about 6,233 ft) roughly 0.3 mi away, so confirm which top you are on",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Summit elevation / which summit is highest"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "Since the true high point is disputed, some peakbaggers tag both the main summit and the East Peak, ~3.4 miles away",
+     "replace": "Some peakbaggers also tag the slightly lower East Peak, roughly 0.3 miles from the main summit",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Summit elevation / which summit is highest"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "to the summit (6,232-6,254 ft).",
+     "replace": "to the summit (6,254 ft).",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Summit elevation / which summit is highest"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "summit (6,232-6,254 ft).",
+     "replace": "summit (6,254 ft).",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Summit elevation / which summit is highest"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp",
+   "verdict": "fixed",
+   "correct_value": "Marmot Lake ~4,400 ft",
+   "evidence": "USGS 3DEP ground elevation at the row's own Marmot Lake pin reads ~4,390-4,400 ft, and an MB Guiding trip log gives Marmot Lake Camp at 4,400 ft (Upper Duckabush Camp 2,694 ft); the 4,921 ft figure is just 1,500 m converted from a rounded app listing. So the bivy card's 4,400 ft is right and the waypoint/approach 4,900 ft are wrong. With the lake at 4,400 ft the summit (6,254) is ~1,850 ft above it, matching itinerary day 3 gain of 1,800 ft. The bivy note's '1.1 miles' above Upper Duckabush is itself too short (trail is ~3.5 mi) but bivy is not patched here.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.36363&y=47.64895&units=Feet&wkid=4326",
+    "https://mbguiding.ca/skokomish-upper-duckabush-olympic-national-park/",
+    "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 4921,
+     "value": 4400,
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to reach Marmot Lake (~4,900 ft)",
+     "replace": "to reach Marmot Lake (~4,400 ft)",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "about 1.3 mi and 1,300 ft below Mount Duckabush's summit ridge",
+     "replace": "about 1.3 mi and roughly 1,850 ft below Mount Duckabush's summit",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Trail miles to Marmot Lake / O'Neil Pass",
+   "verdict": "fixed",
+   "correct_value": "~20+ trail miles from the trailhead to Marmot Lake; ~21-22 to O'Neil Pass (16.1 mi is from the park boundary)",
+   "evidence": "NPS: 6.2 mi trailhead to park boundary, then 16.1 mi park boundary to O'Neil Pass (so ~22 mi from the trailhead). Hiking Project / Tracing the Fjord describe the Duckabush trail running more than 20 miles to Marmot Lake; Hiiker gives a 43.5 mi round trip to Marmot Lake. The '16 miles from the trailhead' copies misread the park-boundary figure.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+    "https://www.hikingproject.com/trail/7037741/duckabush-river-trail-803",
+    "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      3
+     ],
+     "find": "(16+ trail miles one-way to O'Neil Pass/Marmot Lake",
+     "replace": "(20+ trail miles one-way to O'Neil Pass/Marmot Lake",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "~16 miles one-way just to O'Neil Pass",
+     "replace": "~21-22 miles one-way just to O'Neil Pass",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "it's still ~16 miles back to the trailhead",
+     "replace": "it's still ~20 miles back to the trailhead",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "retrace the Duckabush River Trail roughly 16 miles to the trailhead",
+     "replace": "retrace the Duckabush River Trail roughly 20 miles to the trailhead",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "an approach that runs 16+ trail miles one-way",
+     "replace": "an approach that runs 20+ trail miles one-way",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Night-one camp identity",
+   "verdict": "fixed",
+   "correct_value": "Ten Mile Camp (~10.7 mi), distinct from Upper Duckabush Camp (~15-16 mi)",
+   "evidence": "An Oregon Hikers trip report reaches 10 Mile Camp at 10.7 miles and Marmot Lake the next day; Hiiker lists 10-Mile Camp (~16 km) and Upper Duckabush Camp (~24 km) as separate camps. The day-1 objective's parenthetical wrongly equates them.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=22526",
+    "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "to Ten Mile (Upper Duckabush) Camp",
+     "replace": "to Ten Mile Camp",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Night-one camp identity"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Wilderness permit: self-issue vs reserved",
+   "verdict": "fixed",
+   "correct_value": "Permit must be reserved in advance; no self-registration at trailheads",
+   "evidence": "NPS: all wilderness backpacking permits must be obtained in advance (online, by phone or at a Wilderness Information Center); no sites held as same-day walk-ups. Washington's National Park Fund: 'Self-registration permits at trailheads are not available.'",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue Olympic NP wilderness permit needed further in for overnight.",
+     "replace": "an Olympic NP wilderness permit, reserved in advance, is needed for any overnight stay inside the park.",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Wilderness permit: self-issue vs reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "you'll also need a self-issue Olympic National Park wilderness permit further along if you're staying overnight.",
+     "replace": "you'll also need an Olympic National Park wilderness permit, reserved in advance, if you're staying overnight inside the park.",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Wilderness permit: self-issue vs reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Camp quota status",
+   "verdict": "fixed",
+   "correct_value": "The Duckabush corridor camps are not quota areas (but permits must still be reserved in advance)",
+   "evidence": "The NPS wilderness reservations page lists the quota areas (Ozette coast, Royal Basin, Lake Constance, Upper Lena, East Fork Quinault, Flapjack Lakes, Grand/Badger Valleys, Sol Duc/Seven Lakes, Hoh Lake/C.B. Flats, select Hoh River sites) — Duckabush/Marmot Lake is not among them. Washington's National Park Fund's quota list likewise omits Duckabush.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "the quota-limited Duckabush corridor camps (10-Mile, Upper Duckabush, Marmot Lake) fill for summer weekends",
+     "replace": "the Duckabush corridor camps (10-Mile, Upper Duckabush, Marmot Lake) are not quota areas, but every night must still be reserved in advance",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Camp quota status"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Entrance fee",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No NPS entrance fee at this access; a trailhead parking pass plus the wilderness permit apply",
+   "evidence": "WTA lists only an America the Beautiful or Northwest Forest Pass plus a backcountry camping permit for the Duckabush trail. On the row, access.fees, access.parking_pass, access.passRequired and the trailhead waypoint note all agree on a Forest Service parking pass with no NPS entrance fee; access.notes is the outlier boilerplate.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/upper-duckabush"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only the trailhead parking pass and wilderness camping permit apply.",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Entrance fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Overnight permit text describes a different area",
+   "verdict": "fixed",
+   "correct_value": "Bear canisters are required in the Duckabush corridor; check fire-related closure status",
+   "evidence": "The NPS Duckabush River Trail page states bear canisters are required for food storage in this corridor (camps 10-Mile, Upper Duckabush, Marmot Lake); Hiiker also notes required bear canisters and recent fire-related closures on this route. Flapjack Lakes and Staircase are on a different trail system.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+    "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first.",
+     "replace": "Bear canisters are required in the Duckabush corridor, and fire-related closures have affected these trails, so check status first.",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Overnight permit text describes a different area"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (33.8 km = 21 mi) is the one-way approach shown as 'Approach (one way)', matching the summit waypoint at 21.1 mi; the itinerary's ~43 mi is the round trip, and the total note says 'round-trip'.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Itinerary total note gain vs gain_ft",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.totalNote says '~7,900 ft of cumulative gain', but gain_ft is 8,100 and the itinerary days' gainFt sum to 8,100 (7,900 is the loss total). No outside source states the car-to-car gain for this route (an app listing gives 2,685 m, a different figure), so not patched.",
+   "sources": [
+    "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

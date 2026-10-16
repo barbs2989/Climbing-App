@@ -1,0 +1,139 @@
+{
+ "id": "wa_direct_southwest_buttress",
+ "name": "Direct Southwest Buttress",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Same Eldorado Creek trail and glacier approach as the standard Southwest Buttress, camping within reach of the buttress's toe.",
+    "hours": 7,
+    "miles": 5.8,
+    "title": "Approach to high camp near the McAllister/Marble Creek col",
+    "gainFt": 5500,
+    "lossFt": 0,
+    "packLb": 43,
+    "schedule": [],
+    "objective": "Reach high camp below the Southwest Buttress"
+   },
+   {
+    "n": 2,
+    "note": "A more sustained direct start that climbs straight up the buttress crest rather than detouring through the standard approach gully, joining the regular Southwest Buttress finish higher up. Expect a longer, more continuous day of steep crack and slab climbing. Descend as for the standard route - rappel the approach gully, or a double-rope rappel from the fixed anchor near the summit.",
+    "hours": 12.5,
+    "miles": 4.2,
+    "title": "Climb the Direct Southwest Buttress",
+    "gainFt": 1700,
+    "lossFt": 1700,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "3:00 AM",
+      "label": "Leave camp roped up",
+      "detail": ""
+     },
+     {
+      "time": "5:00 AM",
+      "label": "Reach the toe of the buttress",
+      "detail": "Direct start, bypassing the approach gully."
+     },
+     {
+      "time": "5:45 AM",
+      "label": "Start climbing",
+      "detail": "Sustained crack/slab pitches up the buttress crest."
+     },
+     {
+      "time": "~4:00 PM",
+      "label": "Summit",
+      "detail": ""
+     },
+     {
+      "time": "5:00 PM",
+      "label": "Begin rappels",
+      "detail": "Approach gully or fixed near-summit double-rope rappel."
+     },
+     {
+      "time": "~9:00 PM",
+      "label": "Back at camp",
+      "detail": ""
+     }
+    ],
+    "objective": "Summit via the direct-start buttress line and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Reverse the approach back to the Cascade River Road trailhead.",
+    "hours": 5.5,
+    "miles": 5.8,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 5500,
+    "packLb": 37,
+    "schedule": [],
+    "objective": "Break camp and return to the trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip (~16.2 mi, ~7,200 ft total gain) - the direct-start variant of the Southwest Buttress, slightly longer and more sustained than the standard line, with a full 11-13 hr summit day."
+ },
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek Trailhead (Cascade River Road)",
+   "note": "Same start as the standard Southwest Buttress; cross the Cascade River on a log downstream of the parking area.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From SR 20 at Marblemount, cross the Skagit River and follow the Cascade River Road about 20 miles, gravel for the second half, to the small Eldorado trailhead lot on the right near milepost 20, about 2,100 ft. Overnight stays need a North Cascades backcountry permit from the Marblemount Wilderness Information Center."
+  },
+  {
+   "lat": 48.538,
+   "lng": -121.118,
+   "elev": 7500,
+   "name": "Eldorado/Inspiration Glacier high camp",
+   "note": "Base camp on the Inspiration Glacier shelf shared with the standard Southwest Buttress route.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "From the lot, walk about 90 feet back down the road and look for the log or clump of trees spanning the river; cross there, then head roughly 100 feet away from the water to pick up the climbers' path and turn upstream on it. The path climbs steeply through forest and talus into Eldorado Basin and on up to the Inspiration Glacier shelf, about 5,500 ft of gain to camps near 7,400-7,600 ft."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 8000,
+   "name": "Inspiration–McAllister Glacier col",
+   "note": "Crossing point from Inspiration Glacier onto the McAllister Glacier, shared with the standard buttress approach.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Rope up at camp and cross the Inspiration Glacier northeast to the low point on the divide. The ground is otherwise gentle; crevasses are the only real difficulty."
+  },
+  {
+   "lat": 48.548,
+   "lng": -121.14136190476191,
+   "elev": 7600,
+   "name": "Marble Creek–McAllister pass",
+   "note": "Shared approach point; the Direct variant departs the standard buttress line higher on the wall, not at the base.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Drop off the col onto the McAllister Glacier and work down and across it, keeping to its skier's right where the ice steepens and breaks up, then traverse toward the pass."
+  },
+  {
+   "lat": 48.54929,
+   "lng": -121.13929797619048,
+   "elev": 8400,
+   "name": "Direct Southwest Buttress topout",
+   "note": "Harder direct start (5.10a) rejoins the standard buttress line before the final corner to the summit ridge.",
+   "type": "Topout",
+   "distMi": null,
+   "directions": "About 700 vertical feet below the pass, start up the prominent gully running to the base of the buttress; it usually holds snow year-round. Rope up before its top, because the moat guarding the base of the rock can open into a deep, exposed gap. From the gully exit do not traverse right onto the standard 1985 line: carry straight on up two direct pitches of 4th and low-5th scrambling to three vertical cracks, take the rightmost at about 5.8 into the strenuous 5.10 crux and mantel onto a large bench, then follow awkward 5.8+ ground toward the large white slabby rock where the original route comes back in."
+  },
+  {
+   "lat": 48.5497,
+   "lng": -121.1386,
+   "elev": 8440,
+   "name": "Dorado Needle summit",
+   "note": "True summit shared with the standard Southwest Buttress finish.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "From the junction with the 1985 line, blocky mid-5th rock and a final corner lead onto the summit ridge, then a short scramble along it gains the true summit."
+  }
+ ]
+}

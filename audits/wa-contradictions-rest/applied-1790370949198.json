@@ -1,0 +1,294 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "grade",
+   "path": [],
+   "fact": "Route difficulty (5.6 vs class 3/4)"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Route difficulty (5.6 vs class 3/4)"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Route difficulty (5.6 vs class 3/4)"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Route difficulty (5.6 vs class 3/4)"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Which side the route climbs"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Approach length in days"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach length in days"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach length in days"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach length in days"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Permit fee"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "How the Terror Basin permit is obtained"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road seasonal status"
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Road seasonal status"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "before": {
+    "grade": "Grade III, 5.6",
+    "beta": "From a high camp near the Terror Glacier or in Crescent Creek Basin, parties cross The Barrier (the connecting ridge between Terror and Crescent Creek basins) and work across broken, sometimes loose terrain toward the notch south of Mount Degenhardt, then traverse east to the base of Pyramid's south side. The line climbs a gully/couloir system on scrambling terrain with a short 5.6 step; staying left in the gully rather than attempting the overhanging rock directly above it is reported as the easier, more sensible line. Rock quality is inconsistent — solid gneiss in places, dirt- and choss-covered in others — and the peak sees comparatively little independent traffic, most parties tagging it en route between Degenhardt and Inspiration Peak.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Multi-day approach fitness required - Terror Basin/Crescent Creek Basin access involves 6,000+ ft of gain on unmaintained, bushwhacky, route-finding-heavy terrain typical of Southern Pickets approaches",
+      "packWeight": "Overnight/multi-day pack (commonly cited around 40-50 lb for Southern Pickets trips) for camp gear plus a rock rack for the short technical section"
+     },
+     "approachTime": "Multi-day approach (typically 1-2 days in to Terror Basin/Crescent Creek Basin) before the short summit push; not a single-push day route",
+     "requiredSkills": [
+      "5th class rock climbing to 5.6 on loose/choss rock",
+      "snow travel and snow-to-rock transitions (often reported as undercut/awkward)",
+      "off-trail alpine navigation and route-finding in glaciated/talus terrain",
+      "comfort with sustained exposure on a remote, rescue-unfriendly objective",
+      "basic self-rescue and glacier/crevasse awareness for the approach"
+     ],
+     "experienceLevel": "Experienced alpine climber with prior North Cascades choss/loose-rock mileage; this is not a beginner or intermediate objective given the remote approach and Grade III commitment"
+    },
+    "detailed_rack": "A light rock rack (small-to-medium cams and a handful of nuts) covers the short 5.6 step; the bulk of the gear need is for the Terror Glacier crossing and Barrier traverse — rope, harness, crevasse-rescue kit, ice axe, and crampons.",
+    "pro_tips": [
+     "Climb Pyramid as part of a link-up with Inspiration Peak and/or Mount Degenhardt rather than as a standalone trip -- the ~2-day approach doesn't justify a single-summit visit.",
+     "Reserve your Terror Basin/Crescent Creek Basin wilderness permit as early as Recreation.gov allows -- Southern Pickets zone dates in August fill quickly.",
+     "Carry a satellite communicator; there's no cell service anywhere in the range and self-rescue is the realistic default.",
+     "A harder alternative exists on the east ridge/face (roughly Grade II, 5.8), climbed by Bunker, Haley, and Wallace during their Southern Picket enchainment, who found surprisingly good rock — an option for parties wanting more technical climbing than the standard Class 3 west-side scramble."
+    ],
+    "approach": "From the Goodell Creek trailhead (~600 ft elevation, an unsigned pullout on an unpaved spur road off SR-20 directly across from Newhalem/Goodell Creek Campground), the climbers' trail parallels Goodell Creek for an easier 4.5 miles before a punishing 2.5-mile, ~4,700 ft push to treeline in Terror Basin (total ~7 mi / ~5,200 ft gain to camp) -- the tread is faint even when snow-free, brush is dense, and there are Class 3 root-pull sections through cliff bands. Fit parties can make Terror Basin in one long day; most plan on two. From Terror Basin, cross 'The Barrier' -- the basin's steep west headwall -- at its upper notch (not the lower Stump Hollow crossing), via a moat and a short low-5th-class step, to reach Crescent Creek Basin, which sits below Inspiration, Pyramid, and Degenhardt. A direct approach to Crescent Creek Basin is also possible but is buggier and less consistent than the Terror Basin line.",
+    "approach_variants": [
+     {
+      "name": "Terror Basin, the upper Barrier crossing and the Degenhardt col",
+      "notes": "From the Goodell Creek trailhead the climbers' path parallels the creek on easy old roadbed before a punishing push to treeline in Terror Basin — faint tread, dense brush, and class 3 root-pull sections through cliff bands. Fit parties reach the basin in one long day; most take two. From the basin cross the Barrier at its UPPER notch, near 6,200 ft, by way of heather benches and loose rock and moats, into Crescent Creek Basin below the peaks. A direct line into Crescent Creek Basin exists but is buggier and less consistent.",
+      "season": "Mid-July to September, once the Crescent and Terror Creek approach is snow-free enough to be reliably passable",
+      "hazards": [
+       "Broken, loose ground working across to the notch",
+       "Rock quality flips repeatedly between clean gneiss and dirt-covered choss",
+       "A few low fifth-class moves off the ridge crest with no easy retreat",
+       "The lower Stump Hollow Barrier crossing leads to a different objective and is the wrong one here"
+      ],
+      "baseFinding": "The col between this peak and Degenhardt is the base, and the climbing starts by dropping a few low fifth-class moves OFF the crest at the col onto the peak's western side — you do not start below the col and climb up to it. The proof once you are on that side is a gully or couloir system leading up and right toward the summit with a band of clearly OVERHANGING rock capping it directly above. The line stays LEFT inside the gully and avoids that overhang entirely; parties who take the roof head-on have found the hard and unnecessary way. Two negative markers. If you crossed the Barrier at the lower Stump Hollow notch rather than the upper one near 6,200 ft, you are set up under a different peak entirely. And a stretch of rubbish, dirt-covered rock is not on its own evidence you are off route here, because this peak's rock alternates between surprisingly solid gneiss and choss on the same face."
+     }
+    ],
+    "access": {
+     "fees": "$10 per person plus a $6 reservation fee for advance Recreation.gov permits; youth 15 and under are free.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Bear canisters are required in certain zones/camps; loaner canisters can only be borrowed with in-person pickup at the Marblemount Wilderness Information Center. Standard NPS wilderness rules apply: pack out all waste, no campfires above treeline, Leave No Trace.",
+     "permit": "wilderness/backcountry permit required for any overnight stay. Reserve in advance on Recreation.gov, watch the mandatory rules/safety video, and email noca_wilderness@nps.gov no more than 3 days before your trip to confirm; or get a walk-up permit in person the day of/before your trip (NPS holds about 40% of sites for walk-ups). Southern Pickets camps fall under the Terror Basin and Crescent Creek Basin cross-country zones.",
+     "closures": "No seasonal gate affects the Goodell Creek trailhead itself -- SR-20 stays open year-round to Newhalem -- but the unmaintained climbers' trail and the Barrier crossing are typically only snow-free and reasonably passable from mid-July into September.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (NPS)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "NPS backcountry/wilderness permit (this is inside North Cascades National Park, not a Northwest Forest Pass area).",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "Free NPS wilderness/backcountry permit required for any overnight stay in Terror Basin or Crescent Creek Basin; reserve in advance on Recreation.gov or obtain a walk-up permit at the Marblemount Wilderness Information Center.",
+    "waypoints": [
+     {
+      "lat": 48.68276,
+      "lng": -121.26928,
+      "elev": 600,
+      "name": "Goodell Creek Trailhead",
+      "note": "Park at the gravel pit off the Goodell Creek Campground access road near Newhalem; self-issue North Cascades NP wilderness permit required for overnight camping in Terror Basin.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Take SR-20 to Newhalem and turn off onto the unpaved Goodell Creek Campground access road, the spur directly across from the campground. The trailhead itself is an unsigned pullout at about 600 ft; park at the gravel pit by the upper group camp. Fill out a self-issue North Cascades wilderness permit here before you leave the car — it is required for overnight camping in Terror Basin."
+     },
+     {
+      "lat": 48.732455,
+      "lng": -121.292459,
+      "elev": 1750,
+      "name": "Terror Creek climbers' trail cairn",
+      "note": "Old logging-road tread ends here; a rock arrow, post, and large cairn mark the unmaintained climbers' trail turning east off the Goodell Creek Trail toward Terror Basin.",
+      "type": "Junction",
+      "distMi": 4.3
+     },
+     {
+      "lat": 48.751124,
+      "lng": -121.285693,
+      "elev": 4800,
+      "name": "Rock band / steep gully bushwhack",
+      "note": "Faint, root-pulling Class 3 section through a cliff band with dense brush; easy to lose the boot path here even in good visibility.",
+      "type": "Hazard",
+      "distMi": 5.8
+     },
+     {
+      "lat": 48.756352,
+      "lng": -121.295213,
+      "elev": 5800,
+      "name": "Terror Basin camp",
+      "note": "Flat gravelly basin at treeline with a reliable running-water source and views of the Southern Pickets; standard base camp for Pyramid, Degenhardt, and Terror.",
+      "type": "Campsite",
+      "distMi": 7
+     },
+     {
+      "lat": 48.758515,
+      "lng": -121.302556,
+      "elev": 6200,
+      "name": "Upper Barrier crossing notch",
+      "note": "Cross heather benches and loose rock/moats to this ~6,200 ft notch, the upper Barrier crossing into Crescent Creek Basin (use this crossing, not the lower Stump Hollow one, for Pyramid/Degenhardt).",
+      "type": "Junction",
+      "distMi": 7.6
+     },
+     {
+      "lat": 48.767024,
+      "lng": -121.301615,
+      "elev": 7500,
+      "name": "Degenhardt-Pyramid col",
+      "note": "Gain the ridge crest here; a few low-5th-class moves off the ridge lead onto Pyramid's west side to start the summit scramble.",
+      "type": "Junction",
+      "distMi": 8.3
+     },
+     {
+      "lat": 48.77144,
+      "lng": -121.29193,
+      "elev": 7920,
+      "name": "The Pyramid",
+      "note": "West-side Class 3 scramble tops out on the true summit; descend by reversing the scramble back to the Degenhardt-Pyramid col, with a short rappel where needed.",
+      "type": "Summit",
+      "distMi": 8.6
+     }
+    ],
+    "road": {
+     "name": "Goodell Creek access",
+     "status": "Seasonal",
+     "driveNote": "Standard Southern Pickets approach",
+     "seasonalGate": "Winter closures"
+    },
+    "grade_num": 6
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{"file": "s068.json", "results": [
+ {"id": "wa_sews_sw_rib", "fact": "Round-trip distance", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Published round-trip figures still disagree: one club route page gives 4.0 mi, a climbing-project blog gives 5 mi round trip, and a GPS-tracked party recorded 9.72 km (~6 mi) including wandering. No two independent sources agree on a one-way approach distance, so dist_km (2 km) and the itinerary's 6 mi were left alone. A GPS track from the Blue Lake trailhead to the Y-larch would settle the one-way figure.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib", "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html", "https://www.francisbaileyh.com/2022/10/01/south-early-winters-spire/"],
+  "patches": []},
+ {"id": "wa_sews_sw_rib", "fact": "Approach time", "verdict": "fixed", "correct_value": "About 1-1.5 hours from the Blue Lake trailhead to the Y-larch",
+  "evidence": "A 2022 trip report reached the base of pitch one about 1 hour from the trailhead. A separate party (2015) took 60-70 minutes on the Blue Lake trail to the notch below the South Arete, a point beyond the SW Rib base. The one 2-hour report and a guided-trip allowance of 2.5 hours are the slow outliers, so the 1.5-2 hr statements are brought into line with the row's own 1-1.5 hr partner figure and the itinerary's 1 hr.",
+  "sources": ["https://www.francisbaileyh.com/2022/10/01/south-early-winters-spire/", "https://stephabegg.com/trip-reports/washington/washington-pass/"],
+  "patches": [
+   {"id": "wa_sews_sw_rib", "fact": "Approach time", "op": "replace_text", "column": "approach", "path": [], "find": "Total approach time: 1.5-2 hours", "replace": "Total approach time: 1-1.5 hours"},
+   {"id": "wa_sews_sw_rib", "fact": "Approach time", "op": "set", "column": "approach_variants", "path": [0, "hours"], "expect": "1.5-2", "value": "1-1.5"}
+  ]},
+ {"id": "wa_sews_sw_rib", "fact": "Total gain", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "gain_ft is 2407 while the itinerary day and totalNote give 2,621 / ~2,600 ft. Outside figures disagree: a club route page says 3,000 ft, a climbing-project blog 2,520 ft, and a GPS-tracked party 646 m (~2,120 ft). No figure can be adopted; a GPS-measured car-to-car gain would settle it.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib", "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html", "https://www.francisbaileyh.com/2022/10/01/south-early-winters-spire/"],
+  "patches": []},
+ {"id": "wa_southern_man", "fact": "Bolt-ladder pitch", "verdict": "fixed", "correct_value": "Southern Man does not climb the Direct East Buttress bolt ladder; it breaks out left of it onto a 5.10a section",
+  "evidence": "The route's own page says it shares the Direct East Buttress's lower pitches and busts out left of the bolt-ladder pitch onto funky 10a. The Direct's pitch list puts its first ladder right after the 5.9+ roof pitch (row P3). An independent 2015 party describes the Direct's lower pitches as two easy pitches, the 5.9+ roof, then a 5.8 crack/roof leading to the ladders, and says Southern Man leaves the East Buttress about halfway up for 5 headwall pitches, which with 9 total leaves no room for the ladder. So pitch_detail[3] (a 5.11a/A0 bolt ladder) is wrong and the beta is right.",
+  "sources": ["https://www.mountainproject.com/route/110702146/southern-man", "https://www.mountainproject.com/route/106883451/direct-east-buttress", "https://stephabegg.com/trip-reports/washington/washington-pass/"],
+  "patches": [
+   {"id": "wa_southern_man", "fact": "Bolt-ladder pitch", "op": "set", "column": "pitch_detail", "path": [3, "grade"], "expect": "5.11a/A0", "value": "5.10a"},
+   {"id": "wa_southern_man", "fact": "Bolt-ladder pitch", "op": "set", "column": "pitch_detail", "path": [3, "bolts"], "expect": 2, "value": null},
+   {"id": "wa_southern_man", "fact": "Bolt-ladder pitch", "op": "replace_text", "column": "pitch_detail", "path": [3, "notes"], "find": "The last pitch shared with the Direct East Buttress -- a bolt ladder through steep rock -- before Southern Man splits off around halfway up the wall onto its own south-facing headwall.", "replace": "Where the Direct East Buttress heads up its bolt ladder, Southern Man breaks out left instead onto an awkward 5.10a section, leaving the shared line about halfway up the wall on the way to its own south-facing headwall."},
+   {"id": "wa_southern_man", "fact": "Bolt-ladder pitch", "op": "replace_text", "column": "bail", "path": [], "find": "above the bolt-ladder pitch, belays are unfixed", "replace": "above the point where the route leaves the Direct East Buttress, belays are unfixed"}
+  ]},
+ {"id": "wa_southern_man", "fact": "Rack emphasis", "verdict": "fixed", "correct_value": "Double rack to #3 weighted to finger/thin-hand sizes; no wide-gear emphasis",
+  "evidence": "The wide-gear sentence in gear[0] (double rack to #3 plus #4, #5, #6; 'takes a lot of wide gear') matches word for word a 2013 note about the offwidth-heavy east face of Lexington Tower on the same author's Washington Pass page, not Southern Man. That same author's Southern Man report (2015) describes the headwall as steep, sustained 5.10-5.11 crack climbing, mostly fingers. The route's own page says sustained thin cracks. Both agree with detailed_rack and rack, so gear[0] is the outlier.",
+  "sources": ["https://www.mountainproject.com/route/110702146/southern-man", "https://stephabegg.com/trip-reports/washington/washington-pass/"],
+  "patches": [
+   {"id": "wa_southern_man", "fact": "Rack emphasis", "op": "replace_text", "column": "gear", "path": [0], "find": "plus a single #4 and a #5 or #6 — Southern Man reportedly takes a lot of wide gear, the opposite of a thin-crack assumption", "replace": "weighted toward finger and thin-hand sizes for the sustained thin cracks on the headwall"}
+  ]},
+ {"id": "wa_southern_man", "fact": "Season window", "verdict": "fixed", "correct_value": "Jun-Sep",
+  "evidence": "A party climbed Southern Man itself on June 21, 2015 in dry conditions. A different party climbed the shared Direct East Buttress start from the hairpin on June 8, 2014, with a snow-covered approach but a climbable route. With the row's own best_season and optimalWindow starting in late June, the season window should open in June, like the neighbouring SW Rib row (Jun-Sep).",
+  "sources": ["https://stephabegg.com/trip-reports/washington/washington-pass/", "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire"],
+  "patches": [
+   {"id": "wa_southern_man", "fact": "Season window", "op": "set", "column": "season", "path": [], "expect": "Jul-Sep", "value": "Jun-Sep"},
+   {"id": "wa_southern_man", "fact": "Season window", "op": "set", "column": "approach_variants", "path": [0, "season"], "expect": "Jul-Sep", "value": "Jun-Sep"}
+  ]},
+ {"id": "wa_south_early_winter_spire_east_buttress", "fact": "Bolts on the route", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The bolt ladders on pitches 4 and 6 belong to the Direct East Buttress (1968). The 1969 AAJ note says the two earlier east-buttress routes (1965) started at the base of the buttress and went around onto the NE and SE faces because blank sections blocked a direct line, so a non-direct route would not use those ladders. But no source describes this row's 6-pitch 5.8 line, so whether the row describes one of those older routes or duplicates the Direct cannot be settled. A pitch description of the 1965 lower-buttress routes would settle it.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12196938700/North-America-United-States-Washington-Cascade-Mountains-Early-Winter-Spires-South-Spire-Direct-East-Buttress", "https://www.mountainproject.com/route/106883451/direct-east-buttress"],
+  "patches": []},
+ {"id": "wa_south_early_winter_spire_east_buttress", "fact": "Round-trip distance", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Route pages and trip reports for the east-side approach give times (about 1.5 hr from the hairpin up Spire Gully) but no distance. No one-way or round-trip mileage was found, so dist_km 6.6 and the itinerary's 5.2 mi stay as they are. A GPS track from the hairpin to the buttress base would settle it.",
+  "sources": ["https://www.mountainproject.com/route/106883451/direct-east-buttress", "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire"],
+  "patches": []},
+ {"id": "wa_south_early_winter_spire_east_buttress", "fact": "Beta says the route is undocumented", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The AAJ confirms that non-direct east-buttress routes exist (two 1965 lines up the lower buttress, then onto the NE or SE face), which supports the row being a separate route. No source gives their pitches or grades, so the 6-pitch 5.8 pitch_detail cannot be confirmed and the beta's caveat cannot be dropped. A guidebook-level pitch description of those routes would settle it.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12196938700/North-America-United-States-Washington-Cascade-Mountains-Early-Winter-Spires-South-Spire-Direct-East-Buttress", "https://stephabegg.com/trip-reports/washington/washington-pass/"],
+  "patches": []}
+]}

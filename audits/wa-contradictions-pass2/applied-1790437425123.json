@@ -1,0 +1,362 @@
+{
+ "applied": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Which trail reaches the PCT (96 vs 97)"
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Which trail reaches the PCT (96 vs 97)"
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche forecast zone"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Snow on the boot path in July"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Glacier travel and crevasse rescue"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel and crevasse rescue"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Glacier travel and crevasse rescue"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Location of the first night's camp"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Approach terrain (trail vs cross-country)"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Approach terrain (trail vs cross-country)"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Approach terrain (trail vs cross-country)"
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Protection: fully bolted vs knob threads"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.4644,
+      "lng": -121.5178,
+      "elev": 4600,
+      "name": "Snowgrass Flats Trailhead (#96)",
+      "note": "Trail 96 begins here on FR 2150; Northwest Forest Pass required and self-issue Goat Rocks Wilderness permit at the trailhead kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead sits at the end of Forest Road 2150, at about 4,600 feet, where the Snowgrass Flat Trail (#96) begins. A Northwest Forest Pass is required, and a free self-issue Goat Rocks Wilderness permit is available at the trailhead kiosk. The access road has taken washout damage in past winters, so confirm current conditions before driving in."
+     },
+     {
+      "lat": 46.483746,
+      "lng": -121.481789,
+      "elev": 6400,
+      "name": "Snowgrass Flats meadows",
+      "note": "Trail 96 opens into heather meadows and wildflower bogs with reliable creek water; camping is prohibited within Snowgrass Flat itself per Gifford Pinchot wilderness regulations (36 CFR 261.58(e)) — use designated sites above/below the flats instead. Trail 86 splits here toward Goat Lake.",
+      "type": "Landmark",
+      "distMi": 3
+     },
+     {
+      "lat": 46.489239,
+      "lng": -121.476662,
+      "elev": 6550,
+      "name": "Trail 97 junction",
+      "note": "Trail 97 forks off Trail 96 and climbs west toward the PCT; stay on 97 to continue toward Old Snowy rather than continuing on 96.",
+      "type": "Junction",
+      "distMi": 4
+     },
+     {
+      "lat": 46.495711,
+      "lng": -121.472097,
+      "elev": 6900,
+      "name": "PCT junction",
+      "note": "Trail 97 tops out on the Pacific Crest Trail; turn north and climb a series of open benches with views of Mt. Adams and the Goat Rocks crest.",
+      "type": "Junction",
+      "distMi": 4.7
+     },
+     {
+      "lat": 46.513694,
+      "lng": -121.462348,
+      "elev": 7190,
+      "name": "Old Snowy climbers'-path junction",
+      "note": "Unmarked junction where an unmaintained climbers' path leaves the PCT for Old Snowy; many parties stash trekking poles/packs here before the scramble.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 46.51352,
+      "lng": -121.458623,
+      "elev": 7550,
+      "name": "Summit scree/talus scramble",
+      "note": "Final ~0.5 mi/350 ft leaves the tread for loose scree and talus with a short Class 3 hand-climbing section; watch for rockfall dislodged by climbers above and lingering steep snow into early summer.",
+      "type": "Hazard",
+      "distMi": 7.3
+     },
+     {
+      "lat": 46.51194,
+      "lng": -121.45389,
+      "elev": 7880,
+      "name": "Old Snowy Mountain",
+      "note": "True summit (7,880+ ft); panoramic views of Mt. Adams, Mt. Rainier, Mt. St. Helens and the McCall, Conrad and Meade Glaciers, with Packwood Glacier visible just below to the northwest.",
+      "type": "Summit",
+      "distMi": 7.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Typical Cascades subalpine summer pattern — clear mornings with building cloud through the day near this south-of-Rainier range",
+      "probability": "Afternoon thunderstorms are a known hazard on this route; parties should be off exposed terrain by early afternoon in summer"
+     },
+     "exposure": "Exposed class 3-4 scrambling above the saddle; loose rock increases both slip risk and rockfall risk onto climbers below, and a fall in the gully or near the summit block would have serious consequences",
+     "avalanche": {
+      "zone": "No dedicated NWAC forecast zone covers the Tatoosh Range/Pinnacle Peak specifically; nearest general guidance would come from Mount Rainier NPS/climbing ranger advisories rather than a standard NWAC zone",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "N/A",
+       "June": "Moderate",
+       "August": "N/A",
+       "October": "Low",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    }
+   }
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "July through September, with July-August the most reliable window",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow typically cleared from the boot path; core of the best-season window",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Lingering snow can still cover the saddle approach and summit scramble early in the month",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Driest, most stable conditions; also peak crowd month per trailhead sources",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within best season; stable but shortening days and possible early-season snow toward month's end",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "before": {
+    "itinerary": {
+     "cal": "Most parties climb May-July while snow still covers the loose upper scree slopes; later in the season the cleaver becomes unstable, exposed talus.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From Longmire, follow the Wonderland Trail over the Rampart (~1,100 ft climb) and down to Kautz Creek, then up through Indian Henry's Hunting Ground and the Mirror Lakes trail toward Pyramid Peak. Camp on rock slabs/benches near the 6,300-6,400 ft saddle at the base of Success Cleaver, where running water is usually available.",
+       "hours": 7,
+       "miles": 10,
+       "title": "Approach to high camp below the cleaver",
+       "gainFt": 4300,
+       "lossFt": 300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach camp near the 6,400 ft saddle / Pyramid Peak"
+      },
+      {
+       "n": 2,
+       "note": "Follow the broad, loose ridge of Success Cleaver up through class 3 rock (steep snow early season, unstable scree later) past benches at ~8,100-8,300 ft and ~9,400 ft to a good camp at the small col on the cleaver's crest near 10,700 ft. This is the technical crux of the approach and the pace is dictated by rockfall/snow conditions.",
+       "hours": 7,
+       "miles": 3,
+       "title": "Climb the cleaver to high camp",
+       "gainFt": 4300,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Gain the crest of Success Cleaver to ~10,700 ft"
+      },
+      {
+       "n": 3,
+       "note": "An alpine start crosses the rockfall chutes and gullies onto the Kautz Cleaver around 12,200 ft, with some 45-55 degree snow/ice steps near the top before topping out on Point Success. Many strong parties break camp after summiting and descend the same route all the way back to Longmire in one long day rather than adding a 4th day; parties wanting a shorter day instead drop only to the 6,400 ft camp and hike out the next morning.",
+       "hours": 15,
+       "miles": 12,
+       "title": "Summit push and exit to Longmire",
+       "gainFt": 3550,
+       "lossFt": 11400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "2:30 AM",
+         "label": "Leave high camp",
+         "detail": "Depart the 10,700 ft col on the cleaver crest."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach Kautz Cleaver junction",
+         "detail": "Transition off Success Cleaver onto the Kautz Cleaver/glacier terrain near 12,200 ft, good step-kicking snow."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Crux ice step",
+         "detail": "Short but steep (45-55 degree) snow/ice section below the summit ridge requires front-pointing."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Summit Point Success",
+         "detail": "Optional 30-40 min traverse each way to Columbia Crest, the true summit."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin descent",
+         "detail": "Early descent avoids afternoon softening of the snow and rockfall exposure."
+        },
+        {
+         "time": "Evening",
+         "label": "Arrive Longmire",
+         "detail": "Break camp at 10,700 ft and/or 6,400 ft en route and hike all the way out; some parties instead camp low again and exit the following morning."
+        }
+       ],
+       "objective": "Summit Point Success (and Columbia Crest if continuing), then hike all the way out"
+      }
+     ],
+     "totalNote": "A 3-day trip (occasionally stretched to 4): roughly 25 miles round trip and 11,500 ft of gain, with two nights out — one at the 6,400 ft saddle below the cleaver and one at the 10,700 ft col on the cleaver crest — before a long, early summit push and exit."
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Typical Rainier alpine weather: rapidly changing conditions, high winds at altitude, and a real chance of whiteout/storm exposure on the long, unmarked cleaver",
+      "probability": "Afternoon thunderstorms and building convective weather become more common later in the season (June-July)"
+     },
+     "exposure": "Long, sustained exposure to loose gendarmes and rockfall along the cleaver; a slip on the steep snow/ice sections or unstable scree traverses late-season carries serious fall consequences given the route's remoteness and length",
+     "avalanche": {
+      "zone": "Mount Rainier (NWAC forecast area) - NWAC's active forecast season is oriented to winter/spring backcountry travel and does not extend meaningful coverage into this route's May-July climbing window",
+      "byMonth": {
+       "May": "Moderate",
+       "July": "Low",
+       "June": "Low"
+      }
+     },
+     "crevasses": "Present near the summit despite Success Cleaver being one of the only two Rainier routes without significant sustained glacier travel"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - the approach alone is roughly 10 miles one-way via the Wonderland Trail to Indian Henry's Hunting Ground with about 4,100 ft of gain to high camp, followed by a long, sustained summit day on the cleaver",
+      "packWeight": "40-50 lb overnight mountaineering pack for the approach (tent, glacier gear, several days of food/fuel)"
+     },
+     "approachTime": "Full day (6-8+ hours) from Longmire to high camp near Indian Henry's Hunting Ground (~10 miles, ~4,100 ft gain), given the Tahoma Creek Trail closure has left this as the only approach",
+     "requiredSkills": [
+      "glacier travel and crevasse rescue (crevasses present near the summit)",
+      "comfortable scrambling on loose Class 4 rock, including navigating around gendarmes",
+      "steep snow/ice travel with ice axe self-arrest",
+      "independent route-finding on a lightly-traveled, unmarked route",
+      "altitude acclimatization / high-altitude camp experience"
+     ],
+     "experienceLevel": "Experienced alpine climber with prior glaciated-volcano summit experience; not a suitable first attempt on a Cascades volcano given the remoteness and loose terrain"
+    }
+   }
+  },
+  {
+   "id": "wa_ez_way",
+   "before": {
+    "pitches": 3,
+    "rope_note": "Short 5.6 trad route at Shark Rock (minor Gifford Pinchot crag); single 60m rope sufficient. Exact pitch count/length not published.",
+    "turnaround": "Given the long, mostly cross-country approach and lack of cell coverage, set a firm turnaround time based on the slowest party member's pace and current weather, and be willing to bail well before dark — afternoon thunderstorms and fading light are the main forcing factors in this remote, trail-less terrain.",
+    "itinerary": "Single long day: early/pre-dawn start from the trailhead; hike several miles largely cross-country via the Boundary Trail and Badger Lake to the base of Shark Rock's west face (most of the morning); climb EZ Way (one pitch plus scrambling); rappel and reverse the approach for the long hike out, aiming to be off the ridge before dark given the remoteness."
+   }
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "before": {
+    "rope_note": "Pinto Rock 'South Face' area, the published 'regular route.' 400ft/4 pitches, knobby welded-tuff rock; mixed bolt + knob-thread protection."
+   }
+  }
+ ]
+}

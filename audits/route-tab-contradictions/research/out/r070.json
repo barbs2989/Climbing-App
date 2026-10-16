@@ -1,0 +1,362 @@
+{
+ "file": "r070.json",
+ "results": [
+  {
+   "id": "wa_cosho_peak_scramble",
+   "fact": "whether crevasse hazard is documented in the hazards list",
+   "verdict": "fixed",
+   "correct_value": "seasonal_hazards.crevasses states the glacier/crevasse hazard without the false claim that the hazards list omits it",
+   "evidence": "The row's own hazards[] names crevasses/moats on the Kimtah Glacier, so the trailing clause is simply false (and is pipeline voice). Trip reports confirm parties step onto the Kimtah Glacier at the Cosho col, so the hazard itself stands; only the self-referential clause is removed.",
+   "sources": [
+    "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/",
+    "https://trailcatjim.com/ragged-ridge-traverse-red-mtn-ragged-peak-cosho-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "greater when snow-covered early season, though this is not detailed in the on-file hazards list",
+     "replace": "greater when snow-covered early season",
+     "id": "wa_cosho_peak_scramble",
+     "fact": "whether crevasse hazard is documented in the hazards list"
+    }
+   ]
+  },
+  {
+   "id": "wa_cosho_peak_scramble",
+   "fact": "summit scramble difficulty (Class 3 vs Class 4)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The standard grade is Class 3: SummitPost describes a couple hundred feet of 3rd-class, mostly solid rock on the upper east face, and a 2016 Ragged Ridge report calls the finish a third-class scramble. Another party's report calls the crux near the summit 4th class with exposure on ledges. The row already keeps Class 3 as the grade and explicitly frames the 4th-class ledge system as a variant some parties report ('accounts differ'), which is two genuine reported experiences, not a contradiction.",
+   "sources": [
+    "https://www.summitpost.org/cosho-peak/907140",
+    "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/",
+    "https://trailcatjim.com/ragged-ridge-traverse-red-mtn-ragged-peak-cosho-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cosho_peak_scramble",
+   "fact": "round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure (18.5 km ≈ 11.5 mi, close to the summit waypoint's 12.5 mi); the itinerary's ~25 mi is the round trip (9.6+5+9.6). The header Dist uses itinerary miles, so the two measure different quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_crater_mountain_standard_route",
+   "fact": "round-trip distance (header Dist stat)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance: 11.3 km ≈ 7.0 mi matches approach_variants[0].distMi 7 and the summit waypoint's distMi 7.5; the prose's 14-15 mi is the round trip, i.e. double that. The fields measure different quantities and agree with each other.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "fact": "pitch count vs documented ROUTE BREAKDOWN rows",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "pitch_detail deliberately documents only the two pitches unique to the Direct start; the approach, waypoint and approach_variants text all state that the route rejoins the standard 1985 Southwest Buttress at the white slab after two pitches and follows its remaining pitches. An incomplete breakdown is not a disagreement about the count.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "fact": "backcountry permit cost",
+   "verdict": "fixed",
+   "correct_value": "$10 per person (15 and under free) plus a $6 non-refundable reservation fee for the summer-season backcountry overnight permit; no entrance or trailhead parking fee.",
+   "evidence": "The park's fee page states a $10 per person (youth 15 and under free) plus $6 non-refundable fee for backcountry permits, and there is no entrance fee; a park-fund explainer gives the same $10 + $6 structure (in effect since March 2024, summer season). The access.fees line claiming nothing beyond parking/entrance is wrong on both counts.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "$10 per person (15 and under free) plus a $6 non-refundable reservation fee for the summer-season backcountry overnight permit; no entrance or trailhead parking fee.",
+     "id": "wa_direct_southwest_buttress",
+     "fact": "backcountry permit cost"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "fact": "round-trip distance (Dist stat)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (9.7 km ≈ 6 mi) is the one-way approach figure; the itinerary's ~16 mi is the whole 3-day round trip including the summit day. The header Dist uses itinerary miles, so there is no on-screen disagreement.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead",
+   "verdict": "fixed",
+   "correct_value": "None — the Eldorado trailhead is inside North Cascades National Park, which charges no entrance fee and no trailhead parking fee.",
+   "evidence": "The park states there is no entrance fee and no trailhead fees for trails beginning on NPS land; its Cascade River Road page puts the park boundary at milepost 18 and the Eldorado parking area at milepost 20, inside the park. A SummitPost Eldorado page also states no fees for parking at the trailhead. (One hiking-guide page lists a Northwest Forest Pass, but it conflicts with the land manager's own statements.)",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.summitpost.org/eldorado-peak/150316"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "value": "None — the Eldorado trailhead is inside North Cascades National Park, which charges no entrance fee and no trailhead parking fee.",
+     "id": "wa_direct_southwest_buttress",
+     "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "value": "None — the Eldorado trailhead is inside North Cascades National Park, which charges no entrance fee and no trailhead parking fee.",
+     "id": "wa_direct_southwest_buttress",
+     "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_cost"
+     ],
+     "expect": "$30 per vehicle (7-day pass)",
+     "value": "None",
+     "id": "wa_direct_southwest_buttress",
+     "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead",
+   "verdict": "fixed",
+   "correct_value": "None — the Eldorado trailhead is inside North Cascades National Park, which charges no entrance fee and no trailhead parking fee.",
+   "evidence": "The park states there is no entrance fee and no trailhead fees for trails beginning on NPS land; its Cascade River Road page puts the park boundary at milepost 18 and the Eldorado parking area at milepost 20, inside the park. A SummitPost Eldorado page also states no fees for parking at the trailhead. (One hiking-guide page lists a Northwest Forest Pass, but it conflicts with the land manager's own statements.) So passRequired ('None') is right and the _raw copy is the wrong one.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.summitpost.org/eldorado-peak/150316"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "value": "None — the Eldorado trailhead is inside North Cascades National Park, which charges no entrance fee and no trailhead parking fee.",
+     "id": "wa_northwest_ridge",
+     "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_cost"
+     ],
+     "expect": "$30 per vehicle (7-day pass)",
+     "value": "None",
+     "id": "wa_northwest_ridge",
+     "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "fact": "backcountry permit cost",
+   "verdict": "fixed",
+   "correct_value": "$10 per person (15 and under free) plus a $6 non-refundable reservation fee for the summer-season backcountry overnight permit; no entrance or trailhead parking fee.",
+   "evidence": "The park's fee page states a $10 per person (youth 15 and under free) plus $6 non-refundable fee for backcountry permits, and there is no entrance fee; a park-fund explainer gives the same $10 + $6 structure (in effect since March 2024, summer season). The access.fees line claiming nothing beyond parking/entrance is wrong on both counts.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "$10 per person (15 and under free) plus a $6 non-refundable reservation fee for the summer-season backcountry overnight permit; no entrance or trailhead parking fee.",
+     "id": "wa_northwest_ridge",
+     "fact": "backcountry permit cost"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "fact": "round-trip distance (Dist stat)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (9.7 km ≈ 6 mi) is the one-way approach figure; the itinerary's ~14 mi is the whole 3-day round trip. The header Dist uses itinerary miles, so the fields measure different quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "fact": "round-trip distance (Dist stat)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (6.44 km ≈ 4 mi) is a one-way approach figure, while the approach prose's 25.75 km and the itinerary's ~16 mi are round-trip totals including the summit day (5.7+4+5.7). The header Dist uses itinerary miles. The trailhead-to-camp distance itself is stated inconsistently across rows (see the discovered entry) but that is a separate question.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "fact": "backcountry permit cost",
+   "verdict": "fixed",
+   "correct_value": "$10 per person (15 and under free) plus a $6 non-refundable reservation fee for the summer-season backcountry overnight permit; no entrance or trailhead parking fee.",
+   "evidence": "The park's fee page states a $10 per person (youth 15 and under free) plus $6 non-refundable fee for backcountry permits, and there is no entrance fee; a park-fund explainer gives the same $10 + $6 structure (in effect since March 2024, summer season). The access.fees line claiming nothing beyond parking/entrance is wrong on both counts.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "N/A",
+     "value": "$10 per person (15 and under free) plus a $6 non-refundable reservation fee for the summer-season backcountry overnight permit; no entrance or trailhead parking fee.",
+     "id": "wa_southwest_buttress",
+     "fact": "backcountry permit cost"
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Three different figures describe the same Eldorado trailhead-to-Inspiration-Glacier-camp leg on this row (and its siblings): waypoint distMi 3.2 (shorter than the ~3.7 mi straight line between the two pins), dist_km ≈ 4 mi, and itinerary day 1 5.7 mi. WTA gives Eldorado Peak as 10 mi round trip (≈5 mi one-way to a summit above camp), which suggests camp is ~4-4.5 mi, but no second source states the camp distance, so nothing was changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "fact": "Pitch count vs. route-breakdown length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project lists the route as ~800 ft (242 m), matching length_m 244. Parties describe 'short-pitch after short-pitch' and the Alpine Institute lists one pitch off the col, several ropelengths on the ridge, two rappels, two good pitches and one or two easy ones, so many short pitches over 800 ft is plausible; no field gives a conflicting pitch count (pitch_detail groups rather than counts).",
+   "sources": [
+    "https://www.mountainproject.com/route/112156952/east-ridge",
+    "https://www.alpineinstitute.com/route-profile-dorado-needle-east-ridge/",
+    "https://gethighonaltitude.com/2020/09/06/dorado-needle-east-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "fact": "Round-trip time vs. descent-only time",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The 8-12 hours camp-summit-camp figure is confirmed by the Alpine Institute route profile and the Mountain Project description. descentTimeHrs 6 matches the sibling Dorado rows' 'Hike out' section (camp back to the trailhead, 5-5.5 h), i.e. the day-3 exit, not the summit-to-camp descent, so the two do not overlap. No source gives a separate summit-to-camp time to justify changing it.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-dorado-needle-east-ridge/",
+    "https://www.mountainproject.com/route/112156952/east-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "fact": "dist_km as one-way approach distance vs. whole-route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is by convention the one-way approach ('Approach (one way)'), and 6.4 km ≈ 4 mi agrees with the approach text's 'roughly 4 miles' to high camp.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free",
+   "verdict": "fixed",
+   "correct_value": "No parking/entrance pass; backcountry permit is $10/person + $6 reservation fee",
+   "evidence": "The park states there is no entrance fee and no trailhead fees for trails beginning on NPS land; its Cascade River Road page puts the park boundary at milepost 18 and the Eldorado parking area at milepost 20, inside the park. A SummitPost Eldorado page also states no fees for parking at the trailhead. (One hiking-guide page lists a Northwest Forest Pass, but it conflicts with the land manager's own statements.) This row's passRequired/notes/fees claim a Northwest Forest Pass, and what_to_bring calls the permit free while access.fees and permit list the $10 + $6 fee (confirmed on the park fee page and a park-fund explainer).",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.summitpost.org/eldorado-peak/150316",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass / America the Beautiful Interagency Pass (trailhead parking)",
+     "value": "None — the Eldorado trailhead is inside North Cascades National Park, which charges no entrance fee and no trailhead parking fee.",
+     "id": "wa_dorado_needle_east_ridge",
+     "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": ", plus trailhead parking pass (Northwest Forest Pass or America the Beautiful Interagency Pass)",
+     "replace": "; no entrance or trailhead parking fee",
+     "id": "wa_dorado_needle_east_ridge",
+     "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "value": "No parking pass is needed at this trailhead. No separate climbing permit beyond the backcountry overnight permit.",
+     "id": "wa_dorado_needle_east_ridge",
+     "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+    },
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      5
+     ],
+     "expect": "Free NPS wilderness backcountry permit",
+     "value": "NPS wilderness backcountry permit (fee applies in summer)",
+     "id": "wa_dorado_needle_east_ridge",
+     "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

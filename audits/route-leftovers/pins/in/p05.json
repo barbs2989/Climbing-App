@@ -1,0 +1,2008 @@
+[
+ {
+  "id": "wa_spinnaker_peak_s_route",
+  "name": "South Slopes Scramble",
+  "area_id": "wa_spinnaker_peak",
+  "findings": [
+   "r045.json: dist_km 12.5 km equals 7.8 mi, the round-trip figure (also the itinerary's miles), but the field renders as the one-way approach. Trip write-ups give 7.8 mi round trip and 7.3 mi round trip for Spinnaker with Martin, so one way is about 3.7-3.9 mi; the summit waypoint sits at 3.6 mi. | 6.3 km (about 3.9 mi one way)"
+  ],
+  "gpx_summary": "2 points; 2 of 7 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_spinnaker_peak_s_route",
+   "area_id": "wa_spinnaker_peak",
+   "name": "South Slopes Scramble",
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Dec-Apr",
+   "description": null,
+   "gear": [
+    "Ice axe (needed for the Point 5261 ridge variant; not strictly required for the direct col route)",
+    "Snowshoes for winter/spring approach through the basin",
+    "Map, compass/GPS — route is entirely off-trail"
+   ],
+   "hazards": [
+    "Avalanche terrain in the approach basin and along nearby Pacific Crest Trail chutes — check NWAC Stevens Pass zone forecast",
+    "Narrow, corniced ridge beyond Point 5261 on the more direct variant — exposed, requires an ice axe",
+    "No maintained trail — off-trail route-finding through timber and open basin, with little to no boot-packed track most of the season",
+    "Thick brush/devil's club bushwhacking if attempted after snowmelt"
+   ],
+   "verif": null,
+   "overview": "A little-visited summit on the Cascade Crest near Stevens Pass, WA. Spinnaker Peak rises above the headwaters of the Tye River between Lichtenberg Mountain and Tye Peak, about a mile from the Pacific Crest Trail. It's rarely climbed, largely because the surrounding terrain is a thick, brushy bushwhack once snow melts out; most parties instead treat it as an off-trail winter or spring snow climb, often paired with neighboring Martin Peak.",
+   "beta": "Two options exist to reach Spinnaker Peak's summit: the easier line climbs directly to the col between Point 5261 and Spinnaker Peak (steepest section of the trip, but low-exposure on the right line, and an ice axe isn't required if only Spinnaker is the objective); the harder option climbs Point 5261 first and follows the narrow, steeply-dropping ridge to Spinnaker's summit, which does require an ice axe and should be avoided in higher avalanche danger. The peak is seldom climbed despite its proximity to US Highway 2.",
+   "turnaround": "Because this is an off-trail, unmarked route in avalanche and whiteout-prone terrain, set a turnaround time before starting and stick to it if visibility drops, the narrow ridge/col ices up, or avalanche conditions deteriorate — don't press on toward the summit once conditions no longer match what was planned for.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 2500,
+   "loss_ft": 2500,
+   "dist_km": 6.3,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "II",
+   "face": "South side of the summit ridge crest, reached via Point 5261",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Reverse the south slopes back into the approach basin.",
+   "obj_haz": [
+    "avalanche",
+    "narrow exposed ridge",
+    "icy terrain",
+    "dense brush/route-finding"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.765955,
+     "lng": -121.078176,
+     "elev": 3600,
+     "name": "Yodelin Trailhead / US 2 Pullout",
+     "note": "Roadside pullout on US 2 across from the Yodelin community entrance, about 1 mi east of Stevens Pass summit; cross the highway on foot and pick up the old ski-area access road heading south.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Park at the Yodelin lot on US 2, the former Yodelin ski area's lot now used for overflow parking, around milepost 60 and about a mile east of the Stevens Pass summit at roughly 3,600 feet; it sits across the highway from the Yodelin community entrance. From the car you cross US 2 on foot and pick up the old ski-area access road heading south into the valley. Most ascents are made on winter or spring snowpack, since summer here is a rough, thick bushwhack that parties generally avoid."
+    },
+    {
+     "elev": 3750,
+     "name": "Old Yodelin Ski-Area Road",
+     "note": "Abandoned Yodelin ski-area road (closed since the area shut down in 1974) drops off the highway shoulder into second-growth timber toward the Nason Creek headwaters.",
+     "type": "Junction",
+     "distMi": 0.3
+    },
+    {
+     "elev": 3900,
+     "name": "Nason Creek Headwaters",
+     "note": "Route parallels the infant Nason Creek upstream through the timber; treat before drinking, and it's the last dependable water before the open basin above.",
+     "type": "Water",
+     "distMi": 0.8
+    },
+    {
+     "elev": 4600,
+     "name": "Spinnaker–Tye Basin",
+     "note": "Open valley basin between Spinnaker and Tye Peak; a well-known winter camping bowl for ski tourers and climbers staging for either summit.",
+     "type": "Campsite",
+     "distMi": 2.3
+    },
+    {
+     "elev": 5261,
+     "name": "Point 5261 Ridge",
+     "note": "Narrow, exposed ridge crest near unofficial Point 5261 on the divide; carry an ice axe, the snow here compacts and turns icy and a slip has real consequences.",
+     "type": "Hazard",
+     "distMi": 3
+    },
+    {
+     "elev": 5400,
+     "name": "South Ridge Gap",
+     "note": "Gap on the divide between the east and west drainage basins; gain Spinnaker's south ridge here and angle climber's-left up the final slopes to the summit.",
+     "type": "Junction",
+     "distMi": 3.4
+    },
+    {
+     "lat": 47.77044,
+     "lng": -121.13302,
+     "elev": 5654,
+     "name": "Spinnaker Peak",
+     "note": "True summit, 845 ft of clean prominence; no maintained trail — the south-slope snow climb is the standard winter/spring line, with views of Rainier, Glacier Peak, Stuart, and Daniel.",
+     "type": "Summit",
+     "distMi": 3.6
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 7.5,
+    "summitTimeHrs": 7.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 7.5,
+      "note": "From the Yodelin lot on US 2 (~3,600 ft), bushwhack down to and across Nason Creek (a snow bridge or log crossing is typical in winter/spring), then climb into the open basin betwe…",
+      "fromTo": "Car-to-car scramble via Nason Creek basin",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack is needed — this is a non-technical scramble/snow ascent, not a roped climb.",
+   "what_to_bring": [
+    "Ice axe",
+    "Snowshoes (winter/spring)",
+    "Navigation aids (map/compass/GPS) for off-trail travel",
+    "Avalanche safety gear (beacon/probe/shovel) given avalanche terrain on approach"
+   ],
+   "pro_tips": [
+    "Climb on snow (roughly Dec-Apr) — summer is a genuine brush bushwhack and not recommended",
+    "Check the NWAC Stevens Pass zone avalanche forecast before committing to the basin or ridge",
+    "The basin between Spinnaker and Tye Peak is a well-regarded spot for a winter overnight camp",
+    "Commonly combined with neighboring Martin Peak, about 10 minutes from Spinnaker's summit, for a two-summit day",
+    "For a more committing outing, tag Point 5261 first and follow the connecting ridge over to Spinnaker — it narrows and drops into several cols, and requires an ice axe unlike the standard direct line to the gap."
+   ],
+   "watch_out": [
+    "PCT tread near here crosses avalanche chutes and should be avoided as a winter travel route",
+    "Snow bridges over Nason Creek are more reliable downstream (climber's right) where the water moves slower",
+    "Cornices possible on the Point 5261-Spinnaker ridge variant late season"
+   ],
+   "pro_needs": "None. The route is non-technical; an ice axe is not required for Spinnaker alone, though many parties carry one for general snow travel or the connecting slopes to Martin Peak.",
+   "best_season": "Best climbed roughly December through April on a consolidated snowpack, when the brush and loose talus that otherwise cover this route are buried; spring (Mar-May) often gives the most reliable travel with corn-snow conditions. A summer ascent is explicitly not recommended by trip reports — thick vegetation and off-trail bushwhacking make the same line a slog once the snow is gone. Always check the NWAC Stevens Pass zone forecast before going, since both the approach basin and the nearby PCT corridor cross avalanche terrain.",
+   "high_point_ft": 5645,
+   "aid_grade": null,
+   "approach": "Park at the Yodelin lot on US 2 (the former Yodelin ski area's lot, now used for overflow parking, roughly 1.7 miles from the Stevens Pass Ski Area pedestrian overpass, around milepost 60). Cross the highway and follow the old ski-area road south into the valley, staying near Nason Creek where crossings/snow bridges are most reliable, then continue into the open basin below the Spinnaker-Tye Peak ridge before turning up to the gap below Point 5261.",
+   "descent_text": "Reverse the ascent line back through the gap and down into the basin to the Nason Creek valley and the Yodelin lot. With a stable, consolidated snowpack the open basin can offer a quick glissade or snowshoe/ski descent, but avoid dropping onto the Pacific Crest Trail tread itself for winter travel — it crosses several avalanche paths near here.",
+   "bail": "Retreat down the south slopes is possible from most points.",
+   "pitch_detail": [
+    {
+     "grade": "Trail",
+     "notes": "Stevens Pass Ski Area lot to the PCT via the steep initial mile of old ski-area road (Skyline Lake access).",
+     "pitch": "1"
+    },
+    {
+     "grade": "Trail/ridge",
+     "notes": "PCT northbound past the Tye Peak/Skyline Ridge area to where the route leaves the trail for the open ridge.",
+     "pitch": "2"
+    },
+    {
+     "grade": "Class 2-3 scramble",
+     "notes": "Off-trail ridge crest over Point 5261 toward Spinnaker; ridge narrows with steep drop-offs into several cols.",
+     "pitch": "3"
+    },
+    {
+     "grade": "Class 2-3 scramble",
+     "notes": "Final approach drops briefly onto the south side of the crest around one steep section before regaining the ridge on dry rock to the wooded summit.",
+     "pitch": "4"
+    },
+    {
+     "grade": "Class 2 scramble",
+     "notes": "Spinnaker to Martin Peak: descend to a small gap then climb the east ridge to Martin's summit, about ten minutes each way.",
+     "pitch": "5 (optional)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Standard ascents are done on winter/spring snowpack (snowshoes, poles, ice axe); summer is a rough, thick bushwhack that most parties avoid.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Yodelin lot on US 2 (~3,600 ft), bushwhack down to and across Nason Creek (a snow bridge or log crossing is typical in winter/spring), then climb into the open basin between Tye Peak and the Spinnaker-Martin ridge. Ascend the basin's north side at a sustained ~35-degree angle to gain the ridge, then follow it to the Spinnaker summit; most parties add the ~10-minute round-trip side jaunt to Martin Peak. This is predominantly a winter/spring snow climb — summer condition is described as a rough, thick bushwhack, so nearly all reported ascents happen on a firm snowpack with snowshoes/traction and an ice axe rather than in bare-ground summer conditions.",
+      "hours": 7.5,
+      "miles": 7.8,
+      "title": "Car-to-car scramble via Nason Creek basin",
+      "gainFt": 2500,
+      "lossFt": 2500,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Yodelin trailhead",
+        "detail": "Cross US 2, follow the road to its end (~0.5 mi), then drop into the woods toward Nason Creek."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Cross Nason Creek",
+        "detail": "Snow-bridge or log crossing typical in winter/spring conditions; scout for the sturdiest crossing point."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Reach the open basin",
+        "detail": "Tye Peak visible to the south; begin climbing the ~35-degree slope toward the Spinnaker-Martin ridge."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Gain the ridge and reach Spinnaker summit",
+        "detail": "Follow the mostly-forested ridge crest to the 5,654 ft summit."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Optional: side trip to Martin Peak",
+        "detail": "About 10 minutes each way along the ridge for the better 360-degree views."
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Back at Yodelin trailhead",
+        "detail": "Descend the same basin/ridge line and reverse the creek crossing and approach road."
+       }
+      ],
+      "objective": "Tag Spinnaker Peak (5,654 ft), with optional side trip to Martin Peak"
+     }
+    ],
+    "totalNote": "A single long day car-to-car: roughly 7-8 miles round trip with about 2,500 ft of gain, typically 6-9+ hours depending on snow conditions and trail-breaking — no camping involved."
+   },
+   "access": {
+    "fees": "$5 day-use fee (or annual Northwest Forest Pass) at official Wenatchee River Ranger District trailheads in the area",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "permit": "No climbing permit required",
+    "closures": "US 2 over Stevens Pass is plowed and open year-round but subject to temporary closures for avalanche control and winter storms (check the WSDOT mountain pass report); the approach and route itself cross avalanche terrain, so check the NWAC Stevens Pass zone forecast before winter/spring trips",
+    "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District",
+    "land_manager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "passRequired": "Northwest Forest Pass, America the Beautiful Interagency Pass, or a $5 day-use pass at official district trailheads; the Yodelin roadside lot itself is not reported to require a pass but doubles as Stevens Pass Ski Resort overflow parking",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue wilderness permit (Henry M. Jackson or Alpine Lakes Wilderness)",
+     "where": "Fill one out at the trailhead kiosk."
+    }
+   },
+   "road": {
+    "name": "US Highway 2 (Stevens Pass Highway)",
+    "status": "Paved state highway, maintained and open year-round",
+    "driveNote": "Park at the Yodelin lot on US 2, the former Yodelin ski area's lot (roughly 1.7 miles from the Stevens Pass Ski Area pedestrian overpass, around milepost 60); this lot is shared overflow parking for Stevens Pass Ski Resort, so passholders may get priority on busy resort days"
+   },
+   "climate": {
+    "fall": "Early-season snow can bury brush and ease travel before winter avalanche hazard builds.",
+    "spring": "Corn-snow conditions on the ridge are popular for this route as brush disappears under a consolidating snowpack.",
+    "summer": "Thick brush and slide alder make off-trail summer travel slow and unpleasant.",
+    "winter": "Deep, avalanche-prone Cascade snowpack; check the NWAC Stevens Pass forecast before traveling the ridge and approach slopes.",
+    "typical": "Classic Cascade-crest snowpack — heavy, wet winter snow with variable spring corn cycles; the route is seldom climbed partly due to persistently unsettled weather near the crest.",
+    "bySeason": {
+     "fall": "Early-season snow can arrive by October and re-bury the approach; shoulder-season conditions are variable.",
+     "spring": "Typically the best window (roughly Mar-May) once the snowpack consolidates and corn-snow travel is possible; still confirm avalanche danger before the col/ridge.",
+     "summer": "Not recommended — the route reverts to a thick, brushy off-trail bushwhack once the snow melts out.",
+     "winter": "Deep, often unstable early-season snowpack; avalanche terrain in the approach basin and along nearby PCT chutes — avoid the PCT tread itself for winter travel."
+    },
+    "forecastZone": "NWAC Stevens Pass zone"
+   },
+   "emergency": {
+    "notes": "Cell coverage near Stevens Pass is inconsistent off the highway corridor; carry a satellite messenger or similar given the remote, entirely off-trail nature of this route.",
+    "county": "King County (summit) / Chelan County (standard approach via the Yodelin trailhead on US 2)",
+    "rangerStation": "Wenatchee River Ranger District, Leavenworth, WA (Okanogan-Wenatchee National Forest)",
+    "nearestHospital": "Cascade Medical Center, Leavenworth, WA — small 24-hour ER; more advanced trauma/critical care is at Providence Regional Medical Center Everett, on the west side of the pass",
+    "sheriffDispatch": "RiverCom 911 (regional dispatch covering Stevens Pass to Blewett Pass); Chelan County Sheriff's Office Search and Rescue is the typical first responder from the standard east-side approach"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; if any traffic occurs it would be clear-weather winter and spring weekends (Dec-Apr) on a stable snowpack",
+    "solitudeRating": 4,
+    "estimatePerSeason": "unknown - low-traffic; likely under 20 parties per season based on obscurity relative to nearby Index-area classics"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Sustained forested approach plus off-trail slope gain to ~5600 ft with brush and elevation gain typical of Cascade foothill approaches",
+     "packWeight": "Light day pack (~15-20 lb) sufficient for a single-day scramble"
+    },
+    "approachTime": "Not separately verified in sources; expect a multi-hour forested approach typical of Index-area peaks before reaching open south-facing slopes",
+    "requiredSkills": [
+     "Off-trail route-finding through dense brush and cliff bands",
+     "Loose rock / talus management and careful foot placement",
+     "Basic scrambling movement on heather and easy rock bands (Class 3)",
+     "Ability to reverse route-finding decisions if cliffed out"
+    ],
+    "experienceLevel": "Solid Class 3 scrambling experience with comfort on loose rock and route-finding through cliff bands without a marked trail; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Dec-Apr, on a consolidated snowpack; March and April usually give the most dependable travel",
+    "monthBreakdown": {
+     "April": {
+      "reason": "Often the most dependable month for firm snow and corn cycles before the lower slopes melt out",
+      "status": "optimal"
+     },
+     "March": {
+      "reason": "Consolidating snowpack and longer days; firm or corn snow makes the basin and the col quick",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Snow-free: the approach turns into a thick brush and slide-alder bushwhack, and the route is rarely done in summer",
+      "status": "marginal"
+     },
+     "January": {
+      "reason": "Deep snow makes the basin and ridge straightforward snowshoe travel; short days and storm cycles are the limit",
+      "status": "good"
+     },
+     "December": {
+      "reason": "Snow buries the brush and talus, but the early pack can be thin or unstable; check the avalanche forecast",
+      "status": "good"
+     },
+     "February": {
+      "reason": "Reliable snow cover; wait for a settled spell after storms before crossing the basin and ridge",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "A Dec-Apr snow climb on the Cascade crest just north of Stevens Pass",
+     "probability": "Winter storms and whiteouts can arrive quickly near the crest; turn back if visibility drops on the ridge"
+    },
+    "exposure": "Moderate fall exposure: there is route-finding through cliff bands and loose rock, so a slip near the cliff bands or on loose sections could result in a serious fall; staying on heather/easy rock and avoiding the steeper cliffs to either side is the key mitigation",
+    "avalanche": {
+     "zone": "Applies in season - this route is commonly climbed/approached on snow in winter and spring (the preferred strategy to avoid brutal summer brush), placing it within NWAC's active forecast window; check the NWAC Stevens Pass zone forecast before crossing the approach basin and PCT avalanche chutes.",
+     "byMonth": {
+      "April": "Wet-slide cycles on warm afternoons; start early and be off the basin slopes before they soften",
+      "March": "Active season — check the NWAC Stevens Pass zone forecast; watch for warming on the open slopes",
+      "January": "Active season — check the NWAC Stevens Pass zone forecast",
+      "December": "Active season — check the NWAC Stevens Pass zone forecast",
+      "February": "Active season — check the NWAC Stevens Pass zone forecast"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No published guidebook (e.g., Beckey's Cascade Alpine Guide) route description located online",
+     "Prominence figure differs slightly between sources (SummitPost lists ~845 ft vs. 857 ft on file) — left unchanged pending a stronger source",
+     "No confirmed GPS coordinates for the trailhead, gap, or summit",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.745,
+    "peakLng": -121.0933,
+    "trailhead": "Yodelin",
+    "trailheadDirection": "Park at the Yodelin lot on US 2 (the former Yodelin ski area's lot, now used for overflow parking, roughly 1.7 miles from the Stevens Pass Ski Area pedestrian overpass, around milepost 60)."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Off-trail, densely forested Class 3 peak near Rt 2/PCT; no glaciers, no technical rope typically needed - mostly bushwhack and talus/scramble.",
+   "ascender": null,
+   "corrections": "Specific 'South Route' line not individually documented; grade/gear inferred from general peak description.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Nason Creek basin to the Point 5261 col",
+     "notes": "Park in the overflow lot off US-2 a couple of miles east of the ski area, cross the highway on foot and pick up the old ski-area access road into the valley, keeping near the creek where crossings and snow bridges are most reliable. Continue into the open basin below the Spinnaker-Tye ridge before turning up toward the gap. Almost every ascent is made on winter or spring snowpack; once the snow is gone this is a thick, unpleasant bushwhack that parties generally avoid, so the season is short and conditions-driven rather than weather-driven.",
+     "season": "January to May, on snowpack",
+     "hazards": [
+      "Avalanche terrain in the approach basin and in the nearby chutes",
+      "A narrow, corniced connecting ridge on the harder variant",
+      "No maintained trail and rarely a boot-packed track",
+      "Thick devil's club and brush once the snow melts out",
+      "Windblown snow that ices the sub-summit ridge"
+     ],
+     "baseFinding": "The base of the climb is the col between Point 5261 and Spinnaker Peak. Coming up out of the basin, Point 5261 is the nearer rocky sub-summit and Spinnaker the higher point beyond it; the col is the low saddle between the two, and the ground rising out of it is the steepest of the whole trip although on a well-chosen line it carries little exposure and needs no axe if Spinnaker is your only objective. Take the col directly. The alternative — climbing Point 5261 first and following the connecting ridge across — is a materially different proposition: that crest is narrow, drops steeply into a series of small notches, ices over when windblown, wants an ice axe, and should be left alone with any avalanche danger about. So the check is simple: if you find yourself on a knife-edged crest with cornices and notches, you have taken the harder variant rather than the standard one, and the col is below and to your side. On the way down, keep off the trail tread itself for winter travel, since it crosses several avalanche paths near here."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "The basin between Tye Peak and Spinnaker Peak",
+     "role": "route",
+     "type": "bivy",
+     "notes": "A genuine winter camp rather than a summer one, and the natural base for Spinnaker Peak and its neighbour Martin Peak at the head of the Tye. The approach is from US 2 about two miles east of Stevens Pass, on the old road serving the Yodelin area, then up into the drainage on snowshoes or skis; the round trip to Spinnaker is around eight miles with a top out near 5,600 feet. From the basin the usual line traverses the northeast ridge past a subsidiary point around 5,300 feet, occasionally dropping onto the south side to avoid rock before regaining the crest. Parties combining Spinnaker with Tye Peak use this basin as the link between the two, which is the main argument for camping in it rather than doing either as a day trip. Everything here depends on snow cover — in summer the same ground is a slow thrash through slide alder and the peaks are seldom visited. Avalanche assessment is not optional; these are open, wind-loaded, lee slopes below a ridge crest, and the terrain traps in the drainage are real.",
+     "water": "Melted snow in winter. In late summer the basin holds little or nothing reliable — carry what you need.",
+     "permit": "National forest, no permit, no quota. Access from the highway east of the pass is across a mix of ownership near the old Yodelin development, so park on public ground and read the signs rather than assuming.",
+     "capacity": "Open snow basin in winter, holding as many parties as care to spread out. In summer it is brush and boulder with very little usable flat ground."
+    },
+    {
+     "name": "Spinnaker–Tye Basin",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_glacier_peak_sitkum_glacier",
+  "name": "Sitkum Glacier",
+  "area_id": "wa_glacier_peak",
+  "findings": [
+   "r048.json: The Forest Service page for White Chuck River Trail 643 lists it as 'INACCESSIBLE, NO ROAD OR TRAIL ACCESS', washed away by the 2003 flood, less than a third remaining and no plans to repair. A 2020 party found FR 23 blocked by boulders, walked the old road and lost the trail at Pumice Creek. So the approach, itinerary days 1, 2 and 4, itinerary.cal, timing.sectionBreakdown, descent_text, approach_variants (White Chuck marked primary) and the bivy entries describe a defunct approach while the waypoints (coordinates cannot change) start at North Fork Sauk. The fix is a full rewrite of approach narrative, mileages, hours and gains for the North Fork Sauk -> White Pass -> PCT north -> Sitkum Cr"
+  ],
+  "gpx_summary": "81 points; 0 of 4 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "area_id": "wa_glacier_peak",
+   "name": "Sitkum Glacier",
+   "discipline": "mountaineering",
+   "grade": "Grade II glacier climb",
+   "grade_system": "class",
+   "grade_num": null,
+   "pitches": null,
+   "length_m": 1448,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Darcy Bard, A.H. Dubor, Thomas Gerdine, and Sam Strom (USGS survey party) — June 1897, first ascent of Glacier Peak",
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jun-Aug",
+   "description": null,
+   "gear": [
+    "Ice axe and crampons",
+    "Rope and harness for glacier travel",
+    "3-4 pickets — crevasses exist on the Sitkum but multiple trip reports call them minimal in a normal season",
+    "Wands for route-finding on the broad, featureless upper snowfields, especially useful in flat light or whiteout",
+    "Helmet"
+   ],
+   "hazards": [
+    "Very long, remote approach — multi-day commitment far from any road",
+    "Crevasse navigation on the Sitkum Glacier",
+    "Steepening snow to ~40° below the summit pinnacles",
+    "Loose pumice and rock high on the route once melted out"
+   ],
+   "verif": null,
+   "overview": "The Sitkum Glacier is the standard route on Glacier Peak — the most remote of Washington's major volcanoes. There's no technical crux, but the climb is defined by its long wilderness approach: many miles of trail just to reach a high camp, deep in the Glacier Peak Wilderness. It's a true backcountry expedition rewarded by solitude and a wild summit.",
+   "beta": "From Boulder Basin (5,500-6,000 ft), traverse SE onto the Sitkum Glacier and ascend a corridor on its left (climber's) side heading NE toward a saddle near 9,500 ft by Sitkum Spire. From the saddle, follow the pumice ridge toward the summit, staying right of and below the peak, then finish up a snow chute to the top. Crevasse danger is generally minimal and the route rarely steepens significantly.",
+   "turnaround": "Turn around by early afternoon on summit day; the long descent to a remote camp leaves no margin for late finishes.",
+   "auto_generated": true,
+   "alpine_grade": "III",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 8300,
+   "loss_ft": 8300,
+   "dist_km": 14.5,
+   "max_angle": 40,
+   "rappels": "0",
+   "commitment": "I-II",
+   "face": "Southwest side (Sitkum Glacier)",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": "No reliable cell coverage in the Glacier Peak Wilderness; the approach is 9+ trail miles from the nearest paved road. A satellite messenger (inReach/SPOT) is recommended.",
+   "descent": "Reverse the route to Boulder Basin camp and the long trail out.",
+   "obj_haz": [
+    "Small crevasses on the Sitkum Glacier",
+    "Bare ice possible late season",
+    "The White Chuck River Trail has been unmaintained and washed out since the October 2003 flood, which adds significant off-trail travel on that approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0579,
+     "lng": -121.2882,
+     "elev": 2100,
+     "name": "North Fork Sauk River Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2100
+    },
+    {
+     "lat": 48.07,
+     "lng": -121.17,
+     "elev": 5900,
+     "name": "White Pass (PCT)",
+     "type": "Junction",
+     "distMi": 8,
+     "elevFt": 5900
+    },
+    {
+     "lat": 48.105,
+     "lng": -121.13,
+     "elev": 6200,
+     "name": "Boulder Basin Camp",
+     "type": "Campsite",
+     "distMi": 12,
+     "elevFt": 6200
+    },
+    {
+     "lat": 48.111844,
+     "lng": -121.11412,
+     "elev": 10541,
+     "name": "Glacier Peak Summit",
+     "type": "Summit",
+     "distMi": 14,
+     "elevFt": 10541
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 6,
+    "approachTimeHrs": 7,
+    "recommendedStart": "3:00-4:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4,
+      "note": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction.",
+      "fromTo": "Trailhead to Sitkum Creek camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3,
+      "note": "A short but steep climb up a climber's path along a ridge south of Sitkum Creek to the high camp at Boulder Basin, leaving time to rest and scout the glacier route.",
+      "fromTo": "Continue to Boulder Basin high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) …",
+      "fromTo": "Summit via the Sitkum Glacier",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6,
+      "note": "Break camp and hike out the way you came in.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Glacier rope team: 30–40 m rope, 2–3 pickets, crevasse-rescue kit. Per person: ice axe, crampons, helmet, harness, locking biners.",
+   "what_to_bring": [
+    "multi-day backpacking kit",
+    "alpine layers + shell",
+    "mountaineering boots",
+    "glacier glasses/goggles",
+    "headlamp",
+    "stove + fuel",
+    "bear-resistant food storage",
+    "blue bags",
+    "Northwest Forest Pass"
+   ],
+   "pro_tips": [
+    "Plan 3–4 days; this is an expedition, not a day climb",
+    "Confirm current trail/road status — washouts have rerouted access for years",
+    "Camp at Boulder Basin and climb the Sitkum early for firm snow",
+    "Carry navigation for the long forested approach",
+    "If the White Chuck River Road/Trail is washed out or closed, most parties instead reach Boulder Basin via the North Fork Sauk Trail to White Pass and a cross-country traverse into the Glacier Peak basins."
+   ],
+   "watch_out": [
+    "Crevasses on the Sitkum",
+    "Loose pumice/rock high when melted out",
+    "Route-finding on the long approach",
+    "Weather changes far from any escape"
+   ],
+   "pro_needs": "Glacier protection only — pickets for the steeper upper snow and crevasse zones.",
+   "best_season": "Late June through August — snow-covered glacier, melted-out approach trails. Earlier means deep snow on the long approach; later opens crevasses and bares loose rock.",
+   "high_point_ft": 10541,
+   "aid_grade": null,
+   "approach": "The White Chuck approach described below is effectively gone: White Chuck River Trail #643 has been listed as inaccessible since the 2003 flood, and the White Chuck Road (FR 23) is closed to vehicles at milepost 3.7, about 5 miles of old roadbed short of the old trailhead, beyond which the valley is unmaintained travel with a river ford. Parties now come in from the North Fork Sauk River Trailhead instead, climbing to the Pacific Crest Trail at White Pass and following it north over Red Pass to the Sitkum Creek junction. From the White Chuck River Trailhead (2,350 ft, end of White Chuck River Road/FR 23), follow the White Chuck River Trail (FST 643) upstream through old-growth forest. The trail fords/bridges several tributaries — Pumice Creek, Glacier Creek, and Kennedy Creek — which serve as reliable water sources but can run high with snowmelt in early summer. At about 5.5 miles reach the former Kennedy Hot Springs/Kennedy Guard Station area (~3,300 ft) — still a popular campsite, but the historic hot-springs pool, lodge, and guard station were destroyed and buried by the October 2003 flood/debris flow and were never rebuilt; there is no usable hot pool here. Continue roughly 1.5 miles farther to Sitkum Creek and the junction with the Pacific Crest Trail (~3,850 ft). Turn north (left) on the PCT for about a half mile to a forested campsite near 4,100 ft — a common lower camp. From there, leave the maintained trail and follow a steep, unmaintained climbers' path (locally described as 'more like a fisherman's route than a trail') straight up the forested ridge to Boulder Basin (5,500–6,000 ft), where the trees break and the standard high camp sits on heather/rock benches with running water nearby. From camp, ascend snowfields southeast/uphill onto the toe of the Sitkum Glacier. Note: the White Chuck River Road and Trail sustained major washout damage in the October 2003 floods and has had repeated closures/repairs since — confirm current road-end and trail status with the Mount Baker-Snoqualmie National Forest before relying on this approach, as in bad years the effective trailhead moves miles downstream.",
+   "descent_text": "This is a walk-off/glacier descent with no rappelling — reverse the ascent line. From the summit, descend the pumice Sitkum ridge back to the ~9,500 ft saddle east of Sitkum Spire, then descend the Sitkum Glacier's upper section, staying in the corridor left of the icefall/rock rib that splits the glacier's lower half, back down to Boulder Basin. Crevasses exist on the Sitkum but are sparse and generally avoidable with standard route-finding; a rope, harness, and a few pickets are still standard kit. From Boulder Basin, follow the steep climbers' path back down to the PCT/White Chuck Trail junction and retrace the White Chuck River Trail to the trailhead.",
+   "bail": "Boulder Basin (or your high camp) is the bail point; from the upper mountain you retreat to camp. Given the remoteness, there is no quick escape — bailing means the same long walk out.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, steep climbers' path",
+     "notes": "Follow the White Chuck River Trail about 5.5 miles to the old Kennedy Hot Springs site, then 1.5 miles more to Sitkum Creek and the PCT. Go north on the PCT about half a mile to a forest camp near 4,100 ft, then take the steep, unmaintained climbers' path up the ridge south of Sitkum Creek to Boulder Basin (5,500–6,000 ft), the usual high camp. Confirm road and trail status before going.",
+     "pitch": "Trailhead → high camp"
+    },
+    {
+     "grade": "Snowfields, moraine",
+     "notes": "From Boulder Basin, head southeast up snowfields, or a climbers' path later in the season, into a wide snow bowl below the glacier. Do not take the left-hand moraine. It leads to an awkward traverse under a wall of loose rock and then across a steep snowfield to get back on line. Scout the entry the evening before if arriving late, and rope up where the snow meets the ice.",
+     "pitch": "Camp → Sitkum Glacier"
+    },
+    {
+     "grade": "Glacier, crevassed",
+     "notes": "Climb slightly south to the corridor beside the rock feature that splits the lower glacier, then trend northeast. Above that gap the angle eases. Aim for the saddle near 9,500 ft just east of Sitkum Spire, the obvious rock finger on the west summit ridge. Crevasses are not abundant but include hidden ones, even low down, and late season turns stretches to bare ice. Leave camp early, before the snow softens.",
+     "pitch": "Sitkum Glacier"
+    },
+    {
+     "grade": "Loose pumice",
+     "notes": "From the saddle, follow the pumice ridge toward the summit block. The footing is loose and tiring with no technical difficulty, and most parties unrope here. The saddle can be icy or rimed early in the day, so keep crampons handy. Note where you left the glacier: finding that spot again in a whiteout is the key to the descent.",
+     "pitch": "Sitkum Ridge pumice"
+    },
+    {
+     "grade": "Snow chute, Class 2–3",
+     "notes": "Keep right of and slightly below the summit, traversing pumice or snow to one of several chutes that climb to the top on its right. The alternative turns left across the upper Scimitar Glacier, then climbs steeply right up the summit snow to the top. The summit gully can hold avalanche debris and a steep final headwall after storms. Descend the same way.",
+     "pitch": "Summit pinnacles"
+    }
+   ],
+   "itinerary": {
+    "cal": "White Chuck River Road (FR 23) washout near mile 3.7-4 adds extra road-walking distance to this approach until repaired; best conditions are typically July-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction.",
+      "hours": 4,
+      "miles": 7,
+      "title": "Trailhead to Sitkum Creek camp",
+      "gainFt": 1250,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach a forested camp near Sitkum Creek"
+     },
+     {
+      "n": 2,
+      "note": "A short but steep climb up a climber's path along a ridge south of Sitkum Creek to the high camp at Boulder Basin, leaving time to rest and scout the glacier route.",
+      "hours": 3,
+      "miles": 2,
+      "title": "Continue to Boulder Basin high camp",
+      "gainFt": 2200,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach Boulder Basin (5,500-6,000 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) to the summit before reversing back to camp.",
+      "hours": 9,
+      "miles": 7,
+      "title": "Summit via the Sitkum Glacier",
+      "gainFt": 4650,
+      "lossFt": 4650,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "3:00-4:00 AM",
+        "label": "Leave Boulder Basin",
+        "detail": "Rope up for glacier travel."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Reach the ~9,500 ft saddle",
+        "detail": "East of Sitkum Spire, at the top of the glacier."
+       },
+       {
+        "time": "Late morning",
+        "label": "Summit",
+        "detail": "Final stretch is scree/pumice with a short snow-field traverse."
+       },
+       {
+        "time": "Early-mid afternoon",
+        "label": "Back at Boulder Basin camp",
+        "detail": "Reverse the glacier; watch for softening snow bridges late in the day."
+       }
+      ],
+      "objective": "Summit Glacier Peak (10,541 ft) and return to camp"
+     },
+     {
+      "n": 4,
+      "note": "Break camp and hike out the way you came in.",
+      "hours": 6,
+      "miles": 9,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 3450,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 4-day standard trip (~21-25 miles RT, 8,210 ft gain); strong, fit parties commonly compress it to 3 days by combining the two approach days."
+   },
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Northwest Forest Pass required for parking. No climbing permits or camping fees required. Trail status: The White Chuck River Trail was severely damaged by a 2003 flood; contact Darrington Ranger Station for current conditions.",
+    "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+    "permit": "Self-Issue Wilderness Permit",
+    "closures": "CLOSED: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, since 19 March 2025, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+    "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+    "group_limit": 12,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "North Fork Sauk Road / Sloan Creek Road (FR 49)",
+    "status": "Gravel, with rough and washed-out sections; medium or high clearance is recommended and a low-clearance car may not clear them.",
+    "driveNote": "From Darrington, follow the Mountain Loop Highway about 16.3 miles to Sloan Creek Road (FR 49), then about 6.6 miles to the North Fork Sauk River Trailhead. The White Chuck Road (FR 23) approach from the north is a different start and is closed at milepost 3.7.",
+    "seasonalGate": "The Mountain Loop Highway's Deer Creek to Bedal section is gated through the winter and typically reopens in mid-May; FR 49 can hold snow into early summer in heavy years."
+   },
+   "climate": {
+    "typical": "Slightly drier than west-side volcanoes; cold, glaciated, remote; below-freezing summit much of the year.",
+    "bySeason": {
+     "fall": "Crevasses open, early storms",
+     "spring": "Deep snow on approach; firm glacier",
+     "summer": "Prime late June–August; approach melts out",
+     "winter": "Severe; very long approach from snowline"
+    },
+    "forecastZone": "Glacier Peak (NWAC West Slopes Central)"
+   },
+   "emergency": {
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger District, Darrington, WA",
+    "nearestHospital": "Cascade Valley Hospital, Arlington (Level IV trauma, first stabilization stop) / Providence Regional Medical Center Everett (Level II trauma center, Snohomish County's only Level II adult trauma center)",
+    "sheriffDispatch": "911; Snohomish County Sheriff dispatch 425-407-3999"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in July-August; quietest midweek and in the early/late shoulder of the season",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Low-to-moderate — likely on the order of 100-300 climbing parties across the whole summer season; Glacier Peak has no permit quota or registration count, so no hard number exists, but it is described as one of the least-crowded major WA volcanoes"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong multi-day backpacking fitness — roughly 20+ mile round-trip approach with 6,000+ ft of gain spread over 2 days each way, carrying overnight gear",
+     "packWeight": "35-45 lb pack for the approach and high camp"
+    },
+    "approachTime": "~2 days to high camp (Boulder Basin) each way; roughly 3-4 days car-to-car",
+    "requiredSkills": [
+     "Glacier travel & crevasse rescue",
+     "Roped glacier travel",
+     "Self-arrest",
+     "Route-finding on a long, unmarked approach",
+     "Basic snow-climbing movement on ~40° slopes"
+    ],
+    "experienceLevel": "Prior glacier travel and crevasse-rescue experience required; needs to be comfortable with multi-day, self-supported wilderness travel far from help"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June through August — favor late June/July for the firmest glacier and least-open crevasses",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Best balance of a melted-out approach and a still-firm, less-crevassed glacier",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Approach trail can still be snowy or brushy early in the month; glacier is well-consolidated",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Warm and stable, but crevasses more open and pumice/rock exposed higher on the route",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Below-freezing summit conditions much of the year even in summer; slightly drier than the west-side volcanoes but still cold and glaciated",
+     "probability": "Rapid weather changes far from any escape route are a hazard here; afternoon buildups become more common into August"
+    },
+    "exposure": "Moderate — route steepens to ~40° below the summit pinnacles with fall potential into crevasses or on loose pumice/rock once melted out",
+    "avalanche": {
+     "zone": "NWAC Stevens Pass zone is the nearest official forecast area; NWAC issues forecasts only roughly Nov-Apr, so there is no active avalanche forecast during the June-Aug climbing season",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low"
+     }
+    },
+    "crevasses": "Significant — crevasse navigation on the Sitkum Glacier is a primary named hazard; opens up progressively through the season"
+   },
+   "data_quality": {
+    "gaps": [
+     "No published climber-count or quota data for Glacier Peak (no permit system, self-registration only)",
+     "No NWAC forecast zone or data specific to Glacier Peak or to the summer climbing season",
+     "Crowd estimate is inferred from general remoteness/no-permit reporting rather than a hard count",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/N0T3",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.111844,
+    "peakLng": -121.11412,
+    "trailhead": "North Fork Sauk River Trailhead",
+    "trailheadLat": 48.0579,
+    "trailheadLng": -121.2882
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "White Chuck River Trail #643 (the historic standard)",
+     "notes": "This was the standard way up Glacier Peak and the road access has been unreliable for a very long time. The last several miles of FR 23 to the White Chuck trailhead have been reported blocked — at one point with large boulders placed at the turnoff — and reports of the road being driveable and undriveable have alternated over the years. Confirm with the Mount Baker-Snoqualmie forest before relying on it, because in a bad year the effective trailhead moves miles downstream.\n\nFrom the trailhead at about 2,350 ft the trail runs upstream through old growth, crossing Pumice, Glacier and Kennedy Creeks — reliable water, but high with snowmelt in early summer. At about five and a half miles is the old Kennedy Hot Springs area at around 3,300 ft, still a popular campsite; the pool, lodge and guard station were destroyed by the 2003 flood and never rebuilt, so there is no usable hot pool there.\n\nAnother mile and a half brings you to Sitkum Creek and the PCT junction at about 3,850 ft. Turn north on the PCT for about half a mile to a forested camp near 4,100 ft.",
+     "season": "Jun-Aug",
+     "hazards": [
+      "unreliable road access to the trailhead over many years",
+      "creek fords running high with early-summer snowmelt",
+      "steep unmaintained climbers' path with no signage leaving the PCT",
+      "crevasses on the Sitkum"
+     ],
+     "primary": true,
+     "baseFinding": "The path that leaves the PCT for Boulder Basin is unsigned and steeper than anything before it — climbers describe it as more of a fisherman's track than a trail. The test is direction, not appearance: the correct path goes STRAIGHT UP the forested ridge. Anything that contours is the PCT or a game trail.\n\nYou know you have arrived at the top of it when the trees break: Boulder Basin at roughly 5,500 to 6,000 ft is heather and rock benches with running water, and it is the standard high camp. If you are still in continuous forest, you are below it, however long the climb has felt.\n\nFrom camp the route ascends snowfields onto the toe of the Sitkum. Rope up at the point the snowfield stops being a slope you can see the bottom of and becomes continuous glacier — there is no rock landmark for this, so the transition is judged on the ground rather than found."
+    },
+    {
+     "name": "North Fork Sauk and the PCT (the reliable alternative)",
+     "notes": "Because the White Chuck side has been unreliable for years, parties reach this side of the mountain instead from the North Fork Sauk River trailhead, climbing to White Pass on the PCT and then travelling north over Red Pass toward the Glacier Creek and Sitkum ground. It is substantially longer and is chosen for access rather than for the climbing.",
+     "season": "Jun-Aug",
+     "hazards": [
+      "very long approach on the PCT with substantial gain and loss",
+      "no signed junction for the climbers' path"
+     ],
+     "baseFinding": "The route above is unchanged: the marker is Boulder Basin — trees giving way to heather and rock benches with running water at roughly 5,500 to 6,000 ft — and then snowfields onto the toe of the Sitkum above it. Arriving from the north on the PCT the risk is passing the drainage entirely, so identify the Sitkum Creek and Glacier Creek junctions on the map before you set out rather than expecting signage."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Snowfields onto the glacier toe",
+     "notes": "From the Boulder Basin camp at 5,500-6,000 ft, head southeast up snowfields and moraine to gain the toe of the Sitkum Glacier. This is the one place parties routinely go wrong: taking the left-hand moraine commits you to an awkward traverse beneath a wall of loose rock and then across a steep snowfield to recover the correct line. Sort the entry out in daylight if you can, and rope up before stepping onto glacier ice."
+    },
+    {
+     "n": 2,
+     "label": "Lower glacier corridor",
+     "notes": "Trend slightly south to take the corridor on the left side of the rock feature that divides the lower glacier, then work back northeast. Both open and hidden crevasses are present here and the crossing points shift year to year and even week to week, so expect to weave and to reverse a line or two. Late-season melt-out exposes more bare ice and pushes the practical route further off any recorded track — a GPS trace from a previous party is a hint, not a route."
+    },
+    {
+     "n": 3,
+     "label": "Upper glacier to the saddle",
+     "notes": "Continue northeast up the upper glacier to a saddle at roughly 9,500 ft just east of Sitkum Spire. The firn line on the upper glacier has been retreating and bare ice is increasingly exposed, which makes crampons and a firmer belay standard rather than optional in late summer. A bergschrund sits below the saddle and is the last crevasse hazard on the ascent. This is a shaded, exposed slope late in the day — softening snow after mid-morning is the reason parties leave camp in the small hours."
+    },
+    {
+     "n": 4,
+     "label": "Sitkum Ridge pumice",
+     "notes": "From the saddle, leave the glacier for the pumice of Sitkum Ridge. This is loose, ball-bearing volcanic debris on a moderate slope — no technical difficulty, but tiring underfoot and easy to send rock down onto anyone behind. Most parties unrope here. Being off the glacier, it is also the point where a whiteout descent becomes hard to navigate by feel, so mark the spot where you leave the snow."
+    },
+    {
+     "n": 5,
+     "label": "Summit slope",
+     "notes": "Stay to the right of and slightly below the summit as you gain height, then take the snow chute that leads up to the top. The whole route is a glacier and snow climb with no rock pitches, but it is a long day at altitude on an isolated volcano where weather closes in quickly and the descent retraces every crevasse crossing made on the way up."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5500,
+     "name": "Boulder Basin",
+     "role": "main",
+     "notes": "The standard planned high camp, in an open meadow basin at the treeline with the glacier toe above. It is a pleasant place — flowers, waterfalls, and correspondingly aggressive marmots and bugs — but earning it means a long approach and then a steep, unmaintained climbers' path straight up a forested ridge with a full pack. It is about ten miles from the road end, and the road itself has a long history of washouts, so confirm where the trailhead actually is before you plan the day.",
+     "water": "Waterfalls and snowmelt streams run through the basin; dependable into late summer but shrinking as the season goes on. Filter it",
+     "permit": "No backcountry permit is required for overnight use in this wilderness",
+     "capacity": "Several established sites on heather and rock benches at treeline, spread through the basin between roughly 5,500 and 6,000 ft"
+    },
+    {
+     "elev": 3300,
+     "name": "Kennedy Guard Station area",
+     "role": "route",
+     "notes": "The lowest planned stop, about 5.5 miles in and still widely used. Do not plan on soaking: the historic hot pool, lodge and guard station here were buried by the 2003 flood and debris flow and were never rebuilt. Useful as a first night for parties splitting the approach, or as a retreat in bad weather, but it is a long way and a lot of gain below the glacier.",
+     "water": "The river and its tributaries",
+     "capacity": "Popular established riverside sites"
+    },
+    {
+     "elev": 4100,
+     "name": "Sitkum Creek / PCT junction camp",
+     "role": "route",
+     "notes": "A lower fallback for parties who run out of daylight on the long walk in, sitting where the climbers' path leaves the maintained trail. Below treeline, so it is sheltered and out of the weather, but it leaves the entire steep climbers' path plus 1,500 ft of gain before you are even at the standard camp.",
+     "water": "Sitkum Creek",
+     "capacity": "A small forested site or two just north of the trail junction"
+    },
+    {
+     "name": "Boulder Basin Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_doorway_flake",
+  "name": "Doorway Flake",
+  "area_id": "wa_south_face",
+  "findings": [
+   "r048.json: The approach ends at the grassy saddle at the base of the South Face: one party reached the grassy saddle two hours from the car and began climbing from it; route pages start the South Face lines from the saddle (Concerto scrambles down ramps from it across the granite apron; Western Dihedral goes left from it to the base of Skeena26). The saddle is where climbing begins, not where it ends, so 'Topout' is wrong; the pin is retyped to match its duplicate, coordinates untouched. | Base/bivy"
+  ],
+  "gpx_summary": "4 points; 3 of 4 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_doorway_flake",
+   "area_id": "wa_south_face",
+   "name": "Doorway Flake",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 5,
+   "length_m": 213,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bill Enger and Yale Lewis, June 19, 2019",
+   "lat": null,
+   "lng": null,
+   "aspect": "SSW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Single rack to #4 Camalot",
+    "~12 quickdraws (plus a few extended)",
+    "Two 60m ropes"
+   ],
+   "hazards": [
+    "Steep, brushy, poorly maintained approach with stream crossings and old rockslide/avalanche debris",
+    "Remote location extends any self-rescue or evacuation timeline"
+   ],
+   "verif": null,
+   "overview": "A 5-pitch, 700-ft route on the Far Western Wall reaching a distinctive hanging flake, with sculpted-knob face climbing low down and a bolt-protected 5.9 face crux on pitch two.",
+   "beta": "Pitch 1 (5.8) climbs sculpted knobs to a hanging flake with stemming and crack moves. Pitch 2 (5.9) is the crux — bolt-protected face climbing. Pitch 3 (5.7) follows a clean crack system, and pitches 4-5 (5.6) ease through dihedrals and slab to the top.",
+   "turnaround": "There is no quick bail once on route above the 4th-class approach scramble; start early enough to finish the climb, rappel, and reverse the multi-hour approach before dark, and back off if thunderstorms threaten the exposed face pitch.",
+   "auto_generated": false,
+   "alpine_grade": "II",
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "5 raps on two 60m ropes to Fixe chain anchors",
+   "commitment": "II",
+   "face": "South Face - Far Western Wall",
+   "permit": null,
+   "comms": "No reliable cell coverage on the wall or approach; a satellite communicator is recommended.",
+   "descent": null,
+   "obj_haz": [
+    "class 4 approach scramble",
+    "afternoon sun on SSW slab",
+    "loose rock near the talus/approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.2088,
+     "lng": -121.6298,
+     "elev": 1900,
+     "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 1900,
+     "directions": "From I-5 take the Arlington exit and drive SR 530 east through Oso to Darrington. Leave town on Squire Creek Road and follow it to the washout gate, which is where the road ends for vehicles and where you park. Everything past the gate is walked, starting along the old roadbed past the flagged landslide crossing."
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "Grassy saddle (South Face routes)",
+     "note": "Shares the same ~3 hr approach as the wall's other South Face routes.",
+     "type": "Base/bivy",
+     "distMi": 3
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "South Face grassy saddle",
+     "type": "Base/bivy",
+     "distMi": null,
+     "elevFt": 3249
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4958,
+     "name": "Squire Creek Wall (true summit/high point)",
+     "type": "Summit",
+     "elevFt": 4958
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4,
+    "recommendedStart": "A pre-dawn alpine start is advisable given the multi-hour approach and multi-pitch descent"
+   },
+   "detailed_rack": "Single standard rack to 4 inches, about a dozen quickdraws (plus a few longer/extended ones), and two 60m ropes for the rappel descent.",
+   "what_to_bring": [
+    "Helmet",
+    "Approach shoes for a rough, 4 hr approach with a creek ford and 4th-class scrambling",
+    "Rain shell",
+    "Insect repellent",
+    "Route topo/photo reference",
+    "Extra water"
+   ],
+   "pro_tips": [
+    "The 4th-class approach traverse to the Far Western Wall is exposed — move carefully with packs on",
+    "Bring a topo; hand-drilled bolts can be hard to spot in shade"
+   ],
+   "watch_out": [
+    "Exposed 4th-class scrambling before roping up",
+    "Bolt-protected crux face pitch (2) — inspect conditions before committing"
+   ],
+   "pro_needs": "Bolt protection on the pitch-2 face crux, with gear placements in the flake, crack, and dihedral sections on the remaining pitches; all bolts are hand-drilled per Wilderness rules.",
+   "best_season": "Best mid-summer through early fall (roughly July-September); the Boulder River Wilderness holds snow into July and can see new snow by October.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, unmaintained approach — the old roadbed past a landslide crossing, a faint trail through streambed and alder brush, a ford of Squire Creek, and obscure forest track — before breaking into the open basin roughly 2 hours from the car; South Face is one of the walls encountered within that same basin complex, with route-finding (flagging, cairns) required in several spots.",
+   "descent_text": "Rappel the line of ascent using the fixed hand-drilled bolt and Fixe chain anchors; two 60m ropes recommended.",
+   "bail": "Descent is by rappelling the route itself from the nearest fixed anchor — there is no separate walk-off.",
+   "pitch_detail": [
+    {
+     "grade": "5.8",
+     "notes": "The namesake flake sits about 6 m above the talus at the nearest point of the far western wall. Boulder up sculpted knobs to the flake's lower edge, where a good crack takes a range of sizes, and stem over the lip. A 4-inch cam in the top of the flake protects knobs to a bolt; step right up cracks and ledges past another bolt, then back left via a quartz-studded block to a big ledge and smear past two bolts to the anchor.",
+     "pitch": "1",
+     "anchor": "bolted"
+    },
+    {
+     "grade": "5.9",
+     "notes": "From the right end of the ledge, face moves lead right to a visible bolt. Easy ground reaches a steep block protected by a 1.5-inch horizontal, then a vertical edge that faces right, then left past an alcove, with four bolts: sustained, fun 5.9 face climbing. Step down left to a narrow ledge and a high bolt, undercling out left to a diving-board feature (3/4-inch gear), and climb its dihedral past one bolt.",
+     "pitch": "2",
+     "anchor": "bolted"
+    },
+    {
+     "grade": "5.7",
+     "notes": "Go left off the ledge up edges with a slot for gear and a bolt, then straight up to a large ring of bushes and pass it on the left. Reach left on smears into a clean crack system through the White Spot, pass a hanging block with a white stump on its left, move right to a 1-inch crack, and traverse right into an easy trough to the anchor.",
+     "pitch": "3",
+     "anchor": "bolted"
+    },
+    {
+     "bolts": 1,
+     "grade": "5.6",
+     "notes": "Cruise up easy dihedrals including a long 4-inch layback crack. Where it turns right, step left for gear or pad up to a single bolt at a stance under a patch of bushes, then smear up and right near the hanging branches and move left past them to the anchor.",
+     "pitch": "4",
+     "anchor": "bolted"
+    },
+    {
+     "bolts": 1,
+     "grade": "5.6",
+     "notes": "One bolt protects a slabby hump heading straight for the summit; scramble the blocks above to a chain anchor. Descent is by rappelling the route with two ropes.",
+     "pitch": "5",
+     "anchor": "bolted"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+    "notes": "Approached via a ~1.5 mi walk on a decommissioned logging road (Squire Creek Trail 654) — roadside-adjacent but still within a designated wilderness boundary for part of the approach.",
+    "rules": "Standard Boulder River Wilderness rules apply (no numeric group-size cap published — don’t assume Glacier Peak Wilderness’s 12-person limit applies here).",
+    "permit": "None required — free self-issue wilderness permit available if needed.",
+    "closures": "Access road washed out by rockslides (~2002-2003) roughly 2 miles below the original trailhead; that section is now foot-travel only, adding time to the approach.",
+    "group_limit": 12,
+    "landManager": "USDA Forest Service — Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Boulder River Wilderness",
+    "parking_pass": "Assume Northwest Forest Pass required at the trailhead (standard for MBS NF day-use trailheads) — $5/day or $30/year.",
+    "passRequired": "No Northwest Forest Pass needed at the main Squire Creek trailhead.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Squire Creek Road (FR 2040) to Squire Creek Trailhead",
+    "status": "Squire Creek Road is a poorly-maintained gravel Forest Service spur; high-clearance and 4WD are recommended for the final stretch to the trailhead. From the trailhead it's about a 1.5-mile walk along a decommissioned logging road, then a descent to cross the creek beneath the walls.",
+    "driveNote": "From Darrington, follow Darrington Street about 7 miles to its end (becomes Squire Creek Road) — roughly 1-1.5 hours from Everett, about 2 hours from Seattle."
+   },
+   "climate": {
+    "fall": "Climbable into September; new snow can return by October",
+    "spring": "Approach gullies and the saddle are typically snow-covered into early summer — not viable for rock climbing",
+    "summer": "Primary season; snow usually clears by July for the most reliable dry-rock window",
+    "winter": "Not climbable — heavy snowpack and wet conditions",
+    "typical": "Wet west-slope Cascades climate; the Boulder River Wilderness receives 150+ inches of precipitation annually",
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Snohomish County Volunteer Search & Rescue (SCVSAR) supports backcountry rescues in this drainage; the long, remote approach means self-rescue and early retreat should be the default plan.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger Station, 1405 Emens Ave, Darrington, WA — (360) 436-1155",
+    "nearestHospital": "Skagit Regional Health – Cascade Valley Hospital, 330 S. Stillaguamish Ave, Arlington, WA (Level IV ED) — (360) 435-2133",
+    "sheriffDispatch": "Snohomish County Sheriff's Office (non-emergency) 425-388-3393; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through mid-September, when the Squire Creek ford is low and the slabs dry out between rains",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The creek drops and the south-facing slab dries; heat on the sunny wall can make afternoon friction greasy.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snowmelt keeps Squire Creek high for the ford, the slabs seep after rain, and snow can linger in the basin into early summer.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Lowest water at the ford and the driest rock of the year; start early to climb before the sun makes the slab hot.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Autumn rain on this very wet west slope keeps the rock damp, days are short, and new snow is possible in the basin.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cooler temperatures give better friction on the sunny slab, though the first fall rains leave the rock wet for a day or two.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.19575,
+    "peakLng": -121.65485,
+    "trailhead": "Squire Creek Road washout parking (Darrington)",
+    "trailheadLat": 48.2088,
+    "trailheadLng": -121.6298,
+    "trailheadDirection": "From Darrington via Squire Creek Road to the gated washout parking, then the Squire Creek Walls climbers' path"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Squire Creek trail, cut logs, ford and the grassy saddle",
+     "hours": "3",
+     "notes": "Squire Creek Road out of Darrington to the washout gate, then the old roadbed on foot past the flagged landslide crossing.\n\nTurn right at the two cut logs with old logging cable onto the well-beaten boot track. Ford the creek, climb steeply through old-growth forest — the upper section is steep and dirty — and break out into grassland at the grassy saddle bivy, roughly three hours from the trailhead. A second, smaller saddle lies ten minutes west along the wall.",
+     "season": "Summer",
+     "hazards": [
+      "Ford of Squire Creek",
+      "Steep dirty forest on the upper boot track"
+     ],
+     "baseFinding": "The main grassy saddle, at the start of Concerto in C for Drill and Hammer, is the reference point for the whole South Face; the smaller saddle further west is not it. From the saddle the grey granite apron runs out below the wall and the lines are picked off it. Rock here is generally clean slab with cracks that can be dirt-filled low down — dirty cracks near the ground are normal on this face and are not evidence you are off route. The sources consulted give no ground-level marker unique to this line, so identify it off the wall topo from the saddle rather than from anything underfoot."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 463,
+     "name": "Squire Creek Park & Campground, Snohomish County",
+     "role": "main",
+     "type": "camp",
+     "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+     "water": "Piped drinking water via spigots through the campground; reliable in season",
+     "permit": "None — this is a COUNTY park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+     "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+    },
+    {
+     "name": "Squire Creek road end / trailhead bivouac",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+     "water": "Squire Creek runs close by and is dependable, but needs treating",
+     "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+     "capacity": "A few parties, informal"
+    },
+    {
+     "name": "Squire Creek Wall on-route ledges",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+     "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+     "permit": "None",
+     "capacity": "Small ledges, one party"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_skeena26",
+  "name": "Skeena26",
+  "area_id": "wa_south_face",
+  "findings": [
+   "r048.json: The approach ends at the grassy saddle at the base of the South Face: one party reached the grassy saddle two hours from the car and climbed Skeena26 from there; route pages start the South Face lines from the saddle (Western Dihedral goes left from it to the base of Skeena26). The saddle is where climbing begins, not where it ends, so 'Topout' is wrong; the pin is retyped to match its duplicate, coordinates untouched. | Base/bivy"
+  ],
+  "gpx_summary": "4 points; 3 of 4 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_skeena26",
+   "area_id": "wa_south_face",
+   "name": "Skeena26",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 12,
+   "length_m": 457,
+   "sort_order": null,
+   "stars": null,
+   "fa": "David Whitelaw, Bill Enger, and Yale Lewis, September 17, 2012",
+   "lat": null,
+   "lng": null,
+   "aspect": "SSW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "BD Stoppers #5-8",
+    "Camalot C3 #1-2",
+    "Camalot C4 0.5-#3",
+    "5 quickdraws",
+    "5 alpine draws",
+    "50m ropes (60m to combine pitches 5-6)"
+   ],
+   "hazards": [
+    "Steep, brushy, poorly maintained approach with a creek ford and old rockslide/avalanche debris",
+    "Remote location extends any self-rescue or evacuation timeline"
+   ],
+   "verif": null,
+   "overview": "A 12-pitch, 1,500-ft friction climb on immaculate, knobby grey granite, with a polished 5.9 crux on pitch one easing into mostly 5.4-5.6 climbing above, finishing on clean splitter cracks overlooking Whitehorse Mountain.",
+   "beta": "Pitch 1 climbs a narrow 'whale's back' of stone between facing corners on polished friction, protected by nine bolts, and holds the route's crux. Subsequent pitches ease to 5.4-5.6 with occasional 5.8 sections. The final pitch features clean splitter cracks (5.7) finishing on the buttress crest with views over Whitehorse Mountain.",
+   "turnaround": "With 12 pitches and a multi-hour approach, treat this as a full-day objective with no quick bail; start early enough to finish and hike out before dark, and back off if water/seepage or building weather make the polished friction pitches unsafe.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Rappel the route on 50m ropes (most pitches take a full 50m); pitches 5-6 can be combined using 60m ropes",
+   "commitment": "III",
+   "face": "South Face",
+   "permit": null,
+   "comms": "No reliable cell coverage on the wall or approach; a satellite communicator is recommended.",
+   "descent": null,
+   "obj_haz": [
+    "seasonal water flow on pitch 7",
+    "runout on pitch 9",
+    "polished rock on pitch 1"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.2088,
+     "lng": -121.6298,
+     "elev": 1900,
+     "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 1900,
+     "directions": "Take I-5 to the Arlington exit, then SR 530 east through Oso to Darrington. From town, follow Squire Creek Road until it is blocked by the washout and park at the gated area there, around 1,900 feet. You cannot drive past that point; the climbers' path toward the Squire Creek Walls starts from the parking area, beginning on the old roadbed beyond the gate."
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "Grassy saddle (South Face routes)",
+     "note": "Brilliant white slab starting near the saddle, mostly 5.4-5.6 with a 5.9 opening pitch.",
+     "type": "Base/bivy",
+     "distMi": 3
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "South Face grassy saddle",
+     "type": "Base/bivy",
+     "distMi": null,
+     "elevFt": 3249
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4958,
+     "name": "Squire Creek Wall (true summit/high point)",
+     "type": "Summit",
+     "elevFt": 4958
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 3,
+    "recommendedStart": "A pre-dawn alpine start is advisable given 12 pitches plus a multi-hour approach and descent"
+   },
+   "detailed_rack": "A light single rack to 3 inches: BD Stoppers (#5-8), Black Diamond Camalot C3 (#1-2), Camalot C4 (0.5 to #3), plus 5 quickdraws and 5 alpine draws; hand-drilled stainless-steel wedge bolts protect the crux friction sections.",
+   "what_to_bring": [
+    "Helmet",
+    "Approach shoes for a rough, 3 hr approach with a creek ford",
+    "Rain shell",
+    "Insect repellent",
+    "Route topo/photo reference",
+    "Extra water"
+   ],
+   "pro_tips": [
+    "Bolts are moderately spaced (10-20 ft) and can be extremely difficult to spot in shade — scout ahead and carry a topo",
+    "50m ropes work for most pitches; bring 60m to combine pitches 5-6 on the descent"
+   ],
+   "watch_out": [
+    "Polished friction holds on the pitch-1 crux, especially when damp",
+    "Water still running on pitch 7 has been reported even in season"
+   ],
+   "pro_needs": "Bolt-protected on the polished pitch-1 crux (9 bolts) and other friction sections, with natural gear placements filling in on lower-angle pitches and the final splitter-crack pitch.",
+   "best_season": "Best from mid-summer through early fall (roughly July-September); parties note lingering water/seepage on pitch 7 even in-season, and the Boulder River Wilderness holds snow at elevation into July.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, unmaintained approach — the old roadbed past a landslide crossing, a faint trail through streambed and alder brush, a ford of Squire Creek, and obscure forest track — before breaking into the open basin roughly 2 hours from the car; South Face is one of the walls encountered within that same basin complex, with route-finding (flagging, cairns) required in several spots.",
+   "descent_text": "Rappel the line of ascent; 50-meter ropes are adequate for most pitches, while 60-meter ropes allow combining pitches 5 and 6 to speed the descent.",
+   "bail": "Retreat is by rappelling the route from the nearest fixed anchor — no separate walk-off exists.",
+   "pitch_detail": [
+    {
+     "crux": true,
+     "bolts": 9,
+     "grade": "5.9",
+     "notes": "Find the narrow whale's-back rib between two facing corners; the nine bolts are hard to see in the shade. A bouldery 5.9 move gains the rib, then 5.7-5.8 friction leads to polished rock near the top with a few more 5.9 moves. Step onto a flake on the left, place gear in good cracks just above, then traverse right to the belay ledge.",
+     "pitch": "1"
+    },
+    {
+     "notes": "The character of most of the route: friction on brilliant white granite covered in knobs and bumps, mostly 5.4-5.6. Bolts are spaced roughly 10-20 feet apart and hard to spot in shade, so look ahead before leaving each anchor.",
+     "pitch": "2-4"
+    },
+    {
+     "notes": "More knobbed slab at 5.6 with occasional 5.8 moves. On rappel, 60 m ropes let these two pitches be combined into one rappel.",
+     "pitch": "5-6"
+    },
+    {
+     "notes": "A 5.8 section starts on this pitch, and it can carry running water even when the rest of the route is dry. Be ready for wet smears on this pitch.",
+     "pitch": "7"
+    },
+    {
+     "notes": "There is a gear crack on this pitch that is easy to miss; climbing past it turns the pitch into a long runout. Look for it before running it out.",
+     "pitch": "9"
+    },
+    {
+     "bolts": 4,
+     "grade": "5.7",
+     "notes": "Climb up and right past four bolts (nothing harder than 5.7), then finish on clean 5.7 splitter cracks and a few face moves past the left side of an overhang, onto the forested ledge on top of the buttress with views of Whitehorse Mountain. The wall's true summit is further up brushy scrambling.",
+     "pitch": "12"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "_raw": {
+     "cost_structure": {
+      "day_use": "$5 per vehicle per day or $30 annual pass",
+      "wilderness_permit": "Free"
+     },
+     "parking_pass_required": "Valid recreation pass or Scan & Pay through Recreation.gov app"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Approached via a ~1.5 mi walk on a decommissioned logging road (Squire Creek Trail 654) — roadside-adjacent but still within a designated wilderness boundary for part of the approach.",
+    "rules": "Standard Boulder River Wilderness rules apply (no numeric group-size cap published — don’t assume Glacier Peak Wilderness’s 12-person limit applies here).",
+    "closures": "N/A",
+    "group_limit": 12,
+    "landManager": "USDA Forest Service -- Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Boulder River Wilderness",
+    "parking_pass": "Assume Northwest Forest Pass required at the trailhead (standard for MBS NF day-use trailheads) — $5/day or $30/year.",
+    "passRequired": "Valid recreation pass or Scan & Pay through Recreation.gov app",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Squire Creek Road (FR 2040) to Squire Creek Trailhead",
+    "status": "Squire Creek Road is a poorly-maintained gravel Forest Service spur; high-clearance and 4WD are recommended for the final stretch to the trailhead. From the trailhead it's about a 1.5-mile walk along a decommissioned logging road, then a descent to cross the creek beneath the walls.",
+    "driveNote": "From Darrington, follow Darrington Street about 7 miles to its end (becomes Squire Creek Road) — roughly 1-1.5 hours from Everett, about 2 hours from Seattle."
+   },
+   "climate": {
+    "fall": "Climbable into September; new snow can return by October",
+    "spring": "Approach gullies and the saddle are typically snow-covered into early summer — not viable for rock climbing",
+    "summer": "Primary season; snow usually clears by July for the most reliable dry-rock window",
+    "winter": "Not climbable — heavy snowpack and wet conditions",
+    "typical": "Wet west-slope Cascades climate; the Boulder River Wilderness receives 150+ inches of precipitation annually",
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Snohomish County Volunteer Search & Rescue (SCVSAR) supports backcountry rescues in this drainage; the long, remote approach means self-rescue and early retreat should be the default plan.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger Station, 1405 Emens Ave, Darrington, WA — (360) 436-1155",
+    "nearestHospital": "Skagit Regional Health – Cascade Valley Hospital, 330 S. Stillaguamish Ave, Arlington, WA (Level IV ED) — (360) 435-2133",
+    "sheriffDispatch": "Snohomish County Sheriff's Office (non-emergency) 425-388-3393; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "August to September, once the basin gullies melt out, Squire Creek drops for the ford and the seep on the upper route dries",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The approach melts out and the ford eases, but the white south-facing slabs bake by midday; start at first light.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow lingers in the approach gullies, Squire Creek runs high with snowmelt at the ford, and the upper pitch still seeps.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "The creek is at its lowest and the seep is at its driest; the sunny face gets hot, and wildfire smoke can drift in.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Fall rain raises Squire Creek at the ford and wets the slabs, and short days lengthen the brushy walk out after dark.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cooler slab climbing on dry rock with a low creek; shorter days still leave room for the 12 pitches.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.19575,
+    "peakLng": -121.65485,
+    "trailhead": "Squire Creek Road washout parking (Darrington)",
+    "trailheadLat": 48.2088,
+    "trailheadLng": -121.6298,
+    "trailheadDirection": "From Darrington via Squire Creek Road to the gated washout parking, then the Squire Creek Walls climbers' path"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Squire Creek washout to the west saddle",
+     "notes": "Drive Squire Creek Road out of Darrington until the washout blocks it and park at the gate. Follow the old roadbed past the landslide crossing, watching for two cut logs on either side of the road with old logging cable visible, where a well-established boot track drops right toward the creek. Ford Squire Creek at its shallowest point, follow the climbers' track upstream across a tributary, then climb through two gullies on steep, muddy tread until the ground opens at the grassy saddle below the wall.",
+     "season": "Midsummer into early autumn, once the Squire Creek ford has dropped; the wall itself faces south-southwest and takes direct sun only through the middle of the day",
+     "hazards": [
+      "The Squire Creek ford is difficult in early season",
+      "Faint, flagged approach track through alder and streambed with several places to lose it",
+      "The bolts on the first pitch are old and hard to see against the pale stone"
+     ],
+     "baseFinding": "The grassy saddle where the climbers' path tops out is NOT the start of this route — that is where the other lines on this wall begin, and stopping there is the commonest mistake. From the saddle keep going LEFT, west, along the base of the wall for five to ten minutes to a second and smaller saddle, then scramble up grass into a minor gully. The proof is the first pitch itself: it climbs a narrow whale's back of stone, a rounded rib of clean grey-white granite standing proud between two facing corners of much more broken rock, with a line of bolts up it. Those bolts are old and hard to pick out against the pale stone, so identify the rib shape first and the hardware second. If you are on broken, cornered rock rather than a smooth rounded rib, you are in one of the flanking corners and not on the route. If the main grassy saddle is still below and to your right, you have not walked far enough west."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 463,
+     "name": "Squire Creek Park & Campground, Snohomish County",
+     "role": "main",
+     "type": "camp",
+     "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+     "water": "Piped drinking water via spigots through the campground; reliable in season",
+     "permit": "None — this is a COUNTY park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+     "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+    },
+    {
+     "name": "Squire Creek road end / trailhead bivouac",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+     "water": "Squire Creek runs close by and is dependable, but needs treating",
+     "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+     "capacity": "A few parties, informal"
+    },
+    {
+     "name": "Squire Creek Wall on-route ledges",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+     "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+     "permit": "None",
+     "capacity": "Small ledges, one party"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_marvin_s_ear",
+  "name": "Marvin's Ear",
+  "area_id": "wa_morning_star_peak",
+  "findings": [
+   "r055.json: The waypoint pin (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail guide (48.0251, -121.4779) to within ~50 m; approach_logistics (48.02389, -121.47414) sits ~300 m away (the trailhead has also been planned for relocation ~0.5 mi back). Coordinates are out of scope for patching here, so it is left flagged. | 48.0251, -121.4779 (waypoint position)"
+  ],
+  "gpx_summary": "107 points; 0 of 1 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_marvin_s_ear",
+   "area_id": "wa_morning_star_peak",
+   "name": "Marvin's Ear",
+   "discipline": "alpine",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 7,
+   "length_m": 244,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Morgan Zentler and Sheila Zentler, September 16, 2017; Zentler and Imran Rahman equipped the line earlier that season.",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "quickdraws plus several alpine draws",
+    "70m rope (required — anchors are ~30m apart)",
+    "helmet"
+   ],
+   "hazards": [
+    "loose rock on belay ledges — avoid knocking debris onto the party below",
+    "increasing exposure on pitch 7's north-face traverse",
+    "spring snow low on the route"
+   ],
+   "verif": null,
+   "overview": "Marvin's Ear climbs the skyline ridge of Vega Tower — the sub-summit just east of Vega North Tower/Eros Tower — via a fully bolted 800-ft, 7-pitch alpine sport line (Grade III, 5.10b) through hard metaconglomerate rock. It was the first technical route up Vega Tower's west ridge proper (the only prior technical line, Starshot Ridge 5.8, was established in 1981 on a different aspect); climbing gets progressively more exposed as it skirts over the north face in the upper pitches.",
+   "beta": "800 feet, Grade III 5.10b, with well-protected cruxes though bolts are spaced further apart on easier (5.9-and-under) terrain. Prior to this route, only one other technical line (Starshot Ridge, 5.8, established 1981) existed on Vega Tower, and the west ridge itself was unclimbed until 2016/2017.",
+   "turnaround": "Plan around a full climbing day plus the shared talus approach/descent; retreat via the bolted anchors rather than pushing on if conditions or time run short.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.10b (6a+ / VII- / E2 5b)",
+   "ice_grade": null,
+   "gain_ft": 3400,
+   "loss_ft": 3400,
+   "dist_km": 9.01,
+   "max_angle": null,
+   "rappels": "Rappel the route with a 70m rope.",
+   "commitment": "III",
+   "face": "Vega Tower (skirts the north face in the upper pitches)",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No reliable cell coverage expected; carry a satellite communicator.",
+   "descent": "Rappel the route with a 70m rope — bolted anchors are spaced roughly 30m apart, so a 60m rope will come up short in places. Watch for loose rock and rope-catching pinches on the way down.",
+   "obj_haz": [
+    "loose rock throughout, especially on ledges",
+    "significant rope drag on Pitch 6",
+    "steep spring snow on the approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0247261,
+     "lng": -121.4778459,
+     "elev": 2350,
+     "name": "Sunrise Mine Trailhead",
+     "note": "Sunrise Mine Trail #707 off Sunrise Mine Rd (FR 4065); approach to Vegan/Vega Tower group.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 11,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 11,
+      "note": "Approach via the Sunrise Mine Trail and Headlee Pass, then a talus/heather traverse to the base of Vega Tower. Climb 7 bolt-protected pitches (crux on pitch 6, exposed over the nor…",
+      "fromTo": "Car-to-car: Marvin's Ear",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Quickdraws plus several alpine draws; 70m rope recommended for both leading and the rappel descent.",
+   "what_to_bring": [
+    "Northwest Forest Pass",
+    "Water",
+    "Approach shoes for the talus traverse"
+   ],
+   "pro_tips": [
+    "A 70m rope is mandatory — a 60m will leave rappels short",
+    "Sees far less traffic than Mile High Club next door — expect looser rock on ledges",
+    "Approach is identical to Mile High Club/Beyond Redlining to the ~4,300 ft switchback, then a short additional traverse to Vega Tower"
+   ],
+   "watch_out": [
+    "loose rock on ledges",
+    "north-face exposure high on the route",
+    "early-season snow near the base"
+   ],
+   "pro_needs": "Fully bolted; quickdraws and a few alpine draws cover the whole route. A 70m rope is needed both to climb the longer pitches and to rappel.",
+   "best_season": "Roughly July through September",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "Same Sunrise Mine Trail approach as Mile High Club and Beyond Redlining: follow the trail roughly 2.5 miles to the last major switchback at about 4,300 ft, then leave the trail for a cairned talus traverse heading northeast across two talus fields toward the Vega towers (shared with the other Vega North Tower routes). Where the traverse for Mile High Club and Beyond Redlining continues toward the base of the main west face, Marvin's Ear branches off into a gully to the right (east) of Vega North Tower. Follow this gully up through cedar and heather — vegetated, sometimes loose ground — to a notch on the skyline ridge. From the notch, the last bit to the pitch-one belay involves loose 3rd-class terrain with some exposed 4th-class moves, landing on a grassy ledge that serves as the first belay. Because this gully approach is steeper and more vegetated than the open talus used by Mile High Club, expect a slower, more route-finding-dependent final approach, and be cautious of loose blocks in the gully, especially with parties above.",
+   "descent_text": "Marvin's Ear is rappelled back down its own line (not via Mile High Club). Bolted anchors are set roughly 30m apart along the route, so a single 60m rope will come up short in places — bring a 70m rope, which lets you link some of the 30m-spaced stations into longer raps and reduces the rappel count to roughly four full-length raps rather than seven pitch-by-pitch rappels. Beta from parties who've done the descent numbers them R1 through R4: R1 has notable rope friction on the pull; R2 requires looking right near the end of the rope to find the next station; R3 trends straight down; R4 is straightforward. One notable trap: partway down you'll see a shiny pair of rap chains that looks like the anchor — it isn't the one to use. Instead traverse left to find a hidden bolt behind a rock, then continue left to the actual bolted rappel anchor (no chains), which is the correct line down. Watch for loose rock and rope-catching pinches throughout the descent, consistent with the route's overall character on this face.",
+   "bail": "Any bolted anchor can serve as a bail point given the fully-bolted nature of the climb.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 4,
+     "grade": "5.9",
+     "notes": "Scramble up to a high first bolt with fun stemming on mostly good rock higher up.",
+     "pitch": 1,
+     "anchor": "Bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 6,
+     "grade": "5.10a",
+     "notes": "Edges and slab moves more or less straight up from the belay.",
+     "pitch": 2,
+     "anchor": "Bolted anchor",
+     "lengthM": 27
+    },
+    {
+     "crux": false,
+     "bolts": 1,
+     "grade": "5.0",
+     "notes": "Walk/scramble along ledges, clipping one bolt on the way to the anchor.",
+     "pitch": 3,
+     "anchor": "Bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 9,
+     "grade": "5.9",
+     "notes": "A sustained line of 9 bolts up the broad, golden-granite ridge crest, with pumpy dihedral moves easing off just before the two-bolt anchor.",
+     "pitch": 4,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 10,
+     "grade": "5.10-",
+     "notes": "Bolts trend left toward the end of the pitch to reach the next belay.",
+     "pitch": 5,
+     "anchor": "Bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 9,
+     "grade": "5.10b",
+     "notes": "The technical crux: a cruxy move over a bulge into another sustained, cruxy section; extend a few draws to manage rope drag.",
+     "pitch": 6,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 9,
+     "grade": "5.10-",
+     "notes": "A cool traverse left, then up through a fun corner to the anchor just below the summit.",
+     "pitch": 7,
+     "anchor": "Bolted anchor (near summit)",
+     "lengthM": 30
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach via the Sunrise Mine Trail and Headlee Pass, then a talus/heather traverse to the base of Vega Tower. Climb 7 bolt-protected pitches (crux on pitch 6, exposed over the north face up high) to the summit, then rappel the route itself on a 70m rope — bolted anchors are spaced roughly 30m apart, so a 60m rope will come up short in places.",
+      "hours": 11,
+      "miles": 5.6,
+      "title": "Car-to-car: Marvin's Ear",
+      "gainFt": 3400,
+      "lossFt": 3400,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach base of route",
+        "detail": "Via Headlee Pass and the cairned talus/heather traverse."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Start climbing",
+        "detail": "Pitch 1 of 7; bolts sometimes spaced on easier ground below 5.9."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Top out / summit",
+        "detail": "Crux pitch 6 (5.10b)."
+       },
+       {
+        "time": "1:15 PM",
+        "label": "Begin rappels",
+        "detail": "70m rope required; watch for loose rock and rope-catching on the pulls."
+       },
+       {
+        "time": "5:30 PM",
+        "label": "Back at trailhead",
+        "detail": "After rapping to the base and hiking out."
+       }
+      ],
+      "objective": "Climb 7-pitch Marvin's Ear (5.10b) on Vega Tower and rappel the route"
+     }
+    ],
+    "totalNote": "A full but manageable single day: roughly 11-12 hrs car-to-car for the 7-pitch (5.10b) climb plus about 5.6 mi and 3,400 ft of approach/return hiking."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Reached from the Mountain Loop Highway and Sunrise Mine Road (FR 4065), not through the Glacier Peak Wilderness access roads.",
+     "permit_cost": "Free",
+     "permit_type": "Free self-issue wilderness permit",
+     "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+     "wilderness_zone": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness.",
+     "group_size_limit": "Maximum 12 people per party",
+     "parking_pass_cost": "$5 per day or $30 annual; also accept America the Beautiful passes",
+     "seasonal_closures": "Open year-round; weather-dependent access",
+     "permit_pickup_hours": "Available 24/7 at trailhead",
+     "ranger_station_hours": "Monday-Friday 8:00am-4:00pm (closed 12:00-12:30pm lunch)",
+     "special_requirements": "Motorized equipment prohibited; campfire restrictions apply",
+     "parking_pass_required": "Northwest Forest Pass (some trailheads)",
+     "permit_pickup_location": "Self-issue at trailhead",
+     "ranger_station_address": "1405 Emens Avenue North, Darrington, WA 98241",
+     "ranger_district_contact": "(360) 436-1155"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "rules": "Standard Leave No Trace practice. This approach is outside the Glacier Peak Wilderness, so that wilderness's group-size and campfire-elevation rules do not apply.",
+    "permit": "No wilderness permit required.",
+    "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May.",
+    "permitZone": "Morning Star NRCA / Mt. Baker-Snoqualmie NF, not Glacier Peak Wilderness.",
+    "group_limit": 12,
+    "landManager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass (some trailheads)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required outside the wilderness",
+     "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+    }
+   },
+   "road": {
+    "name": "Sunrise Mine Trailhead (FR-4065), off Mountain Loop Highway",
+    "status": "Mountain Loop Highway is paved from Granite Falls to Barlow Pass; FR-4065 is a short gravel spur generally passable to standard cars in season, though subject to seasonal/weather closures and washouts like other Mt. Baker-Snoqualmie NF roads.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to the Sunrise Mine Trailhead near Big Four/Barlow Pass.",
+    "seasonalGate": "FR roads off the Mountain Loop Highway are typically only reliably open late spring through fall; check Darrington Ranger District/USFS alerts for current status."
+   },
+   "climate": {
+    "fall": "Good into September.",
+    "spring": null,
+    "summer": "Prime season.",
+    "winter": null,
+    "typical": "Marine west-coast climate typical of the west-slope Cascades.",
+    "forecastZone": "NWS 'West Slopes North Central Cascades and Passes' zone (WAZ568)"
+   },
+   "emergency": {
+    "notes": "No cell coverage expected; carry a satellite communicator/PLB.",
+    "county": "Snohomish County",
+    "rangerStation": "Darrington Ranger District, 1405 Emens Ave N, Darrington, WA 98241, (360) 436-1155",
+    "nearestHospital": "Cascade Valley Hospital (Skagit Regional Health), 330 S Stillaguamish Ave, Arlington, WA 98223, (360) 435-2133",
+    "sheriffDispatch": "Snohomish County Sheriff's Office, supported by SCVSAR"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July to mid-September, once the approach gully and talus are snow-free and the bolted pitches are dry",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow clears from the talus and the cedar-and-heather gully through the month; early July can still have snow patches low on the route.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Spring snow still fills the talus traverse and sits low on the route, and the vegetated gully to the notch is wet and slick.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Dry rock and a snow-free approach; start early, as the 4th-class gully to the notch is slow and parties above can knock loose blocks down.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early snow and wet heather make the steep vegetated gully and the exposed north-face traverse on pitch 7 hazardous.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still dry and cooler for the seven bolted pitches; shorter days and the first autumn snow usually arrive late in the month.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "current fixed-hardware condition not independently verified beyond posted trip reports",
+     "No public GPS track found for this route as of this research pass.",
+     "GPS track sourced from https://caltopo.com/m/NGTH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 5,
+    "technical": 4,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.003885,
+    "peakLng": -121.490955,
+    "trailhead": "Sunrise Mine Trailhead (Trail #707, FR-4065)",
+    "trailheadLat": 48.02388889,
+    "trailheadLng": -121.4741444,
+    "trailheadDirection": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+   },
+   "sling_rack": null,
+   "alpine_draws": 4,
+   "rope_type": "single dynamic",
+   "rope_length_m": 70,
+   "rope_note": "A 70 m rope is required rather than preferred: the bolted anchors sit roughly 30 m apart, so a 60 m leaves the rappels short. Quickdraws plus several alpine draws, and a helmet. The line is fully bolted but the spacing is not uniform - four bolts on pitch 1 and six on pitch 2, nine or ten through pitches 4 to 7 where the climbing is sustained at 5.9 to 5.10b, and pitch 3 is a 5.0 walk along ledges with a single bolt between the belays. The descent rappels the route itself on the 70, linking the 30 m stations into roughly four full-length raps.",
+   "ascender": null,
+   "corrections": "Mountain Project route page confirms: '70M rope' recommended for descent, and 'quick draws and a few alpine draws' as the full rack.",
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Notable rope friction reported on the pull.",
+     "anchor": "Bolted anchor (30m-spaced stations, linked via 70m rope)",
+     "lengthM": 35
+    },
+    {
+     "n": 2,
+     "notes": "A shiny pair of rap chains mid-route looks like the anchor but isn't; traverse left to a hidden bolt behind a rock, then further left to the true bolted anchor.",
+     "anchor": "Bolted anchor, requires looking right near rope's end",
+     "lengthM": 35
+    },
+    {
+     "n": 3,
+     "notes": "Trends straight down.",
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "n": 4,
+     "notes": "Straightforward final rappel to the ground.",
+     "anchor": "Bolted anchor at base",
+     "lengthM": 35
+    }
+   ],
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Arête",
+    "Exposed",
+    "Well-protected",
+    "Sustained"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Sunrise Mine Trail, then the east-side gully",
+     "notes": "Share the standard approach as far as the traverse: Sunrise Mine trailhead, two and a half miles of trail through the unbridged creek crossings to the LAST MAJOR SWITCHBACK before the pass zigzags, then the cairned northeast traverse across two talus fields. The difference comes at the end. Where the boot path for the other two routes carries on toward the open talus at the foot of the main west face, this one BRANCHES OFF into a gully on the RIGHT — the east side of the northern tower. The gully is steeper, more vegetated and slower than the open talus, and route-finding matters more on it than anywhere else on the approach.",
+     "season": "June to September; spring snow lies low on the route and in the gully.",
+     "hazards": [
+      "Loose blocks in the vegetated gully, particularly with parties above",
+      "Steeper and more route-finding-dependent final approach than the neighbouring routes",
+      "Loose rock on the belay ledges throughout the climb",
+      "Spring snow low on the route",
+      "Two unbridged creek crossings in the first mile of trail"
+     ],
+     "baseFinding": "Follow the gully on the east side of the tower up through CEDAR AND HEATHER — vegetation is the test, because the neighbouring routes' approach is bare talus and this one is not. The gully leads to a NOTCH ON THE SKYLINE RIDGE. From the notch, the last stretch is loose third-class with a few exposed fourth-class moves, landing on a GRASSY LEDGE that is the first belay. Confirm at the belay by looking up: the first bolt on this route is set notably HIGH above the stance and there are only about four bolts in the whole first rope length, so you scramble before you clip. Negative markers: if you are on open talus at the foot of the tower with two big boulders or a red gully in front of you, you never branched off and you are under the other tower's two routes; if you have found a single bolted belay on a narrow ledge past a lone fir, that is the arete route on the wrong tower."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+     "role": "main",
+     "type": "camp",
+     "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the valley. They are closer to the Sunrise Mine and Big Four trailheads than anything up-valley, at the cost of being low, wooded and busy with general campers rather than climbers. Weekend availability is genuinely tight in midsummer, so a reservation is worth having. Dispersed roadside pullouts along the corridor need no permit but are increasingly signed and patrolled.",
+     "water": "Verlot and Gold Basin generally have drinking water in season; the Stillaguamish runs alongside as a backup",
+     "permit": "Developed fee campgrounds, no permit. None are in wilderness. A Northwest Forest Pass is what you need for the trailheads up the road, not for the sites themselves.",
+     "capacity": "Large by the standards of this valley — dozens of developed sites across the three, tables, toilets, some with potable water; fee sites, reservable in part"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

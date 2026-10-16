@@ -1,0 +1,279 @@
+{
+ "file": "t361.json",
+ "results": [
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Protection on the chimney pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside description found calls the pitch either sparsely or well protected. One route page says the easy-fifth pitches are a good place for a beginner to practise placing gear; a club route page says a rope and basic rock pro help beginners; a trip report found the pitch easy enough to solo. None states that protection is sparse, so the four 'sparse' fields cannot be confirmed and the overview's 'well-protected' cannot be adopted either. Settled by a route description that characterises the gear placements on the chimney.",
+   "sources": [
+    "https://www.summitpost.org/the-castle/151274",
+    "https://mazamas.org/activity/146/",
+    "https://stevensong.com/usa/washington/the-castle/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "1 (a single short roped pitch; the other ROUTE BREAKDOWN rows are approach, traverse and summit scramble)",
+   "evidence": "A club route page states there is one short rock pitch to gain the summit. An independent trip report describes the easiest route as requiring a single pitch of low-angle rock and a single-pitch rappel. The row's own pitch_detail labels only one row P1, and bail/overview describe one pitch.",
+   "sources": [
+    "https://mazamas.org/activity/146/",
+    "https://stevensong.com/usa/washington/the-castle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 4,
+     "value": 1,
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Car-to-car time: timing.totalHrs 3.5 vs itinerary 'roughly 4-6 hours car-to-car'",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "PUBLISHED TIMES total 3.5 h (sections 1.25+0.75+1.5) while the itinerary prose says roughly 4-6 hours car-to-car. Not researched to two sources in this pass; settled by two outside car-to-car times for Castle alone from Reflection Lakes.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_scramble_route",
+   "fact": "Distance shown in the header",
+   "verdict": "fixed",
+   "correct_value": "dist_km 5.8 (3.6 mi one way)",
+   "evidence": "The land manager's trail page gives 7.2 miles round trip and 2,955 ft of gain to the 5,700 ft saddle. An independent hiking-guide page gives 7.2 miles round trip and reaches the pass at 3.6 miles. One-way is therefore 3.6 mi = 5.8 km; the stored 7.3 was the round-trip mileage stored as km.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+    "https://www.wta.org/go-hiking/hikes/eagle-peak-saddle"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 7.3,
+     "value": 5.8,
+     "id": "wa_scramble_route",
+     "fact": "Distance shown in the header"
+    }
+   ]
+  },
+  {
+   "id": "wa_scramble_route",
+   "fact": "Which variant is the bypass",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Class 3 gully is the bypass; the Class 4 step is the optional direct variant",
+   "evidence": "beta, rock_grade, pitch_detail[1-2], pro_tips[1], hazards and the baseFinding all say the bypass is the Class 3 gully and the Class 4 rock step is the direct line; the overview alone calls the Class 4 line the bypass. An outside trail description agrees: the summit scramble is Class IV direct, with a slightly longer, less technical Class III alternative via a gully.",
+   "sources": [
+    "https://www.protrails.com/trail/857/mount-rainier-national-park-eagle-peak-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "optional Class 4 bypass",
+     "replace": "an optional Class 4 direct step",
+     "id": "wa_scramble_route",
+     "fact": "Which variant is the bypass"
+    }
+   ]
+  },
+  {
+   "id": "wa_scramble_route",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "July through September is the usual window",
+   "evidence": "season (Jul-Sep), approach_variants season (Jul-Sep; saddle corniced into June), approach (cornices into June) and climate (spring snow to early June; summer Jul-Sep) agree against best_season's 'June through early October'. An outside hiking guide says the route is best saved for mid to late summer and early fall when snow is absent.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/eagle-peak-saddle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "June through early October provides the best weather, with July",
+     "replace": "July through September is the usual window, with July",
+     "id": "wa_scramble_route",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_scramble_route",
+   "fact": "Direction of the summit finish",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Summit coordinates put Eagle Peak (46.7558, -121.7792) north-west of Chutla Peak (46.7528, -121.7750), and the peak is described as on the north-west/west end of the range, so the baseFinding's 'a quarter mile east along the ridge' from the Eagle-Chutla saddle looks wrong, and one trail description ends the scramble by turning back west (left), matching climbing_route. But the same description says the climbers' path leading right goes to Chutla, contradicting pro_tips[3], while beta and baseFinding send the path east to the rock step; left/right cues cannot be settled by two independent route descriptions, and fixing only the compass word would leave the baseFinding contradicting itself. Settled by a second detailed route description of the saddle-to-summit line.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eagle_Peak_(Washington)",
+    "https://en.wikipedia.org/wiki/Chutla_Peak",
+    "https://www.protrails.com/trail/857/mount-rainier-national-park-eagle-peak-trail",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-08.3153220432"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Rope needed for the couloir rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only rappel-length statement found (usually more than 100 ft, double rope recommended, a 70 m rope may suffice in high snow) describes the rappel from the top of Lover's Lane INTO the Zipper, not the Zipper's own descent rappel; it appears to have been copied into this row's descent_text. The Zipper's own route page says a 30 m rope works for running belays but gives no rappel length, and trip reports reachable did not state one. Settled by a source giving the length of the rappel from the Zipper's dead-tree notch.",
+   "sources": [
+    "https://www.mountainproject.com/route/114089121/lovers-lane",
+    "https://www.mountainproject.com/route/110175024/the-zipper"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Pitch lengths vs rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page gives 1000 ft in 3 pitches and says a 30 m rope works for a running belay, so the ~100 m rows are simul-climbing blocks rather than belayed pitches; but each row names a stationary belay anchor, and no source gives pitch lengths or belay spacing. Settled by a pitch-by-pitch source, or an owner decision to relabel the rows as running-belay blocks.",
+   "sources": [
+    "https://www.mountainproject.com/route/110175024/the-zipper"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Trailhead card name vs its directions",
+   "verdict": "fixed",
+   "correct_value": "Directions for the Narada Falls lot named on the card, with the Reflection Lake summer start as the alternative",
+   "evidence": "One route guide starts the winter approach at Narada Falls, climbing to Stevens Canyon Road and walking toward Reflection Lake to the big bend. An independent route page for the neighbouring couloir describes the same start: park at the Narada Falls lot, go straight up the hill to the closed Stevens Canyon Road, and leave it at the bend. The row's approach, road and Trailhead waypoint name Narada Falls (road gated) or the Reflection Lake pullout (summer).",
+   "sources": [
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm",
+    "https://www.mountainproject.com/route/117755275/fly-the"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "From the Pinnacle Saddle Trailhead across Stevens Canyon Road from the Reflection Lakes parking (~4,860 ft); when the road is snow-gated, winter parties start from the Narada Falls pullout",
+     "replace": "From the Narada Falls parking lot on the road to Paradise, plowed year-round, climb the steep hillside about 200 ft to Stevens Canyon Road; when that road is open, roughly late May to mid-October, most parties park at the Reflection Lake pullout instead and skip the climb",
+     "id": "wa_classic_route_3",
+     "fact": "Trailhead card name vs its directions"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Ice screws and rock rack",
+   "verdict": "fixed",
+   "correct_value": "Pickets if belaying; no rock rack, screws not normally carried",
+   "evidence": "The route page says the Fly is generally soloed but can be protected with pickets in the right snow. An independent peak page says newer climbers may want a 30 m rope and a few pickets for running belays on the broad ~45 degree couloir. Neither mentions screws or a rock rack, matching gear and detailed_rack.",
+   "sources": [
+    "https://www.mountainproject.com/route/117755275/fly-the",
+    "https://www.summitpost.org/lane-peak/152503"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "rope, screws/pickets, rack, extra layers",
+     "replace": "rope and a couple of pickets if belaying, extra layers",
+     "id": "wa_lane_peak_r2",
+     "fact": "Ice screws and rock rack"
+    },
+    {
+     "op": "set",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Ice/snow protection; rock pro for anchors",
+     "value": "A couple of pickets if belaying; ice screws only in a lean year when the exit runs to ice",
+     "id": "wa_lane_peak_r2",
+     "fact": "Ice screws and rock rack"
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "fact": "Approach/total gain: gain_ft 2000 vs itinerary 1500 vs partner hiking ~2500 ft",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "gain_ft and the approach say ~2,000 ft, the itinerary day and totalNote 1,500 ft, and partner_requirements ~2,500 ft. One trip report for the Fly gives 1,764 ft; no second source for this route's figure was found. Settled by a second outside car-to-car gain for the Fly.",
+   "sources": [
+    "https://www.amberchilcott.com/trip-reports/lane-peak-the-fly"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "fact": "Whether the rappel into the Zipper is part of the ascent or the descent",
+   "verdict": "fixed",
+   "correct_value": "The rappel into the Zipper is made on the way up; the party then climbs the upper Zipper to the summit and descends by the Lane-Denman saddle",
+   "evidence": "The route page says to rappel from the tree atop Lover's Lane into the Zipper, climb or solo up to the top of the Zipper, traverse to the summit, and describes a separate descent from a tree below the summit. An independent route guide says Lover's Lane tops out above the Zipper, requiring a rappel into it and climbing the final 300 ft of that route.",
+   "sources": [
+    "https://www.mountainproject.com/route/114089121/lovers-lane",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "From the top, rappel roughly 100+ ft (double rope) from anchors on the ridge down into the adjacent Zipper couloir, then continue down the Zipper or descend via the standard South Face gully/Lane-Denman saddle.",
+     "value": "From the summit, downclimb or rappel from a tree just below it, then descend moderate slopes to the Lane-Denman saddle and down the steep gully on its far side to rejoin the approach. The 100+ ft rappel into the Zipper is made on the way up, not on the way down.",
+     "id": "wa_lane_peak_r3",
+     "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "then either downclimb the remaining Zipper snow or continue over to the standard South Face line and the Lane-Denman saddle.",
+     "replace": "then climb the last few hundred feet of the Zipper and traverse to the summit; the way down is the standard South Face line and the Lane-Denman saddle.",
+     "id": "wa_lane_peak_r3",
+     "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "AND THE STANDARD DESCENT IS A RAPPEL OF MORE THAN 100 FT FROM THAT RIDGE INTO THE ZIPPER ITSELF.",
+     "replace": "AND THE STANDARD NEXT MOVE IS A RAPPEL OF MORE THAN 100 FT FROM THAT RIDGE INTO THE ZIPPER ITSELF, THEN UP ITS LAST FEW HUNDRED FEET TO THE SUMMIT.",
+     "id": "wa_lane_peak_r3",
+     "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "AND THE THING THAT MAKES THIS ROUTE'S DESCENT DIFFERENT FROM ITS NEIGHBOURS': you do not descend your own line.",
+     "replace": "AND THE THING THAT MAKES THIS ROUTE DIFFERENT FROM ITS NEIGHBOURS': you do not finish on your own line.",
+     "id": "wa_lane_peak_r3",
+     "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+    }
+   ]
+  }
+ ]
+}

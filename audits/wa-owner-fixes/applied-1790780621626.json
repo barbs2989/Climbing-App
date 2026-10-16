@@ -1,0 +1,231 @@
+{
+ "applied": [
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "waypoints",
+   "path": [],
+   "fact": "Approach starts at the SR-20 hairpin (4 sources); the pin sat on the Blue Lake lot with the pass's height. Poster Peak is 7,565 ft (4 sources, the area blurb and House Buttress agree; USGS ground 7,440 at the pin); 7,840 is a different peak. Summit mileage was from the old trailhead and has no source, so null."
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "Poster Peak 7,565 ft (4 sources)"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLat"
+   ],
+   "fact": "Hairpin, not the Blue Lake lot"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLng"
+   ],
+   "fact": "Hairpin, not the Blue Lake lot"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "waypoints",
+   "path": [],
+   "fact": "Trailhead pin was the Blue Lake lot, ~1 km WEST of the pass; the pond is a few hundred yards EAST (4 sources) and no source gives it a coordinate, so the pin is removed; summit mileage was from that pin"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLat"
+   ],
+   "fact": "Coordinate was the Blue Lake lot, not the pond pullout"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLng"
+   ],
+   "fact": "Coordinate was the Blue Lake lot, not the pond pullout"
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "column": "waypoints",
+   "path": [],
+   "fact": "East Buttress is approached from the SR-20 hairpin up Spire Gully (3 sources; the row's own approach text). The 'hairpin' pin sat on the Blue Lake trail 2.3 km west, and the two 'Spire Gully' pins sat in the west-side gully; the hairpin pin now leads, the two gully pins are removed (no published coordinate), and the mileages (chained from Blue Lake) are null."
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "column": "approach_logistics",
+   "path": [],
+   "fact": "Trailhead record now agrees with the approach text (hairpin, 3 sources)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_blue_s_buttress",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5477,
+      "name": "Washington Pass hairpin turnout (SR-20)",
+      "note": "Approximate — park at/near the Hairpin pullout on SR-20 about a mile east of Washington Pass; exact pullout GPS not independently confirmed.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.50271,
+      "lng": -120.63726,
+      "elev": 7840,
+      "name": "Poster Peak - Summit",
+      "note": "Blue's Buttress, moderate 8-10 pitch route, short approach.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "high_point_ft": 7840,
+    "approach_logistics": {
+     "peakLat": 48.50271,
+     "peakLng": -120.63726,
+     "trailhead": "Washington Pass hairpin turnout (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead."
+    }
+   }
+  },
+  {
+   "id": "wa_east_face_3",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5477,
+      "name": "Pond pullout east of Washington Pass (SR-20)",
+      "note": "Park a few hundred yards east of Washington Pass near the small pond; exact pullout GPS not independently confirmed.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51229,
+      "lng": -120.65397,
+      "elev": 6969,
+      "name": "Minuteman Spire - Summit",
+      "note": "East Face, 5-6 pitch route on the east side of the Liberty Bell group.",
+      "type": "Summit",
+      "distMi": 1.2
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.51229,
+     "peakLng": -120.65397,
+     "trailhead": "Pond pullout east of Washington Pass (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead."
+    }
+   }
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5400,
+      "name": "Blue Lake Trailhead, Hwy 20",
+      "note": "Northwest Forest Pass required to park; many East Buttress parties instead park at the unmarked hairpin-curve pullout ~1 mi east on Hwy 20 to shortcut into Spire Gully.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Highway 20 to the Blue Lake Trailhead, about 1 mile west of Washington Pass, and park in the small lot; a Northwest Forest Pass is required. Many East Buttress parties instead carry on east toward Washington Pass and park at the unmarked 180-degree hairpin pullout roughly a mile along, below the east faces of the spires, which drops you straight into the bottom of Spire Gully. The standard descent comes back out at Blue Lake, so if you leave the car at the hairpin, plan on a shuttle or a hitch along the highway to close the loop."
+     },
+     {
+      "lat": 48.516853,
+      "lng": -120.674436,
+      "elev": 4900,
+      "name": "Hairpin-curve pullout on Hwy 20",
+      "note": "Alternate, more direct start used by most East Buttress parties: park at the 180-degree hairpin turn just below Washington Pass and hike straight up into Spire Gully instead of via the Blue Lake trail.",
+      "type": "Junction",
+      "distMi": 0.3,
+      "directions": "This is an alternate roadside start rather than somewhere you walk to from the Blue Lake lot: parties using it drive back east along the highway toward Washington Pass and park at the big 180-degree hairpin below the spires, which puts them straight into the bottom of Spire Gully. It cuts out the traverse in from the Blue Lake trail on the way up. The standard descent comes back out at Blue Lake, though, so plan on a shuttle or a hitch along the highway to close the loop."
+     },
+     {
+      "lat": 48.512455,
+      "lng": -120.665341,
+      "elev": 6200,
+      "name": "Spire Gully, last large tree",
+      "note": "Follow occasional cairns up the open gully below the NEWS/SEWS col to the last large tree standing in its center — the cue to angle out of the gully here.",
+      "type": "Junction",
+      "distMi": 1.2,
+      "directions": "From the hairpin climb straight up and southwest into the open gully below the col between the two spires, following the occasional cairns. The whole line is visible from the road, so pick it out before you start walking. Follow the gully to the last big tree standing in the middle of it — that tree is the cue to stop going straight up."
+     },
+     {
+      "lat": 48.511714,
+      "lng": -120.660044,
+      "elev": 6800,
+      "name": "Talus traverse to NEWS-SEWS notch gully",
+      "note": "From the last tree, traverse right across talus (snow early season, crampons/axe recommended) into the gully leading up to the deep cleft separating North and South Early Winters Spire.",
+      "type": "Junction",
+      "distMi": 1.6,
+      "directions": "Leave the gully at the tree and traverse right across talus into the gully that runs up to the deep cleft between North and South Early Winters Spire. Early in the season this traverse is snow rather than talus and is worth an axe and crampons; later it is loose blocky footing."
+     },
+     {
+      "lat": 48.511876,
+      "lng": -120.657053,
+      "elev": 7200,
+      "name": "NEWS-SEWS notch",
+      "note": "Gain the notch between the two spires, then traverse left (south) below South Early Winters Spire's east face to reach the buttress base.",
+      "type": "Junction",
+      "distMi": 1.9,
+      "directions": "Follow that gully up to the notch. It steepens and gets looser toward the top and holds snow late into the summer, so keep the party out of each other's fall line rather than climbing directly above one another."
+     },
+     {
+      "lat": 48.510911,
+      "lng": -120.656307,
+      "elev": 7300,
+      "name": "Base of East Buttress",
+      "note": "Rope up here for the climb up the buttress crest to the summit.",
+      "type": "Junction",
+      "distMi": 2.1,
+      "directions": "From the notch traverse left, southward, along ledges beneath the east face until you are under the crest of the buttress. It is only a short way along and barely above the notch, so treat it as a traverse rather than a climb, and rope up once you are there."
+     },
+     {
+      "lat": 48.512275,
+      "lng": -120.655395,
+      "elev": 7807,
+      "name": "South Early Winters Spire summit",
+      "note": "Highest summit of the Liberty Bell group; sweeping views of Liberty Bell, the Wine Spires, and North Early Winters Spire across the notch.",
+      "type": "Summit",
+      "distMi": 2.6,
+      "directions": "The standard line takes the easier lower-angle rock up the toe of the buttress rather than the steep dihedral system the Direct start uses, then follows cracks and broken ledges up the crest on clean granite, with the sustained crack-and-corner crux about a third of the way up. Higher pitches ease off and merge with the Direct's terrain, and the short final pitch to the top is often simul-climbed."
+     },
+     {
+      "lat": 48.5123,
+      "lng": -120.655411,
+      "elev": 7400,
+      "name": "South Arete downclimb/rappels",
+      "note": "Standard descent: downclimb the South Arete (mostly 3rd/4th class with a short exposed 5th-class step), then three single-rope raps from bolted anchors to the base before dropping back toward Blue Lake trail or hitching from the hairpin.",
+      "type": "Hazard",
+      "distMi": 2.8,
+      "directions": "Do not reverse the buttress. The way off is the South Arete: mostly third and fourth class downclimbing with one short exposed fifth-class step, then three single-rope rappels from bolted anchors to the base. From there drop back toward the Blue Lake trail, or back into Spire Gully if a car was left at the hairpin."
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.512275,
+     "peakLng": -120.655395,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,273 @@
+{
+ "applied": [
+  {
+   "id": "wa_golden_age",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent and rappel-ready belays"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "watch_out",
+   "path": [
+    1
+   ],
+   "fact": "Descent and rappel-ready belays"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    2
+   ],
+   "fact": "Descent and rappel-ready belays"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Descent and rappel-ready belays"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Ground approach to the start"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    0
+   ],
+   "fact": "Ground approach to the start"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "hazards",
+    0
+   ],
+   "fact": "Ground approach to the start"
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Heaton Camp elevation"
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Heaton Camp elevation"
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Heaton Camp elevation"
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Heaton Camp elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_golden_age",
+   "before": {
+    "descent": "Walk off, or join the Tiger's or Ellen Pea's rappel line",
+    "watch_out": [
+     "Loose chockstones reported at the Pitch 1 crux.",
+     "Not all belay anchors are rigged for rappel — plan your descent via the Tiger or Ellen Pea line instead."
+    ],
+    "approach_variants": [
+     {
+      "name": "Via the centre route's lower pitches",
+      "notes": "There is no way to walk to this climb. Do the usual gully approach from the pullout near milepost 166 to the wall's upper ledge, then climb the lower pitches of the centre eleven-pitch line to the shared midway ledge system and traverse left from there. Rack for the pitches you are climbing to get there as well as for this route.",
+      "season": "Summer, once the wall has dried; the pitches used to reach it are the same ones that seep into early summer in wet years.",
+      "hazards": [
+       "No ground approach — a retreat means reversing or rappelling somebody else's route",
+       "Loose and deteriorating rock on the lowest pitches and again high on the line",
+       "Belays are bolted but not all of them are rigged for rappel, so this is not a line to bail down",
+       "Everything below you is occupied ground; manage rockfall onto parties on the route you climbed in on"
+      ],
+      "primary": true,
+      "baseFinding": "You are looking for a TWO-BOLT ANCHOR sitting on the midway ledge, and the trees are what place it: the anchor is on the ledge BELOW a stand of trees, not level with them and not above them. Traverse LEFT along the ledge until the trees are above you and the two bolts are at your feet. Confirm it from the rock: the first pitch off this anchor is a technical corner with loose chockstones at its hardest moves, so if what rises from your anchor is a clean face or a slab you are at the wrong station. Negative markers: if the anchor you have clipped is one of the bolted rappel stations belonging to the route you just climbed, you have not traversed at all; if the trees are still off to your left, you have not traversed far enough."
+     },
+     {
+      "name": "Via the right-hand cave route's lower pitches",
+      "notes": "The same idea from the other side: climb the lower pitches of the right-hand cave line off the upper ledge to reach the shared midway ledge system, then traverse left. This is the longer leftward traverse of the two, so allow for it, and note that this is also the line most parties use to get back DOWN afterwards.",
+      "season": "Summer, once the wall has dried.",
+      "hazards": [
+       "No ground approach; escape means rappelling a neighbouring line",
+       "Loose and deteriorating rock low and high on the route",
+       "Not all belays are rappel-rigged, so plan the descent before you leave the ledge",
+       "Long leftward traverse on a ledge with loose material on it"
+      ],
+      "baseFinding": "From the midway ledge, traverse LEFT — further than from the centre line — until you find the TWO-BOLT ANCHOR set on the ledge directly BELOW a stand of trees. The trees are the test: below them, not beside them. The first pitch above the anchor is a technical corner holding loose chockstones at the crux, which distinguishes it from the clean faces either side. Negative markers: if you are still passing bolted rappel stations that belong to the route you climbed up, keep traversing; if you have reached ground where the ledge system ends and the wall closes down, you have gone past it."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4360,
+      "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+      "note": "Park roadside ~3 mi east of the Washington Pass hairpin; ascend talus directly uphill (north) toward the Supercave gully.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the roadside pullout near milepost 166, about 3 miles east of the hairpin turns and a similar distance from the Washington Pass summit. Park at the pullout itself — this is one of the largest roadside walls at Washington Pass, so the parking is the trailhead and there is no spur road to find. From the shoulder the talus and the Supercave gully are directly above you."
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "Upper ledge, M&M Wall",
+      "note": "7-pitch 5.12 (7b+) free variation of the original L&H aid line.",
+      "type": "Junction",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "M&M Wall (Supercave) base area",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5895
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.38,
+      "lng": -120.8372,
+      "elev": 1627,
+      "name": "High Bridge Trailhead",
+      "note": "Reached via NPS shuttle from Stehekin Landing (11 mi up-valley); no facilities at trailhead, backcountry permit required for overnight stays, arranged before you travel (there is no permit office in Stehekin).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.3886,
+      "lng": -120.83345,
+      "elev": 2200,
+      "name": "Howard Lake junction",
+      "note": "Trail passes Howard Lake then reaches a signed junction where the McGregor Mountain Trail splits off from the Howard Lake/PCT connector.",
+      "type": "Junction",
+      "distMi": 1.3,
+      "directions": "From High Bridge follow the Old Wagon Road and PCT north; the tread climbs steadily and reaches Howard Lake. The signed McGregor Mountain junction is a short way past the lake, just before the PCT tips over and starts back downhill, so if you are losing elevation you have gone too far. Howard Lake is reliable water and a useful confirmation you are on route."
+     },
+     {
+      "lat": 48.393419727692304,
+      "lng": -120.82478245076923,
+      "elev": 3700,
+      "name": "2.9-mile viewpoint and falls",
+      "note": "Valley viewpoint after the first sustained climb (2,100 ft gained from the trailhead); a short scramble path drops to a seasonal falls for water.",
+      "type": "Water",
+      "distMi": 2.9,
+      "directions": "Turn off the PCT onto the McGregor Mountain Trail. It winds around and behind the lake, then commits to one long switchback across a hot, dusty open slope before settling into the grind. Roughly 2,100 ft of climbing brings you out at a valley viewpoint, where a short scramble path drops to a seasonal falls; it is worth the detour, because shade and water are both scarce from here on."
+     },
+     {
+      "lat": 48.406609,
+      "lng": -120.801692,
+      "elev": 7000,
+      "name": "Heaton Camp",
+      "note": "Only established campsite on the mountain, in subalpine forest just below treeline; single-party site, water from a seasonal snowmelt stream a short distance below camp on the trail.",
+      "type": "Campsite",
+      "distMi": 6.8,
+      "directions": "This is the long stretch: close to a hundred switchbacks up an open southwest-facing shoulder that bakes in the afternoon, then into stunted subalpine fir and pine. The trail crosses a clear creek and reaches the lower of two glacial cirques on rocky, sandy moraine, with the camp just above the terminal moraine among larches. Start early, because there is essentially no shade and no dependable water until the seasonal snowmelt stream just below camp."
+     },
+     {
+      "lat": 48.407274432307695,
+      "lng": -120.79986410923077,
+      "elev": 7143,
+      "name": "Trail end / base of summit scramble",
+      "note": "Maintained tread ends here on the high shoulder below the summit block; route-finding begins across talus toward the base of the scree slope.",
+      "type": "Junction",
+      "distMi": 7.5,
+      "directions": "Above camp the tread throws another set of tight switchbacks at you and ends in about a third of a mile at a rocky outcropping. There is no maintained trail past this point. Talus leads on toward the base of the summit block, and the route-finding starts here."
+     },
+     {
+      "lat": 48.40787681076923,
+      "lng": -120.79878070307691,
+      "elev": 7900,
+      "name": "Summit block scramble ledges",
+      "note": "Class 3 hand-and-foot scramble up loose talus and exposed rock ledges to a notch left of the true summit, marked only by faint, intermittent red-painted arrows; carry an ice axe if snow lingers.",
+      "type": "Hazard",
+      "distMi": 7.7,
+      "directions": "The last 1,000-1,100 ft is exposed class 2-3 scrambling on loose rock, marked only by faded red arrows painted on the rock: the line loops right, then back left behind a lower sub-summit, then crosses a snowfield and talus shelf above the Sandalee Glacier. Staying precisely on the arrows matters, because the ground gets noticeably worse off-route and gravelly slab sits directly above serious exposure. Carry an ice axe if snow still covers the talus or the shelf, which is common into midsummer, and a helmet is worth it on this section."
+     },
+     {
+      "lat": 48.40818,
+      "lng": -120.79815,
+      "elev": 8143,
+      "name": "McGregor Mountain summit",
+      "note": "True summit gained from the backside through the notch; views of Bonanza, Glacier, and Dome peaks and the Stehekin valley.",
+      "type": "Summit",
+      "distMi": 7.8,
+      "directions": "From the top of the ledges the ground levels onto a shoulder running past an old radio installation to the true summit and former lookout site, gained from the back through a notch beside the high point. Downclimbing this scramble is the more dangerous half of the day, so fix the line in your head on the way up rather than working it out again from above."
+     }
+    ],
+    "overview": "McGregor Mountain is the highest and most prominent summit overlooking the Stehekin Valley, gaining over a vertical mile from the valley floor above Lake Chelan. The standard route follows the McGregor Mountain Trail from High Bridge past Howard Lake (historically Coon Lake) to Heaton Camp at 7,000 ft, then continues about 0.5 mile to a large talus slope below the summit block. A former fire lookout stood on the true summit until it was removed in the 1950s; a radio repeater now marks the top and serves as a landmark. The final pitch is a Class 3 hand-and-foot scramble up talus and along exposed rocky ledges, way-marked by faded, intermittent red arrows and cairns painted years ago — route-finding is the real crux, not the climbing difficulty.",
+    "approach": "McGregor Mountain is only reachable via Stehekin, at the head of Lake Chelan, which has no outside road access — get there by the Lady of the Lake ferry, floatplane, or the long trail from Cascade Pass/Bridge Creek. From Stehekin Landing, take the NPS shuttle bus (or walk/bike) 11 miles up the Stehekin Valley Road to its end at High Bridge (a hiking permit is required for the overnight version of this trip). From High Bridge, follow the Old Wagon Road/PCT north to Howard Lake at about 1.3 miles; the signed junction where the McGregor Mountain Trail forks right is just beyond the lake — Howard Lake is a reliable water source and a good gut-check that you're on route. Beyond the lake the trail switchbacks relentlessly (climbers report close to 100 switchbacks) up through forest and rocky slopes that get hot and dry with little shade or water, gaining well over 5,000 ft over the next 5.5-6 miles to Heaton Camp at about 7,000 ft (mile 6.8 of 7.7), a small single-party designated site where a seasonal-snowmelt stream just below camp is the last dependable water before the summit push. From Heaton Camp the maintained trail continues another quarter- to half-mile to where it ends at the base of a talus field; total stats to the true summit are 7.7 miles and 6,600 ft one-way. The final roughly 1,000-1,100 vertical feet is an exposed Class 2-3 scramble, not a trail: intermittent (and often faded) red arrows painted on the rock mark the line, which loops right then left behind a lower sub-summit, crosses a snowfield/talus shelf above the Sandalee Glacier, then follows a fairly level shoulder past an old radio installation to the true summit and former fire-lookout site. Carry an ice axe if snow still covers the talus or the shelf above the glacier (common into midsummer), and expect loose rock ('kitty litter' on slabs) and real exposure on the ledges near the top — staying precisely on the arrow-marked line matters, as it gets noticeably dicier off-route.",
+    "access": {
+     "fees": "NPS valley shuttle bus, High Bridge to/from Stehekin Landing: $10/adult, $5/child one-way (peak-season rate); Lady of the Lake round-trip ferry from Chelan or Field's Point: roughly $40.50/adult",
+     "notes": "This corridor is inside the Lake Chelan National Recreation Area (North Cascades National Park Service Complex). No Mount Rainier-style climbing fee applies here.",
+     "rules": "Pets and hunting prohibited in this NPS unit; hiker and stock use permitted on the trail",
+     "permit": "NPS backcountry permit required for any overnight stay (e.g. Heaton Camp, a single-party site for up to 12 people/stock at 7,000 ft); there is no permit office in Stehekin, so reserve it online or arrange it with the park before boarding the boat (a per-person fee plus a reservation fee applies)",
+     "closures": "Sisi Fire: North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) close the McGregor Mountain Trail, Heaton Camp, High Bridge Camp, the High Bridge area and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This route cannot be approached while those closures stand. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "The Stehekin valley shuttle runs a full schedule roughly June through September, with limited service in spring and late season; outside that the 11-mile road to High Bridge must be walked or biked.",
+     "landManager": "Lake Chelan National Recreation Area (North Cascades NP complex)",
+     "land_manager": "Lake Chelan National Recreation Area (North Cascades National Park Service Complex)",
+     "parking_pass": "None — there is no road to Stehekin; the High Bridge trailhead is reached by the NPS valley shuttle.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+      "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+     }
+    }
+   }
+  }
+ ]
+}

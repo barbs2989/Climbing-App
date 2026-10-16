@@ -1,0 +1,503 @@
+{
+ "batches": ["batches/b045.json", "batches/b046.json", "batches/b047.json", "batches/b048.json"],
+ "routes_read": 16,
+ "routes": [
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "name": "Rikki Tikki Tavi",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi, one-way approach distance to the lake)"},
+      {"field": "itinerary.days[0].miles", "says": "10.6"}
+     ],
+     "why": "dist_km reads as the one-way approach distance while itinerary.miles is the full round-trip car-to-car figure; both could be read on the page as 'the' route distance.",
+     "internal_resolution": "itinerary.miles (round trip, matches the approach's stated 4mi one-way doubled plus climbing distance) is the coherent whole-day figure; dist_km is a partial (one-way) measure.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the summit rappel is mandatory or optional",
+     "severity": "low",
+     "claims": [
+      {"field": "descent", "says": "Single ~30 m rappel down the east side from a slung horn, then scree and snow slopes clockwise around the peak back to the base of the wall."},
+      {"field": "descent_text", "says": "a short step near the top sometimes eased by an optional single ~30m rappel off a slung horn (natural anchor) on the east side."}
+     ],
+     "why": "descent states the rappel as a fixed step of the descent while descent_text frames the same rappel as optional/skippable by downclimbing.",
+     "internal_resolution": "descent_text is the more detailed account and explicitly calls the rappel optional; descent's flatter phrasing overstates it as required.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "name": "Full Tilt (Tempest Wall Free Version)",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi, one-way approach distance)"},
+      {"field": "itinerary.days[0].miles", "says": "10.6"}
+     ],
+     "why": "Same one-way vs round-trip distance pattern as other routes on this wall.",
+     "internal_resolution": "itinerary.miles is the coherent car-to-car total; dist_km is a partial (one-way) measure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "name": "Leche La Vaca",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "5"},
+      {"field": "overview", "says": "A 4-pitch, Grade III 5.10a/b trad route established by Tom Ramier, Abe Traven, and Craig Rankin"},
+      {"field": "beta", "says": "P5: 4th-class terrain moving up-left toward the summit, steepening to low-5th class near the top — simul-climbing works well; roughly 100m to the summit block."},
+      {"field": "pro_tips[3]", "says": "Simul-climb P5's 100 m of low-fifth rather than pitching it out"},
+      {"field": "pitch_detail", "says": "only 4 numbered rows (pitch 1–4), with pitch 4 being the walk-off"},
+      {"field": "itinerary.days[0].schedule[2].detail", "says": "4 pitches to the summit ridge."},
+      {"field": "descent_text", "says": "Leche La Vaca's four pitches finish by joining the summit ridge, and pitch 4 is described as '4th class to summit'"}
+     ],
+     "why": "The `pitches` field and the beta/pro_tips/watch_out text (which reference a distinct 'P5') both disagree with overview, pitch_detail's 4 rows, the itinerary schedule, and descent_text, all of which agree the route is 4 pitches.",
+     "internal_resolution": "Overview, pitch_detail (4 rows), the itinerary schedule, and descent_text all independently agree on 4 pitches; `pitches`=5 and the beta/pro_tips/watch_out references to a 'P5' are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain/loss",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "4760 / 4760"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "4100 / 4100"}
+     ],
+     "why": "The header/TECHNICAL STATS gain figure (4760) differs from the Trip-plan itinerary day's gain/loss (4100) by about 14%, exceeding rounding tolerance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi, one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "10.8"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary.miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_let_it_burn",
+   "name": "Let it Burn",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "9"},
+      {"field": "beta", "says": "P1 (5.10)...P2 (5.12a): wild, pumpy movement to 2 bolts leftward...P3 (5.11a)...P4 (5.11c)...P5 (5.11c)...P6 (5.10a): wandering traverse right, then a slab traverse back left. [only 6 pitches described]"},
+      {"field": "pitch_detail", "says": "9 rows graded 5.7, 5.10c, 5.12a (crux, pitch 3, 'thin finger cracks to a V-slot...wild knobs'), 5.11a, 5.11+, 5.11+, 5.10a, 5.9, 5.8"},
+      {"field": "overview", "says": "the crux is a sustained 130-foot 5.12a pitch featuring technical face moves connecting crack systems via 'wild knobs.'"}
+     ],
+     "why": "Beta describes only 6 pitches with a different grade sequence (crux implied at P2, 5.12a with bolts leftward) than pitch_detail's 9 rows (crux explicitly at pitch 3, matching the 'wild knobs' language in overview). The two accounts of the same route disagree on both pitch count and which pitch is the crux/what grade each pitch is.",
+     "internal_resolution": "pitch_detail (9 rows) agrees with `pitches`=9 and with overview's 'wild knobs' crux description (which matches pitch_detail's pitch 3); beta's 6-pitch, differently-graded breakdown is the outlier and looks like it may describe an earlier/different account of the route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi, one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "10.6"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary.miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_scarface_3",
+   "name": "Scarface",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "6"},
+      {"field": "overview", "says": "roughly 1,200 ft (Grade III) over 5+ pitches"},
+      {"field": "pitch_detail", "says": "5 numbered rows (pitch 1–5)"}
+     ],
+     "why": "`pitches` states 6 but overview says '5+ pitches' and pitch_detail lists only 5 rows.",
+     "internal_resolution": "pitch_detail's 5 rows and overview's '5+' phrasing agree on 5 pitches; `pitches`=6 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the summit rappel is mandatory or optional",
+     "severity": "low",
+     "claims": [
+      {"field": "descent", "says": "Single ~30 m rappel down the east side from a slung horn, then scree and snow slopes clockwise around the peak back to the base of the wall."},
+      {"field": "descent_text", "says": "sometimes eased with an optional single ~30m rappel off a slung horn on the east side (natural anchor) instead of downclimbing. No full rappel of the route itself is required under normal conditions."}
+     ],
+     "why": "descent states the rappel flatly as part of the descent while descent_text calls the same rappel optional.",
+     "internal_resolution": "descent_text's fuller account calling it optional should govern.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi, one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "10.6"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary.miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "name": "The Tipping Point",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "From the top of P4 (the 'last rappel point'), two 40m rappels return to the base gully; if the rope doesn't reach the Sky Lounge, stop first at the Kerwin's Crack anchor (under 40m below)."},
+      {"field": "descent_text", "says": "P4's anchor is the last point a rope reaches back down to; from there, two 40-meter rappels return to the base gully."},
+      {"field": "pitch_detail[7] (P8) notes", "says": "the true top-out is a short V1 boulder problem on the balanced summit block, which most parties protect with a rope."},
+      {"field": "rappels", "says": "Two 40 m rappels from the bolted Sky Lounge anchors...the standard retreat, and the way most parties descend if they climb only the lower half. Over the top, the normal descent is a single 30 m rappel from a slung mushroom-shaped chickenhead..."},
+      {"field": "bail", "says": "Make the Sky Lounge your decision point...from about two-thirds height it is usually faster to finish and take the standard summit rappel and walk-off."}
+     ],
+     "why": "The route's official `descent`/`descent_text` fields describe only the partial-route (P4) retreat as if it were THE descent, while pitch_detail's own P8 entry and the itinerary/beta assume parties climb all 8 pitches to a full summit top-out, and the `rappels`/`bail` fields correctly distinguish the two scenarios (retreat-from-P4 vs finish-to-summit). A climber relying on the DESCENT section would not learn how to get down after actually completing the route.",
+     "internal_resolution": "rappels and bail fields correctly separate 'retreat if you only climb the lower half' from 'finish and take the standard summit rappel/walk-off'; descent/descent_text present only the former as the route's descent, omitting the summit finish that pitch_detail and the itinerary assume.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "name": "Accendo Lunae (LiB/West Face Var.)",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain/loss",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "4760 / 4760"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "4200 / 4200"}
+     ],
+     "why": "Header gain figure (4760) differs from the Trip-plan itinerary day's gain/loss (4200) by about 12%.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the summit rappel is mandatory or optional",
+     "severity": "low",
+     "claims": [
+      {"field": "descent", "says": "Single ~30 m rappel down the east side from a slung horn, then scree and snow slopes clockwise around the peak back to the base of the wall."},
+      {"field": "descent_text", "says": "a short section near the top is sometimes eased with an optional single ~30m rappel off a slung horn on the east side (natural anchor) rather than downclimbed. No full rappel of the route line itself is needed."}
+     ],
+     "why": "descent presents the rappel as a fixed step; descent_text calls it optional.",
+     "internal_resolution": "descent_text's fuller account should govern.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi, one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "10.4"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary.miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tempest",
+   "name": "The Tempest",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Published timing labels swap 'climb' and 'descent'",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "3"},
+      {"field": "timing.descentTimeHrs", "says": "17"},
+      {"field": "timing.sectionBreakdown[0]", "says": "{hrs:3, fromTo:'Hike in to Colchuck Lake', section:'Climb'}"},
+      {"field": "timing.sectionBreakdown[1]", "says": "{hrs:14, fromTo:'Climb The Tempest', section:'Descent', note:'Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain before rappelling back down to the basin.'}"},
+      {"field": "itinerary.days[1]", "says": "{n:2, title:'Climb The Tempest', hours:14, objective:'Aid/free climb all 9 pitches and return to camp'}"}
+     ],
+     "why": "The PUBLISHED TIMES section's own 'section' labels are swapped: the 3-hr hike-in day is tagged section:'Climb' and the actual 14-hr climbing day is tagged section:'Descent'. This makes summitTimeHrs (3) read as if the climb takes only 3 hours, when the itinerary and the sectionBreakdown's own note/fromTo text agree the actual climb is 14 hours.",
+     "internal_resolution": "itinerary.days and each sectionBreakdown entry's own 'fromTo'/'note' text agree the climb takes 14 hrs (day 2) and approach/hike-out are 3 hrs each; the top-level summitTimeHrs/descentTimeHrs and 'section' tags mislabel which block is which.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain to the col",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "4600"},
+      {"field": "approach", "says": "consistent with the route's recorded 2,500 ft of gain."},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "2500 / 2500"},
+      {"field": "waypoints", "says": "Stuart Lake Trailhead elev 3400 ft; Colchuck Balanced Rock Col elev 8000 ft"}
+     ],
+     "why": "gain_ft (4600) matches the route's own waypoint elevations (3400 ft trailhead to 8000 ft col = 4600 ft), but the approach prose explicitly cites '2,500 ft of gain' and the itinerary object uses 2500 ft — a 46% understatement of the true elevation gain.",
+     "internal_resolution": "gain_ft agrees with the row's own waypoint elevations (4600 ft); the approach text's '2,500 ft' claim and the matching itinerary.gainFt/lossFt (2500) are the outliers.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_balanced_rock",
+   "name": "The Balanced Rock",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Boulder problem grade: V1 vs V2",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "V1"},
+      {"field": "rock_grade", "says": "V1 (boulder)"},
+      {"field": "overview", "says": "It is rated around V1 (5 Font), about 12 ft tall, up the southeast crimpy arete."},
+      {"field": "approach", "says": "'The Balanced Rock' is the short V2 boulder problem on top of the balanced summit block of Colchuck Balanced Rock itself"}
+     ],
+     "why": "grade/rock_grade/overview all state V1, but the approach field explicitly calls the same problem 'the short V2 boulder problem' — a direct grade disagreement on the same fact.",
+     "internal_resolution": "Three fields (grade, rock_grade, overview) agree on V1; the approach text's 'V2' is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "name": "North Buttress Couloir",
+   "area": "Colchuck Peak",
+   "contradictions": [
+    {
+     "fact": "Best season window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Best in a cool, stable freeze — commonly climbed late April-May or Sep-Oct"},
+      {"field": "best_season", "says": "Best in spring, roughly March through June, as soon as trailhead/road access allows, when the couloir is continuously snow-filled; by mid-to-late summer it can bare out to Class 4 rock."},
+      {"field": "climate.fall", "says": "Early-season snow can be thin/unconsolidated; road access (FR 7601) also closes by fall."}
+     ],
+     "why": "`season` names two good windows (late Apr–May AND Sep–Oct), but best_season only endorses a March–June window (extending outside season's stated late-Apr/May range) and drops the fall window entirely; climate.fall actively undercuts season's Sep–Oct claim by describing thin snow and a closing road in fall.",
+     "internal_resolution": "best_season and climate.spring/climate.fall together describe this as a spring-only snow climb (Mar–Jun) that is out of condition by fall; season's 'Sep-Oct' alternative window is contradicted by climate.fall's own description of that period.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "name": "Northeast Buttress",
+   "area": "Colchuck Peak",
+   "contradictions": [
+    {
+     "fact": "Crux/headline rock grade: 5.8+ vs 5.9",
+     "severity": "high",
+     "claims": [
+      {"field": "grade / rock_grade", "says": "5.8+"},
+      {"field": "overview", "says": "a sustained 14-pitch, roughly 1,200-foot IV 5.8+ line on mostly solid granite"},
+      {"field": "pitch_detail[9] (pitch 10, crux:true)", "says": "grade '5.9'"},
+      {"field": "beta", "says": "a steeper wall section to the ridge crest (5.8-5.9) before easier buttress-crest and summit pitches"},
+      {"field": "climbing_route[3] (n=4) notes", "says": "generally reported at 5.8 to 5.9"}
+     ],
+     "why": "The headline grade/rock_grade and overview call the route 5.8+, but the route's own crux pitch (pitch_detail, marked crux:true) is graded 5.9, and both beta and climbing_route independently corroborate a 5.9 crux — the stated headline grade understates the hardest pitch.",
+     "internal_resolution": "pitch_detail, beta, and climbing_route all agree the crux reaches 5.9; the grade/rock_grade/overview '5.8+' headline is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "watch_out text describes an unrelated ice/mixed winter route",
+     "severity": "high",
+     "claims": [
+      {"field": "watch_out", "says": "Highly conditions-dependent difficulty; mixed climbing (M4) pitches...Steep ice bulge (A2-3 rating) on pitch 3...Heavily corniced rappel descent...S-shaped gully on pitch 1 with variable mixed climbing up to M4...Exposed approach traverse; wind-loaded terrain near Snoqualmie Pass; rapid weather changes common...Multiple rappel anchors required for descent..."},
+      {"field": "overview", "says": "a sustained 14-pitch, roughly 1,200-foot IV 5.8+ line on mostly solid granite"},
+      {"field": "season", "says": "Jul (best); serviceable Jun-Aug"},
+      {"field": "descent_text", "says": "This is a walk-off, not a rappel descent...No rappelling is reported anywhere on the descent."},
+      {"field": "pitch_detail", "says": "14 rock pitches graded 5.7-5.9, no ice/mixed terrain mentioned"}
+     ],
+     "why": "watch_out describes M4 mixed/ice climbing, an ice bulge, cornices, a rappel descent, and even names 'Snoqualmie Pass' — a location roughly 60+ miles from Colchuck Peak/the Stuart Range. None of this matches the route's own summer 5.8+ rock climbing, dry-season window, or its own stated walk-off (no-rappel) descent. This reads as contaminated/copied text from a different, unrelated winter ice/mixed route.",
+     "internal_resolution": "Every other field on this row (overview, season, descent_text, pitch_detail, climate.winter='Not a winter objective') agrees this is a summer rock route with a walk-off descent; watch_out is the sole outlier and appears to be copied from a different route entirely.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi, one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "13.5"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary.miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "name": "Northeast Couloir",
+   "area": "Colchuck Peak",
+   "contradictions": [
+    {
+     "fact": "Crevasse hazard claimed absent, but glacier travel/crevasses are described elsewhere",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel; this is a couloir/mixed line on the peak's flank rather than the glacier proper"},
+      {"field": "watch_out", "says": "Crevasses in upper Colchuck Glacier approach (though fewer than on other glacier routes)—travel roped; probe continuously"},
+      {"field": "approach", "says": "traverse along the glacier's true-right (climber's right) margin toward Colchuck Peak's north side...gaining it typically requires crossing a moat at the glacier's edge"}
+     ],
+     "why": "seasonal_hazards flatly denies any glacier travel/crevasse exposure on this route, but the route's own watch_out field explicitly warns of crevasses requiring roped travel and continuous probing, and the approach explicitly crosses the Colchuck Glacier's margin and a moat.",
+     "internal_resolution": "watch_out and the approach text agree the route crosses glaciated terrain with real crevasse exposure; seasonal_hazards.crevasses' 'N/A - no glacier travel' is the outlier and could lead a party to skip crevasse-rescue prep.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether winter is the season's technical norm",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Winter/early spring is the technical norm; late May-early June is often cited as a comparatively safer window before the couloir melts out"},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "May: optimal, June: good, July: risky, April: risky (no winter months listed at all)"},
+      {"field": "best_season", "says": "accounts disagree on the ideal window: one published account gives late May-early June...while other route notes describe it as a winter/early-spring line"}
+     ],
+     "why": "`season` asserts winter is 'the technical norm' for this route, but seasonal_guidance's month-by-month breakdown never includes any winter month and rates the closest listed month (April) as 'risky' rather than optimal/good.",
+     "internal_resolution": "best_season transparently flags the disagreement; seasonal_guidance's monthBreakdown effectively sides against winter as a recommended window, contradicting season's framing of winter as normative.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi, one-way)"},
+      {"field": "itinerary total miles (days summed)", "says": "13.5"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "name": "Colchuck Glacier",
+   "area": "Colchuck Peak",
+   "contradictions": [
+    {
+     "fact": "Whether roping up for glacier travel is standard practice",
+     "severity": "medium",
+     "claims": [
+      {"field": "gear", "says": "Rope and harness — worth carrying, but most parties reportedly cross unroped early/mid season when few crevasses are open; treat as conditions-dependent rather than mandatory"},
+      {"field": "pro_tips", "says": "Rope up for glacier travel even when bridges look solid."}
+     ],
+     "why": "gear downplays roping as something most parties skip, while pro_tips gives the unqualified instruction to always rope up 'even when bridges look solid' — conflicting safety guidance on the same glacier crossing.",
+     "internal_resolution": "Not clearly resolvable from the row; pro_tips' imperative advice appears to be the intended safety recommendation while gear's note describes common (not recommended) practice, but as written the two fields give a climber mixed signals.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi, one-way)"},
+      {"field": "itinerary.days[0].miles", "says": "13"}
+     ],
+     "why": "One-way vs round-trip distance pattern.",
+     "internal_resolution": "itinerary.miles is the coherent round-trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "name": "East Ridge (Non-Technical)",
+   "area": "Colchuck Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain understates the trailhead-to-summit climb",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "2800 / 2800"},
+      {"field": "waypoints", "says": "Stuart Lake Trailhead elevFt 3400; Colchuck Peak summit elevFt 8705 (implying 5305 ft of gain)"},
+      {"field": "sibling routes on the same peak/trailhead (wa_colchuck_peak_colchuck_glacier.gain_ft, wa_northeast_buttress_4.gain_ft)", "says": "5305"}
+     ],
+     "why": "This route's own waypoints run from the same 3400 ft trailhead to the same 8705 ft summit as the Colchuck Glacier and Northeast Buttress routes, both of which correctly state gain_ft=5305 for that profile; East Ridge's gain_ft=2800 understates the true elevation gain by roughly 2500 ft (about 47%).",
+     "internal_resolution": "Two other routes sharing the identical trailhead-to-summit elevation profile state gain_ft=5305, matching the waypoint math; East Ridge's gain_ft=2800 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Steepest snow angle: max_angle field vs pitch_detail prose",
+     "severity": "medium",
+     "claims": [
+      {"field": "max_angle", "says": "36"},
+      {"field": "pitch_detail ('Col to summit' row)", "says": "~100 ft of 40° snow, then sandy 3rd-class steps to the 8,500 ft summit plateau"}
+     ],
+     "why": "The route's own pitch_detail names a 40° snow section, steeper than the max_angle field's stated 36°.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Overview/beta omits the glacier crossing that approach/gear require",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta (overview)", "says": "From Colchuck Lake, traverse south-west to the east ridge base. Follow the ridge crest, negotiating Class 2-3 scrambling terrain. Several sections require hands but no protection needed."},
+      {"field": "approach", "says": "Continue along the lake's north shore across a boulder field to the base of the Colchuck Glacier."},
+      {"field": "approach_variants[0].notes", "says": "climb the Colchuck Glacier toward the col between Colchuck Peak and Dragontail...From the col the route is the ridge running WEST to Colchuck's summit"},
+      {"field": "gear", "says": "['ice axe','crampons','helmet']"}
+     ],
+     "why": "The overview/beta describes a simple ridge traverse with no mention of glacier travel, while approach, approach_variants, and gear all make clear the route crosses the Colchuck Glacier to the col (requiring ice axe/crampons) before gaining the ridge.",
+     "internal_resolution": "approach, approach_variants, and gear agree the route crosses the glacier to the col; the overview/beta's compressed description omitting this is the outlier and could leave a climber under-equipped.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "name": "Holsten-Hilden",
+   "area": "Colchuck Peak",
+   "contradictions": [
+    {
+     "fact": "Commitment grade: IV vs III",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade IV, M6, AI3+"},
+      {"field": "commitment", "says": "IV"},
+      {"field": "alpine_grade", "says": "Grade III (Alpine); FA account graded Grade IV"}
+     ],
+     "why": "The Overview grade chips would show both commitment='IV' and alpine_grade beginning 'Grade III' for the same route, a direct numeral disagreement (though alpine_grade's own text flags the FA's differing IV rating).",
+     "internal_resolution": "grade and commitment agree on IV (matching the FA's original rating per alpine_grade's own parenthetical); alpine_grade's headline 'III' is the outlier, though it discloses the conflict itself.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window: Jan-Feb vs a wider Dec-March window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Winter (Jan-Feb) established route; requires a stable high-pressure spell"},
+      {"field": "best_season", "says": "climbed roughly December through March when the Hidden Couloir's ice pitches are well formed"},
+      {"field": "approach_variants[0].season", "says": "Winter and early spring, when the two ice pitches at the base are formed; the first ascent was in January"},
+      {"field": "climate.spring", "says": "Ice conditions can still be in shape into March; increasing avalanche hazard as freeze-thaw cycles begin."}
+     ],
+     "why": "`season` narrows the route to Jan-Feb only, while best_season, approach_variants' own season field, and climate.spring all describe a wider Dec-through-March 'winter/early spring' window.",
+     "internal_resolution": "best_season, approach_variants[0].season, and climate.spring all agree on a Dec-March window; season's narrower 'Jan-Feb' is the outlier.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

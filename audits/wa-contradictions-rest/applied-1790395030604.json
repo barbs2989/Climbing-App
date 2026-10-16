@@ -1,0 +1,326 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Order of Cat Basin and the Catwalk"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Order of Cat Basin and the Catwalk"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Order of Cat Basin and the Catwalk"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Direction along the High Divide"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction along the High Divide"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Direction along the High Divide"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach days"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Whether the route crosses the Catwalk"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction and length of the High Divide leg"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Direction and length of the High Divide leg"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Direction and length of the High Divide leg"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead pass and permit"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead pass and permit"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Glacier head location / elevation"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Order of Cat Basin and the Catwalk (approach variant)"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Order of Cat Basin and the Catwalk (approach variant)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_carrie_se_route",
+   "before": {
+    "season": "Aug-Sep",
+    "approach_variants": [
+     {
+      "name": "Sol Duc road end, High Divide and the Catwalk to Cat Basin",
+      "notes": "Start at the road-end trailhead on the hot-springs road on the park's north side. Hike past the falls, on past the Deer Lake junction, and up to Heart Lake — the last reliable water. Climb to the High Divide crest and follow it south and west to the end of the maintained trail, then take the unmaintained path over the exposed south side of the peak at the divide's end and across the CATWALK to Cat Basin. Do NOT plan an approach from Hurricane Ridge: it is a viewpoint separated from this range by miles of trailless glaciated terrain and there is no established route to this peak from it, despite what the route's name suggests.",
+      "season": "August to September, once the high traverse is clear of snow; an ice axe is still worth carrying for the summit basin.",
+      "hazards": [
+       "The Catwalk — exposed, sharp, and a fall there could be fatal",
+       "Thin, crumbly ledges with major exposure on the south side of the peak just before the Catwalk",
+       "Steep, loose, unstable scree in the summit basin",
+       "Early-season snow in the basin, where an ice axe is advisable",
+       "No water between Heart Lake and the summit",
+       "Unmaintained and unsigned beyond the divide, requiring solid off-trail route-finding"
+      ],
+      "baseFinding": "From the basin camp, the line follows the peak's SOUTHWEST RIDGE — grassy and rocky walking at first — and the base of the real climbing is where that ridge stops being walkable crest and you have to CONTOUR OFF IT into a broad, steep, loose SOUTH-FACING SCREE BASIN at around sixty-five hundred feet. The test that you are in the right basin: it is loose, unstable scree in the sun, and the TRUE SUMMIT sits at its FAR RIGHT-HAND END, not at the high point directly above where you enter it. Finish on scree and snow. Negative markers: if you have roped up and are travelling on ice with crevasses, you are on the glacier variation on the northeast side of the peak; if you are still walking a grassy crest with no need to leave it, you have not reached the contour yet and are short of the basin."
+     }
+    ],
+    "overview": "Mount Carrie is the highest point of the Bailey Range and the scenic centerpiece of the classic Bailey Range Traverse. Despite this route's name, there is no trail or known route connecting Hurricane Ridge to Cat Basin or Mount Carrie — Hurricane Ridge sits on the opposite (east) side of the park and is used only as a distant viewpoint of Carrie's glaciated north face. Every recorded ascent instead approaches from the Sol Duc River Road trailhead on the park's north side, via Heart Lake, High Divide, the exposed \"Catwalk\" ridge crossing, and Boston Charlie's Camp/Cat Basin, before gaining Carrie's southwest ridge and a broad south-facing scree basin to the summit.",
+    "beta": "This route gains the High Divide crest from Heart Lake, then traverses south along the High Divide for 3 miles before ascending the Catwalk—an infamous, exposed ridge-top connecting Cat Peak to Mount Carrie. The Catwalk features high Class 2 to low Class 3 scrambling with substantial exposure; a fall here can be fatal. Beyond the Catwalk, the route follows the southwest ridge of Mount Carrie, initially grassy but becoming a mixture of grass and rock outcroppings at higher elevations, traversing scree and possible snow to the true summit at the far right of the summit basin.",
+    "approach": "There is no established route to Mount Carrie from Hurricane Ridge; that area is separated from the Bailey Range by miles of trailless, glaciated terrain and functions only as a viewpoint. The actual approach used by essentially all climbers starts at the Sol Duc River Road trailhead (~2,000 ft) on US-101 near Lake Crescent: Sol Duc Falls → Deer Lake Trail junction (+1 mi) → Heart Lake (+6 mi, 4,800 ft) → High Divide crest (+1.5 mi, 5,100 ft) → south along High Divide (+3 mi) to the maintained trail's end near Bogachiel Peak → an unmaintained path over Cat Peak's exposed south side and across the airy \"Catwalk\" ridge (Class 3) to Cat Basin/Boston Charlie's Camp. From camp, the final push follows Carrie's southwest ridge (Class 1 grass/rock) and contours a broad, steep, loose south-facing scree basin around 6,500 ft before a scree-and-snow finish (ice axe advisable) to the summit (Class 2). One-way distance from the trailhead to the summit is roughly 13 miles.",
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail)",
+      "notes": "~7 mi, gains to 4,800 ft camp",
+      "pitch": "Sol Duc TH to Heart Lake"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "Follow High Divide crest south ~3 mi to trail's end, descend into Cat Basin; no water beyond Heart Lake",
+      "pitch": "Heart Lake to Cat Basin"
+     },
+     {
+      "grade": "Class 3, exposed",
+      "notes": "Narrow rock/heather ridge connecting Cat Peak to the Bailey Range; a fall could be fatal",
+      "pitch": "The Cat Walk"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Grass, scree and broken shale to the true summit; early-season snow may require an ice axe",
+      "pitch": "Southwest ridge to summit"
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high — multi-day sustained off-trail travel with major elevation gain/loss; Bailey Range terrain is notoriously strenuous",
+      "packWeight": "35-45+ lbs for a multi-day trip (overnight camping gear, bear canister, snow gear)"
+     },
+     "approachTime": "Long — typically a 2+ day backpack (roughly 15+ off-trail miles with major elevation gain/loss) through Cat Basin/High Divide to a high camp before the scramble",
+     "requiredSkills": [
+      "Off-trail route-finding/navigation in trailless alpine terrain",
+      "Steep snow travel and self-arrest with an ice axe",
+      "Multi-day backcountry camping (bear canister required)",
+      "Class 2-3 scrambling comfort with exposure"
+     ],
+     "experienceLevel": "Experienced off-trail scrambler/backpacker comfortable with sustained trailless alpine travel and steep snow; not a beginner scramble given the remoteness and route-finding demands"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "before": {
+    "beta": "Approach via High Divide Trail to Boston Charlie's Camp. From camp, this glacier variation gains the northeast cirque and Carrie Glacier (6,800 ft) rather than the direct southwest ridge scramble. Carrie Glacier descends from ~6,800 ft to ~5,000 ft, flowing north-northeast in a chute confined by an arête and Mount Fairchild. The route requires rope team travel with crevasse rescue equipment, probing for hidden crevasses, and awareness of seracs and icefall hazards. Summit approach similar to the SE route, but entry via glacier instead of exposed Catwalk.",
+    "approach": "From US-101 about 2 miles west of Lake Crescent, turn onto Sol Duc Hot Springs Road and drive roughly 14 miles past Sol Duc Hot Springs Resort to the road-end trailhead (Sol Duc River Trailhead, ~2,000 ft). Hike the Sol Duc River Trail past Sol Duc Falls, continue about 1 mile past the Deer Lake Trail junction, then roughly 6 more miles to Heart Lake (4,800 ft). From Heart Lake, climb 1.5 miles to the High Divide crest (~5,100 ft) and follow High Divide south/west about 3 miles to where the maintained trail ends near Bogachiel Peak. From there an unmaintained boot path crosses Cat Peak's exposed south side and the \"Catwalk\" — a narrow, airy ridge crest linking High Divide to the Bailey Range (Class 3, high consequence if you fall) — to Boston Charlie's Camp, the traditional jumping-off point for the Bailey Range Traverse and for Carrie itself. One-way distance from the trailhead to Boston Charlie's Camp/Cat Basin is roughly 13 miles; most parties camp at Heart Lake or Cat Basin and climb Carrie's summit as a long day from there.",
+    "waypoints": [
+     {
+      "lat": 47.9548,
+      "lng": -123.8349,
+      "elev": 2000,
+      "name": "Sol Duc River Trailhead",
+      "note": "Road's-end trailhead on Sol Duc Hot Springs Road with large parking area and pit toilets; Northwest Forest Pass and a self-issue wilderness permit are required.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US-101 about 2 miles west of Lake Crescent, turn onto Sol Duc Hot Springs Road and drive roughly 14 miles past Sol Duc Hot Springs Resort to the road end at the Sol Duc River Trailhead, around 2,000 ft. There is a large parking area and pit toilets. You need a Northwest Forest Pass and a self-issue wilderness permit, and cross-country camping in the Bailey Range needs an Olympic National Park wilderness permit, so sort that out before you leave."
+     },
+     {
+      "lat": 47.95144,
+      "lng": -123.81905,
+      "elev": 1951,
+      "name": "Sol Duc Falls crossing",
+      "note": "Trail crosses the Sol Duc River on a footbridge right above the falls — first reliable water and a popular day-hike turnaround point.",
+      "type": "Water",
+      "distMi": 0.8
+     },
+     {
+      "lat": 47.926653,
+      "lng": -123.823782,
+      "elev": 3525,
+      "name": "Deer Lake Trail junction",
+      "note": "Stay on the Sol Duc River Trail past this junction rather than detouring to Deer Lake; trail keeps climbing toward Sol Duc Park and Heart Lake.",
+      "type": "Junction",
+      "distMi": 3.7
+     },
+     {
+      "lat": 47.90981,
+      "lng": -123.73438,
+      "elev": 4744,
+      "name": "Heart Lake",
+      "note": "Valentine-shaped tarn with established treeline campsites — last reliable water and camp before leaving the maintained trail for the Bailey Range; top off here.",
+      "type": "Campsite",
+      "distMi": 7.85
+     },
+     {
+      "lat": 47.90782,
+      "lng": -123.738013,
+      "elev": 5042,
+      "name": "High Divide / Cat Basin Trail junction",
+      "note": "Maintained trail ends where High Divide meets the Cat Basin primitive route; a boot path continues west along the divide crest toward Cat Peak with no water for several miles.",
+      "type": "Junction",
+      "distMi": 8.3
+     },
+     {
+      "lat": 47.9001113,
+      "lng": -123.6800913,
+      "elev": 5940,
+      "name": "Cat Peak ridge & the Catwalk",
+      "note": "Worn track gains the ridge at Cat Peak, where the exposed, boulder-strewn 'Catwalk' arête begins — Class 2-3 scrambling with real exposure linking Cat Peak to Mount Carrie.",
+      "type": "Hazard",
+      "distMi": 12.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 6400,
+      "name": "Carrie Glacier crossing",
+      "note": "Rope up to cross the Carrie Glacier in Carrie's northeast cirque; climbers have reported open crevasses and steep ice requiring careful routefinding by late summer.",
+      "type": "Hazard",
+      "distMi": 13.5
+     },
+     {
+      "lat": 47.894273,
+      "lng": -123.649285,
+      "elev": 6995,
+      "name": "Mount Carrie summit",
+      "note": "High point of the Bailey Range; short scree/snow scramble from the top of the glacier onto the summit block.",
+      "type": "Summit",
+      "distMi": 14.5
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Sol Duc road end, High Divide and the Catwalk to Cat Basin",
+      "notes": "Every approach to this peak starts on the park's NORTH side. From the highway west of the big lake, turn onto the hot-springs road and drive to the road-end trailhead. Hike past the falls, continue past the Deer Lake junction, and climb to Heart Lake — the last reliable water and camp before you leave maintained trail. From there gain the High Divide crest and follow it south and west to where the maintained trail ends. Beyond that an unmaintained boot path crosses the exposed south side of the peak at the end of the divide and then the CATWALK, a narrow airy ridge crest linking the divide to the Bailey Range, to reach Cat Basin. Most parties camp at Heart Lake or in Cat Basin and climb from there. Carry water from Heart Lake; there is none between it and the summit.",
+      "season": "July to September, once the divide is out of snow and before autumn weather closes the traverse.",
+      "hazards": [
+       "The Catwalk — an exposed sharp ridge crest with high consequence, and thin crumbly ledges with major exposure on the south side of the peak just before it",
+       "Crevasse hazard on the glacier and a bergschrund or moat near the summit block depending on season",
+       "Seracs and icefall in the confined chute",
+       "Loose rock and exposed scrambling on the summit pyramid",
+       "No reliable water between Heart Lake and the summit",
+       "Unsigned, unmaintained route beyond the trail's end; a long way from help"
+      ],
+      "baseFinding": "From the basin camp, this route gains the peak's NORTHEAST CIRQUE and the glacier in it — the discriminator is that you rope up, and you rope up before you step onto ice. The base of the climbing is the head of that glacier, at around sixty-eight hundred feet, where the ice ends against the summit pyramid: look for the point where the upper lip of the glacier abuts rock, with a bergschrund or moat between the two, and start the scramble there. The glacier flows north-northeast in a chute confined by an arete and the neighbouring summit, so the ice should be running away DOWNHILL AND NORTHEAST behind you as you turn onto the rock. Negative marker: if you are kicking up loose south-facing scree in full sun with no crevasses anywhere and no ice to be seen, you are on the scramble line on the peak's south side and are on the other route."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2",
+      "notes": "Same approach as the scramble route",
+      "pitch": "Sol Duc TH to Cat Basin"
+     },
+     {
+      "grade": "Class 3, exposed",
+      "notes": "Crux exposure before continuing toward Carrie",
+      "pitch": "The Cat Walk"
+     },
+     {
+      "grade": "Class 3 + glacier travel",
+      "notes": "Rope up for crevasse hazard near the glacier head just south of the summit; camps sometimes set around 6,600 ft",
+      "pitch": "Head of Carrie Glacier to summit"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,1718 @@
+{
+ "batches": [
+  "b371.json",
+  "b372.json",
+  "b373.json",
+  "b374.json",
+  "b375.json",
+  "b376.json",
+  "b377.json"
+ ],
+ "routes_read": 22,
+ "routes": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "name": "Table Mountain Trail (Standard)",
+   "area": "Table Mountain",
+   "contradictions": [
+    {
+     "fact": "Time from trailhead to the plateau",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "15-30 min to the base of the cliff notch from Artist Point; 45 min-1 hr to reach the plateau top"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1]",
+       "says": "+20 min / Top of switchbacks / Gain ~400 ft up the cliff band"
+      },
+      {
+       "field": "approach",
+       "says": "After roughly 400 ft of gain (about 0.4-0.5 mi from the car) the switchbacks top out on the broad, relatively flat summit plateau"
+      }
+     ],
+     "why": "The plateau is reached at the top of the switchbacks, which the itinerary puts at +20 min while Partners says 45 min-1 hr.",
+     "internal_resolution": "Itinerary (+20 min for 0.4-0.5 mi / 400 ft) fits the 2-hr total; partner_requirements.approachTime looks like the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "name": "Glacier/Scramble Route",
+   "area": "The Pleiades",
+   "contradictions": [
+    {
+     "fact": "Class grade of the scramble",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "beta",
+       "says": "All four Pleiades peaks are Class 3 scrambles"
+      },
+      {
+       "field": "rope_note",
+       "says": "All 4 Pleiades summits reportedly 3rd-class scrambles with loose rock."
+      },
+      {
+       "field": "overview",
+       "says": "exposed 3rd/4th-class scrambles ... Peak 1 is the hardest and is often climbed with a rope for a short section"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Exposed 4th-class notch and knife-edge rock traverse"
+      }
+     ],
+     "why": "The header pill (alpine_grade) says Class 3 and the beta says all four peaks are Class 3, while grade, overview and the notch waypoint say 3rd/4th class with a roped section.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance and gain from Twin Lakes to High Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "roughly two and a half miles with a little over a thousand feet of gain"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "3.6 miles roundtrip from Twin Lakes, 765 ft gain"
+      },
+      {
+       "field": "approach",
+       "says": "take the High Pass Trail (~2 miles, losing about 300 ft ...) to High Pass"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "High Pass is 1.8-2 mi from Twin Lakes in the approach, pitch table and waypoints but 2.5 mi in the camping card.",
+     "internal_resolution": "Approach, pitch_detail and waypoint agree on ~2 mi; bivy[1] is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Glacier/Scramble Route"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "No glacier travel on this route"
+      }
+     ],
+     "why": "The route name says Glacier but the route states there is no glacier travel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best months",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July-September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "snow may still linger in the approach gullies early in the month"
+      }
+     ],
+     "why": "The whole of July is rated optimal while the optimal window begins in late July.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Tomyhoi Peak",
+   "contradictions": [
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 7.5-9 hours car-to-car"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "~1:30-2:00 PM Summit (after an 8:00 AM start)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "+5 hr descent"
+      },
+      {
+       "field": "turnaround",
+       "says": "roughly 5–6 hours car-to-summit and about 5 hours back down"
+      }
+     ],
+     "why": "The schedule and turnaround add up to 10.5-11 hours car-to-car, but timing, the day's hours and the total note say 7.5-9.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best conditions June-September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "risky — not the intended season for this route"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "best_season",
+       "says": "most ascents cluster from mid-July through September"
+      }
+     ],
+     "why": "The header season and the itinerary include June, which the seasonal guidance calls risky and not the intended season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Character of the final climb to the true summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "a long, loose, exposed class 3-4 gully/chimney to the true summit"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "followed by a steep class 3-4 gully to the true summit"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "Easy ledges above the slot ... an exposed but consistently third-class scramble"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "Class 3 scramble on solid rock from the false summit to the true summit block"
+      }
+     ],
+     "why": "The itinerary describes a long, loose class 3-4 gully or chimney, but the climbing route and waypoint describe solid class 3 ledges.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "or split with a camp at Tomyhoi Lake/basin"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Yellow Aster Butte tarns (Yellow Aster Meadows)"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Camp at the Yellow Aster Butte meadows/tarns (~5,580 ft)"
+      }
+     ],
+     "why": "Partners names Tomyhoi Lake as the camp, but the route goes left away from Tomyhoi Lake and every other field camps at the Yellow Aster tarns.",
+     "internal_resolution": "Yellow Aster tarns (bivy, pro_tips, waypoints) is the camp; Tomyhoi Lake is the other fork.",
+     "needs_research": false
+    },
+    {
+     "fact": "Gold Run Pass vs the Tomyhoi Lake fork",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].name",
+       "says": "Gold Run Pass (5427 ft, 1.5 mi)"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Trail forks near the pass: right drops to Tomyhoi Lake, route stays left"
+      },
+      {
+       "field": "approach",
+       "says": "At roughly 1.5 miles you reach the signed junction with the Tomyhoi Lake Trail, which splits off to the right toward Gold Run Pass (~5,400 ft); stay left"
+      }
+     ],
+     "why": "The waypoint places the route at Gold Run Pass, but the approach says the fork is at 1.5 mi and Gold Run Pass lies up the right branch, which the route does not take.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead position on FR 3065",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "End of FR 3065 (Twin Lakes Road), 4.5 mi off SR 542"
+      },
+      {
+       "field": "road.status",
+       "says": "The final ~2 miles beyond the trailhead up to Twin Lakes are unmaintained"
+      }
+     ],
+     "why": "The trailhead waypoint calls it the end of FR 3065, but the road card says the road continues 2 mi past it to Twin Lakes.",
+     "internal_resolution": "road.status and bivy[1] agree that the road continues to Twin Lakes; the waypoint note is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5600"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 5,000-5,600 ft of gain and loss"
+      }
+     ],
+     "why": "The header gain (5,600) and the itinerary day gain (5,000) differ by about 12%.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "name": "South Trail / Lookout Route",
+   "area": "Winchester Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "good"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The optimal window runs into October, outside the Jul-Sep season, and early July is rated marginal although the header season starts in July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road walk from the Yellow Aster Butte trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "add about 2.5 miles of road walking each way"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "add ~2.5 mi each way of road walking"
+      },
+      {
+       "field": "road.status",
+       "says": "for the final ~2 miles to Twin Lakes"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "then about 2 more miles (narrow, high-clearance) to the Twin Lakes TH"
+      }
+     ],
+     "why": "The road card says the upper section is about 2 mi, but the waypoint, itinerary and pro_tips say it is a 2.5 mi walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "One-way time to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "summit reached in roughly 1.5-2.5 hours one-way"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "typically 2.5-3 hours car-to-car"
+      }
+     ],
+     "why": "A 2.5-hour one-way time cannot fit a 2.5-3 hour car-to-car total.",
+     "internal_resolution": "timing and itinerary agree on ~1.5 hr up and 2.5-3 hr total; the partner range is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard in July",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[0]",
+       "says": "Avalanche/glissade-runout hazard on lingering snow slopes into early-mid summer"
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "two steep snow crossings on avalanche-prone slopes persisting as late as mid-July"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.July",
+       "says": "N/A"
+      }
+     ],
+     "why": "The Safety tab lists avalanche-prone snow crossings into mid-July, while the avalanche table marks July N/A.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which slopes hold the hazardous snow",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[0]",
+       "says": "Steep, exposed snowfields on north/east-facing slopes below the summit"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "the south/west-slope traverse ... covered in steep, hardening snow"
+      },
+      {
+       "field": "approach",
+       "says": "lingering steep snow on the upper switchbacks and southeast slopes"
+      }
+     ],
+     "why": "The same lingering snowfield is placed on the north/east, the south/west and the southeast slopes in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "name": "West Route",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "When to go",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Aim for late June–early July for snow-free scrambling before wildfire smoke and fire-season closures typically set in by mid-July"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September is the typical window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July to August, after the approach basin melts out"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Mid-July to late September"
+      }
+     ],
+     "why": "Pro tips recommend late June–early July, before mid-July. The optimal window starts in mid-July, June is rated marginal, and the approach season starts mid-July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance from the road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "Several days from the nearest road in either direction"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: Drive to trailhead, backpack in (7+ hours) to camp at Upper Cathedral Lake"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "7"
+      }
+     ],
+     "why": "A hazard line says the peak is several days from a road, but the approach and itinerary reach camp in one 7-hour day.",
+     "internal_resolution": "Approach, itinerary and timing agree on a one-day walk in.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Big Craggy Peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "July to early October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "risky — Falls outside the best-season window"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "make this a poor month"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "only climbed in the dry mid-July-September window"
+      },
+      {
+       "field": "best_season",
+       "says": "Some parties climb as early as late May on consolidated snow"
+      }
+     ],
+     "why": "The header season includes June, which the guidance calls a poor month. The approach season runs into October, which is rated risky. And the avalanche field says the peak is climbed only mid-July to September while best_season describes late-May ascents.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bench elevation below the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "A small bench/flat spot roughly 1,300 ft below the summit (~7,800 ft)"
+      },
+      {
+       "field": "waypoints[4].directions",
+       "says": "A small bench or flat spot around 7,800 ft, roughly 1,300 ft below the top"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "8478"
+      }
+     ],
+     "why": "A bench at 7,800 ft is about 680 ft below the 8,478-ft summit, not 1,300 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Last reliable water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "There is no reliable water past Copper Glance Creek, so fill up there"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "Creek crossing in burned forest (6,100 ft) ... last reliable water before the dry ridge/scree above — fill up here"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Fill water at the basin crossing near 6,400 ft; there is nothing above it"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "the trail above the old mine works is dry through the meadows"
+      }
+     ],
+     "why": "The last water source is the creek ford near the mine (~1.6 mi) in the approach, a 6,100-ft creek in the waypoints and a 6,400-ft basin crossing in the base finding.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Mine ruins distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      },
+      {
+       "field": "approach",
+       "says": "Around 1.5 miles (~5,100 ft) the track passes the ruins of the Copper Glance Mine"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "climbs steadily ... for the first mile and a half ... and the ruins sit right beside it"
+      }
+     ],
+     "why": "The mine waypoint is at 2 mi while its own directions and the approach put it at 1.5 mi.",
+     "internal_resolution": "Approach and waypoint directions agree on 1.5 mi; distMi is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time from camp to summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Typically about 4 hours from the trailhead to high camp, then roughly 2 more hours from camp to the summit"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "~5.6 hr from camp via the connecting saddle"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "3.3"
+      }
+     ],
+     "why": "Partners gives 4 hr to camp and 2 hr to the summit, while the itinerary gives 3.3 hr to camp and 5.6 hr from camp to Big Craggy.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "One-way distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "5"
+      },
+      {
+       "field": "what_to_bring[4]",
+       "says": "~11.6 mi round trip"
+      }
+     ],
+     "why": "dist_km works out to 4.0 mi, but the summit waypoint is at 5 mi one-way (11.6 mi round trip).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Blackcap Mountain",
+   "contradictions": [
+    {
+     "fact": "Gain vs loss on an out-and-back",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "8300"
+      },
+      {
+       "field": "loss_ft",
+       "says": "8600"
+      },
+      {
+       "field": "itinerary.days[0]",
+       "says": "gainFt 3600 / lossFt 3300"
+      },
+      {
+       "field": "itinerary.days[2]",
+       "says": "gainFt 2900 / lossFt 3500"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so total gain must equal total loss, and the hike-out day should mirror the hike-in day (gain 3,300, loss 3,600); instead loss exceeds gain by 300 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Shellrock camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "camping at or just below Shellrock Pass (~7,200 ft)"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Shellrock Basin, elev 6800 — the target camp for this route"
+      },
+      {
+       "field": "approach",
+       "says": "climb to 7,500-ft Shellrock Pass ... Camp is typically made in Shellrock Basin, just below and east of the pass"
+      }
+     ],
+     "why": "The itinerary puts the camp at ~7,200 ft near the pass, but the camp waypoint is at 6,800 ft in the basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Harts Pass road status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "reopened following repairs by mid-June 2026"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "it reopened after repairs by mid-June 2026"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "a large lightning fire that began in mid July 2026 closed the road above the Monument Creek trailhead along with much of the northern wilderness"
+      }
+     ],
+     "why": "The access and road cards present the road as reopened, while the camping card says a fire closed it from mid-July 2026.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Basecamp name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "to a basecamp (e.g. near Dorothy Lake or Shellrock Pass)"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Doris Lake and Freds Lake basins"
+      }
+     ],
+     "why": "Partners names a Dorothy Lake that appears nowhere else; the camps are Doris Lake / Fred's Lake.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Knife-edge on the NE ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climbing_route[1].notes",
+       "says": "The ridge includes one true knife-edge section"
+      },
+      {
+       "field": "waypoints[5].directions",
+       "says": "Some parties instead follow the ridge crest itself southwest from the pass, which includes a true knife-edge stretch at Class 2-3"
+      },
+      {
+       "field": "pro_needs",
+       "says": "a class 2 ridge walk with one or two class 3 moves"
+      }
+     ],
+     "why": "The climbing route puts a knife-edge on the NE ridge. The waypoint puts it on the alternate crest from Shellrock Pass, and pro_needs describes the NE ridge as a class 2 walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "name": "Standard Route",
+   "area": "Blizzard Peak",
+   "contradictions": [
+    {
+     "fact": "Harts Pass road status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Open; ... listed open again by the Forest Service as of July 2, 2026"
+      },
+      {
+       "field": "access.closures",
+       "says": "its Methow Valley road-status table lists Harts Pass Road open as of July 2, 2026"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "a large lightning fire that began in mid July 2026 closed the road above the Monument Creek trailhead along with much of the northern wilderness"
+      }
+     ],
+     "why": "The road card says the only access road is open, while the camping card says a fire closed it from mid-July 2026.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Class grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 2"
+      },
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "pro_needs",
+       "says": "an unroped Class 2-3 off-trail scramble"
+      },
+      {
+       "field": "waypoints[7].directions",
+       "says": "sustained Class 1-2"
+      }
+     ],
+     "why": "The header pill (rock_grade) says Class 2 while grade and pro_needs say Class 2-3, and the waypoint says Class 1-2.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].schedule[2]",
+       "says": "8:00 AM Summit Blizzard Peak"
+      },
+      {
+       "field": "descent_text",
+       "says": "Most parties summit by late morning and are back at Frosty Basin camp by early afternoon"
+      }
+     ],
+     "why": "The schedule summits at 8 AM and is back in camp by 11:30, while the descent text says late morning and early afternoon.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "name": "South Route",
+   "area": "Castle Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead and the approach the numbers describe",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Monument 78/83 Trailhead (Hwy 3, Manning Provincial Park, BC) — not a lawful US entry"
+      },
+      {
+       "field": "road.name",
+       "says": "Highway 3 (Crowsnest Hwy) at E.C. Manning Provincial Park, BC"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "The crest trail north from Harts Pass to Castle Pass, then the head of Castle Creek"
+      },
+      {
+       "field": "dist_km",
+       "says": "21.8"
+      },
+      {
+       "field": "gain_ft",
+       "says": "4643"
+      }
+     ],
+     "why": "The approach card sends parties from Harts Pass, but the trailhead waypoint, the road card, and the Dist/Gain figures all describe the unlawful Manning Park line, which is far shorter.",
+     "internal_resolution": "approach_variants and approach both say the lawful way is Harts Pass; the TH waypoint, road and distance/gain are the Canadian line.",
+     "needs_research": true
+    },
+    {
+     "fact": "Season vs road opening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "It opens with the snowmelt, usually early to mid July"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly late June through September, once ... the high road is open"
+      }
+     ],
+     "why": "The lawful approach needs the Harts Pass road, which the row says opens in early-to-mid July, yet the season starts in June.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "name": "The Drawbridge",
+   "area": "Castle Peak",
+   "contradictions": [
+    {
+     "fact": "Which approach access/emergency describe",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "Crosses the US/Canada border cross-country off the official PCT corridor — not an authorized crossing."
+      },
+      {
+       "field": "access.landManager",
+       "says": "approach crosses into E.C. Manning Provincial Park, BC"
+      },
+      {
+       "field": "emergency.county",
+       "says": "approach is via British Columbia, Canada"
+      },
+      {
+       "field": "approach",
+       "says": "The lawful approach is from the US side: cross Ross Lake by boat"
+      },
+      {
+       "field": "road.name",
+       "says": "North Cascades Highway (SR-20) — Ross Dam Trailhead"
+      }
+     ],
+     "why": "The access and emergency cards describe the approach as a BC border crossing, while the approach, road and primary approach variant use Ross Lake.",
+     "internal_resolution": "approach, road and approach_variants[0] (primary) agree on Ross Lake.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permits required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Self-issue Pasayten Wilderness permit (free)"
+      },
+      {
+       "field": "access.fees",
+       "says": "Free self-issue wilderness permit at US trailheads"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "The lower corridor is national recreation area and camping there needs a park backcountry permit"
+      }
+     ],
+     "why": "The access card lists only the free Pasayten permit, while the approach says camping in the Ross Lake NRA also needs a park permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "name": "Fight or Flight",
+   "area": "Castle Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Frosty Mountain / Lightning Lake Trailhead, E.C. Manning Provincial Park, BC"
+      },
+      {
+       "field": "road.name",
+       "says": "North Cascades Highway (SR-20) — Ross Dam Trailhead, milepost 134"
+      },
+      {
+       "field": "approach_variants[0].primary",
+       "says": "True (Ross Lake boat crossing, Lightning Creek and ... Freezeout Creek)"
+      },
+      {
+       "field": "approach",
+       "says": "Walking into the US away from a port of entry is not a lawful crossing, so that line is recorded, not recommended"
+      },
+      {
+       "field": "itinerary",
+       "says": "day 1 travel to a high camp near the border/Crow Creek basin"
+      }
+     ],
+     "why": "The trailhead waypoint and the itinerary use the Manning Park line, while the road card and the primary approach use Ross Dam / Ross Lake.",
+     "internal_resolution": "road, approach and primary approach_variant agree on Ross Lake; the TH waypoint and itinerary are the Canadian line.",
+     "needs_research": false
+    },
+    {
+     "fact": "Canadian approach line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "from Lightning Lake in E.C. Manning Provincial Park, about seven miles of trail over the Frosty Mountain area to a pass near 8,000 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Most parties come in from Manning Park, leave the Monument 78 trail near the border and cross a high pass near 8,000 ft"
+      },
+      {
+       "field": "approach_variants[1].notes",
+       "says": "it takes the old trail along the creek to the boundary, then leaves the trail and travels cross-country south past Frosty Mountain"
+      }
+     ],
+     "why": "The Canadian approach starts from Lightning Lake over Frosty Mountain in one field, but from the Monument 78 / creek trail in two others.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads."
+      },
+      {
+       "field": "access.permit",
+       "says": "North Cascades NPS wilderness permit for camps in the Ross Lake NRA corridor; free self-issue Pasayten Wilderness permit"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Fill one out at a US trailhead such as Harts Pass"
+      }
+     ],
+     "why": "The permit line omits the NPS permit that access.permit and the approach require, and the overnight permit points to Harts Pass instead of the Ross Dam start.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "name": "Standard Scramble",
+   "area": "Castle Peak",
+   "contradictions": [
+    {
+     "fact": "Number of days / nights",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A remote 4-day trip ... a relaxed backpacking pace with 2 nights out and a dedicated summit day"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "4 days: camp at cabin, high camp, summit day back to high camp, hike out (3 nights)"
+      },
+      {
+       "field": "approach",
+       "says": "this is realistically a long single push (18+ hours car-to-car including the taxi) or a one-night backpack"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "approaches run 2-4 days each way"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "roughly 2-4 days round trip"
+      }
+     ],
+     "why": "The 4-day itinerary has 3 nights but its note says 2. The approach says one night, and Partners says 2-4 days each way in one field and round trip in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SW ridge notch elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "carry an ice axe if snow patches persist near the 7400' notch"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "7600"
+      },
+      {
+       "field": "face",
+       "says": "via a notch at ~7,600 ft"
+      }
+     ],
+     "why": "The rope note puts the notch at 7,400 ft while every other field says 7,600.",
+     "internal_resolution": "waypoints, face, approach, descent and bail all say 7,600 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Freezeout Cabin position",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "Maintained backcountry cabin at the start of the abandoned Freezeout Creek Trail"
+      },
+      {
+       "field": "approach",
+       "says": "watch for the junction with the old ... Freezeout Creek Trail. The first stretch above the junction is the trickiest ... as you climb to the Freezeout Cabin at about 3,600 ft"
+      }
+     ],
+     "why": "The waypoint places the cabin at the start of the Freezeout Creek Trail, but the approach reaches it only after climbing the trail above the junction.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction of travel on Lightning Creek",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the Lightning Creek Trail north"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "hike the Lightning Creek and Freezeout Creek trails south to a camp near the historic Freezeout Cabin"
+      }
+     ],
+     "why": "One field says the walk from the landing goes north, the other says south.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "name": "The Monk - Le Gibet",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly July through the first snow of October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach card's season runs to the first snow of October, beyond the header's Jul-Sep, and October is rated marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "1300"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so loss should equal gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "name": "The Monk - Scabo",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly July through the first snow of October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach card's season runs to the first snow of October, beyond the header's Jul-Sep, and October is rated marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "5450"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so loss should equal gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ne_ridge",
+   "name": "NE Ridge",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 1: ... hike toward Cathedral Pass, camp. Day 2: continue to Upper Cathedral Lake basin. Day 3: climb the ridge ... Days 4-5: hike out."
+      },
+      {
+       "field": "approach",
+       "says": "Most parties treat this as a 2-4 day backpack"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Long approach (~19-20 mi) ... to the Upper Cathedral Lake basin"
+      }
+     ],
+     "why": "The itinerary takes 2 days in and 2 days out (5 days), while the approach calls it a 2-4 day trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "400"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so loss should equal gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_10",
+   "name": "South Face",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Free grade of the crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.8"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.8 (originally 5.8 A1, now led free)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.8/A1 (free at ~5.9 per some parties)"
+      },
+      {
+       "field": "overview",
+       "says": "now commonly led free in the 5.8-5.9 range"
+      }
+     ],
+     "why": "The route grade is 5.8, but the crux pitch and overview say it goes free at about 5.9.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly July through the first snow of October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach season runs to the first snow of October, beyond the Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "name": "Southeast Buttress",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Drive distance Winthrop to trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "Drive West Chewuch Road / FR-51 north out of Winthrop roughly 22-23 miles to the road end"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 22–23.5 miles north of Winthrop"
+      },
+      {
+       "field": "road.status",
+       "says": "~6 miles on ... West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead"
+      }
+     ],
+     "why": "The waypoint and approach give 22-23 miles; the road card adds up to ~28 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent grade and time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Standard descent is a 4th-class scramble ... (about 45 minutes back to camp)"
+      },
+      {
+       "field": "descent_text",
+       "says": "third-class ledges ... rated easy class 3 when dry ... about 45 minutes to just over an hour"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3]",
+       "says": "~4:00 PM Begin descent"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4]",
+       "says": "5:30-6:30 PM Back at camp"
+      }
+     ],
+     "why": "The descent is 4th class in one field and 3rd class in the next, and it takes 45 min in both prose fields but 1.5-2.5 hr in the schedule.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length if the rest day is skipped",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Skip this day entirely for a faster 4-day trip."
+      },
+      {
+       "field": "itinerary.days",
+       "says": "4 days including the rest day"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 4-5 day trip"
+      }
+     ],
+     "why": "The itinerary is already 4 days including the rest day, so skipping it would make 3 days, not 4.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "When snow clears",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "ice axes/microspikes are generally unnecessary after the first of July as snow typically clears the approach and route by then"
+      },
+      {
+       "field": "climate.bySeason.summer",
+       "says": "snow generally off the approach and route by early July"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "Snow typically clears from the route and approach by mid-July"
+      }
+     ],
+     "why": "Snow clears by 1 July in two fields but by mid-July in the seasonal guidance.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "name": "The Monk - Odine",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Rack for the final crack",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Adequate protection needs a double set of cams to #3 plus a single #4 to leapfrog; with less, expect long runouts"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "0.3-3in single set"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams, single set 0.3-3\""
+      }
+     ],
+     "why": "The rack lists a single set to 3 in, but the crux pitch says it needs doubles to #3 plus a #4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Size of the finishing crack",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "finishing on an admired splitter hand/finger crack"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "a splitter jam crack of about 4 inches ... one of the best moderate wide cracks around"
+      }
+     ],
+     "why": "The overview calls it a hand/finger crack; the pitch table calls it a 4-inch wide crack.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly July through the first snow of October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach card's season runs to the first snow of October, beyond the header's Jul-Sep, and October is rated marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "1300"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so loss should equal gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "name": "The Monk - West Cracks - Right Crack",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "High point / top-out",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "8606"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "The Monk (tower top), elev 8300, type Topout"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "TWO pitches. Most parties rappel the route on gear from the top of pitch two"
+      }
+     ],
+     "why": "A two-pitch route low on the tower lists Cathedral's 8,606-ft summit as its high point and the 8,300-ft tower top as its top-out, yet most parties rappel from pitch two.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent from the top of the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "No descent from the top of the second pitch is documented."
+      },
+      {
+       "field": "rappels",
+       "says": "no descent from the top of the route itself is documented"
+      },
+      {
+       "field": "descent",
+       "says": "Rappel the route"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Most parties rappel the route on gear from the top of pitch two"
+      }
+     ],
+     "why": "Two fields say no descent from the route's top is documented; two others say parties rappel the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly July through the first snow of October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach card's season runs to the first snow of October, beyond the header's Jul-Sep, and October is rated marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "5200"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so loss should equal gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "name": "Southwest Route",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Grade of the step-across",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3 with one Class 4 step-across"
+      },
+      {
+       "field": "beta",
+       "says": "the harder of the two step-acrosses is the Class 4 move ... It is Class 3 with exposure that makes it Class 4-."
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "Class 4"
+      }
+     ],
+     "why": "The step-across is Class 4 in rock_grade and the pitch table, but the beta's last sentence calls it Class 3 (Class 4- only for exposure).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "name": "The Monk - West Cracks - Left Crack",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "High point / top-out",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "8606"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "The Monk (tower top), elev 8300, type Topout"
+      },
+      {
+       "field": "descent_text",
+       "says": "most parties simply rappel the route on gear from the top of the second pitch"
+      }
+     ],
+     "why": "A two-pitch route low on the tower lists Cathedral's 8,606-ft summit as its high point and the 8,300-ft tower top as its top-out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly July through the first snow of October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach card's season runs to the first snow of October, beyond the header's Jul-Sep, and October is rated marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "1300"
+      }
+     ],
+     "why": "The route returns to the same trailhead, so loss should equal gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "name": "Last Rites",
+   "area": "Cathedral Peak",
+   "contradictions": [
+    {
+     "fact": "Where the route starts",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "then into the Cathedral-Monk gully to the base of the South Face"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "This route is on the MAIN wall ... If a separate tower stands between you and the rock ... you are under the Southeast Buttress"
+      }
+     ],
+     "why": "The approach sends parties into the Cathedral-Monk gully, which the base finding identifies as the Southeast Buttress start, not this open-face route.",
+     "internal_resolution": "The base finding and both approach variants put the route on the open face left of the gully.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "allowing 45 minutes for the Southwest Route descent plus 30–40 minutes back to camp"
+      },
+      {
+       "field": "descent_text",
+       "says": "pick up the trail for the last 0.6 miles to Upper Cathedral Lake ... Allow 45 minutes camp-to-summit-to-camp on the descent"
+      },
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "0.75"
+      }
+     ],
+     "why": "The turnaround adds 30-40 min to camp on top of 45 min, while the descent text and timing give 45 min from summit to camp.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

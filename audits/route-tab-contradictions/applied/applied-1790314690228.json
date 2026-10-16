@@ -1,0 +1,685 @@
+{
+ "applied": [
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Whether the 'standard' approach climbs the South Ridge"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Whether the 'standard' approach climbs the South Ridge"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Whether the 'standard' approach climbs the South Ridge"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Whether the 'standard' approach climbs the South Ridge"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether the 'standard' approach climbs the South Ridge"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "bivy",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Whether the standard route requires rappelling"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "bivy",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Doelle Lakes' elevation relative to Chain Lakes"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Day-1 elevation loss into Icicle Creek"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "Day-1 elevation loss into Icicle Creek"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Day-1 elevation loss into Icicle Creek"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Day-1 elevation loss into Icicle Creek"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Day-1 elevation loss into Icicle Creek"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Day-1 elevation loss into Icicle Creek"
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Mileage/gain to reach the Chain/Doelle Lakes camp"
+  },
+  {
+   "id": "wa_carne_mountain_trail_route",
+   "column": "bivy",
+   "path": [],
+   "fact": "CAMPING & BIVY options listed for this route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total gain/loss (gain_ft/loss_ft) vs itinerary day totals"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total gain/loss (gain_ft/loss_ft) vs itinerary day totals"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain/loss (gain_ft/loss_ft) vs itinerary day totals"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "grade",
+   "path": [],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "September",
+    "reason"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "typical"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "fact": "seasonal_guidance and partner_requirements describe the separate, glaciated Lyman-side approach instead of this non-glaciated Trinity-side route",
+   "op": "replace_text",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "find": "likely a small handful of roped parties per season; the Spider Meadows/Lyman Lakes approach trail is a popular backpacking destination, but very few of those hikers continue onto the glacier and summit route",
+   "replace": "likely a small handful of parties per season; the long, brushy Chiwawa Basin approach sees few visitors beyond peakbaggers",
+   "sources": [
+    "https://armchairmountaineer.com/chiwawa-mountain",
+    "https://wenatcheeoutdoors.org/2016/05/20/chiwawa-mountain-sw-side/",
+    "https://en.wikipedia.org/wiki/Chiwawa_Mountain"
+   ],
+   "why": "new text cites a source: peakbagger"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_bulls_tooth_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.6927348,
+      "lng": -121.006647,
+      "elev": 5775,
+      "name": "Doelle Lakes",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 5775
+     },
+     {
+      "lat": 47.7189,
+      "lng": -121.0572,
+      "elev": 4685,
+      "name": "Josephine Lake",
+      "type": "Waypoint",
+      "distMi": null,
+      "elevFt": 4685
+     },
+     {
+      "lat": 47.7454,
+      "lng": -121.0888,
+      "elev": 4061,
+      "name": "PCT Trailhead at Stevens Pass (Hwy 2)",
+      "note": "Standard approach for Bulls Tooth: hike south on the PCT from Stevens Pass, then leave the trail near Lake Josephine to drop into Icicle Creek and climb ~1,800 ft into the Chain Lakes basin, then to Bullseye Pass before ascending the south ridge (class 3-4) to the summit.",
+      "type": "Trailhead",
+      "elevFt": 4061
+     },
+     {
+      "lat": 47.682633,
+      "lng": -121.003887,
+      "elev": 6840,
+      "name": "Bulls Tooth Summit",
+      "type": "Summit",
+      "elevFt": 6840
+     }
+    ],
+    "itinerary": {
+     "cal": "Best done mid-July through September once Bullseye Pass and the scramble route are snow-free; a free self-issue wilderness permit is required at the trailhead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the PCT-Southbound trailhead at Stevens Pass, follow the PCT past Lake Susan Jane and Josephine Lake, drop to the Icicle Creek/Chain Lakes Trail junction (~8 mi), then grind up the steep, ~2,000 ft climb into the Chain Lakes basin. Camp at Middle Chain Lake, which has numerous established sites.",
+       "hours": 6.5,
+       "miles": 11,
+       "title": "Approach to Chain Lakes",
+       "gainFt": 3600,
+       "lossFt": 300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach camp at (Middle) Chain Lake"
+      },
+      {
+       "n": 2,
+       "note": "Day-hike from Chain Lakes camp up to Bullseye Pass, drop packs, then cross-country up steep heather and white talus to the base of the summit block. The standard line is a Class 2-3 scramble via a ledge system on the west side that gains the ridge crest just below the top; the technical south-ridge (Class 4/5.0) line seen in some trip reports is a harder variant, not the standard way up. Return to camp the same way, or shift camp toward Doelle Lakes if continuing the loop.",
+       "hours": 7.5,
+       "miles": 6,
+       "title": "Bullseye Pass and the Bulls Tooth scramble",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "7:30 AM",
+         "label": "Leave Chain Lakes camp",
+         "detail": "Light day-pack; leave overnight gear at camp."
+        },
+        {
+         "time": "8:15 AM",
+         "label": "Reach Bullseye Pass (~6,200 ft)",
+         "detail": "Short, well-graded trail climb from camp."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin cross-country scramble",
+         "detail": "Steep heather and talus toward the base of the summit block."
+        },
+        {
+         "time": "10:45 AM",
+         "label": "Class 2-3 ledge traverse",
+         "detail": "West-side ledge system gains the ridge crest below the summit."
+        },
+        {
+         "time": "11:15 AM",
+         "label": "Summit (6,849 ft)",
+         "detail": "360-degree views of the Stuart Range, Chiwaukums, and Glacier Peak Wilderness."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at camp",
+         "detail": "Reverse the scramble and trail back down to Chain Lakes."
+        }
+       ],
+       "objective": "Tag the summit of Bulls Tooth and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Chain Lakes Trail down to the Icicle Creek junction, then follow the PCT back over the ridge to the Stevens Pass trailhead.",
+       "hours": 5.5,
+       "miles": 11,
+       "title": "Hike out to Stevens Pass",
+       "gainFt": 0,
+       "lossFt": 3300,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~28-mile round trip backpack with a scramble day out of a Chain Lakes base camp; roughly 5,800 ft total gain, matching the ~2-3 day pattern most parties use rather than a car-to-car push."
+    },
+    "descent_text": "Reverse the ascent line exactly. Downclimb the summit block using the same Class 2-3 moves in reverse — staying on the right (east/south) side is easier and less exposed than the left — then retrace the heather-and-talus traverse back to Bullseye Pass. From the pass, descend the loose scree/talus couloir back down to Chain Lakes camp (watch footing and any parties below you — this gully sheds rock easily), then follow Chain Lakes Trail #1569 downhill, pick up the Icicle Creek Trail, climb back up to the PCT junction, and follow the PCT north back to the Stevens Pass trailhead. This is a walk-off/downclimb descent with no rappelling on the standard route: 0 rappels. Note that a separate, harder line on the same peak — the technical South Ridge route used by parties doing the full Bullseye Traverse, which ropes up for Class 4-5.8 climbing to reach the true summit gap between Bull's Tooth and the adjacent 'Bullfinch' pinnacle — does use two to three short (~20-30 ft) rappels off horns, trees, and slung blocks to get back down that exposed ridge crest; that gear/anchor style does not apply to the standard scramble described here, which avoids the technical ridge entirely via the west-side ledge and downclimb.",
+    "bivy": [
+     {
+      "name": "Chiwaukum Chain Lakes",
+      "type": "camp",
+      "notes": "This is the working climbers' camp for Bulls Tooth and the only place a party should plan to sleep for the standard scramble. From the upper lake the route works around the shore to the base of a northwest-facing couloir filled with big white talus, climbs that to the ridge, and finishes on the summit block; most parties rappel the top section on the way down rather than reversing it, so a rope and a small rack of slings for the anchors belongs on the list even though the outing is graded as a scramble. Reaching the basin from the Icicle side is about two and a half miles and two thousand feet of climbing off the Icicle Creek trail on the Chain Lakes trail, which itself is roughly five miles and nineteen hundred feet from the junction — a full day with an overnight load. That trail was destroyed by a landslide a couple of miles south of Lake Josephine and has never been rebuilt to its old standard: it is passable on foot, it is not recommended for stock, and it is slow and vague where the slide crossed. From the west the basin is reached over Frosty Pass instead. Snow lingers in these basins into July in a normal year and the couloir holds it longer, which suits a party carrying an axe and hurts one that is not.",
+      "water": "Excellent and the reason this is the camp. All three lakes hold water through the season, the inlet streams run well into late summer, and the basin is the last dependable supply before the scramble. Everything above the lakes is dry once the snow has gone, so fill completely here for summit day. Treat it; the shoreline sees steady if light use.",
+      "permit": "Alpine Lakes Wilderness. A free self-issue permit is filled out at the trailhead register and covers both day and overnight use; there is no quota, no reservation and no lottery on this side of the wilderness, which is the opposite of the Enchantments permit zone a few miles south. A Northwest Forest Pass or interagency pass is needed at the Icicle Creek trailhead. Campfires are prohibited above 5,000 feet in this wilderness, which includes every lake in this basin — carry a stove. Party size is capped, camp on existing bare ground and keep well back from the lakeshores.",
+      "capacity": "Numerous informal sites spread around the three lakes, on benches and in the timber edges. There is room for several parties and you will rarely be competing for ground — the walk in is long enough from either end that this basin stays quiet even in high summer."
+     },
+     {
+      "elev": 5775,
+      "name": "Doelle Lakes",
+      "type": "camp",
+      "notes": "About one and eight tenths miles and six hundred feet above the Chain Lakes, this is the higher and more scenic option and it looks straight across at Bulls Tooth, which is the highest thing in view from here. It is the natural camp for a party that is traversing rather than going in and out — the usual line runs Icicle Creek to the Chain Lakes, over to Doelle, out past Bulls Tooth to Frosty Pass and down Wildhorse Creek to Whitepine, and this basin is the middle of it. As a base for the scramble alone it is slightly further from the couloir than the Chain Lakes are, so parties climbing the peak and returning the same way usually stay lower. The meadows here are exposed and hold weather; there is very little shelter and nights are cold well into August at this height. The connecting ground between here and the Chain Lakes is open enough to be simple in clear weather and genuinely confusing in cloud.",
+      "water": "Both lakes, reliable through the climbing season, plus snowmelt in the talus early. This is the other dependable supply in the group and the one to use if the Chain Lakes basin is occupied.",
+      "permit": "Same free self-issue Alpine Lakes Wilderness permit from the trailhead register, no quota and no reservation. Northwest Forest Pass at the Icicle Creek trailhead. NO CAMPFIRES above 5,000 feet, and at this elevation the ground is thin subalpine meadow that scars for years, so pitch on bare gravel or existing sites and use a stove.",
+      "capacity": "Flat camping in alpine meadow threaded with talus, with room for several parties spread out. Genuinely lightly used — most people who reach the Chain Lakes stop there."
+     },
+     {
+      "name": "Frosty Pass and the Wildhorse Creek headwaters",
+      "type": "camp",
+      "notes": "This is the pivot of the western approach to Bulls Tooth and the last camp before the peak from that side. The Frosty and Wildhorse Creek trail runs about eleven miles and thirty-five hundred feet from the Whitepine side to the pass, where it meets the Icicle Ridge trail; from the pass the high country opens out east and north toward Lake Grace, Snowgrass Mountain, the Doelle Lakes and Bulls Tooth itself. THE TRAIL IS NOT MAINTAINED BEYOND THE PASS, so the ground linking this camp to the peak is route-finding on open high country rather than trail walking, and it is the part of the trip most likely to go wrong in poor visibility. Lake Grace lies off to the side and is the better camp of the two if you want water you can count on and shelter from the wind, at the cost of some distance. Parties doing the full traverse come over this pass in either direction, and it works as well for a party who has climbed the peak from the Chain Lakes and is walking out west as it does for one coming in. Season is roughly mid-July through early October; the north-facing approach slopes hold snow late and the pass is a cold, exposed place to be caught out.",
+      "water": "Snowmelt and small streams in the headwater meadows below the pass on the Wildhorse side, dependable into midsummer and thinning badly by late season. The pass itself carries nothing you can rely on. This is the last water on the western approach before the high ground, and the Icicle Ridge trail east of here is notoriously dry, so fill in the meadows rather than at the crest.",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit from the register at whichever trailhead you started from, no quota and no reservation. A Northwest Forest Pass or interagency pass is required at the White Pine trailhead. Campfires are prohibited above 5,000 feet — this camp is above that line and there is very little to burn regardless. Camp on the existing bare sites; the meadow here is fragile and heavily walked.",
+      "capacity": "Established ground at and just below the pass for a couple of parties, with more scattered spots in the meadows on the Wildhorse side. A crossroads rather than a destination, so expect the occasional through party in July and August and nobody at all in September."
+     },
+     {
+      "name": "Whitepine Creek valley camps and the Wildhorse junction ford",
+      "type": "camp",
+      "notes": "These exist to break the walk, and on an approach this long that matters more than it sounds. It is roughly three miles of easy valley trail from the road end to the Wildhorse Creek junction, and then six and a half miles of climbing to Frosty Pass — a poor single day with a loaded pack after the drive out from the west side. THE CRUX OF THE WHOLE APPROACH IS THE WHITEPINE CREEK FORD, a few hundred yards short of the Wildhorse junction near the ruins of the old bridge. Early in the season with snowmelt running it is a serious crossing and it is the thing that turns parties round; by late July or August it is usually a boots-on wade with a stick. Camping short of it and crossing in the morning, when the flow is at its lowest and you are fresh, is the standard tactic and the right one. Coming out, most parties walk straight through. The valley is forested and pleasant and the walking is fast, which is the argument for the Whitepine approach over the Icicle one whenever the Icicle road or the French Creek bridge is out.",
+      "water": "Whitepine Creek runs alongside for the whole of this stretch and every one of these sites has water at it into the autumn. This is the generous part of the approach, and it is worth knowing because the climb to Frosty Pass and everything above it is a different story.",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit at the White Pine trailhead register. Northwest Forest Pass or interagency pass to park. Fires are legal below 5,000 feet in existing rings outside a burn ban, but this is dry east-side timber and the district runs restrictions through most of the summer, so plan on a stove.",
+      "capacity": "Scattered informal sites along the first few miles of the Whitepine Creek trail, most taking one or two tents, each with its own bit of creek. Nothing developed and no toilets."
+     },
+     {
+      "elev": 2800,
+      "name": "White Pine road end trailhead",
+      "type": "camp",
+      "notes": "The staging point for the western approach and the shorter drive from anywhere on US 2. The road leaves the highway west of Leavenworth and runs about four miles of gravel to the trailhead at roughly 2,800 feet. Sleeping here rather than pushing into the valley in the dark is worth doing, because the ford above wants daylight and a party that arrives at it tired in the evening will camp short of it anyway. THE ROAD IS THE PART TO CHECK. The December 2025 storms damaged forest roads across this whole district and a closure order covering the damaged ones runs into 2027; the Icicle road on the other side of the range carries multiple landslides limiting vehicles to the end of the road, and a large fire closure sat over the Lake Wenatchee and Leavenworth country through the autumn of 2026, shutting more than sixty trails in these two districts. Confirm the White Pine road and the Whitepine and Wildhorse trails are open before committing to the drive, and have the Icicle side as a fallback rather than an assumption, because in some seasons it has been the worse of the two.",
+      "water": "Whitepine Creek is at hand and needs treating. There is no potable supply and no tap. Fill everything here before starting, since the good water lasts only as far as the valley and the high country above Frosty Pass has almost none.",
+      "permit": "Northwest Forest Pass or interagency pass required to park. The free self-issue Alpine Lakes Wilderness permit is taken from the register here rather than arranged in advance — no quota, no reservation, nothing to book. Fire restrictions on this dry east slope are close to permanent through the summer and commonly ban all open flame including in rings.",
+      "capacity": "A gravel turnaround at the end of the road with room for a modest number of vehicles and space to sleep in one. There is no campground here, no facilities and no fee site — this is a roadhead, recorded because a party arriving late from the west side needs somewhere to be."
+     }
+    ],
+    "gain_ft": 5800,
+    "loss_ft": 5800,
+    "pro_tips": [
+     "Plan an overnight given the long approach -- it is 24.6 mi RT / ~5,000 ft just to reach Chain and Doelle Lakes",
+     "The summit tower is the crux -- short but exposed",
+     "Stunning lake-basin scenery en route",
+     "Campfires are banned above 5,000 ft in this basin regardless of conditions, so bring a stove",
+     "Group size is capped at 12 people/stock in the Alpine Lakes Wilderness",
+     "Start early on the unswitchbacked 2,000-ft climb into Chain Lakes -- it's brutal in afternoon sun"
+    ]
+   }
+  },
+  {
+   "id": "wa_carne_mountain_trail_route",
+   "before": {
+    "bivy": [
+     {
+      "elev": 3200,
+      "name": "Holden Village",
+      "type": "hut",
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak, which no other approach in this zone offers. The catch is that the whole thing runs on a schedule you do not control: a passenger ferry roughly forty miles up Lake Chelan from Chelan or Fields Point Landing, then a bus about ten miles up a single forest road, with the bus historically running only on certain days. Miss a boat and you lose a day at each end, so the practical trip length is dictated by the sailing schedule rather than by the climb. As of the 2026 season the village is CLOSED to all guests including hikers and the road up Railroad Creek is closed by order after December 2025 flooding and slides destroyed sections of it — using the Lucerne dock or travelling that road in any form is prohibited while the order stands, repairs are expensive and slow, and reopening may slip beyond 2026. Treat any Bonanza plan as unbookable until that order is lifted, and confirm directly rather than assuming a summer has reopened it.",
+      "water": "Village water supply, hot showers, laundry — the only fully serviced lodging anywhere near these peaks",
+      "permit": "No wilderness permit needed to sleep here, but a confirmed reservation is mandatory and so is a booked seat on both the Lake Chelan passenger boat to Lucerne and the shuttle bus up Railroad Creek. Rates are per person per night and include all meals, with a lower long-stay rate and a higher rate in the peak weeks of high summer. A wilderness permit and the usual campfire rules still apply the moment you leave the village on any trail.",
+      "capacity": "Dormitory-style lodge rooms in the old mining town, tens of guests at a time; individual bookings and group bookings are handled separately and both fill for the summer months"
+     },
+     {
+      "elev": 3300,
+      "name": "Holden Ballpark Campground",
+      "type": "camp",
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is exposed and has no shelter, and with only a site or two you cannot count on it if another party arrived on the same boat. It sits at the practical start of the walk to Hart Lake, Holden Lake and Copper Basin, so it works as a first night after a late ferry and again as a last night waiting for a morning bus out. It is subject to exactly the same road closure as the village — while Railroad Creek road is closed by order there is no legal way to reach it.",
+      "water": "Railroad Creek is close by and needs treating; the village's services are a mile back down the road and are not yours to use unless you are a paying guest",
+      "permit": "Free national forest campground with no fee and no reservation, but a free self-issue wilderness permit is required for the trails above it. Reaching it at all depends on the ferry and the Railroad Creek road, so the ferry booking is the real constraint. Standard forest fire restrictions apply and are usually tightened to no open flame by late summer.",
+      "capacity": "Tiny — one or two primitive tent sites in an open field, so it is a place to sleep rather than a place to stage a large party"
+     },
+     {
+      "elev": 5278,
+      "name": "Holden Lake",
+      "type": "camp",
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and climbs four miles of switchbacks to the lake, which puts most of the day's work behind you before the climbing starts. From here a typical Mary Green day is around eleven hours camp to camp with several thousand feet of gain, so parties either accept a long day from the lake or push a high camp higher. It is also the launching point for Martin Peak and for traverses toward Holden Pass. The whole basin is remote enough that self-rescue is the realistic plan — there is no road within a day of you, and the way out is a boat.",
+      "water": "Reliable — the lake and its inlet streams, plus snowmelt high into the summer",
+      "permit": "Free self-issue Glacier Peak Wilderness permit, filled in at the trailhead. Camping and campfires are both prohibited within 200 feet of the lakeshore, which is enforced and is the reason the good sites sit back in the trees and benches. Group size limits apply. Getting here at all depends on the ferry, the bus and the Railroad Creek road being open.",
+      "capacity": "Several established sites spread around the basin, enough for a few parties, but they are the obvious base for every Bonanza attempt so expect company in July and August"
+     },
+     {
+      "elev": 6400,
+      "name": "Holden Pass and the slab bivies above",
+      "type": "bivy",
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfall slabs at roughly 6,900 ft, which is a genuine bivouac rather than a campsite and is worth scouting in daylight before committing to it in the dark. From either, the route makes a rising traverse west to the snowfield below the slabs, scrambles onto the northern edge of the Mary Green Glacier and works southwest under the northeast ridge. The trade is comfort and water for time: an early start off wet slabs in the dark from the pass is a very different proposition to the same ground at first light, so choose the higher camp only if the party is competent moving on that terrain unlit. Exposed to weather with nothing to hide behind.",
+      "water": "Snowmelt and running water off the slabs early in the season; by late summer this can dry up entirely and you may have to carry water from Holden Lake",
+      "permit": "Free self-issue wilderness permit. No campfires at this elevation on bare ground and in fragile alpine terrain — carry a stove. Camp on rock, snow or existing bare ground rather than on the heather benches, which do not recover.",
+      "capacity": "A handful of small pitches at the pass, and higher up only ledges — one or two tents at best above the pass, and parties frequently sleep two to a ledge"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "type": "camp",
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft above Spider Meadow over Spider Gap, crossing the permanent snowfield below the gap and dropping onto the Lyman Glacier, which puts an ice axe and traction on the packing list even in August. From the east it is a long valley walk up Railroad Creek from Holden, with intermediate camps at Hart Lake and at Rebel Camp about a mile beyond it that break the approach in two. North Star and Cloudy are scrambles off the Cloudy Pass trail from here; Chiwawa is reached by traversing the Lyman Glacier to its east ridge, which is a roped glacier objective rather than a walk. Cloudy Pass itself is scenic and thoroughly exposed to wind and lightning. With the Holden road closed and the Chiwawa road under its own closures, both ends of this corridor have been unreachable at times through 2026.",
+      "water": "Reliable — the lakes, the Lyman Glacier outflow and creeks all through the basin",
+      "permit": "Free self-issue Glacier Peak Wilderness permit. Camping and campfires are prohibited within 200 feet of Lyman Lake's shoreline, so pitch back from the water; carry a stove rather than planning on a fire. Reached from the west, no recreation pass is needed at the Phelps Creek trailhead, which the Forest Service lists as a no-fee site; reached from the east it needs the ferry and bus booking instead.",
+      "capacity": "Established sites at Lower Lyman Lake, more scattered ground toward the upper lakes, and a small number of exposed camps at Cloudy Pass; a popular corridor, so plan on sharing"
+     },
+     {
+      "elev": 4750,
+      "name": "Spider Meadow and Phelps Basin",
+      "type": "camp",
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes and so serves North Star, Cloudy and Chiwawa; Phelps Basin half a mile above the head of the meadow is the base for Dumbell Mountain, whose route climbs northwest out of the upper basin, steepens around 6,100 ft and works up talus and a weakness to the notch west of the summit. Higher bivouac ground exists at Larch Knob, about 1,600 ft above the meadow on the switchbacks toward Spider Gap, with a few platforms partly sheltered from the wind pouring through the gap. The same trailhead also serves the Carne Mountain trail, whose basin at about 6,100 ft holds several camps with good water and is the link to the saddle above Ice Lakes and across to Leroy — those saddle camps have no water other than snowmelt. Road access is the weak point here: the Chiwawa River road is long, the final twelve miles are rough gravel unfriendly to low clearance, and the last two miles of the Phelps Creek spur are rougher still.",
+      "water": "Reliable — Phelps Creek runs the length of the meadow and the basin above holds snowmelt streams well into the season",
+      "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead, which is entered about two and a half miles up. A Northwest Forest Pass or America the Beautiful pass covers parking at Phelps Creek. Camp on established bare sites rather than in the meadow itself, and expect fire restrictions from midsummer onward on top of the usual high-elevation limits.",
+      "capacity": "Numerous established sites through a mile-long meadow, plus quieter ground in Phelps Basin above it — the meadow absorbs a lot of parties but is genuinely busy on summer weekends"
+     },
+     {
+      "elev": 6100,
+      "name": "Leroy Basin",
+      "type": "camp",
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy Creek at around 4,140 ft, then taking the steep unmaintained climbers' path up the north side of the creek to the flat at 6,100 ft. The ford is the crux of the approach rather than an afterthought: Leroy Creek runs high and fast through early summer and often does not settle until August, so an early-season party should plan the crossing for morning and be prepared to turn round. From camp, Seven Fingered Jack's southwest slopes and Maude's south side are both reasonable days, and the two are frequently combined. Maude's north-side lines, including the ice fall and the couloir, are a different proposition entirely and are approached from the far side of the peak. Larch colour makes this a heavily visited basin in the first half of October.",
+      "water": "Reliable — clear streams through the basin, though upper snowfields are what feed them and a very late-season camp may need to walk down for water",
+      "permit": "Free self-issue Glacier Peak Wilderness permit; Northwest Forest Pass or America the Beautiful at the trailhead. No campfires this high — carry a stove. Use the existing sites; the basin is small and the meadow ground scars quickly.",
+      "capacity": "Several established sites in a flat basin, comfortably a few parties, and the standard climbers' base for this side of the crest"
+     },
+     {
+      "elev": 7173,
+      "name": "Ice Lakes",
+      "type": "camp",
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the road end at Cottonwood Campground at about 3,140 ft, then a rough side path climbing through boulders for another mile and a half or two to the upper lake, with the upper lake sitting about a mile and four hundred feet above the lower one, directly under Maude's face. From the upper lake Maude's shoulder is a walk-up by the standards of this range. The same valley head serves the Entiat Meadows under Fernow, Seven Fingered Jack and Maude, and Buckskin Mountain sits on the divide above, reachable either from here or from Copper Basin on the Holden side, which is also how Copper Peak is normally climbed. The whole Entiat corridor has burned repeatedly and much of the trail is exposed, dry and dusty with little shade and no reliable water between the river and the lakes. In 2026 a very large fire in this valley destroyed structures and closed the trail and road outright for months; assume nothing about access here without checking, and expect standing dead timber and blowdown for years afterwards.",
+      "water": "Reliable — both lakes, with inlet snowmelt through most of the summer",
+      "permit": "Free self-issue Glacier Peak Wilderness permit; Northwest Forest Pass or America the Beautiful pass at the Entiat River trailhead. Campfires are prohibited within half a mile of the Ice Lakes, so a stove is mandatory here. Camp on the pumice flats and bare benches rather than the fragile meadow, and honour the closure on the lower lake's peninsula.",
+      "capacity": "Established sites on benches and pumice flats around both lakes; the upper lake takes a fair number of tents in season and the lower lake has room, though the peninsula on the lower lake is closed to camping"
+     },
+     {
+      "elev": 2800,
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "type": "camp",
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how parties end up starting the walk in tired and late. Phelps Creek Campground sits near the confluence of Phelps Creek and the Chiwawa a short distance below the Phelps Creek trailhead, and the Trinity trailhead at about 2,800 ft — the start of the Buck Creek trail toward Buck Creek Pass and Fortress Mountain — is a mile or so away, so one night here stages either objective. The road is the fragile part of this whole side of the zone. Storm damage has closed it above Atkinson Flat under a multi-year order, and a 2026 fire closure covered the Chiwawa River road and the Phelps Creek spur on top of that, so check whether you can drive to the trailhead at all before planning around it. When the road is shut above Atkinson Flat the lower campgrounds are still a reasonable base but the trailhead becomes a long walk or ride further on.",
+      "water": "The Chiwawa River is right there but these are primitive campgrounds — treat water and expect no potable supply or trash service",
+      "permit": "Small nightly fee at the developed sites, first come first served with no reservations, so arrive early on a summer Friday. A Northwest Forest Pass or America the Beautiful pass covers trailhead parking the next morning, and the free self-issue wilderness permit is picked up at the trailhead itself. Fire restrictions bite here in late summer and often ban all open flame including in the fire rings.",
+      "capacity": "Phelps Creek Campground has roughly seven tent sites plus half a dozen equestrian sites; Atkinson Flat, Schaefer Creek, Rock Creek and the other small forest campgrounds strung along the road below it each hold a handful more"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "before": {
+    "itinerary": {
+     "cal": "Chiwawa River Road (FR 6200) typically isn't fully snow-free/passable until mid-June, and the route holds snow into summer, so most ascents happen late June through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Chiwawa River / Trinity trailhead (2,800 ft), follow Chiwawa River Trail #1550 along the old Red Mountain mining road, passing the Buck Creek and Chiwawa Basin trail junctions around 4,800 ft. The lower trail is brushy/overgrown in summer; expect a long, steady climb through forest into open basin terrain for camp.",
+       "hours": 5.5,
+       "miles": 7,
+       "title": "Approach to high camp",
+       "gainFt": 3300,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach high camp near 5,900-6,300 ft on the old Red Mountain mining road"
+      },
+      {
+       "n": 2,
+       "note": "From camp, cross crusty morning snow slopes up to the broad saddle near 8,200 ft between Chiwawa and Fortress, then work up the southwest snowfield/talus with a short Class 2-3 ledge traverse to the summit ridge. Many parties tag Fortress Mountain's Class 3-4 east ridge from the same col on the same day.",
+       "hours": 10,
+       "miles": 6,
+       "title": "Summit day: Chiwawa Mountain via SW snowfield",
+       "gainFt": 3900,
+       "lossFt": 3900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave high camp",
+         "detail": "Cross firm morning snow before it softens."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Reach Chiwawa-Fortress saddle (~8,200 ft)",
+         "detail": "Broad, gently inclined snow ramp leads to the col."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Southwest snowfield and ledge traverse",
+         "detail": "Class 2+ ledges round the south rib onto the SW slopes."
+        },
+        {
+         "time": "~3:45 PM",
+         "label": "Summit (8,459 ft)",
+         "detail": "Typical summit arrival on a full-value day."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Back at high camp",
+         "detail": "Descend the same snow/talus line; glissade where safe."
+        }
+       ],
+       "objective": "Climb Chiwawa Mountain (8,459 ft) and return to high camp"
+      },
+      {
+       "n": 3,
+       "note": "Retrace the Red Mountain mining road/Chiwawa River Trail back down through the brushy lower miles to the trailhead.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3300,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to Chiwawa River trailhead"
+      }
+     ],
+     "totalNote": "A 2-3 day trip for most parties: ~19-20 miles round trip with roughly 7,300 ft cumulative gain/loss; camp sits near 5,900-6,300 ft on the old mining road, with a long (7+ hr) summit push on day two. Very strong parties have done it car-to-car in a single ~14-16 hr day."
+    },
+    "grade": "Class 3-4 + glacier",
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through early September, while the Lyman Glacier still holds continuous snow/ice cover",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow cover is typically still solid on the glacier and approach, per the best-season window, though early July can still have leftover winter snow",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Access road/trail may still be snowed in or gated, and lingering deep snowpack makes travel and route-finding harder",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Best combination of stable weather and continuous glacier snow cover before late-season melt-out",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Snow cover starts thinning, ice may become discontinuous requiring more rock scrambling, and early fall storms can return",
+       "status": "marginal"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Central Cascades alpine climate with heavy winter snowpack feeding the Lyman Glacier; the best summer window is stable but short",
+      "probability": "Afternoon thunderstorms/convective buildup are a common summer hazard in this part of the North Cascades, especially July-August"
+     },
+     "exposure": "Exposed Class 3-4 scrambling on loose, rotten rock on the summit ridge above the glacier; combined with the long, committing, remote approach, any fall or injury here carries serious consequences given the distance from help",
+     "avalanche": {
+      "zone": "No NWAC zone specifically covers this peak, and NWAC's daily forecasts are only issued for the winter season (roughly Nov-Apr), which does not overlap the Jul-Sep climbing window for this route",
+      "byMonth": {
+       "July": "Low",
+       "June": "Moderate",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - the standard southwest route is non-glaciated and does not cross the Lyman Glacier remnant, which lies on a separate, more involved approach on the mountain's northeast side (see overview)"
+    },
+    "crowds": {
+     "peakTraffic": "Weekends in late July and August when snow/ice conditions are best and the approach trail is snow-free",
+     "solitudeRating": 4,
+     "estimatePerSeason": "Low - likely a small handful of roped parties per season; the Spider Meadows/Lyman Lakes approach trail is a popular backpacking destination, but very few of those hikers continue onto the glacier and summit route"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous multi-day approach (Phelps Creek to Spider Gap/Lyman Lakes high camp) with significant elevation gain before the climb even begins",
+      "packWeight": "Overnight glacier-climbing kit - rope, harness, crevasse-rescue hardware, ice axe/crampons, camping gear; roughly 35-45 lb"
+     },
+     "approachTime": "Long - typically a full day to reach a high camp near Spider Gap or Lyman Lakes before a summit push",
+     "requiredSkills": [
+      "Glacier travel and roped crevasse rescue",
+      "Ice axe self-arrest and crampon technique",
+      "Comfort leading/following 2-3 pitches of moderate snow/ice",
+      "Class 3-4 scrambling on loose/rotten alpine rock",
+      "Route-finding in remote, unmarked terrain",
+      "Backcountry camping/overnight logistics"
+     ],
+     "experienceLevel": "Advanced - prior glacier travel and roped crevasse-rescue experience required; comfort on exposed Class 3-4 rock while tired from a long approach"
+    }
+   }
+  }
+ ]
+}

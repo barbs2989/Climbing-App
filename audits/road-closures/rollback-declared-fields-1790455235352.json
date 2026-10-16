@@ -1,0 +1,135 @@
+[
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "area_id": "wa_glacier_peak",
+  "itinerary": {
+   "cal": "The White Chuck River Road (FR 23) has been closed from milepost 3.7 since March 19, 2025, with no end date given on the Forest Service alert updated June 30, 2026, so the approach starts at the North Fork Sauk trailhead instead; the Kennedy Glacier toe (crumbling boulders on ice) is described as the most hazardous section of the route in multiple reports.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the North Fork Sauk trailhead (the White Chuck trailhead has been cut off since FR 23 closed at milepost 3.7 on March 19, 2025), take the North Fork Sauk Trail to the PCT and follow it north over Red Pass to the Glacier Creek camps, then up to a camp on Kennedy Creek Bench near the toe of the Kennedy Glacier moraine. The 8 miles and 6.5 hours given here are for the old White Chuck start; the North Fork Sauk line is a much longer walk to the same place.",
+     "hours": 6.5,
+     "miles": 8,
+     "title": "Approach to Kennedy Creek Bench camp",
+     "gainFt": 3850,
+     "lossFt": 0,
+     "packLb": 45,
+     "schedule": [],
+     "objective": "Reach camp at ~6,200 ft"
+    },
+    {
+     "n": 2,
+     "note": "A long, full-value day: climb the wide, moderately-crevassed Kennedy Glacier to the summit, then descend via Frostbite Ridge and the Vista Glacier back down to the lower Kennedy Glacier, regaining camp in the evening.",
+     "hours": 13.1,
+     "miles": 9,
+     "title": "Summit via Kennedy Glacier, descend via Sitkum",
+     "gainFt": 4350,
+     "lossFt": 4350,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "Early AM",
+       "label": "Leave Kennedy Creek Bench",
+       "detail": "Switch to boots/crampons at the crumbling, boulder-strewn toe of the glacier — a notably hazardous section."
+      },
+      {
+       "time": "+7.6 hr",
+       "label": "Summit",
+       "detail": "Via the wide-open Kennedy Glacier, then a rock-on-ice step and waterfall traverse lower down."
+      },
+      {
+       "time": "Descent",
+       "label": "Down Frostbite Ridge and the Vista Glacier",
+       "detail": "Past the 'Rabbit Ears' rock formation, then down the Vista Glacier to the lower Kennedy Glacier."
+      },
+      {
+       "time": "~7:20 PM",
+       "label": "Back at camp",
+       "detail": "5.5 hr descent from the summit; plan headlamps for a late finish."
+      }
+     ],
+     "objective": "Summit Glacier Peak (10,541 ft) and loop back to camp via a different glacier"
+    },
+    {
+     "n": 3,
+     "note": "Break camp and hike back down to the trailhead.",
+     "hours": 5.5,
+     "miles": 8,
+     "title": "Hike out",
+     "gainFt": 0,
+     "lossFt": 3850,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Return to trailhead"
+    }
+   ],
+   "totalNote": "A 3-day loop (~25-27 miles, roughly 8,000+ ft gain) built around one very long, physically demanding summit day; some parties add a 4th buffer/rest day."
+  },
+  "timing": {
+   "totalHrs": 25.1,
+   "summitTimeHrs": 13.1,
+   "descentTimeHrs": 5.5,
+   "approachTimeHrs": 6.5,
+   "recommendedStart": "Early AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 6.5,
+     "note": "From the North Fork Sauk trailhead (the White Chuck trailhead has been cut off since FR 23 closed at milepost 3.7 on March 19, 2025), take the North Fork Sauk Trail to the PCT and follow it north over Red Pass to the Glacier Creek camps, then up to a camp on Kennedy Creek Bench near …",
+     "fromTo": "Approach to Kennedy Creek Bench camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 13.1,
+     "note": "A long, full-value day: climb the wide, moderately-crevassed Kennedy Glacier to the summit, then descend the Sitkum Glacier and Boulder Basin, traversing back over to Sitkum/Kenned…",
+     "fromTo": "Summit via Kennedy Glacier, descend via Sitkum",
+     "section": "Climb"
+    },
+    {
+     "hrs": 5.5,
+     "note": "Break camp and hike back down to the trailhead.",
+     "fromTo": "Hike out",
+     "section": "Descent"
+    }
+   ]
+  },
+  "bivy": [
+   {
+    "name": "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the base for Glacier Peak's Kennedy Glacier and for the Frostbite Ridge line above it, and since the White Chuck approach died it is the only practical way at the mountain's north and west sides. The walk in is long even when the road is open — the Suiattle River trail runs about seven miles to the river bridge and the crest trail then carries you south toward Kennedy Ridge, so this is a full day before the climbing camp is even in sight. Kennedy Creek has no bridge and will not get one; the standard tactic is to camp short of it and cross in the morning when the flow is at its lowest, using whatever logs are currently in place rather than wading the main channel. Above the forest the route climbs the ridge and the glacier toward the saddle between the Kennedy and Vista glaciers at around 8,000 feet, where bivouac sites exist for parties willing to sleep on snow and rock with no shelter and no clean water. With the road washed out the trailhead is normally reachable on foot or by bike from the closure point, which adds roughly nine miles each way to an approach that was already the longest on the mountain, but the Forest Service's Miner's Fire order (06-05-26-17) closes the upper Suiattle River Road, the Suiattle Trailhead, the Suiattle River Trail and the PCT from Mica Lake north from August 15 through December 31, 2026, unless rescinded sooner.",
+    "water": "Glacier Creek and Kennedy Creek are both right there and both silty with glacial flour — let it settle or filter accordingly. Higher on the ridge water disappears entirely by late season and has to be carried or melted.",
+    "permit": "Free self-issue Glacier Peak Wilderness permit, twelve-person limit. Northwest Forest Pass at the Suiattle road end. Stove only above the forest. Check the road order before driving: the Suiattle River road washed out about four and a half miles in during the December 2025 storms and has been closed to vehicles under a Forest Service order in effect April 2, 2026 through January 1, 2028 unless rescinded sooner; the Forest Service scheduled temporary bridge work there for July 15 to August 30, 2026, but its closure alert was still posted on September 26, 2026 with no reopening announced, and it listed the campgrounds and trailheads up that road as closed for the 2026 season.",
+    "capacity": "Forested sites in ones and twos scattered along the crest trail near the creek crossings, plus rougher bivouac ground higher on the ridge; nothing organised, and no single site takes a large party"
+   }
+  ],
+  "access": {
+   "fees": "None beyond the parking or entrance fee this route already lists.",
+   "notes": "USFS Northwest Forest Pass required for parking. No climbing permit required but self-serve backcountry permits recommended at trailhead. Seasonal access May-September; best conditions late June through mid-September. Note: 2003 Glacier Peak flood destroyed original White Chuck River Trail and Kennedy Hot Springs (no longer accessible).",
+   "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+   "permit": "Self-Issue Wilderness Permit",
+   "closures": "Access into Glacier Peak Wilderness was reported extremely limited in April 2026 due to road/trail damage from the December 2025 storm event. Verify current road and trail status with the Darrington Ranger District, (360) 436-1155, before a trip.",
+   "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+   "group_limit": 12,
+   "landManager": "US Forest Service, Mount Baker–Snoqualmie National Forest, Darrington Ranger District",
+   "land_manager": "US Forest Service, Mount Baker–Snoqualmie National Forest, Darrington Ranger District",
+   "parking_pass": "Northwest Forest Pass",
+   "passRequired": "Northwest Forest Pass or Interagency Pass (or pay-by-day)",
+   "overnight_permit": {
+    "url": null,
+    "what": "Free self-issue Glacier Peak Wilderness permit",
+    "where": "Fill one out at the trailhead kiosk and carry it with you."
+   }
+  }
+ },
+ {
+  "id": "wa_sentinel_peak_standard",
+  "area_id": "wa_sentinel_peak",
+  "road": {
+   "name": "Cascade River Road (north approach) / Suiattle River Road, FSR 26 (south approach)",
+   "status": "Cascade River Road is open: its Pincer Two Fire closure at MP 8 (Marble Creek), in place from July 23, 2024, was lifted on September 20, 2024, and the park's road-conditions page, updated July 3, 2026, lists the road open — check current NPS road-condition alerts before a trip. Suiattle River Road (FSR 26) is closed to vehicles at about MP 4 under a long-term Forest Service closure order (No. 06-05-26-03, effective April 2, 2026 through January 1, 2028) following atmospheric-river flood damage; Grade Creek (FSR 2640), Tenas Creek (FSR 2660), Green Mountain (FSR 2680) and Forest Road 25 are closed as well. The Downey Creek trailhead is normally still reachable on foot or bike from the MP 4 closure point, adding roughly 16 miles round trip of road walking/biking, but the Forest Service's Miner's Fire order (06-05-26-17) closes the Downey Creek Trailhead and Downey Creek Trail #768 from August 15 through December 31, 2026, unless rescinded sooner.",
+   "driveNote": "Verify current status at nps.gov/noca (Cascade River Road) and the MBS National Forest alert page (Suiattle River Road) before driving out, as road status is subject to change.",
+   "seasonalGate": "Cascade River Road is additionally gated for winter each year around MP 20 (Eldorado)"
+  }
+ }
+]

@@ -1,0 +1,200 @@
+{
+ "applied": [
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Walk-up permit fee"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Shape of the lower approach (4-mile roadbed vs immediate climb)"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Shape of the lower approach (4-mile roadbed vs immediate climb)"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Water between the trailhead and Terror Basin"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Water between the trailhead and Terror Basin"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    1
+   ],
+   "fact": "Water between the trailhead and Terror Basin"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Difficulty of the summit step"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Difficulty of the summit step"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Difficulty of the summit step"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Difficulty of the summit step"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "Difficulty of the summit step"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Difficulty of the summit step"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Backcountry overnight permit required; self-permit possible if area not full",
+      "land_manager": "National Park Service (North Cascades National Park Complex / Ross Lake National Recreation Area)",
+      "cost_structure": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free",
+      "special_hazards": "Strenuous Class 3 scrambling with exposed sections, alpine weather, snow/glacier travel until late summer",
+      "wilderness_zone": "North Cascades National Park Cross-Country Zone",
+      "group_size_limits": "4-12 people depending on specific campsite",
+      "seasonal_closures": "Accessible typically July, August, September only due to snow; State Route 20 closure mid-November to mid-April",
+      "permit_pickup_hours": "7:00 AM - 11:30 AM, 12:30 PM - 4:00 PM (Mid-May to Mid-October)",
+      "altitude_restrictions": "Terror Basin area; exact elevation restrictions not specified but alpine terrain",
+      "parking_pass_required": "None — the Goodell Creek trailhead is on National Park Service land, where no parking pass is required",
+      "permit_pickup_location": "Wilderness Information Center, Marblemount, WA"
+     },
+     "fees": "No trailhead or parking fee; overnight backcountry camping permit costs $10/person plus a $6 reservation fee (free walk-up permits also available)",
+     "notes": "Terror Basin is a walk-up-only zone: it is not among the cross-country zones that can be reserved in advance, so the permit is obtained in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "A backcountry/wilderness permit is required for overnight camping, issued at the Wilderness Information Center in Marblemount",
+     "closures": "The Wilderness Information Center closes for winter (around early October); self-issue permits are available outside the station or via email in the off-season",
+     "permitZone": "North Cascades National Park Cross-Country Zone",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park (trailhead sits within Ross Lake National Recreation Area)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None — NPS-administered, no Northwest Forest Pass needed at this trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "In person at the Marblemount Wilderness Information Center, the day of or the day before the trip; the Terror Basin zone cannot be reserved in advance."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "before": {
+    "approach": "From the Goodell Creek (Upper Group Campground) trailhead just east of Goodell Creek Campground off SR-20 near Newhalem, pick up the unsigned climbers'-path (no trail number — this is a boot path, not a maintained Park trail) that starts behind a large boulder near the campground. There is reliable running water right at the start, then none again until Terror Basin, so top off bottles early. The path switchbacks up through second-growth and old-growth forest along a spur ridge south of Terror Creek and is notorious for blowdown — expect to climb over or duck under dozens of downed logs for the first couple of miles. Around 3,200 ft the trail gains the crest of the forested ridge and settles into a steady, unrelenting climb (roughly 4,000 ft of gain over about 2 miles is typical for this stretch). Near 4,000 ft it crosses a small talus field, circles left, and makes a rising traverse beneath a rock band at about 4,800 ft before kicking up a final steep gully. From there, heather benches and open slabs lead north for a couple of miles, with blueberries in late summer, to a notch in the ridge crest at roughly 6,200-6,350 ft — the high point of the approach. The north side of this notch is the crux of the approach, not the climb: in late-season/low-snow conditions it is steep, loose, chossy terrain for about 400 vertical feet (stay skier's-right — going straight down is a bad idea); early in the season it holds a firmer snow finger with a short, steeper headwall (reported up to ~80 degrees for the last 20-30 ft) that some parties rope up for or protect with a short lower. Below the notch, a small flat gravelly basin near 5,800 ft with running water is the standard Terror Basin camp. From camp, a long traverse over benches and granite slabs, trending slightly downhill, reaches a glacial lake outlet and then slabs below the Terror Glacier remnant; the glacier crossing is short and low-angle but can show bare ice by late summer — most parties cross unroped in stable conditions with crampons on. This leads to the base of the snow/rock gully that climbs to the 7,200 ft col between Inspiration Peak and West McMillan Spire, where the technical climbing begins. One-way distance from car to high camp is roughly 7-8 miles with 6,000+ ft of gain; a fit, loaded party should plan on 6-8+ hours.",
+    "approach_variants": [
+     {
+      "name": "Goodell Creek climbers' path to the 6,200 ft notch and Terror Basin, then the Terror Glacier to the Inspiration-McMillan col gully",
+      "notes": "From the Goodell Creek Upper Group Campground trailhead just east of Goodell Creek Campground off SR-20 near Newhalem, pick up the unsigned climbers' path that starts BEHIND A LARGE BOULDER near the campground. There is reliable running water right at the start and then none again until Terror Basin.\n\nThe path switchbacks up through second-growth and old-growth forest along a spur ridge south of Terror Creek and is notorious for blowdown; expect to climb over or duck under dozens of downed logs for the first couple of miles. Around 3,200 ft it gains the crest of the forested ridge and settles into roughly 4,000 ft of gain over about 2 miles. Near 4,000 ft it crosses a small talus field, circles left, makes a rising traverse beneath a rock band at about 4,800 ft, then kicks up a final steep gully. Heather benches and open slabs then lead north for a couple of miles to a notch in the ridge crest at roughly 6,200-6,350 ft, the high point of the approach.\n\nThe north side of that notch is the crux of the approach, not of the climb: in late-season low-snow conditions it is steep, loose, chossy terrain for about 400 vertical feet, and you should STAY SKIER'S RIGHT rather than going straight down. Early season it holds a firmer snow finger with a short headwall reported up to about 80 degrees for the last 20-30 ft, which some parties rope up for. Below the notch, a small flat gravelly basin near 5,800 ft with running water is the standard Terror Basin camp.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Dozens of downed logs in the first couple of miles of the climbers' path",
+       "No water between the trailhead and Terror Basin",
+       "400 ft of steep, loose choss on the north side of the 6,200 ft notch late season; stay skier's right",
+       "An early-season snow finger with a headwall reported to about 80 degrees at the notch",
+       "A moat at the top of the summit gully late season",
+       "Poor footing and rockfall onto a party strung out below on the scree ridge",
+       "Concentrated exposure in the last few moves between the false and true summits"
+      ],
+      "baseFinding": "THE BASE IS THE FOOT OF A SNOW AND ROCK GULLY, AND THE GULLY IS THE ONLY ONE THAT LEADS TO A NAMED COL. From Terror Basin camp, a long traverse over benches and granite slabs, trending slightly downhill, reaches a GLACIAL LAKE OUTLET and then slabs below the Terror Glacier remnant. The glacier crossing is short and low-angle. This leads to the base of the snow and rock gully that climbs to the 7,200 FT COL BETWEEN INSPIRATION PEAK AND WEST MCMILLAN SPIRE, and that is where the technical climbing begins.\n\nSO THE COUNTABLE HANDRAIL IS: camp, lake outlet, slabs, ice, gully. Three of those five are unmistakable underfoot in cloud. A lake outlet is running water leaving a lake; slabs are bare rock you can walk on; ice is ice.\n\nWHAT DISCRIMINATES THIS ROUTE FROM THE OTHER LINE ON THE SAME SPIRE, AND IT IS THE END OF THE GLACIER YOU AIM FOR: this route takes the gully to the col between Inspiration and West McMillan. THE SOUTHWEST RIDGE ROUTE INSTEAD CONTINUES TO THE EAST END OF THE TERROR GLACIER. If you are walking east along the ice past the obvious gully, you are on the Southwest Ridge approach, not this one.\n\nAND THE COL IS THE CONFIRMATION: axe and crampons get used in the gully even by parties who crossed the glacier unroped. Late in the season the gully loses its snow and the top of it can hold a moat where the snow has pulled back from the rock. Topping out of a steep snow gully into a gap between two peaks at about 7,200 ft is the start of the climbing.\n\nABOVE IT, THE ROUTE RELAXES, WHICH IS ITSELF A TEST: the ridge above the gully is a long, mellow 3rd to 4th class scramble on scree, heather and more scree, with no sustained difficulty. If the ground above the col is technical, you are not on the West Ridge."
+     }
+    ],
+    "rock_grade": "4th class (up to low 5th in spots)",
+    "pitch_detail": [
+     {
+      "grade": "Trail/off-trail, steep brush",
+      "notes": "~7-8 mi with roughly 5,000-6,000 ft gain to camp at ~5,800 ft; heavy blowdown in the forest section.",
+      "pitch": "Approach: trailhead to Terror Basin"
+     },
+     {
+      "grade": "Glacier travel",
+      "notes": "Cross the glacial lake outlet, ascend slabs onto Terror Glacier, pick a line to the base of the West Ridge.",
+      "pitch": "Glacier crossing to base of ridge"
+     },
+     {
+      "grade": "Steep snow/ice, up to ~40°",
+      "notes": "Steepens near the top; narrows to a few feet at the col between Inspiration Peak and West McMillan Spire.",
+      "pitch": "Gully to the col"
+     },
+     {
+      "grade": "Class 3-4, short 5.6 step reported by some parties",
+      "notes": "Mostly scree, talus and broken rock with route-finding choice between solid rock and looser talus; a short exposed step gains the summit block.",
+      "pitch": "West Ridge to summit block"
+     }
+    ],
+    "beta": "From a high camp in Terror Basin, cross rocky benches and the Terror Glacier's outlet lake, then climb onto the glacier and pick a line to the base of the ridge. A steep snow/ice gully (steepening to roughly 40 degrees near the top) leads to the ~7,200 ft col between Inspiration Peak and West McMillan Spire. From the col, follow the west ridge over broken rock, heather, scree and talus — climbers can choose more solid rock steps or looser talus depending on preference — to a short, exposed class 3 (occasionally cited as low 5th on variations) move onto the summit block.",
+    "detailed_rack": "A technical rack is optional rather than mandatory. Most parties carry an ice axe and crampons for the Terror Glacier crossing and the snow/ice gully to the col, plus a helmet for loose rock above. Some parties bring a light rope and a small rack of cams/nuts to protect the short exposed class 3 (occasionally low 5th) step below the summit block, but many climb the entire route unroped.",
+    "overview": "West McMillan Spire is the taller of the twin McMillan Spires and, by Southern Picket standards, a relatively attainable summit — most parties treat it as their introduction to the range. The technical climbing itself is moderate (a snow gully to a 7,200 ft col between Inspiration Peak and West McMillan Spire, then class 2-3 ridge scrambling with one short, exposed step below the true summit), but the approach is the real crux: an overgrown, log-choked trail up Goodell Creek, an unofficial steep climber's trail onto a forested ridge, and a rising traverse into Terror Basin before the peak is even in reach. First climbed via this line in 1940 by Fred and Helmy Beckey.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Snow gully to the west ridge",
+      "notes": "From the Terror Glacier below the spires, climb the steep snow and ice gully that gives access to the west ridge, topping out at the col at roughly 7,200 ft between Inspiration Peak and West McMillan. Axe and crampons are used here even by parties who crossed the glacier unroped. Late in the season the gully loses its snow and the top of it can hold a moat where the snow has pulled back from the rock; earlier it is firm and holds better."
+     },
+     {
+      "n": 2,
+      "class": "3",
+      "label": "Scree and heather ridge",
+      "notes": "Above the gully the ridge relaxes into a long, mellow 3rd- to 4th-class scramble on scree, heather and more scree. The footing is poor and rockfall onto a party strung out below is the main hazard on this stretch; there is no sustained difficulty, but the loose ground makes it slow both up and down. The overall route is rated 4th class, Grade II, about 2,000 ft."
+     },
+     {
+      "n": 3,
+      "class": "3",
+      "label": "Summit block and final ridge",
+      "notes": "A short section of exposed 3rd-class climbing leads onto the summit block. It starts loose and scree-covered but the rock improves markedly toward the top; the exposure is concentrated in the last few moves between the false summit and the true summit, where the ridge narrows and drops away steeply into McMillan Cirque on one side and toward Terror Basin on the other. Some parties fix a hand line for that stretch. Descent reverses the route, including downclimbing the snow gully back to the glacier."
+     }
+    ]
+   }
+  }
+ ]
+}

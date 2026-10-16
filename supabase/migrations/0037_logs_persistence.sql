@@ -105,4 +105,7 @@ begin
 end;
 $$ language plpgsql;
 
-grant execute on function get_trip_reports_for_consensus(uuid) to authenticated;
+-- REPLAY NOTE (2026-09-30): this grant named (uuid), a signature that never existed, so the file
+-- failed at its last statement and a fresh build never got climb_logs. It names the (text) function
+-- defined above now. 0084 drops and recreates this function either way.
+grant execute on function get_trip_reports_for_consensus(text) to authenticated;

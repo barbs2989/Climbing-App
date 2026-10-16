@@ -1,0 +1,64 @@
+{
+ "id": "wa_mount_lago_south_slope_south_face",
+ "name": "South Slope - South Face (Standard Route)",
+ "approach_variants": [
+  {
+   "name": "Shellrock Basin and the Lago-Carru col",
+   "camps": [
+    "Shellrock Basin camp area",
+    "The high bench southwest of Shellrock Pass",
+    "The Berk Creek junction and the Middle Fork Pasayten river camps"
+   ],
+   "notes": "Lago is the highest peak in this group and the least loved underfoot, being a large pile of loose rock where the whole ascent asks for deliberate movement rather than any technique. Camp is normally Fred's Lake or Shellrock Basin, reached over Robinson Pass and up the Middle Fork Pasayten from either the low Robinson Creek trailhead or the high road end at Slate Peak, with an awkward crossing of upper Eureka Creek when it is swollen with snowmelt. From camp the round trip is a half day. Many parties link straight over to Carru by the connecting col rather than descending and re-climbing, and the southwest slope is a common variation for coming down since it avoids some of the steeper upper rock ribs.",
+   "season": "Mid-July to September",
+   "hazards": [
+    "Notoriously loose, crumbly rock throughout the upper mountain",
+    "Rockfall onto a party stacked below on the face",
+    "An enormous cliff on the north side of the summit ridge",
+    "Difficult crossing of upper Eureka Creek during snowmelt",
+    "No shelter from thunderstorms on the open talus and crest",
+    "Grizzly and black bear country - proper food storage required"
+   ],
+   "storedRow": true,
+   "baseFinding": "Everything about this climb is on the south side, and the base can be picked up from either of two places. Coming across from the Carru col at about 7,600 ft, the start is where the col's flattish talus stops being flat and tips up into the peak's southwest face, a mixed slope of scree, talus and occasional patches of solid rock with no path, no cairns and no single obvious line, which is itself the signature of this face. Coming up from Shellrock Basin, the start is the toe of the broad south slope above the last stunted trees, at the point where heather gives out and continuous rock begins. In both cases the confirming feature is what is not there: this side carries no cliff band across it. If you are looking up at a wall rather than a long, tedious, uniform slope, you have drifted round onto the wrong aspect and should traverse back south. The mountain's real hazard sits on the far side of the crest, so the top is where care is needed rather than the base. The north side of the summit ridge is an enormous cliff, and the moment you can see straight down you have gone too far north. Which of the crest's several rises is the true high point is not obvious from the face below, so gain the ridge first and judge from up there; a faint boot-worn line runs along the crest and following it is more reliable than picking a top from the slope."
+  },
+  {
+   "name": "From Slate Pass down the Middle Fork Pasayten",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Shellrock Basin camp area",
+      "role": "main",
+      "type": "camp"
+     },
+     {
+      "elev": 7500,
+      "name": "The high bench southwest of Shellrock Pass",
+      "role": "main",
+      "type": "bivy",
+      "notes": "This is the staging camp that makes Mount Carru and Mount Lago short days instead of enormous ones, and it is deliberately not the same ground as the Shellrock Basin and Eureka Creek meadow camps lower down. It is a bench at around 7,500 ft immediately southwest of the pass, high enough that every summit in the group is within reach from it. For Carru the line runs west along the east fork of Eureka Creek, leaves the trail at a creek crossing and takes a red talus gully east of the Carru-Lago saddle for a few hundred feet — under two hours from camp to the 8,595 ft summit. Lago at 8,745 ft is the highest thing in this part of the wilderness and goes from the same saddle. What you pay for the position is water and weather. There is no tree cover, the pass funnels wind, and a party that has not carried enough will be walking back down for it. Snow holds on the north sides of these passes into late July in an ordinary year and much later after a heavy winter, which is the real constraint on when this is worth doing. Larches turn in the last days of September and the nights at this height are properly cold by then.",
+      "water": "Snowmelt and a small tarn below the pass, both of them seasonal. By late summer there may be nothing at all up here and the passes on either side are reliably dry. Carry water up from the Eureka Creek meadows or the river; this is the single most common mistake made on these summits.",
+      "permit": "Free self-issue Pasayten permit, no quota and no reservation anywhere in this wilderness. Northwest Forest Pass to park. The bench is thin alpine ground that holds a footprint for years, so pitch on gravel or rock and leave the turf alone. Assume no fires — there is nothing to burn at this elevation and the meadows below are fragile.",
+      "capacity": "Roughly half an acre of usable bench, so realistically two or three small parties. No established sites, no facilities and no shelter of any kind."
+     },
+     {
+      "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+      "role": "route",
+      "type": "camp",
+      "notes": "This is the hinge of the whole Middle Fork approach and it is where a party bound for Mount Carru, Mount Lago or Lost Peak actually sleeps on the first night. Two roads reach it: the high start from Slate Pass at nearly 6,900 ft with a short connector down to the Middle Fork trail, or the low start from the Robinson Creek trailhead at about 2,560 ft over Robinson Pass at 6,220 ft, which is nine and a half miles before the valley walking even begins. The high start is shorter by a long way and is what most parties use. From the junction the climb to Freds Pass and the crossing of the upper Eureka Creek country puts you in position for the summits; the whole approach from a road is around fifteen miles. Being on the river rather than up at the lakes costs you height on the second day and buys you shelter, running water and a warmer night — a real trade when the high camps are exposed and dry. The forest here is patchy burn in places and blowdown varies. This is remote country by any standard and there is no mobile service anywhere in the valley.",
+      "water": "Reliable — the Middle Fork Pasayten and Berk Creek meet here and both run all season. This is the last easy water before the long climb to the passes, and the country above lives on tarns and snowmelt, so fill completely.",
+      "permit": "Free self-issue wilderness permit from the kiosk at Slate Pass or Robinson Creek, no quota and no reservation. Northwest Forest Pass or interagency pass to park. Weed-free feed for stock and no tying animals to trees overnight. Fires legal in existing rings outside a ban, though the valley is dry and bans are common by August.",
+      "capacity": "A single established site at the junction where the trail up to Freds Lake and Doris Lake leaves the Middle Fork, plus scattered ground along the river flats above and below it. One or two parties each, nothing developed."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Buckskin Ridge Trailhead (Slate Pass)",
+     "trailheadLat": 48.7323,
+     "trailheadLng": -120.6683
+    }
+   },
+   "notes": "The high start most parties use. From Slate Pass the trail drops north into the Middle Fork Pasayten; follow it up-valley past the Berk Creek junction, then climb to Fred's Lake or Shellrock Basin to camp. Lago is usually combined with Carru and Osceola.",
+   "primary": true
+  }
+ ]
+}

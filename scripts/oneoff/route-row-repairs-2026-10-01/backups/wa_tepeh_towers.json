@@ -1,0 +1,57 @@
+{
+ "id": "wa_tepeh_towers",
+ "name": "Tepeh Towers",
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek / Cascade River Road TH",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Seattle, take I-5 north then follow WA-20, the North Cascades Highway, east through Sedro-Woolley, Concrete and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles to the Eldorado parking area near mile 20 — paved for the first 10 miles, gravel and washboard the rest of the way. Any overnight stay requires a free North Cascades National Park backcountry permit; reserve in advance on Recreation.gov or pick up a limited walk-up permit in person at the Marblemount Wilderness Information Center."
+  },
+  {
+   "lat": 48.533,
+   "lng": -121.129,
+   "elev": 7600,
+   "name": "Eldorado (East Ridge) camp",
+   "type": "Campsite",
+   "distMi": 5.5,
+   "directions": "Walk back a short way along the road to the current crossing of the Cascade River, a log or a braided ford that shifts year to year, then climb the steep unmaintained climbers' path through old growth to a boulder field, cross Eldorado Creek and continue into the Eldorado Creek basin meadows. Rope up and climb the Eldorado Glacier to the camp near 7,600 ft where the Eldorado and Inspiration ice meet."
+  },
+  {
+   "lat": 48.5463,
+   "lng": -121.1306,
+   "elev": 7900,
+   "name": "Base of Tepeh Towers",
+   "note": "~45 min glacier walk N/NW from camp to where the towers rise off the Eldorado ice cap.",
+   "type": "Junction",
+   "distMi": 6.2,
+   "directions": "Rope up and walk the glacier north-northwest for about 45 minutes to where the towers rise out of the icecap, on the arete that divides the Inspiration Glacier from the McAllister Glacier."
+  },
+  {
+   "lat": 48.5463,
+   "lng": -121.1306,
+   "name": "Glacier-to-rock crossing point below Tepeh Towers",
+   "type": "Approach",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 48.5504,
+   "lng": -121.1218,
+   "elev": 8113,
+   "name": "Tepeh Towers",
+   "note": "One short low-5th-class pitch above the moat, then a scramble to the top.",
+   "type": "Summit",
+   "distMi": 6.6
+  }
+ ],
+ "approach_logistics": {
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+ }
+}

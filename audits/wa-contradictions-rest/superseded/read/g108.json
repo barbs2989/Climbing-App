@@ -1,0 +1,1336 @@
+{
+ "batches": [
+  "b429.json",
+  "b430.json",
+  "b431.json",
+  "b432.json"
+ ],
+ "routes_read": 14,
+ "routes": [
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "name": "Northwest Shoulder / Northwest Face (ice/snow)",
+   "area": "Whitehorse Mountain",
+   "contradictions": [
+    {
+     "fact": "Best season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late Apr-Jun (early season snow cover)"
+      },
+      {
+       "field": "best_season",
+       "says": "April to June (stable snow)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "April to June (stable snow) - May is typically the sweet spot"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Target February-April, ideally right after a low-elevation snowstorm"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best done Feb-April in a high-pressure window after a refreeze"
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "Prime season (Feb-April)"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "this route's prime Feb-April season"
+      }
+     ],
+     "why": "Four fields call Feb-April the prime window while season/best_season/seasonal_guidance put it at (late) April-June with May optimal and nothing before April.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass needed to park",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None — no Northwest Forest Pass or Discover Pass needed to park at the trailhead."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "a Northwest Forest Pass is needed to park."
+      },
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass at developed trailheads."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No fee at the trailhead"
+      }
+     ],
+     "why": "The ACCESS block both requires and waives a Northwest Forest Pass at this trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Boulder River Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Boulder River Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "No self-issue or quota wilderness permit required for Boulder River Wilderness."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "Free self-issue Boulder River Wilderness permit"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "no permit to camp, no quota, no self-issue box"
+      }
+     ],
+     "why": "Two fields say a free self-issue wilderness permit is filled out at the trailhead; two say none is required and there is no self-issue box.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier rollover elevation vs glacier entry",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "ascends a steep icy rollover around 5,600 ft, then climbs the So-Bahli-Ahli Glacier"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Boot up the steep, sometimes icy rollover around 5,600 ft"
+      },
+      {
+       "field": "waypoints[5]",
+       "says": "High Pass elev 6032 — this pass is the entry point onto the Whitehorse (So-Bahli-Ahli) Glacier"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "High Pass is the entry to the glacier"
+      }
+     ],
+     "why": "The crux rollover is placed on the glacier at ~5,600 ft, but the glacier is entered at High Pass ~6,032 ft, so the rollover would lie below the glacier it is said to be on.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel length vs rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "1 rappel, ~30m (98 ft), off a rock anchor near the summit ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "using a doubled 30 m or single 60 m rope"
+      }
+     ],
+     "why": "A doubled 30 m rope only reaches a ~15 m rappel, not the ~30 m rappel the RAPPELS line states.",
+     "internal_resolution": "A ~30 m rappel needs a 60 m rope doubled; the 'doubled 30 m' option is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~13 mi round trip"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "6"
+      }
+     ],
+     "why": "TECHNICAL STATS shows 9.7 km (6 mi) while the header/itinerary show 13 mi round trip; dist_km appears to be one-way.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pack weight",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].packLb",
+       "says": "22"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "25-35 lb"
+      }
+     ],
+     "why": "Itinerary pack weight is below the partner-requirements range for the same kit.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "name": "Northwest Shoulder",
+   "area": "Whitehorse Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late Apr-Jun (early season snow cover)"
+      },
+      {
+       "field": "best_season",
+       "says": "February through June — ... April-June is the most common window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "February through June"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "there is no active NWAC avalanche forecast during this route's July-Sept season"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth",
+       "says": "July/August/September: N/A"
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "Weekends in July-August"
+      }
+     ],
+     "why": "season says late Apr-Jun, best_season/seasonal_guidance say Feb-June, while seasonal_hazards and crowds treat July-Sept as the route's season (so the avalanche panel shows only N/A months).",
+     "internal_resolution": "Most fields (season, best_season, seasonal_guidance, climate.summer) put the season in spring; the July-Sept framing in seasonal_hazards/crowds is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Steepest snow angle",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "continue up snow (up to ~35° at the steepest) toward the summit snow ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "downclimb the steep upper snow/ice slope below the top (up to about 60°"
+      },
+      {
+       "field": "max_angle",
+       "says": "55"
+      }
+     ],
+     "why": "The approach says snow never exceeds ~35° while the descent and max_angle give 55-60° below the summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel length vs rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "1 rappel, ~30m (98 ft), off a rock anchor near the summit ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "A doubled 30 m rope (or a single 60 m rope doubled) is generally sufficient to clear the gap"
+      }
+     ],
+     "why": "A doubled 30 m rope gives only a ~15 m rappel, not the ~30 m stated.",
+     "internal_resolution": "A ~30 m rappel needs a 60 m rope doubled; 'doubled 30 m' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Maintained trail / mine bench elevations",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "About 1 mile of switchbacks from the trailhead, roughly 900-1,900 ft."
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Unmaintained climbers' path gaining ~4,000 ft through timber and brush to the bench near the old Niederprum mine (~4,000-4,100 ft)."
+      },
+      {
+       "field": "approach",
+       "says": "switchbacks up through forest for about 1.3 miles ... At roughly 3,200 ft you reach 'the flat,' a level clearing that was the site of Chas Niederprum's old mining cabin"
+      },
+      {
+       "field": "watch_out[2]",
+       "says": "Beyond the maintained 1.4 miles of Trail #653"
+      }
+     ],
+     "why": "The maintained trail ends at 1,900 ft in one field but reaches 'the flat' at 3,200 ft in another, and a ~4,000 ft gain from 1,900 ft cannot end at 4,000-4,100 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass needed to park",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None — no Northwest Forest Pass or Discover Pass needed to park at the trailhead."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "a Northwest Forest Pass is needed to park."
+      },
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass at developed trailheads."
+      }
+     ],
+     "why": "The ACCESS block both requires and waives a Northwest Forest Pass here.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Boulder River Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Boulder River Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "No self-issue or quota wilderness permit required for Boulder River Wilderness."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "Free self-issue Boulder River Wilderness permit"
+      }
+     ],
+     "why": "One access field says no self-issue permit is required while two others say to fill out a free self-issue permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Moose Creek bridge crossing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "scramble over the boulder barricade, and cross the old wooden bridge on foot"
+      },
+      {
+       "field": "road.status",
+       "says": "where the Moose Creek bridge was pulled in 2008"
+      },
+      {
+       "field": "access.closures",
+       "says": "The Moose Creek bridge ... was removed and barricaded in 2008; ... cross the creek on foot/boulders"
+      }
+     ],
+     "why": "The approach has parties walk across the old bridge, while road/access say the bridge was removed and the creek is crossed on boulders.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp water and shelter",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].water",
+       "says": "None running. There is a snow patch below Lone Tree Pass and nothing else until well past High Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "It is an exposed crest ... nothing to hide behind"
+      },
+      {
+       "field": "approach",
+       "says": "drop about 500 ft southeast through trees to a bench near a small lake/flat meadow at ~4,915 ft (a sheltered, view-blessed bivy option)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "drop several hundred feet southeast to a small lake and flat meadow — a sheltered bivy"
+      }
+     ],
+     "why": "The camp card says there is no water until past High Pass and describes an exposed crest, while the approach puts a sheltered lake-side bivy just past the pass (and a 500 ft drop from ~5,000 ft cannot land at 4,915 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance and gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "10.7"
+      },
+      {
+       "field": "gain_ft",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "6300"
+      }
+     ],
+     "why": "TECHNICAL STATS shows 9.7 km (6 mi) and 7,000 ft while the header/itinerary give 10.7 mi and 6,300 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+   "name": "Southeast Buttress (South Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Silver-Skagit Road status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "The Silver Skagit Road remains open on the Canadian side"
+      },
+      {
+       "field": "access.closures",
+       "says": "As of 24 July 2026 the Silver-Skagit Road was also closed at km 6 for the Border 2 Fire."
+      }
+     ],
+     "why": "GETTING THERE says the road is open on the Canadian side while ACCESS says it is closed at km 6.",
+     "internal_resolution": "access.closures carries the dated (2026-07-24) closure; road.status is stale.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+   "name": "South Ridge (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Hozomeen cross-country permit: reservable or walk-up",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Reserve through Recreation.gov; an early-access lottery governs the 15 May to 10 October peak season"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov or get one at the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "It is a walk-up zone rather than a reservable one, so the permit is collected in person"
+      }
+     ],
+     "why": "ACCESS says the cross-country permit is reserved on Recreation.gov while the bivy card says the Hozomeen zone cannot be reserved.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_north_route",
+   "name": "North Route (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.1"
+      },
+      {
+       "field": "approach",
+       "says": "Round trip is roughly 15 miles with 6,800 ft of gain"
+      }
+     ],
+     "why": "TECHNICAL STATS shows 12.1 km (7.5 mi) while the approach says ~15 miles round trip (dist_km appears one-way).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Start point",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)"
+      },
+      {
+       "field": "approach",
+       "says": "Start at the Hozomeen ranger station, elevation about 1,600 ft, and follow the little Trail of the Obelisk loop"
+      }
+     ],
+     "why": "The Trailhead waypoint names the Hozomeen Lake trailhead while every prose field starts at the ranger station on the Trail of the Obelisk loop.",
+     "internal_resolution": "Approach, beta and approach_variants agree on the ranger station / Trail of the Obelisk start.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "name": "Southeast Face (Standard)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Crux grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 4 / low 5th"
+      },
+      {
+       "field": "rock_grade",
+       "says": "3-4"
+      },
+      {
+       "field": "beta",
+       "says": "The Southeast Face offers a third-class approach to the summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "a short, exposed step down a Class 5.6 bulge just below the summit ridge"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].label",
+       "says": "Class 5.6 headwall, then summit"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "a short 5.6 rock crux near the top"
+      },
+      {
+       "field": "overview",
+       "says": "least committing ... in contrast to the harder Southeast Buttress (Grade III, 5.6"
+      }
+     ],
+     "why": "The grade pill and chips say Class 3-4 / low 5th, but the descent and itinerary put a 5.6 crux on this line, the same grade the overview uses to call the SE Buttress harder.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Waypoints describe the Southeast Buttress approach, not this route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Lightning Creek boat landing / trail junction"
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "6,200-ft saddle below the SE buttress"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Southeast buttress — loose rock / crux chimney ... crux is a steep chimney (5.6) low on the buttress"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "historically used for this specific technical route; most modern non-technical South Peak parties instead use the shorter Hozomeen Lake Trailhead at Hozomeen Campground (Silver-Skagit Road, from the Canadian side)"
+      },
+      {
+       "field": "approach",
+       "says": "the resort's water taxi ~24 miles north up Ross Lake drops you at the Hozomeen Ranger Station/Campground ... pick up the maintained Hozomeen Lake Trail"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].label",
+       "says": "Leave Hozomeen Lake trailhead"
+      }
+     ],
+     "why": "The waypoint list follows the SE Buttress line from Lightning Creek via Willow Lake to a 6,200 ft saddle and its chimney crux, while approach and itinerary use the Hozomeen Lake trail from the campground to a 6,800 ft saddle camp.",
+     "internal_resolution": "Approach, primary approach_variant, itinerary and timing agree on the Hozomeen Lake trail; the waypoints are copied from the Southeast Buttress route.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp location/elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a broad saddle/basin around 6,800 ft, which is the standard high camp"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach the 6,800 ft saddle camp"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "6,200-ft saddle below the SE buttress (Campsite, elev 6200)"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Improvised bivouacs in the western basin between the peaks (elev 4900) — THERE IS NO CAMP HERE"
+      }
+     ],
+     "why": "The camp is 6,800 ft in approach/itinerary, 6,200 ft in the waypoints and 4,900 ft on the CAMPING card.",
+     "internal_resolution": "Approach, approach_variants and itinerary agree on the 6,800 ft saddle camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route high point",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "8071"
+      },
+      {
+       "field": "face",
+       "says": "South Peak (8,003 ft - the lower of Hozomeen's two main summits)"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "8003"
+      }
+     ],
+     "why": "The route tops out on the 8,003 ft South Peak but high_point_ft gives the 8,071 ft North Peak.",
+     "internal_resolution": "face, overview and the Summit waypoint all say South Peak 8,003 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Line of ascent in beta",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Most parties traverse the northeast ridge where it transitions to mixed terrain."
+      },
+      {
+       "field": "approach",
+       "says": "From camp, gain the final 1,000-1,200 ft on slabs and connecting gullies to reach the base of the southeast face/ridge proper."
+      }
+     ],
+     "why": "The beta sends parties along the northeast ridge while every other field climbs the southeast face/ridge from the south-side basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "following the creek/drainage east into the basin below the peak's south side"
+      },
+      {
+       "field": "approach_variants[1].baseFinding",
+       "says": "follow the drainage east into the south basin"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "climbing red scree and heather into the west basin below a broad slab wall"
+      },
+      {
+       "field": "timing.sectionBreakdown[1].note",
+       "says": "descending the west basin"
+      }
+     ],
+     "why": "The same approach basin is called the south basin in approach fields and the west basin in the itinerary and timing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at the high camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Water is reliable at the Hozomeen Creek crossing (~2,400-2,600 ft) and again in the basin around 5,000 ft ... the route above is dry"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "parties have found it reachable at a single awkward spot at around four thousand feet and nowhere above that"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "water is unreliable late-season"
+      }
+     ],
+     "why": "The approach puts reliable water in the basin at 5,000 ft, the bivy card says nothing above ~4,000 ft, and the itinerary implies the 6,800 ft camp has water early season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Hozomeen Lake outlet elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Leave the maintained trail around 2,400 ft near Hozomeen Lake's outlet"
+      },
+      {
+       "field": "bivy[2]",
+       "says": "Hozomeen Lake camp (elev 2827)"
+      }
+     ],
+     "why": "The lake's outlet is put at ~2,400 ft while the lake camp sits at 2,827 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-push timing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "Late afternoon"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "then a steep climb to a high camp below the face, with a pre-dawn start for the summit push"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "a light summit pack for the pre-dawn face climb"
+      }
+     ],
+     "why": "The itinerary summits the afternoon of the approach day, while partner requirements describe a pre-dawn summit start from camp.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Backcountry permit at Hozomeen Campground",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Overnight backcountry permit required year-round for any camping en route (e.g., Lightning Creek, Hozomeen Campground, or high camps)."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "none for the drive-in campground"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "No fee and no reservation for the campground itself, and no backcountry permit to sleep here"
+      }
+     ],
+     "why": "access.permit requires a backcountry permit at Hozomeen Campground; two other fields say none is needed there.",
+     "internal_resolution": "Two fields agree the drive-in campground needs no permit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 12 miles round trip"
+      },
+      {
+       "field": "approach",
+       "says": "Given the ~19 km round-trip distance"
+      }
+     ],
+     "why": "Three different round-trip distances: 12.9 km (8 mi), 12 mi and 19 km.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_west_face",
+   "name": "West Face (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Retreat by rappel off the wall",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "Any sign of incoming precipitation while low on the wall should send you down immediately, while the rappels are still short."
+      },
+      {
+       "field": "rappels",
+       "says": "Plan on a summit exit, not a retreat down the wall; the face is almost unprotectable and building rappel anchors on it would be a serious undertaking."
+      },
+      {
+       "field": "bail",
+       "says": "There is no good bail from this wall. ... Make your commitment decision at the base"
+      },
+      {
+       "field": "descent_text",
+       "says": "Rappelling the west face is not a plan"
+      }
+     ],
+     "why": "The turnaround tells parties to rappel off the lower wall in bad weather while rappels, bail and descent say rappelling the face is not a plan.",
+     "internal_resolution": "Three fields agree that retreat by rappel is not viable once on the wall.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season for the base approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "Mid-summer, and the base approach should be done in daylight"
+      },
+      {
+       "field": "best_season",
+       "says": "Late August into September ... Earlier in the summer the approach gully and rib traverse hold snow"
+      },
+      {
+       "field": "season",
+       "says": "Aug-Sep"
+      }
+     ],
+     "why": "The approach card says mid-summer while best_season says the approach gully and rib traverse still hold snow before late August.",
+     "internal_resolution": "season, best_season and climate agree on late Aug-Sep.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+   "name": "Southwest Route (South Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep climbing season generally; one trip report recommends May-early June specifically for water availability on the approach"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "July through September, once the west basin has melted out"
+      }
+     ],
+     "why": "The season field suggests May-early June is best for water, while the approach card says the basin is not in condition until July.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_southwest_buttress",
+   "name": "Southwest Buttress (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+   "name": "North Ridge (South Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_northeast_buttress",
+   "name": "Northeast Buttress (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Water at the Monument 74 camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[3]",
+       "says": "Camp near Monument 74 at about 6,345 ft ... It is the last flat, water-adjacent ground"
+      },
+      {
+       "field": "approach",
+       "says": "Take water from the three creeks in the forest below Hozomeen Ridge — there is no running water again until you are south of the border."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "go back for water rather than to press on to a dry camp above a dry cirque"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "there is no running water again until you are south of the border"
+      }
+     ],
+     "why": "One tip calls the ridge camp water-adjacent while the approach and other tips say it is a dry camp with no water after the forest creeks.",
+     "internal_resolution": "Approach, approach_variants and pro_tips[1] agree the camp is dry; pro_tips[3] is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season: snow window vs approach season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "Mid-June to mid-July is the classic window ... Late July through September the snow is gone and the route becomes a loose-rock scramble"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "July through September; the gravel road governs the season at its own end"
+      },
+      {
+       "field": "climate.summer",
+       "says": "July through September is the practical window."
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      }
+     ],
+     "why": "best_season and pro_tips put the window at mid-June to mid-July and call late July-Sep worse, while the approach card and climate call July-September the window.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 2: leave camp at first light ... return to camp, pack, and hike out. Strong parties do the second day as summit plus full walk-out; most find it a comfortable two-and-a-half-day trip."
+      }
+     ],
+     "why": "The itinerary lays out a two-day plan with day 2 including the walk-out, then says only strong parties do that and most take two and a half days.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_traverse",
+   "name": "Inspiration Traverse",
+   "area": "Alpine and Technical Traverses",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.7"
+      },
+      {
+       "field": "rock_grade",
+       "says": "one short, hard boulder-style move (5.7-5.9) on Dorado Needle"
+      },
+      {
+       "field": "pitch_detail[9].grade",
+       "says": "5.7"
+      }
+     ],
+     "why": "The grade pill and the Dorado Needle row say 5.7 while rock_grade and the row's own notes allow up to 5.9.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "name": "Ptarmigan Traverse",
+   "area": "Alpine and Technical Traverses",
+   "contradictions": [
+    {
+     "fact": "Number of days",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "2-3 day alpine commitment with multiple peaks crossed"
+      },
+      {
+       "field": "beta",
+       "says": "Most ascents take 4-8 days, with 6-7 days typical for guided trips."
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 6 (Itswoot to Downey Creek TH)"
+      },
+      {
+       "field": "what_to_bring[3]",
+       "says": "for the typical 4-7 day traverse"
+      },
+      {
+       "field": "rope_note",
+       "says": "Week-long glaciated traverse"
+      }
+     ],
+     "why": "watch_out calls it a 2-3 day commitment while every other field plans 4-8 days (itinerary 6).",
+     "internal_resolution": "beta, itinerary, what_to_bring and rope_note agree on 4-7+ days; watch_out is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cascade Pass trail length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "A well-maintained trail switchbacks 3.7 miles to Cascade Pass (5,392 ft)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Established trail from trailhead to Cascade Pass (3.7 miles, 1,691 ft gain)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.6"
+      },
+      {
+       "field": "itinerary",
+       "says": "Hike Cascade Pass Trail to the pass (5.7 miles)"
+      }
+     ],
+     "why": "The itinerary gives 5.7 miles to Cascade Pass while three fields give 3.6-3.7.",
+     "internal_resolution": "approach, pitch_detail and waypoints agree on ~3.7 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Kool-Aid Lake elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "6320"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6120"
+      },
+      {
+       "field": "itinerary",
+       "says": "Kool-Aid Lake bivouac (elevation ~7,000 ft)"
+      }
+     ],
+     "why": "The itinerary puts Kool-Aid Lake at ~7,000 ft, 700-900 ft above the waypoint and bivy elevations.",
+     "internal_resolution": "Waypoint and bivy agree on ~6,100-6,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of Red Ledges / Middle Cascade Glacier vs Kool-Aid Lake",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 1 ... descend over red ledges and across Middle Cascade Glacier to Kool-Aid Lake bivouac"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 2 (Kool-Aid to Yang-Yang Lakes): ... Traverse Spider-Formidable Col via Middle Cascade Glacier, cross exposed red ledges"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "First bivy; the exposed 'Red Ledges' traverse below Art's Knoll follows."
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "9 (Red Ledges, after Kool-Aid Lake at 7.5)"
+      }
+     ],
+     "why": "Day 1 crosses the Red Ledges and Middle Cascade Glacier before Kool-Aid Lake, but Day 2 and the waypoints put both after Kool-Aid Lake.",
+     "internal_resolution": "Waypoints, pitch_detail order and itinerary Day 2 agree the Red Ledges and Middle Cascade Glacier come after Kool-Aid Lake.",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of Yang-Yang Lakes vs Spider-Formidable Col",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5]",
+       "says": "Yang-Yang Lakes distMi 12 — Second common bivy, below Spider-Formidable Col"
+      },
+      {
+       "field": "waypoints[6]",
+       "says": "Spider-Formidable Col distMi 13.5 — High col crossing toward the LeConte Glacier"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 2 (Kool-Aid to Yang-Yang Lakes): ... Traverse Spider-Formidable Col via Middle Cascade Glacier ... descend to Yang-Yang Lakes bivouac"
+      }
+     ],
+     "why": "The waypoints reach Yang-Yang Lakes before Spider-Formidable Col, while the itinerary and pitch_detail cross the col first and descend to Yang-Yang Lakes.",
+     "internal_resolution": "itinerary and pitch_detail agree the col comes before Yang-Yang Lakes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day 1 gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 1 (Cascade Pass to Kool-Aid Lake): 4-6 hours, 1,700 ft gain."
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3600"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Cache Col elev 6903"
+      }
+     ],
+     "why": "Day 1 goes from the 3,600 ft trailhead over 6,903 ft Cache Col, at least 3,300 ft of gain, not 1,700 ft (which covers only the trail to Cascade Pass).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Final descent elevation loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 6 (Itswoot to Downey Creek TH): 8-12 hours, 2,500 ft loss."
+      },
+      {
+       "field": "pitch_detail[8].notes",
+       "says": "significant elevation loss (2,500+ feet)"
+      },
+      {
+       "field": "waypoints[9].elev",
+       "says": "6400 (Cub Lake / Itswoot Ridge)"
+      },
+      {
+       "field": "descent",
+       "says": "The traverse terminates at Downey Creek drainage in the south (elevation ~1,480 ft"
+      }
+     ],
+     "why": "From Itswoot Ridge at ~6,400 ft to the ~1,480 ft trailhead is about 4,900 ft of loss, not 2,500 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain vs loss on a point-to-point route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "11000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "11000"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3600"
+      },
+      {
+       "field": "descent",
+       "says": "elevation ~1,480 ft"
+      }
+     ],
+     "why": "A point-to-point trip from 3,600 ft to 1,480 ft cannot have equal gain and loss.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Morning start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "An 8 AM departure each morning ensures sufficient daylight"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "Early morning (5-7 AM)"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Start before dawn"
+      }
+     ],
+     "why": "The turnaround advises an 8 AM start while timing and pro_tips say 5-7 AM / before dawn.",
+     "internal_resolution": "timing and pro_tips agree on an early pre-dawn start.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which stretch is national park vs national forest",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "the southern Cascade Pass-to-Yang Yang Lakes stretch is Mount Baker-Snoqualmie/Okanogan-Wenatchee National Forest (Glacier Peak Wilderness), and the northern Cascade Pass/Cache Col/Ptarmigan Traverse proper runs through North Cascades National Park"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "The national park boundary runs at Cache Col just above; camps from here south are commonly described as lying in the wilderness outside the park"
+      }
+     ],
+     "why": "access.notes labels Cascade Pass-to-Yang Yang both the southern forest stretch and the northern park stretch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "July and August"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Late July to mid-September"
+      }
+     ],
+     "why": "The approach card extends into mid-September, beyond the Jul-Aug season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "name": "Ragged Ridge",
+   "area": "Alpine and Technical Traverses",
+   "contradictions": [
+    {
+     "fact": "Overnight permit and land manager",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No overnight wilderness permit required; day-use only"
+      },
+      {
+       "field": "access.landManager",
+       "says": "USDA Forest Service (Mount Baker-Snoqualmie National Forest)"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "NORTH CASCADES NATIONAL PARK backcountry permit required, without exception."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "All of it is inside the park"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades NP wilderness permit — quota, fee"
+      },
+      {
+       "field": "itinerary",
+       "says": "as a 2-day trip: Day 1 — approach ... to a high camp (~6,700 ft)"
+      }
+     ],
+     "why": "ACCESS says no overnight permit and a Forest Service land manager, while the camps, overnight_permit and 2-day itinerary are inside North Cascades NP, where a permit is required.",
+     "internal_resolution": "The bivy cards, overnight_permit and Easy Pass trailhead note agree that everything past Easy Pass is national park requiring a permit; access.permit/landManager are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Access text from a Snoqualmie Pass route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass ($5 day pass or $30 annual) at Commonwealth Basin trailhead"
+      },
+      {
+       "field": "access.notes",
+       "says": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Easy Pass Trailhead (SR-20)"
+      },
+      {
+       "field": "road.name",
+       "says": "North Cascades Highway (SR 20)"
+      }
+     ],
+     "why": "ACCESS names the Commonwealth Basin trailhead and I-90, but this route starts at Easy Pass on SR-20.",
+     "internal_resolution": "road, approach_logistics, waypoints and bivy all use the Easy Pass Trailhead on SR-20.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope/rack text from another route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "Short 5.5 rock scramble/climb on Red Mountain's ridge; single 60m rope"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "rack",
+       "says": "6 alpine draws, Single 60m rope"
+      },
+      {
+       "field": "gear[2]",
+       "says": "30m rope for glacier travel/short technical sections"
+      },
+      {
+       "field": "beta",
+       "says": "No roped rock climbing is required"
+      }
+     ],
+     "why": "The rope note describes Red Mountain and a 60 m rope with a rock rack, while gear lists a 30 m glacier rope and the beta says no roped climbing is needed.",
+     "internal_resolution": "gear, beta and pro_needs agree on a short glacier rope with no roped rock climbing; rope_note is copied from Red Mountain.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2900"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Easy Pass Trailhead to Easy Pass, 3.4 mi and ~2,885 ft gain."
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3678"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8795"
+      }
+     ],
+     "why": "gain_ft equals only the climb to Easy Pass; reaching 8,795 ft Mesahchie from the 3,678 ft trailhead is over 5,100 ft, before the Fisher Creek drop and the other summits.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

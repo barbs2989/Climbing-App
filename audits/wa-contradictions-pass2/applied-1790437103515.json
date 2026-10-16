@@ -1,0 +1,160 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Total route distance"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "season",
+   "path": [],
+   "fact": "Season start (late May vs June)"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "summer"
+   ],
+   "fact": "Season start (late May vs June)"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "descent",
+   "path": [],
+   "fact": "Which side to descend the Flypaper snow finger"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Water at the tarn camp"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Anderson Pass to the tarn camp: climb or drop"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "before": {
+    "dist_km": 45.9,
+    "season": "Jun-Aug (best in spring/early summer before the Flypaper Pass snow finger melts out)",
+    "climate": {
+     "typical": "The Dosewallips valley sits partly in the Olympics' rain shadow, so it's noticeably drier than the park's west-side rainforest valleys, but weather remains Pacific-driven and can turn wet and socked-in with little warning at any time of year. The upper mountain holds substantial snowpack well into summer.",
+     "bySeason": {
+      "fall": "September-October: reliable weather windows shrink, first snow can arrive by late September, and the Flypaper snow finger may be melted out to loose scree, adding difficulty and rockfall exposure.",
+      "spring": "April-May: the lower valley trail is often snow-free, but Honeymoon Meadows, Anderson Pass, and above are typically still under deep winter snowpack; the Flypaper Pass snow finger is usually well-consolidated for climbing or ski mountaineering.",
+      "summer": "Late June through August is the main climbing window — expect mostly settled weather with occasional Pacific frontal systems bringing rain and wind, and increasing bare ice and crevasse/bergschrund exposure on the Eel Glacier as the season progresses.",
+      "winter": "November-March: the permanent road washout plus heavy snowpack make this essentially inaccessible for standard climbing; attempted only by well-equipped ski mountaineers in stable avalanche conditions."
+     },
+     "forecastZone": "NWAC issues an 'Olympics' avalanche zone forecast, but only in winter (roughly Nov-Apr); for summer climbing season, use NPS current-conditions pages, recent trip reports, and a point weather forecast rather than NWAC."
+    },
+    "descent": "Reverse the route: down-climb the Class 3 summit rocks, cross back over the upper Eel Glacier watching for the bergschrund and eastern-slope crevasses, re-climb to Flypaper Pass (6,500 ft), then descend the snow finger — favor the left (skier's left / climber's left) side near the rock buttress to avoid moats and glide cracks — glissading only where the runout is clean and snow isn't icy or rotten. From the base of the finger, retrace the approach past Anderson (Valkyrie) Lake, Anderson Pass, Honeymoon Meadows, and the West Fork Dosewallips Trail back to Dose Forks and the old road-end at the ranger station, then the extra ~6.5 mi of closed road out to the current road-end parking.",
+    "approach": "From US-101 at Brinnon, turn onto Dosewallips Road and drive roughly 8.5 miles to the road-end parking — the road beyond has been closed to vehicles since a 2002 flood, with no reopening date on the Olympic National Park road-conditions page updated August 7, 2026; park here (a mountain bike is a real time-saver for the road-walk ahead). Walk about a mile up the closed road and follow the bypass trail around the washout — a short ~0.3-mile detour with a few switchbacks past old-growth trees — then rejoin the abandoned roadbed and continue roughly 5.6 more miles to the Dosewallips Ranger Station (1,600 ft). From the ranger station, pick up the Dosewallips River Trail for 1.4 miles to its junction with the West Fork Dosewallips Trail (Trail #1010); bear onto the West Fork Trail and follow the river upstream past a string of established camps — Dose Forks, Big Timber, Diamond Meadows — to Honeymoon Meadows (3,527 ft, about 8 trail-miles from the ranger station). Expect at least one calf-to-knee-deep ford of the West Fork in this stretch depending on season and snowmelt. Beyond Honeymoon Meadows the trail climbs past Camp Siberia toward Anderson Pass (4,464 ft), the low divide between the Quinault and Dosewallips drainages. Leave the maintained trail here and follow the climbers' path up the moraine to a high camp on a snowy saddle above a small tarn (Anderson/Valkyrie Lake, ~5,100 ft) — most parties budget 7-9 hours trailhead-to-camp. From high camp, traverse above the tarn (often still frozen) and climb the steep snow finger leading up to Flypaper Pass (~6,500 ft); glacier recession has steepened this finger considerably beyond older published descriptions, with the crux section now estimated at 40+ degrees late in the season — plan to be through it before it melts out (ideally spring/early summer) and expect firm or icy snow requiring an ice axe and crampons. Water is reliable along the West Fork the entire way in and again at the tarn near high camp; carry what you need above that.",
+    "itinerary": {
+     "cal": "Best climbed late spring to mid-summer before the Flypaper Pass snow finger melts out; Olympic National Park requires a paid overnight wilderness permit for all the camp options along this route.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Bike the washed-out lower Dosewallips Road, then hike the West Fork Dosewallips Trail through Honeymoon Meadows and over Anderson Pass to a high camp near Anderson Tarn or Camp Siberia. Expect blowdown and at least one ford of the West Fork, calf- to knee-deep depending on snowmelt.",
+       "hours": 9,
+       "miles": 17,
+       "title": "Approach to high camp",
+       "gainFt": 4600,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00-9:00 AM",
+         "label": "Leave trailhead / bike washout",
+         "detail": "Pedal or push bikes a few miles up the closed lower Dosewallips Road to the true trailhead."
+        },
+        {
+         "time": "Midday",
+         "label": "Honeymoon Meadows",
+         "detail": "Ford the West Fork (calf- to knee-deep depending on snowmelt) and continue up the valley."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Anderson Pass",
+         "detail": "Crest the pass and drop slightly into the Anderson Glacier basin."
+        },
+        {
+         "time": "5:00-6:00 PM",
+         "label": "Make camp",
+         "detail": "Anderson Tarn (roughly 5,100 ft, below Flypaper Pass), or lower at Camp Siberia (about 4,200 ft) below Anderson Pass."
+        }
+       ],
+       "objective": "Reach camp near Anderson Pass / Anderson Tarn (~5,100 ft)"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start, roped glacier day: climb the Anderson Glacier moraine and a steep rock rib to Flypaper Pass, then traverse north across the upper Eel Glacier to a snow arete and short Class 2-3 scramble to the summit. Round trip to camp typically runs 10-13 hours.",
+       "hours": 12,
+       "miles": 6,
+       "title": "Summit push via Flypaper Pass and Eel Glacier",
+       "gainFt": 2700,
+       "lossFt": 2700,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00-7:00 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start; cross the Anderson Glacier moraine toward the base of Flypaper Pass."
+        },
+        {
+         "time": "+1-2 hr",
+         "label": "Climb the rock rib to Flypaper Pass",
+         "detail": "A steep rib/snow finger gains the pass at roughly 6,500 ft; rope up here for the glacier."
+        },
+        {
+         "time": "Mid-morning",
+         "label": "Traverse the upper Eel Glacier",
+         "detail": "Cross north below the bergschrund, watching for crevasses on the eastern slopes, which have grown steeper (40+ degrees in spots) as the glacier has receded."
+        },
+        {
+         "time": "~11 AM-1 PM",
+         "label": "Summit East Peak",
+         "detail": "Final snow arete and a short Class 2-3 scramble to the 7,323 ft high point."
+        },
+        {
+         "time": "Afternoon-evening",
+         "label": "Descend to camp",
+         "detail": "Reverse the glacier crossing and rib; in good snow many parties downclimb Flypaper Pass without setting up a belay."
+        }
+       ],
+       "objective": "Reach East Peak summit (7,323 ft)"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: descend from Anderson Pass through Honeymoon Meadows to the Dosewallips trailhead, remounting bikes for the final road-walk section.",
+       "hours": 7,
+       "miles": 17,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 4700,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A standard 3-day trip: ~9 hrs to a high camp near Anderson Pass, a long 10-13 hr roped glacier summit push via Flypaper Pass and the upper Eel Glacier, then hike out — strong/fast parties compress this to 2 days by biking the road and pushing straight to a bivy near the summit."
+    }
+   }
+  }
+ ]
+}

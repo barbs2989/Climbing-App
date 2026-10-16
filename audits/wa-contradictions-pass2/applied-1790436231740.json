@@ -1,0 +1,305 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_face_2",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "lengthM"
+   ],
+   "fact": "Rappel lengths vs route length"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Rappel lengths vs route length"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "rappel_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Rappel lengths vs route length"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel lengths vs route length"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Rappel lengths vs route length"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Which pitch is the crux"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Summit difficulty"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Cam range"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+  },
+  {
+   "id": "wa_east_face_2",
+   "column": "beta",
+   "path": [],
+   "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Grade of pitch 2"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Water at Burgundy Col"
+  },
+  {
+   "id": "wa_clean_break",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Fixed piece on pitch 7"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "probability"
+   ],
+   "find": "(per the 04:00 recommended start)",
+   "replace": "(per the 5:00 AM recommended start from camp)",
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Recommended start time",
+   "sources": [
+    "https://www.mountainproject.com/route/106256230/east-face-rebel-yell"
+   ],
+   "why": "new text cites a source: per the "
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_east_face_2",
+   "before": {
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Two 60 m ropes are the standard kit for this descent and a single rope will not link these two stations. Pull the strands clear of the horn so they do not wrap it.",
+      "notes": "First double-rope rappel (~120 ft) from the summit area down to an intermediate anchor on the face.",
+      "anchor": "large granite horn with sling anchor",
+      "hazards": [
+       "The downclimb from the notch to the horn crosses loose blocks and broken corners; it is short but it is where the descent's rockfall risk is concentrated.",
+       "The station is whatever tat is currently around the horn. Carry webbing and a ring so you can replace rather than rappel on faded slings."
+      ],
+      "lengthM": 35,
+      "station": "From the bunny-ears notch at the top of the route, downclimb about 5 m (15 ft) to the next ledge down. The anchor is fixed slings around a large granite horn — a natural anchor, not hardware. The rappel from it runs on doubled 60 m ropes to a second large slung horn at the top of pitch 2."
+     },
+     {
+      "n": 2,
+      "pull": "Straight down the face to the scree; stand out from the base of the wall when pulling.",
+      "notes": "Second double-rope rappel completes the descent to the scree base. Plan on similar to the first rappel.",
+      "anchor": "intermediate anchor (re-anchored ropes)",
+      "hazards": [
+       "Second natural horn anchor with no fixed hardware; inspect and back up before the last person goes.",
+       "Loose rock across the face means anything the ropes sweep off lands at the base of the route where packs and other parties are."
+      ],
+      "lengthM": null,
+      "station": "The large slung horn at the top of pitch 2 — the same kind of natural station as the first, and the one you land on from above. The second doubled rappel from it returns you to the scree at the base of the East Face."
+     }
+    ],
+    "descent_text": "From the summit area, downclimb via loose blocks and corners to locate the large granite horn with established sling anchor. This is a critical waypoint. Thread both 60m ropes through the horn slings. First double-rope rappel descends approximately 120 feet to an intermediate anchor (located on the face). Reanchor ropes for second rappel to complete descent to scree base of East Face. Exercise caution for rockfall and loose rock throughout the descent process.",
+    "rappel_count_note": "Two rappels, and this count assumes two 60 m ropes doubled through natural horn anchors — that is the published kit for the route and a single rope does not link the stations. Both anchors are slung granite horns rather than fixed hardware, so carry replacement webbing. Per-station distances are not published; the listed values are estimates from the description of the first rappel as roughly a 120 ft double-rope rappel and should not be planned around.",
+    "rope_note": "4-pitch route on Chablis Spire (Wine Spires, Washington Pass), P4 is the 5.6 crux corner. Descent: downclimb 15ft from the 'bunny ears' notch to rap slings on a horn, then two double-rope rappels to the base, the second from the slung horn at the top of pitch 2.",
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4300,
+      "name": "SR-20 Wine Spires pullout (milepost 166)",
+      "note": "Approach via Silver Star Creek drainage or the Burgundy Col climbers trail.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.55259,
+      "lng": -120.59032,
+      "elev": 8350,
+      "name": "Chablis Spire - Summit",
+      "note": "East Face, easily attained summit; distinctive bunny-ears profile.",
+      "type": "Summit",
+      "distMi": 4
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "5.4-5.5",
+      "notes": "Traverse right toward the large hanging 'split block'. Establish climbing on solid granite with good natural pro from flakes and cracks. Build anchor for belay.",
+      "pitch": "1"
+     },
+     {
+      "grade": "5.6 (5.8 crack variation)",
+      "notes": "Finger crack option climbs at 5.8 or easier terrain available at 5.4. Critical 25-30 foot unprotectable section on dyke with minimal gear placements. Requires confident movement on moderate terrain with limited protection.",
+      "pitch": "2"
+     },
+     {
+      "grade": "5.5",
+      "notes": "Climb chimney feature and progress up dirty corner. Moderate climbing with adequate natural protection from granite features. Build anchor.",
+      "pitch": "3"
+     },
+     {
+      "grade": "5.6",
+      "notes": "Fun, laid-back climbing in obvious corner approach to summit. Final moves to the horned summit block are unprotectable and require careful route-finding. 40-foot section with no viable pro. Downclimb to horn anchor with slings established for rappel.",
+      "pitch": "4"
+     }
+    ],
+    "sling_rack": {
+     "cams": "0.3-2in",
+     "nuts": "small-mid set",
+     "slings": "a few, plus webbing to back up the fixed horn anchor"
+    },
+    "beta": "Traverse right from start toward the large hanging 'split block'. Pitch 2 features a finger crack option (5.8) or easier terrain (5.4) with a critical 25-30 foot unprotectable section on a dyke. Pitch 3 climbs through a chimney and dirty corner. The final pitch offers laid-back climbing in an obvious corner approach to summit, though the final moves to the horned summit are unprotectable. Light rack to 3 inches adequate. The route requires careful rock quality assessment and awareness of unprotected sections."
+   }
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "before": {
+    "beta": "Rebel Yell is a well-established North Cascades classic featuring 7 pitches of alpine trad climbing (5.10 overall with crux pitches P2 and P5 at 5.10b). The route climbs the clean east face via splitter cracks with varied techniques. All pitches are led on gear. Descent via 4 double-rope rappels on fixed anchors. Extra gear can be cached at base. Typically done as 2-day expedition.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach used for Silver Star Mountain: forest trail from the Hwy 20 pullout, a creek crossing, then steep, loose, cairned gullies to the 6,600 ft bench and up to the bivy sites at Burgundy Col. Water is available near the col from year-round snow. Budget 3-5 hours depending on load and fitness.",
+       "hours": 4,
+       "miles": 3.9,
+       "title": "Approach to Burgundy Col camp",
+       "gainFt": 3500,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike in and establish camp at Burgundy Col (~7,900 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Drop off the col and traverse beneath Burgundy Spire's east face to reach the base of the route in well under an hour. The 7-pitch East Face climbs a wide dihedral, a splitter crack system, and a short 5.7 summit block; most parties top out in 4-6 hours. Rappel the standard descent line off the spire (double ropes, 4 raps) and hike the full approach back out the same day.",
+       "hours": 11,
+       "miles": 3.9,
+       "title": "Climb the East Face and descend to the car",
+       "gainFt": 500,
+       "lossFt": 4000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Descend and traverse to the base of the East Face below Burgundy Spire."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Begin climbing",
+         "detail": "7 pitches of crack and offwidth climbing to the summit pedestal."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Reach the summit",
+         "detail": "Roughly 5-6 hours of climbing for a solid party."
+        },
+        {
+         "time": "12:15-2:00 PM",
+         "label": "Rappel the standard descent line",
+         "detail": "Fixed-anchor rappels with double ropes back to the base of the route."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Start the hike out",
+         "detail": "Retrace the Burgundy Col approach back to the trailhead."
+        },
+        {
+         "time": "~4:15 PM",
+         "label": "Arrive at the car",
+         "detail": "Hike-out typically takes about 2 hours from the col area."
+        }
+       ],
+       "objective": "Climb Rebel Yell (7 pitches, 5.10) to the summit, rappel the standard line, and hike out"
+      }
+     ],
+     "totalNote": "A 2-day, 1-night trip is standard: ~4 hours to camp at Burgundy Col, then one long day for the 7-pitch climb, rappel descent, and complete hike-out. It's frequently combined with Burgundy or Pernod Spire for a multi-summit Wine Spires trip (add a day), and strong parties do the whole thing car-to-car in a single long day once the approach is snow-free."
+    }
+   }
+  },
+  {
+   "id": "wa_clean_break",
+   "before": {
+    "detailed_rack": "Bring a full set of nuts in all sizes and doubles of cams from #0.75 to #3. A #4 cam is useful for pitches 6-7 (fixed protection on P7 was present in 2014 but may not be reliable; bring your own). A single 60m rope is enough, since the descent is a walk-off."
+   }
+  }
+ ]
+}

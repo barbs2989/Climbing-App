@@ -1,0 +1,185 @@
+{
+  "wa_south_face_4": {
+    "area": "wa_kangaroo_temple",
+    "set": {
+      "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, through forest and more talus (faint, intermittently cairned) up to Kangaroo Pass, about 1 hour. From the pass, an intermittent trail traverses to a gully between Kangaroo Temple and Little Finger; ascending or descending that gully reaches the base of the North Face, Northwest Face, or Southwest Face routes, roughly another hour. Total trailhead-to-summit time runs about 7-8 hours round trip. IMPORTANT — this route shares the approach to Kangaroo Pass with Temple's North/Northwest Face routes but finishes differently: rather than climbing toward the notch, drop some elevation below the pass and traverse across to the base of the South Face, roughly 2-4 hours from the car in all. The face isn't visible from the highway."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach first describes the Kangaroo Pass approach, then says the South Face route hikes southeast along the creek and 'never crosses Kangaroo Pass'",
+          "verdict": "CONFIRMED",
+          "evidence": "The route page for this climb (Kangaroo Temple South Face, III 5.8, Marts/Marts/McPherson 1965) gives the approach as: park at the hairpin, hike southeast to Kangaroo Pass, then drop some elevation and traverse to the South Face, 2-4 hours. The area page likewise says to go DOWN from the Temple–Little Finger gully for the southwest-side route. The 'southeast, right side of the creek/timber' hike in the stored clause is the approach TO Kangaroo Pass (the valley southeast of the hairpin), not an alternative that avoids it. Only the contradictory closing clause was replaced; 'Longer and steeper' dropped because it described the non-existent separate approach, replaced by the sourced 2-4 hr total. Side note: the route page gives 8 pitches / 800 ft; stored is 7 pitches / 244 m, and other descriptions say seven pitches, so no classification change proposed.",
+          "sources": [
+            "https://www.mountainproject.com/route/114267009/south-face",
+            "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+            "https://www.mountaineers.org/explore/routes-places/kangaroo-temple-north-face"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_the_l_h_route_free_variation": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "set": {
+      "fa": "Original aid line: Jim Langdon and Mead Hargis, 1969. First free ascent: Blake Herrington and Max Tepfer, 2015"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "fa lists only the 1969 aid line; the free variation was climbed in 2015 by Herrington and Tepfer",
+          "verdict": "CONFIRMED",
+          "evidence": "Blake Herrington and Max Tepfer freed the original 1969 Langdon–Hargis (5.8 A4) route on Supercave/M&M Wall over three days in summer 2015, adding 3 bolts with Langdon's permission. The stored overview already says so; fa now carries it as a plain ascent credit (climbers credited as ascensionists, not as a source).",
+          "sources": [
+            "http://blakeclimbs.blogspot.com/2015/09/supercave-wall-free-route.html",
+            "https://www.climbing.com/news/beautiful-new-testpiece-in-north-cascades/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_prusik_peak_prayer_for_a_friend": {
+    "area": "wa_prusik_peak",
+    "set": {
+      "overview": "The hardest documented route on Prusik Peak: a 5.14a big-wall-style testpiece up the southwest face headwall, first aided by Fitz Cahall and freed by Adrian Vanoni."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview calls it a 'south face' route; it is on the southwest face",
+          "verdict": "CONFIRMED",
+          "evidence": "The AAJ free-ascent report and the Climbing news report both place the route on Prusik Peak's southwest face. One-word fix: 'south face headwall' -> 'southwest face headwall'.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/13201216752",
+            "https://www.climbing.com/news/new-5-14-crack-washington-alpine/"
+          ]
+        },
+        {
+          "claim": "a report saw no bolt at the top of the crux pitch — check any bolt claim in anchor/beta prose",
+          "verdict": "REFUTED",
+          "evidence": "beta, overview and descent_text make no bolt claim for the top of P6. pitch_detail P6 says 'single bolt backed up with a small cam', which matches the route page ('single-bolt belay backed up with purple or green cam') and the AAJ description of anchoring by bolts plus gear. One contrary observation does not outweigh two sources; nothing changed (pitch_detail is outside this batch anyway).",
+          "sources": [
+            "https://www.mountainproject.com/route/125073409/prayer-for-a-friend",
+            "https://publications.americanalpineclub.org/articles/13201216752"
+          ]
+        },
+        {
+          "claim": "stored pitches 6 vs AAJ 7",
+          "verdict": "UNCLEAR",
+          "evidence": "Sources count 7 pitches / 600 ft, but the 7th is the West Ridge scramble to the summit; six roped pitches is a defensible count and the stored table already has a separate scramble row. No classification change proposed; a reviewer may prefer 7 to match published counts.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/13201216752",
+            "https://www.mountainproject.com/route/125073409/prayer-for-a-friend"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_davis_holland_route": {
+    "area": "wa_central_wall_area",
+    "skip_reason": "no rappels or descent_text is stored for this route, so there is no claim to correct; adding a descent would be new material outside this batch",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent: the P3 anchor cannot be rappelled to the ground with one 60 m rope; rap to a hanging anchor, then more raps trending left",
+          "verdict": "UNCLEAR",
+          "evidence": "Consistent with sources (from the P3 belay: one double-rope rap to the ground, or a couple of 20-30 m raps trending climber's left via sport-wall anchors), but rappels and descent_text are both null, so nothing stored contradicts it. pitch_detail P3 only says 'most parties rappel', which is true. Suggest a future enrichment add a descent. Also: fa lacks the year; sources give 1965 for Dan Davis and John Holland (not changed; not the finding).",
+          "sources": [
+            "https://www.mountainproject.com/route/105836583/davis-holland-route",
+            "https://www.climbing.com/places/davis-holland-to-lovin-arms-510c-index-washington/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_one_piece_at_a_time": {
+    "area": "wa_cutthroat_wall",
+    "skip_reason": "classification only — no prose change",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade '5.10+' vs consistently 5.10d",
+          "verdict": "CONFIRMED",
+          "evidence": "The route page grades it 5.10d with the 10d crux on P2; the FA-era trip report is titled 5.10d; the stored pitch_detail already marks P2 as the 5.10d crux.",
+          "sources": [
+            "https://www.mountainproject.com/route/120102674/one-piece-at-a-time",
+            "https://cascadeclimbers.com/forum/topic/103679-tr-cutthroat-wall-one-piece-at-a-time-510d-09202020/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "5.10d",
+          "evidence": "Route page and FA-era report both give 5.10d; stored pitch_detail P2 crux is 5.10d. '5.10+' is a looser rendering of the same grade."
+        }
+      }
+    }
+  },
+  "wa_south_spur": {
+    "area": "wa_whatcom_peak",
+    "skip_reason": "report only — grade sources disagree; climbing_route not to be edited",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade '4th' — recent reports call the summit ridge Class 3",
+          "verdict": "UNCLEAR",
+          "evidence": "The route listing gives South Spur as 4th class PG13; several trip reports describe the south ridge crest as an exposed Class 3 scramble (one calls the descent 'class 2+'). Stored '4th' is the published catalog grade and trip-report grades vary with snow and line, so no classification change proposed.",
+          "sources": [
+            "https://www.mountainproject.com/area/112032394/whatcom-peak",
+            "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+            "https://www.lemkeclimbs.com/whatcom-peak.html"
+          ]
+        },
+        {
+          "claim": "climbing_route step 3 'on the order of a hundred feet' is unconfirmed",
+          "verdict": "UNCLEAR",
+          "evidence": "No source found giving a length for the summit ridge scramble; reports only call it 'short'. Reported only, not edited, per instructions.",
+          "sources": [
+            "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_little_sister_southeast_ridge": {
+    "area": "wa_little_sister",
+    "skip_reason": "report only — area-level elevation, not in this batch",
+    "review": {
+      "findings": [
+        {
+          "claim": "summit elevation 6,017 vs 6,600 ft",
+          "verdict": "UNCLEAR",
+          "evidence": "Twin Sisters range listings give Little Sister as 6,600 ft (2,012 m); no route prose column on this route states the elevation. The area-level value should be checked against the USGS map/DEM by a human.",
+          "sources": [
+            "https://www.summitpost.org/twin-sisters-range/171190"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_davis_peak_nc_north_face": {
+    "area": "wa_davis_peak_nc",
+    "skip_reason": "sources disagree on the FA year; the winter date is not clearly contradicted",
+    "review": {
+      "findings": [
+        {
+          "claim": "fa says July 1974 or 1976; a peak page gives 1972 for Kloke and Simon",
+          "verdict": "UNCLEAR",
+          "evidence": "The peak page gives 1972; a 1988 AAJ report refers to 'the 1974 Kloke-Simon route'; the stored text already records 1974/1976. Three years across sources, so they do not clearly agree and fa is left as is. A reviewer could widen it to 'recorded variously as 1972, 1974 or 1976'.",
+          "sources": [
+            "https://www.summitpost.org/davis-peak/257251",
+            "http://publications.americanalpineclub.org/articles/12198813004/North-America-United-States-Washington-Cascade-Mountains-Davis-Peak-North-Face-Southern-Pickets"
+          ]
+        },
+        {
+          "claim": "winter ascent March 13, 2005",
+          "verdict": "UNCLEAR",
+          "evidence": "The trip report is titled 3/12/2005 (plausibly the start of a multi-day push); its body would not load to confirm the summit-ridge day. Not changed.",
+          "sources": [
+            "https://cascadeclimbers.com/forum/topic/32306-tr-davis-peak-ne-face-couloir-3122005/"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "zones": [
+    {
+      "zone": "unzoned:wa_waterfall_basin",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Boulder River Wilderness has no permit system; sign the trailhead register if one is present.",
+        "url": null
+      }
+    },
+    {
+      "zone": "upper-sauk-pugh",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Sign the trailhead register; a Northwest Forest Pass is needed to park at most of these trailheads.",
+        "url": null
+      }
+    },
+    {
+      "zone": "wild-sky-skykomish",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Sign the trailhead register if one is present; a Northwest Forest Pass is needed to park at the trailhead.",
+        "url": null
+      }
+    },
+    {
+      "zone": "wine-spires",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Camping at Burgundy Col and the approach benches needs no permit; Lone Fir Campground is a fee, first-come first-served car campground, not a backcountry permit area.",
+        "url": null
+      }
+    },
+    {
+      "zone": "wolframite-mountain",
+      "overnightPermit": {
+        "what": "Free self-issue Pasayten Wilderness permit",
+        "where": "Fill one out at the Thirtymile Trailhead register before starting up the Chewuch River Trail.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_flight_of_the_falcon",
+      "main": [
+        "Squire Creek road end / trailhead bivouac",
+        "Squire Creek Park & Campground, Snohomish County"
+      ],
+      "onRoute": [
+        "Squire Creek Wall on-route ledges"
+      ],
+      "drop": [
+        "Clear Creek Campground",
+        "Dispersed roadside camping, Clear Creek Road",
+        "Squire Creek Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Clear Creek Campground, the dispersed camping on Clear Creek Road and Squire Creek Pass all belong to the separate Clear Creek Road approach that serves Three O'Clock Rock, Exfoliation Dome and Green Giant, not Squire Creek Wall; on-route bivy ledges exist a third and two-thirds up the wall for slow parties."
+    },
+    {
+      "id": "wa_roan_wall_center_stage",
+      "main": [
+        "Squire Creek road end / trailhead bivouac",
+        "Squire Creek Park & Campground, Snohomish County"
+      ],
+      "onRoute": [
+        "Squire Creek Wall on-route ledges"
+      ],
+      "drop": [
+        "Clear Creek Campground",
+        "Dispersed roadside camping, Clear Creek Road",
+        "Squire Creek Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Squire Creek Wall approach as the other routes on this massif; Clear Creek Road camps and Squire Creek Pass serve a different drainage and were dropped; a bivy boulder at the base of Roan Wall is not separately listed but is close to the road-end camp."
+    },
+    {
+      "id": "wa_roan_wall_stage_right",
+      "main": [
+        "Squire Creek road end / trailhead bivouac",
+        "Squire Creek Park & Campground, Snohomish County"
+      ],
+      "onRoute": [
+        "Squire Creek Wall on-route ledges"
+      ],
+      "drop": [
+        "Clear Creek Campground",
+        "Dispersed roadside camping, Clear Creek Road",
+        "Squire Creek Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Squire Creek Wall approach as Center Stage on the same face; Clear Creek Road camps and Squire Creek Pass serve a different drainage and were dropped."
+    },
+    {
+      "id": "wa_waterfall_buttress",
+      "main": [
+        "Squire Creek road end / trailhead bivouac",
+        "Squire Creek Park & Campground, Snohomish County"
+      ],
+      "onRoute": [
+        "Squire Creek Wall on-route ledges"
+      ],
+      "drop": [
+        "Clear Creek Campground",
+        "Dispersed roadside camping, Clear Creek Road",
+        "Squire Creek Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "This route starts above the Martha's Place bivy boulder near the base of the wall, which is not separately listed but sits along the same approach as the road-end camp; Clear Creek Road camps and Squire Creek Pass serve a different drainage."
+    },
+    {
+      "id": "wa_bedal_peak_standard",
+      "main": [
+        "Bedal Basin, below the north side of Bedal Peak"
+      ],
+      "onRoute": [],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Only camp listed, and it is the standard off-trail high camp directly under the peak; confidence is high."
+    },
+    {
+      "id": "wa_kololo_peaks_standard",
+      "main": [
+        "White Chuck Glacier basin, under Kololo Peaks",
+        "Sloan Creek Campground and the North Fork Sauk road end"
+      ],
+      "onRoute": [
+        "Mackinaw Shelter"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "White Chuck Glacier basin is the climbing camp used to attempt the peak; Sloan Creek/North Fork Sauk road end is the standard staging camp the night before; Mackinaw Shelter, about five miles in, is a common first-night stop for parties splitting the approach into three days."
+    },
+    {
+      "id": "wa_mount_pugh_stujack",
+      "main": [
+        "Mount Pugh road end, Forest Road 2095",
+        "Lake Metan, Mount Pugh trail"
+      ],
+      "onRoute": [
+        "Stujack Pass and the benches just below it"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Most parties climb Pugh car-to-car from the road end; Lake Metan is the one established camp used when the day is split; Stujack Pass is a higher bivy on the route itself for an alpine-start push, not a typical overnight base."
+    },
+    {
+      "id": "wa_painted_mountain_scramble",
+      "main": [
+        "Sloan Creek Campground and the North Fork Sauk road end"
+      ],
+      "onRoute": [],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Painted Mountain is done as a day trip from the North Fork Sauk road end; no higher camp is used or listed."
+    },
+    {
+      "id": "wa_mount_stickney_scramble",
+      "main": [
+        "One Acre Lake, under Mount Stickney",
+        "Sultan Basin road pullouts and the Olney Creek gate"
+      ],
+      "onRoute": [],
+      "drop": [
+        "San Juan Campground, Index-Galena road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "San Juan Campground sits on Index-Galena Road, a different corridor from the Sultan Basin Road approach this route actually uses, so it was dropped; One Acre Lake is the one worthwhile camp on the peak itself."
+    },
+    {
+      "id": "wa_spire_mountain_scramble",
+      "main": [
+        "San Juan Campground, Index-Galena road"
+      ],
+      "onRoute": [
+        "Spire Mountain — the saddle northwest of the summit"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Spire Mountain has no established camp; most parties climb it car-to-car from the North Fork Skykomish trailhead off Index-Galena Road, staging the night before at San Juan Campground, with the summit-saddle bivy as a fallback for a slow party."
+    },
+    {
+      "id": "wa_tailgunner_peak_w_route",
+      "main": [
+        "Gunn Basin, below Tailgunner Pass",
+        "Barclay Creek roadhead pullouts",
+        "San Juan Campground, Index-Galena road"
+      ],
+      "onRoute": [],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Gunn Basin is the high camp that turns a long day comfortable; the roadhead pullouts and San Juan Campground are both staging options the night before, progressively farther from the climbers' path."
+    },
+    {
+      "id": "wa_action_potential",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only",
+        "The Bench"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'The Bench' is a duplicate of the Burgundy Creek bench camp (same ~6,400-6,500 ft flat bench on the approach) and was dropped; the two Silver Star Creek camps serve the unrelated east-side approach and are no use for the Wine Spires."
+    },
+    {
+      "id": "wa_burgundy_spire_north_face",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard Burgundy Col approach; the two Silver Star Creek camps serve the unrelated east-side approach to Silver Star and were dropped."
+    },
+    {
+      "id": "wa_chianti_spire_east_face",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Burgundy Col approach as the other Wine Spires; the two Silver Star Creek camps serve the unrelated east-side approach and were dropped."
+    },
+    {
+      "id": "wa_direct_west_face",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Burgundy Col approach as the other Wine Spires; the two Silver Star Creek camps serve the unrelated east-side approach and were dropped."
+    },
+    {
+      "id": "wa_east_face_2",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Burgundy Col approach as the other Wine Spires; the two Silver Star Creek camps serve the unrelated east-side approach and were dropped."
+    },
+    {
+      "id": "wa_east_ridge_3",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Upper scree benches below Burgundy Col — WEST side",
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only",
+        "Lone Fir Campground, SR 20"
+      ],
+      "add": [
+        {
+          "name": "Klipchuck Campground",
+          "type": "camp",
+          "elev": 2900,
+          "capacity": "Several first-come, first-served sites",
+          "water": "Potable water available in season",
+          "permit": "No permit; nightly fee, first-come first-served, no reservations",
+          "notes": "Established Forest Service campground just off SR-20 a short walk from the Cedar Creek Trailhead, the nearest place to stage the night before an early start.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Every listed camp belongs to the Burgundy Col approach on the opposite side of the mountain; this route starts at the separate Cedar Creek Trailhead near Mazama, so all six were dropped and the nearest real campground was added. The route is often done car-to-car in one long day, and no established on-route camp is confirmed."
+    },
+    {
+      "id": "wa_gato_negro",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Burgundy Col approach as the other Wine Spires; the two Silver Star Creek camps serve the unrelated east-side approach and were dropped."
+    },
+    {
+      "id": "wa_pernod_spire_standard",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Burgundy Col approach as the other Wine Spires; the two Silver Star Creek camps serve the unrelated east-side approach and were dropped."
+    },
+    {
+      "id": "wa_silver_star_glacier",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only",
+        "Larch bench camp (\"the Bench\")"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The standard route also crosses Burgundy Col from the west, not the Silver Star Creek side, so those two camps were dropped; the larch bench camp is a duplicate of the Burgundy Creek bench camp at the same elevation on the same approach."
+    },
+    {
+      "id": "wa_silver_star_ne_ridge",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shares the Silver Star Glacier route's Burgundy Col approach up to the glacier before trending toward the northeast side; the two Silver Star Creek camps serve the unrelated east-side approach and were dropped. Thinly documented route, so confidence in the exact camp used near the top is lower."
+    },
+    {
+      "id": "wa_south_face_2",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only",
+        "The Bench (6,500 ft camp)"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'The Bench (6,500 ft camp)' is a duplicate of the Burgundy Creek bench camp on the same approach and was dropped; the two Silver Star Creek camps serve the unrelated east-side approach."
+    },
+    {
+      "id": "wa_ultramega_ok",
+      "main": [
+        "Burgundy Col high camp — WEST side, the Wine Spires",
+        "Burgundy Creek bench camp — WEST side",
+        "Lone Fir Campground, SR 20"
+      ],
+      "onRoute": [
+        "Upper scree benches below Burgundy Col — WEST side"
+      ],
+      "drop": [
+        "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+        "Lower Silver Star Creek basin — EAST side, Silver Star only",
+        "The Bench"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'The Bench' is a duplicate of the Burgundy Creek bench camp on the same approach and was dropped; the two Silver Star Creek camps serve the unrelated east-side approach."
+    },
+    {
+      "id": "wa_wolframite_mountain_scramble",
+      "main": [
+        "The Tungsten Creek trail camps below the Boundary Trail junction"
+      ],
+      "onRoute": [
+        "Campsite below Tungsten Creek ford"
+      ],
+      "drop": [
+        "The Boundary Trail horse camp east of the Tungsten junction",
+        "Apex Pass and the high ground west of Wolframite",
+        "Teapot Lake and the Boundary Trail benches toward Bauerman Ridge",
+        "Tungsten Mine Camp / Boundary Trail #533 junction"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Tungsten Mine Camp / Boundary Trail #533 junction' is the same site as the listed Tungsten Creek trail camps (both sit at the Tungsten Creek/Boundary Trail junction on the mountain's south side) and was dropped as a duplicate; the horse camp, Apex Pass and Teapot Lake all serve onward travel along the Boundary Trail to other peaks, not the climb of Wolframite itself."
+    }
+  ],
+  "misassigned": [
+    "wa_east_ridge_3: entire input camp list belongs to the Burgundy Col/Wine Spires approach on the west side; the East Ridge actually starts from the separate Cedar Creek Trailhead near Mazama, so all six were dropped and Klipchuck Campground was added as the practical staging camp."
+  ]
+}

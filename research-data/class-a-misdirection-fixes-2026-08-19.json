@@ -1,0 +1,86 @@
+{
+  "_README": [
+    "Two Class A misdirection rows, each settled by evidence the CATALOG already holds — no source needed.",
+    "",
+    "1. wa_mount_adams_wilson_glacier_headwall — its trailhead WAYPOINT is the wrong side of the mountain.",
+    "   The approach text, the descent_text and approach_logistics.trailhead ALL say Cold Springs / South",
+    "   Climb (5,600 ft, end of FR-8040 north of Trout Lake). The single waypoint says KILLEN CREEK at",
+    "   46.2885,-121.5525 — the north-side trailhead reached from Randle, roughly 25 road miles and two",
+    "   hours away. A party navigating by the pin drives to the opposite flank.",
+    "   The waypoint's OWN note admitted the guess: 'medium confidence - no source names this trailhead",
+    "   for Wilson specifically'. Three columns against one hedged pin.",
+    "   The correct coordinate is RE-HOMED from wa_mount_adams_south_climb, which already stores the Cold",
+    "   Springs pin — nothing is invented. That note also carried a source citation, which is removed.",
+    "",
+    "2. wa_mount_hinman_hinman_glacier — 'continues north from La Bohn Gap' is the wrong direction.",
+    "   Settled by the row's OWN waypoints, the way Colchuck was: from its La Bohn Gap pin to its own",
+    "   summit pin the bearing is 71.5deg, with an east component of 1.94 km against a north component of",
+    "   0.65 km — three times as far east as north. The summit is never north of the gap.",
+    "   'North' is not invented and is not deleted: the basin really is NNE of the gap and that describes",
+    "   the first move only, so the text now says north-northeast into the basin, then east-northeast.",
+    "",
+    "   THE VARIANT MOVES WITH IT. The approach_variant written for Hinman hours ago quotes the 'NORTH'",
+    "   sentence as one side of a two-source disagreement. Fixing the approach would leave that warning",
+    "   describing text that no longer exists — worse than no warning, because it invites someone to",
+    "   restore the error to make the warning true. Both spans move together or neither does."
+  ],
+  "wa_mount_adams_wilson_glacier_headwall": {
+    "area": "wa_mount_adams",
+    "_why": "the trailhead waypoint named Killen Creek (north side, from Randle) while approach, descent_text and approach_logistics all say Cold Springs (south side, from Trout Lake)",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 46.136024,
+          "lng": -121.495265,
+          "elev": 5600,
+          "type": "Trailhead",
+          "distMi": 0,
+          "name": "South Climb / Cold Springs Trailhead",
+          "note": "End of FR-8040 north of Trout Lake, on the mountain's SOUTH side. This route's approach, its descent and its stored logistics all use this trailhead: the Wilson Glacier basin is reached by a long, mostly off-trail traverse east and then north around the mountain's eastern flank, not by a north-side approach."
+        },
+        {
+          "lat": 46.202494,
+          "lng": -121.490746,
+          "elev": "12276",
+          "name": "Mount Adams summit",
+          "type": "Summit",
+          "distMi": null,
+          "elevFt": "12276"
+        },
+        {
+          "lat": 46.2125,
+          "lng": -121.4667,
+          "name": "Wilson Glacier (reference point)",
+          "type": "Junction",
+          "distMi": null,
+          "elevFt": null
+        }
+      ]
+    }
+  },
+  "wa_mount_hinman_hinman_glacier": {
+    "area": "wa_mount_hinman",
+    "_why": "approach said the route continues NORTH from La Bohn Gap; the row's own pins put the summit at bearing 71 degrees, three times as far east as north",
+    "set": {
+      "approach": "Park at the Necklace Valley Trailhead (~1,650 ft) at the end of FR 68 and start up Necklace Valley Trail #1062. The first ~5 miles are deceptively easy, gaining only about 600 ft as the trail follows the East Fork Foss River through regenerated second-growth forest (logged in the 1930s), entering the Alpine Lakes Wilderness at about 1.5 miles. Around the 5-mile mark the trail fords the East Fork Foss River (no bridge — can run high and cold in early-season snowmelt, so plan the crossing for morning low flow) and then turns uphill in earnest, climbing roughly 2,400 ft over the next 3 miles on steep, root-laced switchbacks into Necklace Valley proper. This section is the approach's real crux for tired legs and pack weight. The trail eases again as it reaches Jade Lake (~4,600 ft, ~8-9 miles), then Emerald Lake a quarter mile beyond, then Opal Lake, threading through the swampy, lake-studded Necklace Basin — good camping and reliable water throughout, but buggy in early/mid-summer. From the head of Necklace Basin the maintained trail ends; continue cross-country (an established, cairned climbers' path through meadow and boulder talus) up and east roughly 1-1.5 miles and ~1,000+ ft to La Bohn Gap and the La Bohn Lakes, the standard high camp for the peak (total approach to La Bohn Gap is about 10-11 miles one-way with ~5,000+ ft of cumulative gain). From La Bohn Gap the route continues north-northeast into what remains of the Hinman/Foss Glacier basin — now much diminished and largely bare rock/permanent snowfield rather than a true crevassed glacier in most recent seasons, but still worth crampons/axe and glacier-travel judgment in early season or after a big snow year — then east/east-northeast via easy class 2 ridge/scree scrambling to the summit ridge and along it about half a mile to the true summit (7,492 ft). Loose rock on the final scramble and potential crevasse/bergschrund hazard on the lingering glacier remnant (mostly early-season) are the main approach-specific risks beyond the ford and the steep valley headwall."
+    },
+    "approach_variants": [
+      {
+        "name": "Necklace Valley to La Bohn Gap and the lakes",
+        "notes": "Park at the Necklace Valley trailhead at about 1,650 ft at the end of FR 68 and start up Necklace Valley Trail #1062. The first five miles are deceptively flat, gaining only about 600 ft along the East Fork Foss River, entering the wilderness at about 1.5 miles.\n\nAround mile 5 the trail FORDS the East Fork Foss River — there is no bridge and it runs high and cold in early-season melt, so cross in the morning at low flow. Then it turns uphill in earnest, roughly 2,400 ft over three miles of steep, root-laced switchbacks. This is the real crux of the approach for tired legs.\n\nThe grade eases at Jade Lake at about 4,600 ft and eight to nine miles, then Emerald and Opal Lakes through the swampy Necklace Basin — good camping and reliable water, buggy in early summer.\n\nFrom the head of Necklace Basin the maintained trail ends. Continue cross-country on an established, cairned climbers' path through meadow and boulder talus, up and east roughly a mile to a mile and a half and over 1,000 ft, to La Bohn Gap and the La Bohn Lakes. That is the standard high camp: about 10 to 11 miles one way with over 5,000 ft of cumulative gain.",
+        "distMi": 10.5,
+        "gainFt": 6100,
+        "season": "July to September. Most parties make it a two or three day trip",
+        "hazards": [
+          "An unbridged ford of the East Fork Foss River around mile 5, high and cold in early-season melt",
+          "2,400 ft of steep root-laced switchbacks with a multi-day pack",
+          "Crevasse and bergschrund hazard on the lingering glacier remnant, mostly early season",
+          "Loose rock on the final class 2 scramble",
+          "Mosquitoes in the lake basins in early and mid summer",
+          "A long walk out from a remote camp if anything goes wrong"
+        ],
+        "baseFinding": "LA BOHN GAP AND ITS LAKES ARE THE ARRIVAL, AND THE HONEST FINDING IS THAT THERE IS NO LONGER MUCH OF A GLACIER TO FIND. Measured in August 2022, the Hinman Glacier had largely disappeared, leaving stranded patches of snow and ice. So do not stand at the gap looking for a glacier front to identify. What you are looking for is the basin above the gap: mostly bare rock and permanent snowfield in most recent seasons, with crevasse and bergschrund hazard only in early season or after a big snow year.\n\nHOW YOU KNOW YOU ARE AT LA BOHN GAP: it is where the cairned climbers' path out of the head of Necklace Basin tops out at over 5,500 ft, with the La Bohn Lakes in it. If you are still in swampy lake-studded basin on maintained tread, you have not left Necklace Valley.\n\nWHICH WAY FROM THE GAP: the summit lies EAST-NORTHEAST of La Bohn Gap, and this route's own recorded positions make that unambiguous — the eastward travel is roughly three times the northward. The first move out of the gap is north-northeast into the basin; after that the line swings east-northeast. A party still heading due north well above the gap is drifting off the route. The objective is the snowfield basin immediately above the lakes, which is unmistakable once you are at the gap, and easy class 2 ridge and scree ground leads from it to the summit ridge.\n\nTHE FINAL TEST IS A DISTANCE ALONG A RIDGE: from where you gain the summit ridge, the true summit at 7,492 ft is about HALF A MILE along it. A party that tops out on the ridge and stops is half a mile short."
+      }
+    ]
+  }
+}

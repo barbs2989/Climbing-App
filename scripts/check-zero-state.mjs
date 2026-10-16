@@ -35,19 +35,21 @@
 
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, spinnerCoverage } from "./lib/render-settle.mjs";
+import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
 const PORT = 5230;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"];
 
 // Text that must never reach a user. The first five mirror check:ui; the rest are the
 // shapes that only appear once every field behind them is empty.
@@ -113,7 +115,7 @@ try {
 function iconNames() {
   const names = new Set();
   for (const f of ["ClimbMatch.jsx", "ClimbMatchCore.jsx"]) {
-    const src = fs.readFileSync(path.join(ROOT, f), "utf8");
+    const src = readAppFile(path.join(ROOT, f));
     for (const m of src.matchAll(/icon:"([a-z][a-z0-9]*)"/g)) names.add(m[1]);
   }
   return names;
@@ -142,6 +144,12 @@ async function claimPort(start, span = 40) {
   return null;
 }
 
+// This walk asserts that no screen is STILL LOADING, so an unreachable catalog fails it by
+// definition — and the failure it printed during the 2026-08-13 outage was
+// `2 problem(s) a brand-new account would see: still showing a loading state after 45s`.
+// The symptom is honest; the attribution is not. No brand-new account would see that, the
+// database was down. Ask first, so the run says which of the two it is.
+await assertDbReachable({ label: "check:zero" });
 const port = await claimPort(PORT);
 if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
 if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
@@ -318,7 +326,8 @@ if (!overlays.length) {
 // thing #637 broke. Overlays that genuinely cannot be reached by flag alone are exempt BY
 // NAME in NEEDS_EXTRA_STATE, each recording its real gate, and a name there that stops
 // being an overlay fails, so the exemption list cannot rot in silence.
-const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
+const _maskDigits = (l) => String(l).replace(/\d+/g, "#");
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 assertKnownOverlays(overlays, fail);
 const noPayload = new Set();
 for (const name of overlays) {
@@ -338,8 +347,16 @@ for (const name of overlays) {
     }), name);
     if (d.er) { threw = d.er; break; }
     if (d.np) { empty = d.np; break; }
-    const before = new Set(dump["tab:" + t] || []);
-    if (lines.some((l) => !before.has(l))) { landed = { tab: t, lines }; break; }
+    // Mask digits, for the reason render-settle.mjs already states: it "absorbs a clock and a
+    // CountUp without absorbing a section that appeared". Raw line sets do NOT survive an
+    // animated counter. The Profile tab's Trust score is a <CountUp/>, so between the closed
+    // baseline and this capture it can land on a different number -- one differing line, "19",
+    // is enough to declare the overlay mounted HERE and `break` before ever trying the tab that
+    // owns it. Measured on main @ ebd16d9: `modal:unfinishedOpen` was captured on the Profile
+    // tab and failed for a landmark that lives on Home, and the ONLY novel line was "19".
+    // `landed.lines` keeps the RAW text, so landmark assertions still read real content.
+    const before = new Set((dump["tab:" + t] || []).map(_maskDigits));
+    if (lines.some((l) => !before.has(_maskDigits(l)))) { landed = { tab: t, lines }; break; }
   }
   if (threw) {
     fail("modal:" + name, `the opener threw while building its payload: ${threw}`);

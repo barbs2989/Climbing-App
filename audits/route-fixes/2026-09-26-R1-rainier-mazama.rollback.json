@@ -1,0 +1,75 @@
+[
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "access": {
+   "fees": "$82/climber climbing cost-recovery fee (2024) plus entrance fee",
+   "notes": "Mount Rainier National Park climbing permit required ($82 per person through Pay.gov); registration through Recreation.gov mandatory for summit attempts; Paradise parking available year-round; wilderness permit ($10 per person per night, $6 transaction fee); no nonresident surcharge at this park in 2026 (the standard entrance fee applies); the Longmire–Paradise road stays open in winter, but its gate closes nightly from November and can stay shut on storm days; storms possible June-September",
+   "permit": "Free climbing permit at Paradise WIC",
+   "closures": "None specific to this route; Paradise corridor sometimes uses timed-entry reservations in peak summer",
+   "landManager": "Mount Rainier National Park (NPS)",
+   "passRequired": "America the Beautiful pass or $30/vehicle entrance pass",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+    "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "access": {
+   "fees": "$82/climber climbing cost-recovery fee (2024) plus entrance fee",
+   "permit": "Free climbing permit required for glacier travel/above 10,000 ft",
+   "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+   "landManager": "Mount Rainier National Park (NPS)",
+   "passRequired": "America the Beautiful pass or $30/vehicle entrance pass",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+    "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "best_season": "Summer, inside the Yakama Nation's visitor window for the Bird Creek side (historically about July 1 to October 1, and shorter in some years); earlier in that window holds more snow.",
+  "seasonal_guidance": {
+   "optimalWindow": "Late August through September, while the Yakama Nation opens the Bird Creek side to visitors; earlier holds more snow",
+   "monthBreakdown": {
+    "July": {
+     "reason": "The headwall carries its best snow, but the reservation side usually stays closed to visitors until late summer.",
+     "status": "marginal"
+    },
+    "June": {
+     "reason": "The Tract D area is closed to non-tribal visitors and the Bird Creek road is still snowbound.",
+     "status": "risky"
+    },
+    "August": {
+     "reason": "The Tract D area typically opens late in the month; the 45-degree headwall still holds snow though crevasses below Sunrise Camp open up.",
+     "status": "good"
+    },
+    "October": {
+     "reason": "The reservation area closes to visitors around October 1, and early storms ice the headwall.",
+     "status": "risky"
+    },
+    "September": {
+     "reason": "The most reliable month inside the visitor window; expect firm snow or ice on the headwall and open crevasses, and plan a long day-use push.",
+     "status": "optimal"
+    }
+   }
+  },
+  "approach": "Start from the Bird Creek Road trailhead (~5,700 ft) on the Yakama Reservation side; route-finding across moraines and glacier fields begins around 6,700 ft, reaching Sunrise Camp at 8,300 ft.",
+  "access": {
+   "fees": null,
+   "permit": "Yakama Indian Reservation Tract-D tribal-use permit required to start from Bird Creek Meadows.",
+   "closures": "Non-tribal-member season restricted to roughly July 1–October 1; the Mazama Glacier route and Bird Creek Meadows are among the few reservation-side areas open to public recreation.",
+   "landManager": "Yakama Nation (Yakama Indian Reservation, Tract D)",
+   "passRequired": "Yakama tribal-use permit.",
+   "overnight_permit": {
+    "url": null,
+    "what": "Yakama Nation Tract D recreation permit for the Bird Creek side, plus the Mount Adams Climbing Pass above 7,000 ft on national forest land",
+    "where": "Buy the Tract D permit at the fee station where the road enters the reservation; the area is open to non-tribal visitors only in summer, roughly July to September. The Climbing Pass is sold on Recreation.gov."
+   }
+  }
+ }
+]

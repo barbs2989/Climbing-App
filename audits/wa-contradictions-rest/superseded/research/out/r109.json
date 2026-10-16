@@ -1,0 +1,198 @@
+{
+ "file": "r109.json",
+ "results": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "fact": "distance: dist_km is one-way, itinerary miles is round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach (0.8 mi, matching the summit waypoint distMi and the overview) and itinerary miles are per day (1.6 mi out and back); 0.8 x 2 = 1.6, so the two quantities agree by the stated convention.",
+   "patches": [],
+   "sources": []
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "fact": "access.fees claims no fee; access.passRequired states an explicit dollar fee",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Northwest Forest Pass pricing ($5/day, $30/year) and its requirement at developed MBS trailheads is confirmed by the forest's passes page. No source found says the undeveloped FR6517 roadside pull-off (no trail, no facilities) is a posted fee site, so it is not settled whether passRequired's 'required at the FR6517 trailhead parking' is right or whether fees' 'None' should stand; parking_pass and the permit column both limit the pass to developed trailheads. Needs a ranger-district confirmation before either field is changed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.summitpost.org/eagle-rock/805280"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "fact": "Wilderness permit: permit column says a free self-issue Wild Sky Wilderness permit/registration; access.permit says 'None required'",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The permit column and access.permit disagree about whether a free self-issue wilderness permit applies. Wild Sky Wilderness has an Eagle Rock unit, but it was not established whether this summit lies inside the designated wilderness or whether a self-issue permit is required there; the relevant pages (Mountaineers, SummitPost) were not readable. Also note access.overnight_permit describes Lake Serene/Barclay Lake, not this route.",
+   "sources": [
+    "https://www.trailforks.com/region/wild-sky-wilderness-eagle-rock-unit/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "fact": "Route grade (5.11c vs 5.11b)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page's consensus grade is 5.11b (37 votes), matching rock_grade, overview and pitch_detail; but a topo photo on the same site labels it 5.11c, which is likely the original/guidebook grade that `grade` carries. No second independent source settles 5.11b vs 5.11c, and only three row fields agree on 5.11b (grade_num is derived), so the internal-plus-one threshold is not met.",
+   "sources": [
+    "https://www.mountainproject.com/route/117815369/crescendo-of-the-sarcophagus-breathing",
+    "https://www.mountainproject.com/photo/119673193/blue-crescendo-of-the-sarcophagus-breathing-511c-orange-eternal-bliss-endured-51"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_tipping_point_eternal",
+   "fact": "Overall route grade (5.10c) vs the grades its own pitches are given",
+   "verdict": "not_a_contradiction",
+   "correct_value": "5.10c overall; P1 5.10-, P2 5.10",
+   "evidence": "An unlettered '5.10' pitch grade spans 5.10a-d, so a 5.10c overall grade with a '5.10' second pitch is consistent. The route page gives exactly this: overall 5.10c, P1 5.10-, P2 5.10, 13 bolts, FA Windham/Wolfe Sept 2005.",
+   "sources": [
+    "https://www.mountainproject.com/route/121320961/the-tipping-point-eternal",
+    "https://www.mountainproject.com/area/117594078/east-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_project_crack",
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "rope_length_m 60",
+   "evidence": "The route is a single 60 ft (18 m) pitch with a chain anchor at the top, per its route page; lowering from an 18 m anchor needs well over 36 m of rope, so a 30 m rope cannot reach the ground. length_m (18), pitch length in rappels (~60 ft lower), descent (single rope) and descent_text (single 60 m rope) all agree against rope_length_m=30.",
+   "sources": [
+    "https://www.mountainproject.com/route/119476986/project-crack"
+   ],
+   "patches": [
+    {
+     "id": "wa_project_crack",
+     "fact": "rope length",
+     "op": "set",
+     "column": "rope_length_m",
+     "path": [],
+     "expect": 30,
+     "value": 60
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower with a single rope (a 30 m rope suffices for the 12 m pitch)",
+   "evidence": "The route page gives a 40 ft (12 m) pitch with 4 bolts and a chain anchor, so any single rope of 30 m or more lowers it. length_m (12), pitch_detail lengthM (12), rappels (~40 ft), descent ('single rope') and rope_length_m (30) agree; descent_text's '60m' is the lone outlier and is removed so the rope stated is not contradicted.",
+   "sources": [
+    "https://www.mountainproject.com/route/117594087/glacier-view-temple"
+   ],
+   "patches": [
+    {
+     "id": "wa_glacier_view_temple",
+     "fact": "rope length",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "to the ground with a single 60m rope;",
+     "replace": "to the ground with a single rope (30 m is enough for this 12 m pitch);"
+    }
+   ]
+  },
+  {
+   "id": "wa_imbibing_the_movements_on_human_destiny",
+   "fact": "Overall route grade (5.10b) vs the grades its own pitches are given",
+   "verdict": "not_a_contradiction",
+   "correct_value": "5.10b overall; P1 5.10-, P2 5.9-",
+   "evidence": "'5.10-' conventionally denotes the lower half of 5.10 (a/b), so a 5.10b overall grade is consistent with a 5.10- first pitch. The route page gives exactly this: overall 5.10b, P1 5.10- (60 ft), P2 5.9- (60 ft), 13 bolts, gear to 2 in.",
+   "sources": [
+    "https://www.mountainproject.com/route/121164735/imbibing-the-movements-on-human-destiny",
+    "https://www.mountainproject.com/area/117594078/east-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_elephant_head_standard",
+   "fact": "rappels field says 0 while descent_text describes a possible rappel",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "descent_text says there is no established rappel line and frames the single short rappel as an optional contingency off a party-built anchor; rappels '0' states the standard count of required rappels. The two agree that no rappel is part of the route.",
+   "patches": [],
+   "sources": []
+  },
+  {
+   "id": "wa_elephant_head_standard",
+   "fact": "dist_km appears one-way while itinerary total is round-trip, presented as the same 'distance'",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way figure by convention (23.35 km = 14.5 mi = 11.5 mi to Cub Lake + half of the 6 mi summit day) and itinerary miles are per day totalling 29 mi round trip; they agree.",
+   "patches": [],
+   "sources": []
+  },
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "fact": "Grade of the (non-taken) SW sub-summit",
+   "verdict": "fixed",
+   "correct_value": "very exposed 4th class (some rate it low 5th)",
+   "evidence": "A survey trip report of both summits describes the SW summit as a very exposed 4th-class scramble that some climbers rate low 5th, about 1,500 ft from the NE summit; an independent trip report calls it an exposed class 4 climb. This matches the row's baseFinding and hazards ('fourth class'), so watch_out's flat 'low-5th-class' is corrected.",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-survey/",
+    "http://ericsbasecamp.net/trips/EnchantmentPk/EnchantmentPk.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_enchantment_peak_east_ridge",
+     "fact": "SW sub-summit grade",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "a distinctly harder, more exposed low-5th-class climb",
+     "replace": "a distinctly harder, very exposed 4th-class climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Total elevation gain — three disagreeing figures",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Summit 8,538 ft and Aasgard Pass 7,841 ft are confirmed, with the upper basin around 7,500 ft; from a ~3,400 ft trailhead that puts cumulative round-trip gain near 5,700-6,700 ft depending on camp height, so gain_ft 7,250 looks high and the approach's '5,138-ft round trip' is really the net trailhead-to-summit difference. A survey report gives ~16 mi round trip from Stuart Lake TH (matching the itinerary's 16.6 mi) but no source states a cumulative gain for this itinerary, so no value is adopted.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Enchantment_Peak",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.countryhighpoints.com/enchantment-peak-survey/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Day-2 summit-day duration",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Back at camp ~12:30 PM (5.5 hr day)",
+   "evidence": "itinerary.days[1].hours, timing.summitTimeHrs, the sectionBreakdown Climb entry (all 5.5) and timing.totalHrs (7.5+5.5+6.5=19.5) agree against the schedule's 2:00 PM return. A trip report timed Aasgard Pass to the summit at about 2.5 hours, consistent with a ~4-hour camp-to-summit round trip plus margin inside 5.5 hours.",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-and-little-annapurna/"
+   ],
+   "patches": [
+    {
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "Day-2 summit-day duration",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "time"
+     ],
+     "find": "2:00 PM",
+     "replace": "12:30 PM"
+    }
+   ]
+  }
+ ]
+}

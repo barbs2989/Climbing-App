@@ -1,0 +1,544 @@
+[
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "name": "North Ridge (West Face)",
+  "peak": "wa_mount_adams",
+  "discipline": "alpine",
+  "grade": "Grade III, AI1-2",
+  "approach": "Same approach as the standard North Ridge route, via the Killen Creek Trail and PCT.",
+  "firstResearcherNote": "Same approach as the North Ridge; placing the moraine bivy on this line is a reasonable inference, not confirmed.",
+  "camps": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "role": "main",
+    "elev": 6900,
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, a…"
+   },
+   {
+    "name": "Adams Glacier moraine bivy",
+    "role": "route",
+    "elev": 7700,
+    "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending o…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_ridge",
+  "name": "North Ridge",
+  "peak": "wa_burnt_boot_peak",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "",
+  "firstResearcherNote": "Route has no documented approach; assumed to share the north route's Middle Fork ford from the horse camp.",
+  "camps": [
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "role": "main",
+    "elev": 2828,
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock s…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_iron_cap_mountain_south_route",
+  "name": "South Route",
+  "peak": "wa_iron_cap_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "approach": "The South Route begins at the Dingford Creek Trailhead (also signed/known as the Dutch Miller Gap Trailhead, ~1,550 ft), reached via I-90 Exit 34 and the rough, high-clearance/4WD-recommended Middle Fork Snoqualmie Road (FR 56) — the old Dutch Miller Gap Trailhead further up the road is no longer vehicle-accessible, so Dingford Creek is now the actual start. Self-issue Alpine Lakes Wilderness permits (free, required May 15–Oct 31) are at the trailhead register; there's a vault toilet but no potable water. From the trailhead, follow the Middle Fork Trail (#1003), which becomes the Dutch Miller …",
+  "firstResearcherNote": "'Hardscrabble Horse Camp' and 'Williams Lake' are duplicates of the longer-named entries; the exact Iron Cap line from the Middle Fork is thinly documented.",
+  "camps": [
+   {
+    "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+    "role": "main",
+    "elev": null,
+    "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more…"
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "role": "route",
+    "elev": 2828,
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock s…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Hardscrabble Horse Camp",
+    "elev": 2828,
+    "hiddenFromList": true
+   },
+   {
+    "name": "Pedro Camp / steel bridge",
+    "elev": 3300,
+    "hiddenFromList": false
+   },
+   {
+    "name": "Williams Lake",
+    "elev": 4600,
+    "hiddenFromList": true
+   }
+  ]
+ },
+ {
+  "id": "wa_lemah_two_goatshead_spire",
+  "name": "Goatshead Spire",
+  "peak": "wa_lemah_two",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "Identical to the Lemah Glacier approach, which is the only documented way into this cirque. From I-90 exit 80 (Roslyn / Salmon la Sac) go north on Bullfrog Road 2.8 miles through two roundabouts, continue on WA-903 past Cle Elum Lake (about 16.8 miles total from the freeway), turn west on FR-46 and follow it roughly 4.7-5 miles, then turn right on FR-4616 for 1-1.5 miles to the Pete Lake trailhead at about 2,800 ft (47.4350, -121.1855). Hike Cooper River / Pete Lake Trail 1323 about 4.4 flat miles to Pete Lake (2,979 ft), continue about 1.3 miles to a junction and stay right without crossing t…",
+  "firstResearcherNote": "Barely documented tower; assumed to use the same Lemah Meadow approach and camps as the rest of the Lemah massif.",
+  "camps": [
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "role": "main",
+    "elev": 2986,
+    "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly t…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_lemah_two_scramble",
+  "name": "Standard Scramble",
+  "peak": "wa_lemah_two",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "approach": "From I-90 exit 80 (Roslyn/Salmon la Sac), drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles and right on FR-4616 for 1 mile to the Cooper Lake/Pete Lake trailhead. Follow the Pete Lake Trail #1323 along the Cooper River about 4.5 miles to Pete Lake, continue past the lake and pick up the PCT southbound for roughly 4 more miles to the Lemah Creek crossing, then follow the PCT south under a mile to where a faint, unmaintained climbers' trail leaves on the north side of Lemah Creek (marked by occasional flagging; expect deadfall/…",
+  "firstResearcherNote": "Lemah Meadows basin camp is the higher climbers' bivy under the east face; which of the two is more used is unclear.",
+  "camps": [
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "role": "main",
+    "elev": 2986,
+    "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly t…"
+   },
+   {
+    "name": "Lemah Meadows basin camp",
+    "role": "main",
+    "elev": null,
+    "notes": ""
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Lemah Meadows basin camp",
+    "elev": 4800,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_little_big_chief_mountain_west_route",
+  "name": "West Route",
+  "peak": "wa_little_big_chief_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "approach": "From the Salmon La Sac Trailhead (end of Salmon La Sac Rd/FR-4330, ~19 mi north of Cle Elum), pick up the Waptus River Trail #1310 heading east into the Alpine Lakes Wilderness. The first mile or so rolls over a couple of low forested hills before the trail settles into a long, gentle grade alongside the Waptus River, crossing numerous small feeder creeks (reliable water the whole way) and skirting boggy meadow sections and old burn patches. Around mile 7-8 stay on the Waptus River Trail (rather than forking north toward Spade Lake) and continue to the Waptus River crossing below Waptus Lake —…",
+  "firstResearcherNote": "Unsure whether the route leaves the Waptus trail before or after Waptus Lake; placed as on the way.",
+  "camps": [
+   {
+    "name": "Talus Basin Below the Summit Chief Group",
+    "role": "main",
+    "elev": null,
+    "notes": ""
+   },
+   {
+    "name": "Waptus Lake, with Spade Lake above it",
+    "role": "route",
+    "elev": 2792,
+    "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. F…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Hour Creek Camp",
+    "elev": 2750,
+    "hiddenFromList": false
+   },
+   {
+    "name": "Talus Basin Below the Summit Chief Group",
+    "elev": 5500,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "name": "Park Glacier Headwall",
+  "peak": "wa_mount_baker",
+  "discipline": "mountaineering",
+  "grade": "IV",
+  "approach": "Southeast via Chain Lakes Trail to Ptarmigan Ridge. From Artist Point parking, take Chain Lakes Trail (682) to Ptarmigan Ridge Trail (682.1) junction. Continue 3 miles east to Coleman Pinnacle base, then 0.5 miles to Camp Kiser (~7,000 ft).",
+  "firstResearcherNote": "Entire list is Heliotrope Ridge and Easton camps; this route approaches over Ptarmigan Ridge, so the Portals camp and Camp Kiser are added. Unsure how often parties descend Coleman-Deming instead.",
+  "camps": [
+   {
+    "name": "Park Glacier camp near the Portals",
+    "role": "main",
+    "elev": null,
+    "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb."
+   },
+   {
+    "name": "Camp Kiser, Ptarmigan Ridge",
+    "role": "route",
+    "elev": null,
+    "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross."
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "name": "Cougar Divide Route",
+  "peak": "wa_hadley_peak",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east and turn onto Forest Service Road 33; follow roughly 11 miles of gravel road (rough in sections, high-clearance/SUV recommended, sedans passable with care) to its end at the Cougar Divide Trailhead/parking (room for 8-10 vehicles). Note the true trailhead may be roughly another kilometer past where online mapping apps route. Hike Cougar Divide Trail #601 along the ridge to its high point (~5,920 ft), then continue cross-country northeast along the open ridge, crossing near Dobbs Creek, to Chowder Ridge and the base of Hadley Peak's final …",
+  "firstResearcherNote": "Cougar Divide is this route's own ridge; Deadhorse basin sits below the way onto Chowder Ridge. Unsure how close the basin is to the Cougar line.",
+  "camps": [
+   {
+    "name": "Cougar Divide meadow camps",
+    "role": "main",
+    "elev": 5100,
+    "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Couga…"
+   },
+   {
+    "name": "Deadhorse Creek basin, below Chowder Ridge",
+    "role": "route",
+    "elev": 5300,
+    "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approachi…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "name": "Megalodon Ridge",
+  "peak": "wa_mount_goode",
+  "discipline": "alpine",
+  "grade": "IV+, 5.10",
+  "approach": "Start at the Rainy Pass trailhead on Highway 20 (large paved lot at ~4,800 ft) and head south on the Pacific Crest Trail. Follow the PCT roughly 9-10 miles, descending along Bridge Creek, to the junction with the North Fork Bridge Creek Trail near North Fork Camp. Continue on this increasingly brushy trail up the North Fork of Bridge Creek valley, crossing Grizzly Creek, to around trail-mile 14, where maintained tread effectively ends and you ford (or find a log crossing of) the North Fork of Bridge Creek - the crossing is easiest a few steps upstream at a cairn. From there it's off-trail trav…",
+  "firstResearcherNote": "Parties leave the North Fork trail before Grizzly Creek and bivy on a bench below the technical climbing; that bench is added. The Goode Glacier camps serve the Northeast Buttress. Unsure exactly where Walker Park sits relative to the turn-off.",
+  "camps": [
+   {
+    "name": "Bench bivy below Megalodon Ridge",
+    "role": "main",
+    "elev": null,
+    "notes": "An exposed bench after a short fifth-class step at the toe of the ridge, below the technical climbing. More bivy ledges exist after the southeast peak and on the summit."
+   },
+   {
+    "name": "Fireweed Camp, Bridge Creek / PCT",
+    "role": "route",
+    "elev": null,
+    "notes": "A Bridge Creek corridor camp on the PCT well short of the North Fork junction, near the Twisp Pass trail area. It is only useful to a Goode party as an overflow choice when the North Fork camps are bo…"
+   },
+   {
+    "name": "North Fork Camp, Bridge Creek / PCT junction",
+    "role": "route",
+    "elev": 2800,
+    "notes": "This sits right at the junction where the PCT leaves Bridge Creek for the North Fork, roughly ten miles in from the SR 20 trailhead, so it is the natural first-night stop for a party that started late…"
+   },
+   {
+    "name": "Walker Park Camp",
+    "role": "route",
+    "elev": 3086,
+    "notes": "Roughly two miles up the North Fork trail from the junction, this is the first camp that meaningfully shortens the walk to the Goode Glacier drainage. The tread to here is still ordinary maintained tr…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_goode_mountain_southwest_couloir",
+  "name": "Southwest Couloir",
+  "peak": "wa_mount_goode",
+  "discipline": "mountaineering",
+  "grade": "III",
+  "approach": "From the Bridge Creek/PCT trailhead on SR-20 near milepost 159 (Rainy Pass area, ~4,875 ft), follow the Pacific Crest Trail southbound along Bridge Creek. This stretch loses elevation steadily — roughly 2,000 ft over about 9.5-9.6 miles — down through forest to the North Fork Camp junction, where the PCT crosses Bridge Creek (a footbridge here has been washed out in past years; check current NPS conditions before counting on it). At the junction, turn onto the North Fork Bridge Creek Trail and head upstream (north); this climber's/stock trail is roughly 7 miles long and regains about 1,700 ft,…",
+  "firstResearcherNote": "Lateral moraine waypoint looks like the same ground as the glacier toe entry; the approach text and the camp entries describe slightly different lines, so unsure which camp most use.",
+  "camps": [
+   {
+    "name": "5,500 ft bivy below the slabs",
+    "role": "main",
+    "elev": 5500,
+    "notes": "PLANNED camp and the most commonly used one on this side of the peak. Reached after the slide-alder section and a crossing of the creek, tucked just below the low-angle slabs with rock walls around it…"
+   },
+   {
+    "name": "Goode Glacier toe",
+    "role": "main",
+    "elev": 6400,
+    "notes": "PLANNED camp on the moraine and rubble between roughly 6,400 and 6,800 ft. Flat ground is genuinely limited and the good spots are specific rather than general — expect to hunt for them, and expect gl…"
+   },
+   {
+    "name": "5,200 ft camp to the west",
+    "role": "route",
+    "elev": 5200,
+    "notes": "PLANNED camp, the fallback if you run out of daylight in the brush below. Perfectly serviceable, but reports consistently say the extra three hundred feet up to the higher bivy is worth carrying, beca…"
+   },
+   {
+    "name": "West Tower ledge, upper mountain",
+    "role": "route",
+    "elev": null,
+    "notes": "EMERGENCY ledge, not a camp. A narrow shelf on the north side of the crest between the West Tower and the main summit, where a solo climber spent a night wedged between rocks and still lost sleep to c…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Lateral moraine camp above Goode Glacier",
+    "elev": 6800,
+    "hiddenFromList": true
+   }
+  ]
+ },
+ {
+  "id": "wa_northeast_face_direct",
+  "name": "Northeast Face Direct",
+  "peak": "wa_mount_formidable",
+  "discipline": "mountaineering",
+  "grade": "5.6",
+  "approach": "Mount Formidable is a deep objective on the Ptarmigan Traverse, reached from the same Cascade Pass Trailhead as Mix Up Peak but with a much longer approach. From Cascade Pass, descend to Pelton Basin, cross below Cache Col, and traverse over glaciated and talus terrain past Kool-Aid Lake toward Yang Yang Lakes — typically a full day or more of travel with no maintained trail. From a Yang Yang Lakes camp, climbers make a rising traverse to the notch between Formidable and Spider Mountain, cross the Middle Cascade Glacier, and climb the South Route to the summit. This is a full multi-day mountai…",
+  "firstResearcherNote": "Rarely climbed; Kool-Aid Lake and the Spider-Formidable Col are the likely bases but the exact approach to the Formidable Glacier face is uncertain.",
+  "camps": [
+   {
+    "name": "Spider-Formidable Col",
+    "role": "main",
+    "elev": 7320,
+    "notes": "THE WORKING BASE CAMP FOR BOTH SPIDER MOUNTAIN AND MOUNT FORMIDABLE, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The tw…"
+   },
+   {
+    "name": "Kool-Aid Lake",
+    "role": "main",
+    "elev": 6120,
+    "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic."
+   },
+   {
+    "name": "Cache Col and the Cache Glacier shoulder",
+    "role": "route",
+    "elev": 6400,
+    "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and ca…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_magic_mountain_west_ridge",
+  "name": "West Ridge",
+  "peak": "wa_magic_mountain",
+  "discipline": "mountaineering",
+  "grade": "5.6",
+  "approach": "Approach via the general Cascade Pass/Ptarmigan Traverse access to reach the pocket glacier below Magic Mountain's west face.",
+  "firstResearcherNote": "Uncertain which side parties reach the west-face pocket glacier from; Kool-Aid Lake assumed, Pelton Basin possible.",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "role": "main",
+    "elev": 6120,
+    "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic."
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_indian_mountain_baker_scramble",
+  "name": "Indian Mountain Scramble",
+  "peak": "wa_indian_mountain_baker",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "approach": "No maintained trail reaches the summit — Indian Mountain is approached cross-country from the Hannegan Pass/Chilliwack River trail system, the only real access into this part of the park. From the Hannegan Trailhead (3,120 ft, end of FR 32/Ruth Creek Road), follow the Hannegan Pass Trail roughly 4-5.6 mi over 5,050-ft Hannegan Pass, then switchback down into the Chilliwack River valley to the Boundary Camp area (about 5.1 mi in) as you cross into North Cascades National Park. Continue down-valley on the Chilliwack River Trail, crossing the river via the hand-pulled 2-person cable car (replaced…",
+  "firstResearcherNote": "Assumes a Brush Creek side approach from Graybeal; no detailed route description for this peak was found.",
+  "camps": [
+   {
+    "name": "Graybeal Camp",
+    "role": "main",
+    "elev": null,
+    "notes": ""
+   },
+   {
+    "name": "Hannegan Camp, below Hannegan Pass",
+    "role": "route",
+    "elev": 4663,
+    "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from eve…"
+   },
+   {
+    "name": "Boundary Camp",
+    "role": "route",
+    "elev": 4400,
+    "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep unde…"
+   },
+   {
+    "name": "US Cabin Camp, Chilliwack River",
+    "role": "route",
+    "elev": 2608,
+    "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the t…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Boundary Camp",
+    "elev": 3800,
+    "hiddenFromList": false
+   },
+   {
+    "name": "Graybeal Camp",
+    "elev": 3139,
+    "hiddenFromList": false
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_dana_scramble",
+  "name": "Mount Dana Scramble",
+  "peak": "wa_mount_dana",
+  "discipline": "scrambling",
+  "grade": "Class 2-3",
+  "approach": "Getting to the trailhead is currently part of the approach: a 2023-24 washout closed Olympic Hot Springs Road to vehicles at the Madison Falls parking area, and as of the NPS's 2024-2025 advisories that closure adds roughly 7 miles each way of road walking or biking just to reach the Whiskey Bend trailhead (the road remains open to foot/bike traffic beyond Madison Falls). From Whiskey Bend, the actual hike-in follows the Elwha River Trail, a well-graded historic path along the river's east bank that passes the old Geyser Valley homestead sites (Michael's Cabin, Humes Ranch) in the first mile o…",
+  "firstResearcherNote": "Least certain of the batch: no clear record of Dana's standard camp; the upper Elwha / Bailey Range bivies and Chicago Camp are the reasonable bases; Dodger Point might serve a ridge approach but is unconfirmed; Mary's Falls Camp dropped as a duplicate of the Lillian/Mary's entry.",
+  "camps": [
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "role": "main",
+    "elev": null,
+    "notes": "This is the working base for the Elwha Basin peaks and the only sensible way to reach the Bailey Range from the south. From Chicago Camp the route into Elwha Basin is a notorious bushwhack in low snow…"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "role": "main",
+    "elev": null,
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-t…"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "role": "route",
+    "elev": null,
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and …"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "role": "route",
+    "elev": null,
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by…"
+   }
+  ],
+  "campsitePins": [
+   {
+    "name": "Mary's Falls Camp",
+    "elev": 1296,
+    "hiddenFromList": true
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_seattle_noyes_basin",
+  "name": "Noyes Basin Route",
+  "peak": "wa_mount_seattle",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "approach": "",
+  "firstResearcherNote": "No approach text; Low Divide is the base for all three Seattle routes; could not confirm which side Noyes Basin is entered from, so Elwha trail camps are kept onRoute tentatively.",
+  "camps": [
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "role": "main",
+    "elev": 3600,
+    "notes": "Low Divide is the saddle between MOUNT SEATTLE and MOUNT CHRISTIE and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and …"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "role": "route",
+    "elev": null,
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and …"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "role": "route",
+    "elev": null,
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by…"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "role": "route",
+    "elev": null,
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-t…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_colchuck_peak_east_ridge",
+  "name": "East Ridge (Non-Technical)",
+  "peak": "wa_colchuck_peak",
+  "discipline": "mountaineering",
+  "grade": "Class 2-3",
+  "approach": "From Leavenworth, drive Icicle Road (FR 7601 via Eightmile Road) to the Stuart Lake Trailhead (3,400 ft). Hike the Stuart Lake Trail roughly 2.5 miles (1,100 ft gain) to the Colchuck Lake Trail junction, then switchback up another 1.6 miles (1,100 ft gain) to Colchuck Lake (~4.1 mi, ~2,200 ft total). Continue along the lake's north shore across a boulder field to the base of the Colchuck Glacier.",
+  "firstResearcherNote": "Assumed to share the Colchuck Glacier approach from the south end of the lake; less certain than the glacier routes.",
+  "camps": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "role": "main",
+    "elev": 5570,
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR…"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "role": "main",
+    "elev": null,
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting …"
+   },
+   {
+    "name": "Talus and boulder bivies below Dragontail's north side",
+    "role": "route",
+    "elev": null,
+    "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline ca…"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_e_se_face",
+  "name": "E/SE Face",
+  "peak": "wa_witches_tower",
+  "discipline": "alpine",
+  "grade": "4th",
+  "approach": "From the Stuart Lake Trailhead (~3,400 ft, reached via ~8.7 mi of Icicle Creek Road southwest of Leavenworth), follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles, bear left (south) at the signed junction onto the Colchuck Lake Trail (this junction is also where the Lake Stuart fork continues straight); the trail crosses Mountaineer Creek on a log/boulder crossing that can be a wet, awkward ford in early season high water. Continue climbing through forest and over a boulder field to Colchuck Lake (5,570 ft) at roughly 4.3 miles from the trailhead — this is the last r…",
+  "firstResearcherNote": "Witches Tower is reached from the top of Aasgard Pass; camp at Colchuck Lake or go car-to-car. Low confidence on how often it is split.",
+  "camps": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "role": "main",
+    "elev": 5570,
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR…"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "role": "main",
+    "elev": null,
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting …"
+   }
+  ],
+  "campsitePins": []
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "name": "Northeast Ridge",
+  "peak": "wa_fortress_mountain",
+  "discipline": "mountaineering",
+  "grade": null,
+  "approach": "Same Trinity Trailhead approach as the East Ridge (via Buck Creek/Chiwawa River Trails); this line is normally climbed or descended as part of a link-up with the East Ridge or Southwest Slope rather than approached independently.",
+  "firstResearcherNote": "Normally climbed in a link-up from the Chiwawa basin side; the added bench is inferred from the East Ridge approach, not confirmed for this line.",
+  "camps": [
+   {
+    "name": "Chiwawa Basin bench",
+    "role": "main",
+    "elev": 6300,
+    "notes": "A flat heather bench in the upper Chiwawa basin between Fortress and Chiwawa, reached by a short climb from the end of the Chiwawa River trail. The usual high camp for the east side of Fortress and fo…"
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "role": "route",
+    "elev": 2800,
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel an…"
+   }
+  ],
+  "campsitePins": []
+ }
+]

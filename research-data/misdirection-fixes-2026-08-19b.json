@@ -1,0 +1,44 @@
+{
+ "_README": [
+  "Two misdirection defects found by the 2026-08-19 clustered enrichment batches, each settled by",
+  "evidence the catalog ALREADY HOLDS. Nothing here is researched and nothing is invented.",
+  "",
+  "wa_northwest_face_4 — the approach closed with 'the Northwest Face is visible on the peak's east",
+  "side across that valley', which cannot be true of a northwest face. Three of the row's own fields",
+  "say NW (aspect NW, face 'Northwest Face (a.k.a. Falcon Route)', overview 'the remote Northwest",
+  "Face'), so the approach sentence is the outlier. WHICH side of the valley was settled by a THIRD",
+  "record rather than guessed: areas.wa_little_big_chief_mountain (47.5297,-121.2567) sits 0.89 km",
+  "EAST and 0.69 km north of areas.wa_summit_chief_mountain (47.5235,-121.2685), so the peak stands",
+  "on the east side of Summit Chief Valley. 'the peak's east side' becomes 'the east side of that",
+  "valley' — one phrase, and the geometry now agrees with the aspect.",
+  "",
+  "wa_mount_teneriffe_standard_route — approach_logistics.trailhead said 'Mount Si Trailhead' while",
+  "the row's own approach text says to drive 'about 2.9 miles PAST the Mount Si trailhead' to the",
+  "Mount Teneriffe Trailhead lot, and its own Trailhead waypoint is named Mount Teneriffe Trailhead",
+  "at 47.4869,-121.7097. The blob had captured the landmark you drive past. The name is corrected",
+  "and the coordinate is COPIED FROM THE ROW'S OWN PIN — no coordinate is typed. trailheadDirection",
+  "is extended to the sentence the approach itself gives, so the blob no longer stops mid-drive at",
+  "the wrong lot."
+ ],
+
+ "wa_northwest_face_4": {
+  "area": "wa_little_big_chief_mountain",
+  "set": {
+   "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached by leaving the trail near Williams Lake for an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit. An alternate, longer approach comes from the east via the Necklace Valley Trail off Foss River Road (Skykomish/US 2 side), crossing La Bohn Gap before dropping to Dutch Miller Gap. For this specific route: leave the main Middle Fork Snoqualmie trail at a small steel bridge well before Dutch Miller Gap and cut cross-country south into Summit Chief Valley; the Northwest Face is visible on the east side of that valley, roughly 3 hours from the trailhead — a distinctly different final leg than the Northeast Face's direct ridge approach."
+  }
+ },
+
+ "wa_mount_teneriffe_standard_route": {
+  "area": "wa_mount_teneriffe",
+  "set": {
+   "approach_logistics": {
+    "peakLat": 47.5087156,
+    "peakLng": -121.6959398,
+    "trailhead": "Mount Teneriffe Trailhead",
+    "trailheadLat": 47.4869,
+    "trailheadLng": -121.7097,
+    "trailheadDirection": "From I-90 take Exit 31 into North Bend and continue on North Bend Way; turn left (north) on SE Mount Si Road and continue about 2.9 miles past the Mount Si trailhead to the paved Mount Teneriffe Trailhead lot."
+   }
+  }
+ }
+}

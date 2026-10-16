@@ -1,0 +1,87 @@
+{
+ "id": "wa_prusik_peak_south_face_burgner_stanley",
+ "name": "South Face (Burgner-Stanley)",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Self-issue day-use wilderness permit at the kiosk; overnight parties need a permit (advance reservation or daily lottery in Leavenworth).",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west edge of Leavenworth, turn onto Icicle Creek Road and drive about 8.4 miles, then turn left onto FS Road 7601 and follow the rough, potholed dirt road about 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass or interagency pass is required to park; day trips need the free self-issued Enchantments day-use permit at the trailhead, and overnight stays need a quota permit."
+  },
+  {
+   "lat": 47.4919578,
+   "lng": -120.8335801,
+   "elev": 5570,
+   "name": "Colchuck Lake",
+   "note": "Reliable water and the last established camp before Aasgard Pass; trail reaches the lake's north end after 2,100 ft of gain.",
+   "type": "Water",
+   "distMi": 4.75
+  },
+  {
+   "lat": 47.48028,
+   "lng": -120.82056,
+   "elev": 7841,
+   "name": "Aasgard Pass (Colchuck Pass)",
+   "note": "Steep, loose talus/scree (snow or ice into early summer) gaining roughly 2,200 ft in under a mile; watch for rockfall kicked down from parties above.",
+   "type": "Hazard",
+   "distMi": 6.5
+  },
+  {
+   "lat": 47.482495,
+   "lng": -120.7837684,
+   "elev": 6788,
+   "name": "Lake Viviane",
+   "note": "First lake in the Enchantment core basin after dropping off the pass; climbers report spotted saxifrage blooming along the shore between here and the base of the south face.",
+   "type": "Water",
+   "distMi": 8
+  },
+  {
+   "lat": 47.485953,
+   "lng": -120.7886982,
+   "elev": 7415,
+   "name": "Gnome Tarn",
+   "note": "Leave the main basin trail here and traverse northeast toward Prusik's south face (7,350 ft); classic Prusik-over-tarn photo spot.",
+   "type": "Junction",
+   "distMi": 9.5
+  },
+  {
+   "lat": 47.48681,
+   "lng": -120.78457,
+   "name": "Prusik Peak south face base",
+   "type": "Campsite",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7800,
+   "name": "Chockstone squeeze / upper chimney (P5)",
+   "note": "Squirm through a tight hole behind a chockstone (awkward with a pack on) then work right into a slick, sparsely-protected 5.9+ chimney.",
+   "type": "Hazard",
+   "distMi": 9.5
+  },
+  {
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elev": 8008,
+   "name": "Prusik Peak Summit",
+   "note": "True summit and top of the six-pitch, ~650 ft Burgner-Stanley line; small exposed perch at the west end of The Temple ridge.",
+   "type": "Summit",
+   "distMi": 9.5
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7600,
+   "name": "North face rappel descent",
+   "note": "Five rappels off slung blocks/horns down the north face, roughly an hour back to the base of the south face route where packs are typically stashed.",
+   "type": "Hazard",
+   "distMi": 9.5
+  }
+ ]
+}

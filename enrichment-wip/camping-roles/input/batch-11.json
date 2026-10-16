@@ -1,0 +1,1795 @@
+[
+ {
+  "zone": "nason-ridge",
+  "routes": [
+   {
+    "id": "wa_alpine_lookout_round_mountain_trail",
+    "name": "Round Mountain Trail (Standard Route)",
+    "peak": "Alpine Lookout (Round Mountain)",
+    "area_id": "wa_alpine_lookout",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6237,
+    "overview": "A non-technical ridge-walk trail hike from the east side of Nason Ridge, climbing steadily through recovering burn forest to a saddle, then following the ridge crest to the historic Alpine Lookout at the summit.",
+    "approach": "From Leavenworth, drive US Highway 2 west approximately 17.4-17.7 miles (or from Stevens Pass, drive east about 18 miles) to just past the Nason Creek Rest Area. Turn north (right heading west / left heading east) onto the unsigned Butcher Creek Road, Forest Road 6910 -- watch for the turn on a curv…",
+    "camps": [
+     {
+      "name": "Rock Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5851,
+      "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchbacks on a hot, open, so…"
+     },
+     {
+      "name": "Crescent Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slop…"
+     },
+     {
+      "name": "Merritt Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5010,
+      "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and it is by a wide mar…"
+     },
+     {
+      "name": "Alpine Lookout — day use only, no overnight",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6235,
+      "notes": "The lookout itself: you may walk to it and, if it is staffed and the lookout is willing, speak to whoever is on duty, but you may not stay in it or expect shelter from it. Plan the day accordingly and do not treat the bu…"
+     },
+     {
+      "name": "Mount Howard summit-area bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the cres…"
+     },
+     {
+      "name": "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The drive-in base for the whole ridge, and the honest recommendation for most parties climbing these peaks: all four summits are day objectives from the highway trailheads, and sleeping at a developed campground with wat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_howard_south_slope",
+    "name": "South Slope",
+    "peak": "Mount Howard",
+    "area_id": "wa_mount_howard",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7063,
+    "overview": "The standard and easiest line to Mount Howard's summit: a long off-trail approach via the Nason Ridge Trail to Crescent Lake, followed by a Class 2-3 scramble up the peak's broad, open south-facing slope and a short loose gully to the summit ridge.",
+    "approach": "Two common trailheads on US-2 in Chelan County give access. Merritt Lake Trailhead (3,000 ft, high-clearance/AWD recommended on the access road): from Leavenworth take US-2 west about 24 miles (or from Stevens Pass, east about 11.5 miles) to milepost 76, turn onto Forest Road 657, and continue 1.5 m…",
+    "camps": [
+     {
+      "name": "Rock Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5851,
+      "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchbacks on a hot, open, so…"
+     },
+     {
+      "name": "Crescent Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slop…"
+     },
+     {
+      "name": "Merritt Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5010,
+      "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and it is by a wide mar…"
+     },
+     {
+      "name": "Alpine Lookout — day use only, no overnight",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6235,
+      "notes": "The lookout itself: you may walk to it and, if it is staffed and the lookout is willing, speak to whoever is on duty, but you may not stay in it or expect shelter from it. Plan the day accordingly and do not treat the bu…"
+     },
+     {
+      "name": "Mount Howard summit-area bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the cres…"
+     },
+     {
+      "name": "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The drive-in base for the whole ridge, and the honest recommendation for most parties climbing these peaks: all four summits are day objectives from the highway trailheads, and sleeping at a developed campground with wat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_mastiff_south_route",
+    "name": "South Route",
+    "peak": "Mount Mastiff",
+    "area_id": "wa_mount_mastiff",
+    "discipline": "scrambling",
+    "grade": "Class 2-3 scramble",
+    "high_point_ft": 6747,
+    "overview": "Mount Mastiff (6,747 ft) is the third-highest point on Nason Ridge, roughly a mile east of Mount Howard (7,063 ft), overlooking Lake Wenatchee and the US-2 corridor between Leavenworth and Stevens Pass. The South (Southeast Ridge) Route climbs from the Merritt Lake trailhead through old-growth fores…",
+    "approach": "From US-2 near milepost 76 (about 11.5 miles east of Stevens Pass / 24 miles west of Leavenworth), turn onto Forest Road 657 (rough, high-clearance recommended) and drive 1.5 miles to the Merritt Lake Trailhead (3,050 ft). Hike the Merritt Lake Trail up toward the ridge, connecting with the Nason Ri…",
+    "camps": [
+     {
+      "name": "Rock Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5851,
+      "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchbacks on a hot, open, so…"
+     },
+     {
+      "name": "Crescent Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slop…"
+     },
+     {
+      "name": "Merritt Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5010,
+      "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and it is by a wide mar…"
+     },
+     {
+      "name": "Alpine Lookout — day use only, no overnight",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6235,
+      "notes": "The lookout itself: you may walk to it and, if it is staffed and the lookout is willing, speak to whoever is on duty, but you may not stay in it or expect shelter from it. Plan the day accordingly and do not treat the bu…"
+     },
+     {
+      "name": "Mount Howard summit-area bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the cres…"
+     },
+     {
+      "name": "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The drive-in base for the whole ridge, and the honest recommendation for most parties climbing these peaks: all four summits are day objectives from the highway trailheads, and sleeping at a developed campground with wat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_rock_mountain_northeast_ridge",
+    "name": "Northeast Ridge (Nason Ridge Traverse)",
+    "peak": "Rock Mountain",
+    "area_id": "wa_rock_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6841,
+    "overview": "A cross-country mountaineering line up Rock Mountain's northeast side, reached by crossing the Howard-Rock col at the far end of a multi-summit Nason Ridge traverse (Mt. Mastiff - Mt. Howard - Rock Mountain), rather than via the maintained West Route trail.",
+    "approach": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft). Climb via Mahar Creek Ridge to Merritt Lake, then continue over Mt. Mastiff's Southeast Ridge and Mt. Howard's Northeast Ridge (both reported as snow climbs/rock scrambles) before dropping to the Howard-Rock col and climbing Rock Mountain…",
+    "camps": [
+     {
+      "name": "Rock Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5851,
+      "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchbacks on a hot, open, so…"
+     },
+     {
+      "name": "Crescent Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slop…"
+     },
+     {
+      "name": "Merritt Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5010,
+      "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and it is by a wide mar…"
+     },
+     {
+      "name": "Alpine Lookout — day use only, no overnight",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6235,
+      "notes": "The lookout itself: you may walk to it and, if it is staffed and the lookout is willing, speak to whoever is on duty, but you may not stay in it or expect shelter from it. Plan the day accordingly and do not treat the bu…"
+     },
+     {
+      "name": "Mount Howard summit-area bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the cres…"
+     },
+     {
+      "name": "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The drive-in base for the whole ridge, and the honest recommendation for most parties climbing these peaks: all four summits are day objectives from the highway trailheads, and sleeping at a developed campground with wat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_rock_mountain_west_route",
+    "name": "West Route (Rock Mountain Trail)",
+    "peak": "Rock Mountain",
+    "area_id": "wa_rock_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 6852,
+    "overview": "Rock Mountain (6,800s ft) is the second-highest point on Nason Ridge, about 6.3 miles northeast of Stevens Pass and directly above US-2, in the Okanogan-Wenatchee National Forest. The standard trail (Rock Mountain Trail #1587) is one of the steepest maintained trails in the Stevens Pass area — a rel…",
+    "approach": "From the Rock Mountain Trail #1587 pullout on US-2 (small dirt lot on the north side of the highway near the powerlines, no facilities), the trail launches immediately uphill on what was formerly a service road. At about 0.33 mile a signed junction marks where the route leaves the old roadbed, narro…",
+    "camps": [
+     {
+      "name": "Rock Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5851,
+      "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchbacks on a hot, open, so…"
+     },
+     {
+      "name": "Crescent Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slop…"
+     },
+     {
+      "name": "Merritt Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5010,
+      "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and it is by a wide mar…"
+     },
+     {
+      "name": "Alpine Lookout — day use only, no overnight",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6235,
+      "notes": "The lookout itself: you may walk to it and, if it is staffed and the lookout is willing, speak to whoever is on duty, but you may not stay in it or expect shelter from it. Plan the day accordingly and do not treat the bu…"
+     },
+     {
+      "name": "Mount Howard summit-area bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the cres…"
+     },
+     {
+      "name": "Nason Creek Campground and the Lake Wenatchee drive-in camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The drive-in base for the whole ridge, and the honest recommendation for most parties climbing these peaks: all four summits are day objectives from the highway trailheads, and sleeping at a developed campground with wat…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "needles-royal-basin",
+  "routes": [
+   {
+    "id": "wa_baldy_standard",
+    "name": "Standard Route",
+    "peak": "Baldy",
+    "area_id": "wa_baldy",
+    "discipline": "mountaineering",
+    "grade": "Class 1-2",
+    "high_point_ft": 6827,
+    "overview": "Baldy's standard route is a steep trail hike/easy scramble on Gray Wolf Ridge in the northeastern Olympic Mountains, gaining Buckhorn Wilderness high ground before the final stretch crosses toward the Olympic National Park boundary near the summit. It follows the Lower and Upper Maynard Burn Trail (…",
+    "approach": "The climber/hiker trailhead is at the end of FR 2870 (signed Baldy/Tyler Peak trailhead, ~12-car gravel pullout, roughly 47.883, -123.143) in the Upper Dungeness drainage of the Hood Canal Ranger District. From the trailhead, follow the old roadbed a short distance; at about 0.3 mile the Baldy climb…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Maynard Burn fire-line clearing",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Steep switchbacks gain roughly 1,600 ft in under a mile. At about 1.3 miles the path crosses the old Maynard Burn track near a short junction with the Upper Dun…"
+     }
+    ]
+   },
+   {
+    "id": "wa_gray_wolf_ridge_se_slopes",
+    "name": "Southeast Slopes (Standard Scramble)",
+    "peak": "Gray Wolf Ridge",
+    "area_id": "wa_gray_wolf_ridge",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7218,
+    "overview": "Gray Wolf Ridge is a long, dry, rain-shadow alpine ridge in the northeastern Olympic Mountains, straddling the boundary between the Buckhorn Wilderness (Olympic National Forest, Quilcene Ranger District) and Olympic National Park. The ridge carries six rocky, alpine-meadow-fringed summits — Maynard …",
+    "approach": "The Southeast Slopes route is approached via the Upper Dungeness/Maynard Burn trail system, not by any direct road-side access - the drive only gets you to the trailhead at the end of FR-2860-120 (off FR-2870/Lost Mountain Rd, itself off Palo Alto Rd south of US-101 near Sequim). From the trailhead,…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     }
+    ]
+   },
+   {
+    "id": "wa_honeymoon_route",
+    "name": "Honeymoon Route",
+    "peak": "Mount Deception",
+    "area_id": "wa_mount_deception",
+    "discipline": "alpine",
+    "grade": "3rd",
+    "high_point_ft": 7788,
+    "overview": "Also known as the Northeast Couloir or Northeast Chute, this is a steeper, more direct alternative to the standard scramble, climbing a prominent NE-facing snow couloir from upper Royal Basin straight to the upper mountain.",
+    "approach": "From the Upper Dungeness/Royal Basin Trailhead (elev. ~2,500 ft), hike the Upper Dungeness River Trail roughly 7 miles with about 2,500 ft of gain to Royal Lake, then continue about a mile farther into Upper Royal Basin (~5,600 ft), a meadow-and-tarn basin ringed by Deception, Mystery, Fricaba, and …",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_cameron_standard",
+    "name": "Standard Route (Southeast Slopes)",
+    "peak": "Mount Cameron",
+    "area_id": "wa_mount_cameron",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7190,
+    "overview": "Mount Cameron is a broad, triple-summited interior Olympic peak (West, Middle, and East tops; the highpoint is on the East summit) in the Daniel J. Evans Wilderness, about 21 miles southwest of Sequim. It sits at the head of Cameron Basin/Cameron Pass, between the Grand Valley/Grand Pass drainage to…",
+    "approach": "Primary approach: drive the narrow, one-lane gravel Obstruction Point Road (Olympic NP's highest road, topping out at 6,135 ft; usually open only early/mid-July through mid-October) 8 miles east from the Hurricane Ridge Visitor Center to the Obstruction Point trailhead. Hike the Grand Pass Trail rou…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Cameron Basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Established backcountry sites in the upper basin below Cameron Pass along Cameron Creek; bear canister required (no trees to hang food), no campfires above 3,50…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_clark_standard",
+    "name": "Standard Route",
+    "peak": "Mount Clark",
+    "area_id": "wa_mount_clark",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 7528,
+    "overview": "Mount Clark (7,528 ft) is a striking basalt spire in The Needles, the interior sub-range of the Olympic Mountains, and the second-highest summit in The Needles behind neighboring Sweat Spire (7,580 ft, on Mount Johnson, 0.26 mi SW). First climbed August 21, 1940 by George R. Martin and Elvin Johnson…",
+    "approach": "From the Upper Dungeness Trailhead (2,500 ft, Olympic National Forest, Hood Canal Ranger District), follow the Royal Basin Trail south along the Dungeness River; at about 1 mile the Royal Basin fork splits off (cross a bridge) from the Dungeness River/Constance Pass Trail. Continue past the Royal Cr…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Lower Royal Meadow Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4695,
+      "notes": "One of the designated Royal Basin camping zones — three sites tucked in the trees (the farther two more secluded) beside a broad, stream-crossed meadow."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_claywood_standard",
+    "name": "Standard Route",
+    "peak": "Mount Claywood",
+    "area_id": "wa_mount_claywood",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 6836,
+    "overview": "Mount Claywood (6,836 ft) sits at the head of the Lost River in Olympic National Park's interior, about 2.4 mi southwest of taller Mount Cameron (7,190 ft) and roughly 15 mi east of Mount Olympus, with Mt. Fromme just 0.58 mi to its southeast. Lt. Joseph P. O'Neil named it \"Mount Clay Wood\" in 1885 …",
+    "approach": "From the Obstruction Point Trailhead (6,150 ft) — reached via the narrow, unpaved Obstruction Point Road that branches off Hurricane Ridge Road just below Hurricane Ridge — follow the Grand Pass Trail as it climbs onto and traverses Lillian Ridge. The first mile-plus is an easy, open ridge walk (the…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Upper Cameron Basin high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5450,
+      "notes": "Established high camp in the Cameron Creek/Lost Basin area beyond the pass; bear canister required (trees too short to hang food) and notoriously buggy in seaso…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_deception_standard",
+    "name": "Standard Scramble (Royal Basin)",
+    "peak": "Mount Deception",
+    "area_id": "wa_mount_deception",
+    "discipline": "mountaineering",
+    "grade": "Class 2 (steep and exposed)",
+    "high_point_ft": 7788,
+    "overview": "Mount Deception (7,788 ft) is the second-highest summit in the Olympic Mountains after Mount Olympus, and the highest point in the eastern Olympics. It rises at the head of Royal Basin above Royal Creek within the Daniel J. Evans Wilderness of Olympic National Park, Jefferson County. The peak is bui…",
+    "approach": "From the Upper Dungeness Trailhead (2,500 ft, end of FR 2870; USFS day-use fee/permit required), start on the Upper Dungeness Trail (FST 833). The trail climbs gently through old-growth forest along the Dungeness River; at about 1 mile it reaches Royal Creek and the junction with the Royal Basin Tra…",
+    "camps": [
+     {
+      "name": "Royal Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3830,
+      "notes": "Forested sites low in the valley, well short of the basin. An approach camp for a party arriving late rather than a base for the climb: the summit is a long way above, past Royal Lake and the upper basin."
+     },
+     {
+      "name": "Lower Royal Meadow",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4695,
+      "notes": "Subalpine sites beside the creek a short way below Royal Lake — a useful fallback when the lake itself is booked out, at the cost of a little height on summit day."
+     },
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "The common base camp, about seven miles in, with a seasonal ranger camp up-valley. Reckon on roughly five hours from Shelter Rock to the summit — but note that published descriptions place Shelter Rock both above and bel…"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "The climbers' camp, a mile and about 500 ft above Royal Lake, and the point the summit day is usually measured from. A maze of tarns, moraines, heather, snowfields and house-sized boulders; the flattest ground is on the …"
+     },
+     {
+      "name": "Royal Basin / Royal Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_fricaba_standard",
+    "name": "Standard Scramble (Constance Pass / Home Lake)",
+    "peak": "Mount Fricaba",
+    "area_id": "wa_mount_fricaba",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7139,
+    "overview": "Mount Fricaba (7,139 ft) is a rain-shadowed, double-summit peak in the north-central Olympic Mountains, straddling the boundary between Olympic National Park and the Buckhorn Wilderness of Olympic National Forest — it is the highest point in both. It sits near Mount Deception and Mount Mystery and i…",
+    "approach": "From the Upper Dungeness Trailhead (~2,880 ft, end of FR 2870), follow the Upper Dungeness Trail #833.2 south along the Dungeness River. The first mile is mostly flat; stay left at the Royal Basin Trail junction near 1 mile, and reach Camp Handy (riverside meadow with a cedar shingle shelter, a popu…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_johnson_standard",
+    "name": "Standard Route",
+    "peak": "Mount Johnson",
+    "area_id": "wa_mount_johnson",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 7680,
+    "overview": "Mount Johnson (7,680 ft) is the fourth-highest summit in the Olympic Mountains and the highest point in The Needles, a rugged subrange radiating north from Mount Deception above Royal Basin, in the remote eastern Olympics within the Daniel J. Evans Wilderness. It sits just 1.34 miles north of Mount …",
+    "approach": "From the Upper Dungeness Trailhead, start on Upper Dungeness Trail #833.2 through second-growth and then old-growth forest along the Dungeness River. At about 1 mile, bear right at the signed junction onto the Royal Basin Trail (the left fork continues up-valley toward Boulder Shelter/Constance Pass…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Royal Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3500,
+      "notes": "First two designated trailside campsites on Royal Creek at ~3,500 ft with reliable creek water; fires allowed only here, not at the third site 3/4 mile farther …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_mystery_standard",
+    "name": "Standard Scramble (Deception Creek / Royal Basin)",
+    "peak": "Mount Mystery",
+    "area_id": "wa_mount_mystery",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 7639,
+    "overview": "Mount Mystery (7,639 ft) is a remote, glaciated summit in the eastern Olympic Mountains at the head of Deception Creek, just south of Mount Deception. Named circa 1915 by USFS official G.A. Whitehead for its regal appearance in fog, it's a big, classic-looking peak that's rarely climbed because of t…",
+    "approach": "From the Upper Dungeness Trailhead (Forest Road 2860, Olympic National Forest), follow the Upper Dungeness Trail (#833.2) about 1 mile, then Royal Creek Trail (#832) into Buckhorn Wilderness and across the park boundary to Royal Lake / Royal Basin (roughly 6-7 miles and ~2,500 ft of gain from the tr…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Royal Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3500,
+      "notes": "Established camp and reliable water along Royal Creek in mossy forest, a common first-night stop before pushing to the basin."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_walkinshaw_scramble",
+    "name": "The Needles Scramble",
+    "peak": "Mount Walkinshaw",
+    "area_id": "wa_mount_walkinshaw",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 7378,
+    "overview": "One of eleven summits in The Needles, a range of jagged Eocene sandstone-and-pillow-basalt spires that radiate north from Mount Deception and form the west wall of Royal Basin in the dry, rain-shadowed eastern Olympics. Walkinshaw (7,378') is the range's northernmost and most accessible peak — first…",
+    "approach": "From the Upper Dungeness Trailhead (~2,960 ft, end of FR 2870), start on the Upper Dungeness Trail #833.2, which runs a gentle, mostly level mile through old-growth forest along the Dungeness River to a well-signed junction. Bear right (east, then south) onto the Royal Basin Trail #840 and settle in…",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     },
+     {
+      "name": "Royal Lake designated camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "The forest opens into wildflower meadows around the six-mile mark, with the 7,000 ft summits of Mount Clark and Mount Walkinshaw in view ahead. The trail then s…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sundial_northeast",
+    "name": "East Slopes (Standard)",
+    "peak": "Sundial",
+    "area_id": "wa_sundial",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7200,
+    "overview": "A minor, seldom-climbed summit in The Needles — a tight cluster of rugged peaks (Mount Clark 7,528 ft, Mount Johnson/Sweat Spire, Mount Walkinshaw, Gilhooley Tower, Gasp Pinnacle) ringing the head of Royal Basin in the far northeastern corner of Olympic National Park, in the Dungeness River drainage…",
+    "approach": "Drive Hwy 101 to just before Sequim Bay State Park, turn onto Louella Rd, then Palo Alto Rd (becomes FR 28) for about 6 miles, turn right on FR 2880 along the Dungeness River, then in 1.7 miles turn left on FR 2870 and continue roughly 6.5–9 miles (gravel, winds steeply down to a river crossing) to …",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_incisor_scramble",
+    "name": "The Needles Scramble",
+    "peak": "The Incisor",
+    "area_id": "wa_the_incisor",
+    "discipline": "alpine",
+    "grade": "Class 3-4",
+    "high_point_ft": 7440,
+    "overview": "The Incisor is one of eleven named summits along The Needles, a serrated ridge of loose metamorphic/greenstone rock spires in the eastern Olympic Mountains above Royal Basin, within the Daniel J. Evans Wilderness of Olympic National Park. At 7,440 ft it is a mid-height summit in the group — lower th…",
+    "approach": "From US 101 near Sequim, follow Palo Alto Rd/Forest Road 2880 to Dungeness Forks Campground, then FR 2870 about 8.7 miles to the Upper Dungeness Trailhead (~2,500 ft, at the Dungeness River bridge). Hike the Upper Dungeness Trail #833 about 1 mile to the Royal Creek/Royal Basin Trail #832 junction, …",
+    "camps": [
+     {
+      "name": "Royal Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from …"
+     },
+     {
+      "name": "Upper Royal Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which i…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is o…"
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4890,
+      "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here…"
+     },
+     {
+      "name": "Home Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5308,
+      "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this …"
+     },
+     {
+      "name": "Cedar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5325,
+      "notes": "This is the only overnight in the zone that meaningfully serves the Gray Wolf Ridge crest, including the north end of the Needles ridge at Walkinshaw. It sits at about five thousand three hundred feet in a basin on the G…"
+     },
+     {
+      "name": "Cameron Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very diff…"
+     },
+     {
+      "name": "Dose Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4472,
+      "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "nooksack-hannegan",
+  "routes": [
+   {
+    "id": "wa_ellation",
+    "name": "Ellation",
+    "peak": "Mamie Peak",
+    "area_id": "wa_mamie_peak",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "high_point_ft": 5000,
+    "overview": "An 8-pitch, roughly 800 ft outing up the best rock on Mamie Peak's center buttress: three pitches of techy slab lead into five sustained, exposed pitches of face, friction, and crack climbing to a 5.11a crux (or 5.10 A0 alternative).",
+    "approach": "This crag's coordinates correspond to the Hannegan Pass/Ruth Creek Valley area near Mt. Baker, sometimes referenced as 'Ellation Crags,' a minor, lightly-developed granite cragging/multipitch area. The general access is from I-5 Exit 255, east on SR-542 (Mt. Baker Highway) about 46 miles, then a lef…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     }
+    ]
+   },
+   {
+    "id": "wa_icy_peak_ruth_icy_traverse",
+    "name": "Ruth-Icy Traverse (Northwest Ridge, via Ruth Mountain)",
+    "peak": "Icy Peak",
+    "area_id": "wa_icy_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "high_point_ft": 7073,
+    "overview": "A committing high-ridge traverse linking Ruth Mountain to Icy Peak's true (Southeast) summit via the Ruth-Icy Saddle and Icy Peak's Northwest Ridge — a full alpine day combining glacier travel, loose ridge scrambling, and an exposed Class 4 summit ridge.",
+    "approach": "Drive Mt. Baker Highway (SR 542) to Hannegan Pass Road (FR 32) and follow it to its end at the Hannegan Trailhead/Campground (~3,100 ft, at the end of Ruth Creek Road). Hike the Hannegan Pass Trail roughly 4 miles and about 2,000 ft up to Hannegan Pass (~5,050 ft), then continue on climbers' route/s…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     }
+    ]
+   },
+   {
+    "id": "wa_icy_peak_southwest_route",
+    "name": "Southwest Route / Icy Glacier",
+    "peak": "Icy Peak",
+    "area_id": "wa_icy_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4",
+    "high_point_ft": 7073,
+    "overview": "Icy Peak is a remote, heavily glaciated summit at the head of the Nooksack Cirque in the North Cascades, geologically a remnant of the ancient Hannegan Caldera volcano. Small glaciers cling to every flank, with an icefall dropping into the northeast cirque. The peak has two summits — a lower, more-f…",
+    "approach": "Start at the Hannegan Pass Trailhead (Trail #674) at road's end on FS Road 32 (Hannegan Pass Road), off SR 542 (Mt. Baker Highway), elevation ~3,100 ft. Hike Trail #674 roughly 4 miles, switchbacking up through forest along Ruth Creek to Hannegan Pass (5,066 ft), gaining ~2,000 ft. The signed Hanneg…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     },
+     {
+      "name": "Ruth Mountain summit bivy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7115,
+      "notes": "Common two-day bivy spot near Ruth's true summit (not the benchmark) before continuing to Icy Peak; flat tent sites with seasonal snowmelt for water."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_sefrit_bloody_head_couloir",
+    "name": "Bloody Head Couloir",
+    "peak": "Mount Sefrit",
+    "area_id": "wa_mount_sefrit",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": null,
+    "overview": "A confined snow/ice/rock couloir on Sefrit's north side (also called the North Couloir), climbing about 1,800 feet from talus above Ruth Creek to gain the upper snow slopes of Nooksack Ridge near the summit crest.",
+    "approach": "Same trailhead access as the Southeast Ridge route: drive to Ruth Creek Road's end at Hannegan Campground via Mt. Baker Hwy (SR 542) and Hannegan Pass Road (FS 32)/Ruth Creek Road. From the Ruth Creek trail at about 3,450 ft, leave the trail, drop southwest to cross Ruth Creek, and cross talus to th…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_sefrit_southeast_ridge",
+    "name": "Southeast Ridge",
+    "peak": "Mount Sefrit",
+    "area_id": "wa_mount_sefrit",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7191,
+    "overview": "The classic north-side line: a steep snow gully ('Wall Street') gains the Northwest Glacier, which is crossed to a 6,500-ft saddle west of the summit, followed by a Class 2-3 scramble up the exposed southeast ridge to the top.",
+    "approach": "Drive Mt. Baker Highway (SR 542) to Hannegan Pass Road (FS 32); at 1.3 miles bear left onto Ruth Creek Road and continue to its end at Hannegan Campground (about 2,950 ft). From the pullout/campground, cross Ruth Creek (a log crossing has been used) and bushwhack roughly 45 minutes through slide ald…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_sefrit_southwest_ridge",
+    "name": "Southwest Ridge",
+    "peak": "Mount Sefrit",
+    "area_id": "wa_mount_sefrit",
+    "discipline": "scrambling",
+    "grade": "Grade II-III, Class 4",
+    "high_point_ft": 7191,
+    "overview": "A steep, seldom-climbed 7,191-foot summit rising abruptly above the North Fork Nooksack River, about three miles north of Mount Shuksan in the Mount Baker Wilderness (Mount Baker-Snoqualmie National Forest, Whatcom County). Sefrit is notorious among North Cascades climbers less for technical difficu…",
+    "approach": "From Glacier, drive Mt. Baker Highway (SR 542) east about 12.5 miles, turn left on Hannegan Pass Road (FR 32), continue just over a mile to the junction with Nooksack Cirque Road (FR 34), and follow FR 34 one mile to its end at the Nooksack Cirque Trailhead (do not confuse with the separate Hannegan…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     }
+    ]
+   },
+   {
+    "id": "wa_nooksack_tower_beckey_route",
+    "name": "North Face (Beckey-Schmidtke Route)",
+    "peak": "Nooksack Tower",
+    "area_id": "wa_nooksack_tower",
+    "discipline": "alpine",
+    "grade": "Grade IV, 5.4",
+    "high_point_ft": 8285,
+    "overview": "A dramatic and serious rock spire on the northeast side of Mount Shuksan's main massif, ringed by the Price, East Nooksack, and West Nooksack Glaciers, Nooksack Tower is one of the more committing summits in the North Cascades, with a reputation for loose rock and a demanding approach. The East Ridg…",
+    "approach": "From Bellingham, exit Interstate 5 at Sunset Drive/Mount Baker exit. Drive Mount Baker Highway (Washington 542) east through the town of Glacier (last resupply for groceries) and continue 13 miles to the Nooksack River bridge. Immediately before the bridge, turn left on Nooksack River Road (USFS #32…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     },
+     {
+      "name": "Moraine bivy at ~5,900 ft",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "Last reliable flat rock for bivy bags before the tower, with a gentle slope leading directly onto the Price Glacier."
+     }
+    ]
+   },
+   {
+    "id": "wa_nooksack_tower_south_face",
+    "name": "South Face",
+    "peak": "Nooksack Tower",
+    "area_id": "wa_nooksack_tower",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "high_point_ft": 8285,
+    "overview": "The rarely-climbed steep south face rises directly above the East Nooksack Glacier, presenting a much more technical alpine rock and ice route than the standard north face. A serious 12-pitch Grade V climb with poor rock quality and limited protection.",
+    "approach": "Approach is similar to the Beckey route via Ruth Creek and Price Lake moraine, but instead of ascending toward Price Glacier, traverse to the East Nooksack Glacier. Climb to the base of the south face (elevation approximately 6,500-7,000 feet), which rises directly above the glacier. Multiple variat…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     }
+    ]
+   },
+   {
+    "id": "wa_ruth_icy_traverse",
+    "name": "Ruth-Icy Traverse",
+    "peak": "Ruth Mountain",
+    "area_id": "wa_ruth_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, 4th class",
+    "high_point_ft": 7115,
+    "overview": "A remote, two-summit alpine traverse linking Ruth Mountain's glaciated dome with the rugged 4th-class summit block of neighboring Icy Peak, connected by a high ridge/saddle traverse below the dramatic Nooksack Cirque. Widely regarded as one of the best moderate outings and finest viewpoints in the M…",
+    "approach": "Shares its trailhead and lower approach with the South Slopes/Ruth Glacier route: Hannegan Pass Trail #674 from the Hannegan Pass Trailhead (end of FR-32) up the Ruth Creek valley to Hannegan Pass (5,066 ft, ~4 miles, ~2,000 ft gain), then the climbers' path east and south past the pond below the pa…",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     },
+     {
+      "name": "Ruth Glacier Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Common high camp on Ruth Mountain's north slope."
+     }
+    ]
+   },
+   {
+    "id": "wa_ruth_mountain_south_slopes",
+    "name": "North Face / Ruth Glacier",
+    "peak": "Ruth Mountain",
+    "area_id": "wa_ruth_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 2-3",
+    "high_point_ft": 7115,
+    "overview": "A friendly glaciated peak above Hannegan Pass, Ruth Mountain is one of the more accessible alpine summits in the Mount Baker area and a popular introduction to glacier travel. The north-side Ruth Glacier gives a moderate snow climb with a short scramble to the summit.",
+    "approach": "From the Hannegan Pass Trailhead (end of FR-32, ~5.3 miles off Mt. Baker Highway/SR 542) follow Hannegan Pass Trail #674 up the Ruth Creek valley. The first ~2-2.5 miles climb gently through old-growth and subalpine forest with Ruth Creek running alongside and views north to Mt. Sefrit and Nooksack …",
+    "camps": [
+     {
+      "name": "Hannegan trailhead, end of the Ruth Creek road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is norma…"
+     },
+     {
+      "name": "Ruth Arm ridge camps below the Ruth Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff band…"
+     },
+     {
+      "name": "Ruth Mountain summit camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7100,
+      "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and be…"
+     },
+     {
+      "name": "Notch bivy on the Ruth-Icy ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route …"
+     },
+     {
+      "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5900,
+      "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier fr…"
+     },
+     {
+      "name": "Nooksack Cirque river bottom, below the tower",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3000,
+      "notes": "SAY THIS PLAINLY: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genui…"
+     },
+     {
+      "name": "Hannegan Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "A short further climb brings you to the designated camp just off the main trail. This is where the grade kicks up into the switchbacks for the pass, so it is th…"
+     },
+     {
+      "name": "Ruth Arm",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Past the point the path eases out onto the open arm below the glacier, losing a little height. Camping here sits outside the national park boundary and needs no…"
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,103 @@
+{
+ "id": "wa_cascade_peak_east_ridge",
+ "name": "East Ridge and NW Chimney",
+ "waypoints": [
+  {
+   "lat": 48.476,
+   "lng": -121.076,
+   "elev": 3600,
+   "name": "Cascade Pass Road (near trailhead)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3600,
+   "directions": "Drive Cascade River Road to its end at the Cascade Pass Trailhead, about 3,600 feet. The road washes out periodically, so confirm it is open all the way to the trailhead before you go. A North Cascades National Park wilderness permit is required for the overnight bivy this route involves."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3700,
+   "name": "Base of access couloir",
+   "type": "Junction",
+   "distMi": 0.7,
+   "elevFt": 3700,
+   "directions": "Walk back down the road to the hairpin, drop down the embankment and cross the Cascade River, then go up and over the terminal moraine onto the apron at the foot of the C-J Couloir. Expect a short stretch of brush; it is about twenty minutes from the road."
+  },
+  {
+   "lat": 48.465,
+   "lng": -121.077,
+   "elev": 6800,
+   "name": "East ridge",
+   "type": "Junction",
+   "distMi": 1.4,
+   "elevFt": 6800,
+   "directions": "Climb the couloir, roughly 3,400 ft of snow, to the Cascade-Johannesburg col at about 6,760 ft. The lower part sits under the Sill hanging glacier, so climb it while it is frozen and do not linger. The East Ridge rises west from the col toward Cascade Peak, on your right as you top out."
+  },
+  {
+   "lat": 48.4635,
+   "lng": -121.0802,
+   "elev": 7428,
+   "name": "Cascade Peak summit",
+   "type": "Summit",
+   "distMi": 1.7,
+   "elevFt": 7428,
+   "directions": "From the col the technical climbing starts with the crux, a loose, wide crack with few solid placements, then continues up loose, broken ground to the summit with real route-finding and no fixed anchors or cairns to follow."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Up the Cascade-Johannesburg Couloir to the C-J col",
+   "notes": "The East Ridge is reached from the Cascade-Johannesburg col, and the direct way there is to climb the couloir that names it. The start is the Cascade Pass trailhead at about 3,600 ft: walk back down the road, drop the embankment into the valley, cross the Cascade River, and go over the moraine onto the couloir apron at roughly 3,300 ft — about twenty minutes from leaving the road. Then roughly 3,000 ft of booting to the col.\n\nThis is the fast way and the dangerous way. The couloir carries rock and ice fall from the Sill hanging glacier above, and the snow goes discontinuous where it narrows as the season progresses, so it is an early-season proposition.\n\nThe East Ridge by way of the C-J Couloir was first climbed in 1938 and is the most-used line on the peak; it and the other routes finishing on the south side are mostly scrambling.",
+   "season": "May-Jun for continuous snow in the couloir",
+   "hazards": [
+    "Rock and ice fall from the Sill hanging glacier in the couloir",
+    "Discontinuous couloir snow after early season",
+    "Loose rock and complicated route-finding on the ridge above the col",
+    "Existing rappel stations of unknown quality"
+   ],
+   "primary": true,
+   "baseFinding": "The base of the climbing is the Cascade-Johannesburg col itself — the notch at the top of the couloir, with Johannesburg on one side and Cascade Peak on the other. There is no ambiguity about arriving: the snow ends against the saddle and the ground drops away on the far side.\n\nFrom the col the East Ridge is the crest running west toward Cascade Peak's summit, on your right as you top out of the couloir. Published descriptions of the ground above are thin and consistent on one point only: route-finding is complicated, exposure is significant, and loose rock is everywhere. Parties commonly climb it unroped while carrying a harness in case they want a belay.\n\nThere are numerous rappel stations scattered around this area from previous parties, and reports note that some of them need improving before use — treat a found anchor as information, not as confirmation you are on route."
+  },
+  {
+   "name": "Cascade Pass, Mixup Arm and the Cache Glacier",
+   "notes": "The walking way in, avoiding the couloir entirely. Follow the Cascade Pass Trail from the trailhead at 3,600 ft for 3.5-3.7 miles and about 1,800 ft to Cascade Pass at roughly 5,400 ft. At the pass, near the benches, turn right and pick up the obvious climbers' path onto Mixup Arm.\n\nCross Mixup Arm and traverse and descend rightward until you reach the Cache Glacier — the described landmark is a seasonal waterfall, past which you turn right and ascend the lobe of the Cache.\n\nOne party using this side reported a long sidehill traverse beneath the Triplets and Cascade Peak, camping in a meadow below the C-J col at about 6,200 ft. That camp puts you at the base of the East Ridge for the following morning without ever entering the couloir.\n\nEarly season the traverse across Mixup's flank is snow-covered with a poor runout; late season Cache Col and the glacier edges can moat out.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "Snow-covered traverse on Mixup's flank with bad runout in early season",
+    "Cache Col and glacier margins moat out late season",
+    "Steep short snow tongue and flanking bergschrunds at Gunsight Notch",
+    "Rockfall in the confined ground between snow and rock at the notch"
+   ],
+   "baseFinding": "Approaching from this side you arrive at the C-J col or the meadows just below it rather than climbing up to it, so the confirmation is positional: the col is the saddle between Johannesburg and Cascade Peak at the head of the couloir, and from the meadow camp below it the East Ridge runs up on the Cascade Peak side.\n\nGunsight Notch — the prominent notch to the west of Cache Col — is the published portal from the Cache Glacier side for Mix-Up, the Triplets and Cascade Peak, so a party approaching Cascade Peak from the Cache rather than from the col is aiming at that notch instead. The snow tongue to Gunsight Notch is short, about a hundred feet, but steep at roughly 50-65 degrees, with bergschrunds on either side of it dropping ten to fifteen feet to a rock floor, and rockfall in tight quarters between snow and rock."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "5.8 (published; at least one party found it closer to 5.9-5.10)",
+   "notes": "The route's crux: a loose, broken 5-6 inch crack with very few solid gear placements, gaining the ridge crest above the C-J col; treat the published 5.8 grade as optimistic.",
+   "pitch": 1,
+   "anchor": "Gear (loose rock, sparse pro)",
+   "lengthM": 35
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.6",
+   "notes": "Sustained class-4 ridge crest climbing with occasional low-5th-class steps; loose rock throughout and no fixed anchors or cairns to follow, so expect real route-finding.",
+   "pitch": 2,
+   "anchor": "Gear",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.4",
+   "notes": "Short final pitch up the peak's broken summit tower (the 'NW Chimney' feature) to the 7,428 ft summit; no summit register or old rappel anchors have been found by recent parties.",
+   "pitch": 3,
+   "anchor": "Gear",
+   "lengthM": 30
+  }
+ ],
+ "beta": "Class 4-low 5th alpine rock route up Cascade Peak own short, broken summit tower via the NW Chimney -- reached via the same CJ Couloir most parties use to approach neighboring Johannesburg Mountain East Ridge. Roughly 3 pitches (a loose 5.8 crux crack, a sustained 5.6 pitch, a short 5.4 finish) on consistently loose, broken rock with essentially no fixed protection or rappel anchors. Expect real routefinding, not a clean traveled line."
+}

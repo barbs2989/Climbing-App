@@ -1,0 +1,1675 @@
+{
+ "wa_mount_prophet_east": {
+  "area_id": "wa_mount_prophet",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Luna Camp, Big Beaver Trail",
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Challenger Arm camp",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+  ],
+  "allowEmpty": true
+ },
+ "wa_mount_prophet_southwest_rib": {
+  "area_id": "wa_mount_prophet",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Challenger Arm camp",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+  ]
+ },
+ "wa_south_ridge_2": {
+  "area_id": "wa_luna_peak",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver"
+  ]
+ },
+ "wa_mount_fury_east_mongo_ridge": {
+  "area_id": "wa_mount_fury_west",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp"
+  ]
+ },
+ "wa_mount_fury_west_west_ridge": {
+  "area_id": "wa_mount_fury_west",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp"
+  ]
+ },
+ "wa_ridge_traverse_from_east_fury": {
+  "area_id": "wa_mount_fury_west",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak"
+  ]
+ },
+ "wa_swiss_peak_standard_route": {
+  "area_id": "wa_swiss_peak",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Beaver Pass Camp"
+  ]
+ },
+ "wa_luna_glacier": {
+  "area_id": "wa_phantom_peak",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Tapto Lakes cross-country zone",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Twin Rocks and Stillwell Camps, Little Beaver"
+  ]
+ },
+ "wa_north_ridge_2": {
+  "area_id": "wa_whatcom_peak",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Challenger Arm camp"
+  ]
+ },
+ "wa_south_spur": {
+  "area_id": "wa_whatcom_peak",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Luna Camp, Big Beaver Trail",
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Challenger Arm camp"
+  ]
+ },
+ "wa_whatcom_peak_southwest_route": {
+  "area_id": "wa_whatcom_peak",
+  "expect": [
+   "Luna Camp, Big Beaver Trail",
+   "Beaver Pass Camp",
+   "Luna Col bivy, Luna cross-country zone",
+   "Perfect Pass, Perfect Pass cross-country zone",
+   "Whatcom Camp, Brush Creek below Whatcom Pass",
+   "Twin Rocks and Stillwell Camps, Little Beaver",
+   "Challenger Arm camp",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+   "Easy Ridge bivouac ground below Easy Peak",
+   "Tapto Lakes cross-country zone",
+   "Luna Cirque floor"
+  ],
+  "remove": [
+   "Luna Camp, Big Beaver Trail",
+   "Luna Col bivy, Luna cross-country zone",
+   "Luna Cirque floor",
+   "Eiley Lake benches, lower Wiley Ridge",
+   "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+   "Challenger Arm camp"
+  ]
+ },
+ "wa_big_craggy_peak_scramble": {
+  "area_id": "wa_big_craggy_peak",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp"
+  ]
+ },
+ "wa_west_craggy_peak_standard_route": {
+  "area_id": "wa_west_craggy_peak",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp"
+  ]
+ },
+ "wa_castle_peak_pasayten_scramble": {
+  "area_id": "wa_castle_peak_pasayten",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_north_face_left_buttress": {
+  "area_id": "wa_castle_peak_pasayten",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_blizzard_peak_standard": {
+  "area_id": "wa_blizzard_peak",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_robinson_mountain_north_couloir": {
+  "area_id": "wa_robinson_mountain",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_robinson_mountain_southeast_ridge": {
+  "area_id": "wa_robinson_mountain",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_osceola_peak_scramble": {
+  "area_id": "wa_osceola_peak",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_blackcap_mountain_scramble": {
+  "area_id": "wa_blackcap_mountain",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_ptarmigan_peak_pasayten_scramble": {
+  "area_id": "wa_ptarmigan_peak_pasayten",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_dot_mountain_scramble": {
+  "area_id": "wa_dot_mountain",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_lake_mountain_pasayten_scramble": {
+  "area_id": "wa_lake_mountain_pasayten",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_monument_peak_pasayten_scramble": {
+  "area_id": "wa_monument_peak_pasayten",
+  "expect": [
+   "Harts Pass and Meadows campgrounds",
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Robinson Creek valley campsites",
+   "Doris Lake and Freds Lake basins",
+   "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+   "Lake of the Woods and the Eureka Falls camp",
+   "Copper Glance Lake"
+  ],
+  "remove": [
+   "Windy Pass and the crest camps north of Harts Pass",
+   "Hopkins Lake and Castle Pass",
+   "Copper Glance Lake"
+  ]
+ },
+ "wa_ingalls_peak_south_ridge": {
+  "area_id": "wa_ingalls_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_ingalls_peak_east_route": {
+  "area_id": "wa_ingalls_peak_east",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_ingalls_peak_south_scramble": {
+  "area_id": "wa_ingalls_peak_south",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_sherpa_peak_east_ridge": {
+  "area_id": "wa_sherpa_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "area_id": "wa_argonaut_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_south_face_12": {
+  "area_id": "wa_argonaut_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_argonaut_peak_northeast_couloir": {
+  "area_id": "wa_argonaut_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_northwest_arete": {
+  "area_id": "wa_argonaut_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_sherpa_balanced_rock_ne_couloir": {
+  "area_id": "wa_sherpa_balanced_rock",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_sherpa_peak_north_ridge": {
+  "area_id": "wa_sherpa_peak",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ]
+ },
+ "wa_cannon_mountain_south_slopes": {
+  "area_id": "wa_cannon_mountain",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline"
+  ]
+ },
+ "wa_cannon_mountain_northeast_ridge": {
+  "area_id": "wa_cannon_mountain",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Nada Lake"
+  ]
+ },
+ "wa_cashmere_mountain_west_ridge": {
+  "area_id": "wa_cashmere_mountain",
+  "expect": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Lake Caroline and Little Caroline",
+   "Nada Lake"
+  ],
+  "remove": [
+   "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+   "Sherpa south basin camp",
+   "Table Rock bivy, upper Sherpa basin",
+   "Upper Mountaineer Creek bench",
+   "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+   "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+   "Nada Lake"
+  ]
+ },
+ "wa_mount_fernow_southeast_face": {
+  "area_id": "wa_mount_fernow",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ]
+ },
+ "wa_spectacle_buttes_west_route": {
+  "area_id": "wa_spectacle_buttes",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ]
+ },
+ "wa_fifth_of_july_mountain_scramble": {
+  "area_id": "wa_fifth_of_july_mountain",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ]
+ },
+ "wa_cardinal_peak_nw_couloir_north_ridge": {
+  "area_id": "wa_cardinal_peak",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ]
+ },
+ "wa_cardinal_peak_se_slopes": {
+  "area_id": "wa_cardinal_peak",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ]
+ },
+ "wa_emerald_peak_se_ridge": {
+  "area_id": "wa_emerald_peak_entiat",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ]
+ },
+ "wa_emerald_peak_west_route": {
+  "area_id": "wa_emerald_peak_entiat",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ]
+ },
+ "wa_saska_peak_emerald_saska_col": {
+  "area_id": "wa_saska_peak",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ]
+ },
+ "wa_pinnacle_mountain_entiat_scramble": {
+  "area_id": "wa_pinnacle_mountain_entiat",
+  "expect": [
+   "Cottonwood Camp and the Entiat River road campgrounds",
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Snow Brushy Creek junction camps, Entiat River trail",
+   "Entiat Meadows",
+   "Fox Camp, North Fork Entiat trail",
+   "The basin between Emerald and Saska, and Milham Pass"
+  ],
+  "remove": [
+   "Myrtle Lake and Cow Creek Meadows",
+   "Larch Lakes meadow camps",
+   "Entiat Meadows"
+  ]
+ },
+ "wa_action_potential": {
+  "area_id": "wa_burgundy_spire",
+  "expect": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side",
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "Lone Fir Campground, SR 20"
+  ],
+  "remove": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ]
+ },
+ "wa_burgundy_spire_north_face": {
+  "area_id": "wa_burgundy_spire",
+  "expect": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side",
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "Lone Fir Campground, SR 20"
+  ],
+  "remove": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ]
+ },
+ "wa_ultramega_ok": {
+  "area_id": "wa_burgundy_spire",
+  "expect": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side",
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "Lone Fir Campground, SR 20"
+  ],
+  "remove": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ]
+ },
+ "wa_direct_west_face": {
+  "area_id": "wa_pernod_spire",
+  "expect": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side",
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "Lone Fir Campground, SR 20"
+  ],
+  "remove": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ]
+ },
+ "wa_pernod_spire_standard": {
+  "area_id": "wa_pernod_spire",
+  "expect": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side",
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "Lone Fir Campground, SR 20"
+  ],
+  "remove": [
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only"
+  ]
+ },
+ "wa_east_ridge_3": {
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "expect": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side",
+   "Upper Silver Star Creek basin camp — EAST side, Silver Star only",
+   "Lower Silver Star Creek basin — EAST side, Silver Star only",
+   "Lone Fir Campground, SR 20"
+  ],
+  "remove": [
+   "Burgundy Col high camp — WEST side, the Wine Spires",
+   "Burgundy Creek bench camp — WEST side",
+   "Upper scree benches below Burgundy Col — WEST side"
+  ]
+ },
+ "wa_colonial_peak_west_ridge": {
+  "area_id": "wa_colonial_peak",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ]
+ },
+ "wa_pyramid_peak_colonial_standard": {
+  "area_id": "wa_pyramid_peak_colonial",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ]
+ },
+ "wa_cosho_peak_scramble": {
+  "area_id": "wa_cosho_peak",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ]
+ },
+ "wa_crater_mountain_standard_route": {
+  "area_id": "wa_crater_mountain",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek"
+  ]
+ },
+ "wa_jack_mountain_east_ridge": {
+  "area_id": "wa_jack_mountain",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek"
+  ]
+ },
+ "wa_jack_mountain_nohokomeen_headwall": {
+  "area_id": "wa_jack_mountain",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ]
+ },
+ "wa_jack_mountain_north_ridge": {
+  "area_id": "wa_jack_mountain",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ]
+ },
+ "wa_jack_mountain_northeast_glacier": {
+  "area_id": "wa_jack_mountain",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ]
+ },
+ "wa_jack_mountain_southwest_ridge": {
+  "area_id": "wa_jack_mountain",
+  "expect": [
+   "Colonial Creek South Campground, Diablo Lake",
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail",
+   "Jerry Lakes basin, Jack Mountain south side"
+  ],
+  "remove": [
+   "Colonial Basin bench camps, below the Pyramid-Colonial col",
+   "Neve-Colonial col high bivy",
+   "Cosho Camp, Fisher Creek",
+   "Devils Park Shelter, Jackita Ridge trail"
+  ]
+ },
+ "wa_guye_peak_improbable_traverse": {
+  "area_id": "wa_guye_peak",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_guye_peak_r1": {
+  "area_id": "wa_guye_peak",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_guye_peak_r2": {
+  "area_id": "wa_guye_peak",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_guye_peak_southeast_gully": {
+  "area_id": "wa_guye_peak",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_south_gully_south_spur": {
+  "area_id": "wa_guye_peak",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_south_rib": {
+  "area_id": "wa_guye_peak",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_snoqualmie_mountain_standard_route": {
+  "area_id": "wa_snoqualmie_mountain",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp"
+  ]
+ },
+ "wa_southwest_face": {
+  "area_id": "wa_the_tooth",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Snow Lake designated campsites"
+  ]
+ },
+ "wa_the_tooth_fairy": {
+  "area_id": "wa_the_tooth",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Snow Lake designated campsites"
+  ]
+ },
+ "wa_the_tooth_r1": {
+  "area_id": "wa_the_tooth",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Snow Lake designated campsites"
+  ]
+ },
+ "wa_the_tooth_south_face": {
+  "area_id": "wa_the_tooth",
+  "expect": [
+   "Source Lake basin, Alpental valley",
+   "Snow Lake designated campsites",
+   "Chair Peak basin snow camp",
+   "Denny Creek Campground, I-90 exit 47",
+   "Tinkham Campground, I-90 exit 42"
+  ],
+  "remove": [
+   "Snow Lake designated campsites"
+  ]
+ },
+ "wa_colfax_peak_cosley_houston": {
+  "area_id": "wa_colfax_peak",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ]
+ },
+ "wa_colfax_peak_kimchi_suicide_volcano": {
+  "area_id": "wa_colfax_peak",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ]
+ },
+ "wa_colfax_peak_polish_route": {
+  "area_id": "wa_colfax_peak",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ]
+ },
+ "wa_hadley_peak_cougar_divide": {
+  "area_id": "wa_hadley_peak",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces"
+  ]
+ },
+ "wa_hadley_peak_skyline_divide": {
+  "area_id": "wa_hadley_peak",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces"
+  ]
+ },
+ "wa_sherman_peak_baker_route": {
+  "area_id": "wa_sherman_peak_baker",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ]
+ },
+ "wa_sherman_peak_baker_squak_glacier": {
+  "area_id": "wa_sherman_peak_baker",
+  "expect": [
+   "Crag View, Squak Glacier",
+   "Upper Squak benches, Sulphur moraine and the rock prow",
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ],
+  "remove": [
+   "Coleman Glacier bivy under the Black Buttes north faces",
+   "Cougar Divide meadow camps",
+   "Skyline Divide crest camps",
+   "Deadhorse Creek basin, below Chowder Ridge"
+  ]
+ },
+ "wa_mount_blum_north_ridge": {
+  "area_id": "wa_mount_blum",
+  "expect": [
+   "Lower Blum Lake",
+   "Middle Blum Lake",
+   "Upper Blum tarn, southeast of the main lakes",
+   "South Hagan bench",
+   "Hidden Lake, below the Blum-Hagan divide",
+   "Sulphide Camp, end of the Baker River trail",
+   "Blum Creek spur ridge, forest bivy"
+  ],
+  "remove": [
+   "Sulphide Camp, end of the Baker River trail"
+  ]
+ },
+ "wa_mount_blum_south_ridge": {
+  "area_id": "wa_mount_blum",
+  "expect": [
+   "Lower Blum Lake",
+   "Middle Blum Lake",
+   "Upper Blum tarn, southeast of the main lakes",
+   "South Hagan bench",
+   "Hidden Lake, below the Blum-Hagan divide",
+   "Sulphide Camp, end of the Baker River trail",
+   "Blum Creek spur ridge, forest bivy"
+  ],
+  "remove": [
+   "Sulphide Camp, end of the Baker River trail"
+  ]
+ },
+ "adams_avalanche_glacier": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ]
+ },
+ "wa_mount_adams_wilson_glacier_headwall": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ]
+ },
+ "wa_mount_adams_mazama_glacier_headwall": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ]
+ },
+ "adams_northwest_ridge": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ]
+ },
+ "wa_mount_adams_lava_glacier_headwall": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ]
+ },
+ "wa_mount_adams_lyman_glacier": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ]
+ },
+ "wa_mount_adams_north_ridge": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ]
+ },
+ "wa_mount_adams_northwest_ridge": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ]
+ },
+ "wa_mount_adams_adams_glacier": {
+  "area_id": "wa_mount_adams",
+  "expect": [
+   "Lunch Counter",
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground",
+   "High Camp (Adams Creek Meadows)",
+   "Adams Glacier moraine bivy"
+  ],
+  "remove": [
+   "Cold Springs / South Climb trailhead",
+   "Morrison Creek Campground"
+  ]
+ },
+ "wa_ellation": {
+  "area_id": "wa_mamie_peak",
+  "expect": [
+   "Hannegan trailhead, end of the Ruth Creek road",
+   "Ruth Arm ridge camps below the Ruth Glacier",
+   "Notch bivy on the Ruth-Icy ridge",
+   "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+   "Nooksack Cirque river bottom, below the tower"
+  ],
+  "remove": [
+   "Ruth Arm ridge camps below the Ruth Glacier",
+   "Notch bivy on the Ruth-Icy ridge",
+   "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+   "Nooksack Cirque river bottom, below the tower"
+  ]
+ }
+}

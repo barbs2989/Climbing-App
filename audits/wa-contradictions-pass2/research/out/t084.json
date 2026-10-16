@@ -1,0 +1,270 @@
+{
+ "file": "t084.json",
+ "results": [
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Crux grade",
+   "verdict": "fixed",
+   "correct_value": "5.12 range: header 5.12- stays; Crowds should not say 5.12+",
+   "evidence": "The route page lists the route at 5.12- with a 5.11 V5 crux on P4. The first-ascent account in the journal of record calls it 5.12+ overall but describes mostly 5.10-5.11 climbing with a few short bouldery bits in the 5.12 range; the first ascensionist's own write-up says the whole thing goes at 5.11-something with the crux perhaps 5.12b. No two sources agree on a sub-grade, but all agree it is a 5.12 route, so the Crowds '5.12+' (the only field contradicting the 5.12- header) is reduced to '5.12'; the 5.12- header and the 5.12b pitch note (a 5.12- route with a 5.12a/b crux) are compatible. Note: the FA write-up says the crux may be more like 5.12b for TALLER climbers, while the row's overview/hazards say shorter climbers find it harder — left untouched (one source only).",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die",
+    "http://blakeclimbs.blogspot.com/2017/11/live-free-or-die-on-liberty-bell.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_live_free_or_die",
+     "fact": "Crux grade",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "a 5.12+ testpiece",
+     "replace": "a 5.12 testpiece"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Gear needed on pitch 4",
+   "verdict": "fixed",
+   "correct_value": "P1-3 and P5 need only draws plus a couple of cams; P4 (2 bolts at the crux) and P6-8 need a standard cam rack",
+   "evidence": "The first ascensionist's write-up states the first 3 pitches and pitch 5 are adequately protected with just quickdraws and maybe a finger piece or two, while P4, 6, 7 and 8 require a standard cam rack, and that the crux sequence has 2 bolts. The route page's P4 description advises long slings and/or backcleaning or running it out low on the pitch, i.e. gear placements. So gear[1] is correct and pro_needs ('mostly bolt-protected on the lower 5 pitches') is the outlier; the pitch_detail note (bolts back up the crux) is also correct.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2017/11/live-free-or-die-on-liberty-bell.html",
+    "https://www.mountainproject.com/route/113615727/live-free-or-die"
+   ],
+   "patches": [
+    {
+     "id": "wa_live_free_or_die",
+     "fact": "Gear needed on pitch 4",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Mostly bolt-protected on the lower 5 pitches with a couple of cams recommended; gear-protected thin crack and splitter pitches higher up.",
+     "replace": "Pitches 1-3 and 5 are mostly bolt-protected and need only a couple of cams; pitch 4 has two bolts at its crux but needs a cam rack for the rest, as do the thin crack and splitter pitches higher up."
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy-only dispute: the shared 'Blue Lake trailhead roadside bivy' card's 'half a mile west of Washington Pass' is regional camp-list text; bivy[] is owned by the camping clean-up, so no patch. The entry does serve this route's trailhead area.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "fact": "Blue Lake Trailhead elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "about 5,380 ft",
+   "evidence": "The Trailhead waypoint says 5,200 ft while the trailhead card says 5,400 ft. The USGS 3DEP 1 m elevation service returns 5,380 ft at the stored trailhead coordinate (48.5191, -120.6742), and an independent Blue Lake trail guide gives the trailhead's starting elevation as 5,380 ft. The 5,400 ft in trailheadDirection is a fair rounding; the waypoint's 5,200 is the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.6742&y=48.5191&units=Feet&wkid=4326",
+    "https://uprootedtraveler.com/blue-lake-trail-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_nw_face_var_remsberg_variation",
+     "fact": "Blue Lake Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5380
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: one club route page says 1.5 mi west of Washington Pass; the state trail association says a little under a mile past the Washington Pass Overlook; the Forest Service page says about 0.25 mi beyond the Overlook; another guide puts the trailhead at milepost 161 while the pass is 0.3 mi past milepost 162 (~1.3 mi). Straight-line from the pass (48.5236,-120.6547) to the trailhead coordinate is ~0.95 mi, so 0.5 mi is too short, but 1 vs 1.5 mi cannot be settled by two agreeing sources. Would be settled by a measured road distance from the pass summit to the lot. The bivy card's half-mile belongs to the bivy clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+    "https://www.10adventures.com/hikes/north-cascades-national-park/blue-lake/",
+    "https://www.birdweb.org/birdweb/site/washington_pass/7"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "fact": "Blue Lake Trailhead elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "about 5,380 ft",
+   "evidence": "The Trailhead waypoint says 5,200 ft while the trailhead card says 5,400 ft. The USGS 3DEP 1 m elevation service returns 5,380 ft at the stored trailhead coordinate, and an independent Blue Lake trail guide gives the trailhead's starting elevation as 5,380 ft; 5,400 is a fair rounding, the waypoint's 5,200 is the outlier.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.6742&y=48.5191&units=Feet&wkid=4326",
+    "https://uprootedtraveler.com/blue-lake-trail-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_bell_overexposure",
+     "fact": "Blue Lake Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5380
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Pitch 2 belay",
+   "verdict": "fixed",
+   "correct_value": "Gear belay",
+   "evidence": "The route page's P2 ends 'more easy ground leads to a gear belay below a clean dihedral capped by a large roof'. An independent trip report likewise says to climb past a few pins into the large left-facing corner and 'build a gear belay here'. The note is right; the anchor field '2-bolt anchor' is the stale copy.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257819/thin-red-line",
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Pitch 2 belay",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "anchor"
+     ],
+     "expect": "2-bolt anchor",
+     "value": "Gear belay"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy-only dispute: the shared 'Blue Lake trailhead roadside bivy' card's 'half a mile west of Washington Pass' is regional camp-list text; bivy[] is owned by the camping clean-up, so no patch. The entry does serve this route's trailhead area. (This route itself starts from the east-side hairpin pullout, not Blue Lake.)",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule (4:00 AM leave, 6:30 PM back) spans 14.5 h against the 10 h total. Published times vary widely: one report gives ~11+ h on the route itself (well over 12 h car-to-car), another a fast party at about 10 h car-to-car, and many parties take two or three days. No two sources agree on a single car-to-car figure, so neither the 10 h totals nor the schedule clock times can be rewritten on evidence. Would be settled by two reports giving the same car-to-car time (or clock times) for a one-day ascent.",
+   "sources": [
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/liberty-crack/",
+    "https://www.mountaineers.org/activities/trip-reports/liberty-bell-liberty-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy-only dispute: the shared 'Blue Lake trailhead roadside bivy' card's 'half a mile west of Washington Pass' is regional camp-list text; bivy[] is owned by the camping clean-up, so no patch. The entry does serve this route's trailhead area. (This route itself starts from the east-side hairpin pullout, not Blue Lake.)",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": "26 (published total) — kept",
+   "evidence": "Two sources give the traverse as 26 pitches (the route page: 2,000 ft, 26 pitches, Grade V; a first-hand trip report: 26 pitches over two Grade III and three Grade II routes). The breakdown's per-section counts (4+3+?+5+7) are each constituent route's own pitch count and sum to about 22-23; the gap is presumably connecting/scrambling pitches, but no source itemises the 26, so neither figure can be changed. Would be settled by a source listing how the 26 are counted.",
+   "sources": [
+    "https://www.mountainproject.com/route/115148381/liberty-traverse",
+    "http://iannicholsonslife.blogspot.com/2011/10/liberty-traverse-v-maybe-iv-59.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "fact": "Rappel count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About a dozen or more across the day (2 Liberty Bell, 2 Concord, 1-2 Lexington, 5-6 NEWS west face, 2-3 SEWS)",
+   "evidence": "The row's own breakdown and descent text describe rappels off every summit (back into the Liberty-Concord notch, two off Concord, a rappel plus a short one off Lexington, several down NEWS's west face, 2-3 off SEWS), so '5-6' — which is only the NEWS count — is the outlier. The traverse route page agrees: two steep rappels from Concord, a sequence of 5-6 rappels down NEWS's west face, and 3 rappels to the ground off SEWS; the NEWS Northwest Corner page likewise gives 6 rappels down the west face. Written as per-summit prose, not a bare number.",
+   "sources": [
+    "https://www.mountainproject.com/route/115148381/liberty-traverse",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_traverse",
+     "fact": "Rappel count",
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "5-6",
+     "value": "About a dozen or more across the day, spread over every summit: two back into the Liberty Bell-Concord notch, two short ones off Concord Tower, one or two off Lexington Tower, five or six down North Early Winters Spire's west face, and two or three off South Early Winters Spire."
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "fact": "Large cams needed",
+   "verdict": "fixed",
+   "correct_value": "Doubles about 2-4 in plus a single #5 (NEWS wide pitch; also SEWS Bear Hug)",
+   "evidence": "For North Early Winters Spire's NW Corner, its route page calls for a standard rack to 4 or 5 inches for the offwidth pitch, and a detailed trip report recommends doubles of 2-4 with a single #5. For South Early Winters Spire's SW Rib, multiple reports name a #4 and #5 for the Bear Hug offwidth. So the gear list is right and the rack/Protection summaries ('a couple bigger pieces to 3-4in') understate it.",
+   "sources": [
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+    "https://climberkyle.com/2019/05/11/north-early-winters-spire-nw-corner-5-9/",
+    "https://climberkyle.com/2017/09/02/south-early-winters-spire-sw-rib-5-8/",
+    "https://www.mountainproject.com/route/115148381/liberty-traverse"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_traverse",
+     "fact": "Large cams needed",
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "find": "plus a couple bigger pieces to 3-4in for North Early Winter Spire",
+     "replace": "plus doubles from about 2 to 4in and a single #5 for the wide pitches on North and South Early Winter Spires"
+    },
+    {
+     "id": "wa_liberty_traverse",
+     "fact": "Large cams needed",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "with a couple of larger cams recommended for North Early Winter Spire.",
+     "replace": "with doubles from about 2 to 4 inches and a single #5 cam added for the wide cracks on North Early Winter Spire and the Bear Hug on South Early Winter Spire."
+    },
+    {
+     "id": "wa_liberty_traverse",
+     "fact": "Large cams needed",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "with a couple of larger pieces recommended specifically for North Early Winter Spire's sections.",
+     "replace": "with doubles to about 4 inches and a single #5 added for the wide pitches on North and South Early Winter Spires."
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy-only dispute: the shared 'Blue Lake trailhead roadside bivy' card's 'half a mile west of Washington Pass' is regional camp-list text; bivy[] is owned by the camping clean-up, so no patch. The entry does serve this route's trailhead area.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

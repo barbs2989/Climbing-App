@@ -1,0 +1,60 @@
+{
+ "id": "wa_the_temple_south_ridge",
+ "name": "South Ridge",
+ "approach": "From the Snow Lakes Trailhead at the end of Icicle Creek Road (about 4.3 mi from US-2, ~1,300 ft elevation), cross Icicle Creek on the trail bridge and begin the long, switchbacking climb up open, sun-baked slabs on Snow Lakes Trail No. 1553 — this lower stretch is notoriously hot with almost no shade, so carry more water than feels necessary for the first few miles. The grade eases as the trail enters the hanging valley and reaches Nada Lake at roughly 5.5-5.6 miles (~5,000 ft), banking most of the day's approach mileage but only a bit over half the total gain. Follow the trail/use path along the lake's west shore past scattered campsites to Nada Creek near the lake's upper end — a boulder-hop in normal summer flow, but a genuine ford in early-season high water. Immediately past the creek, leave the maintained trail: climb a cairned climbers' path staying along the south edge of a broad talus field toward the notch that opens into Temple Canyon. Where the talus narrows to roughly 75 ft, work right onto a class 2-3 ledge system that skirts a waterfall, then continue up slabs into scattered trees. A steep, loose dirt-and-rock climbers' path then leads into Temple Canyon proper, staying near the stream (the last reliable water before the summit block) as it steepens toward the canyon head. Near the top, scramble up and left onto the broad, larch-dotted plateau of Tamarack Meadows (~6,600 ft), cross another talus/boulder field above treeline, and follow a final sandy ramp under an overhang to the base of the South Ridge's technical section. Figure roughly 8 miles and ~7,000 ft one-way from the trailhead to the 8,295 ft summit — about 16-16.5 miles round trip, a very long car-to-car day if not camping at Nada Lake or in the canyon. Hazards: sustained sun exposure with no shade on the lower switchbacks, an unbridged Nada Creek crossing that gets serious with early-season snowmelt, faint cairn-dependent route-finding above Nada Lake, loose talus and scree throughout Temple Canyon, and lingering snow on north-facing ledges into early summer.",
+ "approach_logistics": {
+  "peakLat": 47.490433,
+  "peakLng": -120.769569,
+  "trailhead": "Snow Lakes Trailhead",
+  "trailheadLat": 47.5441,
+  "trailheadLng": -120.7095,
+  "trailheadDirection": "From the Snow Lakes Trailhead at the end of Icicle Creek Road (about 4.3 mi from US-2, ~1,300 ft elevation)"
+ },
+ "waypoints": [
+  {
+   "lat": 47.5441,
+   "lng": -120.7097,
+   "elev": 1300,
+   "name": "Snow Lakes Trailhead",
+   "note": "Trailhead parking lot on Icicle Creek Road, 4.2-4.3 mi from the US-2/Icicle Creek Road junction.",
+   "type": "Trailhead",
+   "elevFt": 1300,
+   "directions": "Follow Icicle Creek Road to its end, about 4.3 miles from US-2, to reach the Snow Lakes trailhead at roughly 1,300 feet. Park at the trailhead and cross Icicle Creek on the trail bridge to pick up Snow Lakes Trail No. 1553. If you plan to camp overnight in the Enchantments Core Zone near Temple Canyon, a lottery-based overnight permit is required; without one, most parties either climb it car-to-car in one long day or camp outside the Core Zone near Nada Lake."
+  },
+  {
+   "lat": 47.486,
+   "lng": -120.777,
+   "elev": 7500,
+   "name": "Prusik Pass",
+   "type": "Junction",
+   "distMi": 9.5,
+   "elevFt": 7500
+  },
+  {
+   "lat": 47.4855,
+   "lng": -120.78,
+   "elev": 7300,
+   "name": "Core Enchantments / Prusik Pass area",
+   "type": "Campsite",
+   "distMi": 9.6,
+   "elevFt": 7300
+  },
+  {
+   "lat": 47.4895,
+   "lng": -120.771,
+   "elev": 7700,
+   "name": "Base of south ridge",
+   "type": "Junction",
+   "distMi": 10,
+   "elevFt": 7700
+  },
+  {
+   "lat": 47.4906,
+   "lng": -120.7694,
+   "elev": 8295,
+   "name": "The Temple summit",
+   "type": "Summit",
+   "elevFt": 8295
+  }
+ ]
+}

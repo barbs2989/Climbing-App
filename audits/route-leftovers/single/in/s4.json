@@ -1,0 +1,539 @@
+{
+ "items": [
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Pitch count: 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "Depends on the STRUCTURAL item below. 8 pitches is the published count for the Southeast Ridge (the row's name, beta, rappels); the six pitch_detail rows and the '6 pitches' in partner_requirements and seasonal_hazards describe the col-side East Ridge. No second full description of the Southeast Ridge was found this pass (archived climber's log has only South Route and NE Couloir entries), so the breakdown cannot be rebuilt."
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "STRUCTURAL: the row fuses two routes. name, face, pitches (8), beta and rappels describe the Southeast Ridge (II 5.6, 8 pitches to the SE spire, two single or one double rappel into the notch), which two listings name as a separate route; pitch_detail (starts 'From the Argonaut-Colchuck col'), descent_text ('reversing the East Ridge ... notch just west of the lone gendarme'), rappel_detail (traverse toward the east gully) and the '6 pitches' text describe the East Ridge from the col, which has its own route page. What should change: either rename the row to the col-side East Ridge and move the Southeast Ridge facts (8 pitches, SE spire, notch rappels) to a separate row, or replace pitch_detail/descent_text/rappel_detail with a Southeast Ridge description once one can be read in full. Needs a rename or a rebuilt breakdown, which the patch format cannot express."
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "Still real in the live row. No published car-to-car time or gain for either Argonaut ridge line was found on this pass, and the row mixes two routes (STRUCTURAL item above), so no figure can be adopted; nothing is computed."
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "fact": "Elevation gain to the crag",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Same as Drilling Me Softly: no published approach gain for the Silver Basin crags; ground heights give ~4,250 ft at the FS 9070 road end and ~4,670 ft at the crag, i.e. ~400 ft of net rise, which is only a floor for cumulative gain, so 750 is neither confirmed nor provably wrong. No patch."
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "fact": "Season / when the access road is open",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Same as Drilling Me Softly: one source gives FR-9070 snow-free July to November, another June-October as the period the road is open; no third source states an opening month. No window adopted."
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "fact": "Trailhead waypoint sits on the crag coordinate with the area's 4,585 ft elevation",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "STRUCTURAL: waypoints[0] 'FS Road 9070 Turnaround at Silver Basin' carries the crag's own coordinate (47.36741,-121.45564, identical to waypoints[1]) and the parent area's 4,585 ft. The same defect on sibling Drilling Me Softly was fixed by moving the pin to the road end: the U.S. Forest Service road layer ends the left-fork spur at 47.37289,-121.45781 and OpenStreetMap's 9070-310 track at 47.37310,-121.45793 (two independent road datasets ~25 m apart); USGS ground there is ~4,254 ft. Move waypoints[0] to that point and set elev/elevFt 4254. A pin move is outside the patch format, and setting only the elevation would leave the pin on the crag, so no patch here."
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "Third pass. Search again surfaces only the same split: one route database gives Grade III (matching alpine_grade), the long-standing route site gives Grade I-II on its Sitkum Glacier page (its peak page also calls the standard route Grade I, same site so counted once), and club, guide and trip-report pages give no Roman grade. The range rule needs two independent sources for each end; the III end has one, so no range is written and grade (II), commitment (I-II) and alpine_grade (III) stay as they are."
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "Third pass. Recent North Fork Sauk reports confirm White Pass at about 9 mi / 6,000 ft (5.5 mi of valley trail then ~3,000 ft of switchbacks) and one June 2026 party logged 13.9 mi and 6,324 ft to a camp on the Glacier Gap line, but none gives the PCT mileage from White Pass over Red Pass to the Sitkum Creek climbers' path or on to Boulder Basin. A February 2025 forum report exists for a winter White Chuck/Sitkum ascent (page blocked), so the old line is still used in winter on foot along the closed road. Rewriting itinerary days, timing and descent for the North Fork Sauk line would need computed segment distances, so no patch."
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "total elevation gain",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "Still real: gain_ft 4,799 / loss_ft 7,000 vs itinerary days of 7,200 up and down and a totalNote of 6,500-7,000 ft. Third-pass search found only the 1954 first-ascent description of the face and graded listings for the separate Northeast Buttress; no source gives a car-to-car gain for the Northeast Face, and a figure built from the row's geometry would be computed."
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "commitment grade: grade 'IV' vs commitment 'III' vs alpine_grade 'Grade III'",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "Still real: grade 'IV' vs commitment 'III' and alpine_grade 'Grade III (historic...)'. Every graded listing found on the third pass (route database, club route pages, AAJ notes, trip reports) grades the Northeast Buttress (III-IV or IV, 5.4-5.5); none publishes a commitment grade for the direct Northeast Face climbed by Beckey and Parrott in 1954. Rule 2 cannot apply because no source grades this line at all."
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "Whether a wilderness permit is needed",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "Still present (permit and access.permit: free self-issue permit at the trailhead; waypoint 0 directions, itinerary.cal, access.overnight_permit and bivy[1]: no permit). The forest's wilderness-regulations page names the free self-issue permit requirement only for the Alpine Lakes Wilderness, and its Wild Sky page mentions only passes and general rules, which leans toward no permit; the peak's route page and the club route page say no parking pass is needed at the roadside start but say nothing about a wilderness permit. Both leaning statements come from one agency, and nothing states the Wild Sky rule outright, so no patch."
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "approach_logistics trailhead coordinate sits at the North Fork Skykomish Trailhead, ~12 km from the route's start",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "STRUCTURAL: approach_logistics.trailheadLat/Lng (47.92684,-121.27705) is the North Fork Skykomish Trailhead at the end of FR-63, the wrong start (see the fixed trailhead item: the peak's route page and the club route page both start from the FR-63 pullout on the rise just past the river bridge about a mile east of Galena, ~1,156 ft). The coordinate should move to that pullout; the waypoints[0] pin has no coordinate at all. A coordinate move is outside the patch format."
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "access.closures is null while the bivy entries say the Rachel Lake trailhead / Box Canyon road were inside a 2026 wildfire closure",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "The current Forest Service order (06-17-03-2026-44, effective 18 Sep 2026 through 31 Oct 2026) still lists Rachel Lake Trail 1313, Rachel Lake Trailhead and road 4930 as closed. But a news report updated 21-24 Sep 2026 says the Three Queens closure orders were lifted in parts of the Cle Elum Ranger District without naming which, so the two sources do not agree on the current state. A time-bound closure should be written from a confirmed current order; nothing is patched."
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "gain_ft/loss_ft 5,700 vs the itinerary's day gains (4,800 + 1,900 + 900) and losses; dist_km 38.62 km (24 mi) vs ~13.5 mi one way / ~30 mi round trip",
+   "prior_file": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "Still real. New on this pass: a multi-day traverse report of the same Buck Creek Pass / High Pass / Louis Creek Basin line gives ~30 mi and 10,200 ft gained / 10,400 ft lost, but it exits by Little Giant Pass, so it is not this out-and-back; a 2025 High Pass report gives 8,150 ft / 23-27.5 mi for a different outing; the club route page's 20 mi / 6,000 ft is the Little Giant line. The USGS elevation service gives ~2,760 ft at the trailhead pin and ~8,449 ft at the summit pin, so 5,700 is not provably below the net rise. The WTA reports of the High Pass line are 403 and not archived. No two sources state the out-and-back total or a one-way distance, so nothing is patched."
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "fact": "Climbing season: May-Jun header vs a season description running through September",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "Deep retry found two dated ascents of this White River / Thunder Creek southwest-face line, both in late spring: May 28-30, 1977 (rock scramble and snow climb, camp in Chalangin Basin) and June 1, 2025 (icy from an overnight freeze, crampons needed; that author waited for late May after April and November attempts failed). A November 2024 attempt on the same line turned back on wind slab 500 ft below the top, and its author describes an earlier late-October descent of the basin through open trees. These support late spring but do not state a window, and nothing found confirms or rules out a summer dry scramble (the only summer attempt, August 2023, failed on the overgrown trail), so neither season nor best_season/climate is changed."
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "fact": "Commitment grade: IV vs III",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "Third pass. The first-ascent party's own forum trip report (archived) names the route 'Holsten-Hilden 1,600 ft WI3 M6, steep snow' with no Roman numeral; the regional new-route register lists the January 2011 ascent without a grade; a list of forgotten Cascade alpine ice routes does not grade it. The only numerals remain IV (the AAJ first-ascent note) and III (the route listing), one source each, so neither numeral nor a III-IV range (needs two sources per end) can be adopted."
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v006.json",
+   "prior_evidence": "Third pass. A guide service states Eldorado Creek trailhead to the Eldorado/Inspiration high camp as 3 miles (5-7 h), which fits the camp waypoint's 3.2 mi; a trip-report blog's 'approach gains 6,300 ft over 5 miles' and the older snippet of ~6 mi to a camp at the Inspiration/McAllister saddle measure to farther points. Round trips also disagree: the club route page gives this route 12.0 mi and 7,000 ft, a Dorado Needle + Klawatti trip 15 mi, and the row itself carries ~16 mi (totalNote, 25.75 km in approach). The itinerary's day-1 camp is near the McAllister/Marble Creek col, farther than the waypoint's Inspiration-flats camp, so the figures describe different endpoints. No one-way distance to the row's camp or the route base is stated twice, and no two sources state the same round trip for rule 1, so no patch."
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v007.json",
+   "prior_evidence": "STRUCTURAL: the row holds two lines and cannot be made consistent without a rename. The most documented line in current use is Prusik Pass then west up the peak's eastern arm to the NE summit (the peak's long-standing route page: 'an easy scramble from Prusik Pass' heading west up the shoulder; a 2020s Enchantment-slam trip report: from Prusik Pass west up the eastern arm, one steep step near 7,900 ft, class 3/4 summit block) - this is what beta and pitch_detail rows 3-4 describe. A different scramble leaving the basin directly between Lakes Reginleif and Sigrun is documented by one trail blog (class 2-3 with class 3-4 exposed spots, summit not identified) and the peak page's separate class 4 south-side line to the SW summit - this is what name 'Southwest Scramble', face, overview, approach and the variant baseFinding describe, while they also say the route ends on the NE summit. No source ties the Reginleif/Sigrun line to the NE summit. Owner should either (a) rename the row to the Prusik Pass / east-arm line to the NE summit and rewrite face, overview's last sentence, the approach's Reginleif/Sigrun sentence and baseFinding's 'does not lead to this scramble' to match beta and pitch_detail, or (b) keep 'Southwest Scramble' as the south-side line to the SW summit (class 4) and rewrite beta, pitch_detail rows 3-6 and descent_text; option (a) follows the delegated rule."
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "total one-way/round-trip distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "Third pass. Under the delegated rule the North Fork Sauk line wins (FR 23 closed at milepost 3.7 since March 2025 and White Chuck Trail #643 listed inaccessible), and the itinerary already follows it (21 mi each way). What is left is the approach prose, approach_variants, dist_km 12.4 km (7.7 mi) and the waypoint distMi values (Kennedy Ridge junction 7.7, Glacier Creek 9.7, ...), which carry White Chuck mileages although waypoint 0 is the North Fork Sauk trailhead. New reports give North Fork Sauk pieces (about 5 mi to Mackinaw, ~4.5 mi up to the PCT, ~1 mi to Red Pass, ~5 mi down the far side to a camp) but none states the distance from the trailhead to the Kennedy Ridge junction or Glacier Creek, so every replacement distMi or one-way dist_km would be assembled from pieces. No patch; the approach paragraph and the waypoint distances need a sourced North Fork Sauk mileage."
+  },
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "fact": "Which approach/route the waypoints describe",
+   "prior_file": "audits/route-tab-contradictions/research/out/v011.json",
+   "prior_evidence": "STRUCTURAL: the 'Lightning Creek boat landing / trail junction' (48.94468,-121.0008) and 'Willow Lake' (48.943791,-121.006993) pins sit within ~0.6 km of each other yet carry distMi 11 and 15, and neither note's mileage fits: the park's East Bank trail page puts the Lightning Creek departure at mile 16 of the 31-mile trail from SR-20 and places the Hozomeen Lake side trail 2 mi north of Willow Lake and Hozomeen campground 3 mi beyond, and a trail-database page has the trail turn up Lightning Creek after a little over 15 mi and pass Willow Lake later. Owner fix: re-pin or remove these two waypoints (the row's primary approach is from Hozomeen campground, not this variant), then rewrite their distMi and the Willow Lake note ('~mile 20'); Willow Lake's own mileage is only derivable by subtraction, so no patch is written."
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "prior_file": "audits/route-tab-contradictions/research/out/v012.json",
+   "prior_evidence": "Third pass. Searches found only terrain descriptions (the guide-service profile, a 1951-rib report, a 2025 forum report title) and the existing ~30 roped pitches belayed or simul-climbed; no source gives 20 or 12, and the vegetated lower route is pitched differently by every party. Left open."
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "fact": "Round-trip distance (dist_km vs. stated mileage)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v013.json",
+   "prior_evidence": "Still real: dist_km 3.2 (about 2 mi one way) against the beta's '7-mile' summer scramble from the first switchback; the itinerary brackets 4 to 7 mi round trip. New searching found only a regional page giving about 5 mi round trip and ~1,000 ft (a different, lower-gain line) and reports of 8-9 mi round trip to the lake from farther down the road. No two independent sources state the same distance for this start, so nothing is changed."
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "prior_file": "audits/route-tab-contradictions/research/out/v014.json",
+   "prior_evidence": "Third attempt. Searches of guide pages, club trip reports and the peak's climber log found only descriptions of the Northeast Face as several pitches of snow and ice to about 60 degrees, best in early fall, and summit-day times for the standard East Ridge (3-5 hours camp to summit; one party under 2 hours up and 1 down). No source gives times for the face itself, so the day's 9 hours and its 12-hour clock schedule cannot be reconciled without inventing times."
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "fact": "which approach the trip plan uses, and the one-way distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v015.json",
+   "prior_evidence": "STRUCTURAL: itinerary.days[0] (title, note, objective, and the ~9:00 AM, ~12:00 PM and 2:00 PM schedule items), itinerary.days[1] note and last schedule item ('retrace Day 1's ridge traverse'), itinerary.cal ('camping on Ragged Ridge'), itinerary.totalNote ('high camp on Ragged Ridge') and timing.sectionBreakdown[0].note all describe the Ragged Ridge crest traverse over Cub Peak, while every other field describes dropping from Easy Pass into Fisher Creek past Fisher Camp and climbing the south basin to a ~6,700 ft shoulder camp; the day-1 plan should be rewritten to the Fisher Creek line (one party on that line reached flat ground at the 6,700 ft rib step 4.2 hr from the car). Both lines are documented by one detailed report each (Fisher Creek line; crest over Cub Peak with a bivy west of Kitling), and a peak page describes a third, a traverse west below the ridge from just before Easy Pass without descending to Fisher Creek, so no source ranks one as standard and the rewrite would need schedule times no source states. dist_km (12.1) already matches the approach text's ~12 km one way, so the distance half of this item is settled on the live row."
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "fact": "which tier (upper/lower) the route climbs",
+   "prior_file": "audits/route-tab-contradictions/research/out/v016.json",
+   "prior_evidence": "Third pass: web searches for the route name and the crag name return nothing beyond the first ascensionist's route and crag pages (and mirrors of that one dataset), which place the route on the upper tier by the railroad sign. No independent second source exists for this obscure crag, and only two fields (face, overview) carry the fact, so the internal-plus-one rule cannot apply either. Recommended once a second source appears: overview 'up Mossy Loaf's lower tier' -> 'up Mossy Loaf's upper tier'."
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "fact": "Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "approach_variants[0].gainFt 6,100 still equals gain_ft. Third-pass sources: the Necklace Valley trail page gives 18 mi round trip / 3,400 ft to the valley (not the gap), La Bohn Gap is ~10 mi in at ~6,000 ft, and Hinman trip reports give whole-trip totals (~23-24 mi / ~7,000 ft). No source states the gain to La Bohn Gap or the lakes, so the figure is neither replaced nor nulled."
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "fact": "Total one-way/round-trip distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v018.json",
+   "prior_evidence": "Still real: dist_km 13.7 (8.5 mi), waypoints to the summit at 10.3 mi and the lake at 8.5 mi, itinerary 9 mi each way, approach prose '5-6 miles' washout to lake. The start point (road washout vs spur parking) moves between reports and no two sources state the same current one-way or round-trip figure; no new source found on this pass."
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "fact": "Expected car-to-car time",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "Third pass. The club route page (8.0 mi, 4,875 ft, Strenuous 4 / Technical 3) and the archived peak page (8 mi round trip, 4,875 ft) give distance and gain but no time. A search-listed WTA report shows a party returning to the car about six hours after a 9 AM start, but it reached only a pass, not the summit. The only summit timing remains about five hours up from one report. No source states a car-to-car total, so the 6-9 h commitment and the 10 h timing stay as they are."
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "fact": "Which drainage/trail the approach to Rimrock Ridge uses",
+   "prior_file": "audits/route-tab-contradictions/research/out/v021.json",
+   "prior_evidence": "STRUCTURAL: the approach's final leg ('follow the Agnes Creek Trail roughly 8-9 miles up-valley ... Swamp Creek Camp near mile 8.5, then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage ... fording Agnes Creek or Spruce Creek') and the Swamp Creek Camp waypoint (distMi 8.1) should be removed, because they lead away from the peak; a researched line up Flat Creek or the West Fork Agnes Creek would have to replace them, and none is published. OpenStreetMap maps Rimrock Ridge as a ridge running from about 48.370 to 48.383 N and -121.018 to -120.969 W, and Swamp Creek Camp at 48.3097, -120.9205, so the ridge lies 4-5 miles north-west of that camp, not east of it; the trail pages already tried place it between upper Flat Creek and the West Fork Agnes Creek, whose trail leaves the PCT near Fivemile Camp. No 'Blue Basin' appears in the map data. No ascent account names a route, so a replacement approach would be invention, and removing the leg would leave the approach without a line; this needs a human with a map."
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Total elevation gain and loss for the Southwest Route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Still present (gain_ft 7,000, loss_ft 5,500; itinerary days sum to 8,200 gain / 8,400 loss; totalNote 8,000-9,000 ft). The third search found only per-leg figures for the Downey Creek / Cub Lake / Itswoot Ridge approach shared by the Sinister lines (trailhead to camp 1 +3,900 ft, camp 1 to camp 2 +3,450 ft, camp to summit -1,600/+1,300 ft), a spring ski trip over Dome and Sinister's north face, and multi-peak outings. None states a car-to-car total for the Southwest Route, and summing legs would be a computed figure. No patch."
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "Still present (grade 'Class 4', rock_grade '5.4', beta and pitch_detail '5.6'). A third search found only qualitative grades again: low Class 5 for the two rock pitches of the Northeast Route, class 4/5 for the east face, class 5 for the easiest route in the encyclopedia entry, and the peak page's Class 4 with an optional low-5th summit block. No source gives 5.4 or 5.6, so neither end of a YDS range has support and rule 2 cannot apply. No patch."
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "fact": "One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "The row describes the East (true) summit by the southeast shoulder from the Mineral Creek trailhead. Its only matching published figure is one report's 7.7 mi round trip (2,360-6,687 ft); a 2002 report used a spur-road start at 2,800 ft and gives no total, and the 10 mi / 4,600 ft figure belongs to a Middle Peak ascent by the south face. No second source for the East summit's one-way or round-trip distance, so dist_km, the summit waypoint and the 10 mi totalNote are not changed."
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "fact": "rappel/rope length: 30 m vs 60 m",
+   "prior_file": "audits/route-tab-contradictions/research/out/v027.json",
+   "prior_evidence": "No new first-hand account found; the known ones still disagree (a 30 m rope 'more than enough' for one rappel; a 30 m rope needing an intermediate anchor; a 60 m rope still short of the next anchor; several mixed double/single raps). No rope length is confirmed by two sources."
+  }
+ ],
+ "fills": [
+  {
+   "id": "wa_mount_seattle_south",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "cleared_value": 28.5,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json"
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 24.78,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "cleared_value": 9.5,
+   "cleared_in": "audits/route-leftovers/deep/out/d8.json"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "cleared_value": 11,
+   "cleared_in": "audits/route-leftovers/deep/out/d8.json"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "cleared_value": 12.5,
+   "cleared_in": "audits/route-leftovers/deep/out/d8.json"
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "column": "gain_ft",
+   "path": [],
+   "cleared_value": 7500,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json"
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 14.5,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json"
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "column": "gain_ft",
+   "path": [],
+   "cleared_value": 8300,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json"
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "cleared_value": 14,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "timing",
+   "path": [],
+   "cleared_value": {
+    "totalHrs": 16,
+    "summitTimeHrs": 7,
+    "descentTimeHrs": 9,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacen…",
+      "fromTo": "Backpack in to high camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9,
+      "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full …",
+      "fromTo": "Summit push and hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "cleared_in": "audits/route-leftovers/deep/out/r13.json"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 40.23,
+   "cleared_in": "audits/route-leftovers/deep/out/r13.json"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "gain_ft",
+   "path": [],
+   "cleared_value": 4300,
+   "cleared_in": "audits/route-leftovers/deep/out/r13.json"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLat"
+   ],
+   "cleared_value": 47.92684,
+   "cleared_in": "audits/route-leftovers/deep/out/s1.json"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadLng"
+   ],
+   "cleared_value": -121.27705,
+   "cleared_in": "audits/route-leftovers/deep/out/s1.json"
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "column": "pitch_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "From the Argonaut-Colchuck col (~7,700ft) gain the east ridge crest over low-angle blocks and broken granite steps, easing into the climb before the terrain steepens.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 45
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Surmount a compact, steeper granite tower via face moves and thin gear placements; this is the route's technical crux and the most sustained pitch on the ridge.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Weave over and around a series of towers along the crest, alternating short exposed steps with easier ledge traverses; belay from a horn where the ridge narrows.",
+     "pitch": 3,
+     "anchor": "Slung horn",
+     "lengthM": 45
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Moderate climbing and scrambling up blocky granite toward the upper mountain, with route-finding between minor gendarmes rather than sustained difficulty.",
+     "pitch": 4,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Continue past another gendarme on the upper ridge, staying near the crest on exposed but moderate granite before the angle relents toward the summit spires.",
+     "pitch": 5,
+     "anchor": "Block",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.2",
+     "notes": "Class 3-4 ridge traverse to the base of the summit block, finishing with a short nonexposed scramble past the block's small cave feature to the true summit.",
+     "pitch": 6,
+     "anchor": "Gear",
+     "lengthM": 30
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json"
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "column": "rappel_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "notes": "First rappel down steep terrain toward the snow/talus below the notch, off a pre-placed sling on a rock.",
+     "anchor": "sling around a rock/horn",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel from a small tree, continuing down to the snow slopes; parties then traverse a snow-covered ledge toward the east gully.",
+     "anchor": "small tree",
+     "lengthM": 30
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json"
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "cleared_value": 0.2,
+   "cleared_in": "audits/route-leftovers/pins/out/p01.json"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "cleared_value": 8,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r023.json"
+  },
+  {
+   "id": "wa_roofer_madness",
+   "column": "gain_ft",
+   "path": [],
+   "cleared_value": 4200,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r049.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "cleared_value": 4.3,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "cleared_value": 5.2,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "cleared_value": 5.3,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "cleared_value": 6.3,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "cleared_value": 7,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "cleared_value": 7.4,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "cleared_value": 7.9,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r068.json"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "cleared_value": 5570,
+   "cleared_in": "audits/route-tab-contradictions/research/out/u001.json"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "cleared_value": 5.3,
+   "cleared_in": "audits/route-tab-contradictions/research/out/u001.json"
+  }
+ ]
+}

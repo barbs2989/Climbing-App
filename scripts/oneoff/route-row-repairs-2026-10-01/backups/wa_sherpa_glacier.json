@@ -1,0 +1,58 @@
+{
+ "id": "wa_sherpa_glacier",
+ "name": "Sherpa Glacier",
+ "waypoints": [
+  {
+   "lat": 47.52808,
+   "lng": -120.82071,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead (end of FR 7601, Eightmile Creek Rd)",
+   "type": "Trailhead",
+   "elevFt": 3400,
+   "directions": "From US 2 at the west edge of Leavenworth, turn onto Icicle Creek Road and drive 8.4 miles, then turn left onto Eightmile Road (FR 7601) and follow it 3.7 miles to the Stuart Lake trailhead at the road end, about 3,400 ft. The road is usually closed November through May. A Northwest Forest Pass is required to park; day trips self-issue an Enchantment day-use permit and overnight stays need an Enchantment quota permit."
+  },
+  {
+   "lat": 47.47854,
+   "lng": -120.88416,
+   "elev": 6600,
+   "name": "Sherpa Glacier toe/icefall",
+   "note": "Glacier terminates as an icefall here; crevasses present, cross high where the glacier is flatter.",
+   "type": "Hazard",
+   "distMi": 6,
+   "directions": "Hike the Stuart Lake Trail (#1599) along Mountaineer Creek and stay right toward Lake Stuart at the Colchuck Lake junction at about 2.2 miles. Leave the trail near the meadow and head southwest up the south fork of Mountaineer Creek; after a couple of miles a steep talus and boulder slope leads into the hanging valley beneath Sherpa Peak, and the lower snowfield above it leads to the glacier toe."
+  },
+  {
+   "lat": 47.47227,
+   "lng": -120.89263,
+   "elev": 7600,
+   "name": "Top of Sherpa Glacier",
+   "note": "Tops out at the notch gaining Mount Stuart's upper North Ridge.",
+   "type": "Topout",
+   "distMi": 6.5,
+   "directions": "Rope up and climb the glacier southwest toward the obvious couloir in its northwest corner, weaving around crevasses. Cross the bergschrund where the glacier narrows and climb the 40 to 45 degree couloir up and right to the notch at its top."
+  },
+  {
+   "lat": 47.4751179,
+   "lng": -120.9031444,
+   "elev": 9415,
+   "name": "Mount Stuart summit",
+   "type": "Summit",
+   "elevFt": 9415
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Mountaineer Creek south fork to the basin under the Sherpa and Ice Cliff glaciers",
+   "notes": "From the Stuart Lake trailhead, follow the Lake Stuart / Colchuck Lake trail past the fork and leave the maintained tread near the meadow at about 4,500 ft, heading southwest and following the south fork of Mountaineer Creek upstream.\n\nAfter a couple of miles a steep talus and boulder slope leads into the hanging valley beneath Sherpa Peak. This is the standard camp for the whole north side, and the flat ground itself is the arrival cue.\n\nThe glacier has three parts and it is worth knowing them before you set off in the dark: a lower snowfield, the glacier proper, and a steeper couloir in its northwest corner. Parties rope for the short glacier section and take the rope off above it.\n\nThis is a compact two-day outing, and it is the line most parties descend after climbing the Ice Cliff Glacier — so if you meet people coming down it at midday they are probably finishing a different climb.",
+   "season": "Roughly Jun-Jul while the glacier still carries continuous snow; it is also the standard early-season descent off the north side, which is when most parties are on it",
+   "hazards": [
+    "Crevasses in the middle section of the glacier and an icefall at its toe",
+    "Wet-snow avalanche and rockfall onto the glacier as the day warms",
+    "Straying right into the Ice Cliff Glacier's serac fall zone in poor visibility",
+    "A steep, unmaintained talus climb into the hanging valley with no trail",
+    "Log crossings of Mountaineer Creek that move with the snowpack"
+   ],
+   "baseFinding": "The Sherpa is the one with no ice above it, and that is the whole test. Standing in the basin facing the mountain, the three features run in this order from your left: Sherpa Glacier, then Ice Cliff Glacier, then the huge rock rib of the North Ridge.\n\nSo the Sherpa is the leftmost — the easternmost — of the two glaciers, and it is the one with nothing hanging over it. The Ice Cliff, immediately to its right, carries an obvious hanging ice cliff and serac band partway up. If there is a serac above you, you are one glacier too far right.\n\nTouch test, and it is the one that works when you cannot see: the ground under the Ice Cliff is frozen avalanche debris mixed with fallen glacier ice, set solid — a talus field made of ice. The Sherpa's toe is ordinary snow over ordinary moraine. Standing on rubble made of ice is direct evidence you have drifted right.\n\nWhere it takes you, as a confirmation rather than a route description: the Sherpa tops out at a notch on Mount Stuart's upper north ridge at roughly 7,600 ft, followed by a short scramble. It does not lead to the West Ridge — that is the Stuart Glacier Couloir, on the other side of the rock rib.\n\nAnd the steep part is in the glacier's northwest corner, not up its middle. If the steepest ground you can see is straight above the centre of the snowfield, look again at which feature you are under."
+  }
+ ]
+}

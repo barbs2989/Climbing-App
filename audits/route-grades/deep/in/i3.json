@@ -1,0 +1,434 @@
+[
+ {
+  "id": "wa_eldorado_peak_eldorado_glacier_nw",
+  "route": "Northwest Couloir / Eldorado Glacier",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "discipline": "mountaineering",
+  "grade": "AI3",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": "AI2-3 (WI3 when lean)",
+  "commitment": "III",
+  "face": "Northwest Couloir, Marble Creek Cirque",
+  "fa": "Dan Cauthorn and Bill Pilling",
+  "pitches": 8,
+  "overview": "The Northwest Ice Couloir splits the northwest face of Eldorado above the wild Marble Creek Cirque, offering 2-3 long pitches (often simul-climbed) up the couloir to a flat shoulder just below the summit's famous knife-edge ridge — a steeper, more technical alternative to the standard East Ridge, reached via a long and fairly complex glaciated traverse around the mountain.",
+  "beta": "Approach via the East Ridge glacier track to a rappel notch between Eldorado Peak and Dean's Spire (~8,100 ft), rappel into the west-facing cirque, then climb the couloir (~1,000 ft, 7,800–8,800 ft) on snow, neve, or ice depending on conditions — steps to 70–80° — to join the upper East Ridge.",
+  "breakdown": [
+   "1: AI2-3",
+   "2: AI2-3, up to WI3 in lean conditions"
+  ],
+  "flagged": [
+   "Same route as wa_main_peak_4_northwest_ice_couloir; the record is named Northwest Couloir / Eldorado Glacier but describes the NW Ice Couloir above Marble Creek Cirque."
+  ],
+  "siblings_on_same_area": [
+   "wa_main_peak_4_northwest_ice_couloir | Northwest Ice Couloir | AI3 | fa: ",
+   "wa_eldorado_peak_east_ridge | East Ridge (Inspiration Glacier) | Class 2 | fa: Donald Blair, Norval Grigg, Arthur Winder, Arthur Wilson - Aug 27, 1933",
+   "wa_south_ridge_4 | South Ridge | 5.6 | fa: ",
+   "wa_eldorado_peak_north_ridge | North Ridge | 5.7 | fa: ",
+   "wa_eldorado_peak_west_arete | West Arete | 5.8 | fa: Richard Emerson, Walter R. Gove - Aug 24, 1969",
+   "wa_eldorado_peak_northeast_face | Northeast Face | AI2 | fa: "
+  ]
+ },
+ {
+  "id": "wa_main_peak_4_northwest_ice_couloir",
+  "route": "Northwest Ice Couloir",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "discipline": "ice",
+  "grade": "AI3",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": "AI2-3",
+  "commitment": null,
+  "face": null,
+  "fa": null,
+  "pitches": 1,
+  "overview": "",
+  "beta": "\"\"",
+  "flagged": [
+   "Duplicate of wa_eldorado_peak_eldorado_glacier_nw (Eldorado's NW Ice Couloir). The peak name 'Main Peak' is ambiguous: Mount Index's routes also use it."
+  ],
+  "siblings_on_same_area": [
+   "wa_eldorado_peak_east_ridge | East Ridge (Inspiration Glacier) | Class 2 | fa: Donald Blair, Norval Grigg, Arthur Winder, Arthur Wilson - Aug 27, 1933",
+   "wa_south_ridge_4 | South Ridge | 5.6 | fa: ",
+   "wa_eldorado_peak_north_ridge | North Ridge | 5.7 | fa: ",
+   "wa_eldorado_peak_west_arete | West Arete | 5.8 | fa: Richard Emerson, Walter R. Gove - Aug 24, 1969",
+   "wa_eldorado_peak_northeast_face | Northeast Face | AI2 | fa: ",
+   "wa_eldorado_peak_eldorado_glacier_nw | Northwest Couloir / Eldorado Glacier | AI3 | fa: Dan Cauthorn and Bill Pilling"
+  ]
+ },
+ {
+  "id": "wa_baring_mountain_south_route",
+  "route": "South Route",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak_3",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "rock_grade": "Class 3",
+  "alpine_grade": "II",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "Northwest Ridge / South notch",
+  "fa": "John Charlton & Albert H. Sylvester, July 28, 1897 (first recorded ascent of the peak, via the south-side line this route follows)",
+  "pitches": 1,
+  "overview": "Baring Mountain is the dramatic, steep-sided peak rising directly above the town of Baring on US-2, famous for its sheer north face. The standard south route is a notoriously brushy and steep climb with exposed scrambling to a small summit far harder than its elevation suggests.",
+  "beta": "A popular mountaineering route requiring moderate off-trail navigation skills. A fairly well-used climber's trail ascends approximately one mile to the ridge, then continues east to the notch between north and south peaks. Pink tape and cairns occasionally mark sections but are unreliable. An ice axe is recommended in spring and summer. Navigation can be challenging in bad weather; GPX/map recommended.",
+  "breakdown": [
+   "Notch to summit: Class 3-4"
+  ],
+  "flagged": [
+   "Appears to be the same standard route as wa_baring_mountain_northwest_ridge (its face reads 'Northwest Ridge / South notch'): a climbers' path up the NW side to the notch, then the summit.",
+   "The same route as Northwest Ridge (by both pages' own account). The two pages should be merged."
+  ],
+  "siblings_on_same_area": [
+   "wa_baring_mountain_oatmeal_man | Oatmeal Man | 5.11c | fa: Peter Doorish and Paul Woodrum, September 1992",
+   "wa_baring_mountain_east_face | East Face | 5.10d | fa: Peter Doorish and Laura Woods, October 1992",
+   "wa_baring_mountain_r1 | North Face | 5.10c | fa: Don Gordon (Claunch) and Ed Cooper, July 9-13, 1960",
+   "wa_baring_mountain_northwest_ridge | Northwest Ridge | Class 3 | fa: "
+  ]
+ },
+ {
+  "id": "wa_mount_adams_mount_adams_circumnavigation",
+  "route": "Mount Adams circumnavigation",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "discipline": "ice",
+  "grade": "Easy 5th WI1 PG13",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": "WI1",
+  "commitment": null,
+  "face": null,
+  "fa": null,
+  "pitches": 1,
+  "overview": "",
+  "beta": "\"\"",
+  "flagged": [
+   "A circumnavigation trek around the mountain, not a climbing route to the summit."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_adams_lava_glacier_headwall | Lava Glacier Headwall | Class 3 | fa: Edward Cooper and Mike Swayne, July 3, 1961",
+   "wa_mount_adams_lyman_glacier | Lyman Glacier | Class 3 | fa: ",
+   "wa_mount_adams_northwest_ridge | North Ridge (West Face) | AI2 | fa: Molenaar, Johnson, Ostro, and Startzell, September 1960",
+   "wa_mount_adams_wilson_glacier_headwall | Wilson Glacier Headwall | Class 3 | fa: ",
+   "wa_mount_adams_adams_glacier | Adams Glacier | AI3 | fa: Fred Beckey, Dave Lind, and Robert Mulhall, July 1945",
+   "wa_mount_adams_mazama_glacier_headwall | Mazama Glacier Headwall | Class 3 | fa: ",
+   "adams_avalanche_glacier | Avalanche Glacier |  | fa: James Bjorgen and Dale Schmidt, July 10, 1977 (first direct ascent of the headwa",
+   "wa_mount_adams_south_climb | South Climb (South Spur) | Class 2 | fa: Unknown (climbed since at least the 1860s)",
+   "adams_northwest_ridge | North Face of the Northwest Ridge | AI2-3 Mod. Snow PG13 | fa: Givler, LeBlond, and McGowan, 1967",
+   "wa_mount_adams_north_ridge | North Ridge | Class 3 | fa: A.G. Aiken, Edward J. Allen, and Andrew J. Burge, 1854 (first ascent of Mount Ad"
+  ]
+ },
+ {
+  "id": "wa_mount_constance_finger_traverse",
+  "route": "Finger Traverse",
+  "peak": "Mount Constance",
+  "area_id": "wa_mount_constance",
+  "discipline": "alpine",
+  "grade": "Class 4",
+  "rock_grade": "Class 3-4 (exposed finger-crack ledge; a few 4th-class moves on the summit block)",
+  "alpine_grade": "II",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "Upper South Face (crux traverse), below the summit block",
+  "fa": null,
+  "pitches": null,
+  "overview": "A rock alternative to the adjacent Terrible Traverse, encountered above the South Chute around 7,400-7,450 ft. Climbers cross an airy, narrow ledge with thin footholds by jamming fingers into a continuous horizontal crack/flake that runs the length of the traverse, giving good hands even though the feet are marginal. Because it doesn't depend on snow conditions, many parties prefer it over the Terrible Traverse once it's dry.",
+  "beta": "On the standard South Chute approach, the Finger Traverse is crossed on the way to the summit and again on the descent. From the summit ridge near the Terrible Traverse, locate the downsloping ledge on the eastern side. Place your fingers in the horizontal crack running along the top edge and traverse carefully. The slab below is steep and exposure is extreme—a fall would be fatal. The traverse exits to easier terrain and rejoins the descent route.",
+  "breakdown": [
+   "Avalanche Canyon approach: Talus and scree",
+   "South Chute: Scree or snow gully",
+   "Scree gully to the east–west ridge notch: Scree, snow patches",
+   "Ledges to the Finger Traverse: Exposed Class 3 ledges",
+   "Finger Traverse crux: Class 3",
+   "Snow basin and diagonal ramp: Scree, loose ramp",
+   "Summit block: Class 3-4"
+  ],
+  "flagged": [
+   "A crux section/variation of the standard South Chute route rather than a separate route to the summit."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_constance_terrible_traverse | Terrible Traverse | Class 4 | fa: ",
+   "wa_mount_constance_north_chute | North Chute | Class 4 | fa: ",
+   "wa_mount_constance_west_arete | West Arête | 5.5 | fa: ",
+   "wa_mount_constance_north_chimney | North Chimney (Standard Route) | Class 4 | fa: R. Schellin and A.E. Smith, 1922 (first ascent of the peak)"
+  ]
+ },
+ {
+  "id": "wa_mount_constance_terrible_traverse",
+  "route": "Terrible Traverse",
+  "peak": "Mount Constance",
+  "area_id": "wa_mount_constance",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "rock_grade": "Class 3-4, exposed",
+  "alpine_grade": "II",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "Upper South Face (crux traverse), ~7,435 ft, below the summit block",
+  "fa": null,
+  "pitches": null,
+  "overview": "The Terrible Traverse is the historic crux of the standard Mount Constance route: an exposed, steep snow traverse across a cirque above a sheer cliff, encountered around 7,400-7,450 ft while crossing from the South Chute notch toward the summit block — a fall here would likely be fatal, hence the name. When it still holds hard snow (common through June and into July in heavier-snow years), published descriptions recommend carrying and placing 2-3 pickets for protection; many parties instead take",
+  "beta": "The Terrible Traverse is crossed on the way up and again on the way down, unless the party descends by the Finger Traverse instead. Parties locate the Australia-shaped snowfield (exposed ridge line with precipitous drop below). The traverse crosses steep, exposed snow above a massive cliff. Early season parties must be equipped with ice axes and crampons; self-arrest techniques and belay skills are essential. Many climbers place pickets for protection or opt for the Finger Traverse bypass instea",
+  "breakdown": [
+   "Lake Constance Trail: Steep climbers' trail",
+   "Avalanche Canyon: Talus, snow patches",
+   "South Chute to ~7,300 ft notch: Class 2–3 loose scree",
+   "Notch to the traverses: Steep snow or hard scree",
+   "Terrible Traverse / Finger Traverse: 45–50° snow above cliff",
+   "Key Ledge and summit ridge: Class 2–3 ledges",
+   "Summit block: 4th class"
+  ],
+  "flagged": [
+   "A named crux section of the standard South Chute route rather than a separate route to the summit."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_constance_north_chute | North Chute | Class 4 | fa: ",
+   "wa_mount_constance_finger_traverse | Finger Traverse | Class 4 | fa: ",
+   "wa_mount_constance_west_arete | West Arête | 5.5 | fa: ",
+   "wa_mount_constance_north_chimney | North Chimney (Standard Route) | Class 4 | fa: R. Schellin and A.E. Smith, 1922 (first ascent of the peak)"
+  ]
+ },
+ {
+  "id": "wa_mount_fury_west_west_ridge",
+  "route": "West Ridge / Northwest Route",
+  "peak": "Mount Fury (West Peak)",
+  "area_id": "wa_mount_fury_west",
+  "discipline": "mountaineering",
+  "grade": "5.4",
+  "rock_grade": "5.4",
+  "alpine_grade": "D",
+  "ice_grade": null,
+  "commitment": "III",
+  "face": "Connecting ridge crest between East Fury and West Fury summits",
+  "fa": "Duke Watson, Phil Sharpe, Warren Spickard, Vic Josendal, and Maury Muzzy — August 19, 1958 (first ascent of West Peak)",
+  "pitches": null,
+  "overview": "West Peak carries the official USGS 'Mount Fury' benchmark and, via its long, loose connecting ridge from East Fury, is markedly harder than its twin summit — West Fury is routinely listed among the ten hardest Washington peaks by their easiest route. Precise modern surveying has found that East Fury is actually roughly 20 ft taller than West Fury (about 8,322 ft vs. roughly 8,300 ft), meaning the officially named summit is not the range's true high point, even though it remains the far more ser",
+  "beta": "The West Peak route starts from the East Peak via the Southeast Glacier approach. The traverse between summits is a wild and fun scramble with decent exposure and more technical difficulty than the East Peak ascent. Three distinct towers require climbing up and over; rock quality on this connecting ridge is notoriously poor — climbers describe it as 'shockingly mobile' loose talus and standard chossy 4th class, not sound rock. The route involves low Class 5 rock climbing up to 5.4, though many c",
+  "breakdown": [
+   "Approach: ",
+   "Chimneys: Class 4-5",
+   "Summit scramble: Class 3-4"
+  ],
+  "flagged": [
+   "Face and overview describe the East Fury to West Fury connecting-ridge traverse, the same line as wa_ridge_traverse_from_east_fury, not a separate West Ridge/Northwest route."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_fury_east_mongo_ridge | Mongo Ridge (Southwest Buttress) | 5.10 | fa: Wayne Wallace, solo — August 24-27, 2006",
+   "wa_ridge_traverse_from_east_fury | Ridge Traverse from East Fury | 5.4 | fa: "
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "route": "Standard Scramble (Flapjack Lakes / Sawtooth Ridge)",
+  "peak": "Mount Lincoln",
+  "area_id": "wa_mount_lincoln",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "rock_grade": "Class 3-4",
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": null,
+  "face": "South Ridge",
+  "fa": "1932 — Ken Soult and F.S. Harmon",
+  "pitches": null,
+  "overview": "Mount Lincoln (5,868 ft) is the second-highest summit on Sawtooth Ridge in the southeastern Olympic Mountains, on the shared boundary of Olympic National Park and the Mount Skokomish Wilderness (Olympic National Forest), Mason County. Its parent peak, Mount Cruiser (6,104 ft), sits 1.1 miles northeast; Lincoln has two sub-summits, North Peak (5,690 ft) and Southwest Peak (5,486 ft). Flapjack Lakes lie in a basin directly west/below the north sub-peak. The mountain is built of Eocene-age basalt f",
+  "beta": "Considered the easiest way up Lincoln (class 2 per the historic first-ascent line), but in practice parties report sustained class 2-3 terrain with a couple of class 3+/occasional class 4 moves near the true summit. The crux isn't technical difficulty so much as route-finding and endurance: thick brush and steep loose duff/scree (35-40+ degree slopes) below the ridge, a chockstone gully/boulder field, and an exposed, chossy knife-edge near the top. Most parties either backpack in and camp at Fla",
+  "breakdown": [
+   "Approach: ",
+   "Off-trail ascent: Class 2",
+   "Ridge crest: Class 2-3",
+   "Summit block: Class 3-4 (short)"
+  ],
+  "flagged": [
+   "Name says Flapjack Lakes approach (which the climbers' guide routes via the North Ridge, Class 3) but the face column says South Ridge (Class 2 in the same guide); the record may blend the two lines."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_lincoln_harniss_chute | Harniss Chute | Class 3 | fa: "
+  ]
+ },
+ {
+  "id": "wa_olympus_blue_glacier_east_ramps",
+  "route": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "discipline": "mountaineering",
+  "grade": "5.0",
+  "rock_grade": "Class 4 with a 5th-class step",
+  "alpine_grade": "PD",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "East Face (summit block)",
+  "fa": "1907, L.A. Nelson and party (first ascent of Mount Olympus)",
+  "pitches": 1,
+  "overview": "This is the standard finish on the highest summit in the Olympics, reached after one of the longest approaches in the Lower 48. After miles of rainforest and a glacier crossing, the climb tops out by winding up a series of loose ramps on the east face of the summit pinnacle. The moves are moderate, but the rock is rotten and an exposed corner is best protected — a small, serious finale to a big wilderness peak.",
+  "beta": "From Glacier Meadows, descend to the Blue Glacier lateral moraine and rope up for glacier travel. Cross the Blue Glacier for approximately 1 mile with crevasse avoidance and careful snow bridge assessment. Ascend the broad Snow Dome to 6,600-7,000 feet. From Snow Dome, ascend toward Crystal Pass at 7,250 feet. After crossing Crystal Pass and traversing Five Fingers Ridge, encounter the false summit before the final push. The crux involves Class 4-5 scrambling on loose rocky ramps on the East Fac",
+  "breakdown": [
+   "1: Class 4 / 5.4 step"
+  ],
+  "flagged": [
+   "Calls itself the Standard finish, overlapping the separate Blue Glacier (Standard Route) record for the same climb."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_olympus_blue_glacier | Blue Glacier (Standard Route) | 5.4 | fa: Lorenz A. Nelson party (The Mountaineers), Aug 13, 1907 — first ascent of the tr",
+   "wa_olympus_traverse | Mount Olympus Traverse (West–Middle–East Peaks) | 5.4 | fa: ",
+   "wa_olympus_summit_block_north_face | Summit Block — North Face Direct Finish (variation) | 5.4 | fa: ",
+   "wa_olympus_summit_block_west_edge | Summit Block — Northwest Edge Finish (variation) | 5.4 | fa: ",
+   "wa_mount_olympus_west_ridge | West Ridge | 5.4 | fa: 1964, Gary Maykut, Len Miller, and Joe Witte"
+  ]
+ },
+ {
+  "id": "wa_mount_price_hester_lake_route",
+  "route": "Hester Lake Route",
+  "peak": "Mount Price",
+  "area_id": "wa_mount_price",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "rock_grade": null,
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": null,
+  "face": "South/East flank via Hester Lake basin and east ridge",
+  "fa": null,
+  "pitches": null,
+  "overview": "A longer wilderness approach up Mount Price's south/east side via the Hester Lake basin, gaining the peak's east ridge by a boulder-field scramble and finishing along a steep, partly snow-and-rock ridge to the summit.",
+  "beta": "From the Dingford Creek Trailhead, follow the Dingford Creek Trail (multiple creek crossings) toward Hester Lake and Little Hester Lake — roughly the first 5-6 miles. Leave the trail and make an ascending traverse below cliff bands, climbing a short, steep gully along Price Creek between about 3,200 and 3,800 ft — reported by multiple parties as the most technical part of the scramble. From the lakes basin, ascend the boulder field south of Little Hester Lake to gain Price's east ridge near Poin",
+  "breakdown": [
+   "1: Class 3",
+   "2: Class 3 (steep snow/rock gullies)"
+  ],
+  "flagged": [
+   "Sources describe the Hester Lake route finishing via the North Ridge, not the east ridge named in the record, which overlaps the separate North Route record."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_price_north_route | North Route | Class 3 | fa: "
+  ]
+ },
+ {
+  "id": "wa_mount_rahm_south_side",
+  "route": "South Side",
+  "peak": "Mount Rahm",
+  "area_id": "wa_mount_rahm",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "rock_grade": "Class 4 (short, ~40-ft crux gully; unroped)",
+  "alpine_grade": null,
+  "ice_grade": null,
+  "commitment": null,
+  "face": "South side (upper SW basin below the Custer-Rahm ridge)",
+  "fa": null,
+  "pitches": null,
+  "overview": "A talus, gully, and snowfield scramble that gains Mount Rahm's summit from the south via Ouzel Lake or Silver Lake camp, with the only real obstacle being a short Class 4/5 gully through a cliff band at 7,700 ft.",
+  "beta": "From camp, ascend cross-country to an upper terrace below the Custer-Rahm ridge, then locate a narrow, oblique gully cutting through a roughly 100-ft cliff band — it's hidden until you're right on it, at an inside corner of the cliff. Climb the gully's right-hand fork through its short crux (the left fork dead-ends in a loose, walled amphitheater), then continue up talus/scree and a moderate-angle snowfield in the upper basin to the south spur and the east summit; the west summit, a short ridge ",
+  "breakdown": [
+   "Camp to cliff band (saddle, traverse, upper terrace): Class 2/3",
+   "Crux gully through cliff band: Class 4/5",
+   "Upper basin to summit: Class 2/3 (talus/scree, snowfield)"
+  ],
+  "flagged": [
+   "Same Ouzel Lake south-side gully line as wa_mount_rahm_standard; the two records look like one route."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_rahm_custer_traverse | Custer-Rahm Traverse | Class 4 | fa: ",
+   "wa_mount_rahm_standard | Standard Route / Glacier | Class 3 | fa: Joe Hutton, Peggy Hutton, Roy Mason; 1955"
+  ]
+ },
+ {
+  "id": "wa_mount_rahm_standard",
+  "route": "Standard Route / Glacier",
+  "peak": "Mount Rahm",
+  "area_id": "wa_mount_rahm",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "rock_grade": "Class 3",
+  "alpine_grade": "II-III",
+  "ice_grade": null,
+  "commitment": "III",
+  "face": "South side - the standard gully dropping from the summit, reached from Ouzel Lake",
+  "fa": "Joe Hutton, Peggy Hutton, Roy Mason; 1955",
+  "pitches": null,
+  "overview": "Mount Rahm is a glaciated summit sitting essentially on the US-Canada border ridge on Custer Ridge, near Mount Custer and Mount Spickard, deep in the remote Chilliwack zone of North Cascades National Park. It's named for David Rahm, a Western Washington University geology professor, and the peak has its own small extinct caldera. Rahm is rarely climbed alone — most parties tag it as part of a 3-5 day trip that also bags Custer and/or Spickard/Redoubt from a shared camp at Ouzel Lake, reached via",
+  "beta": "Mount Rahm presents a challenging alpine climb requiring solid mountaineering skills, glacier travel competency, and rock scrambling ability. The standard route follows either the South Ridge approach from Ouzel Lake or the Maselpanik Creek approach, both converging on the mountain's upper basin before the final scramble to the west summit (8,485 ft). Class 3 rock climbing and glacier work are the primary technical elements.",
+  "breakdown": [
+   "1: Class 3",
+   "2: Class 3+",
+   "3: Alpine snow/ice",
+   "4: Alpine ice/snow Class 3"
+  ],
+  "flagged": [
+   "Describes the same south-side gully route as wa_mount_rahm_south_side."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_rahm_custer_traverse | Custer-Rahm Traverse | Class 4 | fa: ",
+   "wa_mount_rahm_south_side | South Side | Class 4 | fa: "
+  ]
+ },
+ {
+  "id": "wa_mount_stone_lake_of_angels",
+  "route": "South Route via Lake of the Angels",
+  "peak": "Mount Stone",
+  "area_id": "wa_mount_stone",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "rock_grade": "Class 3 (short 4th-class crux)",
+  "alpine_grade": "Grade II",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "South Couloir / Southwest Slope–West Ridge",
+  "fa": null,
+  "pitches": null,
+  "overview": "Mount Stone is a high-prominence, triple-summited peak (South/main summit 6,612 ft, plus Middle ~6,600 ft and North ~6,400 ft summits) above Lake of the Angels in the southeastern Olympic Mountains. It is the highest point in Mason County. The lower approach lies in the Mount Skokomish Wilderness (Olympic National Forest); the upper basin, lake, and summit sit just inside the Olympic National Park boundary. On a clear day the summit gives views of The Brothers, Mount Washington, Mount Anderson, ",
+  "beta": "From Hamma Hamma River Road, hike the steep Putvin Trail (FST 813) through Olympic National Forest gaining nearly 3,000 feet in less than 4 miles. Emerge in an alpine basin at Lake of the Angels (~4,900 feet), then traverse along the base of the cliffs short of St. Peter's Gate to a notch in the West Ridge, then scramble Class 3 up the ridge with some exposed class 4 moves to reach the South Peak summit.",
+  "breakdown": [
+   "Putvin Trail approach: Steep trail",
+   "Headwall to meadow: Class 2–3, hands on",
+   "Meadow to St. Peter's Gate: Class 2",
+   "Traverse to west-ridge notch: Class 3",
+   "West ridge to hanging basin: Class 3",
+   "Summit block: Class 3, Class 4 moves"
+  ],
+  "flagged": [
+   "Describes the same South Couloir line from Lake of the Angels as wa_mount_stone_putvin (same face, approach and crux); likely a duplicate."
+  ],
+  "siblings_on_same_area": [
+   "wa_mount_stone_putvin | Putvin Trail / Lake of the Angels Scramble | Class 4 | fa: ",
+   "wa_lena_lake_to_mt_stone_traverse | Lena Lake to Mt Stone traverse | Class 3 | fa: "
+  ]
+ },
+ {
+  "id": "wa_mount_stone_putvin",
+  "route": "Putvin Trail / Lake of the Angels Scramble",
+  "peak": "Mount Stone",
+  "area_id": "wa_mount_stone",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "rock_grade": "Class 3 (short 4th-class crux)",
+  "alpine_grade": "Grade II",
+  "ice_grade": null,
+  "commitment": "II",
+  "face": "South Couloir / Southwest Slope–West Ridge",
+  "fa": null,
+  "pitches": null,
+  "overview": "The standard route up Mount Stone, the highest point in Mason County. From the Putvin Trail and Lake of the Angels, a class 3 rock scramble of roughly 5,000 ft of gain over about 10 miles round trip gains the summit, with broad views of The Brothers, Mount Anderson, Mount Deception, Mount Constance, and Mount Olympus.",
+  "beta": "Putvin Trail is notorious for its steep pitch, gaining nearly 3,000 feet in less than 4 miles. The trail negotiates several short sections of Class 3 scrambling over wet rocks and tree roots before reaching the Lake of the Angels basin. This route is more direct than any traverse and is the most commonly used summer climbing route on Mount Stone.",
+  "breakdown": [
+   "Trailhead to FS road junction: Class 1",
+   "Forest climb to headwall: Class 1-2, steep",
+   "Headwall handline section: Class 3, fixed handline",
+   "Park boundary to Lake of the Angels: Class 2",
+   "Lake of the Angels to the cliff band: Class 2, loose scree",
+   "Traverse under the cliffs to the west-ridge notch: Class 2-3, loose",
+   "West-ridge notch to the hanging basin: Class 3, chimney",
+   "Summit block: Class 3-4"
+  ],
+  "flagged": [
+   "Same South Couloir route via the Putvin Trail and Lake of the Angels as wa_mount_stone_lake_of_angels; likely a duplicate."
+  ],
+  "siblings_on_same_area": [
+   "wa_lena_lake_to_mt_stone_traverse | Lena Lake to Mt Stone traverse | Class 3 | fa: ",
+   "wa_mount_stone_lake_of_angels | South Route via Lake of the Angels | Class 4 | fa: "
+  ]
+ }
+]

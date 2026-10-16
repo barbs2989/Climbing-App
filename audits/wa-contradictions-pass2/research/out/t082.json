@@ -1,0 +1,341 @@
+{
+ "file": "t082.json",
+ "results": [
+  {
+   "id": "wa_south_face_4",
+   "fact": "SR-20 winter closure window",
+   "verdict": "fixed",
+   "correct_value": "Typically closes mid-to-late November and reopens April-May; 2025-26: closed Dec 4, 2025, Washington Pass reachable from the east from April 30, 2026, full highway open June 14, 2026",
+   "evidence": "WSDOT closure history (2010-11 to 2024-25) shows SR 20 closing between Nov 3 and Dec 11 (median ~Nov 20; only 3 of 15 in December) and reopening Apr 3-May 25 (median ~May 8); the park service says it usually closes late November/early December and reopens in April or early May, so \"early December-mid/late April\" is off at both ends. For 2025-26, WSDOT and news outlets give the closure as 6 p.m. Dec 4, 2025 (not Dec 12); WSDOT reopened the east side to MP 156.8 (Porcupine Creek, west of Rainy and Washington Passes) on April 30, 2026, and local news confirms the Washington Pass, Blue Lake and Rainy Pass trailheads were reachable from the east in May; the full highway reopened June 14, 2026 after storm repairs.",
+   "sources": [
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2025/dec/02/north-cascades-highway-to-close-for-winter-on-thursday/",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://methowvalleynews.com/2026/05/21/wsdot-highway-20-to-reopen-by-june-25/",
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs-completed-june-2026"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_4",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April",
+     "replace": "closes gate-to-gate for winter, usually in mid-to-late November, and typically reopens in April or May"
+    },
+    {
+     "id": "wa_south_face_4",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)",
+     "replace": "(in 2025-26 it closed on Dec 4, 2025; the Washington Pass section reopened from the east on April 30, 2026, while storm repairs kept the full highway shut until June 14, 2026; dates vary by year)"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+   "verdict": "fixed",
+   "correct_value": "14 consecutive days",
+   "evidence": "The forest-wide occupancy order for the Okanogan-Wenatchee NF (06-17-00-25-01, effective May 19, 2025-May 18, 2027) caps camping at one location at 14 consecutive days (and 28 days a year), with no 10-day limit; an independent dispersed-camping directory also gives 14 days in a 30-day period. The bivy card (14 days) is right; access.rules (10 days) is the outlier.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/occupancy-and-use-camping-restrictions-forestwide",
+    "https://dispersedapp.com/usfs-camping/washington/okanogan-wenatchee-national-forest/"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_4",
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days;",
+     "replace": "Camping in one spot capped at 14 consecutive days;"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Rope length needed for the descent",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The row itself offers two descents: two ~30 m rappels (needs a 60 m rope) or three shorter single-rope rappels to the notch; a 50 m rope works for the latter, and one trip report descended on a single 50 m rope with an ~80 ft first rappel. The route page gives the longest pitch as 50 m and the two-30 m-rap descent, so \"50m or 60m\" pairs with the two genuine descent options rather than contradicting them.",
+   "sources": [
+    "https://www.mountainproject.com/route/112056599/northwest-face",
+    "http://www.alpinedave.com/kangaroo/kangaroo_nw.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "SR-20 winter closure window",
+   "verdict": "fixed",
+   "correct_value": "Typically closes mid-to-late November and reopens April-May; 2025-26: closed Dec 4, 2025, Washington Pass reachable from the east from April 30, 2026, full highway open June 14, 2026",
+   "evidence": "WSDOT closure history (2010-11 to 2024-25) shows SR 20 closing between Nov 3 and Dec 11 (median ~Nov 20; only 3 of 15 in December) and reopening Apr 3-May 25 (median ~May 8); the park service says it usually closes late November/early December and reopens in April or early May, so \"early December-mid/late April\" is off at both ends. For 2025-26, WSDOT and news outlets give the closure as 6 p.m. Dec 4, 2025 (not Dec 12); WSDOT reopened the east side to MP 156.8 (Porcupine Creek, west of Rainy and Washington Passes) on April 30, 2026, and local news confirms the Washington Pass, Blue Lake and Rainy Pass trailheads were reachable from the east in May; the full highway reopened June 14, 2026 after storm repairs.",
+   "sources": [
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2025/dec/02/north-cascades-highway-to-close-for-winter-on-thursday/",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://methowvalleynews.com/2026/05/21/wsdot-highway-20-to-reopen-by-june-25/",
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs-completed-june-2026"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April",
+     "replace": "closes gate-to-gate for winter, usually in mid-to-late November, and typically reopens in April or May"
+    },
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)",
+     "replace": "(in 2025-26 it closed on Dec 4, 2025; the Washington Pass section reopened from the east on April 30, 2026, while storm repairs kept the full highway shut until June 14, 2026; dates vary by year)"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+   "verdict": "fixed",
+   "correct_value": "14 consecutive days",
+   "evidence": "The forest-wide occupancy order for the Okanogan-Wenatchee NF (06-17-00-25-01, effective May 19, 2025-May 18, 2027) caps camping at one location at 14 consecutive days (and 28 days a year), with no 10-day limit; an independent dispersed-camping directory also gives 14 days in a 30-day period. The bivy card (14 days) is right; access.rules (10 days) is the outlier.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/occupancy-and-use-camping-restrictions-forestwide",
+    "https://dispersedapp.com/usfs-camping/washington/okanogan-wenatchee-national-forest/"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days;",
+     "replace": "Camping in one spot capped at 14 consecutive days;"
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "fact": "Rappel count for the descent",
+   "verdict": "fixed",
+   "correct_value": "The cairned bolted station is the top of the standard North Face descent: three single-rope rappels on a 60 m rope",
+   "evidence": "The Koala Krack route page describes it as a short pitch reaching the otherwise non-obvious bolted rappel station on the ridge edge; the North Face page says the descent is three single-rope raps (60 m) from chains atop the North Face and at the P1 belay; a 2022 trip report found the first bolted anchors on the western side after a tricky scramble, used a 60 m rope, and notes other parties make more rappels below. So \"1 rappel\" undercounts; the descent from this station is the multi-rappel North Face line.",
+   "sources": [
+    "https://www.mountainproject.com/route/119300522/koala-krack",
+    "https://www.mountainproject.com/route/109059579/north-face",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_koala_krack",
+     "fact": "Rappel count for the descent",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "1 rappel from bolted anchor at the cairn-marked station",
+     "replace": "From the bolted, cairn-marked station, the standard descent is three single-rope rappels on a 60 m rope back toward the notch"
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "fact": "Whether the North Face is easier than Koala Krack",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Koala Krack (5.4) is easier than the North Face (5.6)",
+   "evidence": "grade, rock_grade, pitch_detail and the summit waypoint note all give 5.4 for Koala Krack against 5.6 for the North Face; the area route list gives the same two grades (5.4 and 5.6). Only rope_note calls the North Face \"easier\".",
+   "sources": [
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+    "https://www.mountainproject.com/route/119300522/koala-krack"
+   ],
+   "patches": [
+    {
+     "id": "wa_koala_krack",
+     "fact": "Whether the North Face is easier than Koala Krack",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "comparable/easier North Face",
+     "replace": "comparable, slightly harder North Face"
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "fact": "SR-20 winter closure window",
+   "verdict": "fixed",
+   "correct_value": "Typically closes mid-to-late November and reopens April-May; 2025-26: closed Dec 4, 2025, Washington Pass reachable from the east from April 30, 2026, full highway open June 14, 2026",
+   "evidence": "WSDOT closure history (2010-11 to 2024-25) shows SR 20 closing between Nov 3 and Dec 11 (median ~Nov 20; only 3 of 15 in December) and reopening Apr 3-May 25 (median ~May 8); the park service says it usually closes late November/early December and reopens in April or early May, so \"early December-mid/late April\" is off at both ends. For 2025-26, WSDOT and news outlets give the closure as 6 p.m. Dec 4, 2025 (not Dec 12); WSDOT reopened the east side to MP 156.8 (Porcupine Creek, west of Rainy and Washington Passes) on April 30, 2026, and local news confirms the Washington Pass, Blue Lake and Rainy Pass trailheads were reachable from the east in May; the full highway reopened June 14, 2026 after storm repairs.",
+   "sources": [
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2025/dec/02/north-cascades-highway-to-close-for-winter-on-thursday/",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://methowvalleynews.com/2026/05/21/wsdot-highway-20-to-reopen-by-june-25/",
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs-completed-june-2026"
+   ],
+   "patches": [
+    {
+     "id": "wa_koala_krack",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April",
+     "replace": "closes gate-to-gate for winter, usually in mid-to-late November, and typically reopens in April or May"
+    },
+    {
+     "id": "wa_koala_krack",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)",
+     "replace": "(in 2025-26 it closed on Dec 4, 2025; the Washington Pass section reopened from the east on April 30, 2026, while storm repairs kept the full highway shut until June 14, 2026; dates vary by year)"
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+   "verdict": "fixed",
+   "correct_value": "14 consecutive days",
+   "evidence": "The forest-wide occupancy order for the Okanogan-Wenatchee NF (06-17-00-25-01, effective May 19, 2025-May 18, 2027) caps camping at one location at 14 consecutive days (and 28 days a year), with no 10-day limit; an independent dispersed-camping directory also gives 14 days in a 30-day period. The bivy card (14 days) is right; access.rules (10 days) is the outlier.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/occupancy-and-use-camping-restrictions-forestwide",
+    "https://dispersedapp.com/usfs-camping/washington/okanogan-wenatchee-national-forest/"
+   ],
+   "patches": [
+    {
+     "id": "wa_koala_krack",
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days;",
+     "replace": "Camping in one spot capped at 14 consecutive days;"
+    }
+   ]
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "Total gain",
+   "verdict": "fixed",
+   "correct_value": "2,500 ft",
+   "evidence": "The Mountaineers route/activity listing gives 2,500 ft of gain (6.0 mi round trip) for the North Face; a 2022 GPS-logged trip report gives 754 m (~2,475 ft) car to car. Both agree on ~2,500 ft, so neither 2,400 (gain_ft) nor 2,800 (itinerary) is right. Patched gain_ft and the itinerary day gainFt/totalNote gain to 2,500; the itinerary lossFt (2,800) is left untouched per the loss-column rule, and the totalNote no longer states a loss figure.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Total gain",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 2400,
+     "value": 2500
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Total gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2800,
+     "value": 2500
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Total gain",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "with ~2,800 ft of gain/loss over",
+     "replace": "with ~2,500 ft of gain over"
+    }
+   ]
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers listing gives 6.0 mi round trip (consistent with the itinerary 6 mi and dist_km 4.8 km one way); a 2022 GPS trip report logged 7.89 km (~4.9 mi) round trip; the waypoints put the summit 1.8 mi out (3.6 mi round trip). No two sources agree on one figure, and no source gives the distance to Kangaroo Pass (1.3 vs 1.5 mi). Would be settled by a second measured track or published figure matching either 6.0 or ~4.9 mi.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "SR-20 winter closure window",
+   "verdict": "fixed",
+   "correct_value": "Typically closes mid-to-late November and reopens April-May",
+   "evidence": "WSDOT closure history (2010-11 to 2024-25) shows SR 20 closing between Nov 3 and Dec 11 (median ~Nov 20; only 3 of 15 in December) and reopening Apr 3-May 25 (median ~May 8); the park service says it usually closes late November/early December and reopens in April or early May, so \"early December-mid/late April\" is off at both ends. For 2025-26, WSDOT and news outlets give the closure as 6 p.m. Dec 4, 2025 (not Dec 12); WSDOT reopened the east side to MP 156.8 (Porcupine Creek, west of Rainy and Washington Passes) on April 30, 2026, and local news confirms the Washington Pass, Blue Lake and Rainy Pass trailheads were reachable from the east in May; the full highway reopened June 14, 2026 after storm repairs.",
+   "sources": [
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2025/dec/02/north-cascades-highway-to-close-for-winter-on-thursday/",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://methowvalleynews.com/2026/05/21/wsdot-highway-20-to-reopen-by-june-25/",
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs-completed-june-2026"
+   ],
+   "patches": [
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "SR-20 winter closure window",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April",
+     "replace": "closes gate-to-gate for winter, usually in mid-to-late November, and typically reopens in April or May"
+    }
+   ]
+  }
+ ]
+}

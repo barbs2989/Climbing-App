@@ -1,0 +1,215 @@
+{
+ "file": "s048.json",
+ "results": [
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a season window for the face. A private party climbed it in firm neve on 13-14 July 2019 and park climbing rangers found it climbable on 25 July 2017, which undercuts the row's \"July risky\" as much as the May-June window, while another party in 2017 was turned back by open bergschrunds. What would settle it: a route description that states the usual climbing window.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/103382-tr-mt-rainier-central-mowich-face-iv-ai2-60-degrees-07132019/",
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+    "https://www.mountaineers.org/activities/routes-places/mowich-lake-area-review/mt-rainier-mowich-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Ice grade",
+   "verdict": "fixed",
+   "correct_value": "AI2-3",
+   "evidence": "The route's own long-standing description gives the harder right-hand variation \"a couple of ice steps, AI 2-3\" (its headline chip reads AI3-4, but the text describes AI2-3 steps); The Mountaineers route summary also gives AI2-3 ice steps; an independent party on 13 July 2019 graded the face IV, AI2, 60 degrees, finding only a small vein of AI2 at the start of the grade IV variation. No source grades it as water ice (WI), so the WI3-4 chip is replaced with the alpine-ice grade the row's prose already states.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face",
+    "https://cascadeclimbers.com/forum/topic/103382-tr-mt-rainier-central-mowich-face-iv-ai2-60-degrees-07132019/",
+    "https://www.mountaineers.org/activities/routes-places/mowich-lake-area-review/mt-rainier-mowich-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "ice_grade",
+     "path": [],
+     "expect": "WI3-4",
+     "value": "AI2-3",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Ice grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Approach glaciers / camp sequence",
+   "verdict": "fixed",
+   "correct_value": "Leave Ptarmigan Ridge near 8,200-8,300 ft, descend ~1,000 ft to the North Mowich Glacier, then climb the North Mowich roped to camps near 9,600-10,200 ft below the face; the South Mowich is not on the approach.",
+   "evidence": "The Central Mowich Face route description says to follow the climbers' path up the lower part of Ptarmigan Ridge and at 8,300 ft leave the ridge and descend 1,000 ft to the North Mowich Glacier. A 13 July 2019 party dropped off the ridge just over 8,200 ft, reached the edge of the North Mowich at 7,200 ft, roped up, and climbed the glacier to a bivy at 10,200 ft above the bergschrund; park climbing rangers in 2017 camped at 9,600 ft between the North Mowich and Edmunds glaciers, and the North Mowich Headwall description also puts the bivy in a bowl near 10,000 ft reached up the North Mowich. So hazards[3] (drop onto the glacier, ascend it to camp) is right; the approach/variant/pitch text that camps on the ridge at 9,600-10,300 ft and then drops, and the partner/hazard text naming the South Mowich, are rewritten.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face",
+    "https://cascadeclimbers.com/forum/topic/103382-tr-mt-rainier-central-mowich-face-iv-ai2-60-degrees-07132019/",
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+    "https://www.mountainproject.com/route/111999837/north-mowich-headwall"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Continue ascending the ridge's lower apron until it narrows above Observation Rock; established bivy sites (some with old wind-break rock walls) sit around 9,600-10,300 ft near the base of the North Mowich/Edmunds Glaciers, used as camps for Mowich Face, Edmunds Headwall, and Ptarmigan Ridge alike. From camp, drop and traverse across the North Mowich Glacier (roped, watch for recent rockfall debris crossing the ice) to gain the base of the Mowich Face proper.",
+     "replace": "Continue up the ridge's lower apron to roughly 8,300 ft, above Observation Rock, then leave the ridge and descend about 1,000 ft of loose rock and old snow to the edge of the North Mowich Glacier. Rope up there and climb the North Mowich (watch for recent rockfall debris crossing the ice) to camps at roughly 9,600-10,200 ft near the Edmunds divide, just below the Mowich Face proper.",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      3
+     ],
+     "find": "the route drops onto the Mowich Glacier and ascends the North Mowich to camp",
+     "replace": "the route drops off Ptarmigan Ridge onto the North Mowich Glacier and ascends it to camp",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "via the North/South Mowich glaciers",
+     "replace": "via Ptarmigan Ridge and the North Mowich Glacier",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "on the North/South Mowich approach glaciers",
+     "replace": "on the North Mowich approach glacier",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the bivy sites on lower Ptarmigan Ridge (about 9,600 ft, near the North Mowich and Edmunds glaciers), rope up and drop onto the North Mowich Glacier and cross it to the foot of the face.",
+     "replace": "From the glacier camps below the face (about 9,600-10,200 ft, near the divide with the Edmunds Glacier), stay roped and climb the last of the North Mowich Glacier to the foot of the face.",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "the Ptarmigan Ridge camp, then across the North Mowich Glacier",
+     "replace": "Ptarmigan Ridge, then up the North Mowich Glacier",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Camps sit on the ridge between roughly 9,600 and 10,300 ft, some with old rock wind walls; these serve the Mowich Face, the Edmunds Headwall and Ptarmigan Ridge alike. From camp you DROP and traverse the North Mowich Glacier, roped, watching for fresh rockfall debris on the ice, to gain the base of the face.",
+     "replace": "Near 8,300 ft you LEAVE the ridge and DROP about 1,000 ft of loose rock and snow to the North Mowich Glacier. Rope up there and climb the glacier, watching for fresh rockfall debris on the ice, to camps at roughly 9,600-10,200 ft below the face.",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "FROM HIGH CAMP YOU GO DOWN. Camp is on Ptarmigan Ridge; the face is across the North Mowich Glacier from it. If you leave camp and start climbing, you are on Ptarmigan Ridge, which is a different route to a different top-out.",
+     "replace": "AT ABOUT 8,300 FT YOU LEAVE THE RIDGE AND GO DOWN. The face is across the North Mowich Glacier from Ptarmigan Ridge. If you keep climbing the ridge past that point, you are on Ptarmigan Ridge, which is a different route to a different top-out.",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Approach glaciers / camp sequence"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Searches found no stated one-way distance for the Mowich Face approach. The row's 13 mi itinerary starts at Mowich Lake, while dist_km (18 mi) is consistent with adding part of the walk-in now required to reach Mowich Lake, so the two may measure different starting points. What would settle it: a source stating the one-way distance from the current access point to the face.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "Descent is about 7.5 miles; the 8-10 hour figure is not a descent time",
+   "evidence": "The \"7.5 miles / 8-10 hours\" pairing matches a guide service itinerary where 8-10 hours is the WHOLE day from Ingraham Flats up to the summit and down to Paradise, not the descent alone. A second guide service gives the full Muir-summit-Muir-Paradise summit day as 10-14 hours with the descent taking roughly half the ascent time, and the park route brief says the descent from Columbia Crest to Camp Muir takes about two-thirds of the ascent time. So the 12-hour summit day in the itinerary/timing is consistent and the 8-10 hour descent claim is the error; the hours are removed from the descent sentence.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-rainier-climb-muir/itinerary/",
+    "https://www.rmiguides.com/mt-rainier/4-day-summit-climb",
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Total descent 7.5 miles and 8-10 hours.",
+     "replace": "Total descent is about 7.5 miles, and it usually takes well under the time spent climbing up.",
+     "id": "wa_mount_rainier_disappointment_cleaver",
+     "fact": "Summit-day duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources still split: a guide service gives the summit-to-Paradise descent as 7.5 miles (matching the row's 7-7.5 mi figures), while the park route brief gives 8-9 miles and other listings put Paradise-Muir at ~4.4 mi and Muir-summit at ~4-4.75 mi (8.4-9 mi one way, ~18 mi round trip, matching the itinerary). What would settle it: a measured one-way track length Paradise to Columbia Crest via the Cleaver.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-rainier-climb-muir/itinerary/",
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+    "https://trailpeak.com/trails/camp-muir-to-mount-rainier-summit-near-paradise-inn-wa-5314"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Camp Muir reservable vs walk-up split",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Re-read today, the two official park pages still disagree: the wilderness permit page says approximately two-thirds of summer permits are reservable, while the climbing page says roughly 50% of each camp is held for walk-up registration. The two non-bivy fields follow the climbing page; the only two-thirds copy is bivy[0], which this pass may not patch. What would settle it: the park reconciling the two pages (or a current Recreation.gov inventory count for Camp Muir).",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Headline gain_ft vs trailhead-to-summit",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The route description gives only the route length (8,000 ft, Grade IV) and a 10,000 ft bivy reached up the North Mowich Glacier; no source states a car-to-car gain for this route, and gain_ft may not be computed from elevations. What would settle it: a source stating the round-trip gain from Mowich Lake.",
+   "sources": [
+    "https://www.mountainproject.com/route/111999837/north-mowich-headwall"
+   ],
+   "patches": []
+  }
+ ]
+}

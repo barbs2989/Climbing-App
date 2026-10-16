@@ -1,0 +1,402 @@
+{
+ "applied": [
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Descent hardware"
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Descent hardware"
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Hogsback elevation"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "crux"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "lengthM"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "anchor"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "crux"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "lengthM"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "anchor"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Which pitch is the WI6 crux"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Height of the East Peak above the West Peak"
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Direction Cougar Divide arrives from"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "before": {
+    "detailed_rack": "60 m rope; 8-10 ice screws (most racked for the short crux pitch, including a couple of stubbies); 2 ice tools each; a few pickets; a light rock rack (small cams/nuts, maybe a pin) for anchors in the poor-quality summit rock; V-thread hardware for descent.",
+    "pro_needs": "8-10 ice screws (concentrated on the crux pitch), a few pickets, and a light rock rack/pin for belay anchors in poor rock; V-thread hardware for descent.",
+    "itinerary": {
+     "cal": "The route is a mixed snow/ice couloir that forms as early as October and holds into May; deep-snow winter attempts can add hours to the approach versus firm spring booting conditions.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Nearly all parties do this as a single long day from the Heliotrope Ridge trailhead, roping up for glacier travel across the Coleman Glacier benches below the Black Buttes before reaching the base of the couloir. The route itself is a moderate 4-pitch WI4 line; the crux is usually glacier/bergschrund conditions rather than the ice climbing.",
+       "hours": 11.5,
+       "miles": 9.3,
+       "title": "Car-to-car ascent",
+       "gainFt": 5700,
+       "lossFt": 5700,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave Heliotrope Ridge trailhead",
+         "detail": "Many parties car-camp at the trailhead the night before for an alpine start."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach Hogsback / Coleman-Deming bench (~6,600 ft)",
+         "detail": "Rope up here for glacier travel toward the Black Buttes; some parties stash poles/spare gear."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach base of the north face, cross the bergschrund",
+         "detail": ""
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Begin climbing the 4-pitch couloir (WI4)",
+         "detail": ""
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Top out near the summit ridge",
+         "detail": "Short scramble/traverse to the true summit."
+        },
+        {
+         "time": "3:30-4:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Descend past the false summit to the Colfax-Baker saddle, then down the standard Coleman-Deming route."
+        }
+       ],
+       "objective": "Summit Colfax Peak via the Cosley-Houston Couloir and return to the trailhead same day"
+      }
+     ],
+     "totalNote": "A long single day car-to-car from Heliotrope Ridge: roughly 11-12 hrs round trip with ~5,700 ft of gain/loss over ~9.3 miles, no camping."
+    }
+   }
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Heliotrope Ridge and the Coleman to the bench, then the schrund guarding the middle of the face",
+      "notes": "The trailhead and the lower approach are the same as Cosley-Houston: Heliotrope Ridge trailhead near 3,700 ft, Trail #677 for roughly two miles through forest, water at the moraine/treeline break, then the standard Coleman-Deming boot track onto the glacier and climber's right toward the bench under Colfax's north faces. Rope up for crevasse travel on the glacier.\n\nParties leaving the car around 3:30 am with a well-consolidated track have reported the bench in under three hours; that figure varies enormously with snowpack and traffic and should not be planned on.\n\nGear up on the bench. The bergschrund here guards the Polish Route directly, is frequently large and overhanging, and has required parties to traverse right and tunnel through overhanging snow and ice to gain the first ice pitch.",
+      "season": "Roughly Nov-May",
+      "hazards": [
+       "A large, frequently overhanging bergschrund that has needed tunnelling",
+       "WI6 ice on a face that catches afternoon sun despite its northwest aspect",
+       "Avalanche on this aspect after new snow — do not do the schrund on a loaded slope",
+       "A descent mixing short V-thread rappels with downclimbing, on threads you build yourself",
+       "Crevasses on the Coleman on the way out, with the glacier descent flagged as hazardous after dark"
+      ],
+      "baseFinding": "LEFT TO RIGHT ON THIS FACE: KIMCHI, POLISH, COSLEY-HOUSTON, FORD'S THEATRE. The Polish Route is the SECOND FROM THE LEFT and it takes the OBVIOUS CONTINUOUS ICE LINE UP THE MIDDLE OF THE FACE, just left of and parallel to the Cosley-Houston gully.\n\nTHE TEST IS THE ICE ITSELF, AND IT WORKS WITHOUT SEEING THE WHOLE FACE. This is a WI6 — the hardest line here by a wide margin — and above the schrund it stands up immediately. If the first ground above the schrund is a LOW-ANGLE RAMP you can walk up, you are on Cosley-Houston, which is the easiest line on the face and sits immediately to your right. That single difference, ramp versus steep ice off the deck, separates WI4 from WI6 at the moment of committing.\n\nIF THE ROCK MATTERS MORE THAN THE ICE, YOU ARE TOO FAR LEFT. Kimchi Suicide Volcano takes an independent line to the LEFT of this route and is described by its first-ascent party as more of a mixed climb than a pure ice climb, on well-featured rock with plenty of face holds. Continuous ice with no rock moves is the Polish; face holds and mixed ground is Kimchi.\n\nCONFIRM WITH THE SCHRUND: the schrund that guards this route specifically is frequently large and overhanging, and the documented workaround is to traverse RIGHT and tunnel through overhanging snow. If you crossed a schrund comfortably on a snow bridge and walked straight onto easy ground, you have probably crossed at the Cosley-Houston line.\n\nWHY IT MATTERS TO CHECK THE PARALLEL GULLY: the two lines run parallel up the same face, so being one line out does not become obvious until you are committed on steep ice with the wrong rack."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "WI4+",
+      "notes": "From above a bergschrund that often requires a tenuous mixed traverse in from the right, a long sustained pitch of WI4+ ice leads to a snow slope below the crux band.",
+      "pitch": 1,
+      "anchor": "Ice screws",
+      "lengthM": 80
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "WI4",
+      "notes": "Continue up through the snow slope and shorter ice steps to gain the base of the crux pitch beneath the dagger.",
+      "pitch": 2,
+      "anchor": "Ice screws",
+      "lengthM": 70
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "WI6",
+      "notes": "The signature pitch: 30 ft of steep ice easing before a transfer onto a free-hanging ice dagger - back-step off the main wall, hang off both tools, and move onto the dagger's vertical-to-overhanging face, which eases after a couple of body lengths.",
+      "pitch": 3,
+      "anchor": "Ice screws (thin/hollow near dagger)",
+      "lengthM": 50
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "WI3",
+      "notes": "A couple more steep ice steps lead into the upper snowfield; cut between rock buttresses and trend up and right to the summit, watching for afternoon sun softening this northwest-facing finish.",
+      "pitch": 4,
+      "anchor": "Snow picket",
+      "lengthM": 90
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong mountain fitness required - same demanding Heliotrope Ridge/Coleman Glacier approach as Cosley-Houston, with an ~11-hour car-to-car day and a 3-4 AM start",
+      "packWeight": "Moderate-heavy: glacier travel gear, ice tools/crampons, and an alpine ice rack, plus contingency gear for variable ice conditions"
+     },
+     "approachTime": "Roughly 3-4 hours from the Heliotrope Ridge trailhead to the base of the route via the Coleman Glacier",
+     "requiredSkills": [
+      "Leading sustained steep alpine ice with confidence on thin/variable conditions",
+      "Glacier travel and crevasse rescue",
+      "Bergschrund crossing technique",
+      "Efficient movement on steep snow/ice",
+      "Alpine-start time discipline"
+     ],
+     "experienceLevel": "Experienced alpine ice climber comfortable on sustained, technical multi-pitch ice with variable/thin conditions; should have a track record on steep ice terrain and solid judgment for the bergschrund crossing and rockfall timing"
+    }
+   }
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.897635,
+      "lng": -121.646195,
+      "elev": 2500,
+      "name": "Goat Mountain Trailhead",
+      "note": "On FS-32 (Hannegan Pass Rd) 2.1 mi off SR 542; Northwest Forest Pass required, vault toilet and parking on both sides of the road.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Reach the trailhead via Hannegan Pass Road (FS-32), off SR 542 near Glacier, about two miles up from the Glacier Public Service Center. Day-use parking is on both sides of the road, with a vault toilet on site, and a Northwest Forest Pass is required."
+     },
+     {
+      "lat": 48.91002,
+      "lng": -121.63782,
+      "elev": 4300,
+      "name": "Mt. Baker Wilderness Boundary / Old Goat Trail split",
+      "note": "Trail enters the Mt. Baker Wilderness here; an unsigned climbers' path (\"Old Goat Trail\") splits east toward a former lookout site — stay on the main trail.",
+      "type": "Junction",
+      "distMi": 2,
+      "directions": "Goat Mountain Trail #673 climbs steeply and almost without let-up from the trailhead, switchbacking through old-growth fir and hemlock and crossing a small cascading creek several times in the first mile. Around 3,200 ft the grade eases and the tread traverses onto a narrow side-hill ridge. The wilderness boundary sign is on that ridge; just past it an unsigned spur splits east toward an old lookout site, so stay on the main tread."
+     },
+     {
+      "lat": 48.915564,
+      "lng": -121.634364,
+      "elev": 5200,
+      "name": "5,200-ft Knob",
+      "note": "Open alpine meadows and huckleberries (in season) around this viewpoint knob, with clear sightlines to Baker, Shuksan, and Sefrit.",
+      "type": "Junction",
+      "distMi": 2.9,
+      "directions": "Keep climbing on maintained trail as forest gives way to heather and huckleberry meadows and the views south to Baker, Shuksan and Sefrit open up. The trail gains the ridge crest at the viewpoint knob."
+     },
+     {
+      "lat": 48.918644,
+      "lng": -121.632444,
+      "elev": 5600,
+      "name": "End of maintained Trail 673",
+      "note": "Trail 673 officially terminates on the ridge crest at 5,600 ft; beyond here toward the East Peak is an unmaintained, unmarked boot path.",
+      "type": "Junction",
+      "distMi": 3.4,
+      "directions": "Follow the crest a little farther to where the maintained tread officially ends. There is no reliable water anywhere above the creek crossings low on the trail, so carry what you need from the forest crossings unless you are dropping into the basin below the East Peak, where a creek runs."
+     },
+     {
+      "lat": 48.921108,
+      "lng": -121.630908,
+      "elev": 5400,
+      "name": "Basin below the East Peak",
+      "note": "Drop roughly 300 ft over steep, slick vegetation into this basin; a creek provides the best water and camping on the route before the final push.",
+      "type": "Campsite",
+      "distMi": 3.8,
+      "directions": "The end of the trail overlooks a basin to the east, directly under the East Peak. Getting into it means dropping roughly 300 ft down steep, densely vegetated ground that is treacherously slick when wet — this drop, and regaining it on the way out, is the hardest ground of the day to move on. A creek runs through the basin bottom."
+     },
+     {
+      "lat": 48.92542,
+      "lng": -121.62822,
+      "elev": 6400,
+      "name": "Summit gully",
+      "note": "Class 2 gully narrows with exposure dropping away on both sides near the top; stay centered in the gully rather than skirting the edges.",
+      "type": "Hazard",
+      "distMi": 4.5,
+      "directions": "Cross the creek and head up toward the East Peak, picking up an easy class 2 gully. Snow lingers in it into summer, so carry an axe and be ready to self-arrest. Near the top the gully narrows and the ground falls away on both sides — stay centred in it rather than drifting out onto the edges."
+     },
+     {
+      "lat": 48.92845,
+      "lng": -121.62624,
+      "elev": 6891,
+      "name": "Goat Mountain, East Peak (true summit)",
+      "note": "Rocky, narrow summit spine dropping off steeply on all sides; USGS Mount Sefrit quad benchmark, ~120 ft higher than the West Peak across the basin.",
+      "type": "Summit",
+      "distMi": 5,
+      "directions": "Finish up the gully onto the summit spine. It is narrow and rocky, drops off steeply on every side, and the rock near the top is loose."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Cougar Divide Trail #601 and the open ridge south to Chowder Ridge",
+      "notes": "From Glacier, WA, drive SR-542 east and turn onto Forest Service Road 33; follow about 11 miles of gravel — rough in sections, high-clearance recommended, sedans passable with care — to its end at the Cougar Divide trailhead, with room for eight to ten vehicles. The true trailhead may be roughly a kilometre past where online mapping routes you, so do not stop at the first turnaround that looks right.\n\nHike Cougar Divide Trail #601 along the ridge to its high point around 5,920 ft. That high point is where the trail tread ends and the route becomes cross-country: continue south along the open ridge, crossing near Dobbs Creek, to Chowder Ridge and the foot of Hadley's summit block.\n\nThis and the Skyline Divide route are two different walks to the SAME summit block; the beta below for the block is common to both.",
+      "season": "Roughly Aug-Oct, once the ridge is out from under snow",
+      "hazards": [
+       "Eleven miles of rough gravel road, and a trailhead that mapping apps place short of the real one",
+       "Cross-country ridge travel with no tread and no cairns once past the 5,920 ft high point",
+       "Loose scree below a short Class 3 step",
+       "Open ridge with no shelter and no water beyond the trailhead",
+       "In cloud, two different divides converge on this summit and neither exit is marked"
+      ],
+      "baseFinding": "THE RIDGE IS THE ROUTE AND ITS HIGH POINT IS THE HANDOFF. Trail #601 runs along the crest to a high point near 5,920 ft, and everything after that is open ridge. In cloud you do not need a view: stay on the crest, going south, with the ground falling away on both sides. The moment you are sidehilling with the drop on only one side, you have come off the divide.\n\nARRIVAL AT THE CLIMBING, and this is the test that matters: the summit block of Hadley is a SHORT CLASS 3 STEP above loose scree, roughly the last 100 ft of the day. Everything below it is walking. So the base is the point where the ridge stops being walkable and stands up in a single short step. If you are scrambling for hundreds of feet you are on the wrong feature; if you have not scrambled at all you are not at the summit.\n\nTHE APPROACH IS NOT A LOOP AND CHOWDER RIDGE IS THE CONFIRMATION. You should arrive at the block having travelled along Chowder Ridge. If you are dropping into a basin or crossing a glacier to reach a rock block, you are somewhere else on the north side of Baker.\n\nWHICH DIVIDE DID YOU WALK IN ON? This is the one thing to be sure of before you commit to a descent line in poor visibility, because the two approaches to this summit leave in different directions and neither is signed. Cougar Divide comes in from the NORTH-WEST via Dobbs Creek; Skyline Divide comes in from the WEST along a much longer open ridge. Note your entry point onto Chowder Ridge on the way up."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "applied": [
+  {
+   "id": "wa_point_success_south_side",
+   "column": "overview",
+   "path": [],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "season",
+   "path": [],
+   "fact": "Best season vs season"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Best season vs season"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "grade",
+   "path": [],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "approach",
+   "path": [],
+   "fact": "Total gain from Longmire"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Total gain from Longmire"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / approach length"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / approach length"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "face",
+   "path": [],
+   "fact": "Face the route climbs"
+  },
+  {
+   "id": "wa_ez_way",
+   "column": "fa",
+   "path": [],
+   "fact": "First-ascent party name"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_point_success_south_side",
+   "before": {
+    "overview": "Point Success (14,158 ft) is Mount Rainier's second-highest summit and its southwesternmost point on the crater rim, sitting atop the crest of Success Cleaver — the long rock-and-snow rib that is one of only two named Rainier lines (with Ptarmigan Ridge) climbable to a true summit without ever setting foot on a glacier. The route sees a fraction of the traffic of the Disappointment Cleaver or Kautz Glacier standard routes, and rewards climbers with solitude and a genuine wilderness approach in exchange for a long, loose, lightly-cairned approach and real rockfall exposure in its upper chutes.",
+    "season": "Jun-Sep",
+    "approach_variants": [
+     {
+      "name": "Longmire, the Wonderland Trail and Indian Henry's Hunting Ground",
+      "notes": "Longmire (2,762 ft) is the start, on the Wonderland Trail heading southwest. About 3 miles out the trail drops steeply to cross Kautz Creek — a braided glacial outwash channel whose crossing is periodically wrecked by debris flows off the Kautz Glacier. Ask at the Longmire wilderness desk before you leave, because a failed crossing means a long reroute rather than a wet foot.\n\nBeyond Kautz Creek the trail switchbacks through old growth, fords Fisher's Hornpipe Creek and passes Devil's Dream camp (about 5 miles, reliable water) before opening into the meadows of Indian Henry's Hunting Ground at roughly 6.3–7 miles and 5,300 ft, marked by the 1915 patrol cabin.\n\nAt Indian Henry's leave the Wonderland for the Mirror Lakes spur — plank walkways over marshy meadow, then the end of maintained tread. The path fades into a boot track at about 5,600 ft in the basin between Copper Peak and Pyramid Peak. From there it is cross-country on the southwest and west slopes of Pyramid Peak, between roughly 6,000 and 6,300 ft, to Point 6631 just north of the peak. Snowmelt water is often available here into early summer, and the rock-slab camp below Pyramid Peak at about 6,300 ft is a common first night.\n\nThis is one of only two routes on Rainier that avoids significant glacier travel, which is its whole appeal; the cost is that it is long, loose and unfrequented, with about 12–13 miles and over 8,000 ft of gain to Point Success. Most parties take two days, often with a second camp dug into the cleaver crest around 10,700 ft.",
+      "season": "June through September; the lower cleaver is best while it still holds snow, since it becomes loose scree once bare",
+      "hazards": [
+       "Kautz Creek crossing washed out by glacial debris flows",
+       "Rockfall from parties above on the loose lower cleaver",
+       "Sustained loose choss and scree with no established line",
+       "Knife-edge crest section, exposed once melted out",
+       "Very long approach with no bail-out — a retreat is the full walk back to Longmire"
+      ],
+      "baseFinding": "The climbing starts at the col north of Pyramid Peak, at about 6,400 ft, and getting into that col is where people go wrong.\n\nFrom Point 6631 you drop north-northeast a short way to a saddle. It is a scree and loose-boulder col, and it is ugly — that is the correct place. There is an easier descent line into it than the obvious one, and trip reports record missing it and taking the worst ground; look for the line before you commit, and note it for the way back.\n\nFrom the col the cleaver rises continuously in front of you and does not stop. There is no single track and no cairned line: the lower cleaver is loose choss and scree with short bursts of class 3 scrambling, and the route-finding is yours.\n\nThe test that you are on the cleaver and not off it is what is on either side. You should be on a broad rubbly crest with the South Tahoma Glacier falling away to your north (climber's left) and the Pyramid and Success glaciers to your south (climber's right). If a glacier is underfoot you have left the cleaver — this route is defined by not being on one.\n\nAn easy, clean start is the wrong sign. If the ground out of the col is pleasant walking on solid rock, you are probably contouring around the peak rather than gaining the cleaver. Travel only improves higher, above about 7,000 ft, where the rock firms up and, early in the season, continuous snow and goat tracks take over.\n\nHigher still the crest includes a knife-edge section that needs genuine scrambling once the snow melts off it, and the route then angles climber's right up snow gullies onto the Kautz Cleaver at roughly 12,200–12,600 ft."
+     }
+    ],
+    "grade": "Grade III-IV, Class 4",
+    "approach": "From the Longmire Wilderness Information Center (2,762 ft), pick up the Wonderland Trail heading southwest. About 3 miles in, after climbing out of Longmire, the trail drops steeply (~400+ ft) to a log-bridge crossing of Kautz Creek — a braided glacial outwash channel whose crossing is periodically damaged or washed out by debris flows off the Kautz Glacier, so check current status at the Longmire WIC before you leave, since a failed crossing can force a long reroute. Beyond the creek the trail climbs by switchbacks through old-growth forest, fords Fisher's Hornpipe Creek, and traverses a ridge past Devil's Dream backcountry camp (~5 mi, reliable water) before breaking out of the trees into the subalpine meadows of Indian Henry's Hunting Ground at roughly 6.3–7 mi and 5,300 ft, marked by the 1915 patrol cabin and open views of the Tahoma/South Tahoma icefall. From Indian Henry's, leave the maintained Wonderland Trail and follow the Mirror Lakes spur/climbers' path west (several plank crossings over marshy meadow, then end of maintained tread), continuing cross-country onto the southwest and west slopes of Pyramid Peak between about 6,000 and 6,300 ft to reach Point 6631 just north of the peak. Running water is often available here from snowmelt puddles into early summer, and the rock-slab camp below Pyramid Peak at ~6,300 ft (with running water nearby) is another common first-night camp for a 2-day ascent. From Point 6631, drop briefly NNE to a saddle at about 6,400 ft — the start of Success Cleaver proper. Many parties place a second high camp on the cleaver crest around 10,700 ft (snow platforms can be dug in), from which the route continues up the crest — including a knife-edge section that requires real scrambling once snow melts off it — before angling climber's-right up snow gullies that merge onto the Kautz Cleaver around 12,200–12,600 ft, then up steepening snow/ice (to roughly 45°, with an isolated ~15 ft step near 55° used to bypass a cliff band in some seasons) to Point Success at 14,158 ft. All-in this is roughly 12–13 miles and 8,000+ ft of gain from Longmire to Point Success, so most parties split it over 2 days with an intermediate camp rather than going car-to-car in a single push.",
+    "grade_num": 4
+   }
+  },
+  {
+   "id": "wa_ez_way",
+   "before": {
+    "road": {
+     "name": "Wright Meadows Trailhead (Gifford Pinchot NF, Dark Divide area), via Boundary Trail #1 / Craggy Peak Trail #3",
+     "status": "Remote and seldom visited; the approach trail alone is roughly 16.9 miles, so plan for a very long backcountry trip regardless of road condition.",
+     "driveNote": "From Randle, follow WA-131/FR-23 to FR-25 toward Elk Pass; turn onto FR-2551 and drive about 1.6 miles of rough gravel to an unmarked spur (forest roads in this area can be rough, brushy, or washed out — check current Gifford Pinchot NF conditions before driving).",
+     "seasonalGate": "Reported as most reliably open and snow-free mid-summer through fall; exact current-season gate dates not confirmed."
+    },
+    "face": "North side of the summit block, just below the peak's north ridge",
+    "fa": "Kevin Wagner and Don Nelsen, August 18, 2017 (first known ascent of the true summit)"
+   }
+  }
+ ]
+}

@@ -9,6 +9,8 @@
 import { createClient } from '@supabase/supabase-js';
 import ws from 'ws';
 import fs from 'fs';
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_KEY;
@@ -22,7 +24,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
   realtime: { transport: ws }
 });
 
-const deploymentFile = '/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/photos-topo-waypoints/supabase-climbing-routes-final.json';
+const deploymentFile = path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../.."), "supabase-climbing-routes-final.json");
 
 console.log('='.repeat(80));
 console.log('IMPORTING CLIMBING RESEARCH HAZARDS TO SUPABASE');

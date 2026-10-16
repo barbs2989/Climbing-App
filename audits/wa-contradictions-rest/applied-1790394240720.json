@@ -1,0 +1,217 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Rope and rack required"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rope and rack required"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Rope and rack required"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "watch_out",
+   "path": [
+    4
+   ],
+   "fact": "Rope and rack required"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Rope and rack required"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Quota status of Low Divide"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Whiskey Bend road walk"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_meany_standard",
+   "before": {
+    "gear": [
+     "helmet",
+     "ice axe (early season)",
+     "trekking poles",
+     "light rope (optional, for a short exposed step near the summit)"
+    ],
+    "detailed_rack": "No technical rock gear required for most of the route; some parties carry a short (30m) rope to protect a short, exposed step just below the summit reported harder than typical Class 3. Ice axe useful early season.",
+    "pro_needs": "None for the standard line",
+    "watch_out": [
+     "extreme remoteness",
+     "river fords on approach",
+     "complex route-finding",
+     "weather exposure with limited escape",
+     "short, exposed step just below the summit that some parties choose to protect with a rope"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - multi-day approach up the Elwha and over the Goldie/Queets divide with sustained off-trail travel and elevation gain/loss day after day",
+      "packWeight": "Heavy overnight/multi-day pack (camp gear, extra food/fuel for weather contingency, river-crossing footwear)"
+     },
+     "approachTime": "Multi-day approach (long off-trail travel up the Elwha and over the Bailey Range/Queets divide; exact day count not recorded)",
+     "requiredSkills": [
+      "Off-trail route-finding and navigation (map/compass/GPS) in complex, featureless terrain",
+      "River fording technique and judgment",
+      "Class 2-3 scrambling comfort with exposure",
+      "Self-rescue and remote wilderness first aid, given no easy escape route",
+      "Backcountry camping and Leave No Trace practice for permitted wilderness sites"
+     ],
+     "experienceLevel": "Advanced/expert backcountry mountaineer with prior deep-wilderness Olympics or similar off-trail experience; not a route for a first remote objective"
+    },
+    "rock_grade": "5.2-5.4",
+    "itinerary": {
+     "cal": "Olympic NP requires a wilderness camping permit (quota system in summer for popular zones like Low Divide/Seattle Basin); the North Fork Quinault Road has a history of washout closures, so check NPS road status before driving in.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An afternoon-start hike up the North Fork Quinault River trail through old-growth forest to the first night's camp. Easy grade, mostly flat river-valley walking.",
+       "hours": 4.8,
+       "miles": 4.8,
+       "title": "Hike in to Francis/Elip Creek Camp",
+       "gainFt": 800,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Francis/Elip Creek Camp"
+      },
+      {
+       "n": 2,
+       "note": "The longest day of the approach: steady climbing up the North Fork Quinault valley to Low Divide, including a mandatory ford of the river. Parties note a long lunch/swim break at the ford and afternoon heat as the main slow-down factors.",
+       "hours": 9.3,
+       "miles": 10,
+       "title": "Push up-valley to Low Divide",
+       "gainFt": 2850,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Low Divide Camp"
+      },
+      {
+       "n": 3,
+       "note": "A shorter, deliberately easy day to arrive at basecamp with time to rest before the summit push. Trail switchbacks into Seattle Meadows, then cross-country through heather meadows to a gravelly camp rib as high in the basin as possible.",
+       "hours": 4.8,
+       "miles": 6,
+       "title": "Climb to Seattle Basin high camp",
+       "gainFt": 1600,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish basecamp in Seattle Basin (~4,900 ft)"
+      },
+      {
+       "n": 4,
+       "note": "The technical crux day: an early start, a scree traverse to the Noyes/Seattle notch, and a short low Class 5 roped pitch with loose rock but good gear on the final push to the summit. Two rappels and a long scree/talus descent bring the party back to camp after dark.",
+       "hours": 14.5,
+       "miles": 5,
+       "title": "Summit day",
+       "gainFt": 1950,
+       "lossFt": 1950,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light alpine-start pack; rope and rack carried, camp gear cached."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Reach the Noyes/Seattle notch",
+         "detail": "Ridge saddle gained via scree slopes above camp."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Traverse scree to the Meany ridge",
+         "detail": "Loose, exposed cross-country traverse — the slowest non-technical section."
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Lead the roped pitch",
+         "detail": "Low Class 5.2 rock, loose but with good gear placements; one pitch."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Summit",
+         "detail": "~5.6 hrs camp-to-summit."
+        },
+        {
+         "time": "After dark",
+         "label": "Back at camp",
+         "detail": "Two rappels off the summit block plus the long scree descent make for a ~14.5-hr round trip."
+        }
+       ],
+       "objective": "Climb Mount Meany via the Noyes-Meany col and NE face, return to camp"
+      },
+      {
+       "n": 5,
+       "note": "A relaxed, later-starting day after the long summit push — sleep in, then descend back through Low Divide toward Sixteenmile Camp with leisurely stream-crossing breaks.",
+       "hours": 6.1,
+       "miles": 6,
+       "title": "Descend toward Sixteenmile Camp",
+       "gainFt": 0,
+       "lossFt": 300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach Sixteenmile Camp"
+      },
+      {
+       "n": 6,
+       "note": "A long final day retracing the valley trail back to the car, often in showery weather; the biggest mileage day of the trip but on easy, well-graded tread.",
+       "hours": 7.8,
+       "miles": 12,
+       "title": "Hike out to trailhead",
+       "gainFt": 0,
+       "lossFt": 600,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the North Fork Quinault trailhead"
+      }
+     ],
+     "totalNote": "A 6-day, ~42-mile round-trip backpack (roughly 9,300 ft of cumulative gain and loss) via the North Fork Quinault River and Seattle Basin, with a single long, technical summit day involving a low-5th-class pitch and two rappels."
+    },
+    "road": {
+     "name": "North Fork Quinault Road (via North Shore Road)",
+     "status": "Open; the final 4 miles are gravel, narrow and winding, and are not recommended for RVs or trailers.",
+     "driveNote": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. North Shore is the only way in: South Shore Road is closed by a washout at about mile 8 from US-101, with no reopening date on Olympic National Park's alerts page updated August 27, 2026. The Elwha approach via Whiskey Bend is a genuine alternative but is foot and bike only: Olympic Hot Springs Road has been shut to vehicles beyond Madison Falls since November 2017 flood damage, adding roughly 6 miles each way.",
+     "seasonalGate": "May close during winter storms; NPS publishes no fixed gate dates, so check current road conditions before travelling."
+    }
+   }
+  }
+ ]
+}

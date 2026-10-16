@@ -1,0 +1,306 @@
+{
+ "applied": [
+  {
+   "id": "wa_live_free_or_die",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Gear needed on pitch 4"
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Blue Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Blue Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "anchor"
+   ],
+   "fact": "Pitch 2 belay"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel count"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Large cams needed"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Large cams needed"
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Large cams needed"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_live_free_or_die",
+   "before": {
+    "crowds": {
+     "peakTraffic": "No documented crowding; likely single-digit ascents per season given the grade",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Very low — a 5.12+ testpiece climbed by a small pool of capable free climbers each season"
+    },
+    "pro_needs": "Mostly bolt-protected on the lower 5 pitches with a couple of cams recommended; gear-protected thin crack and splitter pitches higher up."
+   }
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5155,
+      "lng": -120.6588,
+      "elev": 7720,
+      "name": "Liberty Bell Mountain",
+      "note": "True summit of Liberty Bell Mountain.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5191,
+      "lng": -120.6742,
+      "elev": 5200,
+      "name": "Blue Lake Trailhead",
+      "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51298,
+      "lng": -120.658866,
+      "elev": 5750,
+      "name": "Stream crossing near meadow",
+      "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+      "type": "Water",
+      "distMi": 1.5,
+      "directions": "Follow the maintained Blue Lake Trail (#314) out of the lot; it climbs steadily through forest for about a mile and a half before opening into heather meadow with Liberty Bell and the Early Winters Spires ahead. Navigation is trivial on this stretch — the trail is signed and obvious, and the real route-finding only starts past here."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5800,
+      "name": "Climbers' path junction",
+      "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward the Liberty Bell-Concord notch.",
+      "type": "Junction",
+      "distMi": 1.6,
+      "directions": "A short way past the stream the boot path breaks off up and to the left, roughly east-northeast, toward the towers; it is unsigned and easy to walk straight past. The maintained trail carries on to Blue Lake, so arriving at the lake means you have overshot and should backtrack."
+     },
+     {
+      "lat": 48.514639,
+      "lng": -120.659478,
+      "elev": 7100,
+      "name": "Approach gully rockfall zone",
+      "note": "Gully below the notch holds snow into late June and sheds rock heavily once it melts out; stay on the boot path that breaks off before the loose gully proper.",
+      "type": "Hazard",
+      "distMi": 2.2,
+      "directions": "The climbers' path climbs hard from here, gaining roughly 1,300 ft through meadow and then onto slabs and talus. Keep right of the large boulder field but left of the big slabs as the ground steepens toward the notch. Get helmets on before you are in the talus and avoid stacking directly beneath another party."
+     },
+     {
+      "lat": 48.514666,
+      "lng": -120.658696,
+      "elev": 7300,
+      "name": "Liberty Bell-Concord Tower notch",
+      "note": "Overexposure starts right at this notch and doubles as the standard rappel line for every Liberty Bell route, so expect rope teams stacking up here by midday.",
+      "type": "Junction",
+      "distMi": 2.4,
+      "directions": "At the fork below the notch stay left and follow the boot path up to the notch itself at about 7,300 ft. The last stretch is coarse scree and talus with little fine material to hold anything in place, so a dislodged rock runs a long way — move one at a time if there is anyone below you."
+     },
+     {
+      "lat": 48.514677,
+      "lng": -120.658591,
+      "elev": 7350,
+      "name": "Exposed opening moves off the notch",
+      "note": "Tricky, exposed 5.8 moves right off the notch belay before easier ground above — a fall here hangs you right over the notch.",
+      "type": "Hazard",
+      "distMi": 2.5,
+      "directions": "The route does not begin at the notch floor: scramble up the ramp at the top of the notch to reach the first belay, and allow extra time and care for it, because the ground is already exposed. Rope up here — this is 5.8 from the opening moves, not a scramble. Two starts share the same anchor: the original line up the ramp, or a left-hand variation that runs about 30 ft on poor protection at 5.8R."
+     },
+     {
+      "lat": 48.515435,
+      "lng": -120.658365,
+      "elev": 7720,
+      "name": "Liberty Bell summit",
+      "note": "A few hundred feet of 4th- and low-5th-class scrambling above the initial 5.8 pitches reaches the true summit; the same bolted rap line is then used to descend back to the notch.",
+      "type": "Summit",
+      "distMi": 2.7,
+      "directions": "Two sustained 30 m pitches of finger cracks and liebacking on clean granite lead up from the notch, and the first of them is the hardest climbing on the route. Pitch two finishes at the two-bolt station that also begins the standard Liberty Bell rappel line, so this is the decision point — continue up the easier ground to the true summit, or start rappelling from here."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 4,
+      "grade": "5.10-",
+      "notes": "Mellow slabbing up discontinuous cracks and bolts; the obvious four-bolt first pitch that ends at a set of chains is the standard orientation landmark for the route.",
+      "pitch": 1,
+      "anchor": "Chain anchor",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.11",
+      "notes": "Easy initial moves to a small roof where insecure lie-backing provides the pitch's tricky bit, then easier ground to a gear belay below a roof-capped dihedral.",
+      "pitch": 2,
+      "anchor": "2-bolt anchor",
+      "lengthM": 20
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.11",
+      "notes": "Sustained stemming and lie-backs up a beautiful corner; a sometimes-wet, wild crux move gains the roof before exiting left to bolts.",
+      "pitch": 3,
+      "anchor": "2-bolt anchor",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10",
+      "notes": "Move up and left to the roof lip, clip two bolts, then traverse right on a flake to a stance and bolted anchor.",
+      "pitch": 4,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 4,
+      "grade": "5.12",
+      "notes": "A beautiful, techy rightward traverse on perfect stone accesses a left-facing corner; technical stemming through four bolts with a slight crux move to a good hold.",
+      "pitch": 5,
+      "anchor": "Bolted anchor",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 2,
+      "grade": "5.12c",
+      "notes": "The route's benchmark crux: climb the corner to a small roof, step right into a hanging finger crack, then a bouldery crux between two seams before easing off on a mellow finger crack. This is the pitch freed by Kate Rutherford and Mikey Schaefer in 2008 to complete the free line at 5.12c.",
+      "pitch": 6,
+      "anchor": "Bolted anchor",
+      "lengthM": 22
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10",
+      "notes": "Moderate crack climbing leads up and right to a two-bolt anchor on a large ledge system.",
+      "pitch": 7,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.11",
+      "notes": "Thin, technical moves on more perfect rock protected by small gear and fixed heads/pitons; the last hard pitch before easier ground.",
+      "pitch": 8,
+      "anchor": "Gear (fixed heads/pins)",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "Engaging corner climbing with a brief thin move, then a mantle onto M&M Ledge, the mid-height junction shared with Live Free or Die and other East Face lines.",
+      "pitch": 9,
+      "anchor": "Gear (M&M Ledge)",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Easier corner and ledge climbing above M&M Ledge, working up the upper apron toward the summit block on golden, lower-angle granite.",
+      "pitch": 10,
+      "anchor": "Gear",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Rad, easy scrambling atop Liberty Bell to the true summit; most parties instead rappel from M&M Ledge (four double-rope raps via bolts) rather than finish this far.",
+      "pitch": 11,
+      "anchor": "Walk-off (no belay)",
+      "lengthM": 20
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "before": {
+    "rappels": "5-6",
+    "rack": [
+     "Standard alpine rack of cams, plus a couple bigger pieces to 3-4in for North Early Winter Spire",
+     "Standard nut set",
+     "10 alpine quickdraws",
+     "Single 60 m rope; every rappel between towers works as single-rope rappels"
+    ],
+    "detailed_rack": "A standard alpine rack suffices for most of the traverse, with a couple of larger cams recommended for North Early Winter Spire.",
+    "pro_needs": "A standard rack, with a couple of larger pieces recommended specifically for North Early Winter Spire's sections."
+   }
+  }
+ ]
+}

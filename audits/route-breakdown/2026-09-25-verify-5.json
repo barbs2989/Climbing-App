@@ -1,0 +1,361 @@
+{
+  "wa_nw_face_var_remsberg_variation": {
+    "area": "wa_liberty_bell",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "The Remsberg crack passes a ~5.9+ hand-crack roof before the 10d slab, which stored prose omits", "verdict": "REFUTED", "evidence": "The route page describes the pitch as a 5.7 crack, a final solid 1-2\" piece, a 5.10 flared groove and two bolts on slab; stored beta/overview match it. A roof is mentioned only in one trip report by a climber who backed off the slab. An omission, not a false claim; approach's 'single-pitch variation' matches the route page.", "sources": ["https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation", "https://climberkyle.com/2019/08/03/liberty-bell-nw-face-5-9/"] }
+      ]
+    }
+  },
+  "wa_liberty_traverse": {
+    "area": "wa_liberty_bell",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "descent_text: SEWS finish uses 'that peak's standard South Arête rappel line', 2-3 single-rope rappels with a 60m from bolted chains", "verdict": "REFUTED", "evidence": "The traverse and SW Rib pages describe the same line: scramble down the arête (3rd/4th) to chains on a block, then 3 rappels. Several South Arête reports: downclimb the arête, then 2-3 single-rope rappels from bolted chains, clean pulls with a 60m. The SW Rib page asks for a 70m but the South Arête sources say a 60m works.", "sources": ["https://www.mountainproject.com/route/115148381/liberty-traverse", "https://www.mountainproject.com/route/106416669/southwest-rib", "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete", "https://gethighonaltitude.com/2021/05/31/south-early-winter-spire-south-arete/"] },
+        { "claim": "Component grades (SW Rib 5.7 vs 5.8, NW Corner 5.9+ vs 5.9)", "verdict": "REFUTED", "evidence": "The grades differ between pages. The stored beta's 'NW Corner (5.9+)' matches the traverse page. Neither grade is wrong." }
+      ]
+    }
+  },
+  "wa_flycatcher_buttress": {
+    "area": "wa_north_early_winters_spire",
+    "skip_reason": "not a stored-column claim — see review",
+    "review": {
+      "findings": [
+        { "claim": "Per-pitch comments keyed on labels 'P5-P6' and 'P8-P9' may be orphaned by the new pitch_detail split", "verdict": "UNCLEAR", "evidence": "Out of scope for a prose correction: it concerns the comments table and the just-rewritten pitch_detail labels. A human or a DB query should check whether any route comments are keyed on those labels." }
+      ]
+    }
+  },
+  "wa_mojo_rising": {
+    "area": "wa_south_early_winters_spire",
+    "set": {
+      "overview": "A direct-start variation to the Northwest Face on SEWS, first climbed III 5.11 A1 (with a short section of aid) by Mark Allen, Joel Kauffman, and Tom Smith, October 13-14, 2006; the 5.11b grade covers the free climbing only — the aid section has not been reported freed."
+    },
+    "review": {
+      "findings": [
+        { "claim": "overview: 'the 5.11b grade reflects later free ascents of the aid section'", "verdict": "CONFIRMED", "evidence": "The route page grades it 5.11b C1+ and says it has 'still yet to be freed'. The 2013 'Free Mojo' ascent was a new free start to the LEFT of the aid pitches, which joined Mojo Rising at its 5th pitch. It was not a free ascent of the aid section. The stored pitch_detail itself carries C1+/C1 on P2-P3 and says 'Not yet reported free'.", "sources": ["https://www.mountainproject.com/route/117067715/mojo-rising", "http://blakeclimbs.blogspot.com/2013/06/washington-pass-freedom.html", "https://www.mountainproject.com/route/117392467/free-mojo", "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "5.11b C1+", "evidence": "Route page grade line is '5.11b ... C1+'. The stored '5.11b' hides that two pitches are still aided." }
+      }
+    }
+  },
+  "wa_labor_pains": {
+    "area": "wa_north_early_winters_spire",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "overview: 'three sustained 5.11a pitches'", "verdict": "REFUTED", "evidence": "The route page says '3- 5.11a pitches on the route, each slightly more devious than the last', which matches the overview.", "sources": ["https://www.mountainproject.com/route/110902345/labor-pains"] },
+        { "claim": "Placement: between the Chockstone Route and the West Face vs between the West Face and SW Face", "verdict": "REFUTED", "evidence": "The route page places it 'in between Chockstone route and West Face', matching the stored overview and approach. The route starts up the Chockstone Route.", "sources": ["https://www.mountainproject.com/route/110902345/labor-pains"] },
+        { "claim": "rappels (mostly the West Face bolted line) and descent_text (the Chockstone line) contradict each other", "verdict": "UNCLEAR", "evidence": "Both descents exist. NEWS has a newer bolted West Face rap line, which parties call faster and easier, and the older Chockstone/SW couloir line, with up to 5 rappels including the free-hanging chockstone rap. Neither column is false. They emphasise different options, so a human may want descent_text to name both. No correction written.", "sources": ["https://www.summitpost.org/north-early-winters-spire/151550", "https://www.mountainproject.com/route/105847147/the-west-face"] }
+      ]
+    }
+  },
+  "wa_complete_south_buttress": {
+    "area": "wa_cutthroat_peak",
+    "skip_reason": "not a stored-column claim — see review",
+    "review": {
+      "findings": [
+        { "claim": "Where the lower ridge joins the regular South Buttress, and which 5.8 is the crux", "verdict": "UNCLEAR", "evidence": "The finding is only about the just-rewritten pitch_detail, which is out of scope. The stored beta, overview, descent_text and rappels name no crux pitch and no junction point, so no prose column carries the disputed claim." }
+      ]
+    }
+  },
+  "wa_cutthroat_the_swarm": {
+    "area": "wa_cutthroat_peak",
+    "set": {
+      "beta": "Eight pitches of varied climbing culminate in four headwall pitches rated 5.10-5.11, protected by natural gear from bolted anchors (anchors placed on lead for everything above 5.9; the route's only protection bolt is on pitch 6), with natural gear protecting the lower and upper pitches. Notable pitches include \"The Gem\" (a splitter finger crack, pitch 3) and a sustained dihedral-jamming crux pitch (pitch 6).",
+      "overview": "A modern, sustained 5.11 alpine testpiece up Cutthroat's East Face, with four gear-protected headwall pitches (5.10-5.11) on bolted anchors linking natural, less-traveled terrain below and above — a quality alternative to the crowded Liberty Bell group just to the south."
+    },
+    "review": {
+      "findings": [
+        { "claim": "beta 'four bolted headwall pitches' / overview 'four bolt-protected headwall pitches'", "verdict": "CONFIRMED", "evidence": "The FA report says bolted anchors were placed on lead for every pitch above 5.9, and 'Here, I placed the only protection bolt of the route' on the crux pitch. The route page says the anchors of the four 5.10-5.11 headwall pitches are bolted, and its rack (double to #3, single #4) shows the pitches are gear-protected. 'Bolt-protected' tells a leader to expect clip-ups where there is one bolt.", "sources": ["https://publications.americanalpineclub.org/articles/13201216751", "https://www.mountainproject.com/route/124537013/the-swarm"] },
+        { "claim": "FA date July 3 (stored fa 'July 2023')", "verdict": "REFUTED", "evidence": "The stored 'July 2023' is correct, only less precise. Adding the day would be new material, not a correction." },
+        { "claim": "Slash grades in pitch_detail", "verdict": "UNCLEAR", "evidence": "pitch_detail was just rewritten; out of scope." }
+      ]
+    }
+  },
+  "wa_ultramega_ok": {
+    "area": "wa_burgundy_spire",
+    "set": {
+      "descent_text": "Ultramega OK has no independent, well-established rappel line of its own — it is a Northeast Buttress route whose last pitch finishes up an offwidth crack to the summit, though a party that loses the line high up can traverse ledges into upper North Face terrain (near Burgundy Ledge) and finish from there. From wherever the route is topped out, the standard way down is the North Face's 5-rappel descent: ~40m from a heavily slung summit boulder down the middle of the upper face to a bolted ledge anchor; ~55m from the bolts down lichen-covered rock to a huge ledge near a rock arch (traverse the ledge to a constriction with slings); ~55m from that constriction down to a blue-slung horn; ~40m from the horn to broad scree ledges (watch the rope pull here — lots of snag potential); and a final ~60m to the base of the first-pitch chimney, near where Action Potential and the North Face start. Double 60m ropes make this clean; parties with a single 70m have reported getting down with some downclimbing between stances, but it's tighter on this line than on the standard North Face. From the base of the raps, reverse the Burgundy Col approach back to the highway. A few parties describe instead downclimbing loose 3rd/4th-class terrain on Burgundy's east side back toward the col to avoid rappelling altogether, but this is opportunistic route-finding rather than an established descent, and is not recommended in the wet or for parties unfamiliar with the terrain."
+    },
+    "review": {
+      "findings": [
+        { "claim": "descent_text: 'most parties finish by merging into upper North Face terrain ... rather than topping out cleanly on a dedicated line'", "verdict": "CONFIRMED", "evidence": "The route's own description has P8 'downclimb and step right and finish up an offwidth crack to the summit'. The only North Face merge on record is one party that 'got lost after P7 and traversed on ledges to the north face route'. Nothing supports 'most parties', and the route is rarely climbed. Only the first sentence is changed.", "sources": ["https://www.mountainproject.com/route/114960561/ultramega-ok"] },
+        { "claim": "FA date 24 July 2004 (stored fa has only the year)", "verdict": "REFUTED", "evidence": "The stored year is correct. The date would be new material." },
+        { "claim": "Pitch list 5.8/5.9/5.8/5.11/5.9+/5.9/5.8 and overall grade 5.10c/d A0 or 5.11", "verdict": "UNCLEAR", "evidence": "The route page gives 8 pitches, 5.11a, Grade III, which matches the stored grade and pitches. The 7-pitch listing is a second opinion, not a contradiction." }
+      ],
+      "classification": {
+        "length_m": { "proposed": 273, "evidence": "The route page gives 900 ft (273 m), and the stored overview itself says '~900 ft'. The stored 310 m (~1,017 ft) has no source." }
+      }
+    }
+  },
+  "wa_mount_stuart_stuart_glacier_couloir": {
+    "area": "wa_mount_stuart",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "descent_text names the Cascadian Couloir; Sherpa Glacier is the typical descent from a north-side camp", "verdict": "REFUTED", "evidence": "Both are standard Stuart descents (the Sherpa Glacier row itself calls Sherpa 'the peak's best early-season descent'). descent_text already hedges with 'or as planned'. One defensible option, not an error.", "sources": ["https://www.mountainproject.com/route/108794198/stuart-glacier-couloir", "https://www.mountainproject.com/route/108236928/sherpa-glacier"] },
+        { "claim": "'First step' ice grade", "verdict": "UNCLEAR", "evidence": "pitch_detail was just rewritten; out of scope." }
+      ]
+    }
+  },
+  "wa_south_headwall": {
+    "area": "wa_mount_stuart",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "grade 5.8 and beta '5.8 YDS' are one letter-grade high; technical pitches never harder than 5.7", "verdict": "UNCLEAR", "evidence": "The route page's own header grade is 5.8, while its text says 'the technical pitches (never harder than 5.7)' and describes two 20-30 ft 5.7 sections. The 1966 FA report gives only '5th class'. The one detailed source contradicts itself, so the stored 5.8 copies its header and cannot be called false. No correction; a human may choose 5.7.", "sources": ["https://www.mountainproject.com/route/107554753/south-headwall", "http://publications.americanalpineclub.org/articles/12196813002/North-America-United-States-WashingtonCascade-Mountains-Mount-Stuart-South-Ridge-and-Headwall"] }
+      ]
+    }
+  },
+  "wa_king_kong_gorillas_direct_direct": {
+    "area": "wa_mount_stuart",
+    "set": {
+      "fa": "Sol Wertkin & Jon Gleason, 2016 (freed by Sol Wertkin)"
+    },
+    "review": {
+      "findings": [
+        { "claim": "fa names Tyree Johnson as Wertkin's partner; beta says Jon Gleason", "verdict": "CONFIRMED", "evidence": "The AAJ report says Johnson joined Wertkin in early September to work the headwall crack, where Wertkin took a big fall from the last move. 'A week later I returned with Jon Gleason and was able to climb the crack clean.' The FA author's own account names Gleason as belayer on the September 9, 2016 ascent. The completed ascent was Wertkin with Gleason; beta is right and fa is wrong.", "sources": ["http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong", "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html"] },
+        { "claim": "grade: route database 5.12a vs stored 5.11d", "verdict": "UNCLEAR", "evidence": "The first ascensionist graded it 5.11d and wrote that without repeats he would not call it 5.12a. The AAJ gives IV 5.11+. The stored 5.11d is the FA grade, and beta already notes '5.12a on some topos'. No change proposed." }
+      ]
+    }
+  },
+  "wa_colchuck_peak_holsten_hilden": {
+    "area": "wa_colchuck_peak",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "grade 'Grade IV, M6, AI3+' vs route database 'Grade III, WI3 M6'", "verdict": "REFUTED", "evidence": "The FA party's AAJ report gives IV M6 AI3+, exactly what is stored. The database's III/WI3 is a second opinion.", "sources": ["http://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten", "https://www.mountainproject.com/route/112066235/holsten-hilden"] },
+        { "claim": "pitches null; report describes ~9-10 pitches", "verdict": "UNCLEAR", "evidence": "The AAJ narrative mixes roped pitches with 'a few hundred feet' of snow that was not pitched, so a count is an interpretation (a reading gives about 8 roped pitches, not 9-10). No value proposed; null is safer than a guess." }
+      ]
+    }
+  },
+  "wa_dragontail_peak_r4": {
+    "area": "wa_dragontail_peak",
+    "skip_reason": "no finding — the earlier agent reported no error",
+    "review": {
+      "findings": [
+        { "claim": "grade 'Grade IV, WI3 M3, steep snow (R)' and pitches 20", "verdict": "REFUTED", "evidence": "The earlier agent itself found these match the route database. Nothing to correct." }
+      ]
+    }
+  },
+  "wa_the_tooth_fairy": {
+    "area": "wa_the_tooth",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "stored route grade 5.9; route database gives 5.9+", "verdict": "CONFIRMED", "evidence": "The route page grades it 5.9+ (252 votes), and the stored beta itself lists the crux pitch as '5.9+ crux'. The grade column is a classification column, so it goes below.", "sources": ["https://www.mountainproject.com/route/119074107/the-tooth-fairy"] },
+        { "claim": "P3/P5 bolt counts", "verdict": "UNCLEAR", "evidence": "pitch_detail was just rewritten; out of scope." }
+      ],
+      "classification": {
+        "grade": { "proposed": "5.9+", "evidence": "Route page grade 5.9+; the stored beta names a 5.9+ crux pitch." }
+      }
+    }
+  },
+  "wa_southwest_face": {
+    "area": "wa_the_tooth",
+    "set": {
+      "descent_text": "From the summit, several parties instead scramble roughly 30 feet north along the summit ridge, descend a short gully/chimney, follow easy slabs down and north to a major gully, work up to a narrow notch in the summit ridge, cross it (a belay is prudent), and continue north to a descent gully leading down the north end of the west face — but for most parties the simplest option is to rappel the South Face's equipped stations (about four rappels) back to Pineapple Pass and retrace the approach; rappelling the loose east-side gully carries notable rockfall hazard and is not recommended."
+    },
+    "review": {
+      "findings": [
+        { "claim": "descent_text: 'for most parties the simplest option is to downclimb the route's own ledge system back to Pineapple Pass'", "verdict": "CONFIRMED", "evidence": "No source describes downclimbing the Southwest Face. The Tooth's standard descent is rappelling the South Face: four equipped stations on trees and blocks down to Pineapple Pass. A party that retreated from this route also went down by rappel on the south face. Telling parties to downclimb four pitches of up-to-5.5 rock is safety-relevant. Only that clause is changed; the note on the east-side gully is a defensible caution and is kept.", "sources": ["https://www.mountainproject.com/route/106378880/south-face", "https://r.jina.ai/https://www.summitpost.org/sw-face-of-the-tooth/487315", "https://www.theoutbound.com/washington/rock-climbing/climb-the-south-face-of-the-tooth"] },
+        { "claim": "The north-side scramble alternative ('several parties...')", "verdict": "UNCLEAR", "evidence": "No source found for or against it; left unchanged." }
+      ]
+    }
+  },
+  "wa_chair_peak_northwest_ridge": {
+    "area": "wa_chair_peak",
+    "skip_reason": "not a stored-column claim — see review",
+    "review": {
+      "findings": [
+        { "claim": "Single-source pitch detail; ~5.9 off-line section on P4", "verdict": "REFUTED", "evidence": "A confidence note about the just-rewritten pitch_detail, not a claim about a stored prose column. The stored grade 5.7 and beta (poor rock, runout) agree with the route page." }
+      ]
+    }
+  },
+  "wa_mount_index_north_norwegian_buttress": {
+    "area": "wa_north_norwegian_buttress",
+    "skip_reason": "identity question — not for this pass",
+    "review": {
+      "findings": [
+        { "claim": "The row mixes Jötnar (grade 5.9, 16 pitches), Bluebell (table, rappels) and the Doorish aid line (fa)", "verdict": "UNCLEAR", "evidence": "An identity question: a human must decide which climb this row is, or split it. Not fixed here, as instructed." },
+        { "claim": "pitch_detail grade cells are not grade tokens", "verdict": "UNCLEAR", "evidence": "pitch_detail is out of scope, and this is not an invented-lengthM issue. Resolve together with the identity question." }
+      ]
+    }
+  },
+  "wa_traverse_of_mount_index": {
+    "area": "wa_main_peak_2",
+    "skip_reason": "all prose findings UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "descent_text: 'several 30-50 foot rappels' and '2-3 hour descent from Main Peak to Lake Serene via rappels'", "verdict": "UNCLEAR", "evidence": "No source consulted describes the descent from Main Peak after the traverse in any detail. The route page says only 'a handful or two of rappels worth of tat', and one report's itinerary says 'Summit Main and descent back to lake'. The figures are unsupported, but nothing found contradicts them, so no correction was written. A human with the guidebook should check them.", "sources": ["https://www.mountainproject.com/route/120466607/traverse-of-mount-index", "https://waynewallace.wordpress.com/2010/07/08/index-traverse-north-middle-and-main/"] }
+      ],
+      "classification": {
+        "pitches": { "proposed": null, "evidence": "The stored 4 comes from the route database listing but cannot be a pitch count for a three-summit traverse. Reports describe many leads plus 'a handful or two' of rappels, and no source gives a real count. Null is more honest than 4." }
+      }
+    }
+  },
+  "wa_vesper_peak_north_face_ragged_edge": {
+    "area": "wa_vesper_peak",
+    "skip_reason": "no stored-column error — see review",
+    "review": {
+      "findings": [
+        { "claim": "length_m 192 vs ~199 m sum of pitch lengths; anchors described as fixed/bolted", "verdict": "REFUTED", "evidence": "192 m is consistent with the published pitch lengths. No stored prose column makes a claim about the anchors, so nothing contradicts the sources." }
+      ]
+    }
+  },
+  "wa_sperry_peak_upper_south_ridge": {
+    "area": "wa_sperry_peak",
+    "skip_reason": "no verifiable correction — see review",
+    "review": {
+      "findings": [
+        { "claim": "pitch_detail grade cell '5.4 (downclimb)' is not a token; every row carries 'lengthM': null", "verdict": "UNCLEAR", "evidence": "The null lengthM keys are empty, not invented values, so they fall outside the one pitch_detail change this pass allows. They do no harm to the planner. Cleaning the grade cell is a table edit for a human." },
+        { "claim": "pitches 8 looks derived from 'ropelengths' phrases", "verdict": "UNCLEAR", "evidence": "No independent source for this route was found, by the earlier agent or since. The count can be neither confirmed nor replaced." }
+      ]
+    }
+  },
+  "wa_three_fingers_r1": {
+    "area": "wa_three_fingers",
+    "skip_reason": "all findings UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "rappels = 3 and descent_text's 'two to three rappels' are unconfirmed", "verdict": "UNCLEAR", "evidence": "The one detailed trip report gives the climbing grade (Class 4, one Class 5 move in the chimney) but not how the party came down. No source for or against the rappel count was found. Planning for rappels on a Class 4/low-5th chimney is conservative, not dangerous, so nothing is softened.", "sources": ["https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/"] },
+        { "claim": "climbing_route ramp direction", "verdict": "UNCLEAR", "evidence": "climbing_route was just rewritten; out of scope. The same 'ramp leading left then angling right' wording also sits in the approach column and is equally unconfirmed." }
+      ]
+    }
+  },
+  "wa_mount_constance_terrible_traverse": {
+    "area": "wa_mount_constance",
+    "skip_reason": "all findings UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "approach: the Terrible Traverse is reached via the North Chute", "verdict": "UNCLEAR", "evidence": "Sources disagree. A SummitPost route page and one trip report reach both traverses from the South Chute's ridge notch: from the same notch, the Terrible Traverse is reached by descending a snow chute and traversing north on ledges. A 2015 trip report titles the Terrible Traverse line 'North Chute (1A/Mountaineer Route)'. The row also disagrees with itself: its overview says the traverse is crossed 'from the South Chute notch', while its approach sends parties up the North Chute 'rather than the South Chute'. A human should settle which chute this row means, then align approach, overview and descent_text.", "sources": ["https://r.jina.ai/https://www.summitpost.org/south-chute/446329", "https://ericsbasecamp.net/trips/Constance/MtConstance.htm", "https://r.jina.ai/https://cascadeclimbers.com/forum/topic/96476-tr-mt-constance-north-chuteterrible-traverse-1a-1112015/"] },
+        { "claim": "grade 'Grade II' / discipline 'scrambling' understate a picket-protected steep-snow crux", "verdict": "UNCLEAR", "evidence": "The traverse is described as 45° to 50+° hard snow, often icy and often needing pickets. That is roped snow climbing in early season but a ledge walk late season. Whether the discipline should change is a catalog decision; no value proposed." }
+      ]
+    }
+  },
+  "wa_glacier_peak_sitkum_glacier": {
+    "area": "wa_glacier_peak",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "Unconfirmed bergschrund below the 9,500 ft saddle and firn-line remark", "verdict": "UNCLEAR", "evidence": "These are in climbing_route, which was just rewritten and is out of scope. No prose column (beta, overview, descent_text) repeats the bergschrund claim." },
+        { "claim": "grade 'Grade II glacier climb' vs route database 'Grade III, Easy Snow'", "verdict": "CONFIRMED", "evidence": "The route database gives Grade III, Easy Snow. The commitment grade is a judgment call, but the database's III fits the long wilderness approach the stored overview itself stresses. Low priority.", "sources": ["https://www.mountainproject.com/route/121086767/sitkum-glacier"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "Grade III, Easy Snow", "evidence": "Route database grade line; the stored 'Grade II glacier climb' has no source found. Low priority: a commitment-grade difference." }
+      }
+    }
+  },
+  "wa_glacier_peak_kennedy_glacier": {
+    "area": "wa_glacier_peak",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "overview: 'a popular ski-mountaineering descent' is unsupported", "verdict": "UNCLEAR", "evidence": "The route is skied: ski trip reports descend Frostbite Ridge and the Kennedy Glacier. 'Popular' cannot be verified, but it is not shown false and is not safety-relevant. Left unchanged.", "sources": ["https://skisickness.com/GlacierPk/Double/", "https://www.summitpost.org/kennedy-glacier/158306"] },
+        { "claim": "grade 'Class 2-3, Glacier' understates a ~40° headwall above a bergschrund and a ~45° often-icy slope, with pickets and 4 ice screws listed", "verdict": "CONFIRMED", "evidence": "The route description gives a bergschrund crossing, a 40° headwall, and a 45° often-icy slope of about 180 ft. It lists rope, crampons, axe, pickets and 4 ice screws, and says many parties want protection. Another account calls the line a late-season intermediate ice climb. 'Class 2-3' is a scramble rating.", "sources": ["https://r.jina.ai/https://www.summitpost.org/kennedy-glacier/158306", "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "Glacier, snow/ice to 45°", "evidence": "The route description's crux: 40° headwall above a bergschrund, then about 180 ft of 45° often-icy slope; pickets and ice screws required." }
+      }
+    }
+  },
+  "wa_sherpa_glacier": {
+    "area": "wa_mount_stuart",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "grade '3rd' covers only the summit ridge; the route is a ~40° snow couloir", "verdict": "CONFIRMED", "evidence": "The route database rates it Grade III, 4th class, 2,800 ft: glacier, then a snow gully, then class 3 on the ridge. It notes gear for rappelling broken glacial snow may be needed later in the season. The stored overview itself says ~40° snow. length_m 853 (2,800 ft) is correct.", "sources": ["https://www.mountainproject.com/route/108236928/sherpa-glacier", "https://skimo.co/sherpa-glacier-couloir"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "Grade III, 4th class, snow to ~40°", "evidence": "The route database gives Grade III, 4th class. The stored overview and ski sources give the couloir as roughly 40°." }
+      }
+    }
+  },
+  "wa_dragontail_peak_r3": {
+    "area": "wa_dragontail_peak",
+    "set": {
+      "overview": "Pandora's Box (also called the W Couloir) is the standard moderate couloir linking Colchuck and Dragontail near Colchuck Col. It's a west-facing snow/talus couloir a couple hundred feet east of Colchuck Col, most often climbed as the summit finish for Dragontail Peak via the Colchuck Glacier approach. The couloir is class 3 scrambling with sections of steep snow up to roughly 40-45°; it is not a technical ice or mixed climb. A single ice axe, crampons, and comfort on steep snow/talus are the normal kit.",
+      "descent_text": "From the top of the couloir/Pandora's Box, descend left and traverse northeast to the true summit (some parties rope up for this exposed traverse), or alternatively exit about 30 ft below the notch, scramble Class 4 rock roughly 20 ft, and follow the ridge left to the top. From the summit, the standard descent is southeast to a saddle, then east across a long snow slope to Aasgard Pass, then down the pass's steep talus/snow (~2,200 ft in under a mile) to Colchuck Lake - stay climbers' left near the granite walls and beware drifting climbers' right into cliffs near Colchuck Peak. Crampons/axe are recommended into mid-summer; early season the descent can largely be glissaded. No rappels are needed on this standard summit-and-Aasgard-Pass finish. If a party instead retreats directly back down the couloir rather than topping out, downclimbing steep snow/ice or building an improvised rappel off natural gear (slung chockstones or horns) in the couloir could become necessary - this specific scenario is not recorded anywhere but is a reasonable contingency to plan for in a steep snow couloir."
+    },
+    "review": {
+      "findings": [
+        { "claim": "overview: 'The true summit pinnacle itself involves an optional short 5.6 move'", "verdict": "CONFIRMED", "evidence": "No source gives a 5th-class move at Dragontail's summit. The peak page says '10-20 feet of Class 2+ scrambling gets you to the top'. From Pandora's Box, reports traverse left to the summit or take a ~20 ft Class 4 exit, which the stored descent_text itself describes. A trip report of this exact line mentions no such move. The 5.6 figure likely belongs to another spire. The unsupported sentence is removed; nothing replaces it.", "sources": ["https://r.jina.ai/https://www.summitpost.org/dragontail-peak/150391", "https://engineeredforadventure.com/dragontailpeak/", "https://www.theoutbound.com/washington/backpacking/scramble-to-the-summit-of-dragontail-peak"] },
+        { "claim": "descent_text calls the couloir 'a technical, mixed alpine couloir'", "verdict": "CONFIRMED", "evidence": "It contradicts the row's own overview ('not a technical ice or mixed climb') and every source. Pandora's Box is a moderate snow/talus couloir to ~40-45°, climbed with one axe; one party climbed it in boots and spikes. Only that closing phrase is changed.", "sources": ["https://engineeredforadventure.com/dragontailpeak/", "https://www.richardhforbes.com/trip-log/2019/8/5/trip-report-dragontail-peak-via-colchuck-glacier-pandoras-box-then-through-the-enchantments"] }
+      ]
+    }
+  },
+  "wa_vesper_peak_standard_route": {
+    "area": "wa_vesper_peak",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "grade '2nd' is fair for the rib, but the steeper slabs are Class 3 friction", "verdict": "CONFIRMED", "evidence": "One route guide calls it a Class 2 walk-up on the lowest-angle ground, or Class 3 friction on the steeper, cleaner slab toward the top. The stored beta's 'light hands-on moves' fits both. 'Class 2-3' is the accurate range.", "sources": ["https://summitborn.com/vesper-peak-via-headlee-pass-route-guide/", "https://www.summitpost.org/vesper-peak/150416"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "Class 2-3", "evidence": "Class 2 on the lowest-angle line, Class 3 friction where the slabs steepen toward the summit." }
+      }
+    }
+  },
+  "wa_enchantment_peak_east_ridge": {
+    "area": "wa_enchantment_peak",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "grade null; route is Class 2 with a Class 3 summit move", "verdict": "CONFIRMED", "evidence": "One report: 'a straight-forward walk-up from Prusik Pass, with 15 feet of 3rd class scrambling to the top'. The peak page describes class 2 scrambling with occasional use of hands. The stored beta says the same.", "sources": ["https://www.yellowleaf.org/scramble/g/r/2006-10-20-22-enchantments.html", "https://r.jina.ai/https://www.summitpost.org/enchantment-peak/151418"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "Class 2-3", "evidence": "Class 2 ridge walk with a ~15 ft Class 3 step onto the summit block." }
+      }
+    }
+  },
+  "wa_bacon_peak_diobsud": {
+    "area": "wa_bacon_peak",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "name 'Diobsud Creek / Green Lake Glacier' is misleading: the ascent uses only the Diobsud Creek Glacier", "verdict": "CONFIRMED", "evidence": "The row's own overview, approach and descent_text climb and descend the Diobsud Creek Glacier (SE). The Green Lake Glacier (NE) appears only on the optional traverse continuation north. The glacier layout is confirmed by the Diobsud Creek Glacier entry and a traverse report.", "sources": ["https://en.wikipedia.org/wiki/Diobsud_Creek_Glacier", "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/"] },
+        { "claim": "approach runs past the base to the summit", "verdict": "REFUTED", "evidence": "A scope and trimming issue for audit:approach-scope, not a factual error. Nothing false to correct." }
+      ],
+      "classification": {
+        "name": { "proposed": "Diobsud Creek Glacier", "evidence": "The route as stored ascends and descends the Diobsud Creek Glacier; the Green Lake Glacier is met only on the traverse north." }
+      }
+    }
+  },
+  "wa_mount_triumph_west_route": {
+    "area": "wa_mount_triumph",
+    "skip_reason": "no prose correction; classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "grade null; the route is Class 4", "verdict": "CONFIRMED", "evidence": "Both sources call the west route the easiest on the peak, 'rated class 4' and dangerous when wet, reached by the Triumph Pass climbers' route.", "sources": ["https://en.wikipedia.org/wiki/Mount_Triumph", "https://summitborn.com/mount-triumph-mountain-guide/"] },
+        { "claim": "discipline 'scrambling' undersells a route needing double-rope rappels", "verdict": "UNCLEAR", "evidence": "The only section-level account grades the summit gully Class 5, and the stored rappels prose describes double- and single-rope rappels. No second source confirms the rappel setup, so a discipline change is left to a human." }
+      ],
+      "classification": {
+        "grade": { "proposed": "Class 4", "evidence": "Both sources rate the west route class 4. One 2009 report graded its summit gully Class 5, so 'Class 4' is the reputation grade." }
+      }
+    }
+  },
+  "wa_mount_adams_wilson_glacier_headwall": {
+    "area": "wa_mount_adams",
+    "set": {
+      "approach": "The Wilson Glacier sits on the east side of Mount Adams, descending from around 10,600 ft to a terminus near 7,400 ft — a less-visited, less-documented flank than the standard south or north-side routes. Parties reach it via the Cold Springs/South Climb trailhead (5,600 ft, FS Rd 8040 off FS Rd 80): follow the South Climb Trail #183 about 1 mile up an old road bed to the junction with the Round the Mountain Trail, then instead of continuing north toward Lunch Counter, follow Round the Mountain Trail east below Crescent Glacier onto Yakama Nation land, where a separate tribal permit is required and the trail ends at Hellroaring Canyon; the way on, north around the mountain's eastern flank toward the Wilson/Klickitat glacier basins, is a long off-trail traverse with route-finding, creek crossings, and exposure to rockfall directly below the headwall's cliff bands. Given the route's distance (~27 km) and gain (6,700 ft) roughly match the other long approach routes on this mountain, expect a full day just to reach a camp near the toe of the Wilson Glacier before a summit attempt."
+    },
+    "review": {
+      "findings": [
+        { "claim": "approach: follow the Round the Mountain Trail 'east and then north ... around the mountain's eastern flank' toward the Wilson/Klickitat basins", "verdict": "CONFIRMED", "evidence": "The Forest Service maintains Trail #9 only to the reservation boundary. East of it the trail runs through Bird Creek Meadows under Yakama Nation management and ends on a reservation road at the western edge of Hellroaring Canyon. It never goes north around the east flank; the trail system leaves a gap on the east side. A separate Yakama Nation permit is required on reservation land, and the Bird Creek Meadows section has been closed for years (closed after the 2015 fire, listed as closed indefinitely). The Wilson Glacier is on the east slopes, on the reservation side. The sentence is corrected to where the trail really ends and to the permit requirement; the rest is kept.", "sources": ["https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-9-round-mountain", "https://en.wikipedia.org/wiki/Mount_Adams_Recreation_Area", "https://www.wta.org/go-hiking/hikes/round-the-mountain", "https://en.wikipedia.org/wiki/Wilson_Glacier_(Mount_Adams)"] },
+        { "claim": "Whether non-members may travel off-trail on the reservation's east flank at all", "verdict": "UNCLEAR", "evidence": "No source found states the rule for travel beyond the Mount Adams Recreation Area. A human should confirm current Yakama Nation access before this approach is presented as usable." }
+      ]
+    }
+  },
+  "wa_jack_mountain_northeast_glacier": {
+    "area": "wa_jack_mountain",
+    "skip_reason": "no column finding; identity note only",
+    "review": {
+      "findings": [
+        { "claim": "Skipped: no description of the 1978 Northeast Glacier route exists online; north-side sources cover the Nohokomeen Glacier, a different route", "verdict": "UNCLEAR", "evidence": "No stored-column error to verify. Note: the stored overview places the route 'near the Nohokomeen Glacier basin', and the approach reads 'North from May Creek; northeast face'. Neither could be checked against any source for this route, so a human should confirm the row is not borrowing Nohokomeen details." }
+      ]
+    }
+  }
+}

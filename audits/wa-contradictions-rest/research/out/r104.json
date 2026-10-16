@@ -1,0 +1,653 @@
+{
+ "file": "r104.json",
+ "results": [
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Base camp for the climb",
+   "verdict": "fixed",
+   "correct_value": "Crescent Creek Basin camp (a little over 6,000 ft, below Mount Terror), reached over the Barrier",
+   "evidence": "The Rake sits on the crest between Mount Terror and the Twin Needles and its only route starts from the Terror-Rake notch, which rises from Crescent Creek Basin; one source lists the Rake among the peaks bordering Crescent Creek, another places the standard Crescent camp below Mount Terror at 6,050 ft with the Rake beside Terror, and a third shows Terror Basin (5,800 ft) faces the Barrier, Degenhardt, Pyramid, Inspiration and the McMillan Spires instead. The row's own waypoints, approach variant, descent and bail already put the climb on the Crescent Creek side; only the itinerary named Terror Basin.",
+   "sources": [
+    "https://drdirtbag.com/2021/07/23/the-chopping-block/",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Approach to Terror Basin",
+     "value": "Approach to Crescent Creek Basin",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Approach to Terror Basin",
+     "value": "Approach to Crescent Creek Basin",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "into Terror Basin, gaining nearly 6,000 ft to the flat camping shelf at roughly 5,800 ft below",
+     "replace": "over the Barrier into Crescent Creek Basin, gaining nearly 6,000 ft to a camp a little over 6,000 ft below",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "into Terror Basin, gaining nearly 6,000 ft to the flat camping shelf at roughly 5,800 ft",
+     "replace": "over the Barrier into Crescent Creek Basin, gaining nearly 6,000 ft to a camp a little over 6,000 ft",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Reach Terror Basin camp",
+     "value": "Reach Crescent Creek Basin camp",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Flat gravel bench at ~5,800 ft with water and views of the crest",
+     "value": "Bench a little over 6,000 ft below Mount Terror, with snowmelt water and views of the crest",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Reach the Terror Basin high camp",
+     "value": "Reach the Crescent Creek Basin high camp",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "expect": "Summit The Rake and return to Terror Basin camp",
+     "value": "Summit The Rake and return to Crescent Creek Basin camp",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "label"
+     ],
+     "expect": "Back at Terror Basin camp",
+     "value": "Back at Crescent Creek Basin camp",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "one day backpacking into Terror Basin camp",
+     "replace": "one day backpacking into Crescent Creek Basin camp",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Terror Basin snowfields",
+     "replace": "basin snowfields",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Base camp for the climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Summit-day gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 2,000 ft up and down on summit day (camp a little over 6,000 ft to the 7,869 ft summit); car-to-car itinerary total 8,100 ft",
+   "evidence": "Camp in Crescent Creek Basin is at about 6,050 ft and the summit is 7,869 ft, so the summit day needs at least ~1,820 ft of climbing plus the ups and downs of the rubble gully; the 1,600 ft figure was impossible from either the old 5,800 ft or the corrected camp. The row's high point, summit schedule and day note all say 7,869 ft. gain_ft is raised to match the new itinerary total (5,800 + 2,000 + 300); loss_ft is left untouched per the loss rule.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://www.listsofjohn.com/PeakStats/Climbers.php?Id=48962"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 1600,
+     "value": 2000,
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Summit-day gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 1600,
+     "value": 2000,
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Summit-day gain"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7700,
+     "value": 8100,
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Summit-day gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~7,700 ft of gain round trip",
+     "replace": "~8,100 ft of gain round trip",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Summit-day gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Permit reservability",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin and Crescent Creek cross-country zones are walk-up only (in person at Marblemount); only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance",
+   "evidence": "The park's cross-country zone page and its backcountry reservations page both state that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that all other cross-country zones are walk-up only; Terror Basin and Crescent Creek are in the zone table but not on the reservable list. A trip report confirms the Crescent Creek permit was picked up in person at Marblemount. The camp cards already said walk-up only; the itinerary, access card and permit text are corrected.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(reservable in advance, or first-come at Marblemount) is required for the Terror Basin camp.",
+     "replace": "(walk-up only, issued in person at Marblemount) is required for the Crescent Creek Basin camp.",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Reservable in advance via Recreation.gov, or obtained as a walk-up (about 40% of capacity is held for walk-ups) at the Wilderness Information Center in Marblemount",
+     "replace": "This cross-country zone cannot be reserved in advance: the permit is walk-up only, issued in person at the Wilderness Information Center in Marblemount",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "The Southern Pickets cross-country zones (Terror Basin and Crescent Creek) cannot be reserved in advance; permits are walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Reserved permits must be picked up by 11am on the trip's start date or the reservation is cancelled; camp only within your assigned cross-country zone.",
+     "value": "Camp only within the cross-country zone written on your permit.",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit reservability"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Required rock grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5.9",
+   "evidence": "The route's first-ascent account grades the Rake IV 5.9, and the row's grade, rock_grade, pitch_detail and itinerary all say 5.9; the 5.7 partner skill is the only outlier.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "5.7 traditional/alpine rock climbing with a pack",
+     "value": "5.9 traditional/alpine rock climbing with a pack",
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Required rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Rappel count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only published account says just that the party rappelled from the Rake's summit (they were continuing west along the traverse), with no count or station detail. No source supports the three numbered rappels in rappel_detail, which the row itself admits are estimated from pitch count; the rappels prose ('number unknown') is the accurate one. Recommend removing or relabelling the three-row table by hand; no patch written.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Summit elevation (waypoint 7,840 vs high point 7,869)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit waypoint says 7,840 ft (elev and elevFt) while high_point_ft, the overview and itinerary say 7,869 ft. One topo-derived list gives 7,869 ft; another listing reports 7,840 ft (likely the map contour). Could not reach a second topo source to confirm, so no patch.",
+   "sources": [
+    "https://www.listsofjohn.com/PeakStats/Climbers.php?Id=48962"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "fact": "Route difficulty",
+   "verdict": "fixed",
+   "correct_value": "Class 2-3 (class 2 west slope, class 3 east arete)",
+   "evidence": "The 2003 enchainment account describes wandering over the West Twin at class 3, and a 2023 trip report describes the West Twin's class 3 east flank and class 2 west slope as a reprieve on the traverse. Every prose field on the row already says class 2 west slope with a class 3 east arete; only the grade pill said Class 3-4.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 3-4 (YDS)",
+     "value": "Class 2-3 (YDS)",
+     "id": "wa_west_twin_needle_west_slope",
+     "fact": "Route difficulty"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "fact": "Permit reservability",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only at Marblemount (Terror Basin/Crescent Creek zones are not reservable)",
+   "evidence": "Both park pages list only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes as reservable cross-country zones; the rest, including Terror Basin and Crescent Creek, are walk-up only. The camp card was right; the access card and overnight permit line are corrected.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "reserve via Recreation.gov and confirm via the Wilderness Information Center in Marblemount",
+     "replace": "these zones are walk-up only, issued in person at the Wilderness Information Center in Marblemount",
+     "id": "wa_west_twin_needle_west_slope",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_west_twin_needle_west_slope",
+     "fact": "Permit reservability"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only detailed trip report gives 19.5 miles round trip and an elevation RANGE of 600-7,936 ft over three days, which is where gain_ft/loss_ft 7,336 comes from; it is the range, not the true car-to-car gain, which must be higher (a ~200 ft drop into the basin, a ~300 ft drop on summit day, gully ups and downs). No source states the cumulative gain, so gain_ft and loss_ft are not changed. The totalNote's wrong range figure is handled as a separate discovered entry.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Elevation range stated in the trip total",
+   "verdict": "fixed",
+   "correct_value": "About 7,300 ft between the ~600 ft trailhead and the 7,936 ft summit",
+   "evidence": "A trip report gives the elevation range as 600-7,936 ft, and the summit is 7,936 ft in two independent listings, so the range is about 7,340 ft, not 7,900 ft. The row's own trailhead waypoint (600) and summit (7,936) agree.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://en.wikipedia.org/wiki/Twin_Needles",
+    "https://listsofjohn.com/peak/48922"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "about 7,900 ft of net elevation range",
+     "replace": "about 7,300 ft between the trailhead (~600 ft) and the summit (7,936 ft)",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "Elevation range stated in the trip total"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Where the 5.7 crux is and which face it climbs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one detailed account of this line exists: that party pitched an unrated narrow-crack pitch past the big chockstones in the gully below the Eye Col (~7,400 ft), then from the col climbed white slabs on the east face that the leader estimated at 5.7 ('East Face 5.7 Direct'), and noted they went off the intended class 3 line. That would put the 5.7 above the col, not in the gully as rock_grade says, but it is a single party's estimate on a variant, with no second source.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Which notch the approach reaches at ~7,400 ft",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach, descent_text and rappel_detail call the ~7,400 ft notch reached from the chockstone gully the Himmelhorn-West Twin Needle notch, but the one trip report names the ~7,400 ft notch at the top of that gully the Eye Col (below East Twin Needle) and treats the Himmelhorn-West Twin notch (the 1932 route and descent) as a different, more westerly notch. Single source; no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No accessible source gives an overall grade for the south route; the trip report gives none and the II rating the row mentions could not be found. Left as is.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://en.wikipedia.org/wiki/Twin_Needles"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Approach length in days",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "One long day to the Crescent Creek Basin camp",
+   "evidence": "The itinerary, timing (9 hr approach), approach text and day-1 note all reach camp in one day; a trip report left the trailhead at 8 AM and camped in Crescent Creek Basin below Mount Terror the same day. The 2-3 day partner requirement is the outlier.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Roughly 2-3 days of trail-less approach through the Southern Pickets (e.g., via Terror Basin/Crescent Creek) before reaching the base of the route",
+     "value": "One long, largely trail-less day via Terror Creek and the Barrier to the Crescent Creek Basin camp, then a few hours from camp to the base of the route",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "Approach length in days"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Parking pass at the trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or fee at Goodell Creek (NPS land); only the overnight wilderness permit",
+   "evidence": "The park's fees page says there are no trailhead or parking fees for trails that begin on Park Service land and that the Northwest Forest Pass applies at trailheads on adjacent Forest Service land; independent visitor guides confirm the park complex charges no entrance fee and that the pass is for neighbouring national forest trailheads. Goodell Creek at Newhalem is on Park Service land, so the access card is right and the waypoint is corrected.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://explorewashingtonstate.com/national-parks/north-cascades/",
+    "https://www.wta.org/go-outside/passes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "NW Forest Pass and a self-issue wilderness permit (or WIC permit in Marblemount) required.",
+     "replace": "no parking pass is needed, but an overnight trip needs a wilderness permit from the Wilderness Information Center in Marblemount.",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "Parking pass at the trailhead"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "expect": "The trailhead is an unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek. A Northwest Forest Pass is required to park, along with a self-issue wilderness permit at the trailhead, or one from the Wilderness Information Center in Marblemount if you plan to camp in the Terror or Crescent Creek basins.",
+     "value": "The trailhead is an unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek. No parking pass is needed here, but camping in the Terror or Crescent Creek basins needs a wilderness permit, issued in person at the Wilderness Information Center in Marblemount.",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "Parking pass at the trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "How the camp permit is obtained",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only, in person at the Marblemount Wilderness Information Center",
+   "evidence": "Both park pages list only six reservable cross-country zones and say all others are walk-up only, issued in person; Terror Basin and Crescent Creek are not reservable. A trip report for this exact route picked its permit up in person at Marblemount. The camp card was right; the access card, notes, permit text and the trailhead waypoint (fixed in the parking-pass entry) are corrected.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "reserve via Recreation.gov and finalize through the North Cascades Wilderness Information Center in Marblemount",
+     "replace": "these zones are walk-up only, issued in person at the North Cascades Wilderness Information Center in Marblemount",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "How the camp permit is obtained"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "The Southern Pickets cross-country zones (Terror Basin and Crescent Creek) cannot be reserved in advance; permits are walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "How the camp permit is obtained"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "How the camp permit is obtained"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "How the camp permit is obtained"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Glacier on the approach",
+   "verdict": "fixed",
+   "correct_value": "No glacier on the approach; the Mustard Glacier is on the north side of the Twin Needles. Axe (and crampons) only for lingering snow in the gullies",
+   "evidence": "Twin Needles' Mustard Glacier lies on the peaks' northern slope, away from this south-side route; the trip report for this line crossed the Barrier, basin scree and a snowfield below the gullies with no glacier travel. The rack text naming a Mustard Glacier approach is corrected; seasonal hazards were right.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twin_Needles",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "glacier travel gear (axe, and crampons if snow lingers) for the Crescent Creek Basin / Mustard Glacier approach depending on season",
+     "replace": "an ice axe, plus crampons if snow lingers, for snow in the Crescent Creek Basin approach gullies depending on season",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "Glacier on the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Eye Col gully traverse elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The trip report puts camp at 6,050 ft, the drop to Crescent Creek's head at ~300 ft below the moraine, and the Eye Col at ~7,400 ft, so the traverse starts near 5,750 ft and rises toward 7,400 ft. Whether the pin marks the start of the traverse or the col depends on where it sits on the ground, which cannot be settled without a terrain check; no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Flank difficulty in the overview",
+   "verdict": "fixed",
+   "correct_value": "West Twin Needle's flanks are class 2-3 (class 2 west slope, class 3 east flank)",
+   "evidence": "The overview calls the flanks class 3-4, but the enchainment account crossed the West Twin at class 3 and a trip report gives a class 3 east flank and class 2 west slope; the sister West Slope route row is corrected to Class 2-3 in this batch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "carries easier class 3-4 flanks",
+     "replace": "carries easier class 2-3 flanks",
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "Flank difficulty in the overview"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

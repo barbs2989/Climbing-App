@@ -1,0 +1,207 @@
+{
+ "file": "r465.json",
+ "results": [
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Long Swamp Campground (Windy Peak Trailhead)",
+   "evidence": "The Forest Service trailhead page names the start of Windy Peak Trail #342 as Windy Peak Trailhead/Long Swamp at the FR 39 / FR 3900-300 junction, 20 miles up FR 39 from Loomis. The WTA hike page gives Long Swamp Campground as the trailhead, and a Bulger trip report also starts at Long Swamp/Windy Peak Trail. Cathedral Driveway is the start of the separate Windy Creek trail.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/colville/recreation/windy-peak-trailhead-long-swamp",
+    "https://www.wta.org/go-hiking/hikes/windy-peak",
+    "https://hike2hike.com/day-hikes/windy-peak-washington-bulger-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Cathedral Driveway Trailhead",
+     "value": "Long Swamp Campground (Windy Peak Trailhead)",
+     "id": "wa_windy_peak_trail",
+     "fact": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Summit time holds the car-to-car total",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "summitTimeHrs unknown (null); 9.5 h is the car-to-car total",
+   "evidence": "The row's itinerary puts the summit at +6 h of a 9.5 h round trip, and totalHrs and the one sectionBreakdown row (summit and back) both hold 9.5 h, so summitTimeHrs repeats the car-to-car total. The WTA page describes the route as a long out-and-back from Long Swamp. No source states an ascent time, so the field is nulled rather than given a computed value.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/windy-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 9.5,
+     "value": null,
+     "id": "wa_windy_peak_trail",
+     "fact": "Summit time holds the car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Ranger district",
+   "verdict": "fixed",
+   "correct_value": "Trail #342 in the wilderness: Methow Valley RD (Okanogan-Wenatchee NF); Long Swamp trailhead and FR 39: Tonasket RD (now Colville NF)",
+   "evidence": "The Okanogan-Wenatchee NF trail page for Windy Peak Trail lists the Methow Valley Ranger District (509-996-4000) as the contact. The Colville NF recreation page places the Windy Peak Trailhead/Long Swamp in the Tonasket Ranger District, and a Colville NF Tonasket Ranger District fire-closure order covers NFR 3900 up to Long Swamp Campground (the Tonasket RD moved to the Colville NF in 2020). The road card's pointer to Tonasket RD is therefore correct; the land-manager line's claim that the trailhead is not in Tonasket RD is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-peak-trail",
+    "https://www.fs.usda.gov/r06/colville/recreation/windy-peak-trailhead-long-swamp",
+    "https://www.fs.usda.gov/r06/colville/alerts/sinlahekin-fire-closure-areas-tonasket-ranger-district"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": " — the Long Swamp/Windy Peak Trail #342 corridor and trailhead fall within this district's Pasayten Wilderness portion, not the neighboring Tonasket Ranger District.",
+     "replace": " for Trail #342 inside the Pasayten Wilderness; the Long Swamp trailhead and the FR-39 approach road are in the Tonasket Ranger District (Colville National Forest).",
+     "id": "wa_windy_peak_trail",
+     "fact": "Ranger district"
+    }
+   ]
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Round-trip distance for partners",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on the one-way trail distance from Long Swamp to the summit. The WTA hike page gives 11.0 miles one-way (4,050 ft gain), matching the row's 22 mi round trip. Two other pages (a lookout-history site and a fire-history article) and a search summary describe the Windy Peak Trail from Long Swamp as about 7 miles, which would make the partner card's 10-14 mi round trip closer. The Forest Service gives 11.5 miles as the whole trail's length to the Boundary Trail at Horseshoe Basin, beyond the peak. With no two agreeing sources for the peak distance, nothing is patched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/windy-peak",
+    "http://www.willhiteweb.com/pasayten_wilderness/windy_peak/lookout_232.htm",
+    "https://www.wildlandnw.net/windy-peak-pasayten-wilderness",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-peak-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Grade of the summit finish",
+   "verdict": "fixed",
+   "correct_value": "Class 2 (maintained trail with a short, easy talus finish)",
+   "evidence": "A Bulger trip report from Long Swamp describes the final section as easy scrambling, Class 2 at most. The Mountain Project area page gives the summit as a 2nd-class hike up the west slope, with 3rd-class options on the north and south ridges. The row's own breakdown, beta and rope note also rate the finish Class 2, so the header grade and partner card understated it.",
+   "sources": [
+    "https://hike2hike.com/day-hikes/windy-peak-washington-bulger-peak/",
+    "https://www.mountainproject.com/area/109096885/windy-peakwindy-lake"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 1 (trail)",
+     "value": "Class 2 (trail, talus finish)",
+     "id": "wa_windy_peak_trail",
+     "fact": "Grade of the summit finish"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      3
+     ],
+     "find": "No technical or scrambling skills required - standard maintained-trail walk-up",
+     "replace": "No technical skills required - maintained trail with a short, easy Class 2 talus scramble to the summit",
+     "id": "wa_windy_peak_trail",
+     "fact": "Grade of the summit finish"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "(Class 1 maintained trail, no exposure or scrambling skill needed)",
+     "replace": "(maintained trail with a short, easy Class 2 talus finish; no exposure)",
+     "id": "wa_windy_peak_trail",
+     "fact": "Grade of the summit finish"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Low fall-exposure overall (Class 1 maintained trail)",
+     "replace": "Low fall-exposure overall (maintained trail with a short Class 2 talus finish)",
+     "id": "wa_windy_peak_trail",
+     "fact": "Grade of the summit finish"
+    }
+   ]
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Side of the summit climbed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountain Project area page says the easy (2nd class) way up is the west slope and that the south and north ridges are 3rd class, which supports the rope note rather than the aspect/baseFinding 'south side'. The WTA page only says the trail approaches the peak from the south. With a single source for the side of the final scramble, nothing is patched; note that a 'south side' finish may correspond to the harder south ridge.",
+   "sources": [
+    "https://www.mountainproject.com/area/109096885/windy-peakwindy-lake",
+    "https://www.wta.org/go-hiking/hikes/windy-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Optimal season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "July through September",
+   "evidence": "The Forest Service trailhead page says the trail is usually snowed in until July. Within the row, best_season, climate.summer and climate.fall, and the monthBreakdown (October 'marginal') all place the reliable window at July-September, with October a shoulder month; only optimalWindow includes October.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/colville/recreation/windy-peak-trailhead-long-swamp"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "July through October, with the most reliable conditions in July and August",
+     "value": "July through September, with the most reliable conditions in July and August",
+     "id": "wa_windy_peak_trail",
+     "fact": "Optimal season"
+    }
+   ]
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Parking pass example trailheads",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass required at the Long Swamp trailhead",
+   "evidence": "The Forest Service trailhead page for Windy Peak Trailhead/Long Swamp requires a Northwest Forest Pass or $5 per vehicle per day, and the WTA page lists a Northwest Forest Pass or America the Beautiful pass for this trailhead. Andrews Creek and Chewuch River are Chewuch-side trailheads unrelated to this route.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/colville/recreation/windy-peak-trailhead-long-swamp",
+    "https://www.wta.org/go-hiking/hikes/windy-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River)",
+     "replace": "Northwest Forest Pass required at the Long Swamp trailhead",
+     "id": "wa_windy_peak_trail",
+     "fact": "Parking pass example trailheads"
+    }
+   ]
+  }
+ ]
+}

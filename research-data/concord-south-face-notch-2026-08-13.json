@@ -1,0 +1,28 @@
+{
+  "_README": [
+    "ONE row corrected on Concord Tower, not the two that were reported. Read both before acting.",
+    "",
+    "wa_south_face_center sends you up 'the gully between Liberty Bell and Concord Tower' to 'the",
+    "notch', and then says the route 'starts directly from the notch, on the wall's south side'.",
+    "Those two halves cannot both be true: standing at the Liberty Bell-Concord col, the Concord",
+    "wall in front of you is the NORTH face. The row is wrong on its own terms, which is the same",
+    "internal-contradiction tell the Cutthroat boilerplate had.",
+    "",
+    "The South Face routes are reached from the CONCORD-LEXINGTON notch — the quieter saddle one",
+    "tower along. Corroborated three ways: the researched variant on the sibling South Face row",
+    "states it explicitly and names arriving at the Liberty Bell-Concord col as the common error;",
+    "that sibling's own stored approach hedges toward it, naming 'Concord/Lexington Towers'; and",
+    "the geometry above rules the alternative out.",
+    "",
+    "wa_south_face_3 is deliberately NOT changed. Its text hedges rather than asserting the wrong",
+    "col, and it now carries a precise researched variant that supplies the missing specificity."
+  ],
+
+  "wa_south_face_center": {
+    "area": "wa_concord_tower",
+    "_grounding": "the researched approach_variant on sibling row wa_south_face_3, that row's own stored approach naming Concord/Lexington, and the internal contradiction in this row's existing text. No new route-specific detail is claimed for South Face Center itself.",
+    "set": {
+      "approach": "Drive Highway 20 to the Blue Lake Trailhead (~5,400 ft), about 30 miles west of Winthrop and a quarter mile west of the Washington Pass Overlook; a day-use fee or Northwest Forest/Interagency pass is required and the small lot fills early. Hike the Blue Lake Trail about 1.5 miles until it opens out, then take the well-established climbers' path on the left, marked by a large cairn.\n\nThe South Face routes are reached from the CONCORD-LEXINGTON notch, which is a different saddle from the Liberty Bell-Concord col that the North Face and the Beckey Route use. Rather than trending toward the Liberty Bell-Concord gully, keep working up and left into the gully between Concord and Lexington Towers; higher up, a reasonable climbers' path appears along its left side and is better than fighting up the gully bed. It sees far less traffic than the Liberty Bell-Concord col.\n\nYou are at the right saddle when Concord is on one side of you and Lexington on the other, and the Concord wall in front of you gives onto low-angle, gravelly ledges rather than a steep crack system. If you are facing a crack system, you are at the Liberty Bell-Concord notch and looking at the North Face.\n\nNo detail specific to South Face Center beyond this shared approach is on file."
+    }
+  }
+}

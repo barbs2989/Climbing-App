@@ -1,0 +1,65 @@
+{
+ "id": "wa_chair_peak_voie_de_chaise",
+ "area_id": "wa_chair_peak",
+ "stations": 7,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "top anchor (bolted)",
+    "station": "The top anchor, after belaying the leader back down pitch 8 rather than rappelling it.",
+    "notes": "Rappel 1 of 7 on a single 60 m rope, straight down to the chain anchor just right of the pitch-6 belay.",
+    "hazards": [
+     "Do not rappel pitch 8: belay it back down instead. Rappelling it knocks loose rock onto the parties below.",
+     "Several rappels leave under 5 ft of rope to spare on a 60 m. Tie knots in the ends."
+    ]
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "chain anchor just right of the pitch-6 belay (added 2023)",
+    "station": "The chain anchor just right of the pitch-6 belay.",
+    "notes": "Rappel 2 of 7, to the top of pitch 5."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The belay at the top of pitch 5.",
+    "notes": "Rappel 3 of 7, down pitch 5 to the top of pitch 4."
+   },
+   {
+    "n": 4,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The belay at the top of pitch 4.",
+    "notes": "Rappel 4 of 7, down pitch 4 to the top of pitch 3."
+   },
+   {
+    "n": 5,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The belay at the top of pitch 3.",
+    "notes": "Rappel 5 of 7, down pitch 3 to the top of pitch 2."
+   },
+   {
+    "n": 6,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The belay at the top of pitch 2.",
+    "notes": "Rappel 6 of 7, down pitch 2 to the top of pitch 1."
+   },
+   {
+    "n": 7,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The belay at the top of pitch 1.",
+    "notes": "Rappel 7 of 7, down pitch 1 to the ground."
+   }
+  ],
+  "rappels": "7 bolted rappels down the route on a single 60 m rope, after belaying pitch 8 back down; several leave under 5 ft spare, so knot the ends. Alternatively descend the East Gully.",
+  "rappel_count_note": "Two rappel stations added in 2023 let a single 60 m rope make every rappel, some with under 5 ft to spare. Belay pitch 8 back down rather than rappelling it, to keep rock off the parties below; from the top anchor, rappel to the chain anchor right of the pitch-6 belay, then to the top of pitch 5, then down the belay stations to the ground. If the route is busy, take the East Gully instead.",
+  "descent_text": "Most parties rappel the route on a single 60 m rope, using two rappel stations added in 2023. Belay the leader back down pitch 8 rather than rappelling it: rappelling it knocks loose rock onto anyone below. From the top anchor, rappel straight down to the chain anchor just right of the pitch-6 belay, then to the top of pitch 5, then down the belay stations to the ground, seven rappels in all. Several leave less than 5 ft of rope to spare, so knot the ends. If other parties are on the route, descend the East Gully instead: hike, downclimb and rappel the normal descent."
+ }
+}

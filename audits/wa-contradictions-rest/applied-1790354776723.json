@@ -1,0 +1,34 @@
+{
+ "applied": [
+  {
+   "id": "wa_alice_in_wonderland",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Sport vs mixed protection"
+  },
+  {
+   "id": "wa_alice_in_wonderland",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Sport vs mixed protection"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_alice_in_wonderland",
+   "before": {
+    "gear": [
+     "Quickdraws for the bolted face pitch (it is a sport route)",
+     "A few small cams or wires as optional backup in the seam/crack past the flake, though the line is bolt-protected",
+     "A single rope long enough to lower off after topping out over the roof",
+     "Helmet, since it's a continuation pitch stacked above other climbers on Summertime's first pitch"
+    ]
+   }
+  }
+ ]
+}

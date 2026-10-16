@@ -1,0 +1,175 @@
+{
+ "file": "v022",
+ "results": [
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)",
+   "verdict": "fixed",
+   "correct_value": "From the North Fork Entiat junction the trail into the Emerald-Saska basin is the left (west) fork; the east branch goes toward Pyramid Mountain.",
+   "evidence": "A Cardinal/Saska/Emerald trip write-up says that where the North Fork Entiat trail meets the Pyramid trail (~mile 8.5) you head west, then turn uphill into the basin holding the three summits. The club route page says to take the LEFT fork at the Pyramid trail junction (going up-valley, i.e. west). OpenStreetMap's geometry of Pyramid Mountain Trail #1433 agrees: from the end of Trail #1437 one branch runs east toward Pyramid Mountain and the other runs north-northwest into the basin under the Emerald-Saska col. The Fox Camp note ('forks west') is right; the three 'east' copies are changed to west.",
+   "sources": [
+    "https://hike2hike.com/scrambling/cardinal-saska-and-emerald-entiat-bulgers/",
+    "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+    "https://overpass-api.de/api/interpreter (way 5846499 Pyramid Mountain Trail TR 1433, way 430461681 North Fork Entiat River Trail TR 1437)"
+   ],
+   "patches": [
+    {
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "Pyramid trail direction",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "find": "take the primitive Pyramid Creek Trail east and climb",
+     "replace": "take the primitive Pyramid Creek Trail west and climb"
+    },
+    {
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "Pyramid trail direction",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Pyramid Creek Trail climbs east about 1,000 ft",
+     "replace": "Pyramid Creek Trail climbs west about 1,000 ft"
+    },
+    {
+     "id": "wa_saska_peak_emerald_saska_col",
+     "fact": "Pyramid trail direction",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Pyramid Creek Trail EAST and climb",
+     "replace": "Pyramid Creek Trail WEST and climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no published elevation for Fox Camp. The USGS ground height where OpenStreetMap joins Trail #1437 to the Pyramid trail is ~6,587 ft, and at the row's Fox Camp pin ~5,728 ft; neither is a stated figure and they disagree with each other by ~850 ft, so the pin placement itself is in doubt. Trip write-ups checked (two Saska/Emerald reports) give mileages and whole-trip totals only. One topo reading with an uncertain point is not two sources; no patch.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.62770&y=48.09452&units=Feet&wkid=4326",
+    "https://hike2hike.com/scrambling/cardinal-saska-and-emerald-entiat-bulgers/",
+    "https://www.lucasmountainknowledge.com/post/saska-emerald-and-pinnacle-oct-2023"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "fact": "Total round-trip distance for the Standard Route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no source that states the trailhead-to-Sentinel one-way or round-trip distance for this route alone: a 2024 out-and-back Ptarmigan party logged per-day totals only (16.5/14.1/11.0/9.4 mi, including a 3 mi gated road walk and the traverse to Dome), and search summaries repeat the single 32.6 mi Sentinel + Old Guard round trip that includes road walk, Old Guard and a camp move. A notable coincidence: dist_km 26.2 equals, as a number, the 26.2 MILE round trip the same author gives for Le Conte Mountain from the Cascade Pass trailhead, which suggests dist_km was carried from a different objective and unit, but that is not a stated figure for this route. Waypoints (summit at 14 mi) and the itinerary (34.1 mi incl. Old Guard) still cannot be reconciled from two sources; no patch.",
+   "sources": [
+    "https://edwardliphoto.com/trips/2024-07-04-ptarmigan-traverse/",
+    "https://onehikeaweek.com/2023/07/02/le-conte-mountain/",
+    "https://onehikeaweek.com/2020/07/05/sentinel-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Total elevation loss for the trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A third search turned up no car-to-car gain or loss for Sheep Gap's main summit: results are Gothic Basin hikes (about 10.5 mi and 3,700 ft to the basin), Gothic/Del Campo outings and the 2024 North/Middle peak recon, all different objectives. The peak database that would hold ascent GPS logs returned 403 directly. loss_ft 3452 is the net relief, not a cumulative figure, but setting it equal to gain by out-and-back reasoning is refused as a class. No patch.",
+   "sources": [
+    "https://www.hikingwithmybrother.com/gothic-basin-via-weden-creek-trail-724.html",
+    "https://turigrinos.com/2019/09/02/trip-report-gothic-basin/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Round-trip mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new measured round trip for the main summit. Gothic Basin alone is described as ~10.5 mi round trip, which makes the itinerary's 11.8 mi for a route that continues ~1.4 mi past the basin to Weden Pass and the summit look short, and the only measured outing to the neighbouring North/Middle peaks logged 13.8 mi, leaning toward partner_requirements' 13-14 mi. But no source states the main-summit figure, and a total assembled from the basin figure plus a leg would be computed. No patch.",
+   "sources": [
+    "https://www.hikingwithmybrother.com/gothic-basin-via-weden-creek-trail-724.html",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "fact": "face 'West Ridge' vs a route that reaches the block along the crest from the east and starts on its east-side pedestal",
+   "verdict": "fixed",
+   "correct_value": "East side of the block, reached along the East Ridge crest",
+   "evidence": "The peak's route page quotes the standard description of the block: a shoulder stand or rope throw gains the E-side pedestal, then bolt-protected friction to the top, and says the East Ridge route goes right past the rock, gaining the crest east of it. The 2006 first-free-ascent report independently says the climber went up the east side of the balanced rock (overhang and thin face to a small ledge) and descended to the east; a 2005 East Ridge report likewise saw the rock directly up the East Ridge line. No source puts the climb on a West Ridge; that label was carried over from Sherpa Peak's West Ridge route. face is set to the east side, which also matches the row's own pro_tips (the East Ridge passes right by the block) and beta.",
+   "sources": [
+    "https://www.summitpost.org/sherpa-peak/152244",
+    "https://cascadeclimbers.com/forum/topic/43631-tr-sherpa-n-ridge-amp-balanced-rock-1st-free-ascent-7112006/",
+    "https://cascadeclimbers.com/forum/topic/34464-tr-sherpa-peak-northeast-couloir-to-east-ridge-6192005/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "West Ridge",
+     "value": "East side (from the East Ridge crest)",
+     "id": "wa_sherpa_balanced_rock_standard",
+     "fact": "face 'West Ridge' vs a route that reaches the block along the crest from the east and starts on its east-side pedestal"
+    }
+   ]
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "fact": "access.permit/group_limit/notes put this route in the Enchantment Permit Area Stuart Zone, while the approach is via Longs Pass/Ingalls Creek (Cle Elum RD)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New sources agree that the Ingalls Creek side is outside the permit area in general: a state geotourism page says parties camp in Crystal Creek basin 'just outside' the Enchantment Permit Area by coming up Ingalls Creek, and a regional newspaper/backpacking piece describes camping at Ingalls Creek off the Longs Pass approach with no overnight permit. A zone-map guide names the five zones but gives no boundary line. None of them says where the boundary runs at Sherpa's south basin or on the crest where the block sits, so the Stuart Zone text is not rewritten.",
+   "sources": [
+    "https://wa100.dnr.wa.gov/north-cascades/enchantments",
+    "https://www.spokesman.com/stories/2018/aug/19/for-hikers-skunked-on-enchantment-permits-lake-ing/",
+    "https://www.mapsbymax.com/guides/enchantments-zone-map-guide"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "fact": "dist_km (Approach, one way) 22 km vs itinerary day-1 approach 7 mi",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: dist_km 22 km (~13.7 mi) matches the itinerary round trip (13.5 mi), not the 7 mi approach day. A third search found only piecewise approach descriptions again (about 3 mi of trail to the south branch of Mountaineer Creek, ~2 mi up to ~5,800 ft, ~0.5 mi to the ridge base) and a 2017 party report from the Colchuck/Stuart trailhead that gives no distances. No source states a one-way figure or a round-trip figure, and the itinerary's descent via the Sherpa-Argonaut saddle is not a pure out-and-back, so the halving rule does not apply. No patch.",
+   "sources": [
+    "https://www.lemkeclimbs.com/sherpa-peak-north-ridge-58.html",
+    "https://www.summitpost.org/sherpa-peak/152244"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "fact": "Sherpa south basin camp waypoint elev 6200 vs elevFt 6300",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Unchanged: waypoints[2] stores elev 6200 and elevFt 6300; bivy[0] of the same name says 6200. The waypoint has no coordinate, so no ground height can be read, and neither this pass nor earlier ones found a published elevation for this informal camp (route write-ups give Longs Pass ~6,200 ft and a basin camp 'around 6,800 ft' on the neighbouring East Ridge row, which is a different spot or a different estimate). The rendered waypoint list shows elev (6200), agreeing with the bivy, so the visible page is consistent; only the non-rendered elevFt differs. No patch without an external figure.",
+   "sources": [
+    "https://www.summitpost.org/sherpa-peak/152244"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "fact": "rock_grade undersells the technical climbing",
+   "verdict": "unresolved",
+   "correct_value": "East Ridge itself: Class 4 with brief low-5th-class steps; the 5.7 belongs only to the optional Balanced Rock",
+   "evidence": "STRUCTURAL: the row mixes two lines (the East Ridge and the Balanced Rock obelisk). The East Ridge should win everywhere: grade should drop the 5.7 (e.g. 'Class 4, low 5th'), partner_requirements' 'sustained 5.7 trad leading' should become low-5th scrambling/leading, and the five pitch_detail rows graded 5.4-5.7 (crux placed on a tower below the obelisk) should be cleared or rewritten, since no source gives a pitch breakdown; the commitment numeral (grade says III, commitment II) has no source either. Sources: the peak's route page calls the East Ridge the easier route, mostly 4th with some low 5th, and gives 5.7 only for the Balanced Rock (shoulder stand to its E-side pedestal, bolt-protected friction); a 2005 East Ridge report quotes the route description as '4th and 5th class to 5.0' and found a 4th-class chimney and a harder chimney with a couple of single mid-5th moves; the encyclopedia entry gives the easiest route as class 4. rock_grade ('Class 3-4, short 5th-class moves') is therefore NOT undersold; the reader's proposed direction is wrong. Rewriting pitch rows is beyond a minimal patch, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/sherpa-peak/152244",
+    "https://cascadeclimbers.com/forum/topic/34464-tr-sherpa-peak-northeast-couloir-to-east-ridge-6192005/",
+    "https://en.wikipedia.org/wiki/Sherpa_Peak",
+    "https://onehikeaweek.com/2014/10/19/sherpa-peak/"
+   ],
+   "patches": []
+  }
+ ]
+}

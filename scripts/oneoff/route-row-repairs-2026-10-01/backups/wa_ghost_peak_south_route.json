@@ -1,0 +1,76 @@
+{
+ "id": "wa_ghost_peak_south_route",
+ "name": "South Route",
+ "waypoints": [
+  {
+   "lat": 48.910185,
+   "lng": -121.591971,
+   "elev": 3100,
+   "name": "Hannegan Trailhead",
+   "note": "Road-end trailhead at Hannegan Campground on Ruth Creek Road (FR 32); Northwest Forest Pass required and a self-issue wilderness permit is needed once you cross into North Cascades National Park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The route begins at Hannegan Campground, a road-end trailhead at the very end of Ruth Creek Road (Forest Road 32), at about 3,100 feet. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed once you continue on into North Cascades National Park."
+  },
+  {
+   "lat": 48.883737,
+   "lng": -121.533471,
+   "elev": 5066,
+   "name": "Hannegan Pass",
+   "note": "Trail crest where the Ruth Creek approach tops out and meets the Chilliwack River/Copper Ridge trail junctions; bear south into the Chilliwack drainage toward Boundary and Copper Creek camps.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Follow the Ruth Creek trail up the valley on a steady, maintained grade for about four miles and 2,000 ft to the pass — the easiest travel of the whole trip. This is the standard access; the alternative out of Ross Lake climbs Big Beaver Creek and Wiley Ridge to the Challenger area instead."
+  },
+  {
+   "lat": 48.875,
+   "lng": -121.3617,
+   "elev": 5210,
+   "name": "Whatcom Pass",
+   "note": "Established high camp and trail junction (~5,210 ft) below Whatcom Peak; last reliable water and flat tent sites before leaving maintained trail for the Whatcom/Challenger glacier terrain.",
+   "type": "Campsite",
+   "distMi": 16,
+   "directions": "From the pass bear south past the Copper Ridge junction and drop into the Chilliwack River valley, following the valley trail to the forest camps near Copper Creek and Graybeal, where most parties finish the first day. Continue down-valley to the Chilliwack River cable car, cross, then climb the steep, brushy Brush Creek trail to the pass. This is a full second day, and it is the last maintained tread on the route."
+  },
+  {
+   "lat": 48.84929,
+   "lng": -121.37458,
+   "elev": 6300,
+   "name": "Perfect Pass",
+   "note": "Granite-slab and heather climbers' camp on the shoulder above the Whatcom Glacier, reached via a steep boot path from Whatcom Pass; the standard staging camp for parties heading onto Challenger Glacier and the Northern Pickets.",
+   "type": "Campsite",
+   "distMi": 18,
+   "directions": "Leave the trail at the pass and rope up. The standard line traverses the Whatcom Glacier around Whatcom Peak's flank to Perfect Pass; parties who would rather not be on the glacier go up and over Whatcom Peak's north ridge instead. Either way this is genuine crevasse terrain and not a snow walk."
+  },
+  {
+   "lat": 48.839663,
+   "lng": -121.362133,
+   "elev": 7100,
+   "name": "Challenger Glacier crossing",
+   "note": "Roped glacier travel required across bergschrund and open crevasses at roughly the 7,000-7,200 ft band below Challenger's summit pinnacles before dropping toward Luna Cirque.",
+   "type": "Hazard",
+   "distMi": 19.5,
+   "directions": "From Perfect Pass climb firm snow past rock outcrops and traverse steep slopes onto the western edge of the Challenger Glacier, then continue up and east across it on a rope. The 7,000–7,200 ft band under Challenger's summit pinnacles is where the bergschrund and the most open crevasses are."
+  },
+  {
+   "lat": 48.830031,
+   "lng": -121.349687,
+   "elev": 6400,
+   "name": "Luna Cirque high camp (near Lousy Lake)",
+   "note": "Remote bivy on the Luna Cirque floor near the Lousy Lake tarn, ringed by the south faces of Challenger, Crooked Thumb, and Phantom Peaks; staging point for the south-side push on Ghost Peak.",
+   "type": "Campsite",
+   "distMi": 21
+  },
+  {
+   "lat": 48.82361,
+   "lng": -121.34139,
+   "elev": 8000,
+   "name": "Ghost Peak",
+   "note": "True summit (8,000+ ft) sits about 0.3 mi NNE of Phantom Peak and 0.2 mi south of Crooked Thumb Peak; gained by moderate snow and Class 4 rock up from the Luna Cirque camp.",
+   "type": "Summit",
+   "distMi": 22,
+   "directions": "The summit is gained from the notch on its south side, which is reached from the west; from there the line follows obvious weaknesses on the south and west faces at 4th to low-5th class. Route-finding is the crux in poor visibility, because Ghost, Crooked Thumb and Phantom all crowd the same skyline and look alike from below. There is no fixed hardware anywhere here, so carry slings and a small rack if you want the option of a short rappel off a natural anchor on the way down."
+  }
+ ],
+ "descent_text": "Descend by reversing the ascent line: downclimb the south face/south arete/west-face traverse used on the first-ascent route back to the notch below the summit horn, then continue down snow/talus to the Luna Cirque camp at Luna or Lousy Lake. No pitch-by-pitch rappel beta specific to Ghost Peak is on record. Based on its character - a small, generally solid rock horn climbed by a 3rd/4th-class face-and-arete traverse, similar in scale to neighboring Pickets summits like Crooked Thumb and Phantom Peak - most parties simply downclimb the way they came, with no fixed or bolted anchors anywhere in this remote sub-range. Carry a rope and a small rack of slings/nuts in case the exposure or wet/icy rock make a short rappel preferable off a natural anchor (slung horn or chockstone) near the top of the arete; a single 30m rappel would be more than enough to protect the steepest section if needed. Treat this as a walk-off/downclimb route with a possible single natural-anchor rappel in reserve, not a route with a defined multi-rappel descent. Once back at camp, reverse the full approach: back over Pt. 7374 to Challenger Arm, over Perfect Pass/Whatcom Glacier or Whatcom Peak's north ridge to Whatcom Pass, then down the Brush Creek Trail, back across the Chilliwack River and over Hannegan Pass to the Hannegan trailhead."
+}

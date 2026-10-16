@@ -1,3 +1,5 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 // Simple REST API approach to avoid Supabase client initialization issues
 const API_URL = "https://ofuofhojhbcrcahuotya.supabase.co/rest/v1";
 const ANON_KEY = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
@@ -352,7 +354,7 @@ async function main() {
 
     const fs = require("fs");
     fs.writeFileSync(
-      "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/photos-topo-waypoints/audit-report.json",
+      path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../.."), "audit-report.json"),
       JSON.stringify(report, null, 2)
     );
     console.log("\n✓ Report saved to audit-report.json");

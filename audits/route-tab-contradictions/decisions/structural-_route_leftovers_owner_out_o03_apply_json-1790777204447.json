@@ -1,0 +1,673 @@
+{
+ "applied": [
+  {
+   "id": "wa_lefty",
+   "op": "patch",
+   "columns": [
+    "discipline"
+   ]
+  },
+  {
+   "id": "wa_friction_therapy",
+   "op": "patch",
+   "columns": [
+    "discipline"
+   ]
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "op": "patch",
+   "columns": [
+    "discipline"
+   ]
+  },
+  {
+   "id": "wa_iceman",
+   "op": "patch",
+   "columns": [
+    "discipline",
+    "approach",
+    "road"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_lefty",
+   "area_id": "wa_summertime_crag",
+   "name": "Lefty",
+   "discipline": "trad",
+   "grade": "5.11b (6c French, E3 5c British)",
+   "grade_system": "yds",
+   "grade_num": 11.5,
+   "pitches": 1,
+   "length_m": 17,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Zachary Winters (Z Winters)",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Late June - September",
+   "description": null,
+   "gear": [
+    "quickdraws"
+   ],
+   "hazards": null,
+   "verif": null,
+   "overview": "A compact, technical face/friction line on the Friction Therapy slab that needs no gear beyond quickdraws.",
+   "beta": "Delivers varied movement styles across a modest distance - mostly technical face climbing with clever beta and a little friction. Climbers debate whether it has a true 5.11 crux, but it feels notably harder than the adjacent line.",
+   "turnaround": null,
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.11b (6c French, E3 5c British)",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Center line on the Friction Therapy slab (originally the leftmost line before another route was added further left)",
+   "permit": null,
+   "comms": "No reliable cell service at Washington Pass; nearest dependable coverage is down-valley toward Mazama/Winthrop.",
+   "descent": "Lower or rappel from the bolted anchor",
+   "obj_haz": null,
+   "waypoints": null,
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "approachTimeHrs": 0.4
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "sturdy approach shoes for the Early Winters Creek crossing"
+   ],
+   "pro_tips": null,
+   "watch_out": null,
+   "pro_needs": "No trad gear needed - fully bolted ('no widgets necessary').",
+   "best_season": "Best in summer, late June through September; the crag holds shade until early/mid-afternoon.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "From Highway 20, park at the pullout near Mazama before the Spires Gully parking area. Descend through trees to Early Winters Creek, cross it, follow it downstream, then angle up-slope and contour left to the crag. About 20-25 minutes.",
+   "descent_text": "Route ends at a bolted anchor on the Friction Therapy slab; lower off or rappel with a single rope.",
+   "bail": "Lower off the bolted anchor at the top if needed.",
+   "pitch_detail": [
+    {
+     "grade": "5.11b",
+     "notes": "Technical face/friction climbing on the Friction Therapy slab; fully bolted, no trad gear needed.",
+     "pitch": "P1",
+     "lengthM": 17
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "closures": "Highway 20 is gated and closed each winter for avalanche safety.",
+    "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Methow Valley Ranger District"
+   },
+   "road": {
+    "name": "North Cascades Highway (State Route 20)",
+    "status": "Open seasonally; closed and gated in winter"
+   },
+   "climate": {
+    "summer": "Prime season; crag stays shaded until early/mid-afternoon.",
+    "typical": "Alpine/high-desert transition climate at ~5,200 ft."
+   },
+   "emergency": {
+    "notes": "No reliable cell coverage at Washington Pass.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, Winthrop, WA - (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA - (509) 826-1760",
+    "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency (509) 422-7200"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "lefty",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_friction_therapy",
+   "area_id": "wa_summertime_crag",
+   "name": "Friction Therapy",
+   "discipline": "trad",
+   "grade": "5.10c (6b French, E2 5b British)",
+   "grade_system": "yds",
+   "grade_num": 10.75,
+   "pitches": 1,
+   "length_m": 15,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Zachary Winters (Z Winters)",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Late June - September",
+   "description": null,
+   "gear": [
+    "6 quickdraws"
+   ],
+   "hazards": null,
+   "verif": null,
+   "overview": "A short, fun friction slab climb up the center rib of a distinct slab left of the crag's original JMK-established routes; first put on record in 2023.",
+   "beta": "Fun movement on really nice stone follows the center rib up the slab. It feels deceptively short due to concentrated difficulty, with a couple of stout (5.10+) moves in the middle.",
+   "turnaround": null,
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10c (6b French, E2 5b British)",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Right-most line on a separate slab, left of JMK's routes (identifiable by a large dead snag leaning against the wall)",
+   "permit": null,
+   "comms": "No reliable cell service at Washington Pass; nearest dependable coverage is down-valley toward Mazama/Winthrop.",
+   "descent": "Lower or rappel from the bolted anchor",
+   "obj_haz": null,
+   "waypoints": null,
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "approachTimeHrs": 0.4
+   },
+   "detailed_rack": "6 bolts to a bolted anchor with rap rings; quickdraws only.",
+   "what_to_bring": [
+    "sturdy approach shoes for the Early Winters Creek crossing"
+   ],
+   "pro_tips": [
+    "Short climbers may struggle to reach the crux clip in the middle bolt run - be ready for a reachy sequence or bring a stick clip."
+   ],
+   "watch_out": null,
+   "pro_needs": null,
+   "best_season": "Best in summer, late June through September; the crag holds shade until early/mid-afternoon.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "From Highway 20, park at the pullout near Mazama before the Spires Gully parking area. Descend through trees to Early Winters Creek, cross it, follow it downstream, then angle up-slope and contour left to the crag. About 20-25 minutes.",
+   "descent_text": "Route ends at a bolted anchor with rap rings; lower off or rappel with a single rope.",
+   "bail": "Lower off the bolted anchor at the top if needed.",
+   "pitch_detail": [
+    {
+     "grade": "5.10c",
+     "notes": "Center-rib friction slab climbing with a couple of stout (5.10+) moves mid-route; 6 bolts to a bolted anchor with rap rings.",
+     "pitch": "P1",
+     "lengthM": 15
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "closures": "Highway 20 is gated and closed each winter for avalanche safety.",
+    "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Methow Valley Ranger District"
+   },
+   "road": {
+    "name": "North Cascades Highway (State Route 20)",
+    "status": "Open seasonally; closed and gated in winter"
+   },
+   "climate": {
+    "summer": "Prime season; crag stays shaded until early/mid-afternoon.",
+    "typical": "Alpine/high-desert transition climate at ~5,200 ft."
+   },
+   "emergency": {
+    "notes": "No reliable cell coverage at Washington Pass.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, Winthrop, WA - (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA - (509) 826-1760",
+    "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency (509) 422-7200"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "friction therapy",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "area_id": "wa_ice_box_right_side",
+   "name": "On the Prowl (D)",
+   "discipline": "trad",
+   "grade": "5.10-",
+   "grade_system": "yds",
+   "grade_num": 10,
+   "pitches": 1,
+   "length_m": 21,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer only",
+   "description": null,
+   "gear": [
+    "quickdraws (7+)",
+    "60m rope",
+    "helmet"
+   ],
+   "hazards": [
+    "Loose/blocky terrain at the very start of the route"
+   ],
+   "verif": null,
+   "overview": "A quirky single pitch beginning on blocky, scrambly ground at the downhill end of the Ice Box, climbing deceptively low-angle dark rock past an exposed traverse to an arete, then a bolted leftward traverse near the top to an anchor shared with a neighboring unnamed trad line.",
+   "beta": "Begins on blocky terrain at the downhill (toward-the-hairpin) end of the wall. Above the scrambly start the rock looks deceptively low-angle; scramble the lower section and trend right as it steepens, aiming for the arete after a short, exposed rightward traverse. Continue up varied knobs, crimps, and jugs. Near the top, traverse left on bolts through steeper, similarly-featured climbing to the anchors — the position and quality of climbing are better than the route looks from the ground, though the bolts themselves can be hard to spot before starting.",
+   "turnaround": "Scope the bolt line from the ground before committing since the hardware is hard to see; if you can't confirm gear placement or the exposed low traverse feels wrong for the party, back off rather than press on.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10-",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Lower from the bolted, hook-equipped anchor at the top of the wall (single pitch, 21 m).",
+   "commitment": null,
+   "face": "Ice Box right-hand wall, far right/downhill end (toward the hairpin)",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower from the bolted, hook-equipped anchor at the top.",
+   "obj_haz": [
+    "Short, exposed rightward traverse low on the route",
+    "Bolts are hard to spot from the ground, complicating on-lead route-finding",
+    "Blocky/loose terrain at the scrambling start"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51429,
+     "lng": -120.64284,
+     "elev": 5200,
+     "name": "Hairpin pullout (SR-20 parking)",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 5200
+    },
+    {
+     "lat": 48.51379,
+     "lng": -120.64526,
+     "elev": 5305,
+     "name": "Ice Box right side (base of wall)",
+     "type": "crag base",
+     "distMi": null,
+     "elevFt": 5305
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 0.25,
+    "recommendedStart": "Afternoon (the gully's only sun window)"
+   },
+   "detailed_rack": "7+ quickdraws for the bolts, plus the bolted top anchor (shared with the neighboring unnamed trad line at this crag); a 60 m rope is ample for this 21 m/70 ft pitch.",
+   "what_to_bring": [
+    "approach shoes for the scrambly start and 3rd-class approach",
+    "helmet — blocky terrain low on the route and in the approach gully"
+   ],
+   "pro_tips": [
+    "Trust the deceptively low-angle-looking rock above the scramble start — it climbs better than it looks",
+    "Scope the bolt line from the ground first, since the hardware is hard to spot",
+    "The position and rock quality make this one worth doing despite an unassuming look from below"
+   ],
+   "watch_out": [
+    "Route looks like nothing from below — don't underestimate the exposure once on it",
+    "Bolts can be difficult to locate visually before starting",
+    "Short, exposed rightward traverse low on the route"
+   ],
+   "pro_needs": "Bolt-protected (~7 bolts) with a bolted, hook-equipped anchor; no natural gear needed.",
+   "best_season": "Same summer window as the rest of Hairpin Crags/Ice Box; best climbed in the crag's brief afternoon sun.",
+   "high_point_ft": 5305,
+   "aid_grade": null,
+   "approach": "Park at the hairpin switchback on SR-20 between the Washington Pass summit and Early Winters/Mazama. Follow the climbers' trail up toward the chasm/gully right of the drainage, cross left below a slab, then scramble 3rd-class terrain up the left margin of the slabs into the Ice Box — about 15 minutes from the car. This route starts at the downhill (right-hand, toward-the-hairpin) end of the wall.",
+   "descent_text": "Single pitch (21 m/70 ft) — lower directly from the top bolted anchor (fitted with rap hooks) back to the base; no walk-off needed.",
+   "bail": "Bolt-protected (about 7 bolts); retreat at any point by lowering off a bolt.",
+   "pitch_detail": [
+    {
+     "grade": "5.10-",
+     "notes": "Scrambly blocky start; short exposed rightward traverse to the arete; varied face climbing on knobs/crimps/jugs; final leftward bolted traverse near the top to the shared anchor.",
+     "pitch": "1",
+     "lengthM": 21
+    }
+   ],
+   "itinerary": "A short afternoon outing: drive to the hairpin pullout, make the 15-minute scramble approach into the Ice Box, climb the route, then lower and walk back to the car.",
+   "access": {
+    "fees": null,
+    "permit": null,
+    "closures": "SR-20 (North Cascades Highway) is gated and impassable in winter, typically early December to mid-spring.",
+    "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "passRequired": null
+   },
+   "road": {
+    "name": "SR-20 / North Cascades Highway",
+    "status": "Seasonal — closed to vehicles in winter",
+    "driveNote": "Park at the hairpin switchback on SR-20 between the Washington Pass summit and Early Winters/Mazama.",
+    "seasonalGate": "WSDOT closes SR-20 near Washington Pass each winter for avalanche safety, typically early December through mid-spring (the 2025–26 season closed Dec 4, 2025 and reopened June 14, 2026); exact dates vary by year."
+   },
+   "climate": {
+    "fall": "Climbable into early fall before snow and the highway's seasonal closure return.",
+    "spring": "Snowbound; SR-20 itself is typically still gated.",
+    "summer": "Prime and effectively only real season.",
+    "winter": "SR-20 is gated for the season near Washington Pass; the crag is inaccessible.",
+    "typical": "High-elevation (~5,300 ft) North Cascades summer climate: warm, dry days, but a shaded gully that stays cooler than open crags nearby.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "No confirmed cell-coverage data for this specific gully; the SR-20/Washington Pass corridor is a remote mountain highway with historically unreliable cell service.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest, 24 West Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, 507 Hospital Way, Brewster, WA 98812 (roughly 65-70 mi east via SR-20); closer non-ER primary/urgent care is Confluence Health's Methow Valley Clinic in Winthrop, WA.",
+    "sheriffDispatch": "Okanogan County Sheriff's Office, (509) 422-7200 (option 2 for dispatch/complaints)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "on the prowl d",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_iceman",
+   "area_id": "wa_ice_box_left_side",
+   "name": "Iceman",
+   "discipline": "sport",
+   "grade": "5.10a/b",
+   "grade_system": "yds",
+   "grade_num": 10.25,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bryan Burdo and Gabe Grayum",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer — a shaded destination good for hot days when nearby Mazama crags are too warm.",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Slick approach slabs pose a fall hazard on the hike in, independent of the climbing itself.",
+    "Alpine granite setting means occasional loose rock off-route."
+   ],
+   "verif": null,
+   "overview": "A one-pitch 5.10a/b line up the shaded Ice Box (Left Side) buttress, the 'dead middle' finger-crack/roof line splitting sport routes Route C and Route D.",
+   "beta": "Climbs a steep face on good holds to a bolt guarding a thin finger-crack move, then finishes on horizontal cracks into an awkward but enjoyable left-facing corner. Mixed protection (3 bolts plus small-to-mid cams) makes it the trad line of the three Ice Box routes.",
+   "turnaround": "Start early enough to be off the exposed approach slabs and rock before afternoon thunderstorms, which are common in the North Cascades in summer; treat the slick granite slabs as more hazardous in rain.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10a/b",
+   "ice_grade": null,
+   "gain_ft": 500,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Ice Box (left side), Hairpin Crags — the finger-crack line between two of the sport routes",
+   "permit": null,
+   "comms": "No cell phone service is available at Washington Pass or along this stretch of the North Cascades Highway corridor per NPS and WSDOT; do not rely on a signal for emergencies.",
+   "descent": "Lower or rappel from the anchor back to the base.",
+   "obj_haz": [
+    "Smooth, slippery approach slabs above the dry creek bed (fall hazard, worse when wet)",
+    "Loose rock possible on unfeatured alpine granite"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Blue Lake Trailhead",
+     "note": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D; approach slabs are smooth and slippery.",
+     "type": "Topout",
+     "distMi": 1.8
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "3 fixed bolts protect the crux face and finger-crack section; supplement with a small rack of cams from about BD #0.3 to #1 for the horizontal-crack and corner finish. A single 60m rope and standard quickdraws/alpine draws are sufficient for this one-pitch route.",
+   "what_to_bring": [
+    "Approach shoes suited to slick granite slabs",
+    "Helmet (loose rock/approach hazard)"
+   ],
+   "pro_tips": [
+    "Good handholds on the initial face make the opening moves easier than they look — save gear placements for after the bolt-protected finger-crack crux.",
+    "Combine with neighboring Route C and Route D for a full day at this shaded, cooler crag."
+   ],
+   "watch_out": "Approach slabs above the dry creek bed are smooth and slippery, and the lower slab has no hand-line — worse when wet.\nOnly the crux face and finger crack are bolted; the horizontal cracks and left-facing corner above need your own small-to-mid cams.\nAlpine granite can shed occasional loose rock off-route.",
+   "pro_needs": "Mixed protection — 3 bolts plus a handful of small-to-medium cams (0.3-1 BD equivalent) placed in the horizontal cracks and finishing corner.",
+   "best_season": "Late June through September, matching the broader Washington Pass climbing season; the Ice Box's shaded, north-facing character keeps it cooler than sunnier Washington Pass walls and can hold wet rock or residual snow later into the early season.",
+   "high_point_ft": 5490,
+   "aid_grade": null,
+   "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+   "descent_text": "From the top anchor, lower on a single strand or rappel with a 60m rope directly back to the base of the route; no walk-off is required for this single-pitch line.",
+   "bail": "Straightforward retreat on a single-pitch route — lower or rappel off the highest gear/bolt placed at any point.",
+   "pitch_detail": [
+    {
+     "grade": "5.10a/b",
+     "notes": "Steep face on good holds to a bolt protecting a thin finger-crack section, then horizontal cracks into a left-facing corner finish.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": "A single-day cragging objective, typically combined with Route C and/or Route D at the same crag: drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail, climb, then lower/rappel and retrace the approach to the car.",
+   "access": {
+    "_raw": {
+     "permit_cost": "$0 for climbing/wilderness permit",
+     "permit_type": "Free self-issued wilderness permit for overnight stays",
+     "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+     "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+     "permit_pickup": "Self-issued at trailhead or ranger stations",
+     "special_hazards": "Smooth, slippery slabs; first slab without fixed line; approach requires scrambling",
+     "wilderness_zone": "Alpine/rock climbing area, day-use observation site available",
+     "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+     "seasonal_closures": "Best June-October; winter access difficult due to snow, spring access steep",
+     "altitude_restrictions": "None noted"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "Free self-issued wilderness permit for overnight stays",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Alpine/rock climbing area, day-use observation site available",
+    "landManager": "USFS - Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "None"
+   },
+   "road": {
+    "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+    "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+    "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+    "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+   },
+   "climate": {
+    "fall": "Climbable into September/early October with shortening days and increasing storm risk before the highway's winter closure.",
+    "spring": "Highway typically still gated or freshly reopened (mid-to-late April); snow and wet rock likely at the crag into early summer.",
+    "summer": "Best climbing window, late June through September; dry granite but watch for afternoon convective storms.",
+    "winter": "SR-20 is gated closed; the area is inaccessible by road.",
+    "typical": "Dry, warm alpine summers with afternoon thunderstorm risk; the shaded Ice Box stays notably cooler than sun-exposed Washington Pass faces.",
+    "forecastZone": "North Cascades / Washington Pass corridor (East Slopes Northern Cascades)"
+   },
+   "emergency": {
+    "notes": "No cell coverage at Washington Pass — plan for a satellite communicator; the highway is remote with no services in the immediate area.",
+    "county": "Chelan/Okanogan county line (Washington Pass straddles the two)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 West Chewuch Rd, Winthrop, WA; (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA, or Mid-Valley Hospital, Omak, WA (both roughly 30 mi from Winthrop, the nearest town)",
+    "sheriffDispatch": "Okanogan County Sheriff non-emergency: 509-422-7232 / 800-572-6604; Chelan County Sheriff: 509-667-6851"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "iceman",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

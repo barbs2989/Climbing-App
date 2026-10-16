@@ -1,0 +1,376 @@
+{
+ "applied": [
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain: gain_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total gain: gain_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total gain: gain_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain: gain_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total loss: loss_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total loss: loss_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total loss: loss_ft vs. itinerary total"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Day-2 (summit + hike out) duration vs. its own schedule"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Day-2 (summit + hike out) duration vs. its own schedule"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "partner_requirements names the wrong basin/camp and a different round-trip time"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "partner_requirements names the wrong basin/camp and a different round-trip time"
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "partner_requirements names the wrong basin/camp and a different round-trip time"
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total trip gain/loss vs itinerary day sums"
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "total trip gain/loss vs itinerary day sums"
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "total trip gain/loss vs itinerary day sums"
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total trip gain/loss vs itinerary day sums"
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "land manager stated two different ways"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "before": {
+    "gain_ft": 1700,
+    "itinerary": {
+     "cal": "Cascade River Road typically opens in late spring and Cache Col holds consolidated snow well into summer, so most parties do this in July-September when the col crossing is firm but not icy.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the maintained Cascade Pass Trail to Cascade Pass, then leave the trail and climb cross-country over the Cache Glacier remnant to Cache Col before dropping about a mile to camp at Kool-Aid Lake, a small tarn at ~6,320 ft. This stretch is mostly on snow into midsummer and is the crux of the day more from routefinding/snow travel than distance.",
+       "hours": 5.5,
+       "miles": 6.5,
+       "title": "Approach to Kool-Aid Lake",
+       "gainFt": 2900,
+       "lossFt": 300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach high camp below the Magic Mountain-Hurry-Up col"
+      },
+      {
+       "n": 2,
+       "note": "An early start lets you climb the peak on firm snow before it softens: ascend about 1,000 ft from camp to the Magic-Hurry-Up col, then follow the south ridge over a false summit to the true 7,821 ft top. Back at camp by mid-morning, most parties break camp and hike all the way out the same day rather than adding a third night.",
+       "hours": 9,
+       "miles": 8.5,
+       "title": "Climb Hurry-Up Peak, then hike out",
+       "gainFt": 1900,
+       "lossFt": 4500,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Kool-Aid Lake camp",
+         "detail": "Early start for firm snow on the col approach."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Reach the Magic-Hurry-Up col",
+         "detail": "About 1,000 ft above camp."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Summit via the south ridge",
+         "detail": "Scramble past a false summit to the true 7,821 ft top."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Back at camp",
+         "detail": "Break camp, filter water, repack for the hike out."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin the hike out",
+         "detail": "Re-cross Cache Col and descend past Cascade Pass."
+        },
+        {
+         "time": "~5:00 PM",
+         "label": "Back at the trailhead",
+         "detail": "Roughly 3,000 ft of net descent from camp to the car."
+        }
+       ],
+       "objective": "Tag the summit via the South Ridge and return to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day, 1-night trip: about 16 miles round trip with roughly 4,800 ft of total gain, mostly spent covering the Cascade Pass-Cache Col approach rather than the short summit scramble itself."
+    },
+    "loss_ft": 1700,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong off-trail/cross-country fitness for the approach into a basin camp near Horseshoe Basin/Sahale-Boston country, plus a full scramble day on summit day",
+      "packWeight": "Overnight pack (camp gear + basic scramble kit) on the approach; lighter day pack for the summit push"
+     },
+     "approachTime": "Multi-day trip: roughly a full day off-trail to establish camp in Horseshoe Basin, then about 5 hrs round trip from camp to the summit via the south ridge",
+     "requiredSkills": [
+      "Class 3-4 scrambling on loose/blocky rock",
+      "Steep snow travel and self-arrest for lingering early-season snow patches",
+      "Off-trail route-finding and navigation",
+      "Comfortable with sustained exposure and no fixed protection",
+      "Basic wilderness/self-rescue judgment given the remote location"
+     ],
+     "experienceLevel": "Experienced scrambler comfortable with sustained, unroped Class 3-4 terrain on loose rock; given the remote, low-traffic setting, prior North Cascades alpine scrambling experience and solid self-rescue judgment are strongly recommended"
+    },
+    "pro_tips": [
+     "Pair with Sahale or a Horseshoe Basin tour",
+     "Catch firm morning snow on the approach"
+    ]
+   }
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "before": {
+    "itinerary": {
+     "cal": "South Face is typically climbed August-September once snow clears the loose rock; overnight camps fall inside the North Cascades NP Complex/Ross Lake NRA backcountry, which requires a wilderness camping permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Canyon Creek Trailhead, hike FST 738 through McMillan Park to Crater Lake, then climb to the Crater Mountain saddle, cross/skirt the Jerry Glacier basin, and descend scree and heather to a camp near Crater Creek or the Jerry Lakes basin. This is the long day of the trip, mostly off-trail after the saddle.",
+       "hours": 8,
+       "miles": 8.3,
+       "title": "Approach to high camp",
+       "gainFt": 4700,
+       "lossFt": 700,
+       "packLb": 42,
+       "schedule": [
+        {
+         "time": "9:30-10:30 AM",
+         "label": "Leave Canyon Creek Trailhead",
+         "detail": ""
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Pass Crater Lake",
+         "detail": ""
+        },
+        {
+         "time": "~2:45 PM",
+         "label": "Top out at Crater Mountain saddle",
+         "detail": "Roughly 4 hrs from the car"
+        },
+        {
+         "time": "~6:00-6:30 PM",
+         "label": "Reach camp near Crater Creek Meadows/Jerry Lakes",
+         "detail": "~6,000-6,200 ft"
+        }
+       ],
+       "objective": "Reach a high camp near Crater Creek Meadows / Jerry Lakes basin (~6,000-6,200 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Climb from camp up to the ~7,200 ft step in the Southeast Ridge, then pick through loose class 3-4 terrain on the South Face (past the fish-shaped snowfield and hidden chimney) back onto the ridge crest to the summit. Reverse the route to camp; many parties then shuttle gear partway toward the Jerry Lakes saddle in the evening to shorten the exit day.",
+       "hours": 9.5,
+       "title": "Summit day: South Face / SE Ridge",
+       "gainFt": 3400,
+       "lossFt": 3400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00-7:30 AM",
+         "label": "Leave high camp",
+         "detail": "Light day pack"
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach SE Ridge step (~7,200 ft)",
+         "detail": ""
+        },
+        {
+         "time": "~10:30-11:00 AM",
+         "label": "Summit (9,069 ft)",
+         "detail": "~4-4.5 hrs from camp"
+        },
+        {
+         "time": "~3:00-4:00 PM",
+         "label": "Back at camp",
+         "detail": "Reverse the South Face/SE Ridge"
+        },
+        {
+         "time": "Evening",
+         "label": "Optional camp shuffle",
+         "detail": "Some parties relocate toward the Jerry Lakes/6,550 ft saddle to shorten Day 3"
+        }
+       ],
+       "objective": "Climb Jack Mountain (9,069 ft) via the South Face and Southeast Ridge, then reposition camp"
+      },
+      {
+       "n": 3,
+       "note": "Retrace the approach back over the Jerry Lakes/Crater Mountain saddle area (some parties detour past the East Crater Mountain lookout site) and descend to the trailhead.",
+       "hours": 6.5,
+       "miles": 9,
+       "title": "Hike out",
+       "gainFt": 1400,
+       "lossFt": 5300,
+       "packLb": 42,
+       "schedule": [
+        {
+         "time": "7:30-8:30 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Pass Crater Mountain saddle / lookout area",
+         "detail": ""
+        },
+        {
+         "time": "~2:00-3:00 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Return to the Canyon Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~22-24 mile round trip with roughly 11,000-11,500 ft of cumulative gain: one long day to a ~6,000-6,200 ft high camp, one long summit day up the loose South Face/SE Ridge (~9-9.5 hrs camp-to-camp), and one day to hike out."
+    },
+    "access": {
+     "fees": "$10 per person NPS backcountry camping fee (Ross Lake NRA/NOCA) plus a $6 non-refundable reservation fee if booked in advance; no fee for the USFS Pasayten Wilderness permit.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Free self-issue Pasayten Wilderness permit at the Canyon Creek Trailhead for the USFS approach. If camping within the North Cascades National Park Complex/Ross Lake NRA boundary, an NPS backcountry permit is required, available via Recreation.gov (advance reservation) or first-come/first-served at the Wilderness Information Center in Marblemount.",
+     "closures": "SR-20 (North Cascades Highway) closes for winter roughly between Ross Dam TH (MP134) and Silver Star Gate (MP171), typically early December through mid-April/May depending on snowpack — the Canyon Creek Trailhead is unreachable during that closure. Check WSDOT's North Cascades Highway pass report before planning a trip.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "Approach trails (Canyon Creek TH, Jackita Ridge Trail #738/#746, Crater Lake) are in Okanogan-Wenatchee National Forest, Methow Valley Ranger District, within the Pasayten Wilderness; the peak and upper basins sit on/near the boundary with the Ross Lake National Recreation Area (North Cascades National Park Complex, NPS).",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex backcountry permit (covers Ross Lake NRA) - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Wilderness Information Center in Marblemount. Cross-country climbing camps need a permit for the zone you camp in."
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,271 @@
+{
+ "applied": [
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Whether June is part of the recommended season"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Location of the historic fire lookout"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "climbing_route",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Location of the historic fire lookout"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Location of the historic fire lookout"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Location of the historic fire lookout"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Location of the historic fire lookout"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Location of the historic fire lookout"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Whether this route is typically a day trip or an overnight"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Whether this route is typically a day trip or an overnight"
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Whether this route is typically a day trip or an overnight"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed roughly June-August when the approach road/trail are passable and the snow finger above the glacier is still climbable with crampons; a self-issue wilderness permit is required at the trailhead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Bike the old roadbed and Dutch Miller Gap Trail corridor from Dingford Creek, ford the Middle Fork Snoqualmie, then push up through brush, talus and the 'Valley of the Chiefs' benches to camp near Overcoat Lake/glacier. It's a long, grinding approach day with little technical difficulty but a lot of vertical and bushwhacking.",
+       "hours": 9,
+       "miles": 15,
+       "title": "Bike/hike approach to Overcoat Glacier Camp",
+       "gainFt": 5200,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Bike NF-5620 roadbed toward Dutch Miller Gap Trailhead."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Stash bikes, start trail",
+         "detail": "Join Dutch Miller Gap Trail, pass Hardscrabble Horse Camp."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Camp Pedro",
+         "detail": "Rough midpoint; ford the Middle Fork Snoqualmie nearby."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Enter brush/talus basin",
+         "detail": "Steep forest and talus below Chimney Rock/Overcoat Peak."
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Reach glacier camp",
+         "detail": "Camp on benches above the Overcoat Glacier, ~6,600 ft."
+        }
+       ],
+       "objective": "Reach high camp on rock benches above the Overcoat Glacier (~6,600 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Cross the glacier and climb steep snow to the base of the summit rock, then finish on exposed 4th-class ledges and a gully to the 7,432 ft summit; reverse via two rappels back to the glacier. Rather than return to the same camp, most parties then break camp and hike out toward Bears Breast Tarns the same afternoon to shorten the exit.",
+       "hours": 10,
+       "miles": 11,
+       "title": "Summit push and camp relocation",
+       "gainFt": 900,
+       "lossFt": 2900,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave glacier camp",
+         "detail": "Cross glacier flats toward the SE side of the peak."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Snow finger",
+         "detail": "Crampons/ice tools up a ~500 ft rising traverse of steep snow."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Transition to rock",
+         "detail": "Alternate rock/snow above 6,600 ft; downclimb a sloping rock crux."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit",
+         "detail": "Exposed 4th-class (low 5th in spots) moves up the final gully to 7,432 ft."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Descent begins",
+         "detail": "Two rappels back down to the glacier."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Break camp, hike out",
+         "detail": "Retrace to Dutch Miller Gap Trail and continue to Bears Breast Tarns camp (~4,400 ft)."
+        }
+       ],
+       "objective": "Climb the SE ledges/chimney to the summit, then move camp toward the exit"
+      },
+      {
+       "n": 3,
+       "note": "An optional short side trip to Williams Lake, then a straightforward but long hike back down the Middle Fork corridor to the horse camp, followed by a quick downhill bike ride to the car.",
+       "hours": 7,
+       "miles": 14,
+       "title": "Exit to trailhead",
+       "gainFt": 100,
+       "lossFt": 3300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike and bike back to the Dingford Creek Trailhead"
+      }
+     ],
+     "totalNote": "A remote 3-day/2-night trip: ~40 miles round trip and ~6,000 ft net gain, with the crux being the exposed 4th-class summit block and a steep snow finger above the Overcoat Glacier; a few very fit parties have done it car-to-car in ~15 hrs during good spring ski-mountaineering conditions, but that is a fast-party exception, not the standard plan."
+    }
+   }
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "before": {
+    "approach": "Park at the Sloan Creek Campground / North Fork Sauk trailhead (2,100 ft) at the end of FR 49. The signed trail here is the North Fork Sauk Trail #649, but the Painted Mountain route splits off almost immediately: look for the signed 'Red Mountain Trail' (a.k.a. Painted Mountain Lookout Trail) branching left about 100 yards in from the trailhead. Follow this boot path steadily uphill through forest for about 1 mile, gaining roughly 1,000 ft to where the maintained tread ends around 3,100 ft — this is the last reliable, easy-to-follow section. From 3,100 ft the route turns into a genuine scramble: climb a short but steep ~70-foot band of rock ledges covered in dirt and moss (roughly Class 3, the crux of the lower route — treat it as insecure, especially if wet) to gain the southwest ridge. Above the ledges the path thins to an intermittent boot track marked intermittently with old pink flagging; stay on the crest/southwest side of the ridge through open, flower-strewn meadows. Around 5,800 ft the visible path effectively disappears at an overlook above Ruby Lake — this is the key route-finding checkpoint; from here the line continues up steepening terrain (~300 ft of gain) staying on the right (west) side of the ridge crest. At about 6,700 ft you squeeze through a last band of stunted trees (again flagged with pink ribbon); above this there is no more ground cover, and the final several hundred feet to the 6,975-ft summit — site of an old, collapsed fire lookout — is loose scree and blocky rock. There is no reliable water past the trailhead/lower creek crossings, so carry what you need from the car; this is dry, south-facing, sun-exposed terrain in the upper half. Loose rock and scree-on-slab underfoot are the main hazards throughout the upper ridge, along with route-finding in fog since the flagging is sparse and the path is not maintained.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 3",
+      "label": "Rock ledges to the southwest ridge",
+      "notes": "From 3,100 ft where the maintained tread ends, climb a short but steep ~70-foot band of rock ledges covered in dirt and moss to gain the southwest ridge. The crux of the lower route — insecure, especially if wet."
+     },
+     {
+      "n": 2,
+      "label": "Southwest ridge crest to the Ruby Lake overlook",
+      "notes": "Above the ledges the path thins to an intermittent boot track marked intermittently with old pink flagging; stay on the crest/southwest side of the ridge through open, flower-strewn meadows. Around 5,800 ft the visible path effectively disappears at an overlook above Ruby Lake — the key route-finding checkpoint."
+     },
+     {
+      "n": 3,
+      "label": "Steepening ground to the stunted trees at 6,700 ft",
+      "notes": "From the overlook the line continues up steepening terrain, ~300 ft of gain, staying on the right (west) side of the ridge crest, to about 6,700 ft where you squeeze through a last band of stunted trees, again flagged with pink ribbon."
+     },
+     {
+      "n": 4,
+      "label": "Final scree and blocky rock to the summit",
+      "notes": "Above the trees there is no more ground cover; the final several hundred feet to the 6,975-ft summit — site of an old, collapsed fire lookout — is loose scree and blocky rock. Loose rock and scree-on-slab underfoot are the main hazards throughout the upper ridge, along with route-finding in fog since the flagging is sparse and the path is not maintained."
+     }
+    ],
+    "overview": "Painted Mountain (also historically called Red Mountain) is a distinctive red/orange, mineral-streaked 6,975 ft summit in the western Glacier Peak Wilderness, roughly 17-20 miles southeast of Darrington via the Mountain Loop Highway. Its Lushootseed name, 'Ska-hala-bats' ('painted'), was recorded by early Forest Service ranger Nels Bruseth; USGS surveyor Sam Strom had earlier dubbed it 'Red Mountain,' and 'Painted Mountain' became the official name in 1981 via the U.S. Board on Geographic Names. A now-abandoned fire lookout once stood near the true summit, part of the dense North Cascades lookout network of the early-to-mid 1900s, and the peak was likely first climbed around 1897 by a USGS survey party. The mountain is built of Late Cretaceous migmatitic gneiss whose oxidized reddish-orange bands give it its name and its 'huge massif of red rocks' summit block.",
+    "beta": "From the North Fork Sauk trailhead, hike the maintained Red Mountain Trail (signed 'Painted Mountain Lookout Trail') about 1 mile to its end near the old 1936-67 lookout site (~3,100-3,570 ft). Ascend roughly 70 vertical feet of steep, moss-and-dirt-covered rock ledges (Class 3, exposed in spots) to gain the southwest ridge. From there a faint boot path, sometimes marked with pink flagging, climbs open meadows and rock along the ridge/shoulder to an overlook of Ruby Lake near 5,800 ft, then continues on steeper ground to about 6,700 ft before scree slopes lead to the 6,975 ft summit. The whole outing (car-to-car) is roughly 8 miles round trip with about 4,875 ft of total elevation gain.",
+    "pitch_detail": [
+     {
+      "grade": "Class 3",
+      "notes": "~70 vertical ft of exposed, moss-and-dirt-covered rock ledges switchbacking up a short cliff band just above the end of the maintained Red Mountain Lookout Trail (~3,100 ft).",
+      "pitch": "1",
+      "lengthM": 21
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Faint, occasionally pink-flagged climber's path up the open southwest ridge/shoulder through meadows and past the old lookout site, continuing past the Ruby Lake overlook (~5,800 ft) to roughly 6,700 ft.",
+      "pitch": "2",
+      "lengthM": 1076
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Scree slope from ~6,700 ft to the 6,975 ft summit.",
+      "pitch": "3",
+      "lengthM": 84
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Sloan Creek Road, the lookout trail, and the southwest ridge",
+      "notes": "Park at the campground and trailhead at the end of the road up the North Fork Sauk. The signed trail there is the valley trail, but this route splits off almost immediately: look for the signed lookout trail branching left about a hundred yards in. It is low-key enough to walk straight past — if you have been on the main trail more than a couple of minutes you have missed it. The lookout trail switchbacks steadily through old growth for about a mile, gaining roughly seven hundred to a thousand feet, and ends on a flat bench where the fire lookout once stood, with views into the basin below. That is the last easy-to-follow section of the day and where most hikers turn around. Above it the path keeps climbing steeply and a cliff band appears within a few hundred vertical feet. Beyond the cliff band, an intermittent boot track marked with old pink flagging follows the crest and southwest side of the ridge through open meadows. There is no reliable water past the lower creek crossings, and the upper half is dry, south-facing and sun-exposed, so carry what you need from the car.",
+      "season": "Late July through September is the reliable window. Snow can linger on the ledges and the ridge boot path into July in heavy-snow years, hiding the flagging and icing the ledges. The scramble is far safer and easier to navigate dry.",
+      "hazards": [
+       "an exposed ledge scramble of about seventy vertical feet just above the end of the maintained trail — loose dirt on rock, slick when wet, and harder facing outward on descent",
+       "a faint, unmaintained boot path above the ledges marked only by intermittent pink flagging, easy to lose in fog",
+       "loose scree and talus on the upper southwest ridge and summit slopes",
+       "lingering snow that can hide the flagged path into July",
+       "an open, exposed ridge with no shelter from afternoon thunderstorms",
+       "no reliable water above the lower creek crossings"
+      ],
+      "baseFinding": "THE SCRAMBLE STARTS WHERE THE MAINTAINED TREAD DIES AT THE OLD LOOKOUT BENCH, AND THE LEDGES SWITCHBACK RATHER THAN GO STRAIGHT. Walk the lookout trail to the flat bench around 3,100 ft where the fire lookout once stood; that bench is the reference point and the maintained tread effectively ends there. Keep climbing steeply and a cliff band appears within a few hundred vertical feet. The route takes about seventy vertical feet through it on a series of ledges, and the shape of the line is the test: it SWITCHBACKS up the ledges rather than climbing the rock directly. The ledges themselves are steep rock covered in dirt and moss rather than clean stone, so they feel insecure, and that is normal here. If you are forcing a direct line up clean rock, you are off the route. Above the band, the confirmation is pink ribbon flagging on an intermittent boot track along the crest and southwest side of the ridge. Two more checkpoints higher: the visible path effectively ends around 5,800 ft at an overlook above the small tarn in the basin, and there is a last band of stunted trees near 6,700 ft, also flagged, above which there is no ground cover at all. Note where you leave the timber, because that spot is not obvious from above on the way down. The summit above is a broad massif of red-stained rock and loose scree."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous - a steep, mostly off-trail climbers' path gains roughly 5,000 ft in the final ~3.5 miles on top of the North Fork Sauk/Sloan Creek approach; realistically a long single push or an overnight",
+      "packWeight": "Light day pack if attempted car-to-car by a fast party; overnight pack (20-35 lb) if camping partway, which is the more common approach given the length and remoteness"
+     },
+     "approachTime": "Long - multi-hour trail approach via North Fork Sauk/Sloan Creek followed by a steep ~5,000 ft off-trail climb; commonly done as an overnight, or a very long day by strong parties",
+     "requiredSkills": [
+      "Off-trail routefinding/navigation on unmarked climbers' trail",
+      "Class 2-3 scrambling on loose, mineral-streaked rock",
+      "Comfort on lingering snow patches early in the season (traction/self-arrest awareness)",
+      "Backcountry judgment for a remote, low-traffic wilderness objective with long evacuation times"
+     ],
+     "experienceLevel": "Intermediate-to-experienced scrambler comfortable with sustained off-trail travel, loose Class 2-3 rock, and committing, low-traffic wilderness terrain where self-rescue is the only rescue for hours"
+    }
+   }
+  }
+ ]
+}

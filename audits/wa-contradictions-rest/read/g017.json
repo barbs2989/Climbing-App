@@ -1,0 +1,2719 @@
+{
+ "batches": [
+  "b065.json",
+  "b066.json",
+  "b067.json",
+  "b068.json"
+ ],
+ "routes_read": 16,
+ "routes": [
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "name": "Easton Glacier",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II glacier climb"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade I"
+      },
+      {
+       "field": "commitment",
+       "says": "I"
+      }
+     ],
+     "why": "The crux-grade line says Grade II while both grade chips say Grade I.",
+     "internal_resolution": "alpine_grade and commitment agree on I; grade is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "3.8 + 8.8 miles"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~12-13 miles round trip"
+      }
+     ],
+     "why": "dist_km is 4.0 mi, which matches only the one-way hike to camp, while the itinerary and totalNote give ~12.6 mi round trip; the TECHNICAL STATS distance shows the smaller figure.",
+     "internal_resolution": "itinerary + totalNote agree on ~12.6 mi round trip; dist_km looks like the one-way approach-to-camp distance",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "8.8"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~12-13 miles round trip"
+      }
+     ],
+     "why": "An 8.8-mi one-way distance to the summit implies a ~17.6-mi round trip, not 12-13; 8.8 equals day 2's summit-and-out mileage, not the distance from the trailhead.",
+     "internal_resolution": "itinerary totals (3.8 + 8.8 = 12.6 round trip) put the summit ~6.3 mi one way; the waypoint distMi looks like it copied day 2's miles",
+     "needs_research": true
+    },
+    {
+     "fact": "Sandy Camp location",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Sandy Camp / Railroad Grade Camp lat 48.7985 lng -121.88"
+      },
+      {
+       "field": "approach",
+       "says": "Sandy Camp, a cluster of rock-walled tent pads at the moraine's end near 5,900-6,000 ft"
+      }
+     ],
+     "why": "The pin puts Sandy Camp ~2.5 km north-west of the summit (the north/Heliotrope side), but the text puts it on the south-side Railroad Grade between the trailhead (48.707) and the summit (48.777).",
+     "internal_resolution": "approach, bivy and the trailhead coordinates all put the camp south of the summit; the pin is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Direction at the Railroad Grade junction",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "leave the Park Butte trail here and bear left onto Railroad Grade Trail 603.2"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "a SIGNED junction sends you right onto the Railroad Grade Trail 603.2"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Leave the Park Butte trail there and bear left onto the Railroad Grade trail"
+      }
+     ],
+     "why": "One field says the Railroad Grade junction turns left and another says right.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "free self-issue Wilderness permit at trailhead"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No climbing permit and no overnight backcountry permit."
+      }
+     ],
+     "why": "Some fields call for a self-issue wilderness permit and others say no wilderness permit is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group-size limit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.notes",
+       "says": "No published numeric group-size cap for Baker specifically — don’t assume one."
+      }
+     ],
+     "why": "The same ACCESS block gives a group limit of 12 and also says there is no published cap.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late May through July"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late May through July"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "good"
+      }
+     ],
+     "why": "The best window starts in late May, which is before the season chip's June start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Water above Morovitz Meadows",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Water and flat sandy tent sites are available at several spots along the ridge."
+      },
+      {
+       "field": "approach",
+       "says": "there is no reliable water source above Morovitz Meadows other than melting snow"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "Plan for melting and treat running water as a bonus."
+      }
+     ],
+     "why": "The itinerary promises water along the moraine ridge, but the approach and bivy say to plan on melting snow above Morovitz.",
+     "internal_resolution": "approach, approach_variants, pitch_detail and bivy agree there is no reliable water; the itinerary note is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time to camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "3.5"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "3.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~4-6 hrs from Schreiber Meadow up the Railroad Grade"
+      }
+     ],
+     "why": "The approach to camp takes 3.5 hours in two fields and 4-6 hours in a third.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Gain to Sandy Camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2300"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2600"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach Railroad Grade / Sandy Camp high camp"
+      }
+     ],
+     "why": "The gain to the same camp is 2,300 ft in the itinerary and 2,600 ft in the approach variant.",
+     "internal_resolution": "with the trailhead at 3,360 ft and Sandy Camp at ~5,900-6,000 ft, the 2,600 ft figure fits",
+     "needs_research": false
+    },
+    {
+     "fact": "Creek crossing at Schriebers Meadow",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[5]",
+       "says": "Rocky Creek crossing near Schriebers Meadow can be difficult in high runoff or when the seasonal bridge is out"
+      },
+      {
+       "field": "approach",
+       "says": "Cross Sulfur Creek on a footbridge/log crossing near the start (can be a ford in high water)"
+      }
+     ],
+     "why": "The trailside ford hazard is named Rocky Creek in hazards but Sulfur Creek in approach, waypoints and pitch_detail.",
+     "internal_resolution": "approach, waypoints, pitch_detail and approach_variants all name Sulfur/Sulphur Creek as the trail crossing",
+     "needs_research": true
+    },
+    {
+     "fact": "Which road is Baker Lake Road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Forest Road 13 (Baker Lake Rd/Sulfur Creek Rd) to Park Butte Trailhead"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access)"
+      }
+     ],
+     "why": "road.name calls FR 13 'Baker Lake Rd', but access.seasonal says Baker Lake Road is FSR 11.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent start vs off-glacier time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[4]",
+       "says": "10:00 AM Begin descent — Aim to be off the glacier by mid-morning"
+      },
+      {
+       "field": "turnaround",
+       "says": "Turn around by late morning"
+      }
+     ],
+     "why": "Starting down from the summit at 10:00 AM makes being off the glacier by mid-morning impossible.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Roman Wall steepness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "max_angle",
+       "says": "40"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "35–45° snow/ice"
+      },
+      {
+       "field": "descent_text",
+       "says": "a sustained 35-45 degree snow/ice slope"
+      }
+     ],
+     "why": "The maximum angle is 40° while the pitch breakdown and descent text say up to 45°.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "name": "North Ridge",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III(+), ice to ~60–80°"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      }
+     ],
+     "why": "The crux-grade line gives Grade III(+) while the commitment chip gives II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "carefully descend back to the ridge base at 7,500 feet, then retrace glacier travel back to Coleman Glacier"
+      },
+      {
+       "field": "descent_text",
+       "says": "The North Ridge is climbed as an ascent-only line - parties do not reverse it."
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "Descend the Coleman–Deming walk-off rather than reversing the ridge"
+      }
+     ],
+     "why": "The descent field describes going back down to the ridge base (reversing the ridge), while descent_text, gear, itinerary and pro_tips say to descend the Coleman-Deming route and never reverse the ridge.",
+     "internal_resolution": "descent_text, gear[5], itinerary day 2 and pro_tips all say descend the Coleman-Deming; the 'back to the ridge base at 7,500 feet' clause in descent is the outlier (descent_text is also the longer field, so it is the one that renders)",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].distMi",
+       "says": "12"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "2.9 mi to camp; 6.5 mi camp-summit-camp; 2.9 mi out"
+      }
+     ],
+     "why": "The waypoints put the summit 12 mi and the ridge base 8 mi from the trailhead, but the itinerary's 2.9 mi to camp plus a 6.5-mi round trip from camp to the summit makes the summit roughly 6 mi away.",
+     "internal_resolution": "itinerary, approach (2.5 mi to camp) and approach_variants agree on a short approach; the waypoint distMi values are the outliers",
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "2.9 + 6.5 + 2.9 miles"
+      }
+     ],
+     "why": "dist_km is 2.5 mi, which matches only the one-way approach to camp, while the itinerary totals 12.3 mi.",
+     "internal_resolution": "dist_km matches approach_variants' 2.5-mi approach, not the route total",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain to Hogsback camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2300"
+      },
+      {
+       "field": "approach",
+       "says": "about 2.5 mi and 2,800 ft of gain"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2800"
+      }
+     ],
+     "why": "The gain to the same camp is 2,300 ft in the itinerary and 2,800 ft in the approach and approach variant.",
+     "internal_resolution": "approach and approach_variants agree on 2,800 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "3437"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~3,700 ft"
+      },
+      {
+       "field": "approach",
+       "says": "~3,500-3,700 ft"
+      }
+     ],
+     "why": "The Trailhead waypoint says 3,437 ft and the trailhead card says ~3,700 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ice screw count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "2-4 ice screws"
+      },
+      {
+       "field": "gear[1]",
+       "says": "5-7 ice screws"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "protected with a full screw rack (6-7 screws typical)"
+      }
+     ],
+     "why": "The rack that renders (detailed_rack) calls for 2-4 screws, but the gear list and crux pitch call for 5-7.",
+     "internal_resolution": "gear and pitch_detail agree on 5-7; detailed_rack is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux ice steepness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "60-70° (AI3+)"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "roughly 15 ft of dead-vertical ice"
+      },
+      {
+       "field": "max_angle",
+       "says": "80"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "steep ice up to 60–85°, sometimes overhanging seracs"
+      }
+     ],
+     "why": "The crux is graded 60-70° in the same row whose notes call it dead-vertical, and the maximum angle is given as 80° while hazards say 85°.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which side is east when crossing the Coleman",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "cross the Coleman Glacier heading climbers' right (east)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "cross the Coleman climbers' right below the Colfax icefall"
+      },
+      {
+       "field": "descent_text",
+       "says": "trend climbers' left (east) through crevasses"
+      }
+     ],
+     "why": "East is called climber's right in the approach and climber's left in descent_text; on a north-side route facing uphill, east is on the climber's left.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which side of the ridge the snow approach climbs",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "ascend the west slope of the North Ridge"
+      },
+      {
+       "field": "overview",
+       "says": "ascend snow slopes left of the ridge crest"
+      }
+     ],
+     "why": "For a climber facing south on the North Ridge, left is east, which contradicts the beta's 'west slope'.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11"
+      },
+      {
+       "field": "descent_text",
+       "says": "commonly runs 12-18 hours from high camp on summit day"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "a long (10-14 hr) technical summit day"
+      }
+     ],
+     "why": "The summit day is 11 hours in the itinerary, 10-14 hours in totalNote and 12-18 hours in the descent text.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      },
+      {
+       "field": "access.permit",
+       "says": "No climbing permit is required."
+      }
+     ],
+     "why": "The permit field calls for a self-issue wilderness permit, but ACCESS says no wilderness permit is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "July conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "May through July for the most reliable ice"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "July is part of the best window in best_season but is rated marginal in the seasonal guidance.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "name": "Coleman Headwall",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "III+"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade IV"
+      },
+      {
+       "field": "commitment",
+       "says": "II-III"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "Leading sustained steep alpine ice (Grade IV terrain)"
+      }
+     ],
+     "why": "Three different commitment grades appear for the same route: III+, IV and II-III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappels on the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Rappel or downclimb from the upper ice face, navigate bergshrunds ... Multiple rappels on ice or snow anchors may be necessary"
+      },
+      {
+       "field": "descent_text",
+       "says": "a non-technical walk/downclimb with no rappelling required"
+      },
+      {
+       "field": "rappels",
+       "says": "None on the standard descent — Coleman-Deming is a walk-off"
+      }
+     ],
+     "why": "The descent field calls for multiple rappels off the upper ice face, while descent_text and rappels say the Coleman-Deming walk-off needs none.",
+     "internal_resolution": "descent_text, rappels, pro_tips and climbing_route all describe a no-rappel Coleman-Deming walk-off; the descent field is the outlier (it is the shorter field, so it is hidden)",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "14"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "12 numbered rows"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb roughly 12 pitches"
+      }
+     ],
+     "why": "The header shows 14 pitches but the route breakdown lists 12 and the itinerary says about 12.",
+     "internal_resolution": "pitch_detail, itinerary and the waypoint directions agree on about 12; the overview gives a 10-14 range",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "6000"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6000"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "the usual camps between about 6,500 and 7,200 ft"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Coleman Glacier camp (~6,700 ft)"
+      }
+     ],
+     "why": "The camp waypoint and main bivy sit at 6,000 ft, while the waypoint's own directions, the approach and the itinerary put this route's camp at 6,500-7,200 ft.",
+     "internal_resolution": "approach, approach_variants, itinerary and the waypoint directions agree on ~6,700 ft; the 6,000 figure is the Coleman-Deming Hogsback camp",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].distMi",
+       "says": "12.5"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "10"
+      },
+      {
+       "field": "dist_km",
+       "says": "20.92"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "3.5 + 9.5 miles"
+      }
+     ],
+     "why": "The summit waypoint is 12.5 mi one way, but the whole round trip is only 13 mi (dist_km and the itinerary).",
+     "internal_resolution": "dist_km (13 mi) and the itinerary (3.5 + 9.5) agree on a ~13-mi round trip; the waypoint distMi values are the outliers",
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier Creek Road washout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "the washout adds about nine miles and 2,000 ft of travel on foot or bike before you even reach the sign-in kiosk"
+      },
+      {
+       "field": "descent_text",
+       "says": "longer if the road washout adds its extra miles"
+      },
+      {
+       "field": "road.status",
+       "says": "the Forest Service announced on 20 August 2026 that the repairs are complete and vehicles can again reach the Heliotrope Ridge trailhead"
+      }
+     ],
+     "why": "The trailhead waypoint says the washout still adds nine miles, while the road, approach and bivy say the road reopened in August 2026.",
+     "internal_resolution": "road, approach, approach_variants and bivy all say the road reopened 20 Aug 2026; the waypoint directions are stale",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration vs schedule",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "Leave 1:00-2:00 AM ... Summit Early-mid afternoon ... Hike out to trailhead Evening"
+      },
+      {
+       "field": "descent_text",
+       "says": "allow 3-4 hours from summit to camp and another 1.5-2.5 hours from camp to the car"
+      }
+     ],
+     "why": "A 1-2 AM start with an early-afternoon summit plus 4.5-6.5 hours to the car is a ~17-19-hour day, not the 13 hours given.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "When to be on the headwall",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "Be off the headwall before midday warming"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "nearly all parties climb the headwall before or around sunrise"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2]",
+       "says": "Morning-midday — Climb the headwall"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3]",
+       "says": "Early-mid afternoon — Summit"
+      }
+     ],
+     "why": "The itinerary puts the party on the headwall through midday, with an afternoon summit, which breaks the stated turnaround and the sunrise-timing hazard advice.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Group-size limit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "No published numeric group-size cap for Baker specifically — don’t assume one."
+      },
+      {
+       "field": "access.closures",
+       "says": "Group size limited to 12 in Mt. Baker Wilderness"
+      },
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      }
+     ],
+     "why": "The same ACCESS block says there is no published cap and that groups are limited to 12.",
+     "internal_resolution": "closures, group_limit and bivy[0].permit all state a 12-person limit; access.notes is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No climbing permit and no overnight backcountry permit"
+      }
+     ],
+     "why": "The permit field calls for a self-issue wilderness permit, but ACCESS and the bivy say none is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "late Apr-Jun"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best ice conditions are typically late winter through spring (Feb-May); the headwall can go bare/rotten by mid-late summer."
+      },
+      {
+       "field": "best_season",
+       "says": "typically out of condition by July 1"
+      }
+     ],
+     "why": "The itinerary gives a February-May best window and says the route lasts to mid-late summer; the season and best_season say late April to June, out by July 1.",
+     "internal_resolution": "season, best_season, gear, seasonal_guidance and climate agree on late Apr/May-June; itinerary.cal is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Contaminated North Ridge bivy",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy ... to shorten the approach to the base of the ridge"
+      }
+     ],
+     "why": "This camp entry describes staging for the North Ridge route, not the Coleman Headwall.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Technical difficulty rating",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "difficulty.technical",
+       "says": "1"
+      },
+      {
+       "field": "ice_grade",
+       "says": "AI4 (WI3 on the upper section)"
+      }
+     ],
+     "why": "The radar rates technical difficulty 1 of 5 on a sustained AI4 steep-ice route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "name": "Squak Glacier",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "Grade II"
+      },
+      {
+       "field": "commitment",
+       "says": "I"
+      }
+     ],
+     "why": "Two grade chips give Grade II and Grade I for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crag View Camp location",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Crag View Camp lat 48.797 lng -121.875"
+      },
+      {
+       "field": "approach",
+       "says": "From the Park Butte/Schriebers Meadow trailhead area, take the Scott Paul Trail ... to Crag View camp (~6,500 ft, about 3.5 mi from the trailhead"
+      }
+     ],
+     "why": "The camp pin sits north-west of the summit on Baker's north side, but the text puts Crag View 3.5 mi up from Schriebers Meadow on the south side (trailhead lat 48.707, summit 48.777).",
+     "internal_resolution": "approach, approach_variants and face all put the camp on the south side; the pin is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "9"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.5"
+      },
+      {
+       "field": "dist_km",
+       "says": "5.5"
+      }
+     ],
+     "why": "The summit waypoint is 9 mi from the trailhead, while dist_km (3.4 mi) roughly matches only the 3.5-mi approach to camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road access in May",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Jul (early season preferred)"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Typically opens once snow clears, roughly June"
+      }
+     ],
+     "why": "The season starts in May, but the road is said to open only around June.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "name": "Boulder–Park Cleaver",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II Snow"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade II"
+      },
+      {
+       "field": "commitment",
+       "says": "I"
+      }
+     ],
+     "why": "The commitment chip says I while grade and alpine_grade say II.",
+     "internal_resolution": "grade and alpine_grade agree on II; commitment is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier crossed to reach the cleaver",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From there it crosses onto the Park Glacier and ascends to the base of the cleaver (~6,800 ft)"
+      },
+      {
+       "field": "pitch_detail[2].pitch",
+       "says": "Park Glacier traverse"
+      },
+      {
+       "field": "descent_text",
+       "says": "Reverse the cleaver and Park Glacier terrain back to the 5,700 ft camp"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "cross the lower Boulder heading northwest to the toe of the cleaver"
+      },
+      {
+       "field": "descent",
+       "says": "Descend via the Boulder Glacier and cleaver"
+      }
+     ],
+     "why": "The glacier crossed between camp and the cleaver is the Park Glacier in the beta, pitch breakdown and descent_text, but the Boulder Glacier in the approach variant and the descent field.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp elevation and location",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "to a campsite around 5,700 ft where the ridge meets snow and ice"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "at roughly 5,500 to 5,700 ft"
+      },
+      {
+       "field": "descent",
+       "says": "back to the high camp below the cleaver at approximately 7,800-8,000 feet"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "High Camp below Boulder-Park Cleaver elev 8000, distMi 8"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "A second, higher camp exists on a flat shelf sheltered by the cleaver itself around 7,500 ft"
+      }
+     ],
+     "why": "The main camp is at 5,700 ft in the approach, beta, itinerary, bivy and descent_text, but the descent field and the only camp waypoint put it at 7,800-8,000 ft, and the approach variant names a second camp at 7,500 ft.",
+     "internal_resolution": "approach, beta, itinerary, bivy, bail and descent_text agree on a ~5,700 ft main camp; the 8,000-ft waypoint and the descent field describe a different (upper) camp at an elevation that does not match the variant's 7,500 ft",
+     "needs_research": true
+    },
+    {
+     "fact": "High camp pin on the wrong side of the mountain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "lat 48.79 lng -121.84"
+      },
+      {
+       "field": "face",
+       "says": "East side, via the cleaver ridge between the Boulder and Park Glaciers"
+      }
+     ],
+     "why": "The camp pin is west-north-west of the summit (lng -121.84 vs -121.814), but this is an east-side route from a trailhead at lng -121.71.",
+     "internal_resolution": "face, overview, trailhead coordinates and approach all put the route on the east side; the pin is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Hogsback camp named on an east-side route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear.gearTiers.recommended[2]",
+       "says": "Overnight kit for high camp at Hogsback"
+      },
+      {
+       "field": "approach",
+       "says": "to a campsite around 5,700 ft where the ridge meets snow and ice"
+      }
+     ],
+     "why": "The Hogsback is the Heliotrope Ridge (north-west side) camp; this route camps on Boulder Ridge.",
+     "internal_resolution": "approach, bivy and itinerary all name the Boulder Ridge camp",
+     "needs_research": false
+    },
+    {
+     "fact": "Trip duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "8"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "3"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: Hike Boulder Ridge Trail and climb to high camp (~5,700 ft). Day 2: ... summit (10,781 ft), then descend to camp and out."
+      },
+      {
+       "field": "gain_ft",
+       "says": "8081"
+      }
+     ],
+     "why": "PUBLISHED TIMES total 8 hours, with 3 hours from camp to the summit, for a two-day, 8,081-ft, 16-mi route that gains ~5,000 ft on summit day alone.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "11"
+      },
+      {
+       "field": "dist_km",
+       "says": "25.7"
+      }
+     ],
+     "why": "The summit waypoint is 11 mi one way (22 mi round trip), while dist_km is a 16-mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "5 AM"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Climb early (before 5 AM) to avoid mid-day rockfall hazard below the buttress"
+      }
+     ],
+     "why": "The recommended start is 5 AM, but a pro tip says to be climbing before 5 AM.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Cleaver base elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "ascends to the base of the cleaver (~6,800 ft)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you have reached it you are 3,600 ft above the start of the route"
+      }
+     ],
+     "why": "A 9,300-ft buttress 3,600 ft above the start puts the cleaver's base at ~5,700 ft, not ~6,800 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season vs 'June is too early'",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through August; June is too early (deep snow, more rockfall)"
+      }
+     ],
+     "why": "The season chip starts in May, but best_season calls June too early.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "name": "Coleman–Deming Glacier",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.7"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "2.9 + 8.4 miles"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~10-12 miles round trip"
+      }
+     ],
+     "why": "dist_km is 2.9 mi, the one-way approach to camp, while the itinerary and totalNote give a ~11-mi round trip.",
+     "internal_resolution": "itinerary, totalNote and the summit waypoint (5.5 mi one way) agree on ~11 mi round trip",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain to Hogsback camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2200"
+      },
+      {
+       "field": "approach",
+       "says": "Gain 2,800 ft over 2.5 miles"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2800"
+      },
+      {
+       "field": "approach_logistics.trailhead_elevation_ft",
+       "says": "3650"
+      }
+     ],
+     "why": "The gain to camp is 2,200 ft in the itinerary but 2,800 ft in the approach, although a 3,650-3,700 ft trailhead and a 6,000 ft camp differ by only ~2,300 ft.",
+     "internal_resolution": "the trailhead and camp elevations (3,650-3,700 → 6,000) support ~2,300 ft, which is closer to the itinerary's 2,200",
+     "needs_research": false
+    },
+    {
+     "fact": "Alpine start time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "4:30 AM from camp"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1]",
+       "says": "5:15 AM Leave camp on crampons"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Start by 2 a.m. for firm snow on the Roman Wall and a safer descent"
+      }
+     ],
+     "why": "PUBLISHED TIMES and the schedule start at 4:30-5:15 AM, but a pro tip says to start by 2 AM.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Crater rim on the route line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "roped travel up the Coleman Glacier and around the crater rim to the summit"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "The broad ice saddle at about 9,000 ft sits between Colfax Peak and the summit cone ... climb roughly 300 ft east up the exposed pumice ridge"
+      }
+     ],
+     "why": "The itinerary sends the Coleman-Deming around the crater rim, which is the Easton/Sherman Crater line; every other field routes via the Colfax saddle and pumice ridge.",
+     "internal_resolution": "pitch_detail, beta, approach_variants and descent_text all describe the Colfax saddle and pumice ridge line",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 7,000 ft of gain round trip on summit day after the approach"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "4700"
+      }
+     ],
+     "why": "Summit day gains 4,700 ft in the itinerary; ~7,000 ft is the whole trip's gain.",
+     "internal_resolution": "itinerary and the camp/summit elevations (6,000 → 10,781) support ~4,700 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time to Hogsback",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "3.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~4-5 hrs to Hogsback camp"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "two to three hours up from the trailhead"
+      }
+     ],
+     "why": "Three different durations are given for the same approach: 2-3, 3.5 and 4-5 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The wilderness permit is free and self-issued."
+      },
+      {
+       "field": "approach_logistics.permits",
+       "says": "Free self-issue wilderness permit"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      }
+     ],
+     "why": "Three fields call for a self-issue wilderness permit, while ACCESS says no wilderness permit is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Group-size limit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.group_limit",
+       "says": "12"
+      },
+      {
+       "field": "access.notes",
+       "says": "No published numeric group-size cap for Baker specifically — don’t assume one."
+      }
+     ],
+     "why": "The same ACCESS block gives a group limit of 12 and also says there is no published cap.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "name": "Boulder Glacier / Boulder Cleaver",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Which line the route climbs (glacier vs cleaver)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "cross the lower Boulder Glacier northwest to the toe of the Boulder-Park Cleaver (~6,800 ft) and follow the cleaver up"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "cross the lower Boulder Glacier heading northwest to the toe of the Boulder–Park Cleaver"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "this route stays ON THE GLACIER. The Boulder-Park Cleaver route crosses the lower glacier northwest to the toe of a rock cleaver ... If you find yourself walking toward a rock rib ..., you are on the cleaver route, not this one."
+      },
+      {
+       "field": "face",
+       "says": "East side, direct ascent of the Boulder Glacier beneath the Boulder-Park Cleaver"
+      }
+     ],
+     "why": "The beta and route breakdown describe the Boulder-Park Cleaver line, while the approach's base-finding text says this route stays on the glacier and that heading for the cleaver means you are on the wrong route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "2200"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "at the end of FR-1131 (~2,700 ft)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about 2,700 ft — the lowest trailhead of any Baker route"
+      }
+     ],
+     "why": "The Trailhead waypoint (which feeds the weather panel) says 2,200 ft, while the trailhead card and approach say ~2,700 ft.",
+     "internal_resolution": "trailheadDirection and approach_variants agree on ~2,700 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a high camp around 5,500 ft just below the Boulder Glacier"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "at roughly 5,500 to 5,700 ft just below the Boulder Glacier"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "most parties push up to a sheltered site around 6,800-7,500 ft near the base of the cleaver ... rather than stopping at the lower 5,200-5,700 ft options"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3800"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the ridge runs out into snow and ice near 6,300 ft"
+      }
+     ],
+     "why": "The camp is at 5,500-5,700 ft in the approach and bivy, but the itinerary sends most parties to 6,800-7,500 ft, and the base-finding text puts the end of the ridge at 6,300 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "6.35"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.5"
+      },
+      {
+       "field": "dist_km",
+       "says": "25.7"
+      }
+     ],
+     "why": "The summit waypoint is 6.35 mi from the trailhead, which is less than the 6.5-mi day-1 approach to camp alone; dist_km gives a 16-mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time to camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "4-5 hrs to camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~6-8 hrs from the Baker Lake/Boulder Creek side to a high camp"
+      }
+     ],
+     "why": "The approach to camp is 4-5 hours in timing and the itinerary, but 6-8 hours in partner requirements.",
+     "internal_resolution": "timing and the itinerary agree on 4.5 hours",
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing permit / registration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Mount Baker Climbing"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Climbers must sign the climbers' register at this office before attempting a climb."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      }
+     ],
+     "why": "One field says climbers must register at the Sedro-Woolley office and ACCESS names a 'Mount Baker Climbing' permit, while other fields say no climbing permit is needed or that a self-issue trailhead registration is enough.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance on FR 1130 to FR 1131",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "turn onto FR 1130 for about 1 mile to FR 1131"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "at 1.5 miles turn left onto FR 1131"
+      }
+     ],
+     "why": "The turn onto FR 1131 is about 1 mile along FR 1130 in the approach but 1.5 miles in the road directions.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "name": "Cockscomb Ridge",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Drive the Mount Baker Highway (SR 542) to its end at Artist Point ... Ptarmigan Ridge Trail 682.1 ... to Camp Kiser ... onto the Rainbow Glacier ... climb onto the Park Glacier ... Note that the Coleman and Roosevelt Glaciers ... are not crossed on this approach."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the Coleman and Roosevelt Glaciers lie on Baker's west and north-west flanks and are not crossed on this approach at any point"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft"
+      },
+      {
+       "field": "beta",
+       "says": "Ascend Ptarmigan Ridge Trail to Camp Kiser, cross Coleman and Roosevelt Glaciers northeastward"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "2-3 hrs crossing the Coleman and Roosevelt Glaciers to gain the ridge at ~7,500 ft."
+      },
+      {
+       "field": "road.name",
+       "says": "Glacier Creek Road (FR 39) to Heliotrope Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Heliotrope Ridge Camp elev 6000 distMi 3"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~2-3 hrs of glacier travel via Heliotrope Ridge/Coleman-Roosevelt Glaciers"
+      }
+     ],
+     "why": "The approach, approach variant, bivy and trailhead card start at Artist Point and cross the Rainbow and Park Glaciers, explicitly never the Coleman or Roosevelt; the itinerary, timing, route breakdown, road, camp waypoint and partner requirements use the Heliotrope Ridge trailhead and the Coleman/Roosevelt crossing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "The standard exit reverses the climb: drop off the summit plateau past the headwall, descend the Park Glacier, recross the Rainbow to camp near The Portals ... Descending the Coleman-Deming instead ... only works with a car shuttle arranged in advance."
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend Coleman-Deming or Easton"
+      },
+      {
+       "field": "beta",
+       "says": "Descent: Coleman-Deming Route (easy-moderate glacier)."
+      },
+      {
+       "field": "itinerary.days[1].schedule[4]",
+       "says": "Descend Coleman-Deming to camp"
+      }
+     ],
+     "why": "The descent field makes the standard exit a reversal via the Park Glacier to Artist Point, with the Coleman-Deming only as a shuttle variation, while descent_text, beta and the itinerary make the Coleman-Deming the descent back to camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "Artist Point (Ptarmigan Ridge Trailhead) elev 3437"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "Start at Artist Point parking area (elevation 5,075 ft)"
+      }
+     ],
+     "why": "The Trailhead waypoint (which feeds the weather panel) says 3,437 ft, the Heliotrope Ridge trailhead's figure, while the trailhead card says Artist Point is at 5,075 ft.",
+     "internal_resolution": "the trailhead card's 5,075 ft is right for Artist Point; 3,437 is the Heliotrope Ridge trailhead's elevation",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "III-IV"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade III"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      }
+     ],
+     "why": "The commitment chip says II while grade and alpine_grade say III or III-IV.",
+     "internal_resolution": "grade, alpine_grade, totalNote and partner requirements all say III or III-IV; commitment is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "beta",
+       "says": "3,000 ft vertical gain over 5 pitches on the ridge itself"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "5 rows"
+      }
+     ],
+     "why": "The header shows 0 pitches, while the beta and route breakdown give 5.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Approach duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].hrs",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "4.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives a 7-hour approach while its own section breakdown and the itinerary say 4.5 hours (the 17.5-hr total uses 4.5).",
+     "internal_resolution": "the section breakdown, itinerary and totalHrs arithmetic use 4.5",
+     "needs_research": false
+    },
+    {
+     "fact": "Location of the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "an obscure mixed line near the Boulder Glacier"
+      },
+      {
+       "field": "face",
+       "says": "True north ridge/spur, between the Coleman/Roosevelt Glaciers and the Park Glacier"
+      }
+     ],
+     "why": "CROWDS places the line near the Boulder Glacier (east side), while every other field puts it on the north side beside the Park Glacier.",
+     "internal_resolution": "face, overview and approach agree on the north side",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Free self-issue wilderness permit available at trailhead (day use or overnight)."
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      }
+     ],
+     "why": "The same ACCESS block offers a self-issue wilderness permit and also says no wilderness permit is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "name": "Park Glacier Headwall",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "IV"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      }
+     ],
+     "why": "The crux-grade line says IV while the commitment chip says III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route and where it ends",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the Coleman-Deming route"
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend Coleman-Deming to Heliotrope Ridge"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "descend back to camp and hike out the same day"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3]",
+       "says": "1:00 PM Back at camp"
+      },
+      {
+       "field": "gear[4]",
+       "says": "Plenty of cord for V-thread rappels on the descent"
+      }
+     ],
+     "why": "The descent ends at the Heliotrope Ridge trailhead on the opposite side of the mountain (a car shuttle), but the itinerary returns to the Portals camp and hikes out to Artist Point, and the gear list plans V-thread rappels for a descent the text calls a walk-off glacier route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through July in most years"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "May to June"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "risky"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best done early season (May-June)"
+      }
+     ],
+     "why": "May is rated optimal although the season chip starts in June, and July is inside best_season yet rated risky; best_season (late June-July) and the optimal window (May-June) barely overlap.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at the Portals camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "the Portals camp, a sandy, sheltered site with running water tucked among the glaciers"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "Snowmelt only"
+      }
+     ],
+     "why": "The itinerary promises running water at camp, but the bivy says snowmelt only.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction of the Ptarmigan Ridge approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Southeast via Chain Lakes Trail to Ptarmigan Ridge ... Continue 3 miles east to Coleman Pinnacle base"
+      },
+      {
+       "field": "approach_logistics",
+       "says": "trailhead lng -121.6928; peak lng -121.8142"
+      }
+     ],
+     "why": "The approach heads 'east' and 'southeast', but Baker and Coleman Pinnacle lie west-south-west of Artist Point.",
+     "internal_resolution": "trailhead and peak coordinates show the approach runs west/south-west",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Heather Meadows trailhead to high camp below the Park Glacier"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Artist Point Trailhead"
+      }
+     ],
+     "why": "The itinerary starts from Heather Meadows (the early-season ski-area lot) while the trailhead card and approach start at Artist Point.",
+     "internal_resolution": "approach, approach_variants and the waypoint all start at Artist Point",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "3.5"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].hrs",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "4"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives a 3.5-hour approach while its own section breakdown and the itinerary say 4 hours.",
+     "internal_resolution": "the section breakdown, itinerary and totalHrs (4 + 12.5 = 16.5) use 4",
+     "needs_research": false
+    },
+    {
+     "fact": "Itinerary loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1800"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "5000"
+      },
+      {
+       "field": "itinerary.days[1].lossFt",
+       "says": "5700"
+      },
+      {
+       "field": "loss_ft",
+       "says": "7000"
+      }
+     ],
+     "why": "The itinerary gains 6,800 ft but loses only 5,700 ft on a trip that returns to the same trailhead.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "4.5 + 8.5 miles"
+      }
+     ],
+     "why": "dist_km is 5.0 mi, roughly the one-way walk to Camp Kiser, while the itinerary totals 13 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Route grade in the beta",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II glacier travel with crevasse rescue."
+      },
+      {
+       "field": "grade",
+       "says": "IV"
+      },
+      {
+       "field": "ice_grade",
+       "says": "AI3"
+      }
+     ],
+     "why": "The beta describes the route as Grade II glacier travel, but the grade is IV with AI3 headwall ice.",
+     "internal_resolution": "grade, commitment, alpine_grade and ice_grade all describe a technical ice route",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_blum_north_ridge",
+   "name": "North Ridge",
+   "area": "Mount Blum",
+   "contradictions": [
+    {
+     "fact": "How to get the NPS overnight permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center or the Glacier Public Service Center."
+      },
+      {
+       "field": "access.permit",
+       "says": "$10 per person plus a $6 reservation fee"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The Blum cross-country zone is not one of the reservable zones, so it is walk-up only through the wilderness information center near Marblemount."
+      }
+     ],
+     "why": "ACCESS says the permit can be reserved on Recreation.gov (with a reservation fee), while the camp entry says the Blum zone cannot be reserved and is walk-up only.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the park boundary falls",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mt. Baker Ranger District) via Noisy-Diobsud Wilderness for the approach; summit area at/near the North Cascades National Park boundary."
+      },
+      {
+       "field": "bivy[2].permit",
+       "says": "the park boundary sits close to the river crossing, so assume the whole climb is inside the park"
+      }
+     ],
+     "why": "ACCESS puts the approach in National Forest wilderness with only the summit near the park, while the bivy says to assume the whole climb, from the river crossing up, is inside the park.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the climbers' path leaves the trail",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the unmarked climbers' path starting about 175 yards downstream of it on Blum Creek's north bank"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek"
+      }
+     ],
+     "why": "The path starts 175 yards downstream of the bridge in one field and a short distance past the bridge in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_blum_south_ridge",
+   "name": "South Ridge / Southeast Slopes",
+   "area": "Mount Blum",
+   "contradictions": [
+    {
+     "fact": "Whether the Blum zone permit can be reserved",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov, or pick up a walk-up permit in person"
+      },
+      {
+       "field": "access.permit",
+       "says": "Only high-use cross-country zones can be reserved in advance and the Blum zone is not one of them, so the permit is obtained as a walk-up in person"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10/person/night plus a $6 nonrefundable reservation fee"
+      }
+     ],
+     "why": "Two fields say the permit can be reserved on Recreation.gov, while access.permit and every bivy say the Blum zone is walk-up only.",
+     "internal_resolution": "access.permit and all bivy permit notes agree the zone is walk-up only",
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[7].distMi",
+       "says": "7"
+      },
+      {
+       "field": "approach",
+       "says": "the full round trip to the summit and back is about 9 miles and 7,000 ft"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "1.5"
+      }
+     ],
+     "why": "The summit waypoint is 7 mi one way (14 mi round trip), but the route is about 9 mi round trip, and the lakes (4.5 mi) plus a 1.5-mi round-trip summit day put the top ~5.3 mi out.",
+     "internal_resolution": "approach, approach_variants, overview, pro_tips and itinerary agree on ~9 mi round trip",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the climbers' path leaves the trail",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Cross the bridge, then look for a faint, unmarked climber's path beginning about 175 yards downstream of the bridge ... that follows Blum Creek's north bank"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2]",
+       "says": "~mid-hike — Pick up Blum Creek climber's path"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek, and find the faint path that works away from the creek"
+      }
+     ],
+     "why": "The path leaves 175 yards past the bridge along Blum Creek's north bank in the approach, mid-hike in the schedule, and 'away from the creek' in the bivy.",
+     "internal_resolution": "approach, approach_variants, waypoints, pro_tips and watch_out agree on ~175 yd downstream of the bridge",
+     "needs_research": false
+    },
+    {
+     "fact": "Hike-out time from camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "From camp, re-descend the unmarked climber's path ... to the Baker River Trail and trailhead (about 3 hours)."
+      },
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "5"
+      },
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "5"
+      }
+     ],
+     "why": "The hike out from camp takes about 3 hours in the descent field but 5 hours in the itinerary and PUBLISHED TIMES.",
+     "internal_resolution": "itinerary and timing agree on 5 hours",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM Leave camp ... ~11:00 AM-12:00 PM Back at camp"
+      }
+     ],
+     "why": "The summit-day schedule runs 5.5-6.5 hours, but the day is listed as 4.5 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Which ridge the final scramble follows",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "follow class 3 ... blocky ridge terrain to the broad summit plateau (south ridge)"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the south ridge and southeast slopes go from here up through gullies and snow to the east ridge"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "final approach is blocky Class 3 scrambling along the east/south ridge"
+      }
+     ],
+     "why": "The finish is on the south ridge in the beta and route name, but the bivy and summit waypoint route it to the east ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water on Blum Creek",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "what_to_bring[1]",
+       "says": "reliable water at Blum Creek and the Blum Lakes"
+      },
+      {
+       "field": "bivy[2].water",
+       "says": "None dependable. Blum Creek is below the path and hard to reach from the ridge"
+      },
+      {
+       "field": "bivy[1].water",
+       "says": "This is the first reliable water since the river, four thousand feet below"
+      }
+     ],
+     "why": "GEAR & ESSENTIALS promises reliable water at Blum Creek, while the bivy entries say there is none dependable between the river and the lakes.",
+     "internal_resolution": "both bivy entries agree there is no reliable water between the river and the lakes",
+     "needs_research": false
+    },
+    {
+     "fact": "Bear canister requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Bear canisters are required for overnight camping"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "Bear canisters are the sensible answer where the heather gives you nothing to hang from"
+      }
+     ],
+     "why": "ACCESS makes bear canisters a requirement, while the bivy presents them only as the sensible choice.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "name": "Standard Scramble (South/East Slopes)",
+   "area": "Mount Herman",
+   "contradictions": [
+    {
+     "fact": "Where the route leaves the Chain Lakes Trail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "At the last switchback below Herman Saddle ... leave the maintained trail and go cross-country"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE EXIT IS BELOW THE SADDLE, NOT AT IT ... If you crest the saddle ... you have gone past your exit"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Chain Lakes Trail is followed to about 4,500 ft, where climbers peel off trail and start up the gully toward Herman Saddle"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Above the saddle you leave any trail and work up loose heather benches and talus on Herman's broad south face"
+      }
+     ],
+     "why": "The approach leaves the trail at the last switchback just below the ~5,300-ft saddle and warns that cresting the saddle overshoots, while the waypoints leave the trail at 4,500 ft up a gully and then carry on above the saddle.",
+     "internal_resolution": "approach, approach_variants, beta, descent_text and the itinerary all use the last-switchback exit",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Herman Saddle and the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "At about 0.75 mile, the trail joins Chain Lakes Trail ... toward Herman Saddle (~5,300 ft), roughly 1.5-2 miles and about 1,100 ft above the lakes"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "3.5"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "4.6"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.2"
+      }
+     ],
+     "why": "The approach puts the saddle ~2.25-2.75 mi in, and the itinerary gives 6.2 mi round trip, but the waypoints put the saddle at 3.5 mi and the summit at 4.6 mi one way (~9.2 mi round trip).",
+     "internal_resolution": "approach, dist_km (6.0 mi) and the itinerary agree on a ~6-mi round trip",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of the Chain Lakes Trail toward Herman Saddle",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the trail joins Chain Lakes Trail (Forest Service Trail 682), which bends east and begins switchbacking up toward Herman Saddle"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Herman Saddle lng -121.70916"
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "trailhead lng -121.682622"
+      }
+     ],
+     "why": "The trail is said to bend east toward Herman Saddle, but the saddle's coordinates are west of both the trailhead and Bagley Lakes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where SR 542 is gated in winter",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "SR 542 gates for winter each year at Heather Meadows (~milepost 54), closing the final 2.7 miles to Artist Point"
+      },
+      {
+       "field": "climate.bySeason.winter",
+       "says": "SR 542 is gated well below Heather Meadows"
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "The highway gate near Heather Meadows may not open until May or June in a heavy-snow year"
+      }
+     ],
+     "why": "ACCESS says the winter gate is at Heather Meadows (only the Artist Point spur closes), while CLIMATE says the highway is gated well below Heather Meadows.",
+     "internal_resolution": "access.closures and road.seasonalGate agree the gate is at Heather Meadows, closing only the final 2.7 mi",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "name": "South Ridge",
+   "area": "Mount Larrabee",
+   "contradictions": [
+    {
+     "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "Twin Lakes Trailhead elev 5200 — at the end of maintained FS-3065; the rough road continues ~2 more miles toward Twin Lakes"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Twin Lakes elev 5180, distMi 2 — Continue up the rough upper road about two miles and roughly 1,500 feet of gain"
+      },
+      {
+       "field": "approach",
+       "says": "Park at the Twin Lakes Trailhead at the end of FS-3065 (the last 2 miles are rough ...) ... High Pass is reached roughly 2 miles / 1.5–2 hours from the trailhead"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1]",
+       "says": "6:00 AM Twin Lakes, start High Pass trail"
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Twin Lakes basin road-end camp"
+      }
+     ],
+     "why": "The waypoints put the trailhead 2 mi and 1,500 ft below Twin Lakes (yet give both ~5,200 ft), while the approach, bivy and itinerary treat the trailhead as the road end at the lakes, where the High Pass trail starts.",
+     "internal_resolution": "approach, approach_variants, bivy, itinerary and road.driveNote all put the trailhead at the lakes (road end), with the rough 2 mi below it; the waypoint's 5,200-ft elevation also fits the lakes, so the trailhead waypoint's description is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Pass waypoint positions",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3]",
+       "says": "High Pass lat 48.9523 lng -121.6358"
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "Twin Lakes Trailhead lat 48.95176 lng -121.6358"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Low Pass lat 48.945076 lng -121.65624"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Head north past the lakes toward Low Pass then High Pass."
+      }
+     ],
+     "why": "The High Pass pin sits on the trailhead pin (~60 m apart) although the text puts it ~2 mi and ~700 ft higher, and the Low Pass pin is south of the lakes although the route heads north.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "10"
+      },
+      {
+       "field": "approach",
+       "says": "Total distance is roughly 8–10 miles round trip"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 6 miles and significant elevation gain if done car-to-car"
+      },
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      }
+     ],
+     "why": "The round trip is ~10 mi in the itinerary, totalNote and summit waypoint (5 mi one way), but 6 mi in partner requirements, and dist_km shows 4.0 mi.",
+     "internal_resolution": "itinerary, totalNote, approach and the summit waypoint agree on 8-10 mi",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the maintained trail is left",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Leave the trail near 6,400 ft, traverse/descend about 100-200 ft into the basin"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2]",
+       "says": "Around 6,400 ft, traverse and drop slightly into the basin"
+      },
+      {
+       "field": "approach",
+       "says": "Beyond High Pass the maintained trail ends; an unmarked climbers' path continues west, contouring and dropping 100–200 ft into the basin ... (around 6,400 ft you pass a small cliff band)"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "5940"
+      }
+     ],
+     "why": "The trail ends at High Pass (~5,900-5,940 ft), but the pitch breakdown and schedule leave it at 6,400 ft, which is the cliff band in the basin.",
+     "internal_resolution": "approach, approach_variants, bivy and waypoints put the end of the trail at High Pass, ~5,900 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Extra gain when parking at Yellow Aster Butte TH",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "park near Yellow Aster Butte TH, adding ~2.3 mi and 500 ft each way"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "Continue up the rough upper road about two miles and roughly 1,500 feet of gain"
+      }
+     ],
+     "why": "The same rough 2-mile road section adds 500 ft in the itinerary and ~1,500 ft in the waypoint directions.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent pace",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "the loose, chossy rock makes the descent nearly as slow as the ascent"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "5:30 AM leave ... 11:00 AM Summit ... 1:30 PM Back at trailhead"
+      }
+     ],
+     "why": "The schedule allows 5.5 hours up and 2.5 hours down, which contradicts the note that the descent is nearly as slow as the ascent.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Free self-issue wilderness permit at the Twin Lakes register."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight wilderness permit required"
+      },
+      {
+       "field": "access.permit",
+       "says": "None for day use; wilderness practices"
+      }
+     ],
+     "why": "ACCESS says no wilderness permit is needed, while the permit field and bivy call for a self-issue wilderness permit at the register.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "name": "Southwest Ridge",
+   "area": "Mount Sefrit",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II-III, Class 4"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "one steep-but-clean Class 4 step is the technical crux"
+      }
+     ],
+     "why": "The rock grade chip says Class 3, while the grade and every description put a Class 4 gully and crux step on the route.",
+     "internal_resolution": "grade, overview, hazards, waypoints, detailed_rack and the itinerary all say Class 4; rock_grade is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Route breakdown describes the other (SE) line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Final 100-150 feet of exposed Class 3 traversing, mixed rock and snow; cornice hazard near summit"
+      },
+      {
+       "field": "approach",
+       "says": "Note a separate, lower-angle SE-side line — via Wall Street Couloir and the Northwest Glacier — is Class 2 with one exposed ~100 ft Class 3 traverse"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Loose, blocky Class 4 gully breaches the final rock band to the summit ridge"
+      }
+     ],
+     "why": "The route breakdown's summit pitch describes the SE route's ~100 ft Class 3 traverse and has no Class 4 gully, while every other field puts this route's crux in a Class 4 summit gully.",
+     "internal_resolution": "approach, approach_variants, waypoints and itinerary agree on the Class 4 gully",
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "4:30 AM Leave trailhead ... 6-8:30 PM Back at trailhead"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10-14 hours"
+      }
+     ],
+     "why": "The schedule runs 13.5-16 hours, longer than the 12 hours in PUBLISHED TIMES and the 10-14 hours in totalNote.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4500"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5000"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2140"
+      }
+     ],
+     "why": "The total ascent is 4,500 ft in the stats but 5,000 ft in the itinerary; a 2,140-ft trailhead to a 7,191-ft summit is ~5,050 ft.",
+     "internal_resolution": "the itinerary's 5,000 matches the trailhead-to-summit difference",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at Nooksack Cirque Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "Northwest Forest Pass (or America the Beautiful interagency pass) required to park at the Nooksack Cirque Trailhead"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None required at the Nooksack Cirque Trailhead."
+      }
+     ],
+     "why": "The same ACCESS block says a Northwest Forest Pass is required and that no pass is required at this trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead / camp for this route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0]",
+       "says": "Hannegan trailhead, end of the Ruth Creek road ... the base for Mount Sefrit, which is normally done car-to-car from a pullout a few miles back down the road"
+      },
+      {
+       "field": "approach",
+       "says": "follow FR 34 one mile to its end at the Nooksack Cirque Trailhead (do not confuse with the separate Hannegan Pass Trailhead further up FR 32)"
+      }
+     ],
+     "why": "The only camp listed is the Hannegan trailhead and says Sefrit starts from a pullout on the Ruth Creek road, while the approach insists this route starts from the separate Nooksack Cirque Trailhead on FR 34.",
+     "internal_resolution": "approach, approach_variants, waypoints and road all use the Nooksack Cirque Trailhead",
+     "needs_research": false
+    },
+    {
+     "fact": "Which side the Wall Street Couloir route is on",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a separate, lower-angle SE-side line — via Wall Street Couloir and the Northwest Glacier"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Sefrit's other two routes are both reached from Ruth Creek on the NORTH side"
+      }
+     ],
+     "why": "The Wall Street/Northwest Glacier route is called the SE-side line in one field and a north-side route in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance from Mount Shuksan",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "about three miles north of Mount Shuksan"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Broad rocky summit block 4 miles north of Mount Shuksan"
+      }
+     ],
+     "why": "The summit is three miles north of Shuksan in the overview and four miles in the summit waypoint.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard during the season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route ... outside avalanche forecasting relevance"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "Wet-snow avalanches and cornices on nearby north-facing snow lines into early summer"
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      }
+     ],
+     "why": "AVALANCHE calls the climbing season avalanche-free, but KNOWN HAZARDS lists wet-snow avalanches into early summer, which falls inside the June-September season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Mount Sefrit",
+   "contradictions": [
+    {
+     "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "continue to its end at Hannegan Campground (about 2,950 ft). From the pullout/campground, cross Ruth Creek"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "continue ~5.4 mi to road's end at Hannegan Campground"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Hannegan Campground pullout at the end of Ruth Creek Road (~2,950 ft)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "continue to the pullout near milepost 3, just past where a creek flows over a concrete weir, at about 2,950 ft. This is NOT the Hannegan Pass Trailhead at the end of the road."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Mount Sefrit, which is normally done car-to-car from a pullout a few miles back down the road"
+      }
+     ],
+     "why": "The approach, road and trailhead card send the party to the road end at Hannegan Campground, while the approach variant and bivy say the route starts at a pullout near milepost 3 and explicitly not at the road end.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "Hannegan Campground pullout at the end of Ruth Creek Road (~2,950 ft)"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Hannegan trailhead, end of the Ruth Creek road — elev 3100"
+      }
+     ],
+     "why": "The road-end trailhead is ~2,950 ft on the trailhead card and 3,100 ft in the bivy; 2,950 ft is the milepost-3 pullout's elevation in the approach variant.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Overnight permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No permit for day use; overnight use requires the applicable wilderness permit"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in the Mount Baker Wilderness"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No overnight backcountry permit is needed to sleep here or anywhere between the road and the pass"
+      }
+     ],
+     "why": "access.permit says an overnight stay needs a wilderness permit, while the overnight permit line and the bivy say none is needed.",
+     "internal_resolution": "overnight_permit and bivy agree no overnight permit is needed",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "name": "Bloody Head Couloir",
+   "area": "Mount Sefrit",
+   "contradictions": [
+    {
+     "fact": "'Same trailhead as the Southeast Ridge'",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Same trailhead access as the Southeast Ridge route: drive to Ruth Creek Road's end at Hannegan Campground"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Wall Street is entered from the pullout near MILEPOST 3 at about 2,950 ft ... Bloody Head is entered from the TRAIL at 3,450 ft, higher up the valley"
+      }
+     ],
+     "why": "The approach says this route shares the Southeast Ridge's trailhead at the road end, while the base-finding text says the Southeast Ridge (Wall Street) starts from a separate milepost-3 pullout lower down the road.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Overnight permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No permit for day use; overnight use requires the applicable wilderness permit"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in the Mount Baker Wilderness"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No overnight backcountry permit is needed to sleep here or anywhere between the road and the pass"
+      }
+     ],
+     "why": "access.permit says an overnight stay needs a wilderness permit, while the overnight permit line and the bivy say none is needed.",
+     "internal_resolution": "overnight_permit and bivy agree no overnight permit is needed",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

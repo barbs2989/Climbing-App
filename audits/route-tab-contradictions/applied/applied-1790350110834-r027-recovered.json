@@ -1,0 +1,273 @@
+{
+ "applied": [
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Total route distance"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Total route distance"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Total route distance"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Total route distance"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "season",
+   "path": [],
+   "fact": "Best/actual climbing season"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best/actual climbing season"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Best/actual climbing season"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Best/actual climbing season"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche hazard on the route"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "byMonth"
+   ],
+   "fact": "Avalanche hazard on the route"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "overview",
+   "path": [],
+   "fact": "Whether the route uses the named International/Edelweiss/Armstrong ski runs"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Crowds line frames the International runs as a different route"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Summit step difficulty (Class 2 vs Class 3)"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    3
+   ],
+   "fact": "Summit step difficulty (Class 2 vs Class 3)"
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Summit step difficulty (Class 2 vs Class 3)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "before": {
+    "dist_km": 2.25,
+    "approach": "Park at the large Alpental Ski Area lot at the end of Alpental Road (about 1.4 miles/2 miles up from I-90 Exit 52, per differing trip-report odometers), elevation roughly 3,100 ft. There is no signed trailhead or maintained trail for Denny Mountain itself — climbers cross the base area and pick up boot-track/climber's paths under the old Armstrong Express / Sessel chairline on the mountain's north-facing slopes. Early season or in a lingering snowpack this is straightforward: hike the barren lower ski slopes for a few hundred feet of gain to snowline, then switch to crampons/axe and follow the Lower International ski run up into a small basin. From there the route continues up the steep Upper International run (a double-black-diamond pitch that holds firm snow late into the year and is the crux of the ascent in spring conditions) to the top of the Edelweiss chairlift unloading station (the Edelweiss lift was rebuilt as a new Doppelmayr triple chair, opened January 2026, replacing the original 1967 Riblet double that had earned it the old 'Edelweiss' nickname on this route). In summer/dry conditions the same line goes as a rough boot-path and talus/scree scramble through brush, small hemlocks, and huckleberry — expect neck-deep slide alder and bramble in spots, loose scree underfoot, and only intermittent pink/white/blue flagging that does not reliably mark the line; route-finding is the main hazard low on the mountain. Above the lift station, angle up the wide open ramp toward the summit horn; this transitions from scree/heather to broken rock. A fixed steel cable (a short via-ferrata-style handline) protects an exposed, down-sloping and often slick rock ledge traverse just below the top. The route finishes with a short Class 2–3 scramble (some parties note a stiffer Class 3–4 move) through a narrow rock cleft to the summit block, which carries an old radio-relay structure and a survey marker. One-way distance/gain from the lot to the summit runs roughly 2.5–2.8 miles and about 2,500 ft, consistent with the ~4.7 mi (7.56 km) round-trip logged for this route; best window is late spring through mid-July after the resort closes but before the snow gullies melt out and expose looser rock and scree.",
+    "approach_variants": [
+     {
+      "name": "Alpental base area and the ski runs under the old Armstrong Express line",
+      "notes": "Park at the large Alpental lot at the end of Alpental Road, about 3,100 ft. There is no signed trailhead and no maintained trail for Denny Mountain. Cross the base area and pick up boot tracks and climbers' paths on the north-facing slopes under the old Armstrong Express and Sessel chair lines.\n\nOn snow this is simple: walk the barren lower slopes a few hundred feet to snowline, put on crampons and axe, and follow the Lower International run into a small basin, then the steep Upper International run — a double-black pitch that holds firm snow late and is the crux in spring — to the top of the Edelweiss chairlift unloading station.\n\nDry, the same line is a rough boot path and scree scramble through slide alder, small hemlocks and huckleberry, with only intermittent flagging that does not reliably mark anything.\n\nAbout 2.5 to 2.8 miles and 2,500 ft one way.",
+      "distMi": 2.6,
+      "gainFt": 2500,
+      "season": "Late spring to mid-July, after the resort closes but before the snow gullies melt out and expose looser rock and scree",
+      "hazards": [
+       "Loose footing on scree and dirt once the snow has gone",
+       "Neck-deep slide alder and bramble low on the mountain in summer, with unreliable flagging",
+       "Ski-area infrastructure on the route",
+       "A brief exposed class 2-3 step and narrow ledge at the true summit",
+       "Avalanche terrain on these slopes when snow-covered"
+      ],
+      "baseFinding": "THIS PEAK GIVES YOU MAN-MADE LANDMARKS, WHICH IS UNUSUAL AND WORTH USING. Navigate by the ski runs and the lift, not by the mountain: Lower International, then the steep Upper International, then the TOP OF THE EDELWEISS CHAIRLIFT UNLOADING STATION. Standing at that lift station is the arrival test for the end of the approach, and it is a building — it does not disappear in cloud.\n\nWHERE THE REAL CLIMBING BEGINS: above the lift station, angle up the WIDE OPEN RAMP toward the summit horn, which changes underfoot from scree and heather to broken rock.\n\nTHE UNMISTAKABLE MARKER IS A FIXED STEEL CABLE. A short via-ferrata-style handline protects an exposed, down-sloping and often slick ledge traverse just below the top. There is nothing else like it on this mountain. If you have reached steep ground and there is no cable, you are not on the correct line to the summit block.\n\nAND THE TOP CONFIRMS ITSELF: past the cable, a short class 2-3 scramble through a NARROW ROCK CLEFT reaches a summit carrying an old radio-relay structure and a survey marker. Hardware on the summit is the final proof.\n\nTHE HARD PART, HONESTLY STATED: on dry ground the route-finding LOW on the mountain is the hazard, not the summit. The flagging is pink, white and blue, inconsistent, and does not reliably mark the line. In snow this problem disappears entirely, which is why the season here is spring rather than summer."
+     }
+    ],
+    "season": "Apr-Jun",
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September as the driest, most reliable window",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Slopes usually dry out by mid-to-late July; early July can still hold lingering snow patches on north-facing terrain",
+       "status": "good"
+      },
+      "August": {
+       "reason": "In season; driest, most stable footing and lowest snow risk",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early season snow and increasing rain become likely at the pass as fall progresses; ski-area preparations and shoulder-season closures may apply",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still reliably dry; shortening days and cooling temps",
+       "status": "good"
+      }
+     }
+    },
+    "itinerary": {
+     "cal": "Best done snow-free (roughly July-October); a Northwest Forest Pass is needed to park at Alpental in summer, a Sno-Park pass in winter.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Alpental (Snow Lake) parking lot, follow climber/goat paths uphill under the Sessel chairlift, pick up a faint boot path through timber, and continue to the boulder fields in Edelweiss Bowl below the summit ridge. The final summit block is class 3 with an optional short class 4 chimney (or a ledge traverse around a tree to the left as an alternative); descend by reversing the same route, with some parties glissading lower snow patches when present.",
+       "hours": 6.5,
+       "miles": 4.7,
+       "title": "Car-to-car scramble via North Slopes",
+       "gainFt": 2500,
+       "lossFt": 2500,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Alpental/Snow Lake parking lot",
+         "detail": "Cross toward the ski area base and start up the climber's path under the Sessel chairlift."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Pick up boot path through timber",
+         "detail": "Route-finding is tricky here; watch for occasional flagging."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Reach Edelweiss Bowl boulder field",
+         "detail": "Talus/boulder hopping toward the base of the summit block."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Summit block",
+         "detail": "Class 3 scramble with an optional class 4 chimney, or an exposed ledge traverse around a tree as an alternate finish."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Summit (5,614 ft)",
+         "detail": "Views of Snoqualmie Pass, the Tooth, and Chair Peak."
+        },
+        {
+         "time": "+6.5 hr",
+         "label": "Back at trailhead",
+         "detail": "Descend by reversing the ascent route."
+        }
+       ],
+       "objective": "Summit Denny Mountain and return same day"
+      }
+     ],
+     "totalNote": "A single, moderately strenuous day: roughly 4.5-7 hours car-to-car with about 2,500 ft of gain over ~4.7 miles round trip, culminating in a class 3 (optional class 4) summit block."
+    },
+    "access": {
+     "fees": "$5 daily or $30 annual Northwest Forest Pass (Interagency/America the Beautiful pass also honored); no wilderness permit needed since this route stays outside the adjacent Alpine Lakes Wilderness. Note Summit at Snoqualmie charges separate paid lot parking (roughly $25/vehicle) during active ski-area operating days in winter.",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "rules": "Leave No Trace; stay clear of lift infrastructure and any operating ski terrain",
+     "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+     "closures": "Respect ski-area operations and closures in winter; WSDOT periodically closes I-90 through the pass for avalanche-control work on Denny Mountain's own slide paths, which can affect access even at the trailhead",
+     "group_limit": 12,
+     "landManager": "Mt. Baker-Snoqualmie National Forest, Snoqualmie Ranger District (Alpental ski area operates on NF land under a special-use permit)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+     "passRequired": "Northwest Forest Pass at the Alpental trailhead lot",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Very wet maritime climate at Snoqualmie Pass; the July-October window is the drier season, with slopes clear of snow and best conditions in August",
+      "probability": "Occasional afternoon thunderstorms possible in July-August; rain frequency increases into October as the pass transitions toward its wet season"
+     },
+     "exposure": "Low-to-moderate consequence Class 2 terrain; primary hazards are loose footing on scree/talus and boulder fields and proximity to ski-area infrastructure (lift towers/cables) that the route travels alongside",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer/fall scramble route (falls within NWAC's Snoqualmie Pass forecast zone, relevant only outside the route's July-October climbing season)",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "overview": "Denny Mountain rises directly above the Alpental ski area at Snoqualmie Pass, making it one of the most accessible summits in the corridor. Its long, jagged, roughly one-mile ridge runs NNW, with Alpental's ski runs (International, Edelweiss, Armstrong) climbing the peak's eastern flank and this route working the quieter north-facing slopes toward the same summit ridge. The scramble is little more than a steep grass/talus walk-up for most of its length in summer, but the true highpoint sits atop a short rock step — most parties (Mountaineers trip reports, trailhead logs) describe a brief, exposed Class 2-3 move or narrow ledge/chimney to actually tag the summit, so this isn't a pure Class 2 talus hike start to finish. USGS quad data puts the summit around 5,520+ ft (older NGVD29 datum); some newer survey accounts list it closer to 5,614-5,620 ft.",
+    "crowds": {
+     "peakTraffic": "Weekend mornings July-August, when Alpental parking and the Snow Lake trailhead corridor are busiest",
+     "solitudeRating": 3,
+     "estimatePerSeason": "Roughly a dozen or so documented parties per season (occasional trip reports spanning 2004-2024); lighter than the standard Denny Mountain routes via the International ski runs or South Face because the North Slopes line goes directly up under/alongside the Sessel chairlift rather than a marked trail"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate — roughly 2000-2500 ft gain over a short summer approach; existing trip reports show round trips in the 3-3.5 hour range from the Alpental lot",
+      "packWeight": "Light day pack (water, layers, helmet); no overnight or technical gear needed in dry conditions"
+     },
+     "approachTime": "Short — roughly 1-1.5 hours from the Alpental trailhead to the base of the north-facing slopes",
+     "requiredSkills": [
+      "Basic off-trail route-finding (goat/climber paths under the ski lift, no maintained tread)",
+      "Comfort on loose talus/scree and boulder fields (Edelweiss Bowl area)",
+      "Awareness of and courtesy around active ski-area infrastructure (lift towers, cables)",
+      "No rope/technical skills required for a dry-season Class 2 ascent"
+     ],
+     "experienceLevel": "Beginner-friendly Class 2 scramble; suitable for a partner new to off-trail scrambling but comfortable with loose, unmarked terrain"
+    }
+   }
+  }
+ ]
+}

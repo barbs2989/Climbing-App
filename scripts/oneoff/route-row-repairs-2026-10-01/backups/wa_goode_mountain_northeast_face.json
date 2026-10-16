@@ -1,0 +1,72 @@
+{
+ "id": "wa_goode_mountain_northeast_face",
+ "name": "Northeast Face",
+ "itinerary": {
+  "cal": "Same NPS backcountry permit zone and July-September seasonal window as the other Goode Glacier routes.",
+  "days": [
+   {
+    "n": 1,
+    "note": "PCT south from the Bridge Creek trailhead, up North Fork Bridge Creek (ford required), then off-trail to a camp near the glacier toe/moraine (~6,700 ft), the shared staging camp for Goode's northeast-side routes.",
+    "hours": 8,
+    "miles": 14,
+    "title": "Approach to high camp",
+    "gainFt": 4600,
+    "lossFt": 0,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach camp near the Goode Glacier moraine"
+   },
+   {
+    "n": 2,
+    "note": "Cross the glacier to the base of the face and climb to the summit (roped low-5th-class climbing similar in character to the adjacent Northeast Buttress), then descend the standard Southwest Couloir back down toward camp. A long, full day out and back.",
+    "hours": 12,
+    "miles": 5,
+    "title": "Climb the Northeast Face, descend the Southwest Couloir",
+    "gainFt": 2600,
+    "lossFt": 2600,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "Pre-dawn",
+      "label": "Leave camp, cross the glacier",
+      "detail": "Rope up for crevasse crossing as needed."
+     },
+     {
+      "time": "Morning",
+      "label": "Climb the Northeast Face",
+      "detail": "Mix of scrambling and low 5th class pitches to the ridge/summit."
+     },
+     {
+      "time": "Midday",
+      "label": "Summit (9,220 ft)",
+      "detail": ""
+     },
+     {
+      "time": "Afternoon",
+      "label": "Descend the Southwest Couloir",
+      "detail": "Rappel/downclimb the standard descent line."
+     },
+     {
+      "time": "Evening",
+      "label": "Back at high camp",
+      "detail": ""
+     }
+    ],
+    "objective": "Summit via the face, return to camp via the SW Couloir"
+   },
+   {
+    "n": 3,
+    "note": "Reverse the approach back down North Fork Bridge Creek and the PCT to Highway 20.",
+    "hours": 8,
+    "miles": 14,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 4600,
+    "packLb": 30,
+    "schedule": [],
+    "objective": "Return to the Bridge Creek trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip mirroring Goode's other northeast-side lines: long approach to a shared glacier camp, one long face-climb-and-couloir-descend day (~12 hr), then hike out; roughly 33 mi and 6,500-7,000 ft of gain round trip."
+ }
+}

@@ -1,0 +1,603 @@
+{
+ "file": "r384.json",
+ "results": [
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Route distance",
+   "verdict": "fixed",
+   "correct_value": "About 10-11 mi one way (~21 mi round trip); bikes stashed ~6.5 mi in near Orsino Creek; foot travel ~4 mi from the bike cache to the summit",
+   "evidence": "A GPS-tracked trip report gives 21.4 mi round trip with 6.25 mi of biking each way to the timber-road terminus; the Mountaineers route page lists 20 mi round trip. Another report stashed bikes at the Orsino Creek crossing after ~7 bike miles. So one-way is ~10-10.7 mi, not 12+; dist_km (12.5 mi) and the summit distMi of 12 overstate it and the 19 mi itinerary is slightly short. Intermediate waypoint distances were shifted to keep order and match the ~4 mi foot leg (basin/notch values are approximate).",
+   "sources": [
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister",
+    "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 20.1,
+     "value": 16.9,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 19,
+     "value": 21,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~19 mi round trip",
+     "replace": "~21 mi round trip",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "on the order of 12+ miles one-way",
+     "replace": "roughly 10-11 miles one-way",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 8.5,
+     "value": 6.5,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 9.5,
+     "value": 7.5,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 10.5,
+     "value": 9,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 11,
+     "value": 10.4,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 12,
+     "value": 10.5,
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total foot travel from the bike cache to the ridge is roughly 4 miles",
+     "replace": "Total foot travel from the bike cache to the summit is roughly 4 miles",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "About four miles of foot travel from the bike cache to the ridge",
+     "replace": "About four miles of foot travel from the bike cache to the summit",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Route distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Bike stash location and bike-leg gain",
+   "verdict": "fixed",
+   "correct_value": "Bike leg ~6-7 mi with well over 2,000 ft of gain (gate ~1,200 ft, Dailey Prairie ~3,200 ft); bikes are stashed at the timber-road end near the Orsino Creek crossing",
+   "evidence": "DNR puts Dailey Prairie at about 3,200 ft, 2,000 ft above the 1,200 ft gate, and a North Twin report rides ~5 mi and 2,000 ft to reach it; South Twin parties ride beyond the prairie, 6.25-7 mi, and stash bikes at the timber-road terminus by the Orsino Creek crossing. The 800-1,000 ft bike-gain figure is impossible. The bivy card's Dailey Prairie stash is left to the separate camping clean-up.",
+   "sources": [
+    "https://www.dnr.wa.gov/dailey-prairie-natural-area-preserve",
+    "https://www.lucasmountainknowledge.com/post/north-twin-july-2024",
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "for roughly 6-6.5 miles and about 800-1,000 ft of gain",
+     "replace": "for roughly 6-7 miles and well over 2,000 ft of gain",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Bike stash location and bike-leg gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "for roughly 6-6.5 miles and 800-1,000 ft of gain",
+     "replace": "for roughly 6-7 miles and well over 2,000 ft of gain",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Bike stash location and bike-leg gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Notch vs false summit relationship",
+   "verdict": "fixed",
+   "correct_value": "The 5,200 ft starting notch is ~1,300 ft below the ~6,500 ft false summit; the '400 ft below' figure belongs to a separate high notch near the top where the south-side gully traverse starts",
+   "evidence": "One trip report places the obvious starting notch at about 5,200 ft and the cliffy false summit at about 6,500 ft. A route description places a high notch about 400 ft below the summit as the point to traverse south to Class 2-3 gullies. The waypoint note conflated the two notches.",
+   "sources": [
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+    "https://www.summitpost.org/south-twin/679815"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "roughly 400 ft below the false summit; from this notch a traverse right (south) leads to easier Class 2-3 gullies instead of the ridge crest.",
+     "replace": "roughly 1,300 ft below the false summit; higher up, from a second notch about 400 ft below the summit, a traverse right (south) leads to easier Class 2-3 gullies instead of the ridge crest.",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Notch vs false summit relationship"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "False summit to true summit distance / bypass direction",
+   "verdict": "fixed",
+   "correct_value": "True summit is ~50 yards beyond the false summit; the bypass leaves/rejoins the crest ~200 yards short of the false summit, about 500 ft below that point (higher on ascent, lower on descent), on the south side",
+   "evidence": "A trip report finds the true summit about 50 yards past the false summit. A Mountaineers route note says to move off the crest 200 yards from the false summit and rejoin it 500 ft lower on descent — so '200 yards' is the distance to the false summit, not the summit gap, and in ascent terms the crest is regained 500 ft higher than where it was left. watch_out and the ascent-framed baseFinding are reworded accordingly.",
+   "sources": [
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "The false summit ~200 yards before the true top — don't commit to the ridge-crest 5th-class step; traverse right and regain the crest ~500 ft higher via the cairned route",
+     "replace": "Below the false summit (itself about 50 yards short of the true top), don't commit to the ridge-crest 5th-class step; traverse right and regain the crest ~500 ft higher, about 200 yards short of the false summit, via the cairned route",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "False summit to true summit distance / bypass direction"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "about 200 yards short of the false summit, leave the crest to the RIGHT — south — traverse ledges, and regain the crest roughly 500 ft lower.",
+     "replace": "leave the crest to the RIGHT — south — traverse ledges, and regain the crest about 200 yards short of the false summit, roughly 500 ft above where you left it.",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "False summit to true summit distance / bypass direction"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Fees / permits / land status",
+   "verdict": "fixed",
+   "correct_value": "No trailhead fee or parking pass at the gate, but the private timberland road beyond requires the landowner's fee recreation access permit (capped non-motorized permits; no camping on the timberland)",
+   "evidence": "The gate on the bridge is posted by the timber company as permit required for all access, with paid annual and non-motorized day permits and no overnight stays. Weyerhaeuser sold these North Cascades lands to Hampton, which runs a fee access recreational permit over ~79,000 acres in Whatcom/Skagit/Snohomish with 150 non-motorized permits and no camping. The stale dollar figures and company name in crowds are removed. Dailey Prairie itself is a DNR Natural Area Preserve (DNR confirms), which is not a contradiction. The wilderness permit and Discover Pass sub-questions are split out below as unresolved.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.summitpost.org/twin-sisters-range/171190",
+    "https://www.hamptonlumber.com/hampton-acquires-145000-acres-of-timberland-in-n-w-washington-to-help-supply-darrington-sawmill/",
+    "https://www.arisigglin.com/blog/2018/9/11/dailey-prairie-twin-sisters-range-etc"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None — this is an informal roadside approach, not a developed trailhead",
+     "value": "No trailhead fee; the private timberland road beyond the gate requires the landowner's fee recreation access permit",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Fees / permits / land status"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "park at the gate even if open, no permit required but many parties bike the long road beyond.",
+     "replace": "park at the gate even if open; no parking permit is needed, but the private timberland road beyond requires the landowner's fee access permit, and many parties bike it.",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Fees / permits / land status"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "gated/permitted private-timberland access (Olivine Corp. permits reported around $250/vehicle or $75/foot-travel) keeps",
+     "replace": "gated private-timberland access that requires a paid, capped landowner permit keeps",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Fees / permits / land status"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland;",
+     "replace": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it);",
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Fees / permits / land status"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Wilderness self-issue permit and Discover Pass",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "access.permit says a free self-issue wilderness permit is needed at a trailhead register, while overnight_permit says none is needed, and permit asks for a Discover Pass on DNR parking. The forest's wilderness-regulation page found only states self-issue permits for Alpine Lakes Wilderness plus the 12-person limit; no source was found stating a Mount Baker Wilderness permit or a Discover Pass requirement at the FR 38 gate.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "One-way distance",
+   "verdict": "fixed",
+   "correct_value": "About 10-11 mi one way (~20-21 mi round trip)",
+   "evidence": "Same approach and summit as the West Ridge: a GPS-tracked report gives 21.4 mi round trip with 6.25 mi of biking each way, and the Mountaineers lists 20 mi round trip. The 2026-08-27 halving of dist_km relied on a 12.5 mi figure that is not a round trip for the whole outing; 6.2 mi one way and 12+ mi one way are both wrong.",
+   "sources": [
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister",
+    "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 10.05,
+     "value": 16.9,
+     "id": "wa_south_twin_sister_scramble",
+     "fact": "One-way distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 7.45,
+     "value": 10.5,
+     "id": "wa_south_twin_sister_scramble",
+     "fact": "One-way distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "on the order of 12+ miles one-way",
+     "replace": "roughly 10-11 miles one-way",
+     "id": "wa_south_twin_sister_scramble",
+     "fact": "One-way distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "Gain less than trailhead-to-summit rise",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "5,400 ft cannot reach 7,004 ft from the 1,200 ft gate. One GPS report gives 6,102 ft for the outing; another gives 5,400 ft but counts 800 ft of it driven; the Mountaineers lists 3,700 ft. No two outside sources agree on a car-to-car figure, so gain_ft/loss_ft are left for review (~6,100 is the best single figure).",
+   "sources": [
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister",
+    "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "Fees / passes / wilderness permit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "access.fees (landowner fee permit) is supported by the landowner's recreation page and the posted gate sign. But no source settled whether a Northwest Forest Pass or Discover Pass applies at the FR 38 gate, or whether a Mount Baker Wilderness self-issue permit is required on this cross-country approach; the forest's regulation page found only covers Alpine Lakes. No patch.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "Camping near Dailey Prairie",
+   "verdict": "fixed",
+   "correct_value": "No camping on the private timberland around Dailey Prairie; split trips camp in the Orsino Creek basin on the forest side",
+   "evidence": "The landowner's recreation rules prohibit camping on its timberlands, and the older timber-company permit terms likewise allowed day use only with no overnight stays. The itinerary and the overnight-permit note are corrected to match the camp card.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.summitpost.org/twin-sisters-range/171190"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "some parties camp at Orsino Creek Basin or near Dailey Prairie to split",
+     "replace": "some parties camp high in Orsino Creek Basin to split",
+     "id": "wa_south_twin_sister_scramble",
+     "fact": "Camping near Dailey Prairie"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland;",
+     "replace": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it);",
+     "id": "wa_south_twin_sister_scramble",
+     "fact": "Camping near Dailey Prairie"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Rock grade",
+   "verdict": "fixed",
+   "correct_value": "Mostly Class 3 with Class 4 steps and some low-5th variations on the crest; nothing mid-5th",
+   "evidence": "The Mountaineers rates the traverse that uses this ridge Class 3; a route description calls the North Ridge mostly Class 3 with some low-5th variations. No source supports mid-5th, so the hazard line is corrected; rock_grade already hedges Class 3/4 and the climbing route's 'possibly low fifth' agrees.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse",
+    "https://www.summitpost.org/south-twin/679815"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      3
+     ],
+     "expect": "Real exposure on mid-5th-class sections of the ridge crest",
+     "value": "Real exposure on low-5th-class sections of the ridge crest",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Glacier travel required vs optional / non-glaciated",
+   "verdict": "fixed",
+   "correct_value": "The Sisters Glacier crossing (with moat/bergschrund) is part of the standard North Ridge approach from the saddle",
+   "evidence": "The Mountaineers traverse description moves south on the Sisters Glacier to the bergschrund and then up to the North Ridge crest; a traverse report crossed the Sisters Glacier and a small moat to reach it. The row's pitch_detail, itinerary, climbing_route and crevasse field agree; gear, hazards, avalanche zone and what_to_bring are aligned.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse",
+    "https://www.jeffreyjhebert.com/adventures/twin-sisters-traverse"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "expect": "Crampons, ice axe, and crevasse-rescue kit if crossing the Sisters Glacier toward North Twin",
+     "value": "Crampons, ice axe, and crevasse-rescue kit for the Sisters Glacier crossing below the ridge",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Glacier travel required vs optional / non-glaciated"
+    },
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "expect": "Crevasses on the Sisters Glacier if linking to North Twin",
+     "value": "Crevasses and the moat on the Sisters Glacier crossing below the ridge",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Glacier travel required vs optional / non-glaciated"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scramble/alpine rock route;",
+     "replace": "N/A - summer alpine rock route with a short glacier crossing;",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Glacier travel required vs optional / non-glaciated"
+    },
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      3
+     ],
+     "expect": "ice axe (early season)",
+     "value": "ice axe and crampons",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Glacier travel required vs optional / non-glaciated"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers rates the full Twin Sisters traverse (which includes this ridge) Grade II, which would make the North Ridge alone at most Grade II, matching commitment 'II' and not grade 'Grade III'. No second independent source giving this route's commitment grade was found, so no patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Best time for the glacier crossing",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Best in July, after the crest sheds its early snow but before the moat/bergschrund opens; September is still in season but has the widest moat",
+   "evidence": "The Mountaineers notes the bergschrund may be problematic later in the season. The row's season, hazards[2], pro_tips[2], climbing_route[0], approach_variants season and crevasse field all say the moat widens through the season, while seasonal guidance rates June risky for crest snow. itinerary.cal and the September reason are aligned; statuses are left as rated.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "best attempted June-July before it opens up.",
+     "replace": "best attempted in July, before it opens up.",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Best time for the glacier crossing"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September",
+      "reason"
+     ],
+     "find": "Still within season but with shortening days and increasing weather variability",
+     "replace": "Still within season but with shortening days, increasing weather variability, and the widest moat of the year at the Sisters Glacier crossing",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Best time for the glacier crossing"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Bypass direction on the West Ridge descent",
+   "verdict": "fixed",
+   "correct_value": "The false-summit bypass is on the south side of the West Ridge",
+   "evidence": "A route description has parties traverse south from the high notch to gullies that reach the summit, and a traverse report descended a dirty couloir to the south from the false summit; the sibling West Ridge row and this row's own climbing_route also use the south side. The 'north side' in the descent text is corrected.",
+   "sources": [
+    "https://www.summitpost.org/south-twin/679815",
+    "https://www.jeffreyjhebert.com/adventures/twin-sisters-traverse"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "contour off the crest to the right (north side)",
+     "replace": "contour off the crest onto the south side",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Bypass direction on the West Ridge descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Fees / camping on the timberland",
+   "verdict": "fixed",
+   "correct_value": "The private timberland roads need the landowner's fee access permit and allow no camping",
+   "evidence": "The gate is posted permit-required by the timber company with paid permits and no overnight stays; the current landowner (which bought these Weyerhaeuser lands) runs a capped fee recreation permit and bans camping on its timberlands.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.summitpost.org/twin-sisters-range/171190",
+    "https://www.hamptonlumber.com/hampton-acquires-145000-acres-of-timberland-in-n-w-washington-to-help-supply-darrington-sawmill/",
+    "https://www.arisigglin.com/blog/2018/9/11/dailey-prairie-twin-sisters-range-etc"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None, but access via private/DNR roads subject to gates",
+     "value": "No trailhead fee; the private timberland road beyond the gate requires the landowner's fee recreation access permit",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Fees / camping on the timberland"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland;",
+     "replace": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it);",
+     "id": "wa_south_twin_sister_north_ridge",
+     "fact": "Fees / camping on the timberland"
+    }
+   ]
+  }
+ ]
+}

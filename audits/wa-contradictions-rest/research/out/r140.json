@@ -1,0 +1,635 @@
+{
+ "file": "r140.json",
+ "results": [
+  {
+   "id": "wa_big_kangaroo_kearney_thomas",
+   "fact": "First-ascent party",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only published record of the party found (an unreachable guide page and a forum thread that would not load) could not be read; the AAC report and the route's area page name the line Kearney-Thomas but give no first names or year. No two independent readable sources name Alan Kearney with Jeff and Bill Thomas, so neither field is changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Big-Kangaroo-Kearney-Thomas"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "fact": "Whether the standard descent includes rappels",
+   "verdict": "fixed",
+   "correct_value": "Standard descent is the scramble to the notch and the gully; the missing anchors were on the option of rappelling the Beckey-Tate line itself.",
+   "evidence": "The route page for Beckey-Tate gives the descent as a scramble to the summit notch and the gully to the hairpin, with rappelling the Beckey-Tate line (5-6 two-rope raps) as an unsafe alternative. The Skinny Start trip report says the party could not find a rap anchor along the top of the 'suggested rap route: Becky-Tate' and took a high traverse to the saddle instead - i.e. the missing anchors were on the face-rappel option, not the walk-down gully.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate",
+    "https://waynewallace.wordpress.com/2017/07/09/liberty-traverse-skinny-start-big-kangaroo/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The intended descent follows the Beckey-Tate line (scramble to the notch, then the loose gully back to the Hairpin pullout), but at least one party reported being unable to find a rappel anchor along the top of the suggested Beckey-Tate descent and instead",
+     "replace": "The standard descent is the Beckey-Tate walk-down (scramble to the notch, then the loose gully back to the Hairpin pullout). Rappelling the Beckey-Tate line itself is the other option, but at least one party was unable to find a rappel anchor along the top of that line and instead",
+     "id": "wa_big_kangaroo_skinny_start",
+     "fact": "Whether the standard descent includes rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "though one recorded party could not locate rappel anchors and instead",
+     "replace": "though one party looking to rappel the Beckey-Tate line could not locate anchors and instead",
+     "id": "wa_big_kangaroo_skinny_start",
+     "fact": "Whether the standard descent includes rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "fact": "Number of days",
+   "verdict": "fixed",
+   "correct_value": "A single long day for the route; the two-day figure belonged to one party's multi-objective trip.",
+   "evidence": "The trip report behind the 'two-day' wording was a four-day weekend that linked the Liberty Bell traverse with this route, carrying 60-lb packs. The area page gives the south-face approach as 2.5-5 hours, i.e. a day outing from the hairpin.",
+   "sources": [
+    "https://waynewallace.wordpress.com/2017/07/09/liberty-traverse-skinny-start-big-kangaroo/",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [],
+     "expect": "A long, sustained day: the recorded ascent describes a grueling two-day effort involving multiple linked objectives, with heavy loads carried on the descent.",
+     "value": "A long, sustained day: multi-hour approach, three hard pitches that join the Kearney-Thomas finish, and a descent that can run long if you go looking for rappel anchors.",
+     "id": "wa_big_kangaroo_skinny_start",
+     "fact": "Number of days"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Approach line: cross Early Winters Creek early vs stay west of it",
+   "verdict": "fixed",
+   "correct_value": "Stay on the climbers' trail on the west (right) side of Early Winters Creek, then cut left (east) from the upper basin toward the low point between Big Kangaroo and Half Moon; the 0.4-mile crossing is the West Face line.",
+   "evidence": "One trip report describes the approach as following the right side of Early Winters Creek and cutting left at the head of the basin toward the low point between Big Kangaroo and Half Moon. The area page's south-face approach likewise follows the right side of the creek to a meadow (~40 min) and then heads left uphill for the low point on the ridge. The West Face approach is the one that cuts east across the creek early.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo",
+    "https://www.mountainproject.com/route/122767018/west-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Early Winters Creek Crossing (East Bearing)",
+     "value": "Early Winters Creek (West Face turnoff)",
+     "id": "wa_beckey_tate",
+     "fact": "Approach line: cross Early Winters Creek early vs stay west of it"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "expect": "Cross Early Winters Creek here and angle east off the west-face climbers' trail toward the Kangaroo Pass gully system.",
+     "value": "The West Face line crosses the creek near here; for the south face, stay on the climbers' trail on the west side of the creek and keep heading up-valley.",
+     "id": "wa_beckey_tate",
+     "fact": "Approach line: cross Early Winters Creek early vs stay west of it"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Cross Early Winters Creek and head up through the Kangaroo Pass gullies toward the south face.",
+     "value": "Follow the climbers' trail up the west side of Early Winters Creek, then cut left (east) from the upper basin toward the low point between Big Kangaroo and Half Moon.",
+     "id": "wa_beckey_tate",
+     "fact": "Approach line: cross Early Winters Creek early vs stay west of it"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Kangaroo Pass waypoint on the south-face approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Kangaroo Pass waypoint (1.3 mi, 6,671 ft) says the approach breaks east from the pass, while the approach prose and the area page turn left from the upper basin meadow toward the Big Kangaroo-Half Moon low point. A hiking report puts Kangaroo Pass about 3 miles from the hairpin, between the Early Winters and Twisp drainages, which does not fit a 1.3-mile pin. Not settled; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/114423617/big-kangaroo",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "3,166 ft car-to-summit (5,160 ft pullout to 8,326 ft summit)",
+   "evidence": "The summit is 8,326 ft on the standard listing and the hairpin pullout is about 5,150 ft, so reaching the summit gains at least ~3,166 ft; gain_ft, the approach prose and both pins agree. The area page's ~2,800 ft is the approach gain to the face, not the summit day, so the itinerary day total is raised to match.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Big_Kangaroo",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2800,
+     "value": 3166,
+     "id": "wa_beckey_tate",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 2800,
+     "value": 3166,
+     "id": "wa_beckey_tate",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "for 2,800 ft gain",
+     "replace": "for about 3,166 ft gain",
+     "id": "wa_beckey_tate",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Where the route tops out relative to the summit",
+   "verdict": "fixed",
+   "correct_value": "The face tops out ~20 ft below a notch between the south face and the true summit, which is a few hundred feet higher; reaching the summit means dropping ~150 ft and joining the West Route gully and its short pitches.",
+   "evidence": "The route page says to scramble 20 ft up and left to the notch and notes that south-face routes do not reach the true summit. One trip report says the south face ends a few hundred feet below the summit and continues up the West Face route via a snow gully; another says the party topped out at the col between the south face and the true summit, and that the way on is 150 ft down scree, north into another gully, then about three low-5th pitches to the 5.6 slab.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate",
+    "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "expect": "From the last belay scramble about 20 ft up and left to the notch just north of the summit block — the same notch the West Face route uses — then make the short, exposed, essentially unprotected 5.6 slab move, guarded only by a single old 1/4-inch bolt, to the true summit.",
+     "value": "From the last belay scramble about 20 ft up and left to the notch between the south face and the true summit, which stands a few hundred feet higher. To tag it, drop about 150 ft of scree on the far side, cross north into the West Route gully and climb its short pitches, finishing with the exposed, essentially unprotected 5.6 slab move past a single old 1/4-inch bolt.",
+     "id": "wa_beckey_tate",
+     "fact": "Where the route tops out relative to the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Instead, from the top of the route scramble about 20 ft up and left to the notch just north of the summit block — the same notch used by the West Face/Southwest Rib route. From there, downclimb or top-rope the short, unprotected 5.6 summit slab move (protected by a single old bolt) if tagging the true summit, then reverse the shared gully descent:",
+     "replace": "Instead, from the top of the route scramble about 20 ft up and left to the notch between the south face and the true summit, which stands a few hundred feet higher. To tag it, drop about 150 ft of scree on the far side, cross north into the West Route gully and climb its short pitches to the unprotected 5.6 summit slab (protected by a single old bolt), which is downclimbed or top-roped; then descend the shared gully:",
+     "id": "wa_beckey_tate",
+     "fact": "Where the route tops out relative to the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Instead scramble about 20 ft up and LEFT to the notch just north of the summit block, the same notch the West Face route uses, and reverse the shared gully descent.",
+     "replace": "Instead scramble about 20 ft up and LEFT to the notch between the south face and the true summit, which is a few hundred feet higher, and descend the gully from there.",
+     "id": "wa_beckey_tate",
+     "fact": "Where the route tops out relative to the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "notes"
+     ],
+     "find": "From this belay the route joins the original 1942 West Face line for the final short, exposed, essentially unprotected 5.6 slab move to the true summit,",
+     "replace": "From this belay a short scramble reaches the notch below the true summit; tagging it means joining the original 1942 West Face line for its last short pitches, ending in an exposed, essentially unprotected 5.6 slab move,",
+     "id": "wa_beckey_tate",
+     "fact": "Where the route tops out relative to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Standard descent: rappel the face or not",
+   "verdict": "fixed",
+   "correct_value": "Standard descent is the notch-and-gully walk-down on one rope; rappelling the face (5-6 two-rope raps) is possible but loose and not recommended.",
+   "evidence": "The route page gives the descent as scrambling to the summit notch and descending the gully to the hairpin, adding that rappelling the route takes 5-6 two-rope rappels from slings and trees and is not easy or safe. A trip report likewise descended the obvious gully back to the Hairpin Turn in about two hours. rope_note called the face rappel the published standard; corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate",
+    "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Lead on a single 60m rope. The published route description gives the standard descent as rappelling the face directly — 5-6 rappels using two ropes from a mix of slings and trees — so bring a second rope (tag line or a 2nd 60m) if you plan to descend that way rather than continue to the true summit. Multiple trip reports instead finish the extra pitch to the summit and walk off the standard gully descent back toward the Hairpin Turn (roughly 2 hours), which avoids needing a second rope at all — decide which descent option before racking up.",
+     "value": "Lead on a single 60m rope. The standard descent is not down the face: scramble to the notch and descend the gully back toward the Hairpin Turn (roughly 2 hours), which needs only the one rope. Rappelling the face itself is possible - 5-6 rappels using two ropes from a mix of slings and trees - but loose rock makes it slow and unsafe, so bring a second rope (tag line or a 2nd 60m) only if you deliberately plan that retreat.",
+     "id": "wa_beckey_tate",
+     "fact": "Standard descent: rappel the face or not"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Pitch grades in the lower chimneys",
+   "verdict": "fixed",
+   "correct_value": "Pitches 2-3 about 5.6-5.7, pitch 4 5.8+",
+   "evidence": "The route page describes the lower pitches as easy scrambling with short sections of 5.6/5.7, with the burly offwidth/flaring chimney on pitch 4. A trip report grades the pitch-4 chimney 5.8+. pitch_detail (5.7, 5.6, 5.8+) matches; beta is widened to that range.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate",
+    "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "chimney climbing around 5.8+ on somewhat loose rock",
+     "replace": "chimney climbing from 5.6-5.7 up to 5.8+ on somewhat loose rock",
+     "id": "wa_beckey_tate",
+     "fact": "Pitch grades in the lower chimneys"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Wall aspect",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report calls the face southeast-facing, while the route page and the AAC report only name it the south face; the neighbouring Kearney-Thomas row stores SE. No two sources agree on an aspect, so neither aspect nor the schedule line is changed.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/",
+    "https://www.mountainproject.com/route/114423730/beckey-tate",
+    "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_going_down_under",
+   "fact": "Number and position of the corner pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only description found (the first-ascent report) says the route traverses right to a big ledge, climbs two classic clean corners - the second through a 5.11c bulge - then slabs and easy cracks past a roof. That supports two corner pitches, making pitch_detail's third corner pitch (P3 5.10+) and its per-pitch grades doubtful, but no second independent source was found, so nothing is changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Approach / round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 2 mi (≈3.1 km) one-way, ~4 mi round trip",
+   "evidence": "One trip report gives 3.8 mi round trip (5,160-8,280 ft); another gives about 4 mi round trip. That matches the waypoint chain (1.9 mi) and the itinerary (4 mi); dist_km held the miles figure as km, and the approach's '3 miles' is high.",
+   "sources": [
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/",
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 1.9,
+     "value": 3.1,
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Approach / round-trip distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 2,700 ft over about 3 miles",
+     "replace": "roughly 2,700 ft over about 2 miles",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Approach / round-trip distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 2,700 ft over about 3 miles",
+     "replace": "roughly 2,700 ft over about 2 miles",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Approach / round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Car-to-car time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 6-8 hours car-to-car",
+   "evidence": "timing (7 h), the itinerary (6-8 h), the turnaround (5-6 h efficient, 8+ typical) and the approach (6+ h) agree; one trip report gives a 6-hour round trip. The 11.5 h in partner_requirements is the outlier.",
+   "sources": [
+    "https://www.countryhighpoints.com/big-kangaroo-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "total car-to-car day is about 11.5 hrs",
+     "replace": "total car-to-car day is about 6-8 hrs",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Car-to-car time"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Hairpin pullout position relative to Washington Pass",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 1 mile east of Washington Pass",
+   "evidence": "The directions, road note, approach and approach_logistics all place the hairpin east of the pass; a trip report likewise drives to Washington Pass and continues about 1 mile to the hairpin (descending east toward Mazama).",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-23.0376406385"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "~0.9 mi west of Washington Pass",
+     "replace": "~0.9 mi east of Washington Pass",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Hairpin pullout position relative to Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Where the roped climbing starts",
+   "verdict": "fixed",
+   "correct_value": "Rope up below the chockstone; the first pitch passes it to the notch, the second traverses around the summit block, the third is the 5.6 summit slab.",
+   "evidence": "The route page's technical section passes under the distinctive chockstone in the shallow gully to the notch, then three short pitches (easy slab, traverse around the summit block, 5.6 slab). One trip report roped up below a large chockstone and climbed through a cannonhole at the gully's head; another roped up at the chockstone, with pitch 1 behind the chockstone to a rappel anchor, pitch 2 a ledge traverse and pitch 3 the summit slab.",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://www.countryhighpoints.com/big-kangaroo-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Push past/around the chockstone and continue up class 3 slabs to a broad platform below the summit tower, where the route's three roped pitches begin.",
+     "replace": "Rope up below the chockstone: the first of the route's three roped pitches passes it to the notch, the second traverses around the summit block, and the third climbs the summit slab.",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Where the roped climbing starts"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "expect": "Class-3 slabs gain the ridge crest here; the low-5th-class pitches to the summit block begin from this notch.",
+     "value": "The first roped pitch, started below the chockstone, reaches the ridge crest at this notch; the second pitch traverses from here around the summit block.",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Where the roped climbing starts"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "ARRIVAL AT THE ROPED CLIMBING: push past the chockstone and continue up class 3 slabs to A BROAD PLATFORM BELOW THE SUMMIT TOWER. That platform is where the route's three roped pitches begin. Flat ground below a tower, above a chockstone gully.",
+     "replace": "ARRIVAL AT THE ROPED CLIMBING: the rope goes on BELOW THE CHOCKSTONE. The first pitch passes it to the notch, the second traverses around the summit block, and the third is the summit slab.",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Where the roped climbing starts"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Chockstone waypoint elevation vs a ~200 ft roped section",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "With roped climbing starting at the chockstone and totalling about 200 ft, the chockstone cannot sit at 7,400 ft below an 8,326 ft summit (the notch pin says 8,100). The true chockstone elevation was not found in any source, so the waypoint elevations are left alone.",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://www.countryhighpoints.com/big-kangaroo-peak/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Length of the roped climbing",
+   "verdict": "fixed",
+   "correct_value": "Three short pitches, about 200 ft in all",
+   "evidence": "The route page gives three short pitches totalling about 200 ft (61 m). Two trip reports describe the roped pitches as short (a short class 4-5 pitch then the summit move; 'such a short pitch' and 'short'). detailed_rack is right; beta's ~500 ft/up to 4 pitches and pitch_detail's 150 m are wrong, so the invented per-pitch lengths are cleared rather than replaced.",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/",
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "climbs approximately 500 feet of rock with up to 4 pitches",
+     "replace": "climbs about 200 feet of rock in three short pitches",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Length of the roped climbing"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "lengthM"
+     ],
+     "expect": 55,
+     "value": null,
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Length of the roped climbing"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "lengthM"
+     ],
+     "expect": 50,
+     "value": null,
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Length of the roped climbing"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "lengthM"
+     ],
+     "expect": 45,
+     "value": null,
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Length of the roped climbing"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "About 3,120 ft",
+   "evidence": "One trip report gives an elevation range of 5,160-8,280 ft (about 3,120 ft of gain); the route page says nearly 3,000 ft from the hairpin, and the 8,326 ft summit over the 5,160 ft pullout is ~3,166 ft. gain_ft (3,120) fits; the itinerary's 2,900 is low.",
+   "sources": [
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/",
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://en.wikipedia.org/wiki/Big_Kangaroo"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2900,
+     "value": 3120,
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 2900,
+     "value": 3120,
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "for 2,900 ft gain",
+     "replace": "for 3,120 ft gain",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Which side of the summit the approach gully leads to",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The lower gully does head toward the crest south of the summit; around 7,500 ft a ramp leads left into the gully that reaches the notch north of the summit block, so the schedule describes the first leg and the approach the finish.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-23.0376406385",
+    "https://www.mountainproject.com/route/122767018/west-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Order of the creek crossing and the talus edge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach crosses at the talus edge after 0.5-0.7 mi; the waypoints cross at 0.4 mi and reach the talus fork at 0.9 mi. Sources only say to cut east across the creek (route page) or leave the path before the last large meadow about 0.7 mi out; none fixes the order of crossing and talus, so nothing is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-23.0376406385"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Whether the descent gully needs a rope",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The single rappel is from slung blocks at the notch, above the gully; the gully below it is descended on foot (one party rapped to their packs at the chockstone and then scree-surfed the gully). So 'a rope-free descent gully' and 'one rappel at the notch' describe different sections.",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://www.countryhighpoints.com/big-kangaroo-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Rappel anchor type",
+   "verdict": "fixed",
+   "correct_value": "The summit bolt is only used to lower/top-rope the leader; the rappel is from slung blocks at the notch.",
+   "evidence": "The route page says to top-rope the leader down from a single rusty summit bolt and make a single rappel from two slung-block anchors at the notch. A trip report calls the summit bolt questionable and describes the rappel anchor separately.",
+   "sources": [
+    "https://www.mountainproject.com/route/122767018/west-face",
+    "https://www.countryhighpoints.com/big-kangaroo-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "aging fixed rappel bolt",
+     "value": "aging summit bolt used only to lower the leader",
+     "id": "wa_big_kangaroo_west_face",
+     "fact": "Rappel anchor type"
+    }
+   ]
+  }
+ ]
+}

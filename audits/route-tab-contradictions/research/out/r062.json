@@ -1,0 +1,66 @@
+{"file": "r062.json", "results": [
+ {"id": "wa_sloan_peak_corkscrew", "fact": "Elevation gain of the Bedal Creek approach-variant round trip", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "The variant's own notes say its distance and gain are the full round trip by the Bedal Creek line to the summit, not to the 5,800 ft ridge; a published Bedal trailhead account gives exactly 5,300 ft and 9.5 mi round trip and other reports give 5,500-6,500 ft, so 5,300 is a sourced figure, not a copy of the saddle elevation. gain_ft 5935 (=7,835-1,900, the Cougar Creek trailhead) is a whole-route figure within the reported range and is not settled by agreeing sources, so it is left alone.",
+  "sources": ["https://rocknropenw.com/2024/08/02/sloan-peak-corkscrew-route-from-bedal-trailhead/", "https://onehikeaweek.com/2021/07/10/sloan-peak-ii/"],
+  "patches": []},
+ {"id": "wa_sloan_peak_corkscrew", "fact": "Climbing season window (does it include September?)", "verdict": "fixed_internal_plus_one", "correct_value": "Jul-Sep",
+  "evidence": "Five fields on the row (best_season, seasonal_guidance.optimalWindow, monthBreakdown.September 'good', climate.bySeason.summer 'Jul-Sep', approach_variants[0].season 'Jul-Sep') treat September as in-season; only the season chip says Jul-Aug. Externally, Corkscrew ascents are documented in September (a Sept 2025 car-to-car trip report) and the peak's season is described as running into early fall with the glacier deteriorating late; one Bedal account calls Jul-Aug optimal, which the row already expresses as the most reliable stretch.",
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/sloan-peak-corkscrew-route-via-cougar-creek-trial-648", "https://www.summitpost.org/sloan-peak/150937", "https://rocknropenw.com/2024/08/02/sloan-peak-corkscrew-route-from-bedal-trailhead/"],
+  "patches": [
+   {"id": "wa_sloan_peak_corkscrew", "fact": "Climbing season window (does it include September?)", "op": "set", "column": "season", "path": [], "expect": "Jul-Aug", "value": "Jul-Sep"}
+  ]},
+ {"id": "wa_sloan_peak_corkscrew", "fact": "Total route distance ('Dist')", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "dist_km 7.65 is the one-way approach (~4.75 mi), shown as 'Approach (one way)'; doubled it is ~9.5 mi round trip, matching the variant's 9.5 mi and the itinerary's 9.8 mi two-day total. Different quantities that agree with each other.",
+  "sources": [], "patches": []},
+ {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "verdict": "fixed", "correct_value": "8 pitches (P7 60 m 5.10, P8 30 m 5.8 flake traverse to the heather ledge)",
+  "evidence": "The route's topo lists 8 pitches, with P7 at 60 m and P8 a 30 m 5.8 flake traverse to the heather ledge; a 2023 CascadeClimbers trip report is titled '8 pitches, 5.10+', and the FA report's own pitch tally comes to about eight. The row's 7-row breakdown merges P7 and P8 into a single 90 m 'pitch 7', which the row's single 60 m rope cannot lead, so the breakdown is split and the five '7 pitches' prose copies are aligned with pitches=8, beta, itinerary and timing. Two other accounts count 7, having linked or skipped the traverse.",
+  "sources": ["https://www.mountainproject.com/route/122891276/fire-on-the-mountain", "https://cascadeclimbers.com/forum/topic/107591-tr-sloan-peak-fire-on-the-mountain-8-pitches-510-10072023/", "http://publications.americanalpineclub.org/articles/12201009201/North-America-United-States-Washington-Sloan-Peak-Fire-on-the-Mountain", "https://stephabegg.com/trip-reports/washington/sloan-fire-on-mountain/"],
+  "patches": [
+   {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "op": "set", "column": "pitch_detail", "path": [],
+    "expect": [
+     {"crux": true, "bolts": 0, "grade": "5.10d", "notes": "Steep, left-leaning corner-and-chimney system with 5.9 climbing low; the crux comes near the top where the crack arches left and turns slightly overhanging, but gear protection is excellent throughout.", "pitch": 1, "anchor": "Gear", "lengthM": 50},
+     {"crux": false, "bolts": 0, "grade": "5.10-", "notes": "Sustained, varied pitch linking a hand crack, featured face holds, and a short rightward hand traverse to an overhanging crack section below a horizontal roof.", "pitch": 2, "anchor": "Gear", "lengthM": 60},
+     {"crux": false, "bolts": 0, "grade": "5.8", "notes": "Right-facing corner to a giant heather ledge; several similar-looking corners sit nearby, making this a route-finding pitch as much as a climbing one.", "pitch": 3, "anchor": "Gear", "lengthM": 40},
+     {"crux": false, "bolts": 0, "grade": "5.9", "notes": "Left-trending crack system toward a pedestal; parties have reported some ambiguity near the top, so favor the leftward line rather than the most obvious crack.", "pitch": 4, "anchor": "Gear", "lengthM": 45},
+     {"crux": false, "bolts": 0, "grade": "5.10c", "notes": "Knob-and-fin face climbing (a bit runout, roughly 5.8R) leads into a right-facing corner that gives this pitch its own hard, near-crux moves.", "pitch": 5, "anchor": "Gear", "lengthM": 45},
+     {"crux": false, "bolts": 0, "grade": "5.8", "notes": "Featured, juggy face climbing to another large heather ledge — a breather before the final pitch.", "pitch": 6, "anchor": "Gear", "lengthM": 50},
+     {"crux": false, "bolts": 0, "grade": "5.10", "notes": "Climbs past a gendarme/prow on hand cracks and positive edges, then traverses left across fun flakes to the final heather ledge where technical climbing ends and the shared Corkscrew scramble to the summit begins.", "pitch": 7, "anchor": "Gear (heather ledge, top of technical climbing)", "lengthM": 90}
+    ],
+    "value": [
+     {"crux": true, "bolts": 0, "grade": "5.10d", "notes": "Steep, left-leaning corner-and-chimney system with 5.9 climbing low; the crux comes near the top where the crack arches left and turns slightly overhanging, but gear protection is excellent throughout.", "pitch": 1, "anchor": "Gear", "lengthM": 50},
+     {"crux": false, "bolts": 0, "grade": "5.10-", "notes": "Sustained, varied pitch linking a hand crack, featured face holds, and a short rightward hand traverse to an overhanging crack section below a horizontal roof.", "pitch": 2, "anchor": "Gear", "lengthM": 60},
+     {"crux": false, "bolts": 0, "grade": "5.8", "notes": "Right-facing corner to a giant heather ledge; several similar-looking corners sit nearby, making this a route-finding pitch as much as a climbing one.", "pitch": 3, "anchor": "Gear", "lengthM": 40},
+     {"crux": false, "bolts": 0, "grade": "5.9", "notes": "Left-trending crack system toward a pedestal; parties have reported some ambiguity near the top, so favor the leftward line rather than the most obvious crack.", "pitch": 4, "anchor": "Gear", "lengthM": 45},
+     {"crux": false, "bolts": 0, "grade": "5.10c", "notes": "Knob-and-fin face climbing (a bit runout, roughly 5.8R) leads into a right-facing corner that gives this pitch its own hard, near-crux moves.", "pitch": 5, "anchor": "Gear", "lengthM": 45},
+     {"crux": false, "bolts": 0, "grade": "5.8", "notes": "Featured, juggy face climbing to another large heather ledge — a breather before the last two pitches.", "pitch": 6, "anchor": "Gear", "lengthM": 50},
+     {"crux": false, "bolts": 0, "grade": "5.10", "notes": "Climbs past a gendarme/prow on hand cracks and positive edges to a belay below the final traverse.", "pitch": 7, "anchor": "Gear", "lengthM": 60},
+     {"crux": false, "bolts": 0, "grade": "5.8", "notes": "A short pitch traversing left across fun flakes to the final heather ledge, where technical climbing ends and the shared Corkscrew scramble to the summit begins.", "pitch": 8, "anchor": "Gear (heather ledge, top of technical climbing)", "lengthM": 30}
+    ]},
+   {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "op": "replace_text", "column": "overview", "path": [], "find": "climbs 7 pitches", "replace": "climbs 8 pitches"},
+   {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "op": "replace_text", "column": "rope_note", "path": [], "find": "7 pitches of 5.10d rock", "replace": "8 pitches of 5.10d rock"},
+   {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "op": "replace_text", "column": "waypoints", "path": [2, "note"], "find": "7-pitch 5.10d route", "replace": "8-pitch 5.10d route"},
+   {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "op": "replace_text", "column": "waypoints", "path": [2, "directions"], "find": "Seven sustained pitches to 5.10d", "replace": "Eight sustained pitches to 5.10d"},
+   {"id": "wa_fire_on_the_mountain", "fact": "Number of technical pitches on the route", "op": "replace_text", "column": "approach", "path": [], "find": "given ~7 pitches of technical", "replace": "given ~8 pitches of technical"}
+  ]},
+ {"id": "wa_fire_on_the_mountain", "fact": "Camping & bivy list includes entries for other, unrelated peaks", "verdict": "bivy_zone_list", "correct_value": null,
+  "evidence": "Shared regional camp list. bivy[0] (Sloan high camp above Cougar Creek) serves Sloan via the North Fork Sauk/Cougar Creek approach, and Bedal Campground is the roadside base for the Bedal Creek trailhead this route uses; Vesper Creek/Lake Elan, Foggy Lake (Gothic Basin), Monte Cristo townsite and the Verlot corridor campgrounds serve other peaks/trailheads, not this route.",
+  "sources": [], "patches": []},
+ {"id": "wa_northwest_buttress", "fact": "Camping & bivy list includes entries for other, unrelated peaks", "verdict": "bivy_zone_list", "correct_value": null,
+  "evidence": "Shared regional camp list. bivy[0] (Sloan high camp above Cougar Creek) serves Sloan via the North Fork Sauk/Cougar Creek approach, and Bedal Campground is the roadside base for the Bedal Creek trailhead this route uses; Vesper Creek/Lake Elan, Foggy Lake (Gothic Basin), Monte Cristo townsite and the Verlot corridor campgrounds serve other peaks/trailheads, not this route.",
+  "sources": [], "patches": []},
+ {"id": "wa_diamond_in_the_rough", "fact": "Camping & bivy list includes entries for other, unrelated peaks", "verdict": "bivy_zone_list", "correct_value": null,
+  "evidence": "Shared regional camp list. bivy[0] (Sloan high camp above Cougar Creek) serves Sloan via the North Fork Sauk/Cougar Creek approach, and Bedal Campground is the roadside base for the Bedal Creek trailhead this route uses; Vesper Creek/Lake Elan, Foggy Lake (Gothic Basin), Monte Cristo townsite and the Verlot corridor campgrounds serve other peaks/trailheads, not this route.",
+  "sources": [], "patches": []},
+ {"id": "wa_diamond_in_the_rough", "fact": "Pitch count stated in the rack description", "verdict": "fixed_internal_plus_one", "discovered": true, "correct_value": "9 pitches",
+  "evidence": "detailed_rack calls it an '8-pitch line', but pitches=9, the 9-row breakdown, beta, overview, rope_note, itinerary, timing and waypoint directions all say nine. The first-ascent trip report (FA 9/11/2011) describes 1,100 ft in nine pitches, 5.10, Grade III.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/83612-tr-sloan-peak-southwest-face-diamond-in-the-rough-fa-9112011/"],
+  "patches": [
+   {"id": "wa_diamond_in_the_rough", "fact": "Pitch count stated in the rack description", "op": "replace_text", "column": "detailed_rack", "path": [], "find": "wandering 8-pitch line", "replace": "wandering 9-pitch line"}
+  ]},
+ {"id": "wa_sloan_peak_r1", "fact": "Scope of this route entry: only the summit-block finish, or the whole Corkscrew line?", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "beta, approach, approach_variants, pro_tips and descent_text all state this entry is the whole Corkscrew line from the trailhead, so whole-trip gain/distance are correct for it; the overview and the single pitch_detail row describe the section that gives the entry its name.",
+  "sources": [], "patches": []},
+ {"id": "wa_sloan_peak_r1", "fact": "Camping & bivy list includes entries for other, unrelated peaks", "verdict": "bivy_zone_list", "correct_value": null,
+  "evidence": "Shared regional camp list. bivy[0] (Sloan high camp above Cougar Creek) serves Sloan via the North Fork Sauk/Cougar Creek approach, and Bedal Campground is the roadside base for the Bedal Creek trailhead; Vesper Creek/Lake Elan, Foggy Lake (Gothic Basin), Monte Cristo townsite and the Verlot corridor campgrounds serve other peaks/trailheads, not this route.",
+  "sources": [], "patches": []}
+]}

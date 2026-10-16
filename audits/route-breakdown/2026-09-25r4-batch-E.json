@@ -1,0 +1,31 @@
+{
+  "wa_lane_peak_r3": {
+    "area": "wa_lane_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "Mod. snow", "notes": "Start from the flat below the north face at the left-most of Lane Peak's three north couloirs, just left of the Zipper. Crampon up and rack on the flat. Most parties rope up where the gully first narrows and place pro in the rock wall on the left (nuts, small cams, Tricams, pitons); simul-climbing with running protection is common here." },
+      { "pitch": "2", "grade": "AI1", "notes": "The couloir steepens in two or three places, with the steepest steps reaching about 60° snow or thin ice. At the high constriction there is sometimes enough ice for a screw; otherwise protect off the left wall and pickets. A tree on climber's right partway up takes a sling. This is the narrowest of the Lane Peak couloirs, so anything knocked loose funnels straight down it." },
+      { "pitch": "3", "grade": "Snow", "anchor": "tree", "notes": "Above the constriction, firm névé leads to where the couloir ends abruptly on a ridge above the Zipper, marked by a tree. Cross to the far side and belay the second from the tree, which is also the anchor for the rappel into the Zipper." },
+      { "pitch": "Rappel into the Zipper", "grade": "Rappel, 30+ m", "notes": "Rappel more than 100 ft from the tree into the upper Zipper. Plan on double ropes; a single 70 m rope reaches the snow in some conditions but not reliably. A 60 m rope alone will not do it." },
+      { "pitch": "Upper Zipper to summit", "grade": "Moderate snow", "notes": "Climb the last 300 ft or so of the Zipper, which many parties solo. From its top, curl around onto the south side and traverse left to the summit slopes; the final 200–300 ft can warrant a belay when the snow is hard." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Stored 3 thin rows (1/2/3) with lengths 150/100/53 m that no source splits that way (only the 1,000 ft / 303 m total is published), so every lengthM was dropped. Labels 1-3 kept for the same ground; grade chips cut to tokens (AI1 from the route's published grade; no '~40°' kept, since no source gives an angle for the lower couloir). Added the rappel into the Zipper and the Zipper-to-summit finish as two stages, because the climb cannot top out without them. Left out: crux flag (no source names a single crux pitch), bolt counts (none), per-section lengths.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/114089121/lovers-lane",
+        "https://www.jeffreyjhebert.com/adventures/lovers-lane-on-lane-peak",
+        "https://jdmartin86.github.io/articles/21/lane",
+        "https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane (search snippet only; page blocked)"
+      ],
+      "other_findings": "`grade` is null; the published grade is Grade II, AI1 / moderate snow up to 60°. `rappels` and `descent_text` say one rappel from the ridge top counts as the descent, but it is really part of the ASCENT (into the Zipper to reach the summit). The published descent downclimbs or raps from a tree below the summit, then plunge-steps to the Lane–Denman saddle and exits down a steep gully. One trip report describes two double-rope rappels on the way down."
+    }
+  },
+  "wa_morning_star_peak_standard": { "skip_reason": "Research could not be finished: WebFetch/WebSearch hit a session limit (resets 6:40pm America/Denver) before any page for this route could be read. The Mountaineers page was also blocked (403/Cloudflare). Re-queue; the table was not changed." },
+  "wa_mount_constance_north_chute": { "skip_reason": "Research could not be finished: the Mountaineers North Chute page and SummitPost returned 403, the NWHikers North Chute/Finger Traverse report would not load, and then the research tools hit a session limit. No pitch-level description of the North Chute was read. Re-queue." },
+  "wa_mount_maude_r3": { "skip_reason": "A search for 'Nothing Couloir' on Mount Maude found no source (SummitPost, WTA and Wenatchee Outdoors hits list other routes), and the research tools then hit a session limit before more could be tried. The route's identity/name is unverified; re-queue and confirm it exists before rewriting." },
+  "wa_mount_constance_finger_traverse": { "skip_reason": "Not researched: the research tools hit a session limit (resets 6:40pm America/Denver) before this route was reached. Re-queue." },
+  "wa_south_twin_sister_scramble": { "skip_reason": "Not researched: the research tools hit a session limit before this route was reached. Re-queue." },
+  "wa_mount_lyall_south_route": { "skip_reason": "Not researched: the research tools hit a session limit before this route was reached. Re-queue." },
+  "wa_gilbert_peak_west_route": { "skip_reason": "Not researched: the research tools hit a session limit before this route was reached. Re-queue." }
+}

@@ -1,0 +1,52 @@
+{"file": "r466.json", "results": [
+ {"id": "wa_wolframite_mountain_scramble", "fact": "One-way approach distance", "verdict": "fixed",
+  "correct_value": "From Thirtymile Trailhead: 8.8 mi on Chewuch Trail #510 + 6.2 mi on Tungsten Creek Trail #534 = ~15 trail miles one-way to the Boundary Trail at Tungsten Mine Camp (summit ~17 mi). partner_requirements' '~10 miles' is wrong; obj_haz '12-15 trail miles from the nearest trailhead' is correct (12 from the Chewuch TH via Cathedral Driveway 2.2 + 3.6 + 6.2; 15 from Thirtymile) and is left alone.",
+  "evidence": "SummitPost's Tungsten Mine Camp/Wolframite pages give Thirtymile TH -> Chewuch #510 8.8 mi to Tungsten #534, then 6.2 mi to Boundary #533 (and 2.2 + 3.6 mi from the Chewuch TH). WTA's Tungsten page independently gives the Tungsten trail as 6.2 mi one-way with 2,100 ft gain, and the Country Highpoints trip report reached the mine structures 'about 14 miles in' from Thirtymile. No source supports ~10 miles.",
+  "sources": ["https://www.summitpost.org/tungsten-mine-camp/592385", "https://www.wta.org/go-hiking/hikes/tungsten", "https://www.countryhighpoints.com/apex-pope-wolframite-bauerman-ridge-arnold-and-horseshoe-mountains/"],
+  "patches": [
+   {"id": "wa_wolframite_mountain_scramble", "fact": "One-way approach distance", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "approach is roughly 10 miles one-way", "replace": "approach is roughly 15 trail miles one-way"},
+   {"id": "wa_wolframite_mountain_scramble", "fact": "One-way approach distance", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "roughly 10 miles one-way on trail", "replace": "roughly 15 miles one-way on trail"}
+  ]},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Road to the trailhead", "verdict": "fixed",
+  "correct_value": "Thirtymile TH is reached via West Chewuch Road (County Rd 1213) continuing as FR 51; the high-clearance FS 3900-300 spur (off FR 39 from Loomis) serves the separate Chewuch Trailhead, not Thirtymile.",
+  "evidence": "WTA's Chewuch River and Tungsten pages both route to Thirtymile via County Rd 1213 then FS Road 51, ~29 miles from Winthrop; Hiking Project's Chewuch #510 page gives the same FR 51 drive. The Forest Service / Trail Wiki Chewuch Trailhead listing places the 3900-300 spur 20 miles up FR 39 from Loomis, high-clearance only and not recommended until end of June — a different trailhead.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/chewuch", "https://www.hikingproject.com/trail/7015851/chewuch-trail-510", "https://www.fs.usda.gov/r06/colville/recreation/chewuch-trailhead", "https://trailwiki.org/index.php/trailhead/chewuch-trailhead"],
+  "patches": [
+   {"id": "wa_wolframite_mountain_scramble", "fact": "Road to the trailhead", "op": "replace_text", "column": "road", "path": ["seasonalGate"], "find": "The FS-39-300 spur to Chewuch Trailhead is maintained for high-clearance vehicles only and is not recommended for use until late June.", "replace": "FR 51 is a long gravel road that can hold early-season snow or washouts; check conditions with the Methow Valley Ranger District before driving in. (The high-clearance-only FS-39-300 spur off FR 39 from Loomis serves the separate Chewuch Trailhead, not Thirtymile.)"},
+   {"id": "wa_wolframite_mountain_scramble", "fact": "Road to the trailhead", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "FS Road 39 to the Thirtymile TH", "replace": "FS Road 51 to the Thirtymile TH"}
+  ]},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Direction of the Boundary Trail leg and the summit slope", "verdict": "unresolved",
+  "correct_value": "Prose is right (Boundary Trail runs west from the mine camp ~1 mi, then bends south toward Apex Pass; summit climbed up the gentle west slopes). The 'Boundary Trail bend toward Apex Pass' pin (waypoints[5]) sits east of the mine camp and is misplaced — a coordinate fix, which is out of scope here.",
+  "evidence": "Country Highpoints turned west on the Boundary Trail from the mine area and climbed Wolframite's gentle west slopes; SummitPost describes the west-side approach off the Boundary Trail near Apex Pass. The summit (lng -120.1296) is slightly east of the mine camp (-120.1323), so a mile west then northeast is geometrically consistent; only the pin's lat/lng disagrees.",
+  "sources": ["https://www.countryhighpoints.com/apex-pope-wolframite-bauerman-ridge-arnold-and-horseshoe-mountains/", "https://www.summitpost.org/wolframite-mountain/539856"],
+  "patches": []},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Tungsten Creek junction elevation", "verdict": "fixed",
+  "correct_value": "~4,700 ft",
+  "evidence": "SummitPost's Tungsten Mine Camp page puts the Chewuch #510 / Tungsten #534 intersection at ~4,700 ft. WTA's Tungsten page gives the trail as 6.2 mi, 2,100 ft gain, high point 6,800 ft, which places its lower end at ~4,700 ft. This matches the approach prose (~4,700 ft) and Day 2's 2,100 ft climb to the 6,750 ft camp.",
+  "sources": ["https://www.summitpost.org/tungsten-mine-camp/592385", "https://www.wta.org/go-hiking/hikes/tungsten"],
+  "patches": [
+   {"id": "wa_wolframite_mountain_scramble", "fact": "Tungsten Creek junction elevation", "op": "set", "column": "waypoints", "path": [3, "elev"], "expect": 4450, "value": 4700}
+  ]},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Second-night camp", "verdict": "bivy_zone_list",
+  "correct_value": null,
+  "evidence": "Bivy-only dispute; bivy[] is owned by the camping clean-up. bivy[0] (Tungsten Creek trail camps below the junction) does serve this route but its note contradicts the itinerary's camp at Tungsten Mine Camp; bivy[1] (the mine camp itself) is the itinerary's camp and is hidden. No patch written.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Season end", "verdict": "fixed_internal_plus_one",
+  "correct_value": "July to September",
+  "evidence": "season (Jul-Sep), best_season (mid-July through September), seasonal_guidance.optimalWindow (mid-July through September, October 'risky') and climate.bySeason.summer (mid-July through September) all agree; the variant's 'early October' is the lone outlier. Externally, the Country Highpoints October ascent met shin-deep snow on the approach and fresh snowfall on the summit.",
+  "sources": ["https://www.countryhighpoints.com/apex-pope-wolframite-bauerman-ridge-arnold-and-horseshoe-mountains/"],
+  "patches": [
+   {"id": "wa_wolframite_mountain_scramble", "fact": "Season end", "op": "replace_text", "column": "approach_variants", "path": [0, "season"], "find": "July to early October", "replace": "July to September"}
+  ]},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Thirtymile Trailhead elevation", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Trailhead waypoint says 3,400 ft while approach, approach_logistics.trailheadDirection, timing.sectionBreakdown[0] and itinerary day 1 all say ~3,600 ft. SummitPost gives ~3,600 ft; Hiking Project and Trailforks give the Chewuch trail's low point (the Thirtymile end) as ~3,430-3,440 ft. Sources disagree, so no patch.",
+  "sources": ["https://www.summitpost.org/tungsten-mine-camp/592385", "https://www.hikingproject.com/trail/7015851/chewuch-trail-510", "https://www.trailforks.com/trails/chewuch-trail/"],
+  "patches": []},
+ {"id": "wa_wolframite_mountain_scramble", "fact": "Tungsten Creek ford / lower campsite elevations", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The campsite (8.5 mi) and Tungsten Creek ford (8.7 mi) pins say 4,400 ft, only 0.1-0.3 mi before the junction now set at ~4,700 ft — a 300 ft jump the gentle Chewuch trail does not make. No source states either pin's elevation, so they are left for a ground check.",
+  "sources": [],
+  "patches": []}
+]}

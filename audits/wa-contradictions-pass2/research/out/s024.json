@@ -1,0 +1,280 @@
+{
+ "file": "s024.json",
+ "results": [
+  {
+   "id": "wa_liberty_crack",
+   "fact": "Number of days",
+   "verdict": "fixed",
+   "correct_value": "Both styles are common: many parties fix the first three pitches and finish on a second day; fast parties with aid experience do it car-to-car in one long day. The one-day itinerary is the fast-party plan and should say so.",
+   "evidence": "A route guide says most people take two days, fixing the first three pitches, while faster parties with aid experience climb it in a single day. A 2004 trip report describes a one-day ascent (about 11 hr base to summit) and a separate party ahead of them that had fixed the first three pitches the day before; other trip reports (2014, 2016, and a car-to-car ~10 hr account) are single-day. The beta's two-day statement is sourced, so the itinerary's total note is reframed as the fast-party plan rather than the norm.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/North-Cascades-Liberty-Bell-Liberty-Crack",
+    "https://cascadeclimbers.com/forum/topic/26712-tr-liberty-bell-liberty-crack-7282004/",
+    "https://cascadeclimbers.com/forum/topic/99772-tr-liberty-bell-liberty-crack-872016/",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/liberty-crack/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_crack",
+     "fact": "Number of days",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A single long day: real trip reports show 9-10 hr car-to-car ascents;",
+     "replace": "A single long day for a fast party with aid experience (many parties instead fix the first three pitches the day before and finish on a second day): real trip reports show 9-10 hr car-to-car ascents;"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Number of days",
+   "verdict": "fixed",
+   "correct_value": "Neither 'most' claim is supported for the free line; free ascents have been done both in one day and worked over several days. Soften both to 'many'/'can'.",
+   "evidence": "The 2016 free ascent was done in a single day (starting around noon and topping out at dusk). An earlier free effort by a different climber worked the slab over consecutive days on toprope. For the route generally, a route guide says most parties fix the first three pitches and return, while fast parties do it in a day. No source says what 'most' free parties do, so both absolute claims are softened.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/99555-tr-liberty-bell-liberty-crack-free-6282016/",
+    "https://blakeclimbs.blogspot.com/2016/07/liberty-crack-firstthird-free-ascent.html",
+    "http://www.supertopo.com/rock-climbing/North-Cascades-Liberty-Bell-Liberty-Crack"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_crack_free",
+     "fact": "Number of days",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Most parties still fix the first 2-3 pitches",
+     "replace": "Many parties fix the first 2-3 pitches"
+    },
+    {
+     "id": "wa_liberty_crack_free",
+     "fact": "Number of days",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Most fit parties do it in a single big day;",
+     "replace": "Fit parties can do it in a single big day;"
+    },
+    {
+     "id": "wa_liberty_crack_free",
+     "fact": "Number of days",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A single long day for most parties,",
+     "replace": "A single long day for a fit party,"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Cam rack",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The free route page calls for a single rack from purple C3 to #3 plus extra tips-to-fingers pieces (matches gear, sling_rack and what_to_bring). The 2016 free ascent account lists only the handful of pieces used on the crux pitch, and the aid-route guides recommend doubles, which is for the aid line. No second source gives a full free-ascent rack. Would settle: a second free-ascent trip report listing its whole rack.",
+   "sources": [
+    "https://www.mountainproject.com/route/113539421/liberty-crack-free",
+    "https://blakeclimbs.blogspot.com/2016/07/liberty-crack-firstthird-free-ascent.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "fact": "Year of the free variation",
+   "verdict": "fixed",
+   "correct_value": "The P3 slab variation was bolted in 2016 (hazards[0] should say 2016, not 2017). fa and overview left as they are (the credited party's year is sourced 2016 by the ascensionist and 2017 by the route page).",
+   "evidence": "The ascensionist's trip report (climb dated 6/28/2016, posted July 1, 2016) describes installing the belay bolt and the four protection bolts on the slab pitch before the ascent. Independent forum replies from other climbers dated July 2-3, 2016 argue about the newly added bolts, confirming they existed by July 2016. So the bolted slab pitch dates to 2016, not 2017. The route page's 2017 date for the four-person variation FFA is not contradicted by fa's 2016 strongly enough to change fa; only the bolting year in hazards is patched.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/99555-tr-liberty-bell-liberty-crack-free-6282016/",
+    "https://blakeclimbs.blogspot.com/2016/07/liberty-crack-firstthird-free-ascent.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_crack_free",
+     "fact": "Year of the free variation",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "newer (2017) bolted slab pitch",
+     "replace": "newer (2016) bolted slab pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "fact": "Largest gear",
+   "verdict": "fixed",
+   "correct_value": "Rack to 4 inches (a #4 optional, as rack/sling_rack already say).",
+   "evidence": "Two independent route pages both call for protection to 4 inches: one says pro to 4 inches, the other a rock rack to 4 inches plus early-season axe and crampons. The stored rack and sling_rack already list an optional #4 to cover this, so only gear[0] is out of line.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509842/rapple-grapple",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_rapple_grapple",
+     "fact": "Largest gear",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "find": "rack to 3 inches",
+     "replace": "rack to 4 inches"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "fact": "First rappel downclimb distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources give different distances: one says downclimb the upper pitch about 20 ft to the first ledge; a trip report says scramble back down about fifty feet to find the slung tree; another route description says downclimb or rappel to about 200 ft below the summit then traverse ~100 ft; others say only 'a short section'. No two agree on a figure. Would settle: two accounts measuring the summit-to-first-anchor downclimb the same way.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+    "http://cnmtstuartclimbproject.blogspot.com/2017/10/route-liberty-bell-beckey-route-sw-face.html",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "fact": "Descent after climbing all 5 pitches",
+   "verdict": "fixed",
+   "correct_value": "From the top of P5 (Thin Red Line's P7 anchor) rappel this route's own two-bolt anchors with two ropes; on the way, from the top of P3 skip the P2 anchor and go to the P1 anchor, then to the ground.",
+   "evidence": "The first ascensionist's report says that after 5 pitches the line joins Thin Red Line's P7 anchor, and parties can continue or rappel with two ropes from there, skipping the P2 anchor from the top of P3 to reach the P1 anchor; all anchors are two bolts with fixed biners. A separate party (different author) repeating it two weeks later bailed near the top and rappelled the line, having previously rappelled over the upper crack. Nothing supports descending Thin Red Line's M&M Ledge line from this route.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/95712-tr-liberty-bell-east-face-fa-liberty-and-injustice-for-all-512-200m-952014/",
+    "https://www.mountainproject.com/route/109462722/liberty-and-injustice-for-all"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "climb the 5 pitches then rappel with two ropes from the top of P3, bypassing the P2 anchor, to reach the ground at the P1 anchor.",
+     "replace": "climb the 5 pitches then rappel the route with two ropes from the top of P5, bypassing the P2 anchor on the way down from P3 to the P1 anchor and the ground."
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "climb the 5 pitches then rappel with two ropes from the top of P3, bypassing the P2 anchor, to reach the ground at the P1 anchor.",
+     "replace": "climb the 5 pitches then rappel the route with two ropes from the top of P5, bypassing the P2 anchor on the way down from P3 to the P1 anchor and the ground."
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Rappel with two ropes from the top of P3, bypassing the P2 anchor to reach the P1 anchor",
+     "replace": "Rappel the route with two ropes from the top of P5; below the top of P3, bypass the P2 anchor to reach the P1 anchor"
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "rappel with two ropes down Thin Red Line's line (M&M Ledge exit plus bolted double-rope raps) back to the base.",
+     "replace": "rappel this route's own two-bolt stations with two ropes back to the base, skipping the P2 anchor as above."
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "from here continue climbing or rappel Thin Red Line's exit.",
+     "replace": "from here continue climbing or rappel this route with two ropes."
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "Two ropes needed if descending Thin Red Line's line from high on the route",
+     "replace": "Two ropes needed to rappel the route from its top"
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "rappel Thin Red Line's line back to the base.",
+     "replace": "rappel this route's own anchors with two ropes back to the base."
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      3
+     ],
+     "find": "Two-rope rappel descent from the top of P3",
+     "replace": "Two-rope rappel descent from the top of P5"
+    },
+    {
+     "id": "wa_liberty_and_injustice_for_all",
+     "fact": "Descent after climbing all 5 pitches",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Rappel with two ropes from top of pitch 3;",
+     "replace": "Rappel the route with two ropes from the top of pitch 5;"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "fact": "P3-to-P1 rappel length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first ascent report confirms parties skip the P2 anchor when rappelling from the top of P3 with two ropes, which caps P2+P3 at roughly 60 m; the stored 40 m + 40 m pitch lengths cannot both be right with a 55 m rappel. No source gives individual pitch lengths (the only figure is ~200 m over 5 pitches). Would settle: a topo or trip report with per-pitch lengths.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/95712-tr-liberty-bell-east-face-fa-liberty-and-injustice-for-all-512-200m-952014/",
+    "https://www.mountainproject.com/route/109462722/liberty-and-injustice-for-all"
+   ],
+   "patches": []
+  }
+ ]
+}

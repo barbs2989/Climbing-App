@@ -1,0 +1,402 @@
+{"batches": ["b420.json","b421.json","b422.json","b423.json","b424.json","b425.json","b426.json"], "routes_read": 29, "routes": [
+{"id":"adams_northwest_ridge","name":"North Face of the Northwest Ridge","area":"Mount Adams","contradictions":[
+ {"fact":"Trailhead parking pass at Killen Creek","severity":"medium","claims":[
+  {"field":"access.parking_pass","says":"No trailhead parking pass is required at the Killen Creek Trailhead."},
+  {"field":"bivy[0].permit","says":"Northwest Forest Pass or equivalent for trailhead parking."}],
+  "why":"The Plan tab tells the climber both that no parking pass is needed and that a Northwest Forest Pass is needed at the same trailhead.","internal_resolution":null,"needs_research":true},
+ {"fact":"Route distance","severity":"low","claims":[
+  {"field":"dist_km","says":"8"},
+  {"field":"bivy[0].notes","says":"Roughly four miles and 2,300 ft of gain"},
+  {"field":"approach","says":"Forest Service Road 2329 from Taklakh Lake area (5.7 miles)."}],
+  "why":"8 km (5 mi) is shown as the route distance, but the row puts High Camp alone about 4 mi in with 5,400 ft still to climb to the summit.","internal_resolution":null,"needs_research":true},
+ {"fact":"When the route is in condition","severity":"low","claims":[
+  {"field":"season","says":"Jun-Jul"},
+  {"field":"climate.spring","says":"Firmest, most in-condition period."}],
+  "why":"The season chip says June-July, but the climate panel calls spring the most in-condition period.","internal_resolution":"season, best_season (late spring to mid-summer) and approach_variants (Roughly Jun-Jul) agree on early summer; climate.spring is the outlier.","needs_research":false}]},
+{"id":"wa_mount_adams_south_climb","name":"South Climb (South Spur)","area":"Mount Adams","contradictions":[
+ {"fact":"Where human-waste pack-out starts","severity":"low","claims":[
+  {"field":"access.closures","says":"Human waste carry-out (WAG) bags required above high camp"},
+  {"field":"access.rules","says":"Human waste must be packed out above 7,000 ft"}],
+  "why":"The pack-out line is given as high camp (~9,000 ft Lunch Counter) in one field and 7,000 ft in another.","internal_resolution":"access.rules and bivy[0].permit (decomposition above 7,000 ft) both say 7,000 ft; access.closures is the outlier.","needs_research":false}]},
+{"id":"wa_mount_adams_adams_glacier","name":"Adams Glacier","area":"Mount Adams","contradictions":[
+ {"fact":"Route distance","severity":"medium","claims":[
+  {"field":"dist_km","says":"28.16"},
+  {"field":"itinerary.days[0].miles","says":"4.1"},
+  {"field":"itinerary.days[1].miles","says":"8.9"},
+  {"field":"waypoints[4].distMi","says":"11.5"},
+  {"field":"waypoints[3].distMi","says":"7"}],
+  "why":"The header shows 13 mi (itinerary) and the stats 17.5 mi, while the waypoints put the summit 11.5 mi one way and the glacier toe (just above a camp at 4.1 mi) at 7 mi.","internal_resolution":null,"needs_research":true},
+ {"fact":"Running water at High Camp","severity":"medium","claims":[
+  {"field":"bivy[0].water","says":"Generally reliable through summer. Meltwater streams from the Adams Glacier snout and small tarns feed the meadows"},
+  {"field":"approach","says":"Killen Creek itself, crossed low on the trail, is the last dependable flowing water; above High Camp plan on melting snow/glacier ice."},
+  {"field":"waypoints[1].directions","says":"Killen Creek, crossed low on the trail, is the last dependable running water; everything above is melted snow."},
+  {"field":"approach_variants[0].hazards[4]","says":"No running water above Killen Creek"}],
+  "why":"The camp card promises reliable water at High Camp while three other fields say there is no dependable running water above Killen Creek.","internal_resolution":"approach, waypoints[1] and approach_variants agree there is no running water above Killen Creek; the shared bivy[0].water text is the outlier.","needs_research":false},
+ {"fact":"Number of days / camp after the climb","severity":"medium","claims":[
+  {"field":"descent_text","says":"plan on a camp at High Camp both before and after the climb"},
+  {"field":"itinerary.totalNote","says":"A 2-day trip: ... descending all the way to the car by evening"}],
+  "why":"The descent text says to camp at High Camp after the climb too, but the itinerary is 2 days and ends at the car on summit day.","internal_resolution":null,"needs_research":true},
+ {"fact":"Descending the South Climb to the car","severity":"low","claims":[
+  {"field":"itinerary.days[1].note","says":"then descend the North Ridge or South Climb all the way to the car."},
+  {"field":"descent_text","says":"that trailhead is a considerable drive from Killen Creek, so it only makes sense with a pre-arranged car shuttle."}],
+  "why":"The itinerary offers the South Climb as a same-day way back to the car, but the descent text says it ends at a different trailhead and needs a shuttle.","internal_resolution":"descent_text is explicit that the South Climb ends at Cold Springs; the itinerary wording omits the shuttle.","needs_research":false}]},
+{"id":"wa_mount_adams_north_ridge","name":"North Ridge","area":"Mount Adams","contradictions":[
+ {"fact":"Route distance","severity":"medium","claims":[
+  {"field":"dist_km","says":"5.6"},
+  {"field":"itinerary.days[0].miles","says":"4.1"},
+  {"field":"itinerary.days[1].miles","says":"4"},
+  {"field":"itinerary.days[2].miles","says":"4.1"},
+  {"field":"waypoints[3].distMi","says":"11.5"}],
+  "why":"The stats show 3.5 mi and the header 12.2 mi, while the summit waypoint sits 11.5 mi from the trailhead yet the camp-summit-camp day is only 4 mi.","internal_resolution":null,"needs_research":true},
+ {"fact":"Whether the approach crosses glacier","severity":"medium","claims":[
+  {"field":"pitch_detail[1].notes","says":"The approach does not require a glacier crossing."},
+  {"field":"approach_variants[0].notes","says":"it involves more crevassed ground — roped travel and glacier skills are expected"},
+  {"field":"detailed_rack","says":"crevasse-rescue kit for the glaciated approach"},
+  {"field":"pro_needs","says":"plus glacier-travel gear for the approach"}],
+  "why":"The route breakdown says no glacier crossing on the approach, while the approach, rack and protection fields call the approach glaciated.","internal_resolution":null,"needs_research":true},
+ {"fact":"Distance to the base of the ridge","severity":"low","claims":[
+  {"field":"waypoints[2].distMi","says":"7"},
+  {"field":"waypoints[1].distMi","says":"4.1"},
+  {"field":"pitch_detail[1].notes","says":"which is gained almost right away above the camp."}],
+  "why":"The waypoints put the ridge base 2.9 mi past High Camp while the route breakdown says it is gained almost right away above camp.","internal_resolution":null,"needs_research":true},
+ {"fact":"Running water at High Camp","severity":"medium","claims":[
+  {"field":"bivy[0].water","says":"Generally reliable through summer. Meltwater streams from the Adams Glacier snout and small tarns feed the meadows"},
+  {"field":"itinerary.days[0].note","says":"crossing East Fork Adams Creek (last reliable water)"},
+  {"field":"approach_variants[0].hazards[4]","says":"No running water above East Fork Adams Creek"}],
+  "why":"The camp card promises reliable water at High Camp while the itinerary and approach say the last reliable water is East Fork Adams Creek, below camp.","internal_resolution":"itinerary, timing.sectionBreakdown[0] and approach_variants agree; bivy[0].water is the outlier.","needs_research":false},
+ {"fact":"Steepest angle","severity":"low","claims":[
+  {"field":"max_angle","says":"50"},
+  {"field":"itinerary.days[1].note","says":"Alpine start up steep sections to around 40°"}],
+  "why":"The max angle is 50° but the summit-day plan describes steep sections of around 40°.","internal_resolution":null,"needs_research":true},
+ {"fact":"Summit-day start time","severity":"low","claims":[
+  {"field":"timing.recommendedStart","says":"2:00-3:00 AM from camp"},
+  {"field":"partner_requirements.approachTime","says":"plus a pre-dawn (3-4 a.m.) summit push"}],
+  "why":"The recommended start is 2-3 AM but the partner requirements say 3-4 AM.","internal_resolution":"timing.recommendedStart and itinerary.days[1].schedule[0] both say 2:00-3:00 AM.","needs_research":false}]},
+{"id":"wa_mount_adams_lyman_glacier","name":"Lyman Glacier","area":"Mount Adams","contradictions":[
+ {"fact":"Route distance","severity":"medium","claims":[
+  {"field":"dist_km","says":"37.3"},
+  {"field":"itinerary.days[0].miles","says":"4.1"},
+  {"field":"itinerary.days[1].miles","says":"6"},
+  {"field":"itinerary.days[2].miles","says":"4.1"}],
+  "why":"The stats show 23.2 mi while the itinerary days add up to 14.2 mi.","internal_resolution":null,"needs_research":true},
+ {"fact":"Running water at High Camp","severity":"medium","claims":[
+  {"field":"bivy[0].water","says":"Generally reliable through summer. Meltwater streams from the Adams Glacier snout and small tarns feed the meadows"},
+  {"field":"approach","says":"East Fork Adams Creek and its meadows (last reliable easy water before the high basin)"}],
+  "why":"The camp card promises reliable water at High Camp while the approach calls East Fork Adams Creek, below camp, the last reliable water.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_adams_mazama_glacier_headwall","name":"Mazama Glacier Headwall","area":"Mount Adams","contradictions":[
+ {"fact":"Headwall elevation","severity":"low","claims":[
+  {"field":"waypoints[2].elev","says":"11600"},
+  {"field":"climbing_route[1].label","says":"Headwall at about 11,300 ft"}],
+  "why":"The headwall waypoint is 300 ft higher than where the route breakdown says the headwall starts.","internal_resolution":null,"needs_research":true}]},
+{"id":"adams_avalanche_glacier","name":"Avalanche Glacier","area":"Mount Adams","contradictions":[
+ {"fact":"Total elevation gain","severity":"medium","claims":[
+  {"field":"gain_ft","says":"5000"},
+  {"field":"bivy[0].elev","says":"5600"},
+  {"field":"high_point_ft","says":"12276"}],
+  "why":"The route starts at the Cold Springs trailhead (5,600 ft) and tops out at 12,276 ft, at least 6,676 ft of gain, but the gain shown is 5,000 ft.","internal_resolution":null,"needs_research":true},
+ {"fact":"Aspect","severity":"low","claims":[
+  {"field":"aspect","says":"S"},
+  {"field":"beta","says":"A gently sloping glacier ascent on the SW slopes"},
+  {"field":"overview","says":"up the mountain's southwest side"}],
+  "why":"The aspect field says S but the prose places the route on the southwest flank.","internal_resolution":"overview, beta and approach_variants (southwest flank) all say SW.","needs_research":false}]},
+{"id":"wa_mount_adams_wilson_glacier_headwall","name":"Wilson Glacier Headwall","area":"Mount Adams","contradictions":[]},
+{"id":"wa_mount_adams_lava_glacier_headwall","name":"Lava Glacier Headwall","area":"Mount Adams","contradictions":[
+ {"fact":"Killen Creek trailhead elevation","severity":"medium","claims":[
+  {"field":"approach_variants[0].notes","says":"on the forest road near Takhlakh Lake at about 4,140 ft"},
+  {"field":"waypoints[0].elev","says":"4600"},
+  {"field":"bivy[0].notes","says":"from about 4,600 ft"}],
+  "why":"The same trailhead is given as 4,140 ft in one field and 4,600 ft in others.","internal_resolution":"waypoints[0] and bivy[0] agree on 4,600 ft; approach_variants is the outlier.","needs_research":false},
+ {"fact":"Total gain and loss","severity":"medium","claims":[
+  {"field":"gain_ft","says":"7800"},
+  {"field":"loss_ft","says":"5000"},
+  {"field":"itinerary.days[1].lossFt","says":"6700"},
+  {"field":"itinerary.days[0].gainFt","says":"2900"},
+  {"field":"itinerary.days[1].gainFt","says":"3800"}],
+  "why":"On a trip that returns to the same trailhead, gain (7,800) and loss (5,000) cannot differ, and the itinerary says 6,700 each.","internal_resolution":null,"needs_research":true},
+ {"fact":"Route distance","severity":"medium","claims":[
+  {"field":"dist_km","says":"26.55"},
+  {"field":"itinerary.days[0].miles","says":"4.1"},
+  {"field":"itinerary.days[1].miles","says":"8.4"}],
+  "why":"The stats show 16.5 mi while the itinerary days add up to 12.5 mi.","internal_resolution":null,"needs_research":true},
+ {"fact":"Ice screw count","severity":"low","claims":[
+  {"field":"detailed_rack","says":"Snow anchors (pickets); occasional ice screw for firmer or icy sections."},
+  {"field":"rack[0]","says":"4-6 ice screws"},
+  {"field":"sling_rack.ice_screws","says":"4-6"}],
+  "why":"The protection section says an occasional screw while the rack lists 4-6.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_kautz_glacier","name":"Kautz Glacier","area":"Mount Rainier","contradictions":[
+ {"fact":"Summit-day length","severity":"medium","claims":[
+  {"field":"timing.summitTimeHrs","says":"12"},
+  {"field":"itinerary.days[1].hours","says":"12"},
+  {"field":"partner_requirements.fitnessSpec.hiking","says":"Sustained fitness for a ~17-hr summit day"}],
+  "why":"Timing and itinerary give a 12-hour summit day but the partner requirements say about 17 hours.","internal_resolution":"timing and itinerary agree on 12 hours.","needs_research":true},
+ {"fact":"Approach time to Camp Hazard","severity":"low","claims":[
+  {"field":"timing.approachTimeHrs","says":"6"},
+  {"field":"partner_requirements.approachTime","says":"7-9 hrs (often split over 2 days) from Paradise to Camp Hazard"}],
+  "why":"The approach is 6 hours in timing and the itinerary but 7-9 hours in partner requirements.","internal_resolution":null,"needs_research":true},
+ {"fact":"Ice screws for the chute","severity":"low","claims":[
+  {"field":"detailed_rack","says":"4–6 ice screws (for the chute)"},
+  {"field":"waypoints[4].directions","says":"six to eight screws is a sensible rack"}],
+  "why":"The rack says 4-6 screws; the summit waypoint says 6-8.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_liberty_ridge","name":"Liberty Ridge","area":"Mount Rainier","contradictions":[
+ {"fact":"White River trailhead elevation","severity":"medium","claims":[
+  {"field":"waypoints[0].elev","says":"4800"},
+  {"field":"access.notes","says":"White River Campground at 4,232 ft offers parking and camping"}],
+  "why":"The trailhead waypoint (weather panel) is 4,800 ft but access notes put the same campground at 4,232 ft.","internal_resolution":null,"needs_research":true},
+ {"fact":"Summit-day length","severity":"medium","claims":[
+  {"field":"timing.sectionBreakdown[2].hrs","says":"12"},
+  {"field":"itinerary.days[2].hours","says":"12"},
+  {"field":"partner_requirements.fitnessSpec.hiking","says":"Thumb Rock to summit and down the Emmons-Winthrop descent, 15+ hrs"}],
+  "why":"Timing and itinerary give a 12-hour summit day; the partner requirements say 15+ hours.","internal_resolution":null,"needs_research":true},
+ {"fact":"Approach to Thumb Rock: days and hours","severity":"low","claims":[
+  {"field":"partner_requirements.approachTime","says":"Full day (8-12 hrs) from the White River trailhead via Glacier Basin and the Carbon Glacier to Thumb Rock camp"},
+  {"field":"itinerary.days[0].hours","says":"6"},
+  {"field":"itinerary.days[1].hours","says":"5"}],
+  "why":"Partner requirements treat reaching Thumb Rock as one full day, while the itinerary takes two days to get there.","internal_resolution":null,"needs_research":false},
+ {"fact":"Bivouacs above Thumb Rock","severity":"low","claims":[
+  {"field":"pitch_detail[2].notes","says":"the only real bivouac on the ridge ... Above this point no safe bivy exists"},
+  {"field":"approach_variants[0].notes","says":"There are also bivouacs around 11,000 ft."}],
+  "why":"One field says there is no bivy above the Thumb Rock saddle; another lists bivouacs around 11,000 ft.","internal_resolution":null,"needs_research":true},
+ {"fact":"Bergschrund elevation","severity":"low","claims":[
+  {"field":"pitch_detail[5].notes","says":"The bergschrund near 13,800 ft is the last and usually hardest obstacle."},
+  {"field":"approach_variants[0].hazards[4]","says":"Bergschrund and short vertical ice gaining the Liberty Cap Glacier near 13,500 ft"}],
+  "why":"The same bergschrund is placed at 13,800 ft and at 13,500 ft.","internal_resolution":null,"needs_research":true},
+ {"fact":"Rack: screws, pickets, and where the rock gear is used","severity":"low","claims":[
+  {"field":"gear[1]","says":"4 to 6 ice screws for placements and V-thread anchors"},
+  {"field":"gear[2]","says":"2 to 3 snow pickets"},
+  {"field":"gear[3]","says":"Small rock rack (a handful of cams and stoppers) for the rock band low on the ridge"},
+  {"field":"detailed_rack","says":"6–8 ice screws, 3–4 pickets, a light rock rack (small cams/nuts) for the Black Pyramid"}],
+  "why":"The gear list and the detailed rack disagree on screw and picket counts and on where the rock rack is used (low on the ridge vs the Black Pyramid near 12,000 ft).","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_sunset_ridge","name":"Sunset Ridge","area":"Mount Rainier","contradictions":[
+ {"fact":"High camp location and elevation","severity":"medium","claims":[
+  {"field":"bivy[0].notes","says":"PLANNED camp and the usual high camp for the route, on the cleaver at roughly this height before it is left at about 8,500 ft"},
+  {"field":"bivy[0].elev","says":"9000"},
+  {"field":"itinerary.days[1].note","says":"to a high camp on the South Mowich Glacier (~9,600 ft)"},
+  {"field":"timing.sectionBreakdown[1].note","says":"to a high camp near Colonnade Ridge (~9,600 ft)"},
+  {"field":"beta","says":"to reach a bivy around 8,500 ft below the ridge"}],
+  "why":"The main high camp is put on the Puyallup Cleaver at 9,000 ft, on the South Mowich Glacier at 9,600 ft, near Colonnade Ridge at 9,600 ft and at 8,500 ft; the bivy card also sits above the 8,500 ft point where it says the cleaver is left.","internal_resolution":null,"needs_research":true},
+ {"fact":"Season window","severity":"medium","claims":[
+  {"field":"climate.summer","says":"Primary window (Jul-Aug based on the FA timing)"},
+  {"field":"season","says":"May-Jun"},
+  {"field":"seasonal_guidance.monthBreakdown.July.reason","says":"Typically out of condition"},
+  {"field":"climate.bySeason.spring","says":"Prime alpine ice/snow season; cold, firm conditions"}],
+  "why":"The climate panel calls July-August the primary window while the season chip, best season and monthly guidance say May-June and July is out of condition.","internal_resolution":"season, best_season, seasonal_guidance and approach_variants all say May-Jun; climate.summer is the outlier.","needs_research":false},
+ {"fact":"Commitment grade","severity":"low","claims":[
+  {"field":"grade","says":"IV"},
+  {"field":"commitment","says":"IV+"},
+  {"field":"alpine_grade","says":"IV+"}],
+  "why":"The grade pill says IV while the commitment and alpine grade say IV+.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_nisqually_icefall","name":"Nisqually Icefall","area":"Mount Rainier","contradictions":[
+ {"fact":"High camp elevation","severity":"medium","claims":[
+  {"field":"itinerary.days[0].gainFt","says":"5700"},
+  {"field":"itinerary.days[1].gainFt","says":"3300"},
+  {"field":"itinerary.days[0].objective","says":"Reach a camp on the Nisqually Glacier below the icefall"},
+  {"field":"approach","says":"to around 9,900 ft, where the lower bergschrund marks the start of technical climbing"}],
+  "why":"The itinerary gains put camp at about 11,100 ft (5,420 + 5,700), above the 9,900 ft bergschrund where the icefall climbing starts, yet the camp is described as below the icefall.","internal_resolution":null,"needs_research":true},
+ {"fact":"Route distance","severity":"low","claims":[
+  {"field":"dist_km","says":"24.94"},
+  {"field":"itinerary.days[0].miles","says":"5"},
+  {"field":"itinerary.days[1].miles","says":"8"}],
+  "why":"The stats show 15.5 mi while the itinerary days add up to 13 mi.","internal_resolution":null,"needs_research":true},
+ {"fact":"Camp listed from a different route","severity":"low","claims":[
+  {"field":"bivy[2].notes","says":"About a thousand feet above Camp Muir past Cathedral Gap"},
+  {"field":"approach","says":"drop onto the Nisqually Glacier ... Ascend the glacier alongside the Wapowety Cleaver"}],
+  "why":"Ingraham Flats, a camp past Cathedral Gap on the DC side, is listed as a route camp for a line that leaves Paradise west onto the Nisqually.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_kautz_headwall","name":"Kautz Headwall","area":"Mount Rainier","contradictions":[
+ {"fact":"Season window","severity":"medium","claims":[
+  {"field":"climate.summer","says":"Primary season, June–August"},
+  {"field":"seasonal_guidance.optimalWindow","says":"May to June"},
+  {"field":"seasonal_guidance.monthBreakdown.July.status","says":"risky"},
+  {"field":"best_season","says":"May to June"}],
+  "why":"The climate panel calls June-August the primary season while seasonal guidance says May-June and marks July risky.","internal_resolution":"best_season, seasonal_guidance and crowds.peakTraffic (May-June) agree; climate.summer is the outlier.","needs_research":false},
+ {"fact":"Approach time to Camp Hazard","severity":"low","claims":[
+  {"field":"timing.approachTimeHrs","says":"6"},
+  {"field":"partner_requirements.approachTime","says":"7-9 hrs from Paradise/Comet Falls"}],
+  "why":"The approach is 6 hours in timing and the itinerary but 7-9 hours in partner requirements.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_willis_wall","name":"Willis Wall","area":"Mount Rainier","contradictions":[
+ {"fact":"Rack: screws and pickets","severity":"low","claims":[
+  {"field":"gear[1]","says":"4-6 ice screws"},
+  {"field":"gear[2]","says":"2-3 pickets for snow belays"},
+  {"field":"rack[2]","says":"3 ice screws"},
+  {"field":"sling_rack.note","says":"a rope, a cam, a few nuts, three screws, and one piton"}],
+  "why":"The gear list says 4-6 screws and 2-3 pickets while the rack gives 3 screws and no pickets.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_bread_loaf","name":"Bread Loaf","area":"Mount Rainier","contradictions":[
+ {"fact":"Start time","severity":"low","claims":[
+  {"field":"timing.recommendedStart","says":"Pre-dawn start"},
+  {"field":"overview","says":"a reasonable rainy-day or rest-day option"}],
+  "why":"A pre-dawn start is recommended for a V0 roadside boulder the row describes as a casual rest-day option.","internal_resolution":"overview, approach_variants and watch_out all describe a casual front-country outing; recommendedStart is the outlier.","needs_research":false},
+ {"fact":"Distance","severity":"low","claims":[
+  {"field":"itinerary.days[0].miles","says":"1.6"},
+  {"field":"dist_km","says":"1.6"},
+  {"field":"approach","says":"follow the Silver Falls Loop Trail clockwise for about 1 mile"}],
+  "why":"The itinerary gives 1.6 mi while dist_km is 1.6 km (1.0 mi), and the approach says about 1 mile each way.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_fuhrer_finger","name":"Fuhrer Finger","area":"Mount Rainier","contradictions":[
+ {"fact":"High camp elevation","severity":"low","claims":[
+  {"field":"itinerary.days[0].gainFt","says":"4600"},
+  {"field":"itinerary.days[1].gainFt","says":"4400"},
+  {"field":"approach","says":"to high camps, with old rock wind walls, at the edge of the Wilson Glacier, around 9,000–9,500 ft"}],
+  "why":"The itinerary gains put camp at about 10,000 ft (5,420 + 4,600), while the approach and camp card say 9,000-9,500 ft.","internal_resolution":"approach, pitch_detail[0] (9,100–9,500 ft) and bivy[0] (9,250–9,500 ft) agree.","needs_research":false},
+ {"fact":"Ice screws","severity":"low","claims":[
+  {"field":"pitch_detail[2].notes","says":"carry screws and be ready to belay"},
+  {"field":"rack[0]","says":"2 pickets (steeper couloir sections)"},
+  {"field":"pro_needs","says":"Glacier travel gear; pickets for the steeper snow"}],
+  "why":"The route breakdown says to carry screws, but no rack or gear field lists any.","internal_resolution":null,"needs_research":true},
+ {"fact":"Descent via the Kautz","severity":"low","claims":[
+  {"field":"watch_out","says":"Icefall exposure descending via Kautz Glacier"},
+  {"field":"descent","says":"Descend the Disappointment Cleaver or Ingraham Glacier route, or downclimb the finger early in the day"}],
+  "why":"A warning refers to descending via the Kautz Glacier, which none of the descent fields offer.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_fuhrer_thumb","name":"Fuhrer Thumb","area":"Mount Rainier","contradictions":[
+ {"fact":"Couloir angle","severity":"medium","claims":[
+  {"field":"beta","says":"Grade II alpine climb (50° snow/ice couloir)"},
+  {"field":"approach_variants[0].notes","says":"The couloir is about 50-degree snow and ice."},
+  {"field":"pitch_detail[1].grade","says":"40–45° snow"},
+  {"field":"pitch_detail[2].grade","says":"Sustained 40–45° snow"}],
+  "why":"The couloir is described as 50° in beta and the approach but 40-45° in both couloir rows of the route breakdown.","internal_resolution":null,"needs_research":true},
+ {"fact":"Steepest angle","severity":"low","claims":[
+  {"field":"max_angle","says":"50"},
+  {"field":"pitch_detail[3].grade","says":"50–55° snow, exposed"}],
+  "why":"The max angle is 50° but the Wapowety Cleaver section is given as 50-55°.","internal_resolution":null,"needs_research":true},
+ {"fact":"County vs sheriff","severity":"low","claims":[
+  {"field":"emergency.county","says":"Pierce County, WA"},
+  {"field":"emergency.sheriffDispatch","says":"after hours: Lewis County Sheriff (360) 740-1105, press 0"}],
+  "why":"The emergency card names Pierce County but routes after-hours calls to the Lewis County Sheriff.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_edmunds_headwall","name":"Edmunds Headwall","area":"Mount Rainier","contradictions":[
+ {"fact":"Top of the headwall","severity":"low","claims":[
+  {"field":"hazards[0]","says":"Sustained steep snow/ice (~45-55°) from ~9,900 to ~13,400 ft."},
+  {"field":"pitch_detail[2].notes","says":"A long, sustained slope from about 9,900 to 13,000 ft"}],
+  "why":"The sustained headwall ends at 13,400 ft in hazards, overview and approach but at 13,000 ft in the route breakdown.","internal_resolution":"hazards[0], overview and approach_variants agree on 13,400 ft.","needs_research":false},
+ {"fact":"Mowich Lake road access","severity":"medium","claims":[
+  {"field":"seasonal_guidance.monthBreakdown.June.reason","says":"the Mowich Lake road usually has not opened"},
+  {"field":"seasonal_guidance.monthBreakdown.July.reason","says":"Firm neve on the headwall and a melted-out approach"},
+  {"field":"beta","says":"typically accessed via the Mowich Lake road."},
+  {"field":"access.closures","says":"no vehicle access to the Mowich Lake trailhead until further notice"}],
+  "why":"Seasonal guidance and beta treat the Mowich Lake road as seasonally open, while access and road say it has had no public access since the April 2025 bridge closure.","internal_resolution":"access.closures, road.status and approach_variants all say the road is closed indefinitely.","needs_research":false},
+ {"fact":"County vs sheriff","severity":"low","claims":[
+  {"field":"emergency.county","says":"Pierce County, WA"},
+  {"field":"emergency.sheriffDispatch","says":"after hours: Lewis County Sheriff (360) 740-1105, press 0"}],
+  "why":"The emergency card names Pierce County for this northwest-side route but routes after-hours calls to the Lewis County Sheriff.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_ingraham_direct","name":"Ingraham Direct","area":"Mount Rainier","contradictions":[
+ {"fact":"Season window","severity":"medium","claims":[
+  {"field":"season","says":"Typically climbed January through end of May"},
+  {"field":"seasonal_guidance.monthBreakdown.June.status","says":"marginal"},
+  {"field":"pro_tips[1]","says":"Best early season (May–June) when the headwall is filled"},
+  {"field":"crowds.peakTraffic","says":"Late May-June weekends, before the direct falls out of condition"},
+  {"field":"climate.bySeason.summer","says":"Prime season; warmer days, firmer nights"},
+  {"field":"approach_logistics.seasonalNotes","says":"Open June-September"}],
+  "why":"Season, best season and guidance say winter through May with June marginal, but pro tips and crowds put the best window in May-June and the climate panel calls summer prime.","internal_resolution":"season, best_season, seasonal_guidance and approach_variants all say winter/Jan through May.","needs_research":false},
+ {"fact":"Summit-day start time","severity":"low","claims":[
+  {"field":"timing.recommendedStart","says":"12:00 AM from camp"},
+  {"field":"approach","says":"start the summit push at 1-2 AM"},
+  {"field":"climbing_route[0].notes","says":"Start around 1–2 AM"}],
+  "why":"Timing and the itinerary say leave at midnight; the approach and route breakdown say 1-2 AM.","internal_resolution":null,"needs_research":true},
+ {"fact":"Route distance","severity":"medium","claims":[
+  {"field":"dist_km","says":"12.87"},
+  {"field":"itinerary.days[0].miles","says":"4.5"},
+  {"field":"itinerary.days[1].miles","says":"8"},
+  {"field":"waypoints[2].distMi","says":"8"}],
+  "why":"The stats show 8.0 mi and the header 12.5 mi, and a summit 8 mi one way would make summit day (Muir-summit-Paradise) about 11.5 mi, not 8.","internal_resolution":null,"needs_research":true},
+ {"fact":"Steepest angle","severity":"low","claims":[
+  {"field":"max_angle","says":"45"},
+  {"field":"hazards[2]","says":"Steeper glacier headwall (40–50°)"},
+  {"field":"approach_variants[0].notes","says":"on slopes up to 50 degrees"}],
+  "why":"The max angle is 45° while hazards, route breakdown and approach give up to 50°.","internal_resolution":"hazards[2], pitch_detail[3], seasonal_hazards.exposure and approach_variants agree on up to 50°.","needs_research":false},
+ {"fact":"Picket count","severity":"low","claims":[
+  {"field":"gear[2]","says":"4-6 pickets of your own"},
+  {"field":"detailed_rack","says":"2–4 pickets"}],
+  "why":"The gear list and the rack give different picket counts.","internal_resolution":null,"needs_research":true},
+ {"fact":"Height of the final section","severity":"low","claims":[
+  {"field":"climbing_route[3].label","says":"Final 3,400 ft to the crater rim"},
+  {"field":"climbing_route[3].notes","says":"Above about 13,000 ft ... crater rim at about 14,100 ft"},
+  {"field":"approach","says":"climb the final 3,400 ft while snow is firm"}],
+  "why":"The final section runs about 1,100 ft (13,000 to 14,100 ft), and Muir to summit is about 4,300 ft, so neither matches 3,400 ft.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_mowich_face","name":"Mowich Face","area":"Mount Rainier","contradictions":[
+ {"fact":"Driving to Mowich Lake","severity":"medium","claims":[
+  {"field":"timing.sectionBreakdown[0].note","says":"Drive to Mowich Lake and hike via the Spray Park area"},
+  {"field":"itinerary.days[0].note","says":"From Mowich Lake (no road access since the April 2025 bridge closure)"},
+  {"field":"access.closures","says":"no vehicle access to the Mowich Lake trailhead until further notice"}],
+  "why":"The published times still say to drive to Mowich Lake, while the itinerary, access and road fields say there is no road access.","internal_resolution":"itinerary, access.closures, road.status and approach all say there is no road access; timing.sectionBreakdown[0].note is the outlier.","needs_research":false},
+ {"fact":"Itinerary ends before the trailhead","severity":"medium","claims":[
+  {"field":"loss_ft","says":"9500"},
+  {"field":"itinerary.days[2].lossFt","says":"4900"},
+  {"field":"itinerary.totalNote","says":"A committing 3-day trip"},
+  {"field":"descent_text","says":"either down the Emmons-Winthrop Glacier to Camp Schurman/White River, or down the Disappointment Cleaver to Paradise"}],
+  "why":"The 3-day itinerary loses only 4,900 ft and ends at the high camp of the descent route, with no day to reach a trailhead, while loss_ft is 9,500.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_disappointment_cleaver","name":"Disappointment Cleaver","area":"Mount Rainier","contradictions":[
+ {"fact":"Whether the climbing fee is per climb or per year","severity":"medium","claims":[
+  {"field":"access.fees","says":"It is charged per climb, not per season."},
+  {"field":"approach_variants[0].notes","says":"needs a per-person climbing permit for the calendar year"}],
+  "why":"The access section says the fee is per climb, while the approach says one permit covers the calendar year.","internal_resolution":null,"needs_research":true}]},
+{"id":"rainier_north_mowich_headwall","name":"North Mowich Headwall","area":"Mount Rainier","contradictions":[
+ {"fact":"Approach duration","severity":"low","claims":[
+  {"field":"timing.approachTimeHrs","says":"7"},
+  {"field":"beta","says":"Two-day approach recommended."},
+  {"field":"approach_variants[0].notes","says":"Two days to reach it is the normal plan rather than a cautious one."}],
+  "why":"Published times give a 7-hour approach while beta and the approach say two days is normal.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_emmons_glacier","name":"Emmons–Winthrop Glacier","area":"Mount Rainier","contradictions":[
+ {"fact":"Route distance","severity":"medium","claims":[
+  {"field":"dist_km","says":"15.5"},
+  {"field":"itinerary.days[0].miles","says":"6.5"},
+  {"field":"itinerary.days[1].miles","says":"9.5"},
+  {"field":"waypoints[4].distMi","says":"9.5"},
+  {"field":"waypoints[2].distMi","says":"7"}],
+  "why":"The stats show 9.6 mi and the header 16 mi; the summit waypoint 9.5 mi one way implies about 19 mi round trip, and camp at 7 mi does not match the 6.5 mi day.","internal_resolution":null,"needs_research":true},
+ {"fact":"Approach distance and gain to Camp Schurman","severity":"medium","claims":[
+  {"field":"approach_variants[0].name","says":"White River Campground, Glacier Basin, Inter Glacier and Camp Schurman"},
+  {"field":"approach_variants[0].distMi","says":"3.5"},
+  {"field":"approach_variants[0].gainFt","says":"1600"},
+  {"field":"itinerary.days[0].miles","says":"6.5"},
+  {"field":"itinerary.days[0].gainFt","says":"5060"}],
+  "why":"The approach card to Camp Schurman shows 3.5 mi and 1,600 ft (the Glacier Basin leg only), while the itinerary to Schurman is 6.5 mi and 5,060 ft.","internal_resolution":"itinerary day 1 and the waypoints (Schurman 9,400 ft from a 4,400 ft trailhead) agree with ~5,000 ft; the approach card figures match only the trail to Glacier Basin.","needs_research":false},
+ {"fact":"Ladders on the route","severity":"medium","claims":[
+  {"field":"beta","says":"no guide-maintained trail, wands, or ladders"},
+  {"field":"hazards[0]","says":"Large open crevasses and ladder crossings, especially mid-to-late season"},
+  {"field":"watch_out[0]","says":"Open crevasses and ladders on the upper Emmons"},
+  {"field":"partner_requirements.requiredSkills[1]","says":"Confidence on aluminum-ladder crevasse crossings"}],
+  "why":"Beta says there are no ladders, while hazards, watch-outs and partner skills describe ladder crossings on the Emmons.","internal_resolution":null,"needs_research":true},
+ {"fact":"Summit-day length","severity":"medium","claims":[
+  {"field":"timing.summitTimeHrs","says":"13"},
+  {"field":"itinerary.days[1].hours","says":"13"},
+  {"field":"partner_requirements.fitnessSpec.hiking","says":"Sustained fitness for a long summit day (~17 hrs total)"}],
+  "why":"Timing and itinerary give a 13-hour summit day; partner requirements say about 17 hours.","internal_resolution":null,"needs_research":true},
+ {"fact":"Picket count","severity":"low","claims":[
+  {"field":"gear[3]","says":"Minimum 4-5 pickets per rope team"},
+  {"field":"detailed_rack","says":"2–4 pickets"}],
+  "why":"The gear list says at least 4-5 pickets per team while the rack says 2-4.","internal_resolution":null,"needs_research":true},
+ {"fact":"Extent of the Corridor","severity":"low","claims":[
+  {"field":"pitch_detail[4].notes","says":"running with the fall line from about 10,200 to 11,600 ft"},
+  {"field":"approach_variants[0].baseFinding","says":"running from camp up to roughly 12,000 ft"},
+  {"field":"waypoints[3].elev","says":"11800"}],
+  "why":"The Corridor tops out at 11,600 ft in the route breakdown but runs to about 12,000 ft in the base-finding text, and starts at 10,200 ft rather than at camp.","internal_resolution":null,"needs_research":true}]},
+{"id":"rainier_central_mowich_face","name":"Central Mowich Face","area":"Mount Rainier","contradictions":[]},
+{"id":"wa_mount_rainier_ptarmigan_ridge","name":"Ptarmigan Ridge","area":"Mount Rainier","contradictions":[
+ {"fact":"Itinerary ends before the trailhead","severity":"medium","claims":[
+  {"field":"loss_ft","says":"9500"},
+  {"field":"itinerary.days[2].lossFt","says":"4900"},
+  {"field":"itinerary.totalNote","says":"A 3-day trip (~9,500 ft gain)"},
+  {"field":"descent_text","says":"Descend Emmons-Winthrop to White River"}],
+  "why":"The 3-day itinerary loses only 4,900 ft on the last day, reaching about Camp Schurman with no hike-out to White River, while loss_ft is 9,500 and the overview says 3-4 days.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_tahoma_glacier","name":"Tahoma Glacier","area":"Mount Rainier","contradictions":[
+ {"fact":"Approach time","severity":"low","claims":[
+  {"field":"timing.approachTimeHrs","says":"6"},
+  {"field":"timing.sectionBreakdown[0].hrs","says":"6.5"},
+  {"field":"timing.sectionBreakdown[1].hrs","says":"5"}],
+  "why":"The approach total is 6 hours, but the two approach sections add up to 11.5 hours, and totalHrs 26.5 uses that sum.","internal_resolution":"sectionBreakdown and totalHrs (26.5 = 6.5+5+8+7) agree; approachTimeHrs is the outlier.","needs_research":false},
+ {"fact":"Number of days","severity":"low","claims":[
+  {"field":"itinerary.cal","says":"parties typically budget 5-6 days total to allow for weather"},
+  {"field":"itinerary.totalNote","says":"A remote 4-5 day trip (~12,000 ft gain); ... the long approach and weather buffer"}],
+  "why":"The trip length including a weather buffer is given as 5-6 days in one place and 4-5 days in another.","internal_resolution":null,"needs_research":false}]},
+{"id":"wa_mount_rainier_curtis_ridge","name":"Curtis Ridge","area":"Mount Rainier","contradictions":[
+ {"fact":"White River Road opening date","severity":"medium","claims":[
+  {"field":"access.closures","says":"White River Road is closed in winter (typically until late May)"},
+  {"field":"road.seasonalGate","says":"White River Road typically opens in late May"},
+  {"field":"bivy[2].notes","says":"Access is gated by the White River Road, which typically does not open until late June"}],
+  "why":"The road is said to open in late May in access and road but late June in the camp card, a difference that decides whether the May-June window can be reached by car.","internal_resolution":null,"needs_research":true},
+ {"fact":"Approach time","severity":"low","claims":[
+  {"field":"timing.approachTimeHrs","says":"6.5"},
+  {"field":"partner_requirements.approachTime","says":"8-12 hrs from White River via Glacier Basin and St. Elmo Pass to gain Curtis Ridge"}],
+  "why":"Timing and itinerary give a 6.5-hour approach; partner requirements say 8-12 hours.","internal_resolution":null,"needs_research":true}]},
+{"id":"wa_mount_rainier_gibraltar_ledges","name":"Gibraltar Ledges","area":"Mount Rainier","contradictions":[
+ {"fact":"Where the route joins the standard line","severity":"low","claims":[
+  {"field":"pitch_detail[4].notes","says":"rope up for about 2,000 ft of glacier ... typically tying into the Ingraham Direct or Disappointment Cleaver track around 13,500 ft"},
+  {"field":"approach_variants[0].baseFinding","says":"most parties trend onto the upper Ingraham for another 1,200 ft to avoid crevasses and join the standard route near 13,800 ft"}],
+  "why":"The route breakdown and base-finding text disagree on where the standard track is joined (13,500 vs 13,800 ft) and how much glacier lies above Gibraltar (2,000 vs 1,200 ft).","internal_resolution":null,"needs_research":true}]}
+]}

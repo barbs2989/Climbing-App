@@ -1,0 +1,171 @@
+#!/usr/bin/env node
+// Injection cases for check:float-plan-persistence.
+//
+// THE DEFECT THIS GUARD EXISTS FOR IS SILENT BY CONSTRUCTION, which is what the cases have to
+// reproduce: `plan`/`onPlan` are OPTIONAL, so a call site that stops passing them makes FloatPlan
+// fall back to its own state — the component renders perfectly, and only the WIRING assertions
+// can see it. Cases 1 and 2 are exactly that, once per call site, because the fix was shipped
+// incomplete the first time (#1577 did the route tab, #1581 the crew tab).
+//
+// Every case proves its edit LANDED by checksum before the guard is believed. This repo has twice
+// recorded an injection that logged, moved no byte, and read as "the guard missed it".
+//
+// Two cases must stay SILENT. A suite that only ever proves a guard FIRES is satisfied by a guard
+// that fires on everything, and this one asserts wiring by matching source — the shape most likely
+// to flag correct work.
+import { execFileSync } from "child_process";
+import crypto from "crypto";
+import fs from "fs";
+import path from "path";
+
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
+
+const RD = path.join(ROOT, "RouteDetail.jsx");
+const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+// The form moved off the route page to Crews › Float plans; the "route" cases now target that call site.
+const HUB = path.join(ROOT, "lib/FloatPlans.jsx");
+
+const CASES = [
+  {
+    name: "hub-site-drops-plan",
+    file: HUB,
+    why: "THE REAL SHAPE: Crews › Float plans stops passing plan/onPlan. FloatPlan falls back to its own state, every render assertion still passes, and the form is silently lost again.",
+    expect: /Crews › Float plans' call site does not pass plan\/onPlan\/scope/,
+    // TARGET THE TAG THAT CARRIES plan=, not the first <FloatPlan. Core quotes `<FloatPlan/>`
+    // twice in comments explaining this very defect, so a first-match edit is a silent no-op —
+    // it reported "guard missed it" while moving no byte the guard reads.
+    edit: (s) => s.replace(/<FloatPlan\b[^>]*\bplan=\{[^>]*>/, "<FloatPlan/>"),
+  },
+  {
+    name: "crew-site-drops-plan",
+    file: path.join(ROOT, "lib/SafetyTab.jsx"),
+    why: "THE HISTORICAL MISS: #1577 fixed the route tab and left this one. Team Alignment / Float Plan are a two-button pair, so the control most likely to be tapped mid-fill is the one that cleared the form.",
+    expect: /SafetyTab's call site does not pass plan\/onPlan/,
+    // TARGET THE TAG THAT CARRIES plan=, not the first <FloatPlan. Core quotes `<FloatPlan/>`
+    // twice in comments explaining this very defect, so a first-match edit is a silent no-op —
+    // it reported "guard missed it" while moving no byte the guard reads.
+    edit: (s) => s.replace(/<FloatPlan\b[^>]*\bplan=\{[^>]*>/, "<FloatPlan/>"),
+  },
+  {
+    name: "hub-state-below-the-branch",
+    file: HUB,
+    why: "lifting the state changes NOTHING if it is declared inside the branch that unmounts. The props are passed, so cases 1/2 stay green and only the ordering assertion can see it.",
+    expect: /not declared above the branch that unmounts the form/,
+    edit: (s) => {
+      /* POSITIONAL: the ordering assertion compares source offsets, so the declaration's text is
+         renamed where it stands and re-stated AFTER the gate. Not runnable JSX, and need not be. */
+      const DECL = "[openSt,setOpenSt]=useState(", NEEDLE = "isOpen&&openSt?";
+      if (!s.includes(DECL)) throw new Error("declaration not found");
+      const without = s.replace(DECL, "[openSt0,setOpenSt0]=useState(");
+      const g = without.lastIndexOf(NEEDLE);
+      if (g < 0) throw new Error("gate not found");
+      const at = g + NEEDLE.length;
+      return without.slice(0, at) + DECL + without.slice(at);
+    },
+  },
+  {
+    name: "shape-duplicated-at-the-crew-site",
+    file: path.join(ROOT, "lib/SafetyTab.jsx"),
+    why: "seeding the crew site from a hand-written literal instead of floatPlanState() puts the eleven-key shape in two places, and they drift. The props are still passed, so only the seeding assertion sees it.",
+    expect: /crew site does not seed from floatPlanState/,
+    edit: (s) => s.replace(/(\[floatPlan,setFloatPlan\]=useState\(\(\)=>)floatPlanState\(\)/,
+      "$1({form:{route:\"\"},saved:false,checkedIn:false})"),
+  },
+
+  // ---- must stay SILENT ---------------------------------------------------------------------
+  {
+    name: "comment-naming-the-gate",
+    file: HUB,
+    why: "MUST PASS. A comment quoting the gate `isOpen&&openSt?` and a bare <FloatPlan/> ABOVE the declaration. A raw search finds the EXPLANATION before the code and fails on a correct tree — the guard strips comments first, and this pins that.",
+    silent: true,
+    edit: (s) => s.replace(/(const \[open,setOpen\]=useState\()/,
+      '/* the branch below is {isOpen&&openSt?<FloatPlan/>:null} */\n  $1'),
+  },
+  {
+    name: "extra-prop-on-the-call-site",
+    file: HUB,
+    why: "MUST PASS. Adding an unrelated prop is ordinary work; a wiring assertion that fired on any change to the tag would tell authors to stop editing it.",
+    silent: true,
+    edit: (s) => s.replace(/<FloatPlan\b/, '<FloatPlan data-x="1"'),
+  },
+
+  /* SECTION 9 — <Calculator/>, the second member of this class. Its calc/onCalc props are optional
+     BY DESIGN, exactly like plan/onPlan, so each of these reverts it to local state SILENTLY: the
+     component still renders and every render assertion still passes. */
+  {
+    name: "calc-site-drops-props",
+    file: RD,
+    why: "the call site stops passing calc/onCalc, so Calculator falls back to its own state and the planner inputs are lost on a sub-tab switch again.",
+    edit: (s) => s.replace(
+      "<Calculator route={route} activity={activity} calc={calcInputs} onCalc={setCalcInputs}/>",
+      "<Calculator route={route} activity={activity}/>"),
+  },
+  {
+    name: "calc-owner-removed",
+    file: RD,
+    why: "RouteDetail stops OWNING the planner inputs, so they sit inside the branch a sub-tab switch unmounts.",
+    edit: (s) => s.replace(
+      'const [calcInputs,setCalcInputs]=useState({fit:"intermediate",pack:10,party:2,depart:6});', ""),
+  },
+  {
+    name: "calc-local-copy-returns",
+    file: RD,
+    why: "a local pack/party/depart declaration comes back and shadows the lifted one — the exact pre-fix shape.",
+    edit: (s) => s.replace('  const pack=st.pack,setPack=setK("pack");',
+                           "  const [pack,setPack]=useState(10);"),
+  },
+  {
+    name: "calc-extra-prop",
+    file: RD,
+    why: "MUST PASS. Adding an unrelated prop to the Calculator tag is ordinary work; a wiring assertion that fired on any edit would tell authors to stop touching it.",
+    silent: true,
+    edit: (s) => s.replace("<Calculator route={route}", '<Calculator data-x="1" route={route}'),
+  },
+
+  /* SECTION 10 — the contribute form's backdrop. Removing the condition restores a working,
+     rendering dialog that simply throws typed beta away; no render assertion can see that. */
+  {
+    name: "backdrop-dismisses-dirty-form",
+    file: RD,
+    why: "the backdrop closes unconditionally again, so one tap beside the panel discards up to 35 typed fields.",
+    edit: (s) => s.replace("onClick={canSubmit?undefined:onClose} role=\"dialog\" aria-modal=\"true\" aria-label=\"Contribute info\"",
+                           "onClick={onClose} role=\"dialog\" aria-modal=\"true\" aria-label=\"Contribute info\""),
+  },
+  {
+    name: "backdrop-uses-a-second-dirty-signal",
+    file: RD,
+    why: "MUST PASS is NOT the point here — keying the gate on something other than the form's own canSubmit is a drift risk, and the guard should say so.",
+    edit: (s) => s.replace("const canSubmit=totalUpdates>0", "const canSubmit2=totalUpdates>0"),
+  },
+];
+
+let pass = 0;
+const fails = [];
+for (const c of CASES) {
+  const before = fs.readFileSync(c.file, "utf8");
+  const beforeSum = sum(c.file);
+  let out = "";
+  try {
+    const after = c.edit(before);
+    if (after === before) { fails.push(`${c.name}: EDIT NEVER LANDED (file unchanged)`); console.log(`FAIL  ${c.name}`); continue; }
+    fs.writeFileSync(c.file, after);
+    if (sum(c.file) === beforeSum) { fails.push(`${c.name}: EDIT NEVER LANDED (checksum unmoved)`); console.log(`FAIL  ${c.name}`); continue; }
+    try { out = execFileSync("node", ["scripts/check-float-plan-persistence.mjs"], { cwd: ROOT, encoding: "utf8" }); }
+    catch (e) { out = String((e.stdout || "") + (e.stderr || "")); }
+  } finally {
+    fs.writeFileSync(c.file, before);
+    if (sum(c.file) !== beforeSum) { console.log(`HARNESS BROKEN: ${c.file} not restored byte-identically`); process.exit(1); }
+  }
+
+  const fired = /\bFAIL\b/.test(out);
+  const ok = c.silent ? !fired : (c.expect ? c.expect.test(out) : fired);
+  if (ok) pass++;
+  else fails.push(`${c.name}: expected ${c.silent ? "SILENCE" : "to name " + c.expect}, got:\n` +
+    out.split("\n").filter((l) => /FAIL|problem|ok —/.test(l)).slice(0, 4).map((l) => "        | " + l).join("\n"));
+  console.log(`${ok ? "ok  " : "FAIL"}  ${c.name}`);
+  console.log(`        ${c.why}`);
+}
+
+console.log(`\n${pass}/${CASES.length} cases behaved as specified.`);
+if (fails.length) { console.log("\n" + fails.join("\n")); process.exit(1); }

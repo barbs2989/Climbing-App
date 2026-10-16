@@ -1,0 +1,541 @@
+{
+ "results": [
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as Skookum's north ridge (5.4), the only documented climb here, and rewrite the name, grade, rope and descent fields that described a Class 3-4 scramble no source records.",
+   "evidence": "Three independent accounts describe the same line: from the Green Creek side parties climb over Jaws' Tooth, rappel about 15 m (a 30 m rope just reaches) or downclimb low fifth class to the notch, then follow Skookum's north (north-east) ridge on solid, very exposed olivine at about 5.4 / low fifth class; a route database lists it as low-fifth ridge climbing after the Jaws' Tooth rappel, and a 2019 party logged it as the NE Ridge of Skookum. Both accounts that describe getting off Skookum go down the loose south-west side by third-class gullies toward the basin under Hayden, not back along the ridge (which would mean re-climbing Jaws' Tooth). No source describes a Class 3-4 route up Skookum; the row's beta, face, rock_grade and pro_needs already described the north ridge, while the name, discipline, grade, rope fields, descent and itinerary described a scramble. Round-trip time, mileage and gain were left alone (only whole-circuit figures exist). The 'stay left/west of the crest' advice was replaced: the documented line stays on the crest.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126694581/jaws-tooth-and-northwest-ridge",
+    "https://cascadeclimbers.com/forum/topic/102909-tr-south-twin-jaws-tooth-skookum-kloke-little-sister-cinderella-green-creek-circuit-06302019/"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "expect_name": "Twin Sisters Olivine Scramble",
+     "name": "North Ridge via Jaws' Tooth"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "discipline",
+     "path": [],
+     "expect": "scrambling",
+     "value": "alpine"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "disciplines",
+     "path": [],
+     "expect": [
+      "scrambling"
+     ],
+     "value": [
+      "alpine"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3-4",
+     "value": "5.4"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "grade_system",
+     "path": [],
+     "expect": "class",
+     "value": "yds"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "helmet",
+      "ice axe (early season)",
+      "optional rope for exposed steps"
+     ],
+     "value": [
+      "helmet",
+      "30 m rope",
+      "light alpine rack",
+      "ice axe (early season)"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "expect": "Loose, choss-filled rock on Skookum's south-facing slopes — avoid for descent",
+     "value": "Loose, rockfall-prone rock on Skookum's south-west side, which is the usual way down — keep the party together in the gullies"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "Exposed, knife-edge ridge scrambling with substantial fall potential, especially on the north ridge variation",
+     "replace": "Exposed, knife-edge fifth-class ridge with substantial fall potential"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "descent",
+     "path": [],
+     "expect": "Reverse the scramble.",
+     "value": "Down the loose south-west side by third-class gullies."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descend by retracing the ascent ridge rather than dropping into the south-facing gullies and slopes, which are loose, choss-filled rock and a significant rockfall hazard to parties below. From the Green Creek Cirque, return via the climbers' path to the Elbow Lake Trail and out to the trailhead.",
+     "value": "Do not reverse the north ridge: that would mean re-climbing Jaws' Tooth. From the summit, descend the loose south-west side by third-class gullies into the basin below Hayden, moving carefully because the rock is choss-filled and rockfall is a real hazard to anyone below. From there, work back to the Green Creek Cirque and return via the climbers' path and the Elbow Lake Trail."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "descend by reversing the ridge and climbers' path back to the Green Creek Cirque.",
+     "replace": "descend the loose south-west side by third-class gullies rather than reversing the ridge, then return to the Green Creek Cirque and the climbers' path."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "expect": "This is a big single-day outing, not a backpack: parties hike the Elbow Lake Trail, ford the Middle Fork Nooksack and follow the blazed Green Creek climbers' path into the Green Creek Cirque, then scramble loose third and fourth class ground out of the cirque onto the ridge where the terrain turns to famously grippy olivine/dunite rock. The ridge itself is mostly 2nd-3rd class if you stay left/west of the crest, with short 3rd-4th class steps and real exposure near the top; route-finding (staying left, not straying right onto harder terrain) is the crux of the day as much as the climbing.",
+     "value": "This is a big single-day outing, not a backpack: parties hike the Elbow Lake Trail, ford the Middle Fork Nooksack and follow the blazed Green Creek climbers' path into the Green Creek Cirque, then scramble loose third and fourth class ground out of the cirque onto the ridge where the terrain turns to famously grippy olivine/dunite rock. Skookum's north ridge is reached by going over Jaws' Tooth and rappelling (or downclimbing low fifth class) to the notch on its south side; from there the line stays true to the crest on solid, very exposed rock at about 5.4. The way down is the loose south-west side by third-class gullies, not back along the ridge."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Car-to-car: Elbow Lake Trail and Green Creek Cirque + olivine ridge scramble",
+     "value": "Car-to-car: Elbow Lake Trail and Green Creek Cirque + Skookum north ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Forest opens onto exposed olivine/dunite rock; keep left (west side) of the crest for easier going.",
+     "value": "Forest opens onto exposed olivine/dunite rock; follow the crest to Jaws' Tooth and rappel or downclimb to the notch below Skookum."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "label"
+     ],
+     "expect": "Scramble to the summit",
+     "value": "Climb the north ridge to the summit"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "expect": "3rd-4th class sections with exposure; most parties top out by late morning to early afternoon.",
+     "value": "Roped, exposed 5.4 climbing on the crest; most parties top out by late morning to early afternoon."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "expect": "Reverse the ridge and downclimb carefully - loose rock and exposure demand as much care going down as up.",
+     "value": "Descend the loose south-west side by third-class gullies rather than reversing the ridge; watch for rockfall."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "with 2nd-4th class ridge scrambling on grippy olivine rock.",
+     "replace": "with a roped 5.4 ridge on grippy olivine rock."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "then scramble loose third and fourth class ground out of the cirque onto the ridge wh…",
+     "replace": "then scramble loose third and fourth class ground out of the cirque onto the ridge, go over Jaws' Tooth and climb Skookum's 5.4 north ridge."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Car-to-car: Elbow Lake Trail and Green Creek Cirque + olivine ridge scramble",
+     "value": "Car-to-car: Elbow Lake Trail and Green Creek Cirque + Skookum north ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "expect": "A harder, more direct alternative is Skookum's north ridge (5.4) — reportedly an exposed, knife-edged line on bomber rock with immense exposure.",
+     "value": "The north ridge stays true to the crest on bomber rock with immense exposure; a thin 30 m rope just reaches on the rappel off Jaws' Tooth."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "expect": "South faces are loose scree and rockfall-prone — descend the way you came up, not down the south side",
+     "value": "The south-west side used for the descent is loose scree and rockfall-prone — keep the party close together and do not descend below another party"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "what_to_bring",
+     "path": [
+      2
+     ],
+     "expect": "30m rope plus a small rack (finger-to-hand cams, slings) if attempting the 5.4 north ridge or linking into the full Green Creek Circuit",
+     "value": "30 m rope plus a light rack (small to hand-size cams, slings) for the Jaws' Tooth rappel and the 5.4 ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "what_to_bring",
+     "path": [
+      3
+     ],
+     "expect": "Approach shoes are adequate for the standard Class 3-4 line",
+     "value": "Approach shoes that climb well on slab"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "Class 3-4 scrambling movement on steep, exposed slab",
+     "value": "Leading or simul-climbing easy fifth-class rock with real exposure"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "solid, prior Class 3-4 scrambling experience with real exposure; partner should be comfortable moving unroped on steep slab and confident downclimbing the same terrain, since this is often linked with roped 5.4 pitches (Jaw's Tooth) on the same outing",
+     "value": "solid alpine rock experience: comfortable on exposed 5.4 ridge terrain, building a rappel anchor, and downclimbing loose third-class gullies on the descent"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "rope_type",
+     "path": [],
+     "expect": "none",
+     "value": "single"
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Class 3-4 olivine scramble in the Twin Sisters Range; olivine rock is noted as unusually grippy, reducing rope necessity even on steeper sections.",
+     "value": "A thin 30 m rope is carried for the rappel off Jaws' Tooth to the notch and for simul-climbing the exposed 5.4 ridge."
+    },
+    {
+     "op": "set",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "data_quality",
+     "path": [
+      "gaps",
+      1
+     ],
+     "expect": "No confirmed first-ascent date/party for the standard Class 3-4 scramble route specifically; the documented Sept 1972 Kloke/Dixon ascent covers the peak generally, route unspecified",
+     "value": "No confirmed first-ascent party for the north ridge specifically; the documented Sept 1972 Kloke/Dixon ascent covers the peak generally, route unspecified"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "not crossed on this scramble",
+     "replace": "not crossed on this route"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "light scramble day-pack",
+     "replace": "light day-pack"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "verdict": "confirmed",
+   "resolution": "rename",
+   "summary": "Rename this to 'Northwest Ridge / PCT approach': the summit is reached along the ridge north-west of the top, not a south ridge, and the rest of the row already says so.",
+   "evidence": "Two independent hiking descriptions agree: follow the PCT to its high point in Washington (about 7,600-7,650 ft), then take a small unsigned path south along the ridge to the summit, finishing with a short loose scramble; one calls that ridge Old Snowy's north ridge, and a 2023 report reached the top by the steeper northern section. The row's face (Northwest shoulder), aspect (NW), beta and climbing_route already describe that line; only the name, the descent text's repeat of the name, and one itinerary line (heading for the Old Snowy-Ives saddle) still pointed south. Those three were changed; distance, gain and loss figures were left as the earlier audit settled them.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Old_Snowy",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-04.6246660137"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_old_snowy_mountain_r1",
+     "expect_name": "South Ridge / PCT approach",
+     "name": "Northwest Ridge / PCT approach"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_old_snowy_mountain_r1",
+     "column": "descent_text",
+     "path": [],
+     "find": "on the standard South Ridge/PCT route",
+     "replace": "on the standard northwest ridge/PCT route"
+    },
+    {
+     "op": "set",
+     "id": "wa_old_snowy_mountain_r1",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Head up scree/talus toward the saddle between Old Snowy and Ives Peak.",
+     "value": "Take the unsigned path up onto Old Snowy's northwest ridge and follow it south toward the summit."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "verdict": "confirmed",
+   "resolution": "rename",
+   "summary": "Rename this to 'Standard Route (Northeast summit via South Gully and East Ridge)': every section of the page already describes that line from Lake Constance, and Crystal Pass is only the longer alternative way in.",
+   "evidence": "A detailed 2004 account climbs Inner Constance from Lake Constance up Avalanche Canyon, the south-east couloir, the moated South Defile and South Gully to a notch on the East Ridge, then a Class 2-3 scramble to the top, and descends the same way; a December 2025 ascent log likewise approaches by the Lake Constance trail and Avalanche Canyon. No source ties Crystal Pass to the standard Inner Constance line; it appears with Mount Constance's West Arete. The row's face, beta, approach, climbing_route, pitch_detail, descent and first approach variant already describe the South Gully-East Ridge line, and the Crystal Pass way is kept as the second approach variant, so only the name changes. Not changed (still single-source, recorded earlier as open): the 'Class 4 / low 5th' grade, rock_grade 5.0 and the chimney/roof wording in hazards, pro_needs and watch_out, which the one detailed account of this line does not mention.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://peakbagger.com/climber/ascent.aspx?aid=3074340",
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://www.mountainwerks.org/cma/2004/constance.html"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_inner_constance_standard",
+     "expect_name": "Standard Route (Northeast summit via Crystal Pass)",
+     "name": "Standard Route (Northeast summit via South Gully and East Ridge)"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this row: the Wilson Glacier Headwall is a real (rarely repeated) Mount Adams route, but take out the description of the unrelated Mount Rainier 'Wilson Headwall' that had been copied into its rope and rack notes.",
+   "evidence": "The route exists on Adams: a general reference names the Wilson Glacier Headwall among the dangerous routes up Roosevelt Cliff on the east side, and a first-hand account of the first ascent (Ed Cooper and Mike Swayne, 30 June 1961) describes traversing from Killen Creek to the Wilson Glacier, climbing north of the rock rib that splits the glacier, crossing the bergschrund, climbing the rightmost of three chimneys through the cliff band on rotten ice, verglas and rock with rockfall, then the upper Wilson Glacier, and descending the North Ridge. The rope_note sentence about '30-50 degree slopes staying left of a central rock buttress' with fifth-class rock bands near the top matches, nearly word for word, the Mount Rainier Wilson Headwall description (Wapowety Cleaver), so it and the matching rack/sling_rack items were rewritten. Not changed (only the single 1961 account speaks to them): the approach side (the first ascent came from the north, the row from Cold Springs), the grade, and the descent wording that offers both the North Ridge and the South Climb.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Adams_(Washington)",
+    "https://www.alpenglow.org/nwmj/07/071_Swayne2.html",
+    "https://en.wikipedia.org/wiki/Wilson_Glacier_(Mount_Adams)",
+    "https://www.mountainproject.com/route/114097472/wilson-headwall"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_adams_wilson_glacier_headwall",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Extremely serious, rarely-repeated III-IV headwall route above the Wilson Glacier. Access from the Yakama Nation (Tract D) side requires a tribal-use permit, restricting the season to July 1-October 1 for non-tribal climbers. Route climbs 30-50 degree slopes staying left of a central rock buttress; rock bands near the top may require 5th-class moves and protection.",
+     "value": "Extremely serious, rarely repeated headwall route through the cliff band above the Wilson Glacier, with rockfall and icefall funnelling through its chimneys. Access from the Yakama Nation (Tract D) side requires a tribal-use permit, restricting the season to July 1-October 1 for non-tribal climbers."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_adams_wilson_glacier_headwall",
+     "column": "rack",
+     "path": [
+      2
+     ],
+     "expect": "Small rack of nuts/cams for 5th-class rock bands near the top",
+     "value": "Small rack of nuts/cams for rock on the headwall"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_adams_wilson_glacier_headwall",
+     "column": "sling_rack",
+     "path": [
+      "rock_gear"
+     ],
+     "expect": "small rack (nuts/cams) for 5th-class rock bands near the top",
+     "value": "small rack (nuts/cams) for rock on the headwall"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "This is the right Goat Mountain (the one off the Hannegan Pass Road near Mount Baker); lower its grade from Class 2-3 to Class 2, which two route descriptions give for the East Peak, and bring the few other 'Class 2-3' mentions into line.",
+   "evidence": "Both pages were read in full this time. A detailed East Peak route description rates it 'steep heather scrambling with mild exposure (Class 2)', hands used only for balance, with a short straightforward gully near the top. A long-standing peak description (read from an archived copy) gives the East Peak as 'Difficulty: Class 2', an easy Class 2 gully that narrows and becomes exposed near the summit, and says the East Peak is not technically difficult, the real difficulty being steep, slippery heather that calls for an axe or poles. The same page sets the peak off the Mount Baker Highway / Hannegan Pass Road (FS 32), matching this row's trailhead, so it is the Goat Mountain near Mount Baker. rock_grade and the waypoint notes already said Class 2. The steep-snow pitch in pitch_detail (graded as snow) and the exposure warnings were kept; no other fields changed.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+    "https://www.summitpost.org/goat-mountain/152742",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2-3",
+     "value": "Class 2"
+    },
+    {
+     "op": "set",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "grade_num",
+     "path": [],
+     "expect": 3,
+     "value": 2
+    },
+    {
+     "op": "set",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "Class 2-3",
+     "value": "Class 2"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "Summit scramble on exposed Class 2-3 terrain with some exposure.",
+     "replace": "Summit scramble on exposed Class 2 terrain."
+    },
+    {
+     "op": "set",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "Class 2-3 scrambling / steep loose rock",
+     "value": "Class 2 scrambling on steep, slippery heather and loose rock"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "loose Class 2-3 scrambling",
+     "replace": "loose Class 2 scrambling"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_goat_mountain_south_ridge",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "the Class 2-3 scramble",
+     "replace": "the Class 2 scramble"
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

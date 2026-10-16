@@ -1,0 +1,159 @@
+{
+ "file": "v027",
+ "results": [
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "September: 'outside the best season' vs best_season/season Jul-Sep",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "On screen the season chip (Jul-Sep) is the climbing season and SEASONAL GUIDANCE shows its own optimal window (mid-July through August) with September marked marginal; a marginal month inside the season is a best window inside a season, not a conflict. best_season (which runs through September) is not rendered because seasonal_guidance is present. A late-season report of the Lucky Pass line melting to ice also fits 'marginal'.",
+   "sources": [
+    "https://www.countryhighpoints.com/tricouni-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Total gain: gain_ft 6862 vs itinerary 7,100 (5000+2000+100)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New search found only the known figures (24 mi round trip with range 1,240-8,102 ft; one report 21 mi / 8,300 ft gain) plus a 'Tricouni Peak' blog that turned out to be the British Columbia peak. An archived trip-report page is also the BC peak. No two sources state a car-to-car gain for this route, so gain_ft 6,862 and the 7,100 itinerary sum stay as they are.",
+   "sources": [
+    "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+    "https://www.francisbaileyh.com/2021/07/28/tricouni-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "fact": "rappel/rope length: 30 m vs 60 m",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new first-hand account found; the known ones still disagree (a 30 m rope 'more than enough' for one rappel; a 30 m rope needing an intermediate anchor; a 60 m rope still short of the next anchor; several mixed double/single raps). No rope length is confirmed by two sources.",
+   "sources": [
+    "https://onehikeaweek.com/2015/08/03/tupshin-peak/",
+    "https://trailcatjim.com/tupshin-peak-white-goat-peak-devore-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tye_peak_e_route",
+   "fact": "Season this route is actually climbed in",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The season column holds a sentence, which another session owns, so it is not edited here. Sources still present Tye Peak mainly as a winter snowshoe/ski extension of Skyline Ridge (no trail; bushwhack in spring and summer); a December 2025 trip report is again a winter ascent. No two sources state a summer window.",
+   "sources": [
+    "https://www.summitpost.org/tye-peak/686321",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-12-03.211615752438"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tye_peak_e_route",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Figures found still disagree: the Mountaineers route page gives 4.0 mi / 1,200 ft for Skyline Lake, Skyline Ridge and Tye Peak (below the ~1,415 ft net rise, so not a car-to-car total), WTA says the Tye extension more than doubles the 1,100-1,300 ft to the ridge, and other listings give 1,500 and 3,300 ft. No two agree on 1,800 or 2,400.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/skyline-lake-skyline-ridge-tye-peak",
+    "https://www.wta.org/go-hiking/hikes/skyline-lake-snowshoe"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "fact": "Car-to-car distance: waypoint distMi (summit 2.7 mi one way) and itinerary 5.4 mi round trip look too long for the geometry",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only summer Union-only figure found is the Mountaineers scramble page's 5.0 mi round trip / 2,400 ft (the gain implies a lower parking spot on Smithbrook Road than the trailhead); regional guides give 9.5-12 mi including Jove Peak or the winter road walk. No second source confirms a summer car-to-car figure from the Smithbrook Trailhead, so the waypoint distMi and itinerary miles are not changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/union-jove-peaks",
+    "https://wenatcheeoutdoors.org/2016/06/06/union-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "fact": "Parking pass: access.fees / access.passRequired say no Northwest Forest Pass, while permit, the Trailhead waypoint note and the Smithbrook bivy entry say one is required",
+   "verdict": "fixed",
+   "correct_value": "No parking pass is required at the Smithbrook Trailhead",
+   "evidence": "The Forest Service Smithbrook Trailhead page states 'No fees are required for this site', and the independent WTA Lake Valhalla hike page (which pins the Smithbrook trailhead) lists Parking Pass/Entry Fee: None in its 2025 archived copy; another hiking guide also says no parking pass is required. access.fees and access.passRequired already say this; the permit column, the trailhead waypoint note and this route's own Union Gap bivy entry are brought into line.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/hikes/lake-valhalla",
+    "https://modernhiker.com/hike/lake-valhalla/"
+   ],
+   "patches": [
+    {
+     "id": "wa_union_peak_se_route",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass at developed trailheads.",
+     "replace": "No parking pass is needed at the Smithbrook Trailhead."
+    },
+    {
+     "id": "wa_union_peak_se_route",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Northwest Forest Pass required",
+     "replace": "no parking pass required"
+    },
+    {
+     "id": "wa_union_peak_se_route",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "Northwest Forest Pass at the trailhead.",
+     "replace": "No parking pass is needed at the trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "fact": "total elevation gain to the crag",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "Decision rule 4: gain_ft 4,400 is provably wrong. One trail guide states Lake Viviane is reached at 9.3 mi after climbing 6,400 vertical feet; other guides put 3,800-4,100 ft on the Snow Lakes trail to Snow Lakes alone, with a further ~1,400 ft up to Lake Viviane; and the net rise from the ~1,300 ft trailhead to the ~6,785 ft lake already exceeds 5,400 ft. Only one source states a cumulative figure to the lake, so there is no sourced replacement; gain_ft is cleared, leaving the waypoint note's ~6,400 ft as the only stated gain.",
+   "sources": [
+    "https://www.enchantmentsguide.com/trail-guide/snow-lakes-trailhead",
+    "https://www.onxmaps.com/hiking/k36n9k1kmz9j/snow-lakes-trail-1553",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/snow-lakes-enchantments",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/snow-lakes-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_smears_jugs_and_rock_roll",
+     "fact": "total elevation gain to the crag",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4400,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "fact": "How long consolidated/climbable snow lasts on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new source gives a snow window; the known accounts are a June 2020 party that met an unusually large snowpack and a November 2025 party with thin snow over class 4 rock. The season column holds a sentence owned by another session, so nothing is edited.",
+   "sources": [
+    "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-11-10.102301319582"
+   ],
+   "patches": []
+  }
+ ]
+}

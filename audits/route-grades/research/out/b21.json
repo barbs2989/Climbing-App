@@ -1,0 +1,451 @@
+[
+ {
+  "id": "wa_washington_ellinor_traverse_ridge",
+  "final_grade": "5.0",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+   "https://climberkyle.com/2023/06/12/washington-ellinor-traverse/"
+  ],
+  "evidence": "MP rates it Easy 5th; trip reports call it hard Class 4 with avoidable low-5th moves; no number cited anywhere",
+  "note": "Easy 5th with no number mapped to 5.0"
+ },
+ {
+  "id": "wa_mount_watson_scramble",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/mount-watson/155079",
+   "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson"
+  ],
+  "evidence": "SummitPost: main route Class 3 from the col; final move Class 2-3 with an airy top"
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mount_Wilder"
+  ],
+  "evidence": "Easiest route is a Class 2 south ridge; record's own rock_grade also says Class 2"
+ },
+ {
+  "id": "wa_mount_worthington_standard",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mount_Worthington_(Washington)",
+   "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-worthington"
+  ],
+  "evidence": "Easiest route Class 3; all terrain Class 2 except the Class 3 summit block"
+ },
+ {
+  "id": "wa_mushroom_tower_standard",
+  "final_grade": "5.5",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/74254-tr-north-cascades-washington-pass-area-mushroom-tower-amp-big-kangaroo-6132010/"
+  ],
+  "evidence": "Trip reports: one pitch of mid fifth-class to the summit, rap off two old 1/4in bolts; no route page gives a number",
+  "note": "Record itself splits 5.4 (grade) vs 5.5 (rock_grade); took the top, consistent with 'mid fifth'"
+ },
+ {
+  "id": "wa_mutchler_peak_scramble",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/88006-tr-buckindy-range-solo-traverse-7252012/",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=815973"
+  ],
+  "evidence": "Traverse reports: heather ramp on Mutchler's NE ridge to the flat summit plateau on easy ground; Class 3 ramp/steps on the glacier approach",
+  "note": "Glacier can have a short blue-ice section late season"
+ },
+ {
+  "id": "wa_navaho_peak_south_slopes",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.summitpost.org/navaho-peak/509421",
+   "https://besthikesbc.ca/hiking-navaho-peak-in-the-teanaway-region/"
+  ],
+  "evidence": "Standard approach via Navaho Pass rated Class 2; easy 700 ft south ridge scramble"
+ },
+ {
+  "id": "wa_needle_peak_south_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://onehikeaweek.com/2023/09/11/needle-peak/"
+  ],
+  "evidence": "North ridge: mostly Class 3 with isolated Class 4 through cliff bands 7300-7400 ft; no source gives a 5th-class move",
+  "identity": "The id says south_route but the name, face and beta all describe the North Ridge."
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "final_grade": "5.4",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/122727465/nooksack-tower",
+   "https://en.wikipedia.org/wiki/Nooksack_Tower",
+   "https://cascadeclimbers.com/forum/topic/91649-tr-nooksack-tower-ne-face-beckeyschmidtke-6102013/"
+  ],
+  "evidence": "Beckey-Schmidtke rated IV 5.4; hardest pitch about 5.4-5.5 above a 50-degree snow/ice couloir",
+  "note": "Also a steep snow/ice couloir (AI1-2 early season)"
+ },
+ {
+  "id": "wa_nooksack_tower_south_face",
+  "final_grade": "5.10-",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face"
+  ],
+  "evidence": "AAJ: V 5.10-, snow/ice to 55 degrees, 12 pitches",
+  "fix": {
+   "ice_grade": "55° snow/ice"
+  },
+  "note": "ice_grade '55' is a bare angle, not a grade"
+ },
+ {
+  "id": "wa_north_early_winter_spire_chockstone_route",
+  "final_grade": null,
+  "scale": "skip"
+ },
+ {
+  "id": "wa_north_early_winter_spire_early_winter_couloir",
+  "final_grade": "AI3",
+  "scale": "wi",
+  "confidence": "medium",
+  "sources": [
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Early-Winter-Couloir",
+   "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/"
+  ],
+  "evidence": "Rated III AI2-3 M4+ (MP: 5.6 AI2-3 M4+ A1); snow/ice couloir with a short M4+/A1 mixed crux and a 5.6 rock finish",
+  "note": "Crux is a short M4+ (or A1) mixed step; 5.6 rock on the last pitch. Same route as wa_early_winter_couloir."
+ },
+ {
+  "id": "wa_chockstone_route",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/111959715/chockstone-route",
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Chockstone-Route"
+  ],
+  "evidence": "MP: 5.7, one 5.7 pitch bypassing the chockstone, rest 5.0-5.4 and easy snow"
+ },
+ {
+  "id": "wa_early_winter_couloir",
+  "final_grade": "AI3",
+  "scale": "wi",
+  "confidence": "medium",
+  "sources": [
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Early-Winter-Couloir",
+   "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/"
+  ],
+  "evidence": "Rated III AI2-3 M4+; an ice/snow/mixed couloir whose crux is a short M4+/A1 step, with 5.6 rock only on the summit pitch",
+  "note": "Headline 5.6 is only the final rock pitch; crux is M4+ mixed (A1 option). Same route as wa_north_early_winter_spire_early_winter_couloir."
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "final_grade": "5.10b",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Flycatcher-Buttress",
+   "https://www.mountainproject.com/route/118228852/flycatcher-buttress"
+  ],
+  "evidence": "IV 5.10b, ~11 pitches"
+ },
+ {
+  "id": "wa_labor_pains",
+  "final_grade": "5.11a",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/105792196/north-early-winter-spire"
+  ],
+  "evidence": "III 5.11a, five pitches, two of them 5.10 and 5.11",
+  "fix": {
+   "alpine_grade": null
+  },
+  "note": "alpine_grade 'E3 PG13' is a British adjectival grade plus a protection rating, not an alpine grade; commitment III already carries the grade"
+ },
+ {
+  "id": "wa_news_nw_corner",
+  "final_grade": "5.9+",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+   "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772539"
+  ],
+  "evidence": "Sustained 5.9-5.9+ crack climbing, burly 3-4in corner on P4; theCrag lists 5.9 III"
+ },
+ {
+  "id": "wa_the_west_face",
+  "final_grade": "5.11a",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772605",
+   "https://www.mountainproject.com/route/105847147/the-west-face"
+  ],
+  "evidence": "West Face (Beckey-Beckstead) 5.11a III, 6 pitches; freed 1985",
+  "note": "Same difficulty as the record's 5.11-"
+ },
+ {
+  "id": "wa_ne_couloir",
+  "final_grade": "AI2",
+  "scale": "wi",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+  ],
+  "evidence": "MP: NE Couloir 4th, AI1-2; snow gully averaging 40 degrees with sections to 55",
+  "note": "No 5th-class rock; graded ice AI1-2 taken at the top"
+ },
+ {
+  "id": "wa_north_tower_ridge_route",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/110624568/north-tower-ridge-route",
+   "https://www.summitpost.org/north-tower-ridge/942640"
+  ],
+  "evidence": "MP: 5.8, ~775 ft, Tower pitch is the crux"
+ },
+ {
+  "id": "wa_tower_arete",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+  ],
+  "evidence": "MP: Tower Arete 4th class; follows the North Tower ridge avoiding its 5.8 pitches"
+ },
+ {
+  "id": "wa_north_gardner_mountain_nw_couloir",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://www.peakbagger.com/climber/ascent.aspx?aid=67187",
+   "https://www.summitpost.org/north-gardner-mountain/150471"
+  ],
+  "evidence": "Cedar Creek/NW couloir reports describe a straightforward snow climb, then Class 3 talus on the upper north ridge; snow can be firm or icy",
+  "note": "Moderate snow couloir (crampons when firm) mapped to its Class 3 rock finish"
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://trailcatjim.com/north-gardner-mountain-mazama-mountains-2/",
+   "https://www.summitpost.org/north-gardner-mountain/150471"
+  ],
+  "evidence": "South ridge from the 8,487 ft false summit is mostly Class 1-2 with short Class 3 sections"
+ },
+ {
+  "id": "wa_mount_index_bluebell",
+  "final_grade": "5.13-",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/124804426/bluebell",
+   "https://publications.americanalpineclub.org/articles/13201216755"
+  ],
+  "evidence": "AAJ/MP: ~2,000 ft, 5.13-, mostly 5.11-5.12 with two pitches in the 5.13 range"
+ },
+ {
+  "id": "wa_mount_index_north_norwegian_buttress",
+  "final_grade": "5.9",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/120300835/jotnar",
+   "https://publications.americanalpineclub.org/articles/13201215809"
+  ],
+  "evidence": "MP: VI 5.9 A3+, 16 pitches; hardest free pitch 5.9+",
+  "note": "Aid wall: A3+ crux aid; free moves to 5.9(+)"
+ },
+ {
+  "id": "wa_west_face_2",
+  "final_grade": "5.11+",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/north-gunsight-wf/",
+   "https://www.mountainproject.com/area/106324284/the-gunsight-range"
+  ],
+  "evidence": "North Gunsight Peak West Face 5.11+, 5-6 pitches above the Chickamin Glacier",
+  "identity": "Filed under peak 'North Peak' beside Mount Index's North Peak routes, but this is the West Face of North Gunsight Peak in the Gunsight Range."
+ },
+ {
+  "id": "wa_mount_index_north_face",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/119540725/north-face",
+   "https://www.summitpost.org/north-face-of-north-peak/158148"
+  ],
+  "evidence": "MP: North Face 5.7 (winter WI3- M4-5); SummitPost describes 5.4 gully pitches then 5.5 crest pitches; commonly cited as III 5.7",
+  "note": "Sources split 5.6/5.7; MP preferred"
+ },
+ {
+  "id": "wa_mount_index_northeast_buttress",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [],
+  "evidence": "No route-specific source found for a Northeast Buttress on Index's North Peak; value read from the record's own columns",
+  "identity": "No such route found online; its ice grade WI3-, French D and 60-degree angle duplicate the North Face of North Peak, and the overview's 'Class 4-5 scrambling on solid granite' fits neither, so it may be a merged or invented record."
+ },
+ {
+  "id": "wa_north_star_mountain_cloudy_peak_traverse",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/cloudy-peak/694457",
+   "https://www.wta.org/go-hiking/trip-reports/tripreport-2002100607"
+  ],
+  "evidence": "Traverse involves Class 3 or 4 on Cloudy Peak's east ridge (Class 3 bypass to the south); Cloudy's summit block needs a couple of Class 4 moves"
+ },
+ {
+  "id": "wa_north_star_mountain_east_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://onehikeaweek.com/2018/08/12/north-star-mountain/",
+   "https://www.wta.org/go-hiking/hikes/north-star-mountain"
+  ],
+  "evidence": "Reports describe a gully then a scramble up the SW ridge to the top; no class number online, record's own rock_grade puts the summit step at Class 3-4 ('3.5')",
+  "note": "Headline Class 2-3 contradicts the record's own Class 3-4 crux"
+ },
+ {
+  "id": "wa_north_twin_sister_scramble",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.alltrails.com/trail/us/washington/north-twin-west-ridge",
+   "https://stephabegg.com/trip-reports/washington/north-twin/"
+  ],
+  "evidence": "Class 3-4 on the trail line beside the crest, Class 4-5 if staying on the crest"
+ },
+ {
+  "id": "wa_north_twin_sister_west_ridge",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/111130184/west-ridge",
+   "https://stephabegg.com/trip-reports/washington/north-twin/"
+  ],
+  "evidence": "MP: West Ridge 4th, Grade II; 5th-class options abound but are optional"
+ },
+ {
+  "id": "wa_northwest_mox_peak_standard",
+  "final_grade": "5.5",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/mox-peaks-northwest-peak",
+   "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/"
+  ],
+  "evidence": "Easiest route Grade II-III 5.5; Class 4-5 rock onto the NE ridge, Class 3-4 ridge, low-5th summit finish",
+  "note": "Breakdown lists a 5.7 pitch that no source supports"
+ },
+ {
+  "id": "wa_observation_rock_2_north_face",
+  "final_grade": "AI2",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/111722406/north-face",
+   "https://www.mountaineers.org/activities/routes-places/mowich-lake-area-review/observation-rock-n-face"
+  ],
+  "evidence": "MP: AI2, 3 pitches/500 ft; mid-30s to 50-degree ice"
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "final_grade": "5.5",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "https://www.summitpost.org/old-guard-peak/303084"
+  ],
+  "evidence": "East side: 2-3 pitches of easy/moderate class 5, also described as mid-fifth; no number found",
+  "note": "'Mid-fifth' mapped to 5.5"
+ },
+ {
+  "id": "wa_old_guard_peak_southwest_route",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/old-guard-peak/303084"
+  ],
+  "evidence": "West side: Class 2/3 snow couloir and a short rock scramble off the LeConte Glacier"
+ },
+ {
+  "id": "wa_old_snowy_mountain_r1",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.oregonhikers.org/field_guide/Old_Snowy",
+   "https://www.theoutbound.com/washington/backpacking/summit-old-snowy-mountain"
+  ],
+  "evidence": "Mostly Class 2 boot path, then a Class 2-3 ledge system/easy 3rd class to the summit"
+ },
+ {
+  "id": "wa_osceola_peak_scramble",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Osceola_Peak",
+   "https://trailcatjim.com/osceola-peak-mt-rolo/"
+  ],
+  "evidence": "Easiest route a Class 2 talus scramble up the south slope/SW ridge; record's own breakdown is Class 2 throughout"
+ },
+ {
+  "id": "wa_ottohorn_southeast_route",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets",
+   "https://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-5.html"
+  ],
+  "evidence": "FA (1961) went Class 3 via the east ridge from the Otto-Himmel col; a 2011 party found fresh rockfall near the summit ridge and climbed an alternate with 5.7 pitches",
+  "note": "The original line was Class 3; 5.7 is the post-rockfall alternate. Record's alpine_grade II, commitment III and headline 'Grade III-IV' disagree with each other."
+ },
+ {
+  "id": "wa_oval_peak_scramble",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/oval-peak",
+   "https://besthikesbc.ca/hiking-oval-peak-in-the-chelan-sawtooth-wilderness/"
+  ],
+  "evidence": "Class 2, unexposed talus/ridge scramble to the summit"
+ }
+]

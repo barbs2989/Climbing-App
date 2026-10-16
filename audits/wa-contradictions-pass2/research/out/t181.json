@@ -1,0 +1,724 @@
+{
+ "file": "t181.json",
+ "results": [
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "fact": "Winnie's Slide steepness and length",
+   "verdict": "fixed",
+   "correct_value": "About 40-45 degrees, roughly one rope length (150-200 ft)",
+   "evidence": "Trip reports and route pages describe Winnie's Slide as one pitch of about 45-degree snow from the White Salmon to the Upper Curtis Glacier; a guide service calls it a short, steep snow-and-ice step. No source supports a few hundred feet past 50 degrees, and max_angle, gear and the waypoint already say 40-45 degrees and 150-200 ft.",
+   "sources": [
+    "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+    "https://www.desktodirtbag.com/mount-shuksan-fisher-chimneys/",
+    "https://www.rmiguides.com/programs/north-cascades-shuksan-fisher-chimneys",
+    "https://www.summitpost.org/mount-shuksan-fisher-chimneys/218055"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_white_salmon_glacier",
+     "fact": "Winnie's Slide steepness and length",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "a short, steep snow slope of about 40-45 degrees that steepens past 50 near the top, for a few hundred feet until you can step",
+     "replace": "a short, steep snow slope of about 40-45 degrees, roughly one rope length (150-200 ft), until you can step"
+    },
+    {
+     "id": "wa_mount_shuksan_white_salmon_glacier",
+     "fact": "Winnie's Slide steepness and length",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "grade"
+     ],
+     "expect": "40-45° snow, steeper top",
+     "value": "40-45° snow"
+    },
+    {
+     "id": "wa_mount_shuksan_white_salmon_glacier",
+     "fact": "Winnie's Slide steepness and length",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "forty to forty-five degrees for a few hundred feet",
+     "replace": "forty to forty-five degrees for roughly a rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "fact": "Whether SR 542 is open year-round to this trailhead",
+   "verdict": "fixed",
+   "correct_value": "Paved; plowed year-round to the Mt. Baker Ski Area (only the stretch beyond, to Artist Point, closes in winter)",
+   "evidence": "WSDOT and the Forest Service state the highway is kept clear through winter up to the ski area/Heather Meadows, and only the final 2.7 miles to Artist Point close for the season. The White Salmon pull-off is below the ski area, so the road to it is open year-round; road.status 'open seasonally' was the outlier.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://content.govdelivery.com/accounts/WADOT/bulletins/3f63ed3",
+    "https://fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_white_salmon_glacier",
+     "fact": "Whether SR 542 is open year-round to this trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved, open seasonally",
+     "value": "Paved; plowed year-round to the Mt. Baker Ski Area"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "fact": "Summit-day and total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route page gives 5,500 ft of vertical for the route (matching gain_ft) and confirms the 5,500 ft bivy, but no source gives a per-day split or a car-to-car total that would let day 2 (camp 5,500 to 9,131 ft needs ~3,600 ft) be raised without the itinerary total departing from gain_ft. A trip report with a GPS-measured car-to-car gain and camp-to-summit gain would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/107476295/north-face",
+    "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "fact": "Hike-out leg vs the approach it reverses",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one timed trip report found (single-day ascent) took about 3 h from the car to the glacier base and about 3 h from the end of snow back to the car, but no source gives the mileage of the approach or of the hike out from the 5,500 ft bivy. A source stating the one-way distance car-to-bivy would settle days 1 and 3.",
+   "sources": [
+    "https://thepeakoftheweek.com/2016/05/11/mt-shuksan-north-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "fact": "Trailhead named in the bivy permit note",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is only bivy[0].permit, whose Lake Ann wording was written for the Fisher Chimneys side; the bivy itself (5,500 ft where the rib meets the face) serves this route. bivy[1] (Fisher Chimneys camps) does not serve the North Face. Left to the camping clean-up; no bivy patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "fact": "Road named in access.seasonal is not on this route's drive",
+   "verdict": "fixed",
+   "correct_value": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter.",
+   "evidence": "The route starts at the White Salmon Lodge pull-off on SR 542 below the ski area. WSDOT and the Forest Service state SR 542 is kept open through winter to the ski area and only the last 2.7 miles to Artist Point close; Baker Lake Road is on the south side of the mountain and not on this drive.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://content.govdelivery.com/accounts/WADOT/bulletins/3f63ed3",
+    "https://fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_north_face",
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "value": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "fact": "What borders the arête",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Route descriptions confirm the line follows a crest above the White Salmon Glacier, stays on it to avoid icefall from glaciers on either side, and that the very active Hanging Glacier is nearby; a separate NW Couloir exists on the north side, but no accessible source names which feature bounds each flank of this arête. A topo or route description naming both flanks would settle it.",
+   "sources": [
+    "https://www.summitpost.org/northwest-arete/259121",
+    "https://climberkyle.com/2021/03/11/mt-shuksan-nw-couloir/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "fact": "Access notes describe other approaches",
+   "verdict": "fixed",
+   "correct_value": "Lower approach is the White Salmon Lodge road (USFS); the upper route and summit are in North Cascades National Park; SR 542 is plowed to the ski area",
+   "evidence": "The route's approach, variants, trailhead and road all start at the White Salmon Lodge below the Mt. Baker Ski Area on SR 542; the White Salmon Glacier and summit lie in North Cascades National Park. WSDOT and the Forest Service state SR 542 is kept open to the ski area year-round, with only the Artist Point stretch closed; Baker Lake Road, Lake Ann and the Sulphide approach are not used by this route.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://content.govdelivery.com/accounts/WADOT/bulletins/3f63ed3",
+    "https://fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542",
+    "https://en.wikipedia.org/wiki/White_Salmon_Glacier_(Mount_Shuksan)",
+    "https://www.summitpost.org/northwest-arete/259121"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_northwest_arete",
+     "fact": "Access notes describe other approaches",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "the lower approach (Lake Ann Trail, Sulphide Glacier forest approach) is USFS; the summit, camps, and most of the upper route (Fisher Chimneys and Sulphide Glacier) are inside",
+     "replace": "the lower approach (the old road from the White Salmon Lodge) is USFS; the summit, camps, and most of the upper route (the White Salmon Glacier and the arête) are inside"
+    },
+    {
+     "id": "wa_mount_shuksan_northwest_arete",
+     "fact": "Access notes describe other approaches",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "value": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter."
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "fact": "Trailhead the party drives to",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route is genuinely reached by two approaches — Shannon Ridge/Sulphide or Lake Ann/Fisher Chimneys — and the row says so in the overview, beta and road.name ('Lake Ann Trailhead ... or Baker Lake Road for the Sulphide Glacier'); the Lake Ann drive note and Winnie's Slide bivy describe the second option.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "The Sulphide Glacier camp is about 6,200-6,500 ft (6,400 on this row), not 5,400 ft (the pass)",
+   "evidence": "Trip reports and guide services put the usual Sulphide camp at about 6,400 ft (Mountaineers report) and 6,500 ft at the glacier's edge (guide service); the USGS elevation at this waypoint's own coordinate is about 6,280 ft. 5,400 ft is the pass where the glacier first comes into view, so the pin's elevation and 'at the pass' wording were the outliers.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-shuksan-sulphide-glacier-9",
+    "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-sulphide-glacier/",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.612&y=48.803&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "id": "wa_southeast_ridge_se_corner",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 6400
+    },
+    {
+     "id": "wa_southeast_ridge_se_corner",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Camp at the pass below the Sulphide Glacier",
+     "value": "Sulphide Glacier camp"
+    },
+    {
+     "id": "wa_southeast_ridge_se_corner",
+     "fact": "High camp elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "expect": "Camp at the pass where Shannon Ridge's flat crest meets the glacier.",
+     "value": "The usual camp on the flat plateau at the edge of the Sulphide Glacier, above the 5,400 ft pass where the glacier first comes into view."
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "fact": "Overnight permit at the lower Shannon Ridge camps",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service trail page confirms the trail is in the Mt. Baker Wilderness, enters the park about 0.5 mi up the ridge and has campsites along the ridge, but says nothing about a self-issue wilderness permit; a guide service says no permit is needed to camp lower on the ridge. Whether a free self-issue permit is required at Shannon Ridge is not settled by two sources; the Mt. Baker Ranger District could settle it. The disputed bivy text is also left to the camping clean-up.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/shannon-ridge-trail-742",
+    "https://www.bcadventureguides.com/trip/mt-shuksan-sulphide-glacier/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "fact": "Summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "About 14.5 hours from high camp to the car (3:30 AM to 6:00 PM)",
+   "evidence": "Two trip reports that summited from high camp and hiked out the same day took about 14.25 h (2:30 AM to 4:45 PM) and 16.5 h (4 AM to 8:30 PM); guide itineraries give 8-10 h for the camp-to-summit-to-camp part alone, before the 4-6 h hike out. The row's own schedule (3:30 AM to 6:00 PM) agrees; the 10 h figure counted only the round trip to camp.",
+   "sources": [
+    "https://mountainflamingo.com/2020-07-25-26-mount-shuksan-via-fisher-chimneys/",
+    "https://www.desktodirtbag.com/mount-shuksan-fisher-chimneys/",
+    "https://www.rmiguides.com/programs/north-cascades-shuksan-fisher-chimneys",
+    "https://www.alpineascents.com/climbs/mount-shuksan-fisher-chimneys/itinerary/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Summit-day duration",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "hours"
+     ],
+     "expect": 10,
+     "value": 14.5
+    },
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Summit-day duration",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10,
+     "value": 14.5
+    },
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Summit-day duration",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "hrs"
+     ],
+     "expect": 10,
+     "value": 14.5
+    },
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Summit-day duration",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 17.5,
+     "value": 22
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "fact": "Elevation of the top of the Chimneys / high camp",
+   "verdict": "fixed",
+   "correct_value": "High camp at the top of the Chimneys is about 6,700-6,800 ft; the higher camp above Winnie's Slide is about 7,200 ft",
+   "evidence": "Guide services put the high camp on a narrow ridge above the White Salmon Glacier at 6,700 ft and near the top of the White Salmon at about 6,800 ft, reached after roughly 800-1,200 ft of chimney scrambling. The 'base of, or partway up, the Chimneys (6,500-7,200 ft)' sentence was the outlier; bivy, itinerary and waypoint already say 6,700 ft.",
+   "sources": [
+    "https://www.rmiguides.com/programs/north-cascades-shuksan-fisher-chimneys",
+    "https://proguiding.com/trips/mount-shuksan-fisher-chimneys/",
+    "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-fisher-chimneys/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Elevation of the top of the Chimneys / high camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft).",
+     "replace": "Most parties camp at the top of the Chimneys near the upper White Salmon Glacier (about 6,700-6,800 ft), or higher on the rock rib above Winnie's Slide (about 7,200 ft)."
+    },
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Elevation of the top of the Chimneys / high camp",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft).",
+     "replace": "Most parties camp at the top of the Chimneys near the upper White Salmon Glacier (about 6,700-6,800 ft), or higher on the rock rib above Winnie's Slide (about 7,200 ft)."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "fact": "Where the usual high camp sits on the White Salmon",
+   "verdict": "fixed",
+   "correct_value": "At the top of the Chimneys, on the upper edge of the White Salmon Glacier (~6,700-6,800 ft)",
+   "evidence": "Guide services describe the camp as near the top of the White Salmon Glacier at about 6,800 ft and on a ridge above the White Salmon at 6,700 ft, below Winnie's Slide; the White Salmon's toe is far lower (about 5,200 ft on the neighbouring route). DESCENT's 'its toe holds the usual high camp' was the outlier.",
+   "sources": [
+    "https://proguiding.com/trips/mount-shuksan-fisher-chimneys/",
+    "https://www.rmiguides.com/programs/north-cascades-shuksan-fisher-chimneys"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Where the usual high camp sits on the White Salmon",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "its toe holds the usual high camp",
+     "replace": "the usual high camp sits near its upper edge, at the top of the Chimneys"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "fact": "Time to Lake Ann",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report did the 4 miles to Lake Ann in an even two hours; a guide service gives 6 h to high camp with 2-3 h from Lake Ann to high camp, implying 3-4 h to Lake Ann. Sources disagree, so neither 2.5 h nor 3-4 h is confirmed; a second timed report of the trailhead-to-Lake-Ann leg with an overnight pack would settle it.",
+   "sources": [
+    "https://www.desktodirtbag.com/mount-shuksan-fisher-chimneys/",
+    "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-fisher-chimneys/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "fact": "Road named in access.seasonal is not on this route's drive",
+   "verdict": "fixed",
+   "correct_value": "The Mount Baker Highway (SR 542) is plowed only as far as the Mt. Baker Ski Area at Heather Meadows; the last 2.7 miles to Artist Point, which pass the Lake Ann trailhead, close with the first big snowfall (late September to early November) and usually reopen in early summer, sometimes not until July.",
+   "evidence": "The route starts at the Lake Ann trailhead on SR 542 above the ski area. WSDOT and the Forest Service state the highway is kept clear only to Heather Meadows/the ski area, and the final 2.7 miles to Artist Point close with the first significant snowfall and typically reopen by early July; Baker Lake Road is not on this drive.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://content.govdelivery.com/accounts/WADOT/bulletins/3f63ed3",
+    "https://fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_fisher_chimneys",
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "value": "The Mount Baker Highway (SR 542) is plowed only as far as the Mt. Baker Ski Area at Heather Meadows; the last 2.7 miles to Artist Point, which pass the Lake Ann trailhead, close with the first big snowfall (late September to early November) and usually reopen in early summer, sometimes not until July."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "fact": "Grade of the standard summit-pyramid gully",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 central gully (crux Class 4)",
+   "evidence": "Sources rate the central gully variously as class 3 and as class 3-4 (the gully is a class 3-4 scramble with harder moves; guide services cite 4th class). 'Class 3-4' is the rating that covers both and agrees with the Class 4 crux in grade and the Partners tab; the bare '3rd class' in rock_grade, the breakdown and the beta was the outlier.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/mount-shuksan-sulphide-glacier",
+    "https://www.bcadventureguides.com/trip/mt-shuksan-sulphide-glacier/",
+    "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+    "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-sulphide-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_sulphide_glacier",
+     "fact": "Grade of the standard summit-pyramid gully",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "3rd class (4th class / low 5th on the SE Ridge finish)",
+     "value": "Class 3-4 (low 5th on the SE Ridge finish)"
+    },
+    {
+     "id": "wa_mount_shuksan_sulphide_glacier",
+     "fact": "Grade of the standard summit-pyramid gully",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "grade"
+     ],
+     "expect": "3rd class",
+     "value": "Class 3-4"
+    },
+    {
+     "id": "wa_mount_shuksan_sulphide_glacier",
+     "fact": "Grade of the standard summit-pyramid gully",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Standard route involves 3rd class gullies to the summit",
+     "replace": "Standard route involves 3rd-4th class gullies to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "fact": "Distance to the summit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY APPROACH; 8 km (5.0 mi) matches the approach to high camp stated in the approach text (4-5 mi), the camp waypoint and itinerary day 1 (5 mi). The summit at 8 mi is the approach plus the glacier climb, a different quantity.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "fact": "September inside the optimal window",
+   "verdict": "fixed",
+   "correct_value": "Late May (ski) through August; September is marginal",
+   "evidence": "Sources give July-August (late July-August prime) as the best window and describe September as still climbable but with more open crevasses, blue ice above camp and harder navigation — matching the row's own 'marginal' September rating. The optimalWindow running through September was the outlier.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/mountt-shuksan-sulphide-glacier",
+    "https://home.nps.gov/noca/blogs/climbing-conditions-mt-shuksan-2024.htm",
+    "https://www.summitpost.org/mount-shuksan/150347"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_sulphide_glacier",
+     "fact": "September inside the optimal window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Late May (ski) through September",
+     "value": "Late May (ski) through August"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "fact": "Day-1 gain to camp (and day-2 gain)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources put the camp at about 6,150 ft (trip report) on slabs above Price Lake, so day 1 needs ~3,900+ ft and day 2 ~3,000+ ft — more than the 6,000 ft gain_ft allows in any split, so simply swapping the days trades one contradiction for another. One route page gives 4,300 ft of gain, which cannot be car-to-car. A source stating the car-to-car gain for this route would settle it.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/price-glacier-on-mount-shuksan",
+    "https://mazamas.org/activity/302/",
+    "https://www.summitpost.org/price-glacier-mount-shuksan/758377"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "fact": "Distance to base camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One description puts the Price Lake turn-off 2.8-3 mi up the Nooksack Cirque trail and Price Lake just over a mile beyond, with camp further up on the slabs; another calls the Price Lake approach a 10-12 mi round trip. They disagree on the one-way distance to camp (roughly 4.5 vs 5-6 mi), so neither the 4 mi pin nor the 5.5 mi day is confirmed; a GPS-measured trailhead-to-slab-camp distance would settle it.",
+   "sources": [
+    "https://www.summitpost.org/price-glacier-mount-shuksan/758377",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-07.125629882788"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "fact": "Whether the road to the trailhead is drivable",
+   "verdict": "fixed",
+   "correct_value": "FS 32 is driven just over 1 mile to FS 34, which is driven 1 mile to its end at Ruth Creek; the washed-out road beyond is on foot",
+   "evidence": "The Forest Service and WTA both give the drive as Hannegan Pass Road 32 for just over a mile to Nooksack Cirque Road 34, then 1 mile on Road 34 to the parking at its end, where Ruth Creek has no bridge and the old roadbed beyond is walked. The washout is on the FS 34 end at Ruth Creek, not on FS 32, which continues to the Hannegan Pass trailhead.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/nooksack-cirque-trail-750",
+    "https://www.wta.org/go-hiking/hikes/nooksack-cirque"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_price_glacier",
+     "fact": "Whether the road to the trailhead is drivable",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "FR 32 has a longstanding washout roughly 2.3 miles in, near Ruth Creek (elev. ~2,150 ft); travel beyond that point is on foot",
+     "value": "FS 32 is drivable to its junction with FS 34; FS 34 ends about a mile later at Ruth Creek (elev. ~2,150 ft), where the old road beyond is washed out and travel is on foot"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "fact": "Road named in access.seasonal is not on this route's drive",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The Forest Service and WTA directions reach this trailhead by SR 542, Hannegan Pass Road 32 and Nooksack Cirque Road 34; Baker Lake Road is on the opposite (south) side of the mountain, so the note describes another approach. No sourced seasonal statement for FS 32/34 was found to replace it, so the misplaced note is removed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/nooksack-cirque-trail-750",
+    "https://www.wta.org/go-hiking/hikes/nooksack-cirque"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_price_glacier",
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "ROUTE BREAKDOWN sections are named terrain segments, not rope pitches — two of the ten are a glacier crossing and the summit-pyramid finish, and the 1,000 ft buttress is one section of many pitches — so a section count is not a pitch count.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Length of the rock section",
+   "verdict": "fixed",
+   "correct_value": "About 1,000 ft of easy 5th-class (about 5.2) buttress",
+   "evidence": "Both route pages describe traversing left around a corner onto a long easy 5th-class buttress of good rock, climbed for about 1,000 ft to the crest of the SE Ridge, followed by the summit pyramid. The gear line calling it a 'short' section was the outlier; overview, beta and the breakdown (305 m) agree.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face",
+    "https://www.summitpost.org/sw-couloir-and-face/990312"
+   ],
+   "patches": [
+    {
+     "id": "wa_sw_couloir_and_face",
+     "fact": "Length of the rock section",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "find": "for the short 5.2 rock/face section at the top",
+     "replace": "for the long, easy 5th-class (about 5.2) buttress above the icefall, roughly 1,000 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Road named in access.seasonal is not on this route's drive",
+   "verdict": "fixed",
+   "correct_value": "The Mount Baker Highway (SR 542) is plowed only as far as the Mt. Baker Ski Area at Heather Meadows; the last 2.7 miles to Artist Point, which pass the Lake Ann trailhead, close with the first big snowfall (late September to early November) and usually reopen in early summer, sometimes not until July.",
+   "evidence": "This route starts at the Lake Ann trailhead on SR 542 (road, trailhead and approach fields agree), yet ACCESS warned about Baker Lake Road. WSDOT and the Forest Service state SR 542 is kept clear only to the ski area/Heather Meadows, with the last 2.7 miles to Artist Point closed from the first significant snowfall until typically early July.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://content.govdelivery.com/accounts/WADOT/bulletins/3f63ed3",
+    "https://fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542"
+   ],
+   "patches": [
+    {
+     "id": "wa_sw_couloir_and_face",
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "value": "The Mount Baker Highway (SR 542) is plowed only as far as the Mt. Baker Ski Area at Heather Meadows; the last 2.7 miles to Artist Point, which pass the Lake Ann trailhead, close with the first big snowfall (late September to early November) and usually reopen in early summer, sometimes not until July."
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "fact": "Glacier beside the alternate-approach bivy",
+   "verdict": "fixed",
+   "correct_value": "Upper Curtis Glacier (Winnie's Slide tops out onto the Upper Curtis)",
+   "evidence": "Route pages and trip reports describe Winnie's Slide as the short steep slope from the White Salmon onto the toe of the Upper Curtis Glacier, so a bivy reached by climbing the Fisher Chimneys and Winnie's Slide is beside the Upper Curtis; the Lower Curtis lies below the chimneys on the other side of the Shuksan Arm. The itinerary already says Upper Curtis.",
+   "sources": [
+    "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+    "https://www.desktodirtbag.com/mount-shuksan-fisher-chimneys/",
+    "https://www.rmiguides.com/programs/north-cascades-shuksan-fisher-chimneys"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_hanging_glacier",
+     "fact": "Glacier beside the alternate-approach bivy",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Winnie's Slide to a bivy near the Lower Curtis Glacier",
+     "replace": "Winnie's Slide to a bivy near the Upper Curtis Glacier"
+    },
+    {
+     "id": "wa_mount_shuksan_hanging_glacier",
+     "fact": "Glacier beside the alternate-approach bivy",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Winnie's Slide to a bivy near the Lower Curtis Glacier",
+     "replace": "Winnie's Slide to a bivy near the Upper Curtis Glacier"
+    },
+    {
+     "id": "wa_mount_shuksan_hanging_glacier",
+     "fact": "Glacier beside the alternate-approach bivy",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "From the Lower Curtis bivy",
+     "replace": "From the Upper Curtis bivy"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "fact": "Ice screw count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row itself records that no Hanging-Glacier-specific rack was found and the gear was extrapolated from the North Face; no source found gives a screw count for this route, and only two fields (rack, detailed_rack) oppose sling_rack. A trip report listing the screws carried on this route would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "fact": "Trailhead named in the main bivy permit note",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Only bivy[0].permit is disputed (Lake Ann wording on the White Salmon-side North Face bivy). bivy[0] (5,500 ft rib bivy) is on the White Salmon approach this route uses; bivy[1] (Fisher Chimneys camps) serves only the alternate Lake Ann variant. Left to the camping clean-up; no bivy patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "fact": "Road named in access.seasonal is not on this route's drive",
+   "verdict": "fixed",
+   "correct_value": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter.",
+   "evidence": "The primary start is the White Salmon Lodge pull-off on SR 542 below the ski area (road.seasonalGate already says 'SR 542 plowed to the ski area'). WSDOT and the Forest Service confirm SR 542 is kept open through winter to the ski area and only the stretch to Artist Point closes; Baker Lake Road is not on this drive.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://content.govdelivery.com/accounts/WADOT/bulletins/3f63ed3",
+    "https://fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_State_Route_542"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_shuksan_hanging_glacier",
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "value": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts; the road beyond to Artist Point is closed in winter."
+    }
+   ]
+  }
+ ]
+}

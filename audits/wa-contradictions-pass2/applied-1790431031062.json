@@ -1,0 +1,50 @@
+{
+ "applied": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Permit for the camps"
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit for the camps"
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Permit for the camps"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "before": {
+    "access": {
+     "fees": "A Northwest Forest Pass or other interagency pass is required to park at Watson Lakes Trailhead. NPS backcountry permits (if camping in the park) carry a $6 non-refundable reservation fee plus a $10 per-person, per-night recreation fee.",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. Some approaches cross into North Cascades National Park land on the upper mountain, where a NPS backcountry permit is required only if camping overnight past the boundary.",
+     "permit": "No permit needed for day use or camping within the Noisy-Diobsud Wilderness (Forest Service land). If camping within the North Cascades National Park boundary near the summit, a backcountry wilderness permit reserved through recreation.gov is required.",
+     "closures": "FR 1107 and connecting spur roads in this corridor have been affected by washouts and downed timber in past seasons (in 2021 the nearby Baker River Trailhead access road was reportedly blocked by a fallen tree) — check Mt. Baker Ranger District road/trail conditions before driving.",
+     "landManager": "Approach and camps (Watson Lakes, Diobsud Lakes) are on Mount Baker-Snoqualmie National Forest land within the Noisy-Diobsud Wilderness (Mt. Baker Ranger District); the summit sits on the southwest boundary of North Cascades National Park.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Noisy-Diobsud Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, fee per person",
+      "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center or the Glacier Public Service Center."
+     }
+    }
+   }
+  }
+ ]
+}

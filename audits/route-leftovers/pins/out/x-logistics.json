@@ -1,0 +1,9 @@
+{"results":[
+ {"id":"wa_buckner_mountain_north_face","verdict":"confirmed","summary":"Trailhead record now names the Boston Basin trailhead its pin was moved to.","ops":[
+  {"op":"set","id":"wa_buckner_mountain_north_face","column":"approach_logistics","path":["trailhead"],"expect":"Cascade Pass Trailhead","value":"Boston Basin Trailhead"},
+  {"op":"set","id":"wa_buckner_mountain_north_face","column":"approach_logistics","path":["trailheadLat"],"expect":48.47544,"value":48.48055},
+  {"op":"set","id":"wa_buckner_mountain_north_face","column":"approach_logistics","path":["trailheadLng"],"expect":-121.07503,"value":-121.07979}]},
+ {"id":"wa_grotto_mountain_e_route","verdict":"confirmed","summary":"Trailhead record coordinates now match the moved road-end pin.","ops":[
+  {"op":"set","id":"wa_grotto_mountain_e_route","column":"approach_logistics","path":["trailheadLat"],"expect":47.776833,"value":47.76305},
+  {"op":"set","id":"wa_grotto_mountain_e_route","column":"approach_logistics","path":["trailheadLng"],"expect":-121.344633,"value":-121.39002}]}
+]}

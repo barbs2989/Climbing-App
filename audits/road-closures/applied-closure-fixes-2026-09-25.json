@@ -1,0 +1,598 @@
+{
+  "wa_fortress_mountain_northeast_face": {
+    "area_id": "wa_fortress_mountain",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road / Forest Road 6200",
+      "status": "Paved becoming gravel/dirt roughly 11 miles in, rough for the final ~12 miles to Trinity Trailhead",
+      "driveNote": "Same access as the East Ridge — see that route for full driving directions.",
+      "seasonalGate": "Unplowed in winter; winter access uses a ~21-mile unplowed road from Fish Lake Sno-Park"
+    },
+    "value": {
+      "name": "Chiwawa River Road / Forest Road 6200",
+      "status": "Paved becoming gravel/dirt roughly 11 miles in, rough for the final ~12 miles to Trinity Trailhead. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "Same access as the East Ridge — see that route for full driving directions.",
+      "seasonalGate": "Unplowed in winter; winter access uses a ~21-mile unplowed road from Fish Lake Sno-Park"
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_massie_peak_west_route": {
+    "area_id": "wa_massie_peak",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road (Forest Road 6200)",
+      "status": "Paved near Lake Wenatchee, transitioning to rough washboard gravel/dirt for roughly the final 12 miles to the Trinity/Phelps Creek trailheads; passable to most vehicles in dry conditions but slow going for low-clearance cars.",
+      "driveNote": "From Leavenworth: US-2 west ~15 mi to Coles Corner, WA-207 north 4.4 mi, then Chiwawa River Rd (FR 6200) up-valley to the Trinity/Phelps Creek trailheads."
+    },
+    "value": {
+      "name": "Chiwawa River Road (Forest Road 6200)",
+      "status": "Paved near Lake Wenatchee, transitioning to rough washboard gravel/dirt for roughly the final 12 miles to the Trinity/Phelps Creek trailheads; passable to most vehicles in dry conditions but slow going for low-clearance cars. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "From Leavenworth: US-2 west ~15 mi to Coles Corner, WA-207 north 4.4 mi, then Chiwawa River Rd (FR 6200) up-valley to the Trinity/Phelps Creek trailheads."
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_mount_berge_southwest_route": {
+    "area_id": "wa_mount_berge",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road (Forest Road 6200 / FR-62)",
+      "status": "Decent gravel for roughly the first 11 miles from WA-207, then narrow, rough, and high-clearance-recommended for the final ~12 miles to Trinity Trailhead; sections beyond Goose Creek have been closed in some years by flood damage and wildfire activity.",
+      "driveNote": "From US-2 near Coles Corner, take WA-207 north about 4.4 miles, turn onto Chiwawa Loop Road, then follow signs onto Chiwawa River Road/FR-6200 for about 23 miles to Trinity Trailhead.",
+      "seasonalGate": "Typically snow-closed in winter/spring; verify current status with the Okanogan-Wenatchee National Forest before driving, as fire and flood closures have occurred in recent seasons."
+    },
+    "value": {
+      "name": "Chiwawa River Road (Forest Road 6200 / FR-62)",
+      "status": "Decent gravel for roughly the first 11 miles from WA-207, then narrow, rough, and high-clearance-recommended for the final ~12 miles to Trinity Trailhead; sections beyond Goose Creek have been closed in some years by flood damage and wildfire activity. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "From US-2 near Coles Corner, take WA-207 north about 4.4 miles, turn onto Chiwawa Loop Road, then follow signs onto Chiwawa River Road/FR-6200 for about 23 miles to Trinity Trailhead.",
+      "seasonalGate": "Typically snow-closed in winter/spring; verify current status with the Okanogan-Wenatchee National Forest before driving, as fire and flood closures have occurred in recent seasons."
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_mount_maude_r1": {
+    "area_id": "wa_mount_maude",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road / Phelps Creek Road",
+      "status": "Unpaved, rough and washboarded; high-clearance vehicle recommended",
+      "driveNote": "Long gravel forest roads to the Phelps Creek / Chiwawa trailheads",
+      "seasonalGate": "Upper roads snow-gated into spring"
+    },
+    "value": {
+      "name": "Chiwawa River Road / Phelps Creek Road",
+      "status": "Unpaved, rough and washboarded; high-clearance vehicle recommended. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "Long gravel forest roads to the Phelps Creek / Chiwawa trailheads",
+      "seasonalGate": "Upper roads snow-gated into spring"
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_mount_maude_r2": {
+    "area_id": "wa_mount_maude",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+      "status": "Gravel forest road, rough in sections, high-clearance recommended",
+      "driveNote": "From US-2/SR-207 near Lake Wenatchee, follow Chiwawa River Road (FR 6200) about 22 miles, then turn right on Phelps Creek Road (FR 6211) and continue ~2.3-2.5 miles to the trailhead (3,500 ft).",
+      "seasonalGate": "Typically snow-free and drivable late May/June through fall; subject to storm-damage closures - check current Okanogan-Wenatchee NF alerts before driving"
+    },
+    "value": {
+      "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+      "status": "Gravel forest road, rough in sections, high-clearance recommended. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "From US-2/SR-207 near Lake Wenatchee, follow Chiwawa River Road (FR 6200) about 22 miles, then turn right on Phelps Creek Road (FR 6211) and continue ~2.3-2.5 miles to the trailhead (3,500 ft).",
+      "seasonalGate": "Typically snow-free and drivable late May/June through fall; subject to storm-damage closures - check current Okanogan-Wenatchee NF alerts before driving"
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": [
+      {
+        "key": "status",
+        "rows": [
+          "wa_mount_maude_r3"
+        ]
+      }
+    ]
+  },
+  "wa_mount_maude_r3": {
+    "area_id": "wa_mount_maude",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+      "status": "Gravel forest road, rough in sections, high-clearance recommended",
+      "driveNote": "From US-2/SR-207 near Lake Wenatchee, follow Chiwawa River Road (FR 6200) about 22 miles, then turn right on Phelps Creek Road (FR 6211) and continue ~2.3-2.5 miles to the trailhead (3,500 ft).",
+      "seasonalGate": "Typically snow-free and drivable late May/June through fall; subject to storm-damage closures - check current Okanogan-Wenatchee NF alerts before driving"
+    },
+    "value": {
+      "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+      "status": "Gravel forest road, rough in sections, high-clearance recommended. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "From US-2/SR-207 near Lake Wenatchee, follow Chiwawa River Road (FR 6200) about 22 miles, then turn right on Phelps Creek Road (FR 6211) and continue ~2.3-2.5 miles to the trailhead (3,500 ft).",
+      "seasonalGate": "Typically snow-free and drivable late May/June through fall; subject to storm-damage closures - check current Okanogan-Wenatchee NF alerts before driving"
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": [
+      {
+        "key": "status",
+        "rows": [
+          "wa_mount_maude_r2"
+        ]
+      }
+    ]
+  },
+  "wa_spectacle_buttes_west_route": {
+    "area_id": "wa_spectacle_buttes",
+    "field": "road",
+    "expect": {
+      "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+      "status": "Paved/gravel Chiwawa Loop Road transitions to gravel/dirt FR 6200 beyond about mile 11, then FR 6211 for the final ~2.3 miles — rough and rutted, not suitable for low-clearance vehicles; roughly 14 miles of rough dirt/gravel total.",
+      "driveNote": "From Leavenworth: US-2 west ~15 mi to Coles Corner, WA-207 north ~4.4 mi, then Chiwawa Loop Road to Chiwawa River Rd/FR 6200 for ~22 mi, then FR 6211 ~2.3 mi to the Phelps Creek Trailhead (3,500 ft).",
+      "seasonalGate": "Typically snowed shut from late fall through spring; opening date varies by year and is further affected by storm-damage closures — check Wenatchee River Ranger District road/trail alerts before driving."
+    },
+    "value": {
+      "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+      "status": "Paved/gravel Chiwawa Loop Road transitions to gravel/dirt FR 6200 beyond about mile 11, then FR 6211 for the final ~2.3 miles — rough and rutted, not suitable for low-clearance vehicles; roughly 14 miles of rough dirt/gravel total. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+      "driveNote": "From Leavenworth: US-2 west ~15 mi to Coles Corner, WA-207 north ~4.4 mi, then Chiwawa Loop Road to Chiwawa River Rd/FR 6200 for ~22 mi, then FR 6211 ~2.3 mi to the Phelps Creek Trailhead (3,500 ft).",
+      "seasonalGate": "Typically snowed shut from late fall through spring; opening date varies by year and is further affected by storm-damage closures — check Wenatchee River Ranger District road/trail alerts before driving."
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_buckskin_mountain_southwest_slopes": {
+    "area_id": "wa_buckskin_mountain",
+    "field": "road",
+    "expect": {
+      "name": "Entiat River Road (County Rd 19 -> FR 51 at mile 27 -> unpaved FR 5100 at mile 34)",
+      "status": "Paved to about mile 34, then gravel FR 5100 to the trailhead; single-lane sections with pullouts near the old washout/burn area.",
+      "driveNote": "37.3 miles from the town of Entiat (reached via US-97A) to the Entiat River Trailhead at 3,150 ft - this is a standard drive-to trailhead, not boat/ferry access.",
+      "seasonalGate": "Winter gate near the Entiat Sno-Park (~mile 25); reopening date varies by year, sometimes into May."
+    },
+    "value": {
+      "name": "Entiat River Road (County Rd 19 -> FR 51 at mile 27 -> unpaved FR 5100 at mile 34)",
+      "status": "Paved to about mile 34, then gravel FR 5100 to the trailhead; single-lane sections with pullouts near the old washout/burn area. Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes Entiat River Road 5100 and the Entiat River Trail #1400. Check with the Okanogan-Wenatchee National Forest before you go.",
+      "driveNote": "37.3 miles from the town of Entiat (reached via US-97A) to the Entiat River Trailhead at 3,150 ft - this is a standard drive-to trailhead, not boat/ferry access.",
+      "seasonalGate": "Winter gate near the Entiat Sno-Park (~mile 25); reopening date varies by year, sometimes into May."
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_fifth_of_july_mountain_scramble": {
+    "area_id": "wa_fifth_of_july_mountain",
+    "field": "road",
+    "expect": {
+      "name": "Entiat River Road (FR 51, becomes FR 5100)",
+      "status": "Paved for roughly the first 34 miles west from the town of Entiat; the final several miles past Cottonwood Campground to the Entiat River Trailhead are gravel and can be rough or washed out.",
+      "driveNote": "From the town of Entiat on US-97A, head west on the Entiat River Road (FR 51) and follow it about 38 miles to its end at the Entiat River Trailhead (~3,150 ft), a short distance past where the pavement ends at Cottonwood Campground.",
+      "seasonalGate": "Not formally gated, but the upper gravel section is not reliably passenger-car-friendly until spring grading/washout repairs are done, and the road can be snowed in during winter."
+    },
+    "value": {
+      "name": "Entiat River Road (FR 51, becomes FR 5100)",
+      "status": "Paved for roughly the first 34 miles west from the town of Entiat; the final several miles past Cottonwood Campground to the Entiat River Trailhead are gravel and can be rough or washed out. Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes Entiat River Road 5100 and the Entiat River Trail #1400. Check with the Okanogan-Wenatchee National Forest before you go.",
+      "driveNote": "From the town of Entiat on US-97A, head west on the Entiat River Road (FR 51) and follow it about 38 miles to its end at the Entiat River Trailhead (~3,150 ft), a short distance past where the pavement ends at Cottonwood Campground.",
+      "seasonalGate": "Not formally gated, but the upper gravel section is not reliably passenger-car-friendly until spring grading/washout repairs are done, and the road can be snowed in during winter."
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_emerald_peak_se_ridge": {
+    "area_id": "wa_emerald_peak_entiat",
+    "field": "road",
+    "expect": {
+      "name": "FR 5606 (final 3 miles) via Entiat River Road/County Rd 19 to FR 51",
+      "status": "Mostly graded gravel; generally passable for passenger cars in dry conditions with a couple of rough or dry-crossing sections, though high clearance is recommended. East-Cascades forest roads here wash out periodically — check the current road report with the Entiat Ranger District before driving.",
+      "driveNote": "From the town of Entiat on US-97A, follow Entiat River Road (County Rd 19) north/west; it becomes FR 51 around mile 27, continue to mile 32.3, then turn onto FR 5606 and drive 3 more miles to its end at the North Fork Entiat Trailhead (3,940 ft)."
+    },
+    "value": {
+      "name": "FR 5606 (final 3 miles) via Entiat River Road/County Rd 19 to FR 51",
+      "status": "Mostly graded gravel; generally passable for passenger cars in dry conditions with a couple of rough or dry-crossing sections, though high clearance is recommended. East-Cascades forest roads here wash out periodically — check the current road report with the Entiat Ranger District before driving. Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes FR 5606 and the North Fork Entiat River Trail #1437. Check with the Okanogan-Wenatchee National Forest before you go.",
+      "driveNote": "From the town of Entiat on US-97A, follow Entiat River Road (County Rd 19) north/west; it becomes FR 51 around mile 27, continue to mile 32.3, then turn onto FR 5606 and drive 3 more miles to its end at the North Fork Entiat Trailhead (3,940 ft)."
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_saska_peak_emerald_saska_col": {
+    "area_id": "wa_saska_peak",
+    "field": "road",
+    "expect": {
+      "name": "Entiat River Road (County Road 19 → Forest Road 51) to Forest Road 5606",
+      "status": "Paved for roughly the first 27 miles from the town of Entiat, then gravel Forest Road 51 to the FR 5606 junction at about 32.3 miles, then gravel FR 5606 north for a final 3 miles to the trailhead (~35.3 miles total); subject to intermittent washout/landslide damage.",
+      "driveNote": "From US-97A in Entiat, follow Entiat River Road/Forest Road 51 about 32.3 miles, then turn right (north) onto Forest Road 5606 for a final 3 miles to its end at the North Fork Entiat Trailhead (el. ~3,940 ft), about 35.3 miles total. Expect washboard gravel and creek-crossing damage on the upper miles; high-clearance recommended, and a trailer ban may be in effect if a slide bypass is active — verify current status before driving up."
+    },
+    "value": {
+      "name": "Entiat River Road (County Road 19 → Forest Road 51) to Forest Road 5606",
+      "status": "Paved for roughly the first 27 miles from the town of Entiat, then gravel Forest Road 51 to the FR 5606 junction at about 32.3 miles, then gravel FR 5606 north for a final 3 miles to the trailhead (~35.3 miles total); subject to intermittent washout/landslide damage. Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes FR 5606 and the North Fork Entiat River Trail #1437. Check with the Okanogan-Wenatchee National Forest before you go.",
+      "driveNote": "From US-97A in Entiat, follow Entiat River Road/Forest Road 51 about 32.3 miles, then turn right (north) onto Forest Road 5606 for a final 3 miles to its end at the North Fork Entiat Trailhead (el. ~3,940 ft), about 35.3 miles total. Expect washboard gravel and creek-crossing damage on the upper miles; high-clearance recommended, and a trailer ban may be in effect if a slide bypass is active — verify current status before driving up."
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_pinnacle_mountain_entiat_scramble": {
+    "area_id": "wa_pinnacle_mountain_entiat",
+    "field": "road",
+    "expect": {
+      "name": "Entiat River Road (Chelan County Rd 19, becomes Forest Road 51 at mile 27), then Forest Road 5606 for the North Fork Entiat Trailhead",
+      "status": "Paved for roughly the first 27 miles from Entiat, then gravel FR 51/5606; the road has a history of multi-year closures from storm and flood damage — verify current status before driving.",
+      "driveNote": "From Entiat, follow Entiat River Road north about 32.3 miles to FR 5606, then 3 miles to its end at the North Fork Entiat Trailhead (3,940 ft); or continue on FR 51 to the Entiat River/Cottonwood Camp Trailhead for the classic Entiat River Trail approach into Pinnacle Creek."
+    },
+    "value": {
+      "name": "Entiat River Road (Chelan County Rd 19, becomes Forest Road 51 at mile 27), then Forest Road 5606 for the North Fork Entiat Trailhead",
+      "status": "Paved for roughly the first 27 miles from Entiat, then gravel FR 51/5606; the road has a history of multi-year closures from storm and flood damage — verify current status before driving. Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes Entiat River Road 5100, FR 5606, the Entiat River Trail #1400 and the North Fork Entiat River Trail #1437. Check with the Okanogan-Wenatchee National Forest before you go.",
+      "driveNote": "From Entiat, follow Entiat River Road north about 32.3 miles to FR 5606, then 3 miles to its end at the North Fork Entiat Trailhead (3,940 ft); or continue on FR 51 to the Entiat River/Cottonwood Camp Trailhead for the classic Entiat River Trail approach into Pinnacle Creek."
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure. Row names both trailheads (NF Entiat via FR 5606 and Entiat River/Cottonwood).",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_emerald_peak_west_route": {
+    "area_id": "wa_emerald_peak_entiat",
+    "field": "road",
+    "expect": {
+      "name": "Entiat River Road to Forest Road 5606 (North Fork Entiat Road)",
+      "status": "Paved for ~32.5 miles, then gravel FR 5606 for ~3 switchbacking miles to the trailhead (~3,700 ft)",
+      "driveNote": "Day-use only at the trailhead; check current Okanogan-Wenatchee NF alerts for fire or storm-damage closures. Alternate approach via Lucerne requires a Lake Chelan boat/ferry shuttle.",
+      "seasonalGate": null
+    },
+    "value": {
+      "name": "Entiat River Road to Forest Road 5606 (North Fork Entiat Road)",
+      "status": "Paved for ~32.5 miles, then gravel FR 5606 for ~3 switchbacking miles to the trailhead (~3,700 ft). Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes FR 5606 and the North Fork Entiat River Trail #1437. Check with the Okanogan-Wenatchee National Forest before you go. The Lucerne alternate is not available either: the Lucerne commercial dock has been closed since January 2026 under order 06-17-05-26-04, through December 31, 2027.",
+      "driveNote": "Day-use only at the trailhead; check current Okanogan-Wenatchee NF alerts for fire or storm-damage closures. Alternate approach via Lucerne requires a Lake Chelan boat/ferry shuttle.",
+      "seasonalGate": null
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure. USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2. Row's driveNote offers a Lucerne alternate.",
+    "confidence": "medium",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_cardinal_peak_nw_couloir_north_ridge": {
+    "area_id": "wa_cardinal_peak",
+    "field": "access",
+    "expect": {
+      "fees": "Northwest Forest Pass or America the Beautiful pass for trailhead parking",
+      "permit": null,
+      "closures": null,
+      "landManager": "Okanogan-Wenatchee National Forest, Entiat Ranger District",
+      "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+      "overnight_permit": {
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the North Fork Entiat, Entiat River or Phelps Creek trailhead kiosk."
+      }
+    },
+    "value": {
+      "fees": "Northwest Forest Pass or America the Beautiful pass for trailhead parking",
+      "permit": null,
+      "closures": "Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes FR 5606 and the North Fork Entiat River Trail #1437. Check with the Okanogan-Wenatchee National Forest before you go.",
+      "landManager": "Okanogan-Wenatchee National Forest, Entiat Ranger District",
+      "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+      "overnight_permit": {
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the North Fork Entiat, Entiat River or Phelps Creek trailhead kiosk."
+      }
+    },
+    "closure": "c",
+    "why": "USFS O-W Little Giant Fire closure order 06-17-07-2026-40 (effective Sep 3 2026, through Oct 31 2026 unless rescinded) lists Entiat River Road 5100, FSR 5606, Entiat River Trail 1400 and North Fork Entiat River Trail 1437; InciWeb (updated 2026-09-25) shows the fire at 81% containment with the order still referenced. Row's road text described the road with no closure. Row has road=null and access.closures=null; approach is the North Fork Entiat Trail, so the closure goes in access.closures (renders as the closures line).",
+    "confidence": "medium",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_bonanza_peak_cascadian_route": {
+    "area_id": "wa_bonanza_peak",
+    "field": "road",
+    "expect": {
+      "name": "Lucerne Landing-Holden Village Road (FR 8301)",
+      "status": "Closed to public vehicle and foot traffic per Forest Order #755",
+      "driveNote": "No public road access; drive to Chelan, ferry to Lucerne, shuttle to Holden Village.",
+      "seasonalGate": null
+    },
+    "value": {
+      "name": "Lucerne Landing-Holden Village Road (FR 8301)",
+      "status": "Closed to vehicles and hikers since January 2026 after December 2025 flood and landslide damage (Okanogan-Wenatchee order 06-17-05-26-04, in effect through December 31, 2027 unless rescinded sooner); the Lucerne dock is closed too, so do not plan to enter or leave through Lucerne or Holden. The Little Giant Fire closure (order 06-17-07-2026-40) also covers FR 8301 and the Lower Railroad Creek Trail through October 31, 2026. Check with the Chelan Ranger District, (509) 682-4900, before you go.",
+      "driveNote": "No public road access; drive to Chelan, ferry to Lucerne, shuttle to Holden Village.",
+      "seasonalGate": null
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2. Current status cites 'Forest Order #755' with no date, which is not the order in force.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": [
+      {
+        "key": "status",
+        "rows": [
+          "wa_bonanza_peak_oregonian_route"
+        ]
+      }
+    ]
+  },
+  "wa_bonanza_peak_oregonian_route": {
+    "area_id": "wa_bonanza_peak",
+    "field": "road",
+    "expect": {
+      "name": "Lucerne Landing-Holden Village Road (FR 8301)",
+      "status": "Closed to public vehicle and foot traffic per Forest Order #755",
+      "driveNote": "Standard approach is by ferry to Lucerne then Holden Village shuttle; avoid the FA team's atypical 32-mile bike/hike approach, which was necessitated by closures in 2013.",
+      "seasonalGate": null
+    },
+    "value": {
+      "name": "Lucerne Landing-Holden Village Road (FR 8301)",
+      "status": "Closed to vehicles and hikers since January 2026 after December 2025 flood and landslide damage (Okanogan-Wenatchee order 06-17-05-26-04, in effect through December 31, 2027 unless rescinded sooner); the Lucerne dock is closed too, so do not plan to enter or leave through Lucerne or Holden. The Little Giant Fire closure (order 06-17-07-2026-40) also covers FR 8301 and the Lower Railroad Creek Trail through October 31, 2026. Check with the Chelan Ranger District, (509) 682-4900, before you go.",
+      "driveNote": "Standard approach is by ferry to Lucerne then Holden Village shuttle; avoid the FA team's atypical 32-mile bike/hike approach, which was necessitated by closures in 2013.",
+      "seasonalGate": null
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2. Current status cites 'Forest Order #755' with no date, which is not the order in force.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": [
+      {
+        "key": "status",
+        "rows": [
+          "wa_bonanza_peak_cascadian_route"
+        ]
+      }
+    ]
+  },
+  "wa_martin_peak_west_ridge": {
+    "area_id": "wa_martin_peak",
+    "field": "road",
+    "expect": {
+      "name": "Holden Village Road (Lucerne Landing to Holden Village)",
+      "status": "Gravel shuttle road; no direct public road access — reached only via Lake Chelan ferry to Lucerne, then the village shuttle bus",
+      "driveNote": "There is no drive-in trailhead. Ferry to Lucerne Landing, then an 11-mile gravel road with 12 switchbacks by Holden Village shuttle bus to reach Holden Village and the Railroad Creek Trail.",
+      "seasonalGate": null
+    },
+    "value": {
+      "name": "Holden Village Road (Lucerne Landing to Holden Village)",
+      "status": "Closed to vehicles and hikers since January 2026 after December 2025 flood and landslide damage (Okanogan-Wenatchee order 06-17-05-26-04, in effect through December 31, 2027 unless rescinded sooner); the Lucerne dock is closed too, so do not plan to enter or leave through Lucerne or Holden. The Little Giant Fire closure (order 06-17-07-2026-40) also covers FR 8301 and the Lower Railroad Creek Trail through October 31, 2026. Check with the Chelan Ranger District, (509) 682-4900, before you go. Normally a gravel shuttle road with no direct public road access — reached only via Lake Chelan ferry to Lucerne, then the village shuttle bus",
+      "driveNote": "There is no drive-in trailhead. Ferry to Lucerne Landing, then an 11-mile gravel road with 12 switchbacks by Holden Village shuttle bus to reach Holden Village and the Railroad Creek Trail.",
+      "seasonalGate": null
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2. road.status described the shuttle road as the way in with no closure (access.closures does state it).",
+    "confidence": "medium",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_cloudy_peak_southwest_slopes": {
+    "area_id": "wa_cloudy_peak",
+    "field": "access",
+    "expect": {
+      "fees": "Northwest Forest Pass $5/day or $30/annual at the Chiwawa-side trailheads; the wilderness permit itself is free; the Lady of the Lake ferry to Lucerne/Holden Village charges its own separate fare",
+      "rules": "Leave No Trace; no camping within 200 ft of the Lyman Lakes shoreline; wilderness group size limit is 12 people/stock combined; pack out all trash — no services in the wilderness",
+      "permit": "Free, self-issued wilderness permit at the trailhead register — no reservation or quota required",
+      "closures": "Chiwawa River Road (FSR 6200) is closed to vehicles from Atkinson Flat Campground north to Trinity under USFS closure order #06-17-07-2026-11 (effective 5/20/2026 through at least 12/31/2027, no reopening estimate) after December 2025 storm damage — this currently blocks vehicle access to both the Phelps Creek and Trinity trailheads. Check fs.usda.gov/r06/okanogan-wenatchee/alerts or call (509) 548-2550 before planning a trip via those trailheads; the Holden Village/Railroad Creek approach is unaffected",
+      "landManager": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest — Wenatchee River Ranger District administers the Chiwawa River Rd/Phelps Creek and Trinity approaches; Chelan Ranger District administers the Holden Village/Railroad Creek approach",
+      "passRequired": "Northwest Forest Pass ($5/day or $30/annual) required to park at the Phelps Creek and Trinity trailheads; not required for the Holden Village/ferry approach",
+      "overnight_permit": {
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk (Phelps Creek, Trinity, Entiat River, or the Holden trailheads). Holden Village and its access road are closed to hikers through at least summer 2026."
+      }
+    },
+    "value": {
+      "fees": "Northwest Forest Pass $5/day or $30/annual at the Chiwawa-side trailheads; the wilderness permit itself is free; the Lady of the Lake ferry to Lucerne/Holden Village charges its own separate fare",
+      "rules": "Leave No Trace; no camping within 200 ft of the Lyman Lakes shoreline; wilderness group size limit is 12 people/stock combined; pack out all trash — no services in the wilderness",
+      "permit": "Free, self-issued wilderness permit at the trailhead register — no reservation or quota required",
+      "closures": "Chiwawa River Road (FSR 6200) is closed to vehicles from Atkinson Flat Campground north to Trinity under USFS closure order #06-17-07-2026-11 (effective 5/20/2026 through at least 12/31/2027, no reopening estimate) after December 2025 storm damage — this currently blocks vehicle access to both the Phelps Creek and Trinity trailheads. Check fs.usda.gov/r06/okanogan-wenatchee/alerts or call (509) 548-2550 before planning a trip via those trailheads. The Holden Village/Railroad Creek approach is closed too: FR 8301 and the Lucerne dock have been closed to vehicles and hikers since January 2026 under order 06-17-05-26-04, through December 31, 2027.",
+      "landManager": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest — Wenatchee River Ranger District administers the Chiwawa River Rd/Phelps Creek and Trinity approaches; Chelan Ranger District administers the Holden Village/Railroad Creek approach",
+      "passRequired": "Northwest Forest Pass ($5/day or $30/annual) required to park at the Phelps Creek and Trinity trailheads; not required for the Holden Village/ferry approach",
+      "overnight_permit": {
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk (Phelps Creek, Trinity, Entiat River, or the Holden trailheads). Holden Village and its access road are closed to hikers through at least summer 2026."
+      }
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2. access.closures asserts the Holden/Railroad Creek approach is 'unaffected', which the order contradicts.",
+    "confidence": "high",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_kyes_peak_glaciated_scramble": {
+    "area_id": "wa_kyes_peak",
+    "field": "road",
+    "expect": {
+      "name": "Index-Galena Road (FR 63) from Index, or Beckler Road (FR 65) via Jack Pass as the current detour",
+      "status": "Direct Index-Galena Road access is closed to vehicles (~MP 10–14 washed out since Dec 2025); current access is via the Beckler Road/Jack Pass detour.",
+      "driveNote": "From US-2 near Index, FR 63 runs north along the North Fork Skykomish River, but its final miles to the trailhead are currently impassable to vehicles. The working detour is US-2 to Beckler Road (FR 65) near Skykomish, ~12.5 mi to Jack Pass, then ~1.8–2.5 mi on FR 63 to the Blanca Lake Trailhead — gravel, rough in spots, roughly 45 minutes longer than the old Index route; low-clearance cars and RVs can struggle.",
+      "seasonalGate": "The Beckler Road/Jack Pass detour closes seasonally with snow and is typically not reliably open until early summer."
+    },
+    "value": {
+      "name": "Index-Galena Road (FR 63) from Index, or Beckler Road (FR 65) via Jack Pass (detour, currently closed)",
+      "status": "Index-Galena Road (FR 63) has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline. The Beckler Road/Jack Pass detour is closed too: since June 30, 2026 the Forest Service lists FR 65 as graded only to Jack Pass (milepost 12.3) and closed beyond it for downed trees and a bridge out, and FR 63 as undrivable from the FR 65 side because the North Fork Skykomish bridge is out, so no vehicle route currently reaches the Blanca Lake Trailhead. Check with Snohomish County Public Works and the Skykomish Ranger District, (360) 677-2414, before you go.",
+      "driveNote": "From US-2 near Index, FR 63 runs north along the North Fork Skykomish River, but its final miles to the trailhead are currently impassable to vehicles. When open, the detour is US-2 to Beckler Road (FR 65) near Skykomish, ~12.5 mi to Jack Pass, then ~1.8–2.5 mi on FR 63 to the Blanca Lake Trailhead — gravel, rough in spots, roughly 45 minutes longer than the old Index route; low-clearance cars and RVs can struggle.",
+      "seasonalGate": "The Beckler Road/Jack Pass detour closes seasonally with snow and is typically not reliably open until early summer."
+    },
+    "closure": "b",
+    "why": "Snohomish County road-closures page + news flash (Dec 29 2025): Index-Galena Rd closed between access gates near MP 10 and MP 14 after December 2025 flood damage, 'no timeline for repairs'. MBS alert 'Road Damages/Closures - Skykomish District' (start/updated 2026-06-30): 'FSR 63 (Index Galena Road) Undrivable also from 65 Road side due to outage of North Fork Skykomish bridge'; 'FSR 65 (Beckler Road) graded to MP 12.3 at Jack's Pass but is closed after due to downed trees and bridge out'. Skykomish RS (360) 677-2414. Row said the Jack Pass detour is the current working access; the June 30 2026 alert says it is closed.",
+    "confidence": "high",
+    "keys_changed": [
+      "name",
+      "status",
+      "driveNote"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_columbia_peak_scramble": {
+    "area_id": "wa_columbia_peak",
+    "field": "road",
+    "expect": {
+      "name": "Mountain Loop Highway to Barlow Pass Trailhead, then the gated Monte Cristo Road (non-motorized)",
+      "driveNote": "Paved the full 34 miles from Granite Falls to Barlow Pass Trailhead. Beyond the trailhead, the Monte Cristo Road is gravel, gated, and closed to motor vehicles — hike or bike the 4 miles to the townsite. Alternate approach to Blanca Lake: from Index, take Index-Galena Road/FR 63 roughly 13.8 miles paved plus 2 miles gravel to the Blanca Lake Trailhead."
+    },
+    "value": {
+      "name": "Mountain Loop Highway to Barlow Pass Trailhead, then the gated Monte Cristo Road (non-motorized)",
+      "driveNote": "Paved the full 34 miles from Granite Falls to Barlow Pass Trailhead. Beyond the trailhead, the Monte Cristo Road is gravel, gated, and closed to motor vehicles — hike or bike the 4 miles to the townsite. Alternate approach to Blanca Lake: from Index, take Index-Galena Road/FR 63 roughly 13.8 miles paved plus 2 miles gravel to the Blanca Lake Trailhead. That road has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline, and the Beckler Road/Jack Pass detour is closed too, so the Blanca Lake Trailhead cannot currently be reached by car; check with the Skykomish Ranger District, (360) 677-2414, before you go."
+    },
+    "closure": "b",
+    "why": "Snohomish County road-closures page + news flash (Dec 29 2025): Index-Galena Rd closed between access gates near MP 10 and MP 14 after December 2025 flood damage, 'no timeline for repairs'. MBS alert 'Road Damages/Closures - Skykomish District' (start/updated 2026-06-30): 'FSR 63 (Index Galena Road) Undrivable also from 65 Road side due to outage of North Fork Skykomish bridge'; 'FSR 65 (Beckler Road) graded to MP 12.3 at Jack's Pass but is closed after due to downed trees and bridge out'. Skykomish RS (360) 677-2414. Row's driveNote offers the Index-Galena drive to Blanca Lake as an open alternate.",
+    "confidence": "high",
+    "keys_changed": [
+      "driveNote"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_mount_cruiser_nw_face_corner": {
+    "area_id": "wa_mount_cruiser",
+    "field": "road",
+    "expect": {
+      "name": "Lake Cushman Rd / North Fork Skokomish Rd (becomes Forest Road 24)",
+      "status": "Closed as of 2026 due to the Bear Gulch Fire closure order (FR 24 gated near milepost 10.5–14.5; the Staircase entrance is also closed) — verify current status before driving out.",
+      "driveNote": "When open: from US-101 in Hoodsport, follow Lake Cushman Rd/N. Fork Skokomish Rd about 15–16 miles to the Staircase Ranger Station (~850 ft) at the NW end of Lake Cushman."
+    },
+    "value": {
+      "name": "Lake Cushman Rd / North Fork Skokomish Rd (becomes Forest Road 24)",
+      "status": "Open — FS-24 and the Staircase developed area reopened July 8, 2026 after the 2025 Bear Gulch Fire closure, but the North Fork Skokomish River Trail beyond the Staircase Rapids Loop and the Flapjack Lakes Trail (this route's approach) remain closed, with no announced reopening date. Check with Olympic National Park before you go.",
+      "driveNote": "When open: from US-101 in Hoodsport, follow Lake Cushman Rd/N. Fork Skokomish Rd about 15–16 miles to the Staircase Ranger Station (~850 ft) at the NW end of Lake Cushman."
+    },
+    "closure": "e",
+    "why": "NPS Olympic 'Fire Conditions and Updates' (last updated 2026-09-18): Staircase developed area and FS-24 reopened July 8 (2026) after a year-long closure; still closed: North Fork Skokomish Trail from the Staircase Rapids Loop to Home Sweet Home, Flapjack Lakes Trail, Four Stream, Black and White Lakes, Shady Lane, part of Six Ridge. NPS conditions page (updated 2026-08-27) agrees. Bear Gulch Fire began July 6 2025, contained Nov 12 2025. Row said FR 24 and the Staircase entrance are closed; they reopened July 8 2026. Sibling wa_mount_cruiser_south_corner already says so.",
+    "confidence": "high",
+    "keys_changed": [
+      "status"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_mount_hopper_standard": {
+    "area_id": "wa_mount_hopper",
+    "field": "road",
+    "expect": {
+      "name": "Staircase Road (North Fork Skokomish Road, off US-101 at Hoodsport)",
+      "status": "Open — FS-24 and the Staircase developed area reopened 8 July 2026 after a year-long closure following the 2025 Bear Gulch Fire",
+      "driveNote": "With Staircase closed, the Duckabush Trailhead (off US-101 near Brinnon) is the currently viable paved, drive-to access point for this peak, via Duckabush Trail #803 toward Marmot Lake.",
+      "seasonalGate": "Open; the road itself is no longer gated for the fire. Verify before travel."
+    },
+    "value": {
+      "name": "Staircase Road (North Fork Skokomish Road, off US-101 at Hoodsport)",
+      "status": "Open — FS-24 and the Staircase developed area reopened 8 July 2026 after a year-long closure following the 2025 Bear Gulch Fire",
+      "driveNote": "With the North Fork Skokomish trail out of Staircase closed, the Duckabush Trailhead (off US-101 near Brinnon) is the currently viable paved, drive-to access point for this peak, via Duckabush Trail #803 toward Marmot Lake.",
+      "seasonalGate": "Open; the road itself is no longer gated for the fire. Verify before travel."
+    },
+    "closure": "e",
+    "why": "NPS Olympic 'Fire Conditions and Updates' (last updated 2026-09-18): Staircase developed area and FS-24 reopened July 8 (2026) after a year-long closure; still closed: North Fork Skokomish Trail from the Staircase Rapids Loop to Home Sweet Home, Flapjack Lakes Trail, Four Stream, Black and White Lakes, Shady Lane, part of Six Ridge. NPS conditions page (updated 2026-08-27) agrees. Bear Gulch Fire began July 6 2025, contained Nov 12 2025. road.status is already correct; driveNote still says 'With Staircase closed'.",
+    "confidence": "medium",
+    "keys_changed": [
+      "driveNote"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_mount_lincoln_standard": {
+    "area_id": "wa_mount_lincoln",
+    "field": "road",
+    "expect": {
+      "name": "North Fork Skokomish / Staircase Road",
+      "status": "Pavement ends ~1.7 mi onto FR-24 from Hoodsport, then ~3.7 mi of gravel to the Staircase Ranger Station/trailhead. As of mid-2026, the developed Staircase area reopened July 8, 2026 after a year-long closure from the 2025 Bear Gulch Fire, but surrounding wilderness trails - including the Flapjack Lakes/North Fork Skokomish Trail used for this route's approach - remain closed for post-fire repair; verify current status before attempting.",
+      "driveNote": "Access is via the Staircase area of Olympic National Park (North Fork Skokomish). The Staircase developed area (road, campground, ranger station) was closed by the 2025 Bear Gulch Fire and is scheduled to reopen 7/8/2026, but the Flapjack Lakes and North Fork Skokomish trails beyond the developed area remain closed for hazard mitigation as of mid-2026 — confirm current road AND trail status before the trip.",
+      "seasonalGate": "Typically snow-affected/closed November-May in normal (non-fire-closure) years."
+    },
+    "value": {
+      "name": "North Fork Skokomish / Staircase Road",
+      "status": "Pavement ends ~1.7 mi onto FR-24 from Hoodsport, then ~3.7 mi of gravel to the Staircase Ranger Station/trailhead. As of mid-2026, the developed Staircase area reopened July 8, 2026 after a year-long closure from the 2025 Bear Gulch Fire, but surrounding wilderness trails - including the Flapjack Lakes/North Fork Skokomish Trail used for this route's approach - remain closed for post-fire repair; verify current status before attempting.",
+      "driveNote": "Access is via the Staircase area of Olympic National Park (North Fork Skokomish). The Staircase developed area (road, campground, ranger station) was closed by the 2025 Bear Gulch Fire and reopened July 8, 2026, but the Flapjack Lakes and North Fork Skokomish trails beyond the developed area remain closed for hazard mitigation as of mid-2026 — confirm current road AND trail status before the trip.",
+      "seasonalGate": "Typically snow-affected/closed November-May in normal (non-fire-closure) years."
+    },
+    "closure": "e",
+    "why": "NPS Olympic 'Fire Conditions and Updates' (last updated 2026-09-18): Staircase developed area and FS-24 reopened July 8 (2026) after a year-long closure; still closed: North Fork Skokomish Trail from the Staircase Rapids Loop to Home Sweet Home, Flapjack Lakes Trail, Four Stream, Black and White Lakes, Shady Lane, part of Six Ridge. NPS conditions page (updated 2026-08-27) agrees. Bear Gulch Fire began July 6 2025, contained Nov 12 2025. road.status is correct; driveNote still says the area 'is scheduled to reopen 7/8/2026' (future tense).",
+    "confidence": "medium",
+    "keys_changed": [
+      "driveNote"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_the_fin_northeast_face": {
+    "area_id": "wa_the_fin",
+    "field": "access",
+    "expect": {
+      "fees": "$8/person/night camping fee + $6 non-refundable reservation fee for any overnight wilderness permit; a $45 annual Wilderness Pass covers per-night fees for 12 months.",
+      "permit": "A wilderness/backcountry camping permit is required year-round for any overnight stay, booked through Recreation.gov; Flapjack Lakes/Gladys Divide is a fixed-capacity quota area.",
+      "closures": "Campfires are prohibited above 3,500 ft; within the Flapjack Lakes/Gladys Divide quota zone, deviating from your permitted itinerary is not allowed except in emergencies.",
+      "landManager": "Olympic National Park (National Park Service)",
+      "passRequired": "NPS wilderness camping permit (Recreation.gov) required for overnight stays; a day climb does not need a wilderness permit but a park entrance fee/pass applies."
+    },
+    "value": {
+      "fees": "$8/person/night camping fee + $6 non-refundable reservation fee for any overnight wilderness permit; a $45 annual Wilderness Pass covers per-night fees for 12 months.",
+      "permit": "A wilderness/backcountry camping permit is required year-round for any overnight stay, booked through Recreation.gov; Flapjack Lakes/Gladys Divide is a fixed-capacity quota area.",
+      "closures": "Campfires are prohibited above 3,500 ft; within the Flapjack Lakes/Gladys Divide quota zone, deviating from your permitted itinerary is not allowed except in emergencies. The Bear Gulch Fire closure still applies to this approach: FS-24 and the Staircase developed area reopened July 8, 2026, but the North Fork Skokomish River Trail beyond the Staircase Rapids Loop and the Flapjack Lakes Trail have been closed since the July 2025 fire, with no announced reopening date. Check with Olympic National Park before you go.",
+      "landManager": "Olympic National Park (National Park Service)",
+      "passRequired": "NPS wilderness camping permit (Recreation.gov) required for overnight stays; a day climb does not need a wilderness permit but a park entrance fee/pass applies."
+    },
+    "closure": "e",
+    "why": "NPS Olympic 'Fire Conditions and Updates' (last updated 2026-09-18): Staircase developed area and FS-24 reopened July 8 (2026) after a year-long closure; still closed: North Fork Skokomish Trail from the Staircase Rapids Loop to Home Sweet Home, Flapjack Lakes Trail, Four Stream, Black and White Lakes, Shady Lane, part of Six Ridge. NPS conditions page (updated 2026-08-27) agrees. Bear Gulch Fire began July 6 2025, contained Nov 12 2025. The road is open (road.status correct), but nothing on the row says the approach trail is closed; sibling wa_the_fin_scramble states it.",
+    "confidence": "high",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": []
+  }
+}

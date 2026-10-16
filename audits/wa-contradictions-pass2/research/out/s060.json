@@ -1,0 +1,222 @@
+{
+ "file": "s060.json",
+ "results": [
+  {
+   "id": "wa_labor_pains",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Both lines are in use: the original chockstone/notch descent (the station table) remains the standard line, and a newer bolted rappel line straight down the West Face is a common alternative that wants a 70 m rope. 'Most parties' use the West Face line is unsupported; neither line should be presented as the only one.",
+   "evidence": "A long-time trip-report author calls the notch/chockstone descent the standard one that 'has always been' used and the new six-station bolted West Face line a nice alternative (60 m sufficed only just). A Chockstone Route trip report watched other parties use the West Face bolts and called it much easier; a 2021 Labor Pains trip report recommends a 70 m rope specifically to use the West Face raps; a guide service describes the bolted West Face rappel route as the way off the North Spire. The area page still describes the south-side notch rappels as the descent. So both are genuine options; the row's 'most parties'/'probably not the descent' wording overclaims, and descent_text omits the alternative.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://spokalpine.com/2016/09/12/north-early-winters-spire-chockstone-route-ii-5-7/",
+    "https://cascadeclimbers.com/forum/topic/104052-tr-north-early-winters-spire-labor-pains-retro-bolt-06212021/",
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-west-face",
+    "https://www.mountainproject.com/area/105792196/north-early-winter-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_labor_pains",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "Most parties descend the separate bolted rappel line down the West Face, which runs between the West Face route and Labor Pains itself, rather than the Chockstone Route stations.",
+     "replace": "Many parties now descend a separate bolted rappel line down the West Face, which runs between the West Face route and Labor Pains itself, instead of the Chockstone Route stations."
+    },
+    {
+     "id": "wa_labor_pains",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "IMPORTANT: this is probably not the descent a Labor Pains party will use.",
+     "replace": "IMPORTANT: many Labor Pains parties now use a different descent."
+    },
+    {
+     "id": "wa_labor_pains",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "rather than reversing the Labor Pains pitches.",
+     "replace": "rather than reversing the Labor Pains pitches. A newer bolted rappel line straight down the West Face, between that route and Labor Pains, is a common alternative that ends near the base of the routes; it goes most smoothly with a 70 m rope."
+    }
+   ]
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Rope(s) for the descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "For the West Face bolted line, a 2021 Labor Pains trip report recommends a 70 m and the West Face route page says it is best done with a 70; another party found a 60 m sufficient 'just barely'. For the chockstone line (the station table), one route page says its bolted stations work with a 60 m, while one trip report calls the chockstone rappel a double-rope rappel; the chockstone line remains a standard option, so the kit's 60 m is not simply wrong. Settling it needs a second account stating whether the free-hanging chockstone rappel reaches on one 60 m doubled.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/104052-tr-north-early-winters-spire-labor-pains-retro-bolt-06212021/",
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The pitch total itself is disputed: one route database gives 5 pitches, a topo-guide page gives 6, and a 2021 trip report numbers P1-P4 plus an optional extra belay (P2+) and an easy finish. Each source splits the route differently, so a fifth pitch_detail row cannot be written without inventing its boundaries; pitch_detail's 4 rows match the only published pitch-by-pitch description that uses the same numbering. A published topo with fixed pitch breaks would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110902345/labor-pains",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Labor-Pains",
+    "https://cascadeclimbers.com/forum/topic/104052-tr-north-early-winters-spire-labor-pains-retro-bolt-06212021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Number of 5.11 pitches",
+   "verdict": "fixed",
+   "correct_value": "Three pitches carry 5.11a climbing (overview is right; turnaround's 'two sustained 5.10/5.11 pitches' is wrong).",
+   "evidence": "The route database description states there are three 5.11a pitches, each more devious than the last. An independent topo-guide write-up describes 5.11a moves near the top of Pitch 2, a 5.11a mantel on Pitch 4, and calls Pitch 5 'the third 5.11a pitch'. A 2021 retro-bolting report thought the topo grades soft except the P4 mantel, but that is a grading opinion, not a different count. The current pitch_detail grades only the crux pitch, so it does not contradict three.",
+   "sources": [
+    "https://www.mountainproject.com/route/110902345/labor-pains",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-North-Early-Winters-Spire-Labor-Pains"
+   ],
+   "patches": [
+    {
+     "id": "wa_labor_pains",
+     "fact": "Number of 5.11 pitches",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "With two sustained 5.10/5.11 pitches",
+     "replace": "With three pitches that each carry 5.11a moves"
+    }
+   ]
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Chockstone descent anchors",
+   "verdict": "fixed",
+   "correct_value": "The chockstone station is a bolted anchor on top of the chockstone.",
+   "evidence": "The Chockstone Route page says to belay at boulders or 'the rappel bolts on the chockstone' and lists bolted rap stations. An independent trip-report author made a free-hanging rappel 'from a bolted rap anchor on top of a chockstone' in the NEWS/SEWS gully. The row's station text already says bolted; the anchor cell and notes calling it mixed/natural are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_labor_pains",
+     "fact": "Chockstone descent anchors",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      3,
+      "anchor"
+     ],
+     "expect": "mixed bolt/natural anchor above chockstone",
+     "value": "bolted anchor on top of the chockstone"
+    },
+    {
+     "id": "wa_labor_pains",
+     "fact": "Chockstone descent anchors",
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": " (~50 ft of air); accounts describe this station as natural/mixed rather than a clean bolted line.",
+     "replace": " (~50 ft of air) from bolts on top of the chockstone."
+    }
+   ]
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "USGS point elevations read ~5,150 ft at the hairpin pullout pin and ~7,710 ft at the summit pin, so the car-to-summit rise alone is ~2,560+ ft, above gain_ft 2,400. But no outside page (route database, topo guide, 2008 trip report) states a car-to-car gain for this route, and gain_ft may not be recomputed from arithmetic. A published total gain for the hairpin approach plus descent would settle it.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.65557&y=48.51291&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/route/118228852/flycatcher-buttress",
+    "https://cascadeclimbers.com/forum/topic/62767-tr-north-early-winter-spire-flycatcher-route-9272008/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Trailhead location",
+   "verdict": "fixed",
+   "correct_value": "Blue Lake Trailhead is about 1 mile west of Washington Pass / past the Overlook turnoff.",
+   "evidence": "The hiking-association page says the trailhead is 'a little under a mile past the Washington Pass Overlook'; a geology field-trip guide says it is 'about a mile west of Washington Pass'. Routing along SR-20 from the pass (48.5233,-120.655) to the stored trailhead coordinate measures 1.75 km (1.1 mi), making 0.25 mi impossible and 1.5 mi too long (the 1.5 mi and 0.25 mi figures appear on a club page and a USFS page respectively). The row's approach already says about one mile.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/",
+    "https://router.project-osrm.org/route/v1/driving/-120.655,48.52333;-120.67436,48.518965?overview=false"
+   ],
+   "patches": [
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Trailhead location",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(0.25 mi past the Washington Pass Overlook turnoff)",
+     "replace": "(about 1 mi past the Washington Pass Overlook turnoff)"
+    },
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Trailhead location",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass"
+    },
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Trailhead location",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 1.5 miles west of Washington Pass",
+     "replace": "about a mile west of Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Best months",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside pages give only a broad season (club page: May-September) and note the north-facing crack seeps and stays wet longer than neighbouring routes; none ranks July-August against August-September. A source naming the prime months for this route would settle it.",
+   "sources": [
+    "https://climberkyle.com/2019/05/11/north-early-winters-spire-nw-corner-5-9/",
+    "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Trailhead elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, approach_logistics.trailheadDirection and the Trailhead waypoint say ~5,400 ft; approach_variants[0].notes says ~5,200 ft. The USGS point elevation at the stored trailhead coordinate reads ~5,380 ft, but a club route page and a geology guide both state 5,200 ft, so outside sources disagree. A second topo-derived figure for the lot would settle it.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  }
+ ]
+}

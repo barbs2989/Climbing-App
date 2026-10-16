@@ -1,0 +1,618 @@
+{
+ "applied": [
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "bail",
+   "path": [],
+   "fact": "Bail-out destination"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Bail-out destination"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_huckleberry_mountain_east_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total cumulative elevation gain for the route"
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "column": "waypoints",
+   "path": [
+    6,
+    "directions"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_east_route",
+   "column": "descent",
+   "path": [],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "label"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_ingalls_peak_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "standard descent method (downclimb vs rappel)"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "face",
+   "path": [],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "column": "bail",
+   "path": [],
+   "fact": "Which approach and which ridge this 'South Route' actually climbs"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hibox_mountain_standard",
+   "before": {
+    "bail": "Descend to the Rampart Lakes basin.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Able to sustain a ~6.7 mile round trip with roughly 3,900 ft of gain, including a steep, loose off-trail ascent above Rachel Lake",
+      "packWeight": "Light day pack (~15-20 lb) with layers, since the route is a long day-trip push rather than an overnight carry"
+     },
+     "approachTime": "Multi-hour approach via the Rachel Lake / Rampart Lakes trail before leaving the trail for Hibox's south-slope scramble; full day round trip (~8 hrs)",
+     "requiredSkills": [
+      "Class 3 scrambling on loose/exposed rock",
+      "off-trail route-finding through talus and boot-track that is easy to lose",
+      "comfort on an exposed summit block with real fall consequence",
+      "early-season snow travel judgment if attempting before the basin fully melts out"
+     ],
+     "experienceLevel": "Comfortable with sustained Class 3 scrambling and route-finding off-trail through talus, including an exposed summit block near the top; not a beginner's first scramble"
+    },
+    "dist_km": 8.05,
+    "itinerary": {
+     "cal": "Snow-free and easiest roughly July through October; the boot path can hold snow into early summer in big years, so check recent trip reports before a June/early-July attempt.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Rachel Lake Trail to the first avalanche clearing, pick up the unmarked but well-used Hibox boot path climbing north up steep timber and talus onto Box Ridge, then follow the ridge crest east to a short Class 3 scramble on solid rock at the summit block. Reverse the same line to descend. Snow-free bootpath is easy to follow in summer season; the whole outing is a long single day, not an overnight.",
+       "hours": 8.5,
+       "miles": 10,
+       "title": "Rachel Lake to Hibox summit, car-to-car",
+       "gainFt": 3900,
+       "lossFt": 3900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Start at ~2,800 ft on the Rachel Lake Trail (FR 4930 trailhead)."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach boot-path junction",
+         "detail": "About 2 mi in, near the first avalanche clearing where the unmarked Hibox climbers' path breaks off north."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Top out on Box Ridge",
+         "detail": "Steep, sustained boot path through timber and loose talus gains the ridge crest."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit block",
+         "detail": "Short Class 3 scramble on solid rock to the 6,548 ft summit; broad views of Rampart Ridge and the Stuart Range."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the boot path down Box Ridge to the Rachel Lake Trail."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Total roughly 8-9 hours car-to-car for a fit party."
+        }
+       ],
+       "objective": "Summit Hibox Mountain via Box Ridge boot path"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: ~10 mi round trip, 3,900 ft gain, typically 6-10 hours depending on pace and summit time — this is not an overnight trip for the standard route."
+    },
+    "approach_variants": [
+     {
+      "name": "Rachel Lake Trail to the avalanche clearing, then the Hibox climbers' path over two cliff bands",
+      "notes": "Start at the Rachel Lake trailhead, Trail #1313, about 2,800 ft, at the end of Box Canyon Road / FR-4930. The trail climbs gently through forest along Box Canyon Creek, easy class 1 walking.\n\nAt roughly 2 to 2.2 miles and about 3,300 ft the trail crosses a brushy avalanche-path clearing. That clearing is the key landmark, because Hibox's summit block comes into view on the ridge to the northeast from it.\n\nAbove the boot path the tread climbs steeply, mostly class 2 with fallen timber, about 500 vertical feet to a band of cliffs near 5,300 ft. Stay RIGHT of that first band, then work LEFT around a rock outcrop, continue through patchy timber to a SECOND, higher cliff band, and take the gully on the RIGHT through it. Above, a large sloping subalpine meadow funnels into loose talus and scree.\n\nNo reliable water past the lower forest. About 8 km and 3,900 ft.",
+      "distMi": 5,
+      "gainFt": 3900,
+      "season": "July to October",
+      "hazards": [
+       "An unsigned, easy-to-lose boot path through brushy avalanche clearings, especially confusing in fog and on descent",
+       "A deceptive gully on the southwest side of the summit block that cliffs out at class 4 — stay climbers' right of it",
+       "Loose talus and scree above about 4,600 ft with real rockfall risk onto parties below",
+       "An exposed class 3 notch and chimney on the summit block, whose downclimb is the part to think about before committing",
+       "Lingering snow and ice in the upper gully and basin into early summer"
+      ],
+      "baseFinding": "THE CLEARING IS THE FIRST TEST AND THE SUMMIT BLOCK IS ITS PROOF. At roughly 2 to 2.2 miles the maintained trail crosses a brushy avalanche clearing, and from it Hibox's summit block is visible on the ridge to the NORTHEAST. Just past that clearing — some parties say after the SECOND such clearing — watch the RIGHT, climbers'-right, side of the trail for an unmarked but well-established boot path heading northeast and uphill into the forest. It is easy to walk past if you are not looking.\n\nTHE TWO CLIFF BANDS ARE A COUNTED SEQUENCE, WHICH IS WHAT YOU WANT IN FOG: first band, pass it on the RIGHT; then LEFT around a rock outcrop; second band, take the gully on the RIGHT. Two bands, right then left then right. If you have passed only one band you are not yet on the upper mountain.\n\nAND HERE IS THE WRONG-TURN TRAP THAT MATTERS MOST, at the top: the talus tops out on the SOUTH side of the summit block, and the rock straight above you there is steeper and more broken than it looks. That is the spot where parties commit to the wrong line, and there is a deceptive gully on the SOUTHWEST side of the block that cliffs out at class 4. Do not climb what is above you.\n\nWHAT TO DO INSTEAD, WHICH IS THE ACTUAL BASE FINDING: work RIGHT, staying along the south side of the rock and heading EAST, on loose talus over a sloping bed, until a reasonable gully opens on the EAST side of the block. That east gully is the route. It stays easy until the top, where a short NOTCH or narrow chimney gives a bit of genuine class 3 on good, solid holds to a small summit platform.\n\nAND A DESCENT NOTE THAT BELONGS WITH THE FINDING: the boot path through the brushy avalanche clearings is easy to lose on the way down, especially in fog. Look back at the junction on the way up."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "before": {
+    "gain_ft": 3377,
+    "loss_ft": 3377,
+    "itinerary": {
+     "cal": "Best July-September once the Ridge/Gravel Lake camps and Huckleberry Flats are snow-free; only a self-issue wilderness permit is needed.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the PCT trailhead at Snoqualmie Pass, hike north over Kendall Katwalk past Ridge Lake to the meadow camp most parties use to break up Huckleberry's unusually long approach before tackling the West Route.",
+       "hours": 5,
+       "miles": 7,
+       "title": "Approach to high camp",
+       "gainFt": 2700,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach the Ridge/Gravel Lake meadow camp"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp light and early, cross Huckleberry Flats and the PCT to the base of the West Route, then scramble class 3-4 terrain (with a class 4-5 summit block) to the top. Rappel into the notch on a 60m rope, reverse the gully/ridge, and continue the long hike out via Huckleberry Flats and the PCT — a very long second day.",
+       "hours": 13,
+       "miles": 15,
+       "title": "Summit push and full hike out",
+       "gainFt": 3620,
+       "lossFt": 6320,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Break camp",
+         "detail": "Leave overnight gear cached, carry a light alpine kit"
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Cross Huckleberry Flats",
+         "detail": "Reach the base of the West Route below the summit block"
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Reach the notch",
+         "detail": "Class 4-5 scrambling below the final summit block"
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Rappel the summit block",
+         "detail": "60m rope to the notch, then reverse the gully/ridge"
+        },
+        {
+         "time": "~7:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Full descent via Huckleberry Flats and the PCT; many parties finish near dusk"
+        }
+       ],
+       "objective": "Climb the West Route to the summit block, rappel, and hike all the way back to the car"
+      }
+     ],
+     "totalNote": "A 2-day trip for most parties (~22 miles RT, ~6,300 ft gain) broken by a camp at Ridge or Gravel Lake; very fit scramblers occasionally push the whole thing car-to-car in one ~15-hour day."
+    },
+    "approach": "Park at the PCT North Trailhead at Snoqualmie Pass (I-90 Exit 52, large lot off SR 906/Alpental Rd; Northwest Forest Pass or America the Beautiful pass required). Head north on the Pacific Crest Trail; most parties cut the corner via the Commonwealth Basin/Red Pass climbers' shortcut, which rejoins the PCT and trims about a mile off the standard trail. Climb the well-graded PCT switchbacks up to Kendall Katwalk (roughly 5 miles and 2,600 ft of gain from the trailhead) — a dramatic ledge blasted into a cliff face with real exposure in a fall-on-snow scenario early season. Continue north on the PCT past Ridge Lake and Gravel Lake, skirting the base of Alaska Mountain and the Alaska Lake/Joe Lake basin, to the open benches known as Huckleberry Flats, arriving at a point on the trail roughly due east of Huckleberry Mountain's summit (about 9-10 miles and this route's full ~6,320 ft of cumulative gain in, since the PCT here rolls over several passes rather than climbing steadily). Leave the trail and go cross-country west: first across meadow and heather, then up steepening talus/scree and a wooded ridge crest, to a rocky buttress at about 6,100 ft where the technical climbing starts — this is the start of the East Ridge/East Face line most parties use to reach the summit block. Water is reliable at Ridge Lake and Gravel Lake but there is none on the ridge above Huckleberry Flats, so fill up there. Hazards on the approach include lingering snow on north-facing benches into July, a rubbly and exposed ledge traverse partway up the ridge that skirts a rock rib above cliffs, generally loose rock once off-trail, and real route-finding difficulty picking the correct gully/ridge line from Huckleberry Flats to the buttress in poor visibility. Because of the length, many parties split this into 2-3 days with a camp at Ridge Lake or Gravel Lake, though fit parties do it car-to-car in a long day (reported ~11-12 hours)."
+   }
+  },
+  {
+   "id": "wa_huckleberry_mountain_east_ridge",
+   "before": {
+    "gain_ft": 4600
+   }
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "before": {
+    "descent": "Downclimb/scramble the ridge back toward the North-South notch (3rd/4th class with a few exposed steps); many parties place one short rappel off blocks near the top of the red slab rather than downclimbing it. From the notch, reverse the scree/talus descent to Lake Ingalls and follow the approach trail back to the trailhead.",
+    "descent_text": "Descend by rappelling the South Ridge climbing line itself (or, for parties who diverge, the closely parallel Southwest Face). From the summit, most parties do the descent in three rappels with a single 60m rope (a 70m rope makes the middle rappel more comfortable but is not required): (1) a single-strand rappel down the uppermost pitch to a two-bolt anchor on a narrow ledge; (2) a full-length rappel (double-rope length, i.e. using the rope doubled) down to a large ledge/slung boulder near the top of pitch 2 - do not be tempted to skip straight from the summit to the top of pitch 2 in one long rappel, since a crack just below the top anchor is notorious for wedging and stuck ropes have resulted; breaking it at the pitch-3 ledge avoids this; and (3) a final rappel from that ledge down to the base ledges/gully where the climb started. Anchors are a mix of fixed two-bolt stations and natural slung-boulder/horn anchors reinforced with webbing - carry a few extra feet of tat/webbing since the natural anchors get replaced periodically and can be tired. Below the last rappel, downclimb the class 3-4 gully back to the notch and retrace the approach talus/slabs to Lake Ingalls and out via Ingalls Pass.",
+    "waypoints": [
+     {
+      "lat": 47.43673,
+      "lng": -120.93696,
+      "elev": 4200,
+      "name": "Esmeralda (Ingalls Way) Trailhead",
+      "note": "End of FR-9737 off North Fork Teanaway River Rd; small lot fills fast in summer, Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Cle Elum, head northeast on SR-970 about 5 miles, turn onto the Teanaway River Road and follow it roughly 23 miles to the road end. The small lot fills fast on summer weekends — a Northwest Forest Pass is required and there is a self-issue wilderness permit at the kiosk."
+     },
+     {
+      "lat": 47.459562,
+      "lng": -120.935089,
+      "elev": 6457,
+      "name": "Ingalls Pass",
+      "note": "Trail crests the pass with the first open view of Mount Stuart and the Ingalls Peaks; forks here, stay left/climber's-path toward Lake Ingalls rather than dropping right into Headlight Basin.",
+      "type": "Junction",
+      "distMi": 3,
+      "directions": "Take the Ingalls Way trail and stay left at the fork around 5,600 ft. Three miles of steady climbing brings you to Ingalls Pass, where Mount Stuart and the Ingalls Peaks come into view all at once. Fork again here: stay left on the climber's path toward Lake Ingalls rather than dropping right into Headlight Basin."
+     },
+     {
+      "lat": 47.470437,
+      "lng": -120.938581,
+      "elev": 6467,
+      "name": "Lake Ingalls",
+      "note": "Last reliable water before the summit scramble; camping and campfires are prohibited immediately around the lake to protect the fragile alpine basin, so treat/carry water here.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Traverse from the pass to Lake Ingalls, about a mile. This is the last reliable water before the summit, so fill and treat here — camping and campfires are prohibited around the lake to protect the basin."
+     },
+     {
+      "lat": 47.4716,
+      "lng": -120.9472,
+      "elev": 7361,
+      "name": "Ingalls Col (notch between South and North/main peaks)",
+      "note": "Scramble up slabs, talus and boulders from the lake to this notch below Dogtooth Spire; this is where the roped South Ridge route begins, distinct from the easier North Ridge to South Peak.",
+      "type": "Junction",
+      "distMi": 4.7,
+      "directions": "From the lake, scramble slabs, talus and boulders up to the notch between the North and South peaks, below Dogtooth Spire. Expect snow on this section in June and early July. This notch is where the roped South Ridge begins, and it is a different objective from the easier North Ridge scramble to the South Peak."
+     },
+     {
+      "lat": 47.460151,
+      "lng": -120.942512,
+      "elev": 7450,
+      "name": "Dogtooth Crags traverse",
+      "note": "Exposed traverse along the right side of the Dogtooth Crags on broken rock and slabs leading to the base bench; loose blocks and route-finding in fog are the main dangers here.",
+      "type": "Hazard",
+      "distMi": 4.8,
+      "directions": "Traverse the right-hand side of the Dogtooth Crags on broken rock and slabs. Loose blocks are the main hazard, and this is the section people lose in fog — it is worth noting your line on the way in so you can reverse it."
+     },
+     {
+      "lat": 47.459778,
+      "lng": -120.940131,
+      "elev": 7500,
+      "name": "Bench below the red slab (start of roped pitches)",
+      "note": "Broad bench just below a distinctive large red slab; from the notch descend/traverse about 100 ft west to the base of a friction slab and rope up for the 3-pitch 5.4 ridge climb.",
+      "type": "Junction",
+      "distMi": 4.9,
+      "directions": "From the notch, descend and traverse roughly 100 ft west to the broad bench under the distinctive large red slab. Rope up here: the route is three pitches at 5.4, generally good rock with a few 5.2-5.3 moves and real exposure. The first pitch takes an obvious crack for close to a full rope length to a belay at a fixed piton on the slab."
+     },
+     {
+      "lat": 47.472435,
+      "lng": -120.946105,
+      "elev": 7662,
+      "name": "Ingalls Peak (North/main summit)",
+      "note": "True summit of Ingalls Peak; exposed but well-protected 5.4 climbing gains the top, descend by downclimbing/rappelling back to the col and reversing the approach.",
+      "type": "Summit",
+      "distMi": 5.1,
+      "directions": "Three pitches gain the true summit — exposed but well protected. Descend by rappelling the line you climbed, which goes in three raps on a single 60 m rope using the same anchors, then reverse the scramble to the lake and the trail. Budget 3-4 hours for the approach and 3-5 hours for the climb; by August the whole basin gets hot and there is no shade above the lake."
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Identical route/approach to the other South Ridge entry: a 3-4 hour hike over Ingalls Pass and past Lake Ingalls to the Ingalls Col, then 3 pitches of 4th/low-5th class climbing to the ~7,662 ft summit, descending by downclimb with one short rappel. Done car-to-car in a day by the vast majority of parties.",
+       "hours": 10,
+       "miles": 10.2,
+       "title": "South Ridge, car to car",
+       "gainFt": 3600,
+       "lossFt": 3600,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave the trailhead",
+         "detail": "Teanaway River Road, road-end parking at ~4,240 ft"
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach Ingalls Pass, contour past Lake Ingalls",
+         "detail": "~6,500 ft pass, then into the basin below the peak"
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Reach Ingalls Col",
+         "detail": "Start of the South Ridge proper"
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin roped climbing",
+         "detail": "3 pitches, 4th/low-5th class"
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Summit",
+         "detail": "~7,662 ft, North Peak"
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Back at the trailhead",
+         "detail": "Downclimb/one rappel to the Col, then hike out"
+        }
+       ],
+       "objective": "Climb the South Ridge to the summit and hike back out, in a single day"
+      }
+     ],
+     "totalNote": "A single, full day car-to-car: roughly 9-11 hours, ~10 miles round trip with ~3,500-3,800 ft of gain — no camping required."
+    }
+   }
+  },
+  {
+   "id": "wa_ingalls_peak_east_route",
+   "before": {
+    "descent": "Most parties downclimb/scramble back to the North/East col and retrace the approach trail through Ingalls Pass to the Esmeralda Trailhead rather than rappelling the route.",
+    "itinerary": {
+     "cal": "Best climbed June-October once the rock is dry; Esmeralda Trailhead access road and the basin can hold snow into early June some years.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single long day: hike over Ingalls Pass and past Lake Ingalls to the North/East col, rack up and climb two low-5th-class pitches to the East Peak summit, then downclimb/rappel back to the col and retrace the trail out. No camping — this is done car-to-car by essentially all parties.",
+       "hours": 9,
+       "miles": 10,
+       "title": "Car-to-summit day climb",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Esmeralda Trailhead",
+         "detail": "Early start recommended to beat afternoon thunderstorms and the crowds this popular basin draws on weekends."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach Ingalls Pass",
+         "detail": "~3 mi and ~2,300 ft of steady climbing on the Ingalls Way Trail."
+        },
+        {
+         "time": "+45-60 min",
+         "label": "Traverse past Lake Ingalls",
+         "detail": "Drop slightly to the lake basin, then rock-hop/scramble up talus toward the North/East col."
+        },
+        {
+         "time": "+30-45 min",
+         "label": "Reach the North/East col, rack up",
+         "detail": "Gear up for the route below the notch separating the North and East summits."
+        },
+        {
+         "time": "+1.5-2 hr",
+         "label": "Climb the 2-pitch Southwest Face to the East Peak summit",
+         "detail": "Low 5th class climbing on slabs and a gully; loose/dirty rock reported low on the route, cleaner higher up."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Downclimb/rappel to the col, hike out to trailhead",
+         "detail": "Most parties downclimb back to the col rather than rappel, then retrace the approach through Ingalls Pass."
+        }
+       ],
+       "objective": "Climb the East Peak Southwest Face (2 pitches) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single roadside day out of Esmeralda Trailhead, roughly 9-10 hours car-to-car with about 10 miles and 3,300 ft of gain; no overnight is involved."
+    }
+   }
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "before": {
+    "face": "South Ridge",
+    "overview": "Iron Cap Mountain (6,347 ft) rises above the Williams Lake and La Bohn Gap country near the heart of the Alpine Lakes Wilderness. Despite its modest elevation, it has striking local relief, climbing about 2,500 feet above the Middle Fork Snoqualmie River Valley in less than a mile. The mountain straddles two drainages: its south side (this route's approach) sheds into tributaries of the Snoqualmie River via the Williams Lake basin, while the north side drains toward the Foss River. It was first climbed in 1925 by a party led by Seattle mountaineer Joe Hazard. This South Route follows the long Middle Fork Snoqualmie / Dutch Miller Gap Trail corridor to Williams Lake, then gains Iron Cap's south ridge system to the summit.",
+    "beta": "A long backcountry approach (6.6+ trail miles, ~3,400 ft gain to Chetwoot Lake) followed by off-trail cross-country travel and unroped class 3 scrambling on the south ridge. Solid granite in places but loose talus and scree lower down; most parties treat it as a 2-3 day trip with a camp at Big Heart or Chetwoot Lake.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 2-3",
+      "label": "South ridge / summit tower",
+      "notes": "Gained off unmarked cross-country ground above Iron Cap Lake basin; loose rock and dirt underfoot with occasional steep heather. Class 2-3 scrambling toward the 6,347 ft summit."
+     },
+     {
+      "n": 2,
+      "class": "Class 3",
+      "label": "Downclimb into the notch",
+      "notes": "From the ridge a short 3rd-class downclimb drops into a notch."
+     },
+     {
+      "n": 3,
+      "label": "Ramp below the summit block to the north ridge",
+      "notes": "Beyond the notch a wide ramp traverses below the summit block — no sidehilling required — to meet the broad north ridge, which is easy red-rock and dirt scrambling to the true summit."
+     }
+    ],
+    "approach": "The South Route begins at the Dingford Creek Trailhead (also signed/known as the Dutch Miller Gap Trailhead, ~1,550 ft), reached via I-90 Exit 34 and the rough, high-clearance/4WD-recommended Middle Fork Snoqualmie Road (FR 56) — the old Dutch Miller Gap Trailhead further up the road is no longer vehicle-accessible, so Dingford Creek is now the actual start. Self-issue Alpine Lakes Wilderness permits (free, required May 15–Oct 31) are at the trailhead register; there's a vault toilet but no potable water. From the trailhead, follow the Middle Fork Trail (#1003), which becomes the Dutch Miller Gap Trail (#1030), east up the Middle Fork Snoqualmie valley: a footbridge crossing of the Middle Fork at about 4.5 miles, then a steady, moderate climb to Hardscrabble Horse Camp (~7.7 mi) with open views of rockslides, waterfalls, and jagged peaks including Iron Cap itself across the valley (bikes and stock traffic are permitted only up to this point). Beyond Hardscrabble the trail crosses several avalanche-path openings and re-enters forest, reaching a steel bridge at Pedro Camp (~13 mi) and the Williams Lake Trail (#1031) junction at 14.2 mi (Williams Lake is a worthwhile water source/camp detour 1 mile off-route if backpacking in). The main trail continues through heather-and-huckleberry meadows to Dutch Miller Gap itself (~15.2 mi, ~5,000 ft), the low pass separating the Snoqualmie and Foss/Skykomish drainages. From the gap, leave the maintained trail and go cross-country north-northwest, contouring and ascending open talus, heather benches, and scree/dirt slopes on Iron Cap's south aspect toward the Iron Cap Lake basin, then up onto the south ridge/summit tower for the final class 2–3 scramble to the 6,347 ft summit. This upper cross-country section is unmarked and route-finding is the crux of the approach — expect loose rock and dirt underfoot, occasional steep heather ('veggie') sections, and limited cairning; a map/GPS track is strongly advised since visibility-dependent cliff bands can cliff out a poorly chosen line. Water is reliable along the Middle Fork and at creek crossings/Williams Lake but scarce once you leave the valley floor above the gap, so tank up before the final push. Given the ~34-mile round trip and ~4,700–5,000 ft of cumulative gain, most parties treat this as a backpack (camping near Hardscrabble, Pedro Camp, or Williams Lake) rather than a single push, though strong parties have done it car-to-car. From the ridge, a short 3rd-class downclimb drops into a notch; beyond it a wide ramp traverses (no sidehilling) below the summit block to meet the broad north ridge, which leads via easy red-rock/dirt scrambling to the true summit.",
+    "descent_text": "Descent reverses the ascent line: downclimb the loose red-tinged rock, dirt, and scree of the south face/summit tower back to the talus benches above Iron Cap Lake basin, then drop back down to Dutch Miller Gap and rejoin the maintained Dutch Miller Gap/Middle Fork Trail (#1030/#1003) for the long walk out to the Dingford Creek Trailhead. This is a class 2–3 scramble route with no fixed anchors or rappel stations — it is a walk-off/downclimb, not a rappel descent. The main hazards on the way down are the same loose, dirt-over-rock terrain that makes the ascent's crux (test holds carefully, especially when wet or in the early season with residual snow patches), plus the route-finding challenge of picking the correct gully/ledge system back down to the basin rather than getting cliffed out on the steeper east-side rock bands — parties in this area have reported wandering into steep 'veggie' terrain when they lost the correct line, so retracing your ascent track (or using a GPS track) is the most reliable way down. Once back at Dutch Miller Gap, it's a straightforward, well-graded trail walk of roughly 15 miles back to the trailhead with the elevation loss front-loaded near the gap and gentler grades through the lower valley.",
+    "bail": "Retreat is straightforward at nearly any point on the south ridge or the cross-country approach by simply reversing the ascent line back to Chetwoot Lake and the maintained trail — no fixed rappels or technical retreat gear are needed."
+   }
+  }
+ ]
+}

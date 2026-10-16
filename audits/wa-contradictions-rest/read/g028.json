@@ -1,0 +1,1402 @@
+{
+ "batches": [
+  "b109.json",
+  "b110.json",
+  "b111.json",
+  "b112.json"
+ ],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_mount_pershing_standard",
+   "name": "Standard Scramble (Jefferson Creek / Hamma Hamma approach)",
+   "area": "Mount Pershing",
+   "contradictions": [
+    {
+     "fact": "Where the rocky gully starts and where the 'small basin' sits",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "angling up into a rocky gully around 4,300 ft. The gully (talus, sometimes snow-filled) is followed to a small basin around 5,400 ft"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "From ~4,300 ft, where the flagged boot path leaves the Jefferson Creek forest/brush approach and turns into a rocky gully, up to a small basin at ~5,400 ft"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "climb the gully to a small basin at roughly 4,300 ft"
+      },
+      {
+       "field": "approach",
+       "says": "the route rises via a rocky gully to a small basin around 4,300 ft, then continues into a basin east of the summit near 5,400 ft"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "climb that gully — talus, sometimes snow-filled — to a small basin at about 4,300 ft"
+      }
+     ],
+     "why": "Beta and pitch_detail put the gully's START at 4,300 ft and the small basin at 5,400 ft, while approach, waypoints, approach_variants and climbing_route put the small basin AT 4,300 ft with a second gully to a 5,400 ft basin — the variant calls the 4,300 ft basin the key descent aiming point.",
+     "internal_resolution": "approach, waypoints[2], approach_variants[0] and climbing_route[0] agree on a small basin at ~4,300 ft then a second gully to the ~5,400 ft basin; beta and pitch_detail[0] are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking fee / Northwest Forest Pass at Jefferson Creek",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Northwest Forest Pass area, no formal trailhead sign"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "it is a Northwest Forest Pass area"
+      },
+      {
+       "field": "access.fees",
+       "says": "No day-use fee is charged at the Jefferson Creek / Jefferson Lake trailhead"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None required at this specific trailhead"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park."
+      }
+     ],
+     "why": "The trailhead waypoint says the crossing is a Northwest Forest Pass area while ACCESS says no fee/pass is required there; the overnight_permit text is about other trailheads (Lena Lake/Brothers/Lake Cushman) entirely.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "The general climbing season is listed as May–August."
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "optimal"
+      }
+     ],
+     "why": "best_season quotes a May–August season in the same sentence as June–September, and September is rated optimal in seasonal guidance while May–August excludes it.",
+     "internal_resolution": "season, climate.summer and seasonal_guidance agree on roughly June–September; the 'May–August' clause is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which side of the peak the approach gully/basin is on",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.typical",
+       "says": "Pershing's north-side approach gully and basin hold snow later"
+      },
+      {
+       "field": "aspect",
+       "says": "SE"
+      },
+      {
+       "field": "approach",
+       "says": "leads through forest and brush into the basins below Pershing's east side"
+      }
+     ],
+     "why": "Climate describes a north-side approach gully and basin, but every route field puts the approach basins on the east/southeast side.",
+     "internal_resolution": "aspect, approach, face and waypoints agree on an east-side entry; climate.typical is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which trailhead area the crowds note describes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "crowds.peakTraffic",
+       "says": "most visitors to the Lake Cushman/Mount Rose area stop at Mount Rose itself and never continue on to Pershing"
+      },
+      {
+       "field": "approach",
+       "says": "Jefferson Creek crossing / Jefferson Lake Trailhead area (~2,440 ft)"
+      }
+     ],
+     "why": "The crowds note assumes an approach via Lake Cushman/Mount Rose, but the route uses the Jefferson Creek crossing in the Hamma Hamma drainage.",
+     "internal_resolution": "Every other field (approach, road, waypoints, variant) uses the Hamma Hamma / Jefferson Creek approach; crowds.peakTraffic is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      },
+      {
+       "field": "itinerary",
+       "says": "Long day trip (~8 miles round trip, 10–11 hours)"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "4"
+      }
+     ],
+     "why": "The Dist header shows dist_km (6.4 km ≈ 4 mi, one-way to the summit) while the itinerary prose gives ~8 miles round trip, with nothing to say they measure different things.",
+     "internal_resolution": "Summit waypoint at 4 mi one-way matches the 8 mi round trip; dist_km is one-way.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "name": "Lena Lake to Mt Stone traverse",
+   "area": "Mount Stone",
+   "contradictions": [
+    {
+     "fact": "Total elevation loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "loss_ft",
+       "says": "6550"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "150"
+      },
+      {
+       "field": "itinerary.days[1].lossFt",
+       "says": "4100"
+      },
+      {
+       "field": "itinerary.days[2].lossFt",
+       "says": "3300"
+      }
+     ],
+     "why": "The itinerary days add up to 7,550 ft of loss, not the 6,550 in loss_ft. With 9,000 ft of gain, a 6,550 ft loss would put the Putvin exit ~2,450 ft above the 750 ft start.",
+     "internal_resolution": "Itinerary losses (7,550) against gains (8,400) give a net of about +850 ft, which fits a 750 ft start and a Putvin trailhead near 1,600 ft; loss_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Mount Stone summit side-trip time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "about 1,100 ft gain round trip, ~3 hrs"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].detail",
+       "says": "Side-trip via South Face gully, ~1.5 hr round trip, Class 3."
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].time",
+       "says": "10:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].time",
+       "says": "2:00 PM"
+      }
+     ],
+     "why": "The beta allows ~3 hrs for the summit side-trip and the schedule block (10:30 AM Gate → 2:00 PM resume) is 3.5 hrs, but the schedule detail says ~1.5 hr round trip.",
+     "internal_resolution": "beta and the schedule times agree on roughly 3 hours; the '~1.5 hr' detail is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Difficulty of the summit side-trip gully",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].detail",
+       "says": "Side-trip via South Face gully, ~1.5 hr round trip, Class 3."
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "beta",
+       "says": "climbs a class 3-4 gully on the mountain's south face"
+      }
+     ],
+     "why": "The grade pill and itinerary call the south-face gully Class 3, while beta, pitch_detail and climbing_route rate it Class 3-4.",
+     "internal_resolution": "beta, pitch_detail[4], climbing_route[0], approach and the summit waypoint all say Class 3-4; the grade columns and itinerary understate it.",
+     "needs_research": false
+    },
+    {
+     "fact": "One-day outing vs multi-day trip",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "It is a full, demanding day out rather than a technical climb"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "A very long day (up to 16 miles, ~9,000 ft gain) with limited bail options partway through"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A remote 3-day, ~16-mile alpine traverse with two backcountry camps"
+      },
+      {
+       "field": "what_to_bring[0]",
+       "says": "Backpacking gear for 2-3 days"
+      }
+     ],
+     "why": "The overview and hazards present the traverse as a single day, while the itinerary, what_to_bring and partner_requirements plan it as a 2-3 day backpack with two camps.",
+     "internal_resolution": "itinerary, timing, what_to_bring, partner_requirements.fitnessSpec.trip and the permit fields all assume 2-3 days; the 'full day out' framing covers only the rare single-push option mentioned in totalNote.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance from Upper Lena Lake to St. Peter's Gate",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about 2.2 miles and 2,200 ft above Upper Lena Lake"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "6.5"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "10.3"
+      }
+     ],
+     "why": "The waypoints put St. Peter's Gate 3.8 mi beyond Upper Lena Lake, but the approach prose and variant say about 2.2 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain from Lena Lake to Upper Lena Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "roughly 3.5 more miles and 2,200 ft to Upper Lena Lake at about 4,550 ft"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "1800"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "4550"
+      }
+     ],
+     "why": "From Lena Lake at 1,800 ft, 2,200 ft more gain reaches ~4,000 ft, not the 4,550 ft stated in the same sentence and in the waypoint.",
+     "internal_resolution": "The waypoint (4,550), the bivy (4,500) and '~4,000 ft total gain from a 750 ft trailhead' all agree; the '2,200 additional feet' figure is the outlier (should be ~2,750).",
+     "needs_research": false
+    },
+    {
+     "fact": "Where to cache overnight packs",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[1]",
+       "says": "Stash overnight packs about 300 ft below St. Peter's Gate at the base of a basalt cliff"
+      },
+      {
+       "field": "approach",
+       "says": "From St. Peter's Gate, most parties cache overnight packs and descend about 300 ft to the base of a basalt cliff"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Cache your overnight packs there. Then DESCEND ABOUT 300 FT"
+      }
+     ],
+     "why": "pro_tips puts the pack cache at the cliff base 300 ft below the Gate, while approach and the variant cache packs at the Gate and then descend 300 ft.",
+     "internal_resolution": "approach, approach_variants and climbing_route[0] cache at the Gate; pro_tips is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Location of the handline / tree-root headwall",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[4]",
+       "says": "Exposed headwall section(s) with several-hundred-foot drop-offs near the Lena Lake/Lake of the Angels basin transition; some parties use a fixed handline or tree roots."
+      },
+      {
+       "field": "waypoints[6].name",
+       "says": "Putvin Trail cliff/handline section"
+      },
+      {
+       "field": "descent_text",
+       "says": "one particularly steep pitch is equipped with a fixed handline rope"
+      }
+     ],
+     "why": "Hazards put the handline/tree-root headwall at the Lena Lake–Lake of the Angels transition, while the waypoint, beta and descent_text put it on the Putvin Trail below Whitehorse Basin.",
+     "internal_resolution": "waypoints, beta, descent_text and pitch_detail[5] put it on the Putvin descent; hazards[4] is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "name": "South Route via Lake of the Angels",
+   "area": "Mount Stone",
+   "contradictions": [
+    {
+     "fact": "Line climbed above Lake of the Angels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Break camp, climb the gully/South Couloir to the summit"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].label",
+       "says": "Break camp, start toward the couloir"
+      },
+      {
+       "field": "face",
+       "says": "South Couloir / Southwest Slope–West Ridge"
+      },
+      {
+       "field": "approach",
+       "says": "just before the gate, turn sharply left (south) and traverse along the base of the cliffs to a notch in Mt. Stone's west ridge"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Parties who lose the faint path here are drawn up into steeper Class 3–4 gullies on the south face; stay with the cliff base."
+      }
+     ],
+     "why": "The itinerary and timing send the party up a gully/South Couloir, while the approach, pitch_detail, climbing_route and variant describe a cliff-base traverse to a west-ridge notch and a chimney, and warn that the south-face gullies are the way parties go wrong.",
+     "internal_resolution": "approach, pitch_detail, climbing_route and approach_variants[0] agree on the cliff-base traverse to the west-ridge notch; the itinerary/timing 'South Couloir' wording is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-block difficulty (Class 3 throughout vs Class 4 moves)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "The route is Class 3 throughout (rated Grade I in the Olympic Mountains climbing guide)"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "The route is Class 3 throughout"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (short 4th-class crux)"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "Class 3, Class 4 moves"
+      },
+      {
+       "field": "beta",
+       "says": "ascending the West Ridge with some exposed class 4 moves"
+      }
+     ],
+     "why": "The approach and climbing_route say Class 3 throughout, while rock_grade, pitch_detail, beta, obj_haz and watch_out report Class 4 moves on the summit block.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "rated Grade I in the Olympic Mountains climbing guide"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade II"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      }
+     ],
+     "why": "The approach prose quotes Grade I, but the grade chips show Grade II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "~9.3 mi / 5,100 ft total"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~11 miles round trip with roughly 5,000 ft of gain"
+      },
+      {
+       "field": "rope_note",
+       "says": "~5,000 ft gain, 11 mi RT via Putvin Trail"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "4.8"
+      },
+      {
+       "field": "dist_km",
+       "says": "8.9"
+      }
+     ],
+     "why": "The itinerary totals 9.3 mi and the summit waypoint implies ~9.6 mi round trip, but partner_requirements and rope_note say 11 mi round trip. dist_km (5.5 mi) is a third figure.",
+     "internal_resolution": "Itinerary days (3.5 + 5.8) and the waypoints (4.8 mi one-way) roughly agree at 9.3–9.6 mi; the 11 mi figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at the Putvin trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass or America the Beautiful interagency pass for parking at the Lena Lake Trailhead you pass en route on FS 25."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No Northwest Forest Pass or other parking pass is needed at the Putvin trailhead itself"
+      }
+     ],
+     "why": "ACCESS lists a National Park entrance fee and a Northwest Forest Pass for a different trailhead, while the camp card says no parking pass is needed at the Putvin trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trail number",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Putvin Trailhead (Trail #813)"
+      },
+      {
+       "field": "beta",
+       "says": "Putvin Trail (FST 813)"
+      },
+      {
+       "field": "approach",
+       "says": "the Putvin Trail is an unmaintained, primitive user trail (no official number)"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "an unmaintained, primitive user path with no official number"
+      }
+     ],
+     "why": "The waypoint name and beta give the Putvin Trail a number (813), while the approach and the same waypoint's directions say it has no official number.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit booking note describes another camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Upper Lena Lake is quota-limited, so book early for July to September."
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Overnight camping at Lake of the Angels is inside Olympic National Park (a wilderness permit is required)"
+      }
+     ],
+     "why": "The permit note is about Upper Lena Lake, a camp this route never uses; the route camps at Lake of the Angels.",
+     "internal_resolution": "Every other field puts camp at Lake of the Angels; the Upper Lena Lake note is copied from the Lena Lake route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier features vs no glacier travel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[2]",
+       "says": "Moat/bergschrund near summit snowfield"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel"
+      }
+     ],
+     "why": "A bergschrund is a glacier feature, but the route says there is no glacier travel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Aspect of the snow-holding basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "Snow lingers in the north-facing basin above the lake well into summer"
+      },
+      {
+       "field": "aspect",
+       "says": "S"
+      },
+      {
+       "field": "approach",
+       "says": "Lake of the Angels (~4,850 ft) in a dramatic cirque below Mt. Stone's south face"
+      }
+     ],
+     "why": "The variant calls the basin above the lake north-facing, but the route's aspect is S and the lake sits below the south face.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "name": "Putvin Trail / Lake of the Angels Scramble",
+   "area": "Mount Stone",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 8.5 mi round trip"
+      },
+      {
+       "field": "approach",
+       "says": "Total one-way distance is about 4.8 miles"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "4.8"
+      },
+      {
+       "field": "overview",
+       "says": "roughly 5,000 ft of gain over about 11 miles round trip"
+      },
+      {
+       "field": "dist_km",
+       "says": "8.9"
+      }
+     ],
+     "why": "The Dist header shows the itinerary's 8.5 mi round trip, the approach and summit waypoint imply 9.6 mi (4.8 one-way), the overview says about 11 mi, and dist_km (5.5 mi) is a fourth figure.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Length of the car-to-car day",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "5:30 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].time",
+       "says": "5:30-6:30 PM"
+      },
+      {
+       "field": "descent_text",
+       "says": "log around 5.5 hours up and 4 hours down, roughly 10 hours car-to-car"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 8-10 hours car-to-car for a fit party"
+      }
+     ],
+     "why": "The hours field and timing say 9 hrs, but the schedule runs 5:30 AM to 5:30-6:30 PM (12-13 hrs). descent_text and baseFinding give ~10 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Line climbed above Lake of the Angels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2].label",
+       "says": "Transition to axe/boots, start gully/couloir"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Car-to-car scramble via Putvin Trail and South Couloir"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "The South Couloir/gully often holds snow into July"
+      },
+      {
+       "field": "approach",
+       "says": "climb roughly 800 ft up onto a rock rib above the lake's basin, cross to its north side, and follow class 2-3 terrain up toward a notch on Mount Stone's west ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Reverse the rib; do not improvise a line down the south side."
+      }
+     ],
+     "why": "The itinerary and timing describe a South Couloir/gully ascent, while the approach, climbing_route and variant describe a rock rib crossed to its north side and a west-ridge notch.",
+     "internal_resolution": "approach, climbing_route, descent_text and approach_variants[0] agree on the rock rib to the west-ridge notch; the itinerary/timing couloir wording is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at the Putvin trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass at the trailhead"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No Northwest Forest Pass or other parking pass is needed at the Putvin trailhead itself"
+      }
+     ],
+     "why": "ACCESS requires a Northwest Forest Pass (and lists a National Park entrance fee), while the camp card says no parking pass is needed at the Putvin trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the trail enters Olympic National Park",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "enters the Skokomish Wilderness/Olympic National Park boundary"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Enters Olympic NP, opens to the alpine cirque at ~4,888-4,950 ft"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the trail crosses the park boundary shortly before the final climb into the basin"
+      }
+     ],
+     "why": "The approach puts the park boundary at ~1.3 mi near the logging road, while pitch_detail and the camp card put it above the headwall, just before the lake basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit booking note describes another camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Upper Lena Lake is quota-limited, so book early for July to September."
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Camp at Lake of the Angels to break up the ~5,000 ft of gain"
+      }
+     ],
+     "why": "The permit note is about Upper Lena Lake, which this route never visits.",
+     "internal_resolution": "All other fields camp at Lake of the Angels; the note is copied from the Lena Lake route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier features vs no glacier travel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[2]",
+       "says": "Moat/bergschrund near summit snowfield"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel"
+      }
+     ],
+     "why": "A bergschrund is a glacier feature, but the route says there is no glacier travel.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "name": "Mount Townsend Trail (standard)",
+   "area": "Mount Townsend",
+   "contradictions": [
+    {
+     "fact": "Parking pass requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "None required to hike - no Northwest Forest Pass or Discover Pass needed at either trailhead."
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "No fees; no Northwest Forest Pass or Discover Pass needed at either trailhead."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "a recreation pass is required to park at the national forest trailheads."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Accounts disagree about whether a parking pass is enforced at this particular trailhead, so carry a Northwest Forest Pass"
+      }
+     ],
+     "why": "ACCESS says no pass is needed at either trailhead, while overnight_permit says a recreation pass is required to park and the camp card advises carrying a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water on the trail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "last easy flowing water before the climb to Camp Windy"
+      },
+      {
+       "field": "beta",
+       "says": "crosses a couple of seasonal streams in the first 1.5 miles"
+      },
+      {
+       "field": "approach",
+       "says": "there is no reliable creek crossing directly on-trail; snowmelt seeps near Windy Lake may run early-season only"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "there is no dependable creek on the trail itself"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "Windy Lake, a shallow tarn just off the trail below camp, is the water source and holds through the season"
+      }
+     ],
+     "why": "The waypoint names a Townsend Creek crossing as flowing water, but the approach and variant say there is no dependable creek on the trail. The approach says the Windy Lake water is early-season only, while the camp card says Windy Lake holds through the season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Extra cost of starting at the Lower Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The Lower Trailhead adds about 2 extra round-trip miles and roughly 500 extra feet of gain"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "The Lower Trailhead adds roughly two round-trip miles and five hundred feet."
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Start from the Upper Trailhead rather than the Lower to save 2.4 mi/800 ft round trip"
+      }
+     ],
+     "why": "pro_tips gives 2.4 mi / 800 ft for the Lower Trailhead penalty, while beta and the variant give ~2 mi / 500 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Upper Trailhead lot size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the trailhead has a large gravel lot"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "Small Upper Trailhead lot (~12 cars) fills early on summer weekends"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Small gravel lot at the end of FR 27/FR 190"
+      }
+     ],
+     "why": "The approach and trailheadDirection call the Upper Trailhead lot large, while hazards, the waypoint, pro_tips and crowds describe a small lot that fills early.",
+     "internal_resolution": "hazards, waypoints[0], pro_tips and crowds agree the lot is small; the 'large gravel lot' wording in approach/approach_logistics is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "5.5"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "5.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "whole day hike commonly done in 3-5 hours round trip"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "typically 4-6.5 hrs car-to-car"
+      }
+     ],
+     "why": "partner_requirements gives 3-5 hours round trip, below the 5.5 hr total shown in timing and the itinerary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Any scrambling near the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "There is no scrambling or hands-on terrain on the standard route"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "comfort scrambling short easy sections near the summit is a plus"
+      }
+     ],
+     "why": "The partner requirements imply easy scrambling near the summit, but the beta, approach and rope_note say there is none.",
+     "internal_resolution": "beta, approach, rope_note and baseFinding all say no scrambling; experienceLevel is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "October in the optimal window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June through October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The optimal window runs through October, but October's own status is marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Spring avalanche steepness vs no avalanche terrain in June",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "has been described as avalanche-steep in spring"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "N/A"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Lingering snow/ice on the upper trail and summit ridge into June in high-snow years"
+      }
+     ],
+     "why": "The summit-ridge headwall is called avalanche-steep in spring and snow lingers into June, yet the avalanche table marks June N/A.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "name": "Standard Scramble (above Lake Cushman)",
+   "area": "Mount Washington",
+   "contradictions": [
+    {
+     "fact": "Car-to-car time",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 4-6 hours round trip (about 5 on average)"
+      },
+      {
+       "field": "turnaround",
+       "says": "most parties report 10-11 hours car-to-car despite the short (~4 mi) distance"
+      },
+      {
+       "field": "gear[4]",
+       "says": "Headlamp (round trips commonly run 10-11 hours)"
+      },
+      {
+       "field": "watch_out[3]",
+       "says": "Long car-to-car time (10-11 hrs is typical)"
+      }
+     ],
+     "why": "The Plan tab and timing budget 5 hours car-to-car, while turnaround, gear, pro_tips and watch_out say 10-11 hours is typical — a factor of two that changes start and turnaround planning.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Identity and location of the crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3, with a short Class 4 ('hourglass') step"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Short (~15-20 ft) class-4 step straight up-center from the upper meadow; the route's technical crux."
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "the narrow 'catwalk' section is the route's crux move"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "Exposed knife-edge ledge crux move on the final ridge"
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "The 'Dog Walk Ledge' on descent"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the ridge-crest traverse called the Dog Walk Ledge or the Catwalk"
+      }
+     ],
+     "why": "pitch_detail places the crux at an 'Hourglass' Class 4 step up-center from the upper meadow, while the itinerary, waypoints and gear place it at the Catwalk on the final ridge. The variant makes the Catwalk and Dog Walk Ledge one feature, but watch_out lists them separately.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (best Jul-Aug)"
+      },
+      {
+       "field": "best_season",
+       "says": "Prime dry scramble window is late July through September"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July through October for the standard dry scramble; late spring (roughly May-June) for the steep-snow variation"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "good"
+      }
+     ],
+     "why": "The header says best Jul-Aug, best_season says late July–September, and seasonal guidance says July–October (September optimal, October good). May/June are offered as a snow variation outside the Jun-Sep season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit at the trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue Mt. Skokomish Wilderness permit and Northwest Forest Pass required at the kiosk"
+      },
+      {
+       "field": "permit",
+       "says": "No wilderness permit is needed for the Mount Skokomish Wilderness, or for any Olympic National Forest wilderness area."
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness permit is required for Olympic National Forest wilderness"
+      }
+     ],
+     "why": "The trailhead waypoint and variant require a self-issue wilderness permit, while the permit fields say no wilderness permit is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance on FR-24 before turning onto FR-2419",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "continue right onto FS Road 24 for about 1 mile"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "right on FR-24 for 1.5 mi"
+      }
+     ],
+     "why": "The approach and waypoint give about 1 mile on FR-24, while the road card gives 1.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent loss vs gain on an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "loss_ft",
+       "says": "3300"
+      },
+      {
+       "field": "gain_ft",
+       "says": "3190"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "3190"
+      },
+      {
+       "field": "descent_text",
+       "says": "Total descent retraces roughly 3,190 ft of loss"
+      }
+     ],
+     "why": "loss_ft is 3,300, but the itinerary and descent_text give 3,190 ft of loss for the same reverse-the-route descent.",
+     "internal_resolution": "The itinerary and descent_text match gain_ft at 3,190; loss_ft is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "name": "SE Ridge AKA Shield Wall",
+   "area": "Mount Washington",
+   "contradictions": [
+    {
+     "fact": "Where the route leaves the road (trailhead)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Mount Washington Trailhead (FR 2419)"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3026"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~6.6 miles up the Big Creek drainage to the small road-end trailhead (~3,000 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "continue to just past the second crossing of Big Creek (~3,100 ft); a way trail leads to the base of the southeast ridge's rock section"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "This is NOT the standard route's trailhead: the way trail for this route leaves the road roughly 1,000 ft BEYOND the standard route's trail entrance"
+      },
+      {
+       "field": "descent_text",
+       "says": "reversing back down to the same FR-2419/Big Creek trailhead used for the approach"
+      }
+     ],
+     "why": "The trailhead card and waypoint use the standard route's road-end trailhead, while the approach and variant start ~1,000 ft further up the road past the second Big Creek crossing, which cannot be beyond a road-end. descent_text says the start and finish trailheads are the same, but the variant says they are a thousand feet apart.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Driving directions to FR 2419",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From US 101 turn west onto Lake Cushman Road and in about 1.5 miles turn right onto Forest Road 2419."
+      },
+      {
+       "field": "road.driveNote",
+       "says": "take SR-119 (North Lake Cushman Rd), then FR-24 for 1.5 mi, then left on FR-2419"
+      }
+     ],
+     "why": "The variant turns right onto FR 2419 about 1.5 mi from US 101 and skips FR-24 entirely, while the road card goes via FR-24 and turns left onto FR-2419.",
+     "internal_resolution": "road.driveNote matches the sibling Mount Washington routes (SR-119 9.4 mi → FR-24 → left on FR-2419); the variant is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Lead-rope length vs pitch length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "60m rope (or 40m lead + 30m rap line)"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "A 40m lead line plus a 30m rap line is lighter than a single 70m rope"
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "Sparse, marginal protection on some 60m pitches"
+      },
+      {
+       "field": "pro_needs",
+       "says": "as few as two usable placements reported on certain 60m pitches"
+      }
+     ],
+     "why": "A 40 m lead line is offered as an option, but the route has 60 m pitches that a 40 m rope cannot lead. pro_tips compares that setup to a 70 m rope while gear lists 60 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit waypoint difficulty",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "SE Ridge / Shield Wall route, class 3+ scramble."
+      },
+      {
+       "field": "grade",
+       "says": "5.7"
+      },
+      {
+       "field": "pitches",
+       "says": "13"
+      }
+     ],
+     "why": "The summit waypoint calls this 13-pitch 5.7 route a Class 3+ scramble.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and overview agree on a 5th-class/5.7 rock route; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking"
+      },
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass to park."
+      }
+     ],
+     "why": "ACCESS shows a National Park entrance fee as the parking pass, while passRequired and the permit field require a Northwest Forest Pass at this Forest Service trailhead.",
+     "internal_resolution": "passRequired, permit, landManager (Olympic National Forest) and the camp card all point to a Northwest Forest Pass; the NP entrance fee is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit for a day climb",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Skokomish Wilderness permit at the trailhead"
+      },
+      {
+       "field": "access.permit",
+       "says": "Day hike: no permit required."
+      }
+     ],
+     "why": "The permit field requires a self-issue wilderness permit, while ACCESS says a day trip needs no permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "name": "Washington Ellinor Traverse (Ridge)",
+   "area": "Mount Washington",
+   "contradictions": [
+    {
+     "fact": "Rope length vs the known rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "rappels",
+       "says": "Parties have found tat on a nearly-dead tree just past the notch and rappelled about 25 m from it into the talus basin - do not count on that anchor still being there, and note that the 30 m rope on this route's list does not reach 25 m doubled."
+      }
+     ],
+     "why": "The only rappel described is ~25 m, but the listed 30 m rope reaches only 15 m doubled; the rappels field says so itself.",
+     "internal_resolution": "The rappels prose itself confirms the 30 m rope cannot make the 25 m rappel.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance of the traverse",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "itinerary",
+       "says": "over roughly 6 miles and 4,250 ft of cumulative gain"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3.2"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "4.2"
+      }
+     ],
+     "why": "dist_km and the itinerary give ~6 miles from the trailhead to Ellinor's summit, but the waypoints put Ellinor's summit at 3.2 mi and the exit trailhead at 4.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "4.25"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "3.25"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "about 4.25 hrs from the Washington trailhead to Ellinor's summit at a relaxed pace, plus additional time to descend Ellinor's trail"
+      }
+     ],
+     "why": "totalHrs is 4.25, but approach (1.5) plus summit time (3.25) already comes to 4.75, and recommendedStart says 4.25 hrs covers only trailhead-to-Ellinor-summit, not the descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which section is the crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "Crux is a ~150ft low-5th 'wedge' section near the start."
+      },
+      {
+       "field": "beta",
+       "says": "The initial 'Wedge' gives about 150 ft of positive, low-5th/class-4 climbing — the best section on the route."
+      },
+      {
+       "field": "overview",
+       "says": "The crux is a short, notably loose downclimb near the ridge's low point"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "~50 ft downclimb described as uncomfortably loose; the crux hazard of the route."
+      }
+     ],
+     "why": "rope_note makes the Wedge the crux, while the overview, pitch_detail and watch_out make the loose ~50 ft downclimb the crux, and beta calls the Wedge the best section.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager and parking pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — Olympic National Park (Olympic Wilderness)"
+      },
+      {
+       "field": "access.permitZone",
+       "says": "Olympic National Park Daniel J. Evans Wilderness (if using park trailhead)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Skokomish Wilderness permit at the trailhead; Northwest Forest Pass to park."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking"
+      }
+     ],
+     "why": "ACCESS names Olympic National Park as land manager and lists an NP entrance fee, while the permit field, passRequired, emergency and the sibling routes put the traverse in the Mount Skokomish Wilderness (Olympic National Forest) with a Northwest Forest Pass.",
+     "internal_resolution": "permit, passRequired, emergency.rangerStation, road and the bivy card all point to Olympic National Forest and a Northwest Forest Pass; the NP land manager and entrance fee are the outliers.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "name": "Winter Direct",
+   "area": "Mount Washington",
+   "contradictions": [
+    {
+     "fact": "Trailhead and access road",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Start at the Jefferson Pass trailhead and follow the drainages west/toward the mountain"
+      },
+      {
+       "field": "face",
+       "says": "North side, above Jefferson Pass"
+      },
+      {
+       "field": "access.closures",
+       "says": "Jefferson Pass access road may be gated/snowed-in in winter"
+      },
+      {
+       "field": "road.name",
+       "says": "Forest Road 2419 (off FR-24, North Lake Cushman corridor)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "left on FR-2419 for 6.6 mi to road's end at the trailhead (~3,026 ft). A fork ~120 ft before road's end branches right to the Mount Ellinor upper trailhead."
+      }
+     ],
+     "why": "The approach, face and access start from Jefferson Pass on the north side, but GETTING THERE sends the party to the FR-2419 Big Creek road-end, the south-side standard-route trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1433 @@
+{
+ "batches": [
+  "b413.json",
+  "b414.json",
+  "b415.json",
+  "b416.json"
+ ],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "name": "Northern Aspect",
+   "area": "Le Conte Mountain",
+   "contradictions": [
+    {
+     "fact": "Cache Col elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "6903"
+      },
+      {
+       "field": "approach",
+       "says": "ascend the Cache Glacier to Cache Col (~6,900 ft)"
+      },
+      {
+       "field": "bivy[2].elev",
+       "says": "6400 (Cache Col and the Cache Glacier shoulder)"
+      }
+     ],
+     "why": "The bivy card puts Cache Col 500 ft lower than the waypoint and the approach prose.",
+     "internal_resolution": "Waypoint (6903) and approach (~6,900) agree; the bivy elevation 6400 is the outlier (probably the shoulder below the col).",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain / trip scale",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1500"
+      },
+      {
+       "field": "itinerary",
+       "says": "a long day, ~9,000+ ft cumulative gain over ~13 miles"
+      },
+      {
+       "field": "length_m",
+       "says": "457"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "5840 (Yang Yang Lakes camp; summit 7762)"
+      }
+     ],
+     "why": "Header/technical stats show 1,500 ft total ascent while the itinerary gives 9,000+ ft on Day 1 alone; even camp-to-summit is ~1,900 ft (5,840 to 7,762).",
+     "internal_resolution": "gain_ft appears to be only the summit-block length, not the trip gain; itinerary's 9,000+ ft figure is itself unverified.",
+     "needs_research": true
+    },
+    {
+     "fact": "Overnight permit requirement and cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "every overnight stay needs an NPS backcountry permit, $10 per person plus a $6 reservation fee"
+      },
+      {
+       "field": "access.permit",
+       "says": "Free backcountry/wilderness permit required for any overnight stay along the Ptarmigan Traverse route (Cascade Pass, Pelton Basin, Kool-Aid Lake, Yang Yang Lakes zones)"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No permit for camps south of Cache Col"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "No permit required (Glacier Peak Wilderness)"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Glacier Peak Wilderness, free self-issue permit."
+      }
+     ],
+     "why": "Permit is paid vs free, and Yang Yang Lakes camp needs an NPS permit vs no permit vs a free self-issue permit.",
+     "internal_resolution": "overnight_permit, Cache Col bivy and Yang Yang bivy agree that camps south of Cache Col need no NPS permit; access.permit's zone list and 'Free' are the outliers.",
+     "needs_research": true
+    },
+    {
+     "fact": "Cascade Pass waypoint duplicated",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Cascade Pass, type pass, distMi 3.7, 48.4728,-121.0724"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Cascade Pass, type Junction, distMi 3.6, 48.4683,-121.06"
+      }
+     ],
+     "why": "The same pass is listed twice with different coordinates (~1 km apart) and distances.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "name": "South Route",
+   "area": "Lizard Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead identity and elevation",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Downey Creek Trailhead (Trail #768, Suiattle River Road)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "End of Cascade River Road, 23 mi from Marblemount"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3600"
+      },
+      {
+       "field": "approach",
+       "says": "Downey Creek Trailhead (~1,600 ft) on the Suiattle River Road"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Downey Creek Trailhead (~1,450 ft)"
+      }
+     ],
+     "why": "The trailhead waypoint is named Downey Creek but carries the Cascade Pass trailhead's road note and elevation (3,600 ft), versus ~1,600 / ~1,450 ft elsewhere.",
+     "internal_resolution": "approach and trailheadDirection agree on a low (~1,500 ft) Downey Creek TH; the waypoint note/elev are Cascade Pass data.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach direction (north via Cascade Pass vs south via Downey Creek)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follows the southern leg ... out of the Downey Creek Trailhead ... 2-3 day round trip"
+      },
+      {
+       "field": "approach_variants[1].primary",
+       "says": "true (From the south — Downey Creek and Bachelor Creek)"
+      },
+      {
+       "field": "waypoints[1..6]",
+       "says": "Cascade Pass (distMi 3.7), Cache Col, Kool-Aid Lake, Middle Cascade Glacier, Yang Yang Lakes, White Rock Lakes (distMi 13.5)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 6-day, ~34 mi one-way traverse (shuttle required)"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].fromTo",
+       "says": "Cascade Pass to Kool-Aid Lake"
+      },
+      {
+       "field": "bail",
+       "says": "retreat means reversing the glaciated route back to the Cascade Pass Trailhead. Do not count on reaching the Downey Creek/Suiattle River Road exit"
+      },
+      {
+       "field": "descent",
+       "says": "From camp, retrace the way you came in: south past Spire Col and Cub Lake, then down Bachelor Creek to the Downey Creek trail"
+      }
+     ],
+     "why": "The page presents an out-and-back from Downey Creek (approach, descent, primary variant, trailhead) alongside a north-to-south Cascade Pass traverse (waypoints, itinerary, timing) and a bail that forbids the Downey Creek exit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5980"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~10,500 ft cumulative gain"
+      },
+      {
+       "field": "approach",
+       "says": "on the order of 5,000+ ft of net gain (one-way)"
+      }
+     ],
+     "why": "Header gain 5,980 ft vs 10,500 ft itinerary; follows from the two different trips described.",
+     "internal_resolution": "Depends on which approach is canonical (see approach direction).",
+     "needs_research": true
+    },
+    {
+     "fact": "Total distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "23.34"
+      },
+      {
+       "field": "approach",
+       "says": "matching the ~29-mile (46.67 km) round-trip distance"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~34 mi one-way traverse"
+      }
+     ],
+     "why": "dist_km (14.5 mi) disagrees with the approach's own stated 46.67 km round trip and the 34-mile itinerary.",
+     "internal_resolution": "dist_km is the one-way figure of the 46.67 km round trip the approach cites.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier/rope requirement",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "none"
+      },
+      {
+       "field": "alpine_draws",
+       "says": "0"
+      },
+      {
+       "field": "rope_note",
+       "says": "gear inferred from the Class 3 rating — standard talus/rock scrambling"
+      },
+      {
+       "field": "gear",
+       "says": "rope and crevasse-rescue gear for the glaciated approach"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a rope per team, harness, crevasse-rescue hardware"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The approach crosses South Cascade Glacier, a real glacier with crevasse hazard"
+      }
+     ],
+     "why": "Rope fields say no rope and the avalanche field calls the route non-glaciated, while gear, rack and crevasse fields require roped glacier travel.",
+     "internal_resolution": "gear, detailed_rack, pro_needs, hazards and crevasses all require a glacier rope; rope_type 'none' and the 'non-glaciated' label are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit ridge difficulty",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "Class 3 (direct) / Class 2 (talus-bench bypass)"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "Class 2"
+      },
+      {
+       "field": "approach",
+       "says": "a straightforward but loose Class 2 scramble ... staying near the crest"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you meet a step that makes you want a rope, you have drifted off the crest onto the flanks"
+      },
+      {
+       "field": "descent_text",
+       "says": "this is Class 2 the whole way"
+      }
+     ],
+     "why": "pitch_detail says the crest is Class 3 and the flank bypass Class 2, whereas approach/climbing_route say staying on the crest is Class 2 and the flanks are harder.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit ridge start point and relief",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "from the Sentinel Peak-Lizard Mountain saddle (6,940 ft) to the summit (7,420 ft), ~480 ft of relief"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "From the col ... roughly 600 vertical feet"
+      },
+      {
+       "field": "itinerary.days[2].schedule[1].label",
+       "says": "Top out at Lizard Pass (6,798 ft)"
+      }
+     ],
+     "why": "The col the scramble starts from is 6,940 ft with ~480 ft of relief vs 6,798 ft with ~600 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Yang Yang Lakes to White Rock Lakes day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].note",
+       "says": "A shorter day ... Most parties treat this as a half-day"
+      },
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[2].schedule",
+       "says": "8:00 AM leave ... 5:15 PM arrive White Rock Lakes"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "this is the longest and most sustained day on the traverse"
+      }
+     ],
+     "why": "The same leg is a 4-hour half-day, a 9+ hour schedule, and the longest day of the traverse.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit descent line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[3].schedule[4]",
+       "says": "Descend west ridge back to Lizard Pass"
+      },
+      {
+       "field": "descent_text",
+       "says": "Reverse the south ridge scramble ... There is no shorter or technical alternate descent documented"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the Class 3 scramble back down to Lizard Pass"
+      }
+     ],
+     "why": "The itinerary offers a west-ridge descent that descent_text says does not exist.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit south of Cache Col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required (Glacier Peak Wilderness)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "a self-issue wilderness permit is needed for any overnight camping beyond here"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "Glacier Peak Wilderness, free self-issue permit."
+      }
+     ],
+     "why": "No permit vs a required free self-issue permit for the same wilderness camps.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cadet_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Cadet Peak",
+   "contradictions": [
+    {
+     "fact": "Elevations of gully exit and ridge crest",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The rib/gully system gains the ridge crest around 5,500 ft"
+      },
+      {
+       "field": "approach",
+       "says": "exit the gully ... pick up a faint climbers' path that switchbacks to the ridge crest around 5,500 ft. Follow the ridge ... to about 6,500 ft"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "to the connecting ridge crest near 5,500 ft"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "6500 (Erosion gully to headwall waterfall)"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "6650 (Cliff-band crux ledge)"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6900 (Southwest ridge crest)"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "Around 6,500 ft a distinctive hobbit-like rock feature"
+      }
+     ],
+     "why": "Waypoints put the gully headwall at 6,500 ft and the ridge crest at 6,900 ft, while the prose puts the crest at ~5,500 ft with the 6,500-ft landmark above it on the ridge.",
+     "internal_resolution": "beta, approach, pitch_detail and approach_variants agree on ~5,500 ft crest; the waypoint elevations are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Final Class 3 exposed ledge traverses onto the summit block; ~6 hr from the car."
+      }
+     ],
+     "why": "Time-to-summit equals the whole 12-hour car-to-car day in timing but is ~6 hours in the schedule.",
+     "internal_resolution": "Schedule (5:30 start, 11:30 summit) gives ~6 hr; summitTimeHrs holds the total.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach length to Monte Cristo",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~8-mile bike/hike approach to Monte Cristo before the climb even begins"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 4 miles of the old Monte Cristo townsite road"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "4"
+      }
+     ],
+     "why": "Monte Cristo townsite is 4 miles from the car, not 8.",
+     "internal_resolution": "approach and waypoints agree on 4 miles (8 is the round trip).",
+     "needs_research": false
+    },
+    {
+     "fact": "Snow-free timing / season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep; snow lingers in the summit gully into June in most years"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September; snow lingers in the gullies into July"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "The summit gully typically holds snow into July"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      }
+     ],
+     "why": "The season field says snow lingers into June, others say into July; best_season starts in late June, before the Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "turnaround",
+       "says": "the full 16-mile round trip"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "15.5"
+      }
+     ],
+     "why": "dist_km (8 mi) is the one-way figure shown as distance while the itinerary/turnaround use a ~16-mile round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cadet_peak_ne_ridge",
+   "name": "Northeast Ridge (Sloan-Cadet Traverse)",
+   "area": "Cadet Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_columbia_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Columbia Peak",
+   "contradictions": [
+    {
+     "fact": "Approach trailhead (Blanca Lake vs Barlow Pass)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "steep, punishing gain via Blanca Lake trail (roughly 3,300 ft in a few miles) or the longer Monte Cristo approach"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "roughly 8 miles and steep elevation gain to reach the base of the scramble (via Blanca Lake)"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "the Blanca Lake trailhead/lake it shares an approach with"
+      },
+      {
+       "field": "approach",
+       "says": "From the Verlot Public Service Center ... Barlow Pass trailhead ... Poodle Dog Pass ... Twin Lakes"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Barlow Pass Trailhead (Mountain Loop Highway)"
+      }
+     ],
+     "why": "Partners and crowds describe a Blanca Lake approach while every route field uses Barlow Pass, Poodle Dog Pass and Twin Lakes.",
+     "internal_resolution": "approach, waypoints, itinerary, timing, descent and approach_variants all use Barlow Pass/Twin Lakes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Twin Lakes elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Twin Lakes (~5,000 ft)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the Twin Lakes saddle around 5,000 ft"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "4704"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "gains a viewpoint around 5,400 ft before dropping five hundred feet down to the lakes"
+      },
+      {
+       "field": "bivy[3].notes",
+       "says": "Silver Lake ... a good thousand feet lower than Twin Lakes (elev 4264)"
+      }
+     ],
+     "why": "Twin Lakes is ~5,000 ft vs 4,704 ft, and Silver Lake is said to be 1,000 ft lower though the stored figures differ by 440 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux buttress elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Above roughly 6,300 ft the route works past a buttress"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "Buttress step above 6,300 ft"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The buttress that holds the route's one hard move is HIGHER, at roughly 6,700 to 6,800 ft"
+      },
+      {
+       "field": "overview",
+       "says": "one exposed 4th-class move around 6,700-6,800 ft"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "6900 (West Chimney crux)"
+      }
+     ],
+     "why": "The class-4 buttress is placed just above 6,300 ft in approach/climbing_route but at 6,700-6,900 ft elsewhere; the variant warns the two heights are easily confused.",
+     "internal_resolution": "overview, approach_variants and waypoint agree on ~6,700-6,900 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Top out on Columbia Peak, roughly 3 hours above camp."
+      }
+     ],
+     "why": "summitTimeHrs holds the whole day-2 duration including the hike out.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "16.1"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "the ~20-22 mile round trip"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~21-mile round trip"
+      }
+     ],
+     "why": "dist_km (10 mi) is one-way while the other fields give ~21 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "not a standard month for this objective (risky)"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September"
+      }
+     ],
+     "why": "The season includes June, which seasonal guidance calls non-standard for this objective.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "name": "Standard Scramble",
+   "area": "Del Campo Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "2"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "4 rows (1. Foggy Lake to shoulder ... 4. Sub-notch to summit)"
+      },
+      {
+       "field": "climbing_route",
+       "says": "3 rows"
+      }
+     ],
+     "why": "The header shows 2 pitches while the route breakdown lists 4 and the climbing route 3.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Foggy Lake",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Foggy Lake (~5,200 ft, 3.3 miles from the trailhead)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Foggy Lake at about 5,200 ft, roughly 3.3 miles in"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "4.8"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "11"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "10.9 (round trip)"
+      }
+     ],
+     "why": "Foggy Lake is 3.3 miles in per the prose but 4.8 miles per the waypoint; 3.3 mi also does not fit an ~11-mile round trip.",
+     "internal_resolution": "waypoint 4.8 mi fits the 11-mile round trip in itinerary and approach_variants; 3.3 mi is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager (NRCA vs national forest)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "rises above Gothic Basin in the Morning Star Natural Resources Conservation Area"
+      },
+      {
+       "field": "access.rules",
+       "says": "The trail and basin lie within the Morning Star Natural Resources Conservation Area"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District"
+      },
+      {
+       "field": "bivy[2].permit",
+       "says": "National forest land OUTSIDE designated wilderness"
+      }
+     ],
+     "why": "The basin is described as a state conservation area and as national forest land.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to Gothic Basin / day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~3-4 hrs to reach Gothic Basin ... total car-to-car day is ~8 hrs"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "typically ~2-2.5 hrs to this point (Foggy Lake)"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "Reaching Gothic Basin takes 3-4 hrs vs reaching Foggy Lake, which is beyond the basin, in 2-2.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.85"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "11 miles round trip"
+      }
+     ],
+     "why": "dist_km (5.5 mi) is one-way while the itinerary gives 11 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Drive distance Granite Falls to Barlow Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Mountain Loop Highway east 31 miles to Barlow Pass"
+      },
+      {
+       "field": "road.status",
+       "says": "Paved for its full length from Granite Falls to Barlow Pass (~34 mi)"
+      }
+     ],
+     "why": "31 vs 34 miles for the same drive.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_foggy_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Foggy Peak",
+   "contradictions": [
+    {
+     "fact": "Where to leave the Glacier Basin trail / last water",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Leave the maintained trail around 4,200–4,500 ft, just above the falls, where Glacier Creek is easily and safely accessible — this is the last reliable water"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "leave it near 4,200 ft"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Glacier Creek Crossing, elev 3600: Fill water here; this is the last place"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Snowline / Leave Maintained Trail, elev 5000: leave the Glacier Basin trail here"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].label",
+       "says": "Reach snowline / gully entrance (~5,000')"
+      }
+     ],
+     "why": "The trail departure is at 4,200-4,500 ft in the prose but 5,000 ft in the waypoints; the last-water creek crossing is at 3,600 ft vs 4,200-4,500 ft; the itinerary calls ~5,000 ft the gully entrance.",
+     "internal_resolution": "approach, approach_variants and descent_text agree on leaving at ~4,200-4,500 ft; the waypoint elevations are the outliers.",
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness named in rules",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Group size capped at 12 ... inside Glacier Peak Wilderness ... Campfires prohibited above 3,500 ft in wilderness."
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit"
+      },
+      {
+       "field": "overview",
+       "says": "within the Henry M. Jackson Wilderness"
+      }
+     ],
+     "why": "The rules name the wrong wilderness (copied text), while every other field says Henry M. Jackson Wilderness.",
+     "internal_resolution": "All other fields say Henry M. Jackson Wilderness; access.rules is copied from a Glacier Peak row.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the class 3-4 climbing sits relative to the notch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The gully leads to a notch just west (left) of the true summit; the final short scramble to the summit block"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "to this notch on the skyline, where the real Class 3-4 climbing begins"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "From the notch it is a few hundred feet of steep, exposed Class 3–4 scrambling"
+      }
+     ],
+     "why": "The prose puts the steep gully below the notch with a short finish above it; the waypoints put a few hundred feet of class 3-4 above the notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "~11:00 AM (from a 5:00 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole 11-hour day; the schedule reaches the summit in ~6 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "approach",
+       "says": "consistent with the ~25.75 km (16 mi) round-trip distance"
+      }
+     ],
+     "why": "The approach cites 25.75 km round trip; dist_km holds the 12.9 km one-way figure.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "non-standard month (risky)"
+      },
+      {
+       "field": "best_season",
+       "says": "July through September"
+      }
+     ],
+     "why": "The season includes June, which seasonal guidance calls non-standard.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road surface at Barlow Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.nearestHospital",
+       "says": "Mountain Loop Highway (partly gravel/unpaved near Barlow Pass)"
+      },
+      {
+       "field": "road.status",
+       "says": "Barlow Pass Trailhead itself is on paved, maintained highway"
+      }
+     ],
+     "why": "The drive back from Barlow Pass is gravel in one field and paved in another.",
+     "internal_resolution": "road and approach say the highway is paved to Barlow Pass.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "name": "Glaciated Scramble (Standard)",
+   "area": "Kyes Peak",
+   "contradictions": [
+    {
+     "fact": "Which ridge the route climbs",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "to reach Kyes' upper northeast ridge (~6,600 ft)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Ridge and boulder-field scrambling above the northeast base"
+      },
+      {
+       "field": "approach",
+       "says": "This boot path gains Kyes Peak's south ridge and follows it northeast"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "SW side of Kyes Peak (glacier exit)"
+      },
+      {
+       "field": "waypoints[6].name",
+       "says": "South Ridge climber's trail junction"
+      }
+     ],
+     "why": "Beta and pitch_detail say the northeast ridge/base (a separate Pride Glacier route on this peak), while approach and waypoints say the south ridge / SW side.",
+     "internal_resolution": "approach, approach_variants, waypoints and descent_text agree on the south ridge.",
+     "needs_research": true
+    },
+    {
+     "fact": "Order of Virgin Lake and Blanca Lake / where the 600-ft drop is",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].label",
+       "says": "Arrive Blanca Lake (~1.5 hrs in)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].label",
+       "says": "Round the lake, reach Virgin Lake / base of Columbia Glacier"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Virgin Lake, distMi 3.5, elev 4600"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Blanca Lake, distMi 4, elev 3976: reached via a rough 500ft descent from Virgin Lake"
+      },
+      {
+       "field": "approach",
+       "says": "the trail drops about 600 ft over 0.6 mile to Virgin Lake (~4,600 ft)"
+      }
+     ],
+     "why": "The itinerary reaches Blanca Lake before Virgin Lake and puts Virgin Lake at the glacier base; the approach puts the 600-ft drop before Virgin Lake while waypoints put it between Virgin and Blanca lakes.",
+     "internal_resolution": "Waypoints and approach_variants (Virgin Lake first, then down to Blanca) agree on order; 1,950 + 2,900 - 600 = 4,250 does not fit Virgin Lake at 4,600, so the 600-ft drop belongs below Virgin Lake.",
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.1"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 5,200 ft over about 9-9.5 miles one-way, consistent with a ~19 km round-trip figure"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "12 (round trip)"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "7.3"
+      }
+     ],
+     "why": "One-way distance is 9-9.5 mi (approach), 7.3 mi (waypoints) or 6 mi (itinerary); dist_km matches none of the approach's 19 km.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6023"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5200"
+      },
+      {
+       "field": "approach",
+       "says": "Total elevation gain from trailhead to the 7,282-ft high point is roughly 5,200 ft"
+      }
+     ],
+     "why": "Header gain 6,023 ft vs 5,200 ft in the itinerary and approach (a 16% gap).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach trailhead in partner requirements",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "multi-hour approach via the Monte Cristo townsite area or North Fork Sauk/Sloan Creek side"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[4]",
+       "says": "navigation for the remote Monte Cristo / Sloan Creek approach"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Blanca Lake Trailhead"
+      }
+     ],
+     "why": "The partners tab names Monte Cristo/Sloan Creek approaches; the route uses the Blanca Lake trailhead.",
+     "internal_resolution": "Every route field uses the Blanca Lake trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Drive to trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "Follow the North Fork Skykomish River Road (FR 63) to its end at the Blanca Lake Trailhead"
+      },
+      {
+       "field": "road.status",
+       "says": "Direct Index-Galena Road access is closed to vehicles (~MP 10–14 washed out since Dec 2025); current access is via the Beckler Road/Jack Pass detour."
+      }
+     ],
+     "why": "The waypoint directs drivers up the closed road rather than the detour.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "12:30 PM (from a 4:30 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit block grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "rope_note",
+       "says": "then Class 2-3 scrambling on the summit slab/ledges"
+      },
+      {
+       "field": "descent_text",
+       "says": "a short, exposed 4th-class knife-edge section"
+      }
+     ],
+     "why": "The rope note calls the finish Class 2-3 against Class 3-4 elsewhere.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Kyes Peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (spring ski ascents/descents also reported)"
+      },
+      {
+       "field": "best_season",
+       "says": "Snow-covered conditions (roughly May-July) make the Pride Glacier crossing and ridge travel most straightforward"
+      }
+     ],
+     "why": "The best window starts in May, before the Jun-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Monte Cristo Peak",
+   "contradictions": [
+    {
+     "fact": "Rope length",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "rack[0]",
+       "says": "30m rope for the roped chimney section"
+      },
+      {
+       "field": "pro_needs",
+       "says": "a 30m rope is sufficient for the short technical section"
+      },
+      {
+       "field": "rappels",
+       "says": "1 rappel off the bolted anchor above the crux chimney; 60m rope reported sufficient"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a 60m rope"
+      },
+      {
+       "field": "descent_text",
+       "says": "a single 60m rope is sufficient to reach easier ground"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "includes a rope (60m sufficient)"
+      }
+     ],
+     "why": "Kit fields call for a 30 m rope while the rappel and descent fields specify 60 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route grade (Class 3 vs roped 5.6)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.6"
+      },
+      {
+       "field": "overview",
+       "says": "requires roped 5.6 rock climbing through a short chimney ... rather than a Class 3 scramble"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "short but unavoidable 5.6 rock chimney — a roped technical pitch, not a Class 3 scramble move"
+      },
+      {
+       "field": "rope_note",
+       "says": "a ~75ft gully ... with Class 2-3 ledges near the top"
+      },
+      {
+       "field": "disciplines",
+       "says": "[\"scrambling\"]"
+      }
+     ],
+     "why": "The crux grade in technical stats and the discipline tag say Class 3 scramble, while rock_grade, overview and hazards say a roped 5.6 pitch.",
+     "internal_resolution": "rock_grade, overview, hazards, pitch_detail and waypoints agree on a 5.6 chimney.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September; August is the most reliable stretch"
+      },
+      {
+       "field": "best_season",
+       "says": "June is the classic window ... By late July/August the moat can open and block or complicate the chimney"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Aim for June if possible"
+      }
+     ],
+     "why": "The best window is June (outside the Jul-Sep season) in best_season and pro_tips, while seasonal guidance makes August optimal, when best_season warns the moat may block the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier/snow hazard labels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel on this route"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route ... the route is only climbed once snow-free"
+      },
+      {
+       "field": "obj_haz",
+       "says": "moat/crevasse hazard at col; steep snow to 45 degrees"
+      },
+      {
+       "field": "descent_text",
+       "says": "re-cross the moat/schrund, and descend the steep snow slope"
+      },
+      {
+       "field": "best_season",
+       "says": "June is the classic window: enough snow remains"
+      }
+     ],
+     "why": "The Safety tab says no glacier/snow and a snow-free climb, while other fields require crossing a schrund and 45-degree snow, ideally in June.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel anchor location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a rap anchor sits about 25 ft above the start of the chimney"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "From the bolted rap anchor ~25 ft above the chimney start"
+      },
+      {
+       "field": "descent_text",
+       "says": "A fixed/bolted rappel anchor ... sits a short distance below the chimney"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "a roped rappel (60m) is the standard descent off the top"
+      }
+     ],
+     "why": "The rappel anchor is above the chimney, below it, or at the summit, depending on the field.",
+     "internal_resolution": "beta, pitch_detail and waypoints agree it is ~25 ft above the chimney start.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance and gain to Glacier Basin",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "leveling out into Glacier Basin (~4,500 ft) after about 2.5 miles — roughly 6.5 miles and ~1,700 ft of gain from Monte Cristo, ~10.5 miles and ~4,000 ft from the car"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "7 (Glacier Basin)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.7"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2150"
+      }
+     ],
+     "why": "Glacier Basin is 2.5 vs 6.5 miles from the townsite and 6.7-7 vs 10.5 miles and 2,150 vs 4,000 ft from the car.",
+     "internal_resolution": "Waypoints, itinerary and the approach's own '2.5 miles' agree on ~7 mi and ~2,150 ft; '6.5 / 10.5 miles, ~4,000 ft' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit coordinate vs chimney distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[7]",
+       "says": "Monte Cristo Peak summit 47.971275,-121.341905, distMi 8.3"
+      },
+      {
+       "field": "waypoints[6]",
+       "says": "Summit chimney 47.985533,-121.370727, distMi 8.2"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "from the top of the chimney it's straightforward scrambling to the register"
+      }
+     ],
+     "why": "The summit pin is ~1.7 miles (straight line) from the chimney pin, but the listed distance and prose make it 0.1 mile away.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "South Fork Sauk bridges",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a couple of cable/suspension bridges cross the river en route"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "the South Fork Sauk River, which must be forded or crossed on a nearby log"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The road and its river bridges beyond the gate are washed out"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the old road bridge over the South Fork Sauk is long gone; the crossing is on logs or a ford"
+      }
+     ],
+     "why": "Intact cable/suspension bridges vs washed-out bridges with a ford or log crossing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-climb permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No permit required for a day climb"
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue wilderness permit at the kiosk before walking the closed Monte Cristo roadbed"
+      }
+     ],
+     "why": "No permit for a day climb vs a self-issue wilderness permit at the kiosk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].time",
+       "says": "~8:30-9:30 AM (from a 3:30-4:00 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole day-2 duration.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,263 @@
+{
+ "file": "s027.json",
+ "results": [
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 77.25 is the itinerary's 48-mile loop total, not a one-way approach, and the approach prose quotes that same figure as a round trip. A 2016 one-day Pasayten traverse put Lost Peak about 18 miles in from Monument Creek; the Forest Service trail page gives Monument Creek Trail #484 as 8.5 miles and a hiking-site page gives the whole trail as 25 miles one-way; a published loop run logged 42.5 miles total. No two sources give the same one-way figure for either line. What would settle it: a source giving trail miles from Monument Creek Trailhead to Butte Pass, plus a decision on which line (Monument Creek or the Robinson Creek loop) this record describes.",
+   "sources": [
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.wta.org/go-hiking/hikes/monument-creek",
+    "https://www.fs.usda.gov/recarea/okawen/recarea/?recid=59343",
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two real lines exist with different grades. Peak references give the southwest slope as Class 3. The Butte Pass, Pass Butte and ridge line is given as Class 2 by a club route page, and a separate one-day traverse report describes the same ridge line with false summits and no technical ground. The grade pill follows the SW slope while pro_needs, approach and itinerary follow the ridge. Nothing is patched until the record picks one line. What would settle it: an owner decision on which line this record is; then the matching grade has 2 sources.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lost_Peak",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Summit line (SW slope vs NW ridge)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Beta, face and pitch_detail call the SW scree slope the only documented line. That is false: a club route page, a documented loop trip and a separate 2016 traverse report all use the Butte Pass to Pass Butte ridge, over Point 7275 and several false summits. Peak references still list the SW slope as the easiest route. Making the record agree means rewriting it to one line, with its grade, face and aspect. That is a restructuring decision, not a minimal patch. What would settle it: an owner decision to make this record the ridge line (it has 3 sources) and rewrite beta, face, aspect, grade and pitch_detail to match.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lost_Peak",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_golden_age",
+   "fact": "Descent and rappel-ready belays",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Rappel the line of ascent with one 70 m rope; all belays are bolted but not all are rigged for rappel, and the first rappel goes to an anchor left of the pitch-6 finish.",
+   "evidence": "The first ascensionist's guide-service write-up says to rappel the route on one 70 m rope, with the second rappel anchor from the top off to the left. A separate climber's route page says to rappel roughly the line of ascent, with the first rappel going to the anchor out left of the pitch-6 finish. It adds that all belays are bolted but not all are set up for rappel, and that parties can finish by descending the Tiger. The AAJ report also says all belays are bolted. The row's rappels, descent_text and pitch_detail already say this; the patches fix the hidden descent column, the watch-out and two approach notes that sent parties down a neighbouring line.",
+   "sources": [
+    "https://squamishrockguides.com/mm-wall-2/",
+    "https://www.mountainproject.com/route/120993800/golden-age",
+    "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Walk off, or join the Tiger's or Ellen Pea's rappel line",
+     "replace": "Rappel the line of ascent with one 70 m rope",
+     "id": "wa_golden_age",
+     "fact": "Descent and rappel-ready belays"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      1
+     ],
+     "find": "Not all belay anchors are rigged for rappel — plan your descent via the Tiger or Ellen Pea line instead.",
+     "replace": "Not every belay is rigged for rappel — on the way down, the first rappel goes to an anchor off to the left of the top of pitch 6 rather than straight down the line.",
+     "id": "wa_golden_age",
+     "fact": "Descent and rappel-ready belays"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "find": "so this is not a line to bail down",
+     "replace": "so find the rappel stations before you need them",
+     "id": "wa_golden_age",
+     "fact": "Descent and rappel-ready belays"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "so allow for it, and note that this is also the line most parties use to get back DOWN afterwards.",
+     "replace": "so allow for it.",
+     "id": "wa_golden_age",
+     "fact": "Descent and rappel-ready belays"
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_age",
+   "fact": "Ground approach to the start",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The route can be reached straight up the gully to its ledge; climbing a neighbour's lower pitches is an alternative.",
+   "evidence": "The approach prose says to hike up the gully and leave it on a narrow ledge that leads to the first pitch. approach_variants say there is no way to walk to the climb. The first ascensionist's write-up says to hike up the gully for about an hour and exit onto a narrow ledge leading to pitch 1, with starting on a neighbour's lower pitches as an option. A separate climber's route page likewise says you can keep scrambling up the gully to the ledge where the route starts.",
+   "sources": [
+    "https://squamishrockguides.com/mm-wall-2/",
+    "https://www.mountainproject.com/route/120993800/golden-age"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "There is no way to walk to this climb. Do the usual gully approach",
+     "replace": "You can scramble on up the gully to this climb's own ledge, but many parties add pitches instead: do the usual gully approach",
+     "id": "wa_golden_age",
+     "fact": "Ground approach to the start"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      0
+     ],
+     "find": "No ground approach — a retreat means",
+     "replace": "From the lower pitches, a retreat means",
+     "id": "wa_golden_age",
+     "fact": "Ground approach to the start"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "hazards",
+      0
+     ],
+     "find": "No ground approach; escape means",
+     "replace": "From the lower pitches, escape means",
+     "id": "wa_golden_age",
+     "fact": "Ground approach to the start"
+    }
+   ]
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says about 45 minutes up the gully before exiting onto the ledge. That text says it is copied from the first ascensionist's guide description, so the two count as one source; they match timing.approachTimeHrs 0.75. The area page gives 1 hour to the lower ledge and 1h10 to the upper ledge, matching the prose and itinerary. The wall's ledge names are used inconsistently across sources, so the two figures may describe different stances. What would settle it: an independent trip report timing car to Ellen Pea's first pitch.",
+   "sources": [
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "8 pitches",
+   "evidence": "pitches (8), the 8 numbered pitch_detail rows, the overview ('8-pitch') and a watch-out about 'Pitch 8's finish' all agree against the upper-ledge waypoint note's '7-pitch'. The route's own page lists it as 1,000 ft, 8 pitches, and describes P1 to P5 of the full line. The free ascensionist's blog gives no count.",
+   "sources": [
+    "https://www.mountainproject.com/route/111075283/the-l-h-route-free-variation"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "7-pitch 5.12 (7b+)",
+     "replace": "8-pitch 5.12 (7b+)",
+     "id": "wa_the_l_h_route_free_variation",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says the Tiger starts from the main ledge, not the highest ledge system (which puts you at the start of P4), and gives about one hour from car to base. The AAJ first-ascent report gives a 40-minute approach. Both fit the itinerary's 40-60 minutes. The row's approach prose and waypoint note give 1h10 to the 'upper ledge', which follows the area page, and the row's approach_variants place the Tiger's start on that upper ledge. So the conflict is really about which ledge the route starts from, and the ledge names are ambiguous across sources. What would settle it: a source that maps the area page's lower and upper ledges onto the Tiger's first-pitch ledge.",
+   "sources": [
+    "https://www.mountainproject.com/route/109429099/the-tiger",
+    "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger",
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Heaton Camp elevation",
+   "verdict": "fixed",
+   "correct_value": "about 6,700 ft",
+   "evidence": "The hiking association's trail page puts Heaton Camp at 'some 6,700 feet'. A 2024 traverse report, written independently, says the camp is placed wrongly on common maps and actually sits on a small wooded bench at 6,700 ft. The row's own itinerary agrees: day 1 gains 5,100 ft from the 1,627 ft trailhead (about 6,730 ft), and day 2 gains 1,450 ft to the 8,143 ft summit (about 6,690 ft). The park page's 7,000 ft is a round figure and does not fit those gains. The USGS reading at the stored pin (7,238 ft) is not usable, because that pin sits only about 300 m from the summit, and pin position is out of scope.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://trailcatjim.com/mcgregor-mtn-summit-traverse-rainbow-pass-to-heaton-basin-2024/",
+    "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 7000,
+     "value": 6700,
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Heaton Camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "to Heaton Camp at 7,000 ft",
+     "replace": "to Heaton Camp at about 6,700 ft",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Heaton Camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to Heaton Camp at about 7,000 ft",
+     "replace": "to Heaton Camp at about 6,700 ft",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Heaton Camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "12 people/stock at 7,000 ft",
+     "replace": "12 people/stock at about 6,700 ft",
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Heaton Camp elevation"
+    }
+   ]
+  }
+ ]
+}

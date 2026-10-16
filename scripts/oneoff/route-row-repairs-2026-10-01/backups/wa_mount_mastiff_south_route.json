@@ -1,0 +1,56 @@
+{
+ "id": "wa_mount_mastiff_south_route",
+ "name": "South Route",
+ "waypoints": [
+  {
+   "lat": 47.7905,
+   "lng": -120.885,
+   "elev": 3000,
+   "name": "Merritt Lake Trailhead",
+   "note": "Signed spur (FR 657) north off Hwy 2 near milepost 76; no permit required, self-register at the trailhead kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US-2 near milepost 76, about 11.5 miles east of Stevens Pass or 24 miles west of Leavenworth, turn north onto the signed spur for Forest Road 657. The road is rough and high clearance is recommended; drive 1.5 miles to the Merritt Lake Trailhead at about 3,050 feet. No permit is required, but self-register at the trailhead kiosk before you start hiking."
+  },
+  {
+   "lat": 47.805934,
+   "lng": -120.913651,
+   "elev": 5000,
+   "name": "Merritt Lake",
+   "note": "Top of the switchbacking Merritt Lake Trail; established campsites and a privy here, and the last dependable water before the ridge.",
+   "type": "Campsite",
+   "distMi": 2.5,
+   "directions": "Hike the Merritt Lake Trail as it switchbacks up through forest for about 2.5 miles to Merritt Lake, where there are established campsites, a privy, and the last dependable water before the ridge."
+  },
+  {
+   "lat": 47.815982,
+   "lng": -120.920489,
+   "elev": 5400,
+   "name": "Boot path split for Mastiff",
+   "note": "About a mile north on the Nason Ridge Trail past the Merritt Lake junction, an unsigned boot path breaks off uphill toward Mastiff's south slopes — easy to walk past if you're not watching for it.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "Continue past the lake junction onto the Nason Ridge Trail and follow it north about a mile, watching for an unsigned boot path breaking off uphill toward the peak's south slopes. There is no cairn, post or blaze; if the trail starts losing height toward Lost Lake, you have passed the turn and should come back."
+  },
+  {
+   "lat": 47.819612,
+   "lng": -120.930193,
+   "elev": 6200,
+   "name": "South-slope heather/talus",
+   "note": "Above treeline the boot path fades into open heather and loose talus with no maintained tread and no water; fog or whiteout makes relocating the descent path difficult.",
+   "type": "Hazard",
+   "distMi": 4.1,
+   "directions": "Follow the boot path steeply uphill through forest. Above treeline it fades into open heather and loose talus with no maintained tread and no water, so note landmarks for the descent, especially in fog."
+  },
+  {
+   "lat": 47.8178304,
+   "lng": -120.9360237,
+   "elev": 6747,
+   "name": "Mount Mastiff summit",
+   "note": "True summit, third-highest point on Nason Ridge; open views north to Lake Wenatchee and west along the connecting ridge/saddle to Mount Howard, a common combined objective.",
+   "type": "Summit",
+   "distMi": 4.5,
+   "directions": "Gain the ridge and climb it until it turns into a rocky, jagged crest. Follow the moat between rock and snow just to the left, stepping up onto the rock to cross ledges, wrap the big rock tower on its right side close to its base, then scramble dirt and ledges to a knoll and a final snowfield. The summit is broad and flat; the register sits off to the south of the flat area rather than on the high point."
+  }
+ ]
+}

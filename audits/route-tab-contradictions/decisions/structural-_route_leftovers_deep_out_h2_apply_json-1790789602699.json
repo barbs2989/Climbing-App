@@ -1,0 +1,5338 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "patch",
+   "columns": [
+    "gain_ft"
+   ]
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "op": "patch",
+   "columns": [
+    "dist_km",
+    "waypoints",
+    "road",
+    "access",
+    "approach"
+   ]
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "op": "patch",
+   "columns": [
+    "dist_km",
+    "approach"
+   ]
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "op": "patch",
+   "columns": [
+    "road",
+    "access",
+    "approach"
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "op": "patch",
+   "columns": [
+    "approach",
+    "approach_variants",
+    "itinerary",
+    "timing",
+    "pitch_detail",
+    "descent_text",
+    "obj_haz",
+    "pro_tips",
+    "bivy",
+    "dist_km",
+    "gain_ft",
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_seattle_south",
+   "area_id": "wa_mount_seattle",
+   "name": "South Slopes (Standard)",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Sturdy boots for scree/talus",
+    "Ice axe (useful for lingering snow patches into early summer)",
+    "Approved hard-sided bear canister (required for overnight stays)",
+    "Map, compass, and altimeter — NPS stresses constant position-tracking given the lack of any marked route",
+    "Gaiters (brush on the Seattle Creek/Noyes Basin bushwhack approaches)",
+    "Helmet recommended on the looser scree/talus sections"
+   ],
+   "hazards": [
+    "Steep, brushy bushwhacking where the Seattle Creek drainage becomes too steep to climb directly",
+    "Loose scree and talus on both the west and east flanks, with rockfall risk onto parties below",
+    "Unbridged river/creek fords on the Elwha and North Fork Quinault approaches that can become dangerous after rain or during snowmelt",
+    "Extreme remoteness — multi-day approach from the nearest trailhead in either direction, with the NPS explicitly noting that emergency help is far away and frequently impossible to contact"
+   ],
+   "verif": null,
+   "overview": "Mount Seattle (6,246 ft) rises deep in the Olympic interior, about 7.5 miles southeast of Mount Olympus, within the Daniel J. Evans Wilderness of Olympic National Park. Its northeast aspect drops over 3,800 ft to the Elwha valley in only about 1.5 miles, but the standard scramble routes stay on the gentler south/west scree and talus slopes. The peak was named April 29, 1890 by James Halbold Christie and topographer Charles Adams Barnes of the Seattle Press Expedition, in honor of the city that sponsored their winter crossing of the range; it was first climbed in 1907 by Asahel Curtis, Grant Humes, and Lorenz Nelson while reconnoitering for a climbing club's first attempt on Mount Olympus. Reaching the base of the peak requires a long, committing wilderness approach from either the Elwha or North Fork Quinault drainages — there is no easy day-trip line to this summit.",
+   "beta": "Most parties base-camp at Seattle Meadows (~4,550 ft), reached via a multi-day approach up the North Fork Quinault River to Low Divide and then west into Seattle Creek Basin. From camp, climb scree slopes on the mountain's western side, cross over a ridge, and continue up scree and talus on the eastern side, finishing with a class 2-3 scramble on the east ridge/side to the craggy summit. Two other approach variants exist (via Noyes Basin, and a more direct line up Seattle Creek Basin itself), converging on the same upper-mountain scramble.",
+   "turnaround": "Because the upper mountain is loose scree/talus with real rockfall and slip potential, and the approach is long and entirely off-trail through remote wilderness, set a firm turnaround time before starting the summit push and commit to it — visibility loss (fog/cloud) on the unmarked upper slopes is the biggest threat to a safe descent, and there is no faster way down than the way up.",
+   "auto_generated": true,
+   "alpine_grade": "Grade I",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 7500,
+   "loss_ft": null,
+   "dist_km": 30.58,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "I",
+   "face": "West Slope - Southwest Couloir - South Ridge",
+   "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+   "comms": null,
+   "descent": "Reverse the south slopes to Seattle Meadows, then descend to Low Divide and the North Fork Quinault trail.",
+   "obj_haz": [
+    "loose/friable rock in places",
+    "off-trail routefinding",
+    "lingering snow into early summer",
+    "remote terrain with slow rescue response"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5759,
+     "lng": -123.648,
+     "elev": 500,
+     "name": "North Fork Quinault Trailhead (North Shore Road)",
+     "note": "Road's end on North Shore Road above Lake Quinault; Wilderness Information Center permit required, start of the North Fork Quinault River Trail; the Three Lakes trail up to the Skyline Ridge Primitive Trail also leaves from here.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.72481,
+     "lng": -123.55462,
+     "elev": 3602,
+     "name": "Low Divide",
+     "note": "Saddle between Mount Seattle and Mount Christie and the terminus of the Skyline Ridge Primitive Trail, near the historic Low Divide Ranger Station site.",
+     "type": "Junction",
+     "distMi": 16
+    },
+    {
+     "lat": 47.727303057142855,
+     "lng": -123.56447954285714,
+     "elev": 4550,
+     "name": "Seattle Meadows",
+     "note": "High camp in Upper Seattle Basin reached via a ~1,000 ft climb from Seattle Creek; standard launch point for the summit scramble, per route beta.",
+     "type": "Campsite",
+     "distMi": null
+    },
+    {
+     "lat": 47.730995,
+     "lng": -123.577965,
+     "elev": 6246,
+     "name": "Mount Seattle",
+     "note": "True summit gained by a Class 2-3 scramble up the east ridge, crossing scree and talus slopes on the peak's eastern side above Upper Seattle Basin.",
+     "type": "Summit",
+     "distMi": 19
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": 5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": null,
+      "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+      "fromTo": "Up the North Fork Quinault River Trail",
+      "section": "Approach"
+     },
+     {
+      "hrs": null,
+      "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+      "fromTo": "Over the Sixteen Mile ford to Low Divide and high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+      "fromTo": "Summit day",
+      "section": "Climb"
+     },
+     {
+      "hrs": null,
+      "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+      "fromTo": "Back down to the North Fork",
+      "section": "Descent"
+     },
+     {
+      "hrs": null,
+      "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+      "fromTo": "Hike out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "map and compass/GPS",
+    "extra layers",
+    "sun protection",
+    "ample water"
+   ],
+   "pro_tips": [
+    "Plan a multi-day trip — the North Fork Quinault approach is long",
+    "Combine with neighboring Olympic-interior summits to justify the approach"
+   ],
+   "watch_out": [
+    "long remote approach",
+    "early-season snow",
+    "river fords",
+    "loose rock"
+   ],
+   "pro_needs": "No technical protection is documented for this route — it is an unroped Class 3 scramble with no glacier travel per the published route description.",
+   "best_season": "Mid-July through September",
+   "high_point_ft": 6246,
+   "aid_grade": null,
+   "approach": "Two realistic approach corridors exist, both multi-day: (1) North Fork Quinault side — from the North Fork Quinault Trailhead at the end of the North Shore Road (not the South Shore Road, which leads to Graves Creek and the East Fork instead), follow the North Fork Quinault River Trail or the higher, rougher Skyline Ridge Primitive Trail (via Three Lakes and Kimta Peak) to Low Divide, 16 miles one-way by the river trail and much farther by the ridge, then cross-country/climbers'-path to Seattle Meadows below the peak's south side. (2) Elwha side — from the Whiskey Bend trailhead (the road to it has been closed to vehicles at Madison Falls since November 2017 flood damage, adding about seven miles each way on foot or bike), follow the Elwha River Trail up the Elwha valley toward Elwha Basin/Low Divide (on the order of 20+ miles one-way), then leave trail to climb into Seattle Creek Basin or Noyes Basin on the peak's northeast side. Either way, plan on a multi-day backpack just to reach a base camp, with several thousand feet of trail gain before any scrambling begins. The Seattle Creek Basin approach (Elwha side) follows the creek's waterfalls until the drainage steepens, forcing a steep, brushy bushwhack up onto the Mt. Noyes-Mt. Seattle ridge — expect slow going in heavy brush low down.",
+   "descent_text": "Descend the ascent line in reverse: downclimb the east ridge scramble back to the scree/talus on the east side, cross back over the connecting ridge, and descend the west-side scree to Seattle Meadows camp. The scree and talus are loose and unconsolidated in places, so downclimb carefully rather than trying to glissade or boot-ski except where lingering early-season snow makes it safe; rockfall onto parties below is a real concern on the looser sections.",
+   "bail": "Reverse the scramble; no fixed anchors required.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, ~16 mi",
+     "notes": "North Fork Quinault River Trail through old-growth rainforest; gains roughly 3,100 ft to Low Divide camp (~3,600 ft).",
+     "pitch": "Trailhead to Low Divide"
+    },
+    {
+     "grade": "Primitive trail/off-trail",
+     "notes": "Via the Skyline Trail system into Seattle Creek Basin, climbing to camp near 4,550 ft below the peak's west slopes.",
+     "pitch": "Low Divide to Seattle Meadows basecamp"
+    },
+    {
+     "grade": "Class 2-3 scramble",
+     "notes": "Ascend scree on the west slope, cross to the southwest couloir, then scramble loose talus on the south ridge/east side to the (slightly higher) south summit; roughly 2-2.5 hrs from camp, under 2 hrs to descend.",
+     "pitch": "Seattle Meadows to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route; check current park conditions for the North Fork Quinault fords, especially the Sixteen Mile crossing, before committing to the approach.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+      "hours": null,
+      "miles": null,
+      "title": "Up the North Fork Quinault River Trail",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach a river camp such as Elip Creek or Sixteen Mile"
+     },
+     {
+      "n": 2,
+      "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+      "hours": null,
+      "miles": null,
+      "title": "Over the Sixteen Mile ford to Low Divide and high camp",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach a high camp at Seattle Meadows"
+     },
+     {
+      "n": 3,
+      "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+      "hours": 5,
+      "miles": 4,
+      "title": "Summit day",
+      "gainFt": 1700,
+      "lossFt": 1700,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave high camp",
+        "detail": "Light daypack; rope/overnight gear left at camp."
+       },
+       {
+        "time": "~7:00 AM",
+        "label": "Gain the south/east ridge",
+        "detail": "Talus and scree slopes above Seattle Meadows basin."
+       },
+       {
+        "time": "~7:50 AM (about 2.3 hr from camp)",
+        "label": "Summit",
+        "detail": "Class 2-3 scramble; views across the Bailey Range and Elwha headwaters."
+       },
+       {
+        "time": "8:20 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the south-side scree/talus line."
+       },
+       {
+        "time": "~10:15 AM (about 1.9 hr from summit)",
+        "label": "Back at high camp",
+        "detail": "Rest of the day free to recover before the long walk out begins."
+       }
+      ],
+      "objective": "Climb Mount Seattle via the south-side talus/scree slopes"
+     },
+     {
+      "n": 4,
+      "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+      "hours": null,
+      "miles": null,
+      "title": "Back down to the North Fork",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to a river camp below Low Divide"
+     },
+     {
+      "n": 5,
+      "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+      "hours": null,
+      "miles": null,
+      "title": "Hike out to the trailhead",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to the North Fork Quinault trailhead"
+     }
+    ],
+    "totalNote": "A multi-day wilderness backpack (about 5 days / 4 nights) up the North Fork Quinault River, 16 trail miles to Low Divide, then on to a high camp at Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same trail back out."
+   },
+   "access": {
+    "fees": "Olympic NP wilderness permit reservation: $6 reservation fee plus $8 per person per night for climbers/backpackers age 16+ (15 and under free), as of 2026.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Hard-sided, approved bear-resistant food canisters are required for all overnight stays throughout most of Olympic Wilderness, including the Elwha and Quinault interior zones; bear wires/hangs are not accepted. There is no separate climbing registration — rangers do not certify competency or refuse a permit for lack of gear/experience, so self-sufficiency and route knowledge are entirely on the party.",
+    "permit": "A backcountry wilderness camping permit is required for any overnight stay and must be reserved through recreation.gov before your trip.",
+    "closures": "Olympic Hot Springs Road beyond Madison Falls has been closed to vehicles since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adding roughly 7 miles each way of walking or biking to reach the Whiskey Bend trailhead on the Elwha approach. On the Quinault side, South Shore Road has a separate washout closure near milepost 8 (use North Shore Road as the detour); North Shore Road itself also had a seasonal construction closure near milepost 10.2 (culvert replacement, closed July 9–Sept 22, 2025). Call the park's Road and Weather Hotline (360-565-3131) or check nps.gov/olym for current status before committing to either approach.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park (NPS) / Daniel J. Evans Wilderness",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "passRequired": "Olympic NP entrance pass (or interagency \"America the Beautiful\" pass)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+     "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+    }
+   },
+   "road": {
+    "name": "North Fork Quinault Road (via North Shore Road)",
+    "status": "Open to vehicles to the North Fork Quinault trailhead at road's end; reach it from North Shore Road only, since South Shore Road is closed by a washout. The North Fork road is not recommended for RVs or trailers and may be closed in winter.",
+    "driveNote": "Paved and gravel sections; verify current park road status before driving.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "fall": "Increasing rain and shortening daylight narrow the practical window",
+    "spring": "Deep snowpack typically lingers in the upper basins and on the summit slopes into early summer",
+    "summer": "The most reliable window (Jul-Sep) but still unsettled — trip reports document rain and hail squalls even in early September",
+    "winter": "Heavy snow and storms make the multi-day approach and summit slopes impractical for most parties",
+    "typical": "Marine west coast climate: wet, mild winters with heavy snow accumulation in the high interior, and a relatively short, more stable summer window. The standard scramble is typically driest and most snow-free from mid-July through September.",
+    "bySeason": {
+     "summer": "Best window (Jul-Sep) for the scree/talus scramble; expect long daylight but still-frequent Pacific frontal systems and afternoon cloud buildup typical of the Olympics.",
+     "winter": "Heavy snow and frequent storms make the approach trails themselves a serious undertaking; not a realistic season for this route."
+    },
+    "forecastZone": "Olympic Mountains (NWAC forecasts this range in winter)"
+   },
+   "emergency": {
+    "notes": "Call 911. This is a deep-wilderness route with a multi-day approach; expect little to no reliable cell coverage along the trail or near the summit, and plan for a slow, multi-day self-rescue or evacuation timeline.",
+    "county": "Jefferson County (summit); approach trailheads span both Clallam County (Elwha) and Jefferson/Grays Harbor County lines (North Fork Quinault)",
+    "rangerStation": "Wilderness Information Center, Port Angeles — (360) 565-3100 (climbing info, permits, guide list, borrowable bear canisters)",
+    "nearestHospital": "Olympic Medical Center, Port Angeles (typical evacuation point for the Elwha-side approach) or Forks Community Hospital, a Level IV trauma center (western approaches); given the multi-day walk-out from either standard approach, serious injuries are usually evacuated by helicopter (Airlift Northwest) rather than on foot.",
+    "sheriffDispatch": "Peninsula Communications (PenCom), Port Angeles — centralized 911/dispatch for both the Clallam and Jefferson County portions of Olympic National Park, coordinating NPS rangers with county Search and Rescue teams"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; if any, scattered weekend attempts July-August",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic; likely single digits to low teens of parties per season given the long, remote approach"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Able to sustain long mileage days (the North Fork Quinault approach alone is a multi-day backpack) with significant elevation gain on the final push off-trail",
+     "packWeight": "Overnight/multi-day pack weight (camp gear, several days food) plus scrambling gear for the summit day"
+    },
+    "approachTime": "Multi-day approach up the North Fork Quinault River trail to Low Divide before leaving maintained trail for Seattle Meadows and the summit push; not a single-day car-to-summit route",
+    "requiredSkills": [
+     "off-trail routefinding / navigation with map and compass or GPS",
+     "river/stream fording technique and judgment",
+     "loose rock and talus/scree management",
+     "backcountry camping and Leave No Trace in a national park wilderness",
+     "self-sufficient trip planning given the long remote approach"
+    ],
+    "experienceLevel": "Solid off-trail scrambler comfortable with sustained routefinding on trail-less, brushy Class 2-3 terrain and multi-day backcountry travel; prior Olympics interior or similarly remote alpine experience strongly preferred"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still hold lingering early-season snow; conditions firm up as the month progresses",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Most reliable month: snow largely melted out, trail-less terrain and river fords at their easiest, stable weather window",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still viable and often clear, but shorter days and increasing chance of early fall weather systems in the Olympic interior",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Olympic interior weather is changeable, with the long approach exposing parties to whatever system moves through",
+     "probability": "Afternoon weather noted as a hazard; building cloud/precipitation in the afternoon is a realistic pattern during the Jul-Sep window"
+    },
+    "exposure": "Class 2-3 scrambling on loose rock with trail-less, remote terrain; consequence of a slip is elevated by the difficulty of self-rescue or evacuation given the long, multi-day approach far from road access",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (NWAC's broad 'Olympics' zone covers the range but only issues forecasts during winter avalanche season, outside this route's Jul-Sep climbing window)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No primary guidebook (e.g., a dedicated Olympics climbers' guide) confirmation of exact Class 2 vs Class 3 sections — current grading is based on secondary sources and one detailed trip report.",
+     "No confirmed current-year (2026) firsthand trip report for this specific peak; approach road/trail status should be re-verified with the park's Road and Weather Hotline before a trip.",
+     "Prominence figure (758 ft on file) not independently re-verified — sources found range from 726 ft (Wikipedia) to 768 ft (PeakVisor), so it was left unchanged rather than guessed.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.730995,
+    "peakLng": -123.577965,
+    "trailhead": "North Fork Quinault Trailhead (North Shore Road)",
+    "trailheadLat": 47.5759,
+    "trailheadLng": -123.648,
+    "trailheadDirection": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101)"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none (unroped)",
+   "rope_length_m": null,
+   "rope_note": "Class 2-3 scramble on scree/talus; standard scramble kit, no rope typically carried.",
+   "ascender": null,
+   "corrections": "Route-specific detail limited; South Slopes conflated with general Mt Seattle east-ridge trip notes in search results.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Scenic",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Low Divide and Seattle Meadows",
+     "notes": "Reached up the North Fork Quinault or by the higher, rougher Skyline Ridge primitive route past Three Lakes and Kimta Peak, or from the Elwha side. Two other lines come in through Noyes Basin and directly up Seattle Creek Basin. Whichever you pick, plan on a multi-day backpack just to reach a base camp.",
+     "season": "Late July to mid-September",
+     "hazards": [
+      "Loose scree and talus on both flanks with rockfall onto parties below",
+      "Steep, brushy bushwhacking where the Seattle Creek drainage steepens",
+      "Unbridged fords on the Elwha and North Fork Quinault approaches",
+      "A northeast aspect dropping thousands of feet — stay off that side",
+      "Extreme remoteness with emergency contact frequently impossible"
+     ],
+     "baseFinding": "The staging point is Seattle Meadows, the high camp in upper Seattle Basin about a thousand feet above Seattle Creek. There is no gully mouth to find here: from camp the climb starts on scree on the mountain's western side, and the base is simply where meadow gives way to loose scree and the slope steepens. What identifies the route is the sequence, so hold it in mind — climb the west-side scree, cross over a connecting ridge, then continue up scree and talus on the eastern side, and finish with Class 2 to 3 scrambling on the east ridge to a craggy top. If you are still high on the west side and the ground is cliffing out above you, you have failed to make the crossing and need to traverse. The summit is confirmed by an unusually large plastic tube jammed into a crack holding the register. Coming instead up Seattle Creek Basin, follow the creek's waterfalls until the drainage steepens, then take the steep brushy bushwhack onto the Noyes–Seattle ridge; that brush low down is the crux of that variant, not the scrambling above."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 3600,
+     "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+     "role": "main",
+     "type": "camp",
+     "notes": "Low Divide is the saddle between MOUNT SEATTLE and MOUNT CHRISTIE and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by the south slopes, and the upper meadows above camp are open walking. Mount Christie is usually taken by dropping to Martins Park, a boulder garden about three miles below the Christie Glacier, and climbing the north couloir from there. The honest planning point is which side you walk in from: this is 28.4 miles from Whiskey Bend up the Elwha, and 16 miles from the North Fork Quinault trailhead, so unless you are traversing the range you should be coming from the Quinault. Wasps have been a real problem on the lower forest sections in late summer, and stings there have put people out of action for days.",
+     "water": "Reliable — a stream runs through the camp all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not itself a quota area, but it is a long way from any road and may not appear in an online search, so telephone the wilderness information centre if the site will not show. Bear canister mandatory. No fires at this elevation.",
+     "capacity": "Around five sites, with a bear hang, a toilet and flat ground; small enough that a large party will fill it"
+    },
+    {
+     "name": "Seattle Meadows",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+     "role": "route",
+     "type": "camp",
+     "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whiskey Bend trailhead about six to seven miles away on foot. The park's own figure is seven. Bicycles are allowed on the closed road and cut that leg to well under an hour each way, and most parties heading deep now ride it and stash a bike. Lillian River is around four and a half miles past Whiskey Bend and Mary's Falls a little further, so either one turns a brutal first day into a civilised one when you are carrying enough food for a week in the interior. Going higher on day one is possible but you gain nothing except a shorter second day; the elevation profile of the Elwha barely rises for the first fifteen miles.",
+     "water": "Reliable at both — the Lillian River at one, the Elwha at the other; treat everything",
+     "permit": "Olympic wilderness permit required, booked in advance on the federal recreation site. These lower Elwha camps are not inside a quota area, so they are usually obtainable late, but no sites anywhere in this park are held back as same-day walk-ups. Bear canister mandatory. Fires are allowed at this elevation but the Elwha and every tributary are closed to fishing.",
+     "capacity": "Lillian River has roughly six roomy riverside sites; Mary's Falls is smaller and set in maple and grass with the river some way off"
+    },
+    {
+     "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+     "role": "route",
+     "type": "camp",
+     "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for MOUNT NORTON: the peak's east side rises roughly 3,200 ft straight out of the Hayes River drainage in under a mile, and the ascent is a steep off-trail slog rather than a climb. It is also the last comfortable place to sleep before the valley narrows, so parties bound for Chicago Camp and the Elwha Basin peaks routinely take it as night two. Going further the same day is a real option in long daylight but the trail past Camp Wilder deteriorates and the camps beyond are rougher. Bugs are heavy in the meadows from late June into July.",
+     "water": "Reliable — the Elwha at Elkhorn, the Hayes River at Hayes; both run all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not a quota area, so these are among the easier permits in the park to obtain at short notice. Bear canister mandatory.",
+     "capacity": "Both are spacious grassy flats with several sites each, alongside old guard stations that are usually empty; they are the least contested camps in the valley"
+    },
+    {
+     "name": "Chicago Camp — the last established camp in the upper Elwha",
+     "role": "route",
+     "type": "camp",
+     "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for MOUNT BARNES, MOUNT MEANY, MOUNT NOYES, MOUNT QUEETS and MOUNT WILDER, all of which are reached by pushing on into the Elwha Basin above. The ford at the camp can be genuinely hazardous in high water and is the crux of the walk in for many parties. A short way beyond, the upper Elwha has a cave-like recess under an overhanging wall that has served as emergency shelter for generations, but it is a bolthole and not a camp. Camping here rather than in the basin costs you three miles and a couple of thousand feet on summit day; the trade is a sheltered site with running water and a defined trail underfoot, which matters more than it sounds after four days of walking.",
+     "water": "Reliable — the Elwha and Delabarre Creek meet here",
+     "permit": "Olympic wilderness permit required, booked in advance. It is more than fifteen miles from any road, and the booking system does not always surface camps that far in, so ring the wilderness information centre rather than assuming it is unavailable. Bear canister mandatory. No fires above 3,500 ft, which applies once you climb out of here.",
+     "capacity": "Small, and it has been battered by fallen timber — expect only a couple of usable sites near the river"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south slopes standard",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "area_id": "wa_three_fingers",
+   "name": "Middle Peak (South Face)",
+   "discipline": "mountaineering",
+   "grade": "Class 4 / low fifth",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "summer",
+   "description": null,
+   "gear": [
+    "Light rack and a short rope for the exposed cruxes",
+    "Ice axe/crampons for the glacier approach shared with the North Peak"
+   ],
+   "hazards": [
+    "Loose, suspect rock in the upper portion of the scramble",
+    "Glacier travel/crevasse risk on the approach shared with the North Peak route"
+   ],
+   "verif": null,
+   "overview": "The middle of the three summits and the harder of the trio to reach, Middle Peak is typically climbed from a glacier camp near the col between it and the North Peak rather than as a standalone 'south face' outing — most parties combine it with the North Peak in a two- or three-summit push. It sees far less traffic than the ladder-and-lookout South Peak.",
+   "beta": "The Middle Peak is climbed far less often than the South Peak (lookout) or North Peak and has very little published route detail; it shares the same long Goat Flats/Tin Can Gap approach as the other two summits before diverging toward the Middle Peak's south side. Treat any attempt as a serious, lightly-documented alpine rock objective and be prepared to route-find.",
+   "turnaround": "Given the sparse documentation of this line, set a conservative turnaround time and be prepared to retreat rather than push into unknown terrain in poor weather.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "low fifth class",
+   "ice_grade": null,
+   "gain_ft": 5100,
+   "loss_ft": 5100,
+   "dist_km": 23.5,
+   "max_angle": null,
+   "rappels": "1",
+   "commitment": null,
+   "face": "Middle Peak",
+   "permit": "Free self-issue Boulder River Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage in the approach basin (shared with the other Three Fingers routes).",
+   "descent": "Reverse to the saddle and down the standard slopes",
+   "obj_haz": [
+    "routefinding",
+    "rockfall",
+    "crevasses"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.1972,
+     "lng": -121.7742,
+     "elev": 3020,
+     "name": "Three Fingers / Goat Flats Trailhead (Tin Can Gap approach)",
+     "note": "FR-41 (Tupso Pass Rd) permanently closed to vehicles past Canyon Creek bridge; hike Goat Flats to Tin Can Gap, drop onto Three Fingers Glacier.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.175,
+     "lng": -121.688,
+     "elev": 6800,
+     "name": "Three Fingers - Middle Peak summit",
+     "note": "The South Peak fire lookout is a different summit. Middle Peak's own summit coordinates are approximate.",
+     "type": "Summit",
+     "distMi": 0
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 17,
+    "summitTimeHrs": 8.5,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "5:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "Same shared approach as the other Three Fingers summits: Saddle Lake Trailhead up through old-growth forest and Saddle Lake to the meadows at Goat Flats.",
+      "fromTo": "Hike in to Goat Flats camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8.5,
+      "note": "From camp, traverse via Tin Can Gap toward the saddle between Middle and North Peak, then climb Middle Peak's South Face -- steep snow/scree giving way to class 3-4 rock, with a ro…",
+      "fromTo": "Technical summit day: Middle Peak South Face",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Small rack/slings for the short exposed steps",
+   "what_to_bring": [
+    "helmet",
+    "short rope",
+    "ice axe",
+    "navigation"
+   ],
+   "pro_tips": [
+    "Far less traveled than the North Peak—expect loose rock and routefinding",
+    "Bring a short rope for the exposed moves"
+   ],
+   "watch_out": [
+    "loose rock",
+    "exposure",
+    "lingering snow"
+   ],
+   "pro_needs": "Minimal pro for the harder moves",
+   "best_season": "Late July to September",
+   "high_point_ft": 6800,
+   "aid_grade": null,
+   "approach": "Follow the same approach as the other two summits: Trail #641 from Tupso Pass over Saddle Lake (2.5 mi) and Goat Flats (~4.5 mi) to Tin Can Gap (~6.2-7 mi), then drop ~400 ft off-trail onto the Queest-Alb Glacier and cross it (moat and possible crevasse hazard — crampons/axe recommended, rope up if crevasses are open). Most parties bivy on or near the glacier below the peaks rather than pushing all three summits car-to-car. From a glacier-side camp, Middle Peak's south face is reached by a short climb/traverse toward the base of the peak; one detailed trip report logged the summit in about 37 minutes from a glacier bivy. The route itself is solid 3rd- and 4th-class scrambling on the lower face, transitioning to looser, more broken 3rd-class rock higher up — take care with rockfall onto anyone below, and expect the climbing to run longer than the peak's modest height suggests since the face is broader than it looks from the glacier. No technical rock gear is required for the standard line, but a rope is worth carrying for the optional short rappel on descent (see below) and in case conditions call for a belay on the looser upper section.",
+   "descent_text": "Middle Peak is primarily downclimbed by reversing the ascent line — most parties report no fixed rappel is needed, picking a careful line down through the looser upper 3rd class rock and the sounder 3rd/4th class below. Some parties do choose a short single-rope rappel (natural anchor — a horn, block, or sling around a chockstone/tree; no bolted anchors reported) to bypass the loosest or most exposed step on the upper face, particularly with larger groups or when downclimbing feels riskier than descending on the rope; a single 30m or half a 60m rope is plenty for this. After regaining the glacier-side camp/route, reverse the glacier crossing (mind the moat), climb back to Tin Can Gap, and follow Trail #641 out via Goat Flats and Saddle Lake. Loose rock on the upper face is the main descent hazard — helmet strongly recommended — along with the same glacier moat/crevasse considerations shared with the other two summits.",
+   "bail": "Retreat down the approach slopes/glacier the way you came; there is no documented alternate descent for this route.",
+   "pitch_detail": [
+    {
+     "grade": "Glacier travel",
+     "notes": "Cross the Three Fingers (Queest-Alb) Glacier from below Tin Can Gap to the base of Middle Peak's south side, navigating around bergschrunds/moats.",
+     "pitch": "Glacier approach"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Solid 3rd and 4th class scrambling up the initial rock from the glacier.",
+     "pitch": "Lower scramble"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Looser 3rd class rock higher on the peak leading to the summit; reported ~37 minutes of climbing time from glacier camp to summit by one party.",
+     "pitch": "Upper scramble"
+    }
+   ],
+   "itinerary": {
+    "cal": "Beta is thin for this specific summit -- confirm current glacier/snow conditions on the Queest-Alb crossing before committing, and plan for a rope and light rack even though the South Face itself is mostly 3rd/4th class.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Same shared approach as the other Three Fingers summits: Saddle Lake Trailhead up through old-growth forest and Saddle Lake to the meadows at Goat Flats.",
+      "hours": 4.5,
+      "miles": 4.5,
+      "title": "Hike in to Goat Flats camp",
+      "gainFt": 3000,
+      "lossFt": 100,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Reach Goat Flats camp"
+     },
+     {
+      "n": 2,
+      "note": "From camp, traverse via Tin Can Gap toward the saddle between Middle and North Peak, then climb Middle Peak's South Face -- steep snow/scree giving way to class 3-4 rock, with a rope useful for the short exposed moves near the summit ridge.",
+      "hours": 8.5,
+      "miles": 5.5,
+      "title": "Technical summit day: Middle Peak South Face",
+      "gainFt": 2100,
+      "lossFt": 2100,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Goat Flats camp",
+        "detail": ""
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Reach Tin Can Gap",
+        "detail": "Traverse toward the Middle/North saddle."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Start South Face scramble",
+        "detail": "Steep snow/scree into class 3-4 rock."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Summit Middle Peak",
+        "detail": "6,797 ft."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at Goat Flats camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb Middle Peak via the saddle and South Face"
+     },
+     {
+      "n": 3,
+      "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+      "hours": 4,
+      "miles": 4.5,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 3000,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 3-day, 2-night trip shaped like the North Peak itinerary: hike in to Goat Flats, a technical South Face summit day via the Middle/North col, then hike out; roughly 14.5 mi and an estimated 5,100 ft of cumulative gain overall."
+   },
+   "access": {
+    "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+    "rules": "Boulder River Wilderness regulations",
+    "permit": "Wilderness self-issue permit where applicable",
+    "closures": "FS Road 41 has a long history of washout-related closures short of the historic trailhead, requiring extra foot/bike travel; check current Darrington Ranger District road status before a trip",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass at the trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Boulder River Wilderness permit",
+     "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+    }
+   },
+   "road": {
+    "name": "Tupso Pass Road (FR 41)",
+    "status": "Partially open; historically washed out and gated several miles short of the old trailhead",
+    "driveNote": "Rough gravel forest roads to the Tupso Pass trailhead",
+    "seasonalGate": "Rough/snow-gated into early summer"
+   },
+   "climate": {
+    "fall": "Shortening weather windows and increasing chance of early snow after September",
+    "spring": "Deep, often unstable snowpack lingers into June-July on the glacier and upper approach; avalanche and wet-snow hazard common",
+    "summer": "Best climbing window; still requires ice axe/crampons for the glacier crossing and can see afternoon convective storms",
+    "winter": "Heavy snow, avalanche terrain, and difficult access; road typically not maintained for winter travel",
+    "typical": "West-slope Cascade alpine; snowy upper mountain",
+    "bySeason": {
+     "fall": "Short window before storms",
+     "spring": "Snowbound; roads rough",
+     "summer": "Best window; upper snow lingers",
+     "winter": "Full winter conditions; long approach"
+    },
+    "forecastZone": "Washington West Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Use 911 for emergencies.",
+    "county": "Snohomish",
+    "rangerStation": "Darrington Ranger District, Mount Baker-Snoqualmie National Forest",
+    "nearestHospital": "Cascade Valley Hospital, Arlington, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; if attempted, most likely on the same sunny August-September weekends as the standard lookout route, since parties typically stage from the same approach",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Unknown - likely very low; no crowd or trip-report volume was found specifically for the Middle Peak South Face beyond it being described as the harder, less-traveled of the three summits"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong all-day fitness — full standard Three Fingers approach (~5,000 ft gain, long mileage) plus additional time and effort for the traverse/scramble to Middle Peak, making for a very long day or overnight",
+     "packWeight": "Light-to-moderate technical rack (a few slings/light rope for the harder moves) added on top of standard scramble gear used to reach the area"
+    },
+    "approachTime": "Full standard approach (see North Peak route) plus an estimated 1-3+ additional hours to traverse and scramble to the Middle Peak; best done as an overnight from Goat Flats",
+    "requiredSkills": [
+     "Class 4/low-5th scrambling on loose rock",
+     "route-finding on the unmarked traverse between the standard route and the Middle Peak",
+     "comfort with sustained exposure",
+     "judgment for when to rope up/short-rope on the harder sections"
+    ],
+    "experienceLevel": "Advanced scrambler/easy technical climber — needs to be comfortable on unroped or lightly-protected Class 4/low-5th terrain with loose rock and route-finding between peaks, well beyond the standard lookout hike."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July to September, likely needing conditions drier than the standard route since it involves more loose Class 4/low-5th rock",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Conditions improve through the month but early-month snow/wet rock on the traverse and loose rock sections remain a concern",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Lingering snow on the approach and traverse is more consequential on exposed Class 4/5 terrain than on the standard trail",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Driest conditions reduce the loose-rock and wet-rock hazard here",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the season window — early snow and wet/loose rock make the Class 4/low-5th terrain considerably more hazardous",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Generally dry and stable early in the month, within the best-season, though shorter days and earlier storms trim the margin versus August",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Western Cascades wilderness climate — cloudy/wet outside the July-September window; loose rock on the traverse becomes significantly more hazardous when wet",
+     "probability": "Occasional afternoon thunderstorms/showers in summer, as on the standard route; wet rock is a bigger concern here than on the trade route given the Class 4/low-5th terrain"
+    },
+    "exposure": "Very high — exposed scrambling, loose rock between the peaks and routefinding combine to make this the most consequential of the three routes; an unroped fall on the Class 4/low-5th traverse would likely be serious to fatal",
+    "avalanche": {
+     "zone": "West Slopes North (NWAC) — best-fit regional zone; not confirmed as covering this specific traverse",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low",
+      "October": "Moderate",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Real hazard — the shared standard approach drops off Tin Can Gap onto the Queest-Alb Glacier and crosses it to reach the peak; a moat and open crevasses develop by mid-to-late summer, so rope up for the crossing (crampons/axe recommended)."
+   },
+   "data_quality": {
+    "gaps": [
+     "No crowd/traffic data specific to the Middle Peak South Face was found in available sources",
+     "No NWAC or other published source gives route-specific hazard detail for this traverse beyond the general Three Fingers massif information already on file",
+     "Exact technical grade, protection, and time estimates are not independently confirmed beyond the on-file seed data (Class 4/low fifth) — treat fitness/approach-time figures as reasoned estimates, not sourced facts",
+     "No dedicated trip reports for this specific line were located to confirm seasonal timing beyond the general massif season",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.169895,
+    "peakLng": -121.687865,
+    "trailhead": "Tupso Pass Trailhead (Trail #641)",
+    "trailheadDirection": "From the Tupso Pass Trailhead via Trail #641"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "Peak-level elevationFt was null in the given data; reputable sources converge on approximately 6,854-6,870 ft for the (South Peak/main) summit of Three Fingers (Wikipedia: 6,858-6,859 ft; Peakbagger: 6,865.4 ft; WTA/SummitPost: 6,854-6,870 ft) — recommend setting peak elevationFt to 6854 ft (WTA/lookout-summit figure, most commonly cited for the named high point). Middle Peak itself, the subject of this route, is lower and separately listed by Peakery at 6,800 ft with only 200 ft of prominence, confirming it is a true but minor sub-summit of the massif, not the peak's main high point.",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Trail #641 to Tin Can Gap, then a glacier-side camp",
+     "notes": "Identical approach to the other two summits as far as the glacier: the long bike or walk past the permanent road washout to the trailhead, then the trail to the small lake at about two and a half miles, the open meadows at about four and a half, and the GAP at roughly six to seven miles where the maintained tread ends. From the gap drop about four hundred feet off-trail onto the glacier and cross it. Most parties bivy on or near the glacier below the peaks rather than trying all three summits in a push, and this route in particular is normally done from such a camp rather than from the gap.",
+     "season": "Summer. The moat and any open crevasses drive the timing more than the rock does.",
+     "hazards": [
+      "Loose, suspect rock in the upper part of the scramble, with rockfall onto anyone below",
+      "Glacier travel and crevasse risk on the shared approach",
+      "A moat between rock and ice that widens through the season",
+      "Very little published route detail for this summit — treat it as a lightly documented alpine objective and be prepared to route-find",
+      "Fog on the glacier has triggered multiple multi-hour rescues on this mountain"
+     ],
+     "baseFinding": "From the glacier-side camp, this summit's SOUTH FACE is reached by a short climb and traverse straight to the foot of the peak — and the discriminator against its northern neighbour is the absence of a col: you do NOT gain a saddle first and you do not climb a thousand feet on the far side of the glacier before touching rock. If you have gained a col, you are on the wrong tower. The face is BROADER than it looks from the ice, so pick the line from the glacier before you start up; the lower rock is solid third and fourth class and it turns looser and more broken higher, which is the confirmation you are on the described line rather than a cleaner variation. Negative markers: if you are following a ramp leftward into a shallow chimney out of a saddle, you are on the northern tower's route; if you are under three stacked wooden ladders pinned into the rock, you are at the lookout summit at the far southern end of the ridge."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "3rd- and 4th-class",
+     "label": "Lower south face",
+     "notes": "Solid 3rd- and 4th-class scrambling on the lower face, reached by a short climb/traverse from a glacier-side camp toward the base of the peak. No technical rock gear is required for the standard line."
+    },
+    {
+     "n": 2,
+     "class": "3rd-class",
+     "label": "Upper broken face",
+     "notes": "Transitions to looser, more broken 3rd-class rock higher up — take care with rockfall onto anyone below. Expect the climbing to run longer than the peak's modest height suggests since the face is broader than it looks from the glacier; a rope is worth carrying in case conditions call for a belay on the looser upper section."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5600,
+     "name": "Tin Can Gap high camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The last flat ground before the glacier, roughly a mile short of the lookout, and the correct camp for a party that wants the summit block early and cold rather than soft. The maintained trail effectively ends here, so everything above is a bootpath, snow and the ladders. Its value is that it puts the glacier crossing and the ladders in the first hour of the day, when the snow is still firm — a real advantage over starting from the meadows two miles back. The cost is exposure: it is a gap, it catches weather, and there is nothing sheltering about it. Camp on rock or snow rather than the thin vegetation, and take a hard look at whether the crossing above is in condition before committing to a camp that only makes sense if you go up.",
+     "water": "Snowmelt only for most of the season, and nothing at all once the snow around the gap has gone. Assume you are melting or carrying from Goat Flats.",
+     "permit": "Boulder River Wilderness — no camping permit required. Federal recreation pass to park. Campfires prohibited on this whole stretch of trail; there is no fuel here regardless.",
+     "capacity": "A few small pitches on rock and snow at and just below the gap; one or two parties, not a group site"
+    },
+    {
+     "elev": 5200,
+     "name": "Goat Flats",
+     "role": "main",
+     "type": "camp",
+     "notes": "Open subalpine meadow about two miles beyond the lake, and the default base for anything on Three Fingers — the lookout, the middle summit, or a look at the south face. From here the gap and the glacier are within a straightforward morning. It is also the honest fallback for a party that walked up hoping for a bunk in the lookout and found it occupied: about two miles back down from the ladders, which is a long but manageable retreat with headlamps. The meadow soil is thin and heavily used, so pitch on the bare established spots and not on fresh turf. Snow lies here well into summer and the meadows are boggy for weeks after it goes.",
+     "water": "Reliable through most of the season from the tarns and small streams in the meadows, though the standing water is shallow and warms up late in summer. Treat everything. Later in a dry year the tarns shrink and the better water is the running melt above the flats.",
+     "permit": "Boulder River Wilderness — no camping permit. Federal recreation pass at the trailhead. CAMPFIRES ARE PROHIBITED in the Goat Flats area and along this trail generally. Bears work this basin, so hard-sided or hung food storage is expected rather than optional.",
+     "capacity": "The main camping area on this approach — several established pockets spread through the meadows and around the tarns. It absorbs a fair number of parties but is genuinely crowded on summer and autumn weekends, and it is the overflow when the lookout is full."
+    },
+    {
+     "elev": 3785,
+     "name": "Saddle Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "About two and a half miles in from the road end, in dense timber, and low enough that it is a contingency rather than a plan for anyone climbing. It matters for two reasons. First, the road: the Tupso Pass road has a long washout history and has at times been cut miles short of the trailhead, leaving parties to walk or bike the road grade — when that is the situation the lake is as far as many get on day one. Second, it is where a party that started late, or turned around at the gap in bad conditions, can stop without pushing all the way out. Do not plan a Three Fingers climb from here; it is too low and too far. Bugs are heavy in early summer.",
+     "water": "The lake, which is dependable all season and needs treating. This is the last easy water before the meadows above.",
+     "permit": "Boulder River Wilderness — no camping permit. CAMPING IS PROHIBITED within 200 feet of the shoreline, so the lakeside spots that look obvious are not all legal. Campfires are prohibited within 200 feet of the lake and along the trail above it.",
+     "capacity": "Small — a handful of spots in the timber and meadow near the lake, plus an old volunteer-built shelter at the meadow edge that should be treated as rough emergency cover rather than accommodation"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "middle mid peak pk south face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "area_id": "wa_three_fingers",
+   "name": "South Peak via Lookout",
+   "discipline": "mountaineering",
+   "grade": "Grade II",
+   "grade_system": "class",
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Harry Bedal, Harold Engles & Frank Benesh, c. 1929-1933 (route used to construct the fire lookout)",
+   "lat": null,
+   "lng": null,
+   "aspect": "South",
+   "season": "Jul-Oct",
+   "description": null,
+   "gear": [
+    "Ice axe",
+    "Crampons (recommended before September)",
+    "Helmet for the glacier and scramble sections",
+    "Northwest Forest Pass or America the Beautiful pass for trailhead parking",
+    "Headlamp — many parties start before dawn given the long day"
+   ],
+   "hazards": [
+    "Queest-Alb Glacier crevasses and slick ice, especially before September",
+    "Loose rock on the final scramble above the glacier",
+    "Exposed, cabled ladders with a tight, awkward transition between the 2nd and 3rd ladder",
+    "Fog/whiteout near Tin Can Gap and on the glacier traverse has triggered multiple multi-hour Snohomish County SAR rescues",
+    "The summit block is reached via three fixed wooden ladders (bolted/cabled) -- a permanent, highly exposed fixed feature; the approach crosses the Queest-Alb Glacier and steep snowfields where a slip risks a long slide into rocks, so an ice axe is required year-round"
+   ],
+   "verif": null,
+   "overview": "A long, storied outing to the historic fire lookout perched on the South Peak of Three Fingers, crossing the Queest-Alb Glacier. The L-4 gable lookout was built 1930-1932 by Darrington-area mountaineers Harold Engles and Frank Benesh (with Harry Bedal having assisted in the 1929 feasibility scout), staffed seasonally from 1933 through 1942, later rebuilt by volunteers, and added to the National Register of Historic Places in 1987 — roughly the top 15 feet of the summit block was blasted flat to seat the cabin. It remains one of the most iconic hike-scrambles in the Cascade foothills, thanks largely to the three vertical ladders cabled to the final summit tower.",
+   "beta": "This is the line Harry Bedal, Harold Engles, and Frank Benesh used to reach the South Peak summit to build the fire lookout in the early 1930s, and it remains the standard way up. From the trailhead the route follows trail to Saddle Lake, Goat Flats, and Tin Can Gap, then crosses the edge of the Queest-Alb Glacier before a rock scramble and a set of three fixed ladders (rebar and timber anchored into steep rock) gain the summit block and lookout. It is popular as a long day trip or, more commonly, an overnight from Goat Flats or Tin Can Gap given the approach length.",
+   "turnaround": "Turn around if the glacier is icy/hard or weather closes in below the ladders.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 3-4 scramble (non-technical rock, but exposed)",
+   "ice_grade": null,
+   "gain_ft": 4200,
+   "loss_ft": 4200,
+   "dist_km": 24.9,
+   "max_angle": 30,
+   "rappels": "None typically — parties down-climb the ladders and glacier edge rather than rappel",
+   "commitment": "II",
+   "face": "South Peak",
+   "permit": "Free self-issue Boulder River Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage in the Squire Creek/Goat Flats/Tin Can Gap basin; there have been multi-day, multi-agency SAR operations here (a 32-hour Snohomish County SAR rescue of stranded hikers in June 2023), so a satellite messenger/PLB is worth carrying.",
+   "descent": "Reverse the route past the historic fire lookout.",
+   "obj_haz": [
+    "crevasses",
+    "exposure",
+    "rockfall",
+    "weather",
+    "routefinding"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.1972,
+     "lng": -121.7742,
+     "elev": 2650,
+     "name": "Three Fingers / Goat Flats Trailhead (Tupso Pass Rd)",
+     "note": "FR-41 (Tupso Pass Rd) closed to vehicles past Canyon Creek bridge; hike Goat Flats to Tin Can Gap.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The trailhead is reached via Forest Road 41 (Tupso Pass Road), which leaves the Mountain Loop Highway east-northeast of milepost 7 and continues onto FS Road 4160 for a combined drive of about 17.5 miles. The Canyon Creek bridge on this road has washed out, and the road has been closed to vehicles beyond that point since 2023, which adds roughly nine miles each way of road walking or biking to reach the actual trailhead - check current Mount Baker-Snoqualmie National Forest road status before you go. Foot and bike traffic are allowed past the closure barrier and biking the road in is the common tactic; there is now a sign marking the old trailhead at the point where the road is barred."
+    },
+    {
+     "lat": 48.165901986729736,
+     "lng": -121.72154510591632,
+     "name": "Goat Flat",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.1683323,
+     "lng": -121.7040539,
+     "name": "Tin Can Gap",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.169895,
+     "lng": -121.687865,
+     "elev": 6854,
+     "name": "Three Fingers South Peak (Lookout)",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6854
+    }
+   ],
+   "gpx": [
+    [
+     48.193356,
+     -121.771515
+    ],
+    [
+     48.19345,
+     -121.77151
+    ],
+    [
+     48.19344,
+     -121.77114
+    ],
+    [
+     48.19319,
+     -121.77072
+    ],
+    [
+     48.19292,
+     -121.77042
+    ],
+    [
+     48.19262,
+     -121.77002
+    ],
+    [
+     48.19231,
+     -121.76993
+    ],
+    [
+     48.1921,
+     -121.76961
+    ],
+    [
+     48.19195,
+     -121.76955
+    ],
+    [
+     48.1918,
+     -121.76922
+    ],
+    [
+     48.19164,
+     -121.76902
+    ],
+    [
+     48.19139,
+     -121.76894
+    ],
+    [
+     48.19105,
+     -121.76865
+    ],
+    [
+     48.19094,
+     -121.76832
+    ],
+    [
+     48.19048,
+     -121.76801
+    ],
+    [
+     48.19045,
+     -121.76779
+    ],
+    [
+     48.19036,
+     -121.76771
+    ],
+    [
+     48.19023,
+     -121.76772
+    ],
+    [
+     48.19013,
+     -121.76761
+    ],
+    [
+     48.18998,
+     -121.76718
+    ],
+    [
+     48.18996,
+     -121.7669
+    ],
+    [
+     48.19003,
+     -121.76651
+    ],
+    [
+     48.19001,
+     -121.76617
+    ],
+    [
+     48.19014,
+     -121.76548
+    ],
+    [
+     48.19029,
+     -121.76524
+    ],
+    [
+     48.19058,
+     -121.76503
+    ],
+    [
+     48.1913,
+     -121.76488
+    ],
+    [
+     48.19164,
+     -121.76487
+    ],
+    [
+     48.19204,
+     -121.765
+    ],
+    [
+     48.19243,
+     -121.76491
+    ],
+    [
+     48.19263,
+     -121.7648
+    ],
+    [
+     48.19279,
+     -121.76448
+    ],
+    [
+     48.19252,
+     -121.76452
+    ],
+    [
+     48.19239,
+     -121.76446
+    ],
+    [
+     48.19255,
+     -121.76405
+    ],
+    [
+     48.19272,
+     -121.76378
+    ],
+    [
+     48.19279,
+     -121.76358
+    ],
+    [
+     48.1927,
+     -121.76334
+    ],
+    [
+     48.19242,
+     -121.76322
+    ],
+    [
+     48.19221,
+     -121.76336
+    ],
+    [
+     48.19196,
+     -121.76337
+    ],
+    [
+     48.19168,
+     -121.76354
+    ],
+    [
+     48.19148,
+     -121.76349
+    ],
+    [
+     48.19134,
+     -121.76354
+    ],
+    [
+     48.1908,
+     -121.76326
+    ],
+    [
+     48.19049,
+     -121.76333
+    ],
+    [
+     48.19041,
+     -121.76322
+    ],
+    [
+     48.19017,
+     -121.76319
+    ],
+    [
+     48.19011,
+     -121.763
+    ],
+    [
+     48.19009,
+     -121.76275
+    ],
+    [
+     48.18981,
+     -121.76216
+    ],
+    [
+     48.18943,
+     -121.76165
+    ],
+    [
+     48.18939,
+     -121.76173
+    ],
+    [
+     48.1894,
+     -121.76209
+    ],
+    [
+     48.18922,
+     -121.76274
+    ],
+    [
+     48.18909,
+     -121.76291
+    ],
+    [
+     48.18896,
+     -121.76265
+    ],
+    [
+     48.18893,
+     -121.76203
+    ],
+    [
+     48.18909,
+     -121.76113
+    ],
+    [
+     48.18915,
+     -121.76062
+    ],
+    [
+     48.18918,
+     -121.76018
+    ],
+    [
+     48.18906,
+     -121.75985
+    ],
+    [
+     48.18886,
+     -121.75982
+    ],
+    [
+     48.18858,
+     -121.76003
+    ],
+    [
+     48.18843,
+     -121.76031
+    ],
+    [
+     48.18742,
+     -121.76092
+    ],
+    [
+     48.18719,
+     -121.76089
+    ],
+    [
+     48.187,
+     -121.76098
+    ],
+    [
+     48.18677,
+     -121.76099
+    ],
+    [
+     48.18642,
+     -121.76068
+    ],
+    [
+     48.18603,
+     -121.76069
+    ],
+    [
+     48.18588,
+     -121.76056
+    ],
+    [
+     48.1856,
+     -121.76051
+    ],
+    [
+     48.18545,
+     -121.7604
+    ],
+    [
+     48.18537,
+     -121.76027
+    ],
+    [
+     48.18475,
+     -121.75994
+    ],
+    [
+     48.18454,
+     -121.75993
+    ],
+    [
+     48.18439,
+     -121.76
+    ],
+    [
+     48.18424,
+     -121.75998
+    ],
+    [
+     48.18437,
+     -121.75965
+    ],
+    [
+     48.18414,
+     -121.7597
+    ],
+    [
+     48.18394,
+     -121.75982
+    ],
+    [
+     48.1838,
+     -121.75966
+    ],
+    [
+     48.18383,
+     -121.7594
+    ],
+    [
+     48.1838,
+     -121.75892
+    ],
+    [
+     48.18364,
+     -121.75871
+    ],
+    [
+     48.18359,
+     -121.75844
+    ],
+    [
+     48.18335,
+     -121.75829
+    ],
+    [
+     48.18324,
+     -121.75813
+    ],
+    [
+     48.18327,
+     -121.75757
+    ],
+    [
+     48.18315,
+     -121.75755
+    ],
+    [
+     48.18301,
+     -121.75788
+    ],
+    [
+     48.1829,
+     -121.7578
+    ],
+    [
+     48.18295,
+     -121.75755
+    ],
+    [
+     48.18292,
+     -121.75725
+    ],
+    [
+     48.18311,
+     -121.75657
+    ],
+    [
+     48.18307,
+     -121.75604
+    ],
+    [
+     48.18319,
+     -121.75505
+    ],
+    [
+     48.1831,
+     -121.75463
+    ],
+    [
+     48.183,
+     -121.75452
+    ],
+    [
+     48.18275,
+     -121.75461
+    ],
+    [
+     48.18242,
+     -121.75496
+    ],
+    [
+     48.18204,
+     -121.7552
+    ],
+    [
+     48.18158,
+     -121.75521
+    ],
+    [
+     48.18122,
+     -121.75536
+    ],
+    [
+     48.181,
+     -121.75535
+    ],
+    [
+     48.18083,
+     -121.75512
+    ],
+    [
+     48.18074,
+     -121.75509
+    ],
+    [
+     48.18032,
+     -121.75494
+    ],
+    [
+     48.18002,
+     -121.75518
+    ],
+    [
+     48.1799,
+     -121.75515
+    ],
+    [
+     48.17978,
+     -121.75521
+    ],
+    [
+     48.17943,
+     -121.75523
+    ],
+    [
+     48.1793,
+     -121.75511
+    ],
+    [
+     48.17894,
+     -121.75514
+    ],
+    [
+     48.17882,
+     -121.75529
+    ],
+    [
+     48.17869,
+     -121.75539
+    ],
+    [
+     48.17858,
+     -121.7556
+    ],
+    [
+     48.17847,
+     -121.75556
+    ],
+    [
+     48.17837,
+     -121.75524
+    ],
+    [
+     48.17827,
+     -121.7551
+    ],
+    [
+     48.17786,
+     -121.75494
+    ],
+    [
+     48.17776,
+     -121.75472
+    ],
+    [
+     48.17781,
+     -121.75433
+    ],
+    [
+     48.17775,
+     -121.75407
+    ],
+    [
+     48.17756,
+     -121.75393
+    ],
+    [
+     48.17719,
+     -121.75384
+    ],
+    [
+     48.1771,
+     -121.7536
+    ],
+    [
+     48.17691,
+     -121.75348
+    ],
+    [
+     48.17656,
+     -121.75341
+    ],
+    [
+     48.17631,
+     -121.75322
+    ],
+    [
+     48.176,
+     -121.75317
+    ],
+    [
+     48.17574,
+     -121.75299
+    ],
+    [
+     48.17545,
+     -121.75292
+    ],
+    [
+     48.17531,
+     -121.75267
+    ],
+    [
+     48.17517,
+     -121.75257
+    ],
+    [
+     48.17492,
+     -121.75265
+    ],
+    [
+     48.17479,
+     -121.75241
+    ],
+    [
+     48.17456,
+     -121.75247
+    ],
+    [
+     48.17405,
+     -121.75221
+    ],
+    [
+     48.17356,
+     -121.75188
+    ],
+    [
+     48.17328,
+     -121.75183
+    ],
+    [
+     48.17305,
+     -121.75172
+    ],
+    [
+     48.17279,
+     -121.75165
+    ],
+    [
+     48.17227,
+     -121.75132
+    ],
+    [
+     48.17205,
+     -121.75142
+    ],
+    [
+     48.17172,
+     -121.75115
+    ],
+    [
+     48.17138,
+     -121.75082
+    ],
+    [
+     48.17101,
+     -121.7506
+    ],
+    [
+     48.17094,
+     -121.75049
+    ],
+    [
+     48.17087,
+     -121.75038
+    ],
+    [
+     48.17085,
+     -121.75014
+    ],
+    [
+     48.17109,
+     -121.74964
+    ],
+    [
+     48.17109,
+     -121.74923
+    ],
+    [
+     48.17087,
+     -121.74855
+    ],
+    [
+     48.17101,
+     -121.74791
+    ],
+    [
+     48.17109,
+     -121.74772
+    ],
+    [
+     48.17127,
+     -121.74754
+    ],
+    [
+     48.17134,
+     -121.74729
+    ],
+    [
+     48.17129,
+     -121.74697
+    ],
+    [
+     48.1713,
+     -121.74666
+    ],
+    [
+     48.17125,
+     -121.74643
+    ],
+    [
+     48.17103,
+     -121.74611
+    ],
+    [
+     48.17101,
+     -121.7459
+    ],
+    [
+     48.17075,
+     -121.74561
+    ],
+    [
+     48.17071,
+     -121.74506
+    ],
+    [
+     48.17045,
+     -121.74479
+    ],
+    [
+     48.17026,
+     -121.74476
+    ],
+    [
+     48.17019,
+     -121.74468
+    ],
+    [
+     48.17002,
+     -121.74467
+    ],
+    [
+     48.16989,
+     -121.74451
+    ],
+    [
+     48.16961,
+     -121.74439
+    ],
+    [
+     48.16944,
+     -121.74423
+    ],
+    [
+     48.16945,
+     -121.74403
+    ],
+    [
+     48.16952,
+     -121.74389
+    ],
+    [
+     48.16945,
+     -121.74368
+    ],
+    [
+     48.16945,
+     -121.74333
+    ],
+    [
+     48.16952,
+     -121.74301
+    ],
+    [
+     48.16977,
+     -121.74303
+    ],
+    [
+     48.16983,
+     -121.74294
+    ],
+    [
+     48.16976,
+     -121.74275
+    ],
+    [
+     48.16953,
+     -121.74259
+    ],
+    [
+     48.16929,
+     -121.74236
+    ],
+    [
+     48.16923,
+     -121.74196
+    ],
+    [
+     48.16894,
+     -121.74104
+    ],
+    [
+     48.1689,
+     -121.74023
+    ],
+    [
+     48.16919,
+     -121.73967
+    ],
+    [
+     48.16942,
+     -121.73914
+    ],
+    [
+     48.16962,
+     -121.73885
+    ],
+    [
+     48.16992,
+     -121.73927
+    ],
+    [
+     48.17024,
+     -121.73923
+    ],
+    [
+     48.1704,
+     -121.7394
+    ],
+    [
+     48.17064,
+     -121.73889
+    ],
+    [
+     48.17089,
+     -121.73866
+    ],
+    [
+     48.17103,
+     -121.73795
+    ],
+    [
+     48.17101,
+     -121.73729
+    ],
+    [
+     48.17085,
+     -121.73689
+    ],
+    [
+     48.17092,
+     -121.73635
+    ],
+    [
+     48.17102,
+     -121.7359
+    ],
+    [
+     48.17094,
+     -121.73535
+    ],
+    [
+     48.17076,
+     -121.73479
+    ],
+    [
+     48.17081,
+     -121.73423
+    ],
+    [
+     48.17039,
+     -121.73308
+    ],
+    [
+     48.17032,
+     -121.73258
+    ],
+    [
+     48.17015,
+     -121.7323
+    ],
+    [
+     48.16964,
+     -121.7317
+    ],
+    [
+     48.16955,
+     -121.73122
+    ],
+    [
+     48.16962,
+     -121.73092
+    ],
+    [
+     48.16963,
+     -121.73034
+    ],
+    [
+     48.16952,
+     -121.72978
+    ],
+    [
+     48.1695,
+     -121.7296
+    ],
+    [
+     48.16933,
+     -121.72956
+    ],
+    [
+     48.16913,
+     -121.72959
+    ],
+    [
+     48.16885,
+     -121.72946
+    ],
+    [
+     48.16866,
+     -121.72957
+    ],
+    [
+     48.16817,
+     -121.72905
+    ],
+    [
+     48.16791,
+     -121.72869
+    ],
+    [
+     48.16747,
+     -121.72852
+    ],
+    [
+     48.16735,
+     -121.72847
+    ],
+    [
+     48.16717,
+     -121.72815
+    ],
+    [
+     48.16719,
+     -121.72783
+    ],
+    [
+     48.16727,
+     -121.7276
+    ],
+    [
+     48.16726,
+     -121.72736
+    ],
+    [
+     48.16731,
+     -121.72706
+    ],
+    [
+     48.1673,
+     -121.72683
+    ],
+    [
+     48.16733,
+     -121.7266
+    ],
+    [
+     48.16726,
+     -121.72631
+    ],
+    [
+     48.16723,
+     -121.726
+    ],
+    [
+     48.16714,
+     -121.72576
+    ],
+    [
+     48.16705,
+     -121.72567
+    ],
+    [
+     48.16676,
+     -121.7255
+    ],
+    [
+     48.16665,
+     -121.72539
+    ],
+    [
+     48.16612,
+     -121.72429
+    ],
+    [
+     48.16609,
+     -121.72405
+    ],
+    [
+     48.16597,
+     -121.72336
+    ],
+    [
+     48.16592,
+     -121.72248
+    ],
+    [
+     48.16596,
+     -121.72165
+    ],
+    [
+     48.16573,
+     -121.72102
+    ],
+    [
+     48.16584,
+     -121.72038
+    ],
+    [
+     48.16609,
+     -121.71957
+    ],
+    [
+     48.16612,
+     -121.71928
+    ],
+    [
+     48.16609,
+     -121.71774
+    ],
+    [
+     48.16609,
+     -121.7176
+    ],
+    [
+     48.16612,
+     -121.71691
+    ],
+    [
+     48.16609,
+     -121.71664
+    ],
+    [
+     48.16607,
+     -121.71649
+    ],
+    [
+     48.16609,
+     -121.71634
+    ],
+    [
+     48.16612,
+     -121.71608
+    ],
+    [
+     48.16609,
+     -121.71594
+    ],
+    [
+     48.16604,
+     -121.71573
+    ],
+    [
+     48.16605,
+     -121.71525
+    ],
+    [
+     48.16592,
+     -121.71448
+    ],
+    [
+     48.16573,
+     -121.71411
+    ],
+    [
+     48.16538,
+     -121.7138
+    ],
+    [
+     48.16535,
+     -121.71347
+    ],
+    [
+     48.16517,
+     -121.71292
+    ],
+    [
+     48.16512,
+     -121.71185
+    ],
+    [
+     48.16526,
+     -121.71187
+    ],
+    [
+     48.16548,
+     -121.71175
+    ],
+    [
+     48.16609,
+     -121.71168
+    ],
+    [
+     48.16663,
+     -121.71159
+    ],
+    [
+     48.16708,
+     -121.71122
+    ],
+    [
+     48.16723,
+     -121.71123
+    ],
+    [
+     48.16738,
+     -121.71093
+    ],
+    [
+     48.16761,
+     -121.71079
+    ],
+    [
+     48.1678,
+     -121.71043
+    ],
+    [
+     48.16788,
+     -121.71005
+    ],
+    [
+     48.16797,
+     -121.70978
+    ],
+    [
+     48.16799,
+     -121.70955
+    ],
+    [
+     48.16809,
+     -121.70939
+    ],
+    [
+     48.16812,
+     -121.70914
+    ],
+    [
+     48.16805,
+     -121.70898
+    ],
+    [
+     48.16803,
+     -121.70844
+    ],
+    [
+     48.16792,
+     -121.70804
+    ],
+    [
+     48.16796,
+     -121.70777
+    ],
+    [
+     48.16792,
+     -121.70759
+    ],
+    [
+     48.16787,
+     -121.70752
+    ],
+    [
+     48.16786,
+     -121.70739
+    ],
+    [
+     48.16789,
+     -121.7071
+    ],
+    [
+     48.16782,
+     -121.70654
+    ],
+    [
+     48.16781,
+     -121.70623
+    ],
+    [
+     48.16788,
+     -121.70588
+    ],
+    [
+     48.16782,
+     -121.70548
+    ],
+    [
+     48.16772,
+     -121.70524
+    ],
+    [
+     48.1676,
+     -121.70508
+    ],
+    [
+     48.16751,
+     -121.70482
+    ],
+    [
+     48.16714,
+     -121.70408
+    ],
+    [
+     48.16732,
+     -121.70406
+    ],
+    [
+     48.16767,
+     -121.70417
+    ],
+    [
+     48.16796,
+     -121.70433
+    ],
+    [
+     48.16803,
+     -121.70443
+    ],
+    [
+     48.16807,
+     -121.70467
+    ],
+    [
+     48.16815,
+     -121.70442
+    ],
+    [
+     48.16813,
+     -121.7043
+    ],
+    [
+     48.16803,
+     -121.70403
+    ],
+    [
+     48.1682,
+     -121.70411
+    ],
+    [
+     48.16833,
+     -121.70405
+    ],
+    [
+     48.16817,
+     -121.70372
+    ],
+    [
+     48.16798,
+     -121.70357
+    ],
+    [
+     48.16805,
+     -121.70347
+    ],
+    [
+     48.16803,
+     -121.70338
+    ],
+    [
+     48.16792,
+     -121.70322
+    ],
+    [
+     48.16787,
+     -121.70292
+    ],
+    [
+     48.16779,
+     -121.7027
+    ],
+    [
+     48.16778,
+     -121.70257
+    ],
+    [
+     48.16782,
+     -121.70245
+    ],
+    [
+     48.16777,
+     -121.70229
+    ],
+    [
+     48.16778,
+     -121.70207
+    ],
+    [
+     48.16775,
+     -121.70199
+    ],
+    [
+     48.16767,
+     -121.702
+    ],
+    [
+     48.16748,
+     -121.70174
+    ],
+    [
+     48.16727,
+     -121.7017
+    ],
+    [
+     48.16699,
+     -121.70152
+    ],
+    [
+     48.16693,
+     -121.70143
+    ],
+    [
+     48.16686,
+     -121.70123
+    ],
+    [
+     48.16658,
+     -121.70079
+    ],
+    [
+     48.1663,
+     -121.7003
+    ],
+    [
+     48.16621,
+     -121.7
+    ],
+    [
+     48.16627,
+     -121.69972
+    ],
+    [
+     48.16625,
+     -121.69951
+    ],
+    [
+     48.1663,
+     -121.69939
+    ],
+    [
+     48.16629,
+     -121.69926
+    ],
+    [
+     48.16638,
+     -121.69906
+    ],
+    [
+     48.1664,
+     -121.69875
+    ],
+    [
+     48.16648,
+     -121.69846
+    ],
+    [
+     48.16643,
+     -121.69793
+    ],
+    [
+     48.16638,
+     -121.69777
+    ],
+    [
+     48.16627,
+     -121.69765
+    ],
+    [
+     48.1662,
+     -121.69739
+    ],
+    [
+     48.16624,
+     -121.69708
+    ],
+    [
+     48.16626,
+     -121.69683
+    ],
+    [
+     48.16624,
+     -121.69673
+    ],
+    [
+     48.16609,
+     -121.69644
+    ],
+    [
+     48.16606,
+     -121.69639
+    ],
+    [
+     48.16603,
+     -121.69599
+    ],
+    [
+     48.16605,
+     -121.69552
+    ],
+    [
+     48.16593,
+     -121.69483
+    ],
+    [
+     48.1659,
+     -121.69447
+    ],
+    [
+     48.16609,
+     -121.69465
+    ],
+    [
+     48.16638,
+     -121.69512
+    ],
+    [
+     48.1663,
+     -121.69474
+    ],
+    [
+     48.1663,
+     -121.69441
+    ],
+    [
+     48.16625,
+     -121.69396
+    ],
+    [
+     48.16624,
+     -121.69352
+    ],
+    [
+     48.16636,
+     -121.69312
+    ],
+    [
+     48.16641,
+     -121.69281
+    ],
+    [
+     48.16659,
+     -121.69231
+    ],
+    [
+     48.1666,
+     -121.69213
+    ],
+    [
+     48.16656,
+     -121.6919
+    ],
+    [
+     48.16663,
+     -121.69163
+    ],
+    [
+     48.16657,
+     -121.69115
+    ],
+    [
+     48.16663,
+     -121.69095
+    ],
+    [
+     48.16669,
+     -121.6911
+    ],
+    [
+     48.16673,
+     -121.69136
+    ],
+    [
+     48.16681,
+     -121.69113
+    ],
+    [
+     48.16688,
+     -121.69111
+    ],
+    [
+     48.16715,
+     -121.69133
+    ],
+    [
+     48.16733,
+     -121.69124
+    ],
+    [
+     48.16744,
+     -121.69128
+    ],
+    [
+     48.16753,
+     -121.69137
+    ],
+    [
+     48.1676,
+     -121.69133
+    ],
+    [
+     48.16762,
+     -121.69125
+    ],
+    [
+     48.16756,
+     -121.69107
+    ],
+    [
+     48.16738,
+     -121.69088
+    ],
+    [
+     48.16729,
+     -121.69043
+    ],
+    [
+     48.16732,
+     -121.69014
+    ],
+    [
+     48.16726,
+     -121.6898
+    ],
+    [
+     48.16726,
+     -121.68961
+    ],
+    [
+     48.16717,
+     -121.68933
+    ],
+    [
+     48.1672,
+     -121.68911
+    ],
+    [
+     48.16732,
+     -121.68925
+    ],
+    [
+     48.16745,
+     -121.68918
+    ],
+    [
+     48.16757,
+     -121.68945
+    ],
+    [
+     48.16764,
+     -121.68949
+    ],
+    [
+     48.16765,
+     -121.68928
+    ],
+    [
+     48.16775,
+     -121.68932
+    ],
+    [
+     48.16776,
+     -121.68912
+    ],
+    [
+     48.16787,
+     -121.68917
+    ],
+    [
+     48.16786,
+     -121.68893
+    ],
+    [
+     48.16802,
+     -121.68888
+    ],
+    [
+     48.16799,
+     -121.68866
+    ],
+    [
+     48.16848,
+     -121.68856
+    ],
+    [
+     48.16902,
+     -121.68852
+    ],
+    [
+     48.16935,
+     -121.68821
+    ],
+    [
+     48.16963,
+     -121.68815
+    ],
+    [
+     48.169785,
+     -121.68804
+    ],
+    [
+     48.169796,
+     -121.68805
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 13.5,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "From the Saddle Lake Trailhead, climb through old-growth forest past Saddle Lake and up into the alpine meadows of Goat Flats, the standard camp for a Three Fingers trip. Bears fre…",
+      "fromTo": "Hike in to Goat Flats camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Leave camp early for the push over Tin Can Gap/Camp Saddle: a steep snow slope (ice axe, crampons advisable even late season) followed by a rock scramble and a short rebarred ladde…",
+      "fromTo": "Summit push and hike out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Glacier travel gear; rope for the glacier and exposed ladder/scramble section.",
+   "what_to_bring": [
+    "ice axe",
+    "crampons",
+    "rope",
+    "helmet",
+    "headlamp"
+   ],
+   "pro_tips": [
+    "Start early — most documented rescues on this route trace back to parties still on the glacier or ladders as fog/darkness set in",
+    "Late in the season, look for the moat entrance along the ridge crest near the top of the glacier to avoid the icy crossing entirely",
+    "Take your pack off before squeezing through the gap between the 2nd and 3rd ladder"
+   ],
+   "watch_out": [
+    "Getting caught by afternoon fog on the glacier traverse or at Tin Can Gap — several stranded-hiker rescues have originated here",
+    "Missing the rock-moat bypass entrance in poor visibility and being forced onto exposed glacier ice"
+   ],
+   "pro_needs": "Minimal; primarily snow/glacier protection.",
+   "best_season": "August through mid-September is the classic window, but ice axe is essentially mandatory all season and crampons/a rope are strongly recommended for any attempt before September, when the Queest-Alb Glacier is icier and the moat bypass isn't yet open.",
+   "high_point_ft": 6854,
+   "aid_grade": null,
+   "approach": "From the Tupso Pass trailhead, follow Three Fingers Trail #641 through forest to Saddle Lake (~2.5 mi, last easy water — no fires or camping within 200 ft of the lake past this point), then continue up through meadows to Goat Flats (~4.5 mi total), a broad subalpine bench with the best camping on the route and views out to Puget Sound. From Goat Flats the trail climbs roughly 2 more miles to Tin Can Gap (~6.2-7 mi total, most of the day's 4,200 ft gain banked); this is where the maintained trail effectively ends and most casual hikers turn around. Beyond the gap, drop off-trail onto the Queest-Alb (Three Fingers) Glacier — a short but real glacier crossing with a moat between ice and rock that widens through the season (crampons/axe strongly recommended, especially before August); a rope is worth carrying if crevasses are open. On the far side, scramble up rock and snow past the base of the summit block to the historic lookout's ladder system: three fixed wooden ladders bolted/pinned into the rock, stacked in sequence, gaining the final class-5-equivalent rock band to the lookout deck. The transition between the second and third ladder is the trickiest move and is awkward with a full pack; exposure is significant and a slip here would be serious, so this last pitch is why the route is rated a scramble rather than a hike despite no rope typically being used. Some parties fix or find a hand-line/rope on a short exposed rock step just past Tin Can Gap before the glacier — treat it as unverified fixed gear.",
+   "descent_text": "This is a walk-off/downclimb route with no roped rappelling on the standard line. Downclimb the three fixed ladders in reverse (facing in, one at a time, mind the awkward 2nd-to-3rd ladder transition), then reverse the rock/snow scramble back down to and across the Queest-Alb Glacier, watching the moat and any open crevasses. Climb back up to Tin Can Gap and reverse Trail #641 through Goat Flats and Saddle Lake to the trailhead. The main descent hazards are the exposed ladder pitch (a fall here would be very serious despite no technical rappelling), a soft or icy glacier moat later in the day, and lingering steep snow on the south ridge in early season — an ice axe is recommended into mid-summer. No rappel gear is needed for the standard route.",
+   "bail": "Retreat to Tin Can Gap/Goat Flat; no shortcut descent.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1 trail",
+     "notes": "Long forest/subalpine trail; the modern approach adds a closed-road walk/bike before the historic trailhead.",
+     "pitch": "Trailhead to Saddle Lake/Goat Flats"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Meadow and talus trail to the last camp before the glacier.",
+     "pitch": "Goat Flats to Tin Can Gap"
+    },
+    {
+     "grade": "Snow/glacier travel",
+     "notes": "Ice axe and crampons required; crevasse hazard.",
+     "pitch": "Tin Can Gap across the Queest-Alb Glacier edge"
+    },
+    {
+     "grade": "Class 3-4, exposed",
+     "notes": "Three fixed ladders (rebar/timber anchored) gain the blasted summit block and L-4 lookout cabin at ~6,850 ft.",
+     "pitch": "Summit ladders to lookout"
+    }
+   ],
+   "itinerary": {
+    "cal": "The Canyon Creek bridge on the access road (Tupso Pass Road / FR 41) has been washed out since 2023 and is permanently closed to vehicles beyond that point -- this adds roughly 9 miles each way (about 18 miles round trip) of road walking or biking if you can't drive to the trailhead; check MBS National Forest road status before you go. Late Aug-Oct gives the driest trail and least snow on the summit slope.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Saddle Lake Trailhead, climb through old-growth forest past Saddle Lake and up into the alpine meadows of Goat Flats, the standard camp for a Three Fingers trip. Bears frequent the area, so hang or canister your food.",
+      "hours": 4.5,
+      "miles": 7.3,
+      "title": "Hike in to Goat Flats camp",
+      "gainFt": 3000,
+      "lossFt": 100,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Reach Goat Flats camp"
+     },
+     {
+      "n": 2,
+      "note": "Leave camp early for the push over Tin Can Gap/Camp Saddle: a steep snow slope (ice axe, crampons advisable even late season) followed by a rock scramble and a short rebarred ladder up to the 1930s fire lookout cabin. After the summit, break camp and hike the full ~7.5 miles back out.",
+      "hours": 9,
+      "miles": 7.7,
+      "title": "Summit push and hike out",
+      "gainFt": 1200,
+      "lossFt": 4200,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Goat Flats camp",
+        "detail": "Light packs for the summit push; leave the rest of camp set up."
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Reach Tin Can Gap / Camp Saddle",
+        "detail": "Start of the steep snow slope; axe and crampons on if icy."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Ladder pitch to the lookout",
+        "detail": "Exposed final scramble up rebarred ladders; sure footing required."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Summit",
+        "detail": "1930s lookout cabin, 6,854 ft."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Back at camp, break down tents",
+        "detail": "Full packs on for the hike out."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Arrive trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Tag the South Peak lookout, then pack out to the trailhead"
+     }
+    ],
+    "totalNote": "A 2-day, 1-night trip: ~7.3 mi and 3,000 ft up to Goat Flats camp on day one, then a long summit-and-hike-out day (~7.7 mi) with the final snow slope, rock scramble, and rebarred ladder to the historic lookout."
+   },
+   "access": {
+    "fees": "$5 day-use Northwest Forest Pass (or annual pass) at the trailhead",
+    "notes": "None required for day use; Northwest Forest Pass recommended for parking. Digital Recreation Day Pass available via Recreation.gov for Mount Baker-Snoqualmie National Forest day-use sites. Overnight use requires separate permits; verify current conditions with Verlot Public Service Center (360) 691-7791. Tupso Pass Road (FS 41) is permanently closed to vehicles at the Canyon Creek bridge (~mile 8.5). Hiking and biking allowed. Approximately 9 additional miles to actual trailhead required - bicycle recommended for approach.",
+    "rules": "Boulder River Wilderness: group size limited to 12; no campfires within 1/4 mile of Trail #641 from Saddle Lake or in the Goat Flats area; no camping within 200 ft of Saddle/Bandana Lake shorelines; Leave No Trace",
+    "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+    "closures": "Tupso Pass Road (FR 41) closed to vehicles beyond the Canyon Creek bridge (~mile 8.5) since 2023 — check current MBS NF alerts before driving out",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass (or America the Beautiful pass) for trailhead parking; free self-issue wilderness permit at the trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Boulder River Wilderness permit",
+     "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+    }
+   },
+   "road": {
+    "name": "Tupso Pass Road (FR 41)",
+    "status": "Permanently closed to vehicle travel beyond the Canyon Creek bridge (~mile 8.5)",
+    "driveNote": "From the vehicle closure gate it's roughly 9 additional miles of road walking or mountain biking to reach the signed Goat Flats trailhead at ~mile 17.5-18",
+    "seasonalGate": "Vehicle gate at Canyon Creek bridge is a standing closure, not seasonal, pending any Forest Service repair"
+   },
+   "climate": {
+    "typical": "Maritime; lookout often in cloud.",
+    "bySeason": {
+     "fall": "early-season window before snow",
+     "spring": "deep snow, not in season",
+     "summer": "glacier softens — best mid/late summer",
+     "winter": "full winter mountaineering, road closed"
+    },
+    "forecastZone": "NOAA West Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "This route has a documented history of multi-hour SAR rescues, typically from parties caught by fog or nightfall between Tin Can Gap and the glacier",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger District (360-436-1155); Verlot Public Service Center (360-691-7791)",
+    "nearestHospital": "Cascade Valley Hospital (Skagit Regional Health), 330 S Stillaguamish Ave, Arlington, WA — 24-hour ED",
+    "sheriffDispatch": "Snohomish County Sheriff / Snohomish County Volunteer Search & Rescue — call 911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in August and early September; also heavy over any sunny summer weekend since the lookout has become a well-known social-media destination",
+    "solitudeRating": 2,
+    "estimatePerSeason": "High for a wilderness scramble — likely hundreds of parties/hikers per season on sunny weekends; Goat Flats camp and the lookout itself (max occupancy 8) are reported to fill up on August-September weekends"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong all-day fitness — long approach (historically ~17+ mi RT from the Mountain Loop Highway trailhead, more if the FS 41 washout forces biking/walking extra road miles) with ~5,000+ ft of gain to Tin Can Gap and the lookout",
+     "packWeight": "Moderate day-trip weight (helmet, layers, possibly light traction/axe in shoulder season); heavier if overnighting at Goat Flats, which many parties do given the length"
+    },
+    "approachTime": "6-9+ hours one-way to the lookout depending on road-washout status and whether the party bikes the extra FS 41 mileage; frequently split into an overnight at Goat Flats",
+    "requiredSkills": [
+     "exposed Class 3 ladder/rung climbing",
+     "basic glacier travel and crevasse awareness on the Queest-Alb Glacier remnant",
+     "route-finding on a climbers' trail above Goat Flats/Tin Can Gap",
+     "composure on summit-block exposure"
+    ],
+    "experienceLevel": "Intermediate scrambler — needs to be solid on exposed, rebar-ladder terrain and comfortable with short glacier/snowfield crossings; not a good first scramble given the ladder exposure and glacier travel."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August through mid-September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically still lingering into early-mid July at this elevation; becomes good by late July as the route dries out and matches the best-season start",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Lingering snow on approach slopes and the Queest-Alb Glacier crossing, plus road/trail access to Tin Can Gap is often still snow-covered this early",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Glacier remnant and approach trail are most consolidated/driest; core of the best-season window",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the season window — early-season snow and shortening weather windows make ladder/glacier travel more hazardous",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still within best season through mid-month; early fall storms become more likely later in the month",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Western Cascades wilderness climate — frequently cloudy/wet outside the July-September dry window; the crest and summit block are exposed to wind and fast-moving fronts even in summer",
+     "probability": "Occasional afternoon thunderstorms/showers in August; sudden weather changes can make the ladders and summit block dangerously slick"
+    },
+    "exposure": "High — the exposed rebar ladders below the lookout and the summit block scramble are the primary fall-consequence hazards; a slip on the ladders or summit block, or a crevasse fall on the glacier crossing, could be serious to fatal",
+    "avalanche": {
+     "zone": "West Slopes North (NWAC) — best-fit regional zone for the Mountain Loop Highway/Boulder River Wilderness area; not confirmed as a peak-specific NWAC product",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low",
+      "October": "Moderate",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Minor crevasse hazard on the Queest-Alb Glacier crossing (as already flagged in hazards) — generally a walkable remnant in normal August-September conditions but should be assessed each trip, especially in high-snow years or early season"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact Forest Service timeline for repairing/reopening Tupso Pass Road beyond the Canyon Creek bridge is not published",
+     "Cited elevations for the South Peak/lookout vary by ~4 ft between USFS/WTA (6,854 ft) and other surveys (6,858 ft)",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/2JCF",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.16992,
+    "peakLng": -121.68781,
+    "trailhead": "Goat Flats Trailhead (via Tupso Pass Road FS 41/FS 4160)",
+    "trailheadLat": 48.1972,
+    "trailheadLng": -121.7742,
+    "trailheadDirection": "East-northeast from Mountain Loop Highway milepost 7; FS Road 41 then FS 4160 approximately 17.5 miles"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Tupso Pass trailhead, Trail #641 (road drivable)",
+     "notes": "Trail #641 from the Tupso Pass trailhead at the end of FR 41. Forest to Saddle Lake at about two and a half miles — the last easy water, with no fires and no camping within two hundred feet of the shore beyond this point — then up through meadows to Goat Flats at roughly four and a half miles, which has the best camping on the route and views out to Puget Sound.\n\nFrom Goat Flats the trail climbs about two more miles to Tin Can Gap at roughly six miles, banking most of the day's gain. That is the effective end of the maintained trail and where most walkers turn back.\n\nThe trail has been maintained by volunteers in recent years, with large numbers of logs cleared; note that a big fallen log above Saddle Lake has rerouted the tread, and there is a rough connector going straight up and down to the next switchback.",
+     "distMi": 6.2,
+     "season": "Jul-Oct",
+     "hazards": [
+      "moat between glacier and rock that widens through the season and is hard to enter in poor visibility",
+      "crevasses on the Queest-Alb once it opens up",
+      "exposure on the ladders, particularly between the second and third",
+      "unverified fixed hand-line on the rock step past Tin Can Gap"
+     ],
+     "longForm": true,
+     "baseFinding": "Past Tin Can Gap you drop off-trail onto the Queest-Alb Glacier. Late in the season you can avoid the ice entirely by staying in the MOAT between the top edge of the glacier and the rock — and finding the entrance to that moat is the thing that goes wrong in bad weather. The trail crosses back to the north side of the ridge shortly before it and you meet the top of the glacier there; if you are on the south side of the ridge you have not crossed over yet.\n\nThe start of the actual climbing is not in doubt once you can see it: three wooden ladders, stacked in sequence and pinned into the rock with rebar and steel cable, run up the final rock band to the lookout deck. There is nothing else like them on the mountain. The transition between the second and third ladder is the hardest move and is awkward with a full pack, and the exposure is real.\n\nThe negative marker is which summit you are on. The lookout — and therefore the ladders — is on the SOUTH peak. If you have crossed the glacier and are scrambling rock toward a col with no ladders anywhere in view, you are heading for the Middle or North peak instead. Some parties also report a hand-line on a short exposed rock step just past Tin Can Gap before the glacier; treat any fixed rope there as unverified."
+    },
+    {
+     "name": "Road-closure variation — walk or bike FR 41",
+     "notes": "FR 41 has washed out repeatedly and the closure point has moved. Reported blockages have been around five miles up from the Mountain Loop Highway, and at other times past the Canyon Creek bridge, leaving roughly nine miles of road between the closure and the trailhead. Vehicles are barred past the barrier but foot and bike traffic are allowed, and biking the road is the common tactic.\n\nTreat this as a standing possibility rather than a one-off: check with the Darrington Ranger District or the Verlot Public Service Center before committing, because the difference is a day hike versus an overnight. There is now a sign at the road marking the old trailhead.",
+     "season": "whenever the road is closed at the washout",
+     "hazards": [
+      "several miles of road walking or biking each way with the resulting late finish",
+      "all the hazards of the standard variation once on trail"
+     ],
+     "primary": true,
+     "baseFinding": "Once you reach Tupso Pass the route is identical, and the same markers apply: cross to the north side of the ridge past Tin Can Gap to meet the top of the Queest-Alb, find the moat entrance rather than stepping onto open ice, and finish on the three stacked ladders on the SOUTH peak."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Short exposed rock step past Tin Can Gap",
+     "notes": "Some parties fix or find a hand-line/rope on a short exposed rock step just past Tin Can Gap, before the glacier — treat it as unverified fixed gear."
+    },
+    {
+     "n": 2,
+     "label": "Queest-Alb (Three Fingers) Glacier crossing",
+     "notes": "Beyond Tin Can Gap, drop off-trail onto the glacier — a short but real crossing with a moat between ice and rock that widens through the season. Crampons and axe strongly recommended, especially before August; a rope is worth carrying if crevasses are open."
+    },
+    {
+     "n": 3,
+     "label": "Rock and snow scramble to the ladders",
+     "notes": "On the far side of the glacier, scramble up rock and snow past the base of the summit block to the historic lookout's ladder system."
+    },
+    {
+     "n": 4,
+     "class": "class-5-equivalent rock band",
+     "label": "Three fixed wooden ladders to the lookout deck",
+     "notes": "Three fixed wooden ladders bolted/pinned into the rock, stacked in sequence, gain the final rock band to the lookout deck. The transition between the second and third ladder is the trickiest move and is awkward with a full pack; exposure is significant and a slip here would be serious, which is why this last pitch makes the route a scramble rather than a hike despite no rope typically being used."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5200,
+     "name": "Goat Flats",
+     "role": "main",
+     "type": "camp",
+     "notes": "The main camp for the peak, an open subalpine meadow on a ridge crest a little over two miles beyond Saddle Lake and roughly two and a half miles short of the lookout, with a view west to Puget Sound. Bears work the area, so bring a canister or another way to secure food.",
+     "water": "Tarns only — there is no running water at the flats, and the tarn water has been described as stale by autumn. The last dependable running water is a stream well below, around the 4,200 ft mark; above the flats the next water is glacier and snow melt beyond Tin Can Gap. Late in a dry season, plan to carry from low down.",
+     "permit": "Mount Baker-Snoqualmie National Forest, Boulder River Wilderness. Campfires are prohibited in the Goat Flats area outright, and also anywhere within a quarter mile of Trail 641 above Saddle Lake. No overnight permit or quota is published. There is a backcountry toilet at the flats; note that it must not be used for packed-out waste bags.",
+     "capacity": "A number of established sites spread across the meadow, and it is regularly crowded on summer and autumn weekends. Camp only on ground that is already bare — the meadow is fragile and the Forest Service asks for existing sites only."
+    },
+    {
+     "elev": 6851,
+     "name": "Three Fingers Lookout",
+     "role": "main",
+     "type": "hut",
+     "notes": "A 1930s fire lookout on the South Peak that climbers sleep in, reached by ladders with serious exposure — decide for yourself whether the final block is safe on the day. The door is never locked, but in winter and spring it can be frozen, swollen or buried, and the summit block itself is hard to climb then; summer is the season for it. Bring a tent as a fallback: it fills on good weekends and visitation is heavy even midweek. accounts disagree on whether there is usable ground to camp outside — some say pitch below the lookout, others say there is nowhere safe on the summit at all — so do not count on it.",
+     "water": "None at the site — there is no potable water at the lookout and nothing to melt but snow.",
+     "permit": "No fee, no reservation and no permit — it is open to whoever reaches it first. There is no toilet: carry a waste bag and pack everything out, and do not put it in the Goat Flats toilet or leave it below the lookout. The volunteers who maintain the building ask that you take crampons off before going in, keep the shutters closed in bad weather and when you leave, leave nothing behind, and not force shutters that are locked.",
+     "capacity": "Maximum occupancy of eight, first come first served. Accounts of the actual floor put it nearer three or four people plus two more on the sleeping platform, so eight is a squeeze rather than a plan. Arrive early or expect to be turned away by whoever got there first."
+    },
+    {
+     "elev": 3785,
+     "name": "Saddle Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "Two and a half miles in from Tupso Pass on a rough, root-bound forest trail — the first water and the first flat ground, but low and far from the mountain. Volunteers built a shelter at the meadow edge here in the early 1970s; no current source confirms it still stands or is usable, so do not plan on sleeping in it.",
+     "water": "The lake — there is no running water here, and in a warm year it has been reported shrinking and buggy by mid-summer.",
+     "permit": "Mount Baker-Snoqualmie National Forest, Boulder River Wilderness. Camping is prohibited within 200 ft slope distance of the shoreline of Saddle Lake and of Bandana Lake, and campfires are prohibited within the same 200 ft of both. No trailhead permit or quota is published for this trail, and the wilderness is closed throughout to pack and saddle stock.",
+     "capacity": "Not published. It is a small four-acre lake and the setback rule below pushes camps back off the water."
+    },
+    {
+     "elev": 5752,
+     "name": "Tin Can Gap",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The last ground before the climbing starts: the Forest Service names it Tin Pan Gap, most climbers say Tin Can Gap, and it is where the route stops being a walk and starts needing equipment and judgement. accounts disagree on the distance in, from roughly six to eight miles, so do not plan a turnaround time off one figure. Useful mainly to parties who want a short summit morning on the glacier.",
+     "water": "Glacier and snow melt only.",
+     "permit": "The campfire closure along Trail 641 above Saddle Lake extends here.",
+     "capacity": "A few spots at the gap and at the foot of the snow slope below it — small, and second choice to Goat Flats."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south peak pk via lookout",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "area_id": "wa_three_fingers",
+   "name": "North Peak",
+   "discipline": "mountaineering",
+   "grade": "Class 4 (5.1 var.)",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Rope and a small rack (slings, small cams/nuts) for the chimney and rappels",
+    "Ice axe and crampons for the glacier approach",
+    "Extra webbing for building 2 rappel anchors",
+    "Helmet"
+   ],
+   "hazards": [
+    "Glacier travel with real crevasse risk crossing to the North/Middle col",
+    "Loose rock in the chimney/ramp system",
+    "No established trail or cairned route — routefinding is on you",
+    "Committing rappel descent with only fixed-anchor slings of unknown age at some stations"
+   ],
+   "verif": null,
+   "overview": "Contrary to this route's name, the historic Three Fingers fire lookout actually sits on the South Peak, not here — the North Peak is a separate, harder objective and is widely considered (though not unanimously, per conflicting elevation surveys) the true high point of the mountain. There is no maintained trail, no ladders, and no register cabin; it's a roped alpine scramble/climb reached via glacier travel from Goat Flats and Tin Can Gap, with genuine exposure and no easy bail once committed to the upper chimney.",
+   "beta": "Parties typically combine this with the South Peak lookout climb in a single trip since both share the same long approach. From Camp Saddle/Tin Can Gap, descend onto the glacier and traverse to the base of the North Peak, then climb the West Couloir to the South Face. One party describes the climbing as Class 4 with one Class 5 move in the chimney, then easing to Class 2 and 3 near the summit — easier than it is sometimes described, with rock character compared to Chimney Rock.",
+   "turnaround": "Turn around before committing to the crux chimney move if weather, rockfall, or party pace put a safe return to the glacier and long road-walk-out in doubt.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 4, one 5th-class move (roughly 5.0-5.4)",
+   "ice_grade": null,
+   "gain_ft": 5600,
+   "loss_ft": 5600,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "3",
+   "commitment": "II",
+   "face": "North Peak",
+   "permit": "Free self-issue Boulder River Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage in the approach basin or on the peak itself.",
+   "descent": "Reverse the route",
+   "obj_haz": [
+    "exposure",
+    "rockfall",
+    "crevasses",
+    "weather"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.1972,
+     "lng": -121.7742,
+     "elev": 3020,
+     "name": "Saddle Lake / Three Fingers Trailhead (Trail #641)",
+     "note": "Trailhead on Tupso Pass Spur Rd (FR 4160) off FR 41; no permit required, but the access road has a permanent washout past the Canyon Creek bridge that adds miles of foot/bike travel to reach here.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.177085,
+     "lng": -121.753752,
+     "elev": 3900,
+     "name": "Saddle Lake",
+     "note": "Soggy subalpine lake with an Everett Mountaineers-built shelter at its meadow edge; camping is banned within 200 ft of the lake and campfires are prohibited from here upward.",
+     "type": "Water",
+     "distMi": 2.5,
+     "directions": "Follow Trail #641 uphill from the parking area on a steady forest grade, crossing a couple of small seasonal streams on the way. Routefinding is straightforward and the lake arrives as an abrupt soggy opening rather than a viewpoint. Fill bottles here, since this is the last easy water before the alpine part of the route."
+    },
+    {
+     "lat": 48.165987,
+     "lng": -121.723497,
+     "elev": 5200,
+     "name": "Goat Flats",
+     "note": "Broad open meadow atop the ridge and the standard basecamp for the climb, about 2.5 mi below the lookout; reliable snowmelt tarns nearby but can dry out late season.",
+     "type": "Campsite",
+     "distMi": 4.8,
+     "directions": "Climb roughly two more miles past the lake, gaining out of the timber and onto the crest of the ridge before the trail opens into subalpine meadow with views west toward Puget Sound. Campfires are prohibited from the lake upward, so plan a stove-only camp when you stop."
+    },
+    {
+     "lat": 48.167123,
+     "lng": -121.702317,
+     "elev": 5900,
+     "name": "Tin Can Gap",
+     "note": "Trail crisscrosses the ridge to gain this notch; marks the end of maintained tread and the start of technical scrambling toward the peaks.",
+     "type": "Junction",
+     "distMi": 6.2,
+     "directions": "From the meadows the trail contours and climbs about two more miles, crisscrossing the ridge crest as it works north. Snow lies across this stretch well into summer and can bury the tread entirely, so carry an axe and expect to navigate by terrain rather than by trail. The gap gives the first full view of the three summits and the glacier below; do not continue past it without snow gear and routefinding experience, as this is where parties have needed rescue."
+    },
+    {
+     "lat": 48.16636,
+     "lng": -121.697229,
+     "elev": 6400,
+     "name": "South Peak lookout ladders",
+     "note": "Three wooden ladders rebarred and wired into the rock climb past the South Peak lookout pinnacle; exposed and can be icy early season, and this is the section the descent text means by 'downclimb the ladders.'",
+     "type": "Hazard",
+     "distMi": 6.5,
+     "directions": "Leave the maintained trail and drop roughly 400 feet off the far side of the gap on snow or talus onto the upper glacier, then traverse and climb back up to the saddle beneath the South Peak lookout pinnacle. Early in the year this is a straightforward snow descent and re-ascent; later it goes to bare ice with a moat where the snow has pulled away from the rock, and getting on and off the ice is the awkward part. The ladders start from the rock immediately above that saddle."
+    },
+    {
+     "lat": 48.166294,
+     "lng": -121.692641,
+     "elev": 6500,
+     "name": "Queest-Alb Glacier headwall crossing",
+     "note": "Route drops onto the north side of the ridge near the top of the Queest-Alb Glacier; a slip on the icy headwall runs out toward crevasses lower on the glacier.",
+     "type": "Hazard",
+     "distMi": 6.8,
+     "directions": "Continuing to the true summit means leaving the lookout and dropping back off the ridge onto the north side of the glacier, generally by a gully and rocky moraine rather than straight down. Rope up and watch the runout: the slope above the crevassed lower glacier holds ice by late season and a slip does not stop on its own. Most parties turn around at the lookout, so expect no boot track from here on."
+    },
+    {
+     "lat": 48.167013,
+     "lng": -121.690199,
+     "elev": 6650,
+     "name": "Col between Middle and North Finger",
+     "note": "Traverse across the glacier gains this col between the Middle and North Fingers, the jump-off point for the West Couloir onto North Peak's South Face.",
+     "type": "Junction",
+     "distMi": 7,
+     "directions": "Traverse north across the glacier below the Middle Finger, then climb roughly a thousand feet of snow to the notch; the eastern of the gullies leading up takes steps well when it is firm. Crampons and an axe are wanted, and small crevasses open along the traverse as the season goes on. The col is the last flat ground, so sort gear there before starting up the rock."
+    },
+    {
+     "lat": 48.169895,
+     "lng": -121.687865,
+     "elev": 6870,
+     "name": "North Peak, Three Fingers",
+     "note": "True summit (Class 4, 5.4 variation), topped out via the West Couloir and South Face above the col; descend by reversing the snow slopes, trail, and ladders.",
+     "type": "Summit",
+     "distMi": 7.3,
+     "directions": "From the col climb the West Couloir onto the South Face, starting on loose third and fourth class rock where anyone above will send debris down. Follow the ramp on the ridge to a chimney holding the hardest moves, exposed fourth to low fifth class and worth a rope and a few slings; a direct line on the upper west face is harder still at about 5.4. Above the chimney the angle eases to class 2-3, but a false summit sits short of the real one, so keep going until you find the register. Coming down is two to three rappels through the chimney and ramp section, often off fixed slings of unknown age that should be backed up."
+    }
+   ],
+   "gpx": [
+    [
+     48.193589,
+     -121.771537
+    ],
+    [
+     48.193291,
+     -121.771052
+    ],
+    [
+     48.193088,
+     -121.770893
+    ],
+    [
+     48.192885,
+     -121.770706
+    ],
+    [
+     48.1927,
+     -121.770547
+    ],
+    [
+     48.192443,
+     -121.770389
+    ],
+    [
+     48.192333,
+     -121.770364
+    ],
+    [
+     48.192237,
+     -121.770011
+    ],
+    [
+     48.192108,
+     -121.769877
+    ],
+    [
+     48.191408,
+     -121.769402
+    ],
+    [
+     48.190818,
+     -121.768923
+    ],
+    [
+     48.190375,
+     -121.768551
+    ],
+    [
+     48.190024,
+     -121.768204
+    ],
+    [
+     48.189819,
+     -121.767853
+    ],
+    [
+     48.189633,
+     -121.767584
+    ],
+    [
+     48.189536,
+     -121.767067
+    ],
+    [
+     48.18953,
+     -121.766493
+    ],
+    [
+     48.189489,
+     -121.766111
+    ],
+    [
+     48.189557,
+     -121.765617
+    ],
+    [
+     48.189734,
+     -121.765066
+    ],
+    [
+     48.190298,
+     -121.764779
+    ],
+    [
+     48.190516,
+     -121.764637
+    ],
+    [
+     48.190991,
+     -121.764653
+    ],
+    [
+     48.191282,
+     -121.764482
+    ],
+    [
+     48.191556,
+     -121.764475
+    ],
+    [
+     48.191794,
+     -121.764469
+    ],
+    [
+     48.192086,
+     -121.76438
+    ],
+    [
+     48.19245,
+     -121.764262
+    ],
+    [
+     48.192723,
+     -121.764174
+    ],
+    [
+     48.192759,
+     -121.764063
+    ],
+    [
+     48.192665,
+     -121.763874
+    ],
+    [
+     48.192464,
+     -121.763879
+    ],
+    [
+     48.19259,
+     -121.763657
+    ],
+    [
+     48.192661,
+     -121.763491
+    ],
+    [
+     48.192404,
+     -121.763415
+    ],
+    [
+     48.191892,
+     -121.763428
+    ],
+    [
+     48.191488,
+     -121.763273
+    ],
+    [
+     48.191213,
+     -121.763143
+    ],
+    [
+     48.190717,
+     -121.762964
+    ],
+    [
+     48.190277,
+     -121.762892
+    ],
+    [
+     48.189741,
+     -121.762331
+    ],
+    [
+     48.189665,
+     -121.762087
+    ],
+    [
+     48.189497,
+     -121.761708
+    ],
+    [
+     48.189457,
+     -121.761435
+    ],
+    [
+     48.189433,
+     -121.760916
+    ],
+    [
+     48.189271,
+     -121.761084
+    ],
+    [
+     48.189237,
+     -121.761413
+    ],
+    [
+     48.189093,
+     -121.761553
+    ],
+    [
+     48.189019,
+     -121.761501
+    ],
+    [
+     48.189066,
+     -121.760734
+    ],
+    [
+     48.188968,
+     -121.760162
+    ],
+    [
+     48.188928,
+     -121.759835
+    ],
+    [
+     48.188835,
+     -121.759727
+    ],
+    [
+     48.188652,
+     -121.75965
+    ],
+    [
+     48.188343,
+     -121.759849
+    ],
+    [
+     48.188125,
+     -121.760018
+    ],
+    [
+     48.187871,
+     -121.760188
+    ],
+    [
+     48.187617,
+     -121.760331
+    ],
+    [
+     48.187106,
+     -121.760507
+    ],
+    [
+     48.18634,
+     -121.76069
+    ],
+    [
+     48.185974,
+     -121.760617
+    ],
+    [
+     48.185809,
+     -121.760621
+    ],
+    [
+     48.185663,
+     -121.760597
+    ],
+    [
+     48.185315,
+     -121.760551
+    ],
+    [
+     48.185059,
+     -121.760557
+    ],
+    [
+     48.18482,
+     -121.760481
+    ],
+    [
+     48.185128,
+     -121.7602
+    ],
+    [
+     48.184889,
+     -121.760069
+    ],
+    [
+     48.184541,
+     -121.759995
+    ],
+    [
+     48.184119,
+     -121.759841
+    ],
+    [
+     48.183782,
+     -121.759193
+    ],
+    [
+     48.183616,
+     -121.75906
+    ],
+    [
+     48.183485,
+     -121.758763
+    ],
+    [
+     48.183279,
+     -121.75833
+    ],
+    [
+     48.183256,
+     -121.757838
+    ],
+    [
+     48.183252,
+     -121.757538
+    ],
+    [
+     48.183126,
+     -121.75765
+    ],
+    [
+     48.183072,
+     -121.757761
+    ],
+    [
+     48.182966,
+     -121.758092
+    ],
+    [
+     48.182874,
+     -121.758094
+    ],
+    [
+     48.18292,
+     -121.757272
+    ],
+    [
+     48.183042,
+     -121.756668
+    ],
+    [
+     48.183053,
+     -121.755984
+    ],
+    [
+     48.183049,
+     -121.755629
+    ],
+    [
+     48.183119,
+     -121.755326
+    ],
+    [
+     48.183098,
+     -121.755108
+    ],
+    [
+     48.182859,
+     -121.755004
+    ],
+    [
+     48.182002,
+     -121.755244
+    ],
+    [
+     48.18151,
+     -121.755338
+    ],
+    [
+     48.181237,
+     -121.755454
+    ],
+    [
+     48.180761,
+     -121.755411
+    ],
+    [
+     48.180193,
+     -121.75537
+    ],
+    [
+     48.179792,
+     -121.755434
+    ],
+    [
+     48.179059,
+     -121.755288
+    ],
+    [
+     48.178821,
+     -121.755266
+    ],
+    [
+     48.178731,
+     -121.755432
+    ],
+    [
+     48.178496,
+     -121.755629
+    ],
+    [
+     48.178276,
+     -121.755607
+    ],
+    [
+     48.177999,
+     -121.755368
+    ],
+    [
+     48.177591,
+     -121.754831
+    ],
+    [
+     48.17742,
+     -121.754261
+    ],
+    [
+     48.177344,
+     -121.753962
+    ],
+    [
+     48.176919,
+     -121.753617
+    ],
+    [
+     48.176609,
+     -121.753624
+    ],
+    [
+     48.176351,
+     -121.753467
+    ],
+    [
+     48.176149,
+     -121.753417
+    ],
+    [
+     48.176094,
+     -121.753418
+    ],
+    [
+     48.175581,
+     -121.753267
+    ],
+    [
+     48.175247,
+     -121.752837
+    ],
+    [
+     48.175042,
+     -121.752514
+    ],
+    [
+     48.174859,
+     -121.752464
+    ],
+    [
+     48.17473,
+     -121.752412
+    ],
+    [
+     48.174378,
+     -121.751983
+    ],
+    [
+     48.174047,
+     -121.751855
+    ],
+    [
+     48.173735,
+     -121.751753
+    ],
+    [
+     48.17346,
+     -121.751678
+    ],
+    [
+     48.173112,
+     -121.751549
+    ],
+    [
+     48.172636,
+     -121.751588
+    ],
+    [
+     48.17229,
+     -121.751651
+    ],
+    [
+     48.171959,
+     -121.751523
+    ],
+    [
+     48.171738,
+     -121.751364
+    ],
+    [
+     48.171535,
+     -121.751178
+    ],
+    [
+     48.171327,
+     -121.750609
+    ],
+    [
+     48.171087,
+     -121.750396
+    ],
+    [
+     48.171024,
+     -121.749604
+    ],
+    [
+     48.170997,
+     -121.748785
+    ],
+    [
+     48.170973,
+     -121.748321
+    ],
+    [
+     48.170968,
+     -121.747829
+    ],
+    [
+     48.171275,
+     -121.747493
+    ],
+    [
+     48.17131,
+     -121.747328
+    ],
+    [
+     48.171363,
+     -121.747136
+    ],
+    [
+     48.171378,
+     -121.746889
+    ],
+    [
+     48.171244,
+     -121.746291
+    ],
+    [
+     48.170984,
+     -121.745915
+    ],
+    [
+     48.170852,
+     -121.745535
+    ],
+    [
+     48.170645,
+     -121.744993
+    ],
+    [
+     48.17055,
+     -121.744722
+    ],
+    [
+     48.170185,
+     -121.744813
+    ],
+    [
+     48.169853,
+     -121.744521
+    ],
+    [
+     48.169577,
+     -121.744363
+    ],
+    [
+     48.169425,
+     -121.743875
+    ],
+    [
+     48.169437,
+     -121.743273
+    ],
+    [
+     48.16954,
+     -121.742642
+    ],
+    [
+     48.169409,
+     -121.742372
+    ],
+    [
+     48.169071,
+     -121.741533
+    ],
+    [
+     48.168828,
+     -121.741101
+    ],
+    [
+     48.16884,
+     -121.740554
+    ],
+    [
+     48.168959,
+     -121.739731
+    ],
+    [
+     48.169211,
+     -121.73937
+    ],
+    [
+     48.169446,
+     -121.739118
+    ],
+    [
+     48.16963,
+     -121.739168
+    ],
+    [
+     48.169906,
+     -121.739353
+    ],
+    [
+     48.170088,
+     -121.739239
+    ],
+    [
+     48.170308,
+     -121.739315
+    ],
+    [
+     48.170472,
+     -121.739257
+    ],
+    [
+     48.170686,
+     -121.738787
+    ],
+    [
+     48.170887,
+     -121.738727
+    ],
+    [
+     48.170922,
+     -121.738617
+    ],
+    [
+     48.171075,
+     -121.737547
+    ],
+    [
+     48.170888,
+     -121.737169
+    ],
+    [
+     48.170828,
+     -121.736733
+    ],
+    [
+     48.170911,
+     -121.735965
+    ],
+    [
+     48.170907,
+     -121.735555
+    ],
+    [
+     48.170879,
+     -121.734709
+    ],
+    [
+     48.170858,
+     -121.734436
+    ],
+    [
+     48.170462,
+     -121.733325
+    ],
+    [
+     48.170347,
+     -121.732835
+    ],
+    [
+     48.17027,
+     -121.732564
+    ],
+    [
+     48.169993,
+     -121.732325
+    ],
+    [
+     48.169547,
+     -121.731625
+    ],
+    [
+     48.169467,
+     -121.731053
+    ],
+    [
+     48.169626,
+     -121.730529
+    ],
+    [
+     48.169584,
+     -121.730038
+    ],
+    [
+     48.169619,
+     -121.729846
+    ],
+    [
+     48.169563,
+     -121.729765
+    ],
+    [
+     48.169249,
+     -121.729527
+    ],
+    [
+     48.168994,
+     -121.729588
+    ],
+    [
+     48.168812,
+     -121.729647
+    ],
+    [
+     48.168644,
+     -121.729323
+    ],
+    [
+     48.168403,
+     -121.729083
+    ],
+    [
+     48.168108,
+     -121.728817
+    ],
+    [
+     48.167851,
+     -121.728742
+    ],
+    [
+     48.167629,
+     -121.728528
+    ],
+    [
+     48.167316,
+     -121.72829
+    ],
+    [
+     48.167218,
+     -121.727691
+    ],
+    [
+     48.167265,
+     -121.727061
+    ],
+    [
+     48.16726,
+     -121.726542
+    ],
+    [
+     48.167198,
+     -121.725942
+    ],
+    [
+     48.167197,
+     -121.725805
+    ],
+    [
+     48.167028,
+     -121.725454
+    ],
+    [
+     48.166696,
+     -121.725162
+    ],
+    [
+     48.166619,
+     -121.724836
+    ],
+    [
+     48.166415,
+     -121.72454
+    ],
+    [
+     48.1663,
+     -121.724106
+    ],
+    [
+     48.166207,
+     -121.723971
+    ],
+    [
+     48.166207,
+     -121.723971
+    ],
+    [
+     48.166002,
+     -121.723594
+    ],
+    [
+     48.165943,
+     -121.723212
+    ],
+    [
+     48.165989,
+     -121.722473
+    ],
+    [
+     48.16598,
+     -121.721681
+    ],
+    [
+     48.165794,
+     -121.721357
+    ],
+    [
+     48.165771,
+     -121.720948
+    ],
+    [
+     48.165859,
+     -121.72059
+    ],
+    [
+     48.165911,
+     -121.720343
+    ],
+    [
+     48.16605,
+     -121.719738
+    ],
+    [
+     48.166094,
+     -121.71878
+    ],
+    [
+     48.166063,
+     -121.717578
+    ],
+    [
+     48.16603,
+     -121.716267
+    ],
+    [
+     48.165951,
+     -121.715722
+    ],
+    [
+     48.165978,
+     -121.714874
+    ],
+    [
+     48.165919,
+     -121.714547
+    ],
+    [
+     48.165733,
+     -121.714279
+    ],
+    [
+     48.165491,
+     -121.713902
+    ],
+    [
+     48.165227,
+     -121.713198
+    ],
+    [
+     48.165124,
+     -121.712162
+    ],
+    [
+     48.165267,
+     -121.711857
+    ],
+    [
+     48.165413,
+     -121.711799
+    ],
+    [
+     48.165851,
+     -121.711706
+    ],
+    [
+     48.166398,
+     -121.711583
+    ],
+    [
+     48.166707,
+     -121.711439
+    ],
+    [
+     48.166924,
+     -121.711187
+    ],
+    [
+     48.167087,
+     -121.711019
+    ],
+    [
+     48.167283,
+     -121.71055
+    ],
+    [
+     48.167389,
+     -121.710301
+    ],
+    [
+     48.167516,
+     -121.710134
+    ],
+    [
+     48.167642,
+     -121.710021
+    ],
+    [
+     48.167878,
+     -121.709824
+    ],
+    [
+     48.168002,
+     -121.709493
+    ],
+    [
+     48.168002,
+     -121.709493
+    ],
+    [
+     48.168089,
+     -121.70908
+    ],
+    [
+     48.167991,
+     -121.708509
+    ],
+    [
+     48.167967,
+     -121.70799
+    ],
+    [
+     48.167961,
+     -121.707498
+    ],
+    [
+     48.167845,
+     -121.7069
+    ],
+    [
+     48.167821,
+     -121.706436
+    ],
+    [
+     48.167762,
+     -121.706027
+    ],
+    [
+     48.167719,
+     -121.705454
+    ],
+    [
+     48.167512,
+     -121.704912
+    ],
+    [
+     48.167472,
+     -121.704613
+    ],
+    [
+     48.167322,
+     -121.704261
+    ],
+    [
+     48.167448,
+     -121.704094
+    ],
+    [
+     48.167631,
+     -121.704144
+    ],
+    [
+     48.167797,
+     -121.704249
+    ],
+    [
+     48.167944,
+     -121.704327
+    ],
+    [
+     48.168074,
+     -121.704461
+    ],
+    [
+     48.168167,
+     -121.70465
+    ],
+    [
+     48.168219,
+     -121.704403
+    ],
+    [
+     48.168198,
+     -121.704102
+    ],
+    [
+     48.168289,
+     -121.704127
+    ],
+    [
+     48.168362,
+     -121.704071
+    ],
+    [
+     48.168342,
+     -121.703935
+    ],
+    [
+     48.168138,
+     -121.703721
+    ],
+    [
+     48.168025,
+     -121.703423
+    ],
+    [
+     48.167912,
+     -121.703125
+    ],
+    [
+     48.167875,
+     -121.703099
+    ],
+    [
+     48.167783,
+     -121.703047
+    ],
+    [
+     48.167562,
+     -121.702916
+    ],
+    [
+     48.167448,
+     -121.702508
+    ],
+    [
+     48.167336,
+     -121.70232
+    ],
+    [
+     48.167135,
+     -121.702325
+    ],
+    [
+     48.166988,
+     -121.702219
+    ],
+    [
+     48.166767,
+     -121.702116
+    ],
+    [
+     48.166636,
+     -121.701873
+    ],
+    [
+     48.166634,
+     -121.701654
+    ],
+    [
+     48.166704,
+     -121.701406
+    ],
+    [
+     48.166721,
+     -121.701324
+    ],
+    [
+     48.166829,
+     -121.701103
+    ],
+    [
+     48.166881,
+     -121.70091
+    ],
+    [
+     48.166879,
+     -121.700664
+    ],
+    [
+     48.166894,
+     -121.700445
+    ],
+    [
+     48.166893,
+     -121.700281
+    ],
+    [
+     48.166891,
+     -121.700144
+    ],
+    [
+     48.166778,
+     -121.699846
+    ],
+    [
+     48.166777,
+     -121.699792
+    ],
+    [
+     48.166827,
+     -121.699353
+    ],
+    [
+     48.166587,
+     -121.699113
+    ],
+    [
+     48.166454,
+     -121.698706
+    ],
+    [
+     48.166338,
+     -121.698135
+    ],
+    [
+     48.166426,
+     -121.697805
+    ],
+    [
+     48.166423,
+     -121.697559
+    ],
+    [
+     48.166287,
+     -121.696852
+    ],
+    [
+     48.166376,
+     -121.696658
+    ],
+    [
+     48.166356,
+     -121.696522
+    ],
+    [
+     48.166206,
+     -121.69617
+    ],
+    [
+     48.166108,
+     -121.695599
+    ],
+    [
+     48.16605,
+     -121.695327
+    ],
+    [
+     48.166326,
+     -121.695511
+    ],
+    [
+     48.166511,
+     -121.695671
+    ],
+    [
+     48.16645,
+     -121.695153
+    ],
+    [
+     48.166356,
+     -121.694909
+    ],
+    [
+     48.166299,
+     -121.694719
+    ],
+    [
+     48.166163,
+     -121.694012
+    ],
+    [
+     48.166211,
+     -121.693409
+    ],
+    [
+     48.166264,
+     -121.693189
+    ],
+    [
+     48.166296,
+     -121.692806
+    ],
+    [
+     48.166291,
+     -121.692423
+    ],
+    [
+     48.166415,
+     -121.692037
+    ],
+    [
+     48.166377,
+     -121.691902
+    ],
+    [
+     48.166265,
+     -121.691686
+    ],
+    [
+     48.166482,
+     -121.691516
+    ],
+    [
+     48.166589,
+     -121.69124
+    ],
+    [
+     48.166583,
+     -121.690776
+    ],
+    [
+     48.166525,
+     -121.690449
+    ],
+    [
+     48.166539,
+     -121.690093
+    ],
+    [
+     48.166611,
+     -121.689982
+    ],
+    [
+     48.166703,
+     -121.690007
+    ],
+    [
+     48.166945,
+     -121.690411
+    ],
+    [
+     48.167104,
+     -121.689915
+    ],
+    [
+     48.167121,
+     -121.689805
+    ],
+    [
+     48.167249,
+     -121.689802
+    ],
+    [
+     48.167395,
+     -121.689798
+    ],
+    [
+     48.167429,
+     -121.689579
+    ],
+    [
+     48.167519,
+     -121.689385
+    ],
+    [
+     48.167516,
+     -121.689194
+    ],
+    [
+     48.167623,
+     -121.688918
+    ],
+    [
+     48.167658,
+     -121.688807
+    ],
+    [
+     48.167823,
+     -121.688803
+    ],
+    [
+     48.167985,
+     -121.688635
+    ],
+    [
+     48.168241,
+     -121.688628
+    ],
+    [
+     48.168406,
+     -121.688597
+    ],
+    [
+     48.168733,
+     -121.688452
+    ],
+    [
+     48.168861,
+     -121.688449
+    ],
+    [
+     48.168934,
+     -121.688447
+    ],
+    [
+     48.168971,
+     -121.688418
+    ],
+    [
+     48.169118,
+     -121.688524
+    ],
+    [
+     48.169244,
+     -121.688357
+    ],
+    [
+     48.169317,
+     -121.6883
+    ],
+    [
+     48.16937,
+     -121.688135
+    ],
+    [
+     48.169442,
+     -121.688051
+    ],
+    [
+     48.169643,
+     -121.688073
+    ],
+    [
+     48.169718,
+     -121.688235
+    ],
+    [
+     48.169882,
+     -121.688204
+    ],
+    [
+     48.169916,
+     -121.687902
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 18.5,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "Same approach as the standard South Peak trip: Saddle Lake Trailhead through old-growth forest and Saddle Lake up to the meadows at Goat Flats. Carry the technical rack and glacier…",
+      "fromTo": "Hike in to Goat Flats camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "From camp, cross Tin Can Gap and drop roughly 400 ft onto the Queest-Alb Glacier before climbing back up about 1,000 ft to the col between Middle and North Peak. Rope up for sustai…",
+      "fromTo": "Technical summit day: North Peak",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "A light rack — slings and a small selection of cams/nuts — is enough for protecting the short 5th-class chimney move; the rest of the route is unroped scrambling.",
+   "what_to_bring": [
+    "ice axe",
+    "crampons",
+    "helmet",
+    "navigation"
+   ],
+   "pro_tips": [
+    "Carry an ice axe for the upper snow even in summer",
+    "The fixed ladders to the lookout are exposed—move carefully"
+   ],
+   "watch_out": [
+    "lingering snow",
+    "exposed ladders",
+    "long day"
+   ],
+   "pro_needs": "Minimal gear placements needed, concentrated at the one 5th-class chimney move; considerable exposure on this section warrants a rope even though the technical difficulty is modest.",
+   "best_season": "Late July to September",
+   "high_point_ft": 6870,
+   "aid_grade": null,
+   "approach": "Start at the Tupso Pass trailhead (end of FR 41) on the Three Fingers-Goat Flats-Saddle Lake Trail #641. The trail climbs through forest, crossing a couple of small seasonal streams, to Saddle Lake at about 2.5 miles (last reliable, easy water before the alpine section; no camping within 200 ft of the lake and no fires from here on). From Saddle Lake continue roughly 2–2.5 more miles, gaining out of the timber into the open meadows of Goat Flats (~4.5 mi from the TH) — good camps and the last easy tentsites with views to Puget Sound. From Goat Flats the trail contours and climbs about 2 more miles to Tin Can Gap (~6.2 mi, roughly 3,500-3,800 ft of the day's gain done); this is the last maintained-trail point and the standard high camp/bivy for peak days. Tin Can Gap gives the first real view of the three summits and the Queest-Alb (Three Fingers) Glacier below. From the gap the route drops about 400 ft off-trail down snow/talus onto the glacier — early season this is a straightforward snow descent, but by late summer expect bare ice and a moat between rock and ice that requires care (crampons/axe recommended into at least July); crevasses open on the glacier by mid-summer so rope up if traveling as a team when covered. Cross the glacier and climb back up roughly 1,000 ft on the far side to the col between Middle and North Peak — this climb is on a mix of snow/scree and low-angle rock and is the route-finding crux of the approach. From the col, the North Peak route follows a ramp leading left then angling right into a shallow chimney, with sustained 4th-class and a few low-5th-class (5.0-5.4) exposed moves through loose-to-fair rock to the summit block; a harder 5.4 line exists on the upper west face but is avoided by most parties for rock quality. Carry a rope, a small rack, and glacier gear (axe/crampons, and a rope+harness for crevasse hazard) even in a scramble-grade season.",
+   "descent_text": "Reverse the ascent line off the North Peak summit. Parties describe two to three rappels getting back down through the 4th/low-5th-class chimney-and-ramp section to easier 3rd-class ground above the glacier — plan on a single 60m rope (or two ropes if parties want to link stations in fewer pulls). The first rappel station is commonly an old fixed sling/tat anchor left by previous parties, but it should not be trusted blindly — inspect it or back it up, and be prepared to build natural gear anchors (cams/nuts on horns or cracks) for the remaining stations since fixed gear is inconsistent year to year. After the rappels, downclimb/scramble the remaining 3rd-class terrain back to the col, reverse the ~1,000 ft descent to the glacier, re-cross the Queest-Alb Glacier (watch the moat and any crevasses), climb back up to Tin Can Gap, and reverse Trail #641 through Goat Flats and Saddle Lake to the trailhead. Rockfall in the chimney/gully and a icy glacier moat are the main descent-specific hazards; a mid-to-late-season descent in soft/rotten snow on the glacier headwall can also be tricky.",
+   "bail": "Retreat down the West Couloir/South Face to the glacier is straightforward from most points below the crux chimney; once past the roped 5th-class move, downclimbing or a short rappel off gear may be needed to retreat.",
+   "pitch_detail": [
+    {
+     "grade": "Steep snow, glacier",
+     "notes": "From Tin Can Gap, drop about 400 ft down steep snow onto the Queest-Alb Glacier. Early season it is a plain snow descent. By late summer expect hard, slippery snow or bare ice and a moat where the snow meets the rock, so axe and crampons are needed. Crevasses open by midsummer; rope up when they are snow-covered.",
+     "pitch": "Glacier traverse to base"
+    },
+    {
+     "grade": "~40° snow or loose rock",
+     "notes": "Cross the glacier and climb back up roughly 1,000 ft to the col between the Middle and North Peaks. In a high-snow year this goes by a snow tongue and a short couloir of about 40° with moats on both sides. In a low-snow year it becomes loose rock and scree. This climb is the route-finding crux of the day.",
+     "pitch": "West Couloir"
+    },
+    {
+     "crux": true,
+     "grade": "low 5th",
+     "notes": "Above the col, the climbing is sustained 4th class to a chimney that holds the one real 5th-class move. The rock is loose to fair, so place gear and test holds. Grades given range from Class 4 with a single 5th-class move up to a 40 m lead with harder moves for parties that strayed off the easiest line. An old piton marks one variation.",
+     "pitch": "South Face crux"
+    },
+    {
+     "grade": "Class 2–3, exposed",
+     "notes": "Above the chimney the ground eases along an exposed, knife-edged crest with big drops east and west. Finish up an easy grassy ramp and over a few blocks to the summit. A short extra low-5th step may be needed depending on the line taken. Rope up for the ridge if the party is unsure: the exposure is serious.",
+     "pitch": "Summit ridge"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best attempted in late summer (Aug-Sep) once the glacier crossing between Tin Can Gap and the Middle/North col is more consolidated and less crevassed; carry a rope, rack, and glacier gear in addition to standard scrambling kit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Same approach as the standard South Peak trip: Saddle Lake Trailhead through old-growth forest and Saddle Lake up to the meadows at Goat Flats. Carry the technical rack and glacier gear in addition to overnight kit since North Peak's harder climbing is ahead.",
+      "hours": 4.5,
+      "miles": 4.5,
+      "title": "Hike in to Goat Flats camp",
+      "gainFt": 3000,
+      "lossFt": 100,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Reach Goat Flats camp"
+     },
+     {
+      "n": 2,
+      "note": "From camp, cross Tin Can Gap and drop roughly 400 ft onto the Queest-Alb Glacier before climbing back up about 1,000 ft to the col between Middle and North Peak. Rope up for sustained class 4 climbing with one low-5th-class (5.1) move in a summit chimney; exposure is constant.",
+      "hours": 10,
+      "miles": 5.5,
+      "title": "Technical summit day: North Peak",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave Goat Flats camp",
+        "detail": "Alpine start to cross the glacier while snow is firm."
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Reach Tin Can Gap, descend to the glacier",
+        "detail": "Steep snow down to the Queest-Alb Glacier."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Cross glacier, climb to the Middle/North col",
+        "detail": "~1,000 ft regain; watch for crevasses late season."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Rope up for the rock",
+        "detail": "Class 4 to low 5th class (5.1), one exposed chimney move."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit North Peak",
+        "detail": "6,870 ft, highest of the three fingers."
+       },
+       {
+        "time": "4:00 PM",
+        "label": "Back at Goat Flats camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb North Peak via the Queest-Alb Glacier and the Middle/North col"
+     },
+     {
+      "n": 3,
+      "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+      "hours": 4,
+      "miles": 4.5,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 3000,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 3-day, 2-night trip: hike in to Goat Flats, a long technical day crossing the Queest-Alb Glacier and climbing class 4 to low-5th-class (5.1) rock to North Peak, then hike out; roughly 14.5 mi and 5,400 ft of cumulative gain overall."
+   },
+   "access": {
+    "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+    "rules": "Boulder River Wilderness regulations",
+    "permit": "Wilderness self-issue permit where applicable",
+    "closures": null,
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass at the trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Boulder River Wilderness permit",
+     "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+    }
+   },
+   "road": {
+    "name": "Tupso Pass Road (FR 41)",
+    "status": null,
+    "driveNote": "Rough gravel forest roads to the Tupso Pass trailhead",
+    "seasonalGate": "Rough/snow-gated into early summer"
+   },
+   "climate": {
+    "typical": "West-slope Cascade alpine; snowy upper mountain",
+    "bySeason": {
+     "fall": "Short window before storms",
+     "spring": "Snowbound; roads rough",
+     "summer": "Best window; upper snow lingers",
+     "winter": "Full winter conditions; long approach"
+    },
+    "forecastZone": "Washington West Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Use 911 for emergencies.",
+    "county": "Snohomish",
+    "rangerStation": "Darrington Ranger District, Mount Baker-Snoqualmie National Forest",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July-September, heaviest in August; the standard lookout approach has become notably crowded in recent years due to social-media exposure",
+    "solitudeRating": 2,
+    "estimatePerSeason": "High — widely cited as one of the busier Cascades lookout objectives; likely hundreds of hikers/scramblers per season with the lookout (max occupancy 8) and Goat Flats camp filling on sunny weekends"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong all-day fitness for a long approach (historically ~17-19 mi RT depending on FS 41 road-washout status) with roughly 5,000 ft of gain",
+     "packWeight": "Moderate for a day push; heavier if overnighting at Goat Flats, which is common given the length of the approach"
+    },
+    "approachTime": "6-9+ hours one-way depending on whether the FS 41 washout requires biking or walking extra road miles; many parties overnight at Goat Flats to split the day",
+    "requiredSkills": [
+     "exposed Class 3 scrambling and rebar-ladder climbing near the summit",
+     "snow travel/kick-stepping if lingering snow is present",
+     "route-finding on the climbers' trail from Tupso Pass/Goat Flats",
+     "sound judgment in fast-changing weather"
+    ],
+    "experienceLevel": "Intermediate — a natural step up for experienced hikers moving into exposed scrambling; the ladder section and lingering snow make it a poor choice for a first scramble."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July to September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Improves through the month as snow melts out; matches the start of the late July window",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Lingering snow slopes low on the route and near the summit steps, plus longer/harder road access",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Driest, most consolidated conditions and core of the best-season",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the window — early snow and shorter weather windows increase risk on the exposed ladder section",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still within the season; stable weather common early in the month",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Western Cascades wilderness climate — often cloudy/wet outside July-September; the summit area is exposed and afternoon weather can move in quickly",
+     "probability": "Occasional afternoon thunderstorms/showers in summer; the afternoon weather hazard reflects real risk of rapidly deteriorating conditions on the exposed final steps"
+    },
+    "exposure": "High — exposed final steps/ladders to the lookout are the key fall-consequence hazard; loose rock and afternoon weather compound the risk of a serious fall near the summit",
+    "avalanche": {
+     "zone": "West Slopes North (NWAC) — best-fit regional zone; not a confirmed peak-specific product",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low",
+      "October": "Moderate",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Real hazard — the standard approach crosses the Queest-Alb Glacier between Tin Can Gap and the North/Middle col; crevasses open by mid-summer, so rope up when traveling as a team (carry axe, crampons, rope, and harness)."
+   },
+   "data_quality": {
+    "gaps": [
+     "Public trip reports and Forest Service pages describe 'the' standard route to the Three Fingers lookout without clearly distinguishing this 'North Peak' listing from the 'South Peak via Lookout' route, so crowd figures are shared/inferred across both",
+     "No NWAC product names Three Fingers specifically, so avalanche zone assignment is a regional best-fit rather than a confirmed source",
+     "Exact current road mileage/condition of FS 41 changes year to year with washout repairs and was not independently re-verified beyond general search results",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/2JCF",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 3,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.169895,
+    "peakLng": -121.687865,
+    "trailhead": "Tupso Pass Trailhead",
+    "trailheadDirection": "Start at the Tupso Pass trailhead (end of FR 41) on the Three Fingers-Goat Flats-Saddle Lake Trail #641."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "glacier rope (team rope), optional",
+   "rope_length_m": 30,
+   "rope_note": "Standard route crosses the Queest-Alb glacier before a rocky scramble and three fixed wooden ladders leading to the lookout on the south peak. Ice axe/crampons required whenever the glacier headwall/steep snow slope below the summit is present.",
+   "ascender": "crevasse-rescue kit for the glacier crossing, not because ascenders are used on the fixed ladders",
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Small rack: slings, small cams/nuts for the chimney",
+    "Extra webbing for 2 rappel anchors",
+    "Glacier rope (team rope)",
+    "Ice axe and crampons for the glacier approach"
+   ],
+   "features": [
+    "Chimney",
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Trail #641 from Tupso Pass over Goat Flats and Tin Can Gap",
+     "notes": "Note the access before anything else: the road up to the historic trailhead has a permanent washout, so the day starts with a long bike or walk past the vehicle gate before the trail proper begins. From the trailhead, the trail climbs through forest to the small lake at about two and a half miles — last easy water, and no fires or camping within two hundred feet of it. Continue up into the open meadows of the flats at about four and a half miles, the best camping on the route, then a further couple of miles to the GAP at roughly six miles, where the maintained tread ends and most parties bivy. The gap gives the first real view of the three summits and of the glacier below them.",
+     "season": "July to September. Crevasses open on the glacier by midsummer and bare ice with a moat appears late in the season; an axe is a year-round item on this peak.",
+     "hazards": [
+      "Glacier travel with real crevasse risk crossing to the col",
+      "A moat between rock and ice that widens through the season, with bare ice by late summer",
+      "Loose rock in the chimney and ramp system",
+      "No established trail or cairned route above the gap — route-finding is entirely on you",
+      "The descent is a committing series of rappels, and some stations are fixed slings of unknown age",
+      "Fog on the glacier traverse has triggered multiple multi-hour rescues on this mountain"
+     ],
+     "baseFinding": "From the gap, drop about four hundred feet off-trail down snow and talus onto the glacier, cross it, and CLIMB BACK UP roughly a thousand feet on the far side to the COL BETWEEN THE MIDDLE AND NORTH TOWERS. That col is the base of the climbing, and the thousand-foot re-ascent is the discriminator: this is the only one of the three summits whose route requires you to gain a col before you touch its rock. From the col the line is a RAMP that leads LEFT and then angles RIGHT into a SHALLOW CHIMNEY — the chimney is the check, being the one chimney breaching the block from this col, and it is fourth class with a move or two of low fifth. Above it an exposed fourth-class ridge leads to a grassy ramp and the summit. Negative markers: if you are standing under THREE STACKED WOODEN LADDERS bolted into the rock, you are at the lookout summit at the southern end of the ridge, two towers away; if you have climbed a short face straight off the glacier with no col gained, you are on the middle tower's south face."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Descent from Tin Can Gap onto the Queest-Alb Glacier",
+     "notes": "From the gap the route drops about 400 ft off-trail down snow/talus onto the glacier. Early season this is a straightforward snow descent; by late summer expect bare ice and a moat between rock and ice that requires care (crampons/axe recommended into at least July). Crevasses open by mid-summer, so rope up as a team when the glacier is snow-covered."
+    },
+    {
+     "n": 2,
+     "label": "Glacier crossing and climb to the Middle-North col",
+     "notes": "Cross the glacier and climb back up roughly 1,000 ft on the far side to the col between Middle and North Peak, on a mix of snow/scree and low-angle rock. This climb is the route-finding crux."
+    },
+    {
+     "n": 3,
+     "class": "4th class with a few 5.0-5.4 moves",
+     "label": "Ramp and shallow chimney to the North Peak summit",
+     "notes": "From the col, follow a ramp leading left then angling right into a shallow chimney. Sustained 4th-class with a few low-5th-class exposed moves through loose-to-fair rock to the summit block. A harder 5.4 line exists on the upper west face but most parties avoid it for rock quality. Carry a rope, a small rack, and glacier gear (axe/crampons, rope and harness for crevasse hazard) even in a scramble-grade season."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5200,
+     "name": "Goat Flats",
+     "role": "main",
+     "type": "camp",
+     "notes": "Open subalpine meadow about two miles beyond the lake, and the default base for anything on Three Fingers — the lookout, the middle summit, or a look at the south face. From here the gap and the glacier are within a straightforward morning. It is also the honest fallback for a party that walked up hoping for a bunk in the lookout and found it occupied: about two miles back down from the ladders, which is a long but manageable retreat with headlamps. The meadow soil is thin and heavily used, so pitch on the bare established spots and not on fresh turf. Snow lies here well into summer and the meadows are boggy for weeks after it goes.",
+     "water": "Reliable through most of the season from the tarns and small streams in the meadows, though the standing water is shallow and warms up late in summer. Treat everything. Later in a dry year the tarns shrink and the better water is the running melt above the flats.",
+     "permit": "Boulder River Wilderness — no camping permit. Federal recreation pass at the trailhead. CAMPFIRES ARE PROHIBITED in the Goat Flats area and along this trail generally. Bears work this basin, so hard-sided or hung food storage is expected rather than optional.",
+     "capacity": "The main camping area on this approach — several established pockets spread through the meadows and around the tarns. It absorbs a fair number of parties but is genuinely crowded on summer and autumn weekends, and it is the overflow when the lookout is full."
+    },
+    {
+     "elev": 5600,
+     "name": "Tin Can Gap high camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The last flat ground before the glacier, roughly a mile short of the lookout, and the correct camp for a party that wants the summit block early and cold rather than soft. The maintained trail effectively ends here, so everything above is a bootpath, snow and the ladders. Its value is that it puts the glacier crossing and the ladders in the first hour of the day, when the snow is still firm — a real advantage over starting from the meadows two miles back. The cost is exposure: it is a gap, it catches weather, and there is nothing sheltering about it. Camp on rock or snow rather than the thin vegetation, and take a hard look at whether the crossing above is in condition before committing to a camp that only makes sense if you go up.",
+     "water": "Snowmelt only for most of the season, and nothing at all once the snow around the gap has gone. Assume you are melting or carrying from Goat Flats.",
+     "permit": "Boulder River Wilderness — no camping permit required. Federal recreation pass to park. Campfires prohibited on this whole stretch of trail; there is no fuel here regardless.",
+     "capacity": "A few small pitches on rock and snow at and just below the gap; one or two parties, not a group site"
+    },
+    {
+     "elev": 3785,
+     "name": "Saddle Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "About two and a half miles in from the road end, in dense timber, and low enough that it is a contingency rather than a plan for anyone climbing. It matters for two reasons. First, the road: the Tupso Pass road has a long washout history and has at times been cut miles short of the trailhead, leaving parties to walk or bike the road grade — when that is the situation the lake is as far as many get on day one. Second, it is where a party that started late, or turned around at the gap in bad conditions, can stop without pushing all the way out. Do not plan a Three Fingers climb from here; it is too low and too far. Bugs are heavy in early summer.",
+     "water": "The lake, which is dependable all season and needs treating. This is the last easy water before the meadows above.",
+     "permit": "Boulder River Wilderness — no camping permit. CAMPING IS PROHIBITED within 200 feet of the shoreline, so the lakeside spots that look obvious are not all legal. Campfires are prohibited within 200 feet of the lake and along the trail above it.",
+     "capacity": "Small — a handful of spots in the timber and meadow near the lake, plus an old volunteer-built shelter at the meadow edge that should be treated as rough emergency cover rather than accommodation"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "north peak pk",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "area_id": "wa_glacier_peak",
+   "name": "Sitkum Glacier",
+   "discipline": "mountaineering",
+   "grade": "Grade II glacier climb",
+   "grade_system": "class",
+   "grade_num": null,
+   "pitches": null,
+   "length_m": 1448,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Darcy Bard, A.H. Dubor, Thomas Gerdine, and Sam Strom (USGS survey party) — June 1897, first ascent of Glacier Peak",
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jun-Aug",
+   "description": null,
+   "gear": [
+    "Ice axe and crampons",
+    "Rope and harness for glacier travel",
+    "3-4 pickets — crevasses exist on the Sitkum but multiple trip reports call them minimal in a normal season",
+    "Wands for route-finding on the broad, featureless upper snowfields, especially useful in flat light or whiteout",
+    "Helmet"
+   ],
+   "hazards": [
+    "Very long, remote approach — multi-day commitment far from any road",
+    "Crevasse navigation on the Sitkum Glacier",
+    "Steepening snow to ~40° below the summit pinnacles",
+    "Loose pumice and rock high on the route once melted out"
+   ],
+   "verif": null,
+   "overview": "The Sitkum Glacier is the standard route on Glacier Peak — the most remote of Washington's major volcanoes. There's no technical crux, but the climb is defined by its long wilderness approach: many miles of trail just to reach a high camp, deep in the Glacier Peak Wilderness. It's a true backcountry expedition rewarded by solitude and a wild summit.",
+   "beta": "From Boulder Basin (5,500-6,000 ft), traverse SE onto the Sitkum Glacier and ascend a corridor on its left (climber's) side heading NE toward a saddle near 9,500 ft by Sitkum Spire. From the saddle, follow the pumice ridge toward the summit, staying right of and below the peak, then finish up a snow chute to the top. Crevasse danger is generally minimal and the route rarely steepens significantly.",
+   "turnaround": "Turn around by early afternoon on summit day; the long descent to a remote camp leaves no margin for late finishes.",
+   "auto_generated": true,
+   "alpine_grade": "III",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 8300,
+   "loss_ft": 8300,
+   "dist_km": 14.5,
+   "max_angle": 40,
+   "rappels": "0",
+   "commitment": "I-II",
+   "face": "Southwest side (Sitkum Glacier)",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": "No reliable cell coverage in the Glacier Peak Wilderness; the approach is 9+ trail miles from the nearest paved road. A satellite messenger (inReach/SPOT) is recommended.",
+   "descent": "Reverse the route to Boulder Basin camp and the long trail out.",
+   "obj_haz": [
+    "Small crevasses on the Sitkum Glacier",
+    "Bare ice possible late season",
+    "The White Chuck River Trail has been unmaintained and washed out since the October 2003 flood, which adds significant off-trail travel on that approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0579,
+     "lng": -121.2882,
+     "elev": 2100,
+     "name": "North Fork Sauk River Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2100
+    },
+    {
+     "lat": 48.03317,
+     "lng": -121.14956,
+     "elev": 5820,
+     "name": "White Pass (PCT)",
+     "type": "Junction",
+     "distMi": 8,
+     "elevFt": 5820
+    },
+    {
+     "lat": 48.111844,
+     "lng": -121.11412,
+     "elev": 10541,
+     "name": "Glacier Peak Summit",
+     "type": "Summit",
+     "distMi": 14,
+     "elevFt": 10541
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 6,
+    "approachTimeHrs": 7,
+    "recommendedStart": "3:00-4:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4,
+      "note": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction.",
+      "fromTo": "Trailhead to Sitkum Creek camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3,
+      "note": "A short but steep climb up a climber's path along a ridge south of Sitkum Creek to the high camp at Boulder Basin, leaving time to rest and scout the glacier route.",
+      "fromTo": "Continue to Boulder Basin high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) …",
+      "fromTo": "Summit via the Sitkum Glacier",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6,
+      "note": "Break camp and hike out the way you came in.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Glacier rope team: 30–40 m rope, 2–3 pickets, crevasse-rescue kit. Per person: ice axe, crampons, helmet, harness, locking biners.",
+   "what_to_bring": [
+    "multi-day backpacking kit",
+    "alpine layers + shell",
+    "mountaineering boots",
+    "glacier glasses/goggles",
+    "headlamp",
+    "stove + fuel",
+    "bear-resistant food storage",
+    "blue bags",
+    "Northwest Forest Pass"
+   ],
+   "pro_tips": [
+    "Plan 3–4 days; this is an expedition, not a day climb",
+    "Confirm current trail/road status — washouts have rerouted access for years",
+    "Camp at Boulder Basin and climb the Sitkum early for firm snow",
+    "Carry navigation for the long forested approach",
+    "If the White Chuck River Road/Trail is washed out or closed, most parties instead reach Boulder Basin via the North Fork Sauk Trail to White Pass and a cross-country traverse into the Glacier Peak basins."
+   ],
+   "watch_out": [
+    "Crevasses on the Sitkum",
+    "Loose pumice/rock high when melted out",
+    "Route-finding on the long approach",
+    "Weather changes far from any escape"
+   ],
+   "pro_needs": "Glacier protection only — pickets for the steeper upper snow and crevasse zones.",
+   "best_season": "Late June through August — snow-covered glacier, melted-out approach trails. Earlier means deep snow on the long approach; later opens crevasses and bares loose rock.",
+   "high_point_ft": 10541,
+   "aid_grade": null,
+   "approach": "The White Chuck approach described below is effectively gone: White Chuck River Trail #643 has been listed as inaccessible since the 2003 flood, and the White Chuck Road (FR 23) is closed to vehicles at milepost 3.7, about 5 miles of old roadbed short of the old trailhead, beyond which the valley is unmaintained travel with a river ford. Parties now come in from the North Fork Sauk River Trailhead instead, climbing to the Pacific Crest Trail at White Pass and following it north over Red Pass to the Sitkum Creek junction. From the White Chuck River Trailhead (2,350 ft, end of White Chuck River Road/FR 23), follow the White Chuck River Trail (FST 643) upstream through old-growth forest. The trail fords/bridges several tributaries — Pumice Creek, Glacier Creek, and Kennedy Creek — which serve as reliable water sources but can run high with snowmelt in early summer. At about 5.5 miles reach the former Kennedy Hot Springs/Kennedy Guard Station area (~3,300 ft) — still a popular campsite, but the historic hot-springs pool, lodge, and guard station were destroyed and buried by the October 2003 flood/debris flow and were never rebuilt; there is no usable hot pool here. Continue roughly 1.5 miles farther to Sitkum Creek and the junction with the Pacific Crest Trail (~3,850 ft). Turn north (left) on the PCT for about a half mile to a forested campsite near 4,100 ft — a common lower camp. From there, leave the maintained trail and follow a steep, unmaintained climbers' path (locally described as 'more like a fisherman's route than a trail') straight up the forested ridge to Boulder Basin (5,500–6,000 ft), where the trees break and the standard high camp sits on heather/rock benches with running water nearby. From camp, ascend snowfields southeast/uphill onto the toe of the Sitkum Glacier. Note: the White Chuck River Road and Trail sustained major washout damage in the October 2003 floods and has had repeated closures/repairs since — confirm current road-end and trail status with the Mount Baker-Snoqualmie National Forest before relying on this approach, as in bad years the effective trailhead moves miles downstream.",
+   "descent_text": "This is a walk-off/glacier descent with no rappelling — reverse the ascent line. From the summit, descend the pumice Sitkum ridge back to the ~9,500 ft saddle east of Sitkum Spire, then descend the Sitkum Glacier's upper section, staying in the corridor left of the icefall/rock rib that splits the glacier's lower half, back down to Boulder Basin. Crevasses exist on the Sitkum but are sparse and generally avoidable with standard route-finding; a rope, harness, and a few pickets are still standard kit. From Boulder Basin, follow the steep climbers' path back down to the PCT/White Chuck Trail junction and retrace the White Chuck River Trail to the trailhead.",
+   "bail": "Boulder Basin (or your high camp) is the bail point; from the upper mountain you retreat to camp. Given the remoteness, there is no quick escape — bailing means the same long walk out.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, steep climbers' path",
+     "notes": "Follow the White Chuck River Trail about 5.5 miles to the old Kennedy Hot Springs site, then 1.5 miles more to Sitkum Creek and the PCT. Go north on the PCT about half a mile to a forest camp near 4,100 ft, then take the steep, unmaintained climbers' path up the ridge south of Sitkum Creek to Boulder Basin (5,500–6,000 ft), the usual high camp. Confirm road and trail status before going.",
+     "pitch": "Trailhead → high camp"
+    },
+    {
+     "grade": "Snowfields, moraine",
+     "notes": "From Boulder Basin, head southeast up snowfields, or a climbers' path later in the season, into a wide snow bowl below the glacier. Do not take the left-hand moraine. It leads to an awkward traverse under a wall of loose rock and then across a steep snowfield to get back on line. Scout the entry the evening before if arriving late, and rope up where the snow meets the ice.",
+     "pitch": "Camp → Sitkum Glacier"
+    },
+    {
+     "grade": "Glacier, crevassed",
+     "notes": "Climb slightly south to the corridor beside the rock feature that splits the lower glacier, then trend northeast. Above that gap the angle eases. Aim for the saddle near 9,500 ft just east of Sitkum Spire, the obvious rock finger on the west summit ridge. Crevasses are not abundant but include hidden ones, even low down, and late season turns stretches to bare ice. Leave camp early, before the snow softens.",
+     "pitch": "Sitkum Glacier"
+    },
+    {
+     "grade": "Loose pumice",
+     "notes": "From the saddle, follow the pumice ridge toward the summit block. The footing is loose and tiring with no technical difficulty, and most parties unrope here. The saddle can be icy or rimed early in the day, so keep crampons handy. Note where you left the glacier: finding that spot again in a whiteout is the key to the descent.",
+     "pitch": "Sitkum Ridge pumice"
+    },
+    {
+     "grade": "Snow chute, Class 2–3",
+     "notes": "Keep right of and slightly below the summit, traversing pumice or snow to one of several chutes that climb to the top on its right. The alternative turns left across the upper Scimitar Glacier, then climbs steeply right up the summit snow to the top. The summit gully can hold avalanche debris and a steep final headwall after storms. Descend the same way.",
+     "pitch": "Summit pinnacles"
+    }
+   ],
+   "itinerary": {
+    "cal": "White Chuck River Road (FR 23) washout near mile 3.7-4 adds extra road-walking distance to this approach until repaired; best conditions are typically July-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction.",
+      "hours": 4,
+      "miles": 7,
+      "title": "Trailhead to Sitkum Creek camp",
+      "gainFt": 1250,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach a forested camp near Sitkum Creek"
+     },
+     {
+      "n": 2,
+      "note": "A short but steep climb up a climber's path along a ridge south of Sitkum Creek to the high camp at Boulder Basin, leaving time to rest and scout the glacier route.",
+      "hours": 3,
+      "miles": 2,
+      "title": "Continue to Boulder Basin high camp",
+      "gainFt": 2200,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach Boulder Basin (5,500-6,000 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) to the summit before reversing back to camp.",
+      "hours": 9,
+      "miles": 7,
+      "title": "Summit via the Sitkum Glacier",
+      "gainFt": 4650,
+      "lossFt": 4650,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "3:00-4:00 AM",
+        "label": "Leave Boulder Basin",
+        "detail": "Rope up for glacier travel."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Reach the ~9,500 ft saddle",
+        "detail": "East of Sitkum Spire, at the top of the glacier."
+       },
+       {
+        "time": "Late morning",
+        "label": "Summit",
+        "detail": "Final stretch is scree/pumice with a short snow-field traverse."
+       },
+       {
+        "time": "Early-mid afternoon",
+        "label": "Back at Boulder Basin camp",
+        "detail": "Reverse the glacier; watch for softening snow bridges late in the day."
+       }
+      ],
+      "objective": "Summit Glacier Peak (10,541 ft) and return to camp"
+     },
+     {
+      "n": 4,
+      "note": "Break camp and hike out the way you came in.",
+      "hours": 6,
+      "miles": 9,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 3450,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 4-day standard trip (~21-25 miles RT, 8,210 ft gain); strong, fit parties commonly compress it to 3 days by combining the two approach days."
+   },
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Northwest Forest Pass required for parking. No climbing permits or camping fees required. Trail status: The White Chuck River Trail was severely damaged by a 2003 flood; contact Darrington Ranger Station for current conditions.",
+    "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+    "permit": "Self-Issue Wilderness Permit",
+    "closures": "CLOSED: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, since 19 March 2025, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+    "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+    "group_limit": 12,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "North Fork Sauk Road / Sloan Creek Road (FR 49)",
+    "status": "Gravel, with rough and washed-out sections; medium or high clearance is recommended and a low-clearance car may not clear them.",
+    "driveNote": "From Darrington, follow the Mountain Loop Highway about 16.3 miles to Sloan Creek Road (FR 49), then about 6.6 miles to the North Fork Sauk River Trailhead. The White Chuck Road (FR 23) approach from the north is a different start and is closed at milepost 3.7.",
+    "seasonalGate": "The Mountain Loop Highway's Deer Creek to Bedal section is gated through the winter and typically reopens in mid-May; FR 49 can hold snow into early summer in heavy years."
+   },
+   "climate": {
+    "typical": "Slightly drier than west-side volcanoes; cold, glaciated, remote; below-freezing summit much of the year.",
+    "bySeason": {
+     "fall": "Crevasses open, early storms",
+     "spring": "Deep snow on approach; firm glacier",
+     "summer": "Prime late June–August; approach melts out",
+     "winter": "Severe; very long approach from snowline"
+    },
+    "forecastZone": "Glacier Peak (NWAC West Slopes Central)"
+   },
+   "emergency": {
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger District, Darrington, WA",
+    "nearestHospital": "Cascade Valley Hospital, Arlington (Level IV trauma, first stabilization stop) / Providence Regional Medical Center Everett (Level II trauma center, Snohomish County's only Level II adult trauma center)",
+    "sheriffDispatch": "911; Snohomish County Sheriff dispatch 425-407-3999"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in July-August; quietest midweek and in the early/late shoulder of the season",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Low-to-moderate — likely on the order of 100-300 climbing parties across the whole summer season; Glacier Peak has no permit quota or registration count, so no hard number exists, but it is described as one of the least-crowded major WA volcanoes"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong multi-day backpacking fitness — roughly 20+ mile round-trip approach with 6,000+ ft of gain spread over 2 days each way, carrying overnight gear",
+     "packWeight": "35-45 lb pack for the approach and high camp"
+    },
+    "approachTime": "~2 days to high camp (Boulder Basin) each way; roughly 3-4 days car-to-car",
+    "requiredSkills": [
+     "Glacier travel & crevasse rescue",
+     "Roped glacier travel",
+     "Self-arrest",
+     "Route-finding on a long, unmarked approach",
+     "Basic snow-climbing movement on ~40° slopes"
+    ],
+    "experienceLevel": "Prior glacier travel and crevasse-rescue experience required; needs to be comfortable with multi-day, self-supported wilderness travel far from help"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June through August — favor late June/July for the firmest glacier and least-open crevasses",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Best balance of a melted-out approach and a still-firm, less-crevassed glacier",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Approach trail can still be snowy or brushy early in the month; glacier is well-consolidated",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Warm and stable, but crevasses more open and pumice/rock exposed higher on the route",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Below-freezing summit conditions much of the year even in summer; slightly drier than the west-side volcanoes but still cold and glaciated",
+     "probability": "Rapid weather changes far from any escape route are a hazard here; afternoon buildups become more common into August"
+    },
+    "exposure": "Moderate — route steepens to ~40° below the summit pinnacles with fall potential into crevasses or on loose pumice/rock once melted out",
+    "avalanche": {
+     "zone": "NWAC Stevens Pass zone is the nearest official forecast area; NWAC issues forecasts only roughly Nov-Apr, so there is no active avalanche forecast during the June-Aug climbing season",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low"
+     }
+    },
+    "crevasses": "Significant — crevasse navigation on the Sitkum Glacier is a primary named hazard; opens up progressively through the season"
+   },
+   "data_quality": {
+    "gaps": [
+     "No published climber-count or quota data for Glacier Peak (no permit system, self-registration only)",
+     "No NWAC forecast zone or data specific to Glacier Peak or to the summer climbing season",
+     "Crowd estimate is inferred from general remoteness/no-permit reporting rather than a hard count",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/N0T3",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.111844,
+    "peakLng": -121.11412,
+    "trailhead": "North Fork Sauk River Trailhead",
+    "trailheadLat": 48.0579,
+    "trailheadLng": -121.2882
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "White Chuck River Trail #643 (the historic standard)",
+     "notes": "This was the standard way up Glacier Peak and the road access has been unreliable for a very long time. The last several miles of FR 23 to the White Chuck trailhead have been reported blocked — at one point with large boulders placed at the turnoff — and reports of the road being driveable and undriveable have alternated over the years. Confirm with the Mount Baker-Snoqualmie forest before relying on it, because in a bad year the effective trailhead moves miles downstream.\n\nFrom the trailhead at about 2,350 ft the trail runs upstream through old growth, crossing Pumice, Glacier and Kennedy Creeks — reliable water, but high with snowmelt in early summer. At about five and a half miles is the old Kennedy Hot Springs area at around 3,300 ft, still a popular campsite; the pool, lodge and guard station were destroyed by the 2003 flood and never rebuilt, so there is no usable hot pool there.\n\nAnother mile and a half brings you to Sitkum Creek and the PCT junction at about 3,850 ft. Turn north on the PCT for about half a mile to a forested camp near 4,100 ft.",
+     "season": "Jun-Aug",
+     "hazards": [
+      "unreliable road access to the trailhead over many years",
+      "creek fords running high with early-summer snowmelt",
+      "steep unmaintained climbers' path with no signage leaving the PCT",
+      "crevasses on the Sitkum"
+     ],
+     "primary": true,
+     "baseFinding": "The path that leaves the PCT for Boulder Basin is unsigned and steeper than anything before it — climbers describe it as more of a fisherman's track than a trail. The test is direction, not appearance: the correct path goes STRAIGHT UP the forested ridge. Anything that contours is the PCT or a game trail.\n\nYou know you have arrived at the top of it when the trees break: Boulder Basin at roughly 5,500 to 6,000 ft is heather and rock benches with running water, and it is the standard high camp. If you are still in continuous forest, you are below it, however long the climb has felt.\n\nFrom camp the route ascends snowfields onto the toe of the Sitkum. Rope up at the point the snowfield stops being a slope you can see the bottom of and becomes continuous glacier — there is no rock landmark for this, so the transition is judged on the ground rather than found."
+    },
+    {
+     "name": "North Fork Sauk and the PCT (the reliable alternative)",
+     "notes": "Because the White Chuck side has been unreliable for years, parties reach this side of the mountain instead from the North Fork Sauk River trailhead, climbing to White Pass on the PCT and then travelling north over Red Pass toward the Glacier Creek and Sitkum ground. It is substantially longer and is chosen for access rather than for the climbing.",
+     "season": "Jun-Aug",
+     "hazards": [
+      "very long approach on the PCT with substantial gain and loss",
+      "no signed junction for the climbers' path"
+     ],
+     "baseFinding": "The route above is unchanged: the marker is Boulder Basin — trees giving way to heather and rock benches with running water at roughly 5,500 to 6,000 ft — and then snowfields onto the toe of the Sitkum above it. Arriving from the north on the PCT the risk is passing the drainage entirely, so identify the Sitkum Creek and Glacier Creek junctions on the map before you set out rather than expecting signage."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Snowfields onto the glacier toe",
+     "notes": "From the Boulder Basin camp at 5,500-6,000 ft, head southeast up snowfields and moraine to gain the toe of the Sitkum Glacier. This is the one place parties routinely go wrong: taking the left-hand moraine commits you to an awkward traverse beneath a wall of loose rock and then across a steep snowfield to recover the correct line. Sort the entry out in daylight if you can, and rope up before stepping onto glacier ice."
+    },
+    {
+     "n": 2,
+     "label": "Lower glacier corridor",
+     "notes": "Trend slightly south to take the corridor on the left side of the rock feature that divides the lower glacier, then work back northeast. Both open and hidden crevasses are present here and the crossing points shift year to year and even week to week, so expect to weave and to reverse a line or two. Late-season melt-out exposes more bare ice and pushes the practical route further off any recorded track — a GPS trace from a previous party is a hint, not a route."
+    },
+    {
+     "n": 3,
+     "label": "Upper glacier to the saddle",
+     "notes": "Continue northeast up the upper glacier to a saddle at roughly 9,500 ft just east of Sitkum Spire. The firn line on the upper glacier has been retreating and bare ice is increasingly exposed, which makes crampons and a firmer belay standard rather than optional in late summer. A bergschrund sits below the saddle and is the last crevasse hazard on the ascent. This is a shaded, exposed slope late in the day — softening snow after mid-morning is the reason parties leave camp in the small hours."
+    },
+    {
+     "n": 4,
+     "label": "Sitkum Ridge pumice",
+     "notes": "From the saddle, leave the glacier for the pumice of Sitkum Ridge. This is loose, ball-bearing volcanic debris on a moderate slope — no technical difficulty, but tiring underfoot and easy to send rock down onto anyone behind. Most parties unrope here. Being off the glacier, it is also the point where a whiteout descent becomes hard to navigate by feel, so mark the spot where you leave the snow."
+    },
+    {
+     "n": 5,
+     "label": "Summit slope",
+     "notes": "Stay to the right of and slightly below the summit as you gain height, then take the snow chute that leads up to the top. The whole route is a glacier and snow climb with no rock pitches, but it is a long day at altitude on an isolated volcano where weather closes in quickly and the descent retraces every crevasse crossing made on the way up."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5500,
+     "name": "Boulder Basin",
+     "role": "main",
+     "notes": "The standard planned high camp, in an open meadow basin at the treeline with the glacier toe above. It is a pleasant place — flowers, waterfalls, and correspondingly aggressive marmots and bugs — but earning it means a long approach and then a steep, unmaintained climbers' path straight up a forested ridge with a full pack. It is about ten miles from the road end, and the road itself has a long history of washouts, so confirm where the trailhead actually is before you plan the day.",
+     "water": "Waterfalls and snowmelt streams run through the basin; dependable into late summer but shrinking as the season goes on. Filter it",
+     "permit": "No backcountry permit is required for overnight use in this wilderness",
+     "capacity": "Several established sites on heather and rock benches at treeline, spread through the basin between roughly 5,500 and 6,000 ft"
+    },
+    {
+     "elev": 3300,
+     "name": "Kennedy Guard Station area",
+     "role": "route",
+     "notes": "The lowest planned stop, about 5.5 miles in and still widely used. Do not plan on soaking: the historic hot pool, lodge and guard station here were buried by the 2003 flood and debris flow and were never rebuilt. Useful as a first night for parties splitting the approach, or as a retreat in bad weather, but it is a long way and a lot of gain below the glacier.",
+     "water": "The river and its tributaries",
+     "capacity": "Popular established riverside sites"
+    },
+    {
+     "elev": 4100,
+     "name": "Sitkum Creek / PCT junction camp",
+     "role": "route",
+     "notes": "A lower fallback for parties who run out of daylight on the long walk in, sitting where the climbers' path leaves the maintained trail. Below treeline, so it is sheltered and out of the weather, but it leaves the entire steep climbers' path plus 1,500 ft of gain before you are even at the standard camp.",
+     "water": "Sitkum Creek",
+     "capacity": "A small forested site or two just north of the trail junction"
+    },
+    {
+     "name": "Boulder Basin Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "sitkum glacier glac gl",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

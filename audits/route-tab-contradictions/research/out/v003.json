@@ -1,0 +1,148 @@
+{
+ "file": "v003",
+ "results": [
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "fact": "Season window: season/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Deep retry found dated ascents across the whole year (a May 2019 forum report, a July 4-5 2014 blog ascent described as 'fine early-season shape', a November ascent narrative) and a route database noting only that the bergschrund opens late season and that a second tool and screws are needed in late season/fall; a guide service offers the peak March-October. No source states a best window for the face (neither Jul-Sep nor Late May-early July), so neither season nor best_season/seasonal_guidance is changed.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/north-face-on-mount-buckner",
+    "https://www.mountainproject.com/route/107476295/north-face",
+    "https://www.outdoorresearch.com/blogs/stories/mt-buckner-north-face",
+    "https://www.mountainschool.com/content/main/mt-buckner-climb/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)",
+   "verdict": "fixed",
+   "correct_value": "Camp near Perfection/Inspiration Lake at ~7,100-7,200 ft",
+   "evidence": "The live row no longer has the 'Basin below Cannon' 6,200 ft pin; the remaining disagreement is the itinerary day-1 note putting the Perfection/Inspiration camp at ~7,500 ft while the Perfection Lake waypoint says 7,100 ft. The USGS elevation service gives 7,100 ft at Perfection Lake and 7,204 ft at Inspiration Lake; OpenStreetMap tags the lakes at 2,164 m (7,100 ft) and 2,196 m (7,205 ft); hiking guides give Perfection ~7,030-7,080 ft and Inspiration 7,185-7,192 ft. ~7,500 ft is Prusik Pass, not the lakes, so the note is changed to ~7,100-7,200 ft (the other 7,500 in the row is Prusik Pass and correct).",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.79735&y=47.47986&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.80136&y=47.48226&units=Feet&wkid=4326",
+    "https://nominatim.openstreetmap.org/search?q=Perfection+Lake,+Chelan+County,+Washington&format=json&extratags=1",
+    "https://nominatim.openstreetmap.org/search?q=Inspiration+Lake,+Chelan+County,+Washington&format=json&extratags=1",
+    "https://www.skyestoury.com/blog/enchantments-backpacking-guide"
+   ],
+   "patches": [
+    {
+     "id": "wa_cannon_mountain_south_slopes",
+     "fact": "Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "camping near Perfection or Inspiration Lake (~7,500 ft)",
+     "replace": "camping near Perfection or Inspiration Lake (~7,100-7,200 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "fact": "glacier/crevasse hazard on this route",
+   "verdict": "fixed",
+   "correct_value": "The CJ Couloir approach crosses remnant Sill Glacier ice that can hold crevasses, bergschrunds and moats mid- to late season",
+   "evidence": "Two independent accounts of the CJ Couloir describe crevasses in it: a September 2001 ascent report meets a wall-to-wall crevasse at the top of the fan (water ice, second tool needed), passes another on a steep ramp and a third bridged only in the centre, and belays from the moat at the col; a July 2014 descent report calls it a 3,500-ft snow couloir that may involve multiple crevasse/bergschrund crossings, the snow being the Sill Glacier, with a full-width crack and a bottomless moat. A 2003 ski report adds a moat and seracs on the Sill Glacier above. So seasonal_hazards.crevasses 'N/A - no glacier travel' is wrong and is replaced; obj_haz already lists crevasses.",
+   "sources": [
+    "https://www.cascadeclimber.com/johannesberg.htm",
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/",
+    "https://skisickness.com/yr/2003/04/cj-couloir/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel indicated for this route; it is a couloir/ridge snow-and-rock line, not a glaciated approach (not explicitly confirmed either way in sources)",
+     "value": "The CJ Couloir holds remnant ice of the Sill Glacier. From mid-season on, as its snow breaks up, expect crevasses and bergschrunds that can span the full width of the couloir, plus deep moats along its edges; passing them can take steep ice moves, and the same breaks must be crossed again on the descent.",
+     "id": "wa_cascade_peak_east_ridge",
+     "fact": "glacier/crevasse hazard on this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "fact": "distance to the East Ridge/col area",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no mileage for the couloir approach: the 2001 and 2014 couloir accounts and a 2003 ski report describe it only as a short road walk (about a quarter mile to the hairpin), a creek crossing and ~15 minutes of brush to the fan, then about 3,400 ft of couloir to the col. A 2019 Johannesburg East Ridge report gives 10.8-14.5 mi round trip, but by the Cascade Pass/Doug's Direct line, not this couloir. The itinerary's 5.7 mi per day and dist_km 18.35 look like the Cascade Pass variant's figures, but no source states either line's one-way distance to the col, so nothing is patched.",
+   "sources": [
+    "https://www.cascadeclimber.com/johannesberg.htm",
+    "https://skisickness.com/yr/2003/04/cj-couloir/",
+    "https://onehikeaweek.com/2019/09/02/johannesburg-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "STRUCTURAL: the 'Base of west ridge' pin (6,800 ft, distMi 5.2, coordinate 47.5575,-120.842 where the ground is ~7,308 ft) should be MOVED to the ~8,000 ft saddle between Windy Ridge and Cashmere where the ridge scramble starts (and re-elevated to ~8,000 ft with a distMi beyond the 6.5 mi camp), or else renamed as the leave-trail point (~6,700-6,900 ft, on the Windy Pass trail above Lake Caroline) and moved there. Sources: a scramble write-up says leave the Windy Pass trail at 6,700 ft, angle up to the 8,000 ft level and run the ridge to the prominent 8,000 ft saddle; a 2018 report left the trail near a ~6,900 ft meadow and reached the saddle at 8,000 ft; a 2016 report camped in Windy Basin at 6,500 ft and gained the ridge at the low saddle between Windy Ridge and Cashmere. Either fix needs a pin move, which the patch format cannot express; no text patch.",
+   "sources": [
+    "https://www.washingtonstatehiking.com/reportslist/cashmere_mountain",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-03.6703657543",
+    "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Recommended start time from high camp — 5:00 AM vs ~6:00 AM",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a recommended departure from the high camp: a 2016 party camped in Windy Basin reached the summit 4.4 hours from camp shortly before noon (a start near 7:30-8 AM), and a 2018 party rose after 8 AM from a Lake Caroline camp; other reports are single-day pushes from the trailhead. Neither 5:00 AM nor ~06:00 is supported, and a start recommendation is a planning choice rather than a researchable fact, so nothing is patched.",
+   "sources": [
+    "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-03.6703657543"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+   "fact": "Crux grade vs headline grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade/rock_grade/overview say 5.9 while pitch_detail P5 is a 5.9+ crack and P3 (5.7/5.8) is labelled the crux. Deep retry searched for the 2003 first ascent (new-route notes, forum reports, other databases) and found only the one route listing, which itself carries both 5.9 PG13 overall and a 5.9+ crack; the one other Cathedral Rock report (July 2003) is the original Northeast Buttress (seven pitches, 5.7), not this variation. No second source for the variation, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/121160200/cathedral-rock",
+    "https://www.cascadeclimber.com/cathedral_rock.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sisu",
+   "fact": "Total route length vs sum of pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: length_m 244 (800 ft) against pitch_detail lengths summing to 173 m. Deep retry looked for an independent topo: the Upper Town Wall topo on a second crag database lists 13 routes and none is Sisu, and searches surfaced only the one route listing (7 pitches, 800 ft, the same pitch lengths) and summaries of it. Which figure is wrong cannot be settled from a single source that carries both, so nothing is patched.",
+   "sources": [
+    "https://thetopo.com/crags/upper-town-wall/topos",
+    "https://www.mountainproject.com/area/107614477/upper-town-wall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "fact": "Climbing season: May-Jun header vs a season description running through September",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Deep retry found two dated ascents of this White River / Thunder Creek southwest-face line, both in late spring: May 28-30, 1977 (rock scramble and snow climb, camp in Chalangin Basin) and June 1, 2025 (icy from an overnight freeze, crampons needed; that author waited for late May after April and November attempts failed). A November 2024 attempt on the same line turned back on wind slab 500 ft below the top, and its author describes an earlier late-October descent of the basin through open trees. These support late spring but do not state a window, and nothing found confirms or rules out a summer dry scramble (the only summer attempt, August 2023, failed on the overgrown trail), so neither season nor best_season/climate is changed.",
+   "sources": [
+    "https://trailcatjim.com/chalangin-peak-white-river-southwest-face/",
+    "https://www.countryhighpoints.com/chalangin-peak-wa-top-100-completion/",
+    "https://www.countryhighpoints.com/chalangin-peak-attempt/"
+   ],
+   "patches": []
+  }
+ ]
+}

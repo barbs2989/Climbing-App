@@ -1,0 +1,171 @@
+{
+ "file": "s034.json",
+ "results": [
+  {
+   "id": "wa_mount_carru_scramble",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "No pass is needed at the Monument Creek Trailhead; at Slate Pass/Slate Peak and Harts Pass the requirement is disputed, so carrying a Northwest Forest Pass or America the Beautiful pass is the safe choice. Andrews Creek and Chewuch River are not trailheads for this route.",
+   "evidence": "The Forest Service page for Monument Creek Trailhead says no fees are required at the site (free wilderness permit only), and the WTA Monument Creek hike page lists Parking Pass/Entry Fee: None, so the Monument Creek start is settled by two independent sources. For Slate Pass/Slate Peak the Forest Service trailhead pages say no fee while WTA's Slate Peak and Buckskin Ridge pages list an NWFP or ATB pass, so that start stays hedged, matching access.fees. parking_pass named unrelated trailheads (Andrews Creek, Chewuch River) and stated a blanket requirement; it is rewritten to agree with access.fees.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/monument-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/monument-creek",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-peak-trailhead",
+    "https://www.wta.org/go-hiking/hikes/harts-pass-and-slate-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "value": "None at the Monument Creek Trailhead. At the Slate Pass/Slate Peak and Harts Pass trailheads, carry a Northwest Forest Pass or America the Beautiful pass to be safe.",
+     "id": "wa_mount_carru_scramble",
+     "fact": "Parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only segment figures: the North Fork Quinault trail to Low Divide is about 16 mi with roughly 3,100 ft of gain, and one trip report gives about 2,100 ft from a Low Divide-area camp to the 5,600 ft north saddle. No source states a car-to-car total for the out-and-back climb, so neither 7,000 nor 8,000+ ft can be confirmed. Would be settled by a trip report or route page giving the round-trip gain for North Fork Quinault to Christie and back.",
+   "sources": [
+    "https://www.backpacker.com/trips/olympic-national-park-hike?scope=anon",
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new source found describing September conditions on the North Couloir/Christie Glacier route; documented ascents remain late July to mid-August, and cascadeclimbers and summitpost pages did not load. Would be settled by two late-season (September) reports stating whether the couloir is melted out or still efficient.",
+   "sources": [
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains",
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "fact": "Rope length vs rappel length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only source giving numbers is one trip report: one 60-foot rappel 'with 55 feet of rope' off the summit block. Steven Song's party climbed and downclimbed the summit block without a rope, and Lucas's report mentions no rappel; no second source gives the rappel height or rope length. Would be settled by a second party stating the rappel height or the rope length they used.",
+   "sources": [
+    "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/",
+    "https://stevensong.com/usa/washington/mount-clark-olympics-wa/",
+    "https://www.lucasmountainknowledge.com/post/mount-clark"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "fact": "Diagonal crack difficulty",
+   "verdict": "fixed",
+   "correct_value": "Class 3",
+   "evidence": "A 2025 WTA trip report says the party had to 'downclimb a class 3 crack' where the ledge seems to cliff out, with a cairn at its top (the same feature the hazards line describes). Steven Song's independent report calls the same spot, reached from the SE ridge, 'exposed 3rd class down-climbing on slabs'. One other report says 3+ or 4 at its hardest bit, but two independent parties agree on Class 3, so beta, hazards and the ROUTE BREAKDOWN row all become Class 3.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-05.172138508318",
+    "https://stevensong.com/usa/washington/mount-clark-olympics-wa/",
+    "https://www.lucasmountainknowledge.com/post/mount-clark"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "diagonal crack system (Class 2-3, exposed but solid)",
+     "replace": "diagonal crack system (Class 3, exposed but solid)",
+     "id": "wa_mount_clark_standard",
+     "fact": "Diagonal crack difficulty"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "exposed Class 3-4 downclimb of a diagonal crack",
+     "replace": "exposed Class 3 downclimb of a diagonal crack",
+     "id": "wa_mount_clark_standard",
+     "fact": "Diagonal crack difficulty"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "Class 2-3",
+     "value": "Class 3",
+     "id": "wa_mount_clark_standard",
+     "fact": "Diagonal crack difficulty"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Route from Grand Pass to the summit and back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row describes three different approaches: Obstruction Point/Grand Pass cross-country (approach, descent_text, climbing_route), a Lost Basin camp via Cameron Pass and Lost Pass (itinerary, descent, timing), and Dosewallips to Dose Meadows/Lost Pass or Hayden Pass (beta, pitch_detail). No two independent sources describing the Obstruction Point line to Claywood were found on retry, and making the row agree would mean rewriting several prose fields rather than a minimal fix. Would be settled by choosing one approach line and finding two route descriptions of it (e.g. Dosewallips to Lost Pass, which is the best-documented line).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Claywood",
+    "https://www.alltrails.com/trail/us/washington/grand-pass-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "fact": "Finger Traverse grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Class 3",
+   "evidence": "Already resolved: in the current row pitch_detail's Finger Traverse crux row is graded 'Class 3', matching climbing_route[3], approach and rock_grade; the '5.0 (exposed)' grade no longer appears.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "fact": "Parking/entrance pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass and no park entrance fee at the Dosewallips Road washout; only the wilderness camping permit applies for overnight stays.",
+   "evidence": "WTA's Dosewallips River Road page (the washout start) lists 'Parking Pass/Entry Fee: None', and an independent backpacking guide to the Dosewallips trail lists the parking pass as none; a Dosewallips road description also notes the road enters the park without an entrance fee being required. The car cannot reach the Lake Constance trailhead itself, so the WTA Lake Constance NWFP line does not apply to where parties park. parking_pass and access.notes are corrected to agree with passRequired.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.iheartpacificnorthwest.com/backpack-dosewallips-river-trail/",
+    "https://www.mountaineers.org/activities/routes-places/dosewallips-river-abandoned-national-park-road"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "None. Parking at the Dosewallips Road washout is free, and no park entrance fee is collected on this side.",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Parking/entrance pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the wilderness camping permit applies, for overnight stays",
+     "id": "wa_mount_constance_north_chimney",
+     "fact": "Parking/entrance pass"
+    }
+   ]
+  }
+ ]
+}

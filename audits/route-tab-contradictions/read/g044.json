@@ -1,0 +1,339 @@
+{
+ "batches": ["b173.json", "b174.json", "b175.json", "b176.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_southeast_face",
+   "name": "Southeast Face",
+   "area": "Sharkfin Tower",
+   "contradictions": [
+    {
+     "fact": "Boston Basin backcountry permit cost",
+     "severity": "low",
+     "claims": [
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+      {"field": "access._raw.cost_structure", "says": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free"}
+     ],
+     "why": "fees claims nothing is owed beyond the parking/entrance fee, but the route's own permit-cost data states a $10/person + $6 backcountry reservation fee.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance (Dist stat)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "9.3"},
+      {"field": "itinerary.totalNote", "says": "Roughly 4,900 ft total gain and 10 miles round trip (estimated)."}
+     ],
+     "why": "dist_km (9.3 km ≈ 5.8 mi) is roughly half the ~10-mile round trip stated for the same car-to-car trip.",
+     "internal_resolution": "itinerary day miles (3.3+6.7=10.0 mi) agree with totalNote, so dist_km looks like a one-way figure mislabeled as the trip total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Sharkfin Tower",
+   "contradictions": [
+    {
+     "fact": "crux pitch grade vs headline route grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "II, 5.0"},
+      {"field": "rock_grade", "says": "5.0"},
+      {"field": "pitch_detail[1].grade (crux)", "says": "5.4"},
+      {"field": "climbing_route[1].notes", "says": "the route is often given 5.0 overall but this pitch is commonly felt to be nearer 5.4"}
+     ],
+     "why": "TECHNICAL STATS' crux grade (from `grade`) and `rock_grade` both read 5.0, but the crux pitch itself is stored at 5.4 in pitch_detail, and the route's own prose flags the gap.",
+     "internal_resolution": "Prose says the crux pitch \"climbs harder\" than the nominal grade, i.e. 5.4 is likely the more accurate crux difficulty; the summary grade fields were never updated to match.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boston Basin backcountry permit cost",
+     "severity": "low",
+     "claims": [
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+      {"field": "access._raw.cost_structure", "says": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free"}
+     ],
+     "why": "Same fees-vs-permit-cost mismatch as the sibling Southeast Face route on this peak.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance (Dist stat)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "9.3"},
+      {"field": "itinerary.totalNote", "says": "A standard 2-day (1-night) trip... ~4,900 ft total gain, ~10 miles round trip."}
+     ],
+     "why": "dist_km (9.3 km ≈ 5.8 mi) is roughly half the ~10-mile round trip the itinerary describes.",
+     "internal_resolution": "itinerary day miles (3.3+6.8=10.1 mi) agree with totalNote, so dist_km is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cascade_peak_nw_chimney",
+   "name": "Northwest Chimney",
+   "area": "Cascade Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "name": "East Ridge and NW Chimney",
+   "area": "Cascade Peak",
+   "contradictions": [
+    {
+     "fact": "climbing season window",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Best June-September (snow-free). Earlier/later seasons may have snow on the couloir and upper reaches."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late April through June, and conditions-dependent within that window; the couloir must be filled and the snowpack consolidated"},
+      {"field": "seasonal_guidance.monthBreakdown.July.reason", "says": "The couloir 'melts to loose rock and is generally out of condition' by summer - not recommended"},
+      {"field": "best_season", "says": "Roughly June through August."}
+     ],
+     "why": "`season` frames June-September (including July-Sept) as the window, but seasonal_guidance puts the optimal window in spring (Apr-Jun) and explicitly calls July \"not recommended\" because the couloir melts out; best_season gives a third, different window (Jun-Aug). A climber could plan a July trip believing it's mid-season when the route's own hazard guidance says the couloir is out of condition by then.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "glacier/crevasse hazard on this route",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel indicated for this route; it is a couloir/ridge snow-and-rock line, not a glaciated approach (not explicitly confirmed either way in sources)"},
+      {"field": "obj_haz", "says": "Crevasses on the small glacier remnants below the peak's north side"},
+      {"field": "hazards", "says": "rockfall/icefall shedding off Johannesburg's face onto the Sill Glacier just below the couloir"}
+     ],
+     "why": "seasonal_hazards explicitly denies any glacier travel/crevasse hazard, but the route's own obj_haz list names crevasses on glacier remnants, and hazards names an adjacent hanging glacier (Sill) overhanging the couloir.",
+     "internal_resolution": "obj_haz and hazards agree with each other and are specific, so the seasonal_hazards \"N/A\" claim is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "crux grade shown in TECHNICAL STATS",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade III"},
+      {"field": "rock_grade", "says": "5.8"},
+      {"field": "pitch_detail[0].grade", "says": "5.8 (published; at least one party found it closer to 5.9-5.10)"}
+     ],
+     "why": "TECHNICAL STATS' crux grade is documented as coming from `grade`, but this route's `grade` field holds only a commitment grade (\"Grade III\") with no YDS component, so the crux box would show \"Grade III\" instead of the actual 5.8-5.10 difficulty carried in rock_grade/pitch_detail.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "distance to the East Ridge/col area",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[2] (\"East ridge\" Junction)", "says": "distMi 1.4 at elev 6,800 ft"},
+      {"field": "itinerary.days[0].miles", "says": "5.7 mi for \"Approach and CJ Couloir to a col bivy\""}
+     ],
+     "why": "The waypoint list places the East Ridge junction only 1.4 mi from the trailhead, but the itinerary logs 5.7 mi to reach the col bivy in roughly the same area.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "name": "West Ridge / Colonial Glacier",
+   "area": "Colonial Peak",
+   "contradictions": [
+    {
+     "fact": "Northwest Forest Pass requirement at Pyramid Lake trailhead",
+     "severity": "medium",
+     "claims": [
+      {"field": "gear", "says": "Northwest Forest Pass, plus a backcountry camping permit if overnighting near Pyramid Lake/Colonial Glacier"},
+      {"field": "access.passRequired", "says": "None — the Pyramid Lake trailhead is an NPS trailhead within the park complex, not National Forest land, so no Northwest Forest Pass/Interagency Pass is needed for day parking."}
+     ],
+     "why": "The gear checklist tells a climber to bring a Northwest Forest Pass, while access.passRequired says explicitly that no such pass is needed at this trailhead.",
+     "internal_resolution": "access.passRequired gives a specific, land-status reason (NPS, not USFS, land) that nothing else on the row contradicts, so the gear-list entry looks like the stale value.",
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "9.7 (≈6.0 mi)"},
+      {"field": "itinerary.days[0].miles + days[1].miles", "says": "6 + 10 = 16 mi"},
+      {"field": "approach", "says": "Total car-to-summit distance runs roughly 10-14 miles round trip (parties differ depending on camp placement)"}
+     ],
+     "why": "Three different total round-trip distances are stated for the same trip: dist_km implies ~6.0 mi, the itinerary sums to 16 mi, and the approach prose separately estimates 10-14 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cosho_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Cosho Peak",
+   "contradictions": [
+    {
+     "fact": "whether crevasse hazard is documented in the hazards list",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "...though this is not detailed in the on-file hazards list"},
+      {"field": "hazards", "says": "crevasses/moats on the Kimtah Glacier if approaching via the high Ragged Ridge traverse"}
+     ],
+     "why": "seasonal_hazards claims the crevasse hazard isn't listed elsewhere on the row, but the row's own hazards array already names it.",
+     "internal_resolution": "hazards[] does list it, so the seasonal_hazards claim is simply wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "summit scramble difficulty (Class 3 vs Class 4)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Class 3"},
+      {"field": "pitch_detail (Summit scramble)", "says": "Class 3"},
+      {"field": "waypoints (Cosho Peak summit note)", "says": "True summit gained by roughly 250 ft of class 3-4 scrambling"},
+      {"field": "descent_text", "says": "roughly 250 vertical feet of class 3-4 terrain near the top, including an airy, exposed 4th-class ledge system that requires careful downclimbing"}
+     ],
+     "why": "The stored grade and pitch_detail cap the summit section at Class 3, but the summit waypoint note and descent_text both describe Class 4 terrain (an exposed 4th-class ledge system) on the same section.",
+     "internal_resolution": "Prose says \"accounts differ,\" so there's no single right answer, but the stored Class 3 grade doesn't reflect the harder variant several parties report.",
+     "needs_research": false
+    },
+    {
+     "fact": "round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "18.5 (≈11.5 mi)"},
+      {"field": "itinerary.totalNote", "says": "A 3-day, roughly 25-mile round trip"}
+     ],
+     "why": "dist_km implies roughly 11.5 mi total, less than half the ~25-mile round trip stated in the itinerary.",
+     "internal_resolution": "itinerary day miles (9.6+5+9.6=24.2) and waypoint cumulative distances agree with the ~25-mile figure, so dist_km is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_crater_mountain_standard_route",
+   "name": "Standard Route (Southeast Ridge via Jackita Ridge / Crater Lake Trail)",
+   "area": "Crater Mountain",
+   "contradictions": [
+    {
+     "fact": "round-trip distance (header Dist stat)",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "11.3 (≈7.0 mi)"},
+      {"field": "approach_variants[0].notes", "says": "The whole peak is commonly given as fourteen to fifteen miles round trip with about 6,300 ft of gain."},
+      {"field": "itinerary (text)", "says": "the ~15-mile round trip and ~6,300 ft of gain over two days"}
+     ],
+     "why": "This route's `itinerary` field is a plain paragraph rather than a day-array with summable miles, so the header's \"Dist\" falls back directly to dist_km (~7.0 mi), while every prose description of the trip (approach_variants, the itinerary text itself) states ~14-15 miles round trip — nearly double.",
+     "internal_resolution": "Two independent prose statements agree on ~14-15 mi round trip, so dist_km looks like a one-way distance mislabeled as the round-trip stat, and unlike routes with a structured itinerary there is no day-mile sum to mask it on the header.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "name": "Direct Southwest Buttress",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "pitch count vs documented ROUTE BREAKDOWN rows",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "8"},
+      {"field": "pitch_detail", "says": "only 2 entries (P1 5.10a, P2 5.8+)"}
+     ],
+     "why": "The stats say this is an 8-pitch route, but ROUTE BREAKDOWN only documents 2 pitches (the two unique to the Direct start) — a climber reading the pitch-by-pitch breakdown sees far fewer rows than the stated pitch count.",
+     "internal_resolution": "approach_variants explains the remaining pitches are shared with the standard Southwest Buttress and rejoin after P2, so 8 total is plausible, but pitch_detail simply never enumerates the shared upper pitches.",
+     "needs_research": false
+    },
+    {
+     "fact": "backcountry permit cost",
+     "severity": "low",
+     "claims": [
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+      {"field": "access._raw.permit_cost", "says": "$10 per person + $6 non-refundable reservation fee"}
+     ],
+     "why": "fees claims nothing beyond a parking/entrance fee, but the route's own permit-cost data lists a $10/person + $6 backcountry fee.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance (Dist stat)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "9.7 (≈6.0 mi)"},
+      {"field": "itinerary.totalNote", "says": "A 3-day trip (~16.2 mi, ~7,200 ft total gain)"}
+     ],
+     "why": "dist_km implies ~6.0 mi, well under half the ~16.2-mile round trip stated in the itinerary.",
+     "internal_resolution": "itinerary day miles (5.8+4.2+5.8=15.8) agree with totalNote, so dist_km is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "access.passRequired", "says": "None — there are no trailhead or parking fees for trails that begin on National Park Service land, and there is no fee to enter the North Cascades National Park Service Complex."},
+      {"field": "access._raw.parking_pass_required", "says": "America the Beautiful Annual ($80) or per-vehicle entrance fee"}
+     ],
+     "why": "The route's own access block directly contradicts itself on whether a paid parking/entrance pass is required at the trailhead — a climber checking access.passRequired would show up with no pass, believing none is needed.",
+     "internal_resolution": "The sibling route on the identical trailhead (Direct Southwest Buttress, which shares this same _raw block) states passRequired = \"America the Beautiful Annual ($80)...\", matching its own _raw — so this route's \"None\" value looks like the erroneous outlier, not the raw permit data.",
+     "needs_research": false
+    },
+    {
+     "fact": "backcountry permit cost",
+     "severity": "low",
+     "claims": [
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+      {"field": "access._raw.permit_cost", "says": "$10 per person + $6 non-refundable reservation fee"}
+     ],
+     "why": "fees claims nothing beyond a parking/entrance fee, but the route's own permit-cost data lists a $10/person + $6 backcountry fee.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance (Dist stat)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "9.7 (≈6.0 mi)"},
+      {"field": "itinerary.totalNote", "says": "A 3-day trip (~14 mi, ~6,400 ft total gain)"}
+     ],
+     "why": "dist_km implies ~6.0 mi, under half the ~14-mile round trip stated in the itinerary.",
+     "internal_resolution": "itinerary day miles (5.3+3+5.3=13.6) agree with totalNote, so dist_km is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "name": "Southwest Buttress",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "round-trip distance (Dist stat)",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "6.44 (≈4.0 mi)"},
+      {"field": "approach", "says": "The recorded round-trip distance is about 25.75 km, somewhat longer than the East Ridge approach because the SW start point is farther along the glacier traverse."},
+      {"field": "itinerary.totalNote", "says": "~16 mi round trip"}
+     ],
+     "why": "The route's own approach prose explicitly states the round-trip distance as ~25.75 km (≈16 mi, matching the itinerary total), but the stored dist_km field holds 6.44 km — about a quarter of that value, for the same named quantity (\"recorded round-trip distance\").",
+     "internal_resolution": "The itinerary day miles (5.7+4+5.7=15.4 mi ≈ 24.8 km) and the approach prose's explicit \"25.75 km\" agree with each other, so dist_km=6.44 is clearly the wrong/stale value.",
+     "needs_research": false
+    },
+    {
+     "fact": "backcountry permit cost",
+     "severity": "low",
+     "claims": [
+      {"field": "access.fees", "says": "N/A"},
+      {"field": "access._raw.permit_cost", "says": "$10 per person + $6 non-refundable reservation fee"}
+     ],
+     "why": "fees is marked N/A (suggesting no cost), but the route's own permit-cost data lists a $10/person + $6 backcountry fee.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

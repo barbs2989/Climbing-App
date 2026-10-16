@@ -1,0 +1,229 @@
+{
+ "applied": [
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager / trailhead in access"
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Land manager / trailhead in access"
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Land manager / trailhead in access"
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Exposure on the summit scramble"
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Ranger district / land manager"
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rope / glacier kit required"
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Rope / glacier kit required"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "what_to_bring",
+   "path": [
+    3
+   ],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "descent",
+   "path": [],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Camping at Snowgrass Flats"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass at Snowgrass Flat trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or equivalent Interagency Pass may be required at trailhead parking",
+     "notes": "Straddles Gifford Pinchot NF (west) and Okanogan-Wenatchee NF (east, White Pass side); the standard approach (Snowgrass Flat, Berry Patch trailheads) is on the Gifford Pinchot side.",
+     "rules": "Group size capped at 12 (people + stock combined) per 36 CFR 261.58(f).",
+     "permit": "Free, self-issued Goat Rocks Wilderness permit required at the trailhead",
+     "closures": "No camping within 100 ft of the Pacific Crest Trail or lakes; group size and campfire restrictions apply within the Wilderness.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest (Naches Ranger District) for the Conrad Meadows approach; the summit itself sits within Goat Rocks Wilderness (jointly administered with Gifford Pinchot National Forest)",
+     "land_manager": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District) — Goat Rocks Wilderness",
+     "parking_pass": "Not required at Snowgrass Flat; required at Berry Patch trailhead — $5/day or $30/year Northwest Forest Pass.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Goat Rocks Wilderness permit",
+      "where": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+     }
+    },
+    "pitch_detail": [
+     {
+      "grade": null,
+      "notes": "Trail #1120 through Conrad Meadows to Surprise Lake / Warm Lake, ~8-9 mi one way.",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Ridge travel mixing snow and loose rock, Gilbert visible most of the way.",
+      "pitch": "Klickton Divide"
+     },
+     {
+      "grade": "I1 (Easy Snow)",
+      "notes": "Snow travel/glacier crossing on the southeast side, crampons recommended.",
+      "pitch": "Meade Glacier / summit snowfield"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Short, loose scramble through a notch to the true summit; no significant exposure on most lines but rock is unstable.",
+      "pitch": "Summit scramble"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "before": {
+    "emergency": {
+     "notes": "Cell coverage is unreliable near trailheads and throughout the wilderness; this is the more remote of Gilbert Peak's routes.",
+     "county": "Yakima County",
+     "rangerStation": "Cowlitz Valley Ranger District, Gifford Pinchot NF — (360) 497-1103, 10024 US Hwy 12, Randle, WA 98377",
+     "nearestHospital": null,
+     "sheriffDispatch": null
+    },
+    "detailed_rack": "No technical rock rack; this is a glacier-approach mountaineering line — carry an ice axe, crampons, and consider a rope for glacier travel on Conrad Glacier.",
+    "pro_needs": "Basic glacier travel kit (axe, crampons) for the Conrad Glacier crossing to the saddle, then boulder/scree/snowfield travel to the summit (Mazamas)."
+   }
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "before": {
+    "beta": "From a base camp at Snowgrass Flats, climbers cross south toward the Old Snowy/Ives Peak massif and traverse a series of rock ribs and shallow gullies (the 'Goat Ledges' and 'Goat Ribs') at roughly 7,400-7,600 ft toward Gilbert Peak. The key navigational feature is a band of solid, abrasive white pyroclastic aggregate that points toward a notch behind a prominent dark rock tower nicknamed the 'black prow'; staying on this band (rather than the looser rock above or below it) is described as the safest line. A lower variation holds a consistent ~7,500 ft traverse elevation to reduce exposure to party-induced rockfall. The route is regarded by some as loose and dangerous, but careful route-finding along the white band and goat paths allows a safer class 4 passage to the summit.",
+    "approach": "Drive to the Berry Patch or Snowgrass Flat Trailhead (Chambers Lake area) off Forest Road 21/2150 on the west side of the Goat Rocks: turn east onto FR 21, continue about 13 miles, turn at the Snowgrass Trail/Chambers Lake sign onto FR 2150, then follow signs to the Snowgrass Flat Trailhead (elev. ~4,650 ft). Hike Trail #96 (Snowgrass) roughly 4 miles and ~2,000 ft of gain along Goat Creek to Snowgrass Flats, a large subalpine meadow used as base camp; from there head cross-country/scramble east across the Goat Ledges/Goat Ribs traverse toward Gilbert Peak (often combined with Old Snowy Mountain and Ives Peak in one traverse day).",
+    "approach_variants": [
+     {
+      "name": "Snowgrass Flats and the Goat Ledges traverse to the black prow",
+      "notes": "Drive to the Berry Patch or Snowgrass Flat trailhead in the Chambers Lake area on the west side of the Goat Rocks, at about 4,650 ft, reached by forest road off the highway west of Packwood. Hike Snowgrass Trail #96 roughly 4 miles and about 2,000 ft along Goat Creek to Snowgrass Flats, a large subalpine meadow used as base camp.\n\nFrom camp, head cross-country and scramble east across the Goat Ledges and Goat Ribs — a series of rock ribs and shallow gullies — at roughly 7,400-7,600 ft toward Gilbert Peak. This is often combined with Old Snowy and Ives in a single traverse day.\n\nA lower variation holds a consistent traverse elevation of about 7,500 ft, which reduces exposure to rockfall knocked down by other parties.\n\nThe route is regarded by some as loose and dangerous. Careful route-finding along the correct band and on goat paths is what makes it a reasonable class 4 passage rather than a bad one.",
+      "season": "Roughly Jul-Sep, once the ledges are dry",
+      "hazards": [
+       "Significant rockfall on the Goat Ribs and Goat Ledges traverse, worst with parties stacked at different elevations",
+       "Loose andesite, pyroclastic breccia and tuff throughout the upper mountain",
+       "Steep, insecure sections approaching the summit block even in dry late-season conditions",
+       "Route-finding failure — the whole route depends on correctly identifying the white aggregate band",
+       "A class 4 downclimb through the notch on the way back, on the same loose ground"
+      ],
+      "baseFinding": "THE WHITE BAND IS THE ROUTE. THAT IS THE ENTIRE FINDING AND IT IS A COLOUR TEST, WHICH IS WHY IT SURVIVES BAD LIGHT.\n\nOn the Goat Ribs and Goat Ledges traverse at roughly 7,400-7,600 ft there is a band of SOLID, ABRASIVE, WHITE PYROCLASTIC AGGREGATE. It points at a NOTCH BEHIND A PROMINENT DARK ROCK TOWER — the black prow. So there are two objects to find and they are opposite colours: a white band and a dark tower, with the notch behind the tower.\n\nTHE NEGATIVE IS TACTILE AND IT TELLS YOU IMMEDIATELY, WITHOUT A VIEW: THE WHITE BAND IS SOLID AND ABRASIVE. THE ROCK ABOVE IT AND BELOW IT IS LOOSE. If the holds are moving under your hands you are off the band — traverse back to the white rather than pressing on.\n\nHOLD YOUR HEIGHT AT ABOUT 7,500 FT. Drifting HIGH is worse than drifting low: it puts you above the band and above other parties, in the position that generates the rockfall this traverse is notorious for. The low variation is a deliberate choice, not a mistake.\n\nTHE BASE OF THE CLIMBING IS THE NOTCH BEHIND THE BLACK PROW. Everything before it is traversing; the class 4 finish begins there. If you are scrambling steeply and you have not passed a dark tower, you have started up too early.\n\nWHAT GOING TOO FAR LOOKS LIKE: the traverse ends at the peak. If the ribs and gullies keep coming and you have not found a white band pointing anywhere, you are on the wrong tier of the mountain — go back to a rib you can identify and re-find the band, rather than gaining height to look."
+     }
+    ],
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 4,
+     "descentTimeHrs": 3,
+     "approachTimeHrs": 3,
+     "recommendedStart": "Early morning start from Snowgrass Flats camp to allow a full day for the Old Snowy/Ives/Gilbert traverse"
+    },
+    "what_to_bring": [
+     "Trekking poles",
+     "Sun protection (largely open, exposed terrain)",
+     "Extra water (creeks can run dry by late summer)",
+     "Backpacking/camping gear for a Snowgrass Flats base camp"
+    ],
+    "descent": "Reverse the Goat Ledges/Goat Ribs traverse and white-aggregate-band route back to Snowgrass Flats camp, then hike out Trail #96.",
+    "itinerary": "Commonly done as a multi-summit traverse from a Snowgrass Flats camp: Day 1, hike in to Snowgrass Flats (or Lower Snowgrass); Day 2, traverse to and climb Old Snowy Mountain, Ives Peak, and Gilbert Peak in a single long day (reported round-trip totals of ~22 miles and ~7,500 ft cumulative gain/loss for the full multi-peak traverse) before returning to camp; Day 3, hike out.",
+    "access": {
+     "fees": "Valid Recreation Pass / Northwest Forest Pass required at the trailhead",
+     "notes": "Straddles Gifford Pinchot NF (west) and Okanogan-Wenatchee NF (east, White Pass side); the standard approach (Snowgrass Flat, Berry Patch trailheads) is on the Gifford Pinchot side.",
+     "rules": "Group size capped at 12 (people + stock combined) per 36 CFR 261.58(f).",
+     "permit": "Free, self-issued Goat Rocks Wilderness permit required at the trailhead",
+     "closures": "No camping or campfires at Snowgrass Flats itself (camp at designated sites such as Lower Snowgrass or Bypass Camp instead); no camping within 100 ft of the PCT or lakes.",
+     "group_limit": 12,
+     "landManager": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District)",
+     "land_manager": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District) — Goat Rocks Wilderness",
+     "parking_pass": "Not required at Snowgrass Flat; required at Berry Patch trailhead — $5/day or $30/year Northwest Forest Pass.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Goat Rocks Wilderness permit",
+      "where": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+     }
+    }
+   }
+  }
+ ]
+}

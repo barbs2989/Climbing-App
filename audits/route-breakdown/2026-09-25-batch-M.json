@@ -1,0 +1,420 @@
+{
+  "wa_mount_stuart_stuart_glacier_couloir": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Couloir entry",
+        "grade": "40–50° snow, bergschrund",
+        "notes": "Start at about 7,800 ft at the top of the Stuart Glacier. The bergschrund below the couloir can be the first real obstacle: in sugary spring snow a safe crossing is hard to find, so be ready to belay it. Above, the gully runs at 40–50° and narrows steadily for a few hundred feet toward the first step."
+      },
+      {
+        "pitch": "First step",
+        "grade": "Ice step, 60–80°",
+        "crux": true,
+        "notes": "The crux sits in the narrowest part of the couloir, roughly halfway up: a short steep step that often holds around 100 ft of water ice up to 60°, with sections described as near 80°. It can be anything from firm snow to verglas over rock, so bring screws and a few rock pieces and expect to pitch it out in lean conditions."
+      },
+      {
+        "pitch": "Second step",
+        "grade": "Short rock or ice step",
+        "notes": "A little above the first step a second, shorter step of rock or ice interrupts the gully. It is brief, but thin ice over rock here protects poorly; above it the couloir widens out."
+      },
+      {
+        "pitch": "Upper snowfield",
+        "grade": "50° snow",
+        "notes": "The couloir opens into a wider snowfield. Climb a couple hundred feet of sustained 50° snow to the small notch on the upper West Ridge. Late in the day this slope softens and becomes tiring; the exit rocks at the notch are low 5th class on the normal finish, or about 5.7 on the left-hand variation."
+      },
+      {
+        "pitch": "Ridge 1",
+        "grade": "low 5th",
+        "notes": "From the notch, drop about 10 ft onto the south side and follow ledges along the south flank of the ridge. In early season these ledges are commonly rimed and iced, and the traversing and short downclimbs are harder to protect than the grade suggests."
+      },
+      {
+        "pitch": "Ridge 2",
+        "grade": "low 5th",
+        "notes": "Easy fifth-class ground that steepens toward the top of the pitch. Stay on the south side rather than being drawn onto the colder, more exposed north face."
+      },
+      {
+        "pitch": "Ridge 3",
+        "grade": "mid 5th",
+        "notes": "Traverse diagonally across mid-fifth-class rock into a gully that leads back up to the crest. With rime on the rock this is mixed climbing in crampons, often graded M3–M5 depending on season."
+      },
+      {
+        "pitch": "Ridge 4-6 to summit",
+        "grade": "mid 5th",
+        "notes": "Class 3 ledges link short crack systems of mid-fifth-class climbing to the summit block. Near the top a short 5.6 lieback can be bypassed by a delicate traverse across the upper north face; the final moves to the summit follow a down-sloping ledge that holds ice early in the year and takes little protection."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 8 entries. The couloir is now split into bergschrund/entry, the crux first step, the second step and the upper snowfield; the single 'Ridge, 6 pitches' row (label dropped, since it now covers four entries) is replaced by per-pitch West Ridge entries from the notch. No lengths stored (none before; none sourced per section). The old mixed grade chip 'WI2-3, M5- (early) / M3-M4 (late)' moved into notes, since the brief wants a single token.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+        "https://stephabegg.com/trip-reports/washington/stuart-glacier-couloir/",
+        "https://www.jeffreyjhebert.com/adventures/stuart-glacier-couloir-on-mount-stuart",
+        "https://davidmoskowitz.net/blog-posts/2013/06/climbing-the-stuart-glacier-couloir-mount-stuart-north-cascades",
+        "https://www.summitpost.org/stuart-glacier-couloir/168438 (search snippet only; page returned 403)"
+      ],
+      "other_findings": "The 'First step' carries a terrain chip, not an AI/WI grade. Sources describe 'about 100 ft of water ice up to 60°' and 'a short 80 degree step' but give no ice grade, so the step renders as a stage marked crux. descent_text says the Cascadian Couloir. The Mountain Project page names the Sherpa Glacier as the typical descent from a north-side camp. Both are valid; which one fits depends on where the party camped."
+    }
+  },
+  "wa_south_headwall": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower headwall",
+        "grade": "low 5th",
+        "notes": "From the cirque below the steep south-side cliffs at about 8,700 ft, start up the centre of the headwall. A large crack in clean white granite gives the first fifth-class climbing; the line trends a little left. Ledges are available for a belay on every pitch, and the approach gullies below shed rock onto this start."
+      },
+      {
+        "pitch": "Crux sections (x2)",
+        "grade": "5.7",
+        "crux": true,
+        "notes": "Two short steep sections, each 20–30 ft, are the hardest climbing on the route. Both take good gear. Between them the ground mixes face climbing and small chimneys; the rest is 4th and low 5th class. No fixed gear has been reported, so bring cams, nuts and long slings."
+      },
+      {
+        "pitch": "Upper South Rib",
+        "grade": "low 5th",
+        "notes": "Gain the upper South Rib and follow it back rightward. A chute leads onto a large ledge overlooking the west face, then a slab traverse leads toward the summit pyramid. Loose blocks sit on the ledges and rockfall is frequent, so keep the rope clear of them."
+      },
+      {
+        "pitch": "Summit scramble",
+        "grade": "Scramble",
+        "notes": "The route tops out just southwest of the true summit; a short scramble reaches the top. Descend south by the Cascadian Couloir."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "2 → 4 entries: kept both existing labels, added the upper South Rib and the summit exit. The 'Lower headwall' token changed from '4th/low 5th' to 'low 5th', since the brief wants no alternatives in a token and the 4th-class part is in notes. Sources describe sections, not individual numbered pitches, so the table stays section-based. No lengths (none sourced).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107554753/south-headwall",
+        "http://publications.americanalpineclub.org/articles/12196813002/North-America-United-States-WashingtonCascade-Mountains-Mount-Stuart-South-Ridge-and-Headwall"
+      ],
+      "other_findings": "The stored route grade is 5.8, and the stored beta line says '5.8 YDS'. Both sources say the technical pitches are never harder than 5.7, with two 20–30 ft 5.7 sections. The grade column is probably one letter-grade high."
+    }
+  },
+  "wa_king_kong_gorillas_direct_direct": {
+    "area": "wa_mount_stuart",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.10+",
+        "lengthM": 40,
+        "anchor": "gear",
+        "notes": "Start from a small ledge just above the snow on the obvious hand-and-finger splitter. Mantle out the top, pass a tree onto a ledge, then climb a short corner into a chimney and belay above it. The tree has slings around it that are handy for hauling a pack."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.9+",
+        "lengthM": 55,
+        "anchor": "slung pillar",
+        "notes": "Go left up hanging corners around several arêtes, shuffle a short wide section à cheval, then traverse left on slab along an exposed crack. Skip the bolted belay and keep going left on slab through a short face crux to a large slung pillar. Rope drag is severe, so many parties split this pitch."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.10-",
+        "lengthM": 20,
+        "notes": "The Monkey Traverse. Climb the corner of the pillar, then swing right along an exposed horizontal crack to a large sloping ledge. Protect the traverse well for the second and extend placements to manage the rope."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.9",
+        "lengthM": 60,
+        "notes": "Climb up, then slightly left into a V-slot. Finger cracks and varied stemming weave left, right and left again to the big midway ledge. Here the original Gorillas in the Mist breaks right onto 5.8 ground; King Kong heads left."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.10",
+        "lengthM": 30,
+        "notes": "Move the belay about 25 ft left to the base of a striking corner crack. A crux start leads into a clean-lined corner and a good belay ledge. This pitch and the next are shared with Gorillas Direct."
+      },
+      {
+        "pitch": "6",
+        "grade": "5.10+",
+        "lengthM": 55,
+        "anchor": "fixed pins",
+        "notes": "A short, stout corner crack ends in a mantle onto a ledge. Continue up the crack onto slab where protection is sparse, traverse right-to-left into another corner crack, and finish with a rightward traverse to a two-pin belay. Back the pins up with small nuts."
+      },
+      {
+        "pitch": "7",
+        "grade": "5.10+",
+        "lengthM": 40,
+        "anchor": "bolted",
+        "notes": "Fifth Avenue. Climb the corner and the roof bulge above, move right then left into a stem-box, then go right on steep jugs with spaced protection to a two-bolt anchor at the base of the headwall. Grades given for this pitch range from 5.10b to 5.10+; back up the anchor with small nuts."
+      },
+      {
+        "pitch": "8",
+        "grade": "5.11d",
+        "lengthM": 55,
+        "crux": true,
+        "notes": "The Empire State Building headwall splitter. Slabby cracks and blocks lead to vertical tombstone flakes, then a step left into a hand-and-finger crack and back right into the main splitter. It is sustained hands and fists with powerful laybacking, wide sections and chockstones, with a crux pulling the lip. Graded 5.11d by the first-ascent party and 5.12a on some topos. Two small fixed nuts remain."
+      },
+      {
+        "pitch": "Exit",
+        "grade": "5th class",
+        "notes": "A final fifth-class pitch scrambles to the top of the wall. From there most parties descend the West Ridge gullies to Stuart Pass rather than continuing to the summit."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "8 → 9 entries. Lengths moved out of notes into lengthM (all from the Mountain Project pitch list; the headwall is 54 m in the first-ascent write-up). Belay anchors added where sources state them. Added the final 5th-class exit pitch. P8 token changed 5.12- → 5.11d to match the first-ascent grade and the route's own grade column, with the 5.12a opinion in notes.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+        "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html",
+        "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+        "https://cascadeclimbers.com/forum/topic/100087-tr-mt-stuart-fa-king-kong-gorillas-in-the-mist-direct-direct-992016/ (search result only)"
+      ],
+      "other_findings": "The stored `fa` is 'Sol Wertkin & Tyree Johnson, 2016 (freed by Sol Wertkin)', while the stored beta says 'Sol Wertkin and Jon Gleason'. Sources: Tyree Johnson was with Wertkin when the headwall was first climbed in early September 2016; the clean ascent on 9 Sept 2016 was with Jon Gleason. The two columns disagree with each other. Mountain Project grades the route 5.12a; the stored grade is 5.11d (the first-ascent party's grade)."
+    }
+  },
+  "wa_colchuck_peak_holsten_hilden": {
+    "area": "wa_colchuck_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1-2",
+        "grade": "AI3+",
+        "lengthM": 120,
+        "notes": "Start right of the Northeast Couloir, at the foot of the Hidden Couloir. Two rope-stretching pitches of ice lead into the couloir. They take screws well when formed, and grades given range from AI3 to AI3+. This is the most reliable ice on the route; the ground above depends on winter snow conditions."
+      },
+      {
+        "pitch": "3",
+        "grade": "50–60° snow",
+        "notes": "Leave the Hidden Couloir and climb a few hundred feet of 50–60° snow up and left toward a steep rock band. Protection is sparse, so carry a picket, and the slope loads with wind-drifted snow."
+      },
+      {
+        "pitch": "4-5",
+        "grade": "Snow over rock",
+        "notes": "Two pitches of unconsolidated snow over moderate rock. Clear the snow to find placements for rock gear and pins, and move carefully: the snow gives little hold for tools, and a slip here runs down the slope below."
+      },
+      {
+        "pitch": "6-7",
+        "grade": "M6",
+        "crux": true,
+        "notes": "Traverse about 30 ft left into a chimney and climb two pitches of M6 mixed ground up it. Stubby screws, pitons and small cams protect it. This is the sustained technical heart of the route."
+      },
+      {
+        "pitch": "8+",
+        "grade": "Steep snow, rock band",
+        "notes": "More steep snow leads to a final rock band. Climb through it to a notch on the north ridge crest."
+      },
+      {
+        "pitch": "Notch crack",
+        "grade": "M6",
+        "notes": "Out of the north-ridge notch, a tricky wide crack at M6 is the last hard move. From its top, traverse around to the west into the final couloir of the North Buttress Couloir route."
+      },
+      {
+        "pitch": "Summit pitch",
+        "grade": "Short steep mixed step",
+        "notes": "Up the final couloir of the North Buttress Couloir line, one more short but steep mixed pitch reaches the summit, which is often rimed and windswept in winter. Descend by the Colchuck Glacier."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "5 → 7 entries. The 30 ft traverse moved from '4-5' to the chimney pitch it leads into. The '8+' row is split: snow and rock band to the north-ridge notch; then the M6 wide crack out of the notch and the traverse into the North Buttress Couloir; then the final mixed pitch. Added lengthM 120 on '1-2', from two 60 m pitches. Ice token AI3 → AI3+ (first-ascent report), with the range in notes.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+        "https://www.mountainproject.com/route/112066235/holsten-hilden"
+      ],
+      "other_findings": "The grade column says 'Grade IV, M6, AI3+'. Mountain Project lists Grade III, WI3 M6, 1,600 ft; the AAJ report says IV M6 AI3+. length_m 488 is consistent with 1,600 ft. `pitches` is null, and the report describes about 9–10 pitches."
+    }
+  },
+  "wa_dragontail_peak_r4": {
+    "area": "wa_dragontail_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Hidden Couloir (1st)",
+        "grade": "40–50° snow/ice",
+        "lengthM": 244,
+        "notes": "From Colchuck Lake, aim for the lowest rock protrusion near the middle of the face and bear slightly left. There are two possible starts (left or right) into the first couloir, which cannot be seen from the lake. Climb about 800 ft of 40–50° snow, sometimes with a tongue of blue ice to the right that takes screws. Most parties simul-climb or solo this section."
+      },
+      {
+        "pitch": "The Runnels",
+        "grade": "WI3",
+        "lengthM": 140,
+        "crux": true,
+        "notes": "About three pitches of 70–80° ice gullies over slabby rock link the first and second couloirs, rated up to M3 when lean. Some years it is fat, easy ice; other years a paper-thin sheet protected by pins and rock gear more than screws. There are two alternatives: a left-trending steep snow ramp, followed by a 20 m rappel from a fixed anchor, or a 5.8 rock bypass."
+      },
+      {
+        "pitch": "2nd Couloir",
+        "grade": "40–50° snow/ice",
+        "lengthM": 183,
+        "notes": "Over 600 ft of 40–50° snow and ice. Some seasons it holds a short AI3 step. After a dry spell it can be knee-deep unconsolidated snow that is slow and exhausting; parties typically simul-climb it."
+      },
+      {
+        "pitch": "Step to 3rd couloir",
+        "grade": "Ice or mixed band",
+        "notes": "A short steep band separates the second and third couloirs. Exit up and right, either by a mixed pitch or a steep snow pitch depending on conditions. The band ranges from thick easy ice to runout, thin mixed climbing on slab that is hard to protect, so plan to belay it."
+      },
+      {
+        "pitch": "3rd Couloir",
+        "grade": "40–50° snow/ice",
+        "notes": "A few hundred feet of snow at a similar or slightly lower angle cuts behind the Fin, the prominent rock feature on the upper face. It sometimes holds a short, thick WI2 step and ends on an open slope a couple hundred feet below the summit."
+      },
+      {
+        "pitch": "Summit scramble",
+        "grade": "Snow scramble",
+        "notes": "A short snow scramble and traversing slope from the top of the third couloir reach the summit. Descend by the long traverse to Asgard Pass."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "5 → 6 entries: added the step between the 2nd and 3rd couloirs. Runnels token 'WI3 M3 (70-80°)' → 'WI3', with M3 and the angle in notes. Dropped two invented lengths: 3rd Couloir (130 m) and Summit scramble (61 m); sources say only 'a few hundred feet' and 'short'. Kept 244 m (800 ft), 140 m (three pitches, 140 m) and 183 m (600+ ft), which are sourced.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107059043/triple-couloirs",
+        "https://www.alpineinstitute.com/route-profile-triple-couloirs-dragontail-peak-ai3-5-8-grade-iii-iv/",
+        "https://climberkyle.com/2018/03/31/dragontail-peak-triple-couloirs-wi2-m3/",
+        "https://spokalpine.com/2017/04/29/dragontail-peak-triple-couloirs-iii-ai3/"
+      ],
+      "other_findings": "The grade column ('Grade IV, WI3 M3, steep snow (R)') matches Mountain Project; the guide service calls it AI3, 5.8, III–IV. No change needed. `pitches: 20` is the Mountain Project figure."
+    }
+  },
+  "wa_the_tooth_fairy": {
+    "area": "wa_the_tooth",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "grade": "5.7",
+        "bolts": 6,
+        "anchor": "bolted",
+        "notes": "Scramble to the start, climb up inside the corner, then step left onto the face on good hands. Early in the season a moat between the snow and the rock can make reaching the first bolt awkward."
+      },
+      {
+        "pitch": "P2",
+        "grade": "5.8+",
+        "bolts": 13,
+        "anchor": "bolted",
+        "notes": "Face climbing on big holds moves left onto the top of the face, then follows a series of ledges eastward. The next bolt often cannot be seen until you are on each ledge, so keep following the ledge line rather than wandering upward. Bring enough draws: this is the longest bolt line on the route."
+      },
+      {
+        "pitch": "P3",
+        "grade": "5.7",
+        "anchor": "bolted",
+        "notes": "Follow the bolts up and left on easy but lichen-covered 5.7 to the next belay. The rock is dirtier here than on the rest of the route; it is slippery if damp."
+      },
+      {
+        "pitch": "P4",
+        "grade": "5.8",
+        "bolts": 7,
+        "anchor": "bolted",
+        "notes": "Climb the bolt line to a small face, traverse slightly right, then go straight up to the belay."
+      },
+      {
+        "pitch": "P5",
+        "grade": "5.9+",
+        "bolts": 9,
+        "anchor": "bolted",
+        "crux": true,
+        "notes": "Look left for the bolt that gets you onto the ledge; one handhold here is loose. Traverse right along the ledge, make awkward moves up through an opening, then finish on pumpy climbing to the anchor. Extend draws around the traverse to keep rope drag down."
+      },
+      {
+        "pitch": "P6",
+        "grade": "5.6",
+        "bolts": 5,
+        "anchor": "bolted",
+        "notes": "Easy climbing up the bolt line to the last bolted belay. This is the top of the rappel line: from here, rappel the route (six single-rope or three double-rope rappels, 60 m ropes) instead of going to the summit."
+      },
+      {
+        "pitch": "P7",
+        "grade": "Scramble",
+        "bolts": 1,
+        "anchor": "gear",
+        "notes": "Easy scrambling, including a left-facing dihedral with one bolt, leads to the true summit. There is no bolted anchor at the top: build one from slings around blocks, small cams (about 0.4–0.5) or nuts, and return to the P6 anchor to rappel."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same 7 entries and labels. Added bolted anchors on P1–P6 and a gear anchor on P7. Moved bolt counts from notes into `bolts`; P3's '4-5' is set to 5 (the higher count; see other_findings). Fuller route-finding notes: the ledge line on P2, the loose hold on P5, the moat at the start. No lengths: no pitch lengths are published, and a split of the 152 m total would be invented.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+        "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy (search snippet only; 403)",
+        "https://www.outdoorproject.com/united-states/washington/tooth-tooth-fairy-57 (search snippet only; site moved)"
+      ],
+      "other_findings": "P3 is given as '4-5 bolts' by the main source; a reviewer may prefer to omit `bolts` on P3 rather than take 5. For P5, one search snippet (probably the Mountaineers page) says 7 bolts; Mountain Project says 9 (kept, as stored). The stored route grade is 5.9 and Mountain Project gives 5.9+."
+    }
+  },
+  "wa_southwest_face": {
+    "area": "wa_the_tooth",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "grade": "5.5",
+        "anchor": "tree",
+        "notes": "Pass below the South Face start and continue about 20 m around the mountain, north of the Pineapple Pass gully, to three low-angle open books; the first and third are the better choices. Climb the chosen dihedral toward a big tree slung with rap rings. Stay left of the large body-width crack: getting drawn into it adds awkward, poorly protected climbing (5.6–5.7) and heavy rope drag."
+      },
+      {
+        "pitch": "P2",
+        "grade": "5.5",
+        "notes": "From the tree, easier climbing passes a brushy area with a slung shrub and reaches a sloping crack, then the left-facing slab. Belays are thin here: either build a hanging belay on gear, or run the rope out to better stances. Many cracks on this face flare, so small cams protect it best."
+      },
+      {
+        "pitch": "P3",
+        "grade": "5.5",
+        "anchor": "tree",
+        "notes": "Find three cracks leading up to a small overhang and face-climb to the left of them, where protection is sparse and the exposure is big. Pull onto a blocky plateau about 25 m below the summit and keep going straight up to a tree below the catwalk. Traversing right puts you on the crowded South Face belays, and loose rock here can fall on parties below."
+      },
+      {
+        "pitch": "P4",
+        "grade": "4th class",
+        "notes": "Finish on the upper South Face route to the true summit. Expect traffic and rappelling parties on this shared ground, and pass them only where it is safe."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 4 entries: the combined 'P1-P2' row is split into P1 and P2, since sources describe two distinct pitches with a tree belay between them. P3 and P4 are kept. Added tree anchors where described. No lengths: the only length figures come from one party's rope-stretching choices.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/120386375/southwest-face",
+        "http://cwillett.imathas.com/local/tooth2/index.html",
+        "https://www.summitpost.org/sw-face-of-the-tooth/487315 (search snippet only; 403)",
+        "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-the-tooth-southwest-face (search snippet only; 403)"
+      ],
+      "other_findings": "The pitch-level detail comes largely from one detailed personal trip report, backed by the Mountain Project summary. Route-finding on this face is not obvious, and the pitch breaks depend on where parties belay. descent_text is long and hedged; it may be worth a separate look."
+    }
+  },
+  "wa_chair_peak_northwest_ridge": {
+    "area": "wa_chair_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "lengthM": 61,
+        "anchor": "tree",
+        "notes": "From the grassy gully above Thumbtack Rock, start up the gully to the left of the treed saddle. Gain the ridge and cross over it to belay from trees on its south side."
+      },
+      {
+        "pitch": "2",
+        "lengthM": 27,
+        "notes": "From the trees, scramble down and to the left, below a chimney-like feature with a chockstone at its top. It cannot be seen from the belay but is obvious once you are across. Climb to the base of the chockstone."
+      },
+      {
+        "pitch": "3",
+        "lengthM": 61,
+        "anchor": "tree",
+        "notes": "Work around and then over the chockstone onto the ridge proper. Higher up there is a hard-to-protect move up a small vertical face of poor-quality rock. Belay at a flat spot with trees on the right side of the ridge."
+      },
+      {
+        "pitch": "4",
+        "lengthM": 46,
+        "notes": "Continue left and regain the crest. Steep direct lines off the crest are loose and harder than the route grade, so stick to the easier ridge line; the rock quality is poor throughout."
+      },
+      {
+        "pitch": "5-6",
+        "lengthM": 91,
+        "notes": "Run-out ridge climbing continues past a false summit to the true summit, often simul-climbed. For the descent, go south over the false summits to a slung tree in the second gully heading east."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 5 entries: '1-2' and '3-4' are split into their individual pitches; '5-6' is kept. Lengths come from the pitch lengths in the route description (200/90/200/150/300 ft). Dropped the stored '3rd-4th class' and '4th-5th class' chips: no source grades those pitches. 5.7 and crux on P3 are inferred: it is the route grade, and P3 holds the only move the description singles out as hard.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/117683574/northwest-ridge"
+      ],
+      "other_findings": "Only one source gives pitch-level detail (a single-author Mountain Project description), and no second source was found. On P4 the description notes a steep off-line section of about 5.9 on poor rock, so the notes steer climbers to the easier line. A reviewer may want to hold this route to a lower bar or skip it."
+    }
+  }
+}

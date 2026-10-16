@@ -1,0 +1,424 @@
+{
+ "applied": [
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Which summit the route climbs (West Peak vs true East Peak)"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "face",
+   "path": [],
+   "fact": "Which summit the route climbs (West Peak vs true East Peak)"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Which summit the route climbs (West Peak vs true East Peak)"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Gain and loss"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Gain and loss"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Gain and loss"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Gain and loss"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Gain and loss"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Gain and loss"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit time"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "climbing_route",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "National park boundary / permit"
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "National park boundary / permit"
+  },
+  {
+   "id": "wa_goat_mountain_east_peak",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Last reliable water (East Peak Traverse approach variant)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "before": {
+    "beta": "The West Peak (6,721 ft) is the more commonly accessed summit, featuring good trail access to within 50 vertical feet of the summit. The route involves a steep permanent snowfield traverse requiring an ice axe at all times, then a short, relatively straightforward scramble to the top. The route offers commanding views of Mount Baker, Mount Shuksan, Mount Sefrit, and the surrounding North Cascades peaks.",
+    "face": "West Peak",
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2",
+      "notes": "Established trail through old-growth forest with switchbacks. ~5 miles roundtrip to maintained trail terminus (5,400 feet). Forest section may be muddy in late spring.",
+      "pitch": "1"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Off-trail scrambling through heather, talus, and alpine meadow. Route-finding required. Climbing directly toward snowfield below West Peak. Loose talus requires careful footing.",
+      "pitch": "2"
+     },
+     {
+      "grade": "Class 2-3 (snow)",
+      "notes": "Steep permanent snowfield traverse (~400-500 vertical feet) requiring ice axe and crampons/microspikes. This is the crux pitch; fall here is potentially fatal. Angle ~40-45 degrees.",
+      "pitch": "3"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Summit scramble on exposed Class 2-3 terrain with some exposure. Final 100-150 vertical feet to West Peak summit. No technical rock climbing but scrambling is exposed with 500+ foot drops nearby.",
+      "pitch": "4"
+     }
+    ],
+    "gain_ft": 4300,
+    "loss_ft": 4800,
+    "itinerary": {
+     "cal": "A permanent snowfield often lingers near the summit gully into summer, so many parties carry an ice axe even late in the season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is a single long day, not a backpack — parties leave the Hannegan Pass Road trailhead (~2,500 ft) before dawn, climb the maintained Goat Mountain Trail #673 through forest into heather/huckleberry meadows, then follow unmaintained tread and open slopes to a saddle below the false summit before dropping and re-climbing to the East Peak via an exposed Class 2 gully. Most parties are back at the car by early evening.",
+       "hours": 10,
+       "miles": 10.5,
+       "title": "Car-to-car: trail, meadows, then the East Peak scramble",
+       "gainFt": 5100,
+       "lossFt": 5100,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:30–6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Start up Goat Mountain Trail #673 from the ~2,500 ft trailhead off Hannegan Pass Road."
+        },
+        {
+         "time": "+2–2.5 hr",
+         "label": "Break into the meadows",
+         "detail": "Maintained trail (~3 mi) climbs steadily through forest to open heather/huckleberry meadows above treeline."
+        },
+        {
+         "time": "+3.5–4 hr",
+         "label": "Leave the trail for the East Peak",
+         "detail": "Past ~3,200 ft of gain, cross-country toward the false-summit saddle, losing ~300 ft before the final push."
+        },
+        {
+         "time": "+5–6 hr",
+         "label": "Class 2 gully to the summit",
+         "detail": "Narrow, exposed scrambling in a loose gully gains the last ~1,400 ft; stay in the gully to avoid the worst exposure. Ice axe recommended for a lingering snow patch near the top."
+        },
+        {
+         "time": "~Midday",
+         "label": "Summit",
+         "detail": "True (East) summit at 6,891 ft; views of Baker, Shuksan, and the Nooksack valley."
+        },
+        {
+         "time": "~4–6 PM",
+         "label": "Back at trailhead",
+         "detail": "Reverse the ascent line; the loose goat-path descent and exposed downclimbing near the top are the crux of the return."
+        }
+       ],
+       "objective": "Reach Goat Mountain's true (East) summit, 6,891 ft"
+      }
+     ],
+     "totalNote": "A long single day: roughly 10 hours car-to-car for about 10–11 miles and 5,000+ ft of gain/loss to reach the true (East) summit — no camp involved."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "~11 miles round trip with ~4,400 ft total gain, including a steep, sustained 1,500 ft/1-mile scramble pitch above the maintained trail — a full, strenuous day (route planner estimates ~6 hrs total)",
+      "packWeight": "Light day pack (water, layers, food) — no technical gear required"
+     },
+     "approachTime": "~3-4 hrs on the maintained Goat Mountain Trail before reaching the scramble portion; total round trip roughly 6 hrs",
+     "requiredSkills": [
+      "Class 2-3 scrambling / steep loose rock",
+      "off-trail routefinding above the trail's end",
+      "comfort on exposed, unmaintained ridge terrain",
+      "early-season snow travel judgment if climbing before mid-July"
+     ],
+     "experienceLevel": "Comfortable with unmaintained, loose Class 2-3 scrambling above treeline; prior boot-path/off-trail routefinding experience recommended given the steep, loose final stretch to the false summit"
+    },
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:30–6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "This is a single long day, not a backpack — parties leave the Hannegan Pass Road trailhead (~2,500 ft) before dawn, climb the maintained Goat Mountain Trail #673 through forest int…",
+       "fromTo": "Car-to-car: trail, meadows, then the East Peak scramble",
+       "section": "Climb"
+      }
+     ]
+    },
+    "approach": "From the Goat Mountain Trailhead (day-use parking just off FS-32/Hannegan Pass Rd, ~2.1-2.3 mi up from the Glacier Public Service Center), follow Goat Mountain Trail #673. It's a well-built but relentlessly steep trail that gains the ridge via dozens of switchbacks, crossing a small cascading creek/waterfall repeatedly in the first mile through old-growth fir and hemlock (look for ~100-year-old fire-scarred cedar snags). Around 1 mi (~3,200 ft) the grade eases and the trail traverses onto a narrow side-hill ridge. At roughly 2 mi the trail crosses into Mount Baker Wilderness; just past the boundary sign an unsigned spur ('Old Goat Trail') splits east toward an old lookout site - stay on the main tread. Big views of Baker, Shuksan, and Sefrit open through meadows by 2.7 mi, and the maintained trail tops out on the ridge crest at a 5,200-ft viewpoint knob around mile 4, with the official terminus near 5,600 ft (~4.1 mi, ~3,100 ft gain). Beyond this point the route leaves maintained tread and becomes an open ridge boot path: continue about 0.8 mi and 1,000 ft more to the ~6,600-ft West Peak false summit. Snow lingers here well into summer (reports note solid snow from ~4,300-4,500 ft), so carry an ice axe from around that elevation upward, and expect crampons or snowshoes to be useful in early/late season. Do not push straight over the false summit's top - it corniced and exposed; bypass it on the south or west slope. Past the false summit the ridge drops roughly 300 ft into a notch/col, then climbs a final ~1,400 ft of mixed snow, rock, and short exposed steps to the true (East) summit at 6,892 ft. A narrow, moderately exposed knife-edge-ish section near the top is the crux of the scramble - keep the axe in hand and self-arrest-ready on the steep snow. There is no reliable water source beyond the creek crossings in the first mile of trail; carry what you need for the ridge and summit push.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Open ridge boot path to the West Peak false summit",
+      "notes": "Beyond the official trail terminus near 5,600 ft the route leaves maintained tread for an open ridge boot path: about 0.8 mi and 1,000 ft more to the ~6,600-ft West Peak false summit. Snow lingers well into summer (reports note solid snow from ~4,300-4,500 ft), so carry an ice axe from around that elevation upward, and expect crampons or snowshoes to be useful in early/late season."
+     },
+     {
+      "n": 2,
+      "label": "False summit bypass",
+      "notes": "Do not push straight over the false summit's top — it is corniced and exposed; bypass it on the south or west slope."
+     },
+     {
+      "n": 3,
+      "label": "Notch/col and the final ridge to the East summit",
+      "notes": "Past the false summit the ridge drops roughly 300 ft into a notch/col, then climbs a final ~1,400 ft of mixed snow, rock, and short exposed steps to the true (East) summit at 6,892 ft."
+     },
+     {
+      "n": 4,
+      "label": "Knife-edge crux near the top",
+      "notes": "A narrow, moderately exposed knife-edge-ish section near the top is the crux of the scramble — keep the axe in hand and self-arrest-ready on the steep snow. No reliable water beyond the creek crossings in the first mile."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Goat Mountain Trail #673 to the end of maintained tread, then over the West Peak false summit",
+      "notes": "From the Goat Mountain Trailhead, day-use parking just off FS-32 (Hannegan Pass Road) about 2.1-2.5 miles up from the Glacier Public Service Center, follow Goat Mountain Trail #673. It is well built and relentlessly steep, gaining the ridge by dozens of switchbacks and crossing a small cascading creek repeatedly in the first mile through old-growth fir and hemlock.\n\nAround a mile in, near 3,200 ft, the grade eases and the trail traverses a narrow side-hill ridge. At roughly two miles it crosses into the Mount Baker Wilderness; just past the boundary sign an unsigned spur — the Old Goat Trail — splits east toward an old lookout site. Stay on the main tread.\n\nMeadows and big views open by 2.7 miles; the maintained trail tops out on the crest at a 5,200 ft viewpoint knob around mile 4, with the official terminus near 5,600 ft.\n\nBeyond that it is an open ridge boot path, about 0.8 mile and 1,000 ft more to the West Peak false summit near 6,600 ft, and then on to the true East summit.\n\nThere is no reliable water beyond the creek crossings in the first mile.",
+      "season": "Roughly Jul-Sep. Snow lingers on this ridge and reports have found solid snow from 4,300-4,500 ft well into summer",
+      "hazards": [
+       "Cornices on the West Peak false summit, invisible from above",
+       "Solid lingering snow from 4,300-4,500 ft upward well into summer",
+       "A knife-edge-ish exposed section near the true summit",
+       "No reliable water beyond the first mile",
+       "An unsigned spur trail near the wilderness boundary that leads to an old lookout site instead"
+      ],
+      "baseFinding": "THE ROUTE STARTS WHERE THE MAINTAINED TRAIL STOPS, NEAR 5,600 FT, AND THAT END IS ABRUPT. Below it, built tread and switchbacks. Above it, an open ridge boot path with nothing constructed. If you are still on graded trail you have not started the route.\n\nTHE FALSE SUMMIT IS CORNICED — DO NOT GO OVER ITS TOP. This is the one hard rule on the ridge and it is a safety instruction rather than a route preference: the West Peak at about 6,600 ft is corniced and exposed, and the correct line bypasses it on the SOUTH or WEST slope. Cornices are invisible from above and this is precisely the terrain where cloud sits.\n\nTHE 300 FT DROP IS HOW YOU KNOW YOU HAVE PASSED THE FALSE SUMMIT, AND IT IS THE STRONGEST TEST ON THE ROUTE. Past the West Peak the ridge DROPS ROUGHLY 300 FT into a notch before climbing again. So: if you have not descended 300 ft, the high ground in front of you is not the true summit — it is the false one you were supposed to walk around. An altimeter settles this in zero visibility and eyesight does not.\n\nAFTER THE NOTCH it is a final 1,400 ft of mixed snow, rock and short exposed steps to the true East summit at 6,892 ft. The crux is a narrow, moderately exposed knife-edge-ish section near the top — keep the axe in hand and self-arrest-ready on the steep snow.\n\nCARRY THE AXE FROM 4,300-4,500 FT, not from where the snow looks serious. That is where reports put the solid snow, and it is well below the point where a party without an axe realises it wanted one."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.897635,
+      "lng": -121.646195,
+      "elev": 2500,
+      "name": "Goat Mountain Trailhead",
+      "note": "On FS-32 (Hannegan Pass Rd) 2.1 mi off SR 542; Northwest Forest Pass required, vault toilet and parking on both sides of the road.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Reach the trailhead via Hannegan Pass Road (FS-32), off SR 542 near Glacier, about two miles up from the Glacier Public Service Center. Day-use parking is on both sides of the road, with a vault toilet on site, and a Northwest Forest Pass is required."
+     },
+     {
+      "lat": 48.91002,
+      "lng": -121.63782,
+      "elev": 4300,
+      "name": "Mt. Baker Wilderness Boundary / Old Goat Trail split",
+      "note": "Trail enters the Mt. Baker Wilderness here; an unsigned climbers' path (\"Old Goat Trail\") splits east toward a former lookout site — stay on the main trail.",
+      "type": "Junction",
+      "distMi": 2,
+      "directions": "Goat Mountain Trail #673 climbs steeply and almost without let-up from the trailhead, switchbacking through old-growth fir and hemlock and crossing a small cascading creek several times in the first mile. Around 3,200 ft the grade eases and the tread traverses onto a narrow side-hill ridge. The wilderness boundary sign is on that ridge; just past it an unsigned spur splits east toward an old lookout site, so stay on the main tread."
+     },
+     {
+      "lat": 48.915564,
+      "lng": -121.634364,
+      "elev": 5200,
+      "name": "5,200-ft Knob",
+      "note": "Open alpine meadows and huckleberries (in season) around this viewpoint knob, with clear sightlines to Baker, Shuksan, and Sefrit.",
+      "type": "Junction",
+      "distMi": 2.9,
+      "directions": "Keep climbing on maintained trail as forest gives way to heather and huckleberry meadows and the views south to Baker, Shuksan and Sefrit open up. The trail gains the ridge crest at the viewpoint knob."
+     },
+     {
+      "lat": 48.918644,
+      "lng": -121.632444,
+      "elev": 5600,
+      "name": "End of maintained Trail 673",
+      "note": "Trail 673 officially terminates on the ridge crest at 5,600 ft; beyond here toward the East Peak is an unmaintained, unmarked boot path.",
+      "type": "Junction",
+      "distMi": 3.4,
+      "directions": "Follow the crest a little farther to where the maintained tread officially ends. There is no reliable water anywhere above the creek crossings low on the trail, so everything from here on has to be carried from the car."
+     },
+     {
+      "lat": 48.921108,
+      "lng": -121.630908,
+      "elev": 5400,
+      "name": "Basin below the East Peak",
+      "note": "Drop roughly 300 ft over steep, slick vegetation into this basin; a creek provides the best water and camping on the route before the final push.",
+      "type": "Campsite",
+      "distMi": 3.8,
+      "directions": "The end of the trail overlooks a basin to the east, directly under the East Peak. Getting into it means dropping roughly 300 ft down steep, densely vegetated ground that is treacherously slick when wet — this drop, and regaining it on the way out, is the hardest ground of the day to move on. A creek runs through the basin bottom."
+     },
+     {
+      "lat": 48.92542,
+      "lng": -121.62822,
+      "elev": 6400,
+      "name": "Summit gully",
+      "note": "Class 2 gully narrows with exposure dropping away on both sides near the top; stay centered in the gully rather than skirting the edges.",
+      "type": "Hazard",
+      "distMi": 4.5,
+      "directions": "Cross the creek and head up toward the East Peak, picking up an easy class 2 gully. Snow lingers in it into summer, so carry an axe and be ready to self-arrest. Near the top the gully narrows and the ground falls away on both sides — stay centred in it rather than drifting out onto the edges."
+     },
+     {
+      "lat": 48.92845,
+      "lng": -121.62624,
+      "elev": 6891,
+      "name": "Goat Mountain, East Peak (true summit)",
+      "note": "Rocky, narrow summit spine dropping off steeply on all sides; USGS Mount Sefrit quad benchmark, ~120 ft higher than the West Peak across the basin.",
+      "type": "Summit",
+      "distMi": 5,
+      "directions": "Finish up the gully onto the summit spine. It is narrow and rocky, drops off steeply on every side, and the rock near the top is loose."
+     }
+    ],
+    "access": {
+     "fees": "Northwest Forest Pass required to park at the trailhead — $5 for a day pass or $30 annual; the Washington Discover Pass is not honored.",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "permit": "Free self-issued wilderness permit at the trailhead register once the trail enters Mount Baker Wilderness (~2 miles in); maximum party size 12.",
+     "closures": "Forest Road 32 is gated/closed to vehicles in winter (it's groomed/used for backcountry ski and snowshoe touring up to about 6 miles) and reopens as snowpack allows, typically by late spring — check the Mount Baker-Snoqualmie NF current conditions page before early-season or late-fall trips.",
+     "landManager": "Mount Baker Ranger District, Mount Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Mount Baker Wilderness rules apply (party size 12, no campfires). A Northwest Forest Pass is needed to park."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_goat_mountain_east_peak",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Goat Mountain Trail #673 to the viewpoint shoulder, then around the south side of the West Peak",
+      "notes": "Same trailhead and the same first four miles as the standard scramble: from Glacier, SR-542 east 12.5 miles to FR-32, then FR-32 to the Goat Mountain Trailhead near 2,470 ft, and Goat Mountain Trail #673 up the switchbacks and ridge to the viewpoint shoulder around 5,400-5,700 ft.\n\nThe difference is what you do with the West Peak. This line leaves the maintained trail at the shoulder and traverses BELOW the West Peak on its SOUTH side to gain the ridge running toward the East Peak, rather than going over the West Peak's corniced top.\n\nIt is the line that avoids the cornice problem, at the cost of a sidehill traverse on 40-50 degree slopes.",
+      "season": "Roughly Jun-Sep, but the traverse slopes hold snow and an axe is wanted early season",
+      "hazards": [
+       "A sidehill traverse on 40-50 degree slopes, wanting an axe and sometimes crampons",
+       "Cornices on the West Peak above the traverse",
+       "A 300 ft regain on the return that is easy to walk past in cloud",
+       "No maintained tread from the viewpoint shoulder onward",
+       "No reliable water past the first mile of trail"
+      ],
+      "baseFinding": "THE TRAVERSE GOES UNDER THE WEST PEAK, NOT OVER IT, AND THAT IS THE WHOLE ROUTE-FINDING DECISION. From the viewpoint shoulder near 5,400-5,700 ft, leave the trail and traverse BELOW the West Peak on its SOUTH side. If you are gaining height toward a summit ahead of you, you are on the standard scramble over the false summit; if you are holding height and sidehilling with the peak above your left shoulder, you are on this one.\n\nTHE ANGLE IS THE CONFIRMATION. The traverse slopes run 40-50 degrees. That is steep enough that an axe and, early season, step-kicking or crampons are wanted, and it is steep enough to feel wrong if you have wandered onto easier ground. Easy walking on this traverse means you have dropped too low into the basin.\n\nARRIVAL: you have arrived at the climbing when the traverse delivers you onto the connecting RIDGE between the two peaks — ground with air on both sides, running east toward the higher summit. The scramble to the East Peak's top is the last short section above that ridge.\n\nTHE 300 FT REGAIN IS THE RETURN TEST, worth knowing before you commit: coming back, you descend to the saddle and then have to regain roughly 300 ft to reach the Goat Mountain Trail viewpoint shoulder. If you are heading home and only ever going downhill, you have missed the shoulder and are descending an unmaintained slope.\n\nWHICH SUMMIT: the EAST peak is the true and higher one, near 6,890 ft. The West Peak at about 6,600 ft is the false summit that the standard route walks over the top of."
+     }
+    ]
+   }
+  }
+ ]
+}

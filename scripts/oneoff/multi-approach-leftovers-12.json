@@ -1,0 +1,27 @@
+{
+ "wa_mount_crowder_northeast_ridge": {
+  "approach": "Reached only by first climbing Mount Crowder by its Southwest Route, from the col between Phantom Peak and Crowder, and continuing down the far side; there is no separate trailhead approach to this ridge on its own.",
+  "approach_logistics": {
+   "peakLat": 48.7976266,
+   "peakLng": -121.352631,
+   "trailhead": "No separate trailhead — over Mount Crowder by its Southwest Route"
+  },
+  "road": {
+   "name": "Ruth Creek Rd / Hannegan Pass Rd (FR-32)",
+   "status": "Seasonal USFS road, subject to washout",
+   "driveNote": "From WA-542 (Mt. Baker Hwy), follow FR-32 about 5.3 mi to road's end at the Hannegan Pass Trailhead; recent storm damage has at times restricted vehicles to around mile 5.2 — check current Mt. Baker-Snoqualmie NF alerts before you go.",
+   "seasonalGate": "Typically opens once snow clears in early-mid summer and closes with the first significant fall snow."
+  },
+  "bivy": [
+   {
+    "name": "Pickell Pass",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open camp at the pass at the foot of the ridge, used by traverse parties who climb Crowder by its Southwest Route and descend this ridge to the pass.",
+    "water": "Snowmelt",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents"
+   }
+  ]
+ }
+}

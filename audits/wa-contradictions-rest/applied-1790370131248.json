@@ -1,0 +1,643 @@
+{
+ "applied": [
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether the standard descent includes rappels"
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether the standard descent includes rappels"
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Number of days"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "waypoints",
+   "path": [
+    1,
+    "name"
+   ],
+   "fact": "Approach line: cross Early Winters Creek early vs stay west of it"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Approach line: cross Early Winters Creek early vs stay west of it"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Approach line: cross Early Winters Creek early vs stay west of it"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "waypoints",
+   "path": [
+    6,
+    "directions"
+   ],
+   "fact": "Where the route tops out relative to the summit"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the route tops out relative to the summit"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the route tops out relative to the summit"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "pitch_detail",
+   "path": [
+    5,
+    "notes"
+   ],
+   "fact": "Where the route tops out relative to the summit"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Standard descent: rappel the face or not"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "beta",
+   "path": [],
+   "fact": "Pitch grades in the lower chimneys"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Approach / round-trip distance"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach / round-trip distance"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach / round-trip distance"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Hairpin pullout position relative to Washington Pass"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the roped climbing starts"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Where the roped climbing starts"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the roped climbing starts"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Length of the roped climbing"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "lengthM"
+   ],
+   "fact": "Length of the roped climbing"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "lengthM"
+   ],
+   "fact": "Length of the roped climbing"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "lengthM"
+   ],
+   "fact": "Length of the roped climbing"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "obj_haz",
+   "path": [
+    2
+   ],
+   "fact": "Rappel anchor type"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "before": {
+    "descent_text": "The intended descent follows the Beckey-Tate line (scramble to the notch, then the loose gully back to the Hairpin pullout), but at least one party reported being unable to find a rappel anchor along the top of the suggested Beckey-Tate descent and instead had to change into rock shoes and make a high traverse to a saddle before descending — budget extra time and be prepared to build your own anchors.",
+    "descent": "Intended descent is via the Beckey-Tate gully, though one recorded party could not locate rappel anchors and instead downclimbed/traversed to a saddle.",
+    "itinerary": "A long, sustained day: the recorded ascent describes a grueling two-day effort involving multiple linked objectives, with heavy loads carried on the descent."
+   }
+  },
+  {
+   "id": "wa_beckey_tate",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5160,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Same pullout used for the Kangaroo Temple/West Route approach on the outside of the SR-20 hairpin; no permit required.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park in the pullout at the hairpin turn on SR-20, a short distance east of Washington Pass at around 5,100 feet — the same roadside pullout used for the nearby West Route approach on Kangaroo Temple. No permit is required to park or climb from here."
+     },
+     {
+      "lat": 48.511531,
+      "lng": -120.639814,
+      "elev": 5300,
+      "name": "Early Winters Creek Crossing (East Bearing)",
+      "note": "Cross Early Winters Creek here and angle east off the west-face climbers' trail toward the Kangaroo Pass gully system.",
+      "type": "Water",
+      "distMi": 0.4
+     },
+     {
+      "lat": 48.507339,
+      "lng": -120.629967,
+      "elev": 6671,
+      "name": "Kangaroo Pass",
+      "note": "Sparsely cairned bootpath tops out at 6,671-ft Kangaroo Pass, where the Beckey-Tate approach breaks east toward the south-face basin.",
+      "type": "Junction",
+      "distMi": 1.3
+     },
+     {
+      "lat": 48.505385,
+      "lng": -120.624173,
+      "elev": 7400,
+      "name": "Half Moon–Big Kangaroo Col",
+      "note": "Broad, scree-covered col centered between Half Moon and Big Kangaroo — stay centered, as the col adjacent to Half Moon is steeper and looser.",
+      "type": "Junction",
+      "distMi": 1.8,
+      "directions": "Cut left (east) from the pass toward the low point on the ridge between Big Kangaroo and Half Moon, working through the head-of-basin talus and boulder fields — this is the slow, route-finding part of the approach."
+     },
+     {
+      "lat": 48.503707,
+      "lng": -120.624412,
+      "elev": 7600,
+      "name": "Base of South Face / Runout Chimneys",
+      "note": "Low-5th ramp gives way to runout, burly chimneys (5.8+ on pitch 4) before the 900-ft south face's 5.9 finger-crack crux on pitch 5.",
+      "type": "Hazard",
+      "distMi": 2,
+      "directions": "The col drops and traverses you into the south-facing basin directly below Big Kangaroo's south wall; expect snow lingering in the basin in early season. The line is the obvious central ramp-and-ledge system splitting the middle of the face — Kearney-Thomas takes the left fork of the prominent gully system, and Going Down Under starts here before traversing right across the overlaps."
+     },
+     {
+      "lat": 48.502284,
+      "lng": -120.6232,
+      "elev": 8150,
+      "name": "Top of South Face / Snow Gully Exit",
+      "note": "South face ends a few hundred feet below the true summit; exit up the snow-filled gully shared with the West Route to reach the summit block.",
+      "type": "Junction",
+      "distMi": 2.2,
+      "directions": "Climb the six pitches up the central ramp system: a 5.4 ramp, a burly, slightly runout 5.7 chimney, a 5.6 ramp-and-corner to a tree belay, a sustained 5.8+ chimney whose big cams sit far back in the crack, the 5.9+ finger-crack crux, and a 5.8 hand crack/corner that tops out a few hundred feet below the true summit."
+     },
+     {
+      "lat": 48.519416,
+      "lng": -120.617505,
+      "elev": 8326,
+      "name": "Big Kangaroo Summit",
+      "note": "Final 20-ft exposed, unprotected slab move tops out at the small summit bolt shared with the Southwest Rib/West Route.",
+      "type": "Summit",
+      "distMi": 2.3,
+      "directions": "From the last belay scramble about 20 ft up and left to the notch just north of the summit block — the same notch the West Face route uses — then make the short, exposed, essentially unprotected 5.6 slab move, guarded only by a single old 1/4-inch bolt, to the true summit."
+     }
+    ],
+    "itinerary": {
+     "cal": "Approach gullies hold snow into July in a normal year, so many parties prefer late July-September for a drier, faster approach and descent gully.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard parties do this whole route in a single long day from the Hairpin Turn pullout on SR-20 — there's no camp on this route. An early start matters: the approach gullies hold snow into midsummer and afternoon thunderstorms are common on the exposed south face.",
+       "hours": 10,
+       "miles": 4.3,
+       "title": "Car-to-car: approach, climb, descend",
+       "gainFt": 2800,
+       "lossFt": 2800,
+       "packLb": 16,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Hairpin Turn",
+         "detail": "Cross Early Winters Creek and head up through the Kangaroo Pass gullies toward the south face."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Rack up at the base",
+         "detail": "Approach is talus, forest strips, and often lingering snow; timing varies a lot with conditions and party fitness."
+        },
+        {
+         "time": "+4-6 hr",
+         "label": "Climb the six pitches",
+         "detail": "Party often solos or simul-climbs the easier lower pitch(es) before roping up for the harder golden-granite pitches higher up."
+        },
+        {
+         "time": "~1:00-2:00 PM",
+         "label": "Summit (8,326 ft)",
+         "detail": "High point of Kangaroo Ridge, southeast-facing wall."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Descend rappels + gully",
+         "detail": "Two single-rope (60m) raps from slung-block anchors at successive notches, then a scree/snow gully walk-off back toward the highway."
+        },
+        {
+         "time": "~4:30-5:00 PM",
+         "label": "Back at the Hairpin Turn",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Big Kangaroo (8,326 ft) via the Beckey-Tate (5.9+, 6 pitches)"
+      }
+     ],
+     "totalNote": "A long single day car-to-car: roughly 9-11 hrs round trip from the Hairpin Turn for 2,800 ft gain over six pitches of 5.9+ alpine rock."
+    },
+    "descent_text": "Do not plan to rappel the Beckey-Tate line itself — while it's technically possible with two ropes (roughly 5-6 rappels off slings and trees), the route wanders and holds a lot of large loose rock, making rope-stuck and rockfall risk high; most parties explicitly avoid it. Instead, from the top of the route scramble about 20 ft up and left to the notch just north of the summit block — the same notch used by the West Face/Southwest Rib route. From there, downclimb or top-rope the short, unprotected 5.6 summit slab move (protected by a single old bolt) if tagging the true summit, then reverse the shared gully descent: two slung-block anchors get you down with one or two single-rope rappels (a 60m rope is sufficient either way) through the steep/loose upper gully, after which it's a scree-and-snow walk/glissade down the gully back to the approach basin, across Early Winters Creek, and out the climbers' trail to the Hairpin Turn. Expect the full descent to take a couple of hours; keep helmets on throughout given the loose rock in the gully.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout, staying WEST of the creek longer than the West Face line, then over the Half Moon col into the south basin",
+      "notes": "From the Hairpin Turn pullout on SR-20, follow the cairned climbers' trail south along the WEST side of Early Winters Creek toward Kangaroo Temple and Wallaby Peak, BUT STAY ON THE TRAIL, ON THE RIGHT OR WEST SIDE OF THE CREEK, LONGER THAN THE WEST FACE LINE DOES. Do not cross the creek where that route splits off.\n\nContinue up-valley as the trail fades into open talus and boulder fields, then work toward the head of the basin. Roughly 2 miles and 2,440 ft one-way to the base, with 3-5 hours a reasonable estimate given the route-finding through boulder fields. Noticeably longer and more sustained than the standard West Face gully route.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Talus hopping and route-finding through boulder fields for 2 miles",
+       "A lot of large loose rock on the route, making rappelling it inadvisable",
+       "An exposed unprotected 5.6 slab move past a single old bolt if tagging the true summit",
+       "A steep, loose upper gully on the shared descent",
+       "Snow lingering in the approach basin and the gullies near the top of the route in early season"
+      ],
+      "baseFinding": "CUT LEFT, EAST, TOWARD THE LOW POINT ON THE RIDGE BETWEEN BIG KANGAROO AND HALF MOON. That col drops and traverses you into the SOUTH-FACING BASIN DIRECTLY BELOW BIG KANGAROO'S SOUTH WALL.\n\nARRIVAL AT THE ROUTE ITSELF IS VISUAL AND UNAMBIGUOUS WHEN YOU CAN SEE THE WALL: THE BECKEY-TATE'S OBVIOUS CENTRAL RAMP-AND-LEDGE SYSTEM SPLITS THE FACE. A single ramp system running up the middle of a south wall, splitting it, is the line.\n\nSO THE ORDER OF FINDS IS: stay west of the creek, reach the head of the basin, cut east to the Half Moon col, drop into the south basin, then look for the ramp splitting the middle of the wall.\n\nTHE NEGATIVE TEST AGAINST THE WEST FACE, WHICH IS THE COMMONEST ERROR FROM THIS CAR: THE WEST FACE ROUTE CROSSES EARLY WINTERS CREEK AFTER ONLY HALF A MILE, AT THE EDGE OF THE TALUS FIELD, AND TAKES A BROAD SHALLOW WEST-FACING GULLY WITH A CHOCKSTONE IN IT. If you crossed the creek early and are looking at a chockstone, you are on the west side of the mountain.\n\nAND AGAINST THE OTHER SOUTH-FACE LINES, WHICH SHARE THIS BASIN: KEARNEY-THOMAS crosses the creek and ascends the prominent gully system TAKING THE LEFT FORK AT THE HIGH Y-JUNCTION. GOING DOWN UNDER starts at the Beckey-Tate base and then TRAVERSES RIGHT ACROSS OVERLAPS to its own start ledge. SKINNY START is ABOUT 30 METRES RIGHT of the Kearney-Thomas start. So on this wall: the central ramp is Beckey-Tate, and everything else is measured from either it or Kearney-Thomas.\n\nDESCENT IS NOT DOWN THIS ROUTE, AND THE REASON MATTERS: rappelling the Beckey-Tate is technically possible with two ropes, roughly five to six rappels off slings and trees, but the route wanders and holds a lot of large loose rock, so rope-stuck and rockfall risk is high and most parties explicitly avoid it. Instead scramble about 20 ft up and LEFT to the notch just north of the summit block, the same notch the West Face route uses, and reverse the shared gully descent."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Low-5th-class climbing up the obvious central ramp that splits the south face; easy ground used mainly to gain height and get established below the meat of the route.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Burly, slightly runout chimney climbing on rock that has a faintly unsettling, loose flavor typical of this face; bridge and stem rather than jamming to keep weight off suspect holds.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Good, positive climbing up a ramp-and-corner system to a belay slung off a tree above the ramp — one of the more straightforward pitches on the route.",
+      "pitch": 3,
+      "anchor": "Tree (sling)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8+",
+      "notes": "Sustained chimney climbing where the gear (large #3/#4-size cams) sits far back in the crack, making the moves feel runout even though the pitch is technically protected; a fixed hex has been left in place at one of the harder placements — clip or back it up rather than relying on it alone.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 50
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.9+",
+      "notes": "The technical crux: the chimney above the previous belay resolves into a clean finger crack with secure, positive holds — reported as some of the best rock on the route, a welcome contrast to the looser climbing below.",
+      "pitch": 5,
+      "anchor": "Gear",
+      "lengthM": 55
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "A wavy hand crack/corner finishes the technical face pitches in excellent rock. From this belay the route joins the original 1942 West Face line for the final short, exposed, essentially unprotected 5.6 slab move to the true summit, guarded only by a single old 1/4-inch bolt most parties don't fully trust.",
+      "pitch": 6,
+      "anchor": "Gear (belay below final summit block)",
+      "lengthM": 45
+     }
+    ],
+    "rope_note": "Lead on a single 60m rope. The published route description gives the standard descent as rappelling the face directly — 5-6 rappels using two ropes from a mix of slings and trees — so bring a second rope (tag line or a 2nd 60m) if you plan to descend that way rather than continue to the true summit. Multiple trip reports instead finish the extra pitch to the summit and walk off the standard gully descent back toward the Hairpin Turn (roughly 2 hours), which avoids needing a second rope at all — decide which descent option before racking up.",
+    "beta": "The route follows a ledge system extending from the center of the south face rightward into a series of chimneys and wide cracks. Lower pitches (roughly pitches 2-4) involve scrambling and chimney climbing around 5.8+ on somewhat loose rock. The crux, pitch 5, is a pleasant finger-and-hands crack with good protection, finishing with a fist jam through a small overhang. Some parties continue up the final West Face 5.6 slab pitch to reach the true summit rather than stopping at the top of pitch 6."
+   }
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "before": {
+    "dist_km": 1.9,
+    "approach": "From the Hairpin Turn pullout on SR-20 (about 1 mile east of Washington Pass, near milepost 163), pick up the cairned climbers' trail on the west side of Early Winters Creek — the same start used for Kangaroo Temple and Wallaby Peak. Follow it roughly 0.5-0.7 mile through open timber to where it meets the edge of a talus/boulder field. Rather than continuing south toward Kangaroo Pass (the Kangaroo Temple line), leave the trail here and cross Early Winters Creek — normally an easy rock-hop, but treat it with respect during peak snowmelt or after rain, since there is no bridge. Once across, the route becomes an open boot-track/light bushwhack through slide alder and slabs, trending east into the basin below Big Kangaroo. Around 6,000 ft, aim for the broad, shallow west-facing gully that leads up toward the notch just north of the summit block, identifiable by a distinct chockstone partway up. The gully is loose underfoot (stay near its edges or on the thin vegetation for better footing rather than the center choss), and narrows with downsloping slabs about halfway — some parties bypass this by favoring the adjacent north-side gully. Push past/around the chockstone and continue up class 3 slabs to a broad platform below the summit tower, where the route's three roped pitches begin. One-way gain to this point is roughly 2,700 ft over about 3 miles; budget 2.5-4 hours depending on snow and route-finding, longer early season when the gully still holds snow (carry a light axe/crampons through July). Total car-to-car time is commonly 6+ hours.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout, cross Early Winters Creek at the talus edge, then the west gully with the chockstone",
+      "notes": "From the Hairpin Turn pullout on SR-20 about a mile east of Washington Pass near milepost 163, pick up the cairned climbers' trail on the WEST side of Early Winters Creek, the same start used for Kangaroo Temple and Wallaby Peak. Follow it roughly 0.5-0.7 mile through open timber to where it meets the edge of a talus and boulder field.\n\nRATHER THAN CONTINUING SOUTH TOWARD KANGAROO PASS, WHICH IS THE KANGAROO TEMPLE LINE, LEAVE THE TRAIL HERE AND CROSS EARLY WINTERS CREEK. Normally an easy rock-hop, but treat it with respect during peak snowmelt or after rain; there is no bridge. Once across, the route becomes an open boot-track and light bushwhack through slide alder and slabs, trending east into the basin below Big Kangaroo.\n\nOne-way gain to the base of the roped climbing is roughly 2,700 ft over about 3 miles; budget 2.5-4 hours, longer early season. Car-to-car is commonly 6-plus hours.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "An unbridged crossing of Early Winters Creek that runs high in snowmelt",
+       "A loose gully that narrows onto downsloping slabs at mid-height",
+       "An exposed, essentially unprotected 5.6 slab move past a single old rusty quarter-inch bolt at the summit",
+       "The gully sheds loose rock readily; keep helmets on for the whole descent",
+       "Snow in the gully into July in some years"
+      ],
+      "baseFinding": "AROUND 6,000 FT, AIM FOR THE BROAD, SHALLOW WEST-FACING GULLY THAT LEADS UP TOWARD THE NOTCH JUST NORTH OF THE SUMMIT BLOCK, IDENTIFIABLE BY A DISTINCT CHOCKSTONE PARTWAY UP. THE CHOCKSTONE IS THE MARKER. One block jammed in the gully, and you climb past or around it.\n\nSO THE COUNT IS ONE: one chockstone, in one broad shallow gully on the west side. If you are passing several jammed blocks, or if your gully is narrow and steep rather than broad and shallow, you are in the wrong one.\n\nFOOTING AS A CONFIRMATION, BECAUSE IT IS UNUSUALLY SPECIFIC HERE: the gully is loose underfoot and the advice is to STAY NEAR ITS EDGES OR ON THE THIN VEGETATION rather than the centre choss. It NARROWS WITH DOWNSLOPING SLABS ABOUT HALFWAY, and some parties bypass that by favouring the adjacent north-side gully. A gully that narrows onto downsloping slabs at mid-height is this one.\n\nARRIVAL AT THE ROPED CLIMBING: push past the chockstone and continue up class 3 slabs to A BROAD PLATFORM BELOW THE SUMMIT TOWER. That platform is where the route's three roped pitches begin. Flat ground below a tower, above a chockstone gully.\n\nTHE DISCRIMINATOR AGAINST THE SOUTH-FACE ROUTES, AND IT IS A CREEK-CROSSING TEST: the south-face lines, Beckey-Tate, Kearney-Thomas and the rest, follow the climbers' trail MUCH FURTHER SOUTH along the west side of the creek before crossing, then take a prominent gully with a HIGH Y-JUNCTION. If you crossed the creek at the talus edge after half a mile, you are set up for the West Face. If you are still walking south after a mile and a half, you are heading for the south side.\n\nTHE LAST MOVE IS THE CRUX OF THE WHOLE OUTING AND IT IS WORTH KNOWING NOW: an exposed, essentially unprotected 5.6 slab move past a single old rusty quarter-inch bolt to a tiny summit, downclimbed or top-roped back rather than rappelled, because there is no real anchor up top and no room to stand."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-to-strong approach fitness: off-trail travel up Early Winters Creek with bushwhacking and scrambling through parallel gullies to reach the west face",
+      "packWeight": "Light alpine rack (small trad rack, few slings, helmet) plus approach layers, roughly 15-20 lb"
+     },
+     "approachTime": "Off-trail approach of roughly 2-3 hrs to the base via Early Winters Creek and the west-face gullies; total car-to-car day is about 11.5 hrs",
+     "requiredSkills": [
+      "Multi-pitch trad leading to 5.6",
+      "Off-trail route-finding through brush and talus",
+      "Managing loose/choss rock (careful movement, rockfall communication)",
+      "Rappel/downclimb competence for the descent",
+      "Basic alpine self-rescue"
+     ],
+     "experienceLevel": "Comfortable alpine rock climber who can lead low-5th-class trad pitches (up to 5.6) in a loose-rock, alpine setting; prior multi-pitch and off-trail route-finding experience strongly recommended given the choss and bushwhack approach"
+    },
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5160,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Large pullout on the outside of the SR-20 hairpin switchback ~0.9 mi west of Washington Pass; no permit required to park.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the Hairpin Turn pullout, about a mile east of Washington Pass near milepost 163, at roughly 5,100 to 5,160 feet — a large pullout on the outside of the hairpin switchback. No permit is required to park."
+     },
+     {
+      "lat": 48.511063,
+      "lng": -120.638929,
+      "elev": 5300,
+      "name": "Early Winters Creek Crossing",
+      "note": "Easy crossing of Early Winters Creek on the cairned climbers' trail before it splits toward the west-face gullies.",
+      "type": "Water",
+      "distMi": 0.4
+     },
+     {
+      "lat": 48.50818,
+      "lng": -120.63223,
+      "elev": 6000,
+      "name": "Talus Fork / Gully Base",
+      "note": "Trail opens into talus and scree here; bear into the west-face approach gully rather than continuing on toward Kangaroo Pass.",
+      "type": "Junction",
+      "distMi": 0.9
+     },
+     {
+      "lat": 48.505269,
+      "lng": -120.624051,
+      "elev": 7400,
+      "name": "Chockstone / Loose Gully Band",
+      "note": "Chockstone marks the start of the technical climbing; the gully above is loose with a cliff band — helmet essential for rockfall.",
+      "type": "Hazard",
+      "distMi": 1.5
+     },
+     {
+      "lat": 48.502472,
+      "lng": -120.62322,
+      "elev": 8100,
+      "name": "Ridge Crest Notch below Summit Block",
+      "note": "Class-3 slabs gain the ridge crest here; the low-5th-class pitches to the summit block begin from this notch.",
+      "type": "Junction",
+      "distMi": 1.8
+     },
+     {
+      "lat": 48.519416,
+      "lng": -120.617505,
+      "elev": 8326,
+      "name": "Big Kangaroo Summit",
+      "note": "Small, mostly unprotectable exposed 5.6 slab summit with a single old rusty bolt — room for only one climber at a time.",
+      "type": "Summit",
+      "distMi": 1.9
+     }
+    ],
+    "beta": "This Grade II alpine route climbs approximately 500 feet of rock with up to 4 pitches from the base of the summit block. The approach ascends parallel gullies on the west face of Kangaroo Ridge beneath Big Kangaroo. The route culminates in a steep, mostly unprotectable exposed 5.6 slab across the summit fin with a single rusty old bolt for protection.",
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.2",
+      "notes": "Starts in the shallow gully beneath the route's distinctive chockstone, then climbs an easy low-5th slab protected by small gear up to a sling belay.",
+      "pitch": 1,
+      "anchor": "Sling belay (gear)",
+      "lengthM": 55
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Traverses toward the summit block, skirting it on the left via a narrow horizontal foot-ledge over growing exposure; about 15 feet in, a large flake takes a 1-2\" cam before a low-5th step around it to the next stance.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 50
+     },
+     {
+      "crux": true,
+      "bolts": 1,
+      "grade": "5.6",
+      "notes": "Beautiful compact granite with decent edges and side-pulls for about 20 feet to the first gear in a crack, then a steep move past a single old, rusty 1/4-inch bolt to the tiny summit — essentially unprotected and the crux of the whole route; downclimbed or top-roped back to the belay rather than rappelled since there's no real anchor at the top.",
+      "pitch": 3,
+      "anchor": "Walk-off / top-rope off summit bolt (no real rap anchor)",
+      "lengthM": 45
+     }
+    ],
+    "itinerary": {
+     "cal": "Approach gullies typically hold snow into July; a rope-free descent gully firms up and gets faster later in summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is the standard, easiest way up Big Kangaroo and is done car-to-car from the Hairpin Turn in a single day — no camp needed. The crux is a short, exposed final pitch to a summit with one old bolt, protected by a top-rope for the second.",
+       "hours": 7,
+       "miles": 4,
+       "title": "Car-to-car: easiest line to the summit",
+       "gainFt": 2900,
+       "lossFt": 2900,
+       "packLb": 14,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Hairpin Turn",
+         "detail": "Follow Early Winters Creek, then pick one of the parallel west-face gullies (often snow-filled into July) toward the crest south of the summit."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Reach the base of the west-face gullies",
+         "detail": ""
+        },
+        {
+         "time": "+1.5-2.5 hr",
+         "label": "Climb the three short pitches to the summit block",
+         "detail": "Final ~20 ft pitch is the crux: thin edges/side-pulls to a steep move onto the summit."
+        },
+        {
+         "time": "~10:30-11:30 AM",
+         "label": "Summit (8,326 ft)",
+         "detail": "Leader is top-roped down off the single rusty summit bolt."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Descend notch rappel + gully",
+         "detail": "Single 60m rappel from slung-block anchors at the notch below the summit, then scree/snow gully back down."
+        },
+        {
+         "time": "~1:30-2:30 PM",
+         "label": "Back at the Hairpin Turn",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Big Kangaroo (8,326 ft) via the Southwest Rib / West Route (5.6, 3 pitches)"
+      }
+     ],
+     "totalNote": "A shorter single day than the Beckey-Tate: roughly 6-8 hrs car-to-car for 2,900 ft gain over three short 5.6 pitches to the summit block."
+    },
+    "obj_haz": [
+     "loose rock/choss on approach",
+     "runout summit slab",
+     "aging fixed rappel bolt"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,5443 @@
+{
+ "applied": [
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "op": "patch",
+   "columns": [
+    "waypoints",
+    "approach_variants"
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "area_id": "wa_cinderella_peak",
+   "name": "Twin Sisters Olivine Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": 0,
+   "length_m": 122,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "optional rope for exposed steps"
+   ],
+   "hazards": [
+    "short exposed Class 3-4 steps on steep olivine/dunite slabs",
+    "unmaintained, flagging-only climbers' trail with real route-finding",
+    "log crossing of the Middle Fork Nooksack River — can be difficult or washed out at high water",
+    "loose talus/scree in the Green Creek cirque",
+    "spring avalanche hazard off the nearby 'Mythic Wall' for parties descending on snow"
+   ],
+   "verif": null,
+   "overview": "Cinderella Peak (roughly 6,400-6,500 ft) is a minor summit on the south side of the Green Creek cirque in the Twin Sisters Range, immediately west of Mount Baker and within/adjacent to the Mount Baker Wilderness (Mt. Baker-Snoqualmie National Forest). The Twin Sisters massif is the largest exposed body of dunite/olivine rock in the Western Hemisphere, giving Cinderella and its neighbors (Little Sister, South Twin, Skookum, Jaws' Tooth) their signature reddish, ultra-grippy slabs. The standard route is a long approach via the Elbow Lake Trail and the unmaintained, blue-flagged Green Creek climbers' trail, gaining a saddle near Little Sister and following the connecting ridge onto Cinderella's west ridge for a final Class 3-4 scramble to the summit. Technical alternatives exist for parties wanting a real climb: a North Face route (5.2, Grade II, ~8 pitches) and an East Buttress line have both been climbed and reported. Cinderella is also a common link-up on the 'Green Creek Circuit,' which strings together South Twin, Jaws' Tooth, Skookum, Little Sister and Cinderella into a long (~11-13 mile, ~8,000 ft gain) day.",
+   "beta": "A short but rugged Twin Sisters Range outing combining glacier travel with class 3-4 scrambling on famously high-friction olivine rock. Parties reach the peak via the Green Creek cirque in one long day or with a night in the basin, and climb it either as a stand-alone objective or as part of the longer Green Creek Circuit traverse linking South Sister, Skookum, Little Sister, and Cinderella.",
+   "turnaround": "Set a hard turnaround time based on your slowest team member's pace and current glacier/weather conditions rather than a fixed clock time — the long cross-country approach, glacier crossing, and unbridged river ford make an unplanned late exit especially serious on this route.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "3rd-4th class (unroped scramble)",
+   "ice_grade": null,
+   "gain_ft": 5400,
+   "loss_ft": 5400,
+   "dist_km": 19.31,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "West Ridge",
+   "permit": "No climbing permit; a Northwest Forest Pass or interagency pass is required to park at the Elbow Lake Trailhead.",
+   "comms": null,
+   "descent": "Reverse the scramble.",
+   "obj_haz": [
+    "loose rock (dunite/olivine talus)",
+    "unbridged river crossing",
+    "glacier/crevasse hazard nearby",
+    "routefinding on unmaintained terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.6797,
+     "lng": -121.897,
+     "elev": 2000,
+     "name": "Elbow Lake Trailhead (FR-38)",
+     "note": "North end of Elbow Lake Trail #697 off Mosquito Lake Rd/FS-38, ~11 mi in; no bridge over the Middle Fork Nooksack near here, so high flows can strand you at the car.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take SR-542 from Bellingham through Deming to Mosquito Lake Road, then turn off onto FS-38 and follow it about 11 miles to the road end. It is gravel and normally in reasonable shape, but the lower Middle Fork Nooksack road has washed out in sections in the past and parties then bike the flat closed miles rather than walk them. Check the current road status before counting on driving to the trailhead."
+    },
+    {
+     "lat": 48.7096986,
+     "lng": -121.914558,
+     "elev": 2300,
+     "name": "Elbow Lake",
+     "note": "Trail's namesake lake passed early on boggy ground among old-growth trees; last reliable easy water before the climbers' trail leaves the maintained tread.",
+     "type": "Water",
+     "distMi": 0.7,
+     "directions": "The trail meets the Middle Fork Nooksack within a few minutes of the car and there is no bridge — it has been gone for decades, and any log that replaces it tends to wash out. The marked ford can be dangerous or impossible at high flow, so most parties use an unofficial crossing about a quarter mile downstream, logs lashed between two boulders. Once across, bushwhack the short distance back up to the Elbow Lake Trail proper and start climbing through old growth."
+    },
+    {
+     "lat": 48.705110924528306,
+     "lng": -121.92848443396227,
+     "elev": 2750,
+     "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+     "note": "First open view of the Twin Sisters Range near a switchback by Hildebrand Creek; the unofficial, sparsely-blazed Green Creek climbers' trail branches off the maintained tread here.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "Stay on the maintained tread as it climbs above the Green Creek valley through old-growth forest, roughly a mile and a half from the crossing. Near 2,600 ft the trail swings into the Hildebrand Creek drainage, and it is at a switchback here that the unofficial Green Creek climbers' trail branches off. It is marked only by small blue markers on the trees — they are easy to walk straight past, so start looking for them before you think you need to."
+    },
+    {
+     "lat": 48.70299353584906,
+     "lng": -121.93491201886793,
+     "elev": 2300,
+     "name": "Green Creek crossing",
+     "note": "The climbers' trail reaches Green Creek, which parties ford at the best spot they can find; there is no bridge, and the crossing is harder at high runoff.",
+     "type": "Hazard",
+     "distMi": 2.6
+    },
+    {
+     "lat": 48.69452398113208,
+     "lng": -121.96062235849057,
+     "elev": 5800,
+     "name": "Little Sister saddle",
+     "note": "Col between Little Sister (6,600') and Cinderella Peak gained via boulder fields and scree above the Green Creek cirque; marks the start of Cinderella's west ridge.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Follow the blue-blazed climbers' trail up into the Green Creek cirque; Green Creek runs clear and is the water source along this stretch. Above the trees the path gives out into talus, boulder fields and then loose, unstable scree, with Class 3 rock steps needed to reach the toe of the Green (Sisters) Glacier — route-finding through here is the crux of the approach and the least-loose line has to be hunted for rather than followed. Cross the low-angle glacier, carrying basic glacier gear, to the low notch on the ridge between Cinderella and Little Sister. Gain from the river to the notch runs to several thousand feet, which is why some parties break the trip up with a camp in the basin rather than pushing car-to-car."
+    },
+    {
+     "lat": 48.69240659245283,
+     "lng": -121.96704994339622,
+     "elev": 6150,
+     "name": "West ridge scramble section",
+     "note": "Class 3-4 exposed scrambling on the range's signature red olivine rock, which is grippy but the ridge narrows with real exposure; take care downclimbing if wet.",
+     "type": "Hazard",
+     "distMi": 5.6,
+     "directions": "From the notch climb onto the blunt ridge crest above. The olivine here is exceptionally high-friction on the shaded north aspects and many parties solo it or run the rope, but the crest narrows and the exposure is genuine, and the same rock is far less secure when wet. Do not treat the connecting ridge back toward Little Sister as a traverse option — it is loose enough that the standard practice is to drop to the glacier from this notch instead."
+    },
+    {
+     "lat": 48.69092,
+     "lng": -121.97153,
+     "elev": 6431,
+     "name": "Cinderella Peak",
+     "note": "True summit at the west end of the Green Creek circuit; olivine rock underfoot is among the best scrambling texture in the Cascades.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "The last Class 3-4 steps go on grippy dunite to the small summit block; where a step looks blank, working slightly left or right generally finds a passable line and nothing is sustained. Stay on the crest and the shaded aspects — south-facing rock in this range is markedly chossier and rocks pick up speed fast on it."
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 12,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 12,
+      "note": "Fit parties often do this as one long car-to-car day: Elbow Lake Trail, the Green Creek climbers' trail, the glacier to the Cinderella-Little Sister notch, and the west ridge.",
+      "fromTo": "Bike/hike approach and ridge scramble to the summit",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Trip reports on Twin Sisters outings involving Cinderella describe a minimal rack: a thin rope (e.g. 30m), a small set of nuts/stoppers, small-to-mid-size cams, a few tricams, and slings — enough to protect the low-5th-class North Face pitches or exposed moves on the West Ridge. Many confident scramblers solo or use running belays on the 4th-class ridge itself.",
+   "what_to_bring": [
+    "helmet",
+    "sturdy boots or approach shoes with good friction for grippy olivine rock",
+    "map/compass/GPS track (climbers' trail is flagging-only and easy to lose)",
+    "Northwest Forest Pass for trailhead parking",
+    "optional light rope for exposed steps",
+    "ice axe if snow lingers into early season"
+   ],
+   "pro_tips": [
+    "Often combined with Little Sister given their proximity, or linked into the full 'Green Creek Circuit' (South Twin, Jaws' Tooth, Skookum, Little Sister, Cinderella) for an ~11-13 mile, ~8,000 ft day",
+    "The Green Creek climbers' trail branches off the Elbow Lake Trail near a switchback by Hildebrand Creek — watch for small blue flagging, not cairns",
+    "An alternate unofficial log crossing of the Middle Fork Nooksack exists about 1/4 mile downstream of the main crossing if that log is out",
+    "Parties wanting a real climb rather than a scramble can look at the North Face (5.2, Grade II, ~8 pitches) or East Buttress routes",
+    "Verify Forest Road 38's gate status at Wallace Creek before driving in shoulder season"
+   ],
+   "watch_out": [
+    "exposure on slabs",
+    "flagging-only climbers' trail — easy to lose, especially in fog",
+    "log crossing of the Middle Fork Nooksack can be sketchy at high flow",
+    "long day — plan 10-12+ hours if combining with Little Sister or the full Green Creek Circuit"
+   ],
+   "pro_needs": "The olivine/dunite rock is extremely high-friction (\"velcro-like\"), so natural gear placements hold well; a light trad rack covers the North Face's 5.2 pitches, while the West Ridge is often climbed with minimal or no protection by experienced scramblers.",
+   "best_season": "Roughly August through mid-September is most reliable for a dry scramble, once snow patches on the approach and ridge melt out and the Middle Fork Nooksack log crossing is at low water. Late May-June can offer good corn-snow ski descents off the north bowl, but that requires glacier-travel gear and avalanche awareness per spring trip reports.",
+   "high_point_ft": 6431,
+   "aid_grade": null,
+   "approach": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme). The trail immediately meets the Middle Fork Nooksack River — there is no bridge at the marked crossing, and fording can be dangerous or outright impassable during high water; many parties instead use an unofficial log crossing roughly 1/4 mile downstream from the official ford, made of logs lashed between two boulders. Once across, pick up the Elbow Lake Trail proper and climb through forest for about 1.5 miles to a switchback near Hildebrand Creek, where an unmaintained but well-trodden, blue-blazed 'Green Creek Climber's Trail' splits off to the left into the Green Creek cirque (look closely for the small blue markers — it's easy to walk past). Follow this climber's trail up into the basin; Green Creek itself runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with class 3 rock steps required to reach the toe of the Green Creek (Sisters) Glacier — route-finding through this section is the crux of the approach, and parties should expect to hunt for the least-loose line. Cross the low-angle glacier (crevasse hazard is generally low here but rises later season; carry basic glacier gear) up to the low notch on the ridge between Cinderella and Little Sister, which is the jumping-off point for Cinderella's west ridge/north face. Elevation gain from the river crossing to this notch is substantial — roughly 4,000 ft over about five miles — and fit parties often go car-to-car in one long day, while others split it with a camp in the Green Creek basin.",
+   "descent_text": "Descend the same way you climbed: reverse the short scrambling section of the west ridge back into the easier 'return to hiking' terrain, then downclimb the exposed but high-friction olivine slabs on Cinderella's north side back down to the edge of the Green Creek/Sisters Glacier — parties describe finding a passable line at each small crux by working slightly left or right, nothing sustained. This is a walk-off/downclimb descent with no rappelling required (0 rappels); the extremely grippy dunite/olivine rock that defines the whole Twin Sisters Range makes downclimbing secure even on the steeper steps. Do not attempt to continue along the connecting ridge toward Little Sister — at least one party found that ridgeline dangerously loose (a missile zone) and recommends dropping back down to the glacier from the Cinderella-Little Sister notch rather than traversing it, which is the standard practice. From the glacier, retrace your boot track down through the scree and boulder fields, back onto the Green Creek Climber's Trail, rejoin the Elbow Lake Trail at the Hildebrand Creek switchback, and re-ford (or use the unofficial log crossing of) the Middle Fork Nooksack back to the trailhead.",
+   "bail": "From the ridge, the quickest bail is back down to the Little Sister saddle and the Green Creek climbers' trail rather than continuing any traverse; retreat the same climbers' trail and log crossing to the Elbow Lake Trail.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Climbers' trail, scree/talus, and glacier travel across the Green Glacier to the low notch between Cinderella and Little Sister.",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "4th class",
+     "notes": "West Ridge: blunt, exposed ridge crest on extremely high-friction olivine to the small summit block; many parties solo or use running belays. (The North Face, a separate 3-pitch 5.2 line up the broad face left/south of the glacier, is not part of this scramble route.)",
+     "pitch": "1-2"
+    }
+   ],
+   "itinerary": {
+    "cal": "The Middle Fork Nooksack bridge/log crossing at the start of the Elbow Lake Trail washes out periodically - check recent trip reports before relying on a dry crossing.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Fit parties often do this as one long car-to-car day; others camp in the Green Creek basin. While FS Road 38 is closed by its washout, biking the closed road miles saves the legs. From the trailhead, cross the Middle Fork Nooksack, hike the Elbow Lake Trail through old growth to the Hildebrand Creek switchback, and follow the blue-blazed Green Creek climbers' trail into the cirque, across the low-angle glacier to the Cinderella-Little Sister notch and up the west ridge on grippy olivine rock to the summit. Descend by reversing the route, including re-biking the closed road miles at the end.",
+      "miles": 12,
+      "title": "Bike/hike approach and ridge scramble to the summit",
+      "gainFt": 5400,
+      "lossFt": 5400,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave car, bike the logging road",
+        "detail": "FS Road 38 is closed by a washout at milepost 7, about 4 miles short of the trailhead; biking those closed miles saves time and legs."
+       },
+       {
+        "time": "5:15 AM",
+        "label": "Stash bikes, start Elbow Lake Trail on foot",
+        "detail": "Cross the Middle Fork Nooksack right at the trailhead (no bridge), then climb through old growth above the Green Creek valley about 1.5 mi to the Hildebrand Creek switchback, where the blue-blazed Green Creek climbers' trail branches off."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach the Green Creek cirque",
+        "detail": "Talus, loose scree and Class 3 rock steps lead to the toe of the glacier; cross it to the notch between Cinderella and Little Sister."
+       },
+       {
+        "time": "10:30 AM - 12:00 PM",
+        "label": "Ridge/gully scramble to Cinderella summit",
+        "detail": "Class 3-4 scrambling on solid, high-friction olivine rock; some exposed ridge sections and route-finding around gendarmes."
+       },
+       {
+        "time": "12:00 PM - 3:00 PM",
+        "label": "Reverse the scramble and hike back to bikes",
+        "detail": "Downclimb the ridge, retrace the glacier, the Green Creek climbers' trail and the Elbow Lake Trail."
+       },
+       {
+        "time": "3:00 PM - 4:30 PM",
+        "label": "Bike out to the car",
+        "detail": "Mostly downhill/flat closed-road miles back to the vehicle."
+       }
+      ],
+      "objective": "Summit Cinderella Peak via the west ridge olivine scramble, car-to-car"
+     }
+    ],
+    "totalNote": "A long single push: roughly 11-12 hours car-to-car, ~12 miles and ~5,400 ft of gain, done in a day, as many fit parties do."
+   },
+   "access": {
+    "fees": "Day-use requires a Northwest Forest Pass or equivalent interagency pass; no separate climbing permit or fee for this unmaintained scramble route.",
+    "rules": "Standard Wilderness-adjacent Leave No Trace ethics apply. The Green Creek climbers' trail is unofficial and unmaintained (blue flagging only) — stay on the existing boot path where possible, since the Twin Sisters' exposed olivine (dunite) supports a rare serpentine-adapted plant community.",
+    "permit": "Northwest Forest Pass (or America the Beautiful/interagency annual pass) required to park at the Elbow Lake Trailhead; self-pay iron ranger at the trailhead, or purchase in advance at the Mt. Baker Ranger District office.",
+    "closures": "Forest Road 38 has a seasonal closure gate at Wallace Creek, about 1.3 miles before the Elbow Lake Trailhead, typically shut roughly Dec 1-Jun 15 (exact dates vary by year/snowpack) — and FR 38 is separately closed at milepost 7 by a washout, per a Forest Service alert dated 27 July 2026, which blocks vehicle access to the trailhead entirely. Check MBS National Forest road status before driving. No gated logging-road network on the standard approach.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District (810 SR-20, Sedro-Woolley, WA); the Twin Sisters peaks sit within/immediately adjacent to the Mount Baker Wilderness — not private industrial timberland.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land; no wilderness permit or registration is needed."
+    }
+   },
+   "road": {
+    "name": "Forest Road 38 (Mosquito Lake Road to Elbow Lake Trailhead)",
+    "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead, which is about 11 miles in. Good gravel and paved forest road when open; check the forest's alerts page before driving.",
+    "driveNote": "From Mosquito Lake Road near Deming/Acme, turn east onto FS Road 38 and drive about 11 miles of forest road to the Elbow Lake Trailhead.",
+    "seasonalGate": "Gated at Wallace Creek, about 1.3 miles before the trailhead, roughly Dec 1-Jun 15."
+   },
+   "climate": {
+    "fall": "Rock is dry, but scree/talus becomes looser as lingering summer snow patches melt out; early-season storms and shortening daylight become a factor.",
+    "spring": "Deep, often unstable snowpack on the Green Glacier and approach slopes; avalanche hazard and a high, dangerous Middle Fork Nooksack crossing are significant.",
+    "summer": "Primary climbing season; late July–September usually offers the driest rock and most manageable glacier crossing.",
+    "winter": "Heavy snow, avalanche terrain, and gated/closed access roads make a winter ascent a serious mountaineering undertaking, not a scramble.",
+    "typical": "Maritime North Cascades climate — the Twin Sisters catch heavy orographic precipitation off the Salish Sea and the Mount Baker massif; expect frequent rain/fog even in summer, with lingering snow on north-facing terrain into July.",
+    "bySeason": {
+     "fall": "Often a good, clearer window in September before fall storms arrive; days shorten quickly.",
+     "spring": "Snow-covered; some parties ski or climb corn snow off Cinderella's north bowl in late May-June, but this requires glacier-travel gear and avalanche awareness (including hazard from the nearby Mythic Wall).",
+     "summer": "Main scramble season (Jul-Sep); best rock conditions once approach and ridge snow patches melt out, typically by August.",
+     "winter": "Snowbound and effectively inaccessible; FS Road 38 is gated well below the trailhead."
+    },
+    "forecastZone": "West Slopes North (NWAC)"
+   },
+   "emergency": {
+    "notes": "Bellingham Mountain Rescue Council (volunteer, dispatched by the Whatcom County Sheriff's Office) is the primary SAR resource for the Twin Sisters Range, Mt. Baker, and Mt. Shuksan area — call 911 to activate. Cell coverage is unreliable in the Green Creek cirque, so expect delayed response and consider carrying a satellite communicator.",
+    "county": "Whatcom",
+    "rangerStation": "Mt. Baker Ranger District, 810 SR-20, Sedro-Woolley, WA 98284 — (360) 854-2553",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA — the only hospital in Whatcom County, roughly 1.5-2 hours' drive from the trailhead.",
+    "sheriffDispatch": "911 for emergencies; Whatcom County Sheriff's Office non-emergency line (360) 676-6911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional weekend traffic July-August from parties doing the Green Creek Circuit or Twin Sisters traverse; otherwise rarely climbed",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low - likely fewer than 10-20 parties per season; Cinderella is usually climbed as part of a longer Twin Sisters traverse/circuit rather than as a standalone objective, and trip reports for it specifically are sparse"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long, full approach-plus-summit day (likely 8-12+ miles round trip with significant elevation gain) on a maintained trail, an unmaintained climbers' trail and a glacier to the notch near Little Sister; extra road mileage on foot or bike when FS Road 38 is gated or closed",
+     "packWeight": "Light scrambling pack (roughly 15-25 lb) - helmet and light rack useful for the slabs; plus basic glacier gear for the Green Creek Glacier crossing"
+    },
+    "approachTime": "Long - multi-hour approach via the Elbow Lake Trail, the Green Creek climbers' trail and a glacier crossing to the notch near Little Sister; a full-day objective, more while road closures add mileage",
+    "requiredSkills": [
+     "unroped Class 3-4 scrambling on steep slabs",
+     "route-finding on unmaintained/informal approach terrain",
+     "comfort with exposure on dunite/olivine slabs",
+     "crossing the unbridged Middle Fork Nooksack and basic glacier travel",
+     "self-rescue readiness given remote, low-traffic terrain"
+    ],
+    "experienceLevel": "Experienced scramblers only - comfortable with sustained unroped Class 3-4 travel, route-finding on an unmaintained approach, and self-sufficient remote travel; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Scramble season opens; early-month snow patches possible on shaded slabs, improving through the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow typically still lingers on the ridge and approach ('spring: snow on the ridge; not in season'); generally too early",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Core dry-rock scramble season - most stable conditions for the slabs and approach",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms and shortening days push the range out of season; not covered by the best-season window",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still reliably dry and in-season before fall storms arrive",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime range catching heavy precipitation off Baker; can be wet/socked-in outside the summer window",
+     "probability": "Afternoon thunderstorms/quick weather changes possible in late summer given proximity to Baker"
+    },
+    "exposure": "Real fall exposure on the steep dunite/olivine slabs; a slip on the slabs could mean a long, consequential fall, compounded by the remote, low-traffic setting where help is far away",
+    "avalanche": {
+     "zone": "N/A - summer scramble route; no NWAC forecast zone specifically covers this range/peak",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Low-angle Green Creek (Sisters) Glacier crossed on the way to the Cinderella-Little Sister notch; crevasse hazard is generally low but grows later in the season, and the moat at the glacier margin must be crossed in both directions"
+   },
+   "data_quality": {
+    "gaps": [
+     "Summit elevation is reported inconsistently across sources — 6,431 ft on file vs. roughly 6,480-6,500 ft on Peakbagger/ListsOfJohn — not resolved to one authoritative figure this session; left unchanged rather than guess.",
+     "No verified prominence figure or exact summit GPS coordinates found; Mountain Project lists an approximate area centroid (48.69092, -121.97156), not a confirmed summit fix.",
+     "Round-trip mileage/elevation gain for Cinderella alone (isolated from the full Green Creek Circuit linkup) was not found in available sources.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.690995,
+    "peakLng": -121.971335,
+    "trailhead": "Elbow Lake Trailhead",
+    "trailheadDirection": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme)."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Class 3-4 scramble on Twin Sisters olivine, an exceptionally high-friction rock. No rope typically needed on the standard scramble line; a party doing the East Buttress variant reported some easy technical moves where a short rope could be prudent.",
+   "ascender": null,
+   "corrections": "General Twin Sisters/olivine terrain character confirmed via multiple sources; no route-specific gear list found for this exact route name, so inferred from the range's documented Class 3-4 character.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Elbow Lake Trail and the Green Creek path to the low notch on the Cinderella-Little Sister ridge",
+     "notes": "Start at the Elbow Lake Trailhead (Trail #697) at the end of FS Road 38. The trail immediately meets the Middle Fork Nooksack — there is no bridge at the marked crossing, and fording can be dangerous or impassable at high water. Many parties use an unofficial log crossing roughly a quarter mile downstream of the official ford, made of logs lashed between two boulders. Once across, climb through forest about 1.5 miles to a switchback near Hildebrand Creek, where the unmaintained, blue-blazed Green Creek Climber's Trail splits LEFT into the Green Creek cirque. Look closely for the small blue markers; it is easy to walk past. Follow it up into the basin — Green Creek runs clear and is a reliable water source along this stretch. Above treeline the trail gives way to talus and boulder fields and then loose, unstable scree, with Class 3 rock steps to reach the toe of the Green Creek (Sisters) Glacier. Route-finding through that section is the crux of the approach. Cross the low-angle glacier to the low notch on the ridge between Cinderella and Little Sister. Fit parties often do it car-to-car in one long day; others camp in the Green Creek basin.",
+     "season": "Roughly Jul-Sep",
+     "hazards": [
+      "A bridgeless Middle Fork Nooksack crossing, impassable at high water",
+      "An easy-to-miss blue-blazed junction near Hildebrand Creek",
+      "Loose unstable scree and Class 3 steps to reach the glacier — the crux of the approach",
+      "A moat at the glacier margin in both directions",
+      "A connecting ridge toward Little Sister that accounts describe as a missile zone"
+     ],
+     "baseFinding": "THE LOW NOTCH ON THE CINDERELLA-LITTLE SISTER RIDGE IS THE BASE, AND IT IS WHERE YOU STOW GLACIER GEAR. Cross the low-angle Green Creek (Sisters) Glacier and step off ice onto rock at the notch. It is a col: a low point with a peak at each end of it, Cinderella one way and Little Sister the other.\n\nTHE MOAT AT THE GLACIER MARGIN IS THE LAST OBSTACLE AND IT IS SEASONAL, NOT STRUCTURAL — trivial in a heavy snow year, a real step late in the season, and exactly the same problem in reverse on the way down. Plan for it in both directions rather than being surprised at 4pm.\n\nFROM THE NOTCH, GO WEST, NOT EAST. Cinderella's WEST RIDGE is the route — a long ridge, mostly straightforward walking on broken ground with a short section of enjoyable scrambling to the true summit. Turning the other way out of the notch heads for Little Sister.\n\nDO NOT BE TEMPTED ALONG THE CREST TOWARD LITTLE SISTER. This is not mere caution: at least one party calls that connecting ridgeline a missile zone and recommends dropping back to the glacier from this notch instead of traversing it. The notch serves two peaks and connects neither.\n\nON THE WEST RIDGE, THE CREST DIRECT IS THE TRAP. Taking it absolutely direct runs into stretches of committing downclimbing; the standard escape is to DROP INTO A GULLY ON THE SOUTH SIDE and regain easier ground above. Committing downclimbing on a Class 3-4 scramble means you have stayed on the crest too long.\n\nTHE ROCK IS DUNITE AND IT BEHAVES TWO WAYS AT ONCE, which is the single most useful thing to know about holds here: notably grippy on WEATHERED surfaces, and greasy where a block has FRESHLY BROKEN. Judge each hold on its surface, not on the rock type."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Notch to the west ridge",
+     "notes": "From the low notch on the Cinderella-Little Sister ridge, step off the Green Creek (Sisters) Glacier and onto rock. This is where parties stow glacier gear. Watch the moat at the glacier margin: it is trivial in a heavy snow year and a real obstacle late in the season, and it is the same problem in reverse on the way down. Do not be tempted along the crest toward Little Sister — that continuation has been judged loose and hazardous and is normally avoided."
+    },
+    {
+     "n": 2,
+     "label": "West ridge to the true summit",
+     "notes": "The long west ridge is mostly straightforward walking on broken ground with a short section of enjoyable scrambling to reach the true summit. Taking the crest absolutely direct runs into stretches of committing downclimbing; the standard escape is to drop into a gully on the south side and regain easier terrain above. The rock here is dunite, unusual in the Cascades — it is notably grippy on weathered surfaces but greasy where a block has freshly broken, so judge each hold on its surface rather than on the rock type."
+    },
+    {
+     "n": 3,
+     "label": "Descent to the glacier",
+     "notes": "Two descents are in use off the north side. Parties have downclimbed clean slabs directly to the edge of the glacier — steeper-looking from above than it climbs, with a passage at each apparent crux — and parties have also rappelled the north face, which has gone with a single double-rope rappel landing on a steep snow panel above the glacier. Carry two ropes if the rappel is the plan. On the snow panel below, an axe and crampons are wanted; the moat at its base is the last obstacle."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Green Creek cirque dispersed camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for the circuit that links them to South Twin. It is reached by branching off the Elbow Lake trail at a switchback onto a blazed climbers path, then working up into the cirque. There are no developed campsites; parties use sandy patches beneath protecting boulders and small flat spots in the heather, and the area holds a wilderness feel that low impact camping is the only way to keep. The springs here are worth planning around, because once you are on the crest above there is nothing. Getting into the basin involves a long loose talus slope where most of what you stand on moves, which is slow and hazardous when wet. Midsummer through early autumn; early season snow makes the approach faster but the river crossing more dangerous.",
+     "water": "Two springs of running water in the basin, plus Green Creek lower down. The most dependable water anywhere on the southeast side of the range and the reason this basin is used at all",
+     "permit": "National forest, largely within the wilderness unit. Dispersed camping legal, no overnight permit currently required, party size limit twelve, no developed sites and no facilities. A Northwest Forest Pass or interagency pass is needed at the trailhead. Fire restrictions are common from midsummer. Access from this side does not cross the private timberland, but it does require fording the Middle Fork Nooksack, and the roads serving the trailhead have their own closures.",
+     "capacity": "Small dispersed sites, sandy patches under boulders; two or three parties spread out"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "name_search": "twin sisters olivine scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "area_id": "wa_liberty_bell",
+   "name": "The Independence Route",
+   "discipline": "alpine",
+   "grade": "Grade V, 5.12a free (orig. F8 A4)",
+   "grade_system": "yds",
+   "grade_num": 12.25,
+   "pitches": 12,
+   "length_m": 366,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Alex Bertulis & Don McPherson, 1966 (wall-style, 4 days, 180 pitons + 5 bolts); FFA Steve Risse & Keith Hertel, 1991",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Doubles from the smallest cams through #1, single #2 and #3 — this is the published rack for the full route",
+    "Single set of small offset nuts/wires",
+    "Small cams and wires to back up fixed pins at the P5 (5.11c) and P6 (5.11b/c) thin-crack cruxes — the pins themselves are already in place",
+    "A few extra slings/draws for the P8 hanging belay, where several old bolts from different eras are stacked together",
+    "Single 70m rope — long enough to rappel from pitch 8; a second rope is not needed",
+    "Helmet — long, popular multi-pitch granite route with rockfall and gear-drop risk from parties above"
+   ],
+   "hazards": [
+    "sustained face and crack climbing",
+    "exposure",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "One of Liberty Bell's three historic 1960s east-face aid lines (with Liberty Crack and Thin Red Line). Established in May 1966 by Alex Bertulis and Don McPherson as a 20-lead aid route at F8 A4 using roughly 180 pitons and 5 bolts; the line has since been substantially freed, with a full free ascent around 5.12a. A sustained, historically significant Cascadian rock outing on the same superb Washington Pass granite as its neighbors.",
+   "beta": "First climbed wall-style in 1966 by Bertulis and McPherson, freed in 1991 by Steve Risse and Keith Hertel without adding fixed gear (partly yo-yo style over 2 days), and given its first ground-up redpoint in 2009 by Jens Holsten and Max Hasson. Sustained 5.10-5.12 climbing through named features like the Baer Ceiling, Cascade Ceilings, and Well Hung Ceiling.",
+   "turnaround": "Turn around if storms build over the Pass in the afternoon.",
+   "auto_generated": true,
+   "alpine_grade": "D",
+   "rock_grade": "5.12a",
+   "ice_grade": null,
+   "gain_ft": 2500,
+   "loss_ft": 2400,
+   "dist_km": 4.02,
+   "max_angle": null,
+   "rappels": "2",
+   "commitment": "V",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell coverage.",
+   "descent": "Rappel the route from the top of pitch 8 with a single 70 m rope, or continue to the summit and descend the standard Beckey Route rappels to the Liberty Bell-Concord notch.",
+   "obj_haz": [
+    "rockfall",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5160,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Pullout on the north shoulder of SR-20 at the hairpin curve just east of Washington Pass, below Liberty Bell; walk back toward the pass to the small pond on the south side of the highway.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5750,
+     "name": "Stream crossing near meadow",
+     "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+     "type": "Water",
+     "distMi": 1.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Climbers' path junction",
+     "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward Liberty Bell's west side.",
+     "type": "Junction",
+     "distMi": 1.6
+    },
+    {
+     "lat": 48.514633,
+     "lng": -120.658546,
+     "elev": 7150,
+     "name": "West face base / sloping bench",
+     "note": "Scramble left off the approach gully onto Liberty Bell's broad sloping west-side bench, then traverse left at the base of the slabs to the start of the big-wall routes.",
+     "type": "Junction",
+     "distMi": 2.3
+    },
+    {
+     "lat": 48.514666,
+     "lng": -120.658696,
+     "elev": 7300,
+     "name": "Committing mid-wall position",
+     "note": "5.11 to 5.12a free crux pitches with sparse retreat once established above the bench; carry a topo and be ready to aid past the hard sections.",
+     "type": "Hazard",
+     "distMi": 2.4
+    },
+    {
+     "lat": 48.515435,
+     "lng": -120.658365,
+     "elev": 7720,
+     "name": "Liberty Bell summit",
+     "note": "Grade V outing tops out on the true summit; descend via the standard Beckey Route rappels/downclimb to the notch, not back down the route.",
+     "type": "Summit",
+     "distMi": 2.7
+    }
+   ],
+   "gpx": [
+    [
+     48.519127,
+     -120.67427
+    ],
+    [
+     48.51909,
+     -120.67428
+    ],
+    [
+     48.5191,
+     -120.674225
+    ],
+    [
+     48.519028,
+     -120.67425
+    ],
+    [
+     48.518963,
+     -120.67419
+    ],
+    [
+     48.51902,
+     -120.67418
+    ],
+    [
+     48.51902,
+     -120.674095
+    ],
+    [
+     48.519,
+     -120.67406
+    ],
+    [
+     48.519047,
+     -120.6739
+    ],
+    [
+     48.519047,
+     -120.67378
+    ],
+    [
+     48.51912,
+     -120.67355
+    ],
+    [
+     48.519375,
+     -120.673134
+    ],
+    [
+     48.519524,
+     -120.67294
+    ],
+    [
+     48.51955,
+     -120.67287
+    ],
+    [
+     48.520046,
+     -120.672035
+    ],
+    [
+     48.52032,
+     -120.67141
+    ],
+    [
+     48.520447,
+     -120.67118
+    ],
+    [
+     48.52049,
+     -120.67104
+    ],
+    [
+     48.520638,
+     -120.67089
+    ],
+    [
+     48.520737,
+     -120.6709
+    ],
+    [
+     48.520863,
+     -120.67079
+    ],
+    [
+     48.520977,
+     -120.67063
+    ],
+    [
+     48.5211,
+     -120.670364
+    ],
+    [
+     48.521145,
+     -120.66999
+    ],
+    [
+     48.521187,
+     -120.669846
+    ],
+    [
+     48.52122,
+     -120.669624
+    ],
+    [
+     48.521275,
+     -120.66948
+    ],
+    [
+     48.521324,
+     -120.66942
+    ],
+    [
+     48.5214,
+     -120.66937
+    ],
+    [
+     48.521587,
+     -120.66914
+    ],
+    [
+     48.52169,
+     -120.668884
+    ],
+    [
+     48.521805,
+     -120.66873
+    ],
+    [
+     48.521805,
+     -120.66856
+    ],
+    [
+     48.521687,
+     -120.66848
+    ],
+    [
+     48.52112,
+     -120.66863
+    ],
+    [
+     48.5209,
+     -120.66859
+    ],
+    [
+     48.520733,
+     -120.668594
+    ],
+    [
+     48.5206,
+     -120.66866
+    ],
+    [
+     48.52045,
+     -120.66878
+    ],
+    [
+     48.520077,
+     -120.66916
+    ],
+    [
+     48.51995,
+     -120.669235
+    ],
+    [
+     48.519695,
+     -120.66952
+    ],
+    [
+     48.519432,
+     -120.669655
+    ],
+    [
+     48.519173,
+     -120.66988
+    ],
+    [
+     48.519028,
+     -120.67006
+    ],
+    [
+     48.518875,
+     -120.67018
+    ],
+    [
+     48.518642,
+     -120.67048
+    ],
+    [
+     48.518524,
+     -120.67068
+    ],
+    [
+     48.518417,
+     -120.67081
+    ],
+    [
+     48.518272,
+     -120.67093
+    ],
+    [
+     48.518173,
+     -120.67115
+    ],
+    [
+     48.517807,
+     -120.671745
+    ],
+    [
+     48.51768,
+     -120.67193
+    ],
+    [
+     48.517532,
+     -120.67204
+    ],
+    [
+     48.51699,
+     -120.67202
+    ],
+    [
+     48.516846,
+     -120.672035
+    ],
+    [
+     48.51663,
+     -120.67215
+    ],
+    [
+     48.5165,
+     -120.672195
+    ],
+    [
+     48.516357,
+     -120.67223
+    ],
+    [
+     48.51627,
+     -120.6722
+    ],
+    [
+     48.51602,
+     -120.67203
+    ],
+    [
+     48.51596,
+     -120.67196
+    ],
+    [
+     48.515923,
+     -120.67195
+    ],
+    [
+     48.515713,
+     -120.67175
+    ],
+    [
+     48.515583,
+     -120.67172
+    ],
+    [
+     48.515507,
+     -120.67161
+    ],
+    [
+     48.51551,
+     -120.6715
+    ],
+    [
+     48.515457,
+     -120.67146
+    ],
+    [
+     48.51535,
+     -120.67129
+    ],
+    [
+     48.515377,
+     -120.671
+    ],
+    [
+     48.51532,
+     -120.67088
+    ],
+    [
+     48.515327,
+     -120.670815
+    ],
+    [
+     48.51536,
+     -120.67077
+    ],
+    [
+     48.515343,
+     -120.67058
+    ],
+    [
+     48.51515,
+     -120.67041
+    ],
+    [
+     48.51494,
+     -120.67043
+    ],
+    [
+     48.514694,
+     -120.67053
+    ],
+    [
+     48.514576,
+     -120.6708
+    ],
+    [
+     48.51461,
+     -120.67094
+    ],
+    [
+     48.514595,
+     -120.67107
+    ],
+    [
+     48.514606,
+     -120.67125
+    ],
+    [
+     48.514652,
+     -120.6713
+    ],
+    [
+     48.51461,
+     -120.67126
+    ],
+    [
+     48.514587,
+     -120.671036
+    ],
+    [
+     48.514587,
+     -120.67085
+    ],
+    [
+     48.51465,
+     -120.67063
+    ],
+    [
+     48.5148,
+     -120.67046
+    ],
+    [
+     48.514835,
+     -120.67037
+    ],
+    [
+     48.514812,
+     -120.670334
+    ],
+    [
+     48.514862,
+     -120.67016
+    ],
+    [
+     48.51486,
+     -120.66993
+    ],
+    [
+     48.514877,
+     -120.66983
+    ],
+    [
+     48.514893,
+     -120.669815
+    ],
+    [
+     48.51488,
+     -120.669655
+    ],
+    [
+     48.514797,
+     -120.66944
+    ],
+    [
+     48.51474,
+     -120.669365
+    ],
+    [
+     48.51478,
+     -120.66922
+    ],
+    [
+     48.51472,
+     -120.66906
+    ],
+    [
+     48.51452,
+     -120.668816
+    ],
+    [
+     48.514595,
+     -120.66868
+    ],
+    [
+     48.51464,
+     -120.66863
+    ],
+    [
+     48.514694,
+     -120.66861
+    ],
+    [
+     48.51474,
+     -120.668526
+    ],
+    [
+     48.51469,
+     -120.668274
+    ],
+    [
+     48.514694,
+     -120.668076
+    ],
+    [
+     48.51477,
+     -120.6679
+    ],
+    [
+     48.514797,
+     -120.66773
+    ],
+    [
+     48.514725,
+     -120.667656
+    ],
+    [
+     48.514668,
+     -120.66754
+    ],
+    [
+     48.514618,
+     -120.66738
+    ],
+    [
+     48.514614,
+     -120.6673
+    ],
+    [
+     48.514496,
+     -120.6672
+    ],
+    [
+     48.514477,
+     -120.66703
+    ],
+    [
+     48.514187,
+     -120.666916
+    ],
+    [
+     48.51415,
+     -120.66688
+    ],
+    [
+     48.514103,
+     -120.66671
+    ],
+    [
+     48.514027,
+     -120.66657
+    ],
+    [
+     48.513912,
+     -120.666534
+    ],
+    [
+     48.513714,
+     -120.666534
+    ],
+    [
+     48.513588,
+     -120.66645
+    ],
+    [
+     48.513546,
+     -120.666374
+    ],
+    [
+     48.513523,
+     -120.66618
+    ],
+    [
+     48.513474,
+     -120.666016
+    ],
+    [
+     48.51348,
+     -120.66607
+    ],
+    [
+     48.51351,
+     -120.66598
+    ],
+    [
+     48.51355,
+     -120.66594
+    ],
+    [
+     48.513535,
+     -120.66568
+    ],
+    [
+     48.51349,
+     -120.66547
+    ],
+    [
+     48.513397,
+     -120.66533
+    ],
+    [
+     48.513412,
+     -120.66528
+    ],
+    [
+     48.513382,
+     -120.6652
+    ],
+    [
+     48.513344,
+     -120.665146
+    ],
+    [
+     48.513287,
+     -120.665115
+    ],
+    [
+     48.513283,
+     -120.66505
+    ],
+    [
+     48.513214,
+     -120.66493
+    ],
+    [
+     48.513123,
+     -120.664856
+    ],
+    [
+     48.513046,
+     -120.66489
+    ],
+    [
+     48.513016,
+     -120.66486
+    ],
+    [
+     48.513023,
+     -120.664825
+    ],
+    [
+     48.512936,
+     -120.66475
+    ],
+    [
+     48.512848,
+     -120.664764
+    ],
+    [
+     48.512787,
+     -120.664734
+    ],
+    [
+     48.512794,
+     -120.66475
+    ],
+    [
+     48.51277,
+     -120.664764
+    ],
+    [
+     48.51277,
+     -120.664734
+    ],
+    [
+     48.512817,
+     -120.66468
+    ],
+    [
+     48.51281,
+     -120.66458
+    ],
+    [
+     48.51282,
+     -120.66447
+    ],
+    [
+     48.51284,
+     -120.66444
+    ],
+    [
+     48.51284,
+     -120.66432
+    ],
+    [
+     48.512867,
+     -120.66434
+    ],
+    [
+     48.51288,
+     -120.66427
+    ],
+    [
+     48.512863,
+     -120.66412
+    ],
+    [
+     48.512928,
+     -120.66413
+    ],
+    [
+     48.51297,
+     -120.66411
+    ],
+    [
+     48.512997,
+     -120.66405
+    ],
+    [
+     48.512993,
+     -120.663895
+    ],
+    [
+     48.513023,
+     -120.66389
+    ],
+    [
+     48.513054,
+     -120.66382
+    ],
+    [
+     48.513046,
+     -120.66378
+    ],
+    [
+     48.513084,
+     -120.66364
+    ],
+    [
+     48.513073,
+     -120.66355
+    ],
+    [
+     48.513115,
+     -120.66349
+    ],
+    [
+     48.513103,
+     -120.663414
+    ],
+    [
+     48.51313,
+     -120.663246
+    ],
+    [
+     48.51312,
+     -120.66315
+    ],
+    [
+     48.51314,
+     -120.66307
+    ],
+    [
+     48.513126,
+     -120.662994
+    ],
+    [
+     48.51317,
+     -120.66288
+    ],
+    [
+     48.51312,
+     -120.662704
+    ],
+    [
+     48.51314,
+     -120.66266
+    ],
+    [
+     48.513134,
+     -120.66259
+    ],
+    [
+     48.513054,
+     -120.66241
+    ],
+    [
+     48.51298,
+     -120.66236
+    ],
+    [
+     48.51294,
+     -120.66214
+    ],
+    [
+     48.51294,
+     -120.66206
+    ],
+    [
+     48.512817,
+     -120.66193
+    ],
+    [
+     48.512806,
+     -120.66186
+    ],
+    [
+     48.51287,
+     -120.66153
+    ],
+    [
+     48.512882,
+     -120.66141
+    ],
+    [
+     48.512894,
+     -120.66142
+    ],
+    [
+     48.51299,
+     -120.6613
+    ],
+    [
+     48.51307,
+     -120.66128
+    ],
+    [
+     48.513084,
+     -120.66123
+    ],
+    [
+     48.513077,
+     -120.66108
+    ],
+    [
+     48.51299,
+     -120.6609
+    ],
+    [
+     48.512486,
+     -120.66036
+    ],
+    [
+     48.512375,
+     -120.660324
+    ],
+    [
+     48.51228,
+     -120.66037
+    ],
+    [
+     48.512302,
+     -120.66037
+    ],
+    [
+     48.51229,
+     -120.66031
+    ],
+    [
+     48.51226,
+     -120.66023
+    ],
+    [
+     48.51222,
+     -120.66019
+    ],
+    [
+     48.512203,
+     -120.660126
+    ],
+    [
+     48.51201,
+     -120.66012
+    ],
+    [
+     48.511936,
+     -120.66004
+    ],
+    [
+     48.511845,
+     -120.65999
+    ],
+    [
+     48.511883,
+     -120.6599
+    ],
+    [
+     48.511883,
+     -120.6598
+    ],
+    [
+     48.511932,
+     -120.65933
+    ],
+    [
+     48.511925,
+     -120.65924
+    ],
+    [
+     48.51197,
+     -120.659164
+    ],
+    [
+     48.512127,
+     -120.65914
+    ],
+    [
+     48.512302,
+     -120.65922
+    ],
+    [
+     48.512447,
+     -120.65916
+    ],
+    [
+     48.51254,
+     -120.65907
+    ],
+    [
+     48.512577,
+     -120.659065
+    ],
+    [
+     48.512596,
+     -120.65898
+    ],
+    [
+     48.512638,
+     -120.65894
+    ],
+    [
+     48.512657,
+     -120.658844
+    ],
+    [
+     48.512936,
+     -120.65869
+    ],
+    [
+     48.51301,
+     -120.658714
+    ],
+    [
+     48.512947,
+     -120.65881
+    ],
+    [
+     48.513035,
+     -120.65896
+    ],
+    [
+     48.513107,
+     -120.65899
+    ],
+    [
+     48.5132,
+     -120.6589
+    ],
+    [
+     48.513138,
+     -120.65892
+    ],
+    [
+     48.513172,
+     -120.65894
+    ],
+    [
+     48.513577,
+     -120.65886
+    ],
+    [
+     48.513767,
+     -120.658844
+    ],
+    [
+     48.51381,
+     -120.65879
+    ],
+    [
+     48.51382,
+     -120.65871
+    ],
+    [
+     48.513847,
+     -120.65865
+    ],
+    [
+     48.514065,
+     -120.658615
+    ],
+    [
+     48.514122,
+     -120.6585
+    ],
+    [
+     48.5141,
+     -120.6585
+    ],
+    [
+     48.51411,
+     -120.65847
+    ],
+    [
+     48.51424,
+     -120.65846
+    ],
+    [
+     48.51421,
+     -120.65844
+    ],
+    [
+     48.514362,
+     -120.6585
+    ],
+    [
+     48.514282,
+     -120.65847
+    ],
+    [
+     48.51429,
+     -120.65846
+    ],
+    [
+     48.51422,
+     -120.65829
+    ],
+    [
+     48.51435,
+     -120.65813
+    ],
+    [
+     48.51423,
+     -120.65824
+    ],
+    [
+     48.514183,
+     -120.658264
+    ],
+    [
+     48.514286,
+     -120.6581
+    ],
+    [
+     48.514076,
+     -120.65817
+    ],
+    [
+     48.514095,
+     -120.65823
+    ],
+    [
+     48.51409,
+     -120.65833
+    ],
+    [
+     48.513966,
+     -120.65834
+    ],
+    [
+     48.51396,
+     -120.65837
+    ],
+    [
+     48.51403,
+     -120.65843
+    ],
+    [
+     48.514008,
+     -120.65849
+    ],
+    [
+     48.51416,
+     -120.65838
+    ],
+    [
+     48.514374,
+     -120.658
+    ],
+    [
+     48.514606,
+     -120.65775
+    ],
+    [
+     48.51463,
+     -120.657776
+    ],
+    [
+     48.514572,
+     -120.65778
+    ],
+    [
+     48.514538,
+     -120.65773
+    ],
+    [
+     48.514668,
+     -120.65773
+    ],
+    [
+     48.514717,
+     -120.65776
+    ],
+    [
+     48.514755,
+     -120.65769
+    ],
+    [
+     48.514736,
+     -120.65772
+    ],
+    [
+     48.514687,
+     -120.65767
+    ],
+    [
+     48.514668,
+     -120.65768
+    ],
+    [
+     48.514675,
+     -120.6577
+    ],
+    [
+     48.514656,
+     -120.65776
+    ],
+    [
+     48.514786,
+     -120.658005
+    ],
+    [
+     48.51431,
+     -120.65806
+    ],
+    [
+     48.514286,
+     -120.65776
+    ],
+    [
+     48.514313,
+     -120.6578
+    ],
+    [
+     48.514297,
+     -120.65789
+    ],
+    [
+     48.51424,
+     -120.65808
+    ],
+    [
+     48.514248,
+     -120.65817
+    ],
+    [
+     48.51429,
+     -120.65822
+    ],
+    [
+     48.514286,
+     -120.65824
+    ],
+    [
+     48.514248,
+     -120.65828
+    ],
+    [
+     48.514114,
+     -120.65823
+    ],
+    [
+     48.51412,
+     -120.65845
+    ],
+    [
+     48.514156,
+     -120.658485
+    ],
+    [
+     48.514,
+     -120.658516
+    ],
+    [
+     48.51387,
+     -120.6585
+    ],
+    [
+     48.51389,
+     -120.65849
+    ],
+    [
+     48.5139,
+     -120.65858
+    ],
+    [
+     48.51385,
+     -120.65861
+    ],
+    [
+     48.51384,
+     -120.658714
+    ],
+    [
+     48.51378,
+     -120.6588
+    ],
+    [
+     48.513744,
+     -120.658875
+    ],
+    [
+     48.513695,
+     -120.65886
+    ],
+    [
+     48.51363,
+     -120.658875
+    ],
+    [
+     48.513573,
+     -120.658966
+    ],
+    [
+     48.513584,
+     -120.65904
+    ],
+    [
+     48.513557,
+     -120.65906
+    ],
+    [
+     48.51358,
+     -120.65915
+    ],
+    [
+     48.513565,
+     -120.65924
+    ],
+    [
+     48.513596,
+     -120.65933
+    ],
+    [
+     48.513657,
+     -120.6594
+    ],
+    [
+     48.513687,
+     -120.65949
+    ],
+    [
+     48.513542,
+     -120.6595
+    ],
+    [
+     48.51353,
+     -120.65955
+    ],
+    [
+     48.513454,
+     -120.65962
+    ],
+    [
+     48.513416,
+     -120.659706
+    ],
+    [
+     48.513527,
+     -120.659996
+    ],
+    [
+     48.513615,
+     -120.66005
+    ],
+    [
+     48.51363,
+     -120.66009
+    ],
+    [
+     48.513664,
+     -120.66011
+    ],
+    [
+     48.513733,
+     -120.66008
+    ],
+    [
+     48.51375,
+     -120.660194
+    ],
+    [
+     48.5138,
+     -120.66032
+    ],
+    [
+     48.51385,
+     -120.66036
+    ],
+    [
+     48.513885,
+     -120.66029
+    ],
+    [
+     48.513885,
+     -120.66026
+    ],
+    [
+     48.513916,
+     -120.66024
+    ],
+    [
+     48.513912,
+     -120.6603
+    ],
+    [
+     48.51395,
+     -120.66024
+    ],
+    [
+     48.51398,
+     -120.660255
+    ],
+    [
+     48.514057,
+     -120.660255
+    ],
+    [
+     48.514057,
+     -120.66028
+    ],
+    [
+     48.514004,
+     -120.66012
+    ],
+    [
+     48.514103,
+     -120.66018
+    ],
+    [
+     48.514145,
+     -120.66017
+    ],
+    [
+     48.51402,
+     -120.660034
+    ],
+    [
+     48.51433,
+     -120.66024
+    ],
+    [
+     48.514236,
+     -120.66016
+    ],
+    [
+     48.514122,
+     -120.660225
+    ],
+    [
+     48.51414,
+     -120.660255
+    ],
+    [
+     48.513977,
+     -120.66015
+    ],
+    [
+     48.513927,
+     -120.66023
+    ],
+    [
+     48.51387,
+     -120.66043
+    ],
+    [
+     48.51389,
+     -120.660545
+    ],
+    [
+     48.513924,
+     -120.66059
+    ],
+    [
+     48.51387,
+     -120.66049
+    ],
+    [
+     48.513885,
+     -120.66039
+    ],
+    [
+     48.513874,
+     -120.660385
+    ],
+    [
+     48.51388,
+     -120.660416
+    ],
+    [
+     48.51394,
+     -120.66042
+    ],
+    [
+     48.513844,
+     -120.66037
+    ],
+    [
+     48.513855,
+     -120.66037
+    ],
+    [
+     48.51388,
+     -120.66025
+    ],
+    [
+     48.51387,
+     -120.66025
+    ],
+    [
+     48.51394,
+     -120.66054
+    ],
+    [
+     48.513905,
+     -120.660515
+    ],
+    [
+     48.51396,
+     -120.66041
+    ],
+    [
+     48.51398,
+     -120.6605
+    ],
+    [
+     48.513866,
+     -120.66034
+    ],
+    [
+     48.51384,
+     -120.66035
+    ],
+    [
+     48.513832,
+     -120.6603
+    ],
+    [
+     48.513866,
+     -120.66037
+    ],
+    [
+     48.513836,
+     -120.66033
+    ],
+    [
+     48.51388,
+     -120.660324
+    ],
+    [
+     48.51392,
+     -120.660286
+    ],
+    [
+     48.5139,
+     -120.660095
+    ],
+    [
+     48.513897,
+     -120.65992
+    ],
+    [
+     48.51391,
+     -120.65989
+    ],
+    [
+     48.51398,
+     -120.65995
+    ],
+    [
+     48.514008,
+     -120.65991
+    ],
+    [
+     48.514046,
+     -120.659904
+    ],
+    [
+     48.514122,
+     -120.659935
+    ],
+    [
+     48.51418,
+     -120.659805
+    ],
+    [
+     48.51434,
+     -120.65978
+    ],
+    [
+     48.514435,
+     -120.65969
+    ],
+    [
+     48.514557,
+     -120.65963
+    ],
+    [
+     48.51453,
+     -120.65963
+    ],
+    [
+     48.514507,
+     -120.65956
+    ],
+    [
+     48.514614,
+     -120.65952
+    ],
+    [
+     48.514637,
+     -120.65948
+    ],
+    [
+     48.514744,
+     -120.65938
+    ],
+    [
+     48.514755,
+     -120.659325
+    ],
+    [
+     48.51472,
+     -120.65929
+    ],
+    [
+     48.514675,
+     -120.65928
+    ],
+    [
+     48.514664,
+     -120.659225
+    ],
+    [
+     48.514774,
+     -120.65911
+    ],
+    [
+     48.51466,
+     -120.659096
+    ],
+    [
+     48.51461,
+     -120.659004
+    ],
+    [
+     48.514782,
+     -120.65886
+    ],
+    [
+     48.514866,
+     -120.65883
+    ],
+    [
+     48.51486,
+     -120.65885
+    ],
+    [
+     48.51487,
+     -120.65886
+    ],
+    [
+     48.51488,
+     -120.65879
+    ],
+    [
+     48.514915,
+     -120.65874
+    ],
+    [
+     48.514812,
+     -120.65873
+    ],
+    [
+     48.514828,
+     -120.65867
+    ],
+    [
+     48.51475,
+     -120.658585
+    ],
+    [
+     48.51467,
+     -120.65855
+    ],
+    [
+     48.51464,
+     -120.65858
+    ],
+    [
+     48.514603,
+     -120.65841
+    ],
+    [
+     48.514618,
+     -120.658455
+    ],
+    [
+     48.51465,
+     -120.658485
+    ],
+    [
+     48.5146,
+     -120.65839
+    ],
+    [
+     48.51462,
+     -120.65843
+    ],
+    [
+     48.514572,
+     -120.65849
+    ],
+    [
+     48.51467,
+     -120.65858
+    ],
+    [
+     48.514637,
+     -120.65858
+    ],
+    [
+     48.514687,
+     -120.6586
+    ],
+    [
+     48.51467,
+     -120.65862
+    ],
+    [
+     48.514626,
+     -120.658615
+    ],
+    [
+     48.51462,
+     -120.65873
+    ],
+    [
+     48.51469,
+     -120.65871
+    ],
+    [
+     48.5146,
+     -120.65862
+    ],
+    [
+     48.514595,
+     -120.658585
+    ],
+    [
+     48.514618,
+     -120.65859
+    ],
+    [
+     48.514545,
+     -120.65859
+    ],
+    [
+     48.514656,
+     -120.658615
+    ],
+    [
+     48.514645,
+     -120.6586
+    ],
+    [
+     48.514626,
+     -120.658615
+    ],
+    [
+     48.514584,
+     -120.65852
+    ],
+    [
+     48.51463,
+     -120.658585
+    ],
+    [
+     48.514534,
+     -120.65832
+    ],
+    [
+     48.51455,
+     -120.658325
+    ],
+    [
+     48.51474,
+     -120.658646
+    ],
+    [
+     48.514732,
+     -120.65874
+    ],
+    [
+     48.51483,
+     -120.65894
+    ],
+    [
+     48.51457,
+     -120.658554
+    ],
+    [
+     48.51469,
+     -120.65868
+    ],
+    [
+     48.514633,
+     -120.65864
+    ],
+    [
+     48.51457,
+     -120.65869
+    ],
+    [
+     48.514595,
+     -120.658775
+    ],
+    [
+     48.514862,
+     -120.659134
+    ],
+    [
+     48.514774,
+     -120.65891
+    ],
+    [
+     48.514717,
+     -120.65886
+    ],
+    [
+     48.514706,
+     -120.65887
+    ],
+    [
+     48.514713,
+     -120.65889
+    ],
+    [
+     48.514683,
+     -120.65886
+    ],
+    [
+     48.514698,
+     -120.65881
+    ],
+    [
+     48.514698,
+     -120.65884
+    ],
+    [
+     48.514664,
+     -120.6588
+    ],
+    [
+     48.514614,
+     -120.65864
+    ],
+    [
+     48.514587,
+     -120.65873
+    ],
+    [
+     48.514545,
+     -120.65871
+    ],
+    [
+     48.514534,
+     -120.658646
+    ],
+    [
+     48.51459,
+     -120.6586
+    ],
+    [
+     48.5146,
+     -120.65863
+    ],
+    [
+     48.51459,
+     -120.65859
+    ],
+    [
+     48.514614,
+     -120.65847
+    ],
+    [
+     48.514683,
+     -120.658554
+    ],
+    [
+     48.51467,
+     -120.65863
+    ],
+    [
+     48.514618,
+     -120.65846
+    ],
+    [
+     48.51461,
+     -120.65849
+    ],
+    [
+     48.51466,
+     -120.65864
+    ],
+    [
+     48.514626,
+     -120.65853
+    ],
+    [
+     48.514656,
+     -120.65857
+    ],
+    [
+     48.51459,
+     -120.65849
+    ],
+    [
+     48.514618,
+     -120.65851
+    ],
+    [
+     48.514603,
+     -120.65846
+    ],
+    [
+     48.514645,
+     -120.65847
+    ],
+    [
+     48.514683,
+     -120.658585
+    ],
+    [
+     48.51467,
+     -120.6586
+    ],
+    [
+     48.514664,
+     -120.65858
+    ],
+    [
+     48.51469,
+     -120.658516
+    ],
+    [
+     48.5147,
+     -120.65852
+    ],
+    [
+     48.514828,
+     -120.65882
+    ],
+    [
+     48.51484,
+     -120.65891
+    ],
+    [
+     48.51486,
+     -120.65894
+    ],
+    [
+     48.51487,
+     -120.65895
+    ],
+    [
+     48.514915,
+     -120.6589
+    ],
+    [
+     48.51494,
+     -120.658936
+    ],
+    [
+     48.514973,
+     -120.65893
+    ],
+    [
+     48.514946,
+     -120.65892
+    ],
+    [
+     48.51491,
+     -120.65886
+    ],
+    [
+     48.51494,
+     -120.65876
+    ],
+    [
+     48.514935,
+     -120.658745
+    ],
+    [
+     48.514923,
+     -120.65876
+    ],
+    [
+     48.514942,
+     -120.65876
+    ],
+    [
+     48.514942,
+     -120.65874
+    ],
+    [
+     48.514996,
+     -120.65865
+    ],
+    [
+     48.515,
+     -120.65862
+    ],
+    [
+     48.51498,
+     -120.65858
+    ],
+    [
+     48.515,
+     -120.65858
+    ],
+    [
+     48.515003,
+     -120.65853
+    ],
+    [
+     48.515015,
+     -120.65854
+    ],
+    [
+     48.515,
+     -120.65856
+    ],
+    [
+     48.515057,
+     -120.65854
+    ],
+    [
+     48.515106,
+     -120.65855
+    ],
+    [
+     48.515224,
+     -120.65849
+    ],
+    [
+     48.515266,
+     -120.65851
+    ],
+    [
+     48.515285,
+     -120.658485
+    ],
+    [
+     48.51531,
+     -120.65839
+    ],
+    [
+     48.515327,
+     -120.65838
+    ],
+    [
+     48.515293,
+     -120.65848
+    ],
+    [
+     48.51537,
+     -120.65831
+    ],
+    [
+     48.515278,
+     -120.65849
+    ],
+    [
+     48.515373,
+     -120.65826
+    ],
+    [
+     48.51543,
+     -120.6582
+    ],
+    [
+     48.51537,
+     -120.65838
+    ],
+    [
+     48.515408,
+     -120.65827
+    ],
+    [
+     48.515423,
+     -120.658264
+    ],
+    [
+     48.51542,
+     -120.65829
+    ],
+    [
+     48.515297,
+     -120.65847
+    ],
+    [
+     48.515297,
+     -120.65849
+    ],
+    [
+     48.515175,
+     -120.65854
+    ],
+    [
+     48.51517,
+     -120.65852
+    ],
+    [
+     48.515156,
+     -120.65852
+    ],
+    [
+     48.51513,
+     -120.65856
+    ],
+    [
+     48.51509,
+     -120.65847
+    ],
+    [
+     48.51512,
+     -120.65839
+    ],
+    [
+     48.51512,
+     -120.6583
+    ],
+    [
+     48.51508,
+     -120.658264
+    ],
+    [
+     48.515038,
+     -120.6583
+    ],
+    [
+     48.51505,
+     -120.65832
+    ],
+    [
+     48.515015,
+     -120.65831
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": 10.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "Approach from the SR-20 hairpin pullout to the base of the East Face (about 1 hr), climb the 12-pitch line up the East Face, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "fromTo": "Long car-to-car day climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Single to double rack through hand size with a set of nuts; a few small pieces for thinner sections.",
+   "what_to_bring": [
+    "helmet",
+    "rock shoes",
+    "standard rack",
+    "extra slings"
+   ],
+   "pro_tips": [
+    "Smooth crack technique pays off on the sustained pitches.",
+    "Begin early to avoid afternoon storms.",
+    "Coordinate with parties on adjacent East Face lines to manage rockfall."
+   ],
+   "watch_out": [
+    "afternoon thunderstorms",
+    "exposure",
+    "rockfall in the descent gully",
+    "route-finding between adjacent lines"
+   ],
+   "pro_needs": "Standard rack; bring smaller pieces for the thin spots.",
+   "best_season": "Summer into early fall for dry, warm granite.",
+   "high_point_ft": 7720,
+   "aid_grade": null,
+   "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the highway, round its east end, and follow a cairned boot path north into the forest. The path climbs through timber and breaks out onto the talus field directly below the East Face after roughly an hour. From where the path reaches the talus, continue right (north) along the base past the Liberty Crack starts to the far right-hand end of the face, below the red Baer Ceiling roof about 85 m above. No water source along the way; watch for the cairned track being hard to follow in low light, and loose talus underfoot at the base.",
+   "descent_text": "The Independence Route is a serious, sustained 12-pitch line (first climbed wall-style with 180 pitons and 5 bolts, later freed at 5.12a/5.11) that tops out on Liberty Bell's upper mountain/summit area, so it funnels into the standard Liberty Bell descent used by other summit-finishing routes: downclimb east ~100 ft through trees and loose rock to the 2-bolt station, then one rappel to an intermediate stance followed by a double-rope rappel (or two single-rope raps) into the Liberty Bell-Concord notch — 2 rappels on bolted anchors — then downclimb the scree/boulder gully to the climbers' path and Blue Lake Trail. Given the route's length and serious character, plan for this being a long day-into-evening descent; loose rock in the notch gully is a real hazard when tired or descending in the dark.",
+   "bail": "Rappel the route or traverse to the Beckey descent.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Climbs the right edge of the East Face on horizontal breaks and cracks to a belay near a yellow lichen patch by a pine tree.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 3,
+     "grade": "5.10a/b",
+     "notes": "Crimp right then traverse left on a flake through a bolted section that follows the historic aid pendulum's line.",
+     "pitch": 2,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10b",
+     "notes": "A left-facing quartz corner with a hard right-stemming sequence near two bolts.",
+     "pitch": 3,
+     "anchor": "Gear (ledge with large horn)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Chimney/offwidth climbing for about 40 ft to a small alcove below the red 'Baer Ceiling,' an original aid pitch.",
+     "pitch": 4,
+     "anchor": "Gear (small alcove)",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.11c",
+     "notes": "A ramp into a shallow corner with cruxy face moves protected by a fixed pin and copperheads; a mantle and slab move reach the belay. A sneaky, often-underrated crux.",
+     "pitch": 5,
+     "anchor": "Gear (flake belay)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.11b/c",
+     "notes": "A thin, piton-protected crack passes three stacked 'Cascade Ceilings' via a mantle move.",
+     "pitch": 6,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.11",
+     "notes": "A technical rightward traverse into a shallow corner above a pine tree, with a reach-dependent boulder-problem section -- the original crux before the route's belays were repositioned.",
+     "pitch": 7,
+     "anchor": "Gear (above pine tree)",
+     "lengthM": 35
+    },
+    {
+     "crux": true,
+     "bolts": 4,
+     "grade": "5.12a",
+     "notes": "Technical, classic granite stemming and jamming up an exposed corner beneath the 'Well Hung Ceiling' -- the route's overall crux pitch, matching its full free grade.",
+     "pitch": 8,
+     "anchor": "Bolted hanging belay (aging bolts)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Short pitch moving the belay left onto M&M Ledge, shared with Liberty Crack and Thin Red Line.",
+     "pitch": 9,
+     "anchor": "M&M Ledge (large, sloping)",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "Chimney and blocky corner climbing past red roofs to the base of a splitter wide crack; an alternate left-trending ramp also exists.",
+     "pitch": 10,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10",
+     "notes": "A nice splitter 2-3 inch crack leads to a clean slab and bolted anchor beneath the Hercan Roofs.",
+     "pitch": 11,
+     "anchor": "Bolted anchor (below Hercan Roofs)",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.8",
+     "notes": "A slab traverse up and right gains the ridge crest, followed by 3rd-class scrambling to the summit.",
+     "pitch": 12,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 40
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach from the SR-20 hairpin pullout to the base of the East Face (about 1 hr), climb the 12-pitch line up the East Face, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "hours": 10.5,
+      "miles": 5,
+      "title": "Long car-to-car day climb",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:00 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "5:00 AM",
+        "label": "Reach base",
+        "detail": ""
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Start climbing",
+        "detail": "12 pitches"
+       },
+       {
+        "time": "3:30 PM",
+        "label": "Top out",
+        "detail": ""
+       },
+       {
+        "time": "5:30-7:00 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb the 12-pitch Independence Route"
+     }
+    ],
+    "totalNote": "A single long day given the 12 pitches, roughly 10-11 hrs car-to-car."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Parking required at Blue Lakes Trailhead (west side); no permit for climbing or hiking",
+     "permit_type": "No climbing permit required",
+     "land_manager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+     "special_hazards": "Rock climbing technical terrain",
+     "wilderness_zone": "Not in designated wilderness",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "N/A",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+     "permit_cost_structure": "No climbing permit; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "N/A",
+     "seasonal_closure_dates": "Typical alpine access June-October",
+     "ranger_district_contact": "Okanogan-Wenatchee National Forest main office, (509) 664-9200"
+    },
+    "fees": "No climbing permit; NW Forest Pass $5 (day) or $30 (annual)",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No climbing permit required",
+    "closures": "Typical alpine access June-October",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Not in designated wilderness",
+    "landManager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "WA-20 hairpin pullout east of Washington Pass",
+    "status": null
+   },
+   "climate": {
+    "typical": "Sunny east-slope granite; afternoon thunderstorms common in summer.",
+    "bySeason": {
+     "fall": "Crisp and dry; great climbing before the highway closes.",
+     "spring": "Snow lingering; highway may still be closed.",
+     "summer": "Prime season; warm dry granite, afternoon storm risk.",
+     "winter": "Highway closed; not accessible."
+    },
+    "forecastZone": "Washington East Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies. Note: Washington Pass straddles the Chelan/Okanogan county boundary; confirm jurisdiction locally.",
+    "county": "Chelan County / Okanogan County (summit straddles the line)",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional parties in peak summer; not a weekend draw like the Beckey Route",
+    "solitudeRating": 4,
+    "estimatePerSeason": "A serious grade V free line that sees comparatively low traffic - likely only a handful of ascents per season given the sustained 5.12a free grade"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Short, steep forest and talus approach from the SR-20 hairpin to the East Face",
+     "packWeight": "Trad rack for sustained crack/face climbing, roughly 18-22 lb"
+    },
+    "approachTime": "Roughly 1 hour from the SR-20 hairpin pullout to the East Face",
+    "requiredSkills": [
+     "5.11+ crack and face leading",
+     "multi-pitch endurance across 12 pitches in a day",
+     "route-finding among adjacent East Face lines",
+     "efficient descent management",
+     "comfort with serious commitment typical of a grade V route"
+    ],
+    "experienceLevel": "Strong 5.11+ trad/free climber comfortable with sustained face and crack pitches and the commitment of a grade V, 12-pitch outing"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer into early fall for dry, warm granite",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Warm dry granite, prime conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Snow can still linger on the approach and the highway may only just be reopening",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak conditions and afternoon storm risk typical of the season",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Crisp, dry, and stable before the highway closes for winter",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+     "probability": "Afternoon storm buildup typical"
+    },
+    "exposure": "High consequence - sustained exposure over 12 pitches, with route-finding uncertainty between adjacent lines raising the risk of a difficult mid-face retreat, plus rockfall in the descent gully",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Crowd estimate not found in dedicated sources - inferred from the route's grade and relative obscurity versus neighboring classics",
+     "No route-specific NWAC or trip-report data located",
+     "Total time-on-route not documented in the existing on-file data either",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/6PBH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 5,
+    "technical": 5,
+    "commitment": 5,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.515435,
+    "peakLng": -120.658365,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass, via the cairned climbers' path to the East Face"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "After downclimbing east ~100 ft through trees and loose rock from the summit area, first rappel down to an intermediate stance.",
+     "anchor": "2-bolt station (sloping ledge)",
+     "lengthM": 25
+    },
+    {
+     "n": 2,
+     "notes": "Continues down into the Liberty Bell-Concord Tower notch. Can be done as one double-rope rappel, or split into two single-rope raps.",
+     "anchor": "bolted anchor",
+     "lengthM": null
+    }
+   ],
+   "rappel_count_note": "Descent funnels into the standard Liberty Bell notch descent shared with other summit-finishing routes on the peak; the second stage is done as one long double-rope rappel or, alternatively, as two shorter single-rope rappels depending on rack.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "The hairpin pond pullout and the East Face path, then all the way RIGHT to the north edge of the face",
+     "notes": "Park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond on the south side of the road, and follow the cairned climbers' path from the pond's east end about a mile through forest to the talus below the East Face. TWELVE PITCHES, FIRST CLIMBED WALL-STYLE IN 1966 WITH 180 PITONS AND FIVE BOLTS OVER FOUR DAYS, and later freed. The line takes the profusely overhanging northeast corner of the East Face and joins Thin Red Line at M&M Ledge.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "A profusely overhanging corner, first climbed over four days with 180 pitons",
+      "A cairned forest path that is hard to follow before dawn",
+      "Several closely spaced starts on the same wall",
+      "Loose talus in the upper approach"
+     ],
+     "baseFinding": "START ON THE FAR RIGHT, THE NORTH EDGE, OF THE EAST FACE, AND CONFIRM IT BY LOCATING THE RED-COLOURED ROOF AND ALCOVE OF THE BAER CEILING ABOUT 85 M ABOVE. That is the marker, it is coloured, it is high enough to be visible when the base is in cloud, and no other route on this wall has one.\n\nSO THE TEST IS A COLOUR AND A HEIGHT: a red roof roughly 85 metres up, at the right-hand end of the face. If there is no red roof above you, keep walking right.\n\nTHE ORDER ALONG THE BASE, WHICH BOUNDS IT ON THE OTHER SIDE: FREEDOM RIDER about 100 ft LEFT of Liberty Crack, LIBERTY CRACK, FREEDOM OR DEATH on a leftward-trending ramp with bolts above, THIN RED LINE, LIBERTY AND INJUSTICE FOR ALL 10 m right of that, LIVE FREE OR DIE, and THIS ROUTE last. You cannot go further right and still be on the East Face; the ground beyond turns the corner onto the northeast aspect, where Dark Side of Liberty lives.\n\nA SECOND CONFIRMATION FROM THE SHAPE OF THE ROCK: this is the PROFUSELY OVERHANGING northeast corner. If the wall above your start leans back rather than out, you have not reached the corner.\n\nWHERE IT GOES, WHICH ALSO SETTLES THE DESCENT ARGUMENT: the route joins Thin Red Line at M&M Ledge, and fixed anchors let parties rappel from the top of pitch 8 back down the East Face to their packs on a single 70 m rope, rather than continuing to the true summit and finishing on the far side of the mountain."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "the independence route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "area_id": "wa_liberty_bell",
+   "name": "Thin Red Line",
+   "discipline": "alpine",
+   "grade": "Grade IV, 5.12 free (orig. aid V, 5.9 A3)",
+   "grade_system": "yds",
+   "grade_num": 12,
+   "pitches": 11,
+   "length_m": 335,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Jim Madsen & Kim Schmitz, 1967 (aid, A3); FFA Kate Rutherford & Mikey Schaefer, September 2008 (5.12c)",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Cams from a purple TCU up to a #2 Camalot, with doubles from blue TCU through 0.75",
+    "Small to medium stoppers — RPs are not needed",
+    "About 10 quickdraws for the bolted and fixed-pin sections",
+    "Extra slings — the route has a lot of fixed gear (mostly solid, some older pins), so budget for backing up or extending a questionable piece rather than just clipping through",
+    "Helmet",
+    "Approach shoes for the 3rd/4th class scramble to the base"
+   ],
+   "hazards": [
+    "sustained thin crack climbing",
+    "high exposure on the East Face",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "A classic sustained crack line up the steep East Face of Liberty Bell at Washington Pass — one of the area's renowned harder free climbs on superb golden granite. First climbed (aid) by Jim Madsen and Kim Schmitz on July 29, 1967; first freed by Kate Rutherford and Mikey Schaefer in September 2008, at 5.12c.",
+   "beta": "Grade: 5.12 (YDS), Grade IV overall. 11 pitches, approximately 1,100 feet of climbing. Route follows intricate crack systems and faces on East Face of Liberty Bell. Hazards: significant rock fall danger in approach gully (described as \"party-induced rock fall bowling alley\"); loose rock throughout approach; exposed alpine terrain; weather exposure on big wall. Required skills: advanced alpine rock climbing, 5.11+ crack climbing, self-rescue, anchor building, multi-pitch experience. First ascent: 1967 (aid climbing); free ascent variation established 2008 by Mikey Schaefer. Best season: June-September; July-September strongly preferred (late June requires ice axe, crampons). Notable: route features substantial fixed gear on most pitches; descent via two-rope rappel from M&M Ledge or summit traverse.",
+   "turnaround": "Watch the sky — turn around if afternoon storms build over Washington Pass.",
+   "auto_generated": true,
+   "alpine_grade": "D",
+   "rock_grade": "5.12",
+   "ice_grade": null,
+   "gain_ft": 1312,
+   "loss_ft": 2400,
+   "dist_km": 1.6,
+   "max_angle": null,
+   "rappels": "4",
+   "commitment": "IV",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell coverage.",
+   "descent": "Descend the standard Beckey Route rappels/downclimb on the southwest side back to the gully.",
+   "obj_haz": [
+    "rockfall",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5200,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Roadside pullout on the north side of SR-20 at the hairpin turn east of Washington Pass, beside a small pond; the East Face climbers' path starts here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Highway 20 to the hairpin curve on the east side of Washington Pass and look for the small pond on the south side of the road; the pullout you want is on the north side of the highway, at about 5,200 ft. Park there and pick up the cairned climbers' path leaving the pond, which runs east into the forest and up to the East Face talus. The season for this line is roughly June through September."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5750,
+     "name": "Stream crossing near meadow",
+     "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+     "type": "Water",
+     "distMi": 1.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Climbers' path junction",
+     "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward Liberty Bell's west side.",
+     "type": "Junction",
+     "distMi": 1.6
+    },
+    {
+     "lat": 48.514633,
+     "lng": -120.658546,
+     "elev": 7150,
+     "name": "West face base / sloping bench",
+     "note": "Scramble left off the approach gully onto the sloping west-side bench, then traverse left at the base of the slabs to the start of the west face lines.",
+     "type": "Junction",
+     "distMi": 2.3
+    },
+    {
+     "lat": 48.514666,
+     "lng": -120.658696,
+     "elev": 7300,
+     "name": "Sustained thin-crack pitches",
+     "note": "Sustained thin finger and hand cracks at 5.10-5.11 on excellent but highly exposed rock; retreating typically means leaving gear behind.",
+     "type": "Hazard",
+     "distMi": 2.4
+    },
+    {
+     "lat": 48.515435,
+     "lng": -120.658365,
+     "elev": 7720,
+     "name": "Liberty Bell summit",
+     "note": "Grade IV outing tops out on the true summit; from the summit descend via the standard Beckey Route rappels/downclimb into the gully (most parties instead rappel the East Face from M&M Ledge without topping out).",
+     "type": "Summit",
+     "distMi": 2.7
+    }
+   ],
+   "gpx": [
+    [
+     48.519127,
+     -120.67427
+    ],
+    [
+     48.51909,
+     -120.67428
+    ],
+    [
+     48.5191,
+     -120.674225
+    ],
+    [
+     48.519028,
+     -120.67425
+    ],
+    [
+     48.518963,
+     -120.67419
+    ],
+    [
+     48.51902,
+     -120.67418
+    ],
+    [
+     48.51902,
+     -120.674095
+    ],
+    [
+     48.519,
+     -120.67406
+    ],
+    [
+     48.519047,
+     -120.6739
+    ],
+    [
+     48.519047,
+     -120.67378
+    ],
+    [
+     48.51912,
+     -120.67355
+    ],
+    [
+     48.519375,
+     -120.673134
+    ],
+    [
+     48.519524,
+     -120.67294
+    ],
+    [
+     48.51955,
+     -120.67287
+    ],
+    [
+     48.520046,
+     -120.672035
+    ],
+    [
+     48.52032,
+     -120.67141
+    ],
+    [
+     48.520447,
+     -120.67118
+    ],
+    [
+     48.52049,
+     -120.67104
+    ],
+    [
+     48.520638,
+     -120.67089
+    ],
+    [
+     48.520737,
+     -120.6709
+    ],
+    [
+     48.520863,
+     -120.67079
+    ],
+    [
+     48.520977,
+     -120.67063
+    ],
+    [
+     48.5211,
+     -120.670364
+    ],
+    [
+     48.521145,
+     -120.66999
+    ],
+    [
+     48.521187,
+     -120.669846
+    ],
+    [
+     48.52122,
+     -120.669624
+    ],
+    [
+     48.521275,
+     -120.66948
+    ],
+    [
+     48.521324,
+     -120.66942
+    ],
+    [
+     48.5214,
+     -120.66937
+    ],
+    [
+     48.521587,
+     -120.66914
+    ],
+    [
+     48.52169,
+     -120.668884
+    ],
+    [
+     48.521805,
+     -120.66873
+    ],
+    [
+     48.521805,
+     -120.66856
+    ],
+    [
+     48.521687,
+     -120.66848
+    ],
+    [
+     48.52112,
+     -120.66863
+    ],
+    [
+     48.5209,
+     -120.66859
+    ],
+    [
+     48.520733,
+     -120.668594
+    ],
+    [
+     48.5206,
+     -120.66866
+    ],
+    [
+     48.52045,
+     -120.66878
+    ],
+    [
+     48.520077,
+     -120.66916
+    ],
+    [
+     48.51995,
+     -120.669235
+    ],
+    [
+     48.519695,
+     -120.66952
+    ],
+    [
+     48.519432,
+     -120.669655
+    ],
+    [
+     48.519173,
+     -120.66988
+    ],
+    [
+     48.519028,
+     -120.67006
+    ],
+    [
+     48.518875,
+     -120.67018
+    ],
+    [
+     48.518642,
+     -120.67048
+    ],
+    [
+     48.518524,
+     -120.67068
+    ],
+    [
+     48.518417,
+     -120.67081
+    ],
+    [
+     48.518272,
+     -120.67093
+    ],
+    [
+     48.518173,
+     -120.67115
+    ],
+    [
+     48.517807,
+     -120.671745
+    ],
+    [
+     48.51768,
+     -120.67193
+    ],
+    [
+     48.517532,
+     -120.67204
+    ],
+    [
+     48.51699,
+     -120.67202
+    ],
+    [
+     48.516846,
+     -120.672035
+    ],
+    [
+     48.51663,
+     -120.67215
+    ],
+    [
+     48.5165,
+     -120.672195
+    ],
+    [
+     48.516357,
+     -120.67223
+    ],
+    [
+     48.51627,
+     -120.6722
+    ],
+    [
+     48.51602,
+     -120.67203
+    ],
+    [
+     48.51596,
+     -120.67196
+    ],
+    [
+     48.515923,
+     -120.67195
+    ],
+    [
+     48.515713,
+     -120.67175
+    ],
+    [
+     48.515583,
+     -120.67172
+    ],
+    [
+     48.515507,
+     -120.67161
+    ],
+    [
+     48.51551,
+     -120.6715
+    ],
+    [
+     48.515457,
+     -120.67146
+    ],
+    [
+     48.51535,
+     -120.67129
+    ],
+    [
+     48.515377,
+     -120.671
+    ],
+    [
+     48.51532,
+     -120.67088
+    ],
+    [
+     48.515327,
+     -120.670815
+    ],
+    [
+     48.51536,
+     -120.67077
+    ],
+    [
+     48.515343,
+     -120.67058
+    ],
+    [
+     48.51515,
+     -120.67041
+    ],
+    [
+     48.51494,
+     -120.67043
+    ],
+    [
+     48.514694,
+     -120.67053
+    ],
+    [
+     48.514576,
+     -120.6708
+    ],
+    [
+     48.51461,
+     -120.67094
+    ],
+    [
+     48.514595,
+     -120.67107
+    ],
+    [
+     48.514606,
+     -120.67125
+    ],
+    [
+     48.514652,
+     -120.6713
+    ],
+    [
+     48.51461,
+     -120.67126
+    ],
+    [
+     48.514587,
+     -120.671036
+    ],
+    [
+     48.514587,
+     -120.67085
+    ],
+    [
+     48.51465,
+     -120.67063
+    ],
+    [
+     48.5148,
+     -120.67046
+    ],
+    [
+     48.514835,
+     -120.67037
+    ],
+    [
+     48.514812,
+     -120.670334
+    ],
+    [
+     48.514862,
+     -120.67016
+    ],
+    [
+     48.51486,
+     -120.66993
+    ],
+    [
+     48.514877,
+     -120.66983
+    ],
+    [
+     48.514893,
+     -120.669815
+    ],
+    [
+     48.51488,
+     -120.669655
+    ],
+    [
+     48.514797,
+     -120.66944
+    ],
+    [
+     48.51474,
+     -120.669365
+    ],
+    [
+     48.51478,
+     -120.66922
+    ],
+    [
+     48.51472,
+     -120.66906
+    ],
+    [
+     48.51452,
+     -120.668816
+    ],
+    [
+     48.514595,
+     -120.66868
+    ],
+    [
+     48.51464,
+     -120.66863
+    ],
+    [
+     48.514694,
+     -120.66861
+    ],
+    [
+     48.51474,
+     -120.668526
+    ],
+    [
+     48.51469,
+     -120.668274
+    ],
+    [
+     48.514694,
+     -120.668076
+    ],
+    [
+     48.51477,
+     -120.6679
+    ],
+    [
+     48.514797,
+     -120.66773
+    ],
+    [
+     48.514725,
+     -120.667656
+    ],
+    [
+     48.514668,
+     -120.66754
+    ],
+    [
+     48.514618,
+     -120.66738
+    ],
+    [
+     48.514614,
+     -120.6673
+    ],
+    [
+     48.514496,
+     -120.6672
+    ],
+    [
+     48.514477,
+     -120.66703
+    ],
+    [
+     48.514187,
+     -120.666916
+    ],
+    [
+     48.51415,
+     -120.66688
+    ],
+    [
+     48.514103,
+     -120.66671
+    ],
+    [
+     48.514027,
+     -120.66657
+    ],
+    [
+     48.513912,
+     -120.666534
+    ],
+    [
+     48.513714,
+     -120.666534
+    ],
+    [
+     48.513588,
+     -120.66645
+    ],
+    [
+     48.513546,
+     -120.666374
+    ],
+    [
+     48.513523,
+     -120.66618
+    ],
+    [
+     48.513474,
+     -120.666016
+    ],
+    [
+     48.51348,
+     -120.66607
+    ],
+    [
+     48.51351,
+     -120.66598
+    ],
+    [
+     48.51355,
+     -120.66594
+    ],
+    [
+     48.513535,
+     -120.66568
+    ],
+    [
+     48.51349,
+     -120.66547
+    ],
+    [
+     48.513397,
+     -120.66533
+    ],
+    [
+     48.513412,
+     -120.66528
+    ],
+    [
+     48.513382,
+     -120.6652
+    ],
+    [
+     48.513344,
+     -120.665146
+    ],
+    [
+     48.513287,
+     -120.665115
+    ],
+    [
+     48.513283,
+     -120.66505
+    ],
+    [
+     48.513214,
+     -120.66493
+    ],
+    [
+     48.513123,
+     -120.664856
+    ],
+    [
+     48.513046,
+     -120.66489
+    ],
+    [
+     48.513016,
+     -120.66486
+    ],
+    [
+     48.513023,
+     -120.664825
+    ],
+    [
+     48.512936,
+     -120.66475
+    ],
+    [
+     48.512848,
+     -120.664764
+    ],
+    [
+     48.512787,
+     -120.664734
+    ],
+    [
+     48.512794,
+     -120.66475
+    ],
+    [
+     48.51277,
+     -120.664764
+    ],
+    [
+     48.51277,
+     -120.664734
+    ],
+    [
+     48.512817,
+     -120.66468
+    ],
+    [
+     48.51281,
+     -120.66458
+    ],
+    [
+     48.51282,
+     -120.66447
+    ],
+    [
+     48.51284,
+     -120.66444
+    ],
+    [
+     48.51284,
+     -120.66432
+    ],
+    [
+     48.512867,
+     -120.66434
+    ],
+    [
+     48.51288,
+     -120.66427
+    ],
+    [
+     48.512863,
+     -120.66412
+    ],
+    [
+     48.512928,
+     -120.66413
+    ],
+    [
+     48.51297,
+     -120.66411
+    ],
+    [
+     48.512997,
+     -120.66405
+    ],
+    [
+     48.512993,
+     -120.663895
+    ],
+    [
+     48.513023,
+     -120.66389
+    ],
+    [
+     48.513054,
+     -120.66382
+    ],
+    [
+     48.513046,
+     -120.66378
+    ],
+    [
+     48.513084,
+     -120.66364
+    ],
+    [
+     48.513073,
+     -120.66355
+    ],
+    [
+     48.513115,
+     -120.66349
+    ],
+    [
+     48.513103,
+     -120.663414
+    ],
+    [
+     48.51313,
+     -120.663246
+    ],
+    [
+     48.51312,
+     -120.66315
+    ],
+    [
+     48.51314,
+     -120.66307
+    ],
+    [
+     48.513126,
+     -120.662994
+    ],
+    [
+     48.51317,
+     -120.66288
+    ],
+    [
+     48.51312,
+     -120.662704
+    ],
+    [
+     48.51314,
+     -120.66266
+    ],
+    [
+     48.513134,
+     -120.66259
+    ],
+    [
+     48.513054,
+     -120.66241
+    ],
+    [
+     48.51298,
+     -120.66236
+    ],
+    [
+     48.51294,
+     -120.66214
+    ],
+    [
+     48.51294,
+     -120.66206
+    ],
+    [
+     48.512817,
+     -120.66193
+    ],
+    [
+     48.512806,
+     -120.66186
+    ],
+    [
+     48.51287,
+     -120.66153
+    ],
+    [
+     48.512882,
+     -120.66141
+    ],
+    [
+     48.512894,
+     -120.66142
+    ],
+    [
+     48.51299,
+     -120.6613
+    ],
+    [
+     48.51307,
+     -120.66128
+    ],
+    [
+     48.513084,
+     -120.66123
+    ],
+    [
+     48.513077,
+     -120.66108
+    ],
+    [
+     48.51299,
+     -120.6609
+    ],
+    [
+     48.512486,
+     -120.66036
+    ],
+    [
+     48.512375,
+     -120.660324
+    ],
+    [
+     48.51228,
+     -120.66037
+    ],
+    [
+     48.512302,
+     -120.66037
+    ],
+    [
+     48.51229,
+     -120.66031
+    ],
+    [
+     48.51226,
+     -120.66023
+    ],
+    [
+     48.51222,
+     -120.66019
+    ],
+    [
+     48.512203,
+     -120.660126
+    ],
+    [
+     48.51201,
+     -120.66012
+    ],
+    [
+     48.511936,
+     -120.66004
+    ],
+    [
+     48.511845,
+     -120.65999
+    ],
+    [
+     48.511883,
+     -120.6599
+    ],
+    [
+     48.511883,
+     -120.6598
+    ],
+    [
+     48.511932,
+     -120.65933
+    ],
+    [
+     48.511925,
+     -120.65924
+    ],
+    [
+     48.51197,
+     -120.659164
+    ],
+    [
+     48.512127,
+     -120.65914
+    ],
+    [
+     48.512302,
+     -120.65922
+    ],
+    [
+     48.512447,
+     -120.65916
+    ],
+    [
+     48.51254,
+     -120.65907
+    ],
+    [
+     48.512577,
+     -120.659065
+    ],
+    [
+     48.512596,
+     -120.65898
+    ],
+    [
+     48.512638,
+     -120.65894
+    ],
+    [
+     48.512657,
+     -120.658844
+    ],
+    [
+     48.512936,
+     -120.65869
+    ],
+    [
+     48.51301,
+     -120.658714
+    ],
+    [
+     48.512947,
+     -120.65881
+    ],
+    [
+     48.513035,
+     -120.65896
+    ],
+    [
+     48.513107,
+     -120.65899
+    ],
+    [
+     48.5132,
+     -120.6589
+    ],
+    [
+     48.513138,
+     -120.65892
+    ],
+    [
+     48.513172,
+     -120.65894
+    ],
+    [
+     48.513577,
+     -120.65886
+    ],
+    [
+     48.513767,
+     -120.658844
+    ],
+    [
+     48.51381,
+     -120.65879
+    ],
+    [
+     48.51382,
+     -120.65871
+    ],
+    [
+     48.513847,
+     -120.65865
+    ],
+    [
+     48.514065,
+     -120.658615
+    ],
+    [
+     48.514122,
+     -120.6585
+    ],
+    [
+     48.5141,
+     -120.6585
+    ],
+    [
+     48.51411,
+     -120.65847
+    ],
+    [
+     48.51424,
+     -120.65846
+    ],
+    [
+     48.51421,
+     -120.65844
+    ],
+    [
+     48.514362,
+     -120.6585
+    ],
+    [
+     48.514282,
+     -120.65847
+    ],
+    [
+     48.51429,
+     -120.65846
+    ],
+    [
+     48.51422,
+     -120.65829
+    ],
+    [
+     48.51435,
+     -120.65813
+    ],
+    [
+     48.51423,
+     -120.65824
+    ],
+    [
+     48.514183,
+     -120.658264
+    ],
+    [
+     48.514286,
+     -120.6581
+    ],
+    [
+     48.514076,
+     -120.65817
+    ],
+    [
+     48.514095,
+     -120.65823
+    ],
+    [
+     48.51409,
+     -120.65833
+    ],
+    [
+     48.513966,
+     -120.65834
+    ],
+    [
+     48.51396,
+     -120.65837
+    ],
+    [
+     48.51403,
+     -120.65843
+    ],
+    [
+     48.514008,
+     -120.65849
+    ],
+    [
+     48.51416,
+     -120.65838
+    ],
+    [
+     48.514374,
+     -120.658
+    ],
+    [
+     48.514606,
+     -120.65775
+    ],
+    [
+     48.51463,
+     -120.657776
+    ],
+    [
+     48.514572,
+     -120.65778
+    ],
+    [
+     48.514538,
+     -120.65773
+    ],
+    [
+     48.514668,
+     -120.65773
+    ],
+    [
+     48.514717,
+     -120.65776
+    ],
+    [
+     48.514755,
+     -120.65769
+    ],
+    [
+     48.514736,
+     -120.65772
+    ],
+    [
+     48.514687,
+     -120.65767
+    ],
+    [
+     48.514668,
+     -120.65768
+    ],
+    [
+     48.514675,
+     -120.6577
+    ],
+    [
+     48.514656,
+     -120.65776
+    ],
+    [
+     48.514786,
+     -120.658005
+    ],
+    [
+     48.51431,
+     -120.65806
+    ],
+    [
+     48.514286,
+     -120.65776
+    ],
+    [
+     48.514313,
+     -120.6578
+    ],
+    [
+     48.514297,
+     -120.65789
+    ],
+    [
+     48.51424,
+     -120.65808
+    ],
+    [
+     48.514248,
+     -120.65817
+    ],
+    [
+     48.51429,
+     -120.65822
+    ],
+    [
+     48.514286,
+     -120.65824
+    ],
+    [
+     48.514248,
+     -120.65828
+    ],
+    [
+     48.514114,
+     -120.65823
+    ],
+    [
+     48.51412,
+     -120.65845
+    ],
+    [
+     48.514156,
+     -120.658485
+    ],
+    [
+     48.514,
+     -120.658516
+    ],
+    [
+     48.51387,
+     -120.6585
+    ],
+    [
+     48.51389,
+     -120.65849
+    ],
+    [
+     48.5139,
+     -120.65858
+    ],
+    [
+     48.51385,
+     -120.65861
+    ],
+    [
+     48.51384,
+     -120.658714
+    ],
+    [
+     48.51378,
+     -120.6588
+    ],
+    [
+     48.513744,
+     -120.658875
+    ],
+    [
+     48.513695,
+     -120.65886
+    ],
+    [
+     48.51363,
+     -120.658875
+    ],
+    [
+     48.513573,
+     -120.658966
+    ],
+    [
+     48.513584,
+     -120.65904
+    ],
+    [
+     48.513557,
+     -120.65906
+    ],
+    [
+     48.51358,
+     -120.65915
+    ],
+    [
+     48.513565,
+     -120.65924
+    ],
+    [
+     48.513596,
+     -120.65933
+    ],
+    [
+     48.513657,
+     -120.6594
+    ],
+    [
+     48.513687,
+     -120.65949
+    ],
+    [
+     48.513542,
+     -120.6595
+    ],
+    [
+     48.51353,
+     -120.65955
+    ],
+    [
+     48.513454,
+     -120.65962
+    ],
+    [
+     48.513416,
+     -120.659706
+    ],
+    [
+     48.513527,
+     -120.659996
+    ],
+    [
+     48.513615,
+     -120.66005
+    ],
+    [
+     48.51363,
+     -120.66009
+    ],
+    [
+     48.513664,
+     -120.66011
+    ],
+    [
+     48.513733,
+     -120.66008
+    ],
+    [
+     48.51375,
+     -120.660194
+    ],
+    [
+     48.5138,
+     -120.66032
+    ],
+    [
+     48.51385,
+     -120.66036
+    ],
+    [
+     48.513885,
+     -120.66029
+    ],
+    [
+     48.513885,
+     -120.66026
+    ],
+    [
+     48.513916,
+     -120.66024
+    ],
+    [
+     48.513912,
+     -120.6603
+    ],
+    [
+     48.51395,
+     -120.66024
+    ],
+    [
+     48.51398,
+     -120.660255
+    ],
+    [
+     48.514057,
+     -120.660255
+    ],
+    [
+     48.514057,
+     -120.66028
+    ],
+    [
+     48.514004,
+     -120.66012
+    ],
+    [
+     48.514103,
+     -120.66018
+    ],
+    [
+     48.514145,
+     -120.66017
+    ],
+    [
+     48.51402,
+     -120.660034
+    ],
+    [
+     48.51433,
+     -120.66024
+    ],
+    [
+     48.514236,
+     -120.66016
+    ],
+    [
+     48.514122,
+     -120.660225
+    ],
+    [
+     48.51414,
+     -120.660255
+    ],
+    [
+     48.513977,
+     -120.66015
+    ],
+    [
+     48.513927,
+     -120.66023
+    ],
+    [
+     48.51387,
+     -120.66043
+    ],
+    [
+     48.51389,
+     -120.660545
+    ],
+    [
+     48.513924,
+     -120.66059
+    ],
+    [
+     48.51387,
+     -120.66049
+    ],
+    [
+     48.513885,
+     -120.66039
+    ],
+    [
+     48.513874,
+     -120.660385
+    ],
+    [
+     48.51388,
+     -120.660416
+    ],
+    [
+     48.51394,
+     -120.66042
+    ],
+    [
+     48.513844,
+     -120.66037
+    ],
+    [
+     48.513855,
+     -120.66037
+    ],
+    [
+     48.51388,
+     -120.66025
+    ],
+    [
+     48.51387,
+     -120.66025
+    ],
+    [
+     48.51394,
+     -120.66054
+    ],
+    [
+     48.513905,
+     -120.660515
+    ],
+    [
+     48.51396,
+     -120.66041
+    ],
+    [
+     48.51398,
+     -120.6605
+    ],
+    [
+     48.513866,
+     -120.66034
+    ],
+    [
+     48.51384,
+     -120.66035
+    ],
+    [
+     48.513832,
+     -120.6603
+    ],
+    [
+     48.513866,
+     -120.66037
+    ],
+    [
+     48.513836,
+     -120.66033
+    ],
+    [
+     48.51388,
+     -120.660324
+    ],
+    [
+     48.51392,
+     -120.660286
+    ],
+    [
+     48.5139,
+     -120.660095
+    ],
+    [
+     48.513897,
+     -120.65992
+    ],
+    [
+     48.51391,
+     -120.65989
+    ],
+    [
+     48.51398,
+     -120.65995
+    ],
+    [
+     48.514008,
+     -120.65991
+    ],
+    [
+     48.514046,
+     -120.659904
+    ],
+    [
+     48.514122,
+     -120.659935
+    ],
+    [
+     48.51418,
+     -120.659805
+    ],
+    [
+     48.51434,
+     -120.65978
+    ],
+    [
+     48.514435,
+     -120.65969
+    ],
+    [
+     48.514557,
+     -120.65963
+    ],
+    [
+     48.51453,
+     -120.65963
+    ],
+    [
+     48.514507,
+     -120.65956
+    ],
+    [
+     48.514614,
+     -120.65952
+    ],
+    [
+     48.514637,
+     -120.65948
+    ],
+    [
+     48.514744,
+     -120.65938
+    ],
+    [
+     48.514755,
+     -120.659325
+    ],
+    [
+     48.51472,
+     -120.65929
+    ],
+    [
+     48.514675,
+     -120.65928
+    ],
+    [
+     48.514664,
+     -120.659225
+    ],
+    [
+     48.514774,
+     -120.65911
+    ],
+    [
+     48.51466,
+     -120.659096
+    ],
+    [
+     48.51461,
+     -120.659004
+    ],
+    [
+     48.514782,
+     -120.65886
+    ],
+    [
+     48.514866,
+     -120.65883
+    ],
+    [
+     48.51486,
+     -120.65885
+    ],
+    [
+     48.51487,
+     -120.65886
+    ],
+    [
+     48.51488,
+     -120.65879
+    ],
+    [
+     48.514915,
+     -120.65874
+    ],
+    [
+     48.514812,
+     -120.65873
+    ],
+    [
+     48.514828,
+     -120.65867
+    ],
+    [
+     48.51475,
+     -120.658585
+    ],
+    [
+     48.51467,
+     -120.65855
+    ],
+    [
+     48.51464,
+     -120.65858
+    ],
+    [
+     48.514603,
+     -120.65841
+    ],
+    [
+     48.514618,
+     -120.658455
+    ],
+    [
+     48.51465,
+     -120.658485
+    ],
+    [
+     48.5146,
+     -120.65839
+    ],
+    [
+     48.51462,
+     -120.65843
+    ],
+    [
+     48.514572,
+     -120.65849
+    ],
+    [
+     48.51467,
+     -120.65858
+    ],
+    [
+     48.514637,
+     -120.65858
+    ],
+    [
+     48.514687,
+     -120.6586
+    ],
+    [
+     48.51467,
+     -120.65862
+    ],
+    [
+     48.514626,
+     -120.658615
+    ],
+    [
+     48.51462,
+     -120.65873
+    ],
+    [
+     48.51469,
+     -120.65871
+    ],
+    [
+     48.5146,
+     -120.65862
+    ],
+    [
+     48.514595,
+     -120.658585
+    ],
+    [
+     48.514618,
+     -120.65859
+    ],
+    [
+     48.514545,
+     -120.65859
+    ],
+    [
+     48.514656,
+     -120.658615
+    ],
+    [
+     48.514645,
+     -120.6586
+    ],
+    [
+     48.514626,
+     -120.658615
+    ],
+    [
+     48.514584,
+     -120.65852
+    ],
+    [
+     48.51463,
+     -120.658585
+    ],
+    [
+     48.514534,
+     -120.65832
+    ],
+    [
+     48.51455,
+     -120.658325
+    ],
+    [
+     48.51474,
+     -120.658646
+    ],
+    [
+     48.514732,
+     -120.65874
+    ],
+    [
+     48.51483,
+     -120.65894
+    ],
+    [
+     48.51457,
+     -120.658554
+    ],
+    [
+     48.51469,
+     -120.65868
+    ],
+    [
+     48.514633,
+     -120.65864
+    ],
+    [
+     48.51457,
+     -120.65869
+    ],
+    [
+     48.514595,
+     -120.658775
+    ],
+    [
+     48.514862,
+     -120.659134
+    ],
+    [
+     48.514774,
+     -120.65891
+    ],
+    [
+     48.514717,
+     -120.65886
+    ],
+    [
+     48.514706,
+     -120.65887
+    ],
+    [
+     48.514713,
+     -120.65889
+    ],
+    [
+     48.514683,
+     -120.65886
+    ],
+    [
+     48.514698,
+     -120.65881
+    ],
+    [
+     48.514698,
+     -120.65884
+    ],
+    [
+     48.514664,
+     -120.6588
+    ],
+    [
+     48.514614,
+     -120.65864
+    ],
+    [
+     48.514587,
+     -120.65873
+    ],
+    [
+     48.514545,
+     -120.65871
+    ],
+    [
+     48.514534,
+     -120.658646
+    ],
+    [
+     48.51459,
+     -120.6586
+    ],
+    [
+     48.5146,
+     -120.65863
+    ],
+    [
+     48.51459,
+     -120.65859
+    ],
+    [
+     48.514614,
+     -120.65847
+    ],
+    [
+     48.514683,
+     -120.658554
+    ],
+    [
+     48.51467,
+     -120.65863
+    ],
+    [
+     48.514618,
+     -120.65846
+    ],
+    [
+     48.51461,
+     -120.65849
+    ],
+    [
+     48.51466,
+     -120.65864
+    ],
+    [
+     48.514626,
+     -120.65853
+    ],
+    [
+     48.514656,
+     -120.65857
+    ],
+    [
+     48.51459,
+     -120.65849
+    ],
+    [
+     48.514618,
+     -120.65851
+    ],
+    [
+     48.514603,
+     -120.65846
+    ],
+    [
+     48.514645,
+     -120.65847
+    ],
+    [
+     48.514683,
+     -120.658585
+    ],
+    [
+     48.51467,
+     -120.6586
+    ],
+    [
+     48.514664,
+     -120.65858
+    ],
+    [
+     48.51469,
+     -120.658516
+    ],
+    [
+     48.5147,
+     -120.65852
+    ],
+    [
+     48.514828,
+     -120.65882
+    ],
+    [
+     48.51484,
+     -120.65891
+    ],
+    [
+     48.51486,
+     -120.65894
+    ],
+    [
+     48.51487,
+     -120.65895
+    ],
+    [
+     48.514915,
+     -120.6589
+    ],
+    [
+     48.51494,
+     -120.658936
+    ],
+    [
+     48.514973,
+     -120.65893
+    ],
+    [
+     48.514946,
+     -120.65892
+    ],
+    [
+     48.51491,
+     -120.65886
+    ],
+    [
+     48.51494,
+     -120.65876
+    ],
+    [
+     48.514935,
+     -120.658745
+    ],
+    [
+     48.514923,
+     -120.65876
+    ],
+    [
+     48.514942,
+     -120.65876
+    ],
+    [
+     48.514942,
+     -120.65874
+    ],
+    [
+     48.514996,
+     -120.65865
+    ],
+    [
+     48.515,
+     -120.65862
+    ],
+    [
+     48.51498,
+     -120.65858
+    ],
+    [
+     48.515,
+     -120.65858
+    ],
+    [
+     48.515003,
+     -120.65853
+    ],
+    [
+     48.515015,
+     -120.65854
+    ],
+    [
+     48.515,
+     -120.65856
+    ],
+    [
+     48.515057,
+     -120.65854
+    ],
+    [
+     48.515106,
+     -120.65855
+    ],
+    [
+     48.515224,
+     -120.65849
+    ],
+    [
+     48.515266,
+     -120.65851
+    ],
+    [
+     48.515285,
+     -120.658485
+    ],
+    [
+     48.51531,
+     -120.65839
+    ],
+    [
+     48.515327,
+     -120.65838
+    ],
+    [
+     48.515293,
+     -120.65848
+    ],
+    [
+     48.51537,
+     -120.65831
+    ],
+    [
+     48.515278,
+     -120.65849
+    ],
+    [
+     48.515373,
+     -120.65826
+    ],
+    [
+     48.51543,
+     -120.6582
+    ],
+    [
+     48.51537,
+     -120.65838
+    ],
+    [
+     48.515408,
+     -120.65827
+    ],
+    [
+     48.515423,
+     -120.658264
+    ],
+    [
+     48.51542,
+     -120.65829
+    ],
+    [
+     48.515297,
+     -120.65847
+    ],
+    [
+     48.515297,
+     -120.65849
+    ],
+    [
+     48.515175,
+     -120.65854
+    ],
+    [
+     48.51517,
+     -120.65852
+    ],
+    [
+     48.515156,
+     -120.65852
+    ],
+    [
+     48.51513,
+     -120.65856
+    ],
+    [
+     48.51509,
+     -120.65847
+    ],
+    [
+     48.51512,
+     -120.65839
+    ],
+    [
+     48.51512,
+     -120.6583
+    ],
+    [
+     48.51508,
+     -120.658264
+    ],
+    [
+     48.515038,
+     -120.6583
+    ],
+    [
+     48.51505,
+     -120.65832
+    ],
+    [
+     48.515015,
+     -120.65831
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 1,
+    "recommendedStart": "4:30-5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "Approach from the hairpin pullout to the East Face base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, cruxes on pitches 5 and 6), then rappel the route/stand…",
+      "fromTo": "Long car-to-car day climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Double rack of small to medium cams, a full set of nuts, and extra small pieces for the thin cracks.",
+   "what_to_bring": [
+    "helmet",
+    "rock shoes",
+    "double rack of small cams",
+    "extra slings"
+   ],
+   "pro_tips": [
+    "Bring plenty of small protection — the cracks are thin and sustained.",
+    "Start early to beat afternoon thunderstorms at the Pass.",
+    "The granite is superb; trust the friction on dry rock."
+   ],
+   "watch_out": "High-grade 5.12 sustained climbing with serious exposure\nRoute-finding complexity on higher pitches requires confident route choice\nWeather sensitivity - any precipitation makes 5.12 climbing unclimbable\nLoose rock hazard on mixed terrain between pitches\nAfternoon electrical activity on exposed summit sections creates electrical hazard",
+   "pro_needs": "Emphasis on small cams and nuts for thin, sustained crack protection.",
+   "best_season": "Summer into early fall for dry, warm granite.",
+   "high_point_ft": 7720,
+   "aid_grade": null,
+   "approach": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond eastward into forest",
+   "descent_text": "Two documented options. (1) From the top of the route near M&M Ledge, work climber's left to good bolts and make four double-rope rappels (2 ropes) essentially to the ground at the base of the East Face — this is the faster option and returns you directly to your pack/the East Face approach. (2) If you continue to the true summit instead, descend via the standard Liberty Bell notch route: downclimb east ~100 ft through trees/loose rock to the 2-bolt station, then make two roughly 25m rappels (the second off a bolted anchor) down into the Liberty Bell-Concord notch, then hike down the scree/snow gully to the climbers' trail along the base of the west faces — but this leaves you on the opposite (west) side of the mountain from your car at the East Face pullout, requiring a shuttle or road walk back.",
+   "bail": "Rappel the route or traverse to the Beckey descent; retreat is feasible but committing on the upper face.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 4,
+     "grade": "5.10-",
+     "notes": "Mellow slabbing up discontinuous cracks and bolts; the obvious four-bolt first pitch that ends at a set of chains is the standard orientation landmark for the route.",
+     "pitch": 1,
+     "anchor": "Chain anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.11",
+     "notes": "Easy initial moves to a small roof where insecure lie-backing provides the pitch's tricky bit, then easier ground to a gear belay below a roof-capped dihedral.",
+     "pitch": 2,
+     "anchor": "Gear belay",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.11",
+     "notes": "Sustained stemming and lie-backs up a beautiful corner; a sometimes-wet, wild crux move gains the roof before exiting left to bolts.",
+     "pitch": 3,
+     "anchor": "2-bolt anchor",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10",
+     "notes": "Move up and left to the roof lip, clip two bolts, then traverse right on a flake to a stance and bolted anchor.",
+     "pitch": 4,
+     "anchor": "2-bolt anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 4,
+     "grade": "5.12",
+     "notes": "A beautiful, techy rightward traverse on perfect stone accesses a left-facing corner; technical stemming through four bolts with a slight crux move to a good hold.",
+     "pitch": 5,
+     "anchor": "Bolted anchor",
+     "lengthM": 35
+    },
+    {
+     "crux": true,
+     "bolts": 2,
+     "grade": "5.12c",
+     "notes": "The route's benchmark crux: climb the corner to a small roof, step right into a hanging finger crack, then a bouldery crux between two seams before easing off on a mellow finger crack. This is the pitch freed by Kate Rutherford and Mikey Schaefer in 2008 to complete the free line at 5.12c.",
+     "pitch": 6,
+     "anchor": "Bolted anchor",
+     "lengthM": 22
+    },
+    {
+     "crux": false,
+     "bolts": 2,
+     "grade": "5.10",
+     "notes": "Moderate crack climbing leads up and right to a two-bolt anchor on a large ledge system.",
+     "pitch": 7,
+     "anchor": "2-bolt anchor",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.11",
+     "notes": "Thin, technical moves on more perfect rock protected by small gear and fixed heads/pitons; the last hard pitch before easier ground.",
+     "pitch": 8,
+     "anchor": "Gear (fixed heads/pins)",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.9",
+     "notes": "Engaging corner climbing with a brief thin move, then a mantle onto M&M Ledge, the mid-height junction shared with Live Free or Die and other East Face lines.",
+     "pitch": 9,
+     "anchor": "Gear (M&M Ledge)",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Easier corner and ledge climbing above M&M Ledge, working up the upper apron toward the summit block on golden, lower-angle granite.",
+     "pitch": 10,
+     "anchor": "Gear",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Rad, easy scrambling atop Liberty Bell to the true summit; most parties instead rappel from M&M Ledge (four double-rope raps via bolts) rather than finish this far.",
+     "pitch": 11,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 20
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach from the hairpin pullout to the East Face base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, cruxes on pitches 5 and 6), then rappel the route/standard Beckey-side descent back to the car.",
+      "hours": 10.5,
+      "miles": 5,
+      "title": "Long car-to-car day climb",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:30-5:00 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Start climbing",
+        "detail": ""
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Top out / begin rappels",
+        "detail": ""
+       },
+       {
+        "time": "4:30-6:00 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Free-climb Thin Red Line through the pitch 5-6 cruxes"
+     }
+    ],
+    "totalNote": "A single long day, roughly 10-11 hrs car-to-car."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Parking required at Blue Lakes Trailhead (west side); no permit for climbing or hiking",
+     "permit_type": "No climbing permit required",
+     "land_manager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+     "special_hazards": "Rock climbing technical terrain",
+     "wilderness_zone": "Not in designated wilderness",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "N/A",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+     "permit_cost_structure": "No climbing permit; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "N/A",
+     "seasonal_closure_dates": "Typical alpine access June-October",
+     "ranger_district_contact": "Okanogan-Wenatchee National Forest main office, (509) 664-9200"
+    },
+    "fees": "No climbing permit; NW Forest Pass $5 (day) or $30 (annual)",
+    "notes": "Northwest Forest Pass required for parking. Seasonal access: optimal late June through September (approach gully snow-filled until late June, autumn storms typically arrive in October). Parking: small pullout on north side of Highway 20 just east of Washington Pass near pond. Day permits available via Recreation.gov app ($5).",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No climbing permit required",
+    "closures": "Typical alpine access June-October",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Not in designated wilderness",
+    "landManager": "Okanogan-Wenatchee National Forest (outside North Cascades National Park boundary)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "WA-20 (North Cascades Highway) to the hairpin pullout east of Washington Pass",
+    "status": "Open seasonally",
+    "driveNote": "From the east (Mazama/Winthrop) or west via Highway 20 to the hairpin turn just east of Washington Pass.",
+    "seasonalGate": "Washington Pass closed in winter (typically late fall to spring)"
+   },
+   "climate": {
+    "typical": "Sunny east-slope granite; afternoon thunderstorms common in summer.",
+    "bySeason": {
+     "fall": "Crisp and dry; great climbing before the highway closes.",
+     "spring": "Snow lingering; highway may still be closed.",
+     "summer": "Prime season; warm dry granite, afternoon storm risk.",
+     "winter": "Highway closed; not accessible."
+    },
+    "forecastZone": "Washington East Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies. Note: Washington Pass straddles the Chelan/Okanogan county boundary; confirm jurisdiction locally.",
+    "county": "Chelan",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Very rarely climbed",
+    "solitudeRating": 5,
+    "estimatePerSeason": "A serious grade IV test-piece with sustained thin cracks; likely only a few ascents logged per season among strong free climbers"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "East Face approach from the SR-20 hairpin pullout",
+     "packWeight": "Trad rack weighted toward thin gear (small cams/stoppers), roughly 18-20 lb"
+    },
+    "approachTime": "Roughly 45 minutes to 1 hour from the SR-20 hairpin pullout",
+    "requiredSkills": [
+     "5.12 sustained thin crack leading",
+     "big multi-pitch endurance across 11 pitches",
+     "expert rope management/efficiency to beat afternoon weather",
+     "confident retreat/bail judgment given serious commitment"
+    ],
+    "experienceLevel": "Expert-level 5.12 crack climber with prior big multi-pitch/alpine experience; must be comfortable on sustained thin cracks with high exposure across 11 pitches"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer into early fall for dry, warm granite",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Warm dry granite, prime conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Base can still be damp or affected by residual spring snow",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cooler and stable before the highway closes",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+     "probability": "Getting caught high on this long, hard route in a storm is a serious hazard given the sustained thin-crack climbing"
+    },
+    "exposure": "Very high consequence - sustained thin crack climbing at 5.12 with high exposure on the East Face and a long, complex rappel descent",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No documented party-count or crowd data found for this rarely-climbed line",
+     "Ascent-frequency estimate is inferred from grade/obscurity rather than a verified source",
+     "No NWAC or dedicated seasonal data specific to this route",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/6PBH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 5,
+    "technical": 5,
+    "commitment": 5,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.5154,
+    "peakLng": -120.6579,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond eastward into forest"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of four double-rope rappels down the East Face, starting near M&M Ledge.",
+     "anchor": "bolted anchor, climber's-left of M&M Ledge",
+     "hazards": [
+      "The M&M Ledge anchor is two pieces of old fixed gear, a pin and a wire. A large and reportedly bomber horn sits up and left of it that would make a much better station and nobody has rigged it - carry cord if you want to use it",
+      "Because the line trends left rather than dropping straight down, a rope end blown or thrown off line is awkward to recover"
+     ],
+     "lengthM": null,
+     "station": "The rappels begin at M&M Ledge. From it, work climber's LEFT to reach good bolts - the bolted stations are not directly beneath where the ledge drops you, and finding them is the only route-finding on this descent. If you rappel from the ledge's own anchor instead, that is a fixed piton and a fixed wire, and the rappel from it also trends climber's left."
+    },
+    {
+     "n": 2,
+     "notes": "Continues down the East Face line on double ropes.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Steep sustained face with nothing to stand on between stations - once on the rope you are committed to reaching the next anchor"
+     ],
+     "lengthM": null,
+     "station": "Second station on the bolted line down the East Face."
+    },
+    {
+     "n": 3,
+     "notes": "Continues down the East Face line on double ropes.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Anything knocked off a station here falls the full height of the wall"
+     ],
+     "lengthM": null,
+     "station": "Third station on the bolted line."
+    },
+    {
+     "n": 4,
+     "notes": "Final rappel, reaching the ground at the base of the East Face.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Talus and snow at the base of the face for much of the season"
+     ],
+     "lengthM": null,
+     "station": "Last rappel, essentially reaching the ground at the base of the East Face - the side you approached from, so this is where your pack is."
+    }
+   ],
+   "rappel_count_note": "Four rappels off bolts, reached by working climber's LEFT from M&M Ledge, and the description that gives that sequence assumes TWO ropes - four double-rope rappels essentially to the ground. Parties who first rappel from M&M Ledge's own fixed pin-and-wire anchor, which also trends climber's left, count five. No single-rope option is described for this line. The alternative descent, for parties who continue to the true summit rather than rappelling from the ledge, is the standard Liberty Bell notch route - a downclimb east to a two-bolt station and two rappels of about 25 m into the Liberty Bell-Concord notch - which is fewer rappels but lands on the opposite side of the mountain from the East Face approach and from your pack. Per-station distances are not published; the figures given assume near-full-length double-rope rappels.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "The hairpin pond pullout and the cairned East Face path, then RIGHT of Liberty Crack",
+     "notes": "From the Highway 20 hairpin curve on the east side of Washington Pass, locate the small pond on the south side of the road; the pullout is on the north side of the highway. Follow the cairned climbers' path from the pond eastward into forest and up to the East Face talus. Note that this route's stored trailhead coordinate does not agree with the one every other East Face route on this peak carries. Use the pond and the hairpin, not a stored point.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "A start that has to be sighted from a distance rather than found along the base",
+      "Snow travel at the base into early summer",
+      "Several route starts within a short distance of each other on the same wall",
+      "A summit descent that strands you on the opposite side of the mountain from your car"
+     ],
+     "baseFinding": "THE ROUTE IS CLIMBER'S RIGHT OF LIBERTY CRACK, AND THE PUBLISHED METHOD FOR FINDING IT IS TO WORK DOWNWARD FROM THE FEATURES ABOVE RATHER THAN ALONG THE BASE. Look climber's right of Liberty Crack and connect the line down from the features higher on the wall. Some mellow snow travel is usually necessary to reach the base.\n\nSO THIS IS THE ONE EAST FACE ROUTE WHOSE START IS HONESTLY DESCRIBED AS A SIGHTING PROBLEM, AND THAT IS WORTH KNOWING BEFORE THE CLOUD COMES DOWN. Fix the line from the talus while you can see the wall. If you cannot see the wall, you cannot locate this start by walking the base, and no description will change that.\n\nWHAT YOU CAN DO WITHOUT A VIEW IS BOUND IT, BECAUSE THE ORDER ALONG THE BASE IS KNOWN. Left to right: FREEDOM RIDER about 100 ft left of Liberty Crack, LIBERTY CRACK, FREEDOM OR DEATH just right of it on a leftward-trending ramp with bolts above, THIN RED LINE, LIBERTY AND INJUSTICE FOR ALL about 10 m right of Thin Red Line, LIVE FREE OR DIE, and THE INDEPENDENCE ROUTE at the far right or north edge of the face beneath a red roof and alcove called the Baer Ceiling about 85 m up.\n\nSO: IF YOU ARE STANDING AT A LEFTWARD-TRENDING RAMP WITH BOLTS ABOVE IT, YOU ARE ONE ROUTE LEFT, ON FREEDOM OR DEATH. IF YOU CAN SEE A RED ROOF ABOUT 85 M ABOVE YOU, YOU HAVE WALKED ALL THE WAY RIGHT TO THE INDEPENDENCE ROUTE.\n\nTHE DESCENT DECIDES WHICH CAR YOU END AT, AND THIS ROUTE HAS BOTH OPTIONS: from the top of the route near M&M Ledge, work climber's left to good bolts and make four double-rope rappels essentially to the ground at the base of the East Face, returning to your pack and the East Face approach. If you instead continue to the true summit and take the standard Liberty Bell notch descent, you finish on the WEST side of the mountain and need a shuttle or a road walk back."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "thin red line",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

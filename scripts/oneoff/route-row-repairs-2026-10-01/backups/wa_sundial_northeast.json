@@ -1,0 +1,94 @@
+{
+ "id": "wa_sundial_northeast",
+ "name": "East Slopes (Standard)",
+ "waypoints": [
+  {
+   "lat": 47.877572,
+   "lng": -123.136927,
+   "elev": 2550,
+   "name": "Upper Dungeness / Royal Basin Trailhead",
+   "note": "Large parking area at end of FR 2870 off Palo Alto Rd/FR 28; $5 NW Forest day-use fee, self-issue permit envelope, pit toilets.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Take Highway 101 to just before Sequim Bay State Park and turn onto Louella Road, then follow Palo Alto Road, which becomes Forest Road 28, for about 6 miles. Turn right on FR 2880 along the Dungeness River, and 1.7 miles later turn left on FR 2870 and stay on it for roughly 6.5 to 9 miles of gravel that winds steeply down to a river crossing. It ends at the large Dungeness/Royal Basin trailhead lot, with a picnic table and a vault toilet. There is a $5 Northwest Forest day-use fee, paid with the self-issue permit envelope at the trailhead."
+  },
+  {
+   "lat": 47.864143,
+   "lng": -123.164693,
+   "elev": 3400,
+   "name": "Royal Creek / Dungeness River crossings",
+   "note": "Trail parallels and repeatedly crosses Royal Creek on log bridges after the first easy mile along the Dungeness River; reliable water throughout.",
+   "type": "Water",
+   "distMi": 3
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4900,
+   "name": "Shelter Rock",
+   "note": "Massive overhanging rock on the left just below Royal Lake, a well-known trail landmark and informal rest stop.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 47.83201,
+   "lng": -123.21073,
+   "elev": 5107,
+   "name": "Royal Lake",
+   "note": "Designated backcountry campsites at the outlet; overnight permit and bear canister required, no campfires.",
+   "type": "Campsite",
+   "distMi": 7.2
+  },
+  {
+   "lat": 47.834718,
+   "lng": -123.215964,
+   "elev": 5345,
+   "name": "Arrowhead Meadow",
+   "note": "Trail crosses a log bridge, climbs steeply, then levels into this open alpine meadow below Upper Royal Basin.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 47.837636,
+   "lng": -123.220429,
+   "elev": 5695,
+   "name": "Upper Royal Basin tarns",
+   "note": "First of several milky-blue tarns fed by snowmelt off the Needles; last reliable water before the talus climb.",
+   "type": "Water",
+   "distMi": 8.1
+  },
+  {
+   "lat": 47.835712,
+   "lng": -123.222133,
+   "elev": 6600,
+   "name": "East flank talus/scree gully below the Needles",
+   "note": "Loose, unstable talus and scree on the exposed east side; rockfall risk increases with parties above, especially in shoulder-season conditions.",
+   "type": "Hazard",
+   "distMi": 9.2
+  },
+  {
+   "lat": 47.832961,
+   "lng": -123.227692,
+   "elev": 7209,
+   "name": "Sundial summit block",
+   "note": "Final class 3 scramble up a short, exposed ridge-top pitch to the true summit; loose rock and steep drop-offs on the east side.",
+   "type": "Summit",
+   "distMi": 9.8
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Royal Basin to the northeast gully",
+   "notes": "Seven miles or so up the Royal Basin Trail past Shelter Rock to Royal Lake, then about a mile more and five hundred feet through Arrowhead Meadow into Upper Royal Basin below the Needles. It has no designated sites (camping there is on bare ground or gravel only, by a permit arranged through the Wilderness Information Center), so most parties camp at the lake; the tarns are the last dependable water before the talus. Off-trail from the basin onward.",
+   "season": "Mid-July to September",
+   "hazards": [
+    "Loose, rotten basalt on the gully and ridge with rockfall onto parties below",
+    "Snow or sluffing in the northeast couloir well into July — axe and self-arrest",
+    "An exposed Class 3 ridge traverse to the true summit",
+    "A spot on the ledges that appears to cliff out and is passed by a cairned crack",
+    "Lightly visited terrain where a rescue takes considerably longer than usual"
+   ],
+   "baseFinding": "From the tarns of Upper Royal Basin, look up at the Needles wall and pick out the northeast-facing gully on the climber's-right side of the group. Early in the season it holds snow, which makes it the obvious white line on an otherwise dry face and is the easiest identification you will get. Cross the talus to its foot; the base is where the loose scree fan narrows and steepens into the gully proper. Climb it and watch for the dogleg — the gully bends left below a notch on the summit ridge, and that bend is the confirmation you are in the right one rather than a neighbour. From the notch a short, exposed Class 3 scramble runs south to the true summit. The Needles hold several similar gullies and Clark stands immediately northwest with Johnson west, so a peak that looks right from the basin may not be the one you want. Higher up, on the broken ledges, one spot appears to cliff out where a cairned Class 3 crack around the corner is the way through. Everything on this face is loose — keep out of each other's fall line."
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "id": "wa_slippery_slab_tower_ne_face",
+ "name": "Slippery Slab Tower NE Face",
+ "waypoints": [
+  {
+   "lat": 47.7094,
+   "lng": -121.1065,
+   "elev": 3100,
+   "name": "Tunnel Creek Trailhead",
+   "note": "FS Rd 6095, ~13.2 mi east of Skykomish off US-2; approach is Tunnel Creek Trail -> PCT (Hope Lake) -> south to Trap Pass -> climbers trail to NE base of tower",
+   "type": "Trailhead",
+   "elevFt": 3100,
+   "directions": "Drive US 2 east past Skykomish about 12 miles to the sharp hairpin turn. Immediately after the Tunnel Creek bridge, turn right onto unsigned FS Road 6095 (only possible from the eastbound lane) and follow the narrow, potholed gravel road 1.2 miles, keeping left at two quick forks, to the trailhead at about 3,100 ft. A Northwest Forest Pass and a free self-issued Alpine Lakes Wilderness permit are required."
+  },
+  {
+   "lat": 47.66798,
+   "lng": -121.140727,
+   "elev": 4512,
+   "name": "Surprise Lake",
+   "note": "Trail switchbacks above the lake to join the PCT. Surprise Lake sits at 4,500 ft. An earlier pin for it sat 5.2 mi west, the same ~4.5 mi westward error this route's other waypoints were already corrected for.",
+   "type": "Water",
+   "distMi": 4.7
+  },
+  {
+   "lat": 47.6744,
+   "lng": -121.124,
+   "elev": 5800,
+   "name": "Trap Pass",
+   "note": "PCT junction; the climbers path to Thunder Mountain and Slippery Slab Tower leaves directly from the top of the pass.",
+   "type": "Junction",
+   "distMi": 6
+  },
+  {
+   "lat": 47.66888,
+   "lng": -121.12634,
+   "elev": 6200,
+   "name": "Base of Slippery Slab Tower",
+   "note": "Corrected — an earlier coordinate (47.665,-121.22) sat ~4.5mi west of Trap Pass instead of continuing toward the tower, likely a data entry error. This pin (47.668645,-121.126119, elev 6356ft) matches the area's own registered location.",
+   "type": "Junction",
+   "distMi": 6.8
+  },
+  {
+   "lat": 47.66888,
+   "lng": -121.12634,
+   "name": "Slippery Slab Tower NE Face (start)",
+   "type": "Route",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 47.66888,
+   "lng": -121.12634,
+   "elev": 6356,
+   "name": "Slippery Slab Tower NE Face Topout",
+   "note": "Corrected — an earlier coordinate (47.6636,-121.2226) was ~4.5mi off; this pin is cross-checked against the area's own registered location. Two-pitch 5.4; Pitch 2 diagonals left into a gully to a large boulder near the top.",
+   "type": "Topout",
+   "distMi": 7
+  },
+  {
+   "lat": 47.66888,
+   "lng": -121.12634,
+   "elev": 6356,
+   "name": "Slippery Slab Tower",
+   "type": "Summit",
+   "elevFt": 6356
+  }
+ ],
+ "approach": "From either trailhead, climbers first gain the Pacific Crest Trail — via the Tunnel Creek Trail climbing about 1,170 ft in 1.45 miles to Hope Lake, or via the Surprise Creek Trail past Surprise and Glacier Lakes — then follow the PCT south several miles to Trap Pass (~5,800 ft). From Trap Pass an unmaintained climbers' trail continues south along the ridge to the base of Slippery Slab Tower, with Thunder Mountain further along the same ridgeline above Glacier Lake. The round trip is long enough (roughly 10+ miles one-way) that many parties camp overnight at Hope Lake or Trap Lake.",
+ "itinerary": "Day 1 (if overnight): Depart early morning from Tunnel Creek Trailhead, reach Hope Lake (2-2.5 hrs), continue to Trap Pass area and camp at one of the pleasant camping spots in the Thunder Mountain Lakes region (3-4 additional hours of approach). Day 2: Climb Slippery Slab Tower and return to camp (6-8 hrs). Day 3: Return to trailhead (4-5 hrs). For day trip, depart before dawn and allow 10-12 hours total.",
+ "approach_variants": [
+  {
+   "name": "Tunnel Creek trail to the crest trail at the lake, then south to the pass",
+   "camps": [
+    "Trap Lake"
+   ],
+   "notes": "From the forest road east of Skykomish, the Tunnel Creek trail climbs about eleven hundred and seventy feet in under a mile and a half from roughly 3,100 ft to a small lake on the crest, where it meets the long-distance crest trail. Turn south and follow that trail several miles to the pass at roughly 5,800 ft.\n\nThis is the option with the least climbing and the easiest tread. It is a little longer along the crest than the other trailhead, and the walking is straightforward the whole way, which makes it the better choice with heavy loads or a late start.",
+   "season": "July through September, once the crest trail is clear",
+   "hazards": [
+    "an unmaintained ridge path beyond the pass with no signage",
+    "a long enough round trip that many parties camp, so a day attempt commits to a late finish",
+    "loose rock on the tower and on the ridge approach to it",
+    "a two-pitch face that still needs a rope, a rack and a plan to get back down",
+    "no water on the ridge between the pass and the tower"
+   ],
+   "primary": true,
+   "baseFinding": "The pass is the gate and the climbers' path leaves directly from the top of it. Do not look for it below the pass or beyond it: an unmaintained path runs south along the ridge from the pass itself. If you are casting about on the trail below the pass for a junction, you have not got high enough.\n\nThe tower is a distinct rock tower on that crest and it is the first one. The face you want looks back toward the pass on the north-east side, so from the path it presents itself as you approach rather than after you have passed it.\n\nThe critical negative marker is the mountain further along the same ridge. If you have walked past the tower and are looking at a broad peak with a lake basin below it, you have continued to the mountain and gone past the tower. Turn round; the tower is a slender formation and the mountain is not.\n\nThe route confirms itself on the second pitch: two pitches of easy fifth class, with the upper one diagonalling left into a gully and finishing at a large boulder near the top. A line that runs straight up with no leftward gully, or that takes more than a couple of pitches, is not this face.\n\nOne more caution about names: there are several mountains called Thunder in this state and more than one formation of this sort on crest trails. The identifying combination here is a pass on the long-distance crest trail with an unmaintained path leaving its top southward, and a tower standing before the mountain on the same ridge."
+  },
+  {
+   "name": "Surprise Creek trail past the two lakes, then the switchbacks to the pass",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 5143,
+      "name": "Trap Lake",
+      "role": "main",
+      "type": "camp",
+      "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a couple of miles over meadowy ground before the switchbacks up to Trap Pass; or Surprise Creek at Scenic, which climbs to Surprise Lake and joins the Pacific Crest Trail heading north. Trap Lake sits a little below Trap Pass on the east side. From the pass a faint but obvious climbers' track branches south along the ridge crest, follows it to a boulder field, and works up that to the base of the tower — the whole point of camping here rather than at the Scenic lakes is that it puts a party at the pass within half an hour of leaving the tent. Slippery Slab Tower is a single pitch of pleasant lower fifth class on an arete whose flakes are not to be trusted for protection, so it is a short climb with a long walk attached, and an overnight makes the arithmetic work. Thunder Mountain itself is a scramble from the same ground. The Thunder Mountain Lakes further south are a delicate basin where camping is discouraged; use this lake instead. Season is roughly July to October, with snow on the Trap Pass switchbacks well into summer.",
+      "water": "The lake, and the inlet above it. Treat it.",
+      "permit": "Alpine Lakes Wilderness. A free self-issue permit is required for day and overnight use, taken at the trailhead register from mid-May to the end of October. A Northwest Forest Pass is required at the Surprise Creek trailhead. Campfires are prohibited above 4,000 feet west of the crest, and a stove is the right answer here in any case.",
+      "capacity": "Several small informal sites in the trees at the lake, below the pass on the east side of the crest. Quiet, and rarely more than a party or two."
+     },
+     {
+      "elev": 4500,
+      "name": "Surprise Lake and Glacier Lake",
+      "role": "route",
+      "type": "camp",
+      "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the railway tracks and follow gravel a third of a mile to the trailhead at about 2,200 feet. It is four and a half miles to Surprise Lake and a further mile to Glacier Lake, climbing steadily through forest with the creek alongside. From either lake the Pacific Crest Trail runs north to Trap Pass, from where the climbers' track along the ridge reaches Thunder Mountain and Slippery Slab Tower. Camping here rather than at Trap Lake adds an hour or more to the summit morning but gives a better camp and a shorter, easier walk in with heavy loads, so it suits a party carrying a rope and rack. Both lakes are subalpine and hold snow into July in a normal year. The lower trail is steep enough in places to be slow with overnight packs, and the railway line at the trailhead is active and noisy at night, which is worth knowing before you pitch near the car.",
+      "water": "Both lakes and the creek between them. Treat it.",
+      "permit": "Alpine Lakes Wilderness self-issue permit at the trailhead, free, required for day and overnight use from mid-May to the end of October. Northwest Forest Pass or the daily fee at the Surprise Creek trailhead. No campfires above 4,000 feet west of the crest, which includes both of these lakes. Camp only at the established sites on the west shores.",
+      "capacity": "Established sites along the west shores of both lakes. Surprise is the larger and busier; Glacier, about a mile further and three hundred feet higher, is quieter and holds fewer parties."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Surprise Creek Trailhead",
+     "trailheadLat": 47.7078,
+     "trailheadLng": -121.1567
+    }
+   },
+   "notes": "The other trailhead climbs the Surprise Creek trail past the first lake at about 4,500 ft and its neighbour, then switchbacks up to the same pass. It is roughly a mile shorter to the pass than the crest-trail option and costs several hundred feet more climbing, and it is in the trees for essentially the whole way, so it gives less to look at and less warning of the weather ahead.\n\nBoth trailheads meet at the pass and nothing above it differs.",
+   "season": "July through September",
+   "hazards": [
+    "more climbing than the other trailhead for a slightly shorter distance",
+    "forested trail the whole way, with little view of conditions ahead",
+    "an unmaintained ridge path beyond the pass",
+    "loose rock on the tower",
+    "no water on the ridge beyond the pass"
+   ],
+   "baseFinding": "From the pass the approach is identical to the other trailhead's: an unmaintained climbers' path leaves the top of the pass and runs south along the ridge.\n\nThe tower is the first distinct rock formation on that crest, and its north-east face looks back toward the pass. Because this approach arrives at the pass from below and in trees, take a moment on the pass itself to pick the tower out along the crest before starting the path - it is much harder to identify from underneath.\n\nThe negative marker is the same and it is the one that matters: the mountain lies further along the same ridge, above a lake basin. A broad peak with lakes below it is not the tower. If you are walking under a mountainside rather than under a slender formation, you have gone too far.\n\nConfirm on the climb itself: two pitches of easy fifth class with the second diagonalling left into a gully to a large boulder near the top. If your first pitch is hard or your route runs straight up a face for several rope lengths, you are not on it."
+  }
+ ]
+}

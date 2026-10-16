@@ -1,0 +1,339 @@
+{
+ "batches": ["b081.json", "b082.json", "b083.json", "b084.json"],
+ "routes_read": 28,
+ "routes": [
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "name": "Crescendo of the Sarcophagus Breathing",
+   "area": "East Face",
+   "contradictions": [
+    {
+     "fact": "Route grade (5.11c vs 5.11b)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.11c"},
+      {"field": "grade_num", "says": "11.75"},
+      {"field": "rock_grade", "says": "5.11b"},
+      {"field": "overview", "says": "5.11b sport route on Keechelus Ridge's East Face near Snoqualmie Pass"},
+      {"field": "pitch_detail[0].grade", "says": "5.11b"}
+     ],
+     "why": "grade/grade_num state 5.11c, but rock_grade, the overview prose, and the only pitch's own grade all agree on 5.11b, so the header pill and the Overview tab's crux-grade stat would show different numbers for the same climb.",
+     "internal_resolution": "rock_grade, overview, and pitch_detail agree on 5.11b; grade/grade_num (5.11c/11.75) is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_the_meeperland_empire", "name": "The Meeperland Empire", "area": "East Face", "contradictions": []},
+  {"id": "wa_with_love_lie_ancients_nestled_within", "name": "With Love Lie Ancients Nestled Within", "area": "East Face", "contradictions": []},
+  {"id": "wa_lelands_ledge", "name": "Leland's Ledge", "area": "East Face", "contradictions": []},
+  {"id": "wa_the_pillar_under_pale_streaks", "name": "The Pillar Under Pale Streaks", "area": "East Face", "contradictions": []},
+  {"id": "wa_enchanting_puller_blind", "name": "Enchanting Puller Blind", "area": "East Face", "contradictions": []},
+  {"id": "wa_bleed_for_the_chodecophagus", "name": "Bleed for the Chodecophagus", "area": "East Face", "contradictions": []},
+  {
+   "id": "wa_the_tipping_point_eternal",
+   "name": "The Tipping Point Eternal",
+   "area": "East Face",
+   "contradictions": [
+    {
+     "fact": "Overall route grade (5.10c) vs the grades its own pitches are given",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.10c"},
+      {"field": "rock_grade", "says": "5.10c"},
+      {"field": "pitch_detail[0].grade", "says": "5.10- (pitch 1)"},
+      {"field": "pitch_detail[1].grade", "says": "5.10 (pitch 2)"},
+      {"field": "beta", "says": "Pitch 2 (5.10, 7 bolts to a 2-bolt anchor): bolts traverse right..."}
+     ],
+     "why": "grade/rock_grade claim the route tops out at 5.10c, but neither pitch in pitch_detail (nor the beta description of them) is ever graded past a plain, unqualified 5.10 -- the crux grade shown in TECHNICAL STATS is harder than anything in the route's own pitch-by-pitch ROUTE BREAKDOWN.",
+     "internal_resolution": "pitch_detail and beta (the more granular source) cap out at 5.10; grade/rock_grade's 5.10c is unsupported by the row's own pitch data.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_nocturnal_pulse_of_the_celestrial_palace", "name": "Nocturnal Pulse of the Celestrial Palace", "area": "East Face", "contradictions": []},
+  {"id": "wa_black_systems_solar", "name": "Black Systems Solar", "area": "East Face", "contradictions": []},
+  {"id": "wa_eternal_bliss_endured", "name": "Eternal Bliss Endured", "area": "East Face", "contradictions": []},
+  {
+   "id": "wa_project_crack",
+   "name": "Project Crack",
+   "area": "East Face",
+   "contradictions": [
+    {
+     "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+     "severity": "high",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "descent_text", "says": "lower directly off the fixed chain anchor to the ground with a single 60m rope; no walk-off is required"},
+      {"field": "length_m", "says": "18"}
+     ],
+     "why": "The route is ~18 m/60 ft (length_m); lowering a leader from the top anchor to the ground needs roughly double the pitch length of rope (~36 m+), so a 30 m rope (rope_length_m) would likely leave a party short of the ground, while descent_text explicitly specifies a single 60 m rope -- the two kit/descent fields disagree by a safety-relevant margin.",
+     "internal_resolution": "descent_text's 60 m figure is consistent with needing roughly double the route's own 18 m length to lower to the ground; rope_length_m=30 looks like the wrong value.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_glacier_view_palace", "name": "Glacier View Palace", "area": "East Face", "contradictions": []},
+  {
+   "id": "wa_glacier_view_temple",
+   "name": "Glacier View Temple",
+   "area": "East Face",
+   "contradictions": [
+    {
+     "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+     "severity": "medium",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "descent_text", "says": "lower directly off the fixed chain anchor to the ground with a single 60m rope; no walk-off descent is needed for this single-pitch line"},
+      {"field": "length_m", "says": "12"}
+     ],
+     "why": "rope_length_m states 30 m while descent_text specifically calls for a 60 m rope on this same short (~12 m/40 ft) pitch. A 30 m rope is actually more than enough to lower a 12 m pitch, so descent_text's '60m' reads like boilerplate copied from a longer route, but the two fields still visibly disagree about how much rope is needed.",
+     "internal_resolution": "Given the pitch is only ~12 m (length_m), rope_length_m=30 is physically sufficient; descent_text's specific '60m' claim is the more likely error.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_imbibing_the_movements_on_human_destiny",
+   "name": "Imbibing the Movements on Human Destiny",
+   "area": "East Face",
+   "contradictions": [
+    {
+     "fact": "Overall route grade (5.10b) vs the grades its own pitches are given",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.10b"},
+      {"field": "rock_grade", "says": "5.10b"},
+      {"field": "pitch_detail[0].grade", "says": "5.10- (pitch 1)"},
+      {"field": "pitch_detail[1].grade", "says": "5.9- (pitch 2)"}
+     ],
+     "why": "grade/rock_grade state 5.10b, but the hardest pitch in pitch_detail is only graded 5.10- (below 5.10b), and the beta text never grades any section past a bare '5.10' -- the stated crux grade is harder than anything the route's own pitch breakdown supports.",
+     "internal_resolution": "pitch_detail (and beta) top out at 5.10-/5.10; grade/rock_grade's 5.10b is unsupported by the row's own pitch data.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_buckets_full_of_moonlight_lost", "name": "Buckets Full of Moonlight Lost", "area": "East Face", "contradictions": []},
+  {"id": "wa_drews_magical_wonderland", "name": "Drew's Magical Wonderland", "area": "East Face", "contradictions": []},
+  {"id": "wa_kendall_peak_cliff_north_face", "name": "Kendall Cliff – North Face", "area": "Kendall Peak", "contradictions": []},
+  {
+   "id": "wa_kendall_peak_standard",
+   "name": "Standard Scramble (off the PCT)",
+   "area": "Kendall Peak",
+   "contradictions": [
+    {
+     "fact": "Avalanche hazard on the route (AVALANCHE panel says N/A, KNOWN HAZARDS/climate say otherwise)",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated route climbed July-October outside the winter avalanche season; ... not this summer scramble"},
+      {"field": "seasonal_hazards.avalanche.byMonth", "says": "July/August/September/October: N/A"},
+      {"field": "hazards[0]", "says": "steep snow on the Katwalk approach and summit gullies into June-July in high-snow years, with avalanche potential earlier in the season"},
+      {"field": "climate.spring", "says": "Lingering snow, ice, and moats in the gully/rock band below the ridge; avalanche potential on steeper slopes."},
+      {"field": "climate.bySeason.spring", "says": "Deep, unstable snowpack; the Katwalk traverse and summit gullies carry real avalanche and steep-snow-fall hazard -- ice axe/crampons and avalanche awareness are needed for anything but a very late, dry spring."}
+     ],
+     "why": "The Safety tab's AVALANCHE section flatly reads N/A for every month it lists, but the same tab's KNOWN HAZARDS entry and the Reports tab's climate fields both describe real avalanche potential for early-season/spring attempts on the same Katwalk approach and summit gullies -- a climber reading only the AVALANCHE panel would conclude there is no avalanche concern at all.",
+     "internal_resolution": "hazards, climate.spring, and climate.bySeason.spring all agree there is real early-season avalanche exposure; seasonal_hazards.avalanche's blanket N/A (scoped only to the Jul-Oct window) contradicts what the rest of the row says about shoulder-season attempts.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route class/difficulty (Class 2 vs Class 2-3)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Class 2"},
+      {"field": "grade_num", "says": "2"},
+      {"field": "rock_grade", "says": "Class 2-3"},
+      {"field": "pitch_detail[1].grade", "says": "Class 2 (Summit scramble)"},
+      {"field": "climbing_route[0].class", "says": "Class 2 (Boot path to the north summit)"},
+      {"field": "climbing_route[1].class", "says": "Class 3-4 (East ridge crest, alternative, not the standard route)"}
+     ],
+     "why": "grade, grade_num, pitch_detail's own 'Summit scramble' step, and climbing_route[0] all agree the standard route is Class 2, but rock_grade (which the header pill reads first) states 'Class 2-3' -- the Class 3-4 difficulty on this row belongs only to the explicitly non-standard East ridge alternative (climbing_route[1]), not the standard line the page describes.",
+     "internal_resolution": "grade/pitch_detail/climbing_route[0] agree on Class 2 for the standard route; rock_grade's 'Class 2-3' appears to have picked up the alternate (non-standard) line's harder class.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance vs a one-way distance shown for the same route",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "7.4"},
+      {"field": "itinerary.days[0].miles", "says": "9.2"},
+      {"field": "approach", "says": "roughly 4.6-5 miles one-way (up to 5.5 mi)"}
+     ],
+     "why": "dist_km (7.4 km ≈ 4.6 mi) is the one-way approach distance, matching the prose, while the header Dist field and itinerary use the round-trip figure (9.2 mi) -- if both were ever read as 'the distance' for this route they would look like two different numbers for the same quantity.",
+     "internal_resolution": "dist_km is one-way and itinerary.miles is round-trip; low priority per the one-way/round-trip convention note, not a hard contradiction if each is correctly understood.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_lundin_peak_east_ridge", "name": "East Ridge", "area": "Lundin Peak", "contradictions": []},
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Lundin Peak",
+   "contradictions": [
+    {
+     "fact": "Crux difficulty (5.0 vs a reported 5.4 move)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 4-5.0"},
+      {"field": "pitch_detail[1].grade", "says": "Class 4/5.0 (pitch: Crux)"},
+      {"field": "rock_grade", "says": "Easy 5th (low 5th, with a reported 5.4 crux move)"},
+      {"field": "overview", "says": "expect Class 4 and low-5th (5.0-5.4) climbing with real exposure on the final pitch, not a walk-up scramble"}
+     ],
+     "why": "grade and the pitch_detail entry explicitly labeled 'Crux' both cap the route at Class 4/5.0, but rock_grade (read first for the header pill) and the overview both separately flag a 5.4 move -- a climber deciding whether real 5th-class ropework is needed would see two different top grades on the same Overview tab.",
+     "internal_resolution": "grade and pitch_detail's own Crux pitch agree on 5.0; rock_grade/overview's mention of a 5.4 move is the outlier and the row does not reconcile it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_8",
+   "name": "South Face",
+   "area": "Lundin Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain (2,900 ft vs the itinerary's 3,500 ft)",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "2900"},
+      {"field": "itinerary.days[0].gainFt", "says": "3500"},
+      {"field": "itinerary.days[0].lossFt", "says": "3500"}
+     ],
+     "why": "The header/TECHNICAL STATS Gain figure (gain_ft=2900) and the Trip Plan itinerary's own TOTAL row (3500) differ by 600 ft (~20%) for the same car-to-car day, which could throw off a party's time/fitness planning.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_south_face_2001_variation", "name": "South Face (2001 Variation)", "area": "Lundin Peak", "contradictions": []},
+  {"id": "wa_lundin_peak_south_face_left", "name": "South Face Left", "area": "Lundin Peak", "contradictions": []},
+  {
+   "id": "wa_mount_roosevelt_standard",
+   "name": "Standard Scramble",
+   "area": "Mount Roosevelt",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain/loss (2,700 ft vs the itinerary's 3,500 ft)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "2700"},
+      {"field": "loss_ft", "says": "2700"},
+      {"field": "itinerary.days[0].gainFt", "says": "3500"},
+      {"field": "itinerary.days[0].lossFt", "says": "3500"}
+     ],
+     "why": "gain_ft/loss_ft (shown in the header and TECHNICAL STATS) are 800 ft (~30%) lower than the itinerary's own TOTAL row for the same single day -- over the threshold where a gain/time discrepancy is safety/planning relevant.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season window (Jul-Sep chip vs a stated Jul-Oct/May-Oct window elsewhere)",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "July through October is the reliable window ... Aim for a dry-weather window before the first fall snow, typically by mid-October."},
+      {"field": "itinerary.cal", "says": "Typically climbed May through October; avoid winter/early spring due to avalanche hazard and because the approach skirts the Alpental ski area's artillery control zone."},
+      {"field": "access.notes", "says": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year."}
+     ],
+     "why": "The short-form season chip (Jul-Sep) implies the window closes at the end of September, but best_season, the itinerary calendar note, and access.notes all separately describe October (and even May/June) as climbable -- these extend past the header season's own end date rather than sitting inside it, so it is not the allowed 'best window inside season' case.",
+     "internal_resolution": "best_season, itinerary.cal, and access.notes agree the real window runs at least into October (itinerary.cal even says May); season='Jul-Sep' is the narrow outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_prey",
+   "name": "Prey",
+   "area": "Osprey Wall",
+   "contradictions": [
+    {
+     "fact": "Route grade (5.10 vs 5.10+/5.10c)",
+     "severity": "low",
+     "claims": [
+      {"field": "grade", "says": "5.10"},
+      {"field": "rock_grade", "says": "5.10+ (crux pitch 5.10c)"},
+      {"field": "pitch_detail[2].grade", "says": "5.10c (P3 - The Money Pitch)"},
+      {"field": "pitch_detail[4].grade", "says": "5.10c (P5)"}
+     ],
+     "why": "The header pill (rock_grade, read first) says 5.10+ and the two hardest pitches are explicitly 5.10c, but the Overview tab's crux-grade stat (from `grade`) shows a flatter, unqualified '5.10' for the same route.",
+     "internal_resolution": "rock_grade and both 5.10c pitches agree the crux is 5.10c/5.10+; grade='5.10' is an imprecise summary, not a hard conflict.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of ropes needed for the descent (single-rope vs double-rope rappel)",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Double-rope (60m) rappels from fixed tree anchors, trending left tree-to-tree back to lower ledges."},
+      {"field": "gear", "says": "Two ropes for the rappel descent"},
+      {"field": "pro_tips[2]", "says": "Double ropes are recommended both for the pitch 2 roof and for the descent."},
+      {"field": "descent_text", "says": "a fixed rap tree (60 m rope reported as of Sep 2019) allows a single-rope rappel -- inspect any fixed gear before trusting it due to reported pika damage at anchors. Alternatively, descend the scree slope..."}
+     ],
+     "why": "Three fields (rappels, gear, pro_tips) independently say the descent needs two ropes/a double-rope rappel, but descent_text instead describes a single-rope rappel off one rap tree -- worded almost identically to Salish's and Traverse's descent_text (the much shorter single-pitch routes at this same wall), suggesting it was copied from them rather than describing Prey's actual 5-pitch, 510 ft descent. A party bringing only one rope on descent_text's word could get stuck partway down.",
+     "internal_resolution": "rappels, gear, and pro_tips agree a double-rope/two-rope descent is needed; descent_text reads like boilerplate contaminated from the neighboring single-pitch routes' shared rap-tree description (compare wa_salish and wa_traverse descent_text, which are near-identical wording).",
+     "needs_research": false
+    },
+    {
+     "fact": "Route high point (high_point_ft equals the trailhead/base elevation)",
+     "severity": "medium",
+     "claims": [
+      {"field": "high_point_ft", "says": "3543"},
+      {"field": "waypoints[0] (Osprey Wall Roadside Pullout)", "says": "elev 3543"},
+      {"field": "waypoints[2] (Osprey Wall crag base / route start)", "says": "elevFt 3543"},
+      {"field": "gain_ft", "says": "800"},
+      {"field": "overview", "says": "Prey climbs a 5-pitch (510 ft), mostly-bolted line up corners, roofs, and an arete on the right side of Osprey Wall"}
+     ],
+     "why": "TECHNICAL STATS would show the route's high point at the exact same elevation as its own trailhead and base (3543 ft), even though the row separately states an 800 ft approach+climb gain and a 510 ft, 5-pitch climb -- the topout should read well above 3543 ft.",
+     "internal_resolution": "The row's own topout waypoint carries no elevation and is explicitly marked 'Approximate ... reuses the pullout coordinate with disclosed uncertainty rather than a precise fix'; high_point_ft appears to have inherited that same placeholder elevation instead of a real topout figure.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which pitch is the route's culminating/finishing pitch",
+     "severity": "low",
+     "claims": [
+      {"field": "overview", "says": "culminating in a celebrated 5.10c \"money pitch.\""},
+      {"field": "beta", "says": "P3 (5.10c, \"the money pitch\") features roof systems and an arete... P4 (5.9)... P5 (5.10c) finishes on an arete."},
+      {"field": "pitch_detail[2].pitch", "says": "P3 – The Money Pitch"}
+     ],
+     "why": "overview frames the 'money pitch' as what the route culminates in (implying it's the finish), but the pitch-by-pitch beta and pitch_detail place the money pitch at P3 of 5, with a different (also 5.10c) pitch, P5, actually topping the route out.",
+     "internal_resolution": "beta and pitch_detail agree the money pitch is P3, not the final pitch; overview's 'culminating in' framing is the inaccurate one.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_salish",
+   "name": "Salish",
+   "area": "Osprey Wall",
+   "contradictions": [
+    {
+     "fact": "Route high point (high_point_ft equals the trailhead/base elevation)",
+     "severity": "low",
+     "claims": [
+      {"field": "high_point_ft", "says": "3543"},
+      {"field": "waypoints[0] (Osprey Wall Roadside Pullout)", "says": "elev 3543"},
+      {"field": "gain_ft", "says": "400"}
+     ],
+     "why": "high_point_ft matches the trailhead/base elevation exactly rather than reflecting the top of the shield the route climbs to.",
+     "internal_resolution": "Same placeholder pattern as the other two Osprey Wall routes -- the row's topout waypoint carries no elevation and is explicitly flagged as approximate/reused from the pullout coordinate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_traverse",
+   "name": "Traverse",
+   "area": "Osprey Wall",
+   "contradictions": [
+    {
+     "fact": "Route high point (high_point_ft equals the trailhead/base elevation)",
+     "severity": "low",
+     "claims": [
+      {"field": "high_point_ft", "says": "3543"},
+      {"field": "waypoints[0] (Osprey Wall Roadside Pullout)", "says": "elev 3543"},
+      {"field": "gain_ft", "says": "500"}
+     ],
+     "why": "high_point_ft matches the trailhead/base elevation rather than the top of the ledge system this connector pitch traverses to.",
+     "internal_resolution": "Same placeholder pattern as Prey/Salish -- the topout waypoint has no elevation and is explicitly flagged as approximate.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

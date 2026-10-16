@@ -1,0 +1,753 @@
+{
+ "file": "t342.json",
+ "results": [
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Summit-day length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Timing and itinerary give 12 h; partner requirements say ~17 h. The NPS Kautz route brief gives no summit-day duration, and trip reports vary widely (3h45 to ~9 h camp-to-rim alone, plus a variable DC descent). No two sources state a car-to-car summit-day figure; a published camp-to-Paradise time from two sources would settle it.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://gethighonaltitude.com/2019/07/21/mt-rainier-kautz-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Approach time to Camp Hazard",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Timing/itinerary say 6 h; partner requirements say 7-9 h. The NPS brief describes the Castle (9,200-9,500 ft) as the usual camp for 2-3 night trips and Camp Hazard for single-night pushes but states no hours; no two sources give a Paradise-to-Camp-Hazard time.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Ice screws for the chute",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Rack says 4-6 per rope team, the summit waypoint says 6-8. The NPS brief lists 2-4 ice screws PER PERSON (which for a 2-3 person team spans both figures), and the row's own gear list notes counts vary with ice coverage. No two sources give a per-rope-team count.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "White River trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "Glacier Basin trailhead (White River Campground) ~4,300 ft",
+   "evidence": "The Glacier Basin trailhead sits at the upper end of the campground's D loop at about 4,300 ft; WTA gives Glacier Basin a 5,900 ft high point for 1,600 ft of gain (a ~4,300 ft start), and Visit Rainier gives 5,950 ft for 1,700 ft (~4,250 ft). The campground itself is listed at 4,232 ft, so access.notes (the campground) is consistent; the 4,800 ft trailhead pin is ~500 ft too high.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/glacier-basin",
+    "https://visitrainier.com/glacier-basin-2/",
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "White River trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4800,
+     "value": 4300
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Summit-day length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Row: 12 h Thumb Rock to Camp Schurman; partner requirements 15+ h 'down the Emmons-Winthrop descent' (endpoint unstated). NPS Munter estimate: 8-9 h Thumb Rock to Columbia Crest plus just under 3 h Liberty Saddle to Schurman (~11-12 h), and 7-8 h crest to White River; a 2018 party took 6:15 to the summit and 5:45 summit to trailhead. The 15+ h figure fits a push all the way to the trailhead, the 12 h to Schurman; a second source for the Thumb Rock-to-Schurman duration would settle which the row should state.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Bivouacs above Thumb Rock",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The NPS route brief says there are no good bivouac options on the ridge besides Thumb Rock and that no safe bivouac exists above it; the Mountain Project description reports an exposed spot around 11,000 ft that fits a two-person tent. Sources disagree, so neither field was changed.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Bergschrund elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "NPS captions a ranger 'approaching the bergschrund near 13,800' on Liberty Ridge; Mountain Project says climbers pass the bergschrund to gain the Liberty Cap Glacier around 13,500 ft. The two sources disagree.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Rack: screws, pickets, and where the rock gear is used",
+   "verdict": "fixed",
+   "correct_value": "4-6 ice screws and 2-3 pickets per team",
+   "evidence": "Mountain Project lists 4-6 screws and a few pickets; a 2018 party carried six screws and two pickets. Both agree with the gear list (4-6 screws, 2-3 pickets); the detailed rack's 6-8 screws and 3-4 pickets is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/106459197/liberty-ridge",
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Rack: screws, pickets, and where the rock gear is used",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "6–8 ice screws, 3–4 pickets",
+     "replace": "4–6 ice screws, 2–3 pickets"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Where the light rock rack is used",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Gear list puts the small rock rack on 'the rock band low on the ridge', the detailed rack on 'the Black Pyramid'. The NPS brief and Mountain Project describe the Black Pyramid being passed on snow/ice on its left side and do not name a place rock gear is used; a 2018 party carried none. No source settles it.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "High camp location and elevation",
+   "verdict": "fixed",
+   "correct_value": "High camp on the South Mowich Glacier at ~9,600 ft (an ~8,500 ft bivy is a documented lower option)",
+   "evidence": "A June 2025 party camped at 9,600 ft on the South Mowich Glacier, and the Mountaineers route description places the high camp at 9,600 ft reached by climbing the South Mowich Glacier; this matches the itinerary. The published-times note put the same 9,600 ft camp 'near Colonnade Ridge', which is the low camp just off the Wonderland Trail, so it is corrected. The ~8,500 ft bivy in beta is a genuine lower option (an NPS ranger report camped at 8,500 ft on the S. Mowich; Mountain Project cites a bivy near 8,500 ft), so beta is left. The bivy[] card discrepancies are left to the camping clean-up.",
+   "sources": [
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://www.mountainproject.com/route/112479245/sunset-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "High camp location and elevation",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "to a high camp near Colonnade Ridge (~9,600 ft)",
+     "replace": "to a high camp on the South Mowich Glacier (~9,600 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "May-Jun; typically out of condition by July",
+   "evidence": "season, best_season, seasonal_guidance and approach_variants all give May-June with July out of condition. An NPS ranger conditions report documents the route in late May, and a mid-June 2025 party (and another four days earlier) turned back because the ridge had already lost the snow needed. climate.summer's 'Jul-Aug' is the outlier.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Season window",
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "expect": "Primary window (Jul-Aug based on the FA timing)",
+     "value": "Usually out of condition as the ridge melts out; the window is May-June"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project grades the route IV+; a 2025 trip report calls it Grade III; the Mazamas give only their own club rating. No two sources agree on the numeral, so grade/commitment/alpine_grade were left (IV and IV+ share the numeral IV).",
+   "sources": [
+    "https://www.mountainproject.com/route/112479245/sunset-ridge",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "fact": "High camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Day gains (5,700/3,300) are copied from the Kautz row and would put camp near 11,100 ft, above the 9,900 ft bergschrund. Sources disagree on the camp itself: the row says a glacier camp below the icefall, while some descriptions use Camp Muir (10,000 ft) as high camp for this line. No source states the day split, and day gains may not be recomputed; a source giving the camp elevation and day gain would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-lower-nisqually-glacier",
+    "http://www.cascadeclimber.com/blog/2013/03/31/mt-rainier-nisqually-icefall-march-29-30-2013/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 24.94 (15.5 mi one way) is implausible against the itinerary's 13 mi round trip, but no source gives a one-way Paradise-to-summit distance for this specific line, so dist_km was not changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Mid-May to early August, best May-June",
+   "evidence": "The row's season, best_season, seasonal_guidance (May-June optimal, July risky), crowds.peakTraffic and approach_variants agree: climbable mid-May to early August with the best ice in May-June. The NPS Kautz brief says the season begins in mid-May and use drops off rapidly after August 1. climate.summer's 'Primary season, June–August' is the outlier.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_kautz_headwall",
+     "fact": "Season window",
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "expect": "Primary season, June–August",
+     "value": "Climbable into early August, but the best-filled ice is in May and June"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Approach time to Camp Hazard",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same dispute as the Kautz Glacier row (6 h vs 7-9 h); no source gives a Paradise-to-Camp-Hazard duration.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Rack: screws and pickets",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gear[] (4-6 screws, 2-3 pickets) is a general recommendation; rack[] and sling_rack (3 screws, a cam, nuts, a piton) describe one party's minimalist kit. No two sources give a recommended rack for Willis Wall. Note: sling_rack.note begins 'verbatim from a direct trip report', which names a source in rendered text.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_bread_loaf",
+   "fact": "Start time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No early start needed",
+   "evidence": "overview, approach, approach_variants and watch_out all describe a one-problem V0 boulder a few feet off the Silver Falls Loop, about a mile from Ohanapecosh; the Mountain Project entry confirms it sits right off the trail about a mile in. A pre-dawn start has no basis.",
+   "sources": [
+    "https://www.mountainproject.com/route/119283293/bread-loaf"
+   ],
+   "patches": [
+    {
+     "id": "wa_bread_loaf",
+     "fact": "Start time",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "Pre-dawn start",
+     "value": "Any time of day; no early start needed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "High camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Camp at ~9,000-9,500 ft is well supported (NPS Kautz brief puts the Castle camps at 9,200-9,500 ft; row approach/pitch_detail agree). The day-1 gain of 4,600 ft implies ~10,000 ft, but no source states the day gain, and day gains may not be recomputed from camp arithmetic; the itinerary total (9,000) would also need to keep matching gain_ft.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Ice screws",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists only 'a few pickets & runners'; a Mountaineers trip report carried 2-3 long screws plus pickets and notes screws are increasingly needed in firm conditions. Sources disagree on whether screws belong on the rack.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-fuhrer-finger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "Couloir angle",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Beta/approach say ~50°, route breakdown 40-45°. Available descriptions give 30-45° glacier/snow for the Finger/Thumb and 30-50° ramps nearby; none states the Thumb couloir's angle specifically, so no two sources settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.whereiskylemiller.com/mt-rainier/fuhrer-thumb/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "Steepest angle",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "max_angle 50 vs 50-55° sidehill on the Wapowety Cleaver; no source found stating the cleaver sidehill angle.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "fact": "County vs sheriff",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route is in Pierce County; the after-hours Lewis County Sheriff number is the park's own emergency routing (the park line 360-569-2211 x0 is staffed 5:30am-11pm, after which park emergencies go to the Lewis County Sheriff), not a claim about the county.",
+   "sources": [
+    "http://www.cohp.org/emergency/National_Parks_SAR_data.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "fact": "Top of the headwall",
+   "verdict": "fixed",
+   "correct_value": "~9,900 to ~13,400 ft",
+   "evidence": "Two ski-descent reports put the sustained headwall at ~13,400 to ~9,900 ft, and reached the top of the face at 13,400 ft; hazards, overview and approach_variants already say 13,400.",
+   "sources": [
+    "https://engineeredforadventure.com/edmunds-headwall-mt-rainier/",
+    "https://turns-all-year.com/trip-reports/edmunds-headwall"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_edmunds_headwall",
+     "fact": "Top of the headwall",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "from about 9,900 to 13,000 ft",
+     "replace": "from about 9,900 to 13,400 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "fact": "Mowich Lake road access",
+   "verdict": "fixed",
+   "correct_value": "No public road access to Mowich Lake since the April 2025 Fairfax Bridge closure",
+   "evidence": "WSDOT permanently closed the SR 165 Carbon River/Fairfax Bridge on April 22, 2025, leaving no public access from SR 165 to Mowich Lake; KING 5 reports the same. The monthly guidance and beta still treat the road as seasonally opening.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed",
+    "https://www.king5.com/article/traffic/traffic-news/fairfax-bridge-mount-rainier-national-park-closed-safety/281-d67d2c1e-e563-4b08-93ef-bf08db16218a"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_edmunds_headwall",
+     "fact": "Mowich Lake road access",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "reason"
+     ],
+     "find": "The Mowich Lake road is still closed and snowed in, adding many miles",
+     "replace": "There is no road access to Mowich Lake since the 2025 bridge closure, adding many miles"
+    },
+    {
+     "id": "wa_mount_rainier_edmunds_headwall",
+     "fact": "Mowich Lake road access",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "but the Mowich Lake road usually has not opened and the approach",
+     "replace": "but there has been no road access to Mowich Lake since the 2025 bridge closure, and the approach"
+    },
+    {
+     "id": "wa_mount_rainier_edmunds_headwall",
+     "fact": "Mowich Lake road access",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "typically accessed via the Mowich Lake road.",
+     "replace": "historically accessed via the Mowich Lake road, which has had no public access since the SR 165 bridge closed in April 2025."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "fact": "County vs sheriff",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Pierce County is correct for the northwest side; the after-hours Lewis County Sheriff number is the park's own emergency routing after the park line closes at 11pm, not a claim about the county.",
+   "sources": [
+    "http://www.cohp.org/emergency/National_Parks_SAR_data.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Winter through the end of May; by June most parties have moved to the DC",
+   "evidence": "SummitPost calls the Ingraham Direct the standard winter route, December to the end of May, becoming uncrossable by the end of May as crevasses open; Alpine Ascents describes parties using the Ingraham Direct in May before shifting to the Cleaver. season, best_season, seasonal_guidance and approach_variants agree. pro_tips, crowds and the climate summer line still put the window in June or summer.",
+   "sources": [
+    "https://www.summitpost.org/ingraham-glacier-direct/158122",
+    "https://www.alpineascents.com/blog/the-notebook-when-should-i-climb-rainier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Best early season (May–June)",
+     "replace": "Best in winter and spring (through May)"
+    },
+    {
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window",
+     "op": "set",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "expect": "Late May-June weekends, before the direct falls out of condition",
+     "value": "May weekends, before the direct falls out of condition"
+    },
+    {
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "during the brief May-June window it's in condition",
+     "replace": "during the spring window, through May, while it's in condition"
+    },
+    {
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "summer"
+     ],
+     "find": "Prime season; warmer days, firmer nights",
+     "replace": "Usually out of condition as the headwall breaks up; warmer days"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Summit-day start time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The NPS DC-Ingraham brief says guided parties leave between midnight and 2:00 AM, so both the row's midnight and 1-2 AM fall inside the documented range; no second source picks one.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The NPS brief gives the DC-Ingraham corridor an approximate length of 8-9 miles without saying one-way or round trip; no second source gives a one-way Paradise-to-summit figure for the Direct or a summit-day mileage, so neither dist_km nor the day miles were changed.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Steepest angle",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "max_angle 45 vs up to 50° in hazards/approach_variants. No outside source found stating the headwall's maximum angle for this line; the row alone has 4 fields for 50° but no external source was found.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Picket count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gear says 4-6 pickets, detailed_rack 2-4. The NPS brief lists pickets without a count; no two sources give a number for this route.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Driving to Mowich Lake",
+   "verdict": "fixed",
+   "correct_value": "No road access to Mowich Lake since the April 2025 bridge closure",
+   "evidence": "WSDOT permanently closed the SR 165 Fairfax Bridge in April 2025 with no public access to Mowich Lake; KING 5 reports the same. itinerary, access and road already say so; the published-times note still said to drive there.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed",
+    "https://www.king5.com/article/traffic/traffic-news/fairfax-bridge-mount-rainier-national-park-closed-safety/281-d67d2c1e-e563-4b08-93ef-bf08db16218a"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Driving to Mowich Lake",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Drive to Mowich Lake and hike via the Spray Park area",
+     "replace": "From Mowich Lake (no road access since the April 2025 bridge closure), hike via the Spray Park area"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Whether the climbing fee is per climb or per year",
+   "verdict": "fixed",
+   "correct_value": "Charged per person per climb (2026)",
+   "evidence": "The NPS climbing-fee FAQ states the 2026 fee is $82 per person per climb, and the NPS climbing blog states the fee is no longer valid for the entire climbing season as of May 2026. access.fees already says per climb; the approach note still says one permit covers the calendar year.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_disappointment_cleaver",
+     "fact": "Whether the climbing fee is per climb or per year",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "needs a per-person climbing permit for the calendar year, obtained",
+     "replace": "needs a per-person climbing permit, with the climbing fee charged per climb, obtained"
+    }
+   ]
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Approach duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "timing.approachTimeHrs is 7 while beta and approach_variants call two days normal (and since the 2025 bridge closure Mowich Lake itself is a long walk in). No source states an approach time in hours to the 9,600-10,000 ft bivy, so the 7 was not changed; a published approach time would settle it.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 15.5 (9.6 mi one way) matches the NPS brief's 9-10 mi / 15-16 km, and the NPS gives ~2.5 mi Schurman to summit. Trailhead-to-Schurman sources disagree (6.5 mi in a guide itinerary, ~5.7 mi one way on a measured FKT route), so the Schurman pin (7) and the 9.5 mi summit-day figure (which should include the hike out) could not be set from two agreeing sources.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/",
+    "https://fastestknowntime.com/route/camp-schurman-roundtrip"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Approach distance and gain to Camp Schurman",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The card's 3.5 mi / 1,600 ft are the Glacier Basin trail figures (NPS: 3.5 mi). The full approach to Schurman is 6.5 mi in one guide itinerary but ~5.7 mi on a measured FKT route, and no source states a car-to-Schurman gain, which may not be computed from elevations.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/",
+    "https://fastestknowntime.com/route/camp-schurman-roundtrip"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Ladders on the route",
+   "verdict": "fixed",
+   "correct_value": "No ladders or fixed lines on the Emmons",
+   "evidence": "The NPS Emmons-Winthrop brief says no guide service maintains the route and there are no established fixed anchors, ladders, wands or rope lines; Global Summit Guide says not to expect the Muir corridor's ladders, wands or fixed anchors. Beta agrees; hazards, watch_out and partner requirements were carrying DC-style ladder language.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://globalsummitguide.com/rainier-disappointment-cleaver-vs-emmons-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Ladders on the route",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "Large open crevasses and ladder crossings, especially",
+     "replace": "Large open crevasses and weak snow bridges, especially"
+    },
+    {
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Ladders on the route",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "Open crevasses and ladders on the upper Emmons",
+     "replace": "Open crevasses and weak snow bridges on the upper Emmons"
+    },
+    {
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Ladders on the route",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "expect": "Confidence on aluminum-ladder crevasse crossings",
+     "value": "Confidence judging snow bridges and end-running crevasses with no ladders or fixed lines"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Summit-day length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Row: 13 h (Schurman-summit-Schurman-trailhead); partner requirements ~17 h total. NPS gives a 7-8 h Munter estimate Schurman to crest (observed 6-7 h); a guide itinerary gives 9-12 h round trip to camp, before the hike out. The ~17 h figure is plausible car-to-car but no source states the full summit-and-exit day.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Picket count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "An NPS ranger update (July 2025) says a minimum of 4 pickets per group and at least 5 for groups of 3+, supporting the gear list over the detailed rack's 2-4; later 2026 updates give no count. Only one source states a number.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2025/07/emmons-winthrop-route-update-72725.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Extent of the Corridor",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The NPS brief puts the Corridor at 10,200-11,600 ft (matching pitch_detail); Mountain Project-style descriptions have it running from Schurman to about 12,000 ft (matching baseFinding). Sources disagree.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.mountainproject.com/route/105982534/emmons-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Approach time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "11.5 h (two days: 6.5 + 5)",
+   "evidence": "sectionBreakdown (6.5 + 5), itinerary days 1-2 (6.5 + 5), totalHrs 26.5 (= 6.5+5+8+7) and partner requirements (8-12 h) all put the approach well above 6 h; a trip report took about 9 hours on a single push to only ~9,000 ft. approachTimeHrs 6 is the outlier and, with descentTimeHrs also published, it under-counts the approach.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/tahoma-glacier-on-mount-rainier"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Approach time",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 6,
+     "value": 11.5
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "White River Road opening date",
+   "verdict": "bivy_zone_list",
+   "correct_value": "White River Road typically opens around late May",
+   "evidence": "The NPS Emmons-Winthrop brief says the White River road typically does not open until May 20th or later; access.closures and road agree. The stale 'late June' is only in the Camp Schurman bivy card (bivy[2].notes), which is left to the camping clean-up.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Timing/itinerary 6.5 h vs partner requirements 8-12 h; no source gives an approach time to a Curtis Ridge camp.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Where the route joins the standard line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The '2,000 ft' (Camp Comfort to the crater rim) and '1,200 ft' (Camp Comfort to the junction) measure different spans and do not conflict. The junction elevation (13,500 vs 13,800 ft) is not stated by any source found; descriptions only say the route climbs the upper Ingraham/Nisqually to the rim at ~14,150 ft.",
+   "sources": [
+    "https://www.summitpost.org/gibralter-ledges/160662",
+    "http://willhiteweb.com/mount_rainier_national_park/gibraltar_ledges_route/climb_296.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

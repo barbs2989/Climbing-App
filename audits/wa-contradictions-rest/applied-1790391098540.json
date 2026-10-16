@@ -1,0 +1,825 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "directions"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "label"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Glacier/crevasses on the route"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Glacier/crevasses on the route"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking/entrance pass"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking/entrance pass"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking/entrance pass"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "descent",
+   "path": [],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Where camping is allowed"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Where camping is allowed"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "before": {
+    "pro_tips": [
+     "Camp at Upper Royal Basin (5,600') rather than Royal Lake to shorten the summit day",
+     "Climb early to beat afternoon buildups/thunderstorms and other parties into the loose gullies",
+     "The Needles' other summits (Clark, Johnson) are harder and require real 5th-class gear — don't assume Walkinshaw's easier access implies the same for its neighbors",
+     "A longer, less-crowded alternative approaches from the north over Gray Wolf Ridge (the classic Mt. Baldy-Gray Wolf Ridge-Walkinshaw link-up) instead of via Royal Basin."
+    ],
+    "approach": "From the Upper Dungeness Trailhead (~2,960 ft, end of FR 2870), start on the Upper Dungeness Trail #833.2, which runs a gentle, mostly level mile through old-growth forest along the Dungeness River to a well-signed junction. Bear right (east, then south) onto the Royal Basin Trail #840 and settle into a steady, moderate climb up the Royal Creek valley for about 5 miles, crossing several tributary creeks — the last reliable water before the high basin — through forest that opens into wildflower meadows around the 6-mile mark, with Mount Clark and Mount Walkinshaw's 7,000-ft summits visible ahead. The trail steepens for the final push through switchbacks into Royal Basin, reaching Royal Lake (5,100 ft, ~7.2 mi, ~2,500 ft gain) — the established backcountry camp area (bear canisters required, no fires, permits needed May-Sept). From the lake, a climbers' path continues roughly another 0.8-1 mile and 500 ft of gain across willow flats and boulder benches to Upper Royal Basin (~5,600 ft, ~8 mi from the trailhead), the base camp used for all Needles-area objectives. Beyond Upper Royal Basin there is no maintained tread: traverse cross-country north, contouring below Mount Clark's east flank on talus and boulder benches toward Mount Walkinshaw, the northernmost peak in the Needles chain — this stretch is rough, adds roughly 1.5 miles and several hundred feet of ascending/descending sidehill travel, and involves genuine route-finding (krummholz and short cliff bands can obscure the best line, as noted by parties working this same traverse from the Gray Wolf Ridge side). Aim for the prominent talus tongue and gully system on Walkinshaw's east/southeast side — this is the 'West Side' class-3 scramble route. Ascend the loose, blocky gully (described firsthand as 'rotten Olympic shale' — notably looser than typical Cascades granite) with care, then follow class 2-3 terrain along the upper ridge, including a few short class-3 moves past steepened pinnacles, to the small (~10-ft-diameter) rocky summit at 7,378 ft. Keep parties tight and helmets on through the entire gully/ridge section — loose rock and rockfall onto climbers below are the defining hazard of this route. Total round-trip distance from the trailhead is on the order of 19 miles (matching the route's recorded 30.58 km), reflecting the extra cross-country mileage beyond Upper Royal Basin that standard figures for the closer Royal Basin peaks (Deception/Mystery, ~14 mi RT) don't include.",
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2970,
+      "name": "Upper Dungeness Trailhead",
+      "note": "USFS trailhead off FR 2870; Northwest Forest Pass required at the self-issue kiosk, and a wilderness permit is needed for Royal Basin camping.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive to the Upper Dungeness Trailhead at about 2,960 ft at the end of FR 2870. A Northwest Forest Pass is required at the self-issue kiosk, and Royal Basin camping needs a wilderness permit (quota season runs May through September)."
+     },
+     {
+      "lat": 47.871756,
+      "lng": -123.147433,
+      "elev": 3120,
+      "name": "Royal Basin Trail junction",
+      "note": "Dungeness River Trail forks here; leave the river trail and climb south on the Royal Basin Trail toward Royal Creek.",
+      "type": "Junction",
+      "distMi": 1,
+      "directions": "Start on Upper Dungeness Trail 833.2, a gentle and nearly level mile through old growth alongside the Dungeness River to a well-signed fork. Leave the river trail and bear right, east then south, onto Royal Basin Trail 840."
+     },
+     {
+      "lat": 47.852422,
+      "lng": -123.178433,
+      "elev": 4200,
+      "name": "Royal Creek",
+      "note": "Trail parallels Royal Creek for several miles with multiple crossings; reliable water but can run high with snowmelt in early season.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Settle into a steady, moderate climb up the Royal Creek valley for roughly five miles, crossing several tributary creeks along the way. These are the last reliable water before the high basin and can run high with early-season snowmelt."
+     },
+     {
+      "lat": 47.830518,
+      "lng": -123.213102,
+      "elev": 5100,
+      "name": "Royal Lake designated camp",
+      "note": "Established sites with a composting toilet near the lake outlet; no campfires above 3,500 ft and bear canisters are required.",
+      "type": "Campsite",
+      "distMi": 7.2,
+      "directions": "The forest opens into wildflower meadows around the six-mile mark, with the 7,000 ft summits of Mount Clark and Mount Walkinshaw in view ahead. The trail then steepens through switchbacks into Royal Basin to reach Royal Lake at 5,100 ft, about 7.2 miles in and 2,500 ft above the car. Established sites and a composting toilet sit near the outlet; bear canisters are required and no fires are allowed above 3,500 ft."
+     },
+     {
+      "lat": 47.834718,
+      "lng": -123.215964,
+      "elev": 5400,
+      "name": "Arrowhead Meadow",
+      "note": "Open meadow between Royal Lake and Upper Royal Basin where the trail becomes fainter; watch for the climbers' path branching toward the basin's west side.",
+      "type": "Junction",
+      "distMi": 7.6,
+      "directions": "Above the lake a climbers' path crosses willow flats and boulder benches. Tread becomes fainter through this open meadow, so watch for the path branching toward the west side of the basin."
+     },
+     {
+      "lat": 47.837636,
+      "lng": -123.220429,
+      "elev": 5700,
+      "name": "Upper Royal Basin",
+      "note": "Seasonal ranger station and the last reliable water before heading cross-country; the Needles' craggy west wall rises directly above.",
+      "type": "Campsite",
+      "distMi": 8,
+      "directions": "Continue on the climbers' path a total of roughly 0.8 to 1 mile and 500 ft of gain above Royal Lake to Upper Royal Basin at about 5,600 to 5,700 ft. This is the base camp used for every Needles objective and holds the last reliable water before the cross-country travel, with the craggy west wall of the Needles rising directly above."
+     },
+     {
+      "lat": 47.844931,
+      "lng": -123.23159,
+      "elev": 6600,
+      "name": "West-side scree/talus gully system",
+      "note": "Loose, rotten Olympic shale in several parallel gullies below the ridge; rockfall risk is high, especially with parties above — helmets recommended.",
+      "type": "Hazard",
+      "distMi": 9,
+      "directions": "Beyond Upper Royal Basin there is no maintained tread. Traverse cross-country north, contouring on talus and boulder benches below Mount Clark's east flank toward Walkinshaw at the north end of the chain; this stretch adds roughly 1.5 miles of rough sidehill travel with several hundred feet of ascent and descent, and demands real route-finding since krummholz and short cliff bands hide the best line. Aim for the prominent talus tongue and gully system below the ridge, where loose, rotten Olympic shale makes rockfall the defining hazard, so keep the party tight and helmets on."
+     },
+     {
+      "lat": 47.848515,
+      "lng": -123.237105,
+      "elev": 7378,
+      "name": "Mount Walkinshaw summit",
+      "note": "Northernmost summit of the Needles, reached via class 3-4 moves up the final gully to the ridge crest; exposed, loose rock near the top.",
+      "type": "Summit",
+      "distMi": 9.5,
+      "directions": "Climb the loose, blocky gully with care, then follow Class 2-3 terrain up the ridge above, including a few short Class 3 moves past steepened pinnacles, to the small summit block roughly ten feet across at 7,378 ft. The rock is looser than typical Cascades granite, so test holds and keep the party out from under each other."
+     }
+    ],
+    "descent_text": "Descend by reversing the ascent line: downclimb the same loose gully and class 2-3 ridge back down to the base of the talus tongue, then retrace the cross-country traverse south below Mount Clark to Upper Royal Basin. This is a walk-off/downclimb — no rappelling is required on the standard West Side route, and no fixed anchors or rappel stations are known to exist on it. The loose rock that makes the gully slow on the way up makes it just as slow (if not slower) coming down; downclimb facing in on the steeper sections, test holds before weighting them, and keep helmets on for the whole party the entire way down, since Olympic 'shale' rock is rotten and prone to breaking or sliding underfoot. Once back at Upper Royal Basin, follow the climbers' path back to Royal Lake and then the maintained Royal Basin Trail #840 and Upper Dungeness Trail #833.2 the full ~8 miles back to the trailhead. Given the length and elevation loss, budget real time and daylight for this descent — most parties treat the round trip as a long, full day (or a backpack with a camp at Royal Lake/Upper Royal Basin) rather than a quick out-and-back.",
+    "approach_variants": [
+     {
+      "name": "Upper Royal Basin and the north traverse under Clark",
+      "notes": "Gentle forest mile to the signed fork, then a steady climb up the Royal Creek valley crossing tributaries — the last dependable water before the high basin. Steep switchbacks into Royal Basin, camp at the lake or in the upper basin, then cross-country north on talus and boulder benches beneath Clark's east flank, adding a rough mile and a half of sidehill.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Loose, rotten shale throughout the Needles, with holds that break under weight",
+       "Several parallel gullies on this flank that are easy to confuse in cloud",
+       "Rockfall onto anyone below in the gully — keep the party tight, helmets on",
+       "Snow and ice in the approach gullies into July in heavy-snow years",
+       "Krummholz and short cliff bands hiding the natural line on the traverse"
+      ],
+      "baseFinding": "Walkinshaw is the northernmost peak of the Needles chain, which makes the coarse identification easy: once past Upper Royal Basin you keep contouring north below Clark's east flank until the wall on your left runs out, and the last summit before it ends is yours. The base is a prominent talus tongue running down from a gully system on the east and southeast side — it is the widest and cleanest-looking fan of loose rock on that flank and it points straight at the gully above it. Pick the tongue out from far enough back to see the whole flank at once, because several parallel gullies seam this side and choosing the wrong one in cloud is the standard error here. Climb the gully, which is blocky and rotten rather than difficult, then follow Class 2 to 3 ground along the upper ridge past a few short steepened steps to a small rocky top no more than about ten feet across. On the traverse in, krummholz patches and short cliff bands obscure the natural line and tempt you either too high or too low; hold your elevation and let the wall on your left tell you when you have arrived."
+     }
+    ],
+    "itinerary": {
+     "cal": "Royal Lake/Upper Royal Basin campsites require reserved permits (quota season May 1-Sept 30); route is typically snow-free and in condition July-September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Upper Dungeness trailhead, follow the Royal Basin Trail up through old-growth forest along Royal Creek to Royal Lake (5,100 ft), then continue about a mile further to camp in Upper Royal Basin (~5,600-5,700 ft), directly beneath the west wall formed by The Needles. This is the standard staging camp used by nearly every party climbing Walkinshaw or its neighbors.",
+       "hours": 5.5,
+       "miles": 8,
+       "title": "Backpack to Upper Royal Basin",
+       "gainFt": 3300,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish camp below The Needles"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp with a light pack and climb cross-country onto the ridge crest north/northeast of the peak, then follow the crest south, scrambling airily along a narrow, blade-like section of rock to reach the summit. Parties describe this as sustained Class 3 with real exposure; some parties place a hand line or short rappel on the steepest step during the return.",
+       "hours": 8.5,
+       "miles": 3.5,
+       "title": "Summit day: The Needles ridge to Walkinshaw",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Upper Royal Basin camp",
+         "detail": "Light scrambling pack; boots or approach shoes."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Gain the ridge crest",
+         "detail": "Cross-country talus/scree up to the col north of Walkinshaw."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Reach the exposed blade",
+         "detail": "Sustained Class 3 ridge scrambling with airy drop-offs on both sides."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit",
+         "detail": "Views south along the rest of The Needles toward Mt. Deception."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge; downclimb or rappel the crux step."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at camp",
+         "detail": "Rest, resupply water, recover for the hike out."
+        }
+       ],
+       "objective": "Climb Mount Walkinshaw (7,378 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and descend the Royal Basin Trail back past Royal Lake to the trailhead, losing the elevation gained on day one.",
+       "hours": 5,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the Upper Dungeness trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip: about 19-20 miles and roughly 5,500 ft of total gain round trip, with the middle day given entirely to the exposed, blade-like Needles ridge scramble to Walkinshaw's summit."
+    },
+    "timing": {
+     "totalHrs": 19,
+     "summitTimeHrs": 8.5,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "From the Upper Dungeness trailhead, follow the Royal Basin Trail up through old-growth forest along Royal Creek to Royal Lake (5,100 ft), then continue about a mile further to camp…",
+       "fromTo": "Backpack to Upper Royal Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8.5,
+       "note": "Leave camp with a light pack and climb cross-country onto the ridge crest north/northeast of the peak, then follow the crest south, scrambling airily along a narrow, blade-like sec…",
+       "fromTo": "Summit day: The Needles ridge to Walkinshaw",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Break camp and descend the Royal Basin Trail back past Royal Lake to the trailhead, losing the elevation gained on day one.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Season opens mid-July; snow bridges over crevasses may still be present but can be less predictable early in the window, and the long approach may still have lingering snow patches",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Most stable weather and driest approach trail conditions of the season; glacier crossing is more visually straightforward with crevasses more open and defined, matching the routefinding hazard",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within the best-season window; generally stable but shorter daylight and higher chance of an early fall storm system moving into the Olympic interior",
+       "status": "good"
+      }
+     }
+    },
+    "access": {
+     "fees": "$30 per private vehicle Olympic NP entrance pass (valid 7 days), or $15/person on foot/bike; separate from the wilderness camping fee above.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters required for all food storage in the Royal Basin zone (loaners available at the WIC); campfires prohibited above 3,500 ft; camping restricted to designated Royal Lake sites; dogs not permitted on the trail.",
+     "permit": "Backcountry/wilderness camping permit required for any overnight stay in Royal Basin, reserved via Recreation.gov ($6 reservation fee + $8 per person per night, ages 16+; summer dates are lottery/reservation-limited). Off-season permits available directly through the Wilderness Information Center.",
+     "closures": "Bear canisters are required for all food storage in Royal Basin; campfires are prohibited above 3,500 ft; Olympic National Forest roads (FR 2880/2870) can be affected by seasonal washouts or closures — check current Forest Service alerts before driving in.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (NPS) — Wilderness Information Center, 3002 Mount Angeles Rd, Port Angeles, WA, (360) 565-3100.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass plus a Recreation.gov wilderness camping permit if overnighting at Royal Lake/Royal Basin.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    },
+    "descent": "Reverse the East Face/NE couloir scramble back to camp in Upper Royal Basin, then hike out the Royal Basin Trail to the Upper Dungeness Trailhead.",
+    "descent_text": "Reverse the northeast couloir and East Face scramble back to camp in Upper Royal Basin, then retrace the Royal Basin Trail out to the Upper Dungeness Trailhead — this route involves no glacier travel and is unrelated to the Hoh River/Mount Olympus approach.",
+    "approach_variants": [
+     {
+      "name": "Royal Basin to the northeast gully",
+      "notes": "Seven miles or so up the Royal Basin Trail past Shelter Rock to Royal Lake, then about a mile more and five hundred feet through Arrowhead Meadow into Upper Royal Basin below the Needles. Camp there; the tarns are the last dependable water before the talus. Off-trail from the basin onward.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Loose, rotten basalt on the gully and ridge with rockfall onto parties below",
+       "Snow or sluffing in the northeast couloir well into July — axe and self-arrest",
+       "An exposed Class 3 ridge traverse to the true summit",
+       "A spot on the ledges that appears to cliff out and is passed by a cairned crack",
+       "Lightly visited terrain where a rescue takes considerably longer than usual"
+      ],
+      "baseFinding": "From the tarns of Upper Royal Basin, look up at the Needles wall and pick out the northeast-facing gully on the climber's-right side of the group. Early in the season it holds snow, which makes it the obvious white line on an otherwise dry face and is the easiest identification you will get. Cross the talus to its foot; the base is where the loose scree fan narrows and steepens into the gully proper. Climb it and watch for the dogleg — the gully bends left below a notch on the summit ridge, and that bend is the confirmation you are in the right one rather than a neighbour. From the notch a short, exposed Class 3 scramble runs south to the true summit. The Needles hold several similar gullies and Clark stands immediately northwest with Johnson west, so a peak that looks right from the basin may not be the one you want. Higher up, on the broken ledges, one spot appears to cliff out where a cairned Class 3 crack around the corner is the way through. Everything on this face is loose — keep out of each other's fall line."
+     }
+    ],
+    "itinerary": {
+     "cal": "Overnight wilderness permits (Royal Basin zone) are required via recreation.gov in summer, and camping in Upper Basin itself is limited — Royal Lake is a reliable fallback camp; best conditions are July-September once the East Face has melted out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Backpack the Royal Basin Trail from the Upper Dungeness Trailhead through old-growth forest, passing Royal Creek Camp and Royal Lake, then continue into Upper Royal Basin to camp at roughly 5,600 ft with Sundial and the rest of the Needles visible overhead.",
+       "hours": 5.5,
+       "miles": 8,
+       "title": "Backpack in to Upper Royal Basin",
+       "gainFt": 3000,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach high camp below Sundial"
+      },
+      {
+       "n": 2,
+       "note": "Scramble cross-country up talus and scree to the base of the East Face, then climb sustained, exposed Class 3 rock (loose in spots near the top) to the summit for views over Royal Basin, Mount Clark and Mount Deception. Retrace the same line back down to camp.",
+       "hours": 6,
+       "miles": 3.6,
+       "title": "Climb Sundial's East Face",
+       "gainFt": 1650,
+       "lossFt": 1650,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Early start for firmer rock and to be off the exposed ridge before any afternoon buildup."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach base of East Face",
+         "detail": "Cross-country talus/scree approach from Upper Basin camp."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit Sundial",
+         "detail": "Sustained Class 3 with real exposure near the top; helmet recommended for loose rock."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Back at high camp",
+         "detail": "Reverse the East Face and talus approach."
+        }
+       ],
+       "objective": "Summit Sundial (7,209 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike the 8 miles back to the Upper Dungeness Trailhead, descending about 3,000 ft through the river valley.",
+       "hours": 4.5,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3000,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~19.6-mile round trip: two backpacking days (Upper Dungeness TH to Upper Royal Basin, ~3,000 ft each way) bracket a single scramble day up Sundial's Class 3 East Face (~1,650 ft round trip from camp)."
+    },
+    "timing": {
+     "totalHrs": 16,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 4.5,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "Backpack the Royal Basin Trail from the Upper Dungeness Trailhead through old-growth forest, passing Royal Creek Camp and Royal Lake, then continue into Upper Royal Basin to camp a…",
+       "fromTo": "Backpack in to Upper Royal Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Scramble cross-country up talus and scree to the base of the East Face, then climb sustained, exposed Class 3 rock (loose in spots near the top) to the summit for views over Royal …",
+       "fromTo": "Climb Sundial's East Face",
+       "section": "Climb"
+      },
+      {
+       "hrs": 4.5,
+       "note": "Break camp and hike the 8 miles back to the Upper Dungeness Trailhead, descending about 3,000 ft through the river valley.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-high — an 8-mile, roughly 2,650-3,000 ft backpack each way into Upper Royal Basin via the Royal Basin Trail, typically done as a multi-day trip",
+      "packWeight": "Moderate overnight pack (camping gear, bear canister, food) for the approach; light pack for the summit push"
+     },
+     "approachTime": "One day in via the Royal Basin Trail from the Upper Dungeness Trailhead (roughly 5-6 hours with a full pack) to camp in Upper Royal Basin, then a half-day summit push",
+     "requiredSkills": [
+      "Class 3 scrambling on loose rock with real exposure",
+      "Comfort self-arresting with an ice axe if the NE couloir hasn't melted out",
+      "Off-trail routefinding across talus/scree",
+      "Basic backpacking and bear-canister camping competence"
+     ],
+     "experienceLevel": "Competent scrambler comfortable with sustained Class 3 and routefinding on loose rock; no glacier travel or technical rope skills are required on the standard route"
+    }
+   }
+  }
+ ]
+}

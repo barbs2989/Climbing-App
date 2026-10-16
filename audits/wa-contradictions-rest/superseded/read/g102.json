@@ -1,0 +1,2115 @@
+{
+ "batches": [
+  "b405.json",
+  "b406.json",
+  "b407.json",
+  "b408.json"
+ ],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "name": "North Face",
+   "area": "Summit Chief Mountain",
+   "contradictions": [
+    {
+     "fact": "Ice screw rack size",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "Ice screws (a light rack — the FA party used only two)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A light ice rack supplemented by rock gear"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Ration ice screws and lean on rock gear/knifeblades between ice sections, as the FA party did"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "found that badly short for the ice actually encountered. Carry a real screw rack"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "found that badly short for the ice actually encountered ... Carry a real screw rack."
+      }
+     ],
+     "why": "Kit fields advise a light, rationed screw rack like the FA party's, while the route description says that rack was badly short and to carry a real screw rack.",
+     "internal_resolution": "climbing_route and approach_variants both say two screws was badly short; the gear/detailed_rack/pro_tips advice to copy the FA rack is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "name": "South Route",
+   "area": "Summit Chief Mountain",
+   "contradictions": [
+    {
+     "fact": "Distance trailhead to Vista Lakes camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "making this a two-day approach of about 9 miles and 2,800 ft to reach the alpine basin"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "13"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "13"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Pete Lake to Vista Lakes via a Lemah Meadow bypass and the Pacific Crest Trail, roughly 8.5 miles."
+      }
+     ],
+     "why": "The approach to the Vista Lakes camp is stated as 9, 10 and 13 miles in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day duration from Vista Lakes",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[1]",
+       "says": "Camping at Vista Lakes (~5,600 ft) shortens summit day to roughly 6 hours round trip"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].detail",
+       "says": "~11 hr camp-to-camp round trip is typical."
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      }
+     ],
+     "why": "pro_tips says the summit day from Vista Lakes is about 6 hours round trip; itinerary and timing say 11 hours camp-to-camp (6 hours is camp-to-summit only).",
+     "internal_resolution": "itinerary, timing and totalNote all agree on ~11 hr camp-to-camp; pro_tips conflates one-way camp-to-summit time with round trip.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / approach named in partner requirements and crowds",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "typically a full day (or more) of hiking from the Dutch Miller Gap or Waptus trailheads"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "most parties camp in the Dutch Miller Gap or Waptus basin"
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "when the Dutch Miller Gap / Waptus approach is fully snow-free"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Pete Lake Trailhead (Trail #1323, FR-4616)"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach to Vista Lakes camp"
+      }
+     ],
+     "why": "Partners and crowds describe a Dutch Miller Gap / Waptus approach and basin camp while every other field uses Pete Lake TH and a Vista Lakes camp.",
+     "internal_resolution": "approach, approach_variants, waypoints, itinerary, timing, access and bivy all use Pete Lake TH / Vista Lakes; partner_requirements and crowds are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "the Pete Lake/Cooper Lake road and trailhead are standard Forest Service access with no permit required."
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issue wilderness permit required at the Pete Lake Trailhead for entry into Alpine Lakes Wilderness"
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Alpine Lakes Wilderness permit at the trailhead"
+      }
+     ],
+     "why": "itinerary.cal says no permit is required; permit and access say a self-issue wilderness permit is required.",
+     "internal_resolution": "permit, access.permit, access.overnight_permit and bivy all require the free self-issue permit; itinerary.cal is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overall grade of the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3-4 (loose)"
+      },
+      {
+       "field": "climbing_route[1].class",
+       "says": "Class 2–3"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "Class 2–3"
+      },
+      {
+       "field": "approach",
+       "says": "the final Class 2-3 scrambling to the summit"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "The final ~100 ft is loose Class 2-3 scrambling"
+      },
+      {
+       "field": "obj_haz[3]",
+       "says": "Exposed Class 3-4 moves in the final hundred feet below the summit"
+      }
+     ],
+     "why": "The grade pill and obj_haz give Class 3-4 for the final section while climbing_route, approach and itinerary rate the same final ~100 ft Class 2-3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which part of July is climbable (moat timing)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "only the back half of the month is typically reliable"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Moat crux near 7,000 ft — can be impassable after mid-July"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "the gate at 7,000 ft can shut by mid-July"
+      },
+      {
+       "field": "best_season",
+       "says": "Earlier-season attempts (late June-early July) may have better snow coverage bridging the moat"
+      }
+     ],
+     "why": "seasonal_guidance says only the second half of July is reliable, while hazards/best_season say the moat crux can become impassable after mid-July and early July bridges it better.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "name": "Standard Scramble",
+   "area": "Three Queens",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6300"
+      },
+      {
+       "field": "loss_ft",
+       "says": "6300"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "6300"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 10 miles round trip and 3,500 ft of gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2400"
+      },
+      {
+       "field": "waypoints[7].elev",
+       "says": "6693"
+      }
+     ],
+     "why": "Gain is 6,300 ft in the columns but 3,500 ft in the itinerary; trailhead 2,400 ft to summit 6,693 ft is ~4,300 ft, matching neither.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Side of the mountain / line climbed",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "traverses south/east onto a broad ledge system on the north face"
+      },
+      {
+       "field": "face",
+       "says": "North Face (Main-Middle notch to summit ridge)"
+      },
+      {
+       "field": "aspect",
+       "says": "N"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Bypasses the class-5 direct notch line via an exposed north-face ledge system"
+      },
+      {
+       "field": "waypoints[6].name",
+       "says": "South-face ledge below the summit gable"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "Lower south-face talus"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Summit East Peak (6,693 ft) via the southeast shoulder and northeast ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "That is a different side of the mountain from the Mineral Creek south-talus line above."
+      }
+     ],
+     "why": "The route is described as a north-face ledge (beta/face/aspect/pitch_detail), a south-face talus and ledge (approach/climbing_route/waypoints), and a southeast-shoulder-to-northeast-ridge line (itinerary).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp vs single day / start point",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From a backcountry camp at Upper or Middle Park Lake"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "off-trail from Park Lakes camp toward the notch between Main and Middle peaks"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "No camping — parties are back at the trailhead by afternoon/early evening."
+      },
+      {
+       "field": "approach",
+       "says": "leaves the maintained trail ... about the 2.7-mile mark ... to reach the base of Three Queens' south-face talus"
+      }
+     ],
+     "why": "beta and pitch_detail start from a Park Lakes camp; itinerary is a no-camp day and the approach leaves the trail at 2.7 mi, well before Park Lakes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Scramble grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "Class 4"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "class 3"
+      }
+     ],
+     "why": "rock_grade says Class 2-3 while grade and pitch_detail say Class 3-4 / Class 4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car time stored as summit time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "~10:00 AM"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 5 hrs up, 3.5-4 hrs down"
+      }
+     ],
+     "why": "timing.summitTimeHrs equals the full 9.5 hr car-to-car total while the itinerary reaches the summit about 5 hours after a 5 AM start.",
+     "internal_resolution": "itinerary schedule and totalNote agree ~5 hr to summit; summitTimeHrs holds the car-to-car total.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel on descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "0"
+      },
+      {
+       "field": "descent_text",
+       "says": "No rappelling is required on this walk-off/downclimb line (rappels: 0)"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "some parties rope up and rappel this last pitch on descent."
+      }
+     ],
+     "why": "The summit waypoint says parties rappel the last pitch while rappels and descent_text say no rappel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach trail named in partner requirements",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "approach via the Pete Lake / Cooper River trails into the peak's basins"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "a full day to reach the basin and begin scrambling via Pete Lake/Cooper River"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Mineral Creek Trailhead"
+      }
+     ],
+     "why": "Partner requirements name the Pete Lake / Cooper River trails; every other field uses the Mineral Creek Trailhead (Trail #1331).",
+     "internal_resolution": "approach, waypoints, itinerary, access and bivy all use Mineral Creek; partner_requirements is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.85"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "10"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "5"
+      }
+     ],
+     "why": "dist_km (5.5 mi) is one-way while the itinerary gives 10 mi round trip; the page shows both as the route distance.",
+     "internal_resolution": "waypoints (5 mi one-way) and itinerary (10 mi RT) agree; dist_km is one-way.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_three_queens_middle_peak",
+   "name": "Middle Peak via South Face - South Chimney",
+   "area": "Three Queens",
+   "contradictions": [
+    {
+     "fact": "Trailhead location relative to Cooper Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "left on Cooper Lake Road (FR-4600) approximately 10 miles to trailhead at Cooper Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "over Cooper Pass to the Mineral Creek trailhead at around 2,375 ft"
+      }
+     ],
+     "why": "The trailhead is placed at Cooper Pass in one field and beyond (over) Cooper Pass in the valley in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ranger district",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Contact Snoqualmie Ranger District: (425) 888-1421 for current conditions."
+      },
+      {
+       "field": "access.landManager",
+       "says": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (Alpine Lakes Wilderness)"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest, 803 W. 2nd St, Cle Elum, WA 98922, (509) 852-1100"
+      }
+     ],
+     "why": "access.notes sends climbers to the Snoqualmie Ranger District while the land manager and emergency fields name Cle Elum Ranger District.",
+     "internal_resolution": "landManager and emergency.rangerStation agree on Cle Elum RD; access.notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.3"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "About 4.3 km beyond the road and 4,600 ft of gain."
+      },
+      {
+       "field": "itinerary",
+       "says": "for roughly 10 miles round trip and 4,600 ft of gain/loss"
+      }
+     ],
+     "why": "dist_km 4.3 km (2.7 mi, trailhead to base of talus) is shown as the route distance while the itinerary says ~10 miles round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_three_queens_west_peak",
+   "name": "West Peak via West Ridge - West Face",
+   "area": "Three Queens",
+   "contradictions": [
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.8"
+      },
+      {
+       "field": "itinerary",
+       "says": "return to the trailhead (16 miles, 5,300 ft gain/loss total"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "roughly 16 miles round trip"
+      }
+     ],
+     "why": "dist_km 12.8 km (8 mi) is one-way while prose gives 16 miles round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bedal_peak_standard",
+   "name": "Standard Scramble",
+   "area": "Bedal Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From the Bedal Creek trailhead, a faint, brushy climbers' path ... boulder-hopping up a creek drainage into Bedal Basin"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "about two and a half miles from the road end at around 2,800 ft ... up the rocky creek bed and through thin forest into the basin"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "FR 4096 Pullout / Merry Brook Climbers' Path"
+      },
+      {
+       "field": "approach",
+       "says": "follows Merry Brook (also called Merry Creek) upstream ... to gain a forested ridge around 2,600 ft"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Car-to-car via Merry Brook"
+      }
+     ],
+     "why": "beta and bivy describe the Bedal Creek trail into Bedal Basin while approach, waypoints, itinerary and approach_variants use the FR 4096 Merry Brook boot path up the NW ridge.",
+     "internal_resolution": "approach, waypoints, itinerary, timing, approach_variants and descent_text all use Merry Brook from FR 4096 at ~2,100 ft; beta and the bivy entry are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cliff-band crux elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "hazards[1]",
+       "says": "crux cliff band at roughly 4,600-4,900 ft"
+      },
+      {
+       "field": "turnaround",
+       "says": "the cliff-band crux (~4,600-4,900 ft)"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "through the cliff band around 4,600-4,900 ft"
+      },
+      {
+       "field": "approach",
+       "says": "The technical crux comes around 4,900–5,200 ft"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "4950"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a hidden ramp/notch around 5,100 ft"
+      }
+     ],
+     "why": "The crux cliff band is placed at 4,600-4,900 ft in hazards/turnaround/pro_tips and at 4,900-5,200 ft (~5,100) in approach, waypoints, climbing_route and itinerary.",
+     "internal_resolution": "approach, climbing_route, waypoints, approach_variants and itinerary agree on ~4,900-5,200 ft; the 4,600-4,900 figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness permit or quota currently required for day or overnight climbing"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "free self-issue wilderness permit from the box at the road end"
+      }
+     ],
+     "why": "access says no wilderness permit is required, while permit and bivy call for a free self-issue wilderness permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car time stored as summit time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "+6 hr"
+      }
+     ],
+     "why": "summitTimeHrs equals the 10.5 hr car-to-car total, while the itinerary reaches the summit about 6 hours in.",
+     "internal_resolution": "itinerary schedule shows summit at +6 hr; summitTimeHrs holds the car-to-car total.",
+     "needs_research": false
+    },
+    {
+     "fact": "FR 4096 distance to trailhead pullout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "left onto FR 4096 for about 2 miles to the trailhead pullout"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 1.3 miles up the spur road near its second or third switchback"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "up FR 4096 roughly 1.3 miles"
+      }
+     ],
+     "why": "The spur-road distance to the pullout is 2 miles in road.driveNote and 1.3 miles in approach and waypoints.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux rock grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3-4 at the crux cliff band"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "3rd-4th class"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a short Class 2-3 rock section"
+      }
+     ],
+     "why": "detailed_rack describes the rock as only Class 2-3 while rock_grade and pitch_detail put the crux at Class 3-4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "5.9"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7.8"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "3.8"
+      }
+     ],
+     "why": "dist_km (3.7 mi) is one-way while itinerary miles (7.8) are round trip; both appear as the route distance.",
+     "internal_resolution": "waypoints (3.8 mi one-way) and itinerary (7.8 RT) agree; dist_km is one-way.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "name": "Spindrift Couloir",
+   "area": "Big Four Mountain",
+   "contradictions": [
+    {
+     "fact": "Ice grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "ice_grade",
+       "says": "WI5"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "near-vertical ice (~WI5)"
+      },
+      {
+       "field": "gear[0]",
+       "says": "sustained thin ice up to roughly WI4/95° through the main couloir"
+      }
+     ],
+     "why": "gear says the ice goes to about WI4 while ice_grade and pitch_detail say WI5.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "First-ascent party name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Bart Paull and Doug Littauer, March 2, 1996"
+      },
+      {
+       "field": "beta",
+       "says": "First climbed March 2, 1996 by Bart Pauli and Doug Littauer"
+      }
+     ],
+     "why": "The first ascensionist's surname is spelled Paull in fa and Pauli in beta.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.permit",
+       "says": "free self-issue wilderness permits available ... where the peak is inside designated wilderness"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not inside any wilderness — this side of the highway is ordinary national forest"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "there is no wilderness permit for this route."
+      }
+     ],
+     "why": "access.rules applies Glacier Peak Wilderness rules while the bivy entry says the area is not inside any wilderness.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_four_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Big Four Mountain",
+   "contradictions": [
+    {
+     "fact": "Rock type",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "friable Swauk-Chuckanut sandstone/conglomerate"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "loose and decomposing ('pre-Tertiary metasedimentary rock')"
+      }
+     ],
+     "why": "detailed_rack calls the rock Swauk-Chuckanut sandstone/conglomerate while watch_out calls it pre-Tertiary metasedimentary rock.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not inside any wilderness — this side of the highway is ordinary national forest"
+      }
+     ],
+     "why": "access.rules applies Glacier Peak Wilderness rules while the bivy entry says the area is not inside any wilderness.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_four_mountain_tower_route",
+   "name": "Tower Route",
+   "area": "Big Four Mountain",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "IV 5.7"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.9"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.7"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.6-5.7"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A moderate rock rack to 5.7"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Standard trad rack sufficient for 5.7 terrain on the towers"
+      }
+     ],
+     "why": "rock_grade (which the grade pill shows first) says 5.9, while grade, every pitch, detailed_rack and pro_needs say 5.7.",
+     "internal_resolution": "grade, pitch_detail, detailed_rack and pro_needs all agree on 5.7; rock_grade 5.9 is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_four_mountain_dry_creek_route",
+   "name": "Dry Creek Route",
+   "area": "Big Four Mountain",
+   "contradictions": [
+    {
+     "fact": "Order and ridge of the upper route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "traverse the exposed red slabs to gain the east ridge below the couloir/gully system that leads to the summit ridge"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "Exposed red slabs to the east ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The correct main couloir ... it is the point where crampons go on ... a rightward class 4 traverse on RED slabby rock gains the South Ridge of the Main Peak"
+      }
+     ],
+     "why": "approach/climbing_route put the red-slab traverse first, to the east ridge, below the couloir; approach_variants puts the couloir first and the red-slab traverse after it, gaining the South Ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of rappels on descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "60m rappel(s) needed on the South Ridge on descent; at least two full rope-lengths required from the upper basin"
+      },
+      {
+       "field": "descent_text",
+       "says": "set up a roughly 60-meter rappel from a notch on the south ridge ... then downclimb roughly two more rope-lengths of steep terrain"
+      },
+      {
+       "field": "descent",
+       "says": "rappel (~60m) from a notch on the south ridge before downclimbing steep terrain"
+      }
+     ],
+     "why": "rappels implies two or more rope-length rappels, while descent and descent_text describe one ~60 m rappel followed by two rope-lengths of downclimbing.",
+     "internal_resolution": "descent, descent_text, detailed_rack and pro_tips all describe a single ~60 m rappel; the rappels field misreads the two rope-lengths of downclimbing.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late spring-summer (best after couloir snow consolidates but before it melts to bare, loose rock)"
+      },
+      {
+       "field": "best_season",
+       "says": "as a snow/ice climb up the Dry Creek couloir in winter and early spring (roughly December-April) ... or as a rock scramble in summer/early fall"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Best late-summer conditions come once seasonal snow has melted off the basin's ledges and ramps"
+      }
+     ],
+     "why": "season says late spring-summer before the snow melts to bare rock; best_season gives winter/early-spring and summer/early-fall rock modes, and pro_tips says late summer (melted out) is best.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "name": "Don't Climb That She Said",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Summer (Jul-Sep)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "roughly May-October access, with July commonly cited as the best month"
+      }
+     ],
+     "why": "The seasonal guidance window shows May-October, wider than the Jul-Sep season (its best month, July, is inside the season).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the approach is known",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "No route-specific trailhead or approach beta for this boulder problem turned up anywhere online"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 8 miles up the North Fork Sauk River trail"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 8 miles up the North Fork Sauk River trail toward Glacier Peak"
+      }
+     ],
+     "why": "The approach field says no trailhead or approach is known while other fields place the boulder about 8 miles up the North Fork Sauk trail.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "name": "Disappointment Peak Cleaver (Cool Glacier)",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the North Fork Sauk River Trailhead (2,050 ft, end of Sloan Creek Road/FR 49)"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "North Fork Sauk River Trail #649 to White Pass and Glacier Gap"
+      },
+      {
+       "field": "road.name",
+       "says": "North Fork Sauk Road / Sloan Creek Road (FR 49)"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Trailhead to Buck Creek Pass"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].fromTo",
+       "says": "Trailhead to Buck Creek Pass"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Buck Creek Pass"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "2+ days to high camp via Trinity/Buck Creek Pass"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Combine with Buck Creek Pass for a scenic eastern approach"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Trinity Trailhead"
+      }
+     ],
+     "why": "approach, approach_variants, road, pitch_detail and descent_text use the North Fork Sauk trail to White Pass (west/south side), while itinerary, timing, waypoints, pro_tips and partner_requirements use the Trinity trailhead and Buck Creek Pass (east side).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp location",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "bivy[0].name",
+       "says": "Glacier Gap"
+      },
+      {
+       "field": "pitch_detail[0].pitch",
+       "says": "Trailhead → White Pass → Glacier Gap"
+      },
+      {
+       "field": "itinerary.days[1].objective",
+       "says": "Reach a high camp near the Cool Glacier moraine"
+      },
+      {
+       "field": "bail",
+       "says": "High camp in the Gerdine/Cool basin is the bail point"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "Cool/Gerdine Basin Camp"
+      }
+     ],
+     "why": "The high camp is Glacier Gap (7,200 ft) in bivy/pitch_detail/overview but a Cool/Gerdine basin camp reached from Buck Creek Pass in itinerary/waypoints/bail.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "North Fork Sauk River Trailhead (2,050 ft"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2800"
+      }
+     ],
+     "why": "The trailhead is 2,050 ft in approach/approach_variants but 2,800 ft in the trailhead waypoint (whose note says the elevation is Trinity's).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "9846"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~7,750 ft gain"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3200"
+      }
+     ],
+     "why": "gain_ft is 9,846 ft while the itinerary days sum to 7,750 ft (27% less).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Col elevation on the glacier bypass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "bypass it via a rising traverse under it onto the upper Gerdine and Cool glaciers to a col at ~9,100 ft"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Climb the Cool Glacier westward to the col above Disappointment Peak at about 9,600 ft"
+      },
+      {
+       "field": "descent_text",
+       "says": "back to the 9,600 ft col, then descend the Cool Glacier to the 9,100 ft col"
+      }
+     ],
+     "why": "overview says the bypass reaches a col at ~9,100 ft and then snow to the summit, while pitch_detail says the col where the routes rejoin is ~9,600 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Disappointment Peak prominence above Glacier Gap",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "a sub-summit with only ~115 ft of prominence above Glacier Gap"
+      },
+      {
+       "field": "overview",
+       "says": "From Glacier Gap (~7,250-7,300 ft)"
+      },
+      {
+       "field": "beta",
+       "says": "Disappointment Peak's 9,755 ft summit"
+      }
+     ],
+     "why": "Disappointment Peak (9,755 ft) sits ~2,500 ft above Glacier Gap (~7,250 ft), not ~115 ft.",
+     "internal_resolution": "beta and pitch_detail give 9,755 ft and Glacier Gap ~7,250 ft; the '115 ft above Glacier Gap' phrase is wrong (the ~150 ft drop is to the col, per pitch_detail).",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier crossed on the traverse",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "onto the upper Gerdine and Cool glaciers"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Traverse right (northeast) onto the upper Suiattle Glacier and continue below the cliffs of Disappointment Peak"
+      }
+     ],
+     "why": "The traverse under Disappointment Peak crosses the Gerdine/Cool glaciers in overview but the Suiattle Glacier in pitch_detail.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Standard route or less-traveled alternative / which side",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "The Disappointment Peak Cleaver is the standard southern approach to Glacier Peak"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "a less-traveled alternative to the standard Sitkum approach"
+      },
+      {
+       "field": "climate.typical",
+       "says": "Eastern (drier) side; cold, glaciated, remote."
+      },
+      {
+       "field": "seasonal_hazards.weather.typical",
+       "says": "Eastern (drier) side of the peak"
+      }
+     ],
+     "why": "overview calls this the standard southern approach; crowds calls it a less-traveled alternative, and climate/seasonal_hazards describe it as the eastern side.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "No specific permits required for wilderness entry"
+      },
+      {
+       "field": "access.permit",
+       "says": "Self-Issue Wilderness Permit"
+      },
+      {
+       "field": "emergency.notes",
+       "says": "Free self-issue wilderness permit required at the trailhead register."
+      }
+     ],
+     "why": "access.notes says no permit is needed for wilderness entry; access.permit, permit and emergency say a self-issue wilderness permit is required.",
+     "internal_resolution": "permit, access.permit, overnight_permit and emergency all require the self-issue permit; access.notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "June and August conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Avoid June (rain, avalanche hazard from sloughlanches). August presents increased crevasse hazard"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "good"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through August"
+      }
+     ],
+     "why": "access.notes says to avoid June while seasonal_guidance rates June good and best_season starts late June.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "name": "Kennedy Glacier",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead road",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "White Chuck Road (FR 23)"
+      },
+      {
+       "field": "approach",
+       "says": "from the White Chuck River Trailhead (FS-23, currently closed)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Road-end trailhead on Suiattle River Rd (FR 26), ~23.5 mi from Darrington"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Kennedy Ridge and the Glacier Creek camps, Suiattle side"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the Suiattle River trail runs about seven miles to the river bridge"
+      },
+      {
+       "field": "access.notes",
+       "says": "2003 Glacier Peak flood destroyed original White Chuck River Trail and Kennedy Hot Springs (no longer accessible)."
+      }
+     ],
+     "why": "The trailhead is on White Chuck Road FR 23 in road/approach/approach_logistics but on Suiattle River Road FR 26 in the trailhead waypoint and the bivy entry, and access.notes says the White Chuck trail is no longer accessible.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day descent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].title",
+       "says": "Summit via Kennedy Glacier, descend via Sitkum"
+      },
+      {
+       "field": "timing.sectionBreakdown[1].note",
+       "says": "then descend the Sitkum Glacier and Boulder Basin"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "then descend via Frostbite Ridge and the Vista Glacier back down to the lower Kennedy Glacier"
+      }
+     ],
+     "why": "The summit-day descent is via the Sitkum Glacier and Boulder Basin in the title and timing, but via Frostbite Ridge and the Vista Glacier in the itinerary note and schedule.",
+     "internal_resolution": "itinerary note, schedule, descent and descent_text all use Frostbite Ridge/Vista Glacier; the Sitkum title and timing note are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Camp location and elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach camp at ~6,200 ft"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach to Kennedy Creek Bench camp"
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "Glacier Creek PCT crossing camp"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "5300"
+      },
+      {
+       "field": "beta",
+       "says": "From a camp near Glacier Creek"
+      }
+     ],
+     "why": "The camp is Kennedy Creek Bench at ~6,200 ft in the itinerary but the Glacier Creek PCT camp at 5,300 ft in beta, approach and waypoints.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trail mileages on the approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow trail #643 about 4 miles, then Kennedy Ridge Trail #639 for 1.7 miles to the PCT; ... about 2 miles to the Glacier Creek crossing"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "6"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "7.7"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "9.7"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8"
+      }
+     ],
+     "why": "approach puts the Kennedy Ridge junction at 4 mi and Glacier Creek at ~7.7 mi, while waypoints put them at 6 mi and 9.7 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain vs trailhead and summit elevations",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "8200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "1700"
+      },
+      {
+       "field": "waypoints[7].elev",
+       "says": "10541"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3850"
+      }
+     ],
+     "why": "gain_ft 8,200 is less than the 8,841 ft between the 1,700 ft trailhead and the 10,541 ft summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Waypoints trace Frostbite Ridge rather than this route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].name",
+       "says": "Vista-Kennedy saddle"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Saddle between Vista Ridge and the Kennedy Glacier icefall; rope up for glacier travel from here."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Frostbite rounds Kennedy Peak to the saddle between the VISTA and KENNEDY glaciers at about 8,000 ft ... This route never leaves the ice."
+      },
+      {
+       "field": "beta",
+       "says": "then descend (right) to the foot of the Kennedy Glacier"
+      }
+     ],
+     "why": "The waypoints route through the 8,000 ft Vista-Kennedy saddle, which approach_variants says is the Frostbite Ridge line, whereas beta drops off Kennedy Ridge to the foot of the glacier.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season / best window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.reason",
+       "says": "Outside the season window"
+      },
+      {
+       "field": "access.notes",
+       "says": "best conditions late June through mid-September"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through July"
+      }
+     ],
+     "why": "seasonal_guidance calls August outside the season while season includes August, and access.notes gives a late June-mid September best window against best_season's late June-July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~2 days to camp on Kennedy Ridge each way"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "6.5"
+      },
+      {
+       "field": "approach",
+       "says": "pack-in time 4-5 hours"
+      }
+     ],
+     "why": "partner_requirements says 2 days each way to camp; itinerary and approach say a single 4-6.5 hour day.",
+     "internal_resolution": "approach, approach_variants, itinerary and timing all have a one-day pack-in; partner_requirements is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.4"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day loop (~25-27 miles"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "13.5"
+      }
+     ],
+     "why": "dist_km 12.4 km (7.7 mi) matches neither the ~25-mile round trip nor the ~14+ mi one-way distance in the waypoints.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_painted_traverse",
+   "name": "Painted Traverse",
+   "area": "Glacier Peak Wilderness Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "wa_gunrunner",
+   "name": "Gunrunner",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5000"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: ... (6 miles, 3,100 ft gain). Day 2: ... (3.2 miles, 2,600 ft gain). Day 3: ... 1,500 ft gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "1440"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8200"
+      }
+     ],
+     "why": "gain_ft 5,000 is below both the itinerary sum (7,200 ft) and the 6,760 ft between the 1,440 ft trailhead and 8,200 ft high point.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to base camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Downey Creek Trailhead to Bachelor Flats camp (6 miles ... Bachelor Flats to Dome-Chickamin Col base camp (3.2 miles"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "17"
+      }
+     ],
+     "why": "The itinerary reaches the Dome-Chickamin col in 9.2 miles, yet the bivy entries put Cub Lake (short of the col) at ~12 miles and the summit waypoint is at 17 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "48"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: ... Day 5: Return to trailhead"
+      },
+      {
+       "field": "what_to_bring[4]",
+       "says": "Food (5+ days minimum)"
+      }
+     ],
+     "why": "timing.totalHrs is 48 hours (2 days), while the itinerary is a 5-day trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Hardest grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.10"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.10"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.10+"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Gunrunner (IV 5.10-, 18 pitches)"
+      }
+     ],
+     "why": "The route is graded 5.10, pitch 2 is 5.10+, and the summit waypoint calls it 5.10-.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for 55 m rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single dynamic"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "55"
+      },
+      {
+       "field": "rack[5]",
+       "says": "carry two ropes for the rappel descent"
+      },
+      {
+       "field": "gear[6]",
+       "says": "50-60m rope (double recommended)"
+      }
+     ],
+     "why": "Seven 55 m rappels need two ropes, but the kit is a single 60 m rope, which only reaches about 30 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier reached by the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "final rappel off South Peak is a free-hanging rap over a moat onto the Blue Glacier"
+      },
+      {
+       "field": "bail",
+       "says": "Any point on the traverse can bail by descending south-facing slopes to Chikamin Glacier."
+      },
+      {
+       "field": "descent_text",
+       "says": "Navigate bergschrund and crevasse field on Chickamin Glacier. Final free-hanging rappel over moat onto Blue Glacier."
+      }
+     ],
+     "why": "The descent ends on the Blue Glacier (east side), but the south-side descent and base camp are on the Chickamin Glacier (west side); descent_text mentions both without reconciling them.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season end",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "climate.fall",
+       "says": "Route becomes difficult in September ... Not recommended outside July-August."
+      },
+      {
+       "field": "best_season",
+       "says": "Route is rarely done outside July-August"
+      }
+     ],
+     "why": "season includes September while climate and best_season say it is not recommended outside July-August.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ranger district",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "comms",
+       "says": "The nearest ranger station is Chelan Ranger District."
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Chelan Ranger District, 428 W. Woodin Avenue, Chelan"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Darrington Ranger District)"
+      }
+     ],
+     "why": "comms/emergency name Chelan Ranger District while access names Darrington Ranger District for this Downey Creek (west-side) approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Optional registration for alpine climbs; wilderness permit for overnight stays"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Glacier Peak Wilderness self-issue permit from the Downey Creek register"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "(e.g. Sunrise Mine TH for Vesper Peak)"
+      }
+     ],
+     "why": "access.permit and bivy require a wilderness permit for overnight stays; overnight_permit says none is required. The parking and overnight notes also name other areas (Sunrise Mine TH, Cache Col).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road closure detour length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "currently requires walking or biking the closed road from the MP 4.5 closure gate, adding several miles"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "closed to vehicles at about milepost 4 ... which leaves roughly sixteen extra road miles each way"
+      }
+     ],
+     "why": "The road closure adds 'several miles' in road.driveNote and about 16 miles each way in the bivy entry.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack sizes and quickdraws",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "1-2x each of 0.3-1.5 inch ... 2-3 quickdraws"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "0.3-3in, doubles in crack-climbing sizes"
+      },
+      {
+       "field": "gear[4]",
+       "says": "6 quickdraws minimum"
+      },
+      {
+       "field": "alpine_draws",
+       "says": "5"
+      }
+     ],
+     "why": "The cam range (to 1.5 in vs to 3 in) and quickdraw count (2-3 vs 5 vs 6+) differ between the kit fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face",
+   "name": "East Face",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5000"
+      },
+      {
+       "field": "itinerary",
+       "says": "(6 miles, 3,100 ft gain) ... (3.2 miles, 2,600 ft gain) ... 600 ft gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "1440"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8200"
+      }
+     ],
+     "why": "gain_ft 5,000 is below both the itinerary sum (6,300 ft) and the 6,760 ft between the 1,440 ft trailhead and 8,200 ft summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to base camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Downey Creek Trailhead to Bachelor Flats camp (6 miles ... Bachelor Flats to Dome-Chickamin Col base camp (3.2 miles"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "17"
+      }
+     ],
+     "why": "The itinerary reaches the base camp in 9.2 miles, yet Cub Lake (short of it) is ~12 miles in the bivy entry and the summit waypoint is at 17 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "50"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: ... Day 5: Return to trailhead"
+      },
+      {
+       "field": "what_to_bring[4]",
+       "says": "Food (5+ days)"
+      }
+     ],
+     "why": "timing.totalHrs is 50 hours while the itinerary is a 5-day trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel count and length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "2 double-rope rappels ... (~4 if you carry only one 60 m rope)"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "55"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "The figure of about four rappels on a single 60 m rope is arithmetic from roughly 100 m of descent"
+      }
+     ],
+     "why": "rappel_detail lists four 55 m rappels (about 220 m), but the four-rappel count assumes single-rope raps of about 25-30 m over about 100 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rockfall on the south-side descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "descend the south face, which is protected from rockfall"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "Afternoon rockfall hazard on south-facing rappel descent"
+      },
+      {
+       "field": "watch_out[4]",
+       "says": "Descent via south-facing slopes can have rockfall hazard during afternoon warming."
+      }
+     ],
+     "why": "descent_text says the south-face descent is protected from rockfall while hazards and watch_out warn of rockfall on that descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season end",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "climate.fall",
+       "says": "Difficult conditions from September onward; not recommended outside July-August."
+      }
+     ],
+     "why": "season includes September while climate says it is not recommended outside July-August.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ranger district",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "comms",
+       "says": "Nearest ranger station is Chelan Ranger District."
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Chelan Ranger District"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Darrington Ranger District)"
+      }
+     ],
+     "why": "comms/emergency name Chelan Ranger District while access names Darrington Ranger District for the Downey Creek approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Free self-issued wilderness permit required for Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register"
+      }
+     ],
+     "why": "access.permit requires a wilderness permit while overnight_permit says none is required (and its note refers to Cache Col, another area).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack sizes and quickdraws",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "1-2x each of 0.5-1.5 inch cams ... 2-3 quickdraws"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "double set 0.3-3in, single to #4"
+      },
+      {
+       "field": "alpine_draws",
+       "says": "6"
+      }
+     ],
+     "why": "detailed_rack gives cams to 1.5 in and 2-3 draws, while sling_rack gives doubles to 3 in plus a #4 and alpine_draws is 6.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "name": "Standard Route",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "Approach mileages",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "reaching the Bachelor Creek crossing at 6.6 miles/2,400' ... Bachelor Meadows — the common first-night camp, roughly 10-12 miles"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 17 miles and 7,000'+ gain from the trailhead to this point"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "2800"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "8.5"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "15"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "5.5"
+      }
+     ],
+     "why": "Bachelor Meadows is 10-12 mi in the approach but 8-8.5 mi in the itinerary and waypoints, and the col is 17 mi in the approach vs 15 mi (waypoints) or 13.5 mi (itinerary).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day length and start time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "before a pre-dawn ~15-hour summit day"
+      },
+      {
+       "field": "turnaround",
+       "says": "commonly 4-5am ... budget roughly 7-8 hours camp-to-camp for the technical climb itself"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "~7:00 AM from camp"
+      },
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "11"
+      }
+     ],
+     "why": "The summit day is ~15 hours pre-dawn in partner_requirements, 7-8 hours from a 4-5 AM start in turnaround, and 11 hours from 7 AM in timing/itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best time of season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "late June-July is favored for firmer, more continuous glacier snow ... by August-September the glacier is more broken/icy"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Most parties go around the late-June/early-July window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through early September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.reason",
+       "says": "Best window - most snow has receded ... glacier travel most straightforward"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      }
+     ],
+     "why": "best_season and itinerary favour late June-July with a worse glacier by August, while seasonal_guidance rates June risky and calls August the best month for glacier travel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Only practical approach while road is closed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "The only practical approach while this is in effect is the longer east-side route via the Lady of the Lake ferry to Stehekin"
+      },
+      {
+       "field": "approach",
+       "says": "the road itself is currently gated by a washout about 4.5 miles short of the actual trailhead, adding road-walking/biking mileage"
+      },
+      {
+       "field": "road.status",
+       "says": "Closed at milepost 4"
+      }
+     ],
+     "why": "access says the east-side Stehekin route is the only practical approach during the closure, while the approach and itinerary plan the west-side Downey Creek route with a road walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead"
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issue wilderness permit at the trailhead (no quota/reservation)"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register"
+      }
+     ],
+     "why": "permit and access.permit require a self-issue wilderness permit while overnight_permit says none is required (and refers to Cache Col).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_ridge",
+   "name": "Southwest Ridge",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5000"
+      },
+      {
+       "field": "approach",
+       "says": "then an off-trail bushwhack and glacier approach (~5,000 ft gain) to a high camp below the peaks"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8200"
+      }
+     ],
+     "why": "gain_ft 5,000 equals the approach to high camp alone and leaves out the climb; High Bridge (~1,600 ft) to the 8,200 ft summit is ~6,600 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness / backcountry permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "NPS backcountry permit required for camping within the Lake Chelan NRA ... a self-issued USFS wilderness permit applies once past the NRA boundary"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register"
+      }
+     ],
+     "why": "access.permit requires an NPS backcountry permit and a USFS wilderness permit, while overnight_permit and the bivy entry say no overnight permit is needed (overnight_permit also refers to Cache Col).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

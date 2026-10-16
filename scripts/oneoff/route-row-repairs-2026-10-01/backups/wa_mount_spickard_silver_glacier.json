@@ -1,0 +1,106 @@
+{
+ "id": "wa_mount_spickard_silver_glacier",
+ "name": "Silver Glacier",
+ "approach": "Two camp options are used. Via Silver Creek: arrange a Ross Lake Resort water taxi (reservation required) roughly 25 miles up Ross Lake to a drop-off at the Silver Creek mouth (1,600 ft); a trail climbs the north side of Silver Creek about 2.5 miles to an old cabin at 2,900 ft, after which the route continues cross-country (occasional blazes) across slide-alder and forest slopes to the Silver Lake basin camp (6,763 ft). Via Ouzel Lake: use the Depot Creek approach (see the Southwest Ridge route) to Ouzel Lake (5,700 ft), then climb toward and over the Custer-Spickard saddle. From either camp, gain the wide gully on the saddle's north side to the 7,380-ft Custer-Spickard saddle, where the Silver Glacier route begins.",
+ "approach_variants": [
+  {
+   "name": "From Ross Lake by boat and up Silver Creek to the lake basin camp",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Silver Lake camp",
+      "role": "main",
+      "type": "camp"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628
+    }
+   },
+   "notes": "Book a water taxi for the long run up Ross Lake and get dropped at the mouth of Silver Creek at about 1,600 ft. A trail climbs the north side of the creek roughly two and a half miles to an old cabin at about 2,900 ft; above that the route is cross-country with occasional blazes, across slide alder and forest slopes, to the camp in the Silver Lake basin at about 6,763 ft. This is the shorter side for this particular route and it keeps the whole trip inside the United States, at the cost of depending on a boat.",
+   "season": "Late July through September",
+   "hazards": [
+    "a booked boat on a lake with no road out",
+    "slide alder and unmarked cross-country above the old cabin",
+    "crevasses on the glacier above the col",
+    "a wide gully that collects anything falling from the slopes above it",
+    "a high camp with a long committing retreat"
+   ],
+   "baseFinding": "The route starts at a col, not on a face, and the col is between two peaks. From the lake basin camp, gain the wide gully on the north side of the saddle and climb it to the col at about 7,380 ft between this peak and its neighbour to the north-west. The glacier route begins there.\n\nRecognise the col by what is on both sides of it. You should be standing in a gap with a summit rising to either hand and ground falling away in front and behind. If the mountain is above you and there is nothing behind you but the slope you came up, you are on a shoulder rather than the col.\n\nThe gully is the positive marker on the way up - a wide one, on the north side of the saddle. A narrow gully, or one on the south side, is a different line.\n\nAnd the negative marker that matters most: the south-west route on this peak starts at the toe of a different glacier on the other flank, reached by traversing round a rock buttress into heather and moraine basins rather than by gaining any col. If you are roping up at the foot of an icefall with no saddle in sight, you have started the other route."
+  },
+  {
+   "name": "Depot Creek from the north side of the border, over the col between the two peaks",
+   "camps": [],
+   "notes": "The other way in starts on the Canadian side: a rough spur off the lake road to a washout at about 2,600 ft, an overgrown roadbed to the boundary obelisk and register, and then the climbers' path up the creek through old growth to the falls, whose wet slabs and old fixed hand-line are the crux of the walk-in. Above them the path leads to the lake camp at about 5,700 ft. From that camp the way to this route climbs toward and over the col between the two peaks rather than onto the south-west side.",
+   "season": "Late July through September, and only with passports",
+   "hazards": [
+    "an international border crossing on foot",
+    "wet slabs and an old fixed hand-line at the falls",
+    "an overgrown approach road that washes out",
+    "crevasses on the ice above the col",
+    "two routes leaving one camp, with the wrong turn costing a day"
+   ],
+   "primary": true,
+   "baseFinding": "From the Depot Creek camp you are approaching the col from the opposite side, so descriptions written from the other camp will have the gully and the col in the wrong relative positions - read the ground rather than the page.\n\nThe fixed point is the same: the col at about 7,380 ft between this peak and its neighbour to the north-west. It is a gap with a summit on either hand and the glacier beyond. The wide gully on the col's north side is the connection to the basin on the far side.\n\nThe test that you are at the right gap is that both summits are identifiable from it, and that the ice you are about to climb runs away from the col rather than up to it. A notch with only one summit beside it, or with no glacier beyond, is a different gap on the same ridge.\n\nDo not confuse this start with the south-west route, which leaves the same camp. That route turns right around the toe of a rock buttress well before any saddle and ropes up at the toe of a glacier on the other flank. If you have not gained a col, you are not on this route."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6763,
+   "name": "Silver Lake camp",
+   "type": "Campsite",
+   "distMi": null,
+   "elevFt": 6763
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7380,
+   "name": "Custer-Spickard Saddle",
+   "type": "pass",
+   "distMi": null,
+   "elevFt": 7380
+  },
+  {
+   "lat": 48.9698,
+   "lng": -121.2406,
+   "elev": 8979,
+   "name": "Mount Spickard Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8979
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Wide gully scramble",
+   "notes": "Camp (Silver Lake, 6,763 ft) up the wide north-side gully to the Custer-Spickard saddle (7,380 ft).",
+   "pitch": "1",
+   "lengthM": 188.1
+  },
+  {
+   "grade": "Glacier travel (crevasses/schrund)",
+   "notes": "Saddle across the glacier toe (~7,400 ft) up to where the glacier flattens (~8,300 ft).",
+   "pitch": "2",
+   "lengthM": 280.4
+  },
+  {
+   "grade": "Glacier travel",
+   "notes": "Flat glacier section to the sub-summit notch (~8,500 ft).",
+   "pitch": "3",
+   "lengthM": 61
+  },
+  {
+   "grade": "Class 4 rock, ~30 min",
+   "notes": "Notch to the true summit (8,979 ft) on a short, loose, lichen-covered rock step.",
+   "pitch": "4",
+   "lengthM": 146
+  }
+ ],
+ "descent_text": "From the summit, down-climb the short Class 4 step to the sub-summit notch (~8,500 ft), re-cross the Silver Glacier (roping up as on the ascent) back down through its flat section to about 7,400 ft, then descend the gully to the Custer-Spickard saddle (7,380 ft) and back to camp at Silver Lake or Ouzel Lake. No fixed rappel anchors are documented; downclimbing/glacier travel is standard.",
+ "itinerary": "Day 1: water-taxi and hike (or Depot Creek hike) in to camp at Silver Lake or Ouzel Lake. Day 2: climb the gully to the Custer-Spickard saddle, cross the Silver Glacier, and climb the summit step (roughly 3-4 hours summit-bound from Silver Lake camp), then return to camp. Day 3: hike/water-taxi out."
+}

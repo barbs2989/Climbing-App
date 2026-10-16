@@ -1,0 +1,31 @@
+{
+ "results": [
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "verdict": "confirmed",
+   "resolution": "Follow-on to r18: the approach text still put the rope-up at the glacier toe; it now ropes up on the ~6,700 ft bench on Clark's eastern arm, as the waypoint, itinerary and two independent accounts (r18) say.",
+   "summary": "Approach text now ropes up on the bench, matching waypoint 5 and the itinerary.",
+   "evidence": "Same two accounts as r18 (2013 trip report: bench 'provided a good place to rope up'; archived route page: '6760' roped up'). Traverse wording beneath Peak 7242 unchanged.",
+   "sources": ["see r18"],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_clark_mountain_west_ridge",
+     "column": "approach",
+     "path": [],
+     "find": "Two lines diverge from the pass area: for the glacier line, traverse east",
+     "replace": "Two lines diverge from the pass area: for the glacier line, go down steep snow on the far side of the pass and climb to a bench near 6,700 ft on Clark's eastern arm, and rope up there for crevassed glacier travel (crampons and axe required); then traverse east"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_clark_mountain_west_ridge",
+     "column": "approach",
+     "path": [],
+     "find": " to reach the toe of the Walrus Glacier (marked 'Clark Glacier' on some maps) and rope up for crevassed glacier travel, crampons and axe required.",
+     "replace": " to reach the toe of the Walrus Glacier (marked 'Clark Glacier' on some maps)."
+    }
+   ],
+   "pin_ops": []
+  }
+ ]
+}

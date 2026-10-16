@@ -1,0 +1,79 @@
+{
+  "wa_neve_glacier_west_ridge": {
+    "area": "wa_snowfield_peak",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops at base camp and never describes the West Ridge: 'continue south to the Colonial Glacier terminal moraine or the Colonial-Neve col (roughly 6,000-6,800 ft), the usual base camp' — and it explicitly says 'the approach, not the climbing, is the crux of the day'."
+  },
+  "wa_north_twin_sister_scramble": {
+    "area": "wa_north_twin_sister",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "West ridge crest",
+        "class": "Class 3",
+        "notes": "From timber at the base of the west ridge, follow the timbered ridge itself up to where it opens onto rock and the class 3 scrambling begins. On the ridge proper, cairns mark a Class 3 line — stay LEFT (climber's left) on the crest; drifting right leads toward false summits and unintentional Class 4-5 terrain on loose, exposed rock."
+      }
+    ]
+  },
+  "wa_northwest_ridge_2": {
+    "area": "wa_boston_peak",
+    "climbing_route": [],
+    "skip_reason": "There is no route description to re-home — the text disclaims it: 'from there the crest itself has no published route description, so expect sustained, likely-loose 4th-class-or-harder ridge climbing with route-finding as the real crux. Treat this as a reasoned estimate from the area's standard access pattern, not documented beta for this specific line.'"
+  },
+  "wa_olympus_traverse": {
+    "area": "wa_mount_olympus",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Snow Dome to West Peak via Crystal Pass",
+        "notes": "From Snow Dome (~6,600–6,800 ft) the traverse follows the standard Crystal Pass line — over Crystal Pass, south of (below) Five Fingers Ridge, over the false summit — to the West Peak (7,980 ft). Sustained glacier travel with crevasse and icefall exposure."
+      },
+      {
+        "n": 2,
+        "label": "East to Middle Peak",
+        "notes": "Continues east across intervening terrain to the Middle Peak (7,929 ft); largely off-trail glacier and ridge outing with crevasse and icefall exposure the entire way."
+      },
+      {
+        "n": 3,
+        "label": "East Peak",
+        "notes": "Finally the East Peak (7,762 ft). Carry a full rescue kit for the whole traverse, not just the West Peak summit pitch."
+      }
+    ]
+  },
+  "wa_ottohorn_west_ridge": {
+    "area": "wa_ottohorn",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops exactly at the start of the climbing: 'snow and small glacier slopes lead northwest in about an hour to the Ottohorn-Himmelhorn col at roughly 7,400 ft, where the route proper begins.' Nothing above the col is described."
+  },
+  "wa_overcoat_peak_southeast_route": {
+    "area": "wa_overcoat_peak",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops at the base of the climb: 'From camp, traverse west across the mellow lower-angle part of the Overcoat Glacier to reach the base of a snow finger on the peak's north/east side that leads to the summit rock.' The snow finger and summit rock are named as a destination, not described."
+  },
+  "wa_point_success_south_side": {
+    "area": "wa_point_success",
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Lower Success Cleaver",
+        "class": "class 3",
+        "notes": "From the saddle at about 6,400 ft (dropped briefly NNE from Point 6631) — the start of Success Cleaver proper. The lower cleaver is a loose, choss-and-scree slog with short bursts of class 3 scrambling and real rockfall exposure from parties above; there's no single obvious line, so expect route-finding."
+      },
+      {
+        "n": 2,
+        "label": "Upper cleaver and crest to ~10,700 ft",
+        "notes": "Travel improves noticeably higher up onto firmer rock and (early season) continuous snow, following goat tracks. Many parties place a second high camp on the cleaver crest around 10,700 ft (snow platforms can be dug in), from which the route continues up the crest — including a knife-edge section that requires real scrambling once snow melts off it."
+      },
+      {
+        "n": 3,
+        "label": "Snow gullies to the Kautz Cleaver and summit",
+        "notes": "Angle climber's-right up snow gullies that merge onto the Kautz Cleaver around 12,200–12,600 ft, then up steepening snow/ice (to roughly 45°, with an isolated ~15 ft step near 55° used to bypass a cliff band in some seasons) to Point Success at 14,158 ft."
+      }
+    ]
+  },
+  "wa_poltergeist_pinnacle_north_route": {
+    "area": "wa_poltergeist_pinnacle",
+    "climbing_route": [],
+    "skip_reason": "Approach text stops at the base of the climb: parties 'detour high above the first crevasse band (or backtrack to Challenger Arm for a lower line) to reach the base of Poltergeist Pinnacle's distinctive dike-streaked granite shield.' Not another peak's boilerplate — the Hannegan Pass / Easy Ridge / Perfect Pass / Challenger Glacier line is this pinnacle's own access and the text names Poltergeist Pinnacle at its end; the low 5th-class downclimbing at the 'Imperfect Impasse' is approach terrain below Perfect Pass, not the route."
+  }
+}

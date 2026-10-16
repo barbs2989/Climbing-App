@@ -1,0 +1,567 @@
+{
+ "file": "r600.json",
+ "results": [
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Upper Dungeness Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "about 2,550 ft (approach prose '~2,500 ft' stands)",
+   "evidence": "The park's Royal Basin page gives the trail's elevation change as 2,550 ft to 5,100 ft (trailhead to Royal Lake). A trail database gives the trail's low point (the trailhead) as 2,534 ft, and a 2002 trip report gives the starting point as c.2,500 ft. The 2,900 ft pin elevation is the outlier.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.hikingproject.com/trail/7002008/upper-dungeness-trail",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Upper Dungeness Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 2900,
+     "value": 2550
+    },
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Upper Dungeness Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 2900,
+     "value": 2550
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)",
+   "verdict": "fixed",
+   "correct_value": "The Honeymoon line leaves the northeast-face snow slope below the Deception-Martin low point by a left-branching gully; it does not go via Deception Basin to the east ridge.",
+   "evidence": "A 2002 trip report describes the normal route as climbing the snow finger to the low point of the ridge, and the Honeymoon Route as a variation that climbs nearly to the low point then takes a left-branching snow gully, traverses left and climbs a second gully to the summit ridge. A 2007 Honeymoon trip report likewise climbs from upper Royal Basin to the Martin-Deception notch area and drops into the Honeymoon gully on the Royal Basin side, and a 2002 WTA report describes the snowfield on the west edge of the NE face with a band breaking left into the gully around 6,700 ft. The 'left of two gullies from Deception Basin to the east ridge' description belongs to the separate Deception Basin route on the other side of the peak.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "http://cwillett.imathas.com/local/deception/index.html",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002072709",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-05-08.081314775466"
+   ],
+   "patches": [
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the upper basin, leave the trail and ascend scree/talus into Deception Basin, then climb the left (west) of two gullies just right of a large rock buttress. Follow that gully system up to Mount Deception's east ridge about 150 yards southeast of the summit and follow the ridge to the top; the scramble from Deception Basin takes roughly 3 hours.",
+     "replace": "From the upper basin, leave the trail and head southwest over the moraine to the big snow slope on the west edge of the northeast face. Climb it most of the way toward the low point of the Deception-Martin ridge, then break left into the steep side gully that gives the route its name; from its top, traverse left and climb a second snow-and-rock gully to the summit ridge. Allow roughly 3 hours from the upper basin to the top of the gully in good snow."
+    },
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the upper basin, leave the trail and ascend scree and talus northwest into Deception Basin. From the flat in Deception Basin the scramble to the summit takes about three hours.",
+     "replace": "From the upper basin, leave the trail and cross the moraine southwest to the snow slope on the west edge of Deception's northeast face, where the climb begins. Allow about three hours from the upper basin to the top of the gully."
+    },
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Royal Basin to Deception Basin",
+     "value": "Royal Basin to the Northeast Couloir"
+    },
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "From the flat in Deception Basin, climb scree and talus to the northwest and look for a LARGE ROCK BUTTRESS. Immediately right of that buttress there are TWO gullies. Take the LEFT (west) one.\n\nThe buttress is what identifies the pair — do not try to identify the gully on its own, because there is more than one gully-shaped thing in the basin. Left of two, immediately right of a big buttress.\n\nFollow that gully system up to Mount Deception's east ridge, arriving roughly 150 yards southeast of the summit, then follow the ridge to the top. Reaching the ridge that close to the summit is the confirmation you took the right gully; topping out much further along the ridge means you were in the wrong one.\n\n",
+     "replace": "From the upper basin tarn, cross the moraine southwest to the large snow slope (mud and scree once it melts out) on the west edge of Deception's northeast face, and climb it toward the low point of the Deception-Martin ridge.\n\nDo not go all the way to that low point: the ridge crest there is the standard route, which drops onto the small glacier beyond and circles Gilhooley Tower. Arriving on the crest at the low point means you have passed the branch.\n\n"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Best time to climb",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Documented ascents are a May 2026 party (WTA report, good snow in the couloir) and a June 23, 2007 party, plus an Aug 26, 2002 ascent in largely melted-out conditions that the climber would not recommend. No two sources state whether spring (May) or late June is the better window, so the spring-vs-late-June and May 'risky' disagreement cannot be settled; the late-summer 'worse' part is agreed by all fields.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-05-08.081314775466",
+    "http://cwillett.imathas.com/local/deception/index.html",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Royal Basin overnight permit season",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's wilderness-reservations page says summer-season reservations (May 15 - Oct 15) release April 15, with high-elevation areas limited to a shorter season (typically mid-July to mid-October); its Royal Basin page says early reservations are recommended for trips May 1 - Sept 30. Nothing supports a June 15 opening, but both statements come from one publisher, so no two independent sources settle the date. Recommend dropping 'Royal Basin permits open June 15' once confirmed.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Total ascent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a car-to-car gain for the Honeymoon Route. Trip reports give ~18 miles round trip, trailhead c.2,500 ft and summit 7,788 ft, which makes 7,861 ft look high, but the rules forbid computing a replacement from trailhead/summit arithmetic.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-05-08.081314775466"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Number of routes on the peak",
+   "verdict": "fixed",
+   "correct_value": "Mount Deception has more than one documented route (normal route, Honeymoon variation, Deception Basin route).",
+   "evidence": "A 2002 trip report describes both the normal route and the Honeymoon Route variation from Royal Basin; a 2007 report contrasts the standard route with the Honeymoon gully; a WTA report cites a numbered route among several in the climbing guide.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "http://cwillett.imathas.com/local/deception/index.html",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002072709"
+   ],
+   "patches": [
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Number of routes on the peak",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Standard approach for the only documented route on Mount Deception: hike",
+     "replace": "Standard approach to the Royal Basin routes on Mount Deception: hike"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Park entrance fee",
+   "verdict": "fixed",
+   "correct_value": "Trailhead parking pass only; no park entrance fee.",
+   "evidence": "The park's Royal Basin page says a Northwest Forest Pass or America the Beautiful Pass is required to park at the USFS Upper Dungeness Trailhead, and trail guides say the same (Forest Pass or interagency pass); no park entrance station or entrance fee applies on this approach. The 'standard entrance fee' wording is wrong; the parking-pass line is right.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.hikeoftheweek.com/2025/08/28/royal-basin/"
+   ],
+   "patches": [
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Park entrance fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the trailhead parking pass and wilderness camping permit apply"
+    },
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Park entrance fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "None beyond the parking or entrance fee this route already lists.",
+     "replace": "None beyond the trailhead parking pass this route already lists."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Best month to climb",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Early season (late June through July) is preferred while snow covers the loose rock; August-September is climbable but looser and less safe.",
+   "evidence": "best_season, watch_out, itinerary.cal and approach_variants[0].season all prefer early season and call Aug-Sept loose rock less safe; seasonal_guidance is the lone outlier. Externally, a climber who went on Aug 26, 2002 found the route mostly melted out, loose and scary, and said it would clearly be better with a lot more snow; a June 2007 party chose its line to stay on snow and avoid the choss.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "http://cwillett.imathas.com/local/deception/index.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "July through August, within the broader June-September climbing season",
+     "value": "Late June through July, while snow still covers the loosest rock, within the broader June-September climbing season"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "status"
+     ],
+     "expect": "marginal",
+     "value": "good"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "expect": "Lingering snowfields make the upper mountain's rotten snow and self-arrest hazards worse; access road and trail may still have snow patches",
+     "value": "Snow still covers much of the loose upper rock, which is the main reason to go early; bring ice axe and crampons, expect snow patches on the access road and trail, and check avalanche conditions early in the month"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Driest, most stable conditions in this rain-shadow range; least residual snow and loose-rock/snow interface hazard",
+     "value": "Driest weather in this rain-shadow range, but the snow has mostly melted off the upper mountain, leaving bare, loose pillow basalt and more rockfall"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September",
+      "status"
+     ],
+     "expect": "good",
+     "value": "marginal"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Best month to climb",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September",
+      "reason"
+     ],
+     "find": "Still climbable but shorter days",
+     "replace": "Still climbable on bare, loose rock, with shorter days"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Glacier travel on the route",
+   "verdict": "fixed",
+   "correct_value": "The route crosses the small Deception Glacier remnant beyond the Deception-Martin saddle; easy ground with minimal crevasse hazard.",
+   "evidence": "A 2002 trip report says the normal route traverses the Deception Glacier (easy) after the ridge low point; a 2023 report drops about 30 m from the north-ridge notch onto a small pocket glacier and traverses it behind Gilhooley Tower; a 2007 report says the standard route descends to a small glacier and traverses it.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "https://stevensong.com/usa/washington/mount-deception/",
+    "http://cwillett.imathas.com/local/deception/index.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Glacier travel on the route",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; hazard is steep, loose talus and rotten/lingering snowfields rather than glaciated terrain",
+     "value": "Minimal - the route crosses only the small Deception Glacier remnant beyond the Deception-Martin saddle, easy ground with little crevasse hazard; the main hazards are steep, loose talus and rotten/lingering snowfields"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Name of the saddle reached",
+   "verdict": "fixed",
+   "correct_value": "Deception-Martin saddle",
+   "evidence": "A 2023 WTA trip report captions the climb 'Heading up towards Deception-Martin Saddle'; a 2007 report climbs to the notch between Martin Peak and Deception, from which the standard route drops to the small glacier; a 2002 report descends to the low point between Mount Deception and Martin Peak.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-05.1077682013",
+    "http://cwillett.imathas.com/local/deception/index.html",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Name of the saddle reached",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "to the Deception-Mystery saddle",
+     "replace": "to the Deception-Martin saddle"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Name of the saddle reached",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Deception-Mystery saddle",
+     "value": "Deception-Martin saddle"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Name of the saddle reached",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Deception-Mystery saddle",
+     "replace": "Deception-Martin saddle"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Name of the saddle reached",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Deception-Mys…",
+     "replace": "Deception-Mar…"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Location of Shelter Rock",
+   "verdict": "fixed",
+   "correct_value": "Shelter Rock is beyond the far end of Royal Lake, between the lake and the upper basin.",
+   "evidence": "The WTA hike guide places the Shelter Rock overhang on the left as you continue upward past Royal Lake; a 2002 report circles the lake to its opposite end and then reaches Shelter Rock; a 2007 report works around the lake and up to Shelter Rock.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "http://cwillett.imathas.com/local/deception/index.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Location of Shelter Rock",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "to lower Royal Basin (~7 mi, ~5,100 ft) at Shelter Rock, then continues about a mile farther",
+     "replace": "to Royal Lake in lower Royal Basin (~7 mi, ~5,100 ft), then continues past Shelter Rock about a mile farther"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Location of Shelter Rock",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "to lower Royal Basin (~7 mi, ~5,100 ft) at Shelter Rock, then contin…",
+     "replace": "to Royal Lake in lower Royal Basin (~7 mi, ~5,100 ft), then contin…"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Where camping is allowed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's Royal Basin page lists camp locations as Royal Creek, Lower Royal Meadow and Royal Lake and says camp in designated sites only; its reservations page says camps not listed online or cross-country trips are booked by contacting the Wilderness Information Center. No second independent current source confirms whether upper-basin camping is still permitted, so the itinerary's upper-basin camp vs the three-area rule cannot be settled.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Trailhead name",
+   "verdict": "fixed",
+   "correct_value": "Upper Dungeness Trailhead",
+   "evidence": "The park's Royal Basin page names the trailhead the Upper Dungeness Trailhead (USFS); the WTA guide and trip reports start from the same Upper Dungeness trailhead. There is no separate 'Royal Lake trailhead'.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm",
+    "https://musthikemusteat.com/olympic-peninsula/dungeness-river-royal-basin-lake/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Trailhead name",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "From the Royal Lake trailhead",
+     "replace": "From the Upper Dungeness Trailhead"
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Trailhead name",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "From the Royal Lake trailhead",
+     "replace": "From the Upper Dungeness Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Park entrance fee",
+   "verdict": "fixed",
+   "correct_value": "Trailhead parking pass only; no park entrance fee.",
+   "evidence": "The park's Royal Basin page says a Northwest Forest Pass or America the Beautiful Pass is required to park at the USFS Upper Dungeness Trailhead, and trail guides say the same (Forest Pass or interagency pass); no park entrance station or entrance fee applies on this approach. The 'standard entrance fee' wording is wrong; the parking-pass line is right.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.hikeoftheweek.com/2025/08/28/royal-basin/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Park entrance fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the trailhead parking pass and wilderness camping permit apply"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Summit elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "7,788 ft",
+   "evidence": "The summit waypoint and itinerary say 7,786 ft while overview and high_point_ft say 7,788 ft. The encyclopedia entry gives 7,788 ft (2,374 m) and a 2002 trip report gives 7,788 ft.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Deception_(Washington)",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Summit elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 7786,
+     "value": 7788
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Summit elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elevFt"
+     ],
+     "expect": 7786,
+     "value": 7788
+    },
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Summit elevation",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Summit (7,786 ft)",
+     "value": "Summit (7,788 ft)"
+    }
+   ]
+  }
+ ]
+}

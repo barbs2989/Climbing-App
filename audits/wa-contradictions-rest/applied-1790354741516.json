@@ -1,0 +1,148 @@
+{
+ "applied": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "rope_note describes a different Table Mountain"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Direction of travel across the plateau"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Artist Point road opening timing"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Artist Point road opening timing"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Dogs on the trail"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Dogs on the trail"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Drive time Bellingham to Artist Point"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "before": {
+    "rope_note": "Blewett Pass Table Mountain trail through a burn area to Tronsen Head/larch meadows; this is effectively a hiking trail, consistent with the Class 2 rating. No technical gear needed.",
+    "itinerary": {
+     "cal": "Artist Point road (WA-542) typically doesn't open until snow clears, often not until July; the route is usually snow-covered well into early summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A short, popular half-day outing above treeline. From the Artist Point trailhead (~5,100 ft), switchback up a short cliff band onto the broad Table Mountain plateau, then walk the open tableland east with big views of Mt. Baker, Ptarmigan Ridge, and the Chain Lakes basin to a pair of tarns mirroring Mt. Shuksan - the standard turnaround. Strong parties can continue on unmarked, looser scramble terrain toward the high point or down toward Chain Lakes, but most hikers simply retrace their steps.",
+       "hours": 2,
+       "miles": 2.6,
+       "title": "Artist Point to Table Mountain plateau (car-to-car)",
+       "gainFt": 725,
+       "lossFt": 725,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "9:00 AM",
+         "label": "Leave Artist Point trailhead",
+         "detail": "Parking area at ~5,100 ft; a Northwest Forest Pass is required."
+        },
+        {
+         "time": "+20 min",
+         "label": "Top of switchbacks",
+         "detail": "Gain ~400 ft up the cliff band; views open over Heather Meadows."
+        },
+        {
+         "time": "+45 min",
+         "label": "Reach the plateau rim",
+         "detail": "Mt. Baker, Ptarmigan Ridge, and Chain Lakes basin come into view."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Twin tarns / standard turnaround",
+         "detail": "Mt. Shuksan reflections; most parties turn back here (2.6 mi RT)."
+        },
+        {
+         "time": "+1 hr 45 min",
+         "label": "Back at trailhead",
+         "detail": "Reverse the trail; total outing under 2.5 hrs for most hikers."
+        }
+       ],
+       "objective": "Reach the twin tarns viewpoint below Mt. Shuksan; optional scramble to the true summit"
+      }
+     ],
+     "totalNote": "A short, popular half-day scramble: roughly 1.5-2.5 hrs car-to-car for the standard 2.6 mi round trip to the tarns, ~725 ft gain - not an overnight trip."
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through September; early July and October are workable but marginal due to lingering snow or early-season road/weather risk",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Artist Point road often only opens mid-July; the cliff-notch switchbacks can still hold steep, consolidated snow into early-mid July, so early July is marginal without an axe/microspikes",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Trail typically fully melted out, driest and busiest month, best all-around conditions",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "First snows and shortening daylight/weather windows can return; still climbable in a dry stretch but less reliable",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still dry and stable, thinner crowds than August",
+       "status": "optimal"
+      }
+     }
+    },
+    "beta": "From the Artist Point parking lot (about 5,075 ft), the Table Mountain Trail climbs a series of tight, exposed switchbacks cut into the mountain's southeast-facing rock face for roughly 0.6-1 mile to gain the broad summit plateau near 5,700 ft. Beyond the switchbacks the trail is gentle, crossing the plateau to tarns with Shuksan views around the 1.3-mile mark; most hikers turn around there. The trail continues west and eventually drops to link with the Chain Lakes Trail system. The route is entirely above treeline, narrow and cliff-edge in its lower half, and not recommended for those uneasy with exposure, small children, or dogs.",
+    "watch_out": [
+     "Switchbacks are steep, exposed, and not recommended for anyone uneasy with heights, small children, or dogs",
+     "North side beyond the tarns drops steeply (700-800 ft) to the Chain Lakes Trail via an unmarked, sketchy scramble — stay on the established trail unless experienced at off-trail route-finding",
+     "Small Artist Point lot (~160 cars) fills early on summer weekends",
+     "Avoid kicking rocks loose on the switchbacks — other hikers are often below"
+    ],
+    "emergency": {
+     "notes": "Cell service is unreliable to nonexistent at Artist Point and on the mountain; plan accordingly.",
+     "county": "Whatcom County",
+     "rangerStation": "Glacier Public Service Center, 10091 Mt. Baker Hwy, Glacier, WA 98244",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham (~53 miles / ~1 hr drive from Artist Point)",
+     "sheriffDispatch": "Whatcom County Sheriff's Office (911) dispatches Whatcom County Search & Rescue"
+    }
+   }
+  }
+ ]
+}

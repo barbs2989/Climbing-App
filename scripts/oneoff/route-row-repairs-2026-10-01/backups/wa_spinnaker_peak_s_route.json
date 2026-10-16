@@ -1,0 +1,61 @@
+{
+ "id": "wa_spinnaker_peak_s_route",
+ "name": "South Slopes Scramble",
+ "approach": "Park at the Yodelin lot on US 2 (the former Yodelin ski area's lot, now used for overflow parking, roughly 1.7 miles from the Stevens Pass Ski Area pedestrian overpass, around milepost 60). Cross the highway and follow the old ski-area road south into the valley, staying near Nason Creek where crossings/snow bridges are most reliable, then continue into the open basin below the Spinnaker-Tye Peak ridge before turning up to the gap below Point 5261.",
+ "waypoints": [
+  {
+   "lat": 47.765955,
+   "lng": -121.078176,
+   "elev": 3600,
+   "name": "Yodelin Trailhead / US 2 Pullout",
+   "note": "Roadside pullout on US 2 across from the Yodelin community entrance, about 1 mi east of Stevens Pass summit; cross the highway on foot and pick up the old ski-area access road heading south.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Park at the Yodelin lot on US 2, the former Yodelin ski area's lot now used for overflow parking, around milepost 60 and about a mile east of the Stevens Pass summit at roughly 3,600 feet; it sits across the highway from the Yodelin community entrance. From the car you cross US 2 on foot and pick up the old ski-area access road heading south into the valley. Most ascents are made on winter or spring snowpack, since summer here is a rough, thick bushwhack that parties generally avoid."
+  },
+  {
+   "elev": 3750,
+   "name": "Old Yodelin Ski-Area Road",
+   "note": "Abandoned Yodelin ski-area road (closed since the area shut down in 1974) drops off the highway shoulder into second-growth timber toward the Nason Creek headwaters.",
+   "type": "Junction",
+   "distMi": 0.3
+  },
+  {
+   "elev": 3900,
+   "name": "Nason Creek Headwaters",
+   "note": "Route parallels the infant Nason Creek upstream through the timber; treat before drinking, and it's the last dependable water before the open basin above.",
+   "type": "Water",
+   "distMi": 0.8
+  },
+  {
+   "elev": 4600,
+   "name": "Spinnaker–Tye Basin",
+   "note": "Open valley basin between Spinnaker and Tye Peak; a well-known winter camping bowl for ski tourers and climbers staging for either summit.",
+   "type": "Campsite",
+   "distMi": 2.3
+  },
+  {
+   "elev": 5261,
+   "name": "Point 5261 Ridge",
+   "note": "Narrow, exposed ridge crest near unofficial Point 5261 on the divide; carry an ice axe, the snow here compacts and turns icy and a slip has real consequences.",
+   "type": "Hazard",
+   "distMi": 3
+  },
+  {
+   "elev": 5400,
+   "name": "South Ridge Gap",
+   "note": "Gap on the divide between the east and west drainage basins; gain Spinnaker's south ridge here and angle climber's-left up the final slopes to the summit.",
+   "type": "Junction",
+   "distMi": 3.4
+  },
+  {
+   "lat": 47.77044,
+   "lng": -121.13302,
+   "elev": 5645,
+   "name": "Spinnaker Peak",
+   "note": "True summit, 845 ft of clean prominence; no maintained trail — the south-slope snow climb is the standard winter/spring line, with views of Rainier, Glacier Peak, Stuart, and Daniel.",
+   "type": "Summit",
+   "distMi": 3.6
+  }
+ ]
+}

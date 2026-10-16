@@ -1,0 +1,36 @@
+{
+ "applied": [
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_unicorn_peak_r1",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-to-strong hiking fitness for a roughly 6-mile round trip from the Snow Lake trailhead with sustained elevation gain plus off-trail talus/gully travel above Snow Lake",
+      "packWeight": "Light day pack (day-trip; no overnight or glacier gear needed) - water, layers, helmet recommended for the rockfall-prone gully"
+     },
+     "approachTime": "Roughly 2-3 hours from the Snow Lake trailhead to the base of the summit block (estimate)",
+     "requiredSkills": [
+      "Class 3-4 scrambling with exposure",
+      "Comfortable making a short low-5th-class move to the true summit (roped or unroped per party preference)",
+      "Loose-rock/rockfall awareness and spacing technique in the talus gully",
+      "Basic route-finding off-trail from Snow Lake into the Unicorn Creek bowl",
+      "Turnaround discipline for afternoon thunderstorms on an exposed summit block"
+     ],
+     "experienceLevel": "Intermediate scrambler - needs prior experience on exposed Class 3-4 terrain and should be comfortable unroped (or with a quick handline) on a short low-5th-class move to tag the summit block; not a beginner objective given the loose rock and exposure"
+    }
+   }
+  }
+ ]
+}

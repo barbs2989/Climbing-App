@@ -1,0 +1,805 @@
+{
+ "applied": [
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which slope of Plummer the route climbs"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which slope of Plummer the route climbs"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "hrs"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "hours"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip time"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Summit size"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Direction of paths at Pinnacle Saddle"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of paths at Pinnacle Saddle"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Direction of paths at Pinnacle Saddle"
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "column": "rappels",
+   "path": [],
+   "fact": "Summit-block rappel anchor"
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Summit-block rappel anchor"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Park entrance pass"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain from the trailhead to Snow Lake"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Which side of the summit block the route climbs"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Rack (cam sizes)"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Rack (cam sizes)"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Park entrance pass"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain from the trailhead to Snow Lake"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Rappel anchor (bleached snag)"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "rope_length_m",
+   "path": [],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Where overnight camping is allowed"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain from the trailhead to Snow Lake"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "grade",
+   "path": [],
+   "fact": "Summit-block grade"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Summit-block grade"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Rope"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Rope"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rope"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gully gain from Snow Lake"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance and gain to Snow Lake"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead parking capacity and location"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead parking capacity and location"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Summit-block rappel anchor (tree)"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Side of the summit block the approach reaches"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Where overnight camping is allowed"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_plummer_peak_r1",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Climbers' path onto the north slopes",
+      "notes": "Continue a short distance past Pinnacle Saddle (about 5,920-5,960 ft) and look for a climbers' path branching right (west); it crosses a flat rocky shelf holding a seasonal tarn, where a fork continues straight toward Denman - instead bear left (south/uphill) onto the boot path climbing the open, rocky southeast-facing slopes. Unmaintained, loose in spots, and the tread is thin. A lingering snowfield often crosses the boot path near the saddle into July - either kick steps straight up it or skirt left on the rockier tread; both options rejoin near the top."
+     },
+     {
+      "n": 2,
+      "class": "class 2-3",
+      "label": "Summit scramble",
+      "notes": "A short class 2-3 scramble - brief hands-on-rock moves, some loose blocks, mild exposure - gains the last few hundred feet to the 6,374 ft summit."
+     }
+    ],
+    "descent_text": "Descent is a straightforward walk/scramble reversal of the ascent line — no rappelling and no technical descent gear needed. From the Plummer Peak summit, downclimb the same class 2-3 scramble terrain back to the tarn/shelf below, staying alert on the loose rock and thin tread (most parties find the down-scramble more exposed-feeling than the ascent since you're facing outward on the steeper southeast slope). Rejoin the boot path back to Pinnacle Saddle, then drop onto the maintained Pinnacle Peak Trail and follow its switchbacks down through the talus/heather slopes and back into forest to the Reflection Lakes trailhead. The same hazards apply in reverse: lingering snow on the steep north-facing switchbacks just below the saddle is the most common problem spot (an ice axe or trekking poles with caution are worth carrying into July in high-snow years), and the talus sections can be slick when wet. No water past the seasonal creek around 0.6 mi from the trailhead, so plan accordingly on the way down.",
+    "timing": {
+     "totalHrs": 4.5,
+     "summitTimeHrs": 4.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "8:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "A short, popular half-day scramble from the Reflection Lake trailhead. A maintained trail switchbacks up to Pinnacle-Plummer Saddle, then an unmaintained boot path heads west and c…",
+       "fromTo": "Car-to-car: Pinnacle Saddle to Plummer Peak",
+       "section": "Climb"
+      }
+     ]
+    },
+    "itinerary": {
+     "cal": "Early-season parties (June-early July) often encounter a steep snow section between the saddle and the summit that some report as needing an ice axe or fixed line; by mid-to-late July this is typically melted out and a straightforward scramble.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A short, popular half-day scramble from the Reflection Lake trailhead. A maintained trail switchbacks up to Pinnacle-Plummer Saddle, then an unmaintained boot path heads west and climbs the final ~400 ft of easy Class 2-3 rock/scree to the summit. Most parties are back at the car in well under 5 hours.",
+       "hours": 4.5,
+       "miles": 3.2,
+       "title": "Car-to-car: Pinnacle Saddle to Plummer Peak",
+       "gainFt": 1500,
+       "lossFt": 1500,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave Pinnacle Peak trailhead",
+         "detail": "Roadside pullout across from Reflection Lake, elev. ~4,885 ft."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Reach Pinnacle-Plummer Saddle",
+         "detail": "Maintained trail with switchbacks ends here; views open up to the eastern Tatoosh peaks."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Leave the trail, head west",
+         "detail": "Follow the boot path toward Plummer; may cross a snowfield or two early/late season."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Summit Plummer Peak",
+         "detail": "Final scramble up loose rock/snowfield; last pitch is easy Class 2-3 scrambling to the small summit patch."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Begin descent",
+         "detail": "Reverse the route back to Pinnacle Saddle, then down the maintained trail."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Back at trailhead",
+         "detail": "Round trip typically finishes in 4-5 hours."
+        }
+       ],
+       "objective": "Reach the Plummer Peak summit and return"
+      }
+     ],
+     "totalNote": "A short, popular car-to-car scramble: roughly 4-5 hours round trip, ~1,500 ft gain over about 3.2 miles."
+    },
+    "waypoints": [
+     {
+      "lat": 46.7683,
+      "lng": -121.7311,
+      "elev": 4870,
+      "name": "Reflection Lakes / Pinnacle Peak Trailhead",
+      "note": "~35-car unpaved pullout on the south side of Stevens Canyon Road, directly across from Reflection Lakes; trail sign for Pinnacle Peak/Plummer Peak starts here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, about 1.4 miles east of the Paradise-Longmire Road junction and roughly 1.9 miles from the Paradise turnoff — an unpaved pullout on the south side of the road with room for about 35 cars, directly across from the largest of the Reflection Lakes. The signed trail for Pinnacle Peak/Plummer Peak starts right there; it's a maintained Mount Rainier National Park trail with no official number. Stevens Canyon Road is open roughly late May through late October, and this small lot commonly fills by mid-morning on summer weekends."
+     },
+     {
+      "lat": 46.755725,
+      "lng": -121.737492,
+      "elev": 5370,
+      "name": "Seasonal stream crossing",
+      "note": "A small seasonal stream crosses the switchbacks partway up; flows well early season but can run dry by late July-August.",
+      "type": "Water",
+      "distMi": 0.6
+     },
+     {
+      "lat": 46.75404,
+      "lng": -121.739287,
+      "elev": 5710,
+      "name": "Cliff-band switchbacks below the saddle",
+      "note": "Trail steepens onto loose rock with exposed drop-offs on the final switchbacks before the saddle; NPS specifically warns of unstable rock and steep edges here, worse with lingering snow.",
+      "type": "Hazard",
+      "distMi": 1
+     },
+     {
+      "lat": 46.754055,
+      "lng": -121.739672,
+      "elev": 5920,
+      "name": "Pinnacle Saddle",
+      "note": "T-intersection between Pinnacle and Plummer Peaks where the maintained trail ends; climber's boot path continues right/east to Pinnacle, left/west toward Plummer.",
+      "type": "Junction",
+      "distMi": 1.25
+     },
+     {
+      "lat": 46.754853,
+      "lng": -121.740056,
+      "elev": 6150,
+      "name": "Heather-and-talus boot path to Plummer's summit block",
+      "note": "Unmaintained Class 2 boot path across heather and loose talus with sparse cairns; easy to lose the path in cloud or on the descent.",
+      "type": "Hazard",
+      "distMi": 1.4
+     },
+     {
+      "lat": 46.753364,
+      "lng": -121.739524,
+      "elev": 6374,
+      "name": "Plummer Peak summit",
+      "note": "Broad rocky summit (7th-highest in the Tatoosh Range) with views north to Rainier and south to Adams, St. Helens, and Hood on clear days.",
+      "type": "Summit",
+      "distMi": 1.55
+     }
+    ],
+    "approach": "Park at the Reflection Lakes pullouts on Stevens Canyon Road (1.4 miles east of the Paradise-Longmire Road junction, roughly 1.9 miles from the Paradise turnoff). The signed Pinnacle Peak Trail (no official trail number; it's a Mount Rainier NP maintained trail) leaves from the south side of the road, directly across from the largest of the Reflection Lakes (approx. 46.7683, -121.7314). The trail climbs moderately through mountain hemlock and Alaska yellow cedar forest for the first half-mile; around 0.5 mi you get a first partial view of Rainier through the trees, and at about 0.6 mi you cross a seasonal stream/cascading creek that is the only reliable water on the hike (dry by late summer in low-snow years). By 0.7 mi the trail breaks out of forest into open talus and heather slopes below the cliffs of Pinnacle Peak, and steepens noticeably from here — this is where lingering snow (well into July on the shaded, north-facing switchbacks) creates the trail's main hazard, since a slip on hard morning snow above the talus can slide a hiker into rock. Around 0.9-1.0 mi the trail passes beneath the impressive cliff bands on Pinnacle's north face, then switchbacks up a short, exposed final pitch (the 'best view on the trail' spot) to reach Pinnacle/Pinnacle Saddle (Pinnacle Gap) at about 1.25-1.3 mi and roughly 5,920-5,960 ft. This saddle is the trail's official end and the crux junction: unmaintained user paths fork east toward Denman Peak/The Castle and west toward Plummer Peak. For Plummer Peak, continue a short distance past the saddle and look for a climbers' path branching right (west); it crosses a flat rocky shelf holding a seasonal tarn, where a fork continues straight toward Denman — instead bear left (south/uphill) onto the boot path that climbs the open, rocky north-facing slopes of Plummer Peak. This upper section is unmaintained, loose in spots, and route-finding is straightforward but the tread is thin; a short class 2-3 scramble (brief hands-on-rock moves, some loose blocks, mild exposure) gains the last few hundred feet to the 6,374 ft summit. A lingering snowfield often crosses the boot path near the saddle into July — either kick steps straight up it or skirt left on the rockier tread; both options rejoin near the top.",
+    "approach_variants": [
+     {
+      "name": "Pinnacle Saddle, the tarn shelf and the north slopes",
+      "notes": "Park at the Reflection Lakes pullouts on Stevens Canyon Road. The signed Pinnacle Peak Trail leaves the south side of the road, directly across from the largest of the lakes.\n\nThe trail climbs moderately through mountain hemlock and Alaska yellow cedar for the first half-mile; around 0.5 mile you get a first partial view of Rainier, and at about 0.6 mile you cross a seasonal cascading creek — the only reliable water on the hike, and dry by late summer in a low-snow year. By 0.7 mile it breaks into open talus and heather below Pinnacle's cliffs and steepens noticeably. Lingering snow on these shaded north-facing switchbacks is the trail's main hazard, since a slip on hard morning snow above the talus can slide a hiker into rock. Around 0.9-1.0 mile the trail passes beneath the cliff bands on Pinnacle's north face, then switchbacks up a short exposed final pitch to Pinnacle Saddle at about 1.25-1.3 miles and roughly 5,920-5,960 ft.\n\nThe saddle is the trail's official end and the junction where unmaintained paths fork east toward Denman and The Castle and west toward Plummer.\n\nStevens Canyon Road is open roughly late May through late October and the small trailhead lot commonly fills by mid-morning on summer weekends.",
+      "season": "Roughly Jul-Oct; a snowfield often crosses the boot path near the saddle into July",
+      "hazards": [
+       "Lingering snowfield on the steep shaded switchbacks below the saddle, icy in early morning — the most common problem spot",
+       "Steep, eroded, loose tread and exposed traverse sections on the upper approach trail",
+       "Afternoon thunderstorms and lightning on an exposed ridge and saddle with no shelter above treeline",
+       "Loose rock and thin tread on the final scramble, which feels more exposed descending",
+       "Winter avalanche terrain on the peak's slopes",
+       "No water past the seasonal creek low on the trail"
+      ],
+      "baseFinding": "FROM PINNACLE SADDLE, PLUMMER IS WEST — the opposite direction from Pinnacle, and the paths fork right there.\n\nBUT THE SADDLE IS NOT THE DECISION POINT. THE TARN IS. Here is the sequence, and the middle item is the whole route-finding problem:\n1. Continue a short distance PAST the saddle and look for a climbers' path branching RIGHT, west.\n2. It crosses a FLAT ROCKY SHELF HOLDING A SEASONAL TARN. The tarn is the marker.\n3. AT THAT SHELF A FORK CONTINUES STRAIGHT TOWARD DENMAN PEAK. DO NOT TAKE IT. BEAR LEFT, south and uphill, onto the boot path climbing Plummer's open rocky north slopes.\n\nSO THE ENTIRE PROBLEM REDUCES TO ONE SENTENCE: AT THE TARN, STRAIGHT IS DENMAN AND LEFT IS PLUMMER.\n\nTHE NEGATIVE IS A MOTION TEST AND IT WORKS WITHOUT SEEING ANYTHING: IF YOU ARE STILL WALKING LEVEL, OR LOSING HEIGHT, YOU ARE ON THE DENMAN FORK. Plummer's path climbs from the tarn.\n\nTHE BASE OF THE HANDS-ON GROUND: the last few hundred feet is class 2-3 with a couple of short hands-on steps, and A FEW WELL-PLACED TREES AID THE FINAL MOVES. Trees on a summit slope at this height are unusual enough to be a confirmation.\n\nTHE SUMMIT IS SMALL AND THAT IS THE LAST CHECK — roughly 50 by 15 ft. If you are standing on a broad top, you are on the shoulder below it.\n\nEARLY-SEASON DETAIL THAT IS A REAL FORK RATHER THAN A CAUTION: a snowfield often crosses the boot path near the saddle into July. Either kick steps straight up it or skirt LEFT onto the rockier tread. Both rejoin near the top, so neither choice loses the route."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate — roughly 3.3 mi round trip with ~1,050-1,450 ft gain, 2.5-3 hrs total",
+      "packWeight": "Light daypack (roughly 10-20 lbs) — day scramble, no overnight gear needed"
+     },
+     "approachTime": "~1-1.5 hrs from the Reflection Lakes trailhead up to Pinnacle Saddle via the maintained switchbacks, plus 20-30 min of scrambling from the saddle to the Plummer summit",
+     "requiredSkills": [
+      "Basic scrambling / low-exposure comfort on Class 2-3 rock",
+      "Routefinding on an unmaintained boot path (final ~400 ft to the summit is not a maintained trail)",
+      "Talus and loose-rock footing",
+      "Turnaround judgment for afternoon thunderstorms"
+     ],
+     "experienceLevel": "Beginner-to-intermediate scrambler; fine for a hiker's first unmaintained Class 2-3 outing but partner should be comfortable off-trail with no fixed path once past the saddle"
+    }
+   }
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "before": {
+    "rappels": "No fixed anchors on the face — plan on V-threads if you retreat. Descending over the top involves one rappel of about 50 ft off the summit block, from the bleached snag or the slung block with rings; a 30-40 m rope suffices for that.",
+    "descent_text": "Fantasy Falls finishes on the summit, so there is no walk-off from the top of the face — you descend the mountain, not the route. From the summit, rappel the summit block (about 50 ft) from the bleached snag or the slung block with tat and rings at the top; a 30-40 m rope handles it. From the base of the block, downclimb the class 3 south slope and south ridge west to the col at 6,605 ft between Unicorn Peak and West Unicorn Peak. Drop north from the col into the Unicorn basin and follow the basin and gully back down to Snow Lake and the trail. In winter this descent is a serious undertaking in its own right — the basin and gully are avalanche terrain, the col can be corniced, and you will likely be doing it in fading light. Retreating from the face instead is possible but means V-threads; there are no fixed anchors on the route."
+   }
+  },
+  {
+   "id": "wa_classic_route_2",
+   "before": {
+    "rappels": "One rappel of about 50 ft (15 m) from the bleached snag on top of the summit block. A 30 m rope is reported sufficient; a trip report recommends 60 m because a 30 m rappel may not reach the ground where the moat is open. Some parties downclimb the easier east side of the block instead and skip the rappel entirely.",
+    "pitch_detail": [
+     {
+      "grade": "5.4",
+      "notes": "Blocky low-5th-class climbing up the south-southeast face of the summit block to the belay/rappel anchor (old bleached snag); one fixed piton mid-pitch.",
+      "pitch": "P1",
+      "lengthM": 15
+     }
+    ],
+    "pro_tips": [
+     "A 30m rope covers both the lead and the rappel",
+     "Check the bleached snag anchor's condition before weighting it"
+    ],
+    "watch_out": [
+     "Aging wooden-snag rappel anchor - inspect before trusting it",
+     "Exposed summit block with a long fall potential off the wrong side"
+    ],
+    "rope_note": "One of ~4 established lines on Unicorn Peak's ~50ft south summit-block face, graded 5.4. Short face means a single 30m rope is more than sufficient.",
+    "access": {
+     "_raw": {
+      "permit_cost": "$82 per person per climb (2026) + $12/person/night wilderness permit + $6 non-refundable application fee",
+      "permit_type": "Wilderness permit (overnight); Climbing permit (travel above 10,000 ft or on glaciers)",
+      "land_manager": "NPS - Mount Rainier National Park",
+      "parking_pass": "Mount Rainier National Park entrance fee",
+      "permit_hours": "Wilderness Information Center: contact for specific hours; online 24/7 via Recreation.gov",
+      "permit_pickup": "Recreation.gov online or in-person at ranger stations; must pick up by 11am on trip start date",
+      "special_hazards": "Glacier travel; alpine hazards",
+      "wilderness_zone": "Mount Rainier National Park backcountry",
+      "group_size_limit": "Max 5-12 people depending on camp area",
+      "seasonal_closures": "Stevens Canyon Road typically opens Memorial Day, closes mid-October due to snow",
+      "altitude_restrictions": "Climbing permit required for travel above 10,000 ft or on glaciers"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "permit": "Wilderness permit (overnight); Climbing permit (travel above 10,000 ft or on glaciers)",
+     "closures": "N/A",
+     "permitZone": "Mount Rainier National Park backcountry",
+     "landManager": "NPS - Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    },
+    "approach": "Start at the Snow Lake Trailhead on Stevens Canyon Road (~1.5 miles east of Reflection Lakes, elev. ~4,500 ft). Follow the maintained Snow Lake Trail about 1 mile, gaining roughly 700 ft, to Snow Lake at ~4,600 ft — the last reliable water source. Skirt the west/north shore of the lake; the maintained tread continues a short way (about 1.2 miles from the TH) over a tree-covered rise before petering out into talus. From there work up and right toward an obvious talus/dirt gully on the peak's NW side — a climbers' path picks up again on a heather bench near the top of the gully. Follow this into the basin below Unicorn Peak, ascending moraine along the left (south) side of the small permanent snow patch/glacier remnant in the basin (crampons/an axe are handy in early season on the couloir above, though not strictly required most of the year). A climbers' path traverses below the cliffs here, offering easier travel than the loose scree and talus on either side, and leads up to the saddle (Unicorn Col) just west of the summit. From the saddle, a use trail traverses east/around the south side of the main summit block, across a final loose scree slope, to the base of the summit horn. Total approach is roughly 2.5-3 miles one-way with about 2,400 ft of gain; expect route-finding through talus and some loose rock once off the maintained trail, and possible steep snow in the gully/basin into mid-summer."
+   }
+  },
+  {
+   "id": "wa_open_book_2",
+   "before": {
+    "rappels": "One rappel of about 50 ft (15 m) from the shared summit-block anchors — a block with tat and rings, or the bleached snag. A 40 m rope is plenty; carry 60 m if the moat at the base is open late in the season.",
+    "approach": "Identical trailhead-to-basin approach as the Classic Route and The Roof: from the Snow Lake Trailhead on Stevens Canyon Road, hike the maintained Snow Lake Trail ~1 mile (about 700 ft gain) to Snow Lake, the last water source. Continue past the lake on the fading tread over a wooded rise, then pick a line up and right into the talus/dirt gully on the peak's NW side; a climbers' path reappears on a heather bench near the gully's top and leads into the basin beneath the summit block. Ascend moraine along the edge of the small basin snowfield to the saddle (Unicorn Col) just west/southwest of the summit, then follow the use trail traversing below the cliffs on the south side of the peak to the base of the summit horn. The Open Book line is described as taking the east-facing side of the summit pinnacle rather than the straight-up south face used by the Classic Route, so from the base of the horn stay slightly climber's-left/east before starting the technical climbing; it's regarded as the easiest of the summit-block lines (Easy 5th class / 5.0), a step down from the Classic Route (5.4-5.6) and The Roof (5.6). Total approach is roughly 2.5-3 miles one-way with about 2,400 ft gain, mostly on climbers' path and talus once past Snow Lake.",
+    "sling_rack": {
+     "cams": "1-2 small-medium cams",
+     "nuts": "small set",
+     "slings": "3-4 shoulder-length runners"
+    },
+    "rack": [
+     "1-2 small-to-medium cams",
+     "Small nut set",
+     "3-4 shoulder-length runners",
+     "30-35m single rope"
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "$82 per person per climb (2026) + $12/person/night wilderness permit + $6 non-refundable application fee",
+      "permit_type": "Wilderness permit (overnight); Climbing permit (travel above 10,000 ft or on glaciers)",
+      "land_manager": "NPS - Mount Rainier National Park",
+      "parking_pass": "Mount Rainier National Park entrance fee",
+      "permit_hours": "Wilderness Information Center: contact for specific hours; online 24/7 via Recreation.gov",
+      "permit_pickup": "Recreation.gov online or in-person at ranger stations; must pick up by 11am on trip start date",
+      "special_hazards": "Glacier travel; alpine hazards",
+      "wilderness_zone": "Mount Rainier National Park backcountry",
+      "group_size_limit": "Max 5-12 people depending on camp area",
+      "seasonal_closures": "Stevens Canyon Road typically opens Memorial Day, closes mid-October due to snow",
+      "altitude_restrictions": "Climbing permit required for travel above 10,000 ft or on glaciers"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "permit": "Wilderness permit (overnight); Climbing permit (travel above 10,000 ft or on glaciers)",
+     "closures": "N/A",
+     "permitZone": "Mount Rainier National Park backcountry",
+     "landManager": "NPS - Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_the_roof",
+   "before": {
+    "rappels": "One rappel of about 50 ft (15 m) from either the bleached snag on the left or the slung block with tat and rings on the right, at the top of the summit block. A 40 m rope is reported to be plenty. Carry 60 m if the moat at the base is open late in the season.",
+    "pro_tips": [
+     "Two anchor options at the top (bleached snag left, slung block right) - either works for the rappel"
+    ],
+    "rope_length_m": 30,
+    "rack": [
+     "2-3 small-to-medium cams",
+     "Nuts, small set",
+     "4-5 shoulder-length runners",
+     "30-35m rope"
+    ],
+    "access": {
+     "fees": "$30 per private vehicle (7-day pass), $25 per motorcycle, or $15 per person on foot/bike; America the Beautiful/Rainier annual passes accepted. No separate fee for climbing the Tatoosh peaks.",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "rules": "Standard NPS wilderness rules apply: camp only at the designated Snow Lake sites if overnighting, pack out all waste, no campfires above treeline, and stay on durable surfaces (rock/snow) on the fragile Tatoosh talus and meadow terrain.",
+     "permit": "No wilderness or climbing permit is required for a day ascent — NPS climbing permits only apply to travel above 10,000 ft or on glaciers, which doesn't include Unicorn Peak. A wilderness permit ($12/person/night plus a non-refundable $6 reservation fee) is only needed if camping overnight, e.g. at the small Snow Lake backcountry camp (2 sites, bear pole, privy).",
+     "closures": "Stevens Canyon Road, which serves the Snow Lake Trailhead, is gated and snowed-in roughly October through late May; it typically reopens around Memorial Day to early June depending on snowpack. Check the NPS road-status page before driving out.",
+     "landManager": "National Park Service — Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Park entrance fee or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    },
+    "approach": "Same trailhead-to-basin approach as the other summit-block lines: from the Snow Lake Trailhead on Stevens Canyon Road, take the maintained Snow Lake Trail ~1 mile (~700 ft gain) to Snow Lake for the last reliable water. Past the lake the tread fades over a wooded hump; contour up and right into the obvious NW-side talus/dirt gully, where a heather-bench climbers' path reappears near the top and drops you into the basin under the peak. Climb the moraine beside the small basin snowfield to the west saddle (Unicorn Col), then follow the traversing use trail below the summit cliffs, on the south side, to the base of the summit horn — total roughly 2.5-3 miles one-way and ~2,400 ft of gain. The Roof is the hardest and most exposed of the three summit-block lines (5.6, notably burlier than the Classic Route's corner and well above Open Book's 5.0), following a steeper, more sustained line up the south face; the top anchor for 'The Roof' is set back from the edge, meaning a cordelette/long sling is needed to extend the rappel power-point out to the lip — worth having a double-length runner for this reason even on the way up."
+   }
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "before": {
+    "grade": "Class 3-4 summit block",
+    "rope_note": "Standard approach: Snow Lake Trailhead, up into the upper basin, gully to the saddle west of the peak, then around the west side of the summit block to a short (~50ft) Class 3 scramble/technical step. Competent parties take the easiest line unroped.",
+    "rope_type": "none",
+    "pro_needs": "Single 30m rope minimum (60m recommended to reduce rope-stretch concerns on double-rappel descent); harness, rappel device, slings/runners for anchors, rock shoes recommended for leader on 5.4 pitch.",
+    "rappels": "1-2 raps, 30-60m",
+    "pitch_detail": [
+     {
+      "grade": "Class 3, 40° slope",
+      "notes": "Steep chute gaining 2500 ft from Snow Lake to upper basin. In summer, talus travel; in spring/early summer, consolidated snow provides faster ascent. Main gully clearly visible; avoid steep headwalls to left.",
+      "pitch": "1 - Approach gully to basin"
+     },
+     {
+      "grade": "Class 4-5.4 (classic south face route is 5.4)",
+      "notes": "40-50 feet of rock climbing on solid granite. Rock shoes recommended for leader. Right-side approach (adjacent variation) is easier Class 3-4 with generally solid rock and good handholds. Direct south face (5.4-5.6) is longer and more exposed. East side Class 4 option is quite exposed to north face (descent not recommended).",
+      "pitch": "2 - Summit horn, south face (classic route)"
+     }
+    ],
+    "approach": "Start at the Snow Lake Trailhead on Stevens Canyon Road, about 1.5 miles east of Reflection Lakes (roughly 20 minutes past the Stevens Canyon entrance station). The lot holds only ~25 cars and fills by 8am on summer weekends. Follow the maintained Snow Lake Trail as it climbs through subalpine forest and meadow, passing the Bench Lake junction, to Snow Lake at about 1.3-1.5 miles in (roughly 400-500 ft of the day's gain banked by here) — this is the last reliable water source. Skirt the lake's west/north shoreline, then leave the maintained tread where a boot-path/climber's trail breaks off and climbs a steep drainage for about half a mile into the large open bowl on Unicorn's northwest side, shared with neighboring Foss and West Unicorn peaks. This basin is loose talus and scree (locally infamous 'Cascadian scree') — expect sliding underfoot and some loose rock; through much of July the gully above the lake can still hold firm snow, so carry an ice axe (and crampons in early season) and be alert to the runout below. From the basin, climb to the saddle on the peak's west side, then traverse/scramble east and around to approach the summit pinnacle from its south side — this stretch is sustained Class 2-3 on talus and blocky rock. Total distance is about 2.4 miles one-way with 2,397 ft of gain to the 6,971 ft high point, topping out at the base of the summit block itself, where the roped climbing begins.",
+    "waypoints": [
+     {
+      "lat": 46.7678,
+      "lng": -121.7071,
+      "elev": 4574,
+      "name": "Snow Lake Trailhead",
+      "note": "Signed pullout on Stevens Canyon Road ~2.7 mi east of Paradise/Reflection Lakes; room for only 15-20 cars, no amenities, Stevens Canyon Rd open summer only (roughly late June-Sept).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.75722,
+      "lng": -121.69806,
+      "elev": 4685,
+      "name": "Snow Lake",
+      "note": "Cirque lake below Unicorn Peak reached via the Snow Lake Trail; skirt the west (left) shore to pick up the climbers' path leaving the maintained trail.",
+      "type": "Water",
+      "distMi": 1
+     },
+     {
+      "lat": 46.753568,
+      "lng": -121.703994,
+      "elev": 5300,
+      "name": "NW bowl entrance",
+      "note": "Leave the lakeshore and enter the steep, unmaintained valley on Unicorn's NW side; follow it roughly 0.5 mi up into the large bowl below the west saddle.",
+      "type": "Junction",
+      "distMi": 1.4
+     },
+     {
+      "lat": 46.74641,
+      "lng": -121.705885,
+      "elev": 6400,
+      "name": "West saddle",
+      "note": "Top of the bowl gains the saddle on the west side of the peak (same saddle skiers use to access the Unicorn Glacier side); this is where the route turns east toward the summit.",
+      "type": "Junction",
+      "distMi": 2
+     },
+     {
+      "lat": 46.744277,
+      "lng": -121.702139,
+      "elev": 6700,
+      "name": "South-side talus traverse",
+      "note": "Exposed traverse across loose talus/scree below the summit block to reach its south (easiest) side; rockfall risk onto parties below, care on wet or icy scree.",
+      "type": "Hazard",
+      "distMi": 2.25
+     },
+     {
+      "lat": 46.7448,
+      "lng": -121.701438,
+      "elev": 6900,
+      "name": "Summit block",
+      "note": "~40 ft of 4th/low-5th-class rock to the true top; rope and runners recommended, natural gear anchors reported at the summit for a short rappel on descent.",
+      "type": "Hazard",
+      "distMi": 2.3
+     },
+     {
+      "lat": 46.7445542,
+      "lng": -121.7012031,
+      "elev": 6971,
+      "name": "Unicorn Peak summit",
+      "note": "Highest point in the Tatoosh Range; tight summit with limited standing room, expect to belay or hand-line the last move in a crowd.",
+      "type": "Summit",
+      "distMi": 2.4
+     }
+    ],
+    "descent_text": "Descend by reversing the scramble route: from the base of the summit block, downclimb/hike back to the west saddle, then drop through the upper basin and the steep gully back to Snow Lake, rejoining the maintained trail out to the trailhead (about 2.4 miles, losing the 2,397 ft gained on the way up). The one technical piece is the summit block itself — the horn of the 'unicorn.' Most parties rappel rather than downclimb its short, exposed 4th/low-5th-class pitch: a single-rope rappel of about 50 feet down the south side of the pinnacle. A 30m rope is sufficient for this (it's also enough to lead any of the ~40-50 ft summit-block routes on the way up). The traditional anchor is a stout but aging/dead tree at the top of the block; many recent parties instead sling a rock horn on the south-facing side of the summit, which already carries multiple slings and rap rings left by prior climbers. Either anchor is climber-built/natural rather than a maintained bolted station, so inspect existing tat and hardware before weighting it and back it up or replace it if it looks sun-rotted or worn. After the rappel, continue the reversed scramble/talus descent back to Snow Lake and the trailhead.",
+    "access": {
+     "fees": "$30 per private vehicle (7-day pass), $25 per motorcycle, or $15 per person on foot/bike; America the Beautiful/Rainier annual passes accepted. No separate fee for climbing the Tatoosh peaks.",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "rules": "Standard NPS wilderness rules apply: camp only at the designated Snow Lake sites if overnighting, pack out all waste, no campfires above treeline, and stay on durable surfaces (rock/snow) on the fragile Tatoosh talus and meadow terrain.",
+     "permit": "No wilderness or climbing permit is required for a day ascent — NPS climbing permits only apply to travel above 10,000 ft or on glaciers, which doesn't include Unicorn Peak. A wilderness permit ($12/person/night plus a non-refundable $6 reservation fee) is only needed if camping overnight, e.g. at the small Snow Lake backcountry camp (2 sites, bear pole, privy).",
+     "closures": "Stevens Canyon Road, which serves the Snow Lake Trailhead, is gated and snowed-in roughly October through late May; it typically reopens around Memorial Day to early June depending on snowpack. Check the NPS road-status page before driving out.",
+     "landManager": "National Park Service — Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Park entrance fee or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    }
+   }
+  }
+ ]
+}

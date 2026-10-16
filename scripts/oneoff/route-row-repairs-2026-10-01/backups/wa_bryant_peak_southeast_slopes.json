@@ -1,0 +1,54 @@
+{
+ "id": "wa_bryant_peak_southeast_slopes",
+ "name": "Southwest Ridge (Hemlock Pass)",
+ "waypoints": [
+  {
+   "lat": 47.4152259,
+   "lng": -121.443374,
+   "elev": 2270,
+   "name": "Denny Creek Trailhead (I-90 Exit 47)",
+   "note": "Start of the Denny Creek Trail #1014 toward Melakwa Lake; leave it at Hemlock Pass, about 4 miles up, for the ridge.",
+   "type": "Trailhead",
+   "elevFt": 2270,
+   "directions": "Take I-90 to Exit 47 and follow Denny Creek Road (FR 58) about 3 miles, past Denny Creek Campground, then turn left onto FR 5830 to the trailhead lot at about 2,300 feet."
+  },
+  {
+   "lat": 47.446762,
+   "lng": -121.464969,
+   "elev": 5700,
+   "name": "Summit block traverse",
+   "note": "Route stays left (south) of the talus field and traverses the south side of the west shoulder before the final scramble; exposed with loose rock, though holds are generally good.",
+   "type": "Hazard",
+   "distMi": 4.3,
+   "directions": "Follow the Denny Creek Trail #1014 up the valley past the waterfalls and up steeper switchbacks to Hemlock Pass, about 4 miles. At the crest of the pass turn right onto the ridge and hold a bearing of about 33 degrees, skirting cliff bands mainly on their left, to the plateau and meadow on the ridge. Continue up the ridge, keeping left (south) of the talus field, to the traverse on the south side of the west shoulder."
+  },
+  {
+   "lat": 47.451358,
+   "lng": -121.46092,
+   "elev": 5801,
+   "name": "Bryant Peak summit",
+   "type": "Summit",
+   "elevFt": 5801,
+   "directions": "Traverse the south side of the west shoulder to the summit block, then scramble the loose rock on the left, or when snow-free go around the exposed north side. The first high point may be a false summit, with a short exposed traverse to the true top at 5,801 ft. Helmets are recommended."
+  }
+ ],
+ "climbing_route": [
+  {
+   "n": 1,
+   "label": "Ridge from Hemlock Pass",
+   "notes": "From the crest of Hemlock Pass turn right and follow the ridge on a bearing of about 33°, skirting cliff bands mainly on the left, to a plateau and meadow on the ridge. Early in the season a brushy notch behind trees on the right leads about 170 ft up and then northeast to a meadow; once the snow is gone that notch is choked with brush, so stay on the ridge."
+  },
+  {
+   "n": 2,
+   "class": "Class 2",
+   "label": "Talus to the summit block",
+   "notes": "A talus field wraps about three-quarters of the peak's base; cross it, or follow the ridge above the plateau, to the base of the summit block."
+  },
+  {
+   "n": 3,
+   "class": "Class 3",
+   "label": "Summit block",
+   "notes": "Scramble up loose rock on the left, or when snow-free around the exposed north side. The first high point may be a false summit, with a short exposed traverse to the true top. Loose holds and rockfall are the main hazard; helmets recommended. Summit 5,801 ft."
+  }
+ ]
+}

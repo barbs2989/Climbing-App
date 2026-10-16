@@ -1,0 +1,37 @@
+{
+ "results": [
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "verdict": "confirmed",
+   "summary": "The Red Ledge pin sat about 3.5 km too far south, down near Yang Yang Lakes; it now sits on the ledge just south of Kool-Aid Lake below Arts Knoll. All other pins were already right.",
+   "evidence": "Pin 4 Red Ledge was at 48.400043,-121.043071 (ground 5,680 ft), ~3.5 km south of Kool-Aid Lake and beside Yang Yang Lakes (OSM 48.39380,-121.05662) — not where the ledge is. The ledge runs west beneath Arts Knoll just south of Kool-Aid Lake: OSM places Arts Knoll at 48.43059,-121.04257; a published traverse map marks 'Red ledge' at 48.43093,-121.05071 and its drawn track runs west along ~48.4314 between -121.0469 and -121.0498 south of the lake; trip accounts describe the ledge as cutting west through the cliff below Arts Knoll right after Kool-Aid Lake. New point 48.4314,-121.0480 is ~200 m from the map marker, on the drawn track, and ~420 m west of the knoll summit along the band it describes. Ground height 6,510 ft (USGS). Other pins checked: Cascade Pass Trailhead, Cascade Pass (map 48.46790,-121.05888), Cache Col (map 48.44871,-121.05219), Kool-Aid Lake (OSM 48.4386686,-121.0458149, identical), LeConte Glacier (OSM centroid 48.36244,-121.03525, ~150 m), Old Guard Peak summit (OSM 48.35603,-121.03583, ~65 m) — all within tolerance. The snowfinger pin sits between glacier and summit on the north side as the text describes; no source places it more precisely, so it is left.",
+   "sources": [
+    "https://nominatim.openstreetmap.org/search?format=json&q=Arts+Knoll",
+    "https://caltopo.com/m/10Q3",
+    "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Old+Guard+Peak",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Le+Conte+Glacier"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_old_guard_peak_southwest_route",
+     "index": 4,
+     "expect": {
+      "name": "Red Ledge",
+      "lat": 48.400043,
+      "lng": -121.043071
+     },
+     "lat": 48.4314,
+     "lng": -121.048,
+     "elev": 6510,
+     "sources": [
+      "https://caltopo.com/m/10Q3",
+      "https://nominatim.openstreetmap.org/search?format=json&q=Arts+Knoll"
+     ]
+    }
+   ],
+   "ops": []
+  }
+ ]
+}

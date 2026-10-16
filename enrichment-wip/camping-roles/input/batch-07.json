@@ -1,0 +1,2561 @@
+[
+ {
+  "zone": "entiat-holden",
+  "routes": [
+   {
+    "id": "wa_bonanza_peak_mary_green_glacier",
+    "name": "Mary Green Glacier (Standard Route)",
+    "peak": "Bonanza Peak",
+    "area_id": "wa_bonanza_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 5.0-5.6",
+    "high_point_ft": 9511,
+    "overview": "Bonanza Peak (9,516') is the highest non-volcanic summit in Washington and the highpoint of Chelan County. The Mary Green Glacier route — first climbed in 1937 by Curtis Ijames, Barrie James, and Joe Leuthold (Mazamas) — is the peak's classic standard line, ascending its eastern side. Reached only v…",
+    "approach": "From Holden Village (~3,300') walk the gravel road/Railroad Creek Trail (FST 1256) west about 0.9 mile to the signed junction with the Holden Lake Trail and bear right (north). The Holden Lake Trail climbs steadily for about 4 miles through forest, brush, and a few small side-creek crossings (reliab…",
+    "camps": [
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "The obvious camp about 4 miles up the Holden Lake Trail from its junction with the Railroad Creek Trail, sitting in a cirque right under Bonanza's east face. Easy to reach, water everywhere, and the last comfortable grou…"
+     },
+     {
+      "name": "Holden Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The standard high camp, reached from the lake by a rough hillside traverse northwest — the tread above the outlet fades into slide alder and talus and is genuinely brushy early season with high water. Reported times from…"
+     },
+     {
+      "name": "Bivy below the waterfall slabs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A ledge camp reported around 6,900 ft, above Holden Pass and just below the waterfall slabs that lead onto the glacier. The party that used it went higher specifically to escape the mosquitoes at the pass and rated it we…"
+     },
+     {
+      "name": "Holden Village ballfield campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The campground on the edge of Holden Village, about a mile back down the road from where the climb starts. Not part of the climb, but it is what parties use on either side of the ferry timetable — several reports mention…"
+     },
+     {
+      "name": "Holden Pass high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "From the lake outlet the tread fades out. Skirt the north shore through slide alder and talus — genuine bushwhacking and route-finding, worse early season when …"
+     }
+    ]
+   },
+   {
+    "id": "wa_bonanza_peak_north_ridge",
+    "name": "North Ridge",
+    "peak": "Bonanza Peak",
+    "area_id": "wa_bonanza_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 9511,
+    "overview": "Bonanza Peak is the highest non-volcanic summit in Washington and the Chelan County highpoint, deep in the Glacier Peak Wilderness above Holden Village. This line is the peak's standard east-side route: roped travel up the Mary Green Glacier, then loose Class 3-4 scrambling through a gully/rib syste…",
+    "approach": "From Ballpark Campground at Holden Village (~3,300 ft), take Railroad Creek Trail (#1240) about 1 mile to its junction with Holden Lake Trail (#1251); turn right/south and hike roughly 4 miles to Holden Lake (5,278 ft). Continue past the lake toward Holden Pass (6,360 ft), where most parties establi…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_bonanza_peak_northeast_buttress",
+    "name": "Northeast Buttress",
+    "peak": "Bonanza Peak",
+    "area_id": "wa_bonanza_peak",
+    "discipline": "mountaineering",
+    "grade": "V",
+    "high_point_ft": 9511,
+    "overview": "Bonanza Peak is the highest non-volcanic summit in Washington. This route is the Northeast Buttress, a serious, mostly-rock alpine line that gains Bonanza's true (9,516') summit directly, branching off the standard Mary Green Glacier approach at about 8,350 ft. Graded V, 5.7/5.8, the Northeast Buttr…",
+    "approach": "The approach follows the same trailhead-in as the standard route — Railroad Creek Trail (FST 1256) from Holden Village to the Holden Lake Trail junction, then up to Holden Lake (5,278') and Holden Pass (6,360') for high camp — but instead of angling onto the Mary Green Glacier itself, continue on be…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Holden Pass high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "From the head of the lake, continue north-northwest on the climbers' path, gaining about 1,100 ft over heather benches and rocky terraces. This is effectively t…"
+     }
+    ]
+   },
+   {
+    "id": "wa_buckskin_mountain_southwest_slopes",
+    "name": "Southwest Slopes",
+    "peak": "Buckskin Mountain",
+    "area_id": "wa_buckskin_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8127,
+    "overview": "Buckskin Mountain (~8,124-8,127 ft depending on survey source) is the high point on the ridge linking Mount Fernow and Seven Fingered Jack above Entiat Meadows, in the Glacier Peak Wilderness. It is NOT a Holden/boat-access peak like its Railroad Creek neighbors — the standard approach is the long E…",
+    "approach": "From the Entiat River Trailhead (3,150 ft, end of Entiat River Road), follow the Entiat River Trail #1400, a well-graded but increasingly rough valley trail that parallels the Entiat River the entire way. At 2.2 miles (3,480 ft) the Anthem Creek Trail #1435 splits off; the crossing at 2.5 miles is o…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Entiat Meadows camp (5,100' clearing)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Past the junction the trail grows faint and choked with brush and deadfall as it nears timberline. Keep going to the open clearing rather than settling lower — …"
+     }
+    ]
+   },
+   {
+    "id": "wa_carne_mountain_trail_route",
+    "name": "Carne Mountain Trail",
+    "peak": "Carne Mountain",
+    "area_id": "wa_carne_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 1-2",
+    "high_point_ft": 7085,
+    "overview": "Carne Mountain (~7,080–7,085 ft) is the Entiat Mountains' most popular day-hike summit, reached by a steep, well-built trail that climbs out of the Phelps Creek valley (not from its head — the route branches off just 0.4 mile from the trailhead). It is famous for one of Washington's finest golden-la…",
+    "approach": "From the Phelps Creek Trailhead (~3,500 ft, end of FR 6211), start on the wide, gently graded Phelps Creek Trail #1511 heading north/upstream along Phelps Creek through open forest. In roughly 0.25–0.4 mile, watch for a signed junction and bear right (steeply uphill) onto the narrower Carne Mountain…",
+    "camps": [
+     {
+      "name": "Carne Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "The only camp on the route itself: about 2.9 miles up, where the trail leaves the forest and levels into a small cirque near 6,100 ft. Nearly every party climbs Carne car-to-car and never needs it, but it suits anyone wh…"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chiwawa_mountain_southwest",
+    "name": "Southwest Route / Standard",
+    "peak": "Chiwawa Mountain",
+    "area_id": "wa_chiwawa_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8459,
+    "overview": "Chiwawa Mountain (8,459') is a remote summit in the Glacier Peak Wilderness. Its parent peak, Fortress Mountain (8,760'), lies about 1.1 miles west across the Fortress-Chiwawa col, and the two are commonly combined from a shared high camp. A small remnant of the Lyman Glacier clings to Chiwawa's nor…",
+    "approach": "Park at Trinity Trailhead (~2,800 ft), at the end of Chiwawa River Road/FR-6200 by the old Trinity mine site. From the trailhead, hike the Buck Creek Trail #1513 up the valley; at roughly 1.4–1.5 miles, bear right (northeast) at the junction onto the Chiwawa River Trail #1550, an old mining-road gra…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Chiwawa Basin high camp benches",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6300,
+      "notes": "Several lines reach the bench from the basin. The left-trending gully is the most direct and the easiest going, though it is wet; the vegetated slopes beside th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_cloudy_peak_southwest_slopes",
+    "name": "Southwest Slopes",
+    "peak": "Cloudy Peak",
+    "area_id": "wa_cloudy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 7915,
+    "overview": "Cloudy Peak (7,915 ft) rises directly above Cloudy Pass at the head of the Lyman Lakes basin in the Glacier Peak Wilderness, part of the Cloudy Pass batholith (~20-million-year-old intrusive rock). It's a popular add-on for parties doing the Spider Gap-Lyman Lakes loop or the longer Buck Creek Pass/…",
+    "approach": "The standard approach starts at the Phelps Creek Trailhead (elev. ~3,500 ft), at the end of Forest Road 6211 off the Chiwawa River Road (FR 62) north of Leavenworth. From the trailhead, follow Phelps Creek Trail #1511 up the valley along Phelps Creek, gaining about 1,900 ft over 6.5 miles to Spider …",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Spider Meadow",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "Stay on #1511 as the valley opens out — roughly 1,900 ft of gain over the six and a half miles from the car, so this is easy ground. The meadow is the last flat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_copper_peak_south_route",
+    "name": "South Route",
+    "peak": "Copper Peak",
+    "area_id": "wa_copper_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8965,
+    "overview": "Copper Peak (8,965 ft) is the second-highest summit in the Entiat Mountains and Washington's 21st-highest peak (19th on the 'Bulger' list), rising just 0.88 mile north of Mount Fernow in the Glacier Peak Wilderness. Unlike Fernow and Seven Fingered Jack, Copper Peak's slopes drain north into Railroa…",
+    "approach": "Copper Peak has no drivable trailhead — access is via the Lake Chelan ferry from Fields Point/Chelan to Lucerne Landing, then the Holden Village shuttle bus up to Holden Village (~3,300 ft) in the Railroad Creek valley, Glacier Peak Wilderness. From the village, follow the old mine road/Railroad Cre…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Copper Creek basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Once into the drainage the path parallels Copper Creek south for roughly three miles of steady climbing to an open bench at about 5,600 ft. Maps show maintained…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dumbell_mountain_west",
+    "name": "West Route / Standard Scramble",
+    "peak": "Dumbell Mountain",
+    "area_id": "wa_dumbell_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 8416,
+    "overview": "Dumbell Mountain is an 8,416 ft double-summit massif above Phelps Basin and Spider Meadow in the Glacier Peak Wilderness, its NE subpeak informally called Greenwood Mountain (8,408 ft) joined by a narrow connecting ledge. Rock is gneissic hornblende quartz diorite of the Miocene-age (~20-million-yea…",
+    "approach": "From the Phelps Creek Trailhead (elev. ~3,500 ft, at the end of Phelps Creek Road/FR-6211), follow the Phelps Creek Trail (FST 1511) north up the east side of Phelps Creek through old-growth and second-growth forest. The trail crosses several small side streams (reliable water the whole way) and, in…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Spider Meadow (lower end)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "Stay on #1511 as it keeps climbing gently along the creek — about 1,900 ft of gain over the five or six miles from the car — until the forest opens out. This is…"
+     },
+     {
+      "name": "Lower Phelps Basin Bivy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Half a mile of easy walking up the basin on the climbers' path. Most parties camp here or a little higher around 6,000 ft to shorten summit day."
+     }
+    ]
+   },
+   {
+    "id": "wa_fortress_mountain_east_ridge",
+    "name": "East Ridge",
+    "peak": "Fortress Mountain",
+    "area_id": "wa_fortress_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8679,
+    "overview": "A cross-country approach via the Chiwawa River drainage to the col between Chiwawa Mountain and Fortress, then a loose gully gaining Fortress's East Ridge, followed by better-quality ridge scrambling to an exposed 4th-class step just below the summit.",
+    "approach": "From Trinity Trailhead, hike the Chiwawa River Trail (#1550) north along the valley, passing beneath Red Mountain, to around 6,580 ft, then leave the trail to traverse diagonally up toward Chiwawa Mountain's east ridge, descending to the roughly 7,200 ft col between Chiwawa and Fortress (or continui…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_fortress_mountain_northeast_face",
+    "name": "Northeast Ridge",
+    "peak": "Fortress Mountain",
+    "area_id": "wa_fortress_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8679,
+    "overview": "A steeper, more technical alternative on Fortress's northeast-facing side: several pitches of rock up a headwall, followed by a long snow slope studded with rock islands. The route tops out on the ridge crest short of the true summit, requiring further ridge travel to finish.",
+    "approach": "Same Trinity Trailhead approach as the East Ridge (via Buck Creek/Chiwawa River Trails); this line is normally climbed or descended as part of a link-up with the East Ridge or Southwest Slope rather than approached independently.",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_fortress_mountain_southwest_face",
+    "name": "Southwest Face",
+    "peak": "Fortress Mountain",
+    "area_id": "wa_fortress_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8679,
+    "overview": "The standard route: a long trail approach over Buck Creek Pass and Pass No Pass, followed by an unroped scramble up grass, scree, and blocky class 2-3 rock on Fortress's broad southwest face / south ridge to the summit.",
+    "approach": "From Trinity Trailhead (2,800 ft) at the end of Chiwawa River Road/FR 6200, follow the Buck Creek Trail (#1513) roughly 9-9.5 miles, climbing through forest, an old avalanche debris field (~4,500 ft), and past an unmarked junction with the Pass No Pass way-trail (bears right, ~5,800 ft). Continue up…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_martin_peak_west_ridge",
+    "name": "West Ridge",
+    "peak": "Martin Peak",
+    "area_id": "wa_martin_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8509,
+    "overview": "The peak's standard/easiest line: climbs the crest of Martin Peak's west ridge from Holden Pass to the summit, mostly Class 3 scrambling on loose schist with one short, well-featured Class 4 step just below the top.",
+    "approach": "All approaches to Martin Peak begin at Holden Village: take the Lake Chelan ferry (Chelan Boat Company's Lady of the Lake II or Lady Express) from Chelan or Fields Point Landing to Lucerne Landing, then the Holden Village shuttle bus up an 11-mile gravel road (12 switchbacks) into Holden Village. Fr…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_maude_r1",
+    "name": "North Face",
+    "peak": "Mount Maude",
+    "area_id": "wa_mount_maude",
+    "discipline": "mountaineering",
+    "grade": "Moderate alpine ice, AI2-3",
+    "high_point_ft": 9082,
+    "overview": "The North Face is Mount Maude's classic moderate snow/ice climb: from the small Entiat Glacier at the peak's northeast base, a sustained 40-55 degree snow (occasionally alpine ice) face rises roughly 4,000 vertical feet to finish roughly 100 vertical feet below the summit. It has long been one of th…",
+    "approach": "Long approach into the Entiat Mountains, via one of two options: from the Phelps Creek Trailhead, hike ~4 miles to the Leroy Creek crossing, then continue cross-country up to Leroy Basin and over the Seven Fingered Jack-Maude col; or drive Entiat River Road (becomes FR 51/5100) ~38 miles from Entiat…",
+    "camps": [
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "A flat meadow basin near 6,100 ft, reached by leaving the Phelps Creek trail where it crosses Leroy Creek around 4,100 ft and taking the steep unmaintained climbers' path up the creek's north side. It is the usual base o…"
+     },
+     {
+      "name": "Upper Ice Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The higher of two lakes in a pumice basin directly under the peak, about a mile and 400 ft above Lower Ice Lake, near the 6,900 ft high point of the Ice Creek trail. Parties climbing the north face camp on the snow-free …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_maude_r2",
+    "name": "Entiat Ice Fall",
+    "peak": "Mount Maude",
+    "area_id": "wa_mount_maude",
+    "discipline": "alpine",
+    "grade": null,
+    "high_point_ft": 9082,
+    "overview": "A true alpine route climbing what remains of the receding Entiat Icefall on the north side of the peak, then finishing up ~900 ft of loose 4th and low-5th class rock to the summit.",
+    "approach": "Same trailhead and lower approach as the North Face: Phelps Creek Trailhead (3,500 ft) via FR 6211, up the Phelps Creek Trail to the Leroy Creek crossing, then the climber's trail into Leroy Creek Basin (~6,100-6,200 ft, ~5 miles). From camp, continue toward the Seven Fingered Jack-Maude col/Icy Lak…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_maude_r3",
+    "name": "Nothing Couloir",
+    "peak": "Mount Maude",
+    "area_id": "wa_mount_maude",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 9082,
+    "overview": "A late-season class 3/4 rock scramble up a clean, solid-rock couloir system on Mount Maude's WNW side, the second gully right of the North Tower, finishing along the summit ridge with brief class 4 moves around towers.",
+    "approach": "Same lower approach as the North Face/Entiat Icefall routes: Phelps Creek Trailhead (3,500 ft) via FR 6211, up the Phelps Creek Trail to the Leroy Creek crossing, then the climber's trail into Leroy Creek Basin (~6,100-6,200 ft, ~5 miles), continuing onto the peak's west side to reach the base of th…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_star_mountain_cloudy_peak_traverse",
+    "name": "Cloudy Peak Traverse (South Ridge)",
+    "peak": "North Star Mountain",
+    "area_id": "wa_north_star_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8096,
+    "overview": "A harder alternative approached from the west: gain the crest at Cloudy Pass, follow the ridge over Cloudy Peak (7,915 ft), then descend and cross talus to North Star's summit block via the same short, exposed Class 3-4 step used by the East Route.",
+    "approach": "Same as the East Route to Lyman Lake/Cloudy Pass — via the currently-closed Lucerne/Holden Village/Railroad Creek trail from the east, or via the open Phelps Creek/Spider Gap trail from the west. From Lyman Lake or Cloudy Pass, gain the ridge crest at Cloudy Pass (6,440 ft) to start the traverse.",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_star_mountain_east_route",
+    "name": "East Route",
+    "peak": "North Star Mountain",
+    "area_id": "wa_north_star_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 8096,
+    "overview": "North Star Mountain sits immediately west of Bonanza Peak in the Glacier Peak Wilderness, above the Railroad Creek and Lyman Lakes basins. No maintained trail reaches the summit; the standard route climbs the peak's south side above Lyman Lake. Curiously, USGS survey crews swapped this peak's name w…",
+    "approach": "Standard approach is via Holden Village: Lady of the Lake ferry from Chelan or Fields Point Landing to Lucerne, shuttle to Holden, then roughly 16 miles up the Railroad Creek Trail to Lyman Lake. As of 2026, Holden Village and Forest Road 8301 are closed to all hikers and vehicles due to 2025 flood/…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "Rebel Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "Follow the trail around the lake and continue up-valley about another mile on easy grade. This is the last flat, sheltered ground before the trail turns to sust…"
+     },
+     {
+      "name": "Lower Lyman Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5604,
+      "notes": "Above the camp the trail switchbacks steeply out of the valley floor, gaining about 1,000 ft over roughly three miles before easing into the lakes basin. There …"
+     }
+    ]
+   },
+   {
+    "id": "wa_seven_fingered_jack_southwest_slopes",
+    "name": "Southwest Slopes",
+    "peak": "Seven Fingered Jack",
+    "area_id": "wa_seven_fingered_jack",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 9078,
+    "overview": "A very popular non-technical scramble to the middle summit of the Entiat Cirque, named for the cluster of granite pinnacles ('fingers') along its crest — once called the Entiat Needles. First climbed in 1932 by Richard Alt. Class 2-3 scree and talus lead from Leroy Basin up the broad southwest face …",
+    "approach": "From the Phelps Creek Trailhead (3,500 ft, end of FR 6211 off Chiwawa River Road), start on Phelps Creek Trail #1511. At about a quarter mile the Carne Mountain Trail splits off steeply to the right (skip it); stay on Phelps Creek Trail as it climbs gently through forest along the creek. At 2.6 mi y…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     }
+    ]
+   },
+   {
+    "id": "wa_soviet_route",
+    "name": "Soviet Route",
+    "peak": "Bonanza Peak",
+    "area_id": "wa_bonanza_peak",
+    "discipline": "alpine",
+    "grade": "V, 5.9-5.10a",
+    "high_point_ft": 9320,
+    "overview": "The Soviet Route (aka the West Buttress) climbs a roughly 2,300-foot buttress on Bonanza's Southwest Peak (9,320'), a distinct sub-summit south of Bonanza's true 9,516' main summit. First climbed September 10-12, 1975 by a joint Soviet-American team during a Cold War-era climbing exchange — one of t…",
+    "approach": "From Holden Village, follow the Railroad Creek Trail (FST 1256) west about 3.5 miles to Hart Lake (3,956'), passing (but not taking) the Holden Lake Trail junction along the way — stay on the main valley trail. At Hart Lake, leave the maintained trail and climb the rock-and-heather terraces on the t…",
+    "camps": [
+     {
+      "name": "Holden Village",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 3200,
+      "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night…"
+     },
+     {
+      "name": "Holden Ballpark Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is …"
+     },
+     {
+      "name": "Holden Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5278,
+      "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and c…"
+     },
+     {
+      "name": "Holden Pass and the slab bivies above",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6400,
+      "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfa…"
+     },
+     {
+      "name": "Lyman Lakes and Cloudy Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft …"
+     },
+     {
+      "name": "Spider Meadow and Phelps Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4750,
+      "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes a…"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy …"
+     },
+     {
+      "name": "Ice Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7173,
+      "notes": "This is the eastern base for Mount Maude, and the reason Maude and Seven Fingered Jack are two-sided objectives rather than Phelps Creek peaks. It is a long way in — roughly fourteen miles of Entiat River trail from the …"
+     },
+     {
+      "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely uns…"
+     },
+     {
+      "name": "High camp near North Star-Bonanza pass (~7,100 ft)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "Keep working up the terrace system as open forest gives way to heather benches and then blocky, loose ground, roughly 3,000 ft of gain above Hart Lake taking mo…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "entiat-river-crest",
+  "routes": [
+   {
+    "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+    "name": "Northwest Couloir–North Ridge",
+    "peak": "Cardinal Peak",
+    "area_id": "wa_cardinal_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": null,
+    "overview": "An alternate line up Cardinal Peak's north side, approached via Saska Basin/Pass rather than the direct basin camp used for the Southeast Slopes route; most often climbed as part of multi-peak traverses of the Chelan Mountains (Saska, Emerald, Pinnacle, Cardinal).",
+    "approach": "Reached via the North Fork Entiat Trail to Saska Basin and Saska Pass, commonly combined with ascents of Saska Peak, Emerald Peak, and Pinnacle Mountain on the same trip rather than as a dedicated single-peak approach.",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     }
+    ]
+   },
+   {
+    "id": "wa_cardinal_peak_se_slopes",
+    "name": "Southeast Slopes",
+    "peak": "Cardinal Peak",
+    "area_id": "wa_cardinal_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8596,
+    "overview": "Cardinal Peak (8,596 ft) is the highest summit in the Chelan Mountains, a remote subrange at the head of the Entiat River drainage, less than 5 miles from Lake Chelan. The peak has three summit points along its ridge; the standard route reaches the middle summit, traditionally treated as the highpoi…",
+    "approach": "From the end of FR-5606 (the North Fork Entiat Trailhead, ~3,940 ft), pick up the North Fork Entiat River Trail #1437. This lower section sits outside wilderness, so mountain bikes are legal and commonly used to knock out easy miles. The first ~6 miles follow the North Fork Entiat River on a gentle,…",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "West-side basin camp below Cardinal Peak",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "Stay on #1437 past the Fern Lake fork. Around mile 7, near 5,800 ft, the trail bends sharply east and switchbacks about half a mile to a junction with the Pyram…"
+     }
+    ]
+   },
+   {
+    "id": "wa_emerald_peak_se_ridge",
+    "name": "Southeast Ridge",
+    "peak": "Emerald Peak",
+    "area_id": "wa_emerald_peak_entiat",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8422,
+    "overview": "Emerald Peak (8,422 ft) is the second-highest summit in the Chelan Mountains, edged out only by Cardinal Peak (8,590 ft, 1.1 mi SE). Saska Peak sits just 0.66 mi west-southwest across a narrow basin, and the two peaks — plus nearby Pinnacle Mountain and Cardinal — are commonly linked into a multi-da…",
+    "approach": "Start at the North Fork Entiat River Trailhead (~3,940 ft) at the end of Forest Road 5606, off Entiat River Road. Take the North Fork Entiat River Trail #1437, which follows the North Fork Entiat River upstream through burned/downed timber from past wildfires — expect deadfall requiring detours over…",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "Fox Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "Leave the maintained trail at the junction and head west; the timber opens into a clearing within about a quarter mile. Fill and treat water here — the valley b…"
+     },
+     {
+      "name": "Emerald-Saska basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "From the clearing the travel is cross-country. Angle west then southwest, contouring below Cardinal Peak's west side toward the basin system south of Emerald. E…"
+     }
+    ]
+   },
+   {
+    "id": "wa_emerald_peak_west_route",
+    "name": "West Route",
+    "peak": "Emerald Peak",
+    "area_id": "wa_emerald_peak_entiat",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8422,
+    "overview": "A distinct, dedicated line on the peak: an easy class 3 scramble to Emerald's twin summit block via an erosion-carved gully on the peak's west side, reached from the same North Fork Entiat trailhead (or alternately from Lake Chelan via the Emerald Park Trail).",
+    "approach": "Primary approach: from Entiat, drive Entiat River Road ~32.5 miles to Forest Road 5606, then ~3 switchbacking miles to the North Fork Entiat Trailhead (~3,700 ft); hike NF Entiat River Trail #1437 up-valley and leave the trail to gain the west-side gully below Emerald's summit block. Alternate appro…",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     }
+    ]
+   },
+   {
+    "id": "wa_fifth_of_july_mountain_scramble",
+    "name": "Standard Scramble",
+    "peak": "Fifth of July Mountain",
+    "area_id": "wa_fifth_of_july_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 7696,
+    "overview": "Fifth of July Mountain (7,696 ft) is a prominent, dry east-Cascades summit in the Entiat Mountains within the Glacier Peak Wilderness, rising above the upper Entiat River valley and the Cow Creek Meadows / Myrtle Lake / Larch Lakes basin in Chelan County. USFS surveyor Albert H. Sylvester named the …",
+    "approach": "Start at the Entiat River Trailhead (elev. ~3,150 ft) at the end of Entiat River Road (FS Road 51), where a Northwest Forest Pass is required. Follow the Entiat River Trail No. 1400 upstream through mixed forest along the river's south bank, gently graded, for about 4 miles. At roughly the 4-mile ma…",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "Myrtle Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3766,
+      "notes": "From the crossing the trail climbs gently northwest through burned subalpine forest for a few tenths of a mile to the lake. Fill and treat water here: this is t…"
+     },
+     {
+      "name": "Cow Creek Meadows",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5150,
+      "notes": "Shortly past the lake the Larch Lakes trail branches off — stay on #1404. Above that fork the trail turns up and gets serious, gaining roughly 1,300 ft in about…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_fernow_southeast_face",
+    "name": "Southeast Face / Leroy Basin",
+    "peak": "Mount Fernow",
+    "area_id": "wa_mount_fernow",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 9249,
+    "overview": "Mount Fernow (9,249 ft) is the 8th-highest peak in Washington and the state's third-highest non-volcanic summit, capping the Entiat Mountains sub-range of the North Cascades within the Glacier Peak Wilderness, Chelan County. The headwaters of the Entiat River rise from its south slopes. It was first…",
+    "approach": "From the Phelps Creek Trailhead (3,500 ft, at the end of the Phelps Creek spur off Chiwawa River Road/FR-62), follow Phelps Creek Trail #1511 south. The tread is in generally good maintained shape, with only occasional overgrown brush in late summer. At about 3.5 miles (roughly 1.5-2 hours in), the …",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "Leroy Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "Well-established campsites and plentiful freshwater in this heather-and-talus basin below Seven Fingered Jack; the standard overnight base for the Fernow/7FJ tr…"
+     }
+    ]
+   },
+   {
+    "id": "wa_pinnacle_mountain_entiat_scramble",
+    "name": "Standard Scramble",
+    "peak": "Pinnacle Mountain",
+    "area_id": "wa_pinnacle_mountain_entiat",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8400,
+    "overview": "Pinnacle Mountain is the high point of a granodiorite/hornblende-quartz-diorite massif (Cardinal Peak pluton) in the Chelan Mountains, a subrange of the Entiat Mountains, within the Glacier Peak Wilderness on the Okanogan-Wenatchee National Forest (Entiat Ranger District). At 8,400 ft it is the 4th-…",
+    "approach": "From the Entiat River/Cottonwood Camp Trailhead, follow the Entiat River Trail roughly 7 miles to the 45-Mile Sheep Driveway, then go off-trail into the Pinnacle Creek drainage toward the south slopes; alternatively, use the North Fork Entiat Trailhead (end of FR 5606, 3,940 ft) and approach from th…",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "Pyramid Mountain Trail (#1433) junction camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "Roughly two and a half miles on from the Fern Lake spur, staying on #1437. Fill water at the crossing here: the drainages between this junction and the pass are…"
+     }
+    ]
+   },
+   {
+    "id": "wa_saska_peak_emerald_saska_col",
+    "name": "South Slopes via Emerald-Saska Col",
+    "peak": "Saska Peak",
+    "area_id": "wa_saska_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8404,
+    "overview": "Saska Peak is the third-highest peak in the Chelan Mountains and rises just northwest of its taller neighbor Emerald Peak (8,422 ft), 0.66 mi away across a connecting col. It's almost always climbed in combination with Emerald via that col, and strong parties often add Cardinal Peak (1.5 mi southeas…",
+    "approach": "Standard access is the North Fork Entiat River Trail (#1437) from the North Fork Entiat Trailhead (el. ~3,940 ft, at the end of Forest Road 5606, about 35.3 mi from the town of Entiat via Entiat River Road/Forest Road 51 then FR 5606). The trail crosses old fire-damaged forest with blowdown for its …",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "Fox Camp (Pyramid Creek Trail junction)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "Continue up the North Fork Entiat valley another four miles, gaining roughly 3,000 ft from the trailhead to the Pyramid Creek / Fern Lake junction; the camp its…"
+     },
+     {
+      "name": "Basin between Emerald and Saska",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7100,
+      "notes": "From the junction take the primitive Pyramid Creek Trail east and climb steadily for roughly a mile and a half into the upper basin. The tread is unmaintained a…"
+     }
+    ]
+   },
+   {
+    "id": "wa_spectacle_buttes_west_route",
+    "name": "West Route",
+    "peak": "Spectacle Buttes",
+    "area_id": "wa_spectacle_buttes",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8392,
+    "overview": "A pair of pyramidal twin summits in the Entiat Mountains subrange of the North Cascades, within the Glacier Peak Wilderness on Okanogan-Wenatchee National Forest (Wenatchee River Ranger District) land in Chelan County. The sharper south summit (8,392 ft) is the true high point; the north butte (8,08…",
+    "approach": "The standard approach is a long, mostly cross-country line from the Phelps Creek Trailhead at the end of Phelps Creek Road (FR 6211), about 3,500 ft. Follow Phelps Creek Trail #1511 up the east side of the valley — a gentle, well-graded grade of roughly 275 ft per mile — crossing into the Glacier Pe…",
+    "camps": [
+     {
+      "name": "Cottonwood Camp and the Entiat River road campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3140,
+      "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of vall…"
+     },
+     {
+      "name": "Myrtle Lake and Cow Creek Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the two low staging camps on the Cow Creek branch, taken at mile 3.6 of the Entiat River trail and then a short climb past the lake. They matter for one peak — Fifth of July Mountain — and they are how a party …"
+     },
+     {
+      "name": "Larch Lakes meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5730,
+      "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day ou…"
+     },
+     {
+      "name": "Snow Brushy Creek junction camps, Entiat River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A working camp rather than a destination, and useful for exactly that reason. It sits roughly where the Snow Brushy Creek trail leaves the Entiat River trail, which is the eastern end of the crossing over Milham Pass tow…"
+     },
+     {
+      "name": "Entiat Meadows",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The head of the Entiat valley and the reason to walk this trail at all: eleven miles up, entering the glacier drainage with Mount Fernow, Seven Fingered Jack and Mount Maude standing directly above. It serves two peaks. …"
+     },
+     {
+      "name": "Fox Camp, North Fork Entiat trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. …"
+     },
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska …"
+     },
+     {
+      "name": "Leroy Basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "Follow Phelps Creek Trail #1511 up the east side of the valley, a gentle well-graded grade of roughly 275 ft per mile, crossing the wilderness boundary at 2.6 m…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "foss-necklace-dutch-miller",
+  "routes": [
+   {
+    "id": "wa_bald_eagle_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Bald Eagle Peak",
+    "area_id": "wa_bald_eagle_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6259,
+    "overview": "Bald Eagle Peak (6,259 ft) rises above the Foss River valley near Skykomish, on the divide between the East and West Forks of the Foss River within the northern Alpine Lakes Wilderness. The standard North Ridge — first climbed in 1933 by Hermann Ulrichs and Ben Falkenburg — is an off-trail Class 3-4…",
+    "approach": "From the pullout along Foss River Road (FR 68) near mile 5.2 — just past the concrete bridge over the East Fork Foss River, roughly 2 miles up FR 68 from US-2 at Skykomish — there is no maintained trail. Climbers cross to the north side of the road and pick up the toe of Bald Eagle's north ridge at …",
+    "camps": [
+     {
+      "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The main basecamp for LA BOHN PEAK, which stands directly at the head of this valley, and the first night of the standard west-side approach to MOUNT HINMAN. Drive the Foss River road off Highway 2 a short way east of Sk…"
+     },
+     {
+      "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5515,
+      "notes": "The high camp for LA BOHN PEAK and the launching point for the west route on MOUNT HINMAN, and the single most useful piece of ground in this zone for a climber. La Bohn Gap is a broad boulder-covered saddle at roughly 6…"
+     },
+     {
+      "name": "Tank Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "A high alternative to the Necklace lakes, reached off-trail from the south end of Opal Lake and sitting at roughly 5,800 ft in a bench of slabs and tarns ringed by ridges. It is not on the direct line to LA BOHN PEAK or …"
+     },
+     {
+      "name": "Big Heart Lake, with Copper and Little Heart below",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4418,
+      "notes": "The west-side base for BALD EAGLE PEAK, which sits on the divide between the two Foss forks and can be climbed from either. The trail leaves a spur off the Foss River road and climbs a staircase of lakes: Trout at about …"
+     },
+     {
+      "name": "Bald Eagle Lake cirque",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4547,
+      "notes": "A rough, off-trail bivouac at about 4,547 ft for BALD EAGLE PEAK, tucked in the cirque on the north flank of the ridge midway between Bald Eagle and its neighbour Silver Eagle to the southwest. Bald Eagle sits squarely b…"
+     },
+     {
+      "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and has been running weekd…"
+     },
+     {
+      "name": "Peggy's Pond, below Cathedral Rock",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5560,
+      "notes": "The base for MOUNT DANIEL and the eastern option for MOUNT HINMAN, and by a distance the most convenient high camp on this side of the divide. Drive the Cle Elum River road north from Salmon la Sac roughly eleven to twel…"
+     },
+     {
+      "name": "Hyas Lake and Upper Hyas Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3471,
+      "notes": "The low-effort basecamp on the Cle Elum side, less than two miles up the Deception Pass trail from the Tucquala Meadows road end on a gentle grade through meadow and forest, sitting at about 3,471 ft with Cathedral Rock …"
+     }
+    ]
+   },
+   {
+    "id": "wa_la_bohn_peak_southwest_slopes",
+    "name": "Southwest Slopes",
+    "peak": "La Bohn Peak",
+    "area_id": "wa_la_bohn_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6585,
+    "overview": "La Bohn Peak (6,585 ft) is a granite summit at the head of Necklace Valley in the eastern Alpine Lakes Wilderness, rising directly west of La Bohn Gap — a broad, tarn-dotted saddle around 5,900 ft between the peak and Mount Hinman (7,492 ft, 1.7 mi east). The standard line follows a climbers' path e…",
+    "approach": "From the East Fork Foss River Trailhead (~1,650 ft, reached via a signed spur off US 2 near Skykomish), follow the Necklace Valley Trail #1062. The first ~5 miles are easy, gaining only about 600 ft as the trail parallels the East Fork Foss River through old-growth forest, passing established camps …",
+    "camps": [
+     {
+      "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The main basecamp for LA BOHN PEAK, which stands directly at the head of this valley, and the first night of the standard west-side approach to MOUNT HINMAN. Drive the Foss River road off Highway 2 a short way east of Sk…"
+     },
+     {
+      "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5515,
+      "notes": "The high camp for LA BOHN PEAK and the launching point for the west route on MOUNT HINMAN, and the single most useful piece of ground in this zone for a climber. La Bohn Gap is a broad boulder-covered saddle at roughly 6…"
+     },
+     {
+      "name": "Tank Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "A high alternative to the Necklace lakes, reached off-trail from the south end of Opal Lake and sitting at roughly 5,800 ft in a bench of slabs and tarns ringed by ridges. It is not on the direct line to LA BOHN PEAK or …"
+     },
+     {
+      "name": "Big Heart Lake, with Copper and Little Heart below",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4418,
+      "notes": "The west-side base for BALD EAGLE PEAK, which sits on the divide between the two Foss forks and can be climbed from either. The trail leaves a spur off the Foss River road and climbs a staircase of lakes: Trout at about …"
+     },
+     {
+      "name": "Bald Eagle Lake cirque",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4547,
+      "notes": "A rough, off-trail bivouac at about 4,547 ft for BALD EAGLE PEAK, tucked in the cirque on the north flank of the ridge midway between Bald Eagle and its neighbour Silver Eagle to the southwest. Bald Eagle sits squarely b…"
+     },
+     {
+      "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and has been running weekd…"
+     },
+     {
+      "name": "Peggy's Pond, below Cathedral Rock",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5560,
+      "notes": "The base for MOUNT DANIEL and the eastern option for MOUNT HINMAN, and by a distance the most convenient high camp on this side of the divide. Drive the Cle Elum River road north from Salmon la Sac roughly eleven to twel…"
+     },
+     {
+      "name": "Hyas Lake and Upper Hyas Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3471,
+      "notes": "The low-effort basecamp on the Cle Elum side, less than two miles up the Deception Pass trail from the Tucquala Meadows road end on a gentle grade through meadow and forest, sitting at about 3,471 ft with Cathedral Rock …"
+     },
+     {
+      "name": "Jade Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4650,
+      "notes": "Immediately past the river the trail turns steep and stays that way, gaining roughly 2,400 ft in three miles over large boulders and tree roots on rugged, minim…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_daniel_daniel_glacier",
+    "name": "Daniel Glacier / Southeast Slopes",
+    "peak": "Mount Daniel",
+    "area_id": "wa_mount_daniel",
+    "discipline": "mountaineering",
+    "grade": "Grade II",
+    "high_point_ft": 7960,
+    "overview": "Mount Daniel is the highest point in both King and Kittitas counties — a broad, multi-summited massif above the Cle Elum headwaters. It has five named summits (East Peak 7,899 ft, Middle Summit 7,959 ft, the true high point at West Summit, West Pyramid, and Northwest Peak); USGS topo maps historical…",
+    "approach": "From the Cathedral Rock/Deception Pass trailhead at the end of FR-4330 (elev. ~3400 ft), start on the signed Deception Pass Trail (also signed Cathedral Pass Trail), which climbs steadily through forest. At about 1.8 miles a signed junction splits off right to Squaw Lake; stay left/straight on the m…",
+    "camps": [
+     {
+      "name": "Squaw Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The lower staging camp on the Cathedral Rock trail, about 1,500 ft above the Tucquala Meadows trailhead. It melts out noticeably earlier than Peggys Pond, which makes it the fallback in a heavy snow year or when the pond…"
+     },
+     {
+      "name": "Peggys Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The standard base camp for the peak. The spur leaves the Cathedral Pass trail at the first switchback on the descent toward Deep Lake, signed as unsuitable for stock, which undersells it — the last mile carries sheer dro…"
+     },
+     {
+      "name": "East summit bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A flat spot roughly 200 ft below the east summit, a little above the traverse toward the middle and west summits, reached by taking the Hyas Creek drainage and a snow couloir below the east peak. A deliberate choice rath…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_daniel_lynch_glacier",
+    "name": "Lynch Glacier",
+    "peak": "Mount Daniel",
+    "area_id": "wa_mount_daniel",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": null,
+    "overview": "A glacier ascent up Mount Daniel's north side, climbing the retreating Lynch Glacier from Pea Soup Lake to the col between the Middle and true (West) summits — the line used on the mountain's first recorded ascent in 1925.",
+    "approach": "From the Deception Pass Trailhead, hike to Marmot/Jade Lakes, continue to Dip Top Gap, then traverse west to the shoulder overlooking the Foss River drainage and descend to the outlet of Pea Soup Lake.",
+    "camps": [
+     {
+      "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The main basecamp for LA BOHN PEAK, which stands directly at the head of this valley, and the first night of the standard west-side approach to MOUNT HINMAN. Drive the Foss River road off Highway 2 a short way east of Sk…"
+     },
+     {
+      "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5515,
+      "notes": "The high camp for LA BOHN PEAK and the launching point for the west route on MOUNT HINMAN, and the single most useful piece of ground in this zone for a climber. La Bohn Gap is a broad boulder-covered saddle at roughly 6…"
+     },
+     {
+      "name": "Tank Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "A high alternative to the Necklace lakes, reached off-trail from the south end of Opal Lake and sitting at roughly 5,800 ft in a bench of slabs and tarns ringed by ridges. It is not on the direct line to LA BOHN PEAK or …"
+     },
+     {
+      "name": "Big Heart Lake, with Copper and Little Heart below",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4418,
+      "notes": "The west-side base for BALD EAGLE PEAK, which sits on the divide between the two Foss forks and can be climbed from either. The trail leaves a spur off the Foss River road and climbs a staircase of lakes: Trout at about …"
+     },
+     {
+      "name": "Bald Eagle Lake cirque",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4547,
+      "notes": "A rough, off-trail bivouac at about 4,547 ft for BALD EAGLE PEAK, tucked in the cirque on the north flank of the ridge midway between Bald Eagle and its neighbour Silver Eagle to the southwest. Bald Eagle sits squarely b…"
+     },
+     {
+      "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and has been running weekd…"
+     },
+     {
+      "name": "Peggy's Pond, below Cathedral Rock",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5560,
+      "notes": "The base for MOUNT DANIEL and the eastern option for MOUNT HINMAN, and by a distance the most convenient high camp on this side of the divide. Drive the Cle Elum River road north from Salmon la Sac roughly eleven to twel…"
+     },
+     {
+      "name": "Hyas Lake and Upper Hyas Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3471,
+      "notes": "The low-effort basecamp on the Cle Elum side, less than two miles up the Deception Pass trail from the Tucquala Meadows road end on a gentle grade through meadow and forest, sitting at about 3,471 ft with Cathedral Rock …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_hinman_hinman_glacier",
+    "name": "Hinman Glacier / Standard",
+    "peak": "Mount Hinman",
+    "area_id": "wa_mount_hinman",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 7492,
+    "overview": "Mount Hinman is a broad glaciated dome neighboring Mount Daniel (7,960 ft, less than 2 miles east). First climbed in 1928 and named in 1934 for Dr. Harry B. Hinman, a founding member of an Everett climbing club, the peak once carried two glaciers — Hinman Glacier on its north flank and the smaller F…",
+    "approach": "Park at the Necklace Valley Trailhead (~1,650 ft) at the end of FR 68 and start up Necklace Valley Trail #1062. The first ~5 miles are deceptively easy, gaining only about 600 ft as the trail follows the East Fork Foss River through regenerated second-growth forest (logged in the 1930s), entering th…",
+    "camps": [
+     {
+      "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The main basecamp for LA BOHN PEAK, which stands directly at the head of this valley, and the first night of the standard west-side approach to MOUNT HINMAN. Drive the Foss River road off Highway 2 a short way east of Sk…"
+     },
+     {
+      "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5515,
+      "notes": "The high camp for LA BOHN PEAK and the launching point for the west route on MOUNT HINMAN, and the single most useful piece of ground in this zone for a climber. La Bohn Gap is a broad boulder-covered saddle at roughly 6…"
+     },
+     {
+      "name": "Tank Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "A high alternative to the Necklace lakes, reached off-trail from the south end of Opal Lake and sitting at roughly 5,800 ft in a bench of slabs and tarns ringed by ridges. It is not on the direct line to LA BOHN PEAK or …"
+     },
+     {
+      "name": "Big Heart Lake, with Copper and Little Heart below",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4418,
+      "notes": "The west-side base for BALD EAGLE PEAK, which sits on the divide between the two Foss forks and can be climbed from either. The trail leaves a spur off the Foss River road and climbs a staircase of lakes: Trout at about …"
+     },
+     {
+      "name": "Bald Eagle Lake cirque",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4547,
+      "notes": "A rough, off-trail bivouac at about 4,547 ft for BALD EAGLE PEAK, tucked in the cirque on the north flank of the ridge midway between Bald Eagle and its neighbour Silver Eagle to the southwest. Bald Eagle sits squarely b…"
+     },
+     {
+      "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and has been running weekd…"
+     },
+     {
+      "name": "Peggy's Pond, below Cathedral Rock",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5560,
+      "notes": "The base for MOUNT DANIEL and the eastern option for MOUNT HINMAN, and by a distance the most convenient high camp on this side of the divide. Drive the Cle Elum River road north from Salmon la Sac roughly eleven to twel…"
+     },
+     {
+      "name": "Hyas Lake and Upper Hyas Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3471,
+      "notes": "The low-effort basecamp on the Cle Elum side, less than two miles up the Deception Pass trail from the Tucquala Meadows road end on a gentle grade through meadow and forest, sitting at about 3,471 ft with Cathedral Rock …"
+     },
+     {
+      "name": "Jade Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4613,
+      "notes": "First of the Necklace Valley lakes and the common base camp for Hinman climbs; trail steepens sharply above the river crossing, gaining roughly 2,400 ft in abou…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "gardner-methow",
+  "routes": [
+   {
+    "id": "wa_gardner_mountain_west_ridge",
+    "name": "West Ridge / Saddle Traverse",
+    "peak": "Gardner Mountain",
+    "area_id": "wa_gardner_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8902,
+    "overview": "Gardner Mountain (8,898–8,902 ft) is the second-highest summit in the Methow Mountains — a North Cascades subrange — after neighboring North Gardner Mountain (~8,956 ft, the Okanogan County highpoint), about a mile to the northwest; Gardner itself is the highest point in the Lake Chelan–Sawtooth Wil…",
+    "approach": "From the Wolf Creek Trailhead (large parking area at the end of FS Road 5505 above Winthrop; Northwest Forest Pass required) follow Wolf Creek Trail #527 up-valley into the Lake Chelan-Sawtooth Wilderness. The trail drops roughly 250 ft in the first stretch, then settles into a long, gently-graded v…",
+    "camps": [
+     {
+      "name": "Klipchuck Campground and the Highway 20 road-head campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "The obvious place to sleep before starting up either side of the Gardners, and the only one with running water and a toilet. It sits in ponderosa forest just off the highway about four miles beyond Mazama, and the Cedar …"
+     },
+     {
+      "name": "Gardner Meadows, Wolf Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the basecamp for both peaks and the way the great majority of parties climb them. The Wolf Creek trail runs roughly ten miles up the valley bottom from the trailhead near Winthrop to meadows sitting directly bene…"
+     },
+     {
+      "name": "High basin camp above Gardner Meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6250,
+      "notes": "The higher option for a party that wants to shorten summit day rather than take both peaks in one long push from the meadows. Heading north out of Gardner Meadows the ground rises to a small meadow basin at about 6,200 f…"
+     },
+     {
+      "name": "Cedar Creek meadow camps above the falls",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The western approach camp, and the reason to use this side at all. Cedar Falls comes at about 1.7 miles from the trailhead and is the day-hike turnaround for most visitors; keep going and roughly two miles beyond the fal…"
+     },
+     {
+      "name": "Upper Cedar Creek head basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A spring and early-summer bivouac rather than a camp, used by parties taking the west side of North Gardner when snow still covers the ground. Getting into the head of the valley involves leaving the maintained trail and…"
+     },
+     {
+      "name": "Gardner Meadows",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Continue straight up the Wolf Creek valley for roughly another eight miles of easy, gradually rising trail, still through burn the whole way. The Abernathy Lake…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_gardner_mountain_nw_couloir",
+    "name": "Northwest Couloir (Cedar Creek approach)",
+    "peak": "North Gardner Mountain",
+    "area_id": "wa_north_gardner_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8956,
+    "overview": "An alternative, more direct line up North Gardner's north side: a trail-less approach past a ford of Cedar Creek leads to a broad northwest-facing snow couloir that climbs directly toward the summit, finishing with a stretch of loose talus along the upper north ridge.",
+    "approach": "From Highway 20 near Winthrop, reach the Cedar Creek Trailhead (reported at 2,961 ft elevation) and follow the Cedar Creek Trail before leaving it to bushwhack cross-country toward Cedar Creek; a known ford crossing (via a log in some years, a wade in others) gives access to the Shelokum Creek drain…",
+    "camps": [
+     {
+      "name": "Klipchuck Campground and the Highway 20 road-head campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "The obvious place to sleep before starting up either side of the Gardners, and the only one with running water and a toilet. It sits in ponderosa forest just off the highway about four miles beyond Mazama, and the Cedar …"
+     },
+     {
+      "name": "Cedar Creek meadow camps above the falls",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The western approach camp, and the reason to use this side at all. Cedar Falls comes at about 1.7 miles from the trailhead and is the day-hike turnaround for most visitors; keep going and roughly two miles beyond the fal…"
+     },
+     {
+      "name": "Upper Cedar Creek head basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A spring and early-summer bivouac rather than a camp, used by parties taking the west side of North Gardner when snow still covers the ground. Getting into the head of the valley involves leaving the maintained trail and…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_gardner_mountain_southwest",
+    "name": "Southwest Slopes / South Ridge",
+    "peak": "North Gardner Mountain",
+    "area_id": "wa_north_gardner_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 8963,
+    "overview": "North Gardner Mountain (8,956 ft) is the highest point in Okanogan County and the 20th-highest peak on the Washington Bulger List (the state's 100 highest summits with 400+ ft of prominence). It sits within the Lake Chelan-Sawtooth Wilderness on the east side of the Cascade Crest above the Methow Va…",
+    "approach": "From the Wolf Creek Trailhead (~2,950 ft, end of FS Road 5005 west of Winthrop) follow Wolf Creek Trail #527 roughly 10 miles up the Wolf Creek valley to Gardner Meadows, then continue off-trail north into Wolf Creek Basin (typical high camp ~6,200-6,400 ft) below the Gardner/North Gardner saddle. A…",
+    "camps": [
+     {
+      "name": "Klipchuck Campground and the Highway 20 road-head campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "The obvious place to sleep before starting up either side of the Gardners, and the only one with running water and a toilet. It sits in ponderosa forest just off the highway about four miles beyond Mazama, and the Cedar …"
+     },
+     {
+      "name": "Gardner Meadows, Wolf Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the basecamp for both peaks and the way the great majority of parties climb them. The Wolf Creek trail runs roughly ten miles up the valley bottom from the trailhead near Winthrop to meadows sitting directly bene…"
+     },
+     {
+      "name": "High basin camp above Gardner Meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6250,
+      "notes": "The higher option for a party that wants to shorten summit day rather than take both peaks in one long push from the meadows. Heading north out of Gardner Meadows the ground rises to a small meadow basin at about 6,200 f…"
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,203 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "verdict": "confirmed",
+   "resolution": "Rule 5: summit pitch graded as the range 5.5-5.7 in every grade field and prose copy (sources split; each end supported by 2+ independent sources, one of them a guidebook for 5.7).",
+   "summary": "Challenger's short summit pitch is now graded 5.5-5.7 everywhere on the page, instead of a mix of 5.5, 5.6-5.7 and 5.5-5.7.",
+   "evidence": "The sources do not converge on one value. 5.5: the route database (one pitch of 5.5 with fixed pro); a north-to-south Pickets traverse report (50 ft of 5.5 to the summit); a club trip report (a 0.5 cam protected 'the 5.5 crux move'); a 2014 climbers'-log entry ('1-2 moves of 5.5'). 5.7: the peak page's author cites the Selected Climbs guidebook grading the final 50 ft 5.7 and calls it 'the rock climbing 5.7 pitch'; a separate club trip report ('The 5.7 rock climb was straight forward. Only 50ft long and 4 rusty pitons'); a 2004 climbers'-log entry ('ten feet of 5.7 climbing with fixed pitons'). 5.6: one 2004 comment. With four independent 5.5 sources and three (including a published guidebook) at 5.7, rule 5 gives the range 5.5-5.7, which the approach, descent, climbing_route, pro_tips and approach baseFinding already used. Brought to 5.5-5.7: grade (was 5.6-5.7), rock_grade (5.5), gear, hazards, summit waypoint note, detailed_rack, pro_needs (5.6-5.7), pitch_detail grade and notes (5.5), itinerary day note and schedule detail (5.5), partner_requirements skill (5.5), seasonal_hazards exposure (5.5). Two source-attributions removed while touching the grade text: seasonal_hazards 'per trip-report beta' and descent_text 'Trip reports consistently report'; pro_tips[4] loses a quoted phrase attributed to 'parties'. grade_num is derived by the apply script (grade_system is class; it should stay 5).",
+   "sources": [
+    "https://www.mountainproject.com/route/112031867/challenger-glacier",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-challenger-challenger-glacier",
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/mount-challenger-challenger-glacier",
+    "https://web.archive.org/web/2025/https://www.summitpost.org/mount-challenger/151237",
+    "https://web.archive.org/web/2025/https://www.summitpost.org/mount-challenger/climbers-log/151237"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3-4, Glacier, 5.6-5.7",
+     "value": "Class 3-4, Glacier, 5.5-5.7"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.5",
+     "value": "5.5-5.7"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "find": "for the 5.6-5.7 summit block",
+     "replace": "for the 5.5-5.7 summit block"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "loose 5.6-5.7 summit block",
+     "replace": "loose 5.5-5.7 summit block"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "a short 5.6-5.7 pitch",
+     "replace": "a short 5.5-5.7 pitch"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "the short 5.6-5.7 summit pitch",
+     "replace": "the short 5.5-5.7 summit pitch"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "pro_needs",
+     "path": [],
+     "find": "one short pitch (5.6-5.7)",
+     "replace": "one short pitch (5.5-5.7)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "5.5",
+     "value": "5.5-5.7"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The crux involves low-5.5 moves on reasonably solid rock.",
+     "replace": "The crux is a brief section, graded 5.5 to 5.7, on reasonably solid rock."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "a short 5.5 rock pitch",
+     "replace": "a short 5.5-5.7 rock pitch"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "a single 5.5 pitch",
+     "replace": "a single 5.5-5.7 pitch"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "(5.5, currently fixed protection)",
+     "replace": "(5.5-5.7, with some fixed protection)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "(5.5, per trip-report beta)",
+     "replace": "(5.5-5.7)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "pro_tips",
+     "path": [
+      4
+     ],
+     "find": ", described by parties as 'bombproof and climbable in boots.'",
+     "replace": " and many climb it in boots."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_challenger_challenger_glacier",
+     "column": "descent_text",
+     "path": [],
+     "find": "Trip reports consistently report a 30m rope as sufficient for this rappel",
+     "replace": "A 30m rope is sufficient for this rappel"
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "verdict": "unresolved",
+   "resolution": "No ops. grade/rock_grade 'Grade II, 5.10a' / '5.10a' and commitment 'II' stay until a second independent grading of the Eye Col line is found; fa is already null and should stay null.",
+   "summary": "Still only one account grades East Twin Needle from the Eye Col (a 5.7 hand crack), so the 5.10a grade, which belongs to the 2003 east arete, cannot be lowered yet.",
+   "evidence": "Read: (1) the 2009 Thread of Ice first-ascent report: from the Eye Col the party climbed East Twin Needle, crux 'a 5.7 handcrack that was half filled with ice' - the only grade for this line. (2) The Northwest Mountaineering Journal short report on the same climb says it 'ended with a bit of 5.7 rock' and credits Abegg's report - same party/source, counts once. (3) AAJ 2023 North Buttress note: the party topped out near the summit and 'scrambled to the summit at perhaps 5.6', then downclimbed and rappelled the south face to the Eye Col and the south gullies (fourth-class downscrambling and raps) - this grades the last moves from the north-buttress finish, not the climb up from the Eye Col, and gives no grade for the Eye Col-to-summit section. (4) 2023 West Twin Needle report: reaches the Eye Col by the south gully (class 5 chockstones, pitched) and cites a 1981 Roper/Kroeker ascent, but its '5.7' is West Twin's east face, not East Twin. (5) AAJ 2004 Southern Pickets enchainment and the 2018 second-ascent report grade only the east arete (II 5.10a). (6) Wikipedia/listsofjohn give 'class 4' as the easiest route of Twin Needles (the higher West needle). AAJ 1962 Southern Pickets article, summitpost, peakbagger (2 ascents, no route text), thecrag (403) and Google Books (quota exhausted) gave nothing further. fa: the row's fa is null (o01 cleared the 2003 credit); no source names a first-ascent party for the Eye Col line on East Twin (the overview's 1932 Degenhardt/Martin/Strandberg credit is for the needles, and the 2023 report says the 1932 party used the Himmelhorn-West Twin notch), so fa stays null. Once a second grading is found: grade 'Grade II, 5.7', rock_grade '5.7', commitment review; also data_quality.gaps[0] ('South Route (III, 5.7)') and corrections still describe the old state.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "http://alpenglow.org/nwmj/10/101_Shorts2.html",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/102094-tr-north-cascades-southern-pickets-southern-pickets-enchainment-traverse-%E2%80%93-second-ascent-08172018/",
+    "https://en.wikipedia.org/wiki/Twin_Needles"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "verdict": "unresolved",
+   "resolution": "No ops. commitment III vs beta 'Grade: IV' cannot be settled with two independent sources.",
+   "summary": "Only the first ascensionist grades King Kong (IV 5.11+); no independent source gives a commitment grade, so III vs IV stays open, though the only evidence points to IV.",
+   "evidence": "Every source that gives a commitment numeral is the first-ascent climber: the AAJ 2017 note (King Kong, IV 5.11+), his blog, and his SuperTopo and CascadeClimbers FA posts - one source. The route database page gives 5.12a, 900 ft, 8 pitches and no Grade numeral (its FA line reads 'Sol Wertkin, Tyree Johnson, FFA Sol Wertkin', which differs from the row's fa 'Sol Wertkin & Jon Gleason' - worth a separate look). No repeat or independent trip report was found. Nothing supports III; the neighbouring Gorillas in the Mist, whose first four pitches King Kong shares, is given as IV 5.11- in the same AAJ note, which is suggestive but is a different route. Owner option: if one source plus the shared-wall evidence is acceptable, set commitment III -> IV.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

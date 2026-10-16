@@ -1,0 +1,64 @@
+{
+ "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+ "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Northwest Forest Pass required for parking; self-issue overnight wilderness permit at the kiosk if camping June 15-Oct 15.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west edge of Leavenworth, turn south onto Icicle Road and drive 8.4 miles, then turn left onto FS Road 7601 and follow this rough dirt road 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass is required to park, and day trips need the free self-issued permit at the trailhead."
+  },
+  {
+   "lat": 47.4919578,
+   "lng": -120.8335801,
+   "elev": 5580,
+   "name": "Colchuck Lake",
+   "note": "Take the left fork staying high on the ridge/shoreline north, avoiding the many spurs that drop to the water.",
+   "type": "Water",
+   "distMi": 4,
+   "directions": "Hike the Stuart Lake Trail about 2.25 miles, crossing Mountaineer Creek on a log bridge near 1.5 miles, to the signed junction and turn left onto the Colchuck Lake Trail. Cross the creek again on a second log bridge, then climb increasingly steep, rocky switchbacks to the lake, about 4 miles from the trailhead."
+  },
+  {
+   "lat": 47.49832,
+   "lng": -120.83265,
+   "elev": 5560,
+   "name": "Outlet dam creek crossing",
+   "note": "Cross the outlet creek at or just below the small dam on the lake's north end, then pick up the climbers' path on the far side, south for about 100 yards.",
+   "type": "Junction",
+   "distMi": 4.3,
+   "directions": "Where the trail meets the lake, take the left fork and stay high on the ridge, ignoring the spurs that drop to the water. Follow it to the small dam at the lake's north end and cross the outlet creek on or just below the dam."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6000,
+   "name": "3rd/4th class rock step",
+   "note": "Short step of rock above a talus clearing; pull up on tree roots and branches with the rock face on your left rather than climbing it head-on.",
+   "type": "Hazard",
+   "distMi": 4.5,
+   "directions": "On the far side pick up the path and follow it south about 100 yards to a slight clearing with boulders and talus on the left. Head up the talus, angling slightly left into the woods, to a short rock step; pull up on roots and branches with the rock on your left rather than climbing it head-on."
+  },
+  {
+   "lat": 47.4901,
+   "lng": -120.819413,
+   "elev": 7400,
+   "name": "Boulder camp in the flats",
+   "note": "Low-impact camping on rock and gravel among boulders just below the col; no reliable water at this camp.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": 47.49184,
+   "lng": -120.81797,
+   "elev": 8000,
+   "name": "Colchuck Balanced Rock Col",
+   "note": "Well-cairned path through open forest/hillside (~1 hr from the dam) gains the col; reaching the true summit block from here requires additional 4th/5th-class scrambling.",
+   "type": "Topout",
+   "distMi": 5.3
+  }
+ ]
+}

@@ -1,0 +1,258 @@
+{
+ "file": "r026.json",
+ "results": [
+  {
+   "id": "wa_east_face_6",
+   "fact": "Total elevation gain/loss for the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split. A detailed East Face trip report gives 19 miles and 6,000 ft gained and lost (the figure the overview repeats); the club route page (East Face Direct, same trailhead and summit) gives 16 miles and 4,900 ft; another report states ~4,887 ft as the plain trailhead-to-summit difference (2,840 to 7,727 ft); a GPS-logged report gives 8,463 ft. The itinerary's 4,930 ft is only the net trailhead-to-summit difference, which a car-to-car total can legitimately exceed (the descent re-climbs to the Main Notch, moraine undulations), so no two sources establish the whole-outing total. No patch.",
+   "sources": [
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "https://onehikeaweek.com/2022/08/14/chimney-rock/",
+    "https://mountainflamingo.com/2017-08-19-20-chimney-rock/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Hardest grade of the summit pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The East Face route page rates the route 5.3 with low-fifth summit pitches; a detailed trip report calls them low-fifth-class. But the club route page describes the same three summit pitches above the Key Ledge as having several moves of 5.4 to 5.6 (rating its Direct line 5.6 overall), and another standard-route party judged it 'probably no more difficult than 5.6'. No two sources agree on a single number for the summit pitches, so neither 5.3 nor 5.4-5.6 is settled. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/112042082/east-face",
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "https://mountainflamingo.com/2017-08-19-20-chimney-rock/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Number of rappels on the standard descent",
+   "verdict": "fixed",
+   "correct_value": "Two or three rappels from the summit to the Key/broad ledge on a single 165 ft rope, downclimb back through the Main Notch, then two short rappels over the wet fourth-class steps near the base of the rock; the 2-then-6 rappel sequence belongs to the East Face Direct.",
+   "evidence": "A detailed standard-route report: rappels on a single 165 ft rope from the summit to the broad ledge, downclimb and short up-climb to the Main Notch, long third-class downclimb, then two rappels near the base over wet fourth-class rock and a final downclimb to the bergschrund. The club route page (Direct) gives two rappels from the summit to the Key Ledge and then six more to the glacier - the Direct's straight-down descent, which is what climbing_route copied. Another standard-route party made three rappels to the Key Ledge plus one more lower; a third made three in all. So the row's '2 rappels' omitted the summit rappels, and climbing_route's 'six more' is the Direct's figure.",
+   "sources": [
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "https://mountainflamingo.com/2017-08-19-20-chimney-rock/",
+    "https://onehikeaweek.com/2022/08/14/chimney-rock/"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_6",
+     "fact": "Number of rappels on the standard descent",
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "Single ~165 ft rope; 2 rappels near the bergschrund plus downclimbing between them",
+     "value": "Single ~165 ft rope; two or three rappels from the summit down to the broad ledge (Key Ledge), then 2 rappels near the bergschrund plus downclimbing between them"
+    },
+    {
+     "id": "wa_east_face_6",
+     "fact": "Number of rappels on the standard descent",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "notes": "First of two rappels over the fourth-class steps on wet, lower-angle slabs above the glacier.",
+       "anchor": "slung horn or block (natural)",
+       "lengthM": null
+      },
+      {
+       "n": 2,
+       "notes": "Second rappel reaching the glacier; both use natural horn/block anchors rather than bolts.",
+       "anchor": "slung horn or block (natural)",
+       "lengthM": 25
+      }
+     ],
+     "value": [
+      {
+       "n": 1,
+       "notes": "Rappel the summit pitches back down to the broad ledge (the Key Ledge) below the summit tower; parties report two or three rappels on a single 165 ft rope.",
+       "anchor": "slung horns and old tat (back up or replace)",
+       "lengthM": null
+      },
+      {
+       "n": 2,
+       "notes": "After downclimbing the ledges and back through the Main Notch, the first of two rappels over the wet fourth-class steps on the lower-angle slabs above the glacier.",
+       "anchor": "slung horn or block (natural)",
+       "lengthM": null
+      },
+      {
+       "n": 3,
+       "notes": "Second rappel over those lower steps; a short third-class downclimb then regains the moat. Both lower rappels use natural horn/block anchors rather than bolts.",
+       "anchor": "slung horn or block (natural)",
+       "lengthM": 25
+      }
+     ]
+    },
+    {
+     "id": "wa_east_face_6",
+     "fact": "Number of rappels on the standard descent",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the top of the East Face's third pitch, downclimb the Class 4-low 5th slabs back to the ledge system,",
+     "replace": "From the summit, rappel the three summit pitches back to the broad ledge below the tower (two or three rappels on a single rope),"
+    },
+    {
+     "id": "wa_east_face_6",
+     "fact": "Number of rappels on the standard descent",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "but the two-rappel descent via the saddle/gully is the more commonly reported line",
+     "replace": "but the descent via the saddle/gully is the more commonly reported line"
+    },
+    {
+     "id": "wa_east_face_6",
+     "fact": "Number of rappels on the standard descent",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Descent is by rappel down the line of ascent: two rappels from the summit back to the Key Ledge, then on the order of six more to reach the glacier, with anchors reported in place and serviceable the whole way.",
+     "replace": "Rappel the summit pitches back to the Key Ledge (two or three rappels), reverse the ledges and the Main Notch mostly by downclimbing, then make two short rappels over the wet fourth-class steps near the base of the rock before a last third-class downclimb to the moat."
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Overall commitment/alpine grade of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The East Face route page labels it Grade IV; the club route page rates the neighbouring East Face Direct Grade II; a detailed East Face trip report gives II/III. No two sources agree on the standard route's commitment grade, so alpine_grade/commitment (IV) and climbing_route's 'Grade II overall' (copied from the Direct description) are left for a decision. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/112042082/east-face",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Name of the notch between the South and Main summits",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "They are two different notches, not two names for one. The U-Gap is the notch reached up the loose gully from the glacier, south of the South Peak; from it an exposed ledge traverse wraps around the South Peak to the Main Notch between the South and Main summits. The row's own baseFinding describes both in that order ('Above the U-Gap the traverse across the South Peak toward the Main Peak... downclimbed about fifty feet from the Main Notch').",
+   "sources": [
+    "https://onehikeaweek.com/2022/08/14/chimney-rock/",
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://mountainflamingo.com/2017-08-19-20-chimney-rock/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Standard East Face: glacier -> U-Gap gully -> ledges around the South Peak -> Main Notch -> reddish ramp -> broad (Key) ledge -> three summit pitches.",
+   "evidence": "climbing_route steps 2-3 described the East Face DIRECT's lower line (face directly beneath the summit, one pitch to a heather ledge, leftward ledges to the north end of the Key Ledge, ~4 hours) from the club Direct page, while beta and approach_variants describe the standard line. Three standard-route reports agree: a loose gully to the U-Gap (U-Notch), an improbable ledge traverse around the South Peak, the Main Notch between South and Main peaks with a reddish 3rd-4th class ramp to the broad ledge, then the three roped pitches.",
+   "sources": [
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://onehikeaweek.com/2022/08/14/chimney-rock/",
+    "https://mountainflamingo.com/2017-08-19-20-chimney-rock/",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_6",
+     "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Cross the upper glacier to the east face directly beneath the summit.",
+     "replace": "Cross the upper glacier to the foot of the gully that climbs to the U-Gap."
+    },
+    {
+     "id": "wa_east_face_6",
+     "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "label"
+     ],
+     "expect": "Ledge systems to the Key Ledge",
+     "value": "U-Gap, the South Peak ledges and the Main Notch to the Key Ledge"
+    },
+    {
+     "id": "wa_east_face_6",
+     "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "expect": "One pitch from the glacier gains a broad heather ledge system. From its right side, a leftward-sloping ledge system links faces and gullies toward the north end of the prominent Key Ledge two thirds up the face. Most of this is exposed third-class walking on ledges with a few short fourth-class steps, often on wet rock, and running belays are the usual compromise between speed and safety. Reckon on about four hours from the glacier. The Key Ledge itself is a bivy for around six people, though water on it is unreliable.",
+     "value": "From the moat, climb the loose gully to the U-Gap, then leave it on its east side, starting about fifteen feet below the gap, and follow the exposed ledges that wrap around the South Peak to the Main Notch between the South and Main summits. Most of it is third-class scrambling with short fourth-class steps, often on wet rock, and running belays are the usual compromise. From the Main Notch drop roughly fifty feet and take a reddish third-to-fourth-class ramp up to the broad ledge beneath the summit tower, the Key Ledge, which has a few bivy spots but no dependable water."
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Hardest technical rock grade on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source documents a 'West Face / South Summit' route on Washington's Chimney Rock: the peak's route listing holds only the East Face (5.3) and East Face Direct (5.6), and the row's own corrections/rope_note say the line could not be verified. The row's 5.6 pitch 1 and rack are attached to pitch and descent details (start in grooves 30-40 ft right of the 'Rappel Chimney', a ladder-like chimney, a rocking summit block, a 40 ft rap off the north side to the northwest shoulder, then a double-rope rap down the Rappel Chimney) that belong to the West Face standard route of Chimney Rock in Idaho's Selkirks, rated 5.3. Neither 4th Class nor 5.6 can be established for this Washington line. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/112042076/chimney-rock",
+    "https://www.summitpost.org/west-face-standard-route/158376",
+    "https://www.idahoaclimbingguide.com/bookupdates/chimney-rock-7124/",
+    "https://www.mountainproject.com/area/106112550/west-facechimney-rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Route identity: pitch, rappel and descent details describe a different peak (Chimney Rock, Idaho Selkirks)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Rappel Chimney, the start 30-40 ft right of it, the rocking block used as the northwest-shoulder rap station, the 40 ft rap off the summit's north side and the double-rope rap down the Rappel Chimney are all features of the Idaho Chimney Rock West Face standard route (II, 5.3; Rappel Chimney is a separate 5.7 route there). They appear on this Washington row in pitch_detail, rappels, rappel_detail, rappel_count_note, descent_text, pro_tips, waypoints (notch, south summit directions), itinerary day 2, approach_variants.baseFinding and climbing_route[1]. Knock-on internal contradictions: pro_needs and rack say a single 50 m rope covers the rappels while gear/rappels say a second rope is required; rappel_detail calls the Rappel Chimney anchor fixed/bolted while rappel_count_note says no fixed hardware is confirmed; itinerary.totalNote says 'Main/South Summit' while the schedule says it is not the main summit. Needs a decision on whether this route should exist at all; no verified replacement content, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/west-face-standard-route/158376",
+    "https://www.idahoaclimbingguide.com/bookupdates/chimney-rock-7124/",
+    "https://www.mountainproject.com/area/106112550/west-facechimney-rock",
+    "https://www.mountainproject.com/area/112042076/chimney-rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_leave_my_flake_alone",
+   "fact": "Route grade vs crux pitch grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route is documented as a 3-pitch, 220 ft, 5.8 climb whose first pitch is Mourning Star (5.8) to the Zoom anchor; the overall grade is the hardest pitch of the route as climbed, and the page itself gives P1 5.8, P2 5.7, P3 (the Flake) 5.7. The crux flag on the Flake marks its tricky, reachy start (one guide rates that pitch 5.9), not a claim that it out-grades P1. The row matches the source; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/117285474/leave-my-flake-alone"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_leave_my_flake_alone",
+   "fact": "Which pitch is bolted (pitch_detail[2] says 'Fully bolted' with bolts:0; gear says to protect the reach)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says pitch 2 follows blocky terrain on bolts (about 7), that the 2018 work allowed 'one fully bolted pitch' with anchors added in 2019, and lists a single rack to 4 in for the route; it does not say the Flake pitch is bolted, which suggests pitch_detail[2]'s 'Fully bolted (added 2018-2019)' belongs to pitch 2. Only one source was found, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/117285474/leave-my-flake-alone"
+   ],
+   "patches": []
+  }
+ ]
+}

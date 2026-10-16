@@ -1,0 +1,116 @@
+{
+ "file": "r487.json",
+ "results": [
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's own club listing states about 5,300 ft of gain for the bike-and-hike approach to Honeymoon Meadows and about 4,000 ft for the 8-mile round-trip scramble day, i.e. roughly 9,300 ft total, which matches the itinerary's day 1 and day 2 figures and the approach text; an AI-written encyclopedia page also gives ~9,300 ft cumulative but is likely derivative. gain_ft 5,706 looks like net trailhead-to-summit arithmetic, but only one independent source states a total and the itinerary sums to 9,600 (with a 300 ft day 3), so no single agreed total exists to write. The day-1 schedule's '3,500-4,000 ft of hiking gain' plausibly excludes the ~1,900 ft road section (1,900 + ~3,500 = ~5,400), so it is not a separate conflict.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+    "https://grokipedia.com/page/white_mountain_olympic_mountains"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Total loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this route; per the loss_ft rule it is not derived from gain or the itinerary.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 33.8 km = 21 mi is the one-way figure (about 17 mi to camp plus about 4 mi on to the summit), while the itinerary's 17+8+17 is the round trip; the club listing gives ~17 mi to camp and an 8-mile round-trip scramble day, consistent with both.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Honeymoon Meadows to Anderson Pass leg",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on the mileage: one backpacking report says Camp Siberia alone is 1.3 mi past Honeymoon Meadows (so the pass is more than 1.2 mi), while mile logs put Honeymoon Meadows at mile 15 and the pass at mile 16 from differing start points. Anderson Pass is widely given as 4,464 ft, but no source confirmed the 3,527 ft Honeymoon Meadows elevation, so the ~700 ft vs ~940 ft gain cannot be settled by two sources. Also note the Honeymoon Meadows waypoint note says 'about mile 15' while its distMi is 14.1 \u2014 also unsettled because mile bases differ between sources.",
+   "sources": [
+    "https://j3.org/2018/08/backpack-dosewallips-anderson-glacier/",
+    "https://www.alltrails.com/trail/us/washington/west-fork-dosewallips-river-trail",
+    "https://www.protrails.com/trail/838/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Crevasse / glacier hazard",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The hazard entry explicitly places the remnant glacier in the north cirque between White Mountain and La Crosse, off the standard south/west-slope scramble, and the approach notes say reaching a glacier basin means you are off route; 'no glacier travel on this route' and 'crevasse hazard in that terrain' are both true.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Days of approach",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The standard approach is about 17 miles of biking and hiking via the Dosewallips Road and West Fork Dosewallips Trail to camp at Honeymoon Meadows; the Duckabush/O'Neil Pass way is a longer alternative.",
+   "evidence": "The itinerary, timing, trailhead, waypoints, approach_variants and approach text all use the Dosewallips/West Fork approach to Honeymoon Meadows. The route's club listing says the approach is up the West Fork Dosewallips, about 17 miles bike + hike to camp at Honeymoon Meadows, then an 8-mile round-trip scramble day. Partner requirements alone described a 2+ day-each-way Duckabush approach.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "multi-day approach (likely 2+ days each way) via Duckabush / La Crosse Basin / O'Neil Pass trails into the southern interior",
+     "replace": "about 17 miles of biking and hiking one way via the Dosewallips Road and West Fork Dosewallips Trail to camp at Honeymoon Meadows (the Duckabush / O'Neil Pass approach is longer), deep in the southern interior",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Days of approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "through the Duckabush / La Crosse-area trail system into",
+     "replace": "up the Dosewallips Road and West Fork Dosewallips Trail into",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Days of approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Rope note describes a different White Mountain",
+   "verdict": "fixed",
+   "correct_value": "White Mountain lies about 1.5 mi south of Anderson Pass, not in the Grand Valley/Hurricane Ridge area; the route is a non-technical Class 2 scramble.",
+   "evidence": "The club route listing and the encyclopedia article both place White Mountain about 1.5 miles south of Anderson Pass (parent Mount La Crosse), matching the overview and coordinates; both call it a Class 2 scramble, so no rope is needed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+    "https://en.wikipedia.org/wiki/White_Mountain_(Olympic_Mountains)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Could not find a route-specific source for this particular White Mountain (Olympic Mountains, Grand Valley/Hurricane Ridge area); inferred as a non-technical Class 2 talus/ridge scramble.",
+     "replace": "No rope needed: the standard line is a non-technical Class 2 scramble on talus, heather and open slopes south of Anderson Pass.",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Rope note describes a different White Mountain"
+    }
+   ]
+  }
+ ]
+}

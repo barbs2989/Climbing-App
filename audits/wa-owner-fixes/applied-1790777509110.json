@@ -1,0 +1,214 @@
+{
+ "applied": [
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "waypoints",
+   "path": [],
+   "fact": "Pin 8 is the area's reference coordinate ~22 m from the summit pin, with no elevation or note: a duplicate summit"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [],
+   "fact": "Traverse order is Red Ledges, Spider-Formidable Col, then Yang-Yang Lakes; the two mileages followed the wrong order and no source states them"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5162,
+      "lng": -120.6836,
+      "elev": 5050,
+      "name": "SR 20 / State Creek Pullout",
+      "note": "Same unsigned SR 20 pullout used for the South Buttress, ~1.5 mi west of Washington Pass (~0.5 mi west of the Blue Lake trailhead).",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the broad shoulder about half a mile west of the Blue Lake Trailhead — roughly a mile and a half west of Washington Pass — where there is room to park and a view through the trees to the peak. It is unsigned and sits near 5,050 ft, so measure from Blue Lake rather than looking for a marker. If you are meeting partners, the usual arrangement is to gather at the Blue Lake lot and then drive the short distance west to this pullout."
+     },
+     {
+      "lat": 48.517129,
+      "lng": -120.694669,
+      "elev": 5000,
+      "name": "State Creek crossing",
+      "note": "Cross State Creek in the forest below the pullout before climbing into the meadows/basin southwest of the summit.",
+      "type": "Water",
+      "distMi": 0.3
+     },
+     {
+      "lat": 48.524506,
+      "lng": -120.705127,
+      "elev": 6200,
+      "name": "Basin below Whistler Mountain",
+      "note": "Trail runs along the north side of the drainage and flattens through the open basin around 6200 ft before angling up toward Cutthroat's southwest side.",
+      "type": "Junction",
+      "distMi": 0.7
+     },
+     {
+      "lat": 48.523586,
+      "lng": -120.703942,
+      "elev": 7400,
+      "name": "Southwest Gully entrance",
+      "note": "Talus/scree/sand gully gaining the ridge; in poor visibility parties have mistaken this for the steeper, harder Second Southwest Gully just to the right.",
+      "type": "Junction",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.521142,
+      "lng": -120.699485,
+      "elev": 7600,
+      "name": "Crux face above rap station",
+      "note": "A short 5.2 face above a double-bolt belay/rappel anchor leads to easy ledges below the ridge crest; rock is loose in spots.",
+      "type": "Hazard",
+      "distMi": 1.35
+     },
+     {
+      "lat": 48.518247,
+      "lng": -120.695781,
+      "elev": 7800,
+      "name": "West Ridge crest / notch",
+      "note": "Gain the ridge crest here at a notch giving access toward the north ridge; narrow, exposed catwalk over a series of crestline horns.",
+      "type": "Junction",
+      "distMi": 1.5
+     },
+     {
+      "lat": 48.515127,
+      "lng": -120.692058,
+      "elev": 7900,
+      "name": "Northwest face traverse (Northwest Ledge)",
+      "note": "Exposed, near-two-rope-length traverse across the northwest face on the ledge finish to reach the north ridge below the summit block.",
+      "type": "Hazard",
+      "distMi": 1.65
+     },
+     {
+      "lat": 48.526432,
+      "lng": -120.703543,
+      "elev": 8066,
+      "name": "Cutthroat Peak summit",
+      "note": "Final low-5th-class pitch/scramble tops out on the blocky true summit; reverse the ridge with downclimbing and short rappels to descend.",
+      "type": "Summit",
+      "distMi": 1.8
+     },
+     {
+      "lat": 48.52623,
+      "lng": -120.70347,
+      "name": "West Ridge base / area reference point",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "elev": 3600,
+      "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+      "note": "Also the standard trailhead for the reverse Ptarmigan Traverse exit at Downey Creek is different (Suiattle River Rd), but Cascade Pass is the traditional/most common starting trailhead.",
+      "type": "Trailhead",
+      "elevFt": 3600
+     },
+     {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Maintained trail ends here; traverse continues cross-country.",
+      "type": "Junction",
+      "distMi": 3.6
+     },
+     {
+      "lat": 48.4484594,
+      "lng": -121.0528892,
+      "elev": 6903,
+      "name": "Cache Col",
+      "note": "Glacier-travel notch south of Cascade Pass; gateway to the traverse proper.",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.439276,
+      "lng": -121.046228,
+      "elev": 6120,
+      "name": "Kool-Aid Lake",
+      "note": "First bivy; the exposed 'Red Ledges' traverse below Art's Knoll follows.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.43,
+      "lng": -121.03,
+      "elev": 6900,
+      "name": "Red Ledges (Art's Knoll)",
+      "note": "Narrow, exposed ledge crossing; a fall here would be serious.",
+      "type": "Hazard",
+      "distMi": 9
+     },
+     {
+      "lat": 48.3917734,
+      "lng": -121.0569268,
+      "elev": 5852,
+      "name": "Yang-Yang Lakes",
+      "note": "Second common bivy, below Spider-Formidable Col.",
+      "type": "Campsite",
+      "distMi": 12
+     },
+     {
+      "lat": 48.4,
+      "lng": -121.03,
+      "elev": 7500,
+      "name": "Spider-Formidable Col",
+      "note": "High col crossing toward the LeConte Glacier and Sentinel/Old Guard Peaks.",
+      "type": "Junction",
+      "distMi": 13.5
+     },
+     {
+      "lat": 48.3395954,
+      "lng": -121.052078,
+      "elev": 6200,
+      "name": "White Rock Lakes / South Cascade Glacier Col",
+      "note": "Third bivy; reached off the south end of the South Cascade Glacier, with the Dana Glacier leading on toward Spire Point.",
+      "type": "Campsite",
+      "distMi": 18
+     },
+     {
+      "lat": 48.3175653,
+      "lng": -121.0717302,
+      "elev": 8264,
+      "name": "Spire Point",
+      "note": "Prominent landmark near the Dome-Dana col.",
+      "type": "Junction",
+      "distMi": 21
+     },
+     {
+      "lat": 48.308,
+      "lng": -121.1,
+      "elev": 6400,
+      "name": "Cub Lake / Itswoot Ridge",
+      "note": "Fourth bivy on Itswoot Ridge above Cub and Itswoot Lakes.",
+      "type": "Campsite",
+      "distMi": 24
+     },
+     {
+      "lat": 48.3034,
+      "lng": -121.0295,
+      "elev": 8920,
+      "name": "Dome Peak",
+      "note": "Optional side summit near the traverse's south end; the traverse itself does not cross it.",
+      "type": "Landmark",
+      "distMi": null,
+      "elevFt": 8920
+     }
+    ]
+   }
+  }
+ ]
+}

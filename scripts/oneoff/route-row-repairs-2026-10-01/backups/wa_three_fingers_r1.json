@@ -1,0 +1,101 @@
+{
+ "id": "wa_three_fingers_r1",
+ "name": "North Peak",
+ "approach_logistics": {
+  "peakLat": 48.169895,
+  "peakLng": -121.687865,
+  "trailhead": "Tupso Pass Trailhead",
+  "trailheadDirection": "Start at the Tupso Pass trailhead (end of FR 41) on the Three Fingers-Goat Flats-Saddle Lake Trail #641."
+ },
+ "waypoints": [
+  {
+   "lat": 48.1972,
+   "lng": -121.7742,
+   "elev": 3020,
+   "name": "Saddle Lake / Three Fingers Trailhead (Trail #641)",
+   "note": "Trailhead on Tupso Pass Spur Rd (FR 4160) off FR 41; no permit required, but the access road has a permanent washout past the Canyon Creek bridge that adds miles of foot/bike travel to reach here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Granite Falls, drive the Mountain Loop Highway east to about milepost 7 and turn left (north) onto Forest Road 41, Tupso Pass Road. The road is closed to vehicles at the washed-out Canyon Creek bridge; park there and walk or bike the remaining 8 to 9 miles, staying on FR 41 past the side roads and then turning right onto FR 4160 to the trailhead at its end. A free self-issued wilderness permit is required."
+  },
+  {
+   "lat": 48.177085,
+   "lng": -121.753752,
+   "elev": 3900,
+   "name": "Saddle Lake",
+   "note": "Soggy subalpine lake with an Everett Mountaineers-built shelter at its meadow edge; camping is banned within 200 ft of the lake and campfires are prohibited from here upward.",
+   "type": "Water",
+   "distMi": 2.5,
+   "directions": "Follow Trail #641 uphill from the parking area on a steady forest grade, crossing a couple of small seasonal streams on the way. Routefinding is straightforward and the lake arrives as an abrupt soggy opening rather than a viewpoint. Fill bottles here, since this is the last easy water before the alpine part of the route."
+  },
+  {
+   "lat": 48.165987,
+   "lng": -121.723497,
+   "elev": 5200,
+   "name": "Goat Flats",
+   "note": "Broad open meadow atop the ridge and the standard basecamp for the climb, about 2.5 mi below the lookout; reliable snowmelt tarns nearby but can dry out late season.",
+   "type": "Campsite",
+   "distMi": 4.8,
+   "directions": "Climb roughly two more miles past the lake, gaining out of the timber and onto the crest of the ridge before the trail opens into subalpine meadow with views west toward Puget Sound. Campfires are prohibited from the lake upward, so plan a stove-only camp when you stop."
+  },
+  {
+   "lat": 48.167123,
+   "lng": -121.702317,
+   "elev": 5900,
+   "name": "Tin Can Gap",
+   "note": "Trail crisscrosses the ridge to gain this notch; marks the end of maintained tread and the start of technical scrambling toward the peaks.",
+   "type": "Junction",
+   "distMi": 6.2,
+   "directions": "From the meadows the trail contours and climbs about two more miles, crisscrossing the ridge crest as it works north. Snow lies across this stretch well into summer and can bury the tread entirely, so carry an axe and expect to navigate by terrain rather than by trail. The gap gives the first full view of the three summits and the glacier below; do not continue past it without snow gear and routefinding experience, as this is where parties have needed rescue."
+  },
+  {
+   "lat": 48.16636,
+   "lng": -121.697229,
+   "elev": 6400,
+   "name": "South Peak lookout ladders",
+   "note": "Three wooden ladders rebarred and wired into the rock climb past the South Peak lookout pinnacle; exposed and can be icy early season, and this is the section the descent text means by 'downclimb the ladders.'",
+   "type": "Hazard",
+   "distMi": 6.5,
+   "directions": "Leave the maintained trail and drop roughly 400 feet off the far side of the gap on snow or talus onto the upper glacier, then traverse and climb back up to the saddle beneath the South Peak lookout pinnacle. Early in the year this is a straightforward snow descent and re-ascent; later it goes to bare ice with a moat where the snow has pulled away from the rock, and getting on and off the ice is the awkward part. The ladders start from the rock immediately above that saddle."
+  },
+  {
+   "lat": 48.166294,
+   "lng": -121.692641,
+   "elev": 6500,
+   "name": "Queest-Alb Glacier headwall crossing",
+   "note": "Route drops onto the north side of the ridge near the top of the Queest-Alb Glacier; a slip on the icy headwall runs out toward crevasses lower on the glacier.",
+   "type": "Hazard",
+   "distMi": 6.8,
+   "directions": "Continuing to the true summit means leaving the lookout and dropping back off the ridge onto the north side of the glacier, generally by a gully and rocky moraine rather than straight down. Rope up and watch the runout: the slope above the crevassed lower glacier holds ice by late season and a slip does not stop on its own. Most parties turn around at the lookout, so expect no boot track from here on."
+  },
+  {
+   "lat": 48.167013,
+   "lng": -121.690199,
+   "elev": 6650,
+   "name": "Col between Middle and North Finger",
+   "note": "Traverse across the glacier gains this col between the Middle and North Fingers, the jump-off point for the West Couloir onto North Peak's South Face.",
+   "type": "Junction",
+   "distMi": 7,
+   "directions": "Traverse north across the glacier below the Middle Finger, then climb roughly a thousand feet of snow to the notch; the eastern of the gullies leading up takes steps well when it is firm. Crampons and an axe are wanted, and small crevasses open along the traverse as the season goes on. The col is the last flat ground, so sort gear there before starting up the rock."
+  },
+  {
+   "lat": 48.169895,
+   "lng": -121.687865,
+   "elev": 6870,
+   "name": "North Peak, Three Fingers",
+   "note": "True summit (Class 4, 5.4 variation), topped out via the West Couloir and South Face above the col; descend by reversing the snow slopes, trail, and ladders.",
+   "type": "Summit",
+   "distMi": 7.3,
+   "directions": "From the col climb the West Couloir onto the South Face, starting on loose third and fourth class rock where anyone above will send debris down. Follow the ramp on the ridge to a chimney holding the hardest moves, exposed fourth to low fifth class and worth a rope and a few slings; a direct line on the upper west face is harder still at about 5.4. Above the chimney the angle eases to class 2-3, but a false summit sits short of the real one, so keep going until you find the register. Coming down is two to three rappels through the chimney and ramp section, often off fixed slings of unknown age that should be backed up."
+  }
+ ],
+ "pro_tips": [
+  "Carry an ice axe for the upper snow even in summer",
+  "The fixed ladders to the lookout are exposed—move carefully"
+ ],
+ "watch_out": [
+  "lingering snow",
+  "exposed ladders",
+  "long day"
+ ]
+}

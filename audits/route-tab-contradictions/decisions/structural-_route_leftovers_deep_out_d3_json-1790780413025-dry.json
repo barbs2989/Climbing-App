@@ -1,0 +1,1783 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_dana_scramble",
+   "op": "patch",
+   "columns": [
+    "approach",
+    "descent_text",
+    "itinerary",
+    "timing",
+    "gear",
+    "hazards",
+    "pro_tips",
+    "seasonal_hazards",
+    "rope_note",
+    "beta",
+    "overview",
+    "turnaround",
+    "data_quality",
+    "waypoints"
+   ]
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "op": "patch",
+   "columns": [
+    "approach",
+    "dist_km",
+    "gain_ft",
+    "pitch_detail",
+    "climbing_route",
+    "approach_variants",
+    "bivy",
+    "partner_requirements",
+    "access",
+    "waypoints",
+    "approach_logistics"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_dana_scramble",
+   "area_id": "wa_mount_dana",
+   "name": "Mount Dana Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "USGS survey party, 1928 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "varied",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "crampons (if snow/ice present on the Snow Finger or approach gullies)",
+    "map, compass, and GPS for extensive off-trail navigation",
+    "sturdy footwear suited to river fords"
+   ],
+   "hazards": [
+    "deep interior isolation near the Elwha",
+    "committing multi-day access with no quick bail-out",
+    "Elwha Snow Finger deterioration — the historic snow-ramp into Queets Basin has shrunk badly with climate-driven glacial recession and can be crevassed, broken up, or melted out by late summer",
+    "unbridged fording of the Elwha River at Chicago Camp",
+    "extensive off-trail route-finding through trailless Bailey Range terrain",
+    "loose/wet basalt on the final scramble"
+   ],
+   "verif": null,
+   "overview": "Mount Dana (6,213 ft, ~1,529 ft prominence) is an isolated, trailless summit in the Bailey Range, part of Olympic National Park's rugged interior above the headwaters of the Elwha River. It was named by the 1889-90 Seattle Press Expedition — the party that first explored the Olympic interior and named most of the Bailey Range — for Charles A. Dana, an editor of the New York Sun. The first recorded ascent was in 1928 by a USGS survey party. The peak is built of Eocene-age basalt typical of the Olympic core rocks, and its nearest higher neighbor is Mount Norton (6,397 ft), about 3.9 miles away. There is no maintained trail anywhere near the summit; climbers reach it only as a side excursion from a multi-day Bailey Range or Elwha-interior traverse, making it one of the more committing sub-6,500-ft summits in the park.",
+   "beta": "Mount Dana's only recorded route is a straightforward scramble; it is classified simply as 'scrambling' with no formal class rating published, and it lacks the pitch-by-pitch detail that exists for the main Bailey Range Traverse peaks. Most parties reach the Bailey Range crest via the Elwha River Trail and travel off-trail; an alternate approach along the ridge from Mount Barnes to Dana reportedly involves exposed downclimbing, but this has not been formally written up. Treat this as a route-finding, self-sufficient objective rather than a beta-rich one.",
+   "turnaround": "Because this is a remote, off-trail objective with no maintained trail nearby and a multi-day approach, set a firm turnaround time that leaves ample daylight and weather margin to retreat all the way back to the Bailey Range crest and down to the Elwha corridor, not just off the summit itself.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 5414,
+   "loss_ft": 5414,
+   "dist_km": 56.33,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "III",
+   "face": null,
+   "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+   "comms": "No reliable cell coverage should be expected in the Elwha/Bailey Range interior; general park guidance notes coverage is scarce to nonexistent in Olympic National Park's remote backcountry even at higher points like Hurricane Ridge, with Verizon reported as the least-bad option elsewhere in the park. Carry a satellite communicator for this objective.",
+   "descent": "Reverse the ascent route.",
+   "obj_haz": [
+    "loose rock",
+    "snow patches",
+    "very long approach",
+    "brush"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.968,
+     "lng": -123.583,
+     "elev": 1250,
+     "name": "Whiskey Bend Trailhead",
+     "note": "Start of the Elwha River Trail (28.4 mi to Low Divide); the road to it has been closed to vehicles at the Madison Falls parking area since November 2017 flood damage, so it is reached on foot or by bike.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.92393704980237,
+     "lng": -123.57234331699605,
+     "elev": 800,
+     "name": "Lillian River Trail junction",
+     "note": "Elwha River Trail crosses to the east bank near the Lillian River confluence and meets the Lillian River Trail spur; reliable water here before the climb to a high crest at mile 6.2.",
+     "type": "Junction",
+     "distMi": 4.8
+    },
+    {
+     "lat": 47.902313,
+     "lng": -123.490328,
+     "elev": 1296,
+     "name": "Mary's Falls Camp",
+     "note": "Established backcountry campsite beside the falls on the Elwha River Trail; NPS wilderness permit reservation required in summer season.",
+     "type": "Campsite",
+     "distMi": 8.8
+    },
+    {
+     "lat": 47.7366057,
+     "lng": -123.5293929,
+     "elev": 1900,
+     "name": "Chicago Camp (Elwha ford)",
+     "note": "Ford (footlog when present) of the Elwha River just before the trail's steep 3.1 mi final push toward Low Divide; last established camp before leaving the maintained trail for Elwha Basin.",
+     "type": "Water",
+     "distMi": 25.3
+    },
+    {
+     "lat": 47.759307868421054,
+     "lng": -123.55937284736842,
+     "elev": 3200,
+     "name": "Elwha Basin (\"the maze\")",
+     "note": "Off-trail bushwhack through downed timber and brush between Chicago Camp and Dodwell-Rixon Pass; boot path is faint and easy to lose in fog.",
+     "type": "Hazard",
+     "distMi": 28
+    },
+    {
+     "lat": 47.776124289473685,
+     "lng": -123.58158021578947,
+     "elev": 4200,
+     "name": "Elwha Snowfinger",
+     "note": "Perennial avalanche-fed snowfield climbing to the pass; hidden crevasses and moats form as the season progresses, so conditions change year to year.",
+     "type": "Hazard",
+     "distMi": 30
+    },
+    {
+     "lat": 47.78453,
+     "lng": -123.59268,
+     "elev": 4763,
+     "name": "Dodwell-Rixon Pass",
+     "note": "Divide between the Elwha and Queets drainages and the gateway into the Bailey Range high country; the descent from Dana reverses back to this exact point.",
+     "type": "Junction",
+     "distMi": 31
+    },
+    {
+     "lat": 47.791345,
+     "lng": -123.485665,
+     "elev": 6214,
+     "name": "Mount Dana",
+     "note": "True summit gained by a Class 2-3 side excursion off the main Bailey Range Traverse, traversing north past the Bear Pass/Mount Barnes basin from Dodwell-Rixon Pass.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 52.5,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 16,
+    "approachTimeHrs": 24.5,
+    "recommendedStart": "5:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "Standard trail hiking from the Sol Duc trailhead via Sol Duc Falls and the High Divide/Deer Lake corridor up to Heart Lake, the last established camp before the route goes fully of…",
+      "fromTo": "Sol Duc trailhead to Heart Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9.5,
+      "note": "Leaves the trail for good: sidehilling steep scree below Bogachiel Peak, over/around Cat Peak, and across the exposed but short 'Catwalk' ridge connecting to the Carrie/Stephen mas…",
+      "fromTo": "Over Cat Peak and the Catwalk to Eleven Bull Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Continues east along the range past Stephen Lake/Cream Lake country toward the Mount Norton-Mount Dana massif, picking a bench or basin camp within striking distance of Dana's summ…",
+      "fromTo": "Push deeper to a high camp below Mount Dana",
+      "section": "Approach"
+     },
+     {
+      "hrs": 12,
+      "note": "A light-pack round trip from high camp up Dana's flank: heather ledges and scree/talus give way to short class 2-3 scrambling near the summit ridge. There is no shorter way out fro…",
+      "fromTo": "Summit Mount Dana, then start the retreat",
+      "section": "Climb"
+     },
+     {
+      "hrs": 10,
+      "note": "The core retreat day, re-crossing the ground of Days 2-3 in reverse: back around Stephen/Cream Lake country, over the Catwalk and Cat Peak, and down to regain the maintained trail …",
+      "fromTo": "Back over Cat Peak and the Catwalk to Heart Lake",
+      "section": "Descent"
+     },
+     {
+      "hrs": 6,
+      "note": "An easy, mostly downhill trail walk back out via High Divide and Sol Duc Falls to the trailhead, with light packs after a week of consumed food.",
+      "fromTo": "Heart Lake to Sol Duc trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "map/compass/GPS",
+    "multi-day backcountry kit"
+   ],
+   "pro_tips": [
+    "Plan as a multi-day trip with a park wilderness permit",
+    "Strong navigation skills needed on the off-trail sections",
+    "Call the Wilderness Information Center (360-565-3100) for current Elwha Snow Finger conditions before relying on it as your route through Dodwell-Rixon Pass."
+   ],
+   "watch_out": [
+    "remote/committing terrain",
+    "lingering snow",
+    "long self-evacuation distances"
+   ],
+   "pro_needs": null,
+   "best_season": "late July-September",
+   "high_point_ft": 6213,
+   "aid_grade": null,
+   "approach": "Getting to the trailhead is part of the approach: November 2017 flood damage closed Olympic Hot Springs Road to vehicles at the Madison Falls parking area, and that closure, still listed with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adds roughly 7 miles each way of road walking or biking just to reach the Whiskey Bend trailhead (the road remains open to foot/bike traffic beyond Madison Falls). From Whiskey Bend, the actual hike-in follows the Elwha River Trail, a well-graded historic path along the river's east bank that passes the old Geyser Valley homestead sites (Michael's Cabin, Humes Ranch) in the first mile or two. The trail is mellow by Olympic standards, staying under roughly 2,000 ft of gain through its first 15+ miles, and passes Lillian River junction (~4 mi), Mary's Falls Camp (8.8 mi), Canyon Camp, Elkhorn Guard Station, and Stony Point as it winds upstream through old-growth forest with the Elwha River itself as a constant, reliable water source. Camp Wilder and Hayes River Guard Station mark roughly the trail's halfway point. Continue south to Elwha Basin and Chicago Camp (roughly 24-26 trail miles from Whiskey Bend), where the Elwha River must be forded — NPS explicitly flags this crossing as one to check conditions on beforehand, since it can be genuinely hazardous in early-season high water or after rain. At and beyond Chicago Camp the maintained trail effectively dissolves into the Elwha Basin, and travel becomes cross-country: a boot-beaten climbers' path continues up the valley headwaters toward the obvious white tongue of the Elwha Snow Finger, a permanent, avalanche-fed snowfield filling the bedrock gully that leads to Dodwell-Rixon Pass (4,763'). The Snow Finger is the standard way through this section — carry an ice axe and know self-arrest. Recent parties note the snowpack has been thinning in late summer, exposing an opening moat, running water under the snow, and rockfall funneling off the surrounding walls, so climb it early in the day and reassess if it looks broken up; NPS notes snow can linger above Chicago Camp into July. From the top of the Snow Finger at Dodwell-Rixon Pass, Mount Dana sits several miles east-northeast (its coordinates place it roughly 5 miles from the pass, closer to the Mount Norton/Elwha-headwaters side of the range than to the main Carrie-Ferry-Pulitzer crest). There is no path here; parties pick a line across talus, heather benches, and lingering snow patches toward Dana's western slopes for the final class 2 scramble to the 6,214' summit. Water becomes scarce above the pass, so carry enough for a high camp. Given the roughly 70-mile round-trip distance, this is realistically a multi-day trip (3+ days) with a high camp near Dodwell-Rixon Pass or in the upper Elwha basin, not a car-to-car push, and solid off-trail navigation skill is essential once you're past Chicago Camp.",
+   "descent_text": "This is a walk-off/scramble-down — no rappelling is documented (or generally needed) on Mount Dana or on the standard Dodwell-Rixon Pass access route. From the summit, reverse the ascent line: cross-country back west-southwest over the talus and heather benches to Dodwell-Rixon Pass, then down-climb the Elwha Snow Finger as the return route to Elwha Basin/Chicago Camp. Descending the Snow Finger is generally more hazard-prone than climbing it — a glissade is tempting on a mellow day but should be avoided if the moat at the base is open, if the surface has softened into slush, or if there's a risk of sliding into exposed rock (trip reports from this same drainage describe a nearby 'crevasse-like gap' where a stream undercuts the snow), so plan to face in and down-climb with an axe ready for self-arrest anywhere it steepens, particularly late season when the finger has thinned and pulled away from the surrounding rock walls. Below the snow, pick up the boot path back to Chicago Camp, re-ford the Elwha River, and rejoin the maintained Elwha River Trail for the long, gentle walk back down-valley (~24-26 miles) to Whiskey Bend — plus the current ~7-mile road walk/bike back to Madison Falls while the Olympic Hot Springs Road washout remains unrepaired. No technical anchors, fixed or natural, come into play anywhere on this route; the real crux of the descent is correctly reading the Snow Finger's snow condition and the scree/talus around the pass, not rope work.",
+   "bail": "Descend to the nearest interior trail and follow it out.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Requires an Olympic National Park wilderness permit (cross-country nights are arranged by phone with the Wilderness Information Center) and is only reasonable snow-free from roughly July through September; check Sol Duc Road status before committing to a trailhead date.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard trail hiking from the Sol Duc trailhead via Sol Duc Falls and the High Divide/Deer Lake corridor up to Heart Lake, the last established camp before the route goes fully off-trail. Full food/fuel loads for a week-plus trip make this a heavy-pack day even though the tread is good.",
+      "hours": 6,
+      "miles": 10,
+      "title": "Sol Duc trailhead to Heart Lake",
+      "gainFt": 3300,
+      "lossFt": 300,
+      "packLb": 44,
+      "schedule": [],
+      "objective": "Reach Heart Lake basin, the gateway to the Bailey Range"
+     },
+     {
+      "n": 2,
+      "note": "Leaves the trail for good: sidehilling steep scree below Bogachiel Peak, over/around Cat Peak, and across the exposed but short 'Catwalk' ridge connecting to the Carrie/Stephen massif, then down to a basin camp. This is the first of the long, slow off-trail days typical of Bailey Range trip reports.",
+      "hours": 9.5,
+      "miles": 9,
+      "title": "Over Cat Peak and the Catwalk to Eleven Bull Basin",
+      "gainFt": 2800,
+      "lossFt": 2400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Cross the Catwalk and drop into Eleven Bull Basin"
+     },
+     {
+      "n": 3,
+      "note": "Continues east along the range past Stephen Lake/Cream Lake country toward the Mount Norton-Mount Dana massif, picking a bench or basin camp within striking distance of Dana's summit ridge. Route-finding on benches, heather, and lingering snow patches is slow and deliberate.",
+      "hours": 9,
+      "miles": 10,
+      "title": "Push deeper to a high camp below Mount Dana",
+      "gainFt": 2600,
+      "lossFt": 1900,
+      "packLb": 36,
+      "schedule": [],
+      "objective": "Establish a high camp near the Mount Norton/Dana basin"
+     },
+     {
+      "n": 4,
+      "note": "A light-pack round trip from high camp up Dana's flank: heather ledges and scree/talus give way to short class 2-3 scrambling near the summit ridge. There is no shorter way out from here, so the party breaks camp on return and pushes several miles back toward Eleven Bull Basin the same day to keep the retreat on pace.",
+      "hours": 12,
+      "miles": 14,
+      "title": "Summit Mount Dana, then start the retreat",
+      "gainFt": 3500,
+      "lossFt": 4100,
+      "packLb": 30,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave high camp",
+        "detail": "Light day packs; main gear cached at camp."
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Reach base of summit ridge",
+        "detail": "Talus and heather benches give way to steeper ground."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Summit Mount Dana",
+        "detail": "Short class 2-3 scrambling on the final pitch."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the ascent line exactly."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Back at high camp",
+        "detail": "Break camp and repack for the multi-day return."
+       },
+       {
+        "time": "12:00 PM",
+        "label": "Start retreat toward Eleven Bull Basin",
+        "detail": "First leg of the long reversal back to Sol Duc."
+       }
+      ],
+      "objective": "Reach the 6,213 ft summit of Mount Dana and begin the return"
+     },
+     {
+      "n": 5,
+      "note": "The core retreat day, re-crossing the ground of Days 2-3 in reverse: back around Stephen/Cream Lake country, over the Catwalk and Cat Peak, and down to regain the maintained trail near Heart Lake. In the Bailey Range there is no faster way out than the way in, so this mirrors the outbound pace closely.",
+      "hours": 10,
+      "miles": 13,
+      "title": "Back over Cat Peak and the Catwalk to Heart Lake",
+      "gainFt": 1900,
+      "lossFt": 3200,
+      "packLb": 24,
+      "schedule": [],
+      "objective": "Retrace the off-trail line back to Heart Lake basin"
+     },
+     {
+      "n": 6,
+      "note": "An easy, mostly downhill trail walk back out via High Divide and Sol Duc Falls to the trailhead, with light packs after a week of consumed food.",
+      "hours": 6,
+      "miles": 10,
+      "title": "Heart Lake to Sol Duc trailhead",
+      "gainFt": 300,
+      "lossFt": 3900,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Hike out to the trailhead"
+     }
+    ],
+    "totalNote": "A demanding roughly 66-mile, 6-day round trip with an estimated 14,000-16,000 ft of cumulative gain, almost entirely off-trail through the Bailey Range — once you're near Mount Dana, retreat is essentially as long as the way in."
+   },
+   "access": {
+    "fees": "Park entrance: $30/vehicle or $15/person on foot/bike (both valid 7 days), or $55 for an annual Olympic NP pass. Wilderness camping permit: $8 per person per night plus a non-refundable $6 per-permit reservation fee (youth 15 and under camp free).",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Campfires are prohibited above 3,500 ft; the Elwha River and its tributaries are closed to fishing; the Elwha must be forded (unbridged) at Chicago Camp en route to the interior.",
+    "permit": "No separate climbing permit is required. Any overnight stay in the backcountry requires a Wilderness Camping Permit, reserved via Recreation.gov or in person at the Wilderness Information Center (WIC) in Port Angeles — required practically for this route given the multi-day approach. Nights in the cross-country zones beyond Chicago Camp cannot be booked online; arrange them by calling the WIC.",
+    "closures": "Olympic Hot Springs Road is closed to all vehicle traffic at Madison Falls due to flood/washout damage, adding roughly 7 miles of walking or biking each way to reach the Whiskey Bend trailhead; check current NPS Elwha status before planning.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "passRequired": "Olympic National Park entrance pass or America the Beautiful interagency pass, plus a wilderness camping permit",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+     "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+    }
+   },
+   "road": {
+    "name": "Olympic Hot Springs Road to Whiskey Bend Road",
+    "status": "Closed to vehicles at Madison Falls due to washout",
+    "driveNote": "From Port Angeles, drive to the Madison Falls parking area; vehicle access beyond that point has been closed since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, requiring an additional ~7 miles each way on foot or bike to reach the Whiskey Bend trailhead."
+   },
+   "climate": {
+    "fall": "Weather windows shorten and storm frequency increases after September",
+    "summer": "Best weather window; snowpack retreats through July, progressively exposing scramble terrain",
+    "winter": "Heavy snowfall and frequent cloud cover; not a viable season for this route",
+    "typical": "Marine west coast climate: the Olympics wring heavy precipitation out of Pacific storm fronts forced upward by the range. Winters bring heavy, wet snow with high avalanche danger; summers are comparatively clear and are the only realistic climbing window.",
+    "forecastZone": "NWS Olympics Zone Area Forecast (WAZ328)"
+   },
+   "emergency": {
+    "notes": "This is a remote, off-trail objective with no cell coverage expected in the Elwha/Bailey Range interior; carry a satellite communicator and plan for a long, multi-day self-rescue or ranger-notification timeline.",
+    "county": "Jefferson",
+    "rangerStation": "Olympic National Park Wilderness Information Center, Port Angeles — (360) 565-3100",
+    "nearestHospital": "Olympic Medical Center, Port Angeles, WA — nearest full-service hospital to the Elwha/Whiskey Bend approach",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; occasional traffic in Aug when tied into Bailey Range Traverse parties passing near Mt. Barnes/Dana",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic; likely well under 20 parties/season based on remoteness"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong multi-day hiking fitness able to sustain long mileage days on and off trail with a loaded pack over several days",
+     "packWeight": "Multi-day overnight/backpacking load (food, shelter, bear canister) typical of a 3-5+ day interior trip"
+    },
+    "approachTime": "Multi-day approach (several days each way through the Elwha-area interior) — not a single-day approach",
+    "requiredSkills": [
+     "Off-trail routefinding/navigation (map, compass, GPS) in trailless interior terrain",
+     "Class 2-3 scrambling on variable/loose terrain",
+     "Wilderness self-sufficiency and river/creek crossing competence in the Elwha drainage",
+     "Snow travel basics for lingering snowfields early in the season",
+     "Bear canister food storage / Leave No Trace in NP wilderness"
+    ],
+    "experienceLevel": "Experienced backcountry/wilderness traveler with prior multi-day off-trail scrambling; not a beginner objective given the remote Elwha/interior approach and self-evacuation distances"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "late July-September, narrowing to mid/late August as the most reliable stretch",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snow in the interior; conditions firm up toward late July, matching the best-season start",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Interior still snowbound; not considered in season",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Primary scramble window with the most consistently snow-free, driest conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Short, clear window before fall storms arrive; this closes out the season before wetter weather returns",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Wet maritime climate overall; the interior holds snow into summer, so the scramble season is a narrow dry window between snowmelt and fall storms",
+     "probability": "Fall storms can arrive early in the Olympics; only a 'short clear window before storms' in fall, so weather margins are tighter than typical Cascades summer objectives"
+    },
+    "exposure": "Consequences of a slip or injury are amplified by remoteness rather than technical exposure: remote/committing terrain, lingering snow on approach slopes, and long self-evacuation distances from the deep interior near the Elwha - a straightforward Class 2-3 fall could still become a multi-day extraction",
+    "avalanche": {
+     "zone": "NWAC Olympics zone exists for the range, but NWAC only issues forecasts during winter storm season — N/A for this route's actual late-July-September climbing window",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Not a true glaciated route, but the Elwha Snow Finger (the permanent snow ramp to Dodwell-Rixon Pass) behaves like a small glacier as it recedes — it can develop hidden crevasse-like gaps, an opening basal moat, and running water under the snow by late summer, so treat it with crevasse-terrain caution, especially late season."
+   },
+   "data_quality": {
+    "gaps": [
+     "No dedicated pitch-by-pitch or turn-by-turn description of the final summit scramble was found in a Mount-Dana-specific guide; route detail above the Bailey Range high country is inferred from general Bailey Range Traverse and Elwha-approach sources, not a Dana-specific trip report.",
+     "Exact mileage/elevation gain from Whiskey Bend to the Dana summit is not documented in available sources and was intentionally left out rather than estimated.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.791345,
+    "peakLng": -123.485665,
+    "trailhead": "Whiskey Bend Trailhead (Elwha)",
+    "trailheadLat": 47.968,
+    "trailheadLng": -123.583,
+    "trailheadDirection": "Via the Elwha Valley: Olympic Hot Springs Road is closed to vehicles at Madison Falls — walk or bike ~7 miles to the Whiskey Bend Trailhead"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Little is published about this peak specifically, so treat it as a route-finding, self-sufficient objective rather than a beta-rich one and carry navigation before you carry hardware: map, compass and a GPS track for extensive off-trail travel. Nothing here is rappelled and no rack is needed. An ice axe early season, and crampons if snow or ice is sitting on the Elwha Snow Finger or the approach gullies, are what the terrain actually asks for, along with a helmet and footwear you can ford a river in. Descending the Snow Finger is more hazard-prone than climbing it, so check its condition before you commit to it as your way back.",
+   "ascender": null,
+   "corrections": "Could not locate any guidebook/trip-report source specifically for this peak/route; recommend a manual data-quality check that 'Mount Dana' is not a mislabeling of a better-known WA peak.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous",
+    "Committing"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+     "role": "main",
+     "type": "bivy",
+     "notes": "This is the working base for the Elwha Basin peaks and the only sensible way to reach the Bailey Range from the south. From Chicago Camp the route into Elwha Basin is a notorious bushwhack in low snow years, then the Elwha Snowfinger leads to Dodwell-Rixon Pass at 4,763 ft and over into Queets Basin. From a basin camp, MOUNT BARNES, MOUNT NOYES and MOUNT QUEETS are all short days, MOUNT MEANY is usually taken from Seattle Basin or over the Noyes-Meany col, and a further push west from Queets Basin puts MOUNT FERRY and MOUNT PULITZER within reach. Season is everything: the snowfinger in good condition is fast and pleasant, and the same ground in September is loose talus and alder. There is no shelter, no toilet and no established site, so pick ground that will not be flooded and leave nothing. If your party is not comfortable making its own camp on unimproved terrain, this zone is not the right objective.",
+     "water": "Meltwater and snow. Abundant early, and increasingly a question by late summer once the snowfinger and the basin streams shrink — carry capacity rather than assuming the next creek is running.",
+     "permit": "Olympic wilderness permit required and CROSS-COUNTRY ZONES CANNOT BE BOOKED ONLINE — you must telephone the wilderness information centre, and the rangers will ask about your experience before issuing. Name every zone you intend to sleep in; one permit follows you between zones on a multi-day route. Bear canister mandatory. No campfires above 3,500 ft, so this is a stove-only zone. Human waste should be buried well away from meltwater or packed out on snow and rock.",
+     "capacity": "No designated sites — these are cross-country zones and parties camp on whatever flat gravel, heather bench or moraine they reach; groups are small by necessity"
+    },
+    {
+     "name": "Chicago Camp — the last established camp in the upper Elwha",
+     "role": "main",
+     "type": "camp",
+     "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for MOUNT BARNES, MOUNT MEANY, MOUNT NOYES, MOUNT QUEETS and MOUNT WILDER, all of which are reached by pushing on into the Elwha Basin above. The ford at the camp can be genuinely hazardous in high water and is the crux of the walk in for many parties. A short way beyond, the upper Elwha has a cave-like recess under an overhanging wall that has served as emergency shelter for generations, but it is a bolthole and not a camp. Camping here rather than in the basin costs you three miles and a couple of thousand feet on summit day; the trade is a sheltered site with running water and a defined trail underfoot, which matters more than it sounds after four days of walking.",
+     "water": "Reliable — the Elwha and Delabarre Creek meet here",
+     "permit": "Olympic wilderness permit required, booked in advance. It is more than fifteen miles from any road, and the booking system does not always surface camps that far in, so ring the wilderness information centre rather than assuming it is unavailable. Bear canister mandatory. No fires above 3,500 ft, which applies once you climb out of here.",
+     "capacity": "Small, and it has been battered by fallen timber — expect only a couple of usable sites near the river"
+    },
+    {
+     "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+     "role": "route",
+     "type": "camp",
+     "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whiskey Bend trailhead about six to seven miles away on foot. The park's own figure is seven. Bicycles are allowed on the closed road and cut that leg to well under an hour each way, and most parties heading deep now ride it and stash a bike. Lillian River is around four and a half miles past Whiskey Bend and Mary's Falls a little further, so either one turns a brutal first day into a civilised one when you are carrying enough food for a week in the interior. Going higher on day one is possible but you gain nothing except a shorter second day; the elevation profile of the Elwha barely rises for the first fifteen miles.",
+     "water": "Reliable at both — the Lillian River at one, the Elwha at the other; treat everything",
+     "permit": "Olympic wilderness permit required, booked in advance on the federal recreation site. These lower Elwha camps are not inside a quota area, so they are usually obtainable late, but no sites anywhere in this park are held back as same-day walk-ups. Bear canister mandatory. Fires are allowed at this elevation but the Elwha and every tributary are closed to fishing.",
+     "capacity": "Lillian River has roughly six roomy riverside sites; Mary's Falls is smaller and set in maple and grass with the river some way off"
+    },
+    {
+     "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+     "role": "route",
+     "type": "camp",
+     "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for MOUNT NORTON: the peak's east side rises roughly 3,200 ft straight out of the Hayes River drainage in under a mile, and the ascent is a steep off-trail slog rather than a climb. It is also the last comfortable place to sleep before the valley narrows, so parties bound for Chicago Camp and the Elwha Basin peaks routinely take it as night two. Going further the same day is a real option in long daylight but the trail past Camp Wilder deteriorates and the camps beyond are rougher. Bugs are heavy in the meadows from late June into July.",
+     "water": "Reliable — the Elwha at Elkhorn, the Hayes River at Hayes; both run all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not a quota area, so these are among the easier permits in the park to obtain at short notice. Bear canister mandatory.",
+     "capacity": "Both are spacious grassy flats with several sites each, alongside old guard stations that are usually empty; they are the least contested camps in the valley"
+    },
+    {
+     "name": "Mary's Falls Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "mount mt dana scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "area_id": "wa_primus_peak",
+   "name": "South Ridge / McAllister Glacier",
+   "discipline": "mountaineering",
+   "grade": "Grade II, Class 2-3",
+   "grade_system": "yds",
+   "grade_num": 3,
+   "pitches": 0,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Aug",
+   "description": null,
+   "gear": [
+    "Full glacier travel kit (rope, pickets, crevasse-rescue gear)",
+    "Ice axe and crampons",
+    "Whippet or trekking pole for probing snow bridges",
+    "Light rack and helmet for the Class 4 summit scramble"
+   ],
+   "hazards": [
+    "Heavily crevassed North Klawatti/McAllister Glacier, especially late in the season",
+    "Thin, unreliable snow bridges by August-September — probe before committing weight",
+    "Very remote — long multi-day glacier approach with no cell coverage",
+    "Complex glacier routefinding around Klawatti Col in poor visibility"
+   ],
+   "verif": null,
+   "overview": "The South Ridge / McAllister Glacier route approaches Primus from the opposite (Cascade River Road/Eldorado) side of the mountain rather than via Thunder Creek, crossing the Eldorado, Inspiration, and North Klawatti/McAllister Glaciers through the Klawatti–Austera high country. It's commonly climbed as part of the Inspiration Traverse or combined with Austera, Klawatti, and/or Tricouni Peaks rather than as a standalone objective — one climber who did it called Primus 'one of the most remote' of Washington's Bulger List summits.",
+   "beta": "Primus Peak's difficulty lies almost entirely in its remoteness and glacier approach rather than technical climbing. From this side the summit itself is class 2-3 snow and talus above the North Klawatti Glacier, reached after a short rock step at the McAllister-Klawatti notch. Most parties treat it as a 3-4 day trip with a high camp near Klawatti Col. A harder 'North Ridge' variant (5.6 trad, loose and exposed) exists for parties wanting technical climbing.",
+   "turnaround": "The summit day runs from a camp near Klawatti Col through the McAllister-Klawatti notch and across the crevassed North Klawatti Glacier, and all of it has to be reversed. Set a firm summit turnaround that gets the party back across the glacier before the afternoon softens its snow bridges, and back up the notch to camp with daylight to spare.",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 7300,
+   "loss_ft": null,
+   "dist_km": 15.3,
+   "max_angle": null,
+   "rappels": "1",
+   "commitment": "II",
+   "face": "South side, above the McAllister Glacier",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "No reliable cell coverage on the Eldorado, Inspiration and North Klawatti glaciers or the Primus massif; sporadic signal is occasionally reported on higher ridgelines. A satellite communicator (e.g., inReach) is strongly advised given the remoteness and multi-day approach.",
+   "descent": "Reverse the route back over Klawatti Col and the Eldorado/Inspiration Glaciers, or continue the traverse toward Austera/Eldorado Peak.",
+   "obj_haz": [
+    "crevasses/hidden moats",
+    "icefall",
+    "loose rock ('choss and moss')",
+    "glacier travel exposure",
+    "whiteout/routefinding on featureless icecap",
+    "remote/serious commitment"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.6855,
+     "lng": -121.0925,
+     "elev": 1200,
+     "name": "Thunder Creek Trailhead",
+     "note": "South end of Colonial Creek Campground on Hwy 20; an alternate southern approach via Eldorado Creek and the Eldorado ice cap is also used for this side.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.581894,
+     "lng": -121.091957,
+     "elev": 8510,
+     "name": "Primus Peak",
+     "note": "South side/McAllister Glacier aspect reached by continuing past Lucky Pass or via the Eldorado ice cap traverse; glacier travel gear required.",
+     "type": "Summit",
+     "distMi": 11.5
+    }
+   ],
+   "gpx": [
+    [
+     48.689243,
+     -121.095649
+    ],
+    [
+     48.685308,
+     -121.092548
+    ],
+    [
+     48.68332,
+     -121.088741
+    ],
+    [
+     48.681188,
+     -121.084816
+    ],
+    [
+     48.679043,
+     -121.081059
+    ],
+    [
+     48.676635,
+     -121.077943
+    ],
+    [
+     48.674007,
+     -121.07455
+    ],
+    [
+     48.673353,
+     -121.072549
+    ],
+    [
+     48.672057,
+     -121.069705
+    ],
+    [
+     48.670986,
+     -121.06708
+    ],
+    [
+     48.669867,
+     -121.066897
+    ],
+    [
+     48.667209,
+     -121.067052
+    ],
+    [
+     48.663472,
+     -121.065509
+    ],
+    [
+     48.661219,
+     -121.062916
+    ],
+    [
+     48.657513,
+     -121.061367
+    ],
+    [
+     48.65412,
+     -121.06222
+    ],
+    [
+     48.651082,
+     -121.060014
+    ],
+    [
+     48.648705,
+     -121.056837
+    ],
+    [
+     48.646237,
+     -121.054678
+    ],
+    [
+     48.644212,
+     -121.054119
+    ],
+    [
+     48.641418,
+     -121.053109
+    ],
+    [
+     48.639003,
+     -121.051733
+    ],
+    [
+     48.636215,
+     -121.051065
+    ],
+    [
+     48.634315,
+     -121.050874
+    ],
+    [
+     48.630733,
+     -121.050995
+    ],
+    [
+     48.628075,
+     -121.052363
+    ],
+    [
+     48.625588,
+     -121.054497
+    ],
+    [
+     48.623973,
+     -121.055023
+    ],
+    [
+     48.621469,
+     -121.05605
+    ],
+    [
+     48.620306,
+     -121.053526
+    ],
+    [
+     48.619371,
+     -121.051869
+    ],
+    [
+     48.620427,
+     -121.052335
+    ],
+    [
+     48.620424,
+     -121.052411
+    ],
+    [
+     48.620108,
+     -121.049901
+    ],
+    [
+     48.620068,
+     -121.04996
+    ],
+    [
+     48.619809,
+     -121.051757
+    ],
+    [
+     48.619822,
+     -121.051817
+    ],
+    [
+     48.61886,
+     -121.054313
+    ],
+    [
+     48.618564,
+     -121.056117
+    ],
+    [
+     48.616363,
+     -121.054863
+    ],
+    [
+     48.614967,
+     -121.053886
+    ],
+    [
+     48.615065,
+     -121.054399
+    ],
+    [
+     48.614955,
+     -121.054898
+    ],
+    [
+     48.614684,
+     -121.055021
+    ],
+    [
+     48.614542,
+     -121.055188
+    ],
+    [
+     48.614587,
+     -121.055273
+    ],
+    [
+     48.614472,
+     -121.055324
+    ],
+    [
+     48.614542,
+     -121.055708
+    ],
+    [
+     48.614898,
+     -121.055768
+    ],
+    [
+     48.615003,
+     -121.055803
+    ],
+    [
+     48.61501,
+     -121.055839
+    ],
+    [
+     48.614992,
+     -121.055818
+    ],
+    [
+     48.615105,
+     -121.055897
+    ],
+    [
+     48.615796,
+     -121.056298
+    ],
+    [
+     48.616461,
+     -121.056693
+    ],
+    [
+     48.617938,
+     -121.057635
+    ],
+    [
+     48.618785,
+     -121.058196
+    ],
+    [
+     48.618365,
+     -121.059202
+    ],
+    [
+     48.617935,
+     -121.059635
+    ],
+    [
+     48.617551,
+     -121.059821
+    ],
+    [
+     48.617437,
+     -121.059916
+    ],
+    [
+     48.617401,
+     -121.060199
+    ],
+    [
+     48.616847,
+     -121.060301
+    ],
+    [
+     48.616519,
+     -121.060489
+    ],
+    [
+     48.615991,
+     -121.060733
+    ],
+    [
+     48.615479,
+     -121.061319
+    ],
+    [
+     48.615431,
+     -121.061302
+    ],
+    [
+     48.615285,
+     -121.061448
+    ],
+    [
+     48.614893,
+     -121.062034
+    ],
+    [
+     48.614022,
+     -121.062128
+    ],
+    [
+     48.613403,
+     -121.062481
+    ],
+    [
+     48.612988,
+     -121.062784
+    ],
+    [
+     48.613013,
+     -121.062806
+    ],
+    [
+     48.613034,
+     -121.062771
+    ],
+    [
+     48.612795,
+     -121.06294
+    ],
+    [
+     48.612242,
+     -121.063687
+    ],
+    [
+     48.612167,
+     -121.064106
+    ],
+    [
+     48.612082,
+     -121.064547
+    ],
+    [
+     48.611473,
+     -121.064728
+    ],
+    [
+     48.611237,
+     -121.064999
+    ],
+    [
+     48.611189,
+     -121.06533
+    ],
+    [
+     48.610981,
+     -121.06561
+    ],
+    [
+     48.61086,
+     -121.065884
+    ],
+    [
+     48.610421,
+     -121.065894
+    ],
+    [
+     48.61075,
+     -121.066052
+    ],
+    [
+     48.610869,
+     -121.066239
+    ],
+    [
+     48.610883,
+     -121.066237
+    ],
+    [
+     48.61101,
+     -121.066731
+    ],
+    [
+     48.61056,
+     -121.067239
+    ],
+    [
+     48.610394,
+     -121.067697
+    ],
+    [
+     48.610086,
+     -121.067934
+    ],
+    [
+     48.609579,
+     -121.068209
+    ],
+    [
+     48.609179,
+     -121.068606
+    ],
+    [
+     48.608849,
+     -121.069027
+    ],
+    [
+     48.608566,
+     -121.069228
+    ],
+    [
+     48.608197,
+     -121.069432
+    ],
+    [
+     48.607691,
+     -121.069657
+    ],
+    [
+     48.607473,
+     -121.069991
+    ],
+    [
+     48.607187,
+     -121.070023
+    ],
+    [
+     48.607187,
+     -121.070031
+    ],
+    [
+     48.607179,
+     -121.070022
+    ],
+    [
+     48.606687,
+     -121.069783
+    ],
+    [
+     48.606037,
+     -121.070404
+    ],
+    [
+     48.605175,
+     -121.070607
+    ],
+    [
+     48.6044,
+     -121.071004
+    ],
+    [
+     48.603137,
+     -121.070832
+    ],
+    [
+     48.602241,
+     -121.070967
+    ],
+    [
+     48.601397,
+     -121.071011
+    ],
+    [
+     48.60071,
+     -121.071149
+    ],
+    [
+     48.600094,
+     -121.070956
+    ],
+    [
+     48.598928,
+     -121.071062
+    ],
+    [
+     48.598396,
+     -121.071218
+    ],
+    [
+     48.598093,
+     -121.071219
+    ],
+    [
+     48.59808,
+     -121.071254
+    ],
+    [
+     48.597958,
+     -121.071218
+    ],
+    [
+     48.597479,
+     -121.071146
+    ],
+    [
+     48.597572,
+     -121.071373
+    ],
+    [
+     48.597388,
+     -121.071681
+    ],
+    [
+     48.596936,
+     -121.071909
+    ],
+    [
+     48.596263,
+     -121.072278
+    ],
+    [
+     48.595853,
+     -121.07329
+    ],
+    [
+     48.595158,
+     -121.074345
+    ],
+    [
+     48.594602,
+     -121.074869
+    ],
+    [
+     48.594482,
+     -121.075223
+    ],
+    [
+     48.594015,
+     -121.075258
+    ],
+    [
+     48.594024,
+     -121.07524
+    ],
+    [
+     48.593585,
+     -121.076013
+    ],
+    [
+     48.593114,
+     -121.076224
+    ],
+    [
+     48.593129,
+     -121.076242
+    ],
+    [
+     48.59333,
+     -121.076295
+    ],
+    [
+     48.593837,
+     -121.075956
+    ],
+    [
+     48.594755,
+     -121.077152
+    ],
+    [
+     48.593998,
+     -121.077364
+    ],
+    [
+     48.592904,
+     -121.078911
+    ],
+    [
+     48.592506,
+     -121.079421
+    ],
+    [
+     48.592371,
+     -121.079991
+    ],
+    [
+     48.592616,
+     -121.080345
+    ],
+    [
+     48.592822,
+     -121.080805
+    ],
+    [
+     48.593197,
+     -121.081168
+    ],
+    [
+     48.593659,
+     -121.082297
+    ],
+    [
+     48.593375,
+     -121.083378
+    ],
+    [
+     48.593383,
+     -121.084767
+    ],
+    [
+     48.593046,
+     -121.08577
+    ],
+    [
+     48.592752,
+     -121.085931
+    ],
+    [
+     48.592524,
+     -121.086575
+    ],
+    [
+     48.592614,
+     -121.087639
+    ],
+    [
+     48.59251,
+     -121.088543
+    ],
+    [
+     48.591808,
+     -121.089448
+    ],
+    [
+     48.59126,
+     -121.09077
+    ],
+    [
+     48.590742,
+     -121.091834
+    ],
+    [
+     48.589104,
+     -121.091164
+    ],
+    [
+     48.588677,
+     -121.091196
+    ],
+    [
+     48.58742,
+     -121.090595
+    ],
+    [
+     48.587282,
+     -121.090509
+    ],
+    [
+     48.587255,
+     -121.090543
+    ],
+    [
+     48.587269,
+     -121.090551
+    ],
+    [
+     48.586822,
+     -121.090566
+    ],
+    [
+     48.586135,
+     -121.090337
+    ],
+    [
+     48.585538,
+     -121.089586
+    ],
+    [
+     48.584917,
+     -121.088884
+    ],
+    [
+     48.584304,
+     -121.087958
+    ],
+    [
+     48.583977,
+     -121.086971
+    ],
+    [
+     48.583789,
+     -121.085806
+    ],
+    [
+     48.582574,
+     -121.084239
+    ],
+    [
+     48.581802,
+     -121.083813
+    ],
+    [
+     48.580923,
+     -121.083561
+    ],
+    [
+     48.580918,
+     -121.08354
+    ],
+    [
+     48.580369,
+     -121.083409
+    ],
+    [
+     48.580187,
+     -121.083221
+    ],
+    [
+     48.580468,
+     -121.083341
+    ],
+    [
+     48.580852,
+     -121.083618
+    ],
+    [
+     48.580639,
+     -121.084094
+    ],
+    [
+     48.580418,
+     -121.084499
+    ],
+    [
+     48.580383,
+     -121.085108
+    ],
+    [
+     48.580547,
+     -121.085481
+    ],
+    [
+     48.58045,
+     -121.085966
+    ],
+    [
+     48.58067,
+     -121.086401
+    ],
+    [
+     48.580938,
+     -121.086918
+    ],
+    [
+     48.581142,
+     -121.08756
+    ],
+    [
+     48.581102,
+     -121.088005
+    ],
+    [
+     48.581256,
+     -121.088547
+    ],
+    [
+     48.581173,
+     -121.089084
+    ],
+    [
+     48.581084,
+     -121.089582
+    ],
+    [
+     48.581002,
+     -121.090203
+    ],
+    [
+     48.581039,
+     -121.090694
+    ],
+    [
+     48.581266,
+     -121.090905
+    ],
+    [
+     48.581273,
+     -121.091056
+    ],
+    [
+     48.581446,
+     -121.091247
+    ],
+    [
+     48.581917,
+     -121.091823
+    ],
+    [
+     48.58212,
+     -121.091969
+    ],
+    [
+     48.582071,
+     -121.091986
+    ],
+    [
+     48.582037,
+     -121.092021
+    ],
+    [
+     48.582062,
+     -121.092006
+    ],
+    [
+     48.582063,
+     -121.091993
+    ],
+    [
+     48.582184,
+     -121.091855
+    ],
+    [
+     48.581867,
+     -121.091925
+    ],
+    [
+     48.581822,
+     -121.091918
+    ],
+    [
+     48.58192,
+     -121.091938
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "mountaineering",
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 25,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 7,
+    "approachTimeHrs": 12,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glac…",
+      "fromTo": "Approach to Eldorado high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col.",
+      "fromTo": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6,
+      "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the…",
+      "fromTo": "Traverse to Primus and climb the south side",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7,
+      "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost.",
+      "fromTo": "Return to Eldorado Trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No rock gear required for the scramble; full glacier rescue equipment essential.",
+   "what_to_bring": [
+    "rope and crevasse rescue kit",
+    "ice axe",
+    "crampons",
+    "helmet",
+    "glacier camp gear",
+    "navigation tools"
+   ],
+   "pro_tips": [
+    "Budget at least 3 days and strong glacier travel skills — this is one of the more remote Bulger List summits in the state.",
+    "Commonly combined with Austera, Klawatti, and/or Tricouni Peaks on an Inspiration/Isolation Traverse rather than climbed as a standalone objective.",
+    "Probe every snow bridge on the North Klawatti/McAllister crossing in August/September conditions."
+   ],
+   "watch_out": [
+    "Late-season crevasse bridges can look solid but only thinly cover open cracks — flagged specifically on the North Klawatti/McAllister crossing by trip reports",
+    "This route is frequently combined into multi-peak traverses; make sure your party has the stamina and glacier skills for the full multi-day commitment, not just the summit day"
+   ],
+   "pro_needs": "None on the scramble; glacier protection as conditions dictate.",
+   "best_season": "Mid-July through August",
+   "high_point_ft": 8508,
+   "aid_grade": null,
+   "approach": "Trailhead is the Eldorado Creek climbers' trailhead on Cascade River Road, roughly mile 20 out of Marblemount, at about 2,100 ft. From the parking pullout, backtrack a short distance downstream along the road to find a log or braided crossing of the Cascade River; ford/cross and pick up the unsigned but well-trodden climbers' path on the far bank, angling up through heavy timber. This boot path is steep and root-laced, gaining roughly 1,800-1,900 ft through forest before breaking out at a boulder field around 4,000 ft; follow cairns and the intermittent trail on the right side of the talus (roughly 1,000 vertical ft of boulder-hopping) up into the open meadows of Eldorado Creek/Eldorado Basin. From the basin, continue up benches toward the toe of the Eldorado Glacier (often called Eldorado Camp, ~6,000-7,500 ft) - this is a reasonable first-night camp and the last reliable running water before the ice cap. Rope up here: the Eldorado Glacier is broken and thinly bridged in a normal-to-low snow year, and parties have needed to weave crevasse mazes even on the standard line. From upper Eldorado Glacier, traverse north below Eldorado's east ridge and continue on the Inspiration Glacier toward Klawatti Col (~7,800 ft) - this leg is long, exposed to whiteout (several parties describe navigating the Inspiration's crevasse fields with zero visibility), and is the standard second camp for the Eldorado Ice Cap traverse that accesses Primus. From Klawatti Col camp, the climb of Primus itself is a summit-day push: down-climb or make a short (~50 ft) rappel through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier, rope up and traverse east/north across the glacier (probing for hidden crevasses - this section has caught parties by surprise even in good visibility) to the base of Primus's south/west ridge, then unrope and scramble snow-covered talus to the 8,508 ft summit. Total one-way distance from trailhead to summit is on the order of 18-20 miles with roughly 6,400 ft of net gain, normally split over 2-3 days each way; mid-to-late summer (glacier bridges more consolidated, less whiteout risk) is the recommended window.",
+   "descent_text": "Descend by reversing the ascent line: down-climb the summit talus back to the North Klawatti Glacier, rope back up, and re-cross the glacier (same crevasse-probing caution as the approach) to the base of the McAllister-Klawatti notch. Regaining the notch back up to Klawatti Col camp is normally a climb/scramble rather than a rappel; the technical crux of the day - the short ~50 ft step between the notch and the glacier - is the one spot parties commonly fix a hand line or short rappel on the way down from the ridge, then climb the same step (with a boost from a partner or a fixed line) on the return leg. Primus's west-ridge line has a similar ~8,200 ft notch requiring a roughly 50 ft rappel to regain the glacier when descending, which lines up with an account of a party rappelling at the McAllister-Klawatti col - treat this as a single, short technical rappel rather than a multi-pitch rap descent. A single 30-60m rope is more than sufficient (a doubled 30m or single 60m easily covers 50-60 ft); anchors are natural (slings on horns/blocks) rather than bolted, since this is remote glaciated terrain with no fixed hardware. From Klawatti Col camp, the multi-day exit reverses the approach: back across the Inspiration Glacier (whiteout and crevasse hazard again), down the Eldorado Glacier, through Eldorado Basin, down the boulder field and timber climbers' path, and back across the Cascade River to the trailhead. Watch for softening glacier bridges and increased rockfall/scree looseness on the boulder-field descent in the afternoon heat.",
+   "bail": "Retreat requires recrossing the glacier; the rock scramble itself is straightforward to reverse.",
+   "pitch_detail": [
+    {
+     "grade": "Climbers' path",
+     "notes": "From the Eldorado Creek trailhead (~2,100 ft), cross the Cascade River and climb the steep path through timber and the boulder field near 4,000 ft into Eldorado Basin and on to the toe of the Eldorado Glacier.",
+     "pitch": "Trailhead to Eldorado camp"
+    },
+    {
+     "grade": "Glacier travel, roped",
+     "notes": "Cross the Eldorado and Inspiration Glaciers, weaving through crevasses, to a camp near Klawatti Col (~7,800 ft).",
+     "pitch": "Eldorado camp to Klawatti Col"
+    },
+    {
+     "grade": "Short rock step (~50 ft)",
+     "notes": "Downclimb or make a short rappel through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier.",
+     "pitch": "McAllister-Klawatti notch"
+    },
+    {
+     "grade": "Glacier travel, roped",
+     "notes": "Traverse east and north across the crevassed North Klawatti Glacier, probing for hidden cracks, to the base of Primus's south/west ridge.",
+     "pitch": "North Klawatti Glacier"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Unrope and scramble snow-covered talus, passing a false summit near 8,270 ft on climber's left, to the 8,508 ft summit.",
+     "pitch": "Summit scramble"
+    }
+   ],
+   "itinerary": {
+    "cal": "Cascade River Road to the Eldorado Trailhead is gated/washed out at various points early season - check NPS road status before a spring trip; a backcountry permit from the Marblemount Wilderness Information Center is required for the overnight camps.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glacier gear.",
+      "hours": 6.5,
+      "miles": 7,
+      "title": "Approach to Eldorado high camp",
+      "gainFt": 4400,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a treeline/high camp near or above the Eldorado Glacier"
+     },
+     {
+      "n": 2,
+      "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col.",
+      "hours": 5.5,
+      "miles": 3.5,
+      "title": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+      "gainFt": 2000,
+      "lossFt": 400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp near Klawatti Col (~7,500-7,800 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the col camp.",
+      "hours": 6,
+      "miles": 3,
+      "title": "Traverse to Primus and climb the south side",
+      "gainFt": 1400,
+      "lossFt": 1400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Klawatti Col camp",
+        "detail": "Rope up for the glacier crossing."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base of Primus's south side",
+        "detail": "Stow crampons if terrain goes to rock/talus."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Summit Primus Peak",
+        "detail": "Class 2-4 scrambling on the south aspect."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Back at Klawatti Col camp",
+        "detail": "Reverse the glacier crossing."
+       }
+      ],
+      "objective": "Summit Primus Peak (8,508 ft) via the Class 2-4 south side"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost.",
+      "hours": 7,
+      "miles": 6.5,
+      "title": "Return to Eldorado Trailhead",
+      "gainFt": 200,
+      "lossFt": 5700,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Hike/glacier-travel out to the car"
+     }
+    ],
+    "totalNote": "A remote 3-4 day glacier backpack from the Eldorado side: roughly 20 miles round trip with on the order of 8,000 ft of cumulative gain; most parties budget a buffer day for weather and glacier routefinding."
+   },
+   "access": {
+    "fees": "$10 per person plus a $6 non-refundable reservation fee, mid-May through early October; no fee off-season.",
+    "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+    "rules": "No new fixed/bolted anchors in NPS wilderness climbing areas; camp only at durable/established sites in this cross-country zone.",
+    "permit": "Backcountry/wilderness permit required for overnight stays; obtained at the Wilderness Information Center, Marblemount.",
+    "closures": "Cascade River Road is closed to vehicles at Eldorado (mile 20) in winter and typically doesn't open to the Cascade Pass Trailhead until late June or early July depending on snowpack/storm damage; check current NPS road-conditions postings before your trip.",
+    "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+    "group_limit": 6,
+    "landManager": "North Cascades National Park (National Park Service)",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP wilderness permit — limited, with a fee",
+     "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead. Camps above Thunder Creek fall in cross-country zones."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road to Eldorado Trailhead",
+    "status": "Paved for the first ~10 miles, then rough gravel; the final 3 miles to road's end are narrow with steep drop-offs, limited turnouts, and can require high clearance for ruts/washouts.",
+    "driveNote": "From Marblemount, follow Cascade River Road roughly 20 miles to the Eldorado parking area (trailers/vehicles over 22 ft long or 8 ft wide are prohibited past mile 18); the climbers' trail departs from this lot.",
+    "seasonalGate": "Closed to vehicles at Eldorado (mile 20)/park boundary (mile 18) in winter; usually opens for the season by late June, sometimes not until early July after a heavy snow year."
+   },
+   "climate": {
+    "typical": "Marine-influenced Cascade alpine climate with a heavy, wet snowpack that persists on the Eldorado/Inspiration/North Klawatti glaciers well into summer; expect afternoon cloud buildup and possible thunderstorms even on otherwise clear forecasts.",
+    "bySeason": {
+     "fall": "By September, glaciers on this route become notably more melted-out and crevassed, with thin, unreliable snow bridges — one September party described probing every step with a whippet due to bridges that would poke through when stepped on.",
+     "summer": "Prime window (July-August) with the most reliable snow bridges over crevasses on the glacier crossings."
+    },
+    "forecastZone": "NWS/NWAC 'West Slopes North' zone (WAZ567); NWAC's avalanche forecast for this zone only runs mid-November through mid-April."
+   },
+   "emergency": {
+    "notes": "This is one of the more remote lines in the North Cascades — no cell coverage on the glaciers, multi-day commitment, and complex crevasse routefinding. Carry a satellite communicator and file a detailed itinerary with the Marblemount WIC.",
+    "county": "Skagit County, WA",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount.",
+    "nearestHospital": "PeaceHealth United General Hospital, Sedro-Woolley — roughly 90 minutes' drive from the Eldorado trailhead area.",
+    "sheriffDispatch": "Skagit County Sheriff (911) coordinates SAR with NPS climbing rangers."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed in isolation; most traffic comes from parties doing the Inspiration/Isolation Traverse or Eldorado Ice Cap circuit who tag Primus en route, concentrated in Aug",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely fewer than 10-15 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "6+ mile approach (Thunder Creek or Eldorado approaches) with substantial elevation gain to a high glacier camp, followed by a long roped glacier travel/summit day",
+     "packWeight": "40-50+ lb overnight pack for multi-day glacier camp (rope, rack, snow/glacier gear, camping kit)"
+    },
+    "approachTime": "1-2 days to reach a high glacier camp (McAllister Glacier/Eldorado ice cap area), plus a separate summit day",
+    "requiredSkills": [
+     "glacier travel & crevasse rescue (companion rescue competency required)",
+     "roped travel across open crevasses and bergschrund",
+     "Class 4 scrambling on loose, exposed alpine rock",
+     "route-finding in remote, unmarked glaciated terrain",
+     "self-arrest",
+     "multi-day backcountry/glacier camping"
+    ],
+    "experienceLevel": "Experienced alpine climbers only - this is a remote glaciated objective requiring prior crevasse rescue practice and comfort with sustained Class 4 terrain far from help"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through August; conditions can hold into early September in a good year",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Matches the best-season window; snow bridges over crevasses are typically still well consolidated early-to-mid month",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Prime climbing month - glacier generally most stable and bergschrund most manageable",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Crevasses and bergschrund open up further and snow bridges deteriorate as summer progresses; early-season snowfall can arrive by late month",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical North Cascades alpine summer pattern - stretches of clear, stable weather broken by fast-moving frontal systems; expect cooling and wind exposure on the open glacier",
+     "probability": "Afternoon thunderstorms/showers are possible, especially in August, and are more consequential given the sustained glacier and ridge exposure"
+    },
+    "exposure": "High consequence - open crevasse/bergschrund falls on the glacier approach, combined with loose, exposed Class 4 rock near the summit ridge; a slip on the loose summit rock adds serious fall potential on top of the glacier hazard",
+    "avalanche": {
+     "zone": "N/A - this route is climbed July-Sept, outside NWAC's winter/spring (roughly Nov-May) forecast season, and no NWAC zone specifically forecasts this remote North Cascades NP glacier",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Significant - crossing the McAllister Glacier and its bergschrund is the primary technical hazard on this route; softening snow bridges in the afternoon raise fall-through risk later in the day"
+   },
+   "data_quality": {
+    "gaps": [
+     "No single source gives consistent mileage/elevation-gain totals for the full Eldorado-side approach to the summit",
+     "Current-year crevasse pattern on the North Klawatti/McAllister Glacier is not something that can be verified in advance — check recent trip reports before committing",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.5819,
+    "peakLng": -121.092,
+    "trailhead": "Thunder Creek Trailhead",
+    "trailheadLat": 48.6855,
+    "trailheadLng": -121.0925,
+    "trailheadDirection": "Start at the Thunder Creek Trailhead at Colonial Creek Campground on SR 20; this is not the Eldorado Creek trailhead on Cascade River Road, which serves Dorado Needle and is 21.5 km away."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": " 2026-07-31: access.notes corrected — stripped a leftover \"Mount Tom area, North Cascades\" clause (DB-wide boilerplate contamination pattern first identified in batch 15); Primus Peak has no connection to Mount Tom.",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "The far end of the Eldorado ice cap: five glaciers and a notch at the McAllister-Klawatti col",
+     "notes": "This is the long way to Primus and it comes from the opposite side of the mountain to the East Slope. From the Eldorado Creek trailhead on Cascade River Road near 2,100 ft, cross the Cascade River, climb the steep root-laced boot path through timber, cross the boulder field around 4,000 ft following cairns on the right side of the talus, and reach the meadows of Eldorado Basin. Continue to the toe of the Eldorado Glacier and rope up — it is broken and thinly bridged in a normal-to-low snow year.\n\nFrom the upper Eldorado Glacier, traverse north below Eldorado's east ridge and continue on the Inspiration Glacier toward Klawatti Col near 7,800 ft. Parties describe crossing the Inspiration's crevasse fields with zero visibility, so plan for it.\n\nSummit day from a Klawatti Col camp: downclimb or make a short rappel of about 50 ft through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier, rope up, and traverse east and north across it — probing, because this stretch has caught parties by surprise even in good visibility — to the foot of Primus's south side. Then unrope and walk.\n\nThe route crosses the Eldorado, Inspiration, McAllister, Klawatti and North Klawatti glaciers in sequence; Austera Towers is passed and bypassed on a short scree ramp along the glacier's eastern edge.",
+     "season": "Mid-July through August, when the glacier bridges are most consolidated and whiteout risk is lowest",
+     "hazards": [
+      "A heavily crevassed North Klawatti and McAllister glacier system, especially late season",
+      "Thin, unreliable snow bridges by August and September — probe before committing weight",
+      "Complex glacier route-finding around Klawatti Col in poor visibility",
+      "A short technical step at the McAllister-Klawatti notch that has to be reversed at the end of the day",
+      "Extreme remoteness: a multi-day approach with no cell coverage"
+     ],
+     "baseFinding": "THE ONE FINDABLE FEATURE ON THIS ROUTE IS THE NOTCH AT THE McALLISTER-KLAWATTI COL, AND IT IS FINDABLE BECAUSE IT IS THE ONLY PLACE ALL DAY YOU NEED A ROPE FOR ROCK. It is a step of roughly 50 ft: downclimbed, hand-lined, or rappelled off a sling on a horn or block — there is no fixed hardware. If you have crossed a col without a technical step, you are not through it yet. AFTER THE NOTCH, THE TEST IS WHAT YOU ARE STANDING ON RATHER THAN WHAT YOU CAN SEE. You drop onto the NORTH KLAWATTI GLACIER and traverse east and north across it. The climbing begins where you take the rope OFF: snow-covered talus, class 2-3, straight to the 8,508 ft summit. There is no notch, no rib and no marked start above the glacier — the honest answer is that this route has no rock landmark at its base, and the col behind you is what tells you where you are. THE NEGATIVE TEST IS THE STRONG ONE AND IT SETTLES THE WHOLE PEAK: THE OTHER STANDARD LINE ON PRIMUS IS REACHED FROM THUNDER CREEK, AND IT STARTS AT LUCKY PASS — a notch at the head of the Borealis Glacier where the route to Tricouni Peak splits off east. IF YOU ARE AT A PASS WITH A SECOND PEAK'S ROUTE LEAVING IT, YOU ARE ON THE EAST SLOPE AND YOU CAME UP THE WRONG VALLEY FOR THIS ROUTE. The two lines are on opposite sides of the mountain and share no ground below the summit. AND WATCH THE FALSE SUMMIT WHATEVER SIDE YOU CAME FROM: a false top stands around 8,270 ft and is passed on climber's-left. A high point reached without traversing round anything is not the summit."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Notch at the McAllister-Klawatti col",
+     "notes": "From Klawatti Col camp the climb of Primus itself is a summit-day push: down-climb or make a short (~50 ft) rappel through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier."
+    },
+    {
+     "n": 2,
+     "label": "North Klawatti Glacier to the base of the south/west ridge",
+     "notes": "Rope up and traverse east/north across the glacier to the base of Primus's south/west ridge, probing for hidden crevasses — this section has caught parties by surprise even in good visibility."
+    },
+    {
+     "n": 3,
+     "label": "Snow-covered talus to the summit",
+     "notes": "Unrope and scramble snow-covered talus to the 8,508 ft summit."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 7800,
+     "name": "Klawatti Col camp, Eldorado ice-cap traverse approach",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the multi-day route in, from the Eldorado side across the ice, and it is NOT how most parties reach these two peaks — it is recorded so the option is visible, not recommended as a shortcut. It is a genuinely different undertaking: full glacier travel with crevasse rescue capability, several nights on snow, and a committing exit. Camps are on rock islands surrounded by ice, so they are windy and there is no shelter. Choose it because you want the traverse.",
+     "water": "Meltwater and snow across the ice cap; essentially always available in season but usually means melting",
+     "permit": "A DIFFERENT approach means a different permit. Parties coming across the ice cap from Eldorado start in a zone that does accept advance reservations, but the zone boundaries out here are not obvious on the ground and a traverse can cross more than one. Sort the whole itinerary night by night with Marblemount, since a reservation for one zone is not a permit for the next.",
+     "capacity": "Rock islands in the ice with room for a few tents; party size capped by the zone permit"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south ridge rdg mcallister glacier glac gl",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

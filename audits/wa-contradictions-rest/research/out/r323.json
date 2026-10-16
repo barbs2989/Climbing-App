@@ -1,0 +1,602 @@
+{
+ "file": "r323.json",
+ "results": [
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The commitment column's VI is clearly out of line with a two-day spring snow/ice route (grade III-IV in the row), but no external source found states a commitment numeral for the X Couloir: the published trip reports rate it only by its ice crux (AI3+) and Wikipedia gives only time (~9 hours) and hazards. Without two sources naming a numeral, grade/commitment are left for a later pass.",
+   "sources": [
+    "https://www.lemkeclimbs.com/lincoln-peak.html",
+    "https://www.countryhighpoints.com/lincoln-peak/",
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Approach side (Rankin Creek from FR-38 vs Heliotrope Ridge and the Coleman/Deming glaciers)",
+   "verdict": "fixed",
+   "correct_value": "This row's plan is the FR-38 / Rankin Creek approach to a ~6,100 ft treeline camp; the partner requirements, crevasse note and permit note should describe that approach, not a Heliotrope/Coleman-Deming glacier approach.",
+   "evidence": "Three independent trip reports describe the X Couloir approach by NF-38 (Middle Fork Nooksack) to the switchbacks, then up the Rankin Creek basin to camp at ~6,000-6,100 ft at the highest trees above Wallace Creek, with the crux at the bergschrund/serac of the southwest basin. None crosses the Coleman or Deming glaciers. (Heliotrope is a genuine alternative via the Thunder Glacier cirque — logged separately — but it is not the approach this row's itinerary, approach and variant describe.)",
+   "sources": [
+    "https://onehikeaweek.com/2020/05/29/lincoln-peak/",
+    "https://www.lemkeclimbs.com/lincoln-peak.html",
+    "https://www.countryhighpoints.com/lincoln-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Approach side (Rankin Creek from FR-38 vs Heliotrope Ridge and the Coleman/Deming glaciers)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "glacier approach from the Heliotrope Ridge trailhead to a high camp below the Black Buttes",
+     "replace": "approach from Forest Road 38 up the Rankin Creek basin to a treeline camp near 6,100 ft"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Approach side (Rankin Creek from FR-38 vs Heliotrope Ridge and the Coleman/Deming glaciers)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "a multi-hour glacier approach across the Coleman/Deming glaciers to high camp",
+     "replace": "a multi-hour approach up the Rankin Creek basin to a treeline high camp"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Approach side (Rankin Creek from FR-38 vs Heliotrope Ridge and the Coleman/Deming glaciers)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "the route crosses the Coleman and Deming glaciers en route to the Black Buttes, matching the crevasse/serac hazard",
+     "replace": "bergschrunds and a serac step guard the southwest basin above the Rankin Creek camp"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Approach side (Rankin Creek from FR-38 vs Heliotrope Ridge and the Coleman/Deming glaciers)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "; a recreation pass is needed to park at the Heliotrope Ridge trailhead.",
+     "replace": "."
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Approach side (Rankin Creek from FR-38 vs Heliotrope Ridge and the Coleman/Deming glaciers)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "find": " (e.g. Heliotrope Ridge)",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Land manager",
+   "verdict": "fixed",
+   "correct_value": "Mount Baker-Snoqualmie National Forest",
+   "evidence": "Lincoln Peak lies in the Mount Baker Wilderness in Whatcom County; the Mount Baker Wilderness is wholly contained within Mount Baker-Snoqualmie National Forest. Okanogan-Wenatchee is east of the crest and does not manage this area.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lincoln_Peak_(Washington)",
+    "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Land manager",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Okanogan-Wenatchee National Forest.",
+     "replace": "Mount Baker-Snoqualmie National Forest."
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Where the road is drivable to",
+   "verdict": "fixed",
+   "correct_value": "FR-38 is currently closed at milepost 7 by a December 2025 washout (no repair timeline); in normal years parties drive to the mile-12.5 switchback, and the road past about mile 9-10 is seasonally closed Dec 1-Jun 15.",
+   "evidence": "The Forest Service alert (July 2026) states FSR 38 is closed at milepost 7 due to a washout; WTA's Elbow Lake page likewise cites a washout and barrier on FR 38 at milepost 7, and a June 2026 news report confirms the December 2025 washout with no repair timeline. In open years trip reports drive 12.5 miles to the first switchback; the seasonal closure past mile 9 (12/01-6/15) and a gate near milepost 9.9 are reported separately. The row's approach prose only said 'washout damage' without saying the road is barriered at milepost 7, so it now states that.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure",
+    "https://www.wta.org/go-hiking/hikes/elbow-lake",
+    "https://www.cascadiadaily.com/2026/jun/16/flood-damaged-forest-roads-are-eroding-access-for-outdoor-enthusiasts/",
+    "https://onehikeaweek.com/2020/05/29/lincoln-peak/",
+    "https://www.countryhighpoints.com/lincoln-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Where the road is drivable to",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "FR-38 (Middle Fork Nooksack River Road) has reported washout damage from the December 2025 flood season with no confirmed repair timeline",
+     "replace": "FR-38 (Middle Fork Nooksack River Road) is closed at milepost 7 by a washout from the December 2025 floods, with no confirmed repair timeline"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Where the road is drivable to",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "as of mid-2026 FR-38 has reported washout damage from the December 2025 floods with no confirmed repair timeline",
+     "replace": "as of mid-2026 FR-38 is closed at milepost 7 by a washout from the December 2025 floods, with no confirmed repair timeline"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Where the road is drivable to",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "corridor sustained flood/washout damage reported December 2025",
+     "replace": "closed at milepost 7 by a December 2025 washout"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Apr-Jun",
+   "evidence": "Documented recent ascents/descents fall in April (Apr 14 2025; Apr 27-28 2019) and May (May 25-26 2018; May 29-31 2020), matching the row's own itinerary window (roughly April-June) and optimal late May-June; July ascents exist historically but the row rates July risky. The season chip is set to the Apr-Jun window and its parenthetical explanation (which belongs in best_season) dropped.",
+   "sources": [
+    "https://www.countryhighpoints.com/lincoln-peak/",
+    "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir",
+    "https://www.lemkeclimbs.com/lincoln-peak.html",
+    "https://onehikeaweek.com/2020/05/29/lincoln-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "May-Jul (spring snow climb; essentially never done in summer)",
+     "value": "Apr-Jun"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Roughly May-Jul.",
+     "replace": "Roughly Apr-Jun."
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Whether Heliotrope Ridge can reach the X Couloir",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach, variant notes, baseFinding and descent_text insist Heliotrope serves only the NW face and must not be used. Wikipedia says the southwest face is reached from the Heliotrope Ridge Trail via the Thunder Glacier cirque, with the Middle Fork road as an alternative, and one trip report chose Rankin Creek because it looked slightly shorter than the Heliotrope approach — implying Heliotrope is a real alternative. The row's exclusivity claim looks wrong, but rewriting four prose fields needs a firmer second source on the Heliotrope/Thunder line.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Buttes",
+    "https://onehikeaweek.com/2020/05/29/lincoln-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Route identity and first ascent",
+   "verdict": "fixed",
+   "correct_value": "This row is the Wilkes-Booth line on the NW face, first climbed by Daniel Coltrane and Michal Rynkiewicz on March 13, 2015; the 1958 Cooper/O'Conner climb is a different line (the north flank) and should not be presented as this route.",
+   "evidence": "The AAC report and the first-ascent trip report both record Wilkes-Booth (NW face, IV WI4 / AI4+) as a new route climbed March 13, 2015 by Coltrane and Rynkiewicz from the Heliotrope Ridge trailhead. Wikipedia's Black Buttes article records Ed Cooper and Fergus O'Conner's May 4, 1958 ascent as the peak's northern flank (a ~1,000 ft north face) — a separate line. The approach prose attributed the 1958 route to this row; that sentence and the variant's 'history unsettled' note are rewritten to describe the NW face line.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/",
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route identity and first ascent",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The line aims for the base of Lincoln's roughly 1,000-ft north face/ridge, a route first climbed in May 1958 (Cooper and O'Conner) that 'demanded ice screws' — meaning it's genuinely an ice/mixed objective, not a snow scramble,",
+     "replace": "The line aims for the base of Lincoln's northwest face, where the route climbs roughly 2,000 ft of steep ice and mixed ground — genuinely an ice/mixed objective, not a snow scramble,"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route identity and first ascent",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " NOTE ON THIS ROUTE: it names one first-ascent party in its first-ascent record and a different, much earlier one in its approach prose. Treat the route's history as unsettled; the ground described is not in doubt.",
+     "replace": ""
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Route identity and first ascent",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The historical record for this line is explicit that it demanded ice screws, and modern accounts grade it WI4/AI4+;",
+     "replace": "The line is graded WI4/AI4+;"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Season: winter ice vs summer rock ridge",
+   "verdict": "fixed",
+   "correct_value": "Late winter to early spring ice window; summer is out of condition.",
+   "evidence": "The only recorded ascent (AAC report; first-ascent trip report) was on March 13, 2015 in winter ice conditions during a one-day weather window, and the route is graded WI4/AI4+ — an ice line, not a snow-free summer rock ridge. The summer-rock-ridge text in seasonal guidance, climate, crowds and partner requirements is rewritten to match the row's own season, best_season, itinerary and variant.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "June through August, once the ridge is snow-free window",
+     "value": "Late winter to early spring, while the ice on the northwest face is formed and frozen"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "status"
+     ],
+     "expect": "good",
+     "value": "marginal"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "expect": "Early season within the window; some residual snow and avalanche caution still warranted",
+     "value": "Past the late-winter ice window; the ice is thinning and avalanche caution is still warranted"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "risky"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Primary season; rock dry but loose",
+     "value": "Out of condition: the ice this line needs has melted, leaving loose rock"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "risky"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Primary season, though afternoon storms on the Baker massif are possible",
+     "value": "Out of condition: no ice on the face, loose rock, and afternoon storms on the Baker massif are possible"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "summer"
+     ],
+     "expect": "Primary season; loose rock when dry; afternoon storms possible",
+     "value": "Out of condition; the ice has melted and the rock is loose; afternoon storms possible"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "expect": "Rarely climbed; sporadic summer attempts in dry years",
+     "value": "Rarely climbed; the only recorded ascent was in mid-March"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "expect": "Confident movement on loose Class 4-low 5th rock",
+     "value": "Leading steep water ice to WI4 and mixed ground on loose rock"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Season: winter ice vs summer rock ridge",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "Experienced alpine climbers comfortable soloing/short-roping Class 4 to low 5th terrain on loose rock, with a solid glacier travel background",
+     "value": "Experienced alpine climbers comfortable leading WI4 ice and moving fast on steep snow and loose mixed ground, with a solid glacier travel background"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Face height",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 2,000 ft (610 m) for this NW face line; the ~1,000 ft figure is the separate north face.",
+   "evidence": "The AAC report gives Wilkes-Booth as a 2,000-ft IV WI4 route, matching the row's overview and length_m (610 m) and its pitch breakdown (a 60 m crux, simul-climbing, ~four more pitches, ridge). Wikipedia gives 1,000 ft for Lincoln's northern face — the 1958 line the approach prose had borrowed — so the ~1,000 ft copies in the approach, descent and variant are corrected to this route's length.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Face height",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Given the face is roughly 1,000 ft (~300m) of sustained steep ground, and using",
+     "replace": "Given the line is roughly 2,000 ft (~610m) with steep ice sections separated by snowfields, and using"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Face height",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "find": "Roughly 1,000 ft of ice",
+     "replace": "Roughly 2,000 ft of ice"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Face height",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE FACE ITSELF IS ABOUT 1,000 FT AND IT IS ICE.",
+     "replace": "THE FACE ITSELF IS ABOUT 2,000 FT AND IT IS ICE."
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Kulshan Cabin site elevation and distance",
+   "verdict": "fixed",
+   "correct_value": "About 2 miles from the trailhead at ~4,700 ft",
+   "evidence": "WTA puts the former Kulshan Cabin campsite at about two miles and 4,700 ft; the Forest Service Coleman Glacier route page puts it about 2.25 miles in at 5,000 ft. Both contradict the prose's 2.7-3 miles and ~3,200 ft (below the 3,700 ft trailhead) and agree with the waypoint (4,700 ft, 2 mi).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+    "https://www.fs.usda.gov/r06/mbs/recreation/coleman-glacier-climbing-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Kulshan Cabin site elevation and distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 2.7-3 miles through old-growth forest and several avalanche-chute creek crossings to the flat former Kulshan Cabin site (~3,200 ft)",
+     "replace": "roughly 2 miles through old-growth forest and several avalanche-chute creek crossings to the flat former Kulshan Cabin site (~4,700 ft)"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Kulshan Cabin site elevation and distance",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 2.7-3 miles through old growth and several avalanche-chute creek crossings to the flat former Kulshan Cabin site around 3,200 ft",
+     "replace": "roughly 2 miles through old growth and several avalanche-chute creek crossings to the flat former Kulshan Cabin site around 4,700 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Text copied from another peak",
+   "verdict": "fixed",
+   "correct_value": "Coleman Glacier hazards; road is Glacier Creek Road (FS Road 39) to the Heliotrope Ridge trailhead",
+   "evidence": "The first ascent was made from the Heliotrope Ridge trailhead (AAC), and the Forest Service trail page places Heliotrope Ridge Trail 677 off Glacier Creek Road (FS 39) leading to the Coleman Glacier; WTA describes the same. The Sherpa/Stuart glaciers and an 8,200 ft notch belong to Mount Stuart, and Schreibers Meadow is Baker's south-side (Easton) trailhead, not this route.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677",
+    "https://www.wta.org/go-hiking/hikes/heliotrope-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Text copied from another peak",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Glacier travel hazards (Sherpa, Stuart glaciers) particularly late season",
+     "replace": "Glacier travel hazards on the Coleman Glacier, including serac fall from its icefall"
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Text copied from another peak",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Water availability limited at notch (8,200 ft) depending on snowmelt\n",
+     "replace": ""
+    },
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Text copied from another peak",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Glacier Creek Road / Schreibers Meadow access (depending on approach)",
+     "value": "Glacier Creek Road (FS Road 39)"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Descent destination",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The first-ascent party descended the southwest face and still finished at the Heliotrope Ridge trailhead in an 18.5-hour round trip, and the southwest face's cirque (Thunder Glacier) is reached from the Heliotrope Ridge Trail, so descending the SW face and returning to the Coleman and Heliotrope is a documented link, not a landing in the Rankin Creek basin.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car gain or loss for the Wilkes-Booth round trip (the AAC report gives only length, grade and 18.5 hours). Under the rules gain_ft/loss_ft change only to a sourced figure, so the 5,500 vs 6,400 ft discrepancy stays open.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass at fee trailheads; no wilderness permit",
+   "evidence": "The Forest Service Mt. Baker climbing page says permits are not required for climbing (registration voluntary) and a recreation pass is required at Heliotrope Ridge; the Forest Service wilderness regulations page limits the self-issue permit requirement to the Alpine Lakes Wilderness. A guide service's Baker page says the same.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://blackbirdguides.com/blogs/alpine-climbing/how-to-climb-mt-baker-guide"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Wilderness permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass (fee trailheads) / free self-issue wilderness permit",
+     "value": "Northwest Forest Pass (fee trailheads); no wilderness permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Rock grade on an ice route",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "rock_grade is 5.4 and leads the header grade pill, while grade, ice_grade, pitch_detail and both first-ascent accounts describe an IV WI4 / AI4+ ice-and-mixed line with no rock grade given. Neither source states any 5th-class rating, but neither refutes one explicitly, so it is flagged rather than nulled.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Only other established route on the mountain",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The overview says Wilkes-Booth is the only established route besides the X Couloir; Wikipedia records a 1958 north-flank ascent (Cooper/O'Conner) and a 1974 line on the west side of the northern flank. Only one source found, so no patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,261 @@
+{
+ "file": "t081.json",
+ "results": [
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Length of the second rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The descent is documented as summit bolts, then a bolted station just below one of pitch 3's 5.0 slabs, then the bushy pitch-1 ledge, then the notch, but no source found gives per-rappel lengths. The station sits partway up pitch 3, not at the pitch-2 anchor, so rappel 2 need not equal pitch 2's 35 m; settling it needs a source stating the rappel lengths.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Trail distance to the summit",
+   "verdict": "fixed",
+   "correct_value": "About 2.5 mi one way (dist_km 4.0); about 5 mi round trip for the day",
+   "evidence": "One route guide gives the Blue Lake Trailhead to Liberty Bell-Concord notch approach as 5 miles round trip with ~2,000 ft gain; a guide service lists 5.5 miles round trip including the Liberty Bell summit. The stored dist_km (9.7 km = 6 mi) equals the round-trip day total, not the one-way approach, and the 6-mile day overstates the ~5 mi round trip; the row's own waypoints/approach (~2-2.3 mi to the summit) agree with ~2.5 mi one way.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6",
+    "https://www.climbhigherground.com/libertybell"
+   ],
+   "patches": [
+    {
+     "id": "wa_concord_tower_north_face",
+     "fact": "Trail distance to the summit",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.7,
+     "value": 4.0
+    },
+    {
+     "id": "wa_concord_tower_north_face",
+     "fact": "Trail distance to the summit",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 6,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead fields say about 1 mile, which the Concord Tower area page also states. Bivy is owned by the camping clean-up, so no patch; the Blue Lake trailhead bivy entry does serve this route, its half-mile figure is the wrong fact to fix there.",
+   "sources": [
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Rope for the rappel",
+   "verdict": "fixed",
+   "correct_value": "A 70 m rope lets the route be climbed as one 67 m pitch; descent is two single-rope rappels",
+   "evidence": "The route page gives 220 ft (67 m), one pitch with a 70 m rope, and descent by two single-rope rappels from the south side of the summit. The standard North Face page independently describes the south-face descent as two ~30 m rappels via a bolted mid-face anchor to the Concord-Lexington notch. A 70 m rope cannot single-rappel 67 m, so the rack item's 'single-pitch rap' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/111944979/south-face-center",
+    "https://www.mountainproject.com/route/106543279/north-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_center",
+     "fact": "Rope for the rappel",
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "find": "70m ideal for a single-pitch rap",
+     "replace": "a 70m rope lets you climb it as one pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead fields say about 1 mile, which the Concord Tower area page also states. Bivy is owned by the camping clean-up, so no patch; the Blue Lake trailhead bivy entry does serve this route, its half-mile figure is the wrong fact to fix there.",
+   "sources": [
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Aid pitches and North Face finish in the trip plan vs a one-pitch free route",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The itinerary note/objective/totalNote and timing note describe two aided (5.7 A3) center-crack pitches that join the North Face's final pitch and make this the slowest Concord line, while pitches (1), length_m (67), beta and rack describe a single free 5.8+ pitch ending at a bolted anchor at the top. The current route description supports the free one-pitch version; the aid/North-Face-finish version appears to be the historic line. Settling whether the historic description should be removed from the trip plan needs a second source on the current line and an owner call on how much history to keep.",
+   "sources": [
+    "https://www.mountainproject.com/route/111944979/south-face-center"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_3",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead fields say about 1 mile, which the Concord Tower area page also states. Bivy is owned by the camping clean-up, so no patch; the Blue Lake trailhead bivy entry does serve this route, its half-mile figure is the wrong fact to fix there.",
+   "sources": [
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Descent line",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route's own description puts the rappel on the summit's west side (two ropes, or split at a mid station), to a ledge, then one last rappel down along the North Face's first pitch to the notch; the standard North Face descent is likewise summit chains, a mid station, the pitch-1 ledge, then the notch. Both describe the same summit-chains line, so the approach card's 'same as the standard North Face' agrees with RAPPELS and DESCENT.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route",
+    "https://www.mountainproject.com/route/106543279/north-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Trail distance to the summit",
+   "verdict": "fixed",
+   "correct_value": "About 2.5 mi one way (dist_km 4.0); about 5 mi round trip for the day",
+   "evidence": "One route guide gives the Blue Lake Trailhead to Liberty Bell-Concord notch approach as 5 miles round trip with ~2,000 ft gain; a guide service lists 5.5 miles round trip including the Liberty Bell summit. The stored dist_km (9.7 km = 6 mi) equals the round-trip day total, not the one-way approach, and the 6-mile day overstates the ~5 mi round trip; the row's own waypoints/approach (~2-2.3 mi to the summit) agree with ~2.5 mi one way.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6",
+    "https://www.climbhigherground.com/libertybell"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_cave_route",
+     "fact": "Trail distance to the summit",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.66,
+     "value": 4.0
+    },
+    {
+     "id": "wa_the_cave_route",
+     "fact": "Trail distance to the summit",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 6,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead fields say about 1 mile, which the Concord Tower area page also states. Bivy is owned by the camping clean-up, so no patch; the Blue Lake trailhead bivy entry does serve this route, its half-mile figure is the wrong fact to fix there.",
+   "sources": [
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_up_in_arms",
+   "fact": "Pitch 6 length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Pitch 6 is about 45 m; one more pitch reaches the summit from the pod",
+   "evidence": "The route's own pitch list ends P6 with '5.7 45M' while saying from the pod it is 'one more 60m pitch' (read as on a 60 m rope). Total length is 700 ft (~213 m) in both the first-ascent report and the route page; the row's six pitch lengths with P6 at 45 m sum to 220 m, while 60 m would give 235 m. The note's 'full 60 m rope length' is the outlier; reworded without a new number.",
+   "sources": [
+    "https://www.mountainproject.com/route/125216004/up-in-arms",
+    "https://publications.americanalpineclub.org/articles/13201216754"
+   ],
+   "patches": [
+    {
+     "id": "wa_up_in_arms",
+     "fact": "Pitch 6 length",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "notes"
+     ],
+     "find": "one full 60 m rope length reaches the summit",
+     "replace": "one more pitch on a 60 m rope reaches the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route database gives 300 ft (91 m) in 3 pitches with no pitch lengths; a UK logbook entry gives 120 m in 3 pitches, matching the stored pitch sum. The two sources disagree, so neither length_m nor the pitch lengths can be settled; a guidebook topo with pitch lengths would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/107715253/north-face-var-right-directisimo",
+    "https://www.ukclimbing.com/logbook/crags/washington_pass-7098/north_face_directissimo-431569"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Trail distance to the summit",
+   "verdict": "fixed",
+   "correct_value": "About 2.5 mi one way (dist_km 4.0); about 5 mi round trip for the day",
+   "evidence": "One route guide gives the Blue Lake Trailhead to Liberty Bell-Concord notch approach as 5 miles round trip with ~2,000 ft gain; a guide service lists 5.5 miles round trip including the Liberty Bell summit. The stored dist_km (9.7 km = 6 mi) equals the round-trip day total, not the one-way approach, and the 6-mile day overstates the ~5 mi round trip; the row's own waypoints/approach (~2-2.3 mi to the summit) agree with ~2.5 mi one way.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6",
+    "https://www.climbhigherground.com/libertybell"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Trail distance to the summit",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.7,
+     "value": 4.0
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Trail distance to the summit",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 6,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead fields say about 1 mile, which the Concord Tower area page also states. Bivy is owned by the camping clean-up, so no patch; the Blue Lake trailhead bivy entry does serve this route, its half-mile figure is the wrong fact to fix there.",
+   "sources": [
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": []
+  }
+ ]
+}

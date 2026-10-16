@@ -1,0 +1,609 @@
+{
+ "applied": [
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "rope_length_m",
+   "path": [],
+   "fact": "Rappel/rope length needed"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Rappel/rope length needed"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Rappel/rope length needed"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Rappel/rope length needed"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier/crevasse travel on this route"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Best/classic season window"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best/classic season window"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown"
+   ],
+   "fact": "Best/classic season window"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach distance and gain from the car to Glacier Basin"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Where the rappel is (summit vs the chimney)"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Where the rappel is (summit vs the chimney)"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Where the rappel is (summit vs the chimney)"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Where the rappel is (summit vs the chimney)"
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche note says the route is climbed only once snow-free"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "_raw",
+    "notes"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "_raw",
+    "wilderness_zone"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access"
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "car-to-car day length"
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route"
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route"
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route"
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "turnaround",
+   "path": [],
+   "fact": "car-to-car day length used for turnaround planning"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "car-to-car day length used for turnaround planning"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "_raw",
+    "notes"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "_raw",
+    "wilderness_zone"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "which wilderness area applies"
+  },
+  {
+   "id": "wa_mile_high_club",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "which wilderness area applies"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "before": {
+    "rope_length_m": 30,
+    "rack": [
+     "30m rope for the roped chimney section (three moves: 5.6, 5.2, 5.6)",
+     "Harness",
+     "A few small cams/nuts, optional, as backup to reported (unconfirmed) bolts",
+     "2-3 slings for a gully belay/rappel anchor"
+    ],
+    "gear": [
+     "ice axe (early-mid season)",
+     "helmet",
+     "rope (30m sufficient for the short technical pitch)",
+     "harness",
+     "small rack/slings for the chimney (bolts reported but unconfirmed — bring backup protection)",
+     "crampons (steep snow to the North Col, early-mid season)",
+     "mountain bike (optional, speeds the 4-mile roadbed approach from Barlow Pass)"
+    ],
+    "pro_needs": "A few small-to-medium cams and/or slings for the ~30-75 ft chimney (reported as three roped moves: 5.6, 5.2, 5.6); a 30m rope is sufficient for the short technical section. Fixed bolts have been reported in recent years but should not be solely relied upon.",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "West-slope Cascade climate - heavy winter snowpack with a remote, moisture-exposed basin; summer brings the best but still unsettled weather",
+      "probability": "Afternoon thunderstorms are a recurring hazard in the July-September window"
+     },
+     "exposure": "Real fall exposure on the Class 3-4 summit block; parties describe an exposed ledge traverse and choss/scree terrain just below the summit, and a roped rappel (60m) is the standard descent off the top - a fall or rappel error here would be a high-consequence incident given the remoteness of the objective",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; no dedicated NWAC forecast zone covers Monte Cristo Peak specifically (nearest coverage is the West Slopes Central/Stevens Pass corridor, but the route is only climbed once snow-free)",
+      "byMonth": {
+       "July": "Low",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on this route"
+    },
+    "season": "Jul-Sep",
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September; August is the most reliable stretch",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Route becomes viable as snow starts clearing, but lingering snowfields on approach/upper slopes and afternoon thunderstorms are common early in the month",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Most consistent snow-free conditions and the most stable weather window for the summit scramble",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Cooler, generally stable, but shorter days and possible early-season snow late in the month",
+       "status": "good"
+      }
+     }
+    },
+    "approach": "From the Barlow Pass Trailhead (end of the paved Mountain Loop Highway drive), the approach is in two clearly different stages before you ever leave a maintained tread. Stage one is 4 flat, easy miles up the gated, washed-out Monte Cristo Road along the South Fork Sauk River to the Monte Cristo ghost town (~2,800 ft) — a couple of cable/suspension bridges cross the river en route, and this stretch is runnable/bikeable in dry conditions. At the townsite, walk past the old cabins, cross the bridge over 76 Creek, and follow \"Dumas Street\" through the settlement to pick up signed Glacier Basin Trail #719. Stage two is the real climb: the first half-mile follows an old mining road grade along Glacier Creek, then the trail turns into what regular hikers describe as 'more of a slick rock scramble than a hike' — steep, eroded, hands-on-rock terrain climbing past Glacier Falls, with numerous cascades and slick, root-braided rock steps that are notably harder (and slicker) descending than ascending. The trail crosses into Henry M. Jackson Wilderness and skirts the northeast edge of Mystery Hill before leveling out into Glacier Basin (~4,500 ft) after about 2.5 miles — roughly 6.5 miles and ~1,700 ft of gain from Monte Cristo, ~10.5 miles and ~4,000 ft from the car. Glacier Creek parallels the whole climb and is a reliable water source, but it drains historic mine workings — treat/filter and be aware of elevated arsenic/heavy-metal readings noted by the Forest Service, especially in the lower reaches near the old townsite. From Glacier Basin the maintained trail ends; leave it and climb open talus and (typically) persistent steep snow — up to ~45° for a few hundred vertical feet — directly toward the obvious North Col (~6,760+ ft) on Monte Cristo's north ridge, with the Wilmans Peaks and Wilmans Glacier looming close overhead to climber's right. An ice axe and comfort on steep firm snow are essentially mandatory into midsummer; a moat can open at the col and the step across it can be intimidating or, late season, impassable. From the North Col, contour south (skier's/climber's left) across snow or talus below the summit cliffs, scouting for the obvious break/gully in the rock that gives the easiest way up to the base of the short summit chimney.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long, remote approach from the Monte Cristo townsite through the basin to gain the upper slopes; several miles of trail/talus/brush with meaningful elevation gain before the scrambling even starts",
+      "packWeight": "20-30 lbs typical - includes a rope (60m sufficient) and minimal rack for the summit rappel, plus layers for alpine weather and a full day out"
+     },
+     "approachTime": "Full day commitment - the Monte Cristo approach alone is long (multi-mile hike from the trailhead to the townsite and up into the basin), so most parties treat this as a long car-to-car day or an overnight basecamp",
+     "requiredSkills": [
+      "Sustained Class 3 scrambling with Class 4 sections",
+      "Rappel setup, backup, and management (~60m rappel commonly used off the summit)",
+      "Routefinding through talus, choss, and brush with no maintained trail on the upper mountain",
+      "Snow/glissade travel on lingering early-season snowfields",
+      "Basic self-rescue/rope handling for a remote, low-traffic objective"
+     ],
+     "experienceLevel": "Intermediate to advanced scrambler - needs to be solid on sustained Class 3 with occasional Class 4 moves and real exposure near the top, and comfortable with a roped rappel off the summit block"
+    }
+   }
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "before": {
+    "access": {
+     "_raw": {
+      "notes": "As of April 2026, access to Glacier Peak Wilderness is extremely limited due to December 2025 storm damage",
+      "permit_cost": "Free",
+      "permit_type": "Free self-issue wilderness permit",
+      "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+      "wilderness_zone": "Adjacent to or within Glacier Peak Wilderness area",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$5 per day or $30 annual; also accept America the Beautiful passes",
+      "seasonal_closures": "Open year-round; weather-dependent access",
+      "permit_pickup_hours": "Available 24/7 at trailhead",
+      "ranger_station_hours": "Monday-Friday 8:00am-4:00pm (closed 12:00-12:30pm lunch)",
+      "special_requirements": "Motorized equipment prohibited; campfire restrictions apply",
+      "parking_pass_required": "Northwest Forest Pass (some trailheads)",
+      "permit_pickup_location": "Self-issue at trailhead",
+      "ranger_station_address": "1405 Emens Avenue North, Darrington, WA 98241",
+      "ranger_district_contact": "(360) 436-1155"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Free self-issue wilderness permit",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "Adjacent to or within Glacier Peak Wilderness area",
+     "group_limit": 12,
+     "landManager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass (some trailheads)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach as Mile High Club to the base of the West Face, then 11 sustained pitches (8 of them 5.10) up excellent rock to the shared summit with Mile High Club. Do not rappel the route itself — rope stretch and length make it a poor rap line; descend via the 8 single-rope Mile High Club rappels instead. The face stays shaded until about 1pm, so an early start beats the afternoon heat and keeps this long day from finishing in the dark.",
+       "hours": 14,
+       "miles": 5.8,
+       "title": "Car-to-car: Beyond Redlining",
+       "gainFt": 3500,
+       "lossFt": 3500,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Alpine start given the route's length and shaded, chilly lower pitches."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach base of the West Face",
+         "detail": "Talus/heather traverse from the Headlee Pass approach."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Start climbing",
+         "detail": "Pitch 1 of 11; expect wet/mossy start early season."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Top out / summit",
+         "detail": "8 of 11 pitches go at 5.10, so budget generous time per pitch."
+        },
+        {
+         "time": "3:15 PM",
+         "label": "Begin descent via Mile High Club raps",
+         "detail": "8 single-rope rappels (60m); watch the pitch-3 intermediate anchor."
+        },
+        {
+         "time": "8:30 PM",
+         "label": "Back at trailhead",
+         "detail": "After hiking out from the base of the route."
+        }
+       ],
+       "objective": "Climb 11-pitch Beyond Redlining (Grade IV, 5.10+) and descend via the Mile High Club rappels"
+      }
+     ],
+     "totalNote": "A long, committing single day: roughly 13-14 hrs car-to-car for 11 pitches (Grade IV, 1,200 ft, 8 pitches of 5.10) plus about 5.8 mi and 3,500 ft of approach/return hiking; parties who start late sometimes end up finishing by headlamp."
+    },
+    "access": {
+     "_raw": {
+      "notes": "Historical note: December 2025 storm damage closed the Suiattle River Road (FSR 26), the primary access corridor for Glacier Peak Wilderness -- a different watershed from this route's own approach via Mountain Loop Highway/Sunrise Mine Road (FR-4065). No storm damage or closure has been documented on this route's actual access road.",
+      "permit_cost": "Free",
+      "permit_type": "Free self-issue wilderness permit",
+      "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+      "wilderness_zone": "Adjacent to Wild Sky Wilderness; the peak and much of the approach fall within WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness (Glacier Peak Wilderness is a separate area to the north, divided from here by the Henry M. Jackson Wilderness).",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$5 per day or $30 annual; also accept America the Beautiful passes",
+      "seasonal_closures": "Open year-round; weather-dependent access",
+      "permit_pickup_hours": "Available 24/7 at trailhead",
+      "ranger_station_hours": "Monday-Friday 8:00am-4:00pm (closed 12:00-12:30pm lunch)",
+      "special_requirements": "Motorized equipment prohibited; campfire restrictions apply",
+      "parking_pass_required": "Northwest Forest Pass (some trailheads)",
+      "permit_pickup_location": "Self-issue at trailhead",
+      "ranger_station_address": "1405 Emens Avenue North, Darrington, WA 98241",
+      "ranger_district_contact": "(360) 436-1155"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Free self-issue wilderness permit",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "Adjacent to Wild Sky Wilderness / WA DNR Morning Star NRCA, not Glacier Peak Wilderness.",
+     "group_limit": 12,
+     "landManager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District); the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness.",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass (some trailheads)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "before": {
+    "access": {
+     "fees": "$5/vehicle day-use fee or $30 annual site pass at the Sunrise Mine Trailhead; Northwest Forest Pass and Interagency (America the Beautiful) passes are honored. Washington's Discover Pass is NOT accepted here.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "No wilderness permit or self-issue permit required for day trips.",
+     "closures": "Sunrise Mine Road (FR 4065) and the trail have no formal gate but are typically snow-covered and impassable until roughly June; the South Fork Stillaguamish ford near the trailhead can become impassable during high runoff.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (administered from Verlot Public Service Center)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass (or equivalent day-use fee) required for trailhead parking",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mile_high_club",
+   "before": {
+    "turnaround": "Given the ~8-10 hour car-to-car day, set a turnaround time that keeps the 8-rappel descent and talus descent out of full darkness.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same Sunrise Mine Trail / Headlee Pass approach as the scramble, then a talus-and-heather traverse to the base of the Mile High Buttress. Climb 7 well-bolted pitches (5.10a) to the summit, then reverse with 8 single-rope rappels (60m minimum) and hike out. A published trip report left the trailhead at 1:15pm and finished by headlamp at 8pm — start earlier for real margin.",
+       "hours": 12,
+       "miles": 5.6,
+       "title": "Car-to-car: Mile High Club",
+       "gainFt": 3500,
+       "lossFt": 3500,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Alpine start well before the 1:15pm departure in the published trip report."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Reach base of the Mile High Buttress",
+         "detail": "Via Headlee Pass approach then cairned talus/heather traverse."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Start climbing",
+         "detail": "Pitch 1 of 7, mostly 5.9-5.10a."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Top out on Eros/Vega Tower",
+         "detail": "Summit at roughly the route's high point."
+        },
+        {
+         "time": "1:15 PM",
+         "label": "Begin 8 raps down the route",
+         "detail": "Watch the pitch-3 intermediate anchor — misreading the rap line here is the most common error."
+        },
+        {
+         "time": "6:00 PM",
+         "label": "Back at trailhead",
+         "detail": "After rapping to the base and hiking out."
+        }
+       ],
+       "objective": "Climb 7-pitch Mile High Club to the summit of Eros/Vega Tower and rappel back down"
+      }
+     ],
+     "totalNote": "A long single day: roughly 10-12 hrs car-to-car for the 7-pitch (5.10a) climb plus about 5.6 mi and 3,500 ft of approach/return hiking."
+    },
+    "access": {
+     "_raw": {
+      "notes": "As of April 2026, access to Glacier Peak Wilderness is extremely limited due to December 2025 storm damage",
+      "permit_cost": "Free",
+      "permit_type": "Free self-issue wilderness permit",
+      "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+      "wilderness_zone": "Adjacent to or within Glacier Peak Wilderness area",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$5 per day or $30 annual; also accept America the Beautiful passes",
+      "seasonal_closures": "Open year-round; weather-dependent access",
+      "permit_pickup_hours": "Available 24/7 at trailhead",
+      "ranger_station_hours": "Monday-Friday 8:00am-4:00pm (closed 12:00-12:30pm lunch)",
+      "special_requirements": "Motorized equipment prohibited; campfire restrictions apply",
+      "parking_pass_required": "Northwest Forest Pass (some trailheads)",
+      "permit_pickup_location": "Self-issue at trailhead",
+      "ranger_station_address": "1405 Emens Avenue North, Darrington, WA 98241",
+      "ranger_district_contact": "(360) 436-1155"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Free self-issue wilderness permit",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "Adjacent to or within Glacier Peak Wilderness area",
+     "group_limit": 12,
+     "landManager": "USFS Mount Baker-Snoqualmie National Forest - Darrington Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass (some trailheads)"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "applied": [
+  {
+   "id": "wa_chianti_spire_east_face",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "probability"
+   ],
+   "fact": "Recommended start time"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_chianti_spire_east_face",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier east-slope alpine climate; expect warm, mostly stable summer days with cooler nights at the Burgundy Col camp",
+      "probability": "Afternoon thunderstorms are common in summer - start early (per the 04:00 recommended start) to be off the exposed upper pitches before storms build"
+     },
+     "exposure": "Sustained, committing exposure typical of a Grade III alpine tower - seven pitches with exposed belays; loose rock in spots adds objective hazard, and retreat from upper pitches requires multiple rappels rather than a simple walk-off, so a stuck party or weather change mid-route is a real consequence",
+     "avalanche": {
+      "zone": "N/A - summer rock route; nearest NWAC coverage is the East Slopes Central zone, but that forecast is not maintained during the July-September dry-rock climbing season for this route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Beyond Burgundy Col the standard approach crosses a section of the upper Silver Star Glacier to reach Chianti Spire's east side; conditions vary by season from an easy unroped snow slog to requiring a rope, so carry an axe and assess crevasse conditions before crossing."
+    }
+   }
+  }
+ ]
+}

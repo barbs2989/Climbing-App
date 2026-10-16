@@ -1,0 +1,495 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "name"
+   ],
+   "fact": "Location of Watson Pass and where the maintained trail ends"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Location of Watson Pass and where the maintained trail ends"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Location of Watson Pass and where the maintained trail ends"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Location of Watson Pass and where the maintained trail ends"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Location of Watson Pass and where the maintained trail ends"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "When to go"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Which side of Watson the high camp is on"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Which side of Watson the high camp is on"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Elevation of the second trail junction on the way out"
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Land manager in the fee note"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "lengthM"
+   ],
+   "fact": "Length of the ice couloir in the breakdown"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "anchor"
+   ],
+   "fact": "First rappel anchor"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "The 21-hour account: back at camp, not at the car"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "The 21-hour account: back at camp, not at the car"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.6746,
+      "lng": -121.6147,
+      "elev": 4300,
+      "name": "Watson Lakes Trailhead",
+      "note": "End of FS Rd 1107022; Northwest Forest Pass or digital day-use pass required, vault toilet but no potable water on site.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the Watson Lakes Trailhead at the end of FS Road 1107, about 4,200 ft, reached via Baker Lake Road (FS-11) and then FS-1106 around Baker Lake. A Northwest Forest Pass or digital day-use pass is required to park here. There is a vault toilet at the trailhead but no potable water on site, and the first reliable water is at the Watson Lakes themselves. The Anderson-Watson Lakes Trail #611 leaves straight from the lot into the woods."
+     },
+     {
+      "lat": 48.670798,
+      "lng": -121.607127,
+      "elev": 4450,
+      "name": "Anderson Butte Trail 611.1 junction",
+      "note": "Trail 611 winds gently through forest to a meadow junction; stay right/straight on 611 toward Anderson-Watson Lakes rather than climbing left to the old Anderson Butte lookout site.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 48.666695,
+      "lng": -121.598951,
+      "elev": 4700,
+      "name": "Anderson/Watson Lakes fork",
+      "note": "Second junction at ~4,700 ft: right fork drops 0.5 mi to lower Anderson Lake, left fork climbs 0.5 mi to the saddle (Watson Pass) — take the left/south fork for Mount Watson.",
+      "type": "Junction",
+      "distMi": 2
+     },
+     {
+      "lat": 48.664643,
+      "lng": -121.594863,
+      "elev": 4800,
+      "name": "Watson Pass (saddle)",
+      "note": "Trail gains about 150 ft to this pass above Watson Lakes; leave the maintained trail here and pick up the climber's boot path heading south along the ridge toward Mount Watson.",
+      "type": "Junction",
+      "distMi": 2.5
+     },
+     {
+      "lat": 48.662592,
+      "lng": -121.590775,
+      "elev": 4400,
+      "name": "Watson Lakes basin",
+      "note": "Boot path descends off the pass into the Watson Lakes basin; the lower (farther) lake is larger with clear blue water and is the recommended spot to filter water and camp nearby.",
+      "type": "Water",
+      "distMi": 3
+     },
+     {
+      "lat": 48.659309,
+      "lng": -121.584234,
+      "elev": 5400,
+      "name": "Camp on slopes below Mount Watson (~5,400 ft)",
+      "note": "Established bivy sites on open slopes beneath the peak with views of Mt Baker and Mt Shuksan; last practical camp before the summit push.",
+      "type": "Campsite",
+      "distMi": 3.8
+     },
+     {
+      "lat": 48.657258,
+      "lng": -121.580146,
+      "elev": 5900,
+      "name": "Moat / snow bridge below summit gullies",
+      "note": "In late season the west gully develops a large moat and an unstable snow bridge — parties have had to reroute to the more stable east gully instead.",
+      "type": "Hazard",
+      "distMi": 4.3
+     },
+     {
+      "lat": 48.655665,
+      "lng": -121.576665,
+      "elev": 6221,
+      "name": "Mount Watson summit",
+      "note": "Short, steep, tightly-treed Class 3 scramble gains an airy ~30 ft summit ridge with real exposure on both sides; a fixed hand-line is commonly used here, and descent reverses the same route down the east gully.",
+      "type": "Summit",
+      "distMi": 4.7
+     }
+    ],
+    "approach": "Park at the Watson Lakes Trailhead at the end of FS Road 1107 (elev. ~4,200 ft), reached via Baker Lake Road (FS-11) south around Baker Lake on FS-1106 and out FS-1107 to road's end. From the trailhead, follow the Anderson-Watson Lakes Trail #611 into the woods; at about 1 mile you'll pass the junction with the Anderson Butte Trail #611.1 (stay straight/right for Watson Lakes). Around 1.5-2 miles, at roughly 4,700 ft, a second junction splits: right drops 0.5 mile to lower Anderson Lake, while the left fork climbs 0.5 mile to a small saddle entering the Noisy-Diobsud Wilderness before dropping to the Watson Lakes (4,400 ft) near 2.5-3 miles in. The lakes are notoriously buggy in summer and are the last reliable water — treat before filling up, since there's no dependable source higher on the mountain. From Watson Lakes the maintained trail ends and the route becomes an open, cairned/boot-path climbers' route: leave the basin and climb talus (and snow well into summer) on Watson's north/west slopes toward Watson Pass and the ridge crest. The standard and easiest line follows the widest gully east of the peak up to a saddle at about 5,900 ft on the ridge; a western gully alternative has a dangerous moat and rotten snow bridge late-season and should be avoided. From the 5,900-ft saddle, traverse along the ridge and across a steep slope to wrap around the base of the summit block. A short, loose class 2-3 dirt-and-rock gully (10-15 ft) gains the true summit ridge, which is a narrow (~30 ft), exposed class 2-3 catwalk with real drop-off on both sides — a hand line is commonly carried and recommended for this final airy section. Total round trip runs roughly 7-9.5 miles with 2,500-3,000 ft gain depending on exact trailhead/camp and route-finding; parties camping partway (e.g., ~5,400 ft on the west slopes) shorten the summit day considerably. Route-finding above the lakes is the main approach hazard in poor visibility since the line is unmarked talus/snow rather than trail.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Talus slopes and east gully to the 5,900-ft saddle",
+      "notes": "From Watson Lakes the maintained trail ends and the route becomes an open, cairned/boot-path climbers' route: leave the basin and climb talus (and snow well into summer) on Watson's north/west slopes toward Watson Pass and the ridge crest. The standard and easiest line follows the widest gully east of the peak up to a saddle at about 5,900 ft on the ridge; the western gully alternative has a dangerous moat and rotten snow bridge late-season and should be avoided. Route-finding is the main hazard in poor visibility, since the line is unmarked talus/snow rather than trail."
+     },
+     {
+      "n": 2,
+      "label": "Ridge traverse to the summit block",
+      "notes": "From the 5,900-ft saddle, traverse along the ridge and across a steep slope to wrap around the base of the summit block."
+     },
+     {
+      "n": 3,
+      "class": "class 2-3",
+      "label": "Short dirt-and-rock gully",
+      "notes": "A short, loose dirt-and-rock gully of 10-15 ft gains the true summit ridge."
+     },
+     {
+      "n": 4,
+      "class": "class 2-3",
+      "label": "Summit ridge catwalk",
+      "notes": "A narrow (~30 ft), exposed catwalk with real drop-off on both sides — a hand line is commonly carried and recommended for this final airy section."
+     }
+    ],
+    "itinerary": {
+     "cal": "Go early summer if possible - by mid-to-late summer melt-out opens moats between snow and rock (especially in the west gully) and can add ice to the glacier traverse, making the route harder and slower.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Anderson-Watson Lakes trailhead (~4,200 ft), Trail 611 climbs steeply (~2.5 mi to a ~4,800 ft saddle above Watson Lakes) before the route contours south past Watson/Anderson Lakes and up open heather, rock slabs and talus to a camp with views of Baker and Shuksan. Expect a hot, buggy, sometimes overgrown trail early in the day and route-finding once the maintained tread fades near the lakes.",
+       "hours": 4.5,
+       "miles": 4.7,
+       "title": "Backpack to high camp below Mount Watson",
+       "gainFt": 2900,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach a camp around 5,400-5,600 ft on the open slopes below Watson's north/east side"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp early for the short push to the ~5,900 ft col between Watson's East Peak and the true summit, then traverse the basin to the gully below the summit block. Parties report the west gully often holds a nasty moat/snow bridge later in the season, so most now take the more stable east gully; the final airy Class 2-3 summit block has real but short exposure. After tagging the top, reverse the route, break camp, and hike out.",
+       "hours": 8.5,
+       "miles": 6.2,
+       "title": "Summit push via the east gully, then hike out",
+       "gainFt": 900,
+       "lossFt": 3700,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Break camp",
+         "detail": "Quick breakfast, leave overnight gear staged or start packing it out."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Traverse to the col",
+         "detail": "Rising traverse across heather/rock slabs to the ~5,900 ft saddle between the East Peak and main summit."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "East gully",
+         "detail": "Take the east gully over the west, which often has a moat/snow bridge by mid-summer."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit block",
+         "detail": "Short Class 2-3 exposed scramble to the small summit; only room for a few people at a time."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the route back to camp."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Full pack out after breaking camp."
+        }
+       ],
+       "objective": "Tag the summit and return to the trailhead same day"
+      }
+     ],
+     "totalNote": "A moderate 2-day trip: backpack roughly 4.5-5 miles to a high camp near 5,400-5,600 ft below Mount Watson, then scramble to the 6,221 ft summit via the east gully and hike all the way out the next day (~9-10 mi round trip, ~3,500-4,000 ft total gain); fit, fast parties compress the whole thing into a single long car-to-car day (~9-10 hrs)."
+    },
+    "descent_text": "Descent reverses the ascent line in its entirety — this is a walk-off/downclimb scramble with no rappelling (rappels: 0). From the summit, downclimb the exposed, narrow class 2-3 summit ridge (many parties use a hand line here) back down the short loose gully to the base of the summit block, then traverse back around the block and along the ridge to the 5,900-ft saddle. From the saddle, descend the east gully (the same talus/snow line used on the way up — avoid the west gully's moat/snow-bridge hazard) back into the basin above Watson Lakes, then pick up the maintained Anderson-Watson Lakes Trail #611 at the lakes for the hike out to the trailhead, passing back through the two junctions (5,900-ft basin exit, then the Anderson Butte Trail #611.1 junction at 1 mile from the trailhead). Descent times are typically close to ascent times (roughly 3+ hours from summit to car), consistent with a straightforward if loose reversal. Descent-specific hazards: loose talus and scree in the gully below the saddle, glissade/postholing risk on residual snow into midsummer, rotten moats/snow bridges if the west-side line is mistakenly used, and route-finding across the open, unmarked basin and ridge in flat light or fog — the exposed summit-ridge downclimb remains the technical crux in both directions."
+   }
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. Some approaches cross into North Cascades National Park land on the upper mountain, where an NPS backcountry permit ($10 per person plus a $6 fee) is required only if camping overnight past the boundary.",
+     "permit": "Backcountry Use Permit required",
+     "closures": "Forest roads to the trailhead have experienced washouts in recent years — check current status",
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (the approach starts in the Mt. Baker-Snoqualmie National Forest's Mount Baker Wilderness)",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit for camps inside the park — not free",
+      "where": "Reserve on Recreation.gov, or pick up a walk-up permit at the Glacier Public Service Center. Camps in the Mount Baker Wilderness need only the free trailhead registration."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "snow/ice",
+      "notes": "Kick steps up the initial snow/ice apron below the ridge proper — historically up to about 45-50 degrees — the ice-couloir start of the historic Beckey-Schmidtke line.",
+      "pitch": 1,
+      "anchor": "Picket/gear",
+      "lengthM": 50
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th class",
+      "notes": "Easier rock leads into the hidden rock trough on the north arête.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th-5.2",
+      "notes": "Continued fourth-class climbing along the arête with occasional harder moves; loose rock throughout demands care and continual belaying.",
+      "pitch": 3,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "The ridge's technical crux: a short, exposed wall/crack section on otherwise blocky terrain.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th-5.0",
+      "notes": "Loose fourth-class climbing continues along the exposed arête crest with a dramatic drop to the glacier below.",
+      "pitch": 5,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th class",
+      "notes": "More sustained, loose fourth-class terrain typical of this committing tower.",
+      "pitch": 6,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "low 5th",
+      "notes": "Continued careful climbing on generally poor-quality rock along the ridge.",
+      "pitch": 7,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th-5.3",
+      "notes": "Blocky climbing with occasional fifth-class moves closing in on the upper tower.",
+      "pitch": 8,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "low 5th",
+      "notes": "Loose traverse pitch toward the summit, with continued exposure over the glacier.",
+      "pitch": 9,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th class",
+      "notes": "Final easy pitch to the summit of this serious, remote spire.",
+      "pitch": 10,
+      "anchor": "Walk-off (no belay)",
+      "lengthM": 40
+     }
+    ],
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Double ropes. Parties run on the order of ten 60 m rappels from here down to the glacier.",
+      "notes": "First rappel off the summit area on double ropes, capped near 30m.",
+      "anchor": "fixed anchor (pin/sling)",
+      "hazards": [
+       "There is nothing fixed to inspect here — the anchor is whatever you can build out of what is stacked on the summit"
+      ],
+      "lengthM": 30,
+      "station": "Comes straight off the summit block, rigged around a stack of blocks rather than any fixed gear."
+     },
+     {
+      "n": 2,
+      "notes": "Continues down the steep, complex north-side terrain; loose rock requires care with rope pull.",
+      "anchor": "gear anchor (cams/nuts)",
+      "hazards": [
+       "This face sheds rock steadily and the couloir is the funnel it all comes down — anchoring on the flanking wall keeps you and the ropes out of the middle of it"
+      ],
+      "lengthM": 30,
+      "station": "Into the upper couloir. The anchors are on the rock walls flanking the couloir rather than in the ice — that is where the first ascent placed pins on the way down, and where later parties still rig. Where the flanking rock gives out, at least one party rappelled off a buried picket."
+     },
+     {
+      "n": 3,
+      "notes": "Continues down the ridge.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 4,
+      "notes": "Continues down the ridge.",
+      "anchor": "gear anchor (cams/nuts)",
+      "lengthM": 30
+     },
+     {
+      "n": 5,
+      "notes": "Continues down the ridge.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 6,
+      "notes": "Continues down the ridge.",
+      "anchor": "gear anchor (cams/nuts)",
+      "lengthM": 30
+     },
+     {
+      "n": 7,
+      "notes": "Continues down the ridge.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 8,
+      "notes": "Continues down the ridge, nearing the col/bivy site.",
+      "anchor": "gear anchor (cams/nuts)",
+      "lengthM": 30
+     },
+     {
+      "n": 9,
+      "notes": "Continues down toward the glacier.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 10,
+      "notes": "Final rappel reaching the glacier below the tower.",
+      "anchor": "gear anchor (cams/nuts)",
+      "hazards": [
+       "The bergschrund at the foot of the north-face couloir still has to be crossed to reach the glacier, and it is the last thing you deal with after a long technical descent"
+      ],
+      "lengthM": 30,
+      "station": "The rappels do not necessarily reach the bottom. Parties commonly stop rappelling partway and downclimb the rest of the couloir, frequently in the dark."
+     }
+    ],
+    "descent_text": "Beckey and Schmidtke's 1946 descent reversed the route: an uneventful series of rappels from pitons placed in the rock wall flanking the couloir, back down to the glacier and camp. Modern parties do the same — this route is a there-and-back climb, reversed rather than continuing over the summit. From the top, downclimb/rappel the north arête and rock trough back to the head of the couloir, then make a long series of rappels (parties describe roughly ten 60m rappels) down the couloir to the snow/glacier below, building anchors as needed (slings on rock horns, occasional picket or v-thread — don't count on finding fixed gear in place or trustworthy). Where conditions allow, the lower couloir is often downclimbed instead of rappelled. From the base of the couloir, reverse the approach across the glacier/basin to the bivy, then down through Price Lake, the forested slope, and the Nooksack River flats to the Ruth Creek trailhead. Because the descent is technical, parties are frequently still on the couloir or lower approach after dark — one fast team describes returning to the trailhead roughly 21 hours after leaving. Unlike the Price Glacier route, no car shuttle is needed — this returns to the same Ruth Creek trailhead.",
+    "approach_variants": [
+     {
+      "name": "Ruth Creek washout, Nooksack Cirque, Price Lake moraine and the ridge to the 5,900 ft slab bivy",
+      "notes": "From the Mount Baker Highway, turn left onto Nooksack River Road (FS-32) immediately before the Nooksack River bridge, about 13 miles past Glacier. Stay left at 0.5 miles, right at 1.4 miles, and park at the washout at 2.3 miles from the highway, by Ruth Creek at about 2,156 ft. Walk the abandoned road beyond the washout for two miles to the original Nooksack Cirque trailhead at 2,550 ft. Ford the Nooksack. There is a recorded log crossing near N48.87097 W121.61267 — new logs get swept away every year, so treat the coordinate as where to start looking rather than as a bridge. Go up the forested mountainside east of the creek, starting on the west bank of Price Creek until a good log turns up. Continue to the moraine above Price Lake at 3,911 ft, then follow the ridgeline BETWEEN the Price and East Nooksack Glaciers up to a rock slab bivouac around 5,900 ft. From the bivy, get onto the glacier, traverse climber's right to an exposed snow saddle below the Tower, then drop down and work onto the main lobe of the Price Glacier. This route belongs to Nooksack Tower and not to Mount Shuksan — it was merged from a duplicate Shuksan entry, and the Price Glacier route on Shuksan is a different climb sharing much of the same ground.",
+      "season": "Roughly Jun-Aug. Earlier the river is high and the couloir is safer; later the river drops but the couloir bakes and sheds rock",
+      "hazards": [
+       "Fording the Nooksack on logs that are swept away and replaced yearly",
+       "Rockfall down the couloir, recorded on the first ascent and in every account since",
+       "A hollow bergschrund that has forced parties to swing wide left",
+       "A descent of roughly ten 60 m rappels off gear you build yourself — fixed anchors here should not be trusted",
+       "Parties routinely still on the couloir or the lower approach after dark; one fast team recorded 21 hours car to car"
+      ],
+      "baseFinding": "THE BERGSCHRUND AT ROUGHLY 6,500 FT IS THE BASE, AND THE COULOIR ABOVE IT IS THE ONLY ONE. Beckey and Schmidtke's own account of the first ascent puts them at the bergschrund at the foot of the final north face at 6,500 ft, with 800 ft of 50-degree ice couloir above. That is the arrival: a schrund, then a single steep couloir that guards the Tower.\n\nTHE RIDGE BETWEEN THE TWO GLACIERS IS THE HANDRAIL. From the Price Lake moraine you climb a rib with the Price Glacier on one side and the East Nooksack on the other. In cloud you do not need the Tower: keep a glacier on each side of you and go up. If you only have ice on one side, you have come off the rib.\n\nTHE SADDLE IS THE HINGE, AND IT IS COUNTERINTUITIVE. From the bivy the traverse is climber's RIGHT to an exposed snow saddle below the Tower, and then you DROP DOWN onto the main lobe of the Price Glacier. Losing height here feels wrong and is correct. A party that refuses to descend off the saddle stays high on the wrong side and never reaches the couloir.\n\nCONFIRM AT THE SCHRUND: the couloir starts around 50 degrees and steepens to about 60 at the top, with a single 70-degree step where it hits rock. If your line eases off rather than steepens, it is not the couloir. Parties have found the schrund hollow and swung WIDE LEFT to avoid it entirely — that is a known variation, not a sign you are lost.\n\nWHAT GOING TOO FAR LOOKS LIKE: continuing up the Price Glacier past the Tower's couloir puts you on the Price Glacier route on SHUKSAN, which is a different mountain's climb reached from the same basin. Nooksack Tower is the freestanding tower below and north of Shuksan's summit; if the ground above your couloir keeps going for thousands of feet rather than ending on a tower in about 1,200 ft of fourth class, you are on Shuksan."
+     }
+    ]
+   }
+  }
+ ]
+}

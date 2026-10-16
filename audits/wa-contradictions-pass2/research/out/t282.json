@@ -1,0 +1,350 @@
+{
+ "file": "t282.json",
+ "results": [
+  {
+   "id": "wa_mount_ellinor_standard",
+   "fact": "Summer-trail season end",
+   "verdict": "fixed",
+   "correct_value": "Jun-Oct",
+   "evidence": "The Forest Service lists the Mt. Ellinor Upper Trailhead season as 'Early Summer through Fall', and a detailed hiking guide gives July through October as the summer-trail season; another route guide gives a recommended window of July-October. The row's own optimalWindow, approach season, best_season and monthBreakdown (October 'good') all run through October; only the season chip stopped at September, and it also held prose rather than a short window.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/mt-ellinor-upper-trailhead",
+    "https://explorenborgen.com/mount-ellinor/",
+    "https://www.protrails.com/trail/845/olympic-national-park-mount-ellinor"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_ellinor_standard",
+     "fact": "Summer-trail season end",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Summer (roughly Jun-Sep, snow-dependent)",
+     "value": "Jun-Oct"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ellinor_standard",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 2.57 is the 1.6 mi one-way approach and itinerary miles 3.3 is the per-day round trip; both are correct for their documented conventions.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Entrance fee",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two lines describe different charges: access.parking_pass says no trailhead parking pass/fee at the Putvin Trailhead (a Forest Service trailhead), while access.notes refers to the Olympic National Park entrance pass, which the park states all visitors 16+ need, including those entering on foot ($15/person). Both statements are true together.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Entrance fee",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two lines describe different charges: access.parking_pass says no trailhead parking pass/fee at the Putvin Trailhead (a Forest Service trailhead), while access.notes refers to the Olympic National Park entrance pass, which the park states all visitors 16+ need, including those entering on foot ($15/person). Both statements are true together.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Line from Lake of the Angels to the west-ridge notch",
+   "verdict": "fixed",
+   "correct_value": "From Lake of the Angels a boot path climbs toward St. Peter's Gate; short of the Gate the route turns left along the base of the long cliff band to a notch on the west ridge (as the approach and pitch_detail already say).",
+   "evidence": "The standard-route description says you do not go up to St. Peter's Gate but head left under the long band of cliffs to a pass and a class 3 section; a route summary says to traverse along the base of the cliff to the west ridge; a 2010 trip report describes the traverse up toward the Gate and back to the west ridge; and the sister Lake of the Angels row says the same. The '800 ft onto a rock rib, cross to its north side' wording comes from a single trip report whose author says he deviated from the standard route.",
+   "sources": [
+    "https://www.summitpost.org/mount-stone/151845",
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climb roughly 800 ft up onto a rock rib above the lake's basin and cross to its north side.",
+     "replace": "a boot path climbs a couple of hundred feet of rocky ground toward St. Peter's Gate; short of the Gate, turn left and traverse along the base of the long cliff band up to a notch on the west ridge."
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "expect": "Rock rib above Lake of the Angels",
+     "value": "Traverse under the cliff band above Lake of the Angels"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "then the rock rib above the basin",
+     "replace": "then the traverse under the cliff band"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE ARRIVAL TEST IS A RIB, NOT A SUMMIT VIEW.",
+     "replace": "THE ARRIVAL TEST IS A CLIFF BAND, NOT A SUMMIT VIEW."
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "climb roughly 800 ft up onto the ROCK RIB above the lake's basin and CROSS TO ITS NORTH SIDE. A rib is a shape underfoot — the ground rises to a spine and falls away on both sides — so it is identifiable in cloud, and the instruction to cross to the far side of it is a check you can perform without seeing anything. SECOND TEST: from the north side of the rib, Class 2-3 terrain leads up",
+     "replace": "a boot path climbs a couple of hundred feet toward ST. PETER'S GATE, and SHORT OF THE GATE you turn LEFT along the BASE OF THE LONG CLIFF BAND. Rock wall at your shoulder on one side and scree dropping away on the other is a check you can make in cloud without seeing anything further. SECOND TEST: along the cliff base, Class 2-3 ground and a couple of narrow chutes lead up"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Reverse the rib;",
+     "replace": "Reverse the cliff-base traverse;"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "the rock rib above the lake, crossed to its NORTH side, and Class 2-3 ground to the notch",
+     "replace": "the traverse left along the base of the cliff band, and Class 2-3 ground to the notch"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "up the rock rib and on to the west-ridge terrain",
+     "replace": "along the base of the cliff band and on to the west-ridge terrain"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "head for the rock rib",
+     "replace": "head for the cliff band"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "up the rock rib and on to the west-ridge terrain",
+     "replace": "along the base of the cliff band and on to the west-ridge terrain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Line above Lake of the Angels (beta rock rib vs cliff-base traverse)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Traverse along the base of the cliffs short of St. Peter's Gate to the west-ridge notch.",
+   "evidence": "This row's approach, climbing_route and pitch_detail all describe turning left short of St. Peter's Gate and traversing the cliff base to the west-ridge notch; beta alone says 'north of a rock rib'. The standard-route description and a route summary both give the cliff-base traverse; the rib line is one party's deviation.",
+   "sources": [
+    "https://www.summitpost.org/mount-stone/151845",
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Line above Lake of the Angels (beta rock rib vs cliff-base traverse)",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "scramble Class 3 terrain north of a rock rib, ascending the West Ridge",
+     "replace": "traverse along the base of the cliffs short of St. Peter's Gate to a notch in the West Ridge, then scramble Class 3 up the ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "fact": "Which top is the true summit",
+   "verdict": "fixed",
+   "correct_value": "The south summit (~6,280 ft) is the true high point; the north summit (~6,212 ft) is lower.",
+   "evidence": "A regional hiking guide states the 6,280 ft south summit is the mountain's highest point, reached 0.1 mi off a junction at 4.0 mi, with the northern summit at 6,212 ft; a 2024 trip report gives Mt. Townsend 6,280 ft and North Mt. Townsend 6,211 ft down the ridge. So there is no higher point beyond the south summit; overview, pro_tips and the itinerary wrongly called the south summit a mere viewpoint.",
+   "sources": [
+    "https://www.explorehoodcanal.com/stories/mount-townsend",
+    "https://kuresman.com/2024/Mt_Townsend/Report_Mt_Townsend.html",
+    "https://www.wta.org/go-hiking/hikes/mount-townsend"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Which top is the true summit",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "The true high point sits a short, easy walk beyond the more-visited south summit viewpoint.",
+     "replace": "The south summit is the true high point; the lower north summit (about 6,212 ft) lies a short walk farther along the crest."
+    },
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Which top is the true summit",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "expect": "The true summit high point is a short use-path beyond the more-photographed south summit viewpoint",
+     "value": "The south summit is the true high point, a short use-path off the trail where it tops out on the ridge; the north summit beyond it is lower"
+    },
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Which top is the true summit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "optional short detour to the true high point (6,282 ft).",
+     "replace": "this is the true high point (6,282 ft); the lower north summit is an optional walk farther along the crest."
+    },
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Which top is the true summit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach the south summit (and optional true high point) of Mount Townsend",
+     "replace": "Reach the south summit (the true high point) of Mount Townsend"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "fact": "Parking pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is only in bivy[0].permit (Camp Windy, which does serve this route); bivy is owned by the separate camping clean-up, so no patch. For that clean-up: the trail guide lists 'None' for parking pass at this trailhead, matching access.*.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-townsend"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "fact": "Distance from Silver Lakes junction to summit",
+   "verdict": "fixed",
+   "correct_value": "about 1 mile",
+   "evidence": "The trail guide puts the Silver Lakes junction at 3 mi and the summit at 4 mi; a regional guide puts the summit at about 4.1 mi (junction at 4.0 plus 0.1), and a trip report puts the Silver Lakes junction about half a mile past Camp Windy at ~2.5 mi, i.e. ~3 mi. The row's waypoints and itinerary use 3 and 4 mi; only the approach's ~1.3 mi disagreed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-townsend",
+    "https://www.explorehoodcanal.com/stories/mount-townsend",
+    "https://www.hikingwithmybrother.com/mount-townsend-trail-839.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Distance from Silver Lakes junction to summit",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "for the final ~1.3 miles to the broad",
+     "replace": "for the final ~1 mile to the broad"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "fact": "Forest type on the lower trail",
+   "verdict": "fixed",
+   "correct_value": "old-growth forest",
+   "evidence": "The trail guide says the trail from the upper trailhead soon switchbacks through old-growth with a thick rhododendron understory; a second trail description says it starts out switching back through old-growth hemlock and firs with rhododendrons. The row's overview, beta and Townsend Creek waypoint note also say old-growth; only the approach said second-growth.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-townsend",
+    "https://www.hikingproject.com/trail/7001930/mt-townsend-trail-839"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Forest type on the lower trail",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "dense, heavily wooded second-growth forest",
+     "replace": "dense, heavily wooded old-growth forest"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 6.4 is the 4 mi one-way approach and itinerary miles 8 is the day's round trip; both correct for their conventions.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

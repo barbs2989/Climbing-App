@@ -1,0 +1,28 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Drive directions end at the trailhead; 'about a mile' read as an on-foot distance. Milepost 163 is what the Big Kangaroo rows give for the same hairpin."
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 48.512275,
+     "peakLng": -120.655395,
+     "trailhead": "Hairpin pullout (SR-20)",
+     "trailheadLat": 48.51454,
+     "trailheadLng": -120.64332,
+     "trailheadDirection": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 over Rainy Pass and Washington Pass to the hairpin turn about a mile east of the pass (5,160 ft); from Winthrop/Mazama it's a 20-30 minute drive west on SR-20."
+    }
+   }
+  }
+ ]
+}

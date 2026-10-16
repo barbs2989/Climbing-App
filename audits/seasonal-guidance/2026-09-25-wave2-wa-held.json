@@ -1,0 +1,41 @@
+[
+ {
+  "id": "wa_east_face",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July to mid-August, once approach snow firms up and before glacier crossings and the schrund open wide",
+   "monthBreakdown": {
+    "June": {
+     "status": "risky",
+     "reason": "Deep snow still covers the long Ptarmigan-side approach and ridge camps, and lower pitches can hold snow and ice."
+    },
+    "July": {
+     "status": "optimal",
+     "reason": "Snow bridges still span Chickamin and Blue Glacier crevasses while the clean east-face granite dries; early July can still mean snow on the approach."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "Driest rock and most stable weather for a 4-5 day remote trip; by late August the bergschrund and crevasses open and need bypassing."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "Bare, crevassed glacier travel, a wider bergschrund, shorter days and the first fall storms make the multi-day commitment riskier."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Fall storms bring snow and ice to the face, and the long glaciated approach and descent are exposed with little daylight."
+    }
+   }
+  },
+  "evidence": [
+   "Wildsnow: Gunsight Range trip the week before July 4 for the east face of Middle Peak; significant snow on approach, via Agnes Creek - https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/",
+   "YouTube: 5-day trip for East Face of Middle Gunsight (5.10+), Glacier Peak Wilderness - https://www.youtube.com/watch?v=y-amhXgRJVI",
+   "Wikipedia Blue Glacier (Chelan County) on east slopes of Gunsight - https://en.wikipedia.org/wiki/Blue_Glacier_(Chelan_County,_Washington)"
+  ],
+  "flags": [
+   "Row identity looks muddled: area is 'Middle Peak' but beta calls it Middle Gunsight's east face; approach text says Downey Creek/Ptarmigan while at least one documented ascent approached from Stehekin/Agnes Creek. Worth a human look.",
+   "Access field mentions Mountain Loop Highway gate, which is not on the Downey Creek (Suiattle Road) approach.",
+   "Stored Jul-Sep and best_season 'July 15-August 15' agree with evidence; September kept marginal, not good."
+  ],
+  "held": "Row identity muddled: area Middle Peak but beta says Middle Gunsight; approach Downey Creek vs a documented Agnes Creek ascent; access names the Mountain Loop gate."
+ }
+]

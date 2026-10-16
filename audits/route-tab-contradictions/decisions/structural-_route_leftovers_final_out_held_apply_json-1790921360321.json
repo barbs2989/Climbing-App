@@ -1,0 +1,1704 @@
+{
+ "applied": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "op": "patch",
+   "columns": [
+    "dist_km"
+   ]
+  },
+  {
+   "id": "wa_project_crack",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "area_id": "wa_buck_mountain",
+   "name": "South Ridge",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1948 — Carl Suback and Ray Rigg",
+   "lat": 48.09363,
+   "lng": -120.9122,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Helmet",
+    "Ice axe and crampons if snow present"
+   ],
+   "hazards": [
+    "loose rock",
+    "ridge exposure",
+    "lingering snow on approach",
+    "loose black schist on the upper scramble slopes",
+    "short Class 3-4 step near a rock horn just below the true summit",
+    "stream crossings on the Buck Creek Trail approach",
+    "afternoon thunderstorms possible in late summer"
+   ],
+   "verif": null,
+   "overview": "Buck Mountain (8,534 ft) is the high point of the peaks ringing Buck Creek Pass in the Glacier Peak Wilderness, named for pioneer USFS surveyor Albert H. Sylvester. Its north and east faces are composed of dark, almost black schist that gives the summit a brooding look above the pass; the summit affords sweeping views of Glacier Peak (about 9 miles west), Clark Mountain (its taller parent peak, ~4 miles southwest), Liberty Cap, and Helmet Butte. First climbed in 1948 by Carl Suback and Ray Rigg, the peak is now one of the most popular scrambles in the area — typically climbed as a side trip from a multi-day backpack based at Buck Creek Pass, and rated as an Alpine Scramble.",
+   "beta": "The usual way up comes from the west, which means a long way round even though the peak stands only about three miles from Trinity. From the Trinity Trailhead, the Buck Creek Trail (#1513) climbs about 9.6 miles and 3,100 ft to Buck Creek Pass. From the pass an unmaintained high route winds around the west side of Liberty Cap and south to High Pass; contour through the pass and under Mount Berge, climb a short Class 3 step onto the ridge just south of Point 7839, and walk down into Louis Creek Basin to camp. From the basin, broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, and loose, slabby schist with one short Class 3-4 step near a horn goes to the summit. Some parties come in over Little Giant Pass and the Napeequa valley instead. A direct line from King Lake on the east side exists but is brushy, involves a river ford, and is seldom used.",
+   "turnaround": "Set a firm turnaround time before starting the summit push from camp and honor it — afternoon thunderstorms, the long remote approach, and loose schist on the exposed Class 3 terrain make a late or rushed descent significantly more hazardous.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 5700,
+   "loss_ft": 5700,
+   "dist_km": 38.62,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "South Ridge",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": null,
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "loose/slabby schist rock",
+    "creek crossing (Buck Creek)",
+    "brush/bushwhacking off-trail",
+    "route-finding above the trail",
+    "lingering snowfields and avalanche terrain into early summer",
+    "exposed Class 3 moves near the summit",
+    "remoteness / long wilderness approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.072,
+     "lng": -120.85,
+     "elev": 2800,
+     "name": "Trinity Trailhead",
+     "note": "End of Chiwawa River Road/FR-6200 (last 12 mi rough gravel); pay day-use fee or NW Forest Pass and self-issue a free Glacier Peak Wilderness permit at the kiosk.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From US-2 at Coles Corner, take SR-207 north 4.2 miles past the Wenatchee River crossing and bear right onto Chiwawa Loop Road. After 1.3 miles turn left onto Chiwawa River Road (FS Road 62) and drive about 22 miles, the last 11 on rough gravel, keeping left at the final junction for the Trinity Trailhead at about 2,800 ft. A Northwest Forest Pass is required and a free wilderness permit is self-issued at the kiosk."
+    },
+    {
+     "lat": 48.10506,
+     "lng": -120.87935,
+     "elev": 3300,
+     "name": "Chiwawa River crossing",
+     "note": "Crossing of the Chiwawa River about three miles up the trail. There is no footbridge; cross on a log near the old bridge site, and expect to wade if the river is high.",
+     "type": "Water",
+     "distMi": null
+    },
+    {
+     "lat": 48.144,
+     "lng": -120.9629,
+     "elev": 5900,
+     "name": "Buck Creek Pass",
+     "note": "Established camps in scattered trees and meadows; most parties base camp here for the climb, with a junction to the Flower Dome Trail #799 a half mile north.",
+     "type": "Campsite",
+     "distMi": 9.6
+    },
+    {
+     "lat": 48.110406,
+     "lng": -120.952615,
+     "elev": 6971,
+     "name": "High Pass",
+     "note": "The old High Pass trail fades into talus and hard snow here. Contour through the pass and under Mount Berge, then climb a short Class 3 step onto the ridge just south of Point 7839.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": ""
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": null,
+     "name": "Louis Creek Basin camp",
+     "note": "Camp in the basin below Buck's southwest side, reached by an easy walk down from the faint saddle south of Point 7839. Stay high on the traverse from the Berge saddle to avoid waterfall slabs.",
+     "type": "Campsite",
+     "distMi": 13.5,
+     "directions": ""
+    },
+    {
+     "lat": 48.09363,
+     "lng": -120.9122,
+     "elev": 8534,
+     "name": "Buck Mountain",
+     "note": "True summit; sweeping views of Glacier Peak, Clark Mountain, and the Napeequa valley — first climbed in 1948 by Carl Suback and Ray Rigg.",
+     "type": "Summit",
+     "distMi": 15
+    }
+   ],
+   "gpx": [
+    [
+     48.072318,
+     -120.850608
+    ],
+    [
+     48.074051,
+     -120.854088
+    ],
+    [
+     48.076676,
+     -120.854463
+    ],
+    [
+     48.080049,
+     -120.857283
+    ],
+    [
+     48.084067,
+     -120.861912
+    ],
+    [
+     48.089077,
+     -120.866204
+    ],
+    [
+     48.093147,
+     -120.868063
+    ],
+    [
+     48.0976,
+     -120.867316
+    ],
+    [
+     48.101774,
+     -120.869665
+    ],
+    [
+     48.105123,
+     -120.871917
+    ],
+    [
+     48.107592,
+     -120.873514
+    ],
+    [
+     48.110747,
+     -120.874793
+    ],
+    [
+     48.113519,
+     -120.877166
+    ],
+    [
+     48.116337,
+     -120.877347
+    ],
+    [
+     48.118289,
+     -120.877818
+    ],
+    [
+     48.121401,
+     -120.877789
+    ],
+    [
+     48.123633,
+     -120.879006
+    ],
+    [
+     48.127064,
+     -120.880277
+    ],
+    [
+     48.129632,
+     -120.881546
+    ],
+    [
+     48.129848,
+     -120.881397
+    ],
+    [
+     48.132515,
+     -120.882881
+    ],
+    [
+     48.134842,
+     -120.884847
+    ],
+    [
+     48.137759,
+     -120.886594
+    ],
+    [
+     48.1388,
+     -120.888297
+    ],
+    [
+     48.141389,
+     -120.890845
+    ],
+    [
+     48.143441,
+     -120.894267
+    ],
+    [
+     48.142025,
+     -120.896062
+    ],
+    [
+     48.142738,
+     -120.898112
+    ],
+    [
+     48.144443,
+     -120.900037
+    ],
+    [
+     48.14618,
+     -120.902531
+    ],
+    [
+     48.146372,
+     -120.904484
+    ],
+    [
+     48.14702,
+     -120.907481
+    ],
+    [
+     48.147929,
+     -120.909262
+    ],
+    [
+     48.148546,
+     -120.90949
+    ],
+    [
+     48.149151,
+     -120.909149
+    ],
+    [
+     48.150013,
+     -120.91054
+    ],
+    [
+     48.150953,
+     -120.911418
+    ],
+    [
+     48.151705,
+     -120.913387
+    ],
+    [
+     48.151847,
+     -120.913826
+    ],
+    [
+     48.152706,
+     -120.915097
+    ],
+    [
+     48.153272,
+     -120.915622
+    ],
+    [
+     48.155188,
+     -120.916567
+    ],
+    [
+     48.15609,
+     -120.916211
+    ],
+    [
+     48.1569,
+     -120.916694
+    ],
+    [
+     48.157864,
+     -120.916306
+    ],
+    [
+     48.158958,
+     -120.915373
+    ],
+    [
+     48.160246,
+     -120.913473
+    ],
+    [
+     48.160726,
+     -120.909785
+    ],
+    [
+     48.161513,
+     -120.909431
+    ],
+    [
+     48.16294,
+     -120.90833
+    ],
+    [
+     48.163182,
+     -120.907935
+    ],
+    [
+     48.162343,
+     -120.908964
+    ],
+    [
+     48.161793,
+     -120.909645
+    ],
+    [
+     48.160974,
+     -120.909598
+    ],
+    [
+     48.160127,
+     -120.910516
+    ],
+    [
+     48.159636,
+     -120.914715
+    ],
+    [
+     48.158103,
+     -120.916289
+    ],
+    [
+     48.158373,
+     -120.91754
+    ],
+    [
+     48.158725,
+     -120.919042
+    ],
+    [
+     48.159496,
+     -120.923471
+    ],
+    [
+     48.160069,
+     -120.927266
+    ],
+    [
+     48.16023,
+     -120.928735
+    ],
+    [
+     48.16042,
+     -120.929974
+    ],
+    [
+     48.160477,
+     -120.930706
+    ],
+    [
+     48.160639,
+     -120.930951
+    ],
+    [
+     48.160837,
+     -120.931277
+    ],
+    [
+     48.160944,
+     -120.931639
+    ],
+    [
+     48.160713,
+     -120.932052
+    ],
+    [
+     48.160818,
+     -120.932568
+    ],
+    [
+     48.160664,
+     -120.932791
+    ],
+    [
+     48.15941,
+     -120.933594
+    ],
+    [
+     48.157456,
+     -120.934192
+    ],
+    [
+     48.154242,
+     -120.93683
+    ],
+    [
+     48.153829,
+     -120.941028
+    ],
+    [
+     48.154635,
+     -120.943067
+    ],
+    [
+     48.153909,
+     -120.944732
+    ],
+    [
+     48.153566,
+     -120.946553
+    ],
+    [
+     48.15294,
+     -120.948393
+    ],
+    [
+     48.151915,
+     -120.949877
+    ],
+    [
+     48.150927,
+     -120.949004
+    ],
+    [
+     48.149393,
+     -120.947901
+    ],
+    [
+     48.147349,
+     -120.947475
+    ],
+    [
+     48.146225,
+     -120.947006
+    ],
+    [
+     48.145014,
+     -120.948311
+    ],
+    [
+     48.144141,
+     -120.951093
+    ],
+    [
+     48.142783,
+     -120.953604
+    ],
+    [
+     48.142447,
+     -120.956272
+    ],
+    [
+     48.143541,
+     -120.958678
+    ],
+    [
+     48.14464,
+     -120.961033
+    ],
+    [
+     48.144293,
+     -120.961229
+    ],
+    [
+     48.143486,
+     -120.962138
+    ],
+    [
+     48.142699,
+     -120.963047
+    ],
+    [
+     48.141403,
+     -120.964469
+    ],
+    [
+     48.139965,
+     -120.965242
+    ],
+    [
+     48.138842,
+     -120.964611
+    ],
+    [
+     48.136024,
+     -120.967234
+    ],
+    [
+     48.132319,
+     -120.96506
+    ],
+    [
+     48.130413,
+     -120.962242
+    ],
+    [
+     48.129379,
+     -120.959447
+    ],
+    [
+     48.126266,
+     -120.95531
+    ],
+    [
+     48.122976,
+     -120.955219
+    ],
+    [
+     48.120857,
+     -120.954626
+    ],
+    [
+     48.118614,
+     -120.95314
+    ],
+    [
+     48.116139,
+     -120.952144
+    ],
+    [
+     48.114469,
+     -120.949683
+    ],
+    [
+     48.114322,
+     -120.949896
+    ],
+    [
+     48.111713,
+     -120.951302
+    ],
+    [
+     48.109657,
+     -120.952284
+    ],
+    [
+     48.107136,
+     -120.952032
+    ],
+    [
+     48.102929,
+     -120.952811
+    ],
+    [
+     48.101406,
+     -120.951982
+    ],
+    [
+     48.102435,
+     -120.951126
+    ],
+    [
+     48.101702,
+     -120.948889
+    ],
+    [
+     48.10143,
+     -120.946888
+    ],
+    [
+     48.102593,
+     -120.946701
+    ],
+    [
+     48.103088,
+     -120.9465
+    ],
+    [
+     48.101837,
+     -120.946448
+    ],
+    [
+     48.101753,
+     -120.945729
+    ],
+    [
+     48.102141,
+     -120.941997
+    ],
+    [
+     48.100295,
+     -120.941768
+    ],
+    [
+     48.099455,
+     -120.939889
+    ],
+    [
+     48.096632,
+     -120.935586
+    ],
+    [
+     48.095245,
+     -120.933244
+    ],
+    [
+     48.093802,
+     -120.93068
+    ],
+    [
+     48.093673,
+     -120.93031
+    ],
+    [
+     48.094148,
+     -120.927423
+    ],
+    [
+     48.094619,
+     -120.92565
+    ],
+    [
+     48.09426,
+     -120.923846
+    ],
+    [
+     48.093105,
+     -120.923099
+    ],
+    [
+     48.091599,
+     -120.922743
+    ],
+    [
+     48.090133,
+     -120.92142
+    ],
+    [
+     48.090918,
+     -120.917344
+    ],
+    [
+     48.089906,
+     -120.912055
+    ],
+    [
+     48.090995,
+     -120.911749
+    ],
+    [
+     48.091738,
+     -120.91181
+    ],
+    [
+     48.089932,
+     -120.912931
+    ],
+    [
+     48.090562,
+     -120.915918
+    ],
+    [
+     48.090683,
+     -120.916169
+    ],
+    [
+     48.087945,
+     -120.918188
+    ],
+    [
+     48.085323,
+     -120.919532
+    ],
+    [
+     48.084444,
+     -120.917078
+    ],
+    [
+     48.084695,
+     -120.916735
+    ],
+    [
+     48.085307,
+     -120.913394
+    ],
+    [
+     48.085562,
+     -120.909334
+    ],
+    [
+     48.085393,
+     -120.906213
+    ],
+    [
+     48.086047,
+     -120.90446
+    ],
+    [
+     48.087362,
+     -120.90276
+    ],
+    [
+     48.087846,
+     -120.901294
+    ],
+    [
+     48.087984,
+     -120.901224
+    ],
+    [
+     48.087749,
+     -120.900455
+    ],
+    [
+     48.086723,
+     -120.897513
+    ],
+    [
+     48.086427,
+     -120.896909
+    ],
+    [
+     48.086014,
+     -120.895809
+    ],
+    [
+     48.08582,
+     -120.894856
+    ],
+    [
+     48.087752,
+     -120.89275
+    ],
+    [
+     48.088033,
+     -120.891085
+    ],
+    [
+     48.087525,
+     -120.888719
+    ],
+    [
+     48.087523,
+     -120.887374
+    ],
+    [
+     48.087355,
+     -120.885226
+    ],
+    [
+     48.086991,
+     -120.883816
+    ],
+    [
+     48.087286,
+     -120.881241
+    ],
+    [
+     48.087536,
+     -120.879348
+    ],
+    [
+     48.087685,
+     -120.876914
+    ],
+    [
+     48.08802,
+     -120.874538
+    ],
+    [
+     48.088104,
+     -120.873707
+    ],
+    [
+     48.087907,
+     -120.873005
+    ],
+    [
+     48.087812,
+     -120.872757
+    ],
+    [
+     48.088026,
+     -120.872274
+    ],
+    [
+     48.088292,
+     -120.870801
+    ],
+    [
+     48.088335,
+     -120.869226
+    ],
+    [
+     48.088408,
+     -120.868378
+    ],
+    [
+     48.087878,
+     -120.86791
+    ],
+    [
+     48.08764,
+     -120.868112
+    ],
+    [
+     48.087099,
+     -120.867598
+    ],
+    [
+     48.086884,
+     -120.867568
+    ],
+    [
+     48.086778,
+     -120.867877
+    ],
+    [
+     48.086381,
+     -120.867808
+    ],
+    [
+     48.086341,
+     -120.866065
+    ],
+    [
+     48.086487,
+     -120.865511
+    ],
+    [
+     48.086649,
+     -120.86568
+    ],
+    [
+     48.086718,
+     -120.8656
+    ],
+    [
+     48.086649,
+     -120.865591
+    ],
+    [
+     48.085635,
+     -120.863901
+    ],
+    [
+     48.081909,
+     -120.859503
+    ],
+    [
+     48.078037,
+     -120.856908
+    ],
+    [
+     48.075789,
+     -120.853537
+    ],
+    [
+     48.073618,
+     -120.853923
+    ],
+    [
+     48.072108,
+     -120.851218
+    ],
+    [
+     48.07223,
+     -120.850773
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 4,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 10,
+    "recommendedStart": "6:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 10,
+      "note": "Trinity trailhead up the Buck Creek Trail to Buck Creek Pass, then the High Pass high route around Liberty Cap, through High Pass and under Mount Berge to a camp in Louis Creek Basin.",
+      "fromTo": "Backpack in to Louis Creek Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 4,
+      "note": "From the basin, up the south and southwest slopes to the crest and along loose schist to the summit, then back to camp.",
+      "fromTo": "Summit Buck Mountain",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Reverse the high route to Buck Creek Pass and walk out the Buck Creek Trail to Trinity.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No roped rock rack is needed for the standard scramble line; it is climbed unroped in typical dry summer conditions. Some parties carry a light rope, a few slings, and basic protection for added security on the more exposed class 3 steps or if conditions are wet, icy, or snow-covered.",
+   "what_to_bring": [
+    "ice axe (early season)",
+    "helmet",
+    "satellite communicator",
+    "trekking poles (stream crossings on the Buck Creek Trail approach)"
+   ],
+   "pro_tips": [
+    "Pair with a Buck Creek Pass basecamp",
+    "Watch the exposure on the ridge steps",
+    "Fill out the free self-issue wilderness permit at the Trinity Trailhead kiosk",
+    "Check the Okanogan-Wenatchee NF road-conditions page before driving — Chiwawa River Road has been closed short of Trinity Trailhead since a Dec. 2025 storm",
+    "The short Class 3-4 step near the summit horn can be skirted via ledges to the west for an easier passage."
+   ],
+   "watch_out": [
+    "loose blocks",
+    "exposed moves on the crest",
+    "a brief harder (Class 3-4) step near a dark rock horn below the summit",
+    "snow-covered gully terrain persisting later than expected in big-snow years"
+   ],
+   "pro_needs": "This is an unroped Class 2-3 scramble with no fixed protection or established rappel anchors; parties uncomfortable with the exposed schist moves near the summit sometimes carry a rope and a few slings for a hip-belay or short rappel, but it is not standard gear for this line.",
+   "best_season": "August",
+   "high_point_ft": 8534,
+   "aid_grade": null,
+   "approach": "From the Trinity Trailhead (Glacier Peak Wilderness, self-issue wilderness permit at the kiosk) at the end of the Chiwawa River Road/FR-6200 (~2,800 ft), follow Buck Creek Trail #1513. The trail splits from the Chiwawa River Trail #1550 within the first mile and climbs steadily through forest; around mile 2.75-3 it crosses the upper Chiwawa River, where there is no longer a footbridge; look for a log crossing near the old bridge site and have a wading backup plan, since the river runs fast and deep in early season. Above the crossing the trail is a long, fairly shadeless, grinding ascent (mosquitoes/black flies are heavy in July) through forest and then subalpine meadow along the flank of Middle Ridge, opening into increasingly good wildflower and Glacier Peak views as you climb. At roughly 9.25-10 miles and about 3,000-3,300 ft of gain, the trail tops out at Buck Creek Pass (~5,800-5,900 ft) - one of the most scenic passes in the Cascades, with a reliable spring near the pass for water (last dependable source before the basin). Beyond the pass there is no maintained trail: pick up the well-used climbers'/boot path that switchbacks up toward Liberty Cap and the High Pass Trail junction, then leave that path to contour and traverse west/southwest, staying below Liberty Cap, into the upper basin below Buck Mountain's south and west aspects (Louis Creek Basin, ~6,700 ft) - the standard camp for a two-day trip. Follow the ridge crest through Class 2-3 terrain (stepping to locally 3-4 near a horn/gendarme close to the true summit) on loose, rubbly, slabby schist to the top; the summit crest has several bumps within feet of each other, so take care identifying the true high point. Primary approach hazards: rockfall/loose schist (helmet recommended, especially with parties above or below), the river crossing in high water, no reliable water source between the pass and the basin in a dry year, and route-finding above Buck Creek Pass since the climbers' path is intermittent. An alternate historic approach reaches Buck Mountain via Little Giant Pass and the Napeequa Valley, used for longer traverses.",
+   "descent_text": "This is a walk-off/downclimb - no rappelling is involved on the standard South Ridge route. Reverse the ascent line: downclimb the Class 2-3 (locally 3-4 near the summit horn) loose, rubbly schist back down the ridge crest to the low-angle snowfield/basin around 7,400 ft, then descend the pumice and talus slopes back to the Louis Creek Basin camp (~6,700 ft). From there, traverse back east below Liberty Cap to rejoin the boot path down to Buck Creek Pass, and finish on the maintained Buck Creek Trail #1513 for the roughly 9.25-10 mile, ~3,000-3,300 ft descent back to the Trinity Trailhead. Trip reports on this route put summit-day round trip from a Buck Creek Pass/Louis Creek Basin camp at roughly 4 hours; given a car-to-car round trip of roughly 30 miles, most parties treat this as an overnight (camp at Buck Creek Pass or the upper basin) rather than a single push, though strong parties have done it in a long day. The main descent hazard is the same loose schist encountered on the way up - downclimbing loose rock is generally more dangerous than ascending it, so descend deliberately, test holds, and keep the group tight (or move one at a time) through the Class 3-4 band near the summit to avoid kicking rock onto climbers below. Rappels: 0.",
+   "bail": "Retreat is straightforward on this unroped scramble: descend the same slopes to Louis Creek Basin and reverse the high route to Buck Creek Pass. No technical or rope descent is needed on the standard line, but the high route itself is long and dry, so a retreat from the basin is still a full day out.",
+   "pitch_detail": [
+    {
+     "grade": "Trail",
+     "notes": "Trinity Trailhead up the Buck Creek Trail #1513 to Buck Creek Pass (~5,800 ft), about 9.6 miles and 3,100 ft",
+     "pitch": "Approach"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Unmaintained high route around the west side of Liberty Cap to High Pass, then under Mount Berge and over a short Class 3 step on the ridge south of Point 7839 into Louis Creek Basin",
+     "pitch": "High route"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Pumice, talus and low-angle snow from the basin up the south and southwest slopes to the crest around 7,400 ft",
+     "pitch": "South/southwest slopes"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Loose, slabby schist along the crest to the summit, with a short Class 3-4 step near a horn; several bumps of nearly equal height",
+     "pitch": "Summit scramble"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best mid-July through September, once the high route beyond Buck Creek Pass and the basin have melted out; a free self-issue Glacier Peak Wilderness permit is required and is available at the trailhead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513) about 9.6 miles and 3,100 ft to Buck Creek Pass, and fill up with water there. Follow the old High Pass trail around the west side of Liberty Cap and south to High Pass, where the tread fades into talus and snow, then contour through the pass and under Mount Berge and climb a short Class 3 step onto the ridge just south of Point 7839. An easy walk-off drops into Louis Creek Basin to camp. A long, dry, exposed day once past the pass.",
+      "hours": 10,
+      "miles": 13.5,
+      "title": "Backpack in to Louis Creek Basin",
+      "gainFt": 4800,
+      "lossFt": 900,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Trinity trailhead",
+        "detail": "Buck Creek Trail No. 1513."
+       },
+       {
+        "time": "~12:00 PM",
+        "label": "Buck Creek Pass (~5,800 ft)",
+        "detail": "Last reliable water for about four miles; fill up."
+       },
+       {
+        "time": "~2:00 PM",
+        "label": "High Pass",
+        "detail": "Tread fades into talus and hard snow; crampons can help."
+       },
+       {
+        "time": "~4:00 PM",
+        "label": "Louis Creek Basin camp",
+        "detail": "Stay high on the traverse from the Berge saddle to avoid waterfall slabs."
+       }
+      ],
+      "objective": "Reach camp in Louis Creek Basin below Buck's southwest side"
+     },
+     {
+      "n": 2,
+      "note": "Climb with a light pack from the basin: broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, then loose, slabby schist with a short Class 3-4 step near a horn below the top. The crest has several bumps of nearly equal height, so walk it to find the high point. Return the same way to camp.",
+      "hours": 4,
+      "miles": 3,
+      "title": "Summit Buck Mountain",
+      "gainFt": 1900,
+      "lossFt": 1900,
+      "packLb": 12,
+      "schedule": [
+       {
+        "time": "6:30 AM",
+        "label": "Leave camp",
+        "detail": "Early start to beat afternoon thunderstorm risk."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Gain the crest (~7,400 ft)",
+        "detail": "Pumice, talus and low-angle snow."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Summit",
+        "detail": "Class 2-3 schist, locally 3-4 near a horn below the top."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Back at camp",
+        "detail": "Downclimb carefully; the schist is loose."
+       }
+      ],
+      "objective": "Climb Buck Mountain (8,534 ft) and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and reverse the approach: back over the ridge south of Point 7839, under Mount Berge and through High Pass, around Liberty Cap to Buck Creek Pass, then down the Buck Creek Trail to Trinity. Carry enough water for the dry stretch before the pass.",
+      "hours": 8,
+      "miles": 13.5,
+      "title": "Hike out",
+      "gainFt": 900,
+      "lossFt": 4800,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to Trinity trailhead"
+     }
+    ],
+    "totalNote": "A 3-day backpack of roughly 30 miles round trip: a long first day over Buck Creek Pass and the High Pass high route to a camp in Louis Creek Basin, a summit day of about four hours round trip from camp, and a long walk out. Buck is remote and lightly visited; expect loose rock, route-finding and a dry ridge rather than a trail."
+   },
+   "access": {
+    "rules": "Leave No Trace practices and Glacier Peak Wilderness group-size/stock limits apply; no mechanized or wheeled equipment permitted in wilderness.",
+    "permit": "Free self-issue wilderness permit, filled out at the Trinity Trailhead kiosk (required for all Glacier Peak Wilderness users, day or overnight).",
+    "closures": "Chiwawa River Road (FR 6200) is closed to vehicles at milepost 18.2, just beyond Atkinson Flat Campground, due to December 2025 storm damage; the Okanogan-Wenatchee NF conditions page (updated July 1, 2026) lists it as unlikely to reopen this season. The Little Giant Fire closure (order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner, also closes FR 6200 and the Buck Creek Trail. Check fs.usda.gov/r06/okanogan-wenatchee/conditions before driving out.",
+    "landManager": "Glacier Peak Wilderness, Wenatchee River Ranger District, Okanogan-Wenatchee National Forest",
+    "passRequired": "Northwest Forest Pass or National Forest Day Pass required for Trinity Trailhead parking ($5/day or $30 annual); Interagency/America the Beautiful and National Park passes also honored.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Chiwawa River Road (Forest Road 6200) to Trinity Trailhead",
+    "status": "Closed beyond MP 18.2 (2026 season) — not a normal seasonal closure",
+    "driveNote": "From Coles Corner (US-2) take SR-207 toward Lake Wenatchee ~4.2 mi, bear right onto Chiwawa Loop Road, then left onto Chiwawa River Road (FR 6200); pavement ends near mile 10.8, and the final stretch is rough gravel/dirt not suited to low-clearance vehicles. Since May 20, 2026 the road has been closed to vehicles at MP 18.2 beyond Atkinson Flat Campground under Forest Service order 06-17-07-2026-11 (through December 31, 2027) — plan for extra road-walking miles to reach Trinity Trailhead. While the Little Giant Fire closure (order 06-17-07-2026-40) is in force, September 3 through October 31, 2026 unless lifted sooner, the road and the Buck Creek Trail are closed to all entry.",
+    "seasonalGate": "Normally opens as snow clears in late May/June and stays open into fall; currently closed beyond Atkinson Flat under USFS closure order #06-17-07-2026-11 (effective May 20, 2026 through December 31, 2027 unless rescinded sooner) after December 2025 storm damage, rather than a routine seasonal gate."
+   },
+   "climate": {
+    "typical": "East-slope Cascades transitional climate: Pacific storm systems drop heavy, wet snow on the approach through winter and spring via orographic lift as they hit the peaks, while summers are drier and more settled than the west side of the range; afternoon thunderstorms are possible in late summer.",
+    "bySeason": {
+     "fall": "Short, often clear weather window; first snow can arrive by late September/October",
+     "spring": "Deep, avalanche-prone snowpack on the approach slopes and summit gullies",
+     "summer": "Best window, generally dry rock from mid/late July through September, but watch for afternoon thunderstorms",
+     "winter": "Full snow cover; road access to Trinity Trailhead typically closed by snow even in normal years"
+    },
+    "forecastZone": "No confirmed dedicated NWAC zone for this specific peak; nearest coverage is from NWAC's East Slopes North and Stevens Pass forecast zones — check nwac.us for the current zone map before a spring trip."
+   },
+   "emergency": {
+    "notes": "Remote wilderness terrain with no cell coverage past the trailhead; a satellite communicator is strongly advised. All 911 calls in Chelan County route through RiverCom dispatch; the Chelan County Sheriff's Office Search & Rescue unit is the primary responder for the area. Note the active 2026 Chiwawa River Road closure adds significant time/distance to any self-rescue or evacuation.",
+    "county": "Chelan County",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth, WA 98826 — (509) 548-2550 (closed Wednesdays)",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA — 24/7 emergency department, closer to the Chiwawa Valley trailhead than Lake Chelan Community Hospital; advanced trauma cases are transported to Wenatchee, Seattle, or Spokane."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; what traffic exists clusters around the Aug optimal window, often parties already based at Buck Creek Pass/Trinity for backpacking",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely fewer than 10 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong and sustained - roughly 10 miles / 3,100+ ft gain on the Buck Creek Trail #1513 just to reach Buck Creek Pass, plus additional off-trail elevation and cross-country travel to the summit ridge",
+     "packWeight": "Typically an overnight/multi-day pack (30-40 lb) since most parties camp near Buck Creek Pass/Trinity rather than attempting a single push"
+    },
+    "approachTime": "Long - about 10 miles/3,100 ft to Buck Creek Pass from the Trinity trailhead on Chiwawa River Road; most parties treat this as a 2-3 day backpack trip with a scramble day rather than a single long car-to-summit push",
+    "requiredSkills": [
+     "Class 3 scrambling with exposure management",
+     "Off-trail / cross-country route-finding (no maintained summit trail)",
+     "Loose rock (talus/blocky terrain) awareness",
+     "Basic snow travel/self-arrest for lingering early-season snowfields",
+     "Wilderness navigation (map, compass, or GPS)"
+    ],
+    "experienceLevel": "Comfortable, competent Class 3 scrambler with exposure tolerance and remote-wilderness self-sufficiency; not a beginner objective given the long approach and loose rock"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August the most reliable window",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snowfields on the approach and ridge; conditions improve through late July as the season window opens",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "In season - the route is typically snow-free with the most stable transitional east-side weather",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still climbable and usually melted out, but shorter days and an increasing chance of early fall weather narrow the margin",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Transitional east-side climate - summer offers the most stable weather with warm days and cool nights; overall a short, dry high-pressure window bracketed by snow in spring/fall",
+     "probability": "Afternoon thunderstorms/isolated convective buildups are possible on east-side Cascades ridgelines in Aug, raising lightning risk on the exposed ridge"
+    },
+    "exposure": "Ridge exposure and loose blocks: a slip on exposed Class 3 sections could result in a serious fall, so staying on the easiest line and testing loose rock is important",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route climbed outside the NWAC forecast season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; the South Ridge scramble line stays off the peak's glaciated aspects"
+   },
+   "data_quality": {
+    "gaps": [
+     "Elevation is cited as both 8,534 ft (current USGS/GNIS-derived figure, Wikipedia/Peakbagger) and 8,573 ft (older triangulated maps, some WTA trip reports) — used 8,534 ft as the more authoritative modern figure.",
+     "Exact NWAC avalanche forecast zone boundary for this specific peak not confirmed from a primary source.",
+     "No confirmed reopening date for the Chiwawa River Road closure beyond \"unlikely in 2026\" per the Forest Service.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/97CC",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.09363,
+    "peakLng": -120.9122,
+    "trailhead": "Trinity Trailhead (end of Chiwawa River Road)",
+    "trailheadLat": 48.071966,
+    "trailheadLng": -120.84999,
+    "trailheadDirection": "From the Trinity Trailhead (~2,800 ft) at the end of Chiwawa Valley Road 6200"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Exposed Class 3 scrambling that calls for gear and experience. A rope is not typically carried for the ridge scramble itself, as on comparable Class 3 Cascades scrambles, though some parties may carry a short rope/sling for exposed moves.",
+   "ascender": null,
+   "corrections": "Limited South Ridge-specific source data. Gear profile inferred from the Class 3 rating and regional norms.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Trinity to Buck Creek Pass, then the High Pass high route around the west side",
+     "camps": [
+      "Buck Creek Pass and the High Pass camps",
+      "Buck Creek Pass"
+     ],
+     "hours": "6",
+     "notes": "Start at Trinity at the end of the Chiwawa River Road, FR 62, at about 2,800 ft. Take the Buck Creek trail #1513, which splits off the Chiwawa River trail within the first mile and climbs steadily to Buck Creek Pass — roughly six hours and about 3,100 ft of gain.\n\nWhy this way round at all is worth understanding before you commit: Buck sits only about three miles from Trinity as the crow flies and is Class 2-3 from the south-west, but a long rugged ridge runs north and south of it and there is no road or trail up the Napeequa on the west, so the normal route is a very long way round. The two documented ways to reach that west side are the high route north from Buck Creek Pass and Little Giant Pass from the south.\n\nAt the pass there is a large established camp with toilets just before the switchbacks up toward Liberty Cap. Fill up with water there — there is none for the next four miles and the ridge walk is fully sun-exposed.\n\nFollow the old High Pass trail as it winds high around the side of Liberty Cap, then south for several miles until the tread dies out in talus and hard snowfields at High Pass; crampons are worth having for that. Contour through the pass and under Mount Berge, then angle up to the ridge crest just south of Point 7839. A short section of Class 3 reaches a faint saddle from which there is an easy walk-off down into Louis Creek Basin.",
+     "gainFt": 3100,
+     "season": "Roughly Jul-Sep; the traverse from the Berge saddle crosses steep heather that is nasty when wet, and holds snow into summer",
+     "hazards": [
+      "No water for four miles beyond Buck Creek Pass on an exposed ridge",
+      "Steep heather ledges at the Berge saddle, very sketchy when wet",
+      "Waterfall slabs below the traverse line if you lose too much height",
+      "Hard snowfields at High Pass wanting crampons",
+      "Loose rubbly schist on the summit crest, with a fatal fall on record on this peak",
+      "Burn scar on the lower Buck Creek trail — hot, and blowdown"
+     ],
+     "primary": true,
+     "baseFinding": "The critical instruction on the traverse is about height, and it comes with a stated consequence: from the saddle south of Berge, curving right around the bowl toward the mountain, stay high. Drop too low and you end up in steep waterfall slabs. If you are looking at running water over slabby ground, you have lost too much elevation and should climb back.\n\nThe arrival is unmistakable and it is not rock: you reach a beautiful forested bench with larches — good enough that parties note it as a campsite — and cross a river. Once across that river you are at the base of Buck.\n\nAbove there the ground is broad pumice, talus and low-angle snowfield up to the south ridge around 7,400 ft, and then rubbly slabby schist along the crest with a short step up to Class 3-4 near a horn close to the top.\n\nSummit warning, and it is a genuine unresolved disagreement rather than a caution: parties do not agree how many summits Buck has or which is highest. One party climbed the middle of the long crest, found the register there, and judged it higher than both the north point and the south by twenty feet or more. Another says the south is the true one. A third found the register — dated 1967 — on the north horn and reported the two tops as roughly equal. Only one of those parties actually measured anything. The summit crest holds several bumps within a few feet of each other, so expect to walk the crest rather than to arrive at an obvious high point, and do not treat a register as proof.\n\nA useful sighting cue from a party approaching by a different line: the summit does not come into view until you reach the flat ground around 8,000 ft, in an upper cirque one climber described as looking like the flying bridge of a boat.\n\nThis mountain has killed someone — a climber fell fifty feet scrambling on a route on the east side, direct from Trinity, in 2018. The direct east line involves a river ford and a savage brushy bushwhack and is generally recommended as a descent rather than an ascent."
+    },
+    {
+     "name": "Little Giant Pass and the Napeequa valley",
+     "trip": {
+      "approachLogistics": {
+       "trailhead": "Little Giant Trailhead (Chiwawa River Road, Trail #1518)",
+       "trailheadLat": 48.0266,
+       "trailheadLng": -120.829
+      }
+     },
+     "notes": "Ford the Chiwawa River at the Little Giant trailhead, climb steeply over Little Giant Pass and drop into the Napeequa valley. Go upvalley, then leave the trail at Louis Creek and climb its brushy left side past a waterfall into the basin around 6,400 ft on the peak's southwest side. The river ford can be deep and swift in early summer."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Pumice and talus slopes to the south ridge",
+     "notes": "From the basin, ascend broad pumice and talus slopes and a low-angle snowfield to gain the south ridge around 7,400 ft; an ice axe, and crampons in early season, are worth carrying."
+    },
+    {
+     "n": 2,
+     "class": "Class 2-3",
+     "label": "South ridge crest to the summit",
+     "notes": "Follow the ridge crest through Class 2-3 terrain, stepping to locally 3-4 near a horn/gendarme close to the true summit, on loose, rubbly, slabby schist. Rockfall/loose schist is the main hazard - helmet recommended, especially with parties above or below. The summit crest has several bumps within feet of each other, so take care identifying the true high point."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5800,
+     "name": "Buck Creek Pass and the High Pass camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the shortest objective from here. Buck Mountain rises directly south across the valley and is normally taken by leaving the Buck Creek trail lower down for the east ridge of Cleator and the Buck–Berge col, which also gives Mount Berge. From the pass a way trail continues north over Flower Dome to High Pass, which is both a fine high camp in its own right and the link over into the Napeequa, tying this side of the zone to Clark and Luahna. Getting here is around ten miles and three thousand feet of steady forest walking up Buck Creek from Trinity, so it is a full first day. It is a scenic and genuinely popular pass, which for a climbing party means arriving early enough to get a site. When the Chiwawa road is shut at Atkinson Flat the trailhead itself is roughly eleven road miles further on, which turns a two-day trip into a four-day one or a long bike shuttle.",
+     "water": "A stream at the pass is the main supply and is reliable through the season; the higher camps toward High Pass run on snowmelt only and can be dry by September",
+     "permit": "Free self-issue Glacier Peak Wilderness permit at the Trinity trailhead, twelve-person party limit, Northwest Forest Pass for parking. Fires are prohibited where posted and the meadow ground here is exactly the kind of place that gets posted — carry a stove. Camp on the bare established sites rather than in the heather. The road is the real permit question: the Chiwawa River road is closed from Atkinson Flat north to Trinity under a storm order running through the end of 2027, with no reopening estimate, and a large 2026 fire closure covered the same road on top of it.",
+     "capacity": "Several established forested and meadow-edge sites at the pass itself, enough for a few parties, with rougher and more exposed ground higher toward Flower Dome and High Pass"
+    },
+    {
+     "name": "Buck Creek Pass",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "name_search": "south ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_project_crack",
+   "area_id": "wa_east_face",
+   "name": "Project Crack",
+   "discipline": "trad",
+   "grade": "5.9+",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 18,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Rustin Gibson",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Trad rack to 3\"",
+    "Chain-anchor rap/lower gear"
+   ],
+   "hazards": [
+    "Runout (R) protection on sections of the route",
+    "Persistent moss/vegetation reduces friction on holds and in the crack, including at the top anchor"
+   ],
+   "verif": null,
+   "overview": "A moss-lined, traditionally-protected crack line at the far end of the East Face, notable for heavy moss coverage rather than technical difficulty.",
+   "beta": "A wiggly crack in mossy rock. Climb through a moss-covered corner ledge, then mossy face climbing to a moss-covered summit jug. Bolts mentioned in older descriptions were not visible on a recent visit, likely buried under moss -- treat as a natural-gear/trad line with a chain anchor at the top.",
+   "turnaround": "As with the rest of the East Face, plan the day around road and weather conditions rather than a fixed clock time, allowing enough margin to drive out the gravel access road before dark.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9+ R",
+   "ice_grade": null,
+   "gain_ft": 400,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Single lower/rappel off chain anchor (~60 ft)",
+   "commitment": null,
+   "face": "East Face",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower off the chain anchor with a single rope.",
+   "obj_haz": [
+    "Runout (R-rated) protection in places",
+    "Persistent moss/vegetation on holds and in the crack, slick when damp"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.365,
+     "lng": -121.31444,
+     "elev": 4700,
+     "name": "Keechelus Ridge parking area (off FR 4934)",
+     "note": "Same shared approach as all East Face routes: I-90 Exit 54, FR 4832, FR 4934, ~25-30 min hike to the wall.",
+     "type": "Trailhead",
+     "elevFt": 4700,
+     "directions": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway. Turn onto FR 4832 and follow it onto FR 4934 to the small trailhead pullout at about 4,700 feet. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor."
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4601,
+     "name": "East Face (Keechelus Ridge)",
+     "type": "Crag",
+     "distMi": null,
+     "elevFt": 4601
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4700,
+     "name": "East Face wall top-out, Keechelus Ridge",
+     "note": "Not a mountain summit — single-pitch crag; top-out is directly above the route line.",
+     "type": "Summit",
+     "elevFt": 4700
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 0.25,
+    "recommendedStart": null
+   },
+   "detailed_rack": "Gear to 3 inches (single rack). Reported bolts from older published descriptions were not found/visible on a recent ascent -- come prepared to protect it as a natural line. Chain anchor at the top.",
+   "what_to_bring": [
+    "Approach shoes for the talus approach",
+    "A stiff brush if you want to clean moss from holds",
+    "Sun protection"
+   ],
+   "pro_tips": [
+    "Expect moss on holds and in the crack for the entire route — brushing helps but it stays vegetated.",
+    "Don't count on the bolts mentioned in older descriptions; come prepared with a full natural-gear rack."
+   ],
+   "watch_out": [
+    "Heavy moss throughout the crack, corner, and summit holds reduces friction and can hide protection placements/older bolts.",
+    "Low traffic/low star rating (2 of 5 stars, only 3 votes) -- expect a dirtier, less-traveled line than the East Face sport classics."
+   ],
+   "pro_needs": "Trad gear to 3\"; do not count on bolts even though older descriptions mention them.",
+   "best_season": "Same window as the rest of the crag (June-September); being mossy and shaded in spots, it likely stays damp longer after rain than the sunnier sport lines nearby.",
+   "high_point_ft": 4601,
+   "aid_grade": null,
+   "approach": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway before turning onto FR 4832, then following it onto FR 4934 to the small trailhead pullout. On foot, cross the road and hike up a spur road for about 15 minutes to a flat bench, then pick up a cairned trail heading north into the forest to a rocky area, staying on the main climber's trail through a short, steeper forest section to reach the crag — roughly 25-30 minutes total from the car. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor.",
+   "descent_text": "From the top, lower directly off the fixed chain anchor to the ground with a single 60m rope; no walk-off is required.",
+   "bail": "The route is fully lower-off capable from the chain anchor at the top; there are no intermediate fixed retreat points, so leader falls onto the sparse protection should be avoided — that sparseness is the basis for the R rating.",
+   "pitch_detail": [
+    {
+     "grade": "5.9+ R",
+     "notes": "Wiggly moss-filled crack, pull onto a moss ledge into a corner, then mossy face climbing to a moss-covered jug and the chain anchor.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": "Single crag day: drive FR-4832/4934 to the parking area, hike ~15-25 min to the East Face staging area, walk the talus base around to the route, lead the crack, lower off, return via the same approach trail.",
+   "access": {
+    "permit": "No climbing permit required.",
+    "closures": "FS Road 4832-142 spur to Gold Creek Pond closed seasonally (Apr 1-Nov 30, through 2028); main FSR 4832 crag approach unaffected.",
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District"
+   },
+   "road": {
+    "name": "Forest Road 4832 to Forest Road 4934 (I-90 Exit 54)",
+    "status": "Gravel forest roads from I-90 Exit 54 to a small parking area; expect potholes.",
+    "driveNote": "From I-90 Exit 54, cross to the north side of the freeway and turn right onto FR 4832; drive about 4 miles, turn left onto FR 4934 past the Mount Margaret Trailhead, and continue about 3 miles to a parking area on the right.",
+    "seasonalGate": "The forest roads are not plowed; snow usually blocks them into late spring, and they are typically clear by mid-June."
+   },
+   "climate": {
+    "fall": "Cool and often dry thanks to the rain-shadow effect",
+    "spring": "Snow typically lingers on the access road into May/June; road often impassable until mid-June",
+    "summer": "Warm and generally dry; southeast exposure but this line's moss stays damp longer than cleaner nearby routes",
+    "winter": "Snowbound; FR-4832/4934 not maintained for wheeled vehicles",
+    "typical": "Warm, relatively dry summers due to the pass's rain-shadow effect on the east-facing wall; wet, snow-covered winters that close road access",
+    "forecastZone": "Snoqualmie Pass area (central Washington Cascades crest)"
+   },
+   "emergency": {
+    "notes": "Kittitas County Search & Rescue coordinator: (509) 962-7525",
+    "county": "Kittitas County, WA",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest — (509) 852-1100",
+    "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie, WA — the hospital states it serves communities as far east as Snoqualmie Summit; Kittitas Valley Healthcare, Ellensburg, WA is the in-county hospital, farther east via I-90",
+    "sheriffDispatch": "Kittitas County Sheriff (via Kittcom 911) — non-emergency (509) 962-7525; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": {
+    "cams": "0.3-3 in, single set (inferred, crack route)",
+    "nuts": "light set"
+   },
+   "alpine_draws": 4,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "The name and 5.9+ grade suggest a crack line — the East Face sector does include at least one trad route, so this may require actual cam/nut protection rather than pure bolted sport gear.",
+   "ascender": null,
+   "corrections": "Not individually indexed on Mountain Project/SummitPost in searches performed; treat rack as a starting-point estimate only, confirm locally or via Snoqualmie Rock guidebook before relying on it.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Trad rack to 3 inches (single set of cams)",
+    "Light nut set",
+    "4 alpine draws",
+    "Single rope",
+    "Chain anchor at top"
+   ],
+   "features": [
+    "Crack",
+    "Dihedral",
+    "Face",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "project crack",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "area_id": "wa_east_face",
+   "name": "Glacier View Temple",
+   "discipline": "sport",
+   "grade": "5.9-",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 12,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Leland Windham & Nicole Flessner, 2007",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "The start sits immediately adjacent to Enchanting Puller Blind — confirm you are on the correct line before committing.",
+    "Neighboring lines on this wall are documented with persistent moss and vegetation on holds and at the anchor; expect variable cleanliness early season, though the southeast aspect dries quickly after rain."
+   ],
+   "verif": null,
+   "overview": "A brief, easy East Face pitch with an outsized view -- climbers get a glimpse of Mt. Rainier from the crux ledge move.",
+   "beta": "Short scramble up to a belay area, then a brief but engaging climb; the crux is moving up onto a ledge right before the anchor, with a view toward Mt. Rainier in the distance. Located just past the first set of bolts belonging to the adjacent route Enchanting Puller Blind (5.10c).",
+   "turnaround": "Because access is a gravel Forest Service road at ~4,400+ ft, plan around road/weather conditions rather than a fixed clock time — start early enough to finish the approach, climb, and drive out before dark or before afternoon thunderstorms typical of Cascades summers.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9-",
+   "ice_grade": null,
+   "gain_ft": 400,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Single lower/rappel off chain anchor (~40 ft)",
+   "commitment": null,
+   "face": "East Face",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower off the chain anchor with a single rope.",
+   "obj_haz": null,
+   "waypoints": [
+    {
+     "lat": 47.365,
+     "lng": -121.31444,
+     "elev": 4700,
+     "name": "Keechelus Ridge parking area (off FR 4934)",
+     "note": "I-90 Exit 54, north on FR 4832 ~4 mi, left on FR 4934, pass Mount Margaret Trailhead, continue ~3 mi to small parking area on right; ~25-30 min uphill hike/scramble to the East Face wall. Shared by all East Face routes including Project Crack.",
+     "type": "Trailhead",
+     "elevFt": 4700,
+     "directions": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway. Turn onto FR 4832 and follow it about 4 miles, then turn left onto FR 4934, pass the Mount Margaret Trailhead and continue roughly 3 more miles to a small parking area on the right at about 4,700 feet. Allow 45 to 60 minutes on the forest roads from I-90. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor."
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "name": "Glacier View Temple (East Face)",
+     "type": "Junction"
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4601,
+     "name": "East Face (Keechelus Ridge)",
+     "type": "Crag",
+     "distMi": null,
+     "elevFt": 4601
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4700,
+     "name": "East Face wall top-out, Keechelus Ridge",
+     "note": "Not a mountain summit — single-pitch crag; climbers top out directly above the route at the cliff edge, essentially the same location as the crag itself.",
+     "type": "Summit",
+     "elevFt": 4700
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 0.25,
+    "recommendedStart": null
+   },
+   "detailed_rack": "Fully bolted: 4 bolts to a chain anchor.",
+   "what_to_bring": [
+    "Approach shoes for the talus/trail approach",
+    "Sun protection (southeast-facing wall)",
+    "Water — no water source on the ridge"
+   ],
+   "pro_tips": [
+    "Walk past the first set of bolts (Enchanting Puller Blind, 5.10c) to find the start of Glacier View Temple.",
+    "Scramble up a short ledge to reach the belay/start of the route."
+   ],
+   "watch_out": [
+    "Low popularity/low star rating (1.7 stars) relative to its East Face neighbors -- set expectations for a shorter, less-polished pitch.",
+    "Starts adjacent to Enchanting Puller Blind; easy to confuse the two starts."
+   ],
+   "pro_needs": "4 bolts, chain anchor.",
+   "best_season": "Best from mid-June, once the access road is reliably snow-free, through early fall. The southeast-facing wall can feel hot in July sun but dries very quickly after rain, and the pass's rain-shadow effect often keeps it climbable when crags on the wetter west side of the Cascades are soaked.",
+   "high_point_ft": 4601,
+   "aid_grade": null,
+   "approach": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway before turning onto FR 4832, then following it onto FR 4934 to the small trailhead pullout. On foot, cross the road and hike up a spur road for about 15 minutes to a flat bench, then pick up a cairned trail heading north into the forest to a rocky area, staying on the main climber's trail through a short, steeper forest section to reach the crag — roughly 25-30 minutes total from the car. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor.",
+   "descent_text": "From the top of the route, lower directly off the fixed chain anchor to the ground with a single rope (30 m is enough for this 12 m pitch); no walk-off descent is needed for this single-pitch line.",
+   "bail": "Fully bolted sport route — retreat by lowering off any bolt or the anchor at any point; no complex bail required.",
+   "pitch_detail": [
+    {
+     "grade": "5.9-",
+     "notes": "Short climb to a ledge move just below the chain anchor.",
+     "pitch": "1",
+     "lengthM": 12
+    }
+   ],
+   "itinerary": "Single crag day: drive FR-4832/4934 to the parking area (~45-60 min from I-90), hike ~15-25 min to the East Face staging area, climb Glacier View Temple and other East Face sport lines, lower off each route, hike back out to the car.",
+   "access": {
+    "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+    "permit": "No climbing permit required.",
+    "closures": "FS Road 4832-142 spur to Gold Creek Pond closed seasonally (Apr 1-Nov 30, through 2028); main FSR 4832 crag approach unaffected.",
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District"
+   },
+   "road": {
+    "name": "Forest Road 4832 to Forest Road 4934 (I-90 Exit 54)",
+    "status": "Gravel forest roads from I-90 Exit 54 to a small parking area; expect potholes.",
+    "driveNote": "From I-90 Exit 54, cross to the north side of the freeway and turn right onto FR 4832; drive about 4 miles, turn left onto FR 4934 past the Mount Margaret Trailhead, and continue about 3 miles to a parking area on the right.",
+    "seasonalGate": "The forest roads are not plowed; snow usually blocks them into late spring, and they are typically clear by mid-June."
+   },
+   "climate": {
+    "fall": "Cool and often dry thanks to the rain-shadow effect, a good option when west-side Cascades crags are wet",
+    "spring": "Snow typically lingers on the access road into May/June; road often impassable until mid-June",
+    "summer": "Warm and generally dry; the southeast-facing wall bakes in direct July sun but dries very quickly after any rain",
+    "winter": "Snowbound; FR-4832/4934 not maintained for wheeled vehicles",
+    "typical": "Warm, relatively dry summers due to the pass's rain-shadow effect on the east-facing wall; wet, snow-covered winters that close road access",
+    "forecastZone": "Snoqualmie Pass area (central Washington Cascades crest)"
+   },
+   "emergency": {
+    "notes": "Kittitas County Search & Rescue coordinator: (509) 962-7525",
+    "county": "Kittitas County, WA",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest — (509) 852-1100",
+    "nearestHospital": "Snoqualmie Valley Hospital, Snoqualmie, WA — the hospital states it serves communities as far east as Snoqualmie Summit; Kittitas Valley Healthcare, Ellensburg, WA is the in-county hospital, farther east via I-90",
+    "sheriffDispatch": "Kittitas County Sheriff (via Kittcom 911) — non-emergency (509) 962-7525; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": 8,
+   "rope_type": "single",
+   "rope_length_m": 30,
+   "rope_note": "A single-pitch bolted sport line on blocky andesite, about 40 ft (12 m) with four bolts to a chain anchor; a 30 m rope is enough to lower off.",
+   "ascender": null,
+   "corrections": "Route not individually indexed in the sources checked; gear pattern extrapolated from neighboring East Face routes.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Face",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "glacier glac gl view temple",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

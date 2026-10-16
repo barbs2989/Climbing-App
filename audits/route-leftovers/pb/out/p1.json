@@ -1,0 +1,932 @@
+{
+ "results": [
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "item",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "verdict": "unresolved",
+   "summary": "Peakbagger adds no grade for the Sitkum Glacier; the III vs I-II split between the two earlier sources stands.",
+   "evidence": "Peakbagger's Glacier Peak page and ascent list carry no commitment grade for the Sitkum route; Sitkum-labelled ascents in the list date from 1975-2003 (the White Chuck era) and give no grade.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Glacier Peak full ascent list (route column scanned for Sitkum / North Fork Sauk)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "kind": "item",
+   "fact": "Round-trip / total hiking distance",
+   "verdict": "unresolved",
+   "summary": "Peakbagger 2026 ascents mostly give 7-8 mi round trip, which leans toward the itinerary's 7.5 mi, but the row still holds two sourced figures and fixing the waypoint chain would need computed pin mileages.",
+   "evidence": "Gunn Peak ascent list (2026): round-trip or way-in distances 7.4, 7.2, 7.9, 7.2, 8.0, 7.0, 7.4, 7.0, 6.8, 7.9, 7.6 mi; one 5.3 mi. None states a one-way trailhead-to-summit figure, and the waypoint chain (2.75 mi one way) cannot be rebuilt without measuring.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1996"
+   ],
+   "searched": [
+    "peakbagger: Gunn Peak ascent list (2026, stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "kind": "item",
+   "fact": "Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)",
+   "verdict": "unresolved",
+   "summary": "Peakbagger 2026 gains for Gunn scatter from about 3,950 to 5,525 ft, so neither 4,700 nor 4,900 is singled out.",
+   "evidence": "Gunn Peak ascent list (2026): 4,700 ft / 7.4 mi (one party), 4,768, 3,981, 3,990, 4,038, 4,005, 4,138, 4,587, 3,951, 5,525, 4,861, 3,969, 4,795, 3,994 ft. One party states exactly 4,700 (supporting gain_ft) but the row's 4,900 itinerary figure keeps its own earlier source.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1996"
+   ],
+   "searched": [
+    "peakbagger: Gunn Peak ascent list (2026, stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "kind": "item",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: One party states a 70 m rope and other reports mention 60 m ropes; the row holds both (gear 60 m, rope_length_m 70), so neither can be chosen. A 2015 party used a 70 m rope; other accounts mention 60 m in passing; the route listing gives no length.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records carry no rope length; live row still gear 60 m vs rope_length_m 70"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_project_crack",
+   "kind": "item",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source states the parking elevation or location, so the trailhead pin's 4,700 ft cannot be replaced; the crag's 4,632 ft from its area page would still leave the parking above the crag. The crag's area page gives the crag at 4,632 ft and a 25-min uphill walk but no parking elevation. The trailhead waypoint's coordinate (47.365, -121.31444) is essentially the mapped cliff itself, so the pin, not just its height, needs an owner rework.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not listed - Project Crack is a crag, not a peakbagger summit; no parking elevation available there"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "kind": "item",
+   "fact": "access.permit/group_limit/notes put this route in the Enchantment Permit Area Stuart Zone, while the approach is via Longs Pass/Ingalls Creek (Cle Elum RD)",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source says where the Enchantment Permit Area boundary runs at Sherpa's south basin or on the crest where the block sits, so the Stuart Zone text is not rewritten. Sources say the Ingalls Creek side is outside the permit area in general (camping in Crystal Creek basin 'just outside', Ingalls Creek camps with no overnight permit) but none places Sherpa Balanced Rock or its approach basin.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records do not state Enchantment Permit Area boundaries"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "kind": "item",
+   "fact": "dist_km (Approach, one way) 22 km vs itinerary day-1 approach 7 mi",
+   "verdict": "unresolved",
+   "summary": "Peakbagger's North Ridge reports give a round trip (15.8 mi, an incomplete track on a turned-back attempt), not a one-way figure.",
+   "evidence": "Sherpa Peak ascent list: 5 North Ridge ascents; 2017-09-02 report: Stuart Lake TH, round-trip 15.8 mi, 4,738 ft, turned back at the gendarme, GPS track incomplete. 2018 N Ridge: 5,480 ft, no distance. Others no stats. No stated one-way distance; halving is not allowed.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2184&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=862151"
+   ],
+   "searched": [
+    "peakbagger: Sherpa Peak full ascent list (North Ridge rows) + 1 ascent report"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "kind": "item",
+   "fact": "dist_km (4.5 km) is the camp-to-Austera leg, not the one-way approach",
+   "verdict": "unresolved",
+   "summary": "Peakbagger Austera ascents give only camp-based or multi-peak legs, never a trailhead-to-Austera one-way distance.",
+   "evidence": "Austera Peak ascent list: stated figures are short legs (971, 691 ft/2.0 mi, 571, 1,571, 1,561 ft/7.2 mi, 1,600 ft/6.2 mi, 2,400 ft/7.5 mi 'from Primus', 642 ft/1.7 mi) or multi-day traverse totals; none is a one-way distance from the Eldorado Creek trailhead.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1843&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Austera Peak full ascent list (stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "kind": "item",
+   "fact": "Crux grade shown in TECHNICAL STATS vs actual crux difficulty",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no route or grade information for Despair's east/southeast line, so the Class 4 vs 5.0 question stays with the one earlier report.",
+   "evidence": "Mount Despair peak page: elevation, first ascent 1939, no route description. Ascent list (12 viewable): no grade/class field filled; only stats are 3,980 ft (1998) and 11,500 ft / 21 mi from Triumph Pass (2020, a multi-peak trip).",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=1641",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1641&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Mount Despair peak page + full ascent list (no reports with grades)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "kind": "item",
+   "fact": "Bergschrund/glacier hazard on a rock-route approach that has no glacier",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source mentions a bergschrund or moat at the base of the West Face Wall, nor rules one out, so the watch_out line is neither removed nor confirmed. Route pages and the first-ascent account describe the wall rising from snow between Stuart Pass and Goat Pass, reached by trail, moderate bushwhacking and easy snow; no schrund or moat named.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records give no bergschrund/moat information for a crag wall"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "kind": "item",
+   "fact": "Trailhead pin vs the approach the waypoints and itinerary describe",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Still structural: the south-side Longs Pass and Goat Pass pins (distMi 3.5 and 5) sit in the chain that starts at the north-side Stuart Lake Trailhead, and removing or moving pins is outside the patch format. Live row: waypoints[1] Longs Pass (no coordinate, distMi 3.5) and waypoints[2] Goat Pass (no coordinate, distMi 5) still follow waypoints[0] Stuart Lake Trailhead, while approach, approach_logistics and approach_variants[0] describe the north approach via Mountaineer Creek. No source gives distances for those passes from the Stuart Lake trailhead because they are not on that approach.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - structural pin-chain issue (pins sit on the wrong approach); no stated figure can fix it within the patch format"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "kind": "item",
+   "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no stated gain for the road's-end E route line, so the 2,138 / 3,400 / 3,900 ft figures stay unsourced.",
+   "evidence": "Peakbagger ascent list for Grotto Mountain has one ascent with stats (2024): 4,358 ft gain and 23.1 mi from a 1,260 ft start, a valley-floor start that is not this row's road's-end (3,480 ft) line; the 2002 reports are short notes with no figures. Live row unchanged: gain_ft 2138, itinerary 3,400, approach 3,900.",
+   "sources": [
+    "https://www.peakbagger.com/climber/peakascents.aspx?pid=34254",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2553251"
+   ],
+   "searched": [
+    "peakbagger: Grotto Mountain ascent list (9 ascents) + 1 ascent report (2024, different start)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_artic_rose",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Still no source states the crag's wilderness status or permit rule, so the replacement text cannot be sourced. The crag's route-database page gives the elevation (4,761 ft), the Tye Road pullout and the approach, with nothing on wilderness or permits; the peak encyclopedia covers the 7,960 ft Half Moon, a different summit. The Wild Sky name remains wrong by geography (more than 4 km away), but the correct wording (no permit vs a Henry M. Jackson self-issue permit) is not stated anywhere found.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not listed - Artic Rose is a crag; peakbagger states no permit or wilderness rule"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "kind": "item",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: One peak page puts the North Fork / Pyramid trail junction at 6,600 ft, but adopting it for the Fox Camp pin would leave the approach's '~1,000 ft' climb to the 7,100 ft basin contradicted, and a new climb figure would have to be computed. The SummitPost Emerald Peak page (per its search excerpt) says the North Fork Entiat trail follows the river 7+ miles to 5,800 ft, then turns east to climb about half a mile to the Pyramid Mountain Trail junction at 6,600 ft. No source states an elevation for Fox Camp itself (a quarter mile from the junction) or the junction-to-basin climb, and the row's Fox Camp pin reads ~5,728 ft on the ground, so the pin placement is also in doubt.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - a Fox Camp elevation is not an ascent statistic"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "kind": "item",
+   "fact": "total gain: gain_ft/loss_ft 5,200 vs itinerary/approach/totalNote 4,730",
+   "verdict": "unresolved",
+   "summary": "Peakbagger ascents from West Fork Buttermilk give scattered gains (5,166, 5,090, 5,323, 4,742 ft) and none states 5,200 or 4,730 for the 18.6 mi Star Lake line, so the split stays.",
+   "evidence": "Peakbagger Star Peak ascent list (2026): 'West Buttermilk to Star Lake bowl' 5,166 ft summit gain / 13.6 mi (24.2 mi trip); 'N Bowl to SW Ridge' 5,090 ft / 10.4 mi; 5,323 ft / 10 mi; 4,742 ft / 19.9 mi. Values disagree with each other and with both row figures; aligning itinerary days would still need computed day figures.",
+   "sources": [
+    "https://www.peakbagger.com/climber/peakascents.aspx?pid=1959"
+   ],
+   "searched": [
+    "peakbagger: Star Peak ascent list (most recent year, stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "kind": "item",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source states an approach gain for the Silver Basin crags, so the 750 ft figure is neither confirmed nor replaced. The crag's area page gives only the road directions and a 20-30 minute walk from the road-end turnaround; no gain figure is published anywhere found.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not listed - the Silver Basin crag is not a peakbagger summit"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "kind": "item",
+   "fact": "Total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "summary": "Peakbagger Depot Creek ascents give round-trip or way-in distances from 12.4 to 19.1 mi with different start points; none states the washout-to-lake or washout-to-summit figure.",
+   "evidence": "Peakbagger Spickard ascent list: Depot Creek parties list 18.0, 12.4, 16.6, 16.8, 18.8, 19.1 mi. The 2025 'depot creek' report gives way-in distance 16.6 mi from a 2,731 ft 'Depot Crk Trailhead' (6,991 ft gain, 6 h 35 up / 5 h 31 down), a figure that reads as a round trip and conflicts with the other reports; it does not establish the row's washout start.",
+   "sources": [
+    "https://www.peakbagger.com/climber/peakascents.aspx?pid=1610&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2927332"
+   ],
+   "searched": [
+    "peakbagger: Mount Spickard full ascent list + 1 ascent report (2025 Depot Creek)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "kind": "item",
+   "fact": "Expected car-to-car time",
+   "verdict": "unresolved",
+   "summary": "No peakbagger report states a normal car-to-car time; the only stated time is one party's 12.5 h in deep November snow.",
+   "evidence": "Peakbagger Painted Mountain ascent list (~80 ascents); read 4 reports. 2024-06-22: 4,921 ft, 6 mi RT, no time. 2022-11-09 solo: 6.3 mi, 5.6k ft, 12.5 h, in thigh-deep snow (winter conditions, not a customary figure). 2025-01-12 and 2026-09-22: no times. Neither the 6-9 h commitment nor the 10 h timing is stated.",
+   "sources": [
+    "https://www.peakbagger.com/climber/peakascents.aspx?pid=25609",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2547944",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2090138",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2745041",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3355441"
+   ],
+   "searched": [
+    "peakbagger: Painted Mountain ascent list + 4 ascent reports"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_new_york_gully",
+   "kind": "item",
+   "fact": "ice grade: ice_grade/alpine_grade WI3 vs grade WI4 and pitch 4 WI4",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Still one source per side: the route database rates it WI3 M5- A1-2 and the first-ascent/first-free note WI4; the row holds both values, so the keep-what-the-row-holds rule does not pick one. Route database rating line: '5.8 YDS ... WI3 M5- A1-2 Steep Snow'. A 2025 trip report describes the ice as 2-inch blobs and an M5 fourth pitch, with no WI number.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records carry no WI rating for New York Gully"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mile_high_club",
+   "kind": "item",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "summary": "Peakbagger's Mile High Club ascents add a third total (3,919 ft) rather than supporting either row value.",
+   "evidence": "Morning Star Peak ascent list: four ascents labelled Mile High Club; one (2017-09-19) lists 3,919 ft gain, the others no stats (the 2021 report states only grade 5.10 and the route name). Row holds gain_ft 2,700 and itinerary 3,500.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1806&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1863433"
+   ],
+   "searched": [
+    "peakbagger: Morning Star Peak full ascent list (Mile High Club rows) + 1 ascent report"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_roosevelt_standard",
+   "kind": "item",
+   "fact": "Climbing season window (Jul-Sep chip vs a stated Jul-Oct/May-Oct window elsewhere)",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Two sources now state windows (peak page: generally climbed May through October; club page: May-September), which support itinerary.cal's May-October but would also require rewriting best_season's snow-in-the-gully guidance and the approach variant's Late July-September, so the chip is left. Peak page: 'The mountain is generally climbed May through October'; season Spring, Summer, Fall. Club route page: 'Seasons: May, June, July, August, September'.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records state no climbing-season window"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "kind": "item",
+   "fact": "recommended/actual start time from high camp",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source states a customary or recommended start from high camp; parties' reported starts range from pre-dawn to 10 AM, so neither the 4-5am turnaround line nor the ~7:00 AM schedule is changed. Trip reports give individual departure times only (pre-dawn single pushes, a 10:00 AM climbing-day start, a 2017 schedule breaking the col camp in the morning and summiting in the evening).",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - individual departure times would not state a recommended start"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "kind": "item",
+   "fact": "trip length (days)",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Guide services agree the Northwest Face is a 3-day trip, but the itinerary has only two days and no hike-out leg; adding the third day needs miles, gain/loss and hours that no source states, and changing totalNote alone would leave the TOTAL row describing two days. Two guide services run it as 3 days / 2 nights (as the approach text says); no source states figures for a hike-out day from Boston Basin on this trip, and copying the approach day in reverse would be computed.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - the trip-length gap needs hike-out-day figures for this guided itinerary, not ascent totals"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "kind": "item",
+   "fact": "pitch count on the South Ridge",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Each of the row's two figures has its own source: pitches 4 matches the route database (4 pitches, 300 ft) and the three pitch_detail rows match the long-form route page, so the keep-what-the-row-holds rule cannot pick one, and re-splitting into four rows from one trip report's lengths would replace the row's pitch descriptions wholesale. Four pitches: route database; a trip report (60 ft 5.3, 30 ft 5.0, 115 ft 5.4-5.6, 80 ft 5.4). Three pitches: the long-form route page and another report. The row's rappel_detail already follows the 4-pitch division.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - the row already holds both a 4-pitch and a 3-pitch source; another report cannot break that tie"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "kind": "item",
+   "fact": "loss_ft (800) vs car-to-car loss",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: loss_ft is a column this pass may not write, and no source states a loss figure anyway (sources give only car-to-car gain of about 6,100 ft, matching gain_ft), so the 800 ft stays flagged for the owner. Stated figures are gain only (6,115 and 6,085 ft). The rules forbid writing loss_ft, and setting it equal to gain on an out-and-back would be computed.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - loss_ft is a column this pass may not write"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 4.3 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 5.2 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 5.3 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 6.3 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 7 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 7.4 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[7].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Left null: no source states a trailhead mileage for this Boston Basin / Quien Sabe pin; the cleared 7.9 mi was part of an inflated chain. Published Boston Basin figures are 3-4 mi to a high camp at 6,400 ft and 2.5 mi to the basin camp (two guide services, naming different camps); neither ties a mileage to this specific pin, so assigning one would be guesswork.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - Boston Basin pin mileages are not ascent statistics; ascents give trip totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states a one-way distance for a Sitkum climb from the North Fork Sauk.",
+   "evidence": "Glacier Peak ascent list: every Sitkum-labelled ascent is 1975-2003 (White Chuck access); post-2010 North Fork Sauk ascents are labelled Cool Glacier / Gerdine / Disappointment Cleaver / Glacier Gap lines (e.g. 4,268 ft/16 mi, 8,041 ft/31.3 mi, 10,482 ft/38 mi), none the Sitkum line.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Glacier Peak full ascent list (route column scanned for Sitkum / North Fork Sauk / Red Pass)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states a gain for a Sitkum climb from the North Fork Sauk.",
+   "evidence": "Glacier Peak ascent list: Sitkum-labelled ascents are 1975-2003 (White Chuck access, no North Fork Sauk start); North Fork Sauk ascents with gains are other glacier lines.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Glacier Peak full ascent list (route column scanned for Sitkum / North Fork Sauk / Red Pass)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states the trailhead-to-summit mileage of the North Fork Sauk / Sitkum line.",
+   "evidence": "Glacier Peak ascent list: no post-2003 Sitkum ascent; North Fork Sauk mileages listed belong to other glacier lines and are round trips.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Glacier Peak full ascent list (route column scanned)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no ascent of Davis Peak's north side, so no pitch count for the Northeast Face Couloir.",
+   "evidence": "Davis Peak ascent list: routes logged are South face, South slopes/ridge, S Slopes & Ridge, Ski Route, New standard (south basin); none on the north face or couloir.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1662&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Davis Peak full ascent list (route column)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "length_m",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no ascent of Davis Peak's north side, so no length for the couloir.",
+   "evidence": "Davis Peak ascent list: all logged routes are on the south side.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1662&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Davis Peak full ascent list (route column)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no ascent of Davis Peak's north side, so no gain for the couloir line.",
+   "evidence": "Davis Peak ascent list: gains logged belong to south-side routes.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1662&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Davis Peak full ascent list (route column)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Peakbagger Primus ascents from the Eldorado side are multi-peak or camp legs; none states a one-way distance for this line.",
+   "evidence": "Primus Peak ascent list: Eldorado/ice-cap entries give legs (2,797 ft/4.4 mi, 2,701, 1,301 ft) or traverse totals (15,374 ft/37.2 mi North Klawatti); the 8,993 ft/10 mi (17.5 mi trip) entry is Thunder Creek, the other approach.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1841&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Primus Peak full ascent list (stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states a total gain for Primus by the Eldorado ice-cap line.",
+   "evidence": "Primus Peak ascent list: Eldorado-side gains are camp legs or multi-peak trip totals; the full-day figures (8,993 ft, 8,000 ft/24 mi, 7,901 ft/25.9 mi) are Thunder Creek / Borealis starts.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1841&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Primus Peak full ascent list (stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states the Eldorado Creek trailhead-to-Primus mileage.",
+   "evidence": "Primus Peak ascent list: no Eldorado-start ascent gives a trailhead-to-summit distance.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1841&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Primus Peak full ascent list (stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "Peakbagger lists a single 1982 ascent of Rimrock Ridge with no report or figures.",
+   "evidence": "Rimrock Ridge ascent list: one ascent (1982-08-25), no trip report, no gain, distance or time.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1878&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Rimrock Ridge ascent list (1 ascent, no report)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Peakbagger lists a single 1982 ascent of Rimrock Ridge with no figures, so no one-way distance is stated.",
+   "evidence": "Rimrock Ridge ascent list: one ascent (1982-08-25), no stats.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1878&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Rimrock Ridge ascent list (1 ascent, no report)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Peakbagger lists a single 1982 ascent of Rimrock Ridge with no figures, so no gain is stated.",
+   "evidence": "Rimrock Ridge ascent list: one ascent (1982-08-25), no stats.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1878&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Rimrock Ridge ascent list (1 ascent, no report)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states a car-to-car gain for Austera alone.",
+   "evidence": "Austera Peak ascent list: gains are from the Eldorado/Klawatti camps or traverse legs (571-2,400 ft); one 11,637 ft entry is a multi-peak trip total. No car-to-car figure for this line.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1843&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Austera Peak full ascent list (stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No peakbagger ascent states a one-way trailhead-to-Austera distance.",
+   "evidence": "Austera Peak ascent list: mileages are camp-to-summit or traverse legs (1.7-7.5 mi), not a trailhead one-way figure.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1843&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Austera Peak full ascent list (stats columns)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Not filled: no source states a cumulative mileage for the Chiwawa River ford. Route page: after the 5-mile Red Mountain fork 'the trail takes a winding, indirect path' to the ford, with no mileage.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1484617"
+   ],
+   "searched": [
+    "peakbagger: Chiwawa Mountain - 1 ascent report read (2020-08-29); no cumulative mileage to the river ford"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Not filled: no source states a cumulative mileage for leaving the trail in the upper basin. Sources describe the basin by elevation (5,500 ft basin, 6,300 ft bench), not by distance.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1484617"
+   ],
+   "searched": [
+    "peakbagger: Chiwawa Mountain - 1 ascent report read (2020-08-29); no cumulative mileage to the upper-basin turnoff"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Peakbagger Alta ascents give gain and round-trip distance but no trailhead-to-summit time.",
+   "evidence": "Alta Mountain 2026 ascent list; read 2 reports. 2026-07-12: 4,050 ft, 11.3 mi RT from Rachel Lake TH, 'just under 4 hours moving time for the full trip' (a speed effort, no summit time). 2026-06-20: 3,774 ft, 12 mi, no time.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2149",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3264571",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3240825"
+   ],
+   "searched": [
+    "peakbagger: Alta Mountain ascent list (2026) + 2 ascent reports"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "No peakbagger report gives the trailhead mileage of the cairned turnoff.",
+   "evidence": "Alta Mountain ascents read give only round-trip totals (11.3, 12 mi); no cumulative mileage to the turnoff.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2149"
+   ],
+   "searched": [
+    "peakbagger: Alta Mountain ascent list (2026) + 2 ascent reports"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Peakbagger lists seven Bear Mountain ascents with no distances, so no Hannegan-to-camp one-way figure.",
+   "evidence": "Bear Mountain (Chilliwack) ascent list: 7 ascents (1941-2023); only gains (5,889 ft 1986, 6,059 ft 1996), no distances; one 1941 South Face note.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1617&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Bear Mountain full ascent list (7 ascents)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no North Buttress descent account, so the walk-off reading stands and no rappel table is refilled.",
+   "evidence": "Bear Mountain (Chilliwack) ascent list: 7 ascents, one 5-word 1941 South Face report; no descent or rappel information.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1617&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Bear Mountain full ascent list (7 ascents)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: The live row now has only two pins (trailhead and Dolomite Tower), so there is no pin 2 to fill, and no source gives a mileage to the tower's base. Live waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not applicable - live row has only 2 pins (no pin 2 to fill); Dolomite Tower is not a peakbagger summit"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: There is no pin 3 on the live row and no source gives a mileage to the top-out. Live waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not applicable - live row has only 2 pins (no pin 3 to fill)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "kind": "fill",
+   "fact": "waypoints[1].elev",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source gives an elevation for this Junction pin, which duplicates the summit pin's coordinate; the cleared 7,337 ft matches nothing on the route, so it stays null. The climb tops out on the 7,840 ft summit (two peak lists, matching high_point_ft and the Summit pin); no source states a height for the buttress base or any junction.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - a duplicate Junction pin height is not an ascent statistic"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "kind": "fill",
+   "fact": "waypoints[1].elevFt",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Same pin as the elev fill: no source gives a height for this duplicate Junction pin, so elevFt stays null. See the waypoints[1].elev entry.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - a duplicate Junction pin height is not an ascent statistic"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: This pin is the mid-wall hazard point (now index 1 after the west-side pins were removed); no source states a distance from the hairpin pullout to any point on the wall, so it stays null. The East Face approach is described as about a mile of cairned path from the hairpin pond to the talus, with no distance to the wall or summit; the cleared 2.4 was measured along the Blue Lake approach this route does not use.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records give no distance from the hairpin to a mid-wall point"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: This pin is the Liberty Bell summit (now index 2); no source states the distance from the hairpin pullout to the summit by this East Face line, so it stays null. Sources give the approach as about a mile to the East Face talus and then the climb; no trailhead-to-summit distance. The cleared 2.7 came from the Blue Lake approach.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - East Face ascents start from the highway hairpin; no stated trailhead-to-summit mileage found in earlier passes and peakbagger lists route totals only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Peakbagger Le Conte ascents are Ptarmigan Traverse days; none states a car-to-car gain for Le Conte.",
+   "evidence": "Le Conte Mountain ascent list (~40): routes 'On Ptarmigan Traverse'; the only stats are 2,376 ft / 51.9 mi (2023, a multi-day traverse). No Le Conte car-to-car gain.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1875&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Le Conte Mountain full ascent list"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_east_face",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Not filled: the cleared four 55 m rappels are contradicted by the one first-hand account (two double-rope rappels), and a two-row table would change the page's headline rappel count away from the single-rope figure the rappels text gives; no source gives station lengths. First-hand report: one double-rope rappel to the notch between Middle and South Gunsight, then one loose, dirty rappel into the moat at the base of the notch; no lengths.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - the issue is the rappel table vs the rappels text; ascent stats carry no station lengths"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Peakbagger lists Persis-Index traverses and North Peak climbs but no North-Middle-Main traverse with a total gain.",
+   "evidence": "Mount Index ascent list: traverse entries are Persis-Index (6,102 ft/13 mi, 7,824 ft/22 mi, 8,351 ft/22.8 mi, 7,906 ft/21.2 mi). Mount Index - North Peak list (25 ascents): North Face/North Ridge/South Face climbs, one gain (4,757 ft, North Face), no traverse.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2045&y=9999",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=18331&y=9999"
+   ],
+   "searched": [
+    "peakbagger: Mount Index full ascent list (route column) + Mount Index - North Peak ascent list"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "kind": "fill",
+   "fact": "max_angle",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: Still null; the 50 degrees came from the east ridge snow, and no source gives a slope angle for the south-side scramble from Mill Creek. Mill Creek ascent reports describe brush and a gully to the summit block, rated Class 3, with no angle.",
+   "sources": [],
+   "searched": [
+    "peakbagger: not consulted - ascent records carry no slope angle"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Peakbagger South Spectacle Butte ascents from Phelps Creek give round trips (e.g. 20.3, 21.5, 22, 24 mi), not a one-way distance.",
+   "evidence": "South Spectacle Butte ascent list: distances 25.6, 21.5, 24.0, 38.8, 22.0, 16.5, 20.3 mi. 2024-09-29 Southwest Ridge report: Phelps Creek TH, round-trip 20.3 mi, 7,360 ft, ascent 6 h 11, descent 5 h 36; no way-in distance. Halving a round trip is not allowed.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2017&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2659469"
+   ],
+   "searched": [
+    "peakbagger: South Spectacle Butte full ascent list + 1 ascent report (2024 SW Ridge)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Still unresolved after the peakbagger pass; no source states a replacement value for this line.",
+   "evidence": "Unchanged from the one-source pass: No source states the trail distance from the Elbow Lake trailhead to the Green Creek climbers' trail turnoff; accounts say only that it leaves at a switchback near Hildebrand Creek (about 2,600 ft), and the row's own 'about 1.5 miles' is measured from the river crossing, not the car. Green Creek trip reports: 'a blazed climber's trail branching off of Elbow Lake trail at a switchback near Hildebrand creek'; 'The turnoff for the Green Creek Climber's Trail at the switchback was easy to find'. No mileage to the turnoff; measuring the published GPS track would be computed.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2638836"
+   ],
+   "searched": [
+    "peakbagger: Cinderella Peak - 1 ascent report read (2024-09-08, Green Creek Circuit); no mileage to the climbers-trail turnoff"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Peakbagger has no page for the col and Colchuck Balanced Rock search hits only Colchuck Peak ascents; no one-way distance to the col is stated.",
+   "evidence": "Web search of peakbagger for Colchuck Balanced Rock returned only Colchuck Peak ascent pages (different objective); no stated one-way trailhead-to-col distance.",
+   "sources": [],
+   "searched": [
+    "peakbagger: Colchuck Balanced Rock not found (search returned Colchuck Peak ascents only)"
+   ],
+   "ops": []
+  }
+ ]
+}

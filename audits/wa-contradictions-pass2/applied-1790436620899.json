@@ -1,0 +1,438 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Drop into Swift Creek basin"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Drop into Swift Creek basin"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Drop into Swift Creek basin"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Drop into Swift Creek basin"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Drop into Swift Creek basin"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    2
+   ],
+   "fact": "Drop into Swift Creek basin"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Trail gain to the saddle"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Road reopening date"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Road reopening date"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "spring"
+   ],
+   "fact": "Road reopening date"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Road reopening date"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Road reopening date"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "season",
+   "path": [],
+   "fact": "Season vs best window"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season vs best window"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Running water at Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "High camp location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_ann_scramble",
+   "before": {
+    "beta": "From the Austin Pass/Lake Ann trailhead, hike the maintained Lake Ann Trail, which drops roughly 900 ft into the Lake Ann basin before climbing back out. The summer line follows the crest from the 4,900-ft saddle over Peak 5681; the usual snow-season line differs: near the Lake Ann junction, leave the trail and work up heather benches and talus, staying fairly high on the east side of Mount Annette (nicknamed 'Little Ann') rather than dropping into brush, then continue up a gully (often snow-filled and roughly following a fault line) to gain the summit ridge and the top of Mount Ann. The off-trail portion is generally straightforward Class 2 route-finding, though boot paths can peter out higher up and steeper sections may warrant an ice-axe self-belay. Reported round-trip stats vary by GPS track/route taken (10.5 mi RT / 4,000 ft gain is the commonly listed figure; individual logs have recorded figures as low as ~11 mi / ~3,400 ft), reflecting that this is an off-trail line rather than a fixed path.",
+    "approach": "From the Austin Pass/Artist Point trailhead (paved lot at the end of SR 542, roughly 58 miles / 1.5-2 hr from Bellingham), follow the signed Lake Ann Trail #600, which drops about 700 ft into the Swift Creek headwaters basin before climbing back up past Lake Ann (4.1 miles one-way to the lake area) to a 4,900-ft saddle northwest of the lake. From the saddle, leave the maintained trail for a boot path heading southwest then south along the ridge crest; where the ridge steepens near 5,300 ft the path contours the east side before the crest re-forms — follow cairns over Peak 5681 and scramble roughly 0.5 mile west along the summit ridge to Mount Ann. Total round trip is about 10.5 miles with roughly 4,000 ft of cumulative elevation gain.",
+    "waypoints": [
+     {
+      "lat": 48.8511,
+      "lng": -121.6861,
+      "elev": 4700,
+      "name": "Lake Ann Trailhead (Austin Pass)",
+      "note": "Paved lot on SR 542 just below Artist Point; Northwest Forest Pass required, overnight parties sign the trailhead register (no camping permit needed).",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Mount Baker Highway (SR 542) to its end at the Austin Pass/Artist Point trailhead, a paved lot roughly 58 miles and 1.5-2 hours from Bellingham. A Northwest Forest Pass is required to park, and overnight parties sign the wilderness register at the trailhead; no camping permit is needed. The upper highway to Austin Pass typically isn't snow-free and open until around July depending on snowpack, and the trailhead has had weekend-focused access in recent seasons, so check current alerts before planning a start time."
+     },
+     {
+      "lat": 48.84357,
+      "lng": -121.676601,
+      "elev": 4000,
+      "name": "Swift Creek Trail 607 junction",
+      "note": "Trail drops ~700 ft from the trailhead into the Swift Creek headwaters basin; Swift Creek Trail splits off here, stay on Lake Ann Trail 600.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 48.836,
+      "lng": -121.660959,
+      "elev": 3900,
+      "name": "Swift Creek meadow crossing",
+      "note": "Trail bottoms out through a wildflower meadow alongside upper Swift Creek before climbing again; reliable water but snowfields can bury the crossing into August.",
+      "type": "Water",
+      "distMi": 2.5
+     },
+     {
+      "lat": 48.826043,
+      "lng": -121.65513,
+      "elev": 4800,
+      "name": "Lake Ann",
+      "note": "Established camp basin below Mount Shuksan's Fisher Chimneys; must camp at least 2 mi from trailhead, and it fills up on weekends.",
+      "type": "Campsite",
+      "distMi": 3.9
+     },
+     {
+      "lat": 48.824339,
+      "lng": -121.655552,
+      "elev": 4900,
+      "name": "4,900-ft saddle NW of Lake Ann",
+      "note": "Leave the maintained trail here; a boot path heads southwest then south along the ridge toward Peak 5681 — this is the scramble jump-off point.",
+      "type": "Junction",
+      "distMi": 4.1
+     },
+     {
+      "lat": 48.81877,
+      "lng": -121.658644,
+      "elev": 5300,
+      "name": "Ridge steepening / indistinct boot path",
+      "note": "Path contours the east side of the ridge and gets hard to follow above ~5,300 ft; stay high on the ridge crest and watch for cairns rather than dropping onto loose east-facing slopes.",
+      "type": "Hazard",
+      "distMi": 5
+     },
+     {
+      "lat": 48.816912,
+      "lng": -121.660021,
+      "elev": 5681,
+      "name": "Peak 5681 (Han Peak/Mount Annette)",
+      "note": "Tree-covered subsidiary summit on the connecting ridge; from here continue west along an up-and-down ridge crest (steeper than it looks on the topo) toward Mount Ann.",
+      "type": "Junction",
+      "distMi": 5.4
+     },
+     {
+      "lat": 48.816505,
+      "lng": -121.666785,
+      "elev": 5873,
+      "name": "Mount Ann summit",
+      "note": "True summit, ~0.5 mi west of Peak 5681 along the ridge; Class 2-3 scrambling on the final pitch with views of Mount Shuksan and Mount Baker.",
+      "type": "Summit",
+      "distMi": 5.9
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Lake Ann Trail #600 to the 4,900 ft saddle, then the boot path and cairns over Peak 5681",
+      "notes": "From the Austin Pass / Artist Point trailhead at the end of SR-542, follow the signed Lake Ann Trail #600. It DROPS about 700 ft into the Swift Creek headwaters basin before climbing back up past Lake Ann — 4.1 miles one way to the lake area — to a saddle at 4,900 ft northwest of the lake.\n\nFrom the saddle, leave the maintained trail for a boot path heading southwest then south along the ridge crest. Where the ridge steepens near 5,300 ft the path contours the EAST side before the crest re-forms; from there follow cairns over Peak 5681 and scramble roughly half a mile west along the summit ridge to Mount Ann.\n\nAbout 10.5 miles round trip with roughly 4,000 ft of cumulative gain, most of which comes from the fact that the trail loses 700 ft at the start and you pay it back at the end.\n\nNOTE ON THE NAME: this is the Lake Ann below Artist Point on SR-542, not the Lake Ann near Maple Pass. One route has already been recorded with the wrong Lake Ann's trailhead.",
+      "season": "Roughly Jul-Sep snow-free; winter and spring ascents are done by experienced parties with mountaineering gear on a stable snowpack",
+      "hazards": [
+       "Cairns as the only navigation above 5,300 ft, in both directions",
+       "Contouring low on the return, which cliffs out above the Swift Creek basin",
+       "A 700 ft descent at the start that must be re-climbed at the end of the day",
+       "Two Lake Anns in the North Cascades, and one of them has already been given the wrong trailhead",
+       "Lingering snow on the traverse in early season"
+      ],
+      "baseFinding": "THE 4,900 FT SADDLE NORTHWEST OF THE LAKE IS WHERE THE ROUTE STARTS, AND IT IS THE LAST PIECE OF MAINTAINED TRAIL. Below it, built tread. Above it, a boot path. If you are still on graded trail heading toward the Fisher Chimneys and Shuksan, you have walked past your turn — that is the same trail, continuing.\n\nTHE BEARING OUT OF THE SADDLE IS SOUTHWEST, THEN SOUTH, ALONG THE CREST. Two headings in sequence. In cloud, keep the crest under your feet.\n\nTHE ONE PLACE THE ROUTE LEAVES THE CREST IS NEAR 5,300 FT, AND IT GOES EAST. Where the ridge steepens the path contours the EAST side before the crest re-forms above. Contouring west here puts you on the wrong side of the ridge above the Swift Creek basin.\n\nCAIRNS ARE THE HANDRAIL ABOVE 5,300 FT, and losing them is the main route-finding hazard in poor visibility, in both directions. Note them going up.\n\nARRIVAL: the scrambling ridge runs roughly half a mile WEST from Peak 5681 to Mount Ann's summit. Peak 5681 is not the top — if you are standing on a high point and there is more ridge running west, keep going.\n\nAND THE RETURN TRAP, which is worth stating because it is a cliff problem rather than a navigation one: coming back, stay HIGH on the ridge rather than contouring low where the path is indistinct. Contouring low here cliffs out above the basin."
+     }
+    ],
+    "itinerary": {
+     "cal": "The upper Mt Baker Highway to Austin Pass typically isn't snow-free and open until roughly July depending on snowpack, and the trailhead has had weekend-focused access in recent seasons -- check current Forest Service alerts before planning a start time.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single, full-day out-and-back: hike the Lake Ann Trail from Austin Pass up to the 4,900 ft saddle above Lake Ann, then scramble over Mount Annette's south ridge and west along the connecting ridge to the Mount Ann summit, and reverse the whole route to descend. No camping is required or typically used.",
+       "hours": 8,
+       "miles": 10.5,
+       "title": "Car-to-car scramble to the summit",
+       "gainFt": 4000,
+       "lossFt": 4000,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Austin Pass trailhead",
+         "detail": "Standard early start to beat afternoon weather and have a buffer for the ridge's ups and downs."
+        },
+        {
+         "time": "+2-2.5 hr",
+         "label": "Reach the saddle above Lake Ann (~4,900 ft)",
+         "detail": "Trail hiking on Lake Ann Trail No. 600 gains about 2,000 ft over roughly 4 miles."
+        },
+        {
+         "time": "+1.5-2.5 hr",
+         "label": "Ridge scramble to Mount Ann summit",
+         "detail": "Off-trail scrambling along the connecting ridge past Mount Annette's south ridge (~5,500 ft); more undulating terrain than the map suggests, with some exposure."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit Mount Ann (5,873 ft)",
+         "detail": "Views of Mount Shuksan's Curtis Glaciers; typical turnaround point."
+        },
+        {
+         "time": "+2.5-4 hr",
+         "label": "Descend to trailhead",
+         "detail": "Reverse the ridge scramble and boot path to the saddle, then the Lake Ann Trail back to the car."
+        }
+       ],
+       "objective": "Reach the Mount Ann summit via the Lake Ann Trail and south ridge scramble"
+      }
+     ],
+     "totalNote": "A standard single-day car-to-car scramble: about 7-9 hours round trip for 10.5 miles and 4,000 ft of gain/loss, with no overnight camp."
+    },
+    "access": {
+     "fees": "Northwest Forest Pass ($5/day or $30/year) or an America the Beautiful/interagency annual pass required for parking at the trailhead; passes can be bought via Recreation.gov, the USGS store, or paid digitally on-site at some MBS trailheads.",
+     "rules": "No camping within 2 miles of the Lake Ann trailhead between May 15 and November 14; standard Mount Baker Wilderness group-size and Leave No Trace rules apply.",
+     "permit": "Wilderness trailhead register at the Austin Pass/Artist Point trailhead; no separate climbing permit required beyond that.",
+     "closures": "SR 542 (Mount Baker Highway) beyond the ski area is gated for winter and typically reopens mid-to-late June (WSDOT reopened it June 10 in 2026) and closes again with the first significant snowfall, usually mid-October — check the WSDOT mountain pass report before driving up.",
+     "landManager": "Mt. Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camp only at designated sites where they exist, such as the Chain Lakes. Developed campgrounds on the highway take reservations on Recreation.gov."
+     }
+    },
+    "road": {
+     "name": "Mount Baker Highway (SR 542) to the Austin Pass / Artist Point trailhead",
+     "status": "paved to the trailhead",
+     "driveNote": "Trailhead is the large paved Lake Ann/Austin Pass parking lot just before Artist Point, about 58 miles / 1.5-2 hr from Bellingham on SR 542; the lot is one of the most popular on the highway and fills early on summer weekends.",
+     "seasonalGate": "Final stretch above the ski area is gated in winter; typically opens mid-to-late June and closes by mid-October (opened June 10, 2026)"
+    },
+    "climate": {
+     "typical": "Wet, maritime Cascade-crest climate — the adjacent Mt. Baker Ski Area holds the world record for single-season snowfall (1,140 in., winter 1998-99), and snowfields on the approach and near the saddle can persist into August.",
+     "bySeason": {
+      "fall": "Good conditions typically continue into September; watch for early-season snow and the road's mid-October closure.",
+      "spring": "Trailhead road often still gated or just reopening (mid-to-late June); heavy lingering snow on the trail, saddle, and ridge.",
+      "summer": "Best window for the scramble; snow near the 4,900-ft saddle and Lake Ann basin can still linger into August in heavier-snow years.",
+      "winter": "Deep, avalanche-prone snowpack on the ridge and basin; access road to the trailhead is closed."
+     },
+     "forecastZone": "NWAC West Slopes North zone (Mount Baker area)"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "before": {
+    "season": "Jun-Sep",
+    "approach_variants": [
+     {
+      "name": "Park Butte Trail 603 and the Railroad Grade to Sandy Camp",
+      "notes": "Schriebers Meadow / Park Butte trailhead at about 3,400 ft, at the end of the Sulphur Creek road. Cross Sulphur Creek near the start — bridged or on logs, but a genuine ford during peak snowmelt — then climb through the meadow and forest switchbacks.\n\nAt about two and a quarter miles a SIGNED junction sends you right onto the Railroad Grade Trail 603.2. Stone steps take you up onto the crest of the lateral moraine. There are three established camp areas along the way; Sandy Camp at about 5,900 ft is the usual one for climbing, roughly four miles in with 2,600 ft of gain.\n\nAbove Morovitz Meadows there is no reliable water other than melted snow.",
+      "distMi": 4,
+      "gainFt": 2600,
+      "season": "Jun-Sep",
+      "hazards": [
+       "Sulphur Creek crossing during peak melt",
+       "exposed, loose moraine crest in wind",
+       "crevasses on the broad Easton, worse late season",
+       "volcanic gas and unstable ground at Sherman Crater",
+       "no water above Morovitz Meadows"
+      ],
+      "baseFinding": "You are at the start when the moraine crest simply runs out. The Railroad Grade tapers off just before 6,000 ft into the sandy flats and rock-walled tent platforms of Sandy Camp; that is where the trail stops being a trail and where parties rope up for the glacier.\n\nThe simplest confirmation on the way up is which side the ice is on: walking the moraine crest toward the mountain, the Easton Glacier drops away on your RIGHT the entire way. If the glacier is on your left, or if there is no glacier beside you at all, you never took the signed junction and are still on the Park Butte trail heading for the lookout.\n\nHigher, the feature that tells you the glacier is done is Sherman Crater — steaming, sulphurous ground at the head of the ice. The Roman Wall is the steep snow rising beyond it, and the true summit is a short traverse past the top of the wall. Smelling sulphur means you are at the TOP of the glacier and should be turning up onto the wall, not continuing toward the crater."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "before": {
+    "descent_text": "The North Ridge is climbed as an ascent-only line - parties do not reverse it. From the ridge crest, 2.5 to 6 belayed pitches of 60-85 degree alpine ice (hardest near the bottom, closer to WI2-3, easing higher) lead up past a prominent ice cliff/ice bulge around 9,600 ft, the route's steepest and most technical section, then the angle eases onto the upper ice cap; trend climbers' left (east) through crevasses to reach the true summit. Descent is via the standard Coleman-Deming route: head west/southwest across the broad summit plateau, down the Roman Wall headwall onto the Deming Glacier, across the Baker-Colfax saddle, and down the Coleman Glacier icefall back to the Hogsback and high camp, then out via Heliotrope Ridge Trail 677. No rappels are used on the standard descent in normal conditions - parties describe it as a straightforward (if long) glacier walk-down, roughly a few hours from summit to camp for a team already familiar with the terrain. A full round trip (approach + climb + descent) commonly runs 12-18 hours from high camp on summit day, roughly matching the Coleman-Deming route's overall mileage/gain — the North Ridge's extra difficulty comes from the technical ice pitches themselves, not a longer approach. Note: if a party needs to bail mid-route on the ice pitches themselves (rare, but possible in bad conditions), teams would need to build v-thread or picket anchors to rappel/lower back down the ice section they'd already climbed, since down-climbing 60-85 degree ice is generally worse than retreating via rope - but this is an emergency contingency, not the standard descent."
+   }
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Heliotrope Ridge Trail #677 to the Hogsback",
+      "notes": "Glacier Creek Road (FS 39) to the Heliotrope Ridge trailhead. Trail 677 switchbacks up through old growth and avalanche chutes, crossing Grouse, Kulshan and Heliotrope Creeks. Those crossings are fed by glacier melt and run highest in the afternoon, so cross early on the way in and expect them to be worse coming out.\n\nAt roughly two and a quarter miles the trail forks: left continues to the Coleman Glacier overlook, right is the climbers' path onto the moraine crest known as the Hogsback. Standard camp sits at about 6,000 ft, around three miles and 2,300 ft above the car. There is running water up to about the old Kulshan Cabin site; above the camp there is nothing but what you melt. Some parties camp higher, toward the Black Buttes at around 7,200 ft.\n\nGlacier Creek Road has a history of washing out; when it has been closed low, parties have added several miles of road on foot or bike before reaching the sign-in kiosk.",
+      "distMi": 3,
+      "gainFt": 2300,
+      "season": "May-Sep",
+      "hazards": [
+       "creek crossings surge with afternoon glacial melt",
+       "annual avalanche debris off the Colfax Peak ridge across the standard track",
+       "crevasses on the Coleman and upper Deming",
+       "whiteout navigation on the featureless upper glacier and summit plateau",
+       "no water above the Hogsback camp"
+      ],
+      "baseFinding": "The climbing begins where the Hogsback's crest gives out and you step onto the Coleman — rope up when the snow slope steepens rather than at a fixed altitude, because the transition moves with the snowline.\n\nThe feature that actually matters for navigation is the saddle between Colfax Peak and Baker's summit cone. From the top of the moraine head roughly east up the glacier, curving south as the crevasses dictate, staying near the Colfax ridge but not under it — that flank avalanches every year and has left debris blocks as big as cars strewn across the track. When you reach the saddle, turn left, east and slightly north, and go up the pumice ridge that leads to the foot of the Roman Wall.\n\nThe negative marker is the one that catches people in cloud: if you are climbing steepening snow with rock close on one side and you have NOT passed through a broad, obvious col, you are on the flank below Colfax, not on the Roman Wall. The Roman Wall is approached across open ground with the saddle behind you and nothing beside you. This stretch has almost no natural handrails, the summit plateau on top is very large and flat, and parties get lost here in whiteout more than anywhere else on the mountain — wand it on the way up."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "before": {
+    "gain_ft": 7000,
+    "approach_variants": [
+     {
+      "name": "Boulder Ridge Trail #605 to the moraine, then the lower Boulder Glacier",
+      "notes": "From the Boulder Ridge Trailhead at the end of FR-1131 off Baker Lake Road (about 2,700 ft — the lowest trailhead of any Baker route, which is where the 7,000+ ft of gain comes from), follow Boulder Ridge Trail #605. The first two miles are nearly flat through old clear-cut and timber and end at a boggy clearing at the Mount Baker Wilderness boundary; the maintained tread effectively stops there. Beyond it the route is a steep, unmaintained boot path up heather. Around 4,700 ft it crosses a Class 3 rock band, which parties have sometimes found protected by a fixed line left by an earlier team — treat any fixed line as unknown gear, not as trail furniture. Above the rock band the path gains the crest of a lateral moraine and follows it. Between the meadow and the basalt cliff, stay on or near the moraine crest north of Boulder Creek: the game trails here drop toward the creek and lead nowhere useful. Camp is on the ridge. Two elevations are published for it and they do not agree — so plan to camp where the ridge runs out into snow rather than at a number.",
+      "season": "Roughly May-Jul. This is a short-season route: the Boulder shrinks and breaks up early, and by August the crevasse field that is walkable in June is a maze",
+      "hazards": [
+       "A Class 3 rock band around 4,700 ft on an unmaintained boot path, sometimes with an unknown fixed line on it",
+       "Losing the moraine crest onto game trails that drop to Boulder Creek",
+       "A crevasse field that opens fast — this route has one of the shortest usable seasons on the mountain",
+       "Rockfall from the buttress near 9,300 ft on the upper mountain, on the way down as well as up",
+       "8,000 ft of gain from the lowest trailhead on the peak, so a late turnaround is a long descent in the dark"
+      ],
+      "baseFinding": "THE MORAINE CREST IS THE HANDRAIL, AND THE ROUTE STARTS WHERE IT DIES. Everything from the rock band upward is a walk along a single narrow spine of moraine with the drop into Boulder Creek on one side. In cloud you do not need to see anything: keep the crest under your feet and keep the creek noise on the same side of you the whole way. If the ground under you goes flat and broad, or you are suddenly walking with the creek on the other side, you have come off the moraine and are on the game trails below it.\n\nARRIVAL: the ridge runs out into snow and ice near 6,300 ft, and that transition — trail-and-heather to glacier — is the base of the route. There is nothing subtle about it; the ground stops being walkable in boots.\n\nTHE DISCRIMINATOR AGAINST THE OTHER ROUTE FROM THIS CAMP, and it matters because both start from the same spot: this route stays ON THE GLACIER. The Boulder-Park Cleaver route crosses the lower glacier northwest to the toe of a rock cleaver and gets onto rock. If you find yourself walking toward a rock rib and looking for a place to step off the ice, you are on the cleaver route, not this one. This route goes up the ice.\n\nWHAT GOING TOO FAR LOOKS LIKE: contouring so far northwest that the Park Glacier headwall comes into view above you. That is the neighbouring aspect and its own set of routes."
+     }
+    ],
+    "itinerary": {
+     "cal": "A less-traveled, drier east-side route; conditions and the boot path are less established than the Coleman-Deming or Easton sides, so allow extra route-finding time.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, arduous east-side approach through clearcut and timber onto Boulder Ridge; most parties camp where the ridge meets the glacier at about 5,500-5,700 ft; a sheltered site near 7,500 ft beside the cleaver shortens the summit day for those who carry higher.",
+       "hours": 4.5,
+       "miles": 6.5,
+       "title": "Approach to high camp",
+       "gainFt": 3000,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Boulder Ridge trailhead to camp at the toe of the Cleaver"
+      },
+      {
+       "n": 2,
+       "note": "From camp, climb the glacier alongside the cleaver, negotiating crevasses and a bergschrund, then finish up steep snow for the last ~500 ft to the summit. Reverse the route back to camp and continue out to the trailhead.",
+       "hours": 12,
+       "miles": 9.5,
+       "title": "Summit and hike out",
+       "gainFt": 5100,
+       "lossFt": 8100,
+       "packLb": 18,
+       "schedule": [],
+       "objective": "Climb the Boulder Glacier/Cleaver to the summit, descend to the car"
+      }
+     ],
+     "totalNote": "A quieter, longer approach than the standard routes: 4-5 hrs to camp, then a 5-7 hr summit push followed by the full hike out, for roughly 16 miles and 8,100 ft round trip."
+    }
+   }
+  }
+ ]
+}

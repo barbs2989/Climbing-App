@@ -1,0 +1,1100 @@
+{
+  "id": "wa_mount_index_north_peak_traverse",
+  "area_id": "wa_main_peak_2",
+  "name": "Main Peak via North Approach",
+  "discipline": "alpine",
+  "grade": "5.7+",
+  "grade_system": "yds",
+  "grade_num": 7,
+  "pitches": 12,
+  "length_m": 1524,
+  "sort_order": null,
+  "stars": null,
+  "fa": "Fred Beckey & Bill (Wolf) Schoening, August 12-13, 1950, completing the first full traverse of North, Middle, and Main peaks (an earlier attempt with Dick Widrig and Hieb had been turned back by weather). The Middle Peak, first climbed on this traverse, had been unclimbed until this ascent.",
+  "lat": null,
+  "lng": null,
+  "aspect": "N",
+  "season": "Jul-Sep",
+  "description": null,
+  "gear": [
+    "rope",
+    "rock rack to 2 inches",
+    "helmet",
+    "rappel gear",
+    "double ropes (recommended — eases rope drag and rappel descent through vegetated gullies)",
+    "bivy gear (many parties are overnight; the full traverse in particular commonly runs 15+ hours)"
+  ],
+  "hazards": [
+    "steep brush and slide alder",
+    "loose rock",
+    "serious route-finding",
+    "underestimated difficulty",
+    "mossy, crumbly rock off the main line — vegetation ('gardening') anchors have failed on parties who got off-route",
+    "water scarce above Lake Serene; rely on snowmelt/snow patches early season only",
+    "committing rappels prone to rope tangling in brush-choked gullies",
+    "continuing the full traverse over Middle Peak to the Main Summit adds substantial additional brush, route-finding, and rappels beyond the North Peak alone"
+  ],
+  "verif": null,
+  "overview": "Mount Index is the dramatic, three-summited massif (North, Middle, and Main peaks) towering above the town of Index and the Skykomish valley, one of the most photographed peaks on the US-2 corridor. This route follows the historic North Face line up the North Peak (5,357 ft) — a broad, right-slanting ramp to a sharp north rib, three leads of exposed 5.5-5.6 rock, then a brushy forked-gully system to a heather slope below the crest — reaching the North Peak's first false summit at roughly 5,300 ft. Continuing south over Middle Peak (5,527 ft) to the true Main Summit (5,991 ft) is the full 'Index Traverse,' one of the most notorious outings in the Cascades for vertical brush, loose rock, committing rappels, and serious route-finding. North and Middle Index both appear on Washington's 'Difficult Ten' list of hardest summits, with Middle Index widely regarded as the single hardest peak in the state.",
+  "beta": "The main peak is most commonly accessed via the East Route from Lake Serene, though north-side approaches exist via Proctor Creek drainage. This route involves mixed Class 4-5 scrambling with significant brushy sections and exposure.",
+  "turnaround": "This is a multi-day climb, so plan around the bivies rather than a single-day clock. The real decision point is the North Face on the climbing day: if you have not topped out on North Peak by mid-afternoon, rappel the face then, because once past North Peak retreating is usually harder than continuing.",
+  "auto_generated": true,
+  "alpine_grade": "AD",
+  "rock_grade": "5.7+ (consensus); one party in 2010 rated the North-Middle notch crux closer to 5.9 R/X due to sparse protection",
+  "ice_grade": null,
+  "gain_ft": 5800,
+  "loss_ft": 5800,
+  "dist_km": 5.8,
+  "max_angle": 55,
+  "rappels": "Multiple short rappels: off the North Peak summit down to the North-Middle notch, and off the Middle Peak down to the Middle-Main notch; parties consistently report needing more rappels than published descriptions suggest.",
+  "commitment": "III",
+  "face": "North side approach and connecting ridge over the North, Middle, and Main summits, transitioning across a multi-aspect ridge crest",
+  "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+  "comms": "No reliable cell service at trailhead (600 ft) or on approach; satellite communicator recommended for emergency contact.",
+  "descent": "The North Face line itself is typically reversed by rappel and downclimb through brushy, rope-eating gullies back to the NE spur — expect tangles and plan for double ropes. Parties completing the full North-Middle-Main traverse to the true Main Summit instead descend the separate East Route/Hourglass Gully on the south side back toward Lake Serene: a long, complex descent involving downclimbing, several rappels through forest, and (in early season) glissading. Do not plan to simply reverse the ascent line if you've continued past North Peak.",
+  "obj_haz": [
+    "Extensive loose, sometimes vegetated rock, especially on the Middle Peak sections",
+    "Sparse, spaced protection on crux moves",
+    "Complex, multi-summit route-finding",
+    "Long, low-retreat commitment once past the North Peak"
+  ],
+  "waypoints": [
+    {
+      "lat": 47.809189,
+      "lng": -121.573693,
+      "elev": 600,
+      "name": "Lake Serene Trailhead",
+      "note": "Off Mount Index Road (FSR 6020) then FSR 6020-109 near US 2 MP 35; Northwest Forest Pass required at the self-issue kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Leave US 2 near milepost 35 onto Mount Index Road (FSR 6020), then FSR 6020-109, and follow it to the Lake Serene trailhead at about 600 ft. A Northwest Forest Pass is required, and there is a self-issue kiosk at the trailhead if you do not already have one. Trail #1068 starts here and runs 4.1 miles up to the lake."
+    },
+    {
+      "lat": 47.791434,
+      "lng": -121.563273,
+      "elev": 1450,
+      "name": "Bridal Veil Falls creek crossing",
+      "note": "Spur trail climbs steep stairs to the falls viewpoint; the creek here can sweep hikers off their feet in high flow, so stay well back from the edge.",
+      "type": "Water",
+      "distMi": 1.7
+    },
+    {
+      "lat": 47.774769,
+      "lng": -121.563265,
+      "elev": 2600,
+      "name": "North end of Lake Serene",
+      "note": "Maintained Trail No. 1068 ends at the lake beneath Mount Index's 3,000-ft cliff face; last reliable water before the climbers' path.",
+      "type": "Water",
+      "distMi": 3.9
+    },
+    {
+      "lat": 47.773921,
+      "lng": -121.56528,
+      "elev": 2750,
+      "name": "Climbers' path / talus entry",
+      "note": "Leave the maintained trail here on a rough boot path through talus toward the NE spur; the classic talus/rockslide entry is sometimes placed on the lake's opposite (west) shore, so expect route-finding uncertainty on either side.",
+      "type": "Junction",
+      "distMi": 4
+    },
+    {
+      "lat": 47.770223,
+      "lng": -121.572357,
+      "elev": 4200,
+      "name": "NE Spur gain point",
+      "note": "Scramble several hundred feet up the brushy NE spur to the first slab, staying just right of the crest per the North Face route description.",
+      "type": "Junction",
+      "distMi": 4.5
+    },
+    {
+      "lat": 47.77225,
+      "lng": -121.577314,
+      "elev": 5300,
+      "name": "North Face brush gullies / exposed corner pitch",
+      "note": "Wet, mossy slabs and a sharply exposed corner pitch above roughly 1,000 ft of air over Lake Serene; these are the same rope-eating, brushy gullies used on the rappel descent, so mark the line on the way up.",
+      "type": "Hazard",
+      "distMi": 4.8
+    },
+    {
+      "lat": 47.7745488,
+      "lng": -121.5809415,
+      "elev": 5991,
+      "name": "Mount Index summit",
+      "note": "True summit at 5,991 ft; register/topout reached via the Class 5.0-5.6 North Face terrain above the spur.",
+      "type": "Summit",
+      "distMi": 5
+    }
+  ],
+  "gpx": [
+    [
+      47.8089,
+      -121.57381
+    ],
+    [
+      47.80806,
+      -121.57373
+    ],
+    [
+      47.80629,
+      -121.57373
+    ],
+    [
+      47.80514,
+      -121.57365
+    ],
+    [
+      47.80362,
+      -121.57343
+    ],
+    [
+      47.80222,
+      -121.57463
+    ],
+    [
+      47.80102,
+      -121.57553
+    ],
+    [
+      47.80025,
+      -121.57585
+    ],
+    [
+      47.79937,
+      -121.57609
+    ],
+    [
+      47.79816,
+      -121.57675
+    ],
+    [
+      47.79775,
+      -121.57784
+    ],
+    [
+      47.79689,
+      -121.57775
+    ],
+    [
+      47.79639,
+      -121.57656
+    ],
+    [
+      47.79597,
+      -121.57511
+    ],
+    [
+      47.79566,
+      -121.57385
+    ],
+    [
+      47.7957,
+      -121.5726
+    ],
+    [
+      47.79589,
+      -121.57129
+    ],
+    [
+      47.7951,
+      -121.57032
+    ],
+    [
+      47.79395,
+      -121.56999
+    ],
+    [
+      47.79329,
+      -121.5708
+    ],
+    [
+      47.79261,
+      -121.57033
+    ],
+    [
+      47.79242,
+      -121.56922
+    ],
+    [
+      47.79168,
+      -121.56871
+    ],
+    [
+      47.79118,
+      -121.56796
+    ],
+    [
+      47.79126,
+      -121.56682
+    ],
+    [
+      47.79164,
+      -121.56569
+    ],
+    [
+      47.79137,
+      -121.56522
+    ],
+    [
+      47.79164,
+      -121.56424
+    ],
+    [
+      47.79161,
+      -121.56314
+    ],
+    [
+      47.79122,
+      -121.56353
+    ],
+    [
+      47.79097,
+      -121.56195
+    ],
+    [
+      47.79056,
+      -121.56049
+    ],
+    [
+      47.79018,
+      -121.55956
+    ],
+    [
+      47.78998,
+      -121.55919
+    ],
+    [
+      47.78956,
+      -121.55815
+    ],
+    [
+      47.78939,
+      -121.5587
+    ],
+    [
+      47.78943,
+      -121.56051
+    ],
+    [
+      47.78948,
+      -121.56197
+    ],
+    [
+      47.7892,
+      -121.56148
+    ],
+    [
+      47.78889,
+      -121.56244
+    ],
+    [
+      47.78835,
+      -121.56402
+    ],
+    [
+      47.78752,
+      -121.56506
+    ],
+    [
+      47.78627,
+      -121.56606
+    ],
+    [
+      47.78537,
+      -121.56744
+    ],
+    [
+      47.78547,
+      -121.56935
+    ],
+    [
+      47.78504,
+      -121.57068
+    ],
+    [
+      47.78462,
+      -121.57228
+    ],
+    [
+      47.78427,
+      -121.57325
+    ],
+    [
+      47.78343,
+      -121.57455
+    ],
+    [
+      47.78238,
+      -121.57418
+    ],
+    [
+      47.78156,
+      -121.57364
+    ],
+    [
+      47.78052,
+      -121.57283
+    ],
+    [
+      47.77971,
+      -121.57017
+    ],
+    [
+      47.77854,
+      -121.56823
+    ],
+    [
+      47.77797,
+      -121.56745
+    ],
+    [
+      47.77746,
+      -121.56633
+    ],
+    [
+      47.77712,
+      -121.56414
+    ],
+    [
+      47.777,
+      -121.56248
+    ],
+    [
+      47.77631,
+      -121.56211
+    ],
+    [
+      47.77559,
+      -121.56246
+    ],
+    [
+      47.77445,
+      -121.56369
+    ],
+    [
+      47.77375,
+      -121.56633
+    ],
+    [
+      47.77203,
+      -121.5675
+    ],
+    [
+      47.77058,
+      -121.56774
+    ],
+    [
+      47.77035,
+      -121.56958
+    ],
+    [
+      47.77018,
+      -121.57076
+    ],
+    [
+      47.77043,
+      -121.572
+    ],
+    [
+      47.77035,
+      -121.57247
+    ],
+    [
+      47.77039,
+      -121.57346
+    ],
+    [
+      47.77031,
+      -121.57399
+    ],
+    [
+      47.76999,
+      -121.57473
+    ],
+    [
+      47.77133,
+      -121.57551
+    ],
+    [
+      47.77233,
+      -121.5773
+    ],
+    [
+      47.77352,
+      -121.58023
+    ],
+    [
+      47.77409,
+      -121.58036
+    ],
+    [
+      47.77277,
+      -121.57897
+    ],
+    [
+      47.77164,
+      -121.57598
+    ],
+    [
+      47.77025,
+      -121.57507
+    ],
+    [
+      47.77015,
+      -121.57418
+    ],
+    [
+      47.7703,
+      -121.5737
+    ],
+    [
+      47.77043,
+      -121.57267
+    ],
+    [
+      47.77018,
+      -121.57088
+    ],
+    [
+      47.77039,
+      -121.56956
+    ],
+    [
+      47.77039,
+      -121.56841
+    ],
+    [
+      47.77137,
+      -121.56756
+    ],
+    [
+      47.77305,
+      -121.56722
+    ],
+    [
+      47.77394,
+      -121.5653
+    ],
+    [
+      47.7747,
+      -121.56331
+    ],
+    [
+      47.77557,
+      -121.56256
+    ],
+    [
+      47.77611,
+      -121.56242
+    ],
+    [
+      47.77668,
+      -121.56212
+    ],
+    [
+      47.7773,
+      -121.56393
+    ],
+    [
+      47.7776,
+      -121.56625
+    ],
+    [
+      47.77808,
+      -121.56788
+    ],
+    [
+      47.77887,
+      -121.56886
+    ],
+    [
+      47.77988,
+      -121.57057
+    ],
+    [
+      47.7802,
+      -121.57242
+    ],
+    [
+      47.78137,
+      -121.57358
+    ],
+    [
+      47.78216,
+      -121.57434
+    ],
+    [
+      47.78375,
+      -121.57449
+    ],
+    [
+      47.78426,
+      -121.5728
+    ],
+    [
+      47.78479,
+      -121.57198
+    ],
+    [
+      47.78513,
+      -121.57107
+    ],
+    [
+      47.78545,
+      -121.56984
+    ],
+    [
+      47.78538,
+      -121.56809
+    ],
+    [
+      47.78607,
+      -121.56662
+    ],
+    [
+      47.78751,
+      -121.56502
+    ],
+    [
+      47.78842,
+      -121.56382
+    ],
+    [
+      47.78892,
+      -121.56245
+    ],
+    [
+      47.78918,
+      -121.56149
+    ],
+    [
+      47.7895,
+      -121.56207
+    ],
+    [
+      47.78941,
+      -121.56021
+    ],
+    [
+      47.78939,
+      -121.55848
+    ],
+    [
+      47.78954,
+      -121.55792
+    ],
+    [
+      47.79005,
+      -121.55896
+    ],
+    [
+      47.79036,
+      -121.55973
+    ],
+    [
+      47.79069,
+      -121.56066
+    ],
+    [
+      47.79113,
+      -121.5623
+    ],
+    [
+      47.79152,
+      -121.56328
+    ],
+    [
+      47.79168,
+      -121.56435
+    ],
+    [
+      47.79141,
+      -121.56536
+    ],
+    [
+      47.79152,
+      -121.56595
+    ],
+    [
+      47.79108,
+      -121.56779
+    ],
+    [
+      47.7915,
+      -121.56853
+    ],
+    [
+      47.79259,
+      -121.56926
+    ],
+    [
+      47.79292,
+      -121.57048
+    ],
+    [
+      47.79383,
+      -121.57003
+    ],
+    [
+      47.79498,
+      -121.57017
+    ],
+    [
+      47.79599,
+      -121.57134
+    ],
+    [
+      47.79587,
+      -121.57363
+    ],
+    [
+      47.79608,
+      -121.57507
+    ],
+    [
+      47.79652,
+      -121.57681
+    ],
+    [
+      47.79754,
+      -121.57809
+    ],
+    [
+      47.79817,
+      -121.5766
+    ],
+    [
+      47.7996,
+      -121.57605
+    ],
+    [
+      47.80036,
+      -121.57608
+    ],
+    [
+      47.80131,
+      -121.57505
+    ],
+    [
+      47.80243,
+      -121.57424
+    ],
+    [
+      47.80345,
+      -121.57346
+    ],
+    [
+      47.80467,
+      -121.57339
+    ],
+    [
+      47.80575,
+      -121.57358
+    ],
+    [
+      47.80722,
+      -121.5735
+    ],
+    [
+      47.80832,
+      -121.57355
+    ],
+    [
+      47.80903,
+      -121.57366
+    ]
+  ],
+  "elev_pts": null,
+  "disciplines": [
+    "alpine",
+    "scrambling"
+  ],
+  "timing": {
+    "totalHrs": 29,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 13,
+    "approachTimeHrs": 5,
+    "recommendedStart": "1:30 AM from camp",
+    "sectionBreakdown": [
+      {
+        "hrs": 5,
+        "note": "Hike the Lake Serene trail (4.1 mi, ~2,000 ft) then continue up talus and brush toward the base of North Peak's East Face/North Face to camp within striking distance of the route.",
+        "fromTo": "Approach to base camp",
+        "section": "Approach"
+      },
+      {
+        "hrs": 11,
+        "note": "Alpine start up the North Face (5.7, ~12 pitches of 3rd/4th class slabs and low-5th climbing with a brushy 'hidden ledge' traverse), then continue along the committing, loose, brus…",
+        "fromTo": "Climb North Face, traverse toward Main",
+        "section": "Climb"
+      },
+      {
+        "hrs": 13,
+        "note": "Finish the traverse to Main Peak's high point, then reverse the North Face line by rappel and downclimb through brushy, rope-eating gullies back to the NE spur before hiking out — …",
+        "fromTo": "Reach Main Peak and reverse the descent",
+        "section": "Descent"
+      }
+    ]
+  },
+  "detailed_rack": "Single set of nuts (micronuts through size 1), single set of cams (micros through #3), 2-4 alpinedraws, 2 slings, rappel anchor webbing. Minimal protection on most pitches.",
+  "what_to_bring": [
+    "rock rack to 2 inches",
+    "helmet",
+    "rappel gear",
+    "satellite communicator"
+  ],
+  "pro_tips": [
+    "Do not underestimate this peak despite its low elevation",
+    "Expect heavy brush on the approach"
+  ],
+  "watch_out": [
+    "brushy, steep approach",
+    "loose rock and exposure"
+  ],
+  "pro_needs": "Moderate alpine rock protection. Most sections use minimal pro; crux may take a few pieces. Good anchor sites can be sparse.",
+  "best_season": "August — enough snow gone from ledges to protect the rock, but before on-route water sources dry up.",
+  "high_point_ft": 5991,
+  "aid_grade": null,
+  "approach": "Start at the Lake Serene Trailhead (~600 ft) off Mount Index Road and follow the maintained Lake Serene Trail roughly 4.1 miles and about 2,000 ft of gain — passing the Bridal Veil Falls viewpoint spur around mile 1.6 — up to Lake Serene itself (~2,600 ft). At the lake, leave the maintained trail and pick up the unofficial climbers' path that traverses talus and large boulders along the west/south shore toward the base of North Index's imposing face; in early season this crossing goes over avalanche debris and lingering snow/ice piled at the lake's edge. The route then climbs directly up a brushy 'tunnel' on North Peak's lower face: steepening mossy slabs and 3rd/4th-class rock (often wet and downsloping, so treat as low-5th in practice) lead into thick brush with several vertical 10-20 ft steps of shrub-pulling before easier ground is gained on North Peak's upper ridge — this face section alone commonly takes many hours, with parties reporting barely reaching halfway up the face after 10 hours of climbing. From North Peak's summit the route continues as an exposed ridge traverse over the top of the Norwegian Buttresses to Middle Peak and on to Main/South Peak, with several notches along the way requiring careful downclimbing or short rappels to stay on route.",
+  "descent_text": "Final descent is from Main Peak's summit via the standard East Ridge/Hourglass Gully line shared with the peak's other routes: downclimb the connecting ridge to the saddle, then descend the East Ridge mostly on 'veggie belays' (slung trees/brush), with one rappel typically needed to get down the ridge's short low-5th-class step, followed by downclimbing or boot-skiing the Hourglass Gully's snow (best May-June before it melts out to loose rock around an otherwise-impassable small waterfall near 4,800 ft). Trip reports of the full North-Middle-Main traverse also describe additional short rappels earlier in the descent, getting down into the notch/bowl between North and Middle Peaks — one party found 'no rap stations on this side of the bowl' and had to sling a block for a traversing rappel, then reached a rap station for a further single-rope and double-rope rappel off a tree into the North Bowl. Altogether, budget for roughly 3-5 total rappels across the inter-peak notches and the final Hourglass Gully descent, using a doubled 30m or single 60m rope; anchors are mostly slung trees/blocks rather than fixed bolts, so carry cord/webbing. From the base of the gully, retrace the climbers' path around Lake Serene to the maintained trail and out — this is a long day (parties commonly report 15+ hours car-to-car), so many treat it as an overnight with a bivy near the lake or on the ridge.",
+  "bail": "Retreat is generally by reversing the ascent line; below the crux rock/brush step, downclimbing or a single rappel back to the ridge/talus allows a return to the lake basin and the maintained trail.",
+  "pitch_detail": [
+    {
+      "grade": "5.6-5.7",
+      "notes": "Multiple leads up gullies and exposed terrain to North Peak",
+      "pitch": "North Face ascent"
+    },
+    {
+      "grade": "5.6",
+      "notes": "Exposed scrambling and climbing along ridge",
+      "pitch": "North to Middle traverse"
+    },
+    {
+      "grade": "5.5-5.6",
+      "notes": "Steep gully and rock pitches",
+      "pitch": "Middle Peak section"
+    },
+    {
+      "grade": "5.4-5.5",
+      "notes": "Traverse and descent to Main Peak along skyline",
+      "pitch": "Middle to Main traverse"
+    }
+  ],
+  "itinerary": {
+    "cal": "Go when the lower brush band (3,000-3,600 ft) and the gully waterfall around 4,800 ft are still snow-covered (typically May-June) to ease the approach, but before the route itself gets wet from spring seepage.",
+    "days": [
+      {
+        "n": 1,
+        "note": "Hike the Lake Serene trail (4.1 mi, ~2,000 ft) then continue up talus and brush toward the base of North Peak's East Face/North Face to camp within striking distance of the route.",
+        "hours": 5,
+        "miles": 4.2,
+        "title": "Approach to base camp",
+        "gainFt": 2500,
+        "lossFt": 0,
+        "packLb": 40,
+        "schedule": [],
+        "objective": "Reach a bivy near the base of the North Face"
+      },
+      {
+        "n": 2,
+        "note": "Alpine start up the North Face (5.7, ~12 pitches of 3rd/4th class slabs and low-5th climbing with a brushy 'hidden ledge' traverse), then continue along the committing, loose, brush-tangled summit ridge toward Main Peak, bivying wherever a ledge allows before the final push.",
+        "hours": 11,
+        "miles": 1.5,
+        "title": "Climb North Face, traverse toward Main",
+        "gainFt": 2000,
+        "lossFt": 300,
+        "packLb": 20,
+        "schedule": [
+          {
+            "time": "1:30 AM",
+            "label": "Leave camp / trailhead",
+            "detail": "Common alpine-start time on this route."
+          },
+          {
+            "time": "5:30 AM",
+            "label": "Reach brushy base of the North Face at first light",
+            "detail": ""
+          },
+          {
+            "time": "12:00 PM",
+            "label": "Top out North Peak's North Face",
+            "detail": ""
+          },
+          {
+            "time": "6:00 PM",
+            "label": "Reach a ridge bivy short of Main Peak",
+            "detail": "Loose, exposed, brush-choked terrain along the ridge."
+          }
+        ],
+        "objective": "Climb North Face to North Peak and cross the ridge toward Main Peak's high point"
+      },
+      {
+        "n": 3,
+        "note": "Finish the traverse to Main Peak's high point, then reverse the North Face line by rappel and downclimb through brushy, rope-eating gullies back to the NE spur before hiking out — plan for a long, tangle-prone descent day.",
+        "hours": 13,
+        "miles": 3.8,
+        "title": "Reach Main Peak and reverse the descent",
+        "gainFt": 1300,
+        "lossFt": 5500,
+        "packLb": 22,
+        "schedule": [
+          {
+            "time": "6:00 AM",
+            "label": "Leave ridge bivy",
+            "detail": ""
+          },
+          {
+            "time": "9:00 AM",
+            "label": "Reach Main Peak high point",
+            "detail": ""
+          },
+          {
+            "time": "10:00 AM",
+            "label": "Begin rappel/downclimb descent",
+            "detail": "Reversing the North Face's brushy gullies."
+          },
+          {
+            "time": "4:00 PM",
+            "label": "Reach the NE spur / talus below the face",
+            "detail": ""
+          },
+          {
+            "time": "6:30 PM",
+            "label": "Out at trailhead",
+            "detail": ""
+          }
+        ],
+        "objective": "Tag the high point, then rappel/downclimb the North Face back to the NE spur"
+      }
+    ],
+    "totalNote": "A committing ~10-mile, ~5,800-6,000 ft round trip: North Peak's North Face (5.7, 12 pitches) climbed and then reversed by rappel/downclimb toward the Main Peak high point, usually done as a 3-day trip with two bivies rather than a single push."
+  },
+  "access": {
+    "fees": "$5 per vehicle per day, or $30 annual, at the Lake Serene Trailhead fee site",
+    "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "rules": "No camping or campfires within 1/4 mile of Lake Serene; this is one of the busiest trailheads on the district, so weekend parking fills early",
+    "permit": "None required.",
+    "landManager": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+    "passRequired": "Northwest Forest Pass, Interagency Recreation Pass, or USFS digital day pass (Washington Discover Pass is NOT honored)",
+    "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+  },
+  "road": {
+    "name": "Mount Index Road (short spur off US 2)",
+    "status": "paved/gravel, no gate",
+    "driveNote": "From US 2 eastbound near milepost 35.2, just before the Index turnoff, turn south onto Mount Index Road; continue about 0.3 mi, bear right, and go roughly 600 ft to the Lake Serene Trailhead parking lot."
+  },
+  "climate": {
+    "typical": "Very wet maritime climate with heavy vegetation; driest mid- to late summer.",
+    "bySeason": {
+      "fall": "Short window before wet weather returns",
+      "spring": "Wet, snowy, very brushy; rock often wet",
+      "summer": "Best window with drier rock",
+      "winter": "Snowy and serious, rarely climbed"
+    },
+    "forecastZone": "West Slopes North Cascades / US-2"
+  },
+  "emergency": {
+    "county": "Snohomish County",
+    "rangerStation": "Skykomish Ranger District, Mt. Baker-Snoqualmie NF",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe, WA",
+    "sheriffDispatch": "911"
+  },
+  "lists": null,
+  "crowds": {
+    "peakTraffic": "The Lake Serene trailhead used for access is one of the busiest in the US-2 corridor — parking often fills by 9am on sunny summer weekends. Almost all of that traffic is day-hikers to the lake/Bridal Veil Falls; only a small subset continue up toward Index's summit, concentrated on clear weekends June-September.",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Roughly 10-30 summit-attempt parties per season (rough estimate — the trailhead itself sees thousands of hikers, but very few continue onto the technical upper mountain)"
+  },
+  "partner_requirements": {
+    "fitnessSpec": {
+      "hiking": "Very high — round trips commonly run 12-15+ hours with a steep, brushy elevation gain before any technical climbing begins.",
+      "packWeight": "Light-to-moderate day pack (roughly 15-25 lb) carrying a light rack for the short technical steps."
+    },
+    "approachTime": "Long — a multi-hour, steep, brushy approach from the Lake Serene trailhead before the technical climbing even starts; many parties treat the entire day as a 12+ hour push.",
+    "requiredSkills": [
+      "4th/low-5th class scrambling",
+      "route-finding through brush and loose rock",
+      "basic roped protection and belay skills for short technical steps",
+      "rappel setup and self-rescue basics",
+      "off-trail navigation"
+    ],
+    "experienceLevel": "Experienced scrambler/easy-technical climber comfortable moving on unroped or lightly-roped low-5th-class terrain with loose rock and real route-finding; the modest grade undersells how serious this objective is."
+  },
+  "seasonal_guidance": {
+    "optimalWindow": "Late June through September, with August the most reliable month for dry rock and manageable brush.",
+    "monthBreakdown": {
+      "July": {
+        "reason": "Rock and brush drying out; solid conditions typical.",
+        "status": "good"
+      },
+      "June": {
+        "reason": "Early season; brush and rock can still be damp per the wet maritime climate note, and lingering snow/moisture make footing less certain.",
+        "status": "marginal"
+      },
+      "August": {
+        "reason": "Driest window of the year on this peak, matching the best-season.",
+        "status": "optimal"
+      },
+      "September": {
+        "reason": "Still climbable, but a narrowing window before wet fall weather returns.",
+        "status": "good"
+      }
+    }
+  },
+  "seasonal_hazards": {
+    "weather": {
+      "typical": "Very wet maritime climate with heavy vegetation; conditions are only reliably dry mid-to-late summer (.typical).",
+      "probability": "Lower afternoon-thunderstorm frequency than the drier east-side Cascades; the main weather risk is fast-arriving Pacific frontal systems bringing rain even in summer."
+    },
+    "exposure": "Significant exposure on loose rock through the upper scrambling/low-5th sections; a fall on the steep brushy approach or on exposed rock steps would be serious, and some sections require rappelling to retreat.",
+    "avalanche": {
+      "zone": "NWAC Stevens Pass zone is the nearest official forecast coverage for the US-2/Index corridor; this is a dry summer-season objective, so the winter avalanche forecast is largely inapplicable to the climbing window.",
+      "byMonth": {
+        "July": "N/A",
+        "June": "Low",
+        "August": "N/A",
+        "September": "N/A"
+      }
+    },
+    "crevasses": "N/A - no glacier travel"
+  },
+  "data_quality": {
+    "gaps": [
+      "No published hard count of annual summit attempts/completions; the season/crowd estimate is inferred from general Lake Serene trailhead traffic reports, not route-specific logs.",
+      "No NWAC forecast zone is centered precisely on Mount Index.",
+      "No dedicated partner-skill guide found for this specific line beyond inference from the on-file grade and hazards.",
+      "GPS track sourced from public CalTopo map: https://caltopo.com/m/PPK1",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+  },
+  "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+  },
+  "approach_logistics": {
+    "peakLat": 47.7745488,
+    "peakLng": -121.5809415,
+    "trailhead": "Lake Serene Trailhead (Trail #1068)",
+    "trailheadLat": 47.80925,
+    "trailheadLng": -121.57409,
+    "trailheadDirection": "From the Lake Serene Trailhead off Mount Index River Road, via Trail #1068"
+  },
+  "sling_rack": {
+    "cams": "single rack to ~2in (BD C4 #0.3-2 or equiv)",
+    "nuts": "light stopper set",
+    "cordage": "rappel tat/webbing — existing anchors reported in place",
+    "runners": "6-8 shoulder-length + 2 double-length"
+  },
+  "alpine_draws": 6,
+  "rope_type": "dynamic single",
+  "rope_length_m": 60,
+  "rope_note": "Committing Grade III technical rock (this route line rated 5.0-5.6; the harder Persis-Index full traverse variant hits 5.7 on vertical dirt/rotten rock). Rope and rack mandatory — carried from the trailhead for the hourglass-gully rappels and technical pitches; ice axe/crampons needed for permanent snowfields en route.",
+  "ascender": null,
+  "corrections": "This is NOT a pure scramble despite the terse grade label — SummitPost/Mountainproject/CascadeClimbers trip reports are explicit that the North Peak is only reached via committing 5th-class climbing with multiple rappels; full trad rack and rope required, contrary to what a 'Class 5.0-5.6' tag might undersell.",
+  "gear_confidence": "verified",
+  "rappel_detail": [
+    {
+      "n": 1,
+      "notes": "First of several rappels descending from the Main/Middle Peak traverse toward Lake Serene.",
+      "anchor": "tree/bush anchor",
+      "lengthM": 10
+    },
+    {
+      "n": 2,
+      "notes": "",
+      "anchor": "tree/bush anchor",
+      "lengthM": 15
+    },
+    {
+      "n": 3,
+      "notes": "",
+      "anchor": "tree/bush anchor",
+      "lengthM": 10
+    },
+    {
+      "n": 4,
+      "notes": "Final major station before hiking terrain back to Lake Serene.",
+      "anchor": "tree/bush anchor",
+      "lengthM": 15
+    }
+  ],
+  "rappel_count_note": "Expect multiple short rappels at 3-5 major stations, with individual raps in the 30-50 ft range; 4 used as a representative count across the North/Middle/Main peak traverse (roughly 2-3 hours total from Main Peak to Lake Serene).",
+  "rack": [
+    "Single set of nuts (micronuts through size 1)",
+    "Single set of cams (micros through #3)",
+    "2-4 alpine quickdraws",
+    "2 shoulder-length slings",
+    "Rappel anchor webbing/cord",
+    "Single dynamic rope (double ropes recommended for rappel descent)",
+    "Bivy gear (many parties overnight)"
+  ],
+  "features": [
+    "Face",
+    "Exposed",
+    "Technical",
+    "Committing",
+    "Sustained"
+  ],
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": "outback",
+  "approach_variants": [
+    {
+      "name": "Lake Serene Trail #1068 to the North Peak north face",
+      "hours": "2-3",
+      "notes": "Lake Serene trailhead at about 600 ft off Mount Index Road. The maintained, well-graded Lake Serene Trail runs roughly 4.1 miles and about 2,000 ft, passing the Bridal Veil Falls viewpoint spur near mile 1.6, to Lake Serene at about 2,600 ft.\n\nAt the lake, leave the maintained trail for the unofficial climbers' path across talus and large boulders along the west and south shore toward the base of North Index's face. Early season this crosses avalanche debris and snow piled at the lake's edge.",
+      "season": "Jul-Sep — enough snow gone from the ledges to protect the rock, before on-route water dries up",
+      "hazards": [
+        "Wet mossy downsloping slabs low on the face",
+        "Vertical brush steps with no protection",
+        "Avalanche debris at the lake in early season",
+        "Committing ridge with limited escape once past North Peak"
+      ],
+      "baseFinding": "The route climbs directly up a brushy TUNNEL on North Peak's lower face, and the entry is recognised by texture rather than by shape: steepening mossy slabs and third/fourth class rock that is often wet and downsloping — treat it as low fifth in practice — leading into thick brush with several vertical ten- to twenty-foot steps of shrub-pulling. That is the correct ground. This face section alone routinely takes many hours; parties have reported barely reaching halfway after ten hours of climbing, so slow progress is not evidence you are off route. From North Peak's summit the line continues as an exposed ridge over the top of the Norwegian Buttresses to Middle Peak and on to Main Peak, with notches requiring downclimbing or short rappels."
+    }
+  ],
+  "climbing_route": null,
+  "bivy": [
+    {
+      "elev": 880,
+      "name": "Money Creek Campground",
+      "role": "main",
+      "type": "camp",
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits almost directly under Grotto Mountain and is a sensible base for the Beckler-side objectives, for Baring and the Barclay Creek peaks about fifteen minutes back down the highway, and for anyone wanting a shower-free but civilised night before an early start. Being this low it is usable well outside the alpine season — a real advantage in a zone where several of the objectives are winter routes and everything above 3,000 ft is snowbound. Do not treat it as an approach camp; it is a place to sleep in the valley with a proper toilet and a fire ring, twenty to forty minutes' drive from any of the trailheads.",
+      "water": "Potable water at the campground. The South Fork Skykomish runs alongside.",
+      "permit": "Standard national forest campground fee, booked through the federal reservation system or taken first-come at the two unreserved sites. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Fourteen-day stay limit. Check the current forest-wide campfire ban before planning a fire.",
+      "capacity": "25 sites, 24 single and one double, most of them accessible. Reservable, with a couple held first-come first-served. Picnic tables, vault toilets, and a swimming hole on the river."
+    },
+    {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "role": "route",
+      "type": "bivy",
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwegian Buttresses — starts from this trailhead at 600 ft and climbs about 2,000 ft in under four miles to the lake at roughly 2,520 ft, then traverses the shore over talus and car-sized boulders to reach the base of the walls in another fifteen or twenty minutes. That is a short, brutal approach rather than a long one, which is exactly why parties overwhelmingly do these routes car-to-car and why there is no camp here. Where a bivy genuinely happens is at the foot of the buttresses, on slab and talus. That spot sits close to the edge of the quarter-mile no-camping ring, probably just outside it but not by a comfortable margin, so sleep as high and as far from the shore as the ground allows and be ready to move if asked. Take a pad and expect rock, not ground. The serious caveat is rockfall: large natural releases have been observed coming off North Index and out of the cleft between the buttresses, so parties are advised to stay low along the lake until they can go straight up to the base — and by the same logic, do not sleep in the fall line of that gully. Winter changes the picture completely: Hourglass Gully is a snow-and-ice objective and the basin is under a deep avalanche-fed snowpack, so a winter bivy here is a snow camp with the walls above you loaded. The day-use hours mean an alpine start is a very early drive from town rather than a walk from a tent.",
+      "water": "The lake, and meltwater running off the slabs and the gullies above into midsummer. Later in the season the runnels dry and the lake is the only certainty.",
+      "permit": "Read this before planning anything here. Camping and campfires are prohibited within a quarter mile of Lake Serene, and the trailhead itself is signed day use only, open sunrise to sunset, with no overnight parking. Parking takes a Northwest Forest Pass, Interagency pass or the day fee; a Discover Pass is not valid. So a legal bivy has to be well beyond the lake, out toward the base of the walls, and even then the car is the problem rather than the ground.",
+      "capacity": "No established sites at all. What exists is a scatter of flat spots among the boulders and slabs on the south side of the basin, below the walls. Room for a couple of small parties at most, and none of it is comfortable."
+    }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": null,
+  "name_search": "main peak pk via north approach",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+}

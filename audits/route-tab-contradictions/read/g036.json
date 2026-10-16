@@ -1,0 +1,419 @@
+{
+ "batches": ["b141.json", "b142.json", "b143.json", "b144.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_east_wilmans_spire",
+   "name": "East Wilmans Spire",
+   "area": "Wilmans Spires",
+   "contradictions": [
+    {
+     "fact": "how many rappels it takes to reach the east notch",
+     "severity": "low",
+     "claims": [
+      {"field": "descent", "says": "Two single-rope rappels from fixed anchors back to the east notch, then downclimb the approach gully."},
+      {"field": "descent_text", "says": "...most parties do not rappel again: they climb back over the 20-ft 5.5 crack... then downclimb to the east notch. That reversal is made unroped with about a thousand feet of exposure below..."},
+      {"field": "rappel_detail[1].station", "says": "This rappel takes you back down pitch 2 to the top of pitch 1."},
+      {"field": "rappel_count_note", "says": "An optional third from the top of pitch 1 replaces the unroped reversal of the 5.5 crack, which is why recorded counts here differ between two and three."}
+     ],
+     "why": "descent states the two standard rappels return the party directly to the east notch, but descent_text, the rappel_detail station notes, and rappel_count_note all agree the two rappels only reach the top of pitch 1 — an additional unroped downclimb of the 5.5 crack (or an optional third rappel) is needed to actually reach the notch.",
+     "internal_resolution": "descent_text + rappel_detail + rappel_count_note (3 sources) agree the two rappels stop at the top of pitch 1; the short descent field overstates what they accomplish. Per the render rule (LONGER of descent/descent_text wins) only descent_text is actually shown, so this has low visibility but is a real internal disagreement.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_you_moss_be_joking",
+   "name": "You Moss Be Joking",
+   "area": "Mossy Loaf",
+   "contradictions": []
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "name": "Moss Out For Harambe",
+   "area": "Mossy Loaf",
+   "contradictions": [
+    {
+     "fact": "which tier (upper/lower) the route climbs",
+     "severity": "medium",
+     "claims": [
+      {"field": "overview", "says": "A one-pitch 5.7 trad line up Mossy Loaf's lower tier, climbing an open-book past a distinctive 'monkey face' rock feature..."},
+      {"field": "face", "says": "Upper tier"}
+     ],
+     "why": "overview explicitly places the route on the lower tier, but the face field (which also renders on Overview) labels it 'Upper tier' — contradictory guidance about which wall to find.",
+     "internal_resolution": "overview is the more specific, direct location statement ('up Mossy Loaf's lower tier'); the sibling route You Moss Be Joking correctly carries face: 'Lower tier' for the same crag, suggesting this route's face value is the likely data-entry error.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "name": "Marvin's Ear",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "total route length",
+     "severity": "low",
+     "claims": [
+      {"field": "overview", "says": "a fully bolted 800-ft, 7-pitch alpine sport line"},
+      {"field": "beta", "says": "800 feet, Grade III 5.10b"},
+      {"field": "length_m", "says": "244 (= 800 ft)"},
+      {"field": "pitch_detail[*].lengthM sum", "says": "30+27+30+35+30+35+30 = 217 m (≈712 ft)"}
+     ],
+     "why": "overview/beta/length_m all agree on 800 ft, but the pitch-by-pitch lengths sum to only ~712 ft, an ~11% shortfall beyond simple rounding.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "which wilderness area / whether Dec-2025 storm damage affects this route's access",
+     "severity": "high",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness"},
+      {"field": "access.permitZone", "says": "Adjacent to or within Glacier Peak Wilderness area"},
+      {"field": "access._raw.notes", "says": "As of April 2026, access to Glacier Peak Wilderness is extremely limited due to December 2025 storm damage"},
+      {"field": "access.seasonal", "says": "...Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip."}
+     ],
+     "why": "this route's own approach/road/waypoints describe the Sunrise Mine Trailhead / Mountain Loop Highway / FR-4065 approach to the Vega Tower group — a different location/watershed from Glacier Peak Wilderness's Suiattle River Road access. The sibling route on the same peak and trailhead, Beyond Redlining, explicitly states 'the peak and much of the approach fall within WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness' and 'No storm damage or closure has been documented on this route's actual access road.'",
+     "internal_resolution": "Beyond Redlining (wa_beyond_redlining, same area_id/trailhead) explicitly corrects this: NOT Glacier Peak Wilderness, and the Suiattle River Road storm damage is irrelevant to this trailhead. Marvin's Ear's access.land_manager/permitZone/_raw/seasonal fields appear to be contaminated boilerplate from an unrelated Glacier Peak Wilderness route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Sunrise Mine Trailhead location",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[0] (Sunrise Mine Trailhead)", "says": "lat 48.0247261, lng -121.4778459"},
+      {"field": "approach_logistics.trailheadLat/trailheadLng", "says": "lat 48.02388889, lng -121.4741444"}
+     ],
+     "why": "two different coordinate pairs (roughly 900 ft apart) are given for the same named trailhead within the same route; a map built from approach_logistics would place the pin in a different spot than the waypoint pin.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "name": "Beyond Redlining",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "car-to-car day length",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "14"},
+      {"field": "itinerary.totalNote", "says": "roughly 13-14 hrs car-to-car"},
+      {"field": "itinerary.days[0].schedule", "says": "4:30 AM Leave trailhead ... 8:30 PM Back at trailhead"}
+     ],
+     "why": "the schedule's own start (4:30 AM) and finish (8:30 PM) times span 16 hours, not the 13-14 hours stated by timing.totalHrs and totalNote.",
+     "internal_resolution": "the schedule entries are the most granular and sum to 16 hours; totalHrs/totalNote appear to undercount by 2-3 hours.",
+     "needs_research": false
+    },
+    {
+     "fact": "relevance of the Glacier Peak / Suiattle River Road storm closure to this route",
+     "severity": "low",
+     "claims": [
+      {"field": "access.seasonal", "says": "Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip."},
+      {"field": "access.land_manager / access.permitZone", "says": "...the peak and much of the approach lie within or adjacent to WA DNR's Morning Star Natural Resources Conservation Area, not Glacier Peak Wilderness."}
+     ],
+     "why": "access.seasonal (rendered on the Plan tab) still flags Suiattle River Road/Glacier Peak storm damage as something to check, even though this route's own land_manager/permitZone fields (also rendered, and correct per access._raw.notes) state it is NOT in Glacier Peak Wilderness and uses a different trailhead/watershed entirely.",
+     "internal_resolution": "land_manager/permitZone/_raw.notes are correct and self-consistent for this route; access.seasonal's Suiattle River mention is leftover boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "name": "Standard Scramble",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "which notch/direction the route uses",
+     "severity": "medium",
+     "claims": [
+      {"field": "face", "says": "South Ridge / North Notch"},
+      {"field": "pitch_detail (pitch 4)", "says": "Traverse snow-covered slabs northwest to southeast ridge notch (5,600 ft)"}
+     ],
+     "why": "the face field names a 'North Notch', but the route's own pitch-by-pitch description (and approach text) only ever describes a southeast ridge notch; no 'north notch' appears anywhere else in the route.",
+     "internal_resolution": "pitch_detail and approach consistently say 'southeast ridge notch'; 'North Notch' in face is the likely outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total car-to-car time / one-way time to summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "partner_requirements.approachTime", "says": "Roughly 3-4 hrs one-way to the basin/summit based on the 8-hr round-trip total with a 06:00 recommended start"},
+      {"field": "timing.totalHrs", "says": "9"},
+      {"field": "itinerary.days[0].hours", "says": "9"},
+      {"field": "itinerary.totalNote", "says": "about 9 hrs car-to-car"},
+      {"field": "itinerary.days[0].schedule", "says": "6:00 AM Leave trailhead ... 11:00 AM Summit Morning Star Peak ... 3:00 PM Back at trailhead"}
+     ],
+     "why": "partner_requirements states an '8-hr round-trip total' and '3-4 hrs one-way', but four other fields (timing.totalHrs, itinerary hours, totalNote, and the schedule's own times, which show a 5-hour one-way push to the summit) all agree on 9 hours total.",
+     "internal_resolution": "timing.totalHrs/itinerary.hours/totalNote/schedule (4 agreeing sources) say 9 hrs total, 5 hrs one-way to the summit; partner_requirements.approachTime is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "which wilderness area applies",
+     "severity": "high",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness"},
+      {"field": "access.rules", "says": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness..."},
+      {"field": "access.seasonal", "says": "...Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures..."}
+     ],
+     "why": "same location/trailhead as Marvin's Ear and Mile High Club; the sibling route Beyond Redlining on this same peak explicitly documents that this location is NOT Glacier Peak Wilderness (it is Wild Sky Wilderness / Morning Star NRCA) and that the Suiattle River Road closure is irrelevant to this trailhead.",
+     "internal_resolution": "Beyond Redlining (same area/trailhead) explicitly corrects this.",
+     "needs_research": false
+    },
+    {
+     "fact": "Sunrise Mine Trailhead location",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[0] (Sunrise Mine Trailhead)", "says": "lat 48.0247261, lng -121.4778459"},
+      {"field": "approach_logistics.trailheadLat/trailheadLng", "says": "lat 48.02388889, lng -121.4741444"}
+     ],
+     "why": "two different coordinate pairs (~900 ft apart) are given for the same named trailhead within the same route — same pattern as Marvin's Ear.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "total elevation gain",
+     "severity": "low",
+     "claims": [
+      {"field": "gain_ft", "says": "3670"},
+      {"field": "itinerary.days[0].gainFt", "says": "3800"}
+     ],
+     "why": "header would show itinerary's gainFt (3800) while Overview's TECHNICAL STATS shows gain_ft (3670) directly — a ~3.5% mismatch between two rendered numbers.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "total route distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "4.35 (≈2.7 mi)"},
+      {"field": "approach", "says": "Reach Headlee Pass at roughly 4,600 ft after about 2.7 miles..."},
+      {"field": "itinerary.days[0].miles / totalNote", "says": "5.4 mi round trip"}
+     ],
+     "why": "dist_km (2.7 mi) matches only the one-way distance to Headlee Pass, not the full route to the summit and back (5.4 mi round trip); presented as a bare 'Dist' figure it could read as the whole trip.",
+     "internal_resolution": "itinerary.miles/totalNote (5.4mi round trip) is the fuller figure; dist_km is a partial/one-way distance. Low priority per the one-way-vs-round-trip caveat.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mile_high_club",
+   "name": "Mile High Club",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "2700"},
+      {"field": "itinerary.days[0].gainFt", "says": "3500"},
+      {"field": "itinerary.days[0].lossFt", "says": "3500"}
+     ],
+     "why": "header would display the itinerary's gainFt (3500) while Overview's TECHNICAL STATS shows gain_ft (2700) directly — a 30% mismatch, well beyond rounding. (Flagged by the mechanical detector as [gain-vs-itinerary].)",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "car-to-car day length used for turnaround planning",
+     "severity": "medium",
+     "claims": [
+      {"field": "turnaround", "says": "Given the ~8-10 hour car-to-car day, set a turnaround time..."},
+      {"field": "timing.totalHrs", "says": "12"},
+      {"field": "itinerary.days[0].hours", "says": "12"},
+      {"field": "itinerary.totalNote", "says": "roughly 10-12 hrs car-to-car"},
+      {"field": "itinerary.days[0].schedule", "says": "6:00 AM Leave trailhead ... 6:00 PM Back at trailhead"}
+     ],
+     "why": "turnaround cites an '~8-10 hour' day to justify turnaround timing, but every other time field (timing.totalHrs, itinerary hours, totalNote, and the schedule itself, which spans exactly 12 hours) agree on 10-12 hours.",
+     "internal_resolution": "timing/itinerary/schedule (4 agreeing sources, all pointing to 12h) are consistent; turnaround's '8-10 hour' framing is the outlier and could lead a party to plan a turnaround 2-4 hours too late.",
+     "needs_research": false
+    },
+    {
+     "fact": "which wilderness area applies",
+     "severity": "high",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness"},
+      {"field": "access.permitZone", "says": "Adjacent to or within Glacier Peak Wilderness area"},
+      {"field": "access._raw.notes", "says": "As of April 2026, access to Glacier Peak Wilderness is extremely limited due to December 2025 storm damage"}
+     ],
+     "why": "same trailhead/area as Marvin's Ear and the Standard Scramble; contradicted by the sibling route Beyond Redlining, which documents this location as NOT Glacier Peak Wilderness.",
+     "internal_resolution": "Beyond Redlining (same area/trailhead) explicitly corrects this.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "name": "East Ridge (Iodine Gulch – Bathtub Lakes)",
+   "area": "Mount Pilchuck",
+   "contradictions": [
+    {
+     "fact": "total route distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈4.97 mi)"},
+      {"field": "beta", "says": "10 miles round trip, 2,800 ft gain"}
+     ],
+     "why": "dist_km (≈5 mi) appears to be one-way while beta states '10 miles round trip' for the same route; a bare header 'Dist' figure next to beta's explicit round-trip claim could read as the whole trip being only ~5 mi.",
+     "internal_resolution": "Internally consistent as one-way (dist_km) vs round-trip (beta) if read correctly; flagged per the explicit one-way/round-trip caveat, low priority.",
+     "needs_research": false
+    },
+    {
+     "fact": "which ranger district manages this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Mount Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Verlot Public Service Center — (360) 691-7791, 33515 Mountain Loop Hwy, Granite Falls, WA 98252 (open Fri–Mon)"}
+     ],
+     "why": "Verlot Public Service Center is documented elsewhere in this dataset — including the sibling Standard Route on the same peak — as administered by the Darrington Ranger District, not Skykomish Ranger District; the two fields on this route point to different districts for the same corridor.",
+     "internal_resolution": "the sibling route (Mount Pilchuck Trail / Standard Route) states 'Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)' and ties Verlot PSC to Darrington RD; landManager's 'Skykomish Ranger District' here is likely the error.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "name": "Mount Pilchuck Trail (Standard Route)",
+   "area": "Mount Pilchuck",
+   "contradictions": [
+    {
+     "fact": "climb/route length",
+     "severity": "high",
+     "claims": [
+      {"field": "length_m", "says": "21 (≈69 ft)"},
+      {"field": "waypoints[1] (summit)", "says": "distMi: 2.7"},
+      {"field": "dist_km", "says": "4.3 (≈2.7 mi)"},
+      {"field": "pitch_detail (pitch 3)", "says": "Roughly 20-30 ft of hands-on boulder scrambling"}
+     ],
+     "why": "length_m (rendered on Overview as 'climb length') states 21 meters — about 69 feet — while every other distance field on this route (waypoints, dist_km, approach, itinerary) describes a roughly 2.7-mile (4.3 km) trail each way; even the short final scramble is separately described as only '20-30 ft' (≈6-9 m), so 21m matches nothing on the route.",
+     "internal_resolution": "the trail's actual one-way distance (2.7 mi / 4.3 km) is corroborated by three independent fields; length_m appears to be a stray/erroneous value.",
+     "needs_research": false
+    },
+    {
+     "fact": "which regulatory regime (wilderness vs state park) applies",
+     "severity": "high",
+     "claims": [
+      {"field": "access.rules", "says": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness."},
+      {"field": "access.landManager", "says": "...the upper trail and summit lie within Mount Pilchuck State Park (Washington State Parks), with trail maintenance run jointly with the Everett branch of The Mountaineers."},
+      {"field": "bivy[0].permit", "says": "The summit and upper mountain are a STATE CONSERVATION AREA rather than national forest..."}
+     ],
+     "why": "access.rules cites Glacier Peak Wilderness group-size/campfire rules, but the route's own landManager field (and the shared bivy note) explicitly state the upper mountain/summit is Mount Pilchuck STATE PARK land, not Glacier Peak Wilderness or even national forest at the top — a different regulatory regime.",
+     "internal_resolution": "landManager's explicit State Park statement is corroborated by the bivy note; access.rules' Glacier Peak Wilderness citation is boilerplate contamination from an unrelated route template.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pugh_pika_slab",
+   "name": "Pika Slab",
+   "area": "Mount Pugh",
+   "contradictions": [
+    {
+     "fact": "total elevation gain / whether the described day includes the true summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "4694"},
+      {"field": "high_point_ft", "says": "6594"},
+      {"field": "approach", "says": "the Pika Slab crag band is on the heather slopes immediately above the trail between that step and the summit, roughly 5 miles and 4,700 ft above the car."},
+      {"field": "itinerary", "says": "Climb the slab..., continue to the summit for the view if weather allows, then reverse everything... the 5,300 ft of gain on the full peak day is among the largest of any Washington trail that reaches a true summit."}
+     ],
+     "why": "gain_ft (4694) and high_point_ft (6594, well below the peak's 7,201 ft summit) both describe reaching only the crag, matching the approach text's own '~5 miles and 4,700 ft' figure. But the itinerary explicitly describes continuing on to the true summit and states '5,300 ft of gain on the full peak day' — the figure that matches the sibling summit-scramble route (wa_mount_pugh_stujack: gain_ft 5300, high_point_ft 7201), not this route's own stats.",
+     "internal_resolution": "gain_ft/high_point_ft/approach agree the route as scored tops out at the crag (~4,700 ft gain, ~6,594 ft); the itinerary's '5,300 ft on the full peak day' line appears to be adapted from the summit-scramble route without updating the numbers for a crag-only day.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "name": "Stujack Pass + Summit Scramble",
+   "area": "Mount Pugh",
+   "contradictions": [
+    {
+     "fact": "whether a wilderness permit is required",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota."},
+      {"field": "access.permit", "says": "None required"},
+      {"field": "bivy[2].permit (Stujack Pass bivy)", "says": "...so does the free self-issue permit from the trailhead box and the twelve-person party limit counting people and stock together."}
+     ],
+     "why": "the route's own top-level permit field and its own bivy notes both state a free self-issue Glacier Peak Wilderness permit IS required above Stujack Pass, but access.permit (rendered in the Plan tab's ACCESS section) flatly says 'None required' — directly contradicting the other two fields on the same route.",
+     "internal_resolution": "permit + bivy[2].permit (2 agreeing sources) say a self-issue permit is required; access.permit is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "season window / whether October is part of the optimal season",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "mid-July through October"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through October — late July/August offers the most reliably snow-free ridge"},
+      {"field": "seasonal_guidance.monthBreakdown.October", "says": "status: marginal — Early-season snow can return to the exposed ridge..."}
+     ],
+     "why": "season states the window ends in September, but best_season and seasonal_guidance.optimalWindow both extend it through October; meanwhile seasonal_guidance's own month-by-month breakdown rates October only 'marginal', not part of the 'optimal' window its own label claims. (Flagged by the mechanical detector as [season-window].)",
+     "internal_resolution": "monthBreakdown's October='marginal' actually agrees with season (Jul-Sep) excluding it; the optimalWindow/best_season labels calling October part of the window are the outliers, and optimalWindow directly conflicts with its own monthBreakdown.October entry.",
+     "needs_research": false
+    },
+    {
+     "fact": "total route distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "7.2 (≈4.47 mi)"},
+      {"field": "beta", "says": "roughly 5.2 miles one-way"},
+      {"field": "itinerary.days[0].miles", "says": "11 (round trip)"}
+     ],
+     "why": "dist_km (4.47 mi) doesn't match beta's explicit '5.2 miles one-way' claim (a ~16% gap, beyond rounding), and is less than half of the itinerary's 11-mile round-trip figure.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "name": "Southeast Slopes",
+   "area": "Mount Saul",
+   "contradictions": [
+    {
+     "fact": "which side of the mountain the route climbs",
+     "severity": "high",
+     "claims": [
+      {"field": "name", "says": "Southeast Slopes"},
+      {"field": "face", "says": "Southeast ridge / summit slopes"},
+      {"field": "aspect", "says": "SE"},
+      {"field": "approach_variants[0].baseFinding", "says": "GO EAST-FACING AND CLEAN, NOT NORTH AND BROKEN...the direct ascent of the clean upper east-face slabs..."},
+      {"field": "crowds.estimatePerSeason", "says": "...only two accounts exist, both describing the East Slope/East Face approach via Airplane Lake rather than this Southeast Slopes line specifically"}
+     ],
+     "why": "the route is named/labeled 'Southeast' (name, face, aspect), but every substantive description of the actual climbing (waypoints via Airplane Lake, the 'upper east face', 'northeast ridge' as the alternative line) describes the EAST side of the mountain, not southeast — and the crowds field explicitly flags that the sourced trip reports describe an East Slope/East Face approach 'rather than this Southeast Slopes line specifically', i.e. the route's own data admits the beta may not match its name.",
+     "internal_resolution": "the crowds field's own caveat, plus the approach/waypoints/approach_variants all being about the east side, suggests 'Southeast Slopes'/'SE' aspect/face may be a mislabel of what is actually documented as an East Slope/East Face route.",
+     "needs_research": true
+    },
+    {
+     "fact": "how exposed the route is",
+     "severity": "medium",
+     "claims": [
+      {"field": "difficulty.exposure", "says": "4 (of a 1-5 scale)"},
+      {"field": "seasonal_hazards.exposure", "says": "Low-to-moderate fall exposure typical of sustained Class 2 talus/scree; the primary consequence is loose rock underfoot and slips on scree rather than sheer exposure"},
+      {"field": "rock_grade / grade", "says": "Class 3"},
+      {"field": "waypoints (summit)", "says": "True summit with a short exposed Class 3 rock scramble for the final feet"}
+     ],
+     "why": "difficulty.exposure rates exposure fairly high (4/5), and the route's own grade is Class 3 with an explicitly 'exposed' summit scramble, but seasonal_hazards.exposure downplays it as 'Low-to-moderate... rather than sheer exposure' and mischaracterizes the terrain as 'Class 2'.",
+     "internal_resolution": "the route's own grade (Class 3) and summit-waypoint note ('exposed Class 3 rock scramble') contradict seasonal_hazards.exposure's 'Class 2'/'low-to-moderate' framing; difficulty.exposure=4 agrees with the higher characterization.",
+     "needs_research": false
+    },
+    {
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "Round trip is roughly 16 miles with about 5,300 ft of gain; a logged first-hand ascent recorded closer to 12 miles and 5,000 ft via a more direct Airplane Creek line"},
+      {"field": "waypoints (cumulative distMi)", "says": "Airplane Lake 4.5 mi, Mount Saul summit 6 mi (one-way)"},
+      {"field": "itinerary.days[0].miles (to Airplane Lake camp)", "says": "6"},
+      {"field": "itinerary.days[1].miles (summit push + full hike-out)", "says": "9"}
+     ],
+     "why": "the route states three different round-trip totals — 'roughly 16 miles' (approach's primary claim), 'closer to 12 miles' (approach's own alternate/logged-ascent line), and 15 miles (itinerary day totals, 6+9) — and the route's own waypoint cumulative distances (6 mi one-way to the summit = 12 mi round trip) match the 12-mile alternate figure, not the 'roughly 16 miles' figure presented as the primary route description. The waypoints also put Airplane Lake at 4.5 mi, while itinerary day 1 claims 6 mi to reach the same camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

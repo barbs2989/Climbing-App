@@ -1,0 +1,408 @@
+{
+ "file": "r320.json",
+ "results": [
+  {
+   "id": "wa_goat_mountain_east_peak",
+   "fact": "Line of the 40-50 degree traverse (under the West Peak vs across the East Peak's SW face)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One recent trip report describes bypassing the West (false) summit by dropping into the west basin, reaching a broad saddle, then hugging the steep west ridge of the East Peak and bypassing outcrops on the south slope \u2014 which supports parts of BOTH the beta (saddle, west ridge, south-side traverse) and the variant (going around, not over, the West Peak). Another report notes parties either climb to the col between the peaks or take a more direct line. No second source fixes where the 40-50 degree slopes lie or whether the final section above the connecting ridge is short, so the two descriptions may be complementary halves of one line; not patched.",
+   "sources": [
+    "https://onehikeaweek.com/2025/05/25/goat-mountain-east-peak/",
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Which summit the route climbs (West Peak vs true East Peak)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The route targets the true East Peak (6,891 ft); the West Peak is the false summit passed on the way.",
+   "evidence": "Itinerary, waypoints, overview, approach, climbing_route, descent_text and high_point_ft all take this route to the East Peak; only beta (a lifted West Peak description), face and pitch_detail[3] name the West Peak. External sources agree the East Peak (6,891 ft) is the higher true summit and that the scramble heads northeast from the trail end toward it.",
+   "sources": [
+    "https://www.summitpost.org/goat-mountain/152742",
+    "https://www.mountaineers.org/activities/routes-places/goat-mountain-mount-baker",
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Which summit the route climbs (West Peak vs true East Peak)",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The West Peak (6,721 ft) is the more commonly accessed summit, featuring good trail access to within 50 vertical feet of the summit.",
+     "replace": "This route continues past the West Peak false summit to the higher East Peak (6,891 ft), the mountain's true summit. The maintained trail ends on the shoulder near 5,400-5,600 ft; everything above is unmaintained boot path and open scrambling."
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Which summit the route climbs (West Peak vs true East Peak)",
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "West Peak",
+     "value": "East Peak"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Which summit the route climbs (West Peak vs true East Peak)",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "Final 100-150 vertical feet to West Peak summit.",
+     "replace": "Final 100-150 vertical feet to the East Peak summit."
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "West Peak elevation and trail reach",
+   "verdict": "fixed",
+   "correct_value": "Maintained trail ends near 5,400-5,600 ft; above that is ~1,000 ft of unmaintained boot path to the false summit (no trail to within 50 ft of the summit).",
+   "evidence": "The land manager says the maintained trail ends at about 5,400 ft on the shoulder, with a further ~1,500 ft of gain beyond it; a hiking database puts the official end at a 5,600 ft ridge crest with an unofficial path 0.8 mi and 1,000 ft further to the false summit. The beta's 'trail to within 50 ft' sentence is replaced by the patch recorded under the previous fact (same beta sentence), which also drops the disputed 6,721 figure. Note: the West Peak's own top is given as 6,721-6,725 ft by two sources, versus the ~6,600 ft 'false summit' figure used in the rest of the row; whether the false summit is the West Peak top or a lower point is not settled, so those copies were left alone.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/goat-mountain-trail-673",
+    "https://www.wta.org/go-hiking/hikes/goat-mountain-mount-baker",
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Two different summit lines (over/around the West Peak to a notch vs down into the basin and up a gully)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines exist: trip reports describe going to the col between the West and East peaks, or a more direct line involving a gully, and summit descriptions mention staying in a gully that becomes exposed near the top. But the notch line's '~1,400 ft' from a col ~300 ft below a ~6,600-6,725 ft false summit to a 6,891 ft summit cannot close (it would be ~500-600 ft); no source gives the col elevation, so the figure was not rewritten.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+    "https://onehikeaweek.com/2025/05/25/goat-mountain-east-peak/",
+    "https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Gain and loss",
+   "verdict": "fixed",
+   "correct_value": "~5,000 ft gain and ~5,000 ft loss (out-and-back)",
+   "evidence": "A route summary gives 10 mi round trip with 5,000 ft gain for the East Peak; a detailed trip guide measured 11.4 mi and 4,793 ft. An out-and-back with a ~300 ft drop and regain must have equal gain and loss; ~5,000 ft fits both sources and the itinerary.",
+   "sources": [
+    "https://www.summitpost.org/goat-mountain/152742",
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Gain and loss",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4300,
+     "value": 5000
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Gain and loss",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4800,
+     "value": 5000
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Gain and loss",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 5100,
+     "value": 5000
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Gain and loss",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 5100,
+     "value": 5000
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Gain and loss",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "5,000+ ft of gain/loss",
+     "replace": "about 5,000 ft of gain and the same loss"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Gain and loss",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~11 miles round trip with ~4,400 ft total gain",
+     "replace": "~10-11 miles round trip with ~5,000 ft total gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Car-to-car time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~10 hours car-to-car",
+   "evidence": "timing.totalHrs, sectionBreakdown, itinerary hours, schedule (5:30 AM start, back 4-6 PM) and totalNote all say ~10 hours; partner_requirements is the lone outlier at 6. A detailed trip guide gives 6-9 hours for fit parties, so 6 is the fast extreme, not a planning figure.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Car-to-car time",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": " (route planner estimates ~6 hrs total)",
+     "replace": ""
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Car-to-car time",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "total round trip roughly 6 hrs",
+     "replace": "total round trip roughly 10 hrs"
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Summit time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "summitTimeHrs holds the 10-hour car-to-car total (the itinerary reaches the summit about midday after a 5:30 AM start). Per the catalog convention this is repaired by nulling, not by writing a computed number.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Summit time",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Mileage to the trail end and knob",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A hiking database puts the 5,200 ft viewpoint knob at mile 2.7 and says the official trail runs another half mile along the crest (implying ~3.2 mi), yet lists 8.2 mi round trip (4.1 mi one way) \u2014 internally inconsistent. The land manager gives the trail end at ~5,400 ft with no mileage. No second source pins the mileages, so the approach's 'knob around mile 4' / '~4.1 mi' and the waypoints' 2.9 / 3.4 were not changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/goat-mountain-mount-baker",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/goat-mountain-trail-673"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Last reliable water",
+   "verdict": "fixed",
+   "correct_value": "Streams cross the trail through roughly the first 2.5 miles of forest; the ridge above is dry; the basin below the East Peak has water.",
+   "evidence": "The land manager says multiple streams cross the trail in the first 2.5 miles and water is hard to find in the subalpine. A trip report describes numerous small streamlets through the forest up toward ~4,200 ft, well past the first mile. The route description for the peak says the basin below the East Peak has flat ground and water, matching the row's basin waypoint.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/goat-mountain-trail-673",
+    "https://onehikeaweek.com/2025/05/25/goat-mountain-east-peak/",
+    "https://www.summitpost.org/goat-mountain/152742"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Last reliable water",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "There is no reliable water source beyond the creek crossings in the first mile of trail;",
+     "replace": "There is no reliable water source beyond the creek crossings in the forest (roughly the first 2.5 miles of trail);"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Last reliable water",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "No reliable water beyond the creek crossings in the first mile.",
+     "replace": "No reliable water beyond the creek crossings in the forest, roughly the first 2.5 miles of trail."
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Last reliable water",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "There is no reliable water beyond the creek crossings in the first mile.",
+     "replace": "There is no reliable water beyond the creek crossings in the forest, roughly the first 2.5 miles of trail."
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Last reliable water",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "No reliable water beyond the first mile",
+     "replace": "No reliable water beyond the forest creek crossings (about the first 2.5 miles)"
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "Last reliable water",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "find": "so everything from here on has to be carried from the car.",
+     "replace": "so carry what you need from the forest crossings unless you are dropping into the basin below the East Peak, where a creek runs."
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One reference gives July-September as the most favourable months; a detailed trip guide gives July to October. The row's own climate text says October works only in low-snow years. Sources split, so neither season nor best_season was changed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Ice axe requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Glacier/snowfield remnants lie between the summits and a trip guide says microspikes can help year round on steep heather, but no two sources agree that an ice axe is needed at all times versus early season only. Not patched.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "Rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External route summaries rate the scramble Class 2, agreeing with rock_grade, while grade, pitch_detail and required skills say Class 2-3 and describe an exposed knife-edge crux. Downgrading the displayed grade on safety-relevant terrain on the strength of summary ratings (which may describe the West Peak) is not safe to do blind; left open.",
+   "sources": [
+    "https://www.summitpost.org/goat-mountain/152742",
+    "https://www.mountaineers.org/activities/routes-places/goat-mountain-mount-baker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "fact": "National park boundary / permit",
+   "verdict": "fixed",
+   "correct_value": "Goat Mountain lies wholly in the Mount Baker Wilderness (Mt. Baker-Snoqualmie NF); no national park land or NPS permit applies.",
+   "evidence": "The peak reference places Goat Mountain in the Mount Baker Wilderness managed by Mt. Baker-Snoqualmie National Forest, and the land manager's trail page describes the trail entering the Mount Baker Wilderness with wilderness rules (party size 12) and no park involvement. The national-park sentences were generic Mount Baker text. Whether a self-issued wilderness registration exists at the trailhead (access.permit / permit vs overnight_permit 'none') was not confirmed by any source and was left as is.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/goat-mountain-trail-673"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "National park boundary / permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": " Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "replace": ""
+    },
+    {
+     "id": "wa_goat_mountain_south_ridge",
+     "fact": "National park boundary / permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": ", with some upper routes crossing into North Cascades National Park",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_goat_mountain_east_peak",
+   "fact": "Last reliable water (East Peak Traverse approach variant)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Streams cross the trail through roughly the first 2.5 miles of forest.",
+   "evidence": "Same trail as the standard route: the land manager says multiple streams cross the trail in the first 2.5 miles and a trip report describes streamlets through the forest up toward ~4,200 ft, so 'past the first mile' understates it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/goat-mountain-trail-673",
+    "https://onehikeaweek.com/2025/05/25/goat-mountain-east-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goat_mountain_east_peak",
+     "fact": "Last reliable water (East Peak Traverse approach variant)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "No reliable water past the first mile of trail",
+     "replace": "No reliable water past the forest creek crossings (about the first 2.5 miles of trail)"
+    }
+   ]
+  }
+ ]
+}

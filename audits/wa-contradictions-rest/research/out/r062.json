@@ -1,0 +1,899 @@
+{
+ "file": "r062.json",
+ "results": [
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Rope set-up and rappel count/length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two documented descent set-ups: a single 60 m rope down the West Ridge (the route page for this line says a single 60 m works on the descent, finishing with a ~100 ft rap onto the glacier) and fewer, longer twin-rope raps; the rappel table is explicitly the twin-rope option and rappel_count_note and gear[4] say so. The single-rope East Ridge party that went West Ridge + South Face made 14 raps, matching descent_text's 12-14.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Descent line (West Ridge only vs West Ridge + South Face)",
+   "verdict": "fixed",
+   "correct_value": "The upper West Ridge crest is the shared descent; East Ridge/South Face parties commonly finish down the South Face, while West Ridge parties can rap the whole ridge.",
+   "evidence": "A 2024 East Ridge party rappelled 5 times down the upper West Ridge then 9 times down the South Face; another East Ridge party made 3 double-rope raps down the West Ridge to a station above the South Face and continued down the face. The West Ridge route page describes rappelling the full ridge back to the glacier. So 'the standard descent line' for the other routes is only the upper West Ridge; the overview is narrowed.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak",
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "This is also the standard descent line for parties finishing the East Ridge or South Face.",
+     "replace": "Its upper crest is also the usual way down for parties finishing the East Ridge or South Face, who commonly continue down the South Face from a notch.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Descent line (West Ridge only vs West Ridge + South Face)"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Rappel anchor state",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The West Ridge route page names fixed 3-pin and 2-pin-plus-nut stations and a comment says the anchors were replaced 6/2024; the East Ridge page notes long pieces of tat at some stations and a 2024 party advised extra cord. Only one source reports the June 2024 replacement, and none says which stations of the twin-rope line (the table) are built from gear, so no field was changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://www.mountainproject.com/route/108257648/east-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Approach line: Terror Basin + Terror Glacier vs Barrier + Crescent Creek Basin",
+   "verdict": "fixed",
+   "correct_value": "The route is approached from Terror Basin camp across the Terror Glacier; Crescent Creek Basin (beyond the Barrier) is not on the way.",
+   "evidence": "A 2024 party camped in Terror Basin and reached Inspiration via the Terror Glacier and a moat crossing; another party based at Terror Basin camp and crossed to the face on the glacier. The West Ridge starts 300 ft above the bergschrund on that glacier. The Barrier separates Terror Basin from Crescent Creek Basin to the west, used by parties continuing through the Southern Pickets.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak",
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "to reach the Crescent Creek basin camp",
+     "replace": "to reach the Terror Basin camp",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Approach line: Terror Basin + Terror Glacier vs Barrier + Crescent Creek Basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "to the Crescent Creek basin camp",
+     "replace": "to the Terror Basin camp",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Approach line: Terror Basin + Terror Glacier vs Barrier + Crescent Creek Basin"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "expect": "Established camp under Mount Terror used as the staging basin for Inspiration Peak's west side; this is the 'Crescent Creek basin camp' referenced in the route beta.",
+     "value": "Camp in the next basin west, under Mount Terror, reached over the Barrier; it serves parties continuing through the Southern Pickets and is not on the way to this route, which is reached from Terror Basin across the Terror Glacier.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Approach line: Terror Basin + Terror Glacier vs Barrier + Crescent Creek Basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "parties have turned back here.",
+     "replace": "parties have turned back here. Only needed if continuing to Crescent Creek Basin; this route does not cross it.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Approach line: Terror Basin + Terror Glacier vs Barrier + Crescent Creek Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Stone-arrow junction elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 1700,
+   "evidence": "The approach and approach_variants put the end of the easy valley walk and the last water near 1,600 ft, and the South Face row puts the stone-arrow turnoff at roughly 1,700 ft; an independent approach description puts the cairned Terror Basin turnoff at about 3.5 mi and c.1,700 ft. 3,200 ft is an outlier.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 3200,
+     "value": 1700,
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Stone-arrow junction elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Length of the climb",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The West Ridge route page gives about 1,300 ft and 14 pitches, matching length_m 396 and the overview; no source gives per-pitch lengths, so the table's unsourced lengths (sum ~555 m) cannot be corrected to researched figures. Ridge pitches with traverses can exceed vertical height, but the table is unsupported.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Character of the 14 pitches",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~14 pitches of sustained 5.6-5.7 rock",
+   "evidence": "grade, rock_grade, pitch_detail and overview all say sustained 5.6/5.7; the West Ridge route page describes sustained 5.7 climbing over 14 pitches. The itinerary and timing notes calling it low-5th-class are wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "~14 pitches of low-5th-class rock",
+     "replace": "~14 pitches of sustained 5.6-5.7 rock",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Character of the 14 pitches"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "~14 pitches of low-5th-class rock",
+     "replace": "~14 pitches of sustained 5.6-5.7 rock",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Character of the 14 pitches"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Crux location and rock",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Sustained 5.7 without a single crux move on the upper ridge; rock is Skagit gneiss, poorest low and improving on the crest.",
+   "evidence": "The rock of Inspiration Peak is Skagit gneiss (encyclopedic peak entry; peak page calls it granodiorite gneiss). The route page describes sustained 5.7 with rock quality improving higher, and climbing_route says the difficulty is sustained rather than one crux. The summit-ridge waypoint calling the upper steps 'loose' and 'the technical crux' contradicts that; pitch 11 is gneiss, not granite.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Inspiration_Peak_(Washington)",
+    "https://www.summitpost.org/inspiration-peak/205340",
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "expect": "Sequence of exposed 5.7 steps on loose gneiss along the ridge crest below the summit block — the technical crux of the route.",
+     "value": "Sequence of exposed 5.7 steps along the ridge crest below the summit block, on much better rock than the lower pitches.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Crux location and rock"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      10,
+      "notes"
+     ],
+     "find": "clean, solid granite typical of the upper mountain",
+     "replace": "clean, solid gneiss typical of the upper mountain",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Crux location and rock"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Season start",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Jul-Sep",
+   "evidence": "best_season, seasonal_guidance.optimalWindow, itinerary.cal and climate all put the season at mid-July to early September and call June snowbound; the documented recent ascents on this peak are in July-September (e.g. a 21 July 2024 ascent). The header season and the approach variant's season including June are outliers.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Season start"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Season start"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Permit reservability",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin cross-country zone is walk-up only (2026 lottery applications Mar 2-13; early-access window Mar 24-Apr 21 applies only to reservable zones).",
+   "evidence": "The park's reservations page lists the 2026 lottery application period as Mar 2-13 and the early-access booking window as Mar 24-Apr 21, and states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes take advance reservations among mountaineering zones; the remaining cross-country zones are walk-up only. The park's cross-country zones page repeats that list and includes Terror Basin (party 6, 6 parties/night) among the walk-up zones. The bivy card is right; the ACCESS/permit lines claiming Recreation.gov reservation for Terror Basin are wrong.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Reserve on Recreation.gov — early-access lottery runs Mar 24-Apr 21 for the May 15-Oct 10 peak season, with general on-sale April 29; ~40% of inventory is held for walk-up permits at the Wilderness Information Center, Marblemount.",
+     "replace": "Terror Basin is not one of the cross-country zones reservable in advance, so the permit is walk-up only, issued in person at the Wilderness Information Center, Marblemount, the day of or the day before the trip.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin cross-country zone is walk-up only — pick it up in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "replace": "Park-wide, 60% of backcountry permits are reservable in advance (2026 lottery applications Mar 2–13), but only six cross-country zones take reservations and Terror Basin is not one of them, so this trip needs a walk-up permit obtained in person at the Wilderness Information Center in Marblemount the day of or the day before.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Terror Basin is a walk-up-only zone: the permit is issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Permit reservability"
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Final rappel length on a single rope",
+   "verdict": "fixed",
+   "correct_value": "The final rappel takes the full length of the doubled rope (~100 ft), not 60-70 m.",
+   "evidence": "The West Ridge route page describes the last rappel as about 100 ft onto the glacier on a single 60 m rope; a 2024 single-70 m party used every bit of the doubled rope on its final rappel. A rappel on one doubled rope cannot be 60-70 m long.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "the final rappel often runs nearly the full 60-70m to reach flat glacier snow",
+     "replace": "the final rappel often takes the full length of the doubled rope to reach flat glacier snow",
+     "id": "wa_inspiration_peak_west_ridge",
+     "fact": "Final rappel length on a single rope"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Rappel count",
+   "verdict": "fixed",
+   "correct_value": "About 14 rappels on a single rope (5 upper West Ridge + 9 South Face), or fewer, longer raps on two ropes.",
+   "evidence": "A 2024 party on a single 70 m rope made 5 rappels down the upper West Ridge and 9 down the South Face, 14 in all; another party made double-rope raps (3 down the West Ridge, then more down the South Face). The RAPPELS prose's '5-8 down the West Ridge' disagrees with the descent, rope note and 14-row table.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "5-8 rappels down the West Ridge (some parties add rappels down the South Face gully); 70m rope recommended for fewer, longer raps;",
+     "replace": "About 14 rappels on a single rope, roughly 5 down the upper West Ridge and 9 down the South Face, or fewer, longer raps on two ropes; a 70m rope recommended;",
+     "id": "wa_east_ridge_4",
+     "fact": "Rappel count"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Pitch count on the climb",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "10 pitches: 4 of 5.7, a 5.8, the 5.9 crux, then 4 more moderate pitches.",
+   "evidence": "A 2024 party climbed four 5.7 pitches to the crest, a 5.8 pitch, the 5.9 hand-and-fist crux, then four more moderate pitches (10), matching pitches, pitch_detail, overview and totalNote. The itinerary and schedule dropped the 5.8 and 5.9 pitches. The beta's 'III, 6 pitches, 800 ft' is framed as the published figure (the route page gives exactly that) and is left.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.mountainproject.com/route/108257648/east-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "climb 4 pitches of 5.7 to gain the ridge crest followed by 4 more moderate pitches to the summit",
+     "replace": "climb 4 pitches of 5.7 to gain the ridge crest, a 5.8 pitch and the 5.9 crack crux, then 4 more moderate pitches to the summit",
+     "id": "wa_east_ridge_4",
+     "fact": "Pitch count on the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "(4 pitches of 5.7 to the crest, 4 more to the top)",
+     "replace": "(4 pitches of 5.7 to the crest, the 5.8 and 5.9 crack pitches, then 4 more to the top)",
+     "id": "wa_east_ridge_4",
+     "fact": "Pitch count on the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "climb 4 pitches of 5.7 to gain the ridge crest followed by 4 more moderate pitches",
+     "replace": "climb 4 pitches of 5.7 to gain the ridge crest, a 5.8 pitch and the 5.9 crux, then 4 more moderate pitches",
+     "id": "wa_east_ridge_4",
+     "fact": "Pitch count on the climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)",
+   "verdict": "fixed",
+   "correct_value": "The route starts by crossing the bergschrund/moat below the south face and climbing easier broken gullies and vegetated ledges (often simul-climbed) up to the ridge; the sustained, exposed climbing begins on the crest.",
+   "evidence": "The route page says to cross the bergschrund, traverse vegetated ledges, then climb the ridge onto the east face. A 2024 party crossed the moat and climbed four 5.7 pitches to reach the ridge crest; another party simul-climbed the first few hundred 'forgettable' feet from a snow tongue against the face. None describes an east-end col where hard climbing starts immediately.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257648/east-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Unlike the West Ridge and South Face lines, the East Ridge start is reached by continuing around/across the glacier below the South Face and gaining a col that puts you at the true start of the East Ridge proper; from there the ridge climbing begins immediately with sustained exposure.",
+     "replace": "Unlike the West Ridge and South Face lines, the East Ridge is started by continuing across the glacier below the South Face, crossing the moat or bergschrund toward its eastern end, and working up broken gullies and vegetated ledges, often simul-climbed, to gain the ridge; the sustained, exposed climbing begins once you are on the crest.",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "As for the West Ridge and South Face to the Terror Glacier, then around and across the glacier BELOW the South Face to the col at the east end",
+     "value": "As for the West Ridge and South Face to the Terror Glacier, then across the glacier below the South Face to the moat under its eastern end",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "CONTINUING AROUND AND ACROSS THE GLACIER BELOW THE SOUTH FACE and gaining a col at the far end that puts you at the true start of the ridge.",
+     "replace": "CONTINUING ACROSS THE GLACIER BELOW THE SOUTH FACE, past the South Face start, and crossing the moat or bergschrund toward the face's eastern end.",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Keep walking east until the face ends and the ground rises to a gap.",
+     "replace": "Keep walking east along the foot of the face before crossing onto rock.",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "ARRIVAL: a col at the east end of the peak. From there the ridge climbing begins IMMEDIATELY with sustained exposure, which is itself the confirmation. There is no walk-in above this col and no easing-off; if the ground above you is scrambling terrain, you are not on the East Ridge.",
+     "replace": "ARRIVAL: above the moat the route opens with a few hundred feet of broken gullies, vegetated ledges and blocky rock, usually simul-climbed, toward a notch that puts you on the ridge. The sustained, exposed climbing on better rock starts once the crest is gained.",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "nothing published names the col or gives it a height",
+     "replace": "nothing published names the notch or gives it a height",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      1
+     ],
+     "expect": "Sustained exposure from the first moves off the col",
+     "value": "Sustained exposure once the ridge crest is gained",
+     "id": "wa_east_ridge_4",
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Rock quality of the East Ridge",
+   "verdict": "fixed",
+   "correct_value": "Loose, dirty rock on the lower pitches; excellent clean rock on the upper ridge.",
+   "evidence": "A 2024 party found blocky 5.7 lower pitches before the character changed to 'beautiful white granite' at the crest; another party called the first few hundred feet forgettable before an excellent crack pitch. So neither 'excellent throughout' nor 'poorer than the other lines' is right; both fields now describe loose low, excellent high.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "on sustained, exposed, excellent rock",
+     "replace": "sustained and exposed, on rock that is loose low down and excellent higher",
+     "id": "wa_east_ridge_4",
+     "fact": "Rock quality of the East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "expect": "Poorer, looser rock than the peak's other lines",
+     "value": "Loose, dirty rock on the lower pitches before the ridge crest",
+     "id": "wa_east_ridge_4",
+     "fact": "Rock quality of the East Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Final rappel length on a single rope",
+   "verdict": "fixed",
+   "correct_value": "The final rappel uses the full length of the doubled rope (~35 m on a 70 m rope).",
+   "evidence": "The 2024 single-70 m party says its final rappel used every bit of the rope to reach flat glacier; the West Ridge route page gives the last rap as about 100 ft. A single doubled rope reaches ~35 m, not 60-70 m.",
+   "sources": [
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/",
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      13,
+      "notes"
+     ],
+     "expect": "Final rappel to the Terror Glacier, typically using a full 60-70m rope length.",
+     "value": "Final rappel to the Terror Glacier, typically taking the full length of the doubled rope.",
+     "id": "wa_east_ridge_4",
+     "fact": "Final rappel length on a single rope"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      13,
+      "pull"
+     ],
+     "find": "One party used every bit of a 70 m rope on this final rappel",
+     "replace": "One party used every bit of a doubled 70 m rope on this final rappel",
+     "id": "wa_east_ridge_4",
+     "fact": "Final rappel length on a single rope"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Grade III vs IV",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The beta states the published grade (III) and explains parties rate the full outing IV; the route page gives III, and a 2024 report titles it IV.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257648/east-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Zone closures",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The hazard describes past temporary closures of the Terror Basin zone (a climbers' forum thread reports one in 2023); ACCESS closures describes the trailhead's standing status. The park's zone page lists no current closure. History vs standing status, not a conflict.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/107504-north-cascade-national-park-closures-due-to-bear-activity/",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Permit reservability",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin cross-country zone is walk-up only.",
+   "evidence": "The park's reservations page lists the 2026 lottery application period as Mar 2-13 and the early-access booking window as Mar 24-Apr 21, and states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes take advance reservations among mountaineering zones; the remaining cross-country zones are walk-up only. The park's cross-country zones page repeats that list and includes Terror Basin (party 6, 6 parties/night) among the walk-up zones. The bivy card is right; the ACCESS/permit lines claiming Recreation.gov reservation for Terror Basin are wrong.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "reserve on Recreation.gov or get a walk-up permit at the Wilderness Information Center, Marblemount.",
+     "replace": "it is not one of the zones reservable in advance, so get a walk-up permit in person at the Wilderness Information Center, Marblemount, the day of or the day before.",
+     "id": "wa_east_ridge_4",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin cross-country zone is walk-up only — pick it up in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_east_ridge_4",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "replace": "Park-wide, 60% of backcountry permits are reservable in advance (2026 lottery applications Mar 2–13), but only six cross-country zones take reservations and Terror Basin is not one of them, so this trip needs a walk-up permit obtained in person at the Wilderness Information Center in Marblemount the day of or the day before.",
+     "id": "wa_east_ridge_4",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Terror Basin is a walk-up-only zone: the permit is issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+     "id": "wa_east_ridge_4",
+     "fact": "Permit reservability"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "fact": "Round-trip distance vs dist_km",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach (7.4 mi = 11.9 km, matching day 1); the itinerary lists per-day miles. Different quantities, both labelled.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "First ascent",
+   "verdict": "fixed",
+   "correct_value": "Mike Heath and Bill Sumner, June 18, probably 1969",
+   "evidence": "The American Alpine Journal (1970 volume) report by Mike Heath says he and Bill Sumner made the first ascent of the south face on June 18, without stating a year; the SummitPost route/peak page credits Heath and Sumner in 1969. The fa column already matches; the overview's 'not known' and partner requirements' '1970' are wrong.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197012102/North-America-United-States-Washington-Cascade-Mountains-Inspiration-Peak-South-Face",
+    "https://www.summitpost.org/south-face/321118"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "First ascent party/date not known.",
+     "replace": "First climbed by Mike Heath and Bill Sumner on June 18, probably in 1969.",
+     "id": "wa_south_face_5",
+     "fact": "First ascent"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec"
+     ],
+     "find": "for the 1970 first-ascent party",
+     "replace": "for the first-ascent party",
+     "id": "wa_south_face_5",
+     "fact": "First ascent"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent report gives a 1,000 ft face (one F7 lead, several hundred feet of scrambling, the ramp, then three leads in the gash), matching length_m 305; the route page gives 600 ft in 4 pitches, matching the overview. The gash is described as rising about 400 ft. The two sources disagree on the length and pitch count, so nothing was changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197012102/North-America-United-States-Washington-Cascade-Mountains-Inspiration-Peak-South-Face",
+    "https://www.mountainproject.com/route/108154541/south-face",
+    "https://www.summitpost.org/south-face/321118"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Ropes for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single rope works (about twice as many rappels); two ropes give ~7 long raps.",
+   "evidence": "The West Ridge route page says a single 60 m rope works on the descent; a 2024 party descended on a single 70 m rope in 14 raps. So 'Bring two ropes... it does not reach them' is wrong; single-rope parties use the shorter, more frequent stations.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Bring two ropes. The stations recorded on this line sit roughly 60 m apart, and a single 70 m rope doubled reaches only about 35 m — it does not reach them, so on one rope expect to build roughly twice as many anchors:",
+     "replace": "Two ropes give the fewest rappels. The two-rope stations sit roughly 60 m apart and a single 70 m rope doubled reaches only about 35 m, so on one rope expect roughly twice as many stations:",
+     "id": "wa_south_face_5",
+     "fact": "Ropes for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Fixed anchors on the descent",
+   "verdict": "fixed",
+   "correct_value": "There are fixed (pin/nut/cord) stations on the West Ridge rappel line, of variable quality; no bolts. Some parties build their own from gear.",
+   "evidence": "The West Ridge route page describes a 3-pin anchor and a 2-pin-plus-nut anchor on the descent; the East Ridge page says some rap stations use long pieces of tat; a 2024 party advised carrying extra cord for anchors. The 'no fixed stations anywhere on the peak' claim is wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://www.mountainproject.com/route/108257648/east-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "with no fixed or bolted stations anywhere on the peak — every anchor is built from gear (nuts, small-to-medium cams, occasionally a slung horn),",
+     "replace": "with no bolts; the stations are fixed pins, nuts and cord of variable quality, slung horns, or anchors built from gear (nuts, small-to-medium cams),",
+     "id": "wa_south_face_5",
+     "fact": "Fixed anchors on the descent"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "First rappel off the West Ridge below the notch; no fixed anchors anywhere on this peak, station built fresh from gear.",
+     "value": "First rappel off the West Ridge below the notch; stations are fixed pins, nuts and cord of variable quality, or built from gear.",
+     "id": "wa_south_face_5",
+     "fact": "Fixed anchors on the descent"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "expect": "Natural anchor built fresh at this station, as at every station on this descent.",
+     "value": "Fixed three-pin station; check and back up the cord.",
+     "id": "wa_south_face_5",
+     "fact": "Fixed anchors on the descent"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      2,
+      "anchor"
+     ],
+     "expect": "gear anchor (nuts/cams/slung horn)",
+     "value": "fixed three-pin anchor",
+     "id": "wa_south_face_5",
+     "fact": "Fixed anchors on the descent"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      6,
+      "anchor"
+     ],
+     "expect": "gear anchor (nuts/cams/slung horn)",
+     "value": "fixed anchor (two pins and a nut)",
+     "id": "wa_south_face_5",
+     "fact": "Fixed anchors on the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Final rappel length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "About 100 ft is the full length of a doubled 60-70 m single rope; the descent prose's 'nearly the full rope length' refers to the single-rope party using the whole doubled rope (a 2024 party used every bit of a 70 m rope; the West Ridge page gives ~100 ft). Consistent.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Permit zone",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin cross-country zone",
+   "evidence": "The park's cross-country zones page lists Terror Basin as its own zone; the approach to this route (Goodell Creek to Terror Basin, then the Terror Glacier) is documented by 2024 parties camping in Terror Basin. Cascade Pass is a different part of the park.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "North Cascades National Park Backcountry (Cascade Pass area)",
+     "value": "North Cascades National Park Backcountry (Terror Basin cross-country zone)",
+     "id": "wa_south_face_5",
+     "fact": "Permit zone"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Permit reservability",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin cross-country zone is walk-up only.",
+   "evidence": "The park's reservations page lists the 2026 lottery application period as Mar 2-13 and the early-access booking window as Mar 24-Apr 21, and states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes take advance reservations among mountaineering zones; the remaining cross-country zones are walk-up only. The park's cross-country zones page repeats that list and includes Terror Basin (party 6, 6 parties/night) among the walk-up zones. The bivy card is right; the ACCESS/permit lines claiming Recreation.gov reservation for Terror Basin are wrong.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin cross-country zone is walk-up only — pick it up in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_south_face_5",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "replace": "Park-wide, 60% of backcountry permits are reservable in advance (2026 lottery applications Mar 2–13), but only six cross-country zones take reservations and Terror Basin is not one of them, so this trip needs a walk-up permit obtained in person at the Wilderness Information Center in Marblemount the day of or the day before.",
+     "id": "wa_south_face_5",
+     "fact": "Permit reservability"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Terror Basin is a walk-up-only zone: the permit is issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+     "id": "wa_south_face_5",
+     "fact": "Permit reservability"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Round-trip distance vs dist_km",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach (7.4 mi = 11.9 km, matching day 1); the itinerary lists per-day miles.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

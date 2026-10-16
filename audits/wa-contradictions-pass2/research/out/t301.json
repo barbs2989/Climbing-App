@@ -1,0 +1,58 @@
+{"file": "t301.json", "results": [
+ {"id": "wa_mount_anderson_eel_glacier", "fact": "Total route distance", "verdict": "fixed",
+  "correct_value": "dist_km 27.4 (about 17 mi one way from the current road-end parking to the tarn camp)",
+  "evidence": "The park's West Fork Dosewallips page gives about 16 miles from the road end to Anderson Pass and says the road is washed out 6.5 miles from the old trailhead; the Mountaineers route page gives an extra ~5.5 mi each way of road plus 1.4 + 8 + 1.2 mi of trail to Anderson Pass (~16 mi). A trip report adds a steep mile from the pass up to the 5,100 ft tarn. That puts the one-way approach to camp at ~17 mi (27.4 km), matching itinerary day 1 (17 mi) and the hazard line (~16+ mi); 45.9 km (28.5 mi) is not the one-way figure.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/west-fork-dosewallips.htm", "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier", "https://trailcatjim.com/mount-anderson-east-peak-and-attempt-of-west-peak/"],
+  "patches": [
+   {"id": "wa_mount_anderson_eel_glacier", "fact": "Total route distance", "op": "set", "column": "dist_km", "path": [], "expect": 45.9, "value": 27.4}
+  ]},
+ {"id": "wa_mount_anderson_eel_glacier", "fact": "Season start (late May vs June)", "verdict": "fixed",
+  "correct_value": "season May-Aug; the main window starts late May",
+  "evidence": "The Mountaineers route page says the route is best done in spring or early summer, before the Flypaper snow finger melts out. A ski-mountaineering trip report climbed it April 30-May 3 via Flypaper Pass, and a 2023 trip report climbed it June 4. This agrees with best_season, optimalWindow, May=good and crowds; the season chip (which also carried explanation text) and climate.bySeason.summer were the outliers.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier", "https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics", "https://www.thewildoutsiders.com/adventure-journal/mount-anderson"],
+  "patches": [
+   {"id": "wa_mount_anderson_eel_glacier", "fact": "Season start (late May vs June)", "op": "set", "column": "season", "path": [], "expect": "Jun-Aug (best in spring/early summer before the Flypaper Pass snow finger melts out)", "value": "May-Aug"},
+   {"id": "wa_mount_anderson_eel_glacier", "fact": "Season start (late May vs June)", "op": "replace_text", "column": "climate", "path": ["bySeason", "summer"], "find": "Late June through August is the main climbing window", "replace": "Late May through August is the main climbing window"}
+  ]},
+ {"id": "wa_mount_anderson_eel_glacier", "fact": "Which side to descend the Flypaper snow finger", "verdict": "fixed",
+  "correct_value": "skier's left (climber's right)",
+  "evidence": "A spring ski-mountaineering trip report descending the Flypaper finger worked into the skier's left side after seeing hazards on the right, finding it less riddled with moats and glide cracks (the same reason the row gives). A Mountaineers trip report ascended the right-hand (climber's right) side of the finger, the same physical side. Climber's left, which the row also named, is the opposite side.",
+  "sources": ["https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics", "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-anderson-eel-glacier"],
+  "patches": [
+   {"id": "wa_mount_anderson_eel_glacier", "fact": "Which side to descend the Flypaper snow finger", "op": "replace_text", "column": "descent", "path": [], "find": "favor the left (skier's left / climber's left) side near the rock buttress", "replace": "favor the skier's left side (climber's right) near the rock buttress"}
+  ]},
+ {"id": "wa_mount_anderson_eel_glacier", "fact": "Water at the tarn camp", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Tarn water only once it melts out; it is often still frozen, so be ready to melt snow",
+  "evidence": "A 2010 trip report (late July-August 1) found Anderson (Valkyrie) Lake still frozen at the 5,100 ft camp. Within the row, the approach itself (traverse above the tarn, often still frozen), climbing_route[0], bivy[0].water and bivy[0].notes (fill here or plan to melt) all agree; only the approach's closing water sentence calls the tarn reliable.",
+  "sources": ["https://trailcatjim.com/mt-anderson-east-peak-west-peak-attempt/"],
+  "patches": [
+   {"id": "wa_mount_anderson_eel_glacier", "fact": "Water at the tarn camp", "op": "replace_text", "column": "approach", "path": [], "find": "Water is reliable along the West Fork the entire way in and again at the tarn near high camp; carry what you need above that.", "replace": "Water is reliable along the West Fork the entire way in; at the tarn near high camp it is available only once the tarn melts out, and it is often still frozen, so be ready to melt snow. Carry what you need above that."}
+  ]},
+ {"id": "wa_mount_anderson_eel_glacier", "fact": "Anderson Pass to the tarn camp: climb or drop", "verdict": "fixed",
+  "correct_value": "From Anderson Pass the path climbs steeply up the moraine to the ~5,100 ft tarn camp",
+  "evidence": "One trip report climbed steeply about a mile and roughly 1,000 ft from Anderson Pass to the 5,100 ft tarn; a ski trip report skinned from Anderson Pass up the steep switchback section that ascends to the lake. The Mountaineers route description also says to ascend from the pass to the Anderson Glacier moraine at 5,200 ft.",
+  "sources": ["https://trailcatjim.com/mount-anderson-east-peak-and-attempt-of-west-peak/", "https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics", "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier"],
+  "patches": [
+   {"id": "wa_mount_anderson_eel_glacier", "fact": "Anderson Pass to the tarn camp: climb or drop", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "schedule", 2, "detail"], "find": "Crest the pass and drop slightly into the Anderson Glacier basin.", "replace": "Leave the trail at the pass and climb the steep climbers' path up the moraine into the Anderson Glacier basin."}
+  ]},
+ {"id": "wa_mount_cameron_standard", "fact": "Aspect/face of the route", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Two trip reports confirm the climb goes up the long gradual ridge from Cameron Pass over false summits (Class 1-2), which contradicts aspect N and the name's 'Southeast Slopes'. But no source found states the compass direction of that ridge (the pass is described only as between Cameron and Lost Peak, which lies south), so W vs SW cannot be fixed with two sources. Would settle: a topo or peak page placing Cameron Pass relative to the summit; the name cannot be changed here.",
+  "sources": ["https://climberkyle.com/2022/09/03/northern-olympic-high-route/", "https://peakery.com/mount-cameron-washington/", "https://en.wikipedia.org/wiki/Lost_Peak_(Jefferson_County,_Washington)"],
+  "patches": []},
+ {"id": "wa_mount_cameron_standard", "fact": "Total gain: gain_ft vs itinerary", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "gain_ft is 3,170 while the itinerary days sum to 6,800 ft of gain (2,400 + 1,500 + 2,900), equal to loss_ft 6,800. No source found states a car-to-car gain for Obstruction Point to Mount Cameron, so gain_ft cannot be changed. Would settle: a stated round-trip gain for this approach.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_mount_cameron_standard", "fact": "Which summit is the true high point", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The summit waypoint calls the East Peak the true 7,190 ft summit, while itinerary day 2 treats the summit as distinct from 'East and Middle Cameron summits visible along the class 3-4 ridge'. One traverse report reaches the true summit first from Cameron Pass, then the Middle Peak, then the East Peak; the peak's main listing is named 'Mount Cameron - East Peak'. These do not agree and the peak page could not be read. Would settle: a topo or peak listing with elevations for each summit.",
+  "sources": ["https://climberkyle.com/2022/09/03/northern-olympic-high-route/", "https://www.peakbagger.com/peak.aspx?pid=919"],
+  "patches": []},
+ {"id": "wa_mount_cameron_standard", "fact": "One-way approach distance: dist_km vs itinerary", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "dist_km 5.3 (3.3 mi) contradicts the ~9.5-10 mi one-way approach in the approach text, waypoints (Cameron Pass at 9.3 mi) and itinerary day 1 (9.9 mi). 3.3 mi matches the WTA figure for the Cameron Pass trail segment only. One listing puts Cameron Pass 11 mi from Obstruction Point, which does not agree with the row's ~9.3-9.5 mi, so no single one-way figure has two agreeing sources. Would settle: a second stated Obstruction Point-to-Cameron Pass/Basin distance.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/cameron-pass", "http://www.protrails.com/trail/584/olympic-national-park-cameron-pass"],
+  "patches": []}
+]}

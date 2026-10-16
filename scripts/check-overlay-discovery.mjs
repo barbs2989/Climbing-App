@@ -22,6 +22,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { overlayStates, buildOpener, buildRouteDetailOpener, OVERLAY_PAYLOADS, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // The anchor used by check:signed-in and check:overlay-scroll. check:zero injects at its own
@@ -34,7 +35,7 @@ const fail = (m) => { console.error("  FAIL " + m); fails++; };
 const ok = (m) => console.log("  ok   " + m);
 
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 
 const all = overlayStates(app, core);
 const flags = all.filter((s) => s.kind === "flag");
@@ -73,6 +74,22 @@ try {
   else ok(`${names.length} overlay(s) in RouteDetail.jsx, all with an injection anchor (${byComp.join(", ")})`);
 } catch (e) {
   fail(e.message);
+}
+
+// Every config that opens App's overlays must ALSO transform RouteDetail, or it walks a
+// quietly narrower app than its siblings and nothing says so. That is not hypothetical: #779
+// wired three of five, and check:a11y-badges and check:overflow kept walking without
+// RouteDetail's modals for three days. The scaffold exists so these cannot drift; this is the
+// assertion that they have not.
+const configs = fs.readdirSync(path.join(ROOT, "scripts")).filter((f) => f.endsWith(".config.mjs"));
+if (configs.length < 4) fail(`only ${configs.length} vite config(s) found — the scan broke, since the guards need one each`);
+else {
+  const unwired = configs.filter((f) => {
+    const src = fs.readFileSync(path.join(ROOT, "scripts", f), "utf8");
+    return src.includes("buildOpener(") && !src.includes("routeDetailTransform(");
+  });
+  if (unwired.length) fail(`these configs open App's overlays but never transform RouteDetail, so they walk a narrower app than the others: ${unwired.join(", ")} — add routeDetailTransform(code, id, label) to the transform hook`);
+  else ok(`all ${configs.length} vite configs that open overlays also transform RouteDetail`);
 }
 
 // Bookkeeping in both directions. A name listed but no longer real is how an exemption list

@@ -1,0 +1,253 @@
+{
+ "applied": [
+  {
+   "id": "wa_spire_point_southwest_face",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elev"
+   ],
+   "fact": "Spire Col elevation: 7,000 ft vs. 7,760 ft"
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road-closure detour mileage: 16.1 mi one-way mislabeled as \"16 miles round trip\""
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Spire Col waypoint note says the route starts directly above camp, against every other field"
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total gain/loss vs. itinerary day sums"
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total gain/loss vs. itinerary day sums"
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain/loss vs. itinerary day sums"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_spire_point_southwest_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.2591,
+      "lng": -121.2244,
+      "elev": 1450,
+      "name": "Downey Creek Trailhead",
+      "note": "Self-issue wilderness permit and Northwest Forest Pass required at the kiosk; trail starts just past the Downey Creek bridge, 20.6 mi up Suiattle River Road (FR 26) from SR 530.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Suiattle River Road (FR 26) 20.6 miles from SR 530; the trailhead is just past the Downey Creek bridge. Self-issue a wilderness permit at the kiosk and display a Northwest Forest Pass."
+     },
+     {
+      "lat": 48.324303,
+      "lng": -121.15708,
+      "elev": 2400,
+      "name": "Sixmile Camp / Bachelor Creek Trail junction",
+      "note": "Maintained Downey Creek Trail 768 ends here at an established camp; the unmarked, unmaintained Bachelor Creek Trail climbs steeply south toward Bachelor Meadows.",
+      "type": "Junction",
+      "distMi": 6.6,
+      "directions": "Follow the Downey Creek Trail (768/792) roughly 6.5 miles of gentle, well-graded walking through old-growth forest. Recent Forest Service work has added boardwalks and new log bridges, so this is the easy day; the maintained trail simply ends at the established camp."
+     },
+     {
+      "lat": 48.305207,
+      "lng": -121.127325,
+      "elev": 4200,
+      "name": "Bachelor Creek log crossing",
+      "note": "Cross Bachelor Creek on a downed log below Bachelor Meadows — last reliable water before the high camps; dense alder and old blowdown make this stretch the route-finding crux of the approach.",
+      "type": "Water",
+      "distMi": 8,
+      "directions": "From the north side of the crossing, pick up the unmaintained Bachelor Creek climbers' path. It starts as a clear boot-track climbing steeply beside the creek before easing into switchbacks, then gets overgrown with salmonberry and vine maple through the meadows around 4,000 ft. Dense alder and old blowdown make this the route-finding crux of the whole approach; the path is easy to lose and the creek can run swift in early season."
+     },
+     {
+      "lat": 48.308523,
+      "lng": -121.093465,
+      "elev": 5900,
+      "name": "Cub Lake pass",
+      "note": "Forested saddle overlooking Cub Lake; descend steep talus and switchbacks about 500 ft to the lake's east shore before regaining the ridge toward Itswoot.",
+      "type": "Junction",
+      "distMi": 10,
+      "directions": "Keep climbing on switchbacks, crossing an avalanche chute that holds snow late and is exposed to slide activity into early summer, then duck back into trees on climber's left. Around 5,900 ft the path tops out on the forested ridge overlooking the lake."
+     },
+     {
+      "lat": 48.309270257142856,
+      "lng": -121.09332588571428,
+      "elev": 6600,
+      "name": "Itswoot Ridge camp",
+      "note": "Open bivy sites on the ridge crest with a stream running down from Spire Point; continuous snow above roughly 6,800 ft typically requires crampons.",
+      "type": "Campsite",
+      "distMi": 12,
+      "directions": "Drop about 500 ft on steep talus and switchbacks to the lake, which also has good camping, skirt its north shore, and regain the ridge heading toward Itswoot. A stream draining the Spire Point basin gives reliable water at the ridge camp."
+     },
+     {
+      "lat": 48.31652841964286,
+      "lng": -121.07442966071429,
+      "elev": 7000,
+      "name": "Spire Col",
+      "note": "Standard high camp on Itswoot Ridge with the first view north across the Ptarmigan Traverse; the southwest face route starts directly above camp on slabby ledges.",
+      "type": "Campsite",
+      "distMi": 13.75,
+      "directions": "Hike north up Itswoot Ridge, staying on talus on its west side near the stream to bypass the rock towers directly above camp; the crest itself is only walkable in short gentle stretches. Snow is usually continuous above about 6,800 ft, so crampons and an axe come out here. You can either climb the moderate 30-degree snow straight to the col or skirt the left edge of the snowfield on rock."
+     },
+     {
+      "lat": 48.31715054785714,
+      "lng": -121.07280998428571,
+      "elev": 8100,
+      "name": "Class 4 summit chimney",
+      "note": "Short, loose class 4 chimney through scree gains the summit ridge crest — the technical crux, exposed and prone to kicked-down rock from parties above.",
+      "type": "Hazard",
+      "distMi": 13.9,
+      "directions": "From the col, gain roughly 400 to 500 ft on talus and broken ledges to the base of the face, about a quarter mile along the ridge. Loose talus leads to the foot of the chimney, which is only about 30 ft of climbing on solid granite with good holds but is where parties rope up."
+     },
+     {
+      "lat": 48.317565,
+      "lng": -121.07173,
+      "elev": 8264,
+      "name": "Spire Point",
+      "note": "Tiny summit block holds one climber at a time; descend via two 60m rappels back down the chimney/ledge system to Spire Col.",
+      "type": "Summit",
+      "distMi": 14,
+      "directions": "Above the chimney, traverse exposed class 3 ledges across the face to the ridge crest and around onto the west side, with well over a thousand feet of air below. The last 50 ft goes as a 5.6 friction slab or, alternatively, cracks just left of the slab with better holds. Belay it: the horn holds one climber at a time, so parties take turns."
+     }
+    ],
+    "road": {
+     "name": "Suiattle River Road (FR 26)",
+     "status": "Closed to all motorized vehicles at milepost 4.5 (Suiattle Mountain Road junction) due to severe atmospheric-river flood damage in December 2025; open beyond that point to foot or bike travel only.",
+     "driveNote": "From Darrington, take SR 530 north ~7.5 mi and turn onto FR 26. The trailhead is normally ~20.6 mi up FR 26, but the current washout closure at MP 4.5 adds roughly 16 miles round trip of road walking or biking to reach the Downey Creek trailhead.",
+     "seasonalGate": "Closure order in effect April 2, 2026 through January 1, 2028 unless rescinded sooner; in normal years the road is also snow-gated into early summer."
+    }
+   }
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "before": {
+    "itinerary": {
+     "cal": "Best conditions are typically mid-summer once the approach brush has dried and snow on the col/gully has consolidated; check current avalanche/snow conditions on the SE col approach in early season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the White River Trail roughly 6 miles to Thunder Creek, then leave the maintained trail and follow the old, brushy sheep trail up the Thunder Creek drainage into the lower/upper basin. Route-finding through avalanche debris and brush makes this slower than the mileage suggests.",
+       "hours": 6,
+       "miles": 6.5,
+       "title": "Approach to Thunder Basin high camp",
+       "gainFt": 2880,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "Morning",
+         "label": "Leave White River Trailhead",
+         "detail": "Northwest Forest Pass required; trailhead at ~2,300 ft."
+        },
+        {
+         "time": "",
+         "label": "6 mi to Thunder Creek",
+         "detail": "Maintained White River Trail."
+        },
+        {
+         "time": "+0.5 mi",
+         "label": "Leave trail at Thunder Creek",
+         "detail": "Pick up the unmaintained sheep trail climbing the drainage."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Reach Thunder Basin",
+         "detail": "Camp in the lower basin (~4,175 ft) or push to the upper basin (~5,180 ft) for a shorter summit day."
+        }
+       ],
+       "objective": "Establish camp in Thunder Basin below the SE col"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start up snow/talus to the col east of the summit block, then a loose gully and a broken, jam-crack chimney (class 4/easy 5th) to the top. Most parties rappel the chimney/face on descent rather than downclimbing since there are no fixed anchors — carry gear to build rap stations and leave slung horns/webbing.",
+       "hours": 6,
+       "miles": 2.5,
+       "title": "Summit push via the SE col, gully and chimney",
+       "gainFt": 1250,
+       "lossFt": 1250,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start with ice axe and crampons for the snow slopes to the col."
+        },
+        {
+         "time": "",
+         "label": "Climb to the SE col",
+         "detail": "Non-technical but sometimes steep snow/scree."
+        },
+        {
+         "time": "+~1 hr",
+         "label": "Loose gully left of col",
+         "detail": "~85 ft of loose rock to a ledge."
+        },
+        {
+         "time": "",
+         "label": "Face pitch to broken chimney",
+         "detail": "Class 4 / easy 5th class; good jam crack leads to the summit."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit",
+         "detail": "Typically a ~6-hour round trip from Thunder Basin."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Rappel/downclimb back to camp",
+         "detail": "Build anchors on slung horns where no fixed gear exists; reverse gully and snow to Thunder Basin."
+        }
+       ],
+       "objective": "Climb the Southeast Route to the summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: descend Thunder Basin, rejoin the White River Trail at Thunder Creek, and hike the remaining 6 miles out to the trailhead.",
+       "hours": 5,
+       "miles": 6.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2880,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the White River Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip covering roughly 13 miles round trip and ~4,100 ft of net gain; the standard plan is one night in, a 6-hour summit round trip from Thunder Basin, and hike out the next day. Strong/fast parties occasionally compress it to a 2-day push, but the brushy unmaintained approach and loose, rappel-only summit pitch make the 3rd day worthwhile for most."
+    }
+   }
+  }
+ ]
+}

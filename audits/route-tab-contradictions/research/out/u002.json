@@ -1,0 +1,143 @@
+{
+ "file": "u002",
+ "results": [
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "fact": "dist_km (4.5 km) is the camp-to-Austera leg, not the one-way approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: dist_km 4.5 km equals the 2.8 mi high-camp-to-Austera leg, while the row's own summit waypoint sits at distMi 9.2 and the itinerary totals ~18.5 mi round trip. New on retry: a 2024 trip report of a Primus-Austera-Eldorado outing gives 19.0 mi and 7,300 ft round trip, but that is a three-peak trip, not an Austera-only one-way figure; the peak's route page gives ~7 mi to the East Ridge high camp plus the ~3 mi traverse. The hiking-guide page for the peak gives only the high point. No two sources state one one-way figure, and dist_km may not be derived by halving or adding, so it stays.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-05-28.130422421623",
+    "https://www.wta.org/go-hiking/hikes/austera-peak",
+    "https://www.bcadventureguides.com/trip/austera-peak-chockstone-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "fact": "Total route gain/loss/distance vs. the multi-day trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft 1,280 / loss_ft 592 / dist_km 4.5 are the one-way high-camp-to-Austera glacier leg, not the outing from the 2,100 ft trailhead. The only whole-trip figure found on retry is a three-peak (Primus, Austera, Eldorado) report of 19.0 mi / 7,300 ft round trip, which is not this route's outing; the other published numbers are per-leg (~6,000 ft / ~7 mi to high camp, 1,280 up / 592 down over 2.8 mi to Austera). A car-to-car total would have to be computed from legs, which is not allowed, and this row has no numeric itinerary to anchor it. No patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-05-28.130422421623",
+    "https://www.summitpost.org/austera-peak/152991"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: 6,000 ft and 11.3 km (7 mi) are the published trailhead-to-East-Ridge-high-camp leg, with a further ~3 mi glacier traverse (1,280 up / 592 down each way) to Austera. Retry found one whole-trip figure (19.0 mi / 7,300 ft round trip) but for a three-peak outing, so no agreed Austera-only one-way distance or car-to-car gain exists in two sources, and adding legs is not allowed. No patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-05-28.130422421623",
+    "https://www.summitpost.org/austera-peak/152991"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "gain_ft/loss_ft/dist_km (5,950 ft, 14.5 km) fit the Chilliwack Lake (BC) start, while the row's trailhead is Hannegan Pass and its approach says 30+ miles and 10,000+ ft",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row now has gain_ft/loss_ft 11,950 and an approach built on Hannegan Pass stating roughly 45 miles and ~12,000 ft round trip, so the Chilliwack-side 5,950 ft / 14.5 km figures are gone. (dist_km now holds a round-trip-sized value; see the discovered item.)",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "dist_km 72.4 km (= 45 mi, the round trip) shown as the one-way approach, while the approach prose gives ~21 mi trailhead to camp",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach, but 72.4 km equals the 45-mile round trip in the row's own approach text, whereas the same text puts the trailhead-to-camp leg at roughly 21 miles. Published sources give ~17 mi to the Bear Creek confluence from Hannegan but no second source states a one-way trailhead-to-camp figure, and halving the round trip is not allowed, so dist_km is left for a sourced one-way value.",
+   "sources": [
+    "https://www.mountainproject.com/area/112828230/bear-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "Trailhead: itinerary/timing start at Chilliwack Lake (BC) while the trailhead card, waypoints, approach and primary variant start at Hannegan Pass; approach prose also gives Chilliwack-side times for the Hannegan walk",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row's itinerary (5 days, Hannegan Pass to Brush Creek to the 6,480 ft saddle camp and back), timing.sectionBreakdown, trailhead card, waypoints, approach and primary variant all start at Hannegan Pass, and the approach now gives ~21 mi / ~6,500 ft to camp; the Chilliwack Lake line is described only as a separate, shorter alternative.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "dist_km 72.4 km (= 45 mi, the round trip) shown as the one-way approach, while the approach prose gives ~21 mi trailhead to camp",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same as the sister Direct route: dist_km 72.4 km equals the itinerary's 45-mile round trip rather than a one-way approach (the row's own approach and camp waypoint say ~21 mi to the saddle camp). No two sources state the one-way Hannegan-to-camp distance and halving is not allowed, so nothing is patched.",
+   "sources": [
+    "https://www.mountainproject.com/area/112828230/bear-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Total round-trip gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real in the live row: gain_ft/loss_ft 6,550/1,820 are one party's day-1 figures (road to a camp beyond the summit), while the itinerary and totalNote give 5,600 ft round trip and day 2 loses 5,300 ft. Retry searches surfaced only the same ascent record plus a search excerpt of a second itinerary (+5,450 / -5,020 ft over 6.5 mi to a camp above Berdeen Lake) whose page could not be opened to confirm what it covers; forum reports on the Porkbelly Ridge approach would not load. No round-trip total is stated by two sources, and a total cannot be assembled from legs, so nothing is patched.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+    "http://www.stephabegg.com/home/tripreports/washington/northcascades/mysterypicket",
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8001042"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Elevation of the high camp above Berdeen Lake",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Berdeen Lake is 5,016 ft, matching the bivy entry for the lake benches; the only ascent record puts the party's camp about 800 ft above the lake (~5,800 ft), supporting the 5,800 ft waypoint. A photo page titled for the Berdeen Lake camp and two forum reports that might give a second figure returned 403 or would not load on retry, and the high-camp waypoint's coordinate is interpolated, so a ground-elevation lookup there would not measure the real camp. One source only; no patch.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+    "https://en.wikipedia.org/wiki/Berdeen_Lake",
+    "https://www.summitpost.org/berdeen-lake-camp/1068174"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Day-1 gain to the Berdeen Lake camp stated in the bivy entry",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The bivy note's 'four thousand feet of gain' for day 1 is below even the net rise from the 850 ft road end to a camp near 5,000-5,800 ft. The ascent record gives +6,550 ft for that day, and a second itinerary seen only as a search excerpt gives +5,450 ft to a camp above the lake; the two disagree (and may describe different camps/lines), so no replacement figure is agreed and nothing is patched.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+    "http://www.stephabegg.com/home/tripreports/washington/northcascades/mysterypicket"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "fact": "Maximum ice difficulty on the route (gear[0] 'WI4/95°' vs grade/ice_grade/pitch_detail WI5)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade 'IV+ 5.9 WI5', ice_grade WI5 and the second-step pitch (5.8 WI5) disagree with gear[0]'s 'sustained thin ice up to roughly WI4/95°'. Retry searches again found only the first-ascent account (IV+ 5.9 WI5 mixed) and its short new-route note (IV+ 5.9 95°, no WI number); the peak's encyclopedia entry lists only the class 3 east face, and no route database or later ascent report of the couloir surfaced. With a single independent record of the WI grade, and fewer than four row fields in agreement for the internal rule, gear[0] is not patched; WI5 remains the likely value.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades",
+    "https://en.wikipedia.org/wiki/Big_Four_Mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "fact": "Route scope: this route's own trip plan/hazards describe summiting a different peak (Bonanza Peak) than its own waypoints reach",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row has been re-scoped as Bonanza Peak's Northwest Ridge (from Needle Peak), V 5.8, filed under the Bonanza Peak area; its overview, beta, itinerary and hazards all describe the Needle-to-Bonanza link-up, and the Needle summit waypoint is now labelled as the first summit of the traverse (a landmark), not the objective. The stale 'single documented ascent' season claim is also gone.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

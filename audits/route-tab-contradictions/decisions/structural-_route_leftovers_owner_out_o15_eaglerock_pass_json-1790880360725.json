@@ -1,0 +1,418 @@
+{
+ "applied": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "area_id": "wa_eagle_rock",
+   "name": "Standard Scramble",
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 198,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NE/N",
+   "season": "Jun-Oct",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "50 ft handline (optional, for the Class 3 downclimb)"
+   ],
+   "hazards": [
+    "off-trail routefinding",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "Eagle Rock is a prominent, blocky summit (5,614 ft, about 1,400 ft of prominence) on the ridge between the Beckler River and Skykomish valleys near Stevens Pass. From the FR6517 trailhead (elev. ~4,150 ft), it's roughly 0.8 miles one-way and about 1,460 ft of gain to the top — a short outing (often under 3 hours round trip) for a big, airy summit panorama over the US-2 corridor peaks, the Beckler and North Fork Skykomish drainages, and (on clear days) Glacier Peak and the Monte Cristo group. The route finishes with a Class 2–3 scramble on blocky rock.",
+   "beta": "From a high parking area on FR6517 about 0.5 mile east of the summit, the route gains about 1,460 ft in all, finishing with roughly 600 vertical feet of open slope/talus to the top — easy class 2 if you stay to the right side, or class 2/3 up the center. Total distance is well under a mile each way, and the round trip from the car is typically under three hours. The peak sees very few visitors compared to nearby Beckler Peak and Evergreen Mountain.",
+   "turnaround": "This is a short outing, so set your turnaround based on weather, remaining daylight for the long forest-road drive out, and terrain conditions rather than clock time — deteriorating visibility, wet/slick rock on the class 2/3 sections, or lingering snow on the upper slope in early season are the main reasons to turn back.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 1464,
+   "loss_ft": 1464,
+   "dist_km": 1.29,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "Northeast side, wrapping to the north side (talus approach and scramble line)",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Reverse the scramble back to the approach.",
+   "obj_haz": [
+    "loose_rock",
+    "exposure",
+    "route_finding",
+    "remoteness"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.776833,
+     "lng": -121.344633,
+     "elev": 4150,
+     "name": "FR6517 Roadside Parking",
+     "note": "Pull-off on FR6517, reached via FR6510 and FR6514 off Beckler River Road (FR65) — about 10.8 mi of gravel forest road; parking sits roughly 0.5 mi east of the summit.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Skykomish take the Beckler River Road (FR 65) north, then follow the FR 6510 / FR 6514 / FR 6517 spur network — about 10.8 miles of gravel and dirt past the pavement — to the road end. The spurs can be rough or snow-blocked into early summer. There is no maintained trail beyond the pull-off and no water anywhere above the car, so carry all of it from here."
+    },
+    {
+     "lat": 47.7767345,
+     "lng": -121.345972,
+     "elev": 4250,
+     "name": "Brush Exit / Open Forest",
+     "note": "Route leaves the roadside brush and enters open forest within a few hundred feet of the parking pull-off — head west, straight up the hillside.",
+     "type": "Junction",
+     "distMi": 0.1,
+     "directions": "Leave the road and head west-southwest, straight up the hillside. There is no trail and no cairns, so the line is picked by eye. A short push through roadside brush puts you into open timber within the first few hundred feet."
+    },
+    {
+     "lat": 47.77658675000001,
+     "lng": -121.3479805,
+     "elev": 4500,
+     "name": "Talus Below NE Cliffs",
+     "note": "A few hundred yards past the forest edge, trees give way to loose talus beneath Eagle Rock's northeast cliff band — watch for rockfall from above and unstable blocks underfoot.",
+     "type": "Hazard",
+     "distMi": 0.25,
+     "directions": "Keep climbing west through the timber; after a few hundred yards the trees thin and the ground turns to open talus. It is steep — nearly all of the route's roughly 1,400 ft of gain is packed into the 0.8 mile from the car, so it feels considerably bigger than the mileage suggests."
+    },
+    {
+     "lat": 47.77638975000001,
+     "lng": -121.3506585,
+     "elev": 4800,
+     "name": "Start of Counterclockwise Traverse",
+     "note": "Begin the ascending, counterclockwise traverse around the peak toward its north side; stay on talus, avoiding the cliff bands directly above.",
+     "type": "Junction",
+     "distMi": 0.45,
+     "directions": "Do not push straight up into the cliffs from the base of the talus: parties who take the direct line up the northeast side get cliffed out. Start a rising traverse to climber's left instead, holding the arc across loose talus and scree below the rock rather than gaining height too fast."
+    },
+    {
+     "lat": 47.776242,
+     "lng": -121.352667,
+     "elev": 5000,
+     "name": "North Side Scramble Start (~5000')",
+     "note": "On reaching the north side at about 5000', the final pitch splits: an easier Class 2 line on the right or a steeper Class 2/3 line straight up the center.",
+     "type": "Junction",
+     "distMi": 0.6,
+     "directions": "Hold the counterclockwise arc around onto the peak's north side, gaining a couple of hundred feet across talus to the broad bench. Fix the line in your head as you go — this traverse is what you reverse, and in poor visibility it is easy to drift back toward the cliff bands on the way down."
+    },
+    {
+     "lat": 47.776045,
+     "lng": -121.355345,
+     "elev": 5614,
+     "name": "Eagle Rock Summit",
+     "note": "True summit after roughly 600' of Class 2/3 scrambling from the north-side base; round trip from the car is typically under 3 hours.",
+     "type": "Summit",
+     "distMi": 0.8,
+     "directions": "From the bench, angle southwest a few hundred yards to the foot of the summit slope, then take about 600 vertical feet of open slope and talus to the top. A far-left finish adds around 50 ft of slightly exposed Class 3; some parties carry a short length of rope to rig a handline there, though neither of the standard lines needs one."
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 2.5,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "9:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 2.5,
+      "note": "A short, brisk scramble on King County's Eagle Rock (5,615 ft) near Skykomish. From the high trailhead on FR6517 it's under a mile to the summit: an ascending traverse across talus…",
+      "fromTo": "Car-to-car scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack is used on the standard route — it is a class 2-3 scramble on open slope/talus requiring no rope, protection, or anchors.",
+   "what_to_bring": [
+    "sturdy boots",
+    "helmet",
+    "map/GPS",
+    "extra water"
+   ],
+   "pro_tips": [
+    "Identify the correct gully/ramp on the north side before committing — the right side is easier Class 2, the center/left is Class 2/3 and more exposed",
+    "Bring a map/GPS track for the NE-to-N counterclockwise talus traverse; it's easy to end up on the wrong side of the cliffs in the forest",
+    "Call the Skykomish Ranger Station or check MBS current-conditions page for FR65/6510/6514/6517 status before driving — these spur roads see periodic washout/shoulder damage",
+    "Carry a 50 ft handline for the exposed Class 3 downclimb on the north side rather than downclimbing it unroped",
+    "Best after the north-facing summit gully clears of snow for secure scrambling"
+   ],
+   "watch_out": [
+    "loose rock",
+    "brush",
+    "exposure near summit",
+    "thunderstorms"
+   ],
+   "pro_needs": "None; the standard line is unroped scrambling terrain throughout.",
+   "best_season": "Mid-July through October for the driest, most secure scrambling; because the standard line ascends the north-facing summit gully, snow/ice can linger there into early-to-mid July even after the approach slopes have cleared — carry an ice axe and check recent trip reports before a June/early-July attempt.",
+   "high_point_ft": 5614,
+   "aid_grade": null,
+   "approach": "Drive the Beckler River Road (FR-65) out of Skykomish and follow it into the FR-6510/FR-6514/FR-6517 spur network (about 10.8 miles of gravel/dirt forest road past the pavement) to road's end, roughly 0.5 mile east of Eagle Rock's summit at about 4,150 ft — this is the trailhead; there is no maintained trail beyond it. From the parking area, leave the road and head west/southwest straight up the hillside cross-country. You break out of brush and into open forest within the first few hundred feet, then continue uphill through timber; after a few hundred yards the trees give way to open talus slopes below the cliff bands on Eagle Rock's northeast side. From the base of the talus, do not push straight up into the cliffs — instead make an ascending, counterclockwise (climber's-left) traverse across and around the north side of the peak to a broad bench/step at roughly 5,000 ft. From that step, angle southwest a few hundred yards to the base of the final summit slope, where the scramble proper begins. One-way distance from the car to the summit is only about 0.8 mile, but essentially all of the route's ~1,400 ft of gain is packed into that short distance, so it feels considerably steeper than the mileage implies. There is no reliable water source anywhere on the approach — carry all the water you need from the car. Hazards are mostly footing and route-finding: loose talus and scree on the traverse, brush low down, no trail or cairns to follow, and cliff bands that will cliff out parties who try to go straight up the northeast talus instead of arcing counterclockwise.",
+   "descent_text": "Descend by reversing the ascent line — this is a walk-off/downclimb, not a rappel route. From the summit, downclimb the same Class 2 (right side) or Class 2/3 (center) slope back down about 600 vertical feet to the ~5,000 ft bench, then reverse the counterclockwise talus traverse below the cliff bands back to treeline, and continue down through open forest and brush to the FR-6517 parking area. No technical anchors or rappels are needed on the standard line. The main descent hazards are loose talus/scree (easy to kick rocks onto anyone below) and route-finding — in poor visibility it's easy to drift toward the cliff bands instead of holding the correct counterclockwise line, so retrace your ascent traverse carefully. Parties who climbed the more exposed far-left finish (about 50 ft of slightly exposed Class 3) sometimes downclimb that section more cautiously or carry ~50 ft of rope to rig an optional handline for extra security, but this is a personal-comfort choice on a minor variation, not a fixed rappel station, and the standard Class 2/3 line requires no rope at all.",
+   "bail": "Descend the ascent slopes back toward the approach drainage.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2",
+     "notes": "Short approach walk from the FR6517 parking area toward the base of Eagle Rock's final slope.",
+     "pitch": "Parking area to base of summit slope"
+    },
+    {
+     "grade": "Class 2 (right side) / Class 2-3 (center)",
+     "notes": "About 600 vertical feet of open slope/talus to the summit; staying right keeps it easy class 2, the direct center line is class 2-3.",
+     "pitch": "Summit slope"
+    }
+   ],
+   "itinerary": {
+    "cal": "Access requires FR6510/6514/6517, 10.8 mi of forest road beyond Beckler River Road (FR65) - these spur roads can be rough or snow-blocked into early summer, so check current conditions before driving in.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A short, brisk scramble on King County's Eagle Rock (5,615 ft) near Skykomish. From the high trailhead on FR6517 it's under a mile to the summit: an ascending traverse across talus below the northeast cliffs to about 5,000 ft, then roughly 600 ft of easy class 2 (or class 2/3 up the center) to the top. Most parties are back at the car in well under 3 hours.",
+      "hours": 2.5,
+      "miles": 1.6,
+      "title": "Car-to-car scramble",
+      "gainFt": 1460,
+      "lossFt": 1460,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "9:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Parking on FR6517, about 0.5 mi east of the summit; head west up through brush into open forest."
+       },
+       {
+        "time": "+20 min",
+        "label": "Reach talus below the NE cliffs",
+        "detail": "Trees give way to open talus slopes beneath Eagle Rock's cliffs."
+       },
+       {
+        "time": "+40 min",
+        "label": "Ascending traverse to the north side",
+        "detail": "Counterclockwise traverse across talus to gain the north side of the peak."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Start the summit scramble at ~5,000 ft",
+        "detail": "About 600 ft of class 2 on the right side, or class 2/3 straight up the center."
+       },
+       {
+        "time": "+1 hr 30 min",
+        "label": "Summit",
+        "detail": "Short stay - the view is the payoff for under an hour of climbing from the base."
+       },
+       {
+        "time": "+2 hr 30 min",
+        "label": "Back at the car",
+        "detail": "Reverse the scramble and traverse; round trip typically finishes in under 3 hours."
+       }
+      ],
+      "objective": "Tag the summit via the class 2/3 talus and rock route"
+     }
+    ],
+    "totalNote": "A short single-day scramble: about 1.6 miles and 1,460 ft round trip, typically under 3 hours car-to-car once at the high trailhead."
+   },
+   "access": {
+    "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "rules": "Standard national forest regulations",
+    "permit": "None required.",
+    "closures": "Access spur roads (FR6510/FR6514/FR6517) are prone to seasonal washouts, downed trees, and closures; check current Mt. Baker-Snoqualmie NF road-status alerts for the Skykomish District before driving.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish WA 98288, (360) 677-2414)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "passRequired": "No pass needed at the FR6517 road-end parking, an undeveloped pull-off; a Northwest Forest Pass (or America the Beautiful pass) applies only at developed trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "US-2 to 0.8 mi east of Skykomish, then Beckler River Road (FR65) 0.6 mi to FR6510, then FR6510 → FR6514 → FR6517 for 10.8 mi to the trailhead parking area (~4,150 ft elevation), about 0.5 mi/0.8 mi short of the summit",
+    "status": "Rough, narrow Forest Service spur roads with a documented history of washouts, downed trees, blown culverts, and sinkholes on this section of the Skykomish Ranger District. The Forest Service's Skykomish District road-damage alert of June 30, 2026 lists FR 6510 (Bolt Creek Road) closed at its gate at milepost 1.0, with a blown-out culvert at MP 1.2 and a bridge out at MP 2, and FR 6514 (Eagle Creek Road) gated closed at milepost 0, with a blown culvert at MP 1.6 and a sinkhole at MP 7.1; no reopening date is given, so no vehicle can reach this trailhead while that stands. Skykomish Ranger District: (360) 677-2414.",
+    "driveNote": "Paved highway (US-2) to gravel/dirt forest roads; narrow and rough in spots, high-clearance vehicle recommended. MBS National Forest's current-conditions reports have noted shoulder damage on FR65 near milepost 7.4 and 12.1 — check current conditions with the Skykomish Ranger Station before driving, especially after storms."
+   },
+   "climate": {
+    "summer": "Driest and most reliable conditions, especially July-August.",
+    "typical": "West-slope Cascade climate; wet and heavily vegetated",
+    "bySeason": {
+     "fall": "Good early; wet and cold later",
+     "spring": "Wet, snowy up high, brushy",
+     "summer": "Best window; drier rock, watch for storms",
+     "winter": "Snowbound; not a standard objective"
+    },
+    "forecastZone": "NOAA West Slopes Central Cascades"
+   },
+   "emergency": {
+    "notes": "Use 911 for emergencies.",
+    "county": "King",
+    "rangerStation": "Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish WA 98288, (360) 677-2414 (limited walk-in hours, Wed–Fri; call ahead)",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), on US-2 in Monroe, WA — nearest full-service emergency department to Skykomish/Beckler River area",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; if any uptick occurs it would be summer weekends (July-August), but this is not a heavily trafficked objective compared to other Skykomish-area destinations",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Low - likely well under 20 parties per season; the summit register was once signed by only two people over a two-year span"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Solid hiking fitness for a sustained off-trail/brushy approach through forest before any scrambling begins",
+     "packWeight": "Light day-pack (scramble, not a multi-day or technical rock objective)"
+    },
+    "approachTime": "Longer than a typical trailhead scramble due to off-trail forest travel via the Eagle Creek/Beckler River roads before reaching rock",
+    "requiredSkills": [
+     "Off-trail routefinding/navigation (map, compass or GPS - route is not signed or maintained)",
+     "Class 3 scrambling on loose rock",
+     "Bushwhacking through brush",
+     "Comfort with exposure near the summit",
+     "Judgment to retreat from afternoon thunderstorms"
+    ],
+    "experienceLevel": "Comfortable with off-trail Class 3 scrambling and independent routefinding; not a beginner objective given the bushwhacking approach and unmarked upper route"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October, per prior research on this route",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Season opens mid-July; brush and vegetation still wet/thick early in the month, drying out by late July",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Driest rock and clearest conditions of the season, though watch for afternoon thunderstorms",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Wetter and colder later in the month; still viable early October but conditions degrade",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Continues the best window with typically stable, drier weather before fall wetness sets in",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "West-slope Cascade climate - wet and heavily vegetated per prior research; summer offers the driest rock and best conditions",
+     "probability": "Afternoon thunderstorms are a known hazard on this route per prior research; build in an early start and turnaround plan"
+    },
+    "exposure": "Class 3 terrain with loose rock and exposure concentrated near the summit; a slip in the upper scramble section carries real fall consequence, compounded by off-trail routefinding that makes retreat less straightforward than on a marked trail",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer/fall scramble route with no snow-season use documented",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Live/current closure status of FR65, FR6510, FR6514, and FR6517 could not be verified at research time — these roads have a history of storm damage and spot washouts",
+     "Exact difficulty of the summit gully varies by line chosen (Class 2 on the right vs Class 2/3 up the center/left) — no single official grade nailed down across sources",
+     "No confirmed lat/lng or exact trailhead GPS coordinates found in sourced material; not fabricated here",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.776045,
+    "peakLng": -121.355345,
+    "trailhead": "FR-6517 road-end (Beckler River road network)",
+    "trailheadDirection": "Via Beckler River Road (FR-65) into the FR-6510/6514/6517 spur network to road's end ~0.5 mile east of the summit"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Standard route: talus below cliffs on the NE side, an ascending counterclockwise traverse around the mountain (the route's crux section), then ~600 ft of Class 2 (or Class 2/3 direct) to the summit.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "FR-6517 road end and the counterclockwise traverse",
+     "notes": "The road end is the trailhead and there is nothing beyond it — no tread, no cairns, no water. Leave the pull-off heading west-southwest straight up the hillside; a short push through roadside brush puts you into open timber within the first few hundred feet, and after a few hundred yards the trees thin onto open talus below the northeast cliffs. The whole outing is under a mile each way, but nearly all of roughly 1,400 ft of gain is packed into it, so it climbs far harder than the mileage suggests.",
+     "season": "July to October",
+     "hazards": [
+      "No trail, no cairns and no water above the car",
+      "Loose talus and scree across the traverse",
+      "Cliff bands that will stop a party going straight up the northeast side",
+      "Easy to drift back toward the cliffs in poor visibility on the way down"
+     ],
+     "baseFinding": "The climbing begins at a broad step at about 5,000 ft on the peak's north side, and the mistake that costs people the summit is made well below it. At the base of the northeast talus the cliff bands stand directly overhead: that is the signal to stop gaining height and start an ascending, counterclockwise arc to climber's-left, holding the line across loose talus and scree beneath the rock. Parties who push straight up the northeast talus into the cliffs get stopped. You know you have arrived when the arc brings you round onto the north side and the ground steps out onto a broad open bench, with the slope above turning to open talus and blocky rock rather than walls. From there angle southwest a few hundred yards to the foot of the summit slope; the final six hundred feet go at easy class 2 keeping to the right-hand side, or class 2/3 straight up the centre. A far-left finish adds about fifty feet of slightly exposed class 3. Fix the traverse in your head on the way up — it is the thing you reverse, and in cloud it is easy to drift back into the cliff bands."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 1000,
+     "name": "Beckler River Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6510 and FR 6514, is what gets you to Eagle Rock, to the road end at roughly 3,500 ft used for Grotto Mountain, and to the gentle back-door approach to Eagle Lake. If the campground is full or closed for the season, the upper Beckler road corridor and its spurs are national forest land where dispersed camping is allowed with no permit — the standing rules are to camp at least 100 ft from water, use an existing pullout rather than making a new clearing, stay a maximum of fourteen days in one spot, and obey whatever fire restriction is current. Those spurs are rough, gated in places, and can be locked without warning, so check the gate on your way in rather than discovering it on your way out. Being a valley campground it says nothing about conditions up high; expect snow on the FR 6514 spurs well into spring.",
+     "water": "Potable water from a solar pump at the campground, and the Beckler River itself.",
+     "permit": "Standard national forest campground fee through the federal reservation system. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Open roughly May through September, so it is not a winter option. Fourteen-day stay limit, no fireworks, and a food storage order applies — check the current campfire ban.",
+     "capacity": "26 sites, 22 single and four double, all reservable. Picnic tables and vault toilets. No stock or pack animals."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

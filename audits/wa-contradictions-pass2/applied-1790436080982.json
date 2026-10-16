@@ -1,0 +1,492 @@
+{
+ "applied": [
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "First camp at Whatcom Pass (closed)"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "First camp at Whatcom Pass (closed)"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "First camp at Whatcom Pass (closed)"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "First camp at Whatcom Pass (closed)"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    3,
+    "note"
+   ],
+   "fact": "First camp at Whatcom Pass (closed)"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Waypoint chain mixes the two approaches"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rack needed (glacier/ice gear)"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Pitch at which the tower rappel occurs"
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Summit waypoint distance"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the overnight permit can be reserved"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_phantom_peak_south_route",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed July-September once the Whatcom/Challenger Glacier crossings consolidate; requires a North Cascades NPS backcountry permit for all camps.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Trail hike from the Hannegan Trailhead over Hannegan Pass and down to the Chilliwack River, then up to Whatcom Pass — the standard first camp for Northern Pickets objectives.",
+       "hours": 6,
+       "miles": 16,
+       "title": "Hannegan TH to Whatcom Pass",
+       "gainFt": 2500,
+       "lossFt": 200,
+       "packLb": 48,
+       "schedule": [],
+       "objective": "Reach Whatcom Pass camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb onto the Whatcom Glacier, cross Perfect Pass and the Challenger Glacier, then descend to a moraine camp near the Crooked Thumb Glacier at roughly 6,800 ft — the standard staging camp for Phantom Peak.",
+       "hours": 9,
+       "miles": 5,
+       "title": "Whatcom Pass to high camp",
+       "gainFt": 3000,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Cross the Whatcom/Challenger Glacier to a high camp near Phantom Peak"
+      },
+      {
+       "n": 3,
+       "note": "A long round-trip summit day: descend across snow below Phantom Peak's west face, cross a pocket glacier and bergschrund, climb a moderate snow finger to the southwest ridge, then follow exposed but solid granite along the ridge crest — including a hand-lined traverse past the false summit — to the true summit.",
+       "hours": 13,
+       "miles": 2,
+       "title": "Summit via the South Route",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": ""
+        },
+        {
+         "time": "~6:30 AM",
+         "label": "Reach the SW buttress saddle",
+         "detail": "After descending snow slopes below Phantom Peak's west face."
+        },
+        {
+         "time": "~8:00 AM",
+         "label": "Cross the bergschrund",
+         "detail": "Climb the moderate snow finger above it using snow-fluke protection."
+        },
+        {
+         "time": "11:20 AM",
+         "label": "Reach true summit",
+         "detail": "~6.9 hr from camp, including a hand-lined false-summit traverse."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the entire route."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at high camp",
+         "detail": "~5.7 hr descent."
+        }
+       ],
+       "objective": "Climb Phantom Peak (8,016 ft) via the southwest glacier, south couloir, and southwest ridge"
+      },
+      {
+       "n": 4,
+       "note": "Reverse the Challenger Glacier / Perfect Pass crossing back down to Whatcom Pass camp.",
+       "hours": 9,
+       "miles": 5,
+       "title": "Descend to Whatcom Pass",
+       "gainFt": 300,
+       "lossFt": 3000,
+       "packLb": 42,
+       "schedule": [],
+       "objective": ""
+      },
+      {
+       "n": 5,
+       "note": "Trail miles back over Hannegan Pass to the Hannegan trailhead.",
+       "hours": 6,
+       "miles": 16,
+       "title": "Hike out to trailhead",
+       "gainFt": 200,
+       "lossFt": 2500,
+       "packLb": 30,
+       "schedule": [],
+       "objective": ""
+      }
+     ],
+     "totalNote": "A 5-day, ~44 mile round trip via Whatcom Pass with one long (~13 hr) technical summit day; matches how real Northern Pickets parties climb Phantom Peak from a Crooked Thumb Glacier camp."
+    },
+    "timing": {
+     "totalHrs": 43,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": 15,
+     "approachTimeHrs": 15,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Trail hike from the Hannegan Trailhead over Hannegan Pass and down to the Chilliwack River, then up to Whatcom Pass — the standard first camp for Northern Pickets objectives.",
+       "fromTo": "Hannegan TH to Whatcom Pass",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Climb onto the Whatcom Glacier, cross Perfect Pass and the Challenger Glacier, then descend to a moraine camp near the Crooked Thumb Glacier at roughly 6,800 ft — the standard stag…",
+       "fromTo": "Whatcom Pass to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 13,
+       "note": "A long round-trip summit day: descend across snow below Phantom Peak's west face, cross a pocket glacier and bergschrund, climb a moderate snow finger to the southwest ridge, then …",
+       "fromTo": "Summit via the South Route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9,
+       "note": "Reverse the Challenger Glacier / Perfect Pass crossing back down to Whatcom Pass camp.",
+       "fromTo": "Descend to Whatcom Pass",
+       "section": "Descent"
+      },
+      {
+       "hrs": 6,
+       "note": "Trail miles back over Hannegan Pass to the Hannegan trailhead.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 48.834423,
+      "lng": -121.20174,
+      "elev": 2500,
+      "name": "Luna Camp",
+      "note": "Established NPS backcountry campsite ~10 mi up the Big Beaver Trail (permit reserved at the Marblemount Wilderness Information Center); base camp for leaving the maintained trail to find the Access/Luna Creek drainages.",
+      "type": "Campsite",
+      "distMi": 10
+     },
+     {
+      "lat": 48.79336135625,
+      "lng": -121.26392853125,
+      "elev": 3200,
+      "name": "Luna Creek bushwhack",
+      "note": "Off-trail ascent from Luna Camp through devil's club and alder thickets; one of the worst bushwhacks in the North Cascades, and it's easy to lose the drainage in the brush.",
+      "type": "Hazard",
+      "distMi": 11.5
+     },
+     {
+      "lat": 48.81046431875,
+      "lng": -121.31639684375,
+      "elev": 6800,
+      "name": "Crooked Thumb Glacier moraine high camp",
+      "note": "High camp on the glacier's lateral moraine per route beta; last reliable tent sites and meltwater before dropping toward Phantom Peak's southwest buttress.",
+      "type": "Campsite",
+      "distMi": 14.5
+     },
+     {
+      "lat": 48.8133148125,
+      "lng": -121.3251415625,
+      "elev": 6100,
+      "name": "Southwest buttress saddle",
+      "note": "Gained via a roughly 1,000 ft descending traverse from the moraine camp; from here the route turns onto the pocket glacier on the buttress's southwest side.",
+      "type": "Junction",
+      "distMi": 15
+     },
+     {
+      "lat": 48.81616530625,
+      "lng": -121.33388628125,
+      "elev": 7300,
+      "name": "Bergschrund on the summit snow finger",
+      "note": "The pocket glacier's left-hand snow finger is cut by a bergschrund that's wide but shallow; parties crampon up slabby rock and crawl over the uphill wall to continue past it.",
+      "type": "Hazard",
+      "distMi": 15.5
+     },
+     {
+      "lat": 48.9101,
+      "lng": -121.5927,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead (end of Ruth Creek Rd / FR-32), via Hannegan Pass, Chilliwack River Trail, Whatcom Pass and Perfect Pass to the SW side of Phantom Peak",
+      "note": "The main approach reaches this route from the west side of the range over Hannegan Pass; the alternative comes from Ross Lake up the Big Beaver Trail.",
+      "type": "Trailhead",
+      "elevFt": 3120
+     },
+     {
+      "lat": 48.8190158,
+      "lng": -121.342631,
+      "elev": 8000,
+      "name": "Phantom Peak summit (Southwest/South Route, Class 4, easiest route, FA Fred & Helmy Beckey 1940)",
+      "type": "Summit",
+      "elevFt": 8000
+     }
+    ],
+    "detailed_rack": "Minimal gear typically used: selection of nuts (black diamond size range), several slings. Ice climbing gear unnecessary. Approach boots with good traction essential.",
+    "access": {
+     "fees": "$10 per person plus a non-refundable $6 reservation/transaction fee, charged mid-May through early October; no charge the rest of the year. Youth 15 and under are free.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Camp within your permitted cross-country zone; bear canister/Ursack food storage required; Leave No Trace practices expected in this fragile, lightly-visited alpine terrain.",
+     "permit": "Backcountry permit required for all overnight stays. Reserve in advance via Recreation.gov (60% of permits reservable online) or obtain a walk-up permit (40% held back) at the Marblemount Wilderness Information Center. The area is managed as NPS cross-country zones with no assigned individual campsites.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (National Park Service) — the Picket Range lies within North Cascades National Park proper.",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None inside the park; a Northwest Forest Pass may be required at some adjacent national forest trailheads.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."
+   }
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "before": {
+    "beta": "From a roping-up ledge just above the 6,100' saddle in the ridge's lower reaches, pitch 1 starts with a short, steep crack system before rambling along the crest. Pitches 2-5 continue in the same vein — large corners, towers either bypassed or climbed directly, and exposed ridge running, mostly 5.7+. Pitch 6 holds the crux: a tough move over an airy four-foot-wide cleft, requiring a long 5.10-ish stemming move across a 100-ft-deep gap (the FA party rigged a nut-and-sling handhold to tension across, then top-roped it free). Two pitches later the ridge tops out on a tower, from which the party rappelled ~100 ft into a notch; pitches 8-10 offer aesthetic face and crack climbing on solid rock. As the difficulty eases, the rope is coiled and about 400 ft of 4th-class terrain is soloed to the sharp summit ridge, finishing with an exposed traverse to the final summit pinnacle.",
+    "access": {
+     "fees": "$10/person NPS backcountry recreation fee (+$6 reservation fee only for advance-reservation zones)",
+     "permit": "NPS wilderness backcountry permit required for overnight stays; the Whatcom Pass/Perfect Pass/Challenger Glacier corridor is a walk-up, first-come permit zone",
+     "closures": "Wildfire closures have affected the Chilliwack River approach corridor in past fire seasons (e.g. 2021 Bear Creek Fire) — check current NPS/USFS fire and trail status before a trip",
+     "landManager": "National Park Service — North Cascades National Park / Stephen Mather Wilderness",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_luna_glacier",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.7277,
+      "lng": -121.0626,
+      "elev": 2150,
+      "name": "Ross Dam / Big Beaver Trailhead (Hwy 20)",
+      "note": "Car trailhead on Hwy 20 (Big Beaver Trail start); approach to Luna Cirque/Phantom Peak via Ross Lake, Big Beaver Trail, Access Creek, Luna Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.8190158,
+      "lng": -121.342631,
+      "elev": 8016,
+      "name": "Phantom Peak summit",
+      "note": "Phantom Peak's own summit, elev 8016 ft. Luna Glacier is an approach to Phantom Peak itself, not to Luna Peak — a different, nearby peak.",
+      "type": "Summit",
+      "distMi": 0
+     }
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry permit required for overnight camping in Picket Range",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "group_size_limit": "Standard party size; check with WIC for specifics in cross-country zones",
+      "permit_pickup_hours": "During peak season; call (360) 854-7245 for current hours",
+      "special_requirements": "Advanced wilderness skills required; Picket Range is extremely remote; reserved permits must be picked up by 11:00 AM PT on trip start date",
+      "wilderness_zone_name": "Picket Range / North Cascades wilderness",
+      "parking_pass_required": "Northwest Forest Pass required for day-use trailhead parking",
+      "permit_pickup_location": "North Cascades Wilderness Information Center, Marblemount, WA",
+      "seasonal_closure_dates": "Peak season June-September; permits 60% reserved, 40% first-come first-served"
+     },
+     "fees": "Overnight backcountry permit: $10 per person plus a $6 fee, charged mid-May through early October; youth 15 and under are free.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry permit required for overnight camping in Picket Range",
+     "closures": "Peak season June-September; permits 60% reserved, 40% first-come first-served. Luna Fire closure (as of mid-September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. The closure moves - check current park fire closures before a trip.",
+     "permitZone": "N/A",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass required for day-use trailhead parking",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."
+   }
+  }
+ ]
+}

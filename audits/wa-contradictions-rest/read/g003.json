@@ -1,0 +1,1704 @@
+{
+ "batches": [
+  "b009.json",
+  "b010.json",
+  "b011.json",
+  "b012.json"
+ ],
+ "routes_read": 8,
+ "routes": [
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "name": "South Route",
+   "area": "Frenzel Spitz",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III, 5.6"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "a fall or injury on Grade III terrain"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "a rock rack for Grade III, 5.6 terrain"
+      }
+     ],
+     "why": "The grade pill/crux says Grade III while the commitment chip says II.",
+     "internal_resolution": "grade, seasonal_hazards and partner_requirements all say III; commitment 'II' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the col, downclimb/scramble roughly 500 ft down broken, frequently snow- or ice-covered terrain on the Frenzel Spitz side to reach the base of the South Route proper."
+      },
+      {
+       "field": "waypoints[7].directions",
+       "says": "Do not try to follow the crest across. From the col, downclimb roughly 500 ft"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "True summit gained via 5.6 rock along the connecting ridge from the col"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "following Ottohorn's east ridge and connecting terrain (short roped/low-5th pitches where the ridge steepens) over to Frenzel Spitz's summit block"
+      },
+      {
+       "field": "itinerary.days[2].schedule[2].label",
+       "says": "Climb Ottohorn's east ridge"
+      },
+      {
+       "field": "itinerary.days[2].schedule[3].detail",
+       "says": "Connecting ridge/scramble terrain between the two summits."
+      },
+      {
+       "field": "overview",
+       "says": "only reachable after first gaining Ottohorn via the Ottohorn–Himmelhorn col"
+      }
+     ],
+     "why": "One set of fields sends the party down 500 ft from the col to the route base and says not to follow the crest, while the itinerary/summit note/overview send it over Ottohorn's east ridge along a connecting ridge.",
+     "internal_resolution": "approach, approach_variants.baseFinding and summit-waypoint directions agree on the 500 ft downclimb; itinerary day 3 and the summit waypoint note are outliers, but which is historically correct needs research.",
+     "needs_research": true
+    },
+    {
+     "fact": "Which side of the Ottohorn-Himmelhorn col leads to Frenzel Spitz / back to camp",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If the ground below you needs a rope to descend, you are on the north side and you are heading for the Mustard Glacier, not Frenzel Spitz."
+      },
+      {
+       "field": "descent_text",
+       "says": "From the col, the descent onto the north side drops into a broken couloir and glacier/moat terrain ... Parties commonly need one rappel ... Once back down into Crescent Creek Basin"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "the side that guards it from the north is sustained loose 5th class, so do not plan on reversing it that way"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The col-to-route connection on the Ottohorn-Himmelhorn col's north side crosses broken glacier and moat terrain"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Frenzel Spitz sits off the main chain near the Ottohorn's north side"
+      }
+     ],
+     "why": "The base finding says the roped north side leads away from Frenzel Spitz, while descent_text and seasonal_hazards put the route connection and the return to Crescent Creek Basin on that north side (which the approach calls the far side from camp).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent / rappel location and count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "2 rappels down the summit gully (or a single rappel with a 70m rope, or a 5.6 downclimb)"
+      },
+      {
+       "field": "descent_text",
+       "says": "Parties commonly need one rappel to get down the steepest ice/rock step directly below the col; a single 60m rope has been reported as sufficient"
+      },
+      {
+       "field": "descent",
+       "says": "Descend via the standard descent route, retracing the ascent when possible."
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      }
+     ],
+     "why": "The RAPPELS prose puts two raps (or one 70 m rap) in the summit gully while the descent prose puts one 60 m rap below the col.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Barrier difficulty",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "Loose, exposed low-5th-class ridge crossing over a moat"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "sustained Class 3 exposure on 'The Barrier' during the approach"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "sustained Class 3 scrambling up loose, grassy ledges to the Barrier crest"
+      },
+      {
+       "field": "obj_haz[2]",
+       "says": "exposed 4th-class approach terrain"
+      }
+     ],
+     "why": "The Barrier is rated Class 3, 4th class and low 5th in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crescent Creek Basin camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[5].elev",
+       "says": "5900"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "camp near 6,200 ft below the Ottohorn-Himmelhorn massif"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6050"
+      }
+     ],
+     "why": "The same camp is placed at 5,900, 6,050 and 6,200 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel on the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer rock route"
+      },
+      {
+       "field": "pro_needs",
+       "says": "plus standard glacier travel gear (axe, crampons, rope) for the connecting ridge/snowfield sections"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "lingering snow and short glacier crossings well into summer"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "crosses broken glacier and moat terrain - glacier edges near the col can be unable to hold body weight"
+      }
+     ],
+     "why": "The avalanche panel calls it non-glaciated while the rack and crevasse panels require glacier crossings.",
+     "internal_resolution": "Three fields describe glacier/moat terrain; the 'non-glaciated' label is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road seasonality",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Seasonal"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Winter closures"
+      },
+      {
+       "field": "access.closures",
+       "says": "SR-20 to the Goodell Creek/Newhalem trailhead is open year-round — the highway's seasonal winter closure gate is much farther east"
+      }
+     ],
+     "why": "GETTING THERE says the road is seasonal with winter closures; ACCESS says the trailhead is open year-round.",
+     "internal_resolution": "access.closures is specific and explains the gate location; road.status/seasonalGate are generic placeholders.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permit reservability and pickup",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "access.permit",
+       "says": "collect the printed/signed permit in person at the Wilderness Information Center in Marblemount (walk-up/email permits are not issued for this destination)"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance."
+      },
+      {
+       "field": "bivy[3].permit",
+       "says": "It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY"
+      }
+     ],
+     "why": "Fields disagree on whether the zone can be reserved, whether walk-up is allowed, and whether email permits are issued.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock quality",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[1]",
+       "says": "Enjoy the cluster's solid gneiss"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "chronically loose, rotten Pickets rock — significant rockfall danger"
+      },
+      {
+       "field": "gear[3]",
+       "says": "helmet — mandatory given chronic rockfall"
+      }
+     ],
+     "why": "A pro tip praises solid rock while hazards call it chronically loose and rotten.",
+     "internal_resolution": "hazards, gear and obj_haz agree the rock is loose; the pro tip is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which basin is the base for McMillan/Inspiration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles"
+      },
+      {
+       "field": "approach",
+       "says": "Terror Basin (the camp used for McMillan/Inspiration/Terror objectives)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Terror Basin is where the McMillan, Inspiration and Terror parties stop."
+      }
+     ],
+     "why": "The camping card names Crescent Creek Basin as the McMillan/Inspiration base while the approach names Terror Basin.",
+     "internal_resolution": "Approach and baseFinding agree on Terror Basin; bivy[0].notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance vs dist_km",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "14.48"
+      },
+      {
+       "field": "approach",
+       "says": "the ~18-mile round-trip distance"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~18 miles round trip"
+      }
+     ],
+     "why": "dist_km (9 mi) is one-way while the itinerary and approach give 18 mi round trip.",
+     "internal_resolution": "Summit waypoint distMi 9 shows dist_km is one-way; header shows itinerary miles.",
+     "needs_research": false
+    },
+    {
+     "fact": "Peak location vs col distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[7].lat/lng",
+       "says": "48.77638, -121.31694"
+      },
+      {
+       "field": "approach_logistics.peakLat/peakLng",
+       "says": "48.768, -121.288"
+      },
+      {
+       "field": "waypoints[6].lat/lng",
+       "says": "48.76273888888889, -121.28676666666667 (col)"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "9 (col at 8.5)"
+      }
+     ],
+     "why": "The summit pin sits ~2.3 km from the col pin and from approach_logistics' peak coordinate, while the prose/distMi put the summit ~0.5 mi from the col.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Days of approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "roughly 1.5-2 days each way"
+      },
+      {
+       "field": "itinerary.days[3].title",
+       "says": "Exit: back over the Barrier to the trailhead (single day)"
+      },
+      {
+       "field": "approach",
+       "says": "realistically a long day-and-a-half approach"
+      }
+     ],
+     "why": "Partner requirements say 1.5-2 days each way while the itinerary exits in one day.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_wild_hair_crack",
+   "name": "Wild Hair Crack",
+   "area": "Himmelhorn",
+   "contradictions": [
+    {
+     "fact": "County vs sheriff jurisdiction",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Whatcom County (nearest emergency services based in neighboring Skagit County towns)"
+      },
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "Skagit County Sheriff's Office non-emergency: (360) 416-1911"
+      }
+     ],
+     "why": "The EMERGENCY card places the route in Whatcom County but gives the Skagit County sheriff as dispatch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit reservation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "$6 non-refundable recreation.gov reservation fee for the required overnight camping"
+      },
+      {
+       "field": "access.closures",
+       "says": "cross-country zones without the advance-reservation quotas some other park zones have"
+      }
+     ],
+     "why": "Fees imply a required Recreation.gov reservation while closures say the zone has no advance-reservation quota.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crack size vs rack",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_needs",
+       "says": "Standard alpine trad rack sized for hand-to-fist cracks; the signature 12-inch crack (P2)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Single rack from 0.3\" to 2\""
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "The signature 12-inch-wide vertical crack"
+      }
+     ],
+     "why": "A rack to 2 in and 'hand-to-fist' sizing do not match a 12-inch-wide crack.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "name": "Stonehenge",
+   "area": "Himmelhorn",
+   "contradictions": [
+    {
+     "fact": "Pitch 2 dihedral: crux line vs dead end",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a crux hand-crack dihedral (5.10-) on pitch 2"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "Pitch 2's dihedral is a dead end — traverse left onto the face rather than following it up"
+      }
+     ],
+     "why": "Beta says the pitch-2 dihedral is the crux climbed; watch-out says not to follow it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "County vs sheriff jurisdiction",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Whatcom County (nearest emergency services based in neighboring Skagit County towns)"
+      },
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "Skagit County Sheriff's Office non-emergency: (360) 416-1911"
+      }
+     ],
+     "why": "County is Whatcom but dispatch is Skagit County sheriff.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent direction of the loose pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "descend via a notch between the summit tower and an adjacent pinnacle, then take one easy but loose pitch down toward the summit"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "The finishing pitch to the summit is easy but loose."
+      }
+     ],
+     "why": "Descent text describes descending 'toward the summit' with the same loose pitch hazards call the finishing (ascending) pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit reservation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "$6 non-refundable recreation.gov reservation fee for overnight camping"
+      },
+      {
+       "field": "access.closures",
+       "says": "Crescent Creek Basin is a cross-country zone without advance-reservation quotas"
+      }
+     ],
+     "why": "A reservation fee is listed for a zone said to have no advance reservations.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "name": "Southeast Route",
+   "area": "Himmelhorn",
+   "contradictions": [
+    {
+     "fact": "Rock grade / technical difficulty",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade IV, 5.8"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.8"
+      },
+      {
+       "field": "overview",
+       "says": "found a class 4 line up a ledge system onto the north/northwest face"
+      },
+      {
+       "field": "beta",
+       "says": "located a class-4 route ... The line is mostly scrambling with short steeper steps"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A light alpine rack is typical for this class-IV/low-5th line"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "scrambling to low 5th class"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "5.8 alpine rock climbing on unfamiliar, loose gneiss"
+      }
+     ],
+     "why": "The grade pill says 5.8 (Grade IV) while the prose, rack and climbing route describe class 4 / low 5th scrambling.",
+     "internal_resolution": "Overview, beta, detailed_rack, approach and climbing_route agree on class 4-low 5th; grade/rock_grade/partner 5.8 may belong to another line.",
+     "needs_research": true
+    },
+    {
+     "fact": "Aspect / side of the peak climbed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Southeast Route"
+      },
+      {
+       "field": "aspect",
+       "says": "NW"
+      },
+      {
+       "field": "face",
+       "says": "Northwest Aspect"
+      },
+      {
+       "field": "approach",
+       "says": "onto Himmelhorn's northwest flank to the 7,880 ft summit"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "Northwest flank from the Himmel-Otto col"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "continues up easier ground on Himmelhorn's southeast flank"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "then work up the southeast side to the summit"
+      }
+     ],
+     "why": "Aspect/face/approach say northwest flank while the itinerary and climbing_route note say southeast side (even within climbing_route[0]).",
+     "internal_resolution": "aspect, face, approach, label and approach_variants note agree on NW; the 'southeast' mentions echo the route name.",
+     "needs_research": true
+    },
+    {
+     "fact": "Stonehenge first-ascent year",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "the harder South Face \"Stonehenge\" (5.10-, 8 pitches, Schilling/Halder, 2015)"
+      },
+      {
+       "field": "(sister row wa_himmelhorn_stonehenge).fa",
+       "says": "Jason Schilling, Tim Halder — July 6, 2004"
+      }
+     ],
+     "why": "This overview dates Stonehenge to 2015 while its own route row says 2004.",
+     "internal_resolution": "Stonehenge row fa and beta both say July 2004.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no significant glacier travel on this route"
+      },
+      {
+       "field": "rope_note",
+       "says": "glacier approach then multi-pitch rock to a rappel descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "since they're already equipped for glacier travel"
+      }
+     ],
+     "why": "Crevasse panel says no glacier travel; rope note and descent text assume a glacier approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel count and line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "2"
+      },
+      {
+       "field": "rope_note",
+       "says": "rap/scramble to a false-summit notch, then rap the route"
+      },
+      {
+       "field": "descent_text",
+       "says": "downclimb (with short rappels where the rock steepens or is wet/icy) ... any rappels"
+      }
+     ],
+     "why": "A fixed count of 2 rappels vs a variable count and a false-summit-notch descent not mentioned elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Oct"
+      },
+      {
+       "field": "access.closures",
+       "says": "the route itself is only realistically climbable July–September"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "typically in reasonable condition July-September"
+      },
+      {
+       "field": "best_season",
+       "says": "early-fall storms often close the window by mid-September"
+      }
+     ],
+     "why": "The header season includes October while other fields end the season in September.",
+     "internal_resolution": "Four fields say Jul-Sep; season/approach_variants 'Jul-Oct' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permit method / pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue wilderness permit required for overnight, Northwest Forest Pass for day parking"
+      },
+      {
+       "field": "access.permit",
+       "says": "obtained in person (walk-up) or via advance reservation at the North Cascades NP Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance."
+      },
+      {
+       "field": "access.notes",
+       "says": "60% of sites are reservable in advance via Recreation.gov"
+      }
+     ],
+     "why": "Permit is described as self-issue, reservable, and walk-up only in different fields; the trailhead note adds a Northwest Forest Pass the NP access fields don't require.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crescent Creek Basin camp elevation / water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[5].elev",
+       "says": "6050"
+      },
+      {
+       "field": "waypoints[5].directions",
+       "says": "to the established basin camp at roughly 5,800 ft below Mt. Terror"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "camp on heather/slabs around 5,800 ft"
+      },
+      {
+       "field": "approach",
+       "says": "good bivy sites and reliable running water"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "reliable early-to-mid season but reported to thin out by late August in dry years"
+      }
+     ],
+     "why": "The camp waypoint's elev (6,050) disagrees with its own directions (5,800); approach calls water reliable while waypoints/bivy say it thins late season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day trip"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "typically 1.5-2 days each way"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "for at least a 3-4 day trip"
+      }
+     ],
+     "why": "The itinerary approaches in one day; partner requirements say 1.5-2 days each way.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "a small set of nuts and cams"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "rack to ~3in, doubles in common finger/hand sizes"
+      },
+      {
+       "field": "sling_rack.nuts",
+       "says": "full stopper set"
+      }
+     ],
+     "why": "PROTECTION shows a small set of nuts/cams while the sling rack shows doubles and a full stopper set.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Waypoint positions vs distances",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].lat/lng",
+       "says": "48.724046, -121.294397 (col gully, distMi 7.6)"
+      },
+      {
+       "field": "waypoints[7].lat/lng",
+       "says": "48.77639, -121.31472 (summit, distMi 7.9)"
+      },
+      {
+       "field": "waypoints[5].lat/lng",
+       "says": "48.720959, -121.293365 (camp)"
+      }
+     ],
+     "why": "The camp and col-gully pins sit ~6 km south of the summit yet distMi puts the summit 0.3 mi beyond the gully.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Inspiration Peak",
+   "contradictions": [
+    {
+     "fact": "Rope set-up and rappel count/length",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Rappel the ridge crest with a single 60m rope back to the glacier"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "single 60m rope"
+      },
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "First of the double-rope rappels"
+      },
+      {
+       "field": "rappel_detail[0..5].lengthM",
+       "says": "55"
+      },
+      {
+       "field": "rappel_detail[6].lengthM",
+       "says": "60"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "ending with a rappel of about 100 ft onto the glacier, and multiple parties report six full-length rappels on twin ropes"
+      },
+      {
+       "field": "descent_text",
+       "says": "roughly 5 rappels down the upper West Ridge on a single 60-70m rope ... roughly 9 more ... 12-14 rappels overall"
+      }
+     ],
+     "why": "The descent says a single 60 m rope while the rappel table lists 7 double-rope 55-60 m raps, climbing_route says 6 twin-rope raps ending with a 100 ft rap, and descent_text says 12-14 single-rope raps.",
+     "internal_resolution": "gear[4] and rappel_count_note reconcile it as two options (two ropes: ~7; one rope: 12-14); descent and summit-waypoint 'single 60m rope ... back to the glacier' contradict the table.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent line (West Ridge only vs West Ridge + South Face)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Rappel the ridge crest ... back to the glacier above the moat"
+      },
+      {
+       "field": "descent_text",
+       "says": "The standard descent from the summit goes down the West Ridge crest itself, then finishes down Inspiration's South Face"
+      },
+      {
+       "field": "overview",
+       "says": "This is also the standard descent line for parties finishing the East Ridge or South Face."
+      }
+     ],
+     "why": "One field says the standard descent is the West Ridge alone; descent_text says the standard descent finishes down the South Face.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel anchor state",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "anchors (3-pin, 2-pin, and nut stations) were reported fully replaced in June 2024"
+      },
+      {
+       "field": "descent_text",
+       "says": "some stations have been found tattered and worth backing up or replacing ... natural nut/cam anchors built on the spot"
+      },
+      {
+       "field": "rappel_detail[*].anchor",
+       "says": "natural gear anchor"
+      }
+     ],
+     "why": "RAPPELS says fixed pin stations were fully replaced in 2024; the rappel table lists only natural-gear anchors and descent_text says tattered/built-on-the-spot.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach line: Terror Basin + Terror Glacier vs Barrier + Crescent Creek Basin",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Camp is typically made just below this saddle in Terror Creek Basin ... up to the edge of Terror Glacier"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach to Terror Basin"
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "The Barrier crossing (distMi 8.3)"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Established camp under Mount Terror used as the staging basin for Inspiration Peak's west side"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "1-2 days of cross-country travel to reach the Crescent Creek basin camp"
+      }
+     ],
+     "why": "The waypoint list and partner requirements route the party over the Barrier into Crescent Creek Basin, while approach, itinerary, timing, bivy and approach_variants go from Terror Basin across the Terror Glacier.",
+     "internal_resolution": "approach, approach_variants, itinerary, timing, bivy (Terror Basin main, Crescent hidden) and what_to_bring agree on Terror Basin; waypoints[3-4] and partner_requirements are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Stone-arrow junction elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "3200"
+      },
+      {
+       "field": "approach",
+       "says": "passing the last reliable flowing water around 1,600 ft ... A cairned/stone-arrow junction"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "from about 500 to 1,600 ft"
+      }
+     ],
+     "why": "The junction waypoint is at 3,200 ft while the approach puts the roadbed end/junction near 1,600 ft.",
+     "internal_resolution": "Approach and variants agree on ~1,600 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "396"
+      },
+      {
+       "field": "overview",
+       "says": "about 1,300 vertical feet of sustained 5.6/5.7 climbing"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "sum 555 m (40+35+40+40+35+35+40+40+35+30+35+60+35+55)"
+      }
+     ],
+     "why": "The pitch table sums to ~555 m while length_m is 396 m (1,300 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Character of the 14 pitches",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb ~14 pitches of low-5th-class rock to the summit"
+      },
+      {
+       "field": "grade",
+       "says": "III, 5.7"
+      },
+      {
+       "field": "overview",
+       "says": "sustained 5.6/5.7 climbing"
+      }
+     ],
+     "why": "The itinerary calls it low-5th-class while grade/pitch table/overview say sustained 5.6-5.7.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and overview agree on 5.7.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux location and rock",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[7].notes",
+       "says": "A large, obvious corner capped by a short chimney ... the technical crux of the West Ridge"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "Sequence of exposed 5.7 steps on loose gneiss along the ridge crest below the summit block — the technical crux of the route"
+      },
+      {
+       "field": "pitch_detail[10].notes",
+       "says": "clean, solid granite typical of the upper mountain"
+      }
+     ],
+     "why": "The crux is the pitch-8 corner in one field and loose gneiss steps below the summit block in another; the upper rock is 'solid granite' vs 'loose gneiss'.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season start",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Route and approach still largely snowbound; not the intended season"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "typically dry and climbable July-September"
+      }
+     ],
+     "why": "The header season includes June while the seasonal guidance calls June risky and not the intended season.",
+     "internal_resolution": "best_season, optimalWindow and itinerary say mid-July to early September.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permit reservability",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].permit",
+       "says": "It is not one of the zones that takes advance reservations, so the permit is picked up in person."
+      },
+      {
+       "field": "access.permit",
+       "says": "Reserve on Recreation.gov — early-access lottery runs Mar 24-Apr 21"
+      },
+      {
+       "field": "access.notes",
+       "says": "(2026 lottery Mar 2–13)"
+      }
+     ],
+     "why": "Terror Basin is said to be non-reservable in the bivy card but reservable via a lottery in ACCESS, and the lottery dates differ between two ACCESS lines.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "~21 mi round trip"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "7.4 + 3.4 + 7.4 = 18.2"
+      },
+      {
+       "field": "dist_km",
+       "says": "11.9"
+      }
+     ],
+     "why": "The TOTAL note says ~21 mi while the days sum to 18.2 mi and dist_km is 7.4 mi one-way.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "most parties top out well before noon"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].time",
+       "says": "12:30 PM"
+      }
+     ],
+     "why": "Turnaround advice says parties top out well before noon while the schedule summits at 12:30 PM.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "name": "East Ridge",
+   "area": "Inspiration Peak",
+   "contradictions": [
+    {
+     "fact": "Rappel count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "5-8 rappels down the West Ridge (some parties add rappels down the South Face gully)"
+      },
+      {
+       "field": "descent",
+       "says": "about 14 rappels total"
+      },
+      {
+       "field": "rope_note",
+       "says": "Descent is 14 rappels (5 down the upper West Ridge, 9 down the South Face)"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "14 rows"
+      }
+     ],
+     "why": "RAPPELS prose says 5-8 while the descent, rope note and 14-row table say ~14.",
+     "internal_resolution": "descent, descent_text, itinerary, rope_note, rappel_detail and hazards agree on ~14 with a single 70 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count on the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "10"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "10 rows incl. 5.8, 5.9, 5.8"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb 4 pitches of 5.7 to gain the ridge crest followed by 4 more moderate pitches to the summit"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].detail",
+       "says": "4 pitches of 5.7 to the crest, 4 more to the top"
+      },
+      {
+       "field": "beta",
+       "says": "The route is graded III, 6 pitches, 800 ft"
+      }
+     ],
+     "why": "Itinerary says 8 pitches (omitting the 5.9 crux); beta quotes 6 pitches/800 ft/III; pitches and pitch_detail say 10.",
+     "internal_resolution": "pitches, pitch_detail, overview and totalNote agree on 10; beta frames 6/III as the published guidebook figure.",
+     "needs_research": false
+    },
+    {
+     "fact": "Start of the route (col with immediate exposure vs easy gullies from south-face base)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "From there the ridge climbing begins IMMEDIATELY with sustained exposure ... if the ground above you is scrambling terrain, you are not on the East Ridge."
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Rope up at the base of the south face and simul-climb broken gullies and vegetated ledges toward the notch"
+      },
+      {
+       "field": "overview",
+       "says": "The route starts at the base of the south face, gains a col to reach the ridge proper"
+      }
+     ],
+     "why": "The base finding says to walk to the east-end col where hard climbing starts immediately, while pitch 1-2 start at the south-face base on easy broken gullies.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock quality of the East Ridge",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "sustained, exposed, excellent rock"
+      },
+      {
+       "field": "approach_variants[0].hazards[2]",
+       "says": "Poorer, looser rock than the peak's other lines"
+      }
+     ],
+     "why": "The overview calls the rock excellent while the approach hazards call it poorer and looser than the other lines.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Final rappel length on a single rope",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "70"
+      },
+      {
+       "field": "rappel_detail[13].notes",
+       "says": "Final rappel to the Terror Glacier, typically using a full 60-70m rope length"
+      },
+      {
+       "field": "rappel_detail[13].pull",
+       "says": "One party used every bit of a 70 m rope on this final rappel"
+      }
+     ],
+     "why": "A single 70 m rope doubled gives ~35 m, so a 60-70 m rappel on the stated single rope is ambiguous.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cam doubles",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "doubles in the 1-2 inch range"
+      },
+      {
+       "field": "gear[2]",
+       "says": "cams .2-3in with doubled 2in and 3in sizes"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "doubled in 1-2 and 2-3"
+      }
+     ],
+     "why": "The doubled cam sizes differ between rack fields.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Grade III vs IV",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "IV, 5.9"
+      },
+      {
+       "field": "beta",
+       "says": "The route is graded III, 6 pitches, 800 ft"
+      }
+     ],
+     "why": "Beta quotes Grade III while the grade pill says IV.",
+     "internal_resolution": "beta itself explains parties rate the outing IV.",
+     "needs_research": false
+    },
+    {
+     "fact": "Zone closures",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[5]",
+       "says": "NPS has closed the Terror Basin cross-country zone in some seasons for wildlife activity"
+      },
+      {
+       "field": "access.closures",
+       "says": "None specific to this trailhead"
+      }
+     ],
+     "why": "Hazards mention seasonal NPS zone closures that ACCESS closures does not.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit reservability",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "reserve on Recreation.gov or get a walk-up permit"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Terror Basin is not one of the six zones that take advance reservations, so the permit is walk-up."
+      }
+     ],
+     "why": "ACCESS says reservable; the camping card says walk-up only.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance vs dist_km",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.9"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "7.4 + 6.2 + 7.4 = 21"
+      }
+     ],
+     "why": "dist_km (7.4 mi) is one-way to camp while the itinerary is 21 mi round trip.",
+     "internal_resolution": "Header uses itinerary miles.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_5",
+   "name": "South Face",
+   "area": "Inspiration Peak",
+   "contradictions": [
+    {
+     "fact": "First ascent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Bill Sumner and Mike Heath, June 18, probably 1969"
+      },
+      {
+       "field": "overview",
+       "says": "First ascent party/date not known."
+      },
+      {
+       "field": "partner_requirements.fitnessSpec",
+       "says": "12-hour round trip from high camp for the 1970 first-ascent party"
+      }
+     ],
+     "why": "The FA is named with 1969 in fa, called unknown in the overview, and dated 1970 in partner requirements.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "305"
+      },
+      {
+       "field": "overview",
+       "says": "about 600 ft (4 pitches) of clean rock"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "50+40+35+35 = 160 m"
+      },
+      {
+       "field": "rope_note",
+       "says": "Route climbs the 400ft 'Great Gash' corner/chimney system"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "crux is the ~400 ft 'Great Gash' (5.8)"
+      }
+     ],
+     "why": "Length is 305 m (1,000 ft), 600 ft, 160 m by pitches, and the gash alone is 400 ft though its pitches total 70 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ropes for the descent",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Bring two ropes. The stations recorded on this line sit roughly 60 m apart, and a single 70 m rope doubled reaches only about 35 m"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "70"
+      },
+      {
+       "field": "rope_type",
+       "says": "single dynamic"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Single dynamic rope"
+      },
+      {
+       "field": "rappel_detail[0..5].lengthM",
+       "says": "60"
+      }
+     ],
+     "why": "Kit fields specify one single 70 m rope while the descent requires two ropes for 60 m rappels.",
+     "internal_resolution": "rappel_count_note reconciles as two options (two ropes ~7 raps, one rope ~14), but the kit list shows only one rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Fixed anchors on the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "with no fixed or bolted stations anywhere on the peak — every anchor is built from gear"
+      },
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "no fixed anchors anywhere on this peak, station built fresh from gear"
+      },
+      {
+       "field": "rappel_detail[2].station",
+       "says": "A three-pin anchor at the start of the ridge"
+      },
+      {
+       "field": "rappel_detail[6].station",
+       "says": "off a slab anchor of two pins and a nut"
+      },
+      {
+       "field": "rappel_detail[0].hazards[0]",
+       "says": "some describe stations roughly a rope length apart on fixed pins, nuts and cord, reported replaced in mid-2024"
+      }
+     ],
+     "why": "The descent says there are no fixed anchors anywhere while the rappel table names pin anchors and replaced fixed stations.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Final rappel length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_detail[6].station",
+       "says": "The final rappel is short - about 100 ft"
+      },
+      {
+       "field": "descent_text",
+       "says": "the final rappel using nearly the full rope length to reach a flat spot on the ice"
+      }
+     ],
+     "why": "The final rappel is ~100 ft in the table but nearly a full rope length in the descent prose.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit zone",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permitZone",
+       "says": "North Cascades National Park Backcountry (Cascade Pass area)"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Terror Basin cross-country zone, from Marblemount."
+      }
+     ],
+     "why": "ACCESS files the permit under the Cascade Pass area while the camp is the Terror Basin cross-country zone.",
+     "internal_resolution": "bivy and all approach fields place camp in Terror Basin; Cascade Pass is a different part of the park.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permit reservability",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY"
+      }
+     ],
+     "why": "The permit line says reservable; the camping card says walk-up only.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp water source",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "A seasonal trickle down a rock outcrop a few hundred feet below camp is the water source early in the season; by late summer it can be dry"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "Meltwater off the snowfields above the basin, generally dependable while snow remains"
+      }
+     ],
+     "why": "Water is a trickle below camp in one field and snowmelt above the basin in another.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance vs dist_km",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.9"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "7.4 + 6 + 7.4 = 20.8"
+      }
+     ],
+     "why": "dist_km (7.4 mi) is one-way to camp while the itinerary is ~21 mi round trip.",
+     "internal_resolution": "Header uses itinerary miles.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "name": "Southwest Route",
+   "area": "Little Mac Spire",
+   "contradictions": [
+    {
+     "fact": "Size of the climb (9 pitches / 800 ft vs a short pitch)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "9"
+      },
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "beta",
+       "says": "Approximately 800 feet of climbing to summit"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Loose rock and exposure are hazards on this short moderate rock pitch above camp"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "stagger climbers on the short 5.4 pitch"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Quick objective from the basin camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "short additional scramble from the shared McMillan-area camp"
+      }
+     ],
+     "why": "Several fields call it a short single pitch / quick scramble while pitches, length, beta and itinerary describe 9 pitches and 800 ft over a 10-hour day.",
+     "internal_resolution": "pitches, length_m, beta, detailed_rack, descent_text and itinerary agree on ~800 ft / 9 pitches.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rock quality",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "technical alpine climbing with high-quality rock"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "on excellent but featureless rock"
+      },
+      {
+       "field": "gear[3]",
+       "says": "helmet (mandatory — loose rock throughout)"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "Southern Pickets rock is notoriously fractured here"
+      }
+     ],
+     "why": "Beta and itinerary praise excellent rock while gear, hazards and waypoints say it is loose throughout.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the base of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "staying on the McMillan side of the basin ... to reach the base of the southwest arête on Little Mac Spire, the smaller subsidiary spire just below/west of East McMillan Spire"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "traversing/ascending to the saddle east of East McMillan Spire before climbing"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "Traverse above Azure Lake to the base of the southwest arête."
+      }
+     ],
+     "why": "The approach puts the spire west of East McMillan from Terror Basin; the itinerary goes to a saddle east of East McMillan and traverses above Azure Lake (the far side of the spires).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbers' path junction elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "3200"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "the trail parallels the creek for an easy 4.5 miles, then gains roughly 4,700 ft in the final 2.5 miles ... to a 6,200 ft notch"
+      }
+     ],
+     "why": "The turn-off cairn is at 3,200 ft but the itinerary's 4,700 ft to a 6,200 ft notch puts it near 1,500 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit method",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "obtain it in person at the Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "permit",
+       "says": "reserve on Recreation.gov or walk-up"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov, then get the permit by email or in person"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Terror Basin camping (quota zone)"
+      }
+     ],
+     "why": "Terror Basin permits are described as in-person only, reservable online, emailable and walk-up only in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope purpose / descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "60m rope (for the short rappel off the horn if continuing the traverse)"
+      },
+      {
+       "field": "rack[3]",
+       "says": "30-60m single rope for the short rappel off the horn"
+      },
+      {
+       "field": "rope_note",
+       "says": "it is a multi-rappel back down the southwest arete itself"
+      },
+      {
+       "field": "rappels",
+       "says": "3"
+      }
+     ],
+     "why": "Gear implies the rope is only for the optional traverse rappel (30 m would do), while the descent is a multi-rappel on the arête needing a 60 m.",
+     "internal_resolution": "descent, descent_text and rope_note agree on a multi-rappel descent with a 60 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "4:30 AM leave camp ... ~4:30 PM back at camp"
+      }
+     ],
+     "why": "The schedule spans 12 hours while the day is listed at 10.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Cell coverage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "comms",
+       "says": "Cell service is spotty in Terror Basin"
+      },
+      {
+       "field": "hazards[6]",
+       "says": "no cell coverage — multi-day self-rescue if injured"
+      }
+     ],
+     "why": "Comms says spotty coverage; hazards say none.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which basin serves Terror/Chopping Block",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "rather than continuing toward Crescent Creek Basin/the Barrier, which serves Terror/Chopping Block-side objectives"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here [Terror Basin]"
+      }
+     ],
+     "why": "The approach assigns Terror/Chopping Block objectives to Crescent Creek Basin; the camp card assigns them to Terror Basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Peak coordinate",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.peakLat/peakLng",
+       "says": "48.768, -121.288"
+      },
+      {
+       "field": "waypoints[7].lat/lng",
+       "says": "48.7737, -121.2762"
+      }
+     ],
+     "why": "approach_logistics places the peak ~1 km from the summit waypoint/area coordinate.",
+     "internal_resolution": "The summit waypoint matches the area coordinate.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

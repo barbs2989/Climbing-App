@@ -1,0 +1,128 @@
+{
+ "applied": [
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Where the ~100 switchbacks are"
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Character of the summit scramble"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Whether parties rope up"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "before": {
+    "beta": "From High Bridge the trail passes Howard Lake, climbs a long, hot, dusty switchback up an open southwestern shoulder, then drops into subalpine fir/pine forest and crosses a clear creek before reaching the lower of two glacial cirques on a rocky, sandy moraine. Heaton Camp (~6,700 ft), the only established camp, sits just above the terminal moraine. Nearly 100 more switchbacks over about a third of a mile bring hikers to a rocky outcropping where the maintained trail ends. From there a talus slope leads to the base of the summit; the scramble is 'not particularly technical' but steep, with loose footing and real exposure in places, marked by faint red paint arrows, and crosses a snowfield above the Sandalee Glacier before reaching the old fire-lookout site and the radio tower at the true summit.",
+    "approach_variants": [
+     {
+      "name": "High Bridge and the McGregor Mountain Trail",
+      "notes": "There is no road to the bottom of this one — Stehekin is reached by boat, floatplane or the long trail in, and from Stehekin Landing the valley road runs eleven miles up to its end at High Bridge, walkable, bikeable or by shuttle. From High Bridge the tread heads north on the old wagon grade and the Pacific Crest Trail, climbs steadily to Howard Lake, and reaches the signed McGregor Mountain junction a short way past the lake, just before the crest trail tips over and starts back downhill. Howard Lake is reliable water and a useful confirmation you are on route; if you are losing elevation you have walked past the junction. Above the junction the trail winds behind the lake, commits to one long switchback across a hot, dusty open slope, and then settles into a relentless grind — close to a hundred switchbacks up an open southwest-facing shoulder with essentially no shade. A seasonal falls off a short scramble path near the first big viewpoint is worth the detour, because water is scarce from there on. The trail crosses a clear creek, reaches the lower of two glacial cirques on rocky, sandy moraine, and ends at Heaton Camp just above the terminal moraine among larches, where a snowmelt stream a short way below camp is the last dependable water. Above camp another set of tight switchbacks ends at a rocky outcropping and the maintained trail simply stops.",
+      "season": "August into early September is the reliable window, once the talus and the shelf above the glacier have melted out. Carry an axe if snow still lies on either.",
+      "hazards": [
+       "roughly a vertical mile of gain from the valley floor with almost no shade and no dependable water below Heaton Camp",
+       "loose gravel on slab directly above significant exposure on the summit ledges — the descent is the more dangerous half",
+       "route-finding, not climbing difficulty, is the real crux above the trail's end",
+       "a snowfield and talus shelf above the Sandalee Glacier that can hold firm snow into midsummer",
+       "no road access to the trailhead itself, so an injured party is a long way from help"
+      ],
+      "baseFinding": "A PAINTED RED ARROW ON ONE LARGE BOULDER IS THE PROOF. Where the maintained tread ends at the rocky outcropping above Heaton Camp, talus leads on toward the summit block. Out in the middle of that boulder field, one large rock carries a big bright red arrow painted on it pointing uphill, and from that rock more arrows are visible above it in a chain running up the ledges. Find that first arrow before you commit to any line. The marked route loops right, then back left behind a lower sub-summit, crosses a snowfield and talus shelf above the Sandalee Glacier, and finishes along a fairly level shoulder past an old radio installation to the true summit, where a park radio repeater now stands on the site of the old lookout. If you are working up talus and cannot see a painted arrow anywhere above you, you have not found the route yet — do not improvise a line, because the ground gets noticeably worse off the arrows and gravelly slab sits directly above serious drops. A second check: on the marked line there are no climbing moves, only the occasional handhold for balance on a narrow ledge. If you are pulling on rock to make upward progress, you are off the arrows."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "North Cascades NP requires a backcountry permit for camping at Fisher Overlook/Silent Lakes year-round; about 60% of sites are reservable in advance on recreation.gov, the rest are walk-up, and reserved trips request their permit by email no more than three days before the start date.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Easy Pass Trail to the pass (~2.3 hr, +2,800 ft), then drop about 1,300 ft into Fisher Creek Basin where the trail fades into cross-country travel through meadows past a big waterfall. Continue up the obvious gully to camp at Upper Silent Lake, with views across to Black Peak.",
+       "hours": 7.4,
+       "miles": 7.2,
+       "title": "Approach to Silent Lakes camp",
+       "gainFt": 5600,
+       "lossFt": 2400,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Upper Silent Lakes camp (~7,000 ft)"
+      },
+      {
+       "n": 2,
+       "note": "A short but exposed scramble day from camp: gain the south ridge/gully-ledge system, cross a notch around 7,800 ft, and finish on loose class 3 (occasional class 4) terrain to the true (west) summit. Reverse the same line back to camp.",
+       "hours": 5.3,
+       "miles": 2.5,
+       "title": "Summit day: Mount Arriva, South Ridge",
+       "gainFt": 1900,
+       "lossFt": 1900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave Silent Lakes camp",
+         "detail": "Good-weather parties start at first light; the documented 2019 ascent was weather-delayed to 11:45 AM after overnight rain."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Reach ~7,800 ft notch",
+         "detail": "Loose rock and exposed ledges; some parties rope up here for the finish."
+        },
+        {
+         "time": "+2.9 hr from camp",
+         "label": "Summit (8,215 ft)",
+         "detail": "Matches documented ascent time from a Silent Lakes camp."
+        },
+        {
+         "time": "",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line back through the notch."
+        },
+        {
+         "time": "+2.4 hr from summit",
+         "label": "Back at Silent Lakes camp",
+         "detail": "Rest and refill water before the exit day."
+        }
+       ],
+       "objective": "Climb Mount Arriva (8,215 ft) via the south ridge and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the approach: down through Fisher Creek Basin, back up and over Easy Pass, then down to the trailhead. Parties exiting from a lower Fisher Overlook camp report this leg in as little as 4.3 hours; expect longer from the higher Silent Lakes camp.",
+       "hours": 6.5,
+       "miles": 7.2,
+       "title": "Exit to trailhead",
+       "gainFt": 2400,
+       "lossFt": 5600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike out to the Easy Pass Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, roughly 14-16 mile round trip: about 5,600 ft of cumulative approach gain to a Silent Lakes camp at 7,000 ft, a short ~5 hr summit day on Arriva's south ridge (1,900 ft round trip), and a full day to hike back out; strong parties sometimes compress the summit push and exit into one long day, or extend the trip to also tag Fisher Peak."
+    }
+   }
+  }
+ ]
+}

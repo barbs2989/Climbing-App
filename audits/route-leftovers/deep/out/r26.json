@@ -1,0 +1,138 @@
+{
+ "results": [
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "item": "1 - overview: 'both needles first climbed together on Aug 17 1932'",
+   "verdict": "confirmed",
+   "resolution": "Settled by an independent second source: the 1932 party's own first-hand account. One replace_text on overview fixes only that sentence. It says the 1932 party climbed West Twin, and that East Twin was not climbed on that trip and was first climbed later. No year is given for East Twin, because 1968 rests on one lineage (the 1981 guide plus the 1969 journal note).",
+   "summary": "The 1932 party's own published account says that on August 17 they climbed only the western needle, and the first-ascent record gives East Twin to a later party. So the overview's 'both needles first climbed together in 1932' is corrected to say the 1932 party climbed West Twin Needle.",
+   "evidence": "NEW SOURCE: The Mountaineer annual, vol. 25 no. 1 (December 1932), 'Ten Days on Mount Terror' by H. V. Strandberg, pp. 21-26. The full PDF was read from an archived copy of the club's annual-archive page (Wayback, 2025-04-15). The party (James C. Martin, Wm. A. Degenhardt and the author) left Newhalem and camped in Crescent Creek Basin. On p. 25: 'A little more than a half mile to the east are the two needles which stand so prominently against the sky ... On August 17, we climbed the one to the west.' They climbed a long diagonal chimney, about six hours from the glacier, and used tennis shoes for the final 800 ft. The account then describes their ascent of Mount Terror and never claims the eastern needle. It also says they 'saw no signs of anyone having been around these mountains before us', so nobody had climbed East Twin before 1932 either. ALREADY KNOWN (r24), an independent lineage: the 1981 regional alpine guide (North Cascades volume) gives East Twin Needle's first ascent to the 1968 West Twin Needle party, citing the 1969 American Alpine Journal, whose note says an earlier credited first ascent of the East Needle was in error. The two records do not depend on each other: one is the 1932 climbers' own report, the other the 1968 party's record and the guide built on it. Both say the 1932 party did not climb East Twin. Also read this pass, and neutral: the 1962 AAJ 'First Ascents in the Southern Pickets' says only that 'the Twin Needles had been climbed'. The 2023 AAJ North Buttress note gives no history. Wikipedia's Twin Needles page repeats the 'pair climbed in 1932' wording, which is the error being corrected. The year 1968 has one lineage only, so the new sentence does not state it. The new text names the 1932 climbers, as the old sentence did, and names no source.",
+   "sources": [
+    "http://web.archive.org/web/20250415000057/https://www.mountaineers.org/about/history/the-mountaineer-annuals/indexes-annuals-maps/the-mountaineer-1932",
+    "Cascade Alpine Guide: Rainy Pass to Fraser River (1981), East Twin Needle entry, via Internet Archive full-text search (r24)",
+    "American Alpine Journal 1969, Southern Pickets note (same lineage as the guide; r24)",
+    "http://publications.americanalpineclub.org/articles/12196206500/ (neutral)"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "overview",
+     "path": [],
+     "find": "Both needles were first climbed together on August 17, 1932 by William Degenhardt, James Martin, and Herb Strandberg.",
+     "replace": "William Degenhardt, James Martin, and Herb Strandberg made the first ascent of West Twin Needle on August 17, 1932. East Twin Needle was not climbed on that trip, and its first ascent came later."
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "item": "2 - commitment IV, fa, crux 5.11d-5.12a: independent account",
+   "verdict": "unresolved",
+   "resolution": "No op. No independent account of King Kong turned up. Every record of the route still comes from the first ascensionist. The live row already holds what the owner applied by hand (fa Wertkin & Johnson with the FFA by Wertkin & Gleason, commitment IV, crux 5.11d-5.12a), and nothing found contradicts any of it.",
+   "summary": "No repeat ascent, guidebook entry or magazine note independent of the first ascensionist could be found for King Kong, so its first-ascent line, IV commitment and 5.11d-5.12a crux still rest on his accounts alone. Nothing found disagrees with them.",
+   "evidence": "Live row re-read 2026-10-01: grade/rock_grade/pitch 8 '5.11d-5.12a', commitment 'IV', fa 'Sol Wertkin & Tyree Johnson, September 2016 (first free ascent: Sol Wertkin & Jon Gleason, September 9, 2016)'. NEW this pass, all either negative or the same lineage: (1) Alpinist newswire 'Mount Stuart Activity' (2011, updated 2023) covers Gorillas in the Mist and Gorillas Direct only, with no King Kong. (2) Climbing magazine news item 'Beautiful Cascades Testpiece Free-Climbed' (archived copy, since the live page redirects to a login) covers the 2009 Gorillas in the Mist only. (3) Mountain Project forum thread 'Mt Stuart - Gorillas in the Mist options' (2022): one post suggests 'the direct King Kong finish', with no grade and no claimed ascent. (4) The route database's statistics page (archived Sept 2025) shows the posted grade 5.12a and 5 star votes, but no independent ticks or grade opinions are visible. The posted grade comes from the page the first ascensionist shared, so it is the same lineage. (5) Web searches for second ascent, repeat, trip report, CascadeClimbers thread and the Puryear memorial name return only the AAJ 2017 note, the FA blog and the route database page, all already known as one author. The login-gated climbing-news page was not bypassed.",
+   "sources": [
+    "https://alpinist.com/newswire/mount-stuart-activity/",
+    "https://web.archive.org/web/2024/https://www.climbing.com/news/beautiful-cascades-testpiece-free-climbed/",
+    "https://www.mountainproject.com/forum/topic/122931727/mt-stuart-gorillas-in-the-mist-options",
+    "https://web.archive.org/web/20250911213827/https://www.mountainproject.com/route/stats/112249646/king-kong-gorillas-direct-direct"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_e_se_face",
+   "item": "3 - Southeast Face 5.6 second source; rappel slings on the tower",
+   "verdict": "unresolved",
+   "resolution": "No op. Eleventh pass. Nothing new gives a second account of the one-pitch 5.6 Southeast Face, and nothing new speaks to rappel slings on the tower. r23's proposed_ops_held removal of the 'rappel slings on this line' parenthetical is still the ready owner option (the live text still holds that clause). Owner options A/B/C are unchanged.",
+   "summary": "Still no second source for the Witches Tower Southeast Face 5.6, and none for rappel slings on the tower; the row stays for the owner, with the one-clause slings removal still ready from the earlier pass.",
+   "evidence": "Tried list rebuilt from r3, r6, r9, r12, r15, r17, r20, r23 and s3. NEW this pass, all negative: (1) An exact-phrase web search for 'Witches Tower' plus 'southeast face' plus Enchantments and 5.6 returns only the peak page that copies the guidebook ('The Southeast Face goes up the white rock one pitch 5.6'), Wikipedia, and komoot highlights. All five komoot highlights returned were read, and every one is a European 'Witch Tower' (Bergheim, Bremgarten and others), not this peak. (2) A search for Aasgard Pass with Dragontail, rappel and trip report returns only already-tried pages: the peak page and its climbers' log, the club's Southwest Corner page and the Wenatchee Outdoors 2016 page (r15). Two others are new but negative: a 2022 Dragontail blog that names the tower only as scenery, and a video. The search engine's summary repeats the 'rappel slings on the descent to the base of Witches Tower' line, which traces to the 2019 climbers'-log entry. r20 showed those slings are on Dragontail's east ridge, not the tower. Nothing new.",
+   "sources": [
+    "https://www.komoot.com/highlight/6878173 (and four sibling highlights, all European towers)",
+    "https://www.francisbaileyh.com/2022/07/01/dragontail-peak/"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "item": "4 - parking pass at the FR6517 pull-off (applied earlier by hand on one spot source + fee law)",
+   "verdict": "unresolved",
+   "resolution": "No op, but this is a FLAG FOR THE OWNER. The value the owner applied ('No pass needed at the FR6517 road-end parking...') rested on one spot-level source (the peak page's Red Tape: 'No parking pass is required for this area') plus fee law. This pass found a second spot-level source that says the OPPOSITE: the climbing club's Eagle Rock route page lists 'Parking Permit Required: Northwest Forest Pass'. So the two sources that speak to this route's parking now disagree, and neither side has two. Under the README's own asymmetry (a wrong 'no pass' costs a climber a ticket; a wrong 'pass required' costs nothing), the owner may want to revert to a pass-required wording. No op is written, because neither value has two independent spot sources.",
+   "summary": "The 'no pass needed' value applied to Eagle Rock earlier is now contradicted: the climbing club's route page for Eagle Rock says a Northwest Forest Pass is required, while the peak page says none is. With the two sources split, the owner should decide whether to go back to a pass-required wording.",
+   "evidence": "Live row re-read 2026-10-01: access.passRequired = 'No pass needed at the FR6517 road-end parking, an undeveloped pull-off; a Northwest Forest Pass (or America the Beautiful pass) applies only at developed trailheads.' (from patches-eagle.json; sources: the SummitPost page, 16 USC 6802 and the MBS passes page). NEW: The Mountaineers 'Eagle Rock' route/place page (archived 2026-04-16), 'A moderate alpine scramble in the Beckler River area, north of the town of Skykomish on Highway 2', 1,400 ft gain, high point 5,615 ft, so the same peak. It reads 'Land Manager: Mount Baker-Snoqualmie National Forest Wild Sky Wilderness, Skykomish Ranger District' and 'Parking Permit Required: Northwest Forest Pass'. Caveat: the club's pages give a 4.0 mi length (against the row's ~0.8 mi one way), so it may assume a lower start, or simply carry the club's default field. Either way it is a statement about this route that conflicts with the applied value. Also tried: the 2002 WTA Eagle Rock trip report (403, and no archive capture).",
+   "sources": [
+    "https://web.archive.org/web/20260416195904/https://www.mountaineers.org/activities/routes-places/eagle-rock",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/eagle-rock/805280 (already used)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_half_fast",
+   "item": "4 - parking pass at the Half Moon Crag Tye Road pull-off",
+   "verdict": "unresolved",
+   "resolution": "No op. access.passRequired is still 'Recreation pass' (re-read live). No source speaks to a pass at the Tye Road pull-off below Half Moon Crag. The held op in held-v010/v011 (to a no-pass value) still rests on fee law and the land manager's fee-site list, not on a statement about the spot.",
+   "summary": "Still no source says whether a pass is needed at the Tye Road pull-off below Half Moon Crag, so the pass claim on this row is left as it is.",
+   "evidence": "Ninth pass on the Half Moon five (r4, r7, r10, r14, r16, r19, r22 before). NEW this pass: (1) The crag's route-database area page (archived 2025): its Getting There describes the pull-off 'just uphill of the double hairpin turn (about 1.4 miles from US2)' and the faint trail, with no word on any pass. It points readers to a weekend-rock guidebook, already found to name no pass (r14). (2) A web search for Half Moon crag with Tye Road, Stevens Pass and the pass names returns only general pass pages (land manager, hiking association, club leader resources, the state wildlife department, regional magazines) and the crag page; none names this pull-off. The asymmetry from section 6 still holds: a wrong 'no pass' costs a climber a ticket.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "item": "4 - parking pass at the Half Moon Crag Tye Road pull-off",
+   "verdict": "unresolved",
+   "resolution": "No op. access.passRequired is still 'Recreation pass' (re-read live). No source speaks to a pass at the Tye Road pull-off below Half Moon Crag. The held op in held-v010/v011 (to a no-pass value) still rests on fee law and the land manager's fee-site list, not on a statement about the spot.",
+   "summary": "Still no source says whether a pass is needed at the Tye Road pull-off below Half Moon Crag, so the pass claim on this row is left as it is.",
+   "evidence": "Ninth pass on the Half Moon five (r4, r7, r10, r14, r16, r19, r22 before). NEW this pass: (1) The crag's route-database area page (archived 2025): its Getting There describes the pull-off 'just uphill of the double hairpin turn (about 1.4 miles from US2)' and the faint trail, with no word on any pass. It points readers to a weekend-rock guidebook, already found to name no pass (r14). (2) A web search for Half Moon crag with Tye Road, Stevens Pass and the pass names returns only general pass pages (land manager, hiking association, club leader resources, the state wildlife department, regional magazines) and the crag page; none names this pull-off. The asymmetry from section 6 still holds: a wrong 'no pass' costs a climber a ticket.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_astroglide",
+   "item": "4 - parking pass at the Half Moon Crag Tye Road pull-off",
+   "verdict": "unresolved",
+   "resolution": "No op. access.passRequired is still 'Recreation pass' (re-read live). No source speaks to a pass at the Tye Road pull-off below Half Moon Crag. The held op in held-v010/v011 (to a no-pass value) still rests on fee law and the land manager's fee-site list, not on a statement about the spot.",
+   "summary": "Still no source says whether a pass is needed at the Tye Road pull-off below Half Moon Crag, so the pass claim on this row is left as it is.",
+   "evidence": "Ninth pass on the Half Moon five (r4, r7, r10, r14, r16, r19, r22 before). NEW this pass: (1) The crag's route-database area page (archived 2025): its Getting There describes the pull-off 'just uphill of the double hairpin turn (about 1.4 miles from US2)' and the faint trail, with no word on any pass. It points readers to a weekend-rock guidebook, already found to name no pass (r14). (2) A web search for Half Moon crag with Tye Road, Stevens Pass and the pass names returns only general pass pages (land manager, hiking association, club leader resources, the state wildlife department, regional magazines) and the crag page; none names this pull-off. The asymmetry from section 6 still holds: a wrong 'no pass' costs a climber a ticket.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "item": "4 - parking pass at the Half Moon Crag Tye Road pull-off",
+   "verdict": "unresolved",
+   "resolution": "No op. access.passRequired is still 'Recreation pass' (re-read live). No source speaks to a pass at the Tye Road pull-off below Half Moon Crag. The held op in held-v010/v011 (to a no-pass value) still rests on fee law and the land manager's fee-site list, not on a statement about the spot.",
+   "summary": "Still no source says whether a pass is needed at the Tye Road pull-off below Half Moon Crag, so the pass claim on this row is left as it is.",
+   "evidence": "Ninth pass on the Half Moon five (r4, r7, r10, r14, r16, r19, r22 before). NEW this pass: (1) The crag's route-database area page (archived 2025): its Getting There describes the pull-off 'just uphill of the double hairpin turn (about 1.4 miles from US2)' and the faint trail, with no word on any pass. It points readers to a weekend-rock guidebook, already found to name no pass (r14). (2) A web search for Half Moon crag with Tye Road, Stevens Pass and the pass names returns only general pass pages (land manager, hiking association, club leader resources, the state wildlife department, regional magazines) and the crag page; none names this pull-off. The asymmetry from section 6 still holds: a wrong 'no pass' costs a climber a ticket.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_artic_rose",
+   "item": "4 - parking pass at the Half Moon Crag Tye Road pull-off",
+   "verdict": "unresolved",
+   "resolution": "No op. access.passRequired is still 'Recreation pass' (re-read live). No source speaks to a pass at the Tye Road pull-off below Half Moon Crag. The held op in held-v010/v011 (to a no-pass value) still rests on fee law and the land manager's fee-site list, not on a statement about the spot.",
+   "summary": "Still no source says whether a pass is needed at the Tye Road pull-off below Half Moon Crag, so the pass claim on this row is left as it is.",
+   "evidence": "Ninth pass on the Half Moon five (r4, r7, r10, r14, r16, r19, r22 before). NEW this pass: (1) The crag's route-database area page (archived 2025): its Getting There describes the pull-off 'just uphill of the double hairpin turn (about 1.4 miles from US2)' and the faint trail, with no word on any pass. It points readers to a weekend-rock guidebook, already found to name no pass (r14). (2) A web search for Half Moon crag with Tye Road, Stevens Pass and the pass names returns only general pass pages (land manager, hiking association, club leader resources, the state wildlife department, regional magazines) and the crag page; none names this pull-off. The asymmetry from section 6 still holds: a wrong 'no pass' costs a climber a ticket.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

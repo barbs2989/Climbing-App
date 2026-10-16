@@ -1,0 +1,426 @@
+{
+ "wa_earl_peak_southwest_ridge": {
+  "area_id": "wa_earl_peak",
+  "confidence": "high",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Teanaway Road (N. Fork Teanaway River Rd, paved to ~29 Pines Campground) to gravel FR-9737, then FR-9737-112 (Beverly Creek Road)",
+     "status": "Gravel and summer-passable in normal years, but the FR-9737-112 spur and trailhead have been closed under Forest Service order 06-17-03-2026-14 (Labor Mountain Fire damage, May 20 through December 31, 2026 unless rescinded sooner); that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026), but the Cle Elum Ranger District road table dated September 8, 2026 still lists FR 9737-112 closed for the Labor Mountain Fire",
+     "driveNote": "Final mile-plus on FR-9737-112 is a rough one-lane road with brush close on both sides; high clearance recommended. Turn right onto FR-9737-112 just before the road would cross Beverly Creek.",
+     "seasonalGate": "Snow closure in winter/spring; additionally closed in 2026 due to Labor Mountain Fire damage"
+    },
+    "value": {
+     "name": "Teanaway Road (N. Fork Teanaway River Rd, paved to ~29 Pines Campground) to gravel FR-9737, then FR-9737-112 (Beverly Creek Road)",
+     "status": "Closed to vehicles in 2026: FR-9737-112 washed out and is barricaded at the bottom, as the Cle Elum Ranger District's trail crew reported on September 25, 2026, and the Forest Service's Cle Elum road table dated September 8, 2026 also lists it closed. The trails beyond it are open again; walk the final mile-plus of the spur to the trailhead",
+     "driveNote": "Turn right onto FR-9737-112 just before the road would cross Beverly Creek. In 2026 the spur is barricaded at the bottom after a washout, so park near the junction (room is tight by the bridge and the curves; never block the barricade) and walk its final mile-plus, a rough one-lane road, to the trailhead.",
+     "seasonalGate": "Snow closure in winter/spring; in 2026 the FR-9737-112 spur is also closed to vehicles after a washout"
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass ($5/day or $30/annual) required at the trailhead",
+     "rules": "Leave No Trace; Alpine Lakes Wilderness group-size and camping rules apply on the upper mountain",
+     "permit": "Free self-issued wilderness permit required at the trailhead signboard where the route crosses into the Alpine Lakes Wilderness boundary; no day-use quota",
+     "closures": "Beverly Creek Road (FSR 9737-112), Beverly Turnpike Trail #1391, and Bean Creek Trail #1391.1/.2 — the entire standard approach to Earl Peak — have been closed under Forest Service order 06-17-03-2026-14, a fire-damage closure tied to the 2025 Labor Mountain Fire (~43,000 acres, Cle Elum/Wenatchee River Ranger Districts), effective May 20 through December 31, 2026 unless rescinded sooner. That order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026), while the Cle Elum Ranger District road table dated September 8, 2026 still lists FR 9737-112 closed for the Labor Mountain Fire; confirm current status with Cle Elum Ranger District (509-852-1100) before heading out. Beyond the fire closure, Teanaway roads are also snow-gated in winter/spring.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+     }
+    },
+    "value": {
+     "fees": "Northwest Forest Pass ($5/day or $30/annual) required at the trailhead",
+     "rules": "Leave No Trace; Alpine Lakes Wilderness group-size and camping rules apply on the upper mountain",
+     "permit": "Free self-issued wilderness permit required at the trailhead signboard where the route crosses into the Alpine Lakes Wilderness boundary; no day-use quota",
+     "closures": "The Labor Mountain Fire closure order (06-17-03-2026-14) on the Beverly Turnpike and Bean Creek trails has been lifted, as the Cle Elum Ranger District's trail crew reported on September 25, 2026. Beverly Turnpike has been logged out to the Fourth Creek junction, but the Bean Creek Trail still has trees down and is overgrown in places, and both trails run through burned forest where dead trees can fall and many campsites, including those in Bean Basin, burned. FR 9737-112 remains closed to vehicles after a washout, so the approach begins with a mile-plus road walk. Beyond that, Teanaway roads are snow-gated in winter/spring.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+     }
+    }
+   },
+   "itinerary": {
+    "expect": {
+     "cal": "The Beverly Turnpike/Bean Creek trail is closed indefinitely due to Labor Mountain Fire damage as of the most recent trip report -- check current Forest Service status before planning.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard approach starts at the Beverly Turnpike Trailhead (3,600 ft), follows Trail #1391 then forks right up the Bean Creek drainage (1391A) to Earl Pass (6,200 ft) on the Bean/Standup Creek divide. From the pass, pick up intermittent tread on the southwest ridge and follow it up class 2 terrain to the 7,036 ft summit, with views to Mount Stuart and the Stuart Range. Descend by reversing the same ridge and trail.",
+       "hours": 8,
+       "miles": 7.5,
+       "title": "Car-to-car via Bean Creek / Beverly Turnpike Trail and Earl Pass",
+       "gainFt": 3650,
+       "lossFt": 3650,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Beverly Turnpike Trailhead",
+         "detail": "Trail #1391, then right fork onto 1391A up Bean Creek drainage."
+        },
+        {
+         "time": "+3 to 3.5 hr",
+         "label": "Reach Earl Pass (6,200 ft)",
+         "detail": "Steady climb with switchbacks as the trail steepens approaching the pass; designated tent sites here for parties who choose to camp."
+        },
+        {
+         "time": "+1 to 1.5 hr",
+         "label": "Southwest Ridge scramble to summit",
+         "detail": "Intermittent boot tread, class 2 scrambling on the ridge crest to the 7,036 ft high point."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit break",
+         "detail": "Views of Mount Stuart, the Stuart Range, and on clear days Mount Rainier."
+        },
+        {
+         "time": "Early-mid afternoon",
+         "label": "Descend, reversing the ascent route",
+         "detail": "Ridge back to Earl Pass, then trail back down Bean Creek drainage."
+        },
+        {
+         "time": "~3:30-4:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Total car-to-car time roughly 7-9 hours depending on pace and break length."
+        }
+       ],
+       "objective": "Summit Earl Peak via the Southwest Ridge and return same day"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: about 7.5 miles round trip with 3,650 ft of gain, typically 7-9 hours including a summit break; no camping needed for the standard trip."
+    },
+    "value": {
+     "cal": "The Labor Mountain Fire closure on the Beverly Turnpike and Bean Creek trails has been lifted, as the Cle Elum Ranger District's trail crew reported on September 25, 2026, but FR 9737-112 is washed out and closed to vehicles: add a mile-plus road walk each way, and expect burned forest, downed trees and overgrown tread on the Bean Creek Trail.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard approach starts at the Beverly Turnpike Trailhead (3,600 ft), follows Trail #1391 then forks right up the Bean Creek drainage (1391A) to Earl Pass (6,200 ft) on the Bean/Standup Creek divide. From the pass, pick up intermittent tread on the southwest ridge and follow it up class 2 terrain to the 7,036 ft summit, with views to Mount Stuart and the Stuart Range. Descend by reversing the same ridge and trail.",
+       "hours": 8,
+       "miles": 7.5,
+       "title": "Car-to-car via Bean Creek / Beverly Turnpike Trail and Earl Pass",
+       "gainFt": 3650,
+       "lossFt": 3650,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Beverly Turnpike Trailhead",
+         "detail": "Trail #1391, then right fork onto 1391A up Bean Creek drainage."
+        },
+        {
+         "time": "+3 to 3.5 hr",
+         "label": "Reach Earl Pass (6,200 ft)",
+         "detail": "Steady climb with switchbacks as the trail steepens approaching the pass; designated tent sites here for parties who choose to camp."
+        },
+        {
+         "time": "+1 to 1.5 hr",
+         "label": "Southwest Ridge scramble to summit",
+         "detail": "Intermittent boot tread, class 2 scrambling on the ridge crest to the 7,036 ft high point."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit break",
+         "detail": "Views of Mount Stuart, the Stuart Range, and on clear days Mount Rainier."
+        },
+        {
+         "time": "Early-mid afternoon",
+         "label": "Descend, reversing the ascent route",
+         "detail": "Ridge back to Earl Pass, then trail back down Bean Creek drainage."
+        },
+        {
+         "time": "~3:30-4:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Total car-to-car time roughly 7-9 hours depending on pace and break length."
+        }
+       ],
+       "objective": "Summit Earl Peak via the Southwest Ridge and return same day"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: about 7.5 miles round trip with 3,650 ft of gain, typically 7-9 hours including a summit break; no camping needed for the standard trip."
+    }
+   },
+   "approach": {
+    "expect": "From the Beverly Creek Trailhead (end of FR-9737-112, at ~3,600 ft), start on the Beverly Turnpike Trail #1391. After a short, mellow half mile paralleling Beverly Creek, bear right at the signed junction onto the Bean Creek Trail (#1391A), leaving the Turnpike Trail behind. The Bean Creek Trail climbs steadily through forest and then opens into Bean Creek Basin around the 2.5-mile mark — a broad, flower-choked meadow with old-growth stands and several informal camping flats; this is the scenic highlight of the approach and a natural rest/water stop. Bean Creek itself is the last dependable water source. Its crossings are easy rock-hops by mid-to-late summer but can be swift, cold, and genuinely hazardous during May–June snowmelt, so plan accordingly if going early season. Beyond the basin the trail (tread becomes intermittent in the upper meadows) climbs switchbacks up to Earl Pass at roughly 6,200 ft — the broad saddle on the divide between the Bean Creek and Standup Creek drainages, about 3.5–4 miles and ~2,600 ft of gain from the trailhead. This pass has scattered flat tent sites and is the standard high camp for parties splitting the trip, or the pack-cache point for day-scramblers. From Earl Pass, leave the trail and pick up the boot path climbing the southwest ridge directly toward the summit. This final ~800 vertical feet is the crux of the trip: a sustained, unrelenting class 2 scramble on loose scree, sand, and broken rock with only an intermittent climbers' track — go slow, test holds, and be mindful of kicking rock onto anyone below. The ridge tops out on Earl Peak's 7,036-ft summit with a full panorama of the Stuart Range from Mt. Stuart to Argonaut, Colchuck, and Dragontail.",
+    "value": "In 2026 FR-9737-112 is washed out and barricaded at the bottom, so walk its final mile-plus to the Beverly Creek Trailhead (at ~3,600 ft); from there, start on the Beverly Turnpike Trail #1391. After a short, mellow half mile paralleling Beverly Creek, bear right at the signed junction onto the Bean Creek Trail (#1391A), leaving the Turnpike Trail behind. The Bean Creek Trail climbs steadily through forest and then opens into Bean Creek Basin around the 2.5-mile mark — a broad, flower-choked meadow with old-growth stands and several informal camping flats; this is the scenic highlight of the approach and a natural rest/water stop. Bean Creek itself is the last dependable water source. Its crossings are easy rock-hops by mid-to-late summer but can be swift, cold, and genuinely hazardous during May–June snowmelt, so plan accordingly if going early season. Beyond the basin the trail (tread becomes intermittent in the upper meadows) climbs switchbacks up to Earl Pass at roughly 6,200 ft — the broad saddle on the divide between the Bean Creek and Standup Creek drainages, about 3.5–4 miles and ~2,600 ft of gain from the trailhead. This pass has scattered flat tent sites and is the standard high camp for parties splitting the trip, or the pack-cache point for day-scramblers. From Earl Pass, leave the trail and pick up the boot path climbing the southwest ridge directly toward the summit. This final ~800 vertical feet is the crux of the trip: a sustained, unrelenting class 2 scramble on loose scree, sand, and broken rock with only an intermittent climbers' track — go slow, test holds, and be mindful of kicking rock onto anyone below. The ridge tops out on Earl Peak's 7,036-ft summit with a full panorama of the Stuart Range from Mt. Stuart to Argonaut, Colchuck, and Dragontail."
+   }
+  }
+ },
+ "wa_earl_peak_standup_creek_route": {
+  "area_id": "wa_earl_peak",
+  "confidence": "high",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Standup Creek Road, off Stafford Creek Road / Teanaway River Road",
+     "status": "Open — the Forest Service's Cle Elum road table dated September 8, 2026 lists Standup Creek Road (FR 9703-112) open; the Labor Mountain Fire order closed the trail, not the road",
+     "driveNote": null,
+     "seasonalGate": null
+    },
+    "value": {
+     "name": "Standup Creek Road, off Stafford Creek Road / Teanaway River Road",
+     "status": "Open — the Forest Service's Cle Elum road table dated September 8, 2026 lists Standup Creek Road (FR 9703-112) open",
+     "driveNote": null,
+     "seasonalGate": null
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required for trailhead parking",
+     "permit": null,
+     "closures": "Standup Creek Trail #1369 has been closed under Forest Service order 06-17-03-2026-14 (Labor Mountain Fire, May 20 through December 31, 2026 unless rescinded sooner); that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026). Contact the Cle Elum Ranger District (509-852-1100) for current status.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (USFS)",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass"
+    },
+    "value": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required for trailhead parking",
+     "permit": null,
+     "closures": "The Labor Mountain Fire closure order (06-17-03-2026-14) that closed Standup Creek Trail #1369 has been lifted, as the Cle Elum Ranger District's trail crew reported on September 25, 2026. The upper trail runs through the 2025 burn, so expect downed trees and burned forest where dead trees can fall.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (USFS)",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass"
+    }
+   },
+   "approach": {
+    "expect": "Access is via Standup Creek Road, reached from Stafford Creek Road off the Teanaway River Road near Cle Elum. The Standup Creek Trail #1369 follows an old road with little early elevation gain, crosses Standup Creek six to seven times, passes through brushy sections with some downed trees, then switchbacks up through forest and meadows to the ~6,200-ft saddle at the head of the drainage. Standup Creek Trail #1369 (and Standup Creek Road access) is closed under an active Labor Mountain Fire closure order (effective May 20-Dec 31, 2026) — confirm current status with the Cle Elum Ranger District (509-852-1100) before heading in.",
+    "value": "Access is via Standup Creek Road, reached from Stafford Creek Road off the Teanaway River Road near Cle Elum. The Standup Creek Trail #1369 follows an old road with little early elevation gain, crosses Standup Creek six to seven times, passes through brushy sections with some downed trees, then switchbacks up through forest and meadows to the ~6,200-ft saddle at the head of the drainage. The Labor Mountain Fire closure order on this trail has been lifted, as the Cle Elum Ranger District's trail crew reported on September 25, 2026; expect burned forest and downed trees in the drainage."
+   },
+   "watch_out": {
+    "expect": [
+     "Six or more creek crossings each way — footing can be slick on wet rock and logs, especially early season.",
+     "Less maintained than the standard route; expect more brush and deadfall.",
+     "Standup Creek Trail #1369 has been closed under Forest Service order 06-17-03-2026-14 (Labor Mountain Fire, May 20 through December 31, 2026 unless rescinded sooner); that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026), so confirm status with the Cle Elum Ranger District, (509) 852-1100, before going."
+    ],
+    "value": [
+     "Six or more creek crossings each way — footing can be slick on wet rock and logs, especially early season.",
+     "Less maintained than the standard route; expect more brush and deadfall.",
+     "Standup Creek Trail #1369 runs through the 2025 Labor Mountain Fire burn. Its closure order has been lifted, as the Cle Elum Ranger District's trail crew reported on September 25, 2026, but expect hazard trees, downed logs and ashy tread, and never camp under dead or burned trees."
+    ]
+   }
+  }
+ },
+ "wa_navaho_peak_south_slopes": {
+  "area_id": "wa_navaho_peak",
+  "confidence": "high",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "FR 9703 (Stafford Creek Road)",
+     "status": "Trail #1359 from this trailhead is CLOSED for 2026 under an active Forest Service closure order; confirm current road/trailhead access with the Cle Elum Ranger District before driving out.",
+     "driveNote": "Unpaved forest road from North Fork Teanaway Road (FR 9737) to the trailhead; passable to most vehicles in dry conditions, but may be gated or rough after storms — park before any closed gate."
+    },
+    "value": {
+     "name": "FR 9703 (Stafford Creek Road)",
+     "status": "Open — Stafford Creek Road was suitable for all vehicles and Trail #1359 open again, as the Cle Elum Ranger District's trail crew reported on September 25, 2026.",
+     "driveNote": "Unpaved forest road from North Fork Teanaway Road (FR 9737) to the trailhead; passable to most vehicles in dry conditions, but may be gated or rough after storms — park before any closed gate."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass or America the Beautiful pass required to park at the Stafford Creek Trailhead (day pass ~$5, annual NW Forest Pass ~$30).",
+     "rules": "Standard Alpine Lakes Wilderness regulations apply: group size limits (typically 12 people/8 stock), no bikes or motorized equipment, Leave No Trace camping (200 ft from water), and campfire restrictions may apply in dry years — check current fire restrictions before an overnight trip.",
+     "permit": "Free, self-issue Alpine Lakes Wilderness permit required for day and overnight use; forms available at the trailhead kiosk.",
+     "closures": "Stafford Creek Trail #1359 — the only approach to Navaho Peak — is CLOSED under Okanogan-Wenatchee National Forest Closure Order 06-17-03-2026-14, effective May 20 through December 31, 2026, due to hazard trees and suppression damage from the 2025 Labor Mountain Fire (~43,000 acres burned Sept-Oct 2025). Repair crews worked the area through spring/early summer 2026; verify current status with the Cle Elum Ranger District (509-852-1100) before attempting this route.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+     }
+    },
+    "value": {
+     "fees": "Northwest Forest Pass or America the Beautiful pass required to park at the Stafford Creek Trailhead (day pass ~$5, annual NW Forest Pass ~$30).",
+     "rules": "Standard Alpine Lakes Wilderness regulations apply: group size limits (typically 12 people/8 stock), no bikes or motorized equipment, Leave No Trace camping (200 ft from water), and campfire restrictions may apply in dry years — check current fire restrictions before an overnight trip.",
+     "permit": "Free, self-issue Alpine Lakes Wilderness permit required for day and overnight use; forms available at the trailhead kiosk.",
+     "closures": "The Labor Mountain Fire closure order (06-17-03-2026-14) on Stafford Creek Trail #1359 has been lifted; the trail to Navaho Pass and Navaho Peak is open, as the Cle Elum Ranger District's trail crew reported on September 25, 2026, after more than 200 fallen logs were cleared. Several miles of the trail burned in 2025, and so did many campsites along it: use caution in the burn and never camp under dead or burned trees.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+     }
+    }
+   },
+   "approach": {
+    "expect": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of Stafford Creek Road (FR 9703), which leaves North Fork Teanaway River Road (FR 9737) past 29 Pines Campground — a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required). From the trailhead, Stafford Creek Trail #1359 climbs at a gentle-to-moderate grade through dry ponderosa/lodgepole forest, staying close to Stafford Creek for the first mile (a short rerouted, steeper switchback section around 0.5 mile bypasses old avalanche-damaged tread). The trail continues gaining gradually along the creek — figure roughly 3,000 ft of gain spread over the approach — reaching a signed junction with the Standup Creek Trail (#1369) at about 3.5–3.8 miles; this crossing of Stafford Creek is the last reliable, easy water source before the high country and is worth topping off here. Bear right (east/north) at the junction to stay on the Navaho Pass approach. Around 4.5 miles the trail opens into a large, marshy subalpine meadow with established campsites and a feeder stream — the usual base camp for parties splitting the trip over two days, and another water source. Beyond camp the trail crosses the barren, eroded 'Moon Landing' stretch (sparse vegetation, serpentine/greenstone talus) before a final push to Navaho Pass (~6,000 ft) around mile 5.5. A commonly used shortcut leaves the main trail where two creek forks merge around the 3-mile mark, climbing steep, loose slopes directly up the northeast-facing drainage to the col below Navaho's southeast ridge — it saves close to 2 miles of trail hiking but is steeper, unmaintained, and involves loose scree/dirt, so most parties use it only for one direction of the trip. Total car-to-summit is on the order of 11–13 miles round trip with about 4,000–4,200 ft of gain depending on which junction/shortcut combination is used. Note: this trail corridor has had closures tied to the Labor Mountain Fire and storm damage; Forest Service order 06-17-03-2026-14 closed Stafford Creek Trail #1359 from May 20 through December 31, 2026 unless rescinded sooner, but that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026) — verify current trail status with the Cle Elum Ranger District (509-852-1100) before heading in. A second off-trail variant leaves the trail right after the Stafford Creek crossing and climbs directly into the open bowl between Earl Peak and Navaho Peak to about 5,000 ft, scrambles north to the ridgeline near 6,000 ft, then follows the west/southwest ridge to the summit — a different line than the northeast-drainage shortcut.",
+    "value": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of Stafford Creek Road (FR 9703), which leaves North Fork Teanaway River Road (FR 9737) past 29 Pines Campground — a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required). From the trailhead, Stafford Creek Trail #1359 climbs at a gentle-to-moderate grade through dry ponderosa/lodgepole forest, staying close to Stafford Creek for the first mile (a short rerouted, steeper switchback section around 0.5 mile bypasses old avalanche-damaged tread). The trail continues gaining gradually along the creek — figure roughly 3,000 ft of gain spread over the approach — reaching a signed junction with the Standup Creek Trail (#1369) at about 3.5–3.8 miles; this crossing of Stafford Creek is the last reliable, easy water source before the high country and is worth topping off here. Bear right (east/north) at the junction to stay on the Navaho Pass approach. Around 4.5 miles the trail opens into a large, marshy subalpine meadow with established campsites and a feeder stream — the usual base camp for parties splitting the trip over two days, and another water source. Beyond camp the trail crosses the barren, eroded 'Moon Landing' stretch (sparse vegetation, serpentine/greenstone talus) before a final push to Navaho Pass (~6,000 ft) around mile 5.5. A commonly used shortcut leaves the main trail where two creek forks merge around the 3-mile mark, climbing steep, loose slopes directly up the northeast-facing drainage to the col below Navaho's southeast ridge — it saves close to 2 miles of trail hiking but is steeper, unmaintained, and involves loose scree/dirt, so most parties use it only for one direction of the trip. Total car-to-summit is on the order of 11–13 miles round trip with about 4,000–4,200 ft of gain depending on which junction/shortcut combination is used. Note: several miles of this trail burned in the 2025 Labor Mountain Fire. Its closure order has been lifted and the trail is open, as the Cle Elum Ranger District's trail crew reported on September 25, 2026, but expect burned forest and dead trees along the corridor. A second off-trail variant leaves the trail right after the Stafford Creek crossing and climbs directly into the open bowl between Earl Peak and Navaho Peak to about 5,000 ft, scrambles north to the ridgeline near 6,000 ft, then follows the west/southwest ridge to the summit — a different line than the northeast-drainage shortcut."
+   },
+   "approach_variants": {
+    "expect": [
+     {
+      "name": "Stafford Creek Trail #1359 to Navaho Pass",
+      "notes": "From the small road-end lot, Trail #1359 leaves at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek; a short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The creek crossing in the meadows is the last easy water and worth topping off at. Stay on #1359 at the signed Standup Creek Trail junction, and the trail opens into a large marshy subalpine meadow with a feeder stream and established campsites — the usual overnight base. Above the meadow the tread leaves the trees and switchbacks up open, rocky, sparsely vegetated slope for the last stretch to the pass.",
+      "season": "July into October. Snow patches linger on the upper ridge into July, when poles and light traction are worthwhile.",
+      "hazards": [
+       "No water and essentially no shade above the meadows, on ground that bakes on a warm afternoon",
+       "Loose scree over dirt on the climbers' path onto the ridge, steepening quickly and easy to push down onto a party below",
+       "Lingering snow patches into July",
+       "Slopes on either flank of the summit ridge are looser and steeper than they look from above",
+       "The trail corridor has been closed for fire and storm damage — check current status before driving in"
+      ],
+      "baseFinding": "THE SUMMIT PATH IS NOW MORE WORN THAN THE TRAIL IT LEAVES, AND THE WRONG TURN HAS A NAME. Navaho Pass is unmistakable ground — small, rocky, sparsely vegetated and wind-exposed, with the Stuart Range filling the view — and it is where the trail meets the old crest trail along the county line. Head EAST out of the pass, paralleling the range. The old boot-path junction that descriptions still mention has effectively vanished: the beaten track now IS the summit path, more worn than the crest trail beside it, so the thing to look for is the most-used tread rather than a faint branch. If instead you follow the connecting ridge LEFT from the pass, you are heading for Wrong Turn Peak, which is what it is called and why. Two more confusions worth knowing: the prominent peak straight ahead on the walk in is Little Navaho, not this one, and the final ridge throws up several false tops before the true summit, which is small — barely higher than a rocky outcrop just east of it. On the way down, do not follow the southeast ridge all the way toward Little Navaho; there are cliffs below it."
+     }
+    ],
+    "value": [
+     {
+      "name": "Stafford Creek Trail #1359 to Navaho Pass",
+      "notes": "From the small road-end lot, Trail #1359 leaves at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek; a short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The creek crossing in the meadows is the last easy water and worth topping off at. Stay on #1359 at the signed Standup Creek Trail junction, and the trail opens into a large marshy subalpine meadow with a feeder stream and established campsites — the usual overnight base. Above the meadow the tread leaves the trees and switchbacks up open, rocky, sparsely vegetated slope for the last stretch to the pass.",
+      "season": "July into October. Snow patches linger on the upper ridge into July, when poles and light traction are worthwhile.",
+      "hazards": [
+       "No water and essentially no shade above the meadows, on ground that bakes on a warm afternoon",
+       "Loose scree over dirt on the climbers' path onto the ridge, steepening quickly and easy to push down onto a party below",
+       "Lingering snow patches into July",
+       "Slopes on either flank of the summit ridge are looser and steeper than they look from above",
+       "Several miles of the trail run through the 2025 burn: dead and burned trees can fall, especially in wind"
+      ],
+      "baseFinding": "THE SUMMIT PATH IS NOW MORE WORN THAN THE TRAIL IT LEAVES, AND THE WRONG TURN HAS A NAME. Navaho Pass is unmistakable ground — small, rocky, sparsely vegetated and wind-exposed, with the Stuart Range filling the view — and it is where the trail meets the old crest trail along the county line. Head EAST out of the pass, paralleling the range. The old boot-path junction that descriptions still mention has effectively vanished: the beaten track now IS the summit path, more worn than the crest trail beside it, so the thing to look for is the most-used tread rather than a faint branch. If instead you follow the connecting ridge LEFT from the pass, you are heading for Wrong Turn Peak, which is what it is called and why. Two more confusions worth knowing: the prominent peak straight ahead on the walk in is Little Navaho, not this one, and the final ridge throws up several false tops before the true summit, which is small — barely higher than a rocky outcrop just east of it. On the way down, do not follow the southeast ridge all the way toward Little Navaho; there are cliffs below it."
+     }
+    ]
+   },
+   "bivy": {
+    "expect": [
+     {
+      "elev": 5600,
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pulls away from it, crosses a marshy open meadow, and reaches these camps at around five miles. Navaho Pass is another half mile up a bare serpentine slope at about 6,000 feet, and the south slopes above the pass are walking and easy scrambling to the summit. Most parties do the whole thing car to car and the camp is the contingency: a late start, a hot afternoon, or a group that wants the summit at dawn. It is also the hinge of the standard two-day loop that links Navaho Pass with the Bean Creek side and comes out at a different trailhead. The meadow is buggy in early summer and the burn scar in the drainage has changed shade and blowdown patterns, so expect the walking to be rougher than an older description suggests.",
+      "water": "The reason this camp exists. Stafford Creek and a side stream come down the rock faces at the meadow edge and run into late summer in most years, and this is the last dependable water before the pass. Above the meadow there is nothing: the final half mile of bare serpentine to Navaho Pass and the whole of the south slopes above it are completely dry, and on a hot east-side day that is four or five hours of climbing on what you carry.",
+      "permit": "No permit, no quota, no lottery, and no connection to the Enchantment system. Northwest Forest Pass at the Stafford Creek trailhead. Campfires are prohibited above 5,000 feet here and the drainage is normally under a full burn ban by July. The Stafford Creek road and trail were inside the 2025 fire closure and were still subject to repair-work closures afterwards, so this is the site most likely to be legally unreachable on any given date — check before you drive.",
+      "capacity": "Established sites in the timber along the edge of a large meadow, with room for several parties; this is a popular long-weekend base camp and can hold a half dozen tents on a summer Saturday"
+     }
+    ],
+    "value": [
+     {
+      "elev": 5600,
+      "name": "Stafford Creek meadow camps below Navaho Pass",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pulls away from it, crosses a marshy open meadow, and reaches these camps at around five miles. Navaho Pass is another half mile up a bare serpentine slope at about 6,000 feet, and the south slopes above the pass are walking and easy scrambling to the summit. Most parties do the whole thing car to car and the camp is the contingency: a late start, a hot afternoon, or a group that wants the summit at dawn. It is also the hinge of the standard two-day loop that links Navaho Pass with the Bean Creek side and comes out at a different trailhead. The meadow is buggy in early summer and the burn scar in the drainage has changed shade and blowdown patterns, so expect the walking to be rougher than an older description suggests.",
+      "water": "The reason this camp exists. Stafford Creek and a side stream come down the rock faces at the meadow edge and run into late summer in most years, and this is the last dependable water before the pass. Above the meadow there is nothing: the final half mile of bare serpentine to Navaho Pass and the whole of the south slopes above it are completely dry, and on a hot east-side day that is four or five hours of climbing on what you carry.",
+      "permit": "No permit, no quota, no lottery, and no connection to the Enchantment system. Northwest Forest Pass at the Stafford Creek trailhead. Campfires are prohibited above 5,000 feet here and the drainage is normally under a full burn ban by July. The Stafford Creek trail was closed through much of 2026 after the 2025 fire and has reopened, as the Cle Elum Ranger District's trail crew reported on September 25, 2026; many campsites along it burned, so pick a site clear of dead and burned trees.",
+      "capacity": "Established sites in the timber along the edge of a large meadow, with room for several parties; this is a popular long-weekend base camp and can hold a half dozen tents on a summer Saturday"
+     }
+    ]
+   },
+   "itinerary": {
+    "expect": {
+     "cal": "The Stafford Creek trailhead access/trail was reported closed due to Labor Mountain Fire damage as of the last check - confirm current road/trail status before planning a trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~5.5 mi, ~3,000 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 scramble to the summit. Descend by reversing the same route.",
+       "hours": 9,
+       "miles": 13,
+       "title": "Car-to-car via Stafford Creek and Navaho Pass",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Stafford Creek trailhead",
+         "detail": "Start early to beat the heat on the exposed upper slopes and finish at a reasonable hour."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Navaho Pass",
+         "detail": "~5.5 miles and ~3,000 ft gained through Stafford Creek Meadows; junction with the old County Line Trail."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin southwest ridge / south slopes scramble",
+         "detail": "Steep, loose Class 2 terrain for the final ~700-1,000 ft to the summit; snow patches possible into early summer."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit Navaho Peak (7,223 ft)",
+         "detail": "Small summit with room for only a few people; views of the Enchantments, Alpine Lakes Wilderness, and Rainier."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent route back through Navaho Pass and down Stafford Creek."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Total elapsed time typically 8.5-9 hours car-to-car."
+        }
+       ],
+       "objective": "Summit Navaho Peak and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single long day hike/scramble: about 13 miles round trip with roughly 4,200 ft of gain, typically 8.5-9 hours car-to-car via Stafford Creek Trail to Navaho Pass then the southwest ridge/south slopes - not an overnight trip for the standard approach."
+    },
+    "value": {
+     "cal": "Stafford Creek Trail #1359 has reopened after the Labor Mountain Fire closure, as the Cle Elum Ranger District's trail crew reported on September 25, 2026; expect burned forest along the lower trail.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~5.5 mi, ~3,000 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 scramble to the summit. Descend by reversing the same route.",
+       "hours": 9,
+       "miles": 13,
+       "title": "Car-to-car via Stafford Creek and Navaho Pass",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Stafford Creek trailhead",
+         "detail": "Start early to beat the heat on the exposed upper slopes and finish at a reasonable hour."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Navaho Pass",
+         "detail": "~5.5 miles and ~3,000 ft gained through Stafford Creek Meadows; junction with the old County Line Trail."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin southwest ridge / south slopes scramble",
+         "detail": "Steep, loose Class 2 terrain for the final ~700-1,000 ft to the summit; snow patches possible into early summer."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit Navaho Peak (7,223 ft)",
+         "detail": "Small summit with room for only a few people; views of the Enchantments, Alpine Lakes Wilderness, and Rainier."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent route back through Navaho Pass and down Stafford Creek."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Total elapsed time typically 8.5-9 hours car-to-car."
+        }
+       ],
+       "objective": "Summit Navaho Peak and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single long day hike/scramble: about 13 miles round trip with roughly 4,200 ft of gain, typically 8.5-9 hours car-to-car via Stafford Creek Trail to Navaho Pass then the southwest ridge/south slopes - not an overnight trip for the standard approach."
+    }
+   },
+   "hazards": {
+    "expect": [
+     "Lingering snowfields on the upper bowl/ridge into July — can obscure the route and create fall/glissade hazard on steep sections",
+     "Afternoon thunderstorms with lightning exposure on the open ridge and summit",
+     "Loose talus and blocky terrain above ~6,000 ft — rockfall risk onto parties below",
+     "Active Forest Service closure (hazard trees, fire-damaged terrain) on Trail #1359 through Dec 31, 2026",
+     "Long, mostly waterless upper approach — carry sufficient water"
+    ],
+    "value": [
+     "Lingering snowfields on the upper bowl/ridge into July — can obscure the route and create fall/glissade hazard on steep sections",
+     "Afternoon thunderstorms with lightning exposure on the open ridge and summit",
+     "Loose talus and blocky terrain above ~6,000 ft — rockfall risk onto parties below",
+     "Burned forest from the 2025 Labor Mountain Fire along Trail #1359: hazard trees and fire-damaged tread",
+     "Long, mostly waterless upper approach — carry sufficient water"
+    ]
+   }
+  }
+ }
+}

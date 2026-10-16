@@ -1,0 +1,271 @@
+{
+  "batches": ["batches/b113.json", "batches/b114.json", "batches/b115.json", "batches/b116.json"],
+  "routes_read": 6,
+  "routes": [
+    {
+      "id": "wa_lemah_mountain_east_route",
+      "name": "East Route (Main Peak)",
+      "area": "Lemah Mountain",
+      "contradictions": [
+        {
+          "fact": "Round-trip distance: itinerary day miles vs approach prose/totalNote/dist_km/waypoints",
+          "severity": "high",
+          "claims": [
+            {"field": "itinerary.days[0].miles", "says": "7"},
+            {"field": "itinerary.days[1].miles", "says": "15"},
+            {"field": "itinerary.totalNote", "says": "roughly 16 miles and ~4,700 ft gain overall"},
+            {"field": "approach", "says": "Total is roughly 16 miles round trip with ~4,700' of gain"},
+            {"field": "dist_km", "says": "12.9 (≈8.0 mi one-way)"},
+            {"field": "waypoints[7].distMi", "says": "7.7 (cumulative one-way distance to the summit)"}
+          ],
+          "why": "Itinerary day1+day2 miles sum to 22, but the route's own totalNote, approach prose, dist_km (one-way, ×2≈16), and the waypoint list's cumulative one-way distance to the summit (7.7 mi, ×2≈15.4) all agree on a ~16-mile round trip.",
+          "internal_resolution": "The ~16-mile figure is corroborated by 4 independent fields (totalNote, approach prose, dist_km×2, waypoint cumulative distance); the itinerary day-mile values (7+15=22) are the outlier and appear inflated.",
+          "needs_research": false
+        },
+        {
+          "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere",
+          "severity": "medium",
+          "claims": [
+            {"field": "rock_grade", "says": "Class 4 (short section, mostly class 3 scrambling)"},
+            {"field": "grade", "says": "Class 4-5.0"},
+            {"field": "climbing_route[2].class", "says": "easy 5th class"},
+            {"field": "sling_rack.cams.count", "says": "a few, for the class 5.0 summit block move"},
+            {"field": "partner_requirements.requiredSkills[5]", "says": "optional light rack or rope for the class 5.0 move for less confident parties"}
+          ],
+          "why": "The header grade pill draws from rock_grade, which tops out at Class 4, but the route's own grade field, climbing_route step 3, sling_rack, and partner_requirements all describe an actual 5.0/5th-class summit-block move.",
+          "internal_resolution": "grade, climbing_route, sling_rack, and partner_requirements agree there is a 5.0 crux; rock_grade appears to omit it.",
+          "needs_research": false
+        },
+        {
+          "fact": "Elevation of the glacier-exit / moat transition below the col",
+          "severity": "medium",
+          "claims": [
+            {"field": "waypoints[5].elev", "says": "6500 ('Snow gully and moat transition')"},
+            {"field": "beta", "says": "Exit the glacier around 6,200 ft"},
+            {"field": "approach", "says": "climb to roughly 6,200 ft and exit left (south) up a short cliff step"},
+            {"field": "pitch_detail[0].notes", "says": "From glacier terminus (~5,000 ft) to exit around 6,200 ft"},
+            {"field": "climbing_route[0].notes", "says": "From about 6,200 ft, exit left (south) up a short cliff step"}
+          ],
+          "why": "Four separate fields (beta, approach, pitch_detail, climbing_route) place the snow/moat exit at ~6,200 ft, but the waypoint list gives the same feature as 6,500 ft — a 300 ft gap.",
+          "internal_resolution": "Prose is unanimous at 6,200 ft across 4 fields; the 6,500 ft waypoint elevation is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Which national forest manages the trailhead (duplicate landManager/land_manager keys disagree)",
+          "severity": "low",
+          "claims": [
+            {"field": "access.landManager", "says": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (803 W 2nd St, Cle Elum, WA; (509) 852-1100) — Alpine Lakes Wilderness"},
+            {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest / Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness"}
+          ],
+          "why": "Two differently-cased keys for the same fact give different primary land managers.",
+          "internal_resolution": "access.notes already hedges that trailheads may be administered by either forest, so this is likely a data-duplication artifact rather than a factual error.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_lemah_two_scramble",
+      "name": "Standard Scramble",
+      "area": "Lemah Two",
+      "contradictions": [
+        {
+          "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "12.9 (≈8.0 mi)"},
+            {"field": "itinerary.days[0].miles", "says": "9"},
+            {"field": "itinerary.days[1].miles", "says": "4.5"},
+            {"field": "itinerary.days[2].miles", "says": "9"},
+            {"field": "itinerary.totalNote", "says": "~22 miles round trip with roughly 5,000 ft of total gain/loss"},
+            {"field": "waypoints[6].distMi", "says": "11 (cumulative one-way distance to the summit)"}
+          ],
+          "why": "dist_km (8.0 mi) is far short of the itinerary's own day-by-day total (22.5 mi) and the totalNote's ~22-mile round trip, both of which match the waypoint list's 11-mile one-way cumulative distance to the summit (×2 ≈ 22 mi).",
+          "internal_resolution": "itinerary days, totalNote, and waypoints form a consistent ~22-mile round-trip cluster; dist_km is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Descent route: this route's own chute-to-col (ascent) vs an NW-ridge-to-'the true summit' finish that belongs to the neighboring Main Peak route",
+          "severity": "high",
+          "claims": [
+            {"field": "descent", "says": "Reverse the ascent: downclimb the NW ridge and the Class 3-4 band back to the col, re-cross the moat onto the glacier remnant..."},
+            {"field": "descent_text", "says": "From the col, work north toward the true summit; about 30 ft below the top, traverse west and finish up the northwest ridge (Class 2) to the summit block."},
+            {"field": "beta", "says": "From the col, a snow slope and chute lead up toward Lemah Two's upper slopes and summit ridge; the chute itself... is the technical crux."},
+            {"field": "pitch_detail[5].pitch", "says": "Col to summit (grade: Class 3-4 / steep snow)"},
+            {"field": "overview", "says": "the Main/Lemah Three summit (7,512', the massif's true high point)"}
+          ],
+          "why": "descent and descent_text both describe reaching the summit from the col via an NW-ridge Class 2 finish and call it 'the true summit' — language that matches the neighboring Main Peak (Lemah Three) route, not Lemah Two. This route's own overview states Lemah Two is NOT the true summit, and its own beta/pitch_detail describe the col-to-summit section as a snow/ice chute, not an NW ridge.",
+          "internal_resolution": "beta and pitch_detail (the ascent description) agree the col-to-summit section is a chute; descent and descent_text appear to be copied from the Main Peak route's NW-ridge/'true summit' finish.",
+          "needs_research": false
+        },
+        {
+          "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?",
+          "severity": "medium",
+          "claims": [
+            {"field": "waypoints[5].name", "says": "Class 3-4 cliff band / chute below the col"},
+            {"field": "waypoints[5].note", "says": "Crux of the climb: loose rock and often lingering steep snow/ice in the chute leading up toward the col"},
+            {"field": "beta", "says": "From the col, a snow slope and chute lead up toward Lemah Two's upper slopes and summit ridge; the chute itself... is the technical crux"},
+            {"field": "pitch_detail[5].notes", "says": "Snow slope and chute (crux) to Lemah Two's summit ridge and top"}
+          ],
+          "why": "The waypoint places the named crux chute BELOW the col (used to reach it), while beta and pitch_detail place the crux chute ABOVE the col (from the col up to the summit).",
+          "internal_resolution": null,
+          "needs_research": true
+        }
+      ]
+    },
+    {
+      "id": "wa_lemah_two_goatshead_spire",
+      "name": "Goatshead Spire",
+      "area": "Lemah Two",
+      "contradictions": []
+    },
+    {
+      "id": "wa_little_big_chief_mountain_northeast_face",
+      "name": "Northeast Face",
+      "area": "Little Big Chief Mountain",
+      "contradictions": [
+        {
+          "fact": "Does this route require leaving the trail near Williams Lake for an off-trail scramble via a class-4 notch, or stay on the trail all the way to Dutch Miller Gap with no detour?",
+          "severity": "high",
+          "claims": [
+            {"field": "beta", "says": "Approached via the PCT to Dutch Miller Gap, the route climbs about 500 feet of heather and rock steps..."},
+            {"field": "approach", "says": "reached by leaving the trail near Williams Lake for an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit"},
+            {"field": "approach", "says": "For this specific route: continue the standard Middle Fork Snoqualmie trail all the way up to Dutch Miller Gap, then climb directly above the gap onto the peak's northeast ridge/face — no cross-country detour into Summit Chief Valley needed."},
+            {"field": "approach_variants[0].notes", "says": "There is no cross-country detour for this route: stay on the trail to the top."},
+            {"field": "approach_variants[0].baseFinding", "says": "The climbing starts DIRECTLY ABOVE THE GAP."}
+          ],
+          "why": "The approach field's own opening sentences describe leaving the trail near Williams Lake for an off-trail scramble with a class-4-notch crux, then its last sentence reverses this and says to stay on the trail all the way to Dutch Miller Gap with no detour needed — directly self-contradictory. beta also names the PCT, which no other approach description for this route uses. The off-trail/Williams Lake/notch language matches this route's OWN 'Pete Lake and Summit Chief' alternate approach_variant, not the primary trail-only line.",
+          "internal_resolution": "approach_variants[0] is explicitly marked primary:true and matches the last sentence of approach (stay on trail, climb directly above the gap); the Williams Lake/off-trail/class-4-notch language appears to be contamination from the route's own alternate 'Pete Lake and Summit Chief' approach_variant.",
+          "needs_research": false
+        },
+        {
+          "fact": "Season window: header season vs best_season/climate",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "Jul-Sep; documented ascents cluster in Aug-Sep."},
+            {"field": "best_season", "says": "Climbable roughly June through September; a mid-June ascent has been documented"},
+            {"field": "climate.summer", "says": "June through September is the main window"}
+          ],
+          "why": "The stated season excludes June, but best_season and climate.summer both claim a June start, including a documented mid-June ascent.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "Primary managing national forest (duplicate landManager/land_manager keys disagree)",
+          "severity": "low",
+          "claims": [
+            {"field": "access.landManager", "says": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District (Alpine Lakes Wilderness)"},
+            {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest / Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness"}
+          ],
+          "why": "Two differently-cased keys disagree on whether Okanogan-Wenatchee also manages this side.",
+          "internal_resolution": "Not clearly resolvable from the row; access.notes hedges that trailheads may be administered by either forest.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_northwest_face_4",
+      "name": "Northwest Face",
+      "area": "Little Big Chief Mountain",
+      "contradictions": [
+        {
+          "fact": "Approach: Williams-Lake/Dutch-Miller-Gap/class-4-notch boilerplate vs this route's own steel-bridge/cross-country-into-Summit-Chief-Valley turnoff",
+          "severity": "high",
+          "claims": [
+            {"field": "approach", "says": "Little Big Chief sits immediately southwest of the gap, reached by leaving the trail near Williams Lake for an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit."},
+            {"field": "approach", "says": "For this specific route: leave the main Middle Fork Snoqualmie trail at a small steel bridge well before Dutch Miller Gap and cut cross-country south into Summit Chief Valley; the Northwest Face is visible on the east side of that valley, roughly 3 hours from the trailhead — a distinctly different final leg than the Northeast Face's direct ridge approach."},
+            {"field": "approach_variants[0].notes", "says": "Do NOT walk the trail to Dutch Miller Gap. From the Middle Fork Snoqualmie road end, head up the valley on the trail until you reach a SMALL STEEL BRIDGE, well short of the gap — that bridge is the turnoff."}
+          ],
+          "why": "The approach field's opening sentences (identical boilerplate shared with the Northeast Face route) describe reaching the peak past Dutch Miller Gap near Williams Lake via a class-4 notch, but this route's own last sentence and its approach_variants explicitly say NOT to walk to the gap at all — the turnoff is a steel bridge well short of it, into a different valley (Summit Chief Valley).",
+          "internal_resolution": "approach_variants[0] (this route's only listed variant) and the approach field's own last sentence agree: leave the trail at the steel bridge before the gap; the Williams Lake/Dutch-Miller-Gap/class-4-notch opening sentences are boilerplate copied from the Northeast Face route's approach text.",
+          "needs_research": false
+        },
+        {
+          "fact": "Season window: header season vs best_season/climate",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "Aug-Sep (documented ascents; snow may linger on the approach gully earlier in summer)"},
+            {"field": "best_season", "says": "Best climbed July through September, once the approach gully and glacier-polished descent slabs have shed most seasonal snow"},
+            {"field": "climate.summer", "says": "July-September is the primary climbing window, once snow has cleared."}
+          ],
+          "why": "The stated season excludes July, but best_season and climate.summer both include July as part of, or the start of, the climbing window.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "Order of the rappel relative to the glacier-polished-slab crossing on descent",
+          "severity": "medium",
+          "claims": [
+            {"field": "rappels", "says": "1-2 rappels off the south ridge to a pocket glacier, then descend glacier-polished slabs and forest back into Summit Chief Valley to camp"},
+            {"field": "descent", "says": "South along the connecting ridge to a pocket glacier, then glacier-polished slabs (trending climber's left) back to the ridge crest near 5,400'; 1-2 rappels, a goat-ledge traverse, and a forest descent return to camp."},
+            {"field": "descent_text", "says": "Cross glacier-polished slabs, trending climber's left, to regain the ridge crest at approximately 5,400'. From there, make one to two rappels down broken terrain into the valley..."}
+          ],
+          "why": "rappels states the 1-2 rappels happen BEFORE reaching the pocket glacier/slabs, while descent and descent_text (which agree with each other) place the rappels AFTER crossing the glacier-polished slabs to regain the ridge crest.",
+          "internal_resolution": "descent and descent_text agree with each other on the order (cross slabs, then rappel); rappels is the terser, differently-sequenced outlier.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_little_big_chief_mountain_west_route",
+      "name": "West Route",
+      "area": "Little Big Chief Mountain",
+      "contradictions": [
+        {
+          "fact": "Header/technical grade: rock_grade 5.9 + commitment IV vs grade Class 3 + alpine_grade F + pitch count/pitch_detail",
+          "severity": "high",
+          "claims": [
+            {"field": "rock_grade", "says": "5.9"},
+            {"field": "commitment", "says": "IV"},
+            {"field": "grade", "says": "Class 3"},
+            {"field": "alpine_grade", "says": "F"},
+            {"field": "pitches", "says": "1"},
+            {"field": "pitch_detail[1].grade", "says": "4th-5th class (short)"}
+          ],
+          "why": "The header grade pill (which reads rock_grade first) would show '5.9' — a full technical rock grade — for a route whose own grade field, alpine_grade (French 'Facile'/easy), pitch count, and pitch_detail all describe a Class 3 scramble with at most a short 4th-5th-class step. commitment 'IV' (long, serious multi-day technical climb) likewise contradicts alpine_grade 'F' (easy). These values match the peak's OTHER route, the Northwest Face/Falcon Route (grade 5.9, commitment IV), suggesting cross-route contamination.",
+          "internal_resolution": "grade, alpine_grade, pitches, and pitch_detail agree this is a moderate Class 3 scramble; rock_grade and commitment appear copied from the neighboring 5.9/IV Northwest Face route on the same peak.",
+          "needs_research": false
+        },
+        {
+          "fact": "Crux location and approach: beta/pitch_detail describe a NE-ridge/SW-face/E-face route from a Williams Lake camp, but this route's own approach/climbing_route/descent_text/waypoints describe a west-ridge/west-face route from a Chief Creek camp",
+          "severity": "high",
+          "claims": [
+            {"field": "beta", "says": "A 2014 party (Jim Brisbine) climbing from a camp at Williams Lake found the crux to be a wildly exposed notch on the northeast ridge, then Class 4-5 moves on a steep southwest face near the true summit; the party descended the 'easier' Class 3 east face but still ran into cliff bands..."},
+            {"field": "pitch_detail[1].notes", "says": "Exposed notch in the northeast ridge, vertical to slightly overhanging on its north side; typically one short belayed pitch."},
+            {"field": "pitch_detail[2].notes", "says": "Traverse ledges and snowfields on the upper east face to the summit"},
+            {"field": "approach", "says": "faint but generally trackable switchbacks climb the open slopes toward Little Big Chief's west ridge/west face"},
+            {"field": "climbing_route[0].label", "says": "Open slopes to the west ridge/west face"},
+            {"field": "descent_text", "says": "back down through the exposed summit notch onto the west ridge/west face slopes, then down to the Chief Creek drainage"},
+            {"field": "face", "says": "Northwest Face"}
+          ],
+          "why": "This route (aspect NW, face 'Northwest Face') is approached from Salmon La Sac via the Waptus River Trail and Chief Creek, and its own approach, climbing_route, descent_text and face/aspect fields consistently describe the ascent/descent on the WEST ridge/west face. But beta and pitch_detail instead describe a northeast-ridge notch, southwest-face moves, and an east-face descent — and beta's account explicitly starts 'from a camp at Williams Lake,' which is the Dutch Miller Gap/Middle Fork approach used by the separate Northeast Face route on this same peak, not this route's Waptus/Chief Creek approach.",
+          "internal_resolution": "approach, climbing_route, descent_text, and the route's own face/aspect fields (4 fields) agree on a west-side line; beta and pitch_detail appear to describe a different account/route entirely (Williams Lake camp, NE/SW/E aspects).",
+          "needs_research": false
+        },
+        {
+          "fact": "dist_km presented as one-way while itinerary/totalNote present round-trip",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "22.7 (≈14.1 mi)"},
+            {"field": "waypoints[7].distMi", "says": "14.1 (cumulative one-way distance to the summit)"},
+            {"field": "itinerary.totalNote", "says": "roughly 28 miles round trip... matching the 45.4 km round-trip distance"}
+          ],
+          "why": "dist_km (14.1 mi) matches the one-way cumulative waypoint distance to the summit, while the itinerary and totalNote present ~28 miles / 45.4 km as the round-trip figure (≈2×dist_km). The two are numerically consistent once the one-way/round-trip distinction is understood, but a screen that shows dist_km as 'the' distance next to a round-trip itinerary total would present two different quantities as the same fact.",
+          "internal_resolution": "Consistent once one-way vs round-trip is accounted for (14.1×2≈28.2); flagged per the low-priority dist_km convention noted in the task instructions.",
+          "needs_research": false
+        },
+        {
+          "fact": "Primary managing national forest (duplicate landManager/land_manager keys disagree)",
+          "severity": "low",
+          "claims": [
+            {"field": "access.landManager", "says": "Mount Baker-Snoqualmie National Forest (Alpine Lakes Wilderness); the wilderness is jointly administered with Okanogan-Wenatchee National Forest on the eastern side"},
+            {"field": "access.land_manager", "says": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District)"},
+            {"field": "emergency.rangerStation", "says": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest — 803 W. 2nd St, Cle Elum, WA 98922, (509) 852-1100"}
+          ],
+          "why": "landManager names Mount Baker-Snoqualmie as primary; land_manager names Okanogan-Wenatchee/Cle Elum instead; emergency.rangerStation corroborates land_manager for this Salmon La Sac (east-side) trailhead.",
+          "internal_resolution": "emergency.rangerStation agrees with land_manager (Okanogan-Wenatchee/Cle Elum); landManager appears to be the less accurate value for this specific route's trailhead.",
+          "needs_research": false
+        }
+      ]
+    }
+  ]
+}

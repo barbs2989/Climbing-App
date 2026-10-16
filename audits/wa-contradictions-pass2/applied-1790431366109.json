@@ -1,0 +1,88 @@
+{
+ "applied": [
+  {
+   "id": "wa_honeymoon_route",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Royal Basin overnight permit season"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "access",
+   "path": [
+    "_raw",
+    "seasonal_closure_dates"
+   ],
+   "fact": "Royal Basin overnight permit season"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Where camping is allowed"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_honeymoon_route",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_cost": "$6 reservation fee + $8 per person per night",
+      "permit_type": "Backcountry Wilderness Permit (overnight required)",
+      "land_manager": "National Park Service (Olympic National Park)",
+      "group_size_limit": "12 people maximum",
+      "permit_pickup_hours": "9:00 AM - 4:00 PM (contact 360-565-3100 for specific hours)",
+      "special_requirements": "Bear canisters required; designated campsites only in high-use areas",
+      "wilderness_zone_name": "Royal Basin / Deception Creek area",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual)",
+      "permit_pickup_location": "Olympic National Park Wilderness Information Center, Port Angeles, WA",
+      "seasonal_closure_dates": "High-use overnight camping May 1 - Sept 30 (reservation-only); closed to overnight access other times based on snow conditions"
+     },
+     "fees": "None beyond the trailhead parking pass this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the trailhead parking pass and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Backcountry Wilderness Permit (overnight required)",
+     "closures": "High-use overnight camping May 1 - Sept 30 (reservation-only); closed to overnight access other times based on snow conditions",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "National Park Service (Olympic National Park)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass ($5 day / $30 annual)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "before": {
+    "access": {
+     "fees": "USFS trailhead day-use fee $5/vehicle/day or $30/year (Northwest Forest Pass or Interagency 'America the Beautiful' pass accepted in lieu of the day fee), plus the $6 NPS wilderness-permit reservation fee for overnight trips.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the trailhead parking pass and wilderness camping permit apply.",
+     "rules": "Bear canisters are mandatory for food storage in Royal Basin. Camping is restricted to three designated areas: Royal Creek, Lower Royal Meadow, and Royal Lake; groups of 7 or more must use designated group campsites.",
+     "permit": "NPS wilderness permit required for any overnight stay in Royal Basin/upper mountain, reserved via recreation.gov ($6 non-refundable reservation fee); online reservations for the May 15-Oct 15 season typically open around mid-April; camp areas are quota-limited.",
+     "group_limit": 12,
+     "landManager": "Trailhead and lower approach trail (Upper Dungeness Trail #833, Royal Basin Trail #832 to the wilderness boundary) are on Olympic National Forest, Hood Canal Ranger District; the upper basin and the peak itself are within Olympic National Park's Daniel J. Evans Wilderness.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass or America the Beautiful/Interagency pass for trailhead parking.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  }
+ ]
+}

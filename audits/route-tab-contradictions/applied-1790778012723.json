@@ -1,0 +1,204 @@
+{
+ "applied": [
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead waypoint elevation 2,300 ft vs its own Alpental name, coordinate and directions (~3,100-3,120 ft)"
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead waypoint elevation 2,300 ft vs its own Alpental name, coordinate and directions (~3,100-3,120 ft)"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Distance from the Point 5,841 pass to the summit"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Distance from the Point 5,841 pass to the summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.44542,
+      "lng": -121.42353,
+      "elev": 2300,
+      "name": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+      "note": "The Denny Creek Trail -> Hemlock Pass -> ridge -> SE talus field approach is the one used for this Southeast Slopes route.",
+      "type": "Trailhead",
+      "elevFt": 2300,
+      "directions": "Take I-90 to Exit 52, then follow Alpental Road to its end. Park at the Alpental day-use trailhead, at roughly 3,100 to 3,120 feet."
+     },
+     {
+      "lat": 47.429115,
+      "lng": -121.45393,
+      "elev": 3700,
+      "name": "Source Lake Trail junction",
+      "note": "Signed junction on Snow Lake Trail #1013; leave the main trail here and head toward Source Lake basin.",
+      "type": "Junction",
+      "distMi": 1.8
+     },
+     {
+      "lat": 47.432343,
+      "lng": -121.45366,
+      "elev": 4100,
+      "name": "Source Lake basin stream crossing",
+      "note": "Climbers' path fords the outlet stream draining Source Lake basin around 4,100 ft; last reliable water before the ascent gully, cairns mark the crossing.",
+      "type": "Water",
+      "distMi": 2.2
+     },
+     {
+      "lat": 47.436877,
+      "lng": -121.456524,
+      "elev": 4780,
+      "name": "Gully 'secret passage' below the cliffs",
+      "note": "An easy-to-miss rock passage at ~4,780 ft where the route leaves the open streambed gully and climbs NE along cliff bands into the upper basin.",
+      "type": "Junction",
+      "distMi": 2.7
+     },
+     {
+      "lat": 47.4599,
+      "lng": -121.4607,
+      "elev": 5080,
+      "name": "Thumbtack (rock tower), upper basin",
+      "note": "Prominent free-standing rock tower marking the talus basin between Bryant and Chair Peak; from here the route corkscrews southwest toward the Bryant-Chair gully.",
+      "type": "Junction",
+      "distMi": 3.1
+     },
+     {
+      "lat": 47.443575,
+      "lng": -121.464028,
+      "elev": 5500,
+      "name": "Bryant-Chair Peak gully / talus shoulder",
+      "note": "Steep, loose gully between the two peaks gains a talus shoulder on Bryant's ridge; helmets recommended, rockfall risk from parties above.",
+      "type": "Hazard",
+      "distMi": 3.6
+     },
+     {
+      "lat": 47.446762,
+      "lng": -121.464969,
+      "elev": 5700,
+      "name": "Summit block traverse",
+      "note": "Route stays left (south) of the talus field and traverses the south side of the west shoulder before the final scramble; exposed with loose rock, though holds are generally good.",
+      "type": "Hazard",
+      "distMi": 4.3
+     },
+     {
+      "lat": 47.451358,
+      "lng": -121.46092,
+      "elev": 5801,
+      "name": "Bryant Peak summit",
+      "type": "Summit",
+      "elevFt": 5801
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "before": {
+    "itinerary": {
+     "cal": "River fords near Hardscrabble Horse Camp are safest in lower, warmer-afternoon water (July-Sept) or via an early-morning firm-snow crossing; check MBS National Forest alerts, as FS-56/Middle Fork Rd access to the Dingford Creek TH has a history of washout closures that add road-walking miles.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Drive FS-56 to the Dingford Creek/Dutch Miller Gap trailhead (check current road-closure point) and follow the Dutch Miller Gap Trail up the Middle Fork Snoqualmie valley — a gradual first 4.5 miles followed by a steeper final push — to a camp near Hardscrabble Horse Camp. Most parties camp here rather than pushing further, since the peak's approach begins with an unbridged river ford.",
+       "hours": 5.5,
+       "miles": 7.5,
+       "title": "Approach to Hardscrabble camp",
+       "gainFt": 1400,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach camp near Hardscrabble Horse Camp / the river ford"
+      },
+      {
+       "n": 2,
+       "note": "Ford the river, ascend boulder/gully terrain to about 5,200 ft, then follow the key snow gully up to the Point-5,841 pass — parties describe steep snow in the final 200-300 ft where an ice axe (and often crampons/microspikes) is needed, plus a bergschrund/moat near the top that sometimes requires dropping into the moat and traveling beneath the snow for a short stretch. From the pass it's a little over a mile of easier snow/talus to the summit; some parties tag Big Snow Mountain via the connecting ~5,760 ft pass as a bonus, but the standard plan returns straight to camp.",
+       "hours": 8.5,
+       "miles": 4.3,
+       "title": "Burnt Boot Peak via the North Route",
+       "gainFt": 3640,
+       "lossFt": 3640,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Break camp, ford the river",
+         "detail": "Early crossing for firmer snow and lower water; estimated timing."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Ascend boulder field and gully to ~5,200 ft",
+         "detail": "Mixed boulder and brush terrain below the gully proper."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Enter the key snow gully toward the pass",
+         "detail": "Steep snow in the last 200-300 ft; ice axe required, crampons/microspikes recommended."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Top out at Point-5,841 pass",
+         "detail": "Bergschrund/moat crossing may be needed near the top of the gully."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Summit Burnt Boot Peak",
+         "detail": "About a mile of snow/talus travel from the pass to the summit."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at camp",
+         "detail": "Reverse the route; descending gully snow softens through the day."
+        }
+       ],
+       "objective": "Climb Burnt Boot Peak (6,483–6,540 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Dutch Miller Gap Trail back down to the trailhead/road.",
+       "hours": 4.5,
+       "miles": 7.5,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 1500,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack: ~7.5 mi/~1,400 ft each way to camp near Hardscrabble Horse Camp, bookending a ~4.3-mile, ~3,600 ft round-trip summit day via the north gully."
+    }
+   }
+  }
+ ]
+}

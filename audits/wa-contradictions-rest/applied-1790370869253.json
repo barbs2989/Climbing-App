@@ -1,0 +1,490 @@
+{
+ "applied": [
+  {
+   "id": "wa_silver_star_west_face_couloir",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass requirement"
+  },
+  {
+   "id": "wa_silver_star_northwest_face",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass requirement"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "length_m",
+   "path": [],
+   "fact": "Climb length"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "fa",
+   "path": [],
+   "fact": "FA style (roped vs unroped)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "FA date vs crowds history"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Summit-block grade"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Overnight permit"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach drainage (Silver Star Creek vs Burgundy Creek)"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Standard camp and its wind protection"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Standard camp and its wind protection"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Early Winters Creek crossing elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_silver_star_west_face_couloir",
+   "before": {
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."
+   }
+  },
+  {
+   "id": "wa_silver_star_northwest_face",
+   "before": {
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."
+   }
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.552069,
+      "lng": -120.630763,
+      "elev": 5400,
+      "name": "Silver Star Creek Trailhead (Hwy 20 pullout, ~MP 165-166)",
+      "note": "The long East Ridge, traversing over the Silver Horn sub-summit, starts via the Silver Star Creek approach from this same Hwy 20 pullout used by the North-East Ridge and Glacier routes. A separate, easier South-East Face and East Ridge variant starts instead from the Cedar Creek trailhead near milepost 175-176, so confirm which line you intend before you drive.",
+      "type": "Trailhead",
+      "elevFt": 5400
+     },
+     {
+      "lat": 48.548,
+      "lng": -120.58517,
+      "elev": 8876,
+      "name": "Silver Star Mountain - East/Main Summit",
+      "type": "Summit",
+      "elevFt": 8876
+     }
+    ],
+    "road": {
+     "name": "Silver Star Creek / Highway 20 pullout, Washington Pass",
+     "status": "Highway 20 is fully paved to the roadside pullouts (near milepost 166, about 4 miles east of Washington Pass, and at the Silver Star Creek crossing); no rough-road driving required to reach the start of the climbers' trail.",
+     "driveNote": "Roughly 3 hours from Seattle via I-5 and Highway 20, or about 45 minutes from Mazama/Winthrop.",
+     "seasonalGate": "Highway 20 over Washington Pass is a seasonal highway, typically closed by snow from mid-November into spring; reopening timing is variable year to year (historically mid-April to mid-June)."
+    },
+    "approach_variants": [
+     {
+      "name": "Cedar Creek Trailhead near Mazama, gaining the ridge at the Cedar and Early Winters Creek confluence",
+      "notes": "THIS IS THE ROUTE'S DEFINING LOGISTICAL FACT: IT USES A DIFFERENT TRAILHEAD FROM EVERY OTHER ROUTE ON THE PEAK. Start from the Cedar Creek trailhead near Mazama, at the end of Sandy Butte-Cedar Creek Road #200 about 4.25 miles west of Mazama off SR-20, NOT the Silver Star Creek or Wine Spires pullouts on SR-20 that serve the Glacier and Northeast Ridge routes. Gain the ridge near the confluence of Cedar and Early Winters Creeks, then follow the crest north and west for roughly 3.5 miles to the summit. The route's stored waypoint names the Silver Star Creek pullout while its approach text names Cedar Creek. And note this is SILVER STAR MOUNTAIN IN OKANOGAN COUNTY at 8,876 ft above Washington Pass, not the Silver Star Mountain in Clark County near Vancouver, Washington, which is a different peak entirely.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A descent that finishes at a different trailhead several highway miles from the start",
+       "Real crevassed glacier terrain on the descent",
+       "A 3.5-mile ridge traverse with sustained route-finding",
+       "Two peaks in Washington named Silver Star Mountain; this is the Okanogan County one"
+      ],
+      "baseFinding": "THE TRAILHEAD IS THE TEST, AND IT IS THE MOST CONSEQUENTIAL ONE HERE BECAUSE THE TWO OPTIONS ARE SEVERAL HIGHWAY MILES APART. IF YOU PARKED AT A PULLOUT ON SR-20 OPPOSITE THE WINE SPIRES, YOU ARE AT THE WRONG TRAILHEAD FOR THIS ROUTE. The East Ridge is entered from CEDAR CREEK, on the Mazama side. ARRIVAL AT THE RIDGE: gain the crest NEAR THE CONFLUENCE OF CEDAR AND EARLY WINTERS CREEKS. Two named creeks meeting is a feature you can identify by sound in fog, and the ridge rises directly above it. FROM THERE THE HANDRAIL IS THE CREST ITSELF, FOR ROUGHLY 3.5 MILES NORTH AND WEST TO THE SUMMIT. That is a long ridge, and the navigation rule is the same as on any long ridge: keep it under your feet. Sidehilling off either side of a 3.5-mile crest at 5.9-plus is how a day here goes wrong. AND THE DESCENT LANDS YOU AT THE OTHER TRAILHEAD, WHICH IS THE PLANNING PROBLEM THIS ROUTE SETS: from the summit, downclimb or rope down a short distance onto the SILVER STAR GLACIER, descend it west and northwest toward BURGUNDY COL, then over the col onto the Burgundy Col climbers' trail, which drops to Highway 20 near milepost 166 about 4 miles from Washington Pass. THAT IS SEVERAL MILES OF HIGHWAY FROM THE CEDAR CREEK TRAILHEAD YOU STARTED AT. Arrange a shuttle before you leave, not afterwards. CARRY GLACIER TRAVEL GEAR, and an axe and crampons in early season: the descent crosses real crevassed glacier terrain, not just snow slopes."
+     }
+    ],
+    "alpine_grade": "IV",
+    "length_m": 1609,
+    "fa": "Geof Childs & Larry Goldie, September 14, 2000 (first continuous roped ascent); the ridge was earlier soloed unroped by Fred Beckey & Dave Beckstead in 1986 at roughly 5.8/Grade IV as the 'NE Spur & East Ridge,' and the broader ridge line traces back to a 1932 south-face/east-ridge combination climbed by Hermann Ulrichs and Oscar Pennington.",
+    "crowds": {
+     "peakTraffic": "A 2006 first-person account by one of the FA climbers describes the ridge as having 'remained seldom visited and rarely ascended in its entirety' nearly two decades after the FA, with only a handful of named subsequent ascents through 2005.",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Very low -- there are no logged ascents of this specific line, and the whole Silver Star Mountain area sees a small fraction of the traffic of Liberty Bell's Beckey Route or South Early Winters Spire's South Arête."
+    }
+   }
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "3rd class",
+      "notes": "Forest and climber's trail ascent from Early Winters Creek to Burgundy Col; steep and loose in places, gaining ~3,500 ft elevation over 3.5 miles",
+      "pitch": "1"
+     },
+     {
+      "grade": "4th class snow/ice",
+      "notes": "Descent from Burgundy Col across steep snow apron; requires crampons and ice axe; negotiate crevasse field on glacier proper",
+      "pitch": "2"
+     },
+     {
+      "grade": "4th class snow/ice",
+      "notes": "Mid-glacier traverse; moderate gradient, crevasse hazard (hidden and open); ~1,500 ft elevation gain to upper glacier",
+      "pitch": "3"
+     },
+     {
+      "grade": "4th-5th class rock/snow",
+      "notes": "Final summit block; 300-500 ft of exposed scrambling; true east summit is 5th class with serious fall exposure; many parties stop at col or easier west summit (8,840 ft)",
+      "pitch": "4"
+     }
+    ],
+    "access": {
+     "_raw": {
+      "elevation": "8,876 feet",
+      "permit_cost": "$0 for climbing/wilderness permit",
+      "permit_type": "No climbing permit required; free self-issued wilderness permit for overnight",
+      "land_manager": "USFS - Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+      "parking_pass": "Northwest Forest Pass ($5 day / $30 annual); Washington State Sno-Park Permit required Dec 1 - Mar 31",
+      "permit_pickup": "Self-issued at trailhead",
+      "special_hazards": "Glacier travel in certain approaches; weather exposure",
+      "wilderness_zone": "Alpine meadow and glacier area",
+      "group_size_limit": "No specific limit noted",
+      "seasonal_closures": "Year-round access with winter vehicle pass requirement; snow typically Nov-April",
+      "altitude_restrictions": "None noted"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No climbing permit required; free self-issued wilderness permit for overnight",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Alpine meadow and glacier area",
+     "landManager": "USFS - Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping at Burgundy Col and the approach benches needs no permit; Lone Fir Campground is a fee, first-come first-served car campground, not a backcountry permit area."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.55,
+      "lng": -120.6306,
+      "elev": 4400,
+      "name": "SR-20 Burgundy Col pullout (MP 165)",
+      "note": "Roadside pullout on the North Cascades Highway, first pullout past the Cutthroat Creek trailhead turnout, ~4 mi east of Washington Pass; Northwest Forest Pass needed to park.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the broad pullout on SR-20 near milepost 165-166, about 4 miles east of Washington Pass — it's the first pullout past the Cutthroat Creek trailhead turnout, marked by a sign pointing toward Silver Star Mountain. A Northwest Forest Pass is needed to park there. This section of Highway 20 is closed by WSDOT over the winter and typically reopens in mid-spring depending on snowpack, so check road status before planning the trip."
+     },
+     {
+      "lat": 48.552132,
+      "lng": -120.629163,
+      "elev": 4450,
+      "name": "Early Winters Creek crossing",
+      "note": "Drop down the embankment off the highway and cross on logs — last easy, reliable water until the Bench or Col trickles.",
+      "type": "Water",
+      "distMi": 0.1
+     },
+     {
+      "lat": 48.552981,
+      "lng": -120.605271,
+      "elev": 6400,
+      "name": "Larch bench camp (\"the Bench\")",
+      "note": "Flat larch-shaded bench reached via the climber's trail on the timbered rib left of Burgundy Creek; a seasonal trickle nearby dries up by late summer.",
+      "type": "Campsite",
+      "distMi": 1.6
+     },
+     {
+      "lat": 48.554513,
+      "lng": -120.589297,
+      "elev": 7800,
+      "name": "Burgundy Col",
+      "note": "Gain the col via the gully above the Bench, staying left; 3-4 exposed bivy sites here and the last snowmelt trickle before the glacier.",
+      "type": "Junction",
+      "distMi": 2.7
+     },
+     {
+      "lat": 48.553164,
+      "lng": -120.586826,
+      "elev": 7600,
+      "name": "Steep snow drop onto glacier's north flank",
+      "note": "Downclimb steep snow off the col, rope up, and traverse below Burgundy Spire's loose rock slabs — rockfall and, late season, open crevasses.",
+      "type": "Hazard",
+      "distMi": 2.9
+     },
+     {
+      "lat": 48.54845,
+      "lng": -120.58637,
+      "elev": 8700,
+      "name": "Silver Star Glacier saddle",
+      "note": "Top of the Silver Star Glacier at the saddle between the west and east summits; steepens noticeably in the last pitch, crampons/axe mandatory.",
+      "type": "Junction",
+      "distMi": 3.3
+     },
+     {
+      "lat": 48.547945,
+      "lng": -120.585127,
+      "elev": 8876,
+      "name": "Silver Star Mountain (East Summit)",
+      "note": "True summit is the east peak reached by a short 4th-class scramble off the saddle; Wine Spires ridge visible to the north.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "pro_tips": [
+     "Many parties camp on the larch bench (~6,400 ft) rather than the more exposed, windier Burgundy Col",
+     "Start early enough to cross the glacier and descend the sandy Burgundy Col gully before afternoon storms build",
+     "Carry a Northwest Forest Pass - the SR-20 pullout has no fee station but the trailhead requires one"
+    ],
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long, sustained approach and summit day — commonly done as an overnight but fit parties push it in a single very long day (10-14+ hrs car-to-car)",
+      "packWeight": "Overnight glacier kit (rope, crevasse-rescue gear, camping gear) unless doing a fast single push, so moderate-to-heavy pack"
+     },
+     "approachTime": "Long approach via Silver Star Creek to the glacier basin; most parties camp partway rather than day-tripping it",
+     "requiredSkills": [
+      "Roped glacier travel",
+      "Crevasse rescue",
+      "Snow travel/self-arrest",
+      "Class 3-4 scrambling with exposure near the summit",
+      "Route-finding on glaciated terrain"
+     ],
+     "experienceLevel": "Intermediate mountaineer comfortable with roped glacier travel and crevasse rescue; not a beginner objective despite the class 3-4 rating"
+    },
+    "itinerary": {
+     "cal": "Access is via the North Cascades Highway (SR-20), which WSDOT typically closes in winter and reopens mid-spring depending on snowpack — check road status before planning a trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the trailhead, climb a steep forested trail through the larch bench and on to camp. Most parties push to Burgundy Col for a shorter summit day and better wind protection on a flat snowfield below the Chianti Spires; parties wanting a shorter first day stop at the larch bench instead.",
+       "hours": 3.5,
+       "miles": 3.6,
+       "title": "Approach to high camp",
+       "gainFt": 3500,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach camp at Burgundy Col (~7,800 ft) or the larch bench (~6,400 ft)"
+      },
+      {
+       "n": 2,
+       "note": "An early alpine start crosses the glacier while the snow is still firm; the crux of the day is the glacier-to-rock transition near the top, where a moat and class 3-4 terrain must be negotiated before a short scramble to the summit. Parties then reverse the route, re-crossing Burgundy Col and finishing with the short but steep 'Heartbreak Hill' back to the trailhead.",
+       "hours": 10.5,
+       "miles": 7.7,
+       "title": "Summit via the Silver Star Glacier, descend to the car",
+       "gainFt": 900,
+       "lossFt": 4400,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "4:25 AM",
+         "label": "Leave camp",
+         "detail": "Head up the snowfield toward the start of the glacier."
+        },
+        {
+         "time": "5:20 AM",
+         "label": "Rope up",
+         "detail": "Begin the glacier crossing on firm, consolidated snow."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Glacier-to-rock transition",
+         "detail": "Steep snow meets a moat and class 3-4 terrain — the technical crux of the route."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Summit",
+         "detail": "Final few hundred feet of scrambling gain the top."
+        },
+        {
+         "time": "Midday",
+         "label": "Begin descent",
+         "detail": "Reverse the route back down the glacier and up over Burgundy Col."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Heartbreak Hill to trailhead",
+         "detail": "Final short, steep climb-and-descend before reaching the car."
+        }
+       ],
+       "objective": "Climb the glacier to the summit, then descend all the way to the trailhead"
+      }
+     ],
+     "totalNote": "A standard 2-day trip: overnight at Burgundy Col or the larch bench, then a long summit day (roughly 10-11 hours) that finishes with a full descent to the trailhead; very fit parties can do the whole route car-to-car in one long day."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "4:25 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 3.5,
+       "note": "From the trailhead, climb a steep forested trail through the larch bench and on to camp. Most parties push to Burgundy Col for a shorter summit day and better wind protection on a …",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "An early alpine start crosses the glacier while the snow is still firm; the crux of the day is the glacier-to-rock transition near the top, where a moat and class 3-4 terrain must …",
+       "fromTo": "Summit via the Silver Star Glacier, descend to the car",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

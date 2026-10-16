@@ -1,0 +1,493 @@
+{
+ "file": "r122.json",
+ "results": [
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Descent rappel count",
+   "verdict": "fixed",
+   "correct_value": "About 4-5 rappels from bolted anchors down the West Ridge (the count depends on how much of the crest is downclimbed)",
+   "evidence": "One route listing gives five bolted rappel stations on the West Ridge descent: two, then a downclimb along the crest, then three more. A 2024 trip report descending the same West Ridge line counted four rappels; a North Ridge party counted five on fixed anchors. descent_text and bail describe the alternative of reversing the ridge by downclimbing, which is a genuine second option and not a contradiction.",
+   "sources": [
+    "https://www.mountainproject.com/route/110174839/west-ridge",
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://spokalpine.com/2018/07/31/cutthroat-peak-north-ridge-iii-5-7/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_west_ridge",
+     "fact": "Descent rappel count",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "About 5-6 rappels from bolted anchors",
+     "replace": "About 4-5 rappels from bolted anchors"
+    },
+    {
+     "id": "wa_cutthroat_west_ridge",
+     "fact": "Descent rappel count",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "About 4 rappels off the west side",
+     "replace": "About 4-5 rappels off the west side"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Trailhead named",
+   "verdict": "fixed",
+   "correct_value": "The unsigned SR 20 shoulder/State Creek pullout about half a mile west of the Blue Lake trailhead (~1.5-2 mi west of Washington Pass), not Rainy Pass",
+   "evidence": "A route listing starts the West Ridge from SR 20 about 2 miles west of Washington Pass, dropping into the bowl southwest of the summit. Two independent trip reports park at the SR 20 shoulder half a mile west of the Blue Lake trailhead and at the State Creek pullout (5,050 ft) respectively, then cross State Creek. None starts at Rainy Pass.",
+   "sources": [
+    "https://www.mountainproject.com/route/110174839/west-ridge",
+    "https://onehikeaweek.com/2018/08/25/cutthroat-peak/",
+    "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_west_ridge",
+     "fact": "Trailhead named",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Quick alpine climb from Rainy Pass.",
+     "replace": "Quick alpine climb from a pullout on SR 20 west of Washington Pass."
+    },
+    {
+     "id": "wa_cutthroat_west_ridge",
+     "fact": "Trailhead named",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Small unpaved parking lot at Rainy Pass trailhead.",
+     "replace": "Roadside parking on the SR 20 shoulder about half a mile west of the Blue Lake trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Which southwest gully to take",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The fields describe two different places: the ridge is gained by the (first) Southwest Gully, and the warnings are about mistaking the harder Second Southwest Gully for it at the entry; the pro tip is about finishing the summit block, which is done by the Second Southwest Gully or the Northwest Ledge. A published route summary states exactly that split (attain the ridge via the Southwest Gully, finish the summit block by the Second Southwest Gully or the Northwest Ledge), and a trip report confirms the entry mistake.",
+   "sources": [
+    "https://www.summitpost.org/west-ridge/164274",
+    "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Climb length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 975 m figure matches a route listing that gives the route as '3,200 ft, 3 pitches' — evidently the approach gain entered as climb length. No source found states the actual technical length of the West Ridge, so there is no researched value to replace it with.",
+   "sources": [
+    "https://www.mountainproject.com/route/110174839/west-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Pullout elevation",
+   "verdict": "bivy_zone_list",
+   "correct_value": "~5,050 ft (the waypoint value is supported)",
+   "evidence": "A trip report puts the State Creek pullout at 5,050 ft, matching waypoints[0].elev. The disputed 5,400 ft is on bivy[2] ('Highway shoulder pullout near Blue Lake trailhead'), which is owned by the separate camping clean-up; no patch written.",
+   "sources": [
+    "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Up to 22 pitches",
+   "evidence": "The route listing for the Complete South Buttress gives 22 pitches, 1,200 ft. The '16 pitches' figure is the pitch count commonly given for the standard South Buttress (a guide service and a route listing both give ~16 for the standard line), so it was carried over from the sister route. pitches, partner_requirements, the itinerary note and the objective all say 22.",
+   "sources": [
+    "https://www.mountainproject.com/route/111086430/complete-south-buttress",
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_complete_south_buttress",
+     "fact": "Pitch count",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Up to ~16 pitches",
+     "replace": "Up to ~22 pitches"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "fact": "Rock grade",
+   "verdict": "unresolved",
+   "correct_value": "5.4 (optional summit pitches) — only one external source",
+   "evidence": "The route listing says the optional pitches to the summit 'go at 5.4 in the summer'; no source supports 5.8. A second independent source for 5.4 could not be reached (other pages blocked or silent on the rock grade), and only two rendered fields (pitch_detail[4] grade and notes) agree internally, so no patch was written.",
+   "sources": [
+    "https://www.mountainproject.com/route/109740367/cauthorn-wilson"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "fact": "Trailhead and access season",
+   "verdict": "fixed",
+   "correct_value": "Long pullout on the north side of SR 20 ~1.5 mi west of Washington Pass; season right after SR 20 reopens, typically April-May",
+   "evidence": "The route listing says the route is approached via the South Buttress approach and is best as soon as possible after Highway 20 opens, usually April or May. An independent trip report attempted it in May right after the highway opened and summited in early April the next year; a search summary of a trip report parks just west of the Blue Lake trailhead on SR 20. Nothing places it at Rainy Pass or June-October.",
+   "sources": [
+    "https://www.mountainproject.com/route/109740367/cauthorn-wilson",
+    "https://www.jeffreyjhebert.com/adventures/attempt-on-cauthorn-wilson"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+     "fact": "Trailhead and access season",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October.",
+     "replace": "Park in the long pullout on the north side of SR 20 about 1.5 miles west of Washington Pass. Seasonal: right after SR 20 reopens, typically April-May."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Beta describes a different route (grade, length, trailhead)",
+   "verdict": "fixed",
+   "correct_value": "Grade III, 5.8, from the SR 20 pullout ~1.5 mi west of Washington Pass",
+   "evidence": "The route listing gives Grade III, 5.8, 12 pitches (16 in a finer breakdown), parking at a long pullout on the north side of SR 20 1.5 miles west of Washington Pass. A trip report and a guide service both grade it III+ 5.8 and describe it as a long route. The beta text was a copy of generic ridge text naming Rainy Pass and Grade II 5.7.",
+   "sources": [
+    "https://www.mountainproject.com/route/109326651/south-buttress",
+    "https://spokalpine.com/2018/06/20/cutthroat-peak-south-buttress-iii-5-8/",
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_south_buttress",
+     "fact": "Beta describes a different route (grade, length, trailhead)",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+     "replace": "Grade III, 5.8: a long, wandering line of mostly low-fifth-class ground broken by steeper 5.7-5.8 cracks and chimneys. Reached from a pullout on SR 20 about 1.5 miles west of Washington Pass. Rock is gritty and loose in places low down and cleaner higher up."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Standard descent / rappel count",
+   "verdict": "fixed",
+   "correct_value": "Usual descent: West Ridge, about 4-5 single-rope rappels from bolted chains; alternative: 12+ rappels reversing the buttress",
+   "evidence": "A guide service and a route listing both give two options: the West Ridge with several rappels and downclimbing, or more than a dozen rappels back down the South Buttress. A 2024 party descended the West Ridge with four rappels; a 2018 party reversing the buttress made 12+ rappels. '10-12' matches neither.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress",
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://spokalpine.com/2018/06/20/cutthroat-peak-south-buttress-iii-5-8/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_south_buttress",
+     "fact": "Standard descent / rappel count",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "roughly 10-12 rappels down the buttress, generally following the line of ascent",
+     "replace": "the usual West Ridge descent takes about 4-5 rappels from bolted chain anchors; reversing the buttress instead takes 12 or more, generally following the line of ascent"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Total gain / loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One 2024 trip report records 958 m (~3,143 ft) of gain, matching loss_ft; the itinerary's 2,965 ft is pullout-to-summit arithmetic, and a West Ridge trip from the same pullout records 3,300 ft. No two sources state the same car-to-car gain for this route, so neither gain_ft nor loss_ft was changed.",
+   "sources": [
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2024 trip report records 6.08 km round trip (~3 km one way), which suggests dist_km 2 is low, but no second source states the one-way distance for this route; dist_km left unchanged.",
+   "sources": [
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "fact": "Headwall protection (bolted pitches vs bolted anchors)",
+   "verdict": "fixed",
+   "correct_value": "The four headwall pitches have bolted anchors and are gear-protected; the route has only one protection bolt",
+   "evidence": "The first-ascent report says bolted anchors were placed on lead for every pitch 5.9 and above and only one protection bolt was placed on the route. The route listing likewise says the four headwall anchors are bolted and notes a single protection bolt on the crux pitch, with a double rack to #3.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216751",
+    "https://www.mountainproject.com/route/124537013/the-swarm"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_the_swarm",
+     "fact": "Headwall protection (bolted pitches vs bolted anchors)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "with four bolt-protected headwall pitches (5.10-5.11)",
+     "replace": "with four gear-protected headwall pitches (5.10-5.11) on bolted anchors"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "fact": "Pitch 2 grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The current breakdown says the pitch moves right over loose blocks into 4th-class ground, i.e. a few 5.6 moves then easier terrain; the route listing grades it 5.6 with the same description and the first-ascent report calls pitches 1-2 low fifth class.",
+   "sources": [
+    "https://www.mountainproject.com/route/124537013/the-swarm",
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "fact": "Descent choice logic",
+   "verdict": "fixed",
+   "correct_value": "Rappel the route or descend the South Buttress, switching to the West Ridge if other parties are on the buttress",
+   "evidence": "The route listing says to descend the South Buttress unless other parties are on it, otherwise the West Ridge; the first ascensionists descended the South Buttress. pro_tips[2] and pitch_detail[7] already say this.",
+   "sources": [
+    "https://www.mountainproject.com/route/124537013/the-swarm",
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_the_swarm",
+     "fact": "Descent choice logic",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "or descend via the South Buttress or West Ridge if other parties are on those routes.",
+     "replace": "or descend via the South Buttress, switching to the West Ridge if other parties are on the buttress."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "fact": "Beta describes a different route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The beta is generic ridge text (Grade II 5.7, Rainy Pass) copied across Cutthroat routes, but the route-specific pages for the Southeast Buttress were blocked, and the only grade found in search summaries (III+ 5.8) conflicts with the row's III / 5.6. Without two sources for the grade, the beta was not rewritten.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states car-to-car gain for the Southeast Buttress; per the rules gain_ft is not recomputed from pin elevations.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "fact": "How the North Ridge Notch is gained from the standard approach",
+   "verdict": "fixed",
+   "correct_value": "From the south, one loose, runout 5.7 (PG13) pitch gains the notch; the 2-3 low-5th pitches belong to the northern Porcupine Creek approach",
+   "evidence": "The route listing says the southern approach gains the notch by a loose, runout 5.7 PG13 pitch, while the Porcupine Creek approach from Rainy Pass takes 2-3 short low-fifth pitches. An independent trip report from the south describes the first pitch as the loose, friable 5.7 crux with marginal cams.",
+   "sources": [
+    "https://www.mountainproject.com/route/114788795/north-ridge",
+    "https://spokalpine.com/2018/07/31/cutthroat-peak-north-ridge-iii-5-7/"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "How the North Ridge Notch is gained from the standard approach",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "2-3 short low-5th-class pitches to the North Ridge Notch.",
+     "replace": "One loose, runout 5.7 pitch to the North Ridge Notch."
+    },
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "How the North Ridge Notch is gained from the standard approach",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "a quick approach leads to 2-3 short pitches gaining the North Ridge Notch",
+     "replace": "a quick approach leads to one loose, runout 5.7 pitch gaining the North Ridge Notch"
+    },
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "How the North Ridge Notch is gained from the standard approach",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "a quick approach leads to 2-3 short pitches gaining the North Ridge Notch",
+     "replace": "a quick approach leads to one loose, runout 5.7 pitch gaining the North Ridge Notch"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "fact": "Descent path (via notch vs from summit)",
+   "verdict": "unresolved",
+   "correct_value": "Likely: rappel the West Ridge line starting at the bolted station just below/west of the summit",
+   "evidence": "The route listing says to rappel from the ridge with rings just below the summit, and a trip report notes a bolted rappel station adjacent to the true summit and five rappels down the West Ridge — both point to the West Ridge rappels starting at the summit, not after reversing the ridge to the notch. But the notch-reversal descent is written across descent, descent_text, rappel_detail, rappel_count_note, approach_variants and the itinerary, and the geometry of where the West Ridge line meets the North Ridge could not be pinned down well enough to rewrite all of them safely.",
+   "sources": [
+    "https://www.mountainproject.com/route/114788795/north-ridge",
+    "https://spokalpine.com/2018/07/31/cutthroat-peak-north-ridge-iii-5-7/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade III",
+   "evidence": "The route listing gives Grade III, 8 pitches, 600 ft; an independent trip report titles it III 5.7. The commitment column and partner_requirements already say III.",
+   "sources": [
+    "https://www.mountainproject.com/route/114788795/north-ridge",
+    "https://spokalpine.com/2018/07/31/cutthroat-peak-north-ridge-iii-5-7/"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "Commitment grade",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Grade II, 5.6-5.7",
+     "replace": "Grade III, 5.6-5.7"
+    },
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "Commitment grade",
+     "op": "set",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "II-III",
+     "value": "III"
+    },
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "Commitment grade",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Grade II-III 5.7",
+     "replace": "Grade III 5.7"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "fact": "Hardest rock grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5.10",
+   "evidence": "The American Alpine Journal account of a neighbouring route describes the 1976 Bard/Chouinard/Cunningham East Face as 6 pitches, III 5.10. overview, detailed_rack, pitch_detail and the corrections note on the row all say 5.10; only rock_grade says 5.7.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_northeast_face",
+     "fact": "Hardest rock grade",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.7",
+     "value": "5.10"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "fact": "Beta describes a different route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Grade III, 5.10, 6 pitches on the East Face, reached from the SR 20 pullout over the rib into the east basin",
+   "evidence": "The beta is generic West Ridge text (Grade II 5.7, Rainy Pass). The American Alpine Journal gives III 5.10, 6 pitches; the row's grade, overview, pitch_detail, approach and approach_variants all agree on III, 5.10 and the State Creek pullout / east-basin approach, which the Cauthorn-Wilson route listing also describes for this side of the peak.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216751",
+    "https://www.mountainproject.com/route/109740367/cauthorn-wilson"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_northeast_face",
+     "fact": "Beta describes a different route",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route.",
+     "replace": "Grade III, 5.10: six pitches up the East Face, with two 5.10 pitches near the center of the wall, ending on a false summit. Reached from a pullout on SR 20 west of Washington Pass by crossing a rib into the basin east of the peak. Sees little traffic."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "fact": "Commitment field holds a time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "III",
+   "evidence": "'12.5 hrs' is a duration in a grade column. The American Alpine Journal gives the route as III 5.10; the row's grade, approach_variants notes and corrections note all say Grade III.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_northeast_face",
+     "fact": "Commitment field holds a time",
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "12.5 hrs",
+     "value": "III"
+    }
+   ]
+  }
+ ]
+}

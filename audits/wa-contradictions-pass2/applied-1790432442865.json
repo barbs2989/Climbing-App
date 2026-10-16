@@ -1,0 +1,109 @@
+{
+ "applied": [
+  {
+   "id": "wa_castle_in_the_sky",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "P3 protection rating"
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "P3 protection rating"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_castle_in_the_sky",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "5.7",
+      "notes": "Start low in the moat below the buttress. Climb clean, well-protected granite slabs to a ledge, then follow it left to a good belay. If the cracks straight above the start are wet, the slab to their right is the alternative.",
+      "pitch": "P1",
+      "lengthM": 46
+     },
+     {
+      "grade": "5.8",
+      "notes": "Take the gully on the left, not the steep option straight up. After about 50 ft, at a large ledge, turn right up a steep face of big jugs on solid rock with no protection. Trend up and right to the next major crack or gully for the anchor.",
+      "pitch": "P2",
+      "lengthM": 58
+     },
+     {
+      "grade": "5.9",
+      "notes": "Runout (PG-13). Head up and left, then break right into the main corner system. A knifeblade piton protects the step right onto a slab. Friable, discontinuous corners lead to an indistinct ledge with a fixed #1 knifeblade at the belay. The big open-book corner above is steep, mossy and loose; do not take it.",
+      "pitch": "P3",
+      "anchor": "fixed pins",
+      "lengthM": 61
+     },
+     {
+      "grade": "5.10b",
+      "notes": "Head up and right. Avoid the obvious open-book corner and make a hard-to-spot step up and right onto the slab. A gentle rising traverse right includes about 25 ft of 5.10 face climbing on excellent rock. It ends at a stance by some flakes, where you belay.",
+      "pitch": "P4",
+      "lengthM": 37
+     },
+     {
+      "grade": "5.10a",
+      "notes": "Up delicate flakes, then step right into a good crack as soon as possible. Well-protected crack climbing leads past a roof crux. Where the cracks fork, take the right one past a couple of vegetated moves to a cramped belay built around a good #3 cam placement.",
+      "pitch": "P5",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.9",
+      "notes": "Continue up the crack to a rubble-covered ledge. A short, technical finger crack reaches an obvious ledge system. Traverse it right all the way to the huge gully, then run the rope up the rib beside the gully to a heather ledge belay.",
+      "pitch": "P6",
+      "lengthM": 61
+     },
+     {
+      "grade": "5.4",
+      "notes": "Move into the huge gully, which is lined with solid, water-polished rock rather than rubble. Stem up it for a full rope length.",
+      "pitch": "P7",
+      "lengthM": 58
+     },
+     {
+      "grade": "5.4",
+      "notes": "Continue up the polished gully to a saddle on the ridge crest. Scramble gravel and heather to an anchor at the base of the steeper wall above.",
+      "pitch": "P8",
+      "lengthM": 76
+     },
+     {
+      "grade": "5.5",
+      "notes": "Climb compact rock up and right past gravel-covered ledges to an anchor. There is essentially no protection on this pitch.",
+      "pitch": "P9",
+      "lengthM": 40
+     },
+     {
+      "grade": "Low 5th",
+      "notes": "Up the ridge crest. From here the good gneiss gives way to the compact, shattered rock typical of the Pickets. Gear is sparse.",
+      "pitch": "P10",
+      "lengthM": 61
+     },
+     {
+      "grade": "Low 5th",
+      "notes": "Simul-climb the ridge to the notch below the west summit, on shattered rock with limited protection. Take care not to knock rock onto a partner below.",
+      "pitch": "P11",
+      "lengthM": 183
+     },
+     {
+      "grade": "4th class",
+      "notes": "4th-class scrambling from the notch up to the west summit of Whatcom Peak.",
+      "pitch": "P12",
+      "lengthM": 61
+     }
+    ],
+    "watch_out": [
+     "Loose rock and occasional runouts typical of Pickets alpine rock, notably in the P3 corner system (5.9R).",
+     "Wet cracks low on the route after rain or snowmelt.",
+     "The approach itself (Easy Ridge, Imperfect Impasse) is a crux in its own right and should not be underestimated."
+    ]
+   }
+  }
+ ]
+}

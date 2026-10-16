@@ -1,0 +1,98 @@
+{
+ "file": "s066.json",
+ "results": [
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Parking pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Forest Service sources consistently say no fee: the Slate Pass Trailhead, Slate Peak Trailhead and Harts Pass Trailhead pages each state 'No fees required', and the regional list of day-use fee sites names Andrews Creek, Chewuch and Robinson Creek trailheads but not Harts Pass, Slate Pass or Slate Peak. Against that, the WTA Slate Peak and Buckskin Ridge hike pages list a Northwest Forest Pass / America the Beautiful pass, and the PNT Harts Pass page states $5/day or a recreation pass. The two camps of sources genuinely disagree (FS pages are one agency), so no patch. Would settle: a direct answer from the Methow Valley Ranger District on whether Slate Pass is a fee site; if confirmed, passRequired should name Slate Pass TH and parking_pass should say the pass applies at other Pasayten trailheads (Andrews Creek, Chewuch, Robinson Creek), not Slate Pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/harts-pass-trailhead",
+    "https://www.wta.org/go-hiking/hikes/harts-pass-and-slate-peak",
+    "https://www.wta.org/go-hiking/hikes/buckskin-ridge",
+    "https://www.pnt.org/locations/harts-pass-trailhead/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ruth_mountain_south_slopes",
+   "fact": "Max slope angle vs 'gentle' glacier",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only numeric angles found: one route page describes a seasonal very steep side traverse on a 60-degree snowfield east of the first ridge highpoint (July conditions), while a 2025 trip report calls the eroded climbers' path past Hannegan Pass a 40-degree slope. Mazamas, Northwest Alpine Guides and Mountaineers pages give no angle. The 60 plausibly refers to the Pt 5930 traverse rather than the glacier, but no second source confirms 60 (the only other figure is 40), so max_angle is left unchanged. Would settle: a second measured angle for the Pt 5930 traverse.",
+   "sources": [
+    "https://www.summitpost.org/ruth-glacier/156614",
+    "https://www.wanderingtherockies.com/blog/ruthmountain-washington-2025",
+    "https://mazamas.org/activity/309/",
+    "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "fact": "Distance and gain to Eleven Bull Basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two independent Bailey Range trip reports give different first-day figures from Sol Duc to Eleven Bull Basin: one about 12.5 miles and 5,000 ft (first 10 mi on trail, last 2.5 slow gully crossings), the other about 15 miles and nearly 6,000 ft. Climber Kyle, Engineered for Adventure, Mountain Flamingo and Pristine Zone give no segment figures. The waypoint's 12 mi is near the first, the approach's 15 mi/6,000 ft matches the second, and neither supports the itinerary's 4,200 ft. Would settle: a GPS-tracked figure for Sol Duc TH to Eleven Bull Basin from a third party.",
+   "sources": [
+    "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2013-08-06.4302261828",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "fact": "Total gain framing",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside figures for the one-way leg to Eleven Bull Basin range from about 5,000 ft to nearly 6,000 ft, both above the itinerary's 4,200 ft to camp, so the itinerary days (and gain_ft 6541 derived from them) may undercount rather than the 'each way' note overstating. No source gives a car-to-car total for Ruth Peak, so neither gain_ft nor the note is changed. Would settle: a car-to-car gain figure for Sol Duc to Ruth Peak.",
+   "sources": [
+    "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2013-08-06.4302261828"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Route grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project's EZ Way page shows 5.6 (no mention of 5.5), agreeing with grade, beta, pitch_detail and the waypoint note. The first-ascent leader's trip report on Oregon Hikers states 'My rating was a YDS 5.5', agreeing with rock_grade and rappels. The two outside sources disagree and both trace to the first-ascent party; the row has two 5.5 fields, not one outlier, so the internal-plus-one rule is not met. Would settle: a repeat ascent's rating.",
+   "sources": [
+    "https://www.mountainproject.com/route/113734342/ez-way",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "fact": "Wilderness permit zone (Lake Chelan-Sawtooth Wilderness)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Forest Service pages say Cedar Creek Trail #476 enters the Lake Chelan-Sawtooth Wilderness only at about 9.2 miles near Abernathy Pass, while the climbers' turnoff for the Silver Horn is at about 5 miles; but no source (Mountain Project area page, Wikipedia, peak pages) states whether the Silver Horn's south face and the 6,200 ft meadows lie inside the wilderness. Would settle: a wilderness boundary map placing the Silver Horn south basin.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/cedar-creek-trail-476",
+    "https://www.mountainproject.com/area/106255336/the-silver-horn",
+    "https://en.wikipedia.org/wiki/Silver_Star_Mountain_(Okanogan_County,_Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "fact": "Approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only approach description gives ~5 miles on the Cedar Creek Trail, then a rough path up the creek to meadows at 6,200 ft, with no total. The straight line from the trailhead pin to the summit pin is about 8.7 km, so dist_km 8 appears to count only the trail leg, but no source states a one-way total to the base; the summit waypoint's 7 mi is likewise unsourced. Would settle: a trip report giving the full trailhead-to-face distance.",
+   "sources": [
+    "https://www.mountainproject.com/area/106255336/the-silver-horn",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/cedar-creek-trail-476"
+   ],
+   "patches": []
+  }
+ ]
+}

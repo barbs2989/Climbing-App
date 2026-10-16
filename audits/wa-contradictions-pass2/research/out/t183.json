@@ -1,0 +1,203 @@
+{
+ "file": "t183.json",
+ "results": [
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Whether a permit is required",
+   "verdict": "fixed",
+   "correct_value": "No climbing permit is required, but walking or biking the private logging roads to the route requires the landowner's paid recreation permit.",
+   "evidence": "The landowner's recreation page states its North Cascades (Whatcom/Skagit/Snohomish) forestland is accessible only with a fee recreation permit, including a capped number of non-motorized permits. The South Twin climbing page describes the gate at the Middle Fork bridge posted 'permit required for all access' and non-motorized day permits sold for a fee. The row's permit, access.fees, access.parking_pass and passRequired already say this; only access.permit said none was required.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.summitpost.org/south-twin/679815"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+     "replace": "No climbing permit is required, but walking or biking the private logging roads to the route requires the landowner's paid recreation permit.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Whether a permit is required"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Whether a permit is required",
+   "verdict": "fixed",
+   "correct_value": "No climbing permit is required, but walking or biking the private logging roads to the route requires the landowner's paid recreation permit.",
+   "evidence": "The landowner's recreation page states its North Cascades (Whatcom/Skagit/Snohomish) forestland is accessible only with a fee recreation permit, including a capped number of non-motorized permits. The South Twin climbing page describes the gate at the Middle Fork bridge posted 'permit required for all access' and non-motorized day permits sold for a fee. The row's permit, access.fees, access.parking_pass and passRequired already say this; only access.permit said none was required.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.summitpost.org/south-twin/679815"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+     "replace": "No climbing permit is required, but walking or biking the private logging roads to the route requires the landowner's paid recreation permit.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Whether a permit is required"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Hardest scrambling grade",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 (sustained Class 3 with short Class 4 steps)",
+   "evidence": "A detailed trip-report site titles the North Twin west ridge '4th' class; a scrambling guide page headlines it Class 3 but says sections of the west ridge run Class 3-4 (Class 5 means off route); search summaries of other route pages describe ~1,500 ft of sustained Class 3 and Class 4. The row's own beta, itinerary, climbing_route and waypoint all say Class 3-4, and the sibling West Ridge entry for the same line is graded Class 3-4; only grade and rock_grade said plain Class 3.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-twin/",
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/",
+    "https://www.lucasmountainknowledge.com/post/north-twin-july-2024"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3",
+     "value": "Class 3-4",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Hardest scrambling grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "rock_grade",
+     "path": [],
+     "find": "Class 3 (Class 2",
+     "replace": "Class 3-4 (Class 2",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Hardest scrambling grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Distance to the summit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 9.7 (about 6.0 mi) is the approach to the base of the scrambling (logging roads plus clearcut to the ridge, ~5-6 mi as the itinerary itself says), while the waypoints and approach prose give the full car-to-summit distance of ~7-7.3 mi including the ridge; two different quantities, and no source establishes a different one-way approach figure.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "High camp location, elevation and permit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two genuine camps exist: the Ruth Arm/glacier-toe camps on Forest Service land (~5,800-5,900 ft, no park permit), which the Campsite waypoint and bivy[0] describe, and the ~6,600 ft camp at the notch northwest of Ruth's summit inside the park (permit required), which the itinerary uses; access.permit explicitly explains both. A Mountaineers route summary confirms the 6,600 ft notch camp, and a guide-service route profile describes a separate lower camp used for two-day ascents. The bivy side of the dispute belongs to the camping clean-up.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+    "https://www.alpineinstitute.com/route-profile-ruth-mountain-climb/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "fact": "Best months for the traverse",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only dissenting claim is inside bivy[3].notes ('most parties go in June or July'); seasonal_guidance, best_season and climate agree on late July-August. bivy[] is owned by the camping clean-up, so no patch is written here.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "fact": "Distance to the Sulphur Creek crossing",
+   "verdict": "fixed",
+   "correct_value": "The crossing is at the very start of the trail, well under a mile in (the approach's 0.3-0.4 mile stands); the waypoint's 1 mile is wrong and no source gives an exact figure, so its distance is set to unknown.",
+   "evidence": "A Park Butte trail guide says the hike starts by crossing Sulphur Creek on a wooden bridge right from the trailhead; a trail database page says the path begins along dirt before crossing Sulphur Creek into Schreibers Meadow, and another summary says the meadow is entered about half a mile in, after the crossing. None supports a crossing at 1 mile; none gives an exact decimal, so distMi is nulled rather than replaced by an interpolated value.",
+   "sources": [
+    "https://uprootedtraveler.com/park-butte-lookout/",
+    "https://hikingproject.com/trail/7015372/park-butte-lookout",
+    "https://www.wta.org/go-hiking/hikes/railroad-grade"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 1,
+     "value": null,
+     "id": "wa_sherman_peak_baker_route",
+     "fact": "Distance to the Sulphur Creek crossing"
+    }
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "fact": "Character of the final climb to the summit",
+   "verdict": "fixed",
+   "correct_value": "The finish to Sherman Peak is a steepening snow slope (loose rock if bare), not an easy ridge walk.",
+   "evidence": "A country-highpoints trip report describes front-pointing up steep, icy slopes to Sherman's summit ridge; a SummitPost trip report of an ascent from the saddle at the base of the west ridge placed a picket 30-40 ft below the summit on the steep final pitch. The row's beta, pitch_detail[4] and descent_text already say ~400 ft of increasingly steep snow; only the day-2 schedule line said easy ridge walk.",
+   "sources": [
+    "https://www.countryhighpoints.com/mt-baker-and-sherman-peak/",
+    "https://www.summitpost.org/winter-ascent-of-sherman-peak/773371"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "then an easy ridge walk to Sherman Peak (10,133 ft).",
+     "replace": "then climb the steepening summit snow slope to Sherman Peak (10,133 ft).",
+     "id": "wa_sherman_peak_baker_route",
+     "fact": "Character of the final climb to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "High camp (Crag View) about 6,500 ft",
+   "evidence": "The Forest Service Squak climbing-route page says most climbers camp at Crag View, 6,500 ft; a guide-service Mount Baker route guide says the Squak camp sits at 6,500 ft, about 3.5 mi and 3,300 ft of gain from the trailhead. Higher bivies near 7,000 ft on the Sulphur moraine exist but are not the common high camp. bivy[0] already says 6,500; approach and pitch_detail[0] said 6,800.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route",
+    "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "high camp is commonly established around 6,800 ft",
+     "replace": "high camp is commonly established around 6,500 ft",
+     "id": "wa_sherman_peak_baker_squak_glacier",
+     "fact": "High camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "High camp (~6,800 ft)",
+     "replace": "High camp (~6,500 ft)",
+     "id": "wa_sherman_peak_baker_squak_glacier",
+     "fact": "High camp elevation"
+    }
+   ]
+  }
+ ]
+}

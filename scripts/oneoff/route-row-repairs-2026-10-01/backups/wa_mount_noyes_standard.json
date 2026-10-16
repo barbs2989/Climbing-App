@@ -1,0 +1,49 @@
+{
+ "id": "wa_mount_noyes_standard",
+ "name": "Standard Scramble",
+ "approach": "Two trail approaches reach a Low Divide-area high camp: the Elwha River Trail from Whiskey Bend trailhead (~28 miles one-way to Low Divide; the Elwha access road has been closed to vehicles beyond Madison Falls since November 2017 flood damage, adding roughly 7 more miles of hiking/biking each way), or the shorter North Fork Quinault River Trail (~16 miles one-way to Low Divide). From high camp, travel off-trail over talus and heather toward the Noyes-Meany or Seattle-Noyes col and up the standard slopes.",
+ "itinerary": "Multi-day backpack with a high camp near Low Divide, reached via the Elwha River Trail (Whiskey Bend, ~28 mi, lengthened by the Olympic Hot Springs Road washout, which has closed the road to vehicles beyond Madison Falls since November 2017) or the shorter North Fork Quinault River Trail (~16 mi).",
+ "pitch_detail": [
+  {
+   "grade": "Trail, Class 1",
+   "notes": "~16-17 mi on the North Fork Quinault River Trail via Wolf Bar, Halfway House, Elip Creek, Trapper Shelter, and Sixteenmile camps to Low Divide (~3,600 ft).",
+   "pitch": "Trailhead to Low Divide"
+  },
+  {
+   "grade": "Primitive trail, Class 1-2",
+   "notes": "Skyline Ridge Trail, minimal tread and routefinding required; crosses Promise Creek Bench (~5,340 ft, trail high point).",
+   "pitch": "Low Divide to Seattle Creek/Twelvemile"
+  },
+  {
+   "grade": "Class 2, loose",
+   "notes": "Eroded sidehill gullies beneath Noyes' east/west aspects; widely reported as the crux of the day.",
+   "pitch": "Basin sidehill traverse"
+  },
+  {
+   "grade": "Class 2-3",
+   "notes": "Talus and/or snow slope to the chosen col, then a short class 2-3 ridge scramble to the summit.",
+   "pitch": "Col to summit (Noyes-Meany or Seattle-Noyes col)"
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.5761,
+   "lng": -123.6479,
+   "elev": 525,
+   "name": "North Fork Quinault Trailhead (North Shore Road, road's end)",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 525,
+   "directions": "From US 101 near Amanda Park, follow North Shore Road along the north side of Lake Quinault and up the Quinault valley to its end at the North Fork ranger station and campground, about 17 miles from the highway; the last miles are narrow gravel. Overnight stays need an Olympic National Park wilderness permit booked in advance."
+  },
+  {
+   "lat": 47.7397396,
+   "lng": -123.5948252,
+   "elev": 6173,
+   "name": "Mount Noyes summit",
+   "type": "Summit",
+   "elevFt": 6173,
+   "directions": "Follow the North Fork Quinault Trail about 16 miles up the valley to camp at Low Divide, about 3,600 ft. From there the peak is an off-trail day: talus and heather and a long sidehill traverse across eroded gullies to the col beside Noyes, then a Class 2-3 scramble along the summit ridge to the top."
+  }
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_brothers_traverse",
+   "column": "what_to_bring",
+   "path": [
+    2
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "column": "ice_grade",
+   "path": [],
+   "fact": "Ice grade"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "beta",
+   "path": [],
+   "fact": "Hourglass elevation"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Hourglass elevation"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "overview",
+   "path": [],
+   "fact": "Climbers' camp elevation"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Climbers' camp elevation"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Summit finish grade"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Summit finish grade"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Summit finish grade"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance to base camp"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_brothers_traverse",
+   "before": {
+    "what_to_bring": [
+     "Climbing helmet",
+     "Harness and belay device",
+     "Rope (50-60m dynamic rope)",
+     "Rock protection (small-medium rack)",
+     "Snow pickets (4-6)",
+     "Insulated layers (fleece/down puffy)",
+     "Wind jacket and rain gear",
+     "Insulated gloves",
+     "Hat and balaclava",
+     "Goggles (if early season snow)",
+     "High-calorie food for 1-2 days",
+     "8-12 hour water capacity",
+     "Headlamp and extra batteries",
+     "Map/compass/GPS"
+    ],
+    "ice_grade": "AI3 (Ice 3)"
+   }
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "before": {
+    "beta": "A long, mostly non-technical mountaineering route that is more of a route-finding and stamina challenge than a climbing one. From the Lena Lake Trailhead, hike past Lena Lake and through the Valley of the Silent Men to a base-camp area near where the trail meets Lena Creek's forks. From there, climbers' paths lead up the creek drainage to a broad avalanche slope/meadow below the first cliff band; cross this and enter the couloir (snow- or rock-filled depending on season), following it up through the narrow \"Hourglass\" constriction near ~6,200 ft. Above the Hourglass the couloir broadens; work up and right, staying on firmer rock, then trend back left/up through loose scree to the summit. Early/mid-season the couloir holds continuous snow (ice axe and crampons required, with snow up to 40-45 degrees); by late summer it is a loose, snow-free scree-and-rock scramble.",
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2 trail/off-trail",
+      "notes": "Lena Lake Trailhead to informal base camp near the Lena Creek forks, roughly 7 miles through old growth and the Valley of the Silent Men.",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 2, snow to ~30-40°",
+      "notes": "Long open slope leading up to an avalanche meadow/runout below the first cliff band around 5,000 ft; primary avalanche exposure on the route.",
+      "pitch": "Lower avalanche slope"
+     },
+     {
+      "grade": "Class 3, snow to ~40-45°",
+      "notes": "Narrow constriction near ~6,200 ft; loose rock, rockfall/icefall exposure, and the technical crux of the route.",
+      "pitch": "The Hourglass"
+     },
+     {
+      "grade": "Class 3, occasional Class 4",
+      "notes": "Broadens above the Hourglass; stay climber's right on firmer rock, then work back up/left through loose scree to the true (south) summit.",
+      "pitch": "Upper couloir / summit block"
+     }
+    ],
+    "overview": "The standard and most-climbed route up The Brothers' higher south summit (Mt. Edward, ~6,868'), one of the most recognizable peaks on the Seattle skyline. From the Lena Lake/Brothers trailhead it's about 8.5 miles and 6,100+ ft one-way (roughly 17 miles round trip): 3 miles on the maintained Lena Lake Trail #810 to Lower Lena Lake, then 2.8 miles on the rougher Brothers Trail #821 up the East Fork Lena Creek through the narrow, cliff-walled Valley of the Silent Men to campsites around 3,800-4,200'. From camp the route follows an old avalanche path into the South Couloir, exits it to the west onto scree around 5,000', makes an ascending rightward traverse below cliffs to the Hourglass — a narrow class 3-4 notch around 5,800' that is the technical crux — then climbs loose scree/talus to the summit ridge. Early in the season (roughly April-June) the couloir and Hourglass hold snow and the route climbs more like a moderate PD snow route (axe/crampons); by late summer the snow melts out and the same terrain becomes a looser, more exposed class 3-4 scramble with real rockfall hazard, especially with other parties climbing above.",
+    "pro_tips": [
+     "Early-season (Apr-Jun) snow climbs are often safer and faster than the loose late-summer scramble — carry axe/crampons and expect PD snow terrain rather than a class 3-4 rock scramble",
+     "Camp in the Valley of the Silent Men (~3,800-4,200') to split the 6,100+ ft day and get an early start on the couloir before the rock warms and rockfall increases",
+     "A helmet is essentially non-negotiable on this route given the recurring rockfall reports"
+    ],
+    "itinerary": {
+     "cal": "The South Couloir often holds snow (ice axe/crampons recommended) into mid-summer and typically melts out to a class 2-3 scramble by late August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Lena Lake trailhead (~700 ft), a mellow, well-graded trail climbs past Lena Lake and up the Valley of the Silent Men to a forested camp (Lena Forks / East Lena Creek Basin area, ~3,600 ft) at the base of the upper valley. Route-finding gets trickier through the old burn area — carry a GPS track, as the pink flagging is easy to miss.",
+       "hours": 3.5,
+       "miles": 6,
+       "title": "Hike in to high camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach camp in the Valley of the Silent Men"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start from camp with light packs to the base of the South Couloir (the second gully from climber's right), then a steep snow/scree climb of roughly 3,000 ft to the summit ridge with a move or two of class 3 near the top. After summiting, reverse the couloir back to camp, break camp, and hike the full ~6 miles back out to the trailhead the same day — a long second day, but this is how most 2-day parties run it.",
+       "hours": 10.5,
+       "miles": 11,
+       "title": "Summit push and hike out",
+       "gainFt": 3200,
+       "lossFt": 6100,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light alpine-start packs; axe/crampons useful if the couloir still holds snow"
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach base of South Couloir",
+         "detail": "Short climb up-valley from camp to the gully entrance"
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit",
+         "detail": "South (true) summit, 6,866 ft, via the couloir and a short class 3 finish"
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Back at camp",
+         "detail": "Break down camp and repack for the hike out"
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Reach trailhead",
+         "detail": "Round trip from camp back to car; full car-to-car trip runs ~10-11 hrs on summit day"
+        }
+       ],
+       "objective": "Climb the South Couloir to the summit, then pack all the way out"
+      }
+     ],
+     "totalNote": "A 2-day trip is the standard way parties do it: hike in ~6 mi to a camp in the Valley of the Silent Men (~2,900 ft gain), then a big second day climbing the South Couloir to the summit and packing all the way back out (~11 mi, ~3,200 ft up / 6,100 ft down). Very fit parties skip the camp and do the whole route car-to-car in a single ~10.5 hr day."
+    },
+    "season": "Jun-Sep typical; the couloir holds snow well into summer, with late-August ascents often reduced to scrambling-only"
+   }
+  }
+ ]
+}

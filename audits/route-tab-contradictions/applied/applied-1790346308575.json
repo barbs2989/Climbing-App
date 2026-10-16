@@ -1,0 +1,300 @@
+{
+ "applied": [
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "name"
+   ],
+   "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Which peaks this route links up with from one high camp (Oval+Bigelow vs Oval+Star)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trailhead named in PARTNER REQUIREMENTS fitness spec (Eagle Creek/War Creek vs West Fork Buttermilk)"
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km holds the round-trip distance, shown as Approach (one way)"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "season",
+   "path": [],
+   "fact": "Climbing season window"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Climbing season window"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "GETTING THERE road block describes the Snow Lakes Trailhead/Icicle Road, not this route's Ingalls Creek Trailhead"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit field puts the route in the Enchantment permit area; approach says it is outside it"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass names Stuart Lake/Eightmile/Snow Lakes trailheads, not Ingalls Creek"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_courtney_peak_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.3114,
+      "lng": -120.3365,
+      "elev": 4000,
+      "name": "West Fork Buttermilk Trailhead",
+      "note": "End of FR-4300-500 spur; Northwest Forest Pass/America the Beautiful Pass required, wilderness trailhead register at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Twisp, follow the Twisp River Road west, turn up East Buttermilk Creek Road (FR-43), and take the FR-4300-500 spur to its end. Sign the wilderness register at the kiosk before starting up Trail #411."
+     },
+     {
+      "lat": 48.307659628378374,
+      "lng": -120.34334356756757,
+      "elev": 4100,
+      "name": "West Fork Buttermilk Creek log crossing",
+      "note": "Swiftly flowing creek crossed on unsecured, often-wobbly downed logs shortly past the trailhead; wade if uncomfortable balancing on them.",
+      "type": "Hazard",
+      "distMi": 0.5,
+      "directions": "Half a mile up Trail #411 the route reaches the West Fork of Buttermilk Creek. There is no bridge — the crossing is on downed logs, unsecured and often wobbly, and wading is the better call if balancing under a pack does not appeal. This is the first of several unbridged crossings, all of which run high and fast with snowmelt through June."
+     },
+     {
+      "lat": 48.25597,
+      "lng": -120.43759,
+      "elev": 7480,
+      "name": "Fish Creek Pass",
+      "note": "Trail #411 tops out here and meets the Fish Creek Trail; leave the maintained trail and turn onto the obvious NW-trending ridge toward the summit.",
+      "type": "Junction",
+      "distMi": 7.4,
+      "directions": "About seven miles of steady climbing up the West Fork valley through ponderosa and larch, gaining roughly 3,500 ft. Maintenance is light and blowdown is common in the lower miles, so expect detours around deadfall and carry a track — flagging and tread both thin out where the timber is down. Star Lake sits just below the far side of the pass and is the last reliable water before the summit push."
+     },
+     {
+      "lat": 48.25859768181818,
+      "lng": -120.44100854545455,
+      "elev": 8000,
+      "name": "NW ridge talus/boulder field",
+      "note": "Class 2 talus and boulder-hopping the rest of the way, with a few class 2+ moves reported near the summit block.",
+      "type": "Hazard",
+      "distMi": 8,
+      "directions": "Leave the maintained trail at the pass and pick up the boot path climbing northwest up the open ridge toward the peak. It is easy Class 2 on tundra and small talus with a good path most of the way, gaining about 900 ft."
+     },
+     {
+      "lat": 48.26058,
+      "lng": -120.44339,
+      "elev": 8394,
+      "name": "Courtney Peak",
+      "note": "True summit on Sawtooth Ridge in the Lake Chelan-Sawtooth Wilderness; Star Peak (8,690 ft) visible about 0.8 mi to the southeast.",
+      "type": "Summit",
+      "distMi": 8.5,
+      "directions": "In the last few hundred feet the ground steepens into larger blocks, the boot path breaks up, and you pick your own line through Class 2+ boulders to the summit block. From the pass the whole push runs about 45 minutes to an hour for a fit party. Snow can linger in the gullies just off the crest into July, so an axe is cheap insurance on a June attempt."
+     }
+    ],
+    "descent": "Reverse the NW ridge back down to Fish Creek Pass, then descend West Fork Buttermilk Trail #411 to the trailhead.",
+    "descent_text": "Descend by reversing the ascent line exactly: downclimb the class 2+ boulder field below the summit back onto the boot path, then follow the use trail down the northwest ridge to Fish Creek Pass. From the pass, rejoin the West Fork Buttermilk Trail #411 for the full hike back down to the trailhead. This is a walk-off/downclimb the entire way — there is no rappelling on the standard route, and most parties do not carry a rope. The main descent hazards are the loose class 2+ talus just below the summit (careful foot placement, stay alert for rockfall onto parties below) and, near the pass and on the upper ridge, lingering snow or wet scree that can be slick into early summer — an ice axe/microspikes are useful insurance in June. Some parties link Courtney with Star Peak and/or Oval Peak and descend via a different drainage (e.g., toward Eagle Creek) as part of a car-shuttle loop, but that requires a second vehicle staged at a different trailhead and is a variation on, not the standard version of, this out-and-back route.",
+    "itinerary": {
+     "cal": "Self-issue wilderness permit at the trailhead (Lake Chelan-Sawtooth Wilderness); the West Fork Buttermilk crossing runs high and log-crossing-only in early season, so most parties go July-September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The West Fork Buttermilk Creek Trail #411 climbs at a mostly gentle grade to Fish Creek Pass, with a few steep, brushy sections and an unbridged creek crossing that can be swift in early season. From the pass the SE/SW Ridge to Courtney's summit is only 45 minutes to an hour of easy Class 2 (brief Class 2-3 near the top) scrambling, so most parties tag the peak on the way in before dropping down into the Star Lake basin to camp.",
+       "hours": 9.5,
+       "miles": 9,
+       "title": "Backpack in via Fish Creek Pass, tag the summit, camp at Star Lake",
+       "gainFt": 4700,
+       "lossFt": 800,
+       "packLb": 32,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": "West Fork Buttermilk Creek Trail #411, ~4,000 ft."
+        },
+        {
+         "time": "+5 to 6 hr",
+         "label": "Reach Fish Creek Pass",
+         "detail": "~3,700-3,900 ft of gain on trail; watch for blowdowns and a high creek crossing early season."
+        },
+        {
+         "time": "+45-60 min",
+         "label": "Summit Courtney Peak",
+         "detail": "Obvious NW-trending ridge from the pass, Class 2 with a short Class 2-3 step near the top."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Back to Fish Creek Pass, descend to camp",
+         "detail": "Drop into Star Lake basin; established sites ~0.6 mi past the lake with reliable water."
+        },
+        {
+         "time": "~3:30-4:30 PM",
+         "label": "Camp at Star Lake",
+         "detail": "Larch-forest basin camp shared by parties also climbing Star and Oval Peaks."
+        }
+       ],
+       "objective": "Reach Fish Creek Pass, scramble Courtney Peak's SE/SW Ridge, then descend to camp"
+      },
+      {
+       "n": 2,
+       "note": "Reverse the route: back up to Fish Creek Pass and down the West Fork Buttermilk Trail to the car. No technical terrain, just a long descending trail day.",
+       "hours": 7,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3900,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day/1-night backpack: ~9.5 hr in (with the Courtney summit tagged en route) and ~7 hr out the next day, roughly 17 mi and 4,700 ft round trip. Strong parties can push it car-to-car in a very long single day, but most people backpack in to make it enjoyable."
+    },
+    "pro_tips": [
+     "Combine with Oval and Bigelow from one high camp",
+     "Drier, more stable east-side weather",
+     "Loop with Oval and Star Peaks by descending north past West Oval Lake to the Eagle Creek/Oval Creek trailhead - requires a car shuttle",
+     "Early October brings larch color on the Sawtooth crest and fewer crowds, but expect cold nights and possible early snow"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day hiking fitness; the Eagle Creek/War Creek approach to a Sawtooth-crest high camp involves substantial mileage and elevation gain before the summit push even begins",
+      "packWeight": "Overnight pack (roughly 30-40 lb) for the approach and high camp, plus a light summit pack for the scramble day itself"
+     },
+     "approachTime": "Long — typically a 1-2 day backpack to a high camp (e.g. near Star Lake) before an early summit push; not realistically a single relentless day trip for most parties",
+     "requiredSkills": [
+      "Class 2-3 scrambling and route-finding on loose talus/ridge terrain",
+      "backcountry navigation (remote, sparsely traveled crest with limited beta)",
+      "self-sufficiency for multi-day wilderness travel, including water planning on the dry crest",
+      "basic wilderness first aid / remote self-rescue awareness given long evacuation times"
+     ],
+     "experienceLevel": "Intermediate scrambler — comfortable with sustained, exposed Class 2-3 terrain and self-sufficient multi-day backcountry travel; not a beginner objective given the remote Sawtooth-crest setting"
+    },
+    "dist_km": 27.36
+   }
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "before": {
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "Ingalls Creek to Crystal Creek Basin",
+      "notes": "This side of the massif is approached from the Ingalls Creek trail rather than from the lakes basin above, and it sits outside the permit area, which is much of its appeal. Walk the Ingalls Creek trail up-valley and turn off it into the Crystal Creek drainage; there is no trail from there and the ground is rough and steep in places, with a faint boot path that appears and vanishes and cairns you may or may not find. Most parties camp in the basin and climb from there. The route is nineteen ropelengths of genuine adventure terrain, infrequently travelled, with real route-finding rather than an obvious line, and it wants more research than any single description gives. Water gets scarce late in the season, so parties often carry a stove to melt snow.",
+      "season": "Mid-July to September; axe before Jul",
+      "hazards": [
+       "Rockfall and loose blocks along the rib and among the upper gendarmes",
+       "Sustained route-finding on an indistinct lower crest with no fixed gear and no obvious line",
+       "A long, partly off-trail approach that makes self-rescue slow and difficult",
+       "Southwest-facing terrain that bakes in afternoon sun and catches afternoon weather",
+       "Loose off-trail descent terrain in both descent options, easy to wander in poor visibility"
+      ],
+      "baseFinding": "Leave the Ingalls Creek trail about a hundred feet before it crosses Crystal Creek — look for cairns, but do not count on them — and climb the drainage keeping to the creek's right-hand side. The formation you want is the westernmost point on the summit ridge above the basin, and it presents a single continuous southwest face of roughly 1,400 ft dropping from a summit thumb straight down into Crystal Creek Basin. Start at the very toe of the rib, on the lowest and easiest-angled ground where the crest first rises out of the basin floor; the line does not begin on a ledge or in a gully, it begins on the ground. Confirmation comes about 500 vertical feet up: the crest sharpens from an indistinct rib into a defined knife edge, and a large open slab shows on your left, visible from a distance. The separate wall standing in the same basin is a different formation entirely and is the thing most likely to draw you left of the rib."
+     }
+    ],
+    "road": {
+     "name": "Snow Lakes Trailhead, Icicle Creek Road, Leavenworth",
+     "status": "Paved Icicle Road for 4.2 miles from US-2 to the trailhead; a long maintained trail (~11 miles) then leads into the Enchantments core near Crystal Lake.",
+     "driveNote": "Roughly 2.5-3 hours from Seattle via US-2/US-97 to Leavenworth then Icicle Creek Road."
+    },
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "group_limit": 8,
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "N/A"
+    }
+   }
+  }
+ ]
+}

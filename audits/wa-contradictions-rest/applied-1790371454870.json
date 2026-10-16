@@ -1,0 +1,316 @@
+{
+ "applied": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "label"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead vs ascent line"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip vs one-way distance"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Direction at the 6,800 ft fork"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "aspect",
+   "path": [],
+   "fact": "Aspect of the route"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "face",
+   "path": [],
+   "fact": "Aspect of the route"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Aspect of the route"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Aspect of the route"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Scrambling grade required"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Scrambling grade required"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "County"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Summit elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "Snow often lingers in the summit gullies into early-mid summer; best conditions are typically July-September once SR-20 (Rainy Pass) has been open a while and gullies have melted out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single-day round trip from the Rainy Pass PCT trailhead (4,850 ft): climb through open forest and meadow to gain the south ridge around 6,180 ft, then follow rock and gully terrain (class 3-4) to the 7,790 ft summit before reversing the same line back to the car. No camping is involved — this is done entirely car-to-car.",
+       "hours": 7,
+       "miles": 4,
+       "title": "Car-to-car scramble",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Rainy Pass PCT trailhead",
+         "detail": "Park at the Pacific Crest Trail North lot (~4,850 ft) and head east through open timber."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Gain the south ridge / meadow bench",
+         "detail": "Rising traverse through meadow to intersect the level part of the south ridge near 6,180 ft."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Class 3-4 gully/ridge scrambling begins",
+         "detail": "Follow the ridge and connecting gullies, staying on rock where possible; snow may linger in gullies into early summer."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit (7,790 ft)",
+         "detail": "Views of Cutthroat Peak, Liberty Bell, and the Washington Pass area; typical lunch/break stop."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line down the southeast slopes/south ridge."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Total car-to-car time roughly 6-8 hours depending on snow conditions and pace."
+        }
+       ],
+       "objective": "Summit Whistler Mountain via the Southeast Slopes / South Ridge and return to Rainy Pass"
+      }
+     ],
+     "totalNote": "A moderate single-day scramble: about 4 miles round trip with 3,000 ft of gain, typically 6-8 hours car-to-car from Rainy Pass; no overnight component."
+    },
+    "timing": {
+     "totalHrs": 7,
+     "summitTimeHrs": 7,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "A single-day round trip from the Rainy Pass PCT trailhead (4,850 ft): climb through open forest and meadow to gain the south ridge around 6,180 ft, then follow rock and gully terra…",
+       "fromTo": "Car-to-car scramble",
+       "section": "Climb"
+      }
+     ]
+    },
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2",
+      "notes": "Boot path from the SR-20 turnout through open forest with some downed logs to a meadow basin at roughly 6,100 ft.",
+      "pitch": "1 (Trailhead to meadow basin)"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Rising traverse across the meadow/talus to intersect the level part of the south ridge at 6,180 ft.",
+      "pitch": "2 (Meadow to south ridge)"
+     },
+     {
+      "grade": "Class 3 (Class 4 variations)",
+      "notes": "Follow the ridge and adjoining gullies to the 7,790 ft summit, staying north of the loosest gully band and using a visible ramp to bypass rock near the headwall; an alternative cuts left at ~6,800 ft onto gentler southwest-slope terrain.",
+      "pitch": "3 (South ridge/gullies to summit)"
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Able to sustain ~4 miles one-way with ~3,000 ft of gain at elevation (trailhead near 4,850 ft, summit 7,792 ft), typically a 6-9 hour round trip",
+      "packWeight": "Light day pack (10-20 lb) - water, layers, helmet; no technical rack needed in normal summer conditions"
+     },
+     "approachTime": "2-3 hours from the Rainy Pass PCT trailhead to the base of the summit gully, then additional time for the talus scramble to the top",
+     "requiredSkills": [
+      "loose-rock/talus footing and micro-routefinding",
+      "basic navigation off-trail once leaving the PCT",
+      "self-arrest/step-kicking awareness for lingering early-season snow patches",
+      "afternoon-thunderstorm judgment (turnaround discipline on an exposed summit)"
+     ],
+     "experienceLevel": "Comfortable, unroped Class 2 scrambler; should have prior experience on loose talus/scree and basic alpine routefinding, since the route is a gully/slope scramble rather than a maintained trail to the top"
+    },
+    "pro_tips": [
+     "The Rainy Pass PCT-lot gully approach doubles as a well-regarded spring corn-snow ski descent — go early enough to catch the snow softening but before it turns to mush",
+     "On the south-ridge route, staying right at ~6,800 ft onto the southwest slope avoids the harder gully scrambling higher on the ridge crest"
+    ],
+    "aspect": "SE",
+    "face": "Southeast Slopes",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Typical North Cascades crest weather at ~7,800 ft: cool mornings, warm midday, and rapid weather swings; the Washington Pass area is prone to sudden cloud buildup even on otherwise clear forecasts",
+      "probability": "Afternoon thunderstorms are common in July-August - plan for an early start and to be off the summit before storms build"
+     },
+     "exposure": "Low-to-moderate: Class 2 walking/scrambling terrain, but the loose talus and scree footing creates real twisted-ankle and rockfall-onto-partner risk, especially in the gully where parties stack above one another; lingering early-summer snowfields can add a slip hazard on the approach gully before full melt-out",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; NWAC does not issue forecasts for this zone/period since the route is climbed outside the Nov-May avalanche season",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "approach_variants": [
+     {
+      "name": "Rainy Pass PCT lot, then cross-country east into the meadow basin and the col toward Cutthroat's southwest peak",
+      "notes": "Park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass at about 4,850 ft, next to the Road 600 turnoff. LEAVE THE PCT ALMOST IMMEDIATELY and strike out cross-country east into open forest, gaining steeply through timber and over downed logs. There is no maintained tread once you leave the PCT.\n\nThis is WHISTLER MOUNTAIN ABOVE RAINY PASS in Okanogan County, not the Whistler Canyon trailhead area near Oroville, which is about 100 miles away and unrelated.\n\nRound trip runs roughly 3.7 miles with about 3,000 ft of gain.",
+      "season": "Jul-Oct",
+      "hazards": [
+       "No maintained tread above the PCT; route-finding the whole way",
+       "Downed logs in the lower forest",
+       "Loose talus and scree in the gullies, with class 3-4 moves and real exposure near the ridge crest",
+       "Downsloping slabs and loose gravel in the summit gully",
+       "No reliable water above the lower forest",
+       "Early-season snow lingering in the forest and basin, firming the gullies"
+      ],
+      "primary": true,
+      "baseFinding": "CLIMB UNTIL THE FOREST OPENS. At about 6,100 ft the timber gives way to A MEADOW BASIN BELOW THE WEST RIDGE AND GULLY COMPLEX, and that transition is the first reliable confirmation on a trail-less approach. Trees stopping is something you notice in any visibility.\n\nFROM THE BASIN, TREND SOUTH AND SOUTHEAST ON A RISING TRAVERSE TO GAIN THE COL AND BASIN BETWEEN WHISTLER AND THE SOUTHWEST PEAK OF CUTTHROAT. THAT COL IS THE AIMING POINT, and it is named by the two peaks either side of it.\n\nThen work up the BROAD WEST RIDGE, or the SHALLOW GULLY JUST NORTH OF IT, to the summit shoulder.\n\nTHE LAST SECTION IS THE ONE THAT CONFIRMS YOU ARE ON THE SUMMIT LINE RATHER THAN A NEIGHBOURING GULLY: A ROCK GULLY WITH A VISIBLE RAMP ALONG THE HEADWALL, OVER DOWNSLOPING SLABS AND LOOSE GRAVEL. A ramp cutting the headwall is the way through; helmet on here for rockfall from parties above."
+     },
+     {
+      "name": "The unmarked SR-20 turnout, then a boot path onto the true south ridge at 6,180 ft",
+      "notes": "The second option, and the one that reaches the true south ridge. From the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass, 0.7 mile BEFORE the Blue Lake trailhead, at about 5,000 ft, walk back down and along the road shoulder to a boot path that starts at the WEST EDGE OF A STAND OF TREES.\n\nAbout 4 miles round trip with roughly 3,000 ft of gain, the same as the PCT option.",
+      "season": "Jul-Oct",
+      "hazards": [
+       "An unmarked trailhead identified only by its distance from the Blue Lake trailhead",
+       "Trail-less above the first stretch of forest",
+       "Class 2-3 with occasional class 3-4 moves and real exposure near the ridge crest",
+       "Loose talus and scree in the connecting gullies",
+       "No reliable water on the route"
+      ],
+      "baseFinding": "THE TRAILHEAD IS UNMARKED AND THE PATH START IS A TREE-LINE EDGE, SO THE FIND IS AT THE ROAD RATHER THAN ON THE MOUNTAIN. The pullout is 0.7 MILE BEFORE THE BLUE LAKE TRAILHEAD coming from Rainy Pass. IF YOU HAVE REACHED THE BLUE LAKE TRAILHEAD, YOU HAVE DRIVEN 0.7 MILE TOO FAR. From the pullout, walk the shoulder to where a STAND OF TREES begins, and the boot path leaves from its WEST EDGE.\n\nFOLLOW THE BOOT PATH UP THROUGH A MEADOW, THEN RISING-TRAVERSE EAST TO INTERSECT THE LEVEL PORTION OF WHISTLER'S SOUTH RIDGE AT ABOUT 6,180 FT. A LEVEL SECTION OF RIDGE IS THE ARRIVAL, and a level stretch on a ridge is something you can feel underfoot without seeing anything.\n\nFROM THERE, SCRAMBLE UP THE RIDGE AND CONNECTING GULLIES TO THE SUMMIT. THE ALTERNATIVE, WHICH IS ALSO CORRECT: leave the ridge around 6,800 ft, cross a couple of gullies LEFT, north, onto gentler southwest-facing slopes, and finish that way.\n\nSO THE DECISION AT 6,800 FT IS A REAL FORK AND BOTH BRANCHES WORK: stay on the crest for more exposure and directness, or cross two gullies north for easier ground.\n\nTHE NEGATIVE TEST AGAINST THE OTHER APPROACH, WHICH MATTERS BECAUSE BOTH START WITHIN THREE MILES OF EACH OTHER ON THE SAME HIGHWAY: the PCT option leaves from the marked PCT North lot at Rainy Pass and gains a MEADOW BASIN at 6,100 ft below the WEST ridge. This one leaves from an unmarked turnout and gains the SOUTH ridge at 6,180 ft. Marked lot and west ridge, or unmarked turnout and south ridge."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,300 @@
+{
+ "file": "r102.json",
+ "results": [
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Distance and gain from trailhead to high camp",
+   "verdict": "fixed",
+   "correct_value": "About 6-7 mi one way (≈6.5 mi) and ~5,700 ft of gain from the ~500 ft trailhead over the ~6,200 ft notch to the ~5,800 ft Terror Basin camp; ~400 ft of loss dropping from the notch to camp.",
+   "evidence": "One trip report gives ~4 mi of roadbed then a 4,000 ft climb in ~2 mi to Terror Basin (~6 mi); a second gives 4.5 easy miles then 2.5 mi with 4,700 ft of gain (~7 mi). Two further reports place the high notch at ~6,200 ft and the flat camp at ~5,800 ft above a ~500-600 ft trailhead, i.e. ~5,700 ft of climbing to the notch. So 8-9 mi and 14 mi each way are both wrong, and 4,300 ft is too low; dist_km 22.53 (14 mi) is not a one-way figure.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 5.5,
+     "value": 6.5
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4300,
+     "value": 5700
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 300,
+     "value": 400
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 5.5,
+     "value": 6.5
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "gainFt"
+     ],
+     "expect": 300,
+     "value": 400
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4300,
+     "value": 5700
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "(~14 mi and ~4,300 ft each way to camp)",
+     "replace": "(~6.5 mi and ~5,700 ft each way to camp)"
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total approach is roughly 8-9 miles with well over 5,000 ft of gain to camp.",
+     "replace": "Total approach is roughly 6-7 miles with well over 5,000 ft of gain to camp."
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Distance and gain from trailhead to high camp",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 22.53,
+     "value": 10.46
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Days needed to reach camp",
+   "verdict": "fixed",
+   "correct_value": "Camp is normally reached in one long day (the itinerary's day 1); the summit is a separate day.",
+   "evidence": "One report reached Terror Basin camp by noon after a 6:30 AM start (~5.5 hrs); another reached it in about 3.25 hrs from the car. A third describes the whole trip as doable in a day but best over two nights, i.e. one day in, not two. The itinerary and timing (7 hr approach day) are right; the approach prose and partner requirements overstate it.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Days needed to reach camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Fit parties can reach camp in a long day; most take two, camping at Terror Creek or Stump Hollow.",
+     "replace": "Most parties reach camp in one long, steep day and climb the peak the next."
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Days needed to reach camp",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Multi-day (typically 2+ days to reach the basin before summit day) via Stetattle Ridge or Crescent Creek basin",
+     "value": "Multi-day (one long day up to high camp before summit day) via Goodell Creek and the Terror Creek climbers' path"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Approach drainage",
+   "verdict": "fixed",
+   "correct_value": "Goodell Creek and the Terror Creek climbers' path (not Stetattle Creek/Ridge).",
+   "evidence": "Every trip report for the Southern Pickets high camps starts at the Goodell Creek road near Newhalem and climbs the Terror Creek climbers' path; one Chopping Block report uses the same start with the Crescent Creek variant. None uses Stetattle Creek, a separate drainage.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://drdirtbag.com/2021/07/23/the-chopping-block/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Approach drainage",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "via Stetattle Creek/Ridge or Crescent Creek basin",
+     "replace": "via Goodell Creek and the Terror Creek climbers' path"
+    }
+   ],
+   "note": "approachTime's Stetattle reference is fixed by the patch under 'Days needed to reach camp'."
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Stump Hollow elevation",
+   "verdict": "bivy_zone_list",
+   "correct_value": "5,600 ft (waypoint and approach agree)",
+   "evidence": "A Pickets trip-report page puts Stump Hollow at timberline ~5,600 ft, matching the waypoint and approach text; the 6,000 ft figure is only on bivy[0]. Bivy is owned by the camping clean-up, so no patch; the Stump Hollow and Terror Basin camps do serve this route, while the Goodell Creek campground and roadbed bivy are staging spots.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Barrier crossing elevation",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two numbers name different points: the climbers' path first gains the forested lower crest of the Barrier at ~3,800 ft (waypoint), and later tops a ~6,200 ft notch/spur above the ~5,800 ft Terror Basin camp (itinerary). Both are confirmed by trip reports.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "2 (a loose access gully plus the south face with a couple of short low-5th steps)",
+   "evidence": "The one detailed south-side ascent describes a loose gully to the sloping south face, then an obvious line with a couple of short, exposed possibly-low-5th sections to the summit plateau. The row's pitch_detail (2 rows), beta, detailed_rack and itinerary all agree; the '5 pitches' figure comes from the separate Northeast Ridge (reported as 2-3 scrambling pitches plus 2 of 5th class), which beta itself distinguishes.",
+   "sources": [
+    "https://drdirtbag.com/2021/07/23/the-chopping-block/",
+    "https://chasingdonutscom.wordpress.com/2021/07/14/chopping-block-and-degenhardt/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 5,
+     "value": 2
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Pitch count",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "5-pitch intermediate alpine rock route",
+     "replace": "2-pitch intermediate alpine rock route"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only south-side account says the short exposed steps 'might have been low fifth class' and gives no number; the peak's easiest route is described only as class 5. 5.5 is attested for the Northeast Ridge, not this line. No two sources give 5.4 or 5.5 for the south route, so no patch.",
+   "sources": [
+    "https://drdirtbag.com/2021/07/23/the-chopping-block/",
+    "https://en.wikipedia.org/wiki/The_Chopping_Block_(Washington)",
+    "https://chasingdonutscom.wordpress.com/2021/07/14/chopping-block-and-degenhardt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Road seasonal status",
+   "verdict": "fixed",
+   "correct_value": "Reachable year-round: SR 20's west-side winter gate is at Ross Dam (MP 134) and later at most Newhalem (MP 120), east of the Goodell Creek trailhead.",
+   "evidence": "WSDOT states the west-side closure point starts at Ross Dam trailhead (MP 134) and is moved at most down to the Newhalem gate (MP 120). A seasonal-access guide says the western approach stays open through Diablo and Newhalem all winter. Goodell Creek sits just west of Newhalem, so the road card's 'Seasonal — Winter closures' contradicts the correct access.closures text.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://cascadesfieldguide.com/topics/when-north-cascades-open-seasonal-access-guide-highway-20"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Road seasonal status",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Seasonal",
+     "value": "Open year-round"
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Road seasonal status",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "Winter closures",
+     "value": "SR 20's winter closure gates sit east of Newhalem, so this trailhead stays reachable"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "gain_ft / loss_ft vs corrected itinerary total",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "With the researched approach gain (~5,700 ft each way) the itinerary totals ~7,500 ft up and down, while gain_ft is 6,209 and loss_ft 6,000. No outside source gives a car-to-car gain or loss for this route, so neither column is patched.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

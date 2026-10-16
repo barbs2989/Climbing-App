@@ -1,0 +1,540 @@
+{
+ "file": "r023.json",
+ "results": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Distance to the summit vs. distance to the saddle below it",
+   "verdict": "fixed",
+   "correct_value": "Summit is about 6 mi (9.5-10 km) one-way / 12 mi round trip; the saddle below it therefore sits at about 5.3 mi (the saddle waypoint distance), not 6-6.5 mi.",
+   "evidence": "The trail-association hike page for Alta Mountain gives 12.0 mi round trip and 3,300 ft of gain; an independent Alpine Lakes hiking guide gives about 6 mi one-way / 12 mi round trip. So the summit is ~6 mi out and a saddle that precedes it cannot be 6-6.5 mi; the row's own saddle waypoint says 5.3 mi and the summit waypoint 6 mi. The 9.5-10 km one-way summit figure is correct and left alone.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "http://willhiteweb.com/alpine_lakes_wilderness/rachel_lake/alta_mountain_273.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total to this point is roughly 6-6.5 miles and ~3,000 ft gain.",
+     "replace": "Total to this point is roughly 5.3 miles and ~3,000 ft gain.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Distance to the summit vs. distance to the saddle below it"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "About 6 to 6.5 miles and 3,000 ft to the saddle.",
+     "replace": "About 5.3 miles and 3,000 ft to the saddle.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Distance to the summit vs. distance to the saddle below it"
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km (one-way) = 9.7 (about 6 mi); 12 mi round trip",
+   "evidence": "The trail-association hike page gives 12.0 mi round trip; the independent hiking guide gives about 6 mi one-way and 12 mi round trip. The stored 6.9 km (4.3 mi) is roughly the distance to Rachel Lake, a different quantity; the approach text already says 9.5-10 km one-way and the summit waypoint says 6 mi.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "http://willhiteweb.com/alpine_lakes_wilderness/rachel_lake/alta_mountain_273.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 6.9,
+     "value": 9.7,
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "summitTimeHrs equals the car-to-car total",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": "summitTimeHrs should not be 8 (that is the car-to-car total); null it",
+   "evidence": "timing.summitTimeHrs (8) equals totalHrs (8), yet the itinerary schedule leaves at 6:00 AM, summits at 11:30 AM and is back at 2:00 PM, and the descent reverses the same 6-mile route. An independent source gives a 12 mi round trip on the same line, so the descent is a large share of the day. Per the catalog convention, a summit time that duplicates the car-to-car total is nulled rather than replaced with a computed number.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 8,
+     "value": null,
+     "id": "wa_alta_mountain_scramble",
+     "fact": "summitTimeHrs equals the car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach says to go right at the ridge junction for Lila Lake/Alta, then in the same sentence sends the party south through the Rampart Lakes basin to a boulder gully and a 5,570 ft saddle before turning west; the beta instead says the climbers' path leaves at a cairn near the Rachel/Lila junction. The trail-association page says to go RIGHT toward Lila Lake at the ridge, 0.3 mi to a cairned junction, and take the climbers' path left up the south ridge; Alta's summit lies north of the junction while the Rampart Lakes lie south. Only one external source describes the junction in detail, and fixing it means rewriting the approach, the approach variant, the saddle waypoint and the climbing route, so it is flagged, not patched. Separately (not a field contradiction): the 18 Sep 2026 Three Queens Fire order lists Rachel Lake Trailhead and Rachel Lake Trail 1313 as closed through 31 Oct 2026, while access.closures is null.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "http://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)",
+   "verdict": "fixed",
+   "correct_value": "Park on FR 6835 (West Fork Foss Road), about 0.5 mi after it leaves FR 68 (~4.7 mi from US-2), just past the concrete bridge over the East Fork Foss River (~mile 5.2 overall). The itinerary is right; the FR 68 copies are wrong.",
+   "evidence": "The reader assumed FR 6835 was the outlier, but the peak's climbing page says to drive 4.7 mi up the Foss road, turn left onto FR 6835, and park about 0.5 mi on, 200 ft past a small concrete bridge, across from the toe of the north ridge. OpenStreetMap road data shows FR 68 (Foss River Road, FS 6800) ends at a gate by the main Foss bridge, and the bridge over the East Fork Foss River (15 m from the river line) is on FS 6835, West Fork Foss Road. The Forest Service and trail-association pages for West Fork Foss both put the FR 6835 turn at 4.7 mi on FR 68, and a trip report parks just after the East Fork bridge at mile 5.2 (4.7 + 0.5). Note: the trailhead waypoint pin itself (47.6114,-121.2426) lies on the Necklace Valley Trail about 4.5 km south of that bridge; pin positions are out of scope and it is not moved.",
+   "sources": [
+    "https://www.summitpost.org/bald-eagle-peak/818481",
+    "https://www.openstreetmap.org/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/west-fork-foss-lakes-trailhead",
+    "https://www.wta.org/go-hiking/hikes/west-fork-foss-river-and-lakes",
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Foss River Road (FR 68)",
+     "value": "Foss River Road (FR 68) and West Fork Foss Road (FR 6835)",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue roughly 5 miles; park along the road near mile 5.2 just after the East Fork Foss River bridge.",
+     "replace": "then continue about 4.7 miles and turn left onto FR 6835 (West Fork Foss Road); park on its shoulder about half a mile on, just after the concrete bridge over the East Fork Foss River.",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Foss River Road (FR 68) roadside pullout, mile 5.2",
+     "value": "FR 6835 roadside pullout past the East Fork Foss bridge",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "just after FR 68 crosses the East Fork Foss River bridge",
+     "replace": "just after FR 6835 crosses the East Fork Foss River bridge",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "follow Foss River Road (FR 68) about two miles to the shoulder pullout near mile 5.2, just past the concrete bridge over the East Fork Foss River.",
+     "replace": "follow Foss River Road (FR 68) about 4.7 miles, turn left onto FR 6835, and continue about half a mile to the shoulder pullout just past the concrete bridge over the East Fork Foss River.",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the pullout along Foss River Road (FR 68) near mile 5.2 — just past the concrete bridge over the East Fork Foss River, roughly 2 miles up FR 68 from US-2 at Skykomish —",
+     "replace": "From the pullout along FR 6835 (West Fork Foss Road) — just past the concrete bridge over the East Fork Foss River, about half a mile from its junction with FR 68 and roughly 5.2 miles from US-2 at Skykomish —",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "to regain FR 68 at the East Fork Foss River bridge pullout near mile 5.2.",
+     "replace": "to regain FR 6835 at the East Fork Foss River bridge pullout.",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "just past the FR 68 bridge over the East Fork Foss River",
+     "replace": "just past the FR 6835 bridge over the East Fork Foss River",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Foss River Road (FR-68) pullout near mile 5.2",
+     "value": "FR 6835 pullout past the East Fork Foss bridge",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the FR-68 pullout past the East Fork Foss bridge",
+     "value": "From the FR 6835 pullout past the East Fork Foss bridge",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+    }
+   ]
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Time to reach the summit (summitTimeHrs)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "summitTimeHrs should not equal the 10 h car-to-car total; null it",
+   "evidence": "The schedule starts at 5:00 AM and summits ~10:30-11:00 AM, back ~3-4 PM; totalHrs and totalNote say 9-11 h car-to-car. A trip report of this north-ridge route says the return took less than half the time of the ascent, confirming the summit is reached well before the end of the day. Per the catalog convention, a summit time duplicating the car-to-car total is nulled, not replaced with a computed number.",
+   "sources": [
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10,
+     "value": null,
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Time to reach the summit (summitTimeHrs)"
+    }
+   ]
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Land manager's ranger district",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+   "evidence": "The Forest Service page for the West Fork Foss Lakes Trailhead (reached by the same FR 68/FR 6835) lists the Skykomish Ranger District, and the trail-association page for West Fork Foss names Mt. Baker-Snoqualmie NF, Skykomish Ranger District. landManager and emergency.rangerStation already say Skykomish.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/west-fork-foss-lakes-trailhead",
+    "https://www.wta.org/go-hiking/hikes/west-fork-foss-river-and-lakes"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "expect": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "value": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Land manager's ranger district"
+    }
+   ]
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "fact": "Approach drainage named in partner requirements",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The approach is straight up the north ridge from the Foss River valley, not off the Middle Fork Snoqualmie/Pratt River trails",
+   "evidence": "partner_requirements.approachTime places the approach on the Middle Fork Snoqualmie/Pratt River trail system, a different drainage south of US-2 and I-90's side of the crest, while every other field starts from the Foss River road. The peak's climbing page and a trip report both start the north ridge from the Foss River road system near the East Fork Foss bridge.",
+   "sources": [
+    "https://www.summitpost.org/bald-eagle-peak/818481",
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Long, unmarked approach off the Middle Fork Snoqualmie/Pratt River trail system;",
+     "replace": "Long, unmarked approach straight up the north ridge from the Foss River valley;",
+     "id": "wa_bald_eagle_peak_scramble",
+     "fact": "Approach drainage named in partner requirements"
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "fact": "Distance to Waptus Lake",
+   "verdict": "fixed",
+   "correct_value": "About 9 mi to Waptus Lake; a camp near the Waptus River PCT bridge is roughly 11-12 mi; the slab base about 12-13 mi",
+   "evidence": "The route area page gives 9 mi on the Waptus River Trail to Waptus Lake and about 13 mi to the slab base; a trail-guide site gives about 10 mi one-way to the lake, and the trail-association page puts the lake ~9-10 mi out with the PCT junction about 11 mi. A 2025 trip report gives 12 mi one-way to the slab base. So 12 mi is the camp/slab distance, not the lake; the approach sentence mislabels it.",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://www.trailmeister.com/trails/waptus-lake/",
+    "https://www.wta.org/go-hiking/hikes/waptus-river",
+    "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge;",
+     "replace": "about 9 miles to Waptus Lake and on to a camp near the Waptus River PCT bridge, roughly 11-12 flat miles one-way;",
+     "id": "wa_bears_breast_mountain_infinite_beauty",
+     "fact": "Distance to Waptus Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "fact": "Crux / summit-block grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "5.6 and 5.6+ are the same YDS grade with a finer shading; the headline 5.6 matches the route's published grade, and an ascent report of the shared summit block rates its hardest pitches 5.6. Nothing on the page disagrees about the grade band.",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "fact": "Trailhead access during the 2026 fire closure",
+   "verdict": "fixed",
+   "correct_value": "Salmon la Sac Trailhead is closed through 31 Oct 2026 (order 06-17-03-2026-44, effective 18 Sep 2026, which replaced the earlier order); road.status must say the normal season does not apply this year",
+   "evidence": "The Okanogan-Wenatchee alert (updated 18 Sep 2026) is now order 06-17-03-2026-44, effective 18 Sep-31 Oct 2026, and still lists Salmon la Sac Trailhead and Campground among closed developed sites. Regional news on 18 Sep confirms the Three Queens closures were reduced that day, and the earlier Mt. Baker-Snoqualmie alert (order -32) also listed Salmon la Sac Campground closed through 31 Oct. So road.status's unconditional open season is wrong for 2026, and the stored order number/date is stale. The new closures text also drops a sentence citing a Forest Service page as its source.",
+   "sources": [
+    "http://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district",
+    "https://www.nbcrightnow.com/fires/three-queens-fire-closures-reduced-king-and-goat-fire-still-burning/article_212ee81a-b2fe-41a5-8797-6ba18f313a56.html",
+    "https://www.fs.usda.gov/r06/mbs/alerts/three-queens-fire-area-closure-and-pacific-crest-trail-closure-re-route"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved; trailhead open roughly late May through early November.",
+     "value": "Paved; in a normal year the trailhead is open roughly late May through early November, but it is closed through 31 Oct 2026 by a fire closure order.",
+     "id": "wa_bears_breast_mountain_infinite_beauty",
+     "fact": "Trailhead access during the 2026 fire closure"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-36 (Three Queens Fire), effective 24 Aug 2026 through 31 Oct 2026. The Forest Service's own Salmon La Sac Trailhead page states 'Three Queens Fire Closure on the Cle Elum Ranger District is actively in effect at this location.'",
+     "value": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-44 (Three Queens Fire), effective 18 Sep 2026 through 31 Oct 2026 unless lifted sooner.",
+     "id": "wa_bears_breast_mountain_infinite_beauty",
+     "fact": "Trailhead access during the 2026 fire closure"
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb",
+   "verdict": "fixed",
+   "correct_value": "From the Dingford Creek trailhead (where FS 56 parking now ends, ~17 mi from I-90) Dutch Miller Gap is about 15 mi one-way; the summit about 16 mi; the round trip about 30+ mi. The 22 mi / 4.8 h figures come from a 2003 ascent that parked at the old road end, before a 2007 gate added about 7.5 mi of road walk.",
+   "evidence": "The Forest Service page for Dutch Miller Gap Trail 1030 starts at the Dingford Creek Trailhead gate (12 + ~5 mi up FS 56, the same drive the row describes) with mileposts at 7.7 (horse camp), 14.2 (Williams Lake junction) and about 15.2 at the gap. An independent trail atlas says a gate installed at Dingford Creek in 2007 added 7.5 mi of road walking to reach the gap. The 2003 ascent report that supplies the 22 mi round trip and the 4.8 h to the gap started from the old road end. So the 15 mi one-way is current and the 22 mi, the 11 mi summit waypoint and the 4.8 h approach time are stale; the approach time is nulled rather than recomputed. Not patched: gain_ft 5400 is also from the 2003 start and likely understates the gain from Dingford.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dutch-miller-gap-trail-1030",
+    "https://naturalatlas.com/trails/dutch-miller-gap-2175857",
+    "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 15 miles to Dutch Miller Gap (~4.8 hrs), then continue to a camp below the SW Face. Total round-trip trail distance for the outing is about 22 miles.",
+     "replace": "roughly 15 miles to Dutch Miller Gap, then continue to a camp below the SW Face. Total round-trip trail distance for the outing is about 30 miles, plus the scramble from camp to the summit and back.",
+     "id": "wa_bears_breast_mountain_southwest_face",
+     "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly fifteen miles to Dutch Miller Gap, about four and three quarter hours, then continue to a camp below the southwest face. The whole outing is about 22 miles of trail.",
+     "replace": "roughly fifteen miles to Dutch Miller Gap, then continue to a camp below the southwest face. The whole outing is about 30 miles of trail.",
+     "id": "wa_bears_breast_mountain_southwest_face",
+     "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 11,
+     "value": 16,
+     "id": "wa_bears_breast_mountain_southwest_face",
+     "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "to Dutch Miller Gap (~4.8 hrs), then continue",
+     "replace": "to Dutch Miller Gap, then continue",
+     "id": "wa_bears_breast_mountain_southwest_face",
+     "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 4.8,
+     "value": null,
+     "id": "wa_bears_breast_mountain_southwest_face",
+     "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "fact": "Rappel rope length requirement",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A single 50 m rope reaches on all three rappels; a 60 m or two 50 m ropes is only more comfortable for parties of three",
+   "evidence": "An ascent report records three single-rope rappels off the summit block on one 50 m rope, reaching class 3 ground with about 5 ft to spare. detailed_rack, pro_tips, descent_text, bail and rappel_detail all already say a single 50 m rope is enough; only the rappels parenthetical reads as though 60 m or double ropes are required.",
+   "sources": [
+    "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "(60m rope, or two 50m ropes for parties of 3+)",
+     "replace": "(a single 50m rope reaches; a 60m or two 50m ropes are more comfortable for parties of 3+)",
+     "id": "wa_bears_breast_mountain_southwest_face",
+     "fact": "Rappel rope length requirement"
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "fact": "Crux / summit-block grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "5.6 and 5.6+ are the same YDS grade with a finer shading; the headline 5.6 matches the route's published grade, and an ascent report rates the summit-block pitches 5.6.",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "fact": "Trailhead access during the 2026 fire closure",
+   "verdict": "fixed",
+   "correct_value": "Salmon la Sac Trailhead closed through 31 Oct 2026 under order 06-17-03-2026-44 (effective 18 Sep 2026); the reduced order closes the PCT only between Ridge Lake and Lake Vicente",
+   "evidence": "The Okanogan-Wenatchee alert updated 18 Sep 2026 (order 06-17-03-2026-44, through 31 Oct) still lists Salmon la Sac Trailhead and Campground closed, and now closes the PCT only from Ridge Lake to Lake Vicente; regional news confirms the closures were reduced on 18 Sep. The stored order number/date and the Snoqualmie Pass-Deception Pass PCT segment describe the superseded order, and road.status ignored the closure. The new text also drops a sentence citing a Forest Service page as its source.",
+   "sources": [
+    "http://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district",
+    "https://www.nbcrightnow.com/fires/three-queens-fire-closures-reduced-king-and-goat-fire-still-burning/article_212ee81a-b2fe-41a5-8797-6ba18f313a56.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved; trailhead open roughly late May through early November.",
+     "value": "Paved; in a normal year the trailhead is open roughly late May through early November, but it is closed through 31 Oct 2026 by a fire closure order.",
+     "id": "wa_bears_breast_mountain_timeless_treasure",
+     "fact": "Trailhead access during the 2026 fire closure"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-36 (Three Queens Fire), effective 24 Aug 2026 through 31 Oct 2026. The USFS Salmon La Sac Trailhead page states the closure 'is actively in effect at this location'. The order also closes the Pacific Crest Trail from Snoqualmie Pass to Deception Pass.",
+     "value": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-44 (Three Queens Fire), effective 18 Sep 2026 through 31 Oct 2026 unless lifted sooner. The order also closes the Pacific Crest Trail between Ridge Lake and Lake Vicente.",
+     "id": "wa_bears_breast_mountain_timeless_treasure",
+     "fact": "Trailhead access during the 2026 fire closure"
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "fact": "Distance to Waptus Lake",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "About 9 mi to Waptus Lake; a camp near the Waptus River PCT bridge roughly 11-12 mi",
+   "evidence": "Same error as on Infinite Beauty: the approach and approach variant put Waptus Lake 12 mi out. The route area page gives 9 mi to Waptus Lake, a trail guide about 10 mi, and the trail-association page ~9-10 mi to the lake and ~11 mi to the PCT junction; a 2025 trip report gives 12 mi to the slab base.",
+   "sources": [
+    "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+    "https://www.trailmeister.com/trails/waptus-lake/",
+    "https://www.wta.org/go-hiking/hikes/waptus-river",
+    "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge.",
+     "replace": "about 9 miles to Waptus Lake and on to a camp near the Waptus River PCT bridge, roughly 11-12 flat miles one-way.",
+     "id": "wa_bears_breast_mountain_timeless_treasure",
+     "fact": "Distance to Waptus Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly twelve flat miles to Waptus Lake and a camp near the Waptus River PCT bridge.",
+     "replace": "about nine miles to Waptus Lake and on to a camp near the Waptus River PCT bridge, roughly eleven to twelve flat miles in all.",
+     "id": "wa_bears_breast_mountain_timeless_treasure",
+     "fact": "Distance to Waptus Lake"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,310 @@
+{
+ "file": "r605.json",
+ "results": [
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Approach from Gladys Divide area to the notch",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Leave the Gladys Divide trail at ~4,400 ft near a small pond, climb SE to below Sawtooth Pass, traverse right under The Fin's west face to the notch south of The Horn.",
+   "evidence": "Waypoints, itinerary day 2 and its schedule, timing sectionBreakdown and the Flapjack bivy entry all send parties off the trail at ~4,400 ft to Sawtooth Pass; the bivy entry names the Needle Pass couloir as Mount Cruiser's line. The Mountaineers route page (seen via search excerpt; direct fetch returned 403) describes scrambling right under the west face of The Fin instead of continuing to Sawtooth Pass and on to the notch south of The Horn. Beta, the approach variant, pitch_detail, turnaround, detailed_rack, climate, approach and bail were brought into line.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "From Gladys Divide beyond Flapjack Lakes, the standard approach climbs a steep snow/scree gully to Needle Pass - icy and typically needing crampons and an axe into midsummer. A climbers'/goat trail then bypasses The Needle and Castle Spires along loose, exposed class 3-4 terrain to the notch south of The Horn.",
+     "replace": "Above Flapjack Lakes, the standard approach leaves the Gladys Divide trail at about 4,400 ft, short of the divide near a small pond, and climbs an open snow/rock slope southeast toward Sawtooth Pass - snow lingers on it into midsummer, so carry an axe early in the season. Below the pass, traverse right on loose, exposed class 3-4 ground under the west face of The Fin to the notch south of The Horn."
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and up to Gladys Divide, with a reserved overnight permit for the lakes basin arranged well in advance. From the divide the tread turns primitive and you gain the crest through a steep snow-and-scree gully that commonly holds ice into midsummer, so an axe and crampons earn their weight on an early trip. A climbers' and goat path then works along the crest, circumventing the Needle and the Castle Spires on loose, exposed class 3-4 ground.",
+     "replace": "and on toward Gladys Divide, with a reserved overnight permit for the lakes basin arranged well in advance. Short of the divide, near a small pond at about 4,400 ft, you leave the tread for an open snow-and-rock slope climbing southeast toward Sawtooth Pass; it commonly holds snow into midsummer, so an axe earns its weight on an early trip. Below the pass, a loose, exposed class 3-4 traverse leads right under The Fin's west face."
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Coming along the goat path from the Needle and Castle Spires, you pass under",
+     "replace": "Coming across from below Sawtooth Pass, you pass under"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Loose, exposed climbers'/goat trail bypassing The Needle and Castle Spires",
+     "replace": "Loose, exposed traverse under the west face of The Fin"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "pitch"
+     ],
+     "find": "(Needle/Sawtooth Pass to Horn's notch)",
+     "replace": "(below Sawtooth Pass to Horn's notch)"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "if the Needle Pass gully is icy or unconsolidated",
+     "replace": "if the snow slope below Sawtooth Pass is icy or unconsolidated"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "for the Needle Pass approach gully outside of late summer",
+     "replace": "for the snow slope below Sawtooth Pass outside of late summer"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "Snow lingers in the Needle Pass gully and on the ridge into June",
+     "replace": "Snow lingers on the slope below Sawtooth Pass and on the ridge into June"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From Flapjack Lakes, continue ~1.5 miles up to Gladys Divide (~5,000 ft), then traverse cross-country toward Sawtooth/Needle Pass to reach the base of The Fin and The Horn.",
+     "replace": "From Flapjack Lakes, follow the Gladys Divide trail to about 4,400 ft, then leave it and climb cross-country southeast toward Sawtooth Pass to reach the base of The Fin and The Horn."
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach from Gladys Divide area to the notch",
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "then descend via Gladys Divide to the Flapjack Lakes trail for the exit",
+     "replace": "then descend the open slope below the pass to the Gladys Divide trail and Flapjack Lakes for the exit"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Approach trail named in seasonal guidance",
+   "verdict": "fixed",
+   "correct_value": "The approach is Staircase / North Fork Skokomish / Flapjack Lakes, not the Putvin Trail.",
+   "evidence": "NPS describes the Flapjack Lakes Trail from Staircase (7.5 mi, 785 to 3,900 ft); the Mountaineers route places The Horn east of Flapjack Lakes, reached from there. The Putvin Trail serves Lake of the Angels in a different drainage, as the row's own overview says.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm",
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach trail named in seasonal guidance",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "the Putvin Trail approach",
+     "replace": "the Flapjack Lakes approach"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Approach trail named in seasonal guidance",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "Lingering snowfields on the steep Putvin Trail headwall",
+     "replace": "Lingering snowfields on the slope below Sawtooth Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Ropes for the rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Gear, rack, descent_text and the approach variant's hazards call for two ropes; rope_type/rope_length_m show one 60 m single rope, which cannot rappel a ~130 ft pitch. Web research was cut off by a tool session limit before any source on the rappel length or rope requirement could be read, so no patch is written. rope_type 'single dynamic' may simply describe the rope type of two carried ropes; rope_length_m or a rope_note stating two 60 m ropes is the likely fix once sourced.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Technical level: roped 5.5 vs scramble",
+   "verdict": "fixed",
+   "correct_value": "Roped 5th-class trad summit pitch (5.5 R) above a Class 3-4 approach traverse.",
+   "evidence": "The Mountaineers route rates both the Southeast and Southwest routes on The Horn 5.5; the Sawtooth Ridge area page describes The Fin and The Horn as steep trad leads on pillow basalt. Partner requirements, the exposure note, pro_tips and what_to_bring were changed from a short-rope scramble to a roped 5.5 lead.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn",
+    "https://www.mountainproject.com/area/124501771/sawtooth-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Technical level: roped 5.5 vs scramble",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "Experienced scrambler - loose rock and exposure on the Sawtooth spires demand solid Class 3-4 judgment",
+     "replace": "Experienced trad leader - the runout 5.5 summit pitch and the loose, exposed Class 3-4 ground below it demand solid judgment"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Technical level: roped 5.5 vs scramble",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Significant exposure on the Class 3-4 spire scrambling;",
+     "replace": "Significant exposure on the Class 3-4 approach traverse and the runout 5.5 summit pitch;"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Technical level: roped 5.5 vs scramble",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "expect": "A short rope helps on the exposed sections",
+     "value": "Bring a full rope and trad rack: the summit pitch is a roped, runout 5.5"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Technical level: roped 5.5 vs scramble",
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      1
+     ],
+     "expect": "rope for short exposed sections",
+     "value": "rope and trad rack for the 5.5 summit pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "How the wilderness permit is obtained",
+   "verdict": "fixed",
+   "correct_value": "Permits only by advance reservation (or through the Wilderness Information Center); no trailhead self-registration, no same-day walk-ups; Flapjack Lakes is a quota area limited year round.",
+   "evidence": "NPS wilderness reservations page: no paper self-registration permits at trailheads any more, no sites held as same-day walk-ups, Flapjack Lakes is a quota area. NPS Flapjack Lakes Trail page: camping permits limited year round, peak season June 15-Sept 30. WTA's permit page lists Olympic permits only via advance reservation (Flapjack online window Jun 15-Oct 15) and mentions no Olympic self-registration.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "How the wilderness permit is obtained",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Self-issue wilderness permit at the ranger station kiosk and NW Forest Pass",
+     "replace": "Overnight wilderness permits must be reserved in advance (none are issued at the trailhead); NW Forest Pass"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "How the wilderness permit is obtained",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": " — a NW Forest Pass or park entrance fee is required there — and fill out a self-issue wilderness permit at the ranger station kiosk before you start walking. If you plan to camp at Flapjack Lakes, that is a limited-use basin with a reserved permit required from mid-June through September 30, so sort it out well before you drive out.",
+     "replace": " — a NW Forest Pass or park entrance fee is required there. If you plan to camp at Flapjack Lakes, that is a quota basin limited year round and no permits are issued at the trailhead, so reserve one well before you drive out."
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "How the wilderness permit is obtained",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "camping permit reservation required mid-June-Sept 30",
+     "replace": "camping permit reservation required (quota area, limited year round)"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Total ascent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers route (search excerpt) gives 17 mi round trip and 5,500 ft of gain for Sawtooth Ridge / The Fin & The Horn, supporting gain_ft 5500; the itinerary days sum to 4,750 ft (3,050 + 1,700) and totalNote says 4,750. Only one outside figure found, and per-day itinerary figures may not be edited without a source stating them, so no patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Black and White Lakes junction location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoint puts the junction/waterfall 0.5 mi beyond Flapjack Lakes at 4,100 ft; both bivy entries put it about half a mile below the lakes. WTA mentions the Black and White Lakes Trail junction but gives no mileage; NPS gives none. Research was cut off by a tool session limit, so no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/flapjack-lakes",
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Distance and elevation of Flapjack Lakes from the trailhead",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row states the lakes at 7 mi (waypoint, itinerary, 3.4+3.6), 7.5 mi (bivy), and '~4,000 ft, 8 miles' (approach), with elevations 3,850/3,900/~4,000. NPS gives 7.5 mi to 3,900 ft; WTA gives 15.4 mi round trip (7.7 one way) and a 3,850 ft high point. The two sources do not agree on one figure, so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/flapjack-lakes"
+   ],
+   "patches": []
+  }
+ ]
+}

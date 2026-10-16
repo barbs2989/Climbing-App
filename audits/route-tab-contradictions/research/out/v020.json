@@ -1,0 +1,209 @@
+{
+ "file": "v020",
+ "results": [
+  {
+   "id": "wa_needle_peak_south_route",
+   "fact": "Crux/route grade (Class 4, 5.0) vs. the pitch-by-pitch breakdown's max grade (Class 3)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The only other account reached, a WTA trip report of the same July 2023 north-ridge ascent, is by the same author as the blog already tried (it lists only a helmet as gear and gives no class), so it counts as the same source. Searches for a peak-log entry, an older journal note or a second party's report on the Swamp Creek north ridge found nothing that grades the 7,300-7,400 ft crux. The row still says Class 4 (5.0 crux) in grade, Class 3-4 in the itinerary and Class 3 at most in pitch_detail, and no two sources settle which is right.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lone_wolf",
+   "fact": "The Obelisk's own elevation disagreement across waypoints",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The live row still carries 4,494 ft on two Obelisk waypoints and high_point_ft, and 4,900 ft on a third whose note says it sits further up-slope than Sofa King Buttress. The crag database remains the only published record of the formation (4,494 ft, down the shoulder from Sofa King), and it contradicts that note, but the USGS 1 m ground model reads about 4,699 ft at its own coordinate on steep ground, so it does not confirm either figure. Searches for any guide, map name or trip report placing The Obelisk turned up nothing further. With one source for 4,494 and none for 4,900, neither value is changed.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477939/the-obelisk",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.45406&y=47.36859&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Which side of the summit block the route climbs (south/west vs east/northeast)",
+   "verdict": "unresolved",
+   "correct_value": "The east-side line: notch on the north ridge, upper Overcoat Glacier, snow finger, then ledges/gully on the east face to the summit, descending east by the dihedral with two rappels.",
+   "evidence": "STRUCTURAL: clear pitch_detail (its four rows are the 2004 Overcoat/Chimney-saddle line: col, loose south ridge, west-side ledge traverse, summit block) and replace climbing_route[1] ('Heathery slot to the notch', stepping out left/west) and climbing_route[2] ('Angled chimney to the saddle') with the east-face steps (leave the snow finger at the dark towers, round the corner east, steep gully on solid holds to the summit), keeping the south-ridge line only as a named alternative in approach_variants. The east line is the most documented one in current use: the club route page says to contour from camp east to a notch on Overcoat's north ridge, reach the upper glacier, find a snow finger from the glacier to the east face and climb Class 3 ledges to the summit; a 2024 three-day report climbed the snow finger, moved onto rock near the dark towers, rounded the corner east and went up a steep gully, descending east by heather ledges, a dihedral and two rappels; the only climbing-database listing is 'East Face'. Only the 2004 report takes the south ridge. The row's waypoints, climbing_route[0] and [3], descent_text, rappels and the approach baseFinding already describe the east line, so the replacement is a line clear plus new pitch rows, which the patch format cannot express.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004090612"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Approach-day (day 1) duration vs its own schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The club route page gives about 2 hours of biking to the old trailhead and 3-4 hours on to Overcoat Lake (roughly 5-6 hours), but the row's day 1 ends higher, at the benches above the glacier (~6,600 ft), and the 2024 report that follows this itinerary gives no clock times. Neither source supports the 12 h schedule or the 9 h figure for reaching the glacier camp, so nothing is changed.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a one-way trailhead-to-summit distance. The club route page gives 10 miles of biking or hiking to about a mile before the old Dutch Miller Gap trailhead, then a ford and steep forest to Overcoat Lake without a mileage; the 2024 report gives 40.4 mi round trip for a loop with extras and Camp Pedro at mile 13. The two do not even agree where the ford falls, and any one-way figure would have to be assembled from pieces, so dist_km (32.5 km) is left as is.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Waypoint mileages vs the approach text's mileages",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A second mileage-bearing source now exists but disagrees with the first: the club route page puts the river crossing about 10 miles in (a mile short of the old Dutch Miller Gap trailhead), which fits the Overcoat Lake waypoint's 'roughly 10 mi in' note, while the 2024 report puts Camp Pedro, before the ford, at mile 13, which fits the approach text's 13-14 miles. The sources split, so neither the waypoints nor the approach text is changed.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "fact": "Expected car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The club route page (8.0 mi, 4,875 ft, Strenuous 4 / Technical 3) and the archived peak page (8 mi round trip, 4,875 ft) give distance and gain but no time. A search-listed WTA report shows a party returning to the car about six hours after a 9 AM start, but it reached only a pass, not the summit. The only summit timing remains about five hours up from one report. No source states a car-to-car total, so the 6-9 h commitment and the 10 h timing stay as they are.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/painted-mountain-red-mountain/534726"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window",
+   "verdict": "fixed",
+   "correct_value": "Optimal window April-May, on snow that still covers the brush; summer (July-August) is a brushy bushwhack and not the recommended time.",
+   "evidence": "The archived route page for Philadelphia Mountain via Lake Serene lists its season as spring and winter and says the peak is highly recommended in April and May and not recommended in the summer months, when the snow has usually melted by July and the ascent becomes a bushwhack through forest. A May 25, 2013 WTA report found about 2 ft of snow above the lake and says the hike is much easier on snow, walking on top of the thick thorny brush, than fighting through it; a 2005 report calls it a nice winter trip. seasonal_guidance was the only field calling mid-July-September optimal, so its window and the July/August statuses are changed; season (Nov-Jun) already agrees.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/philadelphia-mountain-via-the-lake-serene-trail/712896",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2013-05-26.5834673101",
+    "https://www.yellowleaf.org/scramble/g/r/2005-11-20-philadelphia.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through September, within the broader late-spring-to-October window",
+     "value": "April-May, while the snow is still deep enough to walk over the brush; winter ascents on snowshoes also go",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Brush and rock are typically dry and passable, long daylight hours help with the long, slow off-trail sections",
+     "value": "The snow is usually gone by now, so the off-trail climb above the lake turns into a slow bushwhack through dense brush and forest, even though the ground is dry",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Driest and most reliable conditions of the season, though this is also when afternoon thunderstorms are most common",
+     "value": "Driest month, but with no snow cover the route above the lake is a full bushwhack through the thickest brush of the year, and afternoon thunderstorms are most common now",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+    }
+   ]
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May",
+   "verdict": "fixed",
+   "correct_value": "April-May is the favoured window (snow still covers the brush); the 'avoid late April-May' advice is wrong.",
+   "evidence": "The archived route page says the peak is highly recommended in April and May, with snowshoes and poles for breaking trail, and not recommended in summer once the snow melts (usually by July). A late-May 2013 party climbed it on about 2 ft of snow and found it much easier than fighting the brush. Both contradict best_season's advice to avoid late April-May, and neither supports June as a best month, so best_season's closing sentence and rope_note's 'May/June' are corrected to April-May.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/philadelphia-mountain-via-the-lake-serene-trail/712896",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2013-05-26.5834673101"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Avoid the shoulder season (roughly late April-May) when snow on the boulder fields tends to be rotten/isothermal and hides holes.",
+     "replace": "April and May are the favoured months: the snow is usually still deep enough to walk over the brush, though soft afternoon snow on the boulder fields can hide holes, so probe as you go.",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "best May/June when snow covers underbrush",
+     "replace": "best April-May when snow covers underbrush",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May"
+    }
+   ]
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Avalanche section treats the route as a summer-only scramble while the row calls it a winter/spring snow objective",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "seasonal_hazards.avalanche says the route is a non-glaciated summer/fall scramble not typically climbed in avalanche season (July-October N/A, June Low), while best_season, pro_tips, the itinerary and the sources describe it as mainly a winter-to-spring snow ascent; the archived route page notes one short section with some avalanche danger on the way up. Rewriting the avalanche zone and adding winter months would need a sourced month-by-month rating that no source gives, so it is left open.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/philadelphia-mountain-via-the-lake-serene-trail/712896"
+   ],
+   "patches": []
+  }
+ ]
+}

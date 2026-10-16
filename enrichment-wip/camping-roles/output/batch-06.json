@@ -1,0 +1,553 @@
+{
+  "zones": [
+    {
+      "zone": "enchantments",
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+        "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone.",
+        "url": "https://www.recreation.gov/permits/233273"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_beckey_davis",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites",
+        "Prusik Peak south face base"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-face parties normally camp in the Core at Perfection/Inspiration or Gnome Tarn; Colchuck Lake is passed on the Aasgard approach."
+    },
+    {
+      "id": "wa_boving_christensen",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-face parties normally camp in the Core at Perfection/Inspiration or Gnome Tarn; Colchuck Lake is passed on the Aasgard approach."
+    },
+    {
+      "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Boulder camp in the flats"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Colchuck Lake is the camp; the dry boulder camp below the col is on the line."
+    },
+    {
+      "id": "wa_colchuck_peak_colchuck_glacier",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Colchuck Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Colchuck Lake is the standard camp; the moraine bivies sit on the glacier approach above the south end; many parties go car-to-car from an Icicle Road campground."
+    },
+    {
+      "id": "wa_colchuck_peak_east_ridge",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Assumed to share the Colchuck Glacier approach from the south end of the lake; less certain than the glacier routes."
+    },
+    {
+      "id": "wa_colchuck_peak_holsten_hilden",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Winter line; Colchuck Lake camp or car-to-car, and a gated road can add miles from Bridge Creek."
+    },
+    {
+      "id": "wa_colchuck_peak_north_buttress_couloir",
+      "main": [
+        "Colchuck Lake"
+      ],
+      "onRoute": [],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Only one camp listed and it is the right one."
+    },
+    {
+      "id": "wa_colchuck_peak_northeast_couloir",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Colchuck Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Colchuck Lake is the standard camp; the moraine bivies sit on the glacier approach above the south end; many parties go car-to-car from an Icicle Road campground."
+    },
+    {
+      "id": "wa_dragontail_peak_backbone_ridge",
+      "main": [
+        "Colchuck Lake"
+      ],
+      "onRoute": [
+        "First large flat ledge low on the ridge"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Colchuck Lake is the base; the ledge is an emergency bivy on the route."
+    },
+    {
+      "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a long day from Colchuck Lake or car-to-car over Aasgard Pass; Core basin camps are beyond the route and were dropped."
+    },
+    {
+      "id": "wa_dragontail_peak_r1",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Colchuck Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "North-face routes are camped from the south end of Colchuck Lake or done car-to-car; the moraine bivies lie on the approach to the base."
+    },
+    {
+      "id": "wa_dragontail_peak_r2",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Colchuck Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "North-face routes are camped from the south end of Colchuck Lake or done car-to-car; the moraine bivies lie on the approach to the base."
+    },
+    {
+      "id": "wa_dragontail_peak_r3",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Colchuck Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Pandora's Box is reached via the Colchuck Glacier approach, so it shares those camps."
+    },
+    {
+      "id": "wa_dragontail_peak_r4",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "North-face routes are camped from the south end of Colchuck Lake or done car-to-car; the moraine bivies lie on the approach to the base."
+    },
+    {
+      "id": "wa_dragontail_peak_serpentine_arete",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "North-face routes are camped from the south end of Colchuck Lake or done car-to-car; the moraine bivies lie on the approach to the base."
+    },
+    {
+      "id": "wa_e_se_face",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Witches Tower is reached from the top of Aasgard Pass; camp at Colchuck Lake or go car-to-car. Low confidence on how often it is split."
+    },
+    {
+      "id": "wa_enchantment_peak_southwest_scramble",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Core Enchantments"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Camped in the Core or done as a long day over Aasgard Pass; the unlabelled Core Enchantments pin looks like the same basin as Perfection/Inspiration."
+    },
+    {
+      "id": "wa_energizer_bunny",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "West-face line on Prusik; same Core camps as the south-face routes."
+    },
+    {
+      "id": "wa_little_annapurna_south_slopes",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Core Enchantments"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Often a long day over Aasgard Pass, or camped in the Core; the Core pin describes the same meadows as Perfection/Inspiration."
+    },
+    {
+      "id": "wa_mcclellan_peak_southwest_scramble",
+      "main": [
+        "Snow Lakes basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Colchuck Lake designated campsites",
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties on the Snow Lakes side camp at Snow Lakes; every other listed camp serves the Colchuck/Aasgard side."
+    },
+    {
+      "id": "wa_northeast_buttress_4",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [
+        "Talus and boulder bivies below Dragontail's north side"
+      ],
+      "drop": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Colchuck Lake is the standard camp; the moraine bivies sit on the glacier approach above the south end; many parties go car-to-car from an Icicle Road campground."
+    },
+    {
+      "id": "wa_nw_ridge_2",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "East-side approach from Colchuck Lake; the Dragontail moraine bivies are on the other side of the lake."
+    },
+    {
+      "id": "wa_prusik_peak_der_sportsman",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites",
+        "Prusik Peak south face base"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-face parties normally camp in the Core at Perfection/Inspiration or Gnome Tarn; Colchuck Lake is passed on the Aasgard approach."
+    },
+    {
+      "id": "wa_prusik_peak_south_face_burgner_stanley",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites",
+        "Prusik Peak south face base"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-face parties normally camp in the Core at Perfection/Inspiration or Gnome Tarn; Colchuck Lake is passed on the Aasgard approach."
+    },
+    {
+      "id": "wa_prusik_peak_west_ridge",
+      "main": [
+        "Inspiration and Perfection Lakes"
+      ],
+      "onRoute": [
+        "Tarn below Isolation Lake"
+      ],
+      "drop": [
+        "Core Enchantments"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Inspiration/Perfection is the usual base; the unlabelled Core Enchantments pin appears to mark the same basin."
+    },
+    {
+      "id": "wa_southwest_rib_2",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colchuck Lake designated campsites",
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [
+        {
+          "name": "Crystal Creek basin below the Southwest Rib",
+          "type": "camp",
+          "capacity": "A few informal sites on the basin floor",
+          "water": "Crystal Creek",
+          "permit": "Outside the Enchantment Permit Area once far enough down the basin; self-issue Alpine Lakes Wilderness permit",
+          "notes": "Informal camping on the floor of Crystal Creek basin near the toe of the rib. Reach it by hiking up Crystal Creek from the Ingalls Creek trail, or by dropping south from Crystal Lake on the Enchantment plateau along its outlet stream.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit in lower Crystal Creek; an Enchantment zone permit to camp at Crystal Lake itself",
+        "where": "Fill one out at the Ingalls Creek trailhead kiosk. Camping at Crystal Lake on the plateau needs an Enchantment Permit Area permit from Recreation.gov, May 15 to Oct 31.",
+        "url": null
+      },
+      "note": "Every listed camp serves the Colchuck/Aasgard side; the route base is in Crystal Creek, reached from Ingalls Creek or down from Crystal Lake."
+    },
+    {
+      "id": "wa_stanley_burgner",
+      "main": [
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn"
+      ],
+      "onRoute": [
+        "Colchuck Lake designated campsites",
+        "Prusik Peak south face base"
+      ],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-face parties normally camp in the Core at Perfection/Inspiration or Gnome Tarn; Colchuck Lake is passed on the Aasgard approach."
+    },
+    {
+      "id": "wa_the_temple_south_ridge",
+      "main": [
+        "Core Enchantments / Prusik Pass area"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Colchuck Lake designated campsites",
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "add": [
+        {
+          "name": "Upper Snow Lake",
+          "type": "camp",
+          "elev": 5415,
+          "capacity": "Many established sites around the Snow Lakes",
+          "water": "Lake water; treat it",
+          "permit": "Enchantment Permit Area Snow Lakes or Core zone permit, May 15 to Oct 31",
+          "notes": "The big lake camp on the Snow Lakes trail below the Lower Enchantments. Parties split the long, hot climb from the Snow Lakes trailhead here before heading up toward Tamarack Meadows and the Temple.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Approach is from the Snow Lakes side via Tamarack Meadows; camp choice varies, so Upper Snow Lake was added and the Core pin kept as main."
+    },
+    {
+      "id": "wa_witches_tower_south_face",
+      "main": [
+        "Colchuck Lake designated campsites",
+        "Bridge Creek and Eightmile campgrounds, Icicle Creek Road"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Talus and boulder bivies below Dragontail's north side",
+        "Perfection Lake and Inspiration Lake basin camps",
+        "Gnome Tarn",
+        "Shield Lake, north of Prusik Pass",
+        "Colchuck Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Witches Tower is usually tacked on from the top of Aasgard Pass; Colchuck Lake is the camp when it is split."
+    }
+  ],
+  "misassigned": [
+    "wa_southwest_rib_2: whole camp list belongs to the Colchuck/Aasgard approach; Crystal Lake Tower is climbed from Crystal Creek basin (via Ingalls Creek or Crystal Lake)"
+  ]
+}

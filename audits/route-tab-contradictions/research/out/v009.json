@@ -1,0 +1,155 @@
+{
+ "file": "v009",
+ "results": [
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The live row now has gain_ft and loss_ft 2,138 (the net rise, road's end 3,480 ft to summit 5,618 ft), while the itinerary (gainFt/lossFt 3,400, totalNote 'roughly 3,400 ft') and the approach ('about 2.4 miles/3,900 ft one-way') still disagree. The 2025 report gives only the 3,480-5,618 ft range and 4.8 mi RT; the 2002 report describes small intermediate drops; peak-database ascent pages are behind a bot wall and the other searches return Grotto Mountain in Alberta. 2,138 ft is a floor, no source states a car-to-car total, and no two sources contradict 3,400 or 3,900 directly, so nothing is changed.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "trailhead waypoint coordinates are geometrically impossible for this route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live trailhead pin (and approach_logistics) is now 47.76305,-121.39002, about 1.4 mi in a straight line from the summit pin (47.76321,-121.42058), which fits the 2.4 mi one-way route.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The main summit is reached from a notch west of a prominent rock tower, a short downclimb onto the south side, then a class 3-4 gully below the summit block; the bouldered east summit is a separate side trip from the north ridge",
+   "evidence": "The 2025 report states the sequence: through the burn to a notch west of a prominent rock tower, a steep vertical downclimb onto the south side, then the steep gully below the summit to the top; only afterwards, 'from the north ridge at 5400 feet', did the party scramble the bouldered EAST summit as a side trip. The 2002 report likewise puts the main summit on the summit block west of an eastern knob. The row's waypoints (notch, summit), approach, approach_variants and baseFinding all describe the notch-and-gully line; only the itinerary note, objective and summit schedule row present the east summit via the north ridge as the summit. Those three strings are reworded to the main-summit line.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "most parties detour through the basin and scramble the class 3-4 col from the north ridge to reach the top;",
+     "replace": "most parties detour through the basin to a notch west of a rock tower, downclimb onto the south side and scramble the class 3-4 gully below the summit block to the top;",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Summit via the north ridge/talus basin col and return same day",
+     "replace": "Summit via the talus basin and the notch below the summit block, and return the same day",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "label"
+     ],
+     "find": "Summit via north ridge col",
+     "replace": "Summit via the notch and gully",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Class 3-4 scramble up the bouldered east summit; helmet recommended for loose rock.",
+     "replace": "Class 3-4 scramble up the gully below the summit block; helmet recommended for loose rock.",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower"
+    }
+   ]
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Round-trip / total hiking distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass; no new independent figure found beyond the two earlier passes' wide set. GPS-tracked reports cluster near 5.4-5.5 mi RT (matching the waypoints' 2.75 mi one way), while the hike-page statistic of 7.5 mi (repeated by a blog and by report pages that display it) matches the itinerary; other guides give 6-7.2 mi. dist_km 4.8 km (3.0 mi) sits between. With no figure independently stated by two sources for the same line, neither the itinerary's 7.5 mi nor the waypoint/dist_km values are changed.",
+   "sources": [
+    "https://www.lucasmountainknowledge.com/post/gunn-peak-sept-2021",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-09-04.2003204620",
+    "https://onehikeaweek.com/2016/08/05/gunn-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. Figures remain scattered: 4,900 ft (hike-page statistic and its copies), 4,700 ft (one two-day report), 4,380 / 4,300 / 4,105 / 4,060 ft and ~3,300 ft from other reports; net rise trailhead 2,300 ft to summit 6,238 ft is about 3,940 ft, with the trail first dropping to the Barclay Creek crossing. No value has two independent sources, so gain_ft 4,700 vs itinerary 4,900 stays open.",
+   "sources": [
+    "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/",
+    "https://www.alpinewanderlust.com/redemption-climb-gunn-peak-scramble/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "fact": "Elevation gain for the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The live row no longer carries the crag waypoint (only the Alpental lot, with no elevation, and Guye's summit at 5,168 ft), and gain_ft is still 1,200. The route's database page says only that the crag is isolated from the rest of Guye, near the base of the South Rib, just around the corner right of and below the west face, and visible from the west-most Summit West lots; it gives a 50 ft single pitch and no approach time or elevation. OpenStreetMap maps no climbing feature on Guye Peak. A crag 'down low' near the base of the rib, a half-mile walk from a ~3,127 ft lot, makes 1,200 ft look high, but no source states the crag's height or the walk's gain, so gain_ft is neither replaced nor nulled.",
+   "sources": [
+    "https://www.mountainproject.com/route/112214146/blood-sport",
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.4235&y=47.4454&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "fact": "Total car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The archived 2017 peak-database ascent is another long day (11 h 45 min up, 2 h 45 min down the Cave Ridge trail, 14.5 h total); search snippets mention one ~7.5 h car-to-car party but its page (forum/climbers' log) is blocked and could not be read. The long-standing route page's 4-5 h on the face + 1.5-2 h down (~6-7.5 h plus approach) still supports timing.totalHrs 7, while the row's itinerary prose (5-7 h on route, 2.5-4 h descent, ~8 h for a fast pair) implies more. With one readable typical figure and several epics, neither side can be set.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.peakbagger.com/climber/ascent.aspx?aid=849062",
+    "https://www.summitpost.org/improbable-traverse/162420",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=632163"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "fact": "Location, grade and structure of the route's crux",
+   "verdict": "not_a_contradiction",
+   "correct_value": "West Face scramble: large tree-covered ramp, a ~40 ft Class 4-low 5th step, and a ~30 ft low-5th crux to the south summit",
+   "evidence": "Already consistent: the live row has been reworked since the retry. Name, overview, beta, rock_grade (low 5th, otherwise Class 3-4), grade (Easy 5th), the four-row pitch_detail and the itinerary all describe the West Face ramp scramble; the fa, 5.8 grade and six-pitch Improbable Traverse breakdown are gone, and the only remaining mentions of the Improbable Traverse say it is a separate climb.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

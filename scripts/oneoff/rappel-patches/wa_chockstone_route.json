@@ -1,0 +1,58 @@
+{
+ "id": "wa_chockstone_route",
+ "area_id": "wa_north_early_winters_spire",
+ "stations": 5,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": "60 m is the stated minimum rope for this line; a 70 m makes every station comfortable.",
+    "notes": "First rappel, off a tree down a short 5.0 slab from the summit exit area.",
+    "anchor": "tree, on the 5.0 slab, about 30m below and skier's-right of the summit exit",
+    "lengthM": null,
+    "station": "The descent does not start where the route tops out. The rappel line begins roughly 30 m down and skier's right of the top-out, reached by walking and downclimbing from the summit exit, so hunt for it rather than rigging off the first thing at the finish."
+   },
+   {
+    "n": 2,
+    "notes": "First of four bolted single-rope rappels with a 60m rope.",
+    "anchor": "bolted station (blank section of West Face)",
+    "hazards": [
+     "hanging station - get tethered in before unweighting the rope"
+    ],
+    "lengthM": null,
+    "station": "Top of the bolted line down the right side of the West Face. The first rappel drops straight down the face to a station described as a hanging belay with no ledge to stand on."
+   },
+   {
+    "n": 3,
+    "notes": "Continues down the bolted West Face line.",
+    "anchor": "bolted station",
+    "hazards": [
+     "the line steps sideways here, so the next anchor is not directly below the rope"
+    ],
+    "lengthM": null,
+    "station": "Next bolted station down the face; from here the line is described as trending climber's left rather than falling straight down."
+   },
+   {
+    "n": 4,
+    "pull": "A 70 m rope removes the squeeze entirely.",
+    "notes": "Continues down the bolted West Face line.",
+    "anchor": "bolted station",
+    "hazards": [
+     "rope ends land in the working zone on a 60 m - knot both ends",
+     "mixed piton-and-bolt anchor at one station on this line; inspect before loading"
+    ],
+    "lengthM": null,
+    "station": "Commonly reported as the third rappel of the bolted sequence, and the tight one: on a 60 m rope parties describe reaching down to clip a tether to the anchor and then feeding rope through the device to close the last bit. One station on this line is described as a piton backed by a bolt rather than two bolts."
+   },
+   {
+    "n": 5,
+    "pull": "Pulls on this line are reported clean and direct, but at least one rappel clears a roof, so expect the ends to hang free of the wall.",
+    "notes": "Final bolted rappel reaching the base.",
+    "anchor": "bolted station (lowest)",
+    "lengthM": null,
+    "station": "Lowest station; the line puts you back essentially where packs are left at the base. Accounts differ on the bottom of the sequence - some describe the last one or two rappels off tree slings above and below the chimney rather than off bolts."
+   }
+  ],
+  "rappel_count_note": "This is the current recommended descent (a tree rap near the top followed by four bolted West Face stations). An older/original variant instead makes 5 rappels straight down the ascent gully - including one free-hanging rappel off the chockstone - through loose, windy terrain, and is less commonly used now that the bolted line exists. Individual rappel lengths are not published; every station is reached on a single 60 m rope."
+ }
+}

@@ -1,0 +1,428 @@
+{
+  "results": [
+    {
+      "id": "wa_rimrock_ridge_scramble",
+      "verdict": "confirmed",
+      "resolution": "Companion to r13 (apply r13 first or together): access permit/rules/closures/land manager/parking/overnight permit, emergency notes/county/dispatch/ranger station/hospital, best_season, seasonal_guidance window and July/August reasons, climate summer/typical/forecastZone and comms re-pointed from Stehekin/Agnes Creek to the Cascade Pass trailhead and Ptarmigan Traverse line. access.fees and access._raw untouched.",
+      "summary": "After r13, the access, emergency, season, climate and comms fields still sent climbers to Stehekin; this rewrites them for the Cascade Pass / Ptarmigan Traverse approach.",
+      "evidence": "Eighth pass, 2026-10-01. Land/county by coordinate: USFS EDW boundary services put Cache Col and Kool-Aid Lake in the Glacier Peak Wilderness, Mt. Baker-Snoqualmie NF (Mt. Baker RD), and Rimrock Ridge (GNIS 48.37557,-120.97826) and Yang Yang Lakes in the Glacier Peak Wilderness, Okanogan-Wenatchee NF (Chelan RD); the trailhead returns no forest (park land). Census geocoder: trailhead, Cache Col, Kool-Aid Skagit; Yang Yang and Rimrock Chelan. GNIS lists Cache Col, Cascade Pass, Sentinel and Le Conte on both counties (the crest is the line). Closures: NPS fire-closure list and the OWNF Sisi order (trails-only) both close Agnes Creek-side trails and neither names Cascade River Road or the Cascade Pass trail; NPS road page shows Cascade River Road OPEN, paved to about mile 10. Permits: NPS and WTA agree permits for Cascade River Road camps are picked up in person at the Marblemount WIC; SummitPost (2011 addition, after asking Marblemount rangers) and rocknropenw agree Cache Col is the park boundary and no park permit is needed beyond it. SummitPost's older body text says a backcountry permit is needed 'along the traverse' - superseded by its own 2011 addition and by rocknropenw. Parking: NPS fees page, WTA, SummitPost, 10adventures: no pass at a trailhead on park land (rocknropenw's NW Forest Pass is for the two-car through-trip). Hospital: PeaceHealth fact sheet + WA DOH snapshot both list Marblemount in United General's service area; 'nearest' not claimed. NOT WRITTEN: access.fees (open product decision) - it would need its ferry fare and High Bridge shuttle sentence removed and its park-fee clause scoped to camps inside the park (NPS + WTA: $10 per person plus $6 reservation fee; earthtrekkers quotes $26 per trip, so the per-night wording should be checked); the 'Forest Service wilderness permit beyond the park boundary is free' clause has no second source for this side. access.group_limit (12) left: SummitPost gives a six-person party limit for the traverse, one source, unverified for 2026. Not in scope but noticed: crowds.peakTraffic and seasonal_hazards.weather say 'Late July-September' / generic (compatible); bivy, road, approach, hazards etc. are r13's. Session owner: access.fees keeps its scoped park-fee sentences; only the Stehekin ferry / High Bridge shuttle sentence is removed, since the row no longer uses that approach (single-row edit, not a sweep).",
+      "sources": [
+        "NPS North Cascades: Backcountry/wilderness permits page",
+        "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+        "NPS North Cascades: Trail Conditions page (updated 2026-09-29)",
+        "NPS North Cascades: Fire Closures page (updated 2026-09-29)",
+        "NPS North Cascades: Road Conditions page (updated 2026-07-03)",
+        "NPS North Cascades: Fees & Passes page",
+        "NPS North Cascades: Visitor Centers & Ranger Stations page",
+        "NPS North Cascades: Weather page",
+        "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+        "WTA: Ranger Station Info page",
+        "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+        "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+        "American Alpine Institute: Ptarmigan Traverse program page",
+        "climberkyle.com: The Extended Ptarmigan Traverse (2019, with 2023-2025 replies)",
+        "10adventures: Cascade Pass trail guide",
+        "earthtrekkers.com: Cascade Pass and Sahale Arm hike guide",
+        "edwardliphoto.com: The Ptarmigan Traverse, out-and-back (2024)",
+        "USDA Forest Service, Okanogan-Wenatchee NF: Sisi Fire trails closure order 06-17-02-2026-35",
+        "USDA Forest Service, Okanogan-Wenatchee NF: Chelan Ranger District office page",
+        "USDA Forest Service EDW map services (forest, ranger district, wilderness boundaries) queried at the Rimrock Ridge, Yang Yang Lakes, Kool-Aid Lake, Cache Col and trailhead coordinates",
+        "US Census Bureau geocoder (county at coordinates)",
+        "USGS GNIS via The National Map geonames service (Rimrock Ridge 1525058: Chelan; Cache Col 1517198 and Cascade Pass 1517449: Chelan/Skagit)",
+        "KING 5 News: Helicopter rescue saves 2 stranded skiers near Cascade Pass (Skagit County)",
+        "Skagit 911: Contact Us page",
+        "Skagit County Sheriff's Office page",
+        "RiverCom 911: Contact Us page",
+        "Chelan County Volunteer Search & Rescue: Contact page",
+        "PeaceHealth United General Medical Center FY23 fact sheet",
+        "Washington DOH: PeaceHealth United General hospital snapshot (2026)",
+        "Northwest Avalanche Center: About Us page",
+        "Journal of Glaciology: Avalanche Weather Forecasting at the Northwest Avalanche Center",
+        "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000)",
+        "The Mountaineer annual 1982 (1981 climbing notes), p.92"
+      ],
+      "ops": [
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "permit"
+          ],
+          "expect": "An NPS wilderness permit is required for any overnight camping within the park/NRA boundary near High Bridge (reserve on recreation.gov or get a walk-up permit at the Golden West Visitor Center in Stehekin). Once across into the Glacier Peak Wilderness (Forest Service land), only a free self-issue wilderness permit is required, available at trailhead registration boxes.",
+          "value": "A North Cascades National Park wilderness permit is needed for any overnight stay inside the park, which on this approach is the ground from the Cascade Pass trailhead up to Cache Col. Permits for camps reached from the Cascade River Road are picked up in person at the Wilderness Information Center in Marblemount. Cache Col is the park boundary: beyond it the traverse is in the Glacier Peak Wilderness, where no park permit is needed to camp, and the usual first camp, Kool-Aid Lake, is already past it.",
+          "sources": [
+            "NPS North Cascades: Backcountry/wilderness permits page",
+            "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+            "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "10adventures: Cascade Pass trail guide"
+          ],
+          "note": "Park permit for overnight stays in the park: NPS permits + Cascade Pass pages, WTA, earthtrekkers. In-person pickup at the WIC for Cascade River Road areas: NPS permits page + WTA (+ 10adventures, SummitPost). Cache Col = park boundary, no park permit beyond: rocknropenw + SummitPost (body + 2011 addition after asking the Marblemount rangers). Kool-Aid beyond Cache Col: r13 itinerary sources + USFS EDW (Kool-Aid Lake in Glacier Peak Wilderness). Not written: whether the Forest Service wants a self-issue wilderness permit there (SummitPost: forest pages do not mention one; rocknropenw: no permits) - one-sided, so left unsaid."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "rules"
+          ],
+          "expect": "Leave No Trace travel required; camping is restricted to designated/permitted sites within the park/NRA portion of the approach. Food storage from bears is essential — aggressive bear activity has been reported in 2026 at PCT camps in this corridor (Fireweed and South Fork camps in particular).",
+          "value": "Inside the park, camping is allowed only at designated camps, and none is allowed at Cascade Pass itself or along the Cascade Pass trail; fires are not allowed at the backcountry camps there. Leave No Trace travel throughout.",
+          "sources": [
+            "NPS North Cascades: Trail Conditions page (updated 2026-09-29)",
+            "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)"
+          ],
+          "note": "Designated camps only / none at Cascade Pass: NPS Trail Conditions + NPS Cascade Pass page (one publisher, the land manager whose rule it is) and Cascades Field Guide restates it. No fires: NPS Cascade Pass page + SummitPost ('Don't even think of building a campfire'). Dropped: the PCT-camp bear item and the park/NRA wording (Agnes Creek corridor)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "closures"
+          ],
+          "expect": "As of mid-2026 the Stehekin area is still recovering from a historic December 2025 flood: Company Creek Road lost roughly 1,000 ft of roadbed and a levee (an elevated interim road was completed June 23, 2026); North Cascades Lodge at Stehekin is closed for the season (no lodging, dining, fuel, or showers, though ferry and postal service continue); the High Bridge shuttle bus is not running for 2026. On the trail itself, the Agnes Creek bridge at Hemlock Camp (south of the park boundary, in the Glacier Peak Wilderness) is out of service and camping at Hemlock Camp is considered unsafe due to hazard trees — use Cedar Camp or the South Fork Agnes Creek camp instead. Confirm current conditions with the Wilderness Information Center (360-854-7245) before going. Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes the Pacific Crest Trail (Trail 2000) along Agnes Creek on the Chelan Ranger District, along with Agnes Creek Trail 1272, Agnes Gorge Trail 1281 and Swamp Creek Trail 1242. North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) also close the Pacific Crest Trail from the park boundary down to High Bridge and on to Bridge Creek Camp, the High Bridge area, and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This approach cannot be used while these closures stand. Chelan Ranger District: (509) 682-4900. North Cascades National Park: (360) 854-7200.",
+          "value": "The Sisi Fire closures are on the Agnes Creek side of the ridge, not on this approach: they shut the Pacific Crest Trail along Agnes Creek and the Agnes Gorge trail, among others, so none of those valleys is a way out from the ridge while the closures stand. Neither the national forest's closure order nor the park's fire-closure list includes the Cascade River Road or the Cascade Pass trail.",
+          "sources": [
+            "NPS North Cascades: Fire Closures page (updated 2026-09-29)",
+            "USDA Forest Service, Okanogan-Wenatchee NF: Sisi Fire trails closure order 06-17-02-2026-35",
+            "NPS North Cascades: Road Conditions page (updated 2026-07-03)",
+            "NPS North Cascades: Trail Conditions page (updated 2026-09-29)"
+          ],
+          "note": "Two agencies, two independent lists: NPS fire closures (updated 2026-09-29: PCT/Agnes Creek Trail from the NPS boundary to Bridge Creek Camp, Agnes Gorge Trail, High Bridge area, Stehekin Valley Road, etc.) and the OWNF trails-only order 06-17-02-2026-35 (PCT 2000, Agnes Gorge 1281, Agnes Creek 1272, Company Creek, Devore Creek, 4th of July Basin, Swamp Creek). Neither names the Cascade River Road or Cascade Pass trail; NPS road page shows the road OPEN (2026-07-03) and the 2026-09-29 trail report describes conditions on the Cascade Pass trail with no closure. End date (Dec 31, 2026) is OWNF-only, so not written. Dropped: Stehekin flood, lodge, shuttle and Hemlock Camp items (Stehekin approach) and the 'This approach cannot be used' sentence."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "landManager"
+          ],
+          "expect": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area for roughly the first mile out of High Bridge, then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness, for the remainder of the approach and the peak itself.",
+          "value": "North Cascades National Park from the Cascade Pass trailhead to Cache Col; beyond Cache Col the traverse and the ridge are in the Glacier Peak Wilderness on national forest land: the Mt. Baker-Snoqualmie National Forest around Cache Col and Kool-Aid Lake, and the Okanogan-Wenatchee National Forest (Chelan Ranger District) on the ridge itself.",
+          "sources": [
+            "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "USDA Forest Service EDW map services (forest, ranger district, wilderness boundaries) queried at the Rimrock Ridge, Yang Yang Lakes, Kool-Aid Lake, Cache Col and trailhead coordinates",
+            "USDA Forest Service, Okanogan-Wenatchee NF: Sisi Fire trails closure order 06-17-02-2026-35"
+          ],
+          "note": "Trailhead in the park: NPS trail page + SummitPost ('The Cascade Pass Trail (N start) is in the National Park'). Cache Col = park boundary into Glacier Peak Wilderness: SummitPost + rocknropenw ('Mt Baker National Forest / Glacier Peak Wilderness'). Forest/district at each point: USFS EDW boundary services (Cache Col and Kool-Aid: Mt. Baker-Snoqualmie NF, Mt. Baker RD; Rimrock Ridge and Yang Yang Lakes: Okanogan-Wenatchee NF, Chelan RD; all in Glacier Peak Wilderness). Second source for the ridge's forest: the OWNF order places Agnes Creek Trail 1272, which ends at T33N R14E sec 15 below the ridge's south side, on the Chelan Ranger District; Glacier Peak Wilderness for the ridge: Beckey + 1982 annual (r13 overview)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "land_manager"
+          ],
+          "expect": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area (first mile out of High Bridge), then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness",
+          "value": "North Cascades National Park (Cascade Pass trailhead to Cache Col), then Glacier Peak Wilderness: Mt. Baker-Snoqualmie National Forest (Cache Col, Kool-Aid Lake) and Okanogan-Wenatchee National Forest, Chelan Ranger District (the ridge)",
+          "sources": [
+            "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "USDA Forest Service EDW map services (forest, ranger district, wilderness boundaries) queried at the Rimrock Ridge, Yang Yang Lakes, Kool-Aid Lake, Cache Col and trailhead coordinates",
+            "USDA Forest Service, Okanogan-Wenatchee NF: Sisi Fire trails closure order 06-17-02-2026-35"
+          ],
+          "note": "Short form of landManager; same sources."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "parking_pass"
+          ],
+          "expect": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+          "value": "None. The Cascade Pass trailhead is on national park land, where no parking pass is required.",
+          "sources": [
+            "NPS North Cascades: Fees & Passes page",
+            "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "10adventures: Cascade Pass trail guide"
+          ],
+          "note": "NPS fees page ('no trailhead or parking fees for trails that begin on National Park Service lands') + WTA (Parking Pass/Entry Fee: None) + SummitPost (N start 'in the National Park, where no pass is required to park') + 10adventures ('No pass required'). rocknropenw's Northwest Forest Pass is for the two-car through-trip (its south car parks at a Forest Service trailhead)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "passRequired"
+          ],
+          "expect": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+          "value": "None. The Cascade Pass trailhead is on national park land, where no parking pass is required.",
+          "sources": [
+            "NPS North Cascades: Fees & Passes page",
+            "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "10adventures: Cascade Pass trail guide"
+          ],
+          "note": "Same as parking_pass."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "overnight_permit",
+            "what"
+          ],
+          "expect": "North Cascades NP wilderness permit for the Stehekin valley camps — quota, fee",
+          "value": "North Cascades National Park wilderness permit, needed only for a night inside the park (Cascade Pass trailhead to Cache Col)",
+          "sources": [
+            "NPS North Cascades: Backcountry/wilderness permits page",
+            "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)"
+          ],
+          "note": "Subfield ops only: the url subfield is left as is (an NPS link the CITE check would refuse in a whole-object set)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "overnight_permit",
+            "where"
+          ],
+          "expect": "Reserve on Recreation.gov and contact the park the day before, as there are no permit services in Stehekin. Camping beyond the park boundary in the Glacier Peak Wilderness needs no park permit.",
+          "value": "Picked up in person at the Wilderness Information Center in Marblemount for camps reached from the Cascade River Road. The usual camps on this approach, from Kool-Aid Lake on, are past Cache Col in the Glacier Peak Wilderness, where no park permit is needed.",
+          "sources": [
+            "NPS North Cascades: Backcountry/wilderness permits page",
+            "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)"
+          ]
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "emergency",
+          "path": [
+            "notes"
+          ],
+          "expect": "No road access and no cell coverage in this drainage — carry a satellite communicator. Any rescue will likely require a multi-hour boat evacuation and/or helicopter.",
+          "value": "There is no cell service on the Cascade River Road or the Cascade Pass trail, and the route beyond crosses remote glaciated country. Carry a satellite communicator or PLB.",
+          "sources": [
+            "earthtrekkers.com: Cascade Pass and Sahale Arm hike guide",
+            "edwardliphoto.com: The Ptarmigan Traverse, out-and-back (2024)"
+          ],
+          "note": "No cell service on the road and the trail: earthtrekkers ('essentially nonexistent on Cascade River Road and the entire trail') + Edward Li 2024 (no service at the road end, used an inReach). Glaciated: r13 sources. Dropped: boat evacuation (Stehekin)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "emergency",
+          "path": [
+            "county"
+          ],
+          "expect": "Chelan County, WA",
+          "value": "Chelan County, WA (the ridge); the Cascade Pass trailhead is in Skagit County",
+          "sources": [
+            "USGS GNIS via The National Map geonames service (Rimrock Ridge 1525058: Chelan; Cache Col 1517198 and Cascade Pass 1517449: Chelan/Skagit)",
+            "US Census Bureau geocoder (county at coordinates)",
+            "KING 5 News: Helicopter rescue saves 2 stranded skiers near Cascade Pass (Skagit County)"
+          ],
+          "note": "Ridge: GNIS (Rimrock Ridge, Chelan) + Census geocoder at its coordinate (Chelan). Trailhead: Census geocoder at 48.4754,-121.0751 (Skagit) + KING 5 report of a Skagit County rescue just above Cascade Pass on the Ptarmigan Traverse."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "emergency",
+          "path": [
+            "sheriffDispatch"
+          ],
+          "expect": "911, or Chelan County Sheriff/Rivercom Dispatch direct at 509-663-9911; technical mountain rescue support comes from the volunteer Chelan County Mountain Rescue.",
+          "value": "911. Non-emergency dispatch: Skagit 911 at 360-428-3211 for the Cascade Pass trailhead side; RiverCom at 509-663-9911 for Chelan County, where the ridge lies.",
+          "sources": [
+            "Skagit 911: Contact Us page",
+            "Skagit County Sheriff's Office page",
+            "RiverCom 911: Contact Us page",
+            "Chelan County Volunteer Search & Rescue: Contact page",
+            "US Census Bureau geocoder (county at coordinates)",
+            "USGS GNIS via The National Map geonames service (Rimrock Ridge 1525058: Chelan; Cache Col 1517198 and Cascade Pass 1517449: Chelan/Skagit)"
+          ],
+          "note": "Skagit: Skagit 911 contact page + Skagit County Sheriff's Office page (360-428-3211, 24 h). Chelan: RiverCom contact page + Chelan County Volunteer SAR ('Call Rivercom Dispatch at 509-663-9911'). Dropped: Chelan County Mountain Rescue clause (not re-sourced)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "emergency",
+          "path": [
+            "rangerStation"
+          ],
+          "expect": "Golden West Visitor Center, Stehekin (NPS) for the park/NRA portion of the approach; Chelan Ranger District office, Okanogan-Wenatchee National Forest, in Chelan, for the Glacier Peak Wilderness portion.",
+          "value": "Wilderness Information Center, Marblemount (North Cascades National Park; 360-854-7245), which issues the park's permits for the Cascade River Road side; for the ridge itself, the Chelan Ranger District of the Okanogan-Wenatchee National Forest, in Chelan (509-682-4900).",
+          "sources": [
+            "NPS North Cascades: Visitor Centers & Ranger Stations page",
+            "NPS North Cascades: Backcountry/wilderness permits page",
+            "WTA: Ranger Station Info page",
+            "WTA: Cascade Pass hike page (Before You Go; Parking Pass: None)",
+            "USDA Forest Service, Okanogan-Wenatchee NF: Chelan Ranger District office page",
+            "USDA Forest Service EDW map services (forest, ranger district, wilderness boundaries) queried at the Rimrock Ridge, Yang Yang Lakes, Kool-Aid Lake, Cache Col and trailhead coordinates"
+          ],
+          "note": "WIC address/phone/role: NPS Visitor Centers page + WTA Ranger Station Info (360-854-7245); permits for Cascade River Road areas: NPS permits page + WTA hike page. Chelan RD (509) 682-4900: OWNF office page + WTA Ranger Station Info. Dropped: Golden West Visitor Center (Stehekin; NPS lists it closed)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "emergency",
+          "path": [
+            "nearestHospital"
+          ],
+          "expect": "Lake Chelan Community Hospital, Chelan, WA — roughly 50 lake-miles from Stehekin; backcountry rescues from this drainage are typically by helicopter given the lack of road access to Stehekin.",
+          "value": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley (360-856-6021), the hospital whose service area takes in Marblemount at the foot of the Cascade River Road.",
+          "sources": [
+            "PeaceHealth United General Medical Center FY23 fact sheet",
+            "Washington DOH: PeaceHealth United General hospital snapshot (2026)"
+          ],
+          "note": "Both documents: address, phone and a service area naming Marblemount. 'Nearest' is not claimed (that would be a computed comparison). Dropped: Lake Chelan Community Hospital / lake-miles from Stehekin."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "best_season",
+          "path": [],
+          "expect": "Typically late July through September, once the approach brushfields and any lingering snow on the ridge have melted out. Earlier in the season expect mosquitoes in the lower Agnes Creek valley and possible snow on north-facing sections of the ridge. Check current NPS/USFS trail-condition reports before going, since bridges and camps in this corridor were still being repaired in 2026 after the December 2025 Stehekin flood.",
+          "value": "Usually from mid-July through August, and into September. Early in the season more snow lies on the glaciers and on the exposed ledge crossings, which makes the ledges harder; later in the summer the glaciers show more bare ice, the Le Conte Glacier above all.",
+          "sources": [
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "American Alpine Institute: Ptarmigan Traverse program page",
+            "climberkyle.com: The Extended Ptarmigan Traverse (2019, with 2023-2025 replies)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "NPS North Cascades: Weather page"
+          ],
+          "note": "Window: SummitPost (mid-July to mid-September usual season) + AAI (prime early July to mid/late August); September: SummitPost + climberkyle ('usually fine later in the summer'). Snow on the ledges harder: AAI ('easy, unless covered with snow') + Mountain Project (r13 hazards). Bare ice later, Le Conte: rocknropenw + climberkyle ('some blue ice on the Le Conte Glacier', 'more blue ice on the glaciers' later). Dropped: Agnes Creek mosquitoes, brushfields, Stehekin flood."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "seasonal_guidance",
+          "path": [
+            "optimalWindow"
+          ],
+          "expect": "Late July through September, with August as the prime month",
+          "value": "Mid-July through August, and into September",
+          "sources": [
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "American Alpine Institute: Ptarmigan Traverse program page",
+            "climberkyle.com: The Extended Ptarmigan Traverse (2019, with 2023-2025 replies)"
+          ],
+          "note": "Keeps it in line with best_season; 'August as the prime month' is contradicted by rocknropenw and AAI (early/mid July), so dropped."
+        },
+        {
+          "op": "replace_text",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "seasonal_guidance",
+          "path": [
+            "monthBreakdown",
+            "July",
+            "reason"
+          ],
+          "find": "conditions typically firm up by late July when the season window opens",
+          "replace": "the season usually opens by mid-July",
+          "sources": [
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "NPS North Cascades: Trail Conditions page (updated 2026-09-29)"
+          ],
+          "note": "SummitPost (mid-July start) + NPS (Cascade Pass trail typically not snow-free until mid-July)."
+        },
+        {
+          "op": "replace_text",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "seasonal_guidance",
+          "path": [
+            "monthBreakdown",
+            "August",
+            "reason"
+          ],
+          "find": "snow-free approach and driest, most stable ridge conditions",
+          "replace": "the core of the season, though the glaciers show more bare ice as the month goes on",
+          "sources": [
+            "American Alpine Institute: Ptarmigan Traverse program page",
+            "SummitPost: Ptarmigan Traverse (archived copy, incl. 2011 permit addition)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "climberkyle.com: The Extended Ptarmigan Traverse (2019, with 2023-2025 replies)"
+          ],
+          "note": "The approach is glaciated, so 'snow-free approach' contradicts r13."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "climate",
+          "path": [
+            "summer"
+          ],
+          "expect": "Summer is the working window: the approach brush and the ridge are usually snow-free from late July, with hot days, cool nights and a risk of afternoon thunderstorms; snow cover varies a lot from year to year.",
+          "value": "Summer is the working window. Early in the season the glaciers on the approach are well covered with snow; as the summer goes on they show more bare ice, the Le Conte Glacier above all, so late-season parties may meet hard ice there.",
+          "sources": [
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "climberkyle.com: The Extended Ptarmigan Traverse (2019, with 2023-2025 replies)"
+          ],
+          "note": "rocknropenw (Le Conte filled in early-mid July; later only passable on medium-angle bare ice) + climberkyle (blue ice on the Le Conte Glacier; more blue ice later in summer). Dropped: 'approach brush ... snow-free from late July' (Agnes Creek)."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "climate",
+          "path": [
+            "typical"
+          ],
+          "expect": "Dry east-Cascades climate in the rain shadow of the crest — hot summer days, cool nights, and a much shorter, drier snow season than the west-side Cascades. Afternoon thunderstorms are common in July and August.",
+          "value": "The approach follows the Cascade crest, which divides the wetter, cloudier west side from the drier, warmer east side; the ridge itself lies on the east side. Storms can bring days of rain and wind even in summer, so allow a spare day for weather.",
+          "sources": [
+            "NPS North Cascades: Weather page",
+            "climberkyle.com: The Extended Ptarmigan Traverse (2019, with 2023-2025 replies)",
+            "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+            "USGS GNIS via The National Map geonames service (Rimrock Ridge 1525058: Chelan; Cache Col 1517198 and Cascade Pass 1517449: Chelan/Skagit)"
+          ],
+          "note": "East side drier and warmer in summer: NPS Weather + climberkyle (marine air over Cascade Pass, fog west of the crest, clearing east of it). Ridge east of the crest: it is the Flat Creek / West Fork Agnes Creek divide (r13 overview: Beckey + 1982 annual), in Chelan County (GNIS). Storms: NPS ('be prepared for a few days of rain and wind') + rocknropenw (extra day for bad weather). Dropped: 'much shorter, drier snow season than the west side' (wrong for a glaciated crest approach); thunderstorm sentence not re-sourced."
+        },
+        {
+          "op": "replace_text",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "climate",
+          "path": [
+            "forecastZone"
+          ],
+          "find": " (this is a summer, snow-free-window scramble; no winter forecast zone applies).",
+          "replace": " during the summer climbing season; its daily forecasts end in spring.",
+          "sources": [
+            "Northwest Avalanche Center: About Us page",
+            "Journal of Glaciology: Avalanche Weather Forecasting at the Northwest Avalanche Center"
+          ],
+          "note": "NWAC About Us ('wind down winter-time operations in mid to late April') + Journal of Glaciology NWAC paper. Removes 'snow-free-window scramble', which the glacier approach contradicts."
+        },
+        {
+          "op": "set",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "comms",
+          "path": [],
+          "expect": "This is deep wilderness with no maintained trail; expect no cell coverage for essentially the entire approach and climb, consistent with the rest of the Glacier Peak Wilderness / Stehekin backcountry. A satellite communicator or PLB is strongly advised.",
+          "value": "Expect no cell service: there is none on the Cascade River Road or the Cascade Pass trail, and the traverse and the ridge beyond are remote wilderness. A satellite communicator or PLB is strongly advised.",
+          "sources": [
+            "earthtrekkers.com: Cascade Pass and Sahale Arm hike guide",
+            "edwardliphoto.com: The Ptarmigan Traverse, out-and-back (2024)"
+          ],
+          "note": "Same sources as emergency.notes. Dropped: 'no maintained trail' (the Cascade Pass trail is maintained) and 'Stehekin backcountry'."
+        },
+        {
+          "op": "replace_text",
+          "id": "wa_rimrock_ridge_scramble",
+          "column": "access",
+          "path": [
+            "fees"
+          ],
+          "find": " Ferry fare to/from Stehekin and any High Bridge shuttle fee are separate.",
+          "replace": ""
+        }
+      ],
+      "pin_ops": []
+    }
+  ]
+}

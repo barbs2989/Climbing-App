@@ -1,0 +1,43 @@
+{
+ "file": "v028",
+ "results": [
+  {
+   "id": "wa_e_se_face",
+   "fact": "route grade — 4th class vs a roped 5.6 pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "STRUCTURAL: this row blends two distinct lines on the east side of Witches Tower and cannot be fixed by patches. The East Face (zig-zag ledges, short 4th-class hand crack, reversed on descent) is what grade, rock_grade, beta, pitch_detail, detailed_rack, bail and the base waypoint directions describe; the Southeast Face (one pitch of 5.6 up the white rock, descended by the South Face/Southwest Corner) is what the itinerary note, schedule, objective, cal, totalNote, descent_text and the approach variant's descent hazard describe. Each line has one independent source (a route database's East Face page at 4th class; a peak page's Southeast Face at 5.6 — a regional guide repeats the same peak-page text), so neither is more documented. Owner fix: split into two rows ('East Face', 4th; 'Southeast Face', 5.6) or rename this one and strip the other line's text.",
+   "sources": [
+    "https://www.mountainproject.com/route/111724575/east-face",
+    "https://www.summitpost.org/witches-tower/154282",
+    "https://wenatcheeoutdoors.org/2016/05/02/witches-tower/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_e_se_face",
+   "fact": "descent line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "STRUCTURAL: follows the route-identity split above. The 4th-class East Face is reversed (descent, bail agree); the 5.6 Southeast Face is descended by the South Face/Southwest Corner side (descent_text, approach_variants hazard). No second source for either descent specific to this row; resolve together with the split into East Face and Southeast Face rows.",
+   "sources": [
+    "https://www.mountainproject.com/route/111724575/east-face",
+    "https://www.summitpost.org/witches-tower/154282"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_witches_tower_south_face",
+   "fact": "crux grade — rock_grade omits it, and 5.4 vs 5.5 elsewhere",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "STRUCTURAL: two independent sources describe the South Face as a scramble, not a roped climb — the Mountaineers South Face page lists it as an alpine scramble (toward the white wall, exposed slabby ledge around to the east side, large black blocks to the summit) and Wikipedia rates the tower class 3 by its easiest route; the row's beta and rock_grade ('Class 3-4 scramble') agree. The 5.5 step (waypoint 5 note, descent_text, approach-variant hazard) belongs to the Southwest Corner route and the two-pitch 5.4/5.2 pitch_detail, grade 'Grade II, 5.4', pitches 2, rack and partner-requirement 5.4 text to the West Buttress. Owner fix: clear pitch_detail and set pitches to 0/null, grade to a class-3/4 scramble grade, and strip the 5.4/5.5 roped-pitch wording (rack, partner_requirements, seasonal_hazards.exposure, waypoint 5 note, descent_text, approach-variant hazard) — clearing pitch rows is beyond the patch format.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+    "https://en.wikipedia.org/wiki/Witches_Tower_(Washington)",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-southwest-corner"
+   ],
+   "patches": []
+  }
+ ]
+}

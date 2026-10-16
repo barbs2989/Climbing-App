@@ -1,0 +1,63 @@
+{
+ "id": "wa_j_tnar",
+ "name": "Jötnar",
+ "approach": "From the Lake Serene Trailhead, hike Trail #1068 about 4 miles and 2,000 ft of gain to Lake Serene, then traverse talus and huge boulders around the lake toward its south/southeast end below the Middle Peak (Jötunheim) massif. This cirque holds the Norwegian Buttresses, home to big-wall routes like Jötnar, one of the tallest walls in the Lower 48; reaching the base involves further talus and brush travel beyond the lake. Given the technical, multi-day nature of routes here, most parties approach with overnight gear.",
+ "waypoints": [
+  {
+   "lat": 47.80925,
+   "lng": -121.57409,
+   "elev": 600,
+   "name": "Lake Serene Trailhead (Mount Index Rd / Trail 1068)",
+   "note": "Hike the Lake Serene trail then traverse talus/scree around the lake's south/west side into the Norwegian Buttress cirque; this is the only approach used for all routes in this cirque (Jötnar, Mjolnir, Bluebell, etc.).",
+   "type": "Trailhead",
+   "elevFt": 600,
+   "directions": "From US 2 about 7 miles east of Gold Bar, just as the highway curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road. In a quarter mile turn right at the sign for Lake Serene Trail 1068 into the parking lot at about 600 ft. A Northwest Forest Pass or America the Beautiful pass is required to park."
+  },
+  {
+   "lat": 47.78194,
+   "lng": -121.57028,
+   "elev": 2526,
+   "name": "Lake Serene",
+   "type": "Junction",
+   "distMi": 3.6,
+   "elevFt": 2526,
+   "directions": "Follow Lake Serene Trail 1068; at the signed junction at 1.7 miles the right fork goes to Bridal Veil Falls, so stay on the main trail, cross the creek, and climb the final 1.5 miles and about 1,300 ft on stairs, roots and rocks to the lake. Fill water here; there is none above."
+  },
+  {
+   "lat": 47.77748,
+   "lng": -121.57543,
+   "elev": 3765,
+   "name": "Jötunheim (North Norwegian Buttress base cirque)",
+   "type": "Base",
+   "distMi": null,
+   "elevFt": 3765,
+   "directions": "Take the unofficial path around the right-hand (west) side of the lake, down granite slabs to the talus fan, and up the talus toward the wall. The last of it is steepening mossy slab and brush that parties commonly rope up for; rack up low near the lake, since the base is a rockfall alley."
+  },
+  {
+   "lat": 47.78021,
+   "lng": -121.57762,
+   "elev": 4801,
+   "name": "North Norwegian Buttress",
+   "type": "Feature",
+   "distMi": null,
+   "elevFt": 4801
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5500,
+   "name": "Jötunheim Wall Topout (Middle Peak)",
+   "note": "16-pitch, Grade VI big wall (5.9 A3+) with bolted anchors and portaledge bivies; best climbed late July-early Sept before snowmelt turns pitches into waterfalls.",
+   "type": "Topout",
+   "distMi": 5
+  },
+  {
+   "lat": 47.78063,
+   "lng": -121.58179,
+   "elev": 5406,
+   "name": "Middle Peak (Mount Index)",
+   "type": "Summit",
+   "elevFt": 5406
+  }
+ ]
+}

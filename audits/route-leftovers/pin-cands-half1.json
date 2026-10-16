@@ -1,0 +1,109 @@
+{
+ "wa_chiwawa_mountain_southwest": [
+  "r002.json: The beta's east-northeast leg is travel FROM the col toward Chiwawa's summit, which agrees with the overview (Fortress 1.1 mi west across the col, so the summit is east of it) and with a route guide that says to reach the col and then turn east toward the summit; pitch_detail says the same ('traverse northeast from col toward summit ridge'). The reader's inference relies on the col waypoint pin, which sits EAST of the summit pin and so cannot be a col between Chiwawa and Fortress (1.12 mi west) - that pin placement is the anomaly, and pins are out of scope. The beta's phrase 'aiming for the col' is clumsy but not a directional contradiction."
+ ],
+ "wa_south_face_12": [
+  "r006.json: On this row, the approach and approach_variants put camp at about 6 mi (distMi 6.5), and the summit waypoint sits at distMi 7.5. The two itinerary days total 15 mi, so about 7.5 mi one way. One external account of the south approach gives 6 miles from the Beverly/Bean Creek trailhead to the Ingalls Creek camp. A 2024 party covered 16 miles round trip on the same Fourth Creek Pass approach to a point high on the peak. dist_km's 5.5 mi is shorter than the trailhead-to-camp leg alone, so it cannot be the one-way figure. | About 7.5 mi (12.07 km) one way"
+ ],
+ "wa_buck_mountain_south_ridge": [
+  "r007.json: Both lines are real, documented routes: one source describes climbing from King Lake directly south to a notch (~7,140 ft) on the east ridge, crossing to the south side and contouring onto the low-angle SE slopes to the middle summit (the beta/pitch_detail/itinerary line); other sources describe the long 'normal' route to the west side via Buck Creek Pass and the High Pass high route to a Louis Creek Basin camp (the approach/descent_text/approach_variants line), and note King Lake is also used for the NE face. The row welds two different routes together; choosing which one this route id represents means rewriting beta, pitch_detail, three itinerary days and timing notes (or the approach, des"
+ ],
+ "wa_cannon_mountain_south_slopes": [
+  "r007.json: Research agrees the camp for this Snow Lakes/Prusik Pass line is in the core Enchantment lakes near Perfection/Inspiration Lake (itinerary, bivy, approach, and route descriptions that reach Prusik Pass from the north end of Perfection Lake). But the 'Basin below Cannon' Campsite pin (and the 'Base of south slopes' pin) sit north-northeast of the summit, on the far side of the mountain from this route, so renaming or re-elevating it would label a pin at the wrong place; pin positions are out of scope. Lake elevations are also unsettled: one mapping source puts Perfection Lake at 7,556 ft (the waypoint's value), others at ~7,000-7,170 ft, so the itinerary's '~7,500 ft' and bivy's 7,190 ft cann"
+ ],
+ "wa_nw_ridge_2": [
+  "r009.json: Settled on the fact: a trip report of the NW Ridge approaches from the E side of Colchuck Lake up the obvious gully to the notch above Jabberwocky Tower, and the peak's route listing describes the Aasgard-path/brush approach as the one to the west-face gully. So the 'Aasgard Pass Gully Break' waypoint belongs to the west-face approach. Left unpatched because the fix is to move or remove the pin itself (lat/lng out of scope); renaming it in place would label a pin that still sits on the west-face approach line."
+ ],
+ "wa_colchuck_balanced_rock_col_east_lake_side_approch": [
+  "r009.json: 17.06 km is exactly 10.6 mi, the itinerary's round-trip figure, while the col waypoint sits at 5.3 mi one way; dist_km should probably be ~8.5 km. External sources give only 4 mi to the lake plus about an hour to the col, not a one-way mileage to the col, so the value is flagged rather than changed."
+ ],
+ "wa_southwest_rib_2": [
+  "r011.json: Crystal Lake Tower is the westernmost point of McClellan Peak's summit ridge, so the waypoint note describes where the tower sits rather than renaming the summit; SummitPost states exactly this and Mountain Project places the tower on the ridge between the Chessmen and the Nightmare Needles."
+ ],
+ "wa_devore_peak_west_ridge": [
+  "r012.json: The Mountaineers route description places Bird Creek Camp about 4 miles up the Devore Creek Trail from Weaver Point at 4,200 ft, about 100 ft before the Bird Creek crossing; a 2022 trip report camped at the '4200ft Devore/Bird Creek junction'. The waypoint's 5,800 ft (and the beta/pitch_detail '~5,400 ft', which is the separate unofficial higher camp) are wrong for the named camp; the waypoint's distMi 8 from Harlequin (3 mi river trail + ~4-5 mi) is consistent and left alone. Note the waypoint's pin sits far above the camp (terrain ~8,100 ft) — pin position is out of scope. | Bird Creek Camp is at ~4,200 ft, about 4 mi up the Devore Creek trail from Weaver Point"
+ ],
+ "wa_lichtenberg_mountain_southeast_ridge": [
+  "r014.json: Sources split: a climbing-club route page gives 7 miles and 2,100 ft from the first switchback, while the 1975 party's report gives about 4 miles and 2,600 ft round trip from the Smith Brook Meadows pullout, and a winter page gives 4 miles including a 2-mile road walk. The route's own pins (road to Lichtenwasser Lake about 1.1 km straight-line, lake to summit about 1.2 km) favour roughly 2 miles one way, i.e. the stored dist_km of 3.2, but no two independent sources agree on a single round-trip figure. The itinerary's '4 to 7 miles' already brackets both; the beta's flat '7-mile' is the claim most likely wrong but is left until sources agree.",
+  "r014.json: The Lichtenberg Boulders are a cluster below a large slab on the mountain, about 2.5 miles from the Smithbrook trailhead, reached mostly on the Lake Valhalla/McCausland trail plus a short bushwhack — the sibling west-side approach, not the Lichtenwasser Lake fishing trail this route uses; the pin's distMi 2.5 is that trail's mileage. The fix is to drop the pin, which is a waypoint-list change outside the text/number patch scope, so it is flagged (research confirms the contradiction) rather than patched. | The Lichtenberg Boulders pin does not belong on this route's waypoint list and should be removed."
+ ],
+ "wa_spectacle_buttes_west_route": [
+  "r020.json: One description puts the Leroy Basin meadow camp at 6,100 ft above a 4,120 ft ford. A trail database has the Leroy Basin path topping out at 6,121 ft. The row's own figures agree: a ~4,140 ft ford plus ~1,200 ft/mile for ~1.5 mi comes to ~5,900-6,100 ft, not 5,400. The camp pin also sits beside the Seven Fingered Jack row's 6,100 ft Leroy Basin pin. Day 1 gain and day 3 loss become 2,600 ft (3,500 to 6,100), and the camp-to-Leroy-Pass leg (6,100 to 6,850) becomes ~750 ft net. | Leroy Basin camp ~6,100 ft"
+ ],
+ "wa_bald_eagle_peak_scramble": [
+  "r023.json: The reader assumed FR 6835 was the outlier, but the peak's climbing page says to drive 4.7 mi up the Foss road, turn left onto FR 6835, and park about 0.5 mi on, 200 ft past a small concrete bridge, across from the toe of the north ridge. OpenStreetMap road data shows FR 68 (Foss River Road, FS 6800) ends at a gate by the main Foss bridge, and the bridge over the East Fork Foss River (15 m from the river line) is on FS 6835, West Fork Foss Road. The Forest Service and trail-association pages for West Fork Foss both put the FR 6835 turn at 4.7 mi on FR 68, and a trip report parks just after the East Fork bridge at mile 5.2 (4.7 + 0.5). Note: the trailhead waypoint pin itself (47.6114,-121.242"
+ ],
+ "wa_vanishing_point": [
+  "r028.json: No source gives a mileage for the approach. Sources agree it follows the Barclay Creek trail only about a mile to the bridge and then leaves it for the gullies, so it never passes Barclay Lake (2.2 mi); the waypoint list's 3.8 mi base figure is routed via the lake and looks wrong, and the straight-line distance from the trailhead pin to the base pin is about 1.6 mi, which fits the variant's 2 mi. With no two sources for a number, and the Barclay Lake waypoint itself off the approach (pin positions out of scope), no patch."
+ ],
+ "wa_eagle_rock_scramble": [
+  "r028.json: SummitPost puts the FR6517 parking 0.5 mi east of the summit at 4,150 ft; the USGS 3DEP elevation at the trailhead pin is ~4,100 ft vs ~5,600 ft at the summit pin. The row's own overview, trailhead waypoint and gain_ft agree; 'nearly level with the summit' in approach is wrong. | Parking about 0.5 mi east of the summit at ~4,150 ft, about 1,460 ft below it"
+ ],
+ "wa_blood_sport": [
+  "r031.json: The approach is described as about half a mile and 15 minutes from the Alpental lot, whose ground elevation is about 3,127 ft (USGS 3DEP point query). But the stored crag pin sits on ground at about 4,227 ft (USGS query), which would fit the 1,200 ft gain, while the crag waypoint's own elev says 3,400. No source gives the crag's elevation, so the right gain cannot be set; the pin, the waypoint elev and gain_ft need checking against each other."
+ ],
+ "wa_iron_peak_teanaway_scramble": [
+  "r034.json: The overview, descent, itinerary, schedule and approach all say the route follows Iron Peak's north ridge south from Eldorado Pass, and the saddle pin sits north-northwest of the summit pin. WTA says that on reaching the saddle the peak is off to the right (south for a party arriving eastbound), about 350 ft above; a 2013 trip report likewise has the summit to the right, a half mile along the ridge. descent_text's 'south ridge' and the saddle bivy's 'turns west' are outliers. | From the saddle the summit lies south-southeast, up Iron Peak's north ridge"
+ ],
+ "wa_little_annapurna_south_slopes": [
+  "r034.json: Wenatchee Outdoors says the northern slopes are a nice hike or ski tour from the Upper Enchantment Lakes while the southern slope drops precipitously toward the Nightmare and Knitting Needles. Wikipedia describes the peak's gentle north slope (holding the Snow Creek Glacier remnant). The row's pins agree: the basin and the base-of-slopes junction lie north of the summit, and the row's hazards/watch_out/bail all put the cliffs on the south edge. | The standard line climbs the gentle north-facing slopes from the Upper Enchantment basin; the south side drops precipitously"
+ ],
+ "wa_the_direct_north_ridge_w_gendarme": [
+  "r038.json: The route documents two genuine approaches (Esmeralda/Goat Pass, marked primary, and Stuart Lake/Mountaineer Creek), and waypoint[0]'s own directions explicitly label that pin as the Icicle-side start and tell the party the Teanaway side is a different drive; two labelled options, not a wrong fact."
+ ],
+ "wa_navaho_peak_south_slopes": [
+  "r039.json: A trip log states the Standup Trail #1369 junction is reached 3.8 miles in, with camp about a mile beyond and the pass about half a mile past camp. The Navaho Pass hike page puts the T junction at the Stafford Creek crossing about 3.5 miles in. So the approach and descent text (3.5-3.8 mi) are right and the waypoint's 4.85 mi and 'about 1 mile below Navaho Pass' are wrong (the reader's internal resolution had it backwards). The waypoint's pin and its 5,450 ft elevation also sit up near the meadow camp; pins are out of scope and the elevation is flagged separately. | The Standup Creek Trail junction is about 3.5-3.8 mi from the trailhead, roughly 2 mi below Navaho Pass",
+  "r039.json: With the junction at 3.8 mi, its stored elevation (5,450 ft) sits 650 ft above the 4,800 ft creek-crossing waypoint only 0.3 mi earlier, which is implausible on a trail described as gaining gradually; the pin itself also appears to sit near the meadow camp. No source found giving the junction's elevation, so it is left unchanged."
+ ],
+ "wa_red_mountain_snoqualmie_standard": [
+  "r042.json: The WTA route description puts the scramble takeoff at a cairn in the middle of the path before the small pond (reach the pond and you have gone ~300 yards too far), with the trail continuing to Red Pass at 5,300 ft. Mountain Project's East Ridge (Lundin Peak) approach follows the Commonwealth Creek trail up to Red Pass, passing Red Mountain on the right and Red Pond on the left, so Red Pass is beyond the Red Mountain turnoff. The row's approach, climbing_route and itinerary agree. Contradiction confirmed, but the fix is removing/relocating a waypoint pin, which this pass may not do; no patch written. | The scramble leaves the Commonwealth Creek trail at a cairn a few hundred yards before th"
+ ],
+ "wa_drilling_me_softly": [
+  "r044.json: The reader's internal resolution (65 ft) is not supported: both waypoints sit on the same crag coordinate, and the 4585 'trailhead' elevation is the Citidel area's listed elevation, not the road end. USGS 3DEP gives ~4,670 ft at the crag coordinate and ~4,230-4,250 ft at the end of the left-fork road spur (located from OSM geometry of FS 9070-310), implying roughly 450 ft of gain, but the crag coordinate is itself approximate and no source states the approach gain. Neither 750 nor 65 can be adopted from two agreeing sources; waypoint[0].elev (4585) also looks wrong for a road-end trailhead but its pin sits on the crag, so it is not patched."
+ ],
+ "wa_spinnaker_peak_s_route": [
+  "r045.json: dist_km 12.5 km equals 7.8 mi, the round-trip figure (also the itinerary's miles), but the field renders as the one-way approach. Trip write-ups give 7.8 mi round trip and 7.3 mi round trip for Spinnaker with Martin, so one way is about 3.7-3.9 mi; the summit waypoint sits at 3.6 mi. | 6.3 km (about 3.9 mi one way)"
+ ],
+ "wa_glacier_peak_sitkum_glacier": [
+  "r048.json: The Forest Service page for White Chuck River Trail 643 lists it as 'INACCESSIBLE, NO ROAD OR TRAIL ACCESS', washed away by the 2003 flood, less than a third remaining and no plans to repair. A 2020 party found FR 23 blocked by boulders, walked the old road and lost the trail at Pumice Creek. So the approach, itinerary days 1, 2 and 4, itinerary.cal, timing.sectionBreakdown, descent_text, approach_variants (White Chuck marked primary) and the bivy entries describe a defunct approach while the waypoints (coordinates cannot change) start at North Fork Sauk. The fix is a full rewrite of approach narrative, mileages, hours and gains for the North Fork Sauk -> White Pass -> PCT north -> Sitkum Cr"
+ ],
+ "wa_doorway_flake": [
+  "r048.json: The approach ends at the grassy saddle at the base of the South Face: one party reached the grassy saddle two hours from the car and began climbing from it; route pages start the South Face lines from the saddle (Concerto scrambles down ramps from it across the granite apron; Western Dihedral goes left from it to the base of Skeena26). The saddle is where climbing begins, not where it ends, so 'Topout' is wrong; the pin is retyped to match its duplicate, coordinates untouched. | Base/bivy"
+ ],
+ "wa_skeena26": [
+  "r048.json: The approach ends at the grassy saddle at the base of the South Face: one party reached the grassy saddle two hours from the car and climbed Skeena26 from there; route pages start the South Face lines from the saddle (Western Dihedral goes left from it to the base of Skeena26). The saddle is where climbing begins, not where it ends, so 'Topout' is wrong; the pin is retyped to match its duplicate, coordinates untouched. | Base/bivy"
+ ],
+ "wa_glacier_peak_disappointment_peak_cleaver": [
+  "r051.json: These two pins sit at coordinates on the Buck Creek Pass / eastern side, not on this route's North Fork Sauk approach. Renaming them without moving the pins would put White Pass and Glacier Gap labels at the wrong places on the map, and pin positions are out of scope, so they are left for a pin repair. | Should be White Pass (~5,900 ft, ~9 mi) and Glacier Gap (~7,300 ft, ~12.5 mi)"
+ ],
+ "wa_marvin_s_ear": [
+  "r055.json: The waypoint pin (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail guide (48.0251, -121.4779) to within ~50 m; approach_logistics (48.02389, -121.47414) sits ~300 m away (the trailhead has also been planned for relocation ~0.5 mi back). Coordinates are out of scope for patching here, so it is left flagged. | 48.0251, -121.4779 (waypoint position)"
+ ],
+ "wa_morning_star_peak_standard": [
+  "r055.json: The waypoint pin (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail guide (48.0251, -121.4779) to within ~50 m; approach_logistics (48.02389, -121.47414) sits ~300 m away (the trailhead has also been planned for relocation ~0.5 mi back). Coordinates are out of scope for patching here, so it is left flagged. | 48.0251, -121.4779 (waypoint position)"
+ ],
+ "wa_west_face_2": [
+  "r058.json: The approach paragraph opens with a note that the area's stored coordinates are wrong and 'worth flagging for correction' — pipeline commentary shown to climbers, contradicting the page's own trailhead card and waypoints, which already sit at Downey Creek. The Gunsight Range is reached from Downey Creek per both sources. | approach begins with the Downey Creek approach; the data-quality note is removed"
+ ],
+ "wa_old_guard_peak_southwest_route": [
+  "r058.json: A detailed trip report describes spotting 'the snow slope on Old Guard Peak's northwest side' and climbing that ramp to the class 3 rock; a second trip report and the peak's summary page describe the standard line as a class 2/3 snow couloir and scramble on the west side from the LeConte Glacier (the east side is the low-5th route). The row's own pins put the couloir base north of the summit. beta, face and aspect were right; approach, climbing_route, itinerary day 3 and the LeConte Glacier waypoint note are corrected. The route's stored NAME 'Southwest Route' is out of scope and left as is; timing.sectionBreakdown[2].note is truncated at 'west/…' and left alone. | the snow ramp/snowfinger i"
+ ],
+ "wa_rimrock_ridge_scramble": [
+  "r060.json: No ascent account of Rimrock Ridge was found, so no source names an established approach. The ridge divides upper Flat Creek (north) from the West Fork Agnes Creek (south); the Flat Creek trail ends about 4.2 mi up short of the valley head, and the West Fork Agnes trail heading west from Fivemile Camp (~5.5 mi up the PCT) is now a bushwhack. The row's approach text (continue to Swamp Creek Camp ~8.5 mi, then bushwhack EAST into 'Agnes Creek/Blue Basin') looks geographically wrong, since the summit pin (48.372,-121.000) lies northwest of Fivemile Camp and well north of Swamp Creek Camp (48.310), but with no source describing a real line, rewriting the approach would be invention. Both Flat Cr"
+ ],
+ "wa_northeast_ridge_1963_route": [
+  "r074.json: The route starts partway up the C-J couloir from a trailhead near the Cascade Pass parking lot (Mountain Project 1963 route page). Reports of the couloir approach put its base about 20 minutes from the road after dropping into the valley (Where Is Kyle Miller; Turns-All-Year), with no ascent to Cascade Pass. The fact is settled, but the fix is removing waypoints[1] (the Cascade Pass pin) and re-deriving the later pins' distMi (4.3/4.8/5.5, all measured via the pass) and the river-crossing elev 4,300 ft, which is pin work outside this patch scope. Flagged for the waypoint/pin pass; no patch written. | The approach leaves the road by the Cascade Pass trailhead and crosses the Cascade River and"
+ ],
+ "wa_mount_redoubt_south_face": [
+  "r078.json: dist_km is the one-way approach; 17.7 km (11 mi) exceeds every one-way figure on the row: the summit waypoint sits at 8.6 mi, the itinerary gives 7 mi to camp plus a 3.5-mi round-trip summit day (~8.75 mi one way), and the totalNote's ~17 mi round trip halves to ~8.5 mi. Externally, a party hiking out from a high camp at the head of the Redoubt Glacier logged 9.1 miles to the car, placing the summit roughly 9 mi from the road, not 11. Set to the row's own summit distance. | 13.8 km one way (~8.6 mi car to summit)"
+ ],
+ "wa_primus_peak_south_ridge": [
+  "r080.json: Research confirms this route starts at the Eldorado Creek trailhead (two independent Eldorado-side reports). But the fix requires MOVING pins: waypoints[0] and approach_logistics.trailheadLat/Lng hold Thunder Creek coordinates, and renaming them while the coordinates stay at Colonial Creek would put an Eldorado label on a Thunder Creek pin; the summit waypoint's distMi (11.5) and note are also measured from/describe Thunder Creek. approach_logistics.trailhead/trailheadDirection (which say it is NOT the Eldorado trailhead) must be rewritten together with the pin move. Left for pin work, no patch. | Eldorado Creek climbers' trailhead on Cascade River Road (~2,100 ft)"
+ ],
+ "wa_mount_prophet_east": [
+  "r089.json: The approach prose puts the Big Beaver Trail junction ~7 mi along the shoreline (a second report agrees the water taxi saves ~7 mi each way), but the \"Big Beaver Trail junction (via Ross Dam)\" waypoint says distMi 2 and its pin sits near Ross Dam, while its note describes following the shoreline to it. Whether this pin is meant to be the dam-end trail start or the landing-end junction is a pin question (out of scope); no patch."
+ ],
+ "wa_trapper_mountain_south_slopes": [
+  "r091.json: The reader's internal resolution picked the wrong side. A 2015 trip report describes going in and out from the Cascade Pass trailhead: maintained trail to Pelton Basin camp, then a boot path down toward Pelton Creek and a faint fisherman's trail to the lake (5.5 h in). A separate 2024 report from a party who tried from Stehekin/Old Cottonwood found that line sketchy and says the most-used route comes from Pelton Basin; the lake's reference page puts it off the upper Stehekin River Trail, which is the trail through Pelton Basin. The row's itinerary, beta, turnaround, timing breakdown, comms and climate already say Cascade Pass; the Harlequin trailhead is also geographically impossible at the "
+ ]
+}

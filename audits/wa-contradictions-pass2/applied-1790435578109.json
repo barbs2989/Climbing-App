@@ -1,0 +1,727 @@
+{
+ "applied": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Season window (June)"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Whether the standard line has a Class 4 step"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "obj_haz",
+   "path": [
+    1
+   ],
+   "fact": "Whether the standard line has a Class 4 step"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Whether the standard line has a Class 4 step"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Whether the standard line has a Class 4 step"
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Whether the standard line has a Class 4 step"
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Side of Wing Lake the South col is reached from"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Name/identity of the high camp the climb starts from"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Name/identity of the high camp the climb starts from"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Name/identity of the high camp the climb starts from"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Number of gully rappels on the descent"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Crux grade of the knife-edge finish"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "overview",
+   "path": [],
+   "fact": "Length of the low-fifth crest section"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Length of the low-fifth crest section"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Which climbers path the approach uses from the Terror Creek cairn"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Which climbers path the approach uses from the Terror Creek cairn"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "Which climbers path the approach uses from the Terror Creek cairn"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    3,
+    "note"
+   ],
+   "fact": "Which climbers path the approach uses from the Terror Creek cairn"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Terror Basin camp elevation"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Terror Basin camp elevation"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Terror Basin camp elevation"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "rappel_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "Cell coverage"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "column": "hazards",
+   "path": [
+    4
+   ],
+   "fact": "Cell coverage"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Number of rappels above the notch"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Camp the climb starts from"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Camp the climb starts from"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Chopping Block notch warning placed on the descent/route instead of the approach"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Chopping Block notch warning placed on the descent/route instead of the approach"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier eastern-Cascades climate; rock dries quickly after storms",
+      "probability": "Afternoon thunderstorms possible in summer; cold nights and early snow possible by fall"
+     },
+     "exposure": "Moderate to serious: loose scree and short Class 3-4 steps on the upper slopes mean a slip risks a long, ungentle fall/tumble on rock; remote location means self-rescue distance is significant and outside help is far away",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route (climbed only in dry Jul-Sep window; no indexed winter/spring ascent data)",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "rope_note": "South Ridge-Southwest Gully scramble: mostly Class 2-3 with one steep, clean Class 4 step midway; most parties climb it unroped, though a short rope/handline can help less-experienced climbers on the Class 4 step. Rock is disintegrating granite — loose in places.",
+    "obj_haz": [
+     "Loose, disintegrating granite/basalt rock (rockfall)",
+     "Class 4 exposure on the west-face traverse and summit gully",
+     "Lingering steep snow at the base of the summit gully into early summer",
+     "Afternoon thunderstorm exposure on the open upper ridge"
+    ],
+    "itinerary": {
+     "cal": "Best climbed mid-summer to early fall once the West Fork Methow River Trail and high country are snow-free; the approach trail is notoriously brushy/overgrown, so expect a slower pace than mileage alone suggests.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the West Fork Methow River trailhead (River Bend Campground, ~2,700 ft), hike the West Fork Methow River Trail roughly 8 miles to the PCT junction at Brush Creek, then south on the PCT about 1.5 miles to Horse Heaven Camp (4,350 ft). Trail can be brushy/overgrown in the lower miles, which slows parties down.",
+       "hours": 6,
+       "miles": 9.5,
+       "title": "Approach to Horse Heaven Camp",
+       "gainFt": 1650,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "Midday",
+         "label": "Leave trailhead",
+         "detail": "River Bend Campground, ~2,700 ft."
+        },
+        {
+         "time": "+8 mi",
+         "label": "Reach PCT junction at Brush Creek",
+         "detail": ""
+        },
+        {
+         "time": "Evening",
+         "label": "Arrive Horse Heaven Camp",
+         "detail": "~4,350 ft; set up base camp for the climb."
+        }
+       ],
+       "objective": "Reach base camp at Horse Heaven Camp"
+      },
+      {
+       "n": 2,
+       "note": "From camp, follow the Mill Creek/Azurite Pass Trail up to Azurite Pass (~6,700 ft), then work north/northeast along the south ridge, finishing through class 3-4 gullies just southwest of the summit tower to reach the 8,445 ft summit. Descend the same gullies and ridge back to the pass and camp.",
+       "hours": 11,
+       "miles": 8,
+       "title": "Summit day via Azurite Pass, South Ridge and Southwest Gully",
+       "gainFt": 4100,
+       "lossFt": 4100,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Early morning",
+         "label": "Leave camp",
+         "detail": "Light summit pack; carry water, as the route is dry above the pass."
+        },
+        {
+         "time": "+3.3 hr",
+         "label": "Reach Azurite Pass",
+         "detail": "Via Jet Creek crossing on the Mill Creek/Azurite Pass Trail."
+        },
+        {
+         "time": "+7 hr from camp",
+         "label": "Reach summit",
+         "detail": "Sustained class 3-4 scrambling and route-finding through gullies below the summit tower."
+        },
+        {
+         "time": "+10.5 hr from camp",
+         "label": "Back at camp",
+         "detail": "~3.5 hr descent by the same line."
+        }
+       ],
+       "objective": "Climb Azurite Peak and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back down the PCT and West Fork Methow River Trail to the trailhead, reversing day 1's route.",
+       "hours": 5,
+       "miles": 9.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 1650,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack: about 25 miles round trip with 6,700 ft cumulative gain/loss, one night in and one night out of Horse Heaven Camp, with a long (10-11 hr) class 3-4 summit day from camp."
+    },
+    "timing": {
+     "totalHrs": 22,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 6,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "From the West Fork Methow River trailhead (River Bend Campground, ~2,700 ft), hike the West Fork Methow River Trail roughly 8 miles to the PCT junction at Brush Creek, then south o…",
+       "fromTo": "Approach to Horse Heaven Camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "From camp, follow the Mill Creek/Azurite Pass Trail up to Azurite Pass (~6,700 ft), then work north/northeast along the south ridge, finishing through class 3-4 gullies just southw…",
+       "fromTo": "Summit day via Azurite Pass, South Ridge and Southwest Gully",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Break camp and hike back down the PCT and West Fork Methow River Trail to the trailhead, reversing day 1's route.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5156,
+      "lng": -120.7362,
+      "elev": 4850,
+      "name": "Rainy Pass Trailhead (SR 20)",
+      "note": "Northwest Forest Pass required; parking is at the Rainy Pass picnic area, trailhead sign at the north end of the lot.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.509345,
+      "lng": -120.763756,
+      "elev": 5900,
+      "name": "Heather Pass junction",
+      "note": "Leave the Lake Ann/Maple Pass Loop trail #740 here onto the unmaintained climbers' path toward Lewis and Wing Lakes.",
+      "type": "Junction",
+      "distMi": 2.4
+     },
+     {
+      "lat": 48.511137,
+      "lng": -120.775017,
+      "elev": 6100,
+      "name": "Talus field crossings",
+      "note": "Two loose talus fields to cross on the climbers' path before Lewis Lake; cairned but easy to lose in fog.",
+      "type": "Hazard",
+      "distMi": 3
+     },
+     {
+      "lat": 48.514102,
+      "lng": -120.782366,
+      "elev": 5700,
+      "name": "Lewis Lake",
+      "note": "Lower, less-established camp option; only a couple of decent tent spots on the north shore.",
+      "type": "Campsite",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.519384,
+      "lng": -120.806837,
+      "elev": 6900,
+      "name": "Wing Lake outlet",
+      "note": "Reliable water; the lake outlet is the last dependable source before the summit push.",
+      "type": "Water",
+      "distMi": 5
+     },
+     {
+      "lat": 48.519384,
+      "lng": -120.806837,
+      "elev": 6900,
+      "name": "Wing Lake camp",
+      "note": "Standard base camp for Black Peak climbers; best established tent sites are here rather than Lewis Lake.",
+      "type": "Campsite",
+      "distMi": 5
+     },
+     {
+      "lat": 48.522264,
+      "lng": -120.818554,
+      "elev": 8300,
+      "name": "South col",
+      "note": "Gained via a moraine and permanent snowfield east of Wing Lake; a broad gully on the west side leads to the summit blocks.",
+      "type": "Junction",
+      "distMi": 5.8
+     },
+     {
+      "lat": 48.523611,
+      "lng": -120.816193,
+      "elev": 8970,
+      "name": "Black Peak summit",
+      "note": "Class 3 with easy class 4 moves near the top; helmet recommended for rockfall off the summit block.",
+      "type": "Summit",
+      "distMi": 6
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "before": {
+    "approach": "Same as the North Buttress: Goodell Creek trailhead to Terror Camp in Crescent Creek Basin (~6,000 ft gain, ~7-7.5 hrs), then on the climbing day cross the Ottohorn-Himmelhorn col and descend the Mustard Glacier to the base of the north face (2-3 hrs from camp). Stoddard's original approach used a two-day approach via Stettattle Ridge and the upper McMillan Creek cirque.",
+    "timing": {
+     "totalHrs": 17,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 2.5,
+     "recommendedStart": "Alpine start (~4:00 AM) from Terror Camp"
+    },
+    "itinerary": "Day 1: hike to Terror Camp in Crescent Creek Basin. Day 2: alpine start, cross the Ottohorn-Himmelhorn col and Mustard Glacier to the route base, climb the buttress crest and knife-edge finish to the summit, descend via the West Ridge notch and gully rappels (a long day, ~17 hrs camp-to-camp for one party). Day 3: hike out.",
+    "descent_text": "Rappel/scramble the West Ridge to the Blob (The Rake)-Terror notch (2 rappels of ~30m), then descend a chossy, steep-snow gully with an overhanging chockstone rappel back into Crescent Creek Cirque. On the original ascent the return proved unexpectedly difficult, including a six-hour bushwhack after a barrier crossing went wrong.",
+    "pitch_detail": [
+     {
+      "grade": "3rd-4th class",
+      "notes": "Scrambling to gain the buttress crest, left of the 1961 line",
+      "pitch": "Lower buttress",
+      "lengthM": 304.8
+     },
+     {
+      "grade": "low 5th class",
+      "notes": "Thousands of feet of low-fifth simul-climbing along the crest",
+      "pitch": "Buttress crest",
+      "lengthM": 304.8
+     },
+     {
+      "grade": "5.8",
+      "notes": "Two exposed knife-edge pitches and a sharp prow near the top; crux 5.8+ per the published account of the 1985 extension",
+      "pitch": "Knife-edge finish",
+      "lengthM": 152.4
+     }
+    ],
+    "overview": "A left-trending, more aesthetic variation of the original 1961 North Buttress, climbing thousands of feet of low-fifth to 5.8 rock up the buttress crest between McMillan Cirque and the summit, finishing across two exposed knife-edge pitches."
+   }
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "before": {
+    "itinerary": {
+     "cal": "No advance permit reservation needed for this zone — pick up a walk-up wilderness permit in person at the Marblemount Wilderness Info Center; best conditions are typically late July through September once Terror Creek and the approach gullies have melted out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Goodell Creek Trailhead (600 ft), follow the old road bed then the Terror Creek climber's path — a notoriously brushy, hard-to-follow route with a creek crossing — up to a bench camp around 6,000 ft. This is widely considered one of the harder approaches in the Cascades; expect route-finding and heavy brush even in good conditions.",
+       "hours": 9.5,
+       "miles": 8,
+       "title": "Approach to Terror Basin / Stump Hollow",
+       "gainFt": 5400,
+       "lossFt": 100,
+       "packLb": 48,
+       "schedule": [],
+       "objective": "Reach the 6,000 ft basin below the Southern Pickets"
+      },
+      {
+       "n": 2,
+       "note": "Cross the Barrier and traverse into Crescent Creek Basin (~5,800 ft), staying high along the bushy ridge. Short mileage but slow, exposed sidehill travel; many parties treat this as a half-day and use the rest to scout the route or rest before the summit push.",
+       "hours": 3,
+       "miles": 1.5,
+       "title": "Move to Crescent Creek Basin",
+       "gainFt": 500,
+       "lossFt": 300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Position camp below the peak's south/east side"
+      },
+      {
+       "n": 3,
+       "note": "A long alpine day: cross the Otto-Himmel col and traverse below the Twin Spires and the Rake to reach the base of the North Face, then climb the face and its right-hand buttress (5.7, much of it simul-climbed) to the 8,151 ft summit before descending the West Ridge gully to get back to camp.",
+       "hours": 14,
+       "miles": 4,
+       "title": "North Face / North Buttress summit push",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "2:30 AM",
+         "label": "Leave Crescent Creek Basin camp",
+         "detail": "Alpine start with headlamps toward the Otto-Himmel col."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Cross the col, traverse to the north side",
+         "detail": "Even fast parties need 2-3 hr from Crescent Creek Basin to reach the base of the north face."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Rope up at the base of the North Face",
+         "detail": "Start of the 2,500 ft North Face / North Buttress line, 5.7."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Top out on the summit",
+         "detail": "8,151 ft; a long, sustained buttress climb."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Begin the descent",
+         "detail": "Descend the West Ridge and rappel the gully back into Crescent Creek Basin."
+        },
+        {
+         "time": "~8:00 PM",
+         "label": "Back at Crescent Creek Basin camp",
+         "detail": "A 15+ hr day; build in a weather/rest buffer if possible."
+        }
+       ],
+       "objective": "Climb the 2,500 ft North Face and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Reverse the approach: back over the Barrier, down through Terror Basin, and out the Terror Creek climber's path to the trailhead. Brush is easier to push through downhill but navigation errors are still common.",
+       "hours": 8.5,
+       "miles": 8.5,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 5900,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the Goodell Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 4-day trip: two hard bushwhack approach days to Crescent Creek Basin, one very long (14-15 hr) technical day on the 2,500 ft North Face / North Buttress line, and a day to hike out."
+    },
+    "timing": {
+     "totalHrs": 35,
+     "summitTimeHrs": 14,
+     "descentTimeHrs": 8.5,
+     "approachTimeHrs": 12.5,
+     "recommendedStart": "2:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 9.5,
+       "note": "From the Goodell Creek Trailhead (600 ft), follow the old road bed then the Terror Creek climber's path — a notoriously brushy, hard-to-follow route with a creek crossing — up to a…",
+       "fromTo": "Approach to Terror Basin / Stump Hollow",
+       "section": "Approach"
+      },
+      {
+       "hrs": 3,
+       "note": "Cross the Barrier and traverse into Crescent Creek Basin (~5,800 ft), staying high along the bushy ridge. Short mileage but slow, exposed sidehill travel; many parties treat this a…",
+       "fromTo": "Move to Crescent Creek Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 14,
+       "note": "A long alpine day: cross the Otto-Himmel col and traverse below the Twin Spires and the Rake to reach the base of the North Face, then climb the face and its right-hand buttress (5.7, much of it…",
+       "fromTo": "North Face / North Buttress summit push",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8.5,
+       "note": "Reverse the approach: back over the Barrier, down through Terror Basin, and out the Terror Creek climber's path to the trailhead. Brush is easier to push through downhill but navig…",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "From the Goodell Creek Group Camp trailhead (elev. ~600 ft, reached via the unpaved Goodell Creek Road that turns north off Highway 20 directly across from Newhalem Campground), follow the old abandoned roadbed/boot path northeast along Goodell Creek for roughly 4 to 4.5 miles — gentle grade, easy walking — to a stone-cairn/arrow junction near 1,700 ft marking the start of the climbers' path up toward Terror Basin. Do not continue straight past the cairn; that fainter track follows Terror Creek toward Crescent Creek Basin and is a separate (and notoriously brushier) approach. Instead take the hard right and start up the steep, well-beaten Terror Basin boot path, which climbs directly and relentlessly through old-growth forest — roughly 3,000+ ft of gain in about 1.5 miles — before breaking out above treeline around 5,000–5,200 ft. Above the trees, a rising traverse across heather benches, slabs, and (early-season) snowfields leads to a broad saddle near 6,200 ft; the standard high camp is in a gravelly, wildflower basin about 400 ft below and beyond the saddle, around 5,700 ft, fed by several small streams (reliable water). From this Terror Basin camp, parties continue over the Barrier into Crescent Creek Basin and camp again there before the climb. Hazards: the boot path itself is the crux of the approach — steep, root-and-dirt, unrelentingly brushy in places, and physically punishing (widely regarded as one of the harder approaches in the Pickets); expect loose rock and route-finding on the upper slabs approaching the saddle; if the alternate Terror Creek/Crescent Creek Basin line is used, a creek ford or logjam crossing of Terror Creek is required. Most parties treat this as a two-day approach with a high camp rather than a car-to-base push. The technical start of the North Face is reached from the Crescent Creek Basin camp by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque to the foot of Terror's wall, a 2-3 hour trip even for fast parties. By mid-to-late summer the Mustard Glacier below the face is heavily crevassed with mostly unbridged, broken ice; carry glacier travel gear even though it's a small glacier.",
+    "approach_variants": [
+     {
+      "name": "Goodell Creek and the Terror Basin boot path, then over the Barrier to Crescent Creek Basin and the Ottohorn-Himmelhorn col to the foot of the wall",
+      "notes": "From the Goodell Creek Group Camp trailhead at about 600 ft, reached via the unpaved Goodell Creek Road that turns north off Highway 20 directly across from Newhalem Campground, follow the old abandoned roadbed and boot path northeast along Goodell Creek for roughly 4-4.5 miles of gentle grade to a stone-cairn and arrow junction near 1,700 ft.\n\nDO NOT CONTINUE STRAIGHT PAST THE CAIRN. That fainter track follows Terror Creek toward Crescent Creek Basin and is a separate, notoriously brushier approach. Instead take the HARD RIGHT and start up the steep, well-beaten Terror Basin boot path, which climbs directly through old-growth forest, roughly 3,000-plus ft of gain in about 1.5 miles, before breaking out above treeline around 5,000-5,200 ft.\n\nAbove the trees a rising traverse across heather benches, slabs and early-season snowfields leads to a broad saddle near 6,200 ft; the standard high camp is in a gravelly, wildflower basin about 400 ft below and beyond the saddle, around 5,700 ft, fed by several small streams.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Committing to the wrong rib on a 2,000 ft face with limited options to reverse",
+       "A heavily crevassed, mostly unbridged Mustard Glacier below the face by mid-season",
+       "Steep, extremely loose rock near the top; a fatal-consequence rockfall accident on this buttress involved a block that had appeared solid",
+       "A narrow, rockfall-prone descent gully with an undercut melted-out moat by mid to late season",
+       "Stuck ropes in the confined descent gully, and a loose, marginal final 100 ft",
+       "Retreat from high on the route is genuinely difficult"
+      ],
+      "baseFinding": "THE START IS JUST LEFT OF THE SNOWFIELD AT THE BOTTOM OF THE FACE, AFTER THE WALL IS ACCESSED FROM ITS WEST SIDE. From the Crescent Creek Basin camp the technical start is reached by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque, then rounding into position under Terror's wall. Cross the glacier remnant beneath the face, then start JUST LEFT OF THE SNOWPATCH at the bottom.\n\nTHE MOAT WHERE SNOW MEETS ROCK AT THE BASE IS THE USUAL OBSTACLE, AND IT IS ALSO THE MARKER: you are at the base when you are standing at the gap between the snowpatch and the wall, on its left.\n\nTHE DECISION THAT DEFINES THIS ROUTE, AND IT IS MADE BEFORE THE HARD CLIMBING RATHER THAN DURING IT: THE FACE IS SPLIT BY TWO RIBS, AND THIS ROUTE TAKES THE RIGHT, OR WESTERN, ONE. The main risk on the lower face is not difficulty but committing to the wrong rib. Long, mostly third-class pitches climb above the snowfield while TRAVERSING STEADILY RIGHTWARD; the face is over 2,000 ft tall with limited options to reverse. If your traverse is taking you left, you are on the wrong half of the wall.\n\nTWO CONFIRMATIONS HIGHER, BOTH VISUAL AND BOTH USABLE IN THIN CLOUD: aim for the right or western crest of the buttress about TWO THIRDS OF THE WAY UP THE LOWER FACE, IDENTIFIABLE BY THE ROCK DARKENING. And A SHARP PROW marks roughly the lower third of the buttress. Darkening rock and a sharp prow are features of this rib and not of its neighbour.\n\nWHAT THE UPPER FACE GIVES YOU: a LONG SNOW FINGER forming a ramp that carries the route a good distance, then scrambling on a wildly exposed crest, a traverse around a small tower to the notch between the false and true summits, an exposed easy-fifth hand traverse over the false summit, a downclimb, and the short climb to the true 8,151 ft top.\n\nOn the descent, and worth memorising before you leave camp: DO NOT RAPPEL INTO THE LOW NOTCH NORTH OF THE CHOPPING BLOCK. The correct line into Crescent Creek Basin is ABOUT 100 YARDS NORTH OF THAT NOTCH, AT A FLAT, BIVY-SITE SHELF ON THE RIDGE."
+     }
+    ],
+    "descent_text": "The North Face and any north-side buttress lines are steep and complex enough that essentially no one reverses them — virtually all parties, regardless of which route they climbed, descend via the West Ridge. From the summit, downclimb/scramble the West Ridge crest westward toward the low notch between Terror and The Rake, where a large chockstone marks the top of the descent gully system. From there, work down a narrow, loose, rockfall-prone gully back into Crescent Creek Basin. The exact count varies with snow coverage and route-finding — figure roughly 3–5 rappels total: commonly one or two shorter raps off slung horns/chockstones or fixed pitons-and-a-nut near the ridge crest, followed by two or three more rappels down the gully itself with down-climbing in between. A single 50–60m rope is sufficient for every station reported; anchors are a mix of pre-existing fixed slings/rap rings and natural chockstone/horn anchors that may need backing up with your own gear. Do not rappel into the low notch north of the sub-peak known as the Chopping Block — the correct line into Crescent Creek Basin is about 100 yards north of that notch, at a flat, bivy-site shelf on the ridge. The gully is narrow with little shelter from rockfall, frequently has an undercut, melted-out snow moat by mid-to-late season, and the final ~100 ft is loose and marginal — expect stuck ropes in the confined terrain and manage rope ends carefully. Once down in Crescent Creek Basin, parties either regain the Barrier saddle to return to a Terror Basin camp, or exit directly via the Crescent Creek Basin/Terror Creek climbers' path, which follows the Barrier crest south before dropping to rejoin the Goodell Creek Trail for the hike out.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First rappel off the ridge crest working down toward the notch by the large chockstone that marks the top of the descent gully.",
+      "anchor": "Slung horn/chockstone near West Ridge crest",
+      "lengthM": null
+     },
+     {
+      "n": 2,
+      "notes": "Second rappel finishing the ridge-crest section; some parties do only one here and downclimb/simul-downclimb the rest.",
+      "anchor": "Fixed piton-and-nut or slung horn",
+      "lengthM": null
+     },
+     {
+      "n": 3,
+      "notes": "First rappel down the loose, rockfall-prone gully into Crescent Creek Basin; a single 50-60m rope is sufficient for every reported station.",
+      "anchor": "Natural chockstone/horn anchor in the descent gully",
+      "lengthM": null
+     },
+     {
+      "n": 4,
+      "notes": "Final gully rappel; the last ~100 ft below this is loose and marginal and is downclimbed. Do not rappel into the low notch north of the Chopping Block — the correct line is ~100 yards north, at a bivy-site shelf.",
+      "anchor": "Natural chockstone/horn anchor, lower gully",
+      "lengthM": null
+     }
+    ],
+    "emergency": {
+     "notes": "No cell coverage in the Pickets. This is one of the most remote and rescue-difficult areas in North Cascades NP — a satellite communicator (InReach/PLB) is strongly advised, and self-rescue should be assumed as the first line of response.",
+     "county": "Whatcom County (summit); trailhead access and services are in Skagit County along SR-20",
+     "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA 98267 — (360) 854-7245",
+     "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA — (360) 856-6021 (closest ER via SR-20; Skagit Valley Hospital's Level III ED in Mount Vernon is a larger facility somewhat further west)"
+    },
+    "hazards": [
+     "Heavily crevassed Mustard Glacier ice on the way to the base, mostly unbridged by late summer",
+     "Extreme remoteness — a multi-day, off-trail carry-over just to reach the base",
+     "Loose rock in the approach gullies and on both the Cooper line and Stoddard Buttress",
+     "Complex descent, typically down the opposite (south) side of the mountain",
+     "No cell coverage; among the most rescue-difficult terrain in North Cascades NP"
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Goodell Creek, the Terror Creek crossing and the flagged climber's track into Crescent Creek Basin, then the west gully to the chockstone notch",
+      "notes": "From the Goodell Creek trailhead, follow the old roadbed about 4.5 miles, cross Terror Creek, and climb a steep climber's track marked with pink flagging past moss-covered cliffs to reach Crescent Creek Basin. Total approach gain to basecamp is nearly 6,000 ft.\n\nThis is the standard descent route for every north-side line on the peak, so it sees traffic in both directions and its features are described mostly from above.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A narrow, loose, rockfall-prone gully with little shelter",
+       "An undercut, melted-out snow moat in the gully by mid to late season",
+       "A loose and marginal final 100 ft of the gully",
+       "Stuck ropes in the confined terrain",
+       "Rappelling into the wrong notch north of the Chopping Block",
+       "Early-season snow and ice in the choss gully"
+      ],
+      "baseFinding": "THE TOP OF THIS ROUTE'S GULLY IS MARKED BY A LARGE CHOCKSTONE, AND THAT CHOCKSTONE IS THE SINGLE BEST FEATURE ON THE PEAK FOR ORIENTING IN CLOUD. From Crescent Creek Basin, the west gully system climbs to the low notch between Terror and The Rake, and a large wedged chockstone sits near the head of it. Everything on this side is described relative to that block.\n\nSO THE CONFIRMATION IS COUNTABLE FROM BELOW: climb a narrow, loose, rockfall-prone gully out of Crescent Creek Basin and keep going until a chockstone blocks it near the crest. That is the notch. Above it the route is a short summit tower.\n\nTHE ENTRY POINT IS THE THING PARTIES GET WRONG, AND IT IS RECORDED AS AN EXPLICIT WARNING FROM THE DESCENT SIDE: DO NOT USE THE LOW NOTCH NORTH OF THE SUB-PEAK KNOWN AS THE CHOPPING BLOCK. The correct line between Crescent Creek Basin and this ridge is ABOUT 100 YARDS NORTH OF THAT NOTCH, AT A FLAT, BIVY-SITE SHELF ON THE RIDGE. A flat shelf big enough to sleep on, 100 yards north of the obvious low notch, is the marker.\n\nWHAT THE GULLY IS LIKE, SO YOU KNOW YOU ARE IN THE RIGHT ONE: narrow, with little shelter from rockfall, frequently holding an undercut melted-out snow moat by mid to late season, and with a loose and marginal final stretch. Two or three rappels in the gully, plus one or two above the notch, get parties down, on a mix of pre-existing slings and natural chockstone and horn anchors.\n\nAT THE TOP: the summit tower is downclimbed or a short section rappelled back to the notch off existing sling anchors. One short step, not a sequence."
+     }
+    ],
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start from Terror Camp to beat afternoon rockfall risk in the gully"
+    },
+    "itinerary": "Day 1: approach to Terror Camp/Crescent Creek Basin (~6,000 ft gain). Day 2: climb the gully to the West Ridge notch, complete the short technical section and summit scramble, then descend the same way. Day 3: hike out."
+   }
+  }
+ ]
+}

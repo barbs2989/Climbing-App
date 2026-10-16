@@ -1,0 +1,66 @@
+{
+ "wa_windy_peak_trail": {
+  "approach_variants": [
+   {
+    "name": "Trail 342 from Long Swamp",
+    "camps": [
+     "Two Bear Camp"
+    ],
+    "notes": "This is the easternmost of the high peaks here and by far the least technical, being a trail walk with a very short scramble stapled on the end, so the real work is the drive. Long gravel forest roads out of Loomis reach Long Swamp Campground, where Trail 342 starts and climbs steadily through burned lodgepole and recovering meadow to a camp with water partway up and then out onto open, treeless ridge. A shorter trail comes in from the Cathedral Driveway trailhead a few miles further west but is overgrown in stretches from lack of use, and a third start at Iron Gate involves the roughest driving of the three. Water on the upper trail is limited and seasonal, so carry enough for a long day.",
+    "season": "Late June to early October",
+    "hazards": [
+     "Long trail mileage with limited seasonal water on the upper half",
+     "Fully exposed, treeless summit ridge in wind and lightning",
+     "Faint, braided cross-country tread over talus for the final stretch",
+     "Standing fire-killed snags along the burned lower trail in wind",
+     "Long gravel road driving far from any town"
+    ],
+    "primary": true,
+    "baseFinding": "The trail does not go to the top, which is the single most useful thing to know here. Tread climbs to a junction and high point below and south of the summit at roughly 8,100 ft and then begins contouring and descending onward toward Horseshoe Basin and the Boundary Trail. The base of the scramble is exactly where the trail stops climbing. Standing on the plateau at that point, the summit rocks are obvious: they stand up as a small blocky pyramid of about three hundred feet, and there is nothing else nearby that looks like it. Leave the constructed tread and take the cairned, braided path up open talus on the south side of that pyramid; it is easy blocky scrambling and takes only a few minutes. The confirmations at the top are physical and worth checking, because the plateau carries other rises. Benchmark nails are set in the summit rock at the site of the old lookout, and remnants of the lookout's telephone line still run down the northwest slope toward the saddle, so if you can find the wire you are on the right high point. The way to know you have overshot is comfort: if you are walking downhill on good graded tread with the summit rocks behind your shoulder, you have passed the turn and should come back to the trail's high point."
+   },
+   {
+    "name": "Windy Creek trail from Cathedral Driveway",
+    "trip": {
+     "approachLogistics": {
+      "trailhead": "Cathedral Driveway Trailhead",
+      "trailheadLat": 48.87224,
+      "trailheadLng": -120.00335
+     }
+    },
+    "notes": "The shortest way up. From the Cathedral Driveway trailhead, a few miles west of Long Swamp on the same road, climb the Windy Creek trail about five miles to its junction with the Windy Peak trail, then go a short distance more to the summit. Some maps wrongly show the trail starting from the Cathedral Driveway trail about half a mile west of the trailhead."
+   },
+   {
+    "name": "Boundary Trail from Iron Gate",
+    "notes": "The roughest drive of the three. From FR-39, turn onto FR-3900-500 and follow it about six miles to the Iron Gate trailhead; a high-clearance vehicle is recommended and passenger cars are not advised. Hike north on the Boundary Trail toward Sunny Pass and Horseshoe Basin, then take the Windy Peak trail west to the summit scramble.",
+    "trip": {
+     "approachLogistics": {
+      "trailhead": "Iron Gate Trailhead",
+      "trailheadLat": 48.908308,
+      "trailheadLng": -119.903845
+     },
+     "bivy": [
+      {
+       "name": "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+       "role": "main",
+       "type": "camp",
+       "notes": "This is the camp for Windy Peak and the reason the trip is worth doing at all — the basin is one of very few places in the lower states carrying genuine alpine tundra, open rolling meadow at seven thousand feet with bighorn sheep on it. From the Iron Gate trailhead the trail is nearly flat for a mile and then climbs steadily to Sunny Pass at about 7,200 ft at roughly four and a half to five miles, drops slightly to Horseshoe Pass at around 7,000 and opens into the basin; Louden Lake is a little beyond, and the usual round trip to the basin and back is around twelve miles. Windy Peak itself is taken off the basin trails on open ground and is a walk-up rather than a climb, which makes this a rare Pasayten summit a party can reach without route-finding. Expect burn. Every approach into Horseshoe Basin passes through fire-killed forest, standing dead timber comes down in wind, and blowdown volume changes year to year. The last six miles of the Toats Coulee road to Iron Gate are rough enough to want high clearance. Late July through September; the tundra is exposed and there is nothing to shelter behind when weather comes over the border.",
+       "water": "The limiting factor and it gets worse through the season. The climb from the trailhead is essentially dry after a tributary about a mile and a half up, and the basin itself is high rolling tundra rather than wet ground — Louden Lake and the small meadow ponds are the dependable supply and everything else is a gamble by August. Fill low and carry it up rather than counting on finding something at the pass.",
+       "permit": "Pasayten Wilderness, national forest ground, and the permit expectation is the opposite of the Olympic files: a free self-issued permit filled out at the trailhead kiosk, no quota, no reservation, nothing to arrange in advance. A Northwest Forest Pass or interagency pass is needed to park at Iron Gate. Camp at least a hundred feet back from any lake shoreline. Stock parties need certified weed-free feed and may not tie animals to trees overnight. Campfires are legal in existing rings outside a burn ban, but bans run most of the summer here and firewood in the basin is scarce enough that most parties do without.",
+       "capacity": "Dispersed rather than designated. There is room for several parties spread widely through the basin, with the usual spots at Louden Lake and around the Smith Lake meadows; horse parties use this country heavily and the good ground near water goes first."
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "wa_windy_peak_iron_gate_trail": {
+  "approach_logistics": {
+   "peakLat": 48.928205,
+   "peakLng": -119.970556,
+   "trailhead": "Iron Gate Trailhead",
+   "trailheadDirection": "From Loomis, take County Road #9425 north 2 miles to County Road #4066/FR-39; follow FR-39 about 14 miles, then turn onto FR-3900-500 and follow it about 6 miles (high-clearance vehicle recommended, not advised for passenger cars) to the Iron Gate Trailhead.",
+   "trailheadLat": 48.908308,
+   "trailheadLng": -119.903845
+  }
+ }
+}

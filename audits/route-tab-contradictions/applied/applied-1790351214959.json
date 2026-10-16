@@ -1,0 +1,276 @@
+{
+ "applied": [
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Grade of the (non-taken) SW sub-summit"
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain — three disagreeing figures"
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain — three disagreeing figures"
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Total elevation gain — three disagreeing figures"
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Which summit this route finishes on (baseFinding written as if the route targets the SW summit)"
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "SW sub-summit grade in rock_grade (flat low 5th vs exposed 4th class elsewhere on the row)"
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "column": "permit",
+   "path": [],
+   "fact": "whether overnight camping at Bird Creek Camp requires a wilderness permit"
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "column": "permit",
+   "path": [],
+   "fact": "whether overnight camping at Bird Creek Camp requires a wilderness permit"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager / ranger district for this route's own access section"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager / ranger district for this route's own access section"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Land manager / ranger district for this route's own access section"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Land manager / ranger district for this route's own access section"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Land manager / ranger district for this route's own access section"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Land manager / ranger district for this route's own access section"
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'"
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'"
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "before": {
+    "watch_out": [
+     "Don't mistake the SW sub-summit (a distinctly harder, more exposed low-5th-class climb about 1,500 ft away) for this route's destination, the true NE summit",
+     "The ridge has a couple of minor humps that can cause route-finding hesitation in flat light or fog"
+    ]
+   }
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "before": {
+    "gain_ft": 7250,
+    "loss_ft": 7250,
+    "approach": "Start at the Stuart Lake Trailhead (elev. ~3,400 ft) on FS Road 7601 off Icicle Road. Follow the Stuart Lake Trail (Trail #1599) north through Douglas-fir/subalpine forest, crossing Mountaineer Creek on sturdy footbridges; the grade is moderate for the first 2.5 miles (about 1,500 ft gain) to the signed junction with the Colchuck Lake Trail — go left/uphill. From the junction the trail steepens and grows rockier for another 1.5 miles to Colchuck Lake (about 4 miles and ~2,280 ft from the TH, lake at 5,570 ft) — the last reliable, easy water source before the high basin. Boulder-hop/skirt the lake's south shore to the base of Aasgard Pass, a steep, unmaintained talus-and-boulder gully with only faint tread and cairns; it gains roughly 2,000–2,200 ft in under 1.25 miles to the pass (~7,800–7,841 ft) — this is the single biggest approach hazard on the route: loose, shifting rock with real rockfall risk onto parties below, and in early season the gully holds snow/ice that turns it into a steep, exposed snow climb. From the pass, drop gently into the upper Enchantment core basin past Isolation Lake, then traverse cross-country (use-paths and cairns, no maintained trail) through the Tranquil/Perfection/Sigrun/Reginleif lakes tarn cluster toward the Enchantment Peak massif; one common line for the SW summit leaves the basin directly between Lake Reginleif and Lake Sigrun and climbs talus onto the peak's south side, avoiding a longer detour via Prusik Pass. This upper section is class 2–3 talus and slab with sustained exposure in spots; snow lingering into summer can make it markedly harder and is best avoided when icy (some parties instead take the longer, mellower line via Prusik Pass in spring conditions). The route enters fragile alpine terrain in the wilderness's day-use/permit core zone — stay on rock or snow and avoid cutting across meadow or heather. One-way distance to the summit is roughly 7.5–8 miles with about 5,100 ft of gain, matching the ~15.5-mile, 5,138-ft round trip most parties log for a car-to-car push (long day; many split it with a camp near Colchuck or in the core zone under permit).",
+    "approach_variants": [
+     {
+      "name": "Aasgard Pass and the core basin to the southwest side",
+      "notes": "Stuart Lake Trailhead on FS Road 7601. Stuart Lake Trail #1599 north through forest, crossing Mountaineer Creek on footbridges, moderate for the first 2.5 miles to the signed Colchuck Lake junction — go left and uphill. Steeper and rockier for another 1.5 miles to Colchuck Lake at 5,570 ft. That is the last easy water before the high basin.\n\nSkirt the lake's south shore to the foot of Aasgard Pass and climb the pass: roughly 2,000-2,200 ft in under 1.25 miles on faint tread, cairns, loose talus and boulders.\n\nAasgard has one route-finding rule that matters more than any other and it has killed people. A few hundred feet above the lake the path veers to the climber's LEFT of the creek. Keep left. At the first grove of larches, stay well clear to the left of the rock, whatever the season. At around 6,400 ft stay LEFT of the small cliff band with the waterfall in it, and do not follow any side path toward the waterfall. Drifting right of the trees, toward the waterfall ground, is how parties get cliffed out.\n\nFrom the pass drop gently into the upper core basin past Isolation Lake and traverse cross-country on use-paths and cairns through the Tranquil / Perfection / Sigrun / Reginleif tarns toward the Enchantment Peak massif. A common line for the southwest summit leaves the basin directly between Lake Reginleif and Lake Sigrun and climbs talus onto the peak's south side.",
+      "season": "Late Jun to early Oct snow-free; Apr-Jun normally needs an ice axe for Aasgard Pass and the upper basin",
+      "hazards": [
+       "Aasgard Pass: loose shifting rock and genuine rockfall risk onto parties below",
+       "Getting cliffed out right of the trees / near the waterfall band at ~6,400 ft — fatalities are on record there",
+       "Early-season snow and ice turning the pass into a steep exposed snow climb",
+       "Sustained exposure on the class 2-3 talus and slab above the basin, worse when snow lingers",
+       "Fragile alpine ground in the permit core zone — stay on rock or snow"
+      ],
+      "baseFinding": "The scrambling starts where the basin talus steepens onto the peak's south flank — there is no cliff base, just a change of angle, so the useful test is about the summit rather than the start.\n\nThe southwest summit is reached by a very exposed fourth-class scramble. If what you are on is class 2-3 with a fifteen-foot third-class finish onto a small flat block, you are NOT on the southwest summit — you are on the northeast summit, roughly 1,500 ft away along the crest, which a 2023 survey found to be six or seven feet higher. Those are two different tops and two different days.\n\nOn the way in, the marker that you have left the basin at the right place is the pair of lakes: the line goes between Lake Reginleif and Lake Sigrun onto the south side. If you are heading for Prusik Pass you have taken the longer, mellower option, which is a reasonable choice in spring conditions but does not lead to this scramble."
+     }
+    ],
+    "rock_grade": "Class 2-3, with a short, loose 3rd-class gully below the summit plateau (a low-5th-class option exists onto the more exposed SW sub-summit but is not required for the true high point)"
+   }
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "before": {
+    "beta": "Fifth of July Mountain's easiest route is straightforward class 2 hiking/scrambling up its south ridge — no rope or technical gear is needed for the peak itself. Most parties reach it via the Basalt Pass Trailhead, following the Basalt Ridge crest north past Point 6351 and a saddle below Devils Smoke Stack (a separate, harder class 3 summit), then dropping into a basin and climbing boulder fields and a larch-dotted bench to the peak's south ridge and summit. An alternative, longer approach comes from the Entiat River Trailhead via Myrtle Lake, Larch Lakes, and Cow Creek Pass, climbing the same south ridge from the east. Tread fades to nothing above treeline on both approaches, and route-finding across slick pumice and burned terrain (2020 Chikamin Creek Fire) is part of the challenge.",
+    "approach_variants": [
+     {
+      "name": "Basalt Ridge crest to Fifth of July Pass",
+      "notes": "This is the side on which the start of the climbing is actually described. From the Basalt Pass trailhead, climb to the pass — the small stream in the gully below it is the last water, and there is none at all beyond — then follow the ridge north. The trail bypasses the first high point about 300 ft below it, and beyond the trail fork the tread fades into slick pumice. Continue north past the neighbouring tower's saddle, then through a col around 7,480 ft on the next peak's southwest ridge, dropping through a scree gully into the basin west of it. Hop the massive boulders in that basin, cross a small larch meadow, and regain the ridge. The peak can also be reached from the Entiat River side by way of Myrtle Lake, the Larch Lakes and Cow Creek Pass, but where that approach leaves the trail, and how the south ridge is identified from it, are unclear — so the marks below are written for this side.",
+      "season": "Mid-July through early October, and popular in early autumn for the larch.",
+      "hazards": [
+       "No water at all beyond the stream in the gully below Basalt Pass",
+       "Slick pumice where the ridge trail fades out",
+       "A scree gully to descend off the col, and a 500 ft loss into the boulder basin that must be regained",
+       "Loose rock and tree debris on the south ridge",
+       "The ridge is long, open and fully exposed to afternoon weather"
+      ],
+      "baseFinding": "A LARCH FOREST AND THEN FIFTH OF JULY PASS IS THE GATEWAY TO THE SOUTH RIDGE. After the boulder basin and the small larch meadow put you back on the ridge, the ground drops gradually and you walk through a larch forest immediately before arriving at Fifth of July Pass — that named saddle is where the south ridge begins, and the larch immediately below it is the confirmation. From the pass the south ridge is straightforward, with tree debris to avoid, and a short traverse along a long, broken ridgetop reaches the high point. The negative marker is the neighbouring tower: Devils Smoke Stack is a separate and harder summit with a sheer north side, climbed by steep gullies on its south with two tall steps of choss, and it lies on the far side of the intervening peak. You cannot arrive at one thinking it is the other without crossing that peak in between — so if the ground ahead rears into a tower with sheer cliffs on its north and no walkable line, you are back at the Smoke Stack rather than on this mountain's long broken crest."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Class 2",
+      "notes": "From the basin below the saddle west of Devils Smoke Stack (roughly 6,980 ft after a ~500 ft scree-gully descent from a 7,480 ft col), cross boulder fields and a larch-meadow bench, then climb the peak's broad south ridge on class 2 talus/blocks to the 7,696 ft summit.",
+      "pitch": "Basin-to-summit scramble",
+      "lengthM": 213
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "before": {
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."
+   }
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful/Interagency Pass required for trailhead parking",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "Free, self-issue wilderness permit required at the trailhead (Glacier Peak Wilderness)",
+     "closures": "Chiwawa River Road (FR 6200) closed beyond Atkinson Flats Campground to Trinity Trailhead since May 20, 2026 due to storm damage - confirm current status with the Chelan Ranger District before driving",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness spans the Mount Baker-Snoqualmie National Forest (Darrington Ranger District, west/north side) and Okanogan-Wenatchee National Forest (Chelan Ranger District, east side); the Trinity/Buck Creek Pass approach is managed by the Chelan Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass / Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    },
+    "approach": "From Coles Corner on US-2 (about 20 miles east of Stevens Pass), take WA-207 north 4.4 miles, turn right onto Chiwawa Loop Road for 1.3 miles, then left onto Chiwawa River Road (Forest Road 6200) and follow it roughly 23 miles to its end at the Trinity / Buck Creek Pass Trailhead (about 2,772-2,800 ft). IMPORTANT: as of May 20, 2026, FR 6200 is closed to vehicle traffic beyond Atkinson Flats Campground, cutting off drive-in access to Trinity indefinitely - confirm current road status with the Chelan Ranger District before relying on this approach. From the trailhead, hike the Buck Creek Trail #1513 (signed Buck Creek Pass Trail #789 on Forest Service pages), climbing steadily through forest and along Buck Creek roughly 8.8 miles to about 5,600 ft, where the standard line breaks off-trail to the right toward Pass No Pass.",
+    "emergency": {
+     "notes": "Long, remote approach with no cell coverage; Chelan County Volunteer Search & Rescue (CCVSAR) supports SAR operations in this area",
+     "county": "Chelan County (trailhead and approach); the summit itself sits on the Chelan/Snohomish county line",
+     "rangerStation": "Chelan Ranger District, Okanogan-Wenatchee National Forest, 428 W. Woodin Ave, Chelan, WA - (509) 682-4900",
+     "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA - (509) 548-5815 (24-hour ED, critical access hospital)",
+     "sheriffDispatch": "Chelan County RiverCom Dispatch: 509-663-9911 (non-emergency); 911 for emergencies"
+    }
+   }
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "before": {
+    "approach": "From the Libby Lake Trailhead (a.k.a. Libby Creek Trailhead, ~4,430 ft; no parking fee or pass required at this trailhead) at the end of Libby Creek Road, follow Libby Creek Trail No. 415 southwest into the Lake Chelan–Sawtooth Wilderness. The trail climbs gradually through mixed conifer forest and crosses several tributaries of Libby Creek on logs or hoppable rocks (trekking poles help); tread can be brushy/overgrown in the lower stretches. The first reliable water is North Fork Libby Creek at roughly 3 miles. At about 5 miles you reach a decaying historic line cabin in a clearing — the key junction on this route: continuing straight/west climbs a final steep half-mile (~470 ft) to Libby Lake (7,740 ft), a common basecamp and especially scenic in larch season (late Sept–early Oct), while the right-hand fork is the climbers' route toward Hoodoo. Most parties follow the trail to Libby Lake, traverse around its south shore, then locate two parallel gullies splitting the talus/boulder slope above the lake; take the narrower gully on climber's right and follow it to the crest of the southwest ridge. Once off-trail there is no maintained tread and the boulder field has no single obvious line, so route-finding care is needed — this is the route's main hazard, especially in fog or flat light. From the ridge crest, turn north and follow it over a broad boulder field to the summit; the final stretch is continuous class 2 boulder-hopping with occasional class 3 moves, and loose rock is common, so test holds before weighting them. Snow can linger in the ascent gully and on the upper ridge into June, so carry an ice axe (crampons recommended) for May–June attempts.",
+    "descent_text": "The standard descent is a straight reversal of the ascent: back down the summit boulder field to the southwest ridge, down the entry gully to the shore of Libby Lake, around the lake, and out Libby Creek Trail No. 415 to the trailhead. This is a walk-off/scramble descent with no rappelling required (rappels: 0) — no ropes, anchors, or technical gear are needed on the standard route. Some parties descend slightly skier's-left (east) of their ascent line through looser scree for a more direct, faster line off the boulder field, but this variation is steeper and looser underfoot, so it's a judgment call rather than the default. The main descent hazard is footing in the unstable talus/boulder field rather than exposure — most reported close calls on Hoodoo come from rolled ankles or shifting rock, not falls. Note that a connecting ridge traverse to neighboring Raven Ridge is a distinct, harder outing involving an exposed knife-edged 4th-class section and at least one short technical rappel/downclimb near a rock overhang — that beta belongs to the traverse route, not to this standard southwest-ridge scramble."
+   }
+  }
+ ]
+}

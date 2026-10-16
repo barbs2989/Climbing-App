@@ -1,0 +1,287 @@
+{
+ "file": "r027.json",
+ "results": [
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Total route distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 4.7 mi round trip, ~2.35 mi (3.78 km) one way from the Alpental lot to the summit",
+   "evidence": "Inside the row, itinerary miles (4.7), itinerary totalNote (~4.7 mi RT), the approach's own round-trip statement (~4.7 mi) and the summit waypoint distMi (2.35) all agree; dist_km 2.25 (1.4 mi one way) is the outlier, and the approach's '2.5-2.8 mi one way' contradicts its own 4.7 mi RT. The WTA Denny Mountain hike page gives 4.7 mi RT / 2,635 ft for the Alpental line. External figures otherwise differ (a 2021 trip report logs 2.8 mi RT for the International-runs loop; a Mountaineers listing says 6 mi RT), so this rests on the row plus one source.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/denny-mountain",
+    "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/",
+    "https://www.mountaineers.org/activities/routes-places/denny-5520"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 2.25,
+     "value": 3.78,
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Total route distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 2.5–2.8 miles and about 2,500 ft",
+     "replace": "roughly 2.3–2.4 miles and about 2,500 ft",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Total route distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "About 2.5 to 2.8 miles and 2,500 ft one way.",
+     "replace": "About 2.3 to 2.4 miles and 2,500 ft one way.",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Total route distance"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2.6,
+     "value": 2.35,
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Total route distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Best/actual climbing season",
+   "verdict": "fixed",
+   "correct_value": "Two genuine seasons: a firm-snow ascent from late spring (after the resort closes) to mid-July, and a dry scramble from mid-July into September; season window Apr-Sep",
+   "evidence": "SummitPost's Denny Mountain page says the best time is spring after the resort closes, until at least mid-July, on snow; a June 10, 2021 trip report climbed it on snow with crampons. WTA trip reports document dry, snow-free ascents in late June and late August, and a snow ascent in early May. So neither Apr-Jun alone nor Jul-Oct alone is right; the chip must span both and the prose must present both.",
+   "sources": [
+    "https://www.summitpost.org/denny-mountain/150958",
+    "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/",
+    "https://www.wta.org/go-hiking/hikes/denny-mountain/@@related_tripreport_listing?b_start%3Aint=0",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-29.1529692878"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Apr-Jun",
+     "value": "Apr-Sep",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Best/actual climbing season"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "Mid-July through September as the driest, most reliable window",
+     "replace": "Late spring to mid-July as a firm-snow ascent after the resort closes; mid-July through September as the driest window for the snow-free scramble",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Best/actual climbing season"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best done snow-free (roughly July-October)",
+     "replace": "Goes on firm snow from late spring to mid-July, and as a dry scramble from mid-July into September",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Best/actual climbing season"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Climbable roughly June–October",
+     "replace": "Climbable roughly April–September",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Best/actual climbing season"
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Avalanche hazard on the route",
+   "verdict": "fixed",
+   "correct_value": "Real avalanche hazard on the spring snow ascent (Snoqualmie Pass forecast zone); none once the slopes are snow-free",
+   "evidence": "The Snoqualmie Pass area has high avalanche danger from wet, heavy maritime snow, and Denny's own slopes are controlled avalanche paths above I-90. A 2004 winter trip report up these ski runs warns of dangerous avalanche slopes on the descent, and the spring snow ascent (late spring to mid-July) is documented as a standard way to climb the route, so the 'N/A' zone text is wrong for the route's snow season.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Denny_Mountain",
+    "https://www.yellowleaf.org/scramble/g/r/2004-12-18-Denny-Mountain-loop-via-Alpental.html",
+    "https://www.summitpost.org/denny-mountain/150958"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer/fall scramble route (falls within NWAC's Snoqualmie Pass forecast zone, relevant only outside the route's July-October climbing season)",
+     "replace": "Snoqualmie Pass forecast zone. On the spring snow ascent the ski runs, gullies and Edelweiss Bowl are avalanche terrain and are no longer controlled once the resort closes; once the slopes are snow-free, usually from mid-July, there is no avalanche hazard",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Avalanche hazard on the route"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth"
+     ],
+     "expect": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     },
+     "value": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A",
+      "April": "Real hazard while the slopes are snow-covered; the closed ski area is no longer controlled, so check the Snoqualmie Pass forecast",
+      "May": "Real hazard on the snow ascent, rising with warming and wet-snow slides; check the forecast and start early",
+      "June": "Wet-snow slide hazard remains in the gullies and Edelweiss Bowl while snow lingers; check the forecast"
+     },
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Avalanche hazard on the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Whether the route uses the named International/Edelweiss/Armstrong ski runs",
+   "verdict": "fixed",
+   "correct_value": "The route climbs via Alpental's ski runs (Lower and Upper International) and the slopes under the lift lines",
+   "evidence": "A 2021 trip report ascends Debbie's Gold, Lower International and Upper International to the Edelweiss unloading station, then the cable ledge to the summit; SummitPost describes the same crampon climb up Upper International. The beta, approach and face fields already say this, so only the overview's framing that the route avoids those runs is wrong.",
+   "sources": [
+    "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/",
+    "https://www.summitpost.org/denny-mountain/150958"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "climbing the peak's eastern flank and this route working the quieter north-facing slopes toward the same summit ridge",
+     "replace": "climbing the peak's eastern flank; this route climbs those same runs and the slopes under the lift lines to the summit ridge",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Whether the route uses the named International/Edelweiss/Armstrong ski runs"
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Crowds line frames the International runs as a different route",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The line goes up the ski runs and under the Sessel chairlift, not a separate quieter route",
+   "evidence": "Same sources as the ski-run contradiction: the ascent follows the International runs and the lift lines. crowds.estimatePerSeason called the International-runs route a different, busier route, which contradicts beta/approach.",
+   "sources": [
+    "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/",
+    "https://www.summitpost.org/denny-mountain/150958"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "; lighter than the standard Denny Mountain routes via the International ski runs or South Face because the North Slopes line goes directly up under/alongside the Sessel chairlift rather than a marked trail",
+     "replace": "; light, because the line goes up the ski runs and under the Sessel chairlift rather than on a marked trail",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Crowds line frames the International runs as a different route"
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Summit step difficulty (Class 2 vs Class 3)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Class 3: mostly Class 2 ground with a short exposed Class 3 summit step",
+   "evidence": "grade is Class 3 and hazards/watch_out warn of an exposed Class 3 step, but partner_requirements and seasonal_hazards.exposure call it a Class 2 scramble. WTA describes steep terrain with some exposure and a few class 3 moves near the summit; a 2021 trip report describes a cable-protected exposed traverse and a class 2-3 finish.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/denny-mountain",
+    "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "Beginner-friendly Class 2 scramble",
+     "replace": "Mostly Class 2 scramble with a short, exposed Class 3 summit step",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Summit step difficulty (Class 2 vs Class 3)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      3
+     ],
+     "find": "for a dry-season Class 2 ascent",
+     "replace": "for a dry-season ascent, but comfort on a short exposed Class 3 step",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Summit step difficulty (Class 2 vs Class 3)"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Low-to-moderate consequence Class 2 terrain",
+     "replace": "Mostly low-to-moderate consequence Class 2 terrain with a short, exposed Class 3 summit step",
+     "id": "wa_denny_mountain_north_slopes",
+     "fact": "Summit step difficulty (Class 2 vs Class 3)"
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Round-trip and ascent/descent times",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The itinerary/timing say 6.5 hr car-to-car with the summit at +4 hr; descent_text says ~1.3 hr down vs 2.5-2.7 hr up (~4 hr total); partner_requirements says 3-3.5 hr round trips and a 1-1.5 hr approach. External figures differ: a 2021 snow ascent took 2.7 hr up and 1.3 hr down, a 2004 winter loop took 6.5 hr car-to-car. Conditions (snow vs brush) change the time a lot; no two sources agree on one figure, so nothing was patched.",
+   "sources": [
+    "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/",
+    "https://www.yellowleaf.org/scramble/g/r/2004-12-18-Denny-Mountain-loop-via-Alpental.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Permit: 'None required' vs 'self-issue day-use permit'",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "access.permit says 'None required' and in the same sentence a free self-issue day-use permit at the trailhead, while access.fees says no wilderness permit is needed because the route stays outside the Alpine Lakes Wilderness. The self-issue permit at the Alpental lot serves the wilderness trails; whether any part of this route crosses the wilderness boundary was not confirmed by two sources, so no patch.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "applied": [
+  {
+   "id": "wa_morning_star_peak_standard",
+   "column": "face",
+   "path": [],
+   "fact": "which notch/direction the route uses"
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "total car-to-car time / one-way time to summit"
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "total car-to-car time / one-way time to summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_morning_star_peak_standard",
+   "before": {
+    "face": "South Ridge / North Notch",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Full day out (8 hrs total) with significant elevation gain on trail followed by steep, loose off-trail terrain to Headlee Pass and into the Sunrise Mine basin",
+      "packWeight": "Light day-pack, roughly 15-25 lbs (water, layers, helmet, basic scramble gear) - no technical rack needed"
+     },
+     "approachTime": "Roughly 3-4 hrs one-way to the basin/summit based on the 8-hr round-trip total with a 06:00 recommended start",
+     "requiredSkills": [
+      "off-trail routefinding into the basin",
+      "steep loose talus and heather scrambling",
+      "judgment around the Headlee Pass chute, which is notorious for rockfall",
+      "comfort with exposure near the summit block",
+      "early-season snow/glissade judgment when the basin is still snow-filled",
+      "turnaround discipline given afternoon weather buildup"
+     ],
+     "experienceLevel": "Intermediate scrambler - comfortable leaving an established trail for unmarked off-trail routefinding and sustained Class 2-3 talus/heather scrambling; not a beginner objective"
+    }
+   }
+  }
+ ]
+}

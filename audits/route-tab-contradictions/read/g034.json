@@ -1,0 +1,342 @@
+{
+  "batches": ["b133.json", "b134.json", "b135.json", "b136.json"],
+  "routes_read": 11,
+  "routes": [
+    {
+      "id": "wa_gothic_peak_standard",
+      "name": "Standard Scramble (from Foggy Lake)",
+      "area": "Gothic Peak",
+      "contradictions": [
+        {
+          "fact": "Which side of the SE ridge crest carries the correct/cairned line",
+          "severity": "high",
+          "claims": [
+            {"field": "approach", "says": "stay in the scree climber's-right of the ridge crest rather than on the crest itself, following cairns... many parties inadvertently stray onto exposed Class 4 rock to climber's-left of the correct, easier line just below the summit block"},
+            {"field": "approach_variants[0].baseFinding", "says": "stay in the SCREE on the climber's RIGHT of the crest and follow the cairns... if you find yourself on exposed class 4 to climber's LEFT just below the summit block you have gone too far left, which is where most parties who get into trouble end up"},
+            {"field": "descent_text", "says": "Continue down the scree/talus climber's-left of the SE ridge crest back to the Foggy Lake outlet on the same cairned line used on the ascent"}
+          ],
+          "why": "Two fields (approach, approach_variants[0].baseFinding) agree the safe, cairned ascent line is on climber's-RIGHT and that climber's-LEFT is the dangerous, exposed Class 4 mistake terrain 'where most parties who get into trouble end up'; descent_text calls that same, correct cairned line climber's-LEFT, directly reversing the side. A climber following the descent's stated side would be following the route the other two fields identify as the hazard.",
+          "internal_resolution": "approach and approach_variants[0].baseFinding agree with each other (climber's-right = correct/cairned, climber's-left = the Class 4 hazard); descent_text is the outlier and appears to have the sides swapped.",
+          "needs_research": false
+        },
+        {
+          "fact": "Camping & bivy list includes entries for a different peak (Sperry Peak), not Gothic Peak",
+          "severity": "medium",
+          "claims": [
+            {"field": "bivy[0].name", "says": "Sunrise Mine road end — the Sperry and Vesper Creek staging point"},
+            {"field": "bivy[0].notes", "says": "This is the working start for SPERRY PEAK... parties leave from here in the dark, ford the South Fork Stillaguamish, grind up through the talus of Wirtz Basin under Morning Star, take the switchbacked chute to Headlee Pass..."},
+            {"field": "bivy[3].name", "says": "Red Bridge Campground, Mountain Loop Highway"},
+            {"field": "bivy[3].notes", "says": "The nearest developed campground to the Sunrise Mine road... and therefore the sensible base for SPERRY when you want a real night rather than a car bivy at a crowded road end."}
+          ],
+          "why": "This route's CAMPING & BIVY section (Gothic Peak, reached via Barlow Pass/Weden Creek Trail) includes two camps whose own notes are substantively about Sperry Peak's Sunrise Mine Road approach — a different trailhead/drainage entirely — with no camping information relevant to a Gothic Peak climber.",
+          "internal_resolution": "The other two bivy entries (Lower Gothic Basin, Weden Creek trail junction) are genuinely about Gothic/Del Campo and use the correct Barlow Pass approach; entries 0 and 3 appear to be contamination from a shared/regional bivy dataset.",
+          "needs_research": false
+        },
+        {
+          "fact": "Total route distance ('Dist')",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "7.4 (≈4.6 mi)"},
+            {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "4.2 + 5.6 = 9.8 mi total"},
+            {"field": "itinerary.totalNote", "says": "~9-10 total miles"}
+          ],
+          "why": "dist_km (7.4 km ≈ 4.6 mi) appears to be a one-way figure (doubled ≈ 9.2 mi, matching approach_variants[0].distMi), while the header's Dist would use the itinerary's structured miles (9.8 mi) and Overview's TECHNICAL STATS distance likely reads dist_km directly (4.6 mi) — presenting two very different 'distance' values for the same route without labeling which is one-way.",
+          "internal_resolution": "Likely dist_km is one-way (doubling to ~9.2-9.8 mi matches other fields); not necessarily wrong, but the two are presented as the same quantity in different places.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_sloan_peak_corkscrew",
+      "name": "Corkscrew Route",
+      "area": "Sloan Peak",
+      "contradictions": [
+        {
+          "fact": "Elevation gain of the Bedal Creek approach-variant round trip",
+          "severity": "medium",
+          "claims": [
+            {"field": "approach_variants[0].gainFt", "says": "5300"},
+            {"field": "approach_variants[0].notes", "says": "Distance and gain above are the full round trip by this line... Southeast from the saddle over increasingly open scramble ground; a minor rock ridge at about 5,800 ft gives the first view of the glacier."},
+            {"field": "approach_variants[0].notes", "says": "the Bedal-Sloan saddle at 5,300 ft with its shallow pond and camp"},
+            {"field": "waypoints[0].elev", "says": "2800 (Bedal Creek Trailhead)"},
+            {"field": "gain_ft", "says": "5935 (whole route, trailhead to summit and back)"}
+          ],
+          "why": "This approach-variant only reaches ~5,800 ft (a saddle/glacier view, not the 7,835 ft summit), so its round-trip gain from a 2,800 ft trailhead should be roughly 3,000 ft, not 5,300 ft — a figure that exactly equals the Bedal-Sloan saddle's own stated elevation (5,300 ft) rather than a computed gain. It is also implausible next to the whole route's own gain_ft of 5,935 ft to the true 7,835 ft summit.",
+          "internal_resolution": "The 5300 gainFt value appears to be a copy of the saddle's elevation rather than an actual elevation-gain calculation.",
+          "needs_research": false
+        },
+        {
+          "fact": "Climbing season window (does it include September?)",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "Jul-Aug"},
+            {"field": "best_season", "says": "mid-July through September"},
+            {"field": "seasonal_guidance.optimalWindow", "says": "mid-July through September, with late July-August the most reliable stretch"},
+            {"field": "seasonal_guidance.monthBreakdown.September", "says": "status: good — low water and stable rock continue"},
+            {"field": "climate.bySeason.summer", "says": "Prime window (Jul-Sep)"}
+          ],
+          "why": "The short season chip shown on every tab ('Jul-Aug') excludes September entirely, but best_season, seasonal_guidance (which rates September 'good', not marginal) and climate.bySeason.summer all treat September as a legitimate climbing month.",
+          "internal_resolution": "Three independent fields (best_season, seasonal_guidance, climate) agree September is viable; 'season: Jul-Aug' is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Total route distance ('Dist')",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "7.65 (≈4.75 mi)"},
+            {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "4.5 + 5.3 = 9.8 mi"},
+            {"field": "approach_variants[0].distMi", "says": "9.5 (round trip)"}
+          ],
+          "why": "dist_km appears to be one-way (doubled ≈9.5 mi, matching approach_variants[0].distMi) while the header/itinerary present ~9.8 mi round trip and Overview's TECHNICAL STATS distance likely reads dist_km directly (~4.75 mi) — the same 'distance' quantity differs by roughly 2x between places on the page.",
+          "internal_resolution": "dist_km is plausibly one-way; not clearly an error but presented ambiguously as the same quantity.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_fire_on_the_mountain",
+      "name": "Fire on the Mountain",
+      "area": "Sloan Peak",
+      "contradictions": [
+        {
+          "fact": "Number of technical pitches on the route",
+          "severity": "high",
+          "claims": [
+            {"field": "pitches", "says": "8"},
+            {"field": "beta", "says": "1,100 ft (333 m) of technical rock across 8 pitches, plus roughly 500 ft of 3rd-class scrambling to the summit"},
+            {"field": "itinerary.days[1].note", "says": "Climb roughly 1,000 ft of sustained 5.10 rock over 8 pitches, then 500 ft of 3rd-class scrambling to the summit"},
+            {"field": "timing.sectionBreakdown[1].note", "says": "Climb roughly 1,000 ft of sustained 5.10 rock over 8 pitches..."},
+            {"field": "overview", "says": "Fire on the Mountain climbs 7 pitches of sustained, well-protected alpine rock (to 5.10d)... from there it's roughly 500 ft of 4th-class/low-5th scrambling to the true summit"},
+            {"field": "rope_note", "says": "7 pitches of 5.10d rock (to a ledge intersecting the Corkscrew Route) plus ~500ft of 4th/low-5th scrambling to the true summit"},
+            {"field": "pitch_detail", "says": "array contains exactly 7 numbered entries (pitch 1 through pitch 7), the last one explicitly marked 'top of technical climbing'"}
+          ],
+          "why": "The route's own numbered ROUTE BREAKDOWN table (pitch_detail) enumerates only 7 pitches, matching overview and rope_note's explicit '7 pitches,' but the pitches field and three other prose fields (beta, itinerary, timing) all say '8 pitches.'",
+          "internal_resolution": "The enumerated pitch_detail table has exactly 7 rows (1-7), and two independent prose fields (overview, rope_note) independently say '7 pitches' — this set is more likely correct; 'pitches':8 and its echoes in beta/itinerary/timing appear to be the error.",
+          "needs_research": false
+        },
+        {
+          "fact": "Camping & bivy list includes entries for other, unrelated peaks",
+          "severity": "medium",
+          "claims": [
+            {"field": "bivy[1].name", "says": "Vesper Creek basin and Lake Elan, beyond Headlee Pass"},
+            {"field": "bivy[1].notes", "says": "The working base camp for Vesper Peak's north side and for Sperry... Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish..."},
+            {"field": "bivy[2].name", "says": "Foggy Lake, Gothic Basin"},
+            {"field": "bivy[2].notes", "says": "From here both Del Campo and Gothic go as short snow-and-scramble outings... The approach leaves Barlow Pass..."},
+            {"field": "bivy[3].name", "says": "Monte Cristo townsite, walk-in from Barlow Pass"},
+            {"field": "bivy[3].notes", "says": "Climbers use it mainly as a jumping-off point deeper into the Monte Cristo group rather than for Vesper or Sloan."}
+          ],
+          "why": "This is a Sloan Peak (Southwest Face) route, but its CAMPING & BIVY section lists camps for Vesper/Sperry (via Sunrise Mine trailhead) and Gothic/Del Campo (via Barlow Pass) — entirely different peaks and trailheads. The Monte Cristo entry is explicit and self-contradicting: its own note says it is used 'rather than for Vesper or Sloan,' yet it is listed on this Sloan Peak route's page.",
+          "internal_resolution": "bivy[0] (Sloan Peak high camp, Cougar Creek) is genuinely relevant; entries 1-3 (and a 4th 'Verlot corridor' entry which is only a general fallback, not specifically for Sloan) are contamination from a shared regional bivy dataset.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_superalpine",
+      "name": "Superalpine",
+      "area": "Sloan Peak",
+      "contradictions": []
+    },
+    {
+      "id": "wa_northwest_buttress",
+      "name": "Northwest Buttress",
+      "area": "Sloan Peak",
+      "contradictions": [
+        {
+          "fact": "Camping & bivy list includes entries for other, unrelated peaks",
+          "severity": "medium",
+          "claims": [
+            {"field": "bivy[1].name", "says": "Vesper Creek basin and Lake Elan, beyond Headlee Pass"},
+            {"field": "bivy[1].notes", "says": "The working base camp for Vesper Peak's north side and for Sperry..."},
+            {"field": "bivy[2].name", "says": "Foggy Lake, Gothic Basin"},
+            {"field": "bivy[2].notes", "says": "From here both Del Campo and Gothic go as short snow-and-scramble outings..."},
+            {"field": "bivy[3].name", "says": "Monte Cristo townsite, walk-in from Barlow Pass"},
+            {"field": "bivy[3].notes", "says": "Climbers use it mainly as a jumping-off point deeper into the Monte Cristo group rather than for Vesper or Sloan."}
+          ],
+          "why": "Same shared regional bivy list as Fire on the Mountain: this Sloan Peak Northwest Buttress route's CAMPING & BIVY section lists camps that are explicitly for Vesper/Sperry and Gothic/Del Campo, and one entry explicitly states it is used 'rather than for Vesper or Sloan' while appearing on this Sloan Peak route's page.",
+          "internal_resolution": "bivy[0] (Sloan Peak high camp, Cougar Creek) is genuinely relevant; entries 1-3 are contamination.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_diamond_in_the_rough",
+      "name": "Diamond In The Rough",
+      "area": "Sloan Peak",
+      "contradictions": [
+        {
+          "fact": "Camping & bivy list includes entries for other, unrelated peaks",
+          "severity": "medium",
+          "claims": [
+            {"field": "bivy[1].name", "says": "Vesper Creek basin and Lake Elan, beyond Headlee Pass"},
+            {"field": "bivy[1].notes", "says": "The working base camp for Vesper Peak's north side and for Sperry..."},
+            {"field": "bivy[2].name", "says": "Foggy Lake, Gothic Basin"},
+            {"field": "bivy[3].name", "says": "Monte Cristo townsite, walk-in from Barlow Pass"},
+            {"field": "bivy[3].notes", "says": "Climbers use it mainly as a jumping-off point deeper into the Monte Cristo group rather than for Vesper or Sloan."}
+          ],
+          "why": "Same shared regional bivy list as the other Sloan Peak technical routes: camps explicitly for Vesper/Sperry and Gothic/Del Campo, with one entry that explicitly disclaims Sloan, are listed on this Sloan Peak route's page.",
+          "internal_resolution": "bivy[0] (Sloan Peak high camp, Cougar Creek) is genuinely relevant; entries 1-3 are contamination.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_sloan_peak_r1",
+      "name": "West Face (Corkscrew route)",
+      "area": "Sloan Peak",
+      "contradictions": [
+        {
+          "fact": "Scope of this route entry: only the summit-block finish, or the whole Corkscrew line?",
+          "severity": "low",
+          "claims": [
+            {"field": "overview", "says": "The upper Corkscrew Route as it finishes on Sloan Peak's Upper West Face... the standard boot path climbs the final exposed 3rd/4th-class scramble on the west side of the summit block"},
+            {"field": "pitch_detail", "says": "single entry, 'Glacier exit to summit via Upper West Face (7,300-7,835 ft)'"},
+            {"field": "gain_ft / dist_km", "says": "5935 / 7.65 — identical to the FULL Corkscrew Route's whole-trailhead-to-summit totals"},
+            {"field": "beta", "says": "This is the same standard mountaineering line as the Corkscrew Route... See that route's approach/beta for the full line"}
+          ],
+          "why": "Overview and pitch_detail frame this entry as covering only the final ~535 ft summit-block scramble, but the TECHNICAL STATS (gain_ft, dist_km) carry the full route's whole-trip totals (matching the separate Corkscrew Route entry exactly), which would read oddly alongside prose describing 'the final scramble.'",
+          "internal_resolution": "beta clarifies this route is actually an alias for the whole Corkscrew line, which is consistent with the stats but in tension with the overview's narrower framing.",
+          "needs_research": false
+        },
+        {
+          "fact": "Camping & bivy list includes entries for other, unrelated peaks",
+          "severity": "medium",
+          "claims": [
+            {"field": "bivy[1].name", "says": "Vesper Creek basin and Lake Elan, beyond Headlee Pass"},
+            {"field": "bivy[2].name", "says": "Foggy Lake, Gothic Basin"},
+            {"field": "bivy[3].name", "says": "Monte Cristo townsite, walk-in from Barlow Pass"},
+            {"field": "bivy[3].notes", "says": "Climbers use it mainly as a jumping-off point deeper into the Monte Cristo group rather than for Vesper or Sloan."}
+          ],
+          "why": "Same shared regional bivy list contamination as the other Sloan Peak routes.",
+          "internal_resolution": "bivy[0] is relevant; entries 1-3 are contamination.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_borrowed_time",
+      "name": "Borrowed Time",
+      "area": "Sloan Peak",
+      "contradictions": []
+    },
+    {
+      "id": "wa_indian_head_peak_southwest_slopes",
+      "name": "Southwest Slopes (Standard Route)",
+      "area": "Indian Head Peak",
+      "contradictions": [
+        {
+          "fact": "Total route distance ('Dist')",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "17.7 (≈11.0 mi)"},
+            {"field": "approach", "says": "Total one-way approach to Indian Pass is roughly 10.9-11 miles"},
+            {"field": "pitch_detail[0].notes", "says": "North Fork Sauk Trail to White Pass then PCT to Indian Pass, ~10.9-11 mi one-way, ~4,000+ ft gain"},
+            {"field": "itinerary", "says": "A very strong party can do it as a single very long day trip from the trailhead (~27 miles round trip, ~6,000 ft gain)"}
+          ],
+          "why": "dist_km exactly matches the stated ONE-WAY distance to Indian Pass (11 mi), not the route's actual round-trip distance, which the route's own itinerary text puts at ~27 miles. Since this route's itinerary is a plain string (not a structured days array with per-day miles), the header's Dist would fall back to dist_km and show ~11 mi for a route that is actually ~27 mi round trip — understating total trip length by more than half.",
+          "internal_resolution": "Both approach and pitch_detail independently and explicitly label the 11-mile figure as one-way; the itinerary text's '~27 miles round trip' is the actual round-trip figure. dist_km should not be read as the whole trip's distance.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_kololo_peaks_standard",
+      "name": "Standard Route",
+      "area": "Kololo Peaks",
+      "contradictions": [
+        {
+          "fact": "Total elevation gain and loss for the round trip",
+          "severity": "high",
+          "claims": [
+            {"field": "gain_ft", "says": "6120"},
+            {"field": "loss_ft", "says": "9500"},
+            {"field": "itinerary.days[0].gainFt + [1].gainFt + [2].gainFt", "says": "4900 + 1800 + 300 = 7000"},
+            {"field": "itinerary.days[0].lossFt + [1].lossFt + [2].lossFt", "says": "300 + 1800 + 4900 = 7000"},
+            {"field": "itinerary.totalNote", "says": "roughly 9,500 ft of cumulative gain/loss"}
+          ],
+          "why": "This is a round trip that starts and ends at the same trailhead, so total gain and total loss must be equal — but gain_ft (6120) and loss_ft (9500) differ by 3,380 ft, which is physically impossible for a loop. The itinerary's own day-by-day numbers are internally consistent with each other (7000/7000, as required for a loop) but match neither top-level field. totalNote's '~9,500 ft' matches loss_ft but not gain_ft, and matches neither the day-level sums.",
+          "internal_resolution": "The itinerary's per-day gainFt/lossFt sums (7000/7000) are the only internally self-consistent set (equal gain and loss, as a loop requires); loss_ft (9500) and gain_ft (6120) both appear to be errors.",
+          "needs_research": false
+        },
+        {
+          "fact": "Which summit (east or west) is the true, higher summit",
+          "severity": "high",
+          "claims": [
+            {"field": "waypoints", "says": "'Kololo Peaks (west summit)', elev 8240, note: 'True (west) summit gained by a short rock scramble... some parties also tag the slightly lower east summit'"},
+            {"field": "overview", "says": "the west summit (8,240 ft, the true high point) and the slightly lower east summit"},
+            {"field": "pitch_detail", "says": "Kololo Peaks has twin summits (an east summit near 8,160+ ft and the higher west/main summit)"},
+            {"field": "itinerary.days[1].schedule", "says": "'Reach west summit' — '~8,200 ft'; then 'Traverse to true east summit' — 'High point, 8,240 ft'"},
+            {"field": "approach_variants[0].baseFinding", "says": "this peak's own record does not agree on which of its two tops is higher"}
+          ],
+          "why": "Waypoints, overview and pitch_detail all confidently identify the WEST summit as the true 8,240 ft high point with the east summit lower. The itinerary's own summit-day schedule reverses this, calling the EAST summit the 'true' summit and the 8,240 ft high point, while giving the west summit only ~8,200 ft. The baseFinding text explicitly flags that the route's own sources disagree on which summit is higher, confirming this is a real, acknowledged inconsistency in the underlying data rather than a simple typo.",
+          "internal_resolution": "Majority of fields (waypoints, overview, pitch_detail) agree the west summit is the true 8,240 ft high point; itinerary.days[1].schedule is the outlier. However, baseFinding explicitly states the source record itself is divided, so full resolution is uncertain.",
+          "needs_research": true
+        },
+        {
+          "fact": "Total round-trip distance",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "22.9 (≈14.2 mi)"},
+            {"field": "approach", "says": "the 46.99 km distance reflects a round trip in the 28-29 mile range"},
+            {"field": "itinerary.days[0].miles + [1].miles + [2].miles", "says": "13 + 4 + 13 = 30 mi"}
+          ],
+          "why": "The approach field's prose cites '46.99 km' as the round-trip figure (matching the ~28-29 mi range and the itinerary's ~30 mi day sum), but the stored dist_km field is 22.9 — almost exactly half of 46.99 — suggesting dist_km is a one-way figure inconsistent with the round-trip framing used elsewhere (Overview's TECHNICAL STATS distance would read the smaller one-way number).",
+          "internal_resolution": "itinerary day-miles sum (~30 mi) and the approach text's own '46.99 km'/'28-29 mile' citation agree with each other; dist_km (22.9) is roughly half of that.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_le_conte_mountain_northern_aspect",
+      "name": "Northern Aspect",
+      "area": "Le Conte Mountain",
+      "contradictions": [
+        {
+          "fact": "Total elevation gain for the route",
+          "severity": "high",
+          "claims": [
+            {"field": "gain_ft", "says": "1500"},
+            {"field": "itinerary (string)", "says": "Day 1 — drive to Cascade Pass Trailhead, hike to Cascade Pass and over Cache Col/Cache Glacier, descend to Kool-Aid Lake, cross Middle Cascade Glacier to Yang Yang Lakes camp (a long day, ~9,000+ ft cumulative gain over ~13 miles)"}
+          ],
+          "why": "The route's stated total gain_ft (1,500 ft) is dwarfed by the itinerary's own claim that Day 1 alone — just the approach to base camp, before any climbing — involves '~9,000+ ft cumulative gain.' The header/TECHNICAL STATS 'total ascent' figure badly understates the route's actual elevation gain by roughly 6x.",
+          "internal_resolution": "The itinerary's explicit Day 1 figure (9,000+ ft) is far more consistent with the approach's own description of sustained glacier gain/loss over Cache Col, Kool-Aid Lake and the Middle Cascade Glacier than the top-level gain_ft (1,500 ft), which looks like it may represent only the final camp-to-summit push rather than the whole route.",
+          "needs_research": false
+        },
+        {
+          "fact": "Number of 4th-class sections on the route",
+          "severity": "medium",
+          "claims": [
+            {"field": "rock_grade", "says": "Class 4 (one short 4th-class step; remainder is ledge scrambling and snow)"},
+            {"field": "pitch_detail", "says": "'Secret Stair gully' — Class 3-4; 'North face to notch' — Class 4; 'Summit ledge traverse' — Class 4, exposed"}
+          ],
+          "why": "rock_grade characterizes the route as having only ONE short 4th-class step, but the route's own ROUTE BREAKDOWN (pitch_detail) lists at least two distinct Class 4 sections (the north-face-to-notch section and the summit ledge traverse) plus a Class 3-4 gully, understating the amount of harder terrain a climber should expect.",
+          "internal_resolution": "pitch_detail is the more detailed, itemized source and shows more than one 4th-class section; rock_grade's 'one short step' appears to undercount.",
+          "needs_research": false
+        },
+        {
+          "fact": "Elevation of Cache Col",
+          "severity": "low",
+          "claims": [
+            {"field": "waypoints", "says": "Cache Col, elev 6903"},
+            {"field": "approach", "says": "Cache Col (~6,900 ft)"},
+            {"field": "bivy", "says": "'Cache Col and the Cache Glacier shoulder', elev 6400"}
+          ],
+          "why": "The bivy entry's elevation (6,400 ft) is about 500 ft below the Cache Col elevation given by the waypoint and approach text (6,900 ft). The bivy's own notes explain the camp sits on 'the shoulder below' the col and that published figures for the col vary by 'a couple of hundred feet,' which weakens but does not fully resolve the gap (500 ft exceeds the stated couple-hundred-foot uncertainty).",
+          "internal_resolution": "The bivy note itself partially explains the discrepancy (camp is on the shoulder, not at the col, and elevation is acknowledged as approximate), so this may not be a true error.",
+          "needs_research": true
+        },
+        {
+          "fact": "Total round-trip distance",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "21.1 (≈13.1 mi)"},
+            {"field": "itinerary (string)", "says": "Day 1... ~13 miles... Day 2... Day 3 — reverse the approach back to the trailhead"}
+          ],
+          "why": "dist_km (≈13.1 mi) matches only Day 1's one-way approach distance ('~13 miles'), not the full 2-3 day round trip (which would be roughly double that plus summit-day mileage), so a header falling back to dist_km would significantly understate total trip distance.",
+          "internal_resolution": "dist_km appears to be one-way, matching Day 1 alone.",
+          "needs_research": false
+        }
+      ]
+    }
+  ]
+}

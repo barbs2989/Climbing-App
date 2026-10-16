@@ -1,0 +1,273 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Luna zone permit reservable in advance vs walk-up only"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Luna zone permit reservable in advance vs walk-up only"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Luna zone permit reservable in advance vs walk-up only"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "waypoints",
+   "path": [
+    6,
+    "elev"
+   ],
+   "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "overview",
+   "path": [],
+   "fact": "East Fury elevation vs route high point (overview 8,280 < West 8,305)"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "East Fury elevation vs route high point (overview 8,280 < West 8,305)"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Overnight permit 'where' says reserve on Recreation.gov for a walk-up-only cross-country zone"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "NPS wilderness permits (advance reservation via recreation.gov) and a Ross Lake water taxi reservation are both required and often the limiting factor for scheduling this trip; best conditions are typically mid-July through August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Take the Ross Lake water taxi from Ross Dam to Big Beaver Landing to cut several miles of road-walk, then follow the Big Beaver Trail roughly 9-10 miles to Luna Camp. Leave the trail there, bushwhack across Big Beaver Creek and up the notorious Access Creek drainage (devil's club, slide alder, then scree/heather), and climb a steep snow/scree gully to the ridge crest and Luna Col. This is a long, grueling day even before any climbing begins.",
+       "hours": 9,
+       "miles": 18,
+       "title": "Water taxi + approach to Luna Col",
+       "gainFt": 5600,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach high camp at Luna Col (~7,200 ft)"
+      },
+      {
+       "n": 2,
+       "note": "From Luna Col, cross over Point 7360 and down a red ledge system to a low-5th-class crux tower, then up the East Mount Fury Glacier/arete to East Fury's summit. Continue the exposed ridge traverse over three towers (short rappels/downclimbs between them) to reach West Fury's summit, then reverse the entire traverse back to camp. Most parties treat this as a full 12-16+ hour day and it is the technical and physical crux of the trip.",
+       "hours": 14,
+       "miles": 4.5,
+       "title": "Traverse to East and West Fury",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Luna Col",
+         "detail": "Light rack, rope, crampons/axe for the glacier sections."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Crux tower",
+         "detail": "Low-5th-class moves past Point 7360 via the red ledge."
+        },
+        {
+         "time": "~11 AM-12 PM",
+         "label": "East Fury summit",
+         "detail": "Via the East Mount Fury Glacier/arete."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Three-tower ridge traverse",
+         "detail": "Short rappels/downclimbs connecting East and West Fury."
+        },
+        {
+         "time": "~2-3 PM",
+         "label": "West Fury summit (8,303 ft)",
+         "detail": "Summit of the West Peak; East Fury, crossed earlier in the day, is the higher summit."
+        },
+        {
+         "time": "by dark",
+         "label": "Back at Luna Col",
+         "detail": "Full reversal of the traverse; parties on a full Pickets traverse may instead cache packs at the East-West saddle."
+        }
+       ],
+       "objective": "Climb East Fury, traverse to West Fury, and return to Luna Col"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Access Creek descent and Big Beaver Trail back to Big Beaver Landing to catch the water taxi to Ross Dam. Legs are tired from the previous day's traverse, so this out day often takes as long or longer than the approach.",
+       "hours": 9,
+       "miles": 18,
+       "title": "Exit to trailhead",
+       "gainFt": 300,
+       "lossFt": 5600,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to Ross Dam / water taxi dock"
+      }
+     ],
+     "totalNote": "A 3-day trip (some guided groups take 4): ~41 miles round trip with roughly 9,000+ ft of cumulative gain, one night in at Luna Col and a single massive summit-traverse day covering both East and West Fury."
+    },
+    "access": {
+     "fees": "$10 per person plus a $6 reservation fee for advance permits (current NPS fee structure); North Cascades National Park itself has no entrance fee. Ross Lake Resort's water taxi runs roughly $35-105 per boatload depending on distance and party size (2026 rates).",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Bear canisters are required in some Picket Range camping zones and can be borrowed in person at the Wilderness Information Center (Marblemount) or the Glacier Public Service Center.",
+     "permit": "A backcountry/wilderness permit is required for all overnight stays. Reserve in advance via Recreation.gov (about 60% of backcountry zones/sites are reservable, must be claimed within 3 days of the trip via email to the Wilderness Information Center) or pick up a walk-up permit in person at the Wilderness Information Center in Marblemount (about 40% of sites held for walk-ups).",
+     "closures": "SR 20 (North Cascades Highway) closes seasonally near the Ross Dam Trailhead, typically from early December to April/May depending on snow and avalanche conditions; check WSDOT's pass report before driving in. Luna Fire closure (as of mid-September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. The closure moves - check current park fire closures before a trip. The alternative Whatcom Pass approach is also affected: the Little Beaver Trail is closed from Little Beaver Camp to the Big Beaver junction, along with the Little Beaver boat-in camp and Perry Creek, under the park's separate long-term closure.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (National Park Service) — Mount Fury and the Northern Pickets lie within North Cascades National Park proper, not the adjoining Ross Lake National Recreation Area.",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No Northwest Forest Pass is needed — the trailhead and route lie within the National Park; the backcountry permit itself is the required authorization.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "overview": "West Peak carries the official USGS 'Mount Fury' benchmark and, via its long, loose connecting ridge from East Fury, is markedly harder than its twin summit — West Fury is routinely listed among the '10 hardest peaks in Washington by their easiest route.' An October 2022 theodolite survey by Eric Gilbertson found that East Fury is actually roughly 51 ft taller than West Fury (8,356 ft ±8 ft vs. 8,305 ft ±10 ft), meaning the officially named summit is not the range's true high point, even though it remains the far more serious technical objective. The standard route climbs East Fury first, then follows a wild, exposed ridge traverse over three loose towers/gendarmes to reach West Fury's summit — typically adding a full 12-16+ hour day, with a real chance of a forced bivouac, onto an already multi-day Northern Pickets expedition.",
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 2150,
+      "name": "Ross Dam Trailhead",
+      "note": "SR 20 milepost 134 parking lot; no parking pass is needed. Descend the Ross Dam Trail toward the lake to reach Ross Lake Resort and arrange a paid water-taxi pickup.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR 20 to the parking lot at milepost 134, roughly 28 miles east of Marblemount. No parking pass is needed to leave a car here."
+     },
+     {
+      "lat": 48.77563,
+      "lng": -121.0658,
+      "elev": 1602,
+      "name": "Big Beaver Landing (water-taxi drop)",
+      "note": "Ross Lake Resort's boat drops climbers here to skip miles of lakeshore trail; self-issue wilderness permit kiosk and start of the Big Beaver Creek Trail.",
+      "type": "Junction",
+      "distMi": 9,
+      "directions": "Walk down the Ross Dam Trail toward the lake and arrange a paid water-taxi pickup with Ross Lake Resort; the boat runs seasonally, costs about $35 one way, and drops climbers at Big Beaver Landing. Parties who cannot get a boat hike roughly 6 miles of lakeshore trail up the west side of Ross Lake instead."
+     },
+     {
+      "lat": 48.834423,
+      "lng": -121.20174,
+      "elev": 2432,
+      "name": "Luna Camp",
+      "note": "Established backcountry camp on the maintained Big Beaver Creek Trail through old-growth forest, roughly 8 trail miles above Big Beaver Landing.",
+      "type": "Campsite",
+      "distMi": 17,
+      "directions": "Self-issue a wilderness permit at the kiosk, then follow the maintained Big Beaver Creek Trail up-valley through old-growth cedar. It is about 8 to 10 trail miles of easy walking, passing the Big Beaver backcountry camp, to reach Luna Camp."
+     },
+     {
+      "lat": 48.80007417857143,
+      "lng": -121.24039371428572,
+      "elev": 2000,
+      "name": "Access Creek crossing",
+      "note": "About 1.5 miles past Luna Camp, leave the maintained trail and ford Big Beaver Creek to pick up the faint, cairned Access Creek climbers' path.",
+      "type": "Junction",
+      "distMi": 18.5,
+      "directions": "Stay on the maintained trail about another 1.5 miles past Luna Camp, then leave it and ford Big Beaver Creek to pick up the faint, cairned climbers' path up Access Creek. This is the single easiest place on the trip to go wrong: in poor visibility parties have committed to the wrong drainage, so find the cairns marking the correct crossing before you commit."
+     },
+     {
+      "lat": 48.80522032142857,
+      "lng": -121.27715028571428,
+      "elev": 5800,
+      "name": "Access Creek headwaters basin",
+      "note": "Cairned climbers' path up the north flank crosses to the creek's south bank near 3,700 ft where brush thickens, then continues to good camping at the basin below the Luna-McMillan col.",
+      "type": "Campsite",
+      "distMi": 20.5,
+      "directions": "Climb steep, pathless forest and heather along the north flank of Access Creek. The cairned path crosses to the south bank near 3,700 ft where the brush thickens, then continues to break out of the timber into the open, meadow-floored basin below Luna Peak, which is far less brushy than the drainages either side of it. Reports call it a few hours of reasonable but sustained hiking."
+     },
+     {
+      "lat": 48.82374,
+      "lng": -121.27636,
+      "elev": 7200,
+      "name": "Luna Col",
+      "note": "Notch between Luna Peak and a small tower on the Luna-McMillan arm; a small snowfield at the saddle usually provides running water and there's a good camp spot here or ~150 ft below on the east side.",
+      "type": "Campsite",
+      "distMi": 22,
+      "directions": "Continue up-basin past the camping area at the headwaters, then climb a steep gully and heather system to the notch near 6,100 ft that first opens the view north into Luna Cirque. From there a long sidehill traverse of steep heather and talus works around Luna Peak toward Luna Pass, with one short genuinely steep section and cliff-band route-finding, before gaining the connecting ridge to the col. A small snowfield on the saddle usually gives running water."
+     },
+     {
+      "lat": 48.811653,
+      "lng": -121.323096,
+      "elev": 8356,
+      "name": "East Fury (ridge traverse start)",
+      "note": "Higher of Fury's twin summits and the start of the ~5.4 YDS, Grade III ridge traverse over three towers to West Fury; loose, exposed rock — rope up for the gendarmes.",
+      "type": "Hazard",
+      "distMi": 23,
+      "directions": "Leave the col early on a light rack. Cross over Point 7360 and drop a red ledge system to a low-fifth-class crux tower, then climb the East Fury Glacier and arete to the summit. Most parties reach it around four to five hours out of camp."
+     },
+     {
+      "lat": 48.8119818,
+      "lng": -121.3233201,
+      "elev": 8303,
+      "name": "West Fury (Mount Fury, West Peak)",
+      "note": "True, officially-named summit of Mount Fury. Descend by reversing the ridge traverse to East Fury, then drop East Fury's east-side glacier/scree gully back to Luna Col.",
+      "type": "Summit",
+      "distMi": 23.3,
+      "directions": "Traverse the ridge over three loose towers, with short downclimbs and rappels connecting them. It is roughly 5.4 at its hardest, wildly exposed, and the rock is notoriously mobile choss rather than anything solid, so rope up for the gendarmes and expect two to three hours. Anchors are natural horns and slings you leave behind."
+     }
+    ],
+    "high_point_ft": 8356
+   }
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "before": {
+    "overview": "A wild and exposed scramble traverse connecting East Fury (8,280 ft) to West Fury (8,305 ft), involving three main towers with Class 2-4 descent to saddle and Class 4-5 climbing on towers. This is the standard method of traversing between the two peaks and involves significant exposure, loose rock, and dangerous rappels.",
+    "high_point_ft": 8305,
+    "access": {
+     "fees": "Backcountry permit: $10 per person aged 16 and over, plus a $6 non-refundable reservation fee. The park has no entrance fee.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov; the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "closures": "Luna Fire closure (as of mid-September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. The closure moves - check current park fire closures before a trip.",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    }
+   }
+  }
+ ]
+}

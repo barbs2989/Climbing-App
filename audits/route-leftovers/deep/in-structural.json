@@ -1,0 +1,267 @@
+[
+ {
+  "file": "v001.json",
+  "id": "wa_abernathy_peak_north_ridge",
+  "fact": "Which approach/trailhead the North Ridge uses (North Creek Trail #413 + mine trail vs Wolf Creek/Gardner Meadows; Trailhead waypoint named Scatter Creek at 3,150 ft)",
+  "evidence": "STRUCTURAL: rebuild the row around the Wolf Creek / Gardner Meadows approach (decision rule 3: most documented line in current use). Two independent trip reports climb the north ridge this way: a July 2020 report (Wolf Creek trail ~10 mi to Gardner Meadows, off-trail past Abernathy Lake to the tarn below the ridge, spur ridge with a few class 3 moves to the main ridge, boot path through old mining remains, class 2/3 to the summit) and a separate multi-peak report from Wolf Creek via Gardner Meadows, the abandoned mine trail and tarn. The North Creek Trail #413 mine-trail approach is described by only one source (the peak's main route page). What should change: move the Trailhead waypoint (currently named 'Scatter Creek Trailhead' with a North Creek note, 3,150 ft) to the Wolf Creek Trailhead; rewrite approach, approach_logistics.trailhead/trailheadDirection, itinerary day 1, timing.sectionBreakdown note, pro_tips[0] ('via the Twisp River side') and partner_requirements to the Gardner Meadows line; demote the North Creek text to an approach_variants alternative or drop it. Needs pin moves and a whole-row rewrite, which the patch format cannot express.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-21-3059374829",
+   "https://www.countryhighpoints.com/abernathy-and-the-gardners/",
+   "https://www.summitpost.org/abernathy-peak/152230"
+  ]
+ },
+ {
+  "file": "v001.json",
+  "id": "wa_argonaut_peak_east_ridge",
+  "fact": "Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col",
+  "evidence": "STRUCTURAL: the row fuses two routes. name, face, pitches (8), beta and rappels describe the Southeast Ridge (II 5.6, 8 pitches to the SE spire, two single or one double rappel into the notch), which two listings name as a separate route; pitch_detail (starts 'From the Argonaut-Colchuck col'), descent_text ('reversing the East Ridge ... notch just west of the lone gendarme'), rappel_detail (traverse toward the east gully) and the '6 pitches' text describe the East Ridge from the col, which has its own route page. What should change: either rename the row to the col-side East Ridge and move the Southeast Ridge facts (8 pitches, SE spire, notch rappels) to a separate row, or replace pitch_detail/descent_text/rappel_detail with a Southeast Ridge description once one can be read in full. Needs a rename or a rebuilt breakdown, which the patch format cannot express.",
+  "sources": [
+   "https://www.summitpost.org/southeast-ridge/158954",
+   "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+   "https://www.summitpost.org/east-ridge/161870"
+  ]
+ },
+ {
+  "file": "v002.json",
+  "id": "wa_bryant_peak_southeast_slopes",
+  "fact": "Which trailhead/approach the route uses (Alpental vs Denny Creek)",
+  "evidence": "STRUCTURAL: the Southeast Slopes line starts at the Denny Creek trailhead (~2,300 ft, I-90 Exit 47) and leaves the Denny Creek Trail #1014 at Hemlock Pass, as the row's approach, itinerary and primary variant already say; a 2013 trip page gives 'via Denny Creek + Hemlock Pass', 10.8 mi RT, 2,280-5,801 ft, and a club route page (search excerpt) describes the same Hemlock Pass line on a 33° bearing. What should change: approach_logistics.trailhead/trailheadLat/trailheadLng/trailheadDirection and waypoint 0 re-pointed to the Denny Creek trailhead (coordinates too), and waypoints 1-6 (Source Lake junction, stream crossing, gully passage, Thumbtack, Bryant-Chair gully) removed from this route or moved to the Alpental variant — they trace the secondary gully line. Waypoint 0's note already names Denny Creek while its name/coords are Alpental. Pin moves are outside the patch format.",
+  "sources": [
+   "https://onehikeaweek.com/2013/06/29/bryant-peak/",
+   "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks"
+  ]
+ },
+ {
+  "file": "v003.json",
+  "id": "wa_cashmere_mountain_west_ridge",
+  "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+  "evidence": "STRUCTURAL: the 'Base of west ridge' pin (6,800 ft, distMi 5.2, coordinate 47.5575,-120.842 where the ground is ~7,308 ft) should be MOVED to the ~8,000 ft saddle between Windy Ridge and Cashmere where the ridge scramble starts (and re-elevated to ~8,000 ft with a distMi beyond the 6.5 mi camp), or else renamed as the leave-trail point (~6,700-6,900 ft, on the Windy Pass trail above Lake Caroline) and moved there. Sources: a scramble write-up says leave the Windy Pass trail at 6,700 ft, angle up to the 8,000 ft level and run the ridge to the prominent 8,000 ft saddle; a 2018 report left the trail near a ~6,900 ft meadow and reached the saddle at 8,000 ft; a 2016 report camped in Windy Basin at 6,500 ft and gained the ridge at the low saddle between Windy Ridge and Cashmere. Either fix needs a pin move, which the patch format cannot express; no text patch.",
+  "sources": [
+   "https://www.washingtonstatehiking.com/reportslist/cashmere_mountain",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-03.6703657543",
+   "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/"
+  ]
+ },
+ {
+  "file": "v004.json",
+  "id": "wa_clark_mountain_west_ridge",
+  "fact": "Aspect/face of the documented Walrus Glacier line",
+  "evidence": "STRUCTURAL: the row is two lines under one name and needs splitting (or a rename plus a climbing_route rewrite), which the patch format cannot express. Sources agree Clark has two standard ways up: a glacier route on the northeast/east side (the Walrus/Clark Glacier) and a non-glacier scramble on the south-west side that crosses the ridge south of Pt. 8373 by one improbable gully and finishes on Clark's southwest/west ridge. The row's aspect W, face 'West Ridge' and climbing_route[] (Pt. 8373 gully, final south/west ridge) all describe the scramble, while beta describes the Walrus Glacier and says the glacier-free line 'is not the line documented here'. Proposed: either split into a 'Southwest Ridge' scramble row (aspect W/SW, keep climbing_route) and a 'Walrus Glacier' row (aspect NE/E, keep beta), or rename this row to the scramble and rewrite beta to it with the glacier kept as an approach_variants alternative. Sources: a winter ascent report naming the two main routes (glaciated NE slopes vs SW scramble via the gully by Pt. 8373 and the SW ridge) and a 2017 report finishing the scramble on the west ridge.",
+  "sources": [
+   "https://www.countryhighpoints.com/luahna-peak-and-clark-mountain/",
+   "https://www.lemkeclimbs.com/clark-and-luahna-peaks.html",
+   "https://wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/",
+   "https://www.mountaineers.org/activities/routes-places/clark-mountain-southeast-route"
+  ]
+ },
+ {
+  "file": "v007.json",
+  "id": "wa_enchantment_peak_southwest_scramble",
+  "fact": "Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)",
+  "evidence": "STRUCTURAL: the row holds two lines and cannot be made consistent without a rename. The most documented line in current use is Prusik Pass then west up the peak's eastern arm to the NE summit (the peak's long-standing route page: 'an easy scramble from Prusik Pass' heading west up the shoulder; a 2020s Enchantment-slam trip report: from Prusik Pass west up the eastern arm, one steep step near 7,900 ft, class 3/4 summit block) - this is what beta and pitch_detail rows 3-4 describe. A different scramble leaving the basin directly between Lakes Reginleif and Sigrun is documented by one trail blog (class 2-3 with class 3-4 exposed spots, summit not identified) and the peak page's separate class 4 south-side line to the SW summit - this is what name 'Southwest Scramble', face, overview, approach and the variant baseFinding describe, while they also say the route ends on the NE summit. No source ties the Reginleif/Sigrun line to the NE summit. Owner should either (a) rename the row to the Prusik Pass / east-arm line to the NE summit and rewrite face, overview's last sentence, the approach's Reginleif/Sigrun sentence and baseFinding's 'does not lead to this scramble' to match beta and pitch_detail, or (b) keep 'Southwest Scramble' as the south-side line to the SW summit (class 4) and rewrite beta, pitch_detail rows 3-6 and descent_text; option (a) follows the delegated rule.",
+  "sources": [
+   "https://www.summitpost.org/enchantment-peak/151418",
+   "https://www.thewildoutsiders.com/adventure-journal/enchantment-slam",
+   "https://hike2hike.com/trail-run/enchantment-peak-leavenworth-washington/",
+   "https://www.countryhighpoints.com/enchantments-peakbagging/"
+  ]
+ },
+ {
+  "file": "v011.json",
+  "id": "wa_hozomeen_mountain_southeast_face",
+  "fact": "Which approach/route the waypoints describe",
+  "evidence": "STRUCTURAL: the 'Lightning Creek boat landing / trail junction' (48.94468,-121.0008) and 'Willow Lake' (48.943791,-121.006993) pins sit within ~0.6 km of each other yet carry distMi 11 and 15, and neither note's mileage fits: the park's East Bank trail page puts the Lightning Creek departure at mile 16 of the 31-mile trail from SR-20 and places the Hozomeen Lake side trail 2 mi north of Willow Lake and Hozomeen campground 3 mi beyond, and a trail-database page has the trail turn up Lightning Creek after a little over 15 mi and pass Willow Lake later. Owner fix: re-pin or remove these two waypoints (the row's primary approach is from Hozomeen campground, not this variant), then rewrite their distMi and the Willow Lake note ('~mile 20'); Willow Lake's own mileage is only derivable by subtraction, so no patch is written.",
+  "sources": [
+   "https://www.nps.gov/noca/planyourvisit/east-bank-trail.htm",
+   "https://www.wta.org/go-hiking/hikes/willow-lake-trail"
+  ]
+ },
+ {
+  "file": "v011.json",
+  "id": "wa_hurry_up_peak_south_ridge",
+  "fact": "Scramble grade: Class 3-4 vs Class 2-3",
+  "evidence": "STRUCTURAL: the Class 3-4 wording is Magic Mountain's route, not Hurry-up's. A club route page titled Magic Mountain/South Ridge (archived) reads: from Kool-Aid Lake ascend 1,000 ft to the col between Magic Mountain and Hurry Up Peak, gain the south ridge to the false summit, drop 80 ft into a dirty gully and take Class 3-4 ledges that corkscrew the east side of the summit; the archived traverse stage page confirms the standard route up Magic is its S ridge starting near Kool-Aid Lake; and OpenStreetMap puts Magic Mountain (48.4456,-121.0411) 1.3 km NORTH of Hurry-up (48.4339,-121.0380), so a south ridge rising from that col leads to Magic. pitch_detail rows 2-3 (col to false summit, 80-ft gully, corkscrew) and the summit waypoint's directions copy that text almost word for word, and they are what carry 'Class 3-4' into grade. Sources for Hurry-up itself give class 3 (encyclopedia) and class 2-3 with moderate exposure on the summit ridge (a traverse trip report), matching rock_grade and climbing_route. Owner fix: clear or rewrite pitch_detail rows 2-3 and the summit waypoint directions for Hurry-up's own line, then set grade to 'Grade II, Class 2-3'.",
+  "sources": [
+   "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge",
+   "https://web.archive.org/web/2024/https://www.summitpost.org/stage-1/166726",
+   "https://nominatim.openstreetmap.org/search?q=Magic+Mountain,+Chelan+County,+Washington&format=json",
+   "https://trailcatjim.com/ptarmigan-traverse-hurry-up-peak-leconte-mtn-old-guard-peak-dome-peak/",
+   "https://en.wikipedia.org/wiki/Hurry-up_Peak"
+  ]
+ },
+ {
+  "file": "v013.json",
+  "id": "wa_la_bohn_peak_southwest_slopes",
+  "fact": "Which side of the peak the route climbs from the gap (east ridge/face vs southwest slopes 'staying left of the broad west ridge')",
+  "evidence": "STRUCTURAL: rename the route from 'Southwest Slopes' to an East Ridge name, and rewrite approach (last sentences), climbing_route[0] (label and notes), approach_variants[0].baseFinding (last paragraph), descent_text (first sentences), beta and the La Bohn Gap / summit waypoint notes so they describe ascending the ridge west from the gap onto the peak's east side, as descent, itinerary day 2 and its schedule already do. Sources: the peak's encyclopedia entry places La Bohn Peak west of La Bohn Gap and names the East Ridge (class 2) as the easiest route; a 2021 report reaching the gap from Chain Lakes turns left at the gap up boulders onto the ridge, then a narrow ridge to the summit block with a cliff on the north side, matching the east-ridge wording (not a southwest-slopes line). No source describes a southwest-slopes line from the gap. The rename cannot be expressed as a patch.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/La_Bohn_Peak",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-08-23-6896699724"
+  ]
+ },
+ {
+  "file": "v015.json",
+  "id": "wa_mesahchie_peak_west_ridge",
+  "fact": "which approach the trip plan uses, and the one-way distance",
+  "evidence": "STRUCTURAL: itinerary.days[0] (title, note, objective, and the ~9:00 AM, ~12:00 PM and 2:00 PM schedule items), itinerary.days[1] note and last schedule item ('retrace Day 1's ridge traverse'), itinerary.cal ('camping on Ragged Ridge'), itinerary.totalNote ('high camp on Ragged Ridge') and timing.sectionBreakdown[0].note all describe the Ragged Ridge crest traverse over Cub Peak, while every other field describes dropping from Easy Pass into Fisher Creek past Fisher Camp and climbing the south basin to a ~6,700 ft shoulder camp; the day-1 plan should be rewritten to the Fisher Creek line (one party on that line reached flat ground at the 6,700 ft rib step 4.2 hr from the car). Both lines are documented by one detailed report each (Fisher Creek line; crest over Cub Peak with a bivy west of Kitling), and a peak page describes a third, a traverse west below the ridge from just before Easy Pass without descending to Fisher Creek, so no source ranks one as standard and the rewrite would need schedule times no source states. dist_km (12.1) already matches the approach text's ~12 km one way, so the distance half of this item is settled on the live row.",
+  "sources": [
+   "https://trailcatjim.com/mesahchie-peak-via-south-rib-south-gullies/",
+   "https://www.lemkeclimbs.com/mesahchie-peak.html",
+   "https://www.summitpost.org/mesahchie-peak/150934"
+  ]
+ },
+ {
+  "file": "v015.json",
+  "id": "wa_marvin_s_ear",
+  "fact": "Sunrise Mine Trailhead location",
+  "evidence": "STRUCTURAL: set approach_logistics.trailheadLat/trailheadLng from 48.02388889, -121.4741444 to the Trailhead waypoint's 48.0247261, -121.4778459. OpenStreetMap maps the Sunrise Mine Trailhead node at 48.02473, -121.47786 (USFS-operated, with a 12-car lot beside it at 48.02499, -121.47789), and the trail guide gives 48.0251, -121.4779; both agree with the waypoint. The ground elevation at the approach_logistics point is about 2,835 ft on a slope ~300 m east, versus about 2,320 ft at the mapped trailhead, which matches the ~2,340-2,350 ft the row states. A coordinate change is outside the patch format.",
+  "sources": [
+   "https://nominatim.openstreetmap.org/search?q=Sunrise+Mine+Trailhead&format=json",
+   "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+   "https://epqs.nationalmap.gov/v1/json?x=-121.4741444&y=48.02388889&units=Feet&wkid=4326",
+   "https://epqs.nationalmap.gov/v1/json?x=-121.477859&y=48.0247259&units=Feet&wkid=4326"
+  ]
+ },
+ {
+  "file": "v015.json",
+  "id": "wa_morning_star_peak_standard",
+  "fact": "Sunrise Mine Trailhead location",
+  "evidence": "STRUCTURAL: set approach_logistics.trailheadLat/trailheadLng from 48.02388889, -121.4741444 to the Trailhead waypoint's 48.0247261, -121.4778459. OpenStreetMap maps the Sunrise Mine Trailhead node at 48.02473, -121.47786 and the trail guide gives 48.0251, -121.4779, both matching the waypoint; the ground at the approach_logistics point is about 2,835 ft on a slope ~300 m east versus about 2,320 ft at the mapped trailhead. A coordinate change is outside the patch format.",
+  "sources": [
+   "https://nominatim.openstreetmap.org/search?q=Sunrise+Mine+Trailhead&format=json",
+   "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+   "https://epqs.nationalmap.gov/v1/json?x=-121.4741444&y=48.02388889&units=Feet&wkid=4326"
+  ]
+ },
+ {
+  "file": "v015.json",
+  "id": "wa_morning_star_peak_standard",
+  "fact": "Whether the scramble goes via Headlee Pass or up the South Fork Stillaguamish drainage",
+  "evidence": "STRUCTURAL: the drainage line (leave the Sunrise Mine Trail ~0.5 mi in, up the east side of the South Fork Stillaguamish past the 3,000-3,100 ft boulder to the 3,700 ft basin, gully and headwall near 4,400 ft, slabs to the 5,600 ft notch, 45-degree gully to the south ridge) is described by the club route page and by a club trip report (7:15 AM start, 11 hr car to car), matching approach, pitch_detail, climbing_route and descent_text. Rewrite itinerary.days[0] (title 'via Headlee Pass', note, schedule items at 8:00 AM 'Reach Headlee Pass (4,600')' / 8:15 AM / 11:00 AM / 11:30 AM), itinerary.totalNote ('via Headlee Pass'), timing.sectionBreakdown[0] note/fromTo and descent ('toward Headlee Pass') to that line, and replace or delete approach_variants[0] ('Sunrise Mine Trail over Headlee Pass', which says to stay on the trail to the pass); no source describes a summit scramble starting at Headlee Pass (a solo ascent left the trail below the Headlee switchbacks for the northwest side). The rewrite needs a variant delete and schedule times no source states, so it is left for an owner edit.",
+  "sources": [
+   "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge",
+   "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-morning-star-peak-south-ridge-1",
+   "https://onehikeaweek.com/2015/02/21/morning-star-peak/",
+   "https://web.archive.org/web/2024/https://www.peakbagger.com/climber/ascent.aspx?aid=678349"
+  ]
+ },
+ {
+  "file": "v015.json",
+  "id": "wa_mile_high_club",
+  "fact": "Sunrise Mine Trailhead waypoint position",
+  "evidence": "STRUCTURAL: the Mile High Club row's only waypoint, 'Sunrise Mine Trailhead' (waypoints[0], elev 2350), sits at 48.02388889, -121.4741444, the same wrong point flagged on the Morning Star and Marvin's Ear approach_logistics; move it to 48.0247261, -121.4778459. OpenStreetMap's trailhead node (48.02473, -121.47786) and the trail guide (48.0251, -121.4779) agree with each other, and the ground at the stored point is about 2,835 ft, not the 2,350 ft the pin states (about 2,320 ft at the mapped trailhead). A pin move is outside the patch format.",
+  "sources": [
+   "https://nominatim.openstreetmap.org/search?q=Sunrise+Mine+Trailhead&format=json",
+   "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+   "https://epqs.nationalmap.gov/v1/json?x=-121.4741444&y=48.02388889&units=Feet&wkid=4326"
+  ]
+ },
+ {
+  "file": "v018.json",
+  "id": "wa_mount_stuart_north_ridge",
+  "fact": "Trailhead pin vs the approach the waypoints and itinerary describe",
+  "evidence": "STRUCTURAL: waypoints[1] 'Longs Pass' (distMi 3.5) and waypoints[2] 'Goat Pass' (distMi 5) are south-approach (Esmeralda / Ingalls Creek) pins placed in the chain that starts at waypoints[0], the Stuart Lake Trailhead on the north side; their distances from that trailhead are meaningless. The primary approach in approach, approach_logistics and approach_variants[0] is the north side via Mountaineer Creek, which is also how the two most detailed ascent reports approach the North Ridge. Fix: remove Longs Pass and Goat Pass from this route's waypoint list (or move them to a south-variant list), keeping the Stuart Lake Trailhead pin; this needs a pin/list change the patch format cannot express.",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+   "https://climberkyle.com/2021/07/18/mt-stuart-complete-north-ridge-5-9/"
+  ]
+ },
+ {
+  "file": "v020.json",
+  "id": "wa_overcoat_peak_southeast_route",
+  "fact": "Which side of the summit block the route climbs (south/west vs east/northeast)",
+  "evidence": "STRUCTURAL: clear pitch_detail (its four rows are the 2004 Overcoat/Chimney-saddle line: col, loose south ridge, west-side ledge traverse, summit block) and replace climbing_route[1] ('Heathery slot to the notch', stepping out left/west) and climbing_route[2] ('Angled chimney to the saddle') with the east-face steps (leave the snow finger at the dark towers, round the corner east, steep gully on solid holds to the summit), keeping the south-ridge line only as a named alternative in approach_variants. The east line is the most documented one in current use: the club route page says to contour from camp east to a notch on Overcoat's north ridge, reach the upper glacier, find a snow finger from the glacier to the east face and climb Class 3 ledges to the summit; a 2024 three-day report climbed the snow finger, moved onto rock near the dark towers, rounded the corner east and went up a steep gully, descending east by heather ledges, a dihedral and two rappels; the only climbing-database listing is 'East Face'. Only the 2004 report takes the south ridge. The row's waypoints, climbing_route[0] and [3], descent_text, rappels and the approach baseFinding already describe the east line, so the replacement is a line clear plus new pitch rows, which the patch format cannot express.",
+  "sources": [
+   "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+   "https://onehikeaweek.com/2024/07/13/overcoat-peak/",
+   "https://www.wta.org/go-hiking/trip-reports/tripreport-2004090612"
+  ]
+ },
+ {
+  "file": "v021.json",
+  "id": "wa_rimrock_ridge_scramble",
+  "fact": "Which drainage/trail the approach to Rimrock Ridge uses",
+  "evidence": "STRUCTURAL: the approach's final leg ('follow the Agnes Creek Trail roughly 8-9 miles up-valley ... Swamp Creek Camp near mile 8.5, then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage ... fording Agnes Creek or Spruce Creek') and the Swamp Creek Camp waypoint (distMi 8.1) should be removed, because they lead away from the peak; a researched line up Flat Creek or the West Fork Agnes Creek would have to replace them, and none is published. OpenStreetMap maps Rimrock Ridge as a ridge running from about 48.370 to 48.383 N and -121.018 to -120.969 W, and Swamp Creek Camp at 48.3097, -120.9205, so the ridge lies 4-5 miles north-west of that camp, not east of it; the trail pages already tried place it between upper Flat Creek and the West Fork Agnes Creek, whose trail leaves the PCT near Fivemile Camp. No 'Blue Basin' appears in the map data. No ascent account names a route, so a replacement approach would be invention, and removing the leg would leave the approach without a line; this needs a human with a map.",
+  "sources": [
+   "https://nominatim.openstreetmap.org/search?q=Rimrock%20Ridge%2C%20Chelan%20County%2C%20Washington&format=json",
+   "https://nominatim.openstreetmap.org/search?q=Swamp%20Creek%20Camp&format=json",
+   "https://www.wta.org/go-hiking/hikes/west-fork-agnes-creek",
+   "https://www.wta.org/go-hiking/hikes/flat-creek"
+  ]
+ },
+ {
+  "file": "v022.json",
+  "id": "wa_sherpa_peak_east_ridge",
+  "fact": "rock_grade undersells the technical climbing",
+  "evidence": "STRUCTURAL: the row mixes two lines (the East Ridge and the Balanced Rock obelisk). The East Ridge should win everywhere: grade should drop the 5.7 (e.g. 'Class 4, low 5th'), partner_requirements' 'sustained 5.7 trad leading' should become low-5th scrambling/leading, and the five pitch_detail rows graded 5.4-5.7 (crux placed on a tower below the obelisk) should be cleared or rewritten, since no source gives a pitch breakdown; the commitment numeral (grade says III, commitment II) has no source either. Sources: the peak's route page calls the East Ridge the easier route, mostly 4th with some low 5th, and gives 5.7 only for the Balanced Rock (shoulder stand to its E-side pedestal, bolt-protected friction); a 2005 East Ridge report quotes the route description as '4th and 5th class to 5.0' and found a 4th-class chimney and a harder chimney with a couple of single mid-5th moves; the encyclopedia entry gives the easiest route as class 4. rock_grade ('Class 3-4, short 5th-class moves') is therefore NOT undersold; the reader's proposed direction is wrong. Rewriting pitch rows is beyond a minimal patch, so no patch.",
+  "sources": [
+   "https://www.summitpost.org/sherpa-peak/152244",
+   "https://cascadeclimbers.com/forum/topic/34464-tr-sherpa-peak-northeast-couloir-to-east-ridge-6192005/",
+   "https://en.wikipedia.org/wiki/Sherpa_Peak",
+   "https://onehikeaweek.com/2014/10/19/sherpa-peak/"
+  ]
+ },
+ {
+  "file": "v023.json",
+  "id": "wa_spraying_mantis",
+  "fact": "Trailhead waypoint sits on the crag coordinate with the area's 4,585 ft elevation",
+  "evidence": "STRUCTURAL: waypoints[0] 'FS Road 9070 Turnaround at Silver Basin' carries the crag's own coordinate (47.36741,-121.45564, identical to waypoints[1]) and the parent area's 4,585 ft. The same defect on sibling Drilling Me Softly was fixed by moving the pin to the road end: the U.S. Forest Service road layer ends the left-fork spur at 47.37289,-121.45781 and OpenStreetMap's 9070-310 track at 47.37310,-121.45793 (two independent road datasets ~25 m apart); USGS ground there is ~4,254 ft. Move waypoints[0] to that point and set elev/elevFt 4254. A pin move is outside the patch format, and setting only the elevation would leave the pin on the crag, so no patch here.",
+  "sources": [
+   "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/32",
+   "https://www.openstreetmap.org/way/202991403",
+   "https://epqs.nationalmap.gov/v1/json?x=-121.45787&y=47.373&units=Feet&wkid=4326"
+  ]
+ },
+ {
+  "file": "v024.json",
+  "id": "wa_spire_mountain_scramble",
+  "fact": "approach_logistics trailhead coordinate sits at the North Fork Skykomish Trailhead, ~12 km from the route's start",
+  "evidence": "STRUCTURAL: approach_logistics.trailheadLat/Lng (47.92684,-121.27705) is the North Fork Skykomish Trailhead at the end of FR-63, the wrong start (see the fixed trailhead item: the peak's route page and the club route page both start from the FR-63 pullout on the rise just past the river bridge about a mile east of Galena, ~1,156 ft). The coordinate should move to that pullout; the waypoints[0] pin has no coordinate at all. A coordinate move is outside the patch format.",
+  "sources": [
+   "https://www.summitpost.org/spire-mountain-spire-peak/973789",
+   "https://www.mountaineers.org/activities/routes-places/spire-mountain"
+  ]
+ },
+ {
+  "file": "v024.json",
+  "id": "wa_storm_king_southwest_scramble",
+  "fact": "Where the climbers' path leaves the maintained trail (Park Creek Pass traverse vs the ~4,100 ft washout on the Park Creek trail)",
+  "evidence": "STRUCTURAL: two sources now state the low start explicitly and neither describes a traverse from the pass. The peak's route page: from Park Creek Camp (2,280 ft) follow the Park Creek trail ~2 mi to a creek-crossing camp, then ~2 mi more to a large washout/rockslide of whitish rock; the boot path to Storm King (and Goode) starts about five minutes up-trail beyond it, marked by a small cairn; the Thunder Creek approach crosses Park Creek Pass, descends into Park Creek and climbs back up southeast then east. The club route page: from Two Mile Camp (3,400 ft) ascend ~2 mi to ~4,100 ft, cross a large washout, look for a small cairn a few hundred yards on and climb the burned ridge, trending climber's left through heather and game trails to cairned Class 2-3 ground and the basin below Goode at 7,400 ft. The row's own coordinates also put the peak and the rib camp EAST of the pass, not west. What should change: approach (sentence 'From Park Creek Pass, leave the maintained trail and traverse cross-country west/southwest ... roughly a mile to reach the cirque'), approach_variants[0].notes (same paragraph), waypoints[3].directions ('Leave the maintained trail at the pass and traverse ... west/southwest') and descent_text ('reverse the cross-country traverse east back to Park Creek Pass') should describe crossing the pass, descending the Park Creek trail to the ~4,100 ft washout and climbing the ridge to the 7,400 ft basin (matching itinerary day 2 and timing.sectionBreakdown[1]); the waypoint list needs a washout/boot-path junction pin and the rib camp's distMi (21, only 1.4 mi past the pass) re-measured, which needs a pin addition and distances no source states. That exceeds the patch format, so no patch.",
+  "sources": [
+   "https://www.summitpost.org/storm-king/273954",
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/storm-king-southwest-route"
+  ]
+ },
+ {
+  "file": "v028.json",
+  "id": "wa_e_se_face",
+  "fact": "route grade — 4th class vs a roped 5.6 pitch",
+  "evidence": "STRUCTURAL: this row blends two distinct lines on the east side of Witches Tower and cannot be fixed by patches. The East Face (zig-zag ledges, short 4th-class hand crack, reversed on descent) is what grade, rock_grade, beta, pitch_detail, detailed_rack, bail and the base waypoint directions describe; the Southeast Face (one pitch of 5.6 up the white rock, descended by the South Face/Southwest Corner) is what the itinerary note, schedule, objective, cal, totalNote, descent_text and the approach variant's descent hazard describe. Each line has one independent source (a route database's East Face page at 4th class; a peak page's Southeast Face at 5.6 — a regional guide repeats the same peak-page text), so neither is more documented. Owner fix: split into two rows ('East Face', 4th; 'Southeast Face', 5.6) or rename this one and strip the other line's text.",
+  "sources": [
+   "https://www.mountainproject.com/route/111724575/east-face",
+   "https://www.summitpost.org/witches-tower/154282",
+   "https://wenatcheeoutdoors.org/2016/05/02/witches-tower/"
+  ]
+ },
+ {
+  "file": "v028.json",
+  "id": "wa_e_se_face",
+  "fact": "descent line",
+  "evidence": "STRUCTURAL: follows the route-identity split above. The 4th-class East Face is reversed (descent, bail agree); the 5.6 Southeast Face is descended by the South Face/Southwest Corner side (descent_text, approach_variants hazard). No second source for either descent specific to this row; resolve together with the split into East Face and Southeast Face rows.",
+  "sources": [
+   "https://www.mountainproject.com/route/111724575/east-face",
+   "https://www.summitpost.org/witches-tower/154282"
+  ]
+ },
+ {
+  "file": "v028.json",
+  "id": "wa_witches_tower_south_face",
+  "fact": "crux grade — rock_grade omits it, and 5.4 vs 5.5 elsewhere",
+  "evidence": "STRUCTURAL: two independent sources describe the South Face as a scramble, not a roped climb — the Mountaineers South Face page lists it as an alpine scramble (toward the white wall, exposed slabby ledge around to the east side, large black blocks to the summit) and Wikipedia rates the tower class 3 by its easiest route; the row's beta and rock_grade ('Class 3-4 scramble') agree. The 5.5 step (waypoint 5 note, descent_text, approach-variant hazard) belongs to the Southwest Corner route and the two-pitch 5.4/5.2 pitch_detail, grade 'Grade II, 5.4', pitches 2, rack and partner-requirement 5.4 text to the West Buttress. Owner fix: clear pitch_detail and set pitches to 0/null, grade to a class-3/4 scramble grade, and strip the 5.4/5.5 roped-pitch wording (rack, partner_requirements, seasonal_hazards.exposure, waypoint 5 note, descent_text, approach-variant hazard) — clearing pitch rows is beyond the patch format.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+   "https://en.wikipedia.org/wiki/Witches_Tower_(Washington)",
+   "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-southwest-corner"
+  ]
+ }
+]

@@ -1,0 +1,172 @@
+{
+ "file": "r505.json",
+ "results": [
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Rope and rack required",
+   "verdict": "fixed",
+   "correct_value": "A rope and a small rack (stoppers, pitons, slings) are needed: a ~25 ft 5.2 pitch is led and two rappels are made from self-built anchors.",
+   "evidence": "A 6-day Quinault/Seattle Basin trip report roped up for a 25-ft Class 5.2 sandstone face with good protection and descended with two rappels. A second independent 6-day trip report describes a low Class 5 pitch needing rope and protection, two rappels off the summit block, and pitons used including as a rappel anchor. Kit fields that called the rope optional and no gear needed are rewritten to match.",
+   "sources": [
+    "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/",
+    "https://eileensadventures.com/2020/08/6-days-in-the-olympics-climbing-one-peak-mt-meany"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Rope and rack required",
+     "op": "set",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "expect": "light rope (optional, for a short exposed step near the summit)",
+     "value": "rope (30 m or longer) for the short 5.2 pitch and two rappels"
+    },
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Rope and rack required",
+     "op": "set",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "No technical rock gear required for most of the route; some parties carry a short (30m) rope to protect a short, exposed step just below the summit reported harder than typical Class 3. Ice axe useful early season.",
+     "value": "A rope (30 m or longer) and a small rack of stoppers, a few pitons and slings: the roughly 25 ft 5.2 pitch below the summit is led, and both rappels come off anchors you build yourself. Ice axe useful early season."
+    },
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Rope and rack required",
+     "op": "set",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "None for the standard line",
+     "value": "Small rack of stoppers, a few pitons and slings for the 5.2 pitch and the rappel anchors"
+    },
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Rope and rack required",
+     "op": "set",
+     "column": "watch_out",
+     "path": [
+      4
+     ],
+     "expect": "short, exposed step just below the summit that some parties choose to protect with a rope",
+     "value": "short, exposed 5.2 step just below the summit that is led on a rope and descended by two rappels"
+    },
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Rope and rack required",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "expect": "Class 2-3 scrambling comfort with exposure",
+     "value": "Class 3-4 scrambling with exposure, plus leading a short low-fifth-class pitch and rappelling from anchors you build"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Approach trailhead vs waypoints",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach prose and approach_variants present two genuine approaches (North Fork Quinault/Seattle Basin and Elwha/Dodwell-Rixon Pass); the itinerary, timing, trailhead card and the documented Quinault trip report follow the Quinault line, while the waypoint list (distances from Whiskey Bend) and partner_requirements follow only the Elwha line, and the partner text's 'Goldie/Queets divide' matches no named pass on the row. No external source was found describing a Meany ascent via the Elwha/Dodwell-Rixon line with mileages to confirm the pins, so no rewrite was made; the waypoint list mixes the Quinault trailhead pin with Elwha-line pins and needs an owner decision on which approach the list represents.",
+   "sources": [
+    "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/",
+    "https://en.wikipedia.org/wiki/Mount_Meany"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Crux grade",
+   "verdict": "fixed",
+   "correct_value": "5.2",
+   "evidence": "One trip report rates the single roped face 5.2; the other calls it low Class 5 and no source found gives 5.4. grade, pitch_detail, hazards and itinerary already say 5.2, so rock_grade's 5.4 upper bound is dropped. The beta's 'rated Class 3' line is the published easiest-route rating (also the rating on the general peak reference) framed against the 5.2 reality, so it is left.",
+   "sources": [
+    "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/",
+    "https://eileensadventures.com/2020/08/6-days-in-the-olympics-climbing-one-peak-mt-meany"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Crux grade",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.2-5.4",
+     "value": "5.2"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Total gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only trip report with figures gives ~42 miles and 9,300 ft gained and lost over 6 days, and 2,200 ft camp-to-summit (the itinerary summit day says 1,950). No second independent source states a car-to-car gain/loss for this route, so gain_ft 2500 / loss_ft 2500 and the itinerary day figures (sum 7,200 gain, 2,850 loss) are left unpatched per the rules.",
+   "sources": [
+    "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Quota status of Low Divide",
+   "verdict": "fixed",
+   "correct_value": "Low Divide and Seattle Basin are not quota areas; permits are still reserved in advance.",
+   "evidence": "The park's wilderness reservations page lists its quota areas (Ozette Coast, Royal Basin, Lake Constance, Upper Lena, East Fork Quinault, Flapjack Lakes, Grand/Badger Valleys, Sol Duc/Seven Lakes, Hoh Lake, Hoh River sites) and does not include Low Divide, Seattle Basin or the North Fork Quinault. An independent permit guide lists the same quota areas without Low Divide.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Quota status of Low Divide",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(quota system in summer for popular zones like Low Divide/Seattle Basin)",
+     "replace": "(reserved in advance; Low Divide and Seattle Basin are not quota areas)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Whiskey Bend road walk",
+   "verdict": "fixed",
+   "correct_value": "roughly 7 miles each way",
+   "evidence": "The park's Whiskey Bend trailhead page gives 6.9 miles walking up the road from Madison Falls. A second visitor guide describes about an hour on foot from Madison Falls to the start of the 4.5-mile Whiskey Bend Road, consistent with ~7 miles. The road driveNote's '6 miles' is raised to 7; the bivy note is out of scope.",
+   "sources": [
+    "https://www.nps.gov/places/000/whiskey-bend-trailhead.htm",
+    "http://visitonp.kaleberg.com/places-to-visit/elwha/elwha---out-of-whiskey-bend.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_meany_standard",
+     "fact": "Whiskey Bend road walk",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "adding roughly 6 miles each way",
+     "replace": "adding roughly 7 miles each way"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Only the 5.2 row of ROUTE BREAKDOWN is a roped pitch; the other three rows are scrambling segments, so pitches=1 is consistent.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

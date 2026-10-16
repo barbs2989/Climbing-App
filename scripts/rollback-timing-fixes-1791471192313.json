@@ -1,0 +1,124 @@
+[
+ {
+  "id": "wa_sherpa_glacier",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Early morning for firm snow"
+  },
+  "after": {
+   "totalHrs": 19,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 8,
+   "approachTimeHrs": 4,
+   "recommendedStart": "Early morning for firm snow",
+   "sectionBreakdown": [
+    {
+     "hrs": 4,
+     "fromTo": "Trailhead to the basin camp below the glacier",
+     "section": "Approach"
+    },
+    {
+     "hrs": 7,
+     "fromTo": "Basin camp up the Sherpa Glacier to the summit",
+     "section": "Climb"
+    },
+    {
+     "hrs": 8,
+     "fromTo": "Back down the glacier and out to the trailhead",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Alpine (pre-dawn) start from high camp given the length of the summit day, which includes off-trail travel, roped glacier crossing, and a belayed moat crossing before and after the summit"
+  },
+  "after": {
+   "totalHrs": 23.25,
+   "summitTimeHrs": 9,
+   "descentTimeHrs": 10.25,
+   "approachTimeHrs": 4,
+   "recommendedStart": "Alpine (pre-dawn) start from high camp given the length of the summit day, which includes off-trail travel, roped glacier crossing, and a belayed moat crossing before and after the summit",
+   "sectionBreakdown": [
+    {
+     "hrs": 4,
+     "fromTo": "Trailhead to Swamp Creek Camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 9,
+     "fromTo": "Camp up the Dark Glacier to the summit",
+     "section": "Climb"
+    },
+    {
+     "hrs": 10.25,
+     "fromTo": "Summit back to camp, then out to the trailhead",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_stuart_ice_cliff_glacier",
+  "field": "timing",
+  "before": {
+   "totalHrs": 19.5,
+   "summitTimeHrs": 14,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 5.5,
+   "recommendedStart": "3:00 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 5.5,
+     "note": "Leave the Stuart Lake Trail below Colchuck junction and follow Mountaineer Creek into the basin below the glacier, carrying a full ice rack.",
+     "fromTo": "Approach to a bivy near the glacier",
+     "section": "Approach"
+    },
+    {
+     "hrs": 14,
+     "note": "A pre-dawn start crosses the glacier and exits the crux ice/cornice while conditions are firm. The route tops out on the ridge below the false summit, and the Sherpa Glacier is descended back …",
+     "fromTo": "Climb the Ice Cliff Glacier to the summit, descend the Sherpa Glacier",
+     "section": "Climb"
+    }
+   ]
+  },
+  "after": {
+   "totalHrs": 24,
+   "summitTimeHrs": 14,
+   "descentTimeHrs": 4.5,
+   "approachTimeHrs": 5.5,
+   "recommendedStart": "3:00 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 5.5,
+     "note": "Leave the Stuart Lake Trail below Colchuck junction and follow Mountaineer Creek into the basin below the glacier, carrying a full ice rack.",
+     "fromTo": "Approach to a bivy near the glacier",
+     "section": "Approach"
+    },
+    {
+     "hrs": 14,
+     "note": "A pre-dawn start crosses the glacier and exits the crux ice/cornice while conditions are firm. The route tops out on the ridge below the false summit, and the Sherpa Glacier is descended back …",
+     "fromTo": "Climb the Ice Cliff Glacier to the summit, descend the Sherpa Glacier",
+     "section": "Climb"
+    },
+    {
+     "hrs": 4.5,
+     "fromTo": "Hike out",
+     "section": "Descent",
+     "note": "Pack up the basin camp and walk back down Mountaineer Creek and the Stuart Lake Trail to the trailhead."
+    }
+   ]
+  }
+ }
+]

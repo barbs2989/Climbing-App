@@ -1,0 +1,420 @@
+{
+ "file": "r074.json",
+ "results": [
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No two independent sources give a pitch count for the Northeast Buttress. The Alpine Institute profile describes it by terrain only (8-12 hours base to the 7,100 ft bivy, then glacier and a ~200 ft ice pitch) with no count; one trip-report summary describes roughly 30 roped pitches, belayed or simul-climbed. Much of the lower route is vegetation that parties pitch short or simul, so counts vary by party; neither 20 nor 12 could be confirmed, so nothing is changed.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/",
+    "https://www.summitpost.org/ne-buttress/166094"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "obj_haz names the Sill Glacier / a 'descent glacier', which is not on this route's own descent",
+   "verdict": "fixed",
+   "correct_value": "The Sill Glacier fills the C-J couloir; it is a hazard only for parties who descend the couloir instead of the row's stated Doug's Direct descent (which crosses the Cache Glacier).",
+   "evidence": "The Sill Glacier is real and lies in the Cascade-Johannesburg couloir between Cascade Peak and Johannesburg (SummitPost Sill Glacier/Johannesburg pages; Turns-All-Year CJ report). A NE Buttress party that descended the C-J couloir called it the Sill Glacier and met multiple crevasse/bergschrund crossings (Dr Dirtbag). The Alpine Institute profile has the standard Doug's Direct descent dropping onto the Cache Glacier. So the two obj_haz entries describe the couloir alternative, not this row's stated descent; they are reworded to say so rather than deleted.",
+   "sources": [
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/",
+    "https://www.summitpost.org/sill-glacier/310635",
+    "https://turns-all-year.com/trip-reports/cj-couloir-and-cascade-pass-couloir",
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "find": "Icefall and rockfall on the Sill Glacier descent couloir",
+     "replace": "Icefall and rockfall in the C-J couloir (Sill Glacier) for parties who descend it instead of Doug's Direct",
+     "id": "wa_johannesburg_mountain_northeast_buttress",
+     "fact": "obj_haz names the Sill Glacier / a 'descent glacier', which is not on this route's own descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      3
+     ],
+     "find": "Crevasses and a bergschrund on the descent glacier",
+     "replace": "Crevasses and a bergschrund on the Sill Glacier if descending the C-J couloir; a Cache Glacier crossing on Doug's Direct",
+     "id": "wa_johannesburg_mountain_northeast_buttress",
+     "fact": "obj_haz names the Sill Glacier / a 'descent glacier', which is not on this route's own descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "seasonal_hazards.crevasses claims no glacier travel, but the route's own descent crosses a glacier",
+   "verdict": "fixed",
+   "correct_value": "Real glacier terrain: above the 7,100 ft bivy the route climbs a snow arete onto the upper glacier to the final ice headwall, and the Doug's Direct descent crosses the Cache Glacier (the C-J couloir alternative crosses crevasses and a bergschrund on the Sill Glacier). The hanging glaciers above and beside the face also produce the icefall/avalanche hazard",
+   "evidence": "The Alpine Institute profile says that after the 7,100 ft bivy parties follow the snow arete onto the broader glacier and continue up it to the final headwall, and that Doug's Direct drops onto the Cache Glacier. Dr Dirtbag's NE Buttress report describes multiple crevasse/bergschrund crossings descending the C-J couloir (Sill Glacier). The row's own itinerary ('snow arete, glacier crossing'), bivy entries and obj_haz agree; the N/A framing is the outlier.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "N/A - no roped glacier travel is required on the buttress itself, but the hanging glaciers above and beside the face produce the icefall/avalanche hazard",
+     "replace": "Real glacier terrain: above the 7,100 ft bivy the route climbs a snow arete onto the upper glacier to the final ice headwall, and the Doug's Direct descent crosses the Cache Glacier (the C-J couloir alternative crosses crevasses and a bergschrund on the Sill Glacier). The hanging glaciers above and beside the face also produce the icefall/avalanche hazard",
+     "id": "wa_johannesburg_mountain_northeast_buttress",
+     "fact": "seasonal_hazards.crevasses claims no glacier travel, but the route's own descent crosses a glacier"
+    }
+   ]
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "access.notes/rules describe Boston Basin's specific camping quota, not this route's own camp",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "On this row access.rules does not mention Boston Basin (it states the park-wide rule: day climbs need no permit, overnights do); access.notes describes the park-wide 60/40 reservation/walk-up split and names Boston Basin only as an example, which does not conflict with the buttress bivy or the Johannesburg zone permit in bivy[0].",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "access.closures calls this route's target season late April/May, but the route is a July-August climb",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Season Jul-Aug (mid-July through August)",
+   "evidence": "Documented NE Buttress ascents are midsummer: the Alpine Institute profile's ascent was July 2015, Dr Dirtbag's July 2014, and a CascadeClimbers trip report is dated 08/01/2020. The row's season, best_season, seasonal_guidance and climate all say July-August; only access.closures (text shared with the spring CJ Couloir row) says late April/May.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/",
+    "https://cascadeclimbers.com/forum/topic/103590-tr-johannesburg-mountain-ne-buttress-08012020/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "this matters for this route's late-April/May target season, since the trailhead itself may still be inaccessible by vehicle.",
+     "replace": "this can affect an early-July attempt, since the trailhead itself may still be inaccessible by vehicle.",
+     "id": "wa_johannesburg_mountain_northeast_buttress",
+     "fact": "access.closures calls this route's target season late April/May, but the route is a July-August climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "fact": "approach time stated two different ways",
+   "verdict": "unresolved",
+   "correct_value": "Trailhead to the couloir apron is under an hour (about 20 minutes after leaving the road); the couloir is climbed from the road, often in a day, not after a 6-hour hike up the Cascade Pass trail to a bivy near the col.",
+   "evidence": "Two independent reports agree the couloir base is minutes from the road: Where Is Kyle Miller walked under a mile of road, dropped into the valley and had crampons on at the base in about 20 minutes, as a day trip; Turns-All-Year made a short contour from near the Cascade Pass trailhead to the lower couloir, also a day trip. The row's approach and approach_variants agree. The conflict is real, but the 6-hour figure is not a stray number: itinerary day 1 (6 h, 3 mi, 3,200 ft via the Cascade Pass trail to a bivy near the col), timing.approachTimeHrs, sectionBreakdown[0], totalHrs 25 and totalNote all describe that approach, while day 2's schedule then starts up the couloir from the bivy. Fixing it means rebuilding the itinerary as a plan (car-to-car vs a night at Johannesburg Camp by the trailhead), a plan choice rather than one researched value, so no patch is written; flagged for an itinerary rebuild.",
+   "sources": [
+    "https://www.whereiskylemiller.com/highway-20/cj-couloir/",
+    "https://turns-all-year.com/trip-reports/cj-couloir-and-cascade-pass-couloir"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "fact": "itinerary.cal says the couloir climbs best June-August, against the row's late-April-June season",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "late April through June",
+   "evidence": "SummitPost's Johannesburg page says the couloir becomes extremely difficult mid-to-late season as the Sill Glacier breaks up and the snow goes discontinuous; documented ascents are winter/spring (Turns-All-Year January 2025, SkiSickness April 2003, Where Is Kyle Miller on firm spring snow). The row's season, best_season, seasonal_guidance, crowds, climate and seasonal_hazards all say late April-June; itinerary.cal's 'June-August' is the outlier.",
+   "sources": [
+    "https://www.summitpost.org/johannesburg-mountain/154446",
+    "https://turns-all-year.com/trip-reports/cj-couloir-and-cascade-pass-couloir",
+    "https://skisickness.com/yr/2003/04/cj-couloir/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "well before dawn in June-August;",
+     "replace": "well before dawn from late April through June;",
+     "id": "wa_johannesburg_mountain_cj_couloir",
+     "fact": "itinerary.cal says the couloir climbs best June-August, against the row's late-April-June season"
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "fact": "approach routed via Cascade Pass in waypoints, but never mentioned in the approach prose",
+   "verdict": "unresolved",
+   "correct_value": "The approach leaves the road by the Cascade Pass trailhead and crosses the Cascade River and moraine directly to the C-J couloir; it does not go up to Cascade Pass.",
+   "evidence": "The route starts partway up the C-J couloir from a trailhead near the Cascade Pass parking lot (Mountain Project 1963 route page). Reports of the couloir approach put its base about 20 minutes from the road after dropping into the valley (Where Is Kyle Miller; Turns-All-Year), with no ascent to Cascade Pass. The fact is settled, but the fix is removing waypoints[1] (the Cascade Pass pin) and re-deriving the later pins' distMi (4.3/4.8/5.5, all measured via the pass) and the river-crossing elev 4,300 ft, which is pin work outside this patch scope. Flagged for the waypoint/pin pass; no patch written.",
+   "sources": [
+    "https://www.mountainproject.com/route/119545324/northeast-ridge-1963-route",
+    "https://www.whereiskylemiller.com/highway-20/cj-couloir/",
+    "https://turns-all-year.com/trip-reports/cj-couloir-and-cascade-pass-couloir"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "fact": "summit waypoint elevFt 8066 vs high_point_ft 8200",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": 8200,
+   "evidence": "Johannesburg Mountain is 8,200+ ft on the USGS/NGVD29 topo (Wikipedia); PeakVisor gives 2,505 m (8,219 ft) and Peakery 8,211 ft. The row's high_point_ft and both sibling Johannesburg routes' summit pins say 8,200; this row's summit waypoint alone says 8,066.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Johannesburg_Mountain",
+    "https://peakvisor.com/peak/johannesburg-mountain.html",
+    "https://peakery.com/johannesburg-mountain-washington/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elevFt"
+     ],
+     "expect": 8066,
+     "value": 8200,
+     "id": "wa_northeast_ridge_1963_route",
+     "fact": "summit waypoint elevFt 8066 vs high_point_ft 8200"
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "fact": "access.closures calls this route's target season late April/May, but the route is a summer rock climb",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Summer (late June/July through September)",
+   "evidence": "The row's season, best_season, beta ('Best season: July-September'), seasonal_guidance, climate and trailhead waypoint directions all place this rock route in summer; only access.closures (text shared with the spring CJ Couloir row) says late April/May. Externally, the neighbouring NE-face rock routes are documented as midsummer climbs (Alpine Institute NE Buttress, July 2015; Spokalpine NE Rib, August 2020).",
+   "sources": [
+    "https://www.mountainproject.com/route/119545324/northeast-ridge-1963-route",
+    "https://spokalpine.com/2020/08/09/johannesburg-57-ne-rib-v-5-6/",
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "this matters for this route's late-April/May target season, since the trailhead itself may still be inaccessible by vehicle.",
+     "replace": "this can affect an early-summer attempt, since the trailhead itself may still be inaccessible by vehicle.",
+     "id": "wa_northeast_ridge_1963_route",
+     "fact": "access.closures calls this route's target season late April/May, but the route is a summer rock climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "total gain/loss vs itinerary day sums",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 5150, loss_ft 5150 (itinerary sum)",
+   "evidence": "The 8,100 ft figure matches a different line: a ~15-mile trip over Easy Pass, down Fisher Creek to ~5,050 ft and up the South Spur, logged 8,100 ft gained and lost (trailcatjim). This row's route sidehills from Easy Pass: the trail gains about 2,800 ft to the ~6,500 ft pass (WTA; USFS), the traverse runs at ~6,600-6,800 ft to the 6,600 ft basin (Country Highpoints), and the ~8,680 ft summit is about 2,100 ft above camp. That gives roughly 5,000-5,200 ft each way, matching the itinerary's 2,900+2,100+150 = 5,150.",
+   "sources": [
+    "https://trailcatjim.com/katsuk-peak-via-south-spur-east-ridge/",
+    "https://www.wta.org/go-hiking/hikes/easy-pass",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 8100,
+     "value": 5150,
+     "id": "wa_katsuk_peak_gully",
+     "fact": "total gain/loss vs itinerary day sums"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 6000,
+     "value": 5150,
+     "id": "wa_katsuk_peak_gully",
+     "fact": "total gain/loss vs itinerary day sums"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "approach prose says 7-8 miles and 4,500-5,000+ ft to camp; itinerary/waypoints say 5 miles and 2,900 ft",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "roughly 5 miles and about 3,000 ft to camp",
+   "evidence": "Easy Pass is 3.5-3.6 miles and ~2,800 ft from the trailhead (WTA; USFS), then about an hour of sidehill at 6,600-6,800 ft reaches the 6,600 ft basin (Country Highpoints), so camp is ~5 miles and ~3,000 ft in. The row's itinerary day 1 (5 mi, 2,900 ft), camp waypoint (distMi 5) and 12-mile round trip agree; the approach prose's 7-8 miles / 4,500-5,000+ ft is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/easy-pass",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(roughly 7-8 miles and 4,500-5,000+ ft to camp)",
+     "replace": "(roughly 5 miles and about 3,000 ft to camp)",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "approach prose says 7-8 miles and 4,500-5,000+ ft to camp; itinerary/waypoints say 5 miles and 2,900 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "itinerary day 1 and timing breakdown say to sidehill EAST from Easy Pass; the camp lies west-northwest",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "west",
+   "evidence": "From Easy Pass the route to the basin below Mesahchie traverses west-northwest at ~6,800 ft on heather and scree (SummitPost Ragged Ridge Camp description); Country Highpoints describes the same 6,600-6,800 ft traverse to the basin beneath Mesahchie, which lies west of the pass. The row's approach, bivy notes and waypoints (pass lng -120.842, camp lng -120.871) agree on west.",
+   "sources": [
+    "https://www.summitpost.org/ragged-ridge-camp/907106",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "sidehill traverse east across",
+     "replace": "sidehill traverse west across",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "itinerary day 1 and timing breakdown say to sidehill EAST from Easy Pass; the camp lies west-northwest"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "sidehill traverse east across",
+     "replace": "sidehill traverse west across",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "itinerary day 1 and timing breakdown say to sidehill EAST from Easy Pass; the camp lies west-northwest"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Summer backcountry permits cost $10 per person plus a $6 permit fee (no charge early October to mid-May)",
+   "evidence": "The NPS North Cascades permits page states permits cost $10 per person plus a $6 fee; the park's news release says this per-person structure took effect March 2024 and applies mid-May through early October. Backwoods Atlas independently says the permit is not free. access.fees is correct; the three 'free' wordings are removed rather than restating the price.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://www.backwoodsatlas.com/field-notes/north-cascades-backcountry-permits.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "A free NPS backcountry permit is required to camp here.",
+     "replace": "An NPS backcountry permit is required to camp here.",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "A free backcountry permit is required to camp at the basin.",
+     "replace": "A backcountry permit is required to camp at the basin.",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "requires a free backcountry camping permit for the basin camp",
+     "replace": "requires a backcountry camping permit for the basin camp",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "access.notes/rules describe Boston Basin/Eldorado/Sulphide Glacier permit quotas, unrelated to this trailhead",
+   "verdict": "fixed",
+   "correct_value": "Remove the Boston Basin camp rule from access.rules; the park-wide 60/40 reservation note is accurate and stays.",
+   "evidence": "Katsuk is reached from the Easy Pass trailhead on SR 20 (USFS Easy Pass trail page; WTA), whereas Boston Basin is a separate zone off Cascade River Road. The NPS permits page confirms the park-wide reservation/walk-up system that access.notes describes, so notes is kept; the Boston Basin two-designated-camp rule in access.rules does not apply to this route's basin camp and is removed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail",
+    "https://www.wta.org/go-hiking/hikes/easy-pass",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": " Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft).",
+     "replace": "",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "access.notes/rules describe Boston Basin/Eldorado/Sulphide Glacier permit quotas, unrelated to this trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "land manager stated two different ways",
+   "verdict": "fixed",
+   "correct_value": "Trailhead and trail to Easy Pass: Okanogan-Wenatchee NF (Methow Valley RD); beyond the pass: North Cascades NP",
+   "evidence": "The USFS Easy Pass trail page lists the Methow Valley Ranger District and says that once over the pass you are in North Cascades National Park; WTA lists the land manager as Okanogan-Wenatchee NF, Methow Valley RD, with a Northwest Forest Pass required. land_manager is extended to name the Forest Service trailhead so it agrees with landManager and passRequired.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail",
+    "https://www.wta.org/go-hiking/hikes/easy-pass"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "replace": "National Park Service — North Cascades National Park (Stephen Mather Wilderness) beyond Easy Pass; the trailhead and trail to the pass are Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_katsuk_peak_gully",
+     "fact": "land manager stated two different ways"
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "fact": "bivy list includes camps for Black Peak/Corteo Peak, reached from a different trailhead than this route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Regional camp list. Serving this route: Easy Pass trailhead (SR 20), Mesahchie basin below the col (the route's own camp), Ragged Ridge crest bivy south of Mesahchie Col, and Fisher Camp (the Fisher Creek alternative). Not serving it: Wing Lake, Lewis Lake and the Rainy Pass trailhead lots, which are Black Peak/Corteo camps off the Rainy Pass trailhead.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

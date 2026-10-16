@@ -1,0 +1,2031 @@
+{
+ "batches": [
+  "b025.json",
+  "b026.json",
+  "b027.json",
+  "b028.json"
+ ],
+ "routes_read": 23,
+ "routes": [
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "name": "West Ridge / Saddle Traverse",
+   "area": "Gardner Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5800"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "3300 + 3900 + 200 = 7400"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 7,300-8,000 ft of total gain/loss"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~7,000-8,000 ft gain"
+      }
+     ],
+     "why": "Technical stats show 5,800 ft total ascent while the trip plan totals 7,400 ft (27% more) for the same Gardner+North Gardner outing.",
+     "internal_resolution": "itinerary days, totalNote and partner_requirements agree on ~7,400 ft; gain_ft 5800 is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation loss",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "loss_ft",
+       "says": "5800"
+      },
+      {
+       "field": "itinerary.days[*].lossFt",
+       "says": "100 + 3900 + 3500 = 7500"
+      }
+     ],
+     "why": "Loss column disagrees with the itinerary sum by 1,700 ft.",
+     "internal_resolution": "itinerary sum and totalNote (~7,300-8,000) agree; loss_ft is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "16.9"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day, ~25-mile round trip"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "10 + 5 + 10 = 25"
+      }
+     ],
+     "why": "Technical stats distance 16.9 km (10.5 mi, one-way to the meadows) while the header/itinerary show 25 mi round trip for the same quantity.",
+     "internal_resolution": "dist_km appears to be one-way to Gardner Meadows; itinerary is round trip",
+     "needs_research": false
+    },
+    {
+     "fact": "Gardner Meadows elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "5700"
+      },
+      {
+       "field": "approach",
+       "says": "a broad, wildflower-and-lupine-filled basin at about 6,000 ft"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a basin camp around 6,000-6,250 ft"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From Gardner Meadows around 6,000 ft"
+      }
+     ],
+     "why": "The meadows camp is pinned 300 ft lower than every prose statement.",
+     "internal_resolution": "three prose fields agree on ~6,000 ft; the waypoint elev 5700 is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "North Fork Wolf Creek crossing distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2.3"
+      },
+      {
+       "field": "hazards[4]",
+       "says": "difficult early-season ford of the North Fork Wolf Creek at ~2.3 miles"
+      },
+      {
+       "field": "approach",
+       "says": "At roughly 2.6 miles the trail fords the North Fork of Wolf Creek"
+      }
+     ],
+     "why": "Approach prose puts the ford 0.3 mi further than the waypoint and hazard list.",
+     "internal_resolution": "waypoint and hazards agree on 2.3 mi",
+     "needs_research": false
+    },
+    {
+     "fact": "Difficulty of the Gardner-North Gardner connecting ridge",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "that connecting ridge is notably harder (class 3-4, gendarmes, occasional unexpected class 4)"
+      },
+      {
+       "field": "rope_note",
+       "says": "West Ridge/Saddle Traverse is Class 3-4 depending on line/conditions"
+      },
+      {
+       "field": "descent_text",
+       "says": "the ridge toward Point 8487 and North Gardner Mountain is generally class 2, but includes a gendarme or two"
+      },
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      }
+     ],
+     "why": "The traverse the route is named for is described as class 3-4 in beta/rope_note but 'generally class 2' in the descent, with the headline grade Class 2-3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of the small meadow basin above Gardner Meadows",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Around 6,200 ft you reach a small meadow basin below the peak"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb the grassy/scree slopes west of the outlet stream to a small basin around 7,000 ft"
+      },
+      {
+       "field": "timing.sectionBreakdown[1].note",
+       "says": "to a small basin around 7,000 ft"
+      }
+     ],
+     "why": "The same 'small basin' below the ridge is placed at 6,200 ft in the approach and ~7,000 ft in the itinerary/timing.",
+     "internal_resolution": "approach, approach_variants, bivy[1] and climbing_route all put the small meadow basin at ~6,200 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction from Gardner summit toward North Gardner / Point 8,487",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "North Gardner Mountain ... about a mile to the northwest"
+      },
+      {
+       "field": "beta",
+       "says": "descend southwest along the summit ridge to a false summit, then drop ... to a saddle near Point 8487"
+      },
+      {
+       "field": "descent_text",
+       "says": "From Gardner's summit the route continues southwest along the summit ridge"
+      }
+     ],
+     "why": "Prose sends the party southwest toward a peak the overview (and the saddle pin, due west of the summit) places northwest.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche exposure",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route climbed outside avalanche season"
+      },
+      {
+       "field": "obj_haz[3]",
+       "says": "Avalanche hazard on Gardner's southern slopes when snow is present"
+      },
+      {
+       "field": "best_season",
+       "says": "winter/spring approaches face avalanche exposure on the south-facing slopes above Gardner Meadows"
+      }
+     ],
+     "why": "AVALANCHE panel says N/A while KNOWN HAZARDS lists avalanche hazard on the route's slopes (season includes snowy June).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Access text copied from the Washington Pass area",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+      },
+      {
+       "field": "access.rules",
+       "says": "no camping within ¼ mile of Cutthroat Lake"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "WA-20 (North Cascades Highway) closes gate-to-gate ... the entire Washington Pass corridor is car-inaccessible in winter"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Wolf Creek Trailhead"
+      }
+     ],
+     "why": "ACCESS names Washington Pass trailheads and Cutthroat Lake rules for a route reached from the Wolf Creek Trailhead above Winthrop.",
+     "internal_resolution": "road, waypoints, approach and approach_logistics all use Wolf Creek TH (FS 5505); the Washington Pass text is contamination",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness named in avalanche zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "no NWAC zone forecast specifically applies to this Pasayten/Okanogan summit"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Lake Chelan-Sawtooth Wilderness"
+      }
+     ],
+     "why": "The peak is called a Pasayten summit in one field and in the Lake Chelan-Sawtooth Wilderness everywhere else.",
+     "internal_resolution": "access, overview, approach and bivy all say Lake Chelan-Sawtooth Wilderness",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "name": "North Face",
+   "area": "Golden Horn",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "The standard access to Golden Horn's north side starts from the Swamp Creek pullout on Hwy 20 (about 3 miles before Rainy Pass), bushwhacking up Swamp Creek to Snowy Lakes on the PCT (~6,700 ft)"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Rainy Pass PCT North Trailhead"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Rainy Pass North Trailhead (PCT)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "From Rainy Pass it is roughly twenty miles round trip over Cutthroat and Granite Passes"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Parties wanting Hardy together with Golden Horn and Tower should use the PCT and the Snowy Lakes or Methow Pass camps instead; parties wanting Hardy alone should start here."
+      }
+     ],
+     "why": "APPROACH sends the party up a Swamp Creek bushwhack while the TRAILHEAD card, waypoints, access and camping all use the Rainy Pass PCT trailhead, and the camping section calls Swamp Creek the Mount Hardy start.",
+     "internal_resolution": "approach_logistics, waypoints, access.overnight_permit, road and bivy all use the Rainy Pass PCT North trailhead; the Swamp Creek approach is the outlier",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "name": "East Face",
+   "area": "Golden Horn",
+   "contradictions": [
+    {
+     "fact": "Approach line to Snowy Lakes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From a camp at Snowy Lakes (reached via Swamp Creek and the PCT from Rainy Pass)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "Access via the Rainy Pass trailhead on SR-20, same as the Southwest Route, to reach Snowy Lakes basecamp."
+      }
+     ],
+     "why": "The approach names both a Swamp Creek start and the Rainy Pass PCT start as one line; the road section names only Rainy Pass.",
+     "internal_resolution": "road names the Rainy Pass trailhead; the sibling Golden Horn rows put Swamp Creek as the separate Mount Hardy start",
+     "needs_research": true
+    },
+    {
+     "fact": "Which pitch is the crux and its grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0]",
+       "says": "P3 5.10+ Technical crux on comparatively good rock"
+      },
+      {
+       "field": "pitch_detail[1]",
+       "says": "P4 5.10 R The route's true crux"
+      },
+      {
+       "field": "beta",
+       "says": "followed by a harder and more dangerous fourth-pitch 'true crux' ... (5.10 R)"
+      }
+     ],
+     "why": "The 'harder' true crux pitch carries a lower grade (5.10 R) than the pitch it is said to be harder than (5.10+), which reads as inconsistent.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_northeast_arete",
+   "name": "Northeast Arête",
+   "area": "Golden Horn",
+   "contradictions": []
+  },
+  {
+   "id": "wa_golden_horn_southwest_route",
+   "name": "Southwest Route",
+   "area": "Golden Horn",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2700"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 10–11 miles and 2,700 ft of gain one-way from the trailhead"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4880"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "8366"
+      }
+     ],
+     "why": "The header/technical-stats gain of 2,700 ft is the trailhead-to-Snowy-Lakes figure; the route's own trailhead (4,880 ft) and summit (8,366 ft) pins require at least ~3,500 ft net, plus the scramble above the lakes (~6,700-7,000 ft).",
+     "internal_resolution": "approach prose shows 2,700 ft is to the lakes only; the pins show the summit gain is larger",
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Typically closed mid-November through mid/late spring"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "access.closures",
+       "says": "SR-20 seasonal closure blocks access roughly Nov–May"
+      }
+     ],
+     "why": "Three fields give different closure months for the same highway gate.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_iceman",
+   "name": "Iceman",
+   "area": "Ice box left side",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach to the crag",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Blue Lake Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box"
+      },
+      {
+       "field": "road.name",
+       "says": "Cutthroat Lake Trailhead, SR-20, Washington Pass"
+      },
+      {
+       "field": "itinerary",
+       "says": "drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail"
+      }
+     ],
+     "why": "APPROACH describes a different crag (Spire Gully right / Alpenkuhl) while the waypoints name the Blue Lake Trailhead and GETTING THERE names the Cutthroat Lake Trailhead — three different starts for one Ice Box route.",
+     "internal_resolution": "the approach text is copied from the Alpenkuhl rows (it names Alpenkuhl and Tiger Wall, not the Ice Box); waypoints, hazards and itinerary agree on a slab/dry-creek-bed approach, but the actual parking (Blue Lake TH vs hairpin vs Cutthroat) is unresolved",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach length and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.8"
+      },
+      {
+       "field": "gain_ft",
+       "says": "500"
+      },
+      {
+       "field": "waypoints[0].elev / waypoints[1].elev",
+       "says": "5200 / 5490 (290 ft)"
+      }
+     ],
+     "why": "A 10-15 minute approach, a 1.8 mi waypoint distance, 500 ft of gain and a 290 ft pin difference cannot all describe the same walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual"
+      },
+      {
+       "field": "access._raw.parking_pass",
+       "says": "Northwest Forest Pass ($5 day / $30 annual)"
+      }
+     ],
+     "why": "ACCESS says no pass is required and that a Northwest Forest Pass is required.",
+     "internal_resolution": "parking_pass and _raw.parking_pass agree a Northwest Forest Pass is required; passRequired 'None' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure / reopening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "climate.spring",
+       "says": "Highway typically still gated or freshly reopened (mid-to-late April)"
+      }
+     ],
+     "why": "GETTING THERE gives a mid-June reopening while ACCESS and CLIMATE say mid/late April (the dated closure may be a one-year exception, but it is not labelled as such against the typical window).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Watch-out list describes a waterfall ice climb",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "Ephemeral waterfall ice formation—flow dependent on consistent freezing temperatures ... Avalanche terrain exposure—upper drainage may load with wind slab ... Steep ice pitches (80+ degrees)"
+      },
+      {
+       "field": "season",
+       "says": "Summer — a shaded destination good for hot days"
+      },
+      {
+       "field": "beta",
+       "says": "Climbs a steep face on good holds to a bolt guarding a thin finger-crack move"
+      }
+     ],
+     "why": "The Safety tab warns of waterfall ice, avalanche slopes and 80-degree ice pitches on a one-pitch summer 5.10 rock route.",
+     "internal_resolution": "every other field describes a summer granite rock pitch; watch_out is copied from an ice route",
+     "needs_research": false
+    },
+    {
+     "fact": "Sport vs trad protection",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "discipline",
+       "says": "sport"
+      },
+      {
+       "field": "beta",
+       "says": "Mixed protection (3 bolts plus small-to-mid cams) makes it the trad line of the three Ice Box routes"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "supplement with a small rack of cams from about BD #0.3 to #1"
+      }
+     ],
+     "why": "The route is filed as sport while its own beta and rack call it the crag's trad/mixed line needing cams.",
+     "internal_resolution": "beta, overview, detailed_rack and pro_needs agree it needs cams",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_route_c",
+   "name": "Route C",
+   "area": "Ice box left side",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach to the crag",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Blue Lake Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box"
+      },
+      {
+       "field": "road.name",
+       "says": "Cutthroat Lake Trailhead, SR-20, Washington Pass"
+      },
+      {
+       "field": "itinerary",
+       "says": "drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail"
+      }
+     ],
+     "why": "APPROACH describes a different crag (Spire Gully right / Alpenkuhl) while the waypoints name the Blue Lake Trailhead and GETTING THERE names the Cutthroat Lake Trailhead — three different starts for one Ice Box route.",
+     "internal_resolution": "the approach text is copied from the Alpenkuhl rows (it names Alpenkuhl and Tiger Wall, not the Ice Box); waypoints, hazards and itinerary agree on a slab/dry-creek-bed approach, but the actual parking (Blue Lake TH vs hairpin vs Cutthroat) is unresolved",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach length and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.8"
+      },
+      {
+       "field": "gain_ft",
+       "says": "500"
+      },
+      {
+       "field": "waypoints[0].elev / waypoints[1].elev",
+       "says": "5200 / 5490 (290 ft)"
+      }
+     ],
+     "why": "A 10-15 minute approach, a 1.8 mi waypoint distance, 500 ft of gain and a 290 ft pin difference cannot all describe the same walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual"
+      },
+      {
+       "field": "access._raw.parking_pass",
+       "says": "Northwest Forest Pass ($5 day / $30 annual)"
+      }
+     ],
+     "why": "ACCESS says no pass is required and that a Northwest Forest Pass is required.",
+     "internal_resolution": "parking_pass and _raw.parking_pass agree a Northwest Forest Pass is required; passRequired 'None' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure / reopening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "climate.spring",
+       "says": "Highway typically still gated or freshly reopened (mid-to-late April)"
+      }
+     ],
+     "why": "GETTING THERE gives a mid-June reopening while ACCESS and CLIMATE say mid/late April (the dated closure may be a one-year exception, but it is not labelled as such against the typical window).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_route_d",
+   "name": "Route D",
+   "area": "Ice box left side",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach to the crag",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Blue Lake Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box"
+      },
+      {
+       "field": "road.name",
+       "says": "Cutthroat Lake Trailhead, SR-20, Washington Pass"
+      },
+      {
+       "field": "itinerary",
+       "says": "drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail"
+      }
+     ],
+     "why": "APPROACH describes a different crag (Spire Gully right / Alpenkuhl) while the waypoints name the Blue Lake Trailhead and GETTING THERE names the Cutthroat Lake Trailhead — three different starts for one Ice Box route.",
+     "internal_resolution": "the approach text is copied from the Alpenkuhl rows (it names Alpenkuhl and Tiger Wall, not the Ice Box); waypoints, hazards and itinerary agree on a slab/dry-creek-bed approach, but the actual parking (Blue Lake TH vs hairpin vs Cutthroat) is unresolved",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach length and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.8"
+      },
+      {
+       "field": "gain_ft",
+       "says": "500"
+      },
+      {
+       "field": "waypoints[0].elev / waypoints[1].elev",
+       "says": "5200 / 5490 (290 ft)"
+      }
+     ],
+     "why": "A 10-15 minute approach, a 1.8 mi waypoint distance, 500 ft of gain and a 290 ft pin difference cannot all describe the same walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual"
+      },
+      {
+       "field": "access._raw.parking_pass",
+       "says": "Northwest Forest Pass ($5 day / $30 annual)"
+      }
+     ],
+     "why": "ACCESS says no pass is required and that a Northwest Forest Pass is required.",
+     "internal_resolution": "parking_pass and _raw.parking_pass agree a Northwest Forest Pass is required; passRequired 'None' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure / reopening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "climate.spring",
+       "says": "Highway typically still gated or freshly reopened (mid-to-late April)"
+      }
+     ],
+     "why": "GETTING THERE gives a mid-June reopening while ACCESS and CLIMATE say mid/late April (the dated closure may be a one-year exception, but it is not labelled as such against the typical window).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_particulate_matter",
+   "name": "Particulate Matter",
+   "area": "Ice Box right side",
+   "contradictions": [
+    {
+     "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout ... Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall)"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Ice Box right side topout"
+      },
+      {
+       "field": "itinerary",
+       "says": "drive to the hairpin pullout, make the 15-minute scramble approach into the Ice Box"
+      }
+     ],
+     "why": "APPROACH directs the party to Spire Gully/Alpenkuhl (a sunny south-facing wall) instead of the shady Ice Box the rest of the row describes.",
+     "internal_resolution": "itinerary, face, waypoints and overview all describe the Ice Box; the approach is copied from the Alpenkuhl rows",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness, ranger district and permit",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "access.permitZone",
+       "says": "Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.landManager",
+       "says": "USFS Okanogan-Wenatchee National Forest (Chelan Ranger District)"
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issued wilderness permit (required)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      },
+      {
+       "field": "access.rules",
+       "says": "No climbing or wilderness permit required for day climbing."
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Methow Valley Ranger District (Okanogan-Wenatchee National Forest), Winthrop, WA"
+      }
+     ],
+     "why": "ACCESS says a wilderness permit is required in the Glacier Peak Wilderness under the Chelan RD, and also that no permit is required and the manager is the Methow Valley RD — a roadside Washington Pass crag is neither in Glacier Peak Wilderness nor Chelan RD.",
+     "internal_resolution": "land_manager, notes, rules and emergency agree on Methow Valley RD with no day permit; the Glacier Peak/Chelan/permit values (from access._raw, which also mentions Image Lake and Ice Creek Ridge) are contamination from another peak",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at the hairpin pullout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "Recreation Pass at trailhead (if developed recreation site)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+      }
+     ],
+     "why": "Neither statement addresses the hairpin pullout this route uses, and they give different pass requirements.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Base/top elevation of the wall",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "5305"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500 (Ice Box right side topout)"
+      },
+      {
+       "field": "length_m",
+       "says": "24"
+      }
+     ],
+     "why": "The topout pin is ~195 ft above the stated high point on an 80 ft route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ephemeral",
+   "name": "Ephemeral",
+   "area": "Ice Box right side",
+   "contradictions": [
+    {
+     "fact": "Route grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11d"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.11c"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.11c"
+      }
+     ],
+     "why": "The header pill (rock_grade) and route breakdown say 5.11c while the crux grade says 5.11d.",
+     "internal_resolution": "rock_grade and pitch_detail agree on 5.11c",
+     "needs_research": true
+    },
+    {
+     "fact": "Watch-out list describes a waterfall ice climb",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "Ultra-ephemeral ice formation—even less consistent than Iceman ... WI3-4 rating assumes quality ice ... Limited climbing window in season—typically Dec-Jan only"
+      },
+      {
+       "field": "season",
+       "says": "Summer only, and typically not dry until late summer"
+      },
+      {
+       "field": "discipline",
+       "says": "sport"
+      }
+     ],
+     "why": "The Safety tab describes a WI3-4 winter ice climb with avalanche approach on a summer 5.11 bolted rock pitch.",
+     "internal_resolution": "every other field describes a summer sport pitch; watch_out is copied from an ice route",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout ... Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall)"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      },
+      {
+       "field": "itinerary",
+       "says": "drive to the hairpin pullout, make the 15-minute scramble approach into the Ice Box"
+      }
+     ],
+     "why": "APPROACH directs the party to Spire Gully/Alpenkuhl (a sunny south-facing wall) instead of the shady Ice Box the rest of the row describes.",
+     "internal_resolution": "itinerary, face, waypoints and overview all describe the Ice Box; the approach is copied from the Alpenkuhl rows",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation of the wall",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "5305"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5305 (Ice Box right side / Ephemeral base)"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500 (Ice Box right side topout)"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "5490 (Ice Box (right side) formation)"
+      }
+     ],
+     "why": "Three pins at the same coordinate give 5,305, 5,490 and 5,500 ft for an 18 m (60 ft) route whose high point is 5,305.",
+     "internal_resolution": "waypoints[3] note admits its 5,490 is carried over from the left side; high_point_ft and the base pin agree on 5,305",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "name": "On the Prowl (D)",
+   "area": "Ice Box right side",
+   "contradictions": [
+    {
+     "fact": "Trad vs bolted protection",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "discipline",
+       "says": "trad"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Bolt-protected (~7 bolts) with a bolted, hook-equipped anchor; no natural gear needed."
+      },
+      {
+       "field": "gear",
+       "says": "quickdraws (7+)"
+      }
+     ],
+     "why": "The route is filed as trad while every protection field says it is fully bolted with no natural gear.",
+     "internal_resolution": "pro_needs, detailed_rack, bail and gear agree it is bolt-protected",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_6",
+   "name": "Unnamed 6",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": [
+    {
+     "fact": "Year-round access claim",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "This is a quick approach crag accessible year-round on good weather days"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter."
+      },
+      {
+       "field": "climate.winter",
+       "says": "Heavy snow; passes frequently closed; routes inaccessible"
+      }
+     ],
+     "why": "A pro tip calls the crag year-round while access and climate say it is unreachable by car all winter.",
+     "internal_resolution": "access, road, climate and season (Jun-Sep) all agree it is seasonal",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Walk off or rappel from bolted anchors at route top"
+      },
+      {
+       "field": "rappels",
+       "says": "None required — lower from the top anchor on a single rope."
+      },
+      {
+       "field": "descent_text",
+       "says": "Lower directly to the ground on a single 60m rope; no walk-off or rappel is required."
+      }
+     ],
+     "why": "descent offers walk-off/rappel while rappels and descent_text say lower, no rappel or walk-off.",
+     "internal_resolution": "rappels, descent_text and bail agree on lowering",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "300"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5400"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500"
+      }
+     ],
+     "why": "The route claims 300 ft of gain while its own trailhead and crag pins differ by 100 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead pin location vs stated distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "lat 48.5269, lng -120.6506 (Washington Pass Hairpin Turn)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.2"
+      }
+     ],
+     "why": "The trailhead pin sits ~0.9 mi north of the crag pin (48.51355,-120.64594) while the crag is listed 0.2 mi from it.",
+     "internal_resolution": "sibling Unnamed 5 and Ephemeral rows put the hairpin/pond pullout at 48.51454,-120.64332, ~0.15 mi from the crag",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.12"
+      }
+     ],
+     "why": "APPROACH says 10-15 minutes while PUBLISHED TIMES gives ~7 minutes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "ACCESS gives the land manager both as N/A and as the Methow Valley RD.",
+     "internal_resolution": "land_manager, notes and emergency.rangerStation agree on Methow Valley RD",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_3",
+   "name": "Unnamed  3",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": [
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Walk off or rappel from bolted anchors at route top"
+      },
+      {
+       "field": "descent_text",
+       "says": "Lower directly to the ground on a single rope; no walk-off or rappel is required"
+      }
+     ],
+     "why": "The short descent field offers a walk-off or rappel while descent_text says neither is needed (only the longer descent_text renders).",
+     "internal_resolution": "descent_text, bail and rope fields describe lowering off a bolted anchor on a single-pitch route",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "300"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5400"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500"
+      }
+     ],
+     "why": "The route claims 300 ft of gain while its own trailhead and crag pins differ by 100 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead pin location vs stated distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "lat 48.5269, lng -120.6506 (Washington Pass Hairpin Turn)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.2"
+      }
+     ],
+     "why": "The trailhead pin sits ~0.9 mi north of the crag pin (48.51355,-120.64594) while the crag is listed 0.2 mi from it.",
+     "internal_resolution": "sibling Unnamed 5 and Ephemeral rows put the hairpin/pond pullout at 48.51454,-120.64332, ~0.15 mi from the crag",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.12"
+      }
+     ],
+     "why": "APPROACH says 10-15 minutes while PUBLISHED TIMES gives ~7 minutes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "ACCESS gives the land manager both as N/A and as the Methow Valley RD.",
+     "internal_resolution": "land_manager, notes and emergency.rangerStation agree on Methow Valley RD",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_4",
+   "name": "Unnamed  4",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": [
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Walk off or rappel from bolted anchors at route top"
+      },
+      {
+       "field": "descent_text",
+       "says": "Lower directly to the ground on a single rope; no walk-off or rappel is required"
+      }
+     ],
+     "why": "The short descent field offers a walk-off or rappel while descent_text says neither is needed (only the longer descent_text renders).",
+     "internal_resolution": "descent_text, bail and rope fields describe lowering off a bolted anchor on a single-pitch route",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "300"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5400"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500"
+      }
+     ],
+     "why": "The route claims 300 ft of gain while its own trailhead and crag pins differ by 100 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead pin location vs stated distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "lat 48.5269, lng -120.6506 (Washington Pass Hairpin Turn)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.2"
+      }
+     ],
+     "why": "The trailhead pin sits ~0.9 mi north of the crag pin (48.51355,-120.64594) while the crag is listed 0.2 mi from it.",
+     "internal_resolution": "sibling Unnamed 5 and Ephemeral rows put the hairpin/pond pullout at 48.51454,-120.64332, ~0.15 mi from the crag",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.12"
+      }
+     ],
+     "why": "APPROACH says 10-15 minutes while PUBLISHED TIMES gives ~7 minutes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "ACCESS gives the land manager both as N/A and as the Methow Valley RD.",
+     "internal_resolution": "land_manager, notes and emergency.rangerStation agree on Methow Valley RD",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_5",
+   "name": "Unnamed  5",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": [
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Walk off or rappel with placed anchors"
+      },
+      {
+       "field": "descent_text",
+       "says": "Lower directly to the ground on a single rope; no walk-off or rappel is required"
+      }
+     ],
+     "why": "The short descent field offers a walk-off or rappel while descent_text says neither is needed (only the longer descent_text renders).",
+     "internal_resolution": "descent_text, bail and rope fields describe lowering off a bolted anchor on a single-pitch route",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "300"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5477"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500"
+      }
+     ],
+     "why": "The route claims 300 ft of gain while its own trailhead and crag pins differ by 23 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "~7 min uphill approach trail to the base of Spire Gully"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.12"
+      }
+     ],
+     "why": "APPROACH says 10-15 minutes while the waypoint note and timing say ~7 minutes.",
+     "internal_resolution": "waypoint note and timing agree on ~7 minutes",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "ACCESS gives the land manager both as N/A and as the Methow Valley RD.",
+     "internal_resolution": "land_manager, notes and emergency.rangerStation agree on Methow Valley RD",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_2",
+   "name": "Unnamed  2",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": [
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Walk off or rappel from bolted anchors at route top"
+      },
+      {
+       "field": "descent_text",
+       "says": "Lower directly to the ground on a single rope; no walk-off or rappel is required"
+      }
+     ],
+     "why": "The short descent field offers a walk-off or rappel while descent_text says neither is needed (only the longer descent_text renders).",
+     "internal_resolution": "descent_text, bail and rope fields describe lowering off a bolted anchor on a single-pitch route",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "300"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5400"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5500"
+      }
+     ],
+     "why": "The route claims 300 ft of gain while its own trailhead and crag pins differ by 100 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead pin location vs stated distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "lat 48.5269, lng -120.6506 (Washington Pass Hairpin Turn)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.2"
+      }
+     ],
+     "why": "The trailhead pin sits ~0.9 mi north of the crag pin (48.51355,-120.64594) while the crag is listed 0.2 mi from it.",
+     "internal_resolution": "sibling Unnamed 5 and Ephemeral rows put the hairpin/pond pullout at 48.51454,-120.64332, ~0.15 mi from the crag",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a direct walk/scramble of roughly 10-15 minutes straight up from the highway"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "~7 minute walk up from the hairpin"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.12"
+      }
+     ],
+     "why": "APPROACH says 10-15 minutes while the waypoint note and timing say ~7 minutes.",
+     "internal_resolution": "waypoint note and timing agree on ~7 minutes",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "ACCESS gives the land manager both as N/A and as the Methow Valley RD.",
+     "internal_resolution": "land_manager, notes and emergency.rangerStation agree on Methow Valley RD",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_sweet",
+   "name": "Honeymoon Sweet",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": [
+    {
+     "fact": "Trad vs sport",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "discipline",
+       "says": "trad"
+      },
+      {
+       "field": "overview",
+       "says": "The original, historic sport route at the Spire Gully/Alpenkuhl crag"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Fully bolted, 5 bolts to a chain anchor."
+      }
+     ],
+     "why": "The route is filed as trad while its overview, beta and protection call it a fully bolted sport climb.",
+     "internal_resolution": "overview, beta, fa, pro_needs, gear and bail all say bolted sport",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_kearney_thomas",
+   "name": "Kearney-Thomas",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "First-ascent party",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Kearney and Thomas (first names and date unknown)"
+      },
+      {
+       "field": "beta",
+       "says": "First climbed as a six-pitch, Grade III 5.9 route by Alan Kearney with Jeff and Bill Thomas"
+      }
+     ],
+     "why": "The FA line says the first names are unknown while the beta names Alan Kearney and Jeff and Bill Thomas.",
+     "internal_resolution": "beta names the party; fa is the less informed of the two",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "name": "Skinny Start",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Whether the standard descent includes rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "The intended descent follows the Beckey-Tate line (scramble to the notch, then the loose gully back to the Hairpin pullout), but at least one party reported being unable to find a rappel anchor along the top of the suggested Beckey-Tate descent"
+      },
+      {
+       "field": "descent",
+       "says": "Intended descent is via the Beckey-Tate gully"
+      }
+     ],
+     "why": "The descent is described as a scramble-and-gully walk-down yet the warning is about missing rappel anchors on it, without saying the gully needs rappels.",
+     "internal_resolution": "the Beckey-Tate row says the shared gully has two single-rope rappels from slung blocks, which would reconcile it",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "A long, sustained day: the recorded ascent describes a grueling two-day effort involving multiple linked objectives"
+      }
+     ],
+     "why": "The trip plan calls the outing both a single long day and a two-day effort in one sentence.",
+     "internal_resolution": "the two-day figure belongs to one party's multi-objective trip; the route itself is a day",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "name": "Beckey-Tate",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Approach line: cross Early Winters Creek early vs stay west of it",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "stay on the trail (right/west side of the creek) longer than the Southwest Rib/West Face line does — do not cross the creek where that route splits off"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you crossed the creek early and are looking at a chockstone, you are on the west side of the mountain."
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Early Winters Creek Crossing (East Bearing), distMi 0.4: Cross Early Winters Creek here and angle east off the west-face climbers' trail toward the Kangaroo Pass gully system"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "Cross Early Winters Creek and head up through the Kangaroo Pass gullies toward the south face."
+      }
+     ],
+     "why": "The approach says not to cross the creek where the West Face line does (~0.5 mi) while the waypoints and schedule cross it at 0.4 mi and go via Kangaroo Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "3166"
+      },
+      {
+       "field": "approach",
+       "says": "with the full route running to about 3,166 ft of gain at the 8,326 ft summit"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2800"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "for 2,800 ft gain over six pitches"
+      }
+     ],
+     "why": "Technical stats say 3,166 ft of gain while the trip plan says 2,800 ft.",
+     "internal_resolution": "gain_ft matches the trailhead (5,160) to summit (8,326) pin difference and the approach prose; the itinerary is low",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the route tops out relative to the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].note",
+       "says": "South face ends a few hundred feet below the true summit; exit up the snow-filled gully shared with the West Route to reach the summit block."
+      },
+      {
+       "field": "waypoints[5].directions",
+       "says": "a 5.8 hand crack/corner that tops out a few hundred feet below the true summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "from the top of the route scramble about 20 ft up and left to the notch just north of the summit block"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "From the last belay scramble about 20 ft up and left to the notch just north of the summit block"
+      }
+     ],
+     "why": "One waypoint says the face ends a few hundred feet below the summit with a snow-gully exit, while the summit waypoint and descent say it is a 20 ft scramble from the last belay to the summit notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Standard descent: rappel the face or not",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "The published route description gives the standard descent as rappelling the face directly — 5-6 rappels using two ropes ... walk off the standard gully descent back toward the Hairpin Turn (roughly 2 hours), which avoids needing a second rope at all"
+      },
+      {
+       "field": "descent_text",
+       "says": "Do not plan to rappel the Beckey-Tate line itself ... most parties explicitly avoid it"
+      },
+      {
+       "field": "rappels",
+       "says": "Optional: 5-6 rappels with two ropes from anchored stations, but the loose rock and awkward angles make the walk-off gully the preferred descent."
+      },
+      {
+       "field": "descent",
+       "says": "Two single-rope (60m) rappels from slung-block anchors at successive notches, or a scree-and-snow gully walk-off"
+      }
+     ],
+     "why": "The rope note calls rappelling the face the standard descent and the gully a no-rappel walk-off, while the descent fields tell parties not to rappel the face and put two rappels in the gully descent.",
+     "internal_resolution": "descent, descent_text, rappels, bail and itinerary all make the notch/gully descent (with two single-rope rappels) standard; rope_note is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car duration and approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "5:00 AM Leave Hairpin Turn ... ~4:30-5:00 PM Back at the Hairpin Turn"
+      },
+      {
+       "field": "approach",
+       "says": "3-5 hours a reasonable estimate"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+2.5-3 hr"
+      }
+     ],
+     "why": "The schedule runs 11.5-12 hours against a 10-hour total, and puts the approach at 2.5-3 hours against the approach section's 3-5.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch grades in the lower chimneys",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Lower pitches (roughly pitches 2-4) involve scrambling and chimney climbing around 5.8+"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P2 5.7, P3 5.6, P4 5.8+"
+      }
+     ],
+     "why": "Beta grades pitches 2-4 as ~5.8+ while the breakdown has only pitch 4 at 5.8+.",
+     "internal_resolution": "pitch_detail and waypoints[5].directions agree (5.7, 5.6, 5.8+)",
+     "needs_research": false
+    },
+    {
+     "fact": "Wall aspect",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "S"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "High point of Kangaroo Ridge, southeast-facing wall."
+      }
+     ],
+     "why": "The schedule calls the wall southeast-facing while aspect, face and prose say south.",
+     "internal_resolution": "aspect, face, overview and approach all say south",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "typically mid/late November to mid/late April"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "roughly November to April/May depending on snowpack"
+      }
+     ],
+     "why": "Three fields give different closure starts for the same gate.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_walkabout",
+   "name": "Walkabout",
+   "area": "Big Kangaroo",
+   "contradictions": []
+  },
+  {
+   "id": "wa_big_kangaroo_going_down_under",
+   "name": "Going Down Under",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Number and position of the corner pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "it climbs two classic, clean corner pitches — the second through a burly bulge at 5.11c, the route's crux — followed by a wide-crack section, then exits via easier cracks"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P2 5.10 (open-book corner) 'first of two', P3 5.10+ (corner) 'Continued corner climbing', P4 5.11c 'Second classic clean corner'"
+      }
+     ],
+     "why": "Beta and overview describe two corner pitches while the breakdown has three corner pitches (P2-P4), with the 'second' corner on P4.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "name": "West Face / West Route",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Approach / round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "1.9"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "1.9 (Big Kangaroo Summit)"
+      },
+      {
+       "field": "approach",
+       "says": "One-way gain to this point is roughly 2,700 ft over about 3 miles"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      }
+     ],
+     "why": "Technical stats say 1.9 km (1.2 mi), the waypoints put the summit 1.9 mi out, the approach says ~3 mi one-way to the base, and the itinerary totals 4 mi round trip.",
+     "internal_resolution": "dist_km appears to hold the waypoint miles figure mislabelled as km; the waypoint chain (1.9 mi one-way) and itinerary (4 mi RT) roughly agree, making the approach's '3 miles' the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "total car-to-car day is about 11.5 hrs"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 6-8 hrs car-to-car"
+      },
+      {
+       "field": "turnaround",
+       "says": "Expect about 5–6 hrs car-to-car for an efficient party; allow 8+ hrs for a typical party"
+      }
+     ],
+     "why": "PARTNER REQUIREMENTS says an 11.5-hour day while every other field says 5-8 hours.",
+     "internal_resolution": "timing, itinerary, turnaround and approach agree on ~6-8 hours; partner_requirements (11.5 hr, the Beckey-Tate schedule length) is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Hairpin pullout position relative to Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Large pullout on the outside of the SR-20 hairpin switchback ~0.9 mi west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "about a mile east of Washington Pass near milepost 163"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "about 1 mile east of Washington Pass summit near milepost 163"
+      }
+     ],
+     "why": "The same trailhead card puts the pullout west of the pass in its note and east of it in its directions.",
+     "internal_resolution": "directions, road, approach and approach_logistics all say east of Washington Pass",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the roped climbing starts",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].note",
+       "says": "Chockstone marks the start of the technical climbing (elev 7400)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Starts in the shallow gully beneath the route's distinctive chockstone"
+      },
+      {
+       "field": "approach",
+       "says": "Push past/around the chockstone and continue up class 3 slabs to a broad platform below the summit tower, where the route's three roped pitches begin."
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Class-3 slabs gain the ridge crest here; the low-5th-class pitches to the summit block begin from this notch. (elev 8100)"
+      }
+     ],
+     "why": "The roped pitches begin at the chockstone (~7,400 ft) in one waypoint and the first pitch, but above the chockstone at the notch/platform (~8,100 ft) in the approach and the next waypoint.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Length of the roped climbing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "covers this 3-pitch, ~200ft route"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "55 + 50 + 45 = 150 m (~490 ft)"
+      },
+      {
+       "field": "beta",
+       "says": "climbs approximately 500 feet of rock with up to 4 pitches"
+      }
+     ],
+     "why": "The rack section calls it a ~200 ft route while the pitch lengths and beta total ~500 ft, and beta allows 4 pitches against pitches = 3.",
+     "internal_resolution": "pitch_detail and beta agree on ~500 ft; detailed_rack is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "3120"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2900"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "for 2,900 ft gain"
+      }
+     ],
+     "why": "Technical stats and the trip plan differ by 220 ft of gain for the same car-to-car day.",
+     "internal_resolution": "gain_ft is close to the trailhead (5,160) to summit (8,326) pin difference",
+     "needs_research": false
+    },
+    {
+     "fact": "Which side of the summit the approach gully leads to",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the broad, shallow west-facing gully that leads up toward the notch just north of the summit block"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "pick one of the parallel west-face gullies (often snow-filled into July) toward the crest south of the summit"
+      }
+     ],
+     "why": "The gully tops out north of the summit in the approach and south of it in the schedule.",
+     "internal_resolution": "approach, approach_variants and descent_text all use the notch north of the summit",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of the creek crossing and the talus edge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Follow it roughly 0.5-0.7 mile through open timber to where it meets the edge of a talus/boulder field ... leave the trail here and cross Early Winters Creek"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Early Winters Creek Crossing, distMi 0.4: Easy crossing ... before it splits toward the west-face gullies"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Talus Fork / Gully Base, distMi 0.9: bear into the west-face approach gully rather than continuing on toward Kangaroo Pass"
+      }
+     ],
+     "why": "The approach crosses the creek at the talus edge (0.5-0.7 mi) while the waypoints cross at 0.4 mi and reach the talus fork afterwards at 0.9 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether the descent gully needs a rope",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "a rope-free descent gully firms up and gets faster later in summer"
+      },
+      {
+       "field": "descent",
+       "says": "make a single 60m rappel from slung-block anchors at the notch below the summit, followed by a scree-and-snow gully descent"
+      }
+     ],
+     "why": "The trip plan calls the descent gully rope-free while the descent requires a 60 m rappel in it.",
+     "internal_resolution": "descent, descent_text, rappels, rope_note and itinerary schedule all include the notch rappel",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel anchor type",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[2]",
+       "says": "aging fixed rappel bolt"
+      },
+      {
+       "field": "descent_text",
+       "says": "there's no real anchor up top to rap from ... two slung-block (tat) anchors serve the gully descent"
+      }
+     ],
+     "why": "KNOWN HAZARDS names an aging rappel bolt while the descent says the rappels are from slung blocks and the summit bolt is not rappelled from.",
+     "internal_resolution": "descent, descent_text, rope_note and pitch_detail agree the bolt is not a rappel anchor",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether June is in season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Outside the best season window ... the route is not considered in-season yet"
+      }
+     ],
+     "why": "The season chip includes June while the seasonal guidance says June is not in season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "typically mid/late November to mid/late April"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "roughly November to April/May depending on snowpack"
+      }
+     ],
+     "why": "Three fields give different closure starts for the same gate.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

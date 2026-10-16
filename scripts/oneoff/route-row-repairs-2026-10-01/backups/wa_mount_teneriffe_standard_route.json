@@ -1,0 +1,74 @@
+{
+ "id": "wa_mount_teneriffe_standard_route",
+ "name": "Mount Teneriffe Trail (Standard Route)",
+ "approach": "From I-90 take Exit 31 into North Bend and continue on North Bend Way; turn left (north) on SE Mount Si Road. Continue about 2.9 miles past the Mount Si trailhead to the paved, ~70-car Mount Teneriffe Trailhead lot (Discover Pass required). From the lot, a half-mile access path switchbacks up through second-growth forest to an old logging-road grade, which climbs gently for about 1.5 miles through young forest and meadow, passing the signed spur down to Teneriffe Falls at roughly 2.8 miles. Beyond the falls junction the trail narrows and climbs via switchbacks (with a Middle Fork Snoqualmie viewpoint) for another ~2.7 miles, then continues about 2.3 more miles, dipping briefly to Rachor Pass (~4,200 ft saddle) before the final short, rocky summit scramble.",
+ "approach_logistics": {
+  "peakLat": 47.5087156,
+  "peakLng": -121.6959398,
+  "trailhead": "Mount Teneriffe Trailhead",
+  "trailheadLat": 47.4869,
+  "trailheadLng": -121.7097,
+  "trailheadDirection": "From I-90 take Exit 31 into North Bend and continue on North Bend Way; turn left (north) on SE Mount Si Road and continue about 2.9 miles past the Mount Si trailhead to the paved Mount Teneriffe Trailhead lot."
+ },
+ "road": {
+  "name": "SE Mount Si Road",
+  "status": "Paved, DNR-maintained, seasonal access gate",
+  "driveNote": "From I-90 Exit 31 (North Bend), follow North Bend Way then turn onto SE Mount Si Road; the paved Mount Teneriffe Trailhead lot is about 2.9 miles past the Mount Si trailhead.",
+  "seasonalGate": "Opens approximately 1 hour after dawn and closes approximately 1 hour before dusk; posted times vary seasonally and are posted at the trailhead."
+ },
+ "approach_variants": [
+  {
+   "name": "Mount Teneriffe Trail from the paved trailhead",
+   "notes": "From the freeway exit into North Bend, continue through town and turn north onto the road running below the peaks. Carry on about three miles past the neighbouring peak's trailhead to the paved seventy-car lot — this is the Teneriffe trailhead, not the Si one, and the two are easy to confuse. A short access path switchbacks up to an old logging-road grade, which climbs gently for a mile and a half through young forest and meadow. The trailhead gate closes seasonally about an hour before dusk; vehicles left past closing risk being locked in.",
+   "season": "March to November, best from June to October. Snow lingers on the upper mountain and ridge crest into June and makes an otherwise easy trail steep and icy.",
+   "hazards": [
+    "Seasonal snow on the upper mountain and ridge crest into June, creating steep icy sections on otherwise easy trail",
+    "No reliable water beyond the falls — carry what you need for the round trip",
+    "The trailhead gate closes seasonally about an hour before dusk"
+   ],
+   "baseFinding": "The checkpoint is the signed spur down to the falls at about two and a half to three miles — everything before it is old road grade, everything after it is narrower trail on switchbacks. Stay on the graded, signed trail there. Continue through the switchbacks, past a viewpoint over the valley to the north, and on to a saddle at around forty-two hundred feet where the trail dips before the final stretch. The base of the only hands-on ground on this route is above that saddle: a short rocky step at the true summit, about a mile further on, needing sure footing but nothing more. Negative marker: if you have left the graded tread at the falls junction onto a steep boot track of roots and rock climbing the fall line beside the falls, you are on the unofficial ridge line and are committed to a much steeper day."
+  }
+ ],
+ "itinerary": "Typical day trip: start early morning; ~1.5-2 hrs to Teneriffe Falls (2.8 mi); ~2.5-3 hrs more via the upper switchbacks and Rachor Pass to the summit (6.5 mi, +3,800 ft); 30-45 min on the summit; ~3 hrs back down the same trail. Budget 7-9 hours car-to-car.",
+ "beta": "A non-technical hike/scramble (Class 1 with a brief Class 2 finish) popular as a longer, quieter alternative to nearby Mount Si. Most of the route follows old logging-road grade and well-graded switchbacks through second-growth forest, with a signed side trip to Teneriffe Falls near the 2.8-mile mark.",
+ "overview": "The standard route follows the DNR-built Mount Teneriffe Trail, a long, steadily climbing forest path from the paved trailhead past Teneriffe Falls and over Rachor Pass to a short rocky scramble at the summit — the easiest and most popular way to the top.",
+ "waypoints": [
+  {
+   "lat": 47.4869,
+   "lng": -121.7097,
+   "elev": 840,
+   "name": "Mount Teneriffe Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 840,
+   "directions": "From I-90 Exit 32 (436th Ave SE), turn north over the freeway and drive 0.5 mile to SE North Bend Way. Turn left, and in 0.25 mile turn right onto SE Mount Si Road. In 2.9 miles, past the Little Si and Mount Si trailheads, the paved Mount Teneriffe Trailhead lot is on the left. A Discover Pass is required to park."
+  },
+  {
+   "lat": 47.50209,
+   "lng": -121.70807,
+   "elev": 2633,
+   "name": "Teneriffe Falls (Kamikaze Falls)",
+   "type": "Junction",
+   "distMi": 2.7,
+   "elevFt": 2633
+  },
+  {
+   "lat": 47.50209,
+   "lng": -121.70807,
+   "elev": 2633,
+   "name": "Teneriffe Falls (aka Kamikaze Falls)",
+   "type": "landmark",
+   "distMi": 2.8,
+   "elevFt": 2633
+  },
+  {
+   "lat": 47.5087156,
+   "lng": -121.6959398,
+   "elev": 4788,
+   "name": "Mount Teneriffe Summit",
+   "type": "Summit",
+   "distMi": 6.5,
+   "elevFt": 4788
+  }
+ ]
+}

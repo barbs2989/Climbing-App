@@ -1,0 +1,292 @@
+{
+ "applied": [
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "When to go"
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "When to go"
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "When to go"
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Distance from the road"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Bench elevation below the summit"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "directions"
+   ],
+   "fact": "Bench elevation below the summit"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Bench elevation below the summit"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Time from camp to summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "before": {
+    "pro_tips": [
+     "Combine with nearby Cathedral Peak (Class 3, about a mile away) on the same trip to make the long approach worthwhile",
+     "Camp at Upper Cathedral Lake (~7,380 ft) to stage a summit day for both peaks",
+     "Aim for late June–early July for snow-free scrambling before wildfire smoke and fire-season closures typically set in by mid-July"
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July to August, after the approach basin melts out, choosing a window between fire closures and the first autumn snow",
+     "monthBreakdown": {
+      "July": {
+       "reason": "The scree and grass slopes are mostly snow-free and creeks drop, making it a good time to go before the Pasayten fire restrictions set in.",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Snow lingers in the approach basin and gullies into late June, and creek crossings on the long approach run high with snowmelt.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "The most settled weather for this walk-up; seasonal fire restrictions, smoke and possible area closures are the thing to check.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "The first lasting snow usually arrives at this elevation, hiding loose talus and making the two-day approach committing.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable days and quieter trails, but nights turn cold at the lakes and by late month an early snowfall can cover the talus.",
+       "status": "good"
+      }
+     }
+    },
+    "approach_variants": [
+     {
+      "name": "Upper Cathedral Lake and the west-side boot path",
+      "notes": "The whole peak is a backpack with a short walk-up bolted onto the end of it. Nearly every party camps at or near Upper Cathedral Lake, around 7,380 ft, and climbs from there. The lake is reached most directly from the Andrews Creek Trailhead at the end of Forest Road 51, going in over Andrews Pass and along the Boundary Trail; the Chewuch River option out of Thirtymile is considerably longer and joins the same ground near Cathedral Pass. Once at the lake nothing about the climb is committing: it is grass, scree and boulder from the trail to the top, with the occasional short step where hands come out. Most parties tag Cathedral Peak the same day, and the two are linked by a connecting gully rather than a return to the lake between them.",
+      "season": "Mid-July to late September",
+      "hazards": [
+       "Loose talus and scree on the upper slopes and summit plateau",
+       "Snow lingering in the access gullies and the upper basin into July",
+       "High, cold creek crossings on the approach during runoff",
+       "Open, treeless plateau with no shelter from afternoon storms",
+       "Several days from the nearest road in either direction"
+      ],
+      "baseFinding": "From Upper Cathedral Lake the trail runs southeast and rounds the low toe of Amphitheater's west ridge. Roughly half a mile along, at about 7,200 ft, a beaten boot path breaks off uphill and climbs grass and scree to the northeast. That boot path is the start of the climb, and it is the only prepared thing you will see between the lake and the top. If the trail is still contouring level, you have not reached it; if the trail begins to lose elevation steadily and the ridge above you falls back behind your shoulder, you have walked past it. The path leads into an open bowl at about 8,000 ft rimmed with broken rock, the amphitheater the mountain is named for, and once you are standing in that bowl you are on the route. Two things fool parties here. In early season a steep snow gully rises straight out of the lake basin toward the ridge crest, and it does work, but it is a harder and icier start than the boot path and it is not the standard line. And the summit mass is shaped like a T with several plateau rises on it, so the first high point you reach after leaving the bowl is often not the highest. Keep walking the plateau until the ground stops rising. The check on the other side is the rock: the dramatic spires standing north of the lake belong to Cathedral Peak, and if you are climbing toward them you are on the wrong mountain."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Copper Glance Trail and the Isabella Ridge cutoff",
+      "notes": "The Craggies are unusual for this corner of the wilderness in that a road and a maintained trail get you most of the way in, which is why the peak sees parties who would not otherwise be this deep. The Copper Glance Trail starts on an old jeep-track mining grade and stays gentle for the first mile and a half to the mine ruins, then narrows to single track, fords the creek near a partly collapsed bridge, and crosses burned forest where blowdown can slow travel badly. Early-season snow buries the deadfall and is generally welcome. The climbing itself is unremarkable: scree, talus and a few hundred feet of genuinely loose blocky ground near the top. Most parties climb West Craggy in the same push, the two being joined by a saddle.",
+      "season": "July to early October",
+      "hazards": [
+       "Very loose rock on the final few hundred feet below the summit",
+       "Rockfall onto anyone below on the upper scree",
+       "Heavy blowdown through the burned forest on the approach",
+       "Creek ford at the collapsed bridge, higher during runoff",
+       "No reliable water above the basin crossing",
+       "Old mine adits and structures that must not be entered"
+      ],
+      "baseFinding": "There are two accepted ways onto the mountain and both have a hard marker. The first is an unsigned climbers' path that splits right off the Copper Glance Trail below Copper Glance Lake, before a small tarn, and climbs through meadow and talus onto Isabella Ridge. It is genuinely easy to walk past, particularly when snow patches cover the junction, so watch for it as soon as the burned forest opens out; if you reach the lake shore you have gone too far and should backtrack. The second, used by parties who camp, starts from the knoll camp at about 6,600 ft in Copper Glance Basin: head up and rightward past a rock buttress to the saddle at roughly 7,600 ft between the two Craggy summits. From that saddle the identification is unambiguous. Big Craggy is the dark, blocky mass to the east and the way up it is a plain scree slog along the connecting crest; West Craggy is the other way. A flattish section of ridge near 7,700 ft is a good confirmation that you are on the connecting crest and not on a side rib. Higher, a small bench at about 7,800 ft marks where the angle steepens and the footing changes to genuinely rotten scree for the last push. Fill water at the basin crossing near 6,400 ft; there is nothing above it. If you find yourself at a notch that drops into a gully leading back down to Isabella Ridge, you have traversed off toward West Craggy."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September (as previously established), consistent with the drier continental NE Cascades climate",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early July can still carry lingering high-elevation snow; conditions become prime as the month progresses, matching the mid-July start of the best season",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Spring conditions are snow-covered; approach creek crossings and lingering snow on the loose upper scramble terrain make this a poor month",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Peak of the prime dry summer window; most stable footing on the loose rock",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Falls outside the best-season window; early winter storms and snow return to this NE Cascades/Pasayten terrain (winter brings full winter conditions)",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Still within the best-season window; stable per the climate data but cooler with shorter days, so plan for an earlier start",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier continental NE Cascades pattern - warmer, drier summers than the west-side Cascades",
+      "probability": "Afternoon thunderstorms are a realistic risk in the continental interior climate during July-August; start before dawn to be off exposed terrain by afternoon"
+     },
+     "exposure": "Notably loose rock, and parties describe the terrain steepening above roughly 7,800 ft into loose scree/talus that shifts with nearly every step; falls here are more likely to be rockfall/slip-and-slide incidents on unstable footing than long free-fall exposure, but rockfall onto climbers below is a real risk on the upper scramble",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; Big Craggy is deep in the Pasayten and only climbed in the dry mid-July-September window, outside NWAC's winter forecast season, and no NWAC zone specifically covers this remote interior route",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "approach": "From the Copper Glance Trailhead (3,800–3,810 ft, small pullout signboard, parking for roughly 7 cars) on FR 5130 (Eightmile Creek Road), follow Copper Glance Trail #519. The first ~1.5 miles follows an old jeep track/mining tramway grade (FSR 505) that served the historic Copper Glance claims — a gentle, steady climb through forest. Around 1.5 miles (~5,100 ft) the track passes the ruins of the Copper Glance Mine; the old adits and structures are hazardous and should not be entered. Just past the mine the route narrows to true single-track and fords Copper Glance Creek (~1.6 miles) near an old bridge that has partially collapsed — expect a careful boulder-hop or wet ford, and note the crossing is explicitly not passable for stock. Beyond the creek the trail crosses a stretch of burned-out forest with heavy blowdown that can slow summer travel considerably (early-season snow actually eases this stretch by burying the deadfall). Watch closely for an easy-to-miss, unsigned climbers' path splitting right off the main Copper Glance Trail below Copper Glance Lake/Basin — this is the cutoff onto Isabella Ridge and Big Craggy's southeast ridge, and it's frequently walked past, especially where snow patches obscure the junction. Take this cutoff up through meadows and talus onto Isabella Ridge, then leave maintained tread around 5,900 ft and climb open slopes toward the southeast ridge proper. A small bench/flat spot roughly 1,300 ft below the summit (~7,800 ft) marks where the angle steepens and the terrain shifts to tedious, loose ('garbage' rock) scree for the final push to the 8,478 ft summit; early-season snow cover on this upper scree is strongly preferred over the bare, ball-bearing talus of late summer. There is no reliable water past Copper Glance Creek, so fill up there (or at Copper Glance Basin/Lake if camping partway). Total car-to-car distance/gain runs roughly 11–12 miles round trip with about 5,600–5,800 ft of gain when West Craggy is tagged in the same push, as most parties do; Big Craggy alone is somewhat shorter but still needs at least 4,700 ft of gain.",
+    "waypoints": [
+     {
+      "lat": 48.740889,
+      "lng": -120.292,
+      "elev": 3810,
+      "name": "Copper Glance Trailhead",
+      "note": "Small signed pullout (fits ~5 cars) on Eightmile Creek Rd/FR-5130; no fee or permit required, start of Copper Glance Trail #519 on an old jeep track.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "FR-5130 (Eightmile Creek Road) climbs out of the Methow valley to the signed pullout at about 3,810 ft, with room for only five to seven cars. No fee or permit is needed to park. The road holds snow well into spring, so check its condition before committing to the drive."
+     },
+     {
+      "lat": 48.75205,
+      "lng": -120.30341,
+      "elev": 5170,
+      "name": "Copper Glance Mine ruins",
+      "note": "Trail passes right by the abandoned early-1900s mine's open adit and tailings; stay on the trail and do not enter the unstable workings.",
+      "type": "Hazard",
+      "distMi": 2,
+      "directions": "Trail #519 leaves the pullout on an old jeep track — the tramway grade that served the Copper Glance claims — and climbs steadily through forest above the creek for the first mile and a half. The grade is gentle and the tread unmistakable, and the ruins sit right beside it."
+     },
+     {
+      "lat": 48.7556668,
+      "lng": -120.3116389,
+      "elev": 5950,
+      "name": "Leave-trail point for SE ridge",
+      "note": "Just under 6,000 ft, exit the Copper Glance Trail here (before it continues on to Copper Glance Lake/Basin) and start angling up through deadfall/brush toward the broad southeast ridge.",
+      "type": "Junction",
+      "distMi": 3,
+      "directions": "Just past the mine the track narrows to true single-track and fords Copper Glance Creek near a bridge that has partly collapsed; expect a careful boulder-hop, or a real ford at high water. Beyond it the trail crosses burned forest choked with blowdown, slow going in summer and much easier when early-season snow buries the deadfall. Watch for the unsigned climbers' path splitting right below Copper Glance Lake and basin — it is easy to walk straight past, especially where snow patches cover the junction. Take it up through meadow and talus onto Isabella Ridge to where maintained tread runs out just under 6,000 ft."
+     },
+     {
+      "lat": 48.75675184,
+      "lng": -120.31410757,
+      "elev": 6100,
+      "name": "Creek crossing in burned forest",
+      "note": "Cross the small drainage in old burned-out timber shortly after leaving the trail; last reliable water before the dry ridge/scree above — fill up here.",
+      "type": "Water",
+      "distMi": 3.3,
+      "directions": "A short leg on open slope with nothing to follow. Weave up through the deadfall and blowdown of the old burn, trending northwest toward the broad southeast ridge above."
+     },
+     {
+      "lat": 48.76036864,
+      "lng": -120.32233647000001,
+      "elev": 7900,
+      "name": "Upper scree rockfall band",
+      "note": "Southeast slope steepens and scree becomes loose for the final ~500 ft; rockfall risk from parties above, keep the group tight and stay climber's right on firmer footing.",
+      "type": "Hazard",
+      "distMi": 4.3,
+      "directions": "Climb the open southeast slope and ridge crest. A small bench or flat spot around 7,800 ft, roughly 1,300 ft below the top, marks where the angle kicks back and the ground turns to tedious scree. Early-season snow cover on this upper section is far preferable to the bare, ball-bearing talus of late summer, and parties camped in Copper Glance Basin normally do this stretch on a light day pack."
+     },
+     {
+      "lat": 48.7629,
+      "lng": -120.3281,
+      "elev": 8478,
+      "name": "Big Craggy Peak summit",
+      "note": "Broad rocky true summit; West Craggy Peak is visible west across the ~7,600 ft saddle, with sweeping views into the Pasayten Wilderness.",
+      "type": "Summit",
+      "distMi": 5,
+      "directions": "The last 500 ft is the hardest part of the day: roughly 300 ft of notoriously loose Class 3 on the summit ridge, where rock shifts under almost every step. Work out right or left off the direct line around 8,000 ft to link firmer blocks rather than fighting straight up the scree, and keep the party either tight together or well out of each other's fall line. A gentler variant gains the ridge from the south near 8,150 ft and finishes as an easy Class 2 walk-up."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very strenuous - trip reports cite roughly 4,500 ft gain over ~4.5 miles from the trailhead to the summit area, largely off-trail with a creek crossing and bushwhacking low down",
+      "packWeight": "Most parties backpack in and camp near 6,600 ft before a summit push, so overnight pack weight (roughly 30-45 lbs) is typical rather than a single long day-pack push"
+     },
+     "approachTime": "Typically about 4 hours from the trailhead to high camp, then roughly 2 more hours from camp to the summit; commonly done as a 2-day trip",
+     "requiredSkills": [
+      "Class 3 scrambling on notably loose rock",
+      "off-trail route-finding and navigation (GPS strongly recommended)",
+      "wilderness backcountry camping/self-sufficiency (no facilities, self-issued permit)",
+      "judgment around rockfall - no technical rope/glacier skills needed since there is no glacier travel"
+     ],
+     "experienceLevel": "Solid Class 3 scrambling experience with comfort on loose, moving rock; should have done other loose-rock NE Cascades/Pasayten-style scrambles before this one"
+    }
+   }
+  }
+ ]
+}

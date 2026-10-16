@@ -1,0 +1,209 @@
+{
+ "applied": [
+  {
+   "id": "wa_sews_sw_rib",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hours"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Bolt-ladder pitch"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "bolts"
+   ],
+   "fact": "Bolt-ladder pitch"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Bolt-ladder pitch"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "bail",
+   "path": [],
+   "fact": "Bolt-ladder pitch"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Rack emphasis"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_southern_man",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_sews_sw_rib",
+   "before": {
+    "approach": "From Blue Lake Trailhead (1 mile west of Washington Pass on Highway 20), hike Blue Lake Trail 1.25-1.5 miles to a clearing. At a small stream (possibly marked with cairns), leave the trail and ascend climber tracks through slabs parallel to the stream to reach the basin. Route base is identifiable by the distinctive Y-shaped larch tree. Total approach time: 1.5-2 hours; elevation gain to route base: 900-1,200 ft.",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the Y-shaped larch",
+      "hours": "1.5-2",
+      "notes": "From the Blue Lake Trailhead (~5,400 ft) on SR-20 about 1 mile west of Washington Pass, walk the maintained trail roughly a mile and a quarter until it opens into a clearing. Leave it at the small stream — often cairned — and follow climbers' tracks up through the slabs alongside the stream into the basin under the west side of the spires.\n\nThe meadows here are fragile and heavily used; stay on the established tracks and off the heather.\n\nFrom the basin, work up the talus toward the west face of South Early Winters Spire, north of the Southwest Couloir.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "fragile alpine meadow crossed by braided tracks — erosion damage and easy to lose the line",
+       "loose talus in the basin",
+       "shared descent line with South Arete parties, so expect congestion at rappel stations"
+      ],
+      "baseFinding": "The base of the route is marked by a larch tree that forks into two trunks in a clear Y — it is the single agreed-upon landmark for this climb and people navigate to it by name. In front of the Y-larch an easy ledge runs up and away from the tree; scramble that ledge and belay off a solid tree, and the first proper pitch follows cracks straight up through an awkward bulge, well protected, to a ledge at the foot of the feature climbers call the Wavy Crack. If you start at a lower or higher point on the rib you skip that first 5.8+ pitch and arrive at the Wavy Crack having missed the best of the lower climbing — so hunt for the Y-larch rather than roping up at whatever looks like the toe. The rib you want is the buttress immediately north of (left of, looking in) the Southwest Couloir."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_southern_man",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Shares the Direct East Buttress's rambling, sometimes-loose first pitch through moss and vegetation to a tree anchor.",
+      "pitch": 1,
+      "anchor": "Tree",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "A shared crack system with the Direct East Buttress winds through ledges to the base of the large dihedral.",
+      "pitch": 2,
+      "anchor": "Gear (tree)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9+",
+      "notes": "Climbs the shared dihedral through a bulging roof, well protected at the crux move, before easier climbing to a tree ledge.",
+      "pitch": 3,
+      "anchor": "Gear (tree)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.11a/A0",
+      "notes": "The last pitch shared with the Direct East Buttress -- a bolt ladder through steep rock -- before Southern Man splits off around halfway up the wall onto its own south-facing headwall.",
+      "pitch": 4,
+      "anchor": "2-bolt anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10",
+      "notes": "First headwall pitch: sustained 5.10 finger and hand cracks on excellent rock, with the odd-numbered headwall pitches generally the more straightforward crack climbing.",
+      "pitch": 5,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 1,
+      "grade": "5.11d",
+      "notes": "The route's crux: a short, bulgy face section with bad feet above thin pro; the FA party aided this at 5.9+ C1 in 2008, freed at 5.11d in 2010.",
+      "pitch": 6,
+      "anchor": "Gear",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10",
+      "notes": "More sustained 5.10 crack climbing continues up the headwall with the same excellent finger locks found on the pitch below.",
+      "pitch": 7,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 1,
+      "grade": "5.11",
+      "notes": "A harder, cruxier face-climbing pitch linking crack systems; belays on this upper section are reported as vague and unfixed, so build gear anchors with care.",
+      "pitch": 8,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10-",
+      "notes": "The final headwall pitch eases to sustained but comfortable 5.10- crack climbing, topping out near the summit and the standard South Arete descent.",
+      "pitch": 9,
+      "anchor": "Gear (joins South Arete/summit)",
+      "lengthM": 25
+     }
+    ],
+    "bail": "Retreat down the shared lower pitches with Direct East Buttress is straightforward; above the bolt-ladder pitch, belays are unfixed and retreat is more involved - carry extra rap gear/tat.",
+    "gear": [
+     "Double rack to #3 Camalot, plus a single #4 and a #5 or #6 — Southern Man reportedly takes a lot of wide gear, the opposite of a thin-crack assumption",
+     "Standard set of nuts/wires for the thinner sections in the corner pitches on the headwall",
+     "Extra slings/long runners — belays on the upper pitches are described as vague and not bolted, so natural-gear anchors are common",
+     "60m rope; the route shares its first 4-5 pitches with the Direct East Buttress before breaking left",
+     "Helmet — 9-pitch, Grade IV alpine trad route"
+    ],
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "The hairpin pullout and Spire Gully to the last large tree, then right across the talus toward the inter-spire notch",
+      "notes": "Same as the Direct East Buttress: park at the hairpin pullout on Highway 20 east of Washington Pass. THIS IS THE EAST-SIDE TRAILHEAD, NOT THE BLUE LAKE TRAILHEAD used by the spire's west-side routes.\n\nNine pitches. The route shares the East Buttress's first pitches, then splits off around halfway up to climb the south-facing headwall on the upper south side of the peak for its final five pitches.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Vague, unfixed belays on the upper headwall, so bailing means building natural anchors",
+       "A shared start with a much more travelled route, with the split made mid-height",
+       "Talus and snow on the traverse below the inter-spire notch",
+       "Two trailheads on opposite sides of the pass serving this peak"
+      ],
+      "baseFinding": "HIKE SPIRE GULLY, WHICH IS CAIRNED, TO THE LAST LARGE TREE. THAT TREE IS THE TURN. From it, traverse RIGHT across talus and snow to the gully leading to THE NOTCH BETWEEN NORTH AND SOUTH EARLY WINTERS SPIRE, then traverse LEFT to the base of the east buttress.\n\nSO THE SEQUENCE IS THREE MOVES AND A TREE: UP the cairned gully to the LAST LARGE TREE, RIGHT across talus, then LEFT to the buttress base. The tree is the only thing in that sequence you can put a hand on, which is why it is the marker rather than the gully.\n\nWHY THE NOTCH MATTERS EVEN THOUGH YOU DO NOT GO TO IT: the gully you aim at is the one running to the gap between the two spires, the same continuous cleft that on the west side is the chockstone-filled chimney. It is the biggest feature on this side of the group. Aim at it, then step left before reaching it.\n\nSO THE NEGATIVE TEST IS: IF YOU HAVE REACHED THE NOTCH ITSELF YOU HAVE GONE UP TOO FAR, and if you are on the far side of the cleft you are on NORTH Early Winters Spire, where Flycatcher Buttress starts from a flat ledge.\n\nWHAT SEPARATES THIS ROUTE FROM THE EAST BUTTRESS IT SHARES A START WITH, AND IT IS A DECISION MADE HALFWAY UP RATHER THAN AT THE BASE: Southern Man splits off around mid-height onto the SOUTH-FACING HEADWALL. Its own belays are described as vague and not yet fixed, which is itself a tell: DO NOT EXPECT A FULLY BOLTED RAP LINE if you need to bail from the upper headwall. Natural anchors would be required there.\n\nDESCENT: from the summit, the standard South Arete descent, downclimbing the arete with a short more exposed fifth-class section to the RABBIT EARS, then three single-rope 60 m rappels from bolted anchors and chains down the gully to the base."
+     }
+    ]
+   }
+  }
+ ]
+}

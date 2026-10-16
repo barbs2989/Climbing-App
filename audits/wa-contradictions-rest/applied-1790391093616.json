@@ -1,0 +1,784 @@
+{
+ "applied": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "approach",
+   "path": [],
+   "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "beta",
+   "path": [],
+   "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "approach",
+   "path": [],
+   "fact": "Location of the steep 3/4-mile switchback section"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Location of the steep 3/4-mile switchback section"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Summit grade and exposure"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Summit grade and exposure"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "grade",
+   "path": [],
+   "fact": "Summit grade and exposure"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Permit for day use / overnight"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Camp Mystery mileage in the itinerary schedule"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether the walk-out re-crosses Constance Pass"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Whether the walk-out re-crosses Constance Pass"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Whether the walk-out re-crosses Constance Pass"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Whether the walk-out re-crosses Constance Pass"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach distance to base camp"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "face",
+   "path": [],
+   "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "label"
+   ],
+   "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "status"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "status"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "status"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Season / best window"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Location of the Class 3-4 rock step"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Location of the Class 3-4 rock step"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Location of the Class 3-4 rock step"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Location of the Class 3-4 rock step"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "descent",
+   "path": [],
+   "fact": "Location of the Class 3-4 rock step"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Rock type"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Road-walk mileage within the Crystal Pass variant"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Washout parking vs road end"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass at the trailhead"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass at the trailhead"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach length"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach length"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "column": "climate",
+   "path": [
+    "fall"
+   ],
+   "fact": "Approach length"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "before": {
+    "approach": "From the Upper Big Quilcene Trailhead (~2,650 ft, end of FR-2750), the route follows the Upper Big Quilcene River Trail #833. The first 2.5 miles are an easy, mostly rolling grade through old-growth cedar and hemlock forest with the Big Quilcene River alongside you the whole way — this stretch is your last reliable, easy-access water for a while and there are no fords, just a trail paralleling the river. At about mile 2.5–3.5 the trail pulls away from the river and climbs a sustained, steeper 3/4-mile pitch of switchbacks — the single steepest, most sustained grade on the approach — to Shelter Rock Camp (~3,600 ft), a designated camp with water access. From there the trail continues climbing through subalpine forest and opens into meadows around mile 4.5 at Camp Mystery (~5,300 ft), the last camp and last dependable water source before the pass (treat before drinking). From Camp Mystery it's about another 0.5 mile of open meadow hiking to Marmot Pass (~6,000 ft) at mile 5, a major trail junction where the Tubal Cain Trail forks off toward Buckhorn Lake Camp/the old Tubal Cain Mine, and the main trail continues over the pass toward Home Lake and the Dungeness Trail. Buckhorn's summit route leaves the maintained trail here: pick up the unsigned climbers'/boot path that follows the open ridge crest north from the pass roughly 1 mile and 900–1,000 ft of gain to the southwest (higher) summit. It's not an official trail — expect braided boot paths through heather and talus, a few spots where you'll want hands for balance, and a short, easy scramble onto the large boulder that forms the true high point. Route-finding is straightforward in clear weather (stay near the ridge crest) but the braided paths and cliffy drop-offs on the north side make it easy to wander off-line in fog or whiteout, so a GPS track or careful attention to the ridgeline is worthwhile. Lingering snow patches near Camp Mystery and the upper ridge are possible into early summer; a light axe/microspikes can help in that window, though by mid-summer the route is dry scree, talus, and heather.",
+    "beta": "From the Upper Big Quilcene Trailhead, Trail #833 climbs through old-growth forest past Shelter Rock Camp and Camp Mystery to the open alpine gap of Marmot Pass (~6,000 ft), one of the most scenic passes in the Olympics. From the pass, leave the maintained trail and follow a boot path north about 100 m to a junction, then climb right up switchbacks along the ridge, over a minor ~6,800 ft knob, to Buckhorn's southwest summit (6,988 ft) — the higher of its two nearly-equal summits. The final approach is loose scree, not quite Class 3, finishing with a short scramble onto a large summit boulder. When snow-free, the route requires no technical gear or roped travel.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Ridge crest north from Marmot Pass",
+      "notes": "The summit route leaves the maintained trail at Marmot Pass: pick up the unsigned climbers'/boot path that follows the open ridge crest north from the pass roughly 1 mile and 900-1,000 ft of gain to the southwest (higher) summit. Not an official trail - expect braided boot paths through heather and talus and a few spots where you'll want hands for balance. Route-finding is straightforward in clear weather (stay near the ridge crest), but the braided paths and cliffy drop-offs on the north side make it easy to wander off-line in fog or whiteout. Lingering snow patches on the upper ridge are possible into early summer."
+     },
+     {
+      "n": 2,
+      "label": "Summit boulder",
+      "notes": "A short, easy scramble onto the large boulder that forms the true high point."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Upper Big Quilcene Trail #833 over Marmot Pass",
+      "notes": "An easy river grade through old growth for the first two and a half miles, then a sustained switchbacking pitch to Shelter Rock Camp and open meadows to Camp Mystery — the last dependable water before the pass and the summit. Habituated goats work the pass and both summits and will approach for salt; keep your distance and pee well off the trail.",
+      "season": "Mid-July to early October",
+      "hazards": [
+       "Loose scree and rotten rock above the pass, with rockfall onto parties below",
+       "Lingering snow at the pass and on the summit slope into mid-July",
+       "Braided, unmaintained boot paths that are easy to lose in fog",
+       "Cliffy drop-offs on the north side of the summit ridge",
+       "Long waterless final stretch above Camp Mystery"
+      ],
+      "baseFinding": "Marmot Pass is unmistakable — a broad open gap where the maintained trail crosses the crest and a signed fork drops away toward Buckhorn Lake and the old mine. Stand in the gap facing north. The summit route leaves from the pass itself and not from any signed junction: pick up the unsigned boot path and follow it roughly a hundred metres north along the crest to where a braided path forks right and begins switchbacking up the open ridge. Two things here are maintained tread and neither goes up — the trail continuing west over the pass toward Home Lake and the Dungeness, and the fork dropping northeast toward the lake. From the fork the route stays on or just right of the crest through heather and talus, over a minor knob near 6,800 ft. You are at the foot of the only real scrambling when the heather runs out into loose scree beneath a single large block: the true high point is that boulder, gained by one short move, and the flatter east summit about a quarter mile away across the smooth saddle is the lower of the pair."
+     }
+    ],
+    "itinerary": {
+     "cal": "Snow commonly lingers on the trail from ~5,400 ft up to Marmot Pass into early summer, so traction devices are worth carrying before mid-July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard parties hike the Upper Big Quilcene River Trail through Shelter Rock Camp and Camp Mystery to Marmot Pass, then follow a rough boot path and short class 2 scramble up a boulder to the West Peak high point. Nearly everyone does this car-to-car in a single long day rather than backpacking in.",
+       "hours": 8.5,
+       "miles": 13.5,
+       "title": "Car-to-car scramble via Marmot Pass",
+       "gainFt": 4477,
+       "lossFt": 4477,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Start on the Upper Big Quilcene River Trail at ~2,650 ft."
+        },
+        {
+         "time": "7:45 AM",
+         "label": "Reach Camp Mystery",
+         "detail": "~4.8 mi in; last reliable water before the pass."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Top out at Marmot Pass",
+         "detail": "6,000 ft; first big views of Constance, The Needles, and beyond."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit West Peak",
+         "detail": "Class 2 boot path and a short scramble onto a boulder to the 6,988 ft high point."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the route back through Marmot Pass and down the Big Quilcene Trail."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at trailhead",
+         "detail": "~8 hrs car-to-car total, typical for a fit party."
+        }
+       ],
+       "objective": "Reach the Buckhorn Mountain West Peak summit (6,988 ft)"
+      }
+     ],
+     "totalNote": "A long single day out-and-back: roughly 13.5 miles and 4,477 ft of gain, typically 8-9.5 hours car-to-car for a fit party; the summit push above Marmot Pass is an easy, non-exposed class 2 scramble."
+    },
+    "rope_note": "From Marmot Pass, a steep but non-exposed open path gains the West Peak summit — explicitly described as an easy Class 2 scramble suitable as a first scramble, no technical gear needed.",
+    "grade": "Class 2 (off-trail talus/scree)",
+    "access": {
+     "fees": "$5 Northwest Forest Pass day pass or $30 annual pass per vehicle (available at recreation.gov or local vendors).",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Buckhorn Wilderness limits groups to 12 people and/or 8 head of stock; no open fires or wood gathering above 3,500 ft elevation; Leave No Trace practices and standard federal wilderness regulations apply.",
+     "permit": "Northwest Forest Pass (or another valid Forest Service interagency day/annual pass) is required to park at the Upper Big Quilcene Trailhead. No separate wilderness entry permit is required for day use.",
+     "closures": "Check Olympic National Forest alerts (fs.usda.gov/alerts/olympic) for current washouts or damage on FR 27/FR 2750 before driving, especially in shoulder season; trail is generally snow-free and open roughly June–October, varying by year.",
+     "group_limit": 12,
+     "landManager": "USDA Forest Service, Olympic National Forest — Hood Canal Ranger District, Quilcene Office, 295142 Highway 101 S, Quilcene, WA 98376, (360) 765-2200 (open Tue–Wed, 9am–3pm).",
+     "land_manager": "USDA Forest Service, Olympic National Forest — Hood Canal Ranger District, Quilcene Office, 295142 Highway 101 S, Quilcene, WA 98376, (360) 765-2200 (open Tue–Wed, 9am–3pm).",
+     "parking_pass": "Northwest Forest Pass",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Buckhorn Wilderness",
+      "where": "Camps outside Olympic National Park need no permit; a recreation pass is required to park at the national forest trailheads."
+     }
+    },
+    "dist_km": 9.3,
+    "grade_num": 2
+   }
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "before": {
+    "descent_text": "There is no maintained or fixed descent on this face. Because the route finishes with low-angle terrain, most of the upper mountain can be reversed on foot with care; the steeper buttress below the Class 3/4 gully is where you will need to rappel, and every station has to be built and abandoned since there is no fixed gear on the route. Carry cord, tat and spare nuts specifically for this. Rappelling loose Olympic basalt is its own hazard: pull ropes deliberately, keep the party out of the fall line, and expect the ropes to knock blocks off on every pull. Once back at the boulder camp, retrace the Home Creek basin to Home Lake and reverse the Constance Pass / Upper Dungeness trail to the car. Note that the walk out regains meaningful elevation over Constance Pass before the long descent to the Dungeness, so budget more time for the exit than a simple downhill mileage estimate suggests.",
+    "approach_variants": [
+     {
+      "name": "Upper Dungeness Trail to Home Lake, then the Home Creek basin to the boulder camp",
+      "notes": "From US 101 near Sequim Bay State Park turn onto Louella Road, go about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the Upper Dungeness Trailhead just across the Dungeness River bridge. Large parking area, vault toilet, no potable water, Northwest Forest Pass or Interagency pass required.\n\nHike Upper Dungeness Trail #833 up the river — easy, shaded, river-grade — to Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles and about 4,890 ft. Continue on the Constance Pass trail as it climbs out of the timber into rocky flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and drop to Home Lake at about 9.3 miles and roughly 5,308-5,330 ft, some 500 ft below Constance Pass.\n\nFrom the lake, work up the Home Creek basin south-southwest toward the peak. Camp at the LARGE BOULDERS directly northwest of the summit, just south of Home Creek. That boulder camp is the documented basecamp for this route and it is where the first-ascent party camped.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Rock quality described by climbers who have scouted it as among the worst in the Olympic Mountains, and as bad as anything in the range near the summit ridge",
+       "No fixed gear anywhere on the route — every rappel station on descent has to be built and left",
+       "Sparse protection with long runouts",
+       "The published description for this line is thin and climbers who know it advise ground-truthing it in person",
+       "A 9+ mile approach with meaningful re-ascent over Constance Pass on the way out"
+      ],
+      "baseFinding": "THE ROUTE STARTS AT THE TOP OF A SCREE FIELD WHERE AN OBVIOUS RAMP BEGINS, AND THE THING THAT IDENTIFIES THE RAMP IS THE BIGGEST CORNER ON THE FACE. From the boulder camp, climb the scree field to the base of the wall and pick up the obvious ramp. Follow it round CLIMBER'S RIGHT of the PROMINENT DIHEDRAL — the one large, unmistakable corner in that section of face — to a steep Class 3/4 gully. If the ramp you are on is taking you LEFT of the big corner, you are on the wrong side of it. THE SECOND TEST IS AT THE TOP OF PITCH ONE AND IT IS A COLOUR YOU CAN READ AT ARM'S LENGTH: after the first pitch this route turns CLIMBER'S LEFT onto an obvious ledge running along a GREEN-LICHEN-COVERED FACE. Green lichen on rock is visible in cloud in a way a skyline feature is not. If your first pitch does not end at a ledge beneath a lichen-green face, you are not on the Northwest Buttress — and specifically, if you have carried straight on up a crack system instead of stepping left, you are on Sean's Route / Second Wind, which shares this start and diverges exactly here. WHAT THE ROUTE'S OWN TEXT ALREADY TELLS YOU, AND IT IS THE HONEST LIMIT: the face is in full view from the boulder camp and from below, and that is described as the only reliable chance you get to pick out the ramp and the green-lichen ledge. Look at it, photograph it and fix the line in your head from camp. This is a route to identify in the evening and climb in the morning; there is no marker sequence that will find it for you if you walk up into the wall in cloud having never seen it."
+     }
+    ],
+    "approach": "Drive to the Upper Dungeness Trailhead (Trail #833.2) in Olympic National Forest: from US 101 near Sequim Bay State Park turn onto Louella Road, continue about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the trailhead just across the Dungeness River bridge (47.877572, -123.136927). There is a large parking area and a vault toilet but no potable water; a Northwest Forest Pass or Interagency pass is required. Hike Upper Dungeness Trail #833 up the river — an easy, shaded, river-grade trail past good swimming holes — reaching Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles (~4,890 ft). Continue on the Constance Pass trail as it climbs out of the timber into rocky, flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and drop to Home Lake at about 9.3 miles (~5,308-5,330 ft, ~500 ft below Constance Pass). Put simply, the approach is 8.5 miles up to a base camp near Home Lake. From the lake, work up the Home Creek basin south-southwest toward the peak and camp at the large boulders directly northwest of the summit, just south of Home Creek; the face is in full view from there and from below, which is the only reliable chance you get to pick out the ramp and the green-lichen ledge."
+   }
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "before": {
+    "face": "Northeast side, above Crystal Pass",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Short step above the pass",
+      "notes": "From the base of Inner Constance's northeast side, a short step just above the pass leads into the rising traverse."
+     },
+     {
+      "n": 2,
+      "class": "Class 2-3",
+      "label": "Rising traverse on the north ridge/crest",
+      "notes": "A rising traverse along the right side of the north ridge/crest on broken, blocky terrain, with occasional class 4 (and low 5th class) moves where the crest steepens, working up to the summit."
+     }
+    ],
+    "descent_text": "Descend by reversing the ascent line: downclimb the class 3–4 blocky terrain back down the rising traverse to the step above Crystal Pass. Route-specific rappel counts for this exact Crystal Pass/NE line are thinly documented, but the Constance massif's upper terrain that Inner Constance shares with its neighbor — broken, gendarmed ridge steps on notoriously poor rock — is commonly down-climbed by confident parties with one short rappel used through the single steepest step near the top by those who prefer it. Plan on roughly one rappel of about 30 m/100 ft; a single 30 m rope (or a 60 m doubled) is enough length. Treat any anchor as natural rather than fixed: the only documented technical route on this peak explicitly notes 'no fixed gear' and 'very poor rock, very poor pro,' so expect to sling a horn/block or build a hand-placed gear anchor and inspect (or replace) any tat you find rather than trust it blindly. Below that step, continue down the same broken class 2–3 ground back to Crystal Pass, then reverse the approach: down into Crystal Basin, over Constance Pass, and back down the Constance Pass Trail and Dosewallips Road to the washout trailhead. Loose rock and scree are a hazard the entire way off the summit block — this is classic crumbly Olympic metavolcanic rock — so keep parties tight and out of each other's fall line. There is no easier walk-off alternative; the class 4/low 5th step near the top is the only way through, whether downclimbed or rappelled.",
+    "approach": "From the Dosewallips River Road washout (roughly 1 mile in from the old trailhead gate, elev. ~600 ft), the road has been closed to motor vehicles since a 2002 flood took out a ~300-ft section, but it remains open to foot and bicycle travel — most parties bike the flat, mostly-shaded roadbed to save time, working around the washout on a riverside bypass/use trail. Continue roughly 5.5 more miles of road-walking/biking to the old Dosewallips Campground and decommissioned ranger station at the true road end (about 6.5 mi and ~1,900 ft of cumulative gain from the gate). From there, pick up the Constance Pass Trail, which climbs steadily south/southwest through forest into subalpine parkland — accounts differ on exact trail mileage (roughly 5–8 additional miles depending on where the count starts), gaining to Constance Pass at about 5,850 ft; the upper stretch is steep, open meadow and scree with the last reliable water at creek crossings below treeline and none above. From Constance Pass, leave the maintained trail and travel cross-country west, dropping into the head of Crystal Basin and climbing to Crystal Pass, the windswept notch on the Constance–Warrior massif dividing the Dosewallips (Crystal Basin) side from Avalanche Canyon. This stretch is talus, scree, and (early/mid-season) lingering snow and ice — the informal climbers' track fades near the pass, so careful route-finding is needed, and a rope/axe may be prudent on the snow remnant below the pass in early season. From Crystal Pass, descend into upper Avalanche Canyon — a barren, glacially carved basin between Mount Constance and Inner Constance — following an intermittent climbers' path through scree and talus, staying toward the right (north) side of the canyon past the distinctive 'Cat Ears' rock formation, then contour/climb toward the base of Inner Constance's northeast side. From there, a short step just above the pass leads into a rising traverse along the right side of the north ridge/crest on broken, blocky class 2–3 terrain with occasional class 4 (and low 5th class) moves where the crest steepens, working up to the summit. This Dosewallips/Crystal Pass approach (about 16 mi one-way, ~25.75 km) is considerably longer than the more commonly used Lake Constance approach into Avalanche Canyon (roughly 8 mi one-way) but avoids that trail's brutally steep, unmaintained, blowdown-choked lower section; expect a 2–3 day trip with a camp near Constance Pass or in upper Avalanche Canyon, and carry all the water you'll need above Constance Pass since only transient snowmelt is available higher up.",
+    "itinerary": {
+     "cal": "Dosewallips Road has been closed to vehicles since a 2002 washout (foot/bike only past the closure), adding several miles each way beyond older trip reports' mileage.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Dosewallips trailhead, follow the Dosewallips River trail and climb toward Constance Pass, then leave the maintained trail to gain the basin/pass (Crystal Pass) below Inner Constance's northeast aspect. Expect steady, unrelenting switchbacks gaining most of the day's elevation in the final 2-3 miles.",
+       "hours": 5.5,
+       "miles": 6.5,
+       "title": "Approach to high camp",
+       "gainFt": 3800,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a high camp in the basin/pass below Inner Constance's NE side"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start on firm snow up a broad couloir into a narrow, moat-lined snow defile, then a steep discontinuous snow finger gaining the East Ridge. From the ridge it's a Class 2-3 scramble on loose-to-solid pillow basalt, with a short Class 3-4 rock step guarding the summit block. Descend by reversing the same line, down-climbing/rappelling the rock step and glissading or plunge-stepping the gully where snow allows.",
+       "hours": 8.5,
+       "miles": 4.5,
+       "title": "Summit day: South Gully-East Ridge",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start to catch the snow while firm."
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Enter the South Gully",
+         "detail": "Broad couloir narrowing into a moated snow defile."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Top of the snow finger",
+         "detail": "Gain the East Ridge; stow snow tools if rock takes over."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Class 3-4 step to summit block",
+         "detail": "Short exposed rock step below the true summit."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit",
+         "detail": "Northeast summit, 7,672'."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp",
+         "detail": "Down-climb/rappel the rock step, descend the gully."
+        }
+       ],
+       "objective": "Climb to the Northeast summit (7,672') and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the approach, dropping back down toward the Dosewallips River trail and out to the trailhead (or bike cache, given the road washout closure). Mostly downhill and straightforward after the technical day prior.",
+       "hours": 5,
+       "miles": 5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3972,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Descend to the Dosewallips trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip covering roughly 16 miles round trip and about 6,000 ft of gain to the 7,672' NE summit; strong, fast parties sometimes compress the approach and hike-out into a single day for a 2-day trip, or combine it with Mount Constance or Warrior Peak from the same camp."
+    },
+    "timing": {
+     "totalHrs": 19,
+     "summitTimeHrs": 8.5,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "From the Dosewallips trailhead, follow the Dosewallips River trail and climb toward Constance Pass, then leave the maintained trail to gain the basin/pass (Crystal Pass) …",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8.5,
+       "note": "An alpine start on firm snow up a broad couloir into a narrow, moat-lined snow defile, then a steep discontinuous snow finger gaining the East Ridge. From the ridge it's a Class 2-…",
+       "fromTo": "Summit day: South Gully-East Ridge",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Break camp and reverse the approach, dropping back down toward the Dosewallips River trail and out to the trailhead (or bike cache, given the road washout closure). Mostly downhill…",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day backpacking fitness for a long, sustained off-trail approach via the Dosewallips toward Crystal Pass, typically with a high camp before the summit push",
+      "packWeight": "Overnight backpacking load (roughly 30-40 lb) to a high camp, plus a lighter summit-day pack carrying rack, rope, and snow gear"
+     },
+     "approachTime": "Multi-day approach; a long backcountry hike via Dosewallips Road/trail toward Crystal Pass and a high camp near the Constance group, followed by a pre-dawn alpine-start summit push to beat afternoon rockfall",
+     "requiredSkills": [
+      "Leading and following exposed 4th class to low 5th class terrain on notoriously loose, rotten rock",
+      "Climbing/protecting a steep, committing chimney or roof-like pitch",
+      "Off-trail navigation and route-finding to avoid being drawn onto the wrong (southwest) summit",
+      "Steep snow travel and basic glacier/snowfield travel (early season) including self-arrest",
+      "Rappelling and building anchors in rock of uncertain quality",
+      "Rockfall awareness/avoidance discipline (helmet use, timing, party spacing) given constant rockfall on warm days"
+     ],
+     "experienceLevel": "Experienced alpine rock climber with prior loose-rock/choss experience and comfort route-finding on an unmarked, poorly-documented line; not appropriate for a first alpine rock outing"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, once the rock has mostly dried out but before the first early-season storms arrive",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early July can still carry lingering snowfields and the small glacier remnant high on the route; conditions generally firm up and the route dries through the month, matching the Mid-July start of the best season",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Typically still heavy snow and steep snow/full alpine conditions; the route is outside its documented best-season window and approach/route-finding is significantly harder",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Core of the best-season window: rock is driest, snow patches are minimal, and this is the most reliable month for the standard route",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within the best-season window, but a short shoulder season where early storms become possible per the climate notes; watch weather windows closely",
+       "status": "good"
+      }
+     }
+    },
+    "descent": "Reverse the South Gully–East Ridge line: down-climb/rappel the Class 3-4 rock steps off the summit block, then descend the snow finger through the gully, staying alert for moats on both sides and for wet-day rockfall/collapsing snow blocks (a documented near-miss involved a refrigerator-size block of sliding snow). Published descriptions note this line (Route 2A) as a workable descent option back to Avalanche Canyon and Lake Constance.",
+    "watch_out": "Rotten rock and rockfall hazard throughout upper peak—granite and metamorphic rock severely weathered; continuous hazard from loosening rocks; stay alert and compact; helmet mandatory\nExposed chimney/roof pitch on upper pitches—significant protection challenge on friable rock; runout potential if placements fail; requires confident climbing and careful anchor placement\nNavigation to correct NE summit complicated by multiple peaks—wrong summit selection can add hours and difficulty; study photos and use GPS; false summits create fatigue and disorientation\nSteep snow and small glacier high on route—transition from rock to snow/ice can be hazardous; assess conditions and have appropriate tools (ice axe, crampons); late season bare ice or crevasse exposure\nCrystal Pass crossing—bergschrund potential; late season route-finding confusion; always probe and belay uncertain snow/ice crossings\nAltitude exposure with sustained climbing—7700+ feet with continuous elevation gain; altitude sickness possible; acclimatization and hydration essential\nWeather exposure on open ridge traverse—afternoon storms common in Olympics; exposed position dangerous with lightning; start pre-dawn\nDescent terrain equally demanding—route-finding on descent must-do; darkness increases risk; maintain focus on descent line throughout climb",
+    "approach_variants": [
+     {
+      "name": "Lake Constance and Avalanche Canyon to the South Gully",
+      "notes": "The shorter of the two ways in, at roughly 8 miles one-way. Bike or walk about 5 miles of closed Dosewallips Road to the unsigned Lake Constance climbers' trail at about 1,425 ft, then the steep unmaintained boot path up the narrow Constance Creek canyon. At roughly 3,100 ft the tread briefly levels on the valley floor beside the creek at a flat bench with an established fire ring and running water — a common rest stop. From there the last 1,700 ft to Lake Constance at 4,800 ft. Camping at the lake is quota-limited May 1 to September 30.\n\nFrom the lake head north into Avalanche Canyon, barren and rocky in stark contrast to the rainforest below, on faint intermittent climbers' track and snow patches, and continue up-canyon to the broad couloir below the Thumb.",
+      "season": "Roughly Jun-Sep, and snow-dependent in a way most Olympic scrambles are not — this line wants snow still bridging the moats in the defile, so early to mid season is better than late",
+      "hazards": [
+       "Deep moats on both sides of the snow finger in the South Gully defile, needing repeated stemming to bypass",
+       "Collapsing or sliding snow blocks in the constriction as the day warms — a documented injury",
+       "Notoriously loose, rotten Olympic pillow basalt with rockfall on warm days",
+       "Easy to be drawn onto the southwest summit, which has no easy access to the true northeast high point",
+       "Steep snowfields and a small glacier high on the route early season",
+       "The Lake Constance trail is one of the steepest and least maintained in the range"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE OF THIS CLIMB IS A FORK, AND THE FORK IS MARKED BY A ROCK FORMATION CALLED THE THUMB. Head up Avalanche Canyon to the broad couloir below the Thumb. That is where the South Chute (which belongs to MOUNT Constance) and the South Gully (which belongs to INNER Constance, this route) diverge. Two summits sit above one canyon and the Thumb is the thing that tells the two lines apart.\n\nTHE FOG TEST THAT DOES NOT NEED THE THUMB, AND IT IS THE BETTER ONE, IS THE SHAPE OF THE GULLY YOU END UP IN. From the broad couloir, veer RIGHT into a steeper secondary couloir, which narrows into a snow-filled DEFILE. That defile constricts to roughly a two-foot gap with moats five to ten feet deep opening on either side of the snow by mid-to-late season. Nothing else in this canyon does that. If your gully stays broad and open all the way up, you are in the Mount Constance South Chute and climbing the wrong peak.\n\nSECOND TEST, higher: above the defile the snow finger goes discontinuous and you stem repeatedly between snow and rock to get round the moats, with short up- and downclimbs on rock where the snow runs out. A steep finger tops out at a notch on the East Ridge near 7,200 ft, gained by a short Class 3-4 rock step. If you are still on continuous snow with no stemming, you have not reached the defile yet.\n\nWHAT GOING TOO FAR LOOKS LIKE, AND IT IS THE RECORDED WAY THIS ROUTE GOES WRONG: from the East Ridge the line pulls naturally toward the SOUTHWEST summit, which has no easy connection across to the true NORTHEAST high point. Follow the East Ridge crest on Class 2-3 pillow basalt to the northeast top; if the ridge you are on is running away southwest, you are heading for the wrong summit.\n\nSAFETY NOTE THAT IS PART OF THE ROUTE-FINDING: snow blocks calve out of the defile constriction as the day warms — a refrigerator-sized block struck a climber there. Move through it quickly and probe the bridges over the moats before weighting them."
+     },
+     {
+      "name": "Dosewallips road to Constance Pass, then Crystal Basin and Crystal Pass",
+      "notes": "About 16 miles one-way and worth it to some parties precisely because it avoids the Lake Constance trail's brutally steep, unmaintained, blowdown-choked lower section. From the Dosewallips washout at roughly 600 ft, bike or walk the closed roadbed — working round the washout on a riverside bypass — roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground and decommissioned ranger station at the true road end, about 6.5 miles and 1,900 ft of cumulative gain from the gate.\n\nPick up the Constance Pass Trail and climb south and southwest through forest into subalpine parkland to Constance Pass at about 5,850 ft. The upper stretch is steep open meadow and scree, with the last reliable water at creek crossings below treeline.\n\nFrom Constance Pass leave the trail, travel cross-country west into the head of Crystal Basin and climb to Crystal Pass, the windswept notch on the Constance-Warrior massif that divides the Dosewallips side from Avalanche Canyon. Expect a two or three day trip with a camp near Constance Pass or in upper Avalanche Canyon.",
+      "season": "Roughly Jul-Sep, once the snow below Crystal Pass is safe",
+      "hazards": [
+       "The climbers' track fades near Crystal Pass; unmarked talus, scree and snow between there and Constance Pass",
+       "Notoriously rotten pillow basalt with constant rockfall on warm days",
+       "A steep, committing chimney and roof section high on the peak that trip reports call the cave of despair",
+       "Being drawn onto the southwest summit",
+       "No water above Constance Pass except transient snowmelt",
+       "Roughly 6.5 miles of closed road at each end"
+      ],
+      "longForm": true,
+      "baseFinding": "FROM CRYSTAL PASS THE BASE OF THE CLIMB IS DIRECTLY BELOW YOU RATHER THAN ABOVE YOU, WHICH IS THE ONE REAL ADVANTAGE OF THIS SIDE. Descend south into upper Avalanche Canyon on the intermittent climbers' path through scree and talus, keeping to the RIGHT (north) side of the canyon, past the Thumb, and then contour and climb toward Inner Constance's northeast side.\n\nTHE TEST IS STILL THE THUMB AND THE DEFILE, and it still works from above: the fork you want is the one where the South Gully leaves the broad couloir and veers into a steeper secondary couloir that NARROWS to a two-foot gap with deep moats. Coming from Crystal Pass you can also take the northeast side directly — a short step just above the pass leads into a rising traverse along the RIGHT side of the north ridge crest, broken blocky Class 2-3 with occasional Class 4 and low fifth where the crest steepens.\n\nTHE FOG TEST FOR THAT NORTHEAST LINE IS WHICH SIDE OF THE CREST YOU ARE ON. Stay on the crest's RIGHT-hand side as you climb. If you have crossed over and are traversing on the other flank, you are off the line, and the rock over there is worse.\n\nWHAT GOING TOO FAR LOOKS LIKE: the same trap as the other variant — the mountain pulls toward the SOUTHWEST summit, which does not connect easily to the true northeast high point. Keep working toward the NORTHEAST top.\n\nHONEST LIMIT: the informal climbers' track fades near Crystal Pass and this stretch is talus, scree and early-season snow with real route-finding demands. A rope and axe may be prudent on the snow remnant below the pass early in the year."
+     }
+    ],
+    "road": {
+     "name": "Dosewallips River Road",
+     "status": "Washed out since a January 2002 flood and never repaired; closed to motor vehicles indefinitely. Drive about 8.5 miles from US-101 to the road-end parking — the washout is roughly a mile farther up the old roadbed — then foot or bike only, adding about 6.5 miles each way.",
+     "driveNote": "Open to foot and bicycle travel year-round (conditions permitting); most parties bike the flat road segment to save time before hiking the steep Lake Constance climbers' trail."
+    }
+   }
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "before": {
+    "rappels": "No fixed anchors — every rappel station must be built and left. Carry cord and spare nuts specifically for retreat; double ropes make the descent much less committing.",
+    "access": {
+     "fees": "NPS park entrance fee applies",
+     "permit": "Wilderness permit likely required if overnighting at Home Lake; day climbs should confirm current NPS rules",
+     "closures": null,
+     "landManager": "Olympic National Park (National Park Service)",
+     "passRequired": "NPS entrance fee or America the Beautiful pass for vehicle/park access"
+    },
+    "approach": "Hike the Upper Dungeness Trail from the Upper Dungeness trailhead approximately 8.5 miles uphill to a basecamp near Home Lake, from which the route's face is visible from below.",
+    "approach_variants": [
+     {
+      "name": "Upper Dungeness Trail to Home Lake and the boulder camp — the same start as the Northwest Buttress",
+      "notes": "Identical to the Northwest Buttress: Upper Dungeness Trailhead at the end of FS 2870, Trail #833 to Camp Handy at about 3.4 miles and Boulder Camp at roughly 6.1-6.4 miles, then the Constance Pass trail over into Olympic National Park and down to Home Lake at about 9.3 miles. Basecamp is the large boulders directly northwest of the summit, just south of Home Creek. Published approach distance is usually given as about 8.5 miles from the trailhead to basecamp; the northwest face comes into view from below the lake.\n\nThis route and the Northwest Buttress share their approach, their camp, their scree field and their first pitch. They are one climb until the top of that pitch. The first-ascent party's round trip from camp — climb plus the descent into Avalanche Canyon and back round to the Home Lake cirque — ran about 12.5 hours.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Sparse, widely spaced protection — roughly one usable placement per 20 to 100 feet — so fall consequences are severe on the crux pitches",
+       "Persistent rockfall on typical loose Olympic basalt, and the first three pitches are explicitly rotten",
+       "The move out of the cave is exposed and committing, and retreat from it is not simple",
+       "No fixed gear; descent stations must be built",
+       "The descent is not the ascent line — it drops into Avalanche Canyon on loose sandy ledges and traverses back round to the Home Lake cirque"
+      ],
+      "baseFinding": "THE BASE IS SHARED WITH THE NORTHWEST BUTTRESS AND SO IS THE TEST FOR IT: from the boulder camp, up the scree field to the OBVIOUS RAMP, and follow it round CLIMBER'S RIGHT of the PROMINENT DIHEDRAL to a steep Class 3/4 gully. Right of the big corner, not left.\n\nTHE TEST THAT SEPARATES THIS ROUTE FROM THE BUTTRESS COMES AT THE TOP OF PITCH ONE, AND IT IS A DECISION RATHER THAN A LANDMARK — WHICH IS WHY IT IS WORTH KNOWING BEFORE YOU LEAVE THE GROUND. At that point the Northwest Buttress steps CLIMBER'S LEFT onto an obvious ledge along a green-lichen-covered face. Sean's Route does NOT. It stays with the crack system and follows it straight on up rotten loose rock for roughly three pitches in total.\n\nTHE CONFIRMING TEST IS TACTILE, OVERHEAD AND UNMISTAKABLE IN ANY VISIBILITY: about three pitches up, the crack system ends at a CAVE BENEATH AN OVERHANGING ROOF. You cannot mistake being under a roof. That cave is the route's crux and its identity — you build an anchor in it and make a committing move out by underclinging the roof and traversing right about 10 to 15 feet onto the ramp leading to the slab above. If you have climbed three pitches and there is no roof over you, you are on the Buttress or on neither.\n\nHONEST LIMIT: this is a shared base with a pitch-one divergence rather than a route with a base of its own, and it is recorded that way rather than dressed up. Above the roof it is a few pitches of Class 4 to low fifth to the southwest false summit, then it rejoins the Northwest Buttress for the last pitch to the true top. Protection averages one usable placement every 20 to 100 feet."
+     }
+    ],
+    "climate": {
+     "fall": "September can offer cold, stable, snow-free rock, but returning fronts and shortening days squeeze the margin on a route with a two-day approach.",
+     "spring": "Snow and verglas on the northwest face and a snow-covered Constance Pass approach. Not a season for this line.",
+     "summer": "Pacific high pressure gives the clearest, driest and warmest spell — the only realistic window. Marine cloud can still arrive quickly.",
+     "winter": "Snowbound approach, high avalanche danger across the massif, and a face plastered in snow and ice. Not a winter objective.",
+     "typical": "Marine west coast climate with orographic Pacific precipitation; the Constance massif sits in the drier eastern Olympic rain shadow, but persistent low cloud on the peaks is the norm and is the practical limiting factor for this route.",
+     "forecastZone": "NWAC Olympics zone; point forecast for Mount Constance (2,360 m)"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,346 @@
+{
+ "file": "t304.json",
+ "results": [
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Where the Honeymoon gully leaves the main slope",
+   "verdict": "fixed",
+   "correct_value": "The Honeymoon gully branches left off the main snow slope before (short of) the Deception-Martin low point; parties should not climb to the ridge crest first.",
+   "evidence": "A 2007 Honeymoon-route trip report says not to bother climbing to the ridgeline, but to go straight at the prominent snow gully (its party did reach the ridge and had to drop back down to the gully, costing time). The SummitPost description of the variation says it climbs nearly to the low point and then takes a left-branching snow gully. Both agree with approach and baseFinding; pitch_detail[1] alone had the party dropping off the low point.",
+   "sources": [
+    "http://cwillett.imathas.com/local/deception/index.html",
+    "https://www.summitpost.org/mount-deception/151109"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Drop off the low point of the Deception-Martin ridge into a steep, left-branching snow gully",
+     "replace": "Climb nearly to the low point of the Deception-Martin ridge, then branch left into the steep side gully",
+     "id": "wa_honeymoon_route",
+     "fact": "Where the Honeymoon gully leaves the main slope"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Overnight permit fee",
+   "verdict": "fixed",
+   "correct_value": "Trailhead parking pass for day trips; an overnight wilderness permit costs a $6 reservation fee plus $8 per person (16+) per night.",
+   "evidence": "The park's wilderness reservations page states a $6 non-refundable reservation fee per overnight permit plus $8 per person per night for ages 16 and older. Washington's National Park Fund's permit guide gives the same $6 and $8 figures. The fees line claiming nothing is due beyond parking is wrong for overnight trips.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "None beyond the trailhead parking pass this route already lists.",
+     "replace": "The trailhead parking pass for a day climb; an overnight adds the wilderness permit — a $6 reservation fee plus $8 per person (16 and older) per night.",
+     "id": "wa_honeymoon_route",
+     "fact": "Overnight permit fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Distance and gain to Upper Royal Basin",
+   "verdict": "fixed",
+   "correct_value": "Royal Lake is 7.2 mi and ~2,500 ft from the trailhead; Upper Royal Basin is about 8 mi one-way (16 mi RT), ~500 ft above the lake.",
+   "evidence": "WTA gives Royal Lake at 7.2 mi and the upper basin three-quarters of a mile beyond, 16.0 mi round trip. A second hiking guide gives 7.2 mi and 2,500 ft to Royal Lake and 8 mi to Upper Royal Basin, another mile and 500 ft past the lake; the park's Royal Basin page gives 7.2 mi to the lake. Partner requirements' 7 mi / 14 mi RT to the upper basin is the lake figure.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "http://www.willhiteweb.com/olympic_mountains/royal_basin/dungeness_river_trail_242.htm",
+    "https://home.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~7 mi one-way / 14 mi RT to Upper Royal Basin (~2,650 ft gain)",
+     "replace": "~8 mi one-way / 16 mi RT to Upper Royal Basin (~2,500 ft gain to Royal Lake, then ~500 ft more)",
+     "id": "wa_honeymoon_route",
+     "fact": "Distance and gain to Upper Royal Basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~14 mi RT to Upper Royal Basin (2,650+ ft gain)",
+     "replace": "~16 mi RT to Upper Royal Basin (~2,500 ft gain to Royal Lake, then ~500 ft more)",
+     "id": "wa_honeymoon_route",
+     "fact": "Distance and gain to Upper Royal Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Wilderness Information Center phone",
+   "verdict": "fixed",
+   "correct_value": "Olympic National Park Wilderness Information Center, (360) 565-3100, 3002 Mount Angeles Rd, Port Angeles.",
+   "evidence": "The park's Wilderness Information Center page lists (360) 565-3100 and 3002 Mount Angeles Road, Port Angeles; the park's reservations page and a Washington's National Park Fund guide also give 565-3100 for the WIC. 360-565-3130 is the park's general information line, and 600 E. Park Ave is the park headquarters, not the WIC.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wic.htm",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "find": "360-565-3130, 600 E. Park Ave, Port Angeles",
+     "replace": "360-565-3100, 3002 Mount Angeles Rd, Port Angeles",
+     "id": "wa_honeymoon_route",
+     "fact": "Wilderness Information Center phone"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Permit zone",
+   "verdict": "fixed",
+   "correct_value": "Royal Basin/Royal Lake (a wilderness quota area)",
+   "evidence": "The park's wilderness reservations page lists Royal Basin/Royal Lake among its quota areas; WTA's Royal Basin page and the park's Royal Basin page confirm overnight camping there is permit-limited to designated sites. permitZone 'N/A' contradicts the row's own overnight_permit line.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://home.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "N/A",
+     "value": "Royal Basin/Royal Lake (quota area)",
+     "id": "wa_honeymoon_route",
+     "fact": "Permit zone"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Trail number of the Royal Basin Trail in the trailhead note",
+   "verdict": "fixed",
+   "correct_value": "Upper Dungeness Trail is #833.2; Royal Basin (Royal Creek) Trail is #832.",
+   "evidence": "The Forest Service lists Upper Dungeness Trail #833.2 and Royal Creek Trail #832, the latter starting 1 mile up the Upper Dungeness Trail. WTA's Royal Basin page gives the same numbers. The trailhead waypoint note called the Royal Basin Trail #833.2.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/upper-dungeness-trail-8332",
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/royal-creek-trail-832",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "hike the Royal Basin Trail (#833.2) ~7.2 miles to Royal Lake",
+     "replace": "hike the Upper Dungeness Trail (#833.2) and Royal Basin Trail (#832) ~7.2 miles to Royal Lake",
+     "id": "wa_honeymoon_route",
+     "fact": "Trail number of the Royal Basin Trail in the trailhead note"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Best climbing window",
+   "verdict": "fixed",
+   "correct_value": "Late June to early July, while snow still covers the loose upper rock; July 1 is the usual cut-off before the rock becomes very loose.",
+   "evidence": "The Mazamas route page says early-season climbing before July 1 is strongly preferred to avoid very loose rock. The SummitPost page puts the best time in early July, while snow still covers most of the route and the camps have melted out. Both tie the window to snow cover at the turn of June/July; best_season's 'early-to-mid July' contradicted its own next sentence and the itinerary/approach 'before July' advice.",
+   "sources": [
+    "https://mazamas.org/activity/276/",
+    "https://www.summitpost.org/mount-deception/151109",
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Early-to-mid July is generally the prime window",
+     "replace": "Late June to early July is generally the prime window",
+     "id": "wa_mount_deception_standard",
+     "fact": "Best climbing window"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "Late June through July,",
+     "replace": "Late June to early July,",
+     "id": "wa_mount_deception_standard",
+     "fact": "Best climbing window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Route grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Climber Kyle and the standard description call the route class 2 (class 2 slopes to the summit after the Gilhooley traverse), while other climbers argue the scree slope to the ridge needs hands and is class 3 minimum; the Mazamas rate it by their own letter scale. No two sources agree on a single 'Class 2-3' rating for the whole route. A current guidebook rating for the standard route would settle it.",
+   "sources": [
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/",
+    "https://www.summitpost.org/mount-deception/151109",
+    "https://mazamas.org/activity/276/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Mileage to Royal Lake",
+   "verdict": "fixed",
+   "correct_value": "The junction is ~1 mi from the trailhead; Royal Lake is 7.2 mi from the trailhead in total (about 6 mi past the junction).",
+   "evidence": "The park's Royal Basin page and WTA both put Royal Lake 7.2 mi from the Upper Dungeness Trailhead; a hiking guide says the first mile is on the Dungeness River Trail before the Royal Basin junction and gives 7.2 mi to the lake total. The beta's '1 mile ... continue 7.2 miles' makes 8.2.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "http://www.willhiteweb.com/olympic_mountains/royal_basin/dungeness_river_trail_242.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Continue 7.2 miles to Royal Lake (5,100 ft)",
+     "replace": "Continue about 6 more miles to Royal Lake (5,100 ft; 7.2 miles from the trailhead)",
+     "id": "wa_mount_deception_standard",
+     "fact": "Mileage to Royal Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Royal Basin trail number",
+   "verdict": "fixed",
+   "correct_value": "Upper Dungeness Trail #833.2; Royal Basin (Royal Creek) Trail #832.",
+   "evidence": "The Forest Service lists Upper Dungeness Trail #833.2 and Royal Creek Trail #832; WTA's Royal Basin page gives the same numbers. The trailhead pin mislabelled the Royal Basin Trail as #833.2, and the approach text shortened the Upper Dungeness number to 833 (which the trailhead card gives as #833.2).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/upper-dungeness-trail-8332",
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/royal-creek-trail-832",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Upper Dungeness Trailhead / Royal Basin Trail #833.2",
+     "value": "Upper Dungeness Trailhead",
+     "id": "wa_mount_deception_standard",
+     "fact": "Royal Basin trail number"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Upper Dungeness Trail (FST 833)",
+     "replace": "Upper Dungeness Trail (FST 833.2)",
+     "id": "wa_mount_deception_standard",
+     "fact": "Royal Basin trail number"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Upper Dungeness Trail (FST 833)",
+     "replace": "Upper Dungeness Trail (FST 833.2)",
+     "id": "wa_mount_deception_standard",
+     "fact": "Royal Basin trail number"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Trip length and approach day",
+   "verdict": "fixed",
+   "correct_value": "Two or three days is typical (2 days for strong parties, 3 common).",
+   "evidence": "The Mazamas run it car to car in two or more days and suggest a 3-day weekend when paired with Mystery; a Climber Kyle trip was a 3-day backpack. The row's own approach already says a 2-3 day itinerary. The 7 mi / 2,600 ft figure matches Royal Lake (7.2 mi, ~2,500-2,550 ft per the park) and is not itself wrong; only 'Typically a 2-day trip' conflicted.",
+   "sources": [
+    "https://mazamas.org/activity/276/",
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/",
+    "https://home.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Typically a 2-day trip:",
+     "replace": "Typically a 2- or 3-day trip:",
+     "id": "wa_mount_deception_standard",
+     "fact": "Trip length and approach day"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Scramble time quoted for the wrong basin",
+   "verdict": "fixed",
+   "correct_value": "Remove the Deception Basin timing from the Royal Basin approach.",
+   "evidence": "Deception Basin is a separate basin across Deception Pass from Royal Basin, reached from Heather Creek / the Dosewallips side, and serves as a base for Mount Mystery. The Royal Basin approach should not time the scramble from it; the row's own camp card says the same.",
+   "sources": [
+    "https://jaysjourneys.com/2010/08/14/heather-creek-deception-royal-basins-loop/",
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=291027"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "\n\nFrom Deception Basin the scramble takes roughly three hours.",
+     "replace": "",
+     "id": "wa_mount_deception_standard",
+     "fact": "Scramble time quoted for the wrong basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Itinerary total gain vs gain_ft",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.totalNote says ~5,300 ft gain round trip while gain_ft and the itinerary days sum to 5,500 ft. No outside source states a car-to-car gain for this route via the upper basin; one would settle it.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

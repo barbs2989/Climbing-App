@@ -1,0 +1,280 @@
+{
+ "file": "r244.json",
+ "results": [
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)",
+   "verdict": "fixed",
+   "correct_value": "Park at the large hairpin-turn pullout on SR-20 about a mile east of Washington Pass and approach up the drainage below Poster Peak; the Blue Lake Trailhead / Liberty Bell text does not belong to this route.",
+   "evidence": "Mountain Project's Poster Peak approach starts 'From the Hairpin' and follows cairns south up the drainage to the buttresses. The Mountaineers route page and SummitPost both say to drive SR-20 to the hairpin turn one mile east of Washington Pass and park in the large turnout, then follow the path toward Kangaroo Pass before angling up to Poster Peak; trip reports (spokalpine, Hebert) also park at the Hairpin. The stored approach paragraph is Liberty Bell Beckey Route text. NOTE: the trailhead pin coordinate (48.518965,-120.67436) sits at the Blue Lake Trailhead, ~2.5 km west of the hairpin; pin moves are out of scope and it still needs relocating.",
+   "sources": [
+    "https://www.mountainproject.com/area/111086652/poster-peak",
+    "https://www.mountaineers.org/activities/routes-places/poster-peak-blue-buttress",
+    "https://www.summitpost.org/pica-poster-peak/559371",
+    "https://spokalpine.com/2016/08/08/poster/",
+    "https://www.jeffreyjhebert.com/adventures/blues-buttress-on-poster-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead. Park at the Blue Lake Trailhead (about 5,200 ft, Northwest Forest Pass required), on the south side of the highway roughly 1.5 miles west of the Washington Pass overlook. Follow the Blue Lake Trail #314 about 1.5 miles to a small meadow, then branch off left onto the well-worn climbers' path, which climbs steeply through slabs, talus, and meadow (with short 3rd-class scrambling) into the basin below the Liberty Bell Group — roughly 3 miles and 2,000 ft of gain, 1.5-2.5 hours total. The classic Beckey Route starts from the notch (about 7,300 ft) between Liberty Bell and Concord Tower, reached via the gully splitting off the climbers' path.",
+     "replace": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass and Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead. Park in the large pullout at the hairpin turn on SR-20, about a mile east of Washington Pass. Walk south through the boulder field on the climbers' path that heads up the valley toward Kangaroo Pass. After roughly half a mile, leave the path where a drainage comes down off Poster Peak on the right, and follow cairns up it through trees and talus, staying low near treeline rather than traversing high on loose rock, to the foot of Poster Peak's two northeast buttresses. Blue's Buttress is the left-hand (southerly) one, marked by a large roof low down; allow a little over an hour from the car.",
+     "id": "wa_blue_s_buttress",
+     "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Blue Lake Trailhead (SR-20)",
+     "value": "Washington Pass hairpin turnout (SR-20)",
+     "id": "wa_blue_s_buttress",
+     "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead (SR-20)",
+     "value": "Washington Pass hairpin turnout (SR-20)",
+     "id": "wa_blue_s_buttress",
+     "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "on SR-20 just west of Washington Pass",
+     "replace": "on SR-20 about a mile east of Washington Pass",
+     "id": "wa_blue_s_buttress",
+     "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+    }
+   ]
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Trailhead elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 5,200 ft figure belongs to the Blue Lake Trailhead, which is not this route's trailhead (removed with the approach fix). 5,477 ft is the Washington Pass summit, not the hairpin, which lies below and east of the pass; no source found states the hairpin pullout's elevation, and the stored pin sits at Blue Lake TH (USGS 1 m DEM there ~5,380 ft), so its ground value cannot stand in. Left unpatched.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Washington_Pass",
+    "https://www.summitpost.org/south-early-winters-spire/150417"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Summit / high point elevation",
+   "verdict": "fixed",
+   "correct_value": "7,840 ft",
+   "evidence": "7,565 ft is the spot height printed on the USGS Washington Pass quad; SummitPost notes the true summit lies slightly ESE of that marked point. Mountain Project gives Poster Peak as 7,840 ft, and the USGS 1 m 3DEP DEM sampled around 48.4968,-120.6285 (ESE of the 7,565 point) reaches ~7,842 ft. Blue's Buttress tops out on the summit, so high_point_ft should match the 7,840 ft summit waypoint.",
+   "sources": [
+    "https://www.mountainproject.com/area/111086652/poster-peak",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.62846&y=48.49681&units=Feet&wkid=4326",
+    "https://www.summitpost.org/pica-poster-peak/559371"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 7565,
+     "value": 7840,
+     "id": "wa_blue_s_buttress",
+     "fact": "Summit / high point elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "1,365 ft is impossible for a route that tops out at ~7,840 ft from a highway pullout below Washington Pass (5,477 ft), but no source found states a car-to-car gain figure for this route (Mountain Project, SummitPost, trip reports give times, not gain). Per the rules no total is computed from arithmetic.",
+   "sources": [
+    "https://www.mountainproject.com/route/111086662/blues-buttress",
+    "https://spokalpine.com/2016/08/08/poster/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split by climbing style: Mountain Project lists 10 pitches (800 ft); SuperTopo says about 12 pitches and the Alpine Institute says 12-17 roped pitches; trip reports simul-climbed it in ~9 or '3' long pitches. The pitches column (12) has outside support, as does the breakdown ending at 10, so no single value is established.",
+   "sources": [
+    "https://www.mountainproject.com/route/111086662/blues-buttress",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Poster-Peak-Blue-s-Buttress",
+    "https://www.alpineinstitute.com/route-profile-poster-peak-house-buttress-5-7-iii/",
+    "https://spokalpine.com/2016/08/08/poster/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Rope",
+   "verdict": "fixed",
+   "correct_value": "One single rope (60-70 m); the descent is a walk-off so no second rope is needed.",
+   "evidence": "Mountain Project's descent is a walk-off SE to the 7,130 ft col and down the gully, with no rappels, and its gear note mentions only a rack and runners. The spokalpine trip report used a single 70 m rope, and the Hebert report likewise simul-climbed on one rope. No source calls for two ropes; the row's own rope_type/rope_note say single rope, walk-off.",
+   "sources": [
+    "https://www.mountainproject.com/route/111086662/blues-buttress",
+    "https://spokalpine.com/2016/08/08/poster/",
+    "https://www.jeffreyjhebert.com/adventures/blues-buttress-on-poster-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "expect": "Two 70m ropes",
+     "value": "One 60-70m single rope",
+     "id": "wa_blue_s_buttress",
+     "fact": "Rope"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "Two 70m ropes (for simul-climbing)",
+     "value": "One 60-70m single rope (for simul-climbing)",
+     "id": "wa_blue_s_buttress",
+     "fact": "Rope"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Two 70-meter ropes are sufficient for simul-climbing most of the route.",
+     "replace": "A single 60- or 70-meter rope is all you need; most of the route is simul-climbed and the descent is a walk-off.",
+     "id": "wa_blue_s_buttress",
+     "fact": "Rope"
+    }
+   ]
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Descent / total time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trip reports disagree: one party went summit to car in about one hour, another took about 2.5 hours from summit to van. descent_text's 30-60 min covers only the gully down to the base, while the itinerary's ~2 hrs runs back to the car, so neither figure is clearly wrong and no two sources settle a single value.",
+   "sources": [
+    "https://spokalpine.com/2016/08/08/poster/",
+    "https://www.jeffreyjhebert.com/adventures/blues-buttress-on-poster-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "County / emergency jurisdiction",
+   "verdict": "fixed",
+   "correct_value": "Okanogan County; Okanogan County Sheriff; Methow Valley Ranger District (Winthrop).",
+   "evidence": "The FCC census-area lookup places the buttress and approach in Okanogan County (the summit sits on the Okanogan/Chelan line); Washington Pass is in Okanogan County (Wikipedia, mindat), and Methow Valley News reports the Okanogan County Sheriff running rescues in the Washington Pass climbing area. The Forest Service page for Washington Pass names the Methow Valley Ranger District, 24 West Chewuch Road, Winthrop. Okanogan County's own contact page and the WA 211 listing both give the Sheriff's Office main line as (509) 422-7200. Nearest hospital handled separately.",
+   "sources": [
+    "https://geo.fcc.gov/api/census/area?lat=48.50271&lon=-120.63726&format=json",
+    "https://en.wikipedia.org/wiki/Washington_Pass",
+    "https://methowvalleynews.com/2018/02/07/improvements-coming-for-liberty-bell-mountain-climbing-trails/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/washington-pass-observation-site",
+    "https://www.okanogancounty.gov/260/Contact-Us",
+    "https://search.wa211.org/search/79012752-ad8e-58cd-acc0-bee93bcdc25b"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "county"
+     ],
+     "expect": "Skagit County, Washington",
+     "value": "Okanogan County, Washington",
+     "id": "wa_blue_s_buttress",
+     "fact": "County / emergency jurisdiction"
+    },
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "Skagit County Sheriff SAR covers this area.",
+     "replace": "Okanogan County Sheriff SAR covers this area.",
+     "id": "wa_blue_s_buttress",
+     "fact": "County / emergency jurisdiction"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "expect": "North Cascades National Park Ranger Station (Marblemount); Wenatchee National Forest ranger contacts available through USFS website",
+     "value": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest, 24 West Chewuch Road, Winthrop, (509) 996-4000",
+     "id": "wa_blue_s_buttress",
+     "fact": "County / emergency jurisdiction"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "sheriffDispatch"
+     ],
+     "expect": "(360) 428-3211 (non-emergency); 911 for emergencies",
+     "value": "(509) 422-7200 (Okanogan County Sheriff's Office); 911 for emergencies",
+     "id": "wa_blue_s_buttress",
+     "fact": "County / emergency jurisdiction"
+    }
+   ]
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Nearest hospital (Skagit Valley Hospital, Mount Vernon)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Part of the county dispute: Skagit Valley Hospital lies west over the pass, while the Okanogan County critical-access hospitals (Three Rivers in Brewster, Mid-Valley in Omak) lie east about an hour beyond the Methow Valley. Which is actually nearest by road from the hairpin, and the drive time, was not established by two sources, so the hospital line is left as is.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mid-Valley_Hospital"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "fact": "Land manager / pass",
+   "verdict": "fixed",
+   "correct_value": "Land manager: Okanogan-Wenatchee National Forest (Methow Valley Ranger District). Pass requirement at the hairpin pullout: unresolved.",
+   "evidence": "The Forest Service's Washington Pass page lists the Methow Valley Ranger District of the Okanogan-Wenatchee NF as manager, and Methow Valley News describes the Liberty Bell/Washington Pass climbing trails as a Methow Valley Ranger District project; landManager 'N/A' is wrong. Whether a Northwest Forest Pass is needed at the hairpin highway pullout was not established (the same USFS page says the overlook charges no fee, contradicting parking_pass), so passRequired/parking_pass/permit are left untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/washington-pass-observation-site",
+    "https://methowvalleynews.com/2018/02/07/improvements-coming-for-liberty-bell-mountain-climbing-trails/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "id": "wa_blue_s_buttress",
+     "fact": "Land manager / pass"
+    }
+   ]
+  }
+ ]
+}

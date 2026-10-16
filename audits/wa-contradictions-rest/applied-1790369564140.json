@@ -1,0 +1,126 @@
+{
+ "applied": [
+  {
+   "id": "wa_ultramega_ok",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Route grade / character of the climbing"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Route grade / character of the climbing"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Route grade / character of the climbing"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Route grade / character of the climbing"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Route grade / character of the climbing"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ultramega_ok",
+   "before": {
+    "itinerary": {
+     "cal": "Climb July-September; the route sees little traffic so expect some lichen, and there is no reliable water at or above Burgundy Col.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach Burgundy Col, then scramble down and around the north face to the NE Buttress start. Eight pitches of sustained 5.10 climbing on a lightly-traveled, sometimes lichenated line demand careful route-finding. Most parties treat this as a full, committing day and finish by downclimbing or linking into the standard North Face rappel line.",
+       "hours": 14,
+       "miles": 6.6,
+       "title": "Car-to-car: NE Buttress (Ultramega OK)",
+       "gainFt": 4300,
+       "lossFt": 4300,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave the pullout",
+         "detail": "Cross Early Winter Creek and start up the climbers' trail."
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Bench camp (6,460 ft)",
+         "detail": "Last reliable water; tank up here, especially late season."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Burgundy Col (7,770 ft)",
+         "detail": "Scramble down and around the north face to the NE Buttress base."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Start climbing",
+         "detail": "8 pitches of sustained 5.10, ~900 ft of climbing."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Top out",
+         "detail": "Downclimb or link into the standard North Face rap line."
+        },
+        {
+         "time": "~7:00 PM",
+         "label": "Back at car",
+         "detail": "5-rappel descent plus the hike out from the Col."
+        }
+       ],
+       "objective": "Send the NE Buttress (5.10c/d, 8 pitches) and summit Burgundy Spire"
+      }
+     ],
+     "totalNote": "A long single day for strong 5.10 parties, roughly 13-15 hrs car-to-car, with real route-finding on a lightly traveled line — not a route to underestimate."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 14,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3,
+     "recommendedStart": "4:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 14,
+       "note": "Approach Burgundy Col, then scramble down and around the north face to the NE Buttress start. Eight pitches of sustained 5.10 climbing on a lightly-traveled, sometimes lichenated l…",
+       "fromTo": "Car-to-car: NE Buttress (Ultramega OK)",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

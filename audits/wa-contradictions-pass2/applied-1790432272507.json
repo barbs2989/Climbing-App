@@ -1,0 +1,149 @@
+{
+ "applied": [
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "column": "gear",
+   "path": [
+    4
+   ],
+   "fact": "Glacier gear vs glaciated approach"
+  },
+  {
+   "id": "wa_luna_glacier",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season opening (June)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "before": {
+    "gear": [
+     "Rope",
+     "Standard alpine trad rack (cams and nuts)",
+     "Extra slings/runners",
+     "Helmet",
+     "Approach shoes or light boots for the glacier/4th-class sections"
+    ]
+   }
+  },
+  {
+   "id": "wa_luna_glacier",
+   "before": {
+    "itinerary": {
+     "cal": "Northern Pickets approaches are typically not in good condition until mid-July, once Wiley Ridge brush eases and Big Beaver Creek fords back off; a North Cascades NPS backcountry permit is required for all camps.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Water-taxi across Ross Lake to the Big Beaver trailhead, then an easy but long trail day up Big Beaver Creek to Luna Camp, carrying 5-6 days of food.",
+       "hours": 6,
+       "miles": 11,
+       "title": "Ross Lake to Luna Camp",
+       "gainFt": 1800,
+       "lossFt": 0,
+       "packLb": 48,
+       "schedule": [],
+       "objective": "Reach Luna Camp on the Big Beaver Trail"
+      },
+      {
+       "n": 2,
+       "note": "Leave the trail and climb steep timber and brush onto Wiley Ridge, then traverse cross-country into Luna Basin below the Luna Glacier. Slow, route-finding-heavy travel through slide alder and boulder fields.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Wiley Ridge to Luna Basin high camp",
+       "gainFt": 3500,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Establish high camp near the Luna Glacier"
+      },
+      {
+       "n": 3,
+       "note": "A short technical day gaining the moraine and glacier margin, roping up for crevassed terrain to place an advance camp within striking distance of the route.",
+       "hours": 3,
+       "miles": 2,
+       "title": "Move to advanced glacier camp",
+       "gainFt": 1000,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Position below the Luna Glacier icefall"
+      },
+      {
+       "n": 4,
+       "note": "Alpine start onto the glacier, crossing crevasses and a bergschrund to the base of the route, then four pitches of moderate alpine rock/ice to the summit ridge before reversing the entire route back to advance camp.",
+       "hours": 10,
+       "miles": 2,
+       "title": "Summit via the Luna Glacier",
+       "gainFt": 1200,
+       "lossFt": 1200,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave advance camp",
+         "detail": "Rope up immediately for crevassed glacier travel."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach the bergschrund",
+         "detail": "Base of the technical climbing."
+        },
+        {
+         "time": "6:30 AM – 10:00 AM",
+         "label": "Climb the 4 pitches",
+         "detail": "Moderate alpine rock/ice to the summit ridge."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse pitches and re-cross the glacier."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at advance camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Phantom Peak's Luna Glacier route (4 pitches)"
+      },
+      {
+       "n": 5,
+       "note": "Break camp and reverse the Wiley Ridge / Luna Basin cross-country descent back to the Big Beaver Trail at Luna Camp.",
+       "hours": 8,
+       "miles": 8,
+       "title": "Descend to Luna Camp",
+       "gainFt": 300,
+       "lossFt": 4500,
+       "packLb": 42,
+       "schedule": [],
+       "objective": ""
+      },
+      {
+       "n": 6,
+       "note": "Easy trail miles back down Big Beaver Creek to Ross Lake and the water taxi/trailhead.",
+       "hours": 5,
+       "miles": 11,
+       "title": "Hike out to trailhead",
+       "gainFt": 0,
+       "lossFt": 1800,
+       "packLb": 30,
+       "schedule": [],
+       "objective": ""
+      }
+     ],
+     "totalNote": "A remote 6-day expedition, roughly 38-40 miles round trip with one 4-pitch technical summit day via the Luna Glacier; most parties spend two nights in Luna Basin plus a lighter advance camp for the push."
+    }
+   }
+  }
+ ]
+}

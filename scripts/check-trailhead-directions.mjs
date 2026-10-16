@@ -1,0 +1,338 @@
+// ONE way to drive to the trailhead per screen, the coordinates beside it, and a label that
+// describes the value under it.
+//
+// #1437 moved TrailheadCard up under GETTING THERE and dropped the standalone "Directions to
+// trailhead" button that used to stand there — the two resolved the same trailheadPoint(), so the
+// page was offering one destination twice, and printing the road name and status twice with it.
+// That fix has no gate: its check is scripts/oneoff/probe-trailhead-sits-with-getting-there.mjs,
+// and nothing runs scripts/oneoff/. This is the gate.
+//
+// NOTHING ELSE CAN SEE THIS CLASS. check:dead-props asks whether a prop is read — both controls
+// were read and both worked. check:field-renders asks whether a column reaches a screen — these
+// reached it twice, which is more than enough for that guard. check:waypoint-placement asks
+// whether a coordinate is DRAWABLE, not whether it is drawn once. A duplicate is invisible to
+// every guard that asks "does this reach a screen"; the question has to be "how many times".
+//
+// COUNTING A CONTROL IS THE WHOLE PROBLEM, and both obvious methods are blind in opposite
+// directions. This was measured, not reasoned about:
+//   - by LABEL, over the page text: a deny-list over English. This catalog writes prose into the
+//     very fields that render here, so an `approach_logistics.trailheadDirection` reading "Drive
+//     here and park at the gate" makes a correct page report two controls.
+//   - by DESTINATION URL, over the markup: the Plan tab's control is an <a href>, but the crag
+//     Overview's is <button onClick={window.open(...)}> — React does not serialize a handler, so
+//     the URL is not in the markup at all. Counting hrefs reported ZERO controls on a screen that
+//     plainly has one, and a first version of this guard would have been silently blind to it.
+// So it counts ANCHOR-OR-BUTTON ELEMENTS WHOSE OWN TEXT IS A DRIVE LABEL. Prose lives in a div and
+// is not counted; a handler-only button is. Neither blind spot survives.
+//
+// Static: one esbuild bundle and five renders. No DB, no browser, so it sits in `npm run build`.
+//
+// Fails CLOSED: a thin render, a GETTING THERE panel that never appeared, a missing APPROACH
+// heading, or a TrailheadCard that did not render are each a broken probe — every "exactly one"
+// assertion here is satisfied by a page that rendered nothing at all.
+import { renderToStaticMarkup } from "react-dom/server";
+import React from "react";
+// @tanstack/react-query MUST be --external. Bundled, esbuild inlines its own copy and the provider
+// created here is a different module instance with a different React context; the render then
+// throws "No QueryClient set" with a provider plainly wrapped around it.
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { execFileSync } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+let failures = 0;
+const ok = (m) => console.log("  ok    " + m);
+const fail = (m) => { console.log("  FAIL  " + m); failures++; };
+const dead = (m) => { console.log("  BROKEN GUARD  " + m); process.exit(1); };
+
+const dir = fs.mkdtempSync(path.join(ROOT, ".cm-thdir-"));
+const clean = () => { try { fs.rmSync(dir, { recursive: true, force: true }); } catch { /* ignore */ } };
+process.on("exit", clean);
+const entry = path.join(dir, "entry.js");
+const out = path.join(dir, "bundle.mjs");
+
+try {
+  fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
+  // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle in
+  // the OS temp dir throws ERR_MODULE_NOT_FOUND.
+  execFileSync("npx", ["esbuild", entry,
+    "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+    "--define:import.meta.env={}",
+    "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
+    "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
+} catch {
+  dead("esbuild could not bundle RouteDetail.jsx");
+}
+
+// createClient builds a RealtimeClient AT CONSTRUCTION, which needs a WebSocket constructor —
+// native on node 22, absent on 20. Nothing here subscribes, so satisfying the capability check is
+// enough, and doing it explicitly keeps this runnable on both rather than dying on node 20.
+if (typeof globalThis.WebSocket === "undefined") {
+  globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
+}
+
+const { RouteDetail } = await import(out + "?t=" + Date.now());
+if (typeof RouteDetail !== "function") dead("RouteDetail.jsx has no default export — ANCHOR LOST");
+
+const qc = new QueryClient({ defaultOptions: { queries: { retry: false, refetchOnMount: false } } });
+const noop = () => {};
+const LAT = 48.61234, LNG = -121.23456;
+const COORD = "48.61234, -121.23456";
+const DRIVE_NOTE = "Eleven miles up the valley from the highway.";
+
+const ROUTE = (extra) => Object.assign({
+  id: "probe_route", name: "Probe Route", grade: "5.8", discipline: "alpine", pitches: 4,
+  mountainId: "probe_area", areaType: "peak",
+  approach: "From the trailhead, walk the old grade for two miles.",
+  road: { name: "Probe River Road (FR 99)", status: "Gravel to the trailhead", driveNote: DRIVE_NOTE },
+  approachLogistics: { trailhead: "Probe Trailhead", trailheadLat: LAT, trailheadLng: LNG, trailheadDirection: "From the highway, turn north." },
+  waypoints: [{ name: "Probe Trailhead", type: "Trailhead", lat: LAT, lng: LNG, elev: 2400 }],
+}, extra || {});
+
+const render = (route, tab) => renderToStaticMarkup(
+  React.createElement(QueryClientProvider, { client: qc },
+    React.createElement(RouteDetail, {
+      route, initialSubTab: tab, onBack: noop, onSubTab: noop,
+      contribs: [], myReports: [], connections: [], comments: {},
+      hzVotes: {}, sunReports: {}, gearEdits: {}, diffRatings: {},
+      crewsForRoute: [], myStars: {}, presence: null,
+    })));
+
+const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "crag", pitches: 1, _dbArea: { id: "probe_area", name: "Probe Crag", lat: 48.7, lng: -121.1 } }, extra || {}));
+/* Every field hasPlanContent() reads, cleared. Anything that resolves a trailhead coordinate is in
+   that list, which is why a crag Overview can never carry a drive control — see section 1. */
+const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
+
+let plan, tilesProbe, noCoord, cragOv, cragDup, gateOnly, itinOutback, rawKm100, rawKm40, estPoint;
+try {
+  plan = render(ROUTE(), "planner");
+  // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
+  noCoord = render(ROUTE({ approachLogistics: { trailhead: "Probe Trailhead" }, waypoints: [] }), "planner");
+  /* A crag route owns GETTING THERE on OVERVIEW only when no Plan tab is offered to host it —
+     showPlan is `!cragOnly || hasPlanContent(route)`, so for a crag it IS hasPlanContent. A crag
+     that HAS plan content renders the panel on Plan and must not repeat it on Overview; that is
+     cragDup below. Measured on the pre-#1493 tree, the same crag rendered GETTING THERE and a
+     drive control on BOTH tabs — one destination offered twice on one page, the #1437 defect one
+     level out. */
+  cragOv = render(CRAG(BARE), "overview");   // no plan content: Overview owns the panel
+  /* SINCE 2026-10-07 A CRAG HAS NO PLAN TAB AT ALL (showPlan is `!cragOnly`): the user asked for
+     everything about getting to a crag on its Overview, so the Plan body renders there and the tab
+     is never offered. cragDup is now the crag WITH plan content, on the one tab that hosts it. */
+  cragDup = render(CRAG(), "overview");      // has plan content: Overview is still its only home
+  // A seasonal gate with NO road status — the one shape that could have lost the gate when
+  // TrailheadCard's own road line was dropped.
+  gateOnly = render(ROUTE({ road: { name: "Probe River Road (FR 99)", seasonalGate: "Gated 1 Nov to 1 Jun" } }), "planner");
+  // Section 7: every input the old stat tiles read -- pin elevation, a distance, a peak coordinate.
+  tilesProbe = render(ROUTE({ distKm: 10, approachLogistics: { trailhead: "Probe Trailhead", trailheadLat: LAT, trailheadLng: LNG, trailheadDirection: "From the highway, turn north.", peakLat: 48.7, peakLng: -121.1 } }), "planner");
+  // Section 8's outback fixture: its column holds the ROUND TRIP of a 31 mi each-way itinerary.
+  itinOutback = render(ROUTE({ distKm: 100, itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
+  /* Section 8's PAIRS: each fixture against a CONTROL identical but for the itinerary, which is
+     the state effDistKm hands back untouched. The itinerary reaches the estimate through
+     effDistKm and nothing else (gainCoversWholeOuting reads gain/loss, publishedIsWholeDay reads
+     timing, sectionsCoveredByItinerary touches only the published-times block), which is what
+     makes any movement attributable to this one change.
+
+     THE POINT-TO-POINT PAIR'S STORED COLUMN IS 70, AND THAT NUMBER IS LOAD-BEARING -- the
+     injection is what found it. Its itinerary totals 62 mi (99.8 km), so a SHAPE-BLIND halving
+     yields 49.9 km. Against a 30 km control that is still LONGER, so the assertion below passed
+     against exactly the over-reach it exists to reject. A control BETWEEN the halved and the full
+     figure separates them: 99.8 > 70 only when the recorded trip shape is honoured. */
+  rawKm100 = render(ROUTE({ distKm: 100 }), "planner");
+  rawKm40 = render(ROUTE({ distKm: 40 }), "planner");
+  estPoint = render(ROUTE({ distKm: 70, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
+} catch (e) { dead(`RouteDetail threw while rendering: ${String(e && e.message).slice(0, 200)}`); }
+
+for (const [n, h] of [["planner", plan], ["no-coordinate", noCoord], ["crag overview", cragOv], ["crag duplicate-check", cragDup], ["gate-only", gateOnly]]) {
+  if (h.length < 900) dead(`the ${n} render came back thin (${h.length} chars)`);
+}
+
+/* SSR escapes: renderToStaticMarkup emits &amp; and &#x27;. Match the un-escaped words only, the
+   trap [[ssr-probes-must-match-escaped-html]] records. */
+const text = (h) => h.replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/\s+/g, " ");
+const pTxt = text(plan), nTxt = text(noCoord), coTxt = text(cragOv), cpTxt = text(cragDup);
+
+/* A CONTROL, not a phrase and not a URL — see the header. An <a> or <button> whose own text IS a
+   drive label. `[^<]*` keeps it to the element's own text, so a label wrapped around other markup
+   is not matched and neither is a paragraph that merely says "drive here". */
+/* "Google Maps" / "Apple Maps" are CragLocationCard's pair: ONE destination offered in two apps,
+   counted as one offer below (cragOffer), never as two destinations. */
+const DRIVE_LABEL = /^(?:Drive here|Directions to (?:trailhead|crag) \(Google Maps\)|Google Maps|Apple Maps)$/;
+const cragOffer = (html) => { const c = driveControls(html); return c.length === 2 && c.includes("Google Maps") && c.includes("Apple Maps"); };
+const driveControls = (html) => [...html.matchAll(/<(a|button)\b[^>]*>([^<]*)<\/\1>/g)]
+  .map((m) => m[2].replace(/&amp;/g, "&").trim())
+  .filter((t) => DRIVE_LABEL.test(t));
+
+// The panels must exist, or every count below is a statement about a page that never rendered.
+if (!/GETTING THERE/.test(pTxt)) dead("the Plan tab's GETTING THERE panel did not render — ANCHOR LOST");
+if (!/GETTING THERE/.test(coTxt)) dead("a plan-content-free crag's Overview GETTING THERE panel did not render — ANCHOR LOST");
+if (!/GETTING THERE/.test(cpTxt)) dead("a crag with plan content rendered no GETTING THERE on Overview — ANCHOR LOST");
+if (!/TRAILHEAD/.test(pTxt)) dead("TrailheadCard did not render — ANCHOR LOST, and the duplication assertions below would be vacuous");
+if (!/APPROACH/.test(pTxt)) dead("the APPROACH heading did not render — ANCHOR LOST, nothing bounds the panel");
+if (!driveControls(plan).length && !driveControls(cragOv).length) dead("no drive control found on ANY screen — the control detector matches nothing");
+ok("both GETTING THERE panels, TrailheadCard and the APPROACH heading render, so the counts below mean something");
+
+// ── 1. one drive control per screen, and it is with GETTING THERE ────────────────────────────────
+/* "crag Overview" is NOT in this list, and its absence is structural rather than a gap. A drive
+   control needs trailheadPoint() to resolve, which needs either a placed Trailhead waypoint or
+   approachLogistics.trailheadLat/Lng — and BOTH make hasPlanContent() true, so the Plan tab exists
+   and owns the panel. A crag Overview carrying a drive control is unreachable by construction.
+   Section 1b asserts that directly rather than leaving it implied. */
+for (const [n, html] of [["Plan tab", plan]]) {
+  const c = driveControls(html);
+  if (c.length === 1) ok(`${n}: exactly one drive control (${JSON.stringify(c[0])})`);
+  else fail(`${n}: ${c.length} drive control(s) — ${JSON.stringify(c)}. One destination must be offered once.`);
+}
+
+// ── 1b. one PAGE, one GETTING THERE — a crag says it once, on Overview ───────────────────────────
+/* #1437 fixed one destination offered twice on ONE SCREEN; #1493 fixed it across a crag's two
+   sub-tabs. Since 2026-10-07 a crag has no Plan tab, so Overview is the only home whether or not the
+   route carries plan content — and it must say GETTING THERE exactly once, with exactly one drive
+   offer (CragLocationCard's Google Maps + Apple Maps pair, to one destination), and keep the panel
+   whether the route has data or not (an empty one is a placeholder, not an absence). */
+for (const [n, html] of [["a crag with plan content", cragDup], ["a crag with none", cragOv]]) {
+  const t = text(html), nG = (t.match(/GETTING THERE/g) || []).length;
+  if (nG === 1) ok(`${n}: GETTING THERE renders once on Overview`);
+  else fail(`${n}: GETTING THERE renders ${nG} time(s) on Overview — it must render exactly once`);
+  if (cragOffer(html)) ok(`${n}: one drive offer (Google Maps + Apple Maps to one destination)`);
+  else fail(`${n}: drive controls ${JSON.stringify(driveControls(html))} — expected exactly the Google Maps + Apple Maps pair`);
+}
+
+/* ABOVE THE APPROACH HEADING is how "with GETTING THERE" is asserted without a character window:
+   the control renders inside TrailheadCard, which sits between the road panel and APPROACH, so
+   slicing a fixed number of characters after the heading would encode a guess about the panel's
+   size — the trap this repo records for the camping panel and the Logbook badge. The ORDER of the
+   two headings is the invariant. */
+const iGetting = pTxt.indexOf("GETTING THERE");
+const iApproach = pTxt.indexOf("APPROACH", iGetting);
+const iDrive = pTxt.indexOf("Drive here");
+if (iDrive > iGetting && iApproach > iGetting && iDrive < iApproach) ok("the Plan tab's control sits between GETTING THERE and APPROACH");
+else fail(`the drive control is not with GETTING THERE (GETTING THERE @${iGetting}, control @${iDrive}, APPROACH @${iApproach})`);
+
+// ── 2. the coordinates are beside it ─────────────────────────────────────────────────────────────
+const coordRe = new RegExp(COORD.replace(/[.\-]/g, "\\$&"), "g");
+const nCoord = (pTxt.match(coordRe) || []).length;
+if (nCoord === 1) ok("the coordinates render exactly once on the Plan tab");
+else fail(`the coordinates render ${nCoord} time(s) — they must render once, beside the drive control`);
+if (nCoord === 1 && pTxt.indexOf(COORD) > iGetting && pTxt.indexOf(COORD) < iApproach) ok("...and inside GETTING THERE, not down in the approach prose");
+else if (nCoord === 1) fail("the coordinates render, but not with GETTING THERE");
+
+// ── 3. nothing is restated ───────────────────────────────────────────────────────────────────────
+/* SCOPED TO THE CARD, never the tab. The Planner legitimately names the road elsewhere — GETTING
+   THERE itself does — so a tab-wide count reports correct work. This repo made the tab-wide
+   mistake three times in one sitting on the camping work. */
+const cardStart = plan.indexOf(">TRAILHEAD<");
+const cardEnd = plan.indexOf("ROUTE BREAKDOWN", cardStart);
+const card = cardStart < 0 ? "" : plan.slice(cardStart, cardEnd > 0 ? cardEnd : plan.length);
+if (!card) dead("could not locate TrailheadCard in the markup — ANCHOR LOST");
+if (!/Road ·|Road &#xB7;/.test(card)) ok("TrailheadCard does not restate the road GETTING THERE already names");
+else fail("TrailheadCard restates the road that GETTING THERE already names");
+const nNote = (pTxt.match(new RegExp(DRIVE_NOTE.replace(/[.]/g, "\\$&"), "g")) || []).length;
+if (nNote === 1) ok("the drive note is printed once");
+else fail(`the drive note is printed ${nNote} time(s) on one tab`);
+
+// ── 4. a label describes the value under it ──────────────────────────────────────────────────────
+/* The crag Overview printed `road.driveNote || road.name` under the heading "Trailhead", so 249
+   crag-family routes read "Roughly 25-30 minutes (about 20 miles) from Dayton, WA" as the name of
+   the trailhead — a description of the DRIVE, under the name of the place you drive to.
+
+   A crag's road now renders on its Overview (planBody, under GETTING THERE), so the label is asserted
+   there: "Drive notes", never "Trailhead". The BARE crag carries no road, so it must print none. */
+const cpIdx = cpTxt.indexOf("GETTING THERE");
+const cpPanel = cpIdx < 0 ? "" : cpTxt.slice(cpIdx, cpIdx + 700);
+const noteRe = (label) => new RegExp(label + "\\s+" + DRIVE_NOTE.replace(/[.]/g, "\\$&"));
+if (noteRe("Drive notes").test(cpPanel)) ok('a crag Overview labels the drive note "Drive notes"');
+else fail('a crag Overview does not label the drive note as the drive');
+if (!noteRe("Trailhead").test(cpPanel)) ok('...and does not label it "Trailhead"');
+else fail('a crag Overview prints the drive note under the label "Trailhead" — a description of the drive, under the name of the place you drive to');
+if (!new RegExp(DRIVE_NOTE.replace(/[.]/g, "\\$&")).test(coTxt)) ok("a crag with no road prints no drive note");
+else fail("a crag with no road prints a drive note it does not have");
+
+// ── 5. no coordinate on file — no control, and it says so ────────────────────────────────────────
+if (driveControls(noCoord).length === 0) ok("a route with no trailhead coordinate offers no drive control");
+else fail("a route with no trailhead coordinate still offers a drive control that goes nowhere");
+if (/No trailhead coordinates on file yet/.test(nTxt)) ok("...and says why, rather than going quiet");
+else fail("a route with no trailhead coordinate says nothing about it");
+
+// ── 6. the seasonal gate survived losing its second render site ──────────────────────────────────
+if (/Gated 1 Nov to 1 Jun/.test(text(gateOnly))) ok("a seasonal gate with no road status still reaches the screen");
+else fail("a route whose road has a seasonal gate and NO status renders the gate nowhere — it lost its only other render site");
+
+/* -- 7. the TRAILHEAD card carries no stat tiles ---------------------------------------------
+   It used to print Elevation, "Approach (one way)" and a straight-line "To the peak" bearing above
+   its directions. The first two restated TECH STATS on the same page, and the user asked for them
+   gone so the card answers only WHERE the trailhead is and HOW to drive there. The fixture carries
+   every input those tiles read -- a placed Trailhead pin with an elevation, a distance, and a peak
+   coordinate -- so a tile that came back WOULD render here.
+   NON-VACUITY: the card must be found, and it must carry the coordinates, or "has no tile" passes
+   against a card that did not render at all. */
+const trailheadCard = (html) => {
+  const t = text(html);
+  const h = t.indexOf("TRAILHEAD");
+  if (h < 0) return null;
+  const after = t.slice(h + "TRAILHEAD".length);
+  const nx = after.search(/\b[A-Z][A-Z][A-Z &’'-]{4,}\b/);
+  return nx > 0 ? after.slice(0, nx) : after.slice(0, 600);
+};
+const tCard = trailheadCard(tilesProbe);
+if (!tCard || !tCard.includes(COORD)) dead("the TRAILHEAD card did not render with its coordinates - ANCHOR LOST, so nothing in section 7 was checked");
+const tileHits = ["Approach (one way)", "To the peak", "Elevation"].filter((l) => tCard.includes(l));
+if (!tileHits.length) ok("the TRAILHEAD card restates none of TECH STATS' figures");
+else fail("the TRAILHEAD card prints stat tiles again (" + tileHits.join(", ") + ") - those figures live in TECH STATS");
+
+/* -- 8. the PLANNER reads the same distance TECH STATS shows ------------------------------------
+   TECH STATS states the one-way approach from effDistKm. The planner is a second reader of the
+   same fact on the same page and was the last one still on the raw column, so the page stated the approach two ways and computed
+   Est. summit / Est. return / the "After dark" warning from the one it did not show.
+
+   BEHAVIOURAL, NOT A SPELLING. Reverting `scarfHrs(effDistKm(route), ...)` to `route.distKm`
+   moves NO identifier -- effDistKm stays imported and four other readers keep calling it -- so
+   audit:silent-reverts is blind to it by its own closing caveat, and a source match would pin one
+   way of writing the call and forbid a correct refactor. Instead each fixture is rendered against
+   a CONTROL identical but for the itinerary: read raw, the two are byte-identical inputs and the
+   estimate cannot move at all.
+
+   BOTH DIRECTIONS, because a rule that only ever demands a SHORTER estimate is satisfied by an
+   unconditional halving -- and the reason a recorded point-to-
+   point fixture exists. An outback halves its itinerary total and gets SHORTER; a `point` does not
+   retrace, so effDistKm is its WHOLE 62 mi (~100 km). The planner walks a point's distance ONCE,
+   split at the summit (the walk is two legs since 2026-10-07), so ~50 km comes before Est. summit:
+   LONGER than a 40 km one-way control. Read raw (70 km, halved: 35) or halved twice (25) it is
+   shorter, so the control still separates all three readings. */
+const estSummit = (html) => {
+  const t = text(html);
+  const i = t.indexOf("Est. summit");
+  if (i < 0) return null;
+  // fmt() emits "3:41 PM", optionally "≥"-prefixed (approach inputs incomplete) and optionally
+  // suffixed "(+1d)". Read the LAST such time before the label, since the planner tile prints the value
+  // immediately above its own caption.
+  const before = t.slice(0, i);
+  const m = [...before.matchAll(/(\d{1,2}):(\d{2})\s+(AM|PM)(?:\s*\(\+(\d+)d\))?/g)].pop();
+  if (!m) return null;
+  let h = Number(m[1]) % 12;
+  if (m[3] === "PM") h += 12;
+  return h * 60 + Number(m[2]) + Number(m[4] || 0) * 1440;
+};
+const eOB = estSummit(itinOutback), eOBc = estSummit(rawKm100);
+const ePT = estSummit(estPoint), ePTc = estSummit(rawKm40);
+if (eOB == null || eOBc == null || ePT == null || ePTc == null) {
+  dead("an Est. summit time did not render on one of section 8's four fixtures - ANCHOR LOST, so nothing in section 8 was checked");
+}
+if (eOB !== eOBc) ok("the planner's estimate moves with the route's own itinerary, so it reads the same source TECH STATS does");
+else fail("the planner's estimate is UNCHANGED by the route's itinerary - it is reading the raw dist_km column, so this page states the approach distance one way and computes its times from another");
+if (eOB < eOBc) ok("...and an out-and-back whose column holds the ROUND TRIP gets a shorter walk, not a longer one");
+else fail("an out-and-back route whose stored column holds the round trip did not get a SHORTER estimate - the direction is inverted");
+if (ePT > ePTc) ok("a recorded point-to-point gets a LONGER walk, so the planner is not halving unconditionally");
+else fail("a recorded point-to-point route did not get a longer estimate - either the planner is reading the stored column again, or it halves unconditionally; the assertions above say which");
+
+console.log("");
+if (failures) {
+  console.log(`check:trailhead-directions: ${failures} failure(s).`);
+  console.log("A screen must offer exactly one way to drive to the trailhead, with GETTING THERE, the");
+  console.log("coordinates beside it, and a label that describes the value under it.");
+  process.exit(1);
+}
+console.log("check:trailhead-directions: ok — one drive control per screen, coordinates beside it, labels match their values.");
+
+// Injection-tested — see scripts/oneoff/inject-trailhead-directions-cases.mjs.

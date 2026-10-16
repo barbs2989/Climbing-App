@@ -1,0 +1,252 @@
+{
+ "applied": [
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "season",
+   "path": [],
+   "fact": "Best season for climbing Spinnaker Peak"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "seasonal_guidance",
+   "path": [],
+   "fact": "Best season for climbing Spinnaker Peak"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "typical"
+   ],
+   "fact": "Best season for climbing Spinnaker Peak"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "probability"
+   ],
+   "fact": "Best season for climbing Spinnaker Peak"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "byMonth"
+   ],
+   "fact": "Best season for climbing Spinnaker Peak"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Best season for climbing Spinnaker Peak"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "One-way approach distance (dist_km)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "What grade is actually \"published\" for the summit ridge"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "What grade is actually \"published\" for the summit ridge"
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche"
+   ],
+   "fact": "Avalanche hazard during the climbing season"
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Car-to-car elevation gain (itinerary vs gain_ft)"
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Car-to-car elevation gain (itinerary vs gain_ft)"
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Car-to-car elevation gain (itinerary vs gain_ft)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "before": {
+    "season": "Dec-Apr (documented snowshoe/scramble ascents); summer conditions unconfirmed",
+    "seasonal_guidance": {
+     "optimalWindow": "Jul-Sep",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early in the dry-season window; lingering snow or wet brush possible at lower elevations, and route-finding through the south-facing bands may be complicated by residual snow patches",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Peak dry-season conditions with heather and rock bands clear, matching the best-season window",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within the season but shorter days and higher chance of early-season weather changes in the Cascades",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "A Jul-Sep dry-season scramble in the Index/US-2 corridor",
+      "probability": "Cascade summer afternoon convection is a general regional pattern worth checking forecasts for"
+     },
+     "exposure": "Moderate fall exposure: there is route-finding through cliff bands and loose rock, so a slip near the cliff bands or on loose sections could result in a serious fall; staying on heather/easy rock and avoiding the steeper cliffs to either side is the key mitigation",
+     "avalanche": {
+      "zone": "Applies in season - this route is commonly climbed/approached on snow in winter and spring (the preferred strategy to avoid brutal summer brush), placing it within NWAC's active forecast window; check the NWAC Stevens Pass zone forecast before crossing the approach basin and PCT avalanche chutes.",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "crowds": {
+     "peakTraffic": "rarely climbed; if any traffic occurs it would be clear-weather summer weekends (Jul-Sep)",
+     "solitudeRating": 4,
+     "estimatePerSeason": "unknown - low-traffic; likely under 20 parties per season based on obscurity relative to nearby Index-area classics"
+    },
+    "gain_ft": 2045,
+    "dist_km": 12.5
+   }
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "before": {
+    "hazards": [
+     "Steep, entirely off-trail approach through blowdown and brush, especially the first ~600 ft above the river",
+     "Cliff bands around 4,200-4,400 ft on the peak's north side that require careful route-finding to bypass",
+     "Exposed ~10 ft Class 5 mantle step at roughly 6,100 ft on the summit ridge — harder than the published Class 3 rating suggests",
+     "Permanent ice/snow patches on north and east aspects near the summit, present even in late summer",
+     "North Fork Skykomish River crossing can be hazardous during high water or early-season snowmelt",
+     "No reliable cell coverage anywhere on route"
+    ],
+    "watch_out": [
+     "The published 'Class 3' rating undersells two short sections that are genuinely Class 4-5 — don't commit to the ridge unprepared for a real 5th-class move",
+     "The 4,200-4,400 ft cliff bands can cliff you out if you traverse too high or low — locate the described bypass before committing to a line",
+     "This is one of the least-visited Everett-area peaks; don't count on other parties, a boot path, or cell signal for help if something goes wrong"
+    ]
+   }
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cascade summer alpine weather typical of the Index/Wild Sky Wilderness area - warm and mostly dry within the Jul-Sep window, but exposed timber and ridge terrain can hold moisture longer after a wet spell",
+      "probability": "Afternoon thunderstorms and sudden weather changes are possible in the Cascades during the summer window; an early start reduces exposure on the ridge if weather builds"
+     },
+     "exposure": "Route-finding in dense timber on the approach, plus real fall exposure on the exposed summit moves and loose rock along the minor gendarmes of the west ridge - a slip in either zone carries serious consequence",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "itinerary": {
+     "cal": "Snow often lingers in the approach gullies and on the ridge into late June/early July, so many parties carry an ice axe (and sometimes microspikes) for early-season ascents; by August the line is mostly dry talus and scrambling.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Barclay Lake trailhead, parties follow the maintained trail briefly before dropping into off-trail travel along Barclay Creek/Tailgunner Ravine, gaining the broad Tailgunner Pass/Gunn Basin area, then scramble the West Ridge to the summit. The whole outing is done car-to-car in a single long day; the crux is route-finding and steep brush/talus on the approach, not the ridge itself, which is class 2-3 scrambling with a short exposed step near the top.",
+       "hours": 9,
+       "miles": 6.4,
+       "title": "Car-to-car: approach, West Ridge, summit, return",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Barclay Lake trailhead",
+         "detail": "Start on the maintained Barclay Lake trail from the ~2,300 ft trailhead."
+        },
+        {
+         "time": "~6:15 AM",
+         "label": "Leave the trail",
+         "detail": "Cut off-trail up the Barclay Creek/Tailgunner Ravine drainage; steep brush and boulder-hopping."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Reach Tailgunner Pass / Gunn Basin",
+         "detail": "Broad ~5,300-5,400 ft saddle; views open up onto the West Ridge line."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Start West Ridge scramble",
+         "detail": "Class 2-3 terrain, with a short exposed step/headwall below the summit dome."
+        },
+        {
+         "time": "~11:30 AM",
+         "label": "Summit (5,839 ft)",
+         "detail": "Weather on this ridge can turn quickly; most parties don't linger long."
+        },
+        {
+         "time": "~4:30-5:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Descend the same West Ridge line back into the basin, then retrace the approach."
+        }
+       ],
+       "objective": "Summit Tailgunner Peak (5,839 ft) via the West Ridge"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: roughly 8-9 hours, ~3,200 ft gain over ~6.4 miles, most of it off-trail travel to Tailgunner Pass before a class 2-3 scramble up the West Ridge and back down the same line."
+    }
+   }
+  }
+ ]
+}

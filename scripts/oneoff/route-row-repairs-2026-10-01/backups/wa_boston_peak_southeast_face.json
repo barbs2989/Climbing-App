@@ -1,0 +1,56 @@
+{
+ "id": "wa_boston_peak_southeast_face",
+ "name": "Southeast Face",
+ "approach": "From the Boston Basin Trailhead at the end of Cascade River Road (~3,200 ft, roughly mile 21.7), follow the unmaintained but well-established boot path through forest and slide alder, climbing steeply into Boston Basin (~3.2 mi, ~3,100 ft gain). Most parties camp at the basin's high camp (~6,400 ft) to shorten summit day, though the low camp (~5,300 ft) is an option for slower groups. From high camp, an alpine start gets you roped up the Quien Sabe Glacier to the Sahale-Boston col (~8,200 ft), then across the head of the Boston Glacier past the bergschrund to the base of the southeast-side ledges. From there, ascend unroped via loose, sandy 3rd/4th-class ledges on the east/southeast face (to minimize rockfall exposure to parties below) to a crux move just below the summit ridge, then a short scramble to the top. Hazards: crevasse danger on the Quien Sabe/Boston Glacier crossing (worsens through the season as the bergschrund opens), loose rock on the face's ledges and crux, and typical North Cascades afternoon rockfall/softening — an alpine start is standard.",
+ "descent_text": "Descend by reversing the approach to the summit ridge, then rappel rather than downclimb the loose upper face: from the summit, walk a few feet toward Sahale to the first rappel sling/station. Three rappels down the southeast/east face bring you back to the snow at the head of the Boston Glacier, near the base of the Sahale–Boston col. Multiple independent trip-report accounts describe the anchors as roughly 25m apart station-to-station but recommend carrying 60m ropes (used doubled, ~30m per pitch) so you are never left short between stations — bring extra webbing, since the fixed slings, while described as well-positioned and currently in good condition, are natural/gear anchors (slung horns and blocks, not bolts) and are exactly the kind of aging tat worth backing up before weighting. After the third rappel, reverse the glacier traverse back up to the Sahale–Boston col and descend Sahale Arm and the Cascade Pass Trail back to the trailhead. Hazards on descent: rockfall in the rappel line (helmet on, and be mindful of parties above/below), softening snow bridges on the glacier walk-off in the afternoon, and the mountain's generally loose, exposed rock — Boston has a real fatality history and the descent should not be treated casually.",
+ "waypoints": [
+  {
+   "lat": 48.48055,
+   "lng": -121.07979,
+   "elev": 3200,
+   "name": "Boston Basin Trailhead",
+   "note": "Small pullout on Cascade River Road, mile ~21.7, opposite Johannesburg Mountain. The Southeast Face is reached by climbing up from Boston Basin high camp toward the Sahale/Quien Sabe Glacier area and traversing to the face, not via a separate road trailhead.",
+   "type": "Trailhead",
+   "elevFt": 3200,
+   "directions": "The start is a small pullout on Cascade River Road at about mile 21.7, roughly 3,200 ft, opposite Johannesburg Mountain. There is no separate road trailhead for the Southeast Face — the face is reached from Boston Basin high camp, so this pullout is where you park. Camping in the basin needs an NPS wilderness permit registered through Marblemount, and the sites are popular enough to be worth arranging ahead for July through September."
+  },
+  {
+   "lat": 48.492,
+   "lng": -121.065,
+   "elev": 6200,
+   "name": "Boston Basin",
+   "type": "Campsite",
+   "distMi": 3,
+   "elevFt": 6200,
+   "directions": "From the pullout, follow the abandoned road about a mile to an old mine site, then the steep climbers' path through forest and slide alder, crossing Midas Creek, Morningstar Creek and the forks of Boston Creek, to emerge above treeline in Boston Basin. Low camp sits near 5,300 ft and high camp higher in the basin, about 3.2 miles and 3,100 ft from the road."
+  },
+  {
+   "lat": 48.4935,
+   "lng": -121.04,
+   "elev": 8200,
+   "name": "Sahale-Boston col",
+   "type": "col",
+   "distMi": 4.2,
+   "elevFt": 8200,
+   "directions": "Rope up for the Quien Sabe Glacier. The big crevasses are low on the glacier, so most parties take its left side and traverse in beneath Sharkfin Tower; later in the season, end-run the bergschrund below the col on climber's right, then cut back up-left above it to the Sahale-Boston col at about 8,200 ft."
+  },
+  {
+   "lat": 48.49542,
+   "lng": -121.036161,
+   "elev": 8894,
+   "name": "Boston Peak summit",
+   "type": "Summit",
+   "elevFt": 8894,
+   "directions": "From the col, head toward Boston on loose rock and snow, crossing a short stretch of the upper Boston Glacier above the bergschrund, then climb loose 3rd- and 4th-class rock to a crux just below the summit ridge and scramble to the top."
+  },
+  {
+   "lat": 48.4683,
+   "lng": -121.06,
+   "elev": 5392,
+   "name": "Cascade Pass",
+   "type": "Junction",
+   "distMi": 4.2,
+   "elevFt": 5392
+  }
+ ]
+}

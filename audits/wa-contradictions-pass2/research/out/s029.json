@@ -1,0 +1,52 @@
+{"file": "s029.json", "results": [
+ {"id": "wa_mount_adams_adams_glacier", "fact": "Total gain", "verdict": "fixed_internal_plus_one",
+  "correct_value": "gain_ft 7680 (car to car from Killen Creek, matching loss_ft and the itinerary total)",
+  "evidence": "Inside the row, loss_ft (7680), the itinerary gain total (2900+4780=7680), the itinerary loss total (7680) and the trailhead (4,600 ft) and summit (12,276 ft) pins all describe a ~7,700 ft car-to-car outing; gain_ft 5150 matches only the camp-to-summit climb (a route-only figure of ~4,700-5,000 ft). A 2011 Adams Glacier trip report from the Killen Creek trailhead gives 8,000 ft of gain car to car, agreeing with the row's ~7,700 ft rather than 5,150. No second source states a car-to-car figure for this route, so the row's own itinerary total is adopted rather than a new number.",
+  "sources": ["https://mountainflamingo.com/2011-07-30-31-mt-adams-adams-glacier/", "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm"],
+  "patches": [
+   {"id": "wa_mount_adams_adams_glacier", "fact": "Total gain", "op": "set", "column": "gain_ft", "path": [], "expect": 5150, "value": 7680}
+  ]},
+ {"id": "wa_mount_adams_adams_glacier", "fact": "Day 1 gain to High Camp", "discovered": true, "verdict": "fixed",
+  "correct_value": "Day 1 gain ~2,300 ft (4,600 ft trailhead to ~6,900 ft High Camp); day 2 carries the remaining gain so the itinerary total stays 7,680",
+  "evidence": "itinerary.days[0].gainFt says 2900 while approach ('~2,300-2,500 ft of gain to camp'), approach_variants[0].gainFt (2300) and the trailhead/High Camp elevations (4,600 -> 6,900 ft) say ~2,300. The Killen Creek to High Camp hike page gives 2,300 ft of gain with a 6,900 ft high point, and an independent Adams Glacier trip report gives the trailhead at c.4,600 ft and the end of the High Camp Trail at c.6,900 ft. Day 2 is raised by the same 600 ft (camp 6,900 -> summit 12,276 is ~5,376 ft), so the itinerary total remains 7,680 = gain_ft.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/killen-creek", "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm"],
+  "patches": [
+   {"id": "wa_mount_adams_adams_glacier", "fact": "Day 1 gain to High Camp", "op": "set", "column": "itinerary", "path": ["days", 0, "gainFt"], "expect": 2900, "value": 2300},
+   {"id": "wa_mount_adams_adams_glacier", "fact": "Day 1 gain to High Camp", "op": "set", "column": "itinerary", "path": ["days", 1, "gainFt"], "expect": 4780, "value": 5380}
+  ]},
+ {"id": "wa_mount_adams_adams_glacier", "fact": "Glacier base elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Two sources agree the glacier's terminus (toe) is at about 7,000 ft (the Killen Creek hike page: 'terminus of the glacier at 7,000 feet'; the Adams Glacier encyclopedia entry), which supports approach/approach_variants. But the waypoint describes where parties rope up after a ~two-hour leg, and trip reports put the rope-up point at ~8,000 ft (2014), ~8,500 ft (EBC), a flat area ~8,000 ft (Hebert) and ~9,000 ft (2011) — they do not agree on one figure, and setting the pin to 7,000 would contradict its own two-hour description. To settle: decide whether the pin marks the terminus (then 7,000 ft, sourced) or the rope-up point (then reword its directions from 'glacier toe' and find a second report agreeing on ~8,000 ft).",
+  "sources": ["https://www.wta.org/go-hiking/hikes/killen-creek", "https://en.wikipedia.org/wiki/Adams_Glacier_(Mount_Adams)", "https://iceandtrail.com/2014/07/09/mt-adams-adams-glacier-grade-iii-steep-snow-ai2/", "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm", "https://mountainflamingo.com/2011-07-30-31-mt-adams-adams-glacier/", "https://www.jeffreyjhebert.com/adventures/adams-glacier-on-mount-adams"],
+  "patches": []},
+ {"id": "wa_mount_adams_north_ridge", "fact": "Total gain/loss", "verdict": "fixed",
+  "correct_value": "Itinerary days: day 1 +2,300 ft; day 2 +5,391/-5,390 ft; day 3 -2,300 ft (totals 7,691 / 7,690 = gain_ft / loss_ft)",
+  "evidence": "Two independent North Ridge/North Cleaver sources give car-to-car gain of 7,800 ft (Killen Creek, 17 mi) and 8,160 ft (20 mi, starting lower because of snow), both consistent with gain_ft 7,691 and contradicting the itinerary's 6,200 ft. The Killen Creek to High Camp hike page gives 2,300 ft of gain to a 6,900 ft high point (matching approach_variants gainFt 2300 and the bivy note), so day 1's 2,900 and day 3's 2,900 loss were overstated, and day 2 (6,900 -> 12,276 ft and back) was understated at 3,300. The corrected days sum exactly to the stored gain_ft and loss_ft.",
+  "sources": ["https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route", "https://www.alpinewanderlust.com/hot-pa-pahto-north-ridge-adams/", "https://www.wta.org/go-hiking/hikes/killen-creek"],
+  "patches": [
+   {"id": "wa_mount_adams_north_ridge", "fact": "Total gain/loss", "op": "set", "column": "itinerary", "path": ["days", 0, "gainFt"], "expect": 2900, "value": 2300},
+   {"id": "wa_mount_adams_north_ridge", "fact": "Total gain/loss", "op": "set", "column": "itinerary", "path": ["days", 1, "gainFt"], "expect": 3300, "value": 5391},
+   {"id": "wa_mount_adams_north_ridge", "fact": "Total gain/loss", "op": "set", "column": "itinerary", "path": ["days", 1, "lossFt"], "expect": 3300, "value": 5390},
+   {"id": "wa_mount_adams_north_ridge", "fact": "Total gain/loss", "op": "set", "column": "itinerary", "path": ["days", 2, "lossFt"], "expect": 2900, "value": 2300}
+  ]},
+ {"id": "wa_mount_adams_lyman_glacier", "fact": "Commitment grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Only the Mountaineers (route page and activity page, one author) state Grade II, agreeing with alpine_grade, commitment and rope_note. Mountain Project gives only 'Mod. Snow'; the Mazamas page uses its own letter scale (D). No second independent commitment grade was found, and only three fields oppose the outlier. To settle: a second guide (e.g. a printed Cascade guide) giving the route's commitment grade.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes", "https://www.mountainproject.com/route/120612241/lyman-glacier", "https://mazamas.org/activity/222/"],
+  "patches": []},
+ {"id": "wa_mount_adams_lyman_glacier", "fact": "Season window", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Mountain Project says the route is climbed in late spring (supports May-Jun); the Mazamas list it for both spring and summer (supports running into July). Neither states a month window, so they do not agree on one value. To settle: a source that names the months the route is in condition.",
+  "sources": ["https://www.mountainproject.com/route/120612241/lyman-glacier", "https://mazamas.org/activity/222/"],
+  "patches": []},
+ {"id": "wa_mount_adams_lyman_glacier", "fact": "Rack: screws and pickets", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Mountaineers gear list gives 4-5 long screws and 2 pickets (matching sling_rack/rack). Mountain Project says only that the route is protectable with pickets/snow anchors and a running belay, with no counts; the Mazamas page lists no gear. No second source gives counts. To settle: a second gear list with screw and picket counts.",
+  "sources": ["https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-adams-north-lyman-glacier", "https://www.mountainproject.com/route/120612241/lyman-glacier", "https://mazamas.org/activity/222/"],
+  "patches": []},
+ {"id": "wa_mount_adams_lyman_glacier", "fact": "Total gain vs itinerary", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "gain_ft and loss_ft are 5000 (matching Mountain Project's route-only 5,000 ft), while the itinerary totals 6,700 ft gain and 6,700 ft loss, and the trailhead (4,600) to summit (12,276) pins imply ~7,700 ft car to car; the Mazamas state 7,800 ft of gain from the trailhead for this route. Only one source gives a car-to-car figure, and day 1's 2,900 also disagrees with the sourced ~2,300 ft to High Camp. To settle: a second source stating the car-to-car gain for the Lyman Glacier route.",
+  "sources": ["https://mazamas.org/activity/222/", "https://www.mountainproject.com/route/120612241/lyman-glacier", "https://www.wta.org/go-hiking/hikes/killen-creek"],
+  "patches": []}
+]}

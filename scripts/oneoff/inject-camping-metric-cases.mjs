@@ -1,0 +1,97 @@
+// Injection harness for check:camping section 10 — the trailhead metrics.
+//
+// A guard that has never failed is a guard you believe you have. Each case edits RouteDetail.jsx
+// (or ClimbMatchCore.jsx, where climbsAPeak() moved when catOf() began calling trad-on-a-peak alpine),
+// PROVES THE EDIT LANDED BY CHECKSUM before running the guard, then restores by checksum. That
+// order matters and this repo has paid for it twice: an injection that silently does not apply
+// reports "guard missed" when the guard is innocent.
+//
+// Judged on whether the SECTION 10 assertion fired, not on exit code alone — these edits also
+// perturb other sections, and judging on exit code makes a correct run read as a catch.
+import { execSync } from "child_process";
+import crypto from "crypto";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+const FILE = path.join(ROOT, "RouteDetail.jsx");
+const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+const sum = (x) => crypto.createHash("sha1").update(x).digest("hex").slice(0, 10);
+
+const CASES = [
+  {
+    name: "6. render the RAW gain instead of the 'below' wording",
+    want: /below-trailhead|NEGATIVE number/i,
+    edit: (s) => s.replace(
+      'return head+(g!=null?(g>0?" above":" below"):" from")+" the trailhead";',
+      'return head+(g!=null?" gain":" from")+" the trailhead";')
+      .replace('const head=[d,g!=null?uElev(Math.abs(g)):null].filter(Boolean).join(" \\u00b7 ");',
+               'const head=[d,g!=null?uElev(g):null].filter(Boolean).join(" \\u00b7 ");'),
+  },
+  {
+    name: "7. DERIVE a distance from lat/lng for bivy sites (a chord posing as a trail)",
+    want: /DISTANCE rendered for a bivy site/i,
+    // The tempting bug, written the tempting way: a great-circle distance from the trailhead pin.
+    // Repointed when campSites began borrowing a same-named PIN's distance: a researched site with
+    // no pin still gets null, and this case makes that null a chord instead.
+    edit: (s) => s.replace(
+      "  return bivy.map(b=>{const p=pinOf(b);",
+      "  const _th=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,\"Trailhead\"))[0];\n  const _chord=b=>{if(!b||b.lat==null||_th==null||_th.lat==null)return null;const dx=(Number(b.lng)-Number(_th.lng))*46,dy=(Number(b.lat)-Number(_th.lat))*69;return Math.sqrt(dx*dx+dy*dy);};\n  return bivy.map(b=>{const p=pinOf(b);")
+      .replace("distMi:p?_campMi(p):null,", "distMi:p?_campMi(p):_chord(b),"),
+  },
+  {
+    name: "8. trailheadFt() returns a CONSTANT instead of null (a gain with no anchor)",
+    want: /gain rendered with no trailhead elevation/i,
+    edit: (s) => s.replace(
+      // The lookup was split into trailheadPin() + trailheadFt(), so the old one-function
+      // anchor matched nothing. The case is unchanged in substance: make the "no trailhead
+      // recorded" answer a CONSTANT instead of null, and a gain is rendered against no anchor.
+      "  const w=trailheadPin(route);\n  return w?campElevFt(w):null;",
+      "  const w=trailheadPin(route);\n  return w?campElevFt(w):500;"),
+  },
+  {
+    name: "9. revert campingGate() to the bare catOf() list (the Fury defect)",
+    want: /trad on a peak does NOT render|trad-is-alpine rule is not wired/i,
+    edit: (s) => s.replace(
+      'return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);',
+      'return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route));'),
+  },
+  {
+    name: "10. climbsAPeak() returns true unconditionally (the rule becomes 'always on')",
+    file: CORE,
+    want: /trad on a CRAG renders camping|climbsAPeak returns true for a crag/i,
+    edit: (s) => s.replace(
+      'return String(a.areaType||"").toLowerCase()==="peak";}',
+      'return true;}'),
+  },
+];
+
+let pass = 0;
+for (const c of CASES) {
+  const target = c.file || FILE;
+  const original = fs.readFileSync(target, "utf8");
+  const ORIG = sum(original);
+  const edited = c.edit(original);
+  const landed = sum(edited) !== ORIG;
+  fs.writeFileSync(target, edited);
+  let out = "";
+  try { out = execSync("node scripts/check-camping-section.mjs", { cwd: ROOT, encoding: "utf8" }); }
+  catch (e) { out = (e.stdout || "") + (e.stderr || ""); }
+  finally {
+    fs.writeFileSync(target, original);
+    if (sum(fs.readFileSync(target, "utf8")) !== ORIG) { console.log(`FATAL: ${path.basename(target)} was NOT restored`); process.exit(1); }
+  }
+  const fired = c.want.test(out);
+  // An injection that never applied is not a missed catch — it is a broken case, and saying so
+  // is the difference between fixing the harness and doubting a working guard.
+  const verdict = !landed ? "BROKEN CASE (edit never landed)" : fired ? "caught" : "MISSED";
+  if (landed && fired) pass++;
+  console.log(`${verdict.padEnd(32)} ${c.name}`);
+  if (landed && !fired) {
+    const f = out.split("\n").filter((l) => /FAIL/.test(l)).slice(0, 3);
+    console.log(`      guard said: ${f.length ? f.join(" | ") : "(no failures at all — it went green on a broken app)"}`);
+  }
+}
+console.log(`\n${pass}/${CASES.length} caught`);
+process.exit(pass === CASES.length ? 0 : 1);

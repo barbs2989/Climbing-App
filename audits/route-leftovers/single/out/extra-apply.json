@@ -1,0 +1,24 @@
+{
+ "results": [
+  {
+   "id": "wa_the_triad_east_peak",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "bail still says 'short rappel' after s6 moved every other copy to two 30 m rappels",
+   "evidence": "Same 2022 East Ridge ascent as s6: two 30 m rappels using rope and tagline. The rappels column already said 2 rappels of ~30 m.",
+   "ops": [
+    {"op": "replace_text", "id": "wa_the_triad_east_peak", "column": "bail", "path": [], "find": "reversing the scramble and short rappel,", "replace": "reversing the scramble and the two rappels,"}
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "verdict": "confirmed",
+   "rule": "no sources in app text",
+   "fact": "descent_text names a published trip report as its source",
+   "evidence": "Rendered descent prose attributed a timing to 'a published trip report'; the figures are kept, the attribution is removed.",
+   "ops": [
+    {"op": "replace_text", "id": "wa_mount_fury_east_southeast_glaciers", "column": "descent_text", "path": [], "find": "A published trip report logged roughly 6 hours from the summit back to Luna Pass camp, and the full round trip (camp to camp to trailhead) as a 4-day, ~42-mile, ~13,000 ft trip.", "replace": "One party took roughly 6 hours from the summit back to Luna Pass camp, and made the full round trip (camp to camp to trailhead) as a 4-day, ~42-mile, ~13,000 ft trip."}
+   ]
+  }
+ ]
+}

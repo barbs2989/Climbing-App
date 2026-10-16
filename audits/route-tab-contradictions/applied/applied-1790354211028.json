@@ -1,0 +1,426 @@
+{
+ "applied": [
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "face",
+   "path": [],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "pitch"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "pitch"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "obj_haz",
+   "path": [
+    0
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "obj_haz",
+   "path": [
+    1
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "obj_haz",
+   "path": [
+    4
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total elevation gain"
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "column": "rappels",
+   "path": [],
+   "fact": "Whether this route involves any rappelling"
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether Mount Lyall has a drive-to trailhead requiring a self-issue permit"
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "elev"
+   ],
+   "fact": "Summit elevation of Mount Lyall"
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "elevFt"
+   ],
+   "fact": "Summit elevation of Mount Lyall"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "End of the reliable snow/ice season on the face"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "status"
+   ],
+   "fact": "End of the reliable snow/ice season on the face"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "End of the reliable snow/ice season on the face"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "End of the reliable snow/ice season on the face"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "summer"
+   ],
+   "fact": "End of the reliable snow/ice season on the face"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "before": {
+    "beta": "From Colchuck Lake, climb the steep Aasgard Pass gully to the pass, then drop gently into the gentler, rocky Upper Enchantments basin. Traverse east past Perfection Lake toward the ridge connecting to McClellan, keeping west of the distinct rock tower known as 'The Prong.' Gain the ridge on Class 2-3 talus/slabs, cross to the south side, and finish with a short, exposed Class 3 (some report low Class 4) scramble up the summit block's SW side. Descend via an easier Class 2-3 line on the block's south/east side.",
+    "face": "West side of the summit block (reached via the south/Ingalls Creek approach); an easier class 2 line exists on the peak's east side, reached instead from the Enchantments core",
+    "pitch_detail": [
+     {
+      "grade": null,
+      "notes": "Ingalls Creek Trail to the Crystal Creek crossing, ~7.5 miles of gentle forested trail.",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Cross-country ascent through forest and talus to a high camp near the 6,000 ft basin below Crystal Lake.",
+      "pitch": "Crystal Creek basin"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Rising traverse to the saddle below Crystal Lake, then up McClellan's southwest face to the summit ridge.",
+      "pitch": "Southwest Face"
+     },
+     {
+      "grade": "Class 2-3 (occasional low class 3)",
+      "notes": "Short final scramble along the ridge to the summit blocks.",
+      "pitch": "Summit scramble"
+     }
+    ],
+    "obj_haz": [
+     "Loose, rubble-filled rock in the gully above ~6,000 ft",
+     "Route-finding through unmarked basins (Fantasia Saddle/Fantasia Pond) and around the Nightmare Needles",
+     "Lingering snow and hard ice on north-facing descent slopes into early September",
+     "Long, dry, brushy lower approach with limited water and shade",
+     "Very long round trip (~18 miles) with a loose descent late in the day"
+    ],
+    "gain_ft": 6364
+   }
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "before": {
+    "approach": "From the Barclay Lake Trailhead at the end of FR-6024 (Barclay Creek Road, ~2,280 ft), start up the maintained Barclay Lake Trail #1055 — an easy, well-graded path through old-growth forest paralleling Barclay Creek. After only about 0.3–0.5 mile, a few hundred feet past the log bridge that crosses Barclay Creek (roughly 47.792, -121.459), leave the maintained trail; this is well before Barclay Lake itself. Cross toward the base of the south face and pick through brush and talus to locate a Y-shaped side drainage coming down off Merchant Peak (around 47.789, -121.436) — trip reports warn this creek mouth has become overgrown and is easy to walk past; look for a faint boot path of piled rocks leading 100–200 feet into the trees to pick up the creek bed proper. From there the 'trail' is the drainage itself: boulder-hop and scramble directly up the Merchant Creek gully, passing three main waterfall/rock steps. Waterfall 1 is bypassed on climbers-left via an established boot path; Waterfall 2 is passed by working right toward a cliff band and traversing over the top; Waterfall 3 is the crux of the entire approach — a jumble of large, jammed boulders and chockstones with small holds sitting on loose, sandy-mud rock, passed via a line on climbers-left. Above the falls the gully opens into brush, forest, and then heather meadows/slopes (the 'South Slope'); continue up onto the East Ridge for a final ~300 feet of solid, enjoyable Class 3 scrambling to the 6,113 ft summit. Water is available from Barclay Creek at the trailhead and from Merchant Creek throughout the gully (treat before drinking). Hazards include loose rock and rockfall exposure in the gully (helmet strongly recommended, especially with other parties above/below), real route-finding difficulty locating the correct side drainage, the exposed, loose Class 3 moves at Waterfall 3, and lingering snow/avalanche debris in the gully into early summer. Trip reports log roughly 3–4 hours from trailhead to summit.",
+    "approach_variants": [
+     {
+      "name": "Barclay Lake Trail to the Y-shaped drainage",
+      "notes": "Start up the maintained Barclay Lake Trail through old-growth beside the creek — easy, well-graded walking. You leave it after only about a third to half a mile, a few hundred feet past the log bridge over Barclay Creek and well before the lake, then pick through brush and talus toward the base of the south face to find the drainage. From there the drainage IS the route: boulder-hop and scramble straight up the creek bed past three waterfall steps into brush, forest and then upper heather meadows. Water runs in the gully most of the season; treat it before drinking.",
+      "season": "July to September",
+      "hazards": [
+       "Loose, sandy granodiorite throughout the gully, worst at the crux waterfall",
+       "Rockfall from parties above in a narrow drainage",
+       "An exposed chockstone squeeze at the third waterfall",
+       "Wet snowfields and avalanche debris in the gully into June",
+       "High water in the creek bed after heavy rain"
+      ],
+      "baseFinding": "Two finds, and the first is the one parties miss. The drainage mouth is a Y-shaped side creek coming down off the peak — not the drainage nearer the lake — and it has grown in badly enough to walk straight past. The tell is a faint boot path of piled rocks running a hundred or two hundred feet into the trees to reach the creek bed proper; identify it against a track or a photograph rather than by feel, because it is the most commonly missed point on the route. Once in the bed you are on the climb. It is punctuated by three waterfall steps that mark your progress: the first is turned on climbers-left on an established boot path, the second by working right toward the cliff band and traversing over the top of the falls, and the third is the crux of the whole outing — large jammed boulders and chockstones blocking the gully completely, passed by a fifteen to twenty foot chimney squeeze on climbers-LEFT, small holds set in loose sandy rock with real exposure. A fixed rappel ring has been reported at the top of that third step; treat it as aged gear of unknown condition and back it up with a tree, log or boulder of your own if you use it. Put helmets on before you start up the bed."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Steep, sustained brush-bashing approach with real elevation gain from Barclay Lake; expect a long, physically demanding day",
+      "packWeight": "Light day-pack (~15-20 lb) — no technical rack needed, but sturdy boots and gaiters for brush recommended"
+     },
+     "approachTime": "Barclay Lake trail (~2.2 mi) plus a steep, brushy off-trail ascent of the south slopes to the summit; full car-to-car day typically 8-10+ hours",
+     "requiredSkills": [
+      "route-finding through brush and loose terrain with no defined trail",
+      "careful movement on loose rock / testing holds before weighting them",
+      "basic scrambling downclimb ability (same terrain in reverse)"
+     ],
+     "experienceLevel": "Solid Class 3 scrambling experience with comfort on loose, unconsolidated rock; not a beginner objective"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "before": {
+    "rappels": "0"
+   }
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "before": {
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+    "waypoints": [
+     {
+      "lat": 48.3807,
+      "lng": -120.8403,
+      "elev": 1109,
+      "name": "High Bridge (Stehekin Valley Road)",
+      "note": "No road access; reached only by Lady of the Lake passenger ferry from Chelan (~40 mi uplake) to the Lucerne dock, then the Holden Village shuttle (FS Rd 8301, ~11 mi) to Holden, from where trails up Railroad/Tenmile/Company Creek lead to the Tenmile Pass/Hilgard Pass basins used to climb Lyall.",
+      "type": "Trailhead",
+      "elevFt": 1109
+     },
+     {
+      "lat": 48.199064,
+      "lng": -120.774147,
+      "elev": 3218,
+      "name": "Holden Village / Holden Lake Trailhead",
+      "note": "Shuttle drop-off at the former mining village; the Holden Lake Trail begins on the west side of town along Holden Road, following the Railroad Creek valley.",
+      "type": "Junction",
+      "distMi": 11
+     },
+     {
+      "lat": 48.203988,
+      "lng": -120.802644,
+      "elev": 3400,
+      "name": "Holden Lake Trail turnoff (Hart/Lyman Lake Trail junction)",
+      "note": "After about a mile paralleling Railroad Creek, bear right off the Hart/Lyman Lake trail onto the Holden Lake Trail and begin climbing switchbacks.",
+      "type": "Junction",
+      "distMi": 12
+     },
+     {
+      "lat": 48.219326,
+      "lng": -120.811273,
+      "elev": 4400,
+      "name": "Avalanche chute crossings",
+      "note": "Trail crosses several open, south-facing avalanche chutes on dry terrain; tread can be faint and brushy through slide alder after big snow years.",
+      "type": "Hazard",
+      "distMi": 13.5
+     },
+     {
+      "lat": 48.23148,
+      "lng": -120.83355,
+      "elev": 5282,
+      "name": "Holden Lake",
+      "note": "Glacial basin lake with established camping and reliable water; Bonanza Mountain's Mary Green Glacier is visible across the valley — good base camp for the summit push.",
+      "type": "Campsite",
+      "distMi": 15
+     },
+     {
+      "lat": 48.256615,
+      "lng": -120.845313,
+      "elev": 6200,
+      "name": "Basin below Holden Pass",
+      "note": "Leave the trail here and head off-trail cross-country up open basins toward Holden Pass, the jumping-off point for the south-facing talus/heather slopes to Lyall's summit.",
+      "type": "Junction",
+      "distMi": 16
+     },
+     {
+      "lat": 48.2818,
+      "lng": -120.8568,
+      "elev": 7867,
+      "name": "Mount Lyall",
+      "type": "Summit",
+      "elevFt": 7867
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late May through June is the reliable window, before the face degrades into rotten, rockfall-prone conditions by midsummer",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Ice/snow typically in solid condition, but avalanche assessment of the approach and lower face is needed",
+       "status": "good"
+      },
+      "July": {
+       "reason": "Face can still hold into early July, but by midsummer it is described as melting out and turning rotten with rising rockfall danger",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Classic window with the face still consolidated; multiple trip reports (mid-to-late June) describe good steep snow/ice climbing",
+       "status": "optimal"
+      }
+     }
+    },
+    "itinerary": {
+     "cal": "Best climbed in a firm-snow window (typically June into early July) — later in the season the north-facing snow degrades to scree/rotten ice and the face gets considerably harder and looser.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A pre-dawn start up the Phelps Creek and Leroy Creek trails to the basin, then up to the Seven Fingered Jack-Maude col to rope up and gear up before climbing sustained 35-45 degree snow on the North Face to the summit ridge. Descend south over the summit and down the broad south slopes/talus back into Leroy Basin and out the same trail.",
+       "hours": 13,
+       "miles": 14.3,
+       "title": "Car-to-car: Leroy Creek approach, North Face, South Slopes descent",
+       "gainFt": 6000,
+       "lossFt": 6000,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Phelps Creek trail by headlamp."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach Leroy Creek Basin",
+         "detail": "Meadow camp area at ~6,100 ft; refill water."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Reach the Seven Fingered Jack-Maude col",
+         "detail": "Rope up, crampons and tools on for the face."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Begin climbing the North Face",
+         "detail": "Sustained 35-45 degree snow."
+        },
+        {
+         "time": "1:15 PM",
+         "label": "Top out onto the summit ridge",
+         "detail": "Low-angle terrain to the true summit; lunch and rest."
+        },
+        {
+         "time": "2:15 PM",
+         "label": "Descend via South Slopes",
+         "detail": "Back through Leroy Basin (~4:00 PM) to the car by ~6:15 PM."
+        }
+       ],
+       "objective": "Climb the North Face and descend via the South Slopes to close the loop"
+      }
+     ],
+     "totalNote": "A very long but standard single push: strong parties climb the North Face car-to-car in about 12-13 hours via Leroy Creek Basin, descending the South Slopes on the far side of the mountain back to the same trailhead — roughly 14 miles and ~5,600-6,000 ft of gain/loss."
+    },
+    "climate": {
+     "summer": "Continuous snow/ice on the face typically persists only into about mid-July in recent years; by late summer the route is largely bare rock, broken ice, and scree.",
+     "typical": "Cold overnight refreeze is important for firm, secure snow low on the approach and face; climbers report soft, unconsolidated snow and increased wet-slide risk once the sun hits the face, arguing for an alpine start.",
+     "bySeason": {
+      "summer": "Snow/ice cover has become progressively less reliable through July and August as the small Entiat Glacier has retreated; a route that once held snow year-round now often requires a June or early-July attempt for continuous coverage."
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "revert computed gain"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "revert computed gain"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "revert computed loss"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_rake_traverse_route",
+   "before": {
+    "gain_ft": 8100,
+    "itinerary": {
+     "cal": "Climbed roughly July-September once approach gullies and basin snowfields have melted out; a North Cascades National Park wilderness permit (walk-up only, issued in person at Marblemount) is required for the Crescent Creek Basin camp.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A steep, sweaty climb out of the Goodell Creek trailhead through forest and heather slopes over the Barrier into Crescent Creek Basin, gaining nearly 6,000 ft to a camp a little over 6,000 ft below the Southern Pickets crest. Parties carry a full multi-day rack, rope, and several days of food, since the route is entirely off-trail once past the first mile or two.",
+       "hours": 8,
+       "miles": 7.2,
+       "title": "Approach to Crescent Creek Basin",
+       "gainFt": 5800,
+       "lossFt": 300,
+       "packLb": 50,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Goodell Creek TH, permit and rack in hand"
+        },
+        {
+         "time": "+5 hr",
+         "label": "Clear treeline",
+         "detail": "Onto open heather and talus below the basin"
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Reach Crescent Creek Basin camp",
+         "detail": "Bench a little over 6,000 ft below Mount Terror, with snowmelt water and views of the crest"
+        }
+       ],
+       "objective": "Reach the Crescent Creek Basin high camp"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start day climbing from camp to the Terror-Rake col, then following the crest on mixed 4th/5th-class terrain (to roughly 5.9) to the summit at 7,869 ft. The descent reverses the ridge with a series of rappels back to the col and down to camp, so the rope stays on for most of the day.",
+       "hours": 12,
+       "miles": 2,
+       "title": "Climb The Rake, ridge traverse route",
+       "gainFt": 2000,
+       "lossFt": 2000,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start with rack, single rope, and minimal water/food"
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Gain the Terror-Rake col",
+         "detail": "Steep gully/snow finger to the notch"
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Start ridge pitches",
+         "detail": "Mixed climbing along the crest, up to 5.9 in spots"
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit The Rake",
+         "detail": "High point 7,869 ft"
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin rappel descent",
+         "detail": "Reverse the ridge with a series of raps back toward the col"
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at Crescent Creek Basin camp"
+        }
+       ],
+       "objective": "Summit The Rake and return to Crescent Creek Basin camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and descend the approach route in reverse — steep heather and forest back down to the highway. Knees take the brunt of it; most parties are back at the car by mid-afternoon.",
+       "hours": 7.5,
+       "miles": 7.2,
+       "title": "Exit to trailhead",
+       "gainFt": 300,
+       "lossFt": 5800,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Hike out to Goodell Creek trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: one day backpacking into Crescent Creek Basin camp, a long technical day climbing The Rake's ridge crest and rappelling back to camp, and a day hiking out — roughly 16 miles and ~8,100 ft of gain round trip."
+    }
+   }
+  }
+ ]
+}

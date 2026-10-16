@@ -1,0 +1,156 @@
+{
+ "file": "r481.json",
+ "results": [
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Where the scramble leaves the trail",
+   "verdict": "fixed",
+   "correct_value": "The climbers' path leaves at an unsigned fork/broad saddle about half a mile on the Hurricane Ridge side of the Switchback Trail junction (about 2.5 mi from the visitor center); Victor Pass is up the other branch and is not the summit route.",
+   "evidence": "The Mount Angeles hike page puts the climbers' trail fork about 2.5 mi from Hurricane Ridge, branching left; its Klahhane Ridge page puts the Switchback junction 3.1 mi from Hurricane Ridge and Victor Pass a further climb beyond it. Another guide says to go west about half a mile from the Switchback junction to a spur heading north to the summit, and a route page describes turning south from the Switchback junction about 0.5 mi to a broad saddle where the climbers' trail leaves. None put the departure at Victor Pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-angeles",
+    "https://www.wta.org/go-hiking/hikes/klahhane-ridge",
+    "https://www.outdoorproject.com/united-states/washington/mount-angeles-switchback-trail",
+    "https://www.summitpost.org/climbers-trail/158828"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_angeles_standard",
+     "fact": "Where the scramble leaves the trail",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "(about 1,500 ft in 1.5 miles) to Klahhane Ridge, continuing to Victor Pass (5,850 ft) where the true summit of Mount Angeles rises directly to the west. Leave the maintained trail here and scramble class 3-4 terrain",
+     "replace": "(about 700 ft in 0.6 mile) to its junction with the trail from Hurricane Ridge. Turn left and follow that trail roughly half a mile to a broad saddle, where an unsigned climbers' path forks off uphill toward the summit; the maintained trail that climbs on to Victor Pass (5,850 ft) is not the summit route. Take the climbers' path and scramble Class 3 terrain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Switchback Trail gain",
+   "verdict": "fixed",
+   "correct_value": "Switchback Trail: ~700 ft in 0.6 mi to the junction with the trail from Hurricane Ridge (the summit route turns off here); ~1,500 ft in 1.5 mi only if continuing to Victor Pass.",
+   "evidence": "Both figures are real but for different segments: 700 ft in 0.6 mi to the Mount Angeles trail junction, and 1,500 ft in 1.5 mi to Victor Pass. The beta used the Victor Pass figure for the summit route; the beta rewrite (see the fork fix) now uses the 0.6-mi figure, matching the approach. The bivy note's 'close to 1,000 ft in under a mile' is in bivy[], which is owned by the camping clean-up and is not patched here.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-angeles",
+    "https://www.wta.org/go-hiking/hikes/klahhane-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Scramble grade",
+   "verdict": "fixed",
+   "correct_value": "Class 3",
+   "evidence": "The hike page calls the final push a class 3 scramble; another guide says to plan on Class 3 at a minimum; a route page and a trip report describe class 2 ledges with class 3 steps at the top. No source gives Class 4.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-angeles",
+    "https://www.outdoorproject.com/united-states/washington/mount-angeles-switchback-trail",
+    "https://trailcatjim.com/klahhane-saddle-angeles-saddle-mount-angeles-via-west-face/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_angeles_standard",
+     "fact": "Scramble grade",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2-3",
+     "value": "Class 3"
+    },
+    {
+     "id": "wa_mount_angeles_standard",
+     "fact": "Scramble grade",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 3-4 (exposed scramble)",
+     "value": "Class 3 (exposed scramble)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Gain vs loss on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on the round-trip gain from the visitor center: one hike page gives 2,100 ft, a detailed guide gives 2,550 ft (including the Sunrise Point spur), another summary 2,200 ft. No two agree, so gain_ft is left alone; loss_ft has no sourced car-to-car figure.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-angeles",
+    "https://www.earthtrekkers.com/klahhane-ridge-mount-angeles-hike-olympic/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Elevation of fork and base of summit block",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Fork ~5,216 ft; climbers' path tops out ~6,000 ft",
+   "evidence": "A mapped trail record gives the climbers' trail as 0.61 mi from 5,216 ft to 6,014 ft (798 ft gain), matching the row's approach, climbing_route and baseFinding (800 ft in ~0.6 mi to ~6,000 ft). The Hurricane Ridge-to-Switchback trail never exceeds 5,485 ft, so a 6,150-ft fork on it is impossible.",
+   "sources": [
+    "https://www.onxmaps.com/hiking/yo65870j960v/mount-angeles-summit-climbers-trail",
+    "https://www.trailrunproject.com/trail/7001902/hurricane-ridge-to-switchback-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_angeles_standard",
+     "fact": "Elevation of fork and base of summit block",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 6150,
+     "value": 5216
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Heart o' the Hills reservations",
+   "verdict": "fixed",
+   "correct_value": "First-come, first-served; no reservations",
+   "evidence": "The park's camping page lists Heart O' the Hills as first-come, first-served with self-registration; the reservation site's own listing states the campground does not offer reservations.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/camping.htm",
+    "https://www.recreation.gov/camping/poi/247585"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_angeles_standard",
+     "fact": "Heart o' the Hills reservations",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "reserve a site on Recreation.gov or take a first-come site",
+     "replace": "sites are first-come, first-served with self-registration on arrival"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 5 (3.1 mi) is the one-way approach and the itinerary's 6.3 mi is the round trip; the summit waypoint at 3.125 mi confirms they agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Morse Creek overlook waypoint elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[2] (Morse Creek valley overlook spur, 1.5 mi) is stored at 6,050 ft, but the maintained Hurricane Ridge-to-Switchback trail peaks at about 5,485 ft, and its note's '800 ft of climbing behind you' also does not fit a trailhead at 5,253 ft. No source found for the overlook's own elevation, so no patch.",
+   "sources": [
+    "https://www.trailrunproject.com/trail/7001902/hurricane-ridge-to-switchback-trail"
+   ],
+   "patches": []
+  }
+ ]
+}

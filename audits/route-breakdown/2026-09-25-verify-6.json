@@ -1,0 +1,790 @@
+{
+  "wa_liberty_bell_freedom_or_death": {
+    "area": "wa_liberty_bell",
+    "set": {
+      "beta": "P1 (5.10b/c) climbs a face-and-crack system to bolts on a slab, needing 4-5 gear placements before the first bolt. P2 (5.11c) steps left off the anchor, following rightward-trending bolts with room for a finger-sized piece. P3 (5.12a) follows bolts up and left through sustained, hard-to-aid climbing (bring a .5, .75 and #1 Camalot). P4 (5.11c) starts with an awkward, rough 5.10c traverse left into Liberty Crack; the section above to the anchor is 5.11+ R, though it can feel closer to PG13."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta labels P4 as 5.10c; the pitch to its anchor is harder (5.10c is the traverse only)",
+          "verdict": "CONFIRMED",
+          "evidence": "The route description grades P4 '5.10c + 11+ R': the 5.10c is the traverse, and the part above it to the anchor is 11+ R. The comments give P4 as .11c overall, a 5.10 traverse and then a short mid-5.11 crux after joining Liberty Crack. The stored pitch_detail already has P4 at 5.11c. Only the P4 sentence of beta changes.",
+          "sources": [
+            "https://www.mountainproject.com/route/109460263/freedom-or-death",
+            "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/109460263?sortOrder=oldest&showAll=true"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_up_in_arms": {
+    "area": "wa_concord_tower",
+    "set": {
+      "beta": "Six sustained pitches of corners and cracks, climbed all free, up a sunny, southwest-facing wall; the hardest climbing is on pitch one. Three fixed protection bolts and one bolted anchor supplement gear. The route earned a 3-star rating in its first documented ascents."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta says a bit of aid is 'still occasionally used by the first ascensionists'",
+          "verdict": "CONFIRMED",
+          "evidence": "The first-ascent report says the first push used a bit of easy aid through a seam. On later trips the route was cleaned and three protection bolts plus a bolted anchor were added, which made it all free. The route page lists it as free climbing, 5.11. Only the aid parenthetical is replaced.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/13201216754",
+            "https://www.mountainproject.com/route/125216004/up-in-arms"
+          ]
+        },
+        {
+          "claim": "stored route grade 5.10b should be 5.11",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: the live grade is 5.11, which matches both sources."
+        }
+      ]
+    }
+  },
+  "wa_clean_break": {
+    "area": "wa_juno_tower",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "approach describes the Burgundy Col trail (Burgundy Spire approach / Juno descent) instead of the Silver Star Creek approach",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: the live approach says this trail is the usual way DOWN for Clean Break, and that the more direct way in to the east face is up Silver Star Creek."
+        },
+        {
+          "claim": "beta says the first ten pitches are sustained hand cracks, but P3, P4, P6 and P9 are 5.0-5.8 blocks/chimneys/traverses",
+          "verdict": "UNCLEAR",
+          "evidence": "Plausible: the just-rewritten pitch_detail should show those pitches. But the web research tools hit a session limit before I could check any source myself, so this is not independently verified. Worth re-checking against the route page and a pitch-by-pitch trip report.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_doorway_flake": {
+    "area": "wa_south_face",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "approach leaves out the class 4 scramble (some low 5th) from the base of Skeena26 up to the talus below the far western wall",
+          "verdict": "UNCLEAR",
+          "evidence": "Not independently verified: the web research tools hit a session limit before this route's page could be read. It is also an omission, not a false statement. If confirmed, adding the scramble is new material rather than a correction, so it needs an editor's decision.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_western_dihedral": {
+    "area": "wa_south_face",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "overview says two crux pitches sit between easier friction climbing 'above and below', but P1 is also 5.8",
+          "verdict": "UNCLEAR",
+          "evidence": "The live pitch_detail grades P1, P2 and P3 all 5.8, which argues against the overview. But I could not check a source myself (the web research tools hit a session limit), and 'crux' can describe character rather than number grade.",
+          "sources": []
+        },
+        {
+          "claim": "approach leaves out the class 4 scramble from Skeena26 to the far western wall (~1 h from the saddle)",
+          "verdict": "UNCLEAR",
+          "evidence": "Not independently verified (research tools unavailable). It is an omission, not a false claim.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_west_face": {
+    "area": "wa_south_peak",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "pitch_detail P2/P3 '5.9+' are the overall grade copied onto pitches, and the four 38 m lengths are 152 m divided by four",
+          "verdict": "UNCLEAR",
+          "evidence": "The live table still reads P1 5.? / P2 5.9+ / P3 5.9+ / P4 5.?, each lengthM 38 (4 x 38 = 152 = length_m), which strongly suggests the values were derived rather than sourced. Per instruction, pitch_detail on these routes was just rewritten and is not touched here. A reviewer should consider stripping the lengthM keys and the two copied grades.",
+          "sources": []
+        },
+        {
+          "claim": "stored grade 5.9+ vs III 5.9 in a first-ascensionists' route list",
+          "verdict": "UNCLEAR",
+          "evidence": "Not independently verified (research tools unavailable), and the difference is a single '+'. No classification change proposed.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_accidental_discharge_east_face": {
+    "area": "wa_south_peak",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text offers 'downclimb the South Ridge route if conditions allow' (a 5.8 route)",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: the live descent_text describes the two summit rappels, north and then east onto the Blue Glacier, and says not to reverse the line. It no longer offers a South Ridge downclimb."
+        },
+        {
+          "claim": "route-page GPS sits at Washington Pass, so any stored coordinate copied from it would be wrong",
+          "verdict": "UNCLEAR",
+          "evidence": "Coordinates are not a prose column and show.mjs does not print them; out of scope here. Worth checking with audit:coord-origin."
+        },
+        {
+          "claim": "discipline 'mountaineering' is wrong for a 3-pitch 5.10 rock route",
+          "verdict": "UNCLEAR",
+          "evidence": "The row's own grade (5.10), pitches (3) and beta (5.10 hands, offwidth/chimney/dike) describe a technical rock route. The sibling West Face on the same peak is filed alpine. Proposed below as a classification change; I could not re-read a source myself."
+        }
+      ],
+      "classification": {
+        "discipline": {
+          "proposed": "alpine",
+          "evidence": "3-pitch 5.10 crack/offwidth rock route on South Gunsight (the row's own grade/pitches/beta); the other route on this peak (wa_west_face) is filed alpine."
+        }
+      }
+    }
+  },
+  "wa_east_face": {
+    "area": "wa_middle_peak",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text ends on the Chickamin Glacier, while the route's base is on the Blue Glacier",
+          "verdict": "UNCLEAR",
+          "evidence": "The row's own beta sets the route on the Blue Glacier side, and the South Peak rows rappel east onto the Blue Glacier. It is not established which side the notch's moat rappel lands on, and I could not check a source (research tools unavailable). Not changed.",
+          "sources": []
+        },
+        {
+          "claim": "beta's 'hidden line visible from Blue Glacier' is self-contradictory",
+          "verdict": "REFUTED",
+          "evidence": "This is phrasing, not a false fact. The next sentence says what is visible (the twin cracks and flake at the start of P2). Leave it as is, or reword in a style pass."
+        }
+      ]
+    }
+  },
+  "wa_golden_age": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "set": {
+      "descent_text": "All belays are bolted, and the route can be rappelled directly with one 70 m rope; the second rappel anchor from the top sits off to the left of the line.",
+      "rappels": "All belays are bolted; rappel the route with one 70 m rope",
+      "beta": "A sinuous line up the upper wall with bolted belays throughout; rock quality varies, with the crux 4th pitch offering the best stone on the route.",
+      "approach": "Hike directly up the gully below the wall; after about an hour, leave it on a narrow ledge that leads back right to the start, a prominent 4–5 in left-arching corner. Alternatively, reach the base by climbing the early pitches of either The Tiger or Ellen Pea to the shared midway ledge system, then traverse left to the start; a two-bolt anchor sits on the ledge below the trees."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text: belays aren't uniformly bolted for rappel; most parties walk off or join the Tiger/Ellen Pea rappel line",
+          "verdict": "CONFIRMED",
+          "evidence": "The first-ascent report (written by the FA party) states all belays are bolted; the guide-service topo published by the first ascensionist states all belays are fully bolted and says to rappel the route with one 70 m rope, noting the second rappel anchor is off to the left. No source says belays are not rappel-ready or that most parties walk off. A 4th-class ledge system to the top exists (the FA party used it for a top-down approach), but 'most parties walk off' is unsupported. Safety-relevant: stored text steers parties away from the documented rappel line.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age",
+            "https://squamishrockguides.com/mm-wall-2/"
+          ]
+        },
+        {
+          "claim": "rappels: not all belays are bolted for rappel; most parties walk off or join Tiger/Ellen Pea line",
+          "verdict": "CONFIRMED",
+          "evidence": "Same two sources: all belays bolted; rappel the route with one 70 m rope.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age",
+            "https://squamishrockguides.com/mm-wall-2/"
+          ]
+        },
+        {
+          "claim": "beta: bolted belays throughout (though not all are rappel-ready)",
+          "verdict": "CONFIRMED",
+          "evidence": "The parenthetical contradicts both sources. Only the parenthetical removed; the 'best stone on crux 4th pitch' clause was not part of the finding and was left.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age",
+            "https://squamishrockguides.com/mm-wall-2/"
+          ]
+        },
+        {
+          "claim": "approach: start reached by climbing the early pitches of The Tiger or Ellen Pea",
+          "verdict": "CONFIRMED",
+          "evidence": "Topo: park at milepost 166, hike directly up the gully; after about 1 hour exit onto a narrow ledge leading back right to the first pitch, a prominent 4-5 in left-arching corner; starting on the lower apron of The Tiger or Ellen Pea is optional, to add pitches. Stored text presented the optional start as the only one. Correction adds the direct approach first and keeps the stored option text (incl. the two-bolt-anchor detail, not contradicted) as the alternative. The gully approach detail is single-source (AAJ corroborates an approach gully).",
+          "sources": [
+            "https://squamishrockguides.com/mm-wall-2/",
+            "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age"
+          ]
+        },
+        {
+          "claim": "AAJ photo captions number pitches one higher than the 7-pitch topo",
+          "verdict": "REFUTED",
+          "evidence": "No stored prose column carries the AAJ numbering; pitch_detail follows the topo (and is off-limits).",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_the_tiger": {
+    "skip_reason": "finding already fixed — stored grade is now 5.12b",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored grade 5.12- is the softer grade; FA reports give IV 5.12b",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: show.mjs now prints grade 5.12b.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_roan_wall_center_stage": {
+    "skip_reason": "finding UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta places Martha's Place (bivy boulder) 'near the base'; one source puts it at the head of the basin",
+          "verdict": "UNCLEAR",
+          "evidence": "Single-source note; independent verification not completed (web session limit hit). Not safety-critical; left unchanged.",
+          "sources": [
+            "https://stephabegg.com/trip-reports/washington/salish-flight-of-falcon/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_flight_of_the_falcon": {
+    "skip_reason": "all findings UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "route is on Salish Peak but filed on wa_waterfall_basin",
+          "verdict": "UNCLEAR",
+          "evidence": "Filing/identity question; prior agent judged it intended. Left for a human.",
+          "sources": []
+        },
+        {
+          "claim": "height 700 ft vs 800 ft (length_m 244)",
+          "verdict": "UNCLEAR",
+          "evidence": "Sources disagree; no classification change proposed.",
+          "sources": []
+        },
+        {
+          "claim": "descent_text says the walk-off goes 'left (west)'; no source gives a direction",
+          "verdict": "UNCLEAR",
+          "evidence": "Unsupported rather than disproven; independent verification not completed (web session limit hit). A human may want to drop '(west)' if no source supports it.",
+          "sources": [
+            "https://stephabegg.com/trip-reports/washington/salish-flight-of-falcon/",
+            "https://www.mountainproject.com/route/115159395/flight-of-the-falcon"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_technicians_of_the_sacred": {
+    "skip_reason": "no prose column carries the claims; classification notes UNCLEAR",
+    "review": {
+      "findings": [
+        {
+          "claim": "filed as sport but P6 is a gear hand crack",
+          "verdict": "UNCLEAR",
+          "evidence": "Not independently verified (web session limit). Would be a discipline change; not proposed without a second check.",
+          "sources": [
+            "https://www.mountainproject.com/route/106329309/technicians-of-the-sacred"
+          ]
+        },
+        {
+          "claim": "stored 5.12c is the high end of P1's 12b to 12b/c range",
+          "verdict": "UNCLEAR",
+          "evidence": "Not independently verified; no grade proposal.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_sisu": {
+    "skip_reason": "no stored claim contradicted",
+    "review": {
+      "findings": [
+        {
+          "claim": "often wet in spring, afternoon shade",
+          "verdict": "REFUTED",
+          "evidence": "Informational only; no stored column (beta/overview empty) says otherwise.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_starfish_enterprise": {
+    "skip_reason": "classification note UNCLEAR",
+    "review": {
+      "findings": [
+        {
+          "claim": "filed as sport but P1 and P5 need cams",
+          "verdict": "UNCLEAR",
+          "evidence": "Single source, not independently verified (web session limit). Would be a discipline change; not proposed.",
+          "sources": [
+            "https://www.mountainproject.com/route/112127899/starfish-enterprise"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_crying_dragon": {
+    "skip_reason": "no stored claim contradicted",
+    "review": {
+      "findings": [
+        {
+          "claim": "rappel via Green Drag-on/Rise and Fall or Town Crier with one 60 m rope; P4 anchor not rap-equipped",
+          "verdict": "REFUTED",
+          "evidence": "Informational: the route has no stored rappels/descent_text/beta to contradict.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_northwest_face_4": {
+    "area": "wa_little_big_chief_mountain",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels column puts the raps 'off the south ridge to a pocket glacier', before the glacier and slabs (wrong order)",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: the live rappels value now reads 'After descending the south ridge, the pocket glacier and the glacier-polished slabs to the ridge crest near 5,400 ft, make 1-2 rappels into Summit Chief Valley…', which is the order in the first-ascent account (ridge south, pocket glacier, slabs trending left, crest at 5,400 ft, then one to two rappels).",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+            "https://www.mountainproject.com/route/120326654/falcon-route"
+          ]
+        },
+        {
+          "claim": "descent_text/rappels give only the first-ascent south-ridge descent; a 2023 party advises against it and descended north (2 raps from summit on slings, north ridge, one more fixed rap, walk to Dutch Miller Gap)",
+          "verdict": "UNCLEAR",
+          "evidence": "The stored descent is an accurate paraphrase of the first-ascent descent (route page and AAJ agree word for word). The 2023 party's comment on the route page only links its trip report; the report itself (cascadeclimbers topic 107543) did not render, so the north-side descent and the advice against the south ridge could not be read first-hand. Not a stored error; an alternative descent a human may want to add after reading that report. Safety-relevant, so worth a human look.",
+          "sources": [
+            "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/120326654?sortOrder=oldest&showAll=true",
+            "https://cascadeclimbers.com/forum/topic/107543-tr-little-big-chief-northwest-face-falcon-route/"
+          ]
+        },
+        {
+          "claim": "'excellent gneiss' overstates it; the 2023 party found loose blocks on the middle pitches",
+          "verdict": "UNCLEAR",
+          "evidence": "The first-ascent description says 'excellent gneiss with continuous climbing and good protection'; the contrary account is the 2023 trip report, which could not be read. Sources disagree; no change.",
+          "sources": [
+            "https://www.mountainproject.com/route/120326654/falcon-route"
+          ]
+        },
+        {
+          "claim": "FA date August 2001 vs September 10, 2001",
+          "verdict": "REFUTED",
+          "evidence": "The first-ascent text on both the route page and AAJ says September 10, 2001, which is what fa stores.",
+          "sources": [
+            "https://www.mountainproject.com/route/120326654/falcon-route",
+            "https://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_spontaneity_arete": {
+    "area": "wa_le_petit_cheval",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "approach column still describes the fixed-rope line; a flagged approach right of the cave (since July 2023) mostly avoids the fixed lines",
+          "verdict": "REFUTED",
+          "evidence": "The route page does describe a flagged treed-ledge approach climber's right of the cave, added July 2023, rejoining above the old third fixed line. But the stored approach ('a fixed rope on parts of the standard line') is not false: the old line still exists. New material, not a correction; left for a human to add if wanted.",
+          "sources": [
+            "https://www.mountainproject.com/route/107213171/spontaneity-arete"
+          ]
+        },
+        {
+          "claim": "rack: cams to #3 with doubles of #1, plus nuts",
+          "verdict": "REFUTED",
+          "evidence": "Not a claim in any stored prose column; nothing to correct.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_spontaneous_distraction": {
+    "area": "wa_le_petit_cheval",
+    "set": {
+      "rappels": "Rappel the route; one 70m rope reaches on pitches 1-2, but not from the trees above pitch 3's last bolt, so that rappel needs an intermediate station or another way down",
+      "descent_text": "Descend by rappelling the route itself using a single 70m rope for pitches 1-2; a 70m rope does not reach from the trees directly above pitch 3's last bolt, so that rappel needs an intermediate station off to the side. Alternatively, parties finishing higher on the peak can rappel down from Spontaneity Arête's descent line to reach the gully near this route."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels/descent_text say one 70 m rope suffices to rappel the route; a 2021 account says it does not reach from the trees above pitch 3",
+          "verdict": "CONFIRMED",
+          "evidence": "The route description says to scramble down to the top of pitch 3 and rap, one 70 m sufficient. A 2021 comment states a 70 m will NOT reach from the trees directly above pitch 3's last bolt (only pitches 1-2 rappel cleanly), and the same party's photo caption records trying a carabiner block to extend the rope to the previous anchor and failing. A first-hand, specific contradiction of an unconditional safety claim: softened to what the sources support. Nothing new invented (no station location beyond 'off to the side').",
+          "sources": [
+            "https://www.mountainproject.com/route/107745728/spontaneous-distraction",
+            "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/107745728?sortOrder=oldest&showAll=true",
+            "https://www.mountainproject.com/photo/120981677"
+          ]
+        },
+        {
+          "claim": "access alternatives: first three pitches of Spontaneity Arete then cross the gully, or the parallel gully (~1.5 h)",
+          "verdict": "REFUTED",
+          "evidence": "True per the route page, but the stored approach is not wrong; addition, not correction.",
+          "sources": [
+            "https://www.mountainproject.com/route/107745728/spontaneous-distraction"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_big_kangaroo_walkabout": {
+    "area": "wa_big_kangaroo",
+    "skip_reason": "no prose correction — classification only, see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored grade '5.11' reads as a free route; route is IV 5.11 A2",
+          "verdict": "CONFIRMED",
+          "evidence": "The first-ascent report grades it 'Walkabout (850', IV 5.11 A2)': the 175-ft pitch 3 A2, pitch 4 A2, the next roof A2; only the pitch-2 A1 section was later freed at 5.11. Whether it has since gone free was not established. Classification only.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/13201212206/Big-Kangaroo-south-face-Walkabout"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "5.11 A2",
+          "evidence": "First-ascent report: 'Our nine-pitch route, Walkabout (850', IV 5.11 A2)'; photo caption lists '(1) Walkabout (IV 5.11 A2)'."
+        }
+      }
+    }
+  },
+  "wa_castle_in_the_sky": {
+    "area": "wa_whatcom_peak",
+    "set": {
+      "descent_text": "From the west summit, descend via the south-side snow slope and ridge scramble back toward Perfect Pass, as on the South Spur route."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text's emergency option (downclimb or rappel pitches 2-6 off gear anchors) is in no source",
+          "verdict": "CONFIRMED",
+          "evidence": "The route page's descent is 'descend the standard route down past perfect pass'; the AAJ report says the party went 'down the standard descent, with snow and third-class scrambling'. No source describes retreating down pitches 2-6 or any anchors there. Unsupported safety claim removed; the rest of the value kept verbatim.",
+          "sources": [
+            "https://www.mountainproject.com/route/122896783/castle-in-the-sky",
+            "https://publications.americanalpineclub.org/articles/13201216381",
+            "https://www.theclimbingguides.com/post/castle-in-the-sky-first-ascent-of-the-south-buttress-of-whatcom-peak-iv-5-10b-td"
+          ]
+        },
+        {
+          "claim": "beta says ~1,000 ft of upper ridge; the FA report says ~800 ft",
+          "verdict": "REFUTED",
+          "evidence": "The first ascensionists' blog says about 800 ft of ridge scrambling, but their AAJ report says 'About 1,000' of loose scrambling (up to 5.4)'. The stored figure matches one first-hand source; defensible.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/13201216381",
+            "https://www.theclimbingguides.com/post/castle-in-the-sky-first-ascent-of-the-south-buttress-of-whatcom-peak-iv-5-10b-td"
+          ]
+        },
+        {
+          "claim": "rack: single set 0.1-3, doubles 0.2-1, nuts, optional knifeblades, 60 m rope",
+          "verdict": "REFUTED",
+          "evidence": "Not a claim in any stored prose column; nothing to correct.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_little_sister_west_face": {
+    "area": "wa_little_sister",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "pitches=7 is a maximum ('up to seven pitches'), not a count",
+          "verdict": "UNCLEAR",
+          "evidence": "The route page header says '1000 ft (303 m), 7 pitches, Grade II' and the text 'up to seven pitches'. The stored overview already says 'up to seven pitches'. Whether the pitches column should hold a maximum is a catalog-convention question; no proposal.",
+          "sources": [
+            "https://www.mountainproject.com/route/201148785/west-face"
+          ]
+        },
+        {
+          "claim": "length_m 305 (1,000 ft) vs the first-ascent report's ~800 ft",
+          "verdict": "UNCLEAR",
+          "evidence": "Route page gives 1,000 ft; the finding cites the FA trip report at ~800 ft (that page did not render). Sources disagree; no proposal.",
+          "sources": [
+            "https://www.mountainproject.com/route/201148785/west-face"
+          ]
+        },
+        {
+          "claim": "descent: FA party went down the south face to a col; stored reverse-the-west-rib descent",
+          "verdict": "REFUTED",
+          "evidence": "Stored descent matches the route page ('reverse west most rib to second lower notch where snow or rappels lead to glacier'). Two options, no conflict.",
+          "sources": [
+            "https://www.mountainproject.com/route/201148785/west-face"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_the_tooth_indentured_servant": {
+    "area": "wa_the_tooth",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "overview says ~500 ft left of The Tooth Fairy; the first ascensionist says '100+ yards'",
+          "verdict": "REFUTED",
+          "evidence": "The route page says 'This climb is ~500' climbers left of the Tooth Fairy'. The FA post did not render; '100+ yards' is open-ended and not inconsistent. Minor, defensible.",
+          "sources": [
+            "https://www.mountainproject.com/route/124697175/indentured-servant"
+          ]
+        },
+        {
+          "claim": "P2 5.7 vs 5.8; 12-14 draws",
+          "verdict": "REFUTED",
+          "evidence": "P2 grade lives in pitch_detail (out of scope, just rewritten); the stored beta range '5.8-5.10b' is consistent with the route page. Draw count is not a stored claim.",
+          "sources": [
+            "https://www.mountainproject.com/route/124697175/indentured-servant"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_the_monk_odine": {
+    "area": "wa_cathedral_peak_pasayten",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent is 'three 75-ft rappels down the NE gully'; a 2020 account adds ~50 m downclimb to a sandy gully first, then 3 rappels off trees (bring webbing)",
+          "verdict": "REFUTED",
+          "evidence": "The route page says 'Descend via the NE gully (three 75' rappels)', which the stored text matches. The 2020 comment ('about 50 meters of downclimbing to an obvious sandy gully then 3 rappels off trees. Bring webbing.') agrees on three rappels and adds detail; it does not contradict. Addition for a human, not a correction.",
+          "sources": [
+            "https://www.mountainproject.com/route/109095922/the-monk-odine",
+            "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/109095922?sortOrder=oldest&showAll=true"
+          ]
+        },
+        {
+          "claim": "route text grades 5.8 while header lists 5.9",
+          "verdict": "UNCLEAR",
+          "evidence": "The header is 5.9; user grade votes on the page split between 5.8 and 5.9. No source settles it; no proposal.",
+          "sources": [
+            "https://www.mountainproject.com/route/109095922/the-monk-odine"
+          ]
+        },
+        {
+          "claim": "'first two pitches are a chimney' vs '2-4 pitches of munge'; name spelled 'Ondine' in a caption",
+          "verdict": "REFUTED",
+          "evidence": "The same party's photo is captioned 'munge-filled gully on pitch 2, decent climbing in chimney above', consistent with the stored 'chimney/gully'. Spelling variant is a caption only.",
+          "sources": [
+            "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/109095922?sortOrder=oldest&showAll=true"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_summit_chief_mountain_north_face": {
+    "area": "wa_summit_chief_mountain",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta names the FA party member (Haley) as the source of a comparison and a quote",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: the live beta refers only to 'the FA party' and carries no name or quoted passage. (The fa column naming the first ascensionists is its purpose, not a source citation.) climbing_route not reviewed — out of scope.",
+          "sources": []
+        },
+        {
+          "claim": "descent_text 'return toward the approach basin/camp' is vague vs the FA account (rappels land on snow leading to a col west of the peak)",
+          "verdict": "REFUTED",
+          "evidence": "Finding itself says the stored text is consistent; vagueness is not an error. No correction.",
+          "sources": []
+        },
+        {
+          "claim": "grade and pitches are null",
+          "verdict": "UNCLEAR",
+          "evidence": "True of the row, but not an error to correct; no grade/pitch count verified here. No classification proposal.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_burnt_boot_peak_north_ridge": {
+    "area": "wa_burnt_boot_peak",
+    "skip_reason": "all findings REFUTED — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta quotes the FA note verbatim and names its author (Don Williamson)",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: live beta is paraphrased and names no author or note.",
+          "sources": []
+        },
+        {
+          "claim": "FA dated June 1971 elsewhere; fa says only 1971",
+          "verdict": "REFUTED",
+          "evidence": "'1971' is not wrong, only less specific. No correction.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_fortune_peak_east_slope": {
+    "area": "wa_fortune_peak",
+    "skip_reason": "finding UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "length_m = 101 likely covers only the ~330 ft of the upper ESE ridge, not the east slope from Headlight Basin (~240 m of gain)",
+          "verdict": "UNCLEAR",
+          "evidence": "Could not verify: web research was cut off by a session limit before any Headlight Basin elevation source could be read. Worth a human look before it feeds a planner estimate; no value proposed.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_fortune_peak_standard_route": {
+    "area": "wa_fortune_peak",
+    "set": {
+      "approach": "From the Esmeralda Trailhead (#1394, 4,269 ft), hike the Esmeralda Basin Trail (shared with the Lake Ingalls/Ingalls Way trail for the first 0.4 mi), then stay on the Esmeralda Basin Trail past the Ingalls Way junction to the trail toward Lake Ann. At the trail junction below the pass, head up toward Lake Ann and the saddle above it, then leave maintained trail and follow the ridge boot path to the summit.",
+      "beta": "Hike the Esmeralda Basin Trail to its junction with the Lake Ann trail, continue toward Lake Ann up to the pass/saddle above the lake, then leave the trail and follow an established climbers' boot path along the ridge to the summit.",
+      "overview": "A straightforward off-trail scramble up Fortune Peak's ridge from the pass above Lake Ann, reached via the Esmeralda Basin Trail and the trail toward Lake Ann; considered the peak's easiest and most commonly climbed line.",
+      "descent_text": "The drop from the summit ridge back down to the pass above Lake Ann is steep and, especially early in the season, can remain snow-covered well into summer — downclimb carefully or glissade only after checking the runout. Below the pass, rejoin the maintained Lake Ann trail and Esmeralda Basin Trail for the hike back to the Esmeralda Trailhead."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach says to continue on the Ingalls Way trail toward Lake Ann; Ingalls Way goes to Ingalls Pass and the Lake Ann trail branches off the Esmeralda Basin Trail (beta repeats the 'Ingalls Way/Lake Ann trail' conflation)",
+          "verdict": "CONFIRMED",
+          "evidence": "USFS Esmeralda Basin Trail page: Ingalls Way #1390 leaves the Esmeralda Basin Trail about 0.5 mi from the trailhead; the trail heading north toward Lake Ann is County Line Trail #1226.2 (formerly part of #1394), a branch off the Esmeralda Basin Trail. SummitPost's Fortune Peak route: hike the Esmeralda Basin Trail to the junction with the trail to Lake Ann, then up to the saddle. The same conflation also sits in overview ('Esmeralda Basin and Ingalls Way trails') and descent_text ('Ingalls Way/Esmeralda Basin Trail'), so those clauses are corrected too; everything else kept verbatim. Research was cut short by a session limit after these reads; both are search-result extracts, not full page reads.",
+          "sources": [
+            "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/esmeralda-basin-trail",
+            "https://www.summitpost.org/fortune-peak/572552"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_klawatti_peak_sw_buttress": {
+    "area": "wa_klawatti_peak",
+    "set": {
+      "approach": "From Seattle, drive I-5 north and then WA-20 (North Cascades Highway) east through Sedro-Woolley, Concrete, and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles — paved for the first 10 miles, gravel and washboard the rest of the way — to the Eldorado parking area near mile 20. From the trailhead, hikers backtrack a short distance along the road to find a safe crossing of the Cascade River (historically a large log or braided ford, which shifts year to year), then pick up a steep, unmaintained climbers' boot path that gains roughly 3,000-3,500 feet through old-growth forest to a boulder field, crosses Eldorado Creek, and opens into the alpine meadows of the Eldorado Creek basin, a common camp area roughly 5-6 hours from the car. From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing the Eldorado Glacier to the high camp on the Eldorado-Inspiration ice cap, typically another 3-5 hours. Any overnight stay requires a North Cascades National Park backcountry permit — Eldorado is managed as a high-use cross-country zone with advance reservations available on Recreation.gov plus a limited walk-up allocation issued in person at the Marblemount Wilderness Information Center. IMPORTANT — this route is NOT on Eldorado Peak itself: from the Eldorado/Inspiration Glacier high camp (~7,600ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col; Tepeh Towers are passed along this same glacier traverse, and Austera Peak requires further travel across the Klawatti Glacier (including a short rappel from the col) beyond Klawatti Peak — meaningfully further and more committing than simply topping out on Eldorado."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach says the route is 'filed under the same area' as Eldorado Peak — stale, the row is now filed under wa_klawatti_peak",
+          "verdict": "CONFIRMED",
+          "evidence": "show.mjs: area_id is wa_klawatti_peak, so 'despite being filed under the same area' is false. Only that clause removed; the rest kept verbatim.",
+          "sources": []
+        },
+        {
+          "claim": "approach pastes an Eldorado summit approach ('toward Eldorado's famous narrow snow ridge and the 8,868-foot summit')",
+          "verdict": "REFUTED",
+          "evidence": "Already fixed: the live approach no longer contains that phrase; it now routes past Eldorado to Klawatti col.",
+          "sources": []
+        },
+        {
+          "claim": "older descriptions call the SW ridge 3rd class; glacier recession added a low-5th pitch at the bottom",
+          "verdict": "REFUTED",
+          "evidence": "Stored grade 5.3 and beta ('2-3 short low-5th-class pitches') already reflect low fifth class; no conflict to correct.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_amphitheater_mountain_middle_finger_buttress_right_side": {
+    "area": "wa_amphitheater_mountain",
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored grade 5.9 conflicts with a 2025 comment rating the line 5.10 C1 R",
+          "verdict": "UNCLEAR",
+          "evidence": "One route description (5.9) against one comment (5.10 C1 R); too thin to change a classification column. No proposal.",
+          "sources": [
+            "https://www.mountainproject.com/route/109096812/middle-finger-buttress-right-side"
+          ]
+        },
+        {
+          "claim": "the 'historical C1' note has no online source",
+          "verdict": "REFUTED",
+          "evidence": "The same 2025 comment grades the line with C1, so a short aid section is supported, not invented. The clause 'may go free at the grade for strong parties' is unverified but not a safety claim; left as is.",
+          "sources": [
+            "https://www.mountainproject.com/route/109096812/middle-finger-buttress-right-side"
+          ]
+        },
+        {
+          "claim": "quality/cleanliness warning (grass, dirt-filled cracks, lichen, loose blocks) is in no column",
+          "verdict": "UNCLEAR",
+          "evidence": "An omission, not a wrong claim; adding it would be new material outside a correction. Flag for a human.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_remmel_mountain_nw_ridge": {
+    "area": "wa_remmel_mountain",
+    "set": {
+      "beta": "From a high camp at roughly 7,500 ft on the lower ridge, the route follows a long, stable, lightly-vegetated boulder ridge to the North Summit, from which two rappels on the west side regain the ridge crest. Beyond, two main gendarmes block easy passage; each is climbed at about 5.1-5.2. The line appears sensible as a route; it sees very little traffic. Parties can bypass the technical sections by staying lower on the west slope, avoiding the vertical sections but missing the ridge's technical interest.",
+      "rappels": "2 on the ascent, off the west side of the North Summit to regain the ridge crest. On the descent, the gendarmes are rappelled or downclimbed; how many rappels the return along the ridge needs is not established. Anchors may have to be built from scratch."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels puts 2 rappels on the descent, one off each gendarme, ~30 m total; the source puts 2 rappels on the ASCENT off the west side of the North Summit",
+          "verdict": "CONFIRMED",
+          "evidence": "The 2011 NW Ridge account: 3rd-class up the boulder ridge to the top of the North Summit, then 2 rappels on the west side to regain the ridge, then 5.1-5.2 pitches on each of the two main gendarmes; 3.5 h camp to summit. The stored 'both on the descent, one off each gendarme' and '30 m total' have no support. Safety-relevant, so the unsupported count/length are softened rather than replaced with an invented number; the 'scrambling down west-slope talus' tail belonged to the same unsupported descent sequence and is dropped. Evidence read from a search extract of the log; the full page returned 403 and research was then cut off by a session limit, so single-source.",
+          "sources": [
+            "https://www.summitpost.org/remmel-mountain/climbers-log/153242"
+          ]
+        },
+        {
+          "claim": "beta has the same order error ('each [gendarme] is climbed ... and then a rappel on the west side regains the ridge crest')",
+          "verdict": "CONFIRMED",
+          "evidence": "Same account: the west-side rappels come off the North Summit, before the gendarmes. Reordered that sentence only.",
+          "sources": [
+            "https://www.summitpost.org/remmel-mountain/climbers-log/153242"
+          ]
+        },
+        {
+          "claim": "descent_text leaves out the North Summit entirely",
+          "verdict": "UNCLEAR",
+          "evidence": "Likely a real gap (the North Summit sits between the gendarmes and camp), but the source's descent could not be read; not corrected.",
+          "sources": []
+        },
+        {
+          "claim": "beta's bypass-on-the-west-slope claim is in no source",
+          "verdict": "UNCLEAR",
+          "evidence": "Not found, not disproven; research cut off. Left in place.",
+          "sources": []
+        },
+        {
+          "claim": "pitches=6 and length_m=361 unverified",
+          "verdict": "UNCLEAR",
+          "evidence": "No source gives a pitch count or length; no proposal.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_elephant_head_standard": {
+    "area": "wa_elephant_head",
+    "skip_reason": "identity question — UNCLEAR, needs a human decision",
+    "review": {
+      "findings": [
+        {
+          "claim": "row mixes two approaches: beta sends parties up the Dana Glacier (west side), approach/descent describe Downey Creek -> Bachelor Creek -> Cub Lake -> Itswoot Ridge (Dome Peak/Chickamin side)",
+          "verdict": "UNCLEAR",
+          "evidence": "Confirmed from the live row that beta and approach/descent describe different sides of the peak, and the approach reads as a Dome Peak approach. Identity question: needs a human to decide what this row describes before any column is edited.",
+          "sources": []
+        },
+        {
+          "claim": "grade 'Class 4 / glacier' disagrees with the 'Class 2-3' finish in approach",
+          "verdict": "UNCLEAR",
+          "evidence": "True of the live row, but tied to the identity question.",
+          "sources": []
+        },
+        {
+          "claim": "descent_text asserts a 'possible short rappel' while rappels = 0",
+          "verdict": "UNCLEAR",
+          "evidence": "The live descent_text describes a contingency 30-60 ft rappel off a party-built anchor, with no source found for it; rappels is '0'. Unsupported safety detail, but tied to the identity question — leave for the human decision.",
+          "sources": []
+        }
+      ]
+    }
+  }
+}

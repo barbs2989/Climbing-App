@@ -1,0 +1,262 @@
+{
+ "results": [
+  {
+   "id": "wa_leche_la_vaca",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Pitch count",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_leche_la_vaca",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.8",
+       "notes": "Fun chimney far right on the wall past a small tree onto a knobby slab; a spicy 5.8 move left leads to another knobby slab and a corner belay.",
+       "pitch": 1,
+       "anchor": "Gear (corner)",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Fun corner up to a flake; move left around the flake (5.9 crux move) into a knob-footed corner to a ledge.",
+       "pitch": 2,
+       "anchor": "Gear (ledge)",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.10a/b",
+       "notes": "A large, left-leaning 5.10 layback corner — a #4 Camalot eases the run-out feel — continuing to a big belay ledge.",
+       "pitch": 3,
+       "anchor": "Gear (large ledge)",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.10",
+       "notes": "Beautiful knobby white rock to a small roof; a 5.10 move surmounts the roof, then crack and knobs meet the summit ridge and 4th-class scrambling to the top.",
+       "pitch": 4,
+       "anchor": "Walk-off (no belay)",
+       "lengthM": 40
+      }
+     ],
+     "value": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.8",
+       "notes": "Fun chimney far right on the wall past a small tree onto a knobby slab; a spicy 5.8 move left leads to another knobby slab and a corner belay.",
+       "pitch": 1,
+       "anchor": "Gear (corner)",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Fun corner up to a flake; move left around the flake (5.9 crux move) into a knob-footed corner to a ledge.",
+       "pitch": 2,
+       "anchor": "Gear (ledge)",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.10a/b",
+       "notes": "A large, left-leaning 5.10 layback corner — a #4 Camalot eases the run-out feel — continuing to a big belay ledge.",
+       "pitch": 3,
+       "anchor": "Gear (large ledge)",
+       "lengthM": 60
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.10",
+       "notes": "Beautiful knobby white rock to a small roof; a 5.10 move surmounts the roof, then crack and knobs lead to a ledge belay.",
+       "pitch": 4,
+       "anchor": "Gear (ledge)",
+       "lengthM": 45
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "4th to low 5th",
+       "notes": "Move up and left on 4th-class ground traversing toward the summit, steepening to low fifth near the end; about 100 m to the summit block, commonly simul-climbed.",
+       "pitch": 5,
+       "anchor": "Summit block",
+       "lengthM": 100
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "overview",
+     "path": [],
+     "find": "A 4-pitch, Grade III",
+     "replace": "A 5-pitch, Grade III"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "descent_text",
+     "path": [],
+     "find": "Leche La Vaca's four pitches finish by joining the summit ridge, and pitch 4 is described as '4th class to summit' — from there",
+     "replace": "Leche La Vaca's fifth pitch, a long 4th-class to low-5th traverse, ends at the summit block — from there"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "A 4-pitch trad route that tops out on the summit ridge;",
+     "replace": "A 5-pitch trad route whose long, easy last pitch reaches the summit block;"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "4 pitches to the summit ridge.",
+     "replace": "5 pitches; the last is often simul-climbed."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "bail",
+     "path": [],
+     "find": "Each of the first four pitches can be rappelled from natural anchors with a 60 m rope,",
+     "replace": "The first four pitches can be reversed by rappel from natural anchors,"
+    }
+   ]
+  },
+  {
+   "id": "wa_scarface_3",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Pitch count",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "5 pitches of climbing",
+     "replace": "6 pitches of climbing"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Climb Scarface (5 pitches)",
+     "replace": "Climb Scarface (6 pitches)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "5 pitches of climbing",
+     "replace": "6 pitches of climbing"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Blockier, more solid finishing pitches lead to the summit ridge.",
+     "replace": "Pitches 5 and 6: blockier, more solid finishing pitches lead to the summit ridge."
+    }
+   ]
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "waypoints[2].distMi",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_chiwawa_mountain_southwest",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "wa_true_grit",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "timing.approachTimeHrs",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_true_grit",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 0.25
+    }
+   ]
+  },
+  {
+   "id": "wa_true_grit",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "dist_km",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_true_grit",
+     "column": "dist_km",
+     "path": [],
+     "expect": null,
+     "value": 0.8
+    }
+   ]
+  }
+ ],
+ "held": []
+}

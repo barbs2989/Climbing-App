@@ -1,0 +1,45 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "column": "overview",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_easy_getaway",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent rope / rappel"
+  },
+  {
+   "id": "wa_easy_getaway",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent rope / rappel"
+  },
+  {
+   "id": "wa_easy_getaway",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent direction after the rappel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "before": {
+    "overview": "A 5-pitch, 800-ft moderate trad line up the right side of Cutthroat Wall, weaving through featured granite - corners, cracks and an easy alpine slab finish past a distinctive spiral tree - with multiple variations at nearly every pitch."
+   }
+  },
+  {
+   "id": "wa_easy_getaway",
+   "before": {
+    "descent": "Shared Cutthroat Wall descent: single-rope rappel from the notch to a ramp, then an ascending gully/ledge system on skier's left back to the base - study the beta carefully, as it's easy to get wrong.",
+    "descent_text": "The descent has real potential to ruin your day if you don't study it beforehand. From the topout, reach the notch marked by a slung horn/tree between the westernmost and higher central buttress, rappel one rope-length over a chockstone tunnel to a dirty ramp with a small cave, then find the upward-trending gully/ledge system on skier's left (not the loose gully directly below) and follow it around back to the base.",
+    "rappels": "Walk 100-200 ft along the summit ridge to a rap station; ~60m rappel angling rightward, then contour climbers' left around the head of a gully and circle back clockwise to the base. A single 60m rope often does not reach the ground on the final section."
+   }
+  }
+ ]
+}

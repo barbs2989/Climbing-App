@@ -1,0 +1,17 @@
+{"file": "t126.json", "results": [
+  {"id": "wa_blue_s_buttress", "fact": "Trailhead pin location", "verdict": "unresolved",
+   "correct_value": "The approach starts at the large hairpin-turn pullout on SR-20 about a mile east of Washington Pass (all text fields are correct); the stored pin 48.518965,-120.67436 (waypoints[0] and approach_logistics.trailheadLat/Lng) is the Blue Lake Trailhead west of the pass.",
+   "evidence": "Multiple independent descriptions (Mountain Project route page, Mountaineers route page, trip reports) start Blue's Buttress from the hairpin turnout one mile east of Washington Pass, walking toward Kangaroo Pass about half a mile before turning up the Poster Peak drainage — this agrees with every prose field on the row. The only wrong value is the coordinate, and pin positions (waypoint lat/lng and trailhead coordinates) are out of scope for this pass, so no patch is written; a pin repair moving the trailhead to the hairpin pullout (~48.53, -120.64) would settle it.",
+   "sources": ["https://www.mountainproject.com/route/111086662/blues-buttress", "https://www.mountaineers.org/activities/routes-places/poster-peak-blue-buttress", "https://www.jeffreyjhebert.com/adventures/blues-buttress-on-poster-peak", "https://spokalpine.com/2016/08/08/poster/"],
+   "patches": []},
+  {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Approach time to the couloir", "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report records leaving the Blue Lake trailhead at 8:00 and reaching the base of the SW couloir about 9:00; the peak's overview page says about an hour of trail hiking reaches the meadow NW of the spire, before further climbers' path to the couloir; a computed track estimate gives 59 min for 2.5 mi / 1,919 ft. No source states the snow-season (ski/snowshoe) approach time that the variant's 1.5-2.5 h describes, and the ~1 h figures come from one site plus an algorithmic estimate, so two independent agreeing sources for a single value were not found. Would be settled by a second independent trip report or guide page giving trailhead-to-couloir time.",
+   "sources": ["https://www.summitpost.org/south-early-winters-spire-sw-couloir/295816", "https://www.summitpost.org/south-early-winters-spire/150417", "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail-314/"],
+   "patches": []},
+  {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Blue Lake Trailhead distance from Washington Pass", "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "The route page for this climb states the Blue Lake trailhead is 1 mile west of Washington Pass, agreeing with approach, road.driveNote, approach_logistics and approach_variants[0]; only bivy[0].notes says half a mile. The outlier sits in the bivy list, which this pass may not patch; flagged for the camping clean-up (bivy[0] trailhead bivy, Lone Fir and Klipchuck serve this route; the Liberty Bell basin sites also serve it).",
+   "sources": ["https://www.mountainproject.com/route/108102127/southwest-couloir"],
+   "patches": []}
+]}

@@ -1,0 +1,59 @@
+{
+ "id": "wa_mount_teneriffe_kamikaze_trail",
+ "name": "Kamikaze Trail (SW Ridge Scramble)",
+ "approach": "Follow the standard Mount Teneriffe Trail approach from the paved trailhead on SE Mount Si Road to the signed Teneriffe Falls junction at about 2.8 miles. From near the falls, the unofficial but well-traveled Kamikaze Trail boot track climbs directly up the forested southwest ridge/flank of the mountain, gaining about 2,300 ft in roughly one mile of steep, rocky, single-track tread before reaching the Kamikaze Ridge crest (~3,900 ft) and continuing to a cedar-grove shelf (~4,200 ft) that meets the upper mountain near the summit.",
+ "approach_variants": [
+  {
+   "name": "Standard trail to the falls junction, then the unofficial boot track",
+   "notes": "Start from the same paved trailhead as the standard route — the Teneriffe lot, three miles past the neighbouring peak's trailhead, not that one. Take the graded trail up the access path and along the old logging-road grade to the signed falls junction at about two and a half to three miles. Everything to here is shared. From near the falls the unofficial track leaves and climbs the forested southwest flank directly, and it is steep, rocky and eroded rather than graded.",
+   "season": "May to October. Snow lingers near the ridge crest into early summer, and the track is markedly more slip-prone when wet.",
+   "hazards": [
+    "The unofficial track is steep, root- and rock-covered and prone to erosion, and is worse on descent than on ascent",
+    "Wet or mossy rock on the ridge raises slip risk sharply compared with the standard trail",
+    "Route-finding on the boot track is less obvious than on the signed trail, especially in poor visibility",
+    "Loose rock and minor exposure on the ridge crest, with lingering snow near the crest into early summer"
+   ],
+   "baseFinding": "At the signed falls junction, leave the maintained trail. The boot track bypasses the falls on climber's right — that is the physical test, because the falls themselves are the landmark and the track goes round them on one specific side. Above the bypass the tread changes character completely: it stops switchbacking and climbs the fall line on roots and rock, gaining a saddle on the southwest ridge. From the saddle the route is a direct, largely switchback-free push up the open ridge crest through meadow and a rock band, with a short scramble move at the true summit. Negative markers: if the trail underfoot is still graded, signed and switchbacking with the falls spur behind you, you missed the turnoff and are on the maintained trail; and if you are dipping to a saddle after a viewpoint over the valley, having never left graded tread, that is the standard trail's saddle, not this ridge."
+  }
+ ],
+ "itinerary": "Typical day trip: start early morning; ~1-1.5 hrs to the Teneriffe Falls/Kamikaze junction (2.8 mi); ~2-2.5 hrs of steep boot-track climbing to the ridge crest and summit (~4.1 mi, +4,000 ft cumulative per trip-report data); short summit break; descend either back down Kamikaze (~2.5 hrs) or via the standard trail loop (~3-3.5 hrs).",
+ "waypoints": [
+  {
+   "lat": 47.4869,
+   "lng": -121.7097,
+   "elev": 840,
+   "name": "Mount Teneriffe Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 840,
+   "directions": "From I-90 Exit 32 (436th Ave SE), turn north over the freeway and drive 0.5 mile to SE North Bend Way. Turn left, and in 0.25 mile turn right onto SE Mount Si Road. In 2.9 miles, past the Little Si and Mount Si trailheads, the paved Mount Teneriffe Trailhead lot is on the left. A Discover Pass is required to park."
+  },
+  {
+   "lat": 47.50209,
+   "lng": -121.70807,
+   "elev": 2633,
+   "name": "Teneriffe Falls (Kamikaze Falls)",
+   "type": "Junction",
+   "distMi": 2.4,
+   "elevFt": 2633
+  },
+  {
+   "lat": 47.50209,
+   "lng": -121.70807,
+   "elev": 2633,
+   "name": "Teneriffe Falls / Kamikaze Trail junction",
+   "type": "landmark",
+   "distMi": 2.8,
+   "elevFt": 2633
+  },
+  {
+   "lat": 47.5087156,
+   "lng": -121.6959398,
+   "elev": 4788,
+   "name": "Mount Teneriffe Summit",
+   "type": "Summit",
+   "distMi": 4.1,
+   "elevFt": 4788
+  }
+ ]
+}

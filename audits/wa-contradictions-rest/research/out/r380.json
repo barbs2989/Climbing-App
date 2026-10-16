@@ -1,0 +1,696 @@
+{
+ "file": "r380.json",
+ "results": [
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Access fees / passes / landowner permit",
+   "verdict": "fixed",
+   "correct_value": "Approach roads are Hampton Family Forests timberland (formerly Weyerhaeuser); a paid landowner recreation permit is required for walk-in/bike entry; no federal pass applies at the gate.",
+   "evidence": "Hampton's recreation page says its North Cascades forestland in Whatcom, Skagit and Snohomish counties requires a fee recreation permit (600 motorized / 150 non-motorized) and bans camping and fires; its FAQ adds there is no general public access, non-motorized holders must carry the printed permit, entry is 1.5 h before sunrise to 1.5 h after sunset. A speed-record route page names Hampton Family Forests (formerly Weyerhaeuser) as owner of the gated Middle Fork road to Dailey Prairie. No source mentions a Discover Pass or NW Forest Pass at this gate.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.hamptonlumber.com/wp-content/uploads/2023/06/FAQ_Final.pdf",
+    "https://fastestknowntime.com/route/twin-sisters-traverse-wa"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "value": "No climbing fee, but the approach roads cross Hampton Family Forests timberland, where entry on foot or bike requires the landowner's paid recreation permit.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "value": "No Northwest Forest Pass applies at the private-timberland gate; the landowner's paid recreation permit is what is required here.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "find": "verify current landowner rules before the trip, since some past owners have required a signed waiver or day-use permission.",
+     "replace": "the landowner's paid recreation permit is required instead, and its terms have changed with past owners, so confirm them before the trip.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+     "value": "No climbing permit; the approach roads cross private timberland where the landowner's paid recreation permit is required for walk-in or bike entry - check current access before the trip.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "expect": "Weyerhaeuser day-use recreation permit (confirm/purchase before driving out)",
+     "value": "Hampton Family Forests non-motorized recreation permit (buy it before driving out and carry it printed)",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "expect": "This approach crosses private industrial timberland (most recently reported by climbers as Hampton Family Forests, formerly Olivine Corp./Weyerhaeuser) — a fee recreational permit is required, administered via MyOutdoorAgent.com; call ahead, since the access gate has a history of being locked without notice.",
+     "value": "This approach crosses private industrial timberland owned by Hampton Family Forests (formerly Weyerhaeuser) — a paid recreation permit is required and non-motorized permits are capped each year; confirm the gate status ahead, since it has a history of being locked without notice.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "(most recently reported by climbers as Hampton Family Forests)",
+     "replace": "(currently Hampton Family Forests, which requires a paid recreation permit)",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Access fees / passes / landowner permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Camping on the private timberland",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No camping on the private timberland; dispersed camping without a permit only in the wilderness above.",
+   "evidence": "The landowner's FAQ states camping and campfires are not allowed on its lands at any time; both camp cards on the row agree camping is not allowed on the timber-company side.",
+   "sources": [
+    "https://www.hamptonlumber.com/wp-content/uploads/2023/06/FAQ_Final.pdf",
+    "https://www.hamptonlumber.com/recreation/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping.",
+     "value": "Camping is not allowed on the private timberland the approach crosses; above it, in the Mount Baker Wilderness, dispersed camping needs no permit or registration. The logging-road gate is separately locked to vehicles by the timber company.",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Camping on the private timberland"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Stay-left vs climber's-right on the ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: one scramble write-up insists on staying left (climber's left) and says going right leads to false summits and class 4-5; a 2014 trip report says the party stayed on or south of the crest on the lower ridge (south is climber's right on this eastbound ridge); a guide service says the trail is generally on climber's right of the ridge, and search snippets of another route page say it detours right sometimes and left occasionally. The likely truth is right/south lower and left near the false summits, but no two sources state that split explicitly, so no patch. Note also that beta's 'climber's-right/west side' and descent's 'left/west' both misuse 'west' on a west ridge; left for this unresolved item.",
+   "sources": [
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://www.adventurespiritguides.com/blog/post/northtwinsister"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Road-end / bike-stash elevation and how much gain remains",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Logging roads end roughly 3,200-3,700 ft (2,000-2,500 ft above the 1,200 ft gate); treeline is near 4,100 ft.",
+   "evidence": "A 2014 trip report puts the start at 1,200 ft and treeline, reached after the roads and use trail, at 4,100 ft, so the roads cannot run to 4,900 ft; a search excerpt of a route write-up gives 5+ miles and 2,500+ ft of riding. The approach text (2,000-2,500 ft of road gain) and the camp card (3,170 ft) agree. The '~1,500 vertical ft' in the timing note describes the sustained scrambling and was left alone.",
+   "sources": [
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://stephabegg.com/trip-reports/washington/north-twin/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to roughly 4,900 ft",
+     "replace": "to roughly 3,200-3,700 ft",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Road-end / bike-stash elevation and how much gain remains"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Summit time vs total time",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs should not hold the 10.5 h car-to-car total; null it (the itinerary states 6-7 h to the summit).",
+   "evidence": "Two trip reports by one party record 7.8 h up / 3.4 h down (2014) and 5.9 h up / 3.7 h down (2000), so time to the summit is well below the 10.5 h round trip. Per the catalog convention the wrong car-to-car figure is nulled rather than replaced with a computed number.",
+   "sources": [
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2000/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": null,
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Summit time vs total time"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "North-face glissade season",
+   "verdict": "fixed",
+   "correct_value": "Glissade descent is an early-season option, roughly late May into mid-July.",
+   "evidence": "A 2014 trip report found perfect glissade snow on the north face on May 31; another report says early summer has enough north-side snow to descend and records a snow descent with crampons on July 10, 2025. Both windows in the row are merged to late May-mid July; the Jul-Sep season is the scramble window and is left alone.",
+   "sources": [
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://stephabegg.com/trip-reports/washington/north-twin/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(roughly May-June)",
+     "replace": "(roughly late May into mid-July)",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "North-face glissade season"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "best taken in June-July",
+     "replace": "best taken from late May into mid-July",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "North-face glissade season"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "fact": "Land manager / wilderness contamination",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Both summits lie in the Mount Baker Wilderness; nothing on the Twin Sisters reaches North Cascades National Park (which borders the wilderness 40 miles away on its east side).",
+   "evidence": "The Twin Sisters Mountain encyclopedia article states both summits are within the Mount Baker Wilderness; the Mount Baker Wilderness article lists North Twin among its peaks and says the wilderness meets the national park only along its eastern border, while the Twin Sisters sit southwest of Baker. The row's landManager, rules and camp cards agree on the wilderness.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twin_Sisters_Mountain",
+    "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "replace": "Mount Baker Wilderness above the private timberland",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Land manager / wilderness contamination"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Both Twin Sisters summits sit near, but the approach roads lie outside, the Mount Baker-Snoqualmie National Forest boundary, crossing private timberland",
+     "replace": "Both Twin Sisters summits lie inside the Mount Baker Wilderness, but the approach roads lie outside the national forest, crossing private timberland",
+     "id": "wa_north_twin_sister_west_ridge",
+     "fact": "Land manager / wilderness contamination"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Which side of the crest to climb",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: one scramble write-up insists on staying left (climber's left) and says going right leads to false summits and class 4-5; a 2014 trip report says the party stayed on or south of the crest on the lower ridge (south is climber's right on this eastbound ridge); a guide service says the trail is generally on climber's right of the ridge, and search snippets of another route page say it detours right sometimes and left occasionally. The likely truth is right/south lower and left near the false summits, but no two sources state that split explicitly, so no patch. The row's approach/face ('left') and climbing_route ('just right', 'drop 100 ft right') mirror that split, and 'south/left' is itself inconsistent on an eastbound ridge.",
+   "sources": [
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://www.adventurespiritguides.com/blog/post/northtwinsister"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Glacier / crevasse exposure on the line",
+   "verdict": "fixed",
+   "correct_value": "The west ridge line crosses no glacier; early-season snow only.",
+   "evidence": "Route write-ups describe the line as logging roads, a clearcut and timber, then the ridge crest straight to the summit, with early-season snow on the north slope as the only snow travel; none mentions the Sisters Glacier or the North-South saddle, which lies on the far side of the summit. The row's own camp card places the Sisters Glacier below South Twin.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-twin/",
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/",
+    "https://www.adventurespiritguides.com/blog/post/northtwinsister"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "Glacier/crevasse proximity near the North-South saddle if the line passes close to the Sisters Glacier's upper apron",
+      "Unpredictable timing of snow bridges near the saddle - safest earlier in summer, riskier as crevasses open later in the season",
+      "Complex private logging-road approach shared with the West Ridge route - see that route for navigation notes",
+      "Unpredictable gate closures on private timberland access"
+     ],
+     "value": [
+      "Complex private logging-road approach shared with the West Ridge route - see that route for navigation notes",
+      "Unpredictable gate closures on private timberland access"
+     ],
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Glacier / crevasse exposure on the line"
+    },
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "expect": "Ice axe (and possibly crampons) if the line passes near residual snow/glacier terrain on the saddle",
+     "value": "Ice axe (and possibly crampons) in early season for lingering snow on the ridge or the north-slope descent",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Glacier / crevasse exposure on the line"
+    },
+    {
+     "op": "set",
+     "column": "best_season",
+     "path": [],
+     "expect": "July-September is the reliable window. If your line to the summit passes near the North-South saddle above the Sisters Glacier, earlier season (before crevasses open later in summer) is generally safer for that terrain - check recent trip reports for current glacier/snow-bridge conditions before committing.",
+     "value": "July-September is the reliable window. Earlier in summer lingering snow on the ridge and the north slope calls for an ice axe; the route itself crosses no glacier.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Glacier / crevasse exposure on the line"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Which line the route is (west ridge vs between-summits approach)",
+   "verdict": "fixed",
+   "correct_value": "The route is the standard West Ridge; crowds/partner text should describe that line.",
+   "evidence": "Route write-ups agree North Twin's standard line is the west ridge from the Middle Fork logging roads, and it is a popular scramble; nothing describes a separate between-summits line to North Twin. Overview, beta, approach, climbing_route and waypoints on the row all describe the west ridge.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-twin/",
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "expect": "Rarely climbed as a standalone objective; most likely attempted by parties combining it with a South Twin traverse or seeking a quieter alternative to the West Ridge, July-September weekends",
+     "value": "Weekend days July-September; this is the standard West Ridge line, a well-known Bellingham-area scramble",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which line the route is (west ridge vs between-summits approach)"
+    },
+    {
+     "op": "set",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "expect": "Unknown - low-traffic relative to the standard West Ridge; this between-summits approach is far less represented in trip-report archives than the West Ridge route, suggesting it sees a small fraction of that traffic",
+     "value": "Unknown - this is the same standard West Ridge line as the separate West Ridge entry and shares its traffic",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which line the route is (west ridge vs between-summits approach)"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "expect": "route-finding on the ridge between the two summits",
+     "value": "route-finding on the west ridge crest, including the false summits near the top",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Which line the route is (west ridge vs between-summits approach)"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Trailhead named on the TRAILHEAD card vs waypoints",
+   "verdict": "fixed",
+   "correct_value": "One trailhead: the usually-closed gate just before the bridge over the Middle Fork Nooksack (~1,200 ft), reached on Road 38 after crossing Clearwater Creek.",
+   "evidence": "One detailed report: Road 38 leaves Mosquito Lake Road, crosses Clearwater Creek at about 4.5 miles, then a right fork drops to the river where a usually-closed gate sits just before the bridge over the Middle Fork; park there. A second party starts at the Middle Fork Nooksack River Bridge at 1,200 ft, and a third gives trailhead coordinates matching the row's trailhead pin. So the 'Clearwater Creek gate' and the FR-38 bridge gate are the same place, and the bridge crossed after the gate is the Middle Fork, not Clearwater Creek.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-twin/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Clearwater Creek gate (Middle Fork Nooksack logging roads)",
+     "value": "Gate at the Middle Fork Nooksack bridge (Road 38 spur, ~1,200 ft)",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the gate before the Clearwater Creek / Middle Fork Nooksack crossing",
+     "value": "From the gate just before the bridge over the Middle Fork Nooksack, reached on Road 38 past the Clearwater Creek crossing",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Drive to the gate before the Clearwater Creek/Middle Fork Nooksack crossing on the logging-road network west of Mosquito Lake Road.",
+     "replace": "Drive Road 38 west from Mosquito Lake Road, cross Clearwater Creek at about 4.5 miles, and take the right fork down to the gate just before the bridge over the Middle Fork Nooksack.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Cross the bridge over Clearwater Creek and ascend",
+     "replace": "Cross the bridge over the Middle Fork Nooksack and ascend",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "once you leave Clearwater Creek near the trailhead",
+     "replace": "once you leave the river at the trailhead",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "Clearwater Creek gate,",
+     "replace": "Middle Fork Nooksack bridge gate,",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Drive to the gate before the Clearwater Creek / Middle Fork Nooksack crossing on the logging-road network west of Mosquito Lake Road.",
+     "replace": "Drive Road 38 west from Mosquito Lake Road, cross Clearwater Creek, and take the right fork down to the gate just before the bridge over the Middle Fork Nooksack.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Cross the bridge over Clearwater Creek and climb",
+     "replace": "Cross the bridge over the Middle Fork Nooksack and climb",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "expect": "No water after Clearwater Creek near the gate",
+     "value": "No water after the river at the gate",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "The other documented way onto the same ridge, from the other side of the road network:",
+     "replace": "The same gate and ridge, described by road names with the Dailey Prairie road-end as the marker:",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Car-to-summit distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly 7 miles car-to-summit (fire ring at ~6.4 mi, then the ridge).",
+   "evidence": "One report places the fire ring below the ridge at about 6.4 miles from the car, with the whole ridge still above, which rules out 6-6.5 miles to the summit; the row's summit pin (7.3 mi) and itinerary (14.6 mi round trip) agree on about 7. A guide service gives 13 miles round trip. dist_km was left alone.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-twin/",
+    "https://www.adventurespiritguides.com/blog/post/northtwinsister"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "for roughly 6-6.5 miles and about 5,500 ft of gain car-to-summit",
+     "replace": "for roughly 7 miles and about 5,500 ft of gain car-to-summit",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Car-to-summit distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 6-6.5 miles and about 5,500 ft of gain car to summit",
+     "replace": "roughly 7 miles and about 5,500 ft of gain car to summit",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Car-to-summit distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Where bikes are stashed",
+   "verdict": "fixed",
+   "correct_value": "Bikes are left where road riding ends around mile 5 (dirt mound/cairn); the 6.4-mile fire ring near 4,100 ft is treeline, not the bike stash.",
+   "evidence": "One report puts the bike stash about 5 miles from the car at a dirt mound, dead tree and cairn, with the fire ring later at about 6.4 miles; a 2000 trip report biked 8 of 12 round-trip miles (about 4 each way) and walked the rest, and the 2014 report puts treeline at 4,100 ft. Both place the stash well below the treeline fire ring. The camp-card mention is left to the camping clean-up.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/north-twin/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2000/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "name"
+     ],
+     "expect": "Bike stash / treeline",
+     "value": "Fire ring / treeline",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Where bikes are stashed"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "marked by a firepit and cairn where parties stash bikes and continue on foot up onto the ridge crest.",
+     "replace": "marked by a firepit and cairn; bikes are left lower, where road riding ends around mile 5, and from here the path continues on foot up onto the ridge crest.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Where bikes are stashed"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Access fees / passes / landowner permit",
+   "verdict": "fixed",
+   "correct_value": "Hampton Family Forests timberland; paid landowner recreation permit required; no federal pass at the gate.",
+   "evidence": "Hampton's recreation page and FAQ: fee recreation permit required for all public access to its Whatcom/Skagit/Snohomish forestland, with non-motorized permits capped; a route page names Hampton Family Forests (formerly Weyerhaeuser) as owner of the gated Middle Fork road.",
+   "sources": [
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.hamptonlumber.com/wp-content/uploads/2023/06/FAQ_Final.pdf",
+    "https://fastestknowntime.com/route/twin-sisters-traverse-wa"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "value": "No climbing fee, but the approach roads cross Hampton Family Forests timberland, where entry on foot or bike requires the landowner's paid recreation permit.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "value": "No Northwest Forest Pass applies at the private-timberland gate; the landowner's paid recreation permit is what is required here.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+     "value": "No climbing permit; the approach roads cross private timberland where the landowner's paid recreation permit is required for walk-in or bike entry - check current access before the trip.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "a Weyerhaeuser recreation permit is posted as required",
+     "replace": "the landowner (Hampton Family Forests) requires a paid recreation permit",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Access fees / passes / landowner permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "posts a required Weyerhaeuser recreation permit",
+     "replace": "the landowner (Hampton Family Forests) requires a paid recreation permit",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Access fees / passes / landowner permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Camping on the private timberland",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No camping on the private timberland.",
+   "evidence": "The landowner's FAQ states camping and campfires are not allowed on its lands at any time; the row's camp cards agree.",
+   "sources": [
+    "https://www.hamptonlumber.com/wp-content/uploads/2023/06/FAQ_Final.pdf",
+    "https://www.hamptonlumber.com/recreation/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping.",
+     "value": "Camping is not allowed on the private timberland the approach crosses; above it, in the Mount Baker Wilderness, dispersed camping needs no permit or registration. The logging-road gate is separately locked to vehicles by the timber company.",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Camping on the private timberland"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "Land manager names North Cascades National Park",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Mount Baker Wilderness only; no part of the route is in North Cascades National Park.",
+   "evidence": "Same as the West Ridge row: both summits are in the Mount Baker Wilderness, which meets the national park only along its far eastern border; the row's landManager agrees.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twin_Sisters_Mountain",
+    "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "replace": "Mount Baker Wilderness above the private timberland",
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "Land manager names North Cascades National Park"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "fact": "summitTimeHrs holds the car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "Null summitTimeHrs (10.5 is the round-trip total; the itinerary summits around 12-1 PM from a 5:30 AM start).",
+   "evidence": "Trip reports record 7.8 h and 5.9 h to the summit against 10-12 h round trips; the row's own schedule summits 6.5-7.5 h in. Nulled per catalog convention.",
+   "sources": [
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/",
+    "https://trailcatjim.com/north-twin-sister-via-west-ridge-2000/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": null,
+     "id": "wa_north_twin_sister_scramble",
+     "fact": "summitTimeHrs holds the car-to-car total"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

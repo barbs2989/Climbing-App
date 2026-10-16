@@ -1,0 +1,701 @@
+{
+ "file": "r604.json",
+ "results": [
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Approach side and summit line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: beta and pitch_detail describe a brushy west-side approach over Gray Wolf Ridge from Baldy, the approach/waypoints/approach_variants describe the Royal Basin traverse to an east/southeast gully (while calling it the 'West Side'), and itinerary day 2 describes a ridge crest reached from the north. Web research was cut off by a tool session limit before the standard summit line could be established from two sources, so nothing was changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Trailhead elevation",
+   "verdict": "unresolved",
+   "correct_value": "about 2,550 ft (one source)",
+   "evidence": "The park's Royal Basin page gives the climb to Royal Lake as 2,550 to 5,100 ft, i.e. a trailhead near 2,550 ft, which fits the row's own '~2,500 ft gain' to the lake and contradicts the 2,960-2,970 ft stated for the trailhead. A second independent source could not be fetched (tool session limit), and the WTA page does not state the trailhead elevation, so the waypoint elev and approach prose were left unchanged.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Royal Basin permit season",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Official park pages disagree: the Royal Basin trip page gives the quota season as May 1-September 30, while the park's wilderness-reservations page says the summer online season is May 15-October 15. A search summary also gave June 15-October 15. With no two sources agreeing, no field was changed. (bivy[1].permit is owned by the camping clean-up and was not touched.)",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Where camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Camp only in the designated sites at Royal Creek, Lower Royal Meadow or Royal Lake; no camping in Upper Royal Basin",
+   "evidence": "The park's own Royal Basin trip page lists the designated camping areas as Royal Creek, Lower Royal Meadow and Royal Lake, says to camp in designated sites only and states there is no camping in Upper Royal Basin; it gives Royal Lake as 7.2 mi and 2,550 to 5,100 ft. WTA's Royal Basin hike page independently says camping is permitted only at designated sites at Royal Lake, with Upper Royal Basin (5,700 ft) about three-quarters of a mile beyond. A third hiking page describes the upper basin as day-use. The camp is therefore Royal Lake; day gains/losses were shifted between days so the itinerary totals still equal gain_ft/loss_ft. bivy[0] (Upper Royal Basin, role main) also presents the upper basin as a camp but belongs to the camping clean-up, so it was not patched.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.theoutbound.com/washington/hiking/hike-to-royal-basin"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "expect": "Camp at Upper Royal Basin (5,600') rather than Royal Lake to shorten the summit day",
+     "value": "Camp at Royal Lake (camping is not permitted in Upper Royal Basin) and start early, since the summit day begins with the extra mile up into the upper basin",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Upper Royal Basin (~5,600 ft, ~8 mi from the trailhead), the base camp used for all Needles-area objectives.",
+     "replace": "Upper Royal Basin (~5,600 ft, ~8 mi from the trailhead), the day-use staging area for all Needles-area objectives (camping is not permitted in the upper basin).",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "find": "This is the base camp used for every Needles objective and holds",
+     "replace": "Camping is not permitted in the upper basin, but it is the staging point for every Needles objective and holds",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(or a backpack with a camp at Royal Lake/Upper Royal Basin)",
+     "replace": "(or a backpack with a camp at Royal Lake)",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "camp at the lake or in the upper basin, then cross-country",
+     "replace": "camp at the lake, then continue through the upper basin and cross-country",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Royal Lake/Upper Royal Basin campsites require reserved permits",
+     "replace": "Royal Basin campsites (Royal Creek, Lower Royal Meadow and Royal Lake; none in the upper basin) require reserved permits",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Backpack to Upper Royal Basin",
+     "value": "Backpack to Royal Lake",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "to Royal Lake (5,100 ft), then continue about a mile further to camp in Upper Royal Basin (~5,600-5,700 ft), directly beneath the west wall formed by The Needles. This is the standard staging camp used by nearly every party climbing Walkinshaw or its neighbors.",
+     "replace": "to camp in the designated sites at Royal Lake (5,100 ft), below The Needles. Camping is not permitted in Upper Royal Basin, so the summit day starts from the lake.",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8,
+     "value": 7.2,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3300,
+     "value": 2550,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 3.5,
+     "value": 5.1,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 2200,
+     "value": 2950,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 2200,
+     "value": 2950,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "label"
+     ],
+     "expect": "Leave Upper Royal Basin camp",
+     "value": "Leave Royal Lake camp",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 8,
+     "value": 7.2,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 3300,
+     "value": 2550,
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "back past Royal Lake to the trailhead",
+     "replace": "from Royal Lake to the trailhead",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Backpack to Upper Royal Basin",
+     "value": "Backpack to Royal Lake",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "to Royal Lake (5,100 ft), then continue about a mile further to camp…",
+     "replace": "to camp at Royal Lake (5,100 ft)…",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "back past Royal Lake to the trailhead",
+     "replace": "from Royal Lake to the trailhead",
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Where camping is allowed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Cell coverage on the peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "comms reports some coverage on the open crest of Gray Wolf Ridge while emergency.notes says none on the peak. No source on coverage could be researched before the tool session limit, so neither field was changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Glacier/crevasses on the route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No glacier travel; the early-season hazard is snow in the northeast gully",
+   "evidence": "Within the row, seasonal_hazards.crevasses, detailed_rack, pro_tips, bail, descent_text and partner_requirements all say there is no glacier travel; only the July and August month reasons mention crevasses and a glacier crossing, apparently copied from a glaciated route. The park's Royal Basin page describes the approach as a trail hike to Royal Lake and the upper basin with no glacier travel. The two month reasons were reworded to the northeast-gully snow the rest of the row describes.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "snow bridges over crevasses may still be present but can be less predictable early in the window",
+     "replace": "the northeast gully can still hold snow that calls for an ice axe early in the window",
+     "id": "wa_sundial_northeast",
+     "fact": "Glacier/crevasses on the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "glacier crossing is more visually straightforward with crevasses more open and defined, matching the routefinding hazard",
+     "replace": "the northeast gully has usually melted out, leaving loose rock and talus routefinding as the main hazard",
+     "id": "wa_sundial_northeast",
+     "fact": "Glacier/crevasses on the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Parking/entrance pass",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass or America the Beautiful pass to park at the Upper Dungeness Trailhead",
+   "evidence": "The park's Royal Basin page names the Upper Dungeness Trailhead as a USFS trailhead and says the parking pass required is a Northwest Forest Pass or America the Beautiful pass. WTA's Royal Basin page gives the same two passes. Neither lists a park entrance pass for this trailhead. The park's wilderness-reservations page gives the camping fees ($8 per person per night for ages 16+, $6 reservation fee). The access fields that asked for a $30 entrance pass were corrected.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$30 per private vehicle Olympic NP entrance pass (valid 7 days), or $15/person on foot/bike; separate from the wilderness camping fee above.",
+     "value": "Overnight stays carry the wilderness camping fee of $8 per person per night (ages 16+) plus a $6 non-refundable reservation fee per permit.",
+     "id": "wa_sundial_northeast",
+     "fact": "Parking/entrance pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "Northwest Forest Pass or America the Beautiful interagency pass to park at the Upper Dungeness Trailhead, which is on Olympic National Forest land.",
+     "id": "wa_sundial_northeast",
+     "fact": "Parking/entrance pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "NPS entrance pass plus a Recreation.gov wilderness camping permit if overnighting at Royal Lake/Royal Basin.",
+     "value": "Northwest Forest Pass or America the Beautiful pass to park, plus a Recreation.gov wilderness camping permit if overnighting at Royal Lake/Royal Basin.",
+     "id": "wa_sundial_northeast",
+     "fact": "Parking/entrance pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Where camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Camp only in the designated sites at Royal Creek, Lower Royal Meadow or Royal Lake; no camping in Upper Royal Basin",
+   "evidence": "The park's own Royal Basin trip page lists the designated camping areas as Royal Creek, Lower Royal Meadow and Royal Lake, says to camp in designated sites only and states there is no camping in Upper Royal Basin; it gives Royal Lake as 7.2 mi and 2,550 to 5,100 ft. WTA's Royal Basin hike page independently says camping is permitted only at designated sites at Royal Lake, with Upper Royal Basin (5,700 ft) about three-quarters of a mile beyond. A third hiking page describes the upper basin as day-use. The camp is therefore Royal Lake; day gains/losses were shifted between days so the itinerary totals still equal gain_ft/loss_ft. bivy[0] (Upper Royal Basin) also presents the upper basin as a camp but belongs to the camping clean-up, so it was not patched.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.theoutbound.com/washington/hiking/hike-to-royal-basin"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "camping restricted to designated Royal Lake sites",
+     "replace": "camping restricted to the designated sites at Royal Creek, Lower Royal Meadow and Royal Lake (no camping in Upper Royal Basin)",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "back to camp in Upper Royal Basin, then",
+     "replace": "back through Upper Royal Basin to camp at Royal Lake, then",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back to camp in Upper Royal Basin, then retrace",
+     "replace": "back through Upper Royal Basin to camp at Royal Lake, then retrace",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Camp there; the tarns are",
+     "replace": "Camping is not permitted there, so camp at the lake; the tarns are",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "camping in Upper Basin itself is limited — Royal Lake is a reliable fallback camp",
+     "replace": "camping is not permitted in Upper Royal Basin itself — camp at Royal Lake",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Backpack in to Upper Royal Basin",
+     "value": "Backpack in to Royal Lake",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "passing Royal Creek Camp and Royal Lake, then continue into Upper Royal Basin to camp at roughly 5,600 ft with Sundial and the rest of the Needles visible overhead.",
+     "replace": "passing Royal Creek Camp, to camp in the designated sites at Royal Lake (about 5,100 ft) below Sundial and the rest of the Needles.",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8,
+     "value": 7.2,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3000,
+     "value": 2550,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 3.6,
+     "value": 5.2,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 1650,
+     "value": 2100,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 1650,
+     "value": 2100,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "expect": "Cross-country talus/scree approach from Upper Basin camp.",
+     "value": "Walk up through Upper Royal Basin, then cross-country talus/scree to the face.",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "label"
+     ],
+     "expect": "Back at high camp",
+     "value": "Back at camp",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 8,
+     "value": 7.2,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 3000,
+     "value": 2550,
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "hike the 8 miles back to the Upper Dungeness Trailhead, descending about 3,000 ft",
+     "replace": "hike the 7.2 miles back to the Upper Dungeness Trailhead, descending about 2,550 ft",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "(Upper Dungeness TH to Upper Royal Basin, ~3,000 ft each way) bracket a single scramble day up Sundial's Class 3 East Face (~1,650 ft round trip from camp)",
+     "replace": "(Upper Dungeness TH to Royal Lake, ~2,550 ft each way) bracket a single scramble day up Sundial's Class 3 East Face (~2,100 ft round trip from camp)",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Backpack in to Upper Royal Basin",
+     "value": "Backpack in to Royal Lake",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "passing Royal Creek Camp and Royal Lake, then continue into Upper Royal Basin to camp a…",
+     "replace": "passing Royal Creek Camp, to camp at Royal Lake…",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "hike the 8 miles back to the Upper Dungeness Trailhead, descending about 3,000 ft",
+     "replace": "hike the 7.2 miles back to the Upper Dungeness Trailhead, descending about 2,550 ft",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "an 8-mile, roughly 2,650-3,000 ft backpack each way into Upper Royal Basin",
+     "replace": "a 7.2-mile, roughly 2,550 ft backpack each way to Royal Lake",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "to camp in Upper Royal Basin",
+     "replace": "to camp at Royal Lake",
+     "id": "wa_sundial_northeast",
+     "fact": "Where camping is allowed"
+    }
+   ]
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Cairned crack passage (possibly another peak's feature)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Beta and approach_variants describe a cairned Class 3 crack past a spot that looks like it cliffs out, while climbing_route describes only the NE gully to a notch and a short Class 3 ridge. Whether that crack belongs to Sundial or was copied from Mount Johnson could not be researched before the tool session limit, so nothing was changed.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

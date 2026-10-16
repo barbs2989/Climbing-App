@@ -1,0 +1,89 @@
+{
+ "id": "wa_hourglass_gully_winter",
+ "name": "Hourglass Gully (Winter)",
+ "approach": "Start at the Lake Serene Trailhead and follow Trail #1068 about 4 miles and 2,000 ft of gain to Lake Serene, then traverse talus and boulders around the west side of the lake to its south end. From there head east to a saddle and climb the ridge/gully system southwest of it toward Main Peak, the massif's highest and most technical summit (~5,991 ft). Expect roughly 5,500 ft of total elevation gain, thick brush low on the route, and sustained moderate rock climbing higher up; most parties plan for a 15+ hour car-to-car day or an overnight.",
+ "pitch_detail": [
+  {
+   "grade": "Class 2 hiking",
+   "notes": "4.1 miles, 2,000 ft gain, well-maintained trail through forest, may be snow-covered in early season requiring microspikes",
+   "pitch": "Approach via Lake Serene trail"
+  },
+  {
+   "grade": "Class 2-3 snow/scramble",
+   "notes": "3,500-4,000 ft gain over rough terrain, ascend right (west) around Lake Serene, cross avalanche debris and old snow, navigate through trees and brush to reach saddle",
+   "pitch": "Approach slope to East Ridge saddle"
+  },
+  {
+   "grade": "Class 4-5, low 5th",
+   "notes": "Steep brushy ridge with intermittent cliffs, approximately 500-600 ft; crux of ridge; dense brush in summer, snow-covered in winter/spring",
+   "pitch": "East Ridge lower section"
+  },
+  {
+   "grade": "AI 2-3 (WI 2-3 in ice conditions)",
+   "notes": "Short steep rock/snow section, approximately 40-60 feet, sometimes snow-covered, sometimes wet rock depending on season; rappel station at top",
+   "pitch": "East Ridge crux: 60-degree pitch"
+  },
+  {
+   "grade": "Class 3-4 snow, 40-45 degrees",
+   "notes": "Approximately 300-400 ft gain, consistent 40-45 degree snow slope; avalanche terrain; wide and open",
+   "pitch": "Hourglass Gully lower section"
+  },
+  {
+   "grade": "Class 4-5, WI 2-3, 45-60 degrees",
+   "notes": "The route narrows dramatically and steepens to 45-60 degrees; sections approach near-vertical ice exit; technical climbing or chopping/step-cutting; approximately 200-300 ft; crux of the entire route",
+   "pitch": "Hourglass Gully constriction"
+  },
+  {
+   "grade": "Class 3 snow, 35-40 degrees",
+   "notes": "Exit gully onto upper ridge, 150-200 ft of moderate snow slope, less technical than constriction but still steep and exposed",
+   "pitch": "Hourglass Gully upper section to ridge"
+  },
+  {
+   "grade": "Class 3-4, exposed",
+   "notes": "Final 100-150 ft to summit, knife-edged on exposed ridge with 1,000-foot drops to NE; cornices possible; grand exposure",
+   "pitch": "Summit ridge traverse"
+  },
+  {
+   "grade": "Class 3-4 rappel",
+   "notes": "First rappel from anchors at top of crux pitch, 30m × 2 ropes; descent of steep snow/ice",
+   "pitch": "Descent: Upper ridge to gully"
+  },
+  {
+   "grade": "Class 3 boot-skiing/downclimbing",
+   "notes": "Descend gully via boot-skiing or careful downclimbing; small wet slides common in spring; 400-600 ft descent",
+   "pitch": "Descent: Hourglass Gully"
+  },
+  {
+   "grade": "Class 3-4 rappel or downclimb",
+   "notes": "Final rappel(s) or downclimbing through forested ridge section back to saddle; use existing slings on trees for anchors; 500-600 ft",
+   "pitch": "Descent: Lower ridge to saddle"
+  },
+  {
+   "grade": "Class 2-3 downclimbing/skiing",
+   "notes": "Descend rocky/snowy slope back to lake, 3,500-4,000 ft; may be icy; caution for avalanche terrain",
+   "pitch": "Descent: Approach slope to Lake Serene"
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.80925,
+   "lng": -121.57409,
+   "elev": 600,
+   "name": "Lake Serene Trailhead",
+   "note": "US-2 trailhead near Index used to approach Mount Index's Main Peak.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Take US 2 east past Gold Bar about 7 miles. Just as the highway curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road, drive about a quarter mile on dirt, and turn right at the sign for Lake Serene Trail 1068 into the parking lot about 500 ft ahead, around 600 ft. A Northwest Forest Pass is required."
+  },
+  {
+   "lat": 47.77453,
+   "lng": -121.58094,
+   "elev": 5979,
+   "name": "Mount Index Main Peak Summit",
+   "note": "Winter/spring line up the Hourglass Gully; stay left of the island in the gully to avoid the sun-exposed, rockfall-prone right side.",
+   "type": "Summit",
+   "distMi": 5.5,
+   "directions": "Hike Lake Serene Trail #1068 about 4.1 miles to the north end of the lake, then traverse talus and boulders around the west shore to the south end. Head east to the saddle, climb the brushy ridge running southwest from it to the cliffs, traverse under them, and take the first wide gully on the right, the Hourglass. Climb it through the constriction, exit onto the upper ridge, and follow the knife-edged crest to the summit."
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rope length vs chimney rappel"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "October in the climbing season",
+   "op": "replace_text",
+   "column": "season",
+   "path": [],
+   "find": "safest to scramble July through September/October once",
+   "replace": "safest to scramble July through September once",
+   "sources": [
+    "https://www.summitpost.org/mount-cruiser/151837",
+    "https://www.explorehoodcanal.com/hikesandwalks/flapjack-lakes-in-olympic-national-park"
+   ],
+   "why": "season must stay a short window"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_the_fin_scramble",
+   "before": {
+    "rappels": "No fixed rappel station. The standard descent avoids reversing the pitch altogether via the 3rd-class scramble/east-face walk-off back to Sawtooth Pass; parties who prefer to rappel the chimney build a gear anchor or sling a chockstone/horn for a single ~120 ft (37 m) rappel."
+   }
+  }
+ ]
+}

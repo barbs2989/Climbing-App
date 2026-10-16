@@ -1,0 +1,206 @@
+{
+ "applied": [
+  {
+   "id": "wa_bedal_peak_standard",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Elevation of the cliff-band crux"
+  },
+  {
+   "id": "wa_bedal_peak_standard",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Elevation of the cliff-band crux"
+  },
+  {
+   "id": "wa_bedal_peak_standard",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Elevation of the cliff-band crux"
+  },
+  {
+   "id": "wa_bedal_peak_standard",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Elevation of the cliff-band crux"
+  },
+  {
+   "id": "wa_bedal_peak_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Which approach the route takes (beta and ROUTE BREAKDOWN describe the Bedal Creek / Bedal Basin approach; every other field describes Merry Brook)"
+  },
+  {
+   "id": "wa_bedal_peak_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which approach the route takes (beta and ROUTE BREAKDOWN describe the Bedal Creek / Bedal Basin approach; every other field describes Merry Brook)"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "anchor"
+   ],
+   "fact": "Anchor type for the first (col) rappel vs. the bowl rappels"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Anchor type for the first (col) rappel vs. the bowl rappels"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "column": "beta",
+   "path": [],
+   "fact": "First-ascent climber's surname spelling"
+  },
+  {
+   "id": "wa_big_four_mountain_tower_route",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to Foggy Lake"
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance to Foggy Lake"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_bedal_peak_standard",
+   "before": {
+    "hazards": [
+     "notorious brushy, route-finding-intensive approach through old-growth forest and devil's club",
+     "crux cliff band at roughly 4,600-4,900 ft: mossy/duff-covered rock, often icy into early summer, described by trip reports as the most dangerous part of the route",
+     "loose Class 3 rock and 'veggie belay' (unreliable brush holds) on the upper mountain",
+     "steep heather and snow gullies that cliff out if followed too far (stay right of the direct gully near the crux)",
+     "afternoon thunderstorms common in summer over the Mountain Loop corridor",
+     "wet-slide/wet-slab avalanche potential on the north-facing snowfields above the cliff band in spring"
+    ],
+    "turnaround": "Turn around before committing to the cliff-band crux (~4,600-4,900 ft) if the rock is wet, icy, or snow-covered on rock - trip reports flag this as treacherous, especially in June. This is a poor place to be caught by afternoon thunderstorms, which build regularly over the Mountain Loop in summer. Round-trip days commonly run 8-11 hours car-to-car, so plan a pre-dawn start and set a firm summit turnaround time to clear the crux and brush before dark.",
+    "pro_tips": [
+     "Expect serious brush - wear protective clothing (gloves, long sleeves, gaiters) and be ready for devil's club",
+     "Strong route-finding required; no maintained trail beyond a cairned start on FR 4096",
+     "The crux is finding the climber's ramp/notch through the cliff band around 4,600-4,900 ft - resist the temptation to charge straight up the gully, which cliffs out",
+     "Early-season (May-June) snow eases the brush but makes the cliff-band crux icy and more dangerous; late July-September usually gives drier, safer rock",
+     "Carry both approach shoes for the lower brush and boots (plus axe/crampons) for upper snow - many parties swap partway up"
+    ],
+    "pro_needs": "Minimal technical gear - this is a scramble, but the cliff-band crux around 4,600-4,900 ft has real exposure and is sometimes protected with a rope and a couple of pieces by less experienced or larger parties, especially when wet or icy.",
+    "beta": "From the Bedal Creek trailhead, a faint, brushy climbers' path climbs through old-growth forest into the Henry M. Jackson Wilderness, crosses an avalanche path, and within about 1.7-2 miles gives way to boulder-hopping up a creek drainage into Bedal Basin. Above the basin the route ascends through two rocky cliff bands via a scramble ramp/notch — the accepted line is marked with pink flagging and is looser and harder if you drift into the adjacent gully instead — often crossing lingering snow, before finishing up the east ridge to the summit block.",
+    "pitch_detail": [
+     {
+      "grade": "3rd class",
+      "notes": "Scramble ramp/notch through the lower cliff band above Bedal Basin; stay on the flagged line rather than the adjacent gully.",
+      "pitch": "Section 1 - Cliff band entry",
+      "lengthM": 91
+     },
+     {
+      "grade": "3rd-4th class",
+      "notes": "Crux terrain: a steeper ramp through the second (upper) cliff band, often snow-covered, gaining the summit ridge around 6,200 ft.",
+      "pitch": "Section 2 - Upper cliff band & snow slopes",
+      "lengthM": 305
+     },
+     {
+      "grade": "2nd-3rd class",
+      "notes": "Traverse below the true summit and follow the east ridge to the summit block; described as an easy Class 2-3 finish with minimal exposure.",
+      "pitch": "Section 3 - East ridge to summit block",
+      "lengthM": 107
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "before": {
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First rappel off the west summit ridge toward the col between Big Four and Hall Peak, mixed with steep downclimbing; exact anchor type not recorded.",
+      "anchor": "natural rock (horn/block) near summit ridge",
+      "lengthM": null
+     },
+     {
+      "n": 2,
+      "notes": "First of several tree-anchored rappels descending through the North Face bowl below the col.",
+      "anchor": "tree",
+      "lengthM": null
+     },
+     {
+      "n": 3,
+      "notes": "Continue down the bowl; navigation is critical here since parties have mistakenly descended south instead of northwest in poor visibility.",
+      "anchor": "tree",
+      "lengthM": null
+     },
+     {
+      "n": 4,
+      "notes": "Final tree rappel to the base of the North Face bowl.",
+      "anchor": "tree",
+      "lengthM": null
+     }
+    ],
+    "beta": "First climbed March 2, 1996 by Bart Pauli and Doug Littauer in a fast, ultralight, ~9-hour push with no bivy gear. The route starts up an 'ice ribbon' on the initial slabs (roughly 75-degree névé and water ice), continues through the main couloir's three steps of mostly moderate terrain, and hits its crux about three-quarters height: a 100-foot pitch of near-vertical ice leading to steep, often runnelled snow. The upper section mixes rotten ice, shale, and drytooling moves up to roughly 95-degree angles before summit cornices, which may require tunneling through."
+   }
+  },
+  {
+   "id": "wa_big_four_mountain_tower_route",
+   "before": {
+    "rock_grade": "5.9"
+   }
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "before": {
+    "pitches": 2,
+    "approach": "Start at the Barlow Pass trailhead (~2,360 ft) on the Mountain Loop Highway, where the pavement ends. Walk the gated road/trail roughly 1 mile to the signed junction for the Weden Creek (Gothic Basin) Trail #724, branching right off the old railroad grade. The trail climbs steeply and steadily through timber via switchbacks, fording Weden Creek about 1 mile in (the crossing can be a wet, rock-hop affair in early season or after rain). About 1.2 miles past the creek crossing (roughly 3 miles from the trailhead), the trail crosses a steep avalanche/snow gully that runs as a cascading waterfall in summer but can hold a firm, consequential snow tongue well into July — this is the trail's main hazard and can require an ice axe or careful kick-stepping in early season. Above treeline the trail breaks into subalpine meadows and rock slabs of Gothic Basin (~5,000 ft); tread carefully off-trail here as the meadows are fragile and use rock/gravel where possible. From the basin, follow the boot path past a small tarn and up boulder/talus slopes to Foggy Lake (~5,200 ft, 3.3 miles from the trailhead) — the lake is a reliable water source (filter before drinking) and the last easy flat camping/staging area. From Foggy Lake, cross the boulder field on climbers' trail along the lake's north side, then ascend Del Campo's south-facing slopes toward ~6,200 ft, aiming for the main summit gully. Route-finding caution: the obvious gully looks like the natural line but ends in a vertical wall — the actual route exits the gully and moves onto class 3-4 rock just left of it about 100 vertical feet below the top, working up to a notch/col at roughly 6,350 ft. From the col, turn west/left and scramble the final short pitch to the true summit (6,610-6,615 ft). Total is about 11-14 miles round trip, depending on the exact approach line, with roughly 4,200-4,300 ft of gain to the summit; snow can linger in the gully and basin into early September, and a helmet is strongly recommended for the loose upper rock.",
+    "approach_variants": [
+     {
+      "name": "Barlow Pass, Gothic Basin Trail #724, Foggy Lake",
+      "hours": "4-6",
+      "notes": "Distance and gain are round trip. Start at the Barlow Pass trailhead, about 2,360 ft, where the Mountain Loop Highway pavement ends. Walk the gated road roughly a mile to the signed junction for the Weden Creek / Gothic Basin Trail #724, which branches RIGHT off the old railroad grade.\n\nThe trail climbs steeply and steadily through timber, fording Weden Creek about a mile past the junction — a wet rock-hop in early season or after rain. Roughly 1.2 miles above the creek, and about three miles from the trailhead, the trail crosses a steep avalanche gully that runs as a cascading waterfall in summer but can hold a firm, consequential snow tongue well into July. That crossing is the main hazard on the walk in.\n\nAbove treeline the trail breaks into the meadows and rock slabs of Gothic Basin around 5,000 ft. The meadows are fragile — travel on rock and gravel where possible. From the basin a boot path runs past a small tarn and up boulder and talus slopes to Foggy Lake at about 5,200 ft, roughly 3.3 miles in. The lake is the last reliable water and the last flat staging or camping ground.\n\nFrom Foggy Lake, cross the boulder field on the climbers' trail along the lake's north side, then work up Del Campo's south-facing slopes toward the permanent snowfield below the summit walls at roughly 6,200 ft.",
+      "distMi": 10.9,
+      "gainFt": 4235,
+      "season": "Jul-Sep; the trail's snow gully can need an axe into July",
+      "hazards": [
+       "Steep snow tongue where the trail crosses the avalanche gully, into July",
+       "Weden Creek ford",
+       "Loose rock on the upper wall — helmet from Foggy Lake onward",
+       "Blind entry into the dead-end gully in cloud"
+      ],
+      "baseFinding": "At the top of the snowfield you face a rock wall with one obvious gully splitting it. THE OBVIOUS GULLY IS THE WRONG LINE: it looks like the natural way, and it steepens and ends against a vertical wall about a hundred vertical feet below the top. The correct start is the blocky, staircase-like class 3-4 ledge system immediately to climber's LEFT of that gully. It carries a boot path — if there is a bootpath under your feet you are on it, if you are on clean untracked rock in a narrowing groove you are not. The ledges lead to a notch on the southeast ridge at about 6,350 ft; from the notch turn LEFT (west) for the last short scramble to the true summit at 6,610 ft. If the ground you are on constricts into a chimney and turns class 4 near its top, you are in the gully — reverse and move left onto the ledges. Parties who scramble directly to the notch on 4th class have simply missed the class 3 ledges a little further left."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "wa_seven_fingered_jack_southwest_slopes",
+ "name": "Southwest Slopes",
+ "waypoints": [
+  {
+   "lat": 48.0832,
+   "lng": -120.835,
+   "elev": 3500,
+   "name": "Phelps Creek Trailhead",
+   "note": "End of FR 6211 (Phelps Creek Road); no parking pass required, but the final 2.3 miles of forest road are rough gravel.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Follow the Chiwawa River Road to the Phelps Creek Road, FR 6211, and take it to its end at the trailhead (3,500 ft). The final 2.3 miles of the forest road are rough gravel. No parking pass is required here."
+  },
+  {
+   "lat": 48.107927,
+   "lng": -120.834395,
+   "elev": 3900,
+   "name": "Glacier Peak Wilderness Boundary",
+   "note": "Trail crosses into Glacier Peak Wilderness here; self-issue wilderness permit is customary at the trailhead/boundary kiosk.",
+   "type": "Junction",
+   "distMi": 2.6,
+   "directions": "Start up Phelps Creek Trail #1511. About a quarter mile in the Carne Mountain Trail branches steeply off to the right; stay left and low on the gentle grade along the creek. The rest of this stretch is easy forest walking with little elevation gain."
+  },
+  {
+   "lat": 48.117053,
+   "lng": -120.837497,
+   "elev": 4140,
+   "name": "Leroy Creek Crossing",
+   "note": "Ford Leroy Creek just before the unsigned Leroy Creek climbers' path forks north off the Phelps Creek Trail; can run high and difficult to ford in early season.",
+   "type": "Water",
+   "distMi": 3.5,
+   "directions": "Continue on the main trail through more level forest. Leroy Creek is the third significant creek the trail crosses and the only one that gives trouble: the log-and-rock crossing runs hard with snowmelt and is the crux of the day for some parties, so scout up and down the bank rather than forcing the obvious line. Do not walk past it, since the unsigned climbers' path leaves the maintained trail at this crossing with no marker."
+  },
+  {
+   "lat": 48.138078,
+   "lng": -120.827325,
+   "elev": 6100,
+   "name": "Leroy Basin",
+   "note": "Established camp in the meadow near treeline in Leroy Basin, the standard base camp for both Seven Fingered Jack and Mount Maude.",
+   "type": "Campsite",
+   "distMi": 5,
+   "directions": "Leave the maintained trail at the crossing and climb the unmaintained boot path up the north side of Leroy Creek. It gains roughly 2,000 feet in about a mile and a half, steep and brushy in places, and is the hardest sustained work of the trip. Where the tread fades, stay on the north side of the creek and keep climbing rather than traversing off into timber. It ends abruptly in the open meadows and talus of the basin."
+  },
+  {
+   "lat": 48.139737,
+   "lng": -120.822578,
+   "elev": 6700,
+   "name": "Boot Path End / Talus Slope Start",
+   "note": "The intermittent climbers' trail out of Leroy Basin fades in a flat spot around here; continue straight up the broad southwest scree/talus slope toward the gap right of Mount Maude's North Tower.",
+   "type": "Junction",
+   "distMi": 5.5,
+   "directions": "From camp head up toward the peak on the intermittent path leaving the basin. There are two ways up this lower step, a rock gully or the gentler ridge just right of it, and the ridge is the more stable underfoot. The two rejoin at a flat spot where the broad southwest slope opens out, and the path effectively ends there."
+  },
+  {
+   "lat": 48.142955,
+   "lng": -120.816832,
+   "elev": 7400,
+   "name": "Loose Scree Traverse",
+   "note": "Veer left, hugging the base of Seven Fingered Jack's walls on a lot of loose, sliding scree; helmets recommended due to rockfall risk from parties above.",
+   "type": "Hazard",
+   "distMi": 6,
+   "directions": "Climb straight up the broad scree and talus slope, initially toward the gap right of Mount Maude's north side, then veer left as the angle steepens to hug the base of Seven Fingered Jack's walls. This is sliding scree with no line that stays firm, so spread the party out sideways rather than stacking up, because anything dislodged runs a long way. Steeper bulges can be turned on either side without difficulty."
+  },
+  {
+   "lat": 48.145494,
+   "lng": -120.815998,
+   "elev": 7800,
+   "name": "7,800 ft Bench",
+   "note": "Broad bench below the jagged summit spires where the southwest slope route tops out onto the upper mountain before the final scramble.",
+   "type": "Junction",
+   "distMi": 6.3,
+   "directions": "Keep working up and left on the same loose ground until the angle relents onto the broad bench beneath the summit towers. It is the first ground on the upper mountain with secure enough footing to regroup and sort out which of the fingers you are heading for."
+  },
+  {
+   "lat": 48.1504888,
+   "lng": -120.8143137,
+   "elev": 9078,
+   "name": "Seven Fingered Jack Summit",
+   "note": "True summit gained via Class 2-3 scrambling among the summit towers; bear left (west) among the spires for the highest point.",
+   "type": "Summit",
+   "distMi": 6.8,
+   "directions": "From the bench bear left (west) as you come up among the towers: the true summit is the leftmost of the fingers seen from the basin below, and every spire right of it is lower. The last of it is class 2-3 scrambling on blocky rock. If you find yourself on anything harder, you have committed to the wrong finger; drop back and traverse further left."
+  }
+ ]
+}

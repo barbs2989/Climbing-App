@@ -1,0 +1,86 @@
+{
+ "id": "wa_kimtah_peak_scramble",
+ "name": "Southwest Slopes / Gully",
+ "waypoints": [
+  {
+   "lat": 48.5879,
+   "lng": -120.8029,
+   "elev": 3750,
+   "name": "Easy Pass Trailhead",
+   "note": "Signed pullout on SR-20 between mileposts 151-152; self-issue Northwest Forest Pass required at the kiosk, ~10-car lot.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Marblemount, drive SR-20 (North Cascades Highway) east about 45 miles and turn right between mileposts 151 and 152 onto the short spur signed for Easy Pass, ending at a lot for about 10 cars. A Northwest Forest Pass or America the Beautiful pass is required (self-issue at the kiosk). The highway closes in winter, so the trailhead is reachable only once it opens for the season."
+  },
+  {
+   "lat": 48.57152,
+   "lng": -120.84178,
+   "elev": 6550,
+   "name": "Easy Pass — leave trail",
+   "note": "Trail crests Easy Pass through open meadows; leave the maintained tread near the first switchback just below the pass to begin the cross-country traverse toward Ragged Ridge.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "The Easy Pass Trail climbs steadily for about 3.5 miles and 2,800 ft, switchbacking through old-growth forest along Easy Creek before breaking into open meadow at the crest. The upper, north-facing switchbacks hold steep snow well into early summer, so an axe is worth carrying outside of high summer. At the pass, ignore the tread continuing down the far side toward Fisher Creek."
+  },
+  {
+   "lat": 48.57636795945946,
+   "lng": -120.86561604054054,
+   "elev": 6500,
+   "name": "Waterfall creek crossing",
+   "note": "Traverse descends ~200 ft of steep scree to cross a waterfall-fed creek — last reliable water before camp.",
+   "type": "Water",
+   "distMi": 4.7,
+   "directions": "From the pass, sidehill west along the south side of Ragged Ridge, roughly holding the 6,600-6,700 ft contour over talus and heather benches and across a series of small gullies and minor rock buttresses. Traversing too high is the standard mistake on this stretch and it will cliff you out above the drainage, so give up height early rather than late. Route-finding here, not the climbing, is the crux of the approach."
+  },
+  {
+   "lat": 48.578468689189194,
+   "lng": -120.87647291081082,
+   "elev": 6600,
+   "name": "Ragged Ridge Camp",
+   "note": "Established bivy sites in the basin just south of Mesahchie Peak; usually has water in the basin; roughly 5 hours in from the trailhead.",
+   "type": "Campsite",
+   "distMi": 5.3,
+   "directions": "Past the creek, regain the contour and keep west below Mesahchie Peak for another half mile into the basin holding the camps. Water comes from snowmelt streams and the waterfall drainage nearby, both of which can dry up late in the season."
+  },
+  {
+   "lat": 48.57986917567568,
+   "lng": -120.88371082432433,
+   "elev": 7400,
+   "name": "7,400 ft bench",
+   "note": "Climb ~800 ft above camp to a broad bench and start the long ascending traverse west, staying above the lower gully bands toward Kimtah.",
+   "type": "Junction",
+   "distMi": 5.7,
+   "directions": "Gain the bench directly above camp on heather and broken granite and slate. Fill up in the basin first — there is no reliable water past this point once the snowmelt streams fade, and everything above is trail-less cross-country travel."
+  },
+  {
+   "lat": 48.58196990540541,
+   "lng": -120.8945676945946,
+   "elev": 7150,
+   "name": "Grotesque Gendarmes cliff band",
+   "note": "Crux of the approach: downclimb 250-300 ft of exposed 4th-class rock around a buttress/cliff below a cluster of gendarmes on airy ledges — worse if wet or snow-covered.",
+   "type": "Hazard",
+   "distMi": 6.3,
+   "directions": "Traverse west along the bench at roughly 7,400-7,600 ft, crossing more than a dozen loose ribs and gullies on mostly class 3 ground. A distinct reddish ledge cuts across the ribs at about this level and, once found, removes most of the route-finding; losing it turns this section into hours of climbing in and out of gullies. It runs to the base of the gendarmes, where a cliff band blocks further traversing."
+  },
+  {
+   "lat": 48.58372051351351,
+   "lng": -120.9036150864865,
+   "elev": 8100,
+   "name": "Water-filled summit gully",
+   "note": "Past the gendarmes, find the third major gully (often holds meltwater/snow) and climb its solid-granite class 3 rock to gain the ridge just west of the summit.",
+   "type": "Junction",
+   "distMi": 6.8,
+   "directions": "Past the gendarme bypass the ledge system threads a cliffy, cave-like section before opening onto the gullies below the summit. Count them carefully and scope the line from a distance if you can — several parallel gullies look alike from below and taking the wrong one is the most commonly reported error here. If you want a rope through this ground, bring slings for natural anchors: the fractured granite and slate offer nothing fixed and no obvious solid blocks."
+  },
+  {
+   "lat": 48.58496,
+   "lng": -120.91061,
+   "elev": 8649,
+   "name": "Kimtah Peak",
+   "note": "True summit on Ragged Ridge; final push is class 3 scrambling east along the ridge crest from the gully topout, with Kimtah and Katsuk Glaciers visible below.",
+   "type": "Summit",
+   "distMi": 7.2,
+   "directions": "Climb the gully on solid class 3 granite, often holding snow or meltwater, to the ridge crest, then cross the scree saddle and scramble class 3 rock along the crest to the true (east) summit."
+  }
+ ]
+}

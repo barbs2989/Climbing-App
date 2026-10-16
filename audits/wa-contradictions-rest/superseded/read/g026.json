@@ -1,0 +1,268 @@
+{
+ "batches": ["b101.json", "b102.json", "b103.json", "b104.json"],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_sky_mountain_s_route",
+   "name": "South Slopes Scramble",
+   "area": "Sky Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "name": "South Slopes Scramble",
+   "area": "Spinnaker Peak",
+   "contradictions": [
+    {
+     "fact": "Wilderness permit requirement",
+     "severity": "medium",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee."},
+      {"field": "access.permit", "says": "No climbing permit required"},
+      {"field": "access.landManager / access.land_manager", "says": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District"}
+     ],
+     "why": "The top-level permit field says a free self-issue Wild Sky Wilderness permit is required, but access.permit flatly says none is required, and access.landManager names a different national forest/ranger district (Okanogan-Wenatchee/Wenatchee River) than the one that actually administers Wild Sky Wilderness (Mt. Baker-Snoqualmie/Skykomish, as every neighboring Stevens Pass route in this same area states) — a climber checking the ACCESS section would get conflicting answers on whether a permit is needed.",
+     "internal_resolution": "Every other route in the same immediate area (Sky Mountain, Spire Mountain, Tailgunner, Tye Peak, Wing Peak) uses Mt. Baker-Snoqualmie NF / Skykomish Ranger District and names Wild Sky Wilderness explicitly; access.landManager here is the outlier and access.permit contradicts the route's own permit field.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best season for climbing Spinnaker Peak",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Dec-Apr (documented snowshoe/scramble ascents); summer conditions unconfirmed"},
+      {"field": "best_season", "says": "Best climbed roughly December through April on a consolidated snowpack... A summer ascent is explicitly not recommended by trip reports — thick vegetation and off-trail bushwhacking make the same line a slog once the snow is gone."},
+      {"field": "pro_tips[0]", "says": "Climb on snow (roughly Dec-Apr) — summer is a genuine brush bushwhack and not recommended"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Jul-Sep"},
+      {"field": "seasonal_guidance.monthBreakdown.August.status / .September.status", "says": "optimal — driest, most stable talus and heather travel of the season / stable dry conditions continue"}
+     ],
+     "why": "season, best_season and pro_tips all explicitly state this is a winter (Dec-Apr) snow route and that summer is a brushy bushwhack to be avoided, while seasonal_guidance calls July-September (and specifically August/September) the 'optimal' window with no winter months mentioned at all — a climber on the Plan tab's SEASONAL GUIDANCE box would be told to go in exactly the months every other field says to avoid.",
+     "internal_resolution": "season, best_season, pro_tips, and the beta/approach text all agree the route is a winter/spring snow climb and summer is explicitly discouraged; seasonal_guidance.optimalWindow/monthBreakdown is the outlier and looks copied from a dry-scramble route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "2045"},
+      {"field": "loss_ft", "says": "2500"},
+      {"field": "itinerary.days[0].gainFt", "says": "2500"},
+      {"field": "itinerary.days[0].lossFt", "says": "2500"}
+     ],
+     "why": "gain_ft (2045) is 22% lower than both loss_ft (2500) and the itinerary day's own gainFt (2500) for what the route describes as a there-and-back climb (\"Reverse the ascent line\"), where gain should track loss.",
+     "internal_resolution": "loss_ft and the itinerary's gainFt/lossFt all agree at 2500; gain_ft is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Spire Mountain",
+   "contradictions": [
+    {
+     "fact": "What grade is actually \"published\" for the summit ridge",
+     "severity": "medium",
+     "claims": [
+      {"field": "hazards", "says": "Exposed ~10 ft Class 5 mantle step at roughly 6,100 ft on the summit ridge — harder than the published Class 3 rating suggests"},
+      {"field": "watch_out[0]", "says": "The published 'Class 3' rating undersells two short sections that are genuinely Class 4-5 — don't commit to the ridge unprepared for a real 5th-class move"},
+      {"field": "grade", "says": "Class 3-4"},
+      {"field": "rock_grade", "says": "Class 4-5 (short mantle crux); mostly class 3 ridge scrambling"},
+      {"field": "pitch_detail[3].grade", "says": "Class 4-5 (short sections)"}
+     ],
+     "why": "hazards and watch_out both frame the route as if its own published rating is merely 'Class 3' and warn that it 'undersells' the real difficulty, but the route's own grade field already reads 'Class 3-4' and rock_grade already reads 'Class 4-5' — the difficulty the hazards/watch_out fields warn is being hidden is already stated on the same row's header/grade chips.",
+     "internal_resolution": "grade, rock_grade and pitch_detail already disclose the Class 4-5 step; the 'published Class 3' framing in hazards/watch_out is stale or copied from an older, lower grade and doesn't match this route's own grade fields.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "name": "West Ridge Scramble",
+   "area": "Tailgunner",
+   "contradictions": [
+    {
+     "fact": "Avalanche hazard during the climbing season",
+     "severity": "medium",
+     "claims": [
+      {"field": "obj_haz[0]", "says": "Wet-slide avalanche potential on the north-slope snow/couloir during warm spells"},
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route"},
+      {"field": "seasonal_hazards.avalanche.byMonth", "says": "July: N/A, August: N/A, September: N/A"},
+      {"field": "season", "says": "Jun-Sep"}
+     ],
+     "why": "The route's own season (Jun-Sep) and hazards/pitch_detail describe steep, often corniced/refrozen snow in the Tailgunner Couloir requiring an ice axe and crampons well into the season, and obj_haz explicitly names wet-slide avalanche potential 'during warm spells' — but seasonal_hazards.avalanche marks every month of the actual climbing season N/A, telling a climber on the Safety tab there is no avalanche concern at all.",
+     "internal_resolution": "obj_haz, hazards, gear (ice axe/crampons) and pitch_detail all describe real snow/avalanche hazard within the Jun-Sep season; seasonal_hazards.avalanche's blanket N/A for every listed month contradicts them.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "low",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "3540"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "3200"}
+     ],
+     "why": "The header Gain figure (gain_ft=3540) runs about 10% above the Trip Plan itinerary's own total (3200), close to but at the edge of a rounding difference.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "5.15 (≈3.2 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "6.4"},
+      {"field": "approach", "says": "roughly 5-7 miles with 4,500-6,000 ft of elevation gain/loss"}
+     ],
+     "why": "dist_km converts to about half the itinerary's and approach prose's stated round-trip mileage; likely dist_km is a one-way convention here while the others are round-trip, which the task notes is only a low-priority finding.",
+     "internal_resolution": "itinerary.miles and approach text agree with each other (~6-7 mi); dist_km is the outlier, consistent with dist_km's known one-way/round-trip ambiguity.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "name": "Slippery Slab Tower NE Face",
+   "area": "Thunder Mountain and Slippery Slab Tower",
+   "contradictions": [
+    {
+     "fact": "Trap Pass elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[1] (\"Trap Pass\")", "says": "elev 5050"},
+      {"field": "approach", "says": "follow the PCT south several miles to Trap Pass (~5,800 ft)"},
+      {"field": "approach_variants[0].notes", "says": "follow that trail several miles to the pass at roughly 5,050 to 5,800 ft depending on which record you read"}
+     ],
+     "why": "The waypoint list gives Trap Pass as 5,050 ft while the approach prose flatly states ~5,800 ft (a 750 ft/~15% gap, far past rounding) — the approach_variants text is aware two different numbers exist for the same pass but the waypoint and main approach field state single, conflicting values without that caveat.",
+     "internal_resolution": "The bivy entry for Trap Lake (elev 5143) says the lake 'sits a little below Trap Pass' — only consistent with the higher (~5,800 ft) figure, since 5,143 ft would sit ABOVE a 5,050 ft pass. The 5,050 ft waypoint value looks like the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which ranger district administers this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "USFS Mount Baker-Snoqualmie National Forest - Snoqualmie Ranger District"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Leavenworth Ranger District, Mount Baker-Snoqualmie National Forest (Leavenworth office)"}
+     ],
+     "why": "Three different fields on the same row name three different ranger districts (Snoqualmie, Skykomish, Leavenworth) for the same route's land manager/emergency contact.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether individual rappel lengths are documented",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Per-station lengths are not published: parties use a 60 m rope doubled for each rappel, or shorter single-strand raps."},
+      {"field": "rappel_count_note", "says": "Only overall rope usage is known (60m double-strand, or multiple 30-50m single-strand raps) rather than an exact per-rap length."},
+      {"field": "rappel_detail[0].lengthM / rappel_detail[1].lengthM", "says": "30 / 30"}
+     ],
+     "why": "The RAPPELS section's own prose and rappel_count_note both explicitly say per-rap lengths are not known/published, but the rappel_detail table on the same row lists an exact 30 m length for each of the two rappels — a climber comparing the table to the note directly beside it gets contradictory information about whether the lengths are even known.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length needed for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "detailed_rack", "says": "a single 30m/100 ft rope, a handful of slings including two double-length (240cm) runners..."},
+      {"field": "rope_length_m", "says": "60"},
+      {"field": "rack", "says": "Single 60m rope"},
+      {"field": "what_to_bring", "says": "Rope (60m minimum)"},
+      {"field": "rappels", "says": "parties use a 60 m rope doubled for each rappel"}
+     ],
+     "why": "detailed_rack tells a party a 30 m rope is sufficient, while rope_length_m, the rack list, what_to_bring, and the rappels description itself (60 m doubled) all specify a 60 m rope minimum — a party outfitting from detailed_rack alone would show up with a rope half the length everything else on the row says is needed.",
+     "internal_resolution": "rope_length_m, rack, what_to_bring, and the rappel description (60 m doubled to make two 30 m rappels) all agree on 60 m; detailed_rack's '30m' is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_thunder_mountain_north_face",
+   "name": "Thunder Mountain North Face",
+   "area": "Thunder Mountain and Slippery Slab Tower",
+   "contradictions": []
+  },
+  {
+   "id": "wa_tye_peak_e_route",
+   "name": "East Slopes Scramble",
+   "area": "Tye Peak",
+   "contradictions": [
+    {
+     "fact": "Season this route is actually climbed in",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Nov-Apr (all documented ascents are winter/spring snowshoe or ski tours); dry-season scrambling conditions are not specifically documented for this peak"},
+      {"field": "best_season", "says": "Late July through September gives the driest brush and firmest footing on the upper slopes."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Jul-Oct; core dry-talus conditions are most reliable August-September"},
+      {"field": "seasonal_guidance.monthBreakdown.August.status / .September.status", "says": "optimal"},
+      {"field": "climate.forecastZone", "says": "NWAC is inactive in summer, so check general mountain weather instead for a Jul-Oct scramble"},
+      {"field": "crowds.peakTraffic", "says": "occasional traffic on weekends July-August from Stevens Pass-area hikers/scramblers"}
+     ],
+     "why": "The season field claims this is exclusively a Nov-Apr winter/spring objective and states dry-season scrambling is 'not specifically documented' — yet best_season, seasonal_guidance (with a detailed July-October month-by-month breakdown rating August/September 'optimal'), the climate forecast-zone note, and the crowds field all describe and document a Jul-Oct dry scramble in detail, directly refuting season's claim that no such data exists.",
+     "internal_resolution": "best_season, seasonal_guidance's month-by-month ratings, climate.forecastZone, crowds, watch_out and pro_tips (parking competing with the summer bike park) all consistently describe a documented Jul-Oct dry scramble; the season field's 'Nov-Apr only, dry conditions undocumented' claim is the outlier and appears to be an error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "2400"},
+      {"field": "loss_ft", "says": "1800"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "1800 / 1800"}
+     ],
+     "why": "gain_ft (2400) is 33% above loss_ft (1800) and the itinerary's own gainFt (1800), even though the route is described as reversing the same ascent line back to the same trailhead (gain and loss should track for an out-and-back).",
+     "internal_resolution": "loss_ft and the itinerary's gainFt/lossFt all agree at 1800; gain_ft is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "name": "Northwest Ridge (Standard Route)",
+   "area": "Wing Peak",
+   "contradictions": [
+    {
+     "fact": "How long consolidated/climbable snow lasts on the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Late May-June (snow-climb conditions); loose rock/moat scrambling later in summer"},
+      {"field": "best_season", "says": "Documented ascents cluster from June through August, when the Tailgunner Couloir and northwest ridge still hold enough consolidated snow for cramponing; by late summer the route reportedly sheds its snow cover..."},
+      {"field": "climate.summer", "says": "Warmest, driest window (Jul-Aug) and the most commonly climbed period"}
+     ],
+     "why": "season says the snow-climb window ends in June (after which it becomes 'loose rock/moat scrambling'), but best_season and climate.summer both describe consolidated, cramponable snow persisting through July-August and call June-August the most commonly climbed period — a two-month disagreement about when the snow conditions the route depends on (crampons, pickets, ice axe) actually hold.",
+     "internal_resolution": "best_season and climate.summer agree the snow-climb conditions and typical climbing period extend through July-August; season's 'Late May-June' cutoff is narrower than the rest of the row.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "name": "Rampart Ridge Scramble",
+   "area": "Alta Mountain",
+   "contradictions": [
+    {
+     "fact": "Distance to the summit vs. distance to the saddle below it",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Total to this point is roughly 6-6.5 miles and ~3,000 ft gain. (this refers to reaching the 5,570 ft saddle, which precedes the final summit ridge)"},
+      {"field": "approach", "says": "Total one-way distance to the 6,274 ft summit is about 9.5-10 km (matches the 19.3 km round trip) with roughly 3,300 ft of total gain."}
+     ],
+     "why": "9.5-10 km converts to 5.9-6.2 miles, which is LESS than the 6-6.5 miles the same approach paragraph already states for reaching the saddle — a point that lies before the summit. The whole-route one-way figure cannot be shorter than a partial leg of the same route; the approach field contradicts itself.",
+     "internal_resolution": "The 6-6.5 mi figure to the saddle is stated first and is more granular; the later 9.5-10 km (5.9-6.2 mi) total is inconsistent with it and looks like it was computed from a different (shorter) distance value than the rest of the approach text uses.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "6.9 (≈4.3 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "12"},
+      {"field": "approach", "says": "matches the 19.3 km round trip"}
+     ],
+     "why": "dist_km (6.9 km ≈ 4.3 mi) is far short of both the itinerary's stated 12-mile round trip and the approach text's own 19.3 km round-trip figure — a difference too large to be a one-way/round-trip framing issue, since even the one-way approach figure (9.5-10 km ≈ 5.9-6.2 mi) is still larger than dist_km.",
+     "internal_resolution": "itinerary.miles (12) and the approach's own 19.3 km round-trip statement agree with each other; dist_km is the outlier and doesn't even match the approach's one-way figure.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

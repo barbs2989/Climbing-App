@@ -1,0 +1,166 @@
+{
+ "routes": [
+  {
+   "id": "wa_fortress_mountain_southwest_face",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Pass No Pass (6,400 ft) has established camping and the basin below it is independently described with water and good camping in a grove/meadows, the closest camp to the southwest face; Buck Creek Pass is confirmed as the major nearby trail camp people drop down from. No elevation for the basin was found either, so it stays omitted."
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "A winter trip report independently describes a flat ~7,100 ft basin reached via a side drainage off Grouse Creek on Cardinal's west side, matching the West-side basin pin's elevation exactly, and a separate ~6,900 ft basin between Saska and Emerald near Milham Pass used by traverse parties. These are two distinct, real camps, not duplicates."
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Bald Eagle Lake's cirque is accessed from the separate Necklace Valley Trailhead, not the West Fork Foss Road pullout this north-ridge route uses, so it was correctly excluded; Money Creek/Miller River as the road-camp base for what is effectively a day scramble checks out."
+  },
+  {
+   "id": "wa_north_gardner_mountain_nw_couloir",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Published beta on this specific line is sparse, but nothing found contradicts meadow camps above Cedar Falls sitting on the maintained trail before the route leaves it for the Shelokum Creek bushwhack, or the upper head-basin bivy used beyond that. Left as is."
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Multiple independent sources confirm White Pass and Glacier Gap (~7,200-7,300 ft) as the standard staged camps for this route; nothing describes a 'Cool/Gerdine Basin Camp' as a separately used named camp rather than just part of that traverse, consistent with leaving it out of the curated camps list."
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Buck Creek Pass and High Pass are both confirmed as established, heavily used camps immediately adjacent to Berge; the Little Giant/Napeequa side is confirmed as a notoriously rough, brushy trail with no documented dedicated camp, supporting the decision to drop it."
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Buckindy's standard route is confirmed as a north-slopes/glacier scramble reached via Kindy Creek (the peak's own name derives from the Buck/Kindy Creek divide), with Horse Lake saddle confirmed as the first-night camp on the Green Mountain approach that precedes it. No better-documented alternative surfaced for the Misch-side option."
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "No documentation found connecting Green Ridge Lake to this multi-summit line. Middle Fork Campground as the practical road-camp base for a day-oriented objective is well supported, and matches the route's own note that there is no real on-mountain camp (the improvised bivouac being contingency-only)."
+  },
+  {
+   "id": "wa_mount_price_hester_lake_route",
+   "verdict": "change",
+   "setRole": { "Middle Fork Campground": "route" },
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "This route's own Hester Lake camp entry states it is Mount Price's base camp 'and the only one' - that directly contradicts also tagging Middle Fork Campground as a second main camp. Middle Fork Campground is a shared, zone-wide staging campground (the identical boilerplate text is reused verbatim under Garfield Mountain's entry, a different peak on a different trailhead), not specific to the Hester Lake climb, so it belongs as 'route' alongside the Dingford Creek pull-outs, not 'main'."
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Route sources confirm the climb is either done in a big day from the road, or split with a bivy at the base of the route with running water - matching both listed main camps (Bedal Campground and the base bivy). No elevation for the base bivy was found either, so it stays omitted."
+  },
+  {
+   "id": "wa_rock_mountain_northeast_ridge",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Crescent Lake is confirmed as the standard midpoint base for the Mastiff-Howard-Rock traverse, reachable from either Rock Lake or Merritt Lake. One variant trip report used an Upper Canaan Lake basin camp instead, but that wasn't clearly tied to this exact traverse line, so it was not added."
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "This specific Southeast Slopes line up Gray Wolf Ridge alone is confirmed as generally a long day from Maynard Burn. Overnight ridge-crest tarn camps do exist, but they belong to the longer Baldy-Gray Wolf Ridge-Deception traverse, a different route, so that's not specific evidence for a camp on this one."
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Confirmed that Dose Meadows connects to the Grand Pass/Cameron Pass corridor this route's approach follows (Grand Pass-Cameron Pass-Lost Pass is a documented connecting trail into Dose Meadows), supporting both Upper Cameron Basin high camp and Dose Meadows as usable mains along this line, as the first researcher judged."
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Confirmed Hannegan Camp (~4,680 ft, near Hannegan Pass) is a real, maintained camp on the Ruth Creek/Hannegan Pass Road corridor. Keeping it as the nearby car-camp option for a route that actually starts at the separate Nooksack Cirque Trailhead, with no on-mountain camp, is reasonable."
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Lousy Lake in Luna Cirque and Perfect Pass are both independently confirmed as real, used bivy/camp spots for Pickets travel, and Whatcom Pass/Perfect Pass are confirmed as common entry-exit points into the range rather than Ghost Peak's own base, matching their 'route' role. The two hidden pins are correctly hidden as duplicates of those listed camps."
+  },
+  {
+   "id": "wa_luna_glacier",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Luna Camp on the Big Beaver Trail is confirmed as the standard staging camp for the Access Creek side of the Northern Pickets, and the Luna Cirque floor is independently described as a real camp beneath Luna Peak. Both mains check out."
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Confirmed Terror Basin/McMillan Cirque as the southern-corridor ground reached from Goodell Creek, and Perfect Pass as a documented northern entry point into the Pickets. The current main (Wild Lake, southern corridor) plus route (Perfect Pass, northern corridor) split is a reasonable match to Crowder's two described approach corridors; documentation overall is thin and nothing found justifies a change."
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "verdict": "confirm",
+   "setRole": {},
+   "remove": [],
+   "add": [],
+   "unhidePins": [],
+   "evidence": "Luna Col is confirmed as a well-established, multi-spot bivy/camp area with running water from a nearby snowfield, matching the listed main camp. Luna Camp and the Luna Cirque floor are both independently confirmed as real staging/lower camps on this same approach corridor."
+  }
+ ]
+}

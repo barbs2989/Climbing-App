@@ -1,0 +1,226 @@
+{
+ "file": "s025.json",
+ "results": [
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Mowich approach season: June to early July (the route's own window)",
+   "evidence": "A park climbing-ranger report of a June 21-24 ascent states the route is typically climbed before the end of June and goes out of shape quickly once summer freezing levels rise, with rockfall and rotten snow below 11,500 ft. A separate route description says the route is often in good shape by May and that the old July opening of the Mowich road came after that. The 'July to mid-August' approach window only tracked the former Mowich road opening (no road exists since 2025) and sits after the climb's window, so it is aligned with the row's Jun-Jul season.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/06/ptarmigan-ridge.html",
+    "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+    "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "July to mid-August",
+     "value": "June to early July"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Total gain: gain_ft vs itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only outside per-leg figures found (one trip-report author) give 3,100 + 3,300 ft to Thumb Rock and 3,600 ft from Thumb Rock to Columbia Crest via Liberty Cap, about 10,000 ft to the true summit, not to Liberty Cap. No source states a car-to-car gain ending at Liberty Cap, and computing one is not allowed. Settle with a published route figure for White River to Liberty Cap.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/rainier-liberty/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Liberty Cap elevation (overview 14,097 vs summit pin and high_point_ft 14,112)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "14,112 ft (published map elevation); recent GPS surveys of the melting icecap read ~14,095 ft",
+   "evidence": "The encyclopedia article on Mount Rainier and a guide service's Liberty Ridge page both give Liberty Cap as 14,112 ft, matching high_point_ft and the summit pin. Independent GPS surveys (2025-2026, NAVD88) measure the thinning icecap at roughly 14,091-14,098 ft, so 14,097 is a recent survey reading, not the published elevation. The overview now gives the map figure and keeps the survey clause as a labelled aside.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Rainier",
+    "https://www.mountainguides.com/rnr-liberty.shtml",
+    "https://www.countryhighpoints.com/rainier-and-liberty-cap-temperature-elevation-measurements-aug-2026/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Liberty Cap elevation (overview 14,097 vs summit pin and high_point_ft 14,112)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Liberty Cap (14,097 ft; an August 2025 GPS survey puts it closer to 14,095 ft",
+     "replace": "Liberty Cap (14,112 ft on the map; an August 2025 GPS survey puts the icecap closer to 14,095 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "Liberty Cap summit pin elevation (14097) vs high_point_ft 14112",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "14112",
+   "evidence": "Same fact as on the Liberty Ridge row: the published elevation of Liberty Cap is 14,112 ft in both the encyclopedia article and a guide service's route page, matching this row's high_point_ft. The summit pin's 14097 is a recent icecap survey reading; the pin is aligned with high_point_ft (string type kept).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Rainier",
+    "https://www.mountainguides.com/rnr-liberty.shtml"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Liberty Cap summit pin elevation (14097) vs high_point_ft 14112",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": "14097",
+     "value": "14112"
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Liberty Cap summit pin elevation (14097) vs high_point_ft 14112",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": "14097",
+     "value": "14112"
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Further searches (route and ascent-history pages, two ski/climb trip reports, the encyclopedia article) rate the X Couloir only by its ice crux (AI3+) or describe it as among the hardest Washington summits; none gives a commitment numeral. VI is out of line with the row's III-IV, but no two sources name the right numeral. Settle with a guidebook grade for the southwest face route.",
+   "sources": [
+    "https://www.lemkeclimbs.com/lincoln-peak.html",
+    "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir",
+    "https://www.countryhighpoints.com/lincoln-peak/",
+    "https://en.wikipedia.org/wiki/Black_Buttes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "fact": "Whether Heliotrope Ridge can reach the X Couloir",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Heliotrope Ridge via the Thunder Glacier cirque is a valid (less direct) alternative approach to the southwest face; Rankin Creek from FR-38 is the more direct",
+   "evidence": "The encyclopedia article says the southwest face is reached by following the Thunder Glacier cirque from the Heliotrope Ridge Trail, with the Middle Fork road as an alternative. A ski trip report says one could go in via Heliotrope but took the more direct FR-38; a second party chose Rankin Creek because it looked slightly shorter than the Heliotrope approach; and the Wilkes-Booth first-ascent party descended the southwest face route and walked out to the Heliotrope trailhead. The row's claim that Heliotrope serves only the NW face is removed in all four fields; the Coleman-cirque wrong-place warning and the camp-based descent warning are kept.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Buttes",
+    "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir",
+    "https://www.countryhighpoints.com/lincoln-peak/",
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Whether Heliotrope Ridge can reach the X Couloir",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The X Couloir is approached from the south via the Middle Fork Nooksack River Road (FR-38), not from Heliotrope Ridge (that trailhead serves Lincoln's separate NW Face/Wilkes-Booth line).",
+     "replace": "The X Couloir is most directly approached from the south via the Middle Fork Nooksack River Road (FR-38); the less direct alternative starts at Heliotrope Ridge and reaches the southwest face through the Thunder Glacier cirque."
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Whether Heliotrope Ridge can reach the X Couloir",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "That trailhead serves Lincoln's separate northwest-face line, and taking it puts you",
+     "replace": "With a camp in the Rankin Creek basin, going that way puts you"
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Whether Heliotrope Ridge can reach the X Couloir",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "IMPORTANT AND FIRST: the X Couloir is approached from the SOUTH via the Middle Fork Nooksack River Road (FR-38), not from Heliotrope Ridge. Heliotrope serves Lincoln's separate northwest-face line. Getting this wrong puts you on the opposite side of the mountain with a glacier between you and your route.",
+     "replace": "This is the more direct way to the X Couloir: from the SOUTH via the Middle Fork Nooksack River Road (FR-38). The southwest face can also be reached from Heliotrope Ridge through the Thunder Glacier cirque, a less direct line with more glacier travel; do not confuse either with the north-facing Coleman side, which leads to the other route on this mountain."
+    },
+    {
+     "id": "wa_lincoln_peak_standard",
+     "fact": "Whether Heliotrope Ridge can reach the X Couloir",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "this route faces SOUTHWEST and you reach it from Rankin Creek. If you are standing on the Coleman Glacier looking at a shaded north-facing cirque, you have come in from Heliotrope and you are under the other route on this mountain.",
+     "replace": "this route faces SOUTHWEST and this approach reaches it from Rankin Creek. If you are standing on the Coleman Glacier looking at a shaded north-facing cirque, you are under the other route on this mountain."
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent report gives only length (2,000 ft), grade (IV WI4) and time (18.5 hours from the Heliotrope trailhead) and a southwest-face descent; the trip-report thread gives grade only. No source states car-to-car gain or loss for this loop, and the return from the southwest face involves re-ascent not captured by trailhead-to-summit arithmetic. Settle with a stated round-trip gain from a party that did the loop.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Rock grade on an ice route",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The first-ascent report grades the route IV WI4 (2,000 ft) and the first-ascent trip-report thread titles it Grade 4+ AI4+; an independent route history lists it only as a new NW-face route. Neither the grade column, ice_grade nor any pitch gives a 5th-class rating, and every description is of ice, snow and rime, so the unsourced 5.4 (which leads the header grade pill) is removed and the pill falls through to WI4.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+    "https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/",
+    "https://www.lemkeclimbs.com/lincoln-peak.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_lincoln_peak_north_ridge",
+     "fact": "Rock grade on an ice route",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.4",
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "fact": "Only other established route on the mountain",
+   "discovered": true,
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved on this row: the current overview no longer claims Wilkes-Booth is the only route besides the X Couloir. (The X Couloir row's overview still says it was the only documented route until 2015; the encyclopedia article records 1958 and 1974 north-flank ascents while an ascent history lists none, so that remains unsettled.)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Buttes",
+    "https://www.lemkeclimbs.com/lincoln-peak.html"
+   ],
+   "patches": []
+  }
+ ]
+}

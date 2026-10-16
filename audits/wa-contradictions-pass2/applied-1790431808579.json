@@ -1,0 +1,129 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Total distance"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Total distance"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Elevation where the approach drops onto the Carbon Glacier"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "before": {
+    "dist_km": 24.94
+   }
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "before": {
+    "dist_km": 9.6,
+    "waypoints": [
+     {
+      "lat": 46.9024,
+      "lng": -121.6438,
+      "elev": 4800,
+      "name": "White River Campground (Glacier Basin Trailhead)",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.952,
+      "lng": -121.818,
+      "elev": 4900,
+      "name": "Mowich Lake Camp",
+      "type": "Campsite",
+      "distMi": 0.5
+     },
+     {
+      "lat": 46.89,
+      "lng": -121.8,
+      "elev": 7300,
+      "name": "Puyallup Winthrop Junction Camp",
+      "type": "Campsite",
+      "distMi": 9
+     },
+     {
+      "lat": 46.875,
+      "lng": -121.775,
+      "elev": 8500,
+      "name": "Puyallup Glacier Serac Zone",
+      "type": "Hazard",
+      "distMi": 11
+     },
+     {
+      "lat": 46.86298,
+      "lng": -121.77486,
+      "elev": 14112,
+      "name": "Liberty Cap",
+      "type": "Summit",
+      "distMi": 15
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Glacier, crevassed",
+      "notes": "Drop off Curtis Ridge onto the Carbon Glacier at about 7,600 ft and cross to the toe of the ridge near 8,600 ft. In May and June several lines usually go; later the glacier breaks up. The usual crux is the moat between glacier and ridge, which has turned strong parties back. The ridge can be gained from either flank or directly at the toe.",
+      "pitch": "Carbon Glacier approach"
+     },
+     {
+      "grade": "Steep snow, rockfall",
+      "notes": "The crest proper from the toe has loose rocky steps and uneven climbing; a flank gives steadier snow but sits under rockfall. The east flank is steeper with more rock bands, so parties starting there cross over the crest to the west side and continue to Thumb Rock, the obvious gendarme near 10,500 ft. Rocks come down without warning here, so climb it early in the day.",
+      "pitch": "Lower ridge → Thumb Rock"
+     },
+     {
+      "grade": "Bivy saddle, ~10,700 ft",
+      "notes": "The small saddle just above Thumb Rock is the only real bivouac on the ridge, limited to twelve people. Dig platforms and build a wall against wind and the small rocks that fall from the cliff above. Above this point no safe bivy exists, and retreat grows harder than continuing up, so settle the weather forecast and team condition here.",
+      "pitch": "Thumb Rock high camp"
+     },
+     {
+      "grade": "Steep snow/ice",
+      "notes": "Above camp a rock band (the Gun Sight) blocks the crest. The easiest line goes out left (east) around it and up the east side of the ridge; when it is formed, a short water-ice pitch goes straight through the middle. The right-hand bypass crosses under loose rock and is the poorest choice. Rockfall off the Gun Sight has triggered a very large slab avalanche on the slope below.",
+      "pitch": "Upper ridge"
+     },
+     {
+      "grade": "Snow/ice to ~60°",
+      "notes": "Climb up and left to pass the Black Pyramid, a dark rock buttress over 1,000 ft tall, on its left (east) side from about 11,800 to 12,800 ft. The ground is steep snow or low-angle alpine ice depending on the season, on exposed faces reported up to 60°. Screws and pickets for running protection; regain the rounded crest above the Pyramid at 12,800 ft.",
+      "pitch": "Black Pyramid"
+     },
+     {
+      "crux": true,
+      "grade": "Snow ramp to steep ice",
+      "notes": "The bergschrund near 13,800 ft is the last and usually hardest obstacle. In some years it is a step over a small crack and a snow ramp; in others an offset gap with a thin, awkward bridge and a near-vertical wall above. Anchor the belayer and pitch it out when it is dicey, and belay out of the fall line, since sun-baked or wind-hammered ice here breaks off in large plates.",
+      "pitch": "Bergschrund & summit ice cap"
+     },
+     {
+      "grade": "Glacier, thin bridges",
+      "notes": "Above the schrund, slopes ease to Liberty Cap at about 14,110 ft; fast or grinding depending on the surface. Columbia Crest is over a mile away: most parties drop about 600 ft to Liberty Saddle to join the Emmons-Winthrop descent, and the Crest adds about 800 ft of climbing from the saddle. Stay roped through the saddle, where crevasses are thinly bridged and cornices form on its east side.",
+      "pitch": "Upper slopes to Liberty Cap"
+     }
+    ]
+   }
+  }
+ ]
+}

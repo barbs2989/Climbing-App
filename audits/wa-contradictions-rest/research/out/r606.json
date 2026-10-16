@@ -1,0 +1,224 @@
+{
+ "file": "r606.json",
+ "results": [
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Itinerary/timing describe a different peak (North Cascades)",
+   "verdict": "fixed",
+   "correct_value": "The only approach is the Upper Dungeness trailhead (FR 2870, Olympic National Forest) up the Royal Creek trail to Royal Lake and Upper Royal Basin; the Highway 20 / Pine Creek one-day itinerary and its 9.5-hour timing belong to a different North Cascades peak and are removed (set to null) rather than replaced with invented day splits or hours.",
+   "evidence": "The trail description gives the Upper Dungeness trailhead on FR 2870 near Sequim, 7.2 mi to Royal Lake at 5,100 ft and Upper Royal Basin about 0.75 mi beyond at ~5,700 ft. The park's permit system lists Royal Lake/Royal Basin camps as accessed from the Upper Dungeness Trailhead in Olympic National Forest. USGS GNIS and OSM place The Incisor/The Needles in Jefferson County at ~47.83 N, -123.235, in the eastern Olympics - nowhere near Highway 20, Silver Star or Liberty Bell. No source supplies a sourced multi-day schedule or hours for this summit, so the contaminated itinerary and timing are nulled rather than rewritten.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.recreation.gov/api/permitcontent/4098362",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5",
+    "https://nominatim.openstreetmap.org/search?q=The%20Incisor%2C%20Washington"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_incisor_scramble",
+     "fact": "Itinerary/timing describe a different peak (North Cascades)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "The approach holds snow on the upper slopes into early summer, so an ice axe (and often crampons) is standard through June/early July; by late summer it's a dry scree/scramble approach.",
+      "days": [
+       {
+        "n": 1,
+        "note": "This is done entirely car-to-car in one day from a Highway 20 pullout near Pine Creek/Lone Fir Campground. The approach is the crux of the day logistically: an abandoned, brushy trail, a creek crossing, slide alder, and a steep gain to the ridge before any scrambling starts. The East Peak itself is a straightforward class 3 scramble once you're at the saddle, in contrast to the main Needles summit which requires 5th-class rock pitches.",
+        "hours": 9.5,
+        "miles": 6.1,
+        "title": "Car-to-car: Pine Creek approach + East Peak scramble",
+        "gainFt": 4400,
+        "lossFt": 4400,
+        "packLb": 22,
+        "schedule": [
+         {
+          "time": "4:30 AM",
+          "label": "Leave the Pine Creek pullout",
+          "detail": "Park at the small pullout on Hwy 20 south of Pine Creek (or at Lone Fir Campground) and start up the unofficial, overgrown Pine Creek trail while it's cool."
+         },
+         {
+          "time": "+1.5 hr",
+          "label": "Ford Pine Creek, push through slide alder",
+          "detail": "The trail fades around 4,400 ft; cross the creek and bushwhack through alder and downed timber to reach open forest and the south ridge clearing near 4,900 ft."
+         },
+         {
+          "time": "+3.5 hr",
+          "label": "Snow slopes toward 6,800 ft",
+          "detail": "Persistent snow patches on the upper slopes often linger into midsummer; an axe (and crampons in early season) makes this section faster and safer."
+         },
+         {
+          "time": "+4.5 hr",
+          "label": "Reach the saddle below the summit towers",
+          "detail": "Stage below the technical pitches used by rock parties and peel off toward the East Peak's easier class 3 line."
+         },
+         {
+          "time": "~9:30 AM",
+          "label": "Summit East Peak (7,440 ft)",
+          "detail": "Short, exposed class 3 scrambling on solid granite; views of Silver Star, Liberty Bell, and the main Needles towers."
+         },
+         {
+          "time": "~2:00 PM",
+          "label": "Back at the trailhead",
+          "detail": "Reverse the scramble and the bushwhack descent; most parties are back at the car by early-to-mid afternoon."
+         }
+        ],
+        "objective": "Tag the East Peak summit (7,440 ft) via the Pine Creek bushwhack approach"
+       }
+      ],
+      "totalNote": "A long but single-day car-to-car scramble: roughly 9-10 hours, ~6 miles round trip, and about 4,400 ft of gain, most of it in a steep, brushy off-trail approach rather than the scrambling itself."
+     },
+     "value": null
+    },
+    {
+     "id": "wa_the_incisor_scramble",
+     "fact": "Itinerary/timing describe a different peak (North Cascades)",
+     "op": "set",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 9.5,
+      "summitTimeHrs": 9.5,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "4:30 AM from the trailhead",
+      "sectionBreakdown": [
+       {
+        "hrs": 9.5,
+        "note": "This is done entirely car-to-car in one day from a Highway 20 pullout near Pine Creek/Lone Fir Campground. The approach is the crux of the day logistically: an abandoned, brushy tr\u2026",
+        "fromTo": "Car-to-car: Pine Creek approach + East Peak scramble",
+        "section": "Climb"
+       }
+      ]
+     },
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary's 6.1 mi disappears with the contaminated itinerary (see the first result). dist_km 12.9 km = 8.0 mi matches the trail distance to Upper Royal Basin (7.2 mi to Royal Lake + ~0.75 mi), and the 14-16+ mi round trip in turnaround matches the 16 mi round trip to the upper basin; the Royal Lake (7.2) and Upper Royal Basin (8) waypoint distances also match. The remaining dispute is the off-trail leg: the summit pin says 10 mi, but the straight line from the Upper Royal Basin pin to the summit pin is only ~0.75 mi, so 10 looks high. No source gives the off-trail distance to The Incisor, so nothing is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Total gain",
+   "verdict": "fixed",
+   "correct_value": "4,900 ft (gain_ft and approach agree); the 4,400 ft figure was only in the contaminated itinerary, which the first result removes - no separate patch.",
+   "evidence": "The 4,400 ft appeared only in itinerary.days[0].gainFt and itinerary.totalNote, both part of the North Cascades text nulled in the first result. The trailhead is ~2,500 ft (USGS 3DEP ~2,494 ft at the trailhead pin) and the summit is 7,440 ft (USGS 3DEP ~7,439 ft at the summit pin), so a ~4,900 ft gain agrees to within rounding.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Park entrance fee",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's permit listings for Royal Creek, Royal Lake and Royal Meadow camps and the trail description both say only a Northwest Forest Pass (or an America the Beautiful pass) is needed to park at the Upper Dungeness Trailhead, which is on National Forest land, and neither mentions a park entrance pass. But the park's fee page says every visitor needs an entrance pass, including a $15 per-person pass for anyone entering on foot. The sources conflict on whether hikers entering from this Forest Service trailhead owe a park entrance fee, and access.fees is also an open owner decision, so nothing is changed.",
+   "sources": [
+    "https://www.recreation.gov/api/permitcontent/4098362",
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Direction to the Needles from the basin",
+   "verdict": "fixed",
+   "correct_value": "The Needles lie WEST of Royal Lake and Upper Royal Basin.",
+   "evidence": "USGS GNIS places The Needles ridge at -123.2372, Mount Clark at -123.2318 and Royal Basin at -123.2135. OpenStreetMap independently places The Incisor at -123.2352, Mount Johnson at -123.2373, Sweat Spire at -123.2365 and Royal Lake at -123.2108. Both put the Needles about a mile west of the lake and the upper basin, which matches the row's own coordinates and bivy note.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5",
+    "https://nominatim.openstreetmap.org/search?q=The%20Incisor%2C%20Washington"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_incisor_scramble",
+     "fact": "Direction to the Needles from the basin",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "views east across the lake",
+     "replace": "views west across the lake"
+    },
+    {
+     "id": "wa_the_incisor_scramble",
+     "fact": "Direction to the Needles from the basin",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "line east toward the Needles",
+     "replace": "line west toward the Needles"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Sheriff jurisdiction",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Census/FCC county lookups and USGS GNIS put The Incisor, The Needles, Royal Lake and Upper Royal Basin in Jefferson County, and the Upper Dungeness trailhead in Clallam County. emergency.county already says this. The value leads with the Clallam sheriff, which serves the trailhead side, and also gives NPS dispatch, which is primary inside the park. Writing a Jefferson County sheriff number would need that agency's published number for the same purpose, which was not verified, and the catalog refuses wrong-county sheriff findings that already carry NPS dispatch. Nothing is changed.",
+   "sources": [
+    "https://geocoding.geo.census.gov/geocoder/geographies/coordinates",
+    "https://geo.fcc.gov/api/census/block/find",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "How Upper Royal Basin is booked",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Upper Royal Basin camping is NOT booked online like Royal Lake; parties contact the Wilderness Information Center at (360) 565-3100. access.permit is correct; bivy[0].permit is wrong.",
+   "evidence": "The park's Royal Lake permit listing states the campsites are at Royal Lake, not in the Upper Basin, and says to contact the WIC at (360) 565-3100 to camp in the Upper Basin. The park's wilderness-reservations page says cross-country trips and camps not listed on the online system are booked by contacting the WIC at (360) 565-3100. So access.permit is right. bivy[0].permit ('booked as the upper basin... advance reservation only, mid-April release') is wrong, but bivy is owned by the camping clean-up, so no patch is written here.",
+   "sources": [
+    "https://www.recreation.gov/api/permitcontent/4098362",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Royal Creek junction elevation below the trailhead",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[1] (the Royal Creek/Royal Basin Trail junction, 1 mi in) says 2,200 ft, below the 2,500 ft trailhead, but the trail climbs gently up the valley. USGS 3DEP gives ~2,601 ft at the junction pin and ~2,494 ft at the trailhead pin. That is only one source, and it depends on the pin position, so nothing is changed.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Upper Royal Basin elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach says the Upper Basin is at 5,600 ft, while waypoints[5] says 5,700 ft. The trail description gives about 5,700 ft for the upper tarns. USGS 3DEP at the stored pin reads ~5,464 ft, but the pin may sit below the tarns. With no second agreeing source, nothing is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  }
+ ]
+}

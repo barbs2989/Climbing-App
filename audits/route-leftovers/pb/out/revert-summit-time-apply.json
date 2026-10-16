@@ -1,0 +1,24 @@
+{
+ "results": [
+  {
+   "id": "wa_three_queens_standard",
+   "verdict": "confirmed",
+   "rule": "revert: summitTimeHrs is the summit LEG; equal to totalHrs with no approach is the app's car-to-car convention (publishedIsWholeDay)",
+   "fact": "summitTimeHrs 5 (a car-to-summit time) made the Planner add a modelled walk-in on top",
+   "evidence": "RouteDetail: techH = summitTimeHrs; totalH = hikeH + techH unless summitTimeHrs === totalHrs and approachTimeHrs is null. 'About 5 hrs up' includes the walk-in, so it is not a leg.",
+   "ops": [
+    {"op": "set", "id": "wa_three_queens_standard", "column": "timing", "path": ["summitTimeHrs"], "expect": 5, "value": 9.5}
+   ]
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "verdict": "confirmed",
+   "rule": "revert: no source publishes a summit LEG; '~5 hours to the summit' is car-to-summit",
+   "fact": "summitTimeHrs 5 double-counted the walk-in in the Planner",
+   "evidence": "Same reader as above; restored to the stored null.",
+   "ops": [
+    {"op": "set", "id": "wa_mount_mastiff_south_route", "column": "timing", "path": ["summitTimeHrs"], "expect": 5, "value": null}
+   ]
+  }
+ ]
+}

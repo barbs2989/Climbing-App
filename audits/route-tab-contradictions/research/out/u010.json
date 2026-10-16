@@ -1,0 +1,263 @@
+{
+ "file": "u010",
+ "results": [
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "fact": "length of the Sharkfin Col rappel onto the Boston Glacier",
+   "verdict": "fixed",
+   "correct_value": "Condition-dependent: one long rappel or two shorter ones, roughly 100-150 ft in all depending on snow and the bergschrund",
+   "evidence": "Published figures genuinely vary with snow: an alpine club gives 150 ft, a guide service 100 ft, a 2015 party a 20 m rap (single 30 m rope with some downclimbing), another party ~40 m with an intermediate station, and a July 2025 party a double-rope rap into and out of the bergschrund with a second station for single-rope raps. Every source agrees the length depends on conditions and falls in roughly the 100-150 ft range, in one or two stages. The row stated a single fixed figure (100 ft in rappels, 150 ft in the waypoint and approach variant), so all copies are changed to the range.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/forbidden-peak-north-ridge",
+    "https://ncmountainguides.com/routes/climbing-routes/forbidden-peak-north-ridge",
+    "https://cascadeclimbers.com/forum/topic/108166-tr-forbidden-peak-north-ridge-07122025/",
+    "https://cascadeclimbers.com/forum/topic/97573-tr-forbidden-peak-north-ridge-6142015/",
+    "https://climberkyle.com/2024/03/30/forbidden-tour/"
+   ],
+   "patches": [
+    {
+     "id": "wa_forbidden_peak_north_ridge",
+     "fact": "length of the Sharkfin Col rappel onto the Boston Glacier",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "~100 ft rappel from Sharkfin Col onto Boston Glacier;",
+     "replace": "One long rappel or two shorter ones (roughly 100-150 ft in all, depending on snow and the bergschrund) from Sharkfin Col onto the Boston Glacier;"
+    },
+    {
+     "id": "wa_forbidden_peak_north_ridge",
+     "fact": "length of the Sharkfin Col rappel onto the Boston Glacier",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "~150-ft rappel down a loose gully",
+     "replace": "Rappel of roughly 100-150 ft, in one or two stages depending on snow, down a loose gully"
+    },
+    {
+     "id": "wa_forbidden_peak_north_ridge",
+     "fact": "length of the Sharkfin Col rappel onto the Boston Glacier",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "you make a rappel of roughly 150 ft down a loose gully",
+     "replace": "you rappel roughly 100-150 ft, in one or two stages depending on snow, down a loose gully"
+    },
+    {
+     "id": "wa_forbidden_peak_north_ridge",
+     "fact": "length of the Sharkfin Col rappel onto the Boston Glacier",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      0
+     ],
+     "find": "A rappel of about 150 ft down",
+     "replace": "A rappel of roughly 100-150 ft (depending on snow) down"
+    }
+   ]
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "fact": "Gain vs loss for an out-and-back route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no Fortress-only car-to-car gain for the Chiwawa River/East Ridge line. The 7,900 ft figure belongs to the Fortress + Chiwawa combination (~20 mi RT); a 2024 report of both peaks logged 6,339 ft over 19.2 mi, another over 8,000 ft; the only 6,000 ft / 22 mi figure found is for the different Buck Creek Pass approach. gain_ft 5,884 is just summit minus trailhead. Setting both columns would need a computed or borrowed figure, so nothing was changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/",
+    "https://www.theoutbound.com/washington/backpacking/scramble-fortress-mountain",
+    "https://pantilat.wordpress.com/2008/08/24/760/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-14.120426606745"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "distance to the high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found Hannegan trailhead to Whatcom Pass given as about 17 mi, and descriptions of the Whatcom Pass to Perfect Pass leg (a ~1,000 ft drop around the gap then up to Perfect Pass) with no mileage; no source gives a mileage from Whatcom Pass or Perfect Pass to a camp below Ghost Peak. The 5 mi (waypoints) vs 7.5 mi (itinerary day 3) disagreement cannot be settled without computing.",
+   "sources": [
+    "https://www.summitpost.org/mount-challenger/151237",
+    "https://www.wta.org/go-hiking/hikes/mount-challenger",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "high camp location: Crooked Thumb Glacier moraine vs Luna Cirque/Lousy Lake",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first ascent (July 1970, Carla and Joan Firey, David Knudson, Peter Renz) was made during an eleven-day high circuit of the Goodell Creek headwaters, traversing the south face to the south arete and west face; that places the party on the west/south side of the Northern Pickets, not in Luna Cirque, but no source names the camp used for Ghost. The stephabegg and alpenglow accounts that might settle it could not be retrieved (403/blocked). No change.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ghost_Peak",
+    "http://www.alpenglow.org/ski-history/notes/period/summit/summit-1970-79.html",
+    "http://publications.americanalpineclub.org/articles/12195920800/New-Climbs-in-the-Northern-Pickets"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "dist_km (shown as one-way approach) holds the round-trip total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 70.81 km (44 mi) is still the round-trip total. The one-way figure depends on the unsettled Whatcom Pass-to-high-camp leg (above); only the trailhead-to-Whatcom Pass part (~16-17 mi) is sourced, so no one-way value can be written without computing it.",
+   "sources": [
+    "https://www.summitpost.org/mount-challenger/151237"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "fact": "Ross Lake described as serving only Luna/Fury",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Ross Lake approaches (Big Beaver to Wiley Ridge/Luna Creek) do reach the Challenger area of the Northern Pickets, and the row itself is split: partner_requirements.approachTime says 'from Ross Lake' while the approach, waypoint directions and itinerary say Hannegan is standard and Ross Lake serves only Luna/Fury. Both approaches are real; choosing how to frame it touches many fields and is editorial, and the camp question above (which also decides which side the party is on) is unsettled. Left for review.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-1/",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-attempt-mt-challenger/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi",
+   "verdict": "fixed",
+   "correct_value": "Trailhead to Glacier Gap about 15 mi each way; Glacier Gap to summit and back about 7 mi; about 36-37 mi round trip",
+   "evidence": "A July 2023 party put Glacier Gap at 15 miles from the North Fork Sauk trailhead, the summit round trip from Glacier Gap at about 7 miles, and the whole trip at 37 miles. A June 2026 GPS-tracked party logged trailhead to Glacier Gap 15.1 mi, Glacier Gap to summit and back 6.5 mi, and 36.6 mi in all. Both contradict the row's 11/12/13 mi approach figures and its 5.25 mi summit day, and both agree with itinerary day 2's 7 mi. The approach day and hike-out are set to 15 mi, the Glacier Gap waypoint to 15, and the two waypoints beyond it (whose 15/16 mi would put the summit only 1 mi above camp) are cleared rather than computed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-09.4967814004",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-24.173253481717"
+   ],
+   "patches": [
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Summit day is roughly 5.25 mi with about 3,450 ft of gain",
+     "replace": "Summit day is roughly 7 mi round trip with about 3,450 ft of gain"
+    },
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 11,
+     "value": 15
+    },
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 12,
+     "value": 15
+    },
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~30-33 miles RT",
+     "replace": "~36-37 miles RT"
+    },
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 13,
+     "value": 15
+    },
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 15,
+     "value": null
+    },
+    {
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "fact": "approach and summit-day mileages",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": 16,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A long-standing route page rates the Sitkum Glacier Grade I-II (the encyclopedia entry repeats it, citing that same page, so it counts once); a route database rates it Grade III; club and trip-report pages give no Roman grade. No two independent sources agree on one value.",
+   "sources": [
+    "https://www.summitpost.org/sitkum-glacier/155846",
+    "https://en.wikipedia.org/wiki/Glacier_Peak",
+    "https://www.mountainproject.com/route/121086767/sitkum-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose",
+   "verdict": "unresolved",
+   "correct_value": "The White Chuck approach is no longer usable; current access is North Fork Sauk -> White Pass -> PCT north over Red Pass -> Sitkum Creek -> Boulder Basin",
+   "evidence": "Retry found White Pass ~9 mi from the North Fork Sauk trailhead and Red Pass-to-junction 1.7 mi / junction-to-White Pass 0.7 mi on the PCT, but no source gives the PCT distance from Red Pass north to the Sitkum Creek climbers' path or a total to Boulder Basin. Rewriting the itinerary days, timing and descent for the North Fork Sauk line would need computed segment distances, so no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/white-pass-pilot-ridge-loop",
+    "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/pacific-crest-trail-suiattle-river-to-red-pass-white-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "fact": "one-way approach distance (dist_km 0.97 km shown as 'Approach (one way)' vs ~8+ mile walk in)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two 2023/2026 party reports put White Pass at about 10 mi and the Foam Creek/Marmot Pass saddle about 2 mi beyond it, and the boulder's stored coordinate lies east of White Pass toward the White Chuck basin, so the row's '~8 miles' is probably short as well; but no source states the one-way distance to this boulder itself, so neither dist_km nor the prose figure can be set.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-09.4967814004",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-24.173253481717",
+    "https://www.mountainproject.com/route/118251503/dont-climb-that-she-said"
+   ],
+   "patches": []
+  }
+ ]
+}

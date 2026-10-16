@@ -1,0 +1,695 @@
+{
+ "results": [
+  {
+   "id": "wa_vanishing_point",
+   "verdict": "unresolved",
+   "resolution": "No change. No second published position for the tower or its base exists, and the pins cannot be proven more than 500 m from the route's own line: depending on which published point stands for the tower, the top-out pin is 490-545 m from it, and the middle of the approach (the gullies and slabs) is described but never located.",
+   "summary": "Both tower pins are clearly wrong (about 2,000 ft too low, on the slope above Barclay Lake east of the tower), but nothing published places the tower a second time and the distance test for removing them lands right at the 500 m line, so they are left for the owner to decide.",
+   "evidence": "Live row re-read 2026-09-30: [1] 'Dolomite Tower Base' 47.7805,-121.429 (claims 5,200 ft), [2] 'Vanishing Point Topout' 47.781,-121.430 (claims 5,708 ft); USGS ground ~3,330 / ~3,350 ft. NEW SOURCES READ THIS PASS (none gives a coordinate): (a) The Mountain Project route page's descent section: pack up above the last anchor, butt-slide heather to the BASE trail, walk away from the face, go most of the way around the tower and past the gully separating it from the main mountain, then go hard skier's left (west) across Baring's flank to the hiking trail and the saddle above the big talus field. (b) Nathan Hadley's 2017 story gives the approach order: boulder field, rocky wash, ramp RIGHT onto the forested rib, fixed lines, back LEFT into the gully, bolted slabs to the left, a ledge traversed left, a gully, then slabs diagonalling left to the tower base. His 2020 story and the MP area page both have the party leave the Barclay Lake trail after about a mile. (c) Blake Herrington's 2012 beta: leave at the first bridge, go up the creek bed 5 minutes, then diagonal right to a huge washout that comes down from directly beneath Baring's north face. (d) 1994 AAJ note: the tower is a 1,300 ft vertical pillar next to Mount Baring. (e) ListsOfJohn (archived) gives the Baring summit at 47.77929,-121.43582, 6,127 ft (LiDAR) - no entry for the tower. (f) CascadeClimbers 2017 TR (archived) is photos only. OWN ANALYSIS (not a source): a USGS 3DEP grid at 0.0005 deg shows a distinct 5,750-5,784 ft summit at about 47.7805,-121.4372, with a ~5,470-5,540 ft notch to its south before the 6,093 ft main summit. That fits the tower: the 5,708 ft height on its climbing page, the notch with the highest peak to the south from the 2012 descent, and the one GPS track ('Vp approach') ending 240 m west of it. Its north face drops to ~4,400 ft at about 47.7815,-121.437. On that placement the pins are 540-650 m east of the tower; using the tower coordinate that climbing sites publish (47.77918,-121.43599, the Baring summit) instead, pin [2] is only ~490 m away. The approach departs 1.2 km short of the pins (the removed bridge, OSM 47.78856,-121.43875) and its lateral moves are right then left, which keeps it west of the tower's fall line. But the course of the gully between the tower and the summit, which drains north-east toward ~47.783,-121.434, is not described, and that line would pass within ~485 m of pin [1]. So '>500 m, proven' is not met. Recommendation to the owner: remove pins 1 and 2, or accept one source for the position (the 3DEP tower summit + the 'Vp approach' track). Also noted: summit pin [3], named 'Dolomite Tower' at 5,708 ft, sits on the Baring main summit (6,127 ft), about 150 m south-east of the tower.",
+   "sources": [
+    "https://www.mountainproject.com/route/119221029/vanishing-point",
+    "https://www.mountainproject.com/area/119221018/dolomite-tower",
+    "https://nathanhadley.com/stories/vanishing-point/?category=climbing",
+    "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/?category=climbing",
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+    "http://publications.americanalpineclub.org/articles/12199413601/North-America-United-States-Washington-Mount-Baring-and-Dolomite-Tower-1992",
+    "https://web.archive.org/web/20250122021257/https://www.listsofjohn.com/peak/17254",
+    "https://web.archive.org/web/20231004133721/https://cascadeclimbers.com/forum/topic/101032-tr-dolomite-tower-mt-baring-vanishing-point-vi-512b-9222017/",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "unresolved",
+   "resolution": "No change. No downloadable track or published coordinate for either feature was found, and rule 1 cannot remove them: both pins sit 265-410 m from the summit, which is on the route.",
+   "summary": "The 'first summit view' and 'cliff band bypass' pins are still where an old straight-line placement put them, but no GPS track or published coordinate for either spot exists anywhere I could reach, and they are too close to the summit to count as off-route, so they stay for the owner.",
+   "evidence": "Live row re-read 2026-09-30: the deadfall and brushy-section pins are gone, so the two pins in question are now index 2 'First summit view point' (47.615874,-121.266348, 5,267 ft) and index 3 'Cliff band bypass gully, 5,400 ft' (47.616205,-121.268108). SEARCHED THIS PASS, none with a track or coordinate for either point: (1) the 2019 north-ridge blog lists 'GPS Track: available' in plain text with no link (checked the HTML), and its only outbound links are a photo-album search; (2) the same author's 2021 Silver Eagle post has a track note but is the neighbouring peak's west-side route; (3) OpenStreetMap public GPS traces (API trackpoints, bbox -121.29,47.612,-121.26,47.65): three traces, all on the East Fork Foss / Necklace Valley trail north of 47.64, none on the ridge; (4) Peakbagger peak 2125 (ascents with GPS by several climbers) returns 403 and has no Wayback snapshot (the availability API returns none; the CDX index was offline); (5) the 2006 NWHikers report returns an empty page and is not archived; (6) the archived SummitPost peak page gives only the summit (47.61687,-121.27163), which matches the live summit pin; (7) hundredpeaks.org 'Bald Eagle Peak' is a different peak in California. Rule 1 does not apply: the route ends at the summit, and pin 2 is ~410 m and pin 3 ~265 m from it. Both are east of the north-ridge crest, on the side the row's own text sends the bypass (left/east into the upper basin), so neither is provably >500 m off the line. The DEM crest placements from the earlier pass (d6: 47.6255,-121.276 at 5,250 ft and 47.6226,-121.2753 at 5,420 ft) remain the only candidate positions; they come from own sampling and are not a source.",
+   "sources": [
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+    "https://onehikeaweek.com/2021/08/09/silver-eagle-peak-ii/",
+    "https://api.openstreetmap.org/api/0.6/trackpoints?bbox=-121.29,47.612,-121.26,47.65",
+    "https://www.peakbagger.com/peak.aspx?pid=2125",
+    "https://web.archive.org/web/20250125104915/https://www.summitpost.org/bald-eagle-peak/818481",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000082300"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "verdict": "confirmed",
+   "resolution": "add_pin 'Glacier Pass' after 'Glacier Meadows' at 47.7992,-123.6834, 6,140 ft. That point is the mean of the USGS GNIS coordinate and Peakbagger's LiDAR key-col location, which are 31 m apart.",
+   "summary": "The route now has a Glacier Pass pin, the saddle where the climb leaves the upper Blue Glacier, placed where two independent datasets agree to within about 30 m.",
+   "evidence": "Live row re-read 2026-09-30: three pins (Hoh trailhead, Glacier Meadows, summit); the approach text ends at Glacier Pass ('the saddle between Mathias and the East Peak of Olympus, at the head of the Hoh Glacier'). Source 1: the USGS GNIS record 1516655 'Glacier Pass' (Gap, Jefferson County), via the National Map geonames service, is at 47.79926,-123.68354. Source 2: Peakbagger's Mount Mathias page (archived 2025-01-22) names the key col 'Glacier Pass', 6,102 ft, with 'Data Source: GPS Reading or LIDAR'. Its key-col map marker is sx=-123.683215, sy=47.799085. That point comes from Peakbagger's own prominence analysis of LiDAR, not from GNIS, and it is 31 m from the GNIS point (19 m south, 24 m east). Pin placed at their mean, 47.7992,-123.6834. Height: ListsOfJohn gives the Mathias saddle as 6,140 ft; Peakbagger (LiDAR) gives 6,102; USGS 3DEP ground at the pin is 6,167 ft (glacier surface). 6,140 is used, within 40 ft of all three. Not usable: OSM has no saddle node here (API map call; no natural=saddle or pass named Glacier Pass); there are no OSM public GPS traces in bbox -123.70,47.79,-123.665,47.81; a public Olympus CalTopo map (RLNP) has a 'Pass' marker at 47.80398,-123.70250, which is on the Olympus route, not Glacier Pass; a Gaia track for the area returns 403 (private).",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_name%3D%27Glacier%20Pass%27%20AND%20state_alpha%3D%27WA%27&outSR=4326&f=json",
+    "https://web.archive.org/web/20250122232430/https://www.peakbagger.com/peak.aspx?pid=949",
+    "https://web.archive.org/web/20250122230658/https://listsofjohn.com/peak/49427",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.6834&y=47.7992&units=Feet&wkid=4326"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "add_pin",
+     "id": "wa_mount_mathias_scramble",
+     "after_name": "Glacier Meadows",
+     "pin": {
+      "name": "Glacier Pass",
+      "type": "Pass",
+      "lat": 47.7992,
+      "lng": -123.6834,
+      "elev": 6140,
+      "note": "Saddle between Mount Mathias and the East Peak of Olympus, reached from Snow Dome by the upper Blue Glacier; the Hoh Glacier falls away on the far side. The steep snow finger up to the Mathias ridge starts just above it."
+     },
+     "sources": [
+      "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_name%3D%27Glacier%20Pass%27%20AND%20state_alpha%3D%27WA%27&outSR=4326&f=json",
+      "https://web.archive.org/web/20250122232430/https://www.peakbagger.com/peak.aspx?pid=949"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "verdict": "confirmed",
+   "resolution": "No second source states a total gain for the North Fork Quinault approach, so 5,750 cannot be written. Two independent sources do state the trail's 3,100 ft to Low Divide, which with the fixed heights of Low Divide and the summit puts the climb at about 5,750 ft, and nothing supports 7,500 for this approach. gain_ft is therefore set null (the same treatment as Mount Mathias), not given a new figure.",
+   "summary": "Nothing supports the 7,500 ft gain for the North Fork Quinault approach the page now describes; the only stated figure is about 5,750 ft, and that has a single source, so the wrong number is cleared rather than replaced.",
+   "evidence": "Live row re-read 2026-09-30: gain_ft 7500; dist_km is already 30.58 and the pins already follow the river trail (earlier d5 ops applied except gain). STATED TOTAL: only the Mazamas activity listing gives 5,750 ft for Mt. Seattle via the North Fork Quinault (19 mi). No second total was found: the Mountaineers has no Mount Seattle route page (404; its annuals mention 1907/1926/1933 ascents from Low Divide with no figures), Peakbagger's page (archived 2022) and peakery give no route gain, SummitPost's peak page is not archived, and the 2015 Skyline loop report gives 11,000 ft for a different, 43-mile loop. COMPONENTS, independent: (1) Backpacker's North Fork Quinault trip says the trail 'gains elevation steadily - 3,100 feet' over 16 miles to Low Divide at 3,600 ft; (2) a 2010 trip report over the same trail measured by altimeter that it gains 2,100 ft net and about 1,000 ft of re-gained loss, 'like 3,100 vertical feet', to Low Divide. The park puts Low Divide at 3,602 ft and the summit is 6,246 ft, so the climb above Low Divide gains at least 2,644 ft. Total about 5,744 ft, agreeing with the stated 5,750. A 7,500 ft figure would need ~1,750 ft of extra re-climbing that no source reports; it matches the Elwha-side approach the row used to describe. If the owner accepts one stated figure plus the two agreeing components, 5,750 is the value to write instead of null.",
+   "sources": [
+    "https://mazamas.org/activity/286/",
+    "https://www.backpacker.com/trips/olympic-national-park-hike",
+    "http://web.archive.org/web/20241228131636/https://www.summitpost.org/christie-noyes-meany-seattle-martins-lakes/652442",
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://web.archive.org/web/20220704210526/https://www.peakbagger.com/peak.aspx?pid=984",
+    "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7500,
+     "value": null
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "verdict": "confirmed",
+   "resolution": "Rule 4 has no qualifying figure for Middle Peak: no source gives a one-way distance, or any round trip, to this summit, so dist_km 23.5 (a round trip) is set null. The summit pin's distMi of 0 is also cleared. The FR 41 closure goes into road.status, access.closures and the approach.",
+   "summary": "The Middle Peak distance was a round trip in the one-way slot and no source gives a figure for this summit, so it is cleared. The road card and approach now say FR 41 is closed at the Canyon Creek bridge, 8-9 miles of road short of the trailhead.",
+   "evidence": "Live row re-read 2026-09-30: dist_km 23.5 km = 14.6 mi. The row's own itinerary is an out-and-back on Trail 641: 4.5 mi in to Goat Flats, a 5.5 mi round-trip summit day, then out the same way (~14.5 mi total), so 23.5 km is the whole trip. No trip report, guide or land-manager page gives a distance for Middle Peak, one way or round trip (searched; the 2018 North Peak report and the lookout figures are for other summits). The USFS trail page gives Tin Can Gap at 6.2 mi, and Middle Peak lies beyond it across the glacier, but no source states that last leg. So null, the same treatment as sibling r1. The summit pin 'Three Fingers - Middle Peak summit' carried distMi 0, which puts it at the trailhead; now null. ROAD (checked 2026-09-30): the USFS Three Fingers-Goat Flats-Saddle Lake Trail 641 page (last updated 2026-06-18) says under Current Conditions 'Currently inaccessible due to bridge failure on South Fork Canyon Creek Road (Forest Road 41)'. The USFS Three Fingers Lookout page (last updated 2026-08-26) says Tupso Pass Road 41 is washed out 4.8 miles in and closed past Canyon Creek bridge. Independently, the WTA hike page says the road is permanently closed past the Canyon Creek bridge to vehicles, foot and bike traffic is allowed, and the trailhead is about 9 miles from there. A 2025 Backpacker trip biked an '8-mile approach to the trailhead' ('16 extra miles of walking' round trip). The distance past the closure is therefore written as 8-9 miles. The fix goes in road.status, access.closures and one approach sentence; access._raw is not touched. The old status 'Partially open; historically washed out...' and the hedged closures text are replaced.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+    "https://www.fs.usda.gov/r06/mbs/recreation/three-fingers-lookout",
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.backpacker.com/trips/formidable-hike-washington-three-fingers-lookout/",
+    "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r2",
+     "column": "dist_km",
+     "path": [],
+     "expect": 23.5,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r2",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r2",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Partially open; historically washed out and gated several miles short of the old trailhead",
+     "value": "Closed to vehicles at the Canyon Creek bridge, where FR 41 is washed out. Foot and bike travel is allowed past the barrier; the trailhead is roughly 8-9 miles farther up the road."
+    },
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r2",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": "FS Road 41 has a long history of washout-related closures short of the historic trailhead, requiring extra foot/bike travel; check current Darrington Ranger District road status before a trip",
+     "value": "Tupso Pass Road (FR 41) is closed to vehicles past the Canyon Creek bridge after a washout and bridge failure; walk or bike the last 8-9 miles of road to the trailhead."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_three_fingers_r2",
+     "column": "approach",
+     "path": [],
+     "find": "Follow the same approach as the other two summits: ",
+     "replace": "FR 41 is closed to vehicles at the Canyon Creek bridge, so first walk or bike roughly 8-9 miles of road to the trailhead. Then follow the same approach as the other two summits: "
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "verdict": "confirmed",
+   "resolution": "Rule 4, second branch: the lookout is a pure out-and-back on Trail 641, and two sources agree the round trip from the trailhead is 15 miles, so dist_km is 7.5 mi = 12.07 km. One sentence about the road closure is added to the approach; the road card and access card already state it.",
+   "summary": "The lookout is about 7.5 miles one way from the trailhead (15 miles round trip), so the stored 15.5-mile round trip in the one-way slot becomes 7.5 miles, and the approach now opens by saying the road is closed 8-9 miles short of the trailhead.",
+   "evidence": "Live row re-read 2026-09-30: dist_km 24.9 km = 15.5 mi. The itinerary is out-and-back on Trail 641: in to Goat Flats, then summit and 'hike the full ~7.5 miles back out'; its day miles sum to 15.0. Two independent sources give the same round trip from the trailhead: the WTA hike page says 15.0 miles roundtrip, 4,200 ft; the 2025 Backpacker lookout trip says 31 miles round trip out-and-back, of which 16 are bikeable road, leaving 15 miles on foot from the trailhead. Half is 7.5 mi = 12.07 km. Consistent with this, the USFS trail page puts Tin Can Gap at 6.2 miles, and the USFS lookout page says the last half mile needs climbing gear. (A GPS-measured 25.7 km and a 16 mi figure also exist; they are longer measurements, not the stated figure used.) ROAD (checked 2026-09-30): the USFS Three Fingers-Goat Flats-Saddle Lake Trail 641 page (last updated 2026-06-18) says under Current Conditions 'Currently inaccessible due to bridge failure on South Fork Canyon Creek Road (Forest Road 41)'. The USFS Three Fingers Lookout page (last updated 2026-08-26) says Tupso Pass Road 41 is washed out 4.8 miles in and closed past Canyon Creek bridge. Independently, the WTA hike page says the road is permanently closed past the Canyon Creek bridge to vehicles, foot and bike traffic is allowed, and the trailhead is about 9 miles from there. A 2025 Backpacker trip biked an '8-mile approach to the trailhead' ('16 extra miles of walking' round trip). The distance past the closure is therefore written as 8-9 miles. The fix goes in road.status, access.closures and one approach sentence; access._raw is not touched. This row's road/access cards and its primary 'Road-closure variation' already say the same, so only the approach sentence is added. Owner note, not changed: itinerary day 1 gives 7.3 miles to Goat Flats, which the USFS puts at 4.8 miles (2.5 + 2.3); the day-miles total happens to equal the round trip.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.backpacker.com/trips/formidable-hike-washington-three-fingers-lookout/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+    "https://www.fs.usda.gov/r06/mbs/recreation/three-fingers-lookout",
+    "https://www.10adventures.com/hikes/mount-baker-snoqualmie-national-forest/three-fingers-hike/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_three_fingers_south_peak_lookout",
+     "column": "dist_km",
+     "path": [],
+     "expect": 24.9,
+     "value": 12.07
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_three_fingers_south_peak_lookout",
+     "column": "approach",
+     "path": [],
+     "find": "From the Tupso Pass trailhead, follow Three Fingers Trail #641",
+     "replace": "FR 41 is closed to vehicles at the Canyon Creek bridge, so first walk or bike roughly 8-9 miles of road to the trailhead. From the Tupso Pass trailhead, follow Three Fingers Trail #641"
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "verdict": "confirmed",
+   "resolution": "Only the road closure: road.status and access.closures were both null and now state it, and the approach gains one sentence. dist_km is already null on the live row and is left alone.",
+   "summary": "North Peak's road card and approach now say FR 41 is closed to vehicles at the Canyon Creek bridge, so parties walk or bike 8-9 miles of road before the trail.",
+   "evidence": "Live row re-read 2026-09-30: road.status null, access.closures null. The approach opened 'Start at the Tupso Pass trailhead (end of FR 41)', which implies you can drive there; only the trailhead pin note and a variant mentioned the washout. ROAD (checked 2026-09-30): the USFS Three Fingers-Goat Flats-Saddle Lake Trail 641 page (last updated 2026-06-18) says under Current Conditions 'Currently inaccessible due to bridge failure on South Fork Canyon Creek Road (Forest Road 41)'. The USFS Three Fingers Lookout page (last updated 2026-08-26) says Tupso Pass Road 41 is washed out 4.8 miles in and closed past Canyon Creek bridge. Independently, the WTA hike page says the road is permanently closed past the Canyon Creek bridge to vehicles, foot and bike traffic is allowed, and the trailhead is about 9 miles from there. A 2025 Backpacker trip biked an '8-mile approach to the trailhead' ('16 extra miles of walking' round trip). The distance past the closure is therefore written as 8-9 miles. The fix goes in road.status, access.closures and one approach sentence; access._raw is not touched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+    "https://www.fs.usda.gov/r06/mbs/recreation/three-fingers-lookout",
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.backpacker.com/trips/formidable-hike-washington-three-fingers-lookout/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r1",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": null,
+     "value": "Closed to vehicles at the Canyon Creek bridge, where FR 41 is washed out. Foot and bike travel is allowed past the barrier; the trailhead is roughly 8-9 miles farther up the road."
+    },
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r1",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": null,
+     "value": "Tupso Pass Road (FR 41) is closed to vehicles past the Canyon Creek bridge after a washout and bridge failure; walk or bike the last 8-9 miles of road to the trailhead."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_three_fingers_r1",
+     "column": "approach",
+     "path": [],
+     "find": "Start at the Tupso Pass trailhead (end of FR 41) on the Three Fingers-Goat Flats-Saddle Lake Trail #641.",
+     "replace": "FR 41 is closed to vehicles at the Canyon Creek bridge, so first walk or bike roughly 8-9 miles of road to the trailhead. The climb starts at the Tupso Pass trailhead on the Three Fingers-Goat Flats-Saddle Lake Trail #641."
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "verdict": "confirmed",
+   "resolution": "Already applied: when the row was re-read just before finalising (2026-09-30), pin 0 was already at 47.373,-121.45787 (4,254 ft), the point this research confirms. No ops are needed.",
+   "summary": "The trailhead pin is the same road-end turnaround as the sibling route, 650 m north of the buttress. The live row already has it there, so nothing is left to apply.",
+   "evidence": "First read 2026-09-30: pin 0 'FS Road 9070 Turnaround at Silver Basin' 47.36741,-121.45564 (4,585 ft) is identical to pin 1 'Sofa King Buttress base', i.e. the crag coordinate. Same trailhead as wa_drilling_me_softly: both rows are on area wa_sofa_king_buttress, carry the identical pin name, and have word-for-word the same approach text (left fork of NF-9070 past Olallie Meadow to a large turnaround just below Silver Basin, then 20-30 min on foot); the sibling's pin 0 now reads 47.373,-121.45787 (4,254 ft). Re-verified independently this pass: USFS Roads 11/2019 layer on the National Map transportation service (objectids 8644136 + 30672049) runs the spur from 47.37519,-121.45302 to its dead end at 47.37289,-121.45781; OpenStreetMap way 202991403 (track) ends at 47.37310,-121.45793 - the two ends are ~25 m apart and both within ~15 m of 47.373,-121.45787. USGS 3DEP 1 m ground there 4,252 ft. Pin 1 (crag) unchanged. No drawn line on this row. SECOND RE-READ before finalising: pin 0 already reads 47.373,-121.45787, elev 4254, so the move had been applied in the meantime and the move_pin op is withdrawn.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/32",
+    "https://www.openstreetmap.org/way/202991403",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.45787&y=47.373&units=Feet&wkid=4326"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "verdict": "confirmed",
+   "resolution": "Rule 2. The North Fork Sauk Trail + PCT over Red Pass approach is the one in current use (the White Chuck road and trail are closed), so every field now describes it: the approach is rewritten, the variants are reordered (North Fork Sauk primary, White Chuck kept as a closed historic variant), and the itinerary, timing, pitch_detail[0], descent_text, obj_haz[2], pro_tips[4] and two bivy notes are corrected. dist_km, gain_ft, the timing hours and the approach-day miles/gain are nulled: no source states them for this approach, and the old figures were White Chuck ones. The White Pass pin is removed (rule 1: 722 m off the line), a North Fork Sauk Trail/PCT junction pin is added, and the summit pin's distMi is nulled. The drawn line was already cleared.",
+   "summary": "The route page now describes only the way climbers actually reach the Sitkum Glacier today: up the North Fork Sauk Trail to the PCT, north over Red Pass and down the upper White Chuck valley to Sitkum Creek and Boulder Basin. The closed White Chuck approach is kept only as a historic variant, and its distance, gain, times and the off-route White Pass pin are gone.",
+   "evidence": "Live row re-read 2026-09-30. The approach column called the White Chuck approach 'effectively gone', then described it in full; the itinerary, timing, pitch_detail[0], descent_text, the primary variant, dist_km 14.5 km (9 mi, the White Chuck trailhead-to-Boulder-Basin figure) and gain 8,300 (2,350 ft to 10,541 ft) all followed White Chuck. The trailhead pin, road card and access.closures already use the North Fork Sauk. CLOSURE: the row's access.closures already carries the land manager's listing (FR 23 closed from milepost 3.7 since March 2025; trail #643 inaccessible since the 2003 flood). The Mountaineers' PCT route page says the washouts led to closure of the White Chuck River Trail and Road. CURRENT LINE, each leg from two or more sources: (a) North Fork Sauk Trail #649 to the PCT: WTA gives Red Creek bridge at 4 mi, Mackinaw Shelter at 5.5 and 3.2 more miles of switchbacks, a high point of 5,949 ft, and calls it the main route for climbing Glacier Peak; pctwashington.com gives the trail as an 8.75 mi exit from the PCT junction; the Mountaineers give 2.8 + 5.4 = 8.2 mi. Written as 8-9 miles, about 5,950 ft (3DEP ground at the junction is 5,948 ft). (b) Junction to Red Pass: pctwashington 1.3 mi (7.13 to 8.43), Mountaineers 1.7 mi; Red Pass 6,494 / 6,500 ft. (c) Red Pass down the White Chuck valley: pctwashington puts the White Chuck River Trail junction at 15.0 and the Boulder Basin trail and Sitkum Creek crossing at 15.8, i.e. 7.4 mi past Red Pass. The Mountaineers give Red Pass to Kennedy Creek as ~10 mi (8 along the river plus 2), which puts Sitkum Creek ~0.7 mi earlier at ~9.3. Written as roughly 7-9 miles. Mountain Project's Sitkum Glacier page (and the row's own text) put the junction at ~3,850 ft and the climbers' path at a forest camp ~0.5 mi north near 4,100 ft; a 2026 PCT thru-hiker log gives Sitkum Creek at 3,809 ft. (d) Boulder Basin and the glacier line are unchanged. PINS: 'White Pass (PCT)' 48.03317,-121.14956 is on the PCT south of the junction. Its nearest point on this route's line (the junction, OSM/USFS geometry) is 722 m away, and the North Fork Sauk trail and the northbound PCT are farther still, so rule 1 removes it. New junction pin at 48.03656,-121.15787: USFS trails in the National Map transportation layer 37 (Trail 649 meets PCT 2000.02 at 48.036560,-121.157886) and OpenStreetMap way 520044265 (48.0365576,-121.1578501), 3 m apart (these may share lineage). WTA's 5,949 ft high point matches the 3DEP ground of 5,948 ft there. Summit pin distMi 14 was a White Chuck mileage; now null. LEFT FOR THE OWNER: bivy[1] 'Kennedy Guard Station area' keeps role 'route' (its notes now say it is off the current approach; hiding it would drop its content); the timing and day hours are null because no source gives times for this longer approach.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/north-fork-sauk-river",
+    "https://pctwashington.com/descriptions/section_k2",
+    "https://web.archive.org/web/20250810195907/https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/pacific-crest-trail-suiattle-river-to-red-pass-white-pass",
+    "https://www.hikeoftheweek.com/2021/08/12/red-passhigh-portal-to-glacier-peak/",
+    "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+    "https://thetrek.co/pacific-crest-trail/year-2-day-3-w7-29-sitkum-creek/",
+    "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37",
+    "https://www.openstreetmap.org/way/520044265",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.15785&y=48.03656&units=Feet&wkid=4326"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "approach",
+     "path": [],
+     "expect": "The White Chuck approach described below is effectively gone: White Chuck River Trail #643 has been listed as inaccessible since the 2003 flood, and the White Chuck Road (FR 23) is closed to vehicles at milepost 3.7, about 5 miles of old roadbed short of the old trailhead, beyond which the valley is unmaintained travel with a river ford. Parties now come in from the North Fork Sauk River Trailhead instead, climbing to the Pacific Crest Trail at White Pass and following it north over Red Pass to the Sitkum Creek junction. From the White Chuck River Trailhead (2,350 ft, end of White Chuck River Road/FR 23), follow the White Chuck River Trail (FST 643) upstream through old-growth forest. The trail fords/bridges several tributaries — Pumice Creek, Glacier Creek, and Kennedy Creek — which serve as reliable water sources but can run high with snowmelt in early summer. At about 5.5 miles reach the former Kennedy Hot Springs/Kennedy Guard Station area (~3,300 ft) — still a popular campsite, but the historic hot-springs pool, lodge, and guard station were destroyed and buried by the October 2003 flood/debris flow and were never rebuilt; there is no usable hot pool here. Continue roughly 1.5 miles farther to Sitkum Creek and the junction with the Pacific Crest Trail (~3,850 ft). Turn north (left) on the PCT for about a half mile to a forested campsite near 4,100 ft — a common lower camp. From there, leave the maintained trail and follow a steep, unmaintained climbers' path (locally described as 'more like a fisherman's route than a trail') straight up the forested ridge to Boulder Basin (5,500–6,000 ft), where the trees break and the standard high camp sits on heather/rock benches with running water nearby. From camp, ascend snowfields southeast/uphill onto the toe of the Sitkum Glacier. Note: the White Chuck River Road and Trail sustained major washout damage in the October 2003 floods and has had repeated closures/repairs since — confirm current road-end and trail status with the Mount Baker-Snoqualmie National Forest before relying on this approach, as in bad years the effective trailhead moves miles downstream.",
+     "value": "From the North Fork Sauk River Trailhead (off Sloan Creek Road, FR 49), follow North Fork Sauk Trail #649 up the valley through old-growth forest, past the Red Creek bridge to Mackinaw Shelter, then up a long series of switchbacks to meet the Pacific Crest Trail at about 5,950 ft, roughly 8-9 miles from the car. White Pass and its camp are a short way south along the PCT; this route does not go there. Turn north on the PCT and cross Red Pass (about 6,500 ft) a mile or two on, then descend into the upper White Chuck valley and follow the PCT down it for roughly 7-9 miles, past the old White Chuck River Trail junction (~3,850 ft), to a forested campsite near 4,100 ft beside Sitkum Creek. There, leave the maintained trail on the unsigned, unmaintained climbers' path (locally described as 'more like a fisherman's route than a trail'), which goes straight up the forested ridge south of Sitkum Creek to Boulder Basin (5,500-6,000 ft), where the trees break and the standard high camp sits on heather and rock benches with running water nearby. From camp, ascend snowfields southeast onto the toe of the Sitkum Glacier. The old approach up the White Chuck River Trail past Kennedy Hot Springs to the same PCT junction is no longer usable: the White Chuck Road (FR 23) is closed to vehicles at milepost 3.7, and the trail has been listed as inaccessible since the October 2003 flood. Going out, the PCT climbs back up the valley and over Red Pass before the long descent to the car."
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "White Chuck River Trail #643 (the historic standard)",
+       "notes": "This was the standard way up Glacier Peak and the road access has been unreliable for a very long time. The last several miles of FR 23 to the White Chuck trailhead have been reported blocked — at one point with large boulders placed at the turnoff — and reports of the road being driveable and undriveable have alternated over the years. Confirm with the Mount Baker-Snoqualmie forest before relying on it, because in a bad year the effective trailhead moves miles downstream.\n\nFrom the trailhead at about 2,350 ft the trail runs upstream through old growth, crossing Pumice, Glacier and Kennedy Creeks — reliable water, but high with snowmelt in early summer. At about five and a half miles is the old Kennedy Hot Springs area at around 3,300 ft, still a popular campsite; the pool, lodge and guard station were destroyed by the 2003 flood and never rebuilt, so there is no usable hot pool there.\n\nAnother mile and a half brings you to Sitkum Creek and the PCT junction at about 3,850 ft. Turn north on the PCT for about half a mile to a forested camp near 4,100 ft.",
+       "season": "Jun-Aug",
+       "hazards": [
+        "unreliable road access to the trailhead over many years",
+        "creek fords running high with early-summer snowmelt",
+        "steep unmaintained climbers' path with no signage leaving the PCT",
+        "crevasses on the Sitkum"
+       ],
+       "primary": true,
+       "baseFinding": "The path that leaves the PCT for Boulder Basin is unsigned and steeper than anything before it — climbers describe it as more of a fisherman's track than a trail. The test is direction, not appearance: the correct path goes STRAIGHT UP the forested ridge. Anything that contours is the PCT or a game trail.\n\nYou know you have arrived at the top of it when the trees break: Boulder Basin at roughly 5,500 to 6,000 ft is heather and rock benches with running water, and it is the standard high camp. If you are still in continuous forest, you are below it, however long the climb has felt.\n\nFrom camp the route ascends snowfields onto the toe of the Sitkum. Rope up at the point the snowfield stops being a slope you can see the bottom of and becomes continuous glacier — there is no rock landmark for this, so the transition is judged on the ground rather than found."
+      },
+      {
+       "name": "North Fork Sauk and the PCT (the reliable alternative)",
+       "notes": "Because the White Chuck side has been unreliable for years, parties reach this side of the mountain instead from the North Fork Sauk River trailhead, climbing to White Pass on the PCT and then travelling north over Red Pass toward the Glacier Creek and Sitkum ground. It is substantially longer and is chosen for access rather than for the climbing.",
+       "season": "Jun-Aug",
+       "hazards": [
+        "very long approach on the PCT with substantial gain and loss",
+        "no signed junction for the climbers' path"
+       ],
+       "baseFinding": "The route above is unchanged: the marker is Boulder Basin — trees giving way to heather and rock benches with running water at roughly 5,500 to 6,000 ft — and then snowfields onto the toe of the Sitkum above it. Arriving from the north on the PCT the risk is passing the drainage entirely, so identify the Sitkum Creek and Glacier Creek junctions on the map before you set out rather than expecting signage."
+      }
+     ],
+     "value": [
+      {
+       "name": "North Fork Sauk Trail and the PCT over Red Pass",
+       "notes": "The way in since the White Chuck side closed. North Fork Sauk Trail #649 runs up the valley through old growth to Mackinaw Shelter and then switchbacks steeply to the Pacific Crest Trail at about 5,950 ft, roughly eight to nine miles from the trailhead. Turn north on the PCT, cross Red Pass a mile or two on, and descend into the upper White Chuck valley, following the PCT down it for roughly seven to nine miles past the old White Chuck River Trail junction to Sitkum Creek. It is much longer than the old approach, and the climb back over Red Pass comes on the way out.",
+       "season": "Jun-Aug",
+       "hazards": [
+        "very long approach on the PCT with substantial gain and loss",
+        "no signed junction for the climbers' path"
+       ],
+       "baseFinding": "The route above is unchanged: the marker is Boulder Basin — trees giving way to heather and rock benches with running water at roughly 5,500 to 6,000 ft — and then snowfields onto the toe of the Sitkum above it. Coming down the valley on the PCT the risk is walking past the start of the climbers' path, so mark the old White Chuck River Trail junction and Sitkum Creek on the map before you set out rather than expecting signage.",
+       "primary": true
+      },
+      {
+       "name": "White Chuck River Trail #643 (closed since the 2003 flood)",
+       "notes": "This was the standard way up Glacier Peak until the October 2003 flood. The White Chuck Road (FR 23) is now closed to vehicles at milepost 3.7 and the trail has been listed as inaccessible since the flood, so this is kept as a record of the old line rather than as a way in.\n\nFrom the trailhead at about 2,350 ft the trail runs upstream through old growth, crossing Pumice, Glacier and Kennedy Creeks — reliable water, but high with snowmelt in early summer. At about five and a half miles is the old Kennedy Hot Springs area at around 3,300 ft, still a popular campsite; the pool, lodge and guard station were destroyed by the 2003 flood and never rebuilt, so there is no usable hot pool there.\n\nAnother mile and a half brings you to Sitkum Creek and the PCT junction at about 3,850 ft. Turn north on the PCT for about half a mile to a forested camp near 4,100 ft.",
+       "season": "Jun-Aug",
+       "hazards": [
+        "road closed to vehicles at milepost 3.7 and trail listed as inaccessible",
+        "creek fords running high with early-summer snowmelt",
+        "steep unmaintained climbers' path with no signage leaving the PCT",
+        "crevasses on the Sitkum"
+       ],
+       "baseFinding": "The path that leaves the PCT for Boulder Basin is unsigned and steeper than anything before it — climbers describe it as more of a fisherman's track than a trail. The test is direction, not appearance: the correct path goes STRAIGHT UP the forested ridge. Anything that contours is the PCT or a game trail.\n\nYou know you have arrived at the top of it when the trees break: Boulder Basin at roughly 5,500 to 6,000 ft is heather and rock benches with running water, and it is the standard high camp. If you are still in continuous forest, you are below it, however long the climb has felt.\n\nFrom camp the route ascends snowfields onto the toe of the Sitkum. Rope up at the point the snowfield stops being a slope you can see the bottom of and becomes continuous glacier — there is no rock landmark for this, so the transition is judged on the ground rather than found."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "White Chuck River Road (FR 23) washout near mile 3.7-4 adds extra road-walking distance to this approach until repaired; best conditions are typically July-September.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction.",
+        "hours": 4,
+        "miles": 7,
+        "title": "Trailhead to Sitkum Creek camp",
+        "gainFt": 1250,
+        "lossFt": 0,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach a forested camp near Sitkum Creek"
+       },
+       {
+        "n": 2,
+        "note": "A short but steep climb up a climber's path along a ridge south of Sitkum Creek to the high camp at Boulder Basin, leaving time to rest and scout the glacier route.",
+        "hours": 3,
+        "miles": 2,
+        "title": "Continue to Boulder Basin high camp",
+        "gainFt": 2200,
+        "lossFt": 0,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach Boulder Basin (5,500-6,000 ft)"
+       },
+       {
+        "n": 3,
+        "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) to the summit before reversing back to camp.",
+        "hours": 9,
+        "miles": 7,
+        "title": "Summit via the Sitkum Glacier",
+        "gainFt": 4650,
+        "lossFt": 4650,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "3:00-4:00 AM",
+          "label": "Leave Boulder Basin",
+          "detail": "Rope up for glacier travel."
+         },
+         {
+          "time": "Mid-morning",
+          "label": "Reach the ~9,500 ft saddle",
+          "detail": "East of Sitkum Spire, at the top of the glacier."
+         },
+         {
+          "time": "Late morning",
+          "label": "Summit",
+          "detail": "Final stretch is scree/pumice with a short snow-field traverse."
+         },
+         {
+          "time": "Early-mid afternoon",
+          "label": "Back at Boulder Basin camp",
+          "detail": "Reverse the glacier; watch for softening snow bridges late in the day."
+         }
+        ],
+        "objective": "Summit Glacier Peak (10,541 ft) and return to camp"
+       },
+       {
+        "n": 4,
+        "note": "Break camp and hike out the way you came in.",
+        "hours": 6,
+        "miles": 9,
+        "title": "Hike out",
+        "gainFt": 0,
+        "lossFt": 3450,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Return to trailhead"
+       }
+      ],
+      "totalNote": "A 4-day standard trip (~21-25 miles RT, 8,210 ft gain); strong, fit parties commonly compress it to 3 days by combining the two approach days."
+     },
+     "value": {
+      "cal": "The White Chuck River Road (FR 23) is closed at milepost 3.7 and its trail is listed as inaccessible, so this trip starts from the North Fork Sauk River Trailhead and crosses Red Pass both ways. Best conditions are typically July-September.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Up North Fork Sauk Trail #649 through old-growth forest and a long set of switchbacks to the Pacific Crest Trail, then north on the PCT over Red Pass into the upper White Chuck valley.",
+        "hours": null,
+        "miles": null,
+        "title": "North Fork Sauk Trail to the PCT and over Red Pass",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach the PCT and cross Red Pass"
+       },
+       {
+        "n": 2,
+        "note": "Follow the PCT down the upper White Chuck valley to Sitkum Creek, then take the steep, unsigned climbers' path up the ridge south of the creek to the high camp at Boulder Basin.",
+        "hours": null,
+        "miles": null,
+        "title": "Down the PCT to Sitkum Creek and up to Boulder Basin",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach Boulder Basin (5,500-6,000 ft)"
+       },
+       {
+        "n": 3,
+        "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) to the summit before reversing back to camp.",
+        "hours": 9,
+        "miles": 7,
+        "title": "Summit via the Sitkum Glacier",
+        "gainFt": 4650,
+        "lossFt": 4650,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "3:00-4:00 AM",
+          "label": "Leave Boulder Basin",
+          "detail": "Rope up for glacier travel."
+         },
+         {
+          "time": "Mid-morning",
+          "label": "Reach the ~9,500 ft saddle",
+          "detail": "East of Sitkum Spire, at the top of the glacier."
+         },
+         {
+          "time": "Late morning",
+          "label": "Summit",
+          "detail": "Final stretch is scree/pumice with a short snow-field traverse."
+         },
+         {
+          "time": "Early-mid afternoon",
+          "label": "Back at Boulder Basin camp",
+          "detail": "Reverse the glacier; watch for softening snow bridges late in the day."
+         }
+        ],
+        "objective": "Summit Glacier Peak (10,541 ft) and return to camp"
+       },
+       {
+        "n": 4,
+        "note": "Break camp, descend the climbers' path to the PCT, and walk back up the White Chuck valley and over Red Pass to the North Fork Sauk Trail and the trailhead.",
+        "hours": null,
+        "miles": null,
+        "title": "Hike out",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Return to trailhead"
+       }
+      ],
+      "totalNote": "A 4-day trip at minimum. The walk in from the North Fork Sauk trailhead is far longer than the old White Chuck approach and crosses Red Pass in both directions, so many parties allow an extra day."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 22,
+      "summitTimeHrs": 9,
+      "descentTimeHrs": 6,
+      "approachTimeHrs": 7,
+      "recommendedStart": "3:00-4:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 4,
+        "note": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction.",
+        "fromTo": "Trailhead to Sitkum Creek camp",
+        "section": "Approach"
+       },
+       {
+        "hrs": 3,
+        "note": "A short but steep climb up a climber's path along a ridge south of Sitkum Creek to the high camp at Boulder Basin, leaving time to rest and scout the glacier route.",
+        "fromTo": "Continue to Boulder Basin high camp",
+        "section": "Approach"
+       },
+       {
+        "hrs": 9,
+        "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) …",
+        "fromTo": "Summit via the Sitkum Glacier",
+        "section": "Climb"
+       },
+       {
+        "hrs": 6,
+        "note": "Break camp and hike out the way you came in.",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": null,
+      "summitTimeHrs": 9,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "3:00-4:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": null,
+        "note": "Up North Fork Sauk Trail #649 through old-growth forest and a long set of switchbacks to the Pacific Crest Trail, then north on the PCT over Red Pass into the upper White Chuck valley.",
+        "fromTo": "North Fork Sauk Trail to the PCT and over Red Pass",
+        "section": "Approach"
+       },
+       {
+        "hrs": null,
+        "note": "Follow the PCT down the upper White Chuck valley to Sitkum Creek, then take the steep, unsigned climbers' path up the ridge south of the creek to the high camp at Boulder Basin.",
+        "fromTo": "Down the PCT to Sitkum Creek and up to Boulder Basin",
+        "section": "Approach"
+       },
+       {
+        "hrs": 9,
+        "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) …",
+        "fromTo": "Summit via the Sitkum Glacier",
+        "section": "Climb"
+       },
+       {
+        "hrs": null,
+        "note": "Break camp, descend the climbers' path to the PCT, and walk back up the White Chuck valley and over Red Pass to the North Fork Sauk Trail and the trailhead.",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "Follow the White Chuck River Trail about 5.5 miles to the old Kennedy Hot Springs site, then 1.5 miles more to Sitkum Creek and the PCT. Go north on the PCT about half a mile to a forest camp near 4,100 ft, then take the steep, unmaintained climbers' path up the ridge south of Sitkum Creek to Boulder Basin (5,500–6,000 ft), the usual high camp. Confirm road and trail status before going.",
+     "value": "Follow North Fork Sauk Trail #649 to the Pacific Crest Trail, go north over Red Pass and down the upper White Chuck valley on the PCT to Sitkum Creek, then take the steep, unmaintained climbers' path from a forest camp near 4,100 ft up the ridge south of the creek to Boulder Basin (5,500–6,000 ft), the usual high camp."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "descent_text",
+     "path": [],
+     "find": "From Boulder Basin, follow the steep climbers' path back down to the PCT/White Chuck Trail junction and retrace the White Chuck River Trail to the trailhead.",
+     "replace": "From Boulder Basin, follow the steep climbers' path back down to the PCT at Sitkum Creek, then walk the PCT back up the White Chuck valley and over Red Pass to the North Fork Sauk Trail and the trailhead."
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "The White Chuck River Trail has been unmaintained and washed out since the October 2003 flood, which adds significant off-trail travel on that approach",
+     "value": "A very long approach that crosses Red Pass both ways; the old White Chuck River Trail has been listed as inaccessible since the October 2003 flood"
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "pro_tips",
+     "path": [
+      4
+     ],
+     "expect": "If the White Chuck River Road/Trail is washed out or closed, most parties instead reach Boulder Basin via the North Fork Sauk Trail to White Pass and a cross-country traverse into the Glacier Peak basins.",
+     "value": "The White Chuck River Road and Trail are closed, so parties reach Boulder Basin from the North Fork Sauk Trail and the PCT, over Red Pass and down the upper White Chuck valley."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "It is about ten miles from the road end, and the road itself has a long history of washouts, so confirm where the trailhead actually is before you plan the day.",
+     "replace": "It sits at the end of a long approach from the North Fork Sauk trailhead, over Red Pass and down the upper White Chuck valley on the PCT, so plan the walk in as a trip of its own."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "bivy",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "The lowest planned stop, about 5.5 miles in and still widely used.",
+     "replace": "Not on the current approach: this site is on the White Chuck River Trail below its junction with the PCT, and that trail has been listed as inaccessible since the 2003 flood."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "bivy",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Useful as a first night for parties splitting the approach, or as a retreat in bad weather, but it is a long way and a lot of gain below the glacier.",
+     "replace": "Parties coming over Red Pass do not pass it."
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "dist_km",
+     "path": [],
+     "expect": 14.5,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 8300,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 14,
+     "value": null
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "index": 1,
+     "expect": {
+      "name": "White Pass (PCT)",
+      "lat": 48.03317,
+      "lng": -121.14956
+     }
+    },
+    {
+     "op": "add_pin",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "after_name": "North Fork Sauk River Trailhead",
+     "pin": {
+      "name": "North Fork Sauk Trail / PCT junction",
+      "type": "Junction",
+      "lat": 48.03656,
+      "lng": -121.15787,
+      "elev": 5950,
+      "note": "Top of the North Fork Sauk switchbacks. Turn north on the PCT here for Red Pass and the White Chuck valley; White Pass is a short way south and off this route."
+     },
+     "sources": [
+      "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37",
+      "https://www.openstreetmap.org/way/520044265"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "wa_mount_rainier_kautz_headwall",
+ "name": "Kautz Headwall",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard.",
+    "hours": 6,
+    "miles": 5,
+    "title": "Paradise to Camp Hazard",
+    "gainFt": 5700,
+    "packLb": 50,
+    "objective": "Reach Camp Hazard (~10,800 ft)"
+   },
+   {
+    "n": 2,
+    "note": "Alpine start to climb the Kautz Headwall's 1-2 short ice pitches (up to ~50°) and the ice chute to the summit, then descend the Disappointment Cleaver to Paradise.",
+    "hours": 11,
+    "miles": 8,
+    "title": "Summit day",
+    "gainFt": 3300,
+    "lossFt": 9000,
+    "packLb": 30,
+    "schedule": [
+     {
+      "time": "~2:00 AM",
+      "label": "Leave Camp Hazard"
+     },
+     {
+      "label": "Climb the headwall ice pitches",
+      "detail": "Up to ~50°, roughly 2 short pitches"
+     },
+     {
+      "label": "Continue up the ice chute"
+     },
+     {
+      "label": "Summit"
+     },
+     {
+      "label": "Descend DC to Paradise"
+     }
+    ],
+    "objective": "Climb the headwall and summit"
+   }
+  ],
+  "totalNote": "A standard 2-day trip (~9,000 ft gain) — essentially the Kautz Glacier route with 1-2 short ice pitches on the headwall itself."
+ }
+}

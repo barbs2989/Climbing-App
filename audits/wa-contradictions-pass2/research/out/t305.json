@@ -1,0 +1,147 @@
+{
+ "file": "t305.json",
+ "results": [
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Distance to the East Peak",
+   "verdict": "fixed",
+   "correct_value": "The East Peak is a few tenths of a mile (about 0.2-0.3 mi) from the main summit; 3.4 mi is the main summit's isolation distance to White Mountain, not the East Peak.",
+   "evidence": "Peakbagger's East Peak entry (47.6318,-123.3576, 6,233 ft) gives a true isolation of 0.2 mi / 0.33 km to Mount Duckabush's main summit (47.6305,-123.3616), ~0.21 mi straight-line between the two coordinates; Peakery lists the East Peak about 0.3 mi from the summit. Peakbagger's main-summit entry gives an isolation of 3.36 mi to White Mountain, which is where the pro tip's 3.4 mi came from.",
+   "sources": [
+    "http://web.archive.org/web/20220628003828/https://peakbagger.com/peak.aspx?pid=1007",
+    "http://web.archive.org/web/20230204151609/https://peakbagger.com/peak.aspx?pid=1008",
+    "https://peakery.com/mount-duckabush-washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "the East Peak, ~3.4 miles away",
+     "replace": "the East Peak, only a few tenths of a mile away",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Distance to the East Peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Summit elevation in the header",
+   "verdict": "unresolved",
+   "correct_value": "Route fields at 6,254 ft (west/main summit, NAVD88) are supported; the header's 6,232 ft comes from the area row, which is not patchable here.",
+   "evidence": "Peakbagger lists Mount Duckabush at 6,250 ft (NAVD88 6,254 ft) at 47.6305,-123.3616, names the West Peak the highest summit, and lists the East Peak separately at 6,233 ft; Wikipedia gives 6,254 ft at the same west-summit coordinates. Lists of John, however, places 'Duckabush, Mount' at the EAST summit (47.6320,-123.3576) with 6,233 ft, which is evidently where the area's 6,232 ft comes from. The route row agrees with itself; the fix belongs on areas.elevation_ft (wa_mount_duckabush -> 6254), an area-level write outside this patch format, and it depends on the which-summit question below.",
+   "sources": [
+    "http://web.archive.org/web/20230204151609/https://peakbagger.com/peak.aspx?pid=1008",
+    "https://en.wikipedia.org/wiki/Mount_Duckabush",
+    "https://web.archive.org/web/20220114063933/https://listsofjohn.com/peak/50244"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Which summit is the high point",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Peakbagger explicitly names the West Peak (6,250/6,254 ft) the highest summit with the East Peak a 6,233 ft sub-peak (Wikipedia and Peakery follow the same figure, likely derived from it); Lists of John instead puts the peak's summit at the east point at 6,233 ft. So independent databases genuinely disagree and the pro tip's 'disputed' has a basis. Settling it needs a LiDAR/ground elevation for both points (or an updated Peakbagger/LoJ entry); no patch written.",
+   "sources": [
+    "http://web.archive.org/web/20230204151609/https://peakbagger.com/peak.aspx?pid=1008",
+    "https://web.archive.org/web/20220114063933/https://listsofjohn.com/peak/50244"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Distance from Upper Duckabush Camp to Marmot Lake",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 3-3.6 mi (approach and waypoints are right; the bivy note's 1.1 mi is wrong)",
+   "evidence": "Dispute is inside bivy[0].notes, which is owned by the separate camping clean-up; no bivy patch written. Marmot Lake itself serves this route directly (it is the route's high camp). For that clean-up: route guides put Upper Duckabush to Marmot Lake at roughly 3.6 mi of steep gain, consistent with the waypoints (16.3 -> 19.8 mi), not 1.1 mi.",
+   "sources": [
+    "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Season start",
+   "verdict": "fixed",
+   "correct_value": "Snow lingers on the high trail and upper slopes into July; the season starts about mid-July, not June.",
+   "evidence": "Olympic NP's Duckabush River Trail page gives the high-elevation best season as early July through October and warns snow can cover the higher reaches; its O'Neil Pass Trail page gives late July through mid-October. Neither supports a June start, and both agree with the row's mid-July season, best_season and seasonal_guidance (June = risky). The approach's parenthetical is reworded to state the snow fact without a June start.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+    "https://www.nps.gov/olym/planyourvisit/oneil-pass-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(June is listed as the start of the climbing season)",
+     "replace": "(snow commonly lingers on the high trail and upper slopes into July)",
+     "id": "wa_mount_duckabush_standard",
+     "fact": "Season start"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Itinerary total gain in totalNote vs gain_ft",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.totalNote says ~7,900 ft of cumulative gain, while gain_ft is 8,100 and the day gainFt values sum to 8,100 (7,900 is the loss_ft/lossFt total). No outside source states the car-to-car gain for this route, so no patch; the likely fix is changing the note's 7,900 to 8,100 once a figure is sourced, or accepting it as an internal-summary correction.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Scramble class: grade Class 2-3 vs approach/descent Class 4",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "grade says Class 2-3 and the itinerary says class 2-3, but the approach calls the South Ridge / Middle Peak lines 'Grade I, Class 4' and descent_text says Class 3-4. Lists of John gives YDS Class 3; no second source for the standard line's class was reachable (the Olympic climbers' guide text is not online). Settling it needs the guide's route entry or two trip reports describing the summit block.",
+   "sources": [
+    "https://web.archive.org/web/20220114063933/https://listsofjohn.com/peak/50244"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No park entrance fee; only the trailhead parking pass and the wilderness camping permit apply.",
+   "evidence": "The Forest Service's Upper Dungeness Trailhead page lists it as an Olympic National Forest site needing a Northwest Forest/Interagency pass or $5/day Scan & Pay. An Olympic pass guide states national forest trailheads do not require an Olympic National Park entrance pass, only the forest parking pass. access.notes' 'standard entrance fee' is boilerplate; replaced with the parking pass.",
+   "sources": [
+    "https://www.fs.usda.gov/recarea/olympic/recreation/recarea/?recid=48103",
+    "https://olympicmap.com/park-pass-guide",
+    "https://www.wta.org/go-hiking/hikes/upper-dungeness-river"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the trailhead parking pass and wilderness camping permit apply",
+     "id": "wa_mount_fricaba_standard",
+     "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "fact": "gain_ft (4,259) vs itinerary total gain (5,600)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The header/stats gain_ft is 4,259 ft (trailhead-to-summit difference) while the itinerary days sum to 5,600 ft, the totalNote says about 5,600 ft, and partner_requirements says roughly 6,000 ft. Outside sources found give only the trail to Constance Pass (~3,300 ft), not a car-to-car figure for the Fricaba climb, so no patch.",
+   "sources": [
+    "http://www.protrails.com/trail/664"
+   ],
+   "patches": []
+  }
+ ]
+}

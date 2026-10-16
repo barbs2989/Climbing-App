@@ -1,0 +1,118 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_face_6",
+   "column": "rappels",
+   "path": [],
+   "fact": "Number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "rappel_detail",
+   "path": [],
+   "fact": "Number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "climbing_route",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "label"
+   ],
+   "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)"
+  },
+  {
+   "id": "wa_east_face_6",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Line of ascent between the glacier and the Key Ledge (standard route vs the Direct)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_face_6",
+   "before": {
+    "rappels": "Single ~165 ft rope; 2 rappels near the bergschrund plus downclimbing between them",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of two rappels over the fourth-class steps on wet, lower-angle slabs above the glacier.",
+      "anchor": "slung horn or block (natural)",
+      "lengthM": null
+     },
+     {
+      "n": 2,
+      "notes": "Second rappel reaching the glacier; both use natural horn/block anchors rather than bolts.",
+      "anchor": "slung horn or block (natural)",
+      "lengthM": 25
+     }
+    ],
+    "descent_text": "Reverse the ascent line rather than continuing over the summit block. From the top of the East Face's third pitch, downclimb the Class 4-low 5th slabs back to the ledge system, then traverse back through the notch/gully between the main and south summits (a short reversal of the ascent gully, Class 3-4 downclimbing over loose debris or snow/ice depending on season). Where the rock steepens near the base of the face, on the wet, lower-angle slabs just above the glacier, most parties make two rappels over these fourth-class steps using a single rope (a 50-60m/165ft rope is enough for each); anchors here are natural — slung horns and blocks rather than bolts — so carry cord/webbing to back up or replace old tat, especially early in the season. Below the raps, a final short third-class downclimb regains the bergschrund/moat crossing back onto the Chimney Glacier, then reverse the moraine and climber's path to Sunrise Knob and the Pete Lake Trail. Note: some parties, especially those who climbed a more direct line up the face, instead reverse the entire face with a longer string of rappels — trip reports for the harder Direct East Face variant describe as many as five to six rappels straight down the glacier-facing slabs with good anchors reported the whole way down — but the two-rappel descent via the saddle/gully is the more commonly reported line for the standard East Face route. Watch for loose rock/rockfall in the gully, wet slick rock on the fourth-class rappel steps, and crevasse/moat hazard back on the glacier.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "glacier travel",
+      "label": "Lower Chimney Glacier to the upper glacier",
+      "notes": "Rope up at the toe and climb the lower glacier. Three ways have been used to break through the cliff band onto the upper glacier; the common one is the rock and snow gully just left of the icefall. Crevasses and the icefall are the hazards, and the gully can be running with meltwater later in the day — an early start pays here twice over."
+     },
+     {
+      "n": 2,
+      "label": "Upper glacier and the moat",
+      "notes": "Cross the upper glacier to the east face directly beneath the summit. A moat routinely forms where the ice pulls away from the rock and it is the crux of getting on the route: in some conditions collapsed ice blocks have bridged it into a usable ramp and platform, in others it needs a belayed step across or a detour. Assess this from a distance on the way in, because the alternative is a long traverse looking for a way on."
+     },
+     {
+      "n": 3,
+      "class": "class 3-4 with short low-5th steps",
+      "label": "Ledge systems to the Key Ledge",
+      "notes": "One pitch from the glacier gains a broad heather ledge system. From its right side, a leftward-sloping ledge system links faces and gullies toward the north end of the prominent Key Ledge two thirds up the face. Most of this is exposed third-class walking on ledges with a few short fourth-class steps, often on wet rock, and running belays are the usual compromise between speed and safety. Reckon on about four hours from the glacier. The Key Ledge itself is a bivy for around six people, though water on it is unreliable."
+     },
+     {
+      "n": 4,
+      "class": "class 4 to 5.6",
+      "label": "Summit pitches",
+      "notes": "Three pitches of class 4 and low fifth class slabs finish the climb, roughly two and a half hours from the ledge, with the hardest moves around 5.4 to 5.6 — Grade II overall. The first pitch takes low-fifth ground on generally sound rock and protects adequately with slings, stoppers and small cams up to about three quarters of an inch. Above it a short traverse crosses a small heathered ledge onto a very exposed fourth-class face. The last pitch is a clean low-fifth chimney that tops out a few feet from the summit cairn. Rock shoes are worth carrying for this section."
+     },
+     {
+      "n": 5,
+      "label": "Rappel descent",
+      "notes": "Descent is by rappel down the line of ascent: two rappels from the summit back to the Key Ledge, then on the order of six more to reach the glacier, with anchors reported in place and serviceable the whole way. A single 165 ft rope has been sufficient. Back the anchors up rather than trusting old tat, keep the ropes clear of the loose ledges, and leave enough daylight — the moat crossing back onto the glacier is the last problem of the day, not the first."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,207 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction from Upper Royal Basin camp to Surprise Col"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Col-to-summit time"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Summit-day duration"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "pitch_detail",
+   "path": [
+    8,
+    "notes"
+   ],
+   "fact": "Rappel versus downclimbing the summit slot"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_clark_standard",
+   "before": {
+    "approach": "From the Upper Dungeness Trailhead (2,500 ft, Olympic National Forest, Hood Canal Ranger District), follow the Royal Basin Trail south along the Dungeness River; at about 1 mile the Royal Basin fork splits off (bear right; do not cross the bridge) from the Dungeness River/Constance Pass Trail. Continue past the Royal Creek and Lower Royal Meadow camp areas to Royal Lake at 7.2 mi / 5,100 ft (roughly 2,600 ft of gain), then about 1 more mile and 500 ft into Upper Royal Basin (~5,600 ft), the standard base camp among the meadows and tarns. From camp, leave the trail and climb talus, boulders, and (early season) snow south/southeast over the moraine rim and across the Surprise Basin snowfields to Surprise Col (~6,920 ft), the Clark-Johnson col, to start the corkscrew route. Alternate approach: via the Dungeness River Trail and Constance Pass Trail to Home Lake, then off-trail through Deception Basin and over Royal Pass into upper Royal Basin -- longer, but useful for a loop trip.",
+    "itinerary": {
+     "cal": "Upper Royal Basin camping requires a phone-reserved backcountry permit (not bookable online like the lower Royal Basin zones); call the Olympic Wilderness Information Center ahead of your trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Drive to the Upper Dungeness Trailhead (~2,500 ft) and backpack the Royal Basin Trail up Royal Creek to Royal Lake (5,100 ft), continuing another mile into Upper Royal Basin (~5,600 ft) near the tarns below Mount Clark. A permit for the Upper Basin zone must be booked ahead by phone with the Olympic Wilderness Information Center — it isn't available online like the lower zones.",
+       "hours": 5,
+       "miles": 8.2,
+       "title": "Backpack in to high camp",
+       "gainFt": 3100,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Upper Royal Basin camp"
+      },
+      {
+       "n": 2,
+       "note": "An early alpine start beats afternoon sun on the exposed Surprise Basin slopes. From camp, climb talus/scree/snow over the moraine rim and across Surprise Basin to 6,920 ft Surprise Col, the Clark-Johnson col. From there the corkscrew route works around south and east ledges before an exposed Class 3-4 finish on the north side of the summit block. Real trip reports clock the col-to-summit climb at roughly 3.5-4 hours; most parties make a single ~60 ft rappel off the summit block rather than downclimbing the crux, then reverse the route to camp. Many groups combine Clark with neighboring Mount Deception on the same day since both share the Surprise Basin approach.",
+       "hours": 8,
+       "miles": 6,
+       "title": "Climb Mount Clark via Surprise Basin and the Corkscrew Route",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Upper Royal Basin camp",
+         "detail": "Alpine start to beat sun and afternoon heat on Surprise Basin's slopes."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Cross Surprise Basin",
+         "detail": "Climb over the moraine rim and traverse the Surprise Basin snowfields toward the col."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Surprise Col (Clark-Johnson col, 6,920 ft)",
+         "detail": "Start the corkscrew route: talus to cliffs, then a Class 2 ledge skirting right."
+        },
+        {
+         "time": "9:30-10:00 AM",
+         "label": "Summit Mount Clark (7,528 ft)",
+         "detail": "Final Class 3-4 scramble finishes on the north side of the summit block."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin descent",
+         "detail": "Most parties rappel ~60 ft off the summit block rather than downclimb the exposed crux."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp",
+         "detail": "Time for a rest, food, or a side trip toward Mount Deception if energy allows."
+        }
+       ],
+       "objective": "Summit Mount Clark (7,528 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach down Royal Creek to the trailhead. Trip reports covering this stretch clock it around 4 hours at a steady backpacking pace.",
+       "hours": 4,
+       "miles": 8.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3100,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Upper Dungeness Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack trip: ~22-24 mi round trip with ~5,500-5,800 ft of cumulative gain, one night in, one night at Upper Royal Basin camp, and a long summit day with a Class 3-4 finish and a short rappel."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Able to sustain a 7+ mile, ~2,500-3,000 ft backpack-in day to Royal Lake/Upper Basin with an overnight pack, then a long summit day from high camp (~10 hrs)",
+      "packWeight": "Overnight/multi-day backpacking load (tent, food, bear canister) plus a lighter summit kit for the scramble day"
+     },
+     "approachTime": "Multi-day: ~7 mi/2,500 ft to Royal Lake, then another ~1 mi/500 ft to Upper Basin high camp before a long summit push",
+     "requiredSkills": [
+      "Class 3-4 scrambling on talus and exposed ledges",
+      "Independent route-finding (no maintained trail above Royal Basin)",
+      "Comfort on lingering snow/steep snow slopes in early season",
+      "Backcountry navigation and self-rescue judgment given remoteness",
+      "Wilderness camping logistics (permit, bear canister, LNT)"
+     ],
+     "experienceLevel": "Solid Class 3-4 scrambler with prior alpine scrambling mileage and comfort with sustained route-finding on talus/ledges far from help; not a beginner objective given the long interior approach"
+    },
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2",
+      "notes": "From Upper Royal Basin, ascend heather and talus to the glacial moraine rim, then drop to snowfields and climb to the ~6,900-6,920 ft col between Mount Clark and Mount Johnson (Surprise Col).",
+      "pitch": "Section 1"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "From the col, ascend a talus slope to the base of the cliffs, then skirt right beneath the cliffs on a wide, southwest-facing ledge for roughly 100 yards — looks exposed but is easy.",
+      "pitch": "Section 2"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Where the cliffs split into a Y-shaped gully system, climb straight up to a large boulder, then veer right to gain a notch on the southeast ridge.",
+      "pitch": "Section 3"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Descend the southeast ridge to an east-facing ledge via a diagonal crack system — exposed but on solid rock.",
+      "pitch": "Section 4"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "Follow the east ledge northward for roughly 50 yards.",
+      "pitch": "Section 5"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Ascend a shallow, loose/rubbly gully to the base of a dihedral ramp.",
+      "pitch": "Section 6"
+     },
+     {
+      "grade": "Class 4 (or Class 3 alt.)",
+      "notes": "Climb the steeply inclined dihedral ramp direct (Class 4), or scramble a broken face on the left as an easier alternative (Class 3).",
+      "pitch": "Section 7"
+     },
+     {
+      "grade": "Class 3-4",
+      "notes": "Ascend a shallow slot through the north face of the summit block to the top — described as \"fun\" with good holds.",
+      "pitch": "Section 8"
+     },
+     {
+      "grade": "Rappel + Class 3-4 downclimb",
+      "notes": "Roughly 60 ft rappel off the summit block, then downclimb the slot and reverse the route back to the col.",
+      "pitch": "Section 9 (descent)"
+     }
+    ],
+    "access": {
+     "fees": "$6 reservation fee plus $8 per person per night (age 16+) for Olympic NP wilderness camping; a Northwest Forest Pass or America the Beautiful interagency pass is required to park at the Upper Dungeness Trailhead.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Approved hard-sided bear canister required for all food/scented items in Royal Basin; camp only in designated sites (Royal Creek, Lower Royal Meadow, Royal Lake, and Upper Basin sites); campfires and wood-burning stoves are prohibited above 3,500 ft, which covers the entire basin; overnight groups capped at 12 people (groups of 7+ must use designated group sites); treat all water.",
+     "permit": "Overnight wilderness camping requires a permit year-round; Royal Basin is a designated 'high demand' quota area (reservation season May 15 - Oct 15) reservable on Recreation.gov for the lower zones, while the Upper Royal Basin zone is booked by phone with the Wilderness Information Center. A day climb with no overnight camping doesn't need an NP wilderness permit, but a parking pass is still required at the trailhead.",
+     "closures": "No standing closures, but Olympic NP periodically imposes wilderness-wide burn bans during dry summers -- check current fire restrictions before the trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Hood Canal Ranger District, Buckhorn Wilderness) for the trailhead and lower approach; Olympic National Park (Daniel J. Evans Wilderness) for Royal Basin and the peak itself",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "NW Forest Pass / America the Beautiful Pass (trailhead parking) plus an Olympic National Park wilderness camping permit for overnight trips",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  }
+ ]
+}

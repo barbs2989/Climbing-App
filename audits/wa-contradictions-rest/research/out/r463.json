@@ -1,0 +1,69 @@
+{"file": "r463.json", "results": [
+ {"id": "wa_remmel_mountain_southeast_slope", "fact": "Total distance", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The Thirtymile line is 12.1 mi on the Chewuch Trail to the Four Point Creek split plus 4.3 mi to the summit, about 16.4 mi one way; another source gives 33.25 mi round trip with ~6,400 ft gain. So dist_km 25.7 (16 mi one-way) and '16+ miles one-way' are both correct, and '25+ miles' round trip is a lower bound that the ~32-33 mi Thirtymile trip (and the shorter Andrews Creek line) satisfy.",
+  "sources": ["https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/", "https://www.theoutbound.com/washington/hiking/backpack-to-remmel-mtn-four-point-lake", "https://www.countryhighpoints.com/remmel-mountain/"],
+  "patches": []},
+ {"id": "wa_remmel_mountain_nw_ridge", "fact": "Trailhead", "verdict": "unresolved",
+  "correct_value": "Thirtymile Trailhead (Chewuch River Trail #510 to Remmel Lake)",
+  "evidence": "The route description and a climbers-log entry for the 2011 ascent both approach from Remmel Lake, hiking in on the Chewuch; the Chewuch Trail from Thirtymile runs almost to Remmel Lake. So the waypoint (Thirtymile) is right and approach_logistics (Andrews Creek) looks wrong. But the TRAILHEAD card's own coordinates are Andrews Creek's, and pin positions are out of scope, so renaming it alone would create a name-vs-coordinate mismatch. Changing it needs a coordinate decision too.",
+  "sources": ["https://www.mountainproject.com/route/109095671/nw-ridge", "https://www.summitpost.org/remmel-mountain/climbers-log/153242", "http://www.willhiteweb.com/pasayten_wilderness/cathedral_lakes/trail_loop_235.htm"],
+  "patches": []},
+ {"id": "wa_remmel_mountain_nw_ridge", "fact": "Approach line to the NW Ridge high camp", "verdict": "fixed",
+  "correct_value": "High camp at ~7,500 ft is reached by a ~2-mile bushwhack south from Remmel Lake; Four Point Lake is the Southeast Slope camp",
+  "evidence": "The route description says to approach from the north with a 2-mile bushwhack up the forested slope due south of Remmel Lake to a timberline high camp on the lower NW Ridge. The climbers-log entry for the 2011 ascent says the party hiked south from Remmel Lake through nearly 2 miles of forest and bog to camp at 7,500 ft on the ridge, and returned to Remmel Lake. Neither mentions Four Point Lake.",
+  "sources": ["https://www.mountainproject.com/route/109095671/nw-ridge", "https://www.summitpost.org/remmel-mountain/climbers-log/153242"],
+  "patches": [
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Approach line to the NW Ridge high camp", "op": "replace_text", "column": "waypoints", "path": [2, "note"], "find": "reached via ridge travel from the Four Point Lake basin.", "replace": "reached by a roughly 2-mile bushwhack south from Remmel Lake."},
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Approach line to the NW Ridge high camp", "op": "replace_text", "column": "waypoints", "path": [1, "note"], "find": "Multiple good campsites with views of Remmel; standard bivy.", "replace": "Multiple good campsites with views of Remmel; the usual camp for the Southeast Slope, not on the Remmel Lake approach to this ridge."}
+  ]},
+ {"id": "wa_remmel_mountain_nw_ridge", "fact": "Rope for the rappels", "verdict": "fixed_internal_plus_one",
+  "correct_value": "A single 50-60 m rope",
+  "evidence": "The route description states a single 50 or 60 m rope is all that is needed. On the row, rope_type (single), rope_length_m (50), pitch_detail[2] (single 50 or 60 m) and rappel_detail (two 15 m rappels, ~30 m total) all agree; the rack line asking for two 60 m or a 70 m, and the hedges in gear[0] and pro_needs, are the outliers.",
+  "sources": ["https://www.mountainproject.com/route/109095671/nw-ridge"],
+  "patches": [
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Rope for the rappels", "op": "set", "column": "rack", "path": [3], "expect": "Two 60m ropes or one 70m rope for rappels", "value": "One 50-60 m single rope for the two short rappels"},
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Rope for the rappels", "op": "set", "column": "gear", "path": [0], "expect": "Rope — a single 50-60 m is reported to cover the rappels, though two 60 m or one 70 m is also recommended", "value": "Rope — a single 50-60 m covers the rappels"},
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Rope for the rappels", "op": "replace_text", "column": "pro_needs", "path": [], "find": "Rope requirements are not settled: some descriptions call a single 50-60 m rope sufficient for the rappels, others recommend two 60 m ropes. Carry doubles if you want the full-length option.", "replace": "A single 50-60 m rope is enough for the short rappels."}
+  ]},
+ {"id": "wa_remmel_mountain_nw_ridge", "fact": "Pitch count", "verdict": "fixed_internal_plus_one",
+  "correct_value": "4 pitches",
+  "evidence": "The route listing gives 4 pitches, and the route description (like the climbers-log entry) says a couple of 5.1-5.2 pitches on each of the two main gendarmes. pitch_detail rows 2 and 3 on the row each say 'a couple of short pitches' per gendarme, i.e. four; pitches=6 counted the two rappel rows, and the overview's 'two short pitches' undercounts.",
+  "sources": ["https://www.mountainproject.com/route/109095671/nw-ridge", "https://www.summitpost.org/remmel-mountain/climbers-log/153242"],
+  "patches": [
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Pitch count", "op": "set", "column": "pitches", "path": [], "expect": 6, "value": 4},
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Pitch count", "op": "replace_text", "column": "overview", "path": [], "find": "with two short 5.1-5.2 pitches over gendarmes", "replace": "with short 5.1-5.2 pitches over two gendarmes"}
+  ]},
+ {"id": "wa_remmel_mountain_nw_ridge", "fact": "Nearest hospital location", "verdict": "fixed",
+  "correct_value": "North Valley Hospital in Tonasket, WA",
+  "evidence": "North Valley Hospital is at 126 S. Whitcomb Ave / 203 S. Western Ave, Tonasket, WA 98855, according to both the hospital's own site and the state hospital association. 'Tonopah, UT' is a corrupted place name.",
+  "sources": ["https://www.nvhospital.org/contact", "https://www.wsha.org/members/north-valley-hospital/", "https://www.healthgrades.com/hospital/north-valley-hospital-1c8b3a"],
+  "patches": [
+   {"id": "wa_remmel_mountain_nw_ridge", "fact": "Nearest hospital location", "op": "replace_text", "column": "emergency", "path": ["nearestHospital"], "find": "North Valley Hospital in Tonopah, UT is further", "replace": "North Valley Hospital in Tonasket, WA is further"}
+  ]},
+ {"id": "wa_robinson_mountain_north_couloir", "fact": "Approach described in the camp notes", "verdict": "bivy_zone_list",
+  "correct_value": null,
+  "evidence": "bivy[0] is the shared Robinson Creek valley camp list, written for the Southeast Ridge (Beauty Creek) line. The valley camps do serve this route, which starts from a camp up the Robinson Creek Trail, but the note's Beauty Creek summit description does not. This is left to the camping clean-up; no bivy patch.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Direction of the ridge from the gap to the summit", "verdict": "fixed_internal_plus_one",
+  "correct_value": "From the gap, follow the ridge north-west to the summit; reverse south-east on descent",
+  "evidence": "The peak's route description says its three main ridges run west, north and southeast from the summit, with the southeast ridge as the standard route, so going from a gap on that ridge to the top means travelling north-west. On the row, the summit pin lies north-west of the trailhead and SE-cirque tarn, approach_variants puts Point 8,280 north-west of the tarn with the summit half a mile further north-west, and 'turn left' after heading north up the scree also means west. Only 'south' (beta, pitch_detail) and 'north' (descent_text) disagree.",
+  "sources": ["https://www.summitpost.org/robinson-mountain/151111", "https://trailcatjim.com/robinson-mountain-southern-pasayten-mountains/"],
+  "patches": [
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Direction of the ridge from the gap to the summit", "op": "replace_text", "column": "beta", "path": [], "find": "then turn left (south) and follow the ridge", "replace": "then turn left (north-west) and follow the ridge"},
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Direction of the ridge from the gap to the summit", "op": "replace_text", "column": "pitch_detail", "path": [4, "notes"], "find": "About 1 mile of ridge crest south to the summit", "replace": "About 1 mile of ridge crest north-west to the summit"},
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Direction of the ridge from the gap to the summit", "op": "replace_text", "column": "descent_text", "path": [], "find": "reverse the ridge scramble north along the crest back to the gap", "replace": "reverse the ridge scramble south-east along the crest back to the gap"}
+  ]},
+ {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Round-trip distance", "verdict": "fixed",
+  "correct_value": "About 14-15 mi round trip (~7 mi one way)",
+  "evidence": "One trip report gives 14 miles round trip with ~6,200 ft gain. Another gives about 15 miles with 6,400 ft gain and loss, split as ~5 mi trailhead-to-tarn-camp plus ~2 mi camp-to-summit. The peak's route description gives 14 mi round trip with 6,100 ft gain. So one way is ~7 mi; the 5.5 mi (8.85 km) header and summit pin and the '11+'/'11-14' round-trip figures are low.",
+  "sources": ["https://havetent.com/2021/07/06/robinson-mountain/", "https://trailcatjim.com/robinson-mountain-southern-pasayten-mountains/", "https://www.summitpost.org/robinson-mountain/151111"],
+  "patches": [
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Round-trip distance", "op": "set", "column": "dist_km", "path": [], "expect": 8.85, "value": 11.3},
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Round-trip distance", "op": "set", "column": "waypoints", "path": [1, "distMi"], "expect": 5.5, "value": 7},
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Round-trip distance", "op": "replace_text", "column": "turnaround", "path": [], "find": "(11+ miles round trip with 6,000+ ft of gain)", "replace": "(about 14 miles round trip with 6,000+ ft of gain)"},
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Round-trip distance", "op": "replace_text", "column": "itinerary", "path": [], "find": "~11-14 miles round trip", "replace": "~14-15 miles round trip"},
+   {"id": "wa_robinson_mountain_southeast_ridge", "fact": "Round-trip distance", "op": "replace_text", "column": "timing", "path": ["recommendedStart"], "find": "long (~11-14 mile) round trip", "replace": "long (~14-15 mile) round trip"}
+  ]}
+]}

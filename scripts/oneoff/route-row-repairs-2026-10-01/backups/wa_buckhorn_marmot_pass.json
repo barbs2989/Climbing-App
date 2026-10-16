@@ -1,0 +1,37 @@
+{
+ "id": "wa_buckhorn_marmot_pass",
+ "name": "Southwest Slope via Marmot Pass",
+ "waypoints": [
+  {
+   "lat": 47.82784,
+   "lng": -123.04064,
+   "elev": 2600,
+   "name": "Upper Big Quilcene Trailhead (Trail #833.1)",
+   "note": "Reached via FR 27 (Big Quilcene River Road) then FR 2750, ~4.75 mi to trailhead;",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 2600,
+   "distFrom": "track",
+   "directions": "From Quilcene, drive US 101 south about 1.5 miles and turn right (west) onto Penny Creek Road. After about 1.5 miles bear left onto Big Quilcene River Road, FR 27, and follow it about 9.25 miles to FR 2750. Turn left and drive about 4.75 miles on this narrow, single-lane road to the Upper Big Quilcene Trailhead at its end, about 2,600 ft. A Northwest Forest Pass is needed to park; no wilderness permit is required for a day trip."
+  },
+  {
+   "lat": 47.825049,
+   "lng": -123.122453,
+   "elev": 6000,
+   "name": "Marmot Pass",
+   "type": "Junction",
+   "distMi": 5,
+   "elevFt": 6000
+  },
+  {
+   "lat": 47.825574,
+   "lng": -123.121867,
+   "elev": 6988,
+   "name": "Buckhorn Mountain (Southwest Summit)",
+   "type": "Summit",
+   "distMi": 6.02,
+   "elevFt": 6988,
+   "distFrom": "track"
+  }
+ ]
+}

@@ -1,0 +1,487 @@
+{
+  "wa_mcmillan_spire_west_southwest_ridge": {
+    "area": "wa_mcmillan_spire_west",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "grade": null,
+        "notes": "Lower-angle alpine rock gaining the ridge crest",
+        "pitch": "P1"
+      },
+      {
+        "grade": null,
+        "notes": null,
+        "pitch": "P2"
+      },
+      {
+        "grade": null,
+        "notes": null,
+        "pitch": "P3"
+      },
+      {
+        "grade": null,
+        "notes": null,
+        "pitch": "P4"
+      },
+      {
+        "grade": null,
+        "notes": "Below the crux; rack up for the final pitch here",
+        "pitch": "P5"
+      },
+      {
+        "grade": "5.8- PG13 (crux)",
+        "notes": "Runout final pitch to the summit; climbing slightly climber's-right of the described line reported as easier",
+        "pitch": "P6"
+      }
+    ],
+    "review": {
+      "findings": [
+        {
+          "claim": "pitch_detail lengthM 60/70/90/90/90/85 m",
+          "verdict": "CONFIRMED",
+          "evidence": "The only route page gives 1,600 ft (485 m), 6 pitches, 5.8-, and defers to a guidebook; it gives no pitch lengths, and no trip report of this ridge was found. The six stored values sum to exactly 485 m, and 85-90 m 'pitches' exceed a single rope length, so they are a back-filled split of the total, not measurements. Dropped all six lengthM keys; nothing else changed.",
+          "sources": [
+            "https://www.mountainproject.com/route/119579098"
+          ]
+        },
+        {
+          "claim": "P6 grade cell '5.8- PG13 (crux)'",
+          "verdict": "UNCLEAR",
+          "evidence": "The 5.8- PG13 last pitch is supported (route grade and a photo caption), but the cell is not a grade token (PG13/crux belong in notes / the crux flag). Left unchanged per the 'nothing else changed' rule; a formatting fix for a later pass.",
+          "sources": [
+            "https://www.mountainproject.com/route/119579098"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_big_kangaroo_kearney_thomas": {
+    "area": "wa_big_kangaroo",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "grade": null,
+        "notes": "Lower southeast-buttress crack/corner pitch.",
+        "pitch": "P1"
+      },
+      {
+        "grade": null,
+        "notes": "Crack system continues up the buttress.",
+        "pitch": "P2"
+      },
+      {
+        "grade": null,
+        "notes": "Variable rock quality per the original FA account.",
+        "pitch": "P3"
+      },
+      {
+        "grade": null,
+        "notes": "Follows crack systems left of a large slot high on the face.",
+        "pitch": "P4"
+      },
+      {
+        "grade": null,
+        "notes": "Continued buttress climbing.",
+        "pitch": "P5"
+      },
+      {
+        "grade": null,
+        "notes": "Upper buttress terrain leading toward the crux.",
+        "pitch": "P6"
+      },
+      {
+        "grade": "5.11a (crux, finger crack)",
+        "notes": "Sustained, well-protected finger crack; the route's technical crux.",
+        "pitch": "P7"
+      }
+    ],
+    "review": {
+      "findings": [
+        {
+          "claim": "pitch_detail lengthM 39 m x6 + 40 m",
+          "verdict": "CONFIRMED",
+          "evidence": "No source gives pitch lengths. The values are length_m (274) divided evenly across 7 pitches. Sources give only whole-route facts (III 5.11a, 7-8 pitches, a 5.11 finger-crack crux), and one repeat notes there are 'more pitches than described' in the guidebook. Dropped all lengthM keys; nothing else changed.",
+          "sources": [
+            "https://waynewallace.wordpress.com/2017/07/09/liberty-traverse-skinny-start-big-kangaroo/",
+            "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under"
+          ]
+        },
+        {
+          "claim": "filler notes on P1, P2, P5, P6 and the 'P7 crux' placement (REPORT ONLY, not rewritten)",
+          "verdict": "UNCLEAR",
+          "evidence": "P3 ('variable rock quality') and P4 ('crack systems left of a large slot high on the face') paraphrase the FA account already in the row's beta, so they have a basis, though pinning them to P3/P4 specifically does not. P1/P2/P5/P6 are generic filler with no source. The crux position is not established: the 4-pitch Skinny Start is described as joining 'the finger crack 5.11a pitch' of the route, and a 2012 party joined the line and 'finished with a 5.11 fingers variation' - neither puts the finger crack on P7. A human should consider clearing the P1-P6 filler and the P7 crux flag.",
+          "sources": [
+            "https://waynewallace.wordpress.com/2017/07/09/liberty-traverse-skinny-start-big-kangaroo/",
+            "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_cashmere_mountain_se_route": {
+    "area": "wa_cashmere_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "grade": "Class 2-3",
+        "notes": "Broad gully; stay center/right for the easiest class-2 line",
+        "pitch": "Lower S/SE gully"
+      },
+      {
+        "grade": "Class 3 (3-4 on climbers-left)",
+        "notes": "The gully tops out around 8,150 ft; the 8,514 ft summit is roughly 360 ft above",
+        "pitch": "Upper gully headwall"
+      }
+    ],
+    "set": {
+      "beta": "From the Eightmile Trail, cut cross-country up through an old burn zone, then continue up and left toward the gully between the S and SE ridges. The S/SE gully is wide and offers a 'choose your own adventure' character: the center/right line is mostly class 2, while the climbers-left side holds solid class 3-4 rock. The gully tops out at roughly 8,150 ft, about 360 vertical feet below the 8,514 ft summit. This line cuts the standard 8-9 mile one-way West Ridge approach roughly in half."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "pitch_detail lengthM 70 m / 41 m",
+          "verdict": "CONFIRMED",
+          "evidence": "No source gives section lengths for the gully; the 111 m total (= length_m) is also far short of a gully that tops out ~360 ft below an 8,514 ft summit after a long cross-country climb. Dropped both lengthM keys; nothing else changed.",
+          "sources": [
+            "https://climberkyle.com/2017/06/11/mt-cashmere-se-route/",
+            "https://www.summitpost.org/se-route/990512"
+          ]
+        },
+        {
+          "claim": "beta: 'The gully steepens into its class-3 crux above roughly 8,150 ft'",
+          "verdict": "CONFIRMED",
+          "evidence": "The only source that gives 8,150 ft puts it at the TOP of the gully, where the line leaves the gully and trends left (northwest) toward the summit - not where the gully steepens into a crux. Other accounts give no elevation and describe the gully as mostly class 2-3, harder if you stray left. Corrected only that clause (kept the 360 ft / 8,514 ft figures, which are consistent with it). Confidence medium: one source for the elevation, read via search excerpt (page returns 403).",
+          "sources": [
+            "https://www.summitpost.org/se-route/990512",
+            "https://climberkyle.com/2017/06/11/mt-cashmere-se-route/"
+          ]
+        },
+        {
+          "claim": "pitch_detail 'Upper gully headwall' note 'Steepens above roughly 8,150 ft to the summit' (NOT changed - pitch_detail edits here are limited to lengthM)",
+          "verdict": "CONFIRMED",
+          "evidence": "Same error as the beta clause; a human should reword it (the gully tops out near 8,150 ft) in a later pitch_detail pass.",
+          "sources": [
+            "https://www.summitpost.org/se-route/990512"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_adams_northwest_ridge": {
+    "area": "wa_mount_adams",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "grade": "AI1-2, snow/ice",
+        "notes": "Lower west face of the North Ridge.",
+        "pitch": "1"
+      },
+      {
+        "grade": "AI1-2, snow/ice",
+        "notes": null,
+        "pitch": "2"
+      },
+      {
+        "grade": "AI1-2, up to 50°",
+        "notes": "Steepest sustained section.",
+        "pitch": "3"
+      },
+      {
+        "grade": "AI1-2, snow/ice",
+        "notes": null,
+        "pitch": "4"
+      },
+      {
+        "grade": "AI1-2, snow/ice",
+        "notes": "Tops out to join the North Ridge crest.",
+        "pitch": "5"
+      }
+    ],
+    "review": {
+      "findings": [
+        {
+          "claim": "pitch_detail five lengthM 121/121/121/121/122 m",
+          "verdict": "CONFIRMED",
+          "evidence": "The matching route page gives 2,000 ft (606 m) and 5 pitches, no pitch lengths; the stored values are length_m (610) split five ways, and 121 m is not a rope length. Dropped all lengthM keys; nothing else changed.",
+          "sources": [
+            "https://www.mountainproject.com/route/119565020/north-ridge-west-face"
+          ]
+        },
+        {
+          "claim": "IDENTITY (report only): which route does this row describe?",
+          "verdict": "CONFIRMED",
+          "evidence": "Every stored field except the NAME matches Mountain Project's 'North Ridge (West Face)': Grade III, AI1-2 steep snow, 2,000 ft, 5 pitches, 'up to 50 degrees', the picket / ice screw / thin pins / two tools rack (the row's beta is near-verbatim), FA Molenaar, Johnson, Ostro, Startzell, September 1960. It is NOT the Northwest Ridge (an unroped snow-and-talus ridge on the Adams Glacier side to the Pinnacle) and NOT the North Face of the NW Ridge (AI2-3, 2,000 ft, FA Givler/LeBlond/McGowan 1967). wa_mount_adams_north_ridge exists and is the standard North Ridge, a different route; no row by the ids wa_mount_adams_north_ridge_west_face / _north_face_of_northwest_ridge exists. Recommend renaming this row 'North Ridge (West Face)'.",
+          "sources": [
+            "https://www.mountainproject.com/route/119565020/north-ridge-west-face",
+            "https://www.mountainproject.com/route/125742502/north-face-of-nw-ridge",
+            "https://www.summitpost.org/northwest-ridge/158220"
+          ]
+        }
+      ],
+      "classification": {
+        "name": {
+          "proposed": "North Ridge (West Face)",
+          "evidence": "Grade, length, pitch count, rack, angle and FA party/date all match Mountain Project route 119565020 of that name; 'Northwest Ridge' is a different route on Adams. The row's own overview and beta already say 'west face of the North Ridge'."
+        },
+        "grade": {
+          "proposed": "Grade III, AI1-2",
+          "evidence": "Mountain Project 119565020: Grade III, AI1-2 steep snow, slopes up to 50 degrees; the row's own pitch cells say AI1-2 up to 50°."
+        }
+      }
+    }
+  },
+  "wa_direct_north_buttress": {
+    "skip_reason": "classification only - no prose correction in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "discipline 'mountaineering' for a Grade V 21-pitch 5.10- rock route",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project lists it as Trad/Alpine, 5.10-, Grade V, 2,200 ft, 21 pitches of 'stellar rock'; the AAJ account and a detailed trip report describe a technical rock buttress (seven hard 5.10 pitches on the lower buttress). Snow is only on the approach. It is an alpine rock route.",
+          "sources": [
+            "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+            "http://publications.americanalpineclub.org/articles/12198112000/Bear-Mountains-Forgotten-Face",
+            "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/"
+          ]
+        },
+        {
+          "claim": "which peak",
+          "verdict": "REFUTED",
+          "evidence": "Filed on wa_bear_mountain_chilliwack (Bear Mountain, Chilliwack Range) - correct: the route is on the north side of Bear Mountain in the Chilliwack Range near the Canadian border (MP coordinates 48.930, -121.341).",
+          "sources": [
+            "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+            "http://publications.americanalpineclub.org/articles/12198112000/Bear-Mountains-Forgotten-Face"
+          ]
+        }
+      ],
+      "classification": {
+        "discipline": {
+          "proposed": "alpine",
+          "evidence": "Grade V, 21-pitch 5.10- trad rock route (MP: Trad, Alpine). Also stops bare-numbered pitch rows rendering as travel stages."
+        }
+      }
+    }
+  },
+  "wa_colfax_peak_fords_theatre": {
+    "skip_reason": "classification only - no prose correction in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade is null",
+          "verdict": "CONFIRMED",
+          "evidence": "The first-ascent report grades it AI4+, 500 ft (three pitches of steep ice, then snow gullies, finishing on the last 100 ft of the Cosley-Houston). The commitment grade III and the WI4+ spelling come only from the earlier agent's summary of a route page I could not locate; not independently confirmed, so not proposed.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/13201213714/Colfax-Peak-North-Face-Fords-Theatre"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "AI4+",
+          "evidence": "FA report (AAJ): 'AI4+, 500''. Only one primary source found; commitment grade not verified, so omitted."
+        }
+      }
+    }
+  },
+  "wa_south_early_winter_spire_southwest_couloir": {
+    "skip_reason": "classification only - no prose correction in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade is null",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project: Moderate Snow, 600 ft; wide section 25-30°, narrowing to 40-50°, low 5th-class summit move. North Cascade Mountain Guides: Grade I, snow and occasionally ice to 50°. SummitPost (search excerpt) calls it grade II snow/ice to 50° with rock to class 4. Commitment grade I vs II differs by source.",
+          "sources": [
+            "https://www.mountainproject.com/route/108102127/southwest-couloir",
+            "https://ncmountainguides.com/routes/climbing-routes/south-early-winter-spire-southwest-couloir",
+            "https://www.summitpost.org/south-early-winters-spire/150417"
+          ]
+        },
+        {
+          "claim": "pitches is null",
+          "verdict": "REFUTED",
+          "evidence": "No source gives a roped pitch count - the couloir is described in sections, often climbed unroped. Null is the honest value; no change proposed.",
+          "sources": [
+            "https://www.mountainproject.com/route/108102127/southwest-couloir"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Grade I, snow to 50°, low 5th",
+          "evidence": "MP (Mod. Snow, 40-50° in the narrows, low 5th exit move) and NCMG (Grade I, snow/ice to 50°). SummitPost says grade II; a reviewer may prefer 'Grade I-II'."
+        }
+      }
+    }
+  },
+  "wa_mount_adams_mazama_glacier_headwall": {
+    "skip_reason": "classification only - no prose correction in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade is null",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project: Steep Snow; 40° glacier, 45° headwall, optional 40-ft 60-70° snow/ice step at Piker's Peak; FA unknown; no commitment grade. theCrag: Class 2 to Class 4. No source gives a Grade I/II number.",
+          "sources": [
+            "https://www.mountainproject.com/route/107760356/mazama-glacier-headwall",
+            "https://www.thecrag.com/climbing/united-states/central-cascade-mountains/route/14396035"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Steep snow, glacier to 45°",
+          "evidence": "MP rates it Steep Snow with a 40-45° glacier/headwall; the optional 60-70° step is a variation and already in the beta prose. No source gives a commitment grade, so none proposed."
+        }
+      }
+    }
+  },
+  "wa_cardinal_peak_nw_couloir_north_ridge": {
+    "skip_reason": "classification only - no prose correction in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade is null",
+          "verdict": "UNCLEAR",
+          "evidence": "WTA rates the Cardinal Peak climb 'Class 3 ... exposed scrambling' without naming the line; one trip report names Northwest Couloir-North Ridge as its route with no class rating; other reports describe snow then slab moves / Class 3 scrambling. The row's own climbing_route sections top out at Class 3. Consistent with Class 3, but no source grades this specific line.",
+          "sources": [
+            "https://www.wta.org/go-hiking/hikes/cardinal-peak",
+            "https://trailcatjim.com/milham-pass-traverse-cardinal-peak-emerald-peak-saska-peak-pinnacle-mountain/",
+            "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 3",
+          "evidence": "Low confidence: WTA gives Class 3 for the peak's scramble; the route's own section grades top out at Class 3; no source grades the NW couloir-north ridge line by name. A reviewer may prefer to leave it null."
+        }
+      }
+    }
+  },
+  "wa_dome_peak_dome_glacier": {
+    "skip_reason": "all findings REFUTED/UNCLEAR - see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade 'Class 4, Glacier, 5.5' - any source for 5.5?",
+          "verdict": "UNCLEAR",
+          "evidence": "Mountain Project gives 4th class, Grade II, 450 ft, and calls the cheval exposed but not hard. But a Dome Peak route description (surfaced in search excerpts from SummitPost/Mountaineers pages that return 403) says the traverse east along the summit ridge to the true summit is 'mainly low Class 5 but finishes with a 5.5 crack'. So the 5.5 does have a source, for the final traverse to the true summit; sources split between 4th class and low 5th/5.5. Not a clear error.",
+          "sources": [
+            "https://www.mountainproject.com/route/116652285/dome-glacier",
+            "https://www.summitpost.org/dome-peak/150357",
+            "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier"
+          ]
+        },
+        {
+          "claim": "pitches=3 and length_m=427",
+          "verdict": "UNCLEAR",
+          "evidence": "MP gives 450 ft (136 m) for the technical route; the row's own descent text gives ~300 ft snow + ~500 ft arête. No source gives 3 pitches. Not verified either way; no proposal.",
+          "sources": [
+            "https://www.mountainproject.com/route/116652285/dome-glacier"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_lincoln_peak_standard": {
+    "skip_reason": "all findings REFUTED/UNCLEAR - see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade 'III-IV'",
+          "verdict": "UNCLEAR",
+          "evidence": "No source found gives a commitment grade. The most detailed trip report rates its ascent AI3+ (crux: 70-85° snow up a serac face at the bergschrund); other reports give no grade. 'III-IV' is unsupported but not disproven; one party's AI3+ is too thin to replace it.",
+          "sources": [
+            "https://www.lemkeclimbs.com/lincoln-peak.html",
+            "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir"
+          ]
+        },
+        {
+          "claim": "pitches=2",
+          "verdict": "REFUTED",
+          "evidence": "The detailed report roped up for exactly two 60 m pitches on the final 50° gully (by choice; everything below was soloed). pitches=2 is sourced, though it reflects one party's decision.",
+          "sources": [
+            "https://www.lemkeclimbs.com/lincoln-peak.html"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_eldorado_peak_east_ridge": {
+    "skip_reason": "classification only - no prose correction in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade 'Grade II, Class 3, glacier' for a steep exposed snow arête",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project grades it Grade II, Easy Snow, with a corniced knife-edge summit ridge and a rack of crampons, axe, pickets and glacier gear; the guide service describes a moderate glacier climb finishing on a knife-edge snow crest. 'Class 3' is a rock-scramble rating and no source applies it; the row's own descent text describes 40-45°+ flanks needing axe and crampons.",
+          "sources": [
+            "https://www.mountainproject.com/route/108131635/east-ridge",
+            "https://ncmountainguides.com/routes/climbing-routes/eldorado-peak-east-ridge"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Grade II, easy snow, glacier",
+          "evidence": "MP: Grade II, Easy Snow; NCMG: moderate glacier climb, knife-edge snow crest. Drops the unsupported 'Class 3'."
+        }
+      }
+    }
+  },
+  "wa_mount_stuart_north_face": {
+    "skip_reason": "identity question - report only",
+    "review": {
+      "findings": [
+        {
+          "claim": "IDENTITY: does a 'North Face' route (IV 5.8 AI2) exist on Mount Stuart?",
+          "verdict": "REFUTED",
+          "evidence": "No. Mountain Project's full Mt Stuart list (15 routes: North Ridge, Direct North Ridge, Ice Cliff Glacier AI2-3, Stuart Glacier Couloir WI2-3 M5-, Girth Pillar, Gorillas in the Mist, Sherpa Glacier, South Headwall 5.8, etc.) has no 'North Face' and nothing graded 5.8 with AI2. The row's own beta already says no such route is known; the grade column holds only '5.8', with no pitches or length. The row describes no climb - candidate for deletion (human decision).",
+          "sources": [
+            "https://www.mountainproject.com/area/105996601/mt-stuart",
+            "https://www.summitpost.org/mount-stuart/150353"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_big_four_mountain_tower_route": {
+    "skip_reason": "identity/classification question - report only",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored grade 5.9 vs AAJ NCCS IV F7",
+          "verdict": "CONFIRMED",
+          "evidence": "The 1972 AAJ note for the Guydelkon/Miller Tower Route (the climb this row's beta and FA describe) rates it NCCS IV, F7 (= 5.7), 4,000 ft. No source gives 5.9 for it. The 5.9+/10a figure belongs to the separate Direct Tower Route (13 pitches, first tower only), found by the earlier agent in a 2005 trip report; the 5.9 was likely conflated from that line.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12197211404/North-America-United-States-WashingtonCascade-Mountains-Big-Four-Tower-Route",
+            "https://www.summitpost.org/big-four-mountain/152569"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "IV 5.7",
+          "evidence": "AAJ 1972: NCCS IV, F7. One primary source, but it is the FA party's own report and nothing supports 5.9 for this line."
+        }
+      }
+    }
+  },
+  "wa_forbidden_peak_east_ledges": {
+    "skip_reason": "identity question - report only",
+    "review": {
+      "findings": [
+        {
+          "claim": "IDENTITY: is the East Ledges a climbable ascent route or only a descent?",
+          "verdict": "UNCLEAR",
+          "evidence": "Both. SummitPost has a dedicated East Ledges route page treating it as an ascent ('technically probably the easiest route to the summit', with a small-rack recommendation for ascending), while noting it is mostly unprotectable and usually used as the descent after the West Ridge / East Ridge Direct. So a separate row is defensible, but the row's own overview and approach call it 'not a recommended ascent line' reached 'only from the summit', framing it purely as a descent. Human decision whether to keep it as a route; if kept, that framing should be reconciled.",
+          "sources": [
+            "https://www.summitpost.org/east-ledges/166482",
+            "https://www.mountainproject.com/route/107244142/east-ridge-direct"
+          ]
+        }
+      ]
+    }
+  }
+}

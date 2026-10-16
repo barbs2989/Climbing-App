@@ -1,0 +1,147 @@
+[
+  {
+    "id": "wa_bonanza_peak_north_ridge",
+    "name": "North Ridge",
+    "mixed": [
+      {
+        "sibling": "wa_bonanza_peak_mary_green_glacier",
+        "sentence": "This line is the peak's standard east-side route: roped travel up the Mary Green Glacier, then loose Class 3-4 scrambling through a gully/rib system to a notch on the upper northeast ridge and a short, exposed crest to the summit",
+        "why": "Describes the Mary Green Glacier standard route (glacier, gully/rib to the notch on the upper NE ridge) as this page's line; the sibling page's beta is the same climb.",
+        "column_guess": "overview",
+        "fix": "DELETE"
+      },
+      {
+        "sibling": "wa_bonanza_peak_mary_green_glacier",
+        "sentence": "Cross the Mary Green Glacier to the rock, weave between the two gully/rib lines to the notch on the upper ridge, and follow the crest to the summit",
+        "why": "This is the Mary Green Glacier route's ascent, step for step; nothing on the page describes a north ridge.",
+        "column_guess": "beta",
+        "fix": "DELETE"
+      },
+      {
+        "sibling": "wa_bonanza_peak_mary_green_glacier",
+        "sentence": "[{\"grade\":\"Roped glacier travel, moderate snow\",\"notes\":\"Ascend along the north edge of the Mary Green Glacier; watch for crevasses/bergschrund",
+        "why": "The route breakdown's first stage is the Mary Green Glacier route's (sibling beta: 'ascend Mary Green Glacier bearing west along its north edge').",
+        "column_guess": "pitch_detail",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "The whole page (overview, beta, breakdown) is the Mary Green Glacier standard route under the name North Ridge. It needs a real North Ridge description, or it should be merged into the Mary Green Glacier page."
+  },
+  {
+    "id": "wa_johannesburg_mountain_northeast_buttress",
+    "name": "Northeast Buttress",
+    "mixed": [
+      {
+        "sibling": "wa_johannesburg_mountain_northeast_rib_1951_route",
+        "sentence": "Historically climbed as the 'direct route' up the Northeast Rib of the North Face — first done by David Harrah and Tom Miller in 1951",
+        "why": "This is the history of the sibling Northeast Rib (1951 Route), a separate page. The fa field repeats it ('1951 left/original rib ... Western Rib variation 1957'), which is also the Rib page's own 1951/1957 history.",
+        "column_guess": "beta",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "The beta and fa give this route the Northeast Rib's 1951/1957 history, so the two pages read as one route."
+  },
+  {
+    "id": "wa_colchuck_peak_east_ridge",
+    "name": "East Ridge (Non-Technical)",
+    "mixed": [
+      {
+        "sibling": "wa_colchuck_peak_colchuck_glacier",
+        "sentence": "From Colchuck Lake, climb the Colchuck Glacier (axe and crampons; about 40-degree snow just below the col) to the col between Colchuck and Dragontail, which is the base of the ridge",
+        "why": "The page's climbing is the Colchuck Glacier route (40-degree snow below the col, then the scramble above the col), and its fa is the Colchuck Glacier route's 1948 Johnson/Long party. The page duplicates the sibling rather than describing a separate line.",
+        "column_guess": "beta",
+        "fix": "Start from the Colchuck-Dragontail col, reached as for the Colchuck Glacier route; this is the base of the ridge."
+      }
+    ],
+    "identity_problem": "Its fa and its ascent are those of the Colchuck Glacier route (whose own beta already ends with the 3rd-class scramble from the col). It is probably the same route as the Colchuck Glacier page."
+  },
+  {
+    "id": "wa_frying_pan_whitman_glaciers",
+    "name": "Frying Pan / Whitman Glaciers",
+    "mixed": [
+      {
+        "sibling": "wa_little_tahoma_east_shoulder",
+        "sentence": "modern route guides describe \"Fryingpan/Whitman Glaciers\" and \"East Shoulder\" as the same standard route — same Summerland approach, same Whitman Notch crossing, same Class 3-4 summit block — first climbed August 29, 1894 by J.B. Flett and Henry H. Garrison",
+        "why": "The page says it is the East Shoulder route, which has its own page with the same fa and the same ascent.",
+        "column_guess": "overview",
+        "fix": "DELETE"
+      },
+      {
+        "sibling": "wa_little_tahoma_east_shoulder",
+        "sentence": "See the East Shoulder route entry on this peak for the closely related (likely identical) line",
+        "why": "This is a pipeline cross-reference that points the reader to another page, and it admits the two pages may be one route.",
+        "column_guess": "overview",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "Duplicate of East Shoulder (same approach, crossing, summit block and FA). The two pages should be merged."
+  },
+  {
+    "id": "wa_baring_mountain_south_route",
+    "name": "South Route",
+    "mixed": [
+      {
+        "sibling": "wa_baring_mountain_northwest_ridge",
+        "sentence": "Note that this route and the Northwest Ridge route describe the same physical climbers' path up the west side of the mountain; the naming differs by source, the ground does not",
+        "why": "The approach card says this page is the Northwest Ridge route, and the Northwest Ridge page agrees ('also called the South Scramble ... they are the same line').",
+        "column_guess": "approach_variants",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "The same route as Northwest Ridge (by both pages' own account). The two pages should be merged."
+  },
+  {
+    "id": "wa_garfield_mountain_scramble",
+    "name": "Multi-Summit Scramble",
+    "mixed": [
+      {
+        "sibling": "wa_garfield_mountain_south_route",
+        "sentence": "10c sport route Infinite Bliss on the West Peak's south face, with the classic South Route (first ascended August 27, 1940 by Jim Crooks and Judson Nelson) involving sustained, loose Class 4 and low-5th-class terrain, extremely loose rock, and about eight rappels, six of them double-rope, on the way down",
+        "why": "The page's beta (dirt gully, Razorback, Glade Saddle, Key Ledge Traverse, Y Notch, #2 Gully, Chimney Variation) and fa (Crooks/Nelson 1940) are the South Route's, step for step. Nothing on the page covers a multi-summit scramble.",
+        "column_guess": "overview",
+        "fix": "Documented lines range from the 5.3 Southwest Ledges to the 23-pitch 5.10c sport route Infinite Bliss on the West Peak's south face."
+      }
+    ],
+    "identity_problem": "The beta and fa are a copy of the South Route (Main Peak). This page is the South Route under another name."
+  },
+  {
+    "id": "wa_huckleberry_mountain_west_route",
+    "name": "West Route",
+    "mixed": [
+      {
+        "sibling": "wa_huckleberry_mountain_east_ridge",
+        "sentence": "The mountain's original (and for decades only) route climbs class 3-4 terrain along the ridge crest with a short, exposed low-5th-class step to top out the summit block; two later technical lines — a 5.7 South Face and a 5.6 West Face first climbed in 2001 — are more sustained rock routes",
+        "why": "The beta describes the East Ridge (the 1915 original ridge-crest line with the low-5th summit step) and lists the South Face. The page's own overview says the West Route is the west-side gully, and its fa (Hehn/Stephens 2001) belongs to the 5.6 West Face the beta lists as a different line.",
+        "column_guess": "beta",
+        "fix": "The West Route climbs the older west-side gully to the shared summit block; it is now less favored because of rockfall. Nearly all parties bring a rope and light rack to protect and rappel the final block."
+      }
+    ],
+    "identity_problem": "The overview says West Route = Beckey's west gully, the fa is the 2001 West Face, and the beta describes the East Ridge."
+  },
+  {
+    "id": "wa_gunrunner",
+    "name": "Gunrunner",
+    "mixed": [
+      {
+        "sibling": "wa_east_face",
+        "sentence": "Middle Gunsight's east face is a known technical objective once on the ridge; expect a multi-day glaciated approach with route-finding and bushwhacking, not a drive-up or short-trail access",
+        "why": "The approach was written for the Middle Gunsight East Face route ('Middle Peak shares the same approach as South Peak'). Gunrunner is a traverse of all four Gunsight summits and ends with a rappel onto the Blue Glacier.",
+        "column_guess": "approach",
+        "fix": "Expect a multi-day glaciated approach with route-finding and bushwhacking, not a drive-up or short-trail access."
+      }
+    ]
+  },
+  {
+    "id": "wa_luna_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "mixed": [
+      {
+        "sibling": "wa_south_ridge_2",
+        "sentence": "\",\"pitch\":\"South ridge\"},{\"grade\":\"Class 3-4\",\"notes\":\"~500 ft of loose, exposed ridge from the false summit to the true summit; one party reported a ~15 ft Class 4 chimney off the false summit followed by narrow ledges",
+        "why": "The route breakdown has a stage named 'South ridge' ('broad ridge scramble from Luna Pass to the false summit'), which is the South Ridge route's own first stage. The South Ridge page says the Southeast Slopes line continues the southeast-snowfield traverse instead, and this page's own baseFinding says it 'contours where the south ridge climbs'. The breakdown climbs the sibling.",
+        "column_guess": "pitch_detail",
+        "fix": "Southeast slopes: from Luna Pass, continue the traverse across the southeast snowfield and slopes to the false summit (Class 2-3), not up the broad south ridge."
+      }
+    ]
+  }
+]

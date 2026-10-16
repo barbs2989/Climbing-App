@@ -1,0 +1,365 @@
+{
+ "file": "r103.json",
+ "results": [
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Route difficulty (5.6 vs class 3/4)",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 scramble with a few low fifth-class moves where the line leaves the Degenhardt-Pyramid ridge; no 5.6 pitch on the standard line (the II 5.8 line is the separate east-side alternative).",
+   "evidence": "A detailed trip report of the Degenhardt-to-Pyramid line calls it 3rd and 4th class scrambling with a few moves of low 5th to leave the ridge. A second party's report names the route the West Ridge and grades it Class 3, an easy scramble. The only 5.8 figure found belongs to the harder east-side line climbed during the Southern Picket enchainment, already described in pro_tips as the alternative.",
+   "sources": [
+    "https://malclimbs.com/2019/08/22/the-picket-range/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Route difficulty (5.6 vs class 3/4)",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade III, 5.6",
+     "value": "Grade III, low 5th class"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Route difficulty (5.6 vs class 3/4)",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "with a short 5.6 step",
+     "replace": "with a few low fifth-class moves"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Route difficulty (5.6 vs class 3/4)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "5th class rock climbing to 5.6 on loose/choss rock",
+     "replace": "Class 3-4 scrambling with a few low 5th-class moves on loose/choss rock"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Route difficulty (5.6 vs class 3/4)",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "covers the short 5.6 step",
+     "replace": "covers the few low fifth-class moves"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Which side the route climbs",
+   "verdict": "fixed",
+   "correct_value": "The line leaves the Degenhardt-Pyramid ridge onto Pyramid's west side (West Ridge); aspect W is correct.",
+   "evidence": "One report names the climb the Pyramid West Ridge, reached from the notch after climbing Degenhardt. Another describes crossing the ridge from Degenhardt and making a few low 5th moves to leave the ridge and start up Pyramid, i.e. from the west, where Degenhardt sits. The row's face, aspect, approach variant and summit waypoint all agree; only the beta's 'south side' is out of line.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://malclimbs.com/2019/08/22/the-picket-range/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Which side the route climbs",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "traverse east to the base of Pyramid's south side",
+     "replace": "traverse east along the connecting ridge onto Pyramid's west side"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Rappel on descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The two reports of the West Ridge found do not mention any rappel off Pyramid (one calls it an easy scramble; the other does not detail the descent). No external source confirms or denies a standard short rappel, so the descent/itinerary rappel versus rappels 'None standard' cannot be settled from outside the row.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://malclimbs.com/2019/08/22/the-picket-range/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Glacier travel and required kit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One party reports getting onto a glacier on the way to the Barrier crossing and crossing sagging snow bridges; a solo climber found a small glacier at the top of the snow and bypassed it on rock; another report describes the Barrier crossing only as loose Class 3 without mentioning rope or crampons. Glacier ice exists near the crossing but whether roped glacier kit is required (versus avoidable, season-dependent) is not settled by two agreeing sources.",
+   "sources": [
+    "https://malclimbs.com/2019/08/22/the-picket-range/",
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Approach length in days",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin is normally reached in one long day (about 5.5-7 hours); the trip is 3 days overall.",
+   "evidence": "One report times the trailhead-to-Terror-Basin hike at 7 hours on day one; another arrived at the ~5,800 ft camp by noon after a 6:30 AM start (about 5.5 hours); a third party also reached its basin camp on the first day. None describe a two-day approach as the norm.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://malclimbs.com/2019/08/22/the-picket-range/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Approach length in days",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "the ~2-day approach doesn't justify",
+     "replace": "the long approach doesn't justify"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Approach length in days",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Fit parties can make Terror Basin in one long day; most plan on two.",
+     "replace": "Most parties reach Terror Basin in one long day of roughly 6-7 hours."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Approach length in days",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Fit parties reach the basin in one long day; most take two.",
+     "replace": "Most parties reach the basin in one long day."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Approach length in days",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Multi-day approach (typically 1-2 days in to Terror Basin/Crescent Creek Basin)",
+     "replace": "Multi-day trip (typically one long day in to Terror Basin, then the Barrier crossing toward Crescent Creek Basin)"
+    }
+   ],
+   "note": "bivy[0].notes also calls one-day arrival 'genuinely contested'; left untouched per the bivy rule."
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Permit fee",
+   "verdict": "fixed",
+   "correct_value": "The park wilderness permit costs $10 per person plus a $6 fee (15 and under free); it is not free.",
+   "evidence": "The park's permit page states permits cost $10 per person plus a $6 fee, youth 15 and under free, and walk-up permits cost the same. An independent Pacific Northwest permit guide gives the same $10 per person plus a non-refundable $6 fee. The $6 is not limited to advance reservations, so access.fees is also adjusted.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Permit fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "a $6 reservation fee for advance Recreation.gov permits",
+     "replace": "a $6 fee"
+    }
+   ],
+   "note": "The word 'Free' in the permit column is removed by the permit rewrite under the next result."
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "How the Terror Basin permit is obtained",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin and Crescent Creek Basin are walk-up-only cross-country zones: the permit is picked up in person at the Marblemount Wilderness Information Center the day of or the day before; not reservable in advance and not self-issued at the trailhead.",
+   "evidence": "The park's cross-country zone page says only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and all remaining zones (Terror Basin and Crescent Creek are listed, 6 per party) are walk-up only. A 2025 party report describes picking up its Terror Basin cross-country permit at the Marblemount WIC when it opened. An older report records a ranger telling a climber that a registration form left at the trailhead was not a substitute for a permit.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-05.193953014088",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free NPS wilderness/backcountry permit required for any overnight stay in Terror Basin or Crescent Creek Basin; reserve in advance on Recreation.gov or obtain a walk-up permit at the Marblemount Wilderness Information Center.",
+     "replace": "NPS wilderness/backcountry permit required for any overnight stay in Terror Basin or Crescent Creek Basin; both are walk-up-only cross-country zones, so pick the permit up in person at the Marblemount Wilderness Information Center the day of or the day before your trip."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Reserve in advance on Recreation.gov, watch the mandatory rules/safety video, and email noca_wilderness@nps.gov no more than 3 days before your trip to confirm; or get a walk-up permit in person the day of/before your trip (NPS holds about 40% of sites for walk-ups). Southern Pickets camps fall under the Terror Basin and Crescent Creek Basin cross-country zones.",
+     "replace": "Southern Pickets camps fall under the Terror Basin and Crescent Creek Basin cross-country zones, which cannot be reserved in advance: get a walk-up permit in person at the Marblemount Wilderness Information Center the day of or the day before your trip."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable",
+     "replace": "Park-wide, 60% of sites are reservable"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "the remaining 40% are walk-up,",
+     "replace": "the remaining 40%, and every site in the Terror Basin and Crescent Creek Basin zones, are walk-up,"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "These zones cannot be reserved in advance; walk-up permits are issued in person at the Marblemount Wilderness Information Center the day of or the day before."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Reserve your Terror Basin/Crescent Creek Basin wilderness permit as early as Recreation.gov allows -- Southern Pickets zone dates in August fill quickly.",
+     "replace": "Terror Basin/Crescent Creek Basin permits are walk-up only -- be at the Marblemount Wilderness Information Center early, since each zone takes only a handful of parties."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue North Cascades NP wilderness permit required for overnight camping in Terror Basin.",
+     "replace": "a North Cascades NP wilderness permit, picked up in person at Marblemount beforehand, is required for overnight camping in Terror Basin."
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "How the Terror Basin permit is obtained",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Fill out a self-issue North Cascades wilderness permit here before you leave the car",
+     "replace": "Carry the North Cascades wilderness permit you picked up in Marblemount"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Road seasonal status",
+   "verdict": "fixed",
+   "correct_value": "No seasonal closure: SR-20 is open year-round through Newhalem and Goodell Creek Campground is open all year.",
+   "evidence": "Winter closure of SR-20 starts at the Ross Dam trailhead (milepost 134) and at most falls back to the Newhalem gate at milepost 120, east of Goodell Creek; the western approach through Newhalem stays open (the 2026 repair closure is also east, MP 130-156.8). The park lists Goodell Creek Campground, at the trailhead spur, as open year-round.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://www.nps.gov/noca/planyourvisit/goodell-creek-campground.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Road seasonal status",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Seasonal",
+     "value": "Open year-round"
+    },
+    {
+     "id": "wa_the_pyramid_picket_south_route",
+     "fact": "Road seasonal status",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "Winter closures",
+     "value": "None; SR-20 stays open to Newhalem all winter"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Side of Terror Basin where the Barrier notch sits",
+   "verdict": "bivy_zone_list",
+   "correct_value": "The Barrier is the ridge between Terror Basin and Crescent Creek Basin; the row's pins put its upper notch west of the camp, matching the approach text.",
+   "evidence": "The only conflicting field is bivy[0].notes ('eastern rim'); bivy entries are owned by the camping clean-up and are not patched here. The approach text and waypoint coordinates agree on west; external reports only describe the Barrier as the ridge separating the two basins.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Water at Terror Basin camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Running water is normally available at the ~5,800 ft Terror Basin camp; in heavy-snow years it may need a short search.",
+   "evidence": "One report describes the flat gravelly ~5,800 ft camp as having running water; a range overview calls it an easy water source; another party in a snowy early season had to search and found a trickle a few hundred feet below camp. The waypoint note is supported; the dispute sits in bivy[0].water, which is not patched here.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Gain to Terror Basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Net elevation difference trailhead (~600 ft) to camp (~5,800 ft) is about 5,200 ft, matching the approach and itinerary, but a recorded GPS track gives about 5,835 ft of cumulative ascent to Terror Basin camp and one report says roughly 4,000 ft; reaching Crescent Creek Basin via the 6,200 ft notch adds more. No two sources agree on a figure that makes '6,000+' clearly wrong.",
+   "sources": [
+    "https://fastestknowntime.com/route/west-mcmillan-spire",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://malclimbs.com/2019/08/22/the-picket-range/"
+   ],
+   "patches": []
+  }
+ ]
+}

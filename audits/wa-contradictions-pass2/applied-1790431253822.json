@@ -1,0 +1,345 @@
+{
+ "applied": [
+  {
+   "id": "wa_liberty_crack",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Number of days"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Number of days"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Number of days"
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Number of days"
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Largest gear"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    3
+   ],
+   "fact": "Descent after climbing all 5 pitches"
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Descent after climbing all 5 pitches"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_liberty_crack",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Pre-dawn approach from the SR-20 hairpin pullout; climb the 12-pitch aid/free line, then rappel the standard two-rappel Beckey-side descent. Documented ascents run 9-10 hrs car-to-car for fit parties; some bivy at the base for an easier pre-dawn start.",
+       "hours": 10,
+       "miles": 5,
+       "title": "Big single day (some bivy at base)",
+       "gainFt": 2546,
+       "lossFt": 2546,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead (or wake at base bivy)",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "6:30 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb all 12 pitches of Liberty Crack"
+      }
+     ],
+     "totalNote": "A single long day: real trip reports show 9-10 hr car-to-car ascents; a base bivy is common for extra margin."
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "before": {
+    "pro_tips": [
+     "Most parties still fix the first 2-3 pitches and return the next day, even attempting the free variation",
+     "Study current topo carefully — the free line diverges from Brooke Sandahl's original 1991 sequence on the slab pitch"
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Pre-dawn start from the SR-20 hairpin pullout, approach to the base (about 1 hr), climb all 12 pitches of the free line, then rappel the standard two-rappel Beckey-side descent back to the car. Most fit parties do it in a single big day; some bivy at the base to get first light on the route.",
+       "hours": 10.5,
+       "miles": 5.2,
+       "title": "Big single day (some bivy at base)",
+       "gainFt": 2546,
+       "lossFt": 2546,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30-4:00 AM",
+         "label": "Leave trailhead (or wake at base bivy)",
+         "detail": ""
+        },
+        {
+         "time": "4:30-5:00 AM",
+         "label": "Reach base, gear up",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "12 pitches"
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "6:00-7:00 PM",
+         "label": "Back at car",
+         "detail": "Two rappels into Beckey Gully"
+        }
+       ],
+       "objective": "Free-climb all 12 pitches of Liberty Crack"
+      }
+     ],
+     "totalNote": "A single long day for most parties, roughly 10-12 hrs car-to-car; a base bivy is a common way to buy an earlier, less crowded start."
+    }
+   }
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "before": {
+    "gear": [
+     "rack to 3 inches",
+     "set of nuts",
+     "50-60m rope"
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach via the East Face climbers' path from the SR-20 hairpin pullout east of Washington Pass; climb the 5 pitches then rappel with two ropes from the top of P3, bypassing the P2 anchor, to reach the ground at the P1 anchor.",
+       "hours": 9.5,
+       "miles": 5,
+       "title": "Car-to-car day climb",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "objective": "Climb Liberty and Injustice for All"
+      }
+     ],
+     "totalNote": "A single day, roughly 9.5 hrs car-to-car."
+    },
+    "timing": {
+     "totalHrs": 9.5,
+     "summitTimeHrs": 9.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn start",
+     "sectionBreakdown": [
+      {
+       "hrs": 9.5,
+       "note": "Approach via the East Face climbers' path from the SR-20 hairpin pullout east of Washington Pass; climb the 5 pitches then rappel with two ropes from the top of P3, bypassing the P2 anchor, to reach the ground at the P1 anchor.",
+       "fromTo": "Car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "descent": "Rappel with two ropes from the top of P3, bypassing the P2 anchor to reach the P1 anchor",
+    "descent_text": "The lower rappel option is straightforward: from the top of pitch 3, skip the pitch-2 anchor and rappel directly to the pitch-1 anchor — all stations on this line are two-bolt anchors with fixed biners, so two rappels get you back to the ground from P3. If instead you continue the full 5 pitches (about 200m of climbing), the route joins the top of pitch 7 on Thin Red Line, from which point you can either continue climbing or rappel with two ropes down Thin Red Line's line (M&M Ledge exit plus bolted double-rope raps) back to the base.",
+    "pitch_detail": [
+     {
+      "crux": true,
+      "bolts": 14,
+      "grade": "5.12-",
+      "notes": "A well-bolted pitch (14 draws plus long slings) with a short bouldery 5.12- crux right off the deck, easing above.",
+      "pitch": 1,
+      "anchor": "2-bolt anchor (fixed biners)",
+      "lengthM": 45
+     },
+     {
+      "crux": true,
+      "bolts": 8,
+      "grade": "5.12-",
+      "notes": "A second short bouldery crux near the start of the pitch on solid edges and thin crack features, then progressively easier climbing.",
+      "pitch": 2,
+      "anchor": "2-bolt anchor (fixed biners)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.11",
+      "notes": "Easier technical climbing; this is the top of the shorter variation -- parties bailing here skip the P2 anchor and rappel directly to the P1 anchor in two raps.",
+      "pitch": 3,
+      "anchor": "2-bolt anchor (fixed biners)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10",
+      "notes": "Continued easing of angle and difficulty on the same well-protected granite.",
+      "pitch": 4,
+      "anchor": "2-bolt anchor",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.9",
+      "notes": "The final pitch joins Thin Red Line at the top of its 7th pitch, about 200m (650 ft) of climbing from the ground; from here continue climbing or rappel Thin Red Line's exit.",
+      "pitch": 5,
+      "anchor": "Joins Thin Red Line's P7 anchor",
+      "lengthM": 37
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "The hairpin pond pullout and the East Face path, then about 10 metres right of Thin Red Line",
+      "notes": "Same East Face approach as the other Liberty Crack-area routes: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path from the pond's east end about a mile through forest to the East Face talus.\n\nFive pitches, about 200 m of climbing, established rope-solo in 2014. It shares some climbing with the old aid route Liberty Loop.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A ten-metre offset from a neighbouring route as the only positional marker",
+       "Several closely spaced starts on the same wall",
+       "Loose talus in the upper approach",
+       "Two ropes needed if descending Thin Red Line's line from high on the route"
+      ],
+      "baseFinding": "THE START IS ABOUT 10 METRES RIGHT OF THIN RED LINE, AND TEN METRES IS THE ENTIRE MARGIN FOR ERROR ON THIS WALL. That is a measured offset from a known line, which is the best that exists here, and it means you must locate Thin Red Line first.\n\nHOW TO BOUND IT WITHOUT SEEING THE WHOLE FACE, USING THE ORDER ALONG THE BASE: FREEDOM RIDER about 100 ft LEFT of Liberty Crack, then LIBERTY CRACK, then FREEDOM OR DEATH on a small leftward-trending ramp with bolts above, then THIN RED LINE, then THIS ROUTE 10 m right of it, then LIVE FREE OR DIE, then THE INDEPENDENCE ROUTE at the far right or north edge under a red roof.\n\nTHE STRONGEST CONFIRMATION IS THE HARDWARE, AND IT IS COUNTABLE: EVERY STATION ON THIS LINE IS A TWO-BOLT ANCHOR WITH FIXED BINERS. If you top out a pitch and find no bolts and no biners, you are not on it. From the top of pitch 3 you can skip the pitch-2 anchor and rappel directly to the pitch-1 anchor, so two rappels get you back to the ground from P3.\n\nWHAT GOING TOO FAR LOOKS LIKE: keep walking right and the next thing you meet is the ground Live Free or Die and the Independence Route use, at the far right end of the face. The Independence Route's own marker is unmistakable when visible: a red-coloured roof and alcove, the Baer Ceiling, about 85 m above its start.\n\nAND WHERE IT GOES: at five pitches the route joins the top of pitch 7 on Thin Red Line, from which you either continue climbing or rappel Thin Red Line's line back to the base."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "climbing": "5.12b redpoint fitness; both cruxes come at the start of their pitches (boulder-problem-style) leading into easier, well-protected climbing above"
+     },
+     "approachTime": "~1 hour via the East Face climbers' path from the Hwy 20 hairpin pullout east of Washington Pass (same approach as Thin Red Line/Liberty Crack)",
+     "requiredSkills": [
+      "Trad leading at 5.12",
+      "Efficient multi-pitch transitions (5 pitches, 650 ft/200m)",
+      "Route-finding on East Face — starts about 10 m right of Thin Red Line and shares 2 pitches with the obscure 1975 aid route \"Liberty Loop\"",
+      "Two-rope rappel descent from the top of P3"
+     ],
+     "experienceLevel": "Advanced — solid 5.12 trad/face climbers comfortable with long pitches and mixed gear/fixed protection"
+    },
+    "rope_note": "Rappel with two ropes from top of pitch 3; 5 pitches, ~200m/650ft, Grade IV."
+   }
+  }
+ ]
+}

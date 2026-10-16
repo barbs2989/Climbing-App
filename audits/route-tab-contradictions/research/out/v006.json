@@ -1,0 +1,170 @@
+{
+  "file": "v006",
+  "results": [
+    {
+      "id": "wa_denny_mountain_north_slopes",
+      "fact": "Round-trip and ascent/descent times",
+      "verdict": "fixed",
+      "correct_value": "Car-to-car times run about 3 to 6.5 hours depending on snow and brush",
+      "evidence": "Sources support both ends of the spread, so the row should give the range rather than only its short end. About 3 hours: a September 2004 climber's-log entry (1:50 up, 1:12 down) and a July 2014 entry (left 5:35 pm, back 8:45 pm). About 6.5 hours: a December 2004 winter loop (6 h 29 min car to car) and a September 2010 summer hike (6 h 30 min, 2,500 ft, 4.5 mi). The itinerary/timing (6.5 h) and totalNote (4.5-7 h) sit inside that range; partner_requirements claimed only 3-3.5 h, so its sentence is widened to the range. descent_text's 1.3 h down is one party's snow descent and is left as is.",
+      "sources": [
+        "https://web.archive.org/web/2023/https://www.summitpost.org/denny-mountain/climbers-log/150958",
+        "https://www.yellowleaf.org/scramble/g/r/2004-12-18-Denny-Mountain-loop-via-Alpental.html",
+        "http://hikingwithmybrother.blogspot.com/2010/09/denny-mountain-trail-alpental-ski.html",
+        "https://trailcatjim.com/denny-mtn-via-international-south-face-2021/"
+      ],
+      "patches": [
+        {
+          "id": "wa_denny_mountain_north_slopes",
+          "fact": "Round-trip and ascent/descent times",
+          "op": "replace_text",
+          "column": "partner_requirements",
+          "path": [
+            "fitnessSpec",
+            "hiking"
+          ],
+          "find": "existing trip reports show round trips in the 3-3.5 hour range from the Alpental lot",
+          "replace": "round trips from the Alpental lot run about 3 to 6.5 hours depending on snow and brush"
+        }
+      ]
+    },
+    {
+      "id": "wa_denny_mountain_north_slopes",
+      "fact": "Permit: 'None required' vs 'self-issue day-use permit'",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass, with the land manager's own wilderness boundary layer (USFS EDW Wilderness service, point queries): every route waypoint from the Alpental lot up through Edelweiss Bowl, the saddle, the summit-block pin and the row's summit pin lies OUTSIDE the Alpine Lakes Wilderness, but the GNIS summit coordinate and points 10-40 m west/south of the row's summit pin lie INSIDE it, so the route touches the boundary only at the top. An archived club route page lists the land manager as the Alpine Lakes Wilderness, Snoqualmie Ranger District, and requires only a Northwest Forest Pass. Whether a day-use permit is required for a route that reaches the boundary at the summit is not stated by any source, so access.permit ('None required' plus a self-issue permit), access.fees ('stays outside') and the overnight_permit entry are left for a decision.",
+      "sources": [
+        "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.444261,47.4387232&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=wildernessname&returnGeometry=false&f=json",
+        "https://web.archive.org/web/2018/https://www.mountaineers.org/activities/routes-places/denny-5520",
+        "https://en.wikipedia.org/wiki/List_of_peaks_of_the_Alpine_Lakes_Wilderness"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_devore_peak_west_ridge",
+      "fact": "Elevation of the higher unofficial camp above Bird Creek Camp",
+      "verdict": "not_a_contradiction",
+      "correct_value": null,
+      "evidence": "Sources document two different off-trail camps above Bird Creek Camp, matching the row's two figures: a basin about a mile up Bird Creek at 5,400 ft (club route page; a 2016 party camped on a flat at 5,500 ft in the lower basin, and a 2015 party near 5,500 ft), and a camp at the 5,800 ft level in the middle basin of Bird Creek (archived peak pages for Devore and Tupshin, one author), which the club page also names as the 5,800 ft point where the Tupshin line leaves the creek. The approach's ~5,400 ft bench camp and bivy[0]'s 'higher bivouac around 5,800 ft' are two genuine options, so nothing is changed.",
+      "sources": [
+        "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+        "https://web.archive.org/web/2020/https://www.summitpost.org/devore-peak/154223",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-12.9907387553",
+        "https://onehikeaweek.com/2015/08/03/tupshin-peak/"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_vanishing_point",
+      "fact": "approach distance to the tower base",
+      "verdict": "not_a_contradiction",
+      "correct_value": null,
+      "evidence": "Already consistent: in the live row the Dolomite Tower Base waypoint's distMi is now null (the 3.8 mi via Barclay Lake is gone), and the remaining figures agree with each other (dist_km 3.2 km = 2 mi and the approach variant's distMi 2), with the approach prose giving only ~1 mile of trail to the bridge. No field states a conflicting distance any more.",
+      "sources": [],
+      "patches": []
+    },
+    {
+      "id": "wa_southwest_buttress",
+      "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. A guide service states Eldorado Creek trailhead to the Eldorado/Inspiration high camp as 3 miles (5-7 h), which fits the camp waypoint's 3.2 mi; a trip-report blog's 'approach gains 6,300 ft over 5 miles' and the older snippet of ~6 mi to a camp at the Inspiration/McAllister saddle measure to farther points. Round trips also disagree: the club route page gives this route 12.0 mi and 7,000 ft, a Dorado Needle + Klawatti trip 15 mi, and the row itself carries ~16 mi (totalNote, 25.75 km in approach). The itinerary's day-1 camp is near the McAllister/Marble Creek col, farther than the waypoint's Inspiration-flats camp, so the figures describe different endpoints. No one-way distance to the row's camp or the route base is stated twice, and no two sources state the same round trip for rule 1, so no patch.",
+      "sources": [
+        "https://www.northwestalpineguides.com/northwest-climbs/eldorado-peak/",
+        "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-southwest-buttress",
+        "https://onehikeaweek.com/2015/07/19/dorado-needle/",
+        "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_dragontail_peak_r3",
+      "fact": "Steepest angle of the couloir",
+      "verdict": "fixed",
+      "correct_value": "Couloir to ~40-45°; the steepest ground, about 50°, is the snow slope on the Dragontail side of the notch",
+      "evidence": "The earlier spread comes from reports measuring two different slopes. On the Colchuck-side couloir itself reports give 30-35° with a 38-40° roll and 'as steep as 45'. The two 50° figures both describe the Dragontail side of the notch: a trip report that crossed from Dragontail kicked steps in 'the 50 degree slope' climbing up to the notch, and a July 2026 report puts the Dragontail-side crux at 'around 45-50 degrees max'. So max_angle 50 (the route's steepest ground, the snow finger in climbing_route[2]) and the couloir's 40-45° are both right; the overview read as if 40-45° were the route maximum, so it now names where the 50° is.",
+      "sources": [
+        "https://web.archive.org/web/2022/https://www.summitpost.org/dragontail-colchuck-peaks/205963",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-13.093427457171",
+        "https://turns-all-year.com/trip-reports/may-18-19-2012-dragontail-via-pandoras-box-couloir",
+        "https://turns-all-year.com/trip-reports/may-9-2009-circumnavigation-of-dragontail"
+      ],
+      "patches": [
+        {
+          "id": "wa_dragontail_peak_r3",
+          "fact": "Steepest angle of the couloir",
+          "op": "replace_text",
+          "column": "overview",
+          "path": [],
+          "find": "sections of steep snow up to roughly 40-45°; it is not",
+          "replace": "sections of steep snow up to roughly 40-45° in the couloir and about 50° on the snow slope just below the notch on the Dragontail side; it is not"
+        }
+      ]
+    },
+    {
+      "id": "wa_der_dihedral",
+      "fact": "Day-2 climb duration",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. Searches (route listing, web, and the forum archive for a 2006 first-ascent report) still turn up no ascent account of Der Dihedral with any time; the only figures remain the Backbone Ridge/NE Arete proxies (about 12 h of climbing, 13-14 h camp to camp), which favour the schedule's 3:30 AM-7:00 PM (15.5 h) over hours/summitTimeHrs 11 and the totalNote's 10-12 h but are for a different start. With no route-specific source, nothing is changed.",
+      "sources": [
+        "https://www.mountainproject.com/route/114288397/der-dihedral",
+        "https://www.jeffreyjhebert.com/adventures/backbone-ridge-on-dragontail-peak",
+        "https://wenatcheeoutdoors.org/2016/05/02/dragontail-peak-backbone-ridge/"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_this_my_friend",
+      "fact": "dist_km holds the round trip, not the one-way approach",
+      "verdict": "fixed",
+      "correct_value": "dist_km null (10.2 mi is the round trip; no source states the one-way distance to the route base)",
+      "evidence": "Decision rule 1 (null when provably wrong and nothing stated replaces it). The route base sits below the top of Aasgard Pass, which a trail guide puts about one mile beyond the point at mile 4.6 where the trail leaves Colchuck Lake, and which a route database lists as an 11.15 mi out-and-back from the Stuart Lake trailhead; so the one-way approach is well under 6 mi and cannot be 16.42 km (10.2 mi), which equals the row's own itinerary round trip. No source states the one-way distance to this route's base, so dist_km is cleared rather than halved.",
+      "sources": [
+        "https://www.enchantmentsguide.com/trail-guide/stuart-lake-trailhead",
+        "https://www.theoutbound.com/washington/hiking/hike-to-aasgard-pass",
+        "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/colchuck-lake-trail"
+      ],
+      "patches": [
+        {
+          "id": "wa_this_my_friend",
+          "fact": "dist_km holds the round trip, not the one-way approach",
+          "op": "set",
+          "column": "dist_km",
+          "path": [],
+          "expect": 16.42,
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "wa_dragontail_peak_r1",
+      "fact": "Rope length",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. More Triple Couloirs accounts again report what individual parties used rather than a required length: a 2018 party roped up for the WI2+ ice and simul-climbed an ~80 m pitch to a rappel anchor, a 2015 party pitched out the runnels in full rope lengths without stating the rope, and the earlier accounts split between a 30 m rope and a thin 6 mm 60 m rope. None addresses rope length for the Hidden Couloir entry gully that this row covers, and the row's own corrections call the 30 m an estimate, so neither the gear list's 60 m nor rope_length_m 30 is adopted.",
+      "sources": [
+        "https://climberkyle.com/2018/03/31/dragontail-peak-triple-couloirs-wi2-m3/",
+        "https://zakkrenzer.wordpress.com/2015/05/04/triple-couloirs/",
+        "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-dragontail-peak-triple-couloirs",
+        "https://turns-all-year.com/trip-reports/january-6-2013-dragontail-triple-couloirs"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_dragontail_peak_r2",
+      "fact": "Rope length",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. Additional accounts (a 2016 forum report, now an empty archive page; a regional journal's short reports; a 2013 winter attempt) give no rope length for Gerber-Sink. The only stated lengths remain a single 2015 party with a 70 m rope and other reports mentioning 60 m ropes in passing; the route listing gives none. No two sources state a required or recommended length, so neither the gear/rack's 60 m nor rope_length_m 70 is changed.",
+      "sources": [
+        "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/99097-tr-dragontail-peak-gerber-sink-4102016/",
+        "http://www.alpenglow.org/nwmj/10/101_Shorts5.html",
+        "https://mountainlessons.com/2013/03/10/the-walk-back-a-winter-attempt-on-dragontail/",
+        "https://www.jeffreyjhebert.com/adventures/gerber-sink-on-dragontail-peak"
+      ],
+      "patches": []
+    }
+  ]
+}

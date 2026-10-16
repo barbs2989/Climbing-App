@@ -1,0 +1,384 @@
+{
+ "applied": [
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "GETTING THERE / ACCESS block names the wrong trailhead network"
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "GETTING THERE / ACCESS block names the wrong trailhead network"
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "GETTING THERE / ACCESS block names the wrong trailhead network"
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "GETTING THERE / ACCESS block names the wrong trailhead network"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "crux/route grade"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "rappels",
+   "path": [],
+   "fact": "number and type of summit rappels"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "number and type of summit rappels"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "number and type of summit rappels"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "number and type of summit rappels"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "number and type of summit rappels"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "bail",
+   "path": [],
+   "fact": "number and type of summit rappels"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "whether the Enchantment lottery permit applies to this route"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "access.notes gives Enchantment lottery windows and access.parking_pass names Stuart Lake/Eightmile/Snow Lakes trailheads on an Esmeralda-trailhead route"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "access.notes gives Enchantment lottery windows and access.parking_pass names Stuart Lake/Eightmile/Snow Lakes trailheads on an Esmeralda-trailhead route"
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "whether the Enchantment lottery permit applies to this route"
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "access.notes gives Enchantment lottery windows and access.parking_pass names Stuart Lake/Eightmile/Snow Lakes trailheads on an Esmeralda-trailhead route"
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "access.notes gives Enchantment lottery windows and access.parking_pass names Stuart Lake/Eightmile/Snow Lakes trailheads on an Esmeralda-trailhead route"
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Esmeralda trailhead waypoint elevation 3500 ft"
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Esmeralda trailhead waypoint elevation 3500 ft"
+  },
+  {
+   "id": "wa_new_york_gully",
+   "column": "overview",
+   "path": [],
+   "fact": "First-ascent year/party disagrees between fa and overview"
+  },
+  {
+   "id": "wa_new_york_gully",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "access.notes says climbable June-October on a Dec-Mar winter ice/mixed route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required to park at the Esmeralda/Longs Pass trailhead ($5 day / $30 annual)",
+     "rules": "Dogs prohibited on the Longs Pass and Ingalls Way trails; standard wilderness group-size/campsite rules apply",
+     "permit": "The Stuart Lake Trailhead provides primary access to the Enchantment Permit Area, and an overnight permit for the Stuart Zone is required there from May 15 through October 31, obtained in advance through Recreation.gov. Day use needs only the free self-issued permit at the trailhead.",
+     "closures": "FR 9737 to Esmeralda Trailhead is gravel and washboarded late-season (high-clearance recommended); typically snow-free and open by late June",
+     "group_limit": 8,
+     "landManager": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District), Alpine Lakes Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass + self-issue wilderness permit",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+      "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "before": {
+    "rock_grade": "5.5",
+    "rappels": "Four single-rope rappels down the ascent route",
+    "beta": "From the col between Mount Stuart and Sherpa Peak, ascend the ridge generally trending climber's left. With a 60m rope you can reach the first belay in a cave-like feature with a platform large enough for several climbers; the crux is the crack leading out of the cave (rated 5.4-5.5). A second pitch leads to another anchor, after which a short 4th-class scramble gains the notoriously airy summit block. Descent is 4 single-rope rappels down the ascent line.",
+    "descent": "Reverse the route with a short rappel off the summit block, then descend the approach slopes.",
+    "itinerary": {
+     "cal": "Best late June through September once the Longs Pass approach and rock are snow-free; the Teanaway River Road trailhead is usually accessible by early June.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Longs Pass Trailhead, climb over Longs Pass (6,200 ft), drop to the Ingalls Creek basin, then climb back up talus and slab to a flat bivy spot near 'Table Rock' at treeline below Sherpa's west side. Most parties take 6-7 hours with overnight and rock gear.",
+       "hours": 6.5,
+       "miles": 7,
+       "title": "Approach to treeline bivy",
+       "gainFt": 3200,
+       "lossFt": 900,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach camp near 'Table Rock' (~7,400 ft) below the West Ridge"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp before dawn, scramble to the base of the ridge, then climb 5-6 pitches (5.4 with a crux that feels more like 5.5) to the summit block. Reverse the ridge with a short rappel, then descend all the way back over Longs Pass to the trailhead — a long 12-14 hour day.",
+       "hours": 13,
+       "miles": 7.5,
+       "title": "Climb the West Ridge, descend, hike out",
+       "gainFt": 1300,
+       "lossFt": 4600,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave bivy",
+         "detail": "Head for the base of the West Ridge"
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Rope up",
+         "detail": "Begin the 5-6 pitch ridge, mostly class 3-4 with 5.4 sections"
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Reach the crux pitch",
+         "detail": "Hand-crack/chimney pitch, feels closer to 5.5"
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "4:15 PM",
+         "label": "Begin the descent",
+         "detail": "Rappel the summit block, reverse the ridge"
+        },
+        {
+         "time": "~9-10 PM",
+         "label": "Back at the car",
+         "detail": "Hike out over Longs Pass, often finishing by headlamp"
+        }
+       ],
+       "objective": "Summit via the West Ridge and return to the car"
+      }
+     ],
+     "totalNote": "A 2-day round trip: ~14.5 miles and ~4,300 ft gain total, with day 2 a long 12-14 hour push from bivy to summit and back to the car."
+    },
+    "timing": {
+     "totalHrs": 19.5,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From the Longs Pass Trailhead, climb over Longs Pass (6,200 ft), drop to the Ingalls Creek basin, then climb back up talus and slab to a flat bivy spot near 'Table Rock' at treelin…",
+       "fromTo": "Approach to treeline bivy",
+       "section": "Approach"
+      },
+      {
+       "hrs": 13,
+       "note": "Leave camp before dawn, scramble to the base of the ridge, then climb 5-6 pitches (5.4 with a crux that feels more like 5.5) to the summit block. Reverse the ridge with a short rap…",
+       "fromTo": "Climb the West Ridge, descend, hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "bail": "The route reverses readily with downclimbing and a single rappel, so retreat is reasonable if weather sours, though the long approach must still be reversed on foot.",
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required to park at the Esmeralda/Longs Pass trailhead ($5 day / $30 annual)",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Dogs prohibited on the Longs Pass and Ingalls Way trails; standard wilderness group-size/campsite rules apply",
+     "permit": "Free self-issue wilderness permit at the trailhead; the Recreation.gov Enchantment Permit Area lottery does not apply here",
+     "closures": "FR 9737 to Esmeralda Trailhead is gravel and washboarded late-season (high-clearance recommended); typically snow-free and open by late June",
+     "group_limit": 8,
+     "landManager": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District), Alpine Lakes Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass + self-issue wilderness permit",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "before": {
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required to park at the Esmeralda/Longs Pass trailhead ($5 day / $30 annual)",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Dogs prohibited on the Longs Pass and Ingalls Way trails; standard wilderness group-size/campsite rules apply",
+     "permit": "Free self-issue wilderness permit at the trailhead; the Recreation.gov Enchantment Permit Area lottery does not apply here",
+     "closures": "FR 9737 to Esmeralda Trailhead is gravel and washboarded late-season (high-clearance recommended); typically snow-free and open by late June",
+     "group_limit": 8,
+     "landManager": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District), Alpine Lakes Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass + self-issue wilderness permit",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.4366,
+      "lng": -120.937,
+      "elev": 3500,
+      "name": "Esmeralda Basin / Ingalls Way Trailhead (North Fork Teanaway Rd, FR-9737) via Longs Pass",
+      "note": "Shared trailhead for Longs Pass Trail and Esmeralda Basin/Ingalls Way Trail; route drops from Longs Pass into Ingalls Creek drainage before climbing to Sherpa's east basin.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 3500,
+      "directions": "Drive the North Fork Teanaway Road (FR-9737) to its end at the Esmeralda Basin / Ingalls Way trailhead. This is the shared lot for the Longs Pass Trail and the Esmeralda Basin / Ingalls Way Trail, and it is the same trailhead the West Ridge uses; for the East Ridge you want the Longs Pass Trail (FST 1391), which goes over Longs Pass at about 6,200 ft and down to Ingalls Creek. Plan on late June through September, once that Longs Pass and Ingalls Creek approach is snow-free."
+     },
+     {
+      "lat": 47.4561,
+      "lng": -120.9136,
+      "elev": 6250,
+      "name": "Long's Pass",
+      "type": "Junction",
+      "distMi": 2.5,
+      "elevFt": 6250
+     },
+     {
+      "lat": 47.465,
+      "lng": -120.895,
+      "elev": 6300,
+      "name": "Stuart basin bivy",
+      "type": "Campsite",
+      "distMi": 4.5,
+      "elevFt": 6300
+     },
+     {
+      "lat": 47.4718,
+      "lng": -120.8855,
+      "elev": 7800,
+      "name": "East end of ridge",
+      "type": "Junction",
+      "distMi": 5.6,
+      "elevFt": 7800
+     },
+     {
+      "lat": 47.471845,
+      "lng": -120.888871,
+      "elev": 8630,
+      "name": "Sherpa Peak summit",
+      "type": "Summit",
+      "elevFt": 8630
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_new_york_gully",
+   "before": {
+    "overview": "New York Gully splits the NW Face of Snoqualmie Mountain, the most-climbed of five parallel ice/mixed lines on that wall (alongside Pineapple Express, Blue Moon, New York Gully Direct, and LA Express). First climbed by Jim Ruche and Bob Cotter in February 1991 as a IV 5.8 A2 WI4 aid line, it's a roughly 1,300-ft alpine route following a prominent gully system to a distinctive 'box gully' feature, finishing with a steep corner pitch that was originally aided and first freed in 2004 at M5+/6-.",
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party where the peak is inside Alpine Lakes Wilderness.",
+     "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+     "group_limit": 12,
+     "landManager": "Mt. Baker-Snoqualmie National Forest — Snoqualmie Ranger District (North Bend Office)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+     "passRequired": "Northwest Forest Pass or America the Beautiful Interagency Pass required to park at the Alpental/Source Lake trailhead ($5 day pass / $30 annual NW Forest Pass)"
+    }
+   }
+  }
+ ]
+}

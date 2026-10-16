@@ -1,0 +1,552 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Direction of the Sol Duc River Trail"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Which fork at the Appleton Pass junction"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Route name referenced in prose (stale after rename)"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Route name referenced in prose (stale after rename)"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Route name referenced in prose (stale after rename)"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "One-way distance to summit"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "One-way distance to summit"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "One-way distance to summit"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "One-way distance to summit"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "One-way distance to summit"
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "One-way distance to summit"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to Cat Basin"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Deer Lake junction distance"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_appleton_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Trail is typically snow-free July through October; an overnight at Oyster Lake near Appleton Pass (wilderness permit required) is a common easier alternative to the single-day push, giving an early start on dry rock before afternoon cloud builds.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Almost everyone does this as a single long day: hike the Sol Duc River Trail to the Appleton Pass junction, climb switchbacks to the 5,100 ft pass, then follow a boot path along the ridge crest northwest toward Appleton, with Class 2-3 scrambling and a short, narrow, exposed 'knife ridge' section guarding the true summit. Reverse the same line to descend, dropping into the heather/talus on the southeast side near the notch to avoid the worst of the ridge exposure on the way down.",
+       "hours": 9,
+       "miles": 17,
+       "title": "Sol Duc Trailhead to summit and back, car-to-car",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Sol Duc Trailhead",
+         "detail": "Follow the Sol Duc River Trail west/north about 4.9 miles to the Appleton Pass Trail junction."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Reach Appleton Pass (~5,100 ft)",
+         "detail": "2.3 miles and about 2,000 ft of the trail's steepest switchbacks above the river trail; 7.3 mi in from the car."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Pick up the climber's path on the ridge",
+         "detail": "Difficult, slow walking/scrambling on steep heather and loose sandstone/slate up to about 5,800 ft, then Class 2 ground onto the broad summit ridge."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Summit Mount Appleton (6,017 ft)",
+         "detail": "Narrow, rocky summit with a short exposed knife-ridge move just below the top; views of Olympus, Fairchild, Carrie and the Bailey Range."
+        },
+        {
+         "time": "+6 hr",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge to the notch above Appleton Pass, dropping into the heather/talus basin on the southeast side where it's faster and less exposed than the crest."
+        },
+        {
+         "time": "9 hr",
+         "label": "Back at Sol Duc Trailhead",
+         "detail": "Typical car-to-car time for a fit party."
+        }
+       ],
+       "objective": "Summit Mount Appleton via Appleton Pass and the South Ridge climbers' path, round trip from the Sol Duc Trailhead"
+      }
+     ],
+     "totalNote": "A long, strenuous single day: about 17 miles round trip and roughly 4,000-4,500 ft of net gain (trip reports cite up to 6,000 ft cumulative given the undulating ridge), typically 9 hours car-to-car for a fit party."
+    },
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1950,
+      "name": "Sol Duc Trailhead (Olympic NP)",
+      "note": "Road-end trailhead past Sol Duc Hot Springs Resort (14 mi up Sol Duc Hot Springs Rd from US-101); a reserved wilderness permit is required for any overnight stay.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Sol Duc Hot Springs Road off US-101 and follow it about 13 to 14 miles past Sol Duc Hot Springs Resort, near Sol Duc Falls, to the road-end Sol Duc Trailhead in Olympic National Park. Any overnight stay needs a wilderness permit reserved in advance; none are issued at the trailhead. The trail is typically snow-free July through October. Do not plan on the Boulder Lake side instead: Olympic Hot Springs Road washed out and is permanently closed to vehicles beyond Madison Falls, which adds 8 miles each way of road walking or biking just to reach the old Boulder Creek Trailhead."
+     },
+     {
+      "lat": 47.932233,
+      "lng": -123.750183,
+      "elev": 3082,
+      "name": "Appleton Pass Trail junction (Sol Duc River Trail split)",
+      "note": "Sol Duc River Trail forks here; cross the Sol Duc River on a footlog just before the split, then head uphill (stay right) onto the Appleton Pass Trail.",
+      "type": "Junction",
+      "distMi": 4.9
+     },
+     {
+      "lat": 47.9319907,
+      "lng": -123.748658,
+      "elev": 3425,
+      "name": "Rocky Creek footbridge",
+      "note": "Two-part log bridge over Rocky Creek — the last dependable, easy water refill before the long climb up into the Appleton Pass meadows.",
+      "type": "Water",
+      "distMi": 5.25
+     },
+     {
+      "lat": 47.938564,
+      "lng": -123.719422,
+      "elev": 5050,
+      "name": "Appleton Pass camp area",
+      "note": "Scattered established tent pads just below the pass, some fully exposed to wind with views, others tucked in trees; water is from Oyster Lake or lingering snowfields, unreliable by late summer.",
+      "type": "Campsite",
+      "distMi": 7.1
+     },
+     {
+      "lat": 47.93842,
+      "lng": -123.72269,
+      "elev": 5114,
+      "name": "Appleton Pass (the gap)",
+      "note": "True saddle/pass; maintained trail continues north to Boulder Lake/Olympic Hot Springs and east toward Oyster Lake — leave the trail here and head north up open slopes toward Appleton's south ridge.",
+      "type": "Junction",
+      "distMi": 7.3
+     },
+     {
+      "lat": 47.94701285714285,
+      "lng": -123.73019285714285,
+      "elev": 5950,
+      "name": "6,000-ft notch below the summit block",
+      "note": "Heather/talus/grass slope steepens sharply into a Class 3 notch between Appleton's two summit humps — the exposed section climbers report needing to concentrate through, both up and down.",
+      "type": "Hazard",
+      "distMi": 7.8
+     },
+     {
+      "lat": 47.950555,
+      "lng": -123.732785,
+      "elev": 6017,
+      "name": "Mount Appleton summit",
+      "note": "True summit (6,017 ft), the higher of two rocky humps; open views west/north down the South Fork Boulder Creek valley toward Mt. Olympus.",
+      "type": "Summit",
+      "distMi": 8
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "before": {
+    "overview": "Mount Carrie is the highest point of the Bailey Range and the scenic centerpiece of the classic Bailey Range Traverse. Despite this route's name, there is no trail or known route connecting Hurricane Ridge to Cat Basin or Mount Carrie — Hurricane Ridge sits on the opposite (east) side of the park and is used only as a distant viewpoint of Carrie's glaciated north face. Every recorded ascent instead approaches from the Sol Duc River Road trailhead on the park's north side, via Heart Lake, High Divide, Cat Basin, the exposed \"Catwalk\" ridge crossing, and Boston Charlie's Camp, before gaining Carrie's southwest ridge and a broad south-facing scree basin to the summit.",
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1970,
+      "name": "Sol Duc Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Despite the route name, do not drive to Hurricane Ridge — there is no established approach to Carrie from there, and essentially every party starts at Sol Duc instead. From US-101 near Lake Crescent, turn up Sol Duc Hot Springs Road and follow it to the end at the Sol Duc River trailhead, around 2,000 ft. The maintained trail toward Sol Duc Falls and the Deer Lake junction leaves from here."
+     },
+     {
+      "lat": 47.9092533,
+      "lng": -123.708383,
+      "elev": 5000,
+      "name": "Cat Basin / High Divide",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": 5000
+     },
+     {
+      "lat": 47.894273,
+      "lng": -123.649285,
+      "elev": 6995,
+      "name": "Mount Carrie",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 6995
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Sol Duc road end, High Divide and Cat Basin to the Catwalk",
+      "notes": "Start at the road-end trailhead on the hot-springs road on the park's north side. Hike past the falls, on past the Deer Lake junction, and up to Heart Lake — the last reliable water. Climb to the High Divide crest and follow the primitive trail east from the junction above the lake toward Cat Basin, then take the unmaintained path over the exposed south side of the peak beyond it and across the CATWALK to the first camp on its far side. Do NOT plan an approach from Hurricane Ridge: it is a viewpoint separated from this range by miles of trailless glaciated terrain and there is no established route to this peak from it, despite what the route's name suggests.",
+      "season": "Late July to September, once the high traverse is clear of snow; an ice axe is still worth carrying for the summit basin.",
+      "hazards": [
+       "The Catwalk — exposed, sharp, and a fall there could be fatal",
+       "Thin, crumbly ledges with major exposure on the south side of the peak just before the Catwalk",
+       "Steep, loose, unstable scree in the summit basin",
+       "Early-season snow in the basin, where an ice axe is advisable",
+       "No water between Heart Lake and the summit",
+       "Unmaintained and unsigned beyond the divide, requiring solid off-trail route-finding"
+      ],
+      "baseFinding": "From the basin camp, the line follows the peak's SOUTHWEST RIDGE — grassy and rocky walking at first — and the base of the real climbing is where that ridge stops being walkable crest and you have to CONTOUR OFF IT into a broad, steep, loose SOUTH-FACING SCREE BASIN at around sixty-five hundred feet. The test that you are in the right basin: it is loose, unstable scree in the sun, and the TRUE SUMMIT sits at its FAR RIGHT-HAND END, not at the high point directly above where you enter it. Finish on scree and snow. Negative markers: if you have roped up and are travelling on ice with crevasses, you are on the glacier variation on the northeast side of the peak; if you are still walking a grassy crest with no need to leave it, you have not reached the contour yet and are short of the basin."
+     }
+    ],
+    "approach": "There is no established route to Mount Carrie from Hurricane Ridge; that area is separated from the Bailey Range by miles of trailless, glaciated terrain and functions only as a viewpoint. The actual approach used by essentially all climbers starts at the Sol Duc River Road trailhead (~2,000 ft) on US-101 near Lake Crescent: Sol Duc Falls → Deer Lake Trail junction (+1 mi) → Heart Lake (+6 mi, 4,800 ft) → High Divide crest (+1.5 mi, 5,100 ft) → east on the Cat Basin trail toward Cat Basin → an unmaintained path over Cat Peak's exposed south side and across the airy \"Catwalk\" ridge (Class 3) to Boston Charlie's Camp. From camp, the final push follows Carrie's southwest ridge (Class 1 grass/rock) and contours a broad, steep, loose south-facing scree basin around 6,500 ft before a scree-and-snow finish (ice axe advisable) to the summit (Class 2). One-way distance from the trailhead to the summit is roughly 13 miles.",
+    "pitch_detail": [
+     {
+      "grade": "Trail",
+      "notes": "From the Sol Duc road-end trailhead (~2,000 ft) pass Sol Duc Falls and the Deer Lake junction (about 1 mile) and climb about 6 more miles up the Sol Duc valley to Heart Lake (4,800 ft). The lake has several good camps; a wilderness permit and bear canister are required, and permits here are in heavy demand.",
+      "pitch": "Sol Duc TH to Heart Lake"
+     },
+     {
+      "grade": "Trail, then way path",
+      "notes": "Climb about 1.5 miles to the High Divide crest (~5,100 ft) and follow it toward Cat Basin, about 3 miles, to where the maintained trail ends. A thin, worn path continues along the ridge below Cat Peak through trees and brush to the start of the Catwalk. Late in the season water up here is limited to snowbanks and sinkholes, so carry enough.",
+      "pitch": "Heart Lake to Cat Basin"
+     },
+     {
+      "grade": "Class 3, exposed",
+      "notes": "A narrow rock and heather ridgetop links Cat Peak to the Bailey Range: high class 2 to low class 3 moves with serious exposure, where a fall could be fatal. Before mid-July lingering snow can make it much harder. Past it, push through brush to Boston Charlie's Camp, a small, sloping, exposed site with a brackish sinkhole pond; filter the water, and treat it as an emergency bivy rather than a planned camp.",
+      "pitch": "The Cat Walk"
+     },
+     {
+      "grade": "Class 1-2 grass, scree",
+      "notes": "A semi-cairned path switchbacks up Carrie's southwest ridge, about 2,000 ft in under a mile; grassy at first, then grass and rock outcrops as it narrows. Near 6,500 ft it contours around the top of a big south-facing scree basin ringed with summits; the rock is loose, so helmets on. The true summit is at the far right (east) side of the basin, reached via the summit ridge. Early season, snow in the basin calls for an axe.",
+      "pitch": "Southwest ridge to summit"
+     }
+    ],
+    "itinerary": {
+     "cal": "Best mid-July through mid-September once snow clears enough for safe passage across the exposed Catwalk; earlier in the season an ice axe is needed in the summit scree basin.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Sol Duc trail past the Deer Lake junction to Heart Lake, the standard base camp for the Cat Basin/Catwalk approach to Carrie.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Approach to Heart Lake camp",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach Heart Lake camp (4,800 ft)"
+      },
+      {
+       "n": 2,
+       "note": "A genuinely long day: gain the High Divide, drop into Cat Basin, cross the exposed class 3 Catwalk past Boston Charlie's Camp, then climb Carrie's grassy/scree southwest ridge to the summit scree basin and the true summit, before reversing the entire route back to camp.",
+       "hours": 12,
+       "miles": 11,
+       "title": "Cat Basin, the Catwalk, and the summit",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Heart Lake camp",
+         "detail": "The published time to the summit is 5 hr; real parties often take significantly longer."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Gain the High Divide and drop into Cat Basin",
+         "detail": ""
+        },
+        {
+         "time": "+4 hr",
+         "label": "Cross the exposed Catwalk",
+         "detail": "~1.5 mi class 3 ridge between Cat Peak and Carrie, mostly solid rock with tree holds, one loose exposed section."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Pass Boston Charlie's Camp/tarn",
+         "detail": "Base of Carrie's southwest ridge."
+        },
+        {
+         "time": "+7-9 hr",
+         "label": "Reach the summit (6,995 ft)",
+         "detail": "Grassy/scree southwest ridge to the summit scree basin; ice axe useful for lingering snow."
+        },
+        {
+         "time": "+12-13 hr",
+         "label": "Back at Heart Lake camp",
+         "detail": "Some parties finish after dark — plan headlamps and a very early start."
+        }
+       ],
+       "objective": "Tag the 6,995 ft summit via Cat Basin and the Catwalk"
+      },
+      {
+       "n": 3,
+       "note": "Descend the Sol Duc trail from Heart Lake back to the trailhead.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2800,
+       "packLb": 25,
+       "schedule": [],
+       "objective": "Return to the Sol Duc trailhead"
+      }
+     ],
+     "totalNote": "A demanding 3-day, roughly 25-mile round trip: two travel days to and from a Heart Lake base camp bookend one very long summit day (the published time is 5 hr from camp; real parties report 9.5-12+ hr) across Cat Basin and the exposed Catwalk to Carrie's summit."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "before": {
+    "approach": "From US-101 about 2 miles west of Lake Crescent, turn onto Sol Duc Hot Springs Road and drive roughly 14 miles past Sol Duc Hot Springs Resort to the road-end trailhead (Sol Duc River Trailhead, ~2,000 ft). Hike the Sol Duc River Trail past Sol Duc Falls, continue about 1 mile past the Deer Lake Trail junction, then roughly 6 more miles to Heart Lake (4,800 ft). From Heart Lake, climb 1.5 miles to the High Divide crest (~5,100 ft) and turn east onto the primitive Cat Basin trail toward Cat Basin and Cat Peak. From there an unmaintained boot path crosses Cat Peak's exposed south side and the \"Catwalk\" — a narrow, airy ridge crest linking High Divide to the Bailey Range (Class 3, high consequence if you fall) — to Boston Charlie's Camp, the traditional jumping-off point for the Bailey Range Traverse and for Carrie itself. One-way distance from the trailhead to Boston Charlie's Camp/Cat Basin is roughly 13 miles; most parties camp at Heart Lake or Cat Basin and climb Carrie's summit as a long day from there.",
+    "itinerary": {
+     "cal": "Best climbed July-September when the Carrie Glacier is more open and crevasses/bergschrund are visible; Olympic NP requires a wilderness permit for Bailey Range cross-country camping.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Drive to the Sol Duc trailhead (2,000 ft) and hike through old-growth forest past the Deer Lake junction to Heart Lake, the standard first-night camp for Bailey Range approaches.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Approach to Heart Lake",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Heart Lake camp (4,800 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Climb 1.5 mi to the High Divide crest, then follow the informal Bailey Range climbers' path through meadows and basins toward Carrie's northeast side, camping near the base of the glacier for a short summit push the next morning.",
+       "hours": 5,
+       "miles": 6,
+       "title": "Push into the Bailey Range",
+       "gainFt": 1800,
+       "lossFt": 600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Camp near the toe of the Carrie Glacier"
+      },
+      {
+       "n": 3,
+       "note": "A technical roped day: climb a sickle-shaped snow canyon to a 6,600 ft saddle, descend a short icefall (often a rappel off a snow picket) onto the Carrie Glacier, cross it roped up, then scramble a short rocky section to the true summit before reversing the entire route to camp.",
+       "hours": 10,
+       "miles": 4,
+       "title": "Carrie Glacier summit push",
+       "gainFt": 2650,
+       "lossFt": 2650,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start for the technical glacier day ahead."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Reach the ~6,600 ft snow saddle",
+         "detail": "Via a sickle-shaped snow canyon above camp."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Descend the icefall onto the Carrie Glacier",
+         "detail": "Often a short rappel off a snow picket; rope up for glacier travel."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Cross the upper Carrie Glacier",
+         "detail": "Roped travel past crevasses toward the summit rocks."
+        },
+        {
+         "time": "+6.5 hr",
+         "label": "Reach the summit (6,995 ft)",
+         "detail": "Short scramble off the glacier to the true summit."
+        },
+        {
+         "time": "+10 hr",
+         "label": "Back at high camp",
+         "detail": "Reverse the glacier, icefall, and snow saddle."
+        }
+       ],
+       "objective": "Climb the Carrie Glacier to the 6,995 ft summit"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the Bailey Range path back to High Divide and Heart Lake, then descend the Sol Duc trail to the trailhead — a long but straightforward exit day.",
+       "hours": 8,
+       "miles": 14,
+       "title": "Hike out to trailhead",
+       "gainFt": 200,
+       "lossFt": 4400,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to the Sol Duc trailhead"
+      }
+     ],
+     "totalNote": "A 4-day, roughly 31-mile round trip: two days of approach through the Bailey Range to a high camp near the Carrie Glacier's toe, one technical roped summit day (snow saddle, icefall, glacier crossing), then a long hike back out to the Sol Duc trailhead."
+    },
+    "timing": {
+     "totalHrs": 27.5,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 8,
+     "approachTimeHrs": 9.5,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "Drive to the Sol Duc trailhead (2,000 ft) and hike through old-growth forest past the Deer Lake junction to Heart Lake, the standard first-night camp for Bailey Range approaches.",
+       "fromTo": "Approach to Heart Lake",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5,
+       "note": "Climb 1.5 mi to the High Divide crest, then follow the informal Bailey Range climbers' path through meadows and basins toward Carrie's northeast side, camping near the base of the …",
+       "fromTo": "Push into the Bailey Range",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "A technical roped day: climb a sickle-shaped snow canyon to a 6,600 ft saddle, descend a short icefall (often a rappel off a snow picket) onto the Carrie Glacier, cross it roped up…",
+       "fromTo": "Carrie Glacier summit push",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "Retrace the Bailey Range path back to High Divide and Heart Lake, then descend the Sol Duc trail to the trailhead — a long but straightforward exit day.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

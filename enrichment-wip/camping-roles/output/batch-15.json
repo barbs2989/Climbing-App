@@ -1,0 +1,743 @@
+{
+  "zones": [
+    {
+      "zone": "rainier",
+      "overnightPermit": {
+        "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+        "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups.",
+        "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+      }
+    },
+    {
+      "zone": "rainy-easy-pass",
+      "overnightPermit": {
+        "what": "North Cascades NP wilderness permit — quota, fee",
+        "where": "Reserve on Recreation.gov; permits for Cascade River Road trailheads must be picked up in person at the Marblemount Wilderness Information Center.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    },
+    {
+      "zone": "rimrock-ridge",
+      "overnightPermit": {
+        "what": "North Cascades NP wilderness permit for the Stehekin valley camps — quota, fee",
+        "where": "Reserve on Recreation.gov and contact the park the day before, as there are no permit services in Stehekin. Camping beyond the park boundary in the Glacier Peak Wilderness needs no park permit.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "rainier_central_mowich_face",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Lower Ptarmigan Ridge camp",
+          "type": "bivy",
+          "capacity": "A few tent sites on rock and snow",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier. Mowich Lake has had no road access since the Fairfax Bridge on SR 165 closed in 2025, so check access first.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Entire list belongs to other approaches; the Mowich-side camp on lower Ptarmigan Ridge is a general area, not a fixed site."
+    },
+    {
+      "id": "rainier_north_mowich_headwall",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Lower Ptarmigan Ridge camp",
+          "type": "bivy",
+          "capacity": "A few tent sites on rock and snow",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier. Mowich Lake has had no road access since the Fairfax Bridge on SR 165 closed in 2025, so check access first.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Entire list belongs to other approaches; camp added from the shared Mowich Face approach, exact site varies."
+    },
+    {
+      "id": "wa_liberty_cap_liberty_ridge_finish",
+      "main": [
+        "Thumb Rock",
+        "Curtis Ridge / Carbon Glacier access bivy"
+      ],
+      "onRoute": [
+        "Glacier Basin camp",
+        "Camp Schurman"
+      ],
+      "drop": [
+        "Glacier Basin",
+        "Lower Curtis Ridge / Carbon Glacier camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Glacier Basin waypoint is a duplicate of Glacier Basin camp; the 7,400 ft Carbon Glacier waypoint appears to be the same site as the 7,300 ft access bivy."
+    },
+    {
+      "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+      "main": [],
+      "onRoute": [
+        "White River Campground",
+        "Camp Schurman"
+      ],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Thumb Rock",
+        "Cougar Rock Campground",
+        "Camp Schurman (Emmons-Winthrop descent)"
+      ],
+      "add": [
+        {
+          "name": "Ptarmigan Ridge high camp",
+          "type": "bivy",
+          "capacity": "A few tent sites on the ridge crest",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "The high camp the route is climbed from, on the crest of Ptarmigan Ridge near 10,000 ft. Exposed to wind; no running water.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Main camp was missing; White River kept as the start now that Mowich Lake has no road access; Schurman is the usual descent camp (its waypoint twin dropped as a duplicate)."
+    },
+    {
+      "id": "wa_mount_rainier_curtis_ridge",
+      "main": [],
+      "onRoute": [
+        "White River Campground",
+        "Camp Schurman"
+      ],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Thumb Rock",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Curtis Ridge camp",
+          "type": "bivy",
+          "capacity": "A few tent sites on snow and rock",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Camp on Curtis Ridge above the Winthrop and Carbon glaciers, reached from Glacier Basin over St. Elmo Pass. The usual camp before the ridge itself.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Exact camp height on Curtis Ridge varies by party; Schurman kept as the Emmons descent camp."
+    },
+    {
+      "id": "wa_mount_rainier_disappointment_cleaver",
+      "main": [
+        "Camp Muir",
+        "Ingraham Flats"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground",
+        "Ingraham Flats High Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Clear-cut; Ingraham Flats High Camp dropped as a duplicate of Ingraham Flats."
+    },
+    {
+      "id": "wa_mount_rainier_edmunds_headwall",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Lower Ptarmigan Ridge camp",
+          "type": "bivy",
+          "capacity": "A few tent sites on rock and snow",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier. Mowich Lake has had no road access since the Fairfax Bridge on SR 165 closed in 2025, so check access first.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Mostly a ski descent; camp added from the route's own approach text, which places camps between the North Mowich and Edmunds glaciers."
+    },
+    {
+      "id": "wa_mount_rainier_emmons_glacier",
+      "main": [
+        "Camp Schurman",
+        "Emmons Flats"
+      ],
+      "onRoute": [
+        "Glacier Basin"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Clear-cut."
+    },
+    {
+      "id": "wa_mount_rainier_fuhrer_finger",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Castle camps on Wapowety Cleaver",
+          "type": "camp",
+          "capacity": "Several small tent sites behind old rock windbreaks",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Lower and Upper Castle sit on the crest of Wapowety Cleaver at the edge of the Wilson Glacier, roughly 9,000 to 10,000 ft. The most-used high camp on the south side west of the Nisqually. Wind-exposed.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Entire list belongs to other routes; high camp on Wapowety Cleaver added. Many parties also do it car-to-car."
+    },
+    {
+      "id": "wa_mount_rainier_fuhrer_thumb",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Castle camps on Wapowety Cleaver",
+          "type": "camp",
+          "capacity": "Several small tent sites behind old rock windbreaks",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Lower and Upper Castle sit on the crest of Wapowety Cleaver at the edge of the Wilson Glacier, roughly 9,000 to 10,000 ft. The most-used high camp on the south side west of the Nisqually. Wind-exposed.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Route's own approach names Lower Castle camp; added the shared Castle camps entry."
+    },
+    {
+      "id": "wa_mount_rainier_gibraltar_ledges",
+      "main": [
+        "Camp Muir"
+      ],
+      "onRoute": [
+        "Ingraham Flats"
+      ],
+      "drop": [
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Ingraham Flats kept only as the usual Disappointment Cleaver descent."
+    },
+    {
+      "id": "wa_mount_rainier_ingraham_direct",
+      "main": [
+        "Camp Muir",
+        "Ingraham Flats"
+      ],
+      "onRoute": [],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Clear-cut."
+    },
+    {
+      "id": "wa_mount_rainier_kautz_glacier",
+      "main": [
+        "Camp Hazard"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Castle camps on Wapowety Cleaver",
+          "type": "camp",
+          "capacity": "Several small tent sites behind old rock windbreaks",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Lower and Upper Castle sit on the crest of Wapowety Cleaver at the edge of the Wilson Glacier, roughly 9,000 to 10,000 ft. The most-used high camp on the south side west of the Nisqually. Wind-exposed.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Castle camps added as the most-used camp; the Camp Hazard waypoint elevation of 12,500 ft looks too high (the site is roughly 11,000-11,500 ft)."
+    },
+    {
+      "id": "wa_mount_rainier_kautz_headwall",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Castle camps on Wapowety Cleaver",
+          "type": "camp",
+          "capacity": "Several small tent sites behind old rock windbreaks",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Lower and Upper Castle sit on the crest of Wapowety Cleaver at the edge of the Wilson Glacier, roughly 9,000 to 10,000 ft. The most-used high camp on the south side west of the Nisqually. Wind-exposed.",
+          "role": "main"
+        },
+        {
+          "name": "Camp Hazard",
+          "type": "camp",
+          "capacity": "A handful of tent sites on rock and snow",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "The highest camp on the Kautz side, at the top of Wapowety Cleaver below the Kautz Ice Cliff. Shortens summit day but is exposed to icefall from the cliff above.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Shares the Kautz Glacier camps; the Comet Falls approach variant was not researched separately."
+    },
+    {
+      "id": "wa_mount_rainier_liberty_ridge",
+      "main": [
+        "Thumb Rock",
+        "Curtis Ridge"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Mowich Lake Camp",
+        "Puyallup Winthrop Junction Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Puyallup Winthrop Junction Camp is not an identifiable place (its 7,300 ft may be the Curtis Ridge site); Mowich Lake is on the other side of the mountain."
+    },
+    {
+      "id": "wa_mount_rainier_mowich_face",
+      "main": [
+        "Ptarmigan Ridge bivy above Observation Rock",
+        "Edmunds/North Mowich glacier divide camp"
+      ],
+      "onRoute": [
+        "High camp below the North Mowich headwall",
+        "Liberty Cap saddle"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Mowich Lake currently has no road access; the camp list itself fits the route."
+    },
+    {
+      "id": "wa_mount_rainier_nisqually_icefall",
+      "main": [],
+      "onRoute": [
+        "Camp Muir",
+        "Ingraham Flats"
+      ],
+      "drop": [
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Nisqually Glacier camp below the icefall",
+          "type": "bivy",
+          "capacity": "Open glacier ground; the site moves with conditions",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "Parties camp on the upper Nisqually Glacier or its moraine edge below the icefall so they can be through it before the sun hits. The site varies by year.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Least certain in the batch: the Nisqually camp is loosely documented; Muir and Ingraham Flats kept as the usual Disappointment Cleaver descent."
+    },
+    {
+      "id": "wa_mount_rainier_ptarmigan_ridge",
+      "main": [
+        "Ptarmigan Ridge high camp"
+      ],
+      "onRoute": [
+        "Glacier Basin camp",
+        "Curtis Ridge camp",
+        "Camp Schurman"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Clear-cut for the White River start now in use."
+    },
+    {
+      "id": "wa_mount_rainier_sunset_ridge",
+      "main": [
+        "Puyallup Cleaver high camp"
+      ],
+      "onRoute": [
+        "Colonnade Ridge",
+        "Open bivouac near 9,600 ft",
+        "Bergschrund camp in the Sunset Amphitheater"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Bergschrund camp is an alternative high camp; ordering of the two upper sites is approximate."
+    },
+    {
+      "id": "wa_mount_rainier_tahoma_glacier",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Camp Muir",
+        "Ingraham Flats",
+        "Camp Schurman",
+        "Thumb Rock",
+        "White River Campground",
+        "Cougar Rock Campground"
+      ],
+      "add": [
+        {
+          "name": "Puyallup Cleaver camp below St. Andrews Rock",
+          "type": "bivy",
+          "capacity": "Several flat sites on the upper cleaver",
+          "water": "Melt snow",
+          "permit": "Mount Rainier wilderness permit and climbing registration",
+          "notes": "High camp on the upper Puyallup Cleaver around 9,600 ft, just below St. Andrews Rock, where the route drops onto the Tahoma Glacier. Many parties spend the first night lower, at St. Andrews Park on the Wonderland Trail.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Entire list belongs to other routes; west-side high camp added."
+    },
+    {
+      "id": "wa_mount_rainier_willis_wall",
+      "main": [
+        "Curtis Ridge camp"
+      ],
+      "onRoute": [
+        "Glacier Basin camp",
+        "St Elmo Pass bivy",
+        "Camp Schurman"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Schurman kept as the Emmons descent camp."
+    },
+    {
+      "id": "wa_black_peak_east_buttress",
+      "main": [
+        "Wing Lake"
+      ],
+      "onRoute": [
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+        "Lewis Lake"
+      ],
+      "drop": [
+        "Easy Pass trailhead, SR 20",
+        "Mesahchie basin, below the col",
+        "Ragged Ridge crest bivy, south of Mesahchie Col",
+        "Fisher Camp, Fisher Creek basin"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required at Wing or Lewis Lake",
+        "where": "These camps are on national forest land outside the park; a Northwest Forest Pass is needed to park at Rainy Pass. Camping inside the park boundary needs a park wilderness permit.",
+        "url": null
+      },
+      "note": "Clear-cut; the Easy Pass camps serve Ragged Ridge."
+    },
+    {
+      "id": "wa_black_peak_northeast_ridge",
+      "main": [
+        "Wing Lake"
+      ],
+      "onRoute": [
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+        "Lewis Lake"
+      ],
+      "drop": [
+        "Easy Pass trailhead, SR 20",
+        "Mesahchie basin, below the col",
+        "Ragged Ridge crest bivy, south of Mesahchie Col",
+        "Fisher Camp, Fisher Creek basin"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required at Wing or Lewis Lake",
+        "where": "These camps are on national forest land outside the park; a Northwest Forest Pass is needed to park at Rainy Pass. Camping inside the park boundary needs a park wilderness permit.",
+        "url": null
+      },
+      "note": "Clear-cut."
+    },
+    {
+      "id": "wa_corteo_peak_southwest_ridge",
+      "main": [
+        "Wing Lake",
+        "Lewis Lake"
+      ],
+      "onRoute": [
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures"
+      ],
+      "drop": [
+        "Easy Pass trailhead, SR 20",
+        "Mesahchie basin, below the col",
+        "Ragged Ridge crest bivy, south of Mesahchie Col",
+        "Fisher Camp, Fisher Creek basin",
+        "Lewis Lake larch bench"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required at Wing or Lewis Lake",
+        "where": "These camps are on national forest land outside the park; a Northwest Forest Pass is needed to park at Rainy Pass. Camping inside the park boundary needs a park wilderness permit.",
+        "url": null
+      },
+      "note": "Often done as a day from Rainy Pass; Lewis Lake larch bench dropped as a duplicate of Lewis Lake."
+    },
+    {
+      "id": "wa_inspiration_traverse",
+      "main": [
+        "Inspiration Glacier high camp",
+        "Klawatti col"
+      ],
+      "onRoute": [
+        "Eldorado Creek basin"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Clear-cut."
+    },
+    {
+      "id": "wa_katsuk_peak_gully",
+      "main": [
+        "Mesahchie basin, below the col"
+      ],
+      "onRoute": [
+        "Easy Pass trailhead, SR 20",
+        "Ragged Ridge crest bivy, south of Mesahchie Col"
+      ],
+      "drop": [
+        "Wing Lake",
+        "Lewis Lake",
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+        "Fisher Camp, Fisher Creek basin",
+        "Basin camp south of Mesahchie Peak"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Basin camp south of Mesahchie Peak dropped as a duplicate of Mesahchie basin, below the col (same basin, same height)."
+    },
+    {
+      "id": "wa_kimtah_peak_scramble",
+      "main": [
+        "Mesahchie basin, below the col"
+      ],
+      "onRoute": [
+        "Easy Pass trailhead, SR 20",
+        "Ragged Ridge crest bivy, south of Mesahchie Col",
+        "Fisher Camp, Fisher Creek basin"
+      ],
+      "drop": [
+        "Wing Lake",
+        "Lewis Lake",
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+        "Ragged Ridge Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Ragged Ridge Camp waypoint dropped as a duplicate of Mesahchie basin, below the col; Fisher Camp kept for the Fisher Creek alternative approach."
+    },
+    {
+      "id": "wa_mesahchie_peak_west_ridge",
+      "main": [
+        "Mesahchie basin, below the col"
+      ],
+      "onRoute": [
+        "Easy Pass trailhead, SR 20",
+        "Fisher Camp, Fisher Creek basin",
+        "Ragged Ridge crest bivy, south of Mesahchie Col"
+      ],
+      "drop": [
+        "Wing Lake",
+        "Lewis Lake",
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+        "Fisher Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Fisher Camp waypoint dropped as a duplicate of Fisher Camp, Fisher Creek basin; kept onRoute because the route's own waypoints run down Fisher Creek."
+    },
+    {
+      "id": "wa_mount_arriva_scramble",
+      "main": [],
+      "onRoute": [
+        "Easy Pass trailhead, SR 20"
+      ],
+      "drop": [
+        "Wing Lake",
+        "Lewis Lake",
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+        "Mesahchie basin, below the col",
+        "Ragged Ridge crest bivy, south of Mesahchie Col",
+        "Fisher Camp, Fisher Creek basin"
+      ],
+      "add": [
+        {
+          "name": "Silent Lakes",
+          "type": "camp",
+          "capacity": "Several tent sites on heather and slab around the lakes",
+          "water": "Lakes",
+          "permit": "North Cascades NP wilderness permit (cross-country zone)",
+          "notes": "Alpine lakes between Mount Arriva and Fisher Peak, reached off-trail from upper Fisher Creek basin below Easy Pass. The upper lake sits near 7,000 ft and is the usual base for Arriva's south side.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Main camp was missing; Fisher Camp dropped as it sits well down-valley of where the Silent Lakes line leaves the trail."
+    },
+    {
+      "id": "wa_ptarmigan_traverse",
+      "main": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes"
+      ],
+      "onRoute": [
+        "Cub Lake meadows / Itswoot Ridge"
+      ],
+      "drop": [
+        "Yang-Yang Lakes",
+        "White Rock Lakes / South Cascade Glacier Col",
+        "Cub Lake / Itswoot Ridge"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Three waypoint entries dropped as duplicates of Yang Yang Lakes, White Rock Lakes and Cub Lake meadows / Itswoot Ridge."
+    },
+    {
+      "id": "wa_ragged_ridge",
+      "main": [
+        "Mesahchie basin, below the col",
+        "Ragged Ridge crest bivy, south of Mesahchie Col"
+      ],
+      "onRoute": [
+        "Easy Pass trailhead, SR 20",
+        "Fisher Camp, Fisher Creek basin"
+      ],
+      "drop": [
+        "Wing Lake",
+        "Lewis Lake",
+        "Rainy Pass trailhead lots, and the quarter-mile camping closures"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Fisher Camp kept on the assumption that the traverse exits down Fisher Creek; the exit varies."
+    },
+    {
+      "id": "wa_south_ridge_3",
+      "main": [
+        "Wing Lake"
+      ],
+      "onRoute": [
+        "Lewis Lake"
+      ],
+      "drop": [
+        "Wing Lake camp"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "No overnight permit required at Wing or Lewis Lake",
+        "where": "These camps are on national forest land outside the park; a Northwest Forest Pass is needed to park at Rainy Pass. Camping inside the park boundary needs a park wilderness permit.",
+        "url": null
+      },
+      "note": "Wing Lake camp dropped as a duplicate of Wing Lake."
+    },
+    {
+      "id": "wa_rimrock_ridge_scramble",
+      "main": [
+        "Park Creek Camp, at the valley road",
+        "Bivouacs in the upper Flat Creek basin, beyond the end of the trail"
+      ],
+      "onRoute": [
+        "Tumwater Camp, Stehekin valley road",
+        "Shady Camp, Stehekin valley road"
+      ],
+      "drop": [
+        "Cottonwood Camp, end of the closed road",
+        "Swamp Creek Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Flat Creek Camp is closed for hazard trees so Park Creek is the valley base; Tumwater was reported flood-damaged in late 2025; Swamp Creek Camp is on a different trail."
+    }
+  ],
+  "misassigned": [
+    "rainier_central_mowich_face: every listed camp serves the Paradise, White River or Liberty Ridge routes; none is on the Mowich side.",
+    "rainier_north_mowich_headwall: every listed camp serves other approaches; none is on the Mowich side.",
+    "wa_mount_rainier_edmunds_headwall: every listed camp serves other approaches; none is on the Mowich side.",
+    "wa_mount_rainier_fuhrer_finger: listed camps are the Muir/Schurman/Liberty set; the route camps on Wapowety Cleaver.",
+    "wa_mount_rainier_fuhrer_thumb: listed camps are the Muir/Schurman/Liberty set; the route camps on Wapowety Cleaver.",
+    "wa_mount_rainier_kautz_headwall: listed camps are the Muir/Schurman/Liberty set; the route camps on Wapowety Cleaver or at Camp Hazard.",
+    "wa_mount_rainier_tahoma_glacier: listed camps are all east- and south-side; the route camps on the Puyallup Cleaver.",
+    "wa_mount_arriva_scramble: listed camps serve Black Peak and Ragged Ridge; the route camps at Silent Lakes."
+  ]
+}

@@ -1,7 +1,7 @@
 name: Render guards
 
-# Five checks that ask "does this reach a screen, and reach it correctly?" — a question
-# the static guards in build-check.yml cannot answer, because all five need the app
+# Six checks that ask "does this reach a screen, and reach it correctly?" — a question
+# the static guards in build-check.yml cannot answer, because all six need the app
 # rendered.
 #
 # Why they need CI at all. All were hand-run only, and on 2026-08-09 that failed
@@ -42,7 +42,27 @@ on:
     branches: [main, master]
 
 concurrency:
-  group: render-guards-${{ github.head_ref || github.ref }}
+  # On a PR, group by branch so a new push supersedes the run it replaces. On a push,
+  # `head_ref` is empty and this falls through to `github.sha`, which is UNIQUE per commit
+  # — so main runs never share a group and never queue behind one another.
+  #
+  # That is not the same guarantee `cancel-in-progress` gives, and the difference is the
+  # whole point of this line. `cancel-in-progress: false` only protects a run that is
+  # already IN PROGRESS. GitHub cancels a still-PENDING run unconditionally when a newer
+  # run joins its group, and the comment below was written believing otherwise.
+  #
+  # Measured, on this workflow: run 31644233526, event `push`, sha 7fb4e65. 18e6265's run
+  # sat pending for 15 minutes (created 21:33:48, started 21:48:44); 7fb4e65's was created
+  # 21:48:58 and correctly went pending behind it; 9d441d3's was created 21:50:48 and
+  # 7fb4e65's was CANCELLED at 21:50:50, two seconds later. It reported no failure, so
+  # #835's merge read as checked by a guard that had never run on it — the exact failure
+  # the note below claims to prevent. Sharing one group across main pushes is what built
+  # the queue that made it cancellable, so per-SHA groups are the fix, not a stricter flag.
+  #
+  # Cost: main pushes now run in parallel rather than serially. That is the price of
+  # actually checking each merge, and it is the right trade — a check that is skipped is
+  # worth less than a runner minute.
+  group: render-guards-${{ github.head_ref || github.sha }}
   # Cancel superseded PR runs; never cancel a main run. #616 is the reason: with
   # cancel-in-progress on, merges killed each other's deploys and production sat eight
   # commits behind for five hours. Cancelling here would be quieter and worse — a
@@ -62,10 +82,10 @@ jobs:
     # 50 overlays since the scaffold's discovery was widened (was 28).
     timeout-minutes: 32
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
 
@@ -101,10 +121,10 @@ jobs:
     # expected duration.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
 
@@ -133,23 +153,23 @@ jobs:
       # is what tells you whether it is a real bug. Same reasoning as zero-state.yml.
       - name: Upload per-screen text
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ui-screens
           path: ui-screens.json
           if-no-files-found: warn
 
   a11y-badges:
-    name: No control announces a glued count
+    name: No control announces a glued name
     runs-on: ubuntu-latest
     # 50 overlays since #748 widened the scaffold's discovery (was 28). This check shares
     # that discovery, so it inherited the wider walk — and the longer runtime with it.
     timeout-minutes: 32
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
 
@@ -179,10 +199,10 @@ jobs:
     # One screen and two overlays, so it is the quickest of these.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
 
@@ -206,15 +226,44 @@ jobs:
           VITE_USE_DB: "true"
           VITE_DEMO_AUTOLOGIN: "true"
 
+  token-boxes:
+    name: No value-sized box holds a paragraph
+    runs-on: ubuntu-latest
+    # SSR only — no browser, no dev server. The cost is one bounded catalog read plus 240
+    # renders, ~40s healthy. The headroom is for a degraded Supabase: the read is a single
+    # request and fails closed rather than retrying, so this cannot sit spinning.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: No column's prose lands in a chip
+        run: npm run check:token-boxes
+        env:
+          # Read-only, anon key. Same stance as field-renders below: `routes` is publicly
+          # readable and CI has no business holding a key that bypasses RLS.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
   field-renders:
     name: Enriched columns reach a screen
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # A healthy run is ~85s. The headroom is for the degraded case: each of the 45 column
+    # queries now retries up to 3 times, and the failure being retried is a 57014 statement
+    # timeout, so a wholesale-slow Supabase costs three timeouts per column before the run
+    # gives up. At the 3s anon ceiling that is ~7min; a cold connection costs 3.8-6.4s (see
+    # the note in CLAUDE.md) and 15 was too tight against that. It only ever fails closed
+    # after spending this, so the budget buys a correct verdict, never a false pass.
+    timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
 
@@ -227,3 +276,314 @@ jobs:
           # stance as area-count-drift.yml.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+  summit-briefing:
+    name: The peak summary says only what its routes agree on
+    runs-on: ubuntu-latest
+    # Three catalog reads and two SSR renders. A healthy run is seconds; the headroom is for
+    # a cold or degraded project, where the anon role's 3s statement timeout can bite.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: The peak briefing speaks and refuses in the right places
+        run: npm run check:summit-briefing
+        env:
+          # Read-only, and the ANON key on purpose — `routes` is publicly readable, CI has no
+          # business holding a key that bypasses RLS, and a checker that could write is a
+          # checker that can corrupt what it is checking. Same stance as field-renders above.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+  horizontal-overflow:
+    name: The app fits a 390px phone
+    runs-on: ubuntu-latest
+    # Walks the same 6 tabs and ~43 openable overlays as its siblings; measured at ~6m
+    # locally, so this is headroom rather than an expected duration.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:overflow cannot measure anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: Nothing runs off the right-hand edge
+        run: npm run check:overflow
+        env:
+          # Same reasoning as the jobs above: without these USE_DB is off and the app
+          # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+  selected-state:
+    name: A selected control says it is selected
+    runs-on: ubuntu-latest
+    # ON PUSH TO MAIN walks 58 screens: 6 tabs, every overlay the app declares (discovered, not
+    # listed) and the route detail page (Overview and Plan), clicking one representative per
+    # control group and reloading only when a click actually disturbed the page.
+    # ON A PULL REQUEST it walks the fast screens only — see the step's own note for why and for
+    # the measurement. The timeout below is sized for the main run; a PR run is ~5 minutes.
+    #
+    # 75 minutes is derived from a MEASURED 58-screen run, and the first derivation was wrong
+    # in a way worth recording. It extrapolated from the 8-screen version (3m27s in CI, ~30s of
+    # it server start) to ~22s/screen and set 40 — but those 8 were all TABS, and an overlay
+    # costs roughly double, because it renders OVER a tab and the guard probes both. The real
+    # run walked 49 of 58 screens in 38m01s and was cancelled AT the 40-minute wall: 367 groups,
+    # 6.2s/group, 46.6s/screen, so 58 screens is ~45m of walking plus ~85s of startup — ~47m.
+    #
+    # A CANCELLED RUN REPORTS NO FAILURE, so that first cancellation read as a green PR with a
+    # check that had silently measured nothing. Sample the SLOW kind of screen before deriving a
+    # timeout from the fast kind. The wall-clock figure from a local run is NOT usable for this
+    # either — one read 317m real against 10m37s of CPU, which is a loaded developer box
+    # starving the process, not the guard being slow.
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:selected-state cannot measure anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # SPLIT BY EVENT, because 42 minutes on every pull request buys nothing a merge-time run
+      # does not. Measured on main: 3m43s at 8 screens (19:02 run) against 42m33s at 58 (21:41
+      # run) — an 11.4x rise from #1233's expansion, invisible because a slower guard still goes
+      # green. NOTHING STOPS BEING CHECKED: a mute control introduced inside an overlay is caught
+      # when the branch merges instead of while it is in review, the same trade check:ui's
+      # live-site walk already makes by running on a schedule.
+      #
+      # `--overlays=` is an EXPLICIT empty list, which the guard obeys. Discovery finding almost
+      # nothing is fatal instead — see the fail-closed note on OVERLAYS. That asymmetry is what
+      # makes this split safe: the PR run is deliberately narrow, and a BROKEN main run cannot
+      # masquerade as one.
+      - name: Selection is announced, not just coloured
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "pull request — walking the fast screens (tabs, onboarding, route detail + Plan)."
+            echo "The 50-overlay sweep runs on push to main; see the note above."
+            npm run check:selected-state -- --overlays=
+          else
+            npm run check:selected-state
+          fi
+        env:
+          # Same reasoning as the jobs above: without these USE_DB is off and the app under
+          # test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+  challenge-rows:
+    name: Tick-list rows say something true
+    runs-on: ubuntu-latest
+    # Opens ONE panel and expands ONE card, so it is much shorter than its siblings.
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:challenge-rows cannot measure anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      - name: The Challenges list panel renders real rows
+        run: npm run check:challenge-rows
+        env:
+          # Same reasoning as the jobs above: without these USE_DB is off and the app
+          # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+  outage:
+    name: An outage never reads as an empty account
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:outage cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # Same credential rule as the signed-in job below, and for the same reason: this walk
+      # needs a REAL account with real data, and CI must never hold the service key. It signs
+      # in to the two durable accounts with the ANON key, which is what a browser does.
+      #
+      # It runs the walk TWICE -- healthy, then with every PostgREST read answered 57014 -- and
+      # fails if a screen whose content changed says nothing about the failure. A screen that is
+      # identical either way is seed-backed and is reported as proving nothing.
+      - name: Walk a signed-in account with the database down
+        run: npm run check:outage
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          CI_TEST_OWNER_EMAIL: ${{ secrets.CI_TEST_OWNER_EMAIL }}
+          CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
+          CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
+          CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}
+
+  signed-in:
+    name: A real signed-in account still works
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:signed-in cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # This guard sat OUTSIDE CI until 2026-08-13, and the reason was sound: its fixture
+      # created accounts with the production SERVICE KEY, which bypasses RLS, and CI must
+      # never hold that key. The consequence was the failure this workflow exists to fix —
+      # it went ~40 merged commits without running, because on a loaded machine "hand-run"
+      # means "not run".
+      #
+      # The privileged half now happens ONCE, locally:
+      #   scripts/oneoff/create-ci-test-accounts.mjs   (two accounts, discoverable=false)
+      #   scripts/oneoff/seed-ci-test-fixture.mjs      (crew, group, logbook, connection)
+      # so all this job does is exchange a password for a session with the ANON key, which is
+      # what a real browser does. No service key is present on this runner, deliberately.
+      #
+      # The accounts are permanent, which is acceptable only because both profiles are
+      # discoverable=false and so cannot surface in partner browse. lib/durable-fixture.mjs
+      # re-asserts that on every run rather than trusting the day it was set.
+      - name: Walk a real signed-in account
+        run: npm run check:signed-in -- --dump signed-in-screens.json
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          CI_TEST_OWNER_EMAIL: ${{ secrets.CI_TEST_OWNER_EMAIL }}
+          CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
+          CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
+          CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}
+
+      # THIS EXISTS TO SETTLE A RED THAT HAS TWICE BEEN BLAMED ON THE WRONG THING. The
+      # Group:detail assertions fail intermittently -- the member count in Aug, the "Owner"
+      # roster label on 2026-09-02 -- and both times a re-run of the SAME COMMIT passed, so
+      # nothing about the branch explains it. Every diagnosis so far is inference from source
+      # because the failing SCREEN has never been captured: the walk ran with no --dump and
+      # uploaded nothing, and a dump from a passing run cannot show what the failing one said.
+      #
+      # `if: always()` is the whole point. The dump is written BEFORE the guard exits non-zero
+      # (the `if (DUMP)` block precedes the `if (fails.length)` block in check-signed-in.mjs),
+      # so a FAILING run does produce one -- and that is the only run whose text is worth
+      # having. A default `if: success()` would upload exactly the screens nobody needs.
+      #
+      # A MISSING artifact is informative too, which is why if-no-files-found only warns.
+      # The guard's four early exits are all SETUP aborts -- no env, dead dev server, session
+      # rejected, signed in as the wrong account -- and every one of them fires before a single
+      # screen is walked, so there is nothing to dump. No artifact therefore means the walk
+      # never started; an artifact means it walked and then disagreed. Opposite repairs.
+      #
+      # It holds no secrets: the file is per-screen rendered TEXT from two fixture accounts
+      # whose profiles are discoverable=false, not sessions or keys.
+      - name: Upload per-screen text
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: signed-in-screens
+          path: signed-in-screens.json
+          if-no-files-found: warn
+
+  message-delivery:
+    name: A message from another climber arrives
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:message-delivery cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # THE FIRST GUARD HERE THAT INVOLVES TWO PEOPLE. Every other browser guard signs in as at
+      # most one account and reads its own screens, so a fact written by a SECOND climber has been
+      # outside CI by construction — the seam #1497 came out of, where a vouch you had received
+      # reached no screen and no number.
+      #
+      # IT WRITES to the live project, which no other guard in this workflow does, on exactly the
+      # terms check:signed-in already set: two durable accounts that are discoverable=false, the
+      # anon key only, one `messages` row per run, deleted by id, leaks reported.
+      #
+      # THIS JOB WAS ADDED, MEASURED, AND PULLED ONCE before it merged, because the teardown could
+      # not actually delete: `messages` had no DELETE policy, so RLS refused it and PostgREST's 204
+      # read as success. 0176 adds the policy — verified by insert/delete/re-read rather than by
+      # reading the SQL — and the guard reads the row back rather than trusting the status code.
+      #
+      # Concurrency between runs is answered rather than assumed: two rows coexist, every assertion
+      # holds with either or both present, teardown targets a single ID, and the body carries
+      # GITHUB_RUN_ID so a run asserts on its OWN message. Without that last part run A passes on
+      # run B's row — a false pass in the exact window this guard watches.
+      - name: Deliver a message between two real accounts
+        run: npm run check:message-delivery
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          CI_TEST_OWNER_EMAIL: ${{ secrets.CI_TEST_OWNER_EMAIL }}
+          CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
+          CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
+          CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}

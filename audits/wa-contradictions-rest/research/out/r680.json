@@ -1,0 +1,1789 @@
+{
+ "file": "r680.json",
+ "results": [
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Approach line from Paradise to the Wilson Glacier high camp",
+   "verdict": "fixed",
+   "correct_value": "From Paradise via Glacier Vista, a roped crossing of the Nisqually Glacier and the gully onto Wapowety Cleaver to camp at the edge of the Wilson Glacier (not the Muir Snowfield).",
+   "evidence": "The route description on Mountain Project gives Paradise, Skyline Trail to Glacier Vista (6,300 ft), a drop onto and crossing of the Nisqually Glacier, a ~700 ft gully, then Wapowety Cleaver to camp at the edge of the Wilson Glacier. The Mountaineers route page and a ski trip report give the same Glacier Vista / Nisqually / Wilson line. None uses the Muir Snowfield.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+    "https://www.countryhighpoints.com/mt-rainier-via-fuhrer-finger/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Hike the Muir Snowfield and traverse to a high bivy near the Wilson Glacier area",
+     "replace": "Cross the Nisqually Glacier from Glacier Vista and climb onto Wapowety Cleaver to a high bivy at the edge of the Wilson Glacier",
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "Approach line from Paradise to the Wilson Glacier high camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Hike the Muir Snowfield and traverse to a high bivy near the Wilson Glacier area",
+     "replace": "Cross the Nisqually Glacier from Glacier Vista and climb onto Wapowety Cleaver to a high bivy at the edge of the Wilson Glacier",
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "Approach line from Paradise to the Wilson Glacier high camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "High camp name and elevation",
+   "verdict": "fixed",
+   "correct_value": "High camp on Wapowety Cleaver at the edge of the Wilson Glacier, about 9,200 ft (not Camp Hazard).",
+   "evidence": "Mountain Project places high camp on the crest of Wapowety Cleaver at the edge of the Wilson Glacier among rock windbreaks; the Mountaineers route summary and a trip report put the standard camp around 9,200 ft beside the Wilson Glacier. Camp Hazard is on the Kautz route and is not named for this line. The day-1 gain figure is left alone because it feeds the itinerary total that matches gain_ft.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+    "https://www.countryhighpoints.com/mt-rainier-via-fuhrer-finger/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach a high camp near the Wilson Glacier / Camp Hazard",
+     "replace": "Reach a high camp on Wapowety Cleaver at the edge of the Wilson Glacier",
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "High camp name and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Maximum slope angle of the Finger",
+   "verdict": "fixed",
+   "correct_value": "50",
+   "evidence": "Mountain Project describes 30-45 degree snow with 40-45 degree climbing in the couloir; the Mountaineers route summary gives 30-45 degree slopes. Nothing supports 60 degrees; the row's own steepest described ground is a ~50 degree roll near the top, so max_angle is set to 50 to match the route breakdown.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "max_angle",
+     "path": [],
+     "expect": 60,
+     "value": 50,
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "Maximum slope angle of the Finger"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Bergschrund location",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project describes a bergschrund route-finding problem on the Wilson Glacier crossing to the base of the couloir, while the row's pitch_detail describes a separate schrund/large crevasse near the top around 12,100-12,700 ft; these are two different features, both real.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Descent route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project lists three descents: reverse the couloir, descend the Kautz Glacier route back to camp (icefall exposure), or carry over via Ingraham Direct/DC. watch_out warns about the hazard of a genuine alternative descent rather than contradicting the main descent.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "II",
+   "evidence": "Mountain Project and the Mountaineers route page both rate the Fuhrer Finger Grade II. alpine_grade and commitment already say II; grade is aligned.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "II-III",
+     "value": "II",
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 24.94 (15.5 mi) is shown as a one-way approach and looks too long; one trip report gives ~14 mi for a loop that ascended a different route, and a search summary mentions ~5 mi to gain 9,000 ft, but no two sources state the one-way distance for this route.",
+   "sources": [
+    "https://climberkyle.com/2026/05/03/mt-rainier-fuhrer-finger/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Waypoints from the west/northwest side of the mountain",
+   "verdict": "unresolved",
+   "correct_value": "Waypoints 1-3 (Mowich Lake Camp, Puyallup Winthrop Junction Camp, Puyallup Glacier Serac Zone) do not belong to this route.",
+   "evidence": "The park's official Liberty Ridge route description runs White River - Glacier Basin - St. Elmo's Pass - Winthrop Glacier - Curtis Ridge - Carbon Glacier, confirming the row's approach; Mowich Lake and the Puyallup Glacier are on the far side of the mountain. The pins' coordinates themselves sit on the west side, so renaming them would misplace them; they need removing, which is a pin-position change outside this patch scope.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Steepest angle on the route",
+   "verdict": "fixed",
+   "correct_value": "Faces up to ~60 degrees beside the Black Pyramid; an optional short 70-80 degree water-ice pitch through the Gun Sight rock band above Thumb Rock (bypassable on the left); the bergschrund near 13,800 ft is the usual crux and can be near-vertical.",
+   "evidence": "The park's route brief says the easiest way past the Gun Sight rock band above Thumb Rock goes around it to the east, with a short water-ice pitch through the middle only as an option, and calls the bergschrund near 13,800 ft the last and generally toughest crux, sometimes a near-vertical pitch. Mountain Project gives the same optional 70-80 degree pitch (or traverse left around it), faces up to 60 degrees at the Black Pyramid, and vertical sections at the bergschrund. watch_out wrongly calls the optional pitch the crux, and the itinerary's 50-55 degree cap for the schrund understates it.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      3
+     ],
+     "find": "70-80 degree ice pitches near rock bands around 10,500 ft - crux terrain",
+     "replace": "Optional short 70-80 degree ice pitch through the rock band just above Thumb Rock - the usual line goes around it on the left",
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Steepest angle on the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Steepest ice on route, roughly 50-55°",
+     "replace": "Usually the hardest obstacle on the route; some years a near-vertical step",
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Steepest angle on the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Descent route in partner requirements",
+   "verdict": "fixed",
+   "correct_value": "Emmons-Winthrop descent",
+   "evidence": "The park's route brief names the Emmons-Winthrop as the most common descent from Liberty Cap, down to Camp Schurman and out to White River; Mountain Project says the same. partner_requirements is aligned with the descent fields.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "down the DC/Ingraham descent",
+     "replace": "down the Emmons-Winthrop descent",
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Descent route in partner requirements"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's route brief gives about 8 mi trailhead to Thumb Rock plus about 2.5 mi Thumb Rock to Columbia Crest, and lists an approximate length of 10-12 mi, so dist_km 9.6 (6 mi) is too short. A second independent source for the one-way figure was not found, so dist_km is not changed.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": "11,500 ft (gain_ft is supported)",
+   "evidence": "The park's route brief lists approximate elevation gain of 11,500 ft (about 6,500 ft to Thumb Rock plus 5,000 ft to Columbia Crest), which matches gain_ft. The itinerary's day figures sum to ~10,150 ft, but per-day figures cannot be changed without a source stating them, so the itinerary total stays out of line.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Elevation where the approach drops onto the Carbon Glacier",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's route brief says parties descend off Curtis Ridge at about 7,600 ft onto the Carbon Glacier; Mountain Project says the ramp reaches the Carbon at around 7,300 ft. The sources disagree, so neither field is changed.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "May-Jun",
+   "evidence": "best_season, seasonal_guidance (May optimal, June good, July risky), approach_variants[0].season and the crux notes all put the window at May-June. The park climbing rangers' late-May conditions post warns that warm weather will soon collapse the lower bergschrund, and a mid-June 2025 attempt was turned back by thin snow on the ridge, consistent with an early-season-only route. The header season Jun-Aug is the lone outlier.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Aug",
+     "value": "May-Jun",
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Maximum slope angle",
+   "verdict": "fixed",
+   "correct_value": "60",
+   "evidence": "The park climbing rangers' conditions report describes about 1,300 ft of firm 55-60 degree snow on the upper Mowich Face; the Mountaineers route summary gives 50-55 degree gullies and faces below that. max_angle 45 is below both; 60 matches the rangers' figure and the row's pitch_detail and baseFinding.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "max_angle",
+     "path": [],
+     "expect": 45,
+     "value": 60,
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Maximum slope angle"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Rock difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project rates the route 5.5 for a short loose rock crux; a 2025 trip report describes the ridge rock as fourth-class choss. The sources disagree, so neither field changes.",
+   "sources": [
+    "https://www.mountainproject.com/route/112479245/sunset-ridge",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Exit / finishing trailhead",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descend a standard route on the far side and shuttle back to Westside Road.",
+   "evidence": "Day 4's own note, the totalNote and descent_text all describe descending a standard route that exits on the opposite side with a car shuttle. The Mountaineers route summary describes the climb as a carry-over descending the Disappointment Cleaver with a prearranged car shuttle. Only the day-4 objective says to hike back to Westside Road.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "objective"
+     ],
+     "find": "Hike back to the Westside Road trailhead",
+     "replace": "Hike out the far side and shuttle back to Westside Road",
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Exit / finishing trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "High camp location and elevation",
+   "verdict": "fixed",
+   "correct_value": "High camp on the South Mowich Glacier (about 8,500 ft, some parties higher at about 9,600 ft); Colonnade Ridge is a separate, lower snow camp.",
+   "evidence": "The park climbing rangers' report places base camp at 8,500 ft on the South Mowich Glacier; a 2025 trip report lists Colonnade Ridge as a separate snow camp and a 9,600 ft open bivouac on the South Mowich Glacier. The itinerary wrongly puts Colonnade Ridge at ~9,600 ft beyond the glacier traverse; it is corrected to the South Mowich Glacier camp, keeping the 9,600 ft figure that the day's gain assumes. bivy entries are not touched.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "to a high camp near Colonnade Ridge (~9,600 ft)",
+     "replace": "to a high camp on the South Mowich Glacier (~9,600 ft)",
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "High camp location and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Crux of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park climbing rangers' report describes about 1,300 ft of 55-60 degree snow on the upper Mowich Face plus a bergschrund and a short technical ridge section; a 2025 party was turned back at the knife-edge choss-wall notch and called that the crux. Sources name different cruxes (condition-dependent) and only one gives the face length, so nothing is changed.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Approach glaciers",
+   "verdict": "fixed",
+   "correct_value": "Puyallup and South Mowich glaciers",
+   "evidence": "The Mountaineers route summary has parties leave the Puyallup Cleaver at 8,500 ft and traverse north across the Puyallup and South Mowich glaciers; the park climbing rangers' report camps on the South Mowich Glacier. The Edmunds Glacier is not on this approach.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "on the Edmunds/South Mowich approach glaciers",
+     "replace": "on the Puyallup/South Mowich approach glaciers",
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Approach glaciers"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "fact": "Number of ice screws",
+   "verdict": "fixed",
+   "correct_value": "Several ice screws for the upper Mowich Face (4-6 suggested).",
+   "evidence": "The park climbing rangers' report found glacier ice a few inches under the surface of the upper Mowich Face that took ice screws; a 2025 trip report recommends 4-6 screws for that face. 'A screw or two if icy' understates this; the rack line is aligned with rope_note and gear.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+    "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "a screw or two if icy",
+     "replace": "several ice screws for the upper Mowich Face",
+     "id": "wa_mount_rainier_sunset_ridge",
+     "fact": "Number of ice screws"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2000s trip report notes that route information came from parties who had been on the face in winter or early spring and that its own June 30 ascent was unusually late; historical ascents include a first winter ascent in 1970 and June ascents. A general summary suggests late spring after a dry, cool spell is best. No two sources agree clearly enough to choose between 'winter/early spring' and 'late spring', so nothing is changed.",
+   "sources": [
+    "https://cascadeclimber.com/willis_wall.htm",
+    "https://en.wikipedia.org/wiki/Willis_Wall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Carbon River road access",
+   "verdict": "fixed",
+   "correct_value": "The SR 165 Fairfax Bridge closed permanently in April 2025 to vehicles, bikes and pedestrians; there is no public access to Carbon River via SR 165.",
+   "evidence": "WSDOT announced the permanent closure of the Fairfax Bridge on April 22, 2025, to all vehicle and pedestrian traffic, with no public detour. The park's Mowich Lake/Carbon River page says that until further notice there is no access to Carbon River and Mowich Lake via SR 165. The approach variant's 'intermittent, confirm either way' framing is stale.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Carbon River access has been interrupted for long stretches by bridge and road failure on the state highway that serves it, and when it is out the Carbon side becomes a very long wilderness walk rather than a drive-in. Treat that as a thing to confirm rather than a fixed fact in either direction.",
+     "replace": "Carbon River access ended in April 2025, when the SR 165 Fairfax Bridge, the only public road in, was closed permanently to cars, bikes and walkers; the Carbon side is now a very long wilderness walk rather than a drive-in.",
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Carbon River road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "Carbon River road access is intermittently severed, which changes the approach from a drive-in to a multi-day walk",
+     "replace": "Carbon River road access has been closed since April 2025, which makes that side a multi-day walk",
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Carbon River road access"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Walk-off/downclimb of the Emmons-Winthrop glacier route; no rappels on the descent.",
+   "evidence": "descent_text, rappels and the itinerary all descend the Emmons-Winthrop to Camp Schurman with no rappels. The park's route brief for the neighbouring Liberty Ridge describes that same Emmons-Winthrop descent from the summit area to Camp Schurman as a glacier walk timed by the Munter method, with no rappels. Only the hidden descent field mentions rappels.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via established descent route, using rappels and downclimbing as necessary.",
+     "replace": "Descend the Emmons-Winthrop glacier route, downclimbing as necessary.",
+     "id": "wa_mount_rainier_willis_wall",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Technical grade of the wall",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project rates Willis Wall M5+ X, Grade V, which supports pitch_detail's M5+ and grade V rather than the 5.5 / AI3 chips. No second source gives a modern technical grade, so the chips are not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106475331/willis-wall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found that states the one-way approach distance for Willis Wall from White River; dist_km is left unchanged.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "fact": "High camp location",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Camp on the Nisqually Glacier side below the icefall (approached up the Nisqually alongside the Wapowety Cleaver), not on the Turtle Snowfield across the Wilson Glacier.",
+   "evidence": "approach, approach_variants[0] and bivy[0] all put the approach up the Nisqually Glacier to the icefall's base near 9,900 ft; the Turtle Snowfield sits across the Wilson Glacier on the Kautz route and is above the icefall's start. The first-ascent account in the American Alpine Journal reached the icefall by traversing the Nisqually cirque (from Camp Muir), not via the Wilson Glacier or Turtle Snowfield. The day-1 gain figure is left alone because it feeds the itinerary total.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "descend and cross the Nisqually Glacier, then ascend the Wilson Glacier (via the Fan) to a high camp near the Turtle Snowfield",
+     "replace": "drop onto the Nisqually Glacier and ascend it alongside the Wapowety Cleaver to a camp below the icefall",
+     "id": "wa_mount_rainier_nisqually_icefall",
+     "fact": "High camp location"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach a high camp near the Turtle Snowfield",
+     "replace": "Reach a camp on the Nisqually Glacier below the icefall",
+     "id": "wa_mount_rainier_nisqually_icefall",
+     "fact": "High camp location"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "descend and cross the Nisqually Glacier, then ascend the Wilson Glacier (via the Fan) to a high camp near the Turtle Snowfield",
+     "replace": "drop onto the Nisqually Glacier and ascend it alongside the Wapowety Cleaver to a camp below the icefall",
+     "id": "wa_mount_rainier_nisqually_icefall",
+     "fact": "High camp location"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent account confirms a 120 ft (~37 m) rope in 1948, matching rope_note, but no source gives a modern recommended rope length for this route, so the 45 m chip and the note's 50-60 m suggestion cannot be settled from outside evidence.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "fact": "Length of the technical climb",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The first-ascent account puts the icefall itself at roughly 1,500 ft of elevation, which is what length_m (457 m) and pitch_detail measure; the approach text describes the broader broken basin continuing on to the 13,000 ft saddle, a different span.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Winter through May; the Ingraham Direct has generally broken up before June in recent years, after which parties use the DC.",
+   "evidence": "The park's official Disappointment Cleaver-Ingraham Glacier route brief says the ID was once climbed well into June but has not lasted into June since the 2005 season, and that guide companies climb it for a trip or two from mid-May before moving to the Cleaver; it remains an option for winter and early-spring attempts. A separate route guide says the Ingraham Direct becomes uncrossable by the end of May as crevasses open. season and approach_variants[0].season (January to end of May) are correct; best_season, seasonal_guidance and overview are aligned to them.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+    "https://www.timberlinetrails.com/RainierApproachClimb.html",
+    "https://www.alpineascents.com/blog/the-notebook-when-should-i-climb-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Late May through June, when the Ingraham headwall is filled and continuous. By mid/late summer the direct breaks",
+     "replace": "Winter through May, while the Ingraham headwall is filled and continuous. By June the direct usually breaks",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Late May through June, when the Ingraham headwall is filled and continuous",
+     "value": "Winter through May, while the Ingraham headwall is filled and continuous",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "expect": "Still generally in good condition; classic window",
+     "value": "In recent years the glacier has usually broken up before June; most parties have moved to the DC",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "marginal",
+     "value": "risky",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "It's usually in best shape from late May through June while the headwall is still filled and continuous",
+     "replace": "It's usually in best shape from winter through May while the headwall is still filled and continuous",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Total distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 8 mi one way (12.87 km)",
+   "evidence": "dist_km 6.8 (4.2 mi) matches Paradise to Camp Muir only, a different quantity from the one-way approach the header shows. The summit waypoint (8 mi), Camp Muir waypoint (4.5 mi) and the itinerary agree on about 8 mi one way. The park's official route brief for the DC-Ingraham line gives an approximate length of 8-9 miles, and the direct line is slightly shorter than the Cleaver.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 6.8,
+     "value": 12.87,
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Total distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "fact": "Gain from Paradise to Camp Muir",
+   "verdict": "fixed",
+   "correct_value": "about 4,700 ft",
+   "evidence": "The Camp Muir hike from Paradise (about 5,420 ft) to Camp Muir (about 10,100-10,200 ft) is given as roughly 4,650 ft of gain by two independent hiking guides; the itinerary, pitch_detail and approach variant say 4,600-4,700. The approach's 4,000 ft is corrected.",
+   "sources": [
+    "https://www.outdoorproject.com/united-states/washington/camp-muir-hike",
+    "https://www.alltrails.com/trail/us/washington/camp-muir-route-via-skyline-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "gaining 4,000 ft",
+     "replace": "gaining about 4,700 ft",
+     "id": "wa_mount_rainier_ingraham_direct",
+     "fact": "Gain from Paradise to Camp Muir"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park climbing rangers reported the Mowich Face/Edmunds Headwall climbable on July 25, 2017 (firm neve under penitentes), and the Mountaineers route summary says the Mowich Face is sometimes in condition in October and early November. That undercuts the row's 'May-June only, July risky' guidance as much as the Jun-Aug header, so no window is imposed.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+    "https://www.mountaineers.org/activities/routes-places/mowich-lake-area-review/mt-rainier-mowich-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Mowich Lake road access",
+   "verdict": "fixed",
+   "correct_value": "No public access to Mowich Lake via SR 165 since the Fairfax Bridge was permanently closed in April 2025.",
+   "evidence": "WSDOT announced the permanent closure of the SR 165 Fairfax Bridge on April 22, 2025, to all vehicle and pedestrian traffic, with no public detour. The park's Mowich Lake page says there is no access to Carbon River and Mowich Lake via SR 165 until further notice. The approach, itinerary and approach variant still describe driving in or an uncertain, intermittent closure.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the Mowich Lake trailhead (reached via the Mowich Lake Road, which typically opens later in the season than White River Road), follow",
+     "replace": "From the Mowich Lake trailhead (no public road access since the SR 165 Fairfax Bridge closed permanently in April 2025, so the lake is now a long walk in from another park entrance), follow",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Drive to Mowich Lake and hike via the Spray Park area",
+     "replace": "From Mowich Lake (no road access since the April 2025 bridge closure), hike via the Spray Park area",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Access to it along the state highway from the north has also been interrupted by bridge failure for extended periods, in which case Mowich Lake itself becomes a long wilderness walk from another park entrance. Confirm which of those two situations applies before you commit a trip to this side.",
+     "replace": "Since April 2025, though, the SR 165 Fairfax Bridge that carried the only public road to it has been closed permanently to cars, bikes and walkers, so Mowich Lake itself is now a long wilderness walk from another park entrance.",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      5
+     ],
+     "find": "Seasonal road access on this side is late and has been interrupted for long periods",
+     "replace": "Road access on this side has been closed since the April 2025 Fairfax Bridge closure",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Mowich Lake road access"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Ice grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project grades the (Central) Mowich Face AI3-4 overall while describing the harder variation's ice steps as AI2-3; the Mountaineers summary repeats the AI2-3 steps. Sources do not settle whether the overall chip should read AI2-3 or AI3-4, so ice_grade is not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face",
+    "https://www.mountaineers.org/activities/routes-places/mowich-lake-area-review/mt-rainier-mowich-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "High camp elevation",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 9,600 ft between the North Mowich and Edmunds glaciers.",
+   "evidence": "The park climbing rangers bivied at 9,600 ft between the North Mowich and Edmunds glaciers near the base of the Edmunds Headwall, matching the approach, pitch_detail and itinerary. The disagreeing 8,100/8,600 ft figures are in bivy[] entries, which are handled by the separate camping clean-up; no patch.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Where the summit day finishes",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The park climbing rangers describe the face topping out around 13,000 ft onto upper Sunset Ridge and continuing to Liberty Cap, so the itinerary's 'to Sunset Ridge and the summit' and pitch_detail's bench leading to Liberty Cap describe the same finish.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Carry over and walk down the Emmons-Winthrop or Disappointment Cleaver; no rappels.",
+   "evidence": "descent_text, rappels (0) and pitch_detail[4] all describe a carryover glacier descent with no rappels. Mountain Project's Mowich Face description gives the descent as a carry-over via the Emmons or DC route. Only the hidden descent field mentions rappels.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via established descent route, using rappels and downclimbing as necessary.",
+     "replace": "Carry over and descend the Emmons-Winthrop or Disappointment Cleaver glacier route, downclimbing as necessary.",
+     "id": "wa_mount_rainier_mowich_face",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Approach glaciers / camp sequence",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project says to leave Ptarmigan Ridge at 8,300 ft and descend 1,000 ft to the North Mowich Glacier; the park climbing rangers camped at 9,600 ft between the North Mowich and Edmunds glaciers. That sequence (drop onto the North Mowich, then camp at the glacier divide) partly supports the hazards text and partly the approach text, so neither is rewritten.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face",
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states the current one-way approach distance for the Mowich Face; with Mowich Lake closed to vehicles the approach length depends on the walk-in chosen. dist_km is not changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Summit-day duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's official DC route brief says guided parties typically take no more than 10-11 hours round trip from Camp Muir and that the descent from Columbia Crest to Camp Muir takes about two-thirds of the ascent time; the Paradise-Muir leg is estimated at 5-6 hours up. That makes a 12-hour Muir-Paradise summit day tight but not impossible, and no source gives a car-to-car descent time that would settle whether the 8-10 hour descent figure or the 12-hour day is the one to change.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's official route brief gives an approximate length of 8-9 miles without saying whether that is one way; the row's own figures (dist_km ~7 mi one way, summit waypoint 7.25 mi, descent 7.5 mi, itinerary ~18 mi round trip) fall either side of it. No second source fixes the one-way distance, so nothing changes.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "fact": "Camp Muir reservable vs walk-up split",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Official sources disagree: the park's wilderness permit page and the Recreation.gov permit page say about two-thirds of summer permits are reservable and one-third walk-up; the park's climbing page says roughly 50% of each camp is held for walk-ups; the park's DC route brief says 66 of Camp Muir's 110 spaces are reservable (60%). No single split can be adopted from two agreeing sources.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.recreation.gov/permits/4675317",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Mowich Lake road access",
+   "verdict": "fixed",
+   "correct_value": "No public access to Mowich Lake via SR 165 since the Fairfax Bridge was permanently closed in April 2025.",
+   "evidence": "WSDOT announced the permanent closure of the SR 165 Fairfax Bridge on April 22, 2025, to all vehicle and pedestrian traffic, with no public detour. The park's Mowich Lake page says there is no access to Carbon River and Mowich Lake via SR 165 until further notice. The approach, trailhead direction and approach variant still route the party via SR 165 or describe an intermittent, seasonal road.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach",
+     "path": [],
+     "expect": "Northwest corner of Mount Rainier National Park via SR 165",
+     "value": "Northwest corner of Mount Rainier National Park, from Mowich Lake; the SR 165 road to the lake has had no public access since the Fairfax Bridge closed permanently in April 2025",
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "Northwest corner of Mount Rainier National Park via SR 165",
+     "value": "Northwest corner of Mount Rainier National Park; no road access via SR 165 since the April 2025 Fairfax Bridge closure",
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Mowich Lake Road is unpaved and typically opens around July, and highway access from the north has been severed for extended periods. Confirm before committing.",
+     "replace": "Mowich Lake has had no public road access since the SR 165 Fairfax Bridge closed permanently in April 2025; reaching it now means a long walk in from another park entrance.",
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "Seasonal and intermittently severed road access on this side of the park",
+     "replace": "No road access on this side of the park since the April 2025 Fairfax Bridge closure",
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Mowich Lake road access"
+    }
+   ]
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Climbing permit fee",
+   "verdict": "fixed",
+   "correct_value": "The climbing permit itself is free, but each climber must first pay the per-person climbing cost recovery fee; there is no self-registration at Mowich Lake while the road is closed.",
+   "evidence": "The park's official route brief separates a required per-person Climbing Cost Recovery Fee from the climbing permit, which is free and issued once the fee is paid; the park's climbing page gives the per-person fee ($82) and has summer registration at wilderness information centers. access.permit read as though no fee applies and pointed to a Mowich Lake kiosk the closed road no longer reaches; it is reworded to agree with passRequired and permit.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free climbing permit, self-register at Mowich Lake ranger station/kiosk",
+     "value": "Climbing permit (the permit itself is free, but each climber must pay the climbing cost recovery fee first)",
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Climbing permit fee"
+    }
+   ]
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "High camp location",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Bivy at about 9,600-10,000 ft between the North Mowich and Edmunds glaciers.",
+   "evidence": "The park climbing rangers bivied at 9,600 ft between the North Mowich and Edmunds glaciers near the base of the Edmunds Headwall, and Mountain Project starts the route from a bivy at 10,000 ft, matching beta, the approach variant and pitch_detail. The outlier is bivy[0] (lower Ptarmigan Ridge), which belongs to the separate camping clean-up; no patch.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+    "https://www.mountainproject.com/route/111999837/north-mowich-headwall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Vertical gain / climb length",
+   "verdict": "fixed",
+   "correct_value": "About 4,000 ft of climbing from the ~10,000 ft bivy to Liberty Cap; the ~2,000 ft figure is only the 45-degree snow slope below the rock band.",
+   "evidence": "Mountain Project starts the route from a bivy at 10,000 ft and describes a couple thousand feet of ~45 degree snow only as the section up to the rock band, followed by the band and the ice cap to Liberty Cap (14,112 ft). A published trip report describes the route as about 4,000 ft of 40-55 degree ice. length_m (~4,110 ft) is right; beta's '~2,000 ft vertical gain on climb' is corrected. gain_ft is handled separately.",
+   "sources": [
+    "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+    "https://www.summitpost.org/mt-rainier-mowich-headwall-face/297239"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "~2,000 ft vertical gain on climb",
+     "replace": "~4,000 ft of climbing from the bivy to Liberty Cap",
+     "id": "rainier_north_mowich_headwall",
+     "fact": "Vertical gain / climb length"
+    }
+   ]
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Headline gain_ft vs trailhead-to-summit",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 4,757 cannot cover the ~9,200 ft from Mowich Lake (4,929 ft) to Liberty Cap (14,112 ft), but no source states a car-to-car gain for this route, and a figure must not be computed from elevations, so gain_ft is left unchanged.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "fact": "Route identity vs the Edmunds Headwall",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park climbing rangers' report treats the Edmunds Headwall and the Mowich Face as neighbouring lines sharing one bivy; whether 'North Mowich Headwall' is another name for the Edmunds Headwall is not settled by the sources found. The disputed text is in the non-rendered description field, so it is left for a later pass.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html",
+    "https://www.mountainproject.com/route/111999837/north-mowich-headwall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Approach line to Camp Schurman",
+   "verdict": "fixed",
+   "correct_value": "Glacier Basin, up the Inter Glacier to Camp Curtis, then across onto the Emmons around Steamboat Prow to Camp Schurman (not via St. Elmo Pass).",
+   "evidence": "The park's official Emmons-Winthrop route brief describes the Glacier Basin Trail, the Inter Glacier between two nunataks to Camp Curtis (8,700 ft), and a traverse down onto the Emmons Glacier to Camp Schurman about half a mile beyond; St. Elmo Pass is the Liberty Ridge/Winthrop approach. The Liberty Ridge route brief confirms St. Elmo Pass is where that route diverges from the climbers' trail to Camp Schurman.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Hike via Glacier Basin and the Inter Glacier to St. Elmo Pass, then across to Camp Schurman",
+     "replace": "Hike via Glacier Basin and up the Inter Glacier to Camp Curtis, then across to Camp Schurman",
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Approach line to Camp Schurman"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Hike via Glacier Basin and the Inter Glacier to St. Elmo Pass, then across to Camp Schurman",
+     "replace": "Hike via Glacier Basin and up the Inter Glacier to Camp Curtis, then across to Camp Schurman",
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Approach line to Camp Schurman"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Season start vs White River Road opening",
+   "verdict": "fixed",
+   "correct_value": "The White River Road typically opens in late May (the campground itself opens later, around late June).",
+   "evidence": "The park's Emmons-Winthrop route brief says the White River road typically does not open until about May 20 and that the main climbing season starts in late May when it opens. Park opening-schedule news releases give late-May openings (e.g. May 23) for the White River Road, with White River Campground opening in late June. road.status conflated the campground date with the road.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm",
+    "https://www.seattletimes.com/life/travel/white-river-road-and-more-opening-for-sunny-weekend-at-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "typically open late June",
+     "replace": "typically open late May",
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Season start vs White River Road opening"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Distances",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Glacier Basin 3.5 mi; summit about 9.5 mi one way (dist_km 15.5 = 9.6 mi is right).",
+   "evidence": "The park's route brief gives 3.5 mi on the Glacier Basin Trail, an approximate route length of 9-10 miles (15-16 km), and about 2.5 mi from Camp Schurman to the summit in good conditions; the trail association and other hiking guides also give Glacier Basin as 3.5 mi one way (7 mi round trip). dist_km already matches; the variant's 3.1 mi and the summit pin's 12.6 mi are corrected (Schurman pin at 7 mi + ~2.5 mi). The itinerary's 16 mi total is left as is because its per-day miles are not individually sourced.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.wta.org/go-hiking/hikes/glacier-basin"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "3.1 miles to Glacier Basin Campground",
+     "replace": "3.5 miles to Glacier Basin Campground",
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Distances"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 3.1,
+     "value": 3.5,
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Distances"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 12.6,
+     "value": 9.5,
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Distances"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Character of the Corridor",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Corridor is the straightforward ~30 degree rib from 10,200 to 11,600 ft, not the steepest section.",
+   "evidence": "pitch_detail[4-5] and the baseFinding describe the Corridor as ~30 degree, least-crevassed ground below 35-40 degree upper slopes. The park's route brief calls the Corridor a longitudinal ridge of glacier snow from 10,200 to 11,600 ft offering fairly straightforward route finding. The waypoint label '(Steepest Section)' is removed.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "Emmons Glacier Corridor (Steepest Section)",
+     "value": "Emmons Glacier Corridor",
+     "id": "wa_mount_rainier_emmons_glacier",
+     "fact": "Character of the Corridor"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Emmons Flats capacity",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Room for 24 people a night at Emmons Flats.",
+   "evidence": "The park's route brief says there is room for 24 people to camp each night at Emmons Flats, matching pitch_detail[3]. The 'handful of tents' is in bivy[1], which is owned by the separate camping clean-up; no patch.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "fact": "Wilderness permit reservable vs walk-up split",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Official sources disagree: the park's wilderness permit page and Recreation.gov say about two-thirds reservable / one-third walk-up; the park's climbing page says roughly 50% of each camp is held for walk-ups; the Emmons-Winthrop route brief says 60% (about 30 of 48) of Camp Schurman is reservable. No split can be adopted, and the bivy text is outside patch scope.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.recreation.gov/permits/4675317",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "fact": "Mowich Lake road access",
+   "verdict": "fixed",
+   "correct_value": "No public access to Mowich Lake via SR 165 since the Fairfax Bridge was permanently closed in April 2025.",
+   "evidence": "WSDOT announced the permanent closure of the SR 165 Fairfax Bridge on April 22, 2025, to all vehicle and pedestrian traffic, with no public detour. The park's Mowich Lake page says there is no access to Carbon River and Mowich Lake via SR 165 until further notice. The approach variant still treats it as a seasonal road only cut for periods.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Mowich Lake Road is unpaved and typically opens around July; highway access to it from the north has been severed for long periods. Confirm current access before planning around this trailhead.",
+     "replace": "Mowich Lake has had no public road access since the SR 165 Fairfax Bridge closed permanently in April 2025; reaching it now means a long walk in from another park entrance.",
+     "id": "rainier_central_mowich_face",
+     "fact": "Mowich Lake road access"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "Seasonal and intermittently severed road access on this side of the park",
+     "replace": "No road access on this side of the park since the April 2025 Fairfax Bridge closure",
+     "id": "rainier_central_mowich_face",
+     "fact": "Mowich Lake road access"
+    }
+   ]
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "fact": "Climbing permit fee",
+   "verdict": "fixed",
+   "correct_value": "The climbing permit itself is free, but each climber must first pay the per-person climbing cost recovery fee; no self-registration at Mowich Lake while the road is closed.",
+   "evidence": "The park's official route brief separates a required per-person Climbing Cost Recovery Fee from the climbing permit, which is free and issued once the fee is paid; the park's climbing page gives the per-person fee ($82) and has summer registration at wilderness information centers. access.permit read as though no fee applies and pointed to self-registration at Mowich Lake, which the closed road no longer reaches.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free climbing permit, self-register at Mowich Lake",
+     "value": "Climbing permit (the permit itself is free, but each climber must pay the climbing cost recovery fee first)",
+     "id": "rainier_central_mowich_face",
+     "fact": "Climbing permit fee"
+    }
+   ]
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "fact": "Rock grade (header grade pill)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project grades the Central Mowich Face AI3-4 (Grade III-IV) and gives no rock grade; the park climbing rangers describe a bergschrund bypass through a rock band on climber's left. No source rates any rock on the route 5.6 or says it has none, so rock_grade is not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face",
+    "https://mountrainierclimbing.blogspot.com/2017/07/edmunds-headwall-mowich-face-route.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,200 is far below the ~9,200 ft from Mowich Lake to Liberty Cap plus the 1,000 ft regained after the drop that Mountain Project describes, but no source states a car-to-car gain for this route and a total must not be computed from elevations.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Trailhead and approach used",
+   "verdict": "fixed",
+   "correct_value": "Start from White River Campground via Glacier Basin, St. Elmo Pass, the Winthrop Glacier, Curtis Ridge and the Carbon Glacier (Mowich Lake currently unreachable).",
+   "evidence": "WSDOT closed the SR 165 Fairfax Bridge permanently in April 2025 to all traffic, and the park says there is no access to Mowich Lake via SR 165 until further notice. Recent Ptarmigan Ridge trip reports start at White River, crossing three glaciers and camping on Curtis Ridge before Ptarmigan Ridge. The itinerary, timing and partner card still start at Mowich Lake; they are aligned with the approach, trailhead, waypoints and primary variant.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm",
+    "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/",
+    "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Hike from the Mowich Lake / Spray Park area across the Flett and Carbon glaciers toward the base of the ridge",
+     "replace": "Hike from White River via Glacier Basin and St. Elmo Pass, across the Winthrop Glacier, Curtis Ridge and the Carbon Glacier toward the base of the ridge",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Trailhead and approach used"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Hike from the Mowich Lake / Spray Park area across the Flett and Carbon glaciers toward the base of the ridge",
+     "replace": "Hike from White River via Glacier Basin and St. Elmo Pass, across the Winthrop Glacier, Curtis Ridge and the Carbon Glacier toward the base of the ridge",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Trailhead and approach used"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "from Mowich Lake via Spray Park/Carbon-Mowich area to gain the ridge",
+     "replace": "from White River via St. Elmo Pass, Curtis Ridge and the Carbon Glacier to gain the ridge",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Trailhead and approach used"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Mowich Lake access status",
+   "verdict": "fixed",
+   "correct_value": "Mowich Lake has had no public access via SR 165 since the Fairfax Bridge was permanently closed in April 2025.",
+   "evidence": "WSDOT announced the permanent closure of the Fairfax Bridge on April 22, 2025, to all vehicle and pedestrian traffic with no public detour; the park's Mowich Lake page says there is no access to Mowich Lake via SR 165 until further notice. The season text, the approach's closing sentences and the Mowich variant's notes still treat it as a seasonal road to check.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Often in good condition by May, but the Mowich Lake road frequently doesn't open until early July, delaying that approach option",
+     "value": "Often in good condition by May; the Mowich Lake approach is unavailable while that road stays closed (since April 2025)",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Mowich Lake access status"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Which of the two is actually available is a seasonal question rather than a fixed one: the Mowich Lake road is summer-only and in a normal year opens well after this route comes into condition, so the shorter approach and the season rarely line up. The White River side is reachable earlier, at the cost of a much longer walk. Check the road status before planning around Mowich Lake.",
+     "replace": "Even before the closure, the summer-only Mowich Lake road usually opened well after this route came into condition, so the White River side, with its much longer walk, was often the practical start anyway.",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Mowich Lake access status"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The Mowich Lake road is unpaved, seasonal and typically opens later than the White River road — mid-summer rather than late spring in a normal snow year. Since the route is best when there is still winter snow on it, the road schedule is a structural problem with this variant rather than an occasional inconvenience. Check the road's status before planning around it.",
+     "replace": "Since April 2025 the Mowich Lake road has had no public access, because the SR 165 Fairfax Bridge was closed permanently to cars, bikes and walkers; this start is unavailable until that changes. Even before that, the summer-only road usually opened after the route came into condition.",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Mowich Lake access status"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Rock rack needed",
+   "verdict": "fixed",
+   "correct_value": "Include a small rock rack (a couple of pitons, a half set of nuts, a few small cams/tricams) for the short rock pitch above 12,000 ft.",
+   "evidence": "A 2022 trip report carried six screws, a picket, two pitons and a half set of nuts and used them on the rock chimney pitch near 12,200 ft; another trip report describes using a small cam, offset nuts and tricams repeatedly, and fixed pitons plus nuts on the last technical pitch. PROTECTION (detailed_rack) omitted rock gear that gear, rack and sling_rack list.",
+   "sources": [
+    "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/",
+    "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier",
+    "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "pickets, a single rope for running belays",
+     "replace": "pickets, a small rock rack (two pitons, half a set of nuts, a few small cams) for the short rock pitch above 12,000 ft, a single rope for running belays",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Rock rack needed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Summit-push start elevation",
+   "verdict": "fixed",
+   "correct_value": "~10,300 ft",
+   "evidence": "A 2022 trip report camped at 10,300 ft on Ptarmigan Ridge, and other trip reports place the Ptarmigan Ridge high camp at 10,300 ft; the itinerary, timing and bivy agree. beta's ~9,800 ft is corrected.",
+   "sources": [
+    "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/",
+    "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "(~9,800 ft vs. Liberty Ridge's 10,700 ft from Thumb Rock)",
+     "replace": "(~10,300 ft vs. Liberty Ridge's 10,700 ft from Thumb Rock)",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Summit-push start elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Vertical gain (total and summit day)",
+   "verdict": "fixed",
+   "correct_value": "Summit day climbs from the 10,300 ft camp to Liberty Cap (14,112 ft), including roughly 1,000 ft of 40-55 degree snow; the '~1000 ft summit day gain' wording is wrong.",
+   "evidence": "Trip reports put high camp at 10,300 ft and the finish at Liberty Cap, so summit-day gain is several thousand feet, not ~1,000; the 'roughly 1,000 ft' figure in the overview refers to the 45-50 degree snow section. watch_out is reworded to describe the steep section rather than the day's gain. The overview-vs-gain_ft total is handled in the next entry.",
+   "sources": [
+    "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/",
+    "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Sustained steep snow climbing 40-55 degrees on ~1000 ft summit day gain",
+     "replace": "Sustained steep snow climbing 40-55 degrees for roughly 1,000 ft on summit day",
+     "id": "wa_mount_rainier_ptarmigan_ridge",
+     "fact": "Vertical gain (total and summit day)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Total vertical gain: overview 11,000+ ft vs gain_ft 9,481",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report describes climbing over 11,000 ft (White River start with glacier crossings), which supports the overview, but no second source states a car-to-car gain for this route, so gain_ft is not changed.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states the one-way approach distance for Ptarmigan Ridge from White River; dist_km is not changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Approach line onto the Tahoma Glacier",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project and trip reports describe two genuine approaches: directly up the lower Tahoma Glacier from Emerald Ridge via Tahoma Creek (usual early season) and up the Puyallup Cleaver to St. Andrews Rock, dropping onto the glacier at 9,600 ft (often standard later). The row's own pitch_detail[0] names the Round Pass / Puyallup Cleaver approach as the alternative, and the approach variant lists camps near St. Andrews Rock, so the itinerary follows one documented option rather than contradicting the other.",
+   "sources": [
+    "https://www.mountainproject.com/route/201233880/tahoma-glacier",
+    "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier",
+    "https://www.jeffreyjhebert.com/adventures/tahoma-glacier-on-mount-rainier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Total gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2024 trip report from the Westside Road records 12,000 ft of gain and 8,770 ft of loss over 21.5 miles (a carry-over to Paradise), which supports the itinerary and shows gain_ft 5,007 is far too low. Only one outside source states a figure, and gain_ft must not be computed from elevations, so neither gain_ft nor loss_ft is changed.",
+   "sources": [
+    "https://climbfrominjury.com/tahoma-glacier-mt-rainier-the-long-way/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report gives 21.5 miles total for a carry-over with extra road walking; another reaches the Wonderland Trail about 3.8 miles from the car. No source states the one-way approach distance for the stored trailhead, so dist_km is not changed.",
+   "sources": [
+    "https://climbfrominjury.com/tahoma-glacier-mt-rainier-the-long-way/",
+    "https://www.jeffreyjhebert.com/adventures/tahoma-glacier-on-mount-rainier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Walking distance from the road gate",
+   "verdict": "fixed",
+   "correct_value": "From the Dry Creek gate it is a short road walk (about half an hour) to the Tahoma Creek Trail, and about 3.5 miles to Round Pass for the St. Andrews approach — not ~13 miles.",
+   "evidence": "The Mountaineers route summary has parties walk the road from the 2,900 ft gate for about half an hour to the Tahoma Creek Trail, and a 2022 trip report describes only a short walk up the gated road before the old Tahoma Creek trail. The Mountaineers Sunset Ridge summary gives about 3.5 miles of road walking from the gate to Round Pass. The road card's '~13 miles' does not describe the walk to either approach.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier",
+    "https://www.jeffreyjhebert.com/adventures/tahoma-glacier-on-mount-rainier",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "the remaining ~13 miles to the Tahoma Creek/St. Andrews approach are foot/bike travel only",
+     "replace": "beyond it the road is foot/bike travel only, about half an hour's walk to the Tahoma Creek Trail and roughly 3.5 miles to Round Pass for the St. Andrews approach",
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Walking distance from the road gate"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Best May-July (early season, before the glacier opens up)",
+   "evidence": "The Mountaineers route summary says the route is best done in early season, and a 2024 party climbed it in mid-May; Mountain Project notes the direct glacier approach is an early-season option when the glacier is filled in. best_season, seasonal_guidance, itinerary.cal and crowds all say May to July. The header season and the variant season ('Jun-Aug') are aligned.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier",
+    "https://climbfrominjury.com/tahoma-glacier-mt-rainier-the-long-way/",
+    "https://www.mountainproject.com/route/201233880/tahoma-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "season",
+     "path": [],
+     "find": "Best June-August",
+     "replace": "Best May-July",
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Roughly Jun-Aug, best in June",
+     "replace": "Roughly May-Jul, best in June",
+     "id": "wa_mount_rainier_tahoma_glacier",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project rates the Tahoma Glacier Grade II; the Mountaineers route summary rates it Grade III. The sources disagree, so grade, alpine_grade and commitment are not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/201233880/tahoma-glacier",
+    "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "Best season vs the only approach road's opening",
+   "verdict": "fixed",
+   "correct_value": "The White River Road typically opens in late May, so the May-June window is reachable by car from about late May.",
+   "evidence": "The park's Emmons-Winthrop route brief (same White River trailhead) says the White River road typically does not open until about May 20, with the climbing season starting in late May when it opens; park opening-schedule news gives late-May openings (e.g. May 23). access.closures ('until late Jun') and road.seasonalGate ('opens early July') are corrected; the White River Campground itself opens later, which is likely the source of the confusion.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Emmons-Winthrop-Routebrief-2017_FINAL.pdf",
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm",
+    "https://www.seattletimes.com/life/travel/white-river-road-and-more-opening-for-sunny-weekend-at-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "(typically mid-Oct–late Jun)",
+     "replace": "(typically until late May)",
+     "id": "wa_mount_rainier_curtis_ridge",
+     "fact": "Best season vs the only approach road's opening"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "White River Road typically opens early July–September",
+     "replace": "White River Road typically opens in late May",
+     "id": "wa_mount_rainier_curtis_ridge",
+     "fact": "Best season vs the only approach road's opening"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "Vertical extent of the climb",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project gives about 7,000 ft of elevation gain on the route overall, with the technical climbing running from 10,300 ft to the ridge top at 13,800 ft (about 3,500 ft). beta's 7,000 ft is the whole ridge gain and length_m (1,067 m) is the technical section, as the row's pitch_detail describes.",
+   "sources": [
+    "https://www.mountainproject.com/route/110037673/curtis-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "fact": "Carbon River approach availability",
+   "verdict": "fixed",
+   "correct_value": "Approach from White River via Glacier Basin and St. Elmo Pass only; the Carbon side has had no public access since April 2025.",
+   "evidence": "WSDOT closed the SR 165 Fairfax Bridge permanently in April 2025 to all traffic with no public detour, and the park says there is no access to Carbon River via SR 165 until further notice. Mountain Project's approach for Curtis Ridge is from White River via Glacier Basin and St. Elmo's Pass. The partner card's 'or the Carbon area' is removed.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-165-carbon-river-fairfax-bridge-closed-until-further-notice",
+    "https://home.nps.gov/places/mowich-lake.htm",
+    "https://www.mountainproject.com/route/110037673/curtis-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "from White River/Glacier Basin or the Carbon area to gain Curtis Ridge",
+     "replace": "from White River via Glacier Basin and St. Elmo Pass to gain Curtis Ridge",
+     "id": "wa_mount_rainier_curtis_ridge",
+     "fact": "Carbon River approach availability"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Direction out of Camp Muir",
+   "verdict": "fixed",
+   "correct_value": "From Camp Muir climb the Cowlitz Cleaver (the ridge immediately northwest of camp) along the western edge of the Cowlitz Glacier, pass beneath the Beehive and cross the cleaver through a notch to the base of Gibraltar Rock; not a traverse east across the Cowlitz Glacier toward Cathedral Rocks.",
+   "evidence": "Mountain Project says to ascend the Cowlitz Cleaver along the west edge of the glacier to the base of Gibraltar Rock. The park climbing rangers' May 2017 report starts up the ridgeline (Cowlitz Cleaver) immediately northwest of Camp Muir for about 1,600 ft to Gibraltar Rock. The Mountaineers route summary describes ascending the western edge of the Cowlitz Glacier below the cleaver, passing beneath the Beehive and crossing the cleaver through a notch. The 'cross the upper Cowlitz Glacier' and 'notch near Cathedral Rocks' wording is corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467946/gibraltar-ledges",
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "cross the upper Cowlitz Glacier (roped) toward the Cowlitz Cleaver, then gain",
+     "replace": "climb the Cowlitz Cleaver (roped) along the western edge of the upper Cowlitz Glacier, then gain",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Direction out of Camp Muir"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "cross the upper Cowlitz Glacier roped, toward the Cowlitz Cleaver.",
+     "replace": "climb the Cowlitz Cleaver roped, along the western edge of the upper Cowlitz Glacier, to the base of Gibraltar Rock.",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Direction out of Camp Muir"
+    },
+    {
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "expect": "Upper Cowlitz Glacier to the Cowlitz Cleaver",
+     "value": "Cowlitz Cleaver to Gibraltar Rock",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Direction out of Camp Muir"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "to cross the upper Cowlitz Glacier and Cowlitz Cleaver, then the ledges",
+     "replace": "to climb the Cowlitz Cleaver, then the ledges",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Direction out of Camp Muir"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "label"
+     ],
+     "expect": "Cross the upper Cowlitz Glacier to the Cowlitz Cleaver",
+     "value": "Climb the Cowlitz Cleaver to Gibraltar Rock",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Direction out of Camp Muir"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "crosses the cleaver through a notch near Cathedral Rocks",
+     "replace": "crosses the cleaver through a notch",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Direction out of Camp Muir"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Gibraltar Chute geometry and top elevation",
+   "verdict": "fixed",
+   "correct_value": "The ledges meet the Gibraltar Chute at about 12,300 ft; the route then climbs about 400 ft of the chute to the saddle at the top of Gibraltar Rock (Camp Comfort, ~12,600-12,700 ft). The chute itself runs down to the Nisqually Glacier below.",
+   "evidence": "The park climbing rangers' report says the ledges intersect the Gibraltar Chute at 12,300 ft and the route then climbs about 400 ft of 45-degree snow to the top of Gibraltar Rock; Mountain Project says to climb the chute to the saddle known as Camp Comfort. So 12,300 ft is where the chute is joined, not its top, and the overview's ~12,600 ft Camp Comfort top is consistent. baseFinding's 'ending at the top of Gibraltar Rock at roughly 12,300 ft' is corrected. The 45 vs 50 degree angle is handled in the next entry.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+    "https://www.mountainproject.com/route/107467946/gibraltar-ledges"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "the chute is about 400 ft of 45-degree snow ending at the top of Gibraltar Rock at roughly 12,300 ft",
+     "replace": "the chute is joined at roughly 12,300 ft and climbed for about 400 ft of 45-degree snow to the top of Gibraltar Rock",
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Gibraltar Chute geometry and top elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Gibraltar Chute angle (45 vs 50 degrees)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park climbing rangers' report gives the climbed section of the chute as 45-degree snow (the Mountaineers summary repeats this wording, so they count once); Mountain Project gives no angle. With one independent source, the approach and climbing_route '50°' figures are not changed.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project calls winter or early spring best, and a climbing-information page says the route is only recommended in winter; but the park climbing rangers reported good, mostly snowy conditions on the ledges on May 22, 2017 and posted another conditions report on May 8, 2019. Sources support both the 'into early June' season text and a winter-centred window, so neither is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467946/gibraltar-ledges",
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+    "https://mountrainierclimbing.blogspot.com/2019/05/gibraltar-ledges-may-8-2019.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Aspect of the ledges",
+   "verdict": "unresolved",
+   "correct_value": "SW (per the ledges description)",
+   "evidence": "The park climbing rangers' report says the ledges are southwest-facing and in shade until about 10am, agreeing with the approach variant and baseFinding; no second independent source was found, so the aspect chip (S/SE) is not changed.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html"
+   ],
+   "patches": []
+  }
+ ]
+}

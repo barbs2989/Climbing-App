@@ -1,0 +1,99 @@
+{
+ "id": "wa_eldorado_peak_northeast_face",
+ "name": "Northeast Face",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Same steep Eldorado/Roush Creek approach used for the East Ridge (this route diverges onto the Northeast Face), to a camp on glacier or moraine near the base of the peak's east side (~7,500-7,800 ft).",
+    "hours": 6.5,
+    "miles": 3.9,
+    "title": "Approach to glacier/moraine camp",
+    "gainFt": 5700,
+    "lossFt": 0,
+    "packLb": 45,
+    "schedule": [],
+    "objective": "Reach a camp near the base of the East Face/East Ridge"
+   },
+   {
+    "n": 2,
+    "note": "Alpine start to climb the East Face's snow/ice/mixed pitches, joining the upper mountain near the summit snowfields. Descend the standard East Ridge/Eldorado Glacier route back to camp.",
+    "hours": 9,
+    "miles": 4.3,
+    "title": "Northeast Face summit push",
+    "gainFt": 1100,
+    "lossFt": 1100,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "2:30 AM",
+      "label": "Leave camp",
+      "detail": "Alpine start."
+     },
+     {
+      "time": "4:00 AM",
+      "label": "Reach base of East Face",
+      "detail": ""
+     },
+     {
+      "time": "4:30 AM",
+      "label": "Begin climbing",
+      "detail": "Snow/ice/mixed pitches up the face."
+     },
+     {
+      "time": "8:30 AM",
+      "label": "Join upper mountain",
+      "detail": "Merge with East Ridge summit snowfields."
+     },
+     {
+      "time": "10:00 AM",
+      "label": "Summit",
+      "detail": "8,872 ft."
+     },
+     {
+      "time": "2:30 PM",
+      "label": "Back at camp",
+      "detail": "Via standard East Ridge / Eldorado Glacier descent."
+     }
+    ],
+    "objective": "Climb the East Face to the 8,872 ft summit and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and hike back down to the Cascade River approach trailhead.",
+    "hours": 4,
+    "miles": 3.9,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 5700,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Break camp and return to the trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip similar in shape to the East Ridge (this route diverges onto the Northeast Face): approach to camp, an alpine-start day climbing the East Face to the 8,872 ft summit, then hike out (~6,900 ft gain, ~12 mi round trip)."
+ },
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 2100,
+   "directions": "In Marblemount, where SR 20 turns, go straight onto Cascade River Road and cross the Skagit River bridge. Follow the road about 20 miles to the small Eldorado parking area on the right at about 2,100 ft, with a pit toilet. The first 10 miles are paved and the rest is rough gravel. The road usually opens in late May or June. Overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center."
+  },
+  {
+   "lat": 48.5375,
+   "lng": -121.1344,
+   "elev": 8872,
+   "name": "Eldorado Peak Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8872,
+   "directions": "Cross the Cascade River on the log and climb the climbers' path and boulder field into Eldorado Creek Basin, then go over the ridge into Roush Basin and up the Eldorado Glacier. Near 7,500 ft, leave the East Ridge track to climber's right onto the Northeast Face. Traverse below the rock band near 8,200 ft to a point northeast of the summit, climb the face (up to 60 degrees) to the start of the knife-edge, and follow the crest to the summit."
+  }
+ ]
+}

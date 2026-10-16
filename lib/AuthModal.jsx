@@ -6,6 +6,15 @@
 import { useState } from "react";
 import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle } from "./auth";
 
+// Must match the project's Auth setting `password_min_length` (raised 6 -> 8 on
+// 2026-09-23). The server is what enforces it; this only gives a clear message before
+// the round trip. Signing IN is deliberately not checked -- an account created under
+// the old 6-character minimum must still be able to sign in.
+const MIN_PASSWORD = 8;
+import { POLICY_VERSION } from "./policy";
+import { POP_CLOSE } from "./popupChrome.js";
+import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
+
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
 
@@ -18,7 +27,13 @@ const BLURB = {
 };
 const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset link", reset: "Save new password" };
 
-export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }) {
+// The Terms open with "By creating an account or using ClimbMatch you agree to these Terms",
+// and until now this screen -- the real one -- never mentioned them. The DEMO LoginScreen in
+// ClimbMatchCore.jsx did, which is the wrong way round: the fake door carried the notice and
+// the real one did not. `onLegal` is what lets the host show them; when it is absent (the
+// `recovery` modal, where you are already a user mid-password-reset) nothing renders, so this
+// cannot break a call site that does not pass it.
+export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal }) {
   const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
   const [email, setEmail] = useState(recallEmail());
   const [password, setPassword] = useState("");
@@ -27,6 +42,18 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
+  const [adult, setAdult] = useState(false); // 18+ attestation, create-account only
+  // App Review asks that users AGREE to terms with zero tolerance for objectionable content before
+  // they can post -- an affirmative box, not a "by continuing" line. Create-account only.
+  const [agreed, setAgreed] = useState(false);
+  // Turnstile (lib/captcha.jsx). Off until a site key is set, and then asked on the three forms
+  // that reach Supabase with a password or an email: sign in, create account, forgot password.
+  // A token is spent by ONE attempt, so every attempt ends by asking for a fresh widget.
+  const [captcha, setCaptcha] = useState("");
+  const [captchaRound, setCaptchaRound] = useState(0);
+  const needsCaptcha = CAPTCHA_ON && (mode === "in" || mode === "up" || mode === "forgot");
+  const spendCaptcha = () => { setCaptcha(""); setCaptchaRound((n) => n + 1); };
+  const captchaMissing = () => { if (needsCaptcha && !captcha) { setErr("Complete the security check first."); return true; } return false; };
   // Asked, not assumed -- see useOAuthProviders. Until the project has Google enabled this is
   // false and the button never renders, so nobody is offered a sign-in that cannot complete.
   const providers = useOAuthProviders();
@@ -37,16 +64,17 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
   // climbers are here, and Supabase returns success either way for the same reason.
   const sendReset = async () => {
     if (!email.trim()) { setErr("Enter the email you signed up with."); return; }
+    if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
-    const { error } = await requestPasswordReset(email.trim());
-    setBusy(false);
+    const { error } = await requestPasswordReset(email.trim(), needsCaptcha ? captcha : undefined);
+    setBusy(false); if (needsCaptcha) spendCaptcha();
     if (error) { setErr(error.message); return; }
     rememberEmail(email.trim());
     setInfo("If that email has an account, a reset link is on its way. The link opens ClimbMatch and asks for a new password.");
   };
 
   const saveNewPassword = async () => {
-    if (password.length < 6) { setErr("Use at least 6 characters."); return; }
+    if (password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { error } = await updatePassword(password);
     setBusy(false);
@@ -59,11 +87,26 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
 
   const submit = async () => {
     if (!email.trim() || !password) { setErr("Email and password are required."); return; }
+    // The Terms say 18+, and until now nothing asked. An ATTESTATION rather than a date of
+    // birth on purpose: a birthdate is a new piece of personal data on every account, and it
+    // would not be verified either -- so it collects more and proves the same. Gate the write,
+    // not just the checkbox, or the rule is decoration.
+    if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
+    if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
+    if (mode === "up" && password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
+    if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
+    const token = needsCaptcha ? captcha : undefined;
     const { data, error } = mode === "in"
-      ? await signIn(email.trim(), password)
-      : await signUp(email.trim(), password, name.trim());
-    setBusy(false);
+      ? await signIn(email.trim(), password, token)
+      : await signUp(email.trim(), password, name.trim(), POLICY_VERSION, token);
+    setBusy(false); if (needsCaptcha) spendCaptcha();
+    // A BANNED account (0264) is refused by GoTrue itself with "User is banned". Say what that means
+    // in the app's own words; the reason they were banned was shown in-app before the ban took effect.
+    if (error && (error.code === "user_banned" || /user is banned/i.test(error.message || ""))) {
+      setErr("This account has been banned by ClimbMatch Safety for breaking the Community Guidelines, so it can’t sign in.");
+      return;
+    }
     if (error) { setErr(error.message); return; }
     // Signing up with an address that already has an account is NOT an error:
     // to avoid leaking which emails are registered, Supabase returns a decoy user
@@ -90,6 +133,12 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
   // button looking dead. Coming back, the tokens are in the URL hash and detectSessionInUrl
   // (on by default) turns them into a session, which useSession picks up and the gate closes.
   const goGoogle = async () => {
+    // Google on "up" creates an account too, so it has to clear the same 18+ gate as the email
+    // form. Without this the attestation would be a checkbox you could simply walk around, and
+    // the Terms would again assert an age nothing checks. Google is not enabled on the project
+    // today, so this is closing the hole before it opens rather than fixing a live one.
+    if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
+    if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { error } = await signInWithGoogle();
     setBusy(false);
@@ -114,7 +163,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
               the live site: Escape and × both left the modal up, with no page error to show for
               it. Worse for a screen reader, which announced an actionable "Close" that wasn't.
               The reset screen below is the same shape: also no onClose, also no ×. */}
-          {onClose && <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>}
+          {onClose && <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>}
         </div>
         <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
         {/* Sign-in and sign-up only: on "forgot" there is no account to federate yet, and on
@@ -154,11 +203,43 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered }
             <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: 0 }}>Forgot password?</button>
           </div>
         )}
-        {err && <div style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
-        {info && <div style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}
-        <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: c.blue, color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
+        {/* A NATIVE checkbox, deliberately. The main app hand-builds controls out of divs and
+            has to spread clickable() to get a tab stop, Enter/Space and a role; this file owns
+            its own styles and already uses real inputs, so a native one is keyboard-operable
+            and announced correctly with nothing added. */}
+        {mode === "up" && (
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 12, fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
+            <input type="checkbox" checked={adult} onChange={(e) => { setAdult(e.target.checked); if (e.target.checked) setErr(""); }} style={{ marginTop: 2, width: 16, height: 16, accentColor: c.blue, flexShrink: 0, cursor: "pointer" }} />
+            <span>I am 18 or older.</span>
+          </label>
+        )}
+        {mode === "up" && (
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 12, fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
+            <input type="checkbox" checked={agreed} onChange={(e) => { setAgreed(e.target.checked); if (e.target.checked) setErr(""); }} style={{ marginTop: 2, width: 16, height: 16, accentColor: c.blue, flexShrink: 0, cursor: "pointer" }} />
+            <span>I agree to the Terms of Service and Community Guidelines. ClimbMatch has zero tolerance for objectionable content or abusive users.</span>
+          </label>
+        )}
+        {needsCaptcha && <Turnstile resetKey={mode + ":" + captchaRound} onToken={(t) => { setCaptcha(t); if (t) setErr(""); }} onError={setErr} />}
+        {err && <div role="alert" style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
+        {info && <div role="status" style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}
+        <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: "#2a74de", color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
           {busy ? "…" : done ? "Continue to ClimbMatch" : ACTION[mode]}
         </button>
+        {/* Shown on BOTH sign-in and create-account, because the Terms bind on "creating an
+            account OR using ClimbMatch" and when realAuthGate is on this screen is the only
+            door into the app -- so both paths are the moment of acceptance. Not on forgot or
+            reset: you are an existing user mid-recovery there, and it would be noise at the
+            one point someone is locked out. */}
+        {onLegal && (mode === "in" || mode === "up") && (
+          <div style={{ marginTop: 12, fontSize: 11.5, color: c.sub, lineHeight: 1.5, textAlign: "center" }}>
+            By {mode === "up" ? "creating an account" : "signing in"} you agree to our{" "}
+            <button onClick={() => onLegal("terms")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Terms of Service</button>
+            {", "}
+            <button onClick={() => onLegal("guidelines")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Community Guidelines</button>
+            {" "}and{" "}
+            <button onClick={() => onLegal("privacy")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Privacy Policy</button>.
+          </div>
+        )}
         {mode === "forgot" ? (
           <div style={{ textAlign: "center", marginTop: 14, fontSize: 13, color: c.sub }}>
             <button onClick={() => { setErr(""); setInfo(""); setMode("in"); }} style={{ background: "none", border: "none", color: c.blue, fontWeight: 700, cursor: "pointer", fontSize: 13, padding: 0 }}>Back to sign in</button>

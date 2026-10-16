@@ -1,0 +1,234 @@
+[
+ {
+  "id": "wa_gardner_mountain_west_ridge",
+  "verdict": "MISNAMED",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": "South Slopes",
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "The page describes Gardner's standard route: Wolf Creek Trail to Gardner Meadows, steep meadows beside the stream draining the prominent gully, then ~1,700 ft of loose scree from ~7,100 ft to the summit plateau, Class 2 with a little Class 3. The 'West Ridge / Gardner Traverse' is a different undertaking, the Class 3-4 connecting ridge from Gardner toward North Gardner, which this page explicitly says is not required. The row is the south-slopes standard route under the traverse's name, and there is no other row for it.",
+  "sources": [
+   "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/",
+   "https://www.summitpost.org/gardner-mountain/632655",
+   "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm"
+  ]
+ },
+ {
+  "id": "wa_garfield_mountain_scramble",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_garfield_mountain_south_route",
+  "merge_id": "wa_garfield_mountain_scramble",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Garfield's main summit was first climbed by Jim Crooks and Judson Nelson in August 1940 by the 'South Route', whose features run up to the exposed #2 Gully; that is exactly the FA, fixed-piton note and line this row carries. It is the South Route (Main Peak) under a vague name, and its 'scramble' framing contradicts its own text, which says every summit needs roped climbing; fold it into wa_garfield_mountain_south_route.",
+  "sources": [
+   "https://www.summitpost.org/garfield-mountain/154546",
+   "https://www.cascadeclimber.com/mt__garfield.htm",
+   "https://www.mountainproject.com/area/108170864/mount-garfield"
+  ]
+ },
+ {
+  "id": "wa_goat_mountain_east_peak",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_goat_mountain_south_ridge",
+  "merge_id": "wa_goat_mountain_east_peak",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Both rows climb the same objective by the same way: leave Goat Mountain Trail #673 near its high point (~5,600 ft), lose ~300 ft to the West-East saddle, then regain ~1,400 ft of steep heather/snow to the 6,891 ft East Peak. The South Ridge row's own beta 'continues past the West Peak false summit to the higher East Peak' with the same snowfield traverse. Keep the South Ridge row (peak overview + 1904 FA) and fold in this row's more precise saddle / west ridge / SW-face traverse beta.",
+  "sources": [
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-goat-mountain-east-peak",
+   "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+   "https://www.summitpost.org/goat-mountain/152742"
+  ]
+ },
+ {
+  "id": "wa_goat_mountain_south_ridge",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_goat_mountain_south_ridge",
+  "merge_id": "wa_goat_mountain_east_peak",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Same climb as wa_goat_mountain_east_peak: Trail #673 to the ridge, then off-trail across the saddle and up steep heather/snow to the true East summit (6,891 ft), ~60 m higher than the trail's West Peak. Keep this row as the single East Peak route and merge the other into it; if a West Peak entry is wanted, it is a trail hike, not this row.",
+  "sources": [
+   "https://besthikesbc.ca/hiking-goat-mountain-east-in-the-mount-baker-wilderness/",
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-goat-mountain-east-peak"
+  ]
+ },
+ {
+  "id": "wa_south_gully_south_spur",
+  "verdict": "DISTINCT",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "The flag is wrong to treat this as two routes. Mountain Project keeps two pages for ONE line: South Gully/South Spur summer/fall (Grade II, Easy 5th, ~800 ft, FA unknown), whose page says 'the winter/spring version is listed here', and the winter/spring page (AI1-2 M2+ Mod. Snow) that links back. Same gully, same chockstones, same exit onto the South Spur, so one row is correct. Make the summer rock grade (Easy 5th -> 5.0) the final grade and keep the winter snow/mixed grades as a seasonal note rather than as the route's grade.",
+  "sources": [
+   "https://www.mountainproject.com/route/111722458/south-gullysouth-spur",
+   "https://www.mountainproject.com/route/118581881/south-gullysouth-spur"
+  ]
+ },
+ {
+  "id": "wa_half_moon_southwest_slopes",
+  "verdict": "MISNAMED",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": "North Ridge",
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Half Moon has no walk-up - every route is a roped 5th-class climb - so 'southwest slopes' in the id describes nothing on the peak. The page is the North Ridge, reached by a talus gully/ledge angling back to the notch north of the fin, and its FA is the peak's 1942 Beckey/Beckey/Varney first ascent. The name is right and only the id's direction word is wrong; ids never change, so keep 'North Ridge'.",
+  "sources": [
+   "https://www.summitpost.org/half-moon/153612",
+   "https://en.wikipedia.org/wiki/Half_Moon_(Washington)"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_southeast_face",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "merge_id": "wa_hozomeen_mountain_southeast_face",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "South Hozomeen's standard route (camp at the ~6,800-6,900 ft saddle, ledges and gullies across the south side, a short Class 5.0 ramp, the ~12-15 ft loose 5.6 bulge that most parties rappel, then a Class 4 step and gully to the summit) is the Southwest Route of the 1947 Beckey first ascent, which climbers call the 'SW Route' / 'SW Face'. This row is that route word for word under a 'Southeast Face' label, and the real SE line is the separate 1988 SE Buttress row.",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/107885-tr-south-hozomeen-mountain-sw-route-09082024/",
+   "https://trailcatjim.com/hozomeen-mtn-south-peak-via-west-gully-south-face-west-ridge/",
+   "http://www.nwhikers.net/forums/viewtopic.php?t=7984776"
+  ]
+ },
+ {
+  "id": "wa_jack_mountain_northeast_glacier",
+  "verdict": "DISTINCT",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "low",
+  "evidence": "The 1979 AAJ records Beckey, Kloke and Tindall (July 18-19, 1978) approaching from a pass between East and West Crater, camping at 6,000 ft east of Jack, then traversing to 'a narrow and badly broken glacier on the north face' and leaving it for a ridge to the right because of objective danger. The Nohokomeen Glacier/Headwall route is climbed from Ross Lake to the west, up the broad north cirque glacier and its fluted headwall. These are separate lines, though the AAJ calls the 1978 route 'north face', not 'Northeast Glacier', and the page needs a real description and grade.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jack_Mountain",
+   "https://www.whereiskylemiller.com/highway-20/jack-mountain-nohokomeen-glacier/",
+   "https://en.wikipedia.org/wiki/Nohokomeen_Glacier"
+  ]
+ },
+ {
+  "id": "wa_la_bohn_peak_southwest_slopes",
+  "verdict": "MISNAMED",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": "East Ridge",
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "La Bohn's easiest route is the Class 2 east ridge/slopes from La Bohn Gap above La Bohn Lakes, with a short, exposed summit scramble; that is the line the page describes. The name 'East Ridge' is correct and only the id's 'southwest_slopes' is wrong; ids never change, so keep the name.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/La_Bohn_Peak",
+   "https://www.peakbagger.com/climber/ascent.aspx?aid=1474856"
+  ]
+ },
+ {
+  "id": "wa_little_annapurna_south_slopes",
+  "verdict": "MISNAMED",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": "North Slopes",
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Little Annapurna's standard route is the non-technical North Slopes walk-up from the Upper Enchantments basin; the south side is the steep technical South Face (5.6 lead, the sibling row). The page describes the North Slopes route and is named correctly; only the id's 'south_slopes' is wrong, and ids never change.",
+  "sources": [
+   "https://www.summitpost.org/little-annapurna/151427",
+   "https://en.wikipedia.org/wiki/Little_Annapurna",
+   "https://www.summitpost.org/south-face-of-little-annapurna-an-unexpected-climb/872643"
+  ]
+ },
+ {
+  "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+  "verdict": "PART_OF",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": "wa_little_tahoma_east_shoulder",
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "medium",
+  "evidence": "The route from Paradise crosses the Paradise, Cowlitz and Ingraham glaciers (high or low variant), goes through the Ingraham-Whitman saddle (a snow couloir and ~40 ft of loose Class 4) and onto the Whitman Glacier. From there it is the East Shoulder finish: the upper-left corner into the gully, the short headwall step, the gully-chimney and the exposed crest. The Mountaineers file it under 'Little Tahoma/East Shoulder', so it is an alternate approach to the East Shoulder, not a separate South Face rock route. Keep it as a named approach variant ('from Paradise via Cowlitz/Ingraham Glaciers') and drop the 'low-5th South Face' rock grade.",
+  "sources": [
+   "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-little-tahoma-east-shoulder",
+   "https://www.turns-all-year.com/trip-reports/june-22-2013-little-tahoma-from-paradise",
+   "https://mountrainierclimbing.blogspot.com/2019/05/little-tahoma-from-paradise-april-24.html"
+  ]
+ },
+ {
+  "id": "wa_little_tahoma_east_shoulder",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_little_tahoma_east_shoulder",
+  "merge_id": "wa_frying_pan_whitman_glaciers",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "'East Shoulder' is The Mountaineers' name for the standard Summerland route: Fryingpan Glacier to the 9,000 ft notch in Whitman Crest, the Whitman Glacier to its upper-left corner, the gully and gully-chimney to the summit notch, then a short exposed crest. Others call that same line 'Fryingpan/Whitman Glaciers'. Both rows carry the 1894 Flett/Garrison FA, so they are one route; keep this id (it carries the peak name), fold in wa_frying_pan_whitman_glaciers, and mention 'Fryingpan/Whitman Glaciers' as the alternate name.",
+  "sources": [
+   "https://www.theoutbound.com/washington/hiking/climb-little-tahoma-east-shoulder",
+   "https://www.summitpost.org/little-tahoma-fryingpan-whitman-glaciers/490622",
+   "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/"
+  ]
+ },
+ {
+  "id": "wa_south_ridge_2",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_luna_peak_southeast_slopes",
+  "merge_id": "wa_south_ridge_2",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Luna has one standard line: Access Creek, then across the SE basin at ~6,600 ft to Luna Col (7,200 ft), up the broad ridge on ~1,100 ft of Class 2 talus to the south (false) summit, then the short exposed Class 3-4 traverse across the notch to the true north summit. Both this row and wa_luna_peak_southeast_slopes describe exactly that, with the same 1938 Cox/Thompson FA. Keep the Southeast Slopes id and fold this one in; 'South Ridge (from Luna Col)' is the more accurate display name for the kept row.",
+  "sources": [
+   "https://www.summitpost.org/luna-peak/151781",
+   "https://www.summitpost.org/luna-pass-sw-ridge/158668",
+   "https://stevensong.com/usa/washington/luna-peak/"
+  ]
+ },
+ {
+  "id": "wa_south_face_2001_variation",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_lundin_peak_south_face_left",
+  "merge_id": "wa_south_face_2001_variation",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Mountain Project's South Face Left (II 5.10, 4 pitches, 500 ft, FA Mike and Don Preiss 2004) starts near the center and low point of the south face at an obvious 5.10 layback hand crack, goes up and left to a left-trending ramp, and leaves it rightward on fun 5.7-5.8 rock - this row's overview, pitch grades and FA exactly. No source records a '2001 variation'; fold this row into South Face Left.",
+  "sources": [
+   "https://www.mountainproject.com/route/119617555/south-face-left"
+  ]
+ }
+]

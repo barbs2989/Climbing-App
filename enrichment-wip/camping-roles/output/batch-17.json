@@ -1,0 +1,692 @@
+{
+  "zones": [
+    {
+      "zone": "skykomish-us2",
+      "overnightPermit": {
+        "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+        "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov.",
+        "url": null
+      }
+    },
+    {
+      "zone": "snoqualmie",
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit",
+        "where": "Fill one out at the Alpental trailhead kiosk. A Northwest Forest Pass is needed to park, and Denny Creek and Tinkham campsites are reserved on Recreation.gov.",
+        "url": null
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_baring_mountain_northwest_ridge",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [
+        {
+          "name": "Basin under the twin summits",
+          "type": "bivy",
+          "elev": 5200,
+          "capacity": "A few tents on heather and boulder flats",
+          "water": "Snow patches early season only; often dry by late summer",
+          "permit": "No overnight permit required",
+          "notes": "The boulder-and-heather basin under the north and south summits, reached just before the final gully to the notch. The only flat ground on the route; parties carry water.",
+          "role": "onRoute"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Short brutal day climb from the Barclay Lake trailhead; the only camp on the line is the summit basin, not in this list, so it is added as an on-route option."
+    },
+    {
+      "id": "wa_baring_mountain_r1",
+      "main": [
+        "Couloir Camp",
+        "Barclay Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Couloir Camp is the last flat ground before the technical face; Barclay Lake is the valley base below the face, but the exact approach link from the lake is uncertain."
+    },
+    {
+      "id": "wa_baring_mountain_south_route",
+      "main": [
+        "Summit basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Normally a long day from the trailhead; parties who split it sleep in the summit basin. Barclay Lake is up the other trail and not on this line."
+    },
+    {
+      "id": "wa_eagle_rock_scramble",
+      "main": [
+        "Beckler River Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day scramble from the end of the Beckler River road network; Beckler River Campground is on the drive in."
+    },
+    {
+      "id": "wa_grotto_mountain_e_route",
+      "main": [
+        "Beckler River Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from a spur off the Beckler road; Beckler River Campground is the drive-in base on the way."
+    },
+    {
+      "id": "wa_gunn_peak_southeast_route",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day climb from the Barclay Lake trailhead heading north across the creek, so Barclay Lake itself is not on the line; no established high camp confirmed."
+    },
+    {
+      "id": "wa_gunnshy_peak_standard_route",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day or long day via the Barclay Creek climbers path north of the creek; no confirmed named camp on the line, so no add."
+    },
+    {
+      "id": "wa_hourglass_gully_winter",
+      "main": [],
+      "onRoute": [
+        "Lake Serene basin and the talus under the Norwegian Buttresses"
+      ],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Winter day climb; camping is banned within a quarter mile of Lake Serene and the nearby drive-in campgrounds are closed in winter, so no main camp is given."
+    },
+    {
+      "id": "wa_j_tnar",
+      "main": [
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Lake Serene basin and the talus under the Norwegian Buttresses"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Multi-day aid route; parties sleep on the wall, with the talus below the buttress as the base; the Lake Serene quarter-mile camping ban may affect the base camp."
+    },
+    {
+      "id": "wa_lewis_creek_route",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb crossing Barclay Creek northward from the trailhead; no camp on the line confirmed."
+    },
+    {
+      "id": "wa_merchant_peak_south_route",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb leaving the Barclay Lake trail early; Eagle Lake serves a different, longer approach to Merchant so it is dropped."
+    },
+    {
+      "id": "wa_mount_index_north_norwegian_buttress",
+      "main": [
+        "Lake Serene basin and the talus under the Norwegian Buttresses"
+      ],
+      "onRoute": [
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses"
+      ],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a very long single push; the base talus is the split-camp option, and the Lake Serene quarter-mile camping ban may limit where parties can legally sleep."
+    },
+    {
+      "id": "wa_mount_index_north_peak_traverse",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [
+        "Lake Serene basin and the talus under the Norwegian Buttresses"
+      ],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a long day from the car; the lake basin is on the line but camping is banned within a quarter mile of the lake."
+    },
+    {
+      "id": "wa_mount_index_northeast_buttress",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [
+        "Lake Serene basin and the talus under the Norwegian Buttresses"
+      ],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a long day from the car; the lake basin is on the approach but camping is banned within a quarter mile of the lake."
+    },
+    {
+      "id": "wa_mount_persis_the_hexorcist",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Forest Road 62 west of Index; no camp in this list sits on the line and Money Creek is only the nearest open drive-in, well east."
+    },
+    {
+      "id": "wa_mount_persis_west_ridge",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day hike-scramble from Forest Road 62; Money Creek is just the nearest open drive-in, not a common staging camp."
+    },
+    {
+      "id": "wa_philadelphia_mountain_scramble",
+      "main": [
+        "Money Creek Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day scramble off the lower Lake Serene trail; no one camps for it and the lake basin is not on its line."
+    },
+    {
+      "id": "wa_traverse_of_mount_index",
+      "main": [
+        "Middle Peak crest bivouac, Mount Index traverse"
+      ],
+      "onRoute": [
+        "Lake Serene basin and the talus under the Norwegian Buttresses"
+      ],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The traverse is the one Index objective done as an overnight, sleeping on the Middle Peak crest; some fast parties do it in one push."
+    },
+    {
+      "id": "wa_vanishing_point",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Barclay Lake",
+        "Eagle Lake and the old cabin",
+        "Lake Serene basin and the talus under the Norwegian Buttresses",
+        "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+        "Middle Peak crest bivouac, Mount Index traverse",
+        "Money Creek Campground",
+        "Beckler River Campground",
+        "Troublesome Creek Campground"
+      ],
+      "add": [
+        {
+          "name": "Dolomite Tower bivy caves",
+          "type": "bivy",
+          "capacity": "Three flat platforms, one person each",
+          "water": "Carry it in or melt from nearby snow early season",
+          "permit": "No overnight permit required",
+          "notes": "Shallow caves about 150 ft right of the start of the route. Spray can blow in during wind and rain.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Parties sleep in the bivy caves at the base of the wall, which are not in the list; added as main."
+    },
+    {
+      "id": "wa_chair_bryant_traverse",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley",
+        "Chair Peak basin snow camp"
+      ],
+      "drop": [
+        "Snow Lake designated campsites"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental; the Source Lake and Chair basin sites are on the approach and used mainly for winter splits."
+    },
+    {
+      "id": "wa_chair_peak_east_face",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley",
+        "Chair Peak basin snow camp"
+      ],
+      "drop": [
+        "Snow Lake designated campsites"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental; the Source Lake and Chair basin sites are on the approach and used mainly for winter splits."
+    },
+    {
+      "id": "wa_chair_peak_north_face",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley",
+        "Chair Peak basin snow camp"
+      ],
+      "drop": [
+        "Snow Lake designated campsites"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental; the Source Lake and Chair basin sites are on the approach and used mainly for winter splits."
+    },
+    {
+      "id": "wa_chair_peak_northeast_buttress",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley",
+        "Chair Peak basin snow camp"
+      ],
+      "drop": [
+        "Snow Lake designated campsites"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental; the Source Lake and Chair basin sites are on the approach and used mainly for winter splits."
+    },
+    {
+      "id": "wa_chair_peak_northwest_ridge",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley",
+        "Chair Peak basin snow camp"
+      ],
+      "drop": [
+        "Snow Lake designated campsites"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental; the Source Lake and Chair basin sites are on the approach and used mainly for winter splits."
+    },
+    {
+      "id": "wa_guye_peak_improbable_traverse",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day climb from Alpental or Snoqualmie Pass; the Source Lake, Snow Lake and Chair basin camps are in other drainages."
+    },
+    {
+      "id": "wa_guye_peak_r1",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day climb from Alpental or Snoqualmie Pass; the Source Lake, Snow Lake and Chair basin camps are in other drainages."
+    },
+    {
+      "id": "wa_guye_peak_r2",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day climb from Alpental or Snoqualmie Pass; the Source Lake, Snow Lake and Chair basin camps are in other drainages."
+    },
+    {
+      "id": "wa_guye_peak_southeast_gully",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day climb from Alpental or Snoqualmie Pass; the Source Lake, Snow Lake and Chair basin camps are in other drainages."
+    },
+    {
+      "id": "wa_snoqualmie_mountain_standard_route",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb up its own boot path from Alpental; the basin camps are on other trails."
+    },
+    {
+      "id": "wa_south_gully_south_spur",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day climb from Alpental or Snoqualmie Pass; the Source Lake, Snow Lake and Chair basin camps are in other drainages."
+    },
+    {
+      "id": "wa_south_rib",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Source Lake basin, Alpental valley",
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short day climb from Alpental or Snoqualmie Pass; the Source Lake, Snow Lake and Chair basin camps are in other drainages."
+    },
+    {
+      "id": "wa_southwest_face",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley"
+      ],
+      "drop": [
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental via the Source Lake approach; nobody normally camps for it."
+    },
+    {
+      "id": "wa_the_tooth_fairy",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley"
+      ],
+      "drop": [
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental via the Source Lake approach; nobody normally camps for it."
+    },
+    {
+      "id": "wa_the_tooth_r1",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley"
+      ],
+      "drop": [
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental via the Source Lake approach; nobody normally camps for it."
+    },
+    {
+      "id": "wa_the_tooth_south_face",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley"
+      ],
+      "drop": [
+        "Snow Lake designated campsites",
+        "Chair Peak basin snow camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Day climb from Alpental via the Source Lake approach; nobody normally camps for it."
+    },
+    {
+      "id": "wa_tooth_chair_traverse",
+      "main": [
+        "Denny Creek Campground, I-90 exit 47",
+        "Tinkham Campground, I-90 exit 42"
+      ],
+      "onRoute": [
+        "Source Lake basin, Alpental valley",
+        "Chair Peak basin snow camp"
+      ],
+      "drop": [
+        "Snow Lake designated campsites"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Long day from Alpental; Source Lake basin is on the approach and the Chair basin is on the descent side toward Chair Peak."
+    }
+  ],
+  "misassigned": []
+}

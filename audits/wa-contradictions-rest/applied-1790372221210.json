@@ -1,0 +1,110 @@
+{
+ "applied": [
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "High point vs summit elevation"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "SR-20 opening window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mushroom_tower_standard",
+   "before": {
+    "approach": "From the large pullout on the inside of the Hairpin Turn on SR-20 (~Milepost 163, roughly 4,700 ft, just below Washington Pass), drop off the highway shoulder and ford Early Winters Creek directly across from the parking area — expect wet feet in early-season high water; by mid-to-late summer it braids down to an easy rock-hop. From the far bank, head straight up into timber on climber's-left of the obvious drainage gully that falls from Kangaroo Ridge; a boot-path stays in the trees rather than fighting brush in the gully bottom itself. As the trees thin, keep to the left (south) side of the gully and follow it onto the ridge crest above, mixing dirt/heather benches with short bouts of easy Class 2-3 scrambling. This is the shared approach line for all of the Kangaroo Ridge towers (Big Kangaroo, Half Moon, Mushroom Tower) and packs about 3,000 ft of gain into well under 2 miles, so it is steep and sustained the whole way — plan on 2.5-4 hours up for a party unfamiliar with it. Where the ridge steepens below the final rock tiers, traverse left (west) beneath the base of the wall and climb a band of steep snow (a snowfinger that lingers on this shaded aspect well into summer) to reach the notch/base directly under Mushroom Tower's summit block; an ice axe is standard here and crampons are worth carrying in early season, per a June trip report that found this stretch snow-covered enough to boot steps the whole way. There is no reliable water above the initial creek ford, so treat that crossing as your last easy fill-up. There is no maintained trail or trail number above the highway — it is entirely a climber's boot-path, and route-finding is straightforward in clear weather (aim for the mushroom-capped tower on the skyline) but unforgiving in fog or whiteout given the mix of gully, timber, and traverse terrain.",
+    "high_point_ft": 8220,
+    "waypoints": [
+     {
+      "lat": 48.5143,
+      "lng": -120.6425,
+      "elev": 5150,
+      "name": "Hairpin Turn Pullout, SR-20",
+      "note": "Large roadside pullout on the outside of the SR-20 hairpin switchback (~MP 163); no permit needed, boot path drops south into the trees toward Early Winters Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the large roadside pullout at the hairpin turn near Milepost 163, just below Washington Pass. No permit or pass is needed to park there. This is the North Cascades Highway, so the drive only exists once SR-20 opens for the season — mid-to-late June through October is the usual window. From the pullout the boot path drops south off the shoulder into the trees and fords Early Winters Creek directly across from the parking area; there is no maintained trail or trail number above the highway."
+     },
+     {
+      "lat": 48.5261841,
+      "lng": -120.6472455,
+      "elev": 5250,
+      "name": "Early Winters Creek crossing",
+      "note": "Ford Early Winters Creek on the climbers' path just past the pullout; can run high and fast with June snowmelt.",
+      "type": "Water",
+      "distMi": 0.3
+     },
+     {
+      "lat": 48.50157,
+      "lng": -120.62226,
+      "elev": 6671,
+      "name": "Kangaroo Pass",
+      "note": "Cairned climbers' trail gains the Kangaroo Ridge crest here after ~1,500 ft of climbing through trees and the lower gully; route-finding is easy below but the path is faint near the top.",
+      "type": "Junction",
+      "distMi": 1.7
+     },
+     {
+      "lat": 48.52225766666667,
+      "lng": -120.628333,
+      "elev": 7000,
+      "name": "Snow-filled gully below Big Kangaroo",
+      "note": "Parallel gullies angling up the west face beneath Big Kangaroo hold snow well into July; ice axe recommended for the ascending traverse.",
+      "type": "Hazard",
+      "distMi": 2
+     },
+     {
+      "lat": 48.521564766666664,
+      "lng": -120.6249955,
+      "elev": 7400,
+      "name": "Kangaroo Ridge basin",
+      "note": "Talus basin below Big Kangaroo and Mushroom Tower where the standard route splits off toward Mushroom Tower's south side; class 3 scrambling begins here.",
+      "type": "Junction",
+      "distMi": 2.3
+     },
+     {
+      "lat": 48.52087186666667,
+      "lng": -120.62165800000001,
+      "elev": 7900,
+      "name": "Base of South Side route",
+      "note": "Roped low-5th-class climbing starts here; rack light with a few small cams for the step-across move higher up.",
+      "type": "Junction",
+      "distMi": 2.6
+     },
+     {
+      "lat": 48.52017896666666,
+      "lng": -120.61832050000001,
+      "elev": 8150,
+      "name": "Step-across move to summit block",
+      "note": "Exposed step-across move gains the blocky, semi-detached summit block; the route's crux and essentially unprotected.",
+      "type": "Hazard",
+      "distMi": 2.9
+     },
+     {
+      "lat": 48.519948,
+      "lng": -120.617208,
+      "elev": 8180,
+      "name": "Mushroom Tower summit",
+      "note": "Small blocky summit; rappel begins from a fixed anchor of two old 1/4-inch bolts to reverse the ascent route.",
+      "type": "Summit",
+      "distMi": 3
+     }
+    ]
+   }
+  }
+ ]
+}

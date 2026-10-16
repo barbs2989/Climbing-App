@@ -1,0 +1,83 @@
+{
+ "results": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "confirmed",
+   "resolution": "A published GPS track of the North Ridge now exists, and it agrees with an independent USGS map spot height and an independent written account. Both pins move onto the ridge where those sources put them. The point where the summit first comes into view goes to Point 5262/5267 on the crest, 1.4 km north of where it sat. The ridge-regain point goes to the crest at 6,100 ft, about 200 m north of the summit, 248 m from where it sat.",
+   "summary": "Both interpolated ridge pins now sit where a GPS track and two independent sources place them: the first summit view on the ridge's 5,262 ft high point, and the ridge-regain at 6,100 ft just north of the summit.",
+   "evidence": "Ninth pass, 2026-10-01. Live row re-read: index 2 'First summit view point' 47.61587372727273,-121.2663476 (5,267); index 3 'Regain North Ridge crest' 47.616701454545456,-121.2707496 (6,100). NEW SOURCES THIS PASS: (1) Peakbagger peak page, Wayback copy 2022-05-19, which lists five trip reports, one marked 'GPS Track' (2017-09-03). The archived ascent page (2022-05-19) links a GPX download, and that download answers directly with no login and no bot check: 1,714 points, track from the FR 6835 bridge (47.65207,-121.28953) to the summit (47.61683,-121.27155). Of the other four ascents, none has a track (their GPX files are empty). (2) The same party's 2017 NWHikers trip report (Wayback copy 2017-09-10). It describes the line: 'climb the very evenly rising north ridge until you hit a cliff at 5400', swing left to more open ground' and 'At 6100' we finally got back on the ridge line'. Same party as the track, so it counts as ONE source with it. (3) USGS 1:24,000 Skykomish quadrangle, 1965 (historical topo GeoTIFF). It shows a spot height '5262 x' on the north ridge just north of the Big Snow Mtn neatline. I located it from the GeoTIFF's own polyconic/NAD27 georeferencing at NAD27 47.62662,-121.27478, and the NGS NCAT datum service converts that to NAD83 47.626454,-121.275988. The 2017 track passes 2 m from it (47.626465,-121.275969), and the USGS 3DEP ground there is 5,262.5 ft, which validates the conversion. (4) The 2019 blog report, re-read for exact wording (already known): 'the first sighting of the summit from Point 5267', then a cliff wall at 5,400 ft, a gully bypass on the left, a rising traverse into the upper basin, and 'back to the ridge at 6100''. PIN 2: the 2019 account names Point 5267 as the first summit view, the pin's own height (5,267) is that point's, and the only spot height on the ridge in that band is the USGS 5262 point that the track crosses. So the USGS map and the GPS track (two independent sources, within 2 m) fix the coordinate. The old position (1.4 km SSE, south-east of the summit) is beyond the summit from a north-ridge approach and 400 m from the track. Elevation set to 5,262 (USGS map and ground agree; the 5,267 label in the 2019 account differs by 5 ft). PIN 3: the track leaves the crest eastward at about 47.6225 (the 5,400 ft cliff bypass). It runs 60-100 m east of the DEM crest through 47.6190-47.6195 and rejoins the crest at about 47.6186,-121.2725, where the ground is 6,086-6,115 ft. The 2019 account independently puts the regain 'back to the ridge at 6100''. On the crest north of the summit, the 6,100 ft contour crosses at one place, and that is where the track rejoins it. New point: track vertex 47.618605,-121.272469 (ground 6,095), elevation 6,100 as both accounts state. The old position sat E/SE of the summit on the east face (ground 6,032), past the top on a north approach. Neither pin is the summit or a trailhead; distMi stays null on pin 2 and 3.2 on pin 3 (owner may null it; no source states it). Notes and directions already describe these places and are unchanged. Old candidates NOT used: the d6 DEM-only placements (own sampling). Also checked and not relevant: anugara.net 'Bald Eagle Peak II' (Canmore, Alberta); hikeoftheweek.com 'Bald Eagle Peak' (Bald Eagle Mountain, Sloan Creek); Wikipedia Bald Eagle Peak (summit only); a Mountaineers route page for this peak (none exists, not archived).",
+   "sources": [
+    "http://web.archive.org/web/20220519053718/https://www.peakbagger.com/peak.aspx?pid=2125",
+    "http://web.archive.org/web/20220519054710/https://www.peakbagger.com/climber/ascent.aspx?aid=863299",
+    "https://www.peakbagger.com/climber/GPXFile.aspx?aid=863299&sep=1",
+    "http://web.archive.org/web/20170910170457/http://www.nwhikers.net/forums/viewtopic.php?t=8025436",
+    "https://prd-tnm.s3.amazonaws.com/StagedProducts/Maps/HistoricalTopo/GeoTIFF/WA/WA_Skykomish_243765_1965_24000_geo.tif",
+    "https://geodesy.noaa.gov/api/ncat/llh?lat=47.62662&lon=-121.27478&inDatum=nad27&outDatum=nad83(2011)",
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 2,
+     "expect": {"name": "First summit view point", "lat": 47.61587372727273, "lng": -121.2663476},
+     "lat": 47.626465,
+     "lng": -121.275969,
+     "elev": 5262,
+     "sources": [
+      "https://prd-tnm.s3.amazonaws.com/StagedProducts/Maps/HistoricalTopo/GeoTIFF/WA/WA_Skykomish_243765_1965_24000_geo.tif",
+      "https://www.peakbagger.com/climber/GPXFile.aspx?aid=863299&sep=1",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 3,
+     "expect": {"name": "Regain North Ridge crest", "lat": 47.616701454545456, "lng": -121.2707496},
+     "lat": 47.618605,
+     "lng": -121.272469,
+     "elev": 6100,
+     "sources": [
+      "https://www.peakbagger.com/climber/GPXFile.aspx?aid=863299&sep=1",
+      "http://web.archive.org/web/20170910170457/http://www.nwhikers.net/forums/viewtopic.php?t=8025436",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "verdict": "unresolved",
+   "resolution": "No change. No source states a day-2 total (Goat Flat to the lookout, back to Goat Flat, then out to the trailhead) or a Goat Flat-lookout round trip. Every new figure is a one-way trailhead or segment distance, so any day-2 number would be a sum.",
+   "summary": "Day 2's 7.7 mi still has no source; new guidebooks give trailhead-to-lookout one way (6.7 mi, twice) and trailhead-to-Goat Flat figures, but none states the day, so it is left for the owner.",
+   "evidence": "Ninth pass, 2026-10-01. Live row: itinerary day 2 miles 7.7, note already '~4.5 miles back out'. NEW SOURCES (Internet Archive full-text search, snippets read): (1) Washington's Wilderness Areas: The Complete Guide (Huscher, 2003): 'Saddle Lake - Goat Flats - Three Fingers Lookout, One-Way Distance: 6.7 miles'. (2) Washington Handbook (Lyons; later Moon editions): 'The 6.7-mile one-way trail to Tin Pan Gap and Three Fingers Mountain', with Goat Flat 2.5 (later 2.3) mi past Saddle Lake. That is an independent second statement of 6.7 mi trailhead-to-lookout one way, though its wording also names Tin Pan Gap. (3) 101 Hikes / 100 Hikes in the North Cascades (Spring and Manning, 1970-1991): round trip to Goat Flats 9 / 9.5 miles; beyond Tin Can Gap 'hikers will not want to go'. Gives no lookout distance. (4) Hiking the North Cascades (Darvill, 1982/1998): from the Saddle Lake junction, Goat Flats is 3 miles east (segment only; the lookout follows in a sentence the snippet cuts off). (5) Hiking Snohomish County (2007): Goat Flat at 4.8 mi. (6) Longstreet Highroad Guide to the Washington Cascades (1999): gain to Goat Flats and 3,950 ft to the peak; no day split. (7) Lookouts: Firewatchers of the Cascades and Olympics (Spring and Fish): history only. (8) Take a Hike Seattle / Washington Hiking / Pacific Northwest Hiking: one author (Leonard), already counted in r18 (1 mi to Tin Can Gap plus 1 mi to the lookout from Goat Flats; 12.4 mi RT). Searches for a two-day plan ('second day' with Goat Flat/Goat Flats) found none for this trip. Day 2 = (Goat Flat -> lookout) x 2 + (Goat Flat -> trailhead). The only stated parts are one-way legs: trailhead-lookout 6.7 (two sources), trailhead-Goat Flat 4.5 (two sources, r14), Goat Flat-lookout ~2 / 2.7 / 3-3.5 (one author each). Writing any day-2 figure would be arithmetic, so no op. Never null a single day's miles (task rule). OWNER NOTE, not written: two independent guidebooks state 6.7 mi trailhead-to-lookout one way. That disagrees with the 7.5 mi (half of WTA's 15 RT) behind r14/h2's reasoning, and dist_km on this row is null, so nothing contradicts it on screen.",
+   "sources": [
+    "Washington's Wilderness Areas: The Complete Guide (Huscher, 2003), Internet Archive full-text search",
+    "Washington Handbook (Lyons, 1989/1990; later editions), Internet Archive full-text search",
+    "101 Hikes / 100 Hikes in the North Cascades (Spring and Manning, 1970, 1983, 1985, 1991), Internet Archive full-text search",
+    "Hiking the North Cascades (Darvill, 1982, 1998), Internet Archive full-text search",
+    "Hiking Snohomish County (2007), Internet Archive full-text search",
+    "Longstreet Highroad Guide to the Washington Cascades (1999), Internet Archive full-text search",
+    "Lookouts: Firewatchers of the Cascades and Olympics (Spring and Fish), Internet Archive full-text search"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "verdict": "confirmed",
+   "resolution": "Already done: pins 1-2 ('Dolomite Tower Base', 'Vanishing Point Topout') were removed by s4.json and are not in the live row. The waypoints are now the trailhead and the summit only. Nothing to write.",
+   "summary": "The two Vanishing Point tower pins were already removed in an earlier applied pass; the row now has only its trailhead and summit pins.",
+   "evidence": "Live row re-read 2026-10-01: waypoints = [0] 'Barclay Lake Trailhead (FR-6024)' 47.7923,-121.4592; [1] 'Dolomite Tower' (Summit) 47.77918,-121.43599, 5,708 ft. The row has no gpx line. s4.json's remove_pin ops for 'Vanishing Point Topout' (47.781,-121.43) and 'Dolomite Tower Base' (47.7805,-121.429) were applied (README section 6: 'Vanishing Point pins 1-2 removed'). The 'Held for the owner' line in the README ('Vanishing Point pins ... remove pins 1-2 or accept it') is stale. Still open, NOT this task's pins, no op: the summit pin 'Dolomite Tower' sits on the Baring Mountain main summit (6,127 ft LiDAR), not on the tower (~150 m NW per h2). One new search this pass (peak databases, a climbing-route database page for Baring Mountain) found no published coordinate for the tower itself. The only candidates are still the one 'Vp approach' track and a DEM summit (h2). Under the never-remove-the-summit rule it stays.",
+   "sources": [
+    "audits/route-leftovers/deep/out/s4.json",
+    "audits/route-leftovers/deep/out/h2.json"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

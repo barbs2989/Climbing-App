@@ -1,0 +1,451 @@
+{
+ "results": [
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "item",
+   "fact": "Season window: season/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+   "verdict": "unresolved",
+   "summary": "The one book with this route could not be searched for its season line, so the season conflict stays open.",
+   "evidence": "selectedclimbsin0000nels covers the route (climb 49, North Face, pp. 188-191; the first search returned only its description and approach paragraphs, none with a season). The follow-up search for its season field was refused: archive.org answered \"Item not available\" (throttled) to every request after the first few in this session, on both servers, so this book could not be searched for this entry. Beckey vol. 2 (Cascade Pass) is not among the readable books.",
+   "sources": [],
+   "searched": [
+    "selectedclimbsin0000nels: \"Buckner\"; \"Season Buckner\" and \"Boston Glacier\" (throttled)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "kind": "item",
+   "fact": "distance to the high camp",
+   "verdict": "unresolved",
+   "summary": "A trail mileage to the high camp is an access fact no book decides, and no stated figure exists for this line.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987), and the Pickets are in vol. 3. Prior: no source states a mileage from Whatcom or Perfect Pass to a Ghost Peak camp.",
+   "sources": [],
+   "searched": [
+    "books checked for coverage: cascadealpinegui0000beck (vol. 1 only)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "kind": "item",
+   "fact": "high camp location: Crooked Thumb Glacier moraine vs Luna Cirque/Lousy Lake",
+   "verdict": "unresolved",
+   "summary": "No readable book covers Ghost Peak, so the camp used for this line is still unstated.",
+   "evidence": "Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987); the Pickets (Ghost Peak) are covered only by vol. 3. selectedclimbsin0000nels covers Mount Challenger in the Pickets but not Ghost Peak (its index lists Challenger, Mount 274-78 only).",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck: \"Ghost Peak\" (no match)",
+    "selectedclimbsin0000nels: index read via \"Buckner\" query"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "kind": "item",
+   "fact": "dist_km (shown as one-way approach) holds the round-trip total",
+   "verdict": "unresolved",
+   "summary": "No stated one-way distance exists for this line, and the 70.81 km figure does equal the row's own round-trip total, so the clearing rule does not apply either.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. The clearing rule needs a dist_km matching no figure on the row; 70.81 km matches the itinerary round trip, so it cannot be cleared. Halving is not allowed.",
+   "sources": [],
+   "searched": [
+    "row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "item",
+   "fact": "Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157",
+   "verdict": "unresolved",
+   "summary": "The book entry for the Southeast Ridge gives only its grade, first ascent and gear, no time or gain, so the schedule and gain conflicts stay open.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p298: \"SOUTHEAST RIDGE: ... by way of the SE spire (the false summit), continuing to the highest point. First ascent by Robert Loomis, Will Parks, Dan Schnell, and Dave Seman on May 30, 1977. Grade II; class 5.6. Gear: Take up to no. 3 cams.\" No time and no gain. (Side note for the owner: the row's fa is null and the book names this first-ascent party; not written, as it is not this entry's fact.)",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Argonaut\"; Argonaut ridge; Argonaut \"southeast ridge\""
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "kind": "item",
+   "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+   "verdict": "unresolved",
+   "summary": "A pin's trail distance is an access fact a book does not decide, and no source states the mileage to the 8,000 ft saddle.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. Prior: write-ups give Lake Caroline at 5 mi and 17-18 mi round trip, nothing to the saddle; a figure would have to be computed.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "kind": "item",
+   "fact": "Recommended start time from high camp — 5:00 AM vs ~6:00 AM",
+   "verdict": "unresolved",
+   "summary": "No source, book or otherwise, recommends a departure time from the high camp.",
+   "evidence": "Climbing-time fact with no land-manager source; earlier passes found only actual departure times of single parties, which are not a recommendation.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "kind": "item",
+   "fact": "Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)",
+   "verdict": "unresolved",
+   "summary": "A trail/scramble distance is an access fact a book does not decide, and no source states the Fish Creek Pass-to-summit mileage.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987) (the Chelan Sawtooth is in vol. 2).",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "kind": "item",
+   "fact": "Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass",
+   "verdict": "unresolved",
+   "summary": "Approach time to the pass is an access fact; the stated day-pack times disagree and changing the overnight schedule would require computing its later times.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987).",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "kind": "item",
+   "fact": "First ascent of this route/peak",
+   "verdict": "unresolved",
+   "summary": "No readable book covers Crooked Thumb Peak, so who first climbed this start is still unsourced.",
+   "evidence": "Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987); Crooked Thumb (Northern Pickets) is in vol. 3. cascadealpinegui0000beck \"Crooked Thumb\" returned only an unrelated biographical page. Live fa still names the 1963 party.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck: \"Crooked Thumb\""
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "kind": "item",
+   "fact": "pitch count on the South Ridge",
+   "verdict": "unresolved",
+   "summary": "The newest book calls the South Ridge a three-pitch climb, but the row's whole rappel descent is built on a four-segment division, so changing the header alone would create a new contradiction.",
+   "evidence": "selectedclimbsin0000nels (2003) p78: \"the three-pitch South Ridge\"; p81 route: red slab via cracks (5.2) to a large ledge, a short pitch to the base of the upper slab, crack and face to another broken ledge, then the west side of the crest to the summit. cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p319 describes the same line (40 ft crack 5.2 to a horn belay; slab-centre crack 5.4 to a ledge with two fixed pitons \"(optional belay)\"; a short class-4 pitch; scramble to the summit) without a pitch count, i.e. 3 or 4 depending on the optional belay. The row: pitches 4; pitch_detail 3 rows; waypoints and itinerary say 3 pitches; but rappels, descent, descent_text, rappel_detail and rappel_count_note all describe four single-rope rappels \"one per pitch\", with stations named \"top of pitch 3/2/1\" below a summit pitch. Setting pitches 3 would leave rappel_detail rappel 1 (\"down the uppermost pitch to the top of pitch 3\") contradicting it, and the book gives no rappel layout to rewrite those stations from. Owner decision: adopt 3 and rewrite the four rappel stations' pitch labels, or keep 4. rockclimbingwash0000smoo has no Ingalls entry.",
+   "sources": [],
+   "searched": [
+    "selectedclimbsin0000nels: \"Ingalls Peak\"; \"pitch Ingalls\"",
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Chimney Rock\" \"South Peak\" (returned the Ingalls South Ridge p317-319 text)",
+    "rockclimbingwash0000smoo: \"Ingalls Peak\", Ingalls (no match)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "kind": "item",
+   "fact": "Climbing season: May-Jun header vs a season description running through September",
+   "verdict": "unresolved",
+   "summary": "No readable book covers Chalangin Peak, so no stated season window exists for the southwest face.",
+   "evidence": "Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987); Chalangin Peak (Thunder Creek) is in vol. 3. Nelson's selected climbs do not include it.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck coverage check"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sisu",
+   "kind": "item",
+   "fact": "Total route length vs sum of pitch lengths",
+   "verdict": "unresolved",
+   "summary": "The one book that lists Sisu gives no length or pitch lengths, so neither the 800 ft total nor the pitch lengths can be checked against it.",
+   "evidence": "rockclimbingwash0000smoo p76 (Index, Lower Town Wall): \"Sisu (III, 11c)\" — a long free route zig-zagging to the big arch of The Ave then right up the headwall; most parties skip the first 11b pitch for the chimney to Madsen's Ledge and rappel from anchors at the base of the final crack pitch; FA 1991. No total length, pitch count or pitch lengths. bwb_O9-CFS-517 (Index Town Walls, 1985) predates the 1991 first ascent, so it cannot list the route.",
+   "sources": [],
+   "searched": [
+    "rockclimbingwash0000smoo: Sisu"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "kind": "item",
+   "fact": "Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it",
+   "verdict": "unresolved",
+   "summary": "The book describes the summit block as a boulder problem that can be protected by throwing a rope over the top, but says nothing about what most parties do, so neither generalisation can be confirmed.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p279, Colchuck Balanced Rock route from the notch above Jaberwocky Tower: \"Cracks lead to the final block, which is a bouldering problem (one can throw a rope over the top for protection).\" p280 Northwest Ridge: overhanging boulder 5.6, detached flake 5.5, sharp ridge to the summit. No statement of how many parties climb or skip the block.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Witches Tower\"; Witches tower route (returned Colchuck Balanced Rock p279-280)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "kind": "item",
+   "fact": "Elevation of the glacier-exit / moat transition below the col",
+   "verdict": "unresolved",
+   "summary": "The book read gives glacier elevations for the east side but no height for the moat or the glacier exit, so neither 6,200 nor 6,500 ft can be confirmed.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p179: the Lemah Glacier remnants' median level runs from about 6,600 ft to 5,840 ft, reaching to 7,000 ft into pockets under each summit-ridge gap — not a height for this route's moat or exit. A targeted search for the east route's moat was refused: archive.org answered \"Item not available\" (throttled) to every request after the first few in this session, on both servers, so this book could not be searched for this entry.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Chimney Rock\" \"South Peak\" (returned Lemah p179); \"Lemah\" moat (throttled)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "kind": "item",
+   "fact": "Sherpa south basin camp waypoint elev 6200 vs elevFt 6300",
+   "verdict": "unresolved",
+   "summary": "No book reading gave an elevation for this informal camp, so neither figure can be confirmed.",
+   "evidence": "Beckey vol. 1 covers Sherpa Peak but could not be searched for this camp: archive.org answered \"Item not available\" (throttled) to every request after the first few in this session, on both servers, so this book could not be searched for this entry. Prior passes found no stated camp elevation.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): Sherpa (throttled)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "kind": "item",
+   "fact": "Summit-day gain 3,080 ft reaches the 7,727 ft central summit, not the 7,440 ft South Peak this row climbs",
+   "verdict": "unresolved",
+   "summary": "The book gives the South Peak's height and route but no gain from the camp, so the summit-day gain cannot be replaced without computing it.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p181: South Peak \"shown at 7,440 ft+\"; p187 South Peak route: long chimney to the Main-South notch, easy scrambling along the ridge to the summit. No gain, distance or time from a camp. A figure from heights would be computed.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Chimney Rock\" \"South Peak\""
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_witches_tower_south_face",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "The book describes the easiest way up as a class 3 slab scramble on the south side and gives no pitch count, so pitches stays empty.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p278 Witches Tower: \"The easiest route is to climb talus to beneath the summit on its S side, then broken class-3 slabs.\" A separate climbing-course route from the col (sharp ridge, class 4, a short 5.5 step, 4-ft slot jump) is a different line; \"One can descend the S face.\" No pitch count, rack or rappel for the class 3 south route.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Witches Tower\"; Witches tower route"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_witches_tower_south_face",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "The book describes the south side as a class 3 slab scramble with no roped pitches, rack or rappel, so the cleared roped-pitch value stays out.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p278: easiest route is talus to beneath the summit on its S side, then broken class-3 slabs; one can descend the S face. The 5.5 step belongs to a separate climbing-course route from the col. Nothing on pitch_detail for the south route.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Witches Tower\"; Witches tower route"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_witches_tower_south_face",
+   "kind": "fill",
+   "fact": "detailed_rack",
+   "verdict": "unresolved",
+   "summary": "The book describes the south side as a class 3 slab scramble with no roped pitches, rack or rappel, so the cleared roped-pitch value stays out.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p278: easiest route is talus to beneath the summit on its S side, then broken class-3 slabs; one can descend the S face. The 5.5 step belongs to a separate climbing-course route from the col. Nothing on detailed_rack for the south route.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Witches Tower\"; Witches tower route"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_witches_tower_south_face",
+   "kind": "fill",
+   "fact": "pro_needs",
+   "verdict": "unresolved",
+   "summary": "The book describes the south side as a class 3 slab scramble with no roped pitches, rack or rappel, so the cleared roped-pitch value stays out.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p278: easiest route is talus to beneath the summit on its S side, then broken class-3 slabs; one can descend the S face. The 5.5 step belongs to a separate climbing-course route from the col. Nothing on pro_needs for the south route.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Witches Tower\"; Witches tower route"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_witches_tower_south_face",
+   "kind": "fill",
+   "fact": "rappels",
+   "verdict": "unresolved",
+   "summary": "The book describes the south side as a class 3 slab scramble with no roped pitches, rack or rappel, so the cleared roped-pitch value stays out.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p278: easiest route is talus to beneath the summit on its S side, then broken class-3 slabs; one can descend the S face. The 5.5 step belongs to a separate climbing-course route from the col. Nothing on rappels for the south route.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): \"Witches Tower\"; Witches tower route"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Pin distances are access facts; no land-manager page states Cascade Pass's distance from the Boston Basin trailhead.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. The park figure (3.7 mi) is from the Cascade Pass trailhead, a different start.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Pin distances are access facts; no source states Sahale Glacier Camp's distance from the Boston Basin trailhead.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Pin distances are access facts; no source states the Sahale-Boston col's distance from the Boston Basin trailhead.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. A book gives only times to the col.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "The book gives no pitch-by-pitch breakdown of the Southeast Ridge, so pitch_detail stays empty.",
+   "evidence": "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass) p298 gives only \"Grade II; class 5.6\", the first-ascent party and \"Take up to no. 3 cams\" for the Southeast Ridge.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): Argonaut \"southeast ridge\""
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "already_fixed",
+   "summary": "rappel_detail is no longer empty on the live row: it now holds one rappel (the chockstone cleft near the top of the South Gully), so there is nothing to fill.",
+   "evidence": "Live row rappel_detail: [{n:1, station: short blocky cleft capped by a chockstone near the top of the South Gully, ...}]. The book (p298) gives no rappel lengths or anchors for the Southeast Ridge anyway.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck (2000 ed., vol. 1 Columbia R.-Stevens Pass): Argonaut \"southeast ridge\"",
+    "row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "kind": "fill",
+   "fact": "waypoints[6].elev",
+   "verdict": "unresolved",
+   "summary": "No readable book covers the Crooked Thumb Glacier moraine camp, so its elevation stays empty.",
+   "evidence": "Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987). Live waypoint 6 (West Challenger Notch / Crooked Thumb Glacier moraine camp) still has elev null.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck: \"Crooked Thumb\""
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "No readable book covers Hurry-up Peak, so there is no stage-by-stage breakdown to fill from.",
+   "evidence": "Beckey vol. 2 and vol. 3 are not among the readable books (cascadealpinegui0000beck is vol. 1, 2000; cascadealpinegui0001beck is vol. 1, 1987); Hurry-up Peak (Ptarmigan Traverse) is in vol. 2. The cleared rows belonged to Magic Mountain.",
+   "sources": [],
+   "searched": [
+    "cascadealpinegui0000beck coverage check"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "dist_km is an access fact; no source states a one-way distance from the Cascade Pass trailhead to Hurry-up Peak.",
+   "evidence": "This is an access/approach fact (a trail distance, pin mileage or approach time); under the owner rules a guidebook never decides it, and no land-manager figure for exactly this point was found by earlier passes. Live dist_km is null; summing legs would be computed.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_east_face",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "already_fixed",
+   "summary": "rappel_detail is no longer empty: the live row now holds the two double-rope rappels (summit area to the Middle-South Gunsight notch, then into the moat), matching its rappels text.",
+   "evidence": "Live row rappel_detail: n1 double-rope to the Middle-South Gunsight notch, n2 double-rope into the moat at the base of the notch; rappels text says the same.",
+   "sources": [],
+   "searched": [
+    "row.mjs",
+    "selectedclimbsin0000nels: \"Gunsight\" (archive.org unavailable — throttled)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "The live row is a Class 3 unroped scramble and no source states a roped pitch count, so pitches stays empty.",
+   "evidence": "Live row: grade Class 3, pitches null, four pitch_detail stages that are scramble stages. The scramble book (75scramblesinwas0000gold) could not be read: archive.org answered \"Item not available\" (throttled) on every request in this session; a scramble guide would not give a pitch count for it in any case.",
+   "sources": [],
+   "searched": [
+    "75scramblesinwas0000gold: \"Del Campo\" (archive.org throttled, no answer)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "kind": "fill",
+   "fact": "commitment",
+   "verdict": "unresolved",
+   "summary": "The row no longer exists, so there is nothing to fill.",
+   "evidence": "node scripts/oneoff/route-leftovers/row.mjs wa_little_big_chief_mountain_west_route -> \"no row\".",
+   "sources": [],
+   "searched": [
+    "row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "No book read gives a graded stage breakdown of the Methow Pass southeast route, and climbing_route already describes its two parts, so pitch_detail stays empty.",
+   "evidence": "selectedclimbsin0000nels index lists Mount Hardy 262-67 (a technical rock climb, not the Methow Pass scramble). Beckey vol. 3, which covers Hardy, is not among the readable books. archive.org was throttled for the rest of the session.",
+   "sources": [],
+   "searched": [
+    "selectedclimbsin0000nels: index (via \"Buckner\" query)"
+   ],
+   "ops": []
+  }
+ ]
+}

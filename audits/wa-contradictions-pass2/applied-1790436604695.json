@@ -1,0 +1,207 @@
+{
+ "applied": [
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "approach",
+   "path": [],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    0
+   ],
+   "fact": "Road walk from the Yellow Aster Butte trailhead"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "One-way time to the summit"
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "column": "hazards",
+   "path": [
+    0
+   ],
+   "fact": "Which slopes hold the hazardous snow"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "before": {
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "Winchester Mountain Trail #685 from Twin Lakes to the 1935 lookout",
+      "notes": "From the Twin Lakes trailhead at about 5,200 ft — the parking area between the two lakes, with a vault toilet — pick up Winchester Mountain Trail #685 heading north-northwest. It starts as a moderately steep, well-graded tread through blueberry and heather.\n\nAt roughly a quarter to half a mile there is a signed junction with High Pass Trail #676, which goes on toward the Gargett Mine and Mount Larrabee. Stay LEFT or straight to remain on #685.\n\nBeyond the junction the trail leaves the last trees onto open, treeless southeast-facing slopes and climbs by tight switchbacks. Around 0.9 mile an unmarked climbers' path splits off offering a more direct, rougher scramble line up snow and scree; the standard trail continues by switchbacks and is the preferred line.\n\nAt about 1.3 miles the trail crests the ridge just west and south of the summit; a short final push along the open ridge reaches the 1935 fire lookout at 6,521 ft. About 3.4-3.5 miles round trip with 1,300 ft of gain.\n\nThere is no water on route or at the lookout.",
+      "season": "Roughly Jul-Sep, and the limiting factor is the last two miles of FS-3065 rather than the trail",
+      "hazards": [
+       "The last two miles of FS-3065, rough and one-lane in places, high-clearance recommended",
+       "Hard lingering snow on the upper switchbacks into August in heavy-snow years, over consequential runout",
+       "A signed junction at 0.25-0.5 mile that serves five much larger objectives",
+       "An unmarked climbers' path at 0.9 mile up snow and scree",
+       "No water on route or at the lookout"
+      ],
+      "baseFinding": "THERE IS NO CLIMBING ON THIS ROUTE AND SAYING SO IS THE HONEST ANSWER — WHAT THERE IS, IS ONE JUNCTION YOU CAN GET WRONG AND ONE SLOPE THAT CAN HURT YOU. The route is a maintained trail from the car to the lookout, so 'the base' is the trailhead between the two lakes.\n\nTHE JUNCTION AT A QUARTER TO HALF A MILE IS THE ONLY REAL DECISION. #685 for Winchester goes LEFT or straight; #676 for High Pass, the Gargett Mine, Mount Larrabee, American Border Peak and the Pleiades goes RIGHT. It is signed, but it is the branch point for five different objectives in this basin and taking it by accident sends you toward a very much bigger day. If you find yourself contouring around the WEST side of Winchester Mountain and losing height toward a pass, you are on #676.\n\nTHE SECOND ONE IS UNMARKED, at about 0.9 mile: a climbers' path splits off up snow and scree as a direct alternative to the switchbacks. It is rougher and it is not the standard line. In cloud, a path that stops switchbacking and goes straight up is the wrong one.\n\nARRIVAL AT THE RIDGE: at roughly 1.3 miles the trail crests the ridge just WEST and SOUTH of the summit, with only a few hundred feet of open ridge left. Cresting a ridge with the lookout to your northeast is the confirmation.\n\nTHE REAL HAZARD IS THE UPPER SWITCHBACKS, and it is worth reading as a base finding of a different kind: steep snow lingers on the upper switchbacks and the southeast slopes into August in heavy-snow years, it hardens overnight, and the runout below is consequential. An ice axe is a reasonable thing to be carrying on a lookout trail in early season."
+     }
+    ],
+    "road": {
+     "name": "Twin Lakes Road (FS Road 3065)",
+     "status": "Paved/graded to the Yellow Aster Butte/Tomyhoi Lake Trailhead (4.5 mi); narrow, unmaintained for passenger vehicles with few pullouts for the final ~2 miles to Twin Lakes — high-clearance essential, 4WD helpful but not required",
+     "driveNote": "From Glacier, WA drive SR-542 east about 12 miles, turn left (north) onto Twin Lakes Rd/FS-3065; continue 4.5 mi to the Yellow Aster Butte/Tomyhoi Lake TH, then about 2 more miles (narrow, high-clearance) to the Twin Lakes TH at road's end.",
+     "seasonalGate": "Typically impassable due to snow roughly November through June, depending on snowpack"
+    },
+    "hazards": [
+     "Steep, exposed snowfields on north/east-facing slopes below the summit, lingering into July and sometimes August",
+     "Narrow, high-clearance-only final ~2 miles of FS Road 3065 with no guardrails and few pullouts",
+     "No water source at the lookout or along most of the trail",
+     "Black bear activity in the area — store food and scented items properly",
+     "Afternoon thunderstorms possible in summer on the exposed summit",
+     "Unmarked junction near 0.9 mile can cause route-finding confusion"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.9526,
+      "lng": -121.6358,
+      "elev": 5200,
+      "name": "Twin Lakes Trailhead",
+      "note": "End of high-clearance FS Road 3065 between the Twin Lakes; parking for ~20 vehicles, vault toilet, Northwest Forest Pass required at the self-issue kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive up Twin Lakes Road (FS-3065) to the trailhead between the two lakes. The final two miles are rough and one-lane in places; high clearance is recommended and four-wheel drive helps, though it isn't strictly required. Parking holds around 20 vehicles, with a vault toilet on site, and a Northwest Forest Pass is required at the self-issue kiosk. If your vehicle can't manage the last stretch, park at the Yellow Aster Butte trailhead instead and add about 2.5 miles of road walking each way."
+     },
+     {
+      "lat": 48.953181,
+      "lng": -121.636878,
+      "elev": 5250,
+      "name": "High Pass Trail (No. 676) junction",
+      "note": "Trail splits here; stay left on Winchester Mountain Trail 685 while High Pass Trail 676 branches right toward Mount Larrabee.",
+      "type": "Junction",
+      "distMi": 0.25,
+      "directions": "From the parking area between the two lakes, pick up Winchester Mountain Trail #685 heading north-northwest on moderately steep, well-graded tread through blueberry and heather. The signed junction comes up within the first quarter to half mile, while you are still among the last scattered trees."
+     },
+     {
+      "lat": 48.954691,
+      "lng": -121.639681,
+      "elev": 5890,
+      "name": "Unmarked snow-route junction",
+      "note": "Unofficial climbers' path splits off here for a steep direct scramble used as a snow shortcut early season; stay on the switchbacking main trail unless comfortable on steep snow.",
+      "type": "Junction",
+      "distMi": 0.9,
+      "directions": "Of the two branches, #685 is the one that switchbacks up toward the lookout; High Pass Trail #676 is the branch carrying on north toward Gargett Mine and Mount Larrabee. Above the sign the trail leaves the last trees for open, treeless southeast-facing slopes and climbs in tight switchbacks through fireweed and heather, with Twin Lakes, Tomyhoi Peak and Mount Baker opening up behind you. There is no water anywhere on this trail, so everything you drink comes from the car."
+     },
+     {
+      "lat": 48.955621,
+      "lng": -121.641405,
+      "elev": 6190,
+      "name": "Pass crest saddle",
+      "note": "Trail crests the ridge with open views toward Mount Larrabee and Tomyhoi Peak before switchbacking up the final push to the lookout.",
+      "type": "Junction",
+      "distMi": 1.3,
+      "directions": "The unmarked path splitting off here is a rougher, more direct scramble line up snow and scree. Unless you are set up for steep snow, ignore it and stay on the switchbacks, which are the standard and preferred line. They carry on up the open slope to where the trail crests the ridge just west and south of the summit, and the view swings around to Mount Larrabee, the Border Peaks and Tomyhoi."
+     },
+     {
+      "lat": 48.956085,
+      "lng": -121.642268,
+      "elev": 6350,
+      "name": "Narrow exposed trail sections",
+      "note": "Two narrow sections of trail with long drop-offs near the summit ridge require sure footing per the USFS trail description; can hold snow/ice well into July.",
+      "type": "Hazard",
+      "distMi": 1.5,
+      "directions": "From the crest the trail turns along the ridge for the final few hundred feet of gain. Two short stretches through here are narrow with long drop-offs below and want sure footing; one is cut into rock. Steep snow can lie across this ground into July and in heavy years into August, and it hardens overnight, so an ice axe and comfort on firm snow are worth having early season."
+     },
+     {
+      "lat": 48.95655,
+      "lng": -121.64313,
+      "elev": 6521,
+      "name": "Winchester Mountain Lookout",
+      "note": "Historic 1935 fire lookout maintained by Mount Baker Club volunteers; 360-degree views of Mount Baker, Mount Shuksan, and Twin Lakes below.",
+      "type": "Summit",
+      "distMi": 1.7,
+      "directions": "Past the narrow sections it is a short, open walk along the ridge crest to the lookout. This is the same ground you reverse on the way down, and it is the stretch worth taking carefully if snow is lying: plunge-step or use the axe rather than trusting a boot-pack that has firmed up in the shade."
+     }
+    ],
+    "approach": "From the Twin Lakes trailhead (elev. ~5,200ft, parking area between the two lakes, vault toilet on site), pick up Winchester Mountain Trail #685 heading north-northwest. The trail starts as a moderately steep, well-graded tread through blueberry and heather slopes. At about 0.25-0.5 mile you reach the signed junction with High Pass Trail #676 (which continues on toward Gargett Mine and Mt. Larrabee views) — stay left/straight to remain on #685 for Winchester. Beyond the junction the trail breaks out of the last scattered trees onto open, treeless southeast-facing slopes and climbs via a series of tight switchbacks through fireweed and heather, with steadily improving views back over Twin Lakes, Tomyhoi Peak, and Mt. Baker to the south. Around 0.9 mile there is an unmarked climbers'-path junction offering a more direct, rougher scramble line up snow/scree — the standard trail continues via switchbacks and is the preferred line for most parties. At roughly 1.3 miles the trail crests the ridge just west/south of the summit; from there it's a short final push of a few hundred feet of elevation along the open ridge to the summit and the 1935 fire lookout at 6,521ft. Total distance is about 3.4-3.5 miles round trip with 1,300-1,320ft of gain, so this leg (trailhead to summit) is roughly 1.7 miles and the full gain one-way. There is no reliable water on route or at the lookout — carry all you need. The main approach hazards are: the rough final 2 miles of FS-3065 to the trailhead (high-clearance recommended, 4WD helpful but not required, one-lane in places), and lingering steep snow on the upper switchbacks and southeast slopes that can persist into August in heavy-snow years — an ice axe and comfort with steep snow travel is recommended for early-season ascents, since a slip on the hardened snow above the switchbacks has real consequences given the exposure below.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Short, moderate day - roughly 3.5 miles round trip with about 1,300 ft of gain, but starting from an already-high (~5,200 ft) trailhead reached via a rough road",
+      "packWeight": "Light daypack; add ice axe (and optionally microspikes) when snow lingers on the traverse"
+     },
+     "approachTime": "Very short - trail starts directly at Twin Lakes trailhead; summit reached in roughly 1.5-2.5 hours one-way for most hikers",
+     "requiredSkills": [
+      "Comfortable on maintained switchback trail with some exposed traverse sections",
+      "Steep snow travel and self-arrest (needed while snow covers the south/west slope traverse, typically into July)",
+      "Basic judgment on a high-clearance/rough access road drive to the trailhead"
+     ],
+     "experienceLevel": "Beginner-friendly hiker/scrambler once the trail is snow-free (Aug-Sep); in July or after early snowfall in Oct, partner needs prior steep-snow travel and self-arrest experience for the traverse"
+    }
+   }
+  }
+ ]
+}

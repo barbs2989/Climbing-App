@@ -1,0 +1,405 @@
+{
+ "file": "r061.json",
+ "results": [
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Length of the rappel below the summit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A short (~50-60 ft) rappel off a tree anchor; the 100-150 ft figure is the rope length, not the rappel length",
+   "evidence": "The published route description reports parties rope up for one short pitch, rappel it off the same tree, used a 150 ft rope for climb and rappel and say anything over 100 ft of rope is adequate - i.e. 100-150 ft is a ROPE length, and a doubled 100 ft rope implies a rappel of roughly 50 ft. The row's rappels, detailed_rack, pitch_detail, gear and rope_note all put the step at ~50-75 ft; the waypoint note and descent_text turned the rope length into a rappel length. No second independent external source describes the step, so this rests on the row plus one external source.",
+   "sources": [
+    "https://www.summitpost.org/sheep-gap-mountain/808715"
+   ],
+   "patches": [
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Length of the rappel below the summit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "requires downclimbing or a 100-150 ft rappel.",
+     "replace": "requires downclimbing or a short (~50-60 ft) rappel."
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Length of the rappel below the summit",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "and anything over 100 ft of rope is adequate for the ~100-150 ft rappel.",
+     "replace": "and the rappel itself is short, roughly 50-60 ft."
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Length of the rappel below the summit",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "1 rappel (~50-75 ft) off a tree anchor",
+     "replace": "1 rappel (~50-60 ft) off a tree anchor"
+    }
+   ]
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Number of pitches on the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "pitch_detail's first row is labelled an unroped Class 2-3 approach scramble; only the second row ('Summit step') is a roped pitch, so pitches = 1 matches the breakdown.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Which summit(s) the climbing day actually reaches",
+   "verdict": "fixed",
+   "correct_value": "Day 2 climbs the 5,814' main summit via the notch and short roped step, not the Middle and North Peaks",
+   "evidence": "The published route page for Sheep Gap Mountain describes the main summit as reached from Weden Pass via a traverse to a notch with one roped pitch that is rappelled off a tree, and separately notes that the north summit (Pt 5683) is a quick class 2/3 scramble west of Weden Pass for those who do NOT want the main summit. Peakbagger lists Sheep Gap Mountain (main) and Sheep Gap Mountain-North Peak as separate summits, and an October 2024 trip report titled for the North and Middle Peaks records a high point of 5,683 ft - i.e. the itinerary copied a trip that never reached this route's 5,814 ft summit.",
+   "sources": [
+    "https://www.summitpost.org/sheep-gap-mountain/808715",
+    "https://www.peakbagger.com/peak.aspx?pid=27644",
+    "https://www.peakbagger.com/peak.aspx?pid=25646",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272"
+   ],
+   "patches": [
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "then continue west-southwest to the saddle between the Middle and North Peaks. Climb the Middle Peak via its northeast ridge, return to the saddle/pass, then tag the North Peak via its east ridge before descending all the way back to the trailhead.",
+     "replace": "then traverse south-west, dropping to about 4,900 ft beneath the cliff bands, to the notch below the main summit. Lead the short class 4 step, scramble to the 5,814' summit, rappel the step and reverse the traverse to Weden Pass before descending all the way back to the trailhead."
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "find": "Middle & North Peaks",
+     "replace": "main summit"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Tag Sheep Gap Mountain's Middle and North Peaks",
+     "replace": "Climb Sheep Gap Mountain's 5,814' main summit"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Reach Middle/North Peak saddle",
+     "replace": "Reach the notch below the main summit"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Traverse west-southwest from the pass.",
+     "replace": "Traverse south-west from the pass, dropping to about 4,900 ft under the cliff bands before regaining the notch."
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "Summit Middle Peak",
+     "replace": "Rope up for the summit step"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Via the northeast ridge; downclimb back to the saddle.",
+     "replace": "Lead the short class 4 step on slings, then scramble the loose summit block."
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "label"
+     ],
+     "find": "Summit North Peak",
+     "replace": "Summit Sheep Gap Mountain (5,814')"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Via the east ridge; return to Weden Pass.",
+     "replace": "Rappel the step from the tree anchor, then reverse the traverse to Weden Pass."
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "traversing to Weden Pass to tag Sheep Gap's Middle and North Peaks before hiking",
+     "replace": "traversing past Weden Pass to Sheep Gap's main summit before hiking"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "find": "Middle & North Peaks",
+     "replace": "main summit"
+    },
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Which summit(s) the climbing day actually reaches",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "then continue west-southwest to the saddle between the Middle and North Peaks. Climb the Middle Peak via its …",
+     "replace": "then traverse south-west beneath the cliff bands to the notch below the main summit and its short roped step…"
+    }
+   ]
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Total elevation loss for the trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "loss_ft 3452 equals exactly the net relief from the trailhead (2,362 ft) to the summit (5,814 ft), so it is a different quantity from the itinerary's cumulative 4,300 ft, not a typo. No external source gives a car-to-car cumulative gain/loss for the main summit (the only measured report went to the 5,683 ft North/Middle peaks), and the catalog has refused setting loss = gain by out-and-back arithmetic as a class, so no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Whether October is within season for this route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Mid-July through September",
+   "evidence": "season (Jul-Sep), best_season, climate and seasonal_guidance's own October entry ('risky', 'end of best-season window') all put October outside the reliable window; optimalWindow alone extended it to October. A Gothic Basin approach guide gives late July to early September as the prime window.",
+   "sources": [
+    "https://www.cynhw.com/blog/2025/10/29/backpacking-to-gothic-basin-and-foggy-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_sheep_gap_mountain_scramble",
+     "fact": "Whether October is within season for this route",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "Mid-July through October;",
+     "replace": "Mid-July through September;"
+    }
+   ]
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Round-trip mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's waypoints (summit at 5.9 mi) and itinerary give ~11.8 mi round trip, but the only measured external figure, a 2024 trip to the North and Middle peaks via Weden Pass, logged 13.8 mi round trip, which supports partner_requirements' 13-14 mi rather than the itinerary. With one external source that disagrees with the majority of fields and no second source for the main summit, no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Total elevation gain and loss for the Southwest Route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External figures do not isolate this route: the best-documented trip logged ~34 mi and 14,000 ft gained and lost over six days but included Gunsight Peak; a route description gives ~5,500 ft of gain from the trailhead to Itswoot Ridge alone, which with a summit day that crosses the Dome-Chickamin col twice implies well over the itinerary's 8,200 ft. The itinerary's own sums (gain 8,200, loss 8,400) do not balance for a round trip either, so neither gain_ft/loss_ft nor the itinerary can be confirmed; no patch.",
+   "sources": [
+    "https://trailcatjim.com/gunsight-peak-and-sinister-peak/",
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+    "https://www.summitpost.org/dome-peak-from-downy-creek/953484",
+    "https://www.lemkeclimbs.com/sinister-peak.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Hardest rock grade on the standard ascent line",
+   "verdict": "fixed",
+   "correct_value": "Class 3 (south-side gully Class 3, upper west ridge Class 2-3); Class 3-4 applies only to the optional lower west ridge descent",
+   "evidence": "One party's account rates the steep south gully Class 3 with an easy Class 2 romp from the ridge notch to the summit; another describes the upper west ridge as a Class 2-3 scramble and reserves Class 3-4 for the optional lower west ridge descent; the peak's encyclopedia entry gives the easiest route as a Class 3 scramble, and a third party rates the direct ridge from the col Class 3+. None rates the standard gully/west ridge line Class 4.",
+   "sources": [
+    "https://www.lemkeclimbs.com/sinister-peak.html",
+    "https://trailcatjim.com/gunsight-peak-and-sinister-peak/",
+    "https://en.wikipedia.org/wiki/Sinister_Peak",
+    "https://www.countryhighpoints.com/dome-and-sinister-peaks/"
+   ],
+   "patches": [
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Hardest rock grade on the standard ascent line",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 4, Glacier",
+     "value": "Class 3, Glacier"
+    },
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Hardest rock grade on the standard ascent line",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 4",
+     "value": "Class 3"
+    },
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Hardest rock grade on the standard ascent line",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Class 4 with glacier crossing",
+     "replace": "Class 3 with glacier crossing"
+    },
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Hardest rock grade on the standard ascent line",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "on the final Class 4 scramble",
+     "replace": "on the final Class 3 scramble"
+    },
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Hardest rock grade on the standard ascent line",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "Class 4 scrambling on loose rock with exposure",
+     "replace": "Class 3 scrambling on loose rock with exposure"
+    },
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Hardest rock grade on the standard ascent line",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "unroped Class 4 scrambling",
+     "replace": "unroped Class 3 scrambling"
+    }
+   ]
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Overall climbable season",
+   "verdict": "fixed",
+   "correct_value": "Normally in condition July through September (Jul-Sep); spring ascents are snow climbs",
+   "evidence": "Documented ascents of the standard line fall in late June-early July, and route notes warn the bergschrund at the Dome-Sinister col opens later in the season, making September marginal - matching the Jul-Sep chip, itinerary.cal and seasonal_guidance. A May ascent is recorded but only as a snow climb that bypassed the normal route on a snow ramp, which is why itinerary.cal already frames May-June as ski-mountaineering; no source supports October.",
+   "sources": [
+    "https://www.countryhighpoints.com/dome-and-sinister-peaks/",
+    "https://www.lemkeclimbs.com/sinister-peak.html",
+    "https://trailcatjim.com/gunsight-peak-and-sinister-peak/",
+    "https://www.summitpost.org/sinister-peak/749245"
+   ],
+   "patches": [
+    {
+     "id": "wa_sinister_peak_southwest_route",
+     "fact": "Overall climbable season",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Climbable roughly May through October, but July through August is best",
+     "replace": "Normally in condition July through September (spring ascents are snow climbs on a much deeper snowpack), and July through August is best"
+    }
+   ]
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Whether avalanche is a hazard on this route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "seasonal_hazards.avalanche.zone says no NWAC forecast product covers the summer window (true), not that no snow hazard exists; obj_haz's residual early-season wet-slide note on approach snow slopes is compatible with that.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

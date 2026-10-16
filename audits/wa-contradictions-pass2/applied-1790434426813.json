@@ -1,0 +1,101 @@
+{
+ "applied": [
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Headline grade"
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "column": "grade",
+   "path": [],
+   "fact": "Headline grade"
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Headline grade"
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Headline grade"
+  },
+  {
+   "id": "wa_free_mojo",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Fixed anchor atop pitch 2"
+  },
+  {
+   "id": "wa_free_mojo",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Fixed anchor atop pitch 2"
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Size of a #5 cam"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "before": {
+    "dist_km": 6.6,
+    "rock_grade": "5.11b",
+    "grade": "5.11a/b",
+    "watch_out": "High-grade 5.11a/b climbing with significant exposure throughout\nMixed terrain transitions require careful technique and commitment\nWeather sensitivity - afternoon storms create electrical hazard on exposed pitches\nRoute-finding complexity on upper pitches; descent route-finding critical\nMultiple rappels required; anchor condition variable and must be inspected",
+    "rope_note": "6-pitch 5.11a/b Boving-Pollock line on SEWS's NW face; the South Arete descent is three single-rope rappels on a 60m rope."
+   }
+  },
+  {
+   "id": "wa_free_mojo",
+   "before": {
+    "descent_text": "The documented lower pitches (P1 to a two-piece fixed gear anchor, P2 to ledges) suggest Free Mojo can be descended with rappels using a 60m rope from the fixed anchors if not continuing to the top — a party retreating after pitch 2 would rappel P2 then P1 back to the ground. For the full route to the summit (6 pitches), finish via the standard South Arete descent: downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60m) from bolted anchors/chains down the gully to the base.",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the basin below the west face, then 40 ft DOWN AND RIGHT of the chockstone chimney",
+      "notes": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the northwest-side clearing, then the climber's path up talus into the basin below the west face.\n\nSix pitches, 5.11-.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A start explicitly described as nondescript, confirmed only at the first belay",
+       "Three routes starting within about 60 ft of each other on one wall",
+       "No water in the basin"
+      ],
+      "baseFinding": "THE START IS ROUGHLY 40 FT DOWN AND RIGHT OF THE LARGE CHOCKSTONE-FILLED CHIMNEY BETWEEN THE TWO SPIRE FORMATIONS, ON A NONDESCRIPT CRACK THAT LEADS TO A TWO-PIECE FIXED ANCHOR ON A PEDESTAL.\n\nSO THE CONFIRMATION IS AT THE TOP OF PITCH ONE, NOT AT THE BOTTOM, AND THAT IS THE HONEST WAY TO USE THIS ROUTE: the crack itself is described as NONDESCRIPT, which means you will not identify it by looking at it. What you can identify is where it ends. A ROPE LENGTH UP, THERE IS A TWO-PIECE FIXED ANCHOR ON A PEDESTAL. If you arrive at a stance with no fixed gear, come down and move along the wall.\n\nPITCH TWO GIVES A SECOND CONFIRMATION: OBVIOUS DOUBLE INCIPIENT CRACKS leading up to a series of ledges. Two thin parallel cracks, not one.\n\nTHE DISCRIMINATOR AGAINST THE TWO NEIGHBOURS, AND THE MEASUREMENTS ARE THE POINT: MOJO RISING is ABOUT 20 FT DOWNHILL of the chimney on an OBVIOUS BOLTED FACE. The NORTHWEST FACE, Boving-Pollock, is entered by TRAVERSING INTO A STEEP CORNER. THIS ROUTE IS 40 FT DOWN AND RIGHT ON A PLAIN CRACK. Bolts mean Mojo Rising; a corner means Boving-Pollock; a plain crack forty feet right of the chimney means Free Mojo.\n\nRETREAT FROM LOW ON THE ROUTE IS STRAIGHTFORWARD, WHICH IS WORTH KNOWING WHEN YOU ARE UNSURE OF THE START: a party retreating after pitch 2 rappels P2 then P1 back to the ground from the fixed anchors on a 60 m rope. There is no penalty for starting, finding the ground wrong, and coming back down."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "before": {
+    "gear": [
+     "Rack to a #5 cam (roughly 3 inches) — the size published descriptions call for on this pitch",
+     "A #6 can back up the first 20 feet below the chockstone, but parties who've climbed it don't trust it as solid pro there",
+     "Only a few thin nuts and small cams protect around the chockstone itself — expect real gaps, not just tight spacing",
+     "Gear improves markedly above the roof, on the wild exit moves — good placements return once you're through",
+     "Rated 5.9+ R, so chimney/offwidth technique carries more of the safety margin than the rack size does"
+    ]
+   }
+  }
+ ]
+}

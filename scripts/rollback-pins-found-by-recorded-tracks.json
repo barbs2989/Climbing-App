@@ -1,0 +1,244 @@
+{
+ "runs": [
+  {
+   "at": "2026-09-25T06:12:01.880Z",
+   "rows": [
+    {
+     "id": "wa_gardner_mountain_west_ridge",
+     "before": {
+      "waypoints": [
+       {
+        "lat": 48.4841,
+        "lng": -120.2992,
+        "elev": 2900,
+        "name": "Wolf Creek Trailhead",
+        "note": "Parking area off Left Fork Wolf Creek Road (FS 5505); Northwest Forest Pass required, no wilderness permit needed.",
+        "type": "Trailhead",
+        "distMi": 0,
+        "directions": "The Wolf Creek Trailhead is a large parking area at the end of FS Road 5505 (Left Fork Wolf Creek Road) above Winthrop, at about 2,900 ft. A Northwest Forest Pass is required; no wilderness permit is needed. Check current Wolf Creek Road conditions before you drive in. Most parties come mid-July through September, once the trail and the upper basins are snow-free."
+       },
+       {
+        "lat": 48.48845083333333,
+        "lng": -120.33540583333334,
+        "elev": 3500,
+        "name": "North Fork Wolf Creek crossing",
+        "note": "Crossing of the North Fork — a fire-damaged log bridge, and in early season a difficult, hazardous ford; reliable water here.",
+        "type": "Water",
+        "distMi": 2.3,
+        "directions": "Wolf Creek Trail #527 drops about 250 ft out of the trailhead, then settles into a long, gently graded valley-bottom walk into the Lake Chelan-Sawtooth Wilderness. Nearly all of this stretch burned in the 2021 Cedar Creek Fire, so expect blackened deadfall, standing dead snags and almost no shade — a real overhead hazard in wind. The North Fork crossing is a couple of miles in and can run high in early season."
+       },
+       {
+        "lat": 48.489592,
+        "lng": -120.486223,
+        "elev": 5700,
+        "name": "Gardner Meadows",
+        "note": "Three established campsites in fire-cleared, avalanche-scoured meadow terrain along Wolf Creek; the standard basecamp for the summit push.",
+        "type": "Campsite",
+        "distMi": 10.4,
+        "directions": "Continue straight up the Wolf Creek valley for roughly another eight miles of easy, gradually rising trail, still through burn the whole way. The Abernathy Lake trail splits off around seven and a half miles in — stay on the valley trail. The meadows open out over about a mile; water runs through them and the established camps are here."
+       },
+       {
+        "lat": null,
+        "lng": null,
+        "elev": 6200,
+        "name": "Off-trail turnoff toward the Gardner/North Gardner basin",
+        "note": "Leave the maintained Wolf Creek Trail here, staying west of the small stream draining south off Gardner Mountain, and climb toward the basin below the two peaks.",
+        "type": "Junction",
+        "distMi": 10.8,
+        "directions": "Leave the maintained trail at the meadows and start cross-country toward the peak, staying on the west bank of the small stream that drains south off Gardner. Grassy benches lead up to a small meadow basin below the two peaks."
+       },
+       {
+        "lat": 48.50528666666667,
+        "lng": -120.47550666666667,
+        "elev": 7600,
+        "name": "Scree/talus crux slope",
+        "note": "About 1,400 ft of gain in a half mile of loose, marble-sized scree and sand below the ridge crest — a slow 'one step forward, two steps back' grind.",
+        "type": "Hazard",
+        "distMi": 11.2,
+        "directions": "Above the basin the ground turns to loose, marble-sized scree over sand — roughly 1,400 ft of gain in about half a mile, slow going with a faint climber's path that is easy to lose. Into early summer, snow patches linger on this slope and are worth an ice axe."
+       },
+       {
+        "lat": 48.505854166666666,
+        "lng": -120.48022916666667,
+        "elev": 7900,
+        "name": "Connecting saddle (~7,900 ft)",
+        "note": "Saddle between Gardner and North Gardner where the ridge route to Gardner's summit begins; also the reversal point on descent back down the northwest ridge.",
+        "type": "Junction",
+        "distMi": 11.5,
+        "directions": "Keep grinding up the scree, threading a few short cliff bands and gullies, to top out on the ridge crest. This stretch is the route-finding crux of the approach and the rock underfoot stays loose the whole way."
+       },
+       {
+        "lat": 48.50682,
+        "lng": -120.48809,
+        "elev": 8902,
+        "name": "Gardner Mountain summit",
+        "note": "Broad, gentle summit on the ridge crest, second-highest peak of the Methow Mountains; open ridge is exposed to lightning in afternoon storms.",
+        "type": "Summit",
+        "distMi": 12,
+        "directions": "From the saddle, follow the ridge to the true summit: easier walking on broken rock with occasional hand-holds and brief exposure near the top, class 2-3. The summit is broad and fully open, with no shelter if afternoon storms build."
+       }
+      ]
+     }
+    },
+    {
+     "id": "wa_ptarmigan_traverse",
+     "before": {
+      "waypoints": [
+       {
+        "lat": 48.4754,
+        "lng": -121.0751,
+        "elev": 3600,
+        "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+        "note": "Also the standard trailhead for the reverse Ptarmigan Traverse exit at Downey Creek is different (Suiattle River Rd), but Cascade Pass is the traditional/most common starting trailhead.",
+        "type": "Trailhead",
+        "elevFt": 3600
+       },
+       {
+        "lat": 48.4683,
+        "lng": -121.06,
+        "elev": 5392,
+        "name": "Cascade Pass",
+        "note": "Maintained trail ends here; traverse continues cross-country.",
+        "type": "Junction",
+        "distMi": 3.6
+       },
+       {
+        "lat": 48.4484594,
+        "lng": -121.0528892,
+        "elev": 6903,
+        "name": "Cache Col",
+        "note": "Glacier-travel notch south of Cascade Pass; gateway to the traverse proper.",
+        "type": "Junction",
+        "distMi": 5.5
+       },
+       {
+        "lat": 48.439276,
+        "lng": -121.046228,
+        "elev": 6320,
+        "name": "Kool-Aid Lake",
+        "note": "First bivy; the exposed 'Red Ledges' traverse below Art's Knoll follows.",
+        "type": "Campsite",
+        "distMi": 7.5
+       },
+       {
+        "lat": 48.43,
+        "lng": -121.03,
+        "elev": 6900,
+        "name": "Red Ledges (Art's Knoll)",
+        "note": "Narrow, exposed ledge crossing; a fall here would be serious.",
+        "type": "Hazard",
+        "distMi": 9
+       },
+       {
+        "lat": 48.421,
+        "lng": -121.061,
+        "elev": 5852,
+        "name": "Yang-Yang Lakes",
+        "note": "Second common bivy, below Spider-Formidable Col.",
+        "type": "Campsite",
+        "distMi": 12
+       },
+       {
+        "lat": 48.4,
+        "lng": -121.03,
+        "elev": 7500,
+        "name": "Spider-Formidable Col",
+        "note": "High col crossing toward the LeConte Glacier and Sentinel/Old Guard Peaks.",
+        "type": "Junction",
+        "distMi": 13.5
+       },
+       {
+        "lat": 48.36,
+        "lng": -121.05,
+        "elev": 6500,
+        "name": "White Rock Lakes / South Cascade Glacier Col",
+        "note": "Third bivy; crosses the flat South Cascade Glacier en route to Spire Point.",
+        "type": "Campsite",
+        "distMi": 18
+       },
+       {
+        "lat": 48.335,
+        "lng": -121.06,
+        "elev": 8264,
+        "name": "Spire Point",
+        "note": "Prominent landmark near the Dome-Dana col.",
+        "type": "Junction",
+        "distMi": 21
+       },
+       {
+        "lat": 48.308,
+        "lng": -121.1,
+        "elev": 6400,
+        "name": "Cub Lake / Itswoot Ridge",
+        "note": "Fourth bivy on Itswoot Ridge above Cub and Itswoot Lakes.",
+        "type": "Campsite",
+        "distMi": 24
+       },
+       {
+        "lat": 48.3034,
+        "lng": -121.0295,
+        "elev": 8920,
+        "name": "Dome Peak",
+        "type": "Summit",
+        "distMi": null,
+        "elevFt": 8920
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "at": "2026-09-25T06:27:45.200Z",
+   "rows": [
+    {
+     "id": "wa_mount_rainier_emmons_glacier",
+     "before": {
+      "waypoints": [
+       {
+        "lat": 46.9141,
+        "lng": -121.6418,
+        "elev": 4600,
+        "name": "Glacier Basin Parking Area",
+        "type": "Trailhead",
+        "distMi": 0
+       },
+       {
+        "lat": 46.915,
+        "lng": -121.64,
+        "elev": 6800,
+        "name": "Glacier Basin Camp Site Area",
+        "type": "Junction",
+        "distMi": 3.5
+       },
+       {
+        "lat": 46.87017,
+        "lng": -121.73333,
+        "elev": 9400,
+        "name": "Camp Schurman",
+        "type": "Campsite",
+        "distMi": 7
+       },
+       {
+        "lat": 46.848,
+        "lng": -121.735,
+        "elev": 11800,
+        "name": "Emmons Glacier Corridor (Steepest Section)",
+        "type": "Hazard",
+        "distMi": 9
+       },
+       {
+        "lat": 46.8517,
+        "lng": -121.7603,
+        "elev": 14406,
+        "name": "Columbia Crest",
+        "type": "Summit",
+        "distMi": 12.6
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

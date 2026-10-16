@@ -1,0 +1,790 @@
+{
+ "applied": [
+  {
+   "id": "wa_dolphin_chimney",
+   "op": "patch",
+   "columns": [
+    "dist_km",
+    "itinerary",
+    "bivy"
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "op": "patch",
+   "columns": [
+    "itinerary",
+    "bivy"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_dolphin_chimney",
+   "area_id": "wa_south_early_winters_spire",
+   "name": "Dolphin Chimney",
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 23,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Fred Beckey and Jim Madsen, 1967",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Rack to a #5 cam (roughly 3.5 to 6 inches) — the size published descriptions call for on this pitch",
+    "A #6 can back up the first 20 feet below the chockstone, but parties who've climbed it don't trust it as solid pro there",
+    "Only a few thin nuts and small cams protect around the chockstone itself — expect real gaps, not just tight spacing",
+    "Gear improves markedly above the roof, on the wild exit moves — good placements return once you're through",
+    "Rated 5.9+ R, so chimney/offwidth technique carries more of the safety margin than the rack size does"
+   ],
+   "hazards": [
+    "Rated R — minimal protection for most of the pitch"
+   ],
+   "verif": null,
+   "overview": "A short but serious offwidth/chimney pitch on SEWS — the unmistakable dark chasm midway up the wall, directly left of the Boving Roofs. Often climbed as a variation linking into the Southwest Rib rather than as a full independent route to the summit. First ascended by Fred Beckey and Jim Madsen in 1967.",
+   "beta": "An amazing and unique offwidth/chimneying experience on great rock, transitioning from chimneying to slab moves near the top; the chimney narrows from about 2 ft to 1 ft near the exit. Backpacks can be hauled from the belay.",
+   "turnaround": "A short, serious single-pitch route - the main hazard is the runout (R) rating rather than time, so assess conditions and confidence before committing.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9+",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": 2200,
+   "dist_km": 8.37,
+   "max_angle": null,
+   "rappels": "3",
+   "commitment": null,
+   "face": "Southwest Rib (chimney feature)",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell service at Washington Pass.",
+   "descent": "Rejoins the Southwest Rib's final slabby arete pitch to the summit; descend via the South Arete.",
+   "obj_haz": [
+    "runout/R-rated protection",
+    "offwidth chimney hazard"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5191,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51217,
+     "lng": -120.65536,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+     "type": "Summit",
+     "distMi": 2.3
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 8.5,
+    "summitTimeHrs": 8.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Pre-dawn start",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "Dolphin Chimney is the striking offwidth/chimney feature midway up SEWS's west face, just left of the Boving Roofs — typically reached via the lower Southwest Rib pitches, then fi…",
+      "fromTo": "Car-to-car climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Wide gear for the offwidth/chimney section (large cams) plus a standard rack for the exit sequence, where good placements appear near the roof.",
+   "what_to_bring": [
+    "confidence on runout, unprotected chimney terrain"
+   ],
+   "pro_tips": [
+    "Packs can be hauled from the belay rather than climbed with, given the chimney's tight dimensions."
+   ],
+   "watch_out": "Sustained 5.9+ climbing in chimney terrain with exposure\nChimney sections can trap loose rock which falls on climbers below\nRoute-finding near chimney exit critical; easy to commit to wrong line\nWeather hazard - afternoon storms on exposed sections\nDescent requires careful rope management through chimney sections",
+   "pro_needs": "Sparse, committing protection — a serious lead given the R rating and lack of good gear in the lower chimney.",
+   "best_season": "Late June through September, dry rock.",
+   "high_point_ft": 7807,
+   "aid_grade": null,
+   "approach": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles (about an hour of easy hiking, modest gain) to the open meadow/clearing on the northwest side of the Liberty Bell massif marked by a wooden trail sign. Leave the maintained trail here and follow the well-worn climber's path up through talus and heather benches into the basin below South Early Winters Spire's west side. Continue up the scree/boulder slope toward the base of the Southwest Rib / Boving-Pollock start (the Y-shaped larch tree left of the southwest couloir is the landmark most parties use). Dolphin Chimney itself is not started from the ground — it is gained by climbing the first 2-3 pitches of the Southwest Rib or Northwest Face (Boving-Pollock), then traversing left over easy terrain to the obvious dark, unmistakable chasm about 100 ft left of the Boving Roof.",
+   "descent_text": "Dolphin Chimney is a single spectacular ~75 ft pitch (5.9+ R), not a full line to the summit, so it is normally done as a one-pitch add-on within a Southwest Rib / Boving-Pollock day rather than climbed and descended on its own. Most parties either continue past it on easier cracks to rejoin the Southwest Rib and finish to the summit, then take the standard South Early Winters Spire descent: downclimb the South Arete (3rd/4th class with one short, more exposed step) to the 'Rabbit Ears' — two boulder towers with fixed rappel slings — then make a short traverse/downclimb into the descent gully and do 3 single-rope rappels (60m rope) from bolted anchors/chains to the base, finishing on scree back to the climber's trail and Blue Lake Trail. If a party climbs the Dolphin as an out-and-back pitch, expect to lower or make a single rappel back to the ledge below rather than continue up. Given the offwidth/chimney nature of the pitch and sparse gear noted by climbers, rope management on any rappel of the chimney itself deserves extra care.",
+   "bail": "Limited protection makes retreat from mid-pitch difficult; commit only with confidence on wide/chimney terrain.",
+   "pitch_detail": [
+    {
+     "grade": "5.9+ R",
+     "notes": "Offwidth/chimney narrowing to 1-2 ft near the top; limited gear until the roof exit.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Dolphin Chimney is the striking offwidth/chimney feature midway up SEWS's west face, just left of the Boving Roofs — typically reached via the lower Southwest Rib pitches, then finished to the summit and descended via the standard South Arete line.",
+      "hours": 8.5,
+      "miles": 5.2,
+      "title": "Car-to-car climb",
+      "gainFt": 2200,
+      "lossFt": 2200,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Climb Dolphin Chimney and return to the Blue Lake trailhead"
+     }
+    ],
+    "totalNote": "A moderate single day, roughly 8.5 hrs car-to-car; pitch-by-pitch timing for this specific link-up wasn't found so hours are estimated."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass at the Blue Lake Trailhead",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "Standard national forest day-use rules; Leave No Trace.",
+    "permit": "None required for day climbing",
+    "closures": "Highway 20 (North Cascades Highway) over Washington Pass closes seasonally in winter.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate each winter, typically from mid-November or early December until April or May; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest (Washington Pass / Okanogan NF)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Blue Lake Trailhead, Highway 20, Washington Pass",
+    "status": "Highway 20 is fully paved to the Blue Lake Trailhead parking area; no rough-road driving required.",
+    "driveNote": "Roughly 3 hours from Seattle via I-5 and Highway 20, or about 45 minutes from Mazama/Winthrop.",
+    "seasonalGate": "Highway 20 over Washington Pass is a seasonal highway, closed by snow each winter (typically between mid-November and early December) with variable spring reopening, historically ranging from mid-April to mid-June."
+   },
+   "climate": {
+    "fall": "Good into September",
+    "spring": "Snow lingers into June",
+    "summer": "Prime season",
+    "winter": "Highway closed",
+    "typical": "Warm dry summers",
+    "forecastZone": "Washington Pass / East Slopes Cascades (NWAC)"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies.",
+    "county": "Okanogan",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA; or Mid-Valley Hospital, Omak, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": null,
+    "solitudeRating": 5,
+    "estimatePerSeason": "Rarely climbed — the lack of good protection has probably minimized the number of ascents"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "length": "Short — 75 ft (23 m), typically climbed as part of a longer link-up via the Southwest Rib/Boving-Pollock variation"
+    },
+    "approachTime": "No route-specific approach time found; likely shares the Blue Lake Trail west-side approach (~1–1.5 hrs to basin, not confirmed for this line specifically)",
+    "requiredSkills": [
+     "Offwidth/chimney technique, 1–2 ft wide",
+     "Minimal gear until near the top of the pitch (rated R)",
+     "Backpacks reportedly hauled separately at the belay given the chimney's width"
+    ],
+    "experienceLevel": "Real offwidth/chimney comfort with tolerance for sparse protection"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June–September (area-wide SR-20-gated window); no route-specific season notes found beyond this",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Area-wide reliable rock season; no route-specific data found",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Area-wide reliable rock season; no route-specific data found",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North Cascades afternoon-thunderstorm pattern (area-wide); no route-specific mention found"
+    },
+    "exposure": "Rated R — minimal protection for most of the pitch; The route's low traffic is attributed to this protection gap",
+    "avalanche": {
+     "zone": "NWAC — North Cascades (forecast program runs mid-Nov–mid-Apr only; no product exists during the summer rock season)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A"
+     }
+    },
+    "crevasses": {
+     "timing": "N/A",
+     "location": "None — dry granite formation, no glacier travel on any approach or route variant"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "Only two substantive sources found (Mountain Project's own thin page plus passing mentions on SEWS overview pages); no trip report, no Cascade Climbers thread, no AAJ entry, and no independent corroboration of the FA despite targeted searches. Treat crowds/partner/seasonal fields above as provisional pending better sourcing.",
+     "FA 'Fred Beckey and Jim Madsen, 1967' could not be independently corroborated beyond Mountain Project (no second source — guidebook, AAJ, or Beckey route inventory — confirms spelling or date); left unchanged. Do not conflate with the separately well-documented Direct East Buttress FA (Beckey with Doug Leen, 1968) — a different SEWS route."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 3,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.512275,
+    "peakLng": -120.655395,
+    "trailhead": "Blue Lake Trailhead (SR-20)",
+    "trailheadLat": 48.518965,
+    "trailheadLng": -120.67436,
+    "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+   },
+   "sling_rack": {
+    "cams": "set 0.3-4in",
+    "nuts": "small-mid set"
+   },
+   "alpine_draws": 6,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Classic 5.9+ chimney/face line, SEWS. Standard rack to 3in; wide piece (#3-#4) useful for the chimney section.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Cam set 0.3–4in (wide piece #3-#4 useful for the chimney)",
+    "Small-to-mid nut set",
+    "Single 60m rope"
+   ],
+   "features": [
+    "Chimney",
+    "Offwidth",
+    "Runout",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the Y-shaped larch, up two or three pitches, then LEFT to the dark chasm",
+     "notes": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles, about an hour of easy hiking at modest gain, to the open meadow and clearing on the northwest side of the Liberty Bell massif, marked by a WOODEN TRAIL SIGN. Leave the maintained trail there and follow the well-worn climber's path up through talus and heather benches into the basin below South Early Winters Spire's west side.\n\nA single spectacular pitch of about 75 ft at 5.9+ R, first climbed in 1967.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "No ground start; two or three pitches of another route come first",
+      "5.9+ R with sparse gear in an offwidth and chimney",
+      "Rope management on any rappel of the chimney itself deserves extra care",
+      "No water in the basin"
+     ],
+     "baseFinding": "DOLPHIN CHIMNEY IS NOT STARTED FROM THE GROUND. It is gained by climbing the FIRST TWO OR THREE PITCHES of the Southwest Rib or the Northwest Face Boving-Pollock line, then TRAVERSING LEFT OVER EASY TERRAIN TO THE OBVIOUS DARK, UNMISTAKABLE CHASM ABOUT 100 FT LEFT OF THE BOVING ROOF.\n\nSO THE FEATURE ITSELF IS THE TEST AND IT IS AS GOOD AS THEY GET ON THIS WALL: A DARK CHASM. Not a crack, not a corner, and not something you could talk yourself into. If you are unsure whether you are looking at it, you are not looking at it.\n\nTHE MEASURED OFFSET GIVES A SECOND CHECK: ABOUT 100 FT LEFT OF THE BOVING ROOF. The Boving Roofs pitch is the double-roof feature reached by going left at a ledge from the same rib. Two roofs stacked above you, then a hundred feet further left, is the chimney.\n\nTHE GROUND-LEVEL AIMING POINT FOR THE WHOLE DAY: THE Y-SHAPED LARCH TREE LEFT OF THE SOUTHWEST COULOIR, at the base of the Southwest Rib. That is the landmark most parties use to start up this wall, and it is the one thing here you can find at ground level.\n\nHOW THIS ROUTE IS ACTUALLY DONE, WHICH SHOULD SHAPE THE PLAN: it is a one-pitch add-on within a Southwest Rib or Boving-Pollock day, not a climb with its own descent. Most parties continue past it on easier cracks to rejoin the Southwest Rib and finish to the summit, then take the standard South Arete descent to the RABBIT EARS, two boulder towers with fixed rappel slings, then a short traverse and downclimb into the descent gully and three single-rope 60 m rappels to the base. A party doing the Dolphin as an out-and-back lowers or makes a single rappel back to the ledge below."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    },
+    {
+     "elev": 3600,
+     "name": "Lone Fir Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season runs roughly from late spring into autumn and is decided by snow rather than by a date.",
+     "water": "Early Winters Creek runs through the campground",
+     "permit": "Standard national forest campground fee",
+     "capacity": "27 sites, first come first served"
+    },
+    {
+     "elev": 2900,
+     "name": "Klipchuck Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quiet and has more plumbing than anything nearer the climbing. The trade is a longer drive to the trailhead each morning. Check current status before relying on it; the highway-corridor campgrounds take periodic maintenance closures.",
+     "water": "Piped water, sinks and flush toilets",
+     "permit": "Standard national forest campground fee",
+     "capacity": "First come first served"
+    },
+    {
+     "name": "Liberty Bell basin dispersed sites",
+     "role": "route",
+     "type": "camp",
+     "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes at first light rather than walking up from the road. Note the separate restriction around Blue Lake itself, where overnight camping is not allowed within a quarter mile of the lake — the basin sites are the ones to aim for, not the lakeshore. Treat it as a basin camp below the spires rather than a fixed spot.",
+     "water": "Snowmelt and seasonal runoff in the basin — unreliable once the snow has gone",
+     "permit": "No permit for dispersed camping; this is national forest, not the national park",
+     "capacity": "Scattered dispersed sites, small parties"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "dolphin chimney",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "area_id": "wa_mount_adams",
+   "name": "North Ridge",
+   "discipline": "mountaineering",
+   "grade": "Grade II, moderate snow",
+   "grade_system": "class",
+   "grade_num": null,
+   "pitches": 0,
+   "length_m": 1067,
+   "sort_order": null,
+   "stars": null,
+   "fa": "A.G. Aiken, Edward J. Allen, and Andrew J. Burge, 1854 (first ascent of Mount Adams)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "ice axe",
+    "crampons",
+    "pickets",
+    "rope",
+    "helmet",
+    "harness"
+   ],
+   "hazards": [
+    "Steep, sustained snow on the upper ridge with rockfall from the ridge crest",
+    "Crevasses on the Adams and Lava glaciers either side of the ridge",
+    "Cornices on the ridgeline",
+    "Remote north-side approach — long self-reliant day"
+   ],
+   "verif": null,
+   "overview": "Also called the North Cleaver, the North Ridge is Adams' second most-popular summit route and a scenic, less-crowded alternative to the South Climb. It climbs the rock-and-snow rib between the Adams and Lava Glaciers, reached via the quiet Killen Creek approach on the north side, and is most pleasant early season while still largely snow-covered.",
+   "beta": "From high camp near the Adams Glacier moraine, gain the North Ridge (North Cleaver) and follow it upward, bypassing most obstacles on either side, to the summit ice cap; traverse roughly a mile across the plateau to reach the true summit.",
+   "turnaround": "Turn around by midday on the upper ridge if snow is softening or weather builds; the descent is long.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 7691,
+   "loss_ft": 7690,
+   "dist_km": 5.6,
+   "max_angle": 40,
+   "rappels": null,
+   "commitment": "II",
+   "face": "North Ridge / North Cleaver",
+   "permit": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste.",
+   "comms": "Cell coverage is limited to absent on this side of the mountain.",
+   "descent": "Retrace route via North Ridge and Lava Glacier back to high camp.",
+   "obj_haz": [],
+   "waypoints": [
+    {
+     "lat": 46.2885,
+     "lng": -121.5525,
+     "elev": 4600,
+     "name": "Killen Creek Trailhead",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 46.27,
+     "lng": -121.53,
+     "elev": 7000,
+     "name": "High Camp",
+     "type": "Campsite",
+     "distMi": 4.1
+    },
+    {
+     "lat": 46.275,
+     "lng": -121.52,
+     "elev": 8000,
+     "name": "North Ridge Base",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 46.2024,
+     "lng": -121.4909,
+     "elev": 12276,
+     "name": "Mount Adams Summit",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     46.2885,
+     -121.5525
+    ],
+    [
+     46.27,
+     -121.53
+    ],
+    [
+     46.275,
+     -121.52
+    ],
+    [
+     46.2024,
+     -121.4909
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 18,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 5,
+    "recommendedStart": "2:00-3:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 5,
+      "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing onto snow to High Camp at about 6,900 ft.",
+      "fromTo": "Killen Creek to High Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs …",
+      "fromTo": "Summit via the North Ridge, return to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Break camp and hike back down the Killen Creek Trail to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Per person: ice axe (second tool useful in firm conditions), crampons, helmet, harness. Per team: 30–40 m rope, 2–4 pickets, crevasse-rescue kit for the summit ice cap.",
+   "what_to_bring": [
+    "alpine layers + shell",
+    "mountaineering boots",
+    "glacier glasses/goggles",
+    "headlamp",
+    "bivy/camp gear",
+    "blue bags",
+    "Cascades Volcano Pass"
+   ],
+   "pro_tips": [
+    "Use the Killen Creek approach and camp at High Camp for the best base",
+    "Plan a South Spur descent and arrange transport between trailheads",
+    "Go early season for firm snow and filled-in crevasses",
+    "Start early to climb the steep snow before it softens"
+   ],
+   "watch_out": [
+    "Moderate snow climbing at high elevation",
+    "Ridge traverse creates exposure hazard",
+    "Water availability at notch dependent on seasonal snowmelt"
+   ],
+   "pro_needs": "Snow protection (pickets) for the steeper upper ridge plus glacier-travel gear for the summit ice cap; generally no rock pro.",
+   "best_season": "June to mid-July for firm snow and minimized rockfall/crevasse hazard.",
+   "high_point_ft": 12276,
+   "aid_grade": null,
+   "approach": "Killen Creek Trailhead (Trail #113, off FR 2329 via FR 23) climbs through forest and meadow ~3.1 mi/1,400 ft to the PCT, then continues to High Camp — roughly 4 mi and 2,300 ft of gain total from the trailhead — the shared base camp for the North Ridge, Adams Glacier, and Northwest Ridge routes.",
+   "descent_text": "Most parties descend the route itself, back down the North Ridge toward high camp; it is non-technical, mostly Class 2 over loose volcanic scree. Some parties instead carry over and descend the South Climb to Cold Springs, which requires a long car shuttle. Watch crevasses on any glacier descent.",
+   "bail": "High Camp on the north side is the bail/base point; retreat down the ridge or glacier toward it. In poor weather the broad north-side snowfields offer non-committing descent terrain.",
+   "pitch_detail": [
+    {
+     "grade": "Trail",
+     "notes": "Killen Creek Trail #113 climbs through forest and meadow to the Pacific Crest Trail, then a climbers' path continues to High Camp at about 6,900 ft. The last stretch crosses an exposed talus slope above a permanent snowfield. Some parties bivy higher, on scree or snow near 8,000 ft, to shorten summit day.",
+     "pitch": "Killen Creek TH → High Camp"
+    },
+    {
+     "grade": "Snowfields, moraine",
+     "notes": "Head southeast from High Camp onto the foot of the North Ridge, which is gained almost right away above the camp. Early in the season snow can hide the path, so carry a compass. The approach does not require a glacier crossing.",
+     "pitch": "High Camp → ridge base"
+    },
+    {
+     "grade": "Class 2–3 loose scree",
+     "notes": "About 2,500 ft of scrambling up rock, scree and gritty pumice, mostly Class 2 with some Class 3. Stay on the crest where you can and wind from side to side around obstacles, occasionally dropping to the west side. Rockfall is the real crux: move gently and wear a helmet. Earlier in the season there is less scree.",
+     "pitch": "North Ridge"
+    },
+    {
+     "grade": "Steep snow, no runout",
+     "notes": "From around 10,000 ft the ridge turns to snowfields. One steep section has no runout and falls toward the Lava Glacier far below; crampons and an axe are needed, and it is safest while the snow is firm in the morning. On the way down it needs careful downclimbing, and a narrow rocky shelf may deserve a belay.",
+     "pitch": "Upper ridge snow"
+    },
+    {
+     "grade": "Ice cap, gentle",
+     "notes": "The ridge reaches the ice cap around 12,000 ft and the angle eases. Walk about a mile across the summit plateau to the true summit (12,276 ft). The ice cap has held small crevasses in the past, and the high point is hard to pick out in cloud, so mark the ridge exit for the descent.",
+     "pitch": "Upper mountain → summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing to High Camp at about 6,900 ft.",
+      "hours": 5,
+      "miles": 4.1,
+      "title": "Killen Creek to High Camp",
+      "gainFt": 2900,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach High Camp (~6,900 ft) below the North Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs instead descend the South Spur directly off the summit, finishing in 2 days.",
+      "hours": 9,
+      "miles": 4,
+      "title": "Summit via the North Ridge, return to camp",
+      "gainFt": 3300,
+      "lossFt": 3300,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "2:00-3:00 AM",
+        "label": "Leave High Camp",
+        "detail": "Early start for firm snow."
+       },
+       {
+        "time": "Late morning",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "Afternoon",
+        "label": "Return to High Camp",
+        "detail": "Reverse the ridge (or descend the South Spur to a shuttle car at Cold Springs)."
+       }
+      ],
+      "objective": "Climb the North Ridge to the summit and back to High Camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back down the Killen Creek Trail to the trailhead.",
+      "hours": 4,
+      "miles": 4.1,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2900,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to the Killen Creek trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip for parties without a car shuttle: ~5 hr approach to high camp, an alpine-start summit day on the North Ridge back to camp, then a hike out; with a shuttle car staged at Cold Springs, the summit-day descent can instead go straight down the South Spur, finishing in 2 days."
+   },
+   "access": {
+    "fees": "$20 per person (single-trip, not annual); free for climbers under 16.",
+    "notes": "Purchase online in advance — no cell coverage at the trailhead, so print or save the pass. Party leader enters each climber’s name and a vehicle license plate.",
+    "rules": "Group size capped at 12. Human waste must be packed out above 7,000 ft (blue/WAG bags) — free bags available at the Trout Lake Ranger District office, no collection service. The Mazama Glacier route and Bird Creek Meadows/Round-the-Mountain area cross Yakama Nation land and require a separate small tribal recreation permit purchased at Bird Creek Meadows — the standard South Climb/Cold Springs route stays on Forest Service land and does not.",
+    "permit": "Mt. Adams Climbing Activity Pass",
+    "seasonal": "South Climb route typically opens as snow melts out around May.",
+    "group_limit": 12,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "No trailhead parking pass is required at the Killen Creek Trailhead. The Mount Adams Climbing Pass applies separately above 7,000 ft.",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+     "what": "Mount Adams Climbing Pass above 7,000 ft (May to September), plus a free self-issue wilderness permit below 7,000 ft",
+     "where": "Buy the Climbing Pass on Recreation.gov before arriving, since cell coverage is poor; fill out the wilderness permit at the trailhead."
+    }
+   },
+   "road": {
+    "name": "FR 2329 to Killen Creek",
+    "status": "Seasonal dirt forest road; opens as snow melts",
+    "driveNote": "Access from Randle/Trout Lake area via forest roads to the Killen Creek trailhead.",
+    "seasonalGate": "Snow-gated until early summer"
+   },
+   "climate": {
+    "typical": "North-facing, holds snow longer and colder than the south side.",
+    "bySeason": {
+     "fall": "Loose rock, early storms",
+     "spring": "Snowbound, firm; road gated",
+     "summer": "Prime June–mid-July; rockfall increases later",
+     "winter": "Full winter; very long approach"
+    },
+    "forecastZone": "Mount Adams (NWS)"
+   },
+   "emergency": {
+    "rangerStation": "Mount Adams Ranger District, Trout Lake (509-395-3402)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in June through mid-July",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate - widely cited as the second-most-popular route on Mount Adams (after the South Climb), but a small fraction of South Climb traffic; likely dozens of parties per season rather than hundreds"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong aerobic fitness for a long approach to High Camp (~6,900 ft) followed by a sustained pre-dawn summit push on steep snow",
+     "packWeight": "~35-45 lbs with overnight camp gear, rope, and glacier travel kit"
+    },
+    "approachTime": "~4-6 hours from Killen Creek trailhead to High Camp, plus a pre-dawn (3-4 a.m.) summit push",
+    "requiredSkills": [
+     "Roped glacier travel & crevasse rescue",
+     "Steep snow climbing and self-arrest",
+     "Ridge route-finding, including cornice avoidance",
+     "Alpine-start discipline (pre-dawn departure for firm snow)"
+    ],
+    "experienceLevel": "Intermediate-advanced mountaineer; prior experience on a glaciated Cascade volcano strongly recommended before leading or following this route"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "June through mid-July",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Killen Creek road access is often still snow-gated and the approach carries deep, unstable spring snowpack",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "First half of the month remains solid; rockfall from the warming ridge crest increases later in July",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Firm snow with minimized rockfall and crevasse hazard",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Outside the June-to-mid-July window; expect increased rockfall and more open crevasses on the glaciers beside the ridge",
+      "status": "risky"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North-facing, holds snow longer and colder than the south side",
+     "probability": "Not explicitly documented for this route; Cascade volcanoes commonly see afternoon convective activity in summer, as noted for the South Climb, so treat as a plausible but unverified risk here"
+    },
+    "exposure": "High - sustained steep snow on the upper ridge with rockfall from the crest as it warms, cornices along the ridgeline, and a remote, self-reliant north-side approach with no quick bailout",
+    "avalanche": {
+     "zone": "NWAC West Slopes South",
+     "byMonth": {
+      "May": "Considerable",
+      "July": "Low",
+      "June": "Moderate",
+      "August": "N/A"
+     }
+    },
+    "crevasses": "Crevasses on the Adams and Lava glaciers flanking the ridge require roped travel and crevasse-rescue readiness"
+   },
+   "data_quality": {
+    "gaps": [
+     "No hard per-season party counts found, only a relative popularity ranking versus other Mount Adams routes",
+     "NWAC does not issue a route-specific June-July forecast; the June-August avalanche ratings above are inferred from general spring-to-summer snowpack consolidation, not an official forecast",
+     "Afternoon-thunderstorm probability specific to this route was not found in sources",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/1E93",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.206,
+    "peakLng": -121.49,
+    "trailhead": "Killen Creek Trailhead",
+    "trailheadLat": 46.288612,
+    "trailheadLng": -121.551532
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Killen Creek trailhead and High Camp",
+     "notes": "The same walk in as the Adams Glacier and the Northwest Ridge, and High Camp is the shared base for all three. Killen Creek Trail #113 from the trailhead (~4,600 ft) runs about 3.1 miles to the PCT junction at roughly 6,100 ft; cross straight over onto High Camp Trail #10 for another mile to its end at about 6,900 ft on the edge of the Adams Glacier moraine. Camping is spread between 7,000 and 7,600 ft, including a glacial lake camp near 7,650 ft.\n\nAccess is by FR 23, 21 and 2329; FR 2329 is gravel and holds snow into early summer. East Fork Adams Creek, crossed about 2.5 miles up the trail, is the last dependable water.\n\nPermits: free self-issue wilderness permit at the trailhead, plus a Cascade Volcano Pass for travel above 7,000 ft in the summer season.\n\nThis is a longer and more committing day than the South Climb from a much quieter side of the mountain, and crevassed glacier lies on both flanks of the ridge and on the summit ice cap, so glacier skills are expected, unlike the South Spur.",
+     "distMi": 4.1,
+     "gainFt": 2300,
+     "season": "June through September; a snow route early, a loose rock route once it melts out",
+     "hazards": [
+      "Very loose volcanic rock the length of the ridge — helmets, and spacing between climbers",
+      "Crevassed glacier on both flanks if you leave the crest",
+      "Exposed snow travel between rock sections",
+      "Thin moraine tread above treeline, easy to lose in dark or whiteout",
+      "No running water above East Fork Adams Creek"
+     ],
+     "baseFinding": "From High Camp the line is southeast, toward the foot of the ridge, and in clear weather you can see the whole thing from the approach — parties describe it as impossible to miss.\n\nThe recognition problem is entirely a poor-visibility one, and the test is what is under your boots. The North Ridge is the rubble-and-cinder rib that separates the Adams Glacier on its west from the Lava Glacier ground on its east. You should be on loose volcanic rock and scree, on a defined crest, with glacier falling away on BOTH sides. If you are on ice with crevasses, you have slid off the rib onto one glacier or the other, and which one tells you which way to correct.\n\nA smooth, clean, snow-only ascent is the wrong sign on this route: it is a choss pile, and the loose rock is the confirmation rather than the complaint. Expect short easy scrambling steps low down.\n\nThe angle eases noticeably around 11,000 ft, which is the sign the ridge proper is behind you and the summit plateau ground is ahead."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 6900,
+     "name": "High Camp (Adams Creek Meadows)",
+     "role": "main",
+     "type": "camp",
+     "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter from wind other than what the rock benches give you, and afternoon weather rolls in fast off the north face. Snow lingers here into July in a heavy year, which affects both the boot track and where you can pitch.",
+     "water": "Generally reliable through summer. Meltwater streams from the Adams Glacier snout and small tarns feed the meadows, and Killen Creek runs lower on the approach; filter everything, and expect surface streams to shrink late in a dry season.",
+     "permit": "Free self-issued wilderness permit at the Killen Creek trailhead. Note the elevation carefully — at about 6,900 ft this camp sits just under the 7,000 ft threshold, so the camp itself does not require a Cascade Volcano Pass, but any climbing above that line between May 1 and Sept 30 does, so a party heading for the Adams Glacier or North Ridge needs one. Northwest Forest Pass or equivalent for trailhead parking. Camp on durable ground and well back from water — this is fragile subalpine meadow.",
+     "capacity": "Moderate — open meadow and bench terrain with many dispersed spots; busy in wildflower season but rarely crowded by alpine standards"
+    },
+    {
+     "name": "High Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "north ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

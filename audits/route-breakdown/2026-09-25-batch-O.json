@@ -1,0 +1,127 @@
+{
+  "wa_sherpa_glacier": {
+    "area": "wa_mount_stuart",
+    "climbing_route": [
+      { "n": 1, "label": "Lower snowfield and slabs to the glacier toe", "class": "Moderate snow", "notes": "From the upper Mountaineer Creek basin, climb the lower snowfield toward the toe of the Sherpa Glacier near 7,600 ft. Once the snow thins, this ground becomes slabs and meltwater streams, and the leftover pocket snowfields above can release rocks onto the slabs, so do not linger below them." },
+      { "n": 2, "label": "Sherpa Glacier", "class": "Glacier", "notes": "Climb the broad glacier southwest toward the obvious couloir in its northwest corner. The crossing is short and most parties rope up for it. Later in the season, bare ice and rubble piles show through, so weave between them and keep crampons on for the firm morning surface." },
+      { "n": 3, "label": "Bergschrund and couloir to the Stuart–Sherpa col", "class": "40–45° snow", "crux": true, "notes": "Cross the bergschrund where the glacier narrows. It is filled in early in the season but opens later. Then climb the north-facing couloir up and right to the ridge between Sherpa Balanced Rock and Stuart, near 8,500–8,600 ft. It is high 30s to about 45° and stays shaded, so it can be hard and icy. In lean years it needs front-pointing, and a descent may need rappels." },
+      { "n": 4, "label": "Ridge west to the false and true summits", "class": "Class 3", "notes": "From the col, follow the ridge west on simple Class 3 blocks. Some ground is taken just on the south side of the crest. The ridge passes above the head of the Cascadian Couloir to the false summit, then continues a short way to the true summit at 9,415 ft. In wind or poor visibility, take careful note of the col so that the glacier descent can be found again." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "New: 4 sections, lower snowfield → glacier → schrund/couloir → summit ridge (previously no climbing_route).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108236928/sherpa-glacier",
+        "https://skimo.co/sherpa-glacier-couloir",
+        "https://engineeredforadventure.com/sherpa-glacier-couloir/",
+        "https://turns-all-year.com/trip-reports/sherpa-glacier-couloir",
+        "https://wenatcheeoutdoors.org/2016/06/04/stuart-mt-via-sherpa-glacier/",
+        "https://www.whereiskylemiller.com/stevens-pass/sherpa-glacier-mount-stuart/",
+        "search snippets of Mountaineers/SummitPost trip reports (moat crux, top of Cascadian Couloir, false summit)"
+      ],
+      "other_findings": "Stored grade '3rd' covers only the summit ridge; the couloir is ~40–45° snow with a late-season bergschrund. Stored length_m 853 (~2,800 ft) matches the 2,800 ft figure given for the route."
+    }
+  },
+  "wa_dragontail_peak_r3": {
+    "area": "wa_dragontail_peak",
+    "climbing_route": [
+      { "n": 1, "label": "Couloir from Colchuck Col to Pandora's Box notch", "class": "40–45° snow", "notes": "The couloir starts a couple hundred feet east (left) of Colchuck Col, at about 8,000 ft. Climb it to the notch in the ridge beside the Pandora's Box spire. Early season it is firm snow up to 40–45° and steeper near the notch, so most parties self-belay with an axe. By late summer it is loose Class 3 talus. The couloir funnels rockfall, so climb it before the sun loosens the slopes above." },
+      { "n": 2, "label": "Off the notch onto the Dragontail side", "class": "Steep snow", "crux": true, "notes": "From the notch, the ground drops immediately down a steep, narrow snow finger on the south side. A slip here would have serious consequences. Crampons and a confident axe are the norm, and some parties rope up. The alternative is to leave the couloir about 30 ft below the notch, climb about 20 ft of Class 4 rock on the left, and follow the ridge. As the snow melts, an easier way around the finger usually appears." },
+      { "n": 3, "label": "South-side traverse to the summit", "class": "Class 3", "notes": "Traverse northeast across the easier snow and talus slopes below the south side of the ridge. Then scramble up to the summit at about 8,840 ft. The traverse is exposed in places, so some parties keep the rope on. Afternoon softening makes the snow here slushy, and the descent toward Aasgard Pass leaves from the saddle southeast of the summit." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "New: 3 sections, couloir → drop off the notch (crux, with the Class 4 bypass) → traverse to summit (previously no climbing_route).",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-colchuck-col (via search snippet; page 403)",
+        "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+        "https://www.richardhforbes.com/trip-log/2019/8/5/trip-report-dragontail-peak-via-colchuck-glacier-pandoras-box-then-through-the-enchantments",
+        "https://www.summitpost.org/dragontail-colchuck-peaks/205963 (search snippet: steep snow finger, ~50° steps)",
+        "https://engineeredforadventure.com/dragontailpeak/"
+      ],
+      "other_findings": "The stored overview's 'optional short 5.6 move' on Dragontail's true summit pinnacle could not be confirmed. The one 5.6 pinnacle mention found was ambiguous and may refer to Colchuck Balanced Rock or the Pandora's Box spire, whose crack is described as ~5.10. Worth checking. The descent_text calls the couloir 'a technical, mixed alpine couloir', which contradicts the overview's 'not a technical ice or mixed climb'."
+    }
+  },
+  "wa_vesper_peak_standard_route": {
+    "area": "wa_vesper_peak",
+    "climbing_route": [
+      { "n": 1, "label": "Vesper Creek crossing to treeline", "class": "Steep bootpath", "notes": "Leave the lake trail where it meets Vesper Creek, cross the creek, and take the bootpath that climbs the far bank through heather, stunted cedars and rock. The path is steep and narrow, and in places it is a slick muddy rut. Early in the season it runs onto snow partway up." },
+      { "n": 2, "label": "Granite slabs on the central rib", "class": "Class 2–3 slab", "crux": true, "notes": "Above treeline, clean granite slabs carry the route for roughly the last 1,000 ft. Stay on the subtle central rib and follow cairns through the talus patches. Gullies lie to the left and steep, exposed ground falls away to the right. If the moves get harder, you have left the rib. The rock grips well when dry, but a slip on wet, frosted or snow-dusted slab is a sliding fall." },
+      { "n": 3, "label": "Summit snowfield and top", "class": "Steep snow", "notes": "A steep snowfield can linger just below the 6,214 ft summit well into summer. Go around it on the left rather than crossing it, or carry traction and an axe in early season. Above it, easy rock leads to the broad summit." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 3 sections, bootpath → slabs on the central rib → summit snowfield (previously no climbing_route).",
+      "sources_consulted": [
+        "https://summitborn.com/vesper-peak-via-headlee-pass-route-guide/",
+        "https://explorewithalec.com/backpacking-vesper-peak-hike-washington/",
+        "search snippets of the SummitPost Vesper Peak page/trip reports (slabs for the last 1,000 ft, 6,214 ft summit)",
+        "stored beta (central rib, gullies left, drop-off right, snowfield bypass left)"
+      ],
+      "other_findings": "Stored grade '2nd' is fair for the rib, but the steeper slab sections are described as Class 3 friction."
+    }
+  },
+  "wa_enchantment_peak_east_ridge": {
+    "area": "wa_enchantment_peak",
+    "climbing_route": [
+      { "n": 1, "label": "Prusik Pass west along the east ridge", "class": "Class 2", "notes": "From Prusik Pass, head west up the shoulder of the east ridge toward the northeast (true) summit, going over a few minor humps. It is mostly walking on granite, with an occasional hand. In early or late season, soft unconsolidated snow can hide gaps between blocks, so the going is much slower and less secure." },
+      { "n": 2, "label": "Summit block", "class": "Class 3", "crux": true, "notes": "The route ends with about 15 ft of exposed Class 3 up a granite slab. It leads onto a small, mostly flat summit block roughly 6 ft across. Downclimb it facing in. The separate southwest summit is a much harder, roped proposition and is not part of this route." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 2 sections (ridge walk → summit block). Only two sections because sources describe just these two distinct pieces of ground; the stored beta confirms the same.",
+      "sources_consulted": [
+        "https://www.yellowleaf.org/scramble/g/r/2006-10-20-22-enchantments.html",
+        "https://www.summitpost.org/enchantment-peak/151418 (search snippet: class 2 with hands, ~15 ft exposed class 3 summit slab is the crux)",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-09-15.123009946717 (search snippet: snow hiding gaps between rocks)",
+        "stored beta (6x6 ft summit block)"
+      ],
+      "other_findings": "Stored grade is null; sources agree the route is Class 2 with a Class 3 summit move."
+    }
+  },
+  "wa_bacon_peak_diobsud": {
+    "area": "wa_bacon_peak",
+    "climbing_route": [
+      { "n": 1, "label": "Gullies from Diobsud Lakes basin to the south ridge", "class": "Class 3, loose", "notes": "From the lakes basin, sidehill across slippery vegetation and cedar thickets, then climb mossy slabs and steep dirt-and-scree gullies onto Bacon's south ridge. Once the snow melts, this is the most unpleasant ground on the climb, and loose rock is a real hazard to anyone below. When snow-filled, the gully is avalanche terrain, and firm morning snow makes it much easier." },
+      { "n": 2, "label": "South ridge snow onto the Diobsud Creek Glacier", "class": "Glacier", "notes": "Broad snow slopes on the south ridge lead onto the toe of the Diobsud Creek Glacier on the peak's southeast side. Rope up here. Then head northwest toward the saddle below the summit, probing as you go. Crevasses near the top are usually easy to avoid in a good snow year but open more early and late in the season. In whiteout, navigation on the flat upper glacier is the main difficulty." },
+      { "n": 3, "label": "Saddle at 6,250 ft to the summit", "class": "Class 2–3", "notes": "From the saddle, used as a high camp, follow the flat, often windy summit ridge over a short snow arête. Then scramble a little on the dry rocks to the 7,061 ft summit. Take care on the arête if it is corniced or icy." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 3 sections, south-side gullies → glacier → summit arête (previously no climbing_route). The stored approach prose already runs to the summit; these sections restate its technical part as sections.",
+      "sources_consulted": [
+        "https://onehikeaweek.com/2023/05/14/bacon-peak/",
+        "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+        "https://en.wikipedia.org/wiki/Diobsud_Creek_Glacier",
+        "https://www.summitpost.org/bacon-peak/840845 (search snippet)"
+      ],
+      "other_findings": "The route name 'Diobsud Creek / Green Lake Glacier' is misleading: the ascent uses the Diobsud Creek Glacier (SE), and the Green Lake Glacier (NE) is only met on the traverse descent north. The approach column runs past the base to the summit, and audit:approach-scope may want to trim it now that climbing_route exists."
+    }
+  },
+  "wa_mount_triumph_west_route": {
+    "area": "wa_mount_triumph",
+    "climbing_route": [
+      { "n": 1, "label": "Heather slope to the talus shoulder", "class": "Class 2–3", "notes": "Below the west face, climb a surprisingly easy heather slope on the southwest side to a broad talus shoulder. From there, the white slabs that pour down the west face are in plain view and serve as the landmark for the next section." },
+      { "n": 2, "label": "Benches beside the Great White Slabs", "class": "Class 4", "notes": "Angle up the rock and heather benches on or just left of the Great White Slabs. The ground is Class 4 on mixed rock and heather, with loose holds and little solid protection. Wet heather here is dangerous, so do not attempt it after rain or in a damp morning. This is the west-side bench that the first-ascent party followed onto the south face." },
+      { "n": 3, "label": "Southeast-slanting ramp to the south shoulder", "notes": "The benches end on a huge ramp that slants up to the southeast across the south face. Follow it to the south shoulder and ledge, near 7,000 ft, below the tall Great Prow. On the descent, this ramp takes several double-rope rappels, so note the anchors on the way up." },
+      { "n": 4, "label": "Summit gully to the crest", "class": "Class 4–low 5th", "crux": true, "notes": "From the shoulder, climb the gully and slot on the southeast side of the summit pyramid to a narrow crest. Then scramble about 50 ft to the 7,270 ft summit. The rock is poor and protection is sparse, and grades given for this finish range from Class 4 to low fifth class. Getting down from the summit to the shoulder takes three rappels." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "New: 4 sections, heather/talus → benches by the Great White Slabs → SE ramp → summit gully (previously no climbing_route).",
+      "sources_consulted": [
+        "https://trailcatjim.com/mt-triumph-via-west-face-southeast-face/",
+        "https://summitborn.com/mount-triumph-mountain-guide/",
+        "https://en.wikipedia.org/wiki/Mount_Triumph",
+        "stored beta/fa (1938 west-side bench onto the south face, ledge across to the SE shoulder)"
+      ],
+      "other_findings": "Only one section-level description exists (a 2009 'West Face–Southeast Face' trip report). It matches the stored first-ascent outline, but its summit gully was graded Class 5, against the route's Class 4 reputation. The chip on section 4 therefore gives a range, and a human may prefer to hold this route to confidence 'medium' or drop section 4's chip. Stored grade is null: Class 4 (possibly low 5th) with 5–6 rappels. Stored discipline 'scrambling' undersells a route that needs double-rope rappels."
+    }
+  },
+  "wa_mount_adams_wilson_glacier_headwall": {
+    "skip_reason": "No section-level description of the Adams Wilson Glacier Headwall (Roosevelt Cliff) was found anywhere online. Searches return only the one-line 'most dangerous, rarely repeated' summary, or Rainier's similarly named Wilson Headwall, which is a different mountain. Also note: the stored approach goes from Cold Springs around the east side on the Round the Mountain Trail, and that should be checked, since the east flank beyond Bird Creek Meadows is Yakama Nation land."
+  },
+  "wa_jack_mountain_northeast_glacier": {
+    "skip_reason": "No description of the 1978 Beckey–Kloke–Tindall Northeast Glacier route was found. Every online source for Jack's north side covers the Nohokomeen Glacier/Headwall, a different route on the north/northwest flank, and using it would be the wrong route."
+  }
+}

@@ -1,0 +1,680 @@
+{
+ "batches": ["b093.json", "b094.json", "b095.json", "b096.json"],
+ "routes_read": 39,
+ "routes": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "name": "Southeast Route",
+   "area": "Gunn Peak",
+   "contradictions": [
+    {
+     "fact": "Round-trip / total hiking distance",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "4.8 (~3.0 mi)"},
+      {"field": "waypoints[6] (Gunn Peak summit).distMi", "says": "2.75 (one-way, implies ~5.5 mi RT)"},
+      {"field": "itinerary.days[0].miles", "says": "7.5"},
+      {"field": "itinerary.totalNote", "says": "~7.5 miles round trip with 4,900 ft of gain"}
+     ],
+     "why": "dist_km and the waypoint list's own one-way distance to the summit (2.75 mi, ~5.5 mi round trip) both point to a much shorter round trip than the itinerary's stated 7.5 miles.",
+     "internal_resolution": "dist_km and the waypoint distances roughly agree with each other; the itinerary's 7.5 mi is the outlier, about 30-45% higher.",
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length needed",
+     "severity": "medium",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "descent_text", "says": "a single rappel of roughly 15-20 m clears the step, so a 30 m rope doubled is more than sufficient"},
+      {"field": "detailed_rack", "says": "A 50-60 meter rope is optional but recommended for groups with inexperienced members or for emergency descents."}
+     ],
+     "why": "detailed_rack recommends a 50-60m rope while rope_length_m and the descent_text's own math both say 30m is sufficient for the one short rappel on this route.",
+     "internal_resolution": "rope_length_m + descent_text agree (30m, consistent with the stated 15-20m rappel); detailed_rack's 50-60m figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Named route line on the face",
+     "severity": "low",
+     "claims": [
+      {"field": "face", "says": "South Face / East Ridge via Tailgunner Pass and Gunn Point"},
+      {"field": "overview", "says": "climbs from Barclay Lake Trailhead over Tailgunner Pass into Gunn Basin, then up the southwest corner of the summit block"},
+      {"field": "climbing_route", "says": "talus fan / hidden ramp / upper south face / north-side ledge — no East Ridge or 'Gunn Point' mentioned"}
+     ],
+     "why": "face names an 'East Ridge' line via 'Gunn Point' that appears nowhere else in overview, approach, or climbing_route, which consistently describe a single south-face line via the hidden ramp.",
+     "internal_resolution": "overview, approach and climbing_route (3 fields) agree there is no separate east-ridge line; face looks like contaminated/extra text.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_lewis_creek_route",
+   "name": "Lewis Creek Route",
+   "area": "Gunn Peak",
+   "contradictions": [
+    {
+     "fact": "Which approach/line this route actually follows",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "the historic 1915 first-ascent line... distinct... it is climbed far less often than the standard line today"},
+      {"field": "itinerary.days[0].note", "says": "historic 1915 first-ascent line up the Lewis Creek drainage on the peak's north/west side, distinct from (and far less traveled than) the now-standard Barclay Lake climbers' trail... essentially no cairns, flagging, or boot path"},
+      {"field": "timing.sectionBreakdown[0].note", "says": "distinct from (and far less traveled than) the now-standard Barclay Lake clim[bers' trail]"},
+      {"field": "approach", "says": "Ford Barclay Creek... climbers' path... Tailgunner couloir... Tailgunner Pass / the Gunn Lake saddle... 'hidden ramp'"},
+      {"field": "descent_text", "says": "reversing the 'hidden ramp' below the summit block... Tailgunner Pass/Gunn Lake saddle"},
+      {"field": "approach_variants[0].name", "says": "Barclay Creek and Tailgunner Pass to the hidden ramp"}
+     ],
+     "why": "The overview/itinerary/timing insist this is a distinct, rarely-traveled, unmarked north/west-side line via the Lewis Creek drainage, but approach, descent_text, pitch_detail, approach_variants and waypoints all literally describe the SAME Barclay Lake/Tailgunner Pass/hidden-ramp corridor (same coordinates, same crux) used by the Southeast Route, with no distinct Lewis Creek beta at all.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which route the 1915 first ascent followed",
+     "severity": "low",
+     "claims": [
+      {"field": "fa", "says": "Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh, July 18, 1915, via Lewis Creek, on their fifth attempt at the peak"},
+      {"field": "wa_gunn_peak_southeast_route.overview", "says": "First climbed July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh. The standard route climbs from Barclay Lake Trailhead over Tailgunner Pass..."}
+     ],
+     "why": "This route's fa explicitly credits the same 1915 party/date to the Lewis Creek line, while the Southeast Route's overview phrasing credits the same FA to 'the standard route' (Tailgunner Pass line) — only one line can be the actual 1915 FA route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_gunnshy_peak_standard_route",
+   "name": "Gunnshy Peak Standard Route (Barclay Lake Approach)",
+   "area": "Gunnshy Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_half_fast",
+   "name": "Half Fast",
+   "area": "Half Moon Crag",
+   "contradictions": [
+    {
+     "fact": "Access notes describe a different peak (Mount Index)",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective."},
+      {"field": "overview/discipline/pitches", "says": "single-pitch 5.8+ trad/sport crag route at Half Moon Crag"}
+     ],
+     "why": "The ACCESS section for a one-pitch sport/trad crag route describes an unrelated 'Grade III+ alpine objective' (Mount Index), which is a different mountain/route entirely.",
+     "internal_resolution": "Route identity fields (discipline, pitches, grade, overview) all describe a short crag climb; the Mount Index text is contaminated/copied content.",
+     "needs_research": false
+    },
+    {
+     "fact": "Managing national forest",
+     "severity": "low",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Okanogan-Wenatchee National Forest Skykomish Ranger District"}
+     ],
+     "why": "The two fields name different national forests for the same ranger district on the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether trailhead parking requires a fee/pass",
+     "severity": "low",
+     "claims": [
+      {"field": "access.parking_pass", "says": "Half Moon Crag: no fee site identified."},
+      {"field": "access.passRequired", "says": "Recreation pass"},
+      {"field": "access._raw.parking_pass_required", "says": "Recreation pass"}
+     ],
+     "why": "One field says no fee site is identified at Half Moon Crag while two other fields on the same route say a Recreation pass is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel distance vs route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "15 (~49 ft)"},
+      {"field": "descent_text", "says": "Rappel 85 feet from anchors to ground."}
+     ],
+     "why": "A 15m (49ft) single-pitch route would not need an 85ft rappel; the descent_text figure looks like reused boilerplate matching the crag-wide '≤85 ft' cap mentioned in the waypoint note rather than this route's actual height.",
+     "internal_resolution": "length_m is route-specific; the 85ft figure matches the crag-wide upper bound noted at the waypoint, not this route.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "name": "Astral Projection",
+   "area": "Half Moon Crag",
+   "contradictions": [
+    {
+     "fact": "Access notes describe a different peak (Mount Index)",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "Mount Index sits outside designated wilderness... a serious Grade III+ alpine objective."},
+      {"field": "overview/discipline/pitches", "says": "single-pitch 5.9- trad crag route at Half Moon Crag"}
+     ],
+     "why": "Same as the other Half Moon Crag routes: the ACCESS section describes an unrelated alpine objective (Mount Index) rather than this crag.",
+     "internal_resolution": "Contaminated/copied text; route identity fields describe a short crag climb.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether trailhead parking requires a fee/pass",
+     "severity": "low",
+     "claims": [
+      {"field": "access.parking_pass", "says": "Half Moon Crag: no fee site identified."},
+      {"field": "access.passRequired", "says": "Recreation pass"},
+      {"field": "access._raw.parking_pass_required", "says": "Recreation pass"}
+     ],
+     "why": "Same internal conflict as the other Half Moon Crag routes about whether a pass is required here.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "name": "Astroglide",
+   "area": "Half Moon Crag",
+   "contradictions": [
+    {
+     "fact": "Access notes describe a different peak (Mount Index)",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "Mount Index sits outside designated wilderness... a serious Grade III+ alpine objective."},
+      {"field": "overview/discipline/pitches", "says": "single-pitch 5.9 trad crag route at Half Moon Crag"}
+     ],
+     "why": "Same contaminated Mount Index text as the other Half Moon Crag routes.",
+     "internal_resolution": "Contaminated/copied text; route identity fields describe a short crag climb.",
+     "needs_research": false
+    },
+    {
+     "fact": "Managing national forest",
+     "severity": "low",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Okanogan-Wenatchee National Forest"}
+     ],
+     "why": "Two fields name different national forests for this route's land manager/ranger station.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether trailhead parking requires a fee/pass",
+     "severity": "low",
+     "claims": [
+      {"field": "access.parking_pass", "says": "Half Moon Crag: no fee site identified."},
+      {"field": "access.passRequired", "says": "Recreation pass"},
+      {"field": "access._raw.parking_pass_required", "says": "Recreation pass"}
+     ],
+     "why": "Same internal conflict as the other Half Moon Crag routes about whether a pass is required here.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "name": "Asymptotic",
+   "area": "Half Moon Crag",
+   "contradictions": [
+    {
+     "fact": "Access notes describe a different peak (Mount Index)",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "Mount Index sits outside designated wilderness... a serious Grade III+ alpine objective."},
+      {"field": "overview/discipline/pitches", "says": "single-pitch 5.10b trad crag route at Half Moon Crag"}
+     ],
+     "why": "Same contaminated Mount Index text as the other Half Moon Crag routes.",
+     "internal_resolution": "Contaminated/copied text; route identity fields describe a short crag climb.",
+     "needs_research": false
+    },
+    {
+     "fact": "Managing national forest",
+     "severity": "low",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Okanogan-Wenatchee National Forest, Skykomish Ranger District"}
+     ],
+     "why": "Two fields name different national forests for this route's land manager/ranger station.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether trailhead parking requires a fee/pass",
+     "severity": "low",
+     "claims": [
+      {"field": "access.parking_pass", "says": "Half Moon Crag: no fee site identified."},
+      {"field": "access.passRequired", "says": "Recreation pass"},
+      {"field": "access._raw.parking_pass_required", "says": "Recreation pass"}
+     ],
+     "why": "Same internal conflict as the other Half Moon Crag routes about whether a pass is required here.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel distance vs route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "18 (~59 ft)"},
+      {"field": "descent_text", "says": "Rap down from the bolted anchors at the top of the climb using a single 85-foot rappel to the base."}
+     ],
+     "why": "An 18m (59ft) route stated as needing an 85ft rappel is a ~44% gap, again matching the crag-wide '≤85 ft' cap rather than this specific route's height.",
+     "internal_resolution": "length_m is route-specific; 85ft looks like reused crag-wide boilerplate.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "name": "Artic Rose",
+   "area": "Half Moon Crag",
+   "contradictions": [
+    {
+     "fact": "Access notes describe a different peak (Mount Index)",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "Mount Index sits outside designated wilderness... a serious Grade III+ alpine objective."},
+      {"field": "overview/discipline/pitches", "says": "single-pitch 5.6 trad crag route at Half Moon Crag"}
+     ],
+     "why": "Same contaminated Mount Index text as the other Half Moon Crag routes.",
+     "internal_resolution": "Contaminated/copied text; route identity fields describe a short crag climb.",
+     "needs_research": false
+    },
+    {
+     "fact": "Managing national forest",
+     "severity": "low",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Okanogan-Wenatchee National Forest, Skykomish Ranger District"}
+     ],
+     "why": "Two fields name different national forests for this route's land manager/ranger station.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether trailhead parking requires a fee/pass",
+     "severity": "low",
+     "claims": [
+      {"field": "access.parking_pass", "says": "Half Moon Crag: no fee site identified."},
+      {"field": "access.passRequired", "says": "Recreation pass"},
+      {"field": "access._raw.parking_pass_required", "says": "Recreation pass"}
+     ],
+     "why": "Same internal conflict as the other Half Moon Crag routes about whether a pass is required here.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_leave_my_flake_alone",
+   "name": "Leave My Flake Alone",
+   "area": "Country, The",
+   "contradictions": [
+    {
+     "fact": "Route grade vs crux pitch grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.8"},
+      {"field": "pitch_detail[0]", "says": "5.8, crux=false, notes: 'Pitch 1 climbs Mourning Star (5.8) up to the Zoom anchor before breaking onto this route'"},
+      {"field": "pitch_detail[2]", "says": "5.7, crux=true (the Flake pitch)"}
+     ],
+     "why": "The route's overall grade (5.8) is only reached on Pitch 1, which the route's own gear notes say is actually a different named route (Mourning Star) shared as a start; this route's own new pitches (P2, P3/crux) top out at 5.7, easier than the headline grade.",
+     "internal_resolution": "The only 5.8 pitch belongs to a different route (Mourning Star); the crux pitch of Leave My Flake Alone itself is graded 5.7, below the stated overall grade.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_velvet_pedestal",
+   "name": "The Velvet Pedestal",
+   "area": "Lookout Point",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bobcat_cringe",
+   "name": "Bobcat Cringe",
+   "area": "Lookout Point",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bowling_to_biscuits",
+   "name": "Bowling to Biscuits",
+   "area": "Lookout Point",
+   "contradictions": []
+  },
+  {
+   "id": "wa_and_say",
+   "name": "And Say",
+   "area": "Lookout Point",
+   "contradictions": [
+    {
+     "fact": "Route grade vs crux pitch grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.11b"},
+      {"field": "pitch_detail[3]", "says": "5.11+ (pitch 4, crux=false)"},
+      {"field": "pitch_detail[4]", "says": "5.11+ (pitch 5, crux=true)"}
+     ],
+     "why": "The route's overall grade of 5.11b is easier than both its crux pitch (P5) and P4, which are both graded 5.11+ (typically 5.11c/d) — the headline grade understates the route's hardest climbing.",
+     "internal_resolution": "Two of the five pitches (including the crux) agree on 5.11+, harder than the stated 5.11b headline grade, which is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_house_of_the_7th_bobcat",
+   "name": "House of the 7th Bobcat",
+   "area": "Lookout Point",
+   "contradictions": []
+  },
+  {
+   "id": "wa_solitude_3",
+   "name": "Solitude",
+   "area": "Lookout Point",
+   "contradictions": []
+  },
+  {
+   "id": "wa_steel_pulse_2",
+   "name": "Steel Pulse",
+   "area": "Lookout Point",
+   "contradictions": []
+  },
+  {
+   "id": "wa_curious_poses",
+   "name": "Curious Poses",
+   "area": "Private Idaho",
+   "contradictions": []
+  },
+  {
+   "id": "wa_sagittarius",
+   "name": "Sagittarius",
+   "area": "(C) Main Wall, left side",
+   "contradictions": []
+  },
+  {
+   "id": "wa_batskins",
+   "name": "Batskins",
+   "area": "(C) Main Wall, left side",
+   "contradictions": [
+    {
+     "fact": "Crux-flagged pitch vs actual hardest pitch",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.12b"},
+      {"field": "pitch_detail[0]", "says": "5.12b (5.11a short variant), crux=false, pitch 1"},
+      {"field": "pitch_detail[1]", "says": "5.11d, crux=true, pitch 2"}
+     ],
+     "why": "Pitch 2 is flagged as the crux at 5.11d, but Pitch 1 (not flagged as crux) is graded 5.12b — a full letter grade harder — and matches the route's overall grade.",
+     "internal_resolution": "The overall grade (5.12b) matches Pitch 1, which is not marked crux; the pitch marked crux (P2) is actually easier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "name": "TPMV (10% Meteorological Vinculation)",
+   "area": "(C) Main Wall, left side",
+   "contradictions": [
+    {
+     "fact": "Route grade vs every listed pitch grade",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.12c/d"},
+      {"field": "pitch_detail[0]", "says": "5.11+ (pitch 1)"},
+      {"field": "pitch_detail[1]", "says": "5.10- (pitch 2)"},
+      {"field": "pitch_detail[2]", "says": "5.11b/c, crux=true (pitch 3)"},
+      {"field": "pitch_detail[3]", "says": "5.10d (pitch 4)"}
+     ],
+     "why": "The overall route grade (5.12c/d) is nearly a full number grade harder than any individual pitch listed, including the crux pitch (5.11b/c) — no pitch supports the stated headline difficulty.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "name": "Japanese Gardens",
+   "area": "(C) Main Wall, left side",
+   "contradictions": [
+    {
+     "fact": "Crux-flagged pitch vs actual hardest pitch",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.11+"},
+      {"field": "pitch_detail[1]", "says": "5.11b, crux=true, pitch 2"},
+      {"field": "pitch_detail[3]", "says": "5.11c, crux=false, pitch 4"}
+     ],
+     "why": "Pitch 2 is flagged as crux at 5.11b, but Pitch 4 (not flagged as crux) is graded 5.11c, harder, and closer to the route's overall 5.11+ grade.",
+     "internal_resolution": "The overall grade (5.11+) is closer to Pitch 4's 5.11c than to the crux-flagged Pitch 2's 5.11b; Pitch 4 looks like the true hardest pitch.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_princely_ambitions",
+   "name": "Princely Ambitions",
+   "area": "(C) Main Wall, left side",
+   "contradictions": []
+  },
+  {
+   "id": "wa_park_ranger",
+   "name": "Park Ranger",
+   "area": "(C) Main Wall, left side",
+   "contradictions": []
+  },
+  {
+   "id": "wa_city_park",
+   "name": "City Park",
+   "area": "(C) Main Wall, left side",
+   "contradictions": []
+  },
+  {
+   "id": "wa_stamper_holland",
+   "name": "Stamper-Holland",
+   "area": "(D) Narrow Arrow and further right",
+   "contradictions": []
+  },
+  {
+   "id": "wa_freedom_fighter_2",
+   "name": "Freedom Fighter",
+   "area": "(D) Narrow Arrow and further right",
+   "contradictions": []
+  },
+  {
+   "id": "wa_narrow_arrow_overhang",
+   "name": "Narrow Arrow Overhang",
+   "area": "(D) Narrow Arrow and further right",
+   "contradictions": []
+  },
+  {
+   "id": "wa_free_at_last",
+   "name": "Free at Last",
+   "area": "(D) Narrow Arrow and further right",
+   "contradictions": []
+  },
+  {
+   "id": "wa_gnostic_diversions",
+   "name": "Gnostic Diversions",
+   "area": "Central Wall Area",
+   "contradictions": []
+  },
+  {
+   "id": "wa_sisu",
+   "name": "Sisu",
+   "area": "Central Wall Area",
+   "contradictions": [
+    {
+     "fact": "Total route length vs sum of pitch lengths",
+     "severity": "low",
+     "claims": [
+      {"field": "length_m", "says": "244"},
+      {"field": "pitch_detail[*].lengthM", "says": "40+18+15+25+10+30+35 = 173"}
+     ],
+     "why": "The overall route length (244m) is about 29% more than the sum of the seven pitches' own lengthM values (173m), a gap larger than typical rounding.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_technicians_of_the_sacred",
+   "name": "Technicians of the Sacred",
+   "area": "Central Wall Area",
+   "contradictions": []
+  },
+  {
+   "id": "wa_starfish_enterprise",
+   "name": "Starfish Enterprise",
+   "area": "Central Wall Area",
+   "contradictions": []
+  },
+  {
+   "id": "wa_crying_dragon",
+   "name": "Crying Dragon",
+   "area": "Central Wall Area",
+   "contradictions": []
+  },
+  {
+   "id": "wa_rise_and_fall",
+   "name": "Rise and Fall",
+   "area": "Central Wall Area",
+   "contradictions": []
+  },
+  {
+   "id": "wa_davis_holland_route",
+   "name": "Davis-Holland Route",
+   "area": "Central Wall Area",
+   "contradictions": []
+  },
+  {
+   "id": "wa_clay",
+   "name": "Clay",
+   "area": "Lower Cheeks",
+   "contradictions": []
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "name": "South Route",
+   "area": "Iron Cap Mountain",
+   "contradictions": [
+    {
+     "fact": "Which approach and which ridge this 'South Route' actually climbs",
+     "severity": "high",
+     "claims": [
+      {"field": "face", "says": "South Ridge"},
+      {"field": "overview", "says": "gains Iron Cap's south ridge system to the summit"},
+      {"field": "climbing_route[0].label", "says": "South ridge / summit tower"},
+      {"field": "beta", "says": "A long backcountry approach (6.6+ trail miles, ~3,400 ft gain to Chetwoot Lake)"},
+      {"field": "waypoints (Dingford Creek Trailhead).note", "says": "approach via Trout Lake, Copper/Malachite Lake, and Chetwoot Lake/Iron Cap Lake basin to the peak's north/west ridge"},
+      {"field": "itinerary.days[1].note", "says": "gain La Bohn Gap, then follow talus/heather slopes and the connecting ridge onto Iron Cap's upper west or north ridge"},
+      {"field": "approach_variants[0].name", "says": "Iron Cap Lake basin to the north ridge"},
+      {"field": "climbing_route[2].label", "says": "Ramp below the summit block to the north ridge"}
+     ],
+     "why": "face/overview/climbing_route[0] call this the South Ridge route, but beta describes a much shorter (6.6mi) approach to Chetwoot Lake that belongs to a different trailhead/lake system, and itinerary/approach_variants/climbing_route[2] describe finishing on the west or north ridge via La Bohn Gap and Iron Cap Lake basin — not the south ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain/loss vs the itinerary's own day-by-day figures",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "4707"},
+      {"field": "loss_ft", "says": "4707"},
+      {"field": "approach (prose)", "says": "~4,700-5,000 ft of cumulative gain"},
+      {"field": "itinerary.days[0].gainFt + [1].gainFt + [2].gainFt", "says": "3800 + 2000 + 300 = 6100"},
+      {"field": "itinerary.days[0].lossFt + [1].lossFt + [2].lossFt", "says": "300 + 2000 + 3800 = 6100"}
+     ],
+     "why": "The itinerary's own three day-by-day gain/loss figures sum to 6,100 ft, about 30% more than the route's stated gain_ft/loss_ft (4,707 ft), which does match the approach text's own '~4,700-5,000 ft' estimate.",
+     "internal_resolution": "gain_ft/loss_ft agree with the approach text's own estimate; the itinerary day totals (summing to 6,100 ft) are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard claim vs off-season warning",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer route... climbed only in the snow-free season, outside the winter/spring avalanche forecast period"},
+      {"field": "climate.bySeason.spring", "says": "Not viable — approach trail and route are largely snow-covered with high avalanche hazard on surrounding slopes during May-June snowmelt."}
+     ],
+     "why": "The route claims 'N/A' avalanche hazard while also warning of high avalanche hazard in May-June; these may not truly conflict since the N/A claim is scoped to the recommended Jul-Sep climbing window and the avalanche warning to the off-season, but a reader could see this as inconsistent.",
+     "internal_resolution": "Likely not a true contradiction — the two claims describe different time-of-year windows — but worth a second look.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_la_bohn_peak_southwest_slopes",
+   "name": "Southwest Slopes",
+   "area": "La Bohn Peak",
+   "contradictions": [
+    {
+     "fact": "Direction of travel from La Bohn Gap to the summit",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "rising directly west of La Bohn Gap... standard line follows a climbers' path east/northeast from the gap up the ridge and face above La Bohn Lakes... to the summit"},
+      {"field": "face", "says": "South/southwest basin slopes above upper Necklace Valley, below La Bohn Gap"},
+      {"field": "approach", "says": "ascend talus and open slopes on the southwest side, staying left (west/south) of the broad west ridge, to gain La Bohn Peak's summit"},
+      {"field": "descent_text", "says": "Descend the same southwest-slope talus and open ground back down to La Bohn Gap"},
+      {"field": "climbing_route[0].notes", "says": "ascend talus and open slopes on the southwest side, staying left (west/south) of the broad west ridge"},
+      {"field": "approach_variants[0].baseFinding", "says": "staying left — west and south — of the broad west ridge"}
+     ],
+     "why": "The overview says the route climbs 'east/northeast from the gap,' but the peak sits west of the gap (per the overview's own first sentence), and every other field (face, approach, descent_text, climbing_route, approach_variants) says the route goes west/southwest from the gap. The bivy notes confirm 'east... from the gap' is actually the way to neighboring Mount Hinman, not La Bohn Peak.",
+     "internal_resolution": "Six fields (including the overview's own peak-position sentence) agree the route goes west/southwest from the gap; the 'east/northeast' clause in overview is the outlier and appears to be contaminated from the Mount Hinman description.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cliff-band exposure near the summit block",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_hazards.exposure", "says": "no sustained cliff-band exposure on this route"},
+      {"field": "hazards[2]", "says": "cliff band and exposure on the north side of the summit block — easy to wander too far north, especially in fog"},
+      {"field": "watch_out[0]", "says": "The summit block has a cliff band on its north side — don't wander north off the ridge/face line, especially in fog."}
+     ],
+     "why": "The Safety tab's seasonal_hazards.exposure text explicitly denies any sustained cliff-band exposure, while the route's own hazards and watch_out fields (rendered on the same Safety tab) warn of a real cliff band on the summit block's north side.",
+     "internal_resolution": "hazards and watch_out agree with each other on a real cliff-band hazard; seasonal_hazards.exposure is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "name": "South Route",
+   "area": "Merchant Peak",
+   "contradictions": [
+    {
+     "fact": "Avalanche hazard in June",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.byMonth.June", "says": "N/A"},
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer route... the route is not climbed in avalanche season"},
+      {"field": "hazards[4]", "says": "lingering wet snowfields and avalanche potential in the gully into June"},
+      {"field": "gear[0]", "says": "ice axe and traction (early season, snow lingers into June)"},
+      {"field": "season", "says": "late May-late Oct"}
+     ],
+     "why": "The route's own season field includes June as climbable, and hazards/gear explicitly warn of avalanche potential into June, but the avalanche byMonth breakdown marks June flatly 'N/A'.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance from the Barclay Lake Trail to the gully turnoff",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[1] (Y-shaped creek / gully departure).distMi", "says": "1.3"},
+      {"field": "approach", "says": "After only about 0.3-0.5 mile, a few hundred feet past the log bridge... leave the maintained trail"},
+      {"field": "approach_variants[0].notes", "says": "You leave it after only about a third to half a mile"}
+     ],
+     "why": "The waypoint's own distMi for the gully turnoff (1.3 mi) is roughly 2.5-4x the distance stated in both the approach and approach_variants text (0.3-0.5 mi) for the same landmark.",
+     "internal_resolution": "approach and approach_variants agree with each other (~0.3-0.5 mi); the waypoint's distMi=1.3 is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of the Waterfall 3 crux",
+     "severity": "low",
+     "claims": [
+      {"field": "hazards[1]", "says": "worst at the crux waterfall (~3,900 ft)"},
+      {"field": "watch_out[1]", "says": "The crux waterfall chockstone (~3,900 ft)"},
+      {"field": "waypoints[2] (Waterfall 3 chockstone crux).elev", "says": "3600"}
+     ],
+     "why": "hazards and watch_out both put the crux waterfall at ~3,900 ft, about 300 ft higher than the waypoint's own recorded elevation of 3,600 ft for the same feature.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

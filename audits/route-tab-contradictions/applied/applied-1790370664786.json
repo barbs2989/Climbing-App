@@ -1,0 +1,578 @@
+{
+ "applied": [
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "Standard descent from the summit"
+  },
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Standard descent from the summit"
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "column": "descent",
+   "path": [],
+   "fact": "Standard descent from the summit"
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Standard descent from the summit"
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether a South Ridge descent/walk-off is possible from this route"
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Whether a South Ridge descent/walk-off is possible from this route"
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "column": "best_season",
+   "path": [],
+   "fact": "End of the climbing season"
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Total time for the route"
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Summit-day start time and duration"
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Summit-day start time and duration"
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Summit-day start time and duration"
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text describes summiting Eldorado Peak, not Tepeh Towers"
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text describes the standard glacier route, not this route's crack/U-notch line"
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text describes the standard glacier route, not this route's crack/U-notch line"
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Ridge crest grade: 5.7 vs 5.6"
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Ridge crest grade: 5.7 vs 5.6"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "seasonal_guidance",
+   "path": [],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "climate",
+   "path": [
+    "typical"
+   ],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "fall"
+   ],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "winter"
+   ],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "summer"
+   ],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "typical"
+   ],
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Summit-day start time and duration"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Summit-day start time and duration"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Summit-day start time and duration"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "before": {
+    "descent": "Descend the ascent route.",
+    "descent_text": "Reverse the short NW-face scramble to the notch, then downclimb the chimney and steep rock back to the easy slopes below."
+   }
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "before": {
+    "descent": "Descend the ascent route.",
+    "descent_text": "Reverse the heathery gully back down into the southwest cirque."
+   }
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "before": {
+    "descent_text": "Reverse the chimney and slab, downclimb the open book, and re-cross the schrund back to the pocket glacier.",
+    "approach_variants": [
+     {
+      "name": "The pocket glacier under the west face, and the schrund that guards it",
+      "notes": "Approach by the general Cascade Pass and Ptarmigan Traverse access: Cascade Pass trailhead near 3,600 ft, the trail to Cascade Pass at 5,392 ft, then the climbers' path across Mixup Peak's flanks, over the Cache Glacier and Cache Col near 6,900 ft, and down toward the Kool-Aid Lake basin.\n\nFrom the basin, easy slopes on the west-southwest side lead to the small POCKET GLACIER under Magic Mountain's west face. That pocket glacier is the base area, and the bergschrund at its head is where the route begins.\n\nSeven pitches: shelves to a blocky open book, the 5.6 open book, the slab taken on its easier left side, and an easy chimney on the left to gain the crest between the false and main summits.",
+      "season": "Jul-Sep, with the bergschrund crossing and the pocket-glacier conditions varying by snow year",
+      "hazards": [
+       "A bergschrund below the west face whose difficulty varies by year and which can be the crux of the route by late summer",
+       "A crevassed Cache Glacier on the approach, about 35 degrees and bare ice late season",
+       "Broken gneiss with slung blocks for belays and no fixed gear",
+       "A thin slab pitch where protection is limited"
+      ],
+      "baseFinding": "THE BERGSCHRUND IS THE ROUTE'S IDENTITY AND IT IS THE ONE-LOOK TEST AGAINST BOTH ITS NEIGHBOURS ON THIS SIDE OF THE MOUNTAIN. THIS IS THE ONLY MAGIC MOUNTAIN ROUTE FROM THE KOOL-AID LAKE SIDE THAT CROSSES A SCHRUND. The Northwest Ridge walks up easy slopes to rock and a chimney; the Southwest Cirque goes up heather gullies. IF YOU HAVE NOT CROSSED A GAP BETWEEN GLACIER AND ROCK, YOU ARE NOT ON THE WEST RIDGE.\n\nTHE POSITIVE LANDMARK ABOVE THE SCHRUND IS A NAMED SHAPE: shelves lead up to a BLOCKY OPEN BOOK — a dihedral corner. That open book is the 5.6 crux and the best-protected pitch on the route. IF YOU CROSS THE SCHRUND AND FIND NO OPEN-BOOK CORNER ABOVE YOU, YOU HAVE CROSSED IT IN THE WRONG PLACE.\n\nCOUNT THE FOUR FEATURES IN ORDER, BECAUSE THEY ARE ALL DIFFERENT SHAPES: schrund, shelves, open book, slab. THE SLAB IS TAKEN ON ITS EASIER LEFT SIDE, not up the middle.\n\nTHE FINISH TELLS YOU WHICH SUMMIT YOU ARE UNDER: from below the ridge between the FALSE and MAIN summits, an easy chimney on the LEFT gains the crest. So the route deliberately arrives on the ridge BETWEEN the two tops — if the chimney you climbed put you straight onto a summit, you are on the false one and the ridge continues.\n\nAND THE SCHRUND HAS TO WORK IN BOTH DIRECTIONS: the descent reverses the chimney and slab, downclimbs the open book and re-crosses the schrund. Look at it on the way up with that in mind, because there is no walk-off from this side."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "before": {
+    "best_season": "Jul-Sep, with route conditions (glacier cover, couloir snow/ice) varying more year to year than the South Ridge route."
+   }
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "before": {
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 2,
+     "descentTimeHrs": 3,
+     "approachTimeHrs": 3,
+     "recommendedStart": "Very early — pre-dawn from Pelton Basin, or a small-hours start from the road if the gate is down. Every documented ascent of this cirque stresses being in position at first light and off the sun-exposed ground before mid-morning. Reported booting time for the couloir itself is roughly 1.5-2 hours."
+    }
+   }
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "Cascade River Road usually doesn't open until late May/June depending on snowpack, and the Eldorado/Inspiration Glacier zone is a high-occupancy North Cascades NP backcountry zone requiring an advance wilderness permit reservation.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Cross the Cascade River, then climb steep forest and boulder-field trail up Eldorado Creek/Roush Creek basin onto the Eldorado Glacier. Camp on the glacier or moraine, typically 5,600-7,500 ft depending on season and snowline.",
+       "hours": 6,
+       "miles": 3,
+       "title": "Approach to glacier high camp",
+       "gainFt": 5400,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach high camp on the Eldorado/Inspiration Glacier"
+      },
+      {
+       "n": 2,
+       "note": "Pre-dawn alpine start across the Inspiration Glacier to the base of the East Ridge, then up the exposed, knife-edged summit snow arête to the top. Reverse the same line back to camp.",
+       "hours": 7,
+       "miles": 4,
+       "title": "Summit day via Inspiration Glacier",
+       "gainFt": 1300,
+       "lossFt": 1300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave high camp",
+         "detail": "Pre-dawn alpine start."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Onto Inspiration Glacier",
+         "detail": "Rope up for glacier travel."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Base of summit ridge",
+         "detail": "Start of the knife-edge snow arête."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit",
+         "detail": "8,872 ft, exposed knife-edge finish."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at high camp",
+         "detail": "Reverse the glacier and ridge."
+        }
+       ],
+       "objective": "Reach the 8,872 ft summit via the Inspiration Glacier and knife-edge ridge"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and descend back across the Cascade River to the trailhead.",
+       "hours": 3.5,
+       "miles": 3,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 5400,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Break camp and return to the trailhead"
+      }
+     ],
+     "totalNote": "The classic 3-day Eldorado itinerary: hike to a glacier high camp, a pre-dawn summit day across the Inspiration Glacier and knife-edge ridge to 8,872 ft, then hike out (~6,700 ft gain, ~10 mi round trip); strong parties sometimes compress this to 2 days, and very fit teams have done it car-to-car in an 11-21 hr single push."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained fitness for a steep, brushy approach gaining thousands of feet to glacier camp, on top of a 5.5-hr summit day",
+      "packWeight": "Heavy overnight/glacier pack (rope, crevasse rescue gear, camping) — roughly 35-45+ lb typical"
+     },
+     "approachTime": "Steep, brushy multi-hour approach crossing the Cascade River to glacier camp, typically done as part of a multi-day itinerary before the 5.5-hr, 05:00-start summit push",
+     "requiredSkills": [
+      "roped glacier travel",
+      "crevasse rescue",
+      "self-arrest / basic snow travel",
+      "exposed Class 3 scrambling on the summit snow arête",
+      "whiteout/glacier navigation"
+     ],
+     "experienceLevel": "Intermediate mountaineer — prior roped glacier travel experience strongly recommended before this objective"
+    }
+   }
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "before": {
+    "approach": "From Seattle, drive I-5 north and then WA-20 (North Cascades Highway) east through Sedro-Woolley, Concrete, and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles — paved for the first 10 miles, gravel and washboard the rest of the way — to the Eldorado parking area near mile 20. From the trailhead, hikers backtrack a short distance along the road to find a safe crossing of the Cascade River (historically a large log or braided ford, which shifts year to year), then pick up a steep, unmaintained climbers' boot path that gains roughly 3,000-3,500 feet through old-growth forest to a boulder field, crosses Eldorado Creek, and opens into the alpine meadows of the Eldorado Creek basin, a common camp area roughly 5-6 hours from the car. From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours. Any overnight stay requires a free North Cascades National Park backcountry permit — Eldorado is managed as a high-use cross-country zone with advance reservations available on Recreation.gov plus a limited walk-up allocation issued in person at the Marblemount Wilderness Information Center. IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area: from the Eldorado/Inspiration Glacier high camp (~7,600ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col; Tepeh Towers are passed along this same glacier traverse, and Austera Peak requires further travel across the Klawatti Glacier (including a short rappel from the col) beyond Klawatti Peak — meaningfully further and more committing than simply topping out on Eldorado."
+   }
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "before": {
+    "approach": "From Seattle, drive I-5 north and then WA-20 (North Cascades Highway) east through Sedro-Woolley, Concrete, and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles — paved for the first 10 miles, gravel and washboard the rest of the way — to the Eldorado parking area near mile 20. From the trailhead, hikers backtrack a short distance along the road to find a safe crossing of the Cascade River (historically a large log or braided ford, which shifts year to year), then pick up a steep, unmaintained climbers' boot path that gains roughly 3,000-3,500 feet through old-growth forest to a boulder field, crosses Eldorado Creek, and opens into the alpine meadows of the Eldorado Creek basin, a common camp area roughly 5-6 hours from the car. From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours. Any overnight stay requires a free North Cascades National Park backcountry permit — Eldorado is managed as a high-use cross-country zone with advance reservations available on Recreation.gov plus a limited walk-up allocation issued in person at the Marblemount Wilderness Information Center. For this specific route: from Eldorado/Roush Creek high camp, continue up snowfields onto the Eldorado Glacier to the summit ridge system; West Ridge traverses further around past the Triad to the west face before ascending, but all three routes stay on Eldorado Peak itself."
+   }
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.4926,
+      "lng": -121.1176,
+      "elev": 2100,
+      "name": "Eldorado Creek / Cascade River Road TH",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.533,
+      "lng": -121.129,
+      "elev": 7600,
+      "name": "Eldorado (East Ridge) camp",
+      "type": "Campsite",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.539,
+      "lng": -121.131,
+      "elev": 7900,
+      "name": "Base of North Ridge",
+      "note": "Traverse the upper Eldorado/Inspiration Glacier to the foot of the ridge.",
+      "type": "Junction",
+      "distMi": 6
+     },
+     {
+      "lat": 48.5375,
+      "lng": -121.1342,
+      "elev": 8868,
+      "name": "Eldorado Peak",
+      "note": "Airy, exposed 5.6 ridge crest of solid granite to the summit.",
+      "type": "Summit",
+      "distMi": 6.5
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Down the Inspiration Glacier to the ice-couloir notch, then snow onto the crest",
+      "notes": "The approach is the standard Eldorado one to the high camp on the Inspiration Glacier: Cascade River Road to the Eldorado Creek trailhead near 2,100 ft, the river crossing, the steep boot path, the boulder field, Eldorado Creek basin, and up the Eldorado Glacier to the East Ridge camp near 7,500-7,600 ft.\n\nFrom camp, the route goes DOWN before it goes up. Descend the Inspiration Glacier toward the notch used as the rappel point for the Northwest Ice Couloir — an obvious gap between the North Ridge and the first rock spire, at about 8,100 ft — and climb steep snow from there onto the North Ridge proper.\n\nThe ridge follows generally solid rock on its EASTERN aspect with good friction and incut holds, so the exposure toward the glacier side stays modest while the drop to the west is dramatic. Near the top you can finish directly up steeper ice and rock or join the classic East Ridge finish.",
+      "season": "Summer, once the ridge is largely snow-free",
+      "hazards": [
+       "Crevasses on the Inspiration Glacier both on the way to the notch and on the way back",
+       "Loose rock in places along the crest",
+       "Wind exposure high on the ridge",
+       "Wet rock, which raises the difficulty of this route noticeably rather than marginally"
+      ],
+      "baseFinding": "THE NOTCH IS THE LANDMARK, AND IT IS SHARED WITH ANOTHER ROUTE — WHICH IS WHY THE TEST IS WHAT YOU DO THERE, NOT WHERE YOU STAND. The gap you are looking for is the obvious notch between the North Ridge and the FIRST ROCK SPIRE along the crest, at about 8,100 ft, reached by descending the Inspiration Glacier from the East Ridge camp. That same notch is the rappel station for the Northwest Ice Couloir. SO: AT THE NOTCH, IF YOU ARE PUTTING A ROPE THROUGH AN ANCHOR AND GOING DOWN INTO THE CIRQUE ON THE OTHER SIDE, YOU ARE ON THE NORTHWEST COULOIR. IF YOU ARE CLIMBING STEEP SNOW UP OUT OF THE NOTCH ONTO A ROCK CREST, YOU ARE ON THE NORTH RIDGE. Two routes, one notch, opposite directions. THE ROCK TELLS YOU WHICH SIDE OF THE CREST TO BE ON, AND THAT IS THE OTHER HALF OF THE ANSWER. This route stays on the ridge's EAST side — clean, solid rock with good friction and incut holds, snow on the northeast face below you keeping the exposure feeling manageable. IF THE DROP IS ON BOTH SIDES OR YOU HAVE DRIFTED WEST INTO SERIOUS AIR AND WORSE ROCK, COME BACK EAST. WHAT IS HONESTLY NOT PUBLISHED: no source names a single fixed starting point on this crest — one description says simply to climb the path of least resistance from your point of choice on the ridge. The notch is the findable thing; above it, the route is defined by staying east on the good rock rather than by a marked start. Sources also disagree on the grade, 5.6 against 5.7, so do not read a hard move as evidence you are off route."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Highly conditions-dependent — no confirmed ascent evidence for a June-specific optimal window",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Couloir may still be filling in and spring snowpack instability is the primary variable",
+       "status": "marginal"
+      },
+      "July": {
+       "reason": "Can still hold early in the month, but the couloir melts and opens as summer progresses",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Core window for firm névé and good ice",
+       "status": "optimal"
+      }
+     }
+    },
+    "best_season": "Highly conditions-dependent. Early season (roughly May-June) can offer steep, thin ice and moderate mixed climbing; by mid-to-late summer the couloir is usually mostly filled with snow and just a few ice steps; a good cold snap in early fall/winter (e.g., late October-November) can also bring in firm, well-bonded ice over the glacier — check recent trip reports before committing. Grade is correspondingly variable: roughly AI2-3, up to WI3 in lean conditions.",
+    "approach_variants": [
+     {
+      "name": "Rappel off the ice cap into the Marble Creek cirque, then the couloir splitting the northwest face",
+      "notes": "Same trailhead and lower approach as the East Ridge: Eldorado trailhead at Cascade River Road mile 20 near 2,100 ft, the log crossing of the Cascade River about 90 ft downstream of the parking area, the steep timbered climbers' trail into a dry boulderfield around 4,500 ft, and on into Eldorado Creek Basin.\n\nFrom there this route diverges: rather than continuing over the ridge into Roush Basin for the standard camp, traverse the Roush Divide and ascend the Eldorado Glacier, trending toward the mountain's northwest side and the wild Marble Creek Cirque. High camp is either in Eldorado Creek / Roush Creek Basin or at the Eldorado-Inspiration site near 7,500-7,600 ft.\n\nThe usual way in is from above: follow the East Ridge glacier track to about 8,100 ft, traverse to the notch between the North Ridge and the first rock spire — the same notch sometimes called the Eldorado-Dean's Spire or Dean's Tower col — and RAPPEL from it into the cirque below. A full 60 m rope gets a party through in one; parties on shorter ropes have downclimbed the remainder. One party used a belayed downclimb of about 35 m plus two 30 m rappels to land within about 100 yards of the couloir. One single-push ascent took roughly five hours from the trailhead to the couloir's base.\n\nThe alternative is simply to continue glacier travel around to the couloir's base at about 7,800 ft.",
+      "season": "Highly conditions-dependent. Early season, roughly May-June, can give steep thin ice and moderate mixed; mid-to-late summer the couloir is usually mostly snow with a few ice steps; a good cold snap in late October or November can bring in firm, well-bonded ice. Grade moves with it, roughly AI2-3 up to WI3 in lean conditions",
+      "hazards": [
+       "An extreme funnel: the whole face feeds into a narrow confined couloir, so anything the leader dislodges lands on the belay",
+       "Crevasses on the Eldorado and Inspiration glaciers and a long featureless crossing that is disorienting in whiteout",
+       "A moat or bergschrund where the glacier meets the couloir, widening through the summer",
+       "Cornices and crevasses at the couloir's exit near the knife-edge ridge",
+       "Rappelling the couloir is the only retreat once you are high, and it is slow — the practical escape is over the top"
+      ],
+      "baseFinding": "ONCE YOU ARE IN THE CIRQUE THE ROUTE IS OBVIOUS, AND TWO SEPARATE PARTIES SAY SO IN NEARLY THE SAME WORDS: on looking up from below the rappel, one recorded instantly seeing the line — steep, fat and unmistakable. THE COULOIR SPLITS THE NORTHWEST FACE and there is nothing else in the cirque it could be confused with. So the navigation problem is not identifying the couloir; it is getting into the cirque at all.\n\nTHE NOTCH IS THE THING TO FIND, AND IT IS SHARED WITH THE NORTH RIDGE. It is the obvious gap between the North Ridge and the FIRST ROCK SPIRE, at about 8,100 ft, reached by traversing north from the East Ridge glacier track. AT THAT NOTCH THE TWO ROUTES GO OPPOSITE WAYS: rappel down the far side into the cirque and you are on this route; climb steep snow up onto the rock crest and you are on the North Ridge.\n\nTHE BASE ITSELF IS THE TRANSITION AT ABOUT 7,800 FT where the couloir meets the glacier — which is the usual place to find the moat or bergschrund, and it widens as summer goes on. Rope up on the glacier BEFORE you reach it.\n\nONE BRANCH POINT WORTH KNOWING: at least one party climbed a steep line just to CLIMBER'S LEFT of the main gut of the couloir rather than the gut itself. Both go; the gut is the route as described.\n\nCONFIRM ON THE CLIMBING: the line runs from about 7,800 ft to about 8,800 ft, roughly 1,000 ft, commonly described as eight 60 m pitches, and the character is a succession of short ice steps broken by lower-angle snow rather than one continuous wall. Steps around 70-80 degrees with occasional near-vertical bulges for a body length is right; sustained vertical ice for a full pitch is not this route in any season."
+     }
+    ],
+    "climate": {
+     "typical": "A late-spring to early-summer snow-and-ice line requiring firm couloir conditions and a stable snowpack.",
+     "bySeason": {
+      "fall": "More broken and icy; less appealing.",
+      "spring": "Best window for firm couloir snow; watch avalanche stability.",
+      "summer": "Early summer holds good névé; later the couloir melts and opens.",
+      "winter": "Full winter conditions with serious avalanche hazard."
+     },
+     "forecastZone": "Western North Cascades"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool, changeable North Cascades weather; spring avalanche concern easing into a firmer early-summer window",
+      "probability": "Afternoon warming softens couloir snow and increases rock/icefall risk; spring instability can linger into early June"
+     },
+     "exposure": "High — sustained steep snow/ice in the couloir with icy steps needing screw protection, finishing on the same exposed summit arête as the East Ridge",
+     "avalanche": {
+      "zone": "NWAC West Slopes North (approximate — no NWAC zone is specific to Eldorado Peak)",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate"
+      }
+     },
+     "crevasses": "Present where the route joins the Eldorado Glacier — crevasses require roped travel and crevasse rescue readiness"
+    },
+    "itinerary": {
+     "cal": "Cascade River Road usually doesn't open until late May/June depending on snowpack, and the Eldorado/Inspiration Glacier zone is a high-occupancy North Cascades NP backcountry zone requiring an advance wilderness permit reservation.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Eldorado Creek trailhead (~2,100 ft), climb steep forest and boulder-field trail, cross the Eldorado Glacier's lower ice, and gain the broad Inspiration Glacier bench. Camp near 7,500 ft (or lower, at Eldorado Creek/Roush Creek basins in leaner snow years).",
+       "hours": 6,
+       "miles": 3,
+       "title": "Approach to glacier high camp",
+       "gainFt": 5400,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach high camp on the Eldorado/Inspiration Glacier"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start to catch the couloir's snow/ice in firm morning condition. Simul-climb or short-pitch the couloir's 2-3 long pitches (up to WI2-3), top out near the summit ridge, then descend the East Ridge/Inspiration Glacier over the pass near Dorado Needle back to camp.",
+       "hours": 9,
+       "miles": 4,
+       "title": "NW Couloir summit push",
+       "gainFt": 1300,
+       "lossFt": 1300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start for firm snow/ice in the couloir."
+        },
+        {
+         "time": "4:30 AM",
+         "label": "Reach couloir base",
+         "detail": "Rope up, switch to crampons/tools."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Begin climbing",
+         "detail": "2-3 long pitches of snow/ice, simul-climbed or short-pitched depending on conditions."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Top out couloir",
+         "detail": "Join the upper mountain near the summit ridge."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Summit",
+         "detail": "8,872 ft."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at high camp",
+         "detail": "Via East Ridge / Inspiration Glacier descent."
+        }
+       ],
+       "objective": "Climb the NW Couloir to the 8,872 ft summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the approach back down to the Eldorado Creek trailhead.",
+       "hours": 3.5,
+       "miles": 3,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 5400,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Break camp and return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: a day up to glacier high camp, a day climbing the NW Couloir's 2-3 pitches to the 8,872 ft summit, and a day hiking out (~6,700 ft gain, ~10 mi round trip); very fit ice-climbing parties sometimes do it car-to-car in a single 11-21 hr push instead."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong fitness for the same steep, brushy Cascade River approach to glacier camp as the East Ridge, plus a longer (7-hr) technical summit day",
+      "packWeight": "Heavy overnight pack including ice screws/tools alongside glacier gear — 40+ lb typical"
+     },
+     "approachTime": "Same steep/brushy approach to glacier camp as the East Ridge, followed by a 04:30 alpine start for a 7-hr route day",
+     "requiredSkills": [
+      "steep snow/ice climbing (AI2)",
+      "ice screw placement and anchor building",
+      "roped glacier travel and crevasse rescue",
+      "avalanche hazard evaluation for a spring snowpack",
+      "exposed Class 3+ scrambling on the summit arête"
+     ],
+     "experienceLevel": "Advanced mountaineer with prior steep snow/ice leading experience"
+    }
+   }
+  }
+ ]
+}

@@ -1,5 +1,24 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4"
+import { allow, clientIp, DAY, HOUR, WEEK } from "../_shared/ratelimit.ts"
+
+// CORS on EVERY response, including errors. The browser sends apikey/authorization
+// headers (the gateway needs them), so the preflight has to allow them; and an error
+// response without Allow-Origin is unreadable to the page, which then shows a
+// generic failure instead of "try again tomorrow".
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+}
+const JSON_HEADERS = { ...corsHeaders, "Content-Type": "application/json" }
+
+// Caps on what one submission may carry. A real track is a few thousand points;
+// these exist so the endpoint cannot be used to park megabytes in the review queue.
+const MAX_POINTS = 20000
+const MAX_TEXT = 1000
+const clip = (v: unknown, n: number) => (typeof v === "string" ? v.slice(0, n) : undefined)
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL") || "",
@@ -120,20 +139,14 @@ function validateGpsQuality(
 serve(async (req) => {
   // Handle CORS
   if (req.method === "OPTIONS") {
-    return new Response("ok", {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
-    })
+    return new Response("ok", { headers: corsHeaders })
   }
 
   try {
     if (req.method !== "POST") {
       return new Response(JSON.stringify({ error: "Method not allowed" }), {
         status: 405,
-        headers: { "Content-Type": "application/json" }
+        headers: JSON_HEADERS
       })
     }
 
@@ -144,12 +157,48 @@ serve(async (req) => {
     if (!routeId || !gpxData || !Array.isArray(gpxData) || gpxData.length === 0) {
       return new Response(
         JSON.stringify({ error: "Missing or invalid routeId or gpxData" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: JSON_HEADERS }
       )
     }
 
-    // Rate limits, enforced server-side so they can't be bypassed:
-    // 10 submissions per email per 24h, 5 per route per week.
+    if (typeof routeId !== "string" || routeId.length > 200 || gpxData.length > MAX_POINTS ||
+        !gpxData.every((pt) => Array.isArray(pt) && pt.length >= 2 &&
+          Number.isFinite(pt[0]) && Number.isFinite(pt[1]) &&
+          Math.abs(pt[0]) <= 90 && Math.abs(pt[1]) <= 180)) {
+      return new Response(
+        JSON.stringify({ error: `Invalid track: need up to ${MAX_POINTS} [lat, lng] points` }),
+        { status: 400, headers: JSON_HEADERS }
+      )
+    }
+    if (climberEmail !== undefined && climberEmail !== null && climberEmail !== "" &&
+        !(typeof climberEmail === "string" && climberEmail.length <= 254 && EMAIL_RE.test(climberEmail))) {
+      return new Response(
+        JSON.stringify({ error: "That email address doesn't look right" }),
+        { status: 400, headers: JSON_HEADERS }
+      )
+    }
+
+    // Per-IP limits. The email limit below is keyed on an OPTIONAL field the caller
+    // chooses, so on its own it stopped nobody who left it blank. The IP comes from
+    // the platform's forwarding headers, not from the request body.
+    const ip = clientIp(req)
+    const ipOk = await allow(supabase, [
+      { bucket: "gps:submit:ip:hour", key: ip, limit: 10, windowSec: HOUR },
+      { bucket: "gps:submit:ip:day", key: ip, limit: 30, windowSec: DAY },
+      // Per route PER CALLER: the old global per-route cap let one stranger use up a
+      // route's weekly allowance and lock everyone else out of it.
+      { bucket: "gps:submit:route-ip", key: routeId + "|" + ip, limit: 5, windowSec: WEEK },
+    ])
+    if (!ipOk) {
+      return new Response(
+        JSON.stringify({ error: "Too many submissions from this connection. Try again later." }),
+        { status: 429, headers: { ...JSON_HEADERS, "Retry-After": "3600" } }
+      )
+    }
+
+    // Two more limits on top of the per-IP ones above: 10 per email per 24h (when an
+    // email is given), and a global 25 per route per week so no single route's review
+    // queue can be flooded from many connections.
     const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
     if (climberEmail) {
@@ -161,7 +210,7 @@ serve(async (req) => {
       if ((emailCount ?? 0) >= 10) {
         return new Response(
           JSON.stringify({ error: "Rate limit exceeded: max 10 submissions per day. Try again tomorrow." }),
-          { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "86400" } }
+          { status: 429, headers: { ...JSON_HEADERS, "Retry-After": "86400" } }
         )
       }
     }
@@ -170,10 +219,10 @@ serve(async (req) => {
       .select("*", { count: "exact", head: true })
       .eq("route_id", routeId)
       .gte("submitted_at", oneWeekAgo)
-    if ((routeCount ?? 0) >= 5) {
+    if ((routeCount ?? 0) >= 25) {
       return new Response(
         JSON.stringify({ error: "This route already has several recent submissions under review. Please check back next week." }),
-        { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "604800" } }
+        { status: 429, headers: { ...JSON_HEADERS, "Retry-After": "604800" } }
       )
     }
 
@@ -209,11 +258,11 @@ serve(async (req) => {
       .insert({
         route_id: routeId,
         gpx_data: gpxData,
-        climber_email: climberEmail,
-        climber_name: climberName || "Anonymous",
-        device_type: deviceType,
-        climb_date: climbDate,
-        notes: notes,
+        climber_email: climberEmail || null,
+        climber_name: clip(climberName, 80) || "Anonymous",
+        device_type: clip(deviceType, 80),
+        climb_date: clip(climbDate, 10),
+        notes: clip(notes, MAX_TEXT),
         quality_score: validation.score,
         // Always pending. This endpoint is unauthenticated, so it must never
         // be able to mark a submission approved -- approval is the admin-only
@@ -228,8 +277,8 @@ serve(async (req) => {
     if (submitError) {
       console.error("Database error:", submitError)
       return new Response(
-        JSON.stringify({ error: "Failed to store submission", details: submitError.message }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
+        JSON.stringify({ error: "Failed to store submission" }),
+        { status: 500, headers: JSON_HEADERS }
       )
     }
 
@@ -254,19 +303,15 @@ serve(async (req) => {
     }
 
     return new Response(JSON.stringify(response), {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      }
+      headers: JSON_HEADERS
     })
   } catch (error) {
     console.error("Error:", error)
     return new Response(
       JSON.stringify({
-        error: "Internal server error",
-        message: error instanceof Error ? error.message : "Unknown error"
+        error: "Internal server error"
       }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: JSON_HEADERS }
     )
   }
 })

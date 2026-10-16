@@ -1,0 +1,236 @@
+{
+ "file": "r581.json",
+ "results": [
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "Standard descent / loop vs out-and-back",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two genuine options, both described on the row: descent_text names the reversal over Baldy as the standard line (0 rappels) and explicitly describes the Royal Basin east-face exit with optional one or two short rappels; the itinerary plans that loop variant. Externally, one day party retraced over Baldy to the Maynard Burn Trail, and another descended through the trees (with a rappel) to the Royal Basin Trail and looped back in about 15 mi / 7,000 ft — both options exist.",
+   "sources": [
+    "https://mountainflamingo.com/2019-05-26-tyler-baldy-gray-wolf-ridge/",
+    "https://www.trailgroove.com/blogs/entry/508-hiking-gray-wolf-ridge-in-the-olympics-a-long-history/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "One-day vs overnight",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "partner_requirements gives two options — overnight via Royal Basin, or a very long single day via the Maynard Burn trail — and the itinerary plans the Maynard Burn single-day option, which the Partners line also lists. Externally, Maynard Burn parties do it as a day (15 mi / 7,000 ft loop; 11.5 mi day), while the Royal Basin loop is usually a multi-day backpack.",
+   "sources": [
+    "https://www.trailgroove.com/blogs/entry/508-hiking-gray-wolf-ridge-in-the-olympics-a-long-history/",
+    "https://mountainflamingo.com/2019-05-26-tyler-baldy-gray-wolf-ridge/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-16.095539252719"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "Ridge crest (Tyler-Baldy saddle) elevation",
+   "verdict": "fixed",
+   "correct_value": "6,200 ft (Tyler Peak–Baldy saddle, ~2.7 mi)",
+   "evidence": "The hiking-trail description puts the ridge top at 2.7 miles and 6,200 ft on the Maynard Burn route; the ridge article gives the saddle east of Baldy as 6,200 ft. 5,400 ft is where the unmarked trail leaves the steep ridge for the meadow below, not the saddle. The waypoint and its \"5,400-6,200\" copy in the approach variant are corrected.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/baldy",
+    "https://en.wikipedia.org/wiki/Gray_Wolf_Ridge",
+    "http://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 6200,
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Ridge crest (Tyler-Baldy saddle) elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "At about 2.7 miles and 5,400-6,200 ft it tops out",
+     "replace": "At about 2.7 miles and 6,200 ft it tops out",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Ridge crest (Tyler-Baldy saddle) elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "Saddle to Baldy summit",
+   "verdict": "fixed",
+   "correct_value": "roughly a mile, past Pt. 6537, from the saddle to Baldy",
+   "evidence": "The trail description reaches the ridge top at 2.7 mi and Baldy at about 3.6 mi one-way (7.2 mi round trip), so roughly 0.9 mi beyond the saddle, not 0.15 mi. A separate trip report reaches the ridge at ~6,200 ft and then crosses East Baldy (Pt. ~6520) before Baldy; the row's own waypoints (saddle 2.7 mi, Pt. 6537 3.3 mi, Baldy 4.0 mi) agree. The vertical figure is dropped since the intermediate point adds re-ascent.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/baldy",
+    "https://onehikeaweek.com/2023/10/22/baldy-olympic-mountains/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the saddle it's about 0.15 mile and 300 vertical feet more to Baldy's summit",
+     "replace": "From the saddle it's roughly a mile more, past Pt. 6537, to Baldy's summit",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Saddle to Baldy summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "it is about 0.15 mile and 300 vertical feet more to Baldy's summit",
+     "replace": "it is roughly a mile more, past Pt. 6537, to Baldy's summit",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Saddle to Baldy summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "Gray Wolf River ford on the approach",
+   "verdict": "fixed",
+   "correct_value": "The out bridge is on the Gray Wolf River Trail (old Baldy trail via the Gray Wolf); the Maynard Burn approach crosses only Mueller Creek.",
+   "evidence": "The washed-out Gray Wolf River bridge with no plans to rebuild is on the Gray Wolf Trail route to Baldy (\"Baldy cannot be reached this way\"), with a dangerous ford. Descriptions of the Maynard Burn approach from the end of FR 2860-120 mention only a small creek crossing just below the start. The Royal Basin variant starts at the Upper Dungeness trailhead and does not use it either.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/baldy-trail-historical-via-gray-wolf-trail",
+    "http://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm",
+    "https://www.wta.org/go-hiking/hikes/baldy"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "expect": "Gray Wolf River bridge on the approach is out — required ford, hazardous at high water",
+     "value": "Gray Wolf River bridge on the old Gray Wolf Trail route to Baldy is out — that way in needs a hazardous ford; the Maynard Burn approach does not cross the river",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Gray Wolf River ford on the approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "The Gray Wolf River bridge on the Maynard Burn approach is out with no NPS/USFS rebuild planned — expect a ford.",
+     "replace": "The Gray Wolf River bridge on the Gray Wolf Trail is out with no rebuild planned, so that way in needs a ford; the Maynard Burn approach does not cross the river.",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Gray Wolf River ford on the approach"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      5
+     ],
+     "expect": "The Gray Wolf River bridge on the alternative approach is out — a required and hazardous ford at high water",
+     "value": "The Gray Wolf River bridge on the old Gray Wolf Trail route is out — do not plan to come in that way without a hazardous ford",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Gray Wolf River ford on the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "Trailhead road",
+   "verdict": "fixed",
+   "correct_value": "Trailhead at the end of FR 2860-120 (Palo Alto Rd → FR 2880 → FR 2870 → FR 2860 → 2860-120), room for about a dozen cars at the berm",
+   "evidence": "One trail description drives FR 2880 1.7 mi, FR 2870 2.6 mi, FR 2860 4.9 mi, then the spur (Road 120) 1.6 mi to a parking area for about 12 cars. Another gives the same chain — FR 2880, FR 2870, right on FR 2860, then 2860-120 to its end. A third describes a wide parking area at the dirt barrier at road's end. No source puts the trailhead at a hairpin on FR 2870 or uses FR 2927.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/baldy",
+    "http://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm",
+    "https://www.summitpost.org/baldy/536450"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "FR 2870 (via FR 2880 and FR 2927 from Palo Alto Road)",
+     "value": "FR 2860-120 (via FR 2880, FR 2870 and FR 2860 from Palo Alto Road)",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Trailhead road"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "very limited trailhead parking (roughly 3 spaces at the upper hairpin turnout)",
+     "replace": "parking for about a dozen cars at the road-end berm",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Trailhead road"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "FR 2880 → FR 2927 → FR 2870 to the trailhead",
+     "replace": "FR 2880 → FR 2870 → FR 2860 → FR 2860-120 to the road end",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Trailhead road"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Leave FR 2870 trailhead",
+     "replace": "Leave FR 2860-120 trailhead",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Trailhead road"
+    }
+   ]
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "fact": "Entrance fee",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Northwest Forest Pass at the trailhead; no park entrance fee",
+   "evidence": "parking_pass, passRequired, permit and overnight_permit all say the trailhead is on national forest land needing a Northwest Forest Pass, with a park permit only for overnight stays; access.notes alone mentions an entrance fee. The trail description lists an America the Beautiful or Northwest Forest Pass for this trailhead.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/baldy"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only the Northwest Forest Pass and, for overnight stays inside the park, the wilderness camping permit apply.",
+     "id": "wa_gray_wolf_ridge_se_slopes",
+     "fact": "Entrance fee"
+    }
+   ]
+  }
+ ]
+}

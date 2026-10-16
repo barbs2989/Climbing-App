@@ -1,0 +1,753 @@
+{
+ "zones": [
+  {
+   "zone": "middle-fork-north-bend",
+   "overnightPermit": {
+    "what": "Free self-issue Alpine Lakes Wilderness permit",
+    "where": "Fill one out at the trailhead kiosk before an overnight in the wilderness. Middle Fork Campground is a fee campground reserved separately.",
+    "url": null
+   }
+  },
+  {
+   "zone": "monte-cristo",
+   "overnightPermit": {
+    "what": "Free self-issue Henry M. Jackson Wilderness permit",
+    "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park.",
+    "url": null
+   }
+  },
+  {
+   "zone": "mount-saul",
+   "overnightPermit": {
+    "what": "Free self-issue Glacier Peak Wilderness permit",
+    "where": "Fill one out at the trailhead register at the end of the White River road.",
+    "url": null
+   }
+  },
+  {
+   "zone": "mountain-loop",
+   "overnightPermit": {
+    "what": "No overnight permit required outside the wilderness",
+    "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register.",
+    "url": null
+   }
+  },
+  {
+   "zone": "mountain-loop-north",
+   "overnightPermit": {
+    "what": "Free self-issue Boulder River Wilderness permit",
+    "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park.",
+    "url": null
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "main": [
+    "Middle Fork Campground"
+   ],
+   "onRoute": [
+    "Glade Saddle Bivy",
+    "Garfield Mountain improvised bivouac"
+   ],
+   "drop": [
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+    "Hester Lake and Myrtle Lake basins",
+    "Green Ridge Lake",
+    "Rainy Lake",
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Normally a long day from the road; unsure whether the East Peak line via Green Ridge Lake is part of this multi-summit route, so that lake was dropped."
+  },
+  {
+   "id": "wa_mount_price_hester_lake_route",
+   "main": [
+    "Hester Lake and Myrtle Lake basins",
+    "Middle Fork Campground"
+   ],
+   "onRoute": [
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek"
+   ],
+   "drop": [
+    "Green Ridge Lake",
+    "Rainy Lake",
+    "Garfield Mountain improvised bivouac",
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Hester Lake is the documented overnight for Price; the Dingford roadside pull-outs are kept as the trailhead option but current dispersed-camping rules there are unclear."
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "main": [
+    "Hester Lake and Myrtle Lake basins",
+    "Middle Fork Campground"
+   ],
+   "onRoute": [
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek"
+   ],
+   "drop": [
+    "Green Ridge Lake",
+    "Rainy Lake",
+    "Garfield Mountain improvised bivouac",
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Route passes Hester Lake on the unmaintained Hester Lake trail, so it shares the Hester basin camp with the Hester Lake Route."
+  },
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "main": [],
+   "onRoute": [
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "drop": [
+    "Middle Fork Campground",
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+    "Hester Lake and Myrtle Lake basins",
+    "Green Ridge Lake",
+    "Rainy Lake",
+    "Garfield Mountain improvised bivouac"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight camping — day use only",
+    "where": "Mount Teneriffe sits in the Mount Si Natural Resources Conservation Area, which is day use only; a Discover Pass is needed to park.",
+    "url": "https://www.dnr.wa.gov/MountSi"
+   },
+   "note": "Day hike in a day-use-only conservation area; no camp exists, so no main and nothing added."
+  },
+  {
+   "id": "wa_mount_teneriffe_standard_route",
+   "main": [],
+   "onRoute": [
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "drop": [
+    "Middle Fork Campground",
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+    "Hester Lake and Myrtle Lake basins",
+    "Green Ridge Lake",
+    "Rainy Lake",
+    "Garfield Mountain improvised bivouac"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight camping — day use only",
+    "where": "Mount Teneriffe sits in the Mount Si Natural Resources Conservation Area, which is day use only; a Discover Pass is needed to park.",
+    "url": "https://www.dnr.wa.gov/MountSi"
+   },
+   "note": "Day hike in a day-use-only conservation area; no camp exists, so no main and nothing added."
+  },
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "main": [
+    "Rainy Lake",
+    "Middle Fork Campground"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+    "Hester Lake and Myrtle Lake basins",
+    "Green Ridge Lake",
+    "Garfield Mountain improvised bivouac",
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Rainy Lake sits under the south face on the Pratt connector approach; most parties day-trip from the Middle Fork trailhead."
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "main": [
+    "Upper Garfield Mountain Lake",
+    "Middle Fork Campground"
+   ],
+   "onRoute": [
+    "Green Ridge Lake"
+   ],
+   "drop": [
+    "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+    "Hester Lake and Myrtle Lake basins",
+    "Rainy Lake",
+    "Garfield Mountain improvised bivouac",
+    "Mount Teneriffe and the Mount Si conservation area, no overnight"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The Green Ridge path forks toward Green Ridge Lake at about 4,100 ft, so the lake is a short detour off the line; most parties do Treen in a long day."
+  },
+  {
+   "id": "wa_cadet_peak_scramble",
+   "main": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Monte Cristo townsite campground, four miles up the closed road"
+   ],
+   "onRoute": [
+    "Barlow Pass roadhead"
+   ],
+   "drop": [
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass",
+    "Ray's Knoll, Glacier Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard line climbs out of Glacier Basin; the Ray's Knoll waypoint is a duplicate of the Glacier Basin bivy entry."
+  },
+  {
+   "id": "wa_columbia_peak_scramble",
+   "main": [
+    "Twin Lakes basin, under the west face of Columbia",
+    "Monte Cristo townsite campground, four miles up the closed road"
+   ],
+   "onRoute": [
+    "Barlow Pass roadhead",
+    "Silver Lake, below Poodle Dog Pass"
+   ],
+   "drop": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Twin Lakes via Poodle Dog Pass is the standard base; Silver Lake is a short side trail off Poodle Dog Pass."
+  },
+  {
+   "id": "wa_east_wilmans_spire",
+   "main": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Monte Cristo townsite campground, four miles up the closed road"
+   ],
+   "onRoute": [
+    "Barlow Pass roadhead"
+   ],
+   "drop": [
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Wilmans Spires divide Glacier Basin from Seventy-Six Basin and are approached from Glacier Basin."
+  },
+  {
+   "id": "wa_foggy_peak_scramble",
+   "main": [
+    "Monte Cristo townsite campground, four miles up the closed road",
+    "Glacier Basin — Ray's Knoll and Mystery Hill"
+   ],
+   "onRoute": [
+    "Barlow Pass roadhead"
+   ],
+   "drop": [
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Route leaves the Glacier Basin trail at about 4,200 ft, just below the basin; often a day from the townsite."
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "main": [
+    "Virgin Lake"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Monte Cristo townsite campground, four miles up the closed road",
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass",
+    "Barlow Pass roadhead"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Blanca Lake approach from the North Fork Skykomish; Blanca Lake itself is closed to camping, so Virgin Lake and the ridge above it are the overnight option; the Monte Cristo side camps serve a different approach."
+  },
+  {
+   "id": "wa_kyes_peak_northeast_ridge",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Monte Cristo townsite campground, four miles up the closed road",
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass",
+    "Barlow Pass roadhead"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Quartz Creek and Curry Gap approach from the Sauk side; no documented camp found, and every listed camp is on the Monte Cristo side, so nothing added."
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "main": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Monte Cristo townsite campground, four miles up the closed road"
+   ],
+   "onRoute": [
+    "Barlow Pass roadhead"
+   ],
+   "drop": [
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass",
+    "Monte Cristo townsite",
+    "Glacier Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard approach is through Glacier Basin; the townsite and Glacier Basin waypoints duplicate the bivy entries."
+  },
+  {
+   "id": "wa_wilmans_peak_scramble",
+   "main": [
+    "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "Monte Cristo townsite campground, four miles up the closed road"
+   ],
+   "onRoute": [
+    "Barlow Pass roadhead"
+   ],
+   "drop": [
+    "Twin Lakes basin, under the west face of Columbia",
+    "Silver Lake, below Poodle Dog Pass",
+    "Monte Cristo townsite",
+    "Mystery Hill camp (Glacier Basin)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Approached through Glacier Basin; the townsite and Mystery Hill waypoints duplicate the bivy entries."
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "main": [
+    "Airplane Lake"
+   ],
+   "onRoute": [
+    "White River road end trailhead",
+    "The Indian Creek valley camps and the Airplane Lake junction site",
+    "The east slope above Airplane Lake — no established camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Airplane Lake is consistently the overnight; the other three entries are on the line from the road to the summit."
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "main": [
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Vega Tower routes leave the Sunrise Mine trail at the 4,300 ft switchback and are normally done in a day, so only the road campgrounds apply."
+  },
+  {
+   "id": "wa_diamond_in_the_rough",
+   "main": [
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "add": [
+    {
+     "name": "Bivy at the base of Sloan's southwest face",
+     "type": "bivy",
+     "capacity": "A few small tent or bivy sites",
+     "water": "Running water near the base of the routes through midsummer",
+     "permit": "Free self-issue wilderness permit at the trailhead",
+     "notes": "Reached from the Bedal Creek trailhead by the west-face approach, traversing over a notch to the southwest. Parties who do not climb in a single long day sleep here.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": {
+    "what": "Free self-issue Henry M. Jackson Wilderness permit",
+    "where": "Fill one out at the trailhead register before heading in.",
+    "url": null
+   },
+   "note": "Southwest face routes are done in a big day or with a bivy at the base via Bedal Creek; the Cougar Creek heather benches serve the Corkscrew side, not this face."
+  },
+  {
+   "id": "wa_fire_on_the_mountain",
+   "main": [
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "add": [
+    {
+     "name": "Bivy at the base of Sloan's southwest face",
+     "type": "bivy",
+     "capacity": "A few small tent or bivy sites",
+     "water": "Running water near the base of the routes through midsummer",
+     "permit": "Free self-issue wilderness permit at the trailhead",
+     "notes": "Reached from the Bedal Creek trailhead by the west-face approach, traversing over a notch to the southwest. Parties who do not climb in a single long day sleep here.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": {
+    "what": "Free self-issue Henry M. Jackson Wilderness permit",
+    "where": "Fill one out at the trailhead register before heading in.",
+    "url": null
+   },
+   "note": "Done in a big day or with a bivy at the base with running water; bivy elevation not confirmed so omitted."
+  },
+  {
+   "id": "wa_fish_whistle",
+   "main": [
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Vesper north face routes are based from Lake Elan or done as a day from the road."
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "main": [
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same day approach as the other Vega Tower routes; no camp on the talus traverse."
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "main": [
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Usually a day hike; Vesper basin is only a split-trip option just beyond Headlee Pass."
+  },
+  {
+   "id": "wa_northwest_buttress",
+   "main": [
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "add": [
+    {
+     "name": "Bivy at the base of Sloan's southwest face",
+     "type": "bivy",
+     "capacity": "A few small tent or bivy sites",
+     "water": "Running water near the base of the routes through midsummer",
+     "permit": "Free self-issue wilderness permit at the trailhead",
+     "notes": "On the Bedal Creek approach below the west and southwest faces. Parties who do not climb in a single long day sleep near the base of the face.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": {
+    "what": "Free self-issue Henry M. Jackson Wilderness permit",
+    "where": "Fill one out at the trailhead register before heading in.",
+    "url": null
+   },
+   "note": "West face approach via Bedal Creek; the added base bivy is shared with the southwest face routes and is approximate for this start."
+  },
+  {
+   "id": "wa_ragged_edge",
+   "main": [
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake Elan below the north face is the standard camp; many do it in a day."
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "main": [
+    "Foggy Lake, Gothic Basin"
+   ],
+   "onRoute": [
+    "Gothic Basin tarns"
+   ],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Reached through Gothic Basin; a very long day or an overnight in Gothic Basin, where camping is limited and fragile."
+  },
+  {
+   "id": "wa_sloan_peak_corkscrew",
+   "main": [
+    "Ridge above the Sloan Glacier",
+    "Bedal-Sloan saddle"
+   ],
+   "onRoute": [
+    "Bedal Creek roadhead"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": {
+    "what": "Free self-issue Henry M. Jackson Wilderness permit",
+    "where": "Fill one out at the trailhead register before heading in.",
+    "url": null
+   },
+   "note": "Route text uses the Cougar Creek approach while the listed camps are on the Bedal side; the two approaches appear to meet near the Bedal-Sloan saddle, but that join is not fully confirmed."
+  },
+  {
+   "id": "wa_sloan_peak_r1",
+   "main": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Free self-issue Henry M. Jackson Wilderness permit",
+    "where": "Fill one out at the trailhead register before heading in.",
+    "url": null
+   },
+   "note": "Upper Corkscrew finish, so the Corkscrew high camp applies."
+  },
+  {
+   "id": "wa_true_grit_2",
+   "main": [
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same Lake Elan base as the other Vesper north face routes."
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "main": [
+    "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+    "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sloan Peak high camp — heather benches above Cougar Creek",
+    "Foggy Lake, Gothic Basin",
+    "Monte Cristo townsite, walk-in from Barlow Pass",
+    "Bedal Campground, Mountain Loop Highway"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same Lake Elan base as the other Vesper north face routes."
+  },
+  {
+   "id": "wa_big_four_mountain_northwest_ridge",
+   "main": [
+    "Big Four north-side staging and base bivouac"
+   ],
+   "onRoute": [],
+   "drop": [],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Park with a Northwest Forest Pass; there is no wilderness permit for this route.",
+    "url": null
+   },
+   "note": "Car-to-car objective; the single entry is the only relevant one."
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "main": [
+    "Big Four north-side staging and base bivouac"
+   ],
+   "onRoute": [],
+   "drop": [],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Park with a Northwest Forest Pass; there is no wilderness permit for this route.",
+    "url": null
+   },
+   "note": "Car-to-car ice line from the Ice Caves trail."
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "main": [
+    "Bathtub Lakes basin, east of Mount Pilchuck"
+   ],
+   "onRoute": [],
+   "drop": [],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Park with a Northwest Forest Pass; there is no wilderness permit for this route.",
+    "url": null
+   },
+   "note": "Bathtub Lakes is the camp for the east side approach from Pinnacle Lake."
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Bathtub Lakes basin, east of Mount Pilchuck"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Park with a Northwest Forest Pass; there is no wilderness permit for this route.",
+    "url": null
+   },
+   "note": "Short day hike; Bathtub Lakes serves the east side, not this trail, and no camp was added."
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "main": [
+    "Goat Flats",
+    "Tin Can Gap high camp"
+   ],
+   "onRoute": [
+    "Saddle Lake"
+   ],
+   "drop": [
+    "Three Fingers Lookout, south summit"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "North Peak is climbed from Goat Flats or Tin Can Gap; the lookout is on the South Peak, a different summit."
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "main": [
+    "Tin Can Gap high camp",
+    "Goat Flats"
+   ],
+   "onRoute": [
+    "Saddle Lake"
+   ],
+   "drop": [
+    "Three Fingers Lookout, south summit"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Middle Peak is often climbed from a glacier camp near the col, which is not in the list; Tin Can Gap is the closest listed camp."
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "main": [
+    "Goat Flats",
+    "Three Fingers Lookout"
+   ],
+   "onRoute": [
+    "Saddle Lake",
+    "Tin Can Gap"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Goat Flats is the usual camp; the lookout is a popular overnight on the summit itself."
+  },
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "main": [
+    "Whitehorse Ridge platform above Lone Tree Pass"
+   ],
+   "onRoute": [
+    "Moose Creek bridge roadhead",
+    "Below High Pass at the first running water"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The ridge platform past Lone Tree Pass is the standard high camp."
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "main": [
+    "Whitehorse high camp, benches near Lone Tree Pass",
+    "Whitehorse Community Park campground, Darrington"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Whitehorse Ridge Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Whitehorse Ridge Camp is a duplicate of the Lone Tree Pass high camp entry."
+  }
+ ],
+ "misassigned": [
+  "wa_mount_teneriffe_kamikaze_trail: Middle Fork valley camp list does not serve Teneriffe, which is a day-use-only area on the Mount Si road.",
+  "wa_mount_teneriffe_standard_route: Middle Fork valley camp list does not serve Teneriffe, which is a day-use-only area on the Mount Si road.",
+  "wa_kyes_peak_glaciated_scramble: route uses the Blanca Lake approach from the North Fork Skykomish, but its list is the Monte Cristo side apart from Virgin Lake.",
+  "wa_kyes_peak_northeast_ridge: route uses the Quartz Creek and Curry Gap approach, but every listed camp is on the Monte Cristo side.",
+  "wa_beyond_redlining, wa_marvin_s_ear, wa_fish_whistle, wa_ragged_edge, wa_true_grit_2, wa_vesper_peak_north_face_ragged_edge, wa_morning_star_peak_standard: Sunrise Mine routes carry Sloan, Gothic Basin, Monte Cristo and Bedal camps from other approaches.",
+  "wa_diamond_in_the_rough, wa_fire_on_the_mountain, wa_northwest_buttress: Sloan west face routes carry the Cougar Creek Corkscrew camp and Sunrise Mine and Barlow Pass camps; their base bivy was missing."
+ ]
+}

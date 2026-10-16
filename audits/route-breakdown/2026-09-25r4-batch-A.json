@@ -1,0 +1,122 @@
+{
+  "wa_the_monk_west_cracks_right_crack": {
+    "area": "wa_cathedral_peak_pasayten",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "notes": "Start up the right-hand of the two parallel cracks on the left side of The Monk's South Face (the left one is the neighbouring Left Crack). Crack climbing on natural gear; bring a wide spread of nut sizes. The route goes as one or two pitches, so a party with enough rope can run this straight into the upper section."
+      },
+      {
+        "pitch": "P2 (crux)",
+        "grade": "5.7",
+        "crux": true,
+        "notes": "The upper part of the same crack holds the hardest moves of the route. Protection is all natural; keep a range of nuts in reserve for this section rather than spending them low."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept both labels. Removed the unsourced '5.6-5.7' grade from P1 (no source grades the lower crack). P2 carries the route grade 5.7 and the crux flag only because the source places the route's crux in the upper section. No lengths, bolts or anchors are given anywhere, so none added. Added that the route goes as 1-2 pitches and needs a wide range of nuts. Single source, so medium at most.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack",
+        "https://www.mountainproject.com/area/109095714/cathedral-peak"
+      ],
+      "other_findings": "descent_text opens with 'Rappel the route on gear from the top of the second pitch — quickest and simplest'. The one source I could reach says nothing about rappelling this line; worth a reviewer's look."
+    }
+  },
+  "wa_the_monk_le_gibet": {
+    "area": "wa_cathedral_peak_pasayten",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower face",
+        "notes": "Start at the lowest point of The Monk's South Face and climb straight up the middle of the face on natural gear toward the prominent roof at mid-height. Bring a wide range of nuts and cams; the face takes five pitches in all."
+      },
+      {
+        "pitch": "Mid-face roof",
+        "grade": "5.8",
+        "crux": true,
+        "notes": "The main difficulty of the route: pass the big mid-face roof on its left side, not through it or to its right. Get good gear in before committing to the moves around the roof's left end."
+      },
+      {
+        "pitch": "Upper face",
+        "notes": "Above the roof, continue up the middle of the face to the top of The Monk. The descent from the top is by rappel down the northeast gully, not back down this face."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three sections, relabelled from 'P1-P2' / 'P3 (crux area)' / 'P4-P5' to descriptive names because no source says which pitch the roof is on (P3 was inferred from 'mid-face'). Removed the unsourced '5.7-5.8' grades on the lower and upper sections. The roof section keeps 5.8 + crux because the source calls passing left of the roof the route's primary challenge. No lengths, bolts or anchors are given anywhere, so none added. Single source.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109095945/the-monk-le-gibet",
+        "https://www.mountainproject.com/area/109095714/cathedral-peak"
+      ]
+    }
+  },
+  "wa_the_monk_scabo": {
+    "area": "wa_cathedral_peak_pasayten",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Start ledge",
+        "notes": "Begin from a large ledge near the right-hand side of the lowest part of The Monk's South Face. From here the line heads up the right side of the face. Protection is all natural, so bring a wide range of nuts and cams."
+      },
+      {
+        "pitch": "Right side of the face",
+        "notes": "Five pitches that wander back and forth up the right-hand side of the South Face to the top of The Monk. The line changes direction repeatedly, so extend placements to keep the rope running straight. The descent from the top is by rappel down the northeast gully."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 -> 2 entries. The stored P1 / P2-P4 / P5 split and its grades (5.7-5.8, 5.8-5.9, 5.9) are not in any source. The only description gives the start (large ledge, right side of the lowest part of the South Face), the zigzag line up the right side, 5 pitches, 5.9 and a wide rack. No source says where the 5.9 crux is, so no section carries a grade or crux flag. 'Long slings essential to manage drag' was an inference from 'zigzag'; kept only as general advice to extend placements. Single source.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109096056/the-monk-scabo",
+        "https://www.mountainproject.com/area/109095714/cathedral-peak"
+      ],
+      "other_findings": "The source's own prose spells the name 'Scarbo' while its title says 'Scabo'; the catalog uses 'Scabo'. I did not verify which is correct."
+    },
+    "allow_fewer_entries": true
+  },
+  "wa_ne_ridge": {
+    "area": "wa_cathedral_peak_pasayten",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower ridge",
+        "grade": "5.3",
+        "notes": "Gain the ridge by scrambling up the grassy southeast slope from the Boundary Trail, then follow the long, broken crest that runs from The Pope toward Cathedral's summit. Each pitch is mostly scrambling with a move or two of 5.3, graded old-school, so expect it to feel stiffer than the number. A light rack of nuts and several long slings for horns is enough."
+      },
+      {
+        "pitch": "Dike and crux pitches",
+        "grade": "5.3",
+        "crux": true,
+        "notes": "About 400 ft below the summit the ridge crosses a dike. The two short pitches just above it hold the hardest climbing on the route."
+      },
+      {
+        "pitch": "Summit scramble",
+        "grade": "4th class",
+        "notes": "The route finishes with an airy, exposed 4th-class scramble to the summit. The grade is easy but the exposure is real, and a rope may be welcome here. Descend by the regular walk-off to the west."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three sections, relabelled from 'P1-P4' / 'P5-P6' / 'P7' because no source maps the dike or the summit scramble to pitch numbers. Fixed a misreading: the stored row said the route descends about 400 ft below the summit, but the source says the ridge crosses a dike about 400 ft below the summit. Replaced the non-token grade '5.3 mixed w/ scrambling' with '5.3' (the source says every pitch has a move or two of 5.3). Added how the ridge is gained and the rack. No lengths are given anywhere. Single source.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109095842/ne-ridge",
+        "https://www.mountainproject.com/area/109095714/cathedral-peak"
+      ],
+      "other_findings": "The approach column says NE Ridge 'is gained by continuing up and around toward the ridgeline running north' from the South Face base. The source instead has climbers scramble the grassy SE slope up from the Boundary Trail to join the ridge. The rappels and descent_text columns say a short rappel is 'often useful' to get off the summit ridge. The source says only to descend the regular walk-up route to the west, with no mention of a rappel."
+    }
+  },
+  "wa_north_face_left_buttress": {
+    "skip_reason": "Not researched: the web search and fetch tools hit a session limit before this route could be looked up. Retry in a later batch. The stored table (8 entries) is untouched."
+  },
+  "wa_gato_negro": {
+    "skip_reason": "Not researched: the web search and fetch tools hit a session limit before this route could be looked up. Retry in a later batch. The stored table (12 entries, 6 of them empty) is untouched."
+  },
+  "wa_ellation": {
+    "skip_reason": "Not researched: the web search and fetch tools hit a session limit before this route could be looked up. Retry in a later batch. The stored table (8 entries) is untouched."
+  },
+  "wa_garfield_mountain_infinite_bliss": {
+    "skip_reason": "Not researched: the web search and fetch tools hit a session limit before this route could be looked up. Retry in a later batch. The stored table (4 entries) is untouched."
+  }
+}

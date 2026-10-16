@@ -1,0 +1,516 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "area_id": "wa_mount_rainier",
+   "name": "Liberty Ridge",
+   "discipline": "alpine",
+   "grade": "Grade IV–V, steep snow/ice to ~60–70°",
+   "grade_system": "yds",
+   "grade_num": null,
+   "pitches": 6,
+   "length_m": 1680,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Ome Daiber, Will Borrow, and Arnold Campbell, September 28-October 1, 1935 (first ascent from the Carbon River, finishing at Paradise, ~52 hours car-to-summit); second ascent not until 1955 (Dave Mahre, Marcel Schuster, Mike McGuire, Gene Prater)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "May-June, before too much snow melts off the ridge and exposes loose rock, but after the worst of winter storms",
+   "description": null,
+   "gear": [
+    "Two ice tools",
+    "4 to 6 ice screws for placements and V-thread anchors",
+    "2 to 3 snow pickets for the sustained steep snow/ice sections",
+    "Small rock rack (a handful of cams and stoppers) for the rock band low on the ridge",
+    "60m rope",
+    "Crampons, helmet, harness, and standard glacier travel/crevasse rescue kit"
+   ],
+   "hazards": [
+    "Constant rock and icefall — Liberty Ridge is statistically one of the deadliest routes on the mountain",
+    "Serac threat from the Willis Wall and the summit ice cap above the Black Pyramid",
+    "Steep firm ice/névé to 60–70° on the upper ridge and the bergschrund",
+    "Avalanche on the Carbon Glacier approach and ridge after storms",
+    "Committing position — escape becomes very difficult once high on the ridge"
+   ],
+   "verif": null,
+   "overview": "Liberty Ridge is the most famous hard route on Mount Rainier and one of the classic North American alpine climbs — a soaring ice-and-snow arête splitting the mountain's enormous north face between the Willis Wall and Liberty Wall. It is steep, sustained, committing, and seriously exposed to rock and icefall, and it has a sobering accident record. This is an objective for experienced alpinists with strong steep-snow/ice skills and the judgment to move fast and time the hazards.",
+   "beta": "Grade IV alpine ice climbing with 40-60 degree steep snow and ice; 5,512 ft technical climbing from ridge base (8,600 ft) to Liberty Cap (14,112 ft); requires Alpine Ice Grade III+ experience and multi-day expedition commitment; crux is sustained steep ice and exposed ridge sections with high rockfall hazard from Willis Wall above Carbon Glacier",
+   "turnaround": "Judgment-based: if you can't reach Thumb Rock or the upper ridge on schedule, or the snow is warming/unstable, retreat. There is no easy bail high on the route.",
+   "auto_generated": true,
+   "alpine_grade": "IV",
+   "rock_grade": null,
+   "ice_grade": "AI2-3",
+   "gain_ft": 11500,
+   "loss_ft": 11500,
+   "dist_km": 16.1,
+   "max_angle": 60,
+   "rappels": "No fixed rappel anchors on the ridge; the usual descent is the Emmons-Winthrop glacier route, with no rappels. A party forced to retreat in poor conditions may need rappels on anchors it builds itself.",
+   "commitment": "IV",
+   "face": "North side, between Liberty Wall and Willis Wall",
+   "permit": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's climbing registration; overnight high camps also need a wilderness permit.",
+   "comms": "Cell coverage is inconsistent; a PLB/satellite device is strongly advised given the route's remoteness and lack of other parties.",
+   "descent": "From the summit area, traverse the upper Winthrop Glacier beneath Columbia Crest and pick up the Emmons-Winthrop route down to Camp Schurman at Steamboat Prow. Cross the prow and descend the Inter Glacier into Glacier Basin, then follow the trail out to the White River trailhead. This returns to the trailhead you started from, but it does not retrace the approach: the St. Elmo Pass, Curtis Ridge and Carbon Glacier leg is not reversed. Do not plan on downclimbing Liberty Ridge itself. Parties who instead carry over the summit and descend the Disappointment Cleaver to Camp Muir finish at Paradise, a different trailhead that needs a car shuttle.",
+   "obj_haz": [
+    "Sustained steep ice and mixed climbing (WI2-3)",
+    "Exposure on narrow ridges",
+    "Rockfall and icefall hazards",
+    "Avalanche on steep slopes",
+    "Severe weather and whiteout conditions",
+    "Hypothermia and frostbite in extreme cold",
+    "Acute mountain sickness at altitude"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.9024,
+     "lng": -121.6438,
+     "elev": 4300,
+     "name": "White River Campground (Glacier Basin Trailhead)",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 46.952,
+     "lng": -121.818,
+     "elev": 4900,
+     "name": "Mowich Lake Camp",
+     "type": "Campsite",
+     "distMi": 0.5
+    },
+    {
+     "lat": 46.89,
+     "lng": -121.8,
+     "elev": 7300,
+     "name": "Puyallup Winthrop Junction Camp",
+     "type": "Campsite",
+     "distMi": 9
+    },
+    {
+     "lat": 46.875,
+     "lng": -121.775,
+     "elev": 8500,
+     "name": "Puyallup Glacier Serac Zone",
+     "type": "Hazard",
+     "distMi": 11
+    },
+    {
+     "lat": 46.86298,
+     "lng": -121.77486,
+     "elev": 14112,
+     "name": "Liberty Cap",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     46.95,
+     -121.82
+    ],
+    [
+     46.952,
+     -121.818
+    ],
+    [
+     46.89,
+     -121.8
+    ],
+    [
+     46.875,
+     -121.775
+    ],
+    [
+     46.849,
+     -121.769
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "mountaineering",
+    "ice",
+    "mixed"
+   ],
+   "timing": {
+    "totalHrs": 27,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 6.67,
+    "recommendedStart": "1:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "From White River Campground, hike via Glacier Basin to St. Elmo Pass, then descend and cross the Winthrop Glacier to a camp near 7,400 ft.",
+      "fromTo": "Approach to base camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "note": "Moderate snow/ice climbing up the lower ridge to the exposed bivy at Thumb Rock, where most parties dig tent platforms into the snow.",
+      "fromTo": "Climb to Thumb Rock",
+      "section": "Approach"
+     },
+     {
+      "hrs": 12,
+      "note": "The most committing day: alpine start onto steep ice above the bergschrund and across the summit ice cap, then descend the Emmons-Winthrop to Camp Schurman.",
+      "fromTo": "Summit day",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Descend the Inter Glacier and hike through Glacier Basin back to the White River trailhead.",
+      "fromTo": "Exit to White River",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Per person: two technical ice tools, 12-point crampons, helmet, harness. Per team: 30–60 m rope (often two for rappels), 4–6 ice screws, 2–3 pickets, a light rock rack (small cams/nuts) for the Black Pyramid, V-thread tool, crevasse-rescue kit.",
+   "what_to_bring": [
+    "technical alpine kit",
+    "hard shell + warm layers",
+    "mountaineering/technical boots",
+    "glacier glasses/goggles",
+    "headlamp",
+    "bivy gear",
+    "stove",
+    "blue bags"
+   ],
+   "pro_tips": [
+    "Climb it early season (mid-May to mid-June) when it's frozen and the icefall is quieter",
+    "Move fast and light; the route punishes slow parties with more hazard exposure",
+    "Bivy at Thumb Rock and start the upper ridge very early to beat warming",
+    "Have a solid weather window — getting caught high on the ridge in a storm is dangerous"
+   ],
+   "watch_out": [
+    "Objective hazards from Thumb Rock itself and rock bands above at 10,500 ft bivy area",
+    "Active avalanche discharge documented: 'Avalanche from Willis Wall' photo evidence of active snow sloughs from adjacent terrain",
+    "Vertical ice pitches at bergschrund crossing (5-8 ft sections)",
+    "Optional short 70-80 degree ice pitch through the rock band just above Thumb Rock - the usual line goes around it on the left",
+    "Sustained 40-60 degree ice climbing approaching Liberty Cap Glacier",
+    "50-60 degree steep snow/ice faces on east ridge above Black Pyramid",
+    "Seasonal bridges and icy ledges require careful crevasse navigation",
+    "Intricate Carbon Glacier crossing - complex crevasse systems throughout",
+    "Extreme wind exposure at altitude: documented 80mph summit winds",
+    "Grade IV route - serious alpine undertaking requiring solid ice climbing and glacier travel skills"
+   ],
+   "pro_needs": "Mixed: ice screws and pickets for the steep snow/ice, a small rock rack for the Black Pyramid section, and anchors for rappelling the bergschrund/upper headwall on retreat.",
+   "best_season": "Mid-May to mid-June is the classic window — frozen conditions, minimized rock/icefall. Later in summer the route becomes far more dangerous as it bares out.",
+   "high_point_ft": 14112,
+   "aid_grade": null,
+   "approach": "Northeast side of Mount Rainier; from trailhead proceed via Glacier Basin Trail, cross White River, ascend to St. Elmo Pass (7,400 ft), descend onto lower Winthrop Glacier, traverse Curtis Ridge, ascend Carbon Glacier to Liberty Ridge base",
+   "descent_text": "Liberty Ridge is never descended — its loose rock, sustained steep ice, and total lack of rappel anchors or safe bivy terrain below Thumb Rock make down-climbing the ridge far more dangerous than continuing up and over the mountain; the route's accident history is dominated by a dangerous pattern: parties judge that continuing up feels safer than retreating. From the summit area, the standard descent drops off Liberty Cap's east side about 600 ft to Liberty Saddle, joins the Emmons-Winthrop route, and descends the broad Emmons Glacier via 'the Corridor' to Camp Schurman — an average party needs just under three hours for this leg. From Camp Schurman, parties reverse the Emmons approach: around the south side of Steamboat Prow to Camp Curtis, down the Inter Glacier, and out via Glacier Basin to White River Campground (roughly another 3+ hours). This is a glacier walk-down with no rappelling required in a typical season — the real hazards are crevasse navigation (the Emmons/Winthrop shift through the summer and aren't wanded; a current GPS track is considered essential, and multiple Liberty Ridge parties have needed SOS rescue after losing the route here in whiteout) and large cornices that form on the east side of Liberty Saddle. A minority of parties instead descend the Winthrop Glacier from Camp Schurman toward lower Curtis Ridge/Moraine Park if they've pre-arranged a shuttle, to avoid re-crossing the Inter Glacier, but the Emmons-to-White River line is standard. No rappels on the descent.",
+   "bail": "Retreat options are limited and serious. Low on the route you can reverse to Thumb Rock and the Carbon Glacier. High on the ridge, retreat means committing rappels over steep ice and the bergschrund — slow and hazardous — so most parties commit to topping out once past the Black Pyramid.",
+   "pitch_detail": [
+    {
+     "grade": "Glacier, crevassed",
+     "notes": "Drop off Curtis Ridge onto the Carbon Glacier at about 7,300 ft and cross to the toe of the ridge near 8,600 ft. In May and June several lines usually go; later the glacier breaks up. The usual crux is the moat between glacier and ridge, which has turned strong parties back. The ridge can be gained from either flank or directly at the toe.",
+     "pitch": "Carbon Glacier approach"
+    },
+    {
+     "grade": "Steep snow, rockfall",
+     "notes": "The crest proper from the toe has loose rocky steps and uneven climbing; a flank gives steadier snow but sits under rockfall. The east flank is steeper with more rock bands, so parties starting there cross over the crest to the west side and continue to Thumb Rock, the obvious gendarme near 10,500 ft. Rocks come down without warning here, so climb it early in the day.",
+     "pitch": "Lower ridge → Thumb Rock"
+    },
+    {
+     "grade": "Bivy saddle, ~10,700 ft",
+     "notes": "The small saddle just above Thumb Rock is the only real bivouac on the ridge, limited to twelve people. Dig platforms and build a wall against wind and the small rocks that fall from the cliff above. Above this point no safe bivy exists, and retreat grows harder than continuing up, so settle the weather forecast and team condition here.",
+     "pitch": "Thumb Rock high camp"
+    },
+    {
+     "grade": "Steep snow/ice",
+     "notes": "Above camp a rock band (the Gun Sight) blocks the crest. The easiest line goes out left (east) around it and up the east side of the ridge; when it is formed, a short water-ice pitch goes straight through the middle. The right-hand bypass crosses under loose rock and is the poorest choice. Rockfall off the Gun Sight has triggered a very large slab avalanche on the slope below.",
+     "pitch": "Upper ridge"
+    },
+    {
+     "grade": "Snow/ice to ~60°",
+     "notes": "Climb up and left to pass the Black Pyramid, a dark rock buttress over 1,000 ft tall, on its left (east) side from about 11,800 to 12,800 ft. The ground is steep snow or low-angle alpine ice depending on the season, on exposed faces reported up to 60°. Screws and pickets for running protection; regain the rounded crest above the Pyramid at 12,800 ft.",
+     "pitch": "Black Pyramid"
+    },
+    {
+     "crux": true,
+     "grade": "Snow ramp to steep ice",
+     "notes": "The bergschrund near 13,800 ft is the last and usually hardest obstacle. In some years it is a step over a small crack and a snow ramp; in others an offset gap with a thin, awkward bridge and a near-vertical wall above. Anchor the belayer and pitch it out when it is dicey, and belay out of the fall line, since sun-baked or wind-hammered ice here breaks off in large plates.",
+     "pitch": "Bergschrund & summit ice cap"
+    },
+    {
+     "grade": "Glacier, thin bridges",
+     "notes": "Above the schrund, slopes ease to Liberty Cap at about 14,110 ft; fast or grinding depending on the surface. Columbia Crest is over a mile away: most parties drop about 600 ft to Liberty Saddle to join the Emmons-Winthrop descent, and the Crest adds about 800 ft of climbing from the saddle. Stay roped through the saddle, where crevasses are thinly bridged and cornices form on its east side.",
+     "pitch": "Upper slopes to Liberty Cap"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best conditions are typically late May-June before the route dries out and rockfall/icefall hazard increases.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From White River Campground, hike via Glacier Basin to St. Elmo Pass, then descend and cross the Winthrop Glacier to a camp near 7,400 ft.",
+      "hours": 6,
+      "miles": 6,
+      "title": "Approach to base camp",
+      "gainFt": 3300,
+      "lossFt": 500,
+      "packLb": 55,
+      "objective": "Reach a camp below the toe of the ridge"
+     },
+     {
+      "n": 2,
+      "note": "Moderate snow/ice climbing up the lower ridge to the exposed bivy at Thumb Rock, where most parties dig tent platforms into the snow.",
+      "hours": 5,
+      "miles": 1.5,
+      "title": "Climb to Thumb Rock",
+      "gainFt": 3375,
+      "packLb": 50,
+      "objective": "Reach the Thumb Rock bivy (10,775 ft)"
+     },
+     {
+      "n": 3,
+      "note": "The most committing day: alpine start onto steep ice above the bergschrund and across the summit ice cap, then descend the Emmons-Winthrop to Camp Schurman.",
+      "hours": 12,
+      "miles": 5,
+      "title": "Summit day",
+      "gainFt": 3471,
+      "lossFt": 4900,
+      "packLb": 35,
+      "schedule": [
+       {
+        "time": "1:30 AM",
+        "label": "Leave Thumb Rock",
+        "detail": "Alpine start onto the upper ridge"
+       },
+       {
+        "time": "~4:00 AM",
+        "label": "Cross the bergschrund",
+        "detail": "Usually the hardest obstacle on the route; some years a near-vertical step"
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Top out on the summit ice cap",
+        "detail": "Cross to the true summit"
+       },
+       {
+        "time": "Midday",
+        "label": "Descend Emmons-Winthrop",
+        "detail": "Standard route down to Camp Schurman"
+       }
+      ],
+      "objective": "Climb the upper ridge and descend to Camp Schurman"
+     },
+     {
+      "n": 4,
+      "note": "Descend the Inter Glacier and hike through Glacier Basin back to the White River trailhead.",
+      "hours": 4,
+      "miles": 5.5,
+      "title": "Exit to White River",
+      "lossFt": 4400,
+      "objective": "Hike out"
+     }
+    ],
+    "totalNote": "A 4-day trip for most parties (fast teams do it in 2-3): ~10,150 ft gain, with the crux ridge and bergschrund climbed on one long summit push from Thumb Rock before descending the Emmons-Winthrop."
+   },
+   "access": {
+    "fees": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee.",
+    "notes": "Climbing Fee: $82 per person, per climb; Climbing Permit required (one per party) for glacier access and climbing above 10,000 ft - available via Recreation.gov (June-September) or in-person at ranger station; Wilderness Permit: $12 per person per night (youth 15 and under free); National Park entrance fee required; White River Campground at 4,232 ft offers parking and camping; climbing best May 27 - June 8; winter conditions into July possible; absolutely requires crevasse rescue training, multi-pitch ice climbing experience, and established belay/anchor skills",
+    "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+    "permit": "Mount Rainier Climbing Permit",
+    "seasonal": null,
+    "group_limit": 12,
+    "land_manager": "National Park Service",
+    "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+     "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+     "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+    }
+   },
+   "road": {
+    "name": "White River Road (off SR 410)",
+    "status": "Seasonal; typically open late June–early October (early-season approaches may start from the gate)",
+    "driveNote": "Access via SR 410 White River entrance; early-season climbers may walk from the gate.",
+    "seasonalGate": "Gated in winter/spring until plowed"
+   },
+   "climate": {
+    "typical": "Cold, north-facing alpine face; conditions hinge on a hard overnight freeze.",
+    "bySeason": {
+     "fall": "Not recommended; hazardous",
+     "spring": "Best window — frozen, stable; cold and snowy",
+     "summer": "Increasingly dangerous as the face bares out; rock/icefall",
+     "winter": "Extreme; very rarely climbed"
+    },
+    "forecastZone": "Mount Rainier (NWS Seattle)"
+   },
+   "emergency": {
+    "county": "Pierce County, WA",
+    "rangerStation": "White River / Camp Schurman; climbing rangers on the mountain",
+    "nearestHospital": "MultiCare Tacoma General Hospital (Level II trauma) for initial care; Harborview Medical Center in Seattle is Washington's only Level I trauma center and the usual destination for serious injuries evacuated by helicopter (Army/Navy/NPS); Madigan Army Medical Center (JBLM) has also received evacuated Rainier climbers.",
+    "sheriffDispatch": "911; Mount Rainier NP dispatch/ranger 360-569-6650; park HQ 360-569-2211"
+   },
+   "lists": [
+    "fifty_classics"
+   ],
+   "crowds": {
+    "peakTraffic": "Weekends within the mid-May to mid-June frozen window",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Roughly 100 climbers per season across an estimated 20-40 parties - the least-climbed of Rainier's standard named routes"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high sustained fitness for a long summit push (Thumb Rock to summit and down the Emmons-Winthrop descent, 15+ hrs)",
+     "packWeight": "35-45 lb overnight pack to Thumb Rock (~10,760 ft) with technical rack; summit-day pack kept lean for speed"
+    },
+    "approachTime": "Full day (8-12 hrs) from the White River trailhead via Glacier Basin and the Carbon Glacier to Thumb Rock camp",
+    "requiredSkills": [
+     "Sustained 50-70° snow/ice climbing and simul-climbing",
+     "Advanced glacier travel & self-rescue in a committing position",
+     "Efficient movement to minimize time under rock/icefall and the Willis Wall/summit ice cap",
+     "Route-finding through the bergschrund and upper headwall",
+     "High-altitude endurance and cold tolerance",
+     "Sound judgment to retreat before committing, given limited escape options"
+    ],
+    "experienceLevel": "Expert alpinist only - partner should have multiple Grade IV+ technical alpine routes with sustained steep snow/ice, ideally prior Cascades big-route mileage; not an appropriate objective for someone's first hard route"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-May to mid-June; the frozen window when rock/icefall hazard is minimized",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Classic frozen window once conditions consolidate mid-month",
+      "status": "optimal"
+     },
+     "July": {
+      "reason": "Not recommended - face bares out and rock/icefall increases sharply",
+      "status": "risky"
+     },
+     "June": {
+      "reason": "First half of the month still frozen and climbable; risk rises quickly in the second half as the face warms",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Cold, north-facing alpine face; conditions hinge on a hard overnight freeze",
+     "probability": "A failed overnight freeze (warm front) is the single biggest hazard trigger - the route becomes dangerous almost immediately"
+    },
+    "exposure": "Extreme - constant rock/icefall along the entire ridge and serac threat from the Willis Wall/summit ice cap make this statistically one of Rainier's deadliest routes; escape becomes very difficult once high on the ridge",
+    "avalanche": {
+     "zone": "West Slopes South (NWAC) - no dedicated forecast for the route itself; the Carbon Glacier approach and lower ridge carry storm-cycle avalanche hazard",
+     "byMonth": {
+      "May": "Considerable",
+      "July": "Low",
+      "June": "Moderate"
+     }
+    },
+    "crevasses": "Present on the Carbon Glacier approach and at the bergschrund/upper headwall, though the route's dominant hazard is rock/icefall rather than crevasse fall"
+   },
+   "data_quality": {
+    "gaps": [
+     "The ~100 climbers/season figure is a commonly cited estimate from guiding/route literature, not an official per-route NPS count",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/1BUJ",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 5,
+    "physical": 4,
+    "technical": 4,
+    "commitment": 4,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.8529,
+    "peakLng": -121.76047,
+    "trailhead": "White River Campground (Glacier Basin Trailhead)",
+    "trailheadLat": 46.9024,
+    "trailheadLng": -121.6438,
+    "trailheadDirection": "From White River Campground"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": true,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "loop",
+   "approach_variants": [
+    {
+     "name": "White River, St Elmo Pass, Curtis Ridge and the Carbon Glacier",
+     "notes": "Start at the Glacier Basin trailhead in White River Campground and follow the Glacier Basin trail. At about 6,700 ft leave the trail to the right and climb snow slopes to St Elmo Pass (7,400 ft). There are bivouac sites in this area.\n\nFrom the pass, descend onto the lower Winthrop Glacier and traverse west across it, holding elevation, to the broad slopes of Curtis Ridge. Cross Curtis Ridge and aim for the ramp that drops onto the Carbon Glacier at roughly 7,300 ft. Then ascend the Carbon southward toward the toe of Liberty Ridge, negotiating the crevasse fields on the way.\n\nAccess onto the ridge is somewhere between about 8,600 and 8,800 ft, and either flank can be used depending on conditions. Above that it is 30–40 degree snow with scree and rock traverses up to Thumb Rock at about 10,500 ft — the standard bivouac, with additional sites just above in the saddle. There are also bivouacs around 11,000 ft.\n\nMost parties do not reverse this. The usual plan is a carry-over: finish at Liberty Cap and descend the Emmons–Winthrop to Camp Schurman and out to White River, which is why this route is often permitted as a multi-camp itinerary rather than an out-and-back.\n\nRainier permits apply: per-person climbing permit and a wilderness permit for each night.",
+     "season": "May and June — after the winter storm cycle and before the ridge melts out to loose rock",
+     "hazards": [
+      "Serac and icefall discharge from Willis Wall onto the traverse below it",
+      "Crevasse fields on the Carbon Glacier below the toe",
+      "Rockfall from the bands above Thumb Rock, worse as the season melts the ridge out",
+      "Committing terrain — retreat down the ridge is difficult, most parties carry over and descend the Emmons",
+      "Bergschrund and short vertical ice gaining the Liberty Cap Glacier near 13,500 ft"
+     ],
+     "baseFinding": "The base is the toe of the ridge on the Carbon Glacier, and the whole approach is a sequence of things you must leave rather than things you arrive at — so the negative markers do the work.\n\nLeave the Glacier Basin trail at about 6,700 ft. If you reach Glacier Basin Campground you have walked past the turn; the branch is a climbers' line up snow to the right, aiming at the notch of St Elmo Pass at 7,400 ft.\n\nAfter St Elmo Pass you should be LOSING height onto the Winthrop Glacier and then traversing, not climbing. If you are gaining, you are heading up the Winthrop toward the Emmons ground and Camp Schurman — the wrong side of the mountain for this route.\n\nThe crossing under Willis Wall is the marker that you are close and the marker that you are exposed. Between Curtis Ridge and Liberty Ridge you pass beneath a huge dark face capped with ice cliffs. That is Willis Wall, it is not your route, and its summit seracs discharge onto the ground you are crossing. If you are still under that face, you have not reached the toe yet — and this is ground to cross without stopping, not ground to navigate on.\n\nThe positive test: Liberty Ridge is the rib that divides the Carbon Glacier from Willis Wall. When Willis Wall is behind and to your east and there is a defined rock-and-snow rib rising in front of you out of the Carbon, you are at the toe. Start looking for access between roughly 8,600 and 8,800 ft; take whichever flank is in condition rather than insisting on the crest.\n\nThumb Rock at 10,500 ft is the confirmation you got it right — the first real flat ground on the crest, with established bivouac platforms and a saddle just above."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Thumb Rock",
+     "role": "main",
+     "type": "bivy",
+     "elevM": 3200,
+     "notes": "The one real camp on the ridge itself, in the saddle just above the rock feature, reached by 45-55 degree snow and ice. Published elevations for it disagree — reports place it anywhere from about 10,400 to 10,800 ft. It is exposed to rock and ice coming off the Thumb and off the bands higher up, and that exposure has killed people here, so parties build up or repair the rock walls around the platforms. Strong teams in good conditions skip it entirely, camping at Curtis Ridge and climbing the ridge in a single push to cut the hours spent under the fall line.",
+     "water": "Melt snow.",
+     "permit": "Mount Rainier National Park wilderness camping permit required for the overnight, plus the climbing cost recovery fee, which is unavoidable on this route. Registration is in person at a ranger station and climbing rangers will discuss current route conditions at that point, which on Liberty Ridge is worth treating as part of the planning rather than a formality.",
+     "capacity": "Only a few tents. Sites are small and often staggered a few feet apart vertically down the slope rather than side by side."
+    },
+    {
+     "name": "Curtis Ridge",
+     "role": "main",
+     "type": "camp",
+     "elevM": 2256,
+     "notes": "The standard first night, on the broad snow shoulder near the gully used to drop onto the Carbon Glacier, reached over St. Elmo Pass and across the lower Winthrop. Flat ground and comparatively little rockfall exposure. It is not free of hazard: a party camped here watched a large avalanche off the Willis Wall push its debris cloud close to the bivy. Because Thumb Rock is cramped, leaving here early is the difference between a site and no site.",
+     "water": "Melt snow; no running source.",
+     "permit": "Mount Rainier National Park wilderness permit for the night plus a climbing permit for the glacier travel above; walk-up registration is at the White River Wilderness Information Center.",
+     "capacity": "Several flat spots — noticeably more room than Thumb Rock, which is why parties expecting company start here."
+    },
+    {
+     "name": "Mowich Lake Camp",
+     "role": "hidden"
+    },
+    {
+     "name": "Puyallup Winthrop Junction Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "liberty ridge rdg",
+   "ice_grade_num": 2,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

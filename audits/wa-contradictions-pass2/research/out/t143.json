@@ -1,0 +1,75 @@
+{"file": "t143.json", "results": [
+ {"id": "wa_tower_mountain_southwest_route", "fact": "Net gain from the trailhead to Snowy Lakes camp", "verdict": "fixed",
+  "correct_value": "About 1,800 ft net from the ~4,850 ft trailhead to the ~6,700 ft Snowy Lakes camp; the cumulative gain to the lakes is itself only about 2,700 ft, so 2,800-3,000 ft cannot be the net figure and 4,200 ft is not the gain to camp.",
+  "evidence": "WTA's Snowy Lakes page gives a 4,800 ft trailhead and 2,700 ft of total gain for the Snowy Lakes trip; the Mountaineers Rainy Pass to Snowy Lakes route gives 11 mi and 2,700 ft of gain one way to Upper Snowy Lake from a 4,875 ft trailhead. WSDOT puts Rainy Pass at 4,862 ft, and a Golden Horn/Tower trip report camped at Lower Snowy Lake at about 6,700 ft, matching the row's own camp waypoint, bivy card, pro tip and access note (6,700 ft). The net gain is therefore about 1,800 ft; the patch drops the unsupported 4,200 ft cumulative figure rather than introduce a number that would clash with itinerary day 1.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/golden-horn", "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/rainy-pass-to-snowy-lakes", "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm", "https://www.ericsbasecamp.net/trips/GoldenHorn-Tower/GoldenHorn-Tower.htm"],
+  "patches": [
+   {"id": "wa_tower_mountain_southwest_route", "fact": "Net gain from the trailhead to Snowy Lakes camp", "op": "replace_text", "column": "approach", "path": [], "find": "about 2,800-3,000 ft of net elevation gain from the trailhead to camp (cumulative gain over the Cutthroat/Granite pass rollercoaster is closer to 4,200 ft)", "replace": "about 1,800 ft of net elevation gain from the trailhead to camp (more once the ups and downs over Cutthroat and Granite passes are counted)"}
+  ]},
+ {"id": "wa_tower_mountain_southwest_route", "fact": "Which Snowy Lake to camp at", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Both fields agree that Lower Snowy Lake is the camp closer to the Tower climbers' path; the itinerary's 'Upper is preferred for views' is a different criterion (scenery), not a claim that Upper serves this route better.",
+  "sources": [], "patches": []},
+ {"id": "wa_tower_mountain_southwest_route", "fact": "Ridge used to reach the summit", "verdict": "fixed",
+  "correct_value": "The route finishes up the upper SOUTH ridge after the SW gully; the descent reverses the south ridge, gully and cave ledge. No 'west-ridge notch' is part of the line.",
+  "evidence": "The SummitPost route page for Tower Mountain is titled 'SW Gully Upper South Ridge' and describes class 3 on the south ridge crest with one exposed move to the summit cairn. A Golden Horn/Tower trip report (ericsbasecamp) likewise gained the 'Upper South Ridge' after the SW Gully and descended back down the same line. ROUTE BREAKDOWN already says south ridge; only the summit waypoint note named a west-ridge notch.",
+  "sources": ["https://www.summitpost.org/sw-gully-upper-south-ridge/162400", "https://www.ericsbasecamp.net/trips/GoldenHorn-Tower/GoldenHorn-Tower.htm"],
+  "patches": [
+   {"id": "wa_tower_mountain_southwest_route", "fact": "Ridge used to reach the summit", "op": "replace_text", "column": "waypoints", "path": [7, "note"], "find": "reversing the gully and cave-ledge system back to the west-ridge notch", "replace": "reversing the south ridge, gully and cave-ledge system"}
+  ]},
+ {"id": "wa_tower_mountain_southwest_route", "fact": "Summit-day pack weight", "verdict": "fixed_internal_plus_one",
+  "correct_value": "35 lb, the same overnight pack carried in on day 1, since day 2 ends by carrying it out to the trailhead.",
+  "evidence": "Within the row, day 1 lists a 35 lb overnight pack, the day-2 schedule says 'Break down tent and reload overnight pack' and 'hike out via PCT', the day-2 title and note say the party breaks camp and reverses the PCT to the car, and partner_requirements notes a heavier pack when backpacking to Snowy Lakes; a 0 lb pack contradicts all of them. Trip reports for this two-peak trip describe carrying the overnight gear back out from the lakes.",
+  "sources": ["https://www.thewildoutsiders.com/adventure-journal/golden-horn-and-tower-mountain"],
+  "patches": [
+   {"id": "wa_tower_mountain_southwest_route", "fact": "Summit-day pack weight", "op": "set", "column": "itinerary", "path": ["days", 1, "packLb"], "expect": 0, "value": 35}
+  ]},
+ {"id": "wa_vasiliki_ridge_standard", "fact": "Descent time on summit day", "verdict": "fixed_internal_plus_one",
+  "correct_value": "The 11 h is the whole of day 2 (camp - Burgundy Col - Ares Tower - car), not the descent; the 4.5 h section is the approach to camp. Section labels corrected and the mislabelled descentTimeHrs cleared.",
+  "evidence": "Every field of the row agrees the 11 h block is the camp-to-summit-to-car day: sectionBreakdown[1].fromTo 'Traverse to Ares Tower and out', itinerary day 2 (11 h, 4:30 AM leave camp, 9:00 AM summit, 4:00 PM trailhead) and its note; sectionBreakdown[0].fromTo is 'Approach to high camp' yet was labelled Climb. The patch invents no number: it relabels the two sections and nulls a descent figure that was really the whole day. A May 2025 trip report confirms the standard line goes from the Burgundy Col trail up to Vasiliki Ridge and Ares Tower and back the same way.",
+  "sources": ["https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"],
+  "patches": [
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Descent time on summit day", "op": "set", "column": "timing", "path": ["sectionBreakdown", 0, "section"], "expect": "Climb", "value": "Approach"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Descent time on summit day", "op": "set", "column": "timing", "path": ["sectionBreakdown", 1, "section"], "expect": "Descent", "value": "Climb"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Descent time on summit day", "op": "set", "column": "timing", "path": ["descentTimeHrs"], "expect": 11, "value": null}
+  ]},
+ {"id": "wa_vasiliki_ridge_standard", "fact": "Gain and distance to the Bench camp on day 1", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: the Bench sits at ~6,460 ft about 2.3 mi from a 4,300 ft pullout (the row's own bivy card says the climb gains roughly 2,000 ft), so day 1's 4,400 ft / 3.3 mi fits Burgundy Col, not the Bench. But the itinerary total (5,800 ft) already disagrees with gain_ft (4,123), and no outside source states both day figures; lowering day 1 alone would trade one mismatch for another. Settled by a source stating the pullout-to-Bench gain and mileage together with the Bench-to-summit-and-out figures (or a car-to-car total matching gain_ft).",
+  "sources": ["https://www.mountainproject.com/area/114431374/vasiliki-tower"], "patches": []},
+ {"id": "wa_vasiliki_ridge_standard", "fact": "Objective named in the partner and hazard fields", "verdict": "fixed",
+  "correct_value": "Ares Tower, the high point of Vasiliki Ridge north of Burgundy Col; climbed by 4th-class ridge scrambling and one short low-5th-class summit step.",
+  "evidence": "Wikipedia's Vasiliki Ridge article places the ridge north of Silver Star Mountain with Ares Tower among its named spires and its summit at 8,190 ft; a May 2025 trip report describes Ares Tower as the rock spire on Vasiliki Ridge, reached from the Burgundy Col trail, finished by a short low-5th step with an old rap anchor. The Wine Spires are a separate group south and east of the col, so the partner and hazard text was carried over from a neighbouring route.",
+  "sources": ["https://en.wikipedia.org/wiki/Vasiliki_Ridge", "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"],
+  "patches": [
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Objective named in the partner and hazard fields", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "to the base of the Wine Spires", "replace": "to the base of Ares Tower"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Objective named in the partner and hazard fields", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "to the base of the Wine Spires", "replace": "to the base of Ares Tower"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Objective named in the partner and hazard fields", "op": "replace_text", "column": "seasonal_hazards", "path": ["exposure"], "find": "exposed 5th-class pitches on the Wine Spires towers", "replace": "exposed 4th-class ridge scrambling and the short low-5th-class summit step on Ares Tower"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "Objective named in the partner and hazard fields", "op": "replace_text", "column": "seasonal_hazards", "path": ["exposure"], "find": "route-finding among the spires", "replace": "route-finding among the similar towers along the ridge"}
+  ]},
+ {"id": "wa_vasiliki_ridge_standard", "fact": "SR-20 season dates", "verdict": "fixed",
+  "correct_value": "The winter closure varies year to year; recent closures were Nov 18, 2024 and Dec 4, 2025, so it comes between about mid-November and early December.",
+  "evidence": "WSDOT announced the 2025 winter closure for Thursday Dec 4, 2025 (record range Oct 17 to Jan 3). KPQ's report of the same closure notes the previous year's closure was Nov 18, 2024. Neither 'mid-November' nor 'early December' alone is the typical date, so all three copies now state the same mid-November-to-early-December window.",
+  "sources": ["https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm", "https://kpq.com/north-cascades-highway-close-winter/"],
+  "patches": [
+   {"id": "wa_vasiliki_ridge_standard", "fact": "SR-20 season dates", "op": "replace_text", "column": "waypoints", "path": [0, "directions"], "find": "typically mid-April to about mid-November depending on weather and snowpack", "replace": "typically from mid-April until a winter closure that comes between mid-November and early December, depending on weather and snowpack"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "SR-20 season dates", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "typically mid-April to ~mid-November, weather dependent", "replace": "typically mid-April until a winter closure between mid-November and early December, weather dependent"},
+   {"id": "wa_vasiliki_ridge_standard", "fact": "SR-20 season dates", "op": "replace_text", "column": "access", "path": ["seasonal"], "find": "closes gate-to-gate roughly early December–mid/late April", "replace": "closes gate-to-gate from roughly mid-November or early December until mid/late April"}
+  ]},
+ {"id": "wa_south_face", "fact": "Largest cam on the rack", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Three rack fields stop at 3 in while gear[0] says cams to about 4 in, but the row itself records that no published gear list was found (gear_confidence 'inferred'), and the Vasiliki Tower area page lists the South Face (5.6) with no protection details. No external source states the rack, so neither size can be confirmed. Settled by a route description or trip report giving the largest piece used on the South Face.",
+  "sources": ["https://www.mountainproject.com/area/114431374/vasiliki-tower"], "patches": []},
+ {"id": "wa_south_face", "fact": "Late-season water at the Bench", "verdict": "bivy_zone_list",
+  "correct_value": "A reliable spring about 200 yards north of the trail at the ~6,400-6,500 ft bench runs into at least mid-September; the approach and September guidance are right, the bivy card's 'limited to non-existent by late summer' is the outlier.",
+  "evidence": "Route guides for the Wine Spires approach describe a year-round spring about 200 yards north of the trail at the wooded bench near 6,400 ft, and a Mountain Project forum thread on water at the Bench camp reports plenty of water running in mid-September 2016 and calls the spring very reliable. The only field that disagrees is bivy[0].water, which is owned by the camping clean-up, so no patch is written here.",
+  "sources": ["https://www.mountainproject.com/forum/topic/114587941/water-situation-near-bench-camp-below-burgundy-col-in-wa-pass", "https://www.summitpost.org/burgundy-spire/151368"],
+  "patches": []},
+ {"id": "wa_south_face", "fact": "Date SR-20 closed for the 2025-26 winter", "discovered": true, "verdict": "fixed",
+  "correct_value": "Dec 4, 2025 (reopened fully June 14, 2026)",
+  "evidence": "road.seasonalGate says SR-20 closed Dec 12, 2025. WSDOT's closure announcement and KPQ's report both give the 2025 winter closure as 6 p.m. Thursday, Dec 4, 2025; WSDOT's blog confirms the full reopening on June 14, 2026, which the row already states.",
+  "sources": ["https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm", "https://kpq.com/north-cascades-highway-close-winter/", "https://wsdotblog.blogspot.com/2026/04/north-cascades-highway-2026-opening.html"],
+  "patches": [
+   {"id": "wa_south_face", "fact": "Date SR-20 closed for the 2025-26 winter", "op": "replace_text", "column": "road", "path": ["seasonalGate"], "find": "closed Dec 12, 2025-June 14, 2026", "replace": "closed Dec 4, 2025-June 14, 2026"}
+  ]}
+]}

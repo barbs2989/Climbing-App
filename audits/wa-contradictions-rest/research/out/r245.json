@@ -1,0 +1,17 @@
+{"file": "r245.json", "results": [
+  {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Commitment grade (I vs II)", "verdict": "fixed",
+   "correct_value": "Grade II",
+   "evidence": "Mountain Project's route page gives 'Moderate Snow, Alpine Grade II, 600 ft'. The Mountaineers' route page rates it Grade II, 5.0 (snow/ice to 50 degrees or class 4 rock by season). commitment and alpine_grade already say II; only the grade column said I. alpine_grade's parenthetical mention of Grade I is left as-is (labelled as an alternative rating).",
+   "sources": ["https://www.mountainproject.com/route/108102127/southwest-couloir", "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-sw-couloir"],
+   "patches": [
+     {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Commitment grade (I vs II)", "op": "replace_text", "column": "grade", "path": [], "find": "Grade I, snow", "replace": "Grade II, snow"}
+   ]},
+  {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Blue Lake Trailhead distance from Washington Pass", "verdict": "fixed",
+   "correct_value": "about 1 mile west of Washington Pass",
+   "evidence": "Mountain Project's route page places the Blue Lake trailhead 1 mile west of Washington Pass; The Mountaineers' Blue Lake page says roughly one mile west of the Washington Pass overlook; WTA's directions put it a little under a mile past the overlook coming from the east. The pins themselves (trailhead ~1 mi straight-line from the pass) agree. The 1.5-mile copies in approach_logistics and approach_variants are corrected; the 'half a mile' in bivy[0].notes is left unpatched because bivy is owned by the separate camping clean-up.",
+   "sources": ["https://www.mountainproject.com/route/108102127/southwest-couloir", "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/blue-lake-washington-pass", "https://www.wta.org/go-hiking/hikes/blue-lake"],
+   "patches": [
+     {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Blue Lake Trailhead distance from Washington Pass", "op": "replace_text", "column": "approach_logistics", "path": ["trailheadDirection"], "find": "~1.5 miles west of Washington Pass", "replace": "~1 mile west of Washington Pass"},
+     {"id": "wa_south_early_winter_spire_southwest_couloir", "fact": "Blue Lake Trailhead distance from Washington Pass", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "about 1.5 miles west of Washington Pass", "replace": "about 1 mile west of Washington Pass"}
+   ]}
+]}

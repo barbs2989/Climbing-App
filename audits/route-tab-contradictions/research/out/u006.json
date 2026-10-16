@@ -1,0 +1,125 @@
+{
+ "file": "u006",
+ "results": [
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "fact": "Commitment grade: IV vs III",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade and commitment say IV while alpine_grade leads with \"Grade III (Alpine)\" and notes the first-ascent account graded it IV. Further searching found only restatements of the two known accounts (first-ascent report: IV M6 AI3+, ~1,600 ft; route listing: WI3 M6, Grade III). Two sources that disagree, so no numeral is adopted.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+    "https://www.mountainproject.com/route/112066235/holsten-hilden"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "fact": "Season window: Jan-Feb vs a wider Dec-March window",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "In the live row season is Dec-Mar and best_season describes Dec-Mar, while seasonal_guidance.optimalWindow gives January-February with December and March rated good. That is a best window inside the season, not a contradiction.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_leave_my_flake_alone",
+   "fact": "Which pitch is bolted (pitch_detail[2] says 'Fully bolted' with bolts:0; gear says to protect the reach)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Pitch 2 is the bolted pitch (about 7 bolts); the flake pitch (pitch 3) is on gear",
+   "evidence": "The row overwhelmingly puts the bolts on pitch 2: pitch_detail[1] (7 bolts, 'blocky bolted climbing'), pitch_detail[2].bolts = 0, gear[1] (pitch 2 bolted) and gear[2] (protect the reach on the flake pitch); the one outlier is the phrase 'Fully bolted (added 2018-2019)' in pitch 3's notes. The route page agrees: the second pitch is fully bolted (about 7 bolts), the flake pitch was excavated in spring 2018 and anchors were added in 2019, with a single rack to 4 in. Only the outlier phrase is removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117285474/leave-my-flake-alone"
+   ],
+   "patches": [
+    {
+     "id": "wa_leave_my_flake_alone",
+     "fact": "Which pitch is bolted (pitch_detail[2] says 'Fully bolted' with bolts:0; gear says to protect the reach)",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "to the top. Fully bolted (added 2018-2019).",
+     "replace": "to the top."
+    }
+   ]
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real. New sources muddy rather than settle it: one route description walks the west ridge '1 mile' from Fish Creek Pass to the summit, while the Forest Service trail page gives the trail as 9.5 miles to Fish Creek Pass and another summary gives 8.7 miles, both longer than the row's 7.4 mi pass waypoint and ~7.5-8 mi pitch_detail. No two sources agree on a pass-to-summit mileage, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/courtney-peak/728542",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/west-fork-buttermilk-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Wilderness permit: itinerary.cal 'self-issue wilderness permit' vs permit/access.permit 'no wilderness permit required'",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real, and now two fields each way: itinerary.cal and access.overnight_permit call for a free self-issue wilderness permit at the trailhead, while permit and access.permit say none is required. The Okanogan-Wenatchee wilderness page states for the Lake Chelan-Sawtooth Wilderness that a wilderness permit is not required to hike or camp, and the West Fork Buttermilk trail page lists only recreation passes. Both come from the same land manager, so they count as one source; no independent second source was found. No patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/wilderness",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/west-fork-buttermilk-trail",
+    "https://wilderness.net/visit-wilderness/?ID=306"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: timing.approachTimeHrs 4 against the itinerary schedule's +5 to 6 hr to Fish Creek Pass. No source giving a trailhead-to-pass time was found (trip reports give only whole-day totals for multi-peak days).",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-26-0733503470"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "fact": "First ascent of this route/peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: fa names the 1963 Ardussi-Magnusson-Mech-Swanson party while beta calls the route a 'Beckey-era first ascent' (the peak's 1940 first ascent). Further searching confirms only the 1940 Beckey peak FA; no source ties either party to this exact NW couloir / north ridge / headwall line. Needs a route-identity decision; no patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Crooked_Thumb_Peak",
+    "http://publications.americanalpineclub.org/articles/12196347502"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "fact": "Crooked Thumb Glacier moraine camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: the camp waypoint says 7,800 ft (the forced-bivouac ledge's height) while bivy[0] gives the moraine camp 7,200 ft. The USGS ground height at the waypoint's own coordinate is ~7,025 ft. Trip reports give different camps: one at 6,800 ft (later moved about 500 ft higher) and a Crooked Thumb camp at 7,280 ft; none gives the same figure for this moraine camp. The 7,800 looks wrong, but no two sources agree on the replacement, so no patch.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.3515762&y=48.833929133333335&units=Feet&wkid=4326",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-attempt-mt-challenger/",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "https://onehikeaweek.com/2017/08/06/picket-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "fact": "Climbing season",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: season 'Mar-May (snow-dependent)' vs best_season/seasonal_guidance centred on late July-September. New searches found only the same snow-season ascents (April, late May, early June) plus a south-buttress/south-ridge report without a summer date; no dated Jul-Sep ascent of this line, and the club route page could not be retrieved. No window is supported by two sources; no patch.",
+   "sources": [
+    "https://trailcatjim.com/davis-peak-via-gorge-creek-south-buttress-south-ridge/",
+    "https://stevensong.com/usa/washington/davis-peak-north-cascades-wa/",
+    "https://www.mountaineers.org/activities/routes-places/davis-peak"
+   ],
+   "patches": []
+  }
+ ]
+}

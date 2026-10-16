@@ -1,0 +1,94 @@
+{"file": "r017.json", "results": [
+ {"id": "wa_needle_peak_south_route", "fact": "Season window (Jul-Aug) vs. wider optimal/best-season claims", "verdict": "fixed",
+  "correct_value": "Jul–Sep",
+  "evidence": "The first recorded ascent of the north-ridge line was made on 19 Aug 2006; a detailed 2023 trip climbed the same north-ridge line from Swamp Creek Camp on 8 Sep 2023 (the season string instead lists a 'Jul 9 2023' ascent, apparently a misdating of that September trip; climate.summer already cites a September 2023 ascent). September is therefore a documented part of the window, and seasonal_guidance, best_season, climate and itinerary.cal all agree on roughly July-September. The season column also carried an explanation, which does not belong there.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge", "https://onehikeaweek.com/2023/09/11/needle-peak/"],
+  "patches": [
+   {"id": "wa_needle_peak_south_route", "fact": "Season window (Jul-Aug) vs. wider optimal/best-season claims", "op": "set", "column": "season", "path": [], "expect": "Jul–Aug (inferred from the dates of all documented ascents: Aug 19 2006, Jul 9 2023, Aug 30 2018 x2)", "value": "Jul–Sep"}
+  ]},
+ {"id": "wa_needle_peak_south_route", "fact": "Route aspect vs. the ridge/face it actually climbs", "verdict": "fixed",
+  "correct_value": "N",
+  "evidence": "The first-ascent report says the party left the Agnes Creek trail at Swamp Creek and climbed Needle Peak via its north ridge. A 2023 trip report follows the same line: leaves the Swamp Creek trail at 3,200 ft below the north ridge, traverses the long north ridge beneath the sheer north face, crux at 7,300-7,400 ft. Both agree with face/beta/hazards/climate; aspect 'S' is the outlier (the sibling north-ridge row already says N).",
+  "sources": ["http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge", "https://onehikeaweek.com/2023/09/11/needle-peak/"],
+  "patches": [
+   {"id": "wa_needle_peak_south_route", "fact": "Route aspect vs. the ridge/face it actually climbs", "op": "set", "column": "aspect", "path": [], "expect": "S", "value": "N"}
+  ]},
+ {"id": "wa_needle_peak_south_route", "fact": "Crux/route grade (Class 4, 5.0) vs. the pitch-by-pitch breakdown's max grade (Class 3)", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The only detailed route account (2023) describes the 7,300-7,400 ft crux as weaving through cliff bands with much exposure above the talus, and a tree belay at the 5,000 ft slab, but names no class and no fifth-class move; the first-ascent report gives no grade for the Needle segment. The row itself is split three ways (grade Class 4/5.0; itinerary Class 3-4; pitch_detail max Class 3). No two sources state the crux grade, so no pitch_detail value can be adopted.",
+  "sources": ["https://onehikeaweek.com/2023/09/11/needle-peak/", "http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge"],
+  "patches": []},
+ {"id": "wa_needle_peak_south_route", "fact": "Bear canister requirement", "verdict": "fixed",
+  "correct_value": "Canister not required on this route; food must be hung or kept in a bear-resistant container",
+  "evidence": "The park's food-storage page lists the canister-required sites as nine named camps (Desolation, Fisher, Sourdough, etc.) and named cross-country zones (Boston Basin, Eldorado, etc.); none is on the Agnes Creek/Swamp Creek route. Beyond the first 2 miles the Agnes Creek trail is in Glacier Peak Wilderness (national forest), where the forest food-storage order requires food be hung or kept in an IGBC-certified container, not a canister specifically. The three bivy entries agree; the gear line's 'recommended/required' was the outlier.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/food-storage-requirements.htm", "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/okanogan-wenatchee-national-forest-implements-new-food-and", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pacific-crest-trail-lake-chelan-suiattle"],
+  "patches": [
+   {"id": "wa_needle_peak_south_route", "fact": "Bear canister requirement", "op": "set", "column": "gear", "path": [3], "expect": "Bear canister (recommended/required for NPS backcountry camping)", "value": "Bear canister or a food-hanging kit (a canister is not required at the camps on this route, but food must be hung or stored in a bear-resistant container)"}
+  ]},
+ {"id": "wa_needle_peak_south_route", "fact": "Whether a permit office exists at Stehekin", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources conflict. A current permit guide says there are no permit services in Stehekin, and a Jan 2024 local article places walk-up permits at the Marblemount Wilderness Information Center, with self-issue outside the Stehekin ranger station only when Marblemount is closed for winter. The national-forest PCT page says Lake Chelan NRA backcountry permits can be obtained at the Golden West Visitor Center in Stehekin on arrival, and the NPS visitor-center page is silent on permits. The emergency field naming the visitor center as a contact is true either way; whether it issues permits in summer is not settled.",
+  "sources": ["https://www.backwoodsatlas.com/field-notes/north-cascades-backcountry-permits.html", "https://lakechelannow.com/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pacific-crest-trail-lake-chelan-suiattle", "https://nps.gov/noca/planyourvisit/visitorcenters.htm"],
+  "patches": []},
+ {"id": "wa_needle_peak_south_route", "fact": "Round-trip distance: itinerary days (24 mi) vs totalNote (~19 mi) vs crowds/partner (35-40 mi) vs dist_km (38.6 km in a one-way column)", "discovered": true, "verdict": "fixed_internal_plus_one",
+  "correct_value": "about 24 mi round trip; about 11.6 mi (18.7 km) one way",
+  "evidence": "High Bridge to Swamp Creek Camp is 9 miles on the PCT in one 2023 report and 8.5 miles in another; the national-forest page lists camps at 8 and 9.5 miles. The summit waypoint is at 11.6 mi one way and the itinerary days sum to 9+6+9 = 24 mi. The 38.8-mile figure in the 2023 report covers a five-day, three-peak trip (Needle, Lyall, Lyall Ridge), which is where the 35-40 / 38-39 mile claims came from; the ~19-mile totalNote contradicts its own days. dist_km 38.6 km = 24.0 mi is the round trip stored in the one-way column.",
+  "sources": ["https://onehikeaweek.com/2023/09/11/needle-peak/", "https://trailcatjim.com/agnes-mtn-via-south-ridge-northwest-face-gunsight-peak-attempt/", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pacific-crest-trail-lake-chelan-suiattle"],
+  "patches": [
+   {"id": "wa_needle_peak_south_route", "fact": "Round-trip distance", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "A 3-day, ~19-mile round-trip", "replace": "A 3-day, ~24-mile round-trip"},
+   {"id": "wa_needle_peak_south_route", "fact": "Round-trip distance", "op": "replace_text", "column": "crowds", "path": ["peakTraffic"], "find": "the ~38-39 mile round trip from High Bridge", "replace": "the ~24-mile round trip from High Bridge"},
+   {"id": "wa_needle_peak_south_route", "fact": "Round-trip distance", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "is on the order of 35-40 miles round trip", "replace": "is roughly 24 miles round trip"},
+   {"id": "wa_needle_peak_south_route", "fact": "Round-trip distance", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "roughly 35-40 miles round trip from High Bridge via the PCT to high basins on the south side", "replace": "roughly 24 miles round trip from High Bridge via the PCT and Swamp Creek to the north ridge"},
+   {"id": "wa_needle_peak_south_route", "fact": "Round-trip distance", "op": "set", "column": "dist_km", "path": [], "expect": 38.6, "value": 18.7}
+  ]},
+ {"id": "wa_needle_peak_south_route", "fact": "Location: overview says the peak is NOT in the Entiat Mountains; seasonal_hazards.avalanche.zone calls it an 'Entiat-area summit'", "discovered": true, "verdict": "fixed",
+  "correct_value": "Agnes Creek / Swamp Creek area west of Lake Chelan (Glacier Peak Wilderness)",
+  "evidence": "The first-ascent report and the 2023 trip both place the peak above Swamp Creek off the Agnes Creek trail south of High Bridge; the 2023 report says it overlooks Swamp Creek and Agnes Creek in Glacier Peak Wilderness. The Entiat Mountains lie east of Lake Chelan, so the avalanche note is wrong and the overview is right.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge", "https://onehikeaweek.com/2023/09/11/needle-peak/"],
+  "patches": [
+   {"id": "wa_needle_peak_south_route", "fact": "Location (Entiat)", "op": "replace_text", "column": "seasonal_hazards", "path": ["avalanche", "zone"], "find": "remote Entiat-area summit", "replace": "remote Agnes Creek-area summit"}
+  ]},
+ {"id": "wa_needle_peak_south_route", "fact": "Permit fee: permit/access.permit say $10/person/night; bivy entries call the permit free", "discovered": true, "verdict": "fixed",
+  "correct_value": "$10 per person (not per night) plus a $6 non-refundable fee, for NPS-jurisdiction camps only",
+  "evidence": "The federal booking page for North Cascades backcountry permits lists a $6 non-refundable application/reservation fee and a $10 per person recreation fee (youth free), with no per-night charge; a current permit guide says the same. Only the '/night' is wrong. The bivy entries' 'free' fits the Glacier Peak Wilderness camps (Fivemile at ~5 mi and Swamp Creek at ~8-9 mi lie beyond the NRA boundary at mile 2), which are national forest rather than park, so those bivy entries mislabel the jurisdiction as a North Cascades park permit; left to the bivy-zone class, not patched here.",
+  "sources": ["https://www.recreation.gov/permits/4675322", "https://www.backwoodsatlas.com/field-notes/north-cascades-backcountry-permits.html", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pacific-crest-trail-lake-chelan-suiattle"],
+  "patches": [
+   {"id": "wa_needle_peak_south_route", "fact": "Permit fee", "op": "replace_text", "column": "permit", "path": [], "find": "($10/person/night plus", "replace": "($10/person plus"},
+   {"id": "wa_needle_peak_south_route", "fact": "Permit fee", "op": "replace_text", "column": "access", "path": ["permit"], "find": "$10/person/night plus", "replace": "$10/person plus"}
+  ]},
+ {"id": "wa_needle_peak_south_route", "fact": "Where the crux is: partner_requirements/seasonal_hazards.exposure put it at a 'narrow, exposed summit step'; the rest of the row puts it in the 7,300-7,400 ft cliff bands/notch", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The 2023 report puts the crux at 7,300-7,400 ft in the cliff bands, then ledges and a notch onto the summit ridge, a narrow final gully and a 'broad summit' - matching waypoints/beta, not the 'narrow summit step' in partner_requirements and seasonal_hazards.exposure. Only one detailed source exists, so no patch.",
+  "sources": ["https://onehikeaweek.com/2023/09/11/needle-peak/"],
+  "patches": []},
+ {"id": "wa_needle_peak_south_route", "fact": "Route identity: the 'South Route' row climbs the north ridge from Swamp Creek, the same line as wa_needle_peak_north_ridge", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Every field of this row (beta, face, waypoints, approach, descent) describes the north-ridge line from Swamp Creek, and its season field even cited the 19 Aug 2006 date of the north-ridge first ascent. Both sources describe only a north-ridge line on this peak. The 'South Route' name and the duplicate row are a catalog-identity question outside patch scope.",
+  "sources": ["http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge", "https://onehikeaweek.com/2023/09/11/needle-peak/"],
+  "patches": []},
+ {"id": "wa_needle_peak_north_ridge", "fact": "Route scope: this route's own trip plan/hazards describe summiting a different peak (Bonanza Peak) than its own waypoints reach", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The first-ascent report confirms the history in the row: on 19-20 Aug 2006 the party left the Agnes Creek trail at Swamp Creek, climbed Needle Peak by its north ridge, made first ascents of the North and South Anonymity Towers, bivied on Dark Peak and finished on Bonanza, and it presents the whole link-up as one new route on Bonanza Peak (NW Ridge, V 5.8), not as a Needle Peak route. A 2023 trip shows the north ridge done alone as an out-and-back from Swamp Creek (up the west gully, down the east gully) - which is what wa_needle_peak_south_route already describes. The facts are not in doubt; the fix is a scoping decision (re-scope this row to the Needle-only north ridge, duplicating the other row, or move the traverse to a Bonanza route) that research cannot make. Also: this row's season/best_season claim of a 'single documented ascent' is now false (Sep 2023 ascent).",
+  "sources": ["http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge", "https://onehikeaweek.com/2023/09/11/needle-peak/"],
+  "patches": []},
+ {"id": "wa_north_gardner_mountain_southwest", "fact": "total gain for the full trip", "verdict": "fixed",
+  "correct_value": "7300",
+  "evidence": "One climber's two trips on North Gardner alone via Wolf Creek (2004 and 2018) each report 7,300 ft gained and lost; an independent trip over both Gardner summits from Gardner Meadows recorded 7,373 ft. The trailhead (2,923-2,950 ft) to summit (8,956 ft) net rise alone is 6,033 ft, so the stored 6,013 is below the physical minimum. loss_ft, approach and pro_tips already say ~7,300; partner_requirements carried the 8,100 ft figure from a two-peak trip and is aligned too.",
+  "sources": ["https://trailcatjim.com/north-gardner-mountain-mazama-mountains-2/", "https://trailcatjim.com/north-gardner-mountain-mazama-mountains/", "https://www.lucasmountainknowledge.com/post/gardner-mountain-north-gardner-mountain", "https://www.scott-kranz.com/wa100-climbs/gardner-and-north-gardner"],
+  "patches": [
+   {"id": "wa_north_gardner_mountain_southwest", "fact": "total gain for the full trip", "op": "set", "column": "gain_ft", "path": [], "expect": 6013, "value": 7300},
+   {"id": "wa_north_gardner_mountain_southwest", "fact": "total gain for the full trip", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "~8,100 ft of gain", "replace": "~7,300 ft of gain"}
+  ]},
+ {"id": "wa_north_gardner_mountain_southwest", "fact": "total round-trip distance", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "dist_km renders as the ONE-WAY approach, not the round trip. 16.6 km = 10.3 mi is the trail approach to Gardner Meadows, which sources put at 10 mi and 10.4 mi to the core of the meadows; the 24-27 mile round-trip figures (24.5 and 27 mi on two trips, 26.1 on another) equal 2 x (about 10.3 trail miles + about 2 off-trail miles), consistent with the summit waypoint at 12.03 mi. No field contradicts another.",
+  "sources": ["https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/", "https://trailcatjim.com/north-gardner-mountain-mazama-mountains-2/", "https://www.lucasmountainknowledge.com/post/gardner-mountain-north-gardner-mountain"],
+  "patches": []},
+ {"id": "wa_north_gardner_mountain_southwest", "fact": "High point: high_point_ft 8963 vs summit elevation 8,956 in overview and summit waypoint", "discovered": true, "verdict": "fixed",
+  "correct_value": "8956",
+  "evidence": "Independent accounts give North Gardner Mountain as 8,956 ft (20th on the Bulger list), matching the row's overview and summit waypoint; high_point_ft 8963 is the lone outlier on a summit route.",
+  "sources": ["https://www.scott-kranz.com/wa100-climbs/gardner-and-north-gardner", "https://trailcatjim.com/north-gardner-mountain-mazama-mountains-2/", "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm"],
+  "patches": [
+   {"id": "wa_north_gardner_mountain_southwest", "fact": "High point", "op": "set", "column": "high_point_ft", "path": [], "expect": 8963, "value": 8956}
+  ]}
+]}

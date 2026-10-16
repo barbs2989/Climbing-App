@@ -1,0 +1,1149 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  },
+  {
+   "id": "wa_doorway_flake",
+   "op": "patch",
+   "columns": [
+    "waypoints",
+    "approach_logistics"
+   ]
+  },
+  {
+   "id": "wa_skeena26",
+   "op": "patch",
+   "columns": [
+    "waypoints",
+    "approach_logistics"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "area_id": "wa_mount_baker",
+   "name": "Cockscomb Ridge",
+   "discipline": "mountaineering",
+   "grade": "III-IV",
+   "grade_system": "yds",
+   "grade_num": 3,
+   "pitches": 5,
+   "length_m": 914,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Chuck Murley, John Musser, and Klindt Vielbig, July 4, 1961 (first complete ascent of the ridge)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "spring-early summer",
+   "description": null,
+   "gear": [
+    "mountaineering boots",
+    "crampons",
+    "ice axe",
+    "glacier rope",
+    "pickets",
+    "light rock rack",
+    "crevasse rescue kit"
+   ],
+   "hazards": [
+    "Loose, exposed rock on the ridge crest, worst later in the season",
+    "Crevasses and bergschrunds crossing the Coleman and Roosevelt Glaciers on approach",
+    "Rockfall potential (PG13) below the Cockscomb Tower",
+    "Late-season parties may need to detour onto the Park Glacier and climb its AI3 headwall to bypass the Tower"
+   ],
+   "verif": null,
+   "overview": "Cockscomb Ridge is the true north ridge of Mount Baker — a long, prominent rock-and-ice ridge forming a skyline on the north side of the peak, distinct from the popular 'North Ridge' route (which is actually the NW spur). It sits between the North Ridge and the Park Glacier Headwall and is approached from the Heliotrope Ridge Trailhead across the Coleman and Roosevelt Glaciers. First climbed in its entirety on July 4, 1961 by Chuck Murley, John Musser, and a third climber, after a 1906 Mazama party had been turned back by the ridge's 300-ft Cockscomb Tower.",
+   "beta": "Grade: 4th class YDS, AI2-3 ice, M1b mixed, PG-13. Technical: 3,000 ft vertical gain over 5 pitches on the ridge itself. Hazards: Extremely loose and unstable rock (especially late season), bergschrunds, extensive crevassing, icefall terrain. Route: From the Heliotrope Ridge trailhead, cross Coleman and Roosevelt Glaciers northeastward, climb low-moderate snow ramps to ridge at ~7,500 ft, bypass Cockscomb Tower on left via steep snow, continue ridge to summit. Descent: Coleman-Deming Route (easy-moderate glacier). Required: Ice climbing competency, crevasse rescue skills, glacier travel experience, rock scrambling ability. Protection: Few ice screws/pickets, glacier gear essential. Best season: Spring or early summer (late season loose rock creates high hazard). First ascent: July 4, 1961 (Murley, Musser, Vielbig).",
+   "turnaround": "Set a turnaround given mixed-ground pace",
+   "auto_generated": true,
+   "alpine_grade": "Grade III",
+   "rock_grade": "4th class",
+   "ice_grade": "AI2-3",
+   "gain_ft": 7201,
+   "loss_ft": 7000,
+   "dist_km": 10.5,
+   "max_angle": 50,
+   "rappels": null,
+   "commitment": "II",
+   "face": "True north ridge/spur, between the Coleman/Roosevelt Glaciers and the Park Glacier",
+   "permit": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage on the glacier or ridge.",
+   "descent": "Descend the Coleman-Deming route: cross the summit plateau, go down the Roman Wall to the saddle below Colfax Peak, and follow the Coleman Glacier back to the Hogsback camp, then walk out the Heliotrope Ridge trail to the car.",
+   "obj_haz": [
+    "Loose rock",
+    "Crevasse field",
+    "Bergschrund"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.80224,
+     "lng": -121.89567,
+     "elev": 3670,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+    },
+    {
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "name": "Heliotrope Ridge Camp",
+     "type": "Campsite",
+     "distMi": 3
+    },
+    {
+     "lat": 48.785,
+     "lng": -121.868,
+     "elev": 7800,
+     "name": "Cockscomb Ridge Base (Coleman/Roosevelt Glacier Junction)",
+     "type": "Junction",
+     "distMi": 9.5
+    },
+    {
+     "lat": 48.782,
+     "lng": -121.865,
+     "elev": 9200,
+     "name": "Cockscomb Tower",
+     "type": "Hazard",
+     "distMi": 11
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 12.5
+    }
+   ],
+   "gpx": [
+    [
+     48.80224,
+     -121.89567
+    ],
+    [
+     48.7893,
+     -121.86777
+    ],
+    [
+     48.785,
+     -121.868
+    ],
+    [
+     48.782,
+     -121.865
+    ],
+    [
+     48.776797,
+     -121.814467
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "mountaineering",
+    "mixed"
+   ],
+   "timing": {
+    "totalHrs": 17.5,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "2:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft), the same camp used for Coleman-Deming and North Ridge parties. This positions you for th…",
+      "fromTo": "Approach to Coleman/Hogsback camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 13,
+      "note": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft, threading thin snow bridges through a maze of crevasses and contouring east…",
+      "fromTo": "Climb the ridge and descend",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A few ice screws and pickets plus standard glacier/crevasse-rescue kit; a light rock rack for the loose ridge crest.",
+   "what_to_bring": [
+    "helmet",
+    "pickets",
+    "small rack"
+   ],
+   "pro_tips": [
+    "Expect loose volcanic rock - test holds",
+    "A light rack protects the rock steps"
+   ],
+   "watch_out": [
+    "Loose volcanic rock",
+    "Mixed route-finding",
+    "Flanking-glacier crevasses"
+   ],
+   "pro_needs": "Pickets and a light rack for the mixed ridge",
+   "best_season": "May–June — the ridge's rock becomes progressively looser and more dangerous later in the season.",
+   "high_point_ft": 10781,
+   "aid_grade": null,
+   "approach": "From the Heliotrope Ridge Trailhead (~3,700 ft) at the end of Glacier Creek Road (FR 39), follow Trail 677 through old growth to the fork at about two miles and take the right-hand climbers' path up the Hogsback moraine to camp near 6,000 ft at the edge of the Coleman Glacier. From camp, rope up and cross the Coleman and then the Roosevelt Glacier heading northeast — roughly 2-3 hours of crevassed travel — and take low-to-moderate snow ramps to the foot of the ridge at about 7,500-7,800 ft. Thin snow bridges over a crevasse maze are the main hazard on this crossing.",
+   "descent_text": "Descend Coleman-Deming or Easton",
+   "bail": "Retreat to the glacier from the ridge if needed",
+   "pitch_detail": [
+    {
+     "grade": "Low-moderate snow",
+     "notes": "From the Heliotrope Ridge side, rope up and cross the Coleman and then the Roosevelt Glacier northeastward, about 2-3 hours of crevassed glacier, then take low-to-moderate snow ramps to the foot of the ridge at roughly 7,500-7,800 ft. Thin bridges over a crevasse maze are the main hazard here.",
+     "pitch": "Glacier approach"
+    },
+    {
+     "grade": "Moderate snow",
+     "notes": "Climb the lower ridge on moderate snow, passing a pinnacle on its right side. Keep on snow where you can; the rock here is poor.",
+     "pitch": "Lower ridge"
+    },
+    {
+     "grade": "4th class, loose rock",
+     "notes": "Junky towers and bergschrunds block the crest. Get around them to the left (east) on low-to-moderate ramps through the icefall; a long contour east near 9,000 ft skirts a schrund on the ridge. The rock before the Cockscomb is extremely loose out of season, so this ridge is a spring and early-summer climb.",
+     "pitch": "Towers/icefall"
+    },
+    {
+     "crux": true,
+     "grade": "Steep snow",
+     "notes": "The Cockscomb Tower, about 300 ft high, is passed on its left (east) side by steep snow, taking the most direct line around it. Late in the season, when that snow is gone, the alternative is to drop onto the Park Glacier and climb its headwall (AI3), which needs several screws.",
+     "pitch": "Cockscomb"
+    },
+    {
+     "grade": "Moderate snow",
+     "notes": "Regain the crest above the tower. The ridge broadens into the summit plateau; cross it to Grant Peak. Descend the Coleman-Deming route.",
+     "pitch": "Upper ridge to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Rock on the tower gets notably looser as the snow melts out through summer; the Park Glacier bypass becomes more relevant later in the season.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft), the same camp used for Coleman-Deming and North Ridge parties. This positions you for the long, technical ridge day ahead.",
+      "hours": 4.5,
+      "miles": 3,
+      "title": "Approach to Coleman/Hogsback camp",
+      "gainFt": 2900,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Establish glacier camp via Heliotrope Ridge"
+     },
+     {
+      "n": 2,
+      "note": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft, threading thin snow bridges through a maze of crevasses and contouring east around a bergschrund. Turn the crux Cockscomb Tower on its east side via steep snow (or drop onto the Park Glacier's AI3 headwall late-season), then continue up the glacier ridge to the summit and descend the standard Coleman-Deming route back to camp and out.",
+      "hours": 13,
+      "miles": 9,
+      "title": "Climb the ridge and descend",
+      "gainFt": 4600,
+      "lossFt": 7100,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "2:00 AM",
+        "label": "Leave camp, rope up",
+        "detail": ""
+       },
+       {
+        "time": "~4:00-5:00 AM",
+        "label": "Reach ridge crest (~7,500 ft)",
+        "detail": "After crossing the Coleman/Roosevelt glaciers."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Bypass bergschrund and Cockscomb Tower",
+        "detail": "East-side steep snow, or Park Glacier AI3 headwall if the Tower is unfeasible late-season."
+       },
+       {
+        "time": "Midday",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "Afternoon",
+        "label": "Descend Coleman-Deming to camp",
+        "detail": ""
+       },
+       {
+        "time": "Evening",
+        "label": "Hike out to trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Gain Cockscomb Ridge, turn the tower, summit, descend Coleman-Deming"
+     }
+    ],
+    "totalNote": "A serious, lightly-traveled grade III-IV alpine route; most modern parties do it as a 2-day trip with a Coleman Glacier camp rather than the historic 9,500 ft bivy, treating ridge day as a long 12-14 hour push."
+   },
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Northwest Forest Pass ($5 day use or $30 annual) or America the Beautiful Pass required. No climbing or wilderness permit is required; a voluntary climbing register may be at the trailhead. Group size limit 12 people maximum. Seasonal: Route becomes significantly more hazardous (loose rock) after early summer; spring/early summer strongly recommended. Glacier conditions variable year to year.",
+    "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+    "permit": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker.",
+    "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+    "group_limit": 12,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "what": "No overnight permit required",
+     "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+    }
+   },
+   "road": {
+    "name": "Glacier Creek Road (FR 39) to Heliotrope Ridge Trailhead",
+    "status": "Closed to vehicles at the Glacier Creek bridge (~MP 3.0), roughly 5 miles below the trailhead, due to December 2025 flood damage. Repairs scheduled to begin after July 15, 2026, targeting reopening by late September 2026 (subject to change).",
+    "driveNote": "Adds about 9 miles and 2,000 ft round trip on foot/bike beyond the washout."
+   },
+   "climate": {
+    "typical": "Heavily glaciated maritime volcano; high precipitation and rapid weather changes",
+    "bySeason": {
+     "fall": "Dry glaciers, shorter days, early storms",
+     "spring": "Strong snowpack; firm alpine ice/snow on the faces, good early-season conditions",
+     "summer": "Crevasses open, more rockfall on the headwalls; popular standard-route season",
+     "winter": "Severe maritime weather, heavy snow, few ascents"
+    },
+    "forecastZone": "NWS Seattle - Mount Baker area"
+   },
+   "emergency": {
+    "county": "Whatcom",
+    "rangerStation": "Mount Baker-Snoqualmie National Forest - Glacier Public Service Center (Mount Baker Ranger District)",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Occasional attempts in May-June",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely single digits to low double digits of ascents per season; an obscure mixed line on Baker's north side"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong; glacier approach via Heliotrope Ridge, similar effort to other Coleman/Roosevelt-side routes",
+     "packWeight": "35-45 lb"
+    },
+    "approachTime": "~2-3 hrs of glacier travel via Heliotrope Ridge/Coleman-Roosevelt Glaciers to gain the ridge",
+    "requiredSkills": [
+     "Mixed snow/rock climbing at alpine Grade III-IV",
+     "Comfort and competence on loose volcanic rock",
+     "Independent route-finding on a sparsely-documented line",
+     "Glacier travel and crevasse rescue on the flanking glaciers",
+     "Placing protection in poor-quality rock"
+    ],
+    "experienceLevel": "Advanced alpine climber comfortable on loose rock, mixed terrain, and independent route-finding on an obscure line"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "May to June",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Strong snowpack, firmer conditions",
+      "status": "optimal"
+     },
+     "July": {
+      "reason": "Outside the best-season window; loose rock more exposed and rockfall risk increases as snow cover recedes",
+      "status": "risky"
+     },
+     "June": {
+      "reason": "Still climbable, though there is more rockfall as snow melts off in summer",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Heavily glaciated maritime volcano; high precipitation and rapid weather changes",
+     "probability": "Loose rock becomes more exposed and rockfall-prone as the season warms and snow recedes"
+    },
+    "exposure": "High - loose volcanic rock and mixed route-finding, with the remote, obscure position increasing the consequence of any incident",
+    "avalanche": {
+     "zone": "NWAC West Slopes North",
+     "byMonth": {
+      "May": "Moderate",
+      "July": "N/A",
+      "June": "Low"
+     }
+    },
+    "crevasses": "Moderate - crevasse hazard exists on the flanking glaciers rather than on the ridge crest itself"
+   },
+   "data_quality": {
+    "gaps": [
+     "No crowd, traffic, or recent-ascent data found - this appears to be an extremely obscure route with little indexed beta beyond what's already on file",
+     "No verified party-count data found",
+     "Month-by-month avalanche/rockfall risk not documented specifically for this ridge",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/4T07",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.7797,
+    "peakLng": -121.8204,
+    "trailhead": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+    "trailheadLat": 48.8465,
+    "trailheadLng": -121.6927,
+    "trailheadDirection": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "Heliotrope Ridge, the Hogsback and the Coleman-Roosevelt crossing",
+     "notes": "Glacier Creek Road (FR 39) to the Heliotrope Ridge trailhead, then Trail 677 through old growth to the fork at about two miles. Take the right-hand climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft beside the Coleman Glacier, the same camp used for the Coleman-Deming and the North Ridge.\n\nFrom camp the route ropes up and heads northeast, crossing the Coleman and then the Roosevelt Glacier. Expect two to three hours of glacier travel through a crevasse field before low-to-moderate snow ramps lead to the foot of the ridge.",
+     "season": "spring to early summer",
+     "hazards": [
+      "crevasses and thin snow bridges on the Coleman and Roosevelt Glaciers",
+      "bergschrunds below and on the ridge",
+      "loose rock on the ridge, worse as the snow melts out",
+      "icefall on the ramps that skirt the towers"
+     ],
+     "baseFinding": "The ridge is reached by traversing northeast from the Hogsback camps across the Coleman and then the Roosevelt Glacier. Aim for the foot of the ridge at about 7,500-7,800 ft, where low-angle snow ramps lead up onto the crest.\n\nThe Cockscomb Tower, about 300 ft high, stands well above the base and is passed on its east side by steep snow; if you are already beside it, you are far above the start. If you have crossed only the Coleman and are still west of the Roosevelt, you have not reached this ridge yet."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Park Glacier camp near the Portals",
+     "role": "main",
+     "type": "bivy",
+     "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb.",
+     "water": "Snowmelt only",
+     "permit": "No overnight permit required",
+     "capacity": "Snow or rock platforms for a few tents"
+    },
+    {
+     "name": "Camp Kiser, Ptarmigan Ridge",
+     "role": "route",
+     "type": "camp",
+     "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross.",
+     "water": "Snowmelt only; can be dry late in summer",
+     "permit": "No overnight permit required",
+     "capacity": "Dispersed sites among rock wind walls"
+    },
+    {
+     "name": "Heliotrope Ridge Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "cockscomb ridge rdg",
+   "ice_grade_num": 2,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_doorway_flake",
+   "area_id": "wa_south_face",
+   "name": "Doorway Flake",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 5,
+   "length_m": 213,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bill Enger and Yale Lewis, June 19, 2019",
+   "lat": null,
+   "lng": null,
+   "aspect": "SSW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Single rack to #4 Camalot",
+    "~12 quickdraws (plus a few extended)",
+    "Two 60m ropes"
+   ],
+   "hazards": [
+    "Steep, brushy, poorly maintained approach with stream crossings and old rockslide/avalanche debris",
+    "Remote location extends any self-rescue or evacuation timeline"
+   ],
+   "verif": null,
+   "overview": "A 5-pitch, 700-ft route on the Far Western Wall reaching a distinctive hanging flake, with sculpted-knob face climbing low down and a bolt-protected 5.9 face crux on pitch two.",
+   "beta": "Pitch 1 (5.8) climbs sculpted knobs to a hanging flake with stemming and crack moves. Pitch 2 (5.9) is the crux — bolt-protected face climbing. Pitch 3 (5.7) follows a clean crack system, and pitches 4-5 (5.6) ease through dihedrals and slab to the top.",
+   "turnaround": "There is no quick bail once on route above the 4th-class approach scramble; start early enough to finish the climb, rappel, and reverse the multi-hour approach before dark, and back off if thunderstorms threaten the exposed face pitch.",
+   "auto_generated": false,
+   "alpine_grade": "II",
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "5 raps on two 60m ropes to Fixe chain anchors",
+   "commitment": "II",
+   "face": "South Face - Far Western Wall",
+   "permit": null,
+   "comms": "No reliable cell coverage on the wall or approach; a satellite communicator is recommended.",
+   "descent": null,
+   "obj_haz": [
+    "class 4 approach scramble",
+    "afternoon sun on SSW slab",
+    "loose rock near the talus/approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.2088,
+     "lng": -121.6298,
+     "elev": 1900,
+     "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 1900,
+     "directions": "From I-5 take the Arlington exit and drive SR 530 east through Oso to Darrington. Leave town on Squire Creek Road and follow it to the washout gate, which is where the road ends for vehicles and where you park. Everything past the gate is walked, starting along the old roadbed past the flagged landslide crossing."
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "Grassy saddle (South Face routes)",
+     "note": "Shares the same ~3 hr approach as the wall's other South Face routes.",
+     "type": "Base/bivy",
+     "distMi": 3
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "South Face grassy saddle",
+     "type": "Base/bivy",
+     "distMi": null,
+     "elevFt": 3249
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4958,
+     "name": "Squire Creek Wall (true summit/high point)",
+     "type": "Summit",
+     "elevFt": 4958
+    }
+   ],
+   "gpx": [
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.2088,
+     -121.6298
+    ],
+    [
+     48.1854,
+     -121.6493
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4,
+    "recommendedStart": "A pre-dawn alpine start is advisable given the multi-hour approach and multi-pitch descent"
+   },
+   "detailed_rack": "Single standard rack to 4 inches, about a dozen quickdraws (plus a few longer/extended ones), and two 60m ropes for the rappel descent.",
+   "what_to_bring": [
+    "Helmet",
+    "Approach shoes for a rough, 4 hr approach with a creek ford and 4th-class scrambling",
+    "Rain shell",
+    "Insect repellent",
+    "Route topo/photo reference",
+    "Extra water"
+   ],
+   "pro_tips": [
+    "The 4th-class approach traverse to the Far Western Wall is exposed — move carefully with packs on",
+    "Bring a topo; hand-drilled bolts can be hard to spot in shade"
+   ],
+   "watch_out": [
+    "Exposed 4th-class scrambling before roping up",
+    "Bolt-protected crux face pitch (2) — inspect conditions before committing"
+   ],
+   "pro_needs": "Bolt protection on the pitch-2 face crux, with gear placements in the flake, crack, and dihedral sections on the remaining pitches; all bolts are hand-drilled per Wilderness rules.",
+   "best_season": "Best mid-summer through early fall (roughly July-September); the Boulder River Wilderness holds snow into July and can see new snow by October.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, unmaintained approach — the old roadbed past a landslide crossing, a faint trail through streambed and alder brush, a ford of Squire Creek, and obscure forest track — before breaking into the open basin roughly 2 hours from the car; South Face is one of the walls encountered within that same basin complex, with route-finding (flagging, cairns) required in several spots.",
+   "descent_text": "Rappel the line of ascent using the fixed hand-drilled bolt and Fixe chain anchors; two 60m ropes recommended.",
+   "bail": "Descent is by rappelling the route itself from the nearest fixed anchor — there is no separate walk-off.",
+   "pitch_detail": [
+    {
+     "grade": "5.8",
+     "notes": "The namesake flake sits about 6 m above the talus at the nearest point of the far western wall. Boulder up sculpted knobs to the flake's lower edge, where a good crack takes a range of sizes, and stem over the lip. A 4-inch cam in the top of the flake protects knobs to a bolt; step right up cracks and ledges past another bolt, then back left via a quartz-studded block to a big ledge and smear past two bolts to the anchor.",
+     "pitch": "1",
+     "anchor": "bolted"
+    },
+    {
+     "grade": "5.9",
+     "notes": "From the right end of the ledge, face moves lead right to a visible bolt. Easy ground reaches a steep block protected by a 1.5-inch horizontal, then a vertical edge that faces right, then left past an alcove, with four bolts: sustained, fun 5.9 face climbing. Step down left to a narrow ledge and a high bolt, undercling out left to a diving-board feature (3/4-inch gear), and climb its dihedral past one bolt.",
+     "pitch": "2",
+     "anchor": "bolted"
+    },
+    {
+     "grade": "5.7",
+     "notes": "Go left off the ledge up edges with a slot for gear and a bolt, then straight up to a large ring of bushes and pass it on the left. Reach left on smears into a clean crack system through the White Spot, pass a hanging block with a white stump on its left, move right to a 1-inch crack, and traverse right into an easy trough to the anchor.",
+     "pitch": "3",
+     "anchor": "bolted"
+    },
+    {
+     "bolts": 1,
+     "grade": "5.6",
+     "notes": "Cruise up easy dihedrals including a long 4-inch layback crack. Where it turns right, step left for gear or pad up to a single bolt at a stance under a patch of bushes, then smear up and right near the hanging branches and move left past them to the anchor.",
+     "pitch": "4",
+     "anchor": "bolted"
+    },
+    {
+     "bolts": 1,
+     "grade": "5.6",
+     "notes": "One bolt protects a slabby hump heading straight for the summit; scramble the blocks above to a chain anchor. Descent is by rappelling the route with two ropes.",
+     "pitch": "5",
+     "anchor": "bolted"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+    "notes": "Approached via a ~1.5 mi walk on a decommissioned logging road (Squire Creek Trail 654) — roadside-adjacent but still within a designated wilderness boundary for part of the approach.",
+    "rules": "Standard Boulder River Wilderness rules apply (no numeric group-size cap published — don’t assume Glacier Peak Wilderness’s 12-person limit applies here).",
+    "permit": "None required — free self-issue wilderness permit available if needed.",
+    "closures": "Access road washed out by rockslides (~2002-2003) roughly 2 miles below the original trailhead; that section is now foot-travel only, adding time to the approach.",
+    "group_limit": 12,
+    "landManager": "USDA Forest Service — Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Boulder River Wilderness",
+    "parking_pass": "Assume Northwest Forest Pass required at the trailhead (standard for MBS NF day-use trailheads) — $5/day or $30/year.",
+    "passRequired": "No Northwest Forest Pass needed at the main Squire Creek trailhead.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Squire Creek Road (FR 2040) to Squire Creek Trailhead",
+    "status": "Squire Creek Road is a poorly-maintained gravel Forest Service spur; high-clearance and 4WD are recommended for the final stretch to the trailhead. From the trailhead it's about a 1.5-mile walk along a decommissioned logging road, then a descent to cross the creek beneath the walls.",
+    "driveNote": "From Darrington, follow Darrington Street about 7 miles to its end (becomes Squire Creek Road) — roughly 1-1.5 hours from Everett, about 2 hours from Seattle."
+   },
+   "climate": {
+    "fall": "Climbable into September; new snow can return by October",
+    "spring": "Approach gullies and the saddle are typically snow-covered into early summer — not viable for rock climbing",
+    "summer": "Primary season; snow usually clears by July for the most reliable dry-rock window",
+    "winter": "Not climbable — heavy snowpack and wet conditions",
+    "typical": "Wet west-slope Cascades climate; the Boulder River Wilderness receives 150+ inches of precipitation annually",
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Snohomish County Volunteer Search & Rescue (SCVSAR) supports backcountry rescues in this drainage; the long, remote approach means self-rescue and early retreat should be the default plan.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger Station, 1405 Emens Ave, Darrington, WA — (360) 436-1155",
+    "nearestHospital": "Skagit Regional Health – Cascade Valley Hospital, 330 S. Stillaguamish Ave, Arlington, WA (Level IV ED) — (360) 435-2133",
+    "sheriffDispatch": "Snohomish County Sheriff's Office (non-emergency) 425-388-3393; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through mid-September, when the Squire Creek ford is low and the slabs dry out between rains",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The creek drops and the south-facing slab dries; heat on the sunny wall can make afternoon friction greasy.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snowmelt keeps Squire Creek high for the ford, the slabs seep after rain, and snow can linger in the basin into early summer.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Lowest water at the ford and the driest rock of the year; start early to climb before the sun makes the slab hot.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Autumn rain on this very wet west slope keeps the rock damp, days are short, and new snow is possible in the basin.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cooler temperatures give better friction on the sunny slab, though the first fall rains leave the rock wet for a day or two.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.19575,
+    "peakLng": -121.65485,
+    "trailhead": "Squire Creek Road washout parking (Darrington)",
+    "trailheadLat": 48.2088,
+    "trailheadLng": -121.6298,
+    "trailheadDirection": "From Darrington via Squire Creek Road to the gated washout parking, then the Squire Creek Walls climbers' path"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Squire Creek trail, cut logs, ford and the grassy saddle",
+     "hours": "3",
+     "notes": "Squire Creek Road out of Darrington to the washout gate, then the old roadbed on foot past the flagged landslide crossing.\n\nTurn right at the two cut logs with old logging cable onto the well-beaten boot track. Ford the creek, climb steeply through old-growth forest — the upper section is steep and dirty — and break out into grassland at the grassy saddle bivy, roughly three hours from the trailhead. A second, smaller saddle lies ten minutes west along the wall.",
+     "season": "Summer",
+     "hazards": [
+      "Ford of Squire Creek",
+      "Steep dirty forest on the upper boot track"
+     ],
+     "baseFinding": "The main grassy saddle, at the start of Concerto in C for Drill and Hammer, is the reference point for the whole South Face; the smaller saddle further west is not it. From the saddle the grey granite apron runs out below the wall and the lines are picked off it. Rock here is generally clean slab with cracks that can be dirt-filled low down — dirty cracks near the ground are normal on this face and are not evidence you are off route. The sources consulted give no ground-level marker unique to this line, so identify it off the wall topo from the saddle rather than from anything underfoot."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 463,
+     "name": "Squire Creek Park & Campground, Snohomish County",
+     "role": "main",
+     "type": "camp",
+     "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+     "water": "Piped drinking water via spigots through the campground; reliable in season",
+     "permit": "None — this is a COUNTY park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+     "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+    },
+    {
+     "name": "Squire Creek road end / trailhead bivouac",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+     "water": "Squire Creek runs close by and is dependable, but needs treating",
+     "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+     "capacity": "A few parties, informal"
+    },
+    {
+     "name": "Squire Creek Wall on-route ledges",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+     "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+     "permit": "None",
+     "capacity": "Small ledges, one party"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "doorway flake",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_skeena26",
+   "area_id": "wa_south_face",
+   "name": "Skeena26",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 12,
+   "length_m": 457,
+   "sort_order": null,
+   "stars": null,
+   "fa": "David Whitelaw, Bill Enger, and Yale Lewis, September 17, 2012",
+   "lat": null,
+   "lng": null,
+   "aspect": "SSW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "BD Stoppers #5-8",
+    "Camalot C3 #1-2",
+    "Camalot C4 0.5-#3",
+    "5 quickdraws",
+    "5 alpine draws",
+    "50m ropes (60m to combine pitches 5-6)"
+   ],
+   "hazards": [
+    "Steep, brushy, poorly maintained approach with a creek ford and old rockslide/avalanche debris",
+    "Remote location extends any self-rescue or evacuation timeline"
+   ],
+   "verif": null,
+   "overview": "A 12-pitch, 1,500-ft friction climb on immaculate, knobby grey granite, with a polished 5.9 crux on pitch one easing into mostly 5.4-5.6 climbing above, finishing on clean splitter cracks overlooking Whitehorse Mountain.",
+   "beta": "Pitch 1 climbs a narrow 'whale's back' of stone between facing corners on polished friction, protected by nine bolts, and holds the route's crux. Subsequent pitches ease to 5.4-5.6 with occasional 5.8 sections. The final pitch features clean splitter cracks (5.7) finishing on the buttress crest with views over Whitehorse Mountain.",
+   "turnaround": "With 12 pitches and a multi-hour approach, treat this as a full-day objective with no quick bail; start early enough to finish and hike out before dark, and back off if water/seepage or building weather make the polished friction pitches unsafe.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Rappel the route on 50m ropes (most pitches take a full 50m); pitches 5-6 can be combined using 60m ropes",
+   "commitment": "III",
+   "face": "South Face",
+   "permit": null,
+   "comms": "No reliable cell coverage on the wall or approach; a satellite communicator is recommended.",
+   "descent": null,
+   "obj_haz": [
+    "seasonal water flow on pitch 7",
+    "runout on pitch 9",
+    "polished rock on pitch 1"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.2088,
+     "lng": -121.6298,
+     "elev": 1900,
+     "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 1900,
+     "directions": "Take I-5 to the Arlington exit, then SR 530 east through Oso to Darrington. From town, follow Squire Creek Road until it is blocked by the washout and park at the gated area there, around 1,900 feet. You cannot drive past that point; the climbers' path toward the Squire Creek Walls starts from the parking area, beginning on the old roadbed beyond the gate."
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "Grassy saddle (South Face routes)",
+     "note": "Brilliant white slab starting near the saddle, mostly 5.4-5.6 with a 5.9 opening pitch.",
+     "type": "Base/bivy",
+     "distMi": 3
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "South Face grassy saddle",
+     "type": "Base/bivy",
+     "distMi": null,
+     "elevFt": 3249
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4958,
+     "name": "Squire Creek Wall (true summit/high point)",
+     "type": "Summit",
+     "elevFt": 4958
+    }
+   ],
+   "gpx": [
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.2088,
+     -121.6298
+    ],
+    [
+     48.1854,
+     -121.6493
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 3,
+    "recommendedStart": "A pre-dawn alpine start is advisable given 12 pitches plus a multi-hour approach and descent"
+   },
+   "detailed_rack": "A light single rack to 3 inches: BD Stoppers (#5-8), Black Diamond Camalot C3 (#1-2), Camalot C4 (0.5 to #3), plus 5 quickdraws and 5 alpine draws; hand-drilled stainless-steel wedge bolts protect the crux friction sections.",
+   "what_to_bring": [
+    "Helmet",
+    "Approach shoes for a rough, 3 hr approach with a creek ford",
+    "Rain shell",
+    "Insect repellent",
+    "Route topo/photo reference",
+    "Extra water"
+   ],
+   "pro_tips": [
+    "Bolts are moderately spaced (10-20 ft) and can be extremely difficult to spot in shade — scout ahead and carry a topo",
+    "50m ropes work for most pitches; bring 60m to combine pitches 5-6 on the descent"
+   ],
+   "watch_out": [
+    "Polished friction holds on the pitch-1 crux, especially when damp",
+    "Water still running on pitch 7 has been reported even in season"
+   ],
+   "pro_needs": "Bolt-protected on the polished pitch-1 crux (9 bolts) and other friction sections, with natural gear placements filling in on lower-angle pitches and the final splitter-crack pitch.",
+   "best_season": "Best from mid-summer through early fall (roughly July-September); parties note lingering water/seepage on pitch 7 even in-season, and the Boulder River Wilderness holds snow at elevation into July.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, unmaintained approach — the old roadbed past a landslide crossing, a faint trail through streambed and alder brush, a ford of Squire Creek, and obscure forest track — before breaking into the open basin roughly 2 hours from the car; South Face is one of the walls encountered within that same basin complex, with route-finding (flagging, cairns) required in several spots.",
+   "descent_text": "Rappel the line of ascent; 50-meter ropes are adequate for most pitches, while 60-meter ropes allow combining pitches 5 and 6 to speed the descent.",
+   "bail": "Retreat is by rappelling the route from the nearest fixed anchor — no separate walk-off exists.",
+   "pitch_detail": [
+    {
+     "crux": true,
+     "bolts": 9,
+     "grade": "5.9",
+     "notes": "Find the narrow whale's-back rib between two facing corners; the nine bolts are hard to see in the shade. A bouldery 5.9 move gains the rib, then 5.7-5.8 friction leads to polished rock near the top with a few more 5.9 moves. Step onto a flake on the left, place gear in good cracks just above, then traverse right to the belay ledge.",
+     "pitch": "1"
+    },
+    {
+     "notes": "The character of most of the route: friction on brilliant white granite covered in knobs and bumps, mostly 5.4-5.6. Bolts are spaced roughly 10-20 feet apart and hard to spot in shade, so look ahead before leaving each anchor.",
+     "pitch": "2-4"
+    },
+    {
+     "notes": "More knobbed slab at 5.6 with occasional 5.8 moves. On rappel, 60 m ropes let these two pitches be combined into one rappel.",
+     "pitch": "5-6"
+    },
+    {
+     "notes": "A 5.8 section starts on this pitch, and it can carry running water even when the rest of the route is dry. Be ready for wet smears on this pitch.",
+     "pitch": "7"
+    },
+    {
+     "notes": "There is a gear crack on this pitch that is easy to miss; climbing past it turns the pitch into a long runout. Look for it before running it out.",
+     "pitch": "9"
+    },
+    {
+     "bolts": 4,
+     "grade": "5.7",
+     "notes": "Climb up and right past four bolts (nothing harder than 5.7), then finish on clean 5.7 splitter cracks and a few face moves past the left side of an overhang, onto the forested ledge on top of the buttress with views of Whitehorse Mountain. The wall's true summit is further up brushy scrambling.",
+     "pitch": "12"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "_raw": {
+     "cost_structure": {
+      "day_use": "$5 per vehicle per day or $30 annual pass",
+      "wilderness_permit": "Free"
+     },
+     "parking_pass_required": "Valid recreation pass or Scan & Pay through Recreation.gov app"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Approached via a ~1.5 mi walk on a decommissioned logging road (Squire Creek Trail 654) — roadside-adjacent but still within a designated wilderness boundary for part of the approach.",
+    "rules": "Standard Boulder River Wilderness rules apply (no numeric group-size cap published — don’t assume Glacier Peak Wilderness’s 12-person limit applies here).",
+    "closures": "N/A",
+    "group_limit": 12,
+    "landManager": "USDA Forest Service -- Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Boulder River Wilderness",
+    "parking_pass": "Assume Northwest Forest Pass required at the trailhead (standard for MBS NF day-use trailheads) — $5/day or $30/year.",
+    "passRequired": "Valid recreation pass or Scan & Pay through Recreation.gov app",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Squire Creek Road (FR 2040) to Squire Creek Trailhead",
+    "status": "Squire Creek Road is a poorly-maintained gravel Forest Service spur; high-clearance and 4WD are recommended for the final stretch to the trailhead. From the trailhead it's about a 1.5-mile walk along a decommissioned logging road, then a descent to cross the creek beneath the walls.",
+    "driveNote": "From Darrington, follow Darrington Street about 7 miles to its end (becomes Squire Creek Road) — roughly 1-1.5 hours from Everett, about 2 hours from Seattle."
+   },
+   "climate": {
+    "fall": "Climbable into September; new snow can return by October",
+    "spring": "Approach gullies and the saddle are typically snow-covered into early summer — not viable for rock climbing",
+    "summer": "Primary season; snow usually clears by July for the most reliable dry-rock window",
+    "winter": "Not climbable — heavy snowpack and wet conditions",
+    "typical": "Wet west-slope Cascades climate; the Boulder River Wilderness receives 150+ inches of precipitation annually",
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Snohomish County Volunteer Search & Rescue (SCVSAR) supports backcountry rescues in this drainage; the long, remote approach means self-rescue and early retreat should be the default plan.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger Station, 1405 Emens Ave, Darrington, WA — (360) 436-1155",
+    "nearestHospital": "Skagit Regional Health – Cascade Valley Hospital, 330 S. Stillaguamish Ave, Arlington, WA (Level IV ED) — (360) 435-2133",
+    "sheriffDispatch": "Snohomish County Sheriff's Office (non-emergency) 425-388-3393; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "August to September, once the basin gullies melt out, Squire Creek drops for the ford and the seep on the upper route dries",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The approach melts out and the ford eases, but the white south-facing slabs bake by midday; start at first light.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow lingers in the approach gullies, Squire Creek runs high with snowmelt at the ford, and the upper pitch still seeps.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "The creek is at its lowest and the seep is at its driest; the sunny face gets hot, and wildfire smoke can drift in.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Fall rain raises Squire Creek at the ford and wets the slabs, and short days lengthen the brushy walk out after dark.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cooler slab climbing on dry rock with a low creek; shorter days still leave room for the 12 pitches.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.19575,
+    "peakLng": -121.65485,
+    "trailhead": "Squire Creek Road washout parking (Darrington)",
+    "trailheadLat": 48.2088,
+    "trailheadLng": -121.6298,
+    "trailheadDirection": "From Darrington via Squire Creek Road to the gated washout parking, then the Squire Creek Walls climbers' path"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Squire Creek washout to the west saddle",
+     "notes": "Drive Squire Creek Road out of Darrington until the washout blocks it and park at the gate. Follow the old roadbed past the landslide crossing, watching for two cut logs on either side of the road with old logging cable visible, where a well-established boot track drops right toward the creek. Ford Squire Creek at its shallowest point, follow the climbers' track upstream across a tributary, then climb through two gullies on steep, muddy tread until the ground opens at the grassy saddle below the wall.",
+     "season": "Midsummer into early autumn, once the Squire Creek ford has dropped; the wall itself faces south-southwest and takes direct sun only through the middle of the day",
+     "hazards": [
+      "The Squire Creek ford is difficult in early season",
+      "Faint, flagged approach track through alder and streambed with several places to lose it",
+      "The bolts on the first pitch are old and hard to see against the pale stone"
+     ],
+     "baseFinding": "The grassy saddle where the climbers' path tops out is NOT the start of this route — that is where the other lines on this wall begin, and stopping there is the commonest mistake. From the saddle keep going LEFT, west, along the base of the wall for five to ten minutes to a second and smaller saddle, then scramble up grass into a minor gully. The proof is the first pitch itself: it climbs a narrow whale's back of stone, a rounded rib of clean grey-white granite standing proud between two facing corners of much more broken rock, with a line of bolts up it. Those bolts are old and hard to pick out against the pale stone, so identify the rib shape first and the hardware second. If you are on broken, cornered rock rather than a smooth rounded rib, you are in one of the flanking corners and not on the route. If the main grassy saddle is still below and to your right, you have not walked far enough west."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 463,
+     "name": "Squire Creek Park & Campground, Snohomish County",
+     "role": "main",
+     "type": "camp",
+     "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+     "water": "Piped drinking water via spigots through the campground; reliable in season",
+     "permit": "None — this is a COUNTY park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+     "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+    },
+    {
+     "name": "Squire Creek road end / trailhead bivouac",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A MOVING TARGET and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+     "water": "Squire Creek runs close by and is dependable, but needs treating",
+     "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+     "capacity": "A few parties, informal"
+    },
+    {
+     "name": "Squire Creek Wall on-route ledges",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+     "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+     "permit": "None",
+     "capacity": "Small ledges, one party"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "skeena26",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

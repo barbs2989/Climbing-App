@@ -1,0 +1,1497 @@
+{
+ "plan": [
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Steep snow/ice 45–50°",
+    "grade_system": null,
+    "grade_num": null,
+    "commitment": "IV"
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "commitment": "III"
+   },
+   "headline": [
+    "AI3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Alpine Grade III; slope ramps to 45-50 degrees and stays there to Liberty Cap; documented mostly as a ski descent, no ice grade given.",
+   "sources": [
+    "https://cascadeclimber.com/edmunds_headwall.htm",
+    "https://engineeredforadventure.com/edmunds-headwall-mt-rainier/"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade II–III glacier",
+    "grade_num": null,
+    "alpine_grade": "III"
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_num": 2,
+    "alpine_grade": "II"
+   },
+   "headline": [
+    "III",
+    "Class 2"
+   ],
+   "confidence": "high",
+   "evidence": "MP: Mod. Snow; SummitPost: Grade II, moderate glacier travel, ~30-35 degree Corridor.",
+   "sources": [
+    "https://www.mountainproject.com/route/105982534/emmons-glacier",
+    "https://www.summitpost.org/emmons-winthrop-glacier/156360"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "batch": "b19.json",
+   "before": {
+    "grade": "II",
+    "grade_num": 2
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_num": 3
+   },
+   "headline": [
+    "AI2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Mod. Snow, Grade II; ~2,200 ft of sustained 40-45 degree couloir on 30-45 degree snow/ice, usually protected with pickets.",
+   "sources": [
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+    "https://www.mountainguides.com/rnr-fuhrer-finger.shtml"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "batch": "b19.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "AD",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP lists Fuhrer Thumb as Mod. Snow; SummitPost: narrower couloir west of the Finger, Grade II on 30-45 degree snow/ice, joining the Finger at ~11,500 ft.",
+   "sources": [
+    "https://www.summitpost.org/fuhrer-finger-thumb/159008",
+    "https://www.mountainproject.com/area/105877031/mount-rainier"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "batch": "b19.json",
+   "before": {
+    "grade": "II-III",
+    "grade_system": "class",
+    "ice_grade_num": 1
+   },
+   "body": {
+    "grade": "AI2",
+    "grade_system": "wi",
+    "ice_grade_num": 2
+   },
+   "headline": [
+    "4th class",
+    "AI2"
+   ],
+   "confidence": "high",
+   "evidence": "MP: AI1-2 Mod. Snow; Grade II with 35-50 degree snow and ice, exposed ledges protected with pickets.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467946/gibraltar-ledges",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade II–III glacier",
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_num": 2
+   },
+   "headline": [
+    "II",
+    "Class 2"
+   ],
+   "confidence": "medium",
+   "evidence": "MP lists Ingraham Glacier Direct as Mod. Snow; a crevassed glacier climb up the headwall with no rock and no ice grade.",
+   "sources": [
+    "https://www.mountainproject.com/area/105877031/mount-rainier",
+    "http://mountrainierclimbing.blogspot.com/2018/05/route-update-ingraham-direct-and.html"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade III, AI3",
+    "grade_system": "class",
+    "ice_grade_num": 2,
+    "rock_grade": "5th class (Rock Step only)",
+    "alpine_grade": "III",
+    "commitment": "III"
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3,
+    "rock_grade": "Class 3-4 (short rock step, usually rappelled or downclimbed)",
+    "alpine_grade": "II",
+    "commitment": "II"
+   },
+   "headline": [
+    "5th class",
+    "AI3"
+   ],
+   "confidence": "high",
+   "evidence": "MP lists WI2-3; two steps of alpine ice in the Kautz chute are the crux; the rock step is a ~25 ft rappel or downclimb off the Wapowety Cleaver, not a 5th-class climb.",
+   "sources": [
+    "https://www.mountainproject.com/route/105906991/kautz-glacier",
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "batch": "b19.json",
+   "before": {
+    "grade": "III-IV",
+    "grade_system": "yds",
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "AI2-3",
+    "AI3"
+   ],
+   "confidence": "medium",
+   "evidence": "No dedicated page found; the Kautz ice chute it climbs directly is WI2-3 on MP, and the record's own ice_grade puts the crux pitch at AI3.",
+   "sources": [
+    "https://www.mountainproject.com/route/105906991/kautz-glacier",
+    "https://www.mountainproject.com/area/105877031/mount-rainier"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade IV–V, steep snow/ice to ~60–70°",
+    "grade_system": "yds",
+    "grade_num": null,
+    "ice_grade_num": 2
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "AI2-3",
+    "AI3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: AI2-3 Steep Snow; crux is the ice of the Black Pyramid / upper ridge and the bergschrund below Liberty Cap.",
+   "sources": [
+    "https://www.mountainproject.com/area/105877031/mount-rainier"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "batch": "b19.json",
+   "before": {
+    "grade": "III-IV",
+    "grade_system": "yds",
+    "grade_num": 4,
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "5th class",
+    "AI3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP Central Mowich Face: AI3-4 Steep Snow overall; original Grade III line takes a 40-50 degree snow ramp, the Grade IV variation has AI2-3 ice steps and 50-60 degree snow.",
+   "sources": [
+    "https://www.mountainproject.com/route/106703081/central-mowich-face",
+    "https://www.mountaineers.org/activities/routes-places/mowich-lake-area-review/mt-rainier-mowich-face"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "batch": "b19.json",
+   "before": {
+    "grade": "IV",
+    "grade_system": "nccs",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.6",
+    "grade_system": "yds",
+    "grade_num": 6
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.6 AI2-3 Steep Snow; trip reports name a ~15 ft 5.6 rock chimney/step through the rock band as the crux.",
+   "sources": [
+    "https://www.mountainproject.com/area/105877031/mount-rainier",
+    "http://www.markpthomas.com/mountaineering/trip-reports/washington/mt-rainier-ptarmigan-ridge",
+    "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "batch": "b19.json",
+   "before": {
+    "grade": "IV",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.5",
+    "grade_num": 5
+   },
+   "headline": [
+    "5.5",
+    "5.5"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: 5.5 AI1-2 Steep Snow, Grade IV+; a short loose rock section is the only rock, otherwise 50-55 degree gullies.",
+   "sources": [
+    "https://www.mountainproject.com/route/112479245/sunset-ridge",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "III",
+    "grade_system": "yds",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2
+   },
+   "headline": [
+    "II",
+    "Class 2"
+   ],
+   "confidence": "high",
+   "evidence": "MP lists Tahoma Glacier as Mod. Snow: a crevassed glacier climb with no rock or ice grade.",
+   "sources": [
+    "https://www.mountainproject.com/area/105877031/mount-rainier"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_wilson_headwall",
+   "batch": "b19.json",
+   "before": {
+    "grade": "WI2 Mod. Snow"
+   },
+   "body": {
+    "grade": "WI2"
+   },
+   "headline": [
+    "WI2",
+    "WI2"
+   ],
+   "confidence": "high",
+   "evidence": "MP: WI2 Mod. Snow, Grade II; 30-50 degree snow and ice for ~3,000 ft with small rock bands that can be bypassed.",
+   "sources": [
+    "https://www.mountainproject.com/route/114097472/wilson-headwall"
+   ]
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Class 4 + glacier",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "5.0",
+    "5.0"
+   ],
+   "confidence": "medium",
+   "evidence": "Route descriptions: a short 8-ft low-fifth move at the flying-buttress col (Class 5 with low snow cover), then a Class 4 summit chimney often choked with snow/ice.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/the-chilliwacks-peaks",
+    "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+    "https://www.nps.gov/noca/blogs/depot-creek-mt-redoubt.htm"
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Trip report via the Southwest Couloir: Class 2-3 scramble to the craggy summit; easiest route on the peak rated Class 3.",
+   "sources": [
+    "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/",
+    "https://en.wikipedia.org/wiki/Mount_Seattle_(Washington)"
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "batch": "b19.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "headline": [
+    "",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "SummitPost: ~1,800 ft confined couloir to Nooksack Ridge, a basic snow climb with some 3rd-4th class rock at the end.",
+   "sources": [
+    "https://www.summitpost.org/bloody-head-couloir/158080"
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "batch": "b19.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 2",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Trip report: Wall Street gully 30-35 degree snow, then the SE ridge was 'a straightforward Class 2 scramble except for 100 feet of exposed Class 3 traversing'.",
+   "sources": [
+    "https://trailcatjim.com/mt-sefrit-via-northwest-glacier-southeast-ridge/",
+    "https://cascadeclimbers.com/forum/topic/104320-tr-mount-sefrit-nw-route-wall-street-couloir-01222022/"
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade II-III, Class 4",
+    "grade_system": "yds",
+    "rock_grade": "Class 3"
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class",
+    "rock_grade": "Class 3-4"
+   },
+   "headline": [
+    "Class 3",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: from the Nooksack Cirque trail up the south slopes to the SE ridge, then a fractured class 3/4 ridge to the summit; reports mention two short Class 4 rock sections.",
+   "sources": [
+    "https://www.summitpost.org/mount-sefrit/151613",
+    "https://turns-all-year.com/trip-reports/mount-sefrit-s-sw-face"
+   ]
+  },
+  {
+   "id": "wa_main_peak_5_northwest_couloir",
+   "batch": "b19.json",
+   "before": {
+    "grade": "AI2-3 Steep Snow PG13"
+   },
+   "body": {
+    "grade": "AI3"
+   },
+   "headline": [
+    "AI2-3",
+    "AI2-3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: AI2-3 Steep Snow PG13, Grade III, ~2,000 ft; 50 degree choke and exposed traverse.",
+   "sources": [
+    "https://www.mountainproject.com/route/119578970/northwest-couloir"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade III, Class 4 / low 5th",
+    "grade_system": "yds",
+    "rock_grade": "4th class (short steps to 5.0)"
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class",
+    "rock_grade": "4th class"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 4th, AI1, Mod. Snow; Class 3-4 chimneys, steep snow at Winnie's Slide and Hell's Highway, Class 3-4 summit pyramid.",
+   "sources": [
+    "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mt-shuksan-fisher-chimneys"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "IV"
+   },
+   "body": {
+    "grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "medium",
+   "evidence": "1939 Hennig-Trott route: glacier travel, ice up to 65 degrees, and some 5.6 rock on the east ridge of the summit pyramid.",
+   "sources": [
+    "https://kurthicks.com/2009/08/30/mt-shuksans-hanging-glacier/",
+    "https://en.wikipedia.org/wiki/Hanging_Glacier_(Mount_Shuksan)"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade II-III, AI2-3",
+    "grade_system": "yds",
+    "ice_grade_num": 2
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "up to 5.6 depending on summit-pyramid finish…",
+    "AI3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: AI2-3 Mod. Snow; 45-50 degree snow/ice face, summit pyramid options 4th class to 5.6.",
+   "sources": [
+    "https://www.mountainproject.com/route/107476295/north-face",
+    "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade III-IV, Class 4-5 (mixed rock and snow)",
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "5.7",
+    "grade_system": "yds",
+    "grade_num": 7
+   },
+   "headline": [
+    "5.7",
+    "5.7"
+   ],
+   "confidence": "medium",
+   "evidence": "Northwest Arete rated 5.7, Grade III, AI2+: bushwhacking, loose rock, moderate alpine ice and glacier; one climber reports little true 5.7.",
+   "sources": [
+    "https://www.summitpost.org/northwest-arete/259121",
+    "https://www.alpineinstitute.com/route-profile-northwest-rib-mt-shuksan-5-7-iii/"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "IV-V",
+    "grade_system": "yds",
+    "grade_num": 4,
+    "ice_grade_num": 2,
+    "rock_grade": "4th-5th class (south-side gullies of summit pyramid)"
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "ice_grade_num": 3,
+    "rock_grade": "Easy 5th (summit pyramid)"
+   },
+   "headline": [
+    "4th-5th class",
+    "AI3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Easy 5th, AI2-3, M4, Steep Snow; the route is known as an alpine ice climb through the Price Glacier seracs.",
+   "sources": [
+    "https://www.mountainproject.com/area/105877058/mt-shuksan",
+    "https://en.wikipedia.org/wiki/Price_Glacier_(Mount_Shuksan)"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade II, Class 4",
+    "grade_system": "yds",
+    "grade_num": 4,
+    "rock_grade": "Class 3-4 (low 5th on the SE Ridge finish)"
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "rock_grade": "Class 3-4 (summit pyramid gully)"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: 3rd, Easy Snow; finishes with a Class 3 rock gully (snow early season) on the summit pyramid. Some sources call the pyramid Class 3-4.",
+   "sources": [
+    "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier"
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Grade II, Easy Snow",
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "II",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Easy Snow for the glacier; reaching the summit uses the summit pyramid, Class 3 on MP's Sulphide route.",
+   "sources": [
+    "https://www.mountainproject.com/area/105877058/mt-shuksan",
+    "https://en.wikipedia.org/wiki/White_Salmon_Glacier_(Mount_Shuksan)"
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "batch": "b19.json",
+   "before": {
+    "grade": "WI3 5.2",
+    "grade_system": "yds",
+    "ice_grade_num": 2
+   },
+   "body": {
+    "grade": "WI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "5.2",
+    "5.2"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Grade III, WI2-3 with vertical ice passages and 300 ft of 60-70 degree ice; rock tops out at 5.2.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face"
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Class 3 (steep snow early season)"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "From Lake of the Angels: a typical Class 2 and 3 Olympic scramble, maybe 3+ in spots, on rotten rock.",
+   "sources": [
+    "https://www.summitpost.org/mount-skokomish/152044",
+    "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/"
+   ]
+  },
+  {
+   "id": "wa_mount_spickard_silver_glacier",
+   "batch": "b19.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "headline": [
+    "Class 4",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "SummitPost: glacier travel on the Silver Glacier, then Class 4 scrambling on the final ridge.",
+   "sources": [
+    "https://www.summitpost.org/silver-glacier/163464"
+   ]
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "batch": "b19.json",
+   "before": {
+    "grade": "Class 3 + glacier"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "Standard south-side route: no harder than 40-degree snow and 3rd-class rock; easy Class 3 to the summit.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1006693"
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 2 scramble / non-technical",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 2",
+    "rock_grade": "Class 2 scramble / non-technical"
+   },
+   "headline": [
+    "F",
+    "Class 2"
+   ],
+   "confidence": "high",
+   "evidence": "Standard summer route: a non-technical Class 2 climb over boulder ridges and ash slopes to the crater rim.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge",
+    "https://www.oregonhikers.org/field_guide/Mount_Saint_Helens_Hike"
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 2 snow climb / non-technical",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 2",
+    "rock_grade": "Class 2 snow climb / non-technical"
+   },
+   "headline": [
+    "F",
+    "Class 2"
+   ],
+   "confidence": "high",
+   "evidence": "Winter route from Marble Mountain Sno-Park: a non-technical snow climb that joins Monitor Ridge below the summit; ice axe and crampons needed.",
+   "sources": [
+    "https://www.mountainproject.com/route/107353369/worm-flows",
+    "https://www.wta.org/go-hiking/hikes/mount-st-helens-worm-flows-route"
+   ]
+  },
+  {
+   "id": "wa_mount_steel_first_divide",
+   "batch": "b20.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 1",
+    "grade_system": "class",
+    "grade_num": 1
+   },
+   "headline": [
+    "",
+    "Class 1"
+   ],
+   "confidence": "medium",
+   "evidence": "Easiest route is from First Divide (14 mi up the North Fork Skokomish), following the ridge west; rated class 1.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Steel",
+    "https://www.summitpost.org/mount-steel/152969"
+   ]
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 2-3 (steep snow early season)",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 1",
+    "grade_num": 1
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 1"
+   ],
+   "confidence": "medium",
+   "evidence": "From Marmot Lake a creek leads into the west-side amphitheater where 'easy slopes lead to the summit'; both routes rated class 1.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Steel",
+    "https://www.summitpost.org/mount-steel/152969"
+   ]
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3-4",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Class 2/3 scramble: a gully west of the summit to the ridge, then an exposed ridge traverse; final scramble described as simple Class 2 with exposure, with Class 4/5 gendarmes avoided.",
+   "sources": [
+    "https://hike2hike.com/scrambling/mount-stickney-washington-state/",
+    "https://www.summitpost.org/mount-stickney/656102",
+    "https://www.mountaineers.org/activities/routes-places/mount-stickney"
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3-4",
+    "grade_num": 4,
+    "rock_grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_num": 3,
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 3rd, Easy Snow; St. Peter's Gate needs Class 2-3 scrambling on loose talus and scree; the west-ridge summit finish is a Class 2-3 scramble.",
+   "sources": [
+    "https://www.mountainproject.com/area/106150664/mount-stone",
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+    "https://www.summitpost.org/stone-ponds-st-peters-gate/308351"
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_num": 4
+   },
+   "headline": [
+    "Class 3",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "MP South Couloir: 4th; 'mostly 2nd and 3rd class with ... one step of 4th class terrain near the summit pinnacle' (Olympic guide says 3rd class).",
+   "sources": [
+    "https://www.mountainproject.com/route/121140520/south-couloir",
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616"
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 3",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "MP South Couloir: 4th; mostly 2nd-3rd class with one 4th-class step on the east side of the summit pinnacle.",
+   "sources": [
+    "https://www.mountainproject.com/route/121140520/south-couloir",
+    "https://www.summitpost.org/mount-stone/151845"
+   ]
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "batch": "b20.json",
+   "before": {
+    "grade": "5.11d-5.12a",
+    "rock_grade": "5.11d-5.12a"
+   },
+   "body": {
+    "grade": "5.12a",
+    "rock_grade": "5.12a"
+   },
+   "headline": [
+    "5.11d-5.12a",
+    "5.12a"
+   ],
+   "confidence": "high",
+   "evidence": "MP lists King Kong - Gorillas Direct Direct at 5.12a; crux is the two-pitch direct headwall finish.",
+   "sources": [
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong"
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 2-3 scramble to true summit (past the false summit)"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 3rd, Easy Snow; scree couloir then a short exposed Class 3 scramble from the false summit to the true summit.",
+   "sources": [
+    "https://www.mountainproject.com/area/105996601/mt-stuart"
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "batch": "b20.json",
+   "before": {
+    "grade": "V, 5.11-"
+   },
+   "body": {
+    "grade": "5.11-"
+   },
+   "headline": [
+    "5.11-",
+    "5.11-"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.11-, WI2, Steep Snow; three crack pitches on the pillar are the crux after the steep Ice Cliff Glacier approach.",
+   "sources": [
+    "https://www.mountainproject.com/route/106475357/girth-pillar"
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "batch": "b20.json",
+   "before": {
+    "grade": "III",
+    "grade_system": "yds",
+    "grade_num": null,
+    "ice_grade_num": 2
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "low 5th",
+    "AI3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: AI2-3 Steep Snow, Grade III, 2,000 ft (Prater, Prater, Mahre 1957).",
+   "sources": [
+    "https://www.mountainproject.com/route/108784980/ice-cliff-glacier"
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade IV, 5.9"
+   },
+   "body": {
+    "grade": "5.9"
+   },
+   "headline": [
+    "5.9",
+    "5.9"
+   ],
+   "confidence": "medium",
+   "evidence": "MP North Ridge 5.9; 'Complete North Ridge (5.9, 3000 ft)'; the crux is the Great Gendarme's two 5.9 pitches.",
+   "sources": [
+    "https://www.mountainproject.com/area/105996601/mt-stuart",
+    "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/"
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "batch": "b20.json",
+   "before": {
+    "grade": "IV",
+    "grade_system": "yds",
+    "ice_grade_num": 2,
+    "rock_grade": "M5-"
+   },
+   "body": {
+    "grade": "WI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3,
+    "rock_grade": "mid 5th (West Ridge finish)"
+   },
+   "headline": [
+    "M5-",
+    "WI3"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: WI2-3 M5-; mostly 40-50 degree snow with a narrow 60-80 degree ice step as the crux, then a low-to-mid 5th West Ridge finish.",
+   "sources": [
+    "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+    "https://www.mountainproject.com/area/105996601/mt-stuart"
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "III, 5.4-5.6"
+   },
+   "body": {
+    "grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.6, Steep Snow; mostly 3rd and 4th class with a couple of low-5th steps and a 5.6 crux.",
+   "sources": [
+    "https://www.mountainproject.com/route/106502853/west-ridge"
+   ]
+  },
+  {
+   "id": "wa_mt_stuart_always_the_cowboy_never_the_cow",
+   "batch": "b20.json",
+   "before": {
+    "grade": "AI5 M5"
+   },
+   "body": {
+    "grade": "AI5"
+   },
+   "headline": [
+    "AI5",
+    "AI5"
+   ],
+   "confidence": "medium",
+   "evidence": "MP lists 'Always the Cowboy, Never the Cow' at AI5 M5.",
+   "sources": [
+    "https://www.mountainproject.com/area/105996601/mt-stuart"
+   ]
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3, steep snow to 40°",
+    "grade_num": 3,
+    "rock_grade": "Class 3",
+    "alpine_grade": "III",
+    "commitment": "III"
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_num": 4,
+    "rock_grade": "Class 3-4",
+    "alpine_grade": "II",
+    "commitment": "II"
+   },
+   "headline": [
+    "Class 3",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: 4th, Mod. Snow; other descriptions give Grade II, snow to 40 degrees, then simple Class 3 ridge scrambling to the summit.",
+   "sources": [
+    "https://www.mountainproject.com/route/108236928/sherpa-glacier",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier"
+   ]
+  },
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "batch": "b20.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2
+   },
+   "headline": [
+    "",
+    "Class 2"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: the Southwest Ridge route is Class 2, with optional Class 3 bypasses; trip reports note a few Class 2-3 rock steps on a steep boot track.",
+   "sources": [
+    "https://www.summitpost.org/mount-teneriffe/152613",
+    "https://trailcatjim.com/mt-teneriffe-summit-loop-kamikaze-ridge-to-rachor-pass/",
+    "https://www.10adventures.com/hikes/mount-baker-snoqualmie-national-forest/mount-teneriffe-via-kamikaze-trail/"
+   ]
+  },
+  {
+   "id": "wa_mount_teneriffe_standard_route",
+   "batch": "b20.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2
+   },
+   "headline": [
+    "",
+    "Class 2"
+   ],
+   "confidence": "high",
+   "evidence": "Long trail via Rachor Pass; 'a short hike and an easy rock scramble' to the rounded summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-teneriffe",
+    "https://www.summitpost.org/mount-teneriffe/152613"
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade III, 5.7"
+   },
+   "body": {
+    "grade": "5.7"
+   },
+   "headline": [
+    "5.7",
+    "5.7"
+   ],
+   "confidence": "high",
+   "evidence": "1961 route (Bell, Cooper, Hiser, Swayne) followed the line of least resistance to a faint buttress on the right: III 5.7.",
+   "sources": [
+    "https://www.summitpost.org/north-buttress/168376",
+    "http://publications.americanalpineclub.org/articles/12196206500/"
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade II, 5.6",
+    "grade_num": 6,
+    "rock_grade": "5.6"
+   },
+   "body": {
+    "grade": "5.8",
+    "grade_num": 8,
+    "rock_grade": "5.8"
+   },
+   "headline": [
+    "5.6",
+    "5.8"
+   ],
+   "confidence": "medium",
+   "evidence": "MP lists East Ridge/SE Face at 5.8; the Cascade Alpine Guide gives a 4-pitch 5.6, but trip reports call the first pitch a hard 5.8 (40 ft vertical, offwidth or finger crack).",
+   "sources": [
+    "https://www.mountainproject.com/area/119741550/mount-terror",
+    "https://www.summitpost.org/mount-terror-east-ridge/871460"
+   ]
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade IV, 5.8"
+   },
+   "body": {
+    "grade": "5.8"
+   },
+   "headline": [
+    "5.8",
+    "5.8"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.8, Grade IV, 2,500 ft; thousands of feet of low-fifth to 5.8 on the crest (Stoddard, solo, 1984).",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress"
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade II, 5.6"
+   },
+   "body": {
+    "grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.6; a loose gully to the Terror-Rake notch, short low-5th to 5.6 climbing, then 3rd/4th class to the summit.",
+   "sources": [
+    "https://www.mountainproject.com/route/112189946/west-ridge",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/"
+   ]
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 4",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "MP: East Ridge 4th; 'spicy 4th class', often roped on descent.",
+   "sources": [
+    "https://www.mountainproject.com/area/110554076/mount-thomson",
+    "https://www.mountaineers.org/activities/routes-places/mount-thompson-east-ridge"
+   ]
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 5.6",
+    "grade_system": "class"
+   },
+   "body": {
+    "grade": "5.6",
+    "grade_system": "yds"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.6, 6 pitches; Grade II with class 4 and low 5th, a single 5.6 move off the first belay.",
+   "sources": [
+    "https://www.mountainproject.com/area/110554076/mount-thomson",
+    "https://www.mountaineers.org/activities/routes-places/mount-thompson-west-ridgpe"
+   ]
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3 + glacier",
+    "ice_grade": "WI2-3"
+   },
+   "body": {
+    "grade": "Class 3",
+    "ice_grade": null
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Easiest route: glacier travel on the White Glacier plus Class 3 scrambling.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Tom_(Washington)",
+    "https://en.wikipedia.org/wiki/White_Glacier_(Mount_Tom)"
+   ]
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade II, 5.4"
+   },
+   "body": {
+    "grade": "5.4"
+   },
+   "headline": [
+    "5.4",
+    "5.4"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.4, 4 pitches, ~1,000 ft; slab steps, loose 4th class gully, a short dihedral.",
+   "sources": [
+    "https://www.mountainproject.com/route/112057303/south-ridge",
+    "https://stephabegg.com/trip-reports/washington/torment-forbidden/"
+   ]
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Grade IV, 5.6"
+   },
+   "body": {
+    "grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.6, Grade IV, steep snow; crux is the 5.6 tower pitch on Forbidden's West Ridge finish.",
+   "sources": [
+    "https://www.mountainproject.com/route/108312467/torment-forbidden-traverse",
+    "https://www.summitpost.org/torment-forbidden-traverse/224484"
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 1-2 (maintained trail)",
+    "grade_num": 2
+   },
+   "body": {
+    "grade": "Class 1",
+    "grade_num": 1
+   },
+   "headline": [
+    "Class 1-2",
+    "Class 1"
+   ],
+   "confidence": "high",
+   "evidence": "Maintained Mt. Townsend Trail #839 to the summit: 8.2 mi round trip, 2,900 ft gain, no scrambling.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-townsend",
+    "https://www.hikingproject.com/trail/7001930/mt-townsend-trail-839"
+   ]
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "batch": "b20.json",
+   "before": {
+    "grade": "5.7 (crux offwidth; sometimes rated 5.6)",
+    "grade_num": 7
+   },
+   "body": {
+    "grade": "5.6",
+    "grade_num": 6
+   },
+   "headline": [
+    "5.7",
+    "5.6"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: 5.6 PG13; other sources give 5.7 for the short offwidth crux, with mostly 4th and low-5th ridge climbing.",
+   "sources": [
+    "https://www.mountainproject.com/area/106029381/mt-triumph",
+    "https://stephabegg.com/trip-reports/washington/triumph-ne-ridge/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge"
+   ]
+  },
+  {
+   "id": "wa_mount_triumph_west_route",
+   "batch": "b20.json",
+   "before": {
+    "grade_system": null
+   },
+   "body": {
+    "grade_system": "class"
+   },
+   "headline": [
+    "Class 4",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Easiest route is the class 4 west route from near Triumph Pass; seldom used and treacherous when wet.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Triumph"
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3-4",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Easiest route: scramble class 3 via the West Side or Gray Wolf Ridge.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Walkinshaw"
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "batch": "b20.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 3",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Standard south route: Grade I, Class 3, with the 'hourglass' a short pitch of 4th class climbing on the way to the summit.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/mount-washington-standard-south-route-olympics-3",
+    "https://www.summitpost.org/mount-washington/760059"
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "batch": "b20.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Winter Direct 4th, AI1-2 Steep Snow, Grade II; climbed only when snow-covered, with two tools and rock and ice protection.",
+   "sources": [
+    "https://www.mountainproject.com/area/110706108/mt-washington"
+   ]
+  }
+ ],
+ "refused": [
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "batch": "b19.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "AI3"
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "batch": "b19.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "AI3"
+  },
+  {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "batch": "b19.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.6"
+  }
+ ]
+}

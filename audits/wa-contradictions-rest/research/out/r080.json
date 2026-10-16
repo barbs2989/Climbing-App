@@ -1,0 +1,733 @@
+{
+ "file": "r080.json",
+ "results": [
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Published time totals",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 7+4+4 parts do not sum to the 10 h total. No published source gives section or total times for the Southwest Ridge itself; West Ridge sources put the approach to Terror Basin at about 7-8 h with packs and the West Ridge summit day at 4.5-11 h camp to camp, so no agreed figure exists to rebuild this route's timing. No patch.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://www.jessb.org/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Whether the camp zone permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin is a walk-up-only cross-country zone; it cannot be reserved in advance.",
+   "evidence": "The park's cross-country zone page lists only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes as reservable in advance and says the remaining zones are walk-up only. A permit-alert service's list of reservable cross-country destinations likewise names only Boston Basin, Eldorado, Sulphide, Shuksan and Tapto, not Terror Basin. The access fields that say it can be booked ahead are wrong; the camp card is right.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://campflare.com/permit/north-cascades"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "Terror Basin is a walk-up-only zone: it is not among the cross-country zones that can be reserved in advance, so the permit is obtained in person at the Wilderness Information Center in Marblemount the day of or the day before the trip."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "In person at the Marblemount Wilderness Information Center, the day of or the day before the trip; the Terror Basin zone cannot be reserved in advance."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(Terror Basin is a walk-up-only zone: get the permit in person at the Marblemount Wilderness Information Center)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Parking pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No parking pass needed (NPS-administered trailhead).",
+   "evidence": "The park's fee page states there are no trailhead or parking fees for trails that begin on National Park Service land and no entrance fee; an independent regional guide says the same and notes a Northwest Forest Pass applies only at Forest Service trailheads. The Goodell Creek trailhead is in Ross Lake NRA (NPS), so the raw field is the outlier.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/fees.htm",
+    "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "Parking pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+     "value": "None — the Goodell Creek trailhead is on National Park Service land, where no parking pass is required"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "County and sheriff",
+   "verdict": "fixed",
+   "correct_value": "Whatcom County; the Whatcom County Sheriff has jurisdiction.",
+   "evidence": "McMillan Spire lies in Whatcom County, and Goodell Creek and Newhalem (the trailhead) are also in Whatcom County, so the Skagit County Sheriff entry is wrong. No sheriff phone number is invented; the entry now directs to 911, matching the sister route.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/McMillan_Spire",
+    "https://en.wikipedia.org/wiki/Goodell_Creek",
+    "https://en.wikipedia.org/wiki/Newhalem,_Washington"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "County and sheriff",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "sheriffDispatch"
+     ],
+     "find": "Skagit County Sheriff (360) 336-9450 (after-hours emergency)",
+     "replace": "Whatcom County Sheriff's Office (dial 911 in an emergency)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Approach basin named in rope_note",
+   "verdict": "fixed",
+   "correct_value": "The approach goes through Terror Basin and across the Terror Glacier; McMillan Cirque is on the far (north) side of the spires.",
+   "evidence": "McMillan Cirque lies on the north side of Mount Terror and the McMillan Spires, while the Goodell Creek approach reaches the spires from Terror Basin via the lake outlet, slabs and the Terror Glacier. The row's own approach, variants, beta and descent all use Terror Basin.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://trailcatjim.com/west-mcmillan-spire-via-southwest-snowfield-west-ridge-2001/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_southwest_ridge",
+     "fact": "Approach basin named in rope_note",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Approach through McMillan Cirque/Terror Basin crosses",
+     "replace": "Approach through Terror Basin and across the Terror Glacier crosses"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+   "verdict": "fixed",
+   "correct_value": "From Terror Basin camp: benches and slabs to the glacial lake outlet, across the Terror Glacier, then the snow gully to the 7,200 ft Inspiration-McMillan col. The Barrier/Crescent Creek is not on this route.",
+   "evidence": "The Barrier is the ridge on the west side of Terror Basin separating it from Crescent Creek Basin, crossed only to reach Crescent Creek Basin climbs (Chopping Block, Terror West Ridge); the Barrier waypoint note reproduces that description. West McMillan parties go from camp over benches and slabs downhill to the glacial lake outlet, up slabs past the Terror Glacier, to the notch between Inspiration and McMillan; another guide describes the same traverse north to a glacial lake and a snowfield to the col. Pin coordinates were not assessed (out of scope).",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://trailcatjim.com/west-mcmillan-spire-via-southwest-snowfield-west-ridge-2001/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "name"
+     ],
+     "expect": "The Barrier traverse",
+     "value": "Terror Glacier crossing"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "expect": "Serious class-3 crossing of the ridge separating Terror Creek and Crescent Creek basins via a steep, loose grassy ledge (~6,100 ft) up to the crest (~6,400 ft); heavily exposed, loose rock, described by climbers as a 'slip-and-die' section.",
+     "value": "Short, low-angle crossing of the Terror Glacier remnant above the glacial lake outlet, reached over benches and granite slabs from camp; most parties go unroped with crampons in stable conditions, but it can show bare ice late in the season and is not crevasse-free."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "name"
+     ],
+     "expect": "Crescent Creek basin / 7,200 ft col",
+     "value": "7,200 ft Inspiration-McMillan col"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "expect": "After descending into Crescent Creek basin, heather/snow/rock leads back up to this col on the west ridge — the same col used again on the downclimb.",
+     "value": "Top of the steep snow and rock gully above the Terror Glacier, between Inspiration Peak and West McMillan Spire — the same col used again on the downclimb."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "expect": "From the crest of the Barrier, descend into the Crescent Creek basin, then climb back up heather, snow and rock to the col on the west ridge — the same col you will use again on the downclimb.",
+     "value": "From the Terror Glacier, climb the snow and rock gully, which steepens to roughly 40 degrees near the top, to the col on the west ridge — the same col you will use again on the downclimb."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "through the Barrier and into Crescent Creek/Terror Basin",
+     "replace": "over the 6,200 ft notch into Terror Basin"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "(the Barrier crossing is a known crux, especially in poor visibility)",
+     "replace": "(the loose north side of the 6,200 ft notch is a known crux, especially in poor visibility)"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "The Barrier crossing in poor visibility adds route-finding and fall hazard on the approach itself",
+     "replace": "The loose north side of the 6,200 ft notch adds route-finding and fall hazard on the approach itself, especially in poor visibility"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Approach line from camp to the 7,200 ft col (Terror Glacier vs Barrier/Crescent Creek Basin)",
+     "op": "set",
+     "column": "bail",
+     "path": [],
+     "expect": "Retreat is back over the Barrier; manageable but long.",
+     "value": "Retreat is back across the Terror Glacier and over the 6,200 ft notch; manageable but long."
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Trip length (approach days)",
+   "verdict": "fixed",
+   "correct_value": "One long day from the trailhead to Terror Basin camp (about 6-8 h with packs).",
+   "evidence": "One party reached Terror Basin camp in 7 hours from the Goodell Creek trailhead; another started at noon and camped in the basin at sundown; another reached camp by noon of day one on a two-day trip. None describes a two-day approach each way; the itinerary, pro tips and approach already say one day.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://www.jessb.org/west-mcmillan-spire/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Trip length (approach days)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "typically a 2-day approach each way",
+     "replace": "typically a full day's approach each way"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Trip length (approach days)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~2 days approach (trailhead to Crescent Creek/Terror Basin camp)",
+     "replace": "~1 long day approach (trailhead to Terror Basin camp, about 6-8 hrs)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Distance trailhead to Terror Basin camp",
+   "verdict": "fixed",
+   "correct_value": "Roughly 7-8 mi one way to Terror Basin camp.",
+   "evidence": "One guide gives 4.5 mi along the old road plus 2.5 mi of steep climbing to the 6,200 ft notch above the basin (7 mi), 17 mi round trip to the summit; one fast party measured 4 mi to the base of the hill climb and 2 mi for the 4,000 ft climb, then more bench walking to camp; round-trip totals to the summit of 19 mi are reported by two independent parties. 4-5.7 mi is impossible (the old roadbed alone is ~4 mi), and 8-9 mi is slightly high. Waypoint distances beyond the treeline pin had no sourced value and are set to unknown rather than interpolated.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://trailcatjim.com/west-mcmillan-spire-via-southwest-snowfield-west-ridge-2001/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "One-way distance from car to high camp is roughly 8-9 miles",
+     "replace": "One-way distance from car to high camp is roughly 7-8 miles"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "~4-5 mi with",
+     "replace": "~7-8 mi with"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 4.5,
+     "value": 7.5
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 4.5,
+     "value": 7.5
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4.5 mi/5,300 ft",
+     "replace": "~7.5 mi/5,300 ft"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4.5 mi/5,400 ft",
+     "replace": "~7.5 mi/5,400 ft"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 5.7,
+     "value": null
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 6.5,
+     "value": null
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 7.3,
+     "value": null
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Distance trailhead to Terror Basin camp",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": 8,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Total round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 19 mi round trip (car to summit and back).",
+   "evidence": "Two independent trip reports give about 19 mi round trip for the Goodell Creek approach and West Ridge; two others give about 20 mi, one guide 17 mi. With the approach days corrected to ~7.5 mi and a ~4 mi summit day, the itinerary now sums to 19 mi, so the totalNote figure of 16 is changed to 19. dist_km (8.0 mi, shown as the one-way approach) is left as is.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://trailcatjim.com/west-mcmillan-spire-via-southwest-snowfield-west-ridge-2001/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.jessb.org/west-mcmillan-spire/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Total round-trip distance",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~16 miles round trip overall",
+     "replace": "~19 miles round trip overall"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Published round-trip gain figures disagree: about 9,500 ft, about 10,000 ft, about 9,000 ft and 8,868 ft from four sources; none match each other or the itinerary days (7,800 ft). Day 1 gain of 5,300 ft looks low given a 600 ft trailhead and a 6,200 ft notch, but per the rules no itinerary or total gain is recomputed. No patch.",
+   "sources": [
+    "https://trailcatjim.com/west-mcmillan-spire-via-southwest-snowfield-west-ridge-2001/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.jessb.org/west-mcmillan-spire/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Time to reach Terror Basin camp",
+   "verdict": "fixed",
+   "correct_value": "A long day with overnight packs, about 6-8 hours.",
+   "evidence": "The 3:15 figure is one very fast single-day party travelling light. Parties carrying camp report 7 hours to Terror Basin and an all-day approach (noon to sundown); another summary reports about 8 hours. The itinerary, approach and timing already say 6.5-8 h.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://www.jessb.org/west-mcmillan-spire/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Time to reach Terror Basin camp",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "roughly 3:15 in from the trailhead",
+     "replace": "a long day's carry from the trailhead (6-8 hours with overnight packs)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Summit-day duration and timing totals",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on camp-to-camp summit-day time: one report gives 4.5 hours camp to camp, another an 11-hour day from camp. There is no agreed figure to reconcile the itinerary hours (6), its schedule (8 h), its note (4-5 h) and the timing parts (7/4/4 vs 10). No patch.",
+   "sources": [
+    "https://www.summitpost.org/west-rige-mcmillan-spire/544878",
+    "https://www.jessb.org/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Crux grade of the summit step",
+   "verdict": "fixed",
+   "correct_value": "Short, exposed class 3-4 step (route rated 4th class); 5.6 is not required.",
+   "evidence": "Trip reports describe the summit ridge as easy scrambling to the true summit and the final section as exposed but easy; a guide rates the climb class 3. The grade (4th class) and the climbing route agree. Only the partner requirements, the pro-needs line and the summit waypoint state 5.6/low 5th as a requirement; the hedged \"reported by some\" mentions elsewhere are left.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Crux grade of the summit step",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "expect": "Low 5th class rock climbing (5.6) with sustained exposure near the summit block",
+     "value": "Exposed 3rd-4th class scrambling near the summit block"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Crux grade of the summit step",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "comfort on low 5th-class rock with real exposure",
+     "replace": "comfort on exposed 3rd-4th class rock"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Crux grade of the summit step",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "the short 5.6/class-3 step",
+     "replace": "the short, exposed class 3-4 step"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Crux grade of the summit step",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "Southern Pickets high point with exposed final scrambling/low 5th class moves.",
+     "replace": "exposed final scrambling moves."
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Descent sequence: gully vs col",
+   "verdict": "fixed",
+   "correct_value": "Ridge between summit and col; snow gully below the col down to the glacier.",
+   "evidence": "One party climbed a snowfield narrowing to a gully, steepening to about 40 degrees for the last 200-300 ft to the col, then scrambled about 800 ft of scree and ridge to the summit; another went up slabs past the Terror Glacier to the notch between Inspiration and McMillan, then hiked and scrambled to the summit. So the gully lies below the col, as beta, descent and climbing_route say.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Descent sequence: gully vs col",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "then descend the snow/rock gully to the 7,200 ft Inspiration-McMillan col, following the same snow finger climbed on the way up.",
+     "replace": "then reverse the scree-and-heather ridge to the 7,200 ft Inspiration-McMillan col and descend the snow/rock gully below it, following the same snow finger climbed on the way up."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Descent sequence: gully vs col",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the col, recross the Terror Glacier remnant",
+     "replace": "From the foot of the gully, recross the Terror Glacier remnant"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Side of the notch descended on the way out",
+   "verdict": "fixed",
+   "correct_value": "On the way out, climb back up the loose north side of the notch and descend the heather benches on its south side toward Goodell Creek.",
+   "evidence": "The approach crosses a notch near 6,200 ft and drops into Terror Basin below it, so the basin (and its loose north-side slope) is on the camp side; the way out re-ascends that side. Both a guide and a trip report place the notch at the top of the climb from Goodell Creek with Terror Basin camp below it.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Side of the notch descended on the way out",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "then climb back up to the ridge notch and descend its loose, chossy north-side gully into the Goodell Creek drainage (same skier's-right line used on approach — avoid going straight down)",
+     "replace": "then climb back up the loose, chossy north-side gully to the ridge notch (the same skier's-right line used on the approach — avoid the direct fall line) and descend the heather benches on its far side toward the Goodell Creek drainage"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Glacier on the route (avalanche zone vs crevasses)",
+   "verdict": "fixed",
+   "correct_value": "The route crosses a short section of the Terror Glacier.",
+   "evidence": "Trip reports describe crossing the Terror Glacier (with crampons, sometimes unroped) on the way to the col, and another report names the ascent via the Terror Glacier. The avalanche card's \"non-glaciated\" is the outlier.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://trailcatjim.com/west-mcmillan-spire-via-southwest-snowfield-west-ridge-2001/",
+    "https://engineeredforadventure.com/west-mcmillan-spire-terror-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Glacier on the route (avalanche zone vs crevasses)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scramble/climb;",
+     "replace": "N/A - summer scramble/climb with a short glacier crossing;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Whether the camp zone permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin is a walk-up-only cross-country zone; it cannot be reserved in advance.",
+   "evidence": "The park's cross-country zone page lists only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes as reservable in advance; all other zones are walk-up only. A permit-alert service's list of reservable cross-country destinations likewise omits Terror Basin.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://campflare.com/permit/north-cascades"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "reserve ahead on Recreation.gov or get a walk-up permit at the Wilderness Information Center in Marblemount",
+     "replace": "it is a walk-up-only zone that cannot be reserved in advance, so get the permit in person at the Wilderness Information Center in Marblemount the day of or the day before"
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "Terror Basin is a walk-up-only zone: it is not among the cross-country zones that can be reserved in advance, so the permit is obtained in person at the Wilderness Information Center in Marblemount the day of or the day before the trip."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "In person at the Marblemount Wilderness Information Center, the day of or the day before the trip; the Terror Basin zone cannot be reserved in advance."
+    },
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(Terror Basin is a walk-up-only zone: get the permit in person at the Marblemount Wilderness Information Center)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Parking pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No parking pass needed (NPS-administered trailhead).",
+   "evidence": "The park states there are no trailhead or parking fees for trails beginning on NPS land; an independent regional guide agrees and says a Northwest Forest Pass applies only at Forest Service trailheads.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/fees.htm",
+    "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcmillan_spire_west_west_ridge",
+     "fact": "Parking pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+     "value": "None — the Goodell Creek trailhead is on National Park Service land, where no parking pass is required"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Summit waypoint calls West McMillan the Southern Pickets high point",
+   "verdict": "fixed",
+   "correct_value": "Mount Terror (8,151 ft) is the Southern Pickets high point, not West McMillan (8,004 ft).",
+   "evidence": "Mount Terror, at 8,151 ft, is the highest peak of the southern Picket Range; McMillan Spire is 8,004 ft. The claim is removed by the same summit-note patch listed under the crux-grade fact (no separate patch, to keep one find per string).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+    "https://trailcatjim.com/major-peaks/northwestern-cascades-groups/the-picket-twelve/mt-terror-8151-ft/",
+    "https://en.wikipedia.org/wiki/McMillan_Spire"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

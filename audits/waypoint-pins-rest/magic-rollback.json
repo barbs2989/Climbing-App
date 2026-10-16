@@ -1,0 +1,176 @@
+{
+ "wa_magic_mountain_south_ridge": {
+  "dist_km": 8.9,
+  "waypoints": [
+   {
+    "lat": 48.4754,
+    "lng": -121.0751,
+    "elev": 3600,
+    "name": "Cascade Pass Trailhead",
+    "note": "Road's-end trailhead on Cascade River Road (23.1 mi gravel from Marblemount); NPS wilderness permit required for camps beyond Cascade Pass.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "The trailhead is at the very end of Cascade River Road (FR-15), about 23.1 miles of gravel road from Marblemount, at roughly 3,600 feet. A Northwest Forest Pass is required to park here. Overnight parties also need a North Cascades backcountry camping permit for Kool-Aid Lake, picked up in person in Marblemount before you drive out."
+   },
+   {
+    "lat": 48.4683,
+    "lng": -121.06,
+    "elev": 5392,
+    "name": "Cascade Pass",
+    "note": "Maintained trail tops out here; leave it for the unmaintained climber's path bearing SSE toward Cache Glacier.",
+    "type": "Junction",
+    "distMi": 3.7,
+    "directions": "The Cascade Pass Trail is well-graded and heavily switchbacked the whole way, 3.7 miles and about 1,700 ft to the notch between Mixup Peak and Cascade Peak. It melts out by early to mid summer and is the busiest stretch of the trip, since it is a popular day hike in its own right. Nothing here needs route-finding; the work starts at the pass."
+   },
+   {
+    "lat": 48.463162,
+    "lng": -121.060484,
+    "elev": 6000,
+    "name": "Cache Glacier toe / Mixup Peak traverse",
+    "note": "Rising traverse on snow or heather across Mixup Peak's east flank to the base of Cache Glacier; isolated crevasses and firm morning snow can require an axe.",
+    "type": "Hazard",
+    "distMi": 4.3,
+    "directions": "Leave the maintained trail at the pass and pick up a climber's path bearing south-southeast, making a rising traverse across open heather and snow benches on Mixup Peak's east flank. The path is intermittent and vanishes entirely under early-season snow, so this is where navigation starts to matter. It brings you to the toe of the Cache Glacier around 6,000 ft, where firm morning snow makes an ice axe worth its weight."
+   },
+   {
+    "lat": 48.4484594,
+    "lng": -121.0528892,
+    "elev": 6903,
+    "name": "Cache Col",
+    "note": "Glaciated gap atop Cache Glacier between Magic Mountain and Mixup Peak; descend SSE from here toward Kool-Aid Lake.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Ascend the glacier on moderate snow, steepening to about 35 degrees near the top, to reach the col. This glacier is small and generally free of significant crevasse hazard, but it is still a snow slope with runout below, so crampons are worth carrying depending on season and how firm it is."
+   },
+   {
+    "lat": 48.4386686,
+    "lng": -121.0458149,
+    "elev": 6120,
+    "name": "Kool-Aid Lake",
+    "note": "Small tarn with established bivy sites used as base camp for the peak; outlet is snowbound and unreliable for water into early summer.",
+    "type": "Campsite",
+    "distMi": 5.5,
+    "directions": "From the col the route drops rather than climbs: a climber's path makes a descending traverse to the southeast down to the lake. Do not continue north over the col. This is the last reliable water of the trip, and the outlet can still be snowbound into early summer, so fill here before going up."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7120,
+    "name": "Magic Mountain–Hurry-up Peak col",
+    "note": "Climb roughly 1,000 ft from Kool-Aid Lake to this saddle, then gain Magic Mountain's south ridge toward the false summit.",
+    "type": "Junction",
+    "distMi": 6,
+    "directions": "From the lake the ground turns up again onto heather and scree leading east to the saddle between Magic Mountain and Hurry-Up Peak, where the South Ridge proper begins. There is no water at all above the lake, so leave camp carrying what you need. The slope is uniform and featureless in cloud, which is the only real navigational catch on this leg."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7500,
+    "name": "Corkscrew ledges below false summit",
+    "note": "Past the false summit, drop about 80 ft down a loose gully to exposed Class 3-4 ledges that corkscrew the east side of the peak; a hand line or short belay is often used here.",
+    "type": "Hazard",
+    "distMi": 6.2,
+    "directions": "Follow the South Ridge up on heather and rock at class 3 to a false summit, roughly 50 ft below and southeast of the true one. Do not try to stay on the crest from there. Drop about 50-80 ft down a loose, dirty gully on the far side to reach the ledge system, which is the technical crux of the whole outing."
+   },
+   {
+    "lat": 48.446,
+    "lng": -121.041379,
+    "elev": 7610,
+    "name": "Magic Mountain",
+    "note": "True summit, marking the northern terminus of the Ptarmigan Traverse on the North Cascades NP / Glacier Peak Wilderness boundary.",
+    "type": "Summit",
+    "distMi": 6.4,
+    "directions": "The ledges are broken, exposed class 3-4 and corkscrew around the east side of the summit tower to the top. A hand line or a short belay is commonly used, and many parties rappel this section on the way down off a sling around a horn or chockstone, since there is no fixed hardware on this summit. Fresh snow can force a detour through the moat, and the loose rock means this section bites harder on the descent than on the way up."
+   }
+  ],
+  "itinerary": {
+   "cal": "Cache Col and the upper approach typically hold snow into July; Kool-Aid Lake/Pelton Basin camping in North Cascades NP requires a wilderness permit (walk-up or advance quota in peak summer season).",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the Cascade Pass trailhead, switchback up the maintained trail to Cascade Pass, then leave trail and climb cross-country north to Cache Col. Descend snow/heather on the far side to Kool-Aid Lake (~6,120 ft), the standard camp for Magic Mountain and the Ptarmigan Traverse's southern end.",
+     "hours": 5.5,
+     "miles": 5.5,
+     "title": "Approach to Kool-Aid Lake camp",
+     "gainFt": 2900,
+     "lossFt": 700,
+     "packLb": 35,
+     "schedule": [
+      {
+       "time": "8:00 AM",
+       "label": "Leave Cascade Pass trailhead",
+       "detail": "3.7 mi of maintained switchbacks to Cascade Pass (5,400 ft)."
+      },
+      {
+       "time": "10:30 AM",
+       "label": "Cascade Pass",
+       "detail": "Trail ends; begin cross-country travel north toward Cache Col."
+      },
+      {
+       "time": "12:30 PM",
+       "label": "Cache Col (~6,800 ft)",
+       "detail": "Often snow-covered into midsummer; microspikes/axe helpful."
+      },
+      {
+       "time": "1:30 PM",
+       "label": "Arrive Kool-Aid Lake camp",
+       "detail": "Tarn-like lake at ~6,120 ft with reliable water; set up camp."
+      }
+     ],
+     "objective": "Establish camp at Kool-Aid Lake via Cascade Pass and Cache Col"
+    },
+    {
+     "n": 2,
+     "note": "An alpine-start day from camp: climb roughly 1,000 ft to the 7,100 ft col between Magic Mountain and Hurry Up Peak, then follow heather and rock (class 3) up the South Ridge to the false summit. Drop about 80 ft into a gully and corkscrew class 3-4 broken ledges on the east side to the true 7,610 ft summit, then reverse the whole route back to camp.",
+     "hours": 8,
+     "miles": 3.5,
+     "title": "South Ridge summit push",
+     "gainFt": 1500,
+     "lossFt": 1500,
+     "packLb": 12,
+     "schedule": [
+      {
+       "time": "5:30 AM",
+       "label": "Leave camp",
+       "detail": "Light summit pack; ascend toward the Magic/Hurry Up col."
+      },
+      {
+       "time": "7:00 AM",
+       "label": "Reach 7,100 ft col",
+       "detail": "Gain the South Ridge proper here."
+      },
+      {
+       "time": "9:00 AM",
+       "label": "False summit",
+       "detail": "Class 3 heather/rock ridge scrambling to this point."
+      },
+      {
+       "time": "9:45 AM",
+       "label": "Summit block",
+       "detail": "Drop ~80 ft into a gully, then class 3-4 exposed ledges corkscrewing the east side to the true summit (7,610 ft)."
+      },
+      {
+       "time": "1:30 PM",
+       "label": "Back at Kool-Aid Lake camp",
+       "detail": "Reverse ridge and ledges; watch for loosened rock/snow in the afternoon."
+      }
+     ],
+     "objective": "Climb Magic Mountain via the South Ridge and return to camp"
+    },
+    {
+     "n": 3,
+     "note": "Pack up and reverse the approach: back over Cache Col and down to Cascade Pass, then out the maintained trail to the car. Many parties combine this with a side trip up nearby Hurry Up Peak or a scenic detour if time and weather allow.",
+     "hours": 5,
+     "miles": 5.5,
+     "title": "Hike out",
+     "gainFt": 700,
+     "lossFt": 3300,
+     "packLb": 32,
+     "schedule": [],
+     "objective": "Break camp and return to the trailhead"
+    }
+   ],
+   "totalNote": "A 2-night, 3-day trip is the norm: hike in to Kool-Aid Lake camp, a long summit day on the South Ridge from camp, then hike out — 5,000+ ft of gain/loss total. A few very fit, fast parties push it car-to-car in one very long (14-18 hr) day, but off-trail travel, route-finding on the ridge, and the wilderness permit make an overnight the standard approach."
+  }
+ }
+}

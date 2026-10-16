@@ -1,0 +1,871 @@
+{
+ "file": "t102.json",
+ "results": [
+  {
+   "id": "wa_east_face_3",
+   "fact": "Trailhead coordinates",
+   "verdict": "unresolved",
+   "correct_value": "Pin should sit at the pond/hairpin pullout just east of Washington Pass, not at the Blue Lake Trailhead",
+   "evidence": "Confirmed: waypoints[0] and approach_logistics carry 48.518965,-120.67436, the Blue Lake Trailhead pair used by west-side rows, while every text field names the pond pullout east of the pass. Moving pin coordinates is out of scope for this pass, so no patch; a pin repair to the east-side pullout (other rows use 48.51454,-120.64332) would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106512297/liberty-crack"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_3",
+   "fact": "Parking spot / distance east of the pass",
+   "verdict": "fixed",
+   "correct_value": "Park at the pullout beside the small pond a few hundred yards (just) east of Washington Pass",
+   "evidence": "A route page for this East Face says to drive SR-20 to a few hundred yards east of Washington Pass, park near the little pond at about 5,400 ft and skirt its left side into the forest. A separate route page for Liberty Bell's east face says to park at the hairpin just east of the pass and walk back to the pond on the south side of the road, where the trail starts. Neither places the start 1.2 mi east; road.name/status are rewritten to the pond pullout used by the approach, approach variant, waypoint and trailhead card.",
+   "sources": [
+    "https://www.summitpost.org/east-face/166312",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Minuteman-Tower-East-Face",
+    "https://www.mountainproject.com/route/106512297/liberty-crack"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_3",
+     "fact": "Parking spot / distance east of the pass",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Washington Pass Overlook pullout, SR-20 (North Cascades Highway)",
+     "value": "Pond pullout east of Washington Pass, SR-20 (North Cascades Highway)"
+    },
+    {
+     "id": "wa_east_face_3",
+     "fact": "Parking spot / distance east of the pass",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "park at the informal pullout on the north shoulder near Washington Pass Overlook (~1.2 mi east of Washington Pass)",
+     "replace": "park at the informal pullout beside the small pond a few hundred yards east of Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_west_face",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. The route's own 1.5-mile figure (waypoint directions and trailhead card) is corrected to about 1 mile; the bivy entry's half mile is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_west_face",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "about 1.5 miles west of Washington Pass",
+     "replace": "about 1 mile west of Washington Pass"
+    },
+    {
+     "id": "wa_the_west_face",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "(~1.5 miles west of Washington Pass",
+     "replace": "(~1 mile west of Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Fixed rappel stations on the descent",
+   "verdict": "fixed",
+   "correct_value": "The standard West Couloir descent has established (bolted) stations; only a descent back down Early Winters Couloir itself has none",
+   "evidence": "The published accident report and newspaper coverage of the May 2025 fatality state that the usual west-side descents each have established rappel stations, but there are none for descending back down the couloir to the east, which is where the party rappelled. A climbing news account of the same incident agrees. descent, descent_text, rappel_detail, hazards and pro_tips already say this; watch_out is qualified to match.",
+   "sources": [
+    "https://www.spokesman.com/stories/2025/jun/10/report-offers-details-on-north-cascades-climbing-a/",
+    "https://gripped.com/news/three-climbers-die-after-anchor-failure/",
+    "https://www.climbing.com/news/climbing-fatality-washington"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Fixed rappel stations on the descent",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "No established rappel stations on descent — inspect any fixed anchors thoroughly",
+     "replace": "No established rappel stations for a descent back down the couloir itself (the West Couloir descent is bolted) — inspect any fixed anchors thoroughly"
+    }
+   ]
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: season, best_season and seasonal_guidance say July-September (June marginal, snow in the dividing gully), while approach_variants[0].season and the trailhead directions say June-September. The only external windows are area-wide (late June through September), which fit neither exactly; no route-specific source states when this east-side line and its gully come into condition. A dated June ascent or a route page stating the window would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Summit distance from the trailhead",
+   "verdict": "fixed",
+   "correct_value": "Unknown (null): the climbers' path alone leaves the Blue Lake Trail about 1.3-1.5 mi from the trailhead",
+   "evidence": "A regional climbing guide says the climbers' trail branches off the Blue Lake Trail about 1.3 miles along, and a route page says about one and a half miles to the climbers' trail before climbing into the basin, so the summit cannot be 1 mi from the car. No source states the trail distance to this summit, so per the rules the pin's distance is set to null rather than interpolated.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.summitpost.org/north-early-winters-spire/151550"
+   ],
+   "patches": [
+    {
+     "id": "wa_labor_pains",
+     "fact": "Summit distance from the trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. The trailhead card's 1.5 miles is corrected to about 1 mile; the bivy entry's half mile is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_labor_pains",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "(~1.5 miles west of Washington Pass",
+     "replace": "(~1 mile west of Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Blue Lake Trailhead elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[0] gives the trailhead 5,200 ft while approach_logistics.trailheadDirection says 5,400 ft. A geology field guide gives 5,200 ft; the USGS 1 m elevation service at the stored trailhead coordinate returns about 5,380 ft, and a hiking guide's figures (high point 6,254 ft, 1,050 ft gain after an initial dip) are ambiguous. Sources split, so no patch; a surveyed trailhead elevation or a second source agreeing with the terrain figure would settle it.",
+   "sources": [
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Trailhead / parking",
+   "verdict": "fixed",
+   "correct_value": "Blue Lake Trailhead (the hairpin pullout serves the east-side routes, not this one)",
+   "evidence": "The Washington Pass area page says the west faces are more easily approached from the Blue Lake Trail lot, while the South Early Winters Spire page reserves the Highway 20 hairpin for east-side routes; a regional climbing guide likewise sends west-side routes up the Blue Lake Trail to the climbers' trail about 1.3 miles in. The row's approach, variant, waypoints and itinerary all start at Blue Lake, so GETTING THERE drops the hairpin.",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_sews_sw_rib",
+     "fact": "Trailhead / parking",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead / SR-20 'hairpin' pullout, North Cascades Highway",
+     "value": "Blue Lake Trailhead, SR-20 (North Cascades Highway)"
+    },
+    {
+     "id": "wa_sews_sw_rib",
+     "fact": "Trailhead / parking",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved highway parking (Blue Lake TH lot) plus a roadside pullout at a hairpin bend below Washington Pass; no unpaved road driving required.",
+     "value": "Paved highway parking at the Blue Lake Trailhead lot; no unpaved road driving required."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Trailhead",
+   "verdict": "unresolved",
+   "correct_value": "The SR-20 hairpin pullout east of Washington Pass",
+   "evidence": "Sources agree the east-side routes start at the Highway 20 hairpin and go up Spire Gully (the South Early Winters Spire area page; the Direct East Buttress page, which gives the Blue Lake Trail only as the walk-out/shuttle option). But the fix needs the trailhead pin itself moved: approach_logistics and waypoints[0] carry the Blue Lake coordinate, and waypoints[1] (named the hairpin) sits beside Blue Lake too, while road.driveNote and waypoint directions also describe a Blue Lake start with a hairpin alternative. Renaming labels without moving the pins would put a hairpin label on the Blue Lake lot, and pin coordinates are out of scope, so no patch; a pin repair plus a rewrite of the trailhead card and waypoint 0/1 would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the itinerary allows ~2 hr (schedule 5:30 to 7:30, totalNote 'roughly 2 hr'), while the approach variant and partner card say 1-1.5 hr. One trip report from the hairpin took about an hour and a half on a snow-covered approach; only two row fields state 1-1.5 hr, which is short of the four-field internal bar, and no second source gives a time. A second dated car-to-base time from the hairpin would settle it.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead fields say about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Cam sizes for the roofs",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Doubles of 0.5-3 in cams for the roofs",
+   "evidence": "The route page's protection note says to bring the Southwest Rib gear and that the roofs take 0.5-3 in very well, with doubles in those sizes. gear, pro_needs, detailed_rack, rack and pitch_detail[1] all agree; only rope_note's 'extra small cams' disagrees. No second independent route description was found.",
+   "sources": [
+    "https://www.mountainproject.com/route/110616122/boving-roofs"
+   ],
+   "patches": [
+    {
+     "id": "wa_boving_roofs",
+     "fact": "Cam sizes for the roofs",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "extra small cams for roof cracks",
+     "replace": "doubles of 0.5-3in cams for the roofs"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep chip, with the window opening in late June",
+   "evidence": "The Washington Pass area page gives the best season as late June through September, with snow and ice possible early; a regional climbing guide says latish June through latish September. The row's own best_season/optimalWindow already open in (late) June, so the Jul-Sep chip and approach-variant season are the outliers; this matches the precedent set for Southern Man (season Jun-Sep).",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_dolphin_chimney",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_dolphin_chimney",
+     "fact": "Season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_dolphin_chimney",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "June–September (area-wide",
+     "replace": "Late June–September (area-wide"
+    }
+   ]
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep chip, with the window opening in late June",
+   "evidence": "The Washington Pass area page gives the best season as late June through September, with snow and ice possible early; a regional climbing guide says latish June through latish September. The row's own best_season/optimalWindow already open in (late) June, so the Jul-Sep chip and approach-variant season are the outliers; this matches the precedent set for Southern Man (season Jun-Sep).",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mojo_rising",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_mojo_rising",
+     "fact": "Season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the schedule runs 5:00 AM to 6:30 PM (13.5 hr, including a 4-hour descent and walk-out) while the day's hours and totalNote say 10.5-11 hr. No source found states a car-to-car time for this route (a trip-report blog could not be loaded); two independent car-to-car times would settle which figure is right.",
+   "sources": [
+    "http://blog.hillmap.com/2008/10/tr-passenger-511-iv.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the itinerary allows ~2 hr to the base, the approach text about an hour to the South Arete base plus ~10 min, and the partner card 1-1.5 hr. The South Early Winters Spire area page gives about an hour of trail to the meadow below the northwest side before the climbers' path, but no source gives a car-to-base time for this south-face start (the sibling South Arete row itself says 2-2.5 hr to that same base). A route-specific car-to-base time would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Free grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page grades it 5.11- (IV); the first-ascent summary gives IV 5.11 A0 (or 5.10 A1) with two 5.11 pitches; a trip report used an aider on three short sections. No source gives 5.11b as the free grade or 5.10d with short aid, and the sources disagree on whether it goes fully free, so no patch. A source stating the all-free grade would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/108294579/the-hitchhiker",
+    "http://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+    "https://waynewallace.wordpress.com/2012/09/19/the-hitchhiker-s-early-winter-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Rappel count on the descent",
+   "verdict": "fixed",
+   "correct_value": "Downclimb the South Arete, then 3 single-rope rappels",
+   "evidence": "The Direct East Buttress page describes the shared South Arete descent as downclimbing then three single-rope rappels from bolted anchors/chains; a club route page describes two to three single-rope rappels depending on how much is downclimbed, all from bolted stations. The row's rappels, descent, descent_text and rappel_detail say 3; the partner card's 2 is aligned.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_hitchhiker",
+     "fact": "Rappel count on the descent",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "plus 2 rappels down South Arete",
+     "replace": "plus 3 rappels down South Arete"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep chip, with the window opening in late June",
+   "evidence": "The Washington Pass area page gives the best season as late June through September, with snow and ice possible early; a regional climbing guide says latish June through latish September. The row's own best_season/optimalWindow already open in (late) June, so the Jul-Sep chip and approach-variant season are the outliers; this matches the precedent set for Southern Man (season Jun-Sep).",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_hitchhiker",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_the_hitchhiker",
+     "fact": "Season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Approach side (partner card vs every other approach field)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "partner_requirements.approachTime says ~1.5-2 hr via the east-side hairpin/Spire Gully, while approach, approach_variants, trailhead card, waypoints, road and itinerary all use the Blue Lake Trail to the South Arete base and the traverse past the Passenger start. No route source found states which side this south-face start is normally approached from, so no patch; a route description naming the approach would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/108294579/the-hitchhiker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Pitches shared with the Direct East Buttress",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's own page says it shares the first 4-5 pitches of the Direct East Buttress and breaks left of the bolt-ladder pitch; the Direct East Buttress page puts that bolt ladder on pitch 4, which would mean three shared pitches as ROUTE BREAKDOWN shows. The one source is internally inconsistent (pitch numbering differs between descriptions), and hazards' '(1-2)' refers to the loose lower pitches. A topo with pitch numbers would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110702146/southern-man",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Pitch 4 grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Easy scrambling (about 5.2) to the stance below the double roofs",
+   "evidence": "The route page describes pitch 4 only as 'scramble or rope up' to the base of the prominent overhangs, giving no 5.8 grade; the Boving Roofs page grades the same short, loose lead-in to the belay below the double roofs at 5.2. The row's own pitch note, beta and the Boving Roofs row's first pitch (5.2 to the stance beneath the roofs) agree; only the 5.8 grade is out of step.",
+   "sources": [
+    "https://www.mountainproject.com/route/107288315",
+    "https://www.mountainproject.com/route/110616122/boving-roofs"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Pitch 4 grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "5.8",
+     "value": "5.2"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Aspect of the face",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page places it on a large right-facing golden face just right of the giant chockstone chimney and says it stays in shade until about 1 pm; a first-hand trip report calls it the north face and says it sees almost no sun. Shade until early afternoon fits a west or northwest face, the report says north, and the row's own fields say W, north-facing and Northwest Face. No two sources agree on one aspect, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Headline grade vs crux pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page grades it 5.11 with a mid-5.11 second pitch, matching rock_grade and pitch_detail[1]; grade, overview, watch_out and rope_note say 5.11-. Only one source gives an overall grade and the row splits four fields to three, so no patch; a second grade source would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep chip, with the window opening in late June",
+   "evidence": "The Washington Pass area page gives the best season as late June through September, with snow and ice possible early; a regional climbing guide says latish June through latish September. The row's own best_season/optimalWindow already open in (late) June, so the Jul-Sep chip and approach-variant season are the outliers; this matches the precedent set for Southern Man (season Jun-Sep).",
+   "sources": [
+    "https://www.mountainproject.com/area/105792192/washington-pass",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_free_mojo",
+     "fact": "Season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_free_mojo",
+     "fact": "Season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jul-Sep",
+     "value": "Jun-Sep"
+    },
+    {
+     "id": "wa_free_mojo",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "June–September, though",
+     "replace": "Late June–September, though"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the itinerary allows 1.75 hr to the base; approach and approach_variants say 2-2.5 hr. The South Early Winters Spire area page gives about an hour on the trail to the meadow before the climbers' path, and a route summary gives 5-7 hr trailhead to summit, but no source states the car-to-base time. A route-specific car-to-base time would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card and approach variant say about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Approach time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 1.5 hr from the hairpin to the base",
+   "evidence": "A trip report from the hairpin took about an hour and a half to reach the route on a snow-covered approach. The row's approach text (roughly 1.5 hr car-to-base), both approach variants (1-1.5 hr) and the partner card (1-1.5 hr) agree; only the itinerary's 2 hr disagrees. Its arrival time is moved to 6:30 AM, leaving time to rack up before the 7:15 start.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Approach time",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "time"
+     ],
+     "expect": "7:00 AM",
+     "value": "6:30 AM"
+    },
+    {
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Approach time",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "~2 hr approach.",
+     "replace": "~1.5 hr approach."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Number of 5.11 pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page grades pitch 4 5.11a (or A0) and pitch 6 5.10+ (or A0), matching ROUTE BREAKDOWN; other descriptions call the route 5.8-5.9 with two 5.11 crux pitches and a 5.10 connector, i.e. both bolt ladders about 5.11 free, which is what the beta says. Sources disagree on pitch 6's free grade, so no patch; a topo grading pitch 6 free would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.summitpost.org/direct-east-buttress/236786",
+    "https://www.ncmountainguides.com/blog/direct-east-buttress-sews-6-27-09"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Bolt-ladder bolt count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says pitch 4's ladder has approximately 14 bolts, so bolts:2 contradicts the pitch's own note; pitch 6's ladder is not counted by any source found. Only one source gives a count, so no patch; a second source counting the pitch 4 (and pitch 6) ladder bolts would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Time to summit vs car-to-car total",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

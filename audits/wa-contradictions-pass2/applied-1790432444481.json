@@ -1,0 +1,63 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness self-issue permit and Discover Pass"
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness self-issue permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "before": {
+    "access": {
+     "fees": "No trailhead fee; the private timberland road beyond the gate requires the landowner's fee recreation access permit",
+     "rules": "Once inside the Mount Baker Wilderness boundary, no mechanized travel (including bikes) is permitted — bike use on the approach is only legal on the non-Wilderness logging-road miles",
+     "permit": "Free self-issue Wilderness permit at the trailhead register (route lies within Mount Baker Wilderness)",
+     "closures": "FR 38 (Middle Fork Road) has had seasonal gate closures (roughly Nov 1-Jul 1) on portions to protect wildlife in past years, and was significantly damaged by washouts in the December 2025 floods; it has been closed to vehicles at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — check current status with the Mt. Baker Ranger District before driving",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "No developed fee trailhead here — FR 38 gate/pullout is an undeveloped roadside parking spot; no Northwest Forest Pass required.",
+     "passRequired": "No Northwest Forest Pass required at the FR 38 quarry-road pullouts (not a developed recreation site)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it); no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "before": {
+    "access": {
+     "fees": "Fee recreational access permit required for the Hampton timberland approach (myoutdooragent.com, ~79,000 acres across Whatcom/Skagit/Snohomish counties)",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition.",
+     "permit": "Wilderness self-issue permit typically required within the Mount Baker Wilderness boundary",
+     "closures": "Access road has historically been gated with 'No Trespassing / Permit Required' signage by the timberland owner; confirm current gate and permit status before approaching",
+     "landManager": "Private industrial timberland (Hampton Family Forests / Hampton Lumber, on former Weyerhaeuser Columbia Timberlands) for the lower approach roads; Mount Baker Wilderness (Mt. Baker-Snoqualmie National Forest, USFS) for the upper mountain",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Hampton recreational access permit; Northwest Forest Pass/America the Beautiful pass may apply at USFS trailhead facilities",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it); no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    }
+   }
+  }
+ ]
+}

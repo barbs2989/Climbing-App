@@ -1,0 +1,593 @@
+{
+ "file": "r083.json",
+ "results": [
+  {
+   "id": "wa_three_fingers_r1",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+   "verdict": "fixed",
+   "correct_value": "Goat Flats is ~4.5 mi from the trailhead, so day 1 and day 3 are 4.5 mi each; the summit day is ~5.5 mi round trip from Goat Flats, giving the ~14.5 mi trip total that totalNote and dist_km already state",
+   "evidence": "Two independent sources put Goat Flats about 4.5 mi from the Trail #641 trailhead (2.5 mi to Saddle Lake + 2 mi on): the WTA hike page and the TrailChick lookout write-up. The route's own approach prose and waypoints (Goat Flats 4.5-4.8 mi) agree, so the itinerary's 7 mi hike-in/hike-out days are the outlier. Round trips to the three summits from the trailhead are given as ~14 mi (trailcatjim, 'similar for each summit') and ~16 mi (SummitPost), so the summit day from Goat Flats is ~5-7 mi, not 4.5. 5.5 mi reconciles the days with the stated ~14.5 mi total.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.trailchick.com/wa-state-fire-lookouts/three-fingers-lookout/",
+    "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/",
+    "https://www.summitpost.org/three-fingers/150549"
+   ],
+   "patches": [
+    {
+     "id": "wa_three_fingers_r1",
+     "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 4.5
+    },
+    {
+     "id": "wa_three_fingers_r1",
+     "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 4.5
+    },
+    {
+     "id": "wa_three_fingers_r1",
+     "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 4.5,
+     "value": 5.5
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+   "verdict": "fixed",
+   "correct_value": "Goat Flats is ~4.5 mi from the trailhead, so day 1 and day 3 are 4.5 mi each; the summit day is ~5.5 mi round trip from Goat Flats, giving the ~14.5 mi trip total that totalNote and dist_km already state",
+   "evidence": "Two independent sources put Goat Flats about 4.5 mi from the Trail #641 trailhead (2.5 mi to Saddle Lake + 2 mi on): the WTA hike page and the TrailChick lookout write-up. The route's own approach prose and waypoints (Goat Flats 4.5-4.8 mi) agree, so the itinerary's 7 mi hike-in/hike-out days are the outlier. Round trips to the three summits from the trailhead are given as ~14 mi (trailcatjim, 'similar for each summit') and ~16 mi (SummitPost), so the summit day from Goat Flats is ~5-7 mi, not 4. 5.5 mi reconciles the days with the stated ~14.5 mi total.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.trailchick.com/wa-state-fire-lookouts/three-fingers-lookout/",
+    "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/",
+    "https://www.summitpost.org/three-fingers/150549"
+   ],
+   "patches": [
+    {
+     "id": "wa_three_fingers_r2",
+     "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 4.5
+    },
+    {
+     "id": "wa_three_fingers_r2",
+     "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 4.5
+    },
+    {
+     "id": "wa_three_fingers_r2",
+     "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 4,
+     "value": 5.5
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "fact": "gain_ft/loss_ft (5,600) vs itinerary gain total and totalNote (5,400)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The header/TECHNICAL STATS show 5,600 ft (gain_ft, loss_ft) while the itinerary days sum to 5,400 ft gain (and 5,500 ft loss) and totalNote says 5,400 ft. One trip report gives 5,600 ft gained and lost for the North/South Peak round trip; SummitPost gives only '4,000+ ft' cumulative. No second source settles the figure, so no patch.",
+   "sources": [
+    "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/",
+    "https://www.summitpost.org/three-fingers/150549"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "fact": "gain_ft vs. itinerary day gainFt sum",
+   "verdict": "fixed",
+   "correct_value": "4200",
+   "evidence": "WTA lists the Three Fingers lookout hike from the trailhead at 15 mi round trip with 4,200 ft of gain. TrailChick gives 5,750 ft total, but that figure includes ~9 mi of road biking from the washout, which gains about 1,600 ft; trail-only it is ~4,150 ft, which agrees with 4,200. The row's itinerary (15 mi, 3,000+1,200 ft), loss_ft and approach prose ('the day's 4,200 ft gain') all describe the trail-only trip, so gain_ft 5,750 was the figure that includes the road.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/three-fingers",
+    "https://www.trailchick.com/wa-state-fire-lookouts/three-fingers-lookout/"
+   ],
+   "patches": [
+    {
+     "id": "wa_three_fingers_south_peak_lookout",
+     "fact": "gain_ft vs. itinerary day gainFt sum",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5750,
+     "value": 4200
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)",
+   "verdict": "fixed",
+   "correct_value": "FR 41 is closed to vehicles at the Canyon Creek bridge (~mile 8.5), roughly 9 miles below the trailhead at ~mile 18",
+   "evidence": "The Forest Service's Aug 2025 FR 41 alert (search snippet; the page now 404s) says the road work is complete and the road is open and passable to the Canyon Creek Bridge at milepost 8.5. The FS lookout page gives 18.0 mi of FR 41 to the trailhead, so the closure leaves ~9.5 mi. A bike-in trip report slept at the blocked bridge and biked ~10 mi to the trailhead. The older 'washed out 4.8 miles in' wording, still on the WTA/FS pages, described an earlier washout that forced 12+ mi of biking. It does not fit the row's own 9-mile road-walk figure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/tupso-pass-road-fsr-41-work",
+    "https://www.fs.usda.gov/r06/mbs/recreation/three-fingers-lookout",
+    "https://angelatravels.com/three-fingers-lookout/",
+    "https://www.wta.org/go-hiking/hikes/three-fingers"
+   ],
+   "patches": [
+    {
+     "id": "wa_three_fingers_south_peak_lookout",
+     "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Tupso Pass Road (FS 41) washed out 4.8 miles in (past Canyon Creek bridge at mile 8); permanently closed to vehicles.",
+     "replace": "Tupso Pass Road (FS 41) is permanently closed to vehicles at the Canyon Creek bridge (~mile 8.5)."
+    },
+    {
+     "id": "wa_three_fingers_south_peak_lookout",
+     "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Tupso Pass Road (FR 41) washed out ~4.8 miles in and closed to vehicles beyond",
+     "replace": "Tupso Pass Road (FR 41) closed to vehicles beyond"
+    },
+    {
+     "id": "wa_three_fingers_south_peak_lookout",
+     "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Washed out at approximately mile 4.8; permanently closed",
+     "replace": "Permanently closed"
+    }
+   ]
+  },
+  {
+   "id": "wa_fish_whistle",
+   "fact": "Fish & Whistle total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "4115 (round trip gain and loss, ~4,100 ft)",
+   "evidence": "The Sunrise Mine trailhead (~2,400 ft) to Vesper Peak (6,214 ft) round trip is given as 4,114 ft of gain (Wikipedia) and ~4,000 ft (WTA); another trip log records 3,900 ft. No source approaches 4,400 ft, so gain_ft 4,115 is right and loss_ft, the itinerary day gain/loss and totalNote (4,400) are the outliers. The sibling True Grit row carries 4,400 throughout; it is internally consistent and was not changed here.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vesper_Peak",
+    "https://www.wta.org/go-hiking/hikes/vesper-peak",
+    "https://www.hikingwithmybrother.com/vesper-peak-via-sunrise-mine-trail-707.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Fish & Whistle total elevation gain",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4400,
+     "value": 4115
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Fish & Whistle total elevation gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4400,
+     "value": 4115
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Fish & Whistle total elevation gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4400,
+     "value": 4115
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Fish & Whistle total elevation gain",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,400 ft gain",
+     "replace": "~4,100 ft gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_edge",
+   "fact": "Ragged Edge total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "4115 (round trip gain and loss, ~4,100 ft)",
+   "evidence": "The Sunrise Mine trailhead (~2,400 ft) to Vesper Peak (6,214 ft) round trip is given as 4,114 ft of gain (Wikipedia) and ~4,000 ft (WTA); another trip log records 3,900 ft. No source approaches 4,400 ft, so gain_ft 4,115 is right and loss_ft, the itinerary day gain/loss and totalNote (4,400) are the outliers. The sibling True Grit row carries 4,400 throughout; it is internally consistent and was not changed here.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vesper_Peak",
+    "https://www.wta.org/go-hiking/hikes/vesper-peak",
+    "https://www.hikingwithmybrother.com/vesper-peak-via-sunrise-mine-trail-707.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_ragged_edge",
+     "fact": "Ragged Edge total elevation gain",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4400,
+     "value": 4115
+    },
+    {
+     "id": "wa_ragged_edge",
+     "fact": "Ragged Edge total elevation gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4400,
+     "value": 4115
+    },
+    {
+     "id": "wa_ragged_edge",
+     "fact": "Ragged Edge total elevation gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4400,
+     "value": 4115
+    },
+    {
+     "id": "wa_ragged_edge",
+     "fact": "Ragged Edge total elevation gain",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,400 ft gain",
+     "replace": "~4,100 ft gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_fish_whistle",
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+   "verdict": "fixed",
+   "correct_value": "Outside any designated wilderness (Mt. Baker-Snoqualmie NF, Darrington RD); no wilderness permit or wilderness group cap",
+   "evidence": "WTA's Headlee Pass/Vesper Lake page states that Vesper Lake, Sperry and a large part of Vesper Peak fall outside protected wilderness, and partly outside the National Forest, on old mining claims. PeakVisor places Vesper Peak only in Mt. Baker-Snoqualmie National Forest, and its Henry M. Jackson Wilderness peak list does not include Vesper, Sperry or Morning Star. Wikipedia likewise says only 'in the Mount Baker-Snoqualmie National Forest'. Glacier Peak Wilderness lies far to the east, so the Glacier Peak Wilderness land-manager suffix, the 12-person cap and the wilderness-permit wording are template text.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://peakvisor.com/peak/vesper-peak.html",
+    "https://peakvisor.com/park/henry-m-jackson-wilderness.html",
+    "https://en.wikipedia.org/wiki/Vesper_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": " — Glacier Peak Wilderness",
+     "replace": ""
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "No specific group-size restriction (outside wilderness); standard Northwest Forest Pass trailhead rules apply."
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "group_limit"
+     ],
+     "expect": 12,
+     "value": null
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel.",
+     "replace": "None required."
+    },
+    {
+     "id": "wa_fish_whistle",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "(National Forest wilderness, not",
+     "replace": "(National Forest, not"
+    }
+   ]
+  },
+  {
+   "id": "wa_true_grit_2",
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+   "verdict": "fixed",
+   "correct_value": "Outside any designated wilderness; no wilderness group cap",
+   "evidence": "WTA's Headlee Pass/Vesper Lake page states that Vesper Lake, Sperry and a large part of Vesper Peak fall outside protected wilderness, and partly outside the National Forest, on old mining claims. PeakVisor places Vesper Peak only in Mt. Baker-Snoqualmie National Forest, and its Henry M. Jackson Wilderness peak list does not include Vesper, Sperry or Morning Star. Wikipedia likewise says only 'in the Mount Baker-Snoqualmie National Forest'. Glacier Peak Wilderness lies far to the east, so the Glacier Peak Wilderness land-manager suffix, the 12-person cap and the wilderness-permit wording are template text. This matches the row's own _raw/permitZone fields.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://peakvisor.com/peak/vesper-peak.html",
+    "https://peakvisor.com/park/henry-m-jackson-wilderness.html",
+    "https://en.wikipedia.org/wiki/Vesper_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_true_grit_2",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": " — Glacier Peak Wilderness",
+     "replace": ""
+    },
+    {
+     "id": "wa_true_grit_2",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "No specific group-size restriction (outside wilderness); standard Northwest Forest Pass trailhead rules apply."
+    },
+    {
+     "id": "wa_true_grit_2",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "group_limit"
+     ],
+     "expect": 12,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+   "verdict": "fixed",
+   "correct_value": "Outside any designated wilderness; no wilderness group cap",
+   "evidence": "WTA's Headlee Pass/Vesper Lake page states that Vesper Lake, Sperry and a large part of Vesper Peak fall outside protected wilderness, and partly outside the National Forest, on old mining claims. PeakVisor places Vesper Peak only in Mt. Baker-Snoqualmie National Forest, and its Henry M. Jackson Wilderness peak list does not include Vesper, Sperry or Morning Star. Wikipedia likewise says only 'in the Mount Baker-Snoqualmie National Forest'. Glacier Peak Wilderness lies far to the east, so the Glacier Peak Wilderness land-manager suffix, the 12-person cap and the wilderness-permit wording are template text.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://peakvisor.com/peak/vesper-peak.html",
+    "https://peakvisor.com/park/henry-m-jackson-wilderness.html",
+    "https://en.wikipedia.org/wiki/Vesper_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_vesper_peak_north_face_ragged_edge",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": " — Glacier Peak Wilderness",
+     "replace": ""
+    },
+    {
+     "id": "wa_vesper_peak_north_face_ragged_edge",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "value": "No specific group-size restriction (outside wilderness); standard Northwest Forest Pass trailhead rules apply."
+    },
+    {
+     "id": "wa_vesper_peak_north_face_ragged_edge",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "group_limit"
+     ],
+     "expect": 12,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_edge",
+   "fact": "access.group_limit (12) vs access.rules 'no specific group-size restriction (outside wilderness)'",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "No wilderness group cap (outside wilderness)",
+   "evidence": "WTA's Headlee Pass/Vesper Lake page states that Vesper Lake, Sperry and a large part of Vesper Peak fall outside protected wilderness, and partly outside the National Forest, on old mining claims. PeakVisor places Vesper Peak only in Mt. Baker-Snoqualmie National Forest, and its Henry M. Jackson Wilderness peak list does not include Vesper, Sperry or Morning Star. Wikipedia likewise says only 'in the Mount Baker-Snoqualmie National Forest'. Glacier Peak Wilderness lies far to the east, so the Glacier Peak Wilderness land-manager suffix, the 12-person cap and the wilderness-permit wording are template text. This row's rules were already corrected to 'no specific group-size restriction', but group_limit still states 12.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake",
+    "https://peakvisor.com/peak/vesper-peak.html",
+    "https://peakvisor.com/park/henry-m-jackson-wilderness.html",
+    "https://en.wikipedia.org/wiki/Vesper_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_ragged_edge",
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "group_limit"
+     ],
+     "expect": 12,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "fact": "Prime climbing season / best months",
+   "verdict": "fixed",
+   "correct_value": "Apr-Jun (May typically best)",
+   "evidence": "The Mt Stuart Climb Project route page gives the season as April, May and June, and notes that crevasses and a major bergschrund appear from July. Willhite's Whitehorse page likewise calls spring/early summer the safer window and July onward more hazardous; a documented spring glacier climb went on April 22. One ski-mountaineering page recommends February-April after a low snowstorm, which reflects a ski-descent emphasis. The row's own season, best_season, seasonal_guidance, avalanche-by-month and crevasse fields (5 fields) all describe April-June, so the four Feb-April mentions were brought in line with them.",
+   "sources": [
+    "https://cnmtstuartclimbproject.blogspot.com/2017/12/route-whitehorse-mountain-via-northwest.html",
+    "http://www.willhiteweb.com/washington_climbing/darrington/whitehorse_mountain_118.htm",
+    "http://www.thedirtbaguette.com/2021/04/whitehorse-mountain-via-nw-shoulder.html",
+    "https://skimo.co/whitehorse-mountain-washington"
+   ],
+   "patches": [
+    {
+     "id": "wa_whitehorse_mountain_r1",
+     "fact": "Prime climbing season / best months",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Target February-April, ideally",
+     "replace": "Target April-June, ideally"
+    },
+    {
+     "id": "wa_whitehorse_mountain_r1",
+     "fact": "Prime climbing season / best months",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best done Feb-April in",
+     "replace": "Best done Apr-Jun in"
+    },
+    {
+     "id": "wa_whitehorse_mountain_r1",
+     "fact": "Prime climbing season / best months",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "spring"
+     ],
+     "find": "Prime season (Feb-April)",
+     "replace": "Prime season (Apr-Jun)"
+    },
+    {
+     "id": "wa_whitehorse_mountain_r1",
+     "fact": "Prime climbing season / best months",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "during this route's prime Feb-April season",
+     "replace": "in winter and early spring"
+    }
+   ]
+  },
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "fact": "Prime climbing season / best months",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The season chip gives the usual Apr-Jun window. best_season and seasonal_guidance themselves call April-June 'the most common window' and add February-March only as a conditional early option after a low-elevation snowstorm, so they describe the same core window. Both windows have outside support: April-June from the Mt Stuart Climb Project, and February-April for snow-buried brush from skimo.co.",
+   "sources": [
+    "https://cnmtstuartclimbproject.blogspot.com/2017/12/route-whitehorse-mountain-via-northwest.html",
+    "https://skimo.co/whitehorse-mountain-washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "fact": "crowds.peakTraffic 'Weekends in July-August' vs season Apr-Jun and seasonal_guidance July marginal / August risky",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "CROWDS says peak traffic is July-August weekends, while the season chip and SEASONAL GUIDANCE put the route's window in April-June and rate July marginal and August risky. The club trip listings that would show when parties actually go could not be fetched (403), so the busy months were not established and no patch was written.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder"
+   ],
+   "patches": []
+  }
+ ]
+}

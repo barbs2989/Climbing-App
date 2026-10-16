@@ -1,0 +1,458 @@
+[
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://www.summitpost.org/kennedy-glacier/158306",
+   "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge"
+  ],
+  "evidence": "Upper headwall ~40-45 degree snow, often icy (about 180 ft); no ice grade published for the Kennedy route.",
+  "note": "Mapped steep, often-icy snow with no published ice grade to Class 3; record ice_grade \"roughly AI1\" is not sourced."
+ },
+ {
+  "id": "wa_glacier_peak_sitkum_glacier",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+   "https://www.summitpost.org/sitkum-glacier/155846"
+  ],
+  "evidence": "MP: Easy Snow, axe and crampons; summit reached by a snow chute; no technical crux.",
+  "note": "Mapped MP Easy Snow to Class 2. MP calls it Grade III while the record commitment says I-II and alpine_grade says III; commitment sources disagree."
+ },
+ {
+  "id": "wa_painted_traverse",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://climberkyle.com/2020/04/23/washington-high-routes-and-traverses/",
+   "https://fastestknowntime.com/route/painted-traverse-wa"
+  ],
+  "evidence": "Many class 3/4 scrambles; class 4 on Black Mountain.",
+  "note": "Headline \"4th\" restated in Class form."
+ },
+ {
+  "id": "wa_goat_mountain_east_peak",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/goat-mountain/152742",
+   "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)"
+  ],
+  "evidence": "East Peak reached by an easy Class 2 gully; not technically difficult, but steep slippery heather.",
+  "fix": {
+   "rock_grade": "Class 2 (steep heather and snow)"
+  },
+  "identity": "Same objective and approach as the \"South Ridge / Standard Scramble\" row (both leave Trail #673 for the East Peak); the two rows look like one route."
+ },
+ {
+  "id": "wa_goat_mountain_south_ridge",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/goat-mountain/152742",
+   "https://en.wikipedia.org/wiki/Goat_Mountain_(Whatcom_County)"
+  ],
+  "evidence": "East Peak via an easy Class 2 gully off the Goat Mountain trail.",
+  "identity": "Duplicates the \"East Peak Traverse\" row (same East Peak summit from Trail #673)."
+ },
+ {
+  "id": "wa_goat_wall_claymore_aka_czech_gully",
+  "final_grade": "5.7+",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/area/107192115/goat-wall"
+  ],
+  "evidence": "MP: 5.7+ trad with WI2-3 M3-4 Steep Snow (winter gully).",
+  "note": "Has both 5th-class rock and ice; no source names the crux scale, so default yds per brief. Winter grades WI2-3 M3-4."
+ },
+ {
+  "id": "wa_goat_wall_goat_s_beard_ice",
+  "final_grade": "WI5",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+   "https://www.mountainproject.com/area/107192115/goat-wall"
+  ],
+  "evidence": "MP: WI5, 7 pitches, 1,000 ft."
+ },
+ {
+  "id": "wa_goat_wall_mazama_queen",
+  "final_grade": "M6",
+  "scale": "mixed",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/116547220/mazama-queen",
+   "https://www.mountainproject.com/area/107192115/goat-wall"
+  ],
+  "evidence": "MP: III M6 WI3 PG13, 9 pitches; M6 is the crux.",
+  "note": "Fallback on wi scale would be WI3. The brief has no mixed scale; the crux is an M grade with no 5th-class rock, so the M grade is kept."
+ },
+ {
+  "id": "wa_goat_wall_the_standard",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/125744209/the-standard"
+  ],
+  "evidence": "MP: WI3-WI4 depending on conditions, 2-3 pitches."
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "final_grade": "5.10+",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://alpinist.com/doc/web15x/newswire-new-route-on-golden-horn",
+   "http://publications.americanalpineclub.org/articles/13201213719/Golden-Horn-East-Face",
+   "https://www.mountainproject.com/area/126873196/golden-horn"
+  ],
+  "evidence": "FA party: 5.10+ R, 11 pitches; crux pitch 4 is 5.10 R; MP area page says 5.10 R."
+ },
+ {
+  "id": "wa_golden_horn_north_face",
+  "final_grade": null,
+  "scale": null,
+  "confidence": "low",
+  "sources": [
+   "https://www.mountainproject.com/area/126873196/golden-horn"
+  ],
+  "evidence": "Only the 1958 Beckey-Watson FA is recorded; no grade published anywhere found.",
+  "note": "Left ungraded rather than invent a number; record has no grade columns either."
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/126873196/golden-horn",
+   "http://www.alpenglow.org/climbing/golden-horn-1980/index.html"
+  ],
+  "evidence": "FA party (1979) rated it 5.8, five pitches; MP agrees."
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "final_grade": "5.0",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/area/126873196/golden-horn",
+   "https://www.francisbaileyh.com/2024/10/12/golden-horn-5-0/"
+  ],
+  "evidence": "MP: Easy 5th; trip reports describe ~15 ft of 5.0 on the summit block."
+ },
+ {
+  "id": "wa_gothic_peak_standard",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/gothic-del-campo/",
+   "https://www.outdoorproject.com/united-states/washington/gothic-peak"
+  ],
+  "evidence": "Easy class 3 with a short low-exposure summit scramble; Del Campo, not Gothic, has mandatory class 4.",
+  "fix": {
+   "rock_grade": "Class 3 (short summit scramble)"
+  }
+ },
+ {
+  "id": "wa_gray_wolf_ridge_se_slopes",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Gray_Wolf_Ridge"
+  ],
+  "evidence": "Easiest route to the high point is class 2.",
+  "fix": {
+   "rock_grade": "Class 2"
+  }
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.summitpost.org/greenwood-mountain/858224",
+   "https://www.lemkeclimbs.com/dumbell-and-greenwood-mountains.html"
+  ],
+  "evidence": "West Ridge via Phelps Creek rated Class 3; final 700 ft class 2 talus."
+ },
+ {
+  "id": "wa_grotto_mountain_e_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314",
+   "https://onehikeaweek.com/2025/07/19/grotto-mountain/"
+  ],
+  "evidence": "Final approach is a class 4 scramble up a knife-edge ridge with a couple of class 4 moves."
+ },
+ {
+  "id": "wa_gunn_peak_southeast_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-11-10.102301319582"
+  ],
+  "evidence": "Short class-4-ish section at the Hidden Ramp; otherwise class 2-3."
+ },
+ {
+  "id": "wa_gunnshy_peak_standard_route",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/gunnshy-peak-peak-6218/971601"
+  ],
+  "evidence": "Route is Class 3 with exposed scrambling; summit itself a minor Class 2 scramble."
+ },
+ {
+  "id": "wa_guye_peak_improbable_traverse",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/107316713/improbable-traverse"
+  ],
+  "evidence": "MP: III 5.8 (traverse pitch); since the Nov 2021 rockfall the traverse is 5.9-5.10- downclimbing with poor protection and is not recommended.",
+  "note": "If the post-rockfall line is treated as the current route, its crux is 5.10-."
+ },
+ {
+  "id": "wa_guye_peak_r1",
+  "final_grade": "5.0",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+   "https://www.summitpost.org/guye-peak/150942"
+  ],
+  "evidence": "Crux is ~30 ft of low 5th class, then class 4; no number cited."
+ },
+ {
+  "id": "wa_guye_peak_r2",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/north-route-hidden-ridge/899226",
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-guye-peak-north-route-cave-ridge"
+  ],
+  "evidence": "North Route gully to the north/middle notch is very steep but only class 3 in summer; run as a Mountaineers scramble.",
+  "note": "The 5.4 move is an optional variation; steeper snow in winter."
+ },
+ {
+  "id": "wa_guye_peak_southeast_gully",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/120238377/southeast-gully"
+  ],
+  "evidence": "MP: Grade II, Mod. Snow, 45 degrees steepening to 70; picket and running belays.",
+  "note": "Mapped MP Mod. Snow to ~70 degrees with belays to Class 3 (no ice grade given)."
+ },
+ {
+  "id": "wa_south_gully_south_spur",
+  "final_grade": "5.0",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/111722458/south-gullysouth-spur",
+   "https://www.mountainproject.com/area/107316329/guye-peak"
+  ],
+  "evidence": "MP summer/fall route: Easy 5th, Grade II; MP winter version: AI1-2 M2+ Mod. Snow.",
+  "identity": "Record merges two MP routes: the summer Easy 5th rock route and the winter AI1-2 M2+ snow/mixed route (its alpine/ice grades and breakdown are the winter one)."
+ },
+ {
+  "id": "wa_south_rib",
+  "final_grade": "5.0",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/120769657/south-rib"
+  ],
+  "evidence": "MP: Easy 5th, Grade II, 5 pitches; one photo caption calls an avoidable first-pitch move 5.7.",
+  "note": "Headline \"Easy 5th\" is filed with grade_system class."
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/hadley-peak/561479",
+   "https://besthikesbc.ca/hadley-peak/"
+  ],
+  "evidence": "Both approaches share Chowder Ridge; the summit needs hard class 3 scrambling.",
+  "note": "Overview calls it a Class 2 scramble; the summit block is Class 3."
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/hadley-peak/561479",
+   "https://besthikesbc.ca/hadley-peak/"
+  ],
+  "evidence": "Ridge walk with class 2 sections; hard class 3 to the summit."
+ },
+ {
+  "id": "wa_hagan_mountain_south",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hagan_Mountain",
+   "https://www.summitpost.org/hagan-mountain/1064993"
+  ],
+  "evidence": "Easiest route: class 3 scramble with glacier travel; slabs on the south side to the summit."
+ },
+ {
+  "id": "wa_half_moon_southwest_slopes",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Half_Moon_(Washington)",
+   "https://www.summitpost.org/half-moon/153612"
+  ],
+  "evidence": "Easiest route is 5th class; at least 3 routes, none easy; no number found for the North Ridge, kept the record 5.7.",
+  "identity": "id says \"southwest_slopes\" but the route is the North Ridge from the notch north of the summit."
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.summitpost.org/helmet-butte/979358"
+  ],
+  "evidence": "Principally Class 2 from the south with a short, low-exposure class 3 summit block."
+ },
+ {
+  "id": "wa_hibox_mountain_standard",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-hibox-mountain-84",
+   "https://stevensong.com/usa/washington/hibox-mountain/"
+  ],
+  "evidence": "Popular 3rd-class scramble; crux is a 15-ft class 3 chimney near the summit."
+ },
+ {
+  "id": "wa_highway_97_chelan_ice_the_highway_dribbler",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/126877715/highway-97chelan-ice"
+  ],
+  "evidence": "MP: The Highway Dribbler, WI4."
+ },
+ {
+  "id": "wa_himmelhorn_southeast_route",
+  "final_grade": "5.0",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "https://www.nwhikers.net/forums/viewtopic.php?t=8025052",
+   "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets"
+  ],
+  "evidence": "Beckey: mainly class 4 with one lead of moderate class 5; no number published.",
+  "note": "id says southeast_route but the standard route is on the northwest aspect (face column agrees with NW)."
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "final_grade": "5.10-",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+   "https://alpinist.com/newswire/finding-stonehenge-in-the-picket-range/"
+  ],
+  "evidence": "FA party: Stonehenge, 8 pitches, 5.10-."
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/122904990/himmelhorn"
+  ],
+  "evidence": "MP: Wild Hair Crack 5.7 PG13, 4 pitches."
+ },
+ {
+  "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://climberkyle.com/2017/10/01/hoodoo-peak-and-raven-ridge/",
+   "https://www.summitpost.org/raven-ridge/916382"
+  ],
+  "evidence": "Mostly 4th class on the crest, plus at least a solid 5.7 boulder problem that can be rappelled (Hoodoo to Raven) or bypassed."
+ },
+ {
+  "id": "wa_hoodoo_peak_sawtooth_scramble",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/hoodoo-peak/899844",
+   "https://hike2hike.com/day-hikes/hoodoo-peak-washington-north-cascades/"
+  ],
+  "evidence": "Class 2 boulder scramble along the summit ridge; listed class 2/3."
+ },
+ {
+  "id": "wa_horseshoe_peak_scramble",
+  "final_grade": "5.2",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.countryhighpoints.com/horseshoe-peak-and-mount-buckner/",
+   "https://stevensong.com/usa/washington/horseshoe-peak/"
+  ],
+  "evidence": "South face rated 5.2: class 3 ramp to a short one-move 5th-class finish.",
+  "note": "Headline \"Class 3, 5.2\" is filed under grade_system class; the crux is 5th class."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://trailcatjim.com/hozomeen-mtn-north-peak-via-north-ridge-north-cirque-northeast-ridge/",
+   "https://en.wikipedia.org/wiki/Hozomeen_Mountain"
+  ],
+  "evidence": "North Ridge-North Cirque-NE Ridge: mostly class 2-3 with a short, very exposed class 4 segment; easiest route on the peak class 4."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hozomeen_Mountain",
+   "https://www.summitpost.org/hozomeen-mountain-north-peak/153772"
+  ],
+  "evidence": "North Peak easiest routes rated class 4 snow/rock scramble; no source found for this South Ridge line specifically."
+ }
+]

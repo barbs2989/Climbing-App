@@ -1,0 +1,81 @@
+{
+ "id": "wa_mount_tom_scramble",
+ "name": "Glacier/Scramble Route",
+ "waypoints": [
+  {
+   "lat": 47.8595,
+   "lng": -123.9344,
+   "elev": 578,
+   "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+   "note": "Overnight wilderness permits must be reserved in advance — none are issued at the trailhead kiosk by the visitor center; NPS entrance fee applies.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Forks, drive south on US 101 about 13 miles and turn east onto Upper Hoh Road. Follow it about 18 miles to its end at the Hoh Rain Forest Visitor Center, where the Hoh River Trail begins. An Olympic National Park entrance pass is required, and overnight wilderness permits must be reserved in advance."
+  },
+  {
+   "lat": 47.85930758169935,
+   "lng": -123.8461745751634,
+   "elev": 900,
+   "name": "Five Mile Island",
+   "note": "Trail stays nearly flat along the Hoh River through old-growth rainforest with frequent side-creek water access.",
+   "type": "Water",
+   "distMi": 5.6
+  },
+  {
+   "lat": 47.85716,
+   "lng": -123.69428,
+   "elev": 2600,
+   "name": "Elk Lake camp",
+   "note": "Reservable backcountry camp with privy and bear wire; last reliable easy water before the trail climbs steeply to Glacier Meadows.",
+   "type": "Campsite",
+   "distMi": 15.3
+  },
+  {
+   "lat": 47.832351,
+   "lng": -123.691442,
+   "elev": 4300,
+   "name": "Glacier Meadows high camp",
+   "note": "Old ranger-station camp near timberline; no camping is permitted between here and the Blue Glacier moraine.",
+   "type": "Campsite",
+   "distMi": 17.6
+  },
+  {
+   "lat": 47.824784,
+   "lng": -123.683084,
+   "elev": 5100,
+   "name": "Top of Blue Glacier lateral moraine",
+   "note": "Way trail tops the moraine; the scree descent onto the ice is steep, loose, and washed out — watch for rockfall while dropping onto the glacier.",
+   "type": "Junction",
+   "distMi": 18.4
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6600,
+   "name": "Blue Glacier crossing to Snow Dome",
+   "note": "Rope up here — the glacier is riddled with crevasses and icefall; Snow Dome is the broad basin where the Olympus (east) and Mount Tom/White-Hubert Glacier (west) lines diverge.",
+   "type": "Hazard",
+   "distMi": 20
+  },
+  {
+   "lat": 47.798032769230765,
+   "lng": -123.74958112820514,
+   "elev": 6800,
+   "name": "White/Hubert Glacier traverse to Tom-Olympus col",
+   "note": "Continue roped travel across the crevassed White/Hubert Glacier along the base of the Olympus massif to gain the col below Mount Tom.",
+   "type": "Hazard",
+   "distMi": null
+  },
+  {
+   "lat": 47.792825,
+   "lng": -123.758325,
+   "elev": 7076,
+   "name": "Mount Tom summit",
+   "note": "Class 3-4 scramble up from the col; westernmost 7,000+ ft summit in the contiguous US, with the White Glacier visible falling away below.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "approach": "From the Hoh River Trailhead (end of Upper Hoh Road, roughly 18 miles east of US-101 south of Forks), follow the Hoh River Trail upriver — a well-graded, mostly flat rainforest path through old-growth Sitka spruce and big-leaf maple for its first ~12 miles. Checkpoints: Mount Tom Creek camp (~mile 2.5-3, elev ~600-700 ft), the first spot with real views of Mount Tom's icefields across the valley; 5 Mile Island (mile 5); Happy Four shelter camp (mile 5.8); Olympus Guard Station (mile 9, water plus a ranger kiosk, with the High Divide/Bogachiel Peak junction 0.6 mile beyond); Lewis Meadow (mile 10.3); and Elk Lake (mile 14.8, elev ~2,500 ft), the last reliable camp and a common high-camp/turnaround point. Past Elk Lake the trail steepens hard, gaining roughly 1,800 ft in the final 2.3 miles to Glacier Meadows (mile 17.1-17.6, elev ~4,200-4,300 ft), the standard high camp for both Mount Olympus and Mount Tom objectives. Around mile 17.5 a major washout forces a fixed-ladder descent/crossing (roughly 100 ft, rope-assisted, one person on the ladder at a time) — treat this as the approach trail's own crux hazard, not just a nuisance. From Glacier Meadows, take the Lateral Moraine Trail (~0.8 mile, +800 ft) up onto the moraine crest for the first full view of the Blue Glacier and the terrain beyond; a shorter Terminal Moraine Trail (0.4 mile) offers an alternate viewpoint. From the moraine, glacier travel begins: descend onto and cross the (crevassed) Blue Glacier roped as a team, then climb the broad snow dome (Snow Dome) that most Olympus parties also ascend. Rather than continuing toward Olympus's summit, the Mount Tom line splits off Snow Dome and traverses horizontally along the snowy upper massif, staying below the main Olympus peaks, until it connects with Mount Tom's own White Glacier (on its NE slope) or drops via the Hubert Glacier on the south side to reach the Mount Tom-Olympus connecting ridge. Expect open crevasses on both the Blue and White/Hubert Glaciers requiring standard roped glacier travel, and a final class 3-4 scramble over loose rock to the summit block. Water is abundant along the Hoh River Trail itself (river and creek crossings throughout) but is glacier-melt/snowmelt only above Glacier Meadows, so plan treatment accordingly. The round-trip distance (~69 km/43 mi) reflects the long valley approach plus the extended high-massif traverse to Tom and back — well beyond a standard Olympus summit day. An alternate approach comes from the Bailey Range side: follow the Sol Duc River/High Divide trail system to Cat Basin, then the off-trail Bailey Range crest (over Stephen Peak, Mount Pulitzer, Mount Fitzhenry, and Ferry Basin) to reach the Mount Tom-Olympus col area, rather than via the Hoh River/Blue Glacier.",
+ "descent_text": "There is no maintained trail off Mount Tom's summit — climbers reverse the ascent line rather than following a distinct down-route. Downclimb the loose class 3-4 summit block and connecting ridge back to the White Glacier/Hubert Glacier saddle, then rope back up for crevassed glacier travel back across toward the Snow Dome side of the Olympus massif; this reconnection is a steep, loose descent off the Olympus massif that has turned back an otherwise fit, motivated group — treat it as the technical crux of the day, not an afterthought. From there, continue down over Snow Dome and re-cross the crevassed Blue Glacier to the Lateral Moraine, descend the moraine trail to Glacier Meadows camp, and reverse the Hoh River Trail (re-crossing the fixed ladder at the mile-17.5 washout) back to the trailhead. This is a walk-off/downclimb route — there is no record of fixed rappel stations or rock rappelling anywhere on Mount Tom, and the easiest route is simply glacier travel plus class 3 scrambling. Glacier sections require full roped-team glacier travel gear (harness, rope, crevasse-rescue kit, pickets) rather than rappelling gear. Given the loose, exposed class 3-4 downclimbing at the Tom-Olympus connection, some parties choose to belay or hand-line short sections here even though no fixed anchors exist — carry a rope and a light rack (slings, a picket or two, maybe a picket for an improvised anchor) for that purpose, not for rappelling."
+}

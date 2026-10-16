@@ -1,0 +1,387 @@
+{
+ "batches": ["b177.json", "b178.json", "b179.json", "b180.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "name": "East Ridge / Inspiration Glacier",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "Pitch count vs. route-breakdown length",
+     "severity": "low",
+     "claims": [
+      {"field": "pitches", "says": "14"},
+      {"field": "length_m", "says": "244"},
+      {"field": "pitch_detail", "says": "5 grouped entries using vague ropelength counts ('2-several (ridge traverse)', 'upper ropelengths', 'final 2 pitches') rather than 14 discrete pitches"}
+     ],
+     "why": "244m over 14 pitches averages ~17m/pitch, unusually short for the 'ropelengths' the beta/pitch_detail describe, and pitch_detail's own vague counts don't clearly sum to 14.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip time vs. descent-only time",
+     "severity": "low",
+     "claims": [
+      {"field": "beta", "says": "Most parties take 8-12 hours round trip from high camp to summit and back"},
+      {"field": "timing.descentTimeHrs", "says": "6"}
+     ],
+     "why": "If descent alone is 6 hours, the stated 8-12 hour round-trip total leaves only 2-6 hours for the ascent (1 loose 5.5 pitch, several ridge ropelengths, 2 rappels, 2 sustained 5.7 pitches), which is tight to the point of tension with the described climbing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "dist_km as one-way approach distance vs. whole-route distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4"},
+      {"field": "approach", "says": "roughly 4 miles and ~6,000 ft of gain"},
+      {"field": "itinerary", "says": "3-day trip: approach day, summit day (round trip from camp), exit day"}
+     ],
+     "why": "dist_km (6.4km/~4mi) matches only the one-way approach to high camp, not a round-trip or whole-trip figure; the header would show this as 'Dist' without qualifying it as one-way/partial.",
+     "internal_resolution": "dist_km is the one-way approach-to-camp distance, consistent with 'approach'.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "name": "East Ridge (Inspiration Glacier)",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Summit-day start time and duration",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.recommendedStart", "says": "3:30 AM from camp"},
+      {"field": "timing.summitTimeHrs", "says": "7"},
+      {"field": "itinerary.days[1].hours", "says": "7"},
+      {"field": "itinerary.days[1].schedule", "says": "3:30 AM Leave high camp ... 1:00 PM Back at high camp (9.5 hours elapsed)"},
+      {"field": "approach", "says": "guided parties budget 5-7 hours to high camp and another 3-5 hours (6-9 hours total on summit day) from camp to the top"},
+      {"field": "partner_requirements.approachTime", "says": "...before this objective ... the 5.5-hr, 05:00-start summit push"},
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "...on top of a 5.5-hr summit day"}
+     ],
+     "why": "Five different figures describe the same summit day: 7 hrs (timing/itinerary field), 9.5 hrs (the itinerary's own timestamped schedule, 3:30 AM to 1:00 PM), 6-9 hrs (approach prose), and 5.5 hrs starting at 05:00 (partner_requirements) — the last of which also disagrees with the 3:30 AM start stated everywhere else.",
+     "internal_resolution": "The itinerary's own schedule (3:30 AM-1:00 PM = 9.5 hrs) is the most granular and self-consistent; the '7' hours field in the same day object and the 5.5-hr/05:00 partner_requirements figures both undercount it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "name": "Tepeh Towers",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Approach text describes summiting Eldorado Peak, not Tepeh Towers",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours."},
+      {"field": "approach (same field, later)", "says": "IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area... Tepeh Towers are passed along this same glacier traverse"},
+      {"field": "high_point_ft", "says": "8113"},
+      {"field": "waypoints[Summit]", "says": "Tepeh Towers, elevFt absent, elev 8113"}
+     ],
+     "why": "The main body of the approach field is copy-pasted from the Eldorado East Ridge route and describes climbing to Eldorado's 8,868-ft summit via its snow ridge — a different climb entirely from Tepeh Towers' actual one-pitch 5.0 route to 8,113 ft — and is only caught by a caveat appended at the end of the same field.",
+     "internal_resolution": "The route's own high_point_ft (8113), summit waypoint, pitch_detail (1 pitch, 5.0), and the field's own trailing disclaimer show the contaminated first part of 'approach' is wrong for this route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Header/area elevation vs. this route's actual summit",
+     "severity": "high",
+     "claims": [
+      {"field": "area.elevation_ft", "says": "8872 (Eldorado Peak / Main Peak)"},
+      {"field": "high_point_ft", "says": "8113"},
+      {"field": "waypoints[Summit] 'Tepeh Towers'", "says": "elev 8113"},
+      {"field": "approach_variants[0].baseFinding", "says": "TEPEH TOWERS IS NOT ON ELDORADO PEAK, despite being filed under the same area. It is a separate formation further along the icecap."}
+     ],
+     "why": "The header shows the peak elevation from the area's elevation_ft (8872, Eldorado Peak's summit), but this route's own high_point_ft/summit waypoint and its own prose confirm its actual summit is a different, lower formation at 8,113 ft.",
+     "internal_resolution": "The route's own fields (high_point_ft, waypoint, explicit prose) agree the true summit is 8,113 ft on a separate formation, not Eldorado's 8,872 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip time from camp",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "round trip from camp is well under 2 hours"},
+      {"field": "approach_variants[0].baseFinding", "says": "Round trip from camp is well under two hours."},
+      {"field": "timing.totalHrs", "says": "2.5"},
+      {"field": "timing.summitTimeHrs", "says": "1"},
+      {"field": "itinerary", "says": "climb the short route (~30 min)"}
+     ],
+     "why": "timing.totalHrs (2.5 hrs = 150 min) exceeds the stated 'well under 2 hours' round trip, and timing.summitTimeHrs (1 hr/60 min for the climb) doesn't match the itinerary's own '~30 min' figure for the same climb.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "name": "Northeast Face",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration vs. its own timestamped schedule",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[1].hours", "says": "9"},
+      {"field": "itinerary.days[1].schedule", "says": "2:30 AM Leave camp ... 2:30 PM Back at camp (12 hours elapsed)"},
+      {"field": "timing.descentTimeHrs", "says": "3"},
+      {"field": "itinerary.days[1].schedule", "says": "10:00 AM Summit ... 2:30 PM Back at camp (4.5 hours)"}
+     ],
+     "why": "The day's own schedule (2:30 AM to 2:30 PM) sums to 12 hours, not the 9 hours the same day object states, and the 4.5-hour summit-to-camp descent shown in the schedule doesn't match the 3-hour descentTimeHrs field.",
+     "internal_resolution": "The timestamped schedule is the more granular record and implies ~12 hrs total / ~4.5 hrs descent, contradicting the day's summary 'hours' (9) and top-level descentTimeHrs (3).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "name": "West Arete",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Season window vs. best_season",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Aug"},
+      {"field": "best_season", "says": "Best climbed mid-to-late summer (roughly July-September)..."}
+     ],
+     "why": "best_season recommends September as part of the prime window, but the route's own season field excludes September entirely.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "name": "South Ridge",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Approach text describes the standard glacier route, not this route's crack/U-notch line",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours. ... For this specific route: from Eldorado/Roush Creek high camp, continue up snowfields onto the Eldorado Glacier to the summit ridge system; West Ridge traverses further around past the Triad to the west face before ascending, but all three routes stay on Eldorado Peak itself."},
+      {"field": "beta", "says": "Pitch 1 climbs an obvious crack up the face to the 'U-notch' on the ridge; pitch 2 follows excellent cracks on the far side; pitches 3-4 are classic exposed knife-edge ridge..."},
+      {"field": "pitch_detail", "says": "P1 (5.6 crack to U-notch), P2 (cracks), P3-P4 (knife-edge ridge), Summit scramble"}
+     ],
+     "why": "The approach field (largely shared boilerplate with the East Ridge route) describes ascending snowfields/glacier to the summit ridge system, never mentioning the crack-to-U-notch/knife-edge line that this route's own beta and pitch_detail describe as the actual climb; it also refers to a 'West Ridge' route, but no route named 'West Ridge' is filed on this peak (the rock route is named 'West Arete').",
+     "internal_resolution": "beta and pitch_detail (both specific to this route) describe the actual line; the approach field's route-specific paragraph does not match them.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Ridge crest grade: 5.7 vs 5.6",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.7"},
+      {"field": "rock_grade", "says": "5.7"},
+      {"field": "waypoints[Summit] 'Eldorado Peak'", "says": "note: Airy, exposed 5.6 ridge crest of solid granite to the summit."},
+      {"field": "approach_variants[0].baseFinding", "says": "Sources also disagree on the grade, 5.6 against 5.7, so do not read a hard move as evidence you are off route."}
+     ],
+     "why": "The route's own headline grade fields (grade, rock_grade) both say 5.7, but a waypoint note on the same route states the ridge crest is 5.6 — a genuine disagreement, acknowledged in prose as a sourcing conflict but still presented as two different grade values on the same route.",
+     "internal_resolution": "The route's own baseFinding text explains the 5.6/5.7 split as a real disagreement between sources rather than an error, but the displayed grade fields (5.7) and the waypoint note (5.6) still disagree.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "name": "Northwest Couloir / Eldorado Glacier",
+   "area": "Main Peak (Eldorado Peak)",
+   "contradictions": [
+    {
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Oct-Apr"},
+      {"field": "best_season", "says": "Highly conditions-dependent. Early season (roughly May-June) can offer steep, thin ice and moderate mixed climbing; by mid-to-late summer the couloir is usually mostly filled with snow and just a few ice steps; a good cold snap in early fall/winter (e.g., late October-November) can also bring in firm, well-bonded ice..."},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "May: marginal, June: optimal, July: good"},
+      {"field": "seasonal_hazards.avalanche.byMonth", "says": "May: Considerable, June: Moderate, July: Low"},
+      {"field": "climate.bySeason.summer", "says": "Early summer holds good névé; later the couloir melts and opens."}
+     ],
+     "why": "The route's own season field (Oct-Apr) excludes May, June and July entirely, yet best_season, seasonal_guidance's month-by-month breakdown, the avalanche-by-month table, and the climate notes all treat May-July (especially June) as the core/optimal climbing window.",
+     "internal_resolution": "The detailed seasonal_guidance/seasonal_hazards/best_season all agree the route is climbed May-July with June optimal; the terse season field (Oct-Apr) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ice grade notation disagreement (AI vs WI, and range vs single value)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade III, AI2"},
+      {"field": "ice_grade", "says": "WI2-3"},
+      {"field": "pitch_detail[0].grade", "says": "AI2-3"},
+      {"field": "pitch_detail[1].grade", "says": "AI2-3, up to WI3 in lean conditions"},
+      {"field": "best_season", "says": "Grade is correspondingly variable: roughly AI2-3, up to WI3 in lean conditions."}
+     ],
+     "why": "The header's grade pill would read ice_grade ('WI2-3') since rock_grade is absent, while the crux grade shown from the `grade` field says 'AI2' — different ice-grading conventions (alpine ice vs water ice) and different values (AI2 flat vs WI2-3 range) for the same route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day start time and duration",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.recommendedStart", "says": "3:30 AM from camp"},
+      {"field": "itinerary.days[1].hours", "says": "9"},
+      {"field": "itinerary.days[1].schedule", "says": "3:30 AM Leave high camp ... 2:00 PM Back at high camp (10.5 hours elapsed)"},
+      {"field": "timing.descentTimeHrs", "says": "3.5"},
+      {"field": "itinerary.days[1].schedule", "says": "10:00 AM Summit ... 2:00 PM Back at high camp (4 hours)"},
+      {"field": "partner_requirements.approachTime", "says": "...followed by a 04:30 alpine start for a 7-hr route day"},
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "...plus a longer (7-hr) technical summit day"}
+     ],
+     "why": "The itinerary's own schedule (3:30 AM-2:00 PM) totals 10.5 hours, not the 9 the same day object states, and shows a 4-hour descent vs. the 3.5-hour descentTimeHrs field; partner_requirements separately claims a '7-hr' summit day starting at '04:30', disagreeing with both the 9/10.5-hour figures and the 3:30 AM start stated everywhere else.",
+     "internal_resolution": "The timestamped schedule (10.5 hrs, 3:30 AM start) is most granular; the day's 'hours' field (9) and partner_requirements' '7-hr/04:30' figures both disagree with it and with each other.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_horseshoe_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Horseshoe Peak",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance: three disagreeing figures",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "9.5 (≈5.9 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "5.7"},
+      {"field": "itinerary.days[1].miles", "says": "9.2"},
+      {"field": "approach", "says": "consistent with the ~16.8-mile (27 km) round-trip distance"},
+      {"field": "itinerary.totalNote", "says": "~5.7 mi/4,000 ft up to Sahale Glacier Camp on Day 1... ~9 mi summit-and-exit Day 2"}
+     ],
+     "why": "dist_km (5.9 mi) is roughly a third of the itinerary's own day-mile total (14.9 mi), and the approach field separately states a ~16.8-mile round trip — three different figures for what should be the same overall trip distance.",
+     "internal_resolution": "The itinerary days (14.9 mi) and totalNote roughly agree with each other; dist_km (5.9 mi) and the approach field's 16.8 mi are both outliers in opposite directions.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day-2 (summit push and exit) duration",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "10"},
+      {"field": "itinerary.days[1].hours", "says": "10"},
+      {"field": "itinerary.totalNote", "says": "a long ~9-10 hr, ~9 mi summit-and-exit Day 2"},
+      {"field": "itinerary.days[1].schedule", "says": "4:00 AM Leave Sahale Glacier Camp ... 1:00 PM Back at Sahale Glacier Camp"},
+      {"field": "itinerary.days[1].schedule[5].detail", "says": "Break camp and continue the ~4,000 ft, 5.7 mi descent to the trailhead, typically finishing by early evening."}
+     ],
+     "why": "The schedule alone shows 9 hours just to return to camp (4:00 AM-1:00 PM); adding the stated further descent to the trailhead 'finishing by early evening' implies the full day is well over the stated 9-10 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length for the crux pitch/rappel",
+     "severity": "low",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "detailed_rack", "says": "some solo/small parties have rope-soloed or simul-climbed the short pitch with a 60m rope"},
+      {"field": "descent_text", "says": "a 30 m rope reaches close to the bottom... while a 60 m rope (doubled) or a single-strand 60 m lower reaches with rope to spare for a clean single rappel"}
+     ],
+     "why": "rope_length_m states a single value (30) while other fields present 30m as a bare minimum and 60m as the better/alternate option; largely reconciled in descent_text but the top-level field doesn't reflect the range.",
+     "internal_resolution": "descent_text explains 30m as minimum and 60m as preferable, so this is mostly explained rather than a hard contradiction.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach directions omit the current road closure stated elsewhere",
+     "severity": "low",
+     "claims": [
+      {"field": "approach", "says": "From the Cascade Pass Trailhead (end of the Cascade River Road — gravel/washboard, high-clearance/AWD recommended)..."},
+      {"field": "road.status", "says": "Closed to vehicles at Eldorado (milepost 20) since early June due to flooding/landslide damage; open to foot and bicycle traffic beyond the closure."},
+      {"field": "access.closures", "says": "Cascade River Road is currently closed to vehicles at Eldorado (milepost 20) due to flooding/landslide damage; foot and bicycle travel is permitted beyond the gate, adding roughly 3 miles of road travel each way..."},
+      {"field": "itinerary.cal", "says": "Cascade River Road is currently gated well below the Cascade Pass Trailhead due to washout damage, adding roughly 3 extra miles of road-walking (and ~800 ft) at each end until NPS completes repairs..."}
+     ],
+     "why": "The approach field's driving directions describe driving to the trailhead with no mention of the current vehicle closure at milepost 20 that road/access/itinerary.cal all state, which would add ~3 miles of walking/biking each way not reflected in the approach's mileage.",
+     "internal_resolution": "road, access.closures, and itinerary.cal agree on the closure; approach's driving directions are stale relative to them.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "name": "South Ridge",
+   "area": "Hurry-Up Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain: gain_ft vs. itinerary total",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "1700"},
+      {"field": "itinerary.days[0].gainFt", "says": "2900"},
+      {"field": "itinerary.days[1].gainFt", "says": "1900"},
+      {"field": "itinerary.totalNote", "says": "about 16 miles round trip with roughly 4,800 ft of total gain"}
+     ],
+     "why": "gain_ft (1700) is well under half of the itinerary's own day-by-day gain total (2900+1900=4800), which the itinerary's totalNote itself states as ~4,800 ft.",
+     "internal_resolution": "The itinerary days and totalNote agree with each other at ~4,800 ft; gain_ft (1700) is the outlier and would misstate 'Gain' wherever the header/TECHNICAL STATS render it directly.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total loss: loss_ft vs. itinerary total",
+     "severity": "high",
+     "claims": [
+      {"field": "loss_ft", "says": "1700"},
+      {"field": "itinerary.days[0].lossFt", "says": "300"},
+      {"field": "itinerary.days[1].lossFt", "says": "4500"}
+     ],
+     "why": "loss_ft (1700) is well under half of the itinerary's own day-by-day loss total (300+4500=4800).",
+     "internal_resolution": "The itinerary days sum to 4800; loss_ft (1700) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance: dist_km vs. itinerary total",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "5.9 (≈3.7 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "6.5"},
+      {"field": "itinerary.days[1].miles", "says": "8.5"},
+      {"field": "itinerary.totalNote", "says": "A 2-day, 1-night trip: about 16 miles round trip with roughly 4,800 ft of total gain"}
+     ],
+     "why": "dist_km (3.7 mi) matches only the one-way distance to Cascade Pass, not the ~15-16 mile round trip the itinerary days and totalNote describe.",
+     "internal_resolution": "dist_km appears to be the one-way trailhead-to-Cascade-Pass distance rather than the whole route/round-trip distance.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day-2 (summit + hike out) duration vs. its own schedule",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "9"},
+      {"field": "itinerary.days[1].hours", "says": "9"},
+      {"field": "itinerary.days[1].schedule", "says": "4:30 AM Leave Kool-Aid Lake camp ... ~5:00 PM Back at the trailhead"}
+     ],
+     "why": "The day's own schedule spans 4:30 AM to ~5:00 PM (12.5 hours), well over the 9 hours the same day object and timing.summitTimeHrs state.",
+     "internal_resolution": "The timestamped schedule (12.5 hrs) is more granular and contradicts the day's 'hours' field (9).",
+     "needs_research": false
+    },
+    {
+     "fact": "Scramble grade: Class 3-4 vs Class 2-3",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade II, Class 3-4"},
+      {"field": "rock_grade", "says": "Class 2-3 (scramble)"},
+      {"field": "pitch_detail", "says": "sections graded Class 2-3 and Class 3-4"}
+     ],
+     "why": "The header grade pill (from rock_grade, 'Class 2-3') and the crux/overview grade (from `grade`, 'Class 3-4') disagree on the hardest class rating for the same route; pitch_detail shows both values on different sections, so which one represents 'the route's grade' is ambiguous.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "partner_requirements names the wrong basin/camp and a different round-trip time",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.approachTime", "says": "roughly a full day off-trail to establish camp in Horseshoe Basin, then about 5 hrs round trip from camp to the summit via the south ridge"},
+      {"field": "overview", "says": "It is not part of the Sahale-Boston/Horseshoe Basin group on the opposite side of the pass; instead it's reached from a Kool-Aid Lake camp on the traverse's first day."},
+      {"field": "itinerary.days[1].schedule", "says": "4:30 AM Leave Kool-Aid Lake camp ... 1 hr later, Back at camp (≈3.5 hrs round trip to the summit)"}
+     ],
+     "why": "partner_requirements says the camp used for this route is in 'Horseshoe Basin,' but the route's own overview explicitly states it is NOT part of the Horseshoe Basin group and is instead reached from Kool-Aid Lake camp near Cache Col — a different basin on a different side of Cascade Pass; partner_requirements' '5 hrs round trip' summit time also disagrees with the ~3.5-hour round trip shown in the day's own schedule.",
+     "internal_resolution": "The route's own overview and itinerary/waypoints consistently use Kool-Aid Lake, not Horseshoe Basin, as the camp; partner_requirements appears to have copied text from a Horseshoe-Basin-area route.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

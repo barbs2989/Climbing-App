@@ -1,0 +1,193 @@
+{
+  "wa_roan_wall_center_stage": {
+    "area": "wa_waterfall_basin",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "anchor": "bolted", "notes": "First of two approach pitches, separate from the main wall. Start at the toe of a small buttress/prow at the top of the boulder-filled watercourse that drains the wall, and follow a line of bolts up the slab to a bolted belay. The same pitch is the first approach pitch for Stage Right and for Flight of the Falcon on Salish Peak." },
+      { "pitch": "2", "grade": "5.4", "lengthM": 46, "notes": "Scramble a short way up the gully above the slab, then climb a low-fifth-class groove on the right side of a brushy wall to reach the foot of the orange-and-grey main face. The ground is dirty and vegetated and is the one pitch low on the route without bolts; it is slick when wet." },
+      { "pitch": "3", "grade": "5.10b", "anchor": "bolted", "notes": "The first pitch on the real wall and one of the best: sustained face climbing on patina edges in very high-quality granite. The lower half of the route is fully bolted from here, so the rack mostly stays on the harness until higher up." },
+      { "pitch": "4", "grade": "5.9", "anchor": "bolted", "notes": "Fully bolted. Follow the bolt line up the slab, trending generally rightward, to the next double-ring stainless belay. Patina edges and friction on clean granite; no gear needed." },
+      { "pitch": "5", "grade": "5.9", "anchor": "bolted", "notes": "Another fully bolted pitch of slab and edge climbing on the open left-centre of the wall, belaying at a double-ring stainless anchor. Friction and small patina edges are the theme; the climbing is steady rather than hard." },
+      { "pitch": "6", "grade": "5.10c", "anchor": "bolted", "notes": "Fully bolted and noticeably harder than the two pitches below, on the same slab-and-edge terrain. It ends at a double-ring anchor below the crux slab." },
+      { "pitch": "7", "grade": "5.11a", "anchor": "bolted", "crux": true, "notes": "The crux: a devious slab pitch at 5.11a, the hardest climbing on the route. Bolted like the rest of the lower route; the stainless double-ring anchor at the top is a clean retreat point if the upper wall is out of reach." },
+      { "pitch": "8", "grade": "5.10-", "anchor": "bolted", "notes": "The character changes here: cracks take over with only occasional bolted face moves between them, so the single rack of nuts and cams to 2 in starts to earn its place. Belay at a bolted double-ring anchor." },
+      { "pitch": "9", "grade": "5.9", "anchor": "bolted", "notes": "A striking arching undercling that leads out to the right, part of the crack-and-bolt upper half of the route, ending at a bolted double-ring belay." },
+      { "pitch": "10", "grade": "5.10-", "anchor": "bolted", "notes": "Edges, mantles and cracks straight up to the top of the wall. From the top, the descent is by rappel down the route on the bolted double-ring anchors; the face below is clean and open, and two ropes are the recommended setup." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "6 → 10 entries. The stored ranges '4-6' and '8-10' are split into single pitches because each pitch is described separately (P4 5.9, P5 5.9, P6 5.10c, P8 5.10-, P9 5.9, P10 5.10-); labels 1, 2, 3 and 7 kept. crux:true added on P7 (named 'the crux slab' in the source). P2 gets lengthM 46 from its stated 150 ft; P1 has no lengthM because the same source gives it as both 30 m and 80 ft. No bolt counts are stated for any pitch, so none are given; anchor 'bolted' comes from the statement that all belays have new double-ring stainless anchors (left off P2, whose top is the base of the wall). Single pitch-level source (the Stage Right page confirms the shared approach pitches and the rappel down this face), so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106257989/roan-wall-center-stage",
+        "https://www.mountainproject.com/route/113653393/roan-wall-stage-right",
+        "https://stephabegg.com/trip-reports/washington/salish-flight-of-falcon/"
+      ],
+      "other_findings": "The stored beta places Martha's Place (the bivy boulder) 'near the base'; one source puts that boulder at the head of the basin, above the turn-off for the Roan Wall approach. Not a pitch_detail matter; noted only."
+    }
+  },
+  "wa_flight_of_the_falcon": {
+    "area": "wa_waterfall_basin",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Approach P1", "grade": "5.8 bolted slab", "notes": "The route is reached over the base of Roan Wall. From the thin boulder-filled watercourse below the wall, climb the obvious bolted 5.8 slab at the toe of the small buttress; it is the same first approach pitch used by the Roan Wall routes." },
+      { "pitch": "Approach P2", "grade": "Low 5th, dirty crack", "lengthM": 46, "notes": "Scramble a short way up the gully, then climb the dirty low-fifth-class crack/groove on the right side of a brushy wall to reach the foot of Roan Wall. The crack holds moss and dirt and is noticeably worse when wet." },
+      { "pitch": "Traverse to Salish Peak", "grade": "Scramble, open basin", "notes": "From the foot of Roan Wall, scramble up along its left side to the saddle left of the wall, where Salish Peak comes into view, then cross the high basin to the toe of Salish's south face. Brush in the basin is often soaking in the morning." },
+      { "pitch": "P1", "grade": "5.10b", "anchor": "bolted", "notes": "Start at the very toe of the steep south face, a little left of its lowest point; the line trends left overall. The 5.10b crux is a well-bolted face section, and like every 5.10 section on the route it can be pulled through on the bolts if needed." },
+      { "pitch": "P2", "grade": "5.9", "anchor": "bolted", "notes": "Traverse left at the bolt just off the belay, then follow an enjoyable 5.9 ramp system. There is a detached block on this pitch; climb around it with care. Views open up toward Three Fingers." },
+      { "pitch": "P3", "grade": "5.10b", "anchor": "bolted", "notes": "One of the route's two named crux pitches: a slabby 5.10b face section protected by closely spaced bolts. Mixed gear and bolts elsewhere on the pitch; the belay is bolted." },
+      { "pitch": "P4", "grade": "5.9", "anchor": "bolted", "notes": "A short, powerful 5.9 layback is the feature of this pitch; belay at a bolted anchor." },
+      { "pitch": "P5", "grade": "5.9", "anchor": "bolted", "notes": "A splitter 5.9 finger crack on clean granite. Belay at the bolted anchor above." },
+      { "pitch": "P6", "grade": "5.10b/c", "anchor": "bolted", "crux": true, "notes": "The crux of the route: face climbing up a green-tinted slab on solid rock, well protected by bolts. Grades given for it range from 5.10b/c to 5.10c." },
+      { "pitch": "P7", "grade": "5.8+", "anchor": "bolted", "notes": "Climb to the Falcon's Perch, an exposed stance above a roughly 500 ft drop to the base. This is the last bolted anchor on the route and the usual place to start rappelling with two 60 m ropes." },
+      { "pitch": "P8", "grade": "5.8+", "notes": "Optional continuation toward the summit. Rock quality drops off noticeably above the Falcon's Perch and there are no bolted anchors; protection is there but has to be looked for. Test holds and build belays from natural gear." },
+      { "pitch": "P9", "grade": "4th class", "notes": "Easy fourth-class to about 5.2 ground to the summit of Salish Peak; some parties unrope for it. From the top, the walk-off leads back down to the base, an easier option than rappelling from the summit." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "5 → 12 entries. All five stored labels kept (Approach P1, Approach P2, P3, P6, P7); added P1, P2, P4, P5, P8, P9 using the same 'P' labels, plus a 'Traverse to Salish Peak' stage between the Roan Wall approach pitches and the route, so the stored approach rows connect to the climb. Grades are now per-pitch values: P3 '5.10' → 5.10b, P6 '5.10' → 5.10b/c, P7 '5.9-ish' → 5.8+. crux:true on P6 only (stated as the crux of the route); P3 is described in the notes as the other named crux but not flagged. Approach stage grades are terrain chips. No per-pitch bolt counts (only a 34-bolt total is given), so none are set; 'bolted' anchors on P1–P7 come from the statement that belays are bolted up to P7. Approach P2 lengthM 46 comes from the 150 ft stated for that groove on the Center Stage page. The pitch-by-pitch sequence comes from one detailed trip report, confirmed by one other source (P3 and P6 as cruxes, bolted anchors), so medium.",
+      "sources_consulted": [
+        "https://stephabegg.com/trip-reports/washington/salish-flight-of-falcon/",
+        "https://www.mountainproject.com/route/115159395/flight-of-the-falcon",
+        "https://www.mountainproject.com/route/106257989/roan-wall-center-stage",
+        "http://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+        "http://blakeclimbs.blogspot.com/2010/06/10-10.html",
+        "http://hiking.andrewleader.net/routes/flight-of-the-falcon/"
+      ],
+      "other_findings": "The route is on Salish Peak but is filed on wa_waterfall_basin, as it is on the source that lists it, so this looks intended. Height is given as 700 ft in one source and 800 ft (length_m 244) in another. The stored descent_text says the walk-off goes 'left (west)'; no source consulted gives a direction for it, only that it is easy and takes about 40 minutes."
+    }
+  },
+  "wa_technicians_of_the_sacred": {
+    "area": "wa_central_wall_area",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "grade": "5.12b/c", "crux": true, "notes": "The striking black-and-white streaked open corner right of Swim and Green Dragon, almost directly above where the trail reaches the wall. Tricky steep moves low in the corner lead into pumpy overhanging climbing on sloping edges and pockets; the hardest section is short, then angle and difficulty ease toward the ledge anchor. Often wet from the waterfall until summer." },
+      { "pitch": 2, "grade": "5.11-", "crux": false, "notes": "A bolted ramp. Grades given range from 5.11- to 5.11b. Bolts on the upper wall vary in age, and many belays are sling anchors, so carry webbing to back up or replace faded tat." },
+      { "pitch": 3, "grade": "5.12-", "crux": false, "notes": "A low-angle face with sparse bolts; grades given are 5.12- to 5.12a. Supplement or replace old webbing at the belay as needed." },
+      { "pitch": 4, "grade": "5.11b", "crux": false, "notes": "The pitch through the Golden Arch. The usual way climbs about 8 ft higher up the corner to an obvious finger-bucket rail that leads back right to the arete (5.11b), then up corners above. A harder direct option takes the arete straight on at about 5.12b/c. Rappelling back over this arete leaves the rappeller hanging in space." },
+      { "pitch": 5, "grade": "5.11", "crux": false, "notes": "Continuous climbing through corners and aretes, given as 5.11 to 5.11b. Steep and featured, with big holds, high heel hooks and technical stemming; one of the best pitches on the upper wall." },
+      { "pitch": 6, "grade": "5.8", "crux": false, "notes": "The only unbolted pitch: a hand crack that needs natural gear. Carry a light rack of hand-size cams for it; everything below is bolt-protected." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "6 → 6 entries, same labels (numeric, as stored). P4 grade token '5.12b/c or 5.11b' → 5.11b (the usual line, and the one the free-ascent account used), with the 5.12b/c direct arete in the notes. P1 crux:true is kept because a second source calls P1 the crux. Notes rewritten from fragments using two sources that agree on the grades (the second gives P2 11b, P3 12a, P4 11b, P5 11b and calls the P1 crux 12b). No lengths or bolt counts are stated per pitch, so none are given; no anchor field because anchors are a mix of bolts and sling belays.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106329309/technicians-of-the-sacred",
+        "https://cascadeclimbers.com/forum/topic/88000-tr-index-upper-town-wall-technicians-of-the-sacred-8142012/"
+      ],
+      "other_findings": "The route is filed as sport; P6 is a gear pitch (hand crack), so a small rack is needed. The stored grade 5.12c is the high end of the P1 range (12b to 12b/c)."
+    }
+  },
+  "wa_sisu": {
+    "area": "wa_central_wall_area",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "grade": "5.11+", "lengthM": 40, "bolts": 16, "anchor": "bolted", "crux": false, "notes": "Start at the first line right of a 20 ft flake that forms a chimney against the wall; look for two bolts close together about 15 ft up. Knobs, tricky mantles and a little slab lead to Madsen's Ledge and a chain anchor. It is worth doing as a single pitch." },
+      { "pitch": 2, "grade": "5.10+", "lengthM": 18, "bolts": 6, "anchor": "bolted", "crux": false, "notes": "Walk about 20 ft right along the ledge and climb up a few boulders to reach the wall. The first bolt is well right of the line; backclean it if possible to cut drag. Traverse horizontal cracks, then crimp up and left to the belay." },
+      { "pitch": 3, "grade": "5.10+", "lengthM": 15, "bolts": 6, "anchor": "bolted", "crux": false, "notes": "Move horizontally right, underclinging the roof/flake system, until crimps appear above the lip of the roof and lead up to the belay." },
+      { "pitch": 4, "grade": "5.11-", "lengthM": 25, "bolts": 11, "anchor": "bolted", "crux": false, "notes": "Traverse left off the belay, then straight up into the first hard section. After a rest, follow the left-leaning crack system past several more difficult moves to a hanging belay." },
+      { "pitch": 5, "grade": "5.11+", "lengthM": 10, "bolts": 6, "anchor": "bolted", "crux": false, "notes": "A few tricky moves off the belay reach a large flake, then excellent edges lead up and right to a final hard section just below another hanging belay. Short but tied for the route's top grade." },
+      { "pitch": 6, "grade": "5.11", "lengthM": 30, "bolts": 12, "anchor": "bolted", "crux": false, "notes": "Tenuous knobs and slopers give way to a fun flake system. Follow it to a knobby crux that moves right, then crimps and features lead up to a big ledge with a double-ring anchor." },
+      { "pitch": 7, "grade": "5.10-", "lengthM": 35, "anchor": "bolted", "crux": false, "notes": "About eight bolts. There are two belays: with a 60 m rope, stop at the anchor far left with huge chain links; to continue to the summit or rappel with a 70 m rope, carry on to a three-bolt anchor that includes a glue-in bolt." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "7 → 7 entries, same labels, grades and lengths. Bolt counts moved from the notes into bolts (P7 '~8' stays in the notes because it is approximate). anchor 'bolted' added (all anchors are stated to be bolted and rap-equipped). crux:true removed from P4 and P5: the source's 'first crux' and 'final crux' are hard moves within those pitches, not a named crux pitch, and P1 carries the same top grade. Notes expanded with the start location, belay positions and the P7 anchor choice. Single source, so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/115362195/sisu"
+      ],
+      "other_findings": "Source notes the route is often wet in spring and gets afternoon shade."
+    }
+  },
+  "wa_starfish_enterprise": {
+    "area": "wa_central_wall_area",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "grade": "5.11d", "crux": false, "notes": "Start about 50 ft left of Good Girls Like Bad Boys at a two-bolt stance on a narrow part of Madsen's Ledge (a hand line has been in place). Face and arete past three bolts reach a steep corner with a crack in the back; stem and jam it on cams, then a tricky arete and more stemming lead to a semi-hanging belay." },
+      { "pitch": 2, "grade": "5.11a", "crux": false, "notes": "Head left from the belay to join the second pitch of Good Girls Like Bad Boys above that pitch's crux. Pitches 1 and 2 can be linked with little rope drag." },
+      { "pitch": 3, "grade": "5.11d", "crux": false, "notes": "Climb the excellent third pitch of Good Girls Like Bad Boys, the corner line, to a belay in the corner." },
+      { "pitch": 4, "grade": "5.11c", "crux": false, "notes": "Leave the corner and move left onto the exposed face for a long, varied pitch. Watch the feet around the starfish-shaped feature the route is named for." },
+      { "pitch": 5, "grade": "5.10", "crux": false, "notes": "A tenuous move just above the belay is the hard part; above it, climb broken face past bolts. A few small cams help protect the easier ground between bolts. Descend as for Good Girls Like Bad Boys." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "5 → 5 entries, same labels and grades. crux:true removed from P3: no source names a crux pitch for the route (the only 'crux' in the source is the move just above the P5 belay, which is a hard move on an easier pitch). Notes expanded with the start location, the P1/P2 link and the small-cam note for P5. No lengths, bolt totals or anchor types are stated per pitch, so none are given. Single source, so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/112127899/starfish-enterprise",
+        "https://www.mountainproject.com/route/109222940/good-girls-like-bad-boys"
+      ],
+      "other_findings": "Filed as sport, but P1 needs cams for the corner and P5 takes small cams (the source's rack is 16-18 draws plus 4-6 cams from tips to fat fingers)."
+    }
+  },
+  "wa_crying_dragon": {
+    "area": "wa_central_wall_area",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "grade": "5.9", "lengthM": 27, "anchor": "bolted", "crux": false, "notes": "The start of the Davis-Holland: hand and finger jamming in a crack that is sometimes wet when the rest of the wall is dry. Belay at two bolts on a good ledge. The same pitch is given as 5.8+ elsewhere." },
+      { "pitch": 2, "grade": "5.10a", "lengthM": 30, "anchor": "bolted", "crux": false, "notes": "Continue up the Davis-Holland: fingers and thin hands in a right-facing corner to a two-bolt anchor on a sloping ledge. This is the most gear-hungry pitch. With some backcleaning it links with the next pitch into one long 55 m pitch of 5.10." },
+      { "pitch": 3, "grade": "5.10c", "lengthM": 30, "bolts": 8, "anchor": "bolted", "crux": false, "notes": "Look up and right for a lone black-hangered bolt. Undercling the roof as for the right variation of Davis-Holland, reach a jug under the bolt, then a short tricky section (horizontal takes a #2 Camalot) leads onto the second pitch of Rise and Fall. Skip the belay out right, clip the next black bolt up-left, and follow crystal edges up a dike; the crux is getting past two roofs at the end. Three-bolt belay." },
+      { "pitch": 4, "grade": "5.10d", "lengthM": 23, "bolts": 2, "anchor": "bolted", "crux": false, "notes": "Up Rise and Fall past one bolt to a finger crack, then step right to a Green Drag-on bolt and up to its hanging anchor under a roof. Clip it as protection, make a hard move into the steep crack exiting the right side of the roof, and follow sustained 5.10 crack to a two-bolt stance on the left. That anchor is not set up for rappel." },
+      { "pitch": 5, "grade": "5.11c/d", "lengthM": 12, "bolts": 4, "anchor": "bolted", "crux": false, "notes": "Up the corner on thin gear to a good jug, then clip the shiny bolt out right (the bolts up and left belong to Green Drag-on). A balancy section leads to a tenuous second clip, then powerful moves work right past the third bolt to the three-bolt Town Crier anchor. Bouldery and fun." },
+      { "pitch": 6, "grade": "5.11d", "lengthM": 32, "bolts": 2, "anchor": "bolted", "crux": false, "notes": "Up the Town Crier flare past fixed pins (back them up with thin gear), then a layback crux gets you onto a flexy flake; two bolts protect. Traverse left immediately along the horizontal crack; going straight up is the much harder Town Crier crux. Jugs lead back to Green Drag-on and its final 5.10 crack to an anchor on a busy ledge. A #3 is useful here." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "6 → 6 entries, same labels, grades and bolt counts (bolts moved out of the notes into bolts). The stored lengthFt key, which the route page does not read for pitches, is replaced by lengthM from the same stated lengths (90/100/100/75/40/105 ft → 27/30/30/23/12/32 m). anchor 'bolted' added (all anchors are stated to be bolted). crux:true removed from P5 and P6: the source names a layback crux within P6 but no crux pitch for the route. The pitch-by-pitch comes from one source; the Davis-Holland page confirms P1–P2 (and grades P1 5.8+, noted in the notes), so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110630354/crying-dragon",
+        "https://www.mountainproject.com/route/105836583/davis-holland-route",
+        "https://www.mountainproject.com/route/106857410/town-crier"
+      ],
+      "other_findings": "Rappel: the source suggests Green Drag-on and then swinging to Rise and Fall, or Town Crier, each with one 60 m rope. The P4 anchor is not rap-equipped, so a party bailing there must aid up and left on Green Drag-on or climb P5 and rappel Town Crier."
+    }
+  },
+  "wa_golden_age": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.11c", "lengthM": 35, "anchor": "bolted", "notes": "The prominent left-facing, left-arching corner. Delicate thin corner climbing leads to a burly 4–5 in layback; at the wedged chockstones move left to rest, then power through a short physical roof. The only pitch that needs the #5 cam; it can be left at the anchor and collected on the way down." },
+      { "pitch": "2", "grade": "5.11d", "lengthM": 35, "anchor": "bolted", "notes": "Easy climbing leads to a physical crux over another small roof. Face climbing then gains a shallow left-leaning crack that fades out, ending in a hard lunge to a ledge; easy climbing up a left-facing corner finishes on Smoke Break Ledge." },
+      { "pitch": "3", "grade": "5.11a", "lengthM": 25, "anchor": "bolted", "notes": "Climb a ramp and across a golden panel; a technical, reachy crux passes flakes and leads to a steep ramp and the belay. The stone on this pitch is some of the cleanest on the route." },
+      { "pitch": "4", "grade": "5.12b", "lengthM": 20, "anchor": "bolted", "crux": true, "notes": "The crux pitch. Pumpy laybacking reaches a rest, then launch right through an overlap into a powerful traverse, follow a bathtub-shaped rail, and a second crimpy crux guards the belay." },
+      { "pitch": "5", "grade": "5.10d", "lengthM": 15, "anchor": "bolted", "notes": "A tricky mantle off the belay leads to an exposed hand-traverse crack, then an awkward mantle onto the belay stance." },
+      { "pitch": "6", "grade": "5.11a", "lengthM": 35, "anchor": "bolted", "notes": "A pleasant flake leads to a thin bolted crux, then steep jugs go out to the apex of the overhangs and a burly hand-crack roof. Continue straight up until a hand traverse right reaches the belay. A little loose in places, but the belay and the rope run out of the line of fire." },
+      { "pitch": "7", "grade": "5.11c", "lengthM": 15, "anchor": "bolted", "notes": "Climb toward the arete on crisp crimps on solid golden rock, then move left to a final cruxy mantle. From the top, rappel the route with one 70 m rope; the second rappel anchor from the top is off to the left of the line." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "7 → 7 entries, same labels, and the grades and lengths agree with the first-ascent topo (P5 '5.10+' now 5.10d as that topo gives it). crux:true added on P4, the pitch named as the 5.12b crux in both sources. anchor 'bolted' on every pitch (all belays are stated to be bolted). Two stored notes corrected: P1's chockstones are described as solidly wedged, not loose, and the claim that P4 has the best rock on the route is dropped (the sources single out P3 and P7 for rock quality). Notes rewritten from fragments.",
+      "sources_consulted": [
+        "https://squamishrockguides.com/mm-wall-2/",
+        "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age"
+      ],
+      "other_findings": "Several stored columns disagree with the first-ascent topo. (1) descent_text and rappels say not all belays are bolted for rappel and that most parties walk off or use the Tiger/Ellen Pea rappels; the topo says all belays are fully bolted and the route rappels with one 70 m rope. The stored beta repeats the 'not all rappel-ready' claim. (2) The stored approach says the start is reached by climbing the early pitches of The Tiger or Ellen Pea; the topo gives a direct approach up the gully (about 1 hour), leaving it on a narrow ledge that leads back right to the first pitch, a 4–5 in left-arching corner, with the Tiger/Ellen Pea apron only as an optional extra. (3) The AAJ photo captions number the pitches one higher (crux 'fifth pitch', hand traverse 'sixth pitch') than the 7-pitch topo; the topo's own captions match the numbering used here."
+    }
+  },
+  "wa_the_tiger": {
+    "area": "wa_m_m_wall_aka_supercave_wall",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "lengthM": 25, "anchor": "bolted", "notes": "Easy scrambling moves past flakes and a pruned tree, about 8 m up, gain a clean, slabby left-facing corner that leads to a two-bolt anchor. The approach ledge is a lower one; the highest ledge out of the gully leads to the start of P4 instead." },
+      { "pitch": "2", "grade": "5.10+", "lengthM": 45, "anchor": "bolted", "notes": "A few metres up the corner, make awkward moves over the roof onto the golden slab above. Zigzag past bolts, first left on crack features and then back right, pull a bulge, and follow thin crack features up and left. The moves after the bulge are thin and sustained; easier ground leads to the anchor. Graded 5.10+ to 5.10d." },
+      { "pitch": "3", "grade": "5.11", "lengthM": 45, "anchor": "bolted", "notes": "Up the left-facing corner past flakes and a bolt, then step right to a second bolt and pull into the upper left-facing corner. Sustained and technical with finicky gear, to a two-bolt anchor at a large ledge. Walk the belay left 10–15 m along the ledge to a cairn at the start of P4. Given as 5.11 to 5.11c." },
+      { "pitch": "4", "grade": "5.10", "lengthM": 30, "anchor": "bolted", "notes": "Another left-facing, slabby corner to a bolt, then face moves right past steep, flexing flakes and a solid layback flake. Pull around the arete to the right to the anchor." },
+      { "pitch": "5", "grade": "5.11-", "lengthM": 35, "anchor": "bolted", "notes": "A thin, technical finger corner leads into the big cave, Tiger Belly's Lair; the anchor is on the right side of the cave. Sustained and stout for its grade, which is given from 5.11- to 5.11a." },
+      { "pitch": "6", "grade": "5.10-", "lengthM": 15, "anchor": "bolted", "notes": "Traverse right out of the cave, clip a bolt, and climb a steep wall on positive holds, trending slightly right to a stance below the leaning roof. The Eye of the Tiger variation (5.12c/5.12+) climbs the orange corner straight out of the cave for about 40 m and rejoins the route above; accounts differ on whether it rejoins after P7 or P8." },
+      { "pitch": "7", "grade": "5.12-", "lengthM": 15, "anchor": "bolted", "crux": true, "notes": "The crux: follow the exposed, stepped roof leftward past two bolts, alternating strenuous underclings with holds above the lip. At the end of the roof (a BD #2 fits), reachy but easier moves past a pin reach the anchor. Grades given are 5.12- to 5.12b." },
+      { "pitch": "8", "grade": "5.11+", "lengthM": 25, "anchor": "bolted", "notes": "A short, steep, strenuous layback in the left-facing corner past a fixed piece and two bolts, then a rest on a stance. From a bolt, hand-traverse left past another bolt, with poor feet at first, onto the slab and a sloping belay. A second two-bolt anchor about 7 m up and right is off route." },
+      { "pitch": "9", "grade": "5.11", "lengthM": 30, "anchor": "bolted", "notes": "Straight up cracks and flakes until you can trend left on twin thin cracks, balancy and protected by two fixed nuts. An easier ramp leads left to the anchor at the base of the Tiger Flake. Given as 5.11 to 5.11b." },
+      { "pitch": "10", "grade": "5.10", "lengthM": 30, "anchor": "bolted", "notes": "Clip the bolt left of the anchor and make committing moves to a small ledge, then undercling and jam left around the giant Tiger Flake and continue to its final steep, wide section. Keep a BD #5 for after the first section, to protect the follower, and a #6 for the end. Manage the rope carefully; belay on a big ledge." },
+      { "pitch": "11", "grade": "5.10-", "lengthM": 30, "anchor": "tree", "notes": "Broken cracks and blocky features lead up and right to a final bulge and onto the ridge; anchor from a tree. The weakest pitch on the route. Descend by rappelling the route with two ropes, including diagonal rappels, or by the third-class ramp on the left side of the wall." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "11 → 11 entries, same labels and grade tokens. Lengths moved from the notes into lengthM (the stored figures match one source; the first-ascent topo gives P1 20, P3 50, P9 35, P10 35 and P11 40 m). crux:true on P7 (named 'the crux' in the source). anchor added: two-bolt anchors on P1–P10, a tree on P11. Notes rewritten with route-finding (the high-ledge trap, moving the belay to the cairn, the off-route anchor on P8, the Eye of the Tiger variation) and the first-ascent grade spreads where they differ.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109429099/the-tiger",
+        "https://squamishrockguides.com/mm-wall/",
+        "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger",
+        "http://blakeclimbs.blogspot.com/2014/08/the-tiger-1000-512b.html"
+      ],
+      "other_findings": "The stored grade 5.12- is the softer of the two grades given; the first-ascent reports give IV 5.12b."
+    }
+  }
+}

@@ -1,0 +1,268 @@
+{
+ "file": "s005.json",
+ "results": [
+  {
+   "id": "wa_action_potential",
+   "fact": "Route length vs pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's own listing gives 800 ft (242 m) overall but pitch lengths of 150/100/150/110/200/100/150 ft plus a variable finish, which sum to over 960 ft; the row copies both, so the conflict is in the source itself. No second independent account of the route's length or pitch lengths was found (FA report and other pages give only grade/name). Would settle with a second trip report or topo stating the total length or per-pitch lengths.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394880/action-potential",
+    "https://kurthicks.com/2009/09/16/new-routes-in-the-northwest/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Where the rope-trap constriction is",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The North Face listing warns only that there are many places to get the rope stuck. A 2004 party account records a rope stuck on the first double-rope rappel and a 50 ft scramble to free it, and another party had ropes tangle on the last two rappels; neither mentions a constriction above a wide crack or a 5.8 lead, so no source places the incident on rappel 1 or 3. Would settle with the original account of the 5.8 re-lead naming the rappel.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://mountainwerks.org/cma/2004/burgundy.html",
+    "https://www.francisbaileyh.com/2024/07/07/burgundy-spire-pasaino-burgundy-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Burgundy Spire summit elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "USGS 1 m lidar point elevation at the stored summit pin reads 8,482 ft (matching the waypoint's 8,483), while the topo-derived list gives 8,492 ft (matching high_point_ft); a 9 ft gap on a spire top where a 1 m DEM may miss the highest block. The peak database page could not be fetched to break the tie. Would settle with the peakbagger lidar figure or a finer lidar sampling of the summit block.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.590745&y=48.553455&units=Feet&wkid=4326",
+    "https://listsofjohn.com/peak/212042"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Where Action Potential starts relative to Ultramega OK",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Along the base from Burgundy Col: North Face chimney, then Ultramega OK's twin cracks, then Action Potential's splitter flake about 15 ft further climber's-left",
+   "evidence": "The Ultramega OK route listing says Action Potential lies about 15 ft further left of Ultramega's twin-crack start. The first-ascent report (a different party/author) says Ultramega starts about 10 ft right of Action Potential's pitches. Both put Action Potential a short way climber's-left of Ultramega, not between it and the North Face.",
+   "sources": [
+    "https://www.mountainproject.com/route/114960561/ultramega-ok",
+    "https://cascadeclimbers.com/forum/topic/33439-tr-wa-pass-burgundy-spire-ultramega-ok-northeast-buttress-724/"
+   ],
+   "patches": [
+    {
+     "id": "wa_action_potential",
+     "fact": "Where Action Potential starts relative to Ultramega OK",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "directions"
+     ],
+     "find": "The start sits between the North Face's start and Ultramega OK's, which goes further around still.",
+     "replace": "The start sits about 15 ft climber's-left of Ultramega OK's twin cracks, so it is further along the base than both the North Face's start and Ultramega OK's."
+    },
+    {
+     "id": "wa_action_potential",
+     "fact": "Where Action Potential starts relative to Ultramega OK",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "this is the route start, between the North Face's start and Ultramega OK's further-around start.",
+     "replace": "this is the route start, about 15 ft climber's-left of Ultramega OK's twin-crack start, which itself lies beyond the North Face's start."
+    },
+    {
+     "id": "wa_action_potential",
+     "fact": "Where Action Potential starts relative to Ultramega OK",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THIS ROUTE SITS BETWEEN THE NORTH FACE'S START AND ULTRAMEGA OK'S. Ultramega OK is FURTHER AROUND, well climber's-left of both, at a TWIN-CRACK SYSTEM MARKED BY OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. So: IF YOU ARE LOOKING AT TWO CRACKS WITH LOOSE BLOCKS SIXTY FEET ABOVE YOU, YOU HAVE WALKED PAST THIS ROUTE.",
+     "replace": "THIS ROUTE SITS JUST BEYOND ULTRAMEGA OK'S START. Ultramega OK is only about 15 FT climber's-right of this route, at a TWIN-CRACK SYSTEM MARKED BY OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. So: IF YOU ARE LOOKING AT TWO CRACKS WITH LOOSE BLOCKS SIXTY FEET ABOVE YOU, KEEP GOING ABOUT 15 FT."
+    },
+    {
+     "id": "wa_action_potential",
+     "fact": "Where Action Potential starts relative to Ultramega OK",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "A chimney at the near end, a splitter flake five to ten minutes along, twin cracks with loose blocks further still.",
+     "replace": "A chimney at the near end, twin cracks with loose blocks five to ten minutes along, and the splitter flake about 15 ft beyond them."
+    }
+   ]
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Where the route starts relative to Action Potential",
+   "verdict": "fixed",
+   "correct_value": "Action Potential's start is roughly 15 ft climber's-left of Ultramega OK; Ultramega is climber's-left of the North Face start",
+   "evidence": "The route listing places Action Potential about 15 ft further left of Ultramega's twin cracks. The first-ascent report says Ultramega starts about 10 ft right of Action Potential's pitches. Both agree Action Potential is just to the left, so the beta's 'to the right' and the approach/base-finding claim that Ultramega is furthest around and well left of Action Potential are wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/114960561/ultramega-ok",
+    "https://cascadeclimbers.com/forum/topic/33439-tr-wa-pass-burgundy-spire-ultramega-ok-northeast-buttress-724/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Where the route starts relative to Action Potential",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "(Action Potential's start is roughly 15 ft to the right)",
+     "replace": "(Action Potential's start is roughly 15 ft to the left)"
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Where the route starts relative to Action Potential",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "this is the route start, well left (climber's) of the North Face and Action Potential starts.",
+     "replace": "this is the route start, climber's left of the North Face start, with Action Potential's clean splitter flake roughly 15 ft further left."
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Where the route starts relative to Action Potential",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THIS ROUTE STARTS FURTHEST AROUND THE BASE OF ANY LINE HERE, AND THE MARKER IS COUNTABLE:",
+     "replace": "THIS ROUTE STARTS JUST SHORT OF ACTION POTENTIAL ALONG THE BASE, AND THE MARKER IS COUNTABLE:"
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Where the route starts relative to Action Potential",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THIS START IS WELL CLIMBER'S-LEFT OF BOTH THE NORTH FACE AND ACTION POTENTIAL.",
+     "replace": "THIS START IS CLIMBER'S-LEFT OF THE NORTH FACE, AND ONLY ABOUT 15 FT CLIMBER'S-RIGHT OF ACTION POTENTIAL."
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Where the route starts relative to Action Potential",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "then ACTION POTENTIAL'S CLEAN SPLITTER FLAKE about 5-10 minutes along, then THIS ROUTE'S TWIN CRACKS. IF YOU HAVE STOPPED AT A SINGLE CLEAN SPLITTER, YOU ARE ONE ROUTE SHORT.",
+     "replace": "then THIS ROUTE'S TWIN CRACKS about 5-10 minutes along, then ACTION POTENTIAL'S CLEAN SPLITTER FLAKE roughly 15 FT FURTHER. IF YOU HAVE STOPPED AT A SINGLE CLEAN SPLITTER, YOU HAVE GONE ONE ROUTE TOO FAR."
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Where the route starts relative to Action Potential",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "there is nothing documented further around than this, so a wall with no twin cracks and no loose blocks means you have gone past the last recorded start on this side.",
+     "replace": "if you are still beside the North Face's first-pitch chimney you are short of this start, and a single clean splitter with no loose blocks above it means you have walked about 15 ft past it."
+    }
+   ]
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Rope needed for the North Face rappels",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources agree on 5 double-rope rappels and that a single 60 m works with some downclimbing while a 70 m is nicer; one party on two 60s describes a doubled first rap, one single rap to the pitch-3 ledge and three more doubles; another reports a 9-10 rappel single-rope descent and another a 60 m plus tag line with full-length rappels. None gives per-station lengths, so the 40/55/55/40/60 m table and the 'a 70 m single reaches' claim cannot be confirmed or corrected. Would settle with a topo giving per-rappel lengths.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/",
+    "https://www.francisbaileyh.com/2024/07/07/burgundy-spire-pasaino-burgundy-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Wilderness status vs wilderness-registration box",
+   "verdict": "fixed",
+   "correct_value": "A registration box (not a wilderness register) — the approach lies outside designated wilderness",
+   "evidence": "A point query of the US Forest Service wilderness boundary layer finds no designated wilderness within 5 km of Burgundy Col, the pullout or the summit (a control point to the south correctly returns Lake Chelan-Sawtooth Wilderness). The wilderness.net-derived national wilderness layer likewise returns nothing within 4 km. The box itself is real, so only the word 'wilderness' is removed.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://services1.arcgis.com/ERdCHt0sNM6dENSD/arcgis/rest/services/Wilderness_Areas_in_the_United_States/FeatureServer/0",
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024"
+   ],
+   "patches": [
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Wilderness status vs wilderness-registration box",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "you'll pass a wilderness-registration box",
+     "replace": "you'll pass a registration box"
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Wilderness status vs wilderness-registration box",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "look for a wilderness-registration box a few minutes in",
+     "replace": "look for a registration box a few minutes in"
+    },
+    {
+     "id": "wa_ultramega_ok",
+     "fact": "Wilderness status vs wilderness-registration box",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "look for a WILDERNESS-REGISTRATION BOX a few minutes in",
+     "replace": "look for a REGISTRATION BOX a few minutes in"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,000 is below the net rise from the 1,500 ft landing, but the only car-to-car figure from the Lightning Creek landing (~8,500 ft over 39 mi walking) is from one 2023 party. The Freezeout Creek route page gives only a partial figure (+1,200/-800 ft to Turner Bridge) from a different start, and another report (4,700 ft) is from Manning Park. Would settle with a second independent trip from the Lightning Creek landing stating total gain.",
+   "sources": [
+    "https://www.lemkeclimbs.com/castle-peak.html",
+    "https://www.summitpost.org/freezeout-creek-route/295596",
+    "https://www.countryhighpoints.com/castle-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2023 party walked 39 mi round trip from SR-20 via the Lightning Creek landing (~19 mi each way from the landing); the Freezeout Creek route page gives ~34 mi round trip but measured from the Hozomeen side (Willow Lake 5 mi, Turner Bridge 7.5 mi, cabin 11.3 mi), a different start; the Manning Park report (29 mi) is a different approach. No two sources agree on the one-way distance for this row's approach. Would settle with a second trip report or track from the Lightning Creek landing.",
+   "sources": [
+    "https://www.lemkeclimbs.com/castle-peak.html",
+    "https://www.summitpost.org/freezeout-creek-route/295596",
+    "https://www.countryhighpoints.com/castle-peak/"
+   ],
+   "patches": []
+  }
+ ]
+}

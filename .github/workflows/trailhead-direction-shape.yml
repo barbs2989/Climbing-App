@@ -1,0 +1,47 @@
+name: Trailhead direction shape check
+
+# Asks whether any route's TRAILHEAD card prints the WALK as its driving directions.
+#
+# approach_logistics.trailheadDirection renders under the trailhead's name, beside "Drive here".
+# On 2026-09-24 230 routes carried a hike there instead -- "From Slate Pass at the end of Harts
+# Pass Road: backpack ~13 miles via the Whistler Cutoff", "Skyline Trail to Camp Muir", a bare
+# "North". The column was populated, so every coverage check read it as done.
+#
+# NOT a build gate, on purpose, for the reason rappel-length-drift.yml gives: this is a property
+# of the DATABASE, not the checkout. No code change can cause it and none can fix it, so failing
+# `npm run build` would block unrelated PRs on a condition their author cannot affect. The build
+# DOES run the same script without --live, which proves the detector against its reviewed corpus;
+# check:sql refuses a hand-written .sql that writes such a value; and the card hides one anyway.
+# This is the scan that notices a row that got in by some other path.
+
+on:
+  schedule:
+    # Daily, twenty minutes after the rappel check so the two never share a cold connection.
+    - cron: "40 8 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: trailhead-direction-shape
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  shape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # No npm install -- the script uses fetch and the REST API only.
+      - name: Does every trailhead direction end at the trailhead?
+        env:
+          # Read-only, and the ANON key on purpose: `routes` is publicly readable, and a checker
+          # that could write is a checker that can corrupt what it is checking. The script fails
+          # closed on a short read, because its realistic failure mode is a false pass.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-trailhead-direction-shape.mjs --live

@@ -1,0 +1,231 @@
+{
+ "applied": [
+  {
+   "id": "wa_action_potential",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 13 >= totalHrs 13: held the car-to-car total"
+  },
+  {
+   "id": "wa_south_face_3",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 9 >= totalHrs 9: held the car-to-car total"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 14 >= totalHrs 14: held the car-to-car total"
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 10.5 >= totalHrs 10.5: held the car-to-car total"
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 10 >= totalHrs 10: held the car-to-car total"
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 9 >= totalHrs 9: held the car-to-car total"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 10.5 >= totalHrs 10.5: held the car-to-car total"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs 7.5 >= totalHrs 7.5: held the car-to-car total"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_action_potential",
+   "before": {
+    "timing": {
+     "totalHrs": 13,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3,
+     "recommendedStart": "4:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 13,
+       "note": "From Burgundy Col, a short scramble down and around the north face on loose rock or snow leads to a clean splitter flake marking the start. Eight pitches of varied flakes, cracks a…",
+       "fromTo": "Car-to-car: Action Potential",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_3",
+   "before": {
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 3.2,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "Hike the Blue Lake Trail and climber's path to the Concord-Lexington col, then climb the South Face's sandy ledges, crack, V-groove and finger traverse to the summit block. Reverse…",
+       "fromTo": "Car-to-car: South Face",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "before": {
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 14,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3,
+     "recommendedStart": "4:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 14,
+       "note": "Approach Burgundy Col, then scramble down and around the north face to the NE Buttress start. Eight pitches of mostly 5.8-5.9 climbing with a 5.11a crux on a lightly-traveled, sometimes lichenated l…",
+       "fromTo": "Car-to-car: NE Buttress (Ultramega OK)",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "before": {
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 1.5,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "A long single-day buttress climb: ~2-hour approach through forest and meadow, ~12 pitches of wandering rock up to 5.8, then a long rappel descent. Trip reports commonly range from …",
+       "fromTo": "South Buttress, car-to-car",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "before": {
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 1.5,
+     "recommendedStart": "5:00-6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "Graded a Mountaineers 'basic' climb but airy and committing: a loose scree/choss approach leads to the Southwest Gully, then sustained class 3-4 climbing along a narrow, hugely exp…",
+       "fromTo": "West Ridge, car-to-car",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "before": {
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 2,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "Approach from the Blue Lake Trailhead up into Liberty Bell Basin to the base of the west face (about 1.5-2 hr), climb the 4-pitch Serpentine Crack, then downclimb/rappel the standa…",
+       "fromTo": "Car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "before": {
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 1,
+     "recommendedStart": "4:30-5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "Approach from the hairpin pullout to the East Face base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, cruxes on pitches 5 and 6), then rappel the route/stand…",
+       "fromTo": "Long car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "before": {
+    "timing": {
+     "totalHrs": 7.5,
+     "summitTimeHrs": 7.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 1.25,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 7.5,
+       "note": "This is a standard single-day alpine rock outing out of Washington Pass, not an overnight trip. Parties hike the Blue Lake Trail and climber's path into the basin below the Liberty…",
+       "fromTo": "Car-to-car: Northwest Corner (Boving-Pollack)",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

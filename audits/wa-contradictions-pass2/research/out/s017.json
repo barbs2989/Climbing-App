@@ -1,0 +1,203 @@
+{
+ "file": "s017.json",
+ "results": [
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Rock grade / technical difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 1961 first-ascent account describes a class IV line from the west notch via a ledge onto the north face; Wikipedia gives the normal route only as YDS class 5 (5.7 in an earlier revision); the current Himmelhorn area page describes the standard way as a snow/scree gully to the Himmel-Otto col with a class 3/4 bypass near the top. No source gives Grade IV 5.8, but the sources disagree between class 4 and low/mid 5th, so no replacement grade (with matching commitment/alpine grade) is settled. Would settle: the Himmelhorn entry in the Beckey Cascade Alpine Guide vol. 3, or a trip report of the standard route stating its grade.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)",
+    "https://www.mountainproject.com/area/122904990/himmelhorn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Aspect / side of the peak climbed",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "From the Himmel-Otto col the line goes up the northwest/north side (aspect NW)",
+   "evidence": "The first-ascent account climbs from the west notch (the Himmel-Otto col, Ottohorn being immediately west) and follows a ledge onto the north face; the Himmelhorn area page confirms the standard route goes via the Himmel-Otto col. On the row, aspect, face, approach, climbing_route label and the approach_variants note all say northwest; only the climbing_route note, the day-2 itinerary note and its copy in the timing breakdown say southeast. The route NAME is out of scope and left as is.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://www.mountainproject.com/area/122904990/himmelhorn",
+    "https://peakery.com/himmelhorn-washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "on Himmelhorn's southeast flank",
+     "replace": "on Himmelhorn's northwest flank",
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Aspect / side of the peak climbed"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "then work up the southeast side to the summit",
+     "replace": "then work up the northwest side to the summit",
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Aspect / side of the peak climbed"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "then work up the southeast side to the summit",
+     "replace": "then work up the northwest side to the summit",
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Aspect / side of the peak climbed"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "No glacier travel: the approach is trail, brush, Stump Hollow slabs/snow, the Barrier ledges and a snow gully to the col",
+   "evidence": "The Himmelhorn area page describes the whole way as the Stump Hollow approach, a crossing into Crescent Creek Basin and a narrow snow/scree gully to the Himmel-Otto col, with no glacier. An independent 2023 trip report over the same Goodell Creek - Stump Hollow - Barrier approach to the Crescent Creek camp below Terror mentions snow patches but no glacier crossing or roped glacier travel. A Picket Range approach page describes the Barrier crossings as ledge/moat crossings at the ends of the Terror Glacier, not across it. So the crevasse panel is right and the rope note / descent text glacier mentions are removed.",
+   "sources": [
+    "https://www.mountainproject.com/area/122904990/himmelhorn",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "glacier approach then multi-pitch rock",
+     "replace": "long off-trail approach and col gully, then multi-pitch rock",
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Glacier travel"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": ", though parties often carry doubles anyway since they're already equipped for glacier travel and the Otto-Himmel col traverse.",
+     "replace": ".",
+     "id": "wa_himmelhorn_southeast_route",
+     "fact": "Glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Rappel count and line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only descent description found says the early-season descent is trivial and that late season rap anchors in the moats may help; the first-ascent account gives no descent detail. No source gives a count of 2 or a false-summit-notch descent for this line (that notch belongs to Wild Hair Crack). Would settle: a trip report of the standard route stating its rappels.",
+   "sources": [
+    "https://www.mountainproject.com/area/122904990/himmelhorn",
+    "http://publications.americanalpineclub.org/articles/12196206500/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "fact": "Season end",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new source states a season window for this route; the only dated record is an October 4, 2020 ascent from the same col (Wild Hair Crack), which supports October against the four internal fields ending in September. Would settle: two dated October ascents of the standard route, or a source stating the usual window.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/103696-tr-himmelhorn-wild-hair-crack-and-ne-ridge-of-the-chopping-block-10042020/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Parking pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two independent sources say no permit or pass is needed to park at the SR-20 hairpin pullout (a Kangaroo Temple page: no permits required to park at the hairpin turn; a Washington Pass ski-tour page: plowed hairpin pullouts need no permit), while the Forest Service requires a Northwest Forest Pass at Blue Lake and Cutthroat. So which is right depends on where this crag is reached from, and only one source (the Ice Box area page: park at the apex of the hairpin) places its parking; the row itself splits (approach/itinerary/face say hairpin, road and trailhead waypoint say Cutthroat / Blue Lake). Would settle: a second source for the Ice Box parking spot (e.g. the Mazama granite guidebook); if hairpin, passRequired None is correct and parking_pass should say the pass applies only at those other trailheads.",
+   "sources": [
+    "https://web.archive.org/web/20210617034753/https://www.summitpost.org/kangaroo-temple/815101",
+    "https://wenatcheeoutdoors.org/2017/01/17/washington-pass-birthday-tour-2/",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/cutthroat-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Trailhead and approach text",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach column describes a different crag (Spire Gully right / Alpenkuhl, a 10-15 minute walk), the road column names the Cutthroat Lake Trailhead, and the trailhead waypoint is Blue Lake Trailhead 1.8 mi away, while the face and itinerary put the crag at the SR-20 hairpin. The Ice Box area page says to park at the apex of the hairpin, walk up past Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box. Only that one source was reachable, so no rewrite. Would settle: a second description of the Ice Box approach.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_c",
+   "fact": "Parking pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two independent sources say no permit or pass is needed to park at the SR-20 hairpin pullout (a Kangaroo Temple page: no permits required to park at the hairpin turn; a Washington Pass ski-tour page: plowed hairpin pullouts need no permit), while the Forest Service requires a Northwest Forest Pass at Blue Lake and Cutthroat. So which is right depends on where this crag is reached from, and only one source (the Ice Box area page: park at the apex of the hairpin) places its parking; the row itself splits (approach/itinerary/face say hairpin, road and trailhead waypoint say Cutthroat / Blue Lake). Would settle: a second source for the Ice Box parking spot (e.g. the Mazama granite guidebook); if hairpin, passRequired None is correct and parking_pass should say the pass applies only at those other trailheads.",
+   "sources": [
+    "https://web.archive.org/web/20210617034753/https://www.summitpost.org/kangaroo-temple/815101",
+    "https://wenatcheeoutdoors.org/2017/01/17/washington-pass-birthday-tour-2/",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/cutthroat-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_c",
+   "fact": "Trailhead and approach text",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach column describes a different crag (Spire Gully right / Alpenkuhl, a 10-15 minute walk), the road column names the Cutthroat Lake Trailhead, and the trailhead waypoint is Blue Lake Trailhead 1.8 mi away, while the face and itinerary put the crag at the SR-20 hairpin. The Ice Box area page says to park at the apex of the hairpin, walk up past Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box. Only that one source was reachable, so no rewrite. Would settle: a second description of the Ice Box approach.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_d",
+   "fact": "Parking pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two independent sources say no permit or pass is needed to park at the SR-20 hairpin pullout (a Kangaroo Temple page: no permits required to park at the hairpin turn; a Washington Pass ski-tour page: plowed hairpin pullouts need no permit), while the Forest Service requires a Northwest Forest Pass at Blue Lake and Cutthroat. So which is right depends on where this crag is reached from, and only one source (the Ice Box area page: park at the apex of the hairpin) places its parking; the row itself splits (approach/itinerary/face say hairpin, road and trailhead waypoint say Cutthroat / Blue Lake). Would settle: a second source for the Ice Box parking spot (e.g. the Mazama granite guidebook); if hairpin, passRequired None is correct and parking_pass should say the pass applies only at those other trailheads.",
+   "sources": [
+    "https://web.archive.org/web/20210617034753/https://www.summitpost.org/kangaroo-temple/815101",
+    "https://wenatcheeoutdoors.org/2017/01/17/washington-pass-birthday-tour-2/",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/cutthroat-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_d",
+   "fact": "Trailhead and approach text",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach column describes a different crag (Spire Gully right / Alpenkuhl, a 10-15 minute walk), the road column names the Cutthroat Lake Trailhead, and the trailhead waypoint is Blue Lake Trailhead 1.8 mi away, while the face and itinerary put the crag at the SR-20 hairpin. The Ice Box area page says to park at the apex of the hairpin, walk up past Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box. Only that one source was reachable, so no rewrite. Would settle: a second description of the Ice Box approach.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,783 @@
+{
+ "zones": [
+  {
+   "zone": "glacier-peak-dakobed",
+   "overnightPermit": {
+    "what": "Free self-issue Glacier Peak Wilderness permit",
+    "where": "Fill one out at the trailhead kiosk and carry it with you.",
+    "url": null
+   }
+  },
+  {
+   "zone": "goat-mountain-hannegan-road",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Mount Baker Wilderness rules apply (party size 12, no campfires). A Northwest Forest Pass is needed to park.",
+    "url": null
+   }
+  },
+  {
+   "zone": "goat-rocks-st-helens",
+   "overnightPermit": {
+    "what": "Free self-issue Goat Rocks Wilderness permit",
+    "where": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it.",
+    "url": null
+   }
+  },
+  {
+   "zone": "gothic-basin-sunrise-mine",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Camp only on rock or established sites in Gothic Basin; campfires are prohibited. A Northwest Forest Pass is needed to park.",
+    "url": null
+   }
+  },
+  {
+   "zone": "hamma-hamma-cushman",
+   "overnightPermit": {
+    "what": "No overnight permit required on the national forest side",
+    "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit.",
+    "url": null
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "main": [
+    "Buck Creek Pass and the High Pass camps"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River",
+    "Buck Creek Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Buck Creek Pass is the standard base; the separate 'Buck Creek Pass' waypoint is the same place and was dropped as a duplicate."
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "main": [
+    "Butterfly Butte and the Pilz Glacier basin camps"
+   ],
+   "onRoute": [
+    "Napeequa Valley floor near Louis Creek"
+   ],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Napeequa floor is the first night after Little Giant Pass and the Butterfly Butte benches are the climbing camp; confident."
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "main": [
+    "Boulder Basin camp",
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "White River side; parties camp in Boulder Basin or higher toward Boulder Pass. Napeequa-side camps belong to the Little Giant approach and were dropped."
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "main": [
+    "Glacier Gap"
+   ],
+   "onRoute": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain"
+   ],
+   "drop": [
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River",
+    "Mackinaw Shelter (former shelter site)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "North Fork Sauk to White Pass to Glacier Gap; the former-shelter waypoint duplicates the Mackinaw bivy entry."
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "main": [
+    "Glacier Gap"
+   ],
+   "onRoute": [
+    "Mackinaw Shelter",
+    "White Pass",
+    "Cool/Gerdine Basin Camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Cool/Gerdine Basin Camp has no notes; assumed to be a spot in the basin traverse between White Pass and Glacier Gap."
+  },
+  {
+   "id": "wa_glacier_peak_frostbite_ridge",
+   "main": [
+    "Kennedy Ridge high camp",
+    "Vista-Kennedy saddle"
+   ],
+   "onRoute": [
+    "Kennedy/Scimitar Glacier Camp",
+    "8,800 ft saddle at the foot of Frostbite Ridge",
+    "Ledge near 9,900 ft below the ridge crux"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "With the White Chuck road closed many parties now come in from the Suiattle via Milk Creek; the Kennedy-Vista col near 8,000 ft is at least as commonly used as the Kennedy Ridge camp, so their order is a judgement."
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "main": [
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Only the Kennedy Ridge / Glacier Creek entry serves this route; Boulder Basin is the Sitkum camp and was dropped."
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "main": [
+    "Boulder Basin"
+   ],
+   "onRoute": [
+    "Kennedy Guard Station area",
+    "Sitkum Creek / PCT junction camp"
+   ],
+   "drop": [
+    "Boulder Basin Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "White Chuck Road FR 23 was closed from milepost 3.7 through at least end of 2025 after flood damage, adding miles; the camps themselves are unchanged."
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "main": [
+    "Buck Creek Pass and the High Pass camps"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Buck Creek Pass is the standard base; confident."
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "main": [
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "onRoute": [
+    "Boulder Creek ford camp"
+   ],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Parties camp in upper Boulder Basin below Boulder Pass, often after a first night at the Boulder Creek ford; the Napeequa camps serve the Little Giant approach."
+  },
+  {
+   "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "main": [
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "High camp is upper Boulder Basin near 5,800 ft, which this combined Boulder Pass entry covers only loosely."
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "main": [
+    "Buck Creek Pass and the High Pass camps"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Parties base at Buck Creek Pass or the High Pass camps; the route also lists a Little Giant approach whose exact camp is unclear, so the Napeequa camps were dropped."
+  },
+  {
+   "id": "wa_sitkum_spire_standard",
+   "main": [
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation"
+   ],
+   "onRoute": [
+    "Kennedy Hot Springs (Kennedy Guard Station site)"
+   ],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River",
+    "Boulder Basin base camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach and camp as the Sitkum Glacier; the 'Boulder Basin base camp' waypoint is a duplicate of the bivy entry, which was kept for its road-closure warning."
+  },
+  {
+   "id": "wa_tenpeak_mountain_north_couloir",
+   "main": [
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "onRoute": [
+    "Glacier Gap"
+   ],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "From the White River side parties camp in or above Thunder Basin; Glacier Gap is kept only because the route's alternate approach crosses the upper glacier basin from there."
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "main": [
+    "Thunder Basin high camp"
+   ],
+   "onRoute": [
+    "Old camp at Thunder Creek"
+   ],
+   "drop": [
+    "Mackinaw Shelter camp, North Fork Sauk",
+    "White Pass and the Foam Creek benches under White Mountain",
+    "Glacier Gap",
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "Boulder Basin above Sitkum Creek — and the White Chuck situation",
+    "Buck Creek Pass and the High Pass camps",
+    "Napeequa Valley floor near Louis Creek",
+    "Butterfly Butte and the Pilz Glacier basin camps",
+    "Boulder Pass and Thunder Basin, White River"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The combined Boulder Pass and Thunder Basin entry duplicates the Thunder Basin waypoint and was dropped."
+  },
+  {
+   "id": "wa_goat_mountain_south_ridge",
+   "main": [
+    "Open benches on the broad ridge"
+   ],
+   "onRoute": [
+    "Last stream crossing, top of the forest",
+    "Ridge crest at the end of the maintained trail",
+    "Basin below the east peak"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Usually a day hike; the basin below the east peak has the only water and some parties prefer it, so it may deserve main instead."
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "main": [
+    "Conrad Meadows and Surprise Lake, South Fork Tieton"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Snowgrass Flat area backcountry camps",
+    "Goat Lake basin",
+    "Dana Yelverton Shelter site",
+    "Chambers Lake Campground"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "East-side approach from Conrad Meadows; all Snowgrass-side camps dropped."
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "main": [
+    "Conrad Meadows and Surprise Lake, South Fork Tieton"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Snowgrass Flat area backcountry camps",
+    "Goat Lake basin",
+    "Dana Yelverton Shelter site",
+    "Chambers Lake Campground"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "East-side approach from Conrad Meadows; all Snowgrass-side camps dropped."
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "main": [
+    "Snowgrass Flat area backcountry camps"
+   ],
+   "onRoute": [
+    "Chambers Lake Campground"
+   ],
+   "drop": [
+    "Goat Lake basin",
+    "Dana Yelverton Shelter site",
+    "Conrad Meadows and Surprise Lake, South Fork Tieton"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "West side from Snowgrass; Chambers Lake kept as the trailhead car camp."
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "main": [
+    "Snowgrass Flat area backcountry camps"
+   ],
+   "onRoute": [
+    "Chambers Lake Campground"
+   ],
+   "drop": [
+    "Goat Lake basin",
+    "Dana Yelverton Shelter site",
+    "Conrad Meadows and Surprise Lake, South Fork Tieton",
+    "Lower Snowgrass Flat / Lily Basin Trail (#86) junction"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The Lily Basin junction waypoint is the same Snowgrass camping area and was dropped as a duplicate."
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "main": [
+    "Climbers Bivouac"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Dana Yelverton Shelter site",
+    "Marble Mountain Sno-Park"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Mount St. Helens climbing permit for travel above 4,800 ft; no permit to camp at the roadhead",
+    "where": "April 1 to October 31 buy it in advance on Recreation.gov (daily quota, fee per climber). November 1 to March 31 it is free and self-issued at the trailhead kiosk. Camping above 4,800 ft is not allowed.",
+    "url": "https://www.recreation.gov/permits/4675309"
+   },
+   "note": "Dana Yelverton is a Goat Rocks site wrongly listed here; Marble Mountain is the winter Worm Flows start."
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "main": [
+    "Marble Mountain Sno-Park"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Dana Yelverton Shelter site",
+    "Climbers Bivouac"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Mount St. Helens climbing permit for travel above 4,800 ft; a Washington Sno-Park permit to park in winter",
+    "where": "April 1 to October 31 buy the climbing permit in advance on Recreation.gov (daily quota, fee per climber); November 1 to March 31 it is free and self-issued at the Marble Mountain Sno-Park kiosk. Camping above 4,800 ft is not allowed.",
+    "url": "https://www.recreation.gov/permits/4675309"
+   },
+   "note": "Climbers Bivouac is the summer Monitor Ridge start, not on this line; Dana Yelverton is a Goat Rocks site wrongly listed here."
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "main": [
+    "Snowgrass Flat area backcountry camps",
+    "Goat Lake basin"
+   ],
+   "onRoute": [
+    "Chambers Lake Campground",
+    "Dana Yelverton Shelter site"
+   ],
+   "drop": [
+    "Conrad Meadows and Surprise Lake, South Fork Tieton"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Goat Lake is a common second base for Old Snowy though not on the PCT line itself; Dana Yelverton sits on the route just below the summit."
+  },
+  {
+   "id": "wa_del_campo_peak_standard",
+   "main": [],
+   "onRoute": [
+    "Weden Creek trail junction, one mile up the Monte Cristo road",
+    "Lower Gothic Basin — the slab benches and tarns short of Foggy Lake"
+   ],
+   "drop": [
+    "Sunrise Mine road end — the Sperry and Vesper Creek staging point",
+    "Red Bridge Campground, Mountain Loop Highway"
+   ],
+   "add": [
+    {
+     "name": "Foggy Lake, Gothic Basin",
+     "type": "camp",
+     "capacity": "A few established sites, mostly on rock and bare ground near the south shore; space is tight on summer weekends",
+     "water": "Lake and snowmelt tarns",
+     "permit": "No permit required; no campfires; camp only on rock or established sites",
+     "notes": "The usual camp for Gothic Peak and Del Campo Peak, at the top of the Gothic Basin trail beneath both summits. The basin is fragile, so keep off the meadows and heather.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "The real camp, Foggy Lake, was missing and is added; Sunrise Mine road end and Red Bridge serve Sperry."
+  },
+  {
+   "id": "wa_gothic_peak_standard",
+   "main": [],
+   "onRoute": [
+    "Weden Creek trail junction, one mile up the Monte Cristo road",
+    "Lower Gothic Basin — the slab benches and tarns short of Foggy Lake"
+   ],
+   "drop": [
+    "Sunrise Mine road end — the Sperry and Vesper Creek staging point",
+    "Red Bridge Campground, Mountain Loop Highway"
+   ],
+   "add": [
+    {
+     "name": "Foggy Lake, Gothic Basin",
+     "type": "camp",
+     "capacity": "A few established sites, mostly on rock and bare ground near the south shore; space is tight on summer weekends",
+     "water": "Lake and snowmelt tarns",
+     "permit": "No permit required; no campfires; camp only on rock or established sites",
+     "notes": "The usual camp for Gothic Peak and Del Campo Peak, at the top of the Gothic Basin trail beneath both summits. The basin is fragile, so keep off the meadows and heather.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "The real camp, Foggy Lake, was missing and is added; Sunrise Mine road end and Red Bridge serve Sperry."
+  },
+  {
+   "id": "wa_sperry_peak_standard",
+   "main": [
+    "Sunrise Mine road end — the Sperry and Vesper Creek staging point",
+    "Red Bridge Campground, Mountain Loop Highway"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Lower Gothic Basin — the slab benches and tarns short of Foggy Lake",
+    "Weden Creek trail junction, one mile up the Monte Cristo road"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A day climb; parties sleep at the road end or at Red Bridge. Gothic Basin sites are on a different trail."
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "main": [
+    "Upper Lena Lake"
+   ],
+   "onRoute": [
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "Lena Lake designated sites",
+    "Lake of the Angels"
+   ],
+   "drop": [
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Big Creek Campground, Lake Cushman",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Olympic National Park wilderness camping permit",
+    "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   },
+   "note": "The traverse runs Upper Lena Lake to St. Peter's Gate to Lake of the Angels and out the Putvin trail, so Lake of the Angels is on the descent."
+  },
+  {
+   "id": "wa_mount_ellinor_standard",
+   "main": [
+    "Big Creek Campground, Lake Cushman"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Lake of the Angels",
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A day climb; Big Creek is the usual car camp. Staircase is a farther second choice and was dropped."
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "main": [
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Lake of the Angels",
+    "Big Creek Campground, Lake Cushman",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Roadside start; Hamma Hamma campground sits on the drive near the FR 2480 turn."
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "main": [
+    "Lake of the Angels"
+   ],
+   "onRoute": [
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma"
+   ],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Big Creek Campground, Lake Cushman",
+    "Staircase Campground, North Fork Skokomish",
+    "Mildred Lakes basin (Lower/Upper Mildred Lake)"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Olympic National Park wilderness camping permit",
+    "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   },
+   "note": "Putvin trail to Lake of the Angels; Mildred Lakes is a separate approach and was dropped."
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "main": [
+    "Lake of the Angels"
+   ],
+   "onRoute": [
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma"
+   ],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Big Creek Campground, Lake Cushman",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Olympic National Park wilderness camping permit",
+    "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   },
+   "note": "Putvin trail to Lake of the Angels; confident."
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "main": [
+    "Lake of the Angels"
+   ],
+   "onRoute": [
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma"
+   ],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Big Creek Campground, Lake Cushman",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "Olympic National Park wilderness camping permit",
+    "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   },
+   "note": "Putvin trail to Lake of the Angels; confident."
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "main": [
+    "Big Creek Campground, Lake Cushman"
+   ],
+   "onRoute": [
+    "South saddle"
+   ],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Lake of the Angels",
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A day climb from the FR 2419 road end; the south saddle is an on-route bivy."
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "main": [
+    "Big Creek Campground, Lake Cushman"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Lake of the Angels",
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A day climb from FR 2419; Big Creek is the car camp."
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "main": [
+    "Brothers base camp at Lena Forks"
+   ],
+   "onRoute": [
+    "Lower Lena Lake",
+    "Upper camp above the forks"
+   ],
+   "drop": [
+    "Lena Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The 'Lena Lake' waypoint duplicates the Lower Lena Lake entry and was dropped."
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "main": [
+    "The Brothers climbers camp, Valley of the Silent Men"
+   ],
+   "onRoute": [
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "Lena Lake designated sites"
+   ],
+   "drop": [
+    "Upper Lena Lake",
+    "Lake of the Angels",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Big Creek Campground, Lake Cushman",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same approach and climbers' camp as the South Couloir."
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "main": [
+    "Big Creek Campground, Lake Cushman"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Lena Lake designated sites",
+    "The Brothers climbers camp, Valley of the Silent Men",
+    "Upper Lena Lake",
+    "Lake of the Angels",
+    "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "Jefferson Creek roadside pull-outs, FR 2401",
+    "Staircase Campground, North Fork Skokomish"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A day link-up starting up Mount Washington; Big Creek is the car camp."
+  }
+ ],
+ "misassigned": [
+  "wa_mount_st_helens_monitor_ridge: lists Dana Yelverton Shelter site, a Goat Rocks crest site",
+  "wa_mount_st_helens_worm_flows: lists Dana Yelverton Shelter site, a Goat Rocks crest site",
+  "wa_del_campo_peak_standard: main camp (Foggy Lake) missing; list mixes in the Sperry trailhead camps",
+  "wa_gothic_peak_standard: main camp (Foggy Lake) missing; list mixes in the Sperry trailhead camps"
+ ]
+}

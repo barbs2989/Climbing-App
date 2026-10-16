@@ -1,0 +1,462 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "rappels",
+   "path": [],
+   "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "column": "hazards",
+   "path": [
+    3
+   ],
+   "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "column": "rappels",
+   "path": [],
+   "fact": "rappels field calls the 4 standard rappel stations 'bolted,' but the per-station detail describes natural (tree/horn/block) anchors"
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "descent_text says the standard stations are 'fixed gear rather than natural anchors' and then lists trees, a horn and a block"
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)"
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)"
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)"
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "column": "descent_text",
+   "path": [],
+   "fact": "descent_text describes 2 rappels down the NE side to Pineapple Pass, but rappel_detail describes joining the South Face's 4-rappel line at the summit"
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Trap Pass elevation"
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trap Pass elevation"
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Which ranger district administers this route"
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Which ranger district administers this route"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "pitch_detail",
+   "path": [
+    6,
+    "notes"
+   ],
+   "find": "Unroped scrambling to the true summit; single bolt en route but no anchor at the top.",
+   "replace": "Easy scrambling to the true summit, often belayed; a single bolt en route and no fixed anchor at the top, so sling a block or build one with small cams or nuts.",
+   "id": "wa_the_tooth_fairy",
+   "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit",
+   "sources": [
+    "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+    "http://hiking.andrewleader.net/routes/the-tooth-fairy/"
+   ],
+   "why": "find occurs 0x at pitch_detail[6,\"notes\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_the_tooth_fairy",
+   "before": {
+    "descent": "Rappel the route (P6 down to P1) rather than descending via Pineapple Pass, using the bolted anchors.",
+    "rappels": "Rappel P6 with 6 single-length or 3 double-length rappels (a 60m rope is needed for the final double-rope rappel); alternatively walk off via the South Face descent.",
+    "descent_text": "From the top of P6 (the anchor is unequipped at the true summit — P7 is an unroped scramble with no rappel anchor), rappel the bolted line: 6 single-rope rappels, or 3 double-rope rappels with a 60m rope for the longest one. Some parties instead walk off toward Pineapple Pass and descend the South Face's scramble descent.",
+    "itinerary": "Trailhead start pre-dawn to mid-morning -> ~1.5-2 hr approach to the basin below the west face -> rack up and climb 6 pitches (allow 3-5 hours depending on party size and traffic) -> short scramble to the true summit -> rappel the route or walk off -> retrace the approach to the trailhead.",
+    "gear": [
+     "13 quickdraws plus 2 more to build the summit anchor",
+     "Mix in a few alpine draws to cut rope drag on the wandering pitches",
+     "60m rope",
+     "Small cams (0.4-0.5 C4 size) or nuts — the top pitch's belay isn't bolted, so you need gear to build the summit anchor",
+     "Helmet"
+    ],
+    "hazards": [
+     "Loose rock reported on the crux pitch (P5)",
+     "Rockfall exposure where routes converge near the summit",
+     "Snow moat at the base in early season",
+     "Unprotected scrambling above the last bolted anchor to reach the true summit"
+    ]
+   }
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "before": {
+    "rappels": "4 rappels (roughly 25-30m / under 100ft each) from bolted/slung anchors back down to Pineapple Pass; many parties link them into fewer rappels with a single 60m rope.",
+    "descent_text": "Most parties reverse the South Face itself: four rappels straight back down the face to Pineapple Pass on a single 60m rope (used doubled — each rappel comes in under 30m). The stations are well-equipped, fixed gear rather than natural anchors: from the top down, a station with three rap rings backed by slings/cord around a tree or horn, then an 8mm doubled cordelette with two quicklinks, then two slung trees, then a lowest station with several slings and three rap rings around a block. A second, less-crowded rappel line exists on the southwest side with bolted chain-and-ring anchors, built specifically so ascending and descending parties don't have to share the same gully — also doable on a single 60m rope in a similar number of rappels. Once back at Pineapple Pass, the safest and most common way out is to skip further rappelling and simply reverse the Class 3–4 scramble and talus/snow descent through Great Scott Bowl back to the Source Lake junction on the Snow Lake Trail, then walk the 2 miles out to Alpental — this avoids rockfall exposure and is usually faster for parties larger than two. A separate bail option drops climbers from Pineapple Pass down the East Gully via two rappels off bolted chain anchors (single 60m rope) directly toward the Source Lake basin, but that gully sees rockfall from above and from parties climbing up it, so it's generally treated as an emergency/bail line rather than the standard way down. The moat/snow bridge at the base of the pass can again be the crux of the whole descent in early season — downclimb carefully or detour onto rock.",
+    "gain_ft": 2700,
+    "itinerary": {
+     "cal": "Best conditions run June-September once the Pineapple Pass gully has melted out or firmed up; an early-season snow-filled pass may call for an ice axe.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach via the Source Lake trail and Pineapple Basin to Pineapple Pass, then climb 4 pitches of low 5th-class (5.4) alpine rock to the summit, including the exposed 'Catwalk' traverse near the top. Descend via four double-rope rappels back to the pass and hike out the same way. This is one of the busiest alpine rock routes in Washington, so expect other parties and possible pitch queues on summer weekends.",
+       "hours": 10,
+       "miles": 6,
+       "title": "South Face, car-to-car",
+       "gainFt": 2800,
+       "lossFt": 2800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Alpental parking lot",
+         "detail": "Early start to beat crowds on this very popular route."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Pass Source Lake",
+         "detail": "Continue south into Pineapple Basin."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach Pineapple Pass",
+         "detail": "Rope up at the base of the South Face."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Summit",
+         "detail": "Via the Catwalk traverse, the route's crux."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Begin descent",
+         "detail": "Four double-rope rappels from fixed anchors back to Pineapple Pass."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Hike out via Pineapple Basin and Source Lake."
+        }
+       ],
+       "objective": "Summit The Tooth via the South Face and rappel back to Pineapple Pass"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: roughly 10-12 hours round trip, about 6 miles and 2,800 ft of gain, with 4 pitches of easy 5th-class climbing and 4 rappels."
+    }
+   }
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "before": {
+    "itinerary": {
+     "cal": "Climbed almost exclusively in winter/early spring when the slabs hold bonded snow/ice; a dry or lean-snow year leaves the route poorly protected and is best avoided.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach via the Source Lake trail (often skinned or skied in winter), then traverse south into the valley below The Tooth's east face to the base of the Northeast Slabs. Climb 5-6 pitches of low 5th-class rock and moderate, condition-dependent snow/ice up the obvious NE-facing slab to the North Ridge, then finish to the summit near the notch below the top. Descend the standard South Face rappel line back down to Pineapple Pass and hike out. This winter/spring mixed line is more serious than the South Face — protection on the slab pitches is sparse and run-out.",
+       "hours": 10.5,
+       "miles": 6.5,
+       "title": "Northeast Slabs, car-to-car",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Alpental parking lot",
+         "detail": "Typical pre-dawn start; approach often skinned."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Pass Source Lake",
+         "detail": "Traverse south below The Tooth's east face."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Rope up at the base",
+         "detail": "Start of the Northeast Slabs."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Top out on the North Ridge",
+         "detail": "Continue to the notch below the summit."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin rappels",
+         "detail": "Down the standard South Face descent to Pineapple Pass."
+        }
+       ],
+       "objective": "Climb the Northeast Slabs to the North Ridge and summit, then rappel the South Face"
+      }
+     ],
+     "totalNote": "A single long day car-to-car in winter/spring conditions: roughly 10-12 hours, about 6.5 miles and 3,000 ft of gain over 5-6 pitches of mixed snow/ice/rock, finishing on the standard South Face rappels."
+    },
+    "descent_text": "From the summit, downclimb a short distance to a tree anchor just below/west of the true summit. From there, two rappels — up to 60m each, doable on a single 60m rope — drop down the NE side to the notch (Pineapple Pass) between The Tooth and its south sub-summit; parties often note the second rappel can pull stiffly, so flake the rope and check your pull direction before committing. Some parties instead rappel off a chockstone lower on the gully, but this is described as less efficient than the tree-anchor double rappel and is not the standard line. From the notch you join the South Face (standard) descent: downclimb/walk the gully and talus down through Great Scott Bowl, then retrace the approach traverse back above Source Lake to the Snow Lake/Source Lake trail and the Alpental lot. In good winter/spring coverage this whole descent from the notch is frequently skied or glissaded — parties report as little as ~10 minutes from the notch back to the car on skis in prime conditions; on foot through talus, plan on more like 45-60 minutes. The same avalanche exposure noted on the approach applies to the descent, and expect possible traffic from parties climbing the South Face route if your lines overlap near Pineapple Pass."
+   }
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.66798,
+      "lng": -121.140727,
+      "elev": 4512,
+      "name": "Surprise Lake",
+      "note": "Trail switchbacks above the lake to join the PCT. Surprise Lake sits at 4,500 ft. An earlier pin for it sat 5.2 mi west, the same ~4.5 mi westward error this route's other waypoints were already corrected for.",
+      "type": "Water",
+      "distMi": 4.7
+     },
+     {
+      "lat": 47.6744,
+      "lng": -121.124,
+      "elev": 5050,
+      "name": "Trap Pass",
+      "note": "PCT junction; the climbers path to Thunder Mountain and Slippery Slab Tower leaves directly from the top of the pass.",
+      "type": "Junction",
+      "distMi": 6
+     },
+     {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "elev": 6200,
+      "name": "Base of Slippery Slab Tower",
+      "note": "Corrected — an earlier coordinate (47.665,-121.22) sat ~4.5mi west of Trap Pass instead of continuing toward the tower, likely a data entry error. This pin (47.668645,-121.126119, elev 6356ft) matches the area's own registered location.",
+      "type": "Junction",
+      "distMi": 6.8
+     },
+     {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "elev": 6356,
+      "name": "Slippery Slab Tower NE Face Topout",
+      "note": "Corrected — an earlier coordinate (47.6636,-121.2226) was ~4.5mi off; this pin is cross-checked against the area's own registered location. Two-pitch 5.4; Pitch 2 diagonals left into a gully to a large boulder near the top.",
+      "type": "Topout",
+      "distMi": 7
+     },
+     {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "name": "Slippery Slab Tower NE Face (start)",
+      "type": "Route",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 47.7094,
+      "lng": -121.1065,
+      "elev": 3100,
+      "name": "Tunnel Creek Trailhead",
+      "note": "FS Rd 6095, ~13.2 mi east of Skykomish off US-2; approach is Tunnel Creek Trail -> PCT (Hope Lake) -> south to Trap Pass -> climbers trail to NE base of tower",
+      "type": "Trailhead",
+      "elevFt": 3100
+     },
+     {
+      "lat": 47.66888,
+      "lng": -121.12634,
+      "elev": 6356,
+      "name": "Slippery Slab Tower",
+      "type": "Summit",
+      "elevFt": 6356
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Tunnel Creek trail to the crest trail at the lake, then south to the pass",
+      "notes": "From the forest road east of Skykomish, the Tunnel Creek trail climbs about eleven hundred and seventy feet in under a mile and a half from roughly 3,100 ft to a small lake on the crest, where it meets the long-distance crest trail. Turn south and follow that trail several miles to the pass at roughly 5,050 to 5,800 ft depending on which record you read.\n\nThis is the option with the least climbing and the easiest tread. It is a little longer along the crest than the other trailhead, and the walking is straightforward the whole way, which makes it the better choice with heavy loads or a late start.",
+      "season": "July through September, once the crest trail is clear",
+      "hazards": [
+       "an unmaintained ridge path beyond the pass with no signage",
+       "a long enough round trip that many parties camp, so a day attempt commits to a late finish",
+       "loose rock on the tower and on the ridge approach to it",
+       "a two-pitch face that still needs a rope, a rack and a plan to get back down",
+       "no water on the ridge between the pass and the tower"
+      ],
+      "primary": true,
+      "baseFinding": "THE PASS IS THE GATE AND THE CLIMBERS' PATH LEAVES DIRECTLY FROM THE TOP OF IT. Do not look for it below the pass or beyond it: an unmaintained path runs SOUTH along the ridge from the pass itself. IF YOU ARE CASTING ABOUT ON THE TRAIL BELOW THE PASS FOR A JUNCTION, YOU HAVE NOT GOT HIGH ENOUGH.\n\nTHE TOWER IS A DISTINCT ROCK TOWER ON THAT CREST AND IT IS THE FIRST ONE. The face you want looks back toward the pass on the NORTH-EAST side, so from the path it presents itself as you approach rather than after you have passed it.\n\nTHE CRITICAL NEGATIVE MARKER IS THE MOUNTAIN FURTHER ALONG THE SAME RIDGE. If you have walked past the tower and are looking at a broad peak with a lake basin below it, YOU HAVE CONTINUED TO THE MOUNTAIN AND GONE PAST THE TOWER. Turn round; the tower is a slender formation and the mountain is not.\n\nTHE ROUTE CONFIRMS ITSELF ON THE SECOND PITCH: two pitches of easy fifth class, with the upper one DIAGONALLING LEFT INTO A GULLY AND FINISHING AT A LARGE BOULDER NEAR THE TOP. A line that runs straight up with no leftward gully, or that takes more than a couple of pitches, is not this face.\n\nOne more caution about names: there are several mountains called Thunder in this state and more than one formation of this sort on crest trails. The identifying combination here is a pass on the long-distance crest trail with an unmaintained path leaving its top southward, and a tower standing before the mountain on the same ridge."
+     },
+     {
+      "name": "Surprise Creek trail past the two lakes, then the switchbacks to the pass",
+      "notes": "The other trailhead climbs the Surprise Creek trail past the first lake at about 4,500 ft and its neighbour, then switchbacks up to the same pass. It is roughly a mile shorter to the pass than the crest-trail option and costs several hundred feet more climbing, and it is in the trees for essentially the whole way, so it gives less to look at and less warning of the weather ahead.\n\nBoth trailheads meet at the pass and nothing above it differs.",
+      "season": "July through September",
+      "hazards": [
+       "more climbing than the other trailhead for a slightly shorter distance",
+       "forested trail the whole way, with little view of conditions ahead",
+       "an unmaintained ridge path beyond the pass",
+       "loose rock on the tower",
+       "no water on the ridge beyond the pass"
+      ],
+      "baseFinding": "FROM THE PASS THE APPROACH IS IDENTICAL TO THE OTHER TRAILHEAD'S: AN UNMAINTAINED CLIMBERS' PATH LEAVES THE TOP OF THE PASS AND RUNS SOUTH ALONG THE RIDGE.\n\nTHE TOWER IS THE FIRST DISTINCT ROCK FORMATION ON THAT CREST, AND ITS NORTH-EAST FACE LOOKS BACK TOWARD THE PASS. Because this approach arrives at the pass from below and in trees, take a moment on the pass itself to pick the tower out along the crest before starting the path - it is much harder to identify from underneath.\n\nTHE NEGATIVE MARKER IS THE SAME AND IT IS THE ONE THAT MATTERS: THE MOUNTAIN LIES FURTHER ALONG THE SAME RIDGE, ABOVE A LAKE BASIN. A broad peak with lakes below it is not the tower. If you are walking under a mountainside rather than under a slender formation, you have gone too far.\n\nCONFIRM ON THE CLIMB ITSELF: two pitches of easy fifth class with the second diagonalling LEFT into a gully to a large boulder near the top. If your first pitch is hard or your route runs straight up a face for several rope lengths, you are not on it."
+     }
+    ],
+    "access": {
+     "_raw": {
+      "contact": "Snoqualmie Ranger District: (425) 888-1421",
+      "permit_type": "Free self-issue wilderness permit",
+      "land_manager": "USFS Mount Baker-Snoqualmie National Forest - Snoqualmie Ranger District",
+      "parking_pass": "Northwest Forest Pass ($30 annual or $5 day pass)",
+      "permit_hours": "Self-issue 24/7",
+      "cost_structure": {
+       "parking_pass": "$30 annual Northwest Forest Pass or $5 day pass",
+       "wilderness_permit": "Free"
+      },
+      "permit_location": "Available at ranger stations and trailheads throughout Alpine Lakes Wilderness",
+      "special_hazards": [
+       "Alpine terrain - snow possible through June",
+       "Fragile alpine ecosystem"
+      ],
+      "wilderness_zone": "Alpine Lakes Wilderness",
+      "group_size_limit": "6 people maximum (varies by zone)",
+      "seasonal_closures": {
+       "typical": "Wilderness permit required May 15 - Oct 31",
+       "2026_specific": "Same dates (May 15 - Oct 31)"
+      },
+      "altitude_restrictions": "Campfire bans above 5,000 feet"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "Free self-issue wilderness permit",
+     "closures": "N/A",
+     "permitZone": "Alpine Lakes Wilderness",
+     "landManager": "USFS Mount Baker-Snoqualmie National Forest - Snoqualmie Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue wilderness permit (Henry M. Jackson or Alpine Lakes Wilderness)",
+      "where": "Fill one out at the trailhead kiosk."
+     }
+    },
+    "emergency": {
+     "notes": "Cell service unreliable; satellite communication recommended. Helicopter rescue possible in emergencies but weather-dependent. Self-rescue capability essential for this objective.",
+     "county": "King County",
+     "rangerStation": "Leavenworth Ranger District, Mount Baker-Snoqualmie National Forest (Leavenworth office)",
+     "nearestHospital": "Cascade Medical Center, Leavenworth (~60 miles from trailhead)",
+     "sheriffDispatch": "King County Sheriff's Office"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,496 @@
+{
+ "results": [
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "Approach-day (day 1) duration vs its own schedule",
+   "verdict": "unresolved",
+   "summary": "A day-1 duration to the benches camp is a travel-time fact that no guidebook can decide under the owner rules and no land-manager page states, so neither the 9 h figure nor the schedule can be set.",
+   "evidence": "Access/timing fact (rule 1 excludes books from approach facts). Land-manager trail figures for the Middle Fork Snoqualmie corridor are distances to Dutch Miller Gap, not a time to the ~6,600 ft benches camp. Prior passes: no stated time to that camp on any club, report or ascent page.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rules 1-2: access fact, no book applies"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+   "verdict": "confirmed",
+   "summary": "The header distance of 32.5 km (about 20.2 mi) matches no one-way or round-trip figure anywhere on the row or in any source, so it is cleared under the owner's clearing rule.",
+   "evidence": "Clearing rule: dist_km 32.5 km = 20.2 mi. Figures stated on the row: Overcoat Lake ~10 mi / pin 12 mi, benches 13 mi, summit pin 14.5 mi, 13-14 mi to the ford, 15-16 mi trailhead-to-camp, day 1 15 mi, 7-8 mi of roadbed, ~40 mi round trip. Figures in sources: 26 mi round trip (club page), 40.4 mi loop, 20.5 mi whole-trip (one ascent list). 20.2 mi equals none of them (it is roughly half of the row's ~40 mi round trip, i.e. computed). No land-manager page states a one-way distance to the summit, so nothing replaces it.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact; clearing rule"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_overcoat_peak_southeast_route",
+     "column": "dist_km",
+     "path": [],
+     "expect": 32.5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "Waypoint mileages vs the approach text's mileages",
+   "verdict": "unresolved",
+   "summary": "Where the river ford falls is an access fact no land-manager page states, and climbers' figures split (about 10 mi vs mile 13), so neither copy on the row is changed.",
+   "evidence": "Rule 2 applies; no land-manager page gives a mileage for the ford or Camp Pedro. Club page about 10 mi; a 2024 report mile 13; row holds both.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "number/type of summit rappels",
+   "verdict": "unresolved",
+   "summary": "The row still carries two rappels in its rappel field and descent text and three in the last breakdown row; no guidebook could be read for The Temple before the book server stopped answering, so no count could be chosen.",
+   "evidence": "Live row re-read: rappels '2 rappels on a single 60 m rope ... some parties break the descent into three'; descent_text two (sometimes three); climbing_route[3] 'three rappels with a single 60 m rope is the reported configuration'. The rappel count is a route fact for which a book would decide (rule 1), but archive.org full-text search returned 'Item not available' for every book tried (both Cascade Alpine Guide ids, Selected Climbs, Mountain Climbing in Washington State) during this pass.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0000beck: Tenpeak (blocked, item not available)",
+    "archive.org cascadealpinegui0001beck: \"Overcoat\" (blocked)",
+    "archive.org selectedclimbsin0000nels: blocked after first queries"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "one-way / round-trip approach distance",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a one-way distance from the Snow Lakes trailhead to the base or summit of The Temple, and halving the stated 14 mi round trip is not allowed.",
+   "evidence": "Access fact (rule 2). Land-manager figures for the Snow Lakes trail run to Nada Lake / Snow Lakes, not to The Temple; other sources give only round trips (14.0, 16-18, 20.8, 24.0 mi).",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "Total elevation gain/loss",
+   "verdict": "unresolved",
+   "summary": "Total and per-day gain are approach facts no land-manager page states for The Temple, and the itinerary days cannot be brought to any stated total without computing.",
+   "evidence": "Access fact (rule 1 excludes books from approach gain). Stated totals disagree (8,000; 6,892; 6,731; 10,144 ft); itinerary 5,300 + 1,700 + 200 and totalNote ~7,000 would need computed day figures.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "kind": "item",
+   "fact": "Itinerary day gain/loss built on a ~5,000 ft camp (day 1 loss 700 ft, day 2 gain 2,700 ft) vs a 4,170 ft lake and 7,530 ft summit",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states per-day or total gain for the Cascade Pass - Pelton Basin - Trapper Lake approach, and rebuilding day gains from pin heights would be computing.",
+   "evidence": "Access fact (rule 2). The park service states Cascade Pass at 3.7 mi / 1,700 ft only; nothing to Trapper Lake or the summit.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "kind": "item",
+   "fact": "Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)",
+   "verdict": "unresolved",
+   "summary": "The row still holds both camp heights (6,400 ft on the waypoint, ~5,180 ft in the approach, beta and itinerary); the camp's height is an approach fact no land-manager page states, and the book that might name it could not be read.",
+   "evidence": "Live row re-read: waypoint 'Thunder Basin high camp' elev 6400; approach, beta and day-1 schedule say upper Thunder Basin ~5,180 ft. Camp location/height sits on the approach (rule 1 excludes books from access facts; rule 2 needs a land-manager figure, none states one). The Beckey 2000 volume returned 'Item not available' on full-text search.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0000beck: Tenpeak (item not available)",
+    "owner rule 2: no land-manager figure for Thunder Basin"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "kind": "item",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated round-trip mileage",
+   "verdict": "unresolved",
+   "summary": "No land-manager page or other source states a round trip for Tenpeak's Southeast Route, so neither the day-mile sum nor the totalNote can be replaced.",
+   "evidence": "Access fact (rule 2). The White River trail figures run to trail junctions, not to Tenpeak; climbers' totals (26.8 mi, 25 mi) belong to other lines or multi-peak trips.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "kind": "item",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "summary": "The Gerber-Sink row still lists a 60 m rope in gear and 70 m in rope_length_m; no guidebook could be read during this pass and no source states a rope length for this line.",
+   "evidence": "Live row re-read: gear '60m rope', rope_length_m 70. Prior: one party used 70 m, others mention 60 m in passing. archive.org full-text search returned 'Item not available' for the books that could cover Dragontail.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org selectedclimbsin0000nels: \"Triple Couloirs\" (item not available, retried over ~25 min)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "kind": "item",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "verdict": "already_fixed",
+   "summary": "The Fox Camp pin no longer carries the 6,900 ft height, so it no longer contradicts the approach's climb of about 1,000 ft to the 7,100 ft basin.",
+   "evidence": "Live row re-read: waypoint 'Fox Camp (Pyramid Creek Trail junction)' has elev null; no 6,900 figure remains anywhere on the row. The basin pin is 7,100 ft and the approach says the Pyramid Creek Trail climbs about 1,000 ft from the junction into the basin; nothing now disagrees.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_new_york_gully",
+   "kind": "item",
+   "fact": "ice grade: ice_grade/alpine_grade WI3 vs grade WI4 and pitch 4 WI4",
+   "verdict": "unresolved",
+   "summary": "The row still holds WI3 (ice_grade, alpine_grade) and WI4 (grade, pitch 4); the Snoqualmie Pass guidebook volume could not be read during this pass, so no single ice grade could be chosen.",
+   "evidence": "Live row re-read: grade 'WI4 M5', ice_grade 'WI3', alpine_grade 'WI3 M5-', pitch 4 WI4, overview cites the original WI4 rating. Route fact for a book (rule 1), but archive.org full-text search returned 'Item not available' for cascadealpinegui0001beck and cascadealpinegui0000beck.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0001beck (item not available)",
+    "archive.org cascadealpinegui0000beck (item not available)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "kind": "item",
+   "fact": "Commitment grade - Grade IV (in `grade`) vs commitment III",
+   "verdict": "already_fixed",
+   "summary": "The live row no longer says Grade IV anywhere; commitment is III and grade is 5.11+, which agrees with the book's Grade III+ for this line.",
+   "evidence": "Selected Climbs in the Cascades (2003), Colchuck Balanced Rock West Face difficulty line: Grade III+; 5.11 and A1, or 5.12. Live row: grade 5.11+, rock_grade 5.11+, commitment III; no 'IV' remains in any column.",
+   "sources": [
+    "archive.org selectedclimbsin0000nels p.103"
+   ],
+   "searched": [
+    "selectedclimbsin0000nels: \"Balanced Rock\" \"Grade\"; Difficulty (pp.99-104)",
+    "live row via row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "kind": "item",
+   "fact": "Rope length",
+   "verdict": "already_fixed",
+   "summary": "The Hidden Couloir row no longer exists on the live table, so its rope-length contradiction is gone.",
+   "evidence": "row.mjs wa_dragontail_peak_r1 returns 'no row' (the recent route-identity pass folded held duplicates into their kept pages and deleted them). No ops possible or needed.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "kind": "item",
+   "fact": "climbing season window",
+   "verdict": "unresolved",
+   "summary": "The row still gives a Jul-Sep season next to a late-spring face-ice window; no source states a season for this face and the alpine guidebook volumes could not be read during this pass.",
+   "evidence": "Live row re-read: season 'Jul-Sep', best_season 'Late spring to early summer for the best face ice and snow.' Prior: the only season advice found is for the peak's standard routes. archive.org full-text search returned 'Item not available' for the books that could cover Forbidden's northeast face.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org selectedclimbsin0000nels (blocked after first queries; Forbidden section pp.180-203 lists West Ridge and other lines, no Northeast Face match found before the block)",
+    "archive.org cascadealpinegui0000beck (item not available)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_and_say",
+   "kind": "item",
+   "fact": "Route grade vs crux pitch grade",
+   "verdict": "unresolved",
+   "summary": "The row still grades the route 5.11b while pitches 4 and 5 are 5.11+; no guidebook available covers this crag and no source states an overall grade matching the 5.11+ pitches.",
+   "evidence": "Live row re-read: grade 5.11b, pitch_detail 5.7 / 5.11b / 5.10a / 5.11+ / 5.11+. Rock Climbing Washington (1999) full-text search for \"And Say\" returned no match.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: \"And Say\" (no match)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "kind": "item",
+   "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+   "verdict": "unresolved",
+   "summary": "The row still heads the route 5.4 with a 5.6 crux row; no source grades this face, and the guidebook volume that covers Spire Point could not be read during this pass.",
+   "evidence": "Live row re-read: name now 'Southeast Face', grade 5.4, rock_grade 5.4, breakdown crux row 5.6. archive.org full-text search returned 'Item not available' for cascadealpinegui0000beck.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0000beck (item not available)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "kind": "item",
+   "fact": "Climbing season window",
+   "verdict": "unresolved",
+   "summary": "The row still holds a May-Jul season beside a mid-summer-to-fall best season; aligning every season copy needs month-by-month and avalanche guidance no source gives, and the guidebook could not be read during this pass.",
+   "evidence": "Live row re-read: season 'May-Jul', best_season 'Mid-summer through early fall once the approach is snow-free...'. archive.org full-text search returned 'Item not available' for cascadealpinegui0000beck.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0000beck (item not available)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "kind": "item",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "summary": "The book confirms the row's eight pitches for the West Ridge, but gives no pitch-by-pitch division, so the six breakdown rows still cannot be rebuilt into eight from a stated source.",
+   "evidence": "Selected Climbs in the Cascades (2003), climb 52 West Ridge, Grade II-III 5.6: a small glacier, a 40-50 degree snow couloir to the ridge, then eight pitches of rock on or near the crest to the summit; season June-September; 1-2 days round trip. This matches pitches = 8 already on the row (no change). The book's text found by search does not divide the ridge into individual pitches, so rewriting the six ROUTE BREAKDOWN rows would require invention.",
+   "sources": [
+    "archive.org selectedclimbsin0000nels p.199"
+   ],
+   "searched": [
+    "selectedclimbsin0000nels: Difficulty, pitches, \"West Ridge\" (pp.178-205)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "kind": "item",
+   "fact": "climb/route length",
+   "verdict": "unresolved",
+   "summary": "No source states a height for Pilchuck's summit scramble or lookout block, so neither 21 m nor 20-30 ft can be confirmed.",
+   "evidence": "Live row re-read: length_m 21. Rock Climbing Washington full-text search for Pilchuck returned no match; the scramble guide could not be read (item not available).",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: Pilchuck (no match)",
+    "75scramblesinwas0000gold (item not available)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "No pitch count for Overcoat's East Face line could be found; the book that might state one could not be read during this pass, so pitches stays empty.",
+   "evidence": "Live row: name 'East Face', pitches null, climbing_route four sections (snow finger, rounding east, east-face ledges, summit block). The cleared 4 belonged to the south-ridge line. archive.org full-text search for 'Overcoat' in the 1987 Columbia River-Stevens Pass volume returned 'Item not available' on both servers.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0001beck: \"Overcoat\" (item not available, both servers)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "The cleared pitch rows describe the south-ridge line and would contradict the East Face description now on the row; no source gives an East Face pitch breakdown, so pitch_detail stays empty.",
+   "evidence": "Live row: pitch_detail null; climbing_route describes the East Face. Cleared rows: camp to col, col to south ridge, west-side ledge, summit block (south ridge). Book search blocked (item not available).",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "archive.org cascadealpinegui0001beck: \"Overcoat\" (item not available)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "No time for Half Moon's North Ridge is stated anywhere, so timing stays empty.",
+   "evidence": "Live row: timing null, name 'North Ridge'. Timing has no land-manager source; prior passes and peakbagger give pitch lengths and descent only. Washington Pass is outside the available Cascade Alpine Guide volumes; Rock Climbing Washington search for \"Half Moon\" returned no match.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: \"Half Moon\" (no match)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "climbing_route",
+   "verdict": "unresolved",
+   "summary": "The cleared steps belong to the southwest gully, not the North Ridge the row describes, and no source gives a North Ridge breakdown matching the row's seven pitches, so climbing_route stays empty.",
+   "evidence": "Live row: climbing_route null; pitch_detail lists seven North Ridge pitches. Rock Climbing Washington search for \"Half Moon\" returned no match.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: \"Half Moon\" (no match)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "commitment",
+   "verdict": "already_fixed",
+   "summary": "commitment is no longer null on the live row (it reads III), so there is nothing to fill.",
+   "evidence": "Live row re-read: commitment 'III'. The fill applies only while the field is still null.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a one-way distance from the highway to Half Moon's North Ridge, so dist_km stays empty.",
+   "evidence": "Access fact (rule 2); only a location statement (about two miles east of the highway) exists, which is not an approach distance.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "No source gives a pitch count for Davis Peak's Northeast Face Couloir, so pitches stays empty.",
+   "evidence": "Live row: name 'Northeast Face Couloir', pitches null. The cleared 7 belonged to the Burdo-Cairns line. Davis Peak lies outside the two available Cascade Alpine Guide volumes; no other available book covers it.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "book list: no available volume covers the Picket/Ross Lake area"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "length_m",
+   "verdict": "unresolved",
+   "summary": "No source gives the couloir's length, so length_m stays empty.",
+   "evidence": "Live row: length_m null. The cleared 930 m is the Burdo-Cairns figure, a different line.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "book list: no available volume covers this area"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No source states a total gain for the couloir line, so gain_ft stays empty.",
+   "evidence": "Live row: gain_ft null. The cleared 4,000 ft is the Burdo-Cairns climbing figure. Gain is an approach fact (rule 2) and no land-manager page states one.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "owner rule 2"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "kind": "fill",
+   "fact": "waypoints[1].elev",
+   "verdict": "unresolved",
+   "summary": "The Junction pin still has no height and no source states one, so elev stays null.",
+   "evidence": "Live row: waypoints[1] 'Ed Wood Memorial Buttress' (type Junction) elev null, elevFt null. A pin height is an access fact; no land-manager page gives one, and Rock Climbing Washington search for \"Plan 9\" returned no match.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: \"Plan 9\" (no match)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "kind": "fill",
+   "fact": "waypoints[1].elevFt",
+   "verdict": "unresolved",
+   "summary": "Same pin as the elev fill: no stated height, so elevFt stays null.",
+   "evidence": "Live row: waypoints[1].elevFt null. See the waypoints[1].elev entry.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: \"Plan 9\" (no match)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a one-way distance to Trapper Mountain, so dist_km stays empty.",
+   "evidence": "Access fact (rule 2). The park service states Cascade Pass 3.7 mi; a trail listing gives Pelton Basin camp 8.82 mi round trip; nothing to the summit.",
+   "sources": [],
+   "searched": [
+    "prior_evidence (five passes + peakbagger)",
+    "owner rule 2: access fact"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "kind": "fill",
+   "fact": "fa",
+   "verdict": "unresolved",
+   "summary": "No source names a first-ascent party for East Twin Needle's South Route, so fa stays empty.",
+   "evidence": "Live row: fa null. The cleared credit belongs to the 2003 east arete enchainment. The Pickets are outside the available Cascade Alpine Guide volumes; no available book covers them.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "book list: no available volume covers the Picket Range"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "unresolved",
+   "summary": "No rappel-by-rappel account of Pernod Spire's northeast-corner descent exists, so rappel_detail stays empty.",
+   "evidence": "Live row: rappel_detail null; name 'Standard Rock Route'. Rock Climbing Washington search for \"Pernod\" returned no match; the Wine Spires are outside the available Cascade Alpine Guide volumes.",
+   "sources": [],
+   "searched": [
+    "live row via row.mjs",
+    "rockclimbingwash0000smoo: \"Pernod\" (no match)"
+   ],
+   "ops": []
+  }
+ ]
+}

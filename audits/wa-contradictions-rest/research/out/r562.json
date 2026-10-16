@@ -1,0 +1,50 @@
+{"file": "r562.json", "results": [
+ {"id": "wa_mount_townsend_standard", "fact": "Parking pass requirement", "verdict": "fixed",
+  "correct_value": "No parking pass or fee is required at either the Upper or Lower Mount Townsend trailhead.",
+  "evidence": "The Forest Service recreation-site pages for both the Upper and Lower Mt. Townsend trailheads state no fees are required; WTA lists Parking Pass/Entry Fee: None; Hiking Project says both trailheads are no-fee. One blog (hikewithkurt) claims a NW Forest Pass is required, against the official pages. access.overnight_permit.where is corrected; bivy[0].permit also hedges toward carrying a pass but bivy is owned by the camping clean-up and is not patched here.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/mt-townsend-upper-trailhead", "https://www.fs.usda.gov/r06/olympic/recreation/mt-townsend-lower-trailhead", "https://www.wta.org/go-hiking/hikes/mount-townsend", "https://www.hikingproject.com/trail/7001930/mt-townsend-trail-839"],
+  "patches": [
+   {"id": "wa_mount_townsend_standard", "fact": "Parking pass requirement", "op": "replace_text", "column": "access", "path": ["overnight_permit", "where"], "find": "a recreation pass is required to park at the national forest trailheads.", "replace": "no parking pass is needed at either Mount Townsend trailhead."}
+  ]},
+ {"id": "wa_mount_townsend_standard", "fact": "Water on the trail", "verdict": "fixed",
+  "correct_value": "Small streams in the first mile or so run early but are often dry by late summer; shallow Windy Lake at Camp Windy is the water source and the last water before the summit.",
+  "evidence": "WTA calls shallow Windy Lake the water source at Camp Windy and says the trail starts beside Townsend Creek. hikewithkurt says the two stream crossings in the first mile are likely dry in late summer and Camp Windy has a reliable water source and is the last water; Gaia GPS lists water at drainages and at Windy Lake. So the approach's claim that the only water near Windy Lake is early-season seeps is the outlier; the 'no dependable creek on the trail' wording is consistent with seasonal streams and is left alone.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/mount-townsend", "https://www.hikewithkurt.com/hiking-mount-townsend-olympic-national-forest", "https://www.gaiagps.com/hike/975/mount-townsend-via-mt-townsend-trail-839/"],
+  "patches": [
+   {"id": "wa_mount_townsend_standard", "fact": "Water on the trail", "op": "replace_text", "column": "approach", "path": [], "find": "snowmelt seeps near Windy Lake may run early-season only", "replace": "the small streams crossed in the first mile or so are often dry by late summer, so shallow Windy Lake by Camp Windy is the last water"}
+  ]},
+ {"id": "wa_mount_townsend_standard", "fact": "Extra cost of starting at the Lower Trailhead", "verdict": "fixed",
+  "correct_value": "About 2-2.4 extra round-trip miles and roughly 500 ft of extra climbing (not 800 ft).",
+  "evidence": "WTA says the Lower Trailhead is 1.2 miles and 400 ft farther down the valley; The Mountaineers give 1.2 miles and 600 ft; Explore Hood Canal says it adds two miles round trip and 500 ft of gain. All sources put the extra climbing at 400-600 ft, so the pro tip's 800 ft (which double-counts the gain as a round-trip figure) is wrong; the mileage figures (2 vs 2.4) are rounding.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/mount-townsend", "https://www.mountaineers.org/activities/routes-places/mount-townsend", "https://www.explorehoodcanal.com/stories/mount-townsend"],
+  "patches": [
+   {"id": "wa_mount_townsend_standard", "fact": "Extra cost of starting at the Lower Trailhead", "op": "replace_text", "column": "pro_tips", "path": [0], "find": "save 2.4 mi/800 ft round trip", "replace": "save about 2.4 mi round trip and roughly 500 ft of extra climbing"}
+  ]},
+ {"id": "wa_mount_townsend_standard", "fact": "Upper Trailhead lot size", "verdict": "fixed",
+  "correct_value": "The Upper Trailhead has a small gravel lot.",
+  "evidence": "The Forest Service Upper Trailhead page describes a small parking area with limited turnaround; hikewithkurt says the upper lot is fairly small and Gaia GPS says parking there is very limited. hazards, waypoints[0], pro_tips and crowds already say small.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/mt-townsend-upper-trailhead", "https://www.hikewithkurt.com/hiking-mount-townsend-olympic-national-forest", "https://www.gaiagps.com/hike/975/mount-townsend-via-mt-townsend-trail-839/"],
+  "patches": [
+   {"id": "wa_mount_townsend_standard", "fact": "Upper Trailhead lot size", "op": "replace_text", "column": "approach", "path": [], "find": "the trailhead has a large gravel lot", "replace": "the trailhead has a small gravel lot"},
+   {"id": "wa_mount_townsend_standard", "fact": "Upper Trailhead lot size", "op": "replace_text", "column": "approach_logistics", "path": ["trailheadDirection"], "find": "the trailhead has a large gravel lot", "replace": "the trailhead has a small gravel lot"}
+  ]},
+ {"id": "wa_mount_townsend_standard", "fact": "Any scrambling near the summit", "verdict": "fixed_internal_plus_one",
+  "correct_value": "No scrambling on the standard route; it is a maintained trail to the summit.",
+  "evidence": "beta, approach, rope_note, grade and the variant's baseFinding all say there is no scrambling. The Forest Service trail page describes a graded trail (20% for 3 miles, then up to 8%) to the summit, and WTA describes a trail hike to the south summit outcrops with no scrambling. Only partner_requirements.experienceLevel mentions scrambling.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/trails/mt-townsend-trail-839", "https://www.wta.org/go-hiking/hikes/mount-townsend"],
+  "patches": [
+   {"id": "wa_mount_townsend_standard", "fact": "Any scrambling near the summit", "op": "replace_text", "column": "partner_requirements", "path": ["experienceLevel"], "find": ", though comfort scrambling short easy sections near the summit is a plus", "replace": ""}
+  ]},
+ {"id": "wa_mount_townsend_standard", "fact": "Entrance fee / camping permit in access.notes", "discovered": true, "verdict": "fixed_internal_plus_one",
+  "correct_value": "No entrance fee and no overnight permit to buy in the Buckhorn Wilderness.",
+  "evidence": "access.notes says 'the standard entrance fee and wilderness camping permit apply', contradicting access.fees, access.permit, access.parking_pass and access.overnight_permit.what (no overnight permit). The Forest Service trailhead pages and WTA state no fee; the PNT permits page notes backcountry permits are not required on national forest lands, and the row's own overnight_permit and camp card agree there is no quota or booking.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/mt-townsend-upper-trailhead", "https://www.wta.org/go-hiking/hikes/mount-townsend", "https://www.pnt.org/backcountry-permits/"],
+  "patches": [
+   {"id": "wa_mount_townsend_standard", "fact": "Entrance fee / camping permit in access.notes", "op": "replace_text", "column": "access", "path": ["notes"], "find": "only the standard entrance fee and wilderness camping permit apply.", "replace": "there is no entrance fee and no overnight permit to buy."}
+  ]},
+ {"id": "wa_mount_townsend_standard", "fact": "Upper Trailhead elevation (waypoint 3,300 ft vs approach ~3,400 ft)", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "waypoints[0].elev is 3300 while approach and approach_logistics.trailheadDirection say ~3,400 ft. Gaia GPS gives 3,400 ft for the upper trailhead; WTA and the Forest Service pages state no trailhead elevation, and Hiking Project's low point (2,846 ft) is the Lower Trailhead. Only one source, so no patch.",
+  "sources": ["https://www.gaiagps.com/hike/975/mount-townsend-via-mt-townsend-trail-839/"],
+  "patches": []}
+]}

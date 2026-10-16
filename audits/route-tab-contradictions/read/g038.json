@@ -1,0 +1,329 @@
+{
+  "batches": ["b149.json", "b150.json", "b151.json", "b152.json"],
+  "routes_read": 10,
+  "routes": [
+    {
+      "id": "wa_sitkum_spire_standard",
+      "name": "Standard Route",
+      "area": "Sitkum Spire",
+      "contradictions": [
+        {
+          "fact": "Bivy list includes camps for other Glacier Peak routes/peaks, and one entry denies this route's own approach still exists",
+          "severity": "high",
+          "claims": [
+            {"field": "approach / road / access / waypoints / itinerary", "says": "Describes and uses the White Chuck River Trailhead -> Kennedy Hot Springs -> Sitkum Creek -> Boulder Basin approach as the route's current (if road-walk-extended) access"},
+            {"field": "bivy[8] (\"Boulder Basin above Sitkum Creek — and the White Chuck situation\")", "says": "\"Anything you read describing five and a half easy miles to the hot springs and a steep climbers' path to the basin is describing an approach that has not been available for twenty years. Parties wanting the north and west sides of the mountain now go in from the Suiattle instead.\""},
+            {"field": "bivy[0..6]", "says": "Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge, Buck Creek Pass, Napeequa Valley, Butterfly Butte and Boulder Pass/Thunder Basin entries all describe camps for entirely different peaks/routes (Glacier Peak's Cool Glacier/Gerdine Ridge and Kennedy Glacier routes, Buck Mountain, Mount Berge, Helmet Butte, Clark Mountain, Luahna Peak, Chalangin Peak, Tenpeak Mountain) with no connection to this route's own White Chuck approach"}
+          ],
+          "why": "The CAMPING & BIVY section would show a climber camps for eight unrelated peaks reached from different trailheads, and one of those entries flatly states the very approach this route's own approach/road/waypoints/itinerary describe using no longer exists.",
+          "internal_resolution": "The route's own approach, road, access, waypoints and itinerary all consistently describe using the White Chuck Trailhead approach today (with an added road-walk detour around the FR 23 closure); that is corroborated 5+ times and is clearly the intended route data. The bivy array appears to be a generic area-wide camp dump pasted onto the route rather than filtered to it.",
+          "needs_research": false
+        },
+        {
+          "fact": "Best/optimal season window extends past the stated season",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "\"Jun-Aug\""},
+            {"field": "seasonal_guidance.optimalWindow", "says": "\"July through September, with July offering the most stable snow bridges and weather and September trading some glacier stability for shorter, cooler days\""},
+            {"field": "best_season", "says": "\"Late July through early September is the most reliable window...\""},
+            {"field": "climate.bySeason.summer", "says": "\"Warmest, driest window (late July-early September)...\""},
+            {"field": "seasonal_guidance.monthBreakdown.September.status", "says": "\"good\" (within best season)"}
+          ],
+          "why": "The short-form header season caps at August, but three other fields (seasonal_guidance, best_season, climate) all treat September as part of the good/optimal window — a best window may lie inside a stated season, but here the optimal window runs outside it.",
+          "internal_resolution": "Three independent fields agree September belongs in the season; only the single `season` string omits it, so `season` is the likely outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "dist_km is one-way while itinerary is the round trip",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "14.5 (≈9.0 mi, matches the one-way distance to Boulder Basin)"},
+            {"field": "itinerary.totalNote", "says": "\"roughly 25-mile round trip\""}
+          ],
+          "why": "dist_km and the itinerary describe different quantities (one-way approach vs. full round trip); the header shows itinerary miles when present, so they are unlikely to be shown side-by-side, but noting per instructions.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_sperry_peak_east_face",
+      "name": "East Face (2002)",
+      "area": "Sperry Peak",
+      "contradictions": []
+    },
+    {
+      "id": "wa_sperry_peak_upper_south_ridge",
+      "name": "Upper South Ridge",
+      "area": "Sperry Peak",
+      "contradictions": []
+    },
+    {
+      "id": "wa_sperry_peak_standard",
+      "name": "Standard Scramble",
+      "area": "Sperry Peak",
+      "contradictions": [
+        {
+          "fact": "Bivy list includes camps for Gothic Peak and Del Campo, reached from a different trailhead",
+          "severity": "medium",
+          "claims": [
+            {"field": "approach / approach_logistics / waypoints", "says": "This route's approach is the Sunrise Mine Trailhead -> Headlee Pass -> Lake Elan -> Sperry-Vesper saddle"},
+            {"field": "bivy[1] (\"Lower Gothic Basin\")", "says": "\"For GOTHIC PEAK this costs almost nothing... while for DEL CAMPO it does cost you... Getting here means the Weden Creek trail...\""},
+            {"field": "bivy[2] (\"Weden Creek trail junction, one mile up the Monte Cristo road\")", "says": "\"...before the last mile of road back to Barlow Pass... Do not confuse this with the Monte Cristo townsite...\""}
+          ],
+          "why": "Two of the four CAMPING & BIVY entries shown on this Sperry Peak page (Weden Creek/Monte Cristo Road, reached from Barlow Pass) are explicitly for Gothic Peak and Del Campo, not Sperry Peak, and share no trailhead with Sperry's own Sunrise Mine Trail/Headlee Pass approach.",
+          "internal_resolution": "The first bivy entry (\"Sunrise Mine road end\") and the last (\"Red Bridge Campground\") explicitly name Sperry and match its own approach; the Gothic Basin/Weden Creek entries are the contaminated outliers.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_spire_point_southwest_face",
+      "name": "Southeast Face",
+      "area": "Spire Point",
+      "contradictions": [
+        {
+          "fact": "Face/aspect named inconsistently (southeast vs. southwest)",
+          "severity": "medium",
+          "claims": [
+            {"field": "name / face / aspect", "says": "\"Southeast Face\" / \"Southeast Face\" / \"SE\""},
+            {"field": "id", "says": "\"wa_spire_point_southwest_face\""},
+            {"field": "approach", "says": "\"...where the route starts up loose talus into a short (~30') Class 4 chimney\" of \"the base of the southwest face\""},
+            {"field": "descent_text", "says": "\"Descend the same southwest face line rather than a separate walk-off.\""},
+            {"field": "rope_note", "says": "\"south/southwest face is a 5-pitch 5.6 (low-5th-class) rock route...\""},
+            {"field": "beta", "says": "\"The south face is accessed from Spire Col...\" then later \"traverses class 3 ledges on the southeast face\""}
+          ],
+          "why": "The header (name/face/aspect=SE) tells a climber this is the southeast face, while the approach, descent, and rope-note prose all call it the southwest face (and even the beta text mixes 'south' and 'southeast'), which is confusing for orienting to sun/snow conditions.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+          "severity": "high",
+          "claims": [
+            {"field": "grade", "says": "\"Class 4\""},
+            {"field": "rock_grade", "says": "\"5.4\""},
+            {"field": "pitch_detail[3] (\"5 (Crux)\")", "says": "\"5.6\" friction slab or alternate cracks"}
+          ],
+          "why": "The header grade pill (rock_grade=5.4) and Overview's crux-grade-from-`grade` (Class 4) both understate the route's own documented hardest pitch (5.6).",
+          "internal_resolution": "pitch_detail is the most specific/authoritative source for the crux; rock_grade and grade both disagree with it and with each other.",
+          "needs_research": false
+        },
+        {
+          "fact": "Spire Col elevation: 7,000 ft vs. 7,760 ft",
+          "severity": "high",
+          "claims": [
+            {"field": "waypoints[5] (\"Spire Col\")", "says": "elev 7000"},
+            {"field": "approach", "says": "\"You'll hit permanent snow before Spire Col (7,760')\""},
+            {"field": "itinerary.days[1].schedule[4]", "says": "\"Arrive Spire Col, make camp\" \"~7,760 ft\""},
+            {"field": "bivy[6] (\"Spire Col bivouac\")", "says": "\"The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier...\""}
+          ],
+          "why": "A 760 ft discrepancy on the named standard high camp/col — the Waypoints list and WeatherPanel would show 7,000 ft while the Plan tab's approach/itinerary/bivy text says 7,760 ft.",
+          "internal_resolution": "Three independent fields (approach, itinerary schedule, bivy) agree on 7,760 ft; the waypoints entry (7,000 ft) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Road-closure detour mileage: 16.1 mi one-way mislabeled as \"16 miles round trip\"",
+          "severity": "high",
+          "claims": [
+            {"field": "access.closures / road.status", "says": "Closure at milepost 4.5; trailhead normally at milepost 20.6 (waypoints[0])"},
+            {"field": "road.driveNote", "says": "\"...the current washout closure at MP 4.5 adds roughly 16 miles round trip of road walking or biking to reach the Downey Creek trailhead.\""}
+          ],
+          "why": "20.6 − 4.5 = 16.1 miles one-way; the round trip should be roughly 32 miles, not 16 — the text computes the one-way distance but labels it round trip, understating the extra approach distance by about half.",
+          "internal_resolution": "The mileposts given in the same field (4.5 to 20.6) arithmetically yield ~16 miles one-way / ~32 round trip; \"16 miles round trip\" is inconsistent with its own inputs.",
+          "needs_research": false
+        },
+        {
+          "fact": "Bivy list dominated by camps for other peaks/approaches (Ptarmigan Traverse north side, Dome/Sinister/Gunsight)",
+          "severity": "medium",
+          "claims": [
+            {"field": "approach / approach_variants / itinerary", "says": "This route is approached from Downey Creek via Bachelor Creek and Itswoot Ridge (south entry)"},
+            {"field": "bivy[0-2] (\"Kool-Aid Lake\", \"Yang Yang Lakes\", \"White Rock Lakes\")", "says": "All reached \"coming from Cascade Pass\" (the Ptarmigan Traverse's north entry), unrelated to the Downey Creek approach"},
+            {"field": "bivy[7] (\"Dome Glacier and Dome-Chickamin col high bivouacs\")", "says": "Describes camps for Sinister Peak and the Gunsight Range, not Spire Point"}
+          ],
+          "why": "Most of the CAMPING & BIVY list shown on this page describes camps for a different entry point or different peaks entirely, rather than this route's own Downey Creek/Bachelor Creek/Itswoot Ridge approach.",
+          "internal_resolution": "\"Itswoot Ridge\", \"Cub Lake\", \"Bachelor Creek forest and meadow camps\" and \"Spire Col bivouac\" match this route's own approach; the Cascade-Pass-side and Dome/Sinister entries are the contaminated ones.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_tenpeak_mountain_north_couloir",
+      "name": "North Couloir",
+      "area": "Tenpeak Mountain",
+      "contradictions": [
+        {
+          "fact": "Bivy list is entirely camps for unrelated Glacier Peak-area peaks/routes",
+          "severity": "medium",
+          "claims": [
+            {"field": "approach / approach_variants", "says": "Reached via the Honeycomb Glacier, from the White River side over the PCT/Whitechuck/Suiattle Glaciers, or by dropping from a Kololo Peaks camp"},
+            {"field": "bivy[0-6]", "says": "Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge, Boulder Basin, Buck Creek Pass, and Napeequa Valley/Butterfly Butte entries all describe camps for Glacier Peak's Cool Glacier/Gerdine Ridge or Kennedy Glacier routes, Buck Mountain, Mount Berge, Clark Mountain, Luahna Peak and Chalangin Peak"}
+          ],
+          "why": "None of the bivy entries shown for this route describe a camp actually on its stated approach (Honeycomb Glacier via White River/PCT or Kololo Peaks); a climber would see suggested camps for entirely different peaks and trailheads.",
+          "internal_resolution": "Only \"Boulder Pass and Thunder Basin, White River\" even mentions Tenpeak, and it describes the OTHER Tenpeak route's (Southeast) approach, not the Honeycomb Glacier line; the rest are unrelated.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_tenpeak_mountain_southeast",
+      "name": "Southeast Route / Standard",
+      "area": "Tenpeak Mountain",
+      "contradictions": [
+        {
+          "fact": "Total gain/loss vs. itinerary day sums",
+          "severity": "high",
+          "claims": [
+            {"field": "gain_ft / loss_ft", "says": "7300 / 7300"},
+            {"field": "itinerary.days[*].gainFt sum", "says": "2880 + 1250 + 0 = 4130"},
+            {"field": "itinerary.days[*].lossFt sum", "says": "0 + 1250 + 2880 = 4130"},
+            {"field": "itinerary.totalNote", "says": "\"...~4,100 ft of net gain...\""}
+          ],
+          "why": "The header/Overview TECHNICAL STATS would show 7,300 ft of gain while the Plan tab's own itinerary breakdown and its totalNote both independently agree on roughly 4,100 ft — a ~77% overstatement in gain_ft.",
+          "internal_resolution": "The itinerary's per-day figures and its own totalNote text agree with each other (~4,100 ft); gain_ft/loss_ft (7,300) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Grade: \"Class 4 + glacier\" vs. the route's own 5.0 pitch",
+          "severity": "medium",
+          "claims": [
+            {"field": "grade", "says": "\"Class 4 + glacier\" (grade_num 4)"},
+            {"field": "rock_grade", "says": "\"5.0-5.4 (low 5th class)\""},
+            {"field": "pitch_detail[1] (\"2\")", "says": "grade \"5.0\", \"Long pitch up face toward broken chimney...\""}
+          ],
+          "why": "The Overview's crux-grade-from-`grade` reads \"Class 4 + glacier\" while the route's own pitch_detail and rock_grade both document a 5.0 pitch — Class 4 undersells the documented technical crux.",
+          "internal_resolution": "rock_grade and pitch_detail agree with each other (5.0-5.4); `grade` is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Avalanche hazard claimed N/A while hazards list avalanche debris",
+          "severity": "medium",
+          "claims": [
+            {"field": "seasonal_hazards.avalanche.zone", "says": "\"N/A - non-glaciated-snowpack avalanche risk is not the primary concern for this dry-season (Jul-Sep) glacier/scramble ascent...\""},
+            {"field": "hazards", "says": "includes \"Cornices and wind-loaded slopes on approach ridgelines into early summer\""},
+            {"field": "obj_haz", "says": "includes \"avalanche debris on the approach\""}
+          ],
+          "why": "The SEASONAL HAZARDS > AVALANCHE panel dismisses avalanche risk as N/A while KNOWN HAZARDS explicitly lists avalanche debris/cornice hazard on the same approach.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)",
+          "severity": "high",
+          "claims": [
+            {"field": "waypoints[4] (\"Thunder Basin high camp\")", "says": "elev 6400, \"...standard high camp for the Southeast Route...\""},
+            {"field": "approach", "says": "\"...upper Thunder Basin (~5,180 ft, roughly 6.5 miles and 2,880 ft of gain from the trailhead)...\" (2,300 ft trailhead + 2,880 = 5,180)"},
+            {"field": "itinerary.days[0].schedule[3]", "says": "\"Camp in the lower basin (~4,175 ft) or push to the upper basin (~5,180 ft) for a shorter summit day.\""}
+          ],
+          "why": "A 1,220 ft discrepancy on the route's own standard high camp — the Waypoints list would show 6,400 ft while the approach prose and itinerary schedule (both arithmetically consistent with the stated trailhead elevation and day-1 gain) say ~5,180 ft.",
+          "internal_resolution": "The approach text and itinerary schedule agree with each other and are internally computed (2,300 + 2,880 = 5,180); the waypoint entry (6,400) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Itinerary day-mile sum vs. totalNote's stated round-trip mileage",
+          "severity": "medium",
+          "claims": [
+            {"field": "itinerary.days[*].miles sum", "says": "6.5 + 2.5 + 6.5 = 15.5"},
+            {"field": "itinerary.totalNote", "says": "\"A 3-day trip covering roughly 13 miles round trip...\""},
+            {"field": "dist_km", "says": "20.1 (≈12.5 mi, close to the totalNote's 13 mi, not the day-sum's 15.5 mi)"}
+          ],
+          "why": "The header shows itinerary miles when present (15.5 mi), but the Plan tab's own totalNote claims 13 miles for the same trip, a ~19% understatement.",
+          "internal_resolution": "dist_km agrees with totalNote (~13 mi); the day-by-day sum (15.5 mi) is the outlier, or totalNote was not recomputed from the day rows.",
+          "needs_research": false
+        },
+        {
+          "fact": "Bivy list mostly unrelated peaks (Glacier Peak, Buck Mountain, Clark/Luahna/Chalangin)",
+          "severity": "low",
+          "claims": [
+            {"field": "approach", "says": "This route uses the White River Trailhead -> Thunder Creek -> Thunder Basin approach"},
+            {"field": "bivy[0-6]", "says": "Mackinaw Shelter, White Pass, Glacier Gap, Kennedy Ridge, Boulder Basin, Buck Creek Pass, Napeequa Valley and Butterfly Butte entries describe camps for Glacier Peak's Cool Glacier/Kennedy Glacier routes, Buck Mountain, Clark Mountain, Luahna Peak and Chalangin Peak"}
+          ],
+          "why": "Only the last bivy entry (\"Boulder Pass and Thunder Basin, White River\") is genuinely on this route's own approach; the rest describe unrelated peaks/trailheads.",
+          "internal_resolution": "The \"Boulder Pass and Thunder Basin\" entry names Tenpeak directly and matches; the others do not.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_three_fingers_r1",
+      "name": "North Peak",
+      "area": "Three Fingers",
+      "contradictions": [
+        {
+          "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+          "severity": "high",
+          "claims": [
+            {"field": "itinerary.days[*].miles sum", "says": "7 + 4.5 + 7 = 18.5"},
+            {"field": "itinerary.totalNote", "says": "\"...roughly 14.5 mi and 5,400 ft of cumulative gain overall.\""},
+            {"field": "dist_km", "says": "22.53 (≈14.0 mi, matching totalNote, not the day-sum)"}
+          ],
+          "why": "The header shows itinerary miles when present (18.5 mi), a 28% difference from the Plan tab's own totalNote claim of 14.5 mi for the same trip; gain agrees (5,400 both places) but mileage does not.",
+          "internal_resolution": "dist_km agrees with totalNote (~14.5 mi); the day-by-day sum (18.5 mi) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Tin Can Gap elevation: 5,900 ft (waypoint) vs. 5,600 ft (bivy)",
+          "severity": "low",
+          "claims": [
+            {"field": "waypoints[3] (\"Tin Can Gap\")", "says": "elev 5900"},
+            {"field": "bivy[1] (\"Tin Can Gap high camp\")", "says": "elev 5600"}
+          ],
+          "why": "A 300 ft difference for the same named notch/camp on the same route, just over the ~250 ft materiality threshold.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_three_fingers_south_peak_lookout",
+      "name": "South Peak via Lookout",
+      "area": "Three Fingers",
+      "contradictions": [
+        {
+          "fact": "gain_ft vs. itinerary day gainFt sum",
+          "severity": "high",
+          "claims": [
+            {"field": "gain_ft", "says": "5750"},
+            {"field": "itinerary.days[*].gainFt sum", "says": "3000 + 1200 = 4200"},
+            {"field": "loss_ft", "says": "4200 (matches the itinerary's day-2 loss/net trailhead-to-summit change, not gain_ft)"}
+          ],
+          "why": "gain_ft (5,750) is ~37% higher than both the itinerary's own gain sum (4,200) and the route's net trailhead-to-summit elevation change (~4,200 ft, matching loss_ft), which the Plan tab's itinerary total row would show alongside the header's TECHNICAL STATS gain.",
+          "internal_resolution": "loss_ft and the itinerary sums agree at ~4,200 ft; gain_ft (5,750) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)",
+          "severity": "high",
+          "claims": [
+            {"field": "access.notes", "says": "\"Tupso Pass Road (FS 41) washed out 4.8 miles in (past Canyon Creek bridge at mile 8); permanently closed to vehicles.\""},
+            {"field": "access.closures", "says": "\"...washed out ~4.8 miles in and closed to vehicles beyond the Canyon Creek bridge (~mile 8.5) since 2023.\""},
+            {"field": "road.status", "says": "\"Washed out at approximately mile 4.8; permanently closed to vehicle travel beyond the Canyon Creek bridge (~mile 8.5)\""},
+            {"field": "road.driveNote / itinerary.cal / waypoints[0].directions", "says": "All state the closure adds \"roughly 9 miles each way\" to reach the trailhead at mile ~17.5-18, which is only consistent with a closure point at mile ~8.5, not 4.8"}
+          ],
+          "why": "access.notes literally claims the mile-8 bridge lies \"past\" the 4.8-mile washout point, which is mathematically impossible (4.8 < 8); three fields conflate a \"mile 4.8\" figure with the \"mile 8/8.5\" Canyon Creek bridge closure point in the same breath, while the consistently-used \"9 miles each way\" road-walk figure only works from mile ~8.5.",
+          "internal_resolution": "road.driveNote, itinerary.cal and the trailhead waypoint's directions all independently and consistently compute \"~9 miles each way\" from a closure at ~mile 8.5 to the trailhead at ~mile 17.5-18; the \"4.8 miles in\" figure appearing in access.notes/access.closures/road.status is the outlier and is not used anywhere else in the route's own mileage math.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_three_fingers_r2",
+      "name": "Middle Peak (South Face)",
+      "area": "Three Fingers",
+      "contradictions": [
+        {
+          "fact": "Itinerary day-mile sum vs. totalNote's stated mileage",
+          "severity": "medium",
+          "claims": [
+            {"field": "itinerary.days[*].miles sum", "says": "7 + 4 + 7 = 18"},
+            {"field": "itinerary.totalNote", "says": "\"...roughly 14.5 mi and an estimated 5,100 ft of cumulative gain overall.\""},
+            {"field": "dist_km", "says": "23.5 (≈14.6 mi, matching totalNote, not the day-sum)"}
+          ],
+          "why": "Same pattern as the North Peak route on this same peak: the header would show the itinerary day-sum (18 mi), a 24% difference from the Plan tab's own totalNote claim (14.5 mi); gain agrees (5,100 both places) but mileage does not.",
+          "internal_resolution": "dist_km agrees with totalNote (~14.5-14.6 mi); the day-by-day sum (18 mi) is the outlier.",
+          "needs_research": false
+        }
+      ]
+    }
+  ]
+}

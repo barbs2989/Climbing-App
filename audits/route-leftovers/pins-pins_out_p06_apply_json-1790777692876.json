@@ -1,0 +1,149 @@
+{
+ "applied": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "move_pin",
+   "index": 3,
+   "name": "Rimrock Ridge summit",
+   "moved_km": 1.66,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "op": "move_pin",
+   "index": 2,
+   "name": "Cascade River Crossing / Terminal Moraine",
+   "moved_km": 1,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "op": "remove_pin",
+   "index": 1,
+   "name": "Cascade Pass",
+   "gpx_vertices_dropped": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "waypoints": [
+    {
+     "lat": 48.38025,
+     "lng": -120.83955,
+     "elev": 1600,
+     "name": "High Bridge Guard Station / Agnes Creek (PCT) Trailhead",
+     "note": "Reached by the Lady of the Lake ferry from Chelan to Stehekin Landing, then ~11 mi up Stehekin Valley Road (shuttle or bike); North Cascades NP backcountry permit required for overnight camping, available in Stehekin.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.342907,
+     "lng": -120.901771,
+     "elev": 2200,
+     "name": "Fivemile Camp",
+     "note": "First established dispersed camp along the Agnes Creek Trail with reliable water from Agnes Creek; common first-night stop for the long valley approach.",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 48.30964,
+     "lng": -120.92038,
+     "elev": 2800,
+     "name": "Swamp Creek Camp",
+     "note": "Established camp at the Swamp Creek confluence with year-round water; last reliably maintained camp before the trail begins climbing out of the valley bottom toward the upper basins.",
+     "type": "Campsite",
+     "distMi": 8.1
+    },
+    {
+     "lat": 48.3721,
+     "lng": -121.0001,
+     "elev": 7255,
+     "name": "Rimrock Ridge summit",
+     "note": "True summit of the ridge crest (listed 7,255-7,260 ft); descent reverses the crest, downclimbing rock steps and bypassing gendarme towers on the same side used on ascent.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.38025,
+     -120.83955
+    ],
+    [
+     48.342907,
+     -120.901771
+    ],
+    [
+     48.30964,
+     -120.92038
+    ],
+    [
+     48.3721,
+     -121.0001
+    ]
+   ]
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "waypoints": [
+    {
+     "lat": 48.4755,
+     "lng": -121.075,
+     "elev": 3600,
+     "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 3600,
+     "directions": "Drive Cascade River Road to its end at the Cascade Pass trailhead, near 3,600 ft. The road is generally open late June through September, and this route's season is tied to it. This is one of the shortest approaches in the range: the serious ground starts around 3,500 ft, within an hour of the car, so there is no long walk to warm up on."
+    },
+    {
+     "lat": 48.4683,
+     "lng": -121.06,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "Maintained trail tops out here; leave it for the climbers' path toward Johannesburg.",
+     "type": "Junction",
+     "distMi": 3.6
+    },
+    {
+     "lat": 48.4655,
+     "lng": -121.079,
+     "elev": 4300,
+     "name": "Cascade River Crossing / Terminal Moraine",
+     "note": "Off-trail descent and ford of the infant Cascade River below the terminal moraine.",
+     "type": "Hazard",
+     "distMi": null
+    },
+    {
+     "lat": 48.4665,
+     "lng": -121.085,
+     "elev": 5200,
+     "name": "Base of C-J Couloir",
+     "note": "Gain rock just before the Cascade-Johannesburg couloir narrows; the NE Ridge (1963) climbs the rib right of the couloir.",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 48.4665,
+     "lng": -121.088,
+     "elev": 6800,
+     "name": "Hanging Glacier Traverse",
+     "note": "Exposed rising traverse beneath Johannesburg's hanging glaciers; rockfall and icefall hazard.",
+     "type": "Hazard",
+     "distMi": null
+    },
+    {
+     "lat": 48.46472,
+     "lng": -121.09194,
+     "elev": 8066,
+     "name": "Johannesburg Mountain",
+     "type": "Summit",
+     "elevFt": 8200
+    }
+   ],
+   "gpx": null
+  }
+ ]
+}

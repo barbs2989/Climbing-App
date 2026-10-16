@@ -1,0 +1,122 @@
+{"file": "r032.json", "results": [
+ {"id": "wa_half_fast", "fact": "Access notes describe a different peak (Mount Index)", "verdict": "fixed",
+  "correct_value": "ACCESS describes only Half Moon Crag (roadside pullout on Tye Road near Wellington, west of Stevens Pass); the Mount Index / Lake Serene sentences are removed.",
+  "evidence": "Half Moon Crag is a short-route granite crag reached from Tye Road (old Stevens Pass Highway) ~1.4 mi from US-2 near Wellington, just west of Stevens Pass; Mount Index and the Lake Serene trailhead are ~25 mi west near Index. The Mount Index sentences in access.notes and access.parking_pass are copied text about another objective; removing them leaves the crag-specific sentences intact.",
+  "sources": ["https://www.mountainproject.com/area/117712289/half-moon-crag", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town", "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"],
+  "patches": [
+   {"id": "wa_half_fast", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. ", "replace": ""},
+   {"id": "wa_half_fast", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["parking_pass"], "find": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. ", "replace": ""}
+  ]},
+ {"id": "wa_half_fast", "fact": "Managing national forest", "verdict": "fixed",
+  "correct_value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+  "evidence": "The Forest Service's Wellington Trailhead page (same Old Stevens Pass Highway, west of Stevens Pass) lists Skykomish Ranger District, Mount Baker-Snoqualmie National Forest; the WTA Wellington hike page lists the same land manager (and King County). The Skykomish Ranger District belongs to Mt. Baker-Snoqualmie, not Okanogan-Wenatchee, so emergency.rangerStation is corrected to match access.land_manager.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town", "https://www.fs.usda.gov/r06/mbs/recreation/trails/iron-goat-trail-1074-wellington"],
+  "patches": [
+   {"id": "wa_half_fast", "fact": "Managing national forest", "op": "set", "column": "emergency", "path": ["rangerStation"], "expect": "Okanogan-Wenatchee National Forest Skykomish Ranger District", "value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District"}
+  ]},
+ {"id": "wa_half_fast", "fact": "Whether trailhead parking requires a fee/pass", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The nearby Wellington Trailhead (2.8 mi up the Old Stevens Pass Highway, on FS Rd 050) is a Forest Service fee site requiring a Recreation Pass or $5/day, but the crag's parking is an unofficial roadside pullout ~1.4 mi from US-2, which is not that trailhead. No source states whether a pass is needed at this pullout; the Northwest Forest Pass applies at standard-amenity fee sites, suggesting none, but that is inference, not a second agreeing source. After the Mount Index removal, access.notes/parking_pass say no fee site while access.passRequired says 'Recreation pass' — left open.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.mountainproject.com/area/117712289/half-moon-crag", "https://www.wta.org/go-outside/passes"],
+  "patches": []},
+ {"id": "wa_half_fast", "fact": "Rappel distance vs route length", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The route's own climbing-database page gives its height as 50 ft (15 m), matching length_m, and the crag-wide description says all routes are about 85 ft or less — so the 85-ft figure in descent_text looks like the crag cap reused. Only one external source gives the per-route height and only one row field agrees, so no rewrite was made; suggested fix is to drop the 85-ft figure from descent_text.",
+  "sources": ["https://www.mountainproject.com/route/117712840/half-fast", "https://www.mountainproject.com/area/117712289/half-moon-crag"],
+  "patches": []},
+ {"id": "wa_half_fast", "fact": "Permit field names the Wild Sky Wilderness", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "`permit` says 'Free self-issue Wild Sky Wilderness permit...', while access.permit is 'N/A' and climbing_permit_required is false. Wild Sky Wilderness lies along the North Fork Skykomish and Beckler rivers, well west of Wellington, so the Wild Sky wording appears copied from the Mount Index text; but whether the crag falls inside the Henry M. Jackson Wilderness (just north of Stevens Pass) could not be confirmed by two sources, so the correct permit statement is not settled. Same on all five Half Moon Crag routes.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness", "https://en.wikipedia.org/wiki/Henry_M._Jackson_Wilderness"],
+  "patches": []},
+
+ {"id": "wa_astral_projection", "fact": "Access notes describe a different peak (Mount Index)", "verdict": "fixed",
+  "correct_value": "ACCESS describes only Half Moon Crag; the Mount Index / Lake Serene sentences are removed.",
+  "evidence": "Same copied Mount Index text as the other Half Moon Crag routes; the crag is on Tye Road near Wellington west of Stevens Pass, ~25 mi from Mount Index. Removing the two Mount Index sentences leaves the crag-specific sentences intact.",
+  "sources": ["https://www.mountainproject.com/area/117712289/half-moon-crag", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town", "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"],
+  "patches": [
+   {"id": "wa_astral_projection", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. ", "replace": ""},
+   {"id": "wa_astral_projection", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["parking_pass"], "find": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. ", "replace": ""}
+  ]},
+ {"id": "wa_astral_projection", "fact": "Whether trailhead parking requires a fee/pass", "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: the fee site is the Wellington Trailhead 2.8 mi up the road, not the crag's unofficial pullout at ~1.4 mi; no source states whether a pass is needed at the pullout. Left open.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.mountainproject.com/area/117712289/half-moon-crag"],
+  "patches": []},
+ {"id": "wa_astral_projection", "fact": "Permit field names the Wild Sky Wilderness", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: `permit` names a Wild Sky Wilderness permit, but Wild Sky is well west of Wellington; the crag's actual wilderness status (possibly Henry M. Jackson, possibly none) was not confirmed by two sources.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness", "https://en.wikipedia.org/wiki/Henry_M._Jackson_Wilderness"],
+  "patches": []},
+
+ {"id": "wa_astroglide", "fact": "Access notes describe a different peak (Mount Index)", "verdict": "fixed",
+  "correct_value": "ACCESS describes only Half Moon Crag; the Mount Index / Lake Serene sentences are removed.",
+  "evidence": "Same copied Mount Index text as the other Half Moon Crag routes; the crag is on Tye Road near Wellington west of Stevens Pass, ~25 mi from Mount Index. Removing the two Mount Index sentences leaves the crag-specific sentences intact.",
+  "sources": ["https://www.mountainproject.com/area/117712289/half-moon-crag", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town", "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"],
+  "patches": [
+   {"id": "wa_astroglide", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. ", "replace": ""},
+   {"id": "wa_astroglide", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["parking_pass"], "find": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. ", "replace": ""}
+  ]},
+ {"id": "wa_astroglide", "fact": "Managing national forest", "verdict": "fixed",
+  "correct_value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+  "evidence": "Forest Service Wellington Trailhead page and the WTA Wellington page both place this stretch of the Old Stevens Pass Highway in the Skykomish Ranger District of Mt. Baker-Snoqualmie National Forest; emergency.rangerStation is corrected to match access.land_manager.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"],
+  "patches": [
+   {"id": "wa_astroglide", "fact": "Managing national forest", "op": "set", "column": "emergency", "path": ["rangerStation"], "expect": "Okanogan-Wenatchee National Forest", "value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District"}
+  ]},
+ {"id": "wa_astroglide", "fact": "Whether trailhead parking requires a fee/pass", "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: the fee site is the Wellington Trailhead 2.8 mi up the road, not the crag's unofficial pullout at ~1.4 mi; no source states whether a pass is needed at the pullout. Left open.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.mountainproject.com/area/117712289/half-moon-crag"],
+  "patches": []},
+ {"id": "wa_astroglide", "fact": "Permit field names the Wild Sky Wilderness", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: `permit` names a Wild Sky Wilderness permit, but Wild Sky is well west of Wellington; the crag's actual wilderness status was not confirmed by two sources.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness", "https://en.wikipedia.org/wiki/Henry_M._Jackson_Wilderness"],
+  "patches": []},
+
+ {"id": "wa_asymptotic", "fact": "Access notes describe a different peak (Mount Index)", "verdict": "fixed",
+  "correct_value": "ACCESS describes only Half Moon Crag; the Mount Index / Lake Serene sentences are removed.",
+  "evidence": "Same copied Mount Index text as the other Half Moon Crag routes; the crag is on Tye Road near Wellington west of Stevens Pass, ~25 mi from Mount Index. Removing the two Mount Index sentences leaves the crag-specific sentences intact.",
+  "sources": ["https://www.mountainproject.com/area/117712289/half-moon-crag", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town", "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"],
+  "patches": [
+   {"id": "wa_asymptotic", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. ", "replace": ""},
+   {"id": "wa_asymptotic", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["parking_pass"], "find": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. ", "replace": ""}
+  ]},
+ {"id": "wa_asymptotic", "fact": "Managing national forest", "verdict": "fixed",
+  "correct_value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+  "evidence": "Forest Service Wellington Trailhead page and the WTA Wellington page both place this stretch of the Old Stevens Pass Highway in the Skykomish Ranger District of Mt. Baker-Snoqualmie National Forest; emergency.rangerStation is corrected to match access.land_manager.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"],
+  "patches": [
+   {"id": "wa_asymptotic", "fact": "Managing national forest", "op": "set", "column": "emergency", "path": ["rangerStation"], "expect": "Okanogan-Wenatchee National Forest, Skykomish Ranger District", "value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District"}
+  ]},
+ {"id": "wa_asymptotic", "fact": "Whether trailhead parking requires a fee/pass", "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: the fee site is the Wellington Trailhead 2.8 mi up the road, not the crag's unofficial pullout at ~1.4 mi; no source states whether a pass is needed at the pullout. Left open.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.mountainproject.com/area/117712289/half-moon-crag"],
+  "patches": []},
+ {"id": "wa_asymptotic", "fact": "Rappel distance vs route length", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The route's own climbing-database page gives its height as 60 ft (18 m), matching length_m, and the crag-wide description says all routes are about 85 ft or less — so the 85-foot figure in descent_text looks like the crag cap reused. Only one external source gives the per-route height and only one row field agrees, so no rewrite was made; suggested fix is to drop the 85-foot figure from descent_text.",
+  "sources": ["https://www.mountainproject.com/route/117712788/asymptotic", "https://www.mountainproject.com/area/117712289/half-moon-crag"],
+  "patches": []},
+ {"id": "wa_asymptotic", "fact": "Permit field names the Wild Sky Wilderness", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: `permit` names a Wild Sky Wilderness permit, but Wild Sky is well west of Wellington; the crag's actual wilderness status was not confirmed by two sources.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness", "https://en.wikipedia.org/wiki/Henry_M._Jackson_Wilderness"],
+  "patches": []},
+
+ {"id": "wa_artic_rose", "fact": "Access notes describe a different peak (Mount Index)", "verdict": "fixed",
+  "correct_value": "ACCESS describes only Half Moon Crag; the Mount Index / Lake Serene sentences are removed.",
+  "evidence": "Same copied Mount Index text as the other Half Moon Crag routes; the crag is on Tye Road near Wellington west of Stevens Pass, ~25 mi from Mount Index. Removing the two Mount Index sentences leaves the crag-specific sentences intact.",
+  "sources": ["https://www.mountainproject.com/area/117712289/half-moon-crag", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town", "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"],
+  "patches": [
+   {"id": "wa_artic_rose", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. ", "replace": ""},
+   {"id": "wa_artic_rose", "fact": "Access notes describe a different peak (Mount Index)", "op": "replace_text", "column": "access", "path": ["parking_pass"], "find": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. ", "replace": ""}
+  ]},
+ {"id": "wa_artic_rose", "fact": "Managing national forest", "verdict": "fixed",
+  "correct_value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+  "evidence": "Forest Service Wellington Trailhead page and the WTA Wellington page both place this stretch of the Old Stevens Pass Highway in the Skykomish Ranger District of Mt. Baker-Snoqualmie National Forest; emergency.rangerStation is corrected to match access.land_manager.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.wta.org/go-hiking/hikes/wellington-ghost-town"],
+  "patches": [
+   {"id": "wa_artic_rose", "fact": "Managing national forest", "op": "set", "column": "emergency", "path": ["rangerStation"], "expect": "Okanogan-Wenatchee National Forest, Skykomish Ranger District", "value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District"}
+  ]},
+ {"id": "wa_artic_rose", "fact": "Whether trailhead parking requires a fee/pass", "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: the fee site is the Wellington Trailhead 2.8 mi up the road, not the crag's unofficial pullout at ~1.4 mi; no source states whether a pass is needed at the pullout. Left open.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead", "https://www.mountainproject.com/area/117712289/half-moon-crag"],
+  "patches": []},
+ {"id": "wa_artic_rose", "fact": "Permit field names the Wild Sky Wilderness", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "As for wa_half_fast: `permit` names a Wild Sky Wilderness permit, but Wild Sky is well west of Wellington; the crag's actual wilderness status was not confirmed by two sources.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness", "https://en.wikipedia.org/wiki/Henry_M._Jackson_Wilderness"],
+  "patches": []}
+]}

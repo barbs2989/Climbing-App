@@ -1,0 +1,560 @@
+{
+ "applied": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to the summit vs. distance to the saddle below it"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance to the summit vs. distance to the saddle below it"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs equals the car-to-car total"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Road number for the trailhead (FR 68 vs FR 6835)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Time to reach the summit (summitTimeHrs)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager's ranger district"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach drainage named in partner requirements"
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to Waptus Lake"
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead access during the 2026 fire closure"
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Trailhead access during the 2026 fire closure"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "column": "approach",
+   "path": [],
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "column": "itinerary",
+   "path": [],
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel rope length requirement"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead access during the 2026 fire closure"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Trailhead access during the 2026 fire closure"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to Waptus Lake"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance to Waptus Lake"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "before": {
+    "approach": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313. The first ~2.75 miles follow Box Canyon Creek on gentle grade, crossing several side streams and cascades (reliable water throughout — no need to carry much from the car). At about mile 2.75 the trail crosses Box/Canyon Creek and hits the notorious 'mile from hell': a heavily rooted, rocky boot-beaten climb that gains roughly 1,300 ft in about a mile, with large step-ups and no switchbacks — this is the crux of the approach fitness-wise, not technically hard but brutal with a full pack. The trail tops out at Rachel Lake (4,700 ft, ~3.5-4 mi from the TH); a use trail/climber's path branches right near the outhouse and skirts the north side of the lake, then switchbacks steeply up rocky tread for about half a mile to the Rampart Ridge crest (~5,100 ft). At the ridge junction, go left (south) for Rampart Lakes or right for Lila Lake/Alta Mountain — for this route, follow the trail south along the ridge/east side of the Rampart Lakes basin. Stay on maintained tread through the lakes basin (it's fragile alpine turf/talus; short-cut social trails are discouraged and often marked closed with sticks/rock piles). At the south end of the lakes, locate the base of a large boulder gully with cliff bands on its left (west) side; ascend this gully on a boot path to a broad saddle at about 5,570 ft on the Rampart Ridge crest. Total to this point is roughly 6-6.5 miles and ~3,000 ft gain. From the saddle, turn west and follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure (in one section the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge). A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure. Total one-way distance to the 6,274 ft summit is about 9.5-10 km (matches the 19.3 km round trip) with roughly 3,300 ft of total gain.",
+    "approach_variants": [
+     {
+      "name": "Rachel Lake, Rampart Ridge, and the boulder gully to the 5,570 ft saddle",
+      "notes": "From the Rachel Lake trailhead at 2,800 ft, at the end of FS Rd 4930 off Kachess Lake Road from I-90 exit 62, take Rachel Lake Trail #1313. The first 2.75 miles follow Box Canyon Creek at a gentle grade with reliable water throughout.\n\nAt about mile 2.75 the trail crosses the creek and hits the section known locally as the mile from hell: a heavily rooted, rocky climb gaining roughly 1,300 ft in a mile with big step-ups and no switchbacks. It is the fitness crux of the day, not a technical one.\n\nAt Rachel Lake, 4,700 ft, a use trail branches right near the outhouse, skirts the lake's north side, and switchbacks steeply about half a mile to the Rampart Ridge crest at about 5,100 ft. At the ridge junction go LEFT (south) for Rampart Lakes, and follow the ridge and the east side of the lakes basin. Stay on maintained tread through the basin; the alpine turf is fragile and shortcut social trails are often deliberately blocked.\n\nAbout 6 to 6.5 miles and 3,000 ft to the saddle.",
+      "gainFt": 3300,
+      "season": "July to October. The route should not be attempted with snow on the ridge",
+      "hazards": [
+       "Sustained exposure along the ridge crest, including a section skirting a cliff edge",
+       "Three false summits and a class 3 downclimb crux near the top",
+       "Loose rock and large step-ups on the initial climbers' path",
+       "Afternoon thunderstorms on a long exposed crest",
+       "Lingering snow in the approach gully in early season"
+      ],
+      "baseFinding": "AT THE SOUTH END OF THE RAMPART LAKES, FIND A LARGE BOULDER GULLY WITH CLIFF BANDS ON ITS LEFT — THAT IS, ITS WEST — SIDE. Boulders in the gully, cliffs bounding it on the west: that pairing is the arrival test for the scramble takeoff, and it does not require seeing Alta.\n\nWHERE IT PUTS YOU: a boot path up that gully reaches a broad saddle at about 5,570 ft on the Rampart Ridge crest. Broad saddle at 5,570 ft is your altimeter confirmation. From there the route turns WEST along the crest toward Alta's summit block.\n\nWHAT THE RIDGE THEN DOES, SO YOU CAN COUNT YOUR WAY ALONG IT: THREE FALSE SUMMITS, class 2-3 rock steps, at least one near-vertical step of 6 to 8 ft with good holds and serious exposure, and a class 3 DOWNCLIMB crux near the top. A party that has crossed one bump and thinks it is at the summit is two bumps early.\n\nAND THE ONE PLACE WHERE THE FINDING IS A WARNING RATHER THAN A DIRECTION: there is a section where the path skirts a cliff edge. Fall consequences there are serious. This route should not be attempted with snow on the ridge, and it is not a place for anyone uneasy with heights or for dogs.\n\nA SECOND, INDEPENDENT DESCRIPTION OF THE SAME TAKEOFF: an unsigned climbers' path marked by a CAIRN leaves the maintained trail near the Rachel Lake / Lila Lake junction and climbs the south ridge. Steep, loose, big steps and no shade at first, then it moderates onto the knife-edge crest."
+     }
+    ],
+    "dist_km": 6.9,
+    "timing": {
+     "totalHrs": 8,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "Parties consistently treat this as a single long day hike/scramble, not a backpack. From the Rachel Lake TH (2,800 …",
+       "fromTo": "Car-to-car: Rachel Lake to Rampart Ridge & Alta Mountain",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "before": {
+    "road": {
+     "name": "Foss River Road (FR 68)",
+     "status": "Open seasonally; the upper section has experienced road damage limiting access, and weekday construction delays (~30 min) are posted May-September",
+     "driveNote": "From Skykomish, follow US-2 east about 2 miles to Foss River Road (FR 68), then continue roughly 5 miles; park along the road near mile 5.2 just after the East Fork Foss River bridge. Expect ~30-minute delays for road construction May–September on weekdays 6am–8pm (per USFS alert)."
+    },
+    "waypoints": [
+     {
+      "lat": 47.611404,
+      "lng": -121.2425768,
+      "elev": 1280,
+      "name": "Foss River Road (FR 68) roadside pullout, mile 5.2",
+      "note": "Park on the shoulder just after FR 68 crosses the East Fork Foss River bridge; no formal trailhead or sign, road access requires a Northwest Forest Pass.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US-2 at Skykomish, follow Foss River Road (FR 68) about two miles to the shoulder pullout near mile 5.2, just past the concrete bridge over the East Fork Foss River. There is no sign and no formal trailhead — parking is on the road shoulder — and a Northwest Forest Pass is required for the road."
+     },
+     {
+      "lat": 47.61173509090909,
+      "lng": -121.2443376,
+      "elev": 1400,
+      "name": "Leave road, enter forest for North Ridge",
+      "note": "No trail from the road; head cross-country uphill through old-growth forest toward the North Ridge crest.",
+      "type": "Junction",
+      "distMi": 0.2,
+      "directions": "Cross to the far side of the road at the bridge and go straight into the forest. There is no trail and no marked start: pick up the toe of the north ridge at around 1,600 ft and climb. Carry all your water, since nothing on the ridge above is reliable."
+     },
+     {
+      "lat": 47.613225,
+      "lng": -121.25226119999999,
+      "elev": 2600,
+      "name": "Deadfall zone below 2,600 ft",
+      "note": "Dense down timber strewn through the forest floor up to about 2,600 ft; weave through, stays passable but slows progress.",
+      "type": "Hazard",
+      "distMi": 1.1,
+      "directions": "The lower second-growth is choked with fallen timber, so the first several hundred feet of gain are spent weaving and scrambling over deadfall rather than walking. Stay on or near the crest; it stays passable, just slow. Around 2,600 ft the forest turns to older growth and the underbrush thins out noticeably."
+     },
+     {
+      "lat": 47.61537709090909,
+      "lng": -121.2637064,
+      "elev": 4900,
+      "name": "Brushy ridge section, 4,500-5,200 ft",
+      "note": "Thickest brush on the route with steep drop-offs on both sides of the narrow ridge crest; heavy vegetation forces careful footing.",
+      "type": "Hazard",
+      "distMi": 2.4,
+      "directions": "Through the old-growth the crest is easy to follow and there are few reasons to leave it, with moderate going to about 4,500 ft. There the ridge narrows and steepens into the brushiest stretch of the trip — small trees and slide alder crowding a pointier crest with real drop-offs on both sides. Stay on the crest despite the vegetation, since the flanks put you above those drop-offs, and expect heavy mosquitoes in season."
+     },
+     {
+      "lat": 47.61587372727273,
+      "lng": -121.2663476,
+      "elev": 5267,
+      "name": "First summit view point",
+      "note": "Rocky, more open ridge crest where the summit block comes into view for the first time; snow patches begin appearing here in early season.",
+      "type": "Junction",
+      "distMi": 2.7,
+      "directions": "By roughly 5,200 ft the brush releases and the ridge opens into rockier, more open ground with expanding views up the valley. Snow lingers later on the east side of the crest than on the drier crest itself."
+     },
+     {
+      "lat": 47.61620481818182,
+      "lng": -121.2681084,
+      "elev": 5400,
+      "name": "Cliff band bypass gully, 5,400 ft",
+      "note": "A cliff wall blocks the direct ridge line; bypass via a small gully with a rising traverse on the north-facing slope, often icy and best done with crampons/axe into summer.",
+      "type": "Hazard",
+      "distMi": 2.9,
+      "directions": "A short stretch of open ridge past the viewpoint runs straight into a cliff wall. Do not take it head-on: veer left off the crest into a small gully. This is where helmets go on and where crampons or spikes and an axe earn their weight, since the bypass holds hard snow and ice well into summer and is the route's crux."
+     },
+     {
+      "lat": 47.616701454545456,
+      "lng": -121.2707496,
+      "elev": 6100,
+      "name": "Regain North Ridge crest",
+      "note": "Above the gully bypass the route rejoins the North Ridge crest for the final push to the summit.",
+      "type": "Junction",
+      "distMi": 3.2,
+      "directions": "From the gully take a rising traverse across the shaded north-facing slopes into the upper basin, then climb steeply back onto the ridge crest. Loose rock and exposure make this the one section that demands real route-finding and careful downclimbing on the way out, so note the line you took as you go up."
+     },
+     {
+      "lat": 47.61686,
+      "lng": -121.27162,
+      "elev": 6259,
+      "name": "Bald Eagle Peak summit",
+      "note": "Snow-free rocky summit with a lingering snowfield on the east edge into summer; first ascent 1933 by Hermann Ulrichs and Ben Falkenburg via this same North Ridge.",
+      "type": "Summit",
+      "distMi": 3.3,
+      "directions": "A short stroll along the crest leads to rock outcrops just below the top. Traverse the exposed ledge past them, bypass the steep snow in a shallow moat, and finish the last twenty vertical feet through small trees to the rocky summit. An ice axe and light traction are worth keeping on for that ledge into midsummer."
+     }
+    ],
+    "approach": "From the pullout along Foss River Road (FR 68) near mile 5.2 — just past the concrete bridge over the East Fork Foss River, roughly 2 miles up FR 68 from US-2 at Skykomish — there is no maintained trail. Climbers cross to the north side of the road and pick up the toe of Bald Eagle's north ridge at about 1,600 ft, entering second-growth forest thick with fallen timber that requires weaving/scrambling over deadfall for the first few hundred feet of gain. Stay on or near the ridge crest heading south-southeast; around 2,600 ft the forest transitions to older growth and the underbrush thins out, making travel noticeably easier and the ridgeline easy to follow with few reasons to leave it. The going stays moderate until roughly 4,500 ft, where the ridge narrows and steepens into the trip's brushiest stretch — a pointier crest with real drop-offs on both sides, dense small trees/slide alder crowding the tread, and (in season) heavy mosquito pressure; move carefully here as exposure picks up. By 5,200 ft the ridge opens into rockier, more open terrain, with snow patches lingering later into the season (more persistent on the east side of the crest than on the drier, rockier ridge itself). At about 5,400 ft the ridge runs into a cliff band directly below the summit — this is the route's crux: bypass it by veering left (east) off the crest into a small gully and taking a rising traverse into the upper summit basin rather than attempting the band head-on. The final approach to the 6,259 ft summit crosses steep snow and a few small trees for the last ~20 vertical feet; helmet is warranted here for rockfall off the cliff band, and in early-to-mid season an ice axe and light traction (microspikes/crampons) are worth carrying for the final snow pitch and for the traverse below 5,400 ft. There is no reliable water source directly on the ridge once you leave the East Fork Foss River at the trailhead, so carry what you need. Best conditions are July–September; the route is class 3-4 scrambling with no roped climbing required on a dry ridge.",
+    "descent_text": "This is a walk-off/downclimb — descend by reversing the North Ridge exactly as ascended; there is no rappelling on the standard route. From the summit, downclimb the steep snow/small-tree section back to the top of the 5,400 ft cliff band, then carefully reverse the rising traverse and gully bypass on the east side of the crest to regain the ridge crest below the cliffs — this bypass is the one spot demanding real route-finding and careful downclimbing (loose rock and exposure in the gully), so many parties down-face here rather than walk it. Below 5,200 ft, follow the open rocky ridge back into the brushy, exposed 4,500-5,200 ft stretch, staying on the crest to avoid the steep drop-offs to either side. Once back into old-growth forest below 4,500 ft the ridge broadens and travel gets easy and fast; one party found the descent takes well under half the time of the ascent once past the brush and cliff band. Continue down through the second-growth/deadfall lower forest to regain FR 68 at the East Fork Foss River bridge pullout near mile 5.2. No technical anchors (bolted or natural) are used on this route — it is entirely natural terrain.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2",
+      "notes": "Enter forest on the ridge just past the FR 68 bridge over the East Fork Foss River; numerous fallen trees to negotiate but manageable terrain.",
+      "pitch": "1,600-2,600 ft"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Old-growth forest with mixed vegetation; traverse the ridge crest, bypassing dense brush and deadfall to the west side.",
+      "pitch": "2,600-4,500 ft"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "The brushiest section of the route, with steep drop-offs and dense small trees; staying on the crest is most feasible despite the brush.",
+      "pitch": "4,500-5,200 ft"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Rocky, mostly dry crest with expanding views; snow patches increase to the east of the ridgeline.",
+      "pitch": "5,200-5,400 ft"
+     },
+     {
+      "grade": "Class 3-4 / steep snow",
+      "notes": "A cliff wall forces a leftward traverse into a gully - crampons and helmet recommended - followed by a rising traverse across snow-covered northern slopes.",
+      "pitch": "5,400-6,100 ft"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Ridge stroll to outcrops below the summit, then an exposed ledge traverse (ice axe/microspikes) bypassing steep snow in a shallow moat for the final ~20 ft through small trees to the top.",
+      "pitch": "6,100-6,259 ft (summit)"
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 47.616805,
+     "peakLng": -121.271555,
+     "trailhead": "Foss River Road (FR-68) pullout near mile 5.2",
+     "trailheadDirection": "From the FR-68 pullout past the East Fork Foss bridge"
+    },
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "An unrelenting, unmaintained forest scramble with no water sources — climbers bushwhack from the Foss River Road pullout straight up the North Ridge, fight through a brushy, expose…",
+       "fromTo": "North Ridge scramble, car-to-car",
+       "section": "Climb"
+      }
+     ]
+    },
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party where the peak is inside Alpine Lakes Wilderness.",
+     "permit": "Self-issued Alpine Lakes Wilderness permit at the trailhead, available May 15–Oct 31",
+     "closures": "Foss River Road (FR 68) has experienced upper-road damage limiting access and is subject to seasonal washouts plus posted weekday construction delays (~30 min, May-Sept); check current Mt. Baker-Snoqualmie NF alerts before driving.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Alpine Lakes Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry your copy."
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous full car-to-car day: off-trail approach with sustained elevation gain and likely bushwhacking, no established boot path to the summit",
+      "packWeight": "Light day pack (~15-25 lb); no glacier or big technical rack needed"
+     },
+     "approachTime": "Long, unmarked approach off the Middle Fork Snoqualmie/Pratt River trail system; expect most/all of a day car-to-car since there is no dedicated summit trail",
+     "requiredSkills": [
+      "Off-trail navigation (map/compass or GPS)",
+      "Loose rock and talus scrambling",
+      "Bushwhack tolerance",
+      "Basic exposure/self-arrest comfort on blocky Class 3 terrain",
+      "Turnaround judgment for afternoon thunderstorms"
+     ],
+     "experienceLevel": "Intermediate off-trail scrambler - comfortable on unmarked Class 2-3 terrain and confident with independent routefinding (some parties describe sections as Class 3-4)"
+    }
+   }
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "before": {
+    "approach": "From the Salmon La Sac Trailhead, follow the Waptus River Trail and PCT roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge; from camp, the old track along Shovel Creek leads to the base of the Mega Slab, starting at its lowest point.",
+    "road": {
+     "name": "Salmon La Sac Rd (WA-903)",
+     "status": "Paved; trailhead open roughly late May through early November.",
+     "driveNote": "From Cle Elum, follow Hwy 903 for 19 miles to the Salmon La Sac Campground entrance, then turn right on a short gravel road (~0.25 mi) to the trailhead.",
+     "seasonalGate": "Typically gated/closed by snow in winter (roughly November-May)."
+    },
+    "access": {
+     "fees": "$5/vehicle/day or $30/year day-use fee (Northwest Forest Pass, Interagency Pass, or Digital Day Pass accepted)",
+     "permit": "Free self-issue wilderness permit required at the trailhead, in effect May 15-Oct 31",
+     "closures": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-36 (Three Queens Fire), effective 24 Aug 2026 through 31 Oct 2026. The Forest Service's own Salmon La Sac Trailhead page states 'Three Queens Fire Closure on the Cle Elum Ranger District is actively in effect at this location.'",
+     "landManager": "Alpine Lakes Wilderness — Okanogan-Wenatchee National Forest, Cle Elum Ranger District",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass / Digital Day Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "before": {
+    "approach": "From North Bend, take I-90 to exit 34, follow 468th Ave SE north 0.6 mi, then turn right onto Middle Fork Road (FS Road 56). Continue 12 miles (paved becoming rough) to where the road veers right, then drive ~5 more rough, high-clearance-recommended miles to the Dutch Miller Gap trailhead (old roadbed terminus, ~2,850 ft). Hike the Middle Fork Snoqualmie / Williams Creek corridor roughly 15 miles to Dutch Miller Gap (~4.8 hrs), then continue to a camp below the SW Face. Total round-trip trail distance for the outing is about 22 miles.",
+    "approach_variants": [
+     {
+      "name": "Middle Fork Snoqualmie and Williams Creek to Dutch Miller Gap, then a camp below the face",
+      "notes": "From North Bend, take I-90 to exit 34, follow 468th Ave SE north 0.6 mile, then right onto Middle Fork Road, FS Road 56. Continue twelve miles as the pavement gives out and roughens, then about five more rough miles — high clearance recommended — to the Dutch Miller Gap trailhead at the old roadbed terminus, about 2,850 ft.\n\nHike the Middle Fork Snoqualmie / Williams Creek corridor roughly fifteen miles to Dutch Miller Gap, about four and three quarter hours, then continue to a camp below the southwest face. The whole outing is about 22 miles of trail.\n\nCamp to summit runs about six hours and summit to camp about four and three quarter, so budget a full day above camp.",
+      "distMi": 15,
+      "gainFt": 5400,
+      "season": "July to September",
+      "hazards": [
+       "Loose, broken rock throughout the gully and the lower pitches",
+       "Marginal protection near an old, deteriorating piton at the pitch 1 crux",
+       "Complex, slow route-finding through ledges on the descent",
+       "A long, remote multi-day approach on a rough forest road with limited rescue access",
+       "No walk-off once on the roped summit block: the three rappels are the only reasonable retreat"
+      ],
+      "baseFinding": "YOU ARE COUNTING GULLIES, AND THERE ARE EXACTLY TWO. The southwest face carries TWO PARALLEL GULLIES. Take the LEFT-HAND one. That is the entire base finding and it works in cloud because two parallel features are countable from close range without seeing the summit.\n\nWHAT THE LEFT GULLY SHOULD DELIVER: roughly 1,000 ft of class 3-4 ground ending at a RIDGE NOTCH NORTHWEST of the true summit. Notch on the ridge, summit up and to your southeast: that is the correct arrival at the technical climbing.\n\nTHE ROPED PART IS SHORT AND ITS SHAPE CONFIRMS THE LINE: three short pitches to 5.6 up the summit block from that notch. Not a long face climb — three pitches. If you are looking at hundreds of feet of steep rock above the notch, you are at the wrong notch.\n\nAND THE DESCENT MIRRORS IT EXACTLY, which is worth knowing before you start up: three single-rope rappels down the WEST side of the summit block back to the notch, then downclimb the class 3-4 gully. A 50 m rope suffices; a 60 m or two 50 m ropes is better for a party of three. Route-finding through the ledges on the way down is reported as the crux of the descent and slower than the ascent.\n\nHISTORICAL CONFIRMATION THAT THIS IS THE ORDINARY WAY UP THE PEAK: this face gave the mountain's first ascent, on 8 August 1939, by Fred Beckey at sixteen with Joe Barto and Wayne Swift."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.5104,
+      "lng": -121.3495,
+      "elev": 2850,
+      "name": "Dutch Miller Gap Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 2850
+     },
+     {
+      "lat": 47.54,
+      "lng": -121.2256,
+      "elev": 7197,
+      "name": "Bears Breast Mountain Summit",
+      "type": "Summit",
+      "distMi": 11,
+      "elevFt": 7197
+     }
+    ],
+    "itinerary": "Day 1: Drive to the Dutch Miller Gap Trailhead and hike ~15 miles via the Middle Fork Snoqualmie/Williams Creek corridor to Dutch Miller Gap (~4.8 hrs), then continue to a camp below the SW Face. Day 2: Climb the SW Face — ~1,000 ft of gully scrambling then the 3-pitch summit block (~6 hrs camp-to-summit) — and descend via rappels and downclimbing back to camp (~4.7 hrs). Day 3: Hike back out to the trailhead.",
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 4.7,
+     "approachTimeHrs": 4.8,
+     "recommendedStart": null
+    },
+    "rappels": "3 single-rope rappels off the summit block (60m rope, or two 50m ropes for parties of 3+)"
+   }
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "before": {
+    "road": {
+     "name": "Salmon La Sac Rd (WA-903)",
+     "status": "Paved; trailhead open roughly late May through early November.",
+     "driveNote": "From Cle Elum, follow Hwy 903 for 19 miles to the Salmon La Sac Campground entrance, then turn right on a short gravel road (~0.25 mi) to the trailhead.",
+     "seasonalGate": "Typically gated/closed by snow in winter (roughly November-May)."
+    },
+    "access": {
+     "fees": "$5/vehicle/day or $30/year day-use fee (Northwest Forest Pass, Interagency Pass, or Digital Day Pass accepted)",
+     "permit": "Free self-issue wilderness permit required at the trailhead, in effect May 15-Oct 31",
+     "closures": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-36 (Three Queens Fire), effective 24 Aug 2026 through 31 Oct 2026. The USFS Salmon La Sac Trailhead page states the closure 'is actively in effect at this location'. The order also closes the Pacific Crest Trail from Snoqualmie Pass to Deception Pass.",
+     "landManager": "Alpine Lakes Wilderness — Okanogan-Wenatchee National Forest, Cle Elum Ranger District",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass / Digital Day Pass"
+    },
+    "approach": "From the Salmon La Sac Trailhead, follow the Waptus River Trail and PCT roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge. From camp, an old, faint, unmaintained track parallels Shovel Creek through forest to a bench around 3,400 ft, then talus-hops to the base of the Mega Slab (~3,700 ft) near Shovel Creek.",
+    "approach_variants": [
+     {
+      "name": "Waptus River and the PCT, then the Shovel Creek track to the middle of the slab",
+      "notes": "From the Salmon La Sac trailhead, follow the Waptus River Trail and the PCT roughly twelve flat miles to Waptus Lake and a camp near the Waptus River PCT bridge. The Waptus River bridge has been out, so plan on a ford at the horse crossing.\n\nFrom camp, an old, faint, unmaintained track parallels Shovel Creek through forest to a bench around 3,400 ft, then talus-hops to the base of the Mega Slab at roughly 3,700 ft.\n\nAbout 19.3 km one way and 4,697 ft of gain.",
+      "distMi": 12,
+      "gainFt": 4697,
+      "season": "July to September",
+      "hazards": [
+       "A long, remote approach with no confirmed reliable cell coverage",
+       "Loose rock and heavy route-finding on the Shovel Lake descent",
+       "No water on the slab itself",
+       "Deteriorating rock on the shared summit-block pitches"
+      ],
+      "baseFinding": "SAME SLAB, DIFFERENT PLACE ON IT: THIS ROUTE TAKES THE MIDDLE. Once you have crossed Shovel Creek off the talus and are standing under the Mega Slab, walk along the base to its MIDDLE and start there. The slab runs from about 3,700 ft at the creek to the southeast shoulder at about 6,700 ft, so the middle is a real and findable place along a very long base.\n\nTHE DISCRIMINATOR AGAINST ITS NEIGHBOUR IS A SINGLE STEP: Infinite Beauty starts at the LOWEST point of the slab, on a shallow rib. If you are at the bottom end of the base, you are on Infinite Beauty. Walk up along the base until you are in the middle of the sheet.\n\nWHAT THE ROCK SHOULD FEEL LIKE: perfect stone, mostly fourth class with occasional low-fifth moves higher up. If it is broken or vegetated you have drifted off the clean centre of the slab.\n\nWHERE THE TWO ROUTES MERGE, AND WHY THAT MATTERS TO THE FINDING: both finish on the SAME three-pitch 5.6+ summit block. So being on the correct route matters for the first 2,000 ft and stops mattering above the shoulder. If you are already on the summit block and unsure which line you climbed, the question no longer has a practical answer.\n\nA PRACTICAL NOTE THAT IS PART OF THE FINDING HERE: most parties either reverse the slab, which is easy and secure, or descend toward Shovel Lake. Reversing is the recommended option precisely because you already know that ground."
+     }
+    ]
+   }
+  }
+ ]
+}

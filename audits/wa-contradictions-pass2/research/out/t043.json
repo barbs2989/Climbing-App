@@ -1,0 +1,282 @@
+{
+ "file": "t043.json",
+ "results": [
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Whether the zone permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin and Crescent Creek cross-country zones are walk-up only; the permit is issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip (the 60% advance-reservable figure is park-wide and excludes these zones).",
+   "evidence": "The NPS backcountry reservations page lists the only advance-reservable cross-country zones as Boston Basin, Eldorado, Sulphide Glacier, Price, Triumph and Tapto Lakes and says the remaining cross-country zones are walk-up only; the NPS cross-country zones table lists Terror Basin and Crescent Creek (6 parties/night, party size 6) with no advance reservation. A 2025 trip report describes picking up the Terror Basin cross-country permit in person at the Marblemount WIC at 7 a.m. The route-level permit, access.permit, access.notes and overnight_permit.where are patched to match the walk-up wording already used on sibling Southern Pickets rows.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-05.193953014088"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Whether the zone permit can be reserved",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)"
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Whether the zone permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "About 60% of sites can be reserved in advance via Recreation.gov (watch the mandatory safety video, then email noca_wilderness@nps.gov within 3 days of the trip); the rest are held as walk-up/standby permits issued in person at",
+     "replace": "The Terror Basin and Crescent Creek cross-country zones cannot be reserved in advance; the permit is walk-up only, issued in person the day of or the day before the trip at"
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Whether the zone permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up",
+     "replace": "Park-wide, 60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40%, and every site in the Terror Basin and Crescent Creek Basin zones, are walk-up"
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Whether the zone permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Permit cost",
+   "verdict": "fixed",
+   "correct_value": "$10 per person plus a $6 nonrefundable fee, charged mid-May to early October (walk-up permits included); no charge early October to mid-May.",
+   "evidence": "The NPS fee-structure news release says summer-season backcountry permits are $10 per person plus a $6 nonrefundable permit fee, charged mid-May through early October with no charge the rest of the year; a Spokesman-Review report gives the same $10 + $6 structure for the summer season. The NPS reservations page and a park-fund explainer both say the $6 fee is also charged on first-come walk-up permits. The waypoint's 'free' is only true off-season, so both waypoint copies are reworded; access.fees is already correct.",
+   "sources": [
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://www.spokesman.com/stories/2024/jan/29/north-cascades-national-park-tweaks-backcountry-ca/",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Permit cost",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "free NPS backcountry permit required for any overnight camping",
+     "replace": "NPS backcountry permit (fee charged mid-May to early October) required for any overnight camping"
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Permit cost",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "needs a free backcountry wilderness permit",
+     "replace": "needs a backcountry wilderness permit, which carries a fee from mid-May to early October"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "fact": "Where the Day 1 camp is and how much the day gains",
+   "verdict": "fixed",
+   "correct_value": "Day 1 gains well over 5,000 ft (gainFt 5,700 stands); Terror Basin (~5,800 ft) is the itinerary's camp, and Stump Hollow / the Chopping Block ridge is a common alternative high camp closer to the peak, not the single standard one.",
+   "evidence": "Trip reports put the Goodell Creek trailhead near 500-600 ft and the Terror Basin camp at about 5,800 ft below a ~6,200 ft notch (roughly 5,200-5,600 ft of gain to camp), and another party camping near the Chopping Block at ~5,600 ft reports roughly 5,000 ft of gain, so '~4,000+' understates the day and 5,700 fits. A route overview notes parties also camp on the Chopping Block ridge, reached from Terror Basin via the lower Barrier crossing into Stump Hollow, so both camps are in use; the Stump Hollow waypoint is reworded from 'the standard' to 'a common' high camp so it no longer conflicts with the Terror Basin itinerary.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://onehikeaweek.com/2016/08/01/west-mcmillan-spire/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Where the Day 1 camp is and how much the day gains",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "It's a brutal, sustained ~4,000+ ft grind with little flat ground until camp.",
+     "replace": "It's a brutal, sustained grind of well over 5,000 ft with little flat ground until camp."
+    },
+    {
+     "id": "wa_the_chopping_block_south_route",
+     "fact": "Where the Day 1 camp is and how much the day gains",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "the standard high camp for the South Route.",
+     "replace": "a common high camp for the South Route, closer to the peak than Terror Basin."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "fact": "Difficulty of the standard west-side line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Research points the OPPOSITE way from the reader's internal resolution: a Southern Pickets trip report grades the Pyramid West Ridge Class 3 ('a fun and easy scramble', no fifth-class moves), and the peak's encyclopedia entry lists the easiest route as Class 3 scrambling; another report describes only choss scrambling from the notch south of Degenhardt. The row's low-5th claims (grade, rock_grade, beta, approach_variants, waypoints[5]) are not corroborated by any source found, but they may describe the gully line/col step rather than the ridge, so no patch is written. Settling it needs a source describing this specific 'South Route' gully line's difficulty; if none exists, the grade fields should probably move to Class 3.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://en.wikipedia.org/wiki/Pyramid_Peak_(Whatcom_County,_Washington)",
+    "http://drdirtbag.com/2014/07/28/southern-pickets/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Permit fee basis",
+   "verdict": "fixed",
+   "correct_value": "$10 per person (not per night) plus a $6 nonrefundable fee, charged mid-May to early October.",
+   "evidence": "The NPS fee-structure release states '$10 per person plus a $6 nonrefundable permit fee' with no per-night basis, charged mid-May through early October; the Spokesman-Review report on the March 2024 change gives the same per-person structure for the whole permit. The NPS reservations page lists the recreation fee as '$10 per person'. One park-fund explainer says per night, but the park's own pages and the news coverage agree on per person. access.permit is aligned with access.fees.",
+   "sources": [
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://www.spokesman.com/stories/2024/jan/29/north-cascades-national-park-tweaks-backcountry-ca/",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_rake_traverse_route",
+     "fact": "Permit fee basis",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "($10/person/night + $6 nonrefundable fee as of March 2024 — no longer free)",
+     "replace": "($10/person + $6 nonrefundable fee as of March 2024, charged mid-May to early October)"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Peak coordinates",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach_logistics.peakLat/Lng (48.768, -121.288) is not the Rake's summit and matches the coordinate other Southern Pickets rows use, while the summit waypoint (48.7755, -121.3067) agrees with the area coordinate. Coordinates are out of scope for this pass (no patch allowed); a coordinate pass should set peakLat/Lng from the summit waypoint after checking a topo-derived coordinate for The Rake.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Summit elevation of The Rake",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit waypoint says 7,840 ft while itinerary day 2 says 7,869 ft (in the note and the schedule). One topo list gives 7,869 ft and a Pickets trip-report index gives 7,840 ft, so the two outside records disagree just as the row does; a USGS/interpolated topo figure would settle which to adopt.",
+   "sources": [
+    "https://www.listsofjohn.com/PeakStats/Climbers.php?Id=48962",
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "fact": "Round-trip gain in the itinerary total note",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.totalNote says ~8,100 ft of gain round trip, but gain_ft is 7,700 and the itinerary days sum to 7,700 (5,800 + 1,600 + 300). No outside source stating the car-to-car gain for this route was found, so neither figure can be confirmed; a source for the total would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "fact": "Permit booking method implied by the fee",
+   "verdict": "fixed",
+   "correct_value": "$10 per person plus a $6 nonrefundable permit fee, which is also charged on walk-up permits; no Recreation.gov reservation is possible for these zones.",
+   "evidence": "The NPS reservations page says the $6 nonrefundable fee applies to lottery applications, reservations and walk-up permits, and a park-fund explainer says the park charges the $6 fee for first-come permits issued in person. The NPS reservations and cross-country-zone pages show Terror Basin and Crescent Creek are walk-up only, so the fee line's 'reservation fee (Recreation.gov)' is reworded.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_twin_needle_west_slope",
+     "fact": "Permit booking method implied by the fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "plus a $6 reservation fee (Recreation.gov)",
+     "replace": "plus a $6 nonrefundable permit fee, charged on walk-up permits too"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "$6 fee described as a reservation fee on a walk-up-only zone",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "$6 nonrefundable permit fee, charged on walk-up permits too.",
+   "evidence": "Same finding as on the West Slope row: the NPS reservations page and a park-fund explainer say the $6 fee is also charged on walk-up permits, and these zones are walk-up only, so 'reservation fee' contradicts the row's own walk-up-only permit text.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_west_twin_needle_south_route",
+     "fact": "$6 fee described as a reservation fee on a walk-up-only zone",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "plus a $6 reservation fee for backcountry permits",
+     "replace": "plus a $6 nonrefundable permit fee for backcountry permits (walk-up permits included)"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Distance to Crescent Creek Basin camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A West Twin Needle trip report gives 19.5 mi round trip (600-7,936 ft) and describes the camp below Mount Terror as about a mile's traverse from a 6,400 ft bench; a club route page says the col camp near the Chopping Block is 'more than six miles' in. That suggests camp around 7-7.5 mi (matching waypoints[4]), not 9.5, but no source states the trailhead-to-camp distance outright, and changing days 1 and 3 to 7.5 mi would leave the itinerary at 17.5 mi against the stated 19.5 mi round trip. A measured track or a source giving the one-way mileage to the Crescent Creek camp would settle it.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/southern-picket-range"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach; 15.7 km (9.75 mi) one way is consistent with the stated ~19.5 mi (~31 km) round trip and the 9.5 mi summit waypoint.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,236 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Direction along the summit ridge"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Direction along the summit ridge"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Off-trail line (east side of Annette and a gully vs over Peak 5681 along the crest)"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Overnight permit"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Overnight permit"
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Drive distance from Bellingham"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_ann_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "The upper Mt Baker Highway to Austin Pass typically isn't snow-free and open until roughly July depending on snowpack, and the trailhead has had weekend-focused access in recent seasons -- check current Forest Service alerts before planning a start time.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single, full-day out-and-back: hike the Lake Ann Trail from Austin Pass up to the 4,900 ft saddle above Lake Ann, then scramble east along the connecting ridge over Mount Annette's south ridge to the Mount Ann summit, and reverse the whole route to descend. No camping is required or typically used.",
+       "hours": 8,
+       "miles": 10.5,
+       "title": "Car-to-car scramble to the summit",
+       "gainFt": 4000,
+       "lossFt": 4000,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Austin Pass trailhead",
+         "detail": "Standard early start to beat afternoon weather and have a buffer for the ridge's ups and downs."
+        },
+        {
+         "time": "+2-2.5 hr",
+         "label": "Reach the saddle above Lake Ann (~4,900 ft)",
+         "detail": "Trail hiking on Lake Ann Trail No. 600 gains about 2,000 ft over roughly 4 miles."
+        },
+        {
+         "time": "+1.5-2.5 hr",
+         "label": "Ridge scramble to Mount Ann summit",
+         "detail": "Off-trail scrambling along the connecting ridge past Mount Annette's south ridge (~5,500 ft); more undulating terrain than the map suggests, with some exposure."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit Mount Ann (5,873 ft)",
+         "detail": "Views of Mount Shuksan's Curtis Glaciers; typical turnaround point."
+        },
+        {
+         "time": "+2.5-4 hr",
+         "label": "Descend to trailhead",
+         "detail": "Reverse the ridge scramble and boot path to the saddle, then the Lake Ann Trail back to the car."
+        }
+       ],
+       "objective": "Reach the Mount Ann summit via the Lake Ann Trail and south ridge scramble"
+      }
+     ],
+     "totalNote": "A standard single-day car-to-car scramble: about 7-9 hours round trip for 10.5 miles and 4,000 ft of gain/loss, with no overnight camp."
+    },
+    "timing": {
+     "totalHrs": 8,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "A single, full-day out-and-back: hike the Lake Ann Trail from Austin Pass up to the 4,900 ft saddle above Lake Ann, then scramble east along the connecting ridge over Mount Annette…",
+       "fromTo": "Car-to-car scramble to the summit",
+       "section": "Climb"
+      }
+     ]
+    },
+    "beta": "From the Austin Pass/Lake Ann trailhead, hike the maintained Lake Ann Trail, which drops roughly 900 ft into the Lake Ann basin before climbing back out. Near the Lake Ann junction, leave the trail and work up heather benches and talus, staying fairly high on the east side of Mount Annette (nicknamed 'Little Ann') rather than dropping into brush, then continue up a gully (often snow-filled and roughly following a fault line) to gain the summit ridge and the top of Mount Ann. The off-trail portion is generally straightforward Class 2 route-finding, though boot paths can peter out higher up and steeper sections may warrant an ice-axe self-belay. Reported round-trip stats vary by GPS track/route taken (10.5 mi RT / 4,000 ft gain is the commonly listed figure; individual logs have recorded figures as low as ~11 mi / ~3,400 ft), reflecting that this is an off-trail line rather than a fixed path.",
+    "season": "Jun-Sep (snow-free); winter/spring ascents possible for experienced parties with stable snowpack and mountaineering gear",
+    "approach_variants": [
+     {
+      "name": "Lake Ann Trail #600 to the 4,900 ft saddle, then the boot path and cairns over Peak 5681",
+      "notes": "From the Austin Pass / Artist Point trailhead at the end of SR-542, follow the signed Lake Ann Trail #600. It DROPS about 700 ft into the Swift Creek headwaters basin before climbing back up past Lake Ann — 4.1 miles one way to the lake area — to a saddle at 4,900 ft northwest of the lake.\n\nFrom the saddle, leave the maintained trail for a boot path heading southwest then south along the ridge crest. Where the ridge steepens near 5,300 ft the path contours the EAST side before the crest re-forms; from there follow cairns over Peak 5681 and scramble roughly half a mile west along the summit ridge to Mount Ann.\n\nAbout 10.5 miles round trip with roughly 4,000 ft of cumulative gain, most of which comes from the fact that the trail loses 700 ft at the start and you pay it back at the end.\n\nNOTE ON THE NAME: this is the Lake Ann below Artist Point on SR-542, not the Lake Ann near Maple Pass. One route has already been recorded with the wrong Lake Ann's trailhead.",
+      "season": "Roughly Jun-Sep snow-free; winter and spring ascents are done by experienced parties with mountaineering gear on a stable snowpack",
+      "hazards": [
+       "Cairns as the only navigation above 5,300 ft, in both directions",
+       "Contouring low on the return, which cliffs out above the Swift Creek basin",
+       "A 700 ft descent at the start that must be re-climbed at the end of the day",
+       "Two Lake Anns in the North Cascades, and one of them has already been given the wrong trailhead",
+       "Lingering snow on the traverse in early season"
+      ],
+      "baseFinding": "THE 4,900 FT SADDLE NORTHWEST OF THE LAKE IS WHERE THE ROUTE STARTS, AND IT IS THE LAST PIECE OF MAINTAINED TRAIL. Below it, built tread. Above it, a boot path. If you are still on graded trail heading toward the Fisher Chimneys and Shuksan, you have walked past your turn — that is the same trail, continuing.\n\nTHE BEARING OUT OF THE SADDLE IS SOUTHWEST, THEN SOUTH, ALONG THE CREST. Two headings in sequence. In cloud, keep the crest under your feet.\n\nTHE ONE PLACE THE ROUTE LEAVES THE CREST IS NEAR 5,300 FT, AND IT GOES EAST. Where the ridge steepens the path contours the EAST side before the crest re-forms above. Contouring west here puts you on the wrong side of the ridge above the Swift Creek basin.\n\nCAIRNS ARE THE HANDRAIL ABOVE 5,300 FT, and losing them is the main route-finding hazard in poor visibility, in both directions. Note them going up.\n\nARRIVAL: the scrambling ridge runs roughly half a mile WEST from Peak 5681 to Mount Ann's summit. Peak 5681 is not the top — if you are standing on a high point and there is more ridge running west, keep going.\n\nAND THE RETURN TRAP, which is worth stating because it is a cliff problem rather than a navigation one: coming back, stay HIGH on the ridge rather than contouring low where the path is indistinct. Contouring low here cliffs out above the basin."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.8511,
+      "lng": -121.6861,
+      "elev": 4700,
+      "name": "Lake Ann Trailhead (Austin Pass)",
+      "note": "Paved lot on SR 542 just below Artist Point; Northwest Forest Pass required, self-issue backcountry permit for overnight camping.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Mount Baker Highway (SR 542) to its end at the Austin Pass/Artist Point trailhead, a paved lot roughly 58 miles and 1.5-2 hours from Bellingham. A Northwest Forest Pass is required to park, and a self-issue backcountry permit is needed if you're camping overnight. The upper highway to Austin Pass typically isn't snow-free and open until around July depending on snowpack, and the trailhead has had weekend-focused access in recent seasons, so check current alerts before planning a start time."
+     },
+     {
+      "lat": 48.84357,
+      "lng": -121.676601,
+      "elev": 4000,
+      "name": "Swift Creek Trail 607 junction",
+      "note": "Trail drops ~700 ft from the trailhead into the Swift Creek headwaters basin; Swift Creek Trail splits off here, stay on Lake Ann Trail 600.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 48.836,
+      "lng": -121.660959,
+      "elev": 3900,
+      "name": "Swift Creek meadow crossing",
+      "note": "Trail bottoms out through a wildflower meadow alongside upper Swift Creek before climbing again; reliable water but snowfields can bury the crossing into August.",
+      "type": "Water",
+      "distMi": 2.5
+     },
+     {
+      "lat": 48.826043,
+      "lng": -121.65513,
+      "elev": 4800,
+      "name": "Lake Ann",
+      "note": "Established camp basin below Mount Shuksan's Fisher Chimneys; must camp at least 2 mi from trailhead, and it fills up on weekends.",
+      "type": "Campsite",
+      "distMi": 3.9
+     },
+     {
+      "lat": 48.824339,
+      "lng": -121.655552,
+      "elev": 4900,
+      "name": "4,900-ft saddle NW of Lake Ann",
+      "note": "Leave the maintained trail here; a boot path heads southwest then south along the ridge toward Peak 5681 — this is the scramble jump-off point.",
+      "type": "Junction",
+      "distMi": 4.1
+     },
+     {
+      "lat": 48.81877,
+      "lng": -121.658644,
+      "elev": 5300,
+      "name": "Ridge steepening / indistinct boot path",
+      "note": "Path contours the east side of the ridge and gets hard to follow above ~5,300 ft; stay high on the ridge crest and watch for cairns rather than dropping onto loose east-facing slopes.",
+      "type": "Hazard",
+      "distMi": 5
+     },
+     {
+      "lat": 48.816912,
+      "lng": -121.660021,
+      "elev": 5681,
+      "name": "Peak 5681 (Han Peak/Mount Annette)",
+      "note": "Tree-covered subsidiary summit on the connecting ridge; from here continue west along an up-and-down ridge crest (steeper than it looks on the topo) toward Mount Ann.",
+      "type": "Junction",
+      "distMi": 5.4
+     },
+     {
+      "lat": 48.816505,
+      "lng": -121.666785,
+      "elev": 5873,
+      "name": "Mount Ann summit",
+      "note": "True summit, ~0.5 mi west of Peak 5681 along the ridge; Class 2-3 scrambling on the final pitch with views of Mount Shuksan and Mount Baker.",
+      "type": "Summit",
+      "distMi": 5.9
+     }
+    ],
+    "emergency": {
+     "county": "Whatcom",
+     "rangerStation": "Glacier Public Service Center / Mt. Baker Ranger District, 10091 Mt. Baker Hwy, Glacier, WA 98244, (360) 599-2714",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA — 24-hr ER, roughly 35 miles / ~1 hr drive from the trailhead, (360) 734-5400",
+     "sheriffDispatch": "911 for emergencies; Whatcom County Sheriff's Office non-emergency (360) 676-6911 coordinates search and rescue in this area"
+    }
+   }
+  }
+ ]
+}

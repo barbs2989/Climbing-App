@@ -1,0 +1,110 @@
+{
+ "applied": [
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance (dist_km vs itinerary miles)"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)",
+   "op": "set",
+   "column": "gain_ft",
+   "path": [],
+   "expect": 3500,
+   "value": 7600,
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "why": "expect mismatch at gain_ft[]: live 7600"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)",
+   "op": "replace_text",
+   "column": "descent_text",
+   "path": [],
+   "find": "~4,000+ ft of elevation loss",
+   "replace": "~7,000+ ft of elevation loss",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "why": "find occurs 0x at descent_text[]"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Whether fixed rappel anchors exist on the crux/summit step",
+   "op": "replace_text",
+   "column": "descent_text",
+   "path": [],
+   "find": "there are no fixed bolts, chains, or any other fixed hardware on this route, so if you choose to rappel it rather than downclimb, you'll build a natural anchor (webbing/cord around a horn or block) and retrieve your gear, or downclimb it with a spot/handline",
+   "replace": "there are no bolts or chains, but slung rappel anchors have been found left in place at the edge of the summit ridge, above the crux step and at the summit block — inspect any webbing and carry spare cord to back it up or build your own, or downclimb it with a spot/handline",
+   "sources": [
+    "https://www.countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain/",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "why": "find occurs 0x at descent_text[]"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Bird Creek Camp's elevation and position",
+   "op": "set",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "expect": 5800,
+   "value": 4200,
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "why": "expect mismatch at waypoints[2,\"elev\"]: live 4200"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Bird Creek Camp's elevation and position",
+   "op": "replace_text",
+   "column": "beta",
+   "path": [],
+   "find": "From Bird Creek Camp (~5,400 ft)",
+   "replace": "From Bird Creek Camp (~4,200 ft)",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "why": "find occurs 0x at beta[]"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "fact": "Bird Creek Camp's elevation and position",
+   "op": "replace_text",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "find": "Bird Creek Camp (~5,400 ft)",
+   "replace": "Bird Creek Camp (~4,200 ft)",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tupshin-devore-peaks",
+    "https://havetent.com/2022/08/16/stehekin-slam-devore/"
+   ],
+   "why": "find occurs 0x at pitch_detail[0,\"notes\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "before": {
+    "dist_km": 5.6
+   }
+  }
+ ]
+}

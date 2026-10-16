@@ -1,0 +1,147 @@
+{
+ "id": "wa_forbidden_peak_north_ridge",
+ "name": "North Ridge",
+ "waypoints": [
+  {
+   "lat": 48.48055,
+   "lng": -121.07979,
+   "elev": 3200,
+   "name": "Boston Basin Trailhead",
+   "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, self-issue wilderness permit required.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The Boston Basin trailhead is a small pullout on Cascade River Road roughly 21.7 miles from Marblemount, at about 3,200 ft. You need a Northwest Forest Pass to park there. A wilderness permit is required to camp in Boston Basin, and those permits are competitive — they go through the Park Service's early-access lottery, so have one in hand before you make the drive up."
+  },
+  {
+   "lat": 48.501315,
+   "lng": -121.062561,
+   "elev": 6400,
+   "name": "Boston Basin High Camp",
+   "note": "Standard base camp for both Torment and Forbidden; continue northeast along the Quien Sabe Glacier's west edge toward Sharkfin Col.",
+   "type": "Campsite",
+   "distMi": 3,
+   "directions": "From the pullout, follow the old Diamond Mine roadbed about a mile, then take the unsigned climbers' path that leaves it and climbs steeply through forest, crossing four streams, to treeline near 5,300 ft. Continue up heather and boulder slopes into Boston Basin to the high camps near 6,400 ft."
+  },
+  {
+   "lat": 48.50492,
+   "lng": -121.06469,
+   "elev": 7720,
+   "name": "Sharkfin Col",
+   "note": "Low point on the ridge left of Sharkfin Tower, gained via ~10 ft of 5.7 rock and a 200-ft class-3 gully; loose scree underfoot.",
+   "type": "Junction",
+   "distMi": 3.6
+  },
+  {
+   "lat": 48.50539,
+   "lng": -121.064205,
+   "elev": 7570,
+   "name": "Rappel to Boston Glacier",
+   "note": "Rappel of roughly 100-150 ft, in one or two stages depending on snow, down a loose gully off the col to reach the Boston Glacier; watch for rope-snag on loose rock.",
+   "type": "Hazard",
+   "distMi": 3.7
+  },
+  {
+   "lat": 48.50774,
+   "lng": -121.06178,
+   "elev": 7000,
+   "name": "Boston Glacier crevasse traverse",
+   "note": "Northward traverse through heavily crevassed terrain toward the north end of the glacier; a fall here would be serious, kick solid steps.",
+   "type": "Hazard",
+   "distMi": 4.2
+  },
+  {
+   "lat": 48.50962,
+   "lng": -121.05984000000001,
+   "elev": 8100,
+   "name": "North Ridge crest",
+   "note": "Ridge regained above a 5.6 left-facing corner crux; two small snow-free bivy spots sit just below on the northeast side.",
+   "type": "Junction",
+   "distMi": 4.6
+  },
+  {
+   "lat": 48.51165,
+   "lng": -121.05841,
+   "elev": 8815,
+   "name": "Forbidden Peak",
+   "note": "True summit; descend via the West Ridge couloir back to Boston Basin.",
+   "type": "Summit",
+   "distMi": 5
+  }
+ ],
+ "itinerary": {
+  "cal": "Boston Basin permits are won via NPS's competitive early-access lottery; check current Boston Glacier crevasse conditions before committing to this route.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike from the trailhead into Boston Basin and continue up to a high camp near Sharkfin Tower, carrying glacier and overnight gear.",
+    "hours": 4.5,
+    "miles": 3.6,
+    "title": "Approach to high camp near Sharkfin Col",
+    "gainFt": 3000,
+    "lossFt": 0,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Reach a high camp (~7,500 ft) below Sharkfin Tower"
+   },
+   {
+    "n": 2,
+    "note": "Rappel from Sharkfin Col onto the Boston Glacier, cross it roped for crevasses, then climb to a small exposed bivy notch on the ridge itself.",
+    "hours": 7,
+    "miles": 2,
+    "title": "Rappel to and cross the Boston Glacier, gain the North Ridge bivy",
+    "gainFt": 600,
+    "lossFt": 500,
+    "packLb": 32,
+    "schedule": [
+     {
+      "time": "Early AM",
+      "label": "Leave high camp"
+     },
+     {
+      "time": "~4 hrs in",
+      "label": "Reach Sharkfin Col rappel"
+     },
+     {
+      "time": "Midday",
+      "label": "Cross the Boston Glacier"
+     },
+     {
+      "time": "~6:30 PM",
+      "label": "Reach North Ridge bivy notch"
+     }
+    ],
+    "objective": "Reach the exposed bivy site low on the North Ridge"
+   },
+   {
+    "n": 3,
+    "note": "Climb the North Ridge's mixed snow, ice, and 5th-class rock to the summit pyramid, then descend the standard West Ridge notch and couloir back into Boston Basin and out to the trailhead.",
+    "hours": 13,
+    "miles": 3.4,
+    "title": "North Ridge to summit, descend West Ridge to trailhead",
+    "gainFt": 900,
+    "lossFt": 5200,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "Early AM",
+      "label": "Break camp, start climbing"
+     },
+     {
+      "time": "~12:30 PM",
+      "label": "Summit"
+     },
+     {
+      "time": "Afternoon",
+      "label": "Descend West Ridge couloir"
+     },
+     {
+      "time": "Late afternoon/evening",
+      "label": "Hike out to trailhead"
+     }
+    ],
+    "objective": "Climb the ridge and hike out"
+   }
+  ],
+  "totalNote": "A serious 3-day route, not a simple single-camp climb: hike to a high camp, rope up to rappel and cross the remote Boston Glacier to a knife-edge bivy on the ridge, then climb to the summit and descend the standard West Ridge."
+ }
+}

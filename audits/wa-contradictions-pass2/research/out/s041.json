@@ -1,0 +1,262 @@
+{
+ "file": "s041.json",
+ "results": [
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Approach line and base camp for the summit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The Olympic climbers' guide lists three separate lines on this peak: Class 2 via Camp Siberia, Class 3 via the upper west face (above the Lake La Crosse basin), and Class 2 via La Crosse Pass. The approach prose offers both the basin and the pass lines, so a basin-camp itinerary and a pass-based waypoint list describe two genuine options, not one fact stated two ways.",
+   "sources": [
+    "https://web.archive.org/web/2023/http://www.climbersguideolympics.com/peaks/dosewalips-group/mount-la-crosse",
+    "https://www.hikingproject.com/trail/7001888/lacrosse-basin-way-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "La Crosse Pass Trail length and gain",
+   "verdict": "fixed",
+   "correct_value": "The La Crosse Pass Trail is about 6.4 miles over the divide; from the Duckabush side it gains roughly 3,000 ft (the ~2,000 ft figure is the gentler West Fork Dosewallips side).",
+   "evidence": "The park gives the whole trail as 6.4 miles. A trail database says the Duckabush side climbs nearly 3,000 ft and the Dosewallips side loses 2,000 ft; an independent 2015 trip report describes 2,000 ft up in 3 miles on the Dosewallips side and 3,000 ft down in 3.3 miles to the Duckabush; a 2019 report counts about 30 switchbacks dropping 3,000 ft on the Duckabush side. So the 2,000 ft in pitch_detail[1] is the wrong side's figure for this Duckabush approach. The Duckabush-side DISTANCE ('about a mile' vs ~3.3 mi) is handled separately below.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lacrosse-pass-trail.htm",
+    "https://www.hikingproject.com/trail/7001887/lacrosse-pass",
+    "https://www.kuresman.com/2015/Olympic_Loop/Report_Olympic_Loop4.html",
+    "http://valdiree.blogspot.com/2019/08/quinault-to-duckabush-2019.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "about 6.4 miles with roughly 2,000 ft of gain.",
+     "replace": "about 6.4 miles; from the Duckabush side it climbs roughly 3,000 ft to the pass.",
+     "id": "wa_mount_la_crosse_scramble",
+     "fact": "La Crosse Pass Trail length and gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Duckabush-side distance from the La Crosse Pass Trail junction to the pass ('about a mile' vs waypoints 16.7 -> 23.1 mi)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach_variants[0] and descent_text put the ~3,000 ft climb in 'about a mile', while the waypoints place the pass 6.4 mi past the junction (the whole trail's length, which also includes the Dosewallips side). One trip report gives 3.3 miles for the Duckabush side; a trail database says the steepest ~3,000 ft come 'in the first mile or so' of a 5.4-mile trail. No two sources agree on the Duckabush-side mileage, and the junction's own 16.7 mi is also unconfirmed (the park gives 22.3 mi trailhead to O'Neil Pass). A GPS track of the junction-to-pass leg would settle it.",
+   "sources": [
+    "https://www.kuresman.com/2015/Olympic_Loop/Report_Olympic_Loop4.html",
+    "https://www.hikingproject.com/trail/7001887/lacrosse-pass",
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft and the itinerary day rows agree on 7,000 ft; the totalNote says ~9,000 ft. The only published totals found are for different loops (47-mile O'Neil Pass/La Crosse Basin loop from the Dosewallips, ~11,400 ft); no source states a car-to-car gain for this summit via the Duckabush. A GPS-recorded Duckabush round trip to the summit would settle it.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/oneill-pass-to-lake-la-crosse-loop",
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Season: October",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "mid-July through September",
+   "evidence": "season (Jul-Sep), itinerary.cal, seasonal_guidance (optimal window ends September, October risky), climate.bySeason.summer, the summit waypoint note and approach_variants[0].season all end the window in September; best_season is the lone outlier. The Olympic climbers' guide gives best months for the peak as June-September, agreeing on the September end (the park's October figure is for the trail, not the climb).",
+   "sources": [
+    "https://web.archive.org/web/2023/http://www.climbersguideolympics.com/peaks/dosewalips-group/mount-la-crosse",
+    "https://en.wikipedia.org/wiki/Mount_LaCrosse"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "best_season",
+     "path": [],
+     "expect": "mid-July through October",
+     "value": "mid-July through September",
+     "id": "wa_mount_la_crosse_scramble",
+     "fact": "Season: October"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Where the maintained trail is left",
+   "verdict": "fixed",
+   "correct_value": "Leave the trail a short way past High Pass (no fixed elevation)",
+   "evidence": "The Mountaineers route says to continue on trail past High Pass and then traverse left and down into the basin (giving ~6,400 ft); a 2016 trip report says the trail continues on beyond High Pass and they left it before it began switchbacking up again, with a short traversing descent to the snow; a 2025 trip report says the route leaves the High Pass Trail about a third of a mile past High Pass. All agree the turn-off is a short way past High Pass; only one gives 6,400 ft, which the row's own approach uses for a cliff band in the basin. Replacing the unconfirmed elevation with 'a short way past High Pass' removes the clash without asserting an unsourced figure.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-larrabee",
+    "https://bcmtnman.wordpress.com/2016/08/30/wherin-i-forget-to-protect-my-head/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-22.074806859737"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Leave the trail near 6,400 ft, traverse/descend",
+     "replace": "Leave the trail a short way past High Pass, traverse/descend",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the maintained trail is left"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Around 6,400 ft, traverse and drop slightly",
+     "replace": "A short way past High Pass, traverse and drop slightly",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the maintained trail is left"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "then leave the trail around 6,400 ft and traverse/descend",
+     "replace": "then leave the trail a short way past High Pass and traverse/descend",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the maintained trail is left"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "then leave the trail around 6,400 ft and traverse/descend",
+     "replace": "then leave the trail a short way past High Pass and traverse/descend",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the maintained trail is left"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Total elevation gain (gain_ft 3,900 vs itinerary 4,225 / totalNote ~4,200)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside figures for Twin Lakes to the summit still disagree: 1,013 m (~3,320 ft) over 9.6 km in a 2016 trip report, about 1,000 m over ~10 km in another blog, 3,900 ft via the lower Gargett Mine basin in a third, and 2,600 ft in the Mountaineers route. Two sources near ~3,300 ft would move gain_ft, but loss_ft (3,900) cannot be changed without its own sourced descent figure, so changing gain_ft alone would trade one contradiction for another. A GPS track from Twin Lakes on the standard line, reporting both gain and loss, would settle it.",
+   "sources": [
+    "https://bcmtnman.wordpress.com/2016/08/30/wherin-i-forget-to-protect-my-head/",
+    "https://adventuresinelevation.com/mount-larrabee/",
+    "https://trailcatjim.com/mt-larrabee-via-southwest-slope/",
+    "https://www.mountaineers.org/activities/routes-places/mount-larrabee"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "June through August (August most reliable; June fords hazardous)",
+   "evidence": "season (Jun-Aug), best_season, pro_tips[2], itinerary.cal ('June-Aug as the nominal season') and climate.bySeason.summer ('June–August') agree; seasonal_guidance (mid-July through September) and climate.summer are the outliers. The Olympic climbers' guide gives best months for Mount Lawson as June, July, August. The park's ford warning is kept as the June risk, not as a reason June is outside the season.",
+   "sources": [
+    "https://web.archive.org/web/2023/http://www.climbersguideolympics.com/peaks/quinault-group/mount-lawson",
+    "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through September; August is the most reliable window",
+     "value": "June through August; August is the most reliable window",
+     "id": "wa_mount_lawson_standard",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "river fords are dangerous with peak snowmelt (outside the season window)",
+     "replace": "river fords are dangerous with peak snowmelt, so treat a high river as a reason to turn back",
+     "id": "wa_mount_lawson_standard",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "Season opens mid-July; early",
+     "replace": "In season; early",
+     "id": "wa_mount_lawson_standard",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September",
+      "reason"
+     ],
+     "find": "Still within the season; cooler",
+     "replace": "Just past the usual season; cooler",
+     "id": "wa_mount_lawson_standard",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "find": "(roughly June/July–September)",
+     "replace": "(roughly June–August)",
+     "id": "wa_mount_lawson_standard",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "fact": "Approach distance (dist_km) vs itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 30.58 (~19 mi) is shown as the one-way approach, but the trail to the leave-trail ford is ~12 mi and the round trip ~25 mi; the summit rises about 1.3 mi from the river. No source states a one-way trailhead-to-summit distance, and computing one is not allowed. A source giving the one-way distance would settle it.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://mazamas.org/activity/1100/",
+    "https://en.wikipedia.org/wiki/Mount_Lawson_(Washington)"
+   ],
+   "patches": []
+  }
+ ]
+}

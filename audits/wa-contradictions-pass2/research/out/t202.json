@@ -1,0 +1,522 @@
+{
+ "file": "t202.json",
+ "results": [
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Gain vs loss on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 8300 and loss_ft 8600 each equal their itinerary column sums, so the disagreement is between gain and loss themselves (and day 1 nets +300 ft to a camp that the waypoints put 100 ft below the trailhead). No outside source states a car-to-car gain or descent figure for this route alone; the one published total found (about 13,300 ft gained and lost) covers a multi-peak trip with side trips. Settling it needs a sourced car-to-car descent figure for the Slate Pass-Shellrock Basin line.",
+   "sources": [
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Shellrock camp elevation",
+   "verdict": "fixed",
+   "correct_value": "Camp in Shellrock Basin below the pass at about 6,800 ft",
+   "evidence": "One trip report camped at a flat area around 6,800 ft at a small tarn below Shellrock Pass; a second party's favourite camp was at 6,800 ft just past a small lake on the trail toward Shellrock Pass. The camp waypoint (6,800) and the approach (camp in the basin below the pass) agree; only the itinerary note put camp at ~7,200 ft at the pass.",
+   "sources": [
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://mountainflamingo.com/2020-08-05-09-pasayten-peakbagging/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "camping at or just below Shellrock Pass (~7,200 ft)",
+     "replace": "camping in the basin below Shellrock Pass (~6,800 ft)",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Shellrock camp elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Harts Pass road status",
+   "verdict": "fixed",
+   "correct_value": "Road reopened after flood repairs by mid-June 2026, closed again at Monument Creek from late July 2026 by the Ptarmigan Fire, reopened late August 2026; a fire closure order through Oct 31, 2026 still closes Buckskin Ridge and the Middle Fork trail short of the lakes",
+   "evidence": "The Forest Service closure order 06-17-04-26-39 (Sept 9-Oct 31, 2026) closes the Buckskin Ridge Trail #498, Eureka Creek #474, Shellrock #484.1 and trail #478 north of the Eureka Creek junction. Local news reported the road closed at the Monument Creek trailhead from late July due to the lightning-caused Ptarmigan Fire, reopened by late August, and on Sept 17 that Buckskin Ridge is still closed and the Robinson Creek trail is closed before the Ferguson junction. The access and road cards omitted the fire entirely; the bivy note (not patched, owned by the camping clean-up) is historically right that the road closed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/ptarmigan-fire-closure-methow-valley-ranger-district-0",
+    "https://methowvalleynews.com/2026/08/06/trail-campground-closures-an-overview/",
+    "https://methowvalleynews.com/2026/08/27/quick-responses-contain-local-wildfires",
+    "https://methowvalleynews.com/2026/09/03/more-recreational-trails-are-opening-up",
+    "https://methowvalleynews.com/2026/09/17/as-autumn-arrives-fire-closures-are-being-reduced-on-area-trails"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "reopened following repairs by mid-June 2026 — confirm current road status",
+     "replace": "reopened following repairs by mid-June 2026. The lightning-caused Ptarmigan Fire then closed the road again at the Monument Creek trailhead from late July until it reopened in late August 2026, and a fire closure order in effect through October 31, 2026 still closes the Buckskin Ridge Trail and the Middle Fork Pasayten trail short of the lakes, which cuts off this approach — confirm current road and trail status",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Harts Pass road status"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "it reopened after repairs by mid-June 2026 —",
+     "replace": "it reopened after repairs by mid-June 2026, closed again at the Monument Creek trailhead during the Ptarmigan Fire from late July, and reopened in late August 2026 —",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Harts Pass road status"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Basecamp name",
+   "verdict": "fixed",
+   "correct_value": "Lake Doris",
+   "evidence": "Two independent trip reports name the lake near Rolo Pass / Fred's Lake as Lake Doris (one followed Eureka Creek almost to Lake Doris; another found Lake Doris crowded and camped at Fred's Lake). No Dorothy Lake exists on this approach; the row's own waypoints and bivy say Doris.",
+   "sources": [
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://mountainflamingo.com/2020-08-05-09-pasayten-peakbagging/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "near Dorothy Lake or Shellrock Pass",
+     "replace": "near Lake Doris or Shellrock Pass",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Basecamp name"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Knife-edge on the NE ridge",
+   "verdict": "fixed",
+   "correct_value": "The knife-edge is on the crest from Shellrock Pass southwest to the col, not on the northeast ridge, which is an easy Class 2-3 ridge",
+   "evidence": "One trip report followed the ridge southwest from Shellrock Pass to the col below Blackcap and calls that ridge a true knife edge with class 2/3 on top, then describes the east face and northeast ridge as an easy scramble. A second report describes the summit ridge as class 2 with one or two class 3 moves, 2-3 m wide and easy to walk. The waypoint and pro_needs already agree; the climbing_route sentence misplaced the knife-edge.",
+   "sources": [
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://hike2hike.com/summits/black-cap-mountain-washington-north-cascades/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "loose rock near the top. The ridge includes one true knife-edge section with easy-to-moderate exposure, distinct from the otherwise mellow class 2-3 terrain. Camp-to-summit",
+     "replace": "loose rock near the top. Camp-to-summit",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Knife-edge on the NE ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "fact": "Harts Pass road status",
+   "verdict": "fixed",
+   "correct_value": "Road open; closed Dec 2025 floods, reopened July 2, 2026, closed again at Monument Creek from late July by the Ptarmigan Fire, reopened late August 2026",
+   "evidence": "Local news reported the Harts Pass Road closed at the Monument Creek trailhead from late July 2026 because of the lightning-caused Ptarmigan Fire, and reported it reopened by late August (repair work ongoing). The Forest Service order in effect Sept 9-Oct 31 closes trails, not the road, and leaves the PCT open to the border, matching the existing access text. The road card and access card now carry the fire closure so they agree with the bivy note (not patched).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/ptarmigan-fire-closure-methow-valley-ranger-district-0",
+    "https://methowvalleynews.com/2026/08/06/trail-campground-closures-an-overview/",
+    "https://methowvalleynews.com/2026/08/27/quick-responses-contain-local-wildfires",
+    "https://methowvalleynews.com/2026/09/03/more-recreational-trails-are-opening-up",
+    "https://methowvalleynews.com/2026/09/17/as-autumn-arrives-fire-closures-are-being-reduced-on-area-trails"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "and listed open again by the Forest Service as of July 2, 2026",
+     "replace": ", listed open again by the Forest Service as of July 2, 2026, closed again at the Monument Creek trailhead by the Ptarmigan Fire from late July, and reopened in late August 2026",
+     "id": "wa_blizzard_peak_standard",
+     "fact": "Harts Pass road status"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "open as of July 2, 2026. Separately,",
+     "replace": "open as of July 2, 2026. The lightning-caused Ptarmigan Fire then closed the road again at the Monument Creek trailhead from late July until it reopened in late August 2026. Separately,",
+     "id": "wa_blizzard_peak_standard",
+     "fact": "Harts Pass road status"
+    }
+   ]
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "fact": "Class grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only route-specific account found rates Blizzard Class 1-2 from Frosty Pass (north ridge); no second independent source giving a class rating was found (peakbagger and summitpost pages blocked, no other trip reports). The row itself splits (Class 2 pill/pitch, Class 2-3 grade/pro_needs, Class 1-2 waypoint/itinerary/descent). A second published rating for the north ridge from Frosty Pass would settle it.",
+   "sources": [
+    "https://trailcatjim.com/chuchuwanteen-loop-hike-2012/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "fact": "Trailhead and the approach the numbers describe",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The lawful Harts Pass line is roughly 27 trail miles to Castle Pass before dropping into Castle Creek (the PCT mileage the row uses elsewhere), so dist_km 21.8 and gain_ft 4643 plainly describe the Manning Park line (a 2018 party did Monument 78 to the summit as a 29-mile, 4,700-ft day). No source gives a one-way distance or car-to-car gain for Harts Pass to Castle Creek Basin to this route, so the numbers cannot be replaced; the trailhead pin is out of scope. Settling it needs a sourced Harts Pass-to-Castle Creek Basin distance and gain for this line.",
+   "sources": [
+    "https://www.countryhighpoints.com/castle-peak/",
+    "https://stevensong.com/usa/washington/castle-peak-pasayten-wa/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "fact": "Season vs road opening",
+   "verdict": "fixed",
+   "correct_value": "Jul-Sep",
+   "evidence": "Two independent road descriptions say the Harts Pass road opens in early July as snow clears (one: usually open July to October, dates depending on snowmelt). The lawful approach needs that road, and the row's own approach note says it opens early to mid July, so a June start is not available on the lawful line.",
+   "sources": [
+    "https://ordealist.com/guides/harts-pass",
+    "https://www.dangerousroads.org/north-america/usa/1853-harts-pass.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep",
+     "id": "wa_castle_peak_pasayten_south_route",
+     "fact": "Season vs road opening"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Roughly late June through September",
+     "replace": "Roughly July through September",
+     "id": "wa_castle_peak_pasayten_south_route",
+     "fact": "Season vs road opening"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "June–September once the Castle Creek",
+     "replace": "July–September, once the Harts Pass road is open and the Castle Creek",
+     "id": "wa_castle_peak_pasayten_south_route",
+     "fact": "Season vs road opening"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "fact": "Which approach access/emergency describe",
+   "verdict": "fixed",
+   "correct_value": "Access, land manager and emergency cards describe the lawful Ross Lake approach; the Manning Park line is the first-ascent line only",
+   "evidence": "The row's approach, road card and primary approach variant all use Ross Lake / Lightning Creek / Freezeout Creek. The Park Service states overnight stays in the Ross Lake National Recreation Area backcountry need its permit, and the resort serving the lake says the same for camping on Ross Lake; Ross Lake and the Ross Dam trailhead are the Ross Lake NRA side (Whatcom County), as the sister route on this peak already states.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permitsandreservations.htm",
+    "https://www.rosslakeresort.com/camp",
+    "https://home.nps.gov/noca/planyourvisit/east-bank-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Crosses the US/Canada border cross-country off the official PCT corridor — not an authorized crossing.",
+     "replace": "The first-ascent approach from Manning Provincial Park, BC crosses the US/Canada border cross-country — not an authorized crossing; the lawful approach is from Ross Lake.",
+     "id": "wa_castle_peak_pasayten_the_drawbridge",
+     "fact": "Which approach access/emergency describe"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": "; approach crosses into E.C. Manning Provincial Park, BC",
+     "replace": "; Ross Lake National Recreation Area (NPS) on the Lightning Creek approach",
+     "id": "wa_castle_peak_pasayten_the_drawbridge",
+     "fact": "Which approach access/emergency describe"
+    },
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "county"
+     ],
+     "find": "approach is via British Columbia, Canada",
+     "replace": "the lawful approach is via Ross Lake in Whatcom County",
+     "id": "wa_castle_peak_pasayten_the_drawbridge",
+     "fact": "Which approach access/emergency describe"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "fact": "Permits required",
+   "verdict": "fixed",
+   "correct_value": "Pasayten self-issue permit for the wilderness portion plus a North Cascades NPS backcountry permit for camps in the Ross Lake NRA corridor",
+   "evidence": "The Park Service states permits are required year round for all overnight stays in the backcountry of the North Cascades NPS Complex including Ross Lake NRA; the lake's resort likewise says a park backcountry permit is required for overnight camping on Ross Lake. The approach variant already says so; the access permit line listed only the Pasayten permit. access.fees left untouched.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permitsandreservations.htm",
+    "https://www.rosslakeresort.com/camp"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Self-issue Pasayten Wilderness permit (free)",
+     "replace": "North Cascades NPS backcountry permit for camps in the Ross Lake NRA corridor; free self-issue Pasayten Wilderness permit beyond the wilderness boundary",
+     "id": "wa_castle_peak_pasayten_the_drawbridge",
+     "fact": "Permits required"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Lawful approach is Ross Lake; the Manning Park trailhead is the first-ascent line only",
+   "evidence": "The first-ascent report says the party started in Manning Provincial Park, and the Park Service describes the Lightning Creek trail from Ross Lake that the row's lawful approach uses. The road card, approach and primary variant agree on Ross Lake; the trailhead pin (coordinates out of scope) now says it is not a lawful US entry, and the itinerary no longer presents the Manning line as the typical plan.",
+   "sources": [
+    "https://alpinist.com/newswire/accidental-first-ascent-fight-or-flight-in-the-north-cascades/",
+    "http://publications.americanalpineclub.org/articles/12200910700/North-America-United-States-Washington-Castle-Peak-Herrington-Hirst",
+    "https://home.nps.gov/noca/planyourvisit/east-bank-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "E.C. Manning Provincial Park, BC",
+     "replace": "E.C. Manning Provincial Park, BC — not a lawful US entry",
+     "id": "wa_north_face_left_buttress",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "A 3+ day car-to-car trip is typical: day 1 travel to a high camp near the border/Crow Creek basin (or much further in via the US side); day 2 climb the route and descend to camp; day 3+ hike back out. The approach length and border-crossing logistics make this",
+     "replace": "From the lawful Ross Lake side the walk in to a camp below the north face is itself a multi-day trip, so plan on more than 3 days car to car. The Manning Park line, which is not a lawful border crossing, runs 3+ days: day 1 to a high camp near the border/Crow Creek basin, day 2 climb the route and descend to camp, day 3+ hike back out. The approach length makes this",
+     "id": "wa_north_face_left_buttress",
+     "fact": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "fact": "Canadian approach line",
+   "verdict": "fixed",
+   "correct_value": "From Lightning Lake in Manning Park on the Frosty Mountain trail to a pass near 8,000 ft, then cross-country south",
+   "evidence": "The first-ascent account says seven miles of trail from Manning Park led to an 8,000-ft pass before dropping to the north face; the route's online description says to hike the marked trail to the Frosty Mountain lookout and head south cross-country over the border. The approach field agrees; approach_variants[1] described the Monument 78 creek trail instead. The bivy note also names Monument 78 but is not patched (camping clean-up owns bivy).",
+   "sources": [
+    "https://alpinist.com/newswire/accidental-first-ascent-fight-or-flight-in-the-north-cascades/",
+    "https://www.mountainproject.com/area/106464644/castle-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "As described, it takes the old trail along the creek to the boundary, then leaves the trail and travels cross-country south past Frosty Mountain,",
+     "replace": "As described, it follows the marked trail from Lightning Lake up the Frosty Mountain area to a pass near 8,000 ft, then leaves the trail and travels cross-country south over the boundary,",
+     "id": "wa_north_face_left_buttress",
+     "fact": "Canadian approach line"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "fact": "Ptarmigan Fire closure order and PCT status",
+   "verdict": "fixed",
+   "correct_value": "Order 06-17-04-26-39, Sept 9-Oct 31, 2026; closes Boundary Trail #533 west of Bunker Hill and Castle Pass #749; PCT open to the border",
+   "evidence": "The current Forest Service order is 06-17-04-26-39, in effect Sept 9 through Oct 31, 2026, closing the Boundary Trail from Bunker Hill west to the PCT and the Castle Pass trail, and states the PCT is open to its northern terminus. Local news on Sept 17 confirms the PCT from Harts Pass to Canada is open again. The row's closure text still cited the superseded order and said the PCT was closed, contradicting the sister Blizzard route.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/ptarmigan-fire-closure-methow-valley-ranger-district-0",
+    "https://methowvalleynews.com/2026/09/17/as-autumn-arrives-fire-closures-are-being-reduced-on-area-trails"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Ptarmigan Fire Closure Order 06-17-04-26-34, effective 24 Aug - 31 Oct 2026, closes Boundary Trail #533, the Pacific Crest Trail #2000 and Castle Pass Trail #749 in the Pasayten Wilderness.",
+     "replace": "Ptarmigan Fire Closure Order 06-17-04-26-39, effective 9 Sep - 31 Oct 2026, closes Boundary Trail #533 west of Bunker Hill and Castle Pass Trail #749 in the Pasayten Wilderness; the Pacific Crest Trail #2000 is open to the border.",
+     "id": "wa_north_face_left_buttress",
+     "fact": "Ptarmigan Fire closure order and PCT status"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "Number of days / nights",
+   "verdict": "fixed",
+   "correct_value": "The 4-day itinerary has 3 nights out",
+   "evidence": "Counting the row's own itinerary: night 1 at the Freezeout Cabin camp, night 2 at high camp, night 3 back at high camp after the summit, day 4 out = 3 nights; the total note said 2. This is a count of the row's own plan, not an outside fact. The approach's single-push / one-night options are alternatives the total note also mentions (one party did it in a single ~27.5-hour push) and are left as options.",
+   "sources": [
+    "https://www.lemkeclimbs.com/castle-peak.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "with 2 nights out and a dedicated summit day",
+     "replace": "with 3 nights out and a dedicated summit day",
+     "id": "wa_castle_peak_pasayten_scramble",
+     "fact": "Number of days / nights"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "Partner approach duration: each way vs round trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "fitnessSpec.hiking says 2-4 days each way while approachTime says 2-4 days round trip; which is right depends on the trailhead (the Ross Lake line has been done in one ~27.5-hour push and the row plans 4 days round trip, while the Harts Pass/PCT line is ~27 miles to Castle Pass alone). No source states a per-trailhead duration that would let one figure cover all three approaches; settling it needs the partner text to be scoped to the Ross Lake line with a sourced duration.",
+   "sources": [
+    "https://www.lemkeclimbs.com/castle-peak.html",
+    "https://www.countryhighpoints.com/castle-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "SW ridge notch elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "7,600 ft",
+   "evidence": "Waypoints, face, approach, descent, descent_text and bail all put the SW ridge notch at 7,600 ft; a Ross Lake/Freezeout trip report also names the notch at 7,600 ft. Only the rope note said 7,400.",
+   "sources": [
+    "https://www.lemkeclimbs.com/castle-peak.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "near the 7400' notch",
+     "replace": "near the 7600' notch",
+     "id": "wa_castle_peak_pasayten_scramble",
+     "fact": "SW ridge notch elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "Freezeout Cabin position",
+   "verdict": "fixed",
+   "correct_value": "The cabin is at about 3,600 ft up the Freezeout Creek Trail, above the steep section that leaves the Lightning Creek Trail, not at its start",
+   "evidence": "One Ross Lake trip report reached the Freezeout junction about 2 hours from the landing and then climbed the Freezeout trail to the cabin at 3,600 ft right after a creek crossing; a route description puts the cabin at about 3,500 ft on the Freezeout trail. The waypoint's own directions and the approach agree; only the waypoint note placed it at the trail's start.",
+   "sources": [
+    "https://www.lemkeclimbs.com/castle-peak.html",
+    "https://www.summitpost.org/freezeout-creek-route/295596"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "Maintained backcountry cabin at the start of the abandoned Freezeout Creek Trail;",
+     "replace": "Maintained backcountry cabin at about 3,600 ft on the abandoned Freezeout Creek Trail, above the steep section where it leaves the Lightning Creek Trail;",
+     "id": "wa_castle_peak_pasayten_scramble",
+     "fact": "Freezeout Cabin position"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "Direction of travel on Lightning Creek",
+   "verdict": "fixed",
+   "correct_value": "North (the trail turns east up the valley then heads north toward Hozomeen; Castle Peak lies north of the landing)",
+   "evidence": "The Park Service describes the trail leaving Ross Lake at Lightning Creek, turning east into the valley and continuing northward past Nightmare and Freezeout camps to Hozomeen at the north end; a route listing likewise runs the Lightning Creek trail to Hozomeen. The summit is north of the landing. Only the itinerary (and its timing copy) said south.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/east-bank-trail.htm",
+    "https://www.gaiagps.com/hike/382714/hozomeen-2-via-east-bank-trail-and-lightning-creek-trail/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Freezeout Creek trails south to a camp",
+     "replace": "Freezeout Creek trails north to a camp",
+     "id": "wa_castle_peak_pasayten_scramble",
+     "fact": "Direction of travel on Lightning Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Freezeout Creek trails south to a camp",
+     "replace": "Freezeout Creek trails north to a camp",
+     "id": "wa_castle_peak_pasayten_scramble",
+     "fact": "Direction of travel on Lightning Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "fact": "One-way distance (dist_km vs approach prose)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 17.7 (about 11 mi one way) disagrees with the approach's 16-17 miles lakeshore-to-summit and the itinerary's ~16 mi in. Outside figures disagree with each other: one source gives about 34 miles round trip for the Freezeout route, another 39 miles of walking for its party. Needs two sources agreeing on a one-way figure before dist_km can change.",
+   "sources": [
+    "https://www.countryhighpoints.com/castle-peak/",
+    "https://www.lemkeclimbs.com/castle-peak.html"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

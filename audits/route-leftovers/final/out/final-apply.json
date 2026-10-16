@@ -1,0 +1,91 @@
+{
+ "results": [
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "kind": "item",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "verdict": "confirmed",
+   "summary": "The guidebook grades the Sitkum Glacier route Grade III, matching alpine_grade; commitment is set from I-II to III so the two grade fields agree (the header grade now reads Class 2, a difficulty class, not a Roman grade).",
+   "evidence": "selectedclimbsin0000nels p155-156: route header 'Sitkum Glacier Grade III' (OCR 'GRADE Ii!'), and the Difficulty line reads 'Grade III; 30-degree snow, glacier travel, altitude'. Live row: alpine_grade 'III', commitment 'I-II', grade 'Class 2'. Owner rule 1: the book's grade wins over the websites that split III vs I-II.",
+   "sources": [
+    "archive.org selectedclimbsin0000nels p155-156"
+   ],
+   "searched": [
+    "selectedclimbsin0000nels q=\"Sitkum\"",
+    "selectedclimbsin0000nels q=\"Grade III\" (p156)",
+    "selectedclimbsin0000nels q=\"GRADE Ii\"",
+    "cascadealpinegui0000beck q=\"Sitkum Glacier\" (no match; this volume is Columbia R. to Stevens Pass)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_sitkum_glacier",
+     "column": "commitment",
+     "path": [],
+     "expect": "I-II",
+     "value": "III"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "kind": "item",
+   "fact": "Round-trip distance",
+   "verdict": "confirmed",
+   "summary": "dist_km 61.15 (38 mi shown as one way) matches no figure on the row or in any source, so it is cleared under the owner's match-nothing rule.",
+   "evidence": "Clearing rule check: 61.15 km = 38.0 mi. The row's own figures are a ~32-mile round trip (itinerary prose) and day legs of 7, 3, 3.5, 5.8, 6 and 7 mi plus a 4.5 mi waypoint; none is 38 mi one way or round trip. Sources found across all passes give only per-day legs (Crowder day 5.8 mi) and multi-peak traverse totals of 55-66 mi; none states 38 mi. No land-manager page states a distance to this off-trail summit (lane L found nothing to set instead).",
+   "sources": [],
+   "searched": [
+    "prior evidence (all passes)",
+    "live row figures (row.mjs)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_crowder_southwest_route",
+     "column": "dist_km",
+     "path": [],
+     "expect": 61.15,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-01 guidebooks are the source of truth; owner 'if there's only 1 source, then use it'",
+   "fact": "first ascent of the Southeast Ridge is empty on the row; the guidebook names the party and date",
+   "evidence": "Guidebook (Cascade Alpine Guide vol. 1, p298, read in the final pass lane g1): Southeast Ridge, Grade II 5.6, first ascent Loomis, Parks, Schnell, Seman, May 30, 1977. The row's fa is null; nothing else on the row states a first ascent.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_argonaut_peak_east_ridge",
+     "column": "fa",
+     "path": [],
+     "expect": null,
+     "value": "Loomis, Parks, Schnell and Seman (May 30, 1977)"
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "verdict": "confirmed",
+   "rule": "land manager current page is the authority for trail distances; one source -> use it",
+   "fact": "Tin Can Gap pin has no distance; the forest trail page states 6.2 mi from the trailhead to Tin Can Gap",
+   "evidence": "Current Forest Service page for Trail 641 gives Saddle Lake 2.5 mi and Tin Pan/Tin Can Gap 6.2 mi. The row already states Saddle Lake at about 2.5 mi and Goat Flats at about 4.5 mi plus about 2 more miles to the gap, so 6.2 adds no contradiction; the trailhead pin is distMi 0.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_three_fingers_south_peak_lookout",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 6.2
+    }
+   ]
+  }
+ ]
+}

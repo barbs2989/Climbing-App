@@ -1,0 +1,148 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Distance to the Watson Lakes saddle"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Distance to the Watson Lakes saddle"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Warm, dry summer conditions typical of the Baker Lake / Twin Sisters area once snow recedes",
+      "probability": "Afternoon thunderstorms are a known risk, especially July-August - plan for an early start and be off exposed terrain by early afternoon"
+     },
+     "exposure": "Considerable fall exposure on the final summit block/ridge - a narrow (~30 ft) Class 2-3 ridge with drops on both sides; lingering snowfields on approach benches can also present slip hazard early season",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route (falls loosely within NWAC's Mt. Baker zone, but that zone's forecasts are issued only for the winter/spring avalanche season, not relevant to this July-September objective)",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "itinerary": {
+     "cal": "Go early summer if possible - by mid-to-late summer melt-out opens moats between snow and rock (especially in the west gully) and can add ice to the glacier traverse, making the route harder and slower.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Anderson-Watson Lakes trailhead (~4,200 ft), Trail 611 climbs steeply (~1.4 mi to a ~4,800 ft saddle above Watson Lakes) before the route contours south past Watson/Anderson Lakes and up open heather, rock slabs and talus to a camp with views of Baker and Shuksan. Expect a hot, buggy, sometimes overgrown trail early in the day and route-finding once the maintained tread fades near the lakes.",
+       "hours": 4.5,
+       "miles": 4.7,
+       "title": "Backpack to high camp below Mount Watson",
+       "gainFt": 2900,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach a camp around 5,400-5,600 ft on the open slopes below Watson's north/east side"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp early for the short push to the ~5,900 ft col between Watson's East Peak and the true summit, then traverse the basin to the gully below the summit block. Parties report the west gully often holds a nasty moat/snow bridge later in the season, so most now take the more stable east gully; the final airy Class 2-3 summit block has real but short exposure. After tagging the top, reverse the route, break camp, and hike out.",
+       "hours": 8.5,
+       "miles": 6.2,
+       "title": "Summit push via the east gully, then hike out",
+       "gainFt": 900,
+       "lossFt": 3700,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Break camp",
+         "detail": "Quick breakfast, leave overnight gear staged or start packing it out."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Traverse to the col",
+         "detail": "Rising traverse across heather/rock slabs to the ~5,900 ft saddle between the East Peak and main summit."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "East gully",
+         "detail": "Take the east gully over the west, which often has a moat/snow bridge by mid-summer."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit block",
+         "detail": "Short Class 2-3 exposed scramble to the small summit; only room for a few people at a time."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the route back to camp."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Full pack out after breaking camp."
+        }
+       ],
+       "objective": "Tag the summit and return to the trailhead same day"
+      }
+     ],
+     "totalNote": "A moderate 2-day trip: backpack roughly 4.5-5 miles to a high camp near 5,400-5,600 ft below Mount Watson, then scramble to the 6,221 ft summit via the east gully and hike all the way out the next day (~9-10 mi round trip, ~3,500-4,000 ft total gain); fit, fast parties compress the whole thing into a single long car-to-car day (~9-10 hrs)."
+    },
+    "timing": {
+     "totalHrs": 13,
+     "summitTimeHrs": 8.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "From the Anderson-Watson Lakes trailhead (~4,200 ft), Trail 611 climbs steeply (~1.4 mi to a ~4,800 ft saddle above Watson Lakes) before the route contours south past Watson/Anders…",
+       "fromTo": "Backpack to high camp below Mount Watson",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8.5,
+       "note": "Leave camp early for the short push to the ~5,900 ft col between Watson's East Peak and the true summit, then traverse the basin to the gully below the summit block. Parties report…",
+       "fromTo": "Summit push via the east gully, then hike out",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

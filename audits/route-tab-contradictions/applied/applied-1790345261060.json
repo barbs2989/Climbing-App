@@ -1,0 +1,409 @@
+{
+ "applied": [
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Raptor closure / species cited for a different, named crag"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "pro_tips",
+   "path": [
+    4
+   ],
+   "fact": "Raptor closure / species cited for a different, named crag"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Raptor closure / species cited for a different, named crag"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "access",
+   "path": [
+    "_raw",
+    "seasonal_closure_dates"
+   ],
+   "fact": "Raptor closure / species cited for a different, named crag"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "access",
+   "path": [
+    "_raw",
+    "special_requirements"
+   ],
+   "fact": "Raptor closure / species cited for a different, named crag"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit: access says none needed for day use, permit column says a self-issue Alpine Lakes Wilderness permit"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Wilderness permit: access says none needed for day use, permit column says a self-issue Alpine Lakes Wilderness permit"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_application_method"
+   ],
+   "fact": "Wilderness permit: access says none needed for day use, permit column says a self-issue Alpine Lakes Wilderness permit"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Ranger station names the Methow Valley district for a Leavenworth/Icicle Creek route"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead directions lead to the Stuart Lake Trailhead, not the Hook Creek roadside start; road block describes the Icicle Creek Trailhead"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead directions lead to the Stuart Lake Trailhead, not the Hook Creek roadside start; road block describes the Icicle Creek Trailhead"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead directions lead to the Stuart Lake Trailhead, not the Hook Creek roadside start; road block describes the Icicle Creek Trailhead"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "high_point_ft claims the true 5,844 ft summit, but the route's own prose says it tops out lower"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures for the same route"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "rope_note quotes a different route's mileage/gain figures"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "gain_ft/loss_ft asymmetry for an out-and-back reversal"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "name"
+   ],
+   "fact": "Ridge-gain waypoint says to turn east to the true summit, but the summit lies west of it"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Ridge-gain waypoint says to turn east to the true summit, but the summit lies west of it"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Smithbrook Road length to the trailhead and Smithbrook Trail length to Union Gap"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Smithbrook Road length to the trailhead and Smithbrook Trail length to Union Gap"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Smithbrook Road length to the trailhead and Smithbrook Trail length to Union Gap"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Smithbrook Road length to the trailhead and Smithbrook Trail length to Union Gap"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_north_face_of_the_mole",
+   "before": {
+    "watch_out": [
+     "Golden eagles nest on Bridge Creek Wall with closure Jan 1-Aug 15 (1/2 mile buffer)",
+     "Mountain goats frequent the approach areas and can cause rockfall",
+     "Moss and lichen on cracks can obscure rock quality and make protection placement tricky",
+     "The single-bolt rappel anchors require solid setup and backup anchors",
+     "Exposure on upper pitches may warrant hand lines or belay for less confident climbers",
+     "Icicle Creek Road experiences seasonal repairs and closures"
+    ],
+    "pro_tips": [
+     "The Mole offers excellent granite quality despite some mossy sections on the North Face",
+     "Bring extra slings for rock protection and anchor building at this remote location",
+     "The three-rappel descent is straightforward but requires careful anchor setup on single bolts",
+     "The approach via Hook Creek requires good route-finding and scrambling skills",
+     "Golden eagles nest nearby seasonally - check seasonal closures",
+     "This peak is rarely visited, offering solitude and unique views of the Enchantments"
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "None required",
+      "permit_type": "None for day use; raptor closure restrictions seasonal",
+      "land_manager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+      "wilderness_zone": "Central-East Cascades/Leavenworth area",
+      "special_requirements": "No climbing or travel within 1/2 mile of Bridge Creek Wall during nesting season. Peregrine falcons observed at Snow Creek Wall.",
+      "parking_pass_required": "Northwest Forest Pass recommended ($5 day pass or $30 annual)",
+      "seasonal_closure_dates": "Bridge Creek Wall closed January 1 - August 15 (raptor nesting protection)",
+      "permit_application_method": "No permit required; follow seasonal closures"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "permit": "None for day use; raptor closure restrictions seasonal",
+     "closures": "Bridge Creek Wall closed January 1 - August 15 (raptor nesting protection)",
+     "permitZone": "Central-East Cascades/Leavenworth area",
+     "landManager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+     "land_manager": "Okanogan-Wenatchee National Forest",
+     "passRequired": "Northwest Forest Pass recommended ($5 day pass or $30 annual)"
+    },
+    "emergency": {
+     "notes": "Remote alpine location with extended rescue response times. Satellite communicator or PLB strongly recommended. Cell service unreliable.",
+     "county": "Chelan County",
+     "rangerStation": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District: 509-996-4000",
+     "nearestHospital": "Cascade Medical Center, Leavenworth (~20 miles, 30-40 min drive)",
+     "sheriffDispatch": "Chelan County Sheriff: 509-667-6800"
+    },
+    "waypoints": [
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 1900,
+      "name": "Icicle Creek Road roadside parking (Hook Creek Drainage)",
+      "note": "Roadside parking used to access the Hook Creek Drainage spires above Icicle Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Leavenworth, take US-2 west to the edge of town and turn onto Icicle Creek Road. Follow it about 8.4 miles, then turn left onto Forest Service Road 7601 and drive roughly 3.7 miles more to the Stuart Lake Trailhead. FR-7601 is a rough dirt road and high clearance is recommended."
+     },
+     {
+      "lat": 47.5427,
+      "lng": -120.7106,
+      "elev": 6800,
+      "name": "The Mole (Edward Peak) North Face topout",
+      "note": "USGS name for this formation is Edward Peak; North Face follows an obvious crack system, 5.7, with a 3-rappel descent to the east.",
+      "type": "Topout",
+      "distMi": 3
+     },
+     {
+      "lat": 47.5427,
+      "lng": -120.7106,
+      "name": "Hook Creek Drainage / Mole approach area",
+      "type": "Approach",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 47.5156,
+      "lng": -120.7575,
+      "elev": 7280,
+      "name": "Edward Peak summit (The Mole)",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7280
+     }
+    ],
+    "road": {
+     "name": "Icicle Creek Trailhead, Icicle Creek Road, Leavenworth",
+     "status": "Icicle Creek Road itself is paved and well-maintained, but the final approach to the Icicle Creek Trailhead was washed out and closed (about 2 miles before the trailhead) with the closure expected to last until the end of 2026 — confirm current status before a trip.",
+     "driveNote": "Roughly 2.5-3 hours from Seattle via US-2 to Leavenworth then Icicle Creek Road."
+    }
+   }
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "before": {
+    "high_point_ft": 5844
+   }
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "before": {
+    "dist_km": 5.6,
+    "approach": "Park at the Smithbrook Trailhead (elev. ~3,800 ft) on Smithbrook Road (FR 6700), about 2.7 miles up from Hwy 2. Start on the signed Smithbrook Trail (part of the Henry M. Jackson Wilderness trail system) and climb via nearly 20 short switchbacks, gaining about 650 ft in 1.2 miles to Union Gap on the PCT — Lichtenberg's summit is visible to the south for much of this stretch once the forest opens up. At Union Gap, turn left (south) onto the Pacific Crest Trail and follow it about 2 miles, contouring below Lichtenberg's east flank, to Lake Valhalla (~4,830 ft), passing through a mix of forest and open meadow/heather and crossing Smith Brook along the way (a reliable water source and a good place to filter before leaving the trail). From the north or east shore of Lake Valhalla, leave the PCT and begin the off-trail portion: contour and rising-traverse around the lake toward the peak's south/southwest side, picking through heather benches, boulder fields, and increasingly loose talus. There is no maintained trail above the lake — expect real route-finding, some bushwhacking through scattered subalpine fir, and a few short cliff bands that force minor backtracking; a GPS track or written beta is genuinely useful here. The standard line aims for a prominent gully on the south/southwest side of the summit tower (often snow-filled into early summer — an ice axe and sometimes light traction are worth carrying outside of peak summer), climbed as scree/talus with a bit of low third-class scrambling near the top to gain the final summit block. Total gain from the trailhead is roughly 2,000-2,500 ft over about 7 miles round trip, with 6-7 hours being a typical leisurely round-trip time.",
+    "waypoints": [
+     {
+      "lat": 47.802498,
+      "lng": -121.076645,
+      "elev": 4000,
+      "name": "Smithbrook Trailhead",
+      "note": "End of FR 6700 gravel spur off US-2 near milepost 68; Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US-2 near milepost 68, turn onto Smithbrook Road (FR 6700), a gravel spur, and follow it about 2.7 miles to the Smithbrook Trailhead at roughly 4,000 ft. A Northwest Forest Pass is required, and you self-issue the wilderness permit at the kiosk here. Smithbrook Road is unplowed in winter and typically melts out by early to mid summer; attempt it before the road opens and you add about two miles of snow-road walking each way."
+     },
+     {
+      "lat": 47.798139,
+      "lng": -121.077837,
+      "elev": 4300,
+      "name": "Smithbrook Trail / PCT junction",
+      "note": "Smithbrook Trail #1590 tops out at the Pacific Crest Trail; turn left (south) toward Lake Valhalla.",
+      "type": "Junction",
+      "distMi": 0.9
+     },
+     {
+      "lat": 47.7898414,
+      "lng": -121.1008325,
+      "elev": 4834,
+      "name": "Lake Valhalla, south tip",
+      "note": "Where the PCT bends southwest away from the lake, drop off-trail down a steep dirt path to the water and follow rocky shoreline to the south tip to leave the maintained trail.",
+      "type": "Water",
+      "distMi": 2.3
+     },
+     {
+      "lat": 47.789621,
+      "lng": -121.082619,
+      "elev": 5100,
+      "name": "Base of southeast boulder slope",
+      "note": "Past the lake's south tip, boulder-hop southeast until Lichtenberg's southeast shoulder comes into view and a class 2 line up to the ridge is visible.",
+      "type": "Junction",
+      "distMi": 2.8
+     },
+     {
+      "lat": 47.788598,
+      "lng": -121.085093,
+      "elev": 5600,
+      "name": "Southeast gully / talus slope",
+      "note": "Loose rock and shifting talus on the class 2 climb to the ridgeline; test holds and watch for parties below.",
+      "type": "Hazard",
+      "distMi": 3.1
+     },
+     {
+      "lat": 47.787994,
+      "lng": -121.086883,
+      "elev": 5750,
+      "name": "Ridge gain point west of true summit",
+      "note": "Boulder scramble tops out on the summit ridge just west of the true (east) summit; turn east for the final walk to the top.",
+      "type": "Junction",
+      "distMi": 3.3
+     },
+     {
+      "lat": 47.7882093,
+      "lng": -121.0912723,
+      "elev": 5844,
+      "name": "Lichtenberg Mountain summit",
+      "note": "True summit overlooks Lake Valhalla to the west and Lichtenwasser Lake to the northeast; on descent retrace the ridge and gully, taking care on the loose upper talus.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "rope_note": "No rope needed; Class 2 non-exposed scramble, 7mi/2100ft gain.",
+    "loss_ft": 2100,
+    "approach_logistics": {
+     "peakLat": 47.7882093,
+     "peakLng": -121.0912723,
+     "trailhead": "Smithbrook Trailhead",
+     "trailheadLat": 47.8025,
+     "trailheadLng": -121.0765,
+     "trailheadDirection": "Park at the Smithbrook Trailhead (elev. ~3,800 ft) on Smithbrook Road (FR 6700), about 2.7 miles up from Hwy 2."
+    }
+   }
+  }
+ ]
+}

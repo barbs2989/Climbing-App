@@ -1,0 +1,108 @@
+{
+ "applied": [
+  {
+   "id": "wa_gato_negro",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest pitch grade"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Hardest pitch grade"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of the Option B traverse to the south ridge"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Direction of the Option B traverse to the south ridge"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gato_negro",
+   "before": {
+    "rock_grade": "5.10b",
+    "waypoints": [
+     {
+      "lat": 48.55,
+      "lng": -120.6306,
+      "elev": 4400,
+      "name": "SR-20 Wine Spires / Silver Star pullout (~MP 165, ~4 mi east of Washington Pass)",
+      "note": "Climbers park at this pullout, descend to and cross Early Winters Creek, then climb a steep climbers trail to the Bench (~6,500-6,700ft) below Burgundy Col, from which all Wine Spires routes (including Whine Spire/Gato Negro) and Silver Star's standard route are reached.",
+      "type": "Trailhead",
+      "elevFt": 4400,
+      "directions": "Drive SR-20 to the unsigned Wine Spires / Silver Star pullout east of Washington Pass, near milepost 165-166 and roughly 4 miles past the pass, at about 4,300 to 4,400 feet. It is a plain roadside pull-off with no sign and no developed parking, so watch your mileposts. Do not confuse it with the Blue Lake trailhead, which is on the other side of Washington Pass entirely."
+     },
+     {
+      "lat": 48.55016,
+      "lng": -120.58894,
+      "elev": 8348,
+      "name": "Whine Spire (Gato Negro topout)",
+      "note": "12-pitch alpine trad route (5.10a/b) on the sub-peak east of Silver Star Mountain; topout elevation is approximate.",
+      "type": "Topout",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.55016,
+      "lng": -120.58894,
+      "elev": 8348,
+      "name": "Whine Spire summit (sub-peak on Silver Star Mountain's ridge, east side)",
+      "type": "Summit",
+      "elevFt": 8348
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "before": {
+    "approach": "Two trailheads serve the Southeast Slopes / South Ridge scramble, both off SR-20 between Rainy Pass and Washington Pass. Option A (PCT approach, most commonly used): park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass (~4,850 ft, next to the Road 600 turnoff). From the lot, leave the PCT almost immediately and strike out cross-country/climber's-path east into open forest, gaining steeply through timber and over downed logs — there is no maintained tread once you leave the PCT. Continue up through the trees (expect lingering snow patches into early summer) to about 6,100 ft, where the forest opens into a meadow basin below the west ridge/gully complex. From the basin, trend south/southeast on a rising traverse to gain the col/basin between Whistler and the southwest peak of Cutthroat, then work up the broad west ridge or the shallow gully just north of it to the summit shoulder; the final short section involves a rock gully with a visible ramp along the headwall over downsloping slabs and loose gravel — a helmet is recommended here for rockfall from parties above. Round trip via this line runs roughly 3.7 miles with about 3,000 ft of gain (trailhead 4,850 ft to summit 7,790 ft). Option B (highway turnout approach, reaches the true south ridge): from the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass (0.7 mile before the Blue Lake trailhead, ~5,000 ft), walk back down/along the road shoulder to a boot path that starts at the west edge of a stand of trees. Follow the boot path up through a meadow, then rising-traverse east to intersect the level portion of Whistler's south ridge at about 6,180 ft. From there, scramble up the ridge and connecting gullies to the summit; alternatively leave the ridge around 6,800 ft, cross a couple of gullies left (west) onto gentler southwest-facing slopes, and finish to the summit that way. This line is also about 4 miles round trip with ~3,000 ft gain. Both approaches are trail-less above the first stretch of forest — expect route-finding, loose talus/scree in the gullies, and class 2-3 terrain with occasional class 3-4 moves and real exposure near the ridge crest and summit gully; no reliable water source above the lower forest, so carry what you need from the car. No creek fords or avalanche paths of note on the standard summer line, but early-season snow lingers in the forest and basin and can make the gully sections firm or icy.",
+    "approach_variants": [
+     {
+      "name": "Rainy Pass PCT lot, then cross-country east into the meadow basin and the col toward Cutthroat's southwest peak",
+      "notes": "Park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass at about 4,850 ft, next to the Road 600 turnoff. LEAVE THE PCT ALMOST IMMEDIATELY and strike out cross-country east into open forest, gaining steeply through timber and over downed logs. There is no maintained tread once you leave the PCT.\n\nThis is WHISTLER MOUNTAIN ABOVE RAINY PASS in Chelan County, not the Whistler Canyon trailhead area near Oroville, which is about 100 miles away and unrelated.\n\nRound trip runs roughly 3.7 miles with about 3,000 ft of gain.",
+      "season": "Jul-Oct",
+      "hazards": [
+       "No maintained tread above the PCT; route-finding the whole way",
+       "Downed logs in the lower forest",
+       "Loose talus and scree in the gullies, with class 3-4 moves and real exposure near the ridge crest",
+       "Downsloping slabs and loose gravel in the summit gully",
+       "No reliable water above the lower forest",
+       "Early-season snow lingering in the forest and basin, firming the gullies"
+      ],
+      "primary": true,
+      "baseFinding": "CLIMB UNTIL THE FOREST OPENS. At about 6,100 ft the timber gives way to A MEADOW BASIN BELOW THE WEST RIDGE AND GULLY COMPLEX, and that transition is the first reliable confirmation on a trail-less approach. Trees stopping is something you notice in any visibility.\n\nFROM THE BASIN, TREND SOUTH AND SOUTHEAST ON A RISING TRAVERSE TO GAIN THE COL AND BASIN BETWEEN WHISTLER AND THE SOUTHWEST PEAK OF CUTTHROAT. THAT COL IS THE AIMING POINT, and it is named by the two peaks either side of it.\n\nThen work up the BROAD WEST RIDGE, or the SHALLOW GULLY JUST NORTH OF IT, to the summit shoulder.\n\nTHE LAST SECTION IS THE ONE THAT CONFIRMS YOU ARE ON THE SUMMIT LINE RATHER THAN A NEIGHBOURING GULLY: A ROCK GULLY WITH A VISIBLE RAMP ALONG THE HEADWALL, OVER DOWNSLOPING SLABS AND LOOSE GRAVEL. A ramp cutting the headwall is the way through; helmet on here for rockfall from parties above."
+     },
+     {
+      "name": "The unmarked SR-20 turnout, then a boot path onto the true south ridge at 6,180 ft",
+      "notes": "The second option, and the one that reaches the true south ridge. From the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass, 0.7 mile BEFORE the Blue Lake trailhead, at about 5,000 ft, walk back down and along the road shoulder to a boot path that starts at the WEST EDGE OF A STAND OF TREES.\n\nAbout 4 miles round trip with roughly 3,000 ft of gain, the same as the PCT option.",
+      "season": "Jul-Oct",
+      "hazards": [
+       "An unmarked trailhead identified only by its distance from the Blue Lake trailhead",
+       "Trail-less above the first stretch of forest",
+       "Class 2-3 with occasional class 3-4 moves and real exposure near the ridge crest",
+       "Loose talus and scree in the connecting gullies",
+       "No reliable water on the route"
+      ],
+      "baseFinding": "THE TRAILHEAD IS UNMARKED AND THE PATH START IS A TREE-LINE EDGE, SO THE FIND IS AT THE ROAD RATHER THAN ON THE MOUNTAIN. The pullout is 0.7 MILE BEFORE THE BLUE LAKE TRAILHEAD coming from Rainy Pass. IF YOU HAVE REACHED THE BLUE LAKE TRAILHEAD, YOU HAVE DRIVEN 0.7 MILE TOO FAR. From the pullout, walk the shoulder to where a STAND OF TREES begins, and the boot path leaves from its WEST EDGE.\n\nFOLLOW THE BOOT PATH UP THROUGH A MEADOW, THEN RISING-TRAVERSE EAST TO INTERSECT THE LEVEL PORTION OF WHISTLER'S SOUTH RIDGE AT ABOUT 6,180 FT. A LEVEL SECTION OF RIDGE IS THE ARRIVAL, and a level stretch on a ridge is something you can feel underfoot without seeing anything.\n\nFROM THERE, SCRAMBLE UP THE RIDGE AND CONNECTING GULLIES TO THE SUMMIT. THE ALTERNATIVE, WHICH IS ALSO CORRECT: leave the ridge around 6,800 ft, cross a couple of gullies LEFT, west, onto gentler southwest-facing slopes, and finish that way.\n\nSO THE DECISION AT 6,800 FT IS A REAL FORK AND BOTH BRANCHES WORK: stay on the crest for more exposure and directness, or cross two gullies west for easier ground.\n\nTHE NEGATIVE TEST AGAINST THE OTHER APPROACH, WHICH MATTERS BECAUSE BOTH START WITHIN THREE MILES OF EACH OTHER ON THE SAME HIGHWAY: the PCT option leaves from the marked PCT North lot at Rainy Pass and gains a MEADOW BASIN at 6,100 ft below the WEST ridge. This one leaves from an unmarked turnout and gains the SOUTH ridge at 6,180 ft. Marked lot and west ridge, or unmarked turnout and south ridge."
+     }
+    ]
+   }
+  }
+ ]
+}

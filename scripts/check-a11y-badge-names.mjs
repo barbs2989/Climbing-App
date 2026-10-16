@@ -37,8 +37,27 @@
 //   - Clickable <div>s. React's onClick leaves no attribute in the DOM, so no selector can
 //     find them. They are also not controls to a screen reader (no role, so no computed
 //     control name), which is a DIFFERENT defect — see scripts/audit-a11y.mjs.
-//   - The route detail screen. It is reached by clicking a card, not by URL, and the shared
-//     scaffold only opens tabs and overlays. Its sub-tab bar carries no counts today.
+//   - Names glued by something other than a word character on both sides — an icon's alt
+//     text, say, or two fragments separated by punctuation (which is a real separator).
+//   - THE selArea-GATED PANELS ON THE CLIMBS TAB, measured rather than assumed. `AreaLatest`,
+//     `ClassicClimbs` and `GettingThere` all render as `selArea && …`, and `selArea` starts
+//     null, so they are not screens-with-no-findings — they are not screens. This is NOT
+//     hypothetical: `AreaLatest` carries the SAME glued-name defect this check exists for
+//     (a climber's name welded to their ascent outcome), it was fixed in the same commit that
+//     widened the needle, and reverting that fix is MISSED by a full 63-screen run.
+//     Reaching it was attempted and does not work by setting `selArea` alone: an opener that
+//     called `setSelArea` put the area in state (verified — it selected "Kings Peak") and the
+//     Climbs tab still rendered 979 characters with no report rows, because that tab drives its
+//     own browse navigation. Closing this needs that navigation driven, not one setter called;
+//     see scripts/oneoff/probe-area-latest-reachable.mjs for the measurement, and case
+//     `arealatest` in scripts/oneoff/inject-glued-name-cases.mjs, which pins the gap so that
+//     it fails as STALE if the coverage ever arrives.
+// The route detail screen IS covered, on all six sub-tabs. It used to be excluded here as
+// "reached by clicking a card, not by URL", which stopped being true when the shared scaffold
+// gained `?zr=1` — that calls the app's own openRoute() from inside the opener, which is how
+// check:overflow already walks it. The exclusion outlived its reason by months, and the one
+// defect this widening found was ON that screen: an exemption is a claim about reachability,
+// and this one was stale rather than wrong when written.
 //   - Names glued by something other than a number (an icon's alt text, say).
 // A pass means: across six tabs and every overlay the app declares, no control a screen
 // reader can reach announces a count welded to its label.
@@ -57,7 +76,17 @@ const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
 const PORT = 5290;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"];
+
+// --only=route walks JUST the route detail screen, for the injection suite: the full sweep is 65
+// screens and an injection needs two runs of it. It REDUCES COVERAGE, so it can never print the
+// normal verdict -- a flag that makes a partial run look complete is exactly the false pass every
+// guard in this file is built to refuse. Not for CI, and the build does not pass it.
+const ONLY = (process.argv.find((x) => x.startsWith("--only=")) || "").slice(7);
+if (ONLY && ONLY !== "route") {
+  console.error(`--only=${ONLY} is not a thing; the only reduced walk is --only=route`);
+  process.exit(1);
+}
 const CHROME_ONLY = 90; // the wordmark + nav labels, and nothing else
 
 const log = (...a) => console.log(...a);
@@ -138,6 +167,108 @@ const cdp = await page.context().newCDPSession(page);
 await cdp.send("Accessibility.enable");
 await cdp.send("DOM.enable");
 
+// SECTION 2 — the same defect OFF a control, which section 1 cannot see.
+//
+// Section 1 judges by the CONTROL NAME Chrome computed, which is the right instrument and the
+// reason it is trustworthy: an aria-label fix changes no structure at all and correctly reads as
+// fixed. It is also why it is scoped to controls -- a plain <div> has no computed name, so a
+// widened selector would find candidates and drop every one at the confirm step.
+//
+// That scope let a real defect through. The route page's conditions list rendered
+// {pat.label}{pat.when ? <span style={{marginLeft:7}}>...</span> : null} as
+// "Best windowmid-Jul to early Sep", on a plain heading div. Same shape as #740, invisible here.
+//
+// THE INSTRUMENT IS innerText, AND THE OBVIOUS ALTERNATIVE WAS TESTED AND REJECTED. The tempting
+// judgement is the AX tree StaticText nodes, on the theory that Chrome merges adjacent inline
+// text into one. Measured on four synthetic shapes, Accessibility.getPartialAXTree with
+// fetchRelatives returned NO StaticText at all for both inline cases -- the two that matter.
+// innerText separates all four correctly, because it is computed from LAYOUT, which is the same
+// thing that decides whether a separator exists:
+//
+//   inline + margin   "Best windowmid-Jul"      <- glued
+//   flex row          "Best window\nmid-Jul"
+//   inline + space    "Best window mid-Jul"
+//   block child       "Best window\nmid-Jul"
+//
+// THREE FILTERS, EVERY ONE OF THEM A FALSE POSITIVE THIS SCAN ACTUALLY PRODUCED:
+//
+//   not rendered  A display:none GRANDPARENT is missed by checking the parent's display, and
+//                 inside one innerText falls back to textContent -- which carries no separators,
+//                 so EVERY boundary in the subtree looks glued. All three findings of one early
+//                 run were the seed area browser, dead under USE_DB, with zero-area rects.
+//   local text    A body-wide includes() matches a short numeric needle like "31" somewhere else
+//                 on a busy page. The nearest common ancestor is the smallest rendered text that
+//                 must contain both fragments.
+//   visual gap    The app wordmark is two spans, "Climb" and "Match", flush against each other.
+//                 A screen reader says "ClimbMatch", which is exactly what the eye reads. The
+//                 defect is a gap the eye GETS and the accessibility tree does not, so contiguous
+//                 fragments are correct and must not be reported.
+//
+// No backticks anywhere in this literal: one ends the string. Same trap check:selected-state
+// records, and it bit again while this was being written.
+// A REAL FUNCTION, NOT A TEMPLATE STRING, and that is a bug fix rather than a preference. As a
+// template literal this body read `/\w/`, which JS evaluates to `/w/` -- a regex matching the
+// LETTER w. The scan therefore matched almost nothing and reported a clean app; the injection is
+// what caught it, since the guard was green either way. A template literal also cannot contain a
+// backtick, the trap check:selected-state records and which bit here too. page.evaluate takes a
+// function, exactly as findCandidates above does, and neither hazard exists.
+const scanOffControl = () => page.evaluate(() => {
+  const CTRL = "button,summary,select,a[href],[role=button],[role=tab],[role=link],[role=menuitem],[role=checkbox],[role=switch],[role=option]";
+  const out = [];
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const parts = [];
+  let n;
+  while ((n = w.nextNode())) {
+    if (!n.textContent || !n.parentElement) continue;
+    parts.push({ t: n.textContent, owner: n.parentElement, node: n });
+  }
+  let examined = 0;
+  for (let i = 1; i < parts.length; i++) {
+    if (parts[i].owner === parts[i - 1].owner) continue;
+    examined++;
+    const prev = parts[i - 1].t, cur = parts[i].t;
+    // \w on BOTH sides, never "no whitespace": punctuation is a genuine separator, so a chip
+    // that starts with a tick, arrow or star announces fine and must not be reported.
+    if (!/\w/.test(prev.slice(-1)) || !/\w/.test(cur.slice(0, 1))) continue;
+    const needle = (prev.match(/\w+$/) || [""])[0] + (cur.match(/^\w+/) || [""])[0];
+    if (needle.length < 2) continue;
+    const el = parts[i].owner;
+    if (el.closest(CTRL) || parts[i - 1].owner.closest(CTRL)) continue;
+    const rr = (node) => { const r = document.createRange(); r.selectNodeContents(node); return r.getBoundingClientRect(); };
+    let gap = 0, sameLine = false;
+    try {
+      const ra = rr(parts[i - 1].node), rb = rr(parts[i].node);
+      // NOT RENDERED means nothing is announced, and it is a false positive this scan actually
+      // produced: a display:none GRANDPARENT is missed by checking the parent's display, and
+      // inside one innerText falls back to textContent -- which carries no separators, so every
+      // boundary in the subtree looks glued. All three findings of one early run were the seed
+      // area browser, dead under USE_DB, with zero-area rects.
+      if ((!ra.width && !ra.height) || (!rb.width && !rb.height)) continue;
+      sameLine = Math.abs(ra.bottom - rb.bottom) <= 4;
+      gap = rb.left - ra.right;
+    } catch { continue; }
+    // EXCLUDE ONLY THE VISUALLY CONTIGUOUS CASE. Requiring a shared visual line MISSED the real
+    // defect at 390px, where the chip WRAPS -- and a soft inline wrap puts no separator into
+    // innerText (measured: the wrapped case still reads "Best windowlate spring to fall"). A
+    // block child does get a newline and is already excluded by the text test below. The only
+    // thing to excuse is the app wordmark: "Climb" and "Match", flush, announced as the eye reads.
+    if (sameLine && gap < 2) continue;
+    // LOCAL, NOT body-wide. A body-wide includes() matches a short numeric needle like "31"
+    // elsewhere on a busy page, reporting fragments layout had actually separated.
+    let anc = parts[i - 1].owner;
+    while (anc && !anc.contains(el)) anc = anc.parentElement;
+    if (!anc || !(anc.innerText || "").includes(needle)) continue;
+    out.push({
+      needle, gap: Math.round(gap), sameLine,
+      before: prev.slice(-26), after: cur.slice(0, 26),
+      tag: el.tagName.toLowerCase(),
+      style: (el.getAttribute("style") || "").replace(/\s+/g, " ").slice(0, 70),
+      ctx: (anc.textContent || "").trim().replace(/\s+/g, " ").slice(0, 70),
+    });
+  }
+  return { out, examined };
+});
+
 // Find controls whose visible text is assembled from more than one node, with a letter/digit
 // transition exactly at a node boundary. This runs in the page and only MARKS candidates —
 // it deliberately does not judge them. Judgement needs the computed name, which only Chrome
@@ -166,20 +297,52 @@ const findCandidates = () => page.evaluate(() => {
       if (ps.display === "none" || ps.visibility === "hidden") continue;
       parts.push({ t: n.textContent, owner: n.parentElement });
     }
-    let hit = null;
-    for (let i = 1; i < parts.length && !hit; i++) {
+    // EVERY boundary, not the first. This loop used to stop at the first qualifying pair
+    // (`&& !hit`), and a control's SECOND glued boundary was then covered by nothing: section 2
+    // below explicitly skips anything inside a control. The pitch row is the case that found it —
+    //
+    //   <div role=button>  "P2" | "5.5" | "CRUX" | "180 ft · 361 ft up" | …
+    //
+    // The first pair is "P2"→"5.5", whose owners are two FLEX children; Chrome blockifies those
+    // and inserts a space, so the computed name has no "25.5" in it and the confirm step correctly
+    // drops the candidate. But the loop had already stopped, so "5.5"→"CRUX" — the pair that
+    // really does announce as "5.5CRUX" — was never examined. The guard reported the control clean
+    // on the strength of a boundary it had rejected.
+    const hits = [];
+    for (let i = 1; i < parts.length; i++) {
       if (parts[i].owner === parts[i - 1].owner) continue;
       const prev = parts[i - 1].t, cur = parts[i].t;
       const a = prev.slice(-1), b = cur.slice(0, 1);
       // Whitespace on either side means the name already reads as two tokens — fine.
+      //
+      // A word character on BOTH sides, whatever their classes. The original rule was
+      // letter<->digit only, because #740 was a count welded to a label. The route page's
+      // "Recently climbed" rows are the same defect with a WORD on the right instead of a
+      // number — "Nathan Barber" and "Attempt" are separate elements held apart by
+      // `marginLeft:7`, and the accessibility tree has no margins, so Chrome announced
+      // "Nathan BarberAttempt". Narrowing to digits let that shape through for as long as
+      // this check has existed.
+      //
+      // Punctuation between the two fragments is a genuine separator and must NOT be
+      // flagged: "Alex Torres" + "✓ Summited" announces as "Alex Torres✓ Summited", where
+      // the ✓ keeps the two words apart. That is why this tests \w on both sides rather
+      // than "no whitespace at the boundary" — measured against the live app, the looser
+      // rule reports correct rows.
       let needle = null;
-      if (/[A-Za-z]/.test(a) && /[0-9]/.test(b)) needle = (prev.match(/[A-Za-z]+$/) || [""])[0] + (cur.match(/^[0-9]+/) || [""])[0];
-      else if (/[0-9]/.test(a) && /[A-Za-z]/.test(b)) needle = (prev.match(/[0-9]+$/) || [""])[0] + (cur.match(/^[A-Za-z]+/) || [""])[0];
-      if (needle && needle.length > 1) hit = { needle, before: prev.slice(-24), after: cur.slice(0, 24) };
+      if (/\w/.test(a) && /\w/.test(b)) needle = (prev.match(/\w+$/) || [""])[0] + (cur.match(/^\w+/) || [""])[0];
+      // Dedupe by needle: one control can produce the same pair twice (a repeated chip), and
+      // confirming it twice would report one defect as two.
+      if (needle && needle.length > 1 && !hits.some((h) => h.needle === needle)) {
+        hits.push({ needle, before: prev.slice(-24), after: cur.slice(0, 24) });
+      }
     }
-    if (!hit) continue;
+    if (!hits.length) continue;
+    // One probe attribute per CONTROL, one candidate per BOUNDARY. The confirm step looks the
+    // element up by that attribute and tests each needle against the computed name separately, so
+    // several candidates sharing a probe id is exactly right.
     el.setAttribute("data-a11yprobe", String(idx));
-    out.push({ probe: idx, tag: el.tagName.toLowerCase(), role: el.getAttribute("role") || "", text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60), ...hit });
+    const meta = { probe: idx, tag: el.tagName.toLowerCase(), role: el.getAttribute("role") || "", text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60) };
+    for (const h of hits) out.push({ ...meta, ...h });
     idx++;
   }
   return out;
@@ -249,10 +412,22 @@ const dump = {};
 let screensWalked = 0;
 let controlsScanned = 0;
 
+const foundOff = new Map();
+let boundariesExamined = 0;
+
 async function sweep(label) {
   const cands = await findCandidates();
-  controlsScanned += cands.length;
+  // Candidates are per BOUNDARY now and a control can contribute several, so count the distinct
+  // probe ids — otherwise the summary reports more "controls" than the page has.
+  controlsScanned += new Set(cands.map((c) => c.probe)).size;
   const confirmed = await confirm(cands);
+  const off = await scanOffControl();
+  boundariesExamined += off.examined;
+  for (const h of off.out) {
+    const key = h.needle + "|" + h.style;
+    if (!foundOff.has(key)) foundOff.set(key, { ...h, screens: new Set() });
+    foundOff.get(key).screens.add(label);
+  }
   screensWalked++;
   // Record the candidates too, not just the hits. A dump of "0 confirmed" tells you nothing
   // about whether the scan was looking at anything; the candidate list is how you check that
@@ -272,31 +447,107 @@ async function sweep(label) {
 }
 
 // 1. Every main tab.
-for (const t of TABS) {
+for (const t of ONLY ? [] : TABS) {
   await load(`?zt=${t}`, 2200, true);
   await sweep("tab:" + t);
 }
 
+// 1b. The route detail screen, on every sub-tab. Navigated rather than driven: `?zr=1` calls
+//     the app's own openRoute() from inside the opener, so no slow list or moved row can
+//     defeat it. Wait on __routeOpen as WELL as on the text settling — `load` returns on
+//     __overlaysReady, which says nothing about whether the navigation has happened, and
+//     tying the two together is what check:overflow's first CI run got wrong.
+await load("?zr=1", 2200, true);
+const routeOpen = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).then(() => true).catch(() => false);
+if (!routeOpen) {
+  // A failure, not a note. While this was a UI drill-in it could miss for reasons that were
+  // nobody's fault; `?zr=1` can only fail if the opener or the route page is broken.
+  fail("route detail", "?zr=1 never set window.__routeOpen, so the richest screen in the app went unmeasured");
+} else {
+  await sweep("route:overview");
+  // Sub-tab names collide with the bottom nav, and a global text match silently leaves the
+  // route page — so skip anything inside fixed/sticky chrome. Same helper shape as
+  // check:overflow, which already learned this.
+  const tapSub = async (name) => {
+    const ok = await page.evaluate((n) => {
+      const hit = [...document.querySelectorAll("button,div,span,a")]
+        .filter((e) => (e.innerText || "").trim() === n)
+        .filter((e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return false; } return true; });
+      if (!hit.length) return false;
+      hit[0].click();
+      return true;
+    }, name);
+    if (ok) await settledText(page, { min: CHROME_ONLY, timeout: 45000 }).catch(() => {});
+    return ok;
+  };
+  // "Reports" is "Send Reports" on a crag-only route, and Plan is content-gated, so a
+  // sub-tab that is legitimately absent is reported rather than failed.
+  for (const sub of ["Reports", "Photos", "Partners", "Plan", "Safety"]) {
+    if (!(await tapSub(sub))) { log(`  route:${sub}`.padEnd(30) + "  sub-tab not present on this route"); continue; }
+    await sweep("route:" + sub);
+  }
+
+  // 1c. A SECOND route, chosen because it can render a PITCH TABLE.
+  //
+  // `?zr=1` opens ROUTES[0] — `kings_hf`, a scramble whose `pitchDetail` is null — so every walk
+  // this guard has ever made saw a route with no pitch rows on it. That is how #1374 happened: a
+  // pitch row is a clickable() control whose CRUX badge is a separate <span> held off the grade by
+  // a margin, so a pitch graded "5.9" announced as "5.9CRUX" — this guard's exact subject, on a
+  // screen it could not reach. Eight of the fourteen seed routes carry a crux pitch and seven of
+  // those render the glued shape; the one this walk opened was not among them.
+  //
+  // `?zrp=1` asks the scaffold for a route with a crux pitch BY PROPERTY, so reordering the seed
+  // array cannot quietly re-open the hole. The pitch table lives on the PLAN tab, not Overview.
+  await load("?zr=1&zrp=1", 2200, true);
+  const pitchedOpen = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).then(() => true).catch(() => false);
+  const noPitched = await page.evaluate(() => window.__zrNoPitched === true);
+  if (!pitchedOpen) {
+    fail("route detail (pitched)", "?zr=1&zrp=1 never set window.__routeOpen, so the pitch table went unmeasured");
+  } else if (noPitched) {
+    // Fail closed. Without this the scaffold silently falls back to ROUTES[0] and the sweep below
+    // reports a clean pass over a screen with no pitch rows on it — the very shape this covers.
+    fail("route detail (pitched)", "no seed route carries a crux pitch any more, so the scaffold fell back to ROUTES[0] and the pitch table was NOT walked");
+  } else {
+    await sweep("route:pitched-overview");
+    if (await tapSub("Plan")) {
+      await sweep("route:pitched-plan");
+      // The rows are collapsed; the header is the control whose name is at issue, so the sweep
+      // above already covers it. Expanding one is cheap and widens it to the open state.
+      const expanded = await page.evaluate(() => {
+        const row = [...document.querySelectorAll('[role="button"]')]
+          .find((e) => /^Pitch \d/.test(e.getAttribute("aria-label") || ""));
+        if (!row) return false;
+        row.click();
+        return true;
+      });
+      if (expanded) { await settledText(page, { min: CHROME_ONLY, timeout: 45000 }).catch(() => {}); await sweep("route:pitch-expanded"); }
+      else log("  route:pitch-expanded".padEnd(30) + "  no named pitch row to expand");
+    } else {
+      fail("route detail (pitched)", "the Plan sub-tab is not on a route that has a pitch table — the pitch rows were not walked");
+    }
+  }
+}
+
 // 2. Every overlay the app declares. Discovered from source via the shared scaffold, so a
 //    modal added tomorrow is swept without anyone registering it here.
-const overlays = await page.evaluate(() => window.__overlays || []);
-if (!overlays.length) {
+const overlays = ONLY ? [] : await page.evaluate(() => window.__overlays || []);
+if (!overlays.length && !ONLY) {
   fail("scaffold", "no overlay states were discovered — the scaffold did not run, and nothing below was actually checked");
-} else {
+} else if (!ONLY) {
   log(`\n  ${overlays.length} overlay states discovered\n`);
 }
-assertKnownOverlays(overlays, fail);
+if (!ONLY) assertKnownOverlays(overlays, fail);
 // Some overlays are scoped to one screen, so opening them from the wrong tab renders
 // nothing and the sweep would scan a bare tab and call it clean. Take the first tab where
 // the overlay actually adds text — the same approach check:zero settled on.
-const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover"];
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 // Compare LINE SETS, not text length — the same test check:zero uses. Length is the wrong
 // question: an overlay that replaces the tab's content rather than adding to it can leave
 // the total the same or SHORTER, and a length test then reports a perfectly good modal as
 // never mounted and silently drops it from the sweep. That is how coverage rots quietly.
 const lines = () => page.evaluate(() => (document.body.innerText || "").split("\n").map((s) => s.trim()).filter(Boolean));
 const tabLines = {};
-for (const t of OVERLAY_TABS) {
+for (const t of ONLY ? [] : OVERLAY_TABS) {
   await load(`?zt=${t}`, 1200, true);
   tabLines[t] = new Set(await lines());
 }
@@ -339,8 +590,37 @@ if (!controlsScanned && !fails.length) {
   process.exit(1);
 }
 
+// Section 2 scans BOUNDARIES, not controls, so it needs its own floor: this app assembles text
+// from many nodes on every screen, and zero boundaries examined means the walker broke rather
+// than that the app is one big text node.
+if (!boundariesExamined && !fails.length) {
+  console.error("\ncheck:a11y-badges: section 2 examined NO cross-element text boundaries at all across " + screensWalked + " screens.");
+  console.error("That is a broken walker, not a clean app. Refusing to report a pass.\n");
+  process.exit(1);
+}
+
+if (foundOff.size) {
+  console.error(`\ncheck:a11y-badges: ${foundOff.size} place(s) OFF a control read as one welded token:\n`);
+  for (const f of foundOff.values()) {
+    console.error(`  <${f.tag} style="${f.style}">  reads as ${JSON.stringify(f.needle)}  (a ${f.gap}px gap the a11y tree does not have)`);
+    console.error(`      glued at ${JSON.stringify(f.before)} + ${JSON.stringify(f.after)}`);
+    console.error(`      in: ${JSON.stringify(f.ctx)}`);
+    console.error(`      seen on: ${[...f.screens].join(", ")}`);
+  }
+  console.error(`
+These are not controls, so no aria-label applies -- there is no name to fix. Put a real
+separator into the TEXT, or let layout supply one:
+
+  {label}{" "}{cond ? <span style={{marginLeft:7}}>{value}</span> : null}
+
+A margin is not a separator. Only a character in the text, or a block/flex boundary that makes
+the browser insert one, changes what is read out.
+`);
+  process.exit(1);
+}
+
 if (found.size) {
-  console.error(`\ncheck:a11y-badges: ${found.size} control(s) announce a count welded to their label:\n`);
+  console.error(`\ncheck:a11y-badges: ${found.size} control(s) announce two fragments welded into one token:\n`);
   for (const f of found.values()) {
     console.error(`  <${f.tag}${f.role ? ` role=${f.role}` : ""}>  announced as ${JSON.stringify(f.name)}`);
     console.error(`      visible text ${JSON.stringify(f.text)}`);
@@ -348,12 +628,16 @@ if (found.size) {
     console.error(`      seen on: ${[...f.screens].join(", ")}`);
   }
   console.error(`
-A screen reader reads the name as one token — "Friends2", not "Friends, 2". The visible gap
-is CSS margin, and the accessibility tree has no margins.
+A screen reader reads the name as one token — "Friends2", not "Friends, 2"; or
+"Nathan BarberAttempt", not "Nathan Barber, Attempt". The visible gap is CSS margin or a
+flex gap, and the accessibility tree has neither.
 
 Give the control an explicit name that separates them, the way #740 did:
 
   aria-label={count ? label + ", " + count : label}
+
+Build that label FROM the same expression the chip renders, not from a restatement of it —
+otherwise the announced name and the visible text drift apart the next time one is edited.
 
 Restructuring the JSX will not help: the name algorithm concatenates descendant text either
 way. Only an explicit name changes what is announced.
@@ -368,5 +652,33 @@ if (fails.length) {
   process.exit(1);
 }
 
-log(`\ncheck:a11y-badges: ok — ${screensWalked} screens (${TABS.length} tabs, ${opened} overlays), ${controlsScanned} multi-node control(s) scanned, none announce a glued count.\n`);
+if (ONLY) {
+  log(`\ncheck:a11y-badges: PARTIAL RUN (--only=${ONLY}) — ${screensWalked} screen(s) only, tabs and overlays SKIPPED.`);
+  log(`  section 1: ${controlsScanned} control(s); section 2: ${boundariesExamined} boundar(ies). No findings.`);
+  log("  This is not a pass. Run without --only before believing the app is clean.\n");
+  process.exit(0);
+}
+log(`\ncheck:a11y-badges: ok — ${screensWalked} screens (${TABS.length} tabs, ${opened} overlays).`);
+log(`  section 1: ${controlsScanned} multi-node control(s) scanned, none announce a glued name.`);
+// Say what section 2 covered. A verdict naming only section 1 would leave the next reader
+// unable to tell from the output that the off-control scan exists at all -- which is how a
+// coverage hole gets rediscovered rather than read.
+log(`  section 2: ${boundariesExamined} cross-element text boundar(ies) examined, none read as one welded token.\n`);
 process.exit(0);
+
+// INJECTION — scripts/oneoff/inject-glued-offcontrol-case.mjs, and re-run it after ANY change to
+// section 2. It removes the {" "} from RouteDetail's conditions list, which is the tree that
+// really shipped "Best windowmid-Jul to early Sep", and drives this guard with --only=route.
+//
+// SECTION 2 SHIPPED BROKEN AND EVERY SIGNAL SAID OTHERWISE. Its first version was a template
+// literal, and inside one `\w` is an escape that collapses to a literal "w" -- so the needle
+// regex was /w/ and the scan matched almost nothing. It reported a clean app across 65 screens.
+// Nothing looked wrong: the guard was green before the widening and after it, the fail-closed
+// floor was satisfied (it counts boundaries EXAMINED, which is a real number whether or not the
+// needle logic works), and "0 findings" was the expected answer. Only the injection against a
+// defect that had genuinely shipped told the truth.
+//
+// Two consequences worth keeping. The scan is a FUNCTION passed to page.evaluate, as
+// findCandidates is, so neither the escaping trap nor the backtick trap can return. And a floor
+// that counts work done is not evidence that the work was correct -- the same lesson
+// check:dup-attrs records for its element counter.

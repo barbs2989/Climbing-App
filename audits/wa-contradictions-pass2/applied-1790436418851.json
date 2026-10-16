@@ -1,0 +1,500 @@
+{
+ "applied": [
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Net gain from the trailhead to Snowy Lakes camp"
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Ridge used to reach the summit"
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "packLb"
+   ],
+   "fact": "Summit-day pack weight"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "section"
+   ],
+   "fact": "Descent time on summit day"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "section"
+   ],
+   "fact": "Descent time on summit day"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "timing",
+   "path": [
+    "descentTimeHrs"
+   ],
+   "fact": "Descent time on summit day"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Objective named in the partner and hazard fields"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Objective named in the partner and hazard fields"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Objective named in the partner and hazard fields"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Objective named in the partner and hazard fields"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "SR-20 season dates"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "SR-20 season dates"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 season dates"
+  },
+  {
+   "id": "wa_south_face",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Date SR-20 closed for the 2025-26 winter"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "before": {
+    "approach": "Start at the Rainy Pass PCT trailhead (~4,875 ft) on SR-20, 4.7 miles west of Washington Pass. Follow the Pacific Crest Trail northbound as it switchbacks up through forest and into larch parkland to Cutthroat Pass (~6,800 ft, ~4.9 mi) — this stretch has only intermittent small streams, so fill up at the last stream below the pass, since the pass itself is dry and little reliable water exists again until Snowy Lakes. From Cutthroat Pass the PCT contours below Cutthroat Peak's west flank to Granite Pass (~6,300 ft, roughly 6.5-7 mi from the trailhead); this pass holds snow into July/August, and when snow-covered it's steep and exposed enough that an ice axe (and comfort self-arresting) is warranted. Beyond Granite Pass the trail sidehills below Tower Mountain's west side, crosses a cliff-cut, blasted-out section, and loses a bit of elevation into a meadowed basin. Roughly 9.5-10 miles in, about a mile short of Methow Pass at about 6,300 ft, a climbers'/use path branches right (east) off the PCT and climbs ~0.5 mi and ~400 ft to the Snowy Lakes basin — Lower Snowy Lake (~6,600 ft) or Upper Snowy Lake (~6,700 ft) — the standard base camp, with reliable water and good tent sites; most parties backpack in and climb from camp rather than going car-to-car. From camp near Lower Snowy Lake, head cross-country south toward Tower Mountain on a climbers' path, then make a short but strenuous traverse across a talus field, aiming for a distinctive large reddish boulder partway across. Beyond the boulder, a ramp on the left side of a large cave (which cuts about 25 yards into the mountainside and makes a good wind-sheltered rest stop) leads up to the base of the main summit gully — from here the route follows ledges on the gully's right side, zigzagging back toward the gully-notch in the ridge and up broken rock to the summit. Total distance to the base of the gully runs roughly 10-11 miles one-way with about 2,800-3,000 ft of net elevation gain from the trailhead to camp (cumulative gain over the Cutthroat/Granite pass rollercoaster is closer to 4,200 ft). The gully itself is the route's main hazard: the rock is notoriously loose and rockfall-prone, so helmets are strongly recommended and parties should climb one at a time, staying right and moving efficiently through the narrowest sections.",
+    "waypoints": [
+     {
+      "lat": 48.5153,
+      "lng": -120.73601,
+      "elev": 4880,
+      "name": "Rainy Pass PCT Trailhead",
+      "note": "USFS trailhead on SR-20 at Rainy Pass; Northwest Forest Pass required to park; no overnight permit needed.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead sits on SR-20, the North Cascades Highway, at Rainy Pass, about 4.7 miles west of Washington Pass. That stretch of Highway 20 typically closes for the winter and reopens in May, so check that it's open before you drive up. Display a Northwest Forest Pass to park; no overnight permit is needed for this stretch of trail."
+     },
+     {
+      "lat": 48.5545805,
+      "lng": -120.7001052,
+      "elev": 6800,
+      "name": "Cutthroat Pass",
+      "note": "PCT crests the pass here with the first open views north into the Pasayten; trail keeps traversing north instead of dropping.",
+      "type": "Junction",
+      "distMi": 4.9,
+      "directions": "Head north on the PCT from the parking area; the trail climbs gently at first, then switchbacks up through forest into open larch parkland to reach the pass. Water on this stretch is limited to a few small intermittent streams, so fill up at the last of them, because there is little reliable water again until the lakes."
+     },
+     {
+      "lat": 48.5707342,
+      "lng": -120.6868417,
+      "elev": 6270,
+      "name": "Granite Pass",
+      "note": "Second, lower saddle on the PCT past Cutthroat Pass; the climbers' route toward Tower Mountain leaves the maintained trail somewhere past here.",
+      "type": "Junction",
+      "distMi": null,
+      "directions": "The trail stays high and contours north below Cutthroat Peak's west flank, losing a little elevation to reach this lower saddle. Snow can lie across the traverse into midsummer, and where it does the slope beneath the tread is steep and run out enough to justify an ice axe and the ability to self-arrest. Do not mistake this saddle for the pass behind you: the climbers' route toward Tower leaves the trail past here, not at the first pass."
+     },
+     {
+      "lat": 48.5886412,
+      "lng": -120.7158889,
+      "elev": 6230,
+      "name": "Snowy Lakes Trail spur",
+      "note": "Small, easy-to-miss unmarked spur leaves the PCT here for Snowy Lakes basin; gains ~500 ft over the final half mile to the lakes.",
+      "type": "Junction",
+      "distMi": 10.5,
+      "directions": "Beyond the pass the PCT sidehills below Tower Mountain's own west side, crosses a blasted-out cliff cut, and loses a little elevation into a meadowed basin. About a mile before Methow Pass, watch the right-hand (east) side of the trail: the spur is an unsigned use path that is easy to walk straight past."
+     },
+     {
+      "lat": 48.5903242,
+      "lng": -120.7197232,
+      "elev": 6700,
+      "name": "Snowy Lakes basin camp",
+      "note": "Established camping between Upper and Lower Snowy Lake; Lower Snowy Lake sits closest to Tower Mountain and is the usual base for the southwest route.",
+      "type": "Campsite",
+      "distMi": 11,
+      "directions": "The spur climbs east off the PCT, gaining roughly 400 to 500 feet in about half a mile onto the bench holding the two lakes. Lower Snowy Lake is the one to camp at for this route; Upper Snowy sits higher and farther from the peak. Use the established sites, as the basin is heavily used and the meadow is thin."
+     },
+     {
+      "lat": 48.58958011404011,
+      "lng": -120.7131909363897,
+      "elev": 7400,
+      "name": "Headwall cave-ledge bypass",
+      "note": "A large headwall blocks direct access to the summit gully; climbers' path crosses talus/scree on the headwall's west side then follows an exposed-looking (but moderate) ledge past a 20-ft-tall cave mouth visible from Snowy Lakes to reach the gully entrance.",
+      "type": "Hazard",
+      "directions": "From Lower Snowy Lake make a rising traverse toward Tower's west face, crossing talus and scree, staying below the minor cliff bands and threading through or above the scrub to reach the main talus slope. Aim for the left (west) side of the headwall and climb scree up that flank to pick up the start of the ledge, which then cuts back right above the headwall to the cave. Pick the cave mouth out from camp before you start: it is visible from the lakes and is the one reliable landmark on an otherwise featureless slope."
+     },
+     {
+      "lat": 48.58915492206304,
+      "lng": -120.70945821432666,
+      "elev": 7800,
+      "name": "Main summit gully",
+      "note": "Class 3-4 gully above the cave ledge; right side has more ledges/holds and is usually cairned, center and left are steeper and more exposed.",
+      "type": "Junction",
+      "directions": "Past the cave the ledge continues a short distance and delivers you to the foot of the gully. The step across looks more serious than it climbs and stays moderate. Helmets on from here, because anything a party above knocks loose funnels straight down the gully."
+     },
+     {
+      "lat": 48.58845,
+      "lng": -120.70409,
+      "elev": 8445,
+      "name": "Tower Mountain",
+      "note": "True summit; descend by reversing the gully and cave-ledge system back to the west-ridge notch rather than continuing over technical terrain.",
+      "type": "Summit",
+      "distMi": 13,
+      "directions": "Climb the gully on its right side, where the rock is more featured and the cairns are; the centre and left are steeper and more exposed. The rock is genuinely loose, so keep the party tight or well out of each other's fall line and move steadily. Follow the cairns out right toward the ridge crest and resist exiting early, since the exit is higher than it looks; one short exposed move gains the final ridge, which walks to the large summit cairn."
+     }
+    ],
+    "itinerary": {
+     "cal": "Highway 20 (North Cascades Hwy) typically opens in May; the SW gully/talus can still hold snow into July, so most parties go July-September for driest, safest rock.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy, scenic backpack almost entirely on the Pacific Crest Trail from Rainy Pass, over Cutthroat Pass and Granite Pass, then a short side trip up into the Snowy Lakes basin to camp. Trail is well graded and mostly moderate grade; multiple trip reports clock this leg at roughly 5-6 hours with overnight packs.",
+       "hours": 5.5,
+       "miles": 9.5,
+       "title": "Backpack in to Snowy Lakes camp",
+       "gainFt": 2300,
+       "lossFt": 400,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "",
+         "label": "Leave Rainy Pass trailhead",
+         "detail": "PCT north; some parties start midday after driving up from Seattle."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Cutthroat Pass / Granite Pass",
+         "detail": "First views of Tower Mountain and Golden Horn from the pass."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Arrive Snowy Lakes, make camp",
+         "detail": "Upper Snowy Lake is preferred for views; Lower Snowy Lake camps are also common and closer to the Tower climber's path."
+        }
+       ],
+       "objective": "Establish camp at Upper or Lower Snowy Lake"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp with a light day pack for the summit push: cross talus below the west face (can hold snow early season), pass the large cave feature on the climber's path, then work up the loose class 3 gully with a short class 4 slab/exposed step near the top. After returning to camp, break it down and reverse the PCT back to the car — a long but standard single push for fit parties; some groups instead split this into two separate days if they want a more relaxed pace.",
+       "hours": 10,
+       "miles": 13.5,
+       "title": "Climb Tower Mountain, then hike out",
+       "gainFt": 1900,
+       "lossFt": 3800,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp for Tower Mountain",
+         "detail": "Day pack, helmet on for the gully — rockfall is a real hazard, especially with parties above."
+        },
+        {
+         "time": "~8:00 AM",
+         "label": "Reach the cave and gully entrance",
+         "detail": "Notable ~25-yard-deep cave along the climber's path is a common landmark/rest stop."
+        },
+        {
+         "time": "~9:00-9:30 AM",
+         "label": "Summit Tower Mountain",
+         "detail": "Final moves are class 3-4 over blocks and a short chimney; loose rock throughout the gully."
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Back at camp",
+         "detail": "Break down tent and reload overnight pack."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Depart camp, hike out via PCT",
+         "detail": "Reverse Granite Pass / Cutthroat Pass route back to Rainy Pass."
+        },
+        {
+         "time": "~5:00-6:00 PM",
+         "label": "Arrive trailhead",
+         "detail": "Some parties use a steeper Swamp Creek bushwhack shortcut to cut this leg short, at the cost of off-trail travel."
+        }
+       ],
+       "objective": "Summit via the SW gully system and pack out to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day, ~23-mile round trip with ~4,200 ft total gain: an easy PCT backpack in to Snowy Lakes camp, then a long summit-and-hike-out day on Tower's loose SW gully. Strong parties sometimes push the whole thing car-to-car in one very long day instead."
+    }
+   }
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "before": {
+    "timing": {
+     "totalHrs": 15.5,
+     "summitTimeHrs": 4.5,
+     "descentTimeHrs": 11,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "From the Wine Spires pullout on Hwy 20 (~3.7 mi east of Washington Pass), drop steeply down to and cross Early Winters Creek, then climb the well-used climber's trail through timbe…",
+       "fromTo": "Approach to high camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 11,
+       "note": "From camp, gain Burgundy Col and traverse north along Vasiliki Ridge on scramble terrain to the base of Ares Tower; climb the 4th-class ridge with its short low-5th-class summit st…",
+       "fromTo": "Traverse to Ares Tower and out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Fit enough for a technical off-trail approach carrying a rock rack, rope, and rappel gear to the base of the Wine Spires",
+      "packWeight": "Moderate - rack, rope(s), helmet, approach shoes/rock shoes, rappel/rescue gear, layers for exposed afternoon weather"
+     },
+     "approachTime": "Not specified in existing beta; treat as a multi-hour technical approach from the Washington Pass / Silver Star area to the base of the Wine Spires (verify current approach beta before attempting)",
+     "requiredSkills": [
+      "Leading one short, exposed low-5th-class step and building a belay on alpine granite",
+      "Route-finding on featured, ledgy, occasionally loose alpine granite",
+      "A single rappel from a fixed summit anchor, including checking the anchor before weighting it",
+      "Comfort with exposure on technical pitches",
+      "Basic self-rescue / ability to bail given loose rock and afternoon thunderstorm risk"
+     ],
+     "experienceLevel": "Solid alpine scrambler at home on exposed, loose 4th-class ridge terrain and able to lead a short low-5th-class step, with route-finding on featured but sometimes loose granite; prior experience on the Washington Pass towers helps"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Warm, dry east-Cascades summer days typical of the Washington Pass area, with cooler nights at elevation",
+      "probability": "Afternoon thunderstorms are common at Washington Pass through the summer, raising lightning exposure risk on the exposed technical pitches and spires"
+     },
+     "exposure": "Significant - exposed 5th-class pitches on the Wine Spires towers combined with loose blocks on ledges make falls or rockfall consequential; route-finding among the spires adds risk of getting off-route into more exposed terrain",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer alpine rock route (climbed only in the dry July-September window, well outside the snow season on Hwy 20)",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4300,
+      "name": "Wine Spires / Burgundy Col pullout, SR-20",
+      "note": "Broad highway shoulder near milepost 166, ~3.7-4 mi east of Washington Pass; boot path drops from the pavement into trees toward Early Winters Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the unsigned Wine Spires pullout on SR-20, a broad highway shoulder about 3.7 miles east of Washington Pass and roughly 0.7 mile past the Cutthroat Lake Road turnoff, near milepost 166, at about 4,300 feet. North Cascades Highway 20 over Washington Pass is open only seasonally, typically mid-April to about mid-November depending on weather and snowpack, so the pullout is inaccessible outside that window."
+     },
+     {
+      "lat": 48.56803,
+      "lng": -120.629805,
+      "elev": 4080,
+      "name": "Early Winters Creek log crossing",
+      "note": "Climbers' path crosses on logs almost immediately below the highway; last reliable, easy water until the Bench.",
+      "type": "Water",
+      "distMi": 0.3
+     },
+     {
+      "lat": 48.55368,
+      "lng": -120.60556,
+      "elev": 6000,
+      "name": "The Ledge bivy",
+      "note": "Small established bivy shelf passed on the climbers' trail about two miles in, below the main Bench basin.",
+      "type": "Campsite",
+      "distMi": 2
+     },
+     {
+      "lat": 48.554232,
+      "lng": -120.601804,
+      "elev": 6460,
+      "name": "The Bench",
+      "note": "Flat camping basin (~2 hrs up from the highway) used as a base camp for Wine Spires/Vasiliki Ridge objectives; last dependable water before the col in early season snowmelt.",
+      "type": "Campsite",
+      "distMi": 2.3
+     },
+     {
+      "lat": 48.55552,
+      "lng": -120.59304,
+      "elev": 7800,
+      "name": "Burgundy Col",
+      "note": "Ridge-gain saddle ~3 mi/3-4 hrs from the highway; Vasiliki Tower sits immediately on the left entering the col — turn north here onto Vasiliki Ridge toward Ares Tower.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 48.5582188,
+      "lng": -120.59447399999999,
+      "name": "Vasiliki Ridge Class 4 traverse",
+      "note": "Exposed, loose 4th-class ridge scrambling north from the col/Bench toward Ares Tower; rope up for parties uncomfortable with unroped exposure.",
+      "type": "Hazard",
+      "distMi": 3.3
+     },
+     {
+      "lat": 48.560018,
+      "lng": -120.59543,
+      "elev": 8203,
+      "name": "Ares Tower summit",
+      "note": "Fixed rappel anchor at the true summit block (surveyed 8,202.8 ft); descend by rappelling into the notch to reverse the route.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "itinerary": {
+     "cal": "Only feasible once North Cascades Highway 20 opens over Washington Pass for the season (typically mid-April to ~mid-November, weather dependent).",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Wine Spires pullout on Hwy 20 (~3.7 mi east of Washington Pass), drop steeply down to and cross Early Winters Creek, then climb the well-used climber's trail through timber and talus to the Bench, an established camp at ~6,460 ft with a nearby spring. Stronger parties push on another ~1,300 ft to camp at Burgundy Col itself (~7,800 ft) to shorten summit day.",
+       "hours": 4.5,
+       "miles": 3.3,
+       "title": "Approach to high camp",
+       "gainFt": 4400,
+       "lossFt": 200,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach the Bench camp below Burgundy Col"
+      },
+      {
+       "n": 2,
+       "note": "From camp, gain Burgundy Col and traverse north along Vasiliki Ridge on scramble terrain to the base of Ares Tower; climb the 4th-class ridge with its short low-5th-class summit step, then rappel back to the ridge. Most parties break camp and descend the full approach back to the car the same day rather than a second night out; strong parties tag The Acropolis and Niki Tower en route.",
+       "hours": 11,
+       "miles": 7,
+       "title": "Traverse to Ares Tower and out",
+       "gainFt": 1400,
+       "lossFt": 6000,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Break camp / leave the Bench",
+         "detail": "Alpine start to be off the ridge before afternoon thunderstorms build."
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Reach Burgundy Col",
+         "detail": "Cache overnight gear here if camped lower at the Bench."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach base of Ares Tower",
+         "detail": "Ridge traverse over/around intermediate towers (Acropolis, Niki Tower) on 3rd-4th class terrain."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit Ares Tower",
+         "detail": "Short low-5th-class step guards the final summit block."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Rappel back to the ridge",
+         "detail": "Single-rope rappel off fixed/new anchors reported by recent parties."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Full reversal of the approach, re-crossing Early Winters Creek."
+        }
+       ],
+       "objective": "Climb Ares Tower via the ridge traverse, then hike all the way out to the car"
+      }
+     ],
+     "totalNote": "A 2-day trip: ~7 mi and ~5,800 ft one-way to the summit, with an established high camp at the Bench (or Burgundy Col) and a long car-to-car summit/exit day."
+    },
+    "access": {
+     "fees": "None at the roadside pullout. If car-camping the night before, Early Winters Campground (first-come, first-served, open roughly April-November) charges a nightly fee.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No climbing or wilderness permit is required; the Forest Service's regional climbing/caving page lists no permit requirement for the Silver Star/Wine Spires/Vasiliki Ridge area.",
+     "closures": "SR-20 (North Cascades Highway) is gated and closed to all traffic every winter, typically reopening mid-to-late April, but reopening can slip well into June after a heavy snow year or storm damage — in 2026, washouts and a slope failure near Diablo Lake delayed full reopening until June 14. The approach trail itself is a further limiting factor: it often isn't snow-free until several weeks after the highway opens.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Winthrop, WA); Forest Supervisor's Office in Wenatchee, (509) 664-9200",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None at the unsigned 'Wine Spires' pullout used for this approach. This differs from the nearby, developed Blue Lake Trailhead (a short drive further east/west), which does require a Northwest Forest Pass or interagency pass.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_face",
+   "before": {
+    "road": {
+     "name": "SR-20 highway pullout, Silver Star/Wine Spires area, Washington Pass",
+     "status": "Reached directly from a paved highway pullout; no unpaved approach road.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+  "wa_mount_cruiser_nw_face_corner": {
+    "area_id": "wa_mount_cruiser",
+    "field": "access",
+    "expect": {
+      "fees": "Olympic NP entrance: $30/vehicle or $15/person for 7 days, $55 annual Olympic pass (nps.gov/olym, 2026 rates). Overnight wilderness camping permit for Flapjack Lakes (a quota/limited-entry area including Gladys Divide) costs a $6 Recreation.gov reservation fee plus $8/person/night (16+, free under 16); summer-season (May 15–Oct 15) permits release April 15 and this is one of the park's highest-demand backcountry zones.",
+      "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+      "rules": "Flapjack Lakes is a quota/limited-use area — no same-day walk-up permits once the season sells out; groups capped at 12, parties of 7+ must use designated group campsites; stick to your permitted itinerary except in emergencies.",
+      "permit": "NPS wilderness/backcountry permit required for any overnight camping at Flapjack Lakes or Gladys Divide, booked in advance on Recreation.gov (Wilderness Information Center, 360-565-3100); no separate climbing permit is needed once past the park boundary into the Mount Skokomish Wilderness.",
+      "closures": "IMPORTANT (current as of mid-2026): the entire standard approach — Staircase entrance, North Fork Skokomish River Trail, Flapjack Lakes Trail, and the nearby Mildred Lakes Trail (an alternate approach) — is closed following the 2025 Bear Gulch Fire on the slopes above Lake Cushman (fire fully contained Nov 12, 2025, but rockfall/treefall/landslide hazard remains in the burn scar). NPS and Olympic National Forest closure orders remain in effect (through at least Oct 1, 2026 per USFS order 06-09-25-11); Lake Cushman Rd/Forest Road 24 access is also closed. There is currently no legal approach to Mount Cruiser via Flapjack Lakes — check NPS Olympic 'Fire Conditions and Updates' and Olympic National Forest alerts before planning a trip.",
+      "group_limit": 12,
+      "landManager": "Approach trail (Staircase, North Fork Skokomish River Trail, Flapjack Lakes Trail, Gladys Divide) is within Olympic National Park (NPS); the summit and Sawtooth Ridge itself sit just south of the park boundary in the Mount Skokomish Wilderness, Olympic National Forest.",
+      "land_manager": "U.S. Forest Service -- Mount Skokomish Wilderness, Olympic National Forest (summit/Sawtooth Ridge); the approach trail via Staircase lies within Olympic National Park.",
+      "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+      "passRequired": "NPS entrance pass (or America the Beautiful pass) for vehicle/individual entry at the Staircase entrance station; no Northwest Forest Pass needed since the trailhead itself is inside the National Park boundary.",
+      "overnight_permit": {
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+        "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+        "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+      }
+    },
+    "value": {
+      "fees": "Olympic NP entrance: $30/vehicle or $15/person for 7 days, $55 annual Olympic pass (nps.gov/olym, 2026 rates). Overnight wilderness camping permit for Flapjack Lakes (a quota/limited-entry area including Gladys Divide) costs a $6 Recreation.gov reservation fee plus $8/person/night (16+, free under 16); summer-season (May 15–Oct 15) permits release April 15 and this is one of the park's highest-demand backcountry zones.",
+      "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+      "rules": "Flapjack Lakes is a quota/limited-use area — no same-day walk-up permits once the season sells out; groups capped at 12, parties of 7+ must use designated group campsites; stick to your permitted itinerary except in emergencies.",
+      "permit": "NPS wilderness/backcountry permit required for any overnight camping at Flapjack Lakes or Gladys Divide, booked in advance on Recreation.gov (Wilderness Information Center, 360-565-3100); no separate climbing permit is needed once past the park boundary into the Mount Skokomish Wilderness.",
+      "closures": "The standard approach is still closed: FS-24 and the Staircase developed area reopened July 8, 2026 after the 2025 Bear Gulch Fire (contained November 12, 2025), but the North Fork Skokomish River Trail beyond the Staircase Rapids Loop and the Flapjack Lakes Trail remain closed for hazard assessment and repairs, with no announced reopening date. Check with Olympic National Park before planning a trip.",
+      "group_limit": 12,
+      "landManager": "Approach trail (Staircase, North Fork Skokomish River Trail, Flapjack Lakes Trail, Gladys Divide) is within Olympic National Park (NPS); the summit and Sawtooth Ridge itself sit just south of the park boundary in the Mount Skokomish Wilderness, Olympic National Forest.",
+      "land_manager": "U.S. Forest Service -- Mount Skokomish Wilderness, Olympic National Forest (summit/Sawtooth Ridge); the approach trail via Staircase lies within Olympic National Park.",
+      "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+      "passRequired": "NPS entrance pass (or America the Beautiful pass) for vehicle/individual entry at the Staircase entrance station; no Northwest Forest Pass needed since the trailhead itself is inside the National Park boundary.",
+      "overnight_permit": {
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+        "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+        "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+      }
+    },
+    "closure": "e",
+    "why": "NPS Olympic 'Fire Conditions and Updates' (last updated 2026-09-18): Staircase developed area and FS-24 reopened July 8 (2026) after a year-long closure; still closed: North Fork Skokomish Trail from the Staircase Rapids Loop to Home Sweet Home, Flapjack Lakes Trail, Four Stream, Black and White Lakes, Shady Lane, part of Six Ridge. NPS conditions page (updated 2026-08-27) agrees. Bear Gulch Fire began July 6 2025, contained Nov 12 2025. access.closures says FR 24/Staircase entrance closed and cites a USFS order 'through at least Oct 1 2026' that is no longer on the ONF alerts page.",
+    "confidence": "high",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": []
+  },
+  "wa_bonanza_peak_cascadian_route": {
+    "area_id": "wa_bonanza_peak",
+    "field": "access",
+    "expect": {
+      "fees": "Lake Chelan Boat Company ferry fare plus Holden Village shuttle fee.",
+      "permit": "No backcountry permit required; register at Holden Village's Hike Haus.",
+      "closures": "FR 8301 corridor closed to public per Forest Order #755.",
+      "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Chelan Ranger District (Glacier Peak Wilderness)",
+      "passRequired": "Not applicable to the boat-based approach."
+    },
+    "value": {
+      "fees": "Lake Chelan Boat Company ferry fare plus Holden Village shuttle fee.",
+      "permit": "No backcountry permit required; register at Holden Village's Hike Haus.",
+      "closures": "FR 8301 and the Lucerne dock have been closed to vehicles and hikers since January 2026 under Okanogan-Wenatchee order 06-17-05-26-04, through December 31, 2027 unless rescinded sooner.",
+      "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Chelan Ranger District (Glacier Peak Wilderness)",
+      "passRequired": "Not applicable to the boat-based approach."
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2.",
+    "confidence": "high",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": [
+      {
+        "key": "closures",
+        "rows": [
+          "wa_bonanza_peak_oregonian_route"
+        ]
+      }
+    ]
+  },
+  "wa_bonanza_peak_oregonian_route": {
+    "area_id": "wa_bonanza_peak",
+    "field": "access",
+    "expect": {
+      "fees": "Lake Chelan Boat Company ferry fare plus Holden Village shuttle fee (standard approach).",
+      "permit": "No backcountry permit required; register at Holden Village's Hike Haus.",
+      "closures": "FR 8301 corridor closed to public per Forest Order #755.",
+      "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Chelan Ranger District (Glacier Peak Wilderness)",
+      "passRequired": "Not applicable to the boat-based approach."
+    },
+    "value": {
+      "fees": "Lake Chelan Boat Company ferry fare plus Holden Village shuttle fee (standard approach).",
+      "permit": "No backcountry permit required; register at Holden Village's Hike Haus.",
+      "closures": "FR 8301 and the Lucerne dock have been closed to vehicles and hikers since January 2026 under Okanogan-Wenatchee order 06-17-05-26-04, through December 31, 2027 unless rescinded sooner.",
+      "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Chelan Ranger District (Glacier Peak Wilderness)",
+      "passRequired": "Not applicable to the boat-based approach."
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Railroad and Preston Creek Road Closures' (order 06-17-05-26-04, start Jan 29 2026, through Dec 31 2027): FSR 8301 from the Lucerne commercial dock and the dock itself closed after storm damage; 'hikers should NOT plan on accessing or exiting these trails through Holden and the Lucerne Boat Dock'; Chelan RD (509) 682-4900. Little Giant order 06-17-07-2026-40 also lists FSR 8301, 8301-140 and FST 1240.2.",
+    "confidence": "high",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": [
+      {
+        "key": "closures",
+        "rows": [
+          "wa_bonanza_peak_cascadian_route"
+        ]
+      }
+    ]
+  },
+  "wa_mount_maude_r1": {
+    "area_id": "wa_mount_maude",
+    "field": "access",
+    "expect": {
+      "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+      "rules": "Wilderness regulations; group-size limits apply",
+      "permit": "Wilderness self-issue permit where applicable",
+      "closures": "Little Giant Fire Closure Order 06-17-07-2026-33, effective 14 Aug 2026 through 31 Oct 2026, closes FR 6200 (Chiwawa River Rd), FR 6211 (Phelps Creek Rd), Phelps Creek Trail #1511, Leroy Creek Trail #1512 AND the Entiat River alternate (Entiat River Rd/FR 5100, Cottonwood Campground, Entiat River Trail #1400). Fire is 147,537 acres, 21% contained as of 25 Aug 2026.",
+      "group_limit": 12,
+      "landManager": "Okanogan-Wenatchee National Forest (Glacier Peak Wilderness vicinity)",
+      "land_manager": "Okanogan-Wenatchee National Forest (Chiwawa/Entiat Ranger Districts) — Glacier Peak Wilderness",
+      "parking_pass": "Northwest Forest Pass required at some trailheads (fee day-use sites) — $5/day or $30/year.",
+      "passRequired": "None at the Phelps Creek Trailhead - the Forest Service lists it as a no-fee site, so no Northwest Forest Pass or Interagency pass is needed to park. The Glacier Peak Wilderness permit is free and self-issued at the register.",
+      "overnight_permit": {
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk (Phelps Creek, Trinity, Entiat River, or the Holden trailheads). Holden Village and its access road are closed to hikers through at least summer 2026."
+      }
+    },
+    "value": {
+      "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+      "rules": "Wilderness regulations; group-size limits apply",
+      "permit": "Wilderness self-issue permit where applicable",
+      "closures": "The Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect September 3 through October 31, 2026 unless lifted sooner) closes the Chiwawa River Road (FR 6200), Phelps Creek Road (FR 6211) and the Entiat River Road (FR 5100) alternate. Separately, FR 6200 has been closed to vehicles beyond Atkinson Flat Campground since May 20, 2026 for storm damage (order 06-17-07-2026-11, through December 31, 2027).",
+      "group_limit": 12,
+      "landManager": "Okanogan-Wenatchee National Forest (Glacier Peak Wilderness vicinity)",
+      "land_manager": "Okanogan-Wenatchee National Forest (Chiwawa/Entiat Ranger Districts) — Glacier Peak Wilderness",
+      "parking_pass": "Northwest Forest Pass required at some trailheads (fee day-use sites) — $5/day or $30/year.",
+      "passRequired": "None at the Phelps Creek Trailhead - the Forest Service lists it as a no-fee site, so no Northwest Forest Pass or Interagency pass is needed to park. The Glacier Peak Wilderness permit is free and self-issued at the register.",
+      "overnight_permit": {
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+        "what": "Free self-issue Glacier Peak Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk (Phelps Creek, Trinity, Entiat River, or the Holden trailheads). Holden Village and its access road are closed to hikers through at least summer 2026."
+      }
+    },
+    "closure": "c",
+    "why": "USFS O-W alert 'Storm Damaged Roads Closure on Wenatchee River District' (order 06-17-07-2026-11, May 20 2026 - Dec 31 2027, FSR 6200 from Atkinson Flats Campground junction north to Trinity; 'not an estimate for when these roads will reopen'); FSR 6211 branches off FSR 6200 above that point. Little Giant Fire closure order 06-17-07-2026-40 (Sep 3 - Oct 31 2026) lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Creek Trailhead. Fetched 2026-09-25. Row's own road text described the road with no closure. access.closures cites superseded order -33 and a fire size/containment dated 25 Aug 2026.",
+    "confidence": "medium",
+    "keys_changed": [
+      "closures"
+    ],
+    "same_value_on_other_rows": []
+  }
+}

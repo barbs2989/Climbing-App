@@ -1,0 +1,84 @@
+{
+ "id": "wa_austera_peak_southwest_ridge",
+ "name": "Southwest Ridge / McAllister Glacier",
+ "waypoints": [
+  {
+   "lat": 48.49261,
+   "lng": -121.11761,
+   "elev": 2100,
+   "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+   "note": "Roadside pullout on Cascade River Road near mile 20; cross the Cascade River on a downstream log jam, then find the climbers' trail heading upstream on the far bank.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive the Cascade River Road to the roadside pullout near mile 20 at about 2,100 ft, and check the current road status first — flood damage near the park boundary has in some years added a bike or walk-in stretch to reach the actual trailhead. From the pullout, find the log crossing of the Cascade River near the Eldorado Creek confluence and scout it before committing: it has been rebuilt repeatedly after floods and can be an awkward single log or a jam depending on the year."
+  },
+  {
+   "lat": 48.534524,
+   "lng": -121.160259,
+   "elev": 5600,
+   "name": "Eldorado Creek Basin",
+   "note": "Steep timbered climbers' trail and a boulder field top out in this alpine basin (roughly 5,500-5,800 ft) with reliable water from the creek and a waterfall; a common first-night camp.",
+   "type": "Campsite",
+   "distMi": 3.5,
+   "directions": "On the far bank pick up the unsigned but well-trodden climbers' path, which pushes through swampy brush and devil's club before settling into open old-growth timber. It gains roughly 1,500 ft through the trees, then breaks out onto the first of two wide boulder and talus fields — follow cairns and boot track for the path of least resistance through the rock rather than picking your own line."
+  },
+  {
+   "lat": 48.552459,
+   "lng": -121.12928,
+   "elev": 6300,
+   "name": "Roush Creek Basin (Eldorado high camp)",
+   "note": "Cross the connecting ridge near 6,100 ft and drop into Roush Creek Basin, the standard high camp (6,100-6,400 ft) at the toe of the Eldorado Glacier, with plentiful snowmelt water.",
+   "type": "Campsite",
+   "distMi": 6.5,
+   "directions": "Above the talus the path crosses an alpine meadow strewn with rocks and streams, then drops briefly. Cross the connecting ridge near 6,100 ft and drop into Roush Creek Basin at the toe of the Eldorado Glacier. Snowmelt water is plentiful here, which is why this is the standard high camp."
+  },
+  {
+   "lat": 48.558437,
+   "lng": -121.118954,
+   "elev": 7500,
+   "name": "Inspiration Glacier (rope-up)",
+   "note": "Rope up on the Eldorado Glacier and follow snowfields to the broad, flat Inspiration Glacier around 7,500 ft; large crevasses require zig-zag route-finding here.",
+   "type": "Junction",
+   "distMi": 7.5,
+   "directions": "A slabby rock ramp leads from the basin onto the toe of the Eldorado Glacier — rope up and put crampons on here, not higher. Follow snowfields up and onto the broad flat of the Inspiration. Crevasses are worst near Eldorado's east ridge, so stay roped, probe, and expect zig-zag route-finding; in flat light or whiteout, navigation across this open ice cap is genuinely hard and worth a compass bearing."
+  },
+  {
+   "lat": 48.56322,
+   "lng": -121.110693,
+   "elev": 7800,
+   "name": "Klawatti Col / McAllister Glacier traverse",
+   "note": "Contour the Inspiration Glacier north to Klawatti Col (~7,800 ft), then traverse a lobe of the McAllister Glacier below Klawatti Peak's West Face for about 0.4 mile.",
+   "type": "Junction",
+   "distMi": 8.3,
+   "directions": "Contour north across the upper Inspiration to the col, then step through onto the McAllister Glacier and make a rising traverse east under Klawatti Peak's west face for about 0.4 mile. This is easy glacier travel by the standards of the day, but it is worth doing early while the snow bridges are still firm."
+  },
+  {
+   "lat": 48.565611,
+   "lng": -121.106563,
+   "elev": 7900,
+   "name": "Klawatti-Austera Col",
+   "note": "Late-season moat and crevasse gaps at this col can force Class 4-5 downclimbing at the lowest notch to gain Austera's south/southwest side.",
+   "type": "Hazard",
+   "distMi": 8.7,
+   "directions": "The traverse ends at a small notch at the base of Klawatti's north ridge, and getting down from it onto the Klawatti Glacier is the crux of the whole traverse. Early in the season it downclimbs; as the moat opens through the summer it needs a rappel of roughly 75 ft, and the lowest notch can push into class 5 with class 4 ground to its southeast. Old rappel anchors turn up here — treat any in-place tat as suspect and carry cord to back it up or replace it. On the way back, some parties climb well-protected rock out of the glacier rather than rig a rappel."
+  },
+  {
+   "lat": 48.56853,
+   "lng": -121.10145,
+   "elev": 8339,
+   "name": "Austera Peak",
+   "note": "True summit reached via 2-3 pitches of blocky rock on the South/Southwest Ridge ending in a short, often rime-covered 5.2 chimney.",
+   "type": "Summit",
+   "distMi": 9.2,
+   "directions": "From the glacier, make another high traverse left across the upper Klawatti to the foot of Austera's southwest side, then drop packs and crampons. Broken, loose fourth-class rock leads up; a short cliff band above it is commonly bypassed on scree and ledges to the right rather than climbed direct. The finish is a chockstone chimney of about 60 ft — stemming and face moves on the left wall past roughly three jammed blocks — and a class 3+ ledge on the peak's east side avoids it entirely. Many parties stop at the easier sub-summit, because the last thirty feet of the true summit is loose."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.5686,
+  "peakLng": -121.1014,
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "Drive the Cascade River Road to the Eldorado Creek trailhead (roughly MP 20, ~2,100 ft)"
+ }
+}

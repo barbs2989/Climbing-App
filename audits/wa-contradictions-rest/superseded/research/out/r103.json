@@ -1,0 +1,367 @@
+{
+ "file": "r103.json",
+ "results": [
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km 6.4 (about 4 mi one way to Cathedral Pass, 8 mi round trip)",
+   "evidence": "WTA gives 8.0 miles round trip with the trail meeting the PCT at Cathedral Pass at about 4 miles. Willhite gives about 4 miles and 3,400 ft to the summit. dist_km (the one-way approach figure) of 4.8 km (3 mi) is short; sibling Cathedral Rock routes already carry 6.4.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cathedral-rock",
+    "http://www.willhiteweb.com/washington_climbing/cle_elum/cathedral_rock/climbing_096.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_rock_standard",
+     "fact": "Round-trip distance",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 4.8,
+     "value": 6.4
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Time to reach the summit (summitTimeHrs)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "summitTimeHrs duplicates the 10.5 hr car-to-car total; the row itself puts the summit at +5.5 hr, and the totalNote says 10-12 hr car-to-car. The Mountaineers route page gives 5-6 hours trailhead to summit. Nulled per the catalog convention (never write a computed number into summitTimeHrs).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_rock_standard",
+     "fact": "Time to reach the summit (summitTimeHrs)",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "2026 fire closure of the Cathedral Pass Trail / trailhead",
+   "verdict": "fixed",
+   "correct_value": "The 2026 Three Queens Fire closure, in force through October 31, 2026 unless lifted sooner, shuts the Pacific Crest Trail through Cathedral Pass and the Deception Pass trail; in August 2026 the Cathedral Rock trail itself was also inside the closure. Check current Okanogan-Wenatchee NF alerts before a trip.",
+   "evidence": "The Okanogan-Wenatchee NF release of Aug 12, 2026 issued closure order 06-17-03-2026-32 for the Three Queens Fire through Oct 31, 2026, closing ~50 mi of PCT between Snoqualmie Pass and Deception Pass. KOMO (Aug 2026) lists Cathedral Pass Trail 1345 and Deception Pass Trail 1376 as closed. The decreased order 06-17-03-2026-44 (effective Sep 18, 2026, to Oct 31) still closes Deception Pass Trail 1376 and PCT Ridge Lake to Lake Vicente Trail (which passes Cathedral Pass), but no longer lists trail 1345. access.closures (no closures) is stale. bivy note not patched (owned by camping clean-up).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/updated-closure-issued-three-queens-fire",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district",
+    "https://komonews.com/news/local/three-queens-fire-snoqualmie-pass-pacific-crest-trail-lake-kachess-cle-elum-ranger-district-kittitas-county-fire-what-trails-and-campsites-are-closed-because-of-the-wildfire"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_rock_standard",
+     "fact": "2026 fire closure of the Cathedral Pass Trail / trailhead",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": "No route-specific closures found as of mid-2026, but the Cle Elum River corridor has had periodic seasonal restoration-area closures in past years — check current Okanogan-Wenatchee NF alerts before a trip.",
+     "value": "The 2026 Three Queens Fire closure, in force through October 31, 2026 unless lifted sooner, shuts the Pacific Crest Trail through Cathedral Pass and the Deception Pass trail; in August 2026 the Cathedral Rock trail itself was also inside the closure. Check current Okanogan-Wenatchee NF alerts before a trip."
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Car-to-car time and start time in partner_requirements",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "10-12 hour car-to-car day, 5:00 AM start",
+   "evidence": "partner_requirements says an 8-hour car-to-car day with a 06:00 start; timing.totalHrs 10.5, itinerary hours 10.5, the schedule (5:00 AM start, back 3:30-4:30 PM), totalNote (10-12 hrs) and recommendedStart (5:00 AM) all disagree. The Mountaineers route page gives 5-6 hours trailhead to summit alone, which cannot fit an 8-hour round trip with loose downclimbing.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_rock_standard",
+     "fact": "Car-to-car time and start time in partner_requirements",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "matching the 8-hour car-to-car estimate with a 06:00 start",
+     "replace": "matching a 10-12 hour car-to-car day with a 5:00 AM start"
+    },
+    {
+     "id": "wa_cathedral_rock_standard",
+     "fact": "Car-to-car time and start time in partner_requirements",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "within the 8-hour total car-to-car estimate",
+     "replace": "within a 10-12 hour car-to-car day"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+   "fact": "Crux grade vs headline grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only published description of this variation grades the route 5.9 overall (Grade III, 6 pitches, 1000 ft, PG13) while its own text names a short 5.9+ left-leaning crack; the row reproduces exactly that. No second independent source for this 2003 variation was found, so raising the headline to 5.9+ is not supported.",
+   "sources": [
+    "https://www.mountainproject.com/route/124813462/northeast-ridge-2003-variation"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+   "verdict": "fixed",
+   "correct_value": "The Southwest Face / south side is the usual descent; the Northwest Couloir is an occasional alternative.",
+   "evidence": "The Mountaineers Southwest Face page gives the descent as a double-rope rappel from the top of the last pitch then downclimbing the climbing route, and suggests the northwest chimney downclimb only as an alternative. A CascadeClimbers Northeast Buttress report descends the south side, noting its heavier traffic. A WTA trip report describes a Northwest Couloir descent as longer but workable. So the couloir is an alternative descent, not the standard one.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face",
+    "https://www.cascadeclimber.com/cathedral_rock.htm",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000101503"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_rock_northwest_couloir",
+     "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "used both as an alternate ascent line and as the standard descent from the summit",
+     "replace": "used both as an alternate ascent line and as an occasional alternative descent from the summit"
+    },
+    {
+     "id": "wa_cathedral_rock_northwest_couloir",
+     "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "It is frequently used as a descent route after climbing the Southwest Face or Northeast Buttress.",
+     "replace": "Some parties use it as an alternative way down, though the usual descent from the summit is the Southwest Face."
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_buttress",
+   "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+   "verdict": "fixed",
+   "correct_value": "South side / Southwest Face descent (this row is already correct; the conflicting sentence was patched on wa_cathedral_rock_northwest_couloir).",
+   "evidence": "The Mountaineers Southwest Face page gives the descent as a double-rope rappel from the top of the last pitch then downclimbing the climbing route, and suggests the northwest chimney downclimb only as an alternative. A CascadeClimbers Northeast Buttress report descends the south side, noting its heavier traffic. A WTA trip report describes a Northwest Couloir descent as longer but workable. So the couloir is an alternative descent, not the standard one.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face",
+    "https://www.cascadeclimber.com/cathedral_rock.htm",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000101503"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sisu",
+   "fact": "Total route length vs sum of pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page itself states 800 ft (242 m), 7 pitches, and lists pitch lengths 40/18/15/25/10/30/35 m (173 m) - the discrepancy is inside the only source. No second independent source with a total length or pitch lengths was found.",
+   "sources": [
+    "https://www.mountainproject.com/route/115362195/sisu"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chair_peak_east_face",
+   "fact": "Hardest pitch grade / crux grade disagreement",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The published grade is 5.2 (PG13); the same description gives pitch 1 as 5.1-5.6 depending on which side of the chimney you start, and another description rates a short left-trending break through the overhanging band at about 5.5. These are variant-dependent moves under a stated route grade, reproduced faithfully; rock_grade and beta name the 5.5 band. No two sources support a different headline grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/113233154/east-face",
+    "https://www.summitpost.org/east-face-summer/157876"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Ice grade (route-level ice_grade vs crux pitch grades)",
+   "verdict": "fixed",
+   "correct_value": "AI2 throughout",
+   "evidence": "Mountain Project grades the route AI2 steep snow (P1 70-degree ice, P4 50-70 degree snow and ice). The Mountaineers list it as a Grade II ice climb and a trip report puts it around AI2+. The row's own schedule also says Grade II ice. The AI3 labels on P1 and P4 are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/121085057/north-face",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-ice-climb-chair-peak-north-face-winter"
+   ],
+   "patches": [
+    {
+     "id": "wa_chair_peak_north_face",
+     "fact": "Ice grade (route-level ice_grade vs crux pitch grades)",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "AI3",
+     "value": "AI2"
+    },
+    {
+     "id": "wa_chair_peak_north_face",
+     "fact": "Ice grade (route-level ice_grade vs crux pitch grades)",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "expect": "AI3",
+     "value": "AI2"
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Crux step angle (max_angle/pitch_detail vs beta/pro_tips/waypoint)",
+   "verdict": "fixed",
+   "correct_value": "max_angle 80",
+   "evidence": "The American Alpine Institute route profile says the face is mostly 50-65 degrees except one ten-foot step of perhaps 80 degrees, sometimes bare 5.6 rock. An independent trip report describes the steepest pitch as 70-80 degrees. pitch_detail P4 (50-70) describes the pitch to the col and is left as is; max_angle should carry the steepest step.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-face-chair-peak/",
+    "http://www.alpinedave.com/Chair.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_chair_peak_north_face",
+     "fact": "Crux step angle (max_angle/pitch_detail vs beta/pro_tips/waypoint)",
+     "op": "set",
+     "column": "max_angle",
+     "path": [],
+     "expect": 70,
+     "value": 80
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Total approach gain to the base of the North Face",
+   "verdict": "fixed",
+   "correct_value": "roughly 2,300-2,500 ft",
+   "evidence": "Chair Peak is 6,238 ft and the route is 800 ft (242 m), putting the base near 5,400-5,500 ft, i.e. ~2,300-2,400 ft above the 3,100 ft Alpental lot (matches the row's waypoints 3,100 to 5,506). A trip report gives about 2,000 ft just to the basin under Chair, before the final climb to the face.",
+   "sources": [
+    "https://www.mountainproject.com/route/121085057/north-face",
+    "http://www.alpinedave.com/Chair.html",
+    "https://en.wikipedia.org/wiki/Chair_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_chair_peak_north_face",
+     "fact": "Total approach gain to the base of the North Face",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total approach gain to the base is roughly 1,300-1,500 ft",
+     "replace": "Total approach gain to the base is roughly 2,300-2,500 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "summitTimeHrs equals the car-to-car total",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "timing.summitTimeHrs 10 equals totalHrs 10, while the itinerary schedule reaches the summit after roughly 6.5-7.5 hr and then allows 2-3 hr to descend. No external published time to the summit was found for this route, so it is flagged rather than nulled.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: Mountain Project grades it 5.4 AI2-3 M1-2 and a 2025 trip report titles it II WI3 5.4; SummitPost says class 4 in summer but WI3 5.6 in winter. With two sources for 5.4, one for 5.6 and five row fields saying 5.6, not changed without a clearer consensus.",
+   "sources": [
+    "https://www.mountainproject.com/route/107989626/northeast-buttress",
+    "https://spokalpine.com/2025/01/30/chair-peak-ne-buttress-ii-wi3-5-4/",
+    "https://www.summitpost.org/chair-peak/150834"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "about 10-12 hours car-to-car; about 3-3.5 hours to the base",
+   "evidence": "timing.totalHrs 11.5, itinerary hours 11.5, the schedule (+3.5 hr to base) and totalNote (10-12 hr) agree. Two trip reports: a 5 AM start reached the summit five hours after leaving the car; another reached the base about 3 hours after a 5 AM start and the summit about 2 hours later. 5-8 hr matches published trailhead-to-summit times, not car-to-car.",
+   "sources": [
+    "https://spokalpine.com/2025/01/30/chair-peak-ne-buttress-ii-wi3-5-4/",
+    "https://climberkyle.com/2019/03/15/chair-peak-ne-buttress-wi3/"
+   ],
+   "patches": [
+    {
+     "id": "wa_chair_peak_northeast_buttress",
+     "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "totaling a 5-8 hour car-to-car day",
+     "replace": "totaling a 10-12 hour car-to-car day"
+    },
+    {
+     "id": "wa_chair_peak_northeast_buttress",
+     "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~2 hour approach",
+     "replace": "~3 hour approach"
+    },
+    {
+     "id": "wa_chair_peak_northeast_buttress",
+     "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "About 2 hours from the Alpental/Snow Lake trailhead",
+     "replace": "About 3-3.5 hours from the Alpental/Snow Lake trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "fact": "summitTimeHrs equals the car-to-car total",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "timing.summitTimeHrs 11.5 equals totalHrs 11.5, but the schedule reaches the summit after about 6.5 hr and then spends 4.5 hr descending. A trip report reached the summit five hours after leaving the car. Nulled per catalog convention.",
+   "sources": [
+    "https://spokalpine.com/2025/01/30/chair-peak-ne-buttress-ii-wi3-5-4/"
+   ],
+   "patches": [
+    {
+     "id": "wa_chair_peak_northeast_buttress",
+     "fact": "summitTimeHrs equals the car-to-car total",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 11.5,
+     "value": null
+    }
+   ]
+  }
+ ]
+}

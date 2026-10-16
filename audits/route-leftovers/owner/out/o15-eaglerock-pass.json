@@ -1,0 +1,20 @@
+{
+ "results": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "verdict": "confirmed",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_eagle_rock_scramble",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "No pass needed at the FR6517 road-end parking, an undeveloped pull-off; a Northwest Forest Pass (or America the Beautiful pass) applies only at developed trailheads.",
+     "value": "Northwest Forest Pass (or America the Beautiful pass)"
+    }
+   ]
+  }
+ ]
+}

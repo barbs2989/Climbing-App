@@ -1,0 +1,210 @@
+{
+ "applied": [
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Rock grade of the summit step"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Rock grade of the summit step"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Rock grade of the summit step"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Rock grade of the summit step"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distance to Home Lake"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance to Home Lake"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Best season for the couloir"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead road and address"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead road and address"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead road and address"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_warrior_peak_standard",
+   "before": {
+    "rock_grade": "3rd class (YDS) scrambling",
+    "itinerary": {
+     "cal": "The couloir is typically climbable (not too icy, not yet bare scree) from roughly July through September; check recent trip reports for snow coverage since an icy or melted-out couloir changes the gear needed and the difficulty of the rock step.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Upper Dungeness Trailhead (~2,500 ft), hike the Upper Dungeness Trail past Camp Handy (3.2 mi) and Boulder Shelter (6.3 mi, ~4,950 ft) to Home Lake (5,330 ft), a well-used backcountry camp tucked between Mt. Constance and Warrior Peak. Most parties treat this as a moderate half-day with full overnight packs.",
+       "hours": 5.5,
+       "miles": 8.5,
+       "title": "Backpack in to Home Lake",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Home Lake camp below Constance Pass"
+      },
+      {
+       "n": 2,
+       "note": "An early alpine start gets the party into the Warrior/Inner Constance cirque and up the north-northeast couloir to the ~7,000 ft saddle, then a short but genuinely Class 3-4 rock step (poor rock, exposed) to the 7,314 ft southeast summit — camp-to-summit typically takes about 5 hours. Rather than a second camp night, the standard approach reverses the whole route and continues straight out to the car, making for a very long, often headlamp-finish day.",
+       "hours": 16.5,
+       "miles": 12,
+       "title": "Summit push and full hike out",
+       "gainFt": 2100,
+       "lossFt": 4900,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Home Lake camp",
+         "detail": "Follow the climbers' path toward the Warrior/Inner Constance cirque."
+        },
+        {
+         "time": "~6:30 AM",
+         "label": "Enter the cirque, start up the couloir",
+         "detail": "North-northeast-trending snow couloir toward the twin-summit saddle; axe/crampons typical."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Top of couloir, ~7,000 ft saddle",
+         "detail": "Between the SE and NW summits."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Class 3-4 rock step",
+         "detail": "Poor-quality rock on the peak's NW side; short but exposed, sometimes roped."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Summit (7,314 ft)",
+         "detail": "About 5 hours camp-to-summit per Mountaineers trip reports."
+        },
+        {
+         "time": "~10:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Full reversal plus the hike-out; parties commonly report ~12 hours from summit to car, including a camp stop to break down the tent and repack."
+        }
+       ],
+       "objective": "Climb the SE summit couloir/rock step, then descend all the way to the trailhead"
+      }
+     ],
+     "totalNote": "A demanding 2-day, ~20-mile round trip: an easy-to-moderate ~8.5 mi backpack in to Home Lake on day 1, then a brutal ~16-17 hr day 2 that combines the summit push (about 5 hrs camp-to-summit) with a full hike all the way back to the car — multiple parties describe finishing well after dark. Very fit parties occasionally push it car-to-car in one very long day instead, and less aggressive parties sometimes add a 3rd day (camp a second night, hike out fresh) to avoid the marathon descent."
+    },
+    "timing": {
+     "totalHrs": 22,
+     "summitTimeHrs": 16.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "From the Upper Dungeness Trailhead (~2,500 ft), hike the Upper Dungeness Trail past Camp Handy (3.2 mi) and Boulder Shelter (6.3 mi, ~4,950 ft) to Home Lake (5,330 ft), a well-used…",
+       "fromTo": "Backpack in to Home Lake",
+       "section": "Approach"
+      },
+      {
+       "hrs": 16.5,
+       "note": "An early alpine start gets the party into the Warrior/Inner Constance cirque and up the north-northeast couloir to the ~7,000 ft saddle, then a short but genuinely Class 3-4 rock s…",
+       "fromTo": "Summit push and full hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "watch_out": "Morning snow in couloir can be firm or icy and masks how technical the underlying rock actually is—assess and re-assess snow conditions; if rock climbing is required, retreat if not capable; snow/ice transition can be slippery and dangerous\nCrux rock step (20-50 ft above saddle) more serious than Class 3-4 billing suggests—at least one party ended up roping up and placing gear due to steepness and poor rock quality; secure ropes on this section unless climbing with extreme confidence\nDon't glissade descent chute without clear sightline to runout—nearby terrain has close calls from parties glissading blind into rocks or drop-offs; walking descent safer than sliding in poor visibility\nCouloir/gully approach terrain—potential for rockfall from upper sections; stay compact and move through quickly; afternoon rockfall increase from sun warming; start early\nSnow conditions seasonal and highly variable—spring (May-June) typically best; summer dry conditions expose loose rock; winter requires mountaineering skills; verify current conditions\nRoute-finding complexity on initial scramble approach—establish correct line before committing; terrain can look similar but lead to worse ground\nMoat crossing potential at upper couloir sections—bergschrund may be significant; assess before committing; belay if uncertain\nFatigue on descent—long day with technical climbing can leave climbers tired; descents often cause more injuries; maintain focus and move deliberately on all scrambling",
+    "access": {
+     "fees": "Northwest Forest Pass ($30/yr) or a $5/day recreation pass is required at the Upper Dungeness Trailhead. The site is cashless — pay via the Recreation.gov app or on-site QR scan.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Campfires are prohibited above 3,500 ft; bear canisters are mandatory for overnight camping in the park's subalpine zone (Home Lake/Constance Pass). The nearby Lake Constance drainage caps overnight use at 20 people, a useful indicator of how tightly the Park manages crowding in this area even though it's a separate permit zone from Home Lake.",
+     "permit": "No permit required for day use or for USFS camping at Camp Handy or Boulder Shelter — just self-register at the trailhead kiosk. Camping at Home Lake or Constance Pass requires an Olympic National Park wilderness permit, reserved via recreation.gov or obtained from the Wilderness Information Center in Port Angeles, (360) 565-3100.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Quilcene Ranger District) administers the lower Buckhorn Wilderness approach (Camp Handy, Boulder Shelter); Olympic National Park (Wilderness Information Center, Port Angeles) administers the upper cirque, Home Lake, Constance Pass, and the summit, which lie inside the park boundary.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass / Interagency Pass at the trailhead, plus an NPS wilderness camping permit for Home Lake/Constance Pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — reservation and nightly fee required",
+      "where": "Reserve on Recreation.gov, by phone with the Port Angeles Wilderness Information Center, or in person at a Wilderness Information Center. Camps outside the park boundary need no permit."
+     }
+    },
+    "approach": "Drive Highway 101 to Sequim Bay State Park area, turn left on Louella Road for 1 mile, then left on Palo Alto Road for 1.1 miles to the Forest Boundary. Palo Alto becomes FS Road 28. Turn right onto FS Road 2880, drive past Dungeness Forks Campground for 1 mile, stay left onto FS Road 2870 for 8.7 miles to Upper Dungeness Trailhead (295142 Highway 101 S, Quilcene, WA 98376). Upper Dungeness Trail is the shortest and easiest approach. Hike the trail 3.4 miles and 600 feet to Camp Handy, then take the left fork and continue 3 miles and 1,850 feet to Boulder Camp (total: 6.4 miles, 2,450 feet gain). From Boulder Camp, continue south approximately 1.5-2 miles, crossing creeks, until you reach the final larger creek that flows from the cirque SE of Warrior Peak. Continue past this creek to a boulder field, then head up and back left toward the creek, staying under a band of cliffs, and continue up the boulders approximately 1 mile and 1,200 feet to reach the cirque at approximately 5,900 feet.",
+    "road": {
+     "name": "Palo Alto Road / FR 2860-2870 to the Upper Dungeness Trailhead",
+     "status": "Gravel Forest Service road, generally passable to standard vehicles in summer season",
+     "driveNote": "From US-101 near Sequim Bay State Park, go west on Louella Rd, then left onto Palo Alto Rd; continue onto Forest Roads 2880/2870/2860 to the trailhead (~2,500 ft), reached just past the Dungeness River bridge."
+    }
+   }
+  }
+ ]
+}

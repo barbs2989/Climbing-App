@@ -1,0 +1,499 @@
+{
+ "wa_chalangin_peak_little_giant_pass_luahna_col": {
+  "area_id": "wa_chalangin_peak",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "No day-use fee charged at Little Giant Trailhead.",
+     "permit": "Free self-issued wilderness permit required at the trailhead for entry into Glacier Peak Wilderness.",
+     "closures": "CLOSED RIGHT NOW: the Chiwawa River Road (FR 6200) is closed to vehicles for storm damage from Atkinson Flat Campground, about 2 miles short of the Little Giant Trailhead, north to Trinity, with the closure running through 31 December 2027 and no reopening estimate. On top of that, the Little Giant Fire closure, in effect through 31 October 2026 unless lifted sooner, closes the Chiwawa River Road and the Little Giant Trail #1518 itself.",
+     "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District (Glacier Peak Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    },
+    "value": {
+     "fees": "No day-use fee charged at Little Giant Trailhead.",
+     "permit": "Free self-issued wilderness permit required at the trailhead for entry into Glacier Peak Wilderness.",
+     "closures": "CLOSED: the Chiwawa River Road (FR 6200) has been closed to vehicles for storm damage since 20 May 2026 from Atkinson Flat Campground, about 2 miles short of the Little Giant Trailhead, north to Trinity, under Forest Service order 06-17-07-2026-11, which runs through 31 December 2027. On top of that, the Little Giant Fire closure (order 06-17-07-2026-40), in effect from 3 September through 31 October 2026 unless lifted sooner, closes the Chiwawa River Road and the Little Giant Trail #1518 itself.",
+     "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District (Glacier Peak Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    }
+   }
+  },
+  "why": "Both orders confirmed on Okanogan-Wenatchee alerts: storm order 06-17-07-2026-11 (20 May 2026 – 31 Dec 2027); Little Giant Fire order 06-17-07-2026-40 (3 Sep – 31 Oct 2026, updated 4 Sep), which lists Chiwawa River Road 6200 and Little Giant Tr. 1518 closed. Added start dates and order numbers; removed \"RIGHT NOW\".",
+  "confidence": "high"
+ },
+ "wa_cinderella_peak_scramble": {
+  "area_id": "wa_cinderella_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Forest Road 38 (Mosquito Lake Road to Elbow Lake Trailhead)",
+     "status": "CLOSED at milepost 7 by a washout, per a Mt. Baker-Snoqualmie National Forest alert dated 27 July 2026 — this blocks vehicle access to the Elbow Lake Trailhead, which is about 11 miles in. No reopening estimate has been published. Good gravel and paved forest road when open; check the forest's alerts page before driving.",
+     "driveNote": "From Mosquito Lake Road near Deming/Acme, turn east onto FS Road 38 and drive about 11 miles of forest road to the Elbow Lake Trailhead.",
+     "seasonalGate": "Gated at Wallace Creek, about 1.3 miles before the trailhead, roughly Dec 1-Jun 15."
+    },
+    "value": {
+     "name": "Forest Road 38 (Mosquito Lake Road to Elbow Lake Trailhead)",
+     "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead, which is about 11 miles in. Good gravel and paved forest road when open; check the forest's alerts page before driving.",
+     "driveNote": "From Mosquito Lake Road near Deming/Acme, turn east onto FS Road 38 and drive about 11 miles of forest road to the Elbow Lake Trailhead.",
+     "seasonalGate": "Gated at Wallace Creek, about 1.3 miles before the trailhead, roughly Dec 1-Jun 15."
+    }
+   }
+  },
+  "why": "FR 38 closure at MP 7 still posted on the Mt. Baker-Snoqualmie National Forest alert list (start 27 Jul 2026, no end date).",
+  "confidence": "high"
+ },
+ "wa_dumbell_mountain_west": {
+  "area_id": "wa_dumbell_mountain",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+     "status": "paved to Chiwawa Loop Road, then gravel/rough forest road; final 2.3 miles very rough -- CLOSED as of the 2026 season beyond Atkinson Flat Campground under an active USFS storm-damage closure order (in effect through at least Dec 31, 2027)",
+     "driveNote": "From Coles Corner take WA-207 north, then Chiwawa Loop Road, then Chiwawa River Road/FR 6200 for about 22 miles, then right on Phelps Creek Road/FR 6211 for 2.3 miles to the trailhead (~3,500 ft). The Railroad Creek/Lyman Lake side is reached separately via boat or trail from Lake Chelan to Holden Village — a much longer alternate approach, not the standard route to Dumbell.",
+     "seasonalGate": "Not gated in a normal year, but as of the 2026 season the road is closed by an active USFS order beyond Atkinson Flat Campground due to storm/debris-flow damage (in effect since May 20, 2026, no reopening estimate, and called unlikely to reopen for summer 2026 by the Ranger District) — this currently blocks the standard drive to the Phelps Creek Trailhead. In normal open years it is also subject to lingering snow on the upper road/trail into June."
+    },
+    "value": {
+     "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+     "status": "paved to Chiwawa Loop Road, then gravel/rough forest road; final 2.3 miles very rough -- CLOSED as of the 2026 season beyond Atkinson Flat Campground under an active USFS storm-damage closure order (in effect through at least Dec 31, 2027)",
+     "driveNote": "From Coles Corner take WA-207 north, then Chiwawa Loop Road, then Chiwawa River Road/FR 6200 for about 22 miles, then right on Phelps Creek Road/FR 6211 for 2.3 miles to the trailhead (~3,500 ft). The Railroad Creek/Lyman Lake side is reached separately via boat or trail from Lake Chelan to Holden Village — a much longer alternate approach, not the standard route to Dumbell.",
+     "seasonalGate": "Not gated in a normal year, but the road has been closed to vehicles beyond Atkinson Flat Campground since May 20, 2026 for storm/debris-flow damage, under Forest Service order 06-17-07-2026-11, which runs through December 31, 2027, and the Little Giant Fire closure (order 06-17-07-2026-40), in effect from September 3 through October 31, 2026 unless lifted sooner, also closes Phelps Creek Road (FR 6211) and the Phelps Creek Trail — this blocks the standard drive to the Phelps Creek Trailhead. In normal open years it is also subject to lingering snow on the upper road/trail into June."
+    }
+   }
+  },
+  "why": "Storm order 06-17-07-2026-11 runs 20 May 2026 – 31 Dec 2027 (so \"no reopening estimate\" gave no end date the order does give; \"unlikely for summer 2026\" is now moot). The Little Giant Fire order 06-17-07-2026-40 (3 Sep – 31 Oct 2026) explicitly lists Chiwawa River Road 6200, Phelps Creek Road 6211 and Phelps Cr. Tr. 1511 closed — the row did not mention it.",
+  "confidence": "high"
+ },
+ "wa_glacier_peak_kennedy_glacier": {
+  "area_id": "wa_glacier_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "White Chuck Road (FR 23)",
+     "status": "Closed MP 3.7 to end per MBS National Forest order (Dec 2024 flood damage; Forest Order #06-05-25-02, still closed as of spring 2026 per Mt. Baker-Snoqualmie NF alerts)",
+     "seasonalGate": "Typically snow-gated in winter; opens in late spring"
+    },
+    "value": {
+     "name": "North Fork Sauk Road / Sloan Creek Road (FR 49)",
+     "status": "Gravel, with rough and washed-out sections; medium or high clearance is recommended and a low-clearance car may not clear them.",
+     "driveNote": "The White Chuck Road (FR 23) approach to the old White Chuck River Trailhead has been closed to vehicles from milepost 3.7 to its end since 19 March 2025 for flood damage, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026 (order 06-05-25-02).",
+     "seasonalGate": "The Mountain Loop Highway's Deer Creek to Bedal section is gated through the winter and typically reopens in mid-May; FR 49 can hold snow into early summer in heavy years."
+    }
+   }
+  },
+  "why": "FR 23 closure still posted by MBS (alert start 19 Mar 2025, end N/A, last updated 30 Jun 2026). This row's approach_logistics.trailhead and trailhead waypoint are already North Fork Sauk (FR 49), but road described White Chuck FR 23, so the road card disagreed with the trailhead. Proposed road object mirrors wa_glacier_peak_sitkum_glacier (same trailhead) for name/status/seasonalGate, and carries the dated FR 23 closure in driveNote. No driveNote directions added: approach_logistics.trailheadDirection already has them (and its mileages, 16 + 6.4 mi, differ from the Sitkum row's driveNote, 19.7 + 6.6 mi — I did not copy either).",
+  "confidence": "medium (structural road swap); high (FR 23 closure facts)"
+ },
+ "wa_glacier_peak_sitkum_glacier": {
+  "area_id": "wa_glacier_peak",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass required for parking. No climbing permits or camping fees required. Trail status: The White Chuck River Trail was severely damaged by a 2003 flood; contact Darrington Ranger Station for current conditions.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Self-Issue Wilderness Permit",
+     "closures": "CLOSED: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, with no reopening date. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    },
+    "value": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass required for parking. No climbing permits or camping fees required. Trail status: The White Chuck River Trail was severely damaged by a 2003 flood; contact Darrington Ranger Station for current conditions.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Self-Issue Wilderness Permit",
+     "closures": "CLOSED: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, since 19 March 2025, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    }
+   }
+  },
+  "why": "FR 23 / FR 27 closure still posted by MBS (alert start 19 Mar 2025, end N/A, last updated 30 Jun 2026).",
+  "confidence": "high"
+ },
+ "wa_hadley_peak_skyline_divide": {
+  "area_id": "wa_hadley_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Deadhorse Road (Forest Service Road 37)",
+     "status": "Closed to vehicles at mile 0.03 until further notice while flood-damage repair is under way, per the Mt. Baker-Snoqualmie alert of 1 June 2026",
+     "driveNote": "From Glacier, drive SR 542 east about 1 mile, turn right onto Glacier Creek Road (FS 39), then take an immediate left onto Deadhorse Road (FS 37); FS 37 normally continues 12.7 miles to the Skyline Divide Trailhead, but is currently gated at mile 0.03 for repair work.",
+     "seasonalGate": "No routine seasonal gate reported for FS 37 itself; access is presently blocked by the repair closure regardless of season"
+    },
+    "value": {
+     "name": "Deadhorse Road (Forest Service Road 37)",
+     "status": "Closed to vehicles at mile 0.03 since 1 June 2026 while flood-damage repair is under way, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026",
+     "driveNote": "From Glacier, drive SR 542 east about 1 mile, turn right onto Glacier Creek Road (FS 39), then take an immediate left onto Deadhorse Road (FS 37); FS 37 normally continues 12.7 miles to the Skyline Divide Trailhead, but is currently gated at mile 0.03 for repair work.",
+     "seasonalGate": "No routine seasonal gate reported for FS 37 itself; access is presently blocked by the repair closure regardless of season"
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "$5/vehicle day-use fee at the trailhead, or annual Recreation/Interagency Pass",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. The route stays inside Mount Baker Wilderness, where party size is capped at 12 and campfires are prohibited.",
+     "permit": "Free self-issue wilderness permit available at the trailhead",
+     "closures": "Skyline Divide Trailhead is currently inaccessible by vehicle: FS Road 37 (Deadhorse Road) is closed at mile 0.03 until further notice for flood-damage repair, with heavy equipment on the road.",
+     "landManager": "USDA Forest Service, Mt. Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass or other accepted Interagency Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Skyline Divide trailhead; buy it ahead or on the Recreation.gov app."
+     }
+    },
+    "value": {
+     "fees": "$5/vehicle day-use fee at the trailhead, or annual Recreation/Interagency Pass",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. The route stays inside Mount Baker Wilderness, where party size is capped at 12 and campfires are prohibited.",
+     "permit": "Free self-issue wilderness permit available at the trailhead",
+     "closures": "Skyline Divide Trailhead is not reachable by vehicle: FS Road 37 (Deadhorse Road) has been closed at mile 0.03 since 1 June 2026 for flood-damage repair, with heavy equipment on the road and no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026.",
+     "landManager": "USDA Forest Service, Mt. Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass or other accepted Interagency Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Skyline Divide trailhead; buy it ahead or on the Recreation.gov app."
+     }
+    }
+   }
+  },
+  "why": "FS Road 37 alert still posted: start 1 Jun 2026, end N/A, closed at mile 0.03 \"until further notice\".",
+  "confidence": "high"
+ },
+ "wa_helmet_butte_standard_route": {
+  "area_id": "wa_helmet_butte",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Chiwawa River Road (Forest Road 6200)",
+     "status": "CLOSED beyond Atkinson Flats Campground to Trinity as of May 20, 2026 due to storm damage; no reopening estimate given",
+     "driveNote": "From Coles Corner take WA-207 N 4.4 mi, right onto Chiwawa Loop Road 1.3 mi, left onto Chiwawa River Road/FR 6200, then ~23 mi to the Trinity/Buck Creek Pass Trailhead",
+     "seasonalGate": "Even when open, the road is a long gravel/paved Forest Service road not plowed in winter; verify current Forest Service alerts before any trip"
+    },
+    "value": {
+     "name": "Chiwawa River Road (Forest Road 6200)",
+     "status": "CLOSED beyond Atkinson Flats Campground to Trinity since May 20, 2026 due to storm damage, under Forest Service order 06-17-07-2026-11, which runs through December 31, 2027; the Little Giant Fire closure (order 06-17-07-2026-40), in effect from September 3 through October 31, 2026 unless lifted sooner, also closes the Chiwawa River Road and Buck Creek Trail #1513",
+     "driveNote": "From Coles Corner take WA-207 N 4.4 mi, right onto Chiwawa Loop Road 1.3 mi, left onto Chiwawa River Road/FR 6200, then ~23 mi to the Trinity/Buck Creek Pass Trailhead",
+     "seasonalGate": "Even when open, the road is a long gravel/paved Forest Service road not plowed in winter; verify current Forest Service alerts before any trip"
+    }
+   }
+  },
+  "why": "Storm order 06-17-07-2026-11 gives an end date (31 Dec 2027); fire order 06-17-07-2026-40 (3 Sep – 31 Oct 2026) lists Chiwawa River Road 6200 and Buck Creek Tr. 1513 closed — the row did not mention it.",
+  "confidence": "high"
+ },
+ "wa_indian_mountain_baker_scramble": {
+  "area_id": "wa_indian_mountain_baker",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$10 per person camping fee plus a $6 non-refundable reservation fee (2026 NPS rate); day use is free.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Hard-sided bear canister strongly recommended in this drainage given limited hanging trees and reported aggressive bear activity; parkwide summer fire restrictions (no campfires) are typically in effect by late June; pets and bikes are prohibited beyond the national forest boundary; permit and written itinerary must be carried.",
+     "permit": "North Cascades National Park backcountry permit required for the overnight stay this peak realistically requires. Reserve via Recreation.gov, watch the mandatory orientation video, then email noca_wilderness@nps.gov up to 3 days before your trip for ranger review and permit issuance, or get a walk-up permit at the Wilderness Information Center (7280 Ranger Station Rd, Marblemount). A Northwest Forest Pass is needed to park at the Hannegan Trailhead.",
+     "closures": "Brush Creek Trail (the final approach corridor toward Whatcom Pass/Indian Mountain) reopened Sept. 2025 after a 3-year closure from the 2022 Brush Creek Fire; Graybeal, Graybeal Stock, and Whatcom Camps remain closed, and the trail is not fully stock-accessible. The Chilliwack River Trail section between the Brush Creek junction and Indian Creek Camp has major fire-related blowdown requiring slow travel. Bear Creek Camp is closed from 2021 fire damage. A bypass has been built around a prior washout at the end of FR 32 to keep the Hannegan Trailhead reachable — check Mt. Baker Ranger District alerts before driving.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (Stephen Mather Wilderness) for the peak and most of the approach; the first several miles from the Hannegan Trailhead to Hannegan Pass cross Mt. Baker-Snoqualmie National Forest (Mt. Baker Wilderness).",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Forest Service Recreation Pass for trailhead parking (not the Discover Pass)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit for Boundary Camp and beyond, quota, not free",
+      "where": "Reserve on Recreation.gov or pick up at the Glacier Public Service Center or the Marblemount Wilderness Information Center. Hannegan Camp, before the pass, needs no permit."
+     }
+    },
+    "value": {
+     "fees": "$10 per person camping fee plus a $6 non-refundable reservation fee (2026 NPS rate); day use is free.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Hard-sided bear canister strongly recommended in this drainage given limited hanging trees and reported aggressive bear activity; parkwide summer fire restrictions (no campfires) are typically in effect by late June; pets and bikes are prohibited beyond the national forest boundary; permit and written itinerary must be carried.",
+     "permit": "North Cascades National Park backcountry permit required for the overnight stay this peak realistically requires. Reserve via Recreation.gov, watch the mandatory orientation video, then email noca_wilderness@nps.gov up to 3 days before your trip for ranger review and permit issuance, or get a walk-up permit at the Wilderness Information Center (7280 Ranger Station Rd, Marblemount). A Northwest Forest Pass is needed to park at the Hannegan Trailhead.",
+     "closures": "Brush Creek Trail (the final approach corridor toward Whatcom Pass/Indian Mountain) reopened Sept. 2025 after a 3-year closure from the 2022 Brush Creek Fire; Graybeal, Graybeal Stock, and Whatcom Camps remain closed until further notice, with no end date given, as listed on the North Cascades National Park fire-closures page updated September 14, 2026, and the trail is not fully stock-accessible. The Chilliwack River Trail has been cleared of down trees as far as Bear Creek Camp, as listed on the park's trail report of September 3, 2026, but is still brushy north of the Copper Ridge junction. Bear Creek Camp is closed from 2021 fire damage, as still listed on the park's trail-conditions page updated September 17, 2026. A bypass has been built around a prior washout at the end of FR 32 to keep the Hannegan Trailhead reachable — check Mt. Baker Ranger District alerts before driving.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (Stephen Mather Wilderness) for the peak and most of the approach; the first several miles from the Hannegan Trailhead to Hannegan Pass cross Mt. Baker-Snoqualmie National Forest (Mt. Baker Wilderness).",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Forest Service Recreation Pass for trailhead parking (not the Discover Pass)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit for Boundary Camp and beyond, quota, not free",
+      "where": "Reserve on Recreation.gov or pick up at the Glacier Public Service Center or the Marblemount Wilderness Information Center. Hannegan Camp, before the pass, needs no permit."
+     }
+    }
+   }
+  },
+  "why": "NPS fire-closures page (updated 14 Sep 2026) still lists Graybeal, Graybeal Stock and Whatcom camps closed until further notice; NPS trail-conditions page (updated 17 Sep 2026) still lists Bear Creek camp closed and reports (9/3) the Chilliwack trail cleared of down trees to Bear Creek camp, contradicting the \"major blowdown\" sentence. The FR 32 bypass sentence is left untouched: no current MBS alert mentions FR 32 either way.",
+  "confidence": "high (camps); medium (blowdown sentence — a condition, not a closure)"
+ },
+ "wa_little_sister_north_face": {
+  "area_id": "wa_little_sister",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Middle Fork Nooksack River Rd / FR 12 & FR 38 to Elbow Lake Trailhead",
+     "status": "CLOSED at milepost 7 by a washout, per a Mt. Baker-Snoqualmie National Forest alert dated 27 July 2026 — this blocks vehicle access to the Elbow Lake Trailhead. No reopening estimate has been published.",
+     "driveNote": "Unpaved logging roads near active/former timber and Olivine Corp land; drive respectfully.",
+     "seasonalGate": "FR 12 closing to vehicles from Rocky Creek Bridge (MP 4.6) starting Aug 2026; FR 38 washout/barrier at MP 7."
+    },
+    "value": {
+     "name": "Middle Fork Nooksack River Rd / FR 12 & FR 38 to Elbow Lake Trailhead",
+     "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead.",
+     "driveNote": "Unpaved logging roads near active/former timber and Olivine Corp land; drive respectfully.",
+     "seasonalGate": "FR 12 closed to vehicles from Rocky Creek Bridge (MP 4.6) for road repairs from late August through 1 October 2026, as listed on the Mt. Baker-Snoqualmie National Forest alert; FR 38 washout/barrier at MP 7."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass or National Park Pass at the trailhead.",
+     "permit": "No dedicated climbing permit.",
+     "closures": "FR 12 closing from MP 4.6 starting Aug 2026; FR 38 washout/barrier at MP 7 — verify with Mount Baker Ranger District (360-854-2553).",
+     "landManager": "Mt. Baker-Snoqualmie National Forest / Mount Baker Ranger District; lower approach crosses private timber/Olivine Corp land.",
+     "passRequired": "Northwest Forest Pass / National Park Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    },
+    "value": {
+     "fees": "Northwest Forest Pass or National Park Pass at the trailhead.",
+     "permit": "No dedicated climbing permit.",
+     "closures": "FR 12 closed to vehicles from MP 4.6 for road repairs from late August through 1 October 2026; FR 38 washout/barrier at MP 7 — verify with Mount Baker Ranger District (360-854-2553).",
+     "landManager": "Mt. Baker-Snoqualmie National Forest / Mount Baker Ranger District; lower approach crosses private timber/Olivine Corp land.",
+     "passRequired": "Northwest Forest Pass / National Park Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    }
+   }
+  },
+  "why": "FR 38 closure at MP 7 still posted on the Mt. Baker-Snoqualmie National Forest alert list (start 27 Jul 2026, no end date). The FR 12 repair closure (rendered in seasonalGate/access) is now in force, dated late Aug through 1 Oct 2026 per its alert — that half is an unflagged addition.",
+  "confidence": "high (FR 38); medium (FR 12, unflagged)"
+ },
+ "wa_little_sister_southeast_ridge": {
+  "area_id": "wa_little_sister",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Middle Fork Nooksack River Rd / FR 12 & FR 38 to Elbow Lake Trailhead",
+     "status": "CLOSED at milepost 7 by a washout, per a Mt. Baker-Snoqualmie National Forest alert dated 27 July 2026 — this blocks vehicle access to the Elbow Lake Trailhead. No reopening estimate has been published.",
+     "driveNote": "Unpaved logging roads near active/former timber and Olivine Corp land; drive respectfully.",
+     "seasonalGate": "FR 12 closing to vehicles from Rocky Creek Bridge (MP 4.6) starting Aug 2026; FR 38 washout/barrier at MP 7."
+    },
+    "value": {
+     "name": "Middle Fork Nooksack River Rd / FR 12 & FR 38 to Elbow Lake Trailhead",
+     "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead.",
+     "driveNote": "Unpaved logging roads near active/former timber and Olivine Corp land; drive respectfully.",
+     "seasonalGate": "FR 12 closed to vehicles from Rocky Creek Bridge (MP 4.6) for road repairs from late August through 1 October 2026, as listed on the Mt. Baker-Snoqualmie National Forest alert; FR 38 washout/barrier at MP 7."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass or National Park Pass at the trailhead.",
+     "permit": "No dedicated climbing permit.",
+     "closures": "FR 12 closing from MP 4.6 starting Aug 2026; FR 38 washout/barrier at MP 7.",
+     "landManager": "Mt. Baker-Snoqualmie National Forest / Mount Baker Ranger District; lower approach crosses private timber/Olivine Corp land.",
+     "passRequired": "Northwest Forest Pass / National Park Pass"
+    },
+    "value": {
+     "fees": "Northwest Forest Pass or National Park Pass at the trailhead.",
+     "permit": "No dedicated climbing permit.",
+     "closures": "FR 12 closed to vehicles from MP 4.6 for road repairs from late August through 1 October 2026; FR 38 washout/barrier at MP 7.",
+     "landManager": "Mt. Baker-Snoqualmie National Forest / Mount Baker Ranger District; lower approach crosses private timber/Olivine Corp land.",
+     "passRequired": "Northwest Forest Pass / National Park Pass"
+    }
+   }
+  },
+  "why": "Same as wa_little_sister_north_face.",
+  "confidence": "high (FR 38); medium (FR 12, unflagged)"
+ },
+ "wa_little_sister_west_face": {
+  "area_id": "wa_little_sister",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Middle Fork Nooksack River Rd / FR 12 & FR 38 to Elbow Lake Trailhead",
+     "status": "CLOSED at milepost 7 by a washout, per a Mt. Baker-Snoqualmie National Forest alert dated 27 July 2026 — this blocks vehicle access to the Elbow Lake Trailhead. No reopening estimate has been published.",
+     "driveNote": "Unpaved logging roads near active/former timber and Olivine Corp land; drive respectfully.",
+     "seasonalGate": "FR 12 closing to vehicles from Rocky Creek Bridge (MP 4.6) starting Aug 2026; FR 38 washout/barrier at MP 7."
+    },
+    "value": {
+     "name": "Middle Fork Nooksack River Rd / FR 12 & FR 38 to Elbow Lake Trailhead",
+     "status": "CLOSED at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — this blocks vehicle access to the Elbow Lake Trailhead.",
+     "driveNote": "Unpaved logging roads near active/former timber and Olivine Corp land; drive respectfully.",
+     "seasonalGate": "FR 12 closed to vehicles from Rocky Creek Bridge (MP 4.6) for road repairs from late August through 1 October 2026, as listed on the Mt. Baker-Snoqualmie National Forest alert; FR 38 washout/barrier at MP 7."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass or National Park Pass at the trailhead.",
+     "permit": "No dedicated climbing permit.",
+     "closures": "FR 12 closing from MP 4.6 starting Aug 2026; FR 38 washout/barrier at MP 7.",
+     "landManager": "Mt. Baker-Snoqualmie National Forest / Mount Baker Ranger District; lower approach crosses private timber/Olivine Corp land.",
+     "passRequired": "Northwest Forest Pass / National Park Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    },
+    "value": {
+     "fees": "Northwest Forest Pass or National Park Pass at the trailhead.",
+     "permit": "No dedicated climbing permit.",
+     "closures": "FR 12 closed to vehicles from MP 4.6 for road repairs from late August through 1 October 2026; FR 38 washout/barrier at MP 7.",
+     "landManager": "Mt. Baker-Snoqualmie National Forest / Mount Baker Ranger District; lower approach crosses private timber/Olivine Corp land.",
+     "passRequired": "Northwest Forest Pass / National Park Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    }
+   }
+  },
+  "why": "Same as wa_little_sister_north_face.",
+  "confidence": "high (FR 38); medium (FR 12, unflagged)"
+ },
+ "wa_mount_fernow_southeast_face": {
+  "area_id": "wa_mount_fernow",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+     "status": "Partially closed as of mid-2026 — FR 6200 closed beyond Atkinson Flat Campground due to storm damage, no reopening estimate.",
+     "driveNote": "When open: from Coles Corner on US-2, go north on WA-207 ~4.4 mi, right on Chiwawa Loop Rd, then FR 6200 (Chiwawa River Rd) ~22 rough gravel/dirt miles, then right on FR 6211 (Phelps Creek Rd) 2.3 mi to the trailhead (3,500 ft). High-clearance vehicle recommended even when fully open.",
+     "seasonalGate": "Not a normal seasonal gate; the current closure is an indefinite storm-damage order, not a winter gate."
+    },
+    "value": {
+     "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+     "status": "Closed to vehicles beyond Atkinson Flat Campground since May 20, 2026 for storm damage, under Forest Service order 06-17-07-2026-11, which runs through December 31, 2027; the Little Giant Fire closure (order 06-17-07-2026-40), in effect from September 3 through October 31, 2026 unless lifted sooner, also closes FR 6200, Phelps Creek Road (FR 6211) and the Phelps Creek and Leroy Creek trails.",
+     "driveNote": "When open: from Coles Corner on US-2, go north on WA-207 ~4.4 mi, right on Chiwawa Loop Rd, then FR 6200 (Chiwawa River Rd) ~22 rough gravel/dirt miles, then right on FR 6211 (Phelps Creek Rd) 2.3 mi to the trailhead (3,500 ft). High-clearance vehicle recommended even when fully open.",
+     "seasonalGate": "Not a normal seasonal gate; the current closure is a storm-damage order running through December 31, 2027, not a winter gate."
+    }
+   }
+  },
+  "why": "Same two orders as Dumbell; the fire order lists Phelps Creek Road 6211, Phelps Cr. Tr. 1511 and Leroy Cr. Tr. 1512 closed. seasonalGate renders on the same line as status and called the order \"indefinite\" though it has an end date (unflagged, fixed for agreement).",
+  "confidence": "high"
+ },
+ "wa_sitkum_spire_standard": {
+  "area_id": "wa_sitkum_spire",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "FS Road 23 (White Chuck River Road)",
+     "status": "Closed by Forest Order #06-05-25-02 from milepost 3.7 to its terminus at FS Road 27, due to flood damage predating the order's March 19, 2025 effective date — not the later December 2025 Pacific Northwest floods, which occurred after this closure was already in effect. Still closed as of spring 2026 per Mt. Baker-Snoqualmie NF alerts.",
+     "driveNote": "From Darrington, follow WA-530 then FS Road 23 south; expect to park at the current MP 3.7 closure point and add roughly 7 miles (14 round trip) of road-walking before reaching the historical trailhead, on top of the ~9-11 mile trail approach to Boulder Basin.",
+     "seasonalGate": "Even when fully open, the final miles have historically been rough and boulder-strewn, effectively undriveable for most passenger vehicles."
+    },
+    "value": {
+     "name": "FS Road 23 (White Chuck River Road)",
+     "status": "Closed by Forest Order #06-05-25-02 from milepost 3.7 to its terminus at FS Road 27, due to flood damage predating the order's March 19, 2025 effective date — not the later December 2025 Pacific Northwest floods, which occurred after this closure was already in effect. Still listed as closed, with no end date given, on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026.",
+     "driveNote": "From Darrington, follow WA-530 then FS Road 23 south; expect to park at the current MP 3.7 closure point and add roughly 7 miles (14 round trip) of road-walking before reaching the historical trailhead, on top of the ~9-11 mile trail approach to Boulder Basin.",
+     "seasonalGate": "Even when fully open, the final miles have historically been rough and boulder-strewn, effectively undriveable for most passenger vehicles."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "No fee or permit charge to climb or camp — a free self-issue wilderness permit is completed at the trailhead. A Northwest Forest Pass or America the Beautiful interagency pass is required to park at the trailhead.",
+     "rules": "Standard Glacier Peak Wilderness rules: campfires prohibited above 3,500 ft elevation (effectively all of this route), camp at least 200 ft from water and trails where possible, and pack out all trash.",
+     "permit": "Free self-issue wilderness permit at the trailhead register; no quota or reservation required.",
+     "closures": "CLOSED: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, with no reopening date. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+     "group_limit": 12,
+     "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (within the Glacier Peak Wilderness).",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass or America the Beautiful pass for trailhead parking.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    },
+    "value": {
+     "fees": "No fee or permit charge to climb or camp — a free self-issue wilderness permit is completed at the trailhead. A Northwest Forest Pass or America the Beautiful interagency pass is required to park at the trailhead.",
+     "rules": "Standard Glacier Peak Wilderness rules: campfires prohibited above 3,500 ft elevation (effectively all of this route), camp at least 200 ft from water and trails where possible, and pack out all trash.",
+     "permit": "Free self-issue wilderness permit at the trailhead register; no quota or reservation required.",
+     "closures": "CLOSED: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, since 19 March 2025, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+     "group_limit": 12,
+     "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (within the Glacier Peak Wilderness).",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass or America the Beautiful pass for trailhead parking.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    }
+   }
+  },
+  "why": "FR 23 / FR 27 closure still posted by MBS (alert start 19 Mar 2025, end N/A, last updated 30 Jun 2026). Note: the order document itself says effective through Dec 31, 2025, but the forest still lists the alert as current with no end date.",
+  "confidence": "high"
+ },
+ "wa_south_twin_sister_west_ridge": {
+  "area_id": "wa_south_twin_sister",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "No trailhead fee; the private timberland road beyond the gate requires the landowner's fee recreation access permit",
+     "rules": "Once inside the Mount Baker Wilderness boundary, no mechanized travel (including bikes) is permitted — bike use on the approach is only legal on the non-Wilderness logging-road miles",
+     "permit": "Free self-issue Wilderness permit at the trailhead register (route lies within Mount Baker Wilderness)",
+     "closures": "FR 38 (Middle Fork Road) has had seasonal gate closures (roughly Nov 1-Jul 1) on portions to protect wildlife in past years, and was significantly damaged by washouts in the December 2025 floods; as of mid-2026 the road remains closed to vehicles beyond the damage point with no announced repair timeline — check current status with the Mt. Baker Ranger District before driving",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "No developed fee trailhead here — FR 38 gate/pullout is an undeveloped roadside parking spot; no Northwest Forest Pass required.",
+     "passRequired": "No Northwest Forest Pass required at the FR 38 quarry-road pullouts (not a developed recreation site)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it); no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    },
+    "value": {
+     "fees": "No trailhead fee; the private timberland road beyond the gate requires the landowner's fee recreation access permit",
+     "rules": "Once inside the Mount Baker Wilderness boundary, no mechanized travel (including bikes) is permitted — bike use on the approach is only legal on the non-Wilderness logging-road miles",
+     "permit": "Free self-issue Wilderness permit at the trailhead register (route lies within Mount Baker Wilderness)",
+     "closures": "FR 38 (Middle Fork Road) has had seasonal gate closures (roughly Nov 1-Jul 1) on portions to protect wildlife in past years, and was significantly damaged by washouts in the December 2025 floods; it has been closed to vehicles at milepost 7 by a washout since 27 July 2026, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026 — check current status with the Mt. Baker Ranger District before driving",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "No developed fee trailhead here — FR 38 gate/pullout is an undeveloped roadside parking spot; no Northwest Forest Pass required.",
+     "passRequired": "No Northwest Forest Pass required at the FR 38 quarry-road pullouts (not a developed recreation site)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest land (camping is not allowed on the private timberland below it); no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping."
+     }
+    }
+   }
+  },
+  "why": "The only current land-manager statement on FR 38 is the MP 7 washout closure (start 27 Jul 2026, no end date). The new text states where the closure is and does NOT claim it blocks this route: I could not confirm from the land manager whether the gated Middle Fork bridge where this approach starts is below or above MP 7.",
+  "confidence": "medium"
+ }
+}

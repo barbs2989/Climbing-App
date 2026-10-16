@@ -1,0 +1,222 @@
+{
+ "file": "r702.json",
+ "results": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Total gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "gain_ft 3600 (loss_ft left at 3100 \u2014 no outside car-to-car descent figure found, per the loss_ft rule)",
+   "evidence": "Four fields (itinerary day gainFt, itinerary totalNote, approach, approach_variants[0].notes) say ~3,600 ft against gain_ft 3,100. A mapped out-and-back of this exact route gives 15.5 mi / 3,608 ft; a 2017 trip report gives 15 mi / 3,500 ft. Other figures disagree (3,251 on another mapped track; 3,100 is the WTA figure for the longer Old Snowy + Elk Pass hike, not this route). loss_ft is NOT changed: no source states the car-to-car descent, so that half stays open.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/old-snowy-mountain-via-snowgrass-trail",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.gaiagps.com/hike/234011/old-snowy-mountain-via-snowgrass-trail-96/",
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Total gain",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3100,
+     "value": 3600
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Distance (one-way and round trip)",
+   "verdict": "fixed",
+   "correct_value": "About 7.5 miles one way (~15 mi round trip); approach sentence's '6.5 miles one-way' is the outlier",
+   "evidence": "A 2017 trip report gives 15 mi round trip and ~7 mi from the trailhead to the base of Old Snowy on the PCT; a mapped track gives 15.5 mi round trip. WTA puts the PCT junction at ~4.7 mi and Oregon Hikers has 1.8 mi more on the PCT to the rocky saddle, plus ~0.5 mi of spur. That is ~7-7.5 mi one way, agreeing with the summit waypoint (7.6) and the 15.5 mi round-trip figure in the same sentence. dist_km (8.5 mi) and itinerary miles (14 RT) are within the measured spread and left alone.",
+   "sources": [
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.alltrails.com/trail/us/washington/old-snowy-mountain-via-snowgrass-trail",
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass",
+    "https://www.oregonhikers.org/field_guide/Snowgrass_Flat_Hike"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Distance (one-way and round trip)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total one-way distance is approximately 6.5 miles",
+     "replace": "Total one-way distance is approximately 7.5 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Whether the summit spur is signed",
+   "verdict": "fixed",
+   "correct_value": "The spur off the PCT is unsigned/unmarked",
+   "evidence": "WTA's route description calls it 'an unmarked junction' where the way goes right through boulders to Old Snowy. Oregon Hikers' Old Snowy page says to follow the ridge south 'on a small unsigned trail'. A 2017 trip report says the path was unmarked but clearly visible. Only SummitPost reports a sign 'as of 2013', which the later sources do not bear out; the row's own navigation finding and approach already say unmarked.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass",
+    "https://www.oregonhikers.org/field_guide/Old_Snowy",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.summitpost.org/old-snowy-mountain/150873"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Whether the summit spur is signed",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the trail climbs to a signed spur (in place since 2013) that leaves the PCT",
+     "replace": "the trail climbs to an unsigned spur that leaves the PCT"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Whether the summit spur is signed",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Leave the PCT on a boot path signed (as of 2013) that switchbacks",
+     "replace": "Leave the PCT on an unsigned boot path that switchbacks"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Whether the summit spur is signed",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "Signed junction where an unmaintained",
+     "replace": "Unmarked junction where an unmaintained"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Whether the summit spur is signed",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "The summit spur trail has been signed since 2013 but is easy to lose",
+     "replace": "The summit spur trail is unsigned and easy to lose"
+    },
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Whether the summit spur is signed",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "since a signed spur trail leaves the PCT",
+     "replace": "since an unsigned spur trail leaves the PCT"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Where/at what elevation the spur leaves the PCT",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources put the spur's start at the PCT's crest (~7,600-7,650 ft, its Washington high point), supporting pitch_detail and crowds. But WTA describes a lower unmarked split (right through boulders to Old Snowy, left toward Elk Pass) and another description puts a junction at 7,190 ft; the waypoint[4] pin itself sits at ~7,075 ft on the USGS 1 m DEM and its note (pack stash) matches the upper point. The row appears to conflate two junctions; waypoint elev not changed without resolving which point the pin represents.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Old_Snowy",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.462348&y=46.513694&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Line of the summit scramble (south-ridge saddle vs Old Snowy-Ives col)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Neither version is confirmed. Oregon Hikers says follow the PCT to its ~7,650 ft crest, then follow the ridge SOUTH on a small trail to the summit; a 2017 trip report calls the final stretch a scramble up Old Snowy's NORTH ridge. That contradicts both the 'south-ridge saddle' (approach, climbing_route, route name) and the itinerary's Old Snowy-Ives col (Ives lies to the south-southeast). Needs owner review of the whole route geometry rather than a one-field patch.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Old_Snowy",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Aspect/face vs route name",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The two sources found put the standard summit path on the ridge NORTH of the summit (walked southward from the PCT crest; the PCT runs on the peak's west slopes), which supports aspect NW / face 'Northwest shoulder' and contradicts the route name 'South Ridge' and beta's 'south side'. The name cannot be changed here and the south-ridge claim runs through approach, climbing_route and approach_variants, so this is flagged rather than patched.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Old_Snowy",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html",
+    "https://en.wikipedia.org/wiki/Old_Snowy_Mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Parking pass at Snowgrass Flats trailhead",
+   "verdict": "fixed",
+   "correct_value": "A $5/day or $30/year Northwest Forest Pass (or valid Recreation Pass) is required at the Snowgrass trailhead as well as Berry Patch",
+   "evidence": "The Forest Service's Snowgrass Trailhead page lists it as a fee site: $5 per vehicle per day, $30 annual, payable by cash, check, Scan & Pay or a Recreation Pass. A 2025 Gifford Pinchot release says Snowgrass Trailhead became a new $5/day Northwest Forest Pass site once the new vault toilet was installed (the row notes the vault toilet). An older hike page also lists 'NW Forest Pass Required'. The 'not required' claims are older and pre-date the change.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-snowgrass",
+    "https://www.fs.usda.gov/r06/giffordpinchot/newsroom/releases/cashless-ways-pay-summer-gifford-pinchot-national-forest",
+    "https://nwhiker.com/GPNFHike13.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Parking pass at Snowgrass Flats trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Not required at Snowgrass Flat; required at Berry Patch trailhead",
+     "replace": "Required at both the Snowgrass Flat and Berry Patch trailheads"
+    }
+   ]
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Glacier crossing on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "WTA describes snow patches before the Old Snowy turnoff and a steep snowfield on the PCT north of it toward Elk Pass; a 2017 trip report mentions crossing a sizable snowfield in the Packwood Glacier area en route. No source clearly says whether the summit route itself crosses Packwood Glacier ice or only its lingering snowfield, so neither the obj_haz/detailed_rack wording nor the crevasses panel was changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass",
+    "https://www.hikingshenandoah.com/2017/08/snowgrass-flat-and-old-snowy-mountain.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "fact": "Goat Lake elevation",
+   "verdict": "fixed",
+   "correct_value": "Goat Lake sits at ~6,390-6,420 ft, about level with the 6,400 ft meadows, not 500 ft below them",
+   "evidence": "The USGS 3DEP point query at the Goat Lake GNIS coordinate returns 6,392 ft; the Old Snowy Mountain USGS topo listing gives about 6,421 ft (1,957 m, matching the 10 m NED value). That agrees with the bivy elevation 6,392 and contradicts the waypoint note's '0.8 mi/500 ft' drop from a 6,400 ft junction. The unsupported drop/distance is removed rather than replaced with a guess.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.48594&y=46.52218&units=Feet&wkid=4326",
+    "https://www.topozone.com/washington/lewis-wa/lake/goat-lake-5/",
+    "https://api.opentopodata.org/v1/ned10m?locations=46.5221835,-121.4859403"
+   ],
+   "patches": [
+    {
+     "id": "wa_old_snowy_mountain_r1",
+     "fact": "Goat Lake elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Trail 86 splits here and drops 0.8 mi/500 ft to Goat Lake.",
+     "replace": "Trail 86 splits here toward Goat Lake."
+    }
+   ]
+  }
+ ]
+}

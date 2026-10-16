@@ -1,0 +1,1019 @@
+{
+ "file": "r180.json",
+ "results": [
+  {
+   "id": "wa_south_face_center",
+   "fact": "Free grade vs aid (5.7 A3) in itinerary/timing",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route database page gives South Face Center as a one-pitch 5.8+ free climb (220 ft) ending at bolts below the summit, with no aid; the peak page on another site lists 'South Face, Center' as 5.7 A3, two pitches plus the North Face finish (FA 1966). No source says the aid line was later freed, so the overview's framing and the itinerary's A3 description rest on two sources describing possibly different lines. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/111944979/south-face-center",
+    "https://www.summitpost.org/concord-tower/151560"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Pitch count and finish",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One source: a single 220-ft pitch (70 m rope) trending left through two corners to a tree and a bolted top anchor. The other: two pitches on the face then the North Face route's last pitch. The row carries both (overview/itinerary vs beta/pitch_detail); tied to the aid-vs-free question above, so not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/111944979/south-face-center",
+    "https://www.summitpost.org/concord-tower/151560"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass (a little under a mile west of the Overlook)",
+   "evidence": "The trail guide places the trailhead a little under a mile west of (past, coming from the east) the Washington Pass Overlook, 0.8 mi from it; the climbing area page puts it 1 mile west of Washington Pass. Both reject 0.25 mi and 1.5 mi. bivy[0] ('half a mile') is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "a quarter mile west of the Washington Pass Overlook",
+     "replace": "about a mile west of the Washington Pass Overlook",
+     "id": "wa_south_face_center",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a quarter mile west of the Washington Pass Overlook",
+     "replace": "about a mile west of the Washington Pass Overlook",
+     "id": "wa_south_face_center",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_south_face_center",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Wilderness status",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No climbing or wilderness permit required",
+   "evidence": "The row's own permit column, access.overnight_permit.what/where and access.notes all say no wilderness permit and national-forest land outside any wilderness; a climbing trip report states no permit is required to hike or climb here, and the Forest Service trail page lists no wilderness designation, only lake-camping/stock/mechanized rules. Only access.permit's 'self-issue wilderness rules apply' is the outlier.",
+   "sources": [
+    "https://backcountrysights.com/liberty-bell-via-the-beckey-route/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No climbing permit required; self-issue wilderness rules apply",
+     "replace": "No climbing or wilderness permit required",
+     "id": "wa_south_face_center",
+     "fact": "Wilderness status"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Car-to-car reports for this group give roughly 5 to 6.3 miles round trip (5 mi to the notch and back; 5.6 and 6.3 mi recorded; about 6 mi for a south-face Concord day), so the itinerary's 6 miles is within range and the summit waypoint's 2 mi one-way is a rough estimate. Sources do not agree closely enough to set a figure; not changed.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_center",
+   "fact": "Blue Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "5,400 ft",
+   "evidence": "The Forest Service trailhead page gives 5,400 ft, the USGS 1 m elevation model at the stored trailhead coordinate reads 5,380 ft, and a Concord trip report also gives 5,400 ft. The row's approach and trailheadDirection already say 5,400 ft; the 5,200 ft copies are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_south_face_center",
+     "fact": "Blue Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_face_3",
+   "fact": "Which notch/gully the South Face is approached from",
+   "verdict": "fixed",
+   "correct_value": "The Concord-Lexington notch, via the gully between Concord and Lexington",
+   "evidence": "The route page says the first belay is at the far eastern edge of the Concord/Lexington notch; a trip report on the south/southeast face zig-zagged up the couloir between the two towers to the Concord-Lexington col. approach and best_season sending parties to the Liberty Bell-Concord gully are wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/117635520/south-face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to the base of the gully descending between Liberty Bell and Concord/Lexington Towers, then climb the gully (often snow- or ice-filled into late June) to the notch.",
+     "replace": "to the base of the gully between Concord and Lexington Towers, then climb that gully (often snow- or ice-filled into late June) to the Concord-Lexington notch.",
+     "id": "wa_south_face_3",
+     "fact": "Which notch/gully the South Face is approached from"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "once the Liberty-Concord notch/gully has melted out",
+     "replace": "once the Concord-Lexington notch/gully has melted out",
+     "id": "wa_south_face_3",
+     "fact": "Which notch/gully the South Face is approached from"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_3",
+   "fact": "Pitch 1 description",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page describes pitch 1 as class-2 scrambling across ledges to trees; a detailed trip report of the south/southeast face describes its first pitch as a rightward traverse on sandy ledges, then a steep crack, a V-groove and a finger traverse (and four pitches overall). The itinerary text follows the trip report, pitch_detail follows the route page; the two sources may describe different starts, so not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117635520/south-face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_3",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "The trail guide places the trailhead a little under a mile west of (past, coming from the east) the Washington Pass Overlook, 0.8 mi from it; the climbing area page puts it 1 mile west of Washington Pass. Both reject 0.25 mi and 1.5 mi. bivy[0] ('half a mile') is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 0.25 mile west of the Washington Pass Overlook",
+     "replace": "roughly 1 mile west of the Washington Pass Overlook",
+     "id": "wa_south_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 1.5 miles west of Washington Pass",
+     "replace": "about 1 mile west of Washington Pass",
+     "id": "wa_south_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_south_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_3",
+   "fact": "Wilderness status",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No climbing or wilderness permit required",
+   "evidence": "The row's own permit column, access.overnight_permit.what/where and access.notes all say no wilderness permit and national-forest land outside any wilderness; a climbing trip report states no permit is required to hike or climb here, and the Forest Service trail page lists no wilderness designation, only lake-camping/stock/mechanized rules. Only access.permit's 'self-issue wilderness rules apply' is the outlier.",
+   "sources": [
+    "https://backcountrysights.com/liberty-bell-via-the-beckey-route/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No climbing permit required; self-issue wilderness rules apply",
+     "replace": "No climbing or wilderness permit required",
+     "id": "wa_south_face_3",
+     "fact": "Wilderness status"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_3",
+   "fact": "Blue Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "5,400 ft",
+   "evidence": "The Forest Service trailhead page gives 5,400 ft, the USGS 1 m elevation model at the stored trailhead coordinate reads 5,380 ft, and a Concord trip report also gives 5,400 ft. The row's approach and trailheadDirection already say 5,400 ft; the 5,200 ft copies are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_south_face_3",
+     "fact": "Blue Lake Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(~5,200 ft,",
+     "replace": "(~5,400 ft,",
+     "id": "wa_south_face_3",
+     "fact": "Blue Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Where the R (runout) rating comes from",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The runout is at the pitch-1 crux",
+   "evidence": "The route page makes pitch 1's two diagonal cracks the crux; a second description puts the crux on pitch 1's balancy highsteps with poor-to-nonexistent protection and decking potential. hazards, watch_out, pro_needs, pitch_detail (crux: P1) and bail all agree; only rope_note blames P2.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route",
+    "https://www.summitpost.org/cave-route/166534"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "The 'R' rating stems from the traversing P2 — protect it well for the second's safety with directional gear.",
+     "replace": "The 'R' rating comes from the poorly protected P1 crux; on the traversing P2, place directional gear to protect the second.",
+     "id": "wa_the_cave_route",
+     "fact": "Where the R (runout) rating comes from"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope suffices: rappel the summit's west side using the mid-height station, then one more rappel down the north face to the notch",
+   "evidence": "The route page says the descent was originally a two-rope rappel off the summit's west side, but a midway station now allows it on a single rope, then a move right on a ledge and a final rappel down the north face to the notch. A second description says a 60 m rope is what is needed to get down. descent_text (a doubled rope or downclimb, 'same as the North Face') and rappels (two ropes) are fixed to match the single-rope kit.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route",
+    "https://www.summitpost.org/cave-route/166534"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "2-rope rap from summit's west side (mid-height rap station may exist); additional rap down P1's north face to the notch",
+     "replace": "Rap the summit's west side, breaking it at the mid-height station on a single 60 m rope (two ropes reach in one); then one more rap down P1's north face to the notch",
+     "id": "wa_the_cave_route",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Same as the standard North Face: rappel chains at the summit allow a doubled-rope rappel toward the notch, or downclimb/scramble back to the notch.",
+     "replace": "Rappel off the summit's west side, stopping at the mid-height station if you carry a single 60 m rope, to a ledge; move right along it and make one more rappel down the north face to the notch.",
+     "id": "wa_the_cave_route",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Which gully the approach uses",
+   "verdict": "fixed",
+   "correct_value": "The Liberty Bell-Concord gully",
+   "evidence": "The route page starts the climb on the north side of Concord about 50 ft down the gully from the notch, and the area page sends the climbers' trail up to the Liberty-Concord gully. The shared trailhead waypoint note naming the Concord-Lexington gully is wrong for this route.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "up to the Concord-Lexington gully",
+     "replace": "up to the Liberty Bell-Concord gully",
+     "id": "wa_the_cave_route",
+     "fact": "Which gully the approach uses"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Rack size",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says pro to 4 inches; another description says one of each cam from tiny to 3 inches plus a few nuts. Sources disagree; not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route",
+    "https://www.summitpost.org/cave-route/166534"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Pitch-1 belay tree",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says the pitch-1 belay tree is reportedly gone, so bring gear for an anchor; no second source addresses its state, and beta/obj_haz ('deteriorating') vs pitch_detail ('reported gone') split two and two. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "The trail guide places the trailhead a little under a mile west of (past, coming from the east) the Washington Pass Overlook, 0.8 mi from it; the climbing area page puts it 1 mile west of Washington Pass. Both reject 0.25 mi and 1.5 mi. bivy[0] ('half a mile') is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "~0.25 mile west of the Washington Pass Overlook",
+     "replace": "~1 mile west of the Washington Pass Overlook",
+     "id": "wa_the_cave_route",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about a quarter mile west of the Washington Pass Overlook",
+     "replace": "about a mile west of the Washington Pass Overlook",
+     "id": "wa_the_cave_route",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_the_cave_route",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Wilderness status",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No climbing or wilderness permit required",
+   "evidence": "The row's own permit column, access.overnight_permit.what/where and access.notes all say no wilderness permit and national-forest land outside any wilderness; a climbing trip report states no permit is required to hike or climb here, and the Forest Service trail page lists no wilderness designation, only lake-camping/stock/mechanized rules. Only access.permit's 'self-issue wilderness rules apply' is the outlier.",
+   "sources": [
+    "https://backcountrysights.com/liberty-bell-via-the-beckey-route/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No climbing permit required; self-issue wilderness rules apply",
+     "replace": "No climbing or wilderness permit required",
+     "id": "wa_the_cave_route",
+     "fact": "Wilderness status"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "fact": "Blue Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "5,400 ft",
+   "evidence": "The Forest Service trailhead page gives 5,400 ft, the USGS 1 m elevation model at the stored trailhead coordinate reads 5,380 ft, and a Concord trip report also gives 5,400 ft. The row's approach and trailheadDirection already say 5,400 ft; the 5,200 ft copies are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_the_cave_route",
+     "fact": "Blue Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Hardest rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely split: the route page grades the North Face 5.7 (P2 5.7, P3 5.6+-5.7), while the peak page and a trip report call it 5.6 overall (the report found the last bit harder). grade (5.6) vs rock_grade (5.7) mirrors that split; not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "http://joshuadhawkins.blogspot.com/2012/07/concord-tower-north-face.html",
+    "https://www.summitpost.org/concord-tower/151560"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Three rappels straight down the North Face to the notch",
+   "evidence": "The route page describes rappelling the North Face from the summit bolts to bolts below a slab, then to the pitch-1 ledge and the base; a trip report made three short raps straight down the face back to the col. The summit waypoint's 'rappelling Beckey Gully on doubled ropes' is wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.jeffreyjhebert.com/adventures/north-face-on-concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "descend by reversing to the notch and rappelling Beckey Gully on doubled ropes from fixed chains.",
+     "replace": "descend by rappelling the North Face from the summit chains back to the notch.",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Descent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Rappel anchors all fixed hardware",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The first two stations are bolts/chains; the last, on the pitch-1 ledge, is a tree or bush",
+   "evidence": "rappel_detail[2] (anchor, station, hazards), rappel_count_note and pitch_detail[0] ('Tree ledge') agree the last station is natural; trip reports describe rappelling from a small bush on that ledge and from webbing on a tree, and the route page describes bolts only to the pitch-1 ledge. descent_text's 'all anchors are fixed bolts/chains' is the outlier. The anchor/note text also named a club as its source, which is removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-lexington-tower-north-face-and-concord-tower-north-and-south-faces"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "All anchors on this line are fixed bolts/chains (no natural gear or v-thread anchors needed).",
+     "replace": "The first two stations are fixed bolts/chains; the last, on the pitch-1 ledge, is a tree or bush, so carry webbing and a rap ring.",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Rappel anchors all fixed hardware"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      2,
+      "anchor"
+     ],
+     "find": "tree anchor with webbing (per a Mountaineers trip report: 'webbing on the tree'), not purely bolted as published claims",
+     "replace": "tree or bush with webbing, not fixed hardware",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Rappel anchors all fixed hardware"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "a Mountaineers party recorded webbing on the tree for part of it, and another reported a bush as the anchor at that level",
+     "replace": "the last station, on the pitch-1 ledge, is webbing on a tree or a small bush",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Rappel anchors all fixed hardware"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Total gain",
+   "verdict": "fixed",
+   "correct_value": "2,300 ft car to car",
+   "evidence": "A car-to-car Concord Tower day recorded about 6 miles and 2,300 ft gained and lost. The summit is 7,560 ft and the trailhead ground is 5,380 ft (USGS), so 2,000 ft is below even the straight elevation difference (2,180 ft). The itinerary's 2,300 ft stands; gain_ft and loss_ft are raised to match. approach_variants' 2,100 ft is to the notch only and is left.",
+   "sources": [
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/",
+    "https://www.mountainproject.com/area/106509914/concord-tower",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 2000,
+     "value": 2300,
+     "id": "wa_concord_tower_north_face",
+     "fact": "Total gain"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 2000,
+     "value": 2300,
+     "id": "wa_concord_tower_north_face",
+     "fact": "Total gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Approach distance to the notch",
+   "verdict": "fixed",
+   "correct_value": "Climbers' path leaves the trail around 1.5-2 mi; the notch is roughly 2-2.5 mi from the trailhead",
+   "evidence": "The area page puts the signed climbers' junction 1.7 miles up the trail; a route description puts it at about the 2-mile mark with 5 miles round trip to the notch. So the climbers' path is well under a mile, and the approach's 'over about 1.5 miles' of path (3-3.5 mi total) is wrong. The distance phrase is removed and the gain kept, which matches the waypoint directions.",
+   "sources": [
+    "https://www.mountainproject.com/area/119812079/liberty-bell-group",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "gaining roughly 1,900-2,000 ft over about 1.5 miles (figure",
+     "replace": "gaining roughly 1,900-2,000 ft from the trailhead (figure",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Approach distance to the notch"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Climbers' path junction signed or unsigned",
+   "verdict": "fixed",
+   "correct_value": "Signed (Liberty Bell Trail #727), also marked by a cairn",
+   "evidence": "The area page says a big wooden sign reading 'Liberty Bell trail 727' marks the junction on the left at 1.7 miles; a hiker trip report describes the junction sign pointing left to Liberty Bell Trail #727, Climbing Access. The approach and the junction waypoint's 'unsigned' are wrong.",
+   "sources": [
+    "https://www.mountainproject.com/area/119812079/liberty-bell-group",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-18.1056886488"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "an unsigned but well-trodden climbers' path",
+     "replace": "a signed, well-trodden climbers' path (Liberty Bell Trail #727)",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Climbers' path junction signed or unsigned"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "the unsigned but well-trodden climbers' path",
+     "replace": "the signed, well-trodden climbers' path (Liberty Bell Trail #727)",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Climbers' path junction signed or unsigned"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "The trail guide places the trailhead a little under a mile west of (past, coming from the east) the Washington Pass Overlook, 0.8 mi from it; the climbing area page puts it 1 mile west of Washington Pass. Both reject 0.25 mi and 1.5 mi. bivy[0] ('half a mile') is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "1.5 miles west of Washington Pass",
+     "replace": "about 1 mile west of Washington Pass",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "roughly 1.5 miles west of Washington Pass",
+     "replace": "roughly 1 mile west of Washington Pass",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 1.5 miles west of Washington Pass",
+     "replace": "about 1 mile west of Washington Pass",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Route called the Beckey Route",
+   "verdict": "fixed",
+   "correct_value": "North Face (the Beckey Route is Liberty Bell's)",
+   "evidence": "The route page names this Concord line simply North Face; the Beckey Route is Liberty Bell's 5.6 southwest-face route from the same notch. Every other field calls this route the North Face.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Car-to-car: North Face (Beckey Route)",
+     "value": "Car-to-car: North Face",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Route called the Beckey Route"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Car-to-car: North Face (Beckey Route)",
+     "value": "Car-to-car: North Face",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Route called the Beckey Route"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Wilderness status",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No climbing or wilderness permit required",
+   "evidence": "The row's own permit column, access.overnight_permit.what/where and access.notes all say no wilderness permit and national-forest land outside any wilderness; a climbing trip report states no permit is required to hike or climb here, and the Forest Service trail page lists no wilderness designation, only lake-camping/stock/mechanized rules. Only access.permit's 'self-issue wilderness rules apply' is the outlier.",
+   "sources": [
+    "https://backcountrysights.com/liberty-bell-via-the-beckey-route/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No climbing permit required; self-issue wilderness rules apply",
+     "replace": "No climbing or wilderness permit required",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Wilderness status"
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Blue Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "5,400 ft",
+   "evidence": "The Forest Service trailhead page gives 5,400 ft, the USGS 1 m elevation model at the stored trailhead coordinate reads 5,380 ft, and a Concord trip report also gives 5,400 ft. The row's approach and trailheadDirection already say 5,400 ft; the 5,200 ft copies are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(~5,200 ft)",
+     "replace": "(~5,400 ft)",
+     "id": "wa_concord_tower_north_face",
+     "fact": "Blue Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_up_in_arms",
+   "fact": "Hardest rock grade",
+   "verdict": "fixed",
+   "correct_value": "5.11",
+   "evidence": "The first-ascent report gives Up in Arms as 700 ft, 5.11, hardest on pitch 1; the route page grades it 5.11 with P1 5.11. grade's 5.10b is the outlier (grade_num left to its derivation).",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216754",
+    "https://www.mountainproject.com/route/125216004/up-in-arms"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.10b",
+     "value": "5.11",
+     "id": "wa_up_in_arms",
+     "fact": "Hardest rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_up_in_arms",
+   "fact": "Bolted anchors for retreat",
+   "verdict": "fixed",
+   "correct_value": "One bolted anchor, at the top of pitch 2",
+   "evidence": "The first-ascent report says three protection bolts and one bolted anchor were added; the route page places that bolted anchor at the end of pitch 2 (bolts on P1 and P3 are protection, not stances). bail's 'bolted stances at P1, P3' is wrong.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216754",
+    "https://www.mountainproject.com/route/125216004/up-in-arms"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Bolted stances exist partway up the route (e.g., P1, P3) allowing retreat with a single rope if needed.",
+     "replace": "The one bolted anchor, at the top of pitch 2, allows a single-rope retreat from there; elsewhere retreat means leaving gear.",
+     "id": "wa_up_in_arms",
+     "fact": "Bolted anchors for retreat"
+    }
+   ]
+  },
+  {
+   "id": "wa_up_in_arms",
+   "fact": "Aid still used on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "beta says a bit of aid is still occasionally used by the first ascensionists; the first-ascent report says easy aid was used only on the initial ascent through a seam and the line was then cleaned into an all-free route. The route page is silent on aid. One source only; not changed.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216754"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Which way the variation leaves the standard line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only description of this variation says pitch 2 continues up right to a striking vertical crack, then traverses up and left across a face to a large boulder. That supports beta and approach_variants, against overview, pro_tips, pitch_detail[1] and rope_note — too many fields on the other side to fix on one source.",
+   "sources": [
+    "https://www.mountainproject.com/route/107715253/north-face-var-right-directisimo"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Pitch 2 and pitch 3 description",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only description gives P2 as a long right-then-left pitch to a boulder with slings (5.8) and P3 as a bolted ramp up and left to the summit (5.easy); pitch_detail, itinerary, timing and rope_note describe an offwidth-to-chimney crack and a 5.7 arete instead. One source against many fields; not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/107715253/north-face-var-right-directisimo"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Descent method and rope",
+   "verdict": "fixed",
+   "correct_value": "Single-rope rappels, best down the south face",
+   "evidence": "The variation's page says single-rope rappels are possible on the north face but awkward and strongly recommended on the south face because ropes stick on the edge; the standard North Face page says one 60 m rope suffices, rappelling the north face in three stages or the south face in two 30 m raps. descent_text's doubled-rope rappel and rope_note's matching claim are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/107715253/north-face-var-right-directisimo",
+    "https://www.mountainproject.com/route/106543279/north-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Same as the standard North Face: rappel chains at the summit allow a doubled-rope rappel toward the notch, or downclimb/scramble back to the notch.",
+     "replace": "Single-rope rappels from the summit chains: down the north face in three stages to the Liberty Bell-Concord notch, or, better, two raps down the south face to the Concord-Lexington notch, since ropes tend to stick on the north side.",
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Descent method and rope"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Off the top, the summit chains take a doubled-rope rappel back toward the notch; parties who rappel the south face instead report single-rope raps.",
+     "replace": "Off the top, single-rope rappels work down either face; the south face is the better choice because ropes tend to snag on the north side.",
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Descent method and rope"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Which gully the approach uses",
+   "verdict": "fixed",
+   "correct_value": "The Liberty Bell-Concord gully",
+   "evidence": "The variation shares the North Face's start at the Liberty Bell-Concord notch (route pages for both), and the area page sends the climbers' trail to the Liberty-Concord gully. The shared trailhead waypoint note naming the Concord-Lexington gully is wrong here.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "up to the Concord-Lexington gully",
+     "replace": "up to the Liberty Bell-Concord gully",
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Which gully the approach uses"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass",
+   "evidence": "The trail guide places the trailhead a little under a mile west of (past, coming from the east) the Washington Pass Overlook, 0.8 mi from it; the climbing area page puts it 1 mile west of Washington Pass. Both reject 0.25 mi and 1.5 mi. bivy[0] ('half a mile') is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.mountainproject.com/area/106509914/concord-tower"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "~0.25 mile west of the Washington Pass Overlook",
+     "replace": "~1 mile west of the Washington Pass Overlook",
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Wilderness status",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No climbing or wilderness permit required",
+   "evidence": "The row's own permit column, access.overnight_permit.what/where and access.notes all say no wilderness permit and national-forest land outside any wilderness; a climbing trip report states no permit is required to hike or climb here, and the Forest Service trail page lists no wilderness designation, only lake-camping/stock/mechanized rules. Only access.permit's 'self-issue wilderness rules apply' is the outlier.",
+   "sources": [
+    "https://backcountrysights.com/liberty-bell-via-the-beckey-route/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "No climbing permit required; self-issue wilderness rules apply",
+     "replace": "No climbing or wilderness permit required",
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Wilderness status"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Blue Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "5,400 ft",
+   "evidence": "The Forest Service trailhead page gives 5,400 ft, the USGS 1 m elevation model at the stored trailhead coordinate reads 5,380 ft, and a Concord trip report also gives 5,400 ft. The row's approach and trailheadDirection already say 5,400 ft; the 5,200 ft copies are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Blue Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "applied": [
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip and ascent/descent times"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "overview",
+   "path": [],
+   "fact": "Steepest angle of the couloir"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km holds the round trip, not the one-way approach"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate — roughly 2000-2500 ft gain over a short summer approach; existing trip reports show round trips in the 3-3.5 hour range from the Alpental lot",
+      "packWeight": "Light day pack (water, layers, helmet); no overnight or technical gear needed in dry conditions"
+     },
+     "approachTime": "Short — roughly 1-1.5 hours from the Alpental trailhead to the base of the north-facing slopes",
+     "requiredSkills": [
+      "Basic off-trail route-finding (goat/climber paths under the ski lift, no maintained tread)",
+      "Comfort on loose talus/scree and boulder fields (Edelweiss Bowl area)",
+      "Awareness of and courtesy around active ski-area infrastructure (lift towers, cables)",
+      "No rope/technical skills required for a dry-season ascent, but comfort on a short exposed Class 3 step"
+     ],
+     "experienceLevel": "Mostly Class 2 scramble with a short, exposed Class 3 summit step; suitable for a partner new to off-trail scrambling but comfortable with loose, unmarked terrain"
+    }
+   }
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "before": {
+    "overview": "Pandora's Box (also called the W Couloir) is the standard moderate couloir linking Colchuck and Dragontail near Colchuck Col. It's a west-facing snow/talus couloir a couple hundred feet east of Colchuck Col, most often climbed as the summit finish for Dragontail Peak via the Colchuck Glacier approach. The couloir is class 3 scrambling with sections of steep snow up to roughly 40-45°; it is not a technical ice or mixed climb. A single ice axe, crampons, and comfort on steep snow/talus are the normal kit."
+   }
+  },
+  {
+   "id": "wa_this_my_friend",
+   "before": {
+    "dist_km": 16.42
+   }
+  }
+ ]
+}

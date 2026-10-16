@@ -1,0 +1,451 @@
+{
+ "file": "r035.json",
+ "results": [
+  {
+   "id": "wa_and_say",
+   "fact": "Route grade vs crux pitch grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The published pitch-by-pitch breakdown lists P2 5.11b and P4/P5 5.11+ with an overall grade of plain 5.11; a second detailed report lists the same pitch grades (5.11+ on P4 and P5) yet gives the whole route as 5.11b. One source notes the P4 crux can be aided to bring it to 5.10. The sources themselves pair a 5.11b headline with 5.11+ pitches, and no two agree on a different overall letter grade, so there is no researched value to adopt.",
+   "sources": [
+    "https://www.mountainproject.com/route/110383269/and-say",
+    "https://stephabegg.com/trip-reports/washington/index/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "fact": "Crux difficulty (5.0 vs a reported 5.4 move)",
+   "verdict": "fixed",
+   "correct_value": "Crux is Class 4 / low 5th (about 5.0); no 5.4 move on the route",
+   "evidence": "The route database page grades the West Ridge Easy 5th and calls the crux slabby depression 'Class 4/5'; it never mentions 5.4. An independent trip report rates the ridge Class 4. The '5.4' appears to come from a club listing that asks participants to be comfortable leading 5.4 single-pitch trad, a prerequisite rather than the route's grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/110175068/west-ridge",
+    "https://trailcatjim.com/lundin-peak-via-south-couloir-west-ridge/",
+    "https://www.mountaineers.org/activities/routes-places/lundin-peak-west-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_lundin_peak_west_ridge",
+     "fact": "Crux difficulty (5.0 vs a reported 5.4 move)",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Easy 5th (low 5th, with a reported 5.4 crux move)",
+     "value": "Easy 5th (Class 4 with a short low-5th crux)"
+    },
+    {
+     "id": "wa_lundin_peak_west_ridge",
+     "fact": "Crux difficulty (5.0 vs a reported 5.4 move)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "low-5th (5.0-5.4) climbing",
+     "replace": "low-5th (about 5.0) climbing"
+    }
+   ]
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Season / water-availability window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Jul-Sep has less snow and rockfall, but water on the ridge gets scarcer as the season goes on",
+   "evidence": "The route's own season, pro_tips and watch_out all say water becomes the crux late in the season. The route's published description agrees: early season has more snow and rockfall risk, late season less overhead hazard but water becomes scarce, and water plus conditions are the cruxes. best_season's 'for water availability' reverses this.",
+   "sources": [
+    "https://www.mountainproject.com/route/120466607/traverse-of-mount-index"
+   ],
+   "patches": [
+    {
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Season / water-availability window",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "for water availability and less snow.",
+     "replace": "for less snow and less rockfall, though water on the ridge becomes scarce as the season goes on."
+    }
+   ]
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Commitment grade IV vs 'Grade III' quoted in the approach text",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The approach sentence explicitly labels 'Grade III, 5.6-5.7' as the grade of the standard North Face Route on North Peak (the first section of the traverse), not of the traverse; the traverse's own IV is a separate, clearly labelled route fact. Published grades for that North Face route range from III to IV, so the sentence is not wrong about the sub-route.",
+   "sources": [
+    "https://www.mountainproject.com/route/119540725/north-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Land manager / permitting agency (NPS vs USFS)",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District (not the National Park Service)",
+   "evidence": "The Forest Service lists the Lake Serene Trail and trailhead as a Skykomish Ranger District site of Mt. Baker-Snoqualmie National Forest requiring a recreation pass; the Lake Serene trail guide likewise requires a Northwest Forest Pass or America the Beautiful pass, and Mount Index lies in that national forest, far from North Cascades National Park. The NPS permit blob in access._raw (marked 'presumed': Marblemount WIC, $10/night) and the 'North Cascades National Park' permit zone are wrong. access.permit was left alone because sources disagree on whether Lake Serene is inside a wilderness boundary (which would mean a free self-issue permit).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail-1068",
+    "https://www.wta.org/go-hiking/hikes/lake-serene",
+    "https://en.wikipedia.org/wiki/Mount_Index"
+   ],
+   "patches": [
+    {
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Land manager / permitting agency (NPS vs USFS)",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw"
+     ],
+     "expect": {
+      "note": "Limited specific information available - confirm exact location and permit requirements with park directly",
+      "contact": "(360) 854-7245 or noca_wilderness@nps.gov",
+      "permit_type": "Backcountry wilderness permit",
+      "land_manager": "National Park Service - North Cascades National Park (presumed)",
+      "parking_pass": "North Cascades National Park entrance fee",
+      "cost_structure": {
+       "youth_15_and_under": "Free",
+       "per_person_per_night": "$10 per person",
+       "non_refundable_reservation_fee": "$6"
+      },
+      "permit_location": "Wilderness Information Center in Marblemount or online via Recreation.gov",
+      "wilderness_zone": "North Cascades National Park",
+      "group_size_limit": "4-12 people depending on campsite",
+      "seasonal_closures": {
+       "typical": "Year-round permits available"
+      },
+      "pickup_requirement": "Reserved permits must be picked up by 11am on trip start date"
+     },
+     "value": null
+    },
+    {
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Land manager / permitting agency (NPS vs USFS)",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "North Cascades National Park",
+     "value": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"
+    }
+   ]
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Lake Serene Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": 600,
+   "evidence": "The Forest Service gives the Lake Serene trail an elevation range starting at 640 ft; the trail guide gives 2,000 ft of gain to a 2,521 ft high point (a start near 520 ft), and another hiking guide gives a 521 ft start. All put the trailhead at roughly 500-650 ft, matching the row's own 'about 600 ft' and the sibling Main Peak route's 600 ft; 1,000 ft is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail",
+    "https://www.wta.org/go-hiking/hikes/lake-serene",
+    "https://wefoundadventure.com/hikes/lake-serene"
+   ],
+   "patches": [
+    {
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Lake Serene Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1000,
+     "value": 600
+    },
+    {
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Lake Serene Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 1000,
+     "value": 600
+    }
+   ]
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Parking pass: passRequired 'None' vs parking_pass requiring a Northwest Forest Pass",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass or America the Beautiful pass",
+   "evidence": "access.passRequired says 'None' while access.parking_pass says a Northwest Forest Pass or America the Beautiful pass is required. The Forest Service states recreation passes are required at Lake Serene Trailhead, and the trail guide names the Northwest Forest Pass or America the Beautiful pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail-1068",
+    "https://www.wta.org/go-hiking/hikes/lake-serene"
+   ],
+   "patches": [
+    {
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Parking pass: passRequired 'None' vs parking_pass requiring a Northwest Forest Pass",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "None",
+     "value": "Northwest Forest Pass or America the Beautiful pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Total gain 4,500 ft is less than the trailhead-to-summit rise",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft is 4,500, but the route starts at the ~600 ft trailhead and ends on Main Peak (high_point_ft 5,991), a net rise of ~5,400 ft before counting the ups and downs between the three summits; the sibling Main Peak route stores 5,800 ft. No published total-gain figure for the full traverse was found, so no value was adopted.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Index",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "fact": "Total route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance and the itinerary miles are per day across a round trip, so 3.6 mi one-way vs 9.5-10 mi round trip compare different quantities. Published one-way lengths for the Lake Serene trail itself differ (3.5 mi from the Forest Service, 4.1 mi from the trail guide), so 3.6 mi sits within the range of the trail distance and no single one-way figure is established to replace it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail",
+    "https://www.wta.org/go-hiking/hikes/lake-serene"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "fact": "Pitch count on the North Face section",
+   "verdict": "fixed",
+   "correct_value": 12,
+   "evidence": "The North Face of North Peak is listed as 12 pitches (1,400 ft, 5.7). A detailed ascent account logged about 11 roped pitches from 3rd class to 5.7 after two pitches of scrambling. Both agree with the itinerary's '~12 pitches'; the 4 comes from a placeholder count on the traverse listing, and the 4-row ROUTE BREAKDOWN is a list of sections, not pitches.",
+   "sources": [
+    "https://www.mountainproject.com/route/119540725/north-face",
+    "https://www.mountainwerks.org/cma/2001/mtindex.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_index_north_peak_traverse",
+     "fact": "Pitch count on the North Face section",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 4,
+     "value": 12
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "fact": "Turnaround plan vs. the route's own multi-day schedule",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A turnaround tied to the North Face on the climbing day, not a single-day 5-hour / 2 PM rule",
+   "evidence": "timing (29 hrs) and all three itinerary days describe a 3-day trip that tops out North Peak around noon on day 2 and bivies on the ridge. External accounts agree it is a long multi-day effort: the first traverse party reached North Peak by noon and spent a night on the ridge, and a recent party spent 10 hours on the North Face and got only halfway. The 'after 5 hours / by 2 PM' turnaround is copied from a short day route.",
+   "sources": [
+    "https://www.mountainproject.com/route/120466607/traverse-of-mount-index",
+    "https://climberkyle.com/2020/07/05/north-index-attempt/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_index_north_peak_traverse",
+     "fact": "Turnaround plan vs. the route's own multi-day schedule",
+     "op": "set",
+     "column": "turnaround",
+     "path": [],
+     "expect": "Turn around by 2 PM if still climbing after 5 hours; summit will not be reached by safe descent time.",
+     "value": "This is a multi-day climb, so plan around the bivies rather than a single-day clock. The real decision point is the North Face on the climbing day: if you have not topped out on North Peak by mid-afternoon, rappel the face then, because once past North Peak retreating is usually harder than continuing."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "fact": "Descent line: reverse the North Face vs descend the East Route/Hourglass Gully",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "descent and descent_text say parties finishing on Main Peak descend the East Route/Hourglass Gully to Lake Serene and should not reverse the ascent line, but itinerary day 3 (title, note, objective, schedule), timing.sectionBreakdown[2] and itinerary.totalNote say the party reverses the North Face by rappel back to the NE spur. A logged traverse describes descending the East Route to Lake Serene with one short rappel and brush belays, and the East Route/Hourglass Gully is Main Peak's standard line; a second independent traverse account confirming the descent could not be read (pages blocked), so no rewrite was made.",
+   "sources": [
+    "https://www.summitpost.org/mount-index/climbers-log/150645/d-87923",
+    "https://www.mountainproject.com/route/117260103/hourglass-gully-winter"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Season window for a route named '(Winter)'",
+   "verdict": "fixed",
+   "correct_value": "Dec-May",
+   "evidence": "The route listing presents it as the way to reach Main Peak in winter. One party climbed it on May 21 and advises against going any later than May because snow cover is what makes the forested ridge passable, the gully melting out to 5th-class rock in summer; another climbed it in January on hard snow and blue ice. That matches best_season, beta and approach_variants (winter through May, best Mar-Apr), not a Late Apr-Oct scramble window.",
+   "sources": [
+    "https://www.mountainproject.com/route/117260103/hourglass-gully-winter",
+    "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/",
+    "https://hike2hike.com/mountaineering/mount-index-hourglass-gulley-winter/"
+   ],
+   "patches": [
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Season window for a route named '(Winter)'",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Late Apr-Oct for the general scramble; best as a snow climb roughly May-Jun when the gully's crux rock step is still snow-bridged; not recommended in mid-late summer (bare wet rock, brutal bushwhacking) or unstable winter conditions",
+     "value": "Dec-May"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Rope count/length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Two 30 m ropes",
+   "evidence": "gear, rack, detailed_rack, descent and rappel_detail all say two 30 m ropes. A party that climbed it brought two 30 m ropes and made two or three rappels; a winter party carrying only a single 30 m rope reported being forced into dangerous downclimbing. rope_length_m 60 / 'single' is the outlier.",
+   "sources": [
+    "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/",
+    "https://hike2hike.com/mountaineering/mount-index-hourglass-gulley-winter/"
+   ],
+   "patches": [
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Rope count/length",
+     "op": "set",
+     "column": "rope_length_m",
+     "path": [],
+     "expect": 60,
+     "value": 30
+    },
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Rope count/length",
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single dynamic (for rappels)",
+     "value": "two 30 m ropes (joined for rappels)"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Timing component hours don't sum to totalHrs",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "approach 5 + summit 4 + descent 6 = 15",
+   "evidence": "The row's itinerary gives 2-3 hrs to the lake plus 2-3 hrs to the saddle (about 5 hrs car to saddle), 2-3 hrs up the gully plus 1-2 on the ridge, and 2-3 hrs each for the rappels, the return to the lake and the hike-out; the turnaround text budgets 8-10 hrs up and 4-6 down. Parties report about 12 hours car to car, and a 2:30 AM start still out after sunset; approach_variants says 12-15 hrs is normal. So the 15-hour total stands and the approach and descent components were understated.",
+   "sources": [
+    "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/",
+    "https://hike2hike.com/mountaineering/mount-index-hourglass-gulley-winter/"
+   ],
+   "patches": [
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Timing component hours don't sum to totalHrs",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 2.5,
+     "value": 5
+    },
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Timing component hours don't sum to totalHrs",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 3,
+     "value": 6
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Land manager: 'N/A' vs a named agency in the same access object",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+   "evidence": "The Forest Service lists Lake Serene Trail and trailhead under the Skykomish Ranger District of Mt. Baker-Snoqualmie National Forest, and Mount Index lies in that national forest.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail-1068",
+    "https://en.wikipedia.org/wiki/Mount_Index"
+   ],
+   "patches": [
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Land manager: 'N/A' vs a named agency in the same access object",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Parking pass: passRequired 'N/A' vs parking_pass requiring a Northwest Forest Pass",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass or America the Beautiful pass",
+   "evidence": "access.passRequired says 'N/A' while parking_pass requires a Northwest Forest Pass or America the Beautiful pass. The Forest Service says recreation passes are required at Lake Serene Trailhead and the trail guide names those two passes.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-serene-trail-1068",
+    "https://www.wta.org/go-hiking/hikes/lake-serene"
+   ],
+   "patches": [
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Parking pass: passRequired 'N/A' vs parking_pass requiring a Northwest Forest Pass",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "N/A",
+     "value": "Northwest Forest Pass or America the Beautiful pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Main Peak elevation (~5,502 ft in approach vs 5,991 ft)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "5,991 ft",
+   "evidence": "The approach text calls Main Peak ~5,502 ft, while high_point_ft is 5,991 and the summit waypoint 5,979. Main Peak's elevation is published as 5,991 ft (1,826 m), and a topographic peak database also gives 1,826 m.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Index",
+    "https://peakvisor.com/peak/mount-index.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_hourglass_gully_winter",
+     "fact": "Main Peak elevation (~5,502 ft in approach vs 5,991 ft)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(~5,502 ft)",
+     "replace": "(~5,991 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Total gain/loss: gain_ft 6,000 vs loss_ft 5,500 vs approach '~5,500 ft' on an out-and-back",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route goes up and back the same way ('Descend via the same route'), yet gain_ft is 6,000, loss_ft 5,500, the approach text says ~5,500 ft of gain and approach_variants 'over 6,000 ft'. From the ~600 ft trailhead to the 5,991 ft summit the net rise is ~5,400 ft plus small losses around the lake; no two sources giving a total-gain figure were found.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

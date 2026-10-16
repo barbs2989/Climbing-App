@@ -1,0 +1,178 @@
+{
+ "id": "wa_trapper_mountain_south_slopes",
+ "name": "South Slopes",
+ "waypoints": [
+  {
+   "lat": 48.4755,
+   "lng": -121.0751,
+   "elev": 3650,
+   "name": "Cascade Pass Trailhead",
+   "note": "End of Cascade River Road. Follow the maintained trail over Cascade Pass and down to Pelton Basin, where the faint path toward Trapper Lake leaves the trail.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From SR-20 at Marblemount, cross the Skagit River and drive the Cascade River Road about 23 miles to its end at the Cascade Pass Trailhead, around 3,650 ft. The first 10 miles are paved and the rest is narrow gravel with potholes, steep near the top. Overnight stays in the park need a backcountry permit from the Marblemount Wilderness Information Center."
+  },
+  {
+   "lat": 48.43996,
+   "lng": -121.00369,
+   "elev": 4170,
+   "name": "Trapper Lake",
+   "note": "Glacial lake fed by meltwater off Hurry-up Peak and Magic Mountain, reached by a faint, poorly-marked fisherman's path and bushwhack down from Pelton Basin; the standard unofficial base camp for the climb, no maintained trail.",
+   "type": "Campsite",
+   "distMi": 7.5,
+   "directions": "Follow the Cascade Pass Trail about 3.7 miles to the pass and down the east side into Pelton Basin. From the lowest tent sites take a faint boot path down toward Pelton Creek, cross at the cairns, and continue through low scrub, alder and braided streams on an on-and-off fisherman's path, then make a flat, marshy walk along the inlet stream to the lake at about 4,170 ft."
+  },
+  {
+   "lat": 48.436721,
+   "lng": -121.009421,
+   "elev": 5600,
+   "name": "South basin above Trapper Lake",
+   "note": "Leave the lake basin and gain the broad south slopes/basin directly above Trapper Lake, aiming for the low point on the summit ridge; no cairns or path, route-find by terrain.",
+   "type": "Junction",
+   "distMi": 8.3
+  },
+  {
+   "lat": 48.433851,
+   "lng": -121.014506,
+   "elev": 6900,
+   "name": "Talus and heather benches below the summit ridge",
+   "note": "Loose, unconsolidated talus interspersed with heather benches on a steep grade; footing is unstable and there is no established tread, so descending parties should note their ascent line.",
+   "type": "Hazard",
+   "distMi": 9
+  },
+  {
+   "lat": 48.43169,
+   "lng": -121.01791,
+   "elev": 7530,
+   "name": "Trapper Mountain",
+   "note": "True summit; the last stretch off the ridge to the top is exposed Class 3 rock scrambling per the standard route description.",
+   "type": "Summit",
+   "distMi": 9.5
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Up the valley from the landing, then off-trail into the lake basin",
+   "notes": "There is no road to this side of the peak. Reach the valley by ferry or floatplane, then take the valley road or the park shuttle to a campground and pick up the valley trail from there. The lake below the peak is reached by leaving that trail and pushing off-trail and unmarked into the basin - a steep, poorly marked fisherman's path at best, and map-and-compass travel above it. Figure a full day of travel each way and plan on two or three days with a camp at or below the lake.\n\nOne caution about the paperwork rather than the ground: the written descriptions of this approach and the recorded waypoints for it name different drainages for that off-trail section, and the recorded distances do not match the recorded positions. Plan the departure point from current maps and imagery rather than from any single written description.",
+   "season": "Midsummer through early autumn, once the basin is walkable and the valley road and trail are open",
+   "hazards": [
+    "reaching the valley at all depends on a ferry or floatplane and a shuttle",
+    "an unmarked off-trail push into the basin with no reliable path",
+    "loose unconsolidated talus and steep heather benches with unstable footing",
+    "no tread to follow on the descent, on ground where every slope looks the same",
+    "an exposed class 3 finish off the ridge",
+    "conflicting records of the approach drainage, so the departure point must be planned from maps"
+   ],
+   "longForm": true,
+   "baseFinding": "The lake is the anchor and the route is read from it. The lake sits immediately north-east of the summit, so from the water the peak is to the south-west.\n\nLeave the lake basin and gain the broad basin and slopes directly above it on the south side, aiming for the low point on the summit ridge rather than for the summit itself. There are no cairns and no path here; the terrain is the navigation.\n\nThe ground confirms itself as you gain height: loose unconsolidated talus interspersed with heather benches on a steep grade, with unstable footing and no established tread. Note your ascent line, because on the descent one talus-and-heather slope looks exactly like the next and there is nothing to follow.\n\nThe finish is the test that you chose the right side. From the ridge the last stretch to the top is a short exposed class 3 scramble. If the ground above you is a steep continuous snow line splitting the summit block, you have come round onto the north side and are under the couloir route, which is a different proposition entirely and wants an axe, crampons and a season this route does not.\n\nAlso confirm the peak: a similarly named summit elsewhere in the range is approached from a completely different valley. The lake immediately north-east of your summit is what identifies this one."
+  },
+  {
+   "name": "Over the pass at the head of the river road and down to the lake from the west",
+   "notes": "The lake can also be reached from the other side of the range, by climbing to the pass at about 5,392 ft at the head of the river road - or the nearby col used when the pass is corniced - and then travelling east, descending and traversing through the basin beyond to the lake at about 4,170 ft.\n\nThis avoids the ferry and the unmarked valley push entirely, at the cost of a pass crossing in each direction and a descent that has to be re-climbed at the end of the trip.",
+   "season": "Late spring into summer, while the pass is straightforward and the basin beyond is still simple travel",
+   "hazards": [
+    "a corniced pass in early season",
+    "a descent from the pass that must be re-climbed on the way out",
+    "loose talus and heather with unstable footing and no tread",
+    "an exposed class 3 finish",
+    "a basin with no path and no obvious exit seen from above"
+   ],
+   "primary": true,
+   "baseFinding": "From the pass the travel is east and downhill to the lake, so the arrival marker is water at about 4,170 ft with the peak standing to the south-west of it.\n\nFrom the lake, the south slopes are gained by going round the peak, not up the side facing you. The face you can see from the lake is the northern one. The route is on the opposite flank - the broad basin and slopes above the lake basin on the south side, taken toward the low point on the summit ridge.\n\nThe negative marker is the snow line. If you are looking up at a continuous couloir splitting the summit block and are tempted by it, that is the north couloir route and not this one. It is a snow climb with a different season and different equipment.\n\nThe positive markers on the route are underfoot: loose talus and heather benches on a steep grade, with no cairns, followed by an exposed class 3 scramble off the ridge to the top. Note your ascent line for the descent, because nothing here is marked."
+  }
+ ],
+ "itinerary": {
+  "cal": "Cascade River Road typically opens for the season in late May/June and the upper basin can hold snow into July, so verify current conditions before a bushwhack approach.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Start on the maintained Cascade Pass Trail, then continue past the pass toward Pelton Basin before dropping off-trail into the Trapper Lake basin. The final descent to the lake is an unmaintained fisherman's path that loses itself quickly and turns into a steep, brushy bushwhack, so budget extra time and daylight for route-finding.",
+    "hours": 6,
+    "miles": 7,
+    "title": "Approach via Cascade Pass to Trapper Lake camp",
+    "gainFt": 2400,
+    "lossFt": 700,
+    "packLb": 38,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave Cascade River Road trailhead",
+      "detail": "Popular trail, ~3.7 mi and 1,800 ft to Cascade Pass."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Cascade Pass",
+      "detail": "Continue cross-country/boot-path toward Pelton Basin."
+     },
+     {
+      "time": "11:30 AM",
+      "label": "Enter Pelton Basin area",
+      "detail": "Leave the beaten path and start angling toward the Trapper Lake drainage."
+     },
+     {
+      "time": "1:30 PM",
+      "label": "Begin bushwhack descent to Trapper Lake",
+      "detail": "Steep, brushy, and reportedly longer than it looks; losing and regaining the fisherman's path is common."
+     },
+     {
+      "time": "3:30 PM",
+      "label": "Make camp near Trapper Lake",
+      "detail": "~4,170 ft basin below the peak's south side."
+     }
+    ],
+    "objective": "Reach a basin camp near Trapper Lake"
+   },
+   {
+    "n": 2,
+    "note": "From the lake camp, work up open slopes and heather/talus benches on the mountain's south side to the summit, then reverse the same line. This is the standard non-technical line up the peak (no pitches), but expect loose rock and possible lingering snow patches depending on season.",
+    "hours": 7,
+    "miles": 4,
+    "title": "South Slopes summit push",
+    "gainFt": 2700,
+    "lossFt": 2700,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave camp",
+      "detail": "Light alpine-start pack; carry an ice axe if snow lingers on the upper slopes."
+     },
+     {
+      "time": "9:00 AM",
+      "label": "Gain the south ridge/upper slopes",
+      "detail": "Terrain steepens into looser talus and broken rock benches."
+     },
+     {
+      "time": "11:00 AM",
+      "label": "Summit (7,530 ft)",
+      "detail": "Views across the Glacier Peak Wilderness / North Cascades NP boundary."
+     },
+     {
+      "time": "12:30 PM",
+      "label": "Reverse the South Slopes",
+      "detail": "Downclimb the ascent line, watching for loosened rock kicked from above."
+     },
+     {
+      "time": "2:30 PM",
+      "label": "Back at Trapper Lake camp",
+      "detail": "Rest, refill water, dry gear for the hike out."
+     }
+    ],
+    "objective": "Climb Trapper Mountain (7,530 ft) via the South Slopes and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Reverse the bushwhack back up out of the Trapper Lake basin to the Pelton Basin area, rejoin the Cascade Pass Trail, and hike out over the pass to the trailhead.",
+    "hours": 6,
+    "miles": 8,
+    "title": "Hike out",
+    "gainFt": 700,
+    "lossFt": 2400,
+    "packLb": 30,
+    "schedule": [],
+    "objective": "Return to the Cascade River Road trailhead"
+   }
+  ],
+  "totalNote": "A remote 3-day trip (~19 mi, ~5,800 ft round-trip gain) built around a genuine off-trail bushwhack to Trapper Lake — not a car-to-car outing."
+ }
+}

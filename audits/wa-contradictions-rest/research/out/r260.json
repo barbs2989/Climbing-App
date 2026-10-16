@@ -1,0 +1,35 @@
+{"file": "r260.json", "results": [
+ {"id": "wa_ultramega_ok", "fact": "Route grade / character of the climbing", "verdict": "fixed_internal_plus_one",
+  "correct_value": "5.11a crux (P4), other pitches 5.8-5.9; not 'sustained 5.10'",
+  "evidence": "The route's own grade, rock_grade, overview, beta, pro_needs and all eight pitch_detail rows agree on a single 5.11a crux with 5.8-5.9 elsewhere. The route's public listing grades it 5.10c/d (A0) or 5.11, III, with pitches 5.8, 5.9, 5.8, 5.11, 5.9+, 5.9, 5.8 — i.e. 5.10c/d only when the crux is aided, and never sustained 5.10. The FA party's own trip report (same party) carries the same grade string, so it counts once with the listing; hence internal-plus-one.",
+  "sources": ["https://www.mountainproject.com/route/114960561/ultramega-ok", "https://cascadeclimbers.com/forum/topic/33439-tr-wa-pass-burgundy-spire-ultramega-ok-northeast-buttress-724/"],
+  "patches": [
+   {"id": "wa_ultramega_ok", "fact": "Route grade / character of the climbing", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "objective"], "find": "(5.10c/d, 8 pitches)", "replace": "(5.11a, 8 pitches)"},
+   {"id": "wa_ultramega_ok", "fact": "Route grade / character of the climbing", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "Eight pitches of sustained 5.10 climbing", "replace": "Eight pitches of mostly 5.8-5.9 climbing with a 5.11a crux"},
+   {"id": "wa_ultramega_ok", "fact": "Route grade / character of the climbing", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "schedule", 3, "detail"], "find": "8 pitches of sustained 5.10, ~900 ft of climbing.", "replace": "8 pitches, mostly 5.8-5.9 with a 5.11a crux, ~900 ft of climbing."},
+   {"id": "wa_ultramega_ok", "fact": "Route grade / character of the climbing", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "A long single day for strong 5.10 parties", "replace": "A long single day for strong parties solid at 5.11a"},
+   {"id": "wa_ultramega_ok", "fact": "Route grade / character of the climbing", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "Eight pitches of sustained 5.10 climbing", "replace": "Eight pitches of mostly 5.8-5.9 climbing with a 5.11a crux"}
+  ]},
+ {"id": "wa_ultramega_ok", "fact": "Where the route starts relative to Action Potential", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Only search snippets were reachable (page fetches blocked). The FA report says the party started an independent line about 10 ft RIGHT of another route's pitches, which fits neither the beta (Action Potential ~15 ft to the right) nor the approach/baseFinding (this start well climber's-left, furthest along the base) cleanly, and it does not name which route. No two sources establish the order along the base; no patch.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/33439-tr-wa-pass-burgundy-spire-ultramega-ok-northeast-buttress-724/", "https://www.mountainproject.com/route/114960561/ultramega-ok"],
+  "patches": []},
+ {"id": "wa_ultramega_ok", "fact": "summitTimeHrs holds the car-to-car total", "verdict": "fixed",
+  "correct_value": "summitTimeHrs null (14 is the car-to-car total, already held in totalHrs)",
+  "evidence": "The row's own totalHrs (14), itinerary hours (14) and totalNote (13-15 hrs car-to-car) all make 14 the car-to-car figure, while the schedule tops out at 1:00 PM after a 4:00 AM start. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted and no external source is needed.",
+  "sources": [],
+  "patches": [
+   {"id": "wa_ultramega_ok", "fact": "summitTimeHrs holds the car-to-car total", "op": "set", "column": "timing", "path": ["summitTimeHrs"], "expect": 14, "value": null}
+  ]},
+ {"id": "wa_ultramega_ok", "fact": "Rope needed for the North Face rappels", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources agree the North Face descent is 5 raps with double ropes and that a single 60 m works with some downclimbing, but none reachable give per-rappel lengths, so the ~40/55/55/40/60 m figures, the 'a 70 m single reaches' rap-1 hazard, and the rappel_count_note line saying per-station distances are unpublished cannot be reconciled from two sources. The row does conflict internally (a 40 m rap cannot be made on a doubled 70 m; the note denies the distances the table gives). No patch.",
+  "sources": ["https://www.mountainproject.com/route/107231977/north-face", "https://stephabegg.com/trip-reports/washington/paisano-burgundy/", "https://www.lemkeclimbs.com/burgundy-spire-north-face-58.html"],
+  "patches": []},
+ {"id": "wa_ultramega_ok", "fact": "Wilderness status vs wilderness-registration box", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A registration box in the woods just below the pullout, before Early Winters Creek, is confirmed on the Burgundy Col approach description. The Wine Spires sit in Okanogan-Wenatchee National Forest apparently outside the Lake Chelan-Sawtooth Wilderness, but only one weak source says so and none says whether the box is labelled a wilderness register (such boxes can sit outside wilderness). No patch.",
+  "sources": ["https://www.summitpost.org/burgundy-col-silverstar-glacier/158024", "https://en.wikipedia.org/wiki/Lake_Chelan-Sawtooth_Wilderness"],
+  "patches": []}
+]}

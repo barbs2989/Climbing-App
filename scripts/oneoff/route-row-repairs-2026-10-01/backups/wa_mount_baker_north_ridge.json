@@ -1,0 +1,52 @@
+{
+ "id": "wa_mount_baker_north_ridge",
+ "name": "North Ridge",
+ "approach": "Shares the Heliotrope Ridge Trailhead (~3,500-3,700 ft) and the same Trail 677 approach as the Coleman-Deming route: switchback through old growth to the Kulshan Cabin site/treeline fork (~2.25 mi), then up the Hogsback moraine to the standard high camp at ~6,000 ft (about 3 mi and 2,300 ft of gain, 4-5 hours for a laden party). From high camp, the North Ridge approach diverges from Coleman-Deming: rope up and cross the Coleman Glacier heading climbers' left (east), navigating the icefall below Colfax Peak, to gain the base of the North Ridge proper on the glacier's true right side. The standard start crosses a double bergschrund via a bridge or narrow snow ramp (can be a difficult, exposed step depending on the season) and climbs a broad 40-degree snow gully to the crest of the ridge. Hazards: crevasse and bergschrund crossing is the technical crux of the approach and is season-dependent (can close out entirely by late summer), icefall/rockfall exposure traversing below Colfax Peak, and the route sees far less traffic than Coleman-Deming so tracks/bridges may be unbroken.",
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "glacier travel",
+   "notes": "Rope up at high camp and cross the Coleman Glacier climbers' left (east) below Colfax Peak to reach the base of the North Ridge; icefall and rockfall exposure below Colfax is a recognized hazard on this traverse, and crevasse navigation is required throughout.",
+   "pitch": 1,
+   "anchor": "Glacier travel (roped, no belay)",
+   "lengthM": 400
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "30-40°",
+   "notes": "Cross the double bergschrund at the base of the ridge via a snow bridge or narrow ramp — season-dependent, and sometimes a committing, exposed step — then climb a broad snow gully to gain the ridge crest.",
+   "pitch": 2,
+   "anchor": "Picket",
+   "lengthM": 150
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "60-70° (AI3+)",
+   "notes": "The route's technical crux: recent parties describe roughly 15 ft of dead-vertical ice followed by a small bulge and another ~20 ft of near-vertical climbing, protected with a full screw rack (6-7 screws typical) and back-cleaning as needed. Ice quality is often brittle and steep here.",
+   "pitch": 3,
+   "anchor": "Ice screws",
+   "lengthM": 55
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "60-65° (AI2-3)",
+   "notes": "Continuation above the initial bulge on sustained 60-65 degree ice that eases slightly; the exact line and ice quality vary by year — a lower-angle 'secret passage' opens on the left later in the season, while a steeper alternate (WI4) exists further right on the serac wall.",
+   "pitch": 4,
+   "anchor": "Ice screws",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "30-40°",
+   "notes": "Above the ice cliff the angle relents to moderate snow/ice; trend climbers' left through crevasses on the upper ice cap, watching for cornices and a possible crevasse crossing just below the summit plateau before joining the standard Coleman-Deming descent.",
+   "pitch": 5,
+   "anchor": "Picket",
+   "lengthM": 300
+  }
+ ]
+}

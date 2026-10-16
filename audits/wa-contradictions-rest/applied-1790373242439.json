@@ -1,0 +1,855 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Glacier Meadows/glacier edge to Snow Dome distance and gain"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Glacier Meadows/glacier edge to Snow Dome distance and gain"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Best season / September"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Best season / September"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Best season / September"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "season"
+   ],
+   "fact": "Best season / September"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Bear canister requirement"
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Bear canister requirement"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Rock grade"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Hardest climbing on route"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Hardest climbing on route"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Character/side of the route"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Line from Snow Dome to the ridge (Crystal Pass or not)"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "length_m",
+   "path": [],
+   "fact": "Climb length"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit / land manager"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Permit / land manager"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Permit / land manager"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Hardest rock move"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rack"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "what_to_bring",
+   "path": [
+    6
+   ],
+   "fact": "Rack"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Rack"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Rack"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Rack"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel side"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "column": "what_to_bring",
+   "path": [
+    27
+   ],
+   "fact": "Bear canister requirement scope"
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Rope length for rappel"
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rope length for rappel"
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Approach distance (dist_km)"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "pitch"
+   ],
+   "fact": "Descent route after East Peak"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Descent route after East Peak"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "pitch"
+   ],
+   "fact": "Descent route after East Peak"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "grade"
+   ],
+   "fact": "Descent route after East Peak"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Descent route after East Peak"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rock rack"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "what_to_bring",
+   "path": [
+    2
+   ],
+   "fact": "Rock rack"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "pro_tips",
+   "path": [
+    3
+   ],
+   "fact": "Rock rack"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Rock rack"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Bear canister scope"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    2
+   ],
+   "fact": "Pitch/rappel length"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Pitch/rappel length"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "length_m",
+   "path": [],
+   "fact": "Pitch/rappel length"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Summit waypoint elevation"
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Summit waypoint elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "before": {
+    "approach": "Start at the Hoh Ranger Station/Hoh Rain Forest trailhead (578 ft) inside Olympic National Park and follow the Hoh River Trail east. The first 10.5 miles to Lewis Meadows (1,005 ft) are gentle, shaded old-growth rainforest walking along the braided, glacially-fed Hoh River, with numerous log/stream crossings and abundant water the whole way. Continue past the Olympus Guard Station (~9 mi) and cross the High Hoh Bridge (a dramatic span hundreds of feet above the gorge, ~13.2 mi) into steeper, more exposed terrain. Reach Elk Lake (2,500 ft) around mile 15, where the trail begins climbing in earnest toward Glacier Meadows (4,200-4,300 ft, ~17.2-17.5 mi), the standard base camp. In early season expect several steep, consequential snow slopes between Elk Lake and Glacier Meadows requiring an ice axe and crampons. About 0.25 mile before Glacier Meadows the trail crosses a washout/slide area via a roughly 100 ft ladder (sometimes called the Jemrod Gully ladder) supplemented by a fixed rope; this is the crux of the hike-in for many parties. From Glacier Meadows, follow the climbers' way trail about 0.8 mile up onto the crest of the lateral moraine (a narrow, exposed 'catwalk' with loose rock underfoot), then along the moraine crest roughly 0.2 mile before descending onto the toe of the Blue Glacier itself (watch for rockfall on this descent). No camping is permitted between Glacier Meadows and the glacier. From the glacier's edge it is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel, up to Snow Dome (~6,600 ft) and the upper mountain; a notable hazard en route is a large crevasse near Crystal Pass that is often 'impassable' except via a snow bridge that must be scouted each season. July-September is the best window for a straightforward glacier crossing.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Blue Glacier to Snow Dome and the upper mountain",
+      "notes": "From the glacier's edge it is roughly 4-6 more miles and about 3,700 ft of gain, roped up for crevasse travel, up to Snow Dome (~6,600 ft) and the upper mountain. A notable hazard en route is a large crevasse near Crystal Pass that is often 'impassable' except via a snow bridge that must be scouted each season. July-September is the best window for a straightforward glacier crossing."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Hoh River Trail to Glacier Meadows",
+      "notes": "Hoh Rain Forest trailhead (about 578 ft) inside Olympic National Park. The Hoh River Trail runs east; the first ten and a half miles to Lewis Meadows are gentle old-growth walking beside the braided river, with water the whole way. Past the Olympus Guard Station the High Hoh Bridge crosses the gorge and the ground steepens. Elk Lake sits around mile 15 at 2,500 ft, and the trail then climbs in earnest to Glacier Meadows at 4,200-4,300 ft, about mile 17.2-17.5, which is the standard base camp.\n\nAbout a quarter mile below Glacier Meadows the trail crosses a washout on a ladder of roughly 100 ft with a fixed rope beside it. For many parties that is the hardest part of the walk in.\n\nIn early season there are several steep, consequential snow slopes between Elk Lake and Glacier Meadows that want an axe and crampons.\n\nA wilderness permit is required year-round for every overnight stay in Olympic National Park, obtained in advance through Recreation.gov or a Wilderness Information Center, and the Hoh is one of the areas that runs on a daily quota. Camping is not permitted between Glacier Meadows and the glacier.",
+      "distMi": 17.5,
+      "gainFt": 3700,
+      "season": "Jun-Sep",
+      "hazards": [
+       "roughly 100 ft ladder plus fixed rope at the washout below Glacier Meadows",
+       "steep consequential snow slopes between Elk Lake and Glacier Meadows in early season",
+       "narrow, loose lateral moraine crest with rockfall on the descent to the glacier toe",
+       "no camping permitted between Glacier Meadows and the glacier"
+      ],
+      "primary": true,
+      "baseFinding": "This variant ends at camp, not at climbing. The confirmation you are at Glacier Meadows rather than somewhere short of it is the washout ladder and fixed rope just below it — if you have not climbed a ladder, you are still below.\n\nFrom the meadows a way trail runs about 0.8 mile up onto the crest of the lateral moraine, a narrow exposed catwalk with loose rock underfoot, then follows the crest roughly another 0.2 mile before dropping onto the toe of the Blue Glacier. The drop onto the ice is where you rope up; nothing before it is glacier travel."
+     },
+     {
+      "name": "Glacier Meadows to the summit block via Snow Dome and Crystal Pass",
+      "notes": "Rope up at the toe of the Blue Glacier and travel up to Snow Dome around 6,600-6,800 ft. This is roped crevasse travel throughout. A large crevasse near Crystal Pass is often passable only on a snow bridge, and that bridge has to be scouted afresh each season.\n\nOlympic National Park points climbers at the Crystal Pass line as the standard: from Snow Dome over Crystal Pass, then traversing immediately south of and below Five Fingers Ridge, over the false summit, and finally onto the true summit block of the West Peak. It is longer than the alternatives and generally regarded as the safer option through most of the season.",
+      "gainFt": 3700,
+      "season": "Jul-Sep for straightforward glacier travel",
+      "hazards": [
+       "crevasses throughout - a large crevasse near Crystal Pass often crossable only on a snow bridge that must be scouted each season",
+       "bergschrund or moat immediately below the summit block, variable through the season",
+       "loose deteriorating scree on the block and on the pinnacle east of it - rockfall onto your own party",
+       "the true summit is hidden from the north, so navigation is to a point you cannot see",
+       "the false summit is east of the true summit and catches parties out"
+      ],
+      "baseFinding": "The only technical climbing on this route is the summit block of the West Peak, and finding it is the crux of the day, because THE TRUE SUMMIT IS NOT VISIBLE from the north side. A party that keeps navigating toward the highest thing it can see from Snow Dome ends up at the five-fingered false summit, which is EAST of where it wants to be.\n\nThe rule that works: go south-southeast through one of the two gaps to the LEFT, or far left, of the five fingers, and come at the summit from the east or southeast — approaching an objective you cannot yet see.\n\nOnce through, a rising traverse leads to a loose rocky gully; you go up that, over, and down into a second rocky gully, then up a final steep snow slope that delivers you to the foot of the block.\n\nYou are there when you are standing under a discrete rock tower roughly 80 ft high. The standard finish is class 4 on loose rocky ramps; there is also a line of about 80 ft straight up the north face on mostly solid rock, around 5.4. If you are under a snow slope with no rock tower above it, you have not arrived — keep going.\n\nExpect a bergschrund or moat immediately below the block. Its state changes through the season and it can force a short detour or a stretch of short-roping; on the pinnacle just east of the West Peak parties have found a schrund below it and deteriorating scree above, and have grouped tightly or moved one at a time because of the rockfall."
+     }
+    ],
+    "access": {
+     "fees": "$6 non-refundable wilderness permit reservation fee plus $8 per person per night, ages 16+ (Recreation.gov), in addition to the park entrance fee",
+     "notes": "No specific climbing permit.",
+     "rules": "Bear canister required unless camping where a bear line is provided; Leave No Trace; wilderness regulations apply",
+     "permit": "Olympic National Park wilderness permit required for overnight travel",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance fee ($30/vehicle for 7 days, or $55 annual pass, per NPS)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person",
+      "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. Glacier Meadows and the Hoh River camps are quota sites."
+     }
+    },
+    "what_to_bring": [
+     "bear canister or use bear-line camps",
+     "Olympic NP overnight permit",
+     "crevasse rescue gear",
+     "extra layers for wet weather",
+     "multi-day food"
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "before": {
+    "rock_grade": "Class 2-4",
+    "itinerary": {
+     "cal": "No fixed rap stations or cairns on the ridge as of recent reports — carry a full rack and be prepared to build your own anchors on the descent if you ever need to bail off the ridge itself.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Flat old-growth valley approach along the Hoh River.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Hoh River Trail to Olympus Guard Station",
+       "gainFt": 1600,
+       "lossFt": 1250,
+       "packLb": 44,
+       "schedule": [],
+       "objective": "Reach Lewis Meadow / Olympus Guard Station camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb through Elk Lake and the washed-out ladder section; this trip carries a full rock rack for the ridge in addition to glacier gear.",
+       "hours": 6,
+       "miles": 8.3,
+       "title": "Guard Station to Glacier Meadows high camp",
+       "gainFt": 4500,
+       "lossFt": 1300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Establish high camp at Glacier Meadows"
+      },
+      {
+       "n": 3,
+       "note": "From Snow Dome, cross the Blue Glacier southwest toward Crystal Pass/Five Fingers to a moat at the ridge's low point (~7,260 ft). The ridge is climbed in roughly 7 pitches of variable-quality rock up to 5.6-5.7 with high exposure — no fixed rap anchors or cairns, so routefinding is on you. Descend by reversing to the standard glacier route rather than downclimbing the ridge.",
+       "hours": 13,
+       "miles": 8,
+       "title": "West Ridge summit day, descend via standard route",
+       "gainFt": 3900,
+       "lossFt": 3900,
+       "packLb": 26,
+       "schedule": [
+        {
+         "time": "1:30-2:30 AM",
+         "label": "Leave Glacier Meadows",
+         "detail": "Early start for the technical day ahead."
+        },
+        {
+         "time": "+4-5 hr",
+         "label": "Cross Blue Glacier to Snow Dome",
+         "detail": "Standard roped glacier crossing."
+        },
+        {
+         "time": "+6 hr",
+         "label": "Gain the West Ridge notch (~7,260 ft)",
+         "detail": "Cross the moat at the low point of the ridge."
+        },
+        {
+         "time": "+7-10 hr",
+         "label": "Climb ~7 pitches of ridge",
+         "detail": "Variable rock quality; be ready to back off or bail if it's wet/loose."
+        },
+        {
+         "time": "Early-mid PM",
+         "label": "Summit (7,980 ft)",
+         "detail": "Ridge tops out near the true summit."
+        },
+        {
+         "time": "6:30-8:30 PM",
+         "label": "Back at Glacier Meadows",
+         "detail": "Descend via the standard Crystal Pass/Snow Dome/Blue Glacier line."
+        }
+       ],
+       "objective": "Climb the ~7-pitch West Ridge, descend via Snow Dome/Crystal Pass"
+      },
+      {
+       "n": 4,
+       "note": "Long hike-out day back to the car; some parties add a rest day given the technical summit day.",
+       "hours": 8,
+       "miles": 17.3,
+       "title": "Hike out to trailhead",
+       "gainFt": 300,
+       "lossFt": 3900,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to the Hoh River trailhead"
+      }
+     ],
+     "totalNote": "A 4-day trip on the standard Blue Glacier approach, with one long technical summit day pitching out the ~7-pitch West Ridge (variable 5.6-5.7 rock) and descending via the easier standard route instead of the ridge."
+    },
+    "beta": "The West Ridge route approaches from the southern side of the mountain, ascending a series of seven pitches along the broad ridge crest. Snow slopes and ice climbing dominate with Class 5.4 rock scrambles on the final pitches to the summit block. This route is less frequently done than the Blue Glacier standard but offers excellent alpine climbing and less crevasse hazard.",
+    "timing": {
+     "totalHrs": 32,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": 8,
+     "approachTimeHrs": 11,
+     "recommendedStart": "1:30-2:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "Flat old-growth valley approach along the Hoh River.",
+       "fromTo": "Hoh River Trail to Olympus Guard Station",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Climb through Elk Lake and the washed-out ladder section; this trip carries a full rock rack for the ridge in addition to glacier gear.",
+       "fromTo": "Guard Station to Glacier Meadows high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 13,
+       "note": "From Snow Dome, cross the Blue Glacier southwest toward Crystal Pass/Five Fingers to a moat at the ridge's low point (~7,260 ft). The ridge is climbed in roughly 7 pitches of varia…",
+       "fromTo": "West Ridge summit day, descend via standard route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "Long hike-out day back to the car; some parties add a rest day given the technical summit day.",
+       "fromTo": "Hike out to trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very strong; same long Blue Glacier approach as the standard route",
+      "packWeight": "35-45 lb glacier kit plus a rock rack sized for 7 pitches of PG13 climbing"
+     },
+     "approachTime": "Same multi-day approach to Glacier Meadows/Blue Glacier as the standard route, then a glacier crossing via Crystal Pass and the Five Fingers to reach the West Summit",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Traditional gear placement on run-out (PG13) protection",
+      "Route-finding without cairns or rappel stations",
+      "Comfort on loose 5.6-5.7 rock if off-route",
+      "Efficient 7-pitch multi-pitch movement",
+      "Crossing/negotiating a moat to gain the ridge"
+     ],
+     "experienceLevel": "Advanced alpine rock/glacier climber - notably harder than the standard route due to loose off-route rock, run-out protection, and a lack of established route-finding aids"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Maritime and very wet; rain is possible in any season on the Olympus massif",
+      "probability": "The shared maritime climate and long, complex route-finding make this route more weather-sensitive than the standard line"
+     },
+     "exposure": "Serious - run-out (PG13) protection on loose terrain means a leader fall or off-route excursion onto 5.6-5.7 rock could be consequential, and there is rockfall risk onto parties below; no fixed rappel stations complicate retreat",
+     "avalanche": {
+      "zone": "Olympics (NWAC forecast zone) - no active NWAC winter forecast covers this route's Jun-Aug climbing season",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A"
+      }
+     },
+     "crevasses": "Present - crossing the Blue Glacier southwest toward the West Summit via Crystal Pass and the Five Fingers, plus a moat to gain the ridge and crevasses on the descent"
+    },
+    "length_m": 543,
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers. Some approach corridors (e.g. Hoh River toward Olympus) have quota-limited camps.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "N/A",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person",
+      "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. Glacier Meadows and the Hoh River camps are quota sites."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "before": {
+    "grade": "Grade III; Class 4 with a Class 5 step",
+    "gear": [
+     "Rope, harness, crampons, ice axe for the Blue Glacier approach and Snow Dome",
+     "1-2 ice screws for crevasse-rescue anchors — this is a standard glacier walk, not steep ice, so a full crevasse kit is overkill",
+     "A few stoppers/nuts and a tricam or two, plus long runners — protects the exposed 5.6/5.7 moves on the chossy summit dihedral, which is described as pocket-and-edge terrain rather than crack terrain",
+     "Helmet — loose rock on the ramps and real rockfall exposure from parties above"
+    ],
+    "detailed_rack": "The summit block requires a small rack of 6-10 cams in sizes ranging from 0.4 to 1.5 inches (or equivalent). Include 2-3 quickdraws, multiple slings (60 cm and 120 cm), and lockers for anchor building. The East Face ramps are often ascended with minimal protection due to poor rock quality; protection is intermittent and bomber placements are rare. Bring 2-3 ice screws (10 cm length) for ice/névé anchors on Snow Dome. Rappel anchors typically use natural rock features or pre-existing slings, but climbers should build solid anchors as backups.",
+    "what_to_bring": [
+     "Ice axe (55-75 cm mountaineering axe with adze and pick)",
+     "Crampons (12-point steel with anti-balling plates for wet snow)",
+     "Alpine harness with adjustable leg loops",
+     "Helmet (mandatory for rockfall hazard on East Face)",
+     "Rope (40-60m, 8-9mm dynamic rope for glacier and summit block climbing)",
+     "Crevasse rescue kit: prusiks (120 cm and 240 cm cord), mechanical ascenders (Micro Traxion or Nano Traxion), locking carabiners (at least 4), ice screws",
+     "Small rock climbing rack: 6-10 cams (sizes 0.4-1.5 BD or equivalent), quickdraws, slings (various lengths), rappel anchors (cordellette)",
+     "Glacier glasses or goggles with UV protection and side shields",
+     "Sunscreen (high SPF, waterproof)",
+     "Map, compass, GPS device, and altimeter watch",
+     "Insulated water bottle (32 oz) with insulation to prevent freezing at altitude",
+     "Lightweight backpack (45-50L for alpine climbing)",
+     "Down jacket or synthetic insulation layer",
+     "Windproof and waterproof outer shell jacket and pants",
+     "Insulated, waterproof gloves and expedition mittens",
+     "Wool or synthetic socks (multiple pairs)",
+     "Lightweight base layer (merino wool or synthetic)",
+     "Gaiters to keep crampons and snow out of boots",
+     "Lightweight headlamp with extra batteries",
+     "Emergency/repair kit: duct tape, cordage, knife, first aid supplies",
+     "Food: high-calorie snacks for 4-5 days (nuts, energy bars, dried fruit, electrolyte supplements)",
+     "Sleeping bag rated to at least 10F (-12C)",
+     "Sleeping pad (insulating)",
+     "Tent with four-season rating for Olympic weather",
+     "Stove and fuel (canisters, or liquid fuel for cold temperatures)",
+     "Cooking pot and utensils",
+     "Water treatment (tablets or filter for glacial meltwater)",
+     "Bear canister (required by NPS for overnight stays above Glacier Meadows)",
+     "Blue bags for human waste (required by NPS on Mount Olympus)"
+    ],
+    "pro_tips": [
+     "Start summit day in pre-dawn darkness (3-4 AM) to minimize rockfall exposure on the East Face and avoid afternoon thunderstorms",
+     "Carry a 60-meter rope late season (July-August onward) to avoid multiple rappel stations; 40-50m may require intermediate anchors and extra time",
+     "Use a small, lightweight alpine rack (6-10 cams, slings, quickdraws); most teams climb the summit block with minimal gear and good footwork",
+     "The Snow Dome is a broad, gently sloping platform; in whiteout conditions, use a GPS waypoint or compass bearing to navigate toward Crystal Pass to avoid wandering",
+     "Acclimatize at Glacier Meadows for at least one full day before summit attempt; the 4,200-7,980 ft push in a single day is taxing",
+     "Bring extra layers and a windproof shell; the summit is severely exposed and weather can change in minutes"
+    ],
+    "rack": [
+     "6-10 cams, 0.4-1.5in",
+     "2-3 quickdraws",
+     "Slings (60cm and 120cm)",
+     "2-3 ice screws (10cm) for glacier/crevasse-rescue anchors",
+     "Single dynamic 60m rope"
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "May through August; July offers the best balance of firm morning snow and manageable crevasse coverage",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Full glacier coverage and an icy summit block in spring; passable but colder/icier than summer",
+       "status": "marginal"
+      },
+      "July": {
+       "reason": "Prime: firm AM snow with crevasses opening by afternoon",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Transitioning toward prime conditions as snow recedes; bridges generally still intact",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Still prime early in the month, but bridges thin further and moats/broken glacier increase late-season",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Maritime, extremely wet (Hoh rainforest); summit holds snow into summer",
+      "probability": "Highest storm/precip probability outside the Jun-Aug window; bare ice and moats form by fall"
+     },
+     "exposure": "Rockfall exposure descending to the glacier plus a short 5th-class step on exposed summit rock; the main fall consequences are on the class-5 step or into crevasses rather than sustained vertical exposure",
+     "avalanche": {
+      "zone": "Olympics (NWAC forecast zone) - no active winter-season NWAC forecast covers this route's May-Aug climbing window",
+      "byMonth": {
+       "May": "N/A",
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A"
+      }
+     },
+     "crevasses": "Significant - the route descends onto the Blue Glacier below a rockfall zone and continues roped glacier travel to Snow Dome and the summit ramps; bridges thin and crevasses open further by late summer"
+    },
+    "rappels": "1 rappel off the summit block, roughly 80 ft, from the summit anchor at the top of the block back toward the East Face ramps."
+   }
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "before": {
+    "gear": [
+     "Ice axe and crampons for the glacier approach to the summit block",
+     "Alpine harness and a short single rope (30-50m is plenty for the one pitch)",
+     "3 to 4 small-to-medium cams for the 5.3-5.4 finishing moves off the belay ledge",
+     "Helmet and climbing gloves",
+     "Glacier glasses and sunscreen",
+     "Single-rope rappel back down the northwest edge to the belay ledge (or double-rope rappel off the north side)"
+    ],
+    "rappels": "1 rappel of 25-30 m down the northwest edge to a belay ledge, then scramble and downclimb to rejoin the standard East Face ramps descent. Check the rope before you commit: a 25-30 m rappel needs a 60 m rope doubled. The 30 m low end of this route's own gear note is enough to CLIMB the single pitch but reaches only 15 m doubled, and a 50 m reaches 25 m with nothing spare.",
+    "dist_km": 16.8
+   }
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 5.3-5.4",
+      "notes": "Same as standard route. Time: 2-2.5 hours to summit from Glacier Meadows base.",
+      "pitch": "West Peak summit block (standard route)"
+     },
+     {
+      "grade": "Class 3-4 scramble",
+      "notes": "Descend to saddle between peaks, then ascend Middle Peak. Loose rock and exposure. Time: 1.5-2 hours.",
+      "pitch": "West to Middle Peak traverse and descent"
+     },
+     {
+      "grade": "Class 3-4 scramble, exposure on ridge",
+      "notes": "Traverse the narrow ridge from Middle to East Peak. Significant exposure on both sides. Time: 1.5-2 hours.",
+      "pitch": "Middle Peak summit and traverse to East Peak"
+     },
+     {
+      "grade": "Class 3-4 scramble",
+      "notes": "Descend East Peak and retrace to West Peak. Time: 2-3 hours.",
+      "pitch": "East Peak descent and return traverse"
+     },
+     {
+      "grade": "Class 5.3-5.4 downclimb and rappels",
+      "notes": "Descend summit block and East Face ramps via standard descent. Time: 3-4 hours to Glacier Meadows.",
+      "pitch": "West Peak descent via standard route"
+     }
+    ],
+    "detailed_rack": "Minimal rock climbing gear; most scrambling is unroped. Bring 3-4 slings for potential rappel anchors or protection on steep sections if needed.",
+    "what_to_bring": [
+     "Standard glacier climb gear (ice axe, crampons, rope, harness, crevasse rescue kit)",
+     "Lightweight backpack (~35-40L for alpine travel)",
+     "Minimal rock climbing gear (optional; most scrambling does not require roped belays)",
+     "Extra water (3L minimum) due to long summit day",
+     "High-calorie food for 16+ hours of climbing"
+    ],
+    "pro_tips": [
+     "Start very early (2-3 AM from Glacier Meadows) to maximize daylight hours",
+     "Identify waypoints on the route between peaks before starting (use binoculars from West Peak to study the route)",
+     "Consider caching lightweight gear at high camp below the peaks to minimize weight on traverse day",
+     "Most parties do not carry rock climbing gear for the peak traverse; the scrambling is 3rd and 4th class, not technical rock climbing",
+     "Watch the weather closely; a marginal forecast should result in canceling the traverse in favor of summiting West Peak only"
+    ],
+    "gear": [
+     "Rope — bring full length; parties that cut rope length short have been forced into extra rappels on descent",
+     "Small-to-medium cam rack (roughly 0.3-1, a #2 and #3 handy) for the Class 4-5 step below the West Peak summit",
+     "A wider piece/alpine rack for the summit block itself — the final crack/chimney move (~5.7) has been protected with a small gear anchor",
+     "Crampons and ice axe for the Blue Glacier approach",
+     "Glacier travel/crevasse rescue kit for the Blue Glacier crossing",
+     "Helmet"
+    ],
+    "access": {
+     "fees": "$6 non-refundable wilderness permit reservation fee plus $8 per person per night, ages 16+ (Recreation.gov), in addition to the park entrance fee",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters beyond Glacier Meadows; established sites only; carry a spare register for Middle Peak",
+     "permit": "Wilderness camping permit",
+     "closures": "Upper Hoh Road has a real washout history — most recently closed by December 2024 storm damage until repairs reopened it in May 2026; check current NPS road conditions before a trip",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Olympic Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "National Park entrance pass ($30/vehicle 7-day or $55 annual, per NPS)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person",
+      "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. Glacier Meadows and the Hoh River camps are quota sites."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Hoh River Trail, Blue Glacier and Snow Dome to the base of the summit block",
+      "notes": "Identical to the standard approach for every route on this peak: Hoh River Trail from the Hoh Rain Forest Visitor Center about 17.4 miles to Glacier Meadows at roughly 4,300 ft, the moraine way path and the drop onto the Blue Glacier, roped glacier travel across the flat lower ice and up through the rock islands right of the icefall to Snow Dome at about 6,600-6,800 ft, then Crystal Pass, the traverse below Five Fingers Ridge, the false summit, and the sharp saddle beneath the true summit pyramid. The only thing this route changes is what you do once you are standing at the foot of the tower.",
+      "season": "Roughly Jun-Aug; early or late season this face can carry ice, which changes it from a 5.4 pitch into something else",
+      "hazards": [
+       "Fixed tat at the top of the pitch is old and unmaintained — inspect and back it up",
+       "The face is steeper and more exposed than either other summit-block finish, and holds ice early and late in the season",
+       "The descent rappel measures close to a full 165 ft, which eats nearly all of a 60 m rope doubled with nothing to spare",
+       "Everything on the approach: Blue Glacier crevasses, the Crystal Pass crevasse, moraine rockfall, whiteout on Snow Dome"
+      ],
+      "baseFinding": "THE SHARED ARRIVAL TEST IS THE FLAT SNOW TOP AT THE FOOT OF THE 80 FT TOWER, on its northeast side, where the steep snow slope out of the saddle stops rising.\n\nTHE TEST THAT YOU ARE ON THIS FINISH AND NOT ONE OF THE OTHER TWO IS ROPE, NOT ROCK, AND IT IS THE BEST FOG MARKER ON THIS MOUNTAIN. Enough parties end up on this exact line that a semi-permanent rappel station has built up at the TOP of it — a boulder or horn wrapped in slings with a rap ring and a quick link. From the platform, look straight up the face above you. If there is tat hanging down the line you are about to climb, that is the North Face Direct and you are in the right place. If there is no tat above you, you are looking at the east-face ramps (round the corner to the right) or the northwest edge (round to the left), and you have not found this finish.\n\nThe fixed gear is not agency-maintained and slings weather fast, so back it up and do not lower onto it unexamined — but as a piece of route-finding evidence in cloud it is unambiguous, because it is the only fixed anchor on the block and it hangs down THIS face.\n\nSECOND TEST: the pitch is a single rope length of about 165 ft on generally solid rock at 5.4, steeper and more exposed than the ramps. If your first fifty feet is a wandering scramble across ledges rather than a face, you have drifted onto the ramp system."
+     }
+    ],
+    "length_m": 50,
+    "waypoints": [
+     {
+      "lat": 47.801305,
+      "lng": -123.710855,
+      "elev": 7973,
+      "name": "Mount Olympus West Peak",
+      "type": "Summit",
+      "distMi": 22,
+      "elevFt": 7973
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{"file": "r482.json", "results": [
+ {"id": "wa_mount_appleton_standard", "fact": "Which ridge / direction from the pass", "verdict": "fixed",
+  "correct_value": "From Appleton Pass the line goes northwest along the ridge (the peak's South Ridge), not east.",
+  "evidence": "Wikipedia and PeakVisor both place Mount Appleton northwest of Appleton Pass (summit 47.9502, -123.7336). The ridge scramble is described as the South Ridge on the crest with a goat ramp; a 2021 trip report likewise follows the climbers' trail up the ridge from the pass toward South Appleton. The itinerary's 'east toward Appleton' and 'East Ridge' are the outliers.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Appleton", "https://peakvisor.com/peak/mount-appleton.html", "https://www.summitpost.org/mount-appleton-and-cotleton/1005883", "https://mountainflamingo.com/2021-08-22-appleton-everett-boulder-peak/"],
+  "patches": [
+   {"id": "wa_mount_appleton_standard", "fact": "Which ridge / direction from the pass", "op": "replace_text", "column": "itinerary", "path": ["days",0,"note"], "find": "along the ridge crest east toward Appleton", "replace": "along the ridge crest northwest toward Appleton"},
+   {"id": "wa_mount_appleton_standard", "fact": "Which ridge / direction from the pass", "op": "replace_text", "column": "itinerary", "path": ["days",0,"objective"], "find": "the East Ridge climber's path", "replace": "the South Ridge climbers' path"}
+  ]},
+ {"id": "wa_mount_appleton_standard", "fact": "Days required", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Usually one long car-to-car day (~9 hr, ~17 mi); an overnight near the pass is an optional alternative.",
+  "evidence": "itinerary days, itinerary totalNote, itinerary cal, timing.totalHrs and the sectionBreakdown note all describe a single ~9-hour car-to-car day with the overnight as an alternative; only partner_requirements (and 'leaving camp' in turnaround) assume a mandatory overnight. A 2021 trip report did Appleton as a single (even longer, Elwha-side) day.",
+  "sources": ["https://mountainflamingo.com/2021-08-22-appleton-everett-boulder-peak/"],
+  "patches": [
+   {"id": "wa_mount_appleton_standard", "fact": "Days required", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "Long multi-hour approach best split over 2+ days: hike in via Sol Duc/Appleton Pass or Olympic Hot Springs/Boulder Lake trail to a backcountry camp near Appleton Pass, then a separate scramble day to the summit and back", "replace": "Long approach of about 7.4 trail miles to Appleton Pass from Sol Duc; most parties go car-to-car in one long day, while an overnight near the pass splits it into a hike-in and a separate scramble day"},
+   {"id": "wa_mount_appleton_standard", "fact": "Days required", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec","hiking"], "find": "Multi-day backpacking fitness — approach to a backcountry camp near the pass is long", "replace": "Fitness for a long car-to-car day of about 17 miles — the approach to the pass is long"},
+   {"id": "wa_mount_appleton_standard", "fact": "Days required", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec","packWeight"], "find": "Overnight backpacking load (shelter, food, bear-resistant storage) for the approach; light daypack for the actual summit scramble from camp", "replace": "Light daypack for the usual single-day push; a full overnight load (shelter, food, bear canister) only if camping near the pass"},
+   {"id": "wa_mount_appleton_standard", "fact": "Days required", "op": "replace_text", "column": "turnaround", "path": [], "find": "before leaving camp", "replace": "before setting out"}
+  ]},
+ {"id": "wa_mount_appleton_standard", "fact": "Scramble grade", "verdict": "fixed",
+  "correct_value": "Class 3",
+  "evidence": "Wikipedia gives the recommended route as class 3 scrambling; SummitPost says both Appleton and its south neighbour involve Class 3 scrambling with exposure in more than one spot. The itinerary's 'Class 2 ground onto the broad summit ridge' describes one segment and is left alone; the partner and seasonal-hazard fields that grade the whole route Class 2 are corrected.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Appleton", "https://www.summitpost.org/mount-appleton-and-cotleton/1005883"],
+  "patches": [
+   {"id": "wa_mount_appleton_standard", "fact": "Scramble grade", "op": "replace_text", "column": "partner_requirements", "path": ["requiredSkills",1], "find": "Class 2 talus", "replace": "Class 3 talus"},
+   {"id": "wa_mount_appleton_standard", "fact": "Scramble grade", "op": "replace_text", "column": "partner_requirements", "path": ["experienceLevel"], "find": "off-trail Class 2 talus/heather scrambling", "replace": "off-trail Class 3 talus/heather scrambling"},
+   {"id": "wa_mount_appleton_standard", "fact": "Scramble grade", "op": "replace_text", "column": "seasonal_hazards", "path": ["exposure"], "find": "typical of Class 2 terrain", "replace": "typical of Class 3 terrain"}
+  ]},
+ {"id": "wa_mount_appleton_standard", "fact": "Trailhead the party returns to", "verdict": "fixed",
+  "correct_value": "Sol Duc Trailhead",
+  "evidence": "NPS lists the Sol Duc side approach (7.4 mi, 2,000 to 5,100 ft) to Appleton Pass, and the Sol Duc River Trail description puts the Appleton Pass junction at 4.9 miles from the Sol Duc trailhead. The route starts at Sol Duc in every other field; Madison Falls is the closed Elwha-side road end.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/appleton-pass-trail.htm", "https://www.wta.org/go-hiking/hikes/sol-duc-river"],
+  "patches": [
+   {"id": "wa_mount_appleton_standard", "fact": "Trailhead the party returns to", "op": "replace_text", "column": "turnaround", "path": [], "find": "the long trail approach back to Madison Falls", "replace": "the long trail approach back to the Sol Duc Trailhead"}
+  ]},
+ {"id": "wa_mount_appleton_standard", "fact": "Wilderness permit method", "verdict": "fixed",
+  "correct_value": "Overnight stays need a wilderness permit reserved in advance (Sol Duc is a quota area); no self-issue permits at trailheads.",
+  "evidence": "NPS wilderness permit page: paper self-registration permits are no longer available at trailheads; permits come through the online reservation system, by phone or at a Wilderness Information Center, and Sol Duc/Seven Lakes Basin is a quota area. The Sol Duc River hike page likewise says the whole area is a quota area needing advance reservations.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm", "https://www.wta.org/go-hiking/hikes/sol-duc-river"],
+  "patches": [
+   {"id": "wa_mount_appleton_standard", "fact": "Wilderness permit method", "op": "replace_text", "column": "waypoints", "path": [0,"note"], "find": "self-issue wilderness permit required for any overnight stay", "replace": "a reserved wilderness permit is required for any overnight stay"},
+   {"id": "wa_mount_appleton_standard", "fact": "Wilderness permit method", "op": "replace_text", "column": "waypoints", "path": [0,"directions"], "find": "Any overnight stay needs a self-issue wilderness permit, filled out at the trailhead.", "replace": "Any overnight stay needs a wilderness permit reserved in advance; none are issued at the trailhead."}
+  ]},
+ {"id": "wa_mount_appleton_standard", "fact": "Boulder Lake location", "verdict": "fixed",
+  "correct_value": "Boulder Lake lies north (NNW) of Mount Appleton, at the base of Boulder Peak.",
+  "evidence": "Boulder Lake is at 47.9767 N, -123.7497 W (GNIS coordinate) at the base of Boulder Peak (47.9717 N); Mount Appleton's summit is at 47.9502 N, -123.7336 W, so the lake is about 3 km north-northwest of the peak, not on its south side. This matches the pass waypoint (trail continues north to Boulder Lake).",
+  "sources": ["https://en.wikipedia.org/wiki/Boulder_Lake_(Washington)", "https://www.wikidata.org/wiki/Q4949574", "https://peakvisor.com/peak/mount-appleton.html", "https://en.wikipedia.org/wiki/Boulder_Peak_(Washington)"],
+  "patches": [
+   {"id": "wa_mount_appleton_standard", "fact": "Boulder Lake location", "op": "replace_text", "column": "beta", "path": [], "find": "Boulder Lake (below Appleton's south side)", "replace": "Boulder Lake (north of the peak)"}
+  ]},
+ {"id": "wa_mount_appleton_standard", "fact": "Trailhead elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "NPS gives the Sol Duc side as 2,000 ft to 5,100 ft. Sol Duc Falls hike figures imply a trailhead near 1,800 ft (high point 2,055 ft, 255 ft gain), another listing gives 1,825 ft, and a third gives a 1,951 ft high point with 200 ft gain. No two sources agree on one figure, and none supports the stored 1,650 ft; left for a DEM-based check.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/appleton-pass-trail.htm", "https://www.oregonhikers.org/field_guide/Sol_Duc_Falls_Hike", "https://www.wta.org/go-hiking/hikes/sol-duc-falls"],
+  "patches": []}
+]}

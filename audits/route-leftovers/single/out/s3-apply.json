@@ -1,0 +1,286 @@
+{
+ "results": [
+  {
+   "id": "wa_the_temple_south_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "climbing season window",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_the_temple_south_ridge",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep"
+    },
+    {
+     "op": "set",
+     "id": "wa_the_temple_south_ridge",
+     "column": "best_season",
+     "path": [],
+     "expect": "July through October",
+     "value": "July through September"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "July through October,",
+     "replace": "July through September,"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "October",
+      "reason"
+     ],
+     "find": "Still within the best-season, but cold temps",
+     "replace": "Past the usual season: cold temps"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "July-October climbing window",
+     "replace": "July-September climbing window"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_temple_south_ridge",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "July to early October",
+     "replace": "July to September"
+    }
+   ]
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "waypoints[1].distMi",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_abernathy_peak_north_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 10
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Total pitch count",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_stuart_north_ridge",
+     "column": "pitches",
+     "path": [],
+     "expect": 20,
+     "value": 18
+    }
+   ]
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Season / when the access road is open",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_drilling_me_softly",
+     "column": "season",
+     "path": [],
+     "expect": "Jul-Sep",
+     "value": "Jun-Oct"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Total gain/loss: gain_ft 6,000 vs loss_ft 5,500 vs approach '~5,500 ft' on an out-and-back",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_hourglass_gully_winter",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6000,
+     "value": 5500
+    }
+   ]
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Elevation of the Waterfall 3 crux",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_merchant_peak_south_route",
+     "column": "overview",
+     "path": [],
+     "find": "(crux around 3,900 ft)",
+     "replace": "(crux around 3,700 ft)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_merchant_peak_south_route",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "crux waterfall (~3,900 ft)",
+     "replace": "crux waterfall (~3,700 ft)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_merchant_peak_south_route",
+     "column": "watch_out",
+     "path": [
+      1
+     ],
+     "find": "chockstone (~3,900 ft)",
+     "replace": "chockstone (~3,700 ft)"
+    },
+    {
+     "op": "set",
+     "id": "wa_merchant_peak_south_route",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 3600,
+     "value": 3700
+    }
+   ]
+  },
+  {
+   "id": "wa_lone_wolf",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "The Obelisk's own elevation disagreement across waypoints",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_lone_wolf",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 4900,
+     "value": 4494
+    },
+    {
+     "op": "set",
+     "id": "wa_lone_wolf",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elevFt"
+     ],
+     "expect": 4900,
+     "value": 4494
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lone_wolf",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "Elevation is an estimate from the surrounding terrain (Citidel base area is listed at 4,585 ft; The Obelisk sits further up-slope from the Sofa King Buttress sub-area) — no separate elevation figure is published for this formation.",
+     "replace": "The Obelisk stands on its own northeast of the Sofa King Buttress, further down the shoulder of Silver Peak, at about 4,494 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "rock_grade undersells the technical climbing",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_peak_east_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "for the harder, more sustained pitches",
+     "replace": "for the exposed blocks on the upper ridge"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_peak_east_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "can slow the harder pitches",
+     "replace": "can slow the exposed steps"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_peak_east_ridge",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "for the sustained 5.7 climbing and long summit day",
+     "replace": "for the exposed class 3-4 ridge and long summit day"
+    }
+   ]
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "gain_ft",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_smears_jugs_and_rock_roll",
+     "column": "gain_ft",
+     "path": [],
+     "expect": null,
+     "value": 6400
+    }
+   ]
+  }
+ ],
+ "held": []
+}

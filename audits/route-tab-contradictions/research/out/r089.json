@@ -1,0 +1,497 @@
+{
+ "file": "r089.json",
+ "results": [
+  {
+   "id": "wa_mount_prophet_east",
+   "fact": "Round-trip / total distance",
+   "verdict": "fixed",
+   "correct_value": "About 18 mi round trip / ~9 mi one way when starting from the Big Beaver Landing water-taxi drop (dist_km 14.5 km is that one-way figure); walking the Ross Lake shoreline both ways adds ~7 mi each way, which is what the waypoint list (16.8 mi one-way from Ross Dam Trailhead) measures.",
+   "evidence": "One trip report (water taxi to Big Beaver Landing) logs 18 miles and 7,200 ft gained and lost, with about 5 miles from the landing to the camp. A second report says the water taxi saves about 7 miles of hiking each way, and its summit day from Thirtynine Mile Camp back to Big Beaver was 14 mi (~9 mi camp-summit-camp plus 5 mi out), giving ~18-19 mi from the landing. The three figures measure different starting points; the approach sentence was the ambiguous one and now names its starting point. dist_km and the waypoint distances are left as-is.",
+   "sources": [
+    "https://trailcatjim.com/mt-prophet-via-south-ridge-southeast-ridge/",
+    "https://ckoutside.com/luna-peak-mount-prophet/",
+    "https://www.summitpost.org/south-ridge-mount-prophet/1066527"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "find": "Round trip is roughly 18 miles with 7,000+ ft of elevation gain, typically done over 2-3 days.",
+     "replace": "Round trip from the Big Beaver Landing water-taxi drop is roughly 18 miles with 7,000+ ft of elevation gain, typically done over 2-3 days; walking the lakeshore both ways instead adds about 14 miles.",
+     "path": [],
+     "id": "wa_mount_prophet_east",
+     "fact": "Round-trip / total distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "fact": "Distance to the Big Beaver Trail junction waypoint",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach prose puts the Big Beaver Trail junction ~7 mi along the shoreline (a second report agrees the water taxi saves ~7 mi each way), but the \"Big Beaver Trail junction (via Ross Dam)\" waypoint says distMi 2 and its pin sits near Ross Dam, while its note describes following the shoreline to it. Whether this pin is meant to be the dam-end trail start or the landing-end junction is a pin question (out of scope); no patch.",
+   "sources": [
+    "https://ckoutside.com/luna-peak-mount-prophet/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "fact": "Total time vs its own sub-components",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: PUBLISHED TIMES shows Approach 5 / Summit 6 / Descent 6 / Total 13, and totalHrs is defined as car-to-car. The 13 is the col-to-col climbing day (itinerary: 6 up, 6 down, 12-13+ hr day); the approach is a separate day and the hike out (~5 hr in reports) is not stored anywhere. Reports vary widely (trailhead to col ~4-6 hr; camp-to-camp ~9 hr for one party, a turnaround after 6+ hr for another), so no car-to-car total is established by two agreeing sources; setting 17 would still omit the hike out. Needs a decision on whether the tiles describe the climbing day (drop approachTimeHrs, total 12) or the whole trip.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/ne-ridge-on-mount-triumph",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-triumph-northeast-ridge-1",
+    "http://ericsbasecamp.net/trips/Triumph/Triumph.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "fact": "Total route distance (dist_km)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~6.2 mi (10.0 km) one way, trailhead to summit",
+   "evidence": "The stored 3.4 km (2.1 mi) is the trailhead-to-Pyramid-Lake leg only. The peak route description gives 2.1 mi to the lake and then \"the next 4 or so miles\" up the ridge (~6.1 mi one way); the row's own summit waypoint (6.2 mi), itinerary (4.6 + 8 mi) and totalNote (~12.4 mi round trip) all agree. One other trip-report aggregate says ~16 mi RT, so only one external source matches.",
+   "sources": [
+    "https://www.summitpost.org/pyramid-peak-wa-whatcom/1045020",
+    "https://www.wta.org/go-hiking/hikes/pyramid-lake"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "expect": 3.4,
+     "value": 10.0,
+     "path": [],
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Total route distance (dist_km)"
+    }
+   ]
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "fact": "Glacier crossing on the standard route (content contamination)",
+   "verdict": "fixed",
+   "correct_value": "No glacier on the standard route: ridge from Pyramid Lake, traverse below Pinnacle Peak to the Pinnacle-Pyramid saddle, then scramble to the summit. The Colonial Glacier is crossed only by parties continuing to Colonial/Snowfield.",
+   "evidence": "The peak route description goes from Pyramid Lake steeply up the ridge to the Pinnacle-Pyramid saddle and then an easy hike to the summit, warning only of steep lingering snowfields on the east sides of Paul Bunyan's Stump and Pinnacle. A multi-peak trip report followed the climbers' trail up the ridge \"to the base of Pyramid Peak\" and only then descended to the Colonial Glacier to reach the Colonial-Neve col for Snowfield/Colonial. The encyclopedic entry gives the easiest route as a class 3 scramble. The glacier text was copied from a Colonial/Snowfield itinerary. timing.sectionBreakdown[0].note is stored truncated before its glacier phrase, so it needs no patch.",
+   "sources": [
+    "https://www.summitpost.org/pyramid-peak-wa-whatcom/1045020",
+    "https://stephabegg.com/trip-reports/washington/snowfield-slam/",
+    "https://en.wikipedia.org/wiki/Pyramid_Peak_(Whatcom_County,_Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "once the Colonial-Neve glacier crossing firms up but before it gets too bare/crevassed.",
+     "replace": "once snow on the approach ridge and below the summit has mostly melted out.",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "before the route opens onto glacier terrain",
+     "replace": "before the route opens onto the upper ridge",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "with full overnight and glacier gear on their backs",
+     "replace": "with full overnight gear on their backs",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "cross the Colonial-Neve glacier basin (rope up; it is crevassed with bergschrunds/moats late season) to the base of Pyramid's southeast slopes, then scramble a loose rock-and-snow finger to the summit ridge",
+     "replace": "traverse below Pinnacle Peak's east-side cliffs and snowfields to the Pinnacle-Pyramid saddle, then scramble straight up the ridge to the summit",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "via the Colonial-Neve glacier basin",
+     "replace": "via the Pinnacle-Pyramid saddle",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Break camp, rope up",
+     "replace": "Leave camp",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Cross the Colonial-Neve glacier basin toward Pyramid's southeast side.",
+     "replace": "Traverse below Pinnacle Peak to the Pinnacle-Pyramid saddle.",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Loose rock/snow finger leads up to the summit ridge.",
+     "replace": "From the saddle, scramble straight up the ridge over loose rock and lingering snow.",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "crossing the Colonial-Neve glacier basin to the 7,189 ft summit",
+     "replace": "over the Pinnacle-Pyramid saddle to the 7,189 ft summit",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "cross the Colonial-Neve glacier basin (rope up; it is crevassed with bergschrunds/moats late season) to the base of Pyramid's southeast slopes",
+     "replace": "traverse below Pinnacle Peak's east-side cliffs and snowfields to the Pinnacle-Pyramid saddle",
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "find": "Approach crosses the Colonial Glacier basin (crevasses, steep snow finger) - carry ice axe, crampons, and consider a rope for glacier travel;",
+     "replace": "No glacier on this route, but steep snowfields below Pinnacle Peak and the summit ridge linger into summer - carry an ice axe (crampons early season);",
+     "path": [],
+     "id": "wa_pyramid_peak_colonial_standard",
+     "fact": "Glacier crossing on the standard route (content contamination)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "fact": "Route aspect/face vs. described side of the mountain",
+   "verdict": "fixed",
+   "correct_value": "N - the route climbs the north side; \"east\" refers only to keeping to the east side of Happy Creek",
+   "evidence": "A ski trip report titled \"North Side via Happy Crk\" describes 5,300 vertical ft on the north side from the SR 20 gate to the 7,408 ft summit. A second report calls the route a North-facing slope and skied under the North face. Other reports say to ascend along the east side of Happy Creek, which is where the \"E\" came from.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/march-24-2012-ruby-mtn-north-side-via-happy-crk",
+    "https://www.jeffreyjhebert.com/adventures/ruby-mountain-2021",
+    "https://climberkyle.com/2021/03/16/ruby-mountain-ski-tour/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "aspect",
+     "expect": "E",
+     "value": "N",
+     "path": [],
+     "id": "wa_ruby_mountain_happy_creek",
+     "fact": "Route aspect/face vs. described side of the mountain"
+    },
+    {
+     "op": "set",
+     "column": "face",
+     "expect": "East Face / Happy Creek drainage",
+     "value": "North side / Happy Creek drainage",
+     "path": [],
+     "id": "wa_ruby_mountain_happy_creek",
+     "fact": "Route aspect/face vs. described side of the mountain"
+    }
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "7,408 ft",
+   "evidence": "high_point_ft says 7,408 but the summit waypoint (elev and elevFt) and the last ROUTE BREAKDOWN row say 7,426. The encyclopedic entry gives 7,408 ft, and a ski trip report gives the summit as 7,408 ft (another says about 7,400 ft).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ruby_Mountain_(Washington)",
+    "https://turns-all-year.com/trip-reports/march-24-2012-ruby-mtn-north-side-via-happy-crk"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 7426,
+     "value": 7408,
+     "id": "wa_ruby_mountain_happy_creek",
+     "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 7426,
+     "value": 7408,
+     "id": "wa_ruby_mountain_happy_creek",
+     "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "pitch"
+     ],
+     "find": "(7,426 ft)",
+     "replace": "(7,408 ft)",
+     "id": "wa_ruby_mountain_happy_creek",
+     "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Total elevation loss (loss_ft) vs itinerary",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "6800 (equal to gain_ft on this out-and-back)",
+   "evidence": "Same trailhead in and out, so loss must equal gain. Trip reports log gain and loss as equal (7,100 ft gained and lost from an older, higher start; ~8,000 ft from the current washout parking). gain_ft 6800 and the itinerary loss sum (6,400) both point far from 1,100; the sibling glacier route was corrected the same way. The exact total is itself uncertain (see the discovered gain entry), so loss is matched to gain_ft rather than to an external figure.",
+   "sources": [
+    "https://trailcatjim.com/snowking-mtn-via-northeast-ridge-east-spur-1998/",
+    "https://onehikeaweek.com/2023/10/20/snowking-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "expect": 1100,
+     "value": 6800,
+     "path": [],
+     "id": "wa_east_ridge_2",
+     "fact": "Total elevation loss (loss_ft) vs itinerary"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Cyclone Lake camp elevation",
+   "verdict": "fixed",
+   "correct_value": "~5,350 ft (5,354 ft)",
+   "evidence": "The state high-lakes record lists Cyclone Lake (Skagit County, 48.4155,-121.2587) at 5,354 ft, and a lake-listing site gives the same 5,354 ft, matching the row's Cyclone Lake waypoint. The itinerary's ~4,800 ft is the boggy bench lower on the ridge. The bivy entry (5,442) covers the lakes/pond north of Cyclone Lake - one report camped at \"Cyclone Pond (5,450 ft)\" - so it is left as is.",
+   "sources": [
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/cyclone",
+    "https://www.washingtonfishinglakes.com/lakes/wa/skagit_county/cyclone",
+    "https://trailcatjim.com/snowking-mtn-via-northeast-ridge-east-spur-1998/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "(~4,800 ft)",
+     "replace": "(~5,350 ft)",
+     "id": "wa_east_ridge_2",
+     "fact": "Cyclone Lake camp elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Permit field names North Cascades NP on a Forest Service peak",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No permit required for day climbs. A free self-issued wilderness travel permit must be completed at the trailhead register when entering the Glacier Peak Wilderness (Mount Baker-Snoqualmie National Forest); no Recreation.gov reservation or NPS backcountry permit applies to this Forest Service approach.",
+   "evidence": "The top-level permit field says NCNP backcountry permits via Recreation.gov/Marblemount, while this row's own access.*, emergency and land-manager fields say Glacier Peak Wilderness, Mt. Baker-Snoqualmie NF. Snowking Mountain lies in the Glacier Peak Wilderness on the national forest (encyclopedic entry; trip report filed under Glacier Peak Wilderness), where the forest asks visitors to sign the trailhead register. Replaced with the text already on the sibling route.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Snowking_Mountain",
+    "https://trailcatjim.com/snowking-mtn-via-northeast-ridge-east-spur-1998/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "permit",
+     "expect": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+     "value": "No permit required for day climbs. A free self-issued wilderness travel permit must be completed at the trailhead register when entering the Glacier Peak Wilderness (Mount Baker-Snoqualmie National Forest); no Recreation.gov reservation or NPS backcountry permit applies to this Forest Service approach.",
+     "path": [],
+     "id": "wa_east_ridge_2",
+     "fact": "Permit field names North Cascades NP on a Forest Service peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Group size limit (access.group_limit vs access.rules)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "12",
+   "evidence": "access.group_limit says 6 while access.rules says the Wilderness group-size limit is 12. The Mt. Baker-Snoqualmie permits page sets a limit of 12 people and stock in its wilderness areas, and the Okanogan-Wenatchee Glacier Peak Wilderness page says maximum party size is 12 heartbeats. The 6 is the NPS cross-country figure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/permits",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "group_limit"
+     ],
+     "expect": 6,
+     "value": 12,
+     "id": "wa_east_ridge_2",
+     "fact": "Group size limit (access.group_limit vs access.rules)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Total gain: gain_ft vs itinerary day gains",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft is 6,800 but the itinerary days sum to 7,300 ft gain and 6,400 ft loss (an out-and-back must be equal). Reports disagree: 7,100 ft gain/loss from an older 2,400 ft start, ~8,000 ft (Gaia 7,960) from the current 1,160 ft washout parking. No two sources agree on one figure; no patch.",
+   "sources": [
+    "https://trailcatjim.com/snowking-mtn-via-northeast-ridge-east-spur-1998/",
+    "https://onehikeaweek.com/2023/10/20/snowking-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "fact": "Climbing season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row is split, not just the season field: season (May-Jul), gear (\"best done spring through early summer before it opens up\") and pro_tips (\"by August the glacier opens up\") favour an early window, while seasonal_guidance (August optimal), best_season and climate favour Jul-Sep. Externally, one route summary says the Kindy Ridge line uses the Snowking Glacier/snowfield in spring/early summer and the ridge in late summer/fall; trip reports exist from late July and October but on the ridge. No two sources settle the glacier route's window; needs a decision.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/snowking-mountain-via-ne-shoulder",
+    "https://trailcatjim.com/snowking-mtn-via-northeast-ridge-east-spur-1998/",
+    "https://onehikeaweek.com/2023/10/20/snowking-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "fact": "Avalanche zone claim on a glaciated route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A summer glacier route (not non-glaciated)",
+   "evidence": "Name, overview, gear, obj_haz, waypoints and seasonal_hazards.crevasses all describe crossing the Snowking Glacier roped; the encyclopedic entry places the broad Snowking Glacier on the north face. Only the \"non-glaciated\" phrase changes; the NWAC-season point is kept.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Snowking_Mountain"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer route",
+     "replace": "N/A - summer glacier route",
+     "id": "wa_snowking_mountain_standard",
+     "fact": "Avalanche zone claim on a glaciated route"
+    }
+   ]
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "fact": "Cyclone Lake camp elevation",
+   "verdict": "fixed",
+   "correct_value": "~5,350 ft (5,354 ft)",
+   "evidence": "The state high-lakes record and a lake-listing site both give Cyclone Lake at 5,354 ft, matching this row's waypoint. The ~4,800 ft figure (also repeated in pro_tips) is the boggy bench lower on the ridge. The bivy entry (5,442) covers the lakes/pond north of the lake and is left as is.",
+   "sources": [
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/cyclone",
+    "https://www.washingtonfishinglakes.com/lakes/wa/skagit_county/cyclone"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "(~4,800 ft)",
+     "replace": "(~5,350 ft)",
+     "id": "wa_snowking_mountain_standard",
+     "fact": "Cyclone Lake camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Camp at Cyclone Lake (~4,800 ft)",
+     "replace": "Camp at Cyclone Lake (~5,350 ft)",
+     "id": "wa_snowking_mountain_standard",
+     "fact": "Cyclone Lake camp elevation"
+    }
+   ]
+  }
+ ]
+}

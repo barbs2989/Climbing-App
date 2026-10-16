@@ -1,0 +1,146 @@
+{
+ "results": [
+  {
+   "id": "wa_dolphin_chimney",
+   "verdict": "confirmed",
+   "resolution": "leave (one-way approach distance and round-trip miles made to agree; camp card's trailhead distance corrected)",
+   "summary": "The walk in is about 2.5 miles each way (about 5 miles round trip); the approach-distance field held the round trip and is corrected, the day's miles set to 5, and the trailhead camp card no longer says the lot is half a mile from the pass.",
+   "evidence": "A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent SEWS southwest-face write-up from the same trailhead gives 5 mi round trip, so the two sources agree. The app shows round trip as twice dist_km, so the stored 8.37 km (5.2 mi, the itinerary's round trip) displayed a ~10.4 mi round trip; 2.5 mi one way is 4.0 km. The itinerary's 5.2 mi round trip becomes the stated 5 mi. Separately, the Blue Lake trailhead camp card said the lot is half a mile west of Washington Pass; a hiking guide gives 0.8 mi and a local paper about three quarters of a mile, so 'just under a mile' (matching the row's own trailhead card).",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html",
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_dolphin_chimney",
+     "column": "dist_km",
+     "path": [],
+     "expect": 8.37,
+     "value": 4
+    },
+    {
+     "op": "set",
+     "id": "wa_dolphin_chimney",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 5.2,
+     "value": 5
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_dolphin_chimney",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly half a mile west of Washington Pass",
+     "replace": "just under a mile west of Washington Pass"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "verdict": "confirmed",
+   "resolution": "leave (trailhead pass and approach-day gain corrected; summit-day distance left, no sourced figure)",
+   "summary": "No parking pass is needed at the Killen Creek trailhead, so the camp card now says so; the hike-in and hike-out days now show the 2,300 ft the trail actually climbs; the summit day's 4 miles stays because no published account gives that day's distance.",
+   "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site (only the Mt Adams Climbing Pass above 7,000 ft and a free wilderness permit), and an independent backpacking guide lists the trailhead pass as none required; one hiking guide still lists a Northwest Forest Pass, but the land manager's own page settles it. Two hiking guides give the trailhead-to-High Camp climb as 2,300 ft and 2,315 ft to a 6,900 ft high point, matching the row's own approach text, so day 1's 2,900 ft gain and day 3's 2,900 ft loss are corrected to 2,300. Two sources give about 17 mi round trip for the route, but none states the camp-to-summit-and-back distance or gain, so day 2's 4 mi and 3,300 ft are left rather than replaced with a computed number (nulling them would make the trip TOTAL read lower still).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_adams_north_ridge",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2900,
+     "value": 2300
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_adams_north_ridge",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 2900,
+     "value": 2300
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_adams_north_ridge",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "Northwest Forest Pass or equivalent for trailhead parking.",
+     "replace": "No parking pass is needed at the Killen Creek trailhead."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_firearms",
+   "verdict": "confirmed",
+   "resolution": "leave",
+   "summary": "Nothing to change: every part of this page a climber sees already says no parking pass is needed at the Dikes pullouts; the old pass line survives only in a hidden raw field.",
+   "evidence": "Every rendered access field on this row (fees, permit, passRequired) already says no pass is needed at these informal FR-64 roadside pullouts, matching its siblings; the only 'Northwest Forest Pass' text is in access._raw, which does not render and may not be edited. The Umatilla National Forest's list of day-use fee sites names nine sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes) and none on FR-64, and the Middle Point Trailhead page lists no fee or pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/passes"
+   ],
+   "ops": [],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_moe",
+   "verdict": "confirmed",
+   "resolution": "leave",
+   "summary": "Nothing to change: every part of this page a climber sees already says no parking pass is needed at the Dikes pullouts; the old pass line survives only in a hidden raw field.",
+   "evidence": "Every rendered access field on this row (fees, permit, passRequired) already says no pass is needed at these informal FR-64 roadside pullouts, matching its siblings; the only 'Northwest Forest Pass' text is in access._raw, which does not render and may not be edited. The Umatilla National Forest's list of day-use fee sites names nine sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes) and none on FR-64, and the Middle Point Trailhead page lists no fee or pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/passes"
+   ],
+   "ops": [],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_internal_combustion",
+   "verdict": "confirmed",
+   "resolution": "leave",
+   "summary": "Nothing to change: every part of this page a climber sees already says no parking pass is needed at the Dikes pullouts; the old pass line survives only in a hidden raw field.",
+   "evidence": "Every rendered access field on this row (fees, permit, passRequired) already says no pass is needed at these informal FR-64 roadside pullouts, matching its siblings; the only 'Northwest Forest Pass' text is in access._raw, which does not render and may not be edited. The Umatilla National Forest's list of day-use fee sites names nine sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes) and none on FR-64, and the Middle Point Trailhead page lists no fee or pass.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://www.fs.usda.gov/r06/umatilla/passes"
+   ],
+   "ops": [],
+   "pin_followups": []
+  }
+ ]
+}

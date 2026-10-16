@@ -1,0 +1,2774 @@
+{
+ "file": "r221.json",
+ "results": [
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km (2 km, 1.2 mi) is shorter than the ~1.25 mi of maintained trail alone before the climbers' path, so it looks too low, but published round-trip figures range from about 3 mi (South Arete description) to 5 mi (guide service) and the itinerary gives 6; no two sources agree on a one-way figure to adopt.",
+   "sources": [
+    "https://www.mountainproject.com/route/106416669/southwest-rib",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://mountainmadness.com/trips/south-early-winter-spire-southwest-rib-1"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Number of descent rappels",
+   "verdict": "fixed",
+   "correct_value": "3 rappels from bolted stations after downclimbing part of the South Arete",
+   "evidence": "The Southwest Rib page says the descent is 3 rappels off chains to the ground; a South Arete description gives three rappels, all under 30 m, from chained stations; the 2022 replacement line is three bolt-and-chain stations. The itinerary's '2 rappels down the chimney' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/106416669/southwest-rib",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "then 2 rappels down the chimney.",
+     "replace": "then 3 rappels from bolted stations to the base.",
+     "id": "wa_sews_sw_rib",
+     "fact": "Number of descent rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "rappel a short chimney back to the base",
+     "replace": "make 3 rappels from bolted stations back to the base",
+     "id": "wa_sews_sw_rib",
+     "fact": "Number of descent rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "and rappel a…",
+     "replace": "and rappel back to the base.",
+     "id": "wa_sews_sw_rib",
+     "fact": "Number of descent rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (9.5) equals totalHrs (9.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 9.5,
+     "value": null,
+     "id": "wa_sews_sw_rib",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Published approach times vary: about an hour of trail to the clearing plus the climbers' path, one party recorded a 2-hour approach, and a guide service allows 2.5 hours. No two sources agree on a single figure, so the 1 hr / 1-1.5 hr / 1.5-2 hr statements were not changed.",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://thepeakoftheweek.com/2017/07/03/southwest-rib-w-variation-south-early-winters-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows). bivy[0] ('half a mile') is left to the camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(~5,200 ft) on SR-20 about 1.5 miles west",
+     "replace": "(~5,400 ft) on SR-20 about 1 mile west",
+     "id": "wa_sews_sw_rib",
+     "fact": "Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Crux grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route is rated 5.8 overall with its first pitch given as 5.8+; a plus-grade pitch under a plain headline grade is the usual convention and both route descriptions show exactly that split.",
+   "sources": [
+    "https://www.mountainproject.com/route/106416669/southwest-rib",
+    "https://climberkyle.com/2017/09/02/south-early-winters-spire-sw-rib-5-8/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "Camping at the Blue Lake trailhead",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is with bivy[0]'s note, which the camping clean-up owns; no bivy patch is written. The Forest Service page states only that there is no overnight camping within 0.25 mile of Blue Lake, and access._raw (which does not render) is not changed here.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "fact": "SR-20 open/close months",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "usually opens by late May and closes with the first heavy snow (often November)",
+     "replace": "usually opens in April or May and closes with heavy snow, typically between mid-November and early December",
+     "id": "wa_sews_sw_rib",
+     "fact": "SR-20 open/close months"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_sews_sw_rib",
+     "fact": "SR-20 open/close months"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Free grade of the crux",
+   "verdict": "fixed",
+   "correct_value": "5.11d free (5.9+ C1 as first climbed)",
+   "evidence": "The route page grades it 5.11d, Grade IV, and credits the free ascent to Matthews and Burdo in 2010; the first-ascent party's report is titled 5.9+ C1 (5.11d), and a later account says the grade settled at IV 5.11d after cleaning. No source gives 5.12a, and the aided grade is 5.9+ C1, not 5.11 C1.",
+   "sources": [
+    "https://www.mountainproject.com/route/110702146/southern-man",
+    "https://cascadeclimbers.com/forum/profile/13407-markallen/content/?type=forums_topic_post&change_section=1",
+    "https://cascadeclimbers.com/forum/topic/87532-tr-wa-pass-fa-southern-man-59-c1-511d-recently-reported-882008/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "grade"
+     ],
+     "expect": "5.12a",
+     "value": "5.11d",
+     "id": "wa_southern_man",
+     "fact": "Free grade of the crux"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "(5.12a free, or 5.11 C1)",
+     "replace": "(5.11d free, or 5.9+ C1)",
+     "id": "wa_southern_man",
+     "fact": "Free grade of the crux"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "(5.12a free, or 5.11 C1)",
+     "replace": "(5.11d free, or 5.9+ C1)",
+     "id": "wa_southern_man",
+     "fact": "Free grade of the crux"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "up to 5.12a (or 5.11 with a bit of aid)",
+     "replace": "up to 5.11d (or 5.9+ with a bit of aid)",
+     "id": "wa_southern_man",
+     "fact": "Free grade of the crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Free-ascent party/year",
+   "verdict": "fixed",
+   "correct_value": "First free ascent 2010, Matthews and Burdo",
+   "evidence": "The route page lists the FFA as B. Matthews and B. Burdo, 2010; a first-ascensionist's forum post says Burdo projected it in 2009 and made the free ascent with a partner the next summer. fa and overview already say this; the crux pitch note was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/110702146/southern-man",
+    "https://cascadeclimbers.com/forum/profile/13407-markallen/content/?type=forums_topic_post&change_section=1"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "notes"
+     ],
+     "find": "freed by Bryan Burdo at 5.12a in 2009",
+     "replace": "freed at 5.11d in 2010",
+     "id": "wa_southern_man",
+     "fact": "Free-ascent party/year"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Starts and ends at the SR-20 hairpin pullout (east side), not Blue Lake",
+   "evidence": "The route shares the Direct East Buttress start, which is approached from the hairpin up Spire Gully; the area page says east-side routes are best reached from the hairpin. The itinerary objective was the only field returning to Blue Lake. access.passRequired is a fact about the Blue Lake lot and was left.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "return to the Blue Lake trailhead",
+     "replace": "return to the SR-20 hairpin pullout",
+     "id": "wa_southern_man",
+     "fact": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Bolt-ladder pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says it shares the first 4-5 pitches of the Direct East Buttress and 'busts out left of the bolt ladder pitch'. The Direct has two ladders (P4 and P6), so it is ambiguous whether Southern Man climbs the P4 ladder and bypasses the P6 one (matching pitch_detail) or bypasses P4 (matching beta). Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/110702146/southern-man",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Rack emphasis",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page describes sustained thin cracks on the headwall and gives no rack; no source was found for the wide-gear (#5/#6) claim in gear[0] or for a thin-only rack. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/110702146/southern-man"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope; the descent is three single-rope rappels",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes for descent)",
+     "value": "single",
+     "id": "wa_southern_man",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "Single rope for lead, doubled rope recommended for descent",
+     "value": "Single 60m rope for the lead and the rappels",
+     "id": "wa_southern_man",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (11) equals totalHrs (11), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 11,
+     "value": null,
+     "id": "wa_southern_man",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No route-specific season was found; the SR-20-gated window for south-facing Washington Pass rock is broadly June-September, but no two sources settle whether this route's season should start in June or July.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "Face",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "face names the two features the route climbs (the shared East Buttress start and the headwall), not a compass direction; aspect S describes the headwall, where most of the route's pitches are.",
+   "sources": [
+    "https://www.mountainproject.com/route/110702146/southern-man"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_southern_man",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_southern_man",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_southern_man",
+     "fact": "SR-20 closing month"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Trailhead / approach side",
+   "verdict": "fixed",
+   "correct_value": "The Spire Gully approach starts at the SR-20 hairpin pullout, not the Blue Lake basin",
+   "evidence": "The Direct East Buttress page and a trip report both start the east-side approach at the hairpin, up Spire Gully to the last large tree, then right across talus and left to the buttress; the area page says east-side routes are best reached from the hairpin. The approach prose, itinerary start and partner approach time are corrected. The TRAILHEAD card, road coordinates and the Blue Lake pin (which the row keeps as the descent-side lot, with the hairpin named as the usual start) were left because pin positions are out of scope.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the Blue Lake basin, hike up the gully below the col",
+     "replace": "From the SR-20 hairpin pullout, hike up Spire Gully below the col",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Trailhead / approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Leave Blue Lake trailhead",
+     "replace": "Leave the SR-20 hairpin pullout",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Trailhead / approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "return to the Blue Lake trailhead",
+     "replace": "return to the car",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Trailhead / approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "from the Blue Lake trailhead",
+     "replace": "from the SR-20 hairpin pullout",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Trailhead / approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Blue Lake approach to the base",
+     "replace": "Spire Gully approach from the SR-20 hairpin to the base",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Trailhead / approach side"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "WA-20 (North Cascades Highway) to Blue Lake Trailhead",
+     "value": "WA-20 (North Cascades Highway) to the hairpin pullout below Washington Pass",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Trailhead / approach side"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Hairpin pullout location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The hairpin pin sits near the Blue Lake lot rather than at the hairpin east of the pass (the Southern Man and Direct East Buttress rows place it at 48.5143,-120.6425, ~5,150 ft). Pin coordinates are out of scope for this pass; flagged for the pin audit.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Waypoint note describes the Direct route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Base note should not describe the 9-pitch Direct",
+   "evidence": "The '~9 pitches of 5.8-5.9' description is the Direct East Buttress's (its page gives 9 pitches), while this row's pitches, pitch_detail, itinerary and sectionBreakdown all give 6 pitches for this route. The note is reworded to drop the other route's description without asserting new facts.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "Rope up here; the Direct East Buttress climbs ~9 pitches of 5.8-5.9 crack-and-face up the buttress crest to the summit.",
+     "replace": "Rope up here for the climb up the buttress crest to the summit.",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Waypoint note describes the Direct route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Bolts on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gear[1] (old bolts on pitches 4 and 6) matches the Direct East Buttress's bolt ladders, not this route; no source documents this non-direct line's pitches or hardware (the row's own beta says so). Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a one-way approach distance for this route; the stored 6.6 km (4.1 mi) one-way cannot sit under a 5.2 mi round trip, but no figure could be settled from two sources.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Number of descent rappels",
+   "verdict": "fixed",
+   "correct_value": "3 rappels from bolted stations",
+   "evidence": "The standard South Arete descent is three single-rope rappels from bolted anchors/chains after downclimbing (Direct East Buttress page; South Arete description gives three rappels). rappel_detail and the descent waypoint already say 3; the itinerary and sectionBreakdown said 2.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "make 2 rappels back to the base",
+     "replace": "make 3 rappels back to the base",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Number of descent rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Downclimb + 2 rappels via the South Arete",
+     "replace": "Downclimb + 3 rappels via the South Arete",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Number of descent rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "make 2 rappels back to the base",
+     "replace": "make 3 rappels back to the base",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Number of descent rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (9.5) equals totalHrs (9.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 9.5,
+     "value": null,
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Beta says the route is undocumented",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Searches found only the Direct East Buttress documented on this face; no source describes a separate 6-pitch 5.8 East Buttress, so the pitch_detail cannot be confirmed and the beta's caveat cannot be dropped. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5204,
+     "value": 5400,
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "about 1.5 miles west of Washington Pass",
+     "replace": "about 1 mile west of Washington Pass",
+     "id": "wa_south_early_winter_spire_east_buttress",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "First ascent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page lists the FA as Boving and Kerns, 1977, matching the fa field. No source was found for a 1976 Boving-Pollock aid ascent of this SEWS route (a Boving-Pollock 1976 ascent is documented on North Early Winters Spire's Northwest Corner), so the overview's claim cannot be confirmed or removed on two sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope; the descent is three single-rope rappels",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "double/twin ropes recommended",
+     "value": "single",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "long multi-rappel descent makes twin 60m ropes the common choice.",
+     "replace": "the South Arete descent is three single-rope rappels on a 60m rope.",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "Twin/double 60m ropes for the multi-rappel descent",
+     "value": "Single 60m rope; the descent rappels are all single-rope",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Descent description",
+   "verdict": "fixed",
+   "correct_value": "Top out and descend the South Arete (downclimb, then three single-rope rappels)",
+   "evidence": "The route page's final pitch heads to the top and the descent ends with a rappel out of the gully; the South Arete descent is downclimbing plus three chained rappels. There is no glacier or snow slope. The hidden generic `descent` text is replaced to match descent_text.",
+   "sources": [
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Retrace the ascent route for descent, utilizing established snow/ice slopes or scramble terrain. Watch for crevasse hazards and falling rock. Allow ample time for safe descent.",
+     "value": "Top out and descend the South Arete: downclimb to the Rabbit Ears, then make 3 single-rope rappels from bolted stations to the base.",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Descent description"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (8.5) equals totalHrs (8.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 8.5,
+     "value": null,
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a one-way approach distance to the northwest face; published round trips for this basin range from about 3 to 5 mi. The 6.6 km (4.1 mi) one-way figure looks too high but could not be replaced on two sources.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Headline grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page grades the route 5.11b but notes the pitch 2 corner is rated 11a in the guidebook and 'solid for that grade'; sources split between 5.11a and 5.11b, so neither the chip nor the pitch was changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "SR-20 closing month"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Aspect / face",
+   "verdict": "fixed",
+   "correct_value": "On the shaded northwest side of SEWS, not the south face",
+   "evidence": "The route page places the start beside the chockstone chimney near the Northwest Face/Mojo Rising and says it stays in the shade until about 1 pm; a trip report says it sees almost no sun. A south face would be in sun. The itinerary's 'south face' is corrected; aspect W is left.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "on SEWS's south face",
+     "replace": "on SEWS's northwest face",
+     "id": "wa_free_mojo",
+     "fact": "Aspect / face"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "on SEWS's south face",
+     "replace": "on SEWS's northwest face",
+     "id": "wa_free_mojo",
+     "fact": "Aspect / face"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Pitch 1 anchor",
+   "verdict": "fixed",
+   "correct_value": "A two-piece fixed gear anchor (not bolts)",
+   "evidence": "The route page describes a two-piece fixed anchor at the top of P1; a 2016 report found a fixed cam there. No source mentions bolts.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "P1 to a fixed 2-bolt anchor",
+     "replace": "P1 to a two-piece fixed gear anchor",
+     "id": "wa_free_mojo",
+     "fact": "Pitch 1 anchor"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Fixed anchor atop pitch 2",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page ends P2 on a ledge with no fixed anchor mentioned; a 2016 report says the north face now has a single-60 m rap route back to the packs but does not say where its stations are. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes for descent)",
+     "value": "single",
+     "id": "wa_free_mojo",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      5
+     ],
+     "expect": "Single rope, double ropes for descent",
+     "value": "Single 60m rope",
+     "id": "wa_free_mojo",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Bolts on the route",
+   "verdict": "fixed",
+   "correct_value": "Trad protection; no bolts documented",
+   "evidence": "The route page's rack is cams and nuts only and its pitch descriptions mention no bolts; a trip report recommends two full sets of trad gear. rope_note's 'mixed bolt/gear protection' is corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "modern mixed bolt/gear protection typical of the harder Washington Pass free lines.",
+     "replace": "trad protection throughout, with small cams seeing the most use.",
+     "id": "wa_free_mojo",
+     "fact": "Bolts on the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Where the route joins another line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says P2 connects with Mojo Rising and P5 trends right toward the South Arete; a trip report says it joins the Southwest Rib after P3. Sources disagree, so neither field was changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Pitch 6 length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page gives P6 as ~25 ft, matching the beta, so pitch_detail's 25 m looks like a unit slip; only one independent source was found. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (9) equals totalHrs (9), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 9,
+     "value": null,
+     "id": "wa_free_mojo",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_free_mojo",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_free_mojo",
+     "fact": "SR-20 closing month"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_free_mojo",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_free_mojo",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Standard descent",
+   "verdict": "fixed",
+   "correct_value": "Continue up the Southwest Rib to the summit and descend the South Arete",
+   "evidence": "The route page says to finish up to the summit with the rest of the Southwest Rib pitches; the Northwest Face page, which shares the roofs, also climbs on to the top. descent, descent_text, bail and baseFinding already say so; the itinerary is corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/110616122/boving-roofs",
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Most parties rappel the route back to the base rather than continuing to the summit, making it a shorter day than the full Rib.",
+     "replace": "Most parties continue up the remaining Southwest Rib pitches to the summit and descend the South Arete.",
+     "id": "wa_boving_roofs",
+     "fact": "Standard descent"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Rappel the route",
+     "value": "Finish up the Southwest Rib, descend the South Arete",
+     "id": "wa_boving_roofs",
+     "fact": "Standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "usually rappelling the route rather than continuing to the summit",
+     "replace": "usually finishing up the Southwest Rib to the summit and descending the South Arete",
+     "id": "wa_boving_roofs",
+     "fact": "Standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Most parties rappel the route back to th…",
+     "replace": "Most parties finish to the summit and descend the South Arete.",
+     "id": "wa_boving_roofs",
+     "fact": "Standard descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "With the summit finish the whole-outing gain is closer to the 2,350 ft in gain_ft than the itinerary's 1,800, but no source states a gain figure for this route, so neither was changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/110616122/boving-roofs"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (6.5) equals totalHrs (6.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6.5,
+     "value": null,
+     "id": "wa_boving_roofs",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Pitch numbering of the roof pitch",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Name the pitches by what they are (the loose first pitch, the roof pitch) rather than by the combined-line numbers",
+   "evidence": "The route page numbers the loose 5.2 pitch P4 and the roofs P5 because it counts the three shared Southwest Rib pitches; this row counts only its own three pitches (pitch_detail 1-3, pitches 3). The P4/P5 labels are replaced with the pitch names so both counts read the same.",
+   "sources": [
+    "https://www.mountainproject.com/route/110616122/boving-roofs"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "expect": "Loose rock on P4 and a loose block at the start of the roof pitch (P5)",
+     "value": "Loose rock on the first pitch and a loose block at the start of the roof pitch",
+     "id": "wa_boving_roofs",
+     "fact": "Pitch numbering of the roof pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "through the roof on P5",
+     "replace": "through the roof",
+     "id": "wa_boving_roofs",
+     "fact": "Pitch numbering of the roof pitch"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "Roof/overhang crack technique on P5",
+     "value": "Roof/overhang crack technique on the roof pitch",
+     "id": "wa_boving_roofs",
+     "fact": "Pitch numbering of the roof pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "Comfort on loose rock at P4 and",
+     "replace": "Comfort on loose rock on the first pitch and",
+     "id": "wa_boving_roofs",
+     "fact": "Pitch numbering of the roof pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec"
+     ],
+     "find": "roof pitch (P5) plus",
+     "replace": "roof pitch plus",
+     "id": "wa_boving_roofs",
+     "fact": "Pitch numbering of the roof pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Powerful roof pitch (P5) with",
+     "replace": "Powerful roof pitch with",
+     "id": "wa_boving_roofs",
+     "fact": "Pitch numbering of the roof pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Where the route rejoins the Southwest Rib",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route page says the last pitch ends at the top of the Southwest Rib's Bear Hug pitch; 'rejoining the Bear Hug pitch' in the overview names the same place less precisely.",
+   "sources": [
+    "https://www.mountainproject.com/route/110616122/boving-roofs"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope; three single-rope rappels",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes common for descent raps)",
+     "value": "single",
+     "id": "wa_boving_roofs",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "(2-3 rappels past the Rabbit Ears), so many parties carry twin 60m ropes.",
+     "replace": "(3 single-rope rappels on a 60m rope past the Rabbit Ears).",
+     "id": "wa_boving_roofs",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "expect": "Single rope (doubled ropes common for rappel descent)",
+     "value": "Single 60m rope",
+     "id": "wa_boving_roofs",
+     "fact": "Rope for the descent"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_boving_roofs",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_boving_roofs",
+     "fact": "SR-20 closing month"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_boving_roofs",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_boving_roofs",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Wide-gear sizes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page says a #6 might protect the first 20 ft below the chockstone and otherwise found only tiny nuts and cams; no source gives a rack. gear[0]'s '#5 (roughly 3 inches)' is internally wrong (a #5 is far wider than 3 in), and rope_note/rack stop at #3-#4, but no two sources settle the rack. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117509825/dolphin-chimney"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes for descent)",
+     "value": "single",
+     "id": "wa_dolphin_chimney",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      2
+     ],
+     "expect": "Single rope (double ropes useful for descent)",
+     "value": "Single 60m rope",
+     "id": "wa_dolphin_chimney",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Face",
+   "verdict": "fixed",
+   "correct_value": "On SEWS's west face, beside the Southwest Rib and Boving Roofs",
+   "evidence": "The route page places it about 100 ft left of the Boving Roof, reached from pitch 2 of the Southwest Rib or pitch 3 of Boving-Pollock; the Southwest Rib and the Boving Roofs are on the west face (a club trip report is titled 'West Face & Southwest Rib').",
+   "sources": [
+    "https://www.mountainproject.com/route/117509825/dolphin-chimney",
+    "https://www.mountainproject.com/route/110616122/boving-roofs",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-south-early-winter-spire-west-face-southwest-rib-1"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "midway up SEWS's south face",
+     "replace": "midway up SEWS's west face",
+     "id": "wa_dolphin_chimney",
+     "fact": "Face"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "midway up SEWS's south face",
+     "replace": "midway up SEWS's west face",
+     "id": "wa_dolphin_chimney",
+     "fact": "Face"
+    }
+   ]
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (8.5) equals totalHrs (8.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 8.5,
+     "value": null,
+     "id": "wa_dolphin_chimney",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_dolphin_chimney",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_dolphin_chimney",
+     "fact": "SR-20 closing month"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_dolphin_chimney",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_dolphin_chimney",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Whether the route has been freed",
+   "verdict": "fixed",
+   "correct_value": "The aid section has not been freed; the all-free line is the separate Free Mojo",
+   "evidence": "The route page says it has still yet to be freed; the separate Free Mojo route is the free variation that avoids the aid. The overview's 'later free ascents of the aid section' is corrected, and pro_needs loses its reference to 'the source material'.",
+   "sources": [
+    "https://www.mountainproject.com/route/117067715/mojo-rising",
+    "https://www.mountainproject.com/route/117392467/free-mojo"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the 5.11b grade reflects later free ascents of the aid section.",
+     "replace": "the 5.11b grade is for the free climbing; the aid section has not been freed, and the separate Free Mojo line is the all-free alternative.",
+     "id": "wa_mojo_rising",
+     "fact": "Whether the route has been freed"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Route has yet to be fully freed as of the source material;",
+     "replace": "The aid section has not been freed;",
+     "id": "wa_mojo_rising",
+     "fact": "Whether the route has been freed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes. The route page also says the first 3 pitches can be rappelled with a 60 m rope.",
+   "sources": [
+    "https://www.mountainproject.com/route/117067715/mojo-rising",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes for descent)",
+     "value": "single",
+     "id": "wa_mojo_rising",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "Single rope; double ropes recommended for descent",
+     "value": "Single 60m rope",
+     "id": "wa_mojo_rising",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Face",
+   "verdict": "fixed",
+   "correct_value": "Northwest face, beside Free Mojo and the Northwest Face (Boving-Pollock)",
+   "evidence": "The route page puts the start on a bolt line 20 ft downhill from the chockstone route, left of P1 of the Northwest Face route; the Free Mojo page puts its start 40 ft down and right of the same chockstone. The itinerary's 'south face near the Passenger/Hitchhiker cluster' is corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/117067715/mojo-rising",
+    "https://www.mountainproject.com/route/117392467/free-mojo"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Mojo Rising climbs SEWS's south face near Free Mojo and the Passenger/Hitchhiker cluster.",
+     "replace": "Mojo Rising climbs SEWS's northwest face beside Free Mojo and the Northwest Face (Boving-Pollock).",
+     "id": "wa_mojo_rising",
+     "fact": "Face"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Mojo Rising climbs SEWS's south face near Free Mojo and the Passenger/Hitchhiker cluster.",
+     "replace": "Mojo Rising climbs SEWS's northwest face beside Free Mojo and the Northwest Face (Boving-Pollock).",
+     "id": "wa_mojo_rising",
+     "fact": "Face"
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Descent sequence",
+   "verdict": "fixed",
+   "correct_value": "Two alternatives: rappel the first three pitches, or finish up the Southwest Rib and descend the South Arete",
+   "evidence": "The route page says the first 3 pitches can be rappelled with a 60 m rope and that pitches 7-9 simul-climb the Southwest Rib to the top; the South Arete descent is the top-out option. `descent` joined the two into one impossible sequence.",
+   "sources": [
+    "https://www.mountainproject.com/route/117067715/mojo-rising",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Rappel the first three pitches with a 60m rope, then simul-climb or pitch out the remainder on the Southwest Rib, or continue to the summit and descend the South Arete.",
+     "value": "Either rappel the first three pitches with a 60m rope, or finish up the Southwest Rib to the summit and descend the South Arete.",
+     "id": "wa_mojo_rising",
+     "fact": "Descent sequence"
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (9) equals totalHrs (9), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 9,
+     "value": null,
+     "id": "wa_mojo_rising",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_mojo_rising",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_mojo_rising",
+     "fact": "SR-20 closing month"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mojo_rising",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_mojo_rising",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_mojo_rising",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade IV",
+   "evidence": "An American Alpine Journal note calls it 'IV 5.12a'; two trip reports grade it IV (5.11c and 5.11+). One route database gives Grade III. commitment is raised to IV to match alpine_grade.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216228",
+    "https://cascadeclimbers.com/forum/topic/44831-tr-early-winter-spire-the-passenger-iv-511c-8302006/",
+    "http://blog.hillmap.com/2008/10/tr-passenger-511-iv.html",
+    "https://www.mountainproject.com/route/106585962/the-passenger"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "III",
+     "value": "IV",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Headline difficulty",
+   "verdict": "fixed",
+   "correct_value": "5.11d",
+   "evidence": "The route page grades it 5.11d with a 5.11+ crux pitch; trip reports give 5.11c and 5.11+. Only one journal note says 5.12a. grade, rock_grade and pitch_detail already say 5.11d/5.11+; the two 5.12a mentions are corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/106585962/the-passenger",
+    "https://cascadeclimbers.com/forum/topic/44831-tr-early-winter-spire-the-passenger-iv-511c-8302006/",
+    "http://blog.hillmap.com/2008/10/tr-passenger-511-iv.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "its 5.12a grade",
+     "replace": "its 5.11d grade",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Headline difficulty"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "at 5.12a with limited traffic",
+     "replace": "at 5.11d with limited traffic",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Headline difficulty"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Boving Roofs as a pitch of this route",
+   "verdict": "fixed",
+   "correct_value": "The Passenger's pitches are roofs low and a sustained finger crack on P3; the Boving Roofs are a separate west-side route",
+   "evidence": "The route page's pitches are a roof traverse (P1), a bolted roof pull (P2), a sustained finger crack to a roof/slot (P3) and a bolted crux (P4) on the south-facing wall; the Boving Roofs are reached from the first three pitches of the Southwest Rib on the west side.",
+   "sources": [
+    "https://www.mountainproject.com/route/106585962/the-passenger",
+    "https://www.mountainproject.com/route/110616122/boving-roofs"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "with the famous Boving Roofs pitch as its centerpiece",
+     "replace": "with roof pulls and a sustained finger crack as its centerpiece",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Boving Roofs as a pitch of this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "with the famous Boving Roofs pitch as its centerpiece",
+     "replace": "with roof pulls and a sustained finger crack as its centerpiece",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Boving Roofs as a pitch of this route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Crack/corner pitches building to the Boving Roofs on P3.",
+     "value": "Roof pulls on P1-P2, then a sustained finger crack on P3.",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Boving Roofs as a pitch of this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Retreat",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page shows a bolted belay after P1 and bolts on P2 and P4 but gives no retreat beta; the descent is via the South Arete. Whether the route can be rappelled was not established by any source. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106585962/the-passenger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a one-way approach distance to the Passenger's start; the 2.4 km (1.5 mi) one-way figure looks short for a Blue Lake approach but could not be replaced on two sources.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (10.5) equals totalHrs (10.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": null,
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_south_early_winter_spire_passenger",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Start offset from the Passenger",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route database says the route starts 100 yards right of the Passenger, agreeing with the overview rather than the four fields that say 100 ft; no second source was found. Not changed.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/route_map.php?r=wasewsth",
+    "https://www.mountainproject.com/route/108294579/the-hitchhiker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Approach trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Passenger's own approach runs from the base of the South Arete (Blue Lake side), and the area page says east-side routes are best reached from the hairpin; no source states which side this southeast-face route is approached from. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106585962/the-passenger",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Car-to-car time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 8 hours is the climbing time, not car-to-car",
+   "evidence": "A 2012 trip report gives about 8 hours for the climbing; the row's turnaround also calls it 8 hours of climbing, and totalHrs, itinerary hours and totalNote give 11 hrs car-to-car. The carToCar entry is relabelled (and loses its trip-report attribution).",
+   "sources": [
+    "https://waynewallace.wordpress.com/2012/09/19/the-hitchhiker-s-early-winter-spire/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "carToCar"
+     ],
+     "expect": "~8 hrs (2012 trip report)",
+     "value": "~8 hrs of climbing, plus the approach and descent",
+     "id": "wa_the_hitchhiker",
+     "fact": "Car-to-car time"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (11) equals totalHrs (11), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 11,
+     "value": null,
+     "id": "wa_the_hitchhiker",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Aid/free grading",
+   "verdict": "fixed",
+   "correct_value": "Free at about 5.11b, or 5.10d with a few short aid sections",
+   "evidence": "Two route databases grade it IV 5.11b, or 5.10d C1; a trip report carried an aider for three short sections. pro_tips' 'free (avoiding aid) at 5.10 A1' is self-contradictory and is rewritten. alpine_grade 'D' is a French-scale grade, not a commitment numeral, so it was left.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/route_map.php?r=wasewsth",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/875362596",
+    "https://waynewallace.wordpress.com/2012/09/19/the-hitchhiker-s-early-winter-spire/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "expect": "Can be climbed at IV 5.11 A0, or free (avoiding aid) at 5.10 A1 if you'd rather not aid through the harder sections.",
+     "value": "Goes free at about 5.11b, or at 5.10d with a few short aid sections if you would rather not free the hardest moves.",
+     "id": "wa_the_hitchhiker",
+     "fact": "Aid/free grading"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Gain vs loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a car-to-car gain or loss for this route; per the standing rule neither gain_ft nor loss_ft is changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Descent description",
+   "verdict": "fixed",
+   "correct_value": "Top out and descend the South Arete (downclimb, then three single-rope rappels)",
+   "evidence": "The route tops out at the summit (row's own descent_text); the South Arete descent is downclimbing plus three chained rappels. The hidden generic `descent` (reverse the route, snow bridges) is replaced.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.mountainproject.com/route/106585962/the-passenger"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+     "value": "Top out and descend the South Arete: downclimb to the Rabbit Ears, then make 3 single-rope rappels from bolted stations to the base.",
+     "id": "wa_the_hitchhiker",
+     "fact": "Descent description"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope",
+   "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes. The route page lists a 60 m rope.",
+   "sources": [
+    "https://www.mountainproject.com/route/108294579/the-hitchhiker",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes for descent)",
+     "value": "single",
+     "id": "wa_the_hitchhiker",
+     "fact": "Rope for the descent"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "Single 60m rope (double ropes for descent)",
+     "value": "Single 60m rope",
+     "id": "wa_the_hitchhiker",
+     "fact": "Rope for the descent"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_the_hitchhiker",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_the_hitchhiker",
+     "fact": "SR-20 closing month"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_the_hitchhiker",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5150,
+     "value": 5400,
+     "id": "wa_the_hitchhiker",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 5150,
+     "value": 5400,
+     "id": "wa_the_hitchhiker",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Descent route",
+   "verdict": "fixed",
+   "correct_value": "Downclimb and rappel the South Arete's own three bolted stations",
+   "evidence": "A route description gives three rappels from chained stations, all under 30 m; the Direct East Buttress page describes the same descent as downclimbing the South Arete then three single-rope rappels from bolted anchors/chains; the 2022 replacement line is three bolt-and-chain stations beside the gully. The notch/chockstone line belongs to North Early Winters Spire. The hidden generic `descent` is also replaced.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "expect": "Rappel to the NEWS-SEWS notch, scramble the gully, rappel a chockstone.",
+     "value": "Downclimb the arete, then 3 rappels from bolted stations to the base.",
+     "id": "wa_south_arete",
+     "fact": "Descent route"
+    },
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+     "value": "Downclimb and rappel the South Arete: three bolted rappel stations on a single 60m rope, with easy downclimbing between them.",
+     "id": "wa_south_arete",
+     "fact": "Descent route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page lists 3 pitches; a route description and other accounts describe two roped pitches (the crux crack and the chockstone chimney) plus scrambling. Sources disagree, so pitches was not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106378815/south-arete",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://spokalpine.com/2015/07/03/south-early-winters-spire-southeast-arete-ii-5-4/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Approach gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 1,000 ft on the trail plus roughly another 1,000 ft on the climbers' path, ~2,000 ft car to base",
+   "evidence": "The approach's own total (~2,000 ft from the car), approach_variants gainFt (2,000), partner fitnessSpec and approachTime (2,000 ft) all agree; a route description gives about 2,600 ft car to summit, which includes the climb. The '2,000 ft from where you leave the maintained trail' clause is the outlier.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Expect roughly 2,000 ft of gain from where you leave the maintained trail",
+     "replace": "Expect roughly another 1,000 ft of gain from where you leave the maintained trail",
+     "id": "wa_south_arete",
+     "fact": "Approach gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Rope length",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope",
+   "evidence": "The rappels are up to ~30 m each (a route description says all are under 30 m) and the 2022 stations were set for a single 60 m rope, so a 30 m rope cannot make them.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      2
+     ],
+     "find": "(30-60m)",
+     "replace": "(60m)",
+     "id": "wa_south_arete",
+     "fact": "Rope length"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "Single 30-60m rope",
+     "value": "Single 60m rope",
+     "id": "wa_south_arete",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A route description gives 3 mi total with ~2,600 ft; the row gives 2.5 mi one-way (dist_km, approach_variants, partner) and a 4.1 mi itinerary day. Sources do not agree closely enough to settle either figure.",
+   "sources": [
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (6) equals totalHrs (6), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6,
+     "value": null,
+     "id": "wa_south_arete",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "SR-20 closing month",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+    "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "(typically mid-November)",
+     "replace": "(typically between mid-November and early December)",
+     "id": "wa_south_arete",
+     "fact": "SR-20 closing month"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_south_arete",
+     "fact": "SR-20 closing month"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_arete",
+   "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+   "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_south_arete",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 5400,
+     "id": "wa_south_arete",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(~5,200 ft) on SR-20 about 1.5 miles west",
+     "replace": "(~5,400 ft) on SR-20 about 1 mile west",
+     "id": "wa_south_arete",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(elev. ~5,200 ft)",
+     "replace": "(elev. ~5,400 ft)",
+     "id": "wa_south_arete",
+     "fact": "Blue Lake Trailhead distance from Washington Pass and elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Starts at the SR-20 hairpin pullout via Spire Gully",
+   "evidence": "The route page approaches from the hairpin up Spire Gully; a trip report parked at the hairpin; the area page says east-side routes are best reached from the hairpin.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Leave Blue Lake trailhead",
+     "replace": "Leave the SR-20 hairpin pullout",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "return to the Blue Lake trailhead",
+     "replace": "return to the car",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "from the Blue Lake trailhead",
+     "replace": "from the SR-20 hairpin pullout",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Blue Lake approach, similar to the other South Early Winter Spire routes",
+     "replace": "Spire Gully approach from the SR-20 hairpin",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Aided grade",
+   "verdict": "fixed",
+   "correct_value": "5.11 free, or 5.9 A0",
+   "evidence": "One route page grades it III+ 5.9 A0 or 5.11 and gives pitch 4 as 5.8 A0 or 5.10+; a 2006 trip report climbed it 'at about 5.9 A0'. The itinerary's '5.10a with a point of aid' is the outlier; pitch_detail's 5.11a/A0 and 5.10+/A0 give the free grade with the A0 alternative and were left.",
+   "sources": [
+    "https://www.summitpost.org/direct-east-buttress/236786",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/deb-on-sews/",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "(5.9-5.11, or 5.10a with a point of aid)",
+     "replace": "(5.11 free, or 5.9 A0)",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Aided grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "(5.9-5.11, or 5.10a with a point of aid)",
+     "replace": "(5.11 free, or 5.9 A0)",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Aided grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Bolt-ladder pitches",
+   "verdict": "fixed",
+   "correct_value": "Bolt ladders on pitches 4 and 6",
+   "evidence": "The route page puts a ~14-bolt ladder on P4 and a second ladder on P6; another route page describes P4 as the bolt-ladder pitch. The beta's 'pitches 5-6' is corrected. pitch_detail[3].bolts (2) was left: sources count the ladder differently (~14 vs 'a couple more bolts').",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.summitpost.org/direct-east-buttress/236786"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Bolt ladders on pitches 5-6",
+     "replace": "Bolt ladders on pitches 4 and 6",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Bolt-ladder pitches"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Largest cam",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page calls for a standard alpine rack to 4 in; no source was found for the #4 cam at the P3 crux or for a #3.5 limit. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Descent anchor",
+   "verdict": "fixed",
+   "correct_value": "Downclimb the South Arete to the first bolted station, then 3 rappels",
+   "evidence": "The route page and the South Arete descriptions give three single-rope rappels from bolted anchors/chains after downclimbing; the 2022 replacement top anchor sits just above the old tree, which is superseded (rappel_detail, rappel_count_note).",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+    "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "downclimbing the summit pitch and one more pitch to a tree rappel anchor, then 3 short station-to-station rappels",
+     "replace": "downclimbing the South Arete to the first bolted station, then 3 short station-to-station rappels",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Descent anchor"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "downclimbing the summit pitch and one more pitch to a tree rappel anchor",
+     "replace": "downclimbing the South Arete to the first bolted station",
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Descent anchor"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Summit time vs car-to-car total",
+   "verdict": "fixed",
+   "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+   "evidence": "timing.summitTimeHrs (10.5) equals totalHrs (10.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": null,
+     "id": "wa_south_early_winter_spire_direct_east_buttress",
+     "fact": "Summit time vs car-to-car total"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a one-way approach distance from the hairpin; the itinerary's 5.2 mi day includes the descent loop back past Blue Lake and the highway. Neither figure could be settled on two sources.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Commitment grade",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "III+ in the grade string is Grade III with a plus, and commitment III matches it; alpine_grade 'D' is a French-scale difficulty grade, not a commitment numeral.",
+   "sources": [
+    "https://www.summitpost.org/direct-east-buttress/236786",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": []
+  }
+ ]
+}

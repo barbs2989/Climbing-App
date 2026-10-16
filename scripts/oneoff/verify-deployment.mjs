@@ -8,9 +8,15 @@
 
 import { createClient } from '@supabase/supabase-js';
 import ws from 'ws';
+/* HAND-ROLLED ENV IS THE ONE THING CLAUDE.md FORBIDS HERE, and this died on it: with the
+   credentials in gitignored dotfiles rather than the shell, `process.env.VITE_SUPABASE_URL` was
+   undefined and `createClient` threw before the first query. Nothing runs scripts/oneoff/, so it
+   had never run at all. `supabase-env.mjs` loads BOTH dotfiles and falls back to process.env, so
+   it is strictly more permissive than what it replaces. */
+import { SUPABASE_URL, anonKey } from '../lib/supabase-env.mjs';
 
-const url = process.env.VITE_SUPABASE_URL;
-const key = process.env.VITE_SUPABASE_ANON_KEY;
+const url = SUPABASE_URL;
+const key = anonKey();
 const supabase = createClient(url, key, { realtime: { transport: ws } });
 
 console.log('='.repeat(80));

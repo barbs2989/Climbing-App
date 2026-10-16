@@ -1,0 +1,31 @@
+{
+ "id": "wa_north_ridge_west_side",
+ "area_id": "wa_molar_tooth",
+ "stations": 3,
+ "allowRange": true,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "natural anchor at the summit",
+    "station": "The summit.",
+    "notes": "Rappel 1 of 3 down the north ridge."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "small tree near the notch",
+    "station": "A small tree near the notch.",
+    "notes": "Rappel 2 of 3."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "large block",
+    "station": "A large block lower on the ridge.",
+    "notes": "Rappel 3 of 3, then a short downclimb to a flat shoulder."
+   }
+  ]
+ }
+}

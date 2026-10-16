@@ -1,0 +1,89 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_ellinor_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_mount_ellinor_standard",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Summit distance"
+  },
+  {
+   "id": "wa_mount_ellinor_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Permits/fees that apply"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_ellinor_standard",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate but short — about 3,200 ft of gain over ~1.6 mi one way (steep, sustained grade); most parties complete the round trip in 3-5 hours, so this suits partners who want a hard half-day rather than an all-day fitness test.",
+      "packWeight": "Light daypack (roughly 15-20 lb) — water, layers, and in spring an ice axe plus optionally microspikes/traction; no overnight or technical gear needed."
+     },
+     "approachTime": "Short — trailhead is reached by car (NFR 24) and the climb itself is only ~1.6 mi one way to the summit, so total car-to-car time is typically a half day.",
+     "requiredSkills": [
+      "Ice axe self-arrest and glissade control for the Apr-Jun snow-gully route",
+      "Basic Class 2-3 scrambling movement on rock/talus",
+      "Route-finding when the trail is snow-covered in shoulder season",
+      "Comfort sharing a popular trail/chute with many other parties (kicked-loose rock awareness)"
+     ],
+     "experienceLevel": "Beginner-friendly for the dry-season (Jul-Oct) Class 2 hike; intermediate scrambler for the Apr-Jun snow-climb variation, since a partner needs to be comfortable on steep, firm snow with real runout consequences and confident self-arresting rather than learning it here."
+    },
+    "waypoints": [
+     {
+      "lat": 47.5103014,
+      "lng": -123.2477182,
+      "elev": 3500,
+      "name": "Mount Ellinor Upper Trailhead (NFR 24)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 3500
+     },
+     {
+      "lat": 47.521635,
+      "lng": -123.260675,
+      "elev": 5944,
+      "name": "Mount Ellinor summit",
+      "type": "Summit",
+      "distMi": 1.21,
+      "elevFt": 5944,
+      "distFrom": "track"
+     }
+    ],
+    "access": {
+     "fees": "$5/vehicle day-use fee or $30 annual Northwest Forest Pass required to park at the upper trailhead — pay via the on-site Scan & Pay/fee machine or display a valid Interagency/Digital Pass (cash not accepted on site). The lower trailhead is fee-free.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "This is a car-to-car day scramble with no camping — no NPS wilderness-permit or bear-canister rules apply here. Standard Olympic National Forest day-use etiquette (Leave No Trace, stay on the boot path) applies.",
+     "permit": "Northwest Forest Pass (or equivalent Interagency/America the Beautiful pass) required only for upper-trailhead parking; no wilderness permit needed for day hiking.",
+     "closures": "FS Road 2419/2419-014 is gated and snow-covered in winter and early spring; USFS lists the upper trailhead as open 'early summer through fall.' Check the Olympic National Forest alerts page for current road washouts or closures before driving up.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest, Hood Canal Ranger District (Mount Skokomish Wilderness); district office relocated to Quilcene (295142 US-101 S, Quilcene, WA 98376), (360) 765-2200, after the former Hoodsport office closed in 2005.",
+     "land_manager": "U.S. Forest Service — Olympic National Forest, Hood Canal Ranger District (Mount Skokomish Wilderness)",
+     "parking_pass": "$5/vehicle day-use fee or $30 annual Northwest Forest Pass required to park at the upper trailhead — Interagency/Digital Pass also accepted (cash not accepted on site); the lower trailhead is fee-free.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the national forest side",
+      "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit."
+     }
+    }
+   }
+  }
+ ]
+}

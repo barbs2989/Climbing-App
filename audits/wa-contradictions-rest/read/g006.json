@@ -1,0 +1,1984 @@
+{
+ "batches": [
+  "b021.json",
+  "b022.json",
+  "b023.json",
+  "b024.json"
+ ],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "name": "Southwest Ridge / Standard Route",
+   "area": "Corteo Peak",
+   "contradictions": [
+    {
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "traverse climber's-left (south) below Horsefly Pass, holding around 6,400 ft ... to gain Corteo's southeast ridge at about 7,000 ft ... toward a notch at roughly 7,900-7,920 ft just east of the summit block"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "Southeast ridge to the notch"
+      },
+      {
+       "field": "beta",
+       "says": "the route crosses the southeast ridge near 6,900 ft, traverses the south slopes, and gains the southwest ridge around 7,400 ft"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "~7,500 ft notch atop the moraine"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "cross the Lewis Glacier while it's still firm, gain the ridge notch at about 7,500 ft, down-climb into the West Face cirque"
+      },
+      {
+       "field": "itinerary.days[1].objective",
+       "says": "Climb the Southeast Face/Southwest Ridge to the summit"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The ascent line on the southeast face itself is not glaciated, but the standard descent via the Southwest Ridge passes the Lewis Glacier remnant"
+      }
+     ],
+     "why": "Three incompatible ascent lines are described for one route: a southeast-ridge/Horsefly Pass traverse to a 7,900 ft notch east of the summit (approach, climbing_route, approach_variants), a south-slope traverse to the SW ridge at 7,400 ft (beta), and a Lewis Glacier ascent to a 7,500 ft notch then a cirque downclimb (waypoints, itinerary, timing, hazards).",
+     "internal_resolution": "Route name, waypoints, itinerary, timing, hazards, gear and descent all describe the Lewis Glacier / 7,500 ft notch / west cirque / Southwest Ridge line; the approach, climbing_route and approach_variants text describe a different (southeast) line.",
+     "needs_research": true
+    },
+    {
+     "fact": "Descent rappel step location and nature",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "rappel the steepest snow/rock step near the ridge notch"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "steep snow/rock step (up to ~70 degrees) below the ~7,500 ft ridge notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "to a large notch roughly a third of the way down (approximately 7,600-7,700 ft), reached through an easy connecting gully. That gully has one distinctly steeper step ... downclimb it as class 4 on solid holds"
+      }
+     ],
+     "why": "One field puts the optional rappel on a ~70-degree snow/rock step below the 7,500 ft notch; descent_text puts it on a class-4 rock step in a gully to a 7,600-7,700 ft notch high on the ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "II"
+      }
+     ],
+     "why": "Two grade chips give different commitment grades for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "3245"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~11 miles and 5,100 ft gain/loss round trip"
+      },
+      {
+       "field": "itinerary.days[0].gainFt + days[1].gainFt",
+       "says": "1550 + 3550 = 5100"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 4,000+ ft of gain"
+      },
+      {
+       "field": "descent_text",
+       "says": "about 3,700 ft of net loss back to the car"
+      }
+     ],
+     "why": "The header gain (3,245 ft, which is only trailhead-to-summit net) differs from the itinerary total by ~57% and from the partner spec and descent prose.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip duration / overnight vs day",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "14.5"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "2 days (approach day + 11 hr summit day)"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "full 10-12 hour car-to-car day"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "light day-climb pack, ~15-25 lbs (no glacier or overnight gear required)"
+      }
+     ],
+     "why": "Partner requirements frame a single 10-12 hr day with no glacier or overnight gear, while the itinerary/timing is a two-day overnight trip of 14.5 hrs moving time and gear/hazards require crampons and axe for the Lewis Glacier.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier / avalanche terrain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "crevasses on the Lewis Glacier, especially early season"
+      },
+      {
+       "field": "descent_text",
+       "says": "the Horsefly Pass basin can hold avalanche-prone snow into early summer"
+      }
+     ],
+     "why": "The avalanche panel calls the route non-glaciated while hazards and gear require a Lewis Glacier crossing with crevasse risk.",
+     "internal_resolution": "Gear, hazards, waypoints and itinerary all include the Lewis Glacier crossing; the 'non-glaciated' label is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Oct"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.reason",
+       "says": "Outside the documented Jul-Sep season"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "this Jul-Sep climbing window"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best climbed roughly June-August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      }
+     ],
+     "why": "Season says Jul-Oct while other fields call the season Jul-Sep and rate October risky; the itinerary calls June-August best while seasonal guidance rates June risky.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager / park boundary / overnight permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest"
+      },
+      {
+       "field": "access.rules",
+       "says": "most of the route (Lewis Glacier basin, ridge, and summit) lies within North Cascades National Park/Stephen Mather Wilderness, where overnight camping requires a backcountry permit"
+      },
+      {
+       "field": "access.landManager",
+       "says": "North Cascades National Park Complex/Stephen Mather Wilderness (upper peak and glacier basin)"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required at Wing or Lewis Lake"
+      },
+      {
+       "field": "overview",
+       "says": "on the eastern boundary of North Cascades National Park"
+      }
+     ],
+     "why": "One access field says the corridor is entirely national forest while two others place the glacier basin, ridge and summit inside the national park.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead identity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Rainy Pass PCT North Trailhead"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Rainy Pass / Lake Ann–Maple Pass Trailhead (Trail #740)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "South side of SR 20 at Rainy Pass"
+      }
+     ],
+     "why": "The trailhead card names the PCT North trailhead, while the waypoint and approach use the Lake Ann/Maple Pass trailhead on the south side of the highway.",
+     "internal_resolution": "Waypoint, approach and bivy all use the Maple Pass loop lot; the PCT North label is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Heather Pass / Lake Ann junction",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "At roughly 1.5 miles, stay right at the Lake Ann junction ... Heather Pass (~6,080 ft, about 2 miles in)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.25"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3.25"
+      },
+      {
+       "field": "descent_text",
+       "says": "From Heather Pass it's about 2 miles of maintained trail back down"
+      }
+     ],
+     "why": "Heather Pass is given as about 2 miles in by prose but 3.25 mi by the waypoint list.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Required climbing grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "unroped Class 4 / low-5th-class scrambling"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "short 5.2 moves on loose rock"
+      }
+     ],
+     "why": "The partner requirements call for low-5th/5.2 moves on a route graded Class 3-4 everywhere else.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass locations",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "to park at the Rainy Pass/Lake Ann Trailhead"
+      }
+     ],
+     "why": "The parking pass line names trailheads that are not the one this route uses.",
+     "internal_resolution": "waypoints/approach/passRequired all use Rainy Pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR 20 winter closure dates",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "typically mid-November through late April/early May"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "roughly early December–mid/late April"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "usually in late November or early December, and reopens ... most often between mid April and early May"
+      }
+     ],
+     "why": "Three different typical closure windows are given for the same highway.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_wright_pond",
+   "name": "Wright-Pond",
+   "area": "Cutthroat Creek Wall or Little Liberty Bell",
+   "contradictions": [
+    {
+     "fact": "First ascent date",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Mike Pond and Chris Wright, summer 2009"
+      },
+      {
+       "field": "beta",
+       "says": "newer route, FA October 4, 2010"
+      }
+     ],
+     "why": "Two different FA dates for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cam rack",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "cams to #3 Camalot (doubles)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Doubles to a #3 Camalot"
+      },
+      {
+       "field": "beta",
+       "says": "doubles from tips to #2 plus single #3 and #4 cams"
+      }
+     ],
+     "why": "Beta says doubles only to #2 plus a single #4, while gear/rack say doubles to #3 and no #4.",
+     "internal_resolution": "gear, detailed_rack and pro_needs agree on doubles to #3; beta is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Protection rating",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[0]",
+       "says": "Runout sections rated PG13"
+      },
+      {
+       "field": "obj_haz[0]",
+       "says": "runout (R-rated) climbing"
+      }
+     ],
+     "why": "PG13 vs R rating for the same runout sections.",
+     "internal_resolution": "hazards and watch_out both say PG13.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route length vs pitch lengths",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "pitch_detail[*].notes",
+       "says": "55m + 50m + 50m + 45m = 200 m"
+      }
+     ],
+     "why": "Pitch lengths sum to 200 m, not 244 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wall height / elevations",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "6263 (formation high point)"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "5800 (base terrace)"
+      },
+      {
+       "field": "length_m",
+       "says": "244 (~800 ft)"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1312"
+      }
+     ],
+     "why": "A 5,800 ft base plus 800 ft of climbing tops out near 6,600 ft, above the stated 6,263 ft formation high point.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Best climbed late June through September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Prime season, late June through September"
+      }
+     ],
+     "why": "Best window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.notes",
+       "says": "Northwest Forest Pass or America the Beautiful Pass required"
+      },
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "One field says no pass is required while others require a Northwest Forest Pass; land manager is both N/A and OWNF.",
+     "internal_resolution": "Most fields require the NW Forest Pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR 20 reopening",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Highway 20 closed in winter, typically reopens by early June"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically closed by snow from mid-November into spring ... historically mid-April to mid-June"
+      }
+     ],
+     "why": "Three different typical closure/reopening windows.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_narcos",
+   "name": "Narcos",
+   "area": "Cutthroat Creek Wall or Little Liberty Bell",
+   "contradictions": [
+    {
+     "fact": "Which Wright-Pond anchors Narcos shares for bail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "The upper pitches share bolted belay anchors with Wright-Pond (its P1/P2 stations)"
+      },
+      {
+       "field": "overview",
+       "says": "joining that route's final two pitches to reach the top"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "Finishes via Wright-Pond's final pitch"
+      }
+     ],
+     "why": "Narcos joins Wright-Pond's upper pitches, but the bail says its upper pitches share Wright-Pond's P1/P2 stations, which are that route's lowest anchors.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2700"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The lot sits at about 4,500 ft"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6263"
+      }
+     ],
+     "why": "Trailhead 4,500 ft to the 6,263 ft formation top is ~1,760 ft, far below 2,700 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 1.5-2 miles, 45 min-2 hrs total"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.2"
+      }
+     ],
+     "why": "The approach prose gives 1.5-2 miles while the waypoint puts the wall at 1.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "likely best from late June through September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Late June through September"
+      }
+     ],
+     "why": "Best window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at ... Cutthroat trailheads"
+      }
+     ],
+     "why": "One field says no pass while another requires one.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "name": "The Perfect Crime (with variations...)",
+   "area": "Cutthroat Wall",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "overview",
+       "says": "A 5-pitch, 800-ft moderate trad line"
+      },
+      {
+       "field": "pitch_detail[*].pitch",
+       "says": "P1, P2, P2.5, P3, P4, P5"
+      }
+     ],
+     "why": "The pitch column says 6, the overview says 5 and the breakdown labels 5 pitches plus a 'P2.5'.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High point equals wall base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "6120"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Cutthroat Wall Base"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "length_m",
+       "says": "244"
+      }
+     ],
+     "why": "The high point shown in TECHNICAL STATS is the elevation of the wall's base, so it ignores the 700-800 ft of climbing above it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Base elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "5800 (Cutthroat Wall base terrace)"
+      }
+     ],
+     "why": "The same wall base is given as 6,120 ft and 5,800 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead road surface",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required."
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "On FR-400, 1 mi off SR-20"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "Large gravel lot"
+      }
+     ],
+     "why": "The road block says highway parking with no unpaved driving, while the waypoint and bivy put the lot a mile up a forest road in a gravel lot.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "June-September is prime season"
+      }
+     ],
+     "why": "Best/prime window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_easy_getaway",
+   "name": "Easy Getaway",
+   "area": "Cutthroat Wall",
+   "contradictions": [
+    {
+     "fact": "Descent rope / rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "Two 60m ropes (for rappelling)"
+      },
+      {
+       "field": "rappels",
+       "says": "~60m rappel angling rightward ... A single 60m rope often does not reach the ground on the final section"
+      },
+      {
+       "field": "descent",
+       "says": "single-rope rappel from the notch to a ramp"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel one rope-length over a chockstone tunnel"
+      }
+     ],
+     "why": "The rappels field describes a ~60 m rappel needing two ropes, while descent/descent_text describe a single-rope rappel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent direction after the rappel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "contour climbers' left around the head of a gully and circle back clockwise to the base"
+      },
+      {
+       "field": "descent",
+       "says": "an ascending gully/ledge system on skier's left"
+      }
+     ],
+     "why": "Climber's left and skier's left are opposite sides.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High point equals wall base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "6120"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Cutthroat Wall Base"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "length_m",
+       "says": "244"
+      }
+     ],
+     "why": "The high point shown in TECHNICAL STATS is the elevation of the wall's base, so it ignores the 700-800 ft of climbing above it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Base elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "5800 (Cutthroat Wall base terrace)"
+      }
+     ],
+     "why": "The same wall base is given as 6,120 ft and 5,800 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead road surface",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required."
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "On FR-400, 1 mi off SR-20"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "Large gravel lot"
+      }
+     ],
+     "why": "The road block says highway parking with no unpaved driving, while the waypoint and bivy put the lot a mile up a forest road in a gravel lot.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "June-September is prime season"
+      }
+     ],
+     "why": "Best/prime window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_one_piece_at_a_time",
+   "name": "One Piece at a Time",
+   "area": "Cutthroat Wall",
+   "contradictions": [
+    {
+     "fact": "High point equals wall base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "6120"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Cutthroat Wall Base"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "length_m",
+       "says": "213"
+      }
+     ],
+     "why": "The high point shown in TECHNICAL STATS is the elevation of the wall's base, so it ignores the 700-800 ft of climbing above it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Base elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "5800 (Cutthroat Wall base terrace)"
+      }
+     ],
+     "why": "The same wall base is given as 6,120 ft and 5,800 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead road surface",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required."
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "On FR-400, 1 mi off SR-20"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "Large gravel lot"
+      }
+     ],
+     "why": "The road block says highway parking with no unpaved driving, while the waypoint and bivy put the lot a mile up a forest road in a gravel lot.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "June-September is prime season"
+      }
+     ],
+     "why": "Best/prime window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass (at some access points)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at ... Cutthroat trailheads"
+      }
+     ],
+     "why": "The two fields disagree on whether a pass is required at this trailhead.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ne_chimney",
+   "name": "NE Chimney",
+   "area": "Molar Tooth",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ne_arete",
+   "name": "NE Arete",
+   "area": "Molar Tooth",
+   "contradictions": []
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "name": "North Ridge - West Side",
+   "area": "Molar Tooth",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.4"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.4"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.7-5.8"
+      },
+      {
+       "field": "beta",
+       "says": "multiple short 5th class pitches (5.4-5.8)"
+      },
+      {
+       "field": "access._raw.special_requirements",
+       "says": "Class 4 scrambling route"
+      }
+     ],
+     "why": "The grade pill and chips say 5.4, but the breakdown and beta put the upper pitches at 5.7-5.8.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "7547"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "7077 (Molar Tooth, type Summit)"
+      }
+     ],
+     "why": "The summit waypoint is 470 ft lower than the high point.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead used",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Rainy Pass PCT Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Rainy Pass PCT North Trailhead"
+      },
+      {
+       "field": "road.name",
+       "says": "Cutthroat Creek Trailhead, Highway 20, Washington Pass"
+      },
+      {
+       "field": "road.status",
+       "says": "Molar Tooth ... is reached off-trail from this trailhead"
+      }
+     ],
+     "why": "GETTING THERE describes only the Cutthroat Creek trailhead, while the trailhead card and waypoints use the Rainy Pass PCT trailhead.",
+     "internal_resolution": "The approach offers both, but the waypoints/trailhead card and road block each name only one.",
+     "needs_research": false
+    },
+    {
+     "fact": "Contaminated camp text naming a different approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "It does not serve Cutthroat Peak's south-side routes or the usual North Ridge approach: those start from a different trailhead, a long pullout on SR 20 about 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "approach",
+       "says": "From the Cutthroat Lake trailhead ... or (2) From Rainy Pass North trailhead"
+      }
+     ],
+     "why": "On this Molar Tooth 'North Ridge' page the camp note tells a climber the North Ridge starts from the State Creek pullout, which neither of this route's approaches uses; the text is about Cutthroat Peak's North Ridge.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Protection quality",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "'if you were to lead this you may not find much pro.'"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Most parties find good solid placements throughout the climb."
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Vertical granite jointing provides excellent protection throughout technical pitches."
+      }
+     ],
+     "why": "One field warns there is little protection while two others say protection is excellent throughout.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Free self-issue day-use wilderness permit (May 15 - Oct 31)"
+      },
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required"
+      },
+      {
+       "field": "access.rules",
+       "says": "No climbing or wilderness permit required for day climbing."
+      }
+     ],
+     "why": "The permit fields disagree on whether a wilderness permit is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length (days / hours)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: ... Hike to approach base ... camp if needed. Day 2: Climb ... (6-8 hours total from base"
+      }
+     ],
+     "why": "Timing gives a 9-hour single day while the itinerary lays out a two-day plan.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Seasonal access window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "Access typically May 15 - Oct 31"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically closed by snow from mid-November into spring"
+      }
+     ],
+     "why": "Three different access windows are given.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September offers optimal climbing window"
+      }
+     ],
+     "why": "Best window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_cauthorn_wilson",
+   "name": "Cauthorn-Wilson",
+   "area": "Cutthroat Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "name": "West Ridge",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Descent rappel count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "About 5-6 rappels from bolted anchors if you descend the ridge line"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "About 4 rappels off the west side"
+      },
+      {
+       "field": "descent_text",
+       "says": "reverse the ridge with short downclimbs and occasional rappels"
+      },
+      {
+       "field": "bail",
+       "says": "Mostly scrambling terrain allows easy retreat"
+      }
+     ],
+     "why": "The rappel count is 5-6 in one field and about 4 in another, while descent_text/bail describe mostly downclimbing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead named",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Quick alpine climb from Rainy Pass."
+      },
+      {
+       "field": "access.notes",
+       "says": "Small unpaved parking lot at Rainy Pass trailhead."
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR 20 / State Creek Pullout"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "Long pullout on the north side of SR 20 about 1.5 miles west of Washington Pass."
+      }
+     ],
+     "why": "Beta and access name Rainy Pass while every other field uses the State Creek pullout west of Washington Pass.",
+     "internal_resolution": "waypoints, approach, road and approach_logistics agree on the State Creek pullout.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which southwest gully to take",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[3]",
+       "says": "Finish via the Second Southwest Gully or the Northwest Ledge"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Do not take the second, harder southwest gully by mistake."
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "parties have mistaken this for the steeper, harder Second Southwest Gully"
+      }
+     ],
+     "why": "A pro tip recommends the Second Southwest Gully that two other fields warn against.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "975"
+      },
+      {
+       "field": "pitches",
+       "says": "3"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "15"
+      }
+     ],
+     "why": "A 975 m (3,200 ft) climb length matches the total gain, not a 3-pitch ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car / approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 2-3 hours ... an 8-hour total route day"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "10 to 13 hours"
+      }
+     ],
+     "why": "The partner requirements give an 8-hour day with a 2-3 hr approach vs a 10-13 hr day with a 1.5 hr approach elsewhere.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pullout elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "5050"
+      },
+      {
+       "field": "bivy[2].elev",
+       "says": "5400 (Highway shoulder pullout near Blue Lake trailhead)"
+      }
+     ],
+     "why": "The same pullout is given as 5,050 ft and 5,400 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September."
+      },
+      {
+       "field": "access.notes",
+       "says": "Seasonal: June-October."
+      }
+     ],
+     "why": "Best window and access season extend outside the stated Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "name": "Complete South Buttress",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "22"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "Up to ~16 pitches of wandering moderate rock to 5.8"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "published topos show up to 22 pitches"
+      }
+     ],
+     "why": "The schedule says ~16 pitches while the pitch column and note say 22.",
+     "internal_resolution": "pitches, partner_requirements and itinerary note all say 22.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR 20 closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "Closed roughly mid-November to mid/late April."
+      },
+      {
+       "field": "access.seasonal",
+       "says": "roughly early December–mid/late April"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "historical pass reopening has ranged from mid-March to mid-June"
+      }
+     ],
+     "why": "Different closure/reopening windows.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      }
+     ],
+     "why": "Best window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "name": "Cauthorn-Wilson Couloir",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Rock grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.8"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "5.4"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "short pitches of about 5.4 rock"
+      }
+     ],
+     "why": "The rock-grade column (which becomes the header grade pill ahead of WI4) says 5.8, while the only rock on the route is optional ~5.4.",
+     "internal_resolution": "The breakdown and the sister ice record's beta both say 5.4.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead and access season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October."
+      },
+      {
+       "field": "season",
+       "says": "Apr-May"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)"
+      }
+     ],
+     "why": "Access names Rainy Pass and a June-October season for an April-May route that starts from the State Creek pullout.",
+     "internal_resolution": "Every other field uses the pullout and an Apr-May window.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "name": "South Buttress",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Beta describes a different route (grade, length, trailhead)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II, 5.7 climbing. Short approach from highway. ... Quick alpine climb from Rainy Pass."
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "grade",
+       "says": "5.8"
+      },
+      {
+       "field": "overview",
+       "says": "the classic long moderate alpine route ... a wandering 12-pitch line"
+      },
+      {
+       "field": "approach",
+       "says": "From the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass"
+      }
+     ],
+     "why": "The beta text (copied from the West Ridge) gives Grade II 5.7 from Rainy Pass for a Grade III 5.8, 12-pitch route from the State Creek pullout.",
+     "internal_resolution": "All other fields agree on III, 5.8, State Creek pullout.",
+     "needs_research": false
+    },
+    {
+     "fact": "Standard descent / rappel count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "roughly 10-12 rappels down the buttress, generally following the line of ascent"
+      },
+      {
+       "field": "descent_text",
+       "says": "Most parties choose the West Ridge descent"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "4 rappels (West Ridge)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "Reversing the South Buttress directly instead takes 12 or more"
+      }
+     ],
+     "why": "The rappels field presents reversing the buttress (10-12 raps) as the descent, while descent_text and rappel_detail make the 4-rappel West Ridge the standard; 10-12 also conflicts with '12 or more'.",
+     "internal_resolution": "descent_text, rappel_detail and rappel_count_note agree on the 4-rap West Ridge as standard.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain / loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2500"
+      },
+      {
+       "field": "loss_ft",
+       "says": "3143"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2965"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "2,965 ft round trip"
+      }
+     ],
+     "why": "Gain and loss columns differ from each other and from the itinerary (pullout 5,100 ft to 8,065 ft = 2,965 ft).",
+     "internal_resolution": "The itinerary figure matches the waypoint elevations.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time in schedule",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1]",
+       "says": "+2 hr Base of route (from 5:00 AM)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].time",
+       "says": "+2-3 hr (Climb ~12 pitches)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "~1-2 PM (Summit)"
+      }
+     ],
+     "why": "5:00 + 2 hr + 2-3 hr puts the summit at 9-10 AM, not 1-2 PM, and 2-3 hr is short for 12 pitches.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / access season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October."
+      },
+      {
+       "field": "road.driveNote",
+       "says": "Long pullout on the north side of SR 20 about 1.5 miles west of Washington Pass."
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.reason",
+       "says": "Beyond the season window"
+      }
+     ],
+     "why": "Access names Rainy Pass and an October season, which conflicts with the pullout and the October 'beyond the season' rating.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3.8"
+      }
+     ],
+     "why": "dist_km of 2 km (1.2 mi) disagrees with the summit waypoint at 2 mi and the 3.8 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time / total day",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 2-3 hours ... a 12-hour total route day"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      }
+     ],
+     "why": "Partner requirements give a longer approach and total day than timing.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "name": "The Swarm",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Headwall protection (bolted pitches vs bolted anchors)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "four bolt-protected headwall pitches"
+      },
+      {
+       "field": "beta",
+       "says": "bolted anchors placed on lead for everything above 5.9"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "\"The Gem\" — splitter finger crack"
+      },
+      {
+       "field": "gear[0]",
+       "says": "double rack to #3"
+      }
+     ],
+     "why": "The overview calls the headwall pitches bolt-protected while the beta mentions only bolted anchors, and the breakdown describes those pitches as gear-protected cracks.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch 2 grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.6"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Fourth-class terrain to a treed ledge."
+      }
+     ],
+     "why": "A 5.6 grade on a pitch described as fourth-class.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent choice logic",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "descend via the South Buttress or West Ridge if other parties are on those routes"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Descend via West Ridge when other parties are on South Buttress"
+      }
+     ],
+     "why": "The descent suggests using a route when other parties are on it, while the pro tip says to avoid the occupied route.",
+     "internal_resolution": "pro_tips reads as intended.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "name": "Southeast Buttress",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Beta describes a different route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II, 5.7 climbing. Short approach from highway. ... Quick alpine climb from Rainy Pass."
+      },
+      {
+       "field": "grade",
+       "says": "III"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.6"
+      },
+      {
+       "field": "overview",
+       "says": "notable for its overall length and remote basin approach"
+      }
+     ],
+     "why": "The copied beta gives Grade II 5.7, a short approach and Rainy Pass for a Grade III 5.6 route with a long basin approach from the State Creek pullout.",
+     "internal_resolution": "Other fields agree on III / 5.6 / State Creek pullout.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / access season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October."
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "Access names Rainy Pass and a June-October season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2500"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4947"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "8066"
+      }
+     ],
+     "why": "The pullout-to-summit rise is ~3,120 ft, more than the 2,500 ft gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "name": "North Ridge",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "How the North Ridge Notch is gained from the standard approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "2-3 short low-5th-class pitches to the North Ridge Notch."
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "2-3 short pitches gaining the North Ridge Notch"
+      },
+      {
+       "field": "approach",
+       "says": "From the basin, a loose, runout pitch (5.7, PG13) gains the North Ridge Notch itself"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.7"
+      }
+     ],
+     "why": "The itinerary gives the northern (Porcupine Creek) approach's 2-3 low-5th pitches for the standard south approach, which every other field says is one loose runout 5.7 PG13 pitch.",
+     "internal_resolution": "approach, approach_variants, pitch_detail, hazards and partner_requirements agree on the single 5.7 PG13 pitch from the south.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent path (via notch vs from summit)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "reverse the North Ridge back to the North Ridge Notch, then descend via the standard West Ridge rappel line"
+      },
+      {
+       "field": "rappel_detail[1].station",
+       "says": "The West Ridge rappel sequence starts at an obvious two-bolt chain station just west of the summit"
+      },
+      {
+       "field": "pitch_detail[7].notes",
+       "says": "the bolted rappel anchor here marks the top of the climb and the start of the West Ridge descent"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "~5 rappels via the West Ridge side back to the notch"
+      }
+     ],
+     "why": "The descent says to reverse the ridge to the notch and then take the West Ridge rappels, but the rappel table and breakdown start those rappels at the summit, so a party cannot do both.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "II-III"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb the North Ridge (Grade II, 5.6-5.7, ~8 pitches)"
+      }
+     ],
+     "why": "The itinerary calls it Grade II against a III commitment chip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route popularity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "This is the peak's classic line."
+      },
+      {
+       "field": "overview",
+       "says": "a moderate, less-traveled alternative to the South Buttress"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "noticeably quieter than the standard South Buttress"
+      }
+     ],
+     "why": "The approach calls it the peak's classic line while overview and crowds call it a less-traveled alternative.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      }
+     ],
+     "why": "Best window starts in June, before the stated season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "SR 20 closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "Closed roughly mid-November to mid/late April."
+      },
+      {
+       "field": "access.seasonal",
+       "says": "roughly early December–mid/late April"
+      }
+     ],
+     "why": "Different closure start dates.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "name": "East Face",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.7"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.10"
+      },
+      {
+       "field": "overview",
+       "says": "a sustained line through two 5.10 pitches"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "covers the two sustained 5.10 crux pitches"
+      }
+     ],
+     "why": "The header grade pill (rock_grade) says 5.7 while three fields put two 5.10 crux pitches on the route.",
+     "internal_resolution": "overview, detailed_rack and pitch_detail agree on 5.10.",
+     "needs_research": true
+    },
+    {
+     "fact": "Beta describes a different route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II, 5.7 climbing. Short approach from highway. ... Quick alpine climb from Rainy Pass."
+      },
+      {
+       "field": "grade",
+       "says": "III"
+      },
+      {
+       "field": "approach",
+       "says": "From the long pullout ... cross State Creek ... traverse over the rib ... into the basin EAST of Cutthroat Peak"
+      }
+     ],
+     "why": "The copied beta gives Grade II 5.7 from Rainy Pass for a Grade III 5.10 face reached from the State Creek pullout.",
+     "internal_resolution": "All other fields agree on III and the pullout.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment field holds a time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "12.5 hrs"
+      },
+      {
+       "field": "grade",
+       "says": "III"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Six pitches, Grade III"
+      }
+     ],
+     "why": "The commitment chip shows a duration instead of the Grade III stated elsewhere.",
+     "internal_resolution": "grade and approach_variants say Grade III.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / access season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Small unpaved parking lot at Rainy Pass trailhead. Seasonal: June-October."
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "Access names Rainy Pass and a June-October season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

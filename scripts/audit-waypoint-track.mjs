@@ -19,6 +19,7 @@
 // Read-only, anon key, fails closed on an empty read.
 
 import { selectAll } from "./lib/supabase-env.mjs";
+import { trackIsJustTheWaypoints } from "../lib/track.js";
 
 const args = process.argv.slice(2);
 const argOf = (n, d) => {
@@ -74,10 +75,51 @@ const rows = await selectAll("routes", "id,name,area_id,discipline,waypoints,gpx
 if (!rows.length) { console.error("FAIL — read 0 routes; refusing to report clean on an empty read."); process.exit(1); }
 
 const scoped = rows.filter(r => STATE === "all" || String(r.id || "").startsWith(STATE + "_"));
-let withBoth = scoped.filter(r => {
+
+/* A PLACEHOLDER TRACK IS ONE WITH NO EXTENT, NOT ONE WITH FEW POINTS — and measuring against one
+   manufactures findings that read as waypoint defects.
+   `wa_sky_mountain_s_route` stores NINE points spanning FOUR METRES; against that dot every pin
+   is "off the track", and this audit reported one 2,237 m off. `wa_mount_terror_stoddard_buttress`
+   is 2 points spanning 55 m and reported 9,966 m. The pins are fine; there is simply no line to
+   be on, and "fix the waypoint" is the wrong instruction.
+   This is the same defect #834 fixed in the sibling `audit-waypoints.mjs`, which was never
+   applied here — the two scripts ask the same question and drifted, exactly like the four grade
+   parsers. A point-count gate cannot see it: 9 points is not a suspicious number.
+   Skipped routes are COUNTED AND REPORTED below rather than silently dropped: a guard that
+   cannot measure something must say so. */
+const MIN_TRACK_SPAN_M = 500;
+const trackSpanOf = (pts) => {
+  if (pts.length < 2) return 0;
+  let max = 0;
+  for (const p of pts) { const d = nearestOnTrack(p, [pts[0]], pts[0].lat); if (d > max) max = d; }
+  return max;
+};
+
+/* A SECOND UNMEASURABLE CLASS, and the extent gate above cannot see it: a track that IS the route's
+   own waypoint list joined by straight lines. 201 of the 580 WA routes carrying a gpx store one —
+   median FOUR points, and 162 of them span more than 2 km, so they sail through MIN_TRACK_SPAN_M
+   and through any point-count test.
+   The question this whole script asks is "is each pin on this route's own track?", and on these
+   routes the answer is YES BY CONSTRUCTION: the track is a COPY of the pins, not a second opinion.
+   Two records agreeing is one claim counted twice. So both answers are worthless here — a clean
+   result is not evidence the pins are right, and an off-track finding is not evidence they are
+   wrong.
+   Detected by `lib/track.js`, shared with the route page's caveat and with `check:track-caveat`,
+   rather than reimplemented: two copies of one predicate is the four-grade-parsers shape this repo
+   keeps paying for. Reported, never silently dropped. */
+const measurable = [], placeholder = [], derivedFromPins = [];
+for (const r of scoped) {
   const w = Array.isArray(r.waypoints) ? r.waypoints : [];
-  return norm(r.gpx).length >= 2 && w.some(x => x && x.lat != null && x.lng != null);
-});
+  const pts = norm(r.gpx);
+  if (pts.length < 2 || !w.some(x => x && x.lat != null && x.lng != null)) continue;
+  const span = trackSpanOf(pts);
+  if (pts.length < 4 || span < MIN_TRACK_SPAN_M) {
+    placeholder.push({ r, pts: pts.length, span: Math.round(span) });
+  } else if (trackIsJustTheWaypoints(r.gpx, r.waypoints)) {
+    derivedFromPins.push({ r, pts: pts.length, pins: w.filter(x => x && x.lat != null).length });
+  } else measurable.push(r);
+}
+let withBoth = measurable;
 
 if (INJECT === "shift") {
   // Move every waypoint ~1km north. Every route with a track must then report findings.
@@ -136,8 +178,25 @@ for (const r of withBoth) {
 findings.sort((a, b) => b.worst - a.worst);
 const trackBad = findings.filter(f => f.blame === "TRACK");
 
-console.log(`\nscope "${STATE}" · ${scoped.length} routes · ${withBoth.length} have BOTH a track (2+ pts) and placed waypoints`);
+console.log(`\nscope "${STATE}" · ${scoped.length} routes · ${withBoth.length} have a REAL track (4+ pts, 500 m+ of extent, not just the pins joined up) and placed waypoints`);
 console.log(`${wpChecked} waypoints measured against their own track · ${findings.length} routes disagree`);
+// Named, not silently dropped — a guard that cannot measure something has to say so, or its
+// coverage looks larger than it is.
+if (placeholder.length) {
+  console.log(`  ${placeholder.length} route(s) SKIPPED — the gpx is a placeholder, not a track, so no pin can be judged against it:`);
+  for (const p of placeholder.slice(0, 10)) {
+    console.log(`     ${p.r.id}  (${p.pts} pts spanning ${p.span} m)`);
+  }
+  if (placeholder.length > 10) console.log(`     … ${placeholder.length - 10} more`);
+}
+if (derivedFromPins.length) {
+  console.log(`  ${derivedFromPins.length} route(s) SKIPPED — the "track" IS this route's own waypoint list joined by`);
+  console.log(`     straight lines, so every pin is on it BY CONSTRUCTION and neither answer means anything:`);
+  for (const p of derivedFromPins.slice(0, 10)) {
+    console.log(`     ${p.r.id}  (${p.pts}-pt line through ${p.pins} pins)`);
+  }
+  if (derivedFromPins.length > 10) console.log(`     … ${derivedFromPins.length - 10} more`);
+}
 const partialN = findings.filter(f => f.blame === "PARTIAL").length;
 const pinN = findings.length - trackBad.length - partialN;
 console.log(`  ${trackBad.length} WRONG TRACK  — every pin misses by >2 km; the line, not the pins, is in the wrong place`);

@@ -1,0 +1,153 @@
+{
+ "file": "s081.json",
+ "results": [
+  {
+   "id": "wa_gato_negro",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "12 pitches (the 12th, a lichen-covered pitch to the top of the spire, is often skipped)",
+   "evidence": "The route database lists 12 pitches. The route write-up describes pitches 1-10, a final summit-tower headwall pitch (11), and then a last lichen-covered pitch to the top that many parties skip. An independent 2013 trip report names money pitches 8-11 and then skipped the last pitch. The FA report's and a 2010 report's '11 pitches' count the climb without that optional last pitch, so the row's 12 is right and the beta and seasonal guidance are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/113324178/gato-negro",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro",
+    "https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/",
+    "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html",
+    "https://publications.americanalpineclub.org/articles/12200319301"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "spread across 11 long pitches",
+     "replace": "spread across 12 long pitches",
+     "id": "wa_gato_negro",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "for 11 long pitches",
+     "replace": "for 12 long pitches",
+     "id": "wa_gato_negro",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "cover 11 long pitches",
+     "replace": "cover 12 long pitches",
+     "id": "wa_gato_negro",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Nearest hospital",
+   "discovered": true,
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: the fresh row now names Mid-Valley Hospital in Omak, about 70 road miles east via Winthrop, not Skagit Valley Hospital. Roughly 28 mi to Winthrop plus about 44 mi via Twisp and Okanogan puts it near 70 mi, and no hospital lies closer in the Methow Valley.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Rope system for rappels",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route write-up says the first-ascent party carried one rope and made a couple of rappels plus much downclimbing in the descent gully, and that retreat from high on the route leaves less gear with two ropes. That is one source suggesting a single rope works for the normal descent and two ropes only help a retreat; no second source states the rope system. Would settle with a second report stating the rope used for the descent gully.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro",
+    "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html",
+    "https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Which face of Silver Star",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split 2-2: the FA report and the route write-up put the climb on Silver Star's west face; the route database and a 2010 trip report call Whine Spire a sub-peak on Silver Star's east face. USGS elevations around the spire's mapped summit (48.54995,-120.59093) drop about 1,500 ft within 300 m to the WEST, while terrain 100 m east is higher (Silver Star's west summit, across the descent gully) \u2014 so the terrain favours a west-facing climb. The row's own seasonal_guidance already says 'west face' twice, against face/aspect/overview/approach_variants saying east. Not patched because the approach_variants narrative (drop off the east side of Burgundy Col) would also need rewriting and its approach line is unverified; settle with a trip report or topo describing which side of the ridge the base is reached from.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200319301",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro",
+    "https://www.mountainproject.com/route/113324178/gato-negro",
+    "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.590927&y=48.549954&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Topout elevation",
+   "verdict": "fixed",
+   "correct_value": "Topout = summit of Whine Spire, about 8,350-8,400 ft; 7,800 is wrong",
+   "evidence": "The last pitch goes to the top of Whine Spire, so the topout is the summit. A peak database lists Whine Spire at 8,400 ft (topo-derived) at 48.54995,-120.59093, and the USGS 1 m elevation service reads 8,362 ft at that point with nearby highs near 8,409 ft. Both are within ~50 ft of the row's 8,348 summit/high point and both rule out 7,800; the topout pin is set to the row's own summit figure so no new mismatch with the header is created.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=37140",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.590927&y=48.549954&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 7800,
+     "value": 8348,
+     "id": "wa_gato_negro",
+     "fact": "Topout elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Early-season advice",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: best_season now reads late June through September with mid-July through August best and late June marginal, no longer both recommending and forbidding June; season 'Jun-Sep' matches, and the approach variant's Jul-Sep is its practical window, consistent with June marked marginal.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route write-up gives a route height of 1,300 ft; a 2013 trip report calls it 1,500 ft; a 2010 report says the pitches are mostly 180-190 ft and none under 150 ft, which is far more rope length than either height (the line traverses repeatedly). The two height figures disagree and no source gives total climbing distance, so neither length_m (457 m) nor the overview's 1,500 ft can be confirmed or corrected. Would settle with a second source stating the height or climbing length.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro",
+    "https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/",
+    "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gato_negro",
+   "fact": "Number of pitches",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "12 pitches",
+   "evidence": "Same fact as 'Pitch count' above; the patches there (beta and both seasonal_guidance mentions) resolve it.",
+   "sources": [
+    "https://www.mountainproject.com/route/113324178/gato-negro",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro",
+    "https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/"
+   ],
+   "patches": []
+  }
+ ]
+}

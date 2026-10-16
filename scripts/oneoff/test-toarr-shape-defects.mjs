@@ -29,6 +29,11 @@ await build({ stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" }, bundle
 const { dbRouteToCamel } = require_(out);
 
 const H = headers(requireServiceKey());
+async function q(path) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: H });
+  if (!r.ok) { console.error(`read failed ${r.status} — nothing below was checked.`); process.exit(1); }
+  return r.json();
+}
 async function row(id) {
   const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=*&id=eq.${id}`, { headers: H });
   const [x] = await r.json();
@@ -39,8 +44,19 @@ async function row(id) {
 let fail = 0;
 const ok = (c, m) => { console.log(`  ${c ? "ok  " : "FAIL"} ${m}`); if (!c) fail++; };
 
-console.log("gear stored as an object:");
-for (const id of ["wa_mount_baker_boulder_park_cleaver", "wa_mount_shuksan_beckey_schmidtke"]) {
+/* THE ROWS ARE FOUND, NOT PINNED. This named two ids and one of them —
+   wa_mount_shuksan_beckey_schmidtke — is no longer in the catalog, so the run died on
+   `ANCHOR LOST` having proved nothing. A pinned example is a claim about one ROW and rots the day
+   that row is renamed or repaired; the durable claim is about the CLASS, so ask the catalog which
+   rows are in it. Measured today: 1 of 1,078 rows with a `gear` value stores an object. */
+const gearRows = (await q("routes?select=id,gear&gear=not.is.null&limit=2000"))
+  .filter((r) => r.gear && typeof r.gear === "object" && !Array.isArray(r.gear)).map((r) => r.id);
+if (!gearRows.length) {
+  console.log("gear stored as an object: NONE LEFT in the catalog — the defect this half proves");
+  console.log("  is unreachable on real data. That is a result, not a pass; the coercion is still");
+  console.log("  exercised by the watch_out half below.");
+} else console.log(`gear stored as an object (${gearRows.length} row(s) found):`);
+for (const id of gearRows) {
   const c = dbRouteToCamel(await row(id));
   ok(!JSON.stringify(c.gear).includes("[object Object]"), `${id} gear has no [object Object]`);
   ok(!JSON.stringify(c.rack).includes("[object Object]"), `${id} rack has no [object Object]`);

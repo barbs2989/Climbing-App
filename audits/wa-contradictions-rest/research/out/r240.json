@@ -1,0 +1,854 @@
+{
+ "file": "r240.json",
+ "results": [
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Approach and car-to-car time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A car-to-car day of about 12.5 hours from a 4:30 AM start, back at the car around 5 PM.",
+   "evidence": "Five fields on the row (timing.totalHrs 12.5, sectionBreakdown 12.5, itinerary day hours 12.5, totalNote 11-13 h, partner_requirements ~13 h) agree against the schedule's 2 PM finish, which makes a 9.5-hour day. Outside, one fast party took about 2h15 to the col and a Paisano+Burgundy linkup party took about 13 h car to car, with other reports running 14-18 h; nothing supports a 9.5-hour day. Only the schedule's end time is changed. The approach-hours spread (2.5 h in the schedule, 3-4 h in partner requirements, 4-6 h in approach_variants) is recorded separately as unresolved.",
+   "sources": [
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/",
+    "https://www.mountainproject.com/route/107231977/north-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "time"
+     ],
+     "find": "2:00 PM",
+     "replace": "5:00 PM",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Approach and car-to-car time"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Approach hours to Burgundy Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule gives 2.5 h to the col, partner_requirements 3-4 h and approach_variants[0] 4-6 h. One fast party reached the col from the car in about 2h15. Another report gives 2-4 h from the trailhead to camp (the bench, not the col). No two sources agree on a single approach time, so nothing is patched.",
+   "sources": [
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Rope recommendation",
+   "verdict": "fixed",
+   "correct_value": "Two 60 m ropes give the standard 5-rappel descent; a single 60 m (with some downclimbing) or a single 70 m also works.",
+   "evidence": "One route description says a single 60 m works with a little downclimbing and a 70 m was nice. A trip report describes two 60 m ropes and five rappel stations. The row's rope_type, rope_note, rack and descent_text already say this. The itinerary line said '70m preferred', which went against the doubles-preferred fields, and is reworded to match.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "5-rappel line (60m works, 70m preferred)",
+     "replace": "5-rappel line on two 60m ropes (a single 60m or 70m also works with some downclimbing)",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Rope recommendation"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Number of rappels",
+   "verdict": "fixed",
+   "correct_value": "5 double-rope rappels",
+   "evidence": "A trip report used five rappel stations with two 60 m ropes. The route summary says there are at least 5 rappels, and 5 with double ropes. rappels, rappel_detail, descent_text and rappel_count_note already say 5; only the beta said 5-6.",
+   "sources": [
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Descent is accomplished via 5-6 rappels",
+     "replace": "Descent is accomplished via 5 double-rope rappels",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Number of rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Pitch 5 grade",
+   "verdict": "fixed",
+   "correct_value": "5.8",
+   "evidence": "The route description calls the flared hand crack an impeccable 5.8 and the ridge above it exposed 5.7-5.8 face climbing. A second report grades the corner hand-crack pitch 5.8. The pitch's own notes say 5.7-5.8, so the '5.fun (~5.6)' grade was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "grade"
+     ],
+     "expect": "5.fun (~5.6)",
+     "value": "5.8",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Pitch 5 grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Water at the Bench",
+   "verdict": "fixed",
+   "correct_value": "Early Winters Creek is the reliable water. The Bench has seasonal water that can dry up by late summer, and there is only a trickle or snow higher up.",
+   "evidence": "One route page says water can be found at the bench and at the col until late summer. A 2025 trip report found the stream at the ~6,400 ft camp dry and trickling water only near 7,200 ft. The itinerary called the Bench the 'last reliable water', which went against the approach prose (creek plus a trickle near the col). Reworded to say the Bench water is seasonal.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "water is reliable at Early Winter Creek and the Bench but not higher, so tank up before the Col.",
+     "replace": "water is reliable at Early Winters Creek; the Bench has seasonal water that can be dry by late summer, and little is found higher, so tank up before the Col.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Water at the Bench"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Last reliable water.",
+     "replace": "Seasonal water; can be dry by late summer.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Water at the Bench"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Burgundy Spire summit elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row gives 8,400 ft (high_point_ft, the summit waypoint, the schedule) and 8,483 ft (itinerary objective). The published USGS-contour figure is about 8,400 ft (2,560 m). A lidar-style list gives 8,492 ft. The two topo sources disagree by about 90 ft, so neither figure is adopted and nothing is patched.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://listsofjohn.com/peak/212042"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Grade in the itinerary",
+   "verdict": "fixed",
+   "correct_value": "5.10c, 8 pitches; not the standard or easiest route (that is the North Face, 5.8)",
+   "evidence": "The route page grades Action Potential 5.10c, Grade III, 8 pitches. A second summary gives III 5.10a-5.10c. The standard, easiest way up Burgundy Spire is the North Face at 5.8. The itinerary text had been copied from the North Face.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394880/action-potential",
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://www.mountainproject.com/route/107231977/north-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "8 pitches, up to 5.8.",
+     "replace": "8 pitches, up to 5.10c.",
+     "id": "wa_action_potential",
+     "fact": "Grade in the itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Climb Action Potential (5.8, 8 pitches)",
+     "replace": "Climb Action Potential (5.10c, 8 pitches)",
+     "id": "wa_action_potential",
+     "fact": "Grade in the itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "12-13 hrs car-to-car for a fit party; widely regarded as the standard, easiest way up Burgundy Spire.",
+     "replace": "12-13 hrs car-to-car for a fit party.",
+     "id": "wa_action_potential",
+     "fact": "Grade in the itinerary"
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Route length vs pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page itself gives 800 ft (242 m) for the whole route, while its own pitch lengths (150/100/150/110/200/100/150 ft plus a finish) add up to about 960 ft or more. The wandering, traversing pitches may explain the gap, but no source settles it. The other summary gives 5-7 pitches and no length. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394880/action-potential",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Water at the Bench",
+   "verdict": "fixed",
+   "correct_value": "Early Winters Creek is the reliable water. The Bench has seasonal water that can dry up by late summer, and there is only a trickle higher up.",
+   "evidence": "One route page says water can be found at the bench and at the col until late summer. A 2025 trip report found the stream at the ~6,400 ft camp dry, with a trickle near 7,200 ft. So the Bench is seasonal, not 'reliable', and the prose that leaves it out altogether is incomplete. The itinerary, approach and approach hazard lines are aligned.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "water is reliable at Early Winter Creek and the Bench but not higher",
+     "replace": "water is reliable at Early Winters Creek; the Bench has seasonal water that can be dry by late summer, and little is found higher",
+     "id": "wa_action_potential",
+     "fact": "Water at the Bench"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Last reliable water.",
+     "replace": "Seasonal water; can be dry by late summer.",
+     "id": "wa_action_potential",
+     "fact": "Water at the Bench"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Water is available at Early Winters Creek and a trickle near the col",
+     "replace": "Water is reliable at Early Winters Creek, seasonal near the Bench, and only a trickle near the col",
+     "id": "wa_action_potential",
+     "fact": "Water at the Bench"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "expect": "Water only at Early Winters Creek and a trickle near the col",
+     "value": "Reliable water only at Early Winters Creek; seasonal water near the Bench and an unreliable trickle near the col",
+     "id": "wa_action_potential",
+     "fact": "Water at the Bench"
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Trailhead name",
+   "verdict": "fixed",
+   "correct_value": "SR-20 Wine Spires pullout (milepost 166)",
+   "evidence": "The area page says to park in the Highway 20 pullout below the spires and follow the trail to Burgundy Col. A guide service places this pullout at milepost 166. Silver Star Creek is a separate approach. The coordinates and all the prose already describe the milepost-166 pullout, so the trailhead card is renamed and the prose sentence pointing out the mismatch is removed.",
+   "sources": [
+    "https://www.mountainproject.com/area/107231974/burgundy-spire",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Silver Star Creek Trailhead",
+     "value": "SR-20 Wine Spires pullout (milepost 166)",
+     "id": "wa_action_potential",
+     "fact": "Trailhead name"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Roughly 3 miles and 3,500 ft one-way. Note that this route's stored trailhead record names a different trailhead than this prose does.",
+     "replace": "Roughly 3 miles and 3,500 ft one-way.",
+     "id": "wa_action_potential",
+     "fact": "Trailhead name"
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Where the rope-trap constriction is",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The descent description warns only that there are lots of places to get the rope stuck, without naming a rappel. The account of a party leading 5.8 back up to free a rope from a constriction could not be found, so nothing shows whether it happened on rappel 1 or rappel 3. The North Face row puts the constriction at its rappel-3 anchor. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Burgundy Spire summit elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit waypoint says 8,483 ft and high_point_ft says 8,492 ft. The USGS-contour figure is about 8,400 ft, and a lidar-style list gives 8,492 ft. The topo sources disagree, so nothing is patched.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://listsofjohn.com/peak/212042"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_golden_age",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep",
+   "evidence": "The first ascent was made in May-June 2016, working top-down and using spring snow in the approach gully (two accounts). The gully turns to scree by mid-summer and keeps water into late summer. The south-facing wall is sunny and suits the shoulder season. The season column held first-ascent history in place of a short window; it now holds the window, and best_season keeps the explanation.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age",
+    "https://squamishrockguides.com/mm-wall-2/",
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "established May-Jun (top-down, using spring snow); climbable through summer",
+     "value": "Jun-Sep",
+     "id": "wa_golden_age",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_age",
+   "fact": "Descent and rappel-ready belays",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row says not all belays are rappel-ready and that parties walk off or use the Tiger or Ellen Pea rap line. A guide service's route description says to rappel the route itself on a single 70 m rope (the second anchor from the top sits off to the left), and both it and the first-ascent report say all belays are bolted. Only one source describes the descent, so nothing is patched.",
+   "sources": [
+    "https://squamishrockguides.com/mm-wall-2/",
+    "http://publications.americanalpineclub.org/articles/13201214112/MM-Wall-Golden-Age"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "7 pitches",
+   "evidence": "pitches, pitch_detail, overview and the itinerary text all say 7 pitches. The route page lists 7 pitches (IV, 900 ft). One guide service says 8, probably counting the optional finish separately. The waypoint note is aligned to 7.",
+   "sources": [
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "8 pitches of 5.11c",
+     "replace": "7 pitches of 5.11c",
+     "id": "wa_ellen_pea",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "Rappel descent time",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The ~1 hour is the rappels to the base. The itinerary's 2-3+ hours covers the rappels plus the descent gully back to the car, so the two figures measure different stretches.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page and a guide service both give about 45 minutes up the gully before exiting onto the ledge, which matches timing.approachTimeHrs 0.75. The area page gives 1 hour to the lower ledge and 1h10 to the upper ledge, which matches the prose. Published estimates disagree with each other, so nothing is patched.",
+   "sources": [
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "M&M Wall pullout (milepost 166) elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,360 ft",
+   "evidence": "USGS elevation at the stored trailhead coordinate is about 4,365 ft. The same milepost-165/166 pullout (identical coordinates) sits 4,500 ft below the 8,876 ft summit of Silver Star, which puts it near 4,380 ft. Guide services place the M&M Wall parking at milepost 166, just west of the Burgundy Col pullout (~4,310 ft). The pullout is at ~4,360 ft, not 4,900. gain_ft is left alone: no outside source states this route's total gain.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.630965&y=48.549&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4900,
+     "value": 4360,
+     "id": "wa_ellen_pea",
+     "fact": "M&M Wall pullout (milepost 166) elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "'Upper ledge' waypoint typed Topout at the base",
+   "verdict": "fixed",
+   "correct_value": "Upper ledge is an approach landmark at the foot of the wall (type Junction), not the top of the climb",
+   "evidence": "The area page gives about 1h10 from the car to the upper ledge. The route page and a guide service both describe climbing the gully to a ledge system where the routes start. The upper ledge is therefore at the bottom of the long routes, not their top. The pin's name, elevation and position (identical to the Base pin) already say so. Only the type was wrong; it becomes Junction.",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave",
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Topout",
+     "value": "Junction",
+     "id": "wa_ellen_pea",
+     "fact": "'Upper ledge' waypoint typed Topout at the base"
+    }
+   ]
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "SR-20 winter closure start",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "WSDOT closed SR-20 over the pass on 4 Dec in 2025. Earlier closures came on 9 Nov (2021) and 12 Nov (2020), with reopenings in late May and early June. Coverage describes a typical November-to-spring closure. access.closures ('roughly Nov-Apr') fits this. The two fields that said the closure starts only in December are widened to the real range.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.king5.com/article/traffic/traffic-news/state-route-20-north-cascades-highway-closes-winter/281-68640425-ec47-47d8-89d1-b09320209d2a",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_ellen_pea",
+     "fact": "SR-20 winter closure start"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "typically early-mid December to mid-April/May depending on snowpack and highway repairs",
+     "replace": "typically from mid-November or early December until April or May, depending on snowpack and highway repairs",
+     "id": "wa_ellen_pea",
+     "fact": "SR-20 winter closure start"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "pitches, pitch_detail and overview say 8; the waypoint note says 7. The free ascensionist's account and a guide service describe only the freed crux pitches (a two-pitch variation off the mid-way ledge), and no reachable source gives the full pitch count. That is fewer than the 4 agreeing fields plus 1 source needed to patch.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2015/09/supercave-wall-free-route.html",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "fact": "M&M Wall pullout (milepost 166) elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,360 ft",
+   "evidence": "USGS elevation at the stored trailhead coordinate is about 4,365 ft. The same milepost-165/166 pullout (identical coordinates) sits 4,500 ft below the 8,876 ft summit of Silver Star, which puts it near 4,380 ft. Guide services place the M&M Wall parking at milepost 166, just west of the Burgundy Col pullout (~4,310 ft). The pullout is at ~4,360 ft, not 4,900. gain_ft is left alone: no outside source states this route's total gain.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.630965&y=48.549&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4900,
+     "value": 4360,
+     "id": "wa_the_l_h_route_free_variation",
+     "fact": "M&M Wall pullout (milepost 166) elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "fact": "'Upper ledge' waypoint typed Topout at the base",
+   "verdict": "fixed",
+   "correct_value": "Upper ledge is an approach landmark at the foot of the wall (type Junction), not the top of the climb",
+   "evidence": "The area page gives about 1h10 from the car to the upper ledge. The route page and a guide service both describe climbing the gully to a ledge system where the routes start. The upper ledge is therefore at the bottom of the long routes, not their top. The pin's name, elevation and position (identical to the Base pin) already say so. Only the type was wrong; it becomes Junction.",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave",
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Topout",
+     "value": "Junction",
+     "id": "wa_the_l_h_route_free_variation",
+     "fact": "'Upper ledge' waypoint typed Topout at the base"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "fact": "SR-20 winter closure start",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "WSDOT closed SR-20 over the pass on 4 Dec in 2025. Earlier closures came on 9 Nov (2021) and 12 Nov (2020), with reopenings in late May and early June. Coverage describes a typical November-to-spring closure. access.closures ('roughly Nov-Apr') fits this. The two fields that said the closure starts only in December are widened to the real range.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.king5.com/article/traffic/traffic-news/state-route-20-north-cascades-highway-closes-winter/281-68640425-ec47-47d8-89d1-b09320209d2a",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_the_l_h_route_free_variation",
+     "fact": "SR-20 winter closure start"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "typically early-mid December to mid-April/May depending on snowpack and highway repairs",
+     "replace": "typically from mid-November or early December until April or May, depending on snowpack and highway repairs",
+     "id": "wa_the_l_h_route_free_variation",
+     "fact": "SR-20 winter closure start"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "Hardest rock grade",
+   "verdict": "fixed",
+   "correct_value": "5.12b",
+   "evidence": "The first-ascent report gives IV 5.12b. A guide service and the first ascensionist's own write-up also say 5.12b. One route database says 5.12-. rock_grade already says 5.12b; grade, the pitch-7 grade and the beta are aligned (the pitch note already says '5.12- to 5.12b').",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger",
+    "https://squamishrockguides.com/mm-wall/",
+    "http://blakeclimbs.blogspot.com/2014/08/the-tiger-1000-512b.html",
+    "https://www.mountainproject.com/route/109429099/the-tiger"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.12-",
+     "value": "5.12b",
+     "id": "wa_the_tiger",
+     "fact": "Hardest rock grade"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      6,
+      "grade"
+     ],
+     "expect": "5.12-",
+     "value": "5.12b",
+     "id": "wa_the_tiger",
+     "fact": "Hardest rock grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "a bouldery 5.12- crux",
+     "replace": "a bouldery 5.12b crux",
+     "id": "wa_the_tiger",
+     "fact": "Hardest rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "Approach time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent report gives a 40-minute approach, and the route page says about one hour from car to base; both match the itinerary's 40-60 minutes. The same route page says the Tiger starts from a ledge below the highest one. The area page's 1h10 to the upper ledge matches the prose and the waypoint note. Sources disagree, and the ledge naming is unclear, so nothing is patched.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201212965/Supercave-Wall-south-face-The-Tiger",
+    "https://www.mountainproject.com/route/109429099/the-tiger",
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "M&M Wall pullout (milepost 166) elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,360 ft",
+   "evidence": "USGS elevation at the stored trailhead coordinate is about 4,365 ft. The same milepost-165/166 pullout (identical coordinates) sits 4,500 ft below the 8,876 ft summit of Silver Star, which puts it near 4,380 ft. Guide services place the M&M Wall parking at milepost 166, just west of the Burgundy Col pullout (~4,310 ft). The pullout is at ~4,360 ft, not 4,900. gain_ft is left alone: no outside source states this route's total gain.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.630965&y=48.549&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4900,
+     "value": 4360,
+     "id": "wa_the_tiger",
+     "fact": "M&M Wall pullout (milepost 166) elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "'Upper ledge' waypoint typed Topout at the base",
+   "verdict": "fixed",
+   "correct_value": "Upper ledge is an approach landmark at the foot of the wall (type Junction), not the top of the climb",
+   "evidence": "The area page gives about 1h10 from the car to the upper ledge. The route page and a guide service both describe climbing the gully to a ledge system where the routes start. The upper ledge is therefore at the bottom of the long routes, not their top. The pin's name, elevation and position (identical to the Base pin) already say so. Only the type was wrong; it becomes Junction.",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave",
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Topout",
+     "value": "Junction",
+     "id": "wa_the_tiger",
+     "fact": "'Upper ledge' waypoint typed Topout at the base"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "SR-20 winter closure start",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "WSDOT closed SR-20 over the pass on 4 Dec in 2025. Earlier closures came on 9 Nov (2021) and 12 Nov (2020), with reopenings in late May and early June. Coverage describes a typical November-to-spring closure. access.closures ('roughly Nov-Apr') fits this. The two fields that said the closure starts only in December are widened to the real range.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.king5.com/article/traffic/traffic-news/state-route-20-north-cascades-highway-closes-winter/281-68640425-ec47-47d8-89d1-b09320209d2a",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_the_tiger",
+     "fact": "SR-20 winter closure start"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "typically early-mid December to mid-April/May depending on snowpack and highway repairs",
+     "replace": "typically from mid-November or early December until April or May, depending on snowpack and highway repairs",
+     "id": "wa_the_tiger",
+     "fact": "SR-20 winter closure start"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "fact": "Start ledge / base elevation and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row places this 3-pitch route on the lower ledge, reached about 10 minutes below the upper ledge (1h vs 1h10 in the area page). Its Base pin, though, carries 5,895 ft, the area's single listed elevation. No source gives the lower ledge's elevation or this route's total gain, so neither the base elevation nor gain_ft can be corrected (gain_ft may change only to a sourced figure).",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "fact": "M&M Wall pullout (milepost 166) elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,360 ft",
+   "evidence": "USGS elevation at the stored trailhead coordinate is about 4,365 ft. The same milepost-165/166 pullout (identical coordinates) sits 4,500 ft below the 8,876 ft summit of Silver Star, which puts it near 4,380 ft. Guide services place the M&M Wall parking at milepost 166, just west of the Burgundy Col pullout (~4,310 ft). The pullout is at ~4,360 ft, not 4,900. gain_ft is left alone: no outside source states this route's total gain.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.630965&y=48.549&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4900,
+     "value": 4360,
+     "id": "wa_the_exorcism_of_mark_hanna",
+     "fact": "M&M Wall pullout (milepost 166) elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "fact": "SR-20 winter closure start",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+   "evidence": "WSDOT closed SR-20 over the pass on 4 Dec in 2025. Earlier closures came on 9 Nov (2021) and 12 Nov (2020), with reopenings in late May and early June. Coverage describes a typical November-to-spring closure. access.closures ('roughly Nov-Apr') fits this. The two fields that said the closure starts only in December are widened to the real range.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.king5.com/article/traffic/traffic-news/state-route-20-north-cascades-highway-closes-winter/281-68640425-ec47-47d8-89d1-b09320209d2a",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;",
+     "id": "wa_the_exorcism_of_mark_hanna",
+     "fact": "SR-20 winter closure start"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "typically early-mid December to mid-April/May depending on snowpack and highway repairs",
+     "replace": "typically from mid-November or early December until April or May, depending on snowpack and highway repairs",
+     "id": "wa_the_exorcism_of_mark_hanna",
+     "fact": "SR-20 winter closure start"
+    }
+   ]
+  }
+ ]
+}

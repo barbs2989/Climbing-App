@@ -1,0 +1,517 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Removed the three places where the page credited a climbing guidebook; the facts around them stay, and an unsupported 'Grade I' aside that clashed with the page's own Grade II is dropped.",
+   "evidence": "The approach, the last route-breakdown step and the descent each cited an Olympic Mountains climbing guide. The Grade I figure appears only in that citation (no outside source gives a commitment grade, and the row's own alpine_grade/commitment say II), so it goes with the citation; the Class 3 / summit-block Class 4 wording and the 2.5 h up / 1.5 h down times are kept as plain statements. Route line (cliff-base traverse to the west-ridge notch, Class 3 with summit-block moves some call Class 4) re-checked against a route page and a trip report.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stone_lake_of_angels",
+     "column": "approach",
+     "path": [],
+     "find": "rate Class 4 (rated Grade I in the Olympic Mountains climbing guide); from",
+     "replace": "rate Class 4; from"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stone_lake_of_angels",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "rate Class 4 (rated Grade I in the Olympic Mountains climbing guide); figure",
+     "replace": "rate Class 4; figure"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stone_lake_of_angels",
+     "column": "descent_text",
+     "path": [],
+     "find": "summit-to-camp per the Olympic Mountains climbing guide.",
+     "replace": "summit-to-camp."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the North Fork Quinault approach — the standard way in, and the one its trailhead, map pins and route breakdown already use — and rewrite the day plan, published times, road card and tips that described the Elwha side (whose road to the trailhead is still closed at Madison Falls).",
+   "evidence": "The park's North Fork Quinault trail page gives 16 miles from the trailhead (519 ft) to Low Divide (3,602 ft), with fords at Wild Rose Creek, Elip Creek and Sixteen Mile and camps at Wolf Bar, Elip Creek, Trapper, Sixteen Mile and Low Divide; a club route listing describes Mount Seattle as a 19-mile approach up the North Fork of the Quinault. On the Elwha side, park road status and a hiking guide both say Olympic Hot Springs Road and Whiskey Bend Road are closed to vehicles, with a 6.2-mile one-way road walk from Madison Falls, so the old Elwha day plan (starting at Whiskey Bend) described a start nobody can drive to. The park's road page lists North Shore Road and the North Fork Quinault Road open (May 2026), reachable from North Shore Road only while South Shore Road is washed out. No source gives per-day miles, gain or hours for the Quinault side, so the new day plan carries no day figures except the unchanged summit day (camp to summit and back), and the Elwha-derived approach/descent/total hours are nulled rather than replaced. The approach prose, which presents both sides as options, is left as it is. NOT changed and worth an owner look: dist_km 98.17 (the old 61-mile Elwha round trip, stored as if one-way) and gain_ft 7500 — no two sources state a Quinault figure (one club listing gives 19 mi one-way and 5,750 ft gain).",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://mazamas.org/activity/286/",
+    "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route; check current NPS conditions reports for Elwha River Trail bridge/washout status before committing to the approach.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From Whiskey Bend Trailhead the trail rolls gently up the forested Elwha valley on old roadbed and single-track. Full packs, easy grade — this is mileage-banking, not climbing.",
+        "hours": 6.5,
+        "miles": 11,
+        "title": "Approach up the Elwha River Trail",
+        "gainFt": 1300,
+        "lossFt": 200,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach Elkhorn camp"
+       },
+       {
+        "n": 2,
+        "note": "Continue upriver through old-growth rainforest and past historic homestead sites toward Chicago Camp, staging for the climb over Low Divide the next day.",
+        "hours": 6,
+        "miles": 9.5,
+        "title": "Deeper into the Elwha valley",
+        "gainFt": 1300,
+        "lossFt": 300,
+        "packLb": 40,
+        "schedule": [],
+        "objective": "Reach Chicago Camp / lower Elwha Basin"
+       },
+       {
+        "n": 3,
+        "note": "Climb over 3,602 ft Low Divide, the pass between the Elwha and Quinault drainages, then continue into the upper Seattle Creek basin to a meadow camp at roughly 4,500 ft, directly below Mount Seattle's south side.",
+        "hours": 6.5,
+        "miles": 8,
+        "title": "Over Low Divide to high camp",
+        "gainFt": 2600,
+        "lossFt": 200,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Reach a high camp near Seattle Meadows"
+       },
+       {
+        "n": 4,
+        "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+        "hours": 5,
+        "miles": 4,
+        "title": "Summit day",
+        "gainFt": 1700,
+        "lossFt": 1700,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "5:30 AM",
+          "label": "Leave high camp",
+          "detail": "Light daypack; rope/overnight gear left at camp."
+         },
+         {
+          "time": "~7:00 AM",
+          "label": "Gain the south/east ridge",
+          "detail": "Talus and scree slopes above Seattle Meadows basin."
+         },
+         {
+          "time": "~7:50 AM (about 2.3 hr from camp)",
+          "label": "Summit",
+          "detail": "Class 2-3 scramble; views across the Bailey Range and Elwha headwaters."
+         },
+         {
+          "time": "8:20 AM",
+          "label": "Begin descent",
+          "detail": "Reverse the south-side scree/talus line."
+         },
+         {
+          "time": "~10:15 AM (about 1.9 hr from summit)",
+          "label": "Back at high camp",
+          "detail": "Rest of the day free to recover before the long walk out begins."
+         }
+        ],
+        "objective": "Climb Mount Seattle via the south-side talus/scree slopes"
+       },
+       {
+        "n": 5,
+        "note": "Drop back over Low Divide and retrace the Elwha River Trail as far as reasonable in a day — mostly downhill or flat, but long with a full pack after a summit day.",
+        "hours": 8,
+        "miles": 16,
+        "title": "Start the long walk out",
+        "gainFt": 400,
+        "lossFt": 4300,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Descend to the lower Elwha valley near Elkhorn"
+       },
+       {
+        "n": 6,
+        "note": "Finish the descent down the Elwha valley to the cars. A long but easy-grade final day.",
+        "hours": 7.5,
+        "miles": 14.5,
+        "title": "Hike out to the trailhead",
+        "gainFt": 200,
+        "lossFt": 2400,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Return to Whiskey Bend Trailhead"
+       }
+      ],
+      "totalNote": "A long ~61-mile round-trip wilderness backpack (about 6 days / 5 nights) up the Elwha River Trail and over Low Divide to a high camp near Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same distance to hike back out."
+     },
+     "value": {
+      "cal": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route; check current park conditions for the North Fork Quinault fords, especially the Sixteen Mile crossing, before committing to the approach.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+        "hours": null,
+        "miles": null,
+        "title": "Up the North Fork Quinault River Trail",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Reach a river camp such as Elip Creek or Sixteen Mile"
+       },
+       {
+        "n": 2,
+        "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+        "hours": null,
+        "miles": null,
+        "title": "Over the Sixteen Mile ford to Low Divide and high camp",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Reach a high camp at Seattle Meadows"
+       },
+       {
+        "n": 3,
+        "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+        "hours": 5,
+        "miles": 4,
+        "title": "Summit day",
+        "gainFt": 1700,
+        "lossFt": 1700,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "5:30 AM",
+          "label": "Leave high camp",
+          "detail": "Light daypack; rope/overnight gear left at camp."
+         },
+         {
+          "time": "~7:00 AM",
+          "label": "Gain the south/east ridge",
+          "detail": "Talus and scree slopes above Seattle Meadows basin."
+         },
+         {
+          "time": "~7:50 AM (about 2.3 hr from camp)",
+          "label": "Summit",
+          "detail": "Class 2-3 scramble; views across the Bailey Range and Elwha headwaters."
+         },
+         {
+          "time": "8:20 AM",
+          "label": "Begin descent",
+          "detail": "Reverse the south-side scree/talus line."
+         },
+         {
+          "time": "~10:15 AM (about 1.9 hr from summit)",
+          "label": "Back at high camp",
+          "detail": "Rest of the day free to recover before the long walk out begins."
+         }
+        ],
+        "objective": "Climb Mount Seattle via the south-side talus/scree slopes"
+       },
+       {
+        "n": 4,
+        "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+        "hours": null,
+        "miles": null,
+        "title": "Back down to the North Fork",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Return to a river camp below Low Divide"
+       },
+       {
+        "n": 5,
+        "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+        "hours": null,
+        "miles": null,
+        "title": "Hike out to the trailhead",
+        "gainFt": null,
+        "lossFt": null,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Return to the North Fork Quinault trailhead"
+       }
+      ],
+      "totalNote": "A multi-day wilderness backpack (about 5 days / 4 nights) up the North Fork Quinault River, 16 trail miles to Low Divide, then on to a high camp at Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same trail back out."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 39.5,
+      "summitTimeHrs": 5,
+      "descentTimeHrs": 15.5,
+      "approachTimeHrs": 19,
+      "recommendedStart": "5:30 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 6.5,
+        "note": "From Whiskey Bend Trailhead the trail rolls gently up the forested Elwha valley on old roadbed and single-track. Full packs, easy grade — this is mileage-banking, not climbing.",
+        "fromTo": "Approach up the Elwha River Trail",
+        "section": "Approach"
+       },
+       {
+        "hrs": 6,
+        "note": "Continue upriver through old-growth rainforest and past historic homestead sites toward Chicago Camp, staging for the climb over Low Divide the next day.",
+        "fromTo": "Deeper into the Elwha valley",
+        "section": "Approach"
+       },
+       {
+        "hrs": 6.5,
+        "note": "Climb over 3,602 ft Low Divide, the pass between the Elwha and Quinault drainages, then continue into the upper Seattle Creek basin to a meadow camp at roughly 4,500 ft, directly b…",
+        "fromTo": "Over Low Divide to high camp",
+        "section": "Approach"
+       },
+       {
+        "hrs": 5,
+        "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse…",
+        "fromTo": "Summit day",
+        "section": "Climb"
+       },
+       {
+        "hrs": 8,
+        "note": "Drop back over Low Divide and retrace the Elwha River Trail as far as reasonable in a day — mostly downhill or flat, but long with a full pack after a summit day.",
+        "fromTo": "Start the long walk out",
+        "section": "Descent"
+       },
+       {
+        "hrs": 7.5,
+        "note": "Finish the descent down the Elwha valley to the cars. A long but easy-grade final day.",
+        "fromTo": "Hike out to the trailhead",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": null,
+      "summitTimeHrs": 5,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "5:30 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": null,
+        "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+        "fromTo": "Up the North Fork Quinault River Trail",
+        "section": "Approach"
+       },
+       {
+        "hrs": null,
+        "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+        "fromTo": "Over the Sixteen Mile ford to Low Divide and high camp",
+        "section": "Approach"
+       },
+       {
+        "hrs": 5,
+        "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+        "fromTo": "Summit day",
+        "section": "Climb"
+       },
+       {
+        "hrs": null,
+        "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+        "fromTo": "Back down to the North Fork",
+        "section": "Descent"
+       },
+       {
+        "hrs": null,
+        "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+        "fromTo": "Hike out to the trailhead",
+        "section": "Descent"
+       }
+      ]
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "road",
+     "path": [],
+     "expect": {
+      "name": "Elwha River area access (Olympic Hot Springs Road)",
+      "status": "Closed to vehicle traffic beyond the Madison Falls parking area since November 2017 flood damage; open to foot, bike, and leashed-dog travel, with no reopening date on Olympic National Park's alerts page updated August 27, 2026.",
+      "driveNote": "Elwha-area road access has been affected by washouts in recent years; verify current status before driving.",
+      "seasonalGate": null
+     },
+     "value": {
+      "name": "North Fork Quinault Road (via North Shore Road)",
+      "status": "Open to vehicles to the North Fork Quinault trailhead at road's end; reach it from North Shore Road only, since South Shore Road is closed by a washout. The North Fork road is not recommended for RVs or trailers and may be closed in winter.",
+      "driveNote": "Paved and gravel sections; verify current park road status before driving.",
+      "seasonalGate": null
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_seattle_south",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "the Elwha approach is long",
+     "replace": "the North Fork Quinault approach is long"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "partner_requirements",
+     "path": [],
+     "expect": {
+      "fitnessSpec": {
+       "hiking": "Able to sustain long mileage days (the Elwha approach alone is a multi-day backpack) with significant elevation gain on the final push off-trail",
+       "packWeight": "Overnight/multi-day pack weight (camp gear, several days food) plus scrambling gear for the summit day"
+      },
+      "approachTime": "Multi-day approach via the Elwha River trail into Elwha Basin before leaving maintained trail for the summit push; not a single-day car-to-summit route",
+      "requiredSkills": [
+       "off-trail routefinding / navigation with map and compass or GPS",
+       "river/stream fording technique and judgment",
+       "loose rock and talus/scree management",
+       "backcountry camping and Leave No Trace in a national park wilderness",
+       "self-sufficient trip planning given the long remote approach"
+      ],
+      "experienceLevel": "Solid off-trail scrambler comfortable with sustained routefinding on trail-less, brushy Class 2-3 terrain and multi-day backcountry travel; prior Olympics interior or similarly remote alpine experience strongly preferred"
+     },
+     "value": {
+      "fitnessSpec": {
+       "hiking": "Able to sustain long mileage days (the North Fork Quinault approach alone is a multi-day backpack) with significant elevation gain on the final push off-trail",
+       "packWeight": "Overnight/multi-day pack weight (camp gear, several days food) plus scrambling gear for the summit day"
+      },
+      "approachTime": "Multi-day approach up the North Fork Quinault River trail to Low Divide before leaving maintained trail for Seattle Meadows and the summit push; not a single-day car-to-summit route",
+      "requiredSkills": [
+       "off-trail routefinding / navigation with map and compass or GPS",
+       "river/stream fording technique and judgment",
+       "loose rock and talus/scree management",
+       "backcountry camping and Leave No Trace in a national park wilderness",
+       "self-sufficient trip planning given the long remote approach"
+      ],
+      "experienceLevel": "Solid off-trail scrambler comfortable with sustained routefinding on trail-less, brushy Class 2-3 terrain and multi-day backcountry travel; prior Olympics interior or similarly remote alpine experience strongly preferred"
+     }
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_big_kangaroo_kearney_thomas",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Stop saying the first ascent was made with Bill Thomas or at 5.9: the one detailed history says the father stayed in camp and the first ascent used short aid, so the text now just names Kearney and Thomas, matching the first-ascent line.",
+   "evidence": "A route history names the party as Alan Kearney and Jeff Thomas (August 1984), with Jeff's father Bill Thomas on the trip but staying in camp, and describes the first ascent as using two short aid sections (graded 5.11b or 5.10b C1) — contradicting the beta's 'with Jeff and Bill Thomas' and its 'first climbed as a six-pitch Grade III 5.9 route'. A route database lists the first ascent only as 'Kearney, Thomas' (two climbers), and the AAJ south-face topo calls it Kearney-Thomas (III 5.11). No second source gives first names or the year, so the fa column ('Kearney and Thomas (first names and date unknown)') is left and the beta is brought into line with it: Bill is removed, and the unsupported original pitch count/grade and 'free-climbed harder' history are dropped. The current 5.11a grade is unchanged.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Big-Kangaroo-Kearney-Thomas",
+    "https://www.mountainproject.com/route/201663639/kearney-thomas",
+    "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_big_kangaroo_kearney_thomas",
+     "column": "beta",
+     "path": [],
+     "find": "First climbed as a six-pitch, Grade III 5.9 route by Alan Kearney with Jeff and Bill Thomas up the southeast buttress",
+     "replace": "First climbed by Kearney and Thomas up the southeast buttress"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_big_kangaroo_kearney_thomas",
+     "column": "beta",
+     "path": [],
+     "find": "The line has since been free-climbed harder and is now graded 5.11a",
+     "replace": "The line is now graded 5.11a"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "The walk in is about 2.5 miles each way (about 5 miles round trip); the stored approach distance held the round trip in the one-way slot, so it now says 2.5 miles one way (4.0 km) and the day plan says 5 miles round trip.",
+   "evidence": "A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent South Early Winters Spire write-up from the same trailhead gives 5 miles round trip. dist_km is read as one-way (the app doubles it for the round trip), so the stored 8.37 km showed roughly twice the real walk; neighbouring South Early Winters Spire rows (South Arete, Northwest Face) already store 4.0 km. The itinerary's 5.2 mi round trip is set to the 5 mi both sources state so the two fields agree. Gain is not changed (no source states one for this route).",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_free_mojo",
+     "column": "dist_km",
+     "path": [],
+     "expect": 8.37,
+     "value": 4
+    },
+    {
+     "op": "set",
+     "id": "wa_free_mojo",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 5.2,
+     "value": 5
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "The walk in is about 2.5 miles each way (about 5 miles round trip); the stored approach distance held the round trip in the one-way slot, so it now says 2.5 miles one way (4.0 km) and the day plan says 5 miles round trip.",
+   "evidence": "A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent South Early Winters Spire write-up from the same trailhead gives 5 miles round trip. dist_km is read as one-way (the app doubles it for the round trip), so the stored 8.85 km showed roughly twice the real walk; neighbouring South Early Winters Spire rows (South Arete, Northwest Face) already store 4.0 km. The itinerary's 5.5 mi round trip is set to the 5 mi both sources state so the two fields agree. Gain is not changed (no source states one for this route).",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_boving_roofs",
+     "column": "dist_km",
+     "path": [],
+     "expect": 8.85,
+     "value": 4
+    },
+    {
+     "op": "set",
+     "id": "wa_boving_roofs",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 5.5,
+     "value": 5
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

@@ -1,0 +1,492 @@
+{
+  "wa_bacon_peak_diobsud": [
+    {
+      "lat": 48.66527,
+      "lng": -121.597939,
+      "elev": 4700,
+      "name": "Wilderness-boundary saddle",
+      "note": "Trail forks here — right drops 0.5mi to Lower Anderson Lake, left climbs into the Noisy-Diobsud Wilderness toward Watson Lakes.",
+      "type": "Junction",
+      "distMi": 1.5
+    },
+    {
+      "lat": 48.666798,
+      "lng": -121.592418,
+      "elev": 4400,
+      "name": "Watson Lakes",
+      "note": "Last reliable water and the only legal campsites before the cross-country push into Diobsud basin; designated sites only, campfires prohibited.",
+      "type": "Campsite",
+      "distMi": 2
+    },
+    {
+      "lat": 48.655038,
+      "lng": -121.558583,
+      "elev": 4900,
+      "name": "Diobsud basin",
+      "note": "Off-trail descent from the Watson/Diobsud divide into the Diobsud Creek drainage; trip reports say to drop straight to the valley floor rather than contouring from the lakes, which is slower.",
+      "type": "Campsite",
+      "distMi": 5
+    },
+    {
+      "lat": 48.657482,
+      "lng": -121.532496,
+      "elev": 5800,
+      "name": "Access gully to Diobsud Creek Glacier",
+      "note": "Loose rock and slick dirt in the chute leading to the glacier's toe once snow has melted out — trip reports describe clawing up steep, loose dirt gullies here.",
+      "type": "Hazard",
+      "distMi": 7
+    },
+    {
+      "lat": 48.667118,
+      "lng": -121.529214,
+      "elev": 6400,
+      "name": "Diobsud Creek Glacier crossing",
+      "note": "Rope up here — crevasses open on the icecap by mid-to-late season; probe and stay roped through to the saddle below the summit block.",
+      "type": "Hazard",
+      "distMi": 8
+    },
+    {
+      "lat": 48.6746,
+      "lng": -121.6147,
+      "elev": 800,
+      "name": "Watson Lakes Trailhead",
+      "note": "Existing DB trailhead (Anderson and Watson Lakes Trailhead, 48.6749/-121.6153) is a real, well-documented trailhead but serves the separate NE-side Green Lake Glacier / Watson Lakes approach, not the Diobsud Creek Glacier side this route is named for. Recommend correcting to this SE-side Bacon Creek Road trailhead, which matches the route's own recorded track almost exactly.",
+      "type": "Trailhead",
+      "elevFt": 800
+    },
+    {
+      "lat": 48.662665,
+      "lng": -121.520525,
+      "elev": 7070,
+      "name": "Bacon Peak",
+      "type": "Summit",
+      "elevFt": 7070
+    }
+  ],
+  "wa_bryant_peak_southeast_slopes": [
+    {
+      "lat": 47.429115,
+      "lng": -121.45393,
+      "elev": 3700,
+      "name": "Source Lake Trail junction",
+      "note": "Signed junction on Snow Lake Trail #1013; leave the main trail here and head toward Source Lake basin (on-file mileage).",
+      "type": "Junction",
+      "distMi": 1.8
+    },
+    {
+      "lat": 47.432343,
+      "lng": -121.45366,
+      "elev": 4100,
+      "name": "Source Lake basin stream crossing",
+      "note": "Climbers' path fords the outlet stream draining Source Lake basin around 4,100 ft; last reliable water before the ascent gully, cairns mark the crossing.",
+      "type": "Water",
+      "distMi": 2.2
+    },
+    {
+      "lat": 47.436877,
+      "lng": -121.456524,
+      "elev": 4780,
+      "name": "Gully 'secret passage' below the cliffs",
+      "note": "Trip-report landmark: an easy-to-miss rock passage at ~4,780 ft where the route leaves the open streambed gully and climbs NE along cliff bands into the upper basin.",
+      "type": "Junction",
+      "distMi": 2.7
+    },
+    {
+      "lat": 47.4599,
+      "lng": -121.4607,
+      "elev": 5080,
+      "name": "Thumbtack (rock tower), upper basin",
+      "note": "Prominent free-standing rock tower marking the talus basin between Bryant and Chair Peak; from here the route corkscrews southwest toward the Bryant-Chair gully.",
+      "type": "Junction",
+      "distMi": 3.1
+    },
+    {
+      "lat": 47.443575,
+      "lng": -121.464028,
+      "elev": 5500,
+      "name": "Bryant-Chair Peak gully / talus shoulder",
+      "note": "Steep, loose gully between the two peaks gains a talus shoulder on Bryant's ridge; helmets recommended, rockfall risk from parties above.",
+      "type": "Hazard",
+      "distMi": 3.6
+    },
+    {
+      "lat": 47.446762,
+      "lng": -121.464969,
+      "elev": 5700,
+      "name": "Summit block traverse",
+      "note": "Route stays left (south) of the talus field and traverses the south side of the west shoulder before the final scramble; exposed with loose rock, though holds are generally good.",
+      "type": "Hazard",
+      "distMi": 4.3
+    },
+    {
+      "lat": 47.44542,
+      "lng": -121.42353,
+      "elev": 2300,
+      "name": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+      "note": "Existing DB trailhead 'Snow Lake / Alpental Trailhead' (47.44542, -121.42353) appears to be wrong for this route — it's a different drainage ~3km away with no sourced connection to Bryant Peak. Denny Creek TH matches the recorded GPS track's start point (47.4152566, -121.4433387) almost exactly (~<100m), and multiple sources describe the Denny Creek Trail -> Hemlock Pass -> ridge -> SE talus field approach used specifically for this Southeast Slopes route.",
+      "type": "Trailhead",
+      "elevFt": 2300
+    },
+    {
+      "lat": 47.451358,
+      "lng": -121.46092,
+      "elev": 5801,
+      "name": "Bryant Peak summit",
+      "type": "Summit",
+      "elevFt": 5801
+    }
+  ],
+  "wa_glacier_peak_kennedy_glacier": [
+    {
+      "lat": 48.109993599999996,
+      "lng": -121.15267,
+      "elev": 3800,
+      "name": "White Chuck River Trail (FST 643) / Kennedy Ridge Trail (FST 639) junction",
+      "note": "Leave the river trail here and start climbing Kennedy Ridge Trail toward the PCT.",
+      "type": "Junction",
+      "distMi": 6
+    },
+    {
+      "lat": 48.110343119999996,
+      "lng": -121.14538833333333,
+      "elev": 5000,
+      "name": "Kennedy Ridge Trail / PCT junction",
+      "note": "Kennedy Ridge Trail meets the PCT about a quarter mile north of Kennedy Creek; turn to follow the PCT toward Glacier Creek.",
+      "type": "Junction",
+      "distMi": 7.7
+    },
+    {
+      "lat": 48.11075432,
+      "lng": -121.13682166666666,
+      "elev": 5300,
+      "name": "Glacier Creek PCT crossing camp",
+      "note": "Good established campsites with reliable creek water about 2 miles along the PCT from the Kennedy Ridge junction.",
+      "type": "Water",
+      "distMi": 9.7
+    },
+    {
+      "lat": 48.1109188,
+      "lng": -121.13339500000001,
+      "elev": 6500,
+      "name": "Ridge saddle above camp",
+      "note": "Climb SSE up the basin from the Glacier Creek camp to this flat saddle where the route gains the open slopes below Kennedy Glacier.",
+      "type": "Junction",
+      "distMi": 10.5
+    },
+    {
+      "lat": 48.111227199999995,
+      "lng": -121.12697,
+      "elev": 8000,
+      "name": "Vista-Kennedy saddle",
+      "note": "Saddle between Vista Ridge and the Kennedy Glacier icefall; rope up for glacier travel from here.",
+      "type": "Junction",
+      "distMi": 12
+    },
+    {
+      "lat": 48.111535599999996,
+      "lng": -121.12054499999999,
+      "elev": 8800,
+      "name": "Kennedy Glacier crevasse band",
+      "note": "Deep, dramatic crevasses form on this small, steep glacier; parties often hug the left wall under Kennedy Peak to dodge crevasses at the cost of added rockfall exposure.",
+      "type": "Hazard",
+      "distMi": 13.5
+    },
+    {
+      "lat": 48.10876,
+      "lng": -121.17787,
+      "elev": 1700,
+      "name": "White Chuck River Trailhead",
+      "note": "Road-end trailhead on Suiattle River Rd (FR 26), ~23.5 mi from Darrington; North Fork Sauk TH (48.05832,-121.28793) is a valid alternate approach for this route.",
+      "type": "Trailhead",
+      "elevFt": 1700
+    },
+    {
+      "lat": 48.1112273,
+      "lng": -121.1139922,
+      "elev": 10541,
+      "name": "Glacier Peak summit",
+      "type": "Summit",
+      "elevFt": 10541
+    }
+  ],
+  "wa_mount_rainier_ptarmigan_ridge": [
+    {
+      "lat": 46.9003,
+      "lng": -121.6581,
+      "elev": 9440,
+      "name": "Camp Schurman",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": 9440
+    },
+    {
+      "lat": 46.9022,
+      "lng": -121.6442,
+      "elev": 4930,
+      "name": "White River Campground",
+      "type": "Trailhead",
+      "elevFt": 4930
+    },
+    {
+      "lat": 46.8658,
+      "lng": -121.7817,
+      "elev": 14112,
+      "name": "Liberty Cap (commonly the route's summit point)",
+      "type": "Summit",
+      "elevFt": 14112
+    }
+  ],
+  "wa_mount_rainier_willis_wall": [
+    {
+      "lat": 46.9003,
+      "lng": -121.6581,
+      "elev": 9440,
+      "name": "Camp Schurman",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": 9440
+    },
+    {
+      "lat": 46.9022,
+      "lng": -121.6442,
+      "elev": 2320,
+      "name": "White River Campground",
+      "type": "Trailhead",
+      "elevFt": 2320
+    },
+    {
+      "lat": 46.8658,
+      "lng": -121.7817,
+      "elev": 14112,
+      "name": "Liberty Cap (route finishes here)",
+      "type": "Summit",
+      "elevFt": 14112
+    }
+  ],
+  "wa_prusik_peak_west_ridge": [
+    {
+      "lat": 47.4828,
+      "lng": -120.8175,
+      "elev": 7800,
+      "name": "Aasgard Pass",
+      "type": "Junction",
+      "distMi": 5.5,
+      "elevFt": 7800
+    },
+    {
+      "lat": 47.483,
+      "lng": -120.795,
+      "elev": 7000,
+      "name": "Core Enchantments",
+      "type": "Campsite",
+      "distMi": 7,
+      "elevFt": 7000
+    },
+    {
+      "lat": 47.4872,
+      "lng": -120.786,
+      "elev": 7700,
+      "name": "West ridge notch",
+      "type": "Junction",
+      "distMi": 7.6,
+      "elevFt": 7700
+    },
+    {
+      "lat": 47.5282,
+      "lng": -120.82036,
+      "elev": 1300,
+      "name": "Stuart Lake Trailhead (Trail #1599)",
+      "note": "Also reachable via the Stuart Lake/Colchuck Lake Trailhead (~47.528,-120.820) over Aasgard Pass — a genuinely different, commonly-used alternate approach — but this route's own recorded GPS track starts at Snow Lakes TH, not Stuart Lake TH.",
+      "type": "Trailhead",
+      "elevFt": 1300
+    },
+    {
+      "lat": 47.487398,
+      "lng": -120.784552,
+      "elev": 8008,
+      "name": "Prusik Peak summit",
+      "type": "Summit",
+      "elevFt": 8008
+    }
+  ],
+  "wa_storm_king_southwest_scramble": [
+    {
+      "lat": 48.56639066666667,
+      "lng": -120.98841733333333,
+      "elev": 4000,
+      "name": "Skagit Queen Camp",
+      "note": "Established camp near old Skagit Queen mine workings where the trail steepens into switchbacks; reliable creek water, common first- or second-night stop.",
+      "type": "Campsite",
+      "distMi": 13.8
+    },
+    {
+      "lat": 48.51633022222222,
+      "lng": -120.94467244444444,
+      "elev": 6100,
+      "name": "Park Creek Pass",
+      "note": "Trail high point in the notch between Mt. Logan and Mt. Buckner; camping is prohibited at the pass itself to protect fragile meadows, so continue on or camp just below it.",
+      "type": "Junction",
+      "distMi": 19.6
+    },
+    {
+      "lat": 48.50424666666667,
+      "lng": -120.93411333333333,
+      "elev": 7450,
+      "name": "Rib camp below Storm King/Goode basin",
+      "note": "Flat, grassy camp on a small NE/SW-trending rib south of Storm King with a nearby water source; leave the maintained trail here and go cross-country toward the peak.",
+      "type": "Campsite",
+      "distMi": 21
+    },
+    {
+      "lat": 48.49561555555556,
+      "lng": -120.9265711111111,
+      "elev": 7800,
+      "name": "Talus cirque beneath the towers",
+      "note": "About a mile of loose talus/scree past the rib camp brings you into the cirque directly under Storm King's west and east towers; take the path of least resistance up the scree.",
+      "type": "Junction",
+      "distMi": 22
+    },
+    {
+      "lat": 48.49302622222223,
+      "lng": -120.92430844444443,
+      "elev": 8400,
+      "name": "North-side exposed ledge traverse",
+      "note": "Class 3-4 ledge system traversing the backside of the summit towers, including a slight overhang requiring a squeeze-under move; most parties fix a line here.",
+      "type": "Hazard",
+      "distMi": 22.3
+    },
+    {
+      "lat": 48.49216311111111,
+      "lng": -120.92355422222222,
+      "elev": 8550,
+      "name": "Summit crux crack",
+      "note": "15-foot crack (Class 4 to low 5th) leads to the fixed rappel anchor used for the descent; rope up or belay through this section.",
+      "type": "Hazard",
+      "distMi": 22.4
+    },
+    {
+      "lat": 48.6855,
+      "lng": -121.0925,
+      "elev": 4875,
+      "name": "Colonial Creek Campground Trailhead",
+      "note": "Drive-to trailhead on SR-20 at Rainy Pass (milepost ~158); hike south on the Bridge Creek Trail/PCT ~9.5 mi (with ~2000 ft loss) to North Fork Group Camp, then leave trail cross-country toward the basin south of Storm King. Some parties instead approach from the south via the Lady of the Lake ferry to Stehekin + shuttle to High Bridge Camp, joining the same Bridge Creek/North Fork trail system. The current DB trailhead (Thunder Creek Trailhead / Colonial Creek Campground, ~48.6855,-121.0925) is a different, unconnected drainage well north of here and is very likely wrong.",
+      "type": "Trailhead",
+      "elevFt": 4875
+    },
+    {
+      "lat": 48.4913,
+      "lng": -120.9228,
+      "elev": 8520,
+      "name": "Storm King summit",
+      "type": "Summit",
+      "elevFt": 8520
+    }
+  ],
+  "wa_unnamed_5": [
+    {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Topout",
+      "distMi": 0.2
+    },
+    {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl (crag base)",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5500
+    },
+    {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5477,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Park at the hairpin turn pullout on Hwy 20 near Washington Pass; ~7 min uphill approach trail to the base of Spire Gully.",
+      "type": "Trailhead",
+      "elevFt": 5477
+    },
+    {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Summit",
+      "elevFt": 5500
+    }
+  ],
+  "wa_the_rake_traverse_route": [
+    {
+      "lat": 48.701193,
+      "lng": -121.279748,
+      "elev": 1000,
+      "name": "Goodell Creek Branch Crossings",
+      "note": "Climbers' path fords two branches of Goodell Creek on the old roadbed; can run high and fast during snowmelt.",
+      "type": "Water",
+      "distMi": 1.5
+    },
+    {
+      "lat": 48.73396,
+      "lng": -121.291813,
+      "elev": 1700,
+      "name": "Terror Creek Basin Cairn Turnoff",
+      "note": "A stone cairn marks where the boot path leaves the old roadbed and begins climbing steeply into the Terror Creek drainage.",
+      "type": "Junction",
+      "distMi": 4
+    },
+    {
+      "lat": 48.756757,
+      "lng": -121.298772,
+      "elev": 5800,
+      "name": "Terror Creek Basin Camp",
+      "note": "Established campsite about 400 ft below a 6,200-ft saddle, with views of The Barrier, Degenhardt, Pyramid and the McMillan Spires.",
+      "type": "Campsite",
+      "distMi": 6.5
+    },
+    {
+      "lat": 48.759952,
+      "lng": -121.301201,
+      "elev": 6200,
+      "name": "The Barrier",
+      "note": "Steep, loose grassy ledge near 6,100 ft leading to serious class-3 scrambling on rotten rock to gain the crest around 6,400 ft.",
+      "type": "Hazard",
+      "distMi": 7
+    },
+    {
+      "lat": 48.766899,
+      "lng": -121.301569,
+      "elev": 6200,
+      "name": "Crescent Creek Basin High Camp",
+      "note": "High camp on the south side of Mount Terror, reached via an easy snow-ramp descent off the Barrier notch; also where enchainment parties arrive via the Otto-Himmel col.",
+      "type": "Campsite",
+      "distMi": 7.5
+    },
+    {
+      "lat": 48.77272,
+      "lng": -121.306207,
+      "elev": 7400,
+      "name": "Rubble Gully to the Terror-Rake Col",
+      "note": "Loose, rubble-choked gully leads to the notch between Mount Terror and The Rake; stay right on slightly harder class-3 rock to dodge the worst debris.",
+      "type": "Hazard",
+      "distMi": 8
+    },
+    {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+      "note": "Standard cross-country-zone access for Southern Pickets objectives (Terror Basin/Crescent Creek Basin); existing DB value confirmed correct — close to recorded track start (~1.1km away, consistent with parking-to-cross-country-route offset).",
+      "type": "Trailhead"
+    },
+    {
+      "lat": 48.7755,
+      "lng": -121.3067,
+      "elev": 7840,
+      "name": "The Rake",
+      "type": "Summit",
+      "elevFt": 7840
+    }
+  ]
+}

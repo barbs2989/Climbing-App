@@ -1,0 +1,43 @@
+{
+ "id": "wa_huckleberry_mountain_west_route",
+ "name": "West Route",
+ "waypoints": [
+  {
+   "lat": 47.4278,
+   "lng": -121.4135,
+   "elev": 3000,
+   "name": "PCT Trailhead, Snoqualmie Pass (Exit 52, Alpental Rd)",
+   "note": "PCT northbound from I-90 exit 52.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Leave I-90 at Exit 52 for Snoqualmie Pass and park in the large PCT North Trailhead lot off SR 906 / Alpental Road, at about 3,000 ft. A Northwest Forest Pass or America the Beautiful pass is required to park. Beyond that, the only permit you need is a self-issue wilderness permit. The trail leaves the lot northbound on the Pacific Crest Trail."
+  },
+  {
+   "lat": 47.46778,
+   "lng": -121.3375,
+   "elev": 4629,
+   "name": "Joe Lake",
+   "note": "PCT rounds Alaska Mountain's east ridge and drops to the west end of Joe Lake.",
+   "type": "Junction",
+   "distMi": 9
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5500,
+   "name": "West Face Talus Basin",
+   "note": "Flowery meadow northeast of Joe Lake; head up talus into the basin below the west face.",
+   "type": "Junction",
+   "distMi": 9.7
+  },
+  {
+   "lat": 47.473889,
+   "lng": -121.333889,
+   "elev": 6320,
+   "name": "Huckleberry Mountain",
+   "note": "West Face route (5.6), first climbed September 2001.",
+   "type": "Summit",
+   "distMi": 10.5
+  }
+ ]
+}

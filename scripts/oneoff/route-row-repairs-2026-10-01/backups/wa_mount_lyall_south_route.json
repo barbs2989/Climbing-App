@@ -1,0 +1,73 @@
+{
+ "id": "wa_mount_lyall_south_route",
+ "name": "Southwest Ridge Route",
+ "approach": "Via passenger ferry or floatplane from Chelan to Stehekin, then the PCT/Stehekin Valley Road to High Bridge; follow the Agnes Creek Trail and Swamp Creek drainage to Lyall's west basin. Roughly 35-40 miles round trip from High Bridge, so most parties camp en route. From the west basin, climb talus and heather to gain the southwest ridge, passing below a distinctive band of white rock; the route narrows into an exposed Class 3 gully near the summit, finishing over stacked Class 3-4 boulders to the summit block.",
+ "itinerary": {
+  "cal": "The Agnes Creek trail and the Swamp Creek basin are rarely clear of snow before mid-to-late July, and the trip depends on the ferry and valley shuttle running at both ends; late July through September is the usual window.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Take the boat up the lake and the valley shuttle to the bridge at the road end, then follow the crest trail south up Agnes Creek toward Swamp Creek. Camp near Swamp Creek to shorten the summit day; expect blowdown and possible stream crossings on the way in.",
+    "hours": 8,
+    "miles": 15,
+    "title": "Approach to high camp",
+    "gainFt": 2600,
+    "lossFt": 0,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach a camp near Swamp Creek, below Mount Lyall's west side"
+   },
+   {
+    "n": 2,
+    "note": "Cross Swamp Creek and climb through brush and open basin into the broad basin west of the peak, then up talus and old snow to the 7,300 ft notch on the southwest ridge. From the notch, drop round a buttress and traverse below the white rock band to an exposed Class 3 gully and loose Class 3-4 boulders to the 7,911 ft summit, then reverse the line to camp. Start early to be off the exposed ground before afternoon storms build.",
+    "hours": 8,
+    "miles": 5,
+    "title": "Summit day via the Southwest Ridge",
+    "gainFt": 2200,
+    "lossFt": 2200,
+    "packLb": 12,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave camp",
+      "detail": "Light day pack; cross Swamp Creek and head up the drainage."
+     },
+     {
+      "time": "+1.5 hr",
+      "label": "Reach the basin below the peak",
+      "detail": "Brush gives way to open basin, then talus and lingering snow."
+     },
+     {
+      "time": "+3.5 hr",
+      "label": "Reach the 7,300 ft notch",
+      "detail": "Drop round the buttress and traverse below the white rock band to the summit gully."
+     },
+     {
+      "time": "~9:30 AM",
+      "label": "Summit",
+      "detail": "Down-climb the gully and loose boulders with care, then reverse the same line."
+     },
+     {
+      "time": "~1:30 PM",
+      "label": "Back at camp",
+      "detail": "Rest and refill water before next day's hike out."
+     }
+    ],
+    "objective": "Climb the Southwest Ridge to the summit and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and retrace the approach trail back to the trailhead.",
+    "hours": 7,
+    "miles": 14,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 2600,
+    "packLb": 30,
+    "schedule": [],
+    "objective": "Return to the trailhead"
+   }
+  ],
+  "totalNote": "A remote 3-day backcountry trip by boat, valley shuttle and the Agnes Creek trail, with an exposed Class 3-4 scramble to the 7,911 ft summit on day two; not a realistic single-day objective."
+ }
+}

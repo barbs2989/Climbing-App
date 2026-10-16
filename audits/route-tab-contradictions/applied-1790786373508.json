@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_ragged_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain for the traverse (gain_ft 2900 is only the trail gain to Easy Pass)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ragged_ridge",
+   "before": {
+    "gain_ft": 2900
+   }
+  }
+ ]
+}

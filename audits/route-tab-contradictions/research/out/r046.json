@@ -1,0 +1,370 @@
+{
+ "file": "r046.json",
+ "results": [
+  {
+   "id": "wa_the_tooth_fairy",
+   "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling",
+   "verdict": "fixed",
+   "correct_value": "Descend by rappelling the route from the top of P6 (6 single or 3 double rappels), or rappel the South Face to Pineapple Pass; there is no walk-off from The Tooth.",
+   "evidence": "The route's dedicated page gives the descent as 6 single-length or 3 double-length rappels down the route, or rappelling the South Face. An independent route write-up likewise describes getting down by rappelling the standard Tooth route. Neither describes a walk-off; the South Face descent is itself a rappel line, so both the 'rather than Pineapple Pass' wording and the 'walk off' wording were wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+    "http://hiking.andrewleader.net/routes/the-tooth-fairy/",
+    "https://rocknropenw.com/2015/05/22/the-tooth/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Rappel the route (P6 down to P1) rather than descending via Pineapple Pass, using the bolted anchors.",
+     "replace": "Rappel the route (P6 down to P1) using the bolted anchors, or rappel the South Face to Pineapple Pass.",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "alternatively walk off via the South Face descent.",
+     "replace": "alternatively rappel the South Face to Pineapple Pass.",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Some parties instead walk off toward Pineapple Pass and descend the South Face's scramble descent.",
+     "replace": "Some parties instead go down the South Face, rappelling its line to Pineapple Pass.",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "rappel the route or walk off ->",
+     "replace": "rappel the route or the South Face ->",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Whether walking off via Pineapple Pass/South Face is a valid alternative to rappelling"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit",
+   "verdict": "fixed",
+   "correct_value": "P7 is easy (4th-class) scrambling with a single bolt that many parties belay; there is no bolted anchor on top, so a block is slung or an anchor built with small cams (0.4-0.5) or nuts. The gear line is right; the 'unroped / unprotected' wording is wrong.",
+   "evidence": "The route's dedicated page describes P7 as easy scrambling past a single bolt and says there is no bolted summit anchor, so parties sling a block or place small cams (0.4 and 0.5) or nuts to build one. A second independent write-up rates P7 4th class with 1 bolt, 'scramble or climb' about 15 m, and advises slinging a block if belaying a follower.",
+   "sources": [
+    "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+    "http://hiking.andrewleader.net/routes/the-tooth-fairy/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "find": "the top pitch's belay isn't bolted, so you need gear to build the summit anchor",
+     "replace": "there is no bolted anchor on the summit, so bring gear (or sling a block) to build one if you belay the final scramble",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      6,
+      "notes"
+     ],
+     "find": "Unroped scrambling to the true summit; single bolt en route but no anchor at the top.",
+     "replace": "Easy scrambling to the true summit, often belayed; a single bolt en route and no fixed anchor at the top, so sling a block or build one with small cams or nuts.",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "P7 is an unroped scramble with no rappel anchor",
+     "replace": "P7 is a short scramble with no rappel anchor",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      3
+     ],
+     "find": "Unprotected scrambling above the last bolted anchor to reach the true summit",
+     "replace": "Scrambling with a single bolt above the last bolted anchor to reach the true summit",
+     "id": "wa_the_tooth_fairy",
+     "fact": "Gear implies a roped/belayed summit pitch, but the route is described elsewhere as an unroped scramble to the true summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "fact": "rappels field calls the 4 standard rappel stations 'bolted,' but the per-station detail describes natural (tree/horn/block) anchors",
+   "verdict": "fixed",
+   "correct_value": "The four standard rappel stations are slung trees, a horn and a block with fixed slings, cord and rap rings; bolted chain anchors belong to a separate side line and to the east gully off Pineapple Pass.",
+   "evidence": "The route's dedicated page lists the four stations (as of 2021) as 3 rap rings and slings around a tree, an 8mm doubled cordelette with quicklinks, two slung trees, and slings with 3 rap rings around a block; its bolted chain anchors are in the east gully. A guide-service write-up gives the same tree/slung-rock sequence and describes the bolted chain-and-ring stations as a separate traffic-avoiding line.",
+   "sources": [
+    "https://www.mountainproject.com/route/106378880/south-face",
+    "https://rocknropenw.com/2015/05/22/the-tooth/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "from bolted/slung anchors back down to Pineapple Pass",
+     "replace": "from slung tree, horn and block anchors back down to Pineapple Pass",
+     "id": "wa_the_tooth_south_face",
+     "fact": "rappels field calls the 4 standard rappel stations 'bolted,' but the per-station detail describes natural (tree/horn/block) anchors"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "fact": "descent_text says the standard stations are 'fixed gear rather than natural anchors' and then lists trees, a horn and a block",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The stations are natural anchors (trees, horn, block) carrying fixed slings, cord and rap rings.",
+   "evidence": "Same two sources as above: every standard station is a tree, horn or block equipped with slings, cord or rap rings, so 'rather than natural anchors' contradicts the station list in the same sentence and rappel_detail.",
+   "sources": [
+    "https://www.mountainproject.com/route/106378880/south-face",
+    "https://rocknropenw.com/2015/05/22/the-tooth/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The stations are well-equipped, fixed gear rather than natural anchors:",
+     "replace": "The stations are natural anchors kept well equipped with fixed slings, cord and rap rings:",
+     "id": "wa_the_tooth_south_face",
+     "fact": "descent_text says the standard stations are 'fixed gear rather than natural anchors' and then lists trees, a horn and a block"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tooth_south_face",
+   "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "About 2,500 ft of gain and loss car to car (trailhead ~3,100 ft to a 5,606 ft summit).",
+   "evidence": "A detailed trip report logs 4.0 mi and 2,450 ft gained and lost from the Alpental upper lot to the summit. A climbing-project route summary gives 5-7 miles round trip and 2,500 ft of gain. The row's own trailhead (3,100 ft) and summit (5,606 ft) give 2,506 ft net, matching loss_ft 2,500 and the approach text's 2,300-2,500 ft.",
+   "sources": [
+    "https://trailcatjim.com/the-snoqualmie-tooth-via-south-face-2008/",
+    "https://cnmtstuartclimbproject.blogspot.com/2017/08/route-tooth-south-face-i-90-snoqualmie.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 2700,
+     "value": 2500,
+     "id": "wa_the_tooth_south_face",
+     "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2800,
+     "value": 2500,
+     "id": "wa_the_tooth_south_face",
+     "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 2800,
+     "value": 2500,
+     "id": "wa_the_tooth_south_face",
+     "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "about 6 miles and 2,800 ft of gain",
+     "replace": "about 6 miles and 2,500 ft of gain",
+     "id": "wa_the_tooth_south_face",
+     "fact": "Car-to-car gain: gain_ft 2,700 vs loss_ft 2,500 vs itinerary 2,800 up / 2,800 down"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)",
+   "verdict": "fixed",
+   "correct_value": "About 2,500 ft gain and loss car to car (same Alpental trailhead ~3,100 ft to the same 5,606 ft summit as the South Face).",
+   "evidence": "Route summaries for The Tooth from the Alpental lot give about 2,500 ft of gain (one climbing-project summary: 2,500 ft; one detailed trip report: 2,450 ft gained and lost). The Northeast Slabs starts at the same trailhead and ends on the same summit, and the row's own waypoints (3,100 ft trailhead, 5,606 ft summit) give 2,506 ft net, agreeing with gain_ft, loss_ft and the approach variant.",
+   "sources": [
+    "https://trailcatjim.com/the-snoqualmie-tooth-via-south-face-2008/",
+    "https://cnmtstuartclimbproject.blogspot.com/2017/08/route-tooth-south-face-i-90-snoqualmie.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3000,
+     "value": 2500,
+     "id": "wa_the_tooth_r1",
+     "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 3000,
+     "value": 2500,
+     "id": "wa_the_tooth_r1",
+     "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "about 6.5 miles and 3,000 ft of gain",
+     "replace": "about 6.5 miles and 2,500 ft of gain",
+     "id": "wa_the_tooth_r1",
+     "fact": "gain_ft/loss_ft (2,500) disagree with the itinerary day's gainFt/lossFt (3,000)"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tooth_r1",
+   "fact": "descent_text describes 2 rappels down the NE side to Pineapple Pass, but rappel_detail describes joining the South Face's 4-rappel line at the summit",
+   "verdict": "fixed",
+   "correct_value": "Descend by the standard South Face rappel line from the tree in the small notch just below the summit to Pineapple Pass: four rappels under 30 m on a single 60 m rope, or two long ones with two 60 m ropes. It does not go down the NE side.",
+   "evidence": "The Northeast Slabs route page states the descent is the standard rappel down the South Face. The South Face station inventory and an independent guide write-up put the top anchor at a small tree in the notch beside the summit, with four rappels of about 25-30 m to Pineapple Pass on the south side. Two 60 m rappels are only possible with two ropes, so 'two rappels up to 60 m on a single 60 m rope down the NE side' was wrong on both counts.",
+   "sources": [
+    "https://www.mountainproject.com/route/116596486/ne-slabs-winter",
+    "https://www.mountainproject.com/route/106378880/south-face",
+    "https://rocknropenw.com/2015/05/22/the-tooth/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "downclimb a short distance to a tree anchor just below/west of the true summit. From there, two rappels — up to 60m each, doable on a single 60m rope — drop down the NE side to the notch (Pineapple Pass) between The Tooth and its south sub-summit;",
+     "replace": "downclimb a short distance to the tree anchor in the small notch just below the true summit. From there, rappel the South Face line to the notch (Pineapple Pass) between The Tooth and its south sub-summit — four rappels of under 30 m on a single 60 m rope, or two long ones with two 60 m ropes;",
+     "id": "wa_the_tooth_r1",
+     "fact": "descent_text describes 2 rappels down the NE side to Pineapple Pass, but rappel_detail describes joining the South Face's 4-rappel line at the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "fact": "Trap Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "Trap Pass is about 5,800 ft.",
+   "evidence": "The trail-association hike page for Trap Pass gives the high point of the hike (the pass) as 5,800 ft. A detailed traverse trip report lists 'Trap Pass (Elev. 5800 feet)' as its high point. The row's own Trap Lake camp (5,143 ft) 'a little below Trap Pass' also only fits the higher figure.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/trap-pass",
+    "https://trailcatjim.com/trap-pass-trail-traverse-thunder-mtn-lakes-nimbus-peak-via-south-slope/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 5050,
+     "value": 5800,
+     "id": "wa_slippery_slab_tower_ne_face",
+     "fact": "Trap Pass elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to the pass at roughly 5,050 to 5,800 ft depending on which record you read.",
+     "replace": "to the pass at roughly 5,800 ft.",
+     "id": "wa_slippery_slab_tower_ne_face",
+     "fact": "Trap Pass elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "fact": "Which ranger district administers this route",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District (Skykomish office).",
+   "evidence": "The Forest Service page for Tunnel Creek Trail 1061 (the route's primary trailhead, to Hope Lake and the PCT) lists the Skykomish Ranger District office in Skykomish as the contact. The trail-association page for Trap Pass names Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District. Leavenworth is an Okanogan-Wenatchee district, not a Mt. Baker-Snoqualmie one, and Snoqualmie RD covers the I-90 corridor. access._raw (not rendered) still says Snoqualmie RD and was left alone.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/tunnel-creek-trail-1061",
+    "https://www.wta.org/go-hiking/hikes/trap-pass"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "USFS Mount Baker-Snoqualmie National Forest - Snoqualmie Ranger District",
+     "value": "USFS Mount Baker-Snoqualmie National Forest - Skykomish Ranger District",
+     "id": "wa_slippery_slab_tower_ne_face",
+     "fact": "Which ranger district administers this route"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "expect": "Leavenworth Ranger District, Mount Baker-Snoqualmie National Forest (Leavenworth office)",
+     "value": "Skykomish Ranger District, Mount Baker-Snoqualmie National Forest (Skykomish office)",
+     "id": "wa_slippery_slab_tower_ne_face",
+     "fact": "Which ranger district administers this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "fact": "Rope length needed for the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The current row no longer contains the quoted '30m/100 ft rope' text: detailed_rack now lists nuts, cams, slings and rap rings with no rope length, and rope_length_m, rack, gear, what_to_bring and rappels all agree on a 60 m rope.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

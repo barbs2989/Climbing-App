@@ -1,0 +1,287 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rahm_south_side",
+   "column": "beta",
+   "path": [],
+   "fact": "Which of Mount Rahm's two summits is the true/high point"
+  },
+  {
+   "id": "wa_mount_rahm_south_side",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Which of Mount Rahm's two summits is the true/high point"
+  },
+  {
+   "id": "wa_mount_rahm_custer_traverse",
+   "column": "watch_out",
+   "path": [
+    2
+   ],
+   "fact": "Which of Mount Rahm's two summits is the true/high point"
+  },
+  {
+   "id": "wa_mount_rahm_standard",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Depot Creek Falls crossing elevation"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Rock/ice difficulty quoted in beta belongs to a different route variant"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Rock/ice difficulty quoted in beta belongs to a different route variant"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "column": "approach",
+   "path": [],
+   "fact": "A 'Depot Glacier' crossing not corroborated by the detailed approach"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Summit elevation in itinerary (8,963 ft) vs high_point_ft / summit waypoint (8,969 ft)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_rahm_south_side",
+   "before": {
+    "beta": "From camp, ascend cross-country to an upper terrace below the Custer-Rahm ridge, then locate a narrow, oblique gully cutting through a roughly 100-ft cliff band — it's hidden until you're right on it, at an inside corner of the cliff. Climb the gully's right-hand fork through its short crux (the left fork dead-ends in a loose, walled amphitheater), then continue up talus/scree and a moderate-angle snowfield in the upper basin to the south spur and the east (true) summit.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2/3",
+      "notes": "From Ouzel Lake: NE up a wide gully to the 7,380-ft Custer-Spickard saddle, then a long traverse/ascent below the Custer-Rahm ridge to the ~7,400-ft upper terrace",
+      "pitch": "Camp to cliff band (saddle, traverse, upper terrace)",
+      "lengthM": 628
+     },
+     {
+      "grade": "Class 4/5",
+      "notes": "Narrow, oblique gully at an inside corner of the cliff; take the right-hand fork (left fork ends in a loose amphitheater); roughly 40 ft of crux climbing, can be wet",
+      "pitch": "Crux gully through cliff band",
+      "lengthM": 12
+     },
+     {
+      "grade": "Class 2/3 (talus/scree, snowfield)",
+      "notes": "Roughly 700 ft of talus/scree via the south spur to the east (true) summit; a moderate-angle snowfield occupies the upper basin",
+      "pitch": "Upper basin to summit",
+      "lengthM": 213
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_rahm_custer_traverse",
+   "before": {
+    "watch_out": [
+     "Loose rock in the crux Class 4 gully/notch area",
+     "High exposure on the north side of the crest",
+     "Rahm has two summits of similar height — the true (higher) summit is roughly 200 yards east of the first one reached"
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_rahm_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 49.033,
+      "lng": -121.4025,
+      "elev": 2300,
+      "name": "Depot Creek Road Trailhead",
+      "note": "Depot Creek Road trailhead off Chilliwack Lake Road, on the Canadian side of the border; the standard start for the cross-border approach to Rahm, Custer, Redoubt, and Spickard.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The standard approach starts on the Canadian side. From Chilliwack, BC, drive Chilliwack River Road about 31.7 miles to the narrow dirt Depot Creek Road, then follow that spur another 2.5 miles or so to a rough trailhead turnout at about 2,300 ft; high-clearance or 4WD is recommended for the spur. The route crosses the unmanned US/Canada border on foot, so carry a passport, and camping at Ouzel Lake requires a North Cascades National Park backcountry permit."
+     },
+     {
+      "lat": 48.977306,
+      "lng": -121.284785,
+      "elev": 4760,
+      "name": "Depot Creek Falls crossing",
+      "note": "967-ft falls; the climbers' path crosses wet, exposed slabs here on fixed handlines — slick and consequential in the wet.",
+      "type": "Hazard",
+      "distMi": 3
+     },
+     {
+      "lat": 48.9844418,
+      "lng": -121.2479895,
+      "elev": 5700,
+      "name": "Lake Ouzel (Ouzel Lake) camp",
+      "note": "Flat, sandy, treeless benches at the head of Depot Creek valley — the standard high camp for Spickard, Custer, Redoubt, and Rahm.",
+      "type": "Campsite",
+      "distMi": 5.8
+     },
+     {
+      "lat": 48.9875,
+      "lng": -121.23222,
+      "elev": 6900,
+      "name": "Silver Lake basin / Custer's South Ridge traverse",
+      "note": "From camp, gain Custer's south ridge and traverse east high above the Silver Lake basin toward the Custer-Rahm connection, using snow coverage where present.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 48.9935,
+      "lng": -121.231386,
+      "elev": 8100,
+      "name": "Rahm's guard-rock band (crux gully)",
+      "note": "A short band of loose class 4 rock guards the final slopes; take one of the leftmost gullies (3rd/4th, easier with snow fingers) rather than the first, harder option encountered.",
+      "type": "Hazard",
+      "distMi": 7.6
+     },
+     {
+      "lat": 48.9975,
+      "lng": -121.23083,
+      "elev": 8486,
+      "name": "Mount Rahm summit",
+      "note": "Rubbly, unassuming true summit less than 0.25 mi south of the Canadian border, at the NE end of Custer Ridge; on the descent, reverse this same loose gully and the knife-edge snow arete below it.",
+      "type": "Summit",
+      "distMi": 8
+     },
+     {
+      "lat": 49.033,
+      "lng": -121.4025,
+      "elev": 2300,
+      "name": "Trailhead / border return",
+      "note": "Descent reverses the ascent back to the same Depot Creek Road trailhead.",
+      "type": "Junction",
+      "distMi": 16
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "before": {
+    "gain_ft": 5000,
+    "dist_km": 17.7,
+    "beta": "Grade II-III alpine rock/glacier route, up to 5.7 rock and 60-degree ice possible. Two documented routes: 1) Northeast Face - 60-degree ice plus low 5th class rock (Grade III); 2) South route - glacier walk plus scree/snow slopes to summit (Grade II). Skagit Gneiss - poor quality rock. High exposure on Northeast Face route.",
+    "access": {
+     "fees": "$10/person + $6 reservation fee for the wilderness permit",
+     "notes": "Requires crossing into British Columbia, Canada; US citizens need valid passport. Seasonal: July-September. Hazards: Steep ice (60+ degrees), low 5th class rock, avalanche potential, remote location. Required skills: Alpine ice climbing, rock scrambling, glacier travel. Chilliwack River Road is remote and narrow.",
+     "rules": "Sign the register at the Monument 65 trailhead box — this also marks re-entry into the US and North Cascades National Park.",
+     "permit": "Wilderness/backcountry permit required for any overnight stay: $10 per person plus a $6 non-refundable reservation fee (free for youth 15 and under). Reserve on Recreation.gov, watch the mandatory safety video, then email noca_wilderness@nps.gov (no more than 3 days ahead of the trip) to have the permit issued; print and carry it. Walk-up permits are issued at the Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA (open mid-May to mid-October, 360-854-7200).",
+     "closures": "Depot Creek Road (BC side) is unmaintained past the washout at ~1.7 mi/2,600 ft and can change year to year; verify current conditions with BC/Chilliwack Lake Provincial Park sources before a trip.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Complex (Stephen Mather Wilderness), National Park Service",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No day-use pass, but a wilderness camping permit is required for any overnight trip. Effectively also requires a passport or enhanced driver's license, since the drive-in and most of the lower approach trail pass through British Columbia before re-entering the US at the Monument 65 border marker.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota, paid reservation",
+      "where": "Reserve on Recreation.gov (early-access lottery in March, then general on-sale at least 2 days ahead); about 40% of sites are held for walk-up permits issued in person up to 24 hours before the trip at a Wilderness Information Center."
+     }
+    },
+    "approach": "Southeast via Depot Creek and Redoubt Glacier. International border crossing required (Canadian side). Approach via Depot Glacier to Redoubt Glacier.",
+    "itinerary": {
+     "cal": "North Cascades NP requires a backcountry camping permit for Ouzel Lake (via recreation.gov / Wilderness Info Center); Depot Creek Road is a rough, sometimes washed-out dirt spur off Chilliwack River Road, best driven with high clearance in mid-summer through early fall.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Depot Creek Road washout and old trail up the Depot Creek valley, passing Monument 65 and climbing the steep, wet trail alongside Depot Creek Falls (an 8-ft slippery rock step near the top is the crux of the approach). Camp on the sandy, treeless benches at Ouzel Lake (~5,700 ft), the standard base for both Redoubt and Spickard.",
+       "hours": 6,
+       "miles": 7,
+       "title": "Approach to Ouzel Lake camp",
+       "gainFt": 3100,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Establish high camp at Ouzel Lake"
+      },
+      {
+       "n": 2,
+       "note": "From camp, cross Depot Creek and scramble the broken buttress southwest of the lake to gain the Redoubt Glacier, then rope up for a mostly gentle glacier walk (a few crevassed/icy sections) around to the south side. Exit the glacier at the low point near the flying buttress (~7,800 ft), kick steps up a steepening snow gully to short class 2-3 rock ribs and chimneys, and finish through the summit block's chimneys/notches (some parties belay or rappel a short section) to the true summit at 8,963 ft.",
+       "hours": 10,
+       "miles": 3.5,
+       "title": "Summit day via Redoubt Glacier / South Face",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Ouzel Lake camp",
+         "detail": "Cross Depot Creek and scramble the buttress to reach the glacier."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Rope up on Redoubt Glacier",
+         "detail": "Glacier travel south then west toward the flying buttress notch (~7,800 ft)."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Exit glacier, start snow/rock gully",
+         "detail": "Steepening snowfield to ~35° gives way to class 2-3 gullies and rock ribs."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Summit",
+         "detail": "Parties report roughly 6 hours camp-to-summit at this pace."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the route; some parties downclimb or make a short rappel through the summit chimneys."
+        },
+        {
+         "time": "~5:00 PM",
+         "label": "Back at Ouzel Lake camp",
+         "detail": "Full round trip typically 10-12 hours car-to-... i.e. camp-to-camp."
+        }
+       ],
+       "objective": "Climb Mount Redoubt and return to Ouzel Lake"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Depot Creek trail past the falls and Monument 65 back down to the road washout / parking area. Guides suggest allowing at least 3 hours for the descent alone; with breaks it typically runs 4-5 hours car-to-camp in reverse.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Exit to trailhead",
+       "gainFt": 0,
+       "lossFt": 3100,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Hike out to the vehicle"
+      }
+     ],
+     "totalNote": "A standard 3-day trip: ~17 miles and ~6,400 ft round trip, with one night at Ouzel Lake camp and a long (10-12 hr) glacier/rock summit day in between; some parties extend to 4 days to also tag nearby Mount Spickard from the same camp."
+    }
+   }
+  }
+ ]
+}

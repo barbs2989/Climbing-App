@@ -1,0 +1,634 @@
+{
+ "results": [
+  {
+   "id": "wa_ragged_ridge",
+   "kind": "item",
+   "fact": "dist_km 24 (14.9 mi) shown as the one-way approach",
+   "verdict": "unresolved",
+   "summary": "dist_km 33.8 km (~21 mi) tracks the traverse's published whole-outing length, so it is not a match-nothing figure to clear, and no land-manager page gives a one-way figure for the traverse.",
+   "evidence": "Live row: dist_km 33.8 km = 21.0 mi; the only distance on the row is Easy Pass at 3.4 mi. Prior passes found a published car-to-car traverse length of 21.15 mi and a club listing of 20 mi; the stored value sits on those, so the clearing rule does not apply. No one-way figure exists for a traverse that is not an out-and-back.",
+   "sources": [],
+   "searched": [
+    "live row figures (row.mjs)",
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "kind": "item",
+   "fact": "Header gain_ft/loss_ft 6,150 vs itinerary day totals 6,520 ft (and totalNote ~6,500 ft)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states a total gain for Luahna alone by this line: the one Luahna-only figure (30 mi, 9,400 ft) is for a different line (southwest slope and southeast ridge) with side trips into Clark and Luahna basins, and the other totals cover Clark and Luahna together. Luahna-only report: 'Summit: Luahna Peak (rock scramble via Southwest Slope-Southeast Ridge) ... Approximate Stats: 30 miles traveled; 9400 feet gained & lost', including a Clark Basin/Luahna Basin side trip. The peak page gives legs only (4 mi to the junction, 6+ mi and 3,700 ft to the pass). Neither 6,150 nor 6,520 has a source. PEAKBAGGER PASS: Peakbagger's stated totals for the Boulder Pass/Richardson Glacier line all include Clark Mountain or a different ridge, so no Luahna-only total for this line exists to settle 6,150 vs 6,520. 2011-09-05 Walrus/Richardson Glaciers ascent: '29 mi, 8000' gain' for Luahna and Clark together with camp on Clark's north flank. 2022-07-10 ascent: Total Elevation Gain 8,350 ft, Round-Trip 28 mi, but by the south ridge with camp at the base of Clark (6,000 ft / 13 mi to camp). 2008 'south route, SE ridge' list fields 6,450 ft / 22 mi, no report and a different line.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "kind": "item",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Still no source states a car-to-car gain for a Crowder outing; the only figure on this line is one enchainment's Crowder day (+4,480/-4,050 ft over 5.8 mi), which is a single day, not a total. The Mystery Ridge enchainment report gives the Crowder day only; the peak's database page carries no route stats and its ascent list is not reachable (blocked, not archived). Summing itinerary days would be computed, so gain_ft 6,582 vs the itinerary's 14,000+ ft stays open. PEAKBAGGER PASS: Still real; Mount Crowder has five peakbagger ascents and none states a gain. Peakbagger ascent list for Mount Crowder (1980-2023, 5 entries): no gain, distance or route columns filled and no trip reports beyond one external link.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "kind": "item",
+   "fact": "Round-trip distance",
+   "verdict": "confirmed",
+   "summary": "dist_km 61.15 (38 mi shown as one way) matches no figure on the row or in any source, so it is cleared under the owner's match-nothing rule.",
+   "evidence": "Clearing rule check: 61.15 km = 38.0 mi. The row's own figures are a ~32-mile round trip (itinerary prose) and day legs of 7, 3, 3.5, 5.8, 6 and 7 mi plus a 4.5 mi waypoint; none is 38 mi one way or round trip. Sources found across all passes give only per-day legs (Crowder day 5.8 mi) and multi-peak traverse totals of 55-66 mi; none states 38 mi. No land-manager page states a distance to this off-trail summit (lane L found nothing to set instead).",
+   "sources": [],
+   "searched": [
+    "prior evidence (all passes)",
+    "live row figures (row.mjs)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_crowder_southwest_route",
+     "column": "dist_km",
+     "path": [],
+     "expect": 61.15,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "kind": "item",
+   "fact": "gain_ft/loss_ft (5,600) vs itinerary gain total and totalNote (5,400)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: The row's gain_ft 5,600 has one North Peak source, but the itinerary's 5,400 is the sum of its day figures (3,000 + 2,400 + 0), so aligning it would mean computing new day gains. One North Peak report gives 5,600 ft gained and lost over ~14 mi; the main peak page's 4,000+ ft is for the South Peak lookout. Changing only the totalNote to 5,600 would contradict the day rows. PEAKBAGGER PASS: Peakbagger's North Peak entries give 4,632 ft from a lower 2,200 ft start and times only, so they settle neither the 5,600 ft gain_ft nor the itinerary's 5,400 ft, and the day gains still have no source. Peakbagger North Peak ascent list (3 entries with data): a 1986 ascent states 4,632 ft gain on the way in, 9 mi each way, from a 2,200 ft start (a lower start than the row's 3,020 ft trailhead); a 1982 report gives times only (2.5 h to Goat Flats, 3 h pass to top). No day-by-day gains.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "kind": "item",
+   "fact": "access.permit/group_limit/notes put this route in the Enchantment Permit Area Stuart Zone, while the approach is via Longs Pass/Ingalls Creek (Cle Elum RD)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page says where the Enchantment Permit Area boundary runs at Sherpa's south basin or the crest, so the Stuart Zone text is not rewritten.",
+   "evidence": "The Forest Service overnight-permit page names the five zones and shows a zone map image but no written boundary; the Alpine Lakes Wilderness regulations booklet lists Ingalls Lake and Ingalls Creek trail rules (dogs, fires) without placing them inside or outside a zone. Nothing places Sherpa Balanced Rock or its Ingalls Creek/Longs Pass approach.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov okanogan-wenatchee enchantments-overnight-permits",
+    "fs.usda.gov Alpine Lakes Wilderness regulations booklet (PDF)",
+    "fs.usda.gov site search: Stuart Zone boundary"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "kind": "item",
+   "fact": "dist_km (Approach, one way) 22 km vs itinerary day-1 approach 7 mi",
+   "verdict": "unresolved",
+   "summary": "dist_km 22 (13.7 mi) matches the row's own ~13.5 mi round-trip figure, so it is not a match-nothing value to clear, and no land-manager page gives a one-way distance to the North Ridge.",
+   "evidence": "Live row: dist_km 22 km = 13.67 mi; prose says roughly 13.5 miles round trip and the Stuart Lake Trail is followed about 3.5-4 mi; itinerary days 7 and 6.5 mi. The trail is managed by the Forest Service but its pages describe Stuart Lake, not the North Ridge start; a one-way figure would have to be halved or summed. Prior evidence otherwise unchanged.",
+   "sources": [],
+   "searched": [
+    "live row figures (row.mjs)",
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "kind": "item",
+   "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states a car-to-car gain for Grotto Mountain (WA); the only figures are the 3,480-5,618 ft range and a 4.8 mi round trip, so neither 2,138, 3,400 nor 3,900 can be sourced. The 2025 report gives only the road's-end and summit heights and 4.8 mi round trip; the 2002 report describes intermediate drops without a total; web searches return Grotto Mountain in Alberta. The approach's '3,900 ft one-way' cannot be right against a 2,138 ft net rise, but no stated figure replaces it. PEAKBAGGER PASS: Peakbagger has no stated gain for the road's-end E route line, so the 2,138 / 3,400 / 3,900 ft figures stay unsourced. Peakbagger ascent list for Grotto Mountain has one ascent with stats (2024): 4,358 ft gain and 23.1 mi from a 1,260 ft start, a valley-floor start that is not this row's road's-end (3,480 ft) line; the 2002 reports are short notes with no figures. Live row unchanged: gain_ft 2138, itinerary 3,400, approach 3,900.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "kind": "item",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states an approach gain for the Silver Basin crags, so the 750 ft figure is neither confirmed nor replaced. The crag's area page gives only the road directions and a 20-30 minute walk from the road-end turnaround; no gain figure is published anywhere found. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: No source states an approach gain for the Silver Basin crags, so the 750 ft figure is neither confirmed nor replaced. The crag's area page gives only the road directions and a 20-30 minute walk from the road-end turnaround; no gain figure is published anywhere found.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mile_high_club",
+   "kind": "item",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: The two stated car-to-car totals (3,156 ft on a route log; 921 m / ~3,020 ft on a GPS trip report) disagree with each other and with both row values (gain_ft 2,700, itinerary 3,500), so no held value is supported. Route log: miles 4.9, elevation gain 3156. GPS trip report 2023: elevation gain 921 m, distance 10.54 km. 2,700 ft is the approach-to-base figure on other pages. PEAKBAGGER PASS: Peakbagger's Mile High Club ascents add a third total (3,919 ft) rather than supporting either row value. Morning Star Peak ascent list: four ascents labelled Mile High Club; one (2017-09-19) lists 3,919 ft gain, the others no stats (the 2021 report states only grade 5.10 and the route name). Row holds gain_ft 2,700 and itinerary 3,500.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "kind": "item",
+   "fact": "loss_ft (800) vs car-to-car loss",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: loss_ft is a column this pass may not write, and no source states a loss figure anyway (sources give only car-to-car gain of about 6,100 ft, matching gain_ft), so the 800 ft stays flagged for the owner. Stated figures are gain only (6,115 and 6,085 ft). The rules forbid writing loss_ft, and setting it equal to gain on an out-and-back would be computed. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: loss_ft is a column this pass may not write, and no source states a loss figure anyway (sources give only car-to-car gain of about 6,100 ft, matching gain_ft), so the 800 ft stays flagged for the owner. Stated figures are gain only (6,115 and 6,085 ft). The rules forbid writing loss_ft, and setting it equal to gain on an out-and-back would be computed.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states Half Moon Crag's wilderness status or permit rule, so the permit text cannot be rewritten from a source. The crag and route pages say nothing about wilderness or permits; searches return only unrelated park permit pages. The prior pass measured the pin outside any wilderness (165 m south of the Henry M. Jackson boundary), which is a measurement, not a source. PEAKBAGGER PASS: Half Moon Crag is a rock crag, not a peakbagger summit, so peakbagger has nothing on its wilderness or permit status. Peakbagger indexes summits and their ascents; the crag is not listed as a peak.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "kind": "item",
+   "fact": "Total time vs its own sub-components",
+   "verdict": "unresolved",
+   "summary": "A climbing-time figure has no land-manager source; left as it is.",
+   "evidence": "Prior passes: Sources give 9 h camp to camp, 6 h up and 10 h down, and 12-16 h; none matches the row's 13 h, so the tile set (approach 5, summit 6, descent 6, total 13) cannot be reconciled from one stated figure. Live row unchanged: approachTimeHrs 5, summitTimeHrs 6, descentTimeHrs 6, totalHrs 13. A guide service puts the hike out at about 5 h but gives no summit-day duration. PEAKBAGGER PASS: Peakbagger NE Ridge reports add more leg times (about 5 h on rock to the summit, about 4 h of rappels back to the notch) but no stated total that matches a tile set, so the 13 h total versus 5+6+6 legs cannot be reconciled without computing. Peakbagger 2024-07-20 NE Ridge report: 'about five hours to reach the summit once we were on rock', rappels 'about four hours to reach the notch', camp near the col, no total. Ascent list: 2014 Northeast Ridge 4,877 ft / 16 mi (day push), 2020 NE Ridge 6,177 ft / 15.6 mi over 3 days; no total time fields.",
+   "sources": [],
+   "searched": [
+    "none (timing has no land-manager source; lane L rule)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "kind": "item",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states the approach gain from the FS 9070 turnaround to the Silver Basin / Citadel walls; the only published approach figure is a 20-30 minute walk. Searches of the route database, the peak pages for Silver Peak and The Citadel, and trip reports found no stated gain for this crag's approach. The row's pins show ~400 ft net rise against gain_ft 750, but a figure from pin heights would be computed. PEAKBAGGER PASS: The Silver Basin / Citadel crag approach is not a peakbagger summit route, so peakbagger states no approach gain for it. Peakbagger indexes summits and their ascents; the crag approach is not listed.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "kind": "item",
+   "fact": "Car-to-car distance: waypoint distMi (summit 2.7 mi one way) and itinerary 5.4 mi round trip look too long for the geometry",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a distance to Union Peak; dist_km 1.6 (1.0 mi) matches the row's own one-mile figure to Union Gap, so it is not cleared.",
+   "evidence": "Live row: dist_km 1.6 km = 1.0 mi, matching the approach prose (Smithbrook Trail about 1 mile to the PCT junction at Union Gap); summit waypoint 2.7 mi, itinerary 5.4 mi round trip. No current Forest Service page for Smith Brook Trail #1590 was found (trail slugs 404), and the off-trail summit is not described by any land manager. Prior evidence otherwise unchanged.",
+   "sources": [],
+   "searched": [
+    "live row figures (row.mjs)",
+    "fs.usda.gov okanogan-wenatchee Smith Brook trail slugs (404)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "kind": "item",
+   "fact": "Total round-trip gain and loss (gain_ft 6,550 vs itinerary 5,600)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: The one ascent record gives +6,550 ft for day 1 only (road over the summit to a camp beyond), not a round trip, and no source states a car-to-car total; the itinerary's 4,600 + 1,000 ft days are built on a different camp-before-summit plan and cannot be rebuilt without computing. Ascent record (Aug 2012 enchainment): Day 1 from the 850 ft Bacon Creek Road end, up Porkbelly Ridge, over the east side of Berdeen Peak to a camp above Berdeen Lake: +6550', -1820', 6.3 miles. No round-trip figure for a Berdeen-only outing anywhere. The stale ~5,600 ft round-trip clause in the approach prose is dropped under the day-1 item. PEAKBAGGER PASS: Peakbagger lists nine Berdeen ascents with no trip reports and no round-trip figures, so no car-to-car gain is stated. Peakbagger full ascent list: entries from 1977-2026, none with a trip report; only per-peak gain fields (889 ft in 2002, 2,709 ft in 2017), which are legs of multi-peak trips, not a Bacon Creek round trip.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "kind": "item",
+   "fact": "round-trip distance and gain figures disagree",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure for this off-trail line; dist_km 5.6 (3.5 mi) matches the row's own summit waypoint one-way figure, so it is not cleared.",
+   "evidence": "Live row: dist_km 5.6 km = 3.48 mi, matching the summit waypoint distMi 3.5; prose states 7.0 mi round trip. Sources still disagree (prior passes: 7.0 mi/3,500 ft; 5.3-6.9 mi round trips; 3,593-4,427 ft), none matching gain_ft 3,847.",
+   "sources": [],
+   "searched": [
+    "live row figures (row.mjs)",
+    "prior evidence only (no land-manager page covers this off-trail route)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_northeast_buttress",
+   "kind": "item",
+   "fact": "Total elevation gain vs. loss for a car-to-car round trip",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: The stated car-to-car totals disagree (9,600 ft in one report, 9,080 ft on a club listing) and the row holds neither (gain_ft 6,266), so no held value is supported; loss_ft is not written in this pass. One report 9,600 ft over 24 mi from Skyline II; club listing 9,080 ft; a third ~9,200 ft including extra peaks. PEAKBAGGER PASS: Still real; peakbagger climbers add more Skyline-trail totals (8,821-9,472 ft), none equal to the row's 6,266 ft, so no held value is supported. Peakbagger ascent list for Hozomeen Mountain: Skyline Trail parties 8,856 ft / 26.8 mi and 8,821 ft / 27.1 mi (2024), 9,472 ft / 26.0 mi (2018); a north-face entry 7,222 ft / 10.0 mi; the only Northeast Buttress entry (1984) has no stats.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "kind": "item",
+   "fact": "distance to camp: itinerary day 1 6.2 mi vs Cooney Lake waypoint at 8 mi",
+   "verdict": "unresolved",
+   "summary": "No current Forest Service page states the distance from the Foggy Dew trailhead to Cooney Lake, so the day-1 and waypoint figures stay as they are.",
+   "evidence": "Foggy Dew Trailhead page gives location, elevation (3,400 ft) and directions only; the Cooney Lake Trail #434 page gives only that the lake is 0.2 mi from the Martin Creek #429 junction, on the Crater Creek / Eagle Lakes line, not the Foggy Dew line. No Foggy Dew trail page exists at the current site.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov okanogan-wenatchee foggy-dew-trailhead",
+    "fs.usda.gov okanogan-wenatchee trails cooney-lake-trail",
+    "fs.usda.gov Foggy Dew trail slugs (404)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "kind": "item",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "verdict": "unresolved",
+   "summary": "A climbing-time figure has no land-manager source; left as it is.",
+   "evidence": "Prior passes: Still real (day 2 says 9 hours while its schedule runs 2:30 AM to 2:30 PM), and no source gives times for the Northeast Face itself. Published times found are for the standard East Ridge (3-5 hours camp to summit); nothing states the face's climbing or round-trip time, so neither the 9 hours nor the clock times can be adopted. PEAKBAGGER PASS: Still real; no source gives times for the Northeast Face itself, and this pass did not find one. The prior pass found only East Ridge times (3-5 h camp to summit); the Eldorado ascent list was not read on this pass, so nothing new supports either the 9 h or the 2:30 AM-2:30 PM clock times.",
+   "sources": [],
+   "searched": [
+    "none (timing has no land-manager source; lane L rule)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "kind": "item",
+   "fact": "Total elevation gain (gain_ft/loss_ft 5200 vs itinerary 4,800)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: The club route page for the North Col from Barlow Pass states 5,200 ft, so gain_ft/loss_ft are kept; but the itinerary's TOTAL row is the sum of its two days (2,150 + 2,650 = 4,800) and no source gives per-day gains to correct, so rewording totalNote alone would make it disagree with the TOTAL row. Club route page: 5,200 ft gain from Barlow Pass for the North Col route. Other figures: 3,600 ft to the col (a different club page) and 4,800 ft on an unsuccessful 2019 North Couloir attempt, not a summit total. PEAKBAGGER PASS: Still real; the sourced 5,200 ft is kept, but the itinerary's two day gains have no source to correct, so the totalNote cannot be reworded without making it disagree with the TOTAL row. The blocker is structural (per-day gains would have to be computed); a further peakbagger total would not supply per-day figures.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tye_peak_e_route",
+   "kind": "item",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Stated gains disagree (1,200, 1,500 and 3,300 ft) and none matches the row's 2,400 (gain_ft) or 1,800 (itinerary), so neither is changed. The club route page for Skyline Lake, Skyline Ridge & Tye Peak gives 4.0 mi and 1,200 ft with a 5,476 ft high point, which is below the net rise from the 4,060 ft lot and so is not a car-to-car figure for Tye; other listings (prior pass) give 1,500 and 3,300 ft. PEAKBAGGER PASS: Peakbagger's Tye Peak entries state gains from 575 to 3,667 ft by several lines (mostly the south ridge from Skyline Ridge), none for the east slopes and none equal to the row's 2,400 or 1,800 ft, so neither is changed. Peakbagger Tye Peak ascent list, climber-entered gains: e.g. 2,427 ft (Skyline Lake / North Slopes), 1,915 ft (Skyline Ridge, S ridge), 1,815 ft, 1,695 ft, 2,014 ft and 3,667 ft (S ridge), many without a route; no entry names the east slopes. Sources disagree and none supports either figure on the row.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "kind": "item",
+   "fact": "Elevation gain for the route",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states the crag's height or the walk's gain; the route page gives only a half-mile, roughly 15-minute walk from the lot and a 50 ft pitch, so 1,200 ft looks high but cannot be replaced with a stated figure. Route database page: crag isolated near the base of Guye's South Rib, right of and below the west face, visible from the west Summit lots; 50 ft single pitch; no elevation or gain. PEAKBAGGER PASS: Peakbagger's Guye Peak list has South Rib summit climbs but nothing for the Blood Sport crag, so the walk's gain is still unsourced. Peakbagger Guye Peak ascent list (1,303 entries): South Rib entries (1942-2026; e.g. 700 ft in 1984, 2,105 ft / 9.3 mi in 2026) are summit climbs, not the half-mile crag walk; no Blood Sport entry.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "kind": "item",
+   "fact": "Summit-day length and start time: partner_requirements vs timing/itinerary",
+   "verdict": "unresolved",
+   "summary": "A climbing-time figure has no land-manager source; left as it is.",
+   "evidence": "Prior passes: No source states a camp-to-camp time or a start time from a Colchuck Lake camp for the Northeast Couloir. The one Northeast Couloir report with times is a single-day ski ascent from the road (5:15 am start, a little over 4 h to the lake, summit about 4 pm), not a camp start; other timed reports concern the North Buttress Couloir. Neither partner_requirements' 04:00 / 8.5 h nor timing's 2:30 AM / 11 h is supported. PEAKBAGGER PASS: Peakbagger's three Northeast Couloir entries give gain (and one a distance) but no start time or camp-to-camp time, so neither the 04:00 / 8.5 h nor the 2:30 AM / 11 h figure is supported. Peakbagger Colchuck ascent list, NE Couloir entries: 2013 (3-word report), 2018 (6,510 ft, 9.5 mi from Icicle Road 2,200 ft, no times), 2019 (5,310 ft gained and lost from the Colchuck Lake trailhead, no times or report).",
+   "sources": [],
+   "searched": [
+    "none (timing has no land-manager source; lane L rule)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "kind": "item",
+   "fact": "total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "summary": "The Forest Service North Fork Sauk page gives legs only (PCT at 8.4 mi, Red Pass 3.5 mi north on the PCT), not a distance to the Kennedy Ridge junction or Glacier Creek, so nothing changes.",
+   "evidence": "North Fork Sauk Trail 649 page: Red Creek 3.5 mi, Mackinaw Shelter site 5 mi, PCT at 8.4 mi, Red Pass 3.5 mi north along the PCT. Kennedy Ridge and Glacier Creek are not mentioned; a figure would have to be summed.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov mbs trails north-fork-sauk-trail-649"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "kind": "item",
+   "fact": "Total gain: gain_ft vs itinerary day gains",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: gain_ft 6,800 and the itinerary's 7,300 ft are each backed by one published total (from different parking spots), so the row holds two sourced values and the rule cannot pick one. Published totals: 6,800 ft (older start), ~7,100 ft, ~7,300 ft (2018 club trip from 1,850 ft), ~8,000 ft GPS from the 1,160 ft washout parking. PEAKBAGGER PASS: Peakbagger adds two more climber-entered totals (8,909 ft by Kindy Ridge, 6,223 ft) that match neither gain_ft 6,800 nor the itinerary's 7,300 ft, so the row's two sourced values still cannot be reconciled without computing day gains. Peakbagger Snowking ascent list: 2026-06-13 'Standard climbers trail/Kindy ridge' 8,909 ft / 13.1 mi; 2026-05-24 6,223 ft / 15.5 mi; no day-by-day gains. Prior pass: 6,800 ft (older start) and ~7,300 ft (club trip) each stated by one source.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "kind": "fill",
+   "fact": "waypoints[7].distMi",
+   "verdict": "unresolved",
+   "summary": "The park's Boston Basin pages give camp elevations and the road-gate walk but no mileage to any pin, so the pins stay null.",
+   "evidence": "Park climbing-conditions posts for Boston Basin: low camp ~5,300 ft and high camp ~6,400 ft, the Eldorado gate adds just over 2 mi of road walk; no trail mileage to any camp or pin.",
+   "sources": [],
+   "searched": [
+    "nps.gov noca Boston Basin climbing conditions posts (search results)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Not filled: the one source with 1,280 ft gives it for the camp-to-summit leg only, which is why it was cleared; no source states the car-to-car gain. Route database page: from the Eldorado camp at 7,600 ft, 1,280 ft ascent, 592 ft descent, 2.8 mi one way. PEAKBAGGER PASS: No peakbagger ascent states a car-to-car gain for Austera alone. Austera Peak ascent list: gains are from the Eldorado/Klawatti camps or traverse legs (571-2,400 ft); one 11,637 ft entry is a multi-peak trip total. No car-to-car figure for this line.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Not filled: 4.5 km (2.8 mi) is the stated camp-to-summit leg, not a one-way approach from the trailhead, and no source states the latter. Route database page: 2.8 miles one way from the Eldorado camp. PEAKBAGGER PASS: No peakbagger ascent states a one-way trailhead-to-Austera distance. Austera Peak ascent list: mileages are camp-to-summit or traverse legs (1.7-7.5 mi), not a trailhead one-way figure.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "A climbing-time figure has no land-manager source; left as it is.",
+   "evidence": "Prior passes: Left null: no source states a trailhead-to-summit time for Alta; the cleared 8 h equalled the whole car-to-car day. The trail page gives 12.0 mi round trip and 3,300 ft but no times; no report found states the time to the summit. PEAKBAGGER PASS: Peakbagger Alta ascents give gain and round-trip distance but no trailhead-to-summit time. Alta Mountain 2026 ascent list; read 2 reports. 2026-07-12: 4,050 ft, 11.3 mi RT from Rachel Lake TH, 'just under 4 hours moving time for the full trip' (a speed effort, no summit time). 2026-06-20: 3,774 ft, 12 mi, no time.",
+   "sources": [],
+   "searched": [
+    "none (timing has no land-manager source; lane L rule)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "The Forest Service Rachel Lake Trail page gives no mileage for the cairned turnoff, so the pin stays null.",
+   "evidence": "Rachel Lake Trail #1313 page: gentle first 3 mi, a steep 1 mi climb to Rachel Lake, about another mile to Rampart Lakes basin; nothing about the ridge junction or the Alta turnoff.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov okanogan-wenatchee trails rachel-lake-trail"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Still null; the stated totals for the traverse disagree (12,800 ft on a published car-to-car definition, 8,000 ft on a club listing) and the row holds neither. Car-to-car definition: 21.15 mi, 12,800 ft. Club listing: 20 mi, 8,000 ft. Partial two-day party: 14.83 mi, 6,336 ft. PEAKBAGGER PASS: The stated traverse totals still disagree (12,800 ft vs 8,000 ft) and the row holds neither, and peakbagger adds no traverse total, so gain_ft stays null. Peakbagger lists Ragged Ridge only as a range; no traverse gain is stated there.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states a one-way distance from the White River trailhead to Luahna; the figures found are round trips (22 to 30 mi, mostly with Clark included) and trail legs. Peak page: 4 mi to the Boulder Pass junction, then 6+ mi to the pass; a report gives 30 mi round trip for a Luahna-only trip on another line. Halving or summing would be computed. PEAKBAGGER PASS: Peakbagger gives only round trips (28-29 mi, with Clark) and a 13 mi distance to a Clark-base camp, no one-way distance to Luahna by this line. 2011 Walrus/Richardson: 29 mi round trip with Clark; 2022 south ridge: 28 mi round trip, 13 mi to camp at the base of Clark (a camp, not the summit).",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Not filled: no source states a one-way distance to North Peak; the only figure is a ~14 mi round trip, which may not be halved. North Peak report: ~14 mi round trip; peak page: 16 mi round trip to the South Peak lookout. No one-way figure for this line. PEAKBAGGER PASS: The one stated one-way figure on peakbagger (9 mi) starts from a 2,200 ft point below the row's 3,020 ft trailhead, so it is not this row's trailhead-to-summit distance and is not used. 1986 North Peak ascent: 'Distance: 9 mi / 14.5 km' on the way in, 'Start Trailhead: 2200 ft'; the row's waypoint 0 is the Tupso Pass trailhead at 3,020 ft with the summit pin at 7.3 mi, so the 9 mi includes road below the row's start. No one-way figure from the Tupso Pass trailhead found.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Still null; no source states a one-way distance for this line (stated figures are round trips of 21.5 and 15 mi on different lines, or a loop segment). 2024 GPS ascent 21.5 mi round trip; club route page 15 mi round trip via a shorter line; a 2021 loop segment 8.7 mi. PEAKBAGGER PASS: Peakbagger South Spectacle Butte ascents from Phelps Creek give round trips (e.g. 20.3, 21.5, 22, 24 mi), not a one-way distance. South Spectacle Butte ascent list: distances 25.6, 21.5, 24.0, 38.8, 22.0, 16.5, 20.3 mi. 2024-09-29 Southwest Ridge report: Phelps Creek TH, round-trip 20.3 mi, 7,360 ft, ascent 6 h 11, descent 5 h 36; no way-in distance. Halving a round trip is not allowed.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "A climbing-time figure has no land-manager source; left as it is.",
+   "evidence": "Prior passes: Not filled: the cleared timing described the abandoned North Creek line, and no source states a car-to-car time for the Wolf Creek north-ridge trip. The one north-ridge account via Wolf Creek (July 2020) gives only per-leg times (about 4.25 h to Gardner Meadows, 4.5 h camp to summit, under 4 h hiking out) over two days; a timing object would need a computed total. PEAKBAGGER PASS: The one peakbagger north-ridge ascent gives a 10 h time to the summit and 2 h 45 min down to the Gardner Meadow camp but no time out to the trailhead, so a timing object would need a computed total. Peakbagger ascent 2025-04-26: ascent Time 10 hours (trailhead to summit, with a camp), descent Time 2 h 45 min (summit to Gardner Meadow camp); no hike-out time.",
+   "sources": [],
+   "searched": [
+    "none (timing has no land-manager source; lane L rule)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "The Forest Service trail page gives cumulative distances only to Saddle Lake (2.5 mi) and Tin Pan Gap (6.2 mi), not to the lookout, so dist_km stays null.",
+   "evidence": "Current Three Fingers-Goat Flats-Saddle Lake Trail 641 page: Saddle Lake at 2.5 mi, Goat Flat 2.3 mi farther, 'Reach Tin Pan Gap after 6.2 miles', then a technical glacier and ladder climb with no distance; the lookout page says the last half mile needs climbing gear and the road is closed 8 mi below the trailhead. No one-way figure to the lookout; adding the half mile would be computed. (An older retired page gave a 6.7 mi trail length; it is not on the current page.) Side note for the owner: the row's Tin Can Gap waypoint has distMi null and this page states 6.2 mi to exactly that point; not written here because it is outside this entry.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov mbs trails three-fingers-goat-flats-saddle-lake-trail-641",
+    "fs.usda.gov mbs three-fingers-lookout"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states a one-way distance from the trailhead to the Gerdine-Cool col; sources give Glacier Gap at 15 mi and the summit as a ~7 mi round trip from there, which would have to be split to place this pin. Two parties: Glacier Gap 15 / 15.1 mi from the trailhead, Glacier Gap to summit and back ~7 / 6.5 mi, whole trip 37 / 36.6 mi. PEAKBAGGER PASS: Not filled: no source states the distance from the trailhead to the Gerdine-Cool col; the one stated one-way figure is to the summit. Peakbagger ascent 2016-07-02 gives only the whole ascent distance (18.1 mi trailhead to summit); earlier sources give Glacier Gap at 15 mi and the summit-day round trip. Placing the col would require splitting a stated leg.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "kind": "fill",
+   "fact": "timing.approachTimeHrs",
+   "verdict": "unresolved",
+   "summary": "A climbing-time figure has no land-manager source; left as it is.",
+   "evidence": "Prior passes: Not filled: the only stated time to Dutch Miller Gap (4.8 h) is from the old road end before the 2007 Dingford gate, and no current-gate time for this line was found. The 2003 ascent report gives 4.8 h from the old road end; a 2020 traverse report from the Dingford Creek trailhead gives about two hours to the Dutch Miller Gap trail junction but no time to the gap; a 2020 forum report could not be read. PEAKBAGGER PASS: Not filled: the recent peakbagger reports from the current Dingford trailhead are bike-assisted and give no time from the trailhead to Dutch Miller Gap. Peakbagger 2026-08-07 ascent: biked from the Dingford Creek trailhead to the Dutch Miller horse camp, then hiked to the gap; on the way out camp 08:45 to bikes 11:40 and car about 12:30, but no inbound time to the gap and the bike leg is not this route's walking approach. List shows one 2024 trip figure (5,763 ft / 42.7 mi) only.",
+   "sources": [],
+   "searched": [
+    "none (timing has no land-manager source; lane L rule)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_route_c",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: No source states the walking distance from the SR-20 hairpin to the Ice Box; the cleared 1.8 mi was a Blue Lake figure. The crag's area page describes the approach (hairpin apex, Spire Gully trail, dry creek bed, slabs with a fixed line) without a distance or time. PEAKBAGGER PASS: The Washington Pass Ice Box crag has no peakbagger page (the 'Ice Box' there is an Entiat Mountains summit), so no approach distance is stated. Peakbagger search: 'Ice Box' pid 2018 is an 8,111 ft peak in the Entiat Mountains / Glacier Peak Wilderness, not the SR-20 hairpin crag.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Prior passes: Left null: no source states any distance to Mutchler Peak; the cleared 24.78 km was a round trip stored in the one-way slot. Mutchler has a peak record but no route description or trip report with a distance in any source searched; reports for Snowking on the same Kindy Ridge approach give round trips only, for a different summit. PEAKBAGGER PASS: Peakbagger's Mutchler entries give one gain (5,949 ft) with no distance, and the one long report is a multi-day Kindy Creek traverse, so there is still no one-way distance to Mutchler. Peakbagger Mutchler Peak ascent list: seven entries; 2003 entry 5,949 ft gain, no distance; 2026 report: a full traverse of the Kindy Creek drainage from Sunny Girl via camps, with no mileage.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  }
+ ]
+}

@@ -1,0 +1,342 @@
+{
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "Trailhead pin moved from the Stevens Pass summit lots to the first (double) hairpin on Tye Road where two independent written accounts park, and its note rewritten; the pass question still has no source that states it, so passRequired is held.",
+   "evidence": "Ninth pass (r25, 2026-10-01). Rows re-read read-only: waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457,-121.0885 (USGS ground 4,074 ft, in the Stevens Pass summit lots), distMi 0. ITEM 1 (trailhead pin) - CONFIRMED. New source: the Weekend Rock Washington (2005) Half Moon chapter, read through Internet Archive full-text search snippets (the scan itself is lend-only): \"From a junction just 100 yards west of the summit sign, locate the old Stevens Pass Highway, which takes off in a northwesterly direction down the drainage. In about 1.4 miles the road makes a large hairpin turn to the left. This is the parking area. Another mile down the road is the Iron Goat Trail\", and \"Camping: Car camping at the hairpin turnout on the old highway has been done\". Second, different author: the Mountain Project area page (shared 2019 by a different contributor, with first-hand approach detail the book does not carry): \"pull off just uphill of the double hairpin turn (about 1.4 miles from US2) ... Approach is about 1000' of gain\". Both name the same landmark, the first hairpin on Tye Road below the pass. That landmark is unambiguous on the OpenStreetMap road geometry (way 6321347): heading west from US 2 the road's first hairpin, a left turn, has its tip at 47.7511,-121.1172 and is immediately followed by a second (the 'double'), 47.7492,-121.1142; the next switchback (47.7533,-121.1282) is the 'third switchback' the Treasury boulder area parks at, so the numbering agrees. Pin placed on the mapped road vertex at the uphill end of the first hairpin, 47.75108,-121.11650 (USGS ground 3,577 ft). Independent checks, not written anywhere: the crag point (47.75586,-121.11626, ground 4,758 ft) is directly uphill of this spot and about 1,180 ft above it, matching the stated ~1,000 ft approach, whereas the old pin is only ~680 ft below the crag and 2 km east; the road distance from the US 2 junction to this hairpin is consistent with 'about 1.4 miles'. Caveat for the owner: the Mountain Project text may lean on the guidebook, but it is a different author and adds its own first-hand approach facts. The pin's note is rewritten (four copies pointed readers at another route id; the Artic Rose copy claimed the coordinate fit the directions, which was false). distMi stays 0; name and directions unchanged. ITEM 2 (passRequired) - UNRESOLVED, no op. No source STATES whether a pass is needed at the pull-off. The guidebook's Half Moon beta reads 'Regulations: Let common sense prevail.' and names no pass, while the same book flags the Northwest Forest Pass where it applies (Blue Lake and Snow Lakes trailheads, plus a general note that many areas need one): an omission, not a statement. With the land manager's fee-site list (no Tye Road site) and the row's own notes (\"not a developed fee site\"; parking_pass \"no fee site identified\"), the owner may accept the op in proposed_ops_held; if applied, access.fees still reads \"None beyond the parking or entrance fee this route already lists\" (fees not touched per the rules). access._raw untouched.",
+   "sources": [
+    "https://archive.org/details/weekendrockwashi0000whit",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.openstreetmap.org/way/6321347",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_half_fast",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_half_fast",
+     "index": 0,
+     "expect": {
+      "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+      "lat": 47.7457,
+      "lng": -121.0885
+     },
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "sources": [
+      "https://archive.org/details/weekendrockwashi0000whit",
+      "https://www.mountainproject.com/area/117712289/half-moon-crag"
+     ]
+    }
+   ],
+   "proposed_ops_held": [
+    {
+     "op": "set",
+     "id": "wa_half_fast",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the roadside pullout (not a fee site)"
+    }
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "Trailhead pin moved from the Stevens Pass summit lots to the first (double) hairpin on Tye Road where two independent written accounts park, and its note rewritten; the pass question still has no source that states it, so passRequired is held.",
+   "evidence": "Ninth pass (r25, 2026-10-01). Rows re-read read-only: waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457,-121.0885 (USGS ground 4,074 ft, in the Stevens Pass summit lots), distMi 0. ITEM 1 (trailhead pin) - CONFIRMED. New source: the Weekend Rock Washington (2005) Half Moon chapter, read through Internet Archive full-text search snippets (the scan itself is lend-only): \"From a junction just 100 yards west of the summit sign, locate the old Stevens Pass Highway, which takes off in a northwesterly direction down the drainage. In about 1.4 miles the road makes a large hairpin turn to the left. This is the parking area. Another mile down the road is the Iron Goat Trail\", and \"Camping: Car camping at the hairpin turnout on the old highway has been done\". Second, different author: the Mountain Project area page (shared 2019 by a different contributor, with first-hand approach detail the book does not carry): \"pull off just uphill of the double hairpin turn (about 1.4 miles from US2) ... Approach is about 1000' of gain\". Both name the same landmark, the first hairpin on Tye Road below the pass. That landmark is unambiguous on the OpenStreetMap road geometry (way 6321347): heading west from US 2 the road's first hairpin, a left turn, has its tip at 47.7511,-121.1172 and is immediately followed by a second (the 'double'), 47.7492,-121.1142; the next switchback (47.7533,-121.1282) is the 'third switchback' the Treasury boulder area parks at, so the numbering agrees. Pin placed on the mapped road vertex at the uphill end of the first hairpin, 47.75108,-121.11650 (USGS ground 3,577 ft). Independent checks, not written anywhere: the crag point (47.75586,-121.11626, ground 4,758 ft) is directly uphill of this spot and about 1,180 ft above it, matching the stated ~1,000 ft approach, whereas the old pin is only ~680 ft below the crag and 2 km east; the road distance from the US 2 junction to this hairpin is consistent with 'about 1.4 miles'. Caveat for the owner: the Mountain Project text may lean on the guidebook, but it is a different author and adds its own first-hand approach facts. The pin's note is rewritten (four copies pointed readers at another route id; the Artic Rose copy claimed the coordinate fit the directions, which was false). distMi stays 0; name and directions unchanged. ITEM 2 (passRequired) - UNRESOLVED, no op. No source STATES whether a pass is needed at the pull-off. The guidebook's Half Moon beta reads 'Regulations: Let common sense prevail.' and names no pass, while the same book flags the Northwest Forest Pass where it applies (Blue Lake and Snow Lakes trailheads, plus a general note that many areas need one): an omission, not a statement. With the land manager's fee-site list (no Tye Road site) and the row's own notes (\"not a developed fee site\"; parking_pass \"no fee site identified\"), the owner may accept the op in proposed_ops_held; if applied, access.fees still reads \"None beyond the parking or entrance fee this route already lists\" (fees not touched per the rules). access._raw untouched.",
+   "sources": [
+    "https://archive.org/details/weekendrockwashi0000whit",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.openstreetmap.org/way/6321347",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_astral_projection",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_astral_projection",
+     "index": 0,
+     "expect": {
+      "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+      "lat": 47.7457,
+      "lng": -121.0885
+     },
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "sources": [
+      "https://archive.org/details/weekendrockwashi0000whit",
+      "https://www.mountainproject.com/area/117712289/half-moon-crag"
+     ]
+    }
+   ],
+   "proposed_ops_held": [
+    {
+     "op": "set",
+     "id": "wa_astral_projection",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the roadside pullout (not a fee site)"
+    }
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "Trailhead pin moved from the Stevens Pass summit lots to the first (double) hairpin on Tye Road where two independent written accounts park, and its note rewritten; the pass question still has no source that states it, so passRequired is held.",
+   "evidence": "Ninth pass (r25, 2026-10-01). Rows re-read read-only: waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457,-121.0885 (USGS ground 4,074 ft, in the Stevens Pass summit lots), distMi 0. ITEM 1 (trailhead pin) - CONFIRMED. New source: the Weekend Rock Washington (2005) Half Moon chapter, read through Internet Archive full-text search snippets (the scan itself is lend-only): \"From a junction just 100 yards west of the summit sign, locate the old Stevens Pass Highway, which takes off in a northwesterly direction down the drainage. In about 1.4 miles the road makes a large hairpin turn to the left. This is the parking area. Another mile down the road is the Iron Goat Trail\", and \"Camping: Car camping at the hairpin turnout on the old highway has been done\". Second, different author: the Mountain Project area page (shared 2019 by a different contributor, with first-hand approach detail the book does not carry): \"pull off just uphill of the double hairpin turn (about 1.4 miles from US2) ... Approach is about 1000' of gain\". Both name the same landmark, the first hairpin on Tye Road below the pass. That landmark is unambiguous on the OpenStreetMap road geometry (way 6321347): heading west from US 2 the road's first hairpin, a left turn, has its tip at 47.7511,-121.1172 and is immediately followed by a second (the 'double'), 47.7492,-121.1142; the next switchback (47.7533,-121.1282) is the 'third switchback' the Treasury boulder area parks at, so the numbering agrees. Pin placed on the mapped road vertex at the uphill end of the first hairpin, 47.75108,-121.11650 (USGS ground 3,577 ft). Independent checks, not written anywhere: the crag point (47.75586,-121.11626, ground 4,758 ft) is directly uphill of this spot and about 1,180 ft above it, matching the stated ~1,000 ft approach, whereas the old pin is only ~680 ft below the crag and 2 km east; the road distance from the US 2 junction to this hairpin is consistent with 'about 1.4 miles'. Caveat for the owner: the Mountain Project text may lean on the guidebook, but it is a different author and adds its own first-hand approach facts. The pin's note is rewritten (four copies pointed readers at another route id; the Artic Rose copy claimed the coordinate fit the directions, which was false). distMi stays 0; name and directions unchanged. ITEM 2 (passRequired) - UNRESOLVED, no op. No source STATES whether a pass is needed at the pull-off. The guidebook's Half Moon beta reads 'Regulations: Let common sense prevail.' and names no pass, while the same book flags the Northwest Forest Pass where it applies (Blue Lake and Snow Lakes trailheads, plus a general note that many areas need one): an omission, not a statement. With the land manager's fee-site list (no Tye Road site) and the row's own notes (\"not a developed fee site\"; parking_pass \"no fee site identified\"), the owner may accept the op in proposed_ops_held; if applied, access.fees still reads \"None beyond the parking or entrance fee this route already lists\" (fees not touched per the rules). access._raw untouched.",
+   "sources": [
+    "https://archive.org/details/weekendrockwashi0000whit",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.openstreetmap.org/way/6321347",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_astroglide",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_astroglide",
+     "index": 0,
+     "expect": {
+      "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+      "lat": 47.7457,
+      "lng": -121.0885
+     },
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "sources": [
+      "https://archive.org/details/weekendrockwashi0000whit",
+      "https://www.mountainproject.com/area/117712289/half-moon-crag"
+     ]
+    }
+   ],
+   "proposed_ops_held": [
+    {
+     "op": "set",
+     "id": "wa_astroglide",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the roadside pullout (not a fee site)"
+    }
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "Trailhead pin moved from the Stevens Pass summit lots to the first (double) hairpin on Tye Road where two independent written accounts park, and its note rewritten; the pass question still has no source that states it, so passRequired is held.",
+   "evidence": "Ninth pass (r25, 2026-10-01). Rows re-read read-only: waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457,-121.0885 (USGS ground 4,074 ft, in the Stevens Pass summit lots), distMi 0. ITEM 1 (trailhead pin) - CONFIRMED. New source: the Weekend Rock Washington (2005) Half Moon chapter, read through Internet Archive full-text search snippets (the scan itself is lend-only): \"From a junction just 100 yards west of the summit sign, locate the old Stevens Pass Highway, which takes off in a northwesterly direction down the drainage. In about 1.4 miles the road makes a large hairpin turn to the left. This is the parking area. Another mile down the road is the Iron Goat Trail\", and \"Camping: Car camping at the hairpin turnout on the old highway has been done\". Second, different author: the Mountain Project area page (shared 2019 by a different contributor, with first-hand approach detail the book does not carry): \"pull off just uphill of the double hairpin turn (about 1.4 miles from US2) ... Approach is about 1000' of gain\". Both name the same landmark, the first hairpin on Tye Road below the pass. That landmark is unambiguous on the OpenStreetMap road geometry (way 6321347): heading west from US 2 the road's first hairpin, a left turn, has its tip at 47.7511,-121.1172 and is immediately followed by a second (the 'double'), 47.7492,-121.1142; the next switchback (47.7533,-121.1282) is the 'third switchback' the Treasury boulder area parks at, so the numbering agrees. Pin placed on the mapped road vertex at the uphill end of the first hairpin, 47.75108,-121.11650 (USGS ground 3,577 ft). Independent checks, not written anywhere: the crag point (47.75586,-121.11626, ground 4,758 ft) is directly uphill of this spot and about 1,180 ft above it, matching the stated ~1,000 ft approach, whereas the old pin is only ~680 ft below the crag and 2 km east; the road distance from the US 2 junction to this hairpin is consistent with 'about 1.4 miles'. Caveat for the owner: the Mountain Project text may lean on the guidebook, but it is a different author and adds its own first-hand approach facts. The pin's note is rewritten (four copies pointed readers at another route id; the Artic Rose copy claimed the coordinate fit the directions, which was false). distMi stays 0; name and directions unchanged. ITEM 2 (passRequired) - UNRESOLVED, no op. No source STATES whether a pass is needed at the pull-off. The guidebook's Half Moon beta reads 'Regulations: Let common sense prevail.' and names no pass, while the same book flags the Northwest Forest Pass where it applies (Blue Lake and Snow Lakes trailheads, plus a general note that many areas need one): an omission, not a statement. With the land manager's fee-site list (no Tye Road site) and the row's own notes (\"not a developed fee site\"; parking_pass \"no fee site identified\"), the owner may accept the op in proposed_ops_held; if applied, access.fees still reads \"None beyond the parking or entrance fee this route already lists\" (fees not touched per the rules). access._raw untouched.",
+   "sources": [
+    "https://archive.org/details/weekendrockwashi0000whit",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.openstreetmap.org/way/6321347",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_asymptotic",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_asymptotic",
+     "index": 0,
+     "expect": {
+      "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+      "lat": 47.7457,
+      "lng": -121.0885
+     },
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "sources": [
+      "https://archive.org/details/weekendrockwashi0000whit",
+      "https://www.mountainproject.com/area/117712289/half-moon-crag"
+     ]
+    }
+   ],
+   "proposed_ops_held": [
+    {
+     "op": "set",
+     "id": "wa_asymptotic",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the roadside pullout (not a fee site)"
+    }
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "confirmed",
+   "resolution": "move_pin",
+   "summary": "Trailhead pin moved from the Stevens Pass summit lots to the first (double) hairpin on Tye Road where two independent written accounts park, and its note rewritten; the pass question still has no source that states it, so passRequired is held.",
+   "evidence": "Ninth pass (r25, 2026-10-01). Rows re-read read-only: waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457,-121.0885 (USGS ground 4,074 ft, in the Stevens Pass summit lots), distMi 0. ITEM 1 (trailhead pin) - CONFIRMED. New source: the Weekend Rock Washington (2005) Half Moon chapter, read through Internet Archive full-text search snippets (the scan itself is lend-only): \"From a junction just 100 yards west of the summit sign, locate the old Stevens Pass Highway, which takes off in a northwesterly direction down the drainage. In about 1.4 miles the road makes a large hairpin turn to the left. This is the parking area. Another mile down the road is the Iron Goat Trail\", and \"Camping: Car camping at the hairpin turnout on the old highway has been done\". Second, different author: the Mountain Project area page (shared 2019 by a different contributor, with first-hand approach detail the book does not carry): \"pull off just uphill of the double hairpin turn (about 1.4 miles from US2) ... Approach is about 1000' of gain\". Both name the same landmark, the first hairpin on Tye Road below the pass. That landmark is unambiguous on the OpenStreetMap road geometry (way 6321347): heading west from US 2 the road's first hairpin, a left turn, has its tip at 47.7511,-121.1172 and is immediately followed by a second (the 'double'), 47.7492,-121.1142; the next switchback (47.7533,-121.1282) is the 'third switchback' the Treasury boulder area parks at, so the numbering agrees. Pin placed on the mapped road vertex at the uphill end of the first hairpin, 47.75108,-121.11650 (USGS ground 3,577 ft). Independent checks, not written anywhere: the crag point (47.75586,-121.11626, ground 4,758 ft) is directly uphill of this spot and about 1,180 ft above it, matching the stated ~1,000 ft approach, whereas the old pin is only ~680 ft below the crag and 2 km east; the road distance from the US 2 junction to this hairpin is consistent with 'about 1.4 miles'. Caveat for the owner: the Mountain Project text may lean on the guidebook, but it is a different author and adds its own first-hand approach facts. The pin's note is rewritten (four copies pointed readers at another route id; the Artic Rose copy claimed the coordinate fit the directions, which was false). distMi stays 0; name and directions unchanged. ITEM 2 (passRequired) - UNRESOLVED, no op. No source STATES whether a pass is needed at the pull-off. The guidebook's Half Moon beta reads 'Regulations: Let common sense prevail.' and names no pass, while the same book flags the Northwest Forest Pass where it applies (Blue Lake and Snow Lakes trailheads, plus a general note that many areas need one): an omission, not a statement. With the land manager's fee-site list (no Tye Road site) and the row's own notes (\"not a developed fee site\"; parking_pass \"no fee site identified\"), the owner may accept the op in proposed_ops_held; if applied, access.fees still reads \"None beyond the parking or entrance fee this route already lists\" (fees not touched per the rules). access._raw untouched.",
+   "sources": [
+    "https://archive.org/details/weekendrockwashi0000whit",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.openstreetmap.org/way/6321347",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_artic_rose",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "From Hwy 2 at Stevens Pass, take old Stevens Pass Hwy/Tye Rd downhill toward Wellington and pull off just uphill of the double hairpin turn, ~1.4 mi from US2. This coordinate is an estimated pulloff location consistent with those written directions rather than a surveyed pin.",
+     "value": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_artic_rose",
+     "index": 0,
+     "expect": {
+      "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+      "lat": 47.7457,
+      "lng": -121.0885
+     },
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "sources": [
+      "https://archive.org/details/weekendrockwashi0000whit",
+      "https://www.mountainproject.com/area/117712289/half-moon-crag"
+     ]
+    }
+   ],
+   "proposed_ops_held": [
+    {
+     "op": "set",
+     "id": "wa_artic_rose",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the roadside pullout (not a fee site)"
+    }
+   ]
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "items": [
+    3
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Still no second stated trailhead-to-Cooney-Lake figure, so day 1 stays at 6.2 mi; the Little Giant Fire closure of the Foggy Dew and Merchants Basin trails has been lifted and the current Forest Service order does not list them.",
+   "evidence": "Ninth pass (r25, 2026-10-01). Row re-read read-only: itinerary.days[0].miles 6.2 (Foggy Dew TH -> #417 -> Merchants Basin junction -> Cooney Lake trail -> Cooney Lake), days[1].miles 12.8 with 'the full 6.2 miles back out', Cooney Lake pin distMi 8, no closure recorded. MILEAGE - NEW sources this pass, none a stated trailhead->Cooney Lake one-way figure: (1) WTA trip report 2018-10-07 (Foggy Dew/Martin Creek/Cooney/Switchback/Merchants loop): segment figures only - first big junction at 5 mi, then about 2 mi and 3 more mi up Martin Creek to the Cooney Lake junction, 17 mi loop total; summing would be computing, and it is the Martin Creek line, not the row's. (2) WTA trip report 2025-10-05 (Sunrise/Merchants/Cooney lollipop): 'a little over 17 miles' loop, no leg figure. (3) WTA trip report 2002-09-30 (Sunrise Lake): Cooney Lake junction at 5 mi, Merchants Basin one mile beyond; no lake figure. (4) WTA trip reports 2017-10-12 (#8515503172) and 2020-10-01: no per-leg figures in the text. (5) Methow Valley Trails Collaborative conditions page: Martin Creek #429 '6.2 miles one-way (add 2.3 miles from Crater Creek TH)', Eagle Lakes #431 5.6 mi - trail lengths only; again supports the owner note that 6.2 is the Martin Creek trail's own length, not a trailhead->lake figure. (6) Internet Archive full-text search for 'Cooney Lake' with 'Foggy Dew': nothing beyond the books already read. Net: still one stated figure on this line (8.5 mi, one author); no op on days[0].miles, days[1].note or days[1].miles. CLOSURE (report only, no op) - status: LIFTED. Methow Valley News 2026-08-20 listed Foggy Dew 417, Merchants Basin 417.1, Sunrise Lake 417.2, Navarre Way 414 and Pasayten Drive 405 closed for the Little Giant Fire; Methow Valley News 2026-09-03: 'The Little Giant fire closure order has been lifted from trails in the Sawtooth Backcountry.' The land manager's own current order, Little Giant Fire Closure Order 06-17-07-2026-40 (effective 2026-09-03, through 2026-10-31 unless rescinded; Wenatchee River/Entiat/Chelan Ranger Districts; also posted on InciWeb, fire 93% contained as of 2026-10-01), was read in full: its 'Trails Closed' list names only 12xx/14xx/15xx trails (Chiwawa, Entiat, Railroad Creek/Copper Basin area etc.) and does not include 417, 417.1, 417.2, 429, 431 or 434 ('Hunters Tr. 1417' is a different trail). The forest alerts page carries no Methow Valley or Sawtooth Little Giant alert today. The August closure no longer applies; nothing to record on the row.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-10-07.1145014743",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-10-05.194053968519",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002093004",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-10-12.8515503172",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-10-01-6968502636",
+    "https://trailscollaborative.org/conditions",
+    "https://archive.org/advancedsearch.php",
+    "https://methowvalleynews.com/2026/08/20/a-roundup-of-regional-trails-closures-that-remain-in-effect/",
+    "https://methowvalleynews.com/2026/09/03/more-recreational-trails-are-opening-up",
+    "https://methowvalleynews.com/2026/09/17/as-autumn-arrives-fire-closures-are-being-reduced-on-area-trails",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/little-giant-fire-closure-order-wenatchee-river-and-entiat-ranger",
+    "https://www.fs.usda.gov/sites/nfs/files/r06/okanogan-wenatchee/publication/alerts/Little%20Giant%20Fire%20Closure%20Closure%20Order%2006-17-07-2026-40.pdf",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts",
+    "https://inciweb.wildfire.gov/incident-information/waowf-little-giant-fire"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}

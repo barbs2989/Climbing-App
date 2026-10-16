@@ -1,0 +1,460 @@
+{
+ "batches": ["b041.json", "b042.json", "b043.json", "b044.json"],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_south_face_12",
+   "name": "South Face",
+   "area": "Argonaut Peak",
+   "contradictions": [
+    {
+     "fact": "Chockstone gully identity — crux/descent of THIS 5.6 route, or the finish of a different, easier scramble line",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_variants[0].baseFinding", "says": "high on the mountain there is a 50-foot gully with a chockstone near its top... That is the finish of the ordinary scramble line, and the approach description on this route describes it as though it were the route. It is not the base of the 5.6 face climb, and a party navigating to it will end up on the scramble."},
+      {"field": "approach", "says": "find the route's technical crux: a 50-foot gully with a chockstone near its top (Class 4 — step right at the overhang to avoid harder class 5 moves), which tops out on the east ridge"},
+      {"field": "pitch_detail[2] (pitch 3)", "says": "The 50-foot gully with a chockstone near its top is Class 3 until the final stepping-right move... it's the route's real crux"},
+      {"field": "descent_text", "says": "The single technical obstacle is the 50-foot chockstone gully near the top: rappel it rather than downclimbing..."}
+     ],
+     "why": "the route's own approach_variants verification note explicitly says the chockstone-gully feature that `approach`, `pitch_detail`, `descent` and `descent_text` all treat as this 5.6 route's crux/descent actually belongs to the mountain's separate, easier scramble line, and that following this route's own approach text there sends a party onto the wrong climb.",
+     "internal_resolution": "the baseFinding is explicit and self-aware about the conflict; approach/pitch_detail/descent/descent_text's treatment of the chockstone gully as part of the 5.6 face route is the flagged error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance — dist_km (5.5 mi) vs itinerary total miles (15 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8.85 (≈5.5 mi)"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "6 + 9 = 15"}
+     ],
+     "why": "the header (which uses itinerary miles when present) and the Overview technical-stats distance (dist_km) would show 15 mi and 5.5 mi respectively for the same route.",
+     "internal_resolution": "itinerary's 15 mi round trip matches the day-by-day approach+summit-day miles; dist_km looks like a one-way or partial figure.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season vs. the only approach road being closed for that entire season",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jun-Sep (snow often lingers in the approach gully into early/mid-July)"},
+      {"field": "best_season", "says": "July through September, for dry rock"},
+      {"field": "access.closures", "says": "Beverly Creek/Fourth Creek Pass (FR-9737-112, Beverly Turnpike Trailhead) and several nearby Teanaway trails... were closed under a USFS order effective May 20-Dec 31, 2026 following the 2025 Labor Mountain Fire"},
+      {"field": "road.status", "says": "Closed under the 2025 Labor Mountain Fire order, effective May 20 through December 31, 2026"}
+     ],
+     "why": "the stated climbing season (June-September) falls entirely inside the currently-active May 20–Dec 31, 2026 closure of the route's only described trailhead/road, so a party planning within the stated season would find the access closed the whole time.",
+     "internal_resolution": "access.closures and road.status agree with each other; season/best_season do not account for the closure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "name": "Southeast Ridge",
+   "area": "Argonaut Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count — 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "8"},
+      {"field": "timing.sectionBreakdown[1].note", "says": "Climb the 8-pitch Southeast Ridge to the summit, then reverse it with rappels..."},
+      {"field": "itinerary.days[1].note", "says": "Climb the 8-pitch Southeast Ridge to the summit..."},
+      {"field": "approach", "says": "this notch is where the roped, belayed climbing on the East Ridge (6 pitches) begins"},
+      {"field": "pitch_detail", "says": "6 numbered pitches (1 through 6)"}
+     ],
+     "why": "the pitches field and repeated prose call this an 8-pitch route, but the route's own approach text explicitly says the roped climbing is 6 pitches, matching the 6 rows actually given in pitch_detail.",
+     "internal_resolution": "approach text and pitch_detail agree at 6 pitches; the 8-pitch figure in `pitches`/prose is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent rappel count/anchor reliability — 2 rappels on natural anchors vs 4 rappels on 'established' stations",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Two single-rope rappels, or one double-rope rappel, back into the notch"},
+      {"field": "descent_text", "says": "parties either make two single-rope rappels or one longer double-rope rappel... Anchors on this route are natural — slung horns, blocks, or small trees..."},
+      {"field": "detailed_rack", "says": "The East Ridge is most commonly encountered as the standard rappel descent off the Northwest Arete (Argonaut-Colchuck Col in 4 rappels) with established anchors found at each station"}
+     ],
+     "why": "detailed_rack states the ridge's standard descent is 4 rappels with established anchors at each station, while the route's own rappels/descent_text fields both describe only 2 single-rope rappels (or 1 double-rope) on natural horn/block/tree anchors with no bolted stations.",
+     "internal_resolution": "rappels + descent_text agree with each other (2 raps, natural anchors); detailed_rack's '4 rappels...established anchors' looks like it describes a different descent (off the Northwest Arete) folded incorrectly into this route's rack advice.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit requirement — Enchantment quota lottery claimed vs the approach being outside the permit area",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead."},
+      {"field": "access.fees", "says": "this approach (Ingalls Creek Trail or Longs Pass/Ingalls Way from the Teanaway) sits entirely outside the Enchantment Permit Area lottery boundary, so the paid Enchantments lottery ($6 application + $5/person/night) does not apply."},
+      {"field": "access.notes", "says": "Do not confuse this approach with the actual Enchantment Permit Area lottery... Argonaut Peak's standard approaches are separate, non-quota Alpine Lakes Wilderness trailheads."},
+      {"field": "access.permit", "says": "Free self-issue wilderness permit at the trailhead — no lottery, no reservation needed, even for an overnight camp."}
+     ],
+     "why": "the permit field claims an Enchantment quota lottery is required for any overnight stay, directly opposite to the route's own access block (and the sibling South Face route's correctly-worded permit field), which says the Teanaway/Ingalls Creek approach is entirely outside the Enchantment Permit Area and needs only a free self-issued permit.",
+     "internal_resolution": "access.fees/access.notes/access.permit all agree with each other and with the sibling South Face route; the `permit` field is the outlier, apparently boilerplate copied from an Enchantments-zone route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route name 'Southeast Ridge' vs its own prose consistently calling it the 'East Ridge'",
+     "severity": "medium",
+     "claims": [
+      {"field": "name / face", "says": "Southeast Ridge / \"Southeast Ridge / SE Spire\""},
+      {"field": "beta", "says": "From Colchuck Col, ascend the east ridge featuring blocky, generally solid but not sustained Class 4 to 5.6 climbing."},
+      {"field": "approach", "says": "...roped, belayed climbing on the East Ridge (6 pitches) begins."},
+      {"field": "descent_text", "says": "Descend by reversing the East Ridge: downclimb and scramble back through the gendarme..."},
+      {"field": "detailed_rack", "says": "The East Ridge is most commonly encountered as the standard rappel descent off the Northwest Arete..."}
+     ],
+     "why": "the route is titled and faced as the Southeast Ridge, but its beta/approach/descent_text/detailed_rack text call it the East Ridge throughout and start it from the Colchuck/Argonaut-Colchuck col, raising the possibility some of this route's narrative fields were copied from a distinct East Ridge description.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route distance — dist_km (5.0 mi) vs itinerary total miles (18 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi)"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "9 + 9 = 18"}
+     ],
+     "why": "the header (itinerary miles) and Overview technical-stats distance (dist_km) would show materially different distance figures for the same route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season vs. the only approach road being closed for that entire season",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "Mid-July through September"},
+      {"field": "access.closures", "says": "Beverly Creek/Fourth Creek Pass (FR-9737-112, Beverly Turnpike Trailhead)... closed under a USFS order effective May 20-Dec 31, 2026"},
+      {"field": "road.status", "says": "Closed under the 2025 Labor Mountain Fire order, effective May 20 through December 31, 2026"}
+     ],
+     "why": "the stated climbing season falls entirely inside the currently-active closure of the route's only described trailhead/road for 2026.",
+     "internal_resolution": "access.closures and road.status agree with each other; season/best_season do not account for it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "name": "South Slopes",
+   "area": "Cannon Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain — 5,300 ft (gain_ft) vs 8,400 ft (itinerary sum) vs 7,300+ ft (approach prose)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5300"},
+      {"field": "itinerary.days[0].gainFt + [1].gainFt + [2].gainFt", "says": "6000 + 2300 + 100 = 8400"},
+      {"field": "approach", "says": "the round trip from the trailhead is roughly 30+ miles with 7,300+ ft of gain"}
+     ],
+     "why": "the header/TECHNICAL STATS gain_ft (5,300 ft) is well below both the itinerary's own day-by-day sum (8,400 ft) and the route's own approach prose (7,300+ ft) for the same round trip.",
+     "internal_resolution": "approach prose (~7,300+ ft) and the itinerary sum (8,400 ft) are roughly consistent with each other; gain_ft (5,300 ft) is the outlier, 35-45% lower than both.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation loss — 4,500 ft (loss_ft) vs 8,600 ft (itinerary sum)",
+     "severity": "high",
+     "claims": [
+      {"field": "loss_ft", "says": "4500"},
+      {"field": "itinerary.days[0].lossFt + [1].lossFt + [2].lossFt", "says": "300 + 2300 + 6000 = 8600"}
+     ],
+     "why": "loss_ft is roughly half the itinerary's own day-by-day loss total for the same round trip.",
+     "internal_resolution": "itinerary's internal gain/loss sums are close to each other (8,400 vs 8,600, consistent with a round trip); loss_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance — dist_km (8.0 mi) vs itinerary total miles (27.5 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "12.87 (≈8.0 mi)"},
+      {"field": "itinerary.days miles", "says": "10.5 + 6.5 + 10.5 = 27.5"}
+     ],
+     "why": "dist_km reads as roughly a one-way distance to Perfection Lake while itinerary gives the full 3-day round trip; both could be shown on the page as 'the' route distance.",
+     "internal_resolution": "approach text's own \"8-9 miles\" one-way to Perfection Lake matches dist_km; itinerary's 27.5 mi matches the approach text's \"round trip...roughly 30+ miles.\"",
+     "needs_research": false
+    },
+    {
+     "fact": "Core Enchantment Zone overnight-permit season — May 15 vs June 15 start",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.cal", "says": "Core Enchantment Zone overnight permits (required for the basin camp, roughly June 15-Oct 31) are lottery/walk-up only..."},
+      {"field": "access.notes", "says": "Season requiring the overnight permit: May 15–Oct 31."},
+      {"field": "access.permit", "says": "Overnight camping anywhere in the Enchantment Permit Area (Colchuck, Core, Snow, and Stuart zones) requires a permit May 15-Oct 31."}
+     ],
+     "why": "itinerary.cal gives a June 15 start for the overnight permit requirement, a full month later than access.notes/access.permit's May 15 start for the same zone.",
+     "internal_resolution": "access.notes and access.permit agree with each other and with the standard Enchantment permit season used elsewhere; itinerary.cal's 'June 15' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints", "says": "{name: 'Basin below Cannon', type: 'Campsite', elev: 6200, distMi: 8}"},
+      {"field": "itinerary.days[0]", "says": "objective: 'Establish camp near Perfection/Inspiration Lake', note references camping '(~7,500 ft)'"},
+      {"field": "bivy[0]", "says": "name: 'Perfection Lake and Inspiration Lake basin camps', elev: 7190"}
+     ],
+     "why": "the waypoint list's named camp (6,200 ft) does not match the itinerary's and bivy list's stated camp (~7,190-7,500 ft near Perfection/Inspiration Lake), leaving it unclear which is the actual overnight site for the primary route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Cannon Mountain",
+   "contradictions": [
+    {
+     "fact": "Descent trailhead — same Eightmile Road lot with no shuttle needed, vs a different (Stuart Lake) trailhead requiring a car shuttle",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "That returns you to the same parking area at the end of Eightmile Road that the approach started from, so no car shuttle is needed — it is a long loop rather than an out-and-back, on the order of 15 miles for the day."},
+      {"field": "descent_text", "says": "...down Aasgard Pass, and down the Mountaineer Creek/Colchuck Lake Trail back to the Stuart Lake Trailhead."},
+      {"field": "itinerary", "says": "...to the Stuart Lake Trailhead -- about 15 miles... Best attempted only by strong, experienced parties, with a car shuttle or road connection arranged between the two trailheads."},
+      {"field": "approach_variants[0].hazards", "says": "Descent is over the summit to a DIFFERENT trailhead: a car shuttle or a long road walk"},
+      {"field": "approach_variants[0].baseFinding / notes", "says": "Plan the car shuttle before you start walking."}
+     ],
+     "why": "the top-level `descent` field says the loop returns to the same Eightmile Road lot with no shuttle needed, while descent_text, the itinerary string, and approach_variants' hazards/notes all explicitly say the loop ends at the different Stuart Lake Trailhead and requires a car shuttle.",
+     "internal_resolution": "descent_text, itinerary, and approach_variants agree (different trailhead, shuttle needed); the `descent` field is the outlier and, if followed, would leave a party without a car at the end of the day.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cashmere_mountain_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "Cashmere Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cashmere_mountain_se_route",
+   "name": "SE Route",
+   "area": "Cashmere Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "name": "West Ridge",
+   "area": "Cashmere Mountain",
+   "contradictions": [
+    {
+     "fact": "Hardest grade — Class 2-3 (`grade`) vs Class 3-4 (`rock_grade`/pitch_detail/hazards)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Grade II, Class 2 to 3"},
+      {"field": "rock_grade", "says": "Class 3-4"},
+      {"field": "pitch_detail[4] (\"Col to main summit via upper ridge gendarmes\")", "says": "Class 3 (Class 4-5 variations)"},
+      {"field": "hazards", "says": "exposed class 3-4 scrambling on the final ~300 ft summit gully"}
+     ],
+     "why": "the Overview's TECHNICAL STATS crux grade (sourced from `grade`) would read 'Class 2 to 3' immediately next to the grade chip sourced from rock_grade reading 'Class 3-4' — a full class understated on the same screen.",
+     "internal_resolution": "rock_grade, pitch_detail, and hazards all agree on Class 3-4 (with 4-5 variations); `grade`'s 'Class 2 to 3' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance — dist_km (8.7 mi) vs the route's own stated 17-mile round trip",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "14 (≈8.7 mi)"},
+      {"field": "overview", "says": "roughly 17 miles round trip with about 5,300-5,500 ft of gain"},
+      {"field": "itinerary.totalNote", "says": "the fittest parties instead do the whole ~17 mi, 5,300+ ft round trip car-to-car in one 10-14 hour day"}
+     ],
+     "why": "dist_km converts to about 8.7 miles, roughly half the 17-mile round trip the route's own overview and itinerary explicitly state, so a 'distance' figure sourced from dist_km would look like a different route than the one described in prose.",
+     "internal_resolution": "overview and itinerary.totalNote agree with each other at ~17 mi round trip; dist_km is one-way.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight camp — 6,000 ft / 4.5 mi (waypoint) vs ~7,100 ft / 6.5 mi (approach & itinerary)",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints", "says": "{name: 'Below west ridge', type: 'Campsite', elev: 6000, distMi: 4.5}"},
+      {"field": "approach", "says": "good bivy/camp options appear about 0.5 mile and 250 vertical feet later, around 7,100 ft — this is the last reliable water and the usual high camp for a two-day trip"},
+      {"field": "itinerary.days[0]", "says": "title: 'Backpack to high camp below the West Ridge', note: '...flat camp area at ~7,100 ft below Cashmere's west side.', miles: 6.5"}
+     ],
+     "why": "the Plan tab's waypoint list places the standard camp at 6,000 ft / 4.5 mi, while the same route's approach narrative and itinerary both put the 'usual high camp' at ~7,100 ft / 6.5 mi — an 1,100 ft, 2-mile discrepancy for what should be one overnight site.",
+     "internal_resolution": "approach and itinerary agree with each other (~7,100 ft / 6.5 mi); the waypoint entry is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Recommended start time from high camp — 5:00 AM vs ~6:00 AM",
+     "severity": "low",
+     "claims": [
+      {"field": "timing.recommendedStart", "says": "5:00 AM from camp"},
+      {"field": "itinerary.days[1].schedule[0]", "says": "{time: '5:00 AM', label: 'Leave high camp'}"},
+      {"field": "partner_requirements.approachTime", "says": "recommended start ~06:00 from camp for the ~6.5 hr ridge round trip"}
+     ],
+     "why": "timing.recommendedStart and the itinerary's own schedule both put departure at 5:00 AM, but partner_requirements states a ~06:00 recommended start for the same summit day.",
+     "internal_resolution": "timing.recommendedStart and itinerary.schedule agree with each other (5:00 AM); partner_requirements is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Eightmile Lake Trailhead elevation — elev 3,300 ft vs elevFt 4,650 ft in the same waypoint object",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[0].elev", "says": "3300"},
+      {"field": "waypoints[0].elevFt", "says": "4650"},
+      {"field": "waypoints[0].directions", "says": "...ending at the Eightmile Lake Trailhead at about 3,300 feet."}
+     ],
+     "why": "the same waypoint entry carries two different elevation values for the same trailhead, and its own embedded directions text confirms 3,300 ft.",
+     "internal_resolution": "elev and the directions text agree (3,300 ft); elevFt (4,650) is wrong, though only `elev` is the field the Waypoints list renders.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "name": "Milk n' Honey",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Route distance — dist_km (4.0 mi) vs itinerary total miles (10.6 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "10.6"}
+     ],
+     "why": "dist_km (4.0 mi, matching the one-way hike to Colchuck Lake) and the itinerary's car-to-car round-trip distance (10.6 mi) would both appear as 'the' route distance on different tabs.",
+     "internal_resolution": "approach text's own 4-mile figure to Colchuck Lake matches dist_km as a one-way approach distance.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain/loss — 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)",
+     "severity": "low",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "4760 / 4760"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "4100 / 4100"}
+     ],
+     "why": "the route's summary gain_ft/loss_ft differ from the itinerary's single-day gainFt/lossFt by about 660 ft (~14%) for what should be the same car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "name": "NW Ridge",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Rope length recommended — 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)",
+     "severity": "medium",
+     "claims": [
+      {"field": "gear", "says": "a single 25-30m rope is sufficient for the descent rappel"},
+      {"field": "rack", "says": "Single 25-30m rope for descent rappel"},
+      {"field": "detailed_rack", "says": "...and a 60 m rope, which also covers the 25 m descent rappel."},
+      {"field": "rope_length_m", "says": "60"},
+      {"field": "pro_tips", "says": "The descent is a single 25 m rappel down the east side, so a 60 m rope covers everything on the route."}
+     ],
+     "why": "the PROTECTION + RACK panel shows both the gear/rack list (a light 25-30m rope) and detailed_rack/rope_length_m/pro_tips (a 60m rope) for the same descent rappel, side by side.",
+     "internal_resolution": "detailed_rack, rope_length_m, and pro_tips agree with each other (60m); gear/rack's '25-30m' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit fee — 'none beyond parking' vs the $5-6 lottery fees stated in the same access block",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+      {"field": "access._raw.permit_cost", "says": "$5 per person per day (May 15 - Oct 31)"},
+      {"field": "access.notes", "says": "2026 lottery application window Feb 15–Mar 1... $6 nonrefundable application fee plus $11 per person if drawn"},
+      {"field": "access.permit", "says": "Overnight wilderness permit (advanced lottery + daily lottery + first-come first-served)"}
+     ],
+     "why": "the same access object says there is no fee beyond parking, yet its own notes/_raw sub-fields describe a real $6 lottery application fee plus a per-person charge for the overnight permit, matching what sibling routes on the same peak state.",
+     "internal_resolution": "notes, _raw.permit_cost, and permit (plus sibling routes on the same peak) agree a real lottery fee applies; access.fees is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach side of Colchuck Lake — waypoint routes via Aasgard Pass (west) while approach/approach_variants explicitly say EAST shoreline only, NOT the Aasgard/west-basin side",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints", "says": "{name: 'Aasgard Pass Gully Break', elev: 6000, note: 'Leave the Aasgard Pass boot path ~400 ft above the lake, traverse brush to the gully leading to Balanced Rock.'}"},
+      {"field": "approach", "says": "Unlike the west-side routes, the NW Ridge is approached from the east side of the lake: work around the eastern shoreline/talus to the base of the obvious gully..."},
+      {"field": "approach_variants[0].notes", "says": "This route is NOT approached through the west basin. Work around the EASTERN shoreline and talus instead."},
+      {"field": "approach_variants[0].baseFinding", "says": "the cairned climbers' path that leads left off the Aasgard trail through slide alder into the west basin... leads AWAY from this one. If you are bushwhacking through alder you are on the west-side approach and on the wrong side of the formation."}
+     ],
+     "why": "the Plan tab's own waypoint list sends a climber via the Aasgard Pass boot path (west side), while the same route's approach field and approach_variants explicitly and repeatedly say the NW Ridge is reached via the EASTERN shoreline and warn the Aasgard/west-basin path is for the wrong routes entirely.",
+     "internal_resolution": "approach and approach_variants agree with each other and explicitly flag the Aasgard/west-side path as wrong for this route; the waypoint entry is the outlier and, if followed, sends a party to the wrong approach.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance — dist_km (5.0 mi) vs itinerary/approach's stated ~18.5 km / 11.5 mi round trip",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "11.5"},
+      {"field": "approach", "says": "consistent with the route's ~18.5 km round-trip distance"}
+     ],
+     "why": "approach text's own '~18.5 km round-trip' (≈11.5 mi) matches the itinerary but is roughly double dist_km's 8 km, another one-way-vs-round-trip mismatch for 'distance.'",
+     "internal_resolution": "approach and itinerary agree (~11.5 mi round trip); dist_km is a smaller, likely one-way figure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "name": "The Scoop",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES",
+     "severity": "high",
+     "claims": [
+      {"field": "descent_text", "says": "The Scoop does not use CBR's standard single-rappel/scree walk-off (the one used by the West Face and most other summit-block routes) because its line sits well right of that descent gully. Instead parties rappel the route itself..."},
+      {"field": "descent", "says": "...a shorter single-rope rappel option from a slung horn also exists lower on the formation"},
+      {"field": "rappel_count_note", "says": "The standard walk-off IS available to parties who climbed The Scoop — one party did exactly that: 'Make a 30m rappel to east from slung horn, then scramble down scree or snow rightward and back to the base of the climb.'"}
+     ],
+     "why": "descent_text asserts the standard CBR single-rappel/scree walk-off is unreachable from The Scoop's line, while the route's own descent field and rappel_count_note both affirm that exact walk-off is available and was used by a real party.",
+     "internal_resolution": "descent and rappel_count_note agree with each other (rappel_count_note even quotes a first-hand account); descent_text's blanket 'does not use' claim is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance — dist_km (5.0 mi) vs itinerary total miles (10.6 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "10.6"}
+     ],
+     "why": "one-way approach distance (dist_km) vs the full car-to-car itinerary mileage could both render as 'the' route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "name": "West Face",
+   "area": "Colchuck Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "Commitment grade — Grade IV (in `grade`) vs commitment III",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Grade IV, 5.11"},
+      {"field": "commitment", "says": "III"}
+     ],
+     "why": "the route's grade string states an overall commitment grade of IV while the separate commitment field says III — the same concept given two different values that render in different places (header grade pill vs commitment chip).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux/route grade — 5.11 (`grade`) vs 5.11+ (`rock_grade`) vs 5.11+/5.12- (pitch_detail crux)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade IV, 5.11"},
+      {"field": "rock_grade", "says": "5.11+"},
+      {"field": "pitch_detail[5] (pitch 6, crux)", "says": "grade: '5.11+/5.12-', notes: '...the route's namesake crux, well protected despite the grade.'"}
+     ],
+     "why": "three fields give three different top grades for the same route/crux — 5.11 in the summary grade string, 5.11+ in rock_grade, and 5.11+/5.12- for the crux pitch itself — so the header grade pill would undersell the crux shown in the pitch table.",
+     "internal_resolution": "rock_grade (5.11+) and pitch_detail's lower bound (5.11+) agree; `grade`'s plain '5.11' understates it, and pitch_detail's upper bound (5.12-) goes even higher.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total ascent gain/loss — 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "2200 / 2200"},
+      {"field": "itinerary.days[0].gainFt / lossFt", "says": "4500 / 4500"},
+      {"field": "approach", "says": "about 4 miles and 2,280 ft of gain from the trailhead" }
+     ],
+     "why": "TECHNICAL STATS 'total ascent' (gain_ft/loss_ft = 2,200 ft) is barely half the itinerary's own day total (4,500 ft) for the same car-to-car climb; 2,200 ft matches only the hike to Colchuck Lake, not the full route.",
+     "internal_resolution": "the itinerary total (4,500 ft) and the route's own approach prose (further gain above the lake, then ~850-1,000 ft of climbing, then descent) both support a much larger total than gain_ft/loss_ft, which appear to capture only the approach-to-lake segment.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,241 @@
+{
+ "file": "s055.json",
+ "results": [
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 10 mi round trip (roughly 4.8-5 mi each way)",
+   "evidence": "The SummitPost Mount Stone page gives 9-10 miles round trip for the Putvin route; a 2011 day-hike report gives about 10 miles round trip with 5,000 ft; the FKT route page gives 9 mi; a SummitPost comment relays a 4.8 mi one-way figure, matching the row's approach and summit waypoint. The 8.5 mi itinerary figure and the 11 mi overview figure are outliers. dist_km (8.9 km) was left alone: it is a one-way-shaped figure and not clearly a different quantity.",
+   "sources": [
+    "http://web.archive.org/web/20250721025940/https://www.summitpost.org/mount-stone/151845",
+    "http://www.thesuns.net/hiking/2011/Mt%20Stone%20(9-10-11)/Mt_Stone_(9-10-11).htm",
+    "https://fastestknowntime.com/route/mt-stone-wa"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Round-trip distance",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 8.5,
+     "value": 10
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Round-trip distance",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 8.5 mi round trip",
+     "replace": "roughly 10 mi round trip"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Round-trip distance",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "over about 11 miles round trip",
+     "replace": "over about 10 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Length of the car-to-car day",
+   "verdict": "fixed",
+   "correct_value": "About 10 hours car-to-car (roughly 5.5 h up, 4 h down)",
+   "evidence": "The SummitPost Mount Stone page gives 10 hours as the average total time (6 very fast, 14 leisurely). An independent 2010 trip report logs about 4.3 h to the lake, 1.9 h to the summit and a return that totals roughly 10 hours. descent_text already says ~5.5 h up and 4 h down, ~10 h. The 9 h fields and the 12-13 h schedule are brought to 10 h: summit 11:00 AM, down by 3:30 PM, which also sits inside the 1:00 PM turnaround.",
+   "sources": [
+    "http://web.archive.org/web/20250721025940/https://www.summitpost.org/mount-stone/151845",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Length of the car-to-car day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "hours"
+     ],
+     "expect": 9,
+     "value": 10
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Length of the car-to-car day",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 9,
+     "value": 10
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Length of the car-to-car day",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "hrs"
+     ],
+     "expect": 9,
+     "value": 10
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Length of the car-to-car day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "time"
+     ],
+     "expect": "12:00 PM",
+     "value": "11:00 AM"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Length of the car-to-car day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "1:00 PM",
+     "value": "11:30 AM"
+    },
+    {
+     "id": "wa_mount_stone_putvin",
+     "fact": "Length of the car-to-car day",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "time"
+     ],
+     "expect": "5:30-6:30 PM",
+     "value": "3:30 PM"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Aspect of the snow-holding basin",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "SummitPost describes heading north from Lake of the Angels into a talus/boulder basin below St. Peter's Gate, i.e. slopes rising north from the lake, which would face south; but no source states the aspect of the snow-holding ground, and snow can linger in north-facing pockets within it. Would be settled by a topo reading of the specific snow slope the text means.",
+   "sources": [
+    "http://web.archive.org/web/20250721025940/https://www.summitpost.org/mount-stone/151845"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Searched Mountain Project, SummitPost, CascadeClimbers and NWHikers trip reports (the latter two would not load) and the Lemke Pickets traverse page; none states a car-to-car gain for the North Buttress. gain_ft 6,000 still matches only the approach. Would be settled by a trip report stating the whole-trip gain.",
+   "sources": [
+    "https://www.mountainproject.com/area/119741550/mount-terror",
+    "https://www.lemkeclimbs.com/full-pickets-traverse.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade II, 5.6",
+   "evidence": "The Mountain Project route page for the East Ridge/SE Face lists it as a 4-pitch, 400 ft Grade II. The SummitPost East Ridge route page (different author) lists Grade II, 5.6 YDS. commitment and alpine_grade already say II; the grade column and the pitch-1 note saying III-IV are corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/203505452/east-ridgese-face",
+    "http://web.archive.org/web/20230329060051/https://www.summitpost.org/mount-terror-east-ridge/871460"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Commitment grade",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade III-IV, 5.6",
+     "value": "Grade II, 5.6"
+    },
+    {
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Commitment grade",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the standard published rating for the climb is III-IV, 5.6.",
+     "replace": "the standard published rating for the climb is II, 5.6."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2018 trip report gives 19 miles round trip and a 600-8,151 ft range but no car-to-car gain; no route page (Mountain Project, SummitPost) states total gain or loss. Would be settled by a trip report stating the whole-trip gain and descent.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://www.mountainproject.com/route/203505452/east-ridgese-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Glacier travel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The SummitPost East Ridge page describes the approach from the Chopping Block saddle as scree, talus, a short snowfield and a couloir with no glacier; a 2018 trip report via Terror Basin reports no glacier travel; but the Terror Glacier lies on Degenhardt's south slope right beside the Terror-Degenhardt saddle this route starts from, and no source says whether it is crossed or whether a bergschrund exists. Would be settled by a report of the saddle approach naming the glacier either way.",
+   "sources": [
+    "http://web.archive.org/web/20230329060051/https://www.summitpost.org/mount-terror-east-ridge/871460",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://en.wikipedia.org/wiki/Terror_Glacier_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountain Project Stoddard Buttress page gives a 2,500 ft Grade IV climb but no car-to-car gain; CascadeClimbers trip reports would not load and no other page states a total. Would be settled by a trip report stating the whole-trip gain.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress"
+   ],
+   "patches": []
+  }
+ ]
+}

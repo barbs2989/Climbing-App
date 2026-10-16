@@ -1,0 +1,380 @@
+{
+  "wa_beckey_davis": {
+    "area": "wa_prusik_peak",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "https://www.mountainproject.com/forum/topic/114778202/prusik-peak-rappels-changed",
+      "https://www.mountainproject.com/forum/topic/119047995/why-arent-there-bolted-rap-anchors-off-prusik",
+      "https://www.mountainproject.com/forum/topic/125107314/rope-stuck-on-prusik-peak-late-night-epic",
+      "https://chossclimbers.com/testing/us/washington/alpine-lakes-wilderness-2/prusik-peak-in-a-day/",
+      "https://www.francisbaileyh.com/2022/09/29/prusik-peak/"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "On the north side of the summit crest, marked by a bolt and tat and generally reported as easy to locate. The bolt is an antique single, and it backs up a thread a few inches below the high point rather than sitting on top of it.",
+        "hazards": [
+          "the anchor sits below the crest, so you have to shimmy awkwardly off the north side before you can weight the system",
+          "older stations exist further climber's left and are described as not the line to take"
+        ],
+        "pull": "A single 60m rope covers every station on this descent. Parties who bring two ropes sometimes link the upper section into doubled rappels instead."
+      },
+      "2": {
+        "station": "A chockstone wedged between the main wall and a protruding flake, roughly 30 ft climber's left and 50 ft downslope of the big ledge. The station was moved here, so descriptions and photos that put this rappel on the ledge itself are out of date.",
+        "hazards": [
+          "the stance is cramped and uncomfortable compared with the ledge it replaced",
+          "parties working from older beta look for this anchor in the wrong place"
+        ]
+      },
+      "3": {
+        "station": "Below the chockstone on the north face. The next station is not straight below it — station 4 sits off to the climber's left, so do not run the fall line past it.",
+        "hazards": [
+          "everything below the summit is tat rather than fixed hardware, and the webbing has repeatedly built up into an unsorted pile of new and worn slings; judge each strand on its own and replace rather than add"
+        ]
+      },
+      "4": {
+        "station": "In a small alcove climber's left of station 3, sitting directly above the gully where the ground eases to 3rd/4th class.",
+        "hazards": [
+          "the station is directly beneath a large amount of loose rock and it is hard to get down from here without dislodging some of it onto whoever is below",
+          "many places for the rope to hang up on this section"
+        ],
+        "pull": "Loose ground above means the pull can bring rock with it — clear the station and watch the line come down."
+      },
+      "5": {
+        "station": "The first of two optional lower stations, both climber's right of the gully below station 4, rejoining the older rappel line down toward the climbers' path.",
+        "hazards": [
+          "these two are skippable: from station 4 you can instead downclimb 3rd class ground to climber's right to reach the trail, and parties expecting a fixed sequence sometimes hunt for anchors that they had no need to use"
+        ]
+      },
+      "6": {
+        "station": "The lower of the two optional stations right of the gully, landing on the climbers' path that leads back around to the base of the West Ridge.",
+        "hazards": [
+          "the last rappel is where stuck ropes are most often reported on this face, in one case with the far strand jamming about 10 m from its end and costing a party the rest of their daylight"
+        ],
+        "pull": "Single 60m. Repeated accounts of hung ropes on the lower face — keep the strands separated, and pull from ground clear of the flakes above."
+      }
+    }
+  },
+  "wa_forbidden_peak_east_face_catscratch": {
+    "area": "wa_forbidden_peak",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.mountainproject.com/route/106450596/west-ridge",
+      "https://www.mountainproject.com/forum/topic/113152868/forbidden-peak-descent-question",
+      "https://www.mountainproject.com/area/106450578/forbidden-peak",
+      "https://spokalpine.com/2018/08/06/forbidden-peak-west-ridge-iii-5-6/",
+      "https://medium.com/@sanket.t.patel/forbidden-peak-climb-2df01e390027"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "From the West Ridge notch, do not drop left into the snow couloir. Downclimb loose 3rd class rock and continue a short way down the gully system to climber's right; the first station appears just before the rock rolls over and steepens.",
+        "hazards": [
+          "the obvious fall line out of the notch leads into the snow couloir, which is a different descent with its own moat and bergschrund problem below it",
+          "loose 3rd class ground above the anchor, with nothing to stop what you knock off"
+        ],
+        "pull": "A single 60m rope is adequate for the whole gully sequence. Two ropes are what you would need if you descended the couloir instead, and without them that variation becomes mostly downclimbing."
+      },
+      "2": {
+        "station": "The line drops through chimneys on descender's right of the snow gully. Three separate chimneys all go and each carries a build-up of slings; the one closest to the gully, furthest east, is commonly used.",
+        "hazards": [
+          "some stations are slings on natural features that need backing up with fresh webbing and a ring before you commit",
+          "choosing a different chimney partway down commits you to a line whose anchors may not continue"
+        ]
+      },
+      "3": {
+        "hazards": [
+          "loose scree and rock get pushed down the gully onto anyone below — do not stack a second party on the same rappel, and space your own team out"
+        ]
+      },
+      "4": {
+        "hazards": [
+          "the difficulty here is time rather than technical ground; parties consistently describe the sequence as straightforward but slow, and being benighted on the glacier below is the common outcome"
+        ]
+      },
+      "5": {
+        "hazards": [
+          "low in the gully the ground turns to smooth, downward-sloping granite, described in one account as the least secure moving of the whole day"
+        ]
+      },
+      "6": {
+        "station": "The last rappels deposit you on the glacier remnants west of the couloir, where parties unrope.",
+        "hazards": [
+          "a moat opens between rock and ice as the season goes on and can be awkward to cross, particularly in the dark, which is when many parties arrive here",
+          "the serac and bergschrund below the snow gully sit underneath this whole section; the standard line avoids having to cross the schrund, but it is directly below you"
+        ]
+      }
+    }
+  },
+  "wa_goode_mountain_megalodon_ridge": {
+    "area": "wa_mount_goode",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://cascadeclimbers.com/forum/topic/104181-tr-goode-mountain-megalodon-ridge-08292021/",
+      "https://engineeredforadventure.com/goode-mountain-northeast-buttress/",
+      "https://stephabegg.com/trip-reports/washington/thunder-slam/",
+      "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "https://climberkyle.com/2020/07/18/mt-goode-ne-buttress-5-5/"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "The stations down the ridge are the same ones you pass climbing the final 5.6 pitches up and right to the summit — note their positions on the way up, because they are much harder to pick out from above. The first runs close to straight down the ridgeline.",
+        "hazards": [
+          "this rappel is reported as the one that knocks rock down on the person below; clear the fall line before anyone else starts down",
+          "a doubled 50m rope does not reach on this one"
+        ],
+        "pull": "60m rope, roughly 30m rappels. Parties comfortable downclimbing the 5.6 to the notch skip the ridge rappels entirely, which is why accounts of this descent range from two rappels to six."
+      },
+      "2": {
+        "station": "A traversing rappel, trending skier's right and rappeller's left rather than dropping straight down.",
+        "hazards": [
+          "the sideways line gives the rope many chances to catch, and this is the station most often named in stuck-rope accounts",
+          "the pendulum is real enough that parties describe hooking a horn on the way across to control it"
+        ],
+        "pull": "Extending the rings out from the anchor is specifically recommended here to stop the rope snagging on the pull."
+      },
+      "3": {
+        "station": "The second traversing rappel, landing on the long sidewalk ledge that runs around to Black Tooth Notch. A cairn marks the notch and is visible on the way up — note it, because you are aiming back down at it.",
+        "hazards": [
+          "the last few feet off this rappel often need scrambling rather than rope; an intermediate anchor is an option but is not usually necessary",
+          "the ledge traverse to the notch is loose Class 4 with one exposed move, commonly simul-climbed or short-roped rather than soloed",
+          "pulling the rope off the slab here comes with noticeable drag"
+        ]
+      },
+      "4": {
+        "station": "About 10 to 30 ft down the southwest side of the notch, on in-situ slings at the top of the Southwest Couloir. From here the raps run down the fall line, so look for the tat rather than a feature.",
+        "hazards": [
+          "the next station cannot be seen from this one; accounts split between finding it on a hidden ledge to rappeller's left and finding slings straight down at the very end of a 60m rope, so plan for both before committing",
+          "some parties skip this first notch station and scramble about 15 m down to the next one instead"
+        ]
+      },
+      "5": {
+        "station": "Straight down the couloir fall line on fixed slings.",
+        "hazards": [
+          "the rock quality through the couloir is as bad as anything on the mountain, and a party rappelling second is directly under everything the first one dislodges",
+          "a 60m rope is only just long enough for one of the raps in this section"
+        ]
+      },
+      "6": {
+        "station": "The last rappel puts you off technical ground and into the open couloir, on 3rd class or snow depending on season.",
+        "hazards": [
+          "below here the couloir ends in cliffs and a waterfall band; the exit is left onto easier ground and then a traverse back into the basin, and continuing down the fall line cliffs you out",
+          "the exit ledges themselves are crumbly, and this is where a tiring party tends to be by late in the day"
+        ],
+        "pull": "60m is sufficient for every station on the descent; a 70m is not needed."
+      }
+    }
+  },
+  "wa_mount_goode_northeast_buttress": {
+    "area": "wa_mount_goode",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://engineeredforadventure.com/goode-mountain-northeast-buttress/",
+      "https://stephabegg.com/trip-reports/washington/thunder-slam/",
+      "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "https://climberkyle.com/2020/07/18/mt-goode-ne-buttress-5-5/",
+      "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-13.8161883532",
+      "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "Reached by downclimbing roughly 100 ft from the summit to the first slings. These are the same anchors you climb past on the final pitches up and right — note where they are on the ascent, because they are much harder to spot on the way down.",
+        "hazards": [
+          "this rappel is the one repeatedly named for pulling rock down onto the person below",
+          "a doubled 50m rope will not reach the next station"
+        ],
+        "pull": "A single 60m rope does every station on this descent; a 70m is not required. Roughly 30m rappels."
+      },
+      "2": {
+        "station": "Distinctly traversing, trending skier's right and rappeller's left rather than down the fall line.",
+        "hazards": [
+          "the sideways line offers the rope many places to catch and is the station most often named in stuck-rope accounts",
+          "enough swing that parties describe hooking a horn on the way across to stop the pendulum"
+        ],
+        "pull": "Extending the rings out from the anchor is specifically recommended here to keep the pull clean."
+      },
+      "3": {
+        "station": "The second traversing rappel, ending on or just above the long sidewalk ledge that leads around to Black Tooth Notch. A cairn marks the notch and can be seen on the way up, so note its position before you need it.",
+        "hazards": [
+          "the last few feet often need to be scrambled off rappel; setting an intermediate anchor is optional",
+          "the connecting ledge to the notch is a short loose Class 4 to low-5th traverse with one exposed move, usually simul-climbed or short-roped",
+          "the rope pulls with real drag off the slab at the bottom of this one"
+        ]
+      },
+      "4": {
+        "station": "Ten to thirty feet down the southwest side of the notch on fixed slings, at the top of the Southwest Couloir. From here the line runs down the fall line, so you are hunting tat rather than a landmark.",
+        "hazards": [
+          "the next station is out of sight from this one; accounts disagree on whether it lies on a hidden ledge to rappeller's left or straight down at the very end of a 60m rope, so be ready for either before you commit",
+          "some parties skip this station and scramble about 15 m down to the next"
+        ]
+      },
+      "5": {
+        "station": "Straight down the couloir on fixed slings.",
+        "hazards": [
+          "the rock through the couloir is thoroughly loose and the second person down is directly beneath whatever the first dislodges",
+          "a 60m rope is just barely long enough on one of the raps in this section"
+        ]
+      },
+      "6": {
+        "station": "The final rappel takes you off technical rock into the open couloir, landing on Class 3 ground or snow depending on season.",
+        "hazards": [
+          "the couloir ends in cliffs and a waterfall band below; exit left onto easier terrain and traverse back into the basin rather than following the fall line, which cliffs out",
+          "the exit ledges are crumbly, and there is still several thousand feet of off-trail ground below before the valley — parties get benighted on it"
+        ]
+      }
+    }
+  },
+  "wa_northeast_ridge_1963_route": {
+    "area": "wa_johannesburg_mountain",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+      "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+      "https://cascadeclimbers.com/forum/topic/103590-tr-johannesburg-mountain-ne-buttress-08012020/",
+      "https://cascadeclimbers.com/forum/topic/92261-tr-johannesburg-mountain-and-cascade-peak-cj-couloir-to-east-ridge-and-nw-chimney-7272013/",
+      "https://trailcatjim.com/johannesburg-mtn-via-east-face-east-ridge/",
+      "https://cascadeclimbers.com/forum/topic/82326-tr-johannesburg-mtn-ne-buttress-8212011/"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "Not on the crest. Traverse the gendarmes on loose ledges roughly 40 to 75 ft below the ridge top, following occasional cairns, until the last two mini-summits come into view, then climb back onto the crest and look down the gully. The first anchors sit beside a small tower on the left side of that gully about 200 ft down, with a cairn on the tower in at least one season.",
+        "hazards": [
+          "parties who do not drop far enough below the crest end up committed to loose 4th and low-5th ground and have to climb back up to find the ledge with the cairns",
+          "anchors through this descent are mostly slings around large blocks, and some of the wrapped boulders are themselves suspect — check what the sling is attached to, not just the sling"
+        ],
+        "pull": "60m. This first one is described either as a single rope-stretching rappel or split into two shorter ones to the block below."
+      },
+      "2": {
+        "station": "A big block below the first anchors, where parties who split the opening rope-stretcher into two shorter raps end up.",
+        "hazards": [
+          "stations are weathered tat and it is normal for the first person down to back one up with gear or add fresh sling",
+          "the rappel line is not the climbing line, so retrieving a stuck rope means climbing ground nobody in the party has been on"
+        ],
+        "pull": "Carry spare cord and webbing — some stations are old tat and nothing else. A short rope leaves you between established anchors rather than at them."
+      },
+      "3": {
+        "station": "Continuing down the gully toward the heather benches. How many rappels this takes varies with rope length and how much of the loose gully a party is willing to downclimb, so the count between here and the benches is reported as two or three.",
+        "hazards": [
+          "the loose gully to climber's right of the rappels is the downclimbing alternative, and given how rotten the rock is, some accounts consider downclimbing the safer of the two"
+        ]
+      },
+      "4": {
+        "hazards": [
+          "everything here is loose enough that a rappelling party showers the ground below it; take the gully one at a time rather than moving together"
+        ]
+      },
+      "5": {
+        "station": "The last of the rappels into the heather benches. From here downclimb the heather to reach the next station.",
+        "hazards": [
+          "the heather feels less secure than the rock steps above it and is very hard to protect, which is the part of this descent accounts single out as genuinely dangerous rather than merely slow"
+        ]
+      },
+      "6": {
+        "station": "A slightly hidden station below the heather benches — look for it before committing to more heather downclimbing, because it is easy to walk past.",
+        "hazards": [
+          "aim straight at the col; lines that look more inviting trend away from it and cliff out, forcing a reversal late in the day"
+        ]
+      },
+      "7": {
+        "station": "The final rappel, dropping below the heather benches onto moderately angled slabs directly above the Cascade-Johannesburg col.",
+        "hazards": [
+          "the col sits at the head of the C-J couloir, which is a documented rock and icefall path — do not linger there and do not treat descending it as the easy way out",
+          "summit to col alone runs three to five hours, so parties routinely reach this last rappel at dusk with the long traverse out still ahead of them"
+        ],
+        "pull": "60m. Counts for the whole ridge vary widely with how much is downclimbed — anywhere from two rappels to eight is reported for the same line."
+      }
+    }
+  },
+  "bc_slesse_mountain_northeast_buttress": {
+    "area": "bc_slesse_mountain",
+    "_confidence": "single-source",
+    "_sources": [],
+    "skip_reason": "This route stores no rappel_detail (the column is null, as are rappels, rappel_count_note and descent_text), so there is no rappel number to attach detail to. Published descent beta for the Slesse NE Buttress does exist and is detailed, but it describes a descent whose rappel count is not fixed — the southwest-side exit is largely cairned scrambling and downclimbing with a variable number of optional raps, and the Crossover Pass exit adds a separate bolted 10-12 station line on the Crack of Noon Club route. Numbering those into this route's empty rappel_detail would be inventing the structure, not filling it. Note also that the requested id wa_mount_slesse_northeast_buttress does not exist; this is the route it resolves to, and it is in British Columbia rather than Washington.",
+    "rappel_add": {}
+  },
+  "wa_liberty_crack": {
+    "area": "wa_liberty_bell",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.mountainproject.com/route/106512297/liberty-crack",
+      "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+      "https://www.mountainproject.com/route/115148381/liberty-traverse",
+      "https://www.mountainproject.com/route/106555416/overexposure"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "Reached by traversing climber's left along the third-class ledges at the top of the route, or by downclimbing the last pitch of the Beckey Route. The anchor is shiny bolts with chains set in a corner or shallow alcove on a steep wall overlooking the Liberty Bell-Concord notch — you have to look down over the edge a little to see it, and it is not visible from the ledge above.",
+        "hazards": [
+          "the last few metres to the anchor cross an exposed sloping ledge",
+          "the station is genuinely hard to spot from above and parties have rappelled past the line or had to climb back up to find it; note it before you commit to going down"
+        ],
+        "pull": "Under 30m, single 60m rope. Do not link this into one double-length rappel to the notch — that variation has a poor reputation for jammed ropes."
+      },
+      "2": {
+        "station": "A second set of bolts and chains, described as sitting in an alcove with a tree beside it, dropping directly into the Liberty Bell-Concord notch.",
+        "hazards": [
+          "this last rappel is the one repeatedly reported for stuck ropes, in more than one case costing a party a re-lead of an adjacent route to recover the strand",
+          "you are rappelling over a climbing route and above a busy approach gully, so both your rope and anything you knock loose land on other parties — the notch echoes badly enough that shouted communication is unreliable when it is busy",
+          "the notch below is snow early or loose scree later, and the gully leading down from it sheds rock readily"
+        ],
+        "pull": "About 25m, single 60m rope reaches the notch."
+      }
+    }
+  },
+  "wa_the_west_face": {
+    "area": "wa_north_early_winters_spire",
+    "_confidence": "corroborated",
+    "_sources": [
+      "https://www.mountainproject.com/route/105847147/the-west-face",
+      "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "https://spokalpine.com/2016/09/12/north-early-winters-spire-chockstone-route-ii-5-7/",
+      "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-west-face",
+      "https://climberkyle.com/2019/05/11/north-early-winters-spire-nw-corner-5-9/"
+    ],
+    "rappel_add": {
+      "1": {
+        "station": "A bolted anchor in a comfortable alcove near the summit ridge, visible while you finish the last pitch. From the top of the third-class slabs the rappel goes back toward the West Face line, toward the climber's-right edge of the slabby ledge, to bolts just past the lip of the slab. Accounts differ on whether the top anchor is about 15 ft climber's right or climber's left of the finishing hand crack, so pick it out on the way up.",
+        "hazards": [
+          "there are two separate rappel descents off this summit and old tat hangs above the other one, so it is possible to start down the wrong line",
+          "guidebook descriptions written before the face was bolted send you into the notch and gully instead, which is the slower and chossier option"
+        ],
+        "pull": "About 22m. This is the only station on the line that is not a straight-down pull."
+      },
+      "2": {
+        "station": "Bolted, straight down the face.",
+        "hazards": [
+          "on a 60m rope the next anchor arrives at roughly waist height rather than at your feet — clippable, but knot the ends"
+        ],
+        "pull": "About 31m. The line is rigged for a single 70m; a 60m works but leaves no margin."
+      },
+      "3": {
+        "station": "Bolted, straight down — the longest span on the line.",
+        "hazards": [
+          "this is the rappel that comes up short. Accounts split between blocking and extending one strand with about 5m of cord, reaching down to clip in and feeding rope through the device, and simply tying knots and finding it fine — the margin is small enough that rope stretch decides it, so plan the extension before you are hanging on it"
+        ],
+        "pull": "About 32m. A 70m removes the problem entirely."
+      },
+      "4": {
+        "station": "Bolted, straight down.",
+        "hazards": [
+          "some parties on a 60m report 10 to 20 ft of easy but very exposed downclimbing off the end of one of the middle rappels"
+        ],
+        "pull": "About 28m. Pulls on this line are reported as unusually clean — the bolts run down a blank, unclimbed section of face with little to snag on."
+      },
+      "5": {
+        "station": "Bolted, straight down to a big gravel and dirt ledge. The line breaks here: the next anchor is not below you.",
+        "hazards": [
+          "walk about 20m to the skier's-left end of the ledge, where a cairn and a short dirt path lead around a corner to the last station. Parties who miss it face a sandy, insecure downclimb instead, which is exactly what that last rappel exists to avoid"
+        ],
+        "pull": "About 28m."
+      },
+      "6": {
+        "station": "Around the corner at the end of the dirt ledge, on bolts just skier's left of a tree that is sometimes slung. Accounts differ on whether the last rappel goes from those bolts or from the tree itself, and at least one party found the tree's tat had been stripped.",
+        "hazards": [
+          "carry a little cord and a ring in case the tree is the only option and has been cleaned"
+        ],
+        "pull": "About 28m to the ground, landing about a minute's walk from the base of the route and your packs."
+      }
+    }
+  }
+}

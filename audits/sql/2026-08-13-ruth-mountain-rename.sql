@@ -1,0 +1,34 @@
+-- wa_ruth_mountain_south_slopes is named "South Slopes / Ruth Glacier" and climbs the NORTH side.
+--
+-- Five signals agree, and none of them is the name:
+--   1. the row's `aspect` is N
+--   2. the row's `face` says "North Glacier"
+--   3. published sources: the standard route climbs Ruth from the NORTH via Hannegan Pass and the
+--      Ruth Glacier, and is described as the standard North Face route
+--   4. the sibling row wa_ruth_mountain_ruth_icy_traverse describes its ascent leg as
+--      "North (Ruth Glacier ascent)"
+--   5. the peak's genuine south-side features -- south ridge, south couloir -- belong to that
+--      Ruth-Icy traverse, not to this route
+--
+-- HOW THE NAME WENT WRONG: it encodes the DIRECTION OF TRAVEL as if it were an aspect. Hannegan
+-- Pass is north of Ruth, so the approach walks SOUTH along Ruth Arm -- the row's own text says
+-- "heading east then south", "traverse south across heather" -- to reach a mountain that is then
+-- climbed on its north-side glacier. The same confusion as wa_little_annapurna_south_slopes, whose
+-- waypoint for the "base of south slopes" sat north of the summit.
+--
+-- The prose half was corrected in place on 2026-08-13: `overview` no longer says "the south slopes
+-- and Ruth Glacier give a moderate snow climb", and `descent_text` no longer calls it "the standard
+-- South Slopes/Ruth Glacier route". Only those two spans were touched. Every other "south" on the
+-- row is a travel direction on the walk in and is CORRECT.
+--
+-- ASPECT IS NOT TOUCHED, deliberately. It is right, and it drives the sun/shade readout -- "fixing"
+-- it to S would turn a correctly-shady north glacier climb into a sunny one. That is precisely the
+-- backwards repair the first Little Annapurna report recommended.
+--
+-- The id keeps "south_slopes". Ids here are name-derived but not authoritative, and rewriting one is
+-- how routes get lost.
+UPDATE routes SET name = 'North Face / Ruth Glacier'
+WHERE id = 'wa_ruth_mountain_south_slopes' AND name = 'South Slopes / Ruth Glacier';
+
+-- Guarded on the current value, so re-running is a no-op and it will not fire if another session got
+-- there first. No area moves, so route_count is untouched.

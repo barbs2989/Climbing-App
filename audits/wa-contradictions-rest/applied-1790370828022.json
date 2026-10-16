@@ -1,0 +1,2026 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "column": "beta",
+   "path": [],
+   "fact": "Difficulty / steepness of the route"
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "column": "beta",
+   "path": [],
+   "fact": "Difficulty / steepness of the route"
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "column": "description",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "County vs sheriff agency"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach line and trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "High camp / bivy location and elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "hrs"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "hours"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "bail",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Maximum face angle / ice grade"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Maximum face angle / ice grade"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass / permit fees"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass / permit fees"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which route the 2007 ascent / first ascent belongs to"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "hazards",
+    3
+   ],
+   "fact": "Which route the 2007 ascent / first ascent belongs to"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Time on route"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "NPS overnight permit cost"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "NPS overnight permit cost"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass at the trailhead"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "waypoints",
+   "path": [
+    1,
+    "name"
+   ],
+   "fact": "Sulphide Glacier camp elevation"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Approach line (Shannon Ridge vs Fisher Chimneys/Lake Ann)"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach line (Shannon Ridge vs Fisher Chimneys/Lake Ann)"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "what_to_bring",
+   "path": [
+    2
+   ],
+   "fact": "Approach line (Shannon Ridge vs Fisher Chimneys/Lake Ann)"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Approach line (Shannon Ridge vs Fisher Chimneys/Lake Ann)"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "County vs sheriff agency"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain from trailhead to the base of the chimneys"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain from trailhead to the base of the chimneys"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "High camp location / elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "High camp location / elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "High camp location / elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "High camp location / elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "High camp location / elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "High camp location / elevation"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Lake Ann camp: elevation, distance and day-1 gain"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Lake Ann camp: elevation, distance and day-1 gain"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Lake Ann camp: elevation, distance and day-1 gain"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Lake Ann camp: elevation, distance and day-1 gain"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Lake Ann camp: elevation, distance and day-1 gain"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season start"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "watch_out",
+   "path": [
+    11
+   ],
+   "fact": "Permit process"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to high camp and summit"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Distance to high camp and summit"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "beta",
+   "path": [],
+   "fact": "SE Ridge alternative finish grade"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "descent_text",
+   "path": [],
+   "fact": "SE Ridge alternative finish grade"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "descent",
+   "path": [],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "title"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "fromTo"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Standard descent / exit trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "climate",
+   "path": [
+    "spring"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Road numbering to the trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Road numbering to the trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road numbering to the trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Road numbering to the trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "NPS overnight permit cost"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Season start"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "County vs sheriff agency"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Approach side / trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Approach side / trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach side / trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Approach side / trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Approach side / trailhead"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Ice steepness"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Ice steepness"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Ice steepness"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Group size limit"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Backcountry permit cost"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Backcountry permit cost"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Backcountry permit cost"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "before": {
+    "beta": "Grade II-III alpine ice/mixed route, up to 50-degree ice. Route to summit via Winnies Slide (50+ degree ice) or Fisher Chimneys junction. Mixed rock and ice. High exposure with steep glacier headwall. Active Hanging Glacier avalanches. Bergschrunds, steep ice (50+ degrees), crevasses.",
+    "description": "Easy snow approach via White Salmon Glacier. Straightforward glacier climb with minimal technical difficulty. Gains 2,000 ft through moderate snow slopes.",
+    "access": {
+     "fees": "No climbing fee (Forest Service approach). An NPS permit is required if camping overnight past the park boundary, and it is not free: $10 per person plus a $6 fee, youth 15 and under free.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park",
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    },
+    "emergency": {
+     "notes": null,
+     "county": "Whatcom County, WA",
+     "rangerStation": "North Cascades NP Wilderness Information Center, Marblemount, (360) 854-7245",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA",
+     "sheriffDispatch": "North Cascades NP SAR (360) 856-5700 ext. 515; after-hours (360) 873-4590 ext. 37; Skagit County Sheriff (360) 336-9450"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "before": {
+    "itinerary": {
+     "cal": "Mid-May through early July is the standard window, when the face holds consolidated snow/neve without excessive bergschrund or rockfall exposure; conditions get progressively more broken and rockfall-prone later in summer. Arrange a shuttle/second car if planning to exit via White Salmon Glacier instead of reversing to Lake Ann.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach as Fisher Chimneys: over Austin Pass, past Lake Ann, and up through the chimneys to a high camp near Winnie's Slide (~7,300 ft) below the Upper Curtis Glacier - the standard staging point for the face.",
+       "hours": 7,
+       "miles": 5,
+       "title": "Approach to high camp",
+       "gainFt": 2600,
+       "lossFt": 100,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Reach high camp at Winnie's Slide"
+      },
+      {
+       "n": 2,
+       "note": "Descend the upper White Salmon Glacier to the base of the headwall, then climb roughly 2,500-2,600 ft of sustained 45-50 degree snow and ice (with a short mixed step through a rock band) to the summit, descending back to camp via the Fisher Chimneys side. A 10-12 hour round trip from camp is typical.",
+       "hours": 11,
+       "miles": 4,
+       "title": "Summit day - climb the North Face",
+       "gainFt": 2600,
+       "lossFt": 2600,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "2:30 AM",
+         "label": "Leave high camp",
+         "detail": "Descend the White Salmon Glacier to the base of the face."
+        },
+        {
+         "time": "4:30 AM",
+         "label": "Rope up at the bergschrund",
+         "detail": "Start up the face while it's still firm."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Top out / summit",
+         "detail": "Sustained snow/ice climbing, ~4-5 hrs on the face."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at high camp",
+         "detail": "Descend via the Fisher Chimneys side."
+        }
+       ],
+       "objective": "Descend to the base of the face, climb it, and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car.",
+       "hours": 5,
+       "miles": 4,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2600,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Break camp and hike back to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip: roughly 13 miles round trip with about 5,000-5,500 ft of total gain, including one of the biggest sustained snow/ice faces in the Cascades. Elite parties have done it car-to-car in under 14 hours in a single push, but that is not the standard approach."
+    },
+    "timing": {
+     "totalHrs": 23,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 7,
+     "recommendedStart": "2:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "Same approach as Fisher Chimneys: over Austin Pass, past Lake Ann, and up through the chimneys to a high camp near Winnie's Slide (~7,300 ft) below the Upper Curtis Glacier - the s…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Descend the upper White Salmon Glacier to the base of the headwall, then climb roughly 2,500-2,600 ft of sustained 45-50 degree snow and ice (with a short mixed step through a rock…",
+       "fromTo": "Summit day - climb the North Face",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long, physically demanding approach (Price Glacier side or White Salmon), often with a bivy before the route",
+      "packWeight": "Full technical alpine/ice rack plus bivy gear, roughly 40-50 lb"
+     },
+     "approachTime": "Long, complex approach typically requiring a bivy (roughly 6-10+ hrs to the base of the face depending on approach taken)",
+     "requiredSkills": [
+      "Sustained snow/ice climbing to AI3 (50-60°) with two tools",
+      "Glacier travel & crevasse rescue",
+      "Serac hazard assessment and timing",
+      "Belayed ice pitches and self-arrest",
+      "Strong objective-hazard judgment given warming/rockfall risk"
+     ],
+     "experienceLevel": "Advanced/experienced alpine ice climbers comfortable on sustained steep ice with overhead serac exposure"
+    },
+    "waypoints": [
+     {
+      "lat": 48.8595,
+      "lng": -121.648,
+      "elev": 3500,
+      "name": "White Salmon Road (hairpin) TH",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park near the old White Salmon day-lodge site on SR 542 (White Salmon Road, Forest Road 3075), just before the Mount Baker Ski Area's White Salmon lodge. Walk around the gate and follow the old road about a mile to where it ends at an old clearcut. With good snow cover, drop northeast into the White Salmon Creek valley and follow it toward the glacier; without good cover, hold your elevation and contour around the clearcut instead, since the valley bottom turns to slide alder and devil's club once the snow is gone."
+     },
+     {
+      "lat": 48.82,
+      "lng": -121.6,
+      "elev": 7000,
+      "name": "North Face Base Camp",
+      "type": "Campsite",
+      "distMi": 5
+     },
+     {
+      "lat": 48.83109,
+      "lng": -121.60294,
+      "elev": 9131,
+      "name": "Mount Shuksan Summit",
+      "type": "Summit",
+      "distMi": 8
+     }
+    ],
+    "descent_text": "Climb over the summit and descend via Fisher Chimneys/Lake Ann Trail, or down the White Salmon Glacier back toward the ski area, rather than reversing the steep north face.",
+    "pitch_detail": [
+     {
+      "grade": "Crevassed glacier",
+      "notes": "From the bivy at about 5,500 ft, where the ridge meets the face, traverse left across the base through the lower glacier's cracks. The first few hundred feet hold the largest crevasses; trend climber's right of the main runnel to stay out from under icefall off the Hanging Glacier. Late season, a schrund can block the direct start; a left-leaning snow gully gets around it.",
+      "pitch": "Section 1"
+     },
+     {
+      "grade": "~45° snow/ice",
+      "notes": "Climb the long, continuous face on snow and runnels at about 45 degrees. Near 6,900 ft the line passes through a notch between two rock outcrops, and above it there is less cliff on either side. The upper face gets little early sun and stays firmer. In good snow it is often climbed unroped; late season it turns icy and a second tool and ice screws are needed.",
+      "pitch": "Section 2"
+     },
+     {
+      "grade": "45-50° snow/ice",
+      "notes": "The face steepens to about 50 degrees just below the exit, then tops out onto the broad shoulder between the Crystal and Hanging Glaciers, around 8,400 ft and northeast of the summit pyramid. On firm snow this is the most sustained ground of the route, with the whole face below.",
+      "pitch": "Section 3"
+     },
+     {
+      "grade": "Snow traverse, Class 3-4",
+      "notes": "From the shoulder, traverse the ice plateau around the east side of the summit pyramid to its south face, then finish up the central gully of the standard route (mostly 3rd-4th class with a few harder moves). The usual descent is the Fisher Chimneys to Lake Ann or the White Salmon Glacier back toward the cars, not the face.",
+      "pitch": "Section 4"
+     }
+    ],
+    "bail": "Retreat off the face is committing; assess conditions before crossing the bergschrund. Descent is via the Sulphide once high.",
+    "season": "Jun-Aug",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Consistent with on-file climate",
+      "probability": "Warming trends sharply increase rockfall and cornice hazard on the exit"
+     },
+     "exposure": "High - 6-8 pitches of sustained 50-60° ice with overhead serac hazard; falls or slow parties face severe consequences and limited retreat options",
+     "avalanche": {
+      "zone": "West Slopes North (NWAC) - covers the general area; NWAC's formal spring forecast tapers off before this route's main June-July window",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate"
+      }
+     },
+     "crevasses": "Glacier approach and travel required; the bergschrund crossing at the base is a noted crux that enlarges later in the season"
+    },
+    "access": {
+     "fees": "None — no climbing fee (Forest Service approach; free NPS permit only if camping overnight past the park boundary)",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "White Salmon Creek roadbed, then the ridgecrest opposite the ski area",
+      "notes": "Park at the lower White Salmon lodge on SR-542 (White Salmon Road, FR-3075) and follow the dirt road up the White Salmon Creek drainage for under a mile. This first stretch is common to both options.\n\nThe direct option then drops off-trail across White Salmon Creek and climbs to the ridgecrest DIRECTLY OPPOSITE THE SKI AREA, then follows that crest to the base of the mountain's north side.\n\nThis is a long Cascade adventure route rather than a line with a bootpack: bushwhacking, complex route-finding, runout and loose rock, moderate alpine ice, and extensive glacier travel, all in one day. It was climbed in 2007 by a party who took sixteen hours on the 1,300 ft arête alone, having started from the White Salmon Glacier.",
+      "season": "Roughly Jul-Sep. This is the more direct of the two options and it is a bushwhack, so it wants the ground clear rather than snow-covered",
+      "hazards": [
+       "Bushwhacking with no tread, where a wrong drainage costs a day",
+       "Runout climbing on loose rock high on the arête",
+       "Moderate alpine ice and extensive glacier travel on the same outing as the rock",
+       "A very long day: the first-ascent party took sixteen hours on the arête itself",
+       "A descent that exits down the upper and lower White Salmon Glacier rather than reversing the climb"
+      ],
+      "primary": true,
+      "baseFinding": "THE SKI AREA IS THE ONE THING YOU CAN SEE FROM ANYWHERE, AND IT IS THE AIMING MARK. The crest you want is the one directly opposite the ski area across White Salmon Creek. Cross the creek, climb, and stop when you are on a crest with the ski area behind you and level with you. In flat light that back-bearing is more reliable than anything ahead of you, because the ski area's cut runs and lift lines are the only man-made shape in the drainage.\n\nARRIVAL AT THE ROUTE ITSELF: the crest is a ramp, not the climb. Follow it until it runs into the mountain's north side, and the arête proper is the pillar the crest delivers you to. It is roughly 1,300 ft of climbing above that point.\n\nDISCRIMINATOR AGAINST THE ROUTES EITHER SIDE OF IT: this is a ROCK PILLAR, not a glacier and not a snow face. If the ground in front of you at the base is a glacier you are looking at the White Salmon; if it is a broad snow-and-ice face you are looking at the North Face. The northwest arête is the pillar between them, and the first ground you touch on it is rock.\n\nWHAT GOING TOO FAR LOOKS LIKE: continuing up the valley past the point where the opposite crest is climbable puts you on the other variant — up the valley to the lower White Salmon Glacier. That is a legitimate approach, but it is a different one, and mixing the two mid-way leaves you sidehilling."
+     },
+     {
+      "name": "Up the White Salmon valley to the lower glacier, then onto the crest",
+      "notes": "The alternative from the same parking: continue up the road as far as it goes, then travel off-trail up the valley until open slopes allow access to the lower White Salmon Glacier, and gain the crest of the arête from there.\n\nIt trades the creek crossing and the direct climb to the crest for more valley travel and a glacier approach. Parties choosing between the two are choosing between bushwhack-then-ridge and valley-then-glacier; both are documented and neither is a shortcut.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Extensive glacier travel with crevasse hazard on the lower White Salmon",
+       "Off-trail valley travel with no tread and brush low down",
+       "Loose rock and runout climbing on the arête above",
+       "Complex route-finding described by the first-ascent party as one of the route's defining features",
+       "No quick retreat: the descent is a separate glacier descent, not a reverse of the climb"
+      ],
+      "baseFinding": "THE GLACIER IS THE HANDRAIL, AND YOU LEAVE IT WHEN THE ROCK STARTS. Stay in the valley until the slopes open enough to walk onto the lower White Salmon Glacier, then work up the glacier with the arête's rock on your side and step onto it where the two meet.\n\nTHE TEST THAT SETTLES IT is the same one the direct variant uses, from the other direction: at the base of this route you are on ROCK, with the White Salmon Glacier on one side of the pillar and the North Face ground on the other. If you can still see glacier on both sides of you, you have not stepped onto the arête yet.\n\nWHAT DROPPING TOO LOW LOOKS LIKE: if the valley narrows and you are still in trees and brush with no open slope, you have not gone far enough up-valley to reach the glacier access, and pushing sideways onto the mountain from there puts you on steep vegetated ground below the pillar rather than at its foot.\n\nAND THE ORIENTATION CHECK: the descent for this route comes down the upper and then the lower White Salmon Glacier and deposits you back in this drainage. If your intended base is somewhere you could not plausibly walk back to down a glacier on this side, you are on the wrong side of the mountain."
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing fee (Forest Service approach; free NPS permit only if camping overnight past the park boundary)",
+     "notes": "Dual land manager: the lower approach (Lake Ann Trail, Sulphide Glacier forest approach) is USFS; the summit, camps, and most of the upper route (Fisher Chimneys and Sulphide Glacier) are inside North Cascades National Park.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "None required on the Forest Service approach. If camping overnight past the North Cascades NP boundary on the upper mountain, a free NPS backcountry permit is required (obtained at the Glacier/Marblemount ranger station).",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "landManager": "North Cascades National Park",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (approach) / National Park Service — North Cascades NP (upper mountain and summit)",
+     "parking_pass": "Northwest Forest Pass required at Lake Ann trailhead — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "3rd-4th",
+      "notes": "Scrambling from the Pyramid notch on solid rock with ample protection.",
+      "pitch": "P1-3"
+     },
+     {
+      "grade": "5.0-5.3",
+      "notes": "Low 5th class moves on quality rock to the summit; stays at or below 5.3 throughout.",
+      "pitch": "P4-6"
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": "Trailhead to camp ~2-3 hrs (Fisher Chimneys) or via Sulphide/White Salmon Glacier alternates; camp-to-summit ~7-8 hrs",
+     "approachTime": "Camp-to-summit reported around 7-8 hrs one way via Fisher Chimneys; a bivy at Winnie's Slide is commonly recommended to avoid night descents",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Class 3-4 scrambling with some low-5th-class (up to 5.4) moves",
+      "Rappelling with a 60m rope for descent",
+      "Route-finding on approach/descent"
+     ],
+     "experienceLevel": "Intermediate alpine climber — accessible to parties with solid glacier-travel basics; a common 'first big glaciated alpine objective' route"
+    },
+    "waypoints": [
+     {
+      "lat": 48.76727,
+      "lng": -121.61795,
+      "elev": 2500,
+      "name": "Shannon Ridge TH",
+      "note": "End of FR 1152-014 spur off Baker Lake Road.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.803,
+      "lng": -121.612,
+      "elev": 5400,
+      "name": "Sulphide Glacier camp",
+      "note": "Camp at the pass where Shannon Ridge's flat crest meets the glacier.",
+      "type": "Campsite",
+      "distMi": 4.75
+     },
+     {
+      "lat": 48.815,
+      "lng": -121.607,
+      "elev": 8500,
+      "name": "Notch below SE Ridge",
+      "note": "Trend right off the Sulphide Glacier onto the ridge; ~600 vertical ft of 5.3-5.7 to the summit.",
+      "type": "Junction",
+      "distMi": 6
+     },
+     {
+      "lat": 48.8314,
+      "lng": -121.6031,
+      "elev": 9127,
+      "name": "Mount Shuksan",
+      "type": "Summit",
+      "distMi": 6.7
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing fee (Forest Service approach; NPS permit only if camping overnight past the park boundary)",
+     "notes": "Backcountry permit required ($10/person + $6 fee peak season May 17-Oct 12); Northwest Forest Pass or America the Beautiful Pass for parking; permits lottery-based May 17-Oct 12, first-come first-serve off-season; no dogs allowed; best season: late July to August",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park (upper mountain); Mount Baker-Snoqualmie National Forest (Lake Ann trailhead)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "passRequired": "Northwest Forest Pass (or equivalent) for parking at Lake Ann Trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    },
+    "what_to_bring": [
+     "glacier travel gear",
+     "bivy gear for 2-3 days",
+     "approach shoes/boots for the chimneys",
+     "sun protection for glare off the glaciers"
+    ],
+    "hazards": [
+     "Descent rappel traverses a gully that can drop rock onto parties below.",
+     "Route crosses glaciers three times; conditions worsen late in the season."
+    ],
+    "emergency": {
+     "notes": "NPS helicopter has performed technical rescues on Shuksan's upper glaciers before.",
+     "county": "Whatcom County, WA",
+     "rangerStation": "North Cascades NP Wilderness Information Center, Marblemount, (360) 854-7245",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA",
+     "sheriffDispatch": "North Cascades NP SAR (360) 856-5700 ext. 515; after-hours Communications Center (360) 873-4590 ext. 37; if unreachable, Skagit County Sheriff (360) 336-9450"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "before": {
+    "approach": "Park at the Lake Ann Trailhead on the east side of SR 542 (Mount Baker Highway), about 1 mile below Artist Point. Follow Lake Ann Trail #600, which immediately loses roughly 700-800 ft over its first ~1.7 miles through heather and blueberry slopes (a minor creek crossing near the low point), then climbs back about 1,000 ft over the final ~1.3 miles of switchbacks to the broad saddle above Lake Ann (about 4 miles and ~4,900-5,000 ft from the car). Just past the saddle is an unsigned junction: the right fork drops to Lake Ann's campsites and outlet — the last reliable water before the climb — while the left fork is the climber's boot path for Fisher Chimneys. That path sidehills north below Shuksan's lower moraines, crossing talus and lingering snow tongues (often firm/icy in early morning through July — microspikes and an axe are worth carrying) to a dry fall that is scrambled (3rd class) to regain the zigzagging trail. Continue along the base of the cliff band to its far end, roughly 5.5-6 miles and 3,800-4,300 ft of gain from the trailhead, where the Fisher Chimneys begin: a broken, leftward-ascending line of 4th-class rock steps and heather ledges leading up to the Winnie Glacier. Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft). Watch for rockfall on the talus traverse and within the chimneys themselves (helmet essential, especially below other parties), and expect route-finding difficulty threading the braided chimney ledge system, which is easy to overshoot in poor visibility.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "4th class",
+      "label": "Fisher Chimneys to the Winnie Glacier",
+      "notes": "From the far end of the cliff band, roughly 5.5-6 miles and 3,800-4,300 ft of gain from the trailhead, the Chimneys are a broken, leftward-ascending line of 4th-class rock steps and heather ledges leading up to the Winnie Glacier. Watch for rockfall within the chimneys themselves (helmet essential, especially below other parties), and expect route-finding difficulty threading the braided chimney ledge system, which is easy to overshoot in poor visibility. Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft)."
+     }
+    ],
+    "itinerary": {
+     "cal": "Best climbed June through September; the Fisher Chimneys hold rockfall risk in warm/wet conditions, so an early start through them matters.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A short, scenic hike from the Lake Ann trailhead over Austin Pass down to a camp near the lake (~4,800 ft), leaving a full second day for the chimneys.",
+       "hours": 2.5,
+       "miles": 3.5,
+       "title": "Hike in to Lake Ann",
+       "gainFt": 800,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach Lake Ann camp"
+      },
+      {
+       "n": 2,
+       "note": "Ascend roughly 1,000 ft of class 3-4 scrambling through the chimneys (watch for rockfall from parties above), then continue up snow to a high camp near the toe of the Upper Curtis Glacier below Winnie's Slide (~7,300 ft).",
+       "hours": 5,
+       "miles": 2.5,
+       "title": "Move to high camp",
+       "gainFt": 2500,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Climb the Fisher Chimneys to high camp near Winnie's Slide"
+      },
+      {
+       "n": 3,
+       "note": "An early alpine start up the 40-degree Winnie's Slide onto the Upper Curtis Glacier and across Hell's Highway to the summit pyramid, then a full reversal with rappels back through the chimneys to the trailhead - a long, full-value day.",
+       "hours": 10,
+       "miles": 9.5,
+       "title": "Summit day and hike all the way out",
+       "gainFt": 1800,
+       "lossFt": 4400,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave high camp",
+         "detail": "Climb Winnie's Slide by headlamp."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Top of Upper Curtis Glacier",
+         "detail": "Cross Hell's Highway toward the summit pyramid."
+        },
+        {
+         "time": "9:45 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at high camp",
+         "detail": "Break camp and continue down."
+        },
+        {
+         "time": "6:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Rappels through the chimneys on the way down."
+        }
+       ],
+       "objective": "Climb Winnie's Slide, the Upper Curtis Glacier and Hell's Highway to the summit, then descend to the car"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip covering roughly 15-16 miles round trip and about 5,100 ft of gain to the summit; strong parties often fold days 2-3 together for a 2-day version with a single camp."
+    },
+    "timing": {
+     "totalHrs": 17.5,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 7.5,
+     "recommendedStart": "3:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 2.5,
+       "note": "A short, scenic hike from the Lake Ann trailhead over Austin Pass down to a camp near the lake (~4,800 ft), leaving a full second day for the chimneys.",
+       "fromTo": "Hike in to Lake Ann",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5,
+       "note": "Ascend roughly 1,000 ft of class 3-4 scrambling through the chimneys (watch for rockfall from parties above), then continue up snow to a high camp near the toe of the Upper Curtis …",
+       "fromTo": "Move to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "An early alpine start up the 40-degree Winnie's Slide onto the Upper Curtis Glacier and across Hell's Highway to the summit pyramid, then a full reversal with rappels back through …",
+       "fromTo": "Summit day and hike all the way out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 48.8500241,
+      "lng": -121.6861633,
+      "elev": 4770,
+      "name": "Lake Ann Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead is on the east side of the Mount Baker Highway (SR-542), about a mile below Artist Point, at roughly 4,770 feet."
+     },
+     {
+      "lat": 48.812,
+      "lng": -121.625,
+      "elev": 5500,
+      "name": "White Salmon Glacier Lower Bivouac",
+      "type": "Campsite",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.83109,
+      "lng": -121.60294,
+      "elev": 9131,
+      "name": "Mount Shuksan Summit",
+      "type": "Summit",
+      "distMi": 7.5
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Multi-mile approach with elevation gain to Lake Ann camp, plus a long summit day through the chimneys and upper glacier",
+      "packWeight": "Overnight glacier-mountaineering pack (rope, glacier kit, camp gear) to Lake Ann, roughly 35-45 lb"
+     },
+     "approachTime": "~4-5 miles/3-4 hrs to Lake Ann camp; additional 3-4+ hrs from camp to the chimneys base and summit",
+     "requiredSkills": [
+      "Glacier travel & crevasse rescue",
+      "Exposed 4th class/low 5th class scrambling on loose rock",
+      "Rappelling (shared with ascent traffic)",
+      "Self-arrest / basic snow travel",
+      "Route-finding in loose, popular terrain"
+     ],
+     "experienceLevel": "Intermediate alpine climbers comfortable with glacier travel and loose, exposed 4th class/low 5th class rock"
+    },
+    "watch_out": [
+     "Steep and exposed terrain throughout - particularly dangerous during descent",
+     "Exposed down climbing through chimney sections requiring rappel stations",
+     "Active rockfall zones in off-route gullies - warning about 'moss or lichen covered rock' indicates these trap hazards",
+     "Large crevasses on Upper Curtis Glacier requiring standard glacier travel skills",
+     "Moat hazard: 'Watch out for the moat' near initial snow crossing",
+     "Upper Curtis Glacier starts to break up late season - deteriorating conditions create hazards",
+     "Late season when Winnie's Slide becomes iced: may need ice screws and second tool",
+     "Route-finding extremely difficult - 'People frequently report difficult route finding. Pay attention and don't overthink it!'",
+     "Multiple thin paths lead to cliff overlooks - serious hazard for disoriented parties",
+     "Significant weather exposure on dramatic Upper Curtis Glacier crossing",
+     "2-3 day commitment increases exposure risk",
+     "Self-registration required at Glacier ranger station for multi-day attempts"
+    ],
+    "access": {
+     "fees": "No climbing fee (Forest Service approach). An NPS permit is required if camping overnight past the park boundary, and it is not free: $10 per person plus a $6 fee, youth 15 and under free.",
+     "notes": "Dual land manager: the lower approach (Lake Ann Trail, Sulphide Glacier forest approach) is USFS; the summit, camps, and most of the upper route (Fisher Chimneys and Sulphide Glacier) are inside North Cascades National Park.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "before": {
+    "approach": "From the end of FS Road 1152-014 (~2,500 ft), the route starts on the Shannon Ridge Trail #742, an old roadbed heading northeast. Follow it about 2 miles to where the road tread gives out around 3,800 ft, then continue on the true trail, angling left through brush onto the open ridge crest. Roughly 0.75 mile farther (~4,600 ft) the trail reaches timberline, where continuous snow often persists into midsummer (crampons/axe are worth carrying above this point in early season). From timberline, follow the broad, undulating ridge crest through meadows and broken timber for about 2 more miles to a pass where a major north-south ridge is met (~5,400 ft) — the Sulphide Glacier and the summit pyramid come into view here for the first time. From the pass, continue up open slopes and snow onto the glacier's toe; established bivy sites sit at roughly 6,200 ft (lower camp: several dry tent pads, composting toilet) and 6,500 ft (upper camp: dry pads, no reliable water). Total approach to high camp is roughly 7-8 miles one-way with about 4,000-4,700 ft of gain. From camp, rope up for glacier travel and ascend the broad, moderately crevassed Sulphide Glacier — crevasse hazard increases through the season as snow bridges thin, so carry and know how to use crevasse-rescue gear — angling climber's-left toward the base of the summit pyramid at roughly 8,400-8,500 ft. Water is unreliable above timberline late in the season; plan to melt snow at camp, and expect the first mile of brushy old road to be a bit overgrown and easy to lose in low light.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long approach via the Shannon Ridge trail with substantial elevation gain to high camp near the glacier toe",
+      "packWeight": "Overnight glacier-mountaineering pack (rope, crevasse-rescue kit, camp gear, or ski gear in spring), roughly 35-45 lb"
+     },
+     "approachTime": "~7 miles/5-7 hrs to high camp on Shannon Ridge/glacier toe; summit day roughly 6-8 hrs round trip from camp",
+     "requiredSkills": [
+      "Glacier travel & crevasse rescue",
+      "Rope-team travel",
+      "Basic cramponing on snow/ice",
+      "Class 4 scrambling on the summit pyramid",
+      "Self-arrest"
+     ],
+     "experienceLevel": "Solid beginner-to-intermediate glacier mountaineers; commonly used as a step-up objective for climbers with prior basic glacier experience"
+    },
+    "itinerary": {
+     "cal": "The Shannon Creek/FR-1152 approach road usually isn't reliably snow-free and driveable until late June; late July-August is prime season for stable glacier crossing and a straightforward rappel off the summit pyramid.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A well-graded trail climbs through old growth and subalpine meadows onto Shannon Ridge, then across talus and heather to a flat camp near the toe of the glacier. Most parties budget 5-6 hours.",
+       "hours": 5,
+       "miles": 5,
+       "title": "Approach to high camp",
+       "gainFt": 3200,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach high camp on the Sulphide Glacier"
+      },
+      {
+       "n": 2,
+       "note": "Rope up before dawn and cross the glacier's crevasses to the base of the summit pyramid, then scramble and rappel to the true summit. Reverse the whole thing back to camp - a long but non-technical day for a roped/glacier-travel party.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Summit day",
+       "gainFt": 2500,
+       "lossFt": 2500,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "2:30 AM",
+         "label": "Wake, brew up",
+         "detail": ""
+        },
+        {
+         "time": "3:30 AM",
+         "label": "Rope up, leave camp",
+         "detail": "Cross onto the glacier while it's still firm."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach base of summit pyramid",
+         "detail": "Crevasse navigation on the upper glacier."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Summit",
+         "detail": "Scramble/short rappel off the pyramid."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp",
+         "detail": "Reverse rappel and glacier crossing."
+        }
+       ],
+       "objective": "Climb the Sulphide Glacier and summit pyramid, return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Retrace Shannon Ridge back down to the car; a straightforward 4-hour descent.",
+       "hours": 4,
+       "miles": 5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3200,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Break camp and hike back to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night standard trip: about 16 miles round trip and roughly 5,500-6,000 ft of total gain; fit independent parties sometimes compress it into a strong 2-day (hike-in-then-summit-and-out) trip instead."
+    },
+    "beta": "From the campsites (6,245 ft for lower camps), head north up the west side of the Sulphide Glacier up rolling steps. At approximately 7,600 feet, terrain flattens and route continues northeast toward summit pyramid. Standard route involves 3rd class gullies to the summit, though the alternate Southeast Ridge (5.3-5.7) is mostly 3rd/4th class but has two unavoidable pitches rated 5.6 and 5.7 -- sustained 5th-class climbing, not a simple scramble finish.",
+    "descent_text": "Descend the same line: reverse the Sulphide Glacier back to camp, then the Shannon Ridge Trail back to the trailhead. Off the summit, the standard descent down the central gully of the summit pyramid is a mix of downclimbing and rappelling. NPS climbing rangers have reported parties periodically replacing worn rap rings and anchors in the gully, so expect a mix of fixed rings/webbing at established stations supplemented by natural anchors (slung horns) rather than bolted hardware throughout. Plan on roughly 2-4 rappels depending on snow coverage and season — more rock is exposed and more rappels are typically needed later in the season, while early-season snow often lets parties downclimb and plunge-step more and rappel less. A 60m rope reaches between all standard stations; a 30m works but requires linking some sections with downclimbing between anchors. Note that stations are generally spaced for ropes with normal stretch — thin static or RAD-line-style ropes may leave gaps that require short, unprotected downclimbs between anchors. When the gully is dry and snow-free (typically later in summer), some parties instead descend the Southeast Ridge (5.3-5.7, with two unavoidable pitches at 5.6 and 5.7) as a scramble alternative that avoids rappelling — but this is sustained 4th- to mid-5th-class terrain, not a simple walk-off, and isn't always in condition. Once back on the Sulphide Glacier, re-rope for glacier travel and retrace the ascent track to camp, watching for softened or newly opened crevasses in the afternoon.",
+    "access": {
+     "fees": "No climbing fee (Forest Service approach). An NPS permit is required if camping overnight past the park boundary, and it is not free: $10 per person plus a $6 fee, youth 15 and under free.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "before": {
+    "descent": "After summiting, descend the summit pyramid via the standard gully or southeast ridge. Descend back to Price Glacier and retrace ascent route via ice climbing down the 40-50 degree slopes. Full descent typically 4-6 hours. Some parties rappel the steeper sections if conditions are hard. Manage crevasse hazards on lower glacier sections.",
+    "itinerary": {
+     "cal": "Most trip reports cluster in July-August after the glacier's crevasses have opened up enough to navigate but before it goes fully bare; a car shuttle between the Nooksack Cirque trailhead and the Sulphide/Fisher Chimneys exit trailhead is required.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Follow the Nooksack Cirque trail (a log crossing of the river, then brushy old-roadbed and riverbank travel), then climb steep heather along the ridge left of Price Lake to flat granite slabs below the glacier with running water. A long, rough approach - most parties give it most of a day.",
+       "hours": 6,
+       "miles": 5.5,
+       "title": "Approach via the Nooksack Cirque",
+       "gainFt": 2200,
+       "lossFt": 0,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Reach camp below the Price Glacier"
+      },
+      {
+       "n": 2,
+       "note": "An early start up steep snow/ice through the glacier's crevasse bands and a short mixed rock step, topping out near the summit. Descend via the Sulphide Glacier route (with a rappel off the summit pyramid) rather than reversing the Price - the standard and much safer way down.",
+       "hours": 11,
+       "miles": 4.5,
+       "title": "Summit day via the Price Glacier",
+       "gainFt": 3800,
+       "lossFt": 2100,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Gain the saddle above camp in about 30 min."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Summit",
+         "detail": "Roughly 9 hrs of glacier and mixed climbing from camp."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Begin descent",
+         "detail": "Rappel off the summit pyramid, join the Sulphide Glacier route down."
+        }
+       ],
+       "objective": "Climb the Price Glacier to the summit, begin descent via the Sulphide side"
+      },
+      {
+       "n": 3,
+       "note": "Continue down the Sulphide Glacier climbers' trail to the Sulphide Glacier trailhead - a different trailhead from the Nooksack Cirque start, so a shuttle or second vehicle is necessary.",
+       "hours": 5,
+       "miles": 5.5,
+       "title": "Hike out via the Sulphide Glacier trailhead",
+       "gainFt": 0,
+       "lossFt": 3700,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Finish the descent and exit at the shuttle car"
+      }
+     ],
+     "totalNote": "A serious 3-day traverse: roughly 15 miles one-way with about 6,000 ft of gain, requiring a car shuttle since the standard descent (Sulphide Glacier, occasionally Fisher Chimneys) comes down a completely different trailhead than the Nooksack Cirque approach."
+    },
+    "timing": {
+     "totalHrs": 22,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 6,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Follow the Nooksack Cirque trail (a log crossing of the river, then brushy old-roadbed and riverbank travel), then climb steep heather along the ridge left of Price Lake to flat gr…",
+       "fromTo": "Approach via the Nooksack Cirque",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "An early start up steep snow/ice through the glacier's crevasse bands and a short mixed rock step, topping out near the summit. Descend via the Sulphide Glacier route (with a rappe…",
+       "fromTo": "Summit day via the Price Glacier",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Continue down the Sulphide Glacier climbers' trail to the Sulphide Glacier trailhead - a different trailhead from the Nooksack Cirque start, so a shuttle or second vehicle is neces…",
+       "fromTo": "Hike out via the Sulphide Glacier trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 48.894,
+      "lng": -121.651,
+      "elev": 2200,
+      "name": "Nooksack Cirque Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The Nooksack Cirque trailhead for Trail #750 sits at the end of Ruth Creek Road, off the Mount Baker Highway near the Hannegan Pass Road junction, at about 2,200 ft. Cars stop on the near side of Ruth Creek: there is no bridge at the trailhead, and the crossing is made on foot on a large logjam a little downstream, with the trail and its registry box picked up on the far bank. In early summer, in high water, or after rain that crossing can be unsafe and has turned parties around before they started. Beyond it the first two miles are old roadbed on foot through old growth to the original trailhead site, so plan to walk from where you park rather than drive any closer. If you are climbing the Price, note that the standard descent comes out at the Sulphide Glacier trailhead, so leave a shuttle vehicle or a second car there."
+     },
+     {
+      "lat": 48.818,
+      "lng": -121.585,
+      "elev": 6500,
+      "name": "Price Glacier Base Camp",
+      "type": "Campsite",
+      "distMi": 4
+     },
+     {
+      "lat": 48.83109,
+      "lng": -121.60294,
+      "elev": 9131,
+      "name": "Mount Shuksan Summit",
+      "type": "Summit",
+      "distMi": 8
+     }
+    ],
+    "pro_tips": [
+     "Go in a cold, stable window - serac hazard defines this route",
+     "Move fast and efficiently through threatened sections",
+     "Descend the Sulphide or Fisher Chimneys, never reverse the Price",
+     "The bergschrund near 7,800 ft is the route's key decision point — rock on climber's left, a direct ice line up the middle, or mixed ground on the right."
+    ],
+    "season": "Jun-Sep (heavy early-season snowpack often preferred)",
+    "climate": {
+     "fall": "By September–early October crevasses are more open and the glacier is less pretty but still climbable.",
+     "spring": "Heavy snowpack and unsettled weather in June often leave the couloir/bergschrund loaded with unstable snow, making early-season ascents questionable.",
+     "summer": "Late July–August is prime climbing season with the most settled weather.",
+     "typical": "Heavily glaciated alpine peak; maritime weather with rapid changes and frequent cloud",
+     "bySeason": {
+      "fall": "Dry glaciers, shorter days, early storms",
+      "spring": "Firm alpine ice/snow on the north-side glaciers; prime ice-line season",
+      "summer": "Glaciers open up, more crevasse and rockfall hazard; popular Sulphide/Fisher season",
+      "winter": "Severe maritime conditions, heavy snow, rare technical ascents"
+     },
+     "forecastZone": "NWS Seattle - North Cascades"
+    },
+    "approach_variants": [
+     {
+      "name": "Nooksack Cirque Trail #750 via Ruth Creek Road",
+      "notes": "Ruth Creek Road (FS-32) off the Mount Baker Highway near the Hannegan Pass Road junction. There is no bridge over Ruth Creek at the trailhead — the crossing is on a large logjam a little downstream, and in high water or after rain it has turned parties around before they started.\n\nBeyond the crossing the old roadbed runs about two miles through old growth to the original trailhead, then it is river-bottom travel along the North Fork Nooksack: gravel bars when the water is low, riparian brush when it is not. You pass the Mount Baker Wilderness boundary at roughly three miles and the national park boundary at about four.\n\nRather than continuing into the cirque, leave the tread and watch ACROSS the valley for the steep drainage of Price Creek. Cross the Nooksack on a log and climb the forested hillside toward Price Lake — steep, open forest with old flagging, about an hour and a half from the river to the lake basin at roughly 4,700 ft. Budget the better part of a day for the approach; most parties treat the whole climb as two to three days.",
+      "season": "Jun-Sep; heavy early-season snowpack often preferred",
+      "hazards": [
+       "unbridged Ruth Creek log crossing, sometimes impassable",
+       "brush and vague route-finding along the river flats",
+       "steep, loose, unofficial climbers' path to Price Lake",
+       "rockfall and icefall down the gully between Nooksack Tower and the glacier's main lobe — large blocks reported"
+      ],
+      "baseFinding": "There are two candidate stopping points and they are not the same place. From the moraine below Price Lake, work up through the cliff bands onto the heathery ridge on the lake's SOUTH side, then ascend the rock slabs up and to the RIGHT. The first bivy sites are flat granite just below the ridge crest at the glacier's margin, around 6,000-6,500 ft — that is a camp, not the start of the route.\n\nThe start of the climbing is the exposed snow saddle beneath Nooksack Tower, roughly an hour further along the glacier. You get there by gaining the glacier at the ridge crest and traversing climber's right. You will know you are there because Nooksack Tower's mass is directly above you and the gully between the tower and the main lobe of the Price is the thing you are trying to get past — it is the rockfall funnel, and it has delivered blocks the size of a television down onto the traverse.\n\nIf you are still on heather and slabs above Price Lake with no glacier underfoot, you are below the start. If you are on flat granite with a view down to the lake, you are at the bivy, not the saddle."
+     }
+    ],
+    "approach": "Trailhead is the Nooksack Cirque Trail #750, reached via Ruth Creek Road (FS-32) off the Mount Baker Highway near the Hannegan Pass Road junction. The first obstacle is Ruth Creek itself, which has no bridge at the trailhead — cross on a large logjam/log crossing just downstream, then pick up the trail on the far bank at the registry box; in early summer or after rain the ford/log crossing can be unsafe and has turned parties back. From there follow the old roadbed about 2 miles through old growth to the original trailhead site, then continue along the North Fork Nooksack River — gravel bars when water is low, riparian brush-bashing when it's not — toward the Mount Baker Wilderness boundary (~3 mi in) and the North Cascades National Park boundary (~4 mi in). Rather than continuing all the way into the Nooksack Cirque proper, climbers heading for Price Glacier watch across the valley for the steep drainage of Price Creek, leave the maintained tread, cross the Nooksack on a log, and climb steeply up the forested hillside toward Price Lake — a sustained, open but steep forest slope, historically flagged, that takes roughly 1.5 hours from the river crossing to the lake basin (~4,700 ft). From the moraine below Price Lake, work up through cliff bands onto the heathery ridge on the lake's south side, then ascend slabs up and right to reach the first bivy sites on flat granite slabs around 6,000–6,500 ft, right at the glacier's margin. From bivy, rope up and traverse beneath Nooksack Tower — a notorious rockfall/icefall gully — to step onto the Price Glacier proper around 6,500 ft. Key hazards: the unbridged, sometimes-impassable Ruth Creek ford; sustained brush and route-finding along the Nooksack River flats; a steep, loose, flagged-but-unofficial climbers' path to Price Lake; and rockfall funneling through the gully between Nooksack Tower and the glacier's main lobe.",
+    "access": {
+     "fees": "None — no climbing fee (Forest Service approach; free NPS permit only if camping overnight past the park boundary)",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park (upper mountain); Mount Baker-Snoqualmie National Forest / Mount Baker Wilderness (approach)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "before": {
+    "watch_out": "Multiple large transverse crevasses on Lower Curtis Glacier icefall — direct hazard on climbing route\nSustained ice sections up to 70° combined with low-visibility conditions make route-finding through icefall challenging\nCrevasse field navigation: mid-June through August primary season, bergschrund crossing critical early season\nStandard Fisher Chimneys glacier crossings on descent — crevasse hazard and route-finding complexity\nIcefall hazard on Upper Curtis Glacier — check conditions before committing to retreat via East Buttress",
+    "emergency": {
+     "notes": null,
+     "county": "Whatcom County, WA",
+     "rangerStation": "North Cascades NP Wilderness Information Center, Marblemount, (360) 854-7245",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA",
+     "sheriffDispatch": "North Cascades NP SAR (360) 856-5700 ext. 515; after-hours (360) 873-4590 ext. 37; Skagit County Sheriff (360) 336-9450"
+    },
+    "access": {
+     "fees": "None — no climbing fee (Forest Service approach; free NPS permit only if camping overnight past the park boundary)",
+     "notes": "Dual land manager: the lower approach (Lake Ann Trail, Sulphide Glacier forest approach) is USFS; the summit, camps, and most of the upper route (Fisher Chimneys and Sulphide Glacier) are inside North Cascades National Park.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park (upper mountain); Mount Baker-Snoqualmie National Forest (Lake Ann trailhead)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "passRequired": "Northwest Forest Pass (or equivalent) for parking at Lake Ann Trailhead"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "before": {
+    "road": {
+     "name": "Mount Baker Highway (SR 542) / Nooksack Cirque & Price Lake approaches",
+     "status": "Paved highway; spur/forest roads gravel and variable",
+     "driveNote": "North-side ice routes approached from the Nooksack/Price Lake side; Sulphide side from Baker Lake",
+     "seasonalGate": "Forest spur roads seasonal; SR 542 plowed to the ski area"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Demanding approach from the north (Nooksack/Price Lake) side, likely with a bivy",
+      "packWeight": "Full technical ice rack plus bivy gear, roughly 40-50 lb"
+     },
+     "approachTime": "Long approach with bivy on the north side",
+     "requiredSkills": [
+      "Steep ice climbing",
+      "Glacier travel & crevasse rescue in complex, broken terrain",
+      "Serac hazard timing and avoidance",
+      "Avalanche hazard assessment on the approach slopes",
+      "Self-rescue and bivy competence"
+     ],
+     "experienceLevel": "Advanced alpine ice climbers with serac/icefall judgment"
+    },
+    "itinerary": {
+     "cal": "A steep, avalanche-prone line off the very active Hanging Glacier - best done early season or after a hard overnight freeze; avoid it in warm or unstable conditions.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same Lake Ann / Fisher Chimneys approach used for the North Face, staging at a high camp near Winnie's Slide (~7,300 ft) on the White Salmon Glacier side of the mountain.",
+       "hours": 7,
+       "miles": 4.5,
+       "title": "Approach to high camp",
+       "gainFt": 3000,
+       "lossFt": 100,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Reach high camp near Winnie's Slide / the Upper Curtis Glacier"
+      },
+      {
+       "n": 2,
+       "note": "Down-climb the White Salmon Glacier to the base of the NW Rib, then climb steep snow, low-angle ice, and a short mixed rock band up onto the Hanging Glacier and the summit. Large avalanches off the active glacier are a real hazard - move fast through the exposed sections. Descend back to camp via the Fisher Chimneys side.",
+       "hours": 11,
+       "miles": 4,
+       "title": "Summit day - climb the Hanging Glacier",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave high camp",
+         "detail": "Down-climb the White Salmon Glacier."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Reach base of the NW Rib",
+         "detail": "Rope up for the glacier/mixed terrain above."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at high camp",
+         "detail": "Descend via the Fisher Chimneys side."
+        }
+       ],
+       "objective": "Descend into the White Salmon cirque, climb the Hanging Glacier/NW Rib to the summit, return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car.",
+       "hours": 5,
+       "miles": 4,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2900,
+       "packLb": 50,
+       "schedule": [],
+       "objective": "Break camp and hike back to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip similar in shape to the North Face - roughly 12-13 miles round trip with about 6,000 ft of total gain - but on steeper, more avalanche-exposed terrain on Shuksan's north side."
+    },
+    "timing": {
+     "totalHrs": 23,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 7,
+     "recommendedStart": "3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "Same Lake Ann / Fisher Chimneys approach used for the North Face, staging at a high camp near Winnie's Slide (~7,300 ft) on the White Salmon Glacier side of the mountain.",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Down-climb the White Salmon Glacier to the base of the NW Rib, then climb steep snow, low-angle ice, and a short mixed rock band up onto the Hanging Glacier and the summit. Large a…",
+       "fromTo": "Summit day - climb the Hanging Glacier",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "gain_ft": 4430,
+    "rope_note": "~3,000 ft of 40-50 deg snow/glacial ice to gain the upper Hanging Glacier, then 4th-5th class rock to the summit pyramid; used as an AMGA guide exam route for its sustained, moderate difficulty.",
+    "access": {
+     "fees": "No climbing fee (Forest Service approach). An NPS permit is required if camping overnight past the park boundary, and it is not free: $10 per person plus a $6 fee, youth 15 and under free.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Same MBS NF rules as Mount Baker (fire/camping setbacks near named trails/lakes, pack out human waste). No published numeric group-size cap found for Shuksan specifically.",
+     "permit": "North Cascades Backcountry Permit",
+     "seasonal": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park",
+     "land_manager": "National Park Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+     }
+    },
+    "approach": "Note: the Hanging Glacier/North Face approach lies in the White Salmon Creek drainage, one valley east of Price Lake, rather than on the Nooksack/Ruth Creek side with which it is sometimes grouped. Drive the Mount Baker Highway to Glacier, WA and get a free backcountry permit at the Glacier Public Service Center (required), then continue up the Salmon Ridge/Mount Baker Highway corridor to the small pull-off at the old White Salmon Lodge site. Walk around the gate and follow the old road past the lodge site roughly a mile to where it ends at an old clearcut. From there, with adequate snow cover, descend northeast off-trail to White Salmon Creek and follow the valley up toward the toe of the White Salmon Glacier — this is where roped glacier travel typically begins, with crevasse hazard increasing through the season. Ascend the glacier and moraine to a bivy around 6,000–6,500 ft, below the first rock/ice barrier. From the bivy, traverse climber's left, above and across the hanging glacier that sits over Price Lake (visible below to the west) and beneath the upper hanging glacier tucked under the first rock barrier, to reach the base of the shoulder dividing the White Salmon and Price Glacier cirques (roughly 7,500–8,000 ft), where the technical climbing begins. Key hazards: brush/alder low in the White Salmon valley when the snowline has receded; open crevasses on the White Salmon Glacier; and, especially in early season, frequent avalanches shedding off the true North Face — parties are advised to stay right of it during the traverse rather than drifting left onto the face itself. An alternate approach used by some parties climbs the Fisher Chimneys and Winnie's Slide to a bivy near the Lower Curtis Glacier, then descends about 1,000 ft down the White Salmon Glacier and traverses the NW Rib to reach the base of the Hanging Glacier — an option from the standard Lake Ann/Fisher Chimneys trailhead rather than the White Salmon side.",
+    "approach_variants": [
+     {
+      "name": "White Salmon Creek from the old lodge site, up the White Salmon Glacier to the dividing shoulder",
+      "notes": "Get the free backcountry permit at the Glacier Public Service Center on the way in — it is required, not advisory. Then continue up the Mount Baker Highway to the pull-off at the old White Salmon Lodge site, walk round the gate, and follow the old roadbed roughly a mile to where it ends at an old clearcut. From the road-end, with adequate snow cover, drop northeast off-trail to White Salmon Creek and follow the valley up toward the toe of the White Salmon Glacier. Roped travel usually begins at the toe, and the crevasse hazard grows through the season. Ascend glacier and moraine to a bivy below the first rock and ice barrier. Published bivy elevations for this route disagree by around a thousand feet — so the honest instruction is to camp at the rock outcrops on the eastern edge of the White Salmon, where the ridge meets the face, rather than at a number. The Hanging Glacier and North Face approach is in the White Salmon Creek drainage, one valley east of Price Lake — not on the Nooksack and Ruth Creek side of the mountain.",
+      "season": "Roughly Jul-Aug. Earlier the valley is snow-covered and simpler but the true North Face above you sheds avalanches; later the crevasses on the White Salmon are open and the lower valley is alder",
+      "hazards": [
+       "Frequent avalanches off the true North Face onto the traverse, worst in early season",
+       "Serac fall from the hanging glacier itself, which is described as very active",
+       "Open crevasses on the White Salmon Glacier that grow through the season",
+       "Brush and alder in the lower White Salmon valley once the snowline recedes",
+       "A traverse with no easy retreat once committed, and a bivy on the mountain"
+      ],
+      "primary": true,
+      "baseFinding": "PRICE LAKE MUST STAY BELOW YOU AND TO YOUR WEST, AND THAT IS THE TEST. From the bivy the day is a traverse climber's LEFT, above and across the hanging glacier that sits over Price Lake and beneath the upper hanging glacier tucked under the first rock barrier. In cloud you will not see the summit and you do not need to: the lake is the reference and it belongs on your left-hand side, downhill.\n\nARRIVAL: you are at the base of the technical climbing when you reach the SHOULDER — the snow-and-ice rib that divides the White Salmon cirque from the Price Glacier cirque. It is the only place on this traverse where the ground stops being a sidehill and becomes a defined rib with a cirque falling away on each side. Stand on it and you should be able to look down into two separate basins.\n\nTHE ERROR THAT KILLS PEOPLE HERE IS DRIFTING LEFT, and it is worth stating as a hard rule: stay RIGHT during the traverse. Going further left puts you onto the true North Face, which sheds avalanches frequently, especially early season. Left feels like progress toward the mountain and is the wrong direction.\n\nAFTER 500 FT OF TRAVERSE the line goes UP, on a firn-and-ice finger west of the upper hanging glacier. If you are still traversing horizontally after a long way, you have gone past the finger and are running out under the face."
+     },
+     {
+      "name": "Fisher Chimneys and Winnie's Slide, then down the White Salmon Glacier to the base",
+      "notes": "The alternative used by parties who would rather start from the standard trailhead than from the White Salmon roadbed: from the Lake Ann Trailhead on SR-542, climb the Fisher Chimneys and Winnie's Slide to a bivy near the Lower Curtis Glacier, then descend about 1,000 ft down the White Salmon Glacier and traverse the northwest rib to reach the foot of the Hanging Glacier.\n\nIt is longer in vertical terms because it climbs to a camp and then gives back a thousand feet, and it commits you to regaining that thousand feet on the way out if you return the same way. Its advantage is a maintained trail to a known camp instead of a valley bushwhack, and it does not require the White Salmon roadbed to be walkable.\n\nNo trailhead-to-base time is given for this variant; published figures for it vary too much to quote one.",
+      "season": "Roughly Jul-Aug, once the Lake Ann trail is out from under snow",
+      "hazards": [
+       "A 1,000 ft descent that must be re-climbed on the return if you reverse this variant",
+       "Winnie's Slide, which is sometimes rappelled rather than downclimbed when icy",
+       "Crevasses on both the Lower Curtis and the White Salmon",
+       "Avalanche exposure from the true North Face during the traverse",
+       "Committing to a route whose descent normally exits a different valley from the one you started in"
+      ],
+      "baseFinding": "YOU ARRIVE FROM ABOVE, SO THE TEST IS INVERTED — YOU ARE LOOKING FOR THE BOTTOM OF A DESCENT, NOT THE TOP OF A CLIMB. From the Lower Curtis bivy you drop roughly 1,000 ft down the White Salmon Glacier. Stop descending when the ground lets you traverse northeast onto the northwest rib; if you keep going down the White Salmon you end up in the valley the other variant walked up, and you will have thrown away the whole approach.\n\nTHE RIB IS THE MARKER. The northwest rib is a defined feature between the White Salmon and the Hanging Glacier, and once you are on it the foot of the Hanging Glacier is the next thing you meet.\n\nCONFIRM WITH THE SAME TEST THE OTHER VARIANT USES: from the base of the climbing, Price Lake should be below you and to the west, and you should be standing on the shoulder that separates the White Salmon cirque from the Price cirque, with a basin on each side of you.\n\nAND THE SAME HARD RULE APPLIES: do not drift left onto the true North Face. It avalanches, and arriving from this side does not change that."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.8595,
+      "lng": -121.648,
+      "name": "White Salmon Road (hairpin) TH",
+      "note": "Hairpin turn onto NF-3075 off SR542 near mile 51-52, just before the White Salmon Day Lodge.",
+      "type": "Trailhead",
+      "directions": "Drive the Mount Baker Highway (SR-542) to the town of Glacier and stop at the Glacier Public Service Center for the free backcountry permit — it's required, not optional. Continue up SR-542 to around mile 51-52 and take the hairpin turn onto NF-3075 (White Salmon Road), just before the White Salmon Day Lodge, to the small pull-off at the old White Salmon Lodge site."
+     },
+     {
+      "lat": 48.8353,
+      "lng": -121.6019,
+      "name": "Hanging Glacier",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 48.8353,
+      "lng": -121.6019,
+      "name": "Hanging Glacier",
+      "type": "Feature",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 48.831095,
+      "lng": -121.602955,
+      "elev": 9127,
+      "name": "Mount Shuksan summit pyramid",
+      "type": "Summit",
+      "elevFt": 9127
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+  "wa_and_say": {
+    "skip_reason": "UNCLEAR — no second source gives a letter grade for the route; stored 5.11b stays",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored grade 5.11b understates P4/P5 (5.11+); does any source give a route letter grade other than 5.11b?",
+          "verdict": "UNCLEAR",
+          "evidence": "The route database gives the route as plain 5.11, with P2 5.11b and P4/P5 5.11+ (no letter grade on those). The one trip-report page gives the route as 5.11b over 5 pitches (P1 5.8, P2 5.11b, P3 5.10a, P4 5.11+, P5 5.11+). No source anywhere gives 5.11c or 5.11d, and further searches found only copies of these two. So the only route-level letter grade in print is 5.11b, which is what is stored. It is still one source, and it is at odds with the '+' pitches. Minor: the trip report gives P1 as 5.8, the database and the stored table 5.7. That is a single-source disagreement and needs no change.",
+          "sources": [
+            "https://www.mountainproject.com/route/110383269/and-say",
+            "https://stephabegg.com/trip-reports/washington/index/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_bonanza_peak_northeast_buttress": {
+    "skip_reason": "UNCLEAR — still only one source for the Northeast Buttress on its own",
+    "review": {
+      "findings": [
+        {
+          "claim": "what grade do two or more sources give for the NE Buttress alone (stored V)?",
+          "verdict": "UNCLEAR",
+          "evidence": "The only account of this line is still the AAJ note on the first three-summit ridge traverse, rated V 5.7/5.8. It says the buttress had several 5.7-range spots with wild exposure and took a little under four hours to the main summit. Searches in the Beckey guide previews, cascadeclimbers, SummitPost, NWMJ and the route database found nothing else: the database's Bonanza area lists only the Mary Green Glacier, and every SummitPost 'Northeast Buttress' page is on another peak. Two pages could not be read: the NWMJ short-reports page (certificate error; the archive is blocked) and one SummitPost 'Northeast Buttress' page (160146, 403), whose peak is unconfirmed. A second rating for the buttress alone does not exist in what can be reached. Stored V is the traverse's grade, and the stored overview already says so. A human could weigh 'Grade IV, 5.7' or leave V, but no two sources support any value.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12200416000/North-America-United-States-Washington-Bonanza-Peak-Three-Summit-Traverse",
+            "https://www.mountainproject.com/area/120386596/bonanza-peak"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+    "skip_reason": "UNCLEAR — sources split three ways on the rock grade; classification proposal only",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade null; sources split between '3rd class, steep snow' and 'Grade II, Class 4 to low 5th, snow to 45°' — which is the majority?",
+          "verdict": "UNCLEAR",
+          "evidence": "Above the Ingraham–Whitman saddle, this route shares the summit rock with the standard Fryingpan/Whitman route, so accounts of either route count for the summit grade. Class 3: the route database (3rd, Steep Snow); a 100-peaks guide ('short class 3 rock gully', exposed unprotectable traverse to the true summit); a first-hand report on the Fryingpan route (Class 3 overall, 'some may argue for Class 4 moves', rock fairly solid). Class 3-4: a ski-mountaineering report on the Whitman side ('Class 3-4 rock with lots of loose handholds' for the last 15 ft). Class 4 or harder: the club route page for this exact South Face line (Grade II, several pitches of Class 4 to low 5th, snow/ice to 45°, plus one or two Class 4 moves at the saddle), and a Summerland-side report ('a little bit of exposed class 4'). Class 3 is the plurality, but it is not a majority, and the saddle exit specific to this route is given Class 4 moves by the one source that describes it. 'Class 3-4' spans every account and matches the stored pitch_detail ('Class 3–4 chimney', 'Class 3–4, exposed'). Only one source uses that exact wording, so this is left for a human.",
+          "sources": [
+            "https://www.mountainproject.com/route/122049367/cowlitzingraham-glaciers",
+            "https://www.mountaineers.org/activities/routes-places/paradise-area-review/little-tahoma-south-face",
+            "https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/49-little-tahoma-peak-11138-c",
+            "https://www.lemkeclimbs.com/little-tahoma.html",
+            "https://turns-all-year.com/trip-reports/may-30-31-little-tahoma-mrnp",
+            "https://climberkyle.com/2022/06/25/little-t-big-t/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Grade II, Class 3-4, steep snow",
+          "evidence": "Filling a null. The six accounts range from Class 3 (3) through Class 3-4 (1) to Class 4/low 5th (2); 'Class 3-4' is the range they span, and it matches the stored breakdown. Grade II comes from the club route page alone, so a human may prefer to drop it: 'Class 3-4, steep snow'. Do NOT apply without review — it does not meet the two-agreeing-sources bar for any single value."
+        }
+      }
+    }
+  },
+  "wa_glacier_peak_sitkum_glacier": {
+    "skip_reason": "UNCLEAR — NCCS grade given as I-II by one site and III by another; stored Grade II stays",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored 'Grade II glacier climb' vs a database's 'Grade III, Easy Snow' — any other NCCS grade?",
+          "verdict": "UNCLEAR",
+          "evidence": "Two NCCS grades exist. SummitPost's Sitkum Glacier route page gives Grade I-II ('Basic Snow/Glacier Climb', 4-6 hours from Boulder Basin), and its Glacier Peak page gives Grade I. The two are the same site and count once. Both were read from search snippets only: the pages return 403. The route database gives Grade III, Easy Snow. Other accounts give no NCCS grade: a regional site says 'all class 2/3', a club rates it B on its own scale, one trip report gives none, and Wikipedia has only a ski rating. Stored 'Grade II' sits inside SummitPost's I-II and below the database's III. Neither side has two sources.",
+          "sources": [
+            "https://www.summitpost.org/sitkum-glacier/155846",
+            "https://www.summitpost.org/glacier-peak/150318",
+            "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+            "http://www.willhiteweb.com/washington_climbing/darrington/glacier_peak_washington_428.htm",
+            "https://mazamas.org/activity/197/",
+            "https://www.danielarndt.com/trips/48-glacier-peak-climb-via-sitkum-glacier"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Grade II, glacier",
+          "evidence": "FORMAT ONLY, same substance: replaces the prose-ish 'glacier climb' with the catalog's short 'Grade II, glacier'. Keeps Grade II, which is consistent with SummitPost's I-II. Optional; a human may prefer to leave the value untouched until a second NCCS source appears."
+        }
+      }
+    }
+  },
+  "wa_mount_lyall_south_route": {
+    "skip_reason": "UNCLEAR — still one first-hand account; stored Class 3-4 is not disproven",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored 'Class 3-4' — Class 3 or 3-4?",
+          "verdict": "UNCLEAR",
+          "evidence": "The only route account found is still the 2023 first-hand log: an exposed class 3 gully, a chossy final 200 ft through stacked boulders, and a class 4 move on the granite face noted on the way down. The WTA trip report covering the same Swamp Creek approach returns 403. SummitPost has no Mount Lyall (WA) page. Its 'Swamp Creek Route' is on neighbouring Dark Peak (max Class 3) and says only that Dark's NE ridge continues to Lyall. Peakbagger-style searches return other Lyalls (Alberta, BC, Quebec, NZ). The single source mentions both class 3 and a class 4 move, so 'Class 3-4' is defensible. No change.",
+          "sources": [
+            "https://onehikeaweek.com/2023/09/11/needle-peak/",
+            "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130",
+            "https://www.summitpost.org/swamp-creek-route/165326"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_south_spur": {
+    "area": "wa_whatcom_peak",
+    "set": {
+      "overview": "Whatcom Peak's easier, more commonly-climbed south side (Class 3 — real exposure on otherwise moderate terrain). It's normally reached from Perfect Pass, either via the long Easy Ridge traverse out of Hannegan Pass, or by a lower traversing line ('low orbit') around the peak's east side directly from Whatcom Pass."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "stored grade '4th' — is the south side from Perfect Pass Class 3?",
+          "verdict": "CONFIRMED (for classification review)",
+          "evidence": "Re-read this pass, both independent. An FKT route page: from Perfect Pass, climb the south-face snowfields and 'scramble some 3rd class rock to the summit'. A first-hand trip report: a long snowfield ending in a 'very exposed but enjoyable Class 3 scramble along the south ridge crest'. Both match verify-13, which also had a report calling it easy class 2+ and one saying there is little if any 4th class on the easiest line. The only 4th-class rating is the route database's '4th, PG13'. Two traverse reports rate the north ridge Class 3 but are a different route, so they are not counted. The NPS blog crossed via the Whatcom Glacier and gives no class. The 4th-class ground on this approach is the Imperfect Impasse workaround, already covered in approach. The stored pitch_detail line 'Grades from 3rd to 4th class are given' stays accurate.",
+          "sources": [
+            "https://fastestknowntime.com/route/whatcom-peak-wa",
+            "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+            "https://www.lemkeclimbs.com/whatcom-peak.html",
+            "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+            "https://www.nps.gov/noca/blogs/mt-challenger-whatcom-peak.htm"
+          ]
+        },
+        {
+          "claim": "overview says '4th class, PG13'",
+          "verdict": "CONFIRMED",
+          "evidence": "Two independent sources give Class 3 for this line (see above), and only the one database listing gives 4th PG13. The clause is changed to 'Class 3'. The exposure caveat is kept word for word, and the rest of the overview is unchanged. The fix is paired with the grade proposal: apply both or neither, so the overview does not contradict the header grade. descent_text already says 'exposed Class 3-4 scramble', which covers both readings, and is left alone.",
+          "sources": [
+            "https://fastestknowntime.com/route/whatcom-peak-wa",
+            "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 3",
+          "evidence": "An FKT route page and an independent trip report both give Class 3 for the south side from Perfect Pass. Two more lean easier (class 2+, 'little if any 4th class'). Only the route database says 4th PG13. The overview fix in `set` depends on this change being approved."
+        }
+      }
+    }
+  }
+}

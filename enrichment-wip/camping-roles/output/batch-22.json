@@ -1,0 +1,445 @@
+{
+  "zones": [
+    {
+      "zone": "twin-sisters",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping.",
+        "url": null
+      }
+    },
+    {
+      "zone": "unzoned:wa_bear_mountain_chilliwack",
+      "overnightPermit": {
+        "what": "North Cascades National Park wilderness permit, required once past Hannegan Pass into the Chilliwack valley — quota, not free",
+        "where": "Reserve on Recreation.gov, especially for the popular Copper Ridge/Chilliwack corridor; the park increasingly issues reserved permits by email after a mandatory safety video rather than an in-person pickup. The short stretch on the Mount Baker-Snoqualmie side above Hannegan Camp needs a separate, free, self-issue Mount Baker Wilderness permit at the trailhead.",
+        "url": "https://www.recreation.gov/permits/4675322"
+      }
+    },
+    {
+      "zone": "unzoned:wa_buckner_mountain",
+      "overnightPermit": {
+        "what": "North Cascades National Park wilderness permit for Boston Basin and Sahale Glacier Camp — quota, reservable, not free",
+        "where": "Both are high-demand cross-country zones; apply to the March early-access lottery for the best odds, or book the general on-sale release in late April on Recreation.gov. Permits reached from Cascade River Road must be picked up in person at the Wilderness Information Center in Marblemount.",
+        "url": "https://www.recreation.gov/permits/4675322"
+      }
+    },
+    {
+      "zone": "unzoned:wa_concord_tower",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself.",
+        "url": null
+      }
+    },
+    {
+      "zone": "unzoned:wa_lexington_tower",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Same Okanogan-Wenatchee National Forest corridor as the rest of the Liberty Bell group; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park.",
+        "url": null
+      }
+    },
+    {
+      "zone": "unzoned:wa_liberty_bell",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself.",
+        "url": null
+      }
+    },
+    {
+      "zone": "unzoned:wa_minuteman_spire",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Same Okanogan-Wenatchee National Forest corridor as the rest of the Liberty Bell group; parties bivy informally at the Blue Lake Trailhead. A Northwest Forest Pass or day-use fee is needed to park.",
+        "url": null
+      }
+    },
+    {
+      "zone": "unzoned:wa_molar_tooth",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "General Okanogan-Wenatchee National Forest land; a day-use fee or Northwest Forest Pass covers parking. No camping is allowed within a quarter mile of Cutthroat Lake.",
+        "url": null
+      }
+    },
+    {
+      "zone": "unzoned:wa_mount_anderson",
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness permit — reservable, not free",
+        "where": "Book on Recreation.gov; $8 per person per night plus a $6 reservation fee, or cover it with an annual Olympic Wilderness Pass. Summer-season reservations open in mid-April.",
+        "url": "https://www.recreation.gov/permits/4098362"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_cinderella_peak_scramble",
+      "main": ["Green Creek cirque dispersed camp"],
+      "onRoute": [],
+      "drop": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Orsino Creek Basin", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Green Creek cirque is the natural base for Cinderella, Little Sister and Skookum on the Green Creek Circuit; the Dailey Prairie/Orsino Creek corridor camps serve the separate north approach and were dropped."
+    },
+    {
+      "id": "wa_little_sister_north_face",
+      "main": ["Green Creek cirque dispersed camp"],
+      "onRoute": [],
+      "drop": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Orsino Creek Basin", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Green Creek Circuit approach as the other south-side summits; the cirque camp is shared with Cinderella and Skookum."
+    },
+    {
+      "id": "wa_little_sister_west_face",
+      "main": ["Green Creek cirque dispersed camp"],
+      "onRoute": [],
+      "drop": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Orsino Creek Basin", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Green Creek Circuit approach; confident the cirque camp is shared across Little Sister's two faces."
+    },
+    {
+      "id": "wa_north_twin_sister_scramble",
+      "main": ["Orsino Creek Basin"],
+      "onRoute": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies"],
+      "drop": ["Green Creek cirque dispersed camp", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Orsino Creek Basin is the shared water stop and standard base for this side of the range; the col and South Twin summit bivies are kept as on-route options for parties continuing to South Twin."
+    },
+    {
+      "id": "wa_north_twin_sister_west_ridge",
+      "main": ["Orsino Creek Basin"],
+      "onRoute": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies"],
+      "drop": ["Green Creek cirque dispersed camp", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Dailey Prairie corridor approach as the scramble route; not fully confident how often North Twin parties specifically use Orsino Creek Basin versus pushing straight up from Dailey Prairie in a day."
+    },
+    {
+      "id": "wa_skookum_peak_twinsisters_scramble",
+      "main": ["Green Creek cirque dispersed camp"],
+      "onRoute": [],
+      "drop": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Orsino Creek Basin", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Green Creek Circuit approach as Cinderella and Little Sister."
+    },
+    {
+      "id": "wa_south_twin_sister_north_ridge",
+      "main": ["Orsino Creek Basin"],
+      "onRoute": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies"],
+      "drop": ["Green Creek cirque dispersed camp", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approach shares Orsino Creek Basin with the standard route; the col below the ridge and the summit bivies serve parties splitting a multi-summit traverse."
+    },
+    {
+      "id": "wa_south_twin_sister_scramble",
+      "main": ["Orsino Creek Basin"],
+      "onRoute": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies"],
+      "drop": ["Green Creek cirque dispersed camp", "Elbow Lake hiker camps"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Orsino Creek Basin is explicitly the standard camp for this route; confident."
+    },
+    {
+      "id": "wa_south_twin_sister_west_ridge",
+      "main": ["Orsino Creek Basin"],
+      "onRoute": ["Dailey Prairie road end (staging and bike stash, not a camp)", "Col between the Twins and the Sisters Glacier margin", "South Twin Sister summit bivies"],
+      "drop": ["Green Creek cirque dispersed camp", "Elbow Lake hiker camps", "Orsino Creek Basin / Red Talus Slope"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same approach and camp as the scramble; the extra 'Red Talus Slope' waypoint entry is the same place as Orsino Creek Basin and was dropped as a duplicate of Orsino Creek Basin."
+    },
+    {
+      "id": "wa_bear_mountain_chilliwack_north_buttress",
+      "main": ["Meadow basin below the northwest-ridge saddle"],
+      "onRoute": ["Bear Creek Camp (Chilliwack River Trail)", "NW Ridge saddle high camp (6,480')"],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The meadow basin below the northwest-ridge saddle is stated as effectively the only high camp for this route; Bear Creek Camp and the saddle camp are kept as on-route waypoints along the approach."
+    },
+    {
+      "id": "wa_direct_north_buttress",
+      "main": ["Basin below the Bear Mountain saddle"],
+      "onRoute": ["Hannegan Camp, below Hannegan Pass", "Boundary Camp", "US Cabin Camp, Chilliwack River"],
+      "drop": ["Copper Lake Camp, Copper Ridge", "Ouzel Lake basin, head of Depot Creek"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The basin below the Bear Mountain saddle is the stated launching point for this line; Hannegan/Boundary/US Cabin camps are staging points along the long multi-day approach, while Ouzel Lake and Copper Lake serve Redoubt/Spickard and the Copper Ridge Trail instead."
+    },
+    {
+      "id": "wa_buckner_mountain_north_face",
+      "main": ["Boston Basin high camp"],
+      "onRoute": ["Boston Glacier bivy", "Sahale–Boston col bivy"],
+      "drop": ["Sahale Glacier Camp"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Boston Basin high camp is explicitly the planned camp for this route; Sahale Glacier Camp belongs to the separate Cascade Pass/Sahale Arm approach used by the Southwest Face and was dropped."
+    },
+    {
+      "id": "wa_buckner_mountain_southwest_face",
+      "main": ["Sahale Glacier Camp"],
+      "onRoute": ["Upper Horseshoe Basin bivy"],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Sahale Glacier Camp is explicitly the standard base for this side of Buckner; Upper Horseshoe Basin is the stated cross-country alternative."
+    },
+    {
+      "id": "wa_concord_tower_north_face",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard car-to-car day from the Blue Lake Trailhead; the basin dispersed sites are the on-route option for parties splitting it, and Lone Fir/Klipchuck are highway campgrounds off this climb's own line."
+    },
+    {
+      "id": "wa_north_face_var_right_directisimo",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shares the standard North Face's Blue Lake Trailhead approach and start."
+    },
+    {
+      "id": "wa_south_face_3",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Blue Lake Trailhead approach as the North Face; the south side has no separate access."
+    },
+    {
+      "id": "wa_south_face_center",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Blue Lake Trailhead approach as the standard South Face."
+    },
+    {
+      "id": "wa_the_cave_route",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Blue Lake Trailhead approach as the group's other faces; this route is rarely repeated so its overnight use is unclear."
+    },
+    {
+      "id": "wa_lexington_tower_east_face",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "This East Face route is reached from the highway hairpin/pond pullout, not the Blue Lake Trailhead; the roadside bivy entry's own text explicitly covers sleeping at the hairpin, but the west-side basin dispersed sites do not serve it and were dropped."
+    },
+    {
+      "id": "wa_north_face_3",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Short outing from the Blue Lake Trailhead via the Concord-Lexington col; basin dispersed sites are the on-route option."
+    },
+    {
+      "id": "wa_tooth_and_claw",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin/pond pullout approach as Lexington's East Face; the west-side basin dispersed sites were dropped."
+    },
+    {
+      "id": "wa_a_servant_to_liberty",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "East Face approach from the hairpin/pond pullout, not the Blue Lake Trailhead; the basin dispersed sites were dropped as the west-side camp."
+    },
+    {
+      "id": "wa_dark_side_of_liberty",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin approach as the other East Face routes; noted as one of the shortest approaches in the group."
+    },
+    {
+      "id": "wa_liberty_and_injustice_for_all",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin approach as the other Liberty Crack-area routes."
+    },
+    {
+      "id": "wa_liberty_bell_beckey_route",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard Blue Lake Trailhead approach; basin dispersed sites are the on-route option for parties splitting the climb."
+    },
+    {
+      "id": "wa_liberty_bell_east_face",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "East-side approach from the hairpin pullout, distinct from the Beckey Route's Blue Lake Trailhead."
+    },
+    {
+      "id": "wa_liberty_bell_independence_route",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin approach as Liberty Crack."
+    },
+    {
+      "id": "wa_liberty_bell_nw_face",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Blue Lake Trailhead approach as the Beckey Route."
+    },
+    {
+      "id": "wa_liberty_bell_overexposure",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same Blue Lake Trailhead approach, reaching the notch above the basin."
+    },
+    {
+      "id": "wa_liberty_bell_serpentine_crack",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The input approach text only says 'west of Washington Pass'; treated as the standard west-side Blue Lake Trailhead approach, not fully confident."
+    },
+    {
+      "id": "wa_liberty_bell_thin_red_line",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin/pond approach as the other East Face routes."
+    },
+    {
+      "id": "wa_liberty_crack",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Classic East Face route from the hairpin pullout; the roadside-bivy entry's own text explicitly covers sleeping at the hairpin as well as the Blue Lake lot."
+    },
+    {
+      "id": "wa_liberty_crack_free",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin approach as the aid-original Liberty Crack."
+    },
+    {
+      "id": "wa_liberty_traverse",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Starts on the west side via the Blue Lake Trail before crossing to Concord, Lexington and the Early Winters Spires; classified by its start, not by every tower it crosses."
+    },
+    {
+      "id": "wa_live_free_or_die",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": [],
+      "drop": ["Liberty Bell basin dispersed sites", "Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same East Face hairpin approach as Liberty Crack and the Independence Route."
+    },
+    {
+      "id": "wa_nw_face_var_remsberg_variation",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Single-pitch variation on the standard Northwest Face; identical approach and camp."
+    },
+    {
+      "id": "wa_rapple_grapple",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shares the Beckey Route's first pitch and Blue Lake Trailhead approach."
+    },
+    {
+      "id": "wa_east_face_3",
+      "main": ["Blue Lake trailhead roadside bivy"],
+      "onRoute": ["Liberty Bell basin dispersed sites"],
+      "drop": ["Lone Fir Campground", "Klipchuck Campground"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Despite the route being called 'East Face,' this is Minuteman Spire's approach from the Blue Lake Trailhead on the west side, same as Liberty Bell's standard routes."
+    },
+    {
+      "id": "wa_north_ridge_west_side",
+      "main": ["Cutthroat Creek trailhead"],
+      "onRoute": ["Cutthroat Lake basin, outside the quarter-mile closure"],
+      "drop": ["Cutthroat basin climbers' bivy — SOUTH-SIDE routes only", "Cutthroat Wall base terrace", "Lone Fir Campground", "Klipchuck Campground, with Early Winters nearby"],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Cutthroat Creek trailhead and the lake basin serve this route's Cutthroat-Lake-trailhead approach option; the south-side climbers' bivy and the Cutthroat Wall terrace are flagged in their own text as serving other routes/formations. A second approach via State Creek is named in the data but no camp for it appears in this list."
+    },
+    {
+      "id": "wa_mount_anderson_eel_glacier",
+      "main": ["Tarn camp above Anderson Pass"],
+      "onRoute": ["Honeymoon Meadows", "Camp Siberia / Anderson Pass shelter area"],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Three sequential designated camps on a roughly 16-mile approach; the tarn above Anderson Pass is the high camp actually used for the climb, the other two are stopover camps splitting the multi-day hike in."
+    }
+  ],
+  "misassigned": [
+    "wa_buckner_mountain_north_face: Sahale Glacier Camp belongs to the Southwest Face's Cascade Pass/Sahale Arm approach, not this route's Boston Basin line; dropped.",
+    "wa_north_ridge_west_side (Molar Tooth): 'Cutthroat basin climbers' bivy' is explicitly flagged in its own text as south/southeast-route-only and was dropped for this north-side route.",
+    "wa_cinderella_peak_scramble, wa_little_sister_north_face, wa_little_sister_west_face, wa_skookum_peak_twinsisters_scramble: 'Elbow Lake hiker camps' is explicitly noted as not on the direct line to any of the five Twin Sisters summits; dropped for all four south-corridor routes.",
+    "wa_south_twin_sister_west_ridge: the extra 'Orsino Creek Basin / Red Talus Slope' waypoint entry names the same place as 'Orsino Creek Basin'; dropped as a duplicate.",
+    "wa_lexington_tower_east_face, wa_tooth_and_claw, wa_a_servant_to_liberty, wa_dark_side_of_liberty, wa_liberty_and_injustice_for_all, wa_liberty_bell_east_face, wa_liberty_bell_independence_route, wa_liberty_bell_thin_red_line, wa_liberty_crack, wa_liberty_crack_free, wa_live_free_or_die: the same 4-camp Washington Pass list was handed to every route in the corridor regardless of side; 'Liberty Bell basin dispersed sites' is explicitly west-side only and was dropped for these 11 east-side (hairpin pullout) routes."
+  ]
+}

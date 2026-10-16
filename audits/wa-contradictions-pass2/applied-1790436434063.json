@@ -1,0 +1,271 @@
+{
+ "applied": [
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether a permit is required"
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether a permit is required"
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest scrambling grade"
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest scrambling grade"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Distance to the Sulphur Creek crossing"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Character of the final climb to the summit"
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "High camp elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "before": {
+    "access": {
+     "fees": "No climbing fee, but the approach roads cross Hampton Family Forests timberland, where entry on foot or bike requires the landowner's paid recreation permit.",
+     "rules": "Respect private timberland access rules; pack it in/pack it out. The upper route and summit lie within the federally designated Mount Baker Wilderness — no bikes or mechanized travel once inside the wilderness boundary.",
+     "permit": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+     "closures": "Logging-road access may be gated, permitted, or closed during active forestry operations, or change with the current landowner.",
+     "landManager": "Upper route and summit lie within Mount Baker Wilderness (Mount Baker-Snoqualmie National Forest, Mount Baker Ranger District); the lower approach crosses private industrial timberland.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness above the private timberland",
+     "parking_pass": "No Northwest Forest Pass applies at the private-timberland gate; the landowner's paid recreation permit is what is required here.",
+     "passRequired": "No federal pass is required at the private logging-road gate itself; the landowner's paid recreation permit is required instead, and its terms have changed with past owners, so confirm them before the trip.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is not allowed on the private timberland the approach crosses; above it, in the Mount Baker Wilderness, dispersed camping needs no permit or registration. The logging-road gate is separately locked to vehicles by the timber company."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "before": {
+    "access": {
+     "fees": "No climbing fee, but the approach roads cross Hampton Family Forests timberland, where entry on foot or bike requires the landowner's paid recreation permit.",
+     "rules": "Respect private timberland access rules; gates and permissions can change with ownership.",
+     "permit": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+     "closures": "Some approach roads are gated or on private/managed timberland — verify current access before a trip.",
+     "landManager": "Summit lies within Mount Baker Wilderness (Mount Baker-Snoqualmie National Forest, Mount Baker Ranger District); the lower approach crosses private industrial timberland.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness above the private timberland",
+     "parking_pass": "No Northwest Forest Pass applies at the private-timberland gate; the landowner's paid recreation permit is what is required here.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping is not allowed on the private timberland the approach crosses; above it, in the Mount Baker Wilderness, dispersed camping needs no permit or registration. The logging-road gate is separately locked to vehicles by the timber company."
+     }
+    },
+    "grade": "Class 3",
+    "rock_grade": "Class 3 (Class 2 where staying well south of the crest)",
+    "grade_num": 3
+   }
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.706691,
+      "lng": -121.811804,
+      "elev": 3400,
+      "name": "Park Butte Trailhead",
+      "note": "End of FS Road 13; a recreation pass is required to park and is not sold at the lot, so buy it ahead or pay by phone; start up Park Butte Trail 603.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Reach the Park Butte Trailhead at the end of Forest Service Road 13, via the Baker Lake Highway and the Sulfur Creek Road turnoff. Park at the trailhead lot; a recreation pass is required and is not sold on site, so buy it ahead or pay by phone. No wilderness permit is needed."
+     },
+     {
+      "lat": 48.685559,
+      "lng": -121.753721,
+      "elev": 3600,
+      "name": "Sulphur Creek crossing, Schriebers Meadow",
+      "note": "Ford Sulphur Creek on a log/plank crossing at the edge of Schriebers Meadow, then turn north toward Railroad Grade; last reliable running water before high camp.",
+      "type": "Water",
+      "distMi": 1
+     },
+     {
+      "lat": 48.69125,
+      "lng": -121.774356,
+      "elev": 4900,
+      "name": "Railroad Grade Trail 603.2 junction",
+      "note": "Park Butte Trail splits here; leave it for Railroad Grade Trail 603.2, which climbs directly onto the crest of the lateral moraine.",
+      "type": "Junction",
+      "distMi": 2.4
+     },
+     {
+      "lat": 48.708906,
+      "lng": -121.81071,
+      "elev": 5900,
+      "name": "Sandy Camp",
+      "note": "Terminus of Railroad Grade Trail and the standard high camp for the Easton Glacier route; last established, durable tent sites before glacier travel.",
+      "type": "Campsite",
+      "distMi": 4
+     },
+     {
+      "lat": 48.721021,
+      "lng": -121.804451,
+      "elev": 6700,
+      "name": "Easton Glacier toe / rope-up point",
+      "note": "Rope up for glacier travel here; head northwest toward the crater rim, weaving around open crevasses and snow bridges on the lower Easton Glacier.",
+      "type": "Hazard",
+      "distMi": 4.6
+     },
+     {
+      "lat": 48.76512,
+      "lng": -121.822075,
+      "elev": 9800,
+      "name": "Sherman Crater rim / Sherman Peak spur",
+      "note": "Sulfur smell from active fumaroles vents near the crater rim; a short spur off the main Easton Glacier line leads to the Sherman Peak high point instead of continuing to Grant Peak.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 48.767218,
+      "lng": -121.813908,
+      "elev": 10133,
+      "name": "Sherman Peak summit",
+      "note": "False-summit high point on Mount Baker's crater rim, just south of and lower than the true summit (Grant Peak, 10,781 ft).",
+      "type": "Summit",
+      "distMi": 7.2
+     }
+    ],
+    "itinerary": {
+     "cal": "FS Road 13 and the Railroad Grade approach are typically snow-free by late June-July; most parties climb July-September before the glacier opens up further.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike from the Park Butte Trailhead through forest and meadows, then up the crest of the Railroad Grade moraine to a high camp near the toe of the Easton Glacier. Most parties set up camp in the early-mid afternoon and rest before an early alpine start.",
+       "hours": 3.5,
+       "miles": 4,
+       "title": "Approach to high camp",
+       "gainFt": 2300,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a Railroad Grade / Sandy Camp high camp"
+      },
+      {
+       "n": 2,
+       "note": "A pre-dawn roped start up the Easton Glacier reaches the crater rim by mid-morning; a traverse around the crater leads onto Sherman Peak's West Ridge for the final scramble to the summit. Parties then reverse the whole route, break camp on the way down, and hike out to the trailhead the same day.",
+       "hours": 12,
+       "miles": 10.9,
+       "title": "Alpine start, summit, and full descent to the trailhead",
+       "gainFt": 4200,
+       "lossFt": 6800,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "2:30 AM",
+         "label": "Wake, rope up at camp",
+         "detail": "Crampons, harnesses, and rope teams sorted before first light."
+        },
+        {
+         "time": "3:30 AM",
+         "label": "Leave high camp",
+         "detail": "Roped glacier travel up the Easton Glacier via the Railroad Grade crest, timed to beat sun-softened snow bridges."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Reach the crater rim saddle (~9,800 ft)",
+         "detail": "Long break near Sherman Crater's fumaroles before the final push."
+        },
+        {
+         "time": "~8:00 AM",
+         "label": "Traverse West Ridge to the summit",
+         "detail": "Skirt a jagged high point, then an easy ridge walk to Sherman Peak (10,133 ft)."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Begin descent",
+         "detail": "Retrace the crater-rim traverse and glacier route back toward camp."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Break camp and hike out",
+         "detail": "Most parties are back at the Park Butte Trailhead by late afternoon."
+        }
+       ],
+       "objective": "Climb the Easton Glacier to the crater rim, tag Sherman Peak, descend to the car"
+      }
+     ],
+     "totalNote": "A standard 2-day, 1-night trip: roughly 14-15 miles and ~6,700 ft gain round trip from the Park Butte Trailhead, with one high camp and a long roped alpine-start summit day."
+    }
+   }
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "before": {
+    "approach": "Approach from the Schriebers Meadow Trailhead (~3,366 ft) as for the Easton Glacier route, branching onto the Squak Glacier line rather than the Railroad Grade/Easton line; high camp is commonly established around 6,800 ft.",
+    "pitch_detail": [
+     {
+      "grade": "Glacier travel, roped, crevasse maze",
+      "notes": "High camp (~6,800 ft) up the Squak Glacier through crevassed terrain to the saddle below the Roman Wall.",
+      "pitch": "Section 1",
+      "lengthM": 823
+     },
+     {
+      "grade": "Steep, icy front-pointing",
+      "notes": "Traverse south of Mount Baker's true summit and front-point up steep icy slopes toward Sherman Peak's summit ridge.",
+      "pitch": "Section 2",
+      "lengthM": 183
+     },
+     {
+      "grade": "Unroped, exposed ridge with rime-ice knobs",
+      "notes": "Final summit ridge to Sherman Peak; can be heavily rimed and exposed, typically climbed unroped.",
+      "pitch": "Section 3",
+      "lengthM": 91
+     }
+    ]
+   }
+  }
+ ]
+}

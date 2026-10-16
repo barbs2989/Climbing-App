@@ -1,0 +1,2147 @@
+{
+ "batches": [
+  "b037.json",
+  "b038.json",
+  "b039.json",
+  "b040.json"
+ ],
+ "routes_read": 15,
+ "routes": [
+  {
+   "id": "wa_liberty_traverse",
+   "name": "Liberty Traverse",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2001"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3500"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2100"
+      },
+      {
+       "field": "beta",
+       "says": "approximately 2,000 ft (606 m) of climbing"
+      }
+     ],
+     "why": "gain_ft (2,001 ft) is less than the approach alone (2,100 ft) and 43% below the itinerary's 3,500 ft; it appears to hold the climbing length, not total ascent.",
+     "internal_resolution": "itinerary 3,500 ft is consistent with a 2,100 ft approach plus multi-summit climbing; gain_ft 2001 looks like climbing length (beta ~2,000 ft of climbing).",
+     "needs_research": false
+    },
+    {
+     "fact": "Scope of the traverse (which summits, where it ends)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "start up the Beckey Route on Liberty Bell ... then the Northwest Corner of North Early Winters Spire and the Southwest Rib of South Early Winters Spire"
+      },
+      {
+       "field": "descent_text",
+       "says": "finishing on the SW Rib of South Early Winter Spire — five summits total"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Traverse links Concord Tower and Lexington Tower before finishing at Liberty Bell's true summit."
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Traverse the Liberty Bell group (Liberty Bell, Concord, Lexington towers)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "typically Liberty Bell, Concord Tower, and Lexington Tower, sometimes extended toward the Early Winter Spires"
+      }
+     ],
+     "why": "Overview/beta/descent/pitch_detail define a 5-summit traverse starting on Liberty Bell and ending on South Early Winters Spire, but the summit waypoint says it finishes on Liberty Bell and the itinerary/timing plan a 3-tower traverse.",
+     "internal_resolution": "overview, beta, descent_text, pitch_detail (5 sections, 26 pitches) and partner_requirements agree on a 5-summit traverse starting on Liberty Bell; waypoint note and itinerary are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Bail options mid-traverse",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "parties can bail at any of the intermediate notches using each peak's standard rappel/downclimb line rather than committing to the full link-up"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "limited bail-out options once committed past the first tower"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "once past the first tower, retreat requires either continuing the traverse or technical rappels off unfamiliar terrain"
+      },
+      {
+       "field": "approach_variants[0].hazards[1]",
+       "says": "long committing link-up with no easy bail once past Concord"
+      }
+     ],
+     "why": "bail says escape is available at every notch while three other fields say bail options are limited once past the first tower.",
+     "internal_resolution": "hazards, seasonal_hazards, partner_requirements and approach_variants all say bail is limited; bail is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single (two ropes recommended for multi-tower rappels)"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Single rope; two ropes recommended for multi-tower rappels"
+      },
+      {
+       "field": "descent_text",
+       "says": "2-3 single-rope rappels with a 60m rope ... a light rack, one 60m rope ... are standard"
+      }
+     ],
+     "why": "Kit fields recommend two ropes for the rappels while descent_text says one 60m rope is standard.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Strong parties have done the whole traverse in under 1.5 hours of climbing time"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].hrs",
+       "says": "13"
+      },
+      {
+       "field": "pitches",
+       "says": "26"
+      }
+     ],
+     "why": "26 pitches across five summits in under 1.5 hours of climbing conflicts with the 13-hour climb section and the rest of the timing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "13"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "2.5"
+      }
+     ],
+     "why": "Time-to-summit equals the whole car-to-car total even though a 2.5 hr approach is stated separately.",
+     "internal_resolution": "totalHrs 13 matches the itinerary car-to-car; summitTimeHrs should not equal it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Typically done as 1-2 day alpine climb"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A single very long day for strong, efficient parties"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "1 day"
+      }
+     ],
+     "why": "beta allows two days while the itinerary and timing plan a single day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7"
+      }
+     ],
+     "why": "dist_km (2.0 mi, likely one-way approach) and itinerary 7 mi are both shown as the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "1 mile west of Washington Pass overlook"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "Three different distances west of Washington Pass for the same trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crowds",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Popular route—expect crowds on weekends"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "Handful of complete traverses per season"
+      },
+      {
+       "field": "crowds.solitudeRating",
+       "says": "4"
+      }
+     ],
+     "why": "beta says expect weekend crowds while crowds says only a handful of complete traverses per season.",
+     "internal_resolution": "crowds explains segments are busy but full traverse is rare; beta likely refers to the Beckey Route segment.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "name": "Northwest Face",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Whether the approach enters the Liberty Bell-Concord gully/notch",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].name",
+       "says": "Liberty Bell-Concord Tower notch"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Rope up here; from a tree about 30 ft below the notch, scramble left onto the sloping west-side bench"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THIS ROUTE NEVER ENTERS THAT GULLY"
+      },
+      {
+       "field": "waypoints[4].directions",
+       "says": "The break onto the northwest side comes below the notch, not in it: a couple of hundred feet short of where the Beckey Route starts"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Approach via the Liberty Bell-Concord notch area, a gully approach similar to the Beckey Route"
+      }
+     ],
+     "why": "The notch waypoint note and partner_requirements send the party up the notch gully, while approach, approach_variants and the waypoint's own directions say the route leaves the path a couple hundred feet below and never enters the gully.",
+     "internal_resolution": "approach, approach_variants and waypoints[4].directions agree the break is below the notch; the waypoint note and partner_requirements are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Protection on the crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_needs",
+       "says": "the 5.9 crux is well protected"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "easing into a blank, runout corner (20-30 ft) near the top"
+      },
+      {
+       "field": "beta",
+       "says": "the signature dihedral pitch 4 crux (some runout near the top)"
+      }
+     ],
+     "why": "pro_needs calls the crux well protected while pitch_detail and beta describe a 20-30 ft runout on the crux pitch.",
+     "internal_resolution": "pitch_detail and beta agree on a runout; pro_needs is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "approach",
+       "says": "plan 1.5-2.5 hours"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Descent sequence from the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].note",
+       "says": "standard descent downclimbs to bolts roughly 200 ft below the top, then one double-rope or two single-rope rappels back to the notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel about 20 ft down the upper Beckey pitch to a ledge, traverse left (east) to a tree hung with rap slings, then make one single-rope rappel ... From the bolted anchor there, a double-rope rappel"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 stations (20 ft rap, tree, bolted)"
+      }
+     ],
+     "why": "The summit waypoint describes a downclimb to bolts then one double rap, omitting the 20-ft rap and tree rappel that descent_text and rappel_detail describe.",
+     "internal_resolution": "descent_text, rappel_detail and rappel_count_note agree on the three-station sequence.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead location/elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "about 1.5 mi west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "5,400 ft"
+      },
+      {
+       "field": "approach",
+       "says": "5,200 ft"
+      }
+     ],
+     "why": "The same trailhead is placed 0.5, 1 and 1.5 miles west of the pass and at 5,200 vs 5,400 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbers' path signage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].note",
+       "says": "unsigned climbers' path"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the signed climbers' path that branches off it toward the group"
+      }
+     ],
+     "why": "The junction waypoint says the climbers' path is unsigned while the camp entry calls it signed.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "name": "Serpentine Crack",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Difficulty level / required leading grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III, 5.11"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.11"
+      },
+      {
+       "field": "overview",
+       "says": "A quality moderate at a friendly free grade."
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "Solid 5.9-5.10 trad leader"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "5.9-5.10 crack leading"
+      }
+     ],
+     "why": "The route is graded 5.11 with a 5.11 crux pitch, but overview calls it a moderate at a friendly grade and partner requirements ask only for a 5.9-5.10 leader.",
+     "internal_resolution": "grade, rock_grade, beta and pitch_detail agree on a 5.11 crux; overview and partner_requirements are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "2.5"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "2.5"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "about 1.5-2 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "5:30 AM leave, 7:30 AM reach base"
+      }
+     ],
+     "why": "timing gives 2.5 hr approach while itinerary and partner_requirements give 1.5-2 hr.",
+     "internal_resolution": "itinerary, schedule and partner_requirements agree on ~2 hr.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "5.46"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.34"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.2"
+      }
+     ],
+     "why": "The summit is placed 3.34 mi one-way (6.7 mi round trip) while the itinerary totals 5.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ropes for the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "Two ropes — the standard Beckey Route descent needs a double-rope rappel"
+      },
+      {
+       "field": "descent_text",
+       "says": "a double-rope rappel (or two single-rope raps)"
+      },
+      {
+       "field": "rappel_detail[1].notes",
+       "says": "Double-rope rappel (or two single-rope rappels)"
+      }
+     ],
+     "why": "gear says two ropes are needed while descent_text and rappel_detail allow single-rope rappels.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_crack",
+   "name": "Liberty Crack",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "its approach does NOT start from the Blue Lake Trailhead ... drive to the pullout on the north side of SR-20 at the hairpin curve"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Pre-dawn approach from Blue Lake TH"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "Pre-dawn approach from Blue Lake TH"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)"
+      }
+     ],
+     "why": "Approach, waypoints, road and approach_variants use the east-side hairpin pullout, but the itinerary and timing send the party from the Blue Lake TH.",
+     "internal_resolution": "approach, approach_variants, waypoints, approach_logistics and road all agree on the hairpin pullout; itinerary/timing are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time and distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 0.5 mile and 600-800 ft of gain from the car (about 20-30 minutes total)"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "0.5-1"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 1.5-2 hours to the base of the east face"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "4:00 AM leave, 6:00 AM start climbing"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Similar steep talus/gully approach to the east face base as the Beckey Route"
+      }
+     ],
+     "why": "The east-face approach is 20-60 minutes in approach/approach_variants but 1.5-2 hours in partner_requirements and the itinerary schedule (which reflect the Blue Lake approach).",
+     "internal_resolution": "approach and approach_variants agree on 0.5-1 hr from the hairpin.",
+     "needs_research": false
+    },
+    {
+     "fact": "Base of east face elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "6600"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 0.5 mile and 600-800 ft of gain from the car"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5200"
+      }
+     ],
+     "why": "A 600-800 ft approach from a 5,200 ft trailhead puts the base at ~5,800-6,000 ft, not the 6,600 ft waypoint.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ropes needed for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Rappel ... with two ropes"
+      },
+      {
+       "field": "gear[3]",
+       "says": "two 60-70m ropes"
+      },
+      {
+       "field": "what_to_bring[3]",
+       "says": "two 60m ropes"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "rappel the standard two-rope Liberty Crack/Beckey descent"
+      },
+      {
+       "field": "rappel_detail[0].pull",
+       "says": "Under 30m, single 60m rope. Do not link this into one double-length rappel"
+      },
+      {
+       "field": "rappel_detail[1].pull",
+       "says": "About 25m, single 60m rope reaches the notch."
+      }
+     ],
+     "why": "Several fields require two ropes while rappel_detail/descent_text describe two sub-30 m rappels on a single 60 m rope and warn against the double-length rappel.",
+     "internal_resolution": "rappel_detail, descent_text and rappel_count_note are specific (two ~25-30 m raps, single 60 m); two ropes are only needed for the alternative east-face line.",
+     "needs_research": true
+    },
+    {
+     "fact": "Standard descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "The standard way off is the two-rappel Beckey-side descent"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "Standard/primary Liberty Crack descent ... two rappels ... to Beckey Gully"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Most parties instead rappel the East Face and return directly to their packs."
+      }
+     ],
+     "why": "approach_variants says most parties rappel the East Face, contradicting descent_text and rappel_count_note that name the Beckey-side rappels as standard.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of days",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Most parties take two days, often fixing the first three pitches and returning the next day"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A single long day: real trip reports show 9-10 hr car-to-car ascents"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      }
+     ],
+     "why": "beta says most parties take two days while the itinerary and timing plan a single day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car hours",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "4:00 AM leave ... 6:30 PM back at car"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      }
+     ],
+     "why": "The schedule spans 14.5 hours but the day is stated as 10 hours, and time-to-summit equals the whole car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Aid grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "aid_grade",
+       "says": "C2"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.11+ (C2)"
+      },
+      {
+       "field": "gear[2]",
+       "says": "aid gear for C1"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "if climbing the Lithuanian Lip at C1"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "sustained 5.11a/C1 grade"
+      },
+      {
+       "field": "grade",
+       "says": "(or 5.9 A3 original aid; 5.13- fully free)"
+      }
+     ],
+     "why": "The aid grade is given as C2 in aid_grade but C1 in gear, rack, pro_tips and crowds.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Hardest free grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.11a"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.11+ (C2)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.11a (C1 aid) / 5.13- free"
+      }
+     ],
+     "why": "The headline 5.11a is below pitch 3's 5.11+ free grade, and the 5.11a grade itself assumes aiding the Lip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade of partner",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "V"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "Experienced grade IV multi-pitch leader"
+      }
+     ],
+     "why": "Partner requirements ask for grade IV experience on a Grade V route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "name": "Liberty Crack (Free)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Drive to the hairpin turn on WA-20 just east of Washington Pass ... (this is a different trailhead than the Blue Lake TH"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Pre-dawn start from Blue Lake TH, approach to the base (about 1.5-2 hr)"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "Pre-dawn start from Blue Lake TH"
+      }
+     ],
+     "why": "approach, road, approach_variants and approach_logistics use the east hairpin pullout, but the trailhead waypoint note, itinerary and timing name the Blue Lake Trail/TH.",
+     "internal_resolution": "approach, approach_variants, road, approach_logistics and partner_requirements agree on the hairpin pullout.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "This approach is short (about an hour)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1 hour via the East Face climbers' path"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "approach to the base (about 1.5-2 hr)"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "3:30-4:00 AM leave, 5:30 AM reach base"
+      }
+     ],
+     "why": "The itinerary uses a 1.5-2 hr approach (the Blue Lake figure) while approach and partner_requirements give about an hour.",
+     "internal_resolution": "approach, approach_variants and partner_requirements agree on ~1 hr.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ropes for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single"
+      },
+      {
+       "field": "descent_text",
+       "says": "a single 60m rope is adequate"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "30"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Two-rope rappel descent"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "rappel the standard two-rope Liberty Crack/Beckey descent"
+      }
+     ],
+     "why": "Kit and descent fields say a single 60 m rope suffices for two ~30 m rappels while the itinerary calls it a two-rope descent.",
+     "internal_resolution": "rope_type, rope_note, rack, descent_text and rappel_detail agree on a single 60 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which pitch is the Lithuanian Lip",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "rejoins the original line for the 5.11+ Pitch 4 below the Lithuanian Lip roof"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "The Lithuanian Lip, free"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Crux P2 (\"Lithuanian Lip,\" 5.13b)"
+      }
+     ],
+     "why": "overview places the Lithuanian Lip above pitch 4, while pitch_detail, beta and hazards make it pitch 2.",
+     "internal_resolution": "pitch_detail, beta, hazards and partner_requirements agree the Lip is P2.",
+     "needs_research": false
+    },
+    {
+     "fact": "Headline difficulty in watch-out",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "Sustained 5.11a crack climbing with serious exposure"
+      },
+      {
+       "field": "grade",
+       "says": "5.13b"
+      }
+     ],
+     "why": "watch_out describes the route as 5.11a climbing; this free line is 5.13b (5.11a is the aided original).",
+     "internal_resolution": "grade, rock_grade, beta, pitch_detail agree on 5.13b.",
+     "needs_research": false
+    },
+    {
+     "fact": "Protection on the crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_needs",
+       "says": "Fixed bolted anchors protect the crux Lithuanian Lip and slab-variation pitches"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "reported as having sparse protection through the crux moves"
+      },
+      {
+       "field": "pitch_detail[1].bolts",
+       "says": "2"
+      }
+     ],
+     "why": "pro_needs implies the crux is bolt-protected, while hazards says protection is sparse through the crux moves.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of days",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "Most parties still fix the first 2-3 pitches and return the next day"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Most fit parties do it in a single big day"
+      }
+     ],
+     "why": "pro_tips says most parties split it over two days; the itinerary says most do it in one day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car hours",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "3:30-4:00 AM leave ... 6:00-7:00 PM back at car"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      }
+     ],
+     "why": "The schedule spans 14-15.5 hours but the day is 10.5 hours, and time-to-summit equals the car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Cam rack",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "single rack from purple C3 to #3 Camalot"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams purple C3 to #3, doubles recommended"
+      },
+      {
+       "field": "what_to_bring[2]",
+       "says": "light rack per above"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A full big-wall-style free rack"
+      }
+     ],
+     "why": "The rack is single/light in gear and what_to_bring but doubles/full big-wall rack in rack and detailed_rack.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Year of the free variation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "current free variation FFA: ... 2016"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "newer (2017) bolted slab pitch (P3)"
+      },
+      {
+       "field": "overview",
+       "says": "(2016-2017)"
+      }
+     ],
+     "why": "fa gives 2016 while hazards dates the pitch to 2017.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "name": "Rapple Grapple",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Four pitches at 5.8."
+      },
+      {
+       "field": "partner_requirements.fitnessSpec",
+       "says": "4 pitches"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "3 rows (P1-P3)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Shortest of the standard west-face lines at 3 pitches"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "3 pitches of quality 5.7 cracks"
+      }
+     ],
+     "why": "pitches and two other fields say 4 pitches while pitch_detail, itinerary/timing and pro_tips give 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Distinct exit east of the Beckey/notch line ... two single-rope rappels to the ground"
+      },
+      {
+       "field": "descent_text",
+       "says": "it drops climber's-right (east) into its own gully rather than back toward the Liberty Bell-Concord notch"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "rappel/downclimb the standard line to the Liberty Bell-Concord notch and out"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb Rapple Grapple to the Liberty Bell-Concord notch"
+      }
+     ],
+     "why": "descent, descent_text, rappel_detail and approach_variants use a distinct east-gully exit, but the itinerary/timing descend the standard notch line.",
+     "internal_resolution": "descent, descent_text, rappel_detail and approach_variants agree on the separate east gully exit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~2 hours"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Largest gear",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "rack to 3 inches"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Pro to 4 inches."
+      }
+     ],
+     "why": "gear lists a rack to 3 in while pro_needs says pro to 4 in.",
+     "internal_resolution": "sling_rack treats the #4 as optional, which reconciles them only partly.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_girl_next_door",
+   "name": "The Girl Next Door",
+   "area": "Liberty Bell Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "name": "The Independence Route",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead and side of the mountain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Approach from Blue Lake TH into the basin (about 1.5-2 hr)"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Blue Lake Trailhead approach to the west face, steep talus"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Stream crossing near meadow"
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "West face base / sloping bench"
+      }
+     ],
+     "why": "An East Face route whose approach, trailhead waypoint and approach_variants use the east hairpin pullout, but itinerary, timing, trailheadDirection, partner_requirements and the Blue Lake Trail/west-face waypoints send the party up the west side.",
+     "internal_resolution": "approach, approach_variants, road, aspect E and the trailhead waypoint agree on the east hairpin approach; the west-side waypoints and itinerary are copied from a west-face route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time/distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "after roughly 20-30 minutes and 0.5 mile (~600-800 ft gain)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about a mile through forest"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 1.5-2 hours from the Blue Lake Trailhead to the west face"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "4:00 AM leave, 6:00 AM reach base"
+      }
+     ],
+     "why": "Approach times of 20-30 min vs 1.5-2 hr and distances of 0.5 vs 1 mile for the same walk.",
+     "internal_resolution": "approach (hairpin) is consistent with the route's side; 1.5-2 hr comes from the west-side approach.",
+     "needs_research": true
+    },
+    {
+     "fact": "Descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the standard Beckey Route rappels/downclimb on the southwest side."
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "descend via the standard Beckey Route rappels/downclimb to the notch, not back down the route"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the natural exit is Thin Red Line's bolted rappel line back down the East Face to your pack, rather than continuing to the true summit"
+      }
+     ],
+     "why": "descent/descent_text/rappel_detail top out and use the Beckey notch rappels, while approach_variants says the natural exit is Thin Red Line's East Face rappels without summiting.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[4]",
+       "says": "Single 70m rope — long enough to rappel from pitch 8; a second rope is not needed"
+      },
+      {
+       "field": "rappel_detail[1].notes",
+       "says": "Can be done as one double-rope rappel, or split into two single-rope raps"
+      },
+      {
+       "field": "descent_text",
+       "says": "a double-rope rappel (or two single-rope raps)"
+      }
+     ],
+     "why": "gear implies rappelling the route from pitch 8 on one rope, while the descent fields describe the summit/notch descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "Mid-5.10 free crux pitches"
+      },
+      {
+       "field": "pitch_detail[7].grade",
+       "says": "5.12a"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "5.11c"
+      }
+     ],
+     "why": "The hazard waypoint calls the crux mid-5.10 while pitch_detail gives 5.11c and 5.12a cruxes.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and partner_requirements agree on 5.12a.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Face named in rack/tips",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_needs",
+       "says": "Standard west-face rack"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Coordinate with parties on adjacent west-face lines"
+      },
+      {
+       "field": "aspect",
+       "says": "E"
+      }
+     ],
+     "why": "An East Face route is described as among west-face lines.",
+     "internal_resolution": "aspect, face and approach say East Face.",
+     "needs_research": false
+    },
+    {
+     "fact": "What the stored approach says",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "THE ROUTE'S OWN STORED APPROACH DESCRIBES THE BLUE LAKE TRAILHEAD AND FOURTH-CLASS LEDGES ACROSS THE WEST FACE."
+      },
+      {
+       "field": "approach",
+       "says": "from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass"
+      }
+     ],
+     "why": "The variant note claims the stored approach describes the Blue Lake TH, but the approach field describes the hairpin.",
+     "internal_resolution": "approach is already the east-side one; the note is stale pipeline text.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "name": "Beckey Route (Southwest Face)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Descent sequence and anchors",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "downclimb and/or rappel back down the route to about 200 ft below the top, then break left (east) and downclimb roughly 100 ft through trees and loose rock to two bolted rappel stations ... One double-rope rappel or two single-rope rappels"
+      },
+      {
+       "field": "descent_text",
+       "says": "downclimb the upper (4th) pitch about 20 ft to the first ledge, then go left (east) to a tree hung with rappel slings. One single-rope rappel ... from the bolted anchor there, one double-rope rappel"
+      },
+      {
+       "field": "rappel_detail[2].anchor",
+       "says": "tree with rappel slings (two trees present, the higher one is the better anchor)"
+      },
+      {
+       "field": "rappel_detail[1].station",
+       "says": "a fixed station of bolts and chains"
+      }
+     ],
+     "why": "descent describes a ~300 ft downclimb to two bolted stations, descent_text a 20 ft downclimb to a tree then bolts, and rappel_detail three single-rope raps whose last is off a tree.",
+     "internal_resolution": "rappel_detail and rappel_count_note are the most detailed (3 single-rope raps); descent is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "4 rows"
+      },
+      {
+       "field": "overview",
+       "says": "gains the summit in three short pitches"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A light kit is plenty for the three short pitches."
+      }
+     ],
+     "why": "overview and detailed_rack say three pitches while pitches and pitch_detail say four.",
+     "internal_resolution": "pitch_detail lists four including a 25 m scramble/boulder finish; itinerary says 3-4.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "~5,140 ft"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5200"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "5,400 ft"
+      }
+     ],
+     "why": "Trailhead elevation ranges 5,140-5,400 ft (260 ft) across fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "First rappel downclimb distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "downclimbing the upper pitch about 20 ft from the summit"
+      },
+      {
+       "field": "rappel_detail[0].station",
+       "says": "Reverse the last pitch roughly 15-20 m (about 50 ft)"
+      }
+     ],
+     "why": "The same rappel entry gives a 20 ft and a 50 ft downclimb.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "name": "Liberty and Injustice for All",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead waypoint",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire"
+      },
+      {
+       "field": "approach",
+       "says": "park at the hairpin turn on WA-20 east of Washington Pass"
+      }
+     ],
+     "why": "The trailhead waypoint's note describes the Blue Lake TH while its name and every other field use the hairpin pullout.",
+     "internal_resolution": "approach, approach_variants, road, itinerary agree on the hairpin.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent after climbing all 5 pitches",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "climb the 5 pitches then rappel with two ropes from the top of P3, bypassing the P2 anchor"
+      },
+      {
+       "field": "descent",
+       "says": "Rappel with two ropes from the top of P3"
+      },
+      {
+       "field": "descent_text",
+       "says": "If instead you continue the full 5 pitches ... rappel with two ropes down Thin Red Line's line"
+      }
+     ],
+     "why": "The itinerary climbs all 5 pitches and then rappels from P3, which descent_text says is only the descent if you stop at P3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "P3-to-P1 rappel length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "55"
+      },
+      {
+       "field": "pitch_detail[1].lengthM",
+       "says": "40"
+      },
+      {
+       "field": "pitch_detail[2].lengthM",
+       "says": "40"
+      }
+     ],
+     "why": "Skipping the P2 anchor means rappelling P3+P2 = ~80 m, not 55 m, which exceeds a two-rope 60 m rappel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.12b"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "a short bouldery 5.12- crux right off the deck"
+      },
+      {
+       "field": "overview",
+       "says": "short bouldery 5.12- cruxes"
+      },
+      {
+       "field": "beta",
+       "says": "About 200 m of sustained 5.12b climbing"
+      }
+     ],
+     "why": "P1 is graded 5.12b but its crux is described as 5.12-, and beta calls the whole 200 m sustained 5.12b while pitch_detail eases to 5.9.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Start location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "about 10m right of Thin Red Line"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[2]",
+       "says": "shares its start with Thin Red Line"
+      }
+     ],
+     "why": "partner_requirements says it shares Thin Red Line's start; overview, approach and approach_variants place it 10 m right.",
+     "internal_resolution": "overview, approach and approach_variants agree on 10 m right.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_3",
+   "name": "East Face",
+   "area": "Minuteman Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Park at the Blue Lake Trailhead ... Follow the Blue Lake Trail #314 about 1.5 miles ... roughly 3 miles and 2,000 ft of gain, 1.5-2.5 hours total"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Blue Lake Trailhead (SR-20)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Park a few hundred yards east of Washington Pass near the small pond"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "The east faces of the Liberty Bell group are reached from the highway side, not from Blue Lake."
+      },
+      {
+       "field": "road.status",
+       "says": "park at the informal pullout on the north shoulder near Washington Pass Overlook (~1.2 mi east of Washington Pass) ... roughly 30-45 min to the base"
+      },
+      {
+       "field": "itinerary",
+       "says": "a 45-minute-to-1-hour approach"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1"
+      }
+     ],
+     "why": "approach and the trailhead waypoint name/logistics use the Blue Lake TH (3 mi, 1.5-2.5 hr), while the waypoint note, approach_variants, road, itinerary and timing use the east-side pond pullout with a 30-60 min walk.",
+     "internal_resolution": "East Face aspect, approach_variants, road, itinerary, timing and waypoint distance (summit 1.2 mi) favor the east-side pullout; approach text is copied from the Beckey Route (it ends describing the Beckey start at the notch).",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel descent: count and ropes",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "4 double-rope rappels from slung anchors roughly 100 ft west of the true summit"
+      },
+      {
+       "field": "gear[2]",
+       "says": "two 60m ropes (the descent is 4 double-rope rappels)"
+      },
+      {
+       "field": "descent",
+       "says": "About 3 rappels with a single 60m rope back to the approach talus."
+      },
+      {
+       "field": "descent_text",
+       "says": "about three rappels on a single 60m rope"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A single 60m rope is standard for both the climbing and the rappel descent."
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 single-rope rappels"
+      }
+     ],
+     "why": "rappels and gear call for four double-rope rappels with two ropes; descent, descent_text, rappel_detail, detailed_rack and itinerary say about three single-rope rappels on one 60 m rope.",
+     "internal_resolution": "Most fields (descent, descent_text, rappel_detail, rappel_count_note, detailed_rack, itinerary) agree on ~3 single-rope rappels.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach gain vs summit height",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 3 miles and 2,000 ft of gain"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1600"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6969"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "5477"
+      }
+     ],
+     "why": "A 2,000 ft approach to the base exceeds the whole trailhead-to-summit rise (1,492-1,769 ft) and gain_ft 1,600.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "5477"
+      },
+      {
+       "field": "approach",
+       "says": "about 5,200 ft"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5400"
+      }
+     ],
+     "why": "Trailhead elevation differs by 277 ft between waypoint and approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which gully separates Minuteman",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the gully separating Minuteman from Lexington Tower"
+      },
+      {
+       "field": "descent_text",
+       "says": "cross the gully separating Minuteman from Liberty Bell"
+      },
+      {
+       "field": "bail",
+       "says": "the gully separating Minuteman from Lexington Tower/Liberty Bell"
+      }
+     ],
+     "why": "The neighbouring tower across the gully is Lexington in one field and Liberty Bell in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cam doubles",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "A single rack of cams from finger size to about 3-4 inches"
+      },
+      {
+       "field": "pro_needs",
+       "says": "doubling up common finger/hand-size cams is worth it"
+      }
+     ],
+     "why": "detailed_rack says a single rack; pro_needs recommends doubles.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_labor_pains",
+   "name": "Labor Pains",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Descent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend via the Chockstone Route's bolted rappel stations back to the base."
+      },
+      {
+       "field": "descent_text",
+       "says": "Rappel down the Chockstone Route line"
+      },
+      {
+       "field": "rappels",
+       "says": "Most parties descend the separate bolted rappel line down the West Face ... rather than the Chockstone Route stations"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "IMPORTANT: this is probably not the descent a Labor Pains party will use."
+      }
+     ],
+     "why": "descent/descent_text/approach_variants/bail send the party down the Chockstone Route stations, while rappels and rappel_count_note say most parties use the separate bolted West Face line.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope(s) for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "60m rope"
+      },
+      {
+       "field": "rack[4]",
+       "says": "60m single rope"
+      },
+      {
+       "field": "rappel_detail[3].notes",
+       "says": "Largely free-hanging double-rope rappel past the giant chockstone"
+      },
+      {
+       "field": "what_to_bring[0]",
+       "says": "Single rope (double-rope rappels on descent)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "that West Face line ... wants a 70 m rope; the list here is a 60 m"
+      }
+     ],
+     "why": "The kit lists one 60 m rope, but the stated Chockstone descent needs a double-rope rappel and the West Face line wants a 70 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "5"
+      },
+      {
+       "field": "overview",
+       "says": "a 5-pitch, roughly 600 ft (182 m) line"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "4 rows (P1-P4)"
+      }
+     ],
+     "why": "pitches and overview say 5 pitches but pitch_detail lists only 4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of 5.11 pitches",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "with three sustained 5.11a pitches"
+      },
+      {
+       "field": "turnaround",
+       "says": "With two sustained 5.10/5.11 pitches"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P2 5.10, P3 5.10-5.11, P4 5.11a"
+      }
+     ],
+     "why": "overview claims three 5.11a pitches, turnaround two 5.10/5.11 pitches, and pitch_detail has only one 5.11a pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Chockstone descent anchors",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "the Chockstone Route's bolted rappel stations"
+      },
+      {
+       "field": "rappel_detail[0].anchor",
+       "says": "fixed/natural station"
+      },
+      {
+       "field": "rappel_detail[3].anchor",
+       "says": "mixed bolt/natural anchor above chockstone"
+      },
+      {
+       "field": "rappel_detail[3].station",
+       "says": "the station is a BOLTED rap anchor on top of the chockstone - not tat"
+      }
+     ],
+     "why": "The chockstone station is described as both mixed bolt/natural and fully bolted, and descent calls all stations bolted.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "name": "Flycatcher Buttress",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Blue Lake Trailhead, SR-20, Washington Pass"
+      },
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Blue Lake Trailhead"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "East-side approach — NOT Blue Lake TH. The Hairpin is the start point."
+      },
+      {
+       "field": "approach",
+       "says": "Start from the hairpin turn"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      }
+     ],
+     "why": "GETTING THERE names the Blue Lake Trailhead while every approach field says this route starts from the east hairpin and explicitly not Blue Lake.",
+     "internal_resolution": "approach, approach_variants, waypoints, approach_logistics and comms agree on the hairpin; road is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which rappel line needs 70 m",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "70m is required if using Flycatcher's own newer bolted rap-anchor line"
+      },
+      {
+       "field": "rack[4]",
+       "says": "70m via Flycatcher's own line"
+      },
+      {
+       "field": "descent_text",
+       "says": "the bolted West Face anchors (70m rope) - both require crossing over from the east-side climbing line to the west-side descent"
+      }
+     ],
+     "why": "Kit fields call the bolted 70 m line Flycatcher's own, while the descent fields say it is the West Face line on the opposite side.",
+     "internal_resolution": "descent, descent_text, what_to_bring and approach_variants agree it is the West Face line.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2400"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "at about 5,100 ft"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "7760"
+      }
+     ],
+     "why": "The trailhead-to-summit rise is ~2,660 ft, more than gain_ft 2,400.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "name": "Northwest Corner (Boving-Pollack Route)",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Bolted West Face rappel count and anchors",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "the bolted West Face (4 bolted stations plus a tree rappel)"
+      },
+      {
+       "field": "descent_text",
+       "says": "Six bolted (2-bolt) rappel stations ... No natural anchors needed on this line — it's fully bolted."
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "the newer 6-station bolted rappel line"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "3 rappels with a single 60m rope, or up to half a dozen with shorter ropes"
+      }
+     ],
+     "why": "The bolted descent is 4 stations + a tree, 6 fully bolted stations, or 3 rappels depending on the field.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about one mile west of the Washington Pass Overlook"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "0.25 mi past the Washington Pass Overlook turnoff"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the Blue Lake Trailhead (~5,200 ft) on SR-20 about 1.5 miles west of Washington Pass"
+      }
+     ],
+     "why": "The trailhead is placed 0.25, 1 and 1.5 miles from the pass/overlook.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Shared start with the West Face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "past the start of the West Face route, to a distinctive corner/crack system ... the shared start for the Northwest Corner and West Face"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Keep traversing north along the base past the start of the West Face route ... The corner start is shared with the West Face route"
+      }
+     ],
+     "why": "Both texts tell you to walk past the West Face start and then call the same corner the West Face's shared start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best months",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July-August offering the most consistently dry rock"
+      },
+      {
+       "field": "climate.bySeason.summer",
+       "says": "Best window (especially Aug-Sep)"
+      },
+      {
+       "field": "best_season",
+       "says": "Prime conditions are typically August into September"
+      }
+     ],
+     "why": "seasonal_guidance names July-August as best, while climate and best_season name August-September.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit/climb time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "7.5"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.25"
+      }
+     ],
+     "why": "Time-to-summit equals the full car-to-car total even though a 1.25 hr approach is stated separately.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_west_face",
+   "name": "The West Face",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Bolted rappel line count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "a newer line uses four bolted rappel stations plus a tree rappel"
+      },
+      {
+       "field": "descent_text",
+       "says": "four rap stations starting about 15 feet right"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "The bolted 4-rap descent"
+      },
+      {
+       "field": "rappels",
+       "says": "~6 bolted rappels down the West Face"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "Six bolted rappel stations are reported on this line, not four bolted stations plus one tree rappel"
+      }
+     ],
+     "why": "descent, descent_text, pro_tips and approach_variants say four stations; rappels, rappel_detail and rappel_count_note say six.",
+     "internal_resolution": "rappel_count_note says the line was bolted more over time and six is current.",
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "70"
+      },
+      {
+       "field": "what_to_bring[0]",
+       "says": "70m rope recommended for the descent options"
+      },
+      {
+       "field": "rack[4]",
+       "says": "Single 60m dynamic rope"
+      },
+      {
+       "field": "rappel_detail[1].pull",
+       "says": "The line is rigged for a single 70m; a 60m works but leaves no margin."
+      }
+     ],
+     "why": "rack lists a 60 m rope while rope_length_m and what_to_bring specify 70 m.",
+     "internal_resolution": "rope_length_m, what_to_bring and rappel_detail favor 70 m.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "overview",
+       "says": "a 6-pitch"
+      },
+      {
+       "field": "descent_text",
+       "says": "where pitch 6 tops out"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "5 rows (P1-P5)"
+      }
+     ],
+     "why": "Six pitches in three fields but pitch_detail lists five, and P5 already goes 'to the top'.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "roughly 500 ft (152 m)"
+      },
+      {
+       "field": "length_m",
+       "says": "201"
+      },
+      {
+       "field": "rope_note",
+       "says": "~710ft across 6 pitches"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "~160+60+90+150+150 = ~610 ft"
+      }
+     ],
+     "why": "Route length is given as 500 ft, 660 ft (201 m), 710 ft and ~610 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit distance from trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "1"
+      },
+      {
+       "field": "approach",
+       "says": "follow the Blue Lake Trail about 1.5 miles to the climbers' path"
+      }
+     ],
+     "why": "The summit is placed 1 mile from the trailhead though the maintained trail alone is 1.5 miles.",
+     "internal_resolution": "approach and waypoints[0].directions agree on 1.5 mi of trail before the climbers' path.",
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

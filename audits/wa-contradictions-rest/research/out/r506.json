@@ -1,0 +1,261 @@
+{
+ "file": "r506.json",
+ "results": [
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Summit-day gain from Hayes River",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 3,200 ft in under a mile figure is a description of the peak's east face rising above the Hayes River drainage directly beneath it, not the climb from the Hayes River Guard Station camp (~1,750 ft, ~3.5 mi from the summit), from which the gain must be at least ~4,650 ft. No outside source states a route gain for this scramble, and the itinerary day gains sum to gain_ft (5,100), so day 3 cannot be changed without an unsourced change to gain_ft. Left open; the summit elevation itself is also disputed (see below).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Norton"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Summit elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's 6,397 ft matches the encyclopedia figure, but two topo-derived sources disagree with it: one lists Norton at 6,319 ft and another displays 1,926 m (6,319 ft) \u2014 close to the schedule's 6,321. The header elevation comes from the area row, so changing high_point_ft/overview/waypoint alone would open a new contradiction; the peak's true elevation needs an area-level decision.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Norton",
+    "https://listsofjohn.com/peak/50159",
+    "https://peakvisor.com/peak/mount-norton-united-states.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only outside statement found is a generic weather sentence saying June through August offer the most favorable weather for the peak; it is not route-specific beta, and no trip report or second source was found establishing whether June is in season for this interior scramble versus the row's late July-September window.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Norton"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Approach mileages",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Hayes River Guard Station is 16.1 mi from Whiskey Bend and Mary's Falls 8.8 mi. The Elkhorn waypoint's 14.3 mi appears to be a copied 'about 14.3 miles south of Elwha' location figure (measured from Elwha, not Whiskey Bend); one search summary and a 23-mi round-trip listing suggest ~11.5 mi from Whiskey Bend, but no clearly attributable pair of sources was reached. The itinerary's daily miles (11.5 / 5.3 / 16.8) appear to be measured from Whiskey Bend while its day-1 note starts at Madison Falls ~7 mi earlier; fixing that needs sourced per-day figures.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elkhorn_Guard_Station",
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Madison Falls road walk",
+   "verdict": "fixed",
+   "correct_value": "~7 miles each way (~14 round trip)",
+   "evidence": "The park's Elwha River Trail page says the washout adds an additional 7 miles to reach the Whiskey Bend trailhead; an independent description measures 6.9 mi (the 4.5-4.6 mi Whiskey Bend Road plus the Olympic Hot Springs Road segment from Madison Falls). One hiking-association page says 6.2, the outlier. The approach and road.driveNote already say ~7; cal, watch_out and trailheadDirection are aligned to it.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "http://visitonp.kaleberg.com/places-to-visit/elwha/elwha---out-of-whiskey-bend.html",
+    "https://www.nps.gov/olym/learn/news/elwha-valley-access-update.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_norton_scramble",
+     "fact": "Madison Falls road walk",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "adding roughly 6.2 miles each way",
+     "replace": "adding roughly 7 miles each way"
+    },
+    {
+     "id": "wa_mount_norton_scramble",
+     "fact": "Madison Falls road walk",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "adds ~13 extra round-trip miles",
+     "replace": "adds ~14 extra round-trip miles"
+    },
+    {
+     "id": "wa_mount_norton_scramble",
+     "fact": "Madison Falls road walk",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "walk or bike ~8 miles",
+     "replace": "walk or bike ~7 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Where the route leaves the trail",
+   "verdict": "fixed",
+   "correct_value": "The route leaves the Elwha River Trail at Hayes River Guard Station (16.1 mi from Whiskey Bend).",
+   "evidence": "Waypoints, beta, itinerary, hazards and bivy all leave the trail at Hayes River; the Elwha River Trail reaches Hayes River Guard Station 16.1 mi from Whiskey Bend and Chicago Camp/Elwha Basin lie well beyond it. Mount Norton rises directly above the Hayes River, so there is no reason to continue to Chicago Camp.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Norton",
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_norton_scramble",
+     "fact": "Where the route leaves the trail",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "follow the Elwha River Trail deep into the park interior toward the Elwha Basin/Bailey Range country before leaving the trail to scramble Mount Norton.",
+     "replace": "follow the Elwha River Trail about 16 miles into the park interior to the Hayes River Guard Station before leaving the trail to scramble Mount Norton."
+    },
+    {
+     "id": "wa_mount_norton_scramble",
+     "fact": "Where the route leaves the trail",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "the NPS notes snow can linger into July on the approach beyond Chicago Camp, so",
+     "replace": "snow can linger into July on the off-trail slopes above Hayes River, so"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only outside statement is a generic weather sentence (June through August offer the most favorable weather for viewing or climbing); trip accounts describe lingering steep snow in the approach cols in summer but none establish a start month. No two sources settle June vs mid-July or whether September belongs in the window.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Noyes_(Washington)",
+    "https://www.summitpost.org/christie-noyes-meany-seattle-martins-lakes/652442"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "fact": "Approach side (Elwha vs North Fork Quinault)",
+   "verdict": "fixed",
+   "correct_value": "Primary approach is the North Fork Quinault to Low Divide (16.1 mi); the Elwha (28.4 mi plus ~7 mi road walk) is the alternative.",
+   "evidence": "The North Fork Quinault trail reaches Low Divide in 16.1 mi with fords at Wild Rose Creek, Elip Creek and Sixteenmile; the Elwha River Trail reaches Low Divide in 28.4 mi, plus 7 mi of closed road. The trailhead card, timing, pitch_detail and pro_tips already use the Quinault; the Elwha-only claims are reframed as the alternative and the off-trail start moved to Low Divide.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://www.protrails.com/trail/840/olympic-national-park-north-fork-quinault-river-trail",
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "Elwha River ford required at Chicago Camp",
+     "replace": "On the longer Elwha approach only, an Elwha River ford near Chicago Camp"
+    },
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      3
+     ],
+     "find": "off-trail section above Chicago Camp",
+     "replace": "off-trail section above Low Divide"
+    },
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "The off-trail route above Chicago Camp",
+     "replace": "The off-trail route above Low Divide"
+    },
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "a long trail hike up the Elwha to a high camp in the upper Elwha Basin",
+     "replace": "a long trail hike up the North Fork Quinault (or the longer Elwha) to a high camp near Low Divide"
+    },
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "typically via Elwha River trail to a high camp in the upper Elwha/Seattle Basin",
+     "replace": "typically via the North Fork Quinault trail to a high camp near Low Divide or in Seattle Basin"
+    },
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "river fording (Elwha drainage)",
+     "replace": "river fording (Quinault or Elwha drainage)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "fact": "Walk-up permits",
+   "verdict": "fixed",
+   "correct_value": "Permits are reserved online, by phone or in person at a WIC; no sites are held as same-day walk-ups.",
+   "evidence": "The park's wilderness reservations page says camp availability is live on the reservation site and no sites are held as same-day walk-ups, and that paper self-registration is gone. A park-support foundation's permit guide states the same, and the reservation listing says any 'walk-up' availability is only by contacting the WIC. access.permit is aligned with overnight_permit.where.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/",
+    "https://www.recreation.gov/permits/4098362"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_noyes_standard",
+     "fact": "Walk-up permits",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "with walk-up permits available at Wilderness Information Centers",
+     "replace": "by phone, or in person at a Wilderness Information Center; no sites are held back as same-day walk-ups"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 46.03 (28.6 mi) matches the Elwha trail distance to Low Divide (28.4 mi), not the row's North Fork Quinault trailhead, whose trail reaches Low Divide in 16.1 mi. The one-way figure to the Noyes-Meany col adds a primitive-trail and off-trail leg past Low Divide that no source measures, so the correct one-way value cannot be established.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.protrails.com/trail/840/olympic-national-park-north-fork-quinault-river-trail"
+   ],
+   "patches": []
+  }
+ ]
+}

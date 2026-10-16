@@ -1,0 +1,456 @@
+{
+ "batches": ["b077.json", "b078.json", "b079.json", "b080.json"],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_drilling_me_softly",
+   "name": "Drilling Me Softly",
+   "area": "Sofa King Buttress",
+   "contradictions": [
+    {
+     "fact": "Access road / trailhead for the crag",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "From I-90 Exit 54 (Hyak), follow Hyak Drive onto Forest Service Road NF-9070... turnaround just below Silver Basin"},
+      {"field": "waypoints[0]", "says": "FS Road 9070 Turnaround at Silver Basin, elev 4585, type Trailhead"},
+      {"field": "watch_out[1]", "says": "The NF-9070 access road is rough with sharp rocks and deep water bars; a high-clearance vehicle is recommended."},
+      {"field": "road.name", "says": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel"},
+      {"field": "road.status", "says": "Paved road from I-90 Exit 52 to a large gravel lot at Alpental; well-maintained but subject to seasonal snow closure."}
+     ],
+     "why": "The approach text, the only waypoints, and watch_out all agree the crag is reached via I-90 Exit 54/Hyak and rough Forest Road NF-9070 requiring a high-clearance vehicle, but the road field instead describes the paved, well-maintained Alpental Road from Exit 52 -- a different exit, road and trailhead used by the unrelated Guye Peak routes in this same catalog.",
+     "internal_resolution": "approach + waypoints + watch_out agree (3 fields) against road (1 field); road is almost certainly copy-pasted Guye Peak/Alpental boilerplate.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation gain to the crag",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "750"},
+      {"field": "waypoints[0].elev", "says": "4585 (trailhead)"},
+      {"field": "waypoints[1].elev", "says": "4650 (Sofa King Buttress base)"},
+      {"field": "approach", "says": "roughly a 20-30 minute approach on foot up into Silver Basin"}
+     ],
+     "why": "The route's only two waypoints differ by just 65 ft, and the approach is described as a short 20-30 minute walk with no significant elevation gain mentioned, but gain_ft claims 750 ft of total ascent -- more than 10x the elevation shown by the route's own waypoints.",
+     "internal_resolution": "waypoints + approach description agree with each other; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "June through October when FS Road 9070 is open and snow is minimal"}
+     ],
+     "why": "best_season extends a full month earlier and a full month later than the stated season window on both ends, rather than sitting inside it.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of quickdraws needed",
+     "severity": "low",
+     "claims": [
+      {"field": "alpine_draws", "says": "10"},
+      {"field": "pro_needs", "says": "12 quickdraws (plus 1-2 extra for the anchor)"},
+      {"field": "detailed_rack", "says": "12 bolts to a two-bolt chain anchor"}
+     ],
+     "why": "The structured draws count (10) is lower than the prose's repeated figure of 12 quickdraws needed to protect the 12-bolt pitch plus anchor.",
+     "internal_resolution": "pro_needs and detailed_rack agree with each other on 12; alpine_draws is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "How well-documented the crag/route is",
+     "severity": "low",
+     "claims": [
+      {"field": "rope_note", "says": "Area ('Sofa King Buttress') could not be found in any published index. Inferred from grade/regional style as a short bolted granite pitch typical of Washington Pass sport crags."},
+      {"field": "beta", "says": "The line (FA party Wylie Moreshead) is known for the sheer variety of technique packed into one pitch... photos of the route show the crux section and a rest stance before an upper bulge."},
+      {"field": "fa", "says": "Wylie Moreshead, 2020"}
+     ],
+     "why": "rope_note states the area/route could not be found in any index and the gear was inferred, while beta and fa present specific, confident, apparently well-researched detail (named FA climber, photos, technique beta) for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "name": "Spraying Mantis",
+   "area": "Sofa King Buttress",
+   "contradictions": [
+    {
+     "fact": "Access road / trailhead for the crag",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "From I-90 Exit 54 (Hyak), follow Hyak Drive onto Forest Service Road NF-9070... turnaround just below Silver Basin"},
+      {"field": "waypoints[0]", "says": "FS Road 9070 Turnaround at Silver Basin, elev 4585, type Trailhead"},
+      {"field": "watch_out[1]", "says": "The NF-9070 access road is rough with sharp rocks and deep water bars; a high-clearance vehicle is recommended."},
+      {"field": "road.name", "says": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel"},
+      {"field": "road.status", "says": "Paved road from I-90 Exit 52 to a large gravel lot at Alpental; well-maintained but subject to seasonal snow closure."}
+     ],
+     "why": "Same conflict as its sibling route at the same crag: approach/waypoints/watch_out describe Exit 54/NF-9070 (rough, high-clearance), while road describes the paved Alpental Road at Exit 52.",
+     "internal_resolution": "approach + waypoints + watch_out agree against road, which is Guye Peak/Alpental boilerplate.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation gain to the crag",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "750"},
+      {"field": "waypoints[0].elev", "says": "4585 (trailhead)"},
+      {"field": "waypoints[1].elev", "says": "4650 (Sofa King Buttress base)"},
+      {"field": "approach", "says": "roughly a 20-30 minute approach on foot up into Silver Basin"}
+     ],
+     "why": "Same as Drilling Me Softly -- the waypoints show 65 ft of elevation change and a short walk-in, not 750 ft.",
+     "internal_resolution": "waypoints + approach agree; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "June through October when FS Road 9070 is open and snow is minimal"}
+     ],
+     "why": "best_season runs a month earlier and a month later than season on both ends.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of quickdraws needed",
+     "severity": "low",
+     "claims": [
+      {"field": "alpine_draws", "says": "10"},
+      {"field": "pro_needs", "says": "12 quickdraws (plus 1-2 extra for the anchor)"},
+      {"field": "detailed_rack", "says": "12 bolts to a two-bolt chain anchor. No trad gear needed. A 60 m rope is enough to lower off the full ~30 m pitch."}
+     ],
+     "why": "alpine_draws (10) is lower than the prose's repeated 12-quickdraw figure for the 12-bolt pitch.",
+     "internal_resolution": "pro_needs/detailed_rack agree with each other; alpine_draws is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "How well-documented the crag/route is",
+     "severity": "low",
+     "claims": [
+      {"field": "rope_note", "says": "Same unverified area as Drilling Me Softly (Sofa King Buttress). Inferred bolted-sport gear from grade/regional style."},
+      {"field": "beta", "says": "The FA party (Wylie Moreshead) recommends starting left of the bolt line and straddling the low nose feature cheval-style rather than pulling straight onto it, keeping the rope managed on the inside leg..."}
+     ],
+     "why": "rope_note says the area could not be verified/was inferred, while beta gives specific first-ascent-party move-by-move technique advice as if well documented.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "name": "North Slopes",
+   "area": "Denny Mountain",
+   "contradictions": [
+    {
+     "fact": "Total route distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "2.25 (~1.4 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "4.7"},
+      {"field": "approach", "says": "One-way distance/gain from the lot to the summit runs roughly 2.5-2.8 miles... consistent with the ~4.7 mi (7.56 km) round-trip logged for this route"}
+     ],
+     "why": "The header/stats distance (dist_km, 1.4 mi) disagrees with both the itinerary's 4.7 mi and the approach text's own explicit round-trip figure (~4.7 mi / 7.56 km), which agree with each other.",
+     "internal_resolution": "itinerary and approach's own round-trip statement agree at 4.7 mi; dist_km (1.4 mi) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best/actual climbing season",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Apr-Jun"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through September as the driest, most reliable window"},
+      {"field": "best_season", "says": "August"},
+      {"field": "itinerary.cal", "says": "Best done snow-free (roughly July-October); a Northwest Forest Pass is needed to park at Alpental in summer, a Sno-Park pass in winter."},
+      {"field": "approach", "says": "best window is late spring through mid-July after the resort closes but before the snow gullies melt out and expose looser rock and scree"}
+     ],
+     "why": "season and the approach text describe this as a spring snow climb (Apr-Jun/late spring-mid-July), while seasonal_guidance, best_season, and itinerary.cal all independently claim the optimal window is the dry summer (Jul-Oct, August is 'optimal') -- not a best-window-inside-a-season case, since July-September lies almost entirely outside Apr-Jun.",
+     "internal_resolution": "seasonal_guidance + best_season + itinerary.cal (3 fields) agree on a dry summer window; season + approach (2 fields) agree on a spring snow-climb window -- the route genuinely has two viable seasons/styles, but the season field itself is not reconciled with the others.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard on the route",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer/fall scramble route (falls within NWAC's Snoqualmie Pass forecast zone, relevant only outside the route's July-October climbing season)"},
+      {"field": "hazards[3]", "says": "avalanche terrain on the peak's slopes when snow-covered"},
+      {"field": "obj_haz[0]", "says": "avalanche/wet-snow slides on the ski slopes and Edelweiss Bowl"},
+      {"field": "turnaround", "says": "Set a turnaround time based on the current avalanche forecast and how the snow is softening through the day..."}
+     ],
+     "why": "seasonal_hazards.avalanche.zone reads as 'N/A', implying no avalanche concern, while hazards, obj_haz, and turnaround all explicitly warn of avalanche danger and instruct checking the avalanche forecast; the avalanche.byMonth block also only covers July-October, never the Apr-Jun months the season field itself names as when the route is climbed.",
+     "internal_resolution": "hazards + obj_haz + turnaround agree the route has real avalanche exposure; seasonal_hazards.avalanche is the outlier and also covers the wrong months.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the route uses the named International/Edelweiss/Armstrong ski runs",
+     "severity": "medium",
+     "claims": [
+      {"field": "overview", "says": "Alpental's ski runs (International, Edelweiss, Armstrong) climbing the peak's eastern flank and this route working the quieter north-facing slopes toward the same summit ridge"},
+      {"field": "beta", "says": "follow the Lower International run and the steep, double-black-diamond Upper International run"},
+      {"field": "approach", "says": "follow the Lower International ski run up into a small basin. From there the route continues up the steep Upper International run..."}
+     ],
+     "why": "overview frames this route as distinct from the named ski runs (which it places on the 'eastern flank'), but beta and approach both describe the ascent as directly following the Lower and Upper International runs -- the very runs overview says this route avoids.",
+     "internal_resolution": "beta + approach agree with each other on using the International runs; overview's framing is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_blood_sport",
+   "name": "Blood Sport",
+   "area": "Guye Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the route reaches a summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent_text", "says": "Lower directly from the fixed 2-bolt chain anchor at the top of the pitch; no rappel or walk-off required."},
+      {"field": "watch_out[2]", "says": "The route does not top out; you must lower from the chain anchor."},
+      {"field": "overview", "says": "A 50ft single-pitch sport/mixed route on Guye Peak... ends at a 2-bolt chain anchor with no top-out."},
+      {"field": "waypoints[2]", "says": "Guye Peak, elev 5168, type Summit"}
+     ],
+     "why": "Overview, descent_text and watch_out all explicitly state the route does not top out and simply lowers off a chain anchor at ~3,400-3,450 ft, yet the waypoint list includes a 'Summit' waypoint at Guye Peak's 5,168 ft summit as if the route reaches it.",
+     "internal_resolution": "overview + descent_text + watch_out (3 fields) agree the route never tops out; the Summit waypoint is the outlier, likely contamination from one of the peak's mountain routes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation gain for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "1200"},
+      {"field": "approach", "says": "For the south-face/rock routes, the crag rises directly above the parking area with essentially no approach hike required."},
+      {"field": "length_m", "says": "15 (50 ft pitch)"},
+      {"field": "waypoints[1].elev", "says": "3400 (Blood Sport crag)"}
+     ],
+     "why": "This is a 50 ft pitch reached with 'essentially no approach hike' from a trailhead documented elsewhere on this peak at ~3,100-3,120 ft, giving a realistic total elevation change of a few hundred feet at most, not the 1,200 ft claimed by gain_ft.",
+     "internal_resolution": "approach text + short pitch length together imply well under 1,200 ft; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager and required parking pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Unknown - specific location and land manager not identified in research"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness"},
+      {"field": "access.passRequired", "says": "Unknown"},
+      {"field": "access.parking_pass", "says": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass."}
+     ],
+     "why": "Within the same access object, landManager and passRequired say 'Unknown' while the sibling fields land_manager and parking_pass give specific, confident answers to the identical questions.",
+     "internal_resolution": "land_manager/parking_pass are the current, filled-in answers; landManager/passRequired look like a stale/superseded field left in place.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where to park for the approach",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets"},
+      {"field": "access.notes", "says": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach."},
+      {"field": "approach_variants[0].notes", "says": "Park at the Alpental lot at the end of Alpental Road off I-90 exit 52... Take the boot path and old ski track up from the lot..."}
+     ],
+     "why": "The generic approach field directs climbers to park on Erste Strasse, a private 'Strasse'-named road that access.notes flags as disputed/rerouted since 2021, while the route's own approach_variants entry instead directs parking at the public Alpental lot and makes no mention of Erste Strasse.",
+     "internal_resolution": "approach_variants + access.notes agree the Erste Strasse approach is the old, unreliable one; approach is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_rib",
+   "name": "South Rib",
+   "area": "Guye Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest/crux grade of the route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "4th"},
+      {"field": "rock_grade", "says": "Easy 5th (class 3-4 by The Mountaineers' grading)"},
+      {"field": "rope_note", "says": "Guye Peak, Easy 5th class/Grade II, 800ft, 5 pitches."},
+      {"field": "pitch_detail[2].grade", "says": "Easy 5th"}
+     ],
+     "why": "The overview/technical-stats crux grade comes from `grade` ('4th', i.e. class 4, no roped 5th-class climbing), but rock_grade, rope_note, and the route's own crux pitch (pitch 3) all state the route actually climbs Easy 5th class -- a harder grade than the header/stats figure implies.",
+     "internal_resolution": "rock_grade + rope_note + pitch_detail (3 fields) agree on Easy 5th; grade ('4th') is the outlier and understates the difficulty.",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager and required parking pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Unknown - specific location and land manager not identified in research"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness"},
+      {"field": "access.passRequired", "says": "Unknown"},
+      {"field": "access.parking_pass", "says": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass."},
+      {"field": "access._raw.note", "says": "Superseded by the sibling access.* fields on this row (added in a later enrichment pass)... same pattern already fixed on this peak's wa_blood_sport route in batch 3."}
+     ],
+     "why": "landManager/passRequired say 'Unknown' right beside land_manager/parking_pass giving specific answers to the same questions; the row's own _raw note claims this exact pattern was 'already fixed' on the sibling Blood Sport route, but Blood Sport's data still shows the same unresolved Unknown/specific pair.",
+     "internal_resolution": "land_manager/parking_pass are the current answers; landManager/passRequired/_raw are stale leftovers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where to park for the approach",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets"},
+      {"field": "access.notes", "says": "a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach"},
+      {"field": "approach_variants[0].name", "says": "Sahale ski track and the south-side talus fans"},
+      {"field": "approach_variants[0].notes", "says": "Park somewhere along Alpental Road. Parking on the road near the Sahale Ski Club is sometimes possible, but it often is not and you may have to leave the car further away and walk."}
+     ],
+     "why": "The generic approach field sends climbers to park on the disputed private Erste Strasse road, while the route's own approach_variants gives different, more cautious parking guidance that never mentions Erste Strasse.",
+     "internal_resolution": "approach_variants + access.notes agree Erste Strasse is the unreliable old approach; approach is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "name": "North Route (\"Hidden Ridge\" variation)",
+   "area": "Guye Peak",
+   "contradictions": [
+    {
+     "fact": "Which trailhead/approach this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "The documented north-side line to Guye Peak leaves from the Alpental/Snow Lake trailhead... via the separate, signed Cave Ridge/Snoqualmie Mountain boot path"},
+      {"field": "itinerary.cal", "says": "The 2021 Alpental Community Club road closure affects the West Face/Improbable Traverse talus approach, not this route — the North Route uses the established Cave Ridge Trail from the Snow Lake trailhead and is unaffected."},
+      {"field": "itinerary.days[0].title", "says": "Car-to-car: talus approach, North Rib, summit"},
+      {"field": "itinerary.days[0].note", "says": "From the Snow Lake trailhead, approach via the non-established talus route toward Guye Peak's north side, then climb the North Rib..."},
+      {"field": "itinerary.days[0].schedule[0].detail", "says": "Non-established talus approach avoiding the closed Alpental Community Club roads."}
+     ],
+     "why": "The route's own approach field and itinerary.cal both explicitly state this route uses the established, signed Cave Ridge Trail and is unaffected by the West Face's talus-approach closure -- but the itinerary.days[0] title/note/schedule (in the very same itinerary object) instead describe a 'non-established talus route' avoiding the closed Alpental Community Club roads, which is the West Face/Improbable Traverse approach, not this route's.",
+     "internal_resolution": "approach + itinerary.cal agree the route uses the signed Cave Ridge Trail; itinerary.days[0] is the outlier and appears copied from West Face/Improbable Traverse.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether 'Hidden Ridge' is this route or a separate one",
+     "severity": "low",
+     "claims": [
+      {"field": "name", "says": "North Route (\"Hidden Ridge\" variation)"},
+      {"field": "pitch_detail[2].pitch", "says": "Hidden Ridge variation"},
+      {"field": "descent_text", "says": "A related variation sometimes climbed on this side of the peak, the 'Hidden Ridge' line, itself uses a short 30-40 ft rappel mid-route (leaving the rope in place and top-roping back up), which can add confusion about anchor locations if you're relying on other parties' beta"}
+     ],
+     "why": "The route is itself named for the Hidden Ridge variation and lists it as one of its own pitches, but descent_text refers to 'Hidden Ridge' in the third person as a separate, 'related' line climbed by other parties, which could confuse a climber about whether Hidden Ridge is this route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "name": "Improbable Traverse",
+   "area": "Guye Peak",
+   "contradictions": [
+    {
+     "fact": "Current crux grade of the route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.8 R"},
+      {"field": "rock_grade", "says": "5.8 R"},
+      {"field": "pitch_detail[3].grade", "says": "5.8 (now 5.9-5.10- downclimbing)"},
+      {"field": "pitch_detail[3].notes", "says": "CRITICAL: November 2021 rockfall destroyed ~30x40ft section; now requires downclimbing 5.9-5.10 from old pin with 30+ feet of unprotected traversing. Many now recommend this route is not safe."},
+      {"field": "hazards[1]", "says": "Traverse pitch now requires 5.9-5.10 downclimbing ~20 feet from old piton with 30+ feet of additional unprotected climbing"}
+     ],
+     "why": "grade and rock_grade still state the historical 5.8 R rating, but pitch_detail and hazards both explicitly say the crux traverse now requires unprotected 5.9-5.10- downclimbing since the 2021 rockfall -- a materially harder and less protected current grade than the headline rating shows.",
+     "internal_resolution": "pitch_detail + hazards agree the current crux is 5.9-5.10-; grade/rock_grade were not updated after the 2021 damage.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total car-to-car time",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "7"},
+      {"field": "timing.summitTimeHrs", "says": "4"},
+      {"field": "timing.descentTimeHrs", "says": "2"},
+      {"field": "timing.approachTimeHrs", "says": "1"},
+      {"field": "itinerary", "says": "Expect roughly 5-7 hours on the route depending on how much you simulclimb, then 2.5-4 hours to get over the three summits and down the Cave Ridge bootpath. Published trip reports range from about 8 hours for a fast, competent pair to 14+ hours for a party that pitches everything out."}
+     ],
+     "why": "The structured timing fields sum to 7 total hours, but the route's own itinerary prose states published trip reports range from 8 hours (fast, competent pair) to 14+ hours -- meaning even the 'fast' benchmark exceeds the stated totalHrs, and a typical party could take twice as long.",
+     "internal_resolution": "itinerary prose is the more detailed, sourced account (cites published trip reports); timing.totalHrs understates the time.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "name": "South Gully/South Spur",
+   "area": "Guye Peak",
+   "contradictions": [
+    {
+     "fact": "Land manager and required parking pass",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Unknown - specific location and land manager not identified in research"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness"},
+      {"field": "access.passRequired", "says": "Unknown"},
+      {"field": "access.parking_pass", "says": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass."}
+     ],
+     "why": "landManager/passRequired say 'Unknown' beside land_manager/parking_pass, which give specific answers to the same questions.",
+     "internal_resolution": "land_manager/parking_pass are the current answers; landManager/passRequired are stale leftovers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead used for the primary (winter) approach",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets... Because of the short, direct access, Guye Peak is climbed both summer and winter"},
+      {"field": "best_season", "says": "Best as a snow and mixed climb from roughly December through April"},
+      {"field": "approach_variants[0].name", "says": "Winter and spring: Commonwealth Basin from Summit West, straight at the gully"},
+      {"field": "approach_variants[0].primary", "says": "true"},
+      {"field": "approach_variants[0].notes", "says": "The fast winter line does not start at Alpental. Park at Summit West and walk the short distance to the start of the winter Commonwealth ski and snowshoe trail..."}
+     ],
+     "why": "The generic approach field describes only the Alpental/Erste Strasse trailhead, but the route's own primary approach variant -- for winter/spring, the route's stated best_season -- explicitly starts from a different trailhead entirely (Summit West via Commonwealth Basin) and says outright 'the fast winter line does not start at Alpental.'",
+     "internal_resolution": "approach_variants[0] is marked primary and matches best_season; the generic approach field describes a different (summer) trailhead and never mentions the winter option.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "name": "West Face",
+   "area": "Guye Peak",
+   "contradictions": [
+    {
+     "fact": "Location, grade and structure of the route's crux",
+     "severity": "high",
+     "claims": [
+      {"field": "beta", "says": "The climbing starts up a steep crack/face (crux) for approximately 30 feet of low 5th class, then transitions to Class 4 for about half a rope length"},
+      {"field": "itinerary.days[0].schedule[2]", "says": "Crux: ~30 ft low 5th class crack/face -- Short technical section, then eases back to 4th class to the top"},
+      {"field": "itinerary.totalNote", "says": "with one short low-5th-class crux near the summit"},
+      {"field": "rock_grade", "says": "5.8"},
+      {"field": "pitch_detail[1]", "says": "pitch '4 (Improbable Traverse)', grade '5.8', notes: The route's namesake pitch and best rock; climb ~5.8 moves out right, protected by old fixed pitons. Since a Nov 2021 rockfall, the far end now involves an unprotected 5.9-10- downclimb — verify current condition before committing."}
+     ],
+     "why": "beta and the itinerary both describe the crux as an easy ~30 ft low-5th-class crack near the START of the climb, but rock_grade (5.8) and pitch_detail place the real crux in the MIDDLE of the route as a distinct 5.8 pitch explicitly named 'Improbable Traverse' -- now effectively 5.9-10- and unprotected since 2021 rockfall damage, information beta/itinerary never mention.",
+     "internal_resolution": "rock_grade + pitch_detail agree on a mid-route 5.8 (now harder) crux; beta/itinerary describe an easier, differently located crux and omit the post-2021 hazard, so a climber relying on beta alone would be unprepared for the real crux.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_southeast_gully",
+   "name": "Southeast Gully",
+   "area": "Guye Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_kaleetan_peak_south_ridge",
+   "name": "South Ridge",
+   "area": "Kaleetan Peak",
+   "contradictions": [
+    {
+     "fact": "Elevation/location of the route's rock-chimney crux",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "The route is mostly a well-worn boot path with a stretch of Class 2-3 scrambling and one short rock-chimney crux near 5,100 ft."},
+      {"field": "rope_note", "says": "one eroded ~5ft rock chimney near 5100ft requiring 2-3 downclimb moves"},
+      {"field": "waypoints[5] (White Ledges traverse)", "says": "elev 5540, Exposed class 3-4 ledge system traversing below the ridge crest with loose rock"},
+      {"field": "waypoints[6] (Kaleetan Peak summit)", "says": "the standard finish, roughly 400-600 vertical feet of class 2-3 on loose, exfoliating rock... The finish exits onto a short summit ridge"},
+      {"field": "pitch_detail", "says": "no entry names a chimney or gives an elevation near 5,100 ft; entries are 'Approach scramble', 'Ridge traverse: Point 5700' to base of summit gully', 'Summit gully'"}
+     ],
+     "why": "beta/rope_note place the technical crux at a specific ~5,100 ft rock chimney, but neither of the route's two named technical hazard waypoints (White Ledges at 5,540 ft, or the summit gully starting several hundred feet below the 6,260 ft summit) sits near that elevation, and pitch_detail never mentions a chimney at all -- it is unclear which feature, if any, beta/rope_note are describing.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

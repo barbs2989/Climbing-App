@@ -1,0 +1,687 @@
+{
+  "_README": [
+    "approach_variants for 25 routes across seven MULTI-ROUTE areas in the Pasayten and the eastern Highway 20 corridor. Read-only research plus re-homing of each row's own prose. Nothing here was written to the database.",
+    "",
+    "WHY THESE AREAS: every one of them puts several routes under one approach, so 'you are at the right trailhead' does not mean 'you are under the right line'. Cathedral Peak alone has five routes on one small tower plus three on the wall behind it; Cutthroat Wall has two starts fifty feet apart and a third a hundred and fifty feet up and left; Le Petit Cheval has three lines that share one climbers' trail and are distinguished by a 250-yard traverse, a stand of dead trees, and the presence of bolts. Telling neighbours apart is what every baseFinding here is for.",
+    "",
+    "COUNTS DIFFER FROM THE BRIEF. The live database was re-queried rather than trusting the cluster file. Cathedral Peak has TEN routes of which EIGHT lack approach_variants (the brief said six); Castle Peak has FOUR routes of which all four lack them (the brief said two). The two Cathedral routes that already carry variants (Southeast Buttress, NE Ridge) were left alone and were used as the style and fact reference for the eight new ones.",
+    "",
+    "NO HOURS, NO distMi, NO gainFt were written. Several of these rows carry published figures that conflict with their own columns or mix one-way and round-trip conventions, and averaging them would manufacture a number nobody published. Where a number was load-bearing for identification (an elevation of a notch, a ledge, a camp) it was taken verbatim from the row or from a corroborating description, never derived.",
+    "",
+    "CONTAMINATION CHECKED AND REJECTED — resolved by area_id and coordinate, never by name:",
+    "  Cathedral Peak: rejected the Cathedral Peak in Tuolumne Meadows, California, and Cathedral Rock in Washington. Anchored on area wa_cathedral_peak_pasayten at 48.989 / -120.189, 8,606 ft, in the Cathedral Lakes basin.",
+    "  Castle Peak: rejected The Castle in the Tatoosh Range at Rainier, Castle Rock at Leavenworth, and the Castle Peak on the California crest near Donner. Anchored on area wa_castle_peak_pasayten at 48.982 / -120.862, 8,343 ft, in the Hozameen Range.",
+    "  Silver Horn: rejected the Silver Star Mountain in Skamania County in south-west Washington (a completely different peak of the same name), Silverhorn Mountain in British Columbia, and the Silberhorn results in Switzerland and New Zealand. Anchored on the Okanogan-county Silver Star and its 8,351-ft sub-summit.",
+    "  Cutthroat Wall: rejected Cutthroat PEAK, which is a different formation reached from an unmarked highway pullout WEST of the pass with no maintained trail. This confusion is live enough that the rows themselves warn about it, and the warning is carried into every Cutthroat Wall variant here. Also rejected Cutthroat Pass and Cutthroat Lake hiking material.",
+    "  Tiffany Mountain: rejected Middle Tiffany Mountain, a separate summit, and general Tiffany Lake trail hiking material.",
+    "  Le Petit Cheval: rejected the Petit Grepon in Colorado and generic French-language results for the phrase.",
+    "  Paisano Pinnacle: kept strictly separate from Burgundy Spire, which shares the approach, the col and the usual link-up day but is a different formation with its own routes.",
+    "  One Piece at a Time: rejected song, video-game and manga results carrying the same title.",
+    "  The Chalice: rejected church-supply and craft-marketplace results, and north-east arete pages belonging to other peaks.",
+    "",
+    "ROUTE IDS WERE NOT TRUSTED. Nine of these twenty-five ids are name-derived rather than peak-scoped (wa_ne_ridge, wa_south_face_10, wa_ne_couloir, wa_easy_getaway, wa_rampage, wa_west_ridge_2, wa_north_face_left_buttress, wa_the_chalice and others), and say nothing about which peak they sit on. Every entry's 'area' was taken from the live routes.area_id column and is asserted mechanically before this file was finished.",
+    "",
+    "ONE APPROACH WAS CORRECTED AGAINST THE ROW. The two Silver Horn routes store an approach paragraph describing the spires climbers' trail and the col, which serves the far side of the crest. The same rows' own trailhead waypoint note describes the valley trail and the creek draining the south side, which is the face these routes are on, and an independent description of the formation agrees with the waypoint. The variants here follow the southern approach and say plainly that the other one does not reach this face. Both rows are also listed in _DEFECTS.",
+    "",
+    "THE TWO SILVER HORN ROUTES WERE CHECKED FOR BEING ONE CLIMB DUPLICATED, and they are not. They share a face, a summit and a mid-height ledge, but their own pitch descriptions diverge: one starts with a layback off a large clean flake into a left-facing corner and tops out THROUGH a deep summit chimney; the other starts on the right of the face, crosses a broad half-height ledge leftward, passes the left side of a prominent upper arete, and finishes on blocky ground JUST RIGHT of a chimney. That summit-pitch difference is used as the discriminator in both entries.",
+    "",
+    "BORDER LEGALITY IS STATED, NOT IMPLIED. Castle Peak sits about a mile south of the international boundary and three of its four routes store approaches that cross it cross-country. Those rows' own access notes already say this is not an authorised crossing. Each variant that describes such a line says so first, and every affected route is also given a lawful approach that stays inside the United States.",
+    "",
+    "NO SOURCE NAMES, URLS, AUTHOR NAMES OR YEARS appear in any name, season, notes, baseFinding or hazards value. Provenance is in _sources only, which is metadata and never reaches the app. This was checked mechanically over every string in every variant."
+  ],
+  "_SKIPPED": {},
+  "_DEFECTS": {
+    "wa_north_face_left_buttress": "CONTAMINATION, and the clearest in this batch: the `road` column describes the Stehekin corridor — no direct road access, ferry or floatplane from the lake, or the Bridge Creek trailhead off the highway. That belongs to a peak roughly eighty miles away. Castle Peak is reached from the lake crossing below the dam, from the high pass road to the west, or from the provincial park to the north. Separately, `overview` and `descent_text` each end with a bracketed publication credit, and `beta` names a third-party climbing site and quotes its star rating — all three are source names sitting in columns the app renders. `access` also mixes literal 'N/A' strings with real values for the same facts.",
+    "wa_playing_not_spraying": "TWO APPROACHES IN ONE ROW, SERVING OPPOSITE SIDES OF THE CREST. `approach` describes the spires climbers' trail, the basin bench and the col — the north-west side. The row's own trailhead waypoint note describes the valley trail for about five miles, a turn below the burn, and a rough path up the creek draining the SOUTH side, which is the face this route is on. They are different trailheads and different days. Compounding it, that waypoint is NAMED for the spires pullout and carries the spires pullout's coordinate while its elevation is 2,200 ft, which matches neither; and approach_logistics stores the spires pullout coordinate as this route's trailhead. Name, coordinate, elevation and note all disagree inside one waypoint.",
+    "wa_the_chalice": "Same two-approaches-in-one-row defect as its neighbour, with the identical mismatched trailhead waypoint. In addition `descent_text` names a third-party climbing site twice and narrates its own reasoning about what that site does and does not document — a source name and an editorial aside sitting in a column the app renders as descent beta.",
+    "wa_silver_horn_the": "AREA COORDINATE LOOKS WRONG AND SHOULD NOT BE FIXED FROM THIS BATCH. The area row places Silver Horn at 48.55186 / -120.59014, which sits among the spires north-west of the main summit and directly between two other formations in the cluster. Independent descriptions place the 8,351-ft Silver Horn on the EAST ridge of the main peak's east summit, and both of its routes are approached from the south by a valley trail, which is only consistent with a position east or south-east of the main peak. The elevation matches; the longitude does not. This needs a third independent record before anything is moved.",
+    "wa_castle_peak_pasayten_scramble": "INTERNAL CONTRADICTION ABOUT WHICH SIDE THE ROUTE IS ON. `overview` says the standard route is 'an unroped class 2-3 scramble up the southwest side', while `aspect` is E/SE, `face` is 'East Ridge Couloir to Southeast Ridge', and both the stored `approach` and `descent_text` describe the eastern creek approach from the lake with a notch on the ridge at about 7,600 ft. Three columns say east or south-east and one says south-west. The variants here follow the three.",
+    "wa_castle_peak_pasayten_south_route": "The only approach stored on this row crosses the international boundary cross-country from the provincial park, which the row's own `access.closures` says is not an authorised crossing — so the row's single documented way in is one nobody should take. It also names a third-party climbing site inside that closures string. A lawful approach exists and is written into the variant here, but it is thin: the corroboration is an area-level statement that the peak is reachable by the high crest trail from the west, not a route description of that line.",
+    "wa_castle_peak_pasayten_the_drawbridge": "Same source name inside `access.closures` ('not an authorized crossing per' a named third-party site). Its stored `approach` is also solely the cross-border line.",
+    "wa_first_amendment": "`overview` names both first ascensionists and the year of the ascent. Author names and a date in a column the app renders as route prose; the `fa` column exists for exactly this.",
+    "wa_easy_getaway": "`beta` names a guidebook and its author as the recommended reference. A source name and an author name in a rendered column.",
+    "wa_rampage": "The trailhead waypoint's `note` opens with 'Sourced via' and names two third-party sites. Source names in a rendered field.",
+    "wa_west_ridge_2": "Identical 'Sourced via' source-name string in its trailhead waypoint note.",
+    "wa_the_monk_west_cracks_left_crack": "NAME AND ASPECT DISAGREE, on both halves of the pair. The routes are called West Cracks and the row's own `face` places them on the 'lower left side of the South Face', with `aspect` S. Either the historical name refers to a west-facing feature the description has lost, or the face description is wrong. It is reported rather than resolved because it is a real trap for a party on the ground — the variants here warn about it explicitly — and because nothing in the row settles which half is right.",
+    "wa_the_monk_west_cracks_right_crack": "Same name-versus-face contradiction as its twin.",
+    "wa_cathedral_peak_pasayten_se_buttress": "Not in this batch (it already carries approach_variants) but noted while reading it: its `approach` names a wildfire by year, which is a date in a rendered column. The same burn is described without a year in the variants written here."
+  },
+  "wa_cathedral_peak_last_rites": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "The hardest line on the main south wall sits between two older routes and finishes on a neighbouring route's last pitch, so the base is a position on an open face rather than a feature anyone has named.",
+    "_sources": [
+      "AAC Publications new-routes note for the Pasayten (Amphitheater/Cathedral/Deacon); route row's own face, beta and pitch_detail columns; sibling SE Buttress approach_variants already in the DB"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 from the Chewuch River road",
+        "season": "Roughly mid-July through September, once the trails and the face have shed snow",
+        "notes": "Drive north from Winthrop up the Chewuch River road to the Andrews Creek trailhead at about 3,050 ft. This is the shortest drive of the three ways in and it is paved most of the way.\n\nWalk Andrews Creek trail #504 up the drainage. The lower miles cross an old burn, so there is almost no shade, the tread is overgrown and soaks you after rain, and blowdown is normal. Andrews Creek runs beside the trail for that whole stretch and is reliable water. The trail tops out at Andrews Pass above 6,680 ft, where the burn gives way to open parkland.\n\nFrom the pass continue on the Boundary Trail #533 and drop on the Cathedral Lakes side trail to Upper Cathedral Lake at about 7,380 ft. Bear off near the old wilderness guard-station cabin. Nobody does this in a day; two nights out is the normal shape of the trip.\n\nOne thing to leave alone: there is a shorter-looking way in from the Canadian side. Crossing into the United States here is illegal, the border is patrolled, and the penalties are severe.",
+        "baseFinding": "There is no climbers' trail to the base. Cross the parkland and talus from camp toward the deep gully that divides Cathedral Peak from The Monk, the semi-detached tower leaning against the lower right side of the wall. Thirty to sixty minutes from camp.\n\nTHE FIRST TEST IS THE TOWER, AND IT IS A NEGATIVE ONE. This route is on the MAIN wall, not on the tower and not on the buttress behind it. If a separate tower stands between you and the rock you are about to climb, walk further left along the base — you are under the Southeast Buttress. If you are looking up at an open thousand-foot face with nothing standing in front of it, you are in the right place.\n\nNow place yourself across that face. This line takes the RIGHT-HAND portion of the open wall, between the central line and the line further right. There is no start ledge, no cairn and no fixed gear to find; the ground low down is heavily featured and the first ascent treated it as choose-your-own, so the start is a zone rather than a point. Pick the most featured rock in that right-hand third and go up.\n\nCONFIRM IT ABOVE YOU BEFORE YOU COMMIT, because the low ground will accept almost any line. Look for a long ramp slashing rightward across the middle of the face, and above the ramp a steep, clean crack splitting a headwall. Those two features in that order are this route. If the ramp is not there and instead you find a big curving chimney above you, you have drifted into the centre of the wall and you are on the original central line — several number grades easier, and a different day.\n\nSecond negative marker, at the top: this route joins the buttress route for its final hand crack to the summit. Arriving at that shared pitch is correct. Arriving at it early, without having crossed a rightward ramp and pulled a thin headwall, means you traversed off.",
+        "hazards": [
+          "No climbers' trail and no marked start; the base is identified by landform and by what is above you",
+          "Rockfall from parties above and from loose blocks on the featured lower face",
+          "Afternoon storms on a summit that is the local high point",
+          "A walk-off descent whose crux is a no-fall step across a gap near the summit",
+          "Remote enough that any injury becomes a multi-day evacuation"
+        ]
+      },
+      {
+        "name": "Cathedral Driveway trail #510A from Loomis via Toats Coulee",
+        "season": "Roughly mid-July through September",
+        "notes": "This is a TRAIL, #510A, not a four-wheel-drive road, despite a persistent claim to the contrary — the high-clearance warning in circulation belongs to a different spur road. Access is from Loomis by Toats Coulee Road, then a Y junction, then the forest roads up to the trailhead at about 5,570 ft.\n\nBe careful with the trailhead name. It appears in print under three or four spellings, and one of those names also belongs to a completely different trailhead near Winthrop. Navigate to the road, not to the name.\n\nThe trail descends from its high trailhead to join the valley trail below, and from there it is the valley to the Cathedral Lakes basin. This is the shortest walk and the least climbing of the ways in.\n\nThe catch sits at both ends. The drive is about two hours longer than from Winthrop, and because the trailhead is high and the trail drops to meet the valley, you finish the trip with roughly 1,300 ft of climbing on the way OUT, at the point when you least want it.",
+        "baseFinding": "The way in changes; the base does not. From Upper Cathedral Lake it is the same walk toward the deep gully dividing Cathedral Peak from The Monk, and the same question at the bottom: is there a tower standing between you and the rock? If yes you are under the buttress, not this face.\n\nWhat this approach genuinely changes is your first sighting of the wall. Coming up the valley you arrive in the basin from below rather than over the pass, so the whole south side presents itself at once from across the water. Use that. Standing at the lake, pick out three things before you walk up: the tower at the lower right of the wall, the open thousand-foot face left of it, and the long ramp that slashes rightward across the middle of that face. This route is the right-hand third of the open face, working up to that ramp and to the steep crack in the headwall above it.\n\nThat identification is far easier from across the lake than from underneath, where the face foreshortens and the ramp disappears into the general featuring. Photograph it or draw it before you leave camp.\n\nNEGATIVE MARKER: if from the lake you cannot see a ramp at all on the face you are looking at, you are looking at the wrong wall. The tower has its own south face with its own short routes on it, and beta written about that tower will also say South Face. The tower is small and stands clear of the mountain; the main face runs the full height of the peak behind it.",
+        "hazards": [
+          "1,300 ft of climbing at the very end of the trip, on the way out",
+          "A trailhead published under several different names",
+          "Same lack of any climbers' trail to the base",
+          "Beta headed South Face may describe the small tower rather than the mountain"
+        ]
+      }
+    ]
+  },
+  "wa_cathedral_peak_southwest_route": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "This is the walk-up and the descent for every technical route on the peak, so parties meet it exhausted and in reverse; the step-across is the one move that matters and it has to be found rather than stumbled into.",
+    "_sources": [
+      "Route row's own beta, approach, descent_text and pitch_detail columns; sibling Cathedral approach_variants already in the DB"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the trail toward Cathedral Pass",
+        "season": "July to mid-September; the sunny south-west aspect melts out first",
+        "notes": "Drive north from Winthrop up the Chewuch River road to the Andrews Creek trailhead at about 3,050 ft and walk trail #504 up the drainage to Andrews Pass above 6,680 ft. The lower half is an old burn with no shade and brushy tread. From the pass, drop into the next drainage and take the Cathedral Lakes trail up to Upper Cathedral Lake at about 7,380 ft. That is the base camp and it is a full long day of walking, usually two.\n\nOne early-season bonus is worth planning around: the chasm that splits the summit rocks is often snow-filled early, which makes the first step-across easy or trivial. Late season means a bare hole and the pure version of the move. It can snow here in any month, so carry layers whatever the forecast says.\n\nThe alternatives are the valley trail from the Thirtymile trailhead, gentle but longer, and the high trail from Loomis, which walks least but drives longest and leaves you 1,300 ft of climbing on the way out.",
+        "baseFinding": "This route has no rock start to find. It begins where you LEAVE THE TRAIL, and that spot is defined by the pass, not by a cairn: walk about 0.6 mile of trail from Upper Cathedral Lake toward Cathedral Pass and step off just short of the pass at roughly 7,600 ft. If you have crested the pass and started descending the far side, you have gone too far — turn round.\n\nAbove that, the route confirms itself by TEXTURE, in a fixed order. First several hundred vertical feet of easy sandy slopes with no rock scrambling at all. Then ducks and cairns over coarse granite blocks and slabs, solid rock, class 2 to 3, with two minor steps that need a hand and one place where a friction push gets you over a block. If you are pulling on anything harder than that, you have wandered off the ducks.\n\nThe route then enters a HIDDEN CLEFT running parallel to and just below the west ridge crest. That cleft is the strongest confirmation on the whole climb, because it cannot be seen from below and you either find yourself in it or you do not.\n\nThe last feature is the crux and it is unmistakable: a long chasm cleaving the summit rocks into a north and a south half, with a big chockstone jammed in the slot. Step onto the chockstone and mantle onto the bulge on the far side. The move is easy; the exposure is not, and most parties rig a handline with prusiks for the return. Lower down there is a cannonhole giving an easier alternative to one vertical step.\n\nNEGATIVE MARKER: if at any point you are standing under a thousand-foot wall with a detached tower leaning against its lower right side, you have walked round to the south side of the mountain and you are below the technical routes, not on the walk-up.",
+        "hazards": [
+          "The step-across onto the chockstone is easy climbing over serious exposure and is harder in descent than in ascent",
+          "The second step-across never has snow in the hole, whatever the season",
+          "Ducks and cairns are the only route markers on the granite section",
+          "Loose blocks and sandy slopes that plunge-step well going down and slide going up",
+          "This is also the descent for every technical route here, so parties meet it tired and often late in the day"
+        ]
+      }
+    ]
+  },
+  "wa_south_face_10": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "The central line on a thousand-foot wall that carries at least three routes and a tower in front of it; the start is a position, and the confirmation is a sequence of named features above.",
+    "_sources": [
+      "Route row's own face, beta and pitch_detail columns; sibling SE Buttress and Last Rites rows"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 from the Chewuch River road",
+        "season": "Roughly July through the first snow of October",
+        "notes": "The drive is the easy part — paved almost all the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft. The walk is one of the longest wilderness approaches in the state.\n\nTrail #504 climbs the drainage for roughly twelve miles to Andrews Pass above 6,680 ft, crossing an old burn for much of that: hot, rocky, buggy, and no shade. From the pass the trail drops into the next drainage before the Cathedral Lakes side trail climbs to Upper Cathedral Lake at about 7,380 ft, below the peak's south-west side.\n\nTreat this as a two-to-four day backpack with a summit push from camp in the basin. A free self-issue wilderness permit is taken at the trailhead along with a parking pass. There is no cell coverage anywhere on this trip.",
+        "baseFinding": "From camp, follow the trail toward Cathedral Pass and then climb scree and talus to the foot of the main wall. Thirty to sixty minutes.\n\nFIRST, RULE OUT THE TOWER. A semi-detached tower leans against the lower right side of the wall, and a deep gully separates it from the mountain. If that tower is between you and the rock, you are under the buttress route, which climbs the ridge behind it. This route is on the OPEN WALL, and specifically on its CENTRE. Nothing should be standing in front of you.\n\nStart low and central, near the bottom of the wall rather than off to one side. The line then confirms itself by a run of features in a fixed order, and this is the identification that actually works, because the lower face accepts many lines:\n\nLow down there is a boxed-in feature the first ascent called a confession box. At mid-height there is a SPECTACULAR CURVING CHIMNEY — this is the single best confirmation on the route and it is visible from the ground if you look for it. High up you cross a pulpit ledge and then a belfry ledge before easier ground runs to the top.\n\nNEGATIVE MARKER, and it matters because the two lines converge: if instead of a curving chimney you find yourself pushed rightward along a long ramp toward a steep thin crack in a headwall, you have drifted onto the harder line that takes the right-hand third of the face. That one is several number grades above this and it takes very thin protection. Come back left and look for the chimney.\n\nSECOND NEGATIVE MARKER: the tower in front of the wall has its own small south face carrying several short routes. Beta written about the tower will also be headed South Face. The tower's routes are two to five pitches; this wall is about a thousand feet.",
+        "hazards": [
+          "Three separate routes share this face and the lower ground accepts almost any line",
+          "The tower in front of the wall carries its own routes under a colliding name",
+          "Loose rock and rockfall from parties above on a wall this size",
+          "Walk-off descent to the west whose crux is a no-fall step across a gap",
+          "No cell coverage and a multi-day walk out"
+        ]
+      },
+      {
+        "name": "Cathedral Driveway trail #510A from Loomis via Toats Coulee",
+        "season": "Roughly July through the first snow of October",
+        "notes": "The high trailhead above Loomis, reached by Toats Coulee Road and the forest roads beyond it, sits at about 5,570 ft. This is a trail and not a four-wheel-drive road, whatever you may have read; the high-clearance warning in circulation belongs to a different spur.\n\nThe trail drops from the trailhead to meet the valley trail lower down, then follows the valley up to the Cathedral Lakes basin. It is the shortest walk and the least total climbing of the ways in.\n\nBoth ends carry a penalty. The drive is about two hours longer than from Winthrop, and because the trailhead is high and the trail loses height to reach the valley, the trip finishes with roughly 1,300 ft of climbing on the way out.",
+        "baseFinding": "The base is the same and reached the same way from camp. What changes is where you first see the wall, and on a face this size that is worth more than any description.\n\nComing up the valley you enter the basin from below rather than over the pass, so the whole south side stands up in front of you at once. Stop at the lake and sort out three things before walking up: the small detached TOWER at the lower right of the wall; the deep GULLY between that tower and the mountain; and the OPEN CENTRE of the wall to the left of both. This route is the open centre.\n\nWhile you are looking, find the CURVING CHIMNEY at mid-height in that centre panel. It is the feature that proves the line and it is far easier to pick out from across the water than from underneath, where the wall foreshortens and everything reads as featured granite. Fix it against the skyline above it so you can re-find it at the base.\n\nNEGATIVE MARKER from the lake: if the panel you are looking at has a long ramp cutting rightward across it toward a steep headwall crack, that is the right-hand line, not this one. And if the wall you are looking at is only a few pitches tall and stands clear of the mountain, you are looking at the tower.",
+        "hazards": [
+          "1,300 ft of climbing at the very end of the trip on the way out",
+          "A trailhead published under several different names",
+          "The wall foreshortens badly from directly below, so the mid-height chimney is hard to relocate at the base",
+          "Same walk-off descent with a no-fall gap crossing near the summit"
+        ]
+      }
+    ]
+  },
+  "wa_the_monk_le_gibet": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "One of five routes on a single small tower; the only thing separating them at the bottom is which point of the tower's south face you start from and what you pass on the way up.",
+    "_sources": [
+      "Route row's own face, beta, descent and pitch_detail columns; sibling Monk rows read side by side"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+        "season": "Roughly July through the first snow of October",
+        "notes": "Paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then one of the longest wilderness approaches in the state on foot. Trail #504 climbs roughly twelve miles to Andrews Pass above 6,680 ft, mostly through an old burn with no shade, then drops into the next drainage before a side trail climbs to Upper Cathedral Lake at about 7,380 ft.\n\nMost parties treat this as a two-to-four day backpack and climb from camp in the basin. A free self-issue wilderness permit is taken at the trailhead along with a parking pass.\n\nThe alternatives are the valley trail from the Thirtymile trailhead, and the high trail from Loomis, which walks least, drives longest, and leaves 1,300 ft of climbing for the way out.",
+        "baseFinding": "THE TOWER IS THE POINT. This route is not on the mountain's big wall; it is on the small semi-detached tower leaning against the wall's lower right side, separated from it by a deep gully. From camp, cross meadows and talus toward that gully, then work onto the tower's own south-facing rock on the RIGHT-hand side of the gully. If you are climbing the left wall of the gully, you are on the mountain and you are on the buttress route, which is a much bigger day.\n\nOn the tower, this line starts at the LOWEST POINT of the south face and climbs straight up the middle of it. Walk the base until the ground stops dropping and starts rising again — that low point is the start. Nothing is fixed and nothing is marked.\n\nCONFIRMATION IS A ROOF, AND ITS SIDE. At mid-face there is a prominent roof. This route passes it on the LEFT. That single decision is the defining move of the climb and it is what tells you the line was right; if the roof is nowhere above you, you are not on this line at all.\n\nNEGATIVE MARKERS, and there are three because there are four other routes on this tower. If you started in a chimney or gully feature LEFT of centre and topped out in three pitches on a splitter jam crack, you are on the neighbouring crack line, a grade harder and two pitches shorter. If you started from a LARGE LEDGE low on the RIGHT side of the lowest rock and then zigzagged rightward, you are on the right-hand line. If you started at a pair of parallel cracks on the LOWER LEFT and were finished after two pitches, you are on the short pair of cracks, not on this.\n\nDescent is the tower's north-east gully in three rappels of about seventy-five feet each; a single sixty-metre rope doubled covers each one.",
+        "hazards": [
+          "Five routes share this one small tower and none of the starts is marked",
+          "Beta headed South Face may describe the mountain's thousand-foot wall rather than the tower",
+          "Rappel anchors in the north-east descent gully are not documented as fixed; carry webbing and rings",
+          "Loose rock in the gully separating the tower from the mountain",
+          "Remote basin; any injury is a multi-day walk out with no cell coverage"
+        ]
+      }
+    ]
+  },
+  "wa_the_monk_odine": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "Three pitches on a tower that carries five routes; it is told from its neighbours by starting in a chimney feature and by being over almost before the others have begun.",
+    "_sources": [
+      "Route row's own face, beta, descent and pitch_detail columns; sibling Monk rows read side by side"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+        "season": "Roughly July through the first snow of October",
+        "notes": "Winthrop to the Andrews Creek trailhead at about 3,050 ft is paved most of the way up the Chewuch River valley. On foot it is roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft, largely across an old burn with no shade and brushy tread, then down into the next drainage and up a side trail to Upper Cathedral Lake at about 7,380 ft.\n\nPlan on a two-to-four day trip with the climbing done from camp. Free self-issue wilderness permit at the trailhead, parking pass as well, no cell coverage anywhere.\n\nThe other ways in are the gentle valley trail from the Thirtymile trailhead and the high trail from Loomis, which is the shortest walk but adds about two hours of driving and returns 1,300 ft of climbing on the way out.",
+        "baseFinding": "This is a route on the small semi-detached TOWER, not on the mountain's big wall. From camp cross toward the deep gully separating the two, and get onto the tower's own south-facing rock on the RIGHT side of that gully. Climbing the LEFT wall of the gully puts you on the mountain and on the buttress route.\n\nOn the tower's south face, this line is LEFT OF CENTRE. The physical test at the bottom is not a position but a SHAPE: the first two pitches go up a chimney and gully feature, so you should be climbing INSIDE something with walls on both sides almost immediately. If your first pitch is open face or a corner rather than a chimney, you are not on this line.\n\nThe second confirmation comes at the top and is the reason people climb it: the route finishes on a SPLITTER JAM CRACK of noticeably better rock than anything below it. Three pitches, then that crack, then the top of the tower.\n\nNEGATIVE MARKERS. If you started at the LOWEST POINT of the face and went straight up the middle, passing a prominent roof on its left, you are on the central five-pitch line. If you started from a LARGE LEDGE on the RIGHT of the lowest rock and are zigzagging rightward, you are on the right-hand five-pitch line. If you started at a PAIR of parallel cracks on the lower left and were done in two pitches, you are on the short cracks. All three are on this same face and all three start within a few minutes' walk of each other.\n\nBe honest about the count as well: this route is THREE pitches. If you are still climbing on the fifth, you have linked into something else.\n\nDescent is the tower's north-east gully in three rappels of about seventy-five feet; a doubled sixty-metre rope covers each.",
+        "hazards": [
+          "Five routes on one small tower with unmarked starts within a few minutes of each other",
+          "A chimney start means poor protection options if you are on the wrong line",
+          "Rappel anchors in the descent gully are not documented as fixed; carry webbing and rings",
+          "Loose rock in the gully between tower and mountain",
+          "Multi-day walk out from a remote basin with no cell coverage"
+        ]
+      }
+    ]
+  },
+  "wa_the_monk_scabo": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "The right-hand line on a tower carrying five; its start is the one on this face that has a real, findable feature — a large ledge — and that ledge is the whole identification.",
+    "_sources": [
+      "Route row's own face, beta, descent and pitch_detail columns; independent route summary describing a start near the right side of the lowest part of the south face at a large ledge"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+        "season": "Roughly July through the first snow of October",
+        "notes": "Paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then twelve miles of trail #504 to Andrews Pass above 6,680 ft, mostly through an old burn: hot, rocky, buggy and shadeless. Down into the next drainage, then a side trail up to Upper Cathedral Lake at about 7,380 ft.\n\nThis is a two-to-four day backpack for almost everyone, climbing from camp in the basin. Free self-issue wilderness permit and a parking pass at the trailhead.\n\nAlternatives are the valley trail from the Thirtymile trailhead, gentler and longer, and the high trail from Loomis, shortest on foot but two hours more driving and 1,300 ft of climbing on the way out.",
+        "baseFinding": "The objective is the small semi-detached TOWER at the lower right of the mountain's south wall, not the wall itself. Walk from camp toward the deep gully between the two and get onto the tower's own rock on the RIGHT side of that gully.\n\nThis line is the RIGHT-HAND one on the tower's south face, and it has the only start on this face you can actually stand on and name: a LARGE LEDGE low down, near the right side of the lowest part of the rock. Walk the base rightward until you can step up onto a ledge big enough to organise a rack on. That is the start. If you are standing on broken talus at the very bottom of the face with no ledge under you, keep walking right.\n\nThe route then confirms itself by BEHAVIOUR rather than by a landmark: it ZIGZAGS. Five pitches that keep cutting back and forth across the right side of the face, which is why long slings are not optional here — rope drag is the thing people complain about, and drag is itself evidence you are on the correct line.\n\nNEGATIVE MARKERS. If you started at the LOWEST POINT of the face and went straight up the middle past a prominent roof, you are on the central line. If your first two pitches were a chimney or gully left of centre, you are on the three-pitch crack line further left. If you started at a PAIR of parallel cracks on the lower left and were off after two pitches, you are on the short cracks.\n\nAlso worth knowing: this route's descent is NOT the mountain's summit walk-off. It comes off the tower by the north-east gully in three rappels of about seventy-five feet, each covered by a doubled sixty-metre rope. If somebody has told you to walk west off the summit, they were describing the mountain, not the tower.",
+        "hazards": [
+          "Five unmarked route starts within a few minutes' walk on one small tower",
+          "Zigzagging line makes rope drag a real hazard; long slings are essential",
+          "Its descent is the tower's rappel gully, not the mountain's walk-off; do not follow summit beta",
+          "Descent anchors are not documented as fixed; carry webbing and rings",
+          "Remote basin, multi-day walk out, no cell coverage"
+        ]
+      }
+    ]
+  },
+  "wa_the_monk_west_cracks_left_crack": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "This and its twin are two parallel cracks a few feet apart with almost identical descriptions; telling left from right is literally the entire problem, and the route name points at the wrong compass direction.",
+    "_sources": [
+      "Route row's own face, beta, descent_text and pitch_detail columns; the paired Right Crack row read against it"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+        "season": "Roughly July through the first snow of October",
+        "notes": "The drive is paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft. The walk in is roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft, mostly through an old burn, then down into the next drainage and up a side trail to Upper Cathedral Lake at about 7,380 ft.\n\nA two-to-four day backpack, with the climbing done from camp. Free self-issue wilderness permit and a parking pass at the trailhead; no cell coverage.\n\nIt is worth saying plainly that this is a two-pitch route at the end of a two-day walk. Almost nobody comes here for it alone — it is a companion to the longer lines on the tower and the wall, or a way to finish a day.",
+        "baseFinding": "START WITH THE NAME, BECAUSE THE NAME IS MISLEADING. These are called the West Cracks and they are on the LOWER LEFT OF THE TOWER'S SOUTH FACE. Do not go looking for a west-facing wall; you will not find these there.\n\nThe objective is the small semi-detached TOWER at the lower right of the mountain's big south wall, reached from camp by crossing toward the deep gully that separates the two and getting onto the tower's own rock on the RIGHT side of that gully.\n\nWalk the base of the tower's south face LEFTWARD, past the lowest point of the rock, until you find A PAIR OF PARALLEL CRACKS running up the lower left of the face. Two cracks, side by side, close enough that you will see them as a pair rather than as two separate features. That pair is the whole landmark. If you can only see one crack, you have not found them yet.\n\nTHIS ROUTE IS THE LEFT-HAND CRACK OF THE PAIR, and there is a physical test that settles it above the ground: the crux of this line is an UPPER CHIMNEY near the top of the second pitch, and it wants a large cam or big passive gear. The right-hand crack of the pair has no chimney crux; its hard climbing is face and crack higher up, and it goes a full grade easier.\n\nSO: if you are wedged in a chimney on pitch two and wishing you had brought the big cam, you are on the correct line. If pitch two is open crack climbing and feels easy for the grade, you are one crack to the right.\n\nNEGATIVE MARKER on length. This is a TWO-PITCH route. If you are still going on the third, you have linked into the upper formation, and the descent changes with it: most parties simply rappel this route on gear from the top of pitch two, whereas topping out on the tower commits you to the north-east gully in three rappels of about seventy-five feet each.",
+        "hazards": [
+          "The route name says west and the rock faces south; parties look for the wrong wall",
+          "Its twin runs parallel a few feet away and reads almost identically in print",
+          "The upper chimney crux needs large gear that a short route tempts you to leave behind",
+          "Rappel anchors are not documented as fixed anywhere on this tower; carry webbing and rings",
+          "A two-pitch route at the end of a multi-day approach; the walk out is the real commitment"
+        ]
+      }
+    ]
+  },
+  "wa_the_monk_west_cracks_right_crack": {
+    "area": "wa_cathedral_peak_pasayten",
+    "_why": "The easier half of a parallel pair whose descriptions are nearly identical; without a physical test a party climbs the wrong one and never knows.",
+    "_sources": [
+      "Route row's own face, beta, descent_text and pitch_detail columns; the paired Left Crack row read against it"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Andrews Creek trail #504 to Upper Cathedral Lake, then the Cathedral-Monk gully",
+        "season": "Roughly July through the first snow of October",
+        "notes": "Paved most of the way from Winthrop up the Chewuch River valley to the Andrews Creek trailhead at about 3,050 ft, then roughly twelve miles of trail #504 to Andrews Pass above 6,680 ft. The lower half is an old burn with no shade and overgrown tread. Down into the next drainage, then a side trail up to Upper Cathedral Lake at about 7,380 ft.\n\nTwo to four days for most parties, climbing from camp in the basin. Free self-issue wilderness permit and a parking pass at the trailhead; no cell coverage anywhere on the trip.\n\nAs with its twin, this is two pitches at the end of a long walk. It is a companion climb rather than an objective in itself.",
+        "baseFinding": "THE NAME POINTS THE WRONG WAY. These are the West Cracks and they sit on the LOWER LEFT OF THE TOWER'S SOUTH FACE. There is no west-facing wall to look for.\n\nFrom camp, cross toward the deep gully dividing the mountain's south wall from the small semi-detached TOWER at its lower right, and get onto the tower's own rock on the RIGHT side of that gully. Then walk the base of the tower's south face LEFTWARD, past the lowest point of the rock, until you are under A PAIR OF PARALLEL CRACKS. Two cracks side by side, read as one feature. That pair is the landmark; a single crack means you have not reached them.\n\nTHIS ROUTE IS THE RIGHT-HAND CRACK OF THE PAIR. The test that separates it from its twin is what happens on pitch two. This line's hardest climbing comes HIGHER UP and is crack and face — no chimney. The left-hand crack of the pair cruxes in an UPPER CHIMNEY that swallows a large cam.\n\nSO: if pitch two puts you inside a chimney wanting big gear, step back down and move one crack right. If pitch two stays out in the open on cracks and face and the hard moves arrive near the top, you are on this route. It also goes a full number grade easier than its twin, so difficulty itself is evidence — a pitch that feels desperate for the grade is a sign you are on the left-hand line.\n\nNEGATIVE MARKER on length and descent. TWO pitches. Most parties rappel the route on gear from the top of pitch two and walk down the talus and slabs to the drainage. If you continue and top out on the tower itself, you have committed to a different descent — the north-east gully in three rappels of about seventy-five feet each, a doubled sixty-metre rope for every one, with anchors you may have to build.",
+        "hazards": [
+          "The route name says west and the rock faces south",
+          "Its twin runs parallel a few feet away and is a grade harder with a chimney crux",
+          "Committing to the tower's summit changes the descent from a two-rope-length retreat to a gully rappel",
+          "Rappel anchors here are not documented as fixed; carry webbing and rings",
+          "Remote basin, multi-day walk out, no cell coverage"
+        ]
+      }
+    ]
+  },
+  "wa_ne_couloir": {
+    "area": "wa_north_face_tiffany_mountain",
+    "_why": "Three routes share one small cirque under one face; this is the only one of the three that is a snow line, and whether it is in condition is the first question rather than the last.",
+    "_sources": [
+      "Route row's own face, beta, approach, descent_text and waypoints; independent area description naming the NE Couloir as the longest and most direct snow chute on the left side of the face"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Tiffany Springs Campground and trail #373 over Honeymoon Pass",
+        "season": "June into early July while the snow is still continuous; by mid-summer it degrades to scree and dirt",
+        "notes": "Park at Tiffany Springs Campground at about 6,760 ft. Three long gravel drives reach it — from Conconully by the North Fork Salmon Creek road, which is the roughest and where high clearance is worth having; from the Methow Valley; or the longer South Fork line over Baldy Pass, which is the gentlest on a low car. All are an hour or more of gravel. A trailhead further along the ridge system also serves the area.\n\nFrom the campground, trail #373 runs east past Tiffany Lake to Honeymoon Pass at about 7,150 ft in roughly forty-five minutes of easy walking. That pass is the hinge of the whole approach.\n\nThe roads are snowbound most of the year and typically open around late June, which is awkward here: this route wants snow and the road wants none. The overlap is narrow and it is the reason this line gets climbed so rarely.",
+        "baseFinding": "From Honeymoon Pass, leave the trail and traverse south along the open grassy east slope below the ridge crest into the small cirque at the foot of the north face, at roughly 7,360 ft. The face rises about six hundred and fifty feet above that cirque and it is split into two halves by a rock tower.\n\nTHE FACE HAS TWO KINDS OF LINE AND THEY ARE ON OPPOSITE SIDES. Snow gullies on the LEFT, a rock tower and its ridge on the RIGHT. This route is on the left. If you are standing under a tower of rock with an arete running up to it, you have walked too far right and you are under the two rock routes.\n\nAmong the gullies on the left, take the LONGEST, MOST CONTINUOUS AND MOST DIRECT one — the chute that runs unbroken from the cirque floor to the summit ridge without stepping out onto rock. The others are shorter and more broken. Sighting up the line from the cirque floor is the test: you should be able to follow one connected ribbon of snow all the way to the skyline.\n\nCONDITION IS PART OF THE IDENTIFICATION HERE, not a separate question. The gully averages about forty degrees with steeper sections to fifty-five, and the crux is where it NARROWS high up. If the narrow section is bare scree and dirt rather than snow, the route is out — this line does not work as a rock climb, and by late summer that is its normal state.\n\nNEGATIVE MARKER on the descent, which is not a reversal: from the top of the couloir on the summit ridge, walk off by the north-west ridge, then drop to the old unmaintained trail above the smaller lake to the north-east and follow it back down to trail #373 near Honeymoon Pass. Downclimbing the couloir in afternoon conditions is the mistake this descent exists to avoid.",
+        "hazards": [
+          "Avalanche and wet-snow release in the only window when the route is in condition",
+          "The narrow upper section is the crux and steepens to around fifty-five degrees",
+          "Road access and route condition barely overlap; too early and you cannot drive in, too late and the snow is gone",
+          "The unmaintained descent trail above the lower lake is faint and easy to lose",
+          "Long gravel drives from every direction and no quick way out"
+        ]
+      }
+    ]
+  },
+  "wa_north_tower_ridge_route": {
+    "area": "wa_north_face_tiffany_mountain",
+    "_why": "This and the arete beside it climb the same tower on the same side of the same face and differ only in whether the line takes the steep pitch or skirts it; a party can be on the wrong one for three pitches without noticing.",
+    "_sources": [
+      "Route row's own face, beta, approach, descent_text and pitch_detail; independent area description placing the North Tower route on the tower on the right side of the face"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Tiffany Springs Campground and trail #373 over Honeymoon Pass, then the east slope traverse",
+        "season": "June through early September, once snow has cleared the lower rock",
+        "notes": "Tiffany Springs Campground sits at about 6,760 ft and is reached by long gravel drives from Conconully by the North Fork Salmon Creek road, from the Methow Valley, or over Baldy Pass on the South Fork. The Conconully line is the roughest of the three. Expect an hour or more on gravel whichever you choose.\n\nTrail #373 leaves the campground east past Tiffany Lake to Honeymoon Pass at about 7,150 ft, about forty-five minutes of easy walking. From the pass, traverse south on the grassy east slope below the crest into the small cirque at the base of the north face, at roughly 7,360 ft, then climb the boulder field to the foot of the climbing at about 7,600 ft.\n\nCompared with anything else in this corner of the state the approach is short and easy, which is most of this face's appeal. Roads are snowbound for much of the year and generally open around late June.",
+        "baseFinding": "From the cirque, read the face as two halves: SNOW GULLIES ON THE LEFT, and a distinct ROCK TOWER with a ridge running up to it ON THE RIGHT. Both rock routes are on the right half. If you are looking up a continuous snow chute, you are on the wrong side of the face.\n\nBoth rock routes gain the same ridge and finish over the same tower, so the base is genuinely shared and the split happens on the climb. Start up the lower rock on the right side of the face, two pitches of fourth-class ground, and follow the ridge scramble to the FOOT OF THE TOWER. Everything to that point is common.\n\nHERE IS THE TEST, AND IT IS A PHYSICAL ONE. At the tower this route goes STRAIGHT UP IT. The pitch is about seventy-five feet of good climbing that turns into a WIDE FLARING CHIMNEY with an offwidth section, and the gear placements in it are awkward. That chimney is the crux of the route and it is the single thing that identifies this line rather than its neighbour.\n\nSO: if you are standing under a steep tower wall looking at a flaring chimney and reaching for your widest pieces, you are on this route. If instead your line traverses LEFT to avoid a vertical step and stays at fourth class, you have taken the easier arete beside it — same tower, same summit, no technical crux, and you should know that is what happened rather than believing you climbed this.\n\nAbove the chimney it is fourth class to the top of the tower and then third-class walking along the crest to Tiffany's main summit slope.\n\nNEGATIVE MARKER on the descent: it is not a reversal. Take the north-west ridge down to about eight thousand feet, contour north-east toward the smaller lake, and pick up the faint old ridge trail that returns to Honeymoon Pass.",
+        "hazards": [
+          "Shares its entire lower half with the easier arete beside it; the split is at the tower, not at the base",
+          "The flaring chimney and offwidth crux takes awkward and sparse gear",
+          "Loose rock and teetering blocks on the ridge and near the tower",
+          "The old descent trail above the lower lake is faint and easily lost",
+          "Long gravel access from every direction with no quick exit"
+        ]
+      }
+    ]
+  },
+  "wa_tower_arete": {
+    "area": "wa_north_face_tiffany_mountain",
+    "_why": "The easier of two lines that share a face, a ridge, a tower and a summit; the only honest way to know which you are on is what you do at the vertical step.",
+    "_sources": [
+      "Route row's own face, beta, approach, descent_text and pitch_detail; the North Tower Ridge row read against it"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Tiffany Springs Campground and trail #373 over Honeymoon Pass, then the east slope traverse",
+        "season": "June through early September, once snow has cleared the lower sections",
+        "notes": "Drive to Tiffany Springs Campground at about 6,760 ft on the forest road system, reached either from Conconully to the south or from Winthrop to the north by the East Chewuch road. Both are long gravel drives of an hour or more; a third, gentler line comes over Baldy Pass on the South Fork.\n\nFrom the campground, walk trail #373 east past Tiffany Lake to Honeymoon Pass at about 7,150 ft, roughly forty-five minutes of easy trail. Leave the trail there and traverse south across open grassy slopes into the small cirque at the base of the north face, about 7,360 ft.\n\nThe face rises around six hundred and fifty feet above the cirque and is split by couloirs and a rock tower. The whole approach is short and easy by the standards of this corner of the state, which is the point of coming here.",
+        "baseFinding": "From the cirque, split the face in half: SNOW GULLIES LEFT, ROCK TOWER AND ITS RIDGE RIGHT. This route is on the right. A continuous snow chute above you means you are under the couloir line instead.\n\nThis route shares its start with the harder line on the same tower, and there is no way to separate them at the bottom, so do not try. Climb the rocky ridge from the cirque — roughly a hundred feet of fourth-class ground to gain the arete — and then take low-angled ridge travel along the crest with real exposure on both sides.\n\nTHE SPLIT IS AT THE VERTICAL STEP, AND IT IS THE ONLY TEST THAT WORKS. Where the ridge steepens into a vertical section, this route BYPASSES IT ON THE LEFT and stays at fourth class. The other line goes straight up the tower into a wide flaring chimney and offwidth at 5.7 to 5.8. So: if you are looking at a chimney and reaching for wide gear, you have taken the harder line by accident. If you are moving left onto easier ground and never pull a hard move, you are on this route as intended.\n\nCONFIRM BY DIFFICULTY, WHICH IS UNUSUAL BUT HONEST HERE: five pitches, all of them fourth class or third, no technical crux anywhere. A pitch that feels like real rock climbing is evidence you are somewhere else. The route finishes with a short approach to the top of the tower and then a crest traverse of walking to Tiffany's main summit slope.\n\nNEGATIVE MARKER on the descent: it is not reversed. From the top, descend the north-west ridge on mostly third-class ground to roughly 7,950 ft, contour north-east and find the old ridge trail — it may be faint — and follow it down to rejoin the main trail at Honeymoon Pass.",
+        "hazards": [
+          "Indistinguishable from the harder tower route until the vertical step, which is three pitches up",
+          "Loose rock and boulders throughout; the arete is exposed on both sides",
+          "The old descent trail is faint and easy to lose above the lower lake",
+          "No technical crux means parties move unroped where a slip is consequential",
+          "Long gravel drives from every direction"
+        ]
+      }
+    ]
+  },
+  "wa_easy_getaway": {
+    "area": "wa_cutthroat_wall",
+    "_why": "Two routes start about fifty feet apart on the same slab at the foot of this wall and a third starts a hundred and fifty feet up and left; the wall also shares a name with a different formation reached from a different trailhead.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; independent area description of the approach naming the granite patio and placing Easy Getaway left and The Perfect Crime right"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Cutthroat Creek trail #483 from the Cutthroat Lake trailhead",
+        "season": "Late June through September; the corners seep earliest in the season, and access is gone entirely while the highway is gated shut",
+        "notes": "THIS IS NOT THE APPROACH TO CUTTHROAT PEAK, and the confusion is the commonest way people waste a morning here. The peak is approached from an unmarked highway pullout west of the pass with no maintained trail at all. This wall is reached from the signed Cutthroat Lake trailhead at about 4,500 ft, a mile up a spur road off the highway east of the pass, with a kiosk and a large gravel lot.\n\nStart on the maintained Cutthroat Creek trail. After a short distance — the first few minutes, still on the old roadbed running parallel to the main trail — leave it on the climbers' left and start uphill into the forest.\n\nFrom there it is a climbers' path through light brush, trees and talus, trending climbers' right toward the buttress, until you reach a flat area beneath the cliff. Reckon on the better part of an hour to two depending on how well you read it.\n\nA warning about the markers: there are cairns, and they are not all route markers. Trend right toward the wall and use the buttress itself rather than the rock piles.",
+        "baseFinding": "The landmark at the foot of the wall is a GRANITE PATIO — a flat slab platform under the cliff where two routes begin about fifty feet apart. Everything here is decided by that patio.\n\nTHIS ROUTE IS THE LEFT-HAND OF THE PAIR. From the patio, head UP AND LEFT into a corner. The route to the right of the patio, roughly fifty feet away, is a different line at 5.9 that wanders far more.\n\nCONFIRMATION IS A STRIPED CORNER, and it is the landmark to hold in your head for the whole climb rather than only at the base. There is a distinctly banded corner feature used as the on-route check throughout this line; it seeps water early in the season, which is itself a useful sign that you are looking at the right thing. If you never pass it, you are not on this route.\n\nThe hardest and best pitch is high: a hundred-foot RIGHT-FACING CORNER that varies from hands to fingers, secure but sustained. Reaching a long right-facing corner near the top is the strongest confirmation the route offers.\n\nNEGATIVE MARKERS, both of them real. If you have walked UPHILL from the patio and are standing at a small OUTCROP OF TREES with an open book just left of it, you are at the third route on this wall, a hundred and fifty feet climbers' left and above this one, and it is a full grade harder. And if you started to the RIGHT of the patio and your second pitch ends on a ledge with two big gnarled trees, you are on the 5.9.\n\nThe descent is where this wall actually hurts people, so study it before you leave the ground: from the topout, reach the notch between the westernmost and the higher central buttress, marked by a slung horn or tree, rappel one rope length over a chockstone tunnel to a dirty ramp with a small cave, then find the UPWARD-trending gully or ledge system on skier's LEFT. Do not descend the obvious loose gully directly below the notch.",
+        "hazards": [
+          "Shares its name with a peak reached from a different trailhead with no trail at all",
+          "Two route starts about fifty feet apart on one slab platform",
+          "Cairns on the approach are not all route markers",
+          "The descent is the crux of the day; the obvious gully below the notch is the wrong one and is loose",
+          "Corners seep early in the season and stay wet after rain"
+        ]
+      }
+    ]
+  },
+  "wa_one_piece_at_a_time": {
+    "area": "wa_cutthroat_wall",
+    "_why": "It starts a hundred and fifty feet above and left of the pair of routes everyone else is looking for, so a party that finds the obvious base has already walked past it.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; independent route description placing it about 150 ft climbers' left and up from Easy Getaway, starting in a rock-scarred open book just left of a small outcropping of trees"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Cutthroat Creek trail #483 from the Cutthroat Lake trailhead",
+        "season": "Late June through September; access is gone entirely while the highway is gated for winter",
+        "notes": "This is not the Cutthroat Peak approach. That one leaves an unmarked highway pullout west of the pass with no maintained trail. This wall starts at the signed Cutthroat Lake trailhead at about 4,500 ft, a mile up a spur road off the highway east of the pass — kiosk, vault toilet, large gravel lot, no water.\n\nWalk the maintained Cutthroat Creek trail for the first few minutes, on the old roadbed running parallel to it, then turn uphill on the climbers' left into the forest. From there, a climbers' path through brush, trees and talus trends climbers' right toward the buttress and reaches a flat area beneath the cliff.\n\nCairns exist along the way and not all of them mean anything. Navigate on the wall rather than on the rock piles. Because of the approach, parties usually have this wall to themselves.",
+        "baseFinding": "DO NOT STOP AT THE OBVIOUS BASE. The first thing you reach under this wall is a GRANITE PATIO where two other routes start about fifty feet apart. This route is not there. It is about a HUNDRED AND FIFTY FEET CLIMBERS' LEFT OF AND ABOVE that patio, so from the patio you keep walking left and gaining height rather than racking up.\n\nThe marker is vegetation, and it is specific: a SMALL OUTCROPPING OF TREES uphill of the left-hand patio route's start. Find that patch of trees. The route begins in the ROCK-SCARRED OPEN BOOK JUST LEFT OF IT. Scarred rock and an open book, immediately left of a small stand of trees, uphill and left of the patio — that is the whole identification, and it is the only start on this wall with a plant landmark.\n\nCONFIRM BY THE FEATURE ABOVE: this line takes the obvious LEFT-FACING BROKEN CORNER SYSTEM in the centre of the buttress, left of the blockier ground that carries the two patio routes. If the corner above you faces right rather than left, you are on the wrong side of the wall.\n\nNEGATIVE MARKERS. If you are standing on a flat slab platform with a second route start visible fifty feet away, you are still at the patio and have not walked far enough. If your line is wandering through featured ground past big gnarled trees and later a distinctly SPIRAL TREE, you are on the 5.9 that starts right of the patio.\n\nThis route is also the one on the wall whose descent is different, and knowing that is worth a lot at the top: parties find it faster to RAPPEL THE ROUTE — three full sixty-metre rappels reach the ground, starting from a tree slightly up and left of the belay at the top of pitch five — rather than take the shared notch descent. Watch for stacked blocks near the top of the second pitch's corner.",
+        "hazards": [
+          "Its start is uphill and left of the obvious base; parties rack up at the patio by mistake",
+          "Loose rock on the second pitch, including stacked blocks at the top of the corner",
+          "Cairns on the approach are not all route markers",
+          "Shares an area name with a peak reached from a different trailhead",
+          "If you take the shared walk-off instead of rappelling, the obvious gully below the notch is the wrong one"
+        ]
+      }
+    ]
+  },
+  "wa_the_perfect_crime_with_variations": {
+    "area": "wa_cutthroat_wall",
+    "_why": "The right-hand of two starts fifty feet apart, and a route that offers parallel options at almost every pitch, so being on it and being on line are two different questions.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text, waypoints and pitch_detail; independent area description placing The Perfect Crime right of the granite patio and Easy Getaway left"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Cutthroat Creek trail #483 from the Cutthroat Lake trailhead",
+        "season": "Late June through September, once snow has cleared the upper pitches and approach slabs",
+        "notes": "The approach that matters is the one you do NOT take: the neighbouring peak of the same name is reached from an unmarked highway pullout west of the pass with no maintained trail. This wall is reached from the signed Cutthroat Lake trailhead at about 4,500 ft, a mile up a spur road off the highway east of the pass.\n\nFrom the kiosk, walk the maintained Cutthroat Creek trail a short way, still on the old roadbed that parallels it, then turn uphill on the climbers' left into the forest. A climbers' path then trends climbers' right through brush, trees and talus to a flat area beneath the cliff.\n\nThere are cairns and they are unreliable; steer by the buttress. Reckon the better part of an hour to two, and expect to have the wall to yourself.",
+        "baseFinding": "The base landmark is a GRANITE PATIO, a flat slab platform under the wall where two routes begin about fifty feet apart. THIS ROUTE IS THE RIGHT-HAND ONE. The left-hand start heads up and left into a corner and is the harder line; this one is right of it.\n\nThe first pitch has an UNDERCUT START leading into an open book, with several ways through — featured face, a crack and arete, or the corner — all arriving at the same quality crack and a cam anchor. Several lines through one short piece of steep undercut rock is the correct experience here, not a sign you are lost.\n\nCONFIRMATION IS TREES, IN TWO STAGES, and it is the most reliable thing this route offers. Pitch two ends on a LEDGE WITH TWO BIG GNARLED TREES that make solid anchors. Above that, an easy ramble right of those trees reaches a minor bowl with a good tree anchor below a distinctive SPIRAL TREE. If you have passed two gnarled trees on a ledge and then a spiral tree, you are on this route and no other line on this wall gives you that sequence.\n\nBe ready for the route's own character: the described line has parallel options at several pitches, so a variation is normal rather than an error. Rock is generally solid but still lichen-covered and loose in places, there are no bolts and very little fixed gear, and some anchors are tree slings.\n\nNEGATIVE MARKERS. If you started LEFT of the patio and the highlight is a long right-facing corner near the top, you are on the neighbouring line. If you walked uphill and left of the patio to a small stand of trees and started in a scarred open book, you are on the third route, a full grade harder.\n\nThe descent is the day's real crux and must be studied on the ground: from the topout walk a hundred to two hundred feet along the ridge to a minor notch between the westernmost and the higher central buttress, marked by a slung horn or tree. One rappel on a single seventy-metre rope over a chockstone tunnel, which snags ropes on the pull, drops to a dirty ramp with a small cave. Then take the UPWARD-trending gully or ledge system on skier's LEFT back around to the base. The obvious gully directly below the notch is loose and is the wrong way.",
+        "hazards": [
+          "Two starts about fifty feet apart on one slab platform",
+          "Deliberate variations at several pitches make being off-line hard to detect",
+          "Lichen and loose rock; no bolts and very little fixed gear",
+          "The rappel runs over a chockstone tunnel that snags ropes on the pull",
+          "The obvious descent gully below the notch is the wrong one and is loose"
+        ]
+      }
+    ]
+  },
+  "wa_spontaneity_arete": {
+    "area": "wa_le_petit_cheval",
+    "_why": "The formation's trade route and the reference line for both neighbours; one starts by traversing 250 yards from it and the other is reached by climbing its first three pitches, so getting this base right is the precondition for the other two.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; independent approach descriptions naming the milepost turnout, the fixed lines, the newer right-bearing variation and the tree snags at the base"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Highway turnout east of Washington Pass, the fixed-rope climbers' trail",
+        "season": "July through September, once the creek crossing and the approach snowfield have melted out",
+        "notes": "Drive east over Washington Pass and park in the turnout about two miles beyond it, near milepost 165, at roughly 4,900 ft. This is a highway pullout, not a trailhead — nothing is signed.\n\nThe climbers' path leaves the WEST or south-west end of the turnout and drops steeply through loose dirt and rock into the trees. It is well worn but unmarked apart from intermittent cairns. It crosses Early Winters Creek on logs and resumes on the far side, then climbs into an open rocky drainage and talus below the formation.\n\nHigher up the old line uses TWO OR THREE FIXED LINES on an avalanche path before topping out on a flat area. A newer variation bears RIGHT just before the fixed lines are reached and needs only a small amount of scrambling; most parties now prefer it. Reckon roughly an hour and a half.\n\nDo not treat the fixed ropes as maintained equipment. They are informal, weathered, and nobody replaces them on a schedule.",
+        "baseFinding": "THE MARKER AT THE BASE IS DEAD TREES. As the ground steepens toward the formation and BEFORE the gully, look on your LEFT for TREE SNAGS — standing dead timber against the rock. The first pitch climbs cracks up from a snag. That is the start, and it is the only start on this formation with a landmark you can walk up and touch.\n\nIf you have entered the gully itself, you have gone too far right. The gully parallels this route and is used both as a descent and as a fast way to reach the bolted line beside it — it is not this climb.\n\nCONFIRM ON PITCH TWO, which is the strongest check the route gives you: it TRAVERSES UNDER A ROOF. If your second pitch runs sideways beneath an overhang rather than straight up, you are on line. Above that expect steepening ground with cracks and a good layback, then a wide ten-inch crack with finger and hand sections, then a corner crack to lieback, and a headwall finish.\n\nExpect long SCRAMBLING SECTIONS BETWEEN THE PITCHES. That is this route's defining character and the main complaint about it — it is the reason a 5.7 with seven pitches takes a full day. Continuous roped climbing with no walking between would mean you are somewhere else.\n\nNEGATIVE MARKERS for the two neighbours. If you have traversed a long way rightward from the base on third and fourth-class ledges toward the middle of the face before starting, you are heading for the hard line that finishes on this route's last pitches. And if your first pitch is protected by BOLTS, you are on the partly bolted line — this route takes natural gear throughout.\n\nDescent is most often a rappel of the line itself, and parties report it is slow and that ropes snag on flakes. The alternative is the third-class gully to climbers' right, faster but loose; stay high and skier's-right to limit what is above you.",
+        "hazards": [
+          "Weathered informal fixed ropes on the old approach line; the newer right-bearing variation avoids them",
+          "Early Winters Creek is crossed on logs and is worse in high water",
+          "Long unroped scrambling between pitches on a route people rack up for as a 5.7",
+          "Rappelling the line is slow and ropes snag on flakes, sometimes needing re-ascent to free them",
+          "The alternative descent gully is loose and sits above the approach path"
+        ]
+      }
+    ]
+  },
+  "wa_first_amendment": {
+    "area": "wa_le_petit_cheval",
+    "_why": "It does not start where you arrive; the base is 250 yards of traversing away from the formation's obvious start, and the route sees very few ascents so there is no trail of chalk to follow.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; the route's own published first-ascent report giving the 250-yard traverse on 3rd and 4th class ledges from the base of Spontaneity Arete to just right of centre on the face"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Highway turnout east of Washington Pass, then a long ledge traverse across the face",
+        "season": "July through September, once the creek crossing and approach snow have gone",
+        "notes": "Park in the highway turnout about two miles east of Washington Pass, near milepost 165, at roughly 4,900 ft. Nothing is signed.\n\nThe climbers' path drops steeply from the WEST end of the turnout through loose dirt and rock into the trees, marked here and there by cairns, crosses Early Winters Creek on logs, and climbs into an open rocky drainage and talus below the formation. The old line finishes with two or three informal fixed ropes across an avalanche path; a newer variation bears RIGHT just before them and needs only a little scrambling.\n\nThis route sees very few ascents, so current conditions beta effectively does not exist and there will be no traffic to follow. Budget the extra time the traverse costs on top of the walk in.",
+        "baseFinding": "YOU DO NOT START WHERE THE PATH ENDS. Arrive first at the base of the formation's trade route — identified by TREE SNAGS on the left as the ground steepens, before the gully. From there, TRAVERSE ABOUT TWO HUNDRED AND FIFTY YARDS ACROSS THE FACE on third and fourth-class ledges, finishing JUST RIGHT OF CENTRE on the north-west face. That traverse is the approach to this climb and it is the piece everyone underestimates.\n\nThe test that you have gone far enough is the first pitch itself. It is a HUNDRED-FOOT CHIMNEY AND HAND CRACK ending on a LARGE LEDGE, and it is easy — around 5.4. If the ground in front of you is steep or technical at the very start, you have stopped short. A hundred feet of easy chimney to a big ledge is the signature.\n\nCONFIRM ON THE PITCHES ABOVE, because the low ground is not distinctive. Pitch two is a slightly vegetated hands-and-fists corner. Pitch three follows the same corner then breaks RIGHT on thin face climbing to a LEDGE WITH A CAVE. Pitch four is finger cracks to a large slabby ledge. Corner, then a cave ledge, then a slabby ledge: that sequence is the line.\n\nNEGATIVE MARKERS, and both are easy to fall into. If you racked up at the snags and started climbing without traversing, you are on the trade route — much easier, and it will feel like it. If your first pitch is protected by BOLTS, you are on the partly bolted four-pitch line beside the gully; nothing on this route is bolted.\n\nBe warned that the line is not continuously natural and some cracks are dirty and vegetated. That is the character of the route rather than evidence you are off it. The crux comes late, right off a belay high on the climb, in very thin cracks with sparse protection.\n\nAt the top it joins the trade route for its final scrambly ridge pitches, and the descent is that route's line: rappel it, or take the third-class gully on climbers' right, which is faster and loose.",
+        "hazards": [
+          "The base is a 250-yard third and fourth-class traverse away from the obvious start",
+          "Very few ascents, so no chalk, no traffic and no current conditions information",
+          "The crux comes off a belay high on the route in thin cracks with sparse protection; knifeblades and thin pins are useful",
+          "Dirty and vegetated cracks in places",
+          "Descent is by the neighbouring route's rappels or its loose gully, not by reversing this line"
+        ]
+      }
+    ]
+  },
+  "wa_spontaneous_distraction": {
+    "area": "wa_le_petit_cheval",
+    "_why": "It is described only in relation to its neighbour and to a gully; the one thing that identifies it absolutely is that it has bolts and nothing else on the formation does.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text, waypoints and pitch_detail; independent route description giving both ways in (three pitches of the arete then across the gully, or the parallel gully) and the first bolt above a left-trending overlap"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Highway turnout east of Washington Pass, then the gully paralleling the arete",
+        "season": "July through September; snow and debris linger on the avalanche-path approach into early summer",
+        "notes": "Park in the highway turnout about two miles east of Washington Pass, near milepost 165. The climbers' trail starts at the FAR WEST END of the pullout, drops steeply through loose dirt and rock, crosses Early Winters Creek on logs, then traverses an avalanche path — the old line has two or three informal fixed rope sections here — toward the base of the formation. Around an hour and a half.\n\nA newer variation of the path bears RIGHT just before the fixed lines and needs only a small amount of scrambling, which most parties now prefer.\n\nThere are two ways to reach this route once you are under the formation, and they are genuinely different days. The faster one takes the GULLY THAT PARALLELS the arete beside it. The other climbs the first three pitches of that arete and then cuts across the gully, which is how parties who wanted a longer outing get here.",
+        "baseFinding": "THE DECIDING TEST IS BOLTS, AND IT IS ABSOLUTE. This is the only partly bolted line on the formation; both neighbours are natural gear from bottom to top. If you cannot see a bolt from the ground, you are not at the start of this route.\n\nWork out first which side of the gully you are on. The arete route starts by the TREE SNAGS on the left before the gully. This route lies BESIDE that gully on the lower buttress, and the fast way to it is up the gully itself rather than up the arete.\n\nThe start is found by a shape and then confirmed by hardware: look for a LEFT-TRENDING OVERLAP low on the rock, and the FIRST BOLT sits just above it. Overlap below, bolt above — that is the start. Pitch one then runs over three bolts on face climbing.\n\nCONFIRM ON PITCH TWO, because it is the only place a wrong line would still look plausible: you climb past TWO BOLTS to a crack, and then at the THIRD BOLT you TRAVERSE RIGHT onto easier cracks to the anchor. A rightward traverse at a bolt on the second pitch is this route. Pitch three is effectively a sport pitch with a hard start that eases after the first twenty feet; pitch four is fun moderate cracks to the top.\n\nNEGATIVE MARKERS. If you are climbing cracks up from a dead tree snag with no fixed gear anywhere, you are on the arete. If you got here by traversing hundreds of yards rightward across the face on ledges and started up a long easy chimney, you are on the hard line that finishes on the arete's top pitches. Neither of those has a bolt in it.\n\nThe count matters too: FOUR pitches. Descend by rappelling the route on a single seventy-metre rope. Parties finishing higher on the formation can instead come down the arete's rappel line to reach the gully near this route.",
+        "hazards": [
+          "Positioned only in relation to its neighbour and a gully; the bolts are the only absolute identifier",
+          "The gully approach sits below the climbing and takes anything the parties above knock off",
+          "Snow and debris linger on the avalanche-path section of the approach into early summer",
+          "Weathered informal fixed ropes on the old approach line",
+          "Early Winters Creek is crossed on logs and is worse in high water"
+        ]
+      }
+    ]
+  },
+  "wa_castle_peak_pasayten_scramble": {
+    "area": "wa_castle_peak_pasayten",
+    "_why": "The peak has a walk-up side and a fourteen-hundred-foot wall on the other, three published ways in from three different countries and directions, and the standard route's own columns disagree about which side it is on.",
+    "_sources": [
+      "Route row's own approach, descent_text, waypoints, beta and pitch_detail; independent area summaries confirming three approaches (Manning Park from the north, the crest trail from the west, Freezeout Creek from the east) and the wholly-US option requiring a boat across Ross Lake"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Ross Lake boat crossing, Lightning Creek trail and the abandoned Freezeout Creek trail",
+        "season": "Late July through September in a normal year; the creek is hard to ford until the snowmelt drops",
+        "notes": "This is the way in that stays entirely inside the United States, and it is the reason the peak costs three or four days.\n\nFrom the highway pullout above the dam, a short spur trail drops to the lake shore. Cross the lake by water taxi, or paddle a private or inflatable boat portaged down that spur, and land near the head of the lake where the Lightning Creek trail starts at about 1,500 ft. Parties commonly start walking around four in the morning to leave daylight for the day above.\n\nAfter a couple of hours watch for the junction with the old, no-longer-maintained Freezeout Creek trail. The stretch immediately above that junction is the hardest navigation of the entire approach: steep rock and alder slopes that want a rising, diagonal line before you regain forest and real tread. Intermittent orange flagging marks it and is worth hunting for.\n\nBack in the trees the tread improves up to a cabin at about 3,600 ft, sited just after a creek crossing — bunks, a wood stove and a logbook, and a useful emergency shelter. About a quarter mile past it, cross the creek again and pass through an old burn. Tread mostly disappears around 4,200 ft.\n\nThe lower part of this corridor is national recreation area and needs a park backcountry permit for camping; above the boundary it is wilderness with a free self-issue permit.",
+        "baseFinding": "There is no rock start to find on this route. What you are finding is the right GULLY out of a basin that offers several, and getting that wrong is how parties get cliffed out.\n\nAbove where the tread dies, climb the Freezeout drainage and work up steep heather, talus and scree toward the NOTCH ON THE RIDGE AT ABOUT 7,600 FT. That notch is the target and it is the only feature in the upper basin worth navigating to. Cross to the east side of the creek at roughly 5,000 ft on the way up.\n\nTHE PHYSICAL TESTS ON THE CLIMB ITSELF ARE ROCK QUALITY AND TERRAIN GRADE, in that order. This is granite and the rock is genuinely good — clean, coarse and solid, the sort people compare to the best cragging ranges. It is mostly class 2 with short class 3 steps, and the crux is a steeper band with KRUMMHOLZ AND BLUFFS where you are pulling on vegetation-covered rock. If you are roping up, you are off route.\n\nTHE NEGATIVE MARKER IS ENORMOUS AND UNMISTAKABLE. This peak's north side is a fourteen-hundred-foot wall of granite ribs, gullies and couloirs holding ice or the remains of it, with a glacier at its foot. If you are looking up at that, you are on the wrong side of the mountain entirely and you are under the technical routes. The scramble never sees the north face.\n\nMARK YOUR EXACT ASCENT GULLY BEFORE YOU LEAVE IT, and this is the single most important sentence here. The upper basin holds several gullies and chutes that look alike from above, and dropping into the wrong one on descent risks cliffing out on bluffs well above the creek. Do not improvise a shortcut down. Reverse exactly what you came up.\n\nNear the summit, watch teetering blocks, and expect the final ground to be exposed and windy.",
+        "hazards": [
+          "Several similar-looking gullies in the upper basin; the wrong one cliffs out above the creek",
+          "The steep rock-and-alder section above the trail junction is the hardest navigation of the approach",
+          "Krummholz and vegetation-covered rock on the crux band",
+          "Teetering blocks near the summit",
+          "Days long enough that parties routinely finish the descent in the dark, with a boat pickup to make"
+        ]
+      },
+      {
+        "name": "The crest trail north from Harts Pass to Castle Pass",
+        "season": "Late July through September, once the high road is open and the traverse is clear of snow",
+        "notes": "The third way in, and the one that trades a boat for a great deal of walking. The high pass road climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approaching seventeen percent on the upper ramps. Trailers are prohibited and wide vehicles are strongly discouraged. It opens with the snowmelt, typically early to mid July, and closes with the first serious autumn storms.\n\nFrom the pass, the crest trail runs north through country that starts near 6,200 ft and barely drops below 5,000 ft, over a high pass and on to Castle Pass, where it meets the Boundary Trail running east across the Pasayten and west toward the lake. Camps along the way are open and windy; pitch behind timber rather than in the meadow.\n\nThis stays inside the United States throughout, and it needs no boat.",
+        "baseFinding": "From Castle Pass the peak is immediately to the north-east, and what you are looking for is the head of the drainage on its southern flank rather than a base of rock.\n\nDrop off the pass into the head of the creek basin on the peak's south side and work up it. The scramble ground is the same ground the eastern approach reaches from the other direction: heather, talus and scree leading to the NOTCH ON THE RIDGE AT ABOUT 7,600 FT, then class 2 granite with short class 3 steps to the summit.\n\nTHE CONFIRMING TEST IS THE ROCK. Once you are on it, the granite is clean, coarse and solid, and the difficulty stays at scrambling grade with one steeper krummholz-and-bluff band as the crux. Roped climbing means you are not on the standard route.\n\nNEGATIVE MARKER, and it is the whole mountain: the north side is a fourteen-hundred-foot granite wall above a glacier. From anywhere on this approach you should be looking at broken scrambling ground, not at a wall. If a wall is above you, you have gone round the mountain.\n\nSECOND NEGATIVE MARKER, and it is a legal one rather than a navigational one. The summit sits about a mile south of the international boundary and the boundary clearing is visible from high on the peak. Do not follow ground north from the summit or from the basin. Crossing on foot away from a port of entry is not a lawful crossing, the corridor is patrolled, and this is the one mistake here that ends with more than a long walk.\n\nOn descent, mark your ascent gully. The basin holds several that look alike from above and the wrong one cliffs out.",
+        "hazards": [
+          "A long unpaved mountain road with 17 percent grades, no passing room and an unguarded drop",
+          "The road opens late and closes with the first autumn storms",
+          "Very long approach on foot with exposed, windy high camps",
+          "The international boundary lies about a mile north of the summit and crossing it here is unlawful",
+          "Similar-looking descent gullies that cliff out above the creek"
+        ]
+      }
+    ]
+  },
+  "wa_castle_peak_pasayten_south_route": {
+    "area": "wa_castle_peak_pasayten",
+    "_why": "The row stores only the approach that crosses the international boundary cross-country, which its own access notes say is not a lawful crossing; the same basin is reachable from inside the United States and that needs saying.",
+    "_sources": [
+      "Route row's own approach, beta and descent columns; independent area summary confirming the peak is reached from the provincial park to the north, the crest trail to the west, or Freezeout Creek to the east, and that the wholly-US option is the slow one"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "The crest trail north from Harts Pass to Castle Pass, then the head of Castle Creek",
+        "season": "Roughly late June through September, once the basin brush and wetlands are passable and the high road is open",
+        "notes": "READ THIS FIRST. The line most often written up for this route walks in from the provincial park to the north and crosses the international boundary cross-country in the clearing south of the creek. That is not a lawful crossing. Away from a port of entry it requires prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over.\n\nThe way that stays inside the United States is the crest trail. The high pass road climbs about twenty miles of unpaved single lane from Mazama, single track with pullouts rather than passing room, a wall on one side and an unguarded drop on the other, and grades near seventeen percent high up. Trailers are prohibited. It opens with the snowmelt, usually early to mid July.\n\nFrom the pass the crest trail runs north for a long way over high, open country to Castle Pass, where the Boundary Trail crosses. Castle Creek heads right there, so the pass puts you at the top of the basin this route climbs from.\n\nThe other wholly-US option is the eastern one — a boat across the lake and the abandoned creek trail — but that lands you on the far side of the mountain and serves the standard scramble rather than this line.",
+        "baseFinding": "This route works from a camp in the basin at about 5,500 ft, so the first thing to find is the basin floor rather than any rock. From the pass, drop into the head of the creek and follow it down and out into the open basin below the peak's south side. The lower ground here is alder, brush and wetland openings; the walking improves as you gain the basin proper.\n\nFROM CAMP THE ROUTE IS A SEQUENCE OF TWO GULLIES AND A NOTCH, and each hands off to the next. First, the WIDE GULLY ON THE SOUTH SIDE — the broad one, not a narrow chute. Take it to roughly 6,800 ft. Second, at about that height, move INTO THE NORTH-EAST GULLY and aim for a NOTCH at around 7,400 ft. Third, from the notch, cross granite slabs, boulders and lingering snow patches south of the top, and finish with a short scramble to the true summit.\n\nTHE PHYSICAL TEST THROUGHOUT IS THAT NOTHING IS STEEP. Granite slabs, boulders and snow patches are the correct texture. If a rope comes out of the pack for anything other than a snow patch, you are not on this line.\n\nNEGATIVE MARKER, and it is the whole north half of the mountain: the north face is a fourteen-hundred-foot wall of granite ribs, gullies and couloirs above a glacier, carrying several hard routes. If that is above you, you have walked round the peak and you are under the technical climbing.\n\nSECOND NEGATIVE MARKER, on the boundary. The summit sits about a mile south of the international line and the boundary clearing is a visible feature from up here. Do not use it as a route, and do not follow ground north out of the basin.\n\nDescent reverses everything: back through the notch, down the north-east gully, then the wide south gully to camp.",
+        "hazards": [
+          "The commonly published approach crosses the international boundary cross-country and is not a lawful crossing",
+          "Alder, brush and wetland openings in the lower basin",
+          "Two gullies handed off to each other with a notch between; the transition at about 6,800 ft is the routefinding crux",
+          "Snow patches persist near the summit well into the season",
+          "Extremely remote from any US trailhead; the crest-trail approach is a multi-day walk each way"
+        ]
+      }
+    ]
+  },
+  "wa_castle_peak_pasayten_the_drawbridge": {
+    "area": "wa_castle_peak_pasayten",
+    "_why": "One of at least four lines on a fourteen-hundred-foot wall, and the only thing that separates it from its neighbours at the bottom is where the summit sits relative to your belay.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; the route's own published first-ascent report placing it on the central north buttress directly below the summit and noting at least four other routes on the face"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+        "season": "Roughly late June through September, once the approach glacier and moraine are passable",
+        "notes": "This is the approach that stays inside the United States, and it is a multi-day trudge rather than a walk.\n\nFrom the highway pullout above the dam a short spur trail drops to the lake shore. Cross by water taxi or by a boat you portage down that spur, and land near the head of the lake where the Lightning Creek trail begins. Follow it, then pick up the abandoned and increasingly brushy Freezeout Creek trail, whose worst navigation is the steep rock-and-alder diagonal immediately above the junction — intermittent orange flagging marks it. The cabin at about 3,600 ft is a good waypoint and an emergency shelter; tread mostly dies around 4,200 ft.\n\nThe lower corridor is national recreation area and camping there needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, cross round to the north side and onto the glacier at the foot of the wall. The glacier itself is mellow and allows easy travel.",
+        "baseFinding": "The north face is a wall of granite ribs, gullies and couloirs about fourteen hundred feet high, holding ice or the remnants of it, with a glacier at its foot. It carries several routes and they are not marked, so identification is by POSITION AGAINST THE SUMMIT and nothing else.\n\nTHE TEST IS SIMPLE AND IT IS THE WHOLE IDENTIFICATION: this route takes the CENTRAL BUTTRESS, and that buttress sits DIRECTLY BELOW THE SUMMIT. Stand back on the glacier, find the summit on the skyline, and drop a plumb line from it. The buttress under that line is this route. If the summit is off to one side from where you are standing, you are under a different climb.\n\nGetting onto it is the second problem. Expect an awkward BERGSCHRUND OR MOAT where the glacier meets the rock, and start with easy fifth-class ground whose purpose is to get out of the ROCKFALL LINE rather than to climb anything — that first pitch is a position move, not a feature.\n\nCONFIRM ON PITCH TWO, because it arrives fast and it is unmistakable: the crux comes almost immediately, mid-fifth-class face climbing hard enough that the first ascent used a short aid move to pass it. A wall this size whose hardest pitch is the second one is unusual, and it is the strongest evidence you are on line.\n\nThe middle of the route then traverses out of a dihedral on a tricky flake and takes a roof on the LEFT via cracks and stemming, over slabs that needed heavy cleaning of dirt and moss. After about five pitches the route gains the ridge proper and the rock quality improves markedly, with one short harder hand-and-fist crack. The final technical pitch picks its way around teetering blocks, and then moderate snow slopes run the last four hundred feet to the top.\n\nNEGATIVE MARKER: if your line starts in a blocky set of face holds beside a gully or chimney at the LEFT EDGE of the buttress, you are on the neighbouring route at the buttress's left margin, and higher up it follows a distinctive yellow quartz dyke that this route does not touch.\n\nDescent is not the climb reversed. Walk off the south side and the east ridge back toward camp.",
+        "hazards": [
+          "Several unmarked routes on one fourteen-hundred-foot wall; position under the summit is the only identifier",
+          "Awkward bergschrund or moat at the start of the climbing",
+          "Rockfall on the lower wall; the first pitch exists mainly to escape the fall line",
+          "Dirt and moss-filled cracks through the middle section and teetering blocks near the top",
+          "Multi-day approach with no cell coverage and an extremely slow retreat"
+        ]
+      },
+      {
+        "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+        "season": "Roughly late June through September",
+        "notes": "READ THE LEGAL POINT FIRST. This line walks in from the provincial park on the northern side and then crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it requires prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is recorded here because it is the line the first ascent used and it is what most written accounts describe, not because it is a recommendation.\n\nAs described, it starts from the lake in the provincial park, climbs up and over Frosty Mountain, descends into the next creek basin to the south, traverses to the divide, and drops into the Crow Creek drainage below the peak's north face. The first ascent camped on the only dry spot on the ridge, roughly two-thirds of the way down toward the glacier.\n\nThe wholly lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west.",
+        "baseFinding": "However you reach it, the glacier at the foot of the wall is the same and the identification is the same.\n\nCome down the ridge from camp to the glacier, which is mellow enough to walk. Then stand back far enough to see the whole face at once — this is the step the approach itself makes easy from this side, because you descend toward the wall rather than arriving under it, and a descending approach gives you the one view that settles the route.\n\nFROM THAT VIEW, DROP A PLUMB LINE FROM THE SUMMIT. The buttress under it is this route. The face carries several other lines and none is marked; being under the summit is the identification.\n\nWatch for an awkward BERGSCHRUND OR MOAT where the glacier meets the rock. The first pitch is easy fifth-class ground taken to escape the ROCKFALL LINE rather than for the climbing, and the crux arrives at once on pitch two — face climbing hard enough that a short aid move was used on the first ascent.\n\nNEGATIVE MARKER: a start in blocky face holds beside a gully or chimney at the LEFT EDGE of the buttress is the neighbouring route, which follows a yellow quartz dyke higher up.\n\nSecond negative marker, and it applies from the moment you leave camp: the boundary clearing is a visible cut line on this ground and it is not a route. The summit sits about a mile south of it.\n\nDescent is the south side and the east ridge, unroped third and fourth-class ground from the top of the technical climbing, back toward camp.",
+        "hazards": [
+          "The described approach crosses the international boundary cross-country and is not a lawful crossing",
+          "Cross-country travel over a mountain and two drainage divides with one dry camp on the ridge",
+          "Awkward bergschrund or moat at the base of the wall",
+          "Rockfall on the lower face",
+          "Retreat from anywhere on this trip is measured in days"
+        ]
+      }
+    ]
+  },
+  "wa_north_face_left_buttress": {
+    "area": "wa_castle_peak_pasayten",
+    "_why": "Named for a side of a mountain that carries at least four routes, on the margin of the same buttress its neighbour climbs directly; without a feature test a party ties in under the wrong line.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail naming the blocky face holds left of the gully or chimney on the left edge of the buttress and the yellow quartz dyke higher up; independent area summary confirming several lines on the face and both approaches"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+        "season": "Summer; the documented ascent was made in early August",
+        "notes": "The approach that stays inside the United States, and much the longer of the two.\n\nFrom the highway pullout above the dam, a spur trail drops to the lake shore; cross by water taxi or by a boat portaged down it, and land near the head of the lake. Follow the Lightning Creek trail, then the abandoned and increasingly brushy Freezeout Creek trail. The steep rock-and-alder diagonal immediately above the trail junction is the hardest navigation on the whole walk; look for intermittent orange flagging. The cabin at about 3,600 ft is a waypoint and an emergency shelter, and tread mostly disappears around 4,200 ft.\n\nCamping in the lower corridor needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, work round to the north side and onto the glacier at the foot of the wall, which is mellow enough for easy travel.",
+        "baseFinding": "The face is about fourteen hundred feet of granite ribs, gullies and couloirs above a glacier and it carries several routes with nothing marked. Do not identify by name; identify by feature.\n\nFIRST, PLACE THE CENTRAL BUTTRESS. Stand back on the glacier and find the summit, then look at the buttress directly beneath it — that is the neighbouring route, and this line is NOT on it. This route takes the LEFT MARGIN of that buttress system, so you want to be off to the left of the plumb line from the summit.\n\nSECOND, FIND THE GULLY OR CHIMNEY AT THE BUTTRESS'S LEFT EDGE. The start is in the BLOCKY LINE OF FACE HOLDS JUST LEFT OF IT. Blocky face holds, immediately left of a gully or chimney, at the left edge of the buttress: that is the whole identification at the ground. The first pitch is long, mostly low fifth class, with a wide crack near its end.\n\nTHIRD, AND THIS IS THE CONFIRMATION HIGHER UP THAT NOTHING ELSE ON THE FACE GIVES YOU: this route follows a DISTINCTIVE YELLOW QUARTZ DYKE up the wall to avoid the dirtier rock either side of it. A yellow band running up the granite is not a subtle feature. If you never meet one, you are on a different climb.\n\nWatch for an awkward BERGSCHRUND OR MOAT where the glacier meets the rock.\n\nNEGATIVE MARKERS, and they matter because two of the neighbours are hard: if the summit is directly overhead from your belay and your second pitch is desperate face climbing wanting an aid move, you are on the central buttress line. And the face's original route and at least two others also exist here, so the honest rule is that anything without the yellow dyke above it is not this.\n\nDescent is not the route reversed and not a rappel: take the east ridge from the top to an obvious col, then a snow finger back down toward the approach glacier and basin.",
+        "hazards": [
+          "At least four unmarked lines on one wall, two of them starting close together on the same buttress",
+          "Awkward bergschrund or moat at the base of the climbing",
+          "Roughly half the pitches are at the upper end of the grade, with the crux on a corner low down",
+          "Descent by the east ridge and a snow finger, not by reversing the climb",
+          "Multi-day approach and a retreat measured in days"
+        ]
+      },
+      {
+        "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+        "season": "Summer, once the divide traverse is clear enough to travel",
+        "notes": "READ THE LEGAL POINT FIRST. This approach walks in from the provincial park on the northern side and crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it needs prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is recorded because it is the commonly published line and the shorter of the two, not as a recommendation.\n\nAs described, it takes the old trail along the creek to the boundary, then leaves the trail and travels cross-country south past Frosty Mountain, descending through the next creek basin and over the divide into the drainage below the peak's north face, finishing at the toe of the glacier.\n\nThe lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west, both of which are considerably longer.",
+        "baseFinding": "Whichever way you arrive, the glacier is the same and so is the identification, and this side has one advantage worth using: you come DOWN toward the wall, which gives you the whole face in one view before you are under it. Take that view rather than sorting the routes out from the bergschrund.\n\nFrom back on the glacier, find the summit and note the buttress directly under it — that is the neighbouring line and it is not this one. This route is on the LEFT MARGIN of the same buttress system.\n\nThe ground marker is a GULLY OR CHIMNEY at the buttress's left edge, with the route starting in the BLOCKY LINE OF FACE HOLDS JUST LEFT OF IT. The confirmation above is a YELLOW QUARTZ DYKE, which the line follows deliberately to stay on clean rock and away from the dirtier granite either side. Yellow band, left margin, blocky start beside a chimney: those three together are the route.\n\nExpect an awkward bergschrund or moat at the transition from ice to rock.\n\nNEGATIVE MARKERS. Directly under the summit with a very hard second pitch means the central buttress line. No yellow dyke anywhere above you means one of the other lines on this face, of which there are several and none is marked.\n\nSecond negative marker and it is not about climbing: the boundary clearing is a visible cut line across this ground. It is not a route and it is not a shortcut.\n\nDescent is the east ridge to an obvious col and then a snow finger back to the glacier and basin.",
+        "hazards": [
+          "The described approach crosses the international boundary cross-country and is not a lawful crossing",
+          "Cross-country travel over a mountain and a drainage divide to reach the glacier",
+          "Awkward bergschrund or moat at the base of the wall",
+          "Several unmarked routes on one face, two of them on the same buttress",
+          "Descent by the east ridge and a snow finger rather than the way you came up"
+        ]
+      }
+    ]
+  },
+  "wa_west_ridge_2": {
+    "area": "wa_paisano_pinnacle",
+    "_why": "One of two routes on a pinnacle inside a cluster of spires that all share one climbers' trail and one col; the two lines are reached by leaving that trail at different heights and neither leaves it at a marked point.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; independent trip accounts describing the contour right off the trail at the bench toward Paisano's lower section, the spring in the dry sandy gully, and a chockstone marking the start of the West Ridge"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Unsigned highway pullout east of Washington Pass, the timbered rib to the bench, then the contour right",
+        "season": "Roughly June through September; the approach holds snow into June and access disappears when the highway closes",
+        "notes": "Park in the broad unsigned pullout on the highway about four miles east of Washington Pass, at roughly 4,250 to 4,300 ft. It is signed for the mountain above rather than for the spires, and nothing marks the climbers' path.\n\nThe path drops down the talus and into the forest, crosses Early Winters Creek on a log, and then climbs steeply up the timbered rib on the LEFT — the north side — of the creek that drains the col above. Two hours or so of steep walking puts you on the basin bench at about 6,500 ft. There is a spring near the bench camp and it is the last reliable water.\n\nFrom the bench the trail continues another three-quarters of an hour to the col at about 7,720 ft, which is the hub for the whole cluster. This route does not need to go that far.\n\nThe pullout doubles as the overnight for most parties. Nothing there is developed — no toilet, no table, no water — and highway noise carries.",
+        "baseFinding": "THIS ROUTE STARTS LOWER THAN EVERYTHING ELSE IN THE CLUSTER, and that is the fact to hold onto. The spires above the col get climbed from the col; this one does not.\n\nLeave the col trail at the BENCH, around 6,600 ft, and CONTOUR RIGHT — south — around the bench toward the pinnacle's lower section. You are aiming for the toe of the ridge rather than for anything above you. There is a DRY SANDY GULLY on this contour with a SPRING in it, which is a useful confirmation that you are on the right ground and the last water before the climb.\n\nThe start itself is marked by a CHOCKSTONE — a jammed block at the foot of the ridge. That chockstone is the identification, and it is the reason accounts of this route keep saying to pay attention to the topo: without it, the lower ridge offers several plausible ways on and parties have burned an hour sorting it out.\n\nIf you come at it from the col instead, drop about two hundred feet of mostly fourth-class rock to sandy ledges just left of the pinnacle's top and work down and along; that reaches the same ground from above.\n\nCONFIRM ON THE CLIMB. Seven or eight pitches of sustained mid-fifth-class hand and finger cracks along the ridge crest, with big comfortable belay ledges. The technical crux is about two-thirds of the way up on a short section of steep TWIN FINGER CRACKS. The last pitch is exposed, runout face climbing that most parties call the real crux for reasons that have nothing to do with the grade.\n\nNEGATIVE MARKER: if you walked all the way to the col, then dropped a few hundred feet along the pinnacle's flank onto a third-class LEDGE SYSTEM and walked it rightward to a steep clean corner, you are at the other route on this pinnacle, several number grades harder. A ledge system leading to a corner is not this climb; a chockstone at the toe of a ridge is.\n\nSECOND NEGATIVE MARKER: the neighbouring spire's north face is the usual link-up partner and its routes start from the col itself. Being at the col with rock above you is not evidence you are at this route.\n\nDescent is a few hundred feet of downclimbing, then two rappels of about thirty and twenty metres into the gully beneath the col, downclimbing between the anchors, then the trail back past the bench.",
+        "hazards": [
+          "Unsigned pullout and unmarked climbers' path with no trail signs anywhere",
+          "The start is a single jammed block; the lower ridge offers several plausible wrong starts",
+          "The final pitch is runout exposed face climbing with marginal protection",
+          "Rope drag on the long crest pitch if slings are not managed",
+          "Early Winters Creek is crossed on a log and is worse in high water"
+        ]
+      }
+    ]
+  },
+  "wa_rampage": {
+    "area": "wa_paisano_pinnacle",
+    "_why": "Reached by leaving the shared col trail across a loose slope onto a ledge system, then walking that ledge to its far end; every part of that is unmarked and its neighbour on the same pinnacle starts hundreds of feet lower.",
+    "_sources": [
+      "Route row's own approach, beta, descent_text and pitch_detail; independent accounts describing the cut right across a loose slope to the left end of an obvious ledge system, following it right to the base of the corner, and reaching it by descending about 300 ft from the col"
+    ],
+    "_confidence": "corroborated",
+    "approach_variants": [
+      {
+        "name": "Unsigned highway pullout east of Washington Pass, the timbered rib, then the ledge system below the col",
+        "season": "Roughly late June through September; the approach holds snow into June and access ends with the highway closure",
+        "notes": "Park in the broad unsigned pullout on the highway about four miles east of Washington Pass, at roughly 4,250 to 4,300 ft. It is signed for the mountain rather than for the spires, and the climbers' path itself is unmarked.\n\nGo down the talus and into the forest, cross Early Winters Creek on a log, and climb the steep timbered rib on the LEFT, the north side, of the creek draining the col. About two hours brings you to the basin bench at roughly 6,500 ft, where there is a spring — the last reliable water.\n\nFrom the bench another three-quarters of an hour or so gains the col at about 7,720 ft. Unlike its neighbour on the same pinnacle, this route wants you high, so keep going up.\n\nThe pullout is where most parties sleep. It is undeveloped and the highway is audible all night.",
+        "baseFinding": "THIS ROUTE IS REACHED FROM HIGH, NOT FROM LOW, and that single sentence separates it from the other line on this pinnacle.\n\nThere are two ways onto its ledge, described from opposite directions and they meet in the same place. Either cut RIGHT off the col trail before topping out, crossing a VERY LOOSE SLOPE to gain the LEFT END of an obvious LEDGE SYSTEM; or go all the way to the col and DESCEND ABOUT THREE HUNDRED FEET along the pinnacle's flank to the same ledge. Both are quick.\n\nTHEN WALK THE LEDGE RIGHTWARD TO ITS FAR END. This is the step people skip. The ledge is third class and it goes further than you expect; the route does not start where you step onto it. Keep going until the ledge runs out.\n\nAT THE FAR RIGHT END OF THE LEDGE, A STEEP CLEAN CORNER RISES STRAIGHT OFF IT. That corner is the route. It is a big obvious corner system on the right side of the pinnacle's main face, and the climbing in it is continuous, clean and steep — the physical test is that the rock quality is conspicuously better than the loose slope you crossed to get there.\n\nCONFIRM ON THE CLIMB. Pitch one is moderate with a chimney-behind-a-block move. Pitch two is the standout: a steep continuous corner to a TRIANGULAR ROOF, passed on finger locks. Pitch three is the hardest, off a DETACHED FLAKE into steep flaring finger and hand jams on the left wall. Pitch four is corner climbing into an offwidth section. A triangular roof on the second pitch and a detached flake on the third are the two features that settle it.\n\nNEGATIVE MARKER: if you left the trail down at the BENCH around 6,600 ft, contoured right past a spring in a dry sandy gully, and found a CHOCKSTONE at the toe of a ridge, you are at the other route on this pinnacle — several number grades easier and a different day. A chockstone at a ridge toe is not this climb; a corner at the far right end of a ledge is.\n\nSECOND NEGATIVE MARKER: the neighbouring spire's routes start from the col itself and are the usual link-up partner. Standing at the col with rock above you is not evidence you are here; you still have to lose height.\n\nAt the top, either scramble third-class ground north-east toward the neighbouring spire's north face to continue a link-up, downclimbing over precariously stacked blocks and flakes, or make two thirty-metre rappels down the gully back to the col.",
+        "hazards": [
+          "A very loose slope is crossed to gain the approach ledge, above the col trail",
+          "The route starts at the far right end of the ledge, not where you step onto it",
+          "Precariously stacked blocks and flakes on the scramble toward the neighbouring spire",
+          "Unsigned pullout and unmarked climbers' path",
+          "Early Winters Creek is crossed on a log and is worse in high water"
+        ]
+      }
+    ]
+  },
+  "wa_playing_not_spraying": {
+    "area": "wa_silver_horn_the",
+    "_why": "The row stores two different approaches to this formation and they serve opposite sides of it; the face this route is on is reached from the south, and there are two long routes on that face which share a summit.",
+    "_sources": [
+      "Route row's own beta, descent_text and the trailhead waypoint note describing the valley trail and the creek draining the south side; independent area description giving the same south-side access and the meadow camp; sibling route row read against it"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Cedar Creek trail from the highway, then the creek draining the south side",
+        "season": "Roughly mid-June through late September; July and August are the driest and most reliable",
+        "notes": "THE APPROACH THAT MATTERS HERE IS THE SOUTHERN ONE, AND IT IS NOT THE SPIRES TRAIL. The climbers' path from the unsigned pullout further west serves the spires and the col on the other side of the crest. It does not put you under this face.\n\nFor the south face, walk the Cedar Creek trail from its own trailhead off the highway. After roughly five miles, turn off to the RIGHT below the old burn, where a rough path follows the RIGHT-HAND side of the creek that drains the south side of the formation.\n\nThere are good meadows for camping at about 6,200 ft. This is a rarely visited corner and there is no established climbers' camp, no fixed gear on the approach and very little traffic — expect to see nobody.\n\nA parking pass or day fee covers the trailhead. This is national forest, so there is no permit system and no quota, and the general dispersed-camping rules apply.",
+        "baseFinding": "The face is CLEAN WHITE GRANITE, which is the first confirmation and a good one — it is visibly paler than the rock either side and it is why the formation gets climbed at all. Follow the creek up to the meadows and then to the foot of that white wall. Two long routes share it and they share a summit, so the identification has to be done at the ground and re-checked on the climb.\n\nTHE START IS A FLAKE, AND IT IS A BIG ONE. This route begins with a LAYBACK OFF A LARGE CLEAN FLAKE that leads into a LONG LEFT-FACING CORNER SYSTEM carrying finger cracks. Large detached flake at the bottom, left-facing corner above it: that pairing is the whole identification and there is nothing else on this face like it.\n\nCONFIRM WITH THE ROOFS, IN ORDER. Above the corner system the route crosses RIGHT beneath a ROOF into a SPLITTER CRACK that reaches a ledge partway up the face. Higher, a SECOND ROOF leads to a hand crack and then stemming corners with a hard exit. Two roofs, the first crossed rightward and the second climbed through, is the sequence.\n\nTHE SUMMIT PITCH IS THE CLEANEST TEST OF ALL, and it is worth knowing before you leave the ledge: this route tops out THROUGH A DEEP SUMMIT CHIMNEY. You finish inside the chimney. The other long route on this face finishes on blocky ground JUST RIGHT OF that chimney and never enters it. If you are stemming a deep slot to the top, you are on this route; if you are scrambling blocks beside one, you are on the neighbour.\n\nNEGATIVE MARKER at the start to match it: if you began on the RIGHT-HAND side of the face on flakes, corners and splitters and arrived at a BROAD LEDGE running most of the way across the face at about half height, you are on the neighbouring line. This route has no such crossing ledge low down; its mid-height ledge is reached from a splitter after a rightward move under a roof.\n\nProtection throughout is cams and nuts to about three inches. Descent is a series of rappels down the south-east side; a seventy-metre rope is the standard, fixed anchors are sparse, and you should expect to build some — carry extra webbing.",
+        "hazards": [
+          "The row's own stored approach describes the spires trail on the far side of the crest; use the southern valley approach for this face",
+          "Rarely climbed, so there is no traffic, no chalk and essentially no current conditions information",
+          "Rappel anchors on the descent are sparse and some must be built; carry extra webbing",
+          "Two long routes share this face and its summit",
+          "Remote enough that a retreat from high on the face is slow"
+        ]
+      }
+    ]
+  },
+  "wa_the_chalice": {
+    "area": "wa_silver_horn_the",
+    "_why": "Shares a face, a summit and a mid-face ledge with its neighbour; the row also carries two conflicting approaches, only one of which reaches this side of the formation.",
+    "_sources": [
+      "Route row's own beta and the trailhead waypoint note describing the valley trail and the creek draining the south side; independent area description giving the same south-side access, the turn below the burn and the meadow camp; sibling route row read against it"
+    ],
+    "_confidence": "thin",
+    "approach_variants": [
+      {
+        "name": "Cedar Creek trail from the highway, then the creek draining the south side",
+        "season": "Roughly mid-June through late September; July and August are typically driest",
+        "notes": "THE SPIRES TRAIL IS THE WRONG APPROACH FOR THIS FACE. The unsigned pullout further west and the col above it serve the spires on the other side of the crest, not the southern wall this route is on.\n\nTake the Cedar Creek trail from its own trailhead off the highway. At roughly five miles, turn off to the RIGHT below the old burn; a rough path then follows the RIGHT-HAND side of the creek draining the south side of the formation. Meadows at about 6,200 ft give good camping.\n\nThis is a quiet corner by the standards of this highway. There is no established climbers' camp, no fixed approach gear and effectively no traffic.\n\nA parking pass or day fee covers the trailhead; there is no permit system and no quota on national forest ground here.",
+        "baseFinding": "The wall is CLEAN WHITE GRANITE and it is visibly paler than what surrounds it, which is the first check that you are under the right formation. Follow the creek to the meadows and then up to the foot of it.\n\nTHIS ROUTE IS THE RIGHT-HAND LINE. Start on the RIGHT SIDE of the south face, on flakes, corners and splitters. Its neighbour begins with a layback off a LARGE CLEAN FLAKE into a long LEFT-FACING corner system; if that is what is above you, walk right.\n\nTHE DEFINING FEATURE IS A BROAD LEDGE AT HALF HEIGHT, and it is the strongest thing this route has. Roughly halfway up the face the climbing arrives at a wide ledge that runs across the wall. That ledge is the route's hinge: from it you WALK LEFTWARD before starting the upper half. A route that reaches a broad crossing ledge and then requires you to walk left along it is this one.\n\nCONFIRM ON THE UPPER FACE. The first pitch above the ledge heads for the LEFT SIDE OF THE MOST PROMINENT ARETE OR PILLAR in the middle of the upper wall. That arete is the biggest feature up there and being on its left is the check. Two more pitches, then the line trends RIGHTWARD to the summit.\n\nTHE SUMMIT PITCH SEPARATES THE TWO ROUTES ABSOLUTELY. This one finishes on BLOCKY GROUND JUST RIGHT OF A PROMINENT CHIMNEY. It does not go into the chimney. The neighbouring route tops out THROUGH a deep summit chimney. So: blocky ground beside a slot means this route; stemming up inside the slot means you have crossed onto the other line.\n\nNEGATIVE MARKER lower down, since the two lines are close: if there was no broad crossing ledge and instead you moved rightward under a roof into a splitter to reach a smaller ledge, you are on the neighbour.\n\nDescent is not separately documented for this line. Because it shares the summit and the mid-face ledge with its neighbour, parties use that route's rappels down the south-east side: a seventy-metre rope, sparse fixed anchors, and enough webbing to build your own. Treat that as an inference rather than a described descent and go up prepared to make anchors.",
+        "hazards": [
+          "The row's own stored approach describes the spires trail on the far side of the crest; use the southern valley approach for this face",
+          "Its own descent is not separately documented; the shared rappel line is an inference from the shared summit",
+          "Rappel anchors are sparse and some must be built; carry extra webbing",
+          "Rarely climbed, so there is no chalk, no traffic and no current conditions information",
+          "Two long routes on one face that share a mid-height ledge and a summit"
+        ]
+      }
+    ]
+  }
+}

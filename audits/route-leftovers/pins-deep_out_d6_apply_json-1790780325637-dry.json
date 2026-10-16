@@ -1,0 +1,1876 @@
+{
+ "applied": [
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "op": "move_pin",
+   "index": 4,
+   "name": "Red Ledge",
+   "moved_km": 3.49,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "op": "remove_pin",
+   "index": 3,
+   "name": "Brushy ridge section, 4,500-5,200 ft",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "op": "remove_pin",
+   "index": 2,
+   "name": "Deadfall zone below 2,600 ft",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "op": "move_pin",
+   "index": 3,
+   "name": "Upper meadow camp",
+   "moved_km": 1.66,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "op": "move_pin",
+   "index": 1,
+   "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+   "moved_km": 1.92,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "op": "move_pin",
+   "index": 2,
+   "name": "Green Creek crossing",
+   "moved_km": 1.61,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "op": "move_pin",
+   "index": 4,
+   "name": "West ridge scramble section",
+   "moved_km": 0.44,
+   "gpx_vertices_carried": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "waypoints": [
+    {
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "elev": 3660,
+     "name": "Cascade Pass Trailhead",
+     "note": "End of Cascade River Road, 23.1 mi from Marblemount; NPS backcountry permit required for overnight stays, self-issue day-use is free.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Cascade River Road east from Marblemount roughly 23 miles to its end at the Cascade Pass Trailhead at 3,660 ft — paved for about the first 10 miles, then good gravel the rest of the way. Check the road first: in some seasons, including 2026, vehicles are stopped at the Eldorado gate at mile 20 and the last 3 miles and 1,500 ft to the trailhead must be walked or biked. There is a parking area and a vault toilet at the road end. Day use is free and self-issue; a North Cascades backcountry permit is required for overnight camps, released seasonally through recreation.gov, and the camps along this traverse fill fast in peak season. Because the traverse exits at a different trailhead on the Suiattle River Road, most parties pre-arrange a car shuttle rather than leaving a vehicle here."
+    },
+    {
+     "lat": 48.4676181,
+     "lng": -121.0590796,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "Trail tread ends at the pass; leave the maintained trail here and head south/southeast onto the Ptarmigan Traverse cross-country route.",
+     "type": "Junction",
+     "distMi": 3.7,
+     "directions": "The trail switchbacks around thirty times up a forested rib, gaining roughly 1,400 ft in the first two miles, then eases into a long ascending traverse through meadow and talus to the pass. Figure two and a half to three and a half hours. Snowfields can lie across the traverse well into summer."
+    },
+    {
+     "lat": 48.4485,
+     "lng": -121.0529,
+     "elev": 6903,
+     "name": "Cache Col",
+     "note": "Gap between Magic Mountain and Mix-up Peak at the head of Cache Glacier; gain it via a steep snow/scree gully, the crux route-finding point of day one.",
+     "type": "Junction",
+     "distMi": 6.5,
+     "directions": "Leave the trail at the pass and head south and east, traversing and climbing across the Mixup arm on boot path, talus and snow bands. Gain the shoulder, follow the snow ramp up, then drop onto the Cache Glacier and walk it to the col at its head. The step onto the glacier is short but steep and can be corniced, and an axe and crampons are normal here into midsummer."
+    },
+    {
+     "lat": 48.4386686,
+     "lng": -121.0458149,
+     "elev": 6119,
+     "name": "Kool-Aid Lake",
+     "note": "Small tarn on a bench south of Cache Col, the standard first-night bivy/base camp for the traverse; exposed, fog often wafts up from the valley below.",
+     "type": "Campsite",
+     "distMi": 7.7,
+     "directions": "Descend the far side of the col — a steep snowfield that usually needs an axe and crampons well into midsummer — and lose several hundred feet to the bench holding the tarn. The runout below the snow is rocky, so this is not a place to glissade blind into fog."
+    },
+    {
+     "lat": 48.400043,
+     "lng": -121.043071,
+     "elev": 6400,
+     "name": "Red Ledge",
+     "note": "Narrow, exposed rock ledge cutting west from Art's Knoll that bypasses cliffs south of Kool-Aid Lake; can hold an open moat, verglas, or fresh snow that makes the traverse 'spicy' even in summer.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "Climb out of the lake basin and traverse toward the cliff band running west off Art's Knoll, which from below looks like it stops the route entirely. Getting established usually means scrambling through the moat at the snow-rock margin and up a few feet of Class 3 to reach the ledge. Once on it the ledge is broad and walkable, unless it is holding snow or verglas."
+    },
+    {
+     "lat": 48.3637,
+     "lng": -121.0357,
+     "elev": 7434,
+     "name": "LeConte Glacier",
+     "note": "Broad glacier basin below Old Guard and Sentinel Peaks; rope up here and cross to the base of Old Guard's west/northwest side, watching for late-season crevasses near the peak's flanks.",
+     "type": "Junction",
+     "distMi": 10,
+     "directions": "This leg is far longer than the mileage on file suggests. Past the ledge the traverse crosses the Middle Cascade Glacier, climbs to the Spider-Formidable col and drops to the Yang Yang Lakes basin, after which the ledge system known as the goat path leads up onto the LeConte snowfield and glacier. It is a full day or more of committing glaciated terrain, travelled roped and with crevasse-rescue gear, not a short hop from the Red Ledge."
+    },
+    {
+     "lat": 48.3597,
+     "lng": -121.0354,
+     "elev": 7900,
+     "name": "Snowfinger / Couloir Base",
+     "note": "Steep snow couloir (Class 2/3) rising off the glacier to the base of the summit rock; firm early-morning snow can require an axe and crampons, softening to punchy postholing by afternoon.",
+     "type": "Hazard",
+     "distMi": 10.3,
+     "directions": "From the glacier work to the foot of the snow finger rising toward the summit rock and get onto it wherever the moat or bergschrund allows — that transition is often the awkward move of the day. It is a few hundred feet of steep snow, best taken early while it is firm, since by afternoon it softens to punchy postholing and the runout is back onto the glacier."
+    },
+    {
+     "lat": 48.3557,
+     "lng": -121.0351,
+     "elev": 8260,
+     "name": "Old Guard Peak",
+     "note": "Short Class 3 scramble up grippy gabbro from the top of the couloir gains the true summit, with views across the LeConte Glacier to Sentinel Peak and Dome Peak.",
+     "type": "Summit",
+     "distMi": 10.6,
+     "directions": "Top out of the couloir and finish on a short Class 3 scramble up blocky gabbro, a few hundred feet on rock that takes hands but stays straightforward. Stash axe and crampons somewhere you will find them again, because the descent reverses this same couloir."
+    }
+   ],
+   "gpx": [
+    [
+     48.4754,
+     -121.0751
+    ],
+    [
+     48.4676181,
+     -121.0590796
+    ],
+    [
+     48.4485,
+     -121.0529
+    ],
+    [
+     48.4386686,
+     -121.0458149
+    ],
+    [
+     48.400043,
+     -121.043071
+    ],
+    [
+     48.3637,
+     -121.0357
+    ],
+    [
+     48.3597,
+     -121.0354
+    ],
+    [
+     48.3557,
+     -121.0351
+    ]
+   ]
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "waypoints": [
+    {
+     "lat": 47.65255,
+     "lng": -121.28795,
+     "elev": 1550,
+     "name": "FR 6835 roadside pullout past the East Fork Foss bridge",
+     "note": "Park on the shoulder just after FR 6835 crosses the East Fork Foss River bridge; no formal trailhead or sign, road access requires a Northwest Forest Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From US-2 at Skykomish, follow Foss River Road (FR 68) about 4.7 miles, turn left onto FR 6835, and continue about half a mile to the shoulder pullout just past the concrete bridge over the East Fork Foss River. There is no sign and no formal trailhead — parking is on the road shoulder — and a Northwest Forest Pass is required for the road."
+    },
+    {
+     "lat": 47.65205,
+     "lng": -121.28775,
+     "elev": 1620,
+     "name": "Leave road, enter forest for North Ridge",
+     "note": "No trail from the road; head cross-country uphill through old-growth forest toward the North Ridge crest.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Cross to the far side of the road at the bridge and go straight into the forest. There is no trail and no marked start: pick up the toe of the north ridge at around 1,600 ft and climb. Carry all your water, since nothing on the ridge above is reliable."
+    },
+    {
+     "lat": 47.613225,
+     "lng": -121.25226119999999,
+     "elev": 2600,
+     "name": "Deadfall zone below 2,600 ft",
+     "note": "Dense down timber strewn through the forest floor up to about 2,600 ft; weave through, stays passable but slows progress.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "The lower second-growth is choked with fallen timber, so the first several hundred feet of gain are spent weaving and scrambling over deadfall rather than walking. Stay on or near the crest; it stays passable, just slow. Around 2,600 ft the forest turns to older growth and the underbrush thins out noticeably."
+    },
+    {
+     "lat": 47.61537709090909,
+     "lng": -121.2637064,
+     "elev": 4900,
+     "name": "Brushy ridge section, 4,500-5,200 ft",
+     "note": "Thickest brush on the route with steep drop-offs on both sides of the narrow ridge crest; heavy vegetation forces careful footing.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "Through the old-growth the crest is easy to follow and there are few reasons to leave it, with moderate going to about 4,500 ft. There the ridge narrows and steepens into the brushiest stretch of the trip — small trees and slide alder crowding a pointier crest with real drop-offs on both sides. Stay on the crest despite the vegetation, since the flanks put you above those drop-offs, and expect heavy mosquitoes in season."
+    },
+    {
+     "lat": 47.61587372727273,
+     "lng": -121.2663476,
+     "elev": 5267,
+     "name": "First summit view point",
+     "note": "Rocky, more open ridge crest where the summit block comes into view for the first time; snow patches begin appearing here in early season.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "By roughly 5,200 ft the brush releases and the ridge opens into rockier, more open ground with expanding views up the valley. Snow lingers later on the east side of the crest than on the drier crest itself."
+    },
+    {
+     "lat": 47.61620481818182,
+     "lng": -121.2681084,
+     "elev": 5400,
+     "name": "Cliff band bypass gully, 5,400 ft",
+     "note": "A cliff wall blocks the direct ridge line; bypass via a small gully with a rising traverse on the north-facing slope, often icy and best done with crampons/axe into summer.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "A short stretch of open ridge past the viewpoint runs straight into a cliff wall. Do not take it head-on: veer left off the crest into a small gully. This is where helmets go on and where crampons or spikes and an axe earn their weight, since the bypass holds hard snow and ice well into summer and is the route's crux."
+    },
+    {
+     "lat": 47.616701454545456,
+     "lng": -121.2707496,
+     "elev": 6100,
+     "name": "Regain North Ridge crest",
+     "note": "Above the gully bypass the route rejoins the North Ridge crest for the final push to the summit.",
+     "type": "Junction",
+     "distMi": 3.2,
+     "directions": "From the gully take a rising traverse across the shaded north-facing slopes into the upper basin, then climb steeply back onto the ridge crest. Loose rock and exposure make this the one section that demands real route-finding and careful downclimbing on the way out, so note the line you took as you go up."
+    },
+    {
+     "lat": 47.61686,
+     "lng": -121.27162,
+     "elev": 6259,
+     "name": "Bald Eagle Peak summit",
+     "note": "Snow-free rocky summit with a lingering snowfield on the east edge into summer; first ascent 1933 by Hermann Ulrichs and Ben Falkenburg via this same North Ridge.",
+     "type": "Summit",
+     "distMi": 3.3,
+     "directions": "A short stroll along the crest leads to rock outcrops just below the top. Traverse the exposed ledge past them, bypass the steep snow in a shallow moat, and finish the last twenty vertical feet through small trees to the rocky summit. An ice axe and light traction are worth keeping on for that ledge into midsummer."
+    }
+   ],
+   "gpx": null
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "waypoints": [
+    {
+     "lat": 47.3663,
+     "lng": -120.8027,
+     "elev": 3100,
+     "name": "Stafford Creek Trailhead",
+     "note": "End of FR 9703; ~20-car lot with pit toilet, Northwest Forest Pass or $5 self-issue fee required; trail has seen closures for Labor Mountain Fire damage so check current USFS alerts before going.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive the Teanaway River Road to 29 Pines Campground, bear right where the pavement ends, then turn onto Stafford Creek Road and follow it a couple of miles to where it ends at the trailhead. The last stretch is dirt and washboarded but passable to low-clearance cars in dry conditions."
+    },
+    {
+     "lat": 47.401465,
+     "lng": -120.803455,
+     "elev": 4800,
+     "name": "Stafford Creek crossing, Stafford Creek Meadows",
+     "note": "Stream crossing in the meadows on Trail #1359; last reliable water before the drier climb toward the pass.",
+     "type": "Water",
+     "distMi": 3.5,
+     "directions": "Trail #1359 leaves the lot at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek most of the way. A short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The forest stays open and the grade never gets hard before the trail reaches the marshy meadow ground."
+    },
+    {
+     "lat": 47.40963,
+     "lng": -120.81631,
+     "elev": 5030,
+     "name": "Standup Creek Trail junction",
+     "note": "Trail #1359 meets the Standup Creek Trail about 2 miles below Navaho Pass; continue straight/left on #1359 toward the pass.",
+     "type": "Junction",
+     "distMi": 3.8,
+     "directions": "Stay on Stafford Creek Trail #1359, still gaining gradually along the creek, to the signed junction with the Standup Creek Trail (#1369)."
+    },
+    {
+     "lat": 47.409284,
+     "lng": -120.799768,
+     "elev": 5500,
+     "name": "Upper meadow camp",
+     "note": "Established camp area in the upper meadow, about half a mile below the pass; common overnight staging spot before the steep push above.",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Continue on Trail #1359 above the junction; the trail opens out into a large, marshy subalpine meadow with a feeder stream — another water source, and the usual base camp for parties splitting the trip over two days."
+    },
+    {
+     "lat": 47.42065,
+     "lng": -120.81893,
+     "elev": 6050,
+     "name": "Navaho Pass",
+     "note": "Junction with the old County Line Trail (Cascade Creek Trail #1217); barren, rocky 'moon-scape' terrain with big Enchantments views, but very exposed to wind for camping.",
+     "type": "Junction",
+     "distMi": 5.85,
+     "directions": "Above the meadow the trail leaves the trees and switchbacks up open, rocky slope for the last stretch, gaining roughly 500 ft to the saddle. There is no water and essentially no shade on this section, and on the dry east side it bakes on a warm afternoon."
+    },
+    {
+     "lat": 47.418341,
+     "lng": -120.799937,
+     "elev": 6600,
+     "name": "South ridge scramble path",
+     "note": "Steep climber's path of loose scree and dirt gaining the south ridge; snow patches can linger into July, making poles/microspikes worthwhile.",
+     "type": "Hazard",
+     "distMi": 6.3,
+     "directions": "From the pass turn east and follow the crest trail a short way toward the peak, then leave it where a boot path breaks off uphill onto the south ridge. The path is loose scree over dirt and steepens quickly, so poles earn their keep and it is easy to push rock down onto anyone below you."
+    },
+    {
+     "lat": 47.4226199,
+     "lng": -120.803141,
+     "elev": 7223,
+     "name": "Navaho Peak",
+     "note": "True summit at 7,223 ft on the Alpine Lakes Wilderness boundary; panoramic views of the Enchantments and Stuart Range.",
+     "type": "Summit",
+     "distMi": 6.85,
+     "directions": "Follow the crest up for a bit over 600 ft of gain on broken rock and scree; the scrambling stays easy Class 2 with hands wanted only occasionally. Stay on the ridge line rather than dropping onto the looser slopes on either side, which are steeper than they look from above."
+    }
+   ],
+   "gpx": [
+    [
+     47.366596,
+     -120.80206
+    ],
+    [
+     47.366364,
+     -120.80267
+    ],
+    [
+     47.366805,
+     -120.803111
+    ],
+    [
+     47.367336,
+     -120.803248
+    ],
+    [
+     47.36774,
+     -120.803782
+    ],
+    [
+     47.368157,
+     -120.804235
+    ],
+    [
+     47.368517,
+     -120.804684
+    ],
+    [
+     47.369008,
+     -120.804974
+    ],
+    [
+     47.369512,
+     -120.80502
+    ],
+    [
+     47.37,
+     -120.805328
+    ],
+    [
+     47.370483,
+     -120.805383
+    ],
+    [
+     47.371027,
+     -120.805434
+    ],
+    [
+     47.37151,
+     -120.805416
+    ],
+    [
+     47.371758,
+     -120.80536
+    ],
+    [
+     47.372297,
+     -120.805403
+    ],
+    [
+     47.372646,
+     -120.805098
+    ],
+    [
+     47.373178,
+     -120.805228
+    ],
+    [
+     47.373708,
+     -120.805378
+    ],
+    [
+     47.374202,
+     -120.805726
+    ],
+    [
+     47.37457,
+     -120.806215
+    ],
+    [
+     47.375036,
+     -120.806516
+    ],
+    [
+     47.375417,
+     -120.806931
+    ],
+    [
+     47.375937,
+     -120.807016
+    ],
+    [
+     47.376451,
+     -120.807174
+    ],
+    [
+     47.376956,
+     -120.8072
+    ],
+    [
+     47.377472,
+     -120.80732
+    ],
+    [
+     47.378004,
+     -120.807241
+    ],
+    [
+     47.37849,
+     -120.806966
+    ],
+    [
+     47.378942,
+     -120.806578
+    ],
+    [
+     47.379445,
+     -120.806678
+    ],
+    [
+     47.379961,
+     -120.806565
+    ],
+    [
+     47.380472,
+     -120.806493
+    ],
+    [
+     47.380966,
+     -120.806259
+    ],
+    [
+     47.381425,
+     -120.806114
+    ],
+    [
+     47.381698,
+     -120.80566
+    ],
+    [
+     47.382116,
+     -120.805198
+    ],
+    [
+     47.382539,
+     -120.804779
+    ],
+    [
+     47.383016,
+     -120.804548
+    ],
+    [
+     47.383541,
+     -120.804365
+    ],
+    [
+     47.384065,
+     -120.804291
+    ],
+    [
+     47.384602,
+     -120.804277
+    ],
+    [
+     47.385119,
+     -120.804284
+    ],
+    [
+     47.385637,
+     -120.804447
+    ],
+    [
+     47.386167,
+     -120.804281
+    ],
+    [
+     47.38669,
+     -120.804292
+    ],
+    [
+     47.38722,
+     -120.80414
+    ],
+    [
+     47.387637,
+     -120.803726
+    ],
+    [
+     47.388128,
+     -120.803413
+    ],
+    [
+     47.388633,
+     -120.80313
+    ],
+    [
+     47.389105,
+     -120.802749
+    ],
+    [
+     47.38962,
+     -120.802557
+    ],
+    [
+     47.389978,
+     -120.802009
+    ],
+    [
+     47.390457,
+     -120.801655
+    ],
+    [
+     47.390971,
+     -120.801452
+    ],
+    [
+     47.391449,
+     -120.801099
+    ],
+    [
+     47.391953,
+     -120.800865
+    ],
+    [
+     47.392472,
+     -120.800639
+    ],
+    [
+     47.392925,
+     -120.800285
+    ],
+    [
+     47.393425,
+     -120.800069
+    ],
+    [
+     47.393784,
+     -120.800055
+    ],
+    [
+     47.394312,
+     -120.800066
+    ],
+    [
+     47.394812,
+     -120.800327
+    ],
+    [
+     47.395334,
+     -120.800432
+    ],
+    [
+     47.395826,
+     -120.800741
+    ],
+    [
+     47.396291,
+     -120.801151
+    ],
+    [
+     47.396722,
+     -120.801587
+    ],
+    [
+     47.397252,
+     -120.801716
+    ],
+    [
+     47.397755,
+     -120.802018
+    ],
+    [
+     47.398282,
+     -120.802231
+    ],
+    [
+     47.39881,
+     -120.802357
+    ],
+    [
+     47.399306,
+     -120.802671
+    ],
+    [
+     47.39985,
+     -120.802731
+    ],
+    [
+     47.400373,
+     -120.802895
+    ],
+    [
+     47.400872,
+     -120.803153
+    ],
+    [
+     47.401359,
+     -120.803364
+    ],
+    [
+     47.401816,
+     -120.803758
+    ],
+    [
+     47.402282,
+     -120.804144
+    ],
+    [
+     47.402778,
+     -120.804447
+    ],
+    [
+     47.403194,
+     -120.804429
+    ],
+    [
+     47.403096,
+     -120.803644
+    ],
+    [
+     47.403444,
+     -120.803385
+    ],
+    [
+     47.403894,
+     -120.803413
+    ],
+    [
+     47.404329,
+     -120.803575
+    ],
+    [
+     47.404819,
+     -120.803828
+    ],
+    [
+     47.405253,
+     -120.804271
+    ],
+    [
+     47.405685,
+     -120.804651
+    ],
+    [
+     47.406011,
+     -120.805032
+    ],
+    [
+     47.406065,
+     -120.804274
+    ],
+    [
+     47.406261,
+     -120.804087
+    ],
+    [
+     47.406517,
+     -120.804697
+    ],
+    [
+     47.406912,
+     -120.805167
+    ],
+    [
+     47.40703,
+     -120.805886
+    ],
+    [
+     47.407258,
+     -120.806441
+    ],
+    [
+     47.407384,
+     -120.805788
+    ],
+    [
+     47.407494,
+     -120.806082
+    ],
+    [
+     47.407758,
+     -120.806777
+    ],
+    [
+     47.408127,
+     -120.806977
+    ],
+    [
+     47.407806,
+     -120.807034
+    ],
+    [
+     47.407984,
+     -120.806912
+    ],
+    [
+     47.407837,
+     -120.806868
+    ],
+    [
+     47.408067,
+     -120.806806
+    ],
+    [
+     47.408386,
+     -120.806385
+    ],
+    [
+     47.408483,
+     -120.805761
+    ],
+    [
+     47.408721,
+     -120.805189
+    ],
+    [
+     47.409171,
+     -120.804817
+    ],
+    [
+     47.409411,
+     -120.80412
+    ],
+    [
+     47.409714,
+     -120.803516
+    ],
+    [
+     47.409781,
+     -120.802779
+    ],
+    [
+     47.409686,
+     -120.802067
+    ],
+    [
+     47.40965,
+     -120.801348
+    ],
+    [
+     47.40955,
+     -120.800597
+    ],
+    [
+     47.40937,
+     -120.799902
+    ],
+    [
+     47.409073,
+     -120.799436
+    ],
+    [
+     47.408927,
+     -120.798895
+    ],
+    [
+     47.408873,
+     -120.798094
+    ],
+    [
+     47.409022,
+     -120.797414
+    ],
+    [
+     47.409147,
+     -120.79678
+    ],
+    [
+     47.409144,
+     -120.796259
+    ],
+    [
+     47.409254,
+     -120.795587
+    ],
+    [
+     47.409564,
+     -120.79503
+    ],
+    [
+     47.410062,
+     -120.794786
+    ],
+    [
+     47.410542,
+     -120.794439
+    ],
+    [
+     47.411072,
+     -120.794365
+    ],
+    [
+     47.411588,
+     -120.794336
+    ],
+    [
+     47.412011,
+     -120.79409
+    ],
+    [
+     47.412462,
+     -120.794435
+    ],
+    [
+     47.412945,
+     -120.79436
+    ],
+    [
+     47.413421,
+     -120.794073
+    ],
+    [
+     47.413916,
+     -120.794174
+    ],
+    [
+     47.414155,
+     -120.794739
+    ],
+    [
+     47.41443,
+     -120.795411
+    ],
+    [
+     47.414734,
+     -120.796074
+    ],
+    [
+     47.415114,
+     -120.796646
+    ],
+    [
+     47.41547,
+     -120.797221
+    ],
+    [
+     47.415781,
+     -120.797871
+    ],
+    [
+     47.416169,
+     -120.798428
+    ],
+    [
+     47.416636,
+     -120.798841
+    ],
+    [
+     47.417121,
+     -120.799167
+    ],
+    [
+     47.417518,
+     -120.799658
+    ],
+    [
+     47.41801,
+     -120.79981
+    ],
+    [
+     47.418476,
+     -120.799989
+    ],
+    [
+     47.418933,
+     -120.800362
+    ],
+    [
+     47.419361,
+     -120.800736
+    ],
+    [
+     47.41987,
+     -120.801002
+    ],
+    [
+     47.420351,
+     -120.801322
+    ],
+    [
+     47.420867,
+     -120.8015
+    ],
+    [
+     47.421384,
+     -120.801717
+    ],
+    [
+     47.421877,
+     -120.801921
+    ],
+    [
+     47.422352,
+     -120.802303
+    ],
+    [
+     47.42276,
+     -120.802574
+    ],
+    [
+     47.422888,
+     -120.803321
+    ],
+    [
+     47.422906,
+     -120.80358
+    ],
+    [
+     47.422751,
+     -120.802872
+    ],
+    [
+     47.422348,
+     -120.802383
+    ],
+    [
+     47.421895,
+     -120.802024
+    ],
+    [
+     47.421435,
+     -120.801591
+    ],
+    [
+     47.420923,
+     -120.80162
+    ],
+    [
+     47.42045,
+     -120.801222
+    ],
+    [
+     47.419987,
+     -120.800858
+    ],
+    [
+     47.419523,
+     -120.800436
+    ],
+    [
+     47.419072,
+     -120.8001
+    ],
+    [
+     47.418543,
+     -120.799923
+    ],
+    [
+     47.418011,
+     -120.799892
+    ],
+    [
+     47.41781,
+     -120.799204
+    ],
+    [
+     47.417772,
+     -120.798484
+    ],
+    [
+     47.417948,
+     -120.797738
+    ],
+    [
+     47.418079,
+     -120.796978
+    ],
+    [
+     47.41828,
+     -120.796232
+    ],
+    [
+     47.41852,
+     -120.79553
+    ],
+    [
+     47.418755,
+     -120.794819
+    ],
+    [
+     47.418682,
+     -120.794029
+    ],
+    [
+     47.418816,
+     -120.79327
+    ],
+    [
+     47.418859,
+     -120.792498
+    ],
+    [
+     47.41901,
+     -120.791747
+    ],
+    [
+     47.419094,
+     -120.790978
+    ],
+    [
+     47.419089,
+     -120.790181
+    ],
+    [
+     47.418983,
+     -120.789424
+    ],
+    [
+     47.419115,
+     -120.788716
+    ],
+    [
+     47.41929,
+     -120.787962
+    ],
+    [
+     47.419382,
+     -120.787269
+    ],
+    [
+     47.419445,
+     -120.786546
+    ],
+    [
+     47.419408,
+     -120.785758
+    ],
+    [
+     47.419245,
+     -120.785049
+    ],
+    [
+     47.419185,
+     -120.784409
+    ],
+    [
+     47.41937,
+     -120.783762
+    ],
+    [
+     47.41951,
+     -120.783093
+    ],
+    [
+     47.419622,
+     -120.782336
+    ],
+    [
+     47.419754,
+     -120.781873
+    ],
+    [
+     47.420157,
+     -120.781534
+    ],
+    [
+     47.420394,
+     -120.781069
+    ],
+    [
+     47.42041,
+     -120.780363
+    ],
+    [
+     47.420762,
+     -120.7799
+    ],
+    [
+     47.421183,
+     -120.779405
+    ],
+    [
+     47.421444,
+     -120.77872
+    ],
+    [
+     47.421712,
+     -120.778038
+    ],
+    [
+     47.42201,
+     -120.777399
+    ],
+    [
+     47.422457,
+     -120.777012
+    ],
+    [
+     47.42295,
+     -120.776678
+    ],
+    [
+     47.423169,
+     -120.775967
+    ],
+    [
+     47.423013,
+     -120.776641
+    ],
+    [
+     47.422564,
+     -120.777048
+    ],
+    [
+     47.422083,
+     -120.777404
+    ],
+    [
+     47.42171,
+     -120.777812
+    ],
+    [
+     47.421338,
+     -120.77827
+    ],
+    [
+     47.421059,
+     -120.778911
+    ],
+    [
+     47.420827,
+     -120.779607
+    ],
+    [
+     47.420562,
+     -120.780298
+    ],
+    [
+     47.420375,
+     -120.780872
+    ],
+    [
+     47.420278,
+     -120.781426
+    ],
+    [
+     47.419935,
+     -120.781926
+    ],
+    [
+     47.419461,
+     -120.782141
+    ],
+    [
+     47.419142,
+     -120.782712
+    ],
+    [
+     47.418668,
+     -120.782869
+    ],
+    [
+     47.418217,
+     -120.783269
+    ],
+    [
+     47.417758,
+     -120.783607
+    ],
+    [
+     47.417225,
+     -120.783736
+    ],
+    [
+     47.416833,
+     -120.784207
+    ],
+    [
+     47.416709,
+     -120.78493
+    ],
+    [
+     47.416918,
+     -120.785657
+    ],
+    [
+     47.416875,
+     -120.786421
+    ],
+    [
+     47.416716,
+     -120.786892
+    ],
+    [
+     47.416541,
+     -120.787344
+    ],
+    [
+     47.41622,
+     -120.787513
+    ],
+    [
+     47.415758,
+     -120.787878
+    ],
+    [
+     47.415227,
+     -120.787826
+    ],
+    [
+     47.414699,
+     -120.787741
+    ],
+    [
+     47.414298,
+     -120.788242
+    ],
+    [
+     47.414127,
+     -120.788908
+    ],
+    [
+     47.414055,
+     -120.789696
+    ],
+    [
+     47.41382,
+     -120.790386
+    ],
+    [
+     47.413396,
+     -120.79088
+    ],
+    [
+     47.413055,
+     -120.791468
+    ],
+    [
+     47.412778,
+     -120.792153
+    ],
+    [
+     47.412544,
+     -120.792844
+    ],
+    [
+     47.412145,
+     -120.793339
+    ],
+    [
+     47.412465,
+     -120.793803
+    ],
+    [
+     47.412049,
+     -120.794078
+    ],
+    [
+     47.411588,
+     -120.794279
+    ],
+    [
+     47.411109,
+     -120.794451
+    ],
+    [
+     47.410598,
+     -120.794244
+    ],
+    [
+     47.410123,
+     -120.7939
+    ],
+    [
+     47.40959,
+     -120.793981
+    ],
+    [
+     47.409105,
+     -120.794043
+    ],
+    [
+     47.40863,
+     -120.794001
+    ],
+    [
+     47.40828,
+     -120.79343
+    ],
+    [
+     47.407886,
+     -120.792925
+    ],
+    [
+     47.407475,
+     -120.792421
+    ],
+    [
+     47.407493,
+     -120.792403
+    ],
+    [
+     47.407905,
+     -120.79283
+    ],
+    [
+     47.408242,
+     -120.793414
+    ],
+    [
+     47.408605,
+     -120.793995
+    ],
+    [
+     47.409092,
+     -120.794176
+    ],
+    [
+     47.409589,
+     -120.794325
+    ],
+    [
+     47.410034,
+     -120.794552
+    ],
+    [
+     47.409885,
+     -120.795202
+    ],
+    [
+     47.409612,
+     -120.795872
+    ],
+    [
+     47.40955,
+     -120.796539
+    ],
+    [
+     47.409393,
+     -120.797215
+    ],
+    [
+     47.409253,
+     -120.797973
+    ],
+    [
+     47.409235,
+     -120.798753
+    ],
+    [
+     47.409208,
+     -120.799403
+    ],
+    [
+     47.409583,
+     -120.799883
+    ],
+    [
+     47.409737,
+     -120.80062
+    ],
+    [
+     47.40963,
+     -120.801214
+    ],
+    [
+     47.409698,
+     -120.801814
+    ],
+    [
+     47.409767,
+     -120.802593
+    ],
+    [
+     47.409837,
+     -120.803326
+    ],
+    [
+     47.409553,
+     -120.803956
+    ],
+    [
+     47.409272,
+     -120.804595
+    ],
+    [
+     47.408863,
+     -120.804993
+    ],
+    [
+     47.408451,
+     -120.80545
+    ],
+    [
+     47.408133,
+     -120.80601
+    ],
+    [
+     47.407793,
+     -120.806505
+    ],
+    [
+     47.407759,
+     -120.806377
+    ],
+    [
+     47.407808,
+     -120.80623
+    ],
+    [
+     47.407487,
+     -120.805652
+    ],
+    [
+     47.407176,
+     -120.806046
+    ],
+    [
+     47.40702,
+     -120.805319
+    ],
+    [
+     47.406736,
+     -120.804656
+    ],
+    [
+     47.406306,
+     -120.804168
+    ],
+    [
+     47.406109,
+     -120.804003
+    ],
+    [
+     47.40607,
+     -120.804797
+    ],
+    [
+     47.405722,
+     -120.804497
+    ],
+    [
+     47.405267,
+     -120.804075
+    ],
+    [
+     47.404827,
+     -120.80365
+    ],
+    [
+     47.40433,
+     -120.803392
+    ],
+    [
+     47.403798,
+     -120.803302
+    ],
+    [
+     47.403255,
+     -120.803255
+    ],
+    [
+     47.403158,
+     -120.803907
+    ],
+    [
+     47.403103,
+     -120.804558
+    ],
+    [
+     47.402617,
+     -120.804211
+    ],
+    [
+     47.402114,
+     -120.803932
+    ],
+    [
+     47.401642,
+     -120.803583
+    ],
+    [
+     47.401189,
+     -120.803236
+    ],
+    [
+     47.400706,
+     -120.802986
+    ],
+    [
+     47.400191,
+     -120.802749
+    ],
+    [
+     47.399651,
+     -120.802704
+    ],
+    [
+     47.399158,
+     -120.802468
+    ],
+    [
+     47.398653,
+     -120.802209
+    ],
+    [
+     47.398128,
+     -120.80205
+    ],
+    [
+     47.39759,
+     -120.801927
+    ],
+    [
+     47.397078,
+     -120.801679
+    ],
+    [
+     47.396562,
+     -120.801456
+    ],
+    [
+     47.396138,
+     -120.800978
+    ],
+    [
+     47.395665,
+     -120.800574
+    ],
+    [
+     47.395166,
+     -120.80037
+    ],
+    [
+     47.394651,
+     -120.800275
+    ],
+    [
+     47.394166,
+     -120.79997
+    ],
+    [
+     47.393623,
+     -120.800022
+    ],
+    [
+     47.39309,
+     -120.800174
+    ],
+    [
+     47.392598,
+     -120.800418
+    ],
+    [
+     47.392105,
+     -120.800745
+    ],
+    [
+     47.391594,
+     -120.800975
+    ],
+    [
+     47.391079,
+     -120.801234
+    ],
+    [
+     47.390574,
+     -120.80149
+    ],
+    [
+     47.390082,
+     -120.801809
+    ],
+    [
+     47.38962,
+     -120.802226
+    ],
+    [
+     47.389211,
+     -120.802671
+    ],
+    [
+     47.388702,
+     -120.802915
+    ],
+    [
+     47.388221,
+     -120.803247
+    ],
+    [
+     47.387748,
+     -120.803621
+    ],
+    [
+     47.387224,
+     -120.803797
+    ],
+    [
+     47.386797,
+     -120.804161
+    ],
+    [
+     47.386268,
+     -120.804321
+    ],
+    [
+     47.385736,
+     -120.804412
+    ],
+    [
+     47.385221,
+     -120.804349
+    ],
+    [
+     47.384704,
+     -120.804149
+    ],
+    [
+     47.384171,
+     -120.804219
+    ],
+    [
+     47.383628,
+     -120.804236
+    ],
+    [
+     47.383097,
+     -120.804379
+    ],
+    [
+     47.382609,
+     -120.804571
+    ],
+    [
+     47.382157,
+     -120.805002
+    ],
+    [
+     47.381719,
+     -120.805448
+    ],
+    [
+     47.381374,
+     -120.805945
+    ],
+    [
+     47.380928,
+     -120.806222
+    ],
+    [
+     47.380427,
+     -120.806405
+    ],
+    [
+     47.379929,
+     -120.80652
+    ],
+    [
+     47.379394,
+     -120.806579
+    ],
+    [
+     47.378862,
+     -120.806628
+    ],
+    [
+     47.378446,
+     -120.807049
+    ],
+    [
+     47.377955,
+     -120.807211
+    ],
+    [
+     47.377441,
+     -120.807317
+    ],
+    [
+     47.376956,
+     -120.807184
+    ],
+    [
+     47.376425,
+     -120.807129
+    ],
+    [
+     47.375912,
+     -120.806915
+    ],
+    [
+     47.375377,
+     -120.80676
+    ],
+    [
+     47.374916,
+     -120.806526
+    ],
+    [
+     47.374482,
+     -120.806067
+    ],
+    [
+     47.374087,
+     -120.805699
+    ],
+    [
+     47.373586,
+     -120.805378
+    ],
+    [
+     47.37306,
+     -120.80521
+    ],
+    [
+     47.372523,
+     -120.805187
+    ],
+    [
+     47.372087,
+     -120.805319
+    ],
+    [
+     47.371544,
+     -120.805311
+    ],
+    [
+     47.371463,
+     -120.805504
+    ],
+    [
+     47.370932,
+     -120.805377
+    ],
+    [
+     47.370396,
+     -120.805447
+    ],
+    [
+     47.36988,
+     -120.8052
+    ],
+    [
+     47.369382,
+     -120.804919
+    ],
+    [
+     47.368881,
+     -120.804832
+    ],
+    [
+     47.368383,
+     -120.804548
+    ],
+    [
+     47.367989,
+     -120.804016
+    ],
+    [
+     47.367614,
+     -120.803551
+    ],
+    [
+     47.367186,
+     -120.803132
+    ],
+    [
+     47.366658,
+     -120.80295
+    ],
+    [
+     47.366417,
+     -120.802429
+    ],
+    [
+     47.366505,
+     -120.80207
+    ]
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "waypoints": [
+    {
+     "lat": 48.737355,
+     "lng": -121.931444,
+     "elev": 2060,
+     "name": "Elbow Lake Trailhead (FR-38)",
+     "note": "North end of Elbow Lake Trail #697 off Mosquito Lake Rd/FS-38, ~11 mi in; no bridge over the Middle Fork Nooksack near here, so high flows can strand you at the car.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take SR-542 from Bellingham through Deming to Mosquito Lake Road, then turn off onto FS-38 and follow it about 11 miles to the road end. It is gravel and normally in reasonable shape, but the lower Middle Fork Nooksack road has washed out in sections in the past and parties then bike the flat closed miles rather than walk them. Check the current road status before counting on driving to the trailhead."
+    },
+    {
+     "lat": 48.705110924528306,
+     "lng": -121.92848443396227,
+     "elev": 2750,
+     "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+     "note": "First open view of the Twin Sisters Range near a switchback by Hildebrand Creek; the unofficial, sparsely-blazed Green Creek climbers' trail branches off the maintained tread here.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "The trail meets the Middle Fork Nooksack within a few minutes of the car and there is no bridge — it has been gone for decades, and any log that replaces it tends to wash out. The marked ford can be dangerous or impossible at high flow, so most parties use an unofficial crossing about a quarter mile downstream, logs lashed between two boulders. Once across, bushwhack the short distance back up to the Elbow Lake Trail proper and start climbing through old growth. Stay on the maintained tread as it climbs above the Green Creek valley through old-growth forest, roughly a mile and a half from the crossing. Near 2,600 ft the trail swings into the Hildebrand Creek drainage, and it is at a switchback here that the unofficial Green Creek climbers' trail branches off. It is marked only by small blue markers on the trees — they are easy to walk straight past, so start looking for them before you think you need to."
+    },
+    {
+     "lat": 48.70299353584906,
+     "lng": -121.93491201886793,
+     "elev": 2300,
+     "name": "Green Creek crossing",
+     "note": "The climbers' trail reaches Green Creek, which parties ford at the best spot they can find; there is no bridge, and the crossing is harder at high runoff.",
+     "type": "Hazard",
+     "distMi": 2.6
+    },
+    {
+     "lat": 48.69165,
+     "lng": -121.97395,
+     "elev": 6050,
+     "name": "Little Sister saddle",
+     "note": "Col between Little Sister (6,600') and Cinderella Peak gained via boulder fields and scree above the Green Creek cirque; marks the start of Cinderella's west ridge.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Follow the blue-blazed climbers' trail up into the Green Creek cirque; Green Creek runs clear and is the water source along this stretch. Above the trees the path gives out into talus, boulder fields and then loose, unstable scree, with Class 3 rock steps needed to reach the toe of the Green (Sisters) Glacier — route-finding through here is the crux of the approach and the least-loose line has to be hunted for rather than followed. Cross the low-angle glacier, carrying basic glacier gear, to the low notch on the ridge between Cinderella and Little Sister. Gain from the river to the notch runs to several thousand feet, which is why some parties break the trip up with a camp in the basin rather than pushing car-to-car."
+    },
+    {
+     "lat": 48.69240659245283,
+     "lng": -121.96704994339622,
+     "elev": 6150,
+     "name": "West ridge scramble section",
+     "note": "Class 3-4 exposed scrambling on the range's signature red olivine rock, which is grippy but the ridge narrows with real exposure; take care downclimbing if wet.",
+     "type": "Hazard",
+     "distMi": 5.6,
+     "directions": "From the notch climb onto the blunt ridge crest above. The olivine here is exceptionally high-friction on the shaded north aspects and many parties solo it or run the rope, but the crest narrows and the exposure is genuine, and the same rock is far less secure when wet. Do not treat the connecting ridge back toward Little Sister as a traverse option — it is loose enough that the standard practice is to drop to the glacier from this notch instead."
+    },
+    {
+     "lat": 48.69092,
+     "lng": -121.97153,
+     "elev": 6431,
+     "name": "Cinderella Peak",
+     "note": "True summit at the west end of the Green Creek circuit; olivine rock underfoot is among the best scrambling texture in the Cascades.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "The last Class 3-4 steps go on grippy dunite to the small summit block; where a step looks blank, working slightly left or right generally finds a passable line and nothing is sustained. Stay on the crest and the shaded aspects — south-facing rock in this range is markedly chossier and rocks pick up speed fast on it."
+    }
+   ],
+   "gpx": null
+  }
+ ]
+}

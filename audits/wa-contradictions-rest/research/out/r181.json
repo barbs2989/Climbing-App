@@ -1,0 +1,686 @@
+{
+ "file": "r181.json",
+ "results": [
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+   "verdict": "fixed",
+   "correct_value": "7 pitches counted from the treed ledge: P1 copperhead + six-bolt slab (5.11), P2 slab (5.10), P3 crack/roof (5.11), P4 corner (5.10), P5 crux thin slab (5.12a), P6-P7 hand/finger crack (5.9). The roped 5.8 block pitch is an approach option onto the ledge, not a route pitch.",
+   "evidence": "The route's published pitch-by-pitch description numbers from the treed ledge: P1 cracks then slab past a fixed copperhead and six bolts (.11), P2 slab (.10), P3 crack/roof (.11), P4 corner (.10), P5 very thin slab crux (.12a), P6-7 hand and finger crack (.9); the 5.8 block is listed under Location as one way to reach the ledge. The first-ascent account in the 1990 AAJ calls it a seven-pitch route with the crux friction slab on the fifth pitch. So beta/rack/rappel table are right and pitch_detail was shifted by a prepended approach pitch; the pitch count (8) and every '8 pitches' copy were wrong too.",
+   "sources": [
+    "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+    "http://publications.americanalpineclub.org/articles/12199016402/United-States-WashingtonCascade-Mountains-Lexington-Spire-East-Face-Right-Side-Tooth-and-Claw"
+   ],
+   "patches": [
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.8",
+       "notes": "Optional roped approach pitch around a protruding block onto the treed ledge where the technical climbing begins; some parties instead scramble a flanking gully.",
+       "pitch": 1,
+       "anchor": "Tree",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 6,
+       "grade": "5.11",
+       "notes": "From the treed ledge, climb cracks then move up and right across the slab past a fixed copperhead and six bolts to a bolted belay; sustained, heady, and delicate with some alpine crumbliness.",
+       "pitch": 2,
+       "anchor": "Bolted anchor (above tree)",
+       "lengthM": 45
+      },
+      {
+       "crux": false,
+       "bolts": 3,
+       "grade": "5.10",
+       "notes": "A shorter, slightly runout slab pitch leading to another bolted station.",
+       "pitch": 3,
+       "anchor": "Bolted anchor",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.11",
+       "notes": "Varied crack climbing to a cruxy traverse left and up over a small roof onto a slab; slightly runout but easier slab leads to a heavily slung tree belay.",
+       "pitch": 4,
+       "anchor": "Tree (many slings)",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 1,
+       "grade": "5.10",
+       "notes": "A stepped left-facing corner past three fixed pins to a bolt near a larger roof.",
+       "pitch": 5,
+       "anchor": "Bolted anchor",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 3,
+       "grade": "5.12a",
+       "notes": "The route's technical crux: steep flaring cracks give way to a difficult slab move, then very thin slab climbing past bolts to a horizontal, finishing at a bolted belay in an alcove/cave.",
+       "pitch": 6,
+       "anchor": "Bolted anchor (alcove/cave)",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Climb steeply out of the shattered-looking cave via a wild hand-and-finger crack with varied jamming to a ledge with a fixed nut anchor.",
+       "pitch": 7,
+       "anchor": "Fixed nut + sling / ledge",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 2,
+       "grade": "5.9",
+       "notes": "Continue the hand/finger crack system to the final bolted anchor near the top of the route.",
+       "pitch": 8,
+       "anchor": "Bolted anchor (top)",
+       "lengthM": 30
+      }
+     ],
+     "value": [
+      {
+       "crux": false,
+       "bolts": 6,
+       "grade": "5.11",
+       "notes": "From the treed ledge, climb cracks then move up and right across the slab past a fixed copperhead and six bolts to a bolted belay; sustained, heady, and delicate with some alpine crumbliness.",
+       "pitch": 1,
+       "anchor": "Bolted anchor (above tree)",
+       "lengthM": 45
+      },
+      {
+       "crux": false,
+       "bolts": 3,
+       "grade": "5.10",
+       "notes": "A shorter, slightly runout slab pitch leading to another bolted station.",
+       "pitch": 2,
+       "anchor": "Bolted anchor",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.11",
+       "notes": "Varied crack climbing to a cruxy traverse left and up over a small roof onto a slab; slightly runout but easier slab leads to a heavily slung tree belay.",
+       "pitch": 3,
+       "anchor": "Tree (many slings)",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 1,
+       "grade": "5.10",
+       "notes": "A stepped left-facing corner past three fixed pins to a bolt near a larger roof.",
+       "pitch": 4,
+       "anchor": "Bolted anchor",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 3,
+       "grade": "5.12a",
+       "notes": "The route's technical crux: steep flaring cracks give way to a difficult slab move, then very thin slab climbing past bolts to a horizontal, finishing at a bolted belay in an alcove/cave.",
+       "pitch": 5,
+       "anchor": "Bolted anchor (alcove/cave)",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Climb steeply out of the shattered-looking cave via a wild hand-and-finger crack with varied jamming to a ledge with a fixed nut anchor.",
+       "pitch": 6,
+       "anchor": "Fixed nut + sling / ledge",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 2,
+       "grade": "5.9",
+       "notes": "Continue the hand/finger crack system to the final bolted anchor near the top of the route.",
+       "pitch": 7,
+       "anchor": "Bolted anchor (top)",
+       "lengthM": 30
+      }
+     ]
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 8,
+     "value": 7
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Eight-pitch, 800-ft Grade IV 5.12a",
+     "replace": "Seven-pitch, 800-ft Grade IV 5.12a"
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Expect on the order of 6-7 double-rope rappels to cover the full 8 pitches this way. ",
+     "replace": ""
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Climb the 8-pitch Grade IV 5.12 line",
+     "replace": "Climb the 7-pitch Grade IV 5.12a line"
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Character of the 8 pitches",
+   "verdict": "fixed",
+   "correct_value": "7 pitches mixing bolted slab and crack, one 5.12a crux pitch (P5); the rest 5.9-5.11.",
+   "evidence": "The published pitch grades are .11, .10, .11, .10, .12a, .9 with crack pitches at P3, P4 and P6-7; the first-ascent account describes slabs, roofs and discontinuous systems over seven pitches with the crux on the fifth. The itinerary and timing note calling every pitch 5.12 slab are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+    "http://publications.americanalpineclub.org/articles/12199016402/United-States-WashingtonCascade-Mountains-Lexington-Spire-East-Face-Right-Side-Tooth-and-Claw"
+   ],
+   "patches": [
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Character of the 8 pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "8 pitches of stout, sometimes runout 5.12 slab climbing",
+     "replace": "7 stout pitches of slab and crack climbing, sometimes runout, with a 5.12a slab crux"
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Character of the 8 pitches",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "8 pitches of stout, sometimes runout 5.12 slab climbing",
+     "replace": "7 stout pitches of slab and crack climbing, sometimes runout, with a 5.12a slab crux"
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Character of the 8 pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Climb 8 pitches of sustained 5.12 slab",
+     "replace": "Climb 7 pitches of slab and crack to 5.12a"
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Character of the 8 pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "8 sustained, stout 5.12 pitches",
+     "replace": "7 stout pitches with a 5.12a crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Approach time and distance",
+   "verdict": "fixed",
+   "correct_value": "30-45 minutes car to the base of the wall, plus the gully scramble or roped 5.8 pitch onto the treed ledge. The 6.3-mile itinerary day is the whole loop (walk-off via the Blue Lake Trail and a highway walk back), not the approach.",
+   "evidence": "The shared East Face start is described as a 30-45 minute hike from the pond pullout to the base; another account times the east-side approach at about 37 minutes to 1 hour, and a trip report timing the walk-off has the descent ending with roughly a mile of highway walking back to the pond, so the day is a loop. The itinerary's 1-1.25 hr was the outlier; the day mileage is a loop figure and is not changed. Also removed the 'per most trip reports' attribution from the approach text.",
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://dashertonclimbs.com/2019/07/28/nw-corner-on-north-early-winter-spire-5-9-and-the-east-face-of-lexington-tower-5-9/"
+   ],
+   "patches": [
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Approach time and distance",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "time"
+     ],
+     "expect": "+1-1.25 hr",
+     "value": "+30-45 min"
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Approach time and distance",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Shares the same or a similar start with the East Face route.",
+     "replace": "Shares the same or a similar start with the East Face route; allow extra time for the gully scramble or the roped 5.8 pitch onto the treed ledge."
+    },
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Approach time and distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "30-45 minutes total from the car to the base per most trip reports",
+     "replace": "30-45 minutes total from the car to the base for most parties"
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "dist_km (shown as one-way approach) holds 10.14 km / 6.3 mi, the whole-day loop figure",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "dist_km 10.14 km equals the itinerary's 6.3-mile loop day, but it renders as 'Approach (one way)', while every source puts the approach at 30-45 minutes from the pond pullout (the pin geometry puts the base well under a mile away). No source publishes a one-way mileage, so no value was adopted.",
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Parking spot",
+   "verdict": "fixed",
+   "correct_value": "The pond pullout on SR-20 about 1.2 miles east of Washington Pass (parking on the north side just east of the pond).",
+   "evidence": "The East Face start (shared by this route) parks at the pond about 1.2 miles east of the pass; a second account parks at a pullout on the north side of the highway just east of the pond. Neither uses the Washington Pass Overlook. road.name was the outlier; the Blue Lake bivy entry is a bivy-list matter left to the camping clean-up.",
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Parking spot",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Washington Pass Overlook pullout, SR-20 (North Cascades Highway)",
+     "value": "Hairpin pond pullout, SR-20 (North Cascades Highway)"
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Rappel count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No published rappel total; the first rappel from the top anchor reaches the P5 anchor on two 70 m ropes and the rest follow the lower anchors.",
+   "evidence": "The route description gives the anchor sequence (top bolted anchor to the P5 anchor on two 70s, the rest from obvious tree or bolt anchors) but no total. rappel_count_note, rappel_detail and the rack notes all agree there is no published count; the '6-7 rappels' sentence in descent_text was the lone unsupported number and is removed (in the pitch-numbering patch, which rewrites the same sentence).",
+   "sources": [
+    "https://www.mountainproject.com/route/112067014/tooth-and-claw"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "fact": "Topout waypoint note names the wrong route",
+   "verdict": "fixed",
+   "correct_value": "Tooth and Claw climbs the slabs right of the East Face route.",
+   "evidence": "The route description places it up the steep slabs to the right of the East Face route; the first-ascent account calls it the right side of the east face, to the right of the standard east-face route.",
+   "sources": [
+    "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+    "http://publications.americanalpineclub.org/articles/12199016402/United-States-WashingtonCascade-Mountains-Lexington-Spire-East-Face-Right-Side-Tooth-and-Claw"
+   ],
+   "patches": [
+    {
+     "id": "wa_tooth_and_claw",
+     "fact": "Topout waypoint note names the wrong route",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "This route climbs Lexington Tower's East Face, Washington Pass.",
+     "replace": "This route climbs the slabs right of the East Face route on Lexington Tower, Washington Pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "fact": "Which tower and face this route climbs",
+   "verdict": "unresolved",
+   "correct_value": "This is Concord Tower's South Face (5.6, 3 pitches, Grade II, FA 1965), starting from the far eastern edge of the Concord-Lexington notch and finishing over the shark fin to Concord's summit. The row is filed on the wrong tower.",
+   "evidence": "The identical beta (price-of-admission gravelly traverse, sandy spot by the shark fin, pink tricam on the summit block, bolts on the summit, rappel to the notch) and the 1965 Cramer/Anderson/Schuler/Stanley FA are listed under Concord Tower as its South Face; a second route database also lists South Face under Concord Tower with the same FA party and describes the shark fin finish. Settled by research, but the fix is re-filing the row to Concord Tower (area_id, name, summit waypoint), which is out of scope for text patches; patching prose alone would contradict the page's Lexington header.",
+   "sources": [
+    "https://www.mountainproject.com/route/117635520/south-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Concord-Tower-South-Face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "fact": "First ascent",
+   "verdict": "fixed",
+   "correct_value": "Donald Cramer, Donald Anderson, Bruce Schuler, and Fred Stanley, 1965 (the fa field as stored).",
+   "evidence": "Two independent route databases give the FA as Donald N. Cramer, Donald Anderson, Bruce Schuler and Fred Stanley in 1965. No source found for an Anderson/Scott 1964 ascent. The approach_variants note arguing the FA (and its 'conflicting records' hazard) is removed; fa is unchanged.",
+   "sources": [
+    "https://www.mountainproject.com/route/117635520/south-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Concord-Tower-South-Face"
+   ],
+   "patches": [
+    {
+     "id": "wa_lexington_tower_south_face",
+     "fact": "First ascent",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " Three pitches. accounts disagree about the first ascent: one gives Cramer, Anderson, Schuler and Stanley in 1965, another Anderson and Scott in 1964 at 5.7.",
+     "replace": " Three pitches."
+    },
+    {
+     "id": "wa_lexington_tower_south_face",
+     "fact": "First ascent",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards"
+     ],
+     "expect": [
+      "Two notches a few hundred feet apart on one ridge",
+      "A gully bed better avoided in favour of the path along its left side",
+      "Far less traffic than the Liberty Bell-Concord col, so fainter tread",
+      "Conflicting first-ascent records, which is a sign the route documentation is thin"
+     ],
+     "value": [
+      "Two notches a few hundred feet apart on one ridge",
+      "A gully bed better avoided in favour of the path along its left side",
+      "Far less traffic than the Liberty Bell-Concord col, so fainter tread"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "fact": "Trailhead elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "USGS 1 m elevation at the stored pin is 5,151 ft (10 m DEM 5,138 ft), which supports ~5,100 ft over 5,450, and the pullout sits below Washington Pass (5,477 ft). But no published elevation for the pond pullout itself was found, and whether the pin sits exactly at the pond is not confirmed, so only one source.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Washington_Pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "fact": "Approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources give only time (30-45 min, some parties about an hour), no mileage. The 'roughly a third of a mile' and 'several hundred feet' are suspect (the straight line from the pullout pin to the summit pin is ~0.65 mi and the wall base sits ~1,500 ft above the road), and the 6.5-mile day is a loop via the Blue Lake Trail and a highway walk, but no source publishes the one-way distance or gain.",
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "fact": "Whether a 6-inch cam is needed",
+   "verdict": "fixed",
+   "correct_value": "Doubles to #3 plus a #4; one #5 or #6 is useful for the short wide sections but optional for confident wide-crack climbers.",
+   "evidence": "The route page recommends gear to 6 in but says a solid wide climber could skip the 6-inch cam; one trip report found a #6 never necessary and placed a #5 once; another suggests a single #6 (or #5) plus a single #4 and doubles to #3, noting the wide cruxes are short. Beta's 'critical' was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face",
+    "https://dashertonclimbs.com/2019/07/28/nw-corner-on-north-early-winter-spire-5-9-and-the-east-face-of-lexington-tower-5-9/",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lexington_tower_east_face",
+     "fact": "Whether a 6-inch cam is needed",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "doubles to #3, single #5-6 cams critical.",
+     "replace": "doubles to #3 plus a #4, with a single #5 or #6 useful for the short wide sections."
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "fact": "Bolts at the crux",
+   "verdict": "fixed",
+   "correct_value": "The two bolts are on the offwidth pitch with the jammed 2x4 (P6), not on the P5 traverse/lieback.",
+   "evidence": "The pitch-by-pitch description puts the two bolts on the offwidth pitch above the traverse, past the jammed 2x4; a trip report describes clipping the two bolts in the 2x4 chimney. pitch_detail and pro_tips already agree; detailed_rack was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face",
+    "https://dashertonclimbs.com/2019/07/28/nw-corner-on-north-early-winter-spire-5-9-and-the-east-face-of-lexington-tower-5-9/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lexington_tower_east_face",
+     "fact": "Bolts at the crux",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Two newer bolts ease the crux.",
+     "replace": "Two newer bolts protect the offwidth pitch with the jammed 2x4."
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Wilderness permit at the trailhead",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit; a Northwest Forest Pass (or day fee) to park.",
+   "evidence": "The Forest Service trailhead page and the trail listing name only a Northwest Forest Pass/Interagency pass or day-use fee for Blue Lake Trailhead; the row's own permit, access.permitZone and access.rules say the area is not designated wilderness and no wilderness permit is required. The wilderness-permit wording is removed by the waypoint note/directions patches listed under the trailhead-distance fact (same strings).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "Just under a mile (about 0.8 mi) west of the Washington Pass Overlook; trailhead at about 5,400 ft.",
+   "evidence": "The trail listing puts the trailhead a little under a mile west of the Washington Pass Overlook (0.8 mi between them). The Forest Service gives the trailhead at 48.51901, -120.6742, elevation 5,400 ft, which is ~0.9 mi straight-line from Washington Pass's coordinates. Both the 1.5-mile and 0.25-mile figures are wrong; the ~5,200 ft in approach_variants also disagreed with the 5,400 ft waypoint and is corrected.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://en.wikipedia.org/wiki/Washington_Pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Signed USFS trailhead on SR-20 about 1.5 mi west of Washington Pass; self-issue wilderness permit and NW Forest Pass required at the kiosk.",
+     "value": "Signed USFS trailhead on SR-20 just under a mile west of Washington Pass; NW Forest Pass required at the kiosk."
+    },
+    {
+     "id": "wa_north_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "a small pullout about 1.5 miles west of Washington Pass at roughly 5,400 feet. A self-issue wilderness permit and a Northwest Forest Pass are required at the trailhead kiosk.",
+     "replace": "a small lot just under a mile west of Washington Pass at roughly 5,400 feet. A Northwest Forest Pass is required at the trailhead kiosk."
+    },
+    {
+     "id": "wa_north_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "about 0.25 mi west of the Washington Pass Overlook",
+     "replace": "about 0.8 mi west of the Washington Pass Overlook"
+    },
+    {
+     "id": "wa_north_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "just under a mile west of Washington Pass"
+    },
+    {
+     "id": "wa_north_face_3",
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "(~5,200 ft) on SR-20 roughly 1.5 miles west of Washington Pass",
+     "replace": "(~5,400 ft) on SR-20 just under a mile west of Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Side the climbers' path branches",
+   "verdict": "fixed",
+   "correct_value": "The climbers' path branches LEFT off the Blue Lake Trail at a cairn.",
+   "evidence": "The Liberty Bell route description has the climbers' trail branching left off the Blue Lake Trail; a Concord/Lexington trip report hiked about 2 miles up the trail then branched left on a well-marked climbers' path into Liberty Bowl. approach's 'to the right' was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_3",
+     "fact": "Side the climbers' path branches",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "splitting off uphill to the right toward",
+     "replace": "splitting off uphill to the left toward"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "Cam range",
+   "verdict": "fixed",
+   "correct_value": "Single rack of cams to about 3 inches (to a #2-#3 Camalot).",
+   "evidence": "One route page gives 'single rack to 2' (a #2 Camalot, whose range tops out near 3 in); the club route page recommends a standard alpine rack to 3 inches. rack[0] and sling_rack already say to 3 in; detailed_rack's '2 inches' misread the Camalot size as inches.",
+   "sources": [
+    "https://www.mountainproject.com/route/109194342/north-face",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_3",
+     "fact": "Cam range",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "A single rack of cams to 2 inches",
+     "replace": "A single rack of cams to 3 inches"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "fact": "SR-20 winter closure start",
+   "verdict": "fixed",
+   "correct_value": "Typically closes between mid-November and early December and reopens in April or May (date varies each year).",
+   "evidence": "WSDOT closed the pass on Dec 4 in 2025; news coverage gives Nov 9 (2021) and Nov 12 (2020) closures with reopenings May 28 and June 4, and describes a typical November-to-May closure. Neither 'mid-November' alone nor 'early December' alone covers it; both fields now state the range.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://www.king5.com/article/traffic/traffic-news/state-route-20-north-cascades-highway-closes-winter/281-68640425-ec47-47d8-89d1-b09320209d2a",
+    "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_3",
+     "fact": "SR-20 winter closure start",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "Typically closed roughly mid-November through late April/May;",
+     "replace": "Typically closes between mid-November and early December and reopens in April or May;"
+    },
+    {
+     "id": "wa_north_face_3",
+     "fact": "SR-20 winter closure start",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "closes gate-to-gate roughly early December–mid/late April;",
+     "replace": "closes gate-to-gate each winter, typically from mid-November or early December until April or May;"
+    }
+   ]
+  }
+ ]
+}

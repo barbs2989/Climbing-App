@@ -1,0 +1,1987 @@
+{
+ "batches": [
+  "b461.json",
+  "b462.json",
+  "b463.json",
+  "b464.json"
+ ],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "name": "East Face / East Buttress",
+   "area": "Mix-up Peak",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II, Class 4 / low 5th"
+      },
+      {
+       "field": "commitment",
+       "says": "I"
+      }
+     ],
+     "why": "The header/crux grade says Grade II while the commitment chip says I.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed for the rappel descent",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "60m rope recommended for the descent's rappels"
+      },
+      {
+       "field": "what_to_bring[2]",
+       "says": "60m rope"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "50"
+      },
+      {
+       "field": "rappel_detail[1].notes",
+       "says": "Full-length 60m rappel down to a belay stance"
+      },
+      {
+       "field": "rappels",
+       "says": "~5 rappels with a single 60 m rope, or 3 with two 60 m ropes"
+      },
+      {
+       "field": "descent",
+       "says": "including one overhanging double-rope rappel just below/north of the notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "a full 60 m rope folded, giving ~28-30 m of rappel"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Double-rope rap off the summit, two single-rope raps to the V notch"
+      }
+     ],
+     "why": "The kit lists one 60 m rope, but the rappel table lists 50 m and 60 m rappels (which need two ropes), and the fields disagree on whether the double-rope rappel is off the summit or the overhang below the notch, and whether 'double-rope' means two ropes or one folded rope.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Descend the same line via 5 rappels."
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 rows"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Double-rope rap off the summit, two single-rope raps to the V notch, then a one-at-a-time downclimb of the loose gully with a short final rap into the moat."
+      },
+      {
+       "field": "descent_text",
+       "says": "Plan on 4-5 rappels with a single 60 m rope"
+      }
+     ],
+     "why": "The rappel count is given as 5, 3, 4 and 4-5 in different fields.",
+     "internal_resolution": "rappel_count_note says 3 is the two-rope count and ~5 the single-rope count; the itinerary's 4 fits neither.",
+     "needs_research": true
+    },
+    {
+     "fact": "Where the roped pitches are",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From the notch's south side, two roped pitches (a loose gully, then a short chimney/scramble) gain a shoulder below the main summit pyramid. From there, easy class 3-4 scrambling up the light-gray 'white staircase'"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "Roughly 100 ft below the summit the roped mid-5th-class pitches of the East Face/East Buttress begin."
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Above the White Staircase (exposed Class 3) the route gains a shoulder below the summit pyramid"
+      }
+     ],
+     "why": "Beta puts the two roped pitches below the White Staircase; approach, climbing_route and pitch_detail put them above it, just under the summit.",
+     "internal_resolution": "approach, climbing_route, pitch_detail and waypoints agree the roped pitches are above the White Staircase; beta is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.0 (mid-5th class crux)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "low 5th"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II, Class 4 / low 5th"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "mid-5th-class"
+      }
+     ],
+     "why": "5.0/low 5th and mid-5th class (~5.4-5.6) are different grades for the same crux.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "It's a popular half-day objective (7-9 hours car-to-car from the pass)"
+      },
+      {
+       "field": "approach",
+       "says": "long (7-9+ hour) car-to-car day"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "7-9 trailhead to summit"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10-14 hr"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "often 8-10+ hrs car-to-car if done in a day"
+      }
+     ],
+     "why": "The one-day time is given as a half day, 7-9 h car-to-car, 7-9 h trailhead-to-summit only, 8-10+ h and 10-14 h.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain to Cascade Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~3,700 ft gain to Cascade Pass"
+      },
+      {
+       "field": "approach",
+       "says": "3.5-3.7 miles and about 1,800 ft of gain to Cascade Pass (5,392 ft)"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "1800"
+      }
+     ],
+     "why": "Partner requirements say ~3,700 ft to Cascade Pass; the approach fields say ~1,800 ft (3,600 to 5,392 ft).",
+     "internal_resolution": "Trailhead 3,600 ft and pass 5,392 ft in waypoints support ~1,800 ft; 3,700-3,800 is the whole-route gain.",
+     "needs_research": false
+    },
+    {
+     "fact": "Camp used for the 2-day plan",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].name",
+       "says": "Johannesburg Camp"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "3400"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach a Cache Col-area camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "many parties car-camp near the pass and climb over two days"
+      }
+     ],
+     "why": "The only camp in CAMPING & BIVY (role main) is Johannesburg Camp at the road end, while the itinerary camps near Cache Col / Kool-Aid Lake and partner requirements say near the pass, where camping is prohibited.",
+     "internal_resolution": "approach, itinerary and access all say no camping at Cascade Pass/Mixup Arm and use Cache Col/Kool-Aid Lake.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit at Kool-Aid Lake",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "the no-permit Kool-Aid Lake site"
+      },
+      {
+       "field": "permit",
+       "says": "all overnight backcountry stays require a backcountry permit"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "North Cascades NP backcountry permits are required year-round"
+      }
+     ],
+     "why": "The itinerary calls the Kool-Aid Lake camp permit-free; the permit fields say every overnight stay needs a permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass and permit at the trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Northwest Forest Pass required, self-issue wilderness permit at the kiosk."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass (for Cascade Pass trailhead)"
+      },
+      {
+       "field": "access.fees",
+       "says": "no trailhead or parking fee for trails that begin on National Park Service land"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "In-person, walk-up permit issuance only for Cascade River Road trailheads"
+      }
+     ],
+     "why": "One field requires a Northwest Forest Pass and self-issue permit at the kiosk; others say no NPS parking fee and permits only in person at Marblemount.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "National Park Service / USDA Forest Service (boundary location)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"
+      },
+      {
+       "field": "access._raw.wilderness_zone_name",
+       "says": "Glacier Peak Wilderness / North Cascades National Park boundary area"
+      }
+     ],
+     "why": "The land manager and wilderness are named differently in each access field.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier on the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer rock route"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "Minor crossing of the Cache Glacier during the approach"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "crevasse hazard crossing the small glacier/snowfield below the East Face"
+      },
+      {
+       "field": "ice_grade",
+       "says": "I (glacier crossing on approach)"
+      }
+     ],
+     "why": "The avalanche note calls it non-glaciated while the other fields require a roped glacier crossing.",
+     "internal_resolution": "Every other field, including gear, requires a glacier crossing.",
+     "needs_research": false
+    },
+    {
+     "fact": "NWAC forecast zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "no NWAC forecast zone specifically covers this interior North Cascades NP terrain"
+      },
+      {
+       "field": "climate.forecastZone",
+       "says": "NWAC East Slopes Central (mountain weather zone)"
+      }
+     ],
+     "why": "One field names an NWAC zone and the other says none covers the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent vs ascent line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Descend the same line via 5 rappels."
+      },
+      {
+       "field": "descent",
+       "says": "Not a simple reverse of the ascent"
+      }
+     ],
+     "why": "Beta says to descend the same line; descent says it is not a simple reverse.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "name": "Buckindy Glacier/Scramble Route",
+   "area": "Mount Buckindy",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Green Mountain Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "From Darrington, drive north on SR 530 ... to the Green Mountain Trailhead (~3,200 ft). Hike Green Mountain Trail #782"
+      },
+      {
+       "field": "descent",
+       "says": "retrace the approach over Green Mountain to the Green Mountain trailhead on FR 2680"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "Suiattle River Road (FR 26) and the FR 2680 spur to the Green Mountain Trailhead are the actual access road for this route"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Kindy Creek Road (FR-1570) Pullout"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "Do not plan on the Green Mountain Trailhead approach instead"
+      },
+      {
+       "field": "road.name",
+       "says": "Cascade River Road to FR-1570 (Kindy Creek Road)"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach up Kindy Creek to glacier-basin camp"
+      }
+     ],
+     "why": "The trailhead card, approach, descent and access use the Green Mountain TH on the Suiattle side (which is closed); waypoints, road, itinerary and timing use Kindy Creek off Cascade River Road, about 70 road miles away.",
+     "internal_resolution": "Waypoints, road, itinerary, timing and the closure note agree on Kindy Creek (FR-1570); the Green Mountain TH is closed until 2028.",
+     "needs_research": false
+    },
+    {
+     "fact": "FR-1570 drivability",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "FR-1570 is a rougher, seasonally maintained spur off Cascade River Road; high-clearance recommended"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "roughly 2 miles up FR-1570 to a small parking pullout/old trailhead"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "FR-1570 is washed out, so this is as far as you drive"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From the Kindy Creek Road (FR-1570) washout you walk the blocked, brushy roadbed"
+      }
+     ],
+     "why": "The road card says FR-1570 is drivable for ~2 miles; the waypoints and itinerary say it is washed out and you park just past the bridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp and night count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "Coming in from road 1570 this is a second or third night out"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach a camp near the toe of the Kindy/Goat Creek Glacier"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "5100"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3900"
+      }
+     ],
+     "why": "Bivy says the head-of-Kindy camps are the 2nd or 3rd night from road 1570; the itinerary reaches camp on day 1. Day 1's 3,900 ft of gain from 1,850 ft (~5,750 ft) also disagrees with the 5,100 ft cirque camp and day 2's 2,200 ft to the 7,320 ft summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Required scrambling skill",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.requiredSkills[3]",
+       "says": "Class 3 scrambling comfort with exposure"
+      },
+      {
+       "field": "grade",
+       "says": "Class 4 + glacier"
+      }
+     ],
+     "why": "Partner requirements ask for Class 3 on a Class 4 route.",
+     "internal_resolution": "grade, rock_grade and pitch_detail all say Class 4.",
+     "needs_research": false
+    },
+    {
+     "fact": "County of access",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Skagit County (summit); primary road/trail access via Snohomish County (Darrington)"
+      },
+      {
+       "field": "road.name",
+       "says": "Cascade River Road to FR-1570 (Kindy Creek Road)"
+      }
+     ],
+     "why": "Emergency places the access at Darrington (Snohomish Co.) but the mapped access is Cascade River Road in Skagit County (follows from the trailhead split).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "No overnight permit required"
+      }
+     ],
+     "why": "Some fields require a free self-issue permit; others say no permit is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "NWAC zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.forecastZone",
+       "says": "NWAC - West Slopes North"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "No NWAC zone specifically forecasts this remote sub-range"
+      }
+     ],
+     "why": "One field names an NWAC zone and the other says none applies.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_chaval_north_ridge",
+   "name": "North Ridge",
+   "area": "Mount Chaval",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "name": "West Route",
+   "area": "Mount Chaval",
+   "contradictions": [
+    {
+     "fact": "Approach line and base camp",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "The hike-in starts where FR-16 (Illabot Creek Road) reaches the Arrow Creek switchback (~2,220 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "follows the south (right) bank of Illabot Creek upstream"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "follow an old overgrown fishermen's path up the right bank of Arrow Creek to the lake"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Jug Lake"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Trailhead/spur road to Bluff Lake and Cliff Lake via brushy Jug (Found) Creek basin path"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Ridge crest/heather-slope traverse from the Cliff Lake saddle to the base of the summit pyramid"
+      },
+      {
+       "field": "beta",
+       "says": "from the historic Grade Creek Road trailhead"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "commonly done as an overnight approach (e.g. camp near Jug Lake)"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach camp on the heather bench below the west face (~6,100 ft)"
+      },
+      {
+       "field": "overview",
+       "says": "the longer historical Jug Creek/Bluff Lake/Jug Lake route from the Suiattle side"
+      }
+     ],
+     "why": "The fields describe at least three different approaches: Illabot Creek from Arrow Creek to a 6,100 ft bench camp; Arrow Creek to Jug Lake; and the Jug Creek/Bluff Lake/Cliff Lake line from Grade Creek Road, which the overview calls a separate, longer Suiattle-side route.",
+     "internal_resolution": "approach, approach_variants, waypoints, itinerary, timing and descent_text agree on Illabot Creek from the Arrow Creek switchback; pitch_detail, beta, comms and partner_requirements describe other lines.",
+     "needs_research": true
+    },
+    {
+     "fact": "Which backcountry",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "hazards[0]",
+       "says": "into the Glacier Peak Wilderness (Suiattle/Illabot drainage) — not the Cascade River corridor"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "a long, brushy, off-trail slog into the Cascade River backcountry"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Committing, remote approach through Cascade River backcountry"
+      }
+     ],
+     "why": "Hazards explicitly says the approach is not in the Cascade River corridor; two other fields say it is.",
+     "internal_resolution": "hazards, road and approach all use Illabot Creek Road.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance and time to the base of the ramp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Figure roughly 2,000–2,500 ft of gain and 2-3 miles from the Arrow Creek trailhead to the base of the ramp, with parties reporting 4-5 hours car-to-ramp"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "7"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "7"
+      }
+     ],
+     "why": "The approach puts the ramp base 2-3 mi and 4-5 h from the car; the itinerary needs 5 mi and 7 h to reach a camp below the same face.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "5 + 5.6 = 10.6 mi"
+      },
+      {
+       "field": "beta",
+       "says": "roughly 10 miles round trip"
+      }
+     ],
+     "why": "dist_km (5 mi) shows as the distance in technical stats while the header and itinerary give ~10.6 mi round trip; dist_km looks one-way.",
+     "internal_resolution": "Beta, itinerary.totalNote and bivy agree on ~10 mi round trip.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit terrain and gear",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "the final few hundred feet to the summit involve a steep snow ramp/gully flanked by rock bands, commonly climbed with an ice axe and crampons"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "Class 3-4 / steep snow"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "follow easy but exposed Class 2-3 terrain (some solid low-angle rock and loose sections) to the summit"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The rock on the ramp carries heather and moss rather than clean stone"
+      },
+      {
+       "field": "descent_text",
+       "says": "crampons are occasionally useful on lingering snow patches"
+      }
+     ],
+     "why": "The summit ramp is described as a steep snow gully needing crampons in some fields and as a heather-and-rock ramp in others.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 2-3 (locally Class 3-4 on the rock band beside the summit ramp)"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "Class 3-4 / steep snow"
+      }
+     ],
+     "why": "The headline says Class 2-3 while other fields say Class 3-4 near the summit.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Fees, group size and permit (NPS text on a Forest Service peak)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "not in the North Cascades National Park complex"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10/person/night + a flat $6 nonrefundable reservation fee"
+      },
+      {
+       "field": "access.notes",
+       "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov"
+      },
+      {
+       "field": "access.group_limit",
+       "says": "6"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required"
+      },
+      {
+       "field": "access.permit",
+       "says": "free self-issued wilderness permit at the trailhead register for day or overnight use"
+      }
+     ],
+     "why": "The access fees, notes, rules and group limit are North Cascades NP text, but the permit field says the peak is outside the park and needs only a free self-issue permit.",
+     "internal_resolution": "permit, access.permit, land manager and bivy all say Glacier Peak Wilderness with a free self-issue permit; the fees/notes/rules text belongs to NCNP.",
+     "needs_research": false
+    },
+    {
+     "fact": "Face / side of the mountain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "face",
+       "says": "West Face"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "no glacier travel on the south side scramble route"
+      }
+     ],
+     "why": "The crevasse note calls this a south-side route; every other field says west.",
+     "internal_resolution": "face, aspect, name and approach agree on the west side.",
+     "needs_research": false
+    },
+    {
+     "fact": "Base-of-ramp waypoint",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "5920"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Open west-facing slopes below/west of Pt. 4593'"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "up a steep gully to a pass in the ridge at about 5,920 ft, then cross over to the NORTH side of that ridge and traverse east"
+      }
+     ],
+     "why": "The 5,920 ft 'Base of west face ramp' pin has the elevation of the ridge pass, and its note puts it below Pt. 4593, which is lower than the pin.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_face_direct",
+   "name": "Northeast Face Direct",
+   "area": "Mount Formidable",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "11"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P1 ... P8-P9 (9 pitches)"
+      },
+      {
+       "field": "rope_note",
+       "says": "8-12 pitches of glacier travel plus moderate rock to 5.6"
+      }
+     ],
+     "why": "The header says 11 pitches; the route breakdown ends at P9.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach and ascent line (text from the South Route)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Cascade Pass, descend to Pelton Basin, cross below Cache Col"
+      },
+      {
+       "field": "approach",
+       "says": "From a Yang Yang Lakes camp, climbers make a rising traverse to the notch between Formidable and Spider Mountain, cross the Middle Cascade Glacier, and climb the South Route to the summit."
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "up the Cache Glacier to Cache Col, and down the steep snow on the far side to the tarn at Kool-Aid Lake"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "continue to the foot of the Formidable Glacier"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: Cascade Pass trailhead to Kool-Aid Lake via Cascade Pass, Mixup Arm, Cache Glacier and Cache Col"
+      }
+     ],
+     "why": "The APPROACH text sends the party via Pelton Basin to a Yang Yang Lakes camp to climb the South Route; every other field reaches this NE face from Kool-Aid Lake via the Red Ledge and Formidable Glacier.",
+     "internal_resolution": "approach_variants, itinerary, timing, descent and descent_text agree on Cache Col, Kool-Aid Lake, Red Ledge and the Formidable Glacier; approach describes the standard South Route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux pitch length vs rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "one 80-meter pitch protected by a single piece"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "gear[2]",
+       "says": "60-70m rope"
+      }
+     ],
+     "why": "An 80 m pitch cannot be led on the 60-70 m single rope the kit fields specify.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to base camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 10 miles and 3,500 ft to base camp"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "7"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: Cascade Pass trailhead to Kool-Aid Lake"
+      }
+     ],
+     "why": "Partner requirements put base camp 10 mi in; the waypoints put the summit itself only 7 mi from the trailhead, and base camp is Kool-Aid Lake (short of that).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Overnight permit / land manager for the camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "all overnight backcountry stays require a backcountry permit"
+      },
+      {
+       "field": "access.permit",
+       "says": "North Cascades Backcountry Permit"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No permit for camps south of Cache Col"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "No permit required; the lake is outside the national park"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Glacier Peak Wilderness, free self-issue permit"
+      }
+     ],
+     "why": "The permit field requires an NPS permit for every overnight, while access and bivy say the Kool-Aid Lake camp needs no permit (or a free self-issue one) because it is outside the park.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cache Col elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "About one mile and 700 ft below Cache Col"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "6120"
+      },
+      {
+       "field": "bivy[2].elev",
+       "says": "6400"
+      }
+     ],
+     "why": "If Kool-Aid Lake (6,120 ft) is 700 ft below Cache Col, the col is ~6,820 ft, not the 6,400 ft its bivy row gives.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ice grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "ice_grade",
+       "says": "AI2"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "AI2+ / 50°+"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "an AI2+ pitch in a hidden couloir"
+      }
+     ],
+     "why": "The ice grade chip says AI2; the pitch and waypoint say AI2+.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_formidable_south_face",
+   "name": "South Face / Southeast Ledges",
+   "area": "Mount Formidable",
+   "contradictions": [
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "an early-morning ~7.5-hour summit day"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "the ~7.5-hour summit push"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "14"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "14"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "Day 2 is the long, technical crux day and can run 8-16 hours"
+      }
+     ],
+     "why": "Partner requirements plan a 7.5 h summit day; the itinerary and timing plan 14 h from the same camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Turnaround vs itinerary schedule",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "if you have not reached Spider-Formidable Col by mid-morning ... descend and retreat to Kool-Aid Lake"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "7:30 AM from camp"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].time",
+       "says": "+3.3 hr"
+      }
+     ],
+     "why": "Leaving at 7:30 AM and reaching the col 3.3 h later (~10:50 AM) already breaks the mid-morning turnaround.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Base camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "to a camp near Yang Yang Lakes or on the traverse"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Establish camp near Kool-Aid Lake (~6,200 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "Kool-Aid Lake (6,100 ft), a small meltwater tarn that is the standard base camp for the route"
+      }
+     ],
+     "why": "Partner requirements base the climb from Yang Yang Lakes (south of the col); the itinerary, approach and timing use Kool-Aid Lake (north of the col).",
+     "internal_resolution": "approach, itinerary, timing and bivy use Kool-Aid Lake.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distances to camp and summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 3 hours and 5-6 miles from Cascade Pass"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "6.3"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.7"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "6"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "11.2"
+      },
+      {
+       "field": "dist_km",
+       "says": "16.1"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 20-22 miles round trip"
+      }
+     ],
+     "why": "Kool-Aid Lake is 2.6 mi past Cascade Pass by the waypoints but 5-6 mi in the approach text. The day 2 round trip of 6 mi disagrees with the ~4.9 mi each way between the Kool-Aid and summit pins. dist_km (10 mi) matches neither the one-way 11.2 mi nor the ~20-22 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Red Ledge position and elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[6].elev",
+       "says": "7800"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "10.6"
+      },
+      {
+       "field": "approach",
+       "says": "From Kool-Aid Lake continue south past Art's Knoll to the broad, well-known 'Red Ledge'"
+      },
+      {
+       "field": "approach",
+       "says": "toward the Middle Cascade Glacier icefall (~6,500 ft), then rope up and ascend the glacier's left/SSE side ... to the Spider-Formidable col (7,320 ft)"
+      }
+     ],
+     "why": "The approach puts the Red Ledge between Kool-Aid Lake and the ~6,500 ft glacier, before the 7,320 ft col. The waypoint puts it at 7,800 ft, 1.9 mi beyond the col, near the summit.",
+     "internal_resolution": "approach, approach_variants and descent_text agree the Red Ledge comes before the Middle Cascade Glacier and the col.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "Despite its modest Class 3-4 rating"
+      },
+      {
+       "field": "grade",
+       "says": "Grade III, Class 4 / low 5th"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "low 5th (5.0)"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "a short, exposed Class 4-5 cleft just below the top"
+      }
+     ],
+     "why": "The overview calls it Class 3-4; the grade pill and crux pitch say low 5th.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and waypoints agree on a low-5th crux step.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit and fee",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "all overnight backcountry stays require a backcountry permit"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Pick up your free backcountry permit ... it's required for any overnight stay"
+      },
+      {
+       "field": "approach",
+       "says": "Kool-Aid Lake ... the standard base camp for the route (no permit required, no fires)"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No permit for camps south of Cache Col"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10/person/night + a flat $6 nonrefundable reservation fee"
+      }
+     ],
+     "why": "The permit is described as required and free, required and $10/night plus $6, and not required at the standard camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Kool-Aid Lake elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "6320"
+      },
+      {
+       "field": "approach",
+       "says": "Kool-Aid Lake (6,100 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6100"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Kool-Aid Lake (6,120 ft)"
+      }
+     ],
+     "why": "The waypoint puts the lake about 200 ft higher than the three other fields.",
+     "internal_resolution": "approach, bivy and pro_tips agree on ~6,100-6,120 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction from Cascade Pass to Cache Col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the pass, leave the trail and climb/contour east and north below Cache Ridge toward Cache Col"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the pass take the bootpath uphill to the south and traverse along Mix-Up Arm"
+      }
+     ],
+     "why": "The approach sends parties east and north from the pass; approach_variants and the itinerary go south along Mixup Arm.",
+     "internal_resolution": "approach_variants, itinerary and waypoints (Cache Col south of the pass) agree on south.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "name": "Northeast Face",
+   "area": "Mount Goode",
+   "contradictions": [
+    {
+     "fact": "Season",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Apr-May (spring snow/ice conditions)"
+      },
+      {
+       "field": "best_season",
+       "says": "Late spring to early summer (roughly May–June)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid to late summer"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.status",
+       "says": "optimal"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "July-September seasonal window"
+      },
+      {
+       "field": "beta",
+       "says": "Best climbing season: mid-July"
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "Snowbound, road closed, avalanche hazard."
+      }
+     ],
+     "why": "The season is given as Apr-May, May-June, mid-July, and mid-to-late summer with August optimal. Climate also says the road is closed in spring.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "IV"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade III (historic, snow/ice + rock)"
+      }
+     ],
+     "why": "The grade pill says IV; the commitment and alpine grade chips say III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.8"
+      },
+      {
+       "field": "beta",
+       "says": "Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "roped low-5th-class climbing"
+      }
+     ],
+     "why": "The rock grade chip says 5.8; beta and the itinerary describe 5.5 / low 5th.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Beta describes a different (rock) route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing ... Total climb: 2.2 miles, 3,300-3,800 ft elevation gain, ~10 hours."
+      },
+      {
+       "field": "overview",
+       "says": "A steep, rarely-repeated mixed alpine line up Goode's east-facing aspect, climbers' right of the classic Northeast Buttress"
+      },
+      {
+       "field": "descent_text",
+       "says": "Given the sustained steep snow/ice character of the upper face on this route"
+      }
+     ],
+     "why": "Beta and the itinerary describe a low-5th rock climb (the NE Buttress profile); overview, ice_grade, gear and descent_text describe a steep snow/ice face.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4799"
+      },
+      {
+       "field": "loss_ft",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "4600 + 2600 = 7200"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "6,500-7,000 ft of gain round trip"
+      },
+      {
+       "field": "beta",
+       "says": "3,300-3,800 ft elevation gain"
+      }
+     ],
+     "why": "Gain is given as 4,799, 7,200, 6,500-7,000 and 3,300-3,800 ft, and loss (7,000) differs from gain on an out-and-back.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "25.7"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 33 mi"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "14 + 5 + 14 = 33 mi"
+      },
+      {
+       "field": "beta",
+       "says": "Total climb: 2.2 miles"
+      }
+     ],
+     "why": "dist_km (16 mi) is shown as the distance while the itinerary totals 33 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Rainy Pass PCT Trailhead"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Rainy Pass PCT Trailhead"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4855"
+      },
+      {
+       "field": "waypoints[0].elevFt",
+       "says": "4500"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "PCT south from the Bridge Creek trailhead"
+      }
+     ],
+     "why": "The trailhead card and waypoint name Rainy Pass, the itinerary says Bridge Creek, and the one trailhead waypoint carries two elevations (4,855 and 4,500 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a camp near the glacier toe/moraine (~6,700 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5200"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "5600"
+      }
+     ],
+     "why": "The itinerary camps at ~6,700 ft; the two main bivies are at 5,200 and 5,600 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day trip"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "typically a 4+ day round trip"
+      }
+     ],
+     "why": "The itinerary plans 3 days; partner requirements say 4+.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "name": "Megalodon Ridge",
+   "area": "Mount Goode",
+   "contradictions": [
+    {
+     "fact": "Descent drainage and exit",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Because the standard descent drops into the Park Creek/Stehekin drainage - the opposite side of the mountain from the Bridge Creek approach"
+      },
+      {
+       "field": "descent_text",
+       "says": "hike out via Park Creek Trail and Thunder Creek Trail to the North Cascades Highway at Colonial Creek"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Descend the standard Southwest Couloir descent line, then keep losing elevation toward the Bridge Creek drainage"
+      },
+      {
+       "field": "itinerary.days[3].note",
+       "says": "Finish down North Fork Bridge Creek and the PCT back to Highway 20."
+      },
+      {
+       "field": "itinerary.days[2].lossFt",
+       "says": "7500"
+      }
+     ],
+     "why": "The descent text says the SW Couloir leads into Park Creek and out to Colonial Creek (or a shuttle); the itinerary says it leads back to North Fork Bridge Creek and the original trailhead. The itinerary's losses (7,500 + 1,200 ft from 9,220 ft) would also end below 600 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel on the approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THIS ROUTE IS GAINED FROM THE EAST, FROM BRUSH AND ROCK, WITH NO GLACIER CROSSING AT ALL. If you have crampons on to reach your base, you are on the Buttress."
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel is documented for this ridge route"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].detail",
+       "says": "Approach the base of the ridge across the glacier."
+      },
+      {
+       "field": "obj_haz[5]",
+       "says": "glacier crevasse hazard on approach"
+      },
+      {
+       "field": "gear",
+       "says": "ice axe, crampons"
+      },
+      {
+       "field": "season",
+       "says": "once approach bushwhack and glacier are most passable"
+      }
+     ],
+     "why": "approach_variants and seasonal_hazards say the ridge is reached without crossing a glacier; the itinerary crosses the glacier to its base, and obj_haz and gear plan for crevasses.",
+     "internal_resolution": "approach_variants gives the explicit route-identifying test (no glacier); the itinerary line is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead name and elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Rainy Pass PCT North Trailhead"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4500"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "A separate, slightly lower trailhead ~1 mi east of Rainy Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "Start at the Rainy Pass trailhead on Highway 20 (large paved lot at ~4,800 ft)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "PCT south from Bridge Creek trailhead"
+      }
+     ],
+     "why": "The trailhead is placed at Rainy Pass (~4,800-4,860 ft) and at a separate lower trailhead 1 mi east (4,500 ft, called Bridge Creek in the itinerary).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "18"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "13 + 2 + 10 + 10 = 35 mi"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 35 mi"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach is on the order of 12+ miles"
+      }
+     ],
+     "why": "dist_km (11.2 mi) is shown as the distance while the itinerary totals 35 mi and the approach alone is 12+ mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Best in late summer (Aug-Sep)"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "best attempted mid-July through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The itinerary calls July good; the season field and guidance start in August or call July marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rope kit vs rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[5]",
+       "says": "twin 60m ropes (used on the first ascent for simul-climbing and rappelling)"
+      },
+      {
+       "field": "descent_text",
+       "says": "A 60m rope doing 30m rappels is standard"
+      },
+      {
+       "field": "rappel_detail[5].pull",
+       "says": "60m is sufficient for every station on the descent"
+      }
+     ],
+     "why": "Gear lists twin 60 m ropes; the descent says a single 60 m rope is standard.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of crux pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.10 (5.10- on the two crux crack pitches)"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Three long pitches"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.10 (overhanging)"
+      }
+     ],
+     "why": "The rock grade says two crux pitches; the route breakdown shows three 5.9-5.10 headwall pitches plus a separate overhanging 5.10 headwall.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "name": "Southwest Couloir",
+   "area": "Mount Goode",
+   "contradictions": [
+    {
+     "fact": "Rappels on the descent",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "Typically ~5 rappels on descent from the summit area down through the couloir to class 3 ground (parties reversing the route commonly report 3-5 single-rope raps)."
+      },
+      {
+       "field": "descent_text",
+       "says": "this is the standard walk-down/scramble-down line, not a rappel route under normal (dry, low-snow) conditions"
+      },
+      {
+       "field": "descent_text",
+       "says": "No technical rappelling is required for a straightforward Southwest Couloir round trip"
+      }
+     ],
+     "why": "The RAPPELS field plans ~5 rappels; the descent text says it is a downclimb, not a rappel route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier crossing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - route is snow/scree/rock with no documented glacier crossing"
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "Goode Glacier crossing"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Cross the glacier from the moraine camp to reach the couloir base"
+      },
+      {
+       "field": "obj_haz[3]",
+       "says": "crevasses/moat on the Goode Glacier portion of the approach"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "glacier travel & crevasse rescue on approach"
+      }
+     ],
+     "why": "Seasonal hazards says there is no glacier crossing; the waypoints, obj_haz and partner requirements include one.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "III"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade II-III"
+      }
+     ],
+     "why": "The grade pill says III; the commitment chip says II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain / loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "8400"
+      },
+      {
+       "field": "loss_ft",
+       "says": "8400"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "4600 + 2400 = 7000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~6,500 ft of gain"
+      }
+     ],
+     "why": "The gain column (8,400 ft) disagrees with the itinerary (7,000) and its total note (~6,500).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4500"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "(Rainy Pass area, ~4,875 ft)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "~2 mi east of Rainy Pass"
+      }
+     ],
+     "why": "The same trailhead is given as 4,500 ft (2 mi east of Rainy Pass) and ~4,860-4,875 ft (at Rainy Pass).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to high camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "on the order of 15-16 miles and 4,000-4,800 ft of gain to high camp"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "15"
+      }
+     ],
+     "why": "The moraine camp is 13 mi in by the waypoints and 15-16 mi in the approach text and itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-1 elevation loss",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "This stretch loses elevation steadily — roughly 2,000 ft over about 9.5-9.6 miles"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "0"
+      }
+     ],
+     "why": "The approach loses ~2,000 ft down Bridge Creek, but itinerary day 1 records 0 ft of loss (and day 3 no regain).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Days in",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "2 days in via Bridge Creek/Park Creek to a base camp"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach to high camp"
+      }
+     ],
+     "why": "Partner requirements plan 2 days in; the itinerary reaches high camp on day 1.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area": "Mount Goode",
+   "contradictions": [
+    {
+     "fact": "Descent route and exit",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Follow cairned Park Creek trail back to Bridge Creek Camp on the PCT. Total descent approximately 9.7 miles, 10 hours. NO moat re-crossing required"
+      },
+      {
+       "field": "descent_text",
+       "says": "descend scree/talus back to the Goode Glacier basin, re-cross the glacier, and reverse the approach down the North Fork Bridge Creek drainage"
+      },
+      {
+       "field": "rappel_detail[5].notes",
+       "says": "from which the descent continues toward North Fork Bridge Creek"
+      },
+      {
+       "field": "itinerary.days[3].note",
+       "says": "follow the North Fork Bridge Creek Trail and PCT back to Highway 20"
+      },
+      {
+       "field": "outing_shape",
+       "says": "loop"
+      }
+     ],
+     "why": "The DESCENT field exits via the Park Creek trail with no glacier re-crossing; descent_text, rappel_detail and the itinerary re-cross the Goode Glacier and reverse the North Fork approach. The longer descent_text is shown and the shorter hidden, but both feed the plan.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain / loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "10700"
+      },
+      {
+       "field": "loss_ft",
+       "says": "10700"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "gain 4700 + 2800 = 7500; loss 7500 + 1400 = 8900"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~7,500 ft of climbing gain"
+      }
+     ],
+     "why": "The gain column (10,700) is ~40% above the itinerary's 7,500, and the loss columns disagree too.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "30.8"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~38 mi RT"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "15.5 + 2.5 + 10 + 10 = 38 mi"
+      }
+     ],
+     "why": "dist_km (19 mi) is shown as the distance while the itinerary totals ~38 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Days / miles to the bivy",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "2 days in to a bivy (~20+ miles)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "15.5"
+      },
+      {
+       "field": "beta",
+       "says": "Approach via 10-mile PCT descent to Bridge Creek junction, then 3-4 miles up North Fork Bridge Creek to base camp"
+      }
+     ],
+     "why": "Partner requirements say 2 days and 20+ mi to the bivy; the itinerary reaches it on day 1 at 15.5 mi and beta says ~13-14 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade IV, 5.5"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.5"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.7 (unprotectable, usually bypassed)"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "multi-pitch trad leading to 5.6"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "a few 5.5/5.6 moves"
+      }
+     ],
+     "why": "The crux is given as 5.5, 5.6 and 5.7 (the 5.7 slab is usually bypassed).",
+     "internal_resolution": "The 5.7 slab is described as bypassed, so 5.5 stands as the normal line.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction up the North Fork",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "then east up North Fork Bridge Creek"
+      },
+      {
+       "field": "waypoints[1].lng",
+       "says": "-120.853537"
+      },
+      {
+       "field": "waypoints[2].lng",
+       "says": "-120.9003"
+      }
+     ],
+     "why": "The approach says east up the North Fork, but the High Camp pin lies west of the PCT junction.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit plan vs turnaround",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "Most parties should plan to reach the summit by early afternoon to allow adequate time for descent."
+      },
+      {
+       "field": "itinerary.days[1].objective",
+       "says": "Summit via the buttress, bivy on top"
+      }
+     ],
+     "why": "The turnaround assumes a same-day descent; the itinerary plans a summit bivy.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Moat timing in July",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "Snow bridges over the moat are typically still solid in early July, giving reliable glacier-to-rock transition"
+      },
+      {
+       "field": "season",
+       "says": "the moat crossing is easiest once the glacier has receded (~3rd week of July)"
+      }
+     ],
+     "why": "One field says early July has the most reliable moat crossing; the other says it is easiest after the third week of July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where to get the permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Backcountry permit required ($10 + $6 fee) from North Cascades Visitor Center in Marblemount"
+      },
+      {
+       "field": "access.permit",
+       "says": "activated in person at the Wilderness Information Center in Marblemount"
+      }
+     ],
+     "why": "Two different offices are named for the permit.",
+     "internal_resolution": "access.permit, overnight_permit and emergency all name the Marblemount Wilderness Information Center.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

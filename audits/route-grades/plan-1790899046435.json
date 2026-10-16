@@ -1,0 +1,1038 @@
+{
+ "plan": [
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Rainy Lake route: brush, mossy slabs, then Class 3 (one report says 3/4) scrambling once on the ridge; Mountaineers list it as a scramble.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-05-21.2742551446",
+    "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   ]
+  },
+  {
+   "id": "wa_east_slope",
+   "batch": "b23.json",
+   "before": {
+    "grade": "3rd"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "East ridge from Lucky Pass is Class 2-3; trip report: Class 3 rock along the right edge of the east face with an exposed summit arete.",
+   "sources": [
+    "https://www.summitpost.org/primus-peak/152519",
+    "https://www.summitpost.org/east-slopes-standard-route/445174",
+    "https://trailcatjim.com/inspiration-isolation-traverse-primus-peak-eldorado-peak-isolation-peak-snowfield-peak/"
+   ]
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Grade II, Class 2-3",
+    "grade_system": "yds",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2
+   },
+   "headline": [
+    "PD",
+    "Class 2"
+   ],
+   "confidence": "medium",
+   "evidence": "Primus from the south and west is a Class 2 walk-up; parties from the Eldorado/McAllister side unrope and scramble snow-covered talus to the summit.",
+   "sources": [
+    "https://www.summitpost.org/primus-peak/152519",
+    "https://www.countryhighpoints.com/eldorado-primus-and-austera-peaks/"
+   ]
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "batch": "b23.json",
+   "before": {
+    "grade": "5.10+ C1",
+    "grade_num": 10
+   },
+   "body": {
+    "grade": "5.11a",
+    "grade_num": 11.25
+   },
+   "headline": [
+    "5.10+",
+    "5.11a"
+   ],
+   "confidence": "medium",
+   "evidence": "FA party's report: 5.10+ C1 overall, but pitch 5 is the 5.11a final pitch shared with Solid Gold; P3 has a 15 ft aid section (C1, maybe 5.12- free).",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Grade III, 5.11+"
+   },
+   "body": {
+    "grade": "5.11+"
+   },
+   "headline": [
+    "5.11+",
+    "5.11+"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project 5.11+; a trip report gives 5.11+/12- (first pitch 5.11d/12a).",
+   "sources": [
+    "https://www.mountainproject.com/route/107641573/der-sportsman",
+    "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/"
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Grade III, 5.11a"
+   },
+   "body": {
+    "grade": "5.11a"
+   },
+   "headline": [
+    "5.11a",
+    "5.11a"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project 5.11a; pitches 5.10d, 5.11a, 5.10a, 5.8, 5.11a.",
+   "sources": [
+    "https://www.mountainproject.com/area/105808510/prusik-peak",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "batch": "b23.json",
+   "before": {
+    "grade": "III, 5.9+",
+    "grade_num": 9,
+    "rock_grade": "5.9+"
+   },
+   "body": {
+    "grade": "5.10a",
+    "grade_num": 10.25,
+    "rock_grade": "5.10a"
+   },
+   "headline": [
+    "5.9+",
+    "5.10a"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountain Project lists Stanley-Burgner 5.10a and a 2021 report calls it 5.10-; older sources and one trip report give 5.9+.",
+   "sources": [
+    "https://www.mountainproject.com/area/105808510/prusik-peak",
+    "https://climberkyle.com/2021/08/28/prusik-peak-stanley-burgner-5-10/",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Grade II-III, 5.7"
+   },
+   "body": {
+    "grade": "5.7"
+   },
+   "headline": [
+    "5.7",
+    "5.7"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: West Ridge 5.7.",
+   "sources": [
+    "https://www.mountainproject.com/route/105808527/west-ridge",
+    "https://www.mountainproject.com/area/105808510/prusik-peak"
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Class 2-3",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_num": 2
+   },
+   "headline": [
+    "Class 2 walk-up",
+    "Class 2"
+   ],
+   "confidence": "medium",
+   "evidence": "Rated YDS Class 2 ('this one's a walk'); Class 3 (avoidable Class 4) only on the ridge traverse toward Dot Mountain.",
+   "sources": [
+    "https://hike2hike.com/summits/mount-lago-and-ptarmigan-peak-north-cascades-bulgers/",
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/"
+   ]
+  },
+  {
+   "id": "wa_rap_wall_bring_da_ruckus",
+   "batch": "b23.json",
+   "before": {
+    "grade": "WI6+ M8+ PG13"
+   },
+   "body": {
+    "grade": "WI6+"
+   },
+   "headline": [
+    "WI6+",
+    "WI6+"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: WI6+ M8+ PG13.",
+   "sources": [
+    "https://www.mountainproject.com/area/108509194/rap-wall"
+   ]
+  },
+  {
+   "id": "wa_rap_wall_hotline",
+   "batch": "b23.json",
+   "before": {
+    "grade": "WI5-6"
+   },
+   "body": {
+    "grade": "WI6"
+   },
+   "headline": [
+    "WI5-6",
+    "WI5-6"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: WI5-6; top of range is WI6.",
+   "sources": [
+    "https://www.mountainproject.com/area/108509194/rap-wall"
+   ]
+  },
+  {
+   "id": "wa_rap_wall_the_36th_chamber",
+   "batch": "b23.json",
+   "before": {
+    "grade": "WI5+ M6 R"
+   },
+   "body": {
+    "grade": "WI5+"
+   },
+   "headline": [
+    "WI5+",
+    "WI5+"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: WI5+ M6 R.",
+   "sources": [
+    "https://www.mountainproject.com/area/108509194/rap-wall"
+   ]
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "batch": "b23.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Crater Lake side reaches the same summit block, which goes at Class 3 via a short passage under the boulders; the ridge itself is Class 2-3.",
+   "sources": [
+    "https://www.summitpost.org/raven-ridge/916382",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-05-03-8845724852"
+   ]
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "batch": "b23.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null,
+    "rock_grade": "Class 3–4 (scramble; one exposed no-fall Class 4 move near the true summit)"
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "rock_grade": "Class 3 (loose gully; short summit-block scramble)"
+   },
+   "headline": [
+    "Class 3–4",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Very loose gully to the crest (Class 2+), easy ridge scramble; summit block looks 4th/5th but a tunnel on the SW side leads to a Class 3 scramble to the top.",
+   "sources": [
+    "https://www.summitpost.org/raven-ridge/916382",
+    "https://climberkyle.com/2017/10/01/hoodoo-peak-and-raven-ridge/"
+   ]
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_standard",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Class 2-3"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "West slope scramble alternates Class 2 and Class 3 at 30-40 degrees with little exposure.",
+   "sources": [
+    "http://www.willhiteweb.com/snoqualmie_pass/red_mountain/climbing_254.htm",
+    "https://www.summitpost.org/red-mountain-snoqualmie/150919"
+   ]
+  },
+  {
+   "id": "wa_south_face_7",
+   "batch": "b23.json",
+   "before": {
+    "grade": "4th"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: 4th class; several Class 3 pitches, optional Class 4/low-5th direct summit finish.",
+   "sources": [
+    "https://www.mountainproject.com/route/119517789/south-face"
+   ]
+  },
+  {
+   "id": "wa_remmel_mountain_southeast_slope",
+   "batch": "b23.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 1",
+    "grade_system": "class",
+    "grade_num": 1
+   },
+   "headline": [
+    "Class 1-2",
+    "Class 1"
+   ],
+   "confidence": "medium",
+   "evidence": "Former lookout reached by an old trail switchbacking up the SE talus slope from Four Point Lake; described as a Class 1 walk-up with trail to the summit.",
+   "sources": [
+    "https://hike2hike.com/summits/remmel-mountain-washington-north-cascades/",
+    "https://www.countryhighpoints.com/remmel-mountain/"
+   ]
+  },
+  {
+   "id": "wa_reynolds_peak_scramble",
+   "batch": "b23.json",
+   "before": {
+    "grade": "Class 3-4",
+    "rock_grade": "Class 3 (YDS scramble)"
+   },
+   "body": {
+    "grade": "Class 4",
+    "rock_grade": "Class 3-4 (exposed step near the summit)"
+   },
+   "headline": [
+    "Class 3",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "South (true) summit reputed Class 3 or 4 from the col between the summits; another report calls it Class 2/3 with a very exposed step-across move.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/05/reynolds-peak/",
+    "https://thehuntindaddy.com/index.php/peak-bagging/reynolds-peak/"
+   ]
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "Standard SE ridge via Beauty Creek: mile-long loose ridge scramble that does not exceed Class 3 (Class 2-3).",
+   "sources": [
+    "https://www.summitpost.org/robinson-mountain/151111",
+    "https://trailcatjim.com/robinson-mountain-southern-pasayten-mountains/"
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_northeast_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Only trip report describes the NE ridge from the Howard-Rock col as a snow climb and rock scramble, with no class given.",
+   "sources": [
+    "http://trailcatjim.com/nason-ridge-summit-traverse-mt-mastiff-to-rock-mountain/"
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 2",
+    "grade_num": 2
+   },
+   "body": {
+    "grade": "Class 1",
+    "grade_num": 1
+   },
+   "headline": [
+    "Class 2",
+    "Class 1"
+   ],
+   "confidence": "medium",
+   "evidence": "Summer: steep trail to the summit, non-technical with no scrambling or exposure; in winter it becomes a winter scramble with a narrow, sometimes corniced ridge to the true summit.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-rock-mountain-near-stevens-pass/",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain-via-rock-lake",
+    "https://www.mountaineers.org/activities/routes-places/rock-mountain"
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Winter route: short trail, then 5,000 ft of steep untracked forest and snow; finishes on the same summit ridge as the NW ridge (exposed rock and snow). No class given beyond 'winter scramble'.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-04-14.191829091913",
+    "https://www.mountaineers.org/activities/trip-reports/winter-scramble-ruby-mountain-winter"
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_northwest_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Off-trail winter scramble from Highway 20; final 300 ft to the summit ridge is an exposed mixed rock-and-snow scramble.",
+   "sources": [
+    "https://www.summitpost.org/nw-ridge-scramble/339201",
+    "https://cnmtstuartclimbproject.blogspot.com/2017/04/route-ruby-mountain-nw-ridge-route.html"
+   ]
+  },
+  {
+   "id": "wa_ruby_mountain_south_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Fourth of July Pass then bootpath; the final 6,600-7,200 ft is a Class 2-3 scramble on a steep, somewhat exposed rock and grass slope.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ruby-mountain"
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Grade II, 4th class"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: 4th class, Grade II, Easy Snow; crux is a 100 ft low-4th-class summit gully on Icy Peak after Class 2-3 terrain.",
+   "sources": [
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://www.summitpost.org/icy-peak-via-ruth-mountain/855906"
+   ]
+  },
+  {
+   "id": "wa_ruth_mountain_south_slopes",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Grade II, Class 2-3",
+    "grade_system": "yds",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2
+   },
+   "headline": [
+    "PD",
+    "Class 2"
+   ],
+   "confidence": "high",
+   "evidence": "Mostly a walk-up with easy, minimally crevassed glacier travel; Mountain Project rates the North Face 'Easy Snow'.",
+   "sources": [
+    "https://www.mountainproject.com/area/112189848/ruth-mountain",
+    "https://www.summitpost.org/ruth-glacier/156614"
+   ]
+  },
+  {
+   "id": "wa_ruth_peak_olympics_scramble",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Easiest route on Ruth Peak is a Class 3 scramble, usually climbed from the Bailey Range Traverse.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ruth_Peak",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ]
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Grade II, glacier + Class 3-4/5.0-5.4 summit block"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountain Project: Quien Sabe Glacier 4th class, Easy Snow; the Mountaineers describe a loose-rock summit scramble after an exposed snow traverse.",
+   "sources": [
+    "https://www.mountainproject.com/area/107848148/sahale-peak",
+    "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier"
+   ]
+  },
+  {
+   "id": "wa_sahale_mountain_sahale_glacier",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Grade II, Class 3, glacier",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_num": 0
+   },
+   "headline": [
+    "5.0",
+    "5.0"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountain Project: Sahale Glacier 'Easy 5th', Easy Snow; another report calls the summit block 3rd/4th class rock.",
+   "sources": [
+    "https://www.mountainproject.com/area/107848148/sahale-peak",
+    "https://stephabegg.com/trip-reports/washington/sahale/"
+   ]
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 2-3"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "Saska is a Class 3 exposed scramble climbed fairly directly from Saska Pass/the Emerald-Saska col.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/saska-peak",
+    "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/"
+   ]
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 3-4 / glacier"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "West face from the South Cascade Glacier side: snow, a bergschrund crossing with some 4th-class rock, then Class 2/3 ledge and face to the summit. No 5th class reported.",
+   "sources": [
+    "https://www.countryhighpoints.com/sentinel-peak-and-old-guard-peak-surveys/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1283930"
+   ]
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "F",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Standard SW slopes/ridge rated Class 2 by one source and Class 3 by another; loose gully, optional snow couloir.",
+   "sources": [
+    "https://www.summitpost.org/seven-fingered-jack/150428",
+    "https://www.lemkeclimbs.com/mt-maude-and-seven-fingered-jack.html"
+   ]
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": "II, 5.0"
+   },
+   "body": {
+    "grade": "5.0"
+   },
+   "headline": [
+    "5.0",
+    "5.0"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: Southeast Ridge 5.0, 3 pitches, Grade II; trip report also 5.0, 3p.",
+   "sources": [
+    "https://www.mountainproject.com/route/108338771/southeast-ridge",
+    "https://stephabegg.com/trip-reports/washington/sharkfin-tower/"
+   ]
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Main summit is mostly steep Class 3/4 rock and brush, with one short pitch that should be belayed; north summit is Class 2/3 from Weden Pass.",
+   "sources": [
+    "https://www.summitpost.org/sheep-gap-mountain/808715"
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 2-3 (glacier)",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3 (glacier)"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "From the Roman Wall saddle, parties traverse to the south and front-point steep icy slopes to an exposed summit ridge with rime-ice knobs; in good snow the west ridge is described as a friendly ridge walk.",
+   "sources": [
+    "https://www.countryhighpoints.com/mt-baker-and-sherman-peak/",
+    "https://www.summitpost.org/sherman-peak/780602"
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountain Project rates the Squak Glacier 'Easy Snow', Grade III; it joins the Easton route at the Sherman Crater rim, and the final climb to Sherman's summit is steep, icy front-pointing to an exposed rime-ice ridge.",
+   "sources": [
+    "https://www.mountainproject.com/route/108224628/squak-glacier",
+    "https://www.countryhighpoints.com/mt-baker-and-sherman-peak/"
+   ]
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_ne_couloir",
+   "batch": "b24.json",
+   "before": {
+    "grade": "5.0 (short finishing pitch)"
+   },
+   "body": {
+    "grade": "5.0"
+   },
+   "headline": [
+    "5.0",
+    "5.0"
+   ],
+   "confidence": "medium",
+   "evidence": "Snow/ice couloir up to 50 degrees, then a scramble up and right finishing with one short 5.0 rock pitch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir",
+    "https://engineeredforadventure.com/sherpa-peak-ne-couloirs/"
+   ]
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 3-4, low 5th"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "East Ridge: broad NNE gully to the crest east of the Balanced Rock, then blocks and sandy benches westward to the summit, Class 3-4.",
+   "sources": [
+    "https://www.summitpost.org/sherpa-peak/152244"
+   ]
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Grade II, Class 4 to 5.4",
+    "rock_grade": "5.4"
+   },
+   "body": {
+    "grade": "5.5",
+    "rock_grade": "5.5"
+   },
+   "headline": [
+    "5.4",
+    "5.5"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountain Project: West Ridge 5.5, 3 pitches; one report calls the final 5.4 crack 'comically sandbagged'.",
+   "sources": [
+    "https://www.mountainproject.com/area/110930775/sherpa-peak",
+    "https://www.countryhighpoints.com/sherpa-peak/"
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "high",
+   "evidence": "Mountain Project: 4th class, Steep Snow; summit rocks variously Class 3 or 4, with a Class 4 chimney and mantle to the true summit.",
+   "sources": [
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024"
+   ]
+  },
+  {
+   "id": "wa_silver_star_northwest_face",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null,
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "WI4+",
+    "grade_system": "wi",
+    "grade_num": 4,
+    "ice_grade_num": 4
+   },
+   "headline": [
+    "WI4+",
+    "WI4+"
+   ],
+   "confidence": "high",
+   "evidence": "AAJ: Northwest Face (IV WI4+ M6-), Keena and Williams, October 2019.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201215340"
+   ]
+  },
+  {
+   "id": "wa_silver_star_west_face_couloir",
+   "batch": "b24.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "AI2",
+    "grade_system": "wi",
+    "grade_num": 2
+   },
+   "headline": [
+    "AI2",
+    "AI2"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountain Project: West Face Couloir AI2 M4, Steep Snow.",
+   "sources": [
+    "https://www.mountainproject.com/area/111875731/silver-star-mountain"
+   ]
+  },
+  {
+   "id": "wa_sinister_peak_north_face",
+   "batch": "b24.json",
+   "before": {
+    "grade": "Steep snow/ice 45–50°",
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "NCCS Grade II",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "45-50 degree neve and ice face, ice screws and pickets required (Mountaineers: intermediate ice climb), then a short rock scramble to the summit. No ice grade given.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sinister-peak",
+    "https://www.summitpost.org/sinister-peak/749245"
+   ]
+  }
+ ],
+ "refused": [
+  {
+   "id": "wa_rap_wall_ghost_dog",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "batch": "b23.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_albachoss",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_boaty_mcboatface",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_hiphoppopotamus",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_rabbit_in_the_streets",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_seagull_in_the_sheets",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_torque_beans",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_roadhouse_dry_tooling_troll_king",
+   "batch": "b23.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_shuksan_crag_beginner_s_route",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_shuksan_crag_dot_pastime",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_shuksan_crag_dry_when_wet_aka_the_roof",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_shuksan_crag_katie_s_corner",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_shuksan_crag_pumporama",
+   "batch": "b24.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  }
+ ]
+}

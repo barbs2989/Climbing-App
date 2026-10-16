@@ -1,0 +1,490 @@
+{
+ "applied": [
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "column": "obj_haz",
+   "path": [
+    2
+   ],
+   "fact": "obj_haz names the Sill Glacier / a 'descent glacier', which is not on this route's own descent"
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "column": "obj_haz",
+   "path": [
+    3
+   ],
+   "fact": "obj_haz names the Sill Glacier / a 'descent glacier', which is not on this route's own descent"
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "seasonal_hazards.crevasses claims no glacier travel, but the route's own descent crosses a glacier"
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "access.closures calls this route's target season late April/May, but the route is a July-August climb"
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "itinerary.cal says the couloir climbs best June-August, against the row's late-April-June season"
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elevFt"
+   ],
+   "fact": "summit waypoint elevFt 8066 vs high_point_ft 8200"
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "access.closures calls this route's target season late April/May, but the route is a summer rock climb"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain/loss vs itinerary day sums"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total gain/loss vs itinerary day sums"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "approach",
+   "path": [],
+   "fact": "approach prose says 7-8 miles and 4,500-5,000+ ft to camp; itinerary/waypoints say 5 miles and 2,900 ft"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "itinerary day 1 and timing breakdown say to sidehill EAST from Easy Pass; the camp lies west-northwest"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "itinerary day 1 and timing breakdown say to sidehill EAST from Easy Pass; the camp lies west-northwest"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "approach",
+   "path": [],
+   "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "permit called free in approach, approach_variants and itinerary.cal; access.fees says $10/person + $6"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "access.notes/rules describe Boston Basin/Eldorado/Sulphide Glacier permit quotas, unrelated to this trailhead"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "land manager stated two different ways"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "before": {
+    "obj_haz": [
+     "Sustained rockfall/loose rock",
+     "Vertical bushwhacking with unreliable vegetation handholds",
+     "Icefall and rockfall on the Sill Glacier descent couloir",
+     "Crevasses and a bergschrund on the descent glacier",
+     "Difficult route-finding in the lower vegetated buttress"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "This is a midsummer objective that still demands stable weather because the hanging glaciers make timing and line choice critical",
+      "probability": "Afternoon thunderstorms are a recurring risk on the long face"
+     },
+     "exposure": "High consequence: a sustained, committing 20-pitch face with rockfall and icefall exposure throughout, the risk of running out of daylight, and a long, complex, technical descent",
+     "avalanche": {
+      "zone": "West Slopes North (NWAC) is the nearest forecast zone, but NWAC's daily avalanche forecast does not run during this route's July-September climbing season - the hazard here is icefall/serac fall off the hanging glaciers on the face rather than a forecast avalanche problem",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no roped glacier travel is required on the buttress itself, but the hanging glaciers above and beside the face produce the icefall/avalanche hazard"
+    },
+    "access": {
+     "fees": "No park entrance fee — North Cascades NP is fee-free. Summer-season backcountry permits (mid-May through early October) cost $10/person/night plus a $6 nonrefundable reservation fee; free outside that window.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "No permit is required for a single-day climb; an overnight bivy or any backcountry camping requires a North Cascades NP wilderness/backcountry permit, reservable on Recreation.gov or obtained walk-up at the Marblemount Wilderness Information Center.",
+     "permit": "North Cascades NP wilderness/backcountry camping permit (required for any overnight stay; day climbs need none)",
+     "closures": "Cascade River Road is gated for winter at the park boundary (milepost 18) and typically doesn't reopen to the Cascade Pass trailhead until late June, sometimes not until early July in heavy-snow years — this matters for this route's late-April/May target season, since the trailhead itself may still be inaccessible by vehicle.",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (South Unit), National Park Service",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None for day climbing; a wilderness permit (not a parking pass) is only needed if bivying overnight.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "before": {
+    "itinerary": {
+     "cal": "The couloir climbs best on firm snow well before dawn in June-August; as the day warms, softening snow bridges over the Sill Glacier and wet-slide/rockfall risk both rise, which is why parties race to be off it by mid-day.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Cascade Pass trail then cut cross-country toward Cascade-Johannesburg col, gaining the flanks below the couloir. Most parties reach a flat bivy spot near the col with time to rest before an alpine-start next morning.",
+       "hours": 6,
+       "miles": 3,
+       "title": "Approach to the C-J col bivy",
+       "gainFt": 3200,
+       "lossFt": 0,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Reach the bivy site near the base of the couloir/C-J col"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start ascent of the snow couloir onto the ridge crest, then sustained, loose, exposed 3rd-5th class climbing along the East Ridge to the true summit. The whole route is then downclimbed/rappelled and the couloir descended before it softens, followed by the long hike out — real parties report finishing well after dark.",
+       "hours": 19,
+       "miles": 3.5,
+       "title": "Couloir, East Ridge, summit, and full reversal",
+       "gainFt": 1400,
+       "lossFt": 4600,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "2:00 AM",
+         "label": "Leave bivy",
+         "detail": "Start up the couloir by headlamp while the snow is still firm."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Gain the ridge crest",
+         "detail": "Top out the couloir and rope up for the East Ridge proper."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach the summit",
+         "detail": "Sustained loose, exposed climbing along the ridge to the true summit at 8,200 ft."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin the reversal",
+         "detail": "Downclimb and short-rappel back along the ridge toward the col."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at the C-J col / couloir base",
+         "detail": "Matches parties' reports of regaining their bivy/camp area by mid-afternoon."
+        },
+        {
+         "time": "9-11 PM",
+         "label": "Trailhead",
+         "detail": "Long hike-out; several trip reports finish car-to-car after dark."
+        }
+       ],
+       "objective": "Climb the CJ Couloir and East Ridge to the summit, then reverse the entire route to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day trip: roughly 6 hours to a bivy near the C-J col, then a brutal 18-20+ hour summit day climbing the couloir and East Ridge and reversing the entire route back to the trailhead."
+    }
+   }
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.4755,
+      "lng": -121.075,
+      "elev": 3600,
+      "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+      "note": "",
+      "type": "Trailhead",
+      "elevFt": 3600,
+      "directions": "Drive Cascade River Road to its end at the Cascade Pass trailhead, near 3,600 ft. The road is generally open late June through September, and this route's season is tied to it. This is one of the shortest approaches in the range: the serious ground starts around 3,500 ft, within an hour of the car, so there is no long walk to warm up on."
+     },
+     {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Maintained trail tops out here; leave it for the climbers' path toward Johannesburg.",
+      "type": "Junction",
+      "distMi": 3.6
+     },
+     {
+      "lat": 48.4655,
+      "lng": -121.079,
+      "elev": 4300,
+      "name": "Cascade River Crossing / Terminal Moraine",
+      "note": "Off-trail descent and ford of the infant Cascade River below the terminal moraine.",
+      "type": "Hazard",
+      "distMi": 4.3
+     },
+     {
+      "lat": 48.4665,
+      "lng": -121.085,
+      "elev": 5200,
+      "name": "Base of C-J Couloir",
+      "note": "Gain rock just before the Cascade-Johannesburg couloir narrows; the NE Ridge (1963) climbs the rib right of the couloir.",
+      "type": "Junction",
+      "distMi": 4.8
+     },
+     {
+      "lat": 48.4665,
+      "lng": -121.088,
+      "elev": 6800,
+      "name": "Hanging Glacier Traverse",
+      "note": "Exposed rising traverse beneath Johannesburg's hanging glaciers; rockfall and icefall hazard.",
+      "type": "Hazard",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.46472,
+      "lng": -121.09194,
+      "elev": 8066,
+      "name": "Johannesburg Mountain",
+      "type": "Summit",
+      "elevFt": 8066
+     }
+    ],
+    "access": {
+     "fees": "No park entrance fee — North Cascades NP is fee-free. Summer-season backcountry permits (mid-May through early October) cost $10/person/night plus a $6 nonrefundable reservation fee; free outside that window.",
+     "notes": "Wilderness permit required year-round for overnight stays in North Cascades National Park. Permits via Recreation.gov (60% reservation) or first-come-first-serve (40%). Cascade River Road (unpaved, 23 miles) opens late June/July. Free trailhead parking.",
+     "rules": "No permit is required for a single-day climb; an overnight bivy or any backcountry camping requires a North Cascades NP wilderness/backcountry permit, reservable on Recreation.gov or obtained walk-up at the Marblemount Wilderness Information Center.",
+     "permit": "North Cascades NP wilderness/backcountry camping permit (required for any overnight stay; day climbs need none)",
+     "closures": "Cascade River Road is gated for winter at the park boundary (milepost 18) and typically doesn't reopen to the Cascade Pass trailhead until late June, sometimes not until early July in heavy-snow years — this matters for this route's late-April/May target season, since the trailhead itself may still be inaccessible by vehicle.",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (South Unit), National Park Service",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None for day climbing; a wilderness permit (not a parking pass) is only needed if bivying overnight.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "before": {
+    "gain_ft": 8100,
+    "loss_ft": 6000,
+    "approach": "Start at the Easy Pass Trailhead on SR-20 (milepost ~151, roughly 30 miles east of Newhalem / ~37 miles from Marblemount). Follow Easy Pass Trail (Green Trails Mt. Logan No. 49) 3.5-3.6 miles and about 2,700-3,000 ft of gain to Easy Pass at 6,550 ft — figure 2-3 hours. The trail crosses Granite Creek on a footlog near the start, climbs through about 2 miles of hemlock/silver-fir forest, then breaks into open avalanche meadows and crosses Easy Pass Creek three times before the final push to the pass; steep snow can linger on this upper section well into July and an ice axe is recommended into early summer. From the pass, drop down the North Cascades National Park side to the end of the first switchback, where a faint, easy-to-miss climbers' path breaks off onto Ragged Ridge — this junction is unmarked and is the most commonly botched route-finding point on the whole approach; if you don't spot the boot path, head off-trail toward the ridge anyway. From there, sidehill northwest across scree, talus, grass and blocky terrain at roughly 6,600-6,800 ft along the south side of the ridge (about an hour), crossing one notable waterfall/stream beneath Mesahchie Peak around 6,500 ft on an easy bench — this is the one water crossing of consequence on the traverse and also a reliable water source. Continue to the basin/shoulder at roughly 6,600-6,870 ft just south of the Katsuk-Mesahchie col, known as Ragged Ridge Camp (only two workable flat tent sites; good water draining the basin). A free NPS backcountry permit is required to camp here. From camp, gain a further 200-600 ft to a saddle/bench on the ridge descending from Katsuk's west summit — tedious scree with a short stretch of 4th-class scrambling near the top — then locate the leftward-trending Southwest Gully high on the peak, which runs up toward a mushroom-shaped summit block. Low in the gully, bypass a waterfall by staying on its left (west) side on loose, 'kitty-litter' scree (Class 3). In early season (before roughly July) the entire gully holds steep snow to 45 degrees and demands an ice axe, crampons, and solid snow-climbing technique. Given the ~19.3 km round-trip distance, this is realistically an overnight approach (roughly 7-8 miles and 4,500-5,000+ ft to camp) rather than a single-push dayhike for most parties.",
+    "itinerary": {
+     "cal": "North Cascades NP requires a free backcountry camping permit for the basin camp; Easy Pass trailhead (SR-20) is only accessible once the North Cascades Highway opens for the season, typically late April to early November.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the well-graded Easy Pass Trail to the 6,550 ft pass, then leave the trail and sidehill traverse east across scree, talus, and grassy benches at roughly 6,600-6,800 ft to the basin camp south of Mesahchie Peak. Only two workable flat tent sites exist in the basin, so it can be worth arriving mid-afternoon to claim one.",
+       "hours": 5,
+       "miles": 5,
+       "title": "Approach to basin camp below Mesahchie",
+       "gainFt": 2900,
+       "lossFt": 150,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Easy Pass trailhead",
+         "detail": "3.6 mi, ~2,700-2,800 ft gain of maintained trail."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Reach Easy Pass (6,550 ft)",
+         "detail": "Leave the maintained trail here."
+        },
+        {
+         "time": "9:00 AM - 12:00 PM",
+         "label": "Sidehill traverse to basin",
+         "detail": "Cross-country scree/talus/grass traverse at ~6,600-6,800 ft; about an hour of sidehilling once past the pass, plus route-finding time."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Make camp",
+         "detail": "6,600 ft basin south of Mesahchie; set up and scout tomorrow's approach to the col."
+        }
+       ],
+       "objective": "Reach the 6,600 ft basin camp south of Mesahchie Peak"
+      },
+      {
+       "n": 2,
+       "note": "From camp, climb loose talus to the small col/pass below Katsuk, then work up the complex system of gullies, ramps, and slabs of the Southwest Gully to just below the mushroom-shaped summit block. The final class 4 summit block is short but exposed and is usually the crux both ways. Many parties link Katsuk with neighboring Mesahchie the same day via the connecting gullies along Ragged Ridge, turning this into a longer full-day traverse.",
+       "hours": 5,
+       "miles": 1.8,
+       "title": "Summit day: Katsuk (and often Mesahchie)",
+       "gainFt": 2100,
+       "lossFt": 2100,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Light alpine-start pack; climb toward the col below Katsuk."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Reach col/pass below Katsuk",
+         "detail": "Loose rock approach from camp, roughly 800-1,000 ft of gain."
+        },
+        {
+         "time": "6:00 - 8:30 AM",
+         "label": "Ascend the Southwest Gully",
+         "detail": "Class 3 scrambling on very loose rock through the gully/ramp system to the base of the summit block."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Summit",
+         "detail": "Exposed class 4 scramble up the final summit block."
+        },
+        {
+         "time": "9:00 AM - 12:00 PM",
+         "label": "Descend to summit block base, then reverse",
+         "detail": "Downclimb the exposed class 4 block first (the most consequential part of the descent), then reverse the loose gully."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at camp",
+         "detail": "Rest, or continue on to Mesahchie if energy and weather allow."
+        }
+       ],
+       "objective": "Climb Katsuk Peak via the Southwest Gully"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Day 1 traverse and descent: sidehill back to Easy Pass, then descend the maintained trail to the trailhead.",
+       "hours": 4,
+       "miles": 5.2,
+       "title": "Hike out",
+       "gainFt": 150,
+       "lossFt": 2900,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Easy Pass trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip covering ~12 miles round trip and ~2,900 ft of net gain to the basin camp, with a short but slow (loose, exposed class 3-4) summit day on Katsuk from camp; most parties tag neighboring Mesahchie Peak the same day via the connecting gullies."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 5,
+     "descentTimeHrs": 4,
+     "approachTimeHrs": 5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "Hike the well-graded Easy Pass Trail to the 6,550 ft pass, then leave the trail and sidehill traverse east across scree, talus, and grassy benches at roughly 6,600-6,800 ft to the …",
+       "fromTo": "Approach to basin camp below Mesahchie",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5,
+       "note": "From camp, climb loose talus to the small col/pass below Katsuk, then work up the complex system of gullies, ramps, and slabs of the Southwest Gully to just below the mushroom-shap…",
+       "fromTo": "Summit day: Katsuk (and often Mesahchie)",
+       "section": "Climb"
+      },
+      {
+       "hrs": 4,
+       "note": "Reverse the Day 1 traverse and descent: sidehill back to Easy Pass, then descend the maintained trail to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach_variants": [
+     {
+      "name": "Ragged Ridge Camp to the waterfall at 7,760 ft",
+      "notes": "From the basin camp south of Mesahchie Peak, climb 200 to 600 ft to the saddle and bench on the ridge running down off Katsuk's west summit — tedious scree with a short 4th-class stretch near the top. From there hike a short way up the broad ridge, then veer left and make an ascending traverse below the cliffs. Past the waterfall the going crosses the basin on softer ground, then continues on a slight rising traverse following small marmot trails and rocky ledges through a run of ribs and gullies. A free backcountry permit is required to camp at the basin.",
+      "season": "Late Jul-Sep",
+      "hazards": [
+       "The gully is incredibly loose — every handhold needs testing",
+       "Continuous snow to 45 degrees in the gully before roughly July; axe, crampons and real snow technique",
+       "The final fifty feet to the summit sits above a long drop down the north face",
+       "Rockfall onto anyone below in the gully — do not stack up"
+      ],
+      "baseFinding": "THE WATERFALL AT 7,760 FT, THEN A MUSHROOM ABOVE THE GULLY. The ascending traverse below the cliffs ends at a small waterfall at roughly 7,760 ft, and that waterfall is the reference — the scrambling starts there. Bypass it up the LEFT (west) side of the stream, on fairly loose rock covered in kitty-litter scree. From that point the correct line is a single leftward-trending gully high on the peak, and what confirms it is what sits at its head: the gully ends right at the base of a summit block shaped like a mushroom, broader at the top than at its neck. If the gully you have entered tops out on a rib, a notch, or open scree with no mushroom-shaped block above it, you are in a neighbouring gully — this south side is a maze of them. The block itself is climbed on its west side by a series of blocks at class 3."
+     }
+    ],
+    "access": {
+     "fees": "2026 NPS backcountry fee schedule: $10 per person camping fee plus a $6 non-refundable permit reservation fee; youth 15 and under are free.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "North Cascades NP backcountry permit required for the overnight camp below Mesahchie/Katsuk. Reserve via Recreation.gov (watch the mandatory safety video, then email noca_wilderness@nps.gov within 3 days of your trip) or get a walk-up/email permit through the Wilderness Information Center in Marblemount, (360) 854-7245 — the park holds roughly 40% of permits for walk-up issuance.",
+     "closures": "SR 20/North Cascades Highway is gated for winter every year (closed Dec 4, 2025 for the 2025-26 season) between roughly Ross Dam (MP134) and the Early Winters gate (MP178, sometimes Silver Star MP171); the Easy Pass TH at MP151 sits inside this closure zone, so it's unreachable by car from early December until the highway reopens — typically mid-May, but as late as mid/late June in years needing storm or slide repairs (2026 reopening was delayed to mid-June).",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "USFS Okanogan-Wenatchee National Forest (Methow Valley Ranger District) at the Easy Pass Trailhead; the peak and climbing route are within North Cascades National Park, entered at Easy Pass (6,550 ft).",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass or America the Beautiful interagency pass required to park at the Easy Pass Trailhead (USFS land).",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — quota, fee",
+      "where": "Reserve on Recreation.gov; permits for Cascade River Road trailheads must be picked up in person at the Marblemount Wilderness Information Center."
+     }
+    }
+   }
+  }
+ ]
+}

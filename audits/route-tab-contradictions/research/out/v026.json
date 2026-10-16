@@ -1,0 +1,121 @@
+{
+ "file": "v026",
+ "results": [
+  {
+   "id": "wa_the_triad_east_peak",
+   "fact": "Total gain figure",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new source states a cumulative gain for the East Peak. A 2024 blog ascent (Hidden Lake trailhead, true summit, ~10.5 h car to car) gives no gain or distance; the 2004 report (now read via an archived copy) went to the Middle summit from the Sibley Pass side. The only figure remains the 3,600-7,520 ft range (net 3,920), so gain_ft 3,920 vs loss_ft/itinerary ~5,410 stays open.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/the-triad",
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/27835-tr-the-triad-east-ridge-to-middle-main-summit-962004/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "fact": "Number and length of the summit rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The archived 2004 report confirms a double-30 m rappel from a station on the ridge, but that party climbed the East Ridge to the Middle (main) summit from Sibley Pass, not the East Peak. A 2024 ascent from Hidden Lake says only that the party rappelled the fifth-class step, with no count or rope length. Still one East Peak account (two 30 m raps), so no patch.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/27835-tr-the-triad-east-ridge-to-middle-main-summit-962004/",
+    "https://www.jeffreyjhebert.com/adventures/the-triad",
+    "https://stevensong.com/usa/washington/the-triad/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "fact": "gain_ft/loss_ft (5,600) vs itinerary gain total and totalNote (5,400)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "An archived copy of the main peak page gives the Trail #641 round trip as 16 mi with 4,000+ ft cumulative gain from a 3,020 ft trailhead, which is the South Peak lookout, not North Peak. The only North Peak figure remains one report's 5,600 ft gained and lost over ~14 mi. No second source for either 5,600 or 5,400.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/three-fingers/150549",
+    "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "fact": "dist_km (Approach one way) 22.53 km = 14.0 mi vs Summit waypoint 7.3 mi and itinerary 14.5 mi round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "already consistent: the live row no longer carries dist_km, so no 'Approach (one way)' figure is shown against the 7.3 mi summit waypoint and 14.5 mi itinerary.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "fact": "One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row describes the East (true) summit by the southeast shoulder from the Mineral Creek trailhead. Its only matching published figure is one report's 7.7 mi round trip (2,360-6,687 ft); a 2002 report used a spur-road start at 2,800 ft and gives no total, and the 10 mi / 4,600 ft figure belongs to a Middle Peak ascent by the south face. No second source for the East summit's one-way or round-trip distance, so dist_km, the summit waypoint and the 10 mi totalNote are not changed.",
+   "sources": [
+    "https://onehikeaweek.com/2022/07/04/three-queens/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002102001",
+    "https://trailcatjim.com/three-queens-mtn-middle-peak-via-south-face-south-chimney/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "Itinerary day gain/loss built on a ~5,000 ft camp (day 1 loss 700 ft, day 2 gain 2,700 ft) vs a 4,170 ft lake and 7,530 ft summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states per-day or car-to-car gain for the Cascade Pass - Pelton Basin - Trapper Lake approach; published figures cover only the trail to Cascade Pass (3.7 mi, 1,700 ft) and Pelton Basin. Rebuilding the day gains from the 4,170 ft lake and 7,530 ft summit would be a computed figure, so nothing is patched.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cascade-pass-trail.htm",
+    "https://www.theoutbound.com/washington/backpacking/backpack-to-pelton-basin-in-north-cascades-np"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "dist_km (Approach one way) holds the round-trip figure",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "Decision rules 1 and 4: dist_km 30.58 km (19 mi), shown as 'Approach (one way)', equals the itinerary's round-trip total and is provably not a one-way figure. The Park Service gives Cascade Pass at 3.7 mi from the trailhead with Pelton Basin camps just below it on the Stehekin side, and a trail listing gives the Pelton Basin camp as an 8.82 mi out-and-back; the route leaves the trail at Pelton Basin, and the row's own waypoints put the summit at 9.5 mi. No source states the one-way distance to the summit, so the value is cleared rather than replaced.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cascade-pass-trail.htm",
+    "https://www.theoutbound.com/washington/backpacking/backpack-to-pelton-basin-in-north-cascades-np"
+   ],
+   "patches": [
+    {
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "dist_km (Approach one way) holds the round-trip figure",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 30.58,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_trapper_mountain_north_couloir",
+   "fact": "Whether the route tops out on Trapper Mountain's summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new first-hand account found; the known reports (2012 first ski descent, 2024 car-to-car) and a note on a 1970s ascent say only that parties topped out the couloir. Nothing states whether the route continues to the 7,530 ft summit, so high_point_ft and the summit waypoint are left as they are.",
+   "sources": [
+    "https://www.turns-all-year.com/trip-reports/trapper-mountain-north-couloir",
+    "https://engineeredforadventure.com/trapper-mountain-north-couloir/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "fact": "loss_ft (800) vs car-to-car loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources give only car-to-car gain (6,115 and 6,085 ft, matching gain_ft 6,100); none states a loss figure. Writing loss_ft = gain_ft on an out-and-back is the refused loss_ft class, and no stated loss exists to replace 800, so it stays flagged.",
+   "sources": [
+    "https://www.yellowleaf.org/scramble/g/r/2007-06-02-treen.html"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "id": "wa_northeast_ridge_1963_route",
+ "name": "Northeast Ridge (1963 Route)",
+ "waypoints": [
+  {
+   "lat": 48.4755,
+   "lng": -121.075,
+   "elev": 3600,
+   "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 3600,
+   "directions": "Drive Cascade River Road to its end at the Cascade Pass trailhead, near 3,600 ft. The road is generally open late June through September, and this route's season is tied to it. This is one of the shortest approaches in the range: the serious ground starts around 3,500 ft, within an hour of the car, so there is no long walk to warm up on."
+  },
+  {
+   "lat": 48.4745,
+   "lng": -121.0778,
+   "elev": 3400,
+   "name": "Cascade River Crossing / Terminal Moraine",
+   "note": "Off-trail descent and ford of the infant Cascade River below the terminal moraine.",
+   "type": "Hazard",
+   "distMi": 0.25,
+   "directions": "Walk a short way back down the road from the parking lot, descend the dirt embankment, and ford the infant Cascade River below the terminal moraine. The crossing runs higher as the day warms."
+  },
+  {
+   "lat": 48.4665,
+   "lng": -121.085,
+   "elev": 5200,
+   "name": "Base of C-J Couloir",
+   "note": "Gain rock just before the Cascade-Johannesburg couloir narrows; the NE Ridge (1963) climbs the rib right of the couloir.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.4665,
+   "lng": -121.088,
+   "elev": 6800,
+   "name": "Hanging Glacier Traverse",
+   "note": "Exposed rising traverse beneath Johannesburg's hanging glaciers; rockfall and icefall hazard.",
+   "type": "Hazard",
+   "distMi": null
+  },
+  {
+   "lat": 48.46472,
+   "lng": -121.09194,
+   "elev": 8066,
+   "name": "Johannesburg Mountain",
+   "type": "Summit",
+   "elevFt": 8200
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "file": "s033.json",
+ "results": [
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: the 1971 first-ascent report gives no grade; recent trip reports (May 2021, May 2026) and the Forest Service route page give no roman grade either; route pages that might carry one were not fetchable. Would be settled by a guidebook-derived grade for the headwall line from two independent route pages.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12197134901",
+    "https://climberkyle.com/2026/05/09/mt-baker-park-glacier-headwall-talum-glacier/",
+    "https://www.jeffreyjhebert.com/adventures/park-glacier-on-mount-baker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service says the route is best climbed early, before the glacier breaks up; dated ascents found are May 9 2026, May 30 2021 (via the ski-area lot) and the July 4-5 1971 first ascent, plus a February 2005 winter ascent. Sources lean to May-June but none states a window, and the Jun-Aug chip reflects when Artist Point is plowed; whether July is 'risky' is not stated by two sources. Would be settled by two sources giving an explicit climbing window.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+    "https://www.jeffreyjhebert.com/adventures/park-glacier-on-mount-baker",
+    "https://climberkyle.com/2026/05/09/mt-baker-park-glacier-headwall-talum-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Water at the Portals camp",
+   "verdict": "fixed",
+   "correct_value": "Water at the Portals camp is snowmelt from nearby snowfields; no reliable running stream.",
+   "evidence": "A Ptarmigan Ridge backpacking guide says the only water near Camp Kiser is snowmelt from nearby snowfields and near the Portals it had to be collected slowly from a snowfield's runoff. Another guide says there are few water sources that far out and late-season campers may find no snow patches to filter. The Forest Service says no potable water is available. The bivy entry (snowmelt only) is right; the itinerary/timing notes' 'running water' is changed (bivy untouched).",
+   "sources": [
+    "https://www.hikewithkurt.com/backpacking-ptarmigan-ridge-mount-bakers-best-trail",
+    "https://www.cynhw.com/blog/2021/11/5/a-guide-to-backpacking-the-ptarmigan-ridge-trail",
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Water at the Portals camp",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "a sandy, sheltered site with running water tucked among the glaciers",
+     "replace": "a sandy, sheltered site tucked among the glaciers where the only water is snowmelt"
+    },
+    {
+     "id": "wa_mount_baker_park_glacier_headwall",
+     "fact": "Water at the Portals camp",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "a sandy, sheltered site with running water tucked among the glaciers",
+     "replace": "a sandy, sheltered site tucked among the glaciers where the only water is snowmelt"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: published totals for Bailey Range traverses disagree widely (about 15,000 ft over 57.8 mi on one route page, about 16,200 ft on a GPS route, 25,000+ ft for a loop variant), and none is for this exact Sol Duc-Bear Pass-Barnes-Whiskey Bend itinerary. Would be settled by two trip reports of this exact line stating a car-to-car gain.",
+   "sources": [
+    "https://www.trailforks.com/route/bailey-range-traverse/",
+    "https://www.mountaineers.org/activities/routes-places/bailey-range-traverse",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Which summit is the true high point",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "USGS point elevations along the summit ridge show three tops: about 7,165 ft at the route's summit pin (47.8258,-123.3340), about 7,177 ft near 47.8254,-123.3280 (the mountain's listed coordinate), and about 6,946 ft further east near -123.320; the two highest differ by less than DEM noise. A traverse report reaches the true summit first from Cameron Pass, then the Middle Peak, then the East Peak; a topo database titles the 7,190 ft point 'East Peak'. The names of the tops cannot be tied to the ground by two agreeing sources. Would be settled by a topo map or summit register naming which top is East/Middle.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.328&y=47.8254&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.334&y=47.8258&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Mount_Cameron_(Washington)",
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/",
+    "https://www.peakbagger.com/peak.aspx?pid=919"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Total gain and distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: still no source gives a car-to-car gain, loss or one-way distance for Mount Cameron from Obstruction Point; the only published figures are for different loops (26.5 mi/7,654 ft; 25.6 mi/7,959 ft; 46 mi/17,000 ft). Would be settled by two trip reports of the Obstruction Point-Cameron out-and-back stating gain and mileage.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/obstruction-peak-via-cameron-creek-backpacking-loop",
+    "https://www.mountaineers.org/activities/routes-places/gray-wolf-dose-meadows-cameron-creek-grand-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Cameron Basin camp character",
+   "verdict": "fixed",
+   "correct_value": "Upper Cameron Basin camp is open meadow/moraine near treeline, not old-growth forest.",
+   "evidence": "A traverse report camped in upper Cameron Basin on a flat sandy spot beside the stream in glacial moraine with no tree cover. A separate backpacking report describes wildflower meadows fed by streams with camps in the middle of the basin, and a trail description says the trail clears treeline into a moonscape flat just below the pass. None describes old-growth forest at the camp.",
+   "sources": [
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=30466",
+    "https://www.protrails.com/trail/584/olympic-national-park-cameron-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Cameron Basin camp character",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Old-growth, mossy, sheltered basin below the pass",
+     "replace": "Open meadow and moraine basin below the pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Summit-day duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: no source found gives a camp-to-summit round-trip time for Mount Cameron's west-ridge route; the traverse report gives no times. The row's own Day 2 schedule (6:00 AM to ~1:00 PM) is also inconsistent with hours 5.5. Would be settled by two dated trip reports with camp-to-camp times.",
+   "sources": [
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/"
+   ],
+   "patches": []
+  }
+ ]
+}

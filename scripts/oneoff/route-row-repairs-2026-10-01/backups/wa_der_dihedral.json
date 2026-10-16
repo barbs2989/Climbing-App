@@ -1,0 +1,78 @@
+{
+ "id": "wa_der_dihedral",
+ "name": "Der Dihedral",
+ "approach": "Approach as for Backbone Ridge and Serpentine Arete: from the Stuart Lake Trailhead (3,400 ft) follow Stuart Lake Trail #1599 to the signed junction at 2.6 miles, then Colchuck Lake Trail #1599A to Colchuck Lake (5,570 ft, ~4.3-4.4 miles, ~2,200 ft gain, 2-2.5 hours). From the lake, follow the lateral moraine/talus below Dragontail's north face as for Backbone Ridge, but Der Dihedral's start is lower on the face and a couple of ridgelines short of (east/right of, and below) Backbone Ridge proper - it is not as well-cairned or as heavily travelled as the Backbone/Serpentine approach. Look for a clean left-facing dihedral a pitch or two up the initial ridge; because the route sees little traffic, budget extra time for route-finding to the exact start from the moraine (scanning from lake level with binoculars helps). Total approach roughly 3-3.5 hours from the trailhead.",
+ "itinerary": {
+  "cal": "Requires a Colchuck Lake overnight permit (May 15-Oct 31 lottery) if camping; the route is drier/less traveled than Backbone Ridge proper, so expect more route-finding on the lower pitches.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the shared base for this and the neighboring Backbone Ridge.",
+    "hours": 3.75,
+    "miles": 4.3,
+    "title": "Approach to Colchuck Lake camp",
+    "gainFt": 2300,
+    "lossFt": 0,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Reach camp at Colchuck Lake"
+   },
+   {
+    "n": 2,
+    "note": "Pre-dawn approach to a start a couple of ridges below the standard Backbone base, climb a clean dihedral a couple of pitches up, then join the Backbone Ridge for its finish to the summit (6 pitches total). Descend via Aasgard Pass back to camp.",
+    "hours": 11,
+    "miles": 3.3,
+    "title": "Climb Der Dihedral into Backbone Ridge, descend to camp",
+    "gainFt": 3050,
+    "lossFt": 3050,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "3:30 AM",
+      "label": "Leave camp",
+      "detail": ""
+     },
+     {
+      "time": "5:00 AM",
+      "label": "Start climbing",
+      "detail": "Dihedral pitches low on the formation."
+     },
+     {
+      "time": "7:00 AM",
+      "label": "Join Backbone Ridge",
+      "detail": "Merge with the standard ridge line."
+     },
+     {
+      "time": "3:00 PM",
+      "label": "Summit",
+      "detail": ""
+     },
+     {
+      "time": "4:00 PM",
+      "label": "Begin descent",
+      "detail": "Aasgard Pass scramble route."
+     },
+     {
+      "time": "7:00 PM",
+      "label": "Back at camp",
+      "detail": ""
+     }
+    ],
+    "objective": "Summit via Der Dihedral and the Backbone finish"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and hike back out to the trailhead.",
+    "hours": 2.5,
+    "miles": 4.3,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 2300,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Return to trailhead"
+   }
+  ],
+  "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a full alpine day (10-12 hrs) climbing the dihedral into the Backbone Ridge finish and descending to camp before hiking out."
+ }
+}

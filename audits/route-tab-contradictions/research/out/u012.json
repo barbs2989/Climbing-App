@@ -1,0 +1,126 @@
+{
+ "file": "u012",
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry confirmed only that the Wellington trailhead (2.8 mi up the Old Stevens Pass Highway, via FS road 050) needs a Northwest Forest or America the Beautiful pass; no source addresses the unofficial pullout ~1.4 mi from US-2 that serves the crag, and the crag's own route-database page says nothing about passes. access.passRequired 'Recreation pass' vs access.notes/parking_pass 'no fee site' stays open.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_fast",
+   "fact": "Rappel distance vs route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still only one external source for the route's own height (50 ft / 15 m, matching length_m); the crag-wide 'about 85 ft or less' is repeated on an aggregator page that mirrors the same database. descent_text's 85-ft rappel looks like the crag cap reused, but a second independent per-route height was not found. Suggested fix unchanged: drop the 85-ft figure from descent_text.",
+   "sources": [
+    "https://www.mountainproject.com/route/117712840/half-fast",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_fast",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; whether any wilderness permit applies is unsettled",
+   "evidence": "A point query of the Forest Service wilderness boundary layer at the crag coordinate (47.75586,-121.11626, which sits on ~4,758 ft ground matching the crag's 4,761 ft) returns NO wilderness; the Henry M. Jackson Wilderness boundary lies within 400 m of it, and the Wild Sky Wilderness lies more than 5 km away (along the North Fork Skykomish/Beckler). So the Wild Sky wording is wrong, but because the crag sits right at the Henry M. Jackson boundary and the coordinate's precision is uncertain, the correct permit statement cannot be written with confidence.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "As for wa_half_fast: only the Wellington trailhead's pass requirement is sourced; nothing addresses the crag's roadside pullout.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; whether any wilderness permit applies is unsettled",
+   "evidence": "As for wa_half_fast: the Forest Service boundary layer places the crag coordinate outside any wilderness, within 400 m of the Henry M. Jackson boundary and more than 5 km from Wild Sky. The Wild Sky wording is wrong, but the replacement permit statement is not settled.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_astroglide",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "As for wa_half_fast: only the Wellington trailhead's pass requirement is sourced; nothing addresses the crag's roadside pullout.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_astroglide",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; whether any wilderness permit applies is unsettled",
+   "evidence": "As for wa_half_fast: the Forest Service boundary layer places the crag coordinate outside any wilderness, within 400 m of the Henry M. Jackson boundary and more than 5 km from Wild Sky. The replacement permit statement is not settled.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "As for wa_half_fast: only the Wellington trailhead's pass requirement is sourced; nothing addresses the crag's roadside pullout.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wellington-ghost-town",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wellington-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "fact": "Rappel distance vs route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still one external source for the route's height (60 ft / 18 m, matching length_m); the only other page found mirrors the same database's crag-wide 'about 85 ft or less'. descent_text's single 85-foot rappel looks like the crag cap reused; suggested fix unchanged: drop the 85-foot figure.",
+   "sources": [
+    "https://www.mountainproject.com/route/117712788/asymptotic",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; whether any wilderness permit applies is unsettled",
+   "evidence": "As for wa_half_fast: the Forest Service boundary layer places the crag coordinate outside any wilderness, within 400 m of the Henry M. Jackson boundary and more than 5 km from Wild Sky. The replacement permit statement is not settled.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "id": "wa_mount_claywood_standard",
+ "name": "Standard Route",
+ "waypoints": [
+  {
+   "lat": 47.9183,
+   "lng": -123.3822,
+   "elev": 6150,
+   "name": "Obstruction Point Trailhead",
+   "note": "End of the 8-mile Obstruction Point Road off Hurricane Ridge; a wilderness permit reserved in advance (there is no self-registration here) and a bear canister are required; canisters are loaned at the Wilderness Information Center in Port Angeles.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US-101 in Port Angeles, follow Hurricane Ridge Road about 17 miles up to Hurricane Ridge, then take the unpaved Obstruction Point Road about 8 miles east to its end at about 6,150 ft. The road is narrow, one-lane gravel, unsuitable for trailers, and usually open only from about July into October. A national park entrance fee applies, and overnight trips need a wilderness permit reserved in advance and a bear canister."
+  },
+  {
+   "lat": 47.8876598,
+   "lng": -123.3661394,
+   "elev": 6350,
+   "name": "Lillian Ridge crest",
+   "note": "Grand Pass Trail crests this narrow, wind-exposed ridge with steep drop-offs into the Badger and Lillian River valleys on either side.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "From the trailhead follow the Grand Pass Trail south onto the open crest of Lillian Ridge, a narrow, wind-exposed ridge with steep drops into the Badger and Lillian River valleys on either side."
+  },
+  {
+   "lat": 47.8771738,
+   "lng": -123.3572629,
+   "elev": 5490,
+   "name": "Gladys Lake",
+   "note": "Small subalpine lake roughly 1.5 miles and 1,000 ft below Grand Pass; treat before filling, it's the last reliable water before the final push to the pass.",
+   "type": "Water",
+   "distMi": 4.45,
+   "directions": "Continue along the ridge, then descend well over 1,000 ft into Grand Valley and follow the Grand Pass Trail up the valley past Moose Lake to Gladys Lake at about 5,490 ft."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6488,
+   "name": "Grand Pass",
+   "note": "High alpine col dividing the Grand Valley/Lillian Ridge drainage from Cameron Creek; trail turns south here and drops into Cameron Basin toward Cameron Pass.",
+   "type": "Junction",
+   "distMi": 5.95,
+   "directions": "Fill water at the lake, then climb the trail about 1.5 miles and 1,000 ft up the head of the valley to Grand Pass."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6448,
+   "name": "Cameron Pass",
+   "note": "Highest trail-served pass in Olympic National Park; the north-facing approach holds snow into late July/August and NPS advises carrying an ice axe for self-arrest.",
+   "type": "Hazard",
+   "distMi": 7.6,
+   "directions": "Drop steeply south off Grand Pass into Cameron Basin, then climb steeply up the basin to Cameron Pass. The last part is loose and rocky in spots and holds snow into midsummer, so carry an ice axe."
+  },
+  {
+   "elev": 5450,
+   "name": "Upper Cameron Basin high camp",
+   "note": "Established high camp in the Cameron Creek/Lost Basin area beyond the pass; bear canister required (trees too short to hang food) and notoriously buggy in season.",
+   "type": "Campsite",
+   "distMi": 9.9
+  },
+  {
+   "lat": 47.800795,
+   "lng": -123.370435,
+   "elev": 6836,
+   "name": "Mount Claywood Summit",
+   "note": "Class 2-3 scramble up open talus slopes from the high camp; cairns mark the easiest line through occasional Class 3 steps to the true summit.",
+   "type": "Summit"
+  }
+ ],
+ "itinerary": {
+  "cal": "Backcountry permits are required for all overnight stays in Olympic National Park (reserve via the Wilderness Information Center/recreation.gov); snow can linger on Grand Pass and the high cross-country sections into July, so most parties go July–September.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From Obstruction Point Trailhead, follow the Grand Pass Trail up over the ridge, then drop off-trail into the remote Lost River drainage. Camp is an unmaintained site in Lost Basin (~5,350 ft); expect steep, sometimes brushy cross-country travel below Grand Pass.",
+    "hours": 6.5,
+    "miles": 7,
+    "title": "Approach to Lost Basin high camp",
+    "gainFt": 1700,
+    "lossFt": 2000,
+    "packLb": 34,
+    "schedule": [],
+    "objective": "Reach a rough high camp in Lost Basin below Lost Pass"
+   },
+   {
+    "n": 2,
+    "note": "Leave the tent at camp and climb steeply to Lost Pass (5,570 ft) between Lost Peak and Claywood, then follow class 2-3 talus and heather slopes up Claywood's south ridge to the summit before retracing the route back to Lost Basin.",
+    "hours": 6,
+    "miles": 4.5,
+    "title": "Summit day: Mount Claywood",
+    "gainFt": 1700,
+    "lossFt": 1700,
+    "packLb": 12,
+    "schedule": [
+     {
+      "time": "6:00 AM",
+      "label": "Leave Lost Basin camp",
+      "detail": "Light day pack; climb toward Lost Pass."
+     },
+     {
+      "time": "+1.5 hr",
+      "label": "Reach Lost Pass (5,570 ft)",
+      "detail": "Col between Lost Peak and Mt Claywood."
+     },
+     {
+      "time": "+2.5 hr",
+      "label": "Gain Claywood's south ridge",
+      "detail": "Class 2-3 talus and heather scrambling begins."
+     },
+     {
+      "time": "10:00 AM",
+      "label": "Summit Mount Claywood (6,836 ft)",
+      "detail": "Views to Mt Olympus, Mt Cameron, and the Bailey Range."
+     },
+     {
+      "time": "11:00 AM",
+      "label": "Begin descent",
+      "detail": "Retrace the ridge and re-cross Lost Pass."
+     },
+     {
+      "time": "1:00 PM",
+      "label": "Back at Lost Basin camp",
+      "detail": "Rest, water up, prep for tomorrow's exit."
+     }
+    ],
+    "objective": "Climb Mount Claywood (6,836 ft) via Lost Pass and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and head east, dropping into Cameron Basin and over Cameron Pass, then climb back over Grand Pass before the long descending trail to Obstruction Point. This exit is strenuous in either direction — expect a long, tiring day after two days of off-trail travel.",
+    "hours": 7.5,
+    "miles": 10,
+    "title": "Exit via Cameron Pass and Grand Pass",
+    "gainFt": 3300,
+    "lossFt": 3300,
+    "packLb": 26,
+    "schedule": [],
+    "objective": "Hike out to Obstruction Point Trailhead"
+   }
+  ],
+  "totalNote": "A remote 3-day, 2-night backpack (~21.5 mi round trip, ~6,700 ft cumulative gain) built around one high camp in Lost Basin below Lost Pass — not a car-to-car day trip given how deep and rugged the approach and exit are."
+ }
+}

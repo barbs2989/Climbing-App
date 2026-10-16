@@ -1,0 +1,377 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_fin_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Fin scramble season is a sentence, not a window"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "approach",
+   "path": [],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "approach",
+   "path": [],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "approach",
+   "path": [],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "approach",
+   "path": [],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "approach",
+   "path": [],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance Winthrop to Andrews Creek Trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_fin_scramble",
+   "before": {
+    "season": "Trail generally hikable mid-June through October; the high country around Sawtooth Pass is typically safest to scramble July through September/October once seasonal snow has consolidated or cleared."
+   }
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "before": {
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "Long approach via Andrews Creek/Andrews Pass/Boundary Trail to Upper Cathedral Lake, then ~40 min to the base of The Monk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The drive is straightforward: from Winthrop, follow the Chewuch River valley north on West Chewuch Road / FR-51, paved the entire way, about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft. Andrews Creek Trail #504 leaves from the parking area, and a free self-issue wilderness permit is filled out here — you also need a trailhead parking pass displayed on the car. Day one of the standard plan is a 17 to 20 mile hike to Upper Cathedral Lake, so drive in early and expect to be walking for most of the day. This is a two to four day backpack, so pack the car for a trip, not an outing."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "note": "The Monk is a small semi-detached tower leaning against Cathedral Peak's flank, in the gully between the two formations.",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 paved miles to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    }
+   }
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "before": {
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Getting here is simple driving: from Winthrop, head north up the Chewuch River valley on West Chewuch Road / FR-51, paved the whole way, about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft. Andrews Creek Trail #504 starts from the lot. Sort the free self-issue wilderness permit at the trailhead before you leave the car, and display a trailhead parking pass. Day one is a 17 to 20 mile hike to Upper Cathedral Lake, so arrive with the whole day in front of you."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 paved miles to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    }
+   }
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "before": {
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The drive is easy and entirely paved: from Winthrop, head north up the Chewuch River valley on West Chewuch Road / FR-51, about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft, where Andrews Creek Trail #504 begins. Fill out the free self-issue wilderness permit at the trailhead and leave a trailhead parking pass on the car. Day one is a 17 to 20 mile hike to Upper Cathedral Lake, so get here early — this is the start of a two to four day backpack rather than a day approach."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 paved miles to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    }
+   }
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "before": {
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The drive gives no trouble — paved the whole way from Winthrop, north up the Chewuch River valley on West Chewuch Road / FR-51, about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft. Andrews Creek Trail #504 leaves from here. Take care of the free self-issue wilderness permit at the trailhead and display a trailhead parking pass. The approach beyond the car is roughly 18 miles one way, so this is a multi-day load-out."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "note": "Right of the two West Cracks lines, on the lower left side of The Monk's south face.",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 paved miles to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    }
+   }
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "before": {
+    "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+    "waypoints": [
+     {
+      "lat": 48.7837,
+      "lng": -120.1086,
+      "elev": 3050,
+      "name": "Andrews Creek Trailhead",
+      "note": "",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The driving is the easy part of this trip. From Winthrop, head north up the Chewuch River valley on West Chewuch Road / FR-51 — paved the whole way — about 28 miles to the Andrews Creek Trailhead at roughly 3,040 ft, where Andrews Creek Trail #504 starts. Fill out the free self-issue wilderness permit at the trailhead and leave a trailhead parking pass on the car. Everything difficult is on the far side of the parking lot: the walk in runs around 18 miles one way, so load the car for a multi-day trip rather than a day out."
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "elev": 8300,
+      "name": "The Monk (tower top)",
+      "note": "Left of the two West Cracks lines, on the lower left side of The Monk's south face.",
+      "type": "Topout",
+      "distMi": 20
+     },
+     {
+      "lat": 48.99027,
+      "lng": -120.18882,
+      "name": "Cathedral Peak South Face / Monk area pin",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "road": {
+     "name": "Forest Road 51 (Chewuch River Road) to Andrews Creek Trailhead",
+     "status": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends",
+     "driveNote": "From Winthrop: WA-20 to West Chewuch Road (Okanogan County Rd 1213), follow it ~6 miles to Forest Road 51, then continue ~22 paved miles to the Andrews Creek Trailhead (el. 3,050 ft); from there it is a 15+ mile wilderness trail approach to Cathedral Peak. No high clearance needed in normal summer conditions.",
+     "seasonalGate": "Upper FR 51 is typically snowed in through late spring; usually passable by early-mid summer -- confirm current conditions with the Methow Valley Ranger District before driving in."
+    }
+   }
+  }
+ ]
+}

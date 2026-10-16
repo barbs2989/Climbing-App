@@ -1,0 +1,222 @@
+{
+ "file": "r300.json",
+ "results": [
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "First ascent of this line",
+   "verdict": "fixed",
+   "correct_value": "Peak first climbed 14 Sep 1930 by Dalgleish, Fyles, Henderson, Fraser; the 1952 Baker/Beckey/Dudra party is credited with the Northeast Face, not this line — drop the 1952 attribution from beta",
+   "evidence": "Wikipedia and SummitPost's peak page both give the first ascent of American Border Peak as 14 Sep 1930 by Dalgleish, Fyles, Henderson and Fraser, with the southeast face as the easiest route; the Tom Fyles biography lists the same 1930 first ascent. SummitPost's page credits Dwight Baker, Fred Beckey and John Dudra (21 Sep 1952) with the northeast face, so the beta's claim that this standard line was first climbed by that party in 1952 is a mis-attribution. The patch only removes the wrong clause; the fa field (labelled as the peak's first ascent) stays.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/American_Border_Peak",
+    "https://www.summitpost.org/american-border-peak/154887",
+    "https://hikeinwhistler.com/index.php/hiking-glossary/523-tom-fyles"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The standard/easiest line on the peak, first climbed by Baker, Beckey, and Dudra in 1952.",
+     "replace": "The standard/easiest line on the peak.",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "First ascent of this line"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Number of rappels",
+   "verdict": "fixed",
+   "correct_value": "2-3 rappels on a single 60 m rope (the 5-row table is one party on 25 m ropes, explained by rappel_count_note)",
+   "evidence": "One trip report rappelled twice from the top of the keyhole to the bottom; a SummitPost trip report describes two 75-ft rappels down the Great Chimney; a Mountaineers trip report (quoted in the row) rappelled three times. The rappels, rope_note, descent_text and rappel_count_note already agree on 2-3 (up to 4); only the itinerary's '1-2' is below every account.",
+   "sources": [
+    "https://onehikeaweek.com/2019/08/03/american-border-peak/",
+    "https://www.summitpost.org/american-border-peak-southeast-face-route/809144",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-american-border-peak-southeast-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "with 1-2 rappels",
+     "replace": "with 2-3 rappels",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Ridge the route follows",
+   "verdict": "fixed",
+   "correct_value": "Southeast Face to the upper south saddle, then the South Ridge to the summit",
+   "evidence": "A detailed trip report titles the route 'Southeast Face—South Ridge'; a SummitPost trip report describes traversing the east side through gullies and the chimney to the upper south saddle, then travelling north on the south ridge to the summit. No source puts the standard route on a west ridge.",
+   "sources": [
+    "https://trailcatjim.com/american-border-peak-via-southeast-face-south-ridge/",
+    "https://www.summitpost.org/american-border-peak-southeast-face-route/809144"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "southeast side and west ridge",
+     "replace": "southeast side and south ridge",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Ridge the route follows"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Southeast Face/West Ridge line",
+     "replace": "Southeast Face/South Ridge line",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Ridge the route follows"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Position of De Gaulle's Nose",
+   "verdict": "fixed",
+   "correct_value": "De Gaulle's Nose is a rock nose at ~7,300 ft on the far side of the red face, below the gullies and chimney — not on the last pitch",
+   "evidence": "One trip report places De Gaulle's Nose at about 7,300 ft, reached by a rising traverse across the red slopes; a Mountaineers trip report likewise puts it on the far side of the red face, bypassed by a narrow class 3/4 gully to its left, before the gullies and chimney. The row's approach and approach_variants already agree; the pitch 3 note is the outlier.",
+   "sources": [
+    "https://onehikeaweek.com/2019/08/03/american-border-peak/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-american-border-peak-southeast-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "past the 'De Gaulle's Nose' feature to the summit",
+     "replace": "out of the chimney toward the summit ridge",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Position of De Gaulle's Nose"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Distance and gain to High Pass",
+   "verdict": "fixed",
+   "correct_value": "High Pass is ~2 mi (1.8-2) and ~750-765 ft of gain from the Twin Lakes trailhead",
+   "evidence": "WTA's High Pass (Twin Lakes) hike is 3.6 mi round trip, 765 ft gain, high point 5,965 ft — i.e. about 1.8 mi one way. A Forest Service–derived trail description puts the pass at 2 miles. The approach text (roughly 2 mi, ~750 ft) is right; the waypoint's distMi of 1 is wrong. The bivy[2] note's 2.5 mi / >1,000 ft is left alone because bivy[] is owned by the separate camping clean-up.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/high-pass-1",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 1,
+     "value": 2,
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Distance and gain to High Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Direction from High Pass to Gargett Mine",
+   "verdict": "fixed",
+   "correct_value": "From High Pass the path drops north and west to the Gargett Mine (on Larrabee's southwest slope, north of the pass)",
+   "evidence": "Wikipedia's Mount Larrabee article places the Gargett Mine on the southwest slope north of High Pass; a trip report describes dropping west of High Pass and switchbacking down to the mine. The row's own pins put the mine NNW of the pass, and bivy[0] already says north and west; 'east/northeast' appears nowhere in the sources.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Larrabee",
+    "https://onehikeaweek.com/2019/08/03/american-border-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "follow the climbers' path east/northeast down to the old Gargett Mine",
+     "replace": "follow the climbers' path north and west down to the old Gargett Mine",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Direction from High Pass to Gargett Mine"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "follow the climbers' path east/northeast toward",
+     "replace": "follow the climbers' path north and west toward",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Direction from High Pass to Gargett Mine"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "follow the climbers' path east and northeast, dropping",
+     "replace": "follow the climbers' path north and west, dropping",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Direction from High Pass to Gargett Mine"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "follow the climbers' path east and northeast DOWN",
+     "replace": "follow the climbers' path north and west DOWN",
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Direction from High Pass to Gargett Mine"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Overnight wilderness permit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service pages for Mt. Baker Wilderness and the Twin Lakes Trailhead state only a recreation pass ($5/day or NW Forest Pass), wilderness rules (party of 12, no fires) and an optional climbing register; they neither require nor rule out a self-issue wilderness permit. The forest-wide regulations page says only that day users 'may need' a free self-issue permit at some trailheads. No two sources state what Mt. Baker Wilderness requires, so neither the 'free self-issue permit' nor the 'no overnight permit required' wording could be confirmed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/twin-lakes-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_american_border_peak_northeast_face",
+   "fact": "Overnight wilderness permit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service pages for Mt. Baker Wilderness and the Twin Lakes Trailhead state only a recreation pass ($5/day or NW Forest Pass), wilderness rules (party of 12, no fires) and an optional climbing register; they neither require nor rule out a self-issue wilderness permit. The forest-wide regulations page says only that day users 'may need' a free self-issue permit at some trailheads. No two sources state what Mt. Baker Wilderness requires, so neither the 'free self-issue permit' nor the 'no overnight permit required' wording could be confirmed. The competing claims on this row are in bivy[] permit text, which is owned by the camping clean-up.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/twin-lakes-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": []
+  }
+ ]
+}

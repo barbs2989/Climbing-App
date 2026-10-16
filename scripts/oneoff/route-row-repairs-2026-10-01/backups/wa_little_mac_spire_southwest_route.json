@@ -1,0 +1,159 @@
+{
+ "id": "wa_little_mac_spire_southwest_route",
+ "name": "Southwest Route",
+ "itinerary": {
+  "cal": "North Cascades NP requires a backcountry permit for Terror Basin camping (quota zone); route is normally in condition mid-July through September once the Goodell Creek approach and basin snowfields have melted out enough for travel.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Goodell Creek trailhead (600 ft) the trail parallels the creek for an easy 4.5 miles, then gains roughly 4,700 ft in the final 2.5 miles through brush and a class 3 root-pull cliff band to a 6,200 ft notch. Drop scree/snow on the far side to the flat gravel camp at 5,800 ft in Terror Basin, with McMillan Spires and Little Mac Spire visible across the basin.",
+    "hours": 6.5,
+    "miles": 7,
+    "title": "Approach to Terror Basin",
+    "gainFt": 5600,
+    "lossFt": 400,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Establish camp below the Southern Pickets"
+   },
+   {
+    "n": 2,
+    "note": "Alpine start from Terror Basin, traversing/ascending to the saddle east of East McMillan Spire before climbing Little Mac Spire's 800 ft southwest arête -- sustained class 4/low 5th with real route-finding on excellent but featureless rock. Many parties combine this with East and/or West McMillan Spire from the same camp since the approach overlaps; this itinerary assumes Little Mac alone.",
+    "hours": 10,
+    "miles": 2.5,
+    "title": "Little Mac Spire summit push",
+    "gainFt": 2000,
+    "lossFt": 2000,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "4:30 AM",
+      "label": "Leave camp",
+      "detail": "Alpine start to cross the basin while snow/scree is firm."
+     },
+     {
+      "time": "~6:15 AM",
+      "label": "Reach saddle east of East McMillan",
+      "detail": "Traverse above Azure Lake to the base of the southwest arête."
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Start climbing",
+      "detail": "800 ft of sustained class 4/low 5th rock; route-finding is the crux."
+     },
+     {
+      "time": "~11:00 AM",
+      "label": "Summit",
+      "detail": "7,680 ft high point; views across the full Southern Pickets."
+     },
+     {
+      "time": "11:30 AM",
+      "label": "Begin descent",
+      "detail": "Reverse the arête, downclimbing/rappelling as needed."
+     },
+     {
+      "time": "~4:30 PM",
+      "label": "Back at camp",
+      "detail": "Long day; build in daylight margin for route-finding on the way down."
+     }
+    ],
+    "objective": "Climb the Southwest Route/Arête and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and reverse the approach: climb back to the 6,200 ft notch, then descend the steep, brushy 2.5-mile drop before the final easy 4.5 miles out along Goodell Creek to the trailhead.",
+    "hours": 5.5,
+    "miles": 7,
+    "title": "Hike out",
+    "gainFt": 400,
+    "lossFt": 5600,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Return to Goodell Creek trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip out of Goodell Creek trailhead: ~17 miles and ~8,000 ft round-trip gain, with 1 night in and 1 night out of Terror Basin bracketing a long technical summit day on Little Mac Spire."
+ },
+ "approach": "From the Upper Goodell Creek Group Campground trailhead (end of the short Goodell Creek Road spur off the North Cascades Highway near Newhalem, ~600 ft), follow the unmaintained but well-trodden Goodell Creek climbers' trail, which runs along an old overgrown logging road bed paralleling Goodell Creek. The first roughly 4.5 miles are comparatively mellow, mostly forested walking to the old 'spar tree,' where a boot path cut by Seattle Mountaineers work parties continues on. From there the trail turns brutally steep for about 2.5 more miles and 4,700 ft of gain, climbing more or less straight up the timbered nose of ridge between Terror and Crescent Creeks — widely cited as one of the steepest approach trails in the Cascades. Watch for a large cairn marking the unsigned junction where a climbers' path splits off toward Terror Basin; take that fork (rather than continuing toward Crescent Creek Basin/the Barrier, which serves Terror/Chopping Block-side objectives) to reach the tarns and typical camp in upper Terror Basin below the McMillan-Inspiration wall. Reliable water is available at Goodell Creek crossings low on the trail and at the Terror Basin tarns/snowmelt near camp; carry water above camp, since the final approach onto rock is dry. From camp, angle north/northeast across talus and scree past the small glacial tarn below West McMillan Spire, staying on the McMillan side of the basin (not crossing the Barrier) to reach the base of the southwest arête on Little Mac Spire, the smaller subsidiary spire just east of East McMillan Spire. Expect loose rock, some routefinding through talus and low bluffs, and lingering snow/moat problems at the base of the rock well into summer.",
+ "waypoints": [
+  {
+   "lat": 48.6828,
+   "lng": -121.269,
+   "elev": 500,
+   "name": "Goodell Creek Trailhead",
+   "note": "Standard, single approach for all Southern Pickets/Terror Basin objectives including Little Mac Spire.",
+   "type": "Trailhead",
+   "elevFt": 500,
+   "directions": "From SR-20 at Newhalem, turn north onto the gravel road across the highway from the Newhalem Campground and follow signs toward the Goodell Creek group camp; park at the small turnout at the trailhead just before the camp."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1700,
+   "name": "Goodell Creek Crossings",
+   "note": "Trail fords two branches of Goodell Creek that run high on hot afternoons; a small streamside campsite sits near the second crossing.",
+   "type": "Water",
+   "distMi": 3.5,
+   "directions": "Follow the unmaintained but well-trodden climbers' trail north along the old, overgrown logging road bed paralleling Goodell Creek. The walking is forested and comparatively gentle to the creek crossings."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1700,
+   "name": "Terror Creek Cairn / Climbers' Path",
+   "note": "Large cairn and stone arrow mark the turn off the maintained Goodell Creek trail onto the steep, faint climbers' path south of Terror Creek — the start of the '~4,000 ft over 2 mi' push.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Continue along the old road bed to its end, where a large cairn and stone arrow mark a hard right turn uphill onto the Terror Basin climbers' path."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5200,
+   "name": "Rocky Streambed Source",
+   "note": "Last dependable water on the climbers' path, running in a rocky streambed; the faint tread resumes just upstream.",
+   "type": "Water",
+   "distMi": 6,
+   "directions": "Turn right and climb the path, which goes brutally steeply more or less straight up the timbered ridge nose between Terror and Crescent Creeks, through brush and a class 3 root-pull cliff band, to the rocky streambed where the last dependable water runs."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6200,
+   "name": "Terror Basin Notch",
+   "note": "Gap on the east rim of Terror Basin reached via a rising traverse over moderate snow into midsummer; first view down onto the basin and the McMillan/Little Mac group.",
+   "type": "Junction",
+   "distMi": 6.7,
+   "directions": "Pick up the faint tread just upstream and make a rising traverse, over moderate snow into midsummer, to the 6,200 ft gap on the east rim of Terror Basin."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5800,
+   "name": "Terror Basin Camp",
+   "note": "Shared high camp for the whole McMillan/Terror cluster — flat gravel benches, running water, and rock-walled bivy sites; base for Little Mac, East Mac, and West Mac.",
+   "type": "Campsite",
+   "distMi": 7.4,
+   "directions": "Drop down the scree or snow on the far side of the notch to the flat gravel benches of camp at about 5,800 ft."
+  },
+  {
+   "lat": 48.772271,
+   "lng": -121.280567,
+   "elev": 7500,
+   "name": "Loose Rock Below the Summit Block",
+   "note": "Southern Pickets rock is notoriously fractured here; test holds and stagger climbers on the 5.4 pitches to avoid knocking rock onto partners below.",
+   "type": "Hazard",
+   "distMi": 7.6
+  },
+  {
+   "lat": 48.7737,
+   "lng": -121.2762,
+   "elev": 7680,
+   "name": "Little Mac Spire",
+   "note": "Approximate — no independently surveyed summit coordinate found for this minor Southern Pickets spire; cross-referenced against neighboring McMillan/Terror group summits and the route's recorded approach track to place it as close to the true high point as possible.",
+   "type": "Summit",
+   "elevFt": 7680
+  }
+ ],
+ "descent_text": "A guided-party account of this route (Mountain Madness) describes downclimbing and rappelling the same Southwest Arête line back toward camp rather than a walk-off, consistent with this being a real, sustained ~800 ft / 9-pitch alpine rock route on a genuine spire rather than a scramble summit; that account specifically notes the in-place rap stations 'looked ancient,' i.e. existing fixed/natural anchors (slings around horns/blocks, older bolts or pitons) rather than fresh bolted chains. Plan on a multi-rappel descent down the arête/face using a single 60m rope, re-anchoring at the existing stations, with short downclimbs linking some of the easier sections between rappels — typical Pickets practice on lightly-traveled lines to save time and gear. Because this route sees very few ascents (likely well under a few dozen total) and the fixed anchors are old, inspect every station closely, back it up if there is any doubt, and carry a couple of spare slings/rap rings and cord in case a station needs to be rebuilt or supplemented. From the base of the rock, reverse the talus/scree scramble back to camp in Terror Basin, then retrace the approach: the steep ~2.5 mile / 4,700 ft trail drop to the 'spar tree,' followed by the milder ~4.5 mile climbers' trail back to the Goodell Creek trailhead."
+}

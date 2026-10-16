@@ -1,0 +1,1627 @@
+{
+ "batches": [
+  "b077.json",
+  "b078.json",
+  "b079.json",
+  "b080.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "name": "Table Mountain Trail (Standard)",
+   "area": "Table Mountain",
+   "contradictions": [
+    {
+     "fact": "rope_note describes a different Table Mountain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "Blewett Pass Table Mountain trail through a burn area to Tronsen Head/larch meadows"
+      },
+      {
+       "field": "approach",
+       "says": "From the Artist Point trailhead (elev. ~5,100 ft, at the end of Mt. Baker Highway/SR 542"
+      }
+     ],
+     "why": "rope_note is copied from the Blewett Pass Table Mountain (Tronsen Head) record, not this Artist Point route.",
+     "internal_resolution": "Every other field describes Artist Point / Mt. Baker Wilderness; rope_note is contamination.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of travel across the plateau",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the well-trodden tread west/northwest along the south rim"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "then walk the open tableland east with big views"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Push north past the main viewpoint to the twin tarns"
+      },
+      {
+       "field": "descent_text",
+       "says": "follow the south-rim tread back east across the tabletop"
+      }
+     ],
+     "why": "The plateau walk to the tarns is given as west/northwest, east, and north in different fields.",
+     "internal_resolution": "approach, approach_variants and descent_text (return east) agree the outbound walk is west/northwest; itinerary 'east' and pro_tips 'north' are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Switchback length and plateau-top elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "for roughly 0.6-1 mile to gain the broad summit plateau near 5,700 ft"
+      },
+      {
+       "field": "approach",
+       "says": "After roughly 400 ft of gain (about 0.4-0.5 mi from the car) the switchbacks top out on the broad, relatively flat summit plateau"
+      }
+     ],
+     "why": "Beta puts the plateau at ~5,700 ft after up to a mile; approach/climbing_route/itinerary put it ~400 ft above a ~5,100 ft trailhead (~5,500 ft) at 0.4-0.5 mi.",
+     "internal_resolution": "approach, approach_variants, climbing_route and itinerary schedule ('Gain ~400 ft') agree on ~400 ft / 0.4-0.5 mi; beta is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Artist Point road opening timing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "Artist Point road often only opens mid-July"
+      },
+      {
+       "field": "access.closures",
+       "says": "reopening once cleared, typically in mid-to-late June (WSDOT reopened the road June 10, 2026; June 27, 2025; and June 21, 2024)"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "often not until July"
+      }
+     ],
+     "why": "Road opening is stated as mid-to-late June (with dated examples) vs July / mid-July.",
+     "internal_resolution": "access.closures and road.seasonalGate cite three dated June openings; the July claims are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to top of switchbacks / plateau",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1]",
+       "says": "+20 min Top of switchbacks"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "15-30 min to the base of the cliff notch from Artist Point; 45 min-1 hr to reach the plateau top"
+      }
+     ],
+     "why": "The switchbacks top out on the plateau, yet one field says 20 min and the other 45-60 min.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Dogs on the trail",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "No pets permitted on the trail"
+      },
+      {
+       "field": "beta",
+       "says": "not recommended for those uneasy with exposure, small children, or dogs"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "not recommended for anyone uneasy with heights, small children, or dogs"
+      }
+     ],
+     "why": "One field says pets are prohibited; others merely say not recommended.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Drive time Bellingham to Artist Point",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.nearestHospital",
+       "says": "PeaceHealth St. Joseph Medical Center, Bellingham (~53 miles / ~1 hr drive from Artist Point)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "allow ~1.5-2 hrs from Bellingham"
+      }
+     ],
+     "why": "Same Bellingham-Artist Point drive given as ~1 hr and 1.5-2 hrs.",
+     "internal_resolution": "road.driveNote's 34+24 mi on a mountain highway supports 1.5-2 hrs.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "name": "Glacier/Scramble Route",
+   "area": "The Pleiades",
+   "contradictions": [
+    {
+     "fact": "Glacier approach via Ptarmigan Ridge / Camp Kiser vs Twin Lakes trail approach",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "long, multi-day approach - miles of trail and glacier travel to Camp Kiser via Ptarmigan Ridge"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "overnight/glacier kit expected - rope, crevasse rescue hardware"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "Active glacier travel is required near the peak; roped travel and crevasse rescue skills are necessary"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "more consolidated glacier travel"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "nearby named objectives like the Cockscomb and Border Peaks that share the Ptarmigan Ridge approach"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Nearly everyone treats this as a long single day rather than an overnight"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "crevasse unlikely"
+      }
+     ],
+     "why": "Partner, seasonal-hazard, seasonal-guidance and crowds text describe a glaciated multi-day Mt Baker/Ptarmigan Ridge approach, while approach, waypoints and itinerary describe a non-glaciated one-day High Pass trail scramble from Twin Lakes.",
+     "internal_resolution": "approach, approach_variants, waypoints, itinerary, pitch_detail all agree on Twin Lakes/High Pass, no glacier, one day; the glacier/Ptarmigan text is contamination from a Mt Baker record.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope needed",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "No rope, protection, or belay gear needed."
+      },
+      {
+       "field": "gear[1]",
+       "says": "30-40m rope and a few slings for Peak 1's short roped section"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Bring a single 30-40m rope and a few slings/rap rings for the short roped section"
+      },
+      {
+       "field": "what_to_bring[2]",
+       "says": "30-40m rope + a few slings/rap rings"
+      },
+      {
+       "field": "rope_type",
+       "says": "none"
+      }
+     ],
+     "why": "detailed_rack (which wins the PROTECTION display) and rope_type say no rope while gear, pro_needs and what_to_bring say bring a 30-40m rope.",
+     "internal_resolution": "gear, pro_needs, what_to_bring and overview ('often climbed with a rope for a short section') agree a short rope is carried for Peak 1.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which Pleiad is westernmost / easiest",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "Tag Peak 2 (the easy, westernmost peak)"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Peak 1 (the hardest, westernmost peak)"
+      },
+      {
+       "field": "overview",
+       "says": "the peaks (numbered 1 through 4, west to east)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The SECOND peak, to the EAST, is an easy scramble. The FIRST peak, to the WEST"
+      }
+     ],
+     "why": "pro_tips calls Peak 2 the westernmost; every other field puts Peak 1 westernmost and Peak 2 east of it.",
+     "internal_resolution": "overview, pro_needs, beta, pitch_detail and baseFinding agree Peak 1 is west; pro_tips is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / approach pass",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Tomyhoi Lake Trailhead"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Twin Lakes Trailhead"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "via the Twin Lakes / Gold Run Pass approach"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].label",
+       "says": "Reach Gold Run / Low Pass area"
+      },
+      {
+       "field": "approach",
+       "says": "take the High Pass Trail (~2 miles ...) to High Pass"
+      }
+     ],
+     "why": "The TRAILHEAD card names Tomyhoi Lake TH and the itinerary routes via Gold Run Pass, while approach and waypoints use the Twin Lakes TH and High Pass Trail.",
+     "internal_resolution": "approach, approach_variants, waypoints, road and bivy all use Twin Lakes TH -> High Pass; Tomyhoi Lake TH and Gold Run Pass are outliers (Gold Run Pass is on the Tomyhoi/Yellow Aster trail).",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late Jul–Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late July through September is the reliable window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July-August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September",
+       "says": "Outside the best-season window ... risky"
+      }
+     ],
+     "why": "season/best_season include September as prime while seasonal_guidance calls September outside the window and risky, and calls early July optimal.",
+     "internal_resolution": "season, best_season, climate.bySeason.summer agree late July-September; seasonal_guidance's glacier-based reasoning is from contaminated text.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit required",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness or climbing permit is required"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue Mt. Baker Wilderness permit at the kiosk"
+      }
+     ],
+     "why": "permit and waypoint say a self-issue wilderness permit is needed; access says none is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Twin Lakes to High Pass distance/gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "take the High Pass Trail (~2 miles"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "3.6 miles roundtrip from Twin Lakes, 765 ft gain"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "roughly two and a half miles with a little over a thousand feet of gain"
+      }
+     ],
+     "why": "Twin Lakes to High Pass given as ~1.8-2 mi/765 ft vs ~2.5 mi/>1,000 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Extra cost of parking at Yellow Aster Butte TH",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "adding roughly 4 miles round trip and 1,500 ft of gain"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "an extra two miles and roughly 1,500 ft of road walking each way"
+      }
+     ],
+     "why": "1,500 ft total vs 1,500 ft each way (3,000 ft).",
+     "internal_resolution": "bivy elevations (3,700 vs 5,200 ft) support 1,500 ft each way.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Tomyhoi Peak",
+   "contradictions": [
+    {
+     "fact": "Gold Run Pass elevation and position",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1]",
+       "says": "Gold Run Pass elev 5427, distMi 1.5; Trail forks near the pass: right drops to Tomyhoi Lake"
+      },
+      {
+       "field": "approach",
+       "says": "At roughly 2.3-2.5 miles (~5,400 ft) you reach the signed junction with the Tomyhoi Lake Trail ... continuing up toward Gold Run Pass (~5,900 ft)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Maintained Yellow Aster Butte/Gold Run Pass Trail to ~5,900 ft"
+      }
+     ],
+     "why": "Waypoint puts Gold Run Pass at 5,427 ft/1.5 mi at the Tomyhoi Lake fork; approach puts the fork at ~5,400 ft/2.3-2.5 mi and the pass higher at ~5,900 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "3600"
+      },
+      {
+       "field": "approach",
+       "says": "(also called the \"Keep Kool\" trailhead, ~3,600-3,700 ft)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "Elev. ~3,150 ft on Twin Lakes Road"
+      },
+      {
+       "field": "turnaround",
+       "says": "from trailheads at 3,150–3,700 ft"
+      }
+     ],
+     "why": "Same Keep Kool/Yellow Aster trailhead given as ~3,150 ft vs 3,600-3,700 ft.",
+     "internal_resolution": "waypoint, approach, approach_variants and bivy agree on 3,600-3,700 ft; itinerary's 3,150 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "No roped glacier travel on this route ... even though the route itself does not cross it"
+      },
+      {
+       "field": "approach",
+       "says": "traverse along the top edge of the glacier (minor crevasse hazard depending on year/season"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "Class 2-3, glacier travel"
+      },
+      {
+       "field": "approach_variants[0].hazards[2]",
+       "says": "Minor crevasse hazard traversing the top edge of the Tomyhoi Glacier"
+      }
+     ],
+     "why": "seasonal_hazards says the route does not cross the glacier, while approach, pitch_detail and approach_variants route along/over its top edge with crevasse hazard.",
+     "internal_resolution": "beta, approach, approach_variants, pitch_detail and waypoints all traverse the glacier's top edge; seasonal_hazards is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "8:00 AM leave; ~1:30-2:00 PM summit; +5 hr descent"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 7.5-9 hours car-to-car"
+      },
+      {
+       "field": "turnaround",
+       "says": "roughly 5–6 hours car-to-summit and about 5 hours back down"
+      }
+     ],
+     "why": "The schedule and turnaround (5-6 h up + 5 h down = 10-11 h) exceed the stated 9 h / 7.5-9 h total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season / June",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best conditions June-September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "not the intended season for this route ... risky"
+      },
+      {
+       "field": "best_season",
+       "says": "most ascents cluster from mid-July through September"
+      }
+     ],
+     "why": "season and itinerary include June as good while seasonal_guidance rates June risky and best_season starts mid-July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Moat/notch waypoint coordinates",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4]",
+       "says": "Moat below Tomyhoi Glacier remnant lat 48.953485 lng -121.669305 distMi 6"
+      },
+      {
+       "field": "waypoints[5]",
+       "says": "Notch below the false summit lat 48.943932 lng -121.67098 distMi 6.5"
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "Trailhead lat 48.9435 lng -121.6625"
+      }
+     ],
+     "why": "The notch pin sits ~0.4 mi from the trailhead and the moat pin ~2.4 mi from the summit, contradicting their 6-6.5 mi distances just below the summit.",
+     "internal_resolution": "distMi values and prose place both just below the summit (48.9749,-121.7098); the pins are misplaced.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit gully character",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "then a long, loose, exposed class 3-4 gully/chimney to the true summit"
+      },
+      {
+       "field": "beta",
+       "says": "finish with a delightful but exposed Class 3 scramble on solid rock"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "Easy ledges above the slot lead ... consistently third-class scramble"
+      }
+     ],
+     "why": "Itinerary describes a long loose class 3-4 gully/chimney; beta and climbing_route describe short solid class 3 ledges.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight vs single day",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "the reason Tomyhoi is a comfortable overnight rather than a very long day"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Nearly all parties do this route in a single long day"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "or split with a camp at Tomyhoi Lake/basin"
+      }
+     ],
+     "why": "Itinerary says nearly all do it in a day, bivy frames it as an overnight, and partner_requirements names Tomyhoi Lake (off-route) as the camp.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5600"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5000"
+      },
+      {
+       "field": "approach",
+       "says": "~13-14 mile, ~4,800-5,600 ft round-trip character"
+      }
+     ],
+     "why": "Header gain (gain_ft) 5,600 ft vs itinerary day gain 5,000 ft for the same car-to-car trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "1"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the ascent route"
+      },
+      {
+       "field": "descent_text",
+       "says": "Many parties skip the rappel entirely and instead downclimb this slot"
+      }
+     ],
+     "why": "rappels states one rappel while descent/descent_text treat it as optional on a reverse-the-route descent.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No wilderness/climbing permit required for this route"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "free self-issue wilderness permit at the register"
+      }
+     ],
+     "why": "access says no wilderness permit; bivy says fill in the free self-issue wilderness permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "name": "South Trail / Lookout Route",
+   "area": "Winchester Mountain",
+   "contradictions": [
+    {
+     "fact": "Which way at the High Pass Trail junction",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "stay left/straight to remain on #685 for Winchester"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "#685 for Winchester goes LEFT or straight; #676 for High Pass ... goes RIGHT"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "bear right/uphill onto Winchester Mountain Trail 685 while High Pass Trail continues north"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Stay straight/right for Winchester"
+      }
+     ],
+     "why": "Waypoint and itinerary send you right at the junction, while approach, beta and baseFinding say left/straight (right being the High Pass trail).",
+     "internal_resolution": "approach, beta and approach_variants (3 fields) agree left/straight; waypoint note and itinerary disagree.",
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through October"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through October"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "Late July through September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Best window Aug-Sep"
+      }
+     ],
+     "why": "best_season/optimalWindow extend into October, outside the Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road walk if parked at Yellow Aster Butte TH",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "add about 2.5 miles of road walking each way"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "then about 2 more miles (narrow, high-clearance) to the Twin Lakes TH"
+      }
+     ],
+     "why": "The stretch beyond Yellow Aster Butte TH is 2.5 mi in some fields and 2 mi in others.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Waypoint directions attached to wrong waypoints",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].directions",
+       "says": "Of the two branches, #685 is the one that switchbacks up toward the lookout; High Pass Trail #676 is the branch carrying on north"
+      },
+      {
+       "field": "waypoints[3].directions",
+       "says": "The unmarked path splitting off here is a rougher, more direct scramble line"
+      }
+     ],
+     "why": "The 0.9-mi unmarked-junction waypoint's directions describe the High Pass junction, and the 1.3-mi saddle's directions describe the unmarked path, contradicting their own names/notes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Where the lingering snow lies",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[0]",
+       "says": "Steep, exposed snowfields on north/east-facing slopes below the summit"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "while snow covers the south/west slope traverse"
+      },
+      {
+       "field": "approach",
+       "says": "lingering steep snow on the upper switchbacks and southeast slopes"
+      }
+     ],
+     "why": "The snow hazard is placed on north/east, south/west, and southeast slopes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lookout closed months",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "the lookout's shutters are closed and latched over the same rough window (November through June)"
+      },
+      {
+       "field": "climate.winter",
+       "says": "lookout closed November-May"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Locked from November through May"
+      }
+     ],
+     "why": "Lookout closure is Nov-June in one field and Nov-May in two others.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Lookout restoration club name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "volunteers with the Mount Baker Club saved from demolition"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "maintained by Mount Baker Hiking Club volunteers"
+      }
+     ],
+     "why": "Two different club names for the same volunteers.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "dist_km vs one-way distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2.1"
+      },
+      {
+       "field": "approach",
+       "says": "this leg (trailhead to summit) is roughly 1.7 miles"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3.4"
+      }
+     ],
+     "why": "dist_km 2.1 km (1.3 mi) matches neither the 1.7-mi one-way nor the 3.4-mi round trip.",
+     "internal_resolution": "waypoints (summit distMi 1.7), approach and itinerary agree on 1.7 mi one-way.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_finger_of_fatwa",
+   "name": "Finger of Fatwa",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain vs trailhead-to-summit elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4800"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3050 (Andrews Creek Trailhead)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8358"
+      }
+     ],
+     "why": "gain_ft 4800 is less than the 5,308 ft net rise from the 3,050-ft trailhead to the 8,358-ft summit the row itself states.",
+     "internal_resolution": "The row's own trailhead and summit elevations prove gain is at least ~5,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "Andrews Pass ... roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.4 km (~17 mi)"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "~20-mile approach"
+      }
+     ],
+     "why": "Andrews Pass at 12 mi being halfway implies ~24 mi to the lake, vs ~17-20 mi elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "name": "West Route",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "3000"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3050"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8358"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "17-20 mile backpack (varies by trailhead) with 3,700-5,550 ft of gain"
+      }
+     ],
+     "why": "Header gain of 3,000 ft is far below the 5,308 ft net rise from trailhead to summit, and below the approach alone (3,700-5,550 ft).",
+     "internal_resolution": "The row's own trailhead/summit elevations and pitch_detail prove >5,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season / best window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September is the typical window"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Aim for late June–early July for snow-free scrambling"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Mid-July to late September"
+      },
+      {
+       "field": "gear[1]",
+       "says": "ice axe (pre-mid-July snow)"
+      }
+     ],
+     "why": "pro_tips recommends late June as snow-free, outside the Jul-Sep season and against the ice-axe-before-mid-July advice and approach_variants' mid-July start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Approach mileage one-way vs round trip",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "watch_out[2]",
+       "says": "Long, remote approach (15-20+ miles round trip to base camp)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "17-20 mile backpack"
+      },
+      {
+       "field": "approach",
+       "says": "about 20 miles and ~4,900 ft gain to Upper Cathedral Lake"
+      },
+      {
+       "field": "dist_km",
+       "says": "29"
+      }
+     ],
+     "why": "watch_out calls 15-20 mi the round trip, while approach/pitch_detail/dist_km give ~17-20 mi one-way to the lake.",
+     "internal_resolution": "approach, pitch_detail and dist_km (29 km ≈ 18 mi) agree the figure is one-way.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "Andrews Pass ... roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.4 km (~17 mi)"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "~20-mile approach"
+      }
+     ],
+     "why": "Andrews Pass at 12 mi being halfway implies ~24 mi to the lake, vs ~17-20 mi elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+   "name": "Middle Finger Buttress - Left Side",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain vs trailhead-to-summit elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4800"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3050 (Andrews Creek Trailhead)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8358"
+      }
+     ],
+     "why": "gain_ft 4800 is less than the 5,308 ft net rise from the 3,050-ft trailhead to the 8,358-ft summit the row itself states.",
+     "internal_resolution": "The row's own trailhead and summit elevations prove gain is at least ~5,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "Andrews Pass ... roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.4 km (~17 mi)"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "~20-mile approach"
+      }
+     ],
+     "why": "Andrews Pass at 12 mi being halfway implies ~24 mi to the lake, vs ~17-20 mi elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+   "name": "Middle Finger Buttress - Right Side",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain vs trailhead-to-summit elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4800"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3050 (Andrews Creek Trailhead)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8358"
+      }
+     ],
+     "why": "gain_ft 4800 is less than the 5,308 ft net rise from the 3,050-ft trailhead to the 8,358-ft summit the row itself states.",
+     "internal_resolution": "The row's own trailhead and summit elevations prove gain is at least ~5,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "Andrews Pass ... roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.4 km (~17 mi)"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "~20-mile approach"
+      }
+     ],
+     "why": "Andrews Pass at 12 mi being halfway implies ~24 mi to the lake, vs ~17-20 mi elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_north_ridge",
+   "name": "North Ridge",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain vs trailhead-to-summit elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4800"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3050 (Andrews Creek Trailhead)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8358"
+      }
+     ],
+     "why": "gain_ft 4800 is less than the 5,308 ft net rise from the 3,050-ft trailhead to the 8,358-ft summit the row itself states.",
+     "internal_resolution": "The row's own trailhead and summit elevations prove gain is at least ~5,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "Andrews Pass ... roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.4 km (~17 mi)"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "~20-mile approach"
+      }
+     ],
+     "why": "Andrews Pass at 12 mi being halfway implies ~24 mi to the lake, vs ~17-20 mi elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+   "name": "Pilgrimage to Mecca",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain vs trailhead-to-summit elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4800"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3050 (Andrews Creek Trailhead)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8358"
+      }
+     ],
+     "why": "gain_ft 4800 is less than the 5,308 ft net rise from the 3,050-ft trailhead to the 8,358-ft summit the row itself states.",
+     "internal_resolution": "The row's own trailhead and summit elevations prove gain is at least ~5,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Walk-off direction",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Walk east to the saddle of Amphitheater Mountain, then descend the trail south back toward Upper Cathedral Lake"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The short one is a gully on the north side about a thousand feet east of Ka'aba ... The longer one circles south around Amphitheater's western arm"
+      }
+     ],
+     "why": "descent says walk east to a saddle then trail south; approach_variants gives a north-side gully east of the buttress or a loop around the western arm, neither matching.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which side of the lake to walk around",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "walk about 15 minutes around the north side of Upper Cathedral Lake"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "walk around it on the WEST side and straight up to the buttress"
+      }
+     ],
+     "why": "Approach goes around the north side; approach_variants the west side.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "Andrews Pass ... roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin"
+      },
+      {
+       "field": "dist_km",
+       "says": "27.4 km (~17 mi)"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "~20-mile approach"
+      }
+     ],
+     "why": "Andrews Pass at 12 mi being halfway implies ~24 mi to the lake, vs ~17-20 mi elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_north_buttress",
+   "name": "North Buttress",
+   "area": "Amphitheater Mountain",
+   "contradictions": [
+    {
+     "fact": "Route identity: North Buttress vs Middle Finger Buttress Right Side",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "A III, 5.9 line up the north face just east of Middle Finger Buttress"
+      },
+      {
+       "field": "face",
+       "says": "North Face — Middle Finger Buttress (right side)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "this is the identifying feature of the Right Side"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 3: climb the Right Side, walk off"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "The Right Side starts on a steep slab with a single thin vertical crack"
+      },
+      {
+       "field": "fa",
+       "says": "First ascent July 15, 1973"
+      }
+     ],
+     "why": "Overview/beta describe a separate line east of Middle Finger Buttress, but face, pitch_detail, pro_tips, itinerary, fa and waypoint directions describe Middle Finger Buttress Right Side (same FA date as that route).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Finishing pitch: overhanging off-width vs easy 4th class",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "finishing overhanging off-width crack"
+      },
+      {
+       "field": "gear[0]",
+       "says": "wide cam for the finishing crack"
+      },
+      {
+       "field": "pitch_detail[6]",
+       "says": "4th-5.6: Easy final ground to the top of the buttress ... many parties unrope here"
+      },
+      {
+       "field": "waypoints[2].directions",
+       "says": "The last pitch drops to 4th class and low fifth"
+      }
+     ],
+     "why": "overview/beta/gear/hazards promise an overhanging off-width finish needing wide gear, while pitch_detail and waypoint directions describe an easy 4th-class finish (detailed_rack makes the #4 optional).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Big Craggy Peak",
+   "contradictions": [
+    {
+     "fact": "Parking pass at Copper Glance TH",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "no fee or Northwest Forest Pass required at Copper Glance Trailhead"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None required for parking at the Copper Glance Trailhead"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or Interagency pass to park at the Copper Glance trailhead"
+      }
+     ],
+     "why": "Most fields say no pass is needed at Copper Glance TH; bivy says a NW Forest Pass is required.",
+     "internal_resolution": "permit, access.fees, access.passRequired and waypoint note agree no pass; bivy is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 12–16 miles round trip with 4,500–5,800 ft of gain"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10 mi and 4,500+ ft total"
+      },
+      {
+       "field": "what_to_bring[4]",
+       "says": "~11.6 mi round trip with ~5,600 ft gain"
+      },
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "5"
+      }
+     ],
+     "why": "Round trip given as ~10, 11.6, and 12-16 mi; dist_km 6.4 km (4 mi) one-way disagrees with the 5-mi summit waypoint.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "a poor month ... marginal"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "July to early October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October",
+       "says": "Falls outside the best-season window ... risky"
+      }
+     ],
+     "why": "season includes June (rated poor) and approach_variants includes October (rated risky).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Drive distance on Eightmile Creek Road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "north about 8 miles, then continue onto FR 5130 (Eightmile Creek Road) for about 15 miles"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "then left onto the Eightmile Creek road and about twelve to thirteen miles to the trailhead"
+      }
+     ],
+     "why": "15 mi vs 12-13 mi on FR 5130.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Old road section length and grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "The first ~1.5 miles follows an old jeep track ... a gentle, steady climb"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "The trail climbs steeply for roughly two and a half miles on an old gated mining road past a washed-out bridge and the mine"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2 (Copper Glance Mine ruins)"
+      }
+     ],
+     "why": "Mining-road section is 1.5 mi and gentle vs 2.5 mi and steep; the mine is at 1.5 mi vs 2 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Camp location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "This is the only camp that serves Big Craggy and West Craggy"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a camp at ~6,600 ft on a knoll near a seasonal tarn (some parties camp instead at Copper Glance Lake"
+      },
+      {
+       "field": "bail",
+       "says": "Copper Glance Basin camp/tarn (6,200-6,600 ft)"
+      }
+     ],
+     "why": "bivy calls Copper Glance Lake (6,100 ft) the only camp while the itinerary's standard camp is a 6,600-ft knoll.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Last reliable water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "There is no reliable water past Copper Glance Creek, so fill up there"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "last reliable water before the dry ridge/scree above"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Fill water at the basin crossing near 6,400 ft"
+      }
+     ],
+     "why": "Last water is placed at the Copper Glance Creek ford (~1.6 mi), at a 6,100-ft drainage (3.3 mi), and at a 6,400-ft basin crossing.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Gain vs net rise",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4570"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3810"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8478"
+      }
+     ],
+     "why": "gain_ft 4,570 is below the 4,668-ft net rise from trailhead to summit.",
+     "internal_resolution": "Row's own elevations show gain ≥4,668 ft.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Blackcap Mountain",
+   "contradictions": [
+    {
+     "fact": "Approach line and first camp",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the ridge/trail over Slate Pass and drop down into the West Fork Pasayten drainage, picking up Robinson Creek/Middle Fork Pasayten Trail #478 ... Continue down-valley past Robinson Pass ... Day two, follow the Middle Fork Pasayten downstream, then turn up past Fred's Lake"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "0.9 mi of Buckskin Ridge Trail then 3.1 mi of the Whistler Cutoff ... go left/north up the Middle Fork Pasayten Trail"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "the usual first-night camp for Blackcap parties out of Slate Pass"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "climb over Slate Pass and drop past Fred's Lake ... camping at or just below Shellrock Pass"
+      }
+     ],
+     "why": "approach routes via the West Fork/Robinson Pass and downstream on the Middle Fork with a river camp, while waypoints use the Whistler Cutoff and go upstream to Fred's Lake as first camp, and the itinerary reaches Shellrock on day 1.",
+     "internal_resolution": "waypoints (with distances) and approach_variants describe the Whistler Cutoff/Fred's Lake line; waypoint[1] labels Robinson Pass a longer alternative.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead name",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Robinson Creek/Buckskin Ridge Trailhead (~6,900 ft) at the end of Slate Peak Road"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Buckskin Ridge Trailhead (Slate Pass)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "required for parking at Robinson Creek Trailhead"
+      }
+     ],
+     "why": "The Slate Pass trailhead is also called Robinson Creek TH, a different trailhead near Mazama.",
+     "internal_resolution": "waypoints, approach_logistics and itinerary use Buckskin Ridge/Slate Pass TH.",
+     "needs_research": true
+    },
+    {
+     "fact": "Harts Pass / Slate Peak road opening",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "Typically opens in early July once snow clears"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "typically isn't snow-free until mid-to-late June"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "usually not snow-free until mid-to-late June"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "typically early to mid July"
+      }
+     ],
+     "why": "Road opening given as mid-to-late June vs early-to-mid July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total trip mileage",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "typical itineraries cover 50+ miles"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 30-34 mile round trip"
+      },
+      {
+       "field": "approach",
+       "says": "expect 30-35+ round-trip miles"
+      },
+      {
+       "field": "dist_km",
+       "says": "48.6"
+      }
+     ],
+     "why": "partner_requirements says 50+ miles while itinerary, approach and dist_km (≈30 mi) say 30-35.",
+     "internal_resolution": "itinerary, approach, dist_km and waypoints (summit 15.1 mi one-way) agree ~30-34 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "through early-to-mid October"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      }
+     ],
+     "why": "best_season runs into mid-October, outside the Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Shellrock Basin camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "camping at or just below Shellrock Pass (~7,200 ft)"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Shellrock Basin elev 6800"
+      },
+      {
+       "field": "approach",
+       "says": "7,500-ft Shellrock Pass"
+      }
+     ],
+     "why": "High camp given as ~7,200 ft vs 6,800 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Where to leave the trail for the col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "leave the trail at Shellrock Pass and traverse SSW"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Leave the trail at about 7,100 ft, just before the steep switchbacks that climb to Shellrock Pass ... Crossing Shellrock Pass itself and dropping over the far side puts you into Eureka Creek"
+      }
+     ],
+     "why": "Leave-trail point is Shellrock Pass itself vs ~7,100 ft below it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Basecamp name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "basecamp (e.g. near Dorothy Lake or Shellrock Pass)"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Doris Lake and Freds Lake basins"
+      }
+     ],
+     "why": "partner_requirements names Dorothy Lake where the rest of the row uses Doris Lake.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road-end elevation at Slate Peak",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "the Slate Peak spur climbs a further 3.5 miles to the road end at roughly 6,900 ft"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "continues to the gate below Slate Peak at about 7,440 feet"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "3 more miles to Slate Peak (7,488 ft)"
+      }
+     ],
+     "why": "Road end placed at ~6,900 ft vs ~7,440-7,488 ft, and 3 vs 3.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+[
+ {
+  "op": "move_pin",
+  "id": "wa_bald_eagle_peak_scramble",
+  "index": 2,
+  "expect": {
+   "name": "Deadfall zone below 2,600 ft",
+   "lat": 47.613225,
+   "lng": -121.25226119999999
+  },
+  "lat": 47.6465,
+  "lng": -121.286,
+  "elev": 2590,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+   "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+   "https://epqs.nationalmap.gov/v1/json"
+  ]
+ },
+ {
+  "op": "move_pin",
+  "id": "wa_bald_eagle_peak_scramble",
+  "index": 3,
+  "expect": {
+   "name": "Brushy ridge section, 4,500-5,200 ft",
+   "lat": 47.61537709090909,
+   "lng": -121.2637064
+  },
+  "lat": 47.63,
+  "lng": -121.2785,
+  "elev": 4890,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+   "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+   "https://epqs.nationalmap.gov/v1/json"
+  ]
+ },
+ {
+  "op": "move_pin",
+  "id": "wa_bald_eagle_peak_scramble",
+  "index": 4,
+  "expect": {
+   "name": "First summit view point",
+   "lat": 47.61587372727273,
+   "lng": -121.2663476
+  },
+  "lat": 47.625,
+  "lng": -121.2755,
+  "elev": 5170,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+   "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+   "https://epqs.nationalmap.gov/v1/json"
+  ]
+ },
+ {
+  "op": "move_pin",
+  "id": "wa_bald_eagle_peak_scramble",
+  "index": 5,
+  "expect": {
+   "name": "Cliff band bypass gully, 5,400 ft",
+   "lat": 47.61620481818182,
+   "lng": -121.2681084
+  },
+  "lat": 47.6228,
+  "lng": -121.2755,
+  "elev": 5370,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+   "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+   "https://epqs.nationalmap.gov/v1/json"
+  ]
+ }
+]

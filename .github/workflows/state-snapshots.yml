@@ -1,0 +1,44 @@
+name: Offline state files (nightly)
+
+# Builds the per-state offline files (scripts/build-state-snapshots.mjs) once a night and leaves them
+# in the Actions cache. deploy.yml restores the newest set into dist/states/ on every deploy, so the
+# app downloads a state from GitHub Pages instead of paging Supabase once per climber.
+#
+# Not a deploy itself on purpose: deploy.yml only publishes a commit that moves production FORWARD
+# (scripts/ci/should-publish.sh), so a nightly re-deploy of the same commit would be skipped. The
+# files reach the site with the next merge; if none comes for days, the app sees the index is older
+# than its limit and falls back to the live database path, so stale files are never served as new.
+
+on:
+  schedule:
+    - cron: "17 9 * * *" # 02:17 Pacific (daylight time) — after the evening's merges, before morning
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One build at a time; a second run waits rather than cancelling a half-built set.
+concurrency:
+  group: state-snapshots
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Public data only, so the ANON key is the right credential — the same one the app ships.
+      - name: Build every state's offline file
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/build-state-snapshots.mjs --out state-snapshots
+      # A unique key per run; deploy.yml restores by the prefix, which picks the newest.
+      - uses: actions/cache/save@v4
+        with:
+          path: state-snapshots
+          key: state-snapshots-${{ github.run_id }}

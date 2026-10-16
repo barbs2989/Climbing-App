@@ -1,0 +1,380 @@
+{
+ "applied": [
+  {
+   "id": "wa_sundial_northeast",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Camping in Upper Royal Basin"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Camping in Upper Royal Basin"
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Camping in Upper Royal Basin"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking pass at Staircase"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Parking pass at Staircase"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Day push or overnight"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Camping rules at Flapjack Lakes"
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Rock quality in The Needles"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_sundial_northeast",
+   "before": {
+    "itinerary": {
+     "cal": "Overnight wilderness permits (Royal Basin zone) are required via recreation.gov in summer, and camping is not permitted in Upper Royal Basin itself — camp at Royal Lake; best conditions are July-September once the East Face has melted out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Backpack the Royal Basin Trail from the Upper Dungeness Trailhead through old-growth forest, passing Royal Creek Camp, to camp in the designated sites at Royal Lake (about 5,100 ft) below Sundial and the rest of the Needles.",
+       "hours": 5.5,
+       "miles": 7.2,
+       "title": "Backpack in to Royal Lake",
+       "gainFt": 2550,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach high camp below Sundial"
+      },
+      {
+       "n": 2,
+       "note": "Scramble cross-country up talus and scree to the base of the East Face, then climb sustained, exposed Class 3 rock (loose in spots near the top) to the summit for views over Royal Basin, Mount Clark and Mount Deception. Retrace the same line back down to camp.",
+       "hours": 6,
+       "miles": 5.2,
+       "title": "Climb Sundial's East Face",
+       "gainFt": 2100,
+       "lossFt": 2100,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Early start for firmer rock and to be off the exposed ridge before any afternoon buildup."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach base of East Face",
+         "detail": "Walk up through Upper Royal Basin, then cross-country talus/scree to the face."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit Sundial",
+         "detail": "Sustained Class 3 with real exposure near the top; helmet recommended for loose rock."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Back at camp",
+         "detail": "Reverse the East Face and talus approach."
+        }
+       ],
+       "objective": "Summit Sundial (7,209 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike the 7.2 miles back to the Upper Dungeness Trailhead, descending about 2,550 ft through the river valley.",
+       "hours": 4.5,
+       "miles": 7.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2550,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~19.6-mile round trip: two backpacking days (Upper Dungeness TH to Royal Lake, ~2,550 ft each way) bracket a single scramble day up Sundial's Class 3 East Face (~2,100 ft round trip from camp)."
+    },
+    "access": {
+     "fees": "Overnight stays carry the wilderness camping fee of $8 per person per night (ages 16+) plus a $6 non-refundable reservation fee per permit.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters required for all food storage in the Royal Basin zone (loaners available at the WIC); campfires prohibited above 3,500 ft; camping restricted to the designated sites at Royal Creek, Lower Royal Meadow and Royal Lake (no camping in Upper Royal Basin); dogs not permitted on the trail.",
+     "permit": "Backcountry/wilderness camping permit required for any overnight stay in Royal Basin, reserved via Recreation.gov ($6 reservation fee + $8 per person per night, ages 16+; summer dates are lottery/reservation-limited). Off-season permits available directly through the Wilderness Information Center.",
+     "closures": "Bear canisters are required for all food storage in Royal Basin; campfires are prohibited above 3,500 ft; Olympic National Forest roads (FR 2880/2870) can be affected by seasonal washouts or closures — check current Forest Service alerts before driving in.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (NPS) — Wilderness Information Center, 3002 Mount Angeles Rd, Port Angeles, WA, (360) 565-3100.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful interagency pass to park at the Upper Dungeness Trailhead, which is on Olympic National Forest land.",
+     "passRequired": "Northwest Forest Pass or America the Beautiful pass to park, plus a Recreation.gov wilderness camping permit if overnighting at Royal Lake/Royal Basin.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    },
+    "approach_variants": [
+     {
+      "name": "Royal Basin to the northeast gully",
+      "notes": "Seven miles or so up the Royal Basin Trail past Shelter Rock to Royal Lake, then about a mile more and five hundred feet through Arrowhead Meadow into Upper Royal Basin below the Needles. Camping is not permitted there, so camp at the lake; the tarns are the last dependable water before the talus. Off-trail from the basin onward.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Loose, rotten basalt on the gully and ridge with rockfall onto parties below",
+       "Snow or sluffing in the northeast couloir well into July — axe and self-arrest",
+       "An exposed Class 3 ridge traverse to the true summit",
+       "A spot on the ledges that appears to cliff out and is passed by a cairned crack",
+       "Lightly visited terrain where a rescue takes considerably longer than usual"
+      ],
+      "baseFinding": "From the tarns of Upper Royal Basin, look up at the Needles wall and pick out the northeast-facing gully on the climber's-right side of the group. Early in the season it holds snow, which makes it the obvious white line on an otherwise dry face and is the easiest identification you will get. Cross the talus to its foot; the base is where the loose scree fan narrows and steepens into the gully proper. Climb it and watch for the dogleg — the gully bends left below a notch on the summit ridge, and that bend is the confirmation you are in the right one rather than a neighbour. From the notch a short, exposed Class 3 scramble runs south to the true summit. The Needles hold several similar gullies and Clark stands immediately northwest with Johnson west, so a peak that looks right from the basin may not be the one you want. Higher up, on the broken ledges, one spot appears to cliff out where a cairned Class 3 crack around the corner is the way through. Everything on this face is loose — keep out of each other's fall line."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "before": {
+    "pitches": 2,
+    "itinerary": {
+     "cal": "Flapjack Lakes is a limited-use, permit-required camp area in Olympic National Park — reserve a wilderness permit ahead of a summer trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Staircase Ranger Station, follow the North Fork Skokomish River trail 3.4 miles to the Spike Camp junction, then climb more steeply for another 3.6 miles to Flapjack Lakes (3,850 ft), a permit-required camp basin ringed by the Sawtooth spires. Set up camp and scout the route toward Sawtooth Pass for the next day.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Approach to Flapjack Lakes camp",
+       "gainFt": 3050,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish base camp at Flapjack Lakes"
+      },
+      {
+       "n": 2,
+       "note": "Hike east from camp toward Gladys Divide, leaving the trail at about 4,400 ft to cross an open snow/rock slope southeast to Sawtooth Pass. Scramble right beneath the west face of The Fin to the notch south of The Horn, then climb the Southeast or Southwest Route (5.5, 1-2 pitches of steep pillow basalt) to the summit, rappelling or downclimbing to reverse the route back to camp.",
+       "hours": 8.5,
+       "miles": 3.5,
+       "title": "Climb The Horn",
+       "gainFt": 1700,
+       "lossFt": 1700,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start for good rock conditions and a timing buffer on technical terrain."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach Sawtooth Pass",
+         "detail": "Via the open snow/rock slope southeast of the Gladys Divide trail."
+        },
+        {
+         "time": "7:45 AM",
+         "label": "Arrive at notch south of The Horn",
+         "detail": "Scramble under the west face of The Fin to get there."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Rope up, begin climbing",
+         "detail": "Southeast or Southwest Route, 5.5, on pillow basalt."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit",
+         "detail": "5,536 ft high point."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at camp",
+         "detail": "After rappelling/downclimbing and reversing the approach."
+        }
+       ],
+       "objective": "Summit The Horn via the notch south face (5.5) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the North Fork Skokomish River trail back through the Spike Camp junction to the trailhead. Mostly downhill and faster than the approach.",
+       "hours": 4,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3050,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Staircase trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: backpack in to Flapjack Lakes, spend a full day climbing The Horn's 5.5 notch route and back to camp, then hike out — roughly 17.5 miles and 4,750 ft round trip."
+    },
+    "waypoints": [
+     {
+      "lat": 47.5155,
+      "lng": -123.3295,
+      "elev": 875,
+      "name": "Staircase Ranger Station / North Fork Skokomish Trailhead",
+      "note": "Overnight wilderness permits must be reserved in advance (none are issued at the trailhead); NW Forest Pass/park entrance fee required for the lot across from the campground.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Hoodsport on Highway 101, take SR-119 (North Lake Cushman Road), which becomes FR-24 past the lake, and follow it roughly 9 miles to the Staircase Ranger Station in the southeast corner of Olympic National Park, around 800 ft. Park in the lot across from the campground — a NW Forest Pass or park entrance fee is required there. If you plan to camp at Flapjack Lakes, that is a quota basin limited year round and no permits are issued at the trailhead, so reserve one well before you drive out."
+     },
+     {
+      "lat": 47.546206,
+      "lng": -123.376107,
+      "elev": 1473,
+      "name": "Spike Camp junction",
+      "note": "Primitive riverside camp where the North Fork Skokomish River Trail forks toward Flapjack Lakes; last easy river-level water before the steep climb begins.",
+      "type": "Campsite",
+      "distMi": 3.4
+     },
+     {
+      "lat": 47.56102,
+      "lng": -123.3419,
+      "elev": 3900,
+      "name": "Flapjack Lakes",
+      "note": "Established backcountry camp at twin subalpine lakes below Sawtooth Ridge; bear canisters mandatory, camping permit reservation required (quota area, limited year round), no campfires above 3,500 ft.",
+      "type": "Campsite",
+      "distMi": 7
+     },
+     {
+      "lat": 47.553507352941175,
+      "lng": -123.32244264705884,
+      "elev": null,
+      "name": "Black and White Lakes junction waterfall",
+      "note": "Waterfall at the Black and White Lakes spur junction, roughly half a mile below Flapjack Lakes, is the first reliable, easy water on the dry, steep climb up from the valley.",
+      "type": "Water",
+      "distMi": null
+     },
+     {
+      "lat": 47.554919647058824,
+      "lng": -123.32204435294119,
+      "elev": 4400,
+      "name": "Off-trail departure point (~4,400 ft pond)",
+      "note": "Before a small pond on the Gladys Divide trail, leave the maintained tread and head southeast up an open snow/rock slope toward Sawtooth Pass.",
+      "type": "Junction",
+      "distMi": 7.8
+     },
+     {
+      "lat": 47.556802705882355,
+      "lng": -123.32151329411765,
+      "elev": 5300,
+      "name": "Sawtooth Pass",
+      "note": "Gain the Sawtooth Ridge crest at this saddle, then work along the ridge crest toward the notch below The Fin and The Horn.",
+      "type": "Junction",
+      "distMi": 8.2
+     },
+     {
+      "lat": 47.557744235294116,
+      "lng": -123.32124776470589,
+      "elev": 5450,
+      "name": "Notch south of The Horn (under The Fin's west face)",
+      "note": "Exposed scramble traverse under The Fin's west face to the notch; loose pillow-basalt and runout (R-rated) moves above the notch onto The Horn.",
+      "type": "Hazard",
+      "distMi": 8.4
+     },
+     {
+      "lat": 47.558215,
+      "lng": -123.321115,
+      "elev": 5536,
+      "name": "The Horn summit",
+      "note": "True summit via the SE or SW 5.5 route from the notch; descend by rappelling from the summit and reversing the traverse under The Fin.",
+      "type": "Summit",
+      "distMi": 8.5
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very strong; this is a backpack-in objective, not a day hike. The North Fork Skokomish Trail gains roughly 3,050 ft over about 7-8 miles to Flapjack Lakes camp, then further ascent and off-trail travel via Gladys Divide and Sawtooth Pass to reach The Horn — round-trip mileage to Gladys Divide alone runs close to 19 miles with 4,000+ ft of net gain.",
+      "packWeight": "Light day pack for a fast single-push team; many parties instead carry an overnight kit and camp at Flapjack Lakes to split the approach and climbing into two days."
+     },
+     "approachTime": "Long - roughly 7-8 miles and 3,050 ft gain on the North Fork Skokomish Trail to Flapjack Lakes, then further ascent via Gladys Divide and Sawtooth Pass to reach The Horn; realistically a multi-day backpack with a high camp, not a single-push day trip from the road.",
+     "requiredSkills": [
+      "Class 3-4 scrambling on loose rock",
+      "route-finding on an unmaintained, steep boot path and off-trail alpine terrain",
+      "comfort with real exposure near the spire summits",
+      "steep-snow travel / basic self-arrest if lingering early-season snow is encountered on the approach"
+     ],
+     "experienceLevel": "Experienced trad leader - the runout 5.5 summit pitch and the loose, exposed Class 3-4 ground below it demand solid judgment; not a beginner objective."
+    },
+    "access": {
+     "fees": "Olympic NP entrance: $30/vehicle (7-day) or $15/person on foot/bike; $55 park annual pass. Overnight wilderness permit: $8/adult/night plus a $6 non-refundable reservation fee, or cover the nightly fee with a $45 annual NP Wilderness Pass.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "No campfires at Flapjack Lakes. Camp only in established sites or on durable/bare ground, at least 200 ft from water sources.",
+     "permit": "Wilderness permit required for any overnight stay, reserved via Recreation.gov / the Olympic NP Wilderness Information Center (360-565-3100). Flapjack Lakes is a limited-entry, quota-managed camping zone — reserve well in advance for summer weekends.",
+     "closures": "The Staircase developed area and FS-24 access road reopened on July 8, 2026, following the 2025 Bear Gulch Fire closure. However, the North Fork Skokomish Trail beyond the Rapids Loop and the Flapjack Lakes Trail/campsite — the only practical approach to The Horn — remain closed while NPS crews complete hazard assessments and repair fire-damaged infrastructure (bridges, privies), with no end date given as of the Olympic National Park fire-conditions page updated September 18, 2026. Confirm current trail status with Olympic National Park before planning any trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Staircase/South District); the access road corridor runs through Olympic National Forest's Hoodsport Ranger District.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass (America the Beautiful) at the Staircase entrance station",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "before": {
+    "beta": "Approach via the long Royal Basin trail to Upper Royal Basin, then leave trail to gain the Needles ridge crest and work along/among the summits to reach The Incisor. The peaks in the Royal Basin area are not walkups, and the terrain carries rockfall danger from rotten rock, though the Needles' rock is specifically higher quality than is typical for the Olympics. Expect Class 3-5.8 terrain somewhere on the massif depending on which line/summit is taken; no specific graded pitch count or line is established for The Incisor itself."
+   }
+  }
+ ]
+}

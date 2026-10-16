@@ -1,0 +1,332 @@
+{
+ "file": "r262.json",
+ "results": [
+  {
+   "id": "wa_clean_break",
+   "fact": "Trailhead and approach line",
+   "verdict": "fixed",
+   "correct_value": "Two approaches exist: the steep Wine Spires/Burgundy Col trail from the MP 166 pullout (also the usual descent) and the more direct Silver Star Creek approach from a pullout ~8.5 mi east of Washington Pass. The approach column must not end at Burgundy Spire, and the Wine Spires pin's note must not describe the Silver Star Creek trail.",
+   "evidence": "The Juno Tower area page lists two ways in: the Wine Spires pullout just under 4 mi east of the pass with its steep trail, or Silver Star Creek parking 8.5 mi past the pass with a climbers' trail up the east side of the drainage, crossing at 5000 ft. A trip report approached via Silver Star Creek and descended west to intersect the Burgundy Col approach trail; another party went up Silver Star Creek, calling it more direct. So both the approach column (Burgundy Col trail) and the variant (Silver Star Creek) are genuine, but the approach column's closing sentence about Burgundy Spire is copied text, and the MP 166 pin carries a note describing the other trailhead.",
+   "sources": [
+    "https://www.mountainproject.com/area/109232031/juno-tower",
+    "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/",
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html",
+    "https://www.mountainproject.com/route/109232141/clean-break"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Burgundy Spire is reached from the basin/col area with a short additional scramble; good camping and a late-season spring are near 6,400-6,500 ft.",
+     "replace": "Good camping and a late-season spring are near 6,400-6,500 ft. For Clean Break this trail is the usual way down; the more direct way in to Juno Tower's east face is up Silver Star Creek from a separate pullout about 8.5 miles east of Washington Pass.",
+     "id": "wa_clean_break",
+     "fact": "Trailhead and approach line"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Climbers trail up the east side of Silver Star Creek drainage, crossing at ~5000ft.",
+     "replace": "Start of the steep climbers' trail toward Burgundy Col, the usual way down from Clean Break. The Silver Star Creek approach starts from a separate pullout about 8.5 miles east of Washington Pass.",
+     "id": "wa_clean_break",
+     "fact": "Trailhead and approach line"
+    }
+   ]
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "Descent: walk-off vs rappels",
+   "verdict": "fixed",
+   "correct_value": "Walk-off descent (west to the Burgundy Col trail, or back down Silver Star Creek); a single 60m rope suffices.",
+   "evidence": "A detailed trip report descended by walking west to intersect the standard Burgundy Col approach trail. Another party took 1 hour back to the base and 3 hours out down Silver Star Creek, with no rappels mentioned. The route page describes simul-climbing the upper pitches to the top with no rappel descent. The rope fields' 'long multi-rappel descent' is the outlier against descent, descent_text, turnaround and bail.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/",
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html",
+    "https://www.mountainproject.com/route/109232141/clean-break"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Long multi-rappel descent — many parties use double ropes or plan extra raps with a single 60m.",
+     "replace": "The descent is a walk-off, so a single 60m rope is enough.",
+     "id": "wa_clean_break",
+     "fact": "Descent: walk-off vs rappels"
+    },
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single (double ropes common for the long rap descent)",
+     "value": "single",
+     "id": "wa_clean_break",
+     "fact": "Descent: walk-off vs rappels"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "60m rope (two 60m or single 70m useful for the long rap descent)",
+     "value": "Single 60m rope",
+     "id": "wa_clean_break",
+     "fact": "Descent: walk-off vs rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Two 60m ropes or single 70m rope is efficient for descent sections.",
+     "replace": "A single 60m rope is enough, since the descent is a walk-off.",
+     "id": "wa_clean_break",
+     "fact": "Descent: walk-off vs rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "How many pitches are 5.10",
+   "verdict": "fixed",
+   "correct_value": "Several of the 15 pitches are 5.10 (the exact count depends on which variations are taken); no specific '7 of 15' count.",
+   "evidence": "The pitch-by-pitch route description grades P1 5.10c, P5 5.10a, P7 5.10b, with optional 5.10a sections on P2, P10 and the finish — matching the row's pitch table (3 firm plus optional 5.10a variations). One trip report says '7 of its 15 pitches' are 5.10. Sources agree the route has several 5.10 pitches but not on a count; removing the unsupported number makes overview and rope_note agree with the pitch table.",
+   "sources": [
+    "https://www.mountainproject.com/route/109232141/clean-break",
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "With 7 of 15 pitches at 5.10 grade,",
+     "replace": "With several of its 15 pitches at 5.10,",
+     "id": "wa_clean_break",
+     "fact": "How many pitches are 5.10"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "7 of 15 pitches are 5.10.",
+     "replace": "several pitches are 5.10.",
+     "id": "wa_clean_break",
+     "fact": "How many pitches are 5.10"
+    }
+   ]
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "Parking pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only field claiming a Forest Pass at the highway pullout is bivy[0].permit, on the shared Bench Camp card (a regional camp list; this camp serves Juno's west side, not Clean Break's east-face approach). The row's own permit and access.parking_pass limit the pass to developed trailheads (Washington Pass Overlook, Blue Lake, Cutthroat), consistent with access.passRequired N/A. Left to the camping clean-up; no bivy patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "Car-to-car time: pro tip vs itinerary",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "pro_tips says a '10-11 hour round trip' while itinerary says car-to-car times of roughly 12-13 hours, and timing.totalHrs is 10.75 although approach 2.5 + summit 7.25 + descent 2 = 11.75. One trip report gives 11.5 hours car to car; no second source with a car-to-car figure was found, so no change.",
+   "sources": [
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "fact": "Number of pitches",
+   "verdict": "not_a_contradiction",
+   "correct_value": "8 pitches as described, 7 when P1-2 are linked",
+   "evidence": "The pitch table numbers 8 pitches with P1-2 as one linkable row (7 rows), and the overview says 7-8. The route page lists 8 pitches; one guide service says seven to eight and one trip report reached the summit in 7. Pitches=7 is the linked count and the overview spells out the range.",
+   "sources": [
+    "https://www.mountainproject.com/route/108262093/west-ridge",
+    "https://www.ncmountainguides.com/routes/climbing/paisano-pinnacle-west-ridge",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "fact": "Nature and protection of the final pitch",
+   "verdict": "fixed",
+   "correct_value": "P8 climbs a widening crack (takes large cams) and then finishes left on a runout face where a small cam is the key piece.",
+   "evidence": "The pitch-by-pitch description says P8 climbs up a large widening crack, then moves left on face holds at its top (150 ft, 5.8). A trip report protected the last pitch with a #3 and #4 in the widening crack and a 0.2 cam halfway up the slab. So both 'wide piece for the P8 crack' and 'runout face with small cams' are partly right; the fields that describe only one half are corrected, and 'small-cam-only' is wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/108262093/west-ridge",
+    "https://dashertonclimbs.com/2019/06/24/west-ridge-paisano-pinnacle/",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "find": "P8 wide crack has sparse pro",
+     "replace": "P8 starts in a widening crack, then finishes on a sparsely protected face",
+     "id": "wa_west_ridge_2",
+     "fact": "Nature and protection of the final pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      6,
+      "notes"
+     ],
+     "find": "Exposed face climbing, the route's",
+     "replace": "A widening crack, then exposed face climbing up and left — the route's",
+     "id": "wa_west_ridge_2",
+     "fact": "Nature and protection of the final pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "the final 5.8 face pitch is the exception, with sparse, small-cam-only protection.",
+     "replace": "the final 5.8 pitch is the exception: above its widening crack, the face section has sparse protection, with a small cam the key piece.",
+     "id": "wa_west_ridge_2",
+     "fact": "Nature and protection of the final pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a one-way mileage that two sources agree on. One trip report says about 4 miles to the bench; others give only times (1-2 hours) and gain (~2,000 ft to the 6,500 ft bench). The stored pins are ~1.3 mi (bench) and ~1.7 mi (summit) apart in straight line, so a 4 mi bench is doubtful, but no sourced figure exists to adopt.",
+   "sources": [
+    "https://dashertonclimbs.com/2019/06/24/west-ridge-paisano-pinnacle/",
+    "https://www.mountainproject.com/area/108262079/paisano-pinnacle"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "fact": "Crux location",
+   "verdict": "fixed",
+   "correct_value": "The technical crux is the twin cracks into a dihedral on pitch 4, about halfway up the route.",
+   "evidence": "The pitch-by-pitch description puts the 5.8+ twin cracks into a dihedral on P4 (after 125+200+180 ft of the ~1,000 ft of pitches). Three trip reports put the crux on the 5.9- twin cracks at pitch 4 / mid-route. The row's pitch table and bail already say pitch 4; the 'two-thirds of the way up' phrasing in beta and the base-finding note is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/108262093/west-ridge",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/",
+    "https://jameswolff95.wixsite.com/mysite/post/paisano-pinnacle-west-ridge-burgundy-spire-north-face-iv-5-8",
+    "https://dashertonclimbs.com/2019/06/24/west-ridge-paisano-pinnacle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "the crux comes about two-thirds of the way up on a short section",
+     "replace": "the crux comes about halfway up, on pitch 4, on a short section",
+     "id": "wa_west_ridge_2",
+     "fact": "Crux location"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The technical crux is about two-thirds of the way up on a short section",
+     "replace": "The technical crux is about halfway up, on the fourth pitch, on a short section",
+     "id": "wa_west_ridge_2",
+     "fact": "Crux location"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "fact": "Signed vs unsigned pullout",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The pullout ~4 mi east of Washington Pass near MP 166 has a sign pointing to Silver Star Mountain but nothing marking the Wine Spires or the climbers' path. The row's own approach variant says exactly this ('signed for the mountain above rather than for the spires'), so 'signed for Silver Star Mountain' and 'unsigned Wine Spires pullout' describe the same facts from two angles.",
+   "sources": [
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rampage",
+   "fact": "Ropes needed for the rappels",
+   "verdict": "fixed",
+   "correct_value": "A single 60m rope (doubled, it reaches the 30m rappels).",
+   "evidence": "The route page gives the descent as two 30m rappels down the gully (or the class 3 ridge scramble). A trip report on the neighbouring West Ridge made the same 30m and 20m rappels into that gully with a single rope. A 60m rope doubled covers 30m; rope_type, rope_note and rack all say single, so gear[3] is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/108268507/rampage",
+    "https://dashertonclimbs.com/2019/06/24/west-ridge-paisano-pinnacle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "expect": "60m ropes (two ropes needed for the 30m rappels)",
+     "value": "Single 60m rope (doubled, it reaches the 30m rappels)",
+     "id": "wa_rampage",
+     "fact": "Ropes needed for the rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_rampage",
+   "fact": "Approach text describes the other Paisano route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Rampage is reached by hiking most of the way toward Burgundy Col, then cutting right across a very loose slope to a ledge system and following it right to the base of the corner.",
+   "evidence": "The route page says to hike most of the way to Burgundy Col, cut right across a very loose slope to the left end of an obvious ledge system, and follow it right to the corner. The pinnacle's area page gives the same shared trail to the 6,500 ft bench and then toward the col. The row's approach variant name, notes, hazards and base-finding all agree; only the approach column's West Ridge sentence is copied from the other route.",
+   "sources": [
+    "https://www.mountainproject.com/route/108268507/rampage",
+    "https://www.mountainproject.com/area/108262079/paisano-pinnacle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Paisano Pinnacle's West Ridge route starts lower than Burgundy Spire's and is commonly linked with Burgundy Spire's North Face in one long car-to-car day; fresh water is reported from a spring near the camp bench.",
+     "replace": "For Rampage, keep climbing toward Burgundy Col, then leave the trail rightward across a very loose slope onto a third-class ledge system and follow it right to its far end, where the route's corner begins. A spring near the camp bench is the last reliable water.",
+     "id": "wa_rampage",
+     "fact": "Approach text describes the other Paisano route"
+    }
+   ]
+  },
+  {
+   "id": "wa_rampage",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same shared approach as the West Ridge row: only one trip report gives a mileage (about 4 miles to the bench); other sources give times and gain only. Pins are ~1.3 mi and ~1.7 mi from the trailhead in straight line. No two sources agree on a one-way figure, so no change.",
+   "sources": [
+    "https://dashertonclimbs.com/2019/06/24/west-ridge-paisano-pinnacle/",
+    "https://www.mountainproject.com/area/108262079/paisano-pinnacle"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rampage",
+   "fact": "Signed vs unsigned pullout",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The pullout ~4 mi east of Washington Pass near MP 166 has a sign pointing to Silver Star Mountain but nothing marking the Wine Spires or the climbers' path. The row's own approach variant says exactly this ('signed for the mountain above rather than for the spires'), so 'signed for Silver Star Mountain' and 'unsigned Wine Spires pullout' describe the same facts from two angles.",
+   "sources": [
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893"
+   ],
+   "patches": []
+  }
+ ]
+}

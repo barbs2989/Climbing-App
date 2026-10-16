@@ -1,0 +1,970 @@
+{
+ "file": "r038.json",
+ "results": [
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "fact": "Whether a special access permit is required (private Hampton Resources timberland)",
+   "verdict": "fixed",
+   "correct_value": "A Hampton Resources recreation access permit is required to use FR-62 (private timberland); no climbing/wilderness permit and no federal pass at the road-end pullout.",
+   "evidence": "The WTA hike page for Mount Persis states access is via private property and requires a recreational permit from Hampton Resources (ownership changed July 2021), and lists no Northwest Forest Pass. Hampton Lumber's recreation page confirms its North Cascades forestland in Whatcom, Skagit and Snohomish counties requires a fee permit, including for non-motorized (walk-in) users. The top-level permit field and access.parking_pass (generic NW Forest Pass boilerplate) were the outliers.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-persis",
+    "https://www.hamptonlumber.com/recreation/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-04-04.210733479567"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_persis_west_ridge",
+     "fact": "Whether a special access permit is required (private Hampton Resources timberland)",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "value": "No climbing or wilderness permit required. A Hampton Resources recreation access permit is required to use FR-62 across the private timberland; no Northwest Forest Pass is needed at the road-end pullout."
+    },
+    {
+     "id": "wa_mount_persis_west_ridge",
+     "fact": "Whether a special access permit is required (private Hampton Resources timberland)",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "value": "No federal pass needed at the FR-62 road-end pullout; the Hampton Resources recreation permit is what this approach requires."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row conflates two distinct lines. The cross-country North Route that leaves the Dingford Creek Trail near Goat Creek (~2.1 mi) is published as roughly 10 miles round trip with 4,100 ft of gain, which matches the itinerary/partner_requirements figure; the line via the Hester Lake Trail and Hester/Little Hester Lakes (which the approach text, waypoints and the itinerary narrative all describe) was logged at 15.6 miles round trip. Which line this record represents must be decided before one distance can be written everywhere; no patch made.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-price",
+    "https://onehikeaweek.com/2016/08/27/mount-price/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dingford-creek-trail-1005"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "fact": "Name of the approach trail",
+   "verdict": "fixed",
+   "correct_value": "Dingford Creek Trail (#1005) then Hester Lake Trail (#1005.1) from the Dingford Creek Trailhead on the Middle Fork Snoqualmie Road",
+   "evidence": "The Forest Service Dingford Creek Trail 1005 page places the Hester Lake Trail junction 3.2 miles up the Dingford Creek Trail (which continues to Myrtle Lake), and its Hester Lake Trail 1005.1 page says that trail begins 3 miles up the Dingford Creek Trail from the Dutch Miller Gap/Dingford Creek trailhead. WTA's Dingford Creek hike describes the same fork at about 3 miles. Snow Lake Trail is an unrelated trail at Alpental; the two 'Snow Lake trail' mentions are contamination.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dingford-creek-trail-1005",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hester-lake-trail-10051",
+    "https://www.wta.org/go-hiking/hikes/dingford-creek"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_price_north_route",
+     "fact": "Name of the approach trail",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "long - Snow Lake trail approach plus",
+     "replace": "long - Dingford Creek and Hester Lake trail approach plus"
+    },
+    {
+     "id": "wa_mount_price_north_route",
+     "fact": "Name of the approach trail",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "the Snow Lake trail itself is one of the most heavily used trails near Seattle, but very few hikers leave the maintained trail",
+     "replace": "the Dingford Creek Trail carries hikers bound for Hester and Myrtle Lakes, but very few leave the trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "fact": "Whether a parking pass/fee is required at the trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External sources disagree. The Forest Service Dingford Creek Trailhead recreation-site page says no fees are required and its Dingford Creek Trail 1005 page says no fee is currently required; but the Forest Service Hester Lake Trail page says a valid recreation pass is required at the Dutch Miller Gap trailhead, and WTA's Dingford Creek hike lists a Northwest Forest Pass/America the Beautiful pass. The row's own waypoint[0] note/directions also say a Northwest Forest Pass is required, agreeing with access.parking_pass. Not settled by two independent agreeing sources; no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/dingford-creek-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/dingford-creek-trail-1005",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hester-lake-trail-10051",
+    "https://www.wta.org/go-hiking/hikes/dingford-creek"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_roosevelt_standard",
+   "fact": "Climbing season window (Jul-Sep chip vs a stated Jul-Oct/May-Oct window elsewhere)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row itself is split: seasonal_guidance rates October only 'marginal' and approach_variants gives 'Late July to September' (supporting Jul-Sep), while best_season says July-October is reliable, access.notes June-October and itinerary.cal May-October. External descriptions only stress that the gully needs dry conditions and snow-free rock; none found states a month window, so no two sources settle Jul-Sep vs Jul-Oct. The itinerary.cal 'May through October' is the weakest claim (the gully and approach hold snow into July per the row's own climate text) but was not externally settled either.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/mount-roosevelt-scramble-via-snow-lake-trail",
+    "http://www.cascadedreams.com/2010roosevelt_sept/2010roosevelt_sept.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+   "verdict": "fixed",
+   "correct_value": "~8,100 ft cumulative gain and loss (Longs Pass crossed twice) over about 12-13 mi round trip; one-way about 6.25 mi",
+   "evidence": "A detailed trip description of the Esmeralda/Longs Pass approach gives 13 miles round trip and about 8,200 ft of gain; a Mount Stuart route guide gives 12-13 miles round trip and about 8,000 ft of cumulative gain; a logged trip gave 13.12 mi with 8,009 ft. The header 8,100 ft figure stands; the day rows are corrected so day 2 includes the return over Longs Pass (camp ~4,750 ft to summit and back, then +~1,500 ft to the pass and -~2,000 ft to the car), and the day-1 mileage is reduced to the ~4 mi trailhead-to-camp distance so the days sum to ~12.5 mi. dist_km held the round-trip 12 mi; set to the one-way ~6.25 mi.",
+   "sources": [
+    "http://www.ericsbasecamp.net/trips/MtStuart/MtStuart.htm",
+    "https://prominenceregistry.com/mount-stuart/",
+    "https://www.wta.org/go-hiking/hikes/longs-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 5.3,
+     "value": 4
+    },
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 10.6,
+     "value": 8.5
+    },
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 3375,
+     "value": 6300
+    },
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 3875,
+     "value": 6800
+    },
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "over about 12 mi round trip",
+     "replace": "over about 12-13 mi round trip"
+    },
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 19.3,
+     "value": 10.1
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "fact": "Car-to-car gain stated in partner_requirements",
+   "verdict": "fixed",
+   "correct_value": "~8,000+ ft gain/loss car to car",
+   "evidence": "partner_requirements.fitnessSpec.hiking said a 4,600+ ft gain/loss day, contradicting gain_ft/loss_ft 8,100 and the itinerary total; the same sources (13 mi / ~8,200 ft; 12-13 mi / ~8,000 ft cumulative) settle the higher figure, since the route crosses Longs Pass on the way in and again on the way out.",
+   "sources": [
+    "http://www.ericsbasecamp.net/trips/MtStuart/MtStuart.htm",
+    "https://prominenceregistry.com/mount-stuart/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_cascadian_couloir",
+     "fact": "Car-to-car gain stated in partner_requirements",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "4,600+ ft gain/loss",
+     "replace": "8,000+ ft gain/loss"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "fact": "whether an Enchantment-zone lottery permit is required",
+   "verdict": "fixed",
+   "correct_value": "No lottery permit on the Esmeralda Basin/Goat Pass approach; free self-issued Alpine Lakes Wilderness permit. Only a camp in the Mountaineer Creek (Stuart Zone) drainage needs the May 15-Oct 31 overnight permit.",
+   "evidence": "Lake Ingalls and the Esmeralda/Teanaway side need no overnight permit and are not part of the Enchantment Permit Area (overnight permits there were dropped after the 1993 study). The Enchantment Permit Area's five zones are Core, Snow, Colchuck, Stuart and Eightmile/Caroline; the Stuart zone is entered from the Stuart Lake trailhead, where overnight stays May 15-Oct 31 need a permit. The route's own access.permit and bivy notes already say this; the top-level permit boilerplate was the outlier.",
+   "sources": [
+    "https://www.spokesman.com/stories/2018/aug/19/for-hikers-skunked-on-enchantment-permits-lake-ing/",
+    "https://www.wta.org/go-hiking/hikes/lake-stuart",
+    "https://www.mapsbymax.com/guides/enchantments-zone-map-guide"
+   ],
+   "patches": [
+    {
+     "id": "wa_upper_north_ridge_w_great_gendarme",
+     "fact": "whether an Enchantment-zone lottery permit is required",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+     "value": "Approached from the Esmeralda Basin side, this route is outside the Enchantment Permit Area: the free self-issued Alpine Lakes Wilderness permit at the trailhead covers day and overnight use, with no lottery. A party that camps down in the Mountaineer Creek drainage on the north side is in the Enchantment Permit Area's Stuart Zone and needs an overnight permit May 15-Oct 31."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "fact": "whether an Enchantment-zone lottery permit is required",
+   "verdict": "fixed",
+   "correct_value": "Depends on approach: no lottery via Esmeralda/Ingalls/Goat Pass (free self-issued permit); camping via the Mountaineer Creek approach is in the Stuart Zone and needs the May 15-Oct 31 overnight quota permit.",
+   "evidence": "Lake Ingalls and the Esmeralda/Teanaway side need no overnight permit and are not part of the Enchantment Permit Area (overnight permits there were dropped after the 1993 study). The Enchantment Permit Area's five zones are Core, Snow, Colchuck, Stuart and Eightmile/Caroline; the Stuart zone is entered from the Stuart Lake trailhead, where overnight stays May 15-Oct 31 need a permit. The route's own access.permit and bivy notes already say this; the top-level permit boilerplate was the outlier. This route documents both approaches, so the permit text now names both.",
+   "sources": [
+    "https://www.spokesman.com/stories/2018/aug/19/for-hikers-skunked-on-enchantment-permits-lake-ing/",
+    "https://www.wta.org/go-hiking/hikes/lake-stuart",
+    "https://www.mapsbymax.com/guides/enchantments-zone-map-guide"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_direct_north_ridge_w_gendarme",
+     "fact": "whether an Enchantment-zone lottery permit is required",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+     "value": "Depends on the approach. Over Ingalls Lake and Goat Pass from the Esmeralda Basin trailhead you are outside the Enchantment Permit Area: the free self-issued Alpine Lakes Wilderness permit covers day and overnight use, with no lottery. Via Mountaineer Creek from the Stuart Lake trailhead, camps are in the Enchantment Permit Area's Stuart Zone, where overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need only the free self-issued permit."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "fact": "which trailhead starts this route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route documents two genuine approaches (Esmeralda/Goat Pass, marked primary, and Stuart Lake/Mountaineer Creek), and waypoint[0]'s own directions explicitly label that pin as the Icicle-side start and tell the party the Teanaway side is a different drive; two labelled options, not a wrong fact.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "fact": "Pass reached at mile 2.5 in the shared approach text (Longs Pass vs Ingalls Pass)",
+   "verdict": "fixed",
+   "correct_value": "Longs Pass (~6,250 ft) is reached by the Longs Pass Trail branching off ~1.7 mi in; the Ingalls Lake/Goat Pass line crosses Ingalls Pass (~6,500 ft) at ~3 mi",
+   "evidence": "WTA's Longs Pass hike: 0.3 mi on a multi-use trail, 1.4 mi on Ingalls Way, then 1.2 mi to Longs Pass at 6,250 ft; WTA's Lake Ingalls hike: Ingalls Pass at about 3 miles, high point 6,500 ft, with the Longs Pass junction about 1.4 miles in as a side trip. The Forest Service Longs Pass Trail page says it begins at the Ingalls Way Trail and runs 2.7 mi one way. So Longs Pass is on a side trail toward Ingalls Creek, and the way to Ingalls Lake/Stuart Pass/Goat Pass goes over Ingalls Pass, not Longs Pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/longs-pass",
+    "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/longs-pass-trail-1229"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_direct_north_ridge_w_gendarme",
+     "fact": "Pass reached at mile 2.5 in the shared approach text (Longs Pass vs Ingalls Pass)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "hike the Ingalls Way Trail up switchbacks past several waterfalls to Longs Pass (6,200 ft) at about mile 2.5. For the Cascadian Couloir and South Headwall, descend the rocky climbers' trail on the far side of Longs Pass to Ingalls Creek",
+     "replace": "hike the Ingalls Way Trail up switchbacks past several waterfalls. For the Cascadian Couloir and South Headwall, turn right onto the Longs Pass Trail at the junction about 1.7 miles in, climb to Longs Pass (about 6,250 ft) near mile 2.9, and descend the rocky climbers' trail on the far side to Ingalls Creek"
+    },
+    {
+     "id": "wa_the_direct_north_ridge_w_gendarme",
+     "fact": "Pass reached at mile 2.5 in the shared approach text (Longs Pass vs Ingalls Pass)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "instead continue past Ingalls Lake toward Stuart Pass",
+     "replace": "instead stay on the Ingalls Way Trail over Ingalls Pass (about 6,500 ft, roughly mile 3) and continue past Ingalls Lake toward Stuart Pass"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "fact": "Climbing season window",
+   "verdict": "fixed",
+   "correct_value": "Apr-Jun",
+   "evidence": "Route descriptions put the best conditions in cold, snowy spring conditions (March-May at the latest) and note the route gets increasingly difficult from early summer onward; documented ascents are from May and June (a May 9 ascent with a ski descent of the Sherpa, a June ascent in firm snow with AI2+ at the cliff). This matches best_season (late April-June), seasonal_guidance and itinerary.cal; the Jun-Aug season and the primary approach variant's 'Roughly Jun-Aug' were the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+    "https://www.mountainwerks.org/cma/2002/icecliff.html",
+    "https://www.cascadecrusades.org/SkiMountaineering/stuart/icecliffglacier/icecliff2004/icecliff2004.htm",
+    "https://www.summitpost.org/ice-cliff-glacier/156480"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Climbing season window",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Aug",
+     "value": "Apr-Jun"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Climbing season window",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Roughly Jun-Aug",
+     "replace": "Roughly Apr-Jun"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "fact": "Standard descent route",
+   "verdict": "fixed",
+   "correct_value": "Descend the Sherpa Glacier (from ~8,200 ft near the false summit) back to the north-side basin camp and out to the Stuart Lake Trailhead",
+   "evidence": "The Mountain Project route description says to retrace around the false summit and descend the Sherpa Glacier, just east of the couloir exit, starting about 8,200 ft; documented ascents in 2002 and 2004 both descended the Sherpa Glacier back to the basin. The row's descent/descent_text say the same and its gain/loss (6,015 each way) describe a return to the same trailhead; the Cascadian/Longs Pass wording in pro_tips, the itinerary and timing was contamination.",
+   "sources": [
+    "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+    "https://www.mountainwerks.org/cma/2002/icecliff.html",
+    "https://www.cascadecrusades.org/SkiMountaineering/stuart/icecliffglacier/icecliff2004/icecliff2004.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "expect": "Descend the Cascadian, not the route",
+     "value": "Descend the Sherpa Glacier, not the route"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "expect": "Climb the Ice Cliff Glacier to the summit, descend Cascadian",
+     "value": "Climb the Ice Cliff Glacier to the summit, descend the Sherpa Glacier"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "The route tops out near the top of the Cascadian Couloir, which is then descended to exit.",
+     "replace": "The route tops out on the ridge below the false summit; descend the Sherpa Glacier back to camp and hike out to the Stuart Lake Trailhead."
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "then exit via the Cascadian Couloir",
+     "replace": "then descend the Sherpa Glacier"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Descend Cascadian Couloir to Ingalls Creek",
+     "value": "Descend the Sherpa Glacier to camp"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "label"
+     ],
+     "expect": "Exit over Longs Pass",
+     "value": "Hike out to the Stuart Lake Trailhead"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "expect": "Climb the Ice Cliff Glacier to the summit, descend Cascadian",
+     "value": "Climb the Ice Cliff Glacier to the summit, descend the Sherpa Glacier"
+    },
+    {
+     "id": "wa_mount_stuart_ice_cliff_glacier",
+     "fact": "Standard descent route",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "The route tops out near the top of the Cascadian Couloir, which is then descended to",
+     "replace": "The route tops out on the ridge below the false summit, and the Sherpa Glacier is descended back"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "fact": "1956 first ascent (of the lower/original North Ridge) partner name",
+   "verdict": "fixed",
+   "correct_value": "1956: the upper (original) North Ridge, by John Rupley and Don Claunch (who later took the surname Gordon)",
+   "evidence": "The AAC obituary 'Don Gordon, 1931-2016' says he was born Don Gordon Claunch and changed his name, and that in 1956 he climbed the north ridge of Mt. Stuart with John Rupley; the Alpine Institute route profile credits the 1956 Upper North Ridge to Don Gordon and John Rupley (bypassing the Great Gendarme). So Claunch and Gordon are the same climber, and the 1956 ascent was the upper ridge, not the lower one as the overview said.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213892/Don-Gordon-1931-2016",
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/",
+    "https://www.mountainproject.com/route/106050599/north-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_north_ridge",
+     "fact": "1956 first ascent (of the lower/original North Ridge) partner name",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "The lower/original North Ridge was first climbed by John Rupley and Don Gordon in 1956",
+     "replace": "The upper (original) North Ridge was first climbed by John Rupley and Don Claunch (later Don Gordon) in 1956"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "fact": "Total pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources do not agree on a count for the Complete ridge: Mountain Project lists the Direct/Complete North Ridge at 20 pitches, 2,800 ft (supporting pitches=20), while it lists the Upper North Ridge alone at 18 pitches and the Alpine Institute says the Complete adds about 10 pitches to the Upper; trip reports describe most of it as simul-climbed with no count. The overview/pro_tips/totalNote '~18 pitches' appears to be the Upper-ridge count, and pitch_detail is a condensed 18-row list. Not settled; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+    "https://www.mountainproject.com/route/106050599/north-ridge",
+    "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "fact": "Elevation of the Complete North Ridge's toe/base",
+   "verdict": "fixed",
+   "correct_value": "about 6,600 ft",
+   "evidence": "A Complete North Ridge trip report puts the toe of the direct north ridge at approximately 6,600 ft, and the Mountain Project Ice Cliff Glacier description starts from the moraine just below the North Ridge at 6,600 ft. The 7,200 ft waypoint was the outlier; the approach variants' 'about 6,700 ft' is brought to the sourced 6,600.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+    "https://www.mountainproject.com/route/108784980/ice-cliff-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_north_ridge",
+     "fact": "Elevation of the Complete North Ridge's toe/base",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 7200,
+     "value": 6600
+    },
+    {
+     "id": "wa_mount_stuart_north_ridge",
+     "fact": "Elevation of the Complete North Ridge's toe/base",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "about 6,700 ft",
+     "replace": "about 6,600 ft"
+    },
+    {
+     "id": "wa_mount_stuart_north_ridge",
+     "fact": "Elevation of the Complete North Ridge's toe/base",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "about 6,700 ft",
+     "replace": "about 6,600 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "fact": "Trailhead pin vs the approach the waypoints and itinerary describe",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[0] is the Stuart Lake Trailhead (north side, pinned at the Eightmile Road end) but the following waypoints run over Longs Pass and Goat Pass on the south side, and the itinerary exits 'over Longs Pass' 'back at trailhead'; both approaches are genuine for this route (north via Mountaineer Creek, south via Esmeralda and Goat Pass), but the waypoint list mixes them. Fixing it means choosing an approach and moving/renaming pins, which is out of scope here.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+    "https://climberkyle.com/2021/07/18/mt-stuart-complete-north-ridge-5-9/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "fact": "Name/elevation of the pass at mile 2.5 from the Esmeralda trailhead",
+   "verdict": "fixed",
+   "correct_value": "Ingalls Pass (~6,500 ft, ~3 mi) on the Ingalls Way Trail; Longs Pass (~6,250 ft) is on a side trail to Ingalls Creek",
+   "evidence": "WTA's Longs Pass hike: 0.3 mi on a multi-use trail, 1.4 mi on Ingalls Way, then 1.2 mi to Longs Pass at 6,250 ft; WTA's Lake Ingalls hike: Ingalls Pass at about 3 miles, high point 6,500 ft, with the Longs Pass junction about 1.4 miles in as a side trip. The Forest Service Longs Pass Trail page says it begins at the Ingalls Way Trail and runs 2.7 mi one way. So Longs Pass is on a side trail toward Ingalls Creek, and the way to Ingalls Lake/Stuart Pass/Goat Pass goes over Ingalls Pass, not Longs Pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/longs-pass",
+    "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/longs-pass-trail-1229"
+   ],
+   "patches": [
+    {
+     "id": "wa_gorillas_direct",
+     "fact": "Name/elevation of the pass at mile 2.5 from the Esmeralda trailhead",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "hike the Ingalls Way Trail up switchbacks past several waterfalls to Longs Pass (6,200 ft) at about mile 2.5. For the Cascadian Couloir and South Headwall, descend the rocky climbers' trail on the far side of Longs Pass to Ingalls Creek",
+     "replace": "hike the Ingalls Way Trail up switchbacks past several waterfalls. For the Cascadian Couloir and South Headwall, turn right onto the Longs Pass Trail at the junction about 1.7 miles in, climb to Longs Pass (about 6,250 ft) near mile 2.9, and descend the rocky climbers' trail on the far side to Ingalls Creek"
+    },
+    {
+     "id": "wa_gorillas_direct",
+     "fact": "Name/elevation of the pass at mile 2.5 from the Esmeralda trailhead",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "instead continue past Ingalls Lake toward Stuart Pass",
+     "replace": "instead stay on the Ingalls Way Trail over Ingalls Pass (about 6,500 ft, roughly mile 3) and continue past Ingalls Lake toward Stuart Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "fact": "Bergschrund/glacier hazard on a rock-route approach that has no glacier",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project's Gorillas Direct/King Kong pages say the first pitch starts on a ledge 15-25 ft above the snow or talus (no bergschrund named), but the AAC report on Gorillas in the Mist calls the West Face Wall a buttress 'towering over the glacier', so a moat/bergschrund at the base in early season cannot be ruled out from two sources. Left as is.",
+   "sources": [
+    "https://www.mountainproject.com/route/112263877/gorillas-direct",
+    "http://publications.americanalpineclub.org/articles/12201009300/Mt-Stuart-Gorillas-in-the-Mist"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "fact": "whether an Enchantment-zone lottery permit is required",
+   "verdict": "fixed",
+   "correct_value": "Outside the Enchantment Permit Area via Esmeralda/Ingalls Lake; free self-issued Alpine Lakes Wilderness permit, no lottery",
+   "evidence": "Lake Ingalls and the Esmeralda/Teanaway side need no overnight permit and are not part of the Enchantment Permit Area (overnight permits there were dropped after the 1993 study). The Enchantment Permit Area's five zones are Core, Snow, Colchuck, Stuart and Eightmile/Caroline; the Stuart zone is entered from the Stuart Lake trailhead, where overnight stays May 15-Oct 31 need a permit. This route is approached only from the Esmeralda Basin trailhead over Ingalls Lake (its own waypoints/approach), and its sister route King Kong already states it is outside the permit area. Note: access.notes still describes the lottery windows generically (it says a day ascent never needs it); left unchanged.",
+   "sources": [
+    "https://www.spokesman.com/stories/2018/aug/19/for-hikers-skunked-on-enchantment-permits-lake-ing/",
+    "https://www.wta.org/go-hiking/hikes/lake-stuart",
+    "https://www.mapsbymax.com/guides/enchantments-zone-map-guide"
+   ],
+   "patches": [
+    {
+     "id": "wa_gorillas_direct",
+     "fact": "whether an Enchantment-zone lottery permit is required",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+     "value": "The Esmeralda Basin / Ingalls Lake approach to the West Face Wall is outside the Enchantment Permit Area, so no lottery permit applies; the free self-issued Alpine Lakes Wilderness permit at the trailhead covers day and overnight use."
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "fact": "Standard descent route and exit trailhead",
+   "verdict": "fixed",
+   "correct_value": "Descend north via the Sherpa Glacier (or around Sherpa Peak to Sherpa Pass late season) back to the basin camp and out to the Stuart Lake Trailhead",
+   "evidence": "A Girth Pillar trip on the north side descended the Sherpa Glacier couloir back to camp, and trip reports of the route describe finishing with a technical glacier descent back to the scree bivy between the Sherpa and Ice Cliff glaciers; the Sherpa Glacier is documented as the easiest north-side descent and the one commonly used after climbs on the Ice Cliff Glacier side. The row's descent field, loss_ft 6,000 and outing_shape 'outback' agree; descent_text, the itinerary schedule and turnaround carried the Cascadian/Longs Pass exit.",
+   "sources": [
+    "http://jensholsten.blogspot.com/2012/09/a-week-on-big-guy-three-amazing-routes.html",
+    "https://cascadeclimbers.com/forum/topic/101985-tr-mount-stuart-girth-pillar-07312018/",
+    "https://www.mountainproject.com/route/108236928/sherpa-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_girth_pillar",
+     "fact": "Standard descent route and exit trailhead",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the true summit, descend as for the standard south-side line: east ridge toward the false summit, traverse the south face to round it at its easiest point (~9,000'), then down the broad Cascadian Couloir — about 4,600 feet of Class 2-3 scree, talus, and snow — to Ingalls Creek, and back out over Longs Pass to the Esmeralda Basin/Ingalls Creek trailhead. This is a walk-off with no rappelling required on the standard descent; note that this trailhead is not the Mountaineer Creek trailhead used for the approach, so a car shuttle (or a long overland return) is part of planning this route as a car-to-car day.",
+     "replace": "From the true summit, retrace toward the false summit and descend the Sherpa Glacier, entered just east of where the Ice Cliff Glacier couloir tops out near 8,200 ft, back to the moraine camp; later in the season, once the Sherpa has melted out, parties go around Sherpa Peak to Sherpa Pass instead. Then walk out the Mountaineer Creek climbers' trail to the Stuart Lake trailhead, the same one used for the approach, so no car shuttle is needed. The glacier descent is technical, especially in the dark, so keep the axe, crampons and crevasse kit for it."
+    },
+    {
+     "id": "wa_mount_stuart_girth_pillar",
+     "fact": "Standard descent route and exit trailhead",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Descend the Cascadian Couloir and exit over Longs Pass",
+     "value": "Descend the Sherpa Glacier to camp and hike out"
+    },
+    {
+     "id": "wa_mount_stuart_girth_pillar",
+     "fact": "Standard descent route and exit trailhead",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "the long Cascadian descent",
+     "replace": "the long Sherpa Glacier descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "fact": "Glacier crossed on the approach (partner_requirements says Stuart Glacier)",
+   "verdict": "fixed",
+   "correct_value": "The approach climbs the Ice Cliff Glacier (or the lower North Ridge) to the pillar",
+   "evidence": "Mountain Project places Girth Pillar above the Ice Cliff Glacier, reached from the top of that glacier plus four easy pitches; a documented ascent reached it by the lower North Ridge instead. Neither crosses the Stuart Glacier, which lies on the other (west) side of the North Ridge; every other field on the row names the Ice Cliff Glacier.",
+   "sources": [
+    "https://www.mountainproject.com/route/106475357/girth-pillar",
+    "http://jensholsten.blogspot.com/2012/09/a-week-on-big-guy-three-amazing-routes.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_girth_pillar",
+     "fact": "Glacier crossed on the approach (partner_requirements says Stuart Glacier)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "over the Stuart Glacier",
+     "replace": "up the Ice Cliff Glacier"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "fact": "Stuart Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "about 3,400 ft",
+   "evidence": "WTA's Lake Stuart hike (from this trailhead) gives a 5,065 ft high point with 1,665 ft of gain, i.e. a ~3,400 ft start, and a separate trail guide states the Stuart Lake trailhead is at 3,400 ft. The 2,930 ft waypoint was the outlier; the trailheadDirection's ~3,540 ft is also brought to 3,400 so both copies agree.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-stuart",
+    "https://www.theoutbound.com/washington/hiking/lake-stuart-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_sherpa_glacier",
+     "fact": "Stuart Lake Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 2930,
+     "value": 3400
+    },
+    {
+     "id": "wa_sherpa_glacier",
+     "fact": "Stuart Lake Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 2930,
+     "value": 3400
+    },
+    {
+     "id": "wa_sherpa_glacier",
+     "fact": "Stuart Lake Trailhead elevation",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~3,540 ft",
+     "replace": "~3,400 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "fact": "Round-trip car-to-car distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km (13.5 mi) and partner_requirements' '~27 mi car-to-car' are consistent only with each other; the route's own waypoints put the top of the glacier ~6.5 mi in, and one logged Sherpa Glacier ascent from the Stuart Lake trailhead was 11.8 mi round trip. No second source found to fix a figure; no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-stuart"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "fact": "Round-trip vs. one-way distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure on screen and equals the route's own one-way waypoint distance (7.5 mi), while the itinerary gives the ~15 mi round trip; the two describe different quantities by convention.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "fact": "Maximum slope angle",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project describes two steps in the couloir reaching about 80 degrees (supporting max_angle 80), while the row's prose caps the ice at 60 degrees; steepness varies with season and conditions, and no two sources agree on one figure. max_angle does not render on the route page.",
+   "sources": [
+    "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+    "https://davidmoskowitz.net/blog-posts/2013/06/climbing-the-stuart-glacier-couloir-mount-stuart-north-cascades"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_north_face",
+   "fact": "Season window vs. best conditions",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "This is an overview entry covering both the north side's ice lines and its rock lines; best_season gives Apr-Jun for snow/ice and Jul-Aug for the rock lines, and the Jun-Aug season covers the rock window plus early-summer ice, so the two describe different line types rather than conflicting facts.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: one detailed trip report grades the West Ridge III, a Mount Stuart overview grades it II 5.4, and two other reports give II/III. No two independent sources agree on a single numeral, so grade/alpine_grade/commitment are left as is.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/stuart-west-ridge/",
+    "https://www.summitpost.org/mount-stuart/150353",
+    "https://rocknropenw.com/2023/08/03/mount-stuart-west-ridge/",
+    "https://engineeredforadventure.com/stuart-west-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One report gives roughly 15-17 mi round trip from the Esmeralda trailhead (consistent with the itinerary's 16.5 mi); no second source with a mileage was found. dist_km (32.2 km = 20 mi) is not the one-way approach figure either way, but a one-way value could not be established from two sources; no patch.",
+   "sources": [
+    "https://rocknropenw.com/2023/08/03/mount-stuart-west-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "fact": "Starting trailhead and pass reached on the standard itinerary",
+   "verdict": "fixed",
+   "correct_value": "Start at the Esmeralda Basin trailhead; the approach leaves the trail short of Stuart Pass to reach the base of the West Ridge",
+   "evidence": "A detailed West Ridge report recommends the southern approach from the Esmeralda trailhead via Ingalls Lake (about 3 hours) over the northern Stuart Lake/Stuart Pass approach it happened to use (4.5 hours), and other reports start from the Esmeralda trailhead and descend the Cascadian back to it. The itinerary's 'Stuart Lake TH' / 'Reach Stuart Pass' matches that one northern trip, contradicting the row's five Esmeralda fields and its loop back over Longs Pass.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/stuart-west-ridge/",
+    "https://rocknropenw.com/2023/08/03/mount-stuart-west-ridge/",
+    "https://engineeredforadventure.com/stuart-west-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stuart_west_ridge",
+     "fact": "Starting trailhead and pass reached on the standard itinerary",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Stuart Lake TH",
+     "value": "Esmeralda Basin TH"
+    },
+    {
+     "id": "wa_mount_stuart_west_ridge",
+     "fact": "Starting trailhead and pass reached on the standard itinerary",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "expect": "Reach Stuart Pass",
+     "value": "Reach the base of the West Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Hardest/crux rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascensionist's own account grades the route 5.11d with the headwall crux at 5.11d, and the AAC note gives IV 5.11+; Mountain Project lists 5.12a with the final pitch 5.12-. The AAC note appears to come from the same first-ascent party, so there are not two independent sources for either value; the beta already records both figures.",
+   "sources": [
+    "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html",
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "First-ascent partner name",
+   "verdict": "fixed",
+   "correct_value": "First ascent Sol Wertkin & Tyree Johnson (Sept 2016); first free ascent Sept 9, 2016, Sol Wertkin with Jon Gleason",
+   "evidence": "Mountain Project records the FA as Sol Wertkin and Tyree Johnson, September 2016, with the free ascent by Sol Wertkin. The AAC report says Wertkin freed it on September 9, 2016 with Jon Gleason, a week after completing the line, and the first-ascensionist's account names Gleason as the Sept 9 partner after a Sept 6 attempt with Tyree Johnson. So the fa field is right and beta mislabels the Sept 9 free ascent as the first ascent.",
+   "sources": [
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+    "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "First-ascent partner name",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "First ascent: September 9, 2016 by Sol Wertkin and Jon Gleason.",
+     "replace": "First free ascent: September 9, 2016, by Sol Wertkin with Jon Gleason."
+    }
+   ]
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 1663 is plainly below the route's own trailhead-to-summit rise (4,269 to 9,415 ft), but no external source was found giving the car-to-car gain for the West Face Wall routes from the Esmeralda trailhead, and the route may top out on the West Ridge without summiting. Needs a sourced figure; no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 7.2 (4.5 mi) is shorter than the route's own 7.5 mi one-way waypoint distance, but no external source was found giving the approach distance to the West Face Wall; no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Trailhead / permit regime described in access.notes",
+   "verdict": "fixed",
+   "correct_value": "Esmeralda Basin trailhead via the North Fork Teanaway Road; outside the Enchantment Permit Area; Northwest Forest Pass to park",
+   "evidence": "Lake Ingalls and the Esmeralda/Teanaway side need no overnight permit and are not part of the Enchantment Permit Area (overnight permits there were dropped after the 1993 study). The Enchantment Permit Area's five zones are Core, Snow, Colchuck, Stuart and Eightmile/Caroline; the Stuart zone is entered from the Stuart Lake trailhead, where overnight stays May 15-Oct 31 need a permit. WTA lists a Northwest Forest Pass or America the Beautiful pass for the Esmeralda/Longs Pass trailhead. access.notes described the Stuart Lake trailhead (FR 7601) and the Enchantment lottery, contradicting this route's permit, waypoints and approach_logistics.",
+   "sources": [
+    "https://www.spokesman.com/stories/2018/aug/19/for-hikers-skunked-on-enchantment-permits-lake-ing/",
+    "https://www.wta.org/go-hiking/hikes/lake-stuart",
+    "https://www.mapsbymax.com/guides/enchantments-zone-map-guide",
+    "https://www.wta.org/go-hiking/hikes/longs-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Trailhead / permit regime described in access.notes",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "Permits: America the Beautiful Pass or Northwest Forest Pass required. Backcountry camping permit required for overnight stays (online application with fee). Enchantments area requires Recreation.gov permit for May 15–October 31. Road access: FR 7601 closes during winter (typically November–May). Parking: 20–30 car spaces with toilet at Stuart Lake trailhead. Dogs not allowed in Stuart Lake area.",
+     "value": "Road access is via the North Fork Teanaway Road (FR 9737) to the Esmeralda Basin trailhead, which is not maintained in winter. A Northwest Forest Pass or America the Beautiful pass is needed to park. This approach is outside the Enchantment Permit Area, so no lottery permit applies; the free self-issued Alpine Lakes Wilderness permit covers day and overnight use."
+    }
+   ]
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Pass reached at mile 2.5 in the approach text (Longs Pass vs Ingalls Pass)",
+   "verdict": "fixed",
+   "correct_value": "Ingalls Pass (~6,500 ft, ~3 mi)",
+   "evidence": "WTA's Longs Pass hike: 0.3 mi on a multi-use trail, 1.4 mi on Ingalls Way, then 1.2 mi to Longs Pass at 6,250 ft; WTA's Lake Ingalls hike: Ingalls Pass at about 3 miles, high point 6,500 ft, with the Longs Pass junction about 1.4 miles in as a side trip. The Forest Service Longs Pass Trail page says it begins at the Ingalls Way Trail and runs 2.7 mi one way. So Longs Pass is on a side trail toward Ingalls Creek, and the way to Ingalls Lake/Stuart Pass/Goat Pass goes over Ingalls Pass, not Longs Pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/longs-pass",
+    "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/longs-pass-trail-1229"
+   ],
+   "patches": [
+    {
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Pass reached at mile 2.5 in the approach text (Longs Pass vs Ingalls Pass)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to Longs Pass (6,200 ft) at about mile 2.5, then continue past Ingalls Lake",
+     "replace": "over Ingalls Pass (about 6,500 ft, roughly mile 3), then continue past Ingalls Lake"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

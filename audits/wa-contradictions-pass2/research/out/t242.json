@@ -1,0 +1,282 @@
+{
+ "file": "t242.json",
+ "results": [
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Summit time vs turnaround",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "With the recommended 4-5 AM start, a summit around 11:30 AM-12:30 PM (about 7.4 h from Low Divide camp)",
+   "evidence": "The row's own reference party (9 AM start, 4:20 PM summit, back at camp 11 PM, ~14 h) sets a ~7.4 h camp-to-summit pace; applied to the recommended 4-5 AM start that is a late-morning/early-afternoon summit, consistent with the stated early-afternoon turnaround. A trip report of that climb confirms 9:00 AM start, 12:30 saddle, 4:20 PM summit, 11 PM return from Renegade/Low Divide camp; a second account of the same 2021 party confirms the ~11 PM return (same party, counts once).",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "~4:00 PM",
+     "value": "~11:30 AM-12:30 PM",
+     "id": "wa_mount_christie_west",
+     "fact": "Summit time vs turnaround"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Reference party topped out at 4:20 PM after a 9 AM start.",
+     "replace": "About 7.4 hours from Low Divide camp at the reference party's pace, which puts a 4-5 AM start on top before the early-afternoon turnaround.",
+     "id": "wa_mount_christie_west",
+     "fact": "Summit time vs turnaround"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Date of the Olympic Hot Springs Road washout (Elwha variant)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "November 2017",
+   "evidence": "approach_variants[1].notes dates the washout that closed Whiskey Bend to vehicles to September 2024. The NPS news release of 30 Nov 2017 reports the late-November 2017 Elwha flood breached Olympic Hot Springs Road and closed it beyond Madison Falls; contemporaneous local news reports the same flood closure, and current NPS/WTA pages show the road still closed to vehicles at Madison Falls with ~6.2 mi walk/bike to Whiskey Bend. No 2024 washout is recorded.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/olympic-hot-springs-road-in-the-elwha-valley-remains-closed-due-to-flood-damage.htm",
+    "http://www.peninsuladailynews.com/news/flooding-closes-olympic-hot-springs-road/",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide",
+    "https://www.nps.gov/olym/planyourvisit/visiting-the-elwha.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Since the September 2024 Olympic Hot Springs Road washout",
+     "replace": "Since the November 2017 Olympic Hot Springs Road washout",
+     "id": "wa_mount_christie_west",
+     "fact": "Date of the Olympic Hot Springs Road washout (Elwha variant)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "fact": "Whiskey Bend Road drivable?",
+   "verdict": "fixed",
+   "correct_value": "Whiskey Bend trailhead is not drivable; vehicles stop at Madison Falls (closed since the November 2017 flood)",
+   "evidence": "NPS's 30 Nov 2017 release reports the flood that closed Olympic Hot Springs Road; the NPS Elwha visiting page and the WTA Whiskey Bend hike page both state the road is closed to vehicles beyond the Madison Falls lot and open to bikes/pedestrians. road, access.closures and approach already agree; only the trailhead waypoint note implied driving Whiskey Bend Road.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/olympic-hot-springs-road-in-the-elwha-valley-remains-closed-due-to-flood-damage.htm",
+    "https://www.nps.gov/olym/planyourvisit/visiting-the-elwha.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "reached via 4.4 mi of narrow gravel Whiskey Bend Road, which washes out and closes periodically.",
+     "replace": "the road to it has been closed to vehicles at the Madison Falls parking area since November 2017 flood damage, so it is reached on foot or by bike.",
+     "id": "wa_mount_dana_scramble",
+     "fact": "Whiskey Bend Road drivable?"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "fact": "Which trailhead and approach the trip uses (Sol Duc/Bailey crest vs Elwha/Dodwell-Rixon Pass)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary (days 1-6, cal 'check Sol Duc Road status') and timing.sectionBreakdown describe a Sol Duc - Heart Lake - Catwalk - Eleven Bull Basin approach, while approach, waypoints (Whiskey Bend, Chicago Camp, Snowfinger, Dodwell-Rixon Pass), descent_text, dist_km and road describe the Elwha/Dodwell-Rixon line. Settling it needs a documented Dana ascent stating which way parties actually reach the peak; not researched to two sources here, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Which glacier the route descends/crosses",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One encyclopedic source describes going NE from Carrie's summit down the Carrie Glacier, circling north of Fairchild and ascending its SW ridge (the approach/descent_text wording). Traverse reports describe going over Carrie and across/up the Fairchild Glacier, but as a traverse line toward Ruth/Stephen Lake, not a Fairchild summit route. No two sources describe the same summit line, so neither version is confirmed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Carrie",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://en.wikipedia.org/wiki/Fairchild_Glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Boston Charlie's Camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No trip report found states a figure for Boston Charlie's (several describe it as a small saddle with a stagnant tarn). The USGS 3DEP ground elevation at the stored pin is ~5,543 ft, matching the bivy card, but the pin's own placement is unverified and bivy[] may not be patched. A second independent elevation (topo-map spot or report) would settle it.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.664591&y=47.890988&wkid=4326&units=Feet",
+    "http://pristinezone.blogspot.com/2013/09/bailey-range-day-1-boston-charlies.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Summit-day hours",
+   "verdict": "fixed",
+   "correct_value": "Remove the stale 12-hour cross-reference; timing.summitTimeHrs and itinerary day 3 both say 10",
+   "evidence": "partner_requirements.approachTime cites a '12-hour summit-day timing estimate' that no timing field states; timing.summitTimeHrs=10 and itinerary.days[2].hours=10. The patch removes the stale cross-reference rather than asserting any new figure.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "the summit, consistent with the 12-hour summit-day timing estimate starting from high camp",
+     "replace": "the summit",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "Summit-day hours"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Which approach the trip uses (Sol Duc/High Divide vs Appleton Pass vs Whiskey Bend/Long Ridge/Fitzhenry)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, descent_text and approach_variants describe Sol Duc - Deer Lake - High Divide - Cat Basin; waypoints go via the Appleton Pass Trail; itinerary and timing.sectionBreakdown describe Whiskey Bend - Long Ridge - Mount Fitzhenry to a 'north glacier remnant'. Needs a rebuild of one side against documented Fairchild ascents; not settled here.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Elwha Snowfinger exit: planned route or closed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Recent reports agree the Snowfinger is largely melted out, and some 2024-2025 parties exited via Dodger Point instead (one citing a closure from the 2023 fires rather than the melt). Other reports still describe descending the melted-out canyon, as descent_text and itinerary do. No source found states the exit is closed or that rangers routinely redirect parties via Dodger Point. Current WIC guidance or a 2025 report on the Snowfinger descent would settle it.",
+   "sources": [
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1286771",
+    "https://www.mountaineers.org/activities/trip-reports/northern-bailey-range-cat-carrie-stephen-and-ferry",
+    "https://en.wikipedia.org/wiki/Elwha_snowfinger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Ascent vs descent slope on Ferry",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip-report excerpt says the way up Ferry is Olympics scree and the descent to the SE is easier, which suggests up and down are different lines (and contradicts descent_text's 'reverses the ascent'). Traverse route descriptions mention only the broad bench east of the summit and the canyon SW to the Ferry-Pulitzer saddle, not how the summit itself is climbed. One source is not enough to rename the ascent and descent slopes.",
+   "sources": [
+    "https://niffgurd.com/mark/parks/washington/olympics/baileyrange/content.html",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-11-14.0155384343"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "fact": "Sixteen Mile Camp / river-ford elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "NPS gives Sixteen Mile Camp about 3.5 mi below Low Divide (3,600 ft), with the trail starting at 519 ft, but no camp elevation. The peak's 3,800-ft rise in 1.3 mi is measured to the nearest river point, not the ford, so it does not fix the ford's height. No source states the elevation of the camp or ford; bivy[] may not be patched anyway. A topo spot height at the Sixteen Mile ford would settle 1,050 vs 2,021 ft.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://en.wikipedia.org/wiki/Mount_Lawson_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Ridge crossed from the Quinault side",
+   "verdict": "fixed",
+   "correct_value": "From Low Divide to Seattle Basin, then across the head of Seattle Creek to the saddle just east of Mount Noyes (the Noyes-Cougar saddle), then a sidehill beneath Noyes to the Noyes-Meany col",
+   "evidence": "A detailed trip report of this exact itinerary (same day hours/gains as the row) describes crossing the head of Seattle Creek from Seattle Basin to the Noyes-Cougar saddle, first view of Meany, then a sidehill under Noyes and a couloir to the Meany-Noyes saddle. An independent report describes traversing to the Noyes saddle and a nasty sidehill beneath Noyes; an encyclopedic summary gives the standard route from Seattle Basin to a saddle just east of Noyes. None describes a Christie-Noyes ridge or a Noyes/Seattle notch.",
+   "sources": [
+    "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/",
+    "https://climberkyle.com/2023/07/30/quinault-high-route/",
+    "https://en.wikipedia.org/wiki/Mount_Noyes_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Enchanted Valley) and over the Christie-Noyes ridge (the route used on at least one documented ascent).",
+     "replace": "Enchanted Valley) to Low Divide, then up through Seattle Basin to the saddle just east of Mount Noyes.",
+     "id": "wa_mount_meany_standard",
+     "fact": "Ridge crossed from the Quinault side"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "a scree traverse to the Noyes/Seattle notch",
+     "replace": "a scree traverse to the Noyes-Cougar saddle",
+     "id": "wa_mount_meany_standard",
+     "fact": "Ridge crossed from the Quinault side"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "Reach the Noyes/Seattle notch",
+     "replace": "Reach the Noyes-Cougar saddle",
+     "id": "wa_mount_meany_standard",
+     "fact": "Ridge crossed from the Quinault side"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Date of the Olympic Hot Springs Road washout",
+   "verdict": "fixed",
+   "correct_value": "November 2017",
+   "evidence": "The NPS release of 30 Nov 2017 reports the late-November 2017 flood that breached Olympic Hot Springs Road and closed it beyond Madison Falls; local news reported the same closure, and current NPS and WTA pages show it still closed to vehicles at Madison Falls. approach and road.driveNote already agree; itinerary.cal's 2024 is the outlier.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/olympic-hot-springs-road-in-the-elwha-valley-remains-closed-due-to-flood-damage.htm",
+    "http://www.peninsuladailynews.com/news/flooding-closes-olympic-hot-springs-road/",
+    "https://www.nps.gov/olym/planyourvisit/visiting-the-elwha.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "As of the 2024 Olympic Hot Springs Road washout",
+     "replace": "Since the November 2017 Olympic Hot Springs Road washout",
+     "id": "wa_mount_norton_scramble",
+     "fact": "Date of the Olympic Hot Springs Road washout"
+    }
+   ]
+  }
+ ]
+}

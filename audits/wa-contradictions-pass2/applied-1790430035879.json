@@ -1,0 +1,109 @@
+{
+ "applied": [
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where to leave the trail for the col"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where to leave the trail for the col"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Burgundy Spire summit elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Shellrock Basin camp and the traverse to the east-face col",
+      "notes": "Blackcap is a leg of a multi-day traverse rather than an objective on its own, and the walk in is measured in days, not hours. The usual staging is a camp in Shellrock Basin just below and east of Shellrock Pass, reached over Rolo Pass from Fred's Lake after a long valley approach up the Middle Fork Pasayten. From camp the peak is a half-day round trip on easy ground. Water is at the basin and in upper Eureka Creek and there is none on the mountain. An eastern line exists off the Monument Creek trail into the open Monument-Blackcap basin, but the Shellrock side is the travelled one and the one with a recognisable start.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Loose scree and talus on the east face, worse descending than ascending",
+       "Exposure and loose blocks near the top of the northeast ridge",
+       "A steep snowfield below Shellrock Pass that can persist into early summer",
+       "High, cold fords of Eureka Creek and the Middle Fork Pasayten during runoff",
+       "Days from the nearest road with no cell coverage"
+      ],
+      "baseFinding": "The base is a col, and getting to it is the only route-finding on the day. Leave the trail at about 7,100 ft, just before the steep switchbacks that climb to Shellrock Pass, and traverse south-southwest across the open grassy and rocky basin, keeping below the cliff bands the whole way. That traverse ends at the foot of a talus slope. Work the left, eastern edge of that talus southward until the cliff band above you finally runs out; the saddle at the end of it, directly beneath Blackcap's east face, is where the climbing starts. The confirmation is the rock itself and it is the clearest single marker on this peak: Blackcap's summit cap is near-black hornfels and shale sitting abruptly on top of much paler rock, and the colour boundary is visible from the col and is under your hands within a few minutes of leaving it. If everything around you is still light-coloured after several hundred feet of scree, you are on the wrong flank. Two ways to know you have overshot. Crossing Shellrock Pass itself and dropping over the far side puts you into Eureka Creek, well north of anything you want. Continuing south past the end of the cliff band instead of turning up drops you toward the Monument basin. In early season a steep snowfield sits below the pass on this traverse and is normally bypassed on its left; carry an axe if it is still there."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "before": {
+    "itinerary": {
+     "cal": "Climb July-September; water is reliable at Early Winters Creek; the Bench has seasonal water that can be dry by late summer, and little is found higher, so tank up before the Col.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard approach to Burgundy Col followed by 6-7 pitches of face and crack climbing (up to 5.8) to the summit, then a 5-rappel descent. The large majority of parties do this car-to-car in one long day; a minority split it with a bivy at the Bench or the Col for a more relaxed pace.",
+       "hours": 12.5,
+       "miles": 6,
+       "title": "Car-to-car: North Face",
+       "gainFt": 4000,
+       "lossFt": 4000,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave the pullout",
+         "detail": "Cross Early Winter Creek and start up the climbers' trail."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Bench (6,460 ft)",
+         "detail": "Seasonal water; can be dry by late summer."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Burgundy Col (7,770 ft)",
+         "detail": "Rack up."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Start climbing",
+         "detail": "Pitch 1 of the North Face."
+        },
+        {
+         "time": "10:50 AM",
+         "label": "Summit (8,400 ft)",
+         "detail": ""
+        },
+        {
+         "time": "11:50 AM – 5:00 PM",
+         "label": "Descend and hike out",
+         "detail": "5-rappel line on two 60m ropes (a single 60m or 70m also works with some downclimbing), then back over the Col and down to the car."
+        }
+       ],
+       "objective": "Summit Burgundy Spire (8,483 ft) via the North Face"
+      }
+     ],
+     "totalNote": "A long single day for fit parties, roughly 11-13 hrs car-to-car (real trip reports range from ~12 to 17 hrs depending on pace and party size); some parties instead split it with a bivy at the Bench (6,460 ft) or Burgundy Col (7,770 ft)."
+    }
+   }
+  }
+ ]
+}

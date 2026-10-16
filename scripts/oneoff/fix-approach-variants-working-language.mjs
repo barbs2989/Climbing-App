@@ -1,0 +1,226 @@
+// The APPROACHES panel was telling climbers to "see _DEFECTS".
+//
+// `approach_variants[].notes` renders as paragraphs in the APPROACHES panel, and
+// `approach_variants[].baseFinding` renders in the highlighted green FINDING THE BASE OF THE
+// CLIMBING block -- the most prominent element in that panel. Both were confirmed by reading the
+// JSX (`{v.notes?splitParagraphs(v.notes).map(...)}`, `{v.baseFinding?<div ...>`), not assumed.
+//
+// What renders there today:
+//
+//   * "see _DEFECTS" (24 times) -- a pointer to a research document no climber can open. Four
+//     are a whole standalone sentence: "See _DEFECTS."
+//   * database vocabulary -- "the row", "READ THE NAME ON THIS ROW WITH CARE", "this row's
+//     stored trailhead record", "the row's aspect column", "its fa field", "what the row's own
+//     approach_logistics still points at", "its area row has NO STORED COORDINATE"
+//   * pipeline voice -- "this batch does not recommend it", "THE MOST CONSEQUENTIAL ONE IN THIS
+//     BATCH", "it was merged from a duplicate Shuksan row earlier in this sweep", and "NOTE ON
+//     THE NAME, WHICH IS SETTLED AND SHOULD NOT BE RE-ARGUED" (addressed to a maintainer)
+//   * a bare route id printed as prose: "wa_mount_stone_lake_of_angels"
+//
+// Same defect as #1188's rappel notes in a different column, and the same one the `verif.source`
+// removal already records: an internal review note leaking working language at climbers.
+//
+// EVERY EDIT PRESERVES THE CLIMBER FACT. Nearly all of these sentences carry real content --
+// that two published bivy elevations disagree so you should camp at the feature rather than at a
+// number; that the aspect in the title contradicts every published account. Only the reference to
+// the internal document and the database vocabulary go. Removing a pointer to a document the
+// reader cannot open cannot lose climber information, and rewording "the row" as "this route"
+// cannot either. The four standalone "See _DEFECTS." sentences are deleted outright because that
+// is all they said.
+//
+// MECHANICAL AND ASSERTED rather than 45 hand-written strings: the rules are literal, and every
+// result must survive post-conditions (no `_DEFECTS`, no database `row`, no column name, no batch
+// or sweep voice, no route id, no punctuation wreckage). A field still failing one after
+// transforming is REFUSED and the whole run stops -- which is how the three idioms below, and 18
+// phrasings the first draft's rules did not cover, were found.
+import { loadEnv, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
+
+const APPLY = process.argv.includes("--apply");
+const env = loadEnv();
+const U = env.VITE_SUPABASE_URL;
+const K = APPLY ? requireServiceKey() : env.VITE_SUPABASE_ANON_KEY;
+const H = { apikey: K, Authorization: `Bearer ${K}` };
+
+// `row` is BOTH the table's word for a route AND ordinary English. "THERE ARE TWO COLS IN A ROW",
+// "you are looking at four things in a row", "the gap between the first and second towers of a
+// jagged row" are all correct climbing prose, and rewriting them would be a repair that damages
+// good writing. The idioms are protected before the swap and restored after, so the generic rule
+// can stay generic instead of growing a list of exceptions that rots.
+const IDIOMS = [/\bin a row\b/gi, /\ba jagged row\b/gi];
+// NUL is the right sentinel -- it cannot occur in this prose, where a space or a punctuation
+// mark could collide with the text being held aside. But it MUST be written as an escape:
+// four literal NUL bytes in this file made git classify it as BINARY, so the whole 12 kB
+// diff showed as "Bin 0 -> 12464 bytes" and was unreviewable on the pull request. The code
+// ran correctly the entire time, which is why nothing caught it -- the cost was to review,
+// not to behaviour.
+const SENTINEL = "\u0000IDIOM";
+
+// Case-preserving, because these notes shout: "THE ROW", "THIS ROW", "BOTH ROWS ON THIS SIDE".
+function swapRowWord(str) {
+  return str.replace(/\b(row's|rows|row)\b/gi, (m) => {
+    const to = m.toLowerCase() === "row's" ? "route's" : m.toLowerCase() === "rows" ? "routes" : "route";
+    return m === m.toUpperCase() ? to.toUpperCase() : /^[A-Z]/.test(m) ? to[0].toUpperCase() + to.slice(1) : to;
+  });
+}
+
+// Ordered. The specific forms must run before the general sweeps, or a sweep eats the punctuation
+// or the noun that a specific rule needed.
+const RULES = [
+  // -- the internal document reference, in every form it actually takes --
+  [/\s*—\s*see _DEFECTS\s*—\s*/gi, " — "],
+  [/\s*—?\s*see _DEFECTS for the first-ascent muddle between the two rows\./gi,
+    ", and published first-ascent records for the two are muddled."],
+  [/;\s*see _DEFECTS before you rely on it\./gi, ", so treat it with caution."],
+  [/\s*See _DEFECTS before you decide you are done\./gi, ""],
+  [/\s*and is recorded in _DEFECTS;/gi, ";"],
+  [/^SEE _DEFECTS\s*—\s*/i, ""],
+  [/\s*[;,—]?\s*see _DEFECTS\./gi, "."],
+  [/\s*See _DEFECTS\.\s*/g, " "],
+
+  // -- `row` where "route" is NOT the right noun; these run before the generic swap --
+  [/\bits area row\b/gi, "the area it is filed under"],
+  [/\bthe route's own row\b/gi, "this route's own record"],
+  [/\ba row on this app\b/gi, "an entry on this app"],
+  [/\s*—\s*it was merged from a duplicate Shuksan row earlier in this sweep,\s*/i,
+    " — it was merged from a duplicate Shuksan entry, "],
+
+  // -- column names read as prose --
+  [/\bits fa field\b/gi, "its first-ascent record"],
+  // The generic swap alone produced "the route's aspect recorded here already records NW".
+  // A column name inside a sentence needs the sentence rewritten, not the noun substituted.
+  [/\bthe row's aspect column already records\b/gi, "its aspect is already recorded as"],
+  [/\bthis row's aspect column says\b/gi, "the aspect recorded for this route says"],
+  // "the row calls this the South Route" becomes "the route calls this the South Route" under the
+  // generic swap -- circular, and it reads as though the climb were naming itself.
+  [/\bthe row calls this\b/gi, "this route is listed as"],
+  [/\baspect column\b/gi, "aspect recorded here"],
+  [/\bapproach_logistics\b/gi, "stored trailhead record"],
+  [/\bthe stored id for this row says\b/gi, "this route is filed as"],
+
+  // -- pipeline voice: written to whoever maintains the data, not to a climber --
+  [/,\s*WHICH IS SETTLED AND SHOULD NOT BE RE-ARGUED/gi, ""],
+  [/\s*—\s*but it is rarely chosen today and this batch does not recommend it over the two above\./gi,
+    " — but it is rarely chosen today and is not the recommended way in."],
+  // Case-preserving, and NOT written as three whole-sentence rules: a first draft matched
+  // "this is the one approach in this batch where" case-insensitively and replaced it with a
+  // lowercase literal, quietly LOWERCASING THE START OF A SENTENCE. Replace only the phrase.
+  // "Its prose has been corrected; the rename is pending." -- a maintainer telling another
+  // maintainer what is still to be done, printed to a climber. The sentence before it already
+  // carries the whole climber fact (the title says Southeast, the climb is on the northwest side).
+  [/\s*Its prose has been corrected; the rename is pending\./gi, ""],
+  [/\bIN THIS BATCH\b/g, "HERE"],
+  [/\bin this batch\b/g, "here"],
+
+  // -- a bare route id, printed to a climber --
+  [/\bwa_mount_stone_lake_of_angels\b/g, "the Lake of the Angels route"],
+
+  // -- the generic swap; idioms are already held aside --
+  [null, swapRowWord],
+
+  // -- wreckage left behind by the removals above --
+  [/\s{2,}/g, " "],
+  [/\s+\./g, "."],
+  [/\.\s*\./g, "."],
+  [/—\s*—/g, "—"],
+  [/,\s*,/g, ","],
+];
+
+function transform(val) {
+  const held = [];
+  let s = val;
+  for (const re of IDIOMS) s = s.replace(re, (m) => { held.push(m); return `${SENTINEL}${held.length - 1}\u0000`; });
+  for (const [re, to] of RULES) s = re === null ? to(s) : s.replace(re, to);
+  s = s.replace(/\u0000IDIOM(\d+)\u0000/g, (_, i) => held[Number(i)]);
+  return s.trim();
+}
+
+// Post-conditions, not needles: the run refuses to write a value that still trips one.
+const FORBIDDEN = [
+  [/_DEFECTS/i, 'internal document reference'],
+  [/(?<!in a )(?<!jagged )\brow(?:'s|s)?\b/i, 'database vocabulary ("row")'],
+  [/\bfa field\b|\bapproach_logistics\b|\baspect column\b/i, "a column name"],
+  [/\bthis batch\b|\bthis sweep\b|SHOULD NOT BE RE-ARGUED/i, "pipeline voice"],
+  [/\bpreviously (?:listed|claimed|published|stored)\b|rename is pending|prose has been corrected/i,
+    "changelog voice (a statement about the DATA, not about the mountain)"],
+  [/\bwa_[a-z0-9_]+\b/i, "a bare route id"],
+  [/\s\.|\.\.|—\s*—|,\s*,|\s{2,}/, "punctuation left broken by a removal"],
+];
+
+const res = await fetch(`${U}/rest/v1/routes?select=id,approach_variants&approach_variants=not.is.null&limit=10000`, { headers: H });
+if (!res.ok) { console.error(`read failed ${res.status}`); process.exit(1); }
+const rows = await res.json();
+if (!rows.length) { console.error("zero rows -- broken read, not a clean catalog."); process.exit(1); }
+
+const TRIGGER = /_DEFECTS|rename is pending|prose has been corrected|previously (?:listed|claimed|published|stored)|\brow(?:'s|s)?\b|this sweep|fa field|approach_logistics|aspect column|this batch|SHOULD NOT BE RE-ARGUED|wa_mount_stone_lake_of_angels/i;
+
+const changes = [];
+const refused = [];
+for (const x of rows) {
+  const vars = Array.isArray(x.approach_variants) ? x.approach_variants : [];
+  let touched = false;
+  const next = vars.map((v, i) => {
+    const out = { ...v };
+    // `hazards` is an ARRAY of strings and renders as the amber chips in this same panel. A first
+    // draft walked only string values, so a hazard chip reading "The row carries no hazard, gear
+    // or descent information of its own" was silently skipped -- caught by the post-write check
+    // rather than by review, which is the whole reason that check re-reads the entire row.
+    for (const [k, val] of Object.entries(v)) {
+      const isArr = Array.isArray(val) && val.every((q) => typeof q === "string");
+      if (typeof val !== "string" && !isArr) continue;
+      const joined = isArr ? val.join(" ") : val;
+      if (!TRIGGER.test(joined)) continue;
+      const s = isArr ? val.map(transform) : transform(val);
+      if (isArr ? s.every((q, qi) => q === val[qi]) : s === val) continue;
+      const flat = isArr ? s.join(" ") : s;
+      const bad = FORBIDDEN.filter(([re]) => re.test(flat)).map(([re, why]) => {
+        const m = flat.match(re); const at = m ? flat.indexOf(m[0]) : 0;
+        return `${why} :: …${flat.slice(Math.max(0, at - 55), at + 60).replace(/\s+/g, " ")}…`;
+      });
+      if (bad.length) { refused.push({ id: x.id, at: `v${i}.${k}`, bad }); continue; }
+      out[k] = s;
+      touched = true;
+      changes.push({ id: x.id, at: `v${i}.${k}`, before: isArr ? val.join(" ") : val, after: flat });
+    }
+    return out;
+  });
+  if (touched) x._next = next;
+}
+
+if (refused.length) {
+  console.error(`REFUSING TO WRITE — ${refused.length} field(s) still carry working language after transforming:\n`);
+  for (const r of refused) console.error(`  ${r.id} ${r.at} — ${r.bad.join("; ")}`);
+  process.exit(1);
+}
+if (!changes.length) { console.log("nothing to change — already clean."); process.exit(0); }
+
+// `--review` prints only the region that CHANGED, with context. 62 passages of 2,000-character
+// prose is unreadable as full before/after pairs, and an unread diff is an unreviewed write.
+const REVIEW = process.argv.includes("--review");
+for (const c of changes) {
+  const b = c.before.replace(/\s+/g, " "), a = c.after.replace(/\s+/g, " ");
+  console.log(`### ${c.id} ${c.at}`);
+  if (!REVIEW) {
+    console.log(`  - ${b.slice(0, 300)}`);
+    console.log(`  + ${a.slice(0, 300)}\n`);
+    continue;
+  }
+  let i = 0; while (i < Math.min(b.length, a.length) && b[i] === a[i]) i++;
+  let j = 0; while (j < Math.min(b.length, a.length) - i && b[b.length - 1 - j] === a[a.length - 1 - j]) j++;
+  console.log(`  -  …${b.slice(Math.max(0, i - 60), b.length - j + 20)}…`);
+  console.log(`  +  …${a.slice(Math.max(0, i - 60), a.length - j + 20)}…\n`);
+}
+const targets = rows.filter((r) => r._next);
+console.log(`${changes.length} passage(s) across ${targets.length} route(s).`);
+if (!APPLY) { console.log("\nDRY RUN — pass --apply to write."); process.exit(0); }
+
+let bad = 0;
+for (const x of targets) {
+  await patchRow("routes", x.id, { approach_variants: x._next });
+  const [after] = await (await fetch(`${U}/rest/v1/routes?id=eq.${x.id}&select=approach_variants`, { headers: H })).json();
+  const flat = JSON.stringify(after.approach_variants);
+  const still = FORBIDDEN.filter(([re]) => re.test(flat)).map(([, w]) => w);
+  if (still.length) { console.log(`  MISMATCH ${x.id}: ${still.join("; ")}`); bad++; }
+  else console.log(`  ok ${x.id}`);
+}
+console.log(bad ? `\n${bad} did not take` : `\nall ${targets.length} verified on re-read`);
+process.exit(bad ? 1 : 0);

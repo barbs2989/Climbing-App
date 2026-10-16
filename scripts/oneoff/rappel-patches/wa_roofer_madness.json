@@ -1,0 +1,24 @@
+{
+ "id": "wa_roofer_madness",
+ "area_id": "wa_waterfall_basin",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "bolted anchor at the top",
+    "station": "The bolted anchor at the top of pitch 2.",
+    "notes": "Rappel 1 of 2, to the mid-route ledge anchor."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "bolted ledge anchor",
+    "station": "The mid-route ledge anchor.",
+    "notes": "Rappel 2 of 2, to the ground. Splitting here keeps the rope from dragging."
+   }
+  ],
+  "rappels": "2 rappels from bolted anchors, breaking at the mid-route ledge to manage rope drag"
+ }
+}

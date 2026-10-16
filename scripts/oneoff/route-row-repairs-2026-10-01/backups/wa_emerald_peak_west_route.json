@@ -1,0 +1,65 @@
+{
+ "id": "wa_emerald_peak_west_route",
+ "name": "West Route",
+ "approach_variants": [
+  {
+   "name": "North Fork Entiat Trail #1437 to the meadow camp",
+   "camps": [
+    "The basin between Emerald and Saska, and Milham Pass",
+    "Cottonwood Camp and the Entiat River road campgrounds",
+    "Fox Camp, North Fork Entiat trail"
+   ],
+   "notes": "Drive the Entiat River Road and then the switchbacking forest-road spur to the North Fork Entiat Trailhead, and follow North Fork Entiat River Trail #1437 up-valley. Almost all of the distance to the peak is on trail. The usual staging point is the trail camp in the meadow below the summit around 6,700 ft, and the climb starts from the tread a short way north of it. A boat-access alternative exists on the far side, reaching the peak from Emerald Park via Trail #1230 out of the lakeshore settlement; it is a genuine second way in, but where that line joins the climbing is unclear, so the base-finding below is written for the trail camp side.",
+   "season": "Mid-July into early October. Snow can hold in the gullies well into the season, and an axe is worth carrying early and mid-season.",
+   "hazards": [
+    "Deep loose scree with a boot path dug into it in places — kicked rock runs straight onto anyone below, so spread out and wear a helmet",
+    "Several gullies present themselves and the correct one is hidden until you round a buttress",
+    "The whole summit area is small and becomes exposed within a few paces of its centre",
+    "The south point is a steeply inclined slab and a slip off it runs down the East Face",
+    "Sub-summits nearby are convincing enough that parties have tagged them by mistake",
+    "No water once you leave the meadow"
+   ],
+   "primary": true,
+   "baseFinding": "The small boggy meadow where the trail turns sharply left is the departure. From the meadow camp, follow the tread north until it turns sharply left at a small boggy meadow around 6,900 ft — past that turn the trail carries on around the south shoulder of the neighbouring peak, which is not where you are going. Leave it there and climb north, or slightly east of due north, over open ground almost to the ridge crest between the two peaks. Just before the crest, look for a scree and talus slope leading up and to the right to a notch on the northwest ridge. Take that about halfway, then cut right and south into the adjacent gully, and climb it to the depression between the two summits. Expect to see several gullies on the way in and not the one you want: it stays hidden until you round a buttress, and cairns only start marking the way once you are past that corner. The true summit is the north point, to the left of the depression as you arrive. Do not use a register to settle which point you are on — parties have found none on either."
+  },
+  {
+   "name": "Emerald Park trail from Lucerne",
+   "trip": {
+    "bivy": [
+     {
+      "name": "The basin between Emerald and Saska, and Milham Pass",
+      "role": "main",
+      "type": "bivy",
+      "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way to do these four and much the most efficient. From the basin you climb to the upper shelf just below the ridge between Emerald and Saska and pick up the broad gully to the summit. Cardinal is the highest of the group and the furthest, and it is the one that turns a two-day plan into three. The setting is superb and the ground is loose — expect scree and blocky scrambling rather than clean rock, and expect the descents to take longer than the ascents. Season is short at this height in a heavy year, realistically mid-July to early October, and the reason to come late is the larch and the reason not to is the water. Weigh that honestly: an August party that finds the tarns dry has a long, hot walk back down to fix it. Weather moves in from the west with little warning here and the basin is fully exposed.",
+      "water": "Snowmelt tarns and rivulets in the basin, and these are the crux of the whole plan. They are dependable in early and mid summer, unreliable by mid-August, and in a dry year they are gone entirely by late August, at which point the nearest certain water is back down at Fox Camp. Do not commit to a high camp here in late season without either confirming water or carrying it up. Milham Pass itself has none.",
+      "permit": "Glacier Peak Wilderness, free self-issue, party limit of twelve. Camp on durable ground and well back from the tarns. No campfires — forest-wide restrictions aside, there is no fuel at this elevation and the ground is fragile. Reached only through trails inside the Little Giant Fire closure area (Okanogan-Wenatchee order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner.",
+      "capacity": "A small number of tent-sized spots on benches and moraine in the upper basin; two or three parties at most, and less if you want flat ground"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Lucerne (Lake Chelan boat landing)"
+    }
+   },
+   "notes": "Take the boat up Lake Chelan to Lucerne, follow the Domke Lake trail to the Emerald Park trail, and climb up Emerald Park to Milham Pass, which drops into the basin between Emerald and Saska. A boat-dependent alternative to the Entiat side, and the natural choice when coming from Lake Chelan."
+  }
+ ],
+ "road": {
+  "name": "Entiat River Road to Forest Road 5606 (North Fork Entiat Road)",
+  "status": "Paved for ~32.5 miles, then gravel FR 5606 for ~3 switchbacking miles to the trailhead (~3,700 ft). Closed: the Little Giant Fire closure (Okanogan-Wenatchee order 06-17-07-2026-40, in effect since September 3, 2026 and through October 31, 2026 unless lifted sooner) closes FR 5606 and the North Fork Entiat River Trail #1437. Check with the Okanogan-Wenatchee National Forest before you go. The Lucerne alternate is not available either: the Lucerne commercial dock has been closed since January 2026 under order 06-17-05-26-04, through December 31, 2027.",
+  "driveNote": "Day-use only at the trailhead; check current Okanogan-Wenatchee NF alerts for fire or storm-damage closures. Alternate approach via Lucerne requires a Lake Chelan boat/ferry shuttle.",
+  "seasonalGate": null
+ },
+ "approach": "Primary approach: from Entiat, drive Entiat River Road ~32.5 miles to Forest Road 5606, then ~3 switchbacking miles to the North Fork Entiat Trailhead (~3,700 ft); hike NF Entiat River Trail #1437 up-valley and leave the trail to gain the west-side gully below Emerald's summit block. Alternate approach: from Lucerne on Lake Chelan (reached by boat/ferry), hike the Emerald Park Trail #1230 up into Emerald Park and approach the peak's west side from there.",
+ "waypoints": [
+  {
+   "lat": 48.01076,
+   "lng": -120.57224,
+   "elev": 3700,
+   "name": "North Fork Entiat Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3700,
+   "directions": "From US-97A at Entiat, turn onto Entiat River Road (County Road 19, which becomes FS Road 51) and drive about 32 miles up the valley, then turn right onto FS Road 5606, about two miles past Silver Falls Campground. Follow FS Road 5606 about 3 miles to its end at the North Fork Entiat Trailhead. A Northwest Forest Pass is required to park."
+  }
+ ]
+}

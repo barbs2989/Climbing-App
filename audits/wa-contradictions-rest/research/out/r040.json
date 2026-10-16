@@ -1,0 +1,312 @@
+{
+ "file": "r040.json",
+ "results": [
+  {
+   "id": "wa_east_mcmillan_spire_northeast_buttress",
+   "fact": "Approach line (Terror Basin vs McMillan Creek)",
+   "verdict": "fixed",
+   "correct_value": "Both approaches end in the McMillan Creek cirque below the north side: the Goodell Creek/Terror Basin path continues from the top of Terror Basin along a ledge to the Stetattle divide, then two rappels and a snow/ice downclimb drop into the upper McMillan Cirque. The road note must not imply the route is climbed from Terror Basin itself.",
+   "evidence": "The 2008 first-ascent report says the party approached for two days and traversed the remnants of the McMillan Creek glaciers to the base of the NE buttress; an independent news report says they reached the northern base of the peak after a 3.5-hour walk from a high camp. A 1987 report of the North Buttress (Keleman) describes going from Terror Basin north along the Terror Basin-Azure Lake divide, a ledge to Stetattle Ridge, two 165-ft rappels and a downclimb into the upper McMillan Cirque to the base of the north buttress; Kearney's NWMJ article lists this as the shortest (south) approach, with a longer east approach along Sourdough Ridge from Diablo. So Terror Basin is a valid start, but the road note's 'same approach used for West McMillan Spire' stops short of the north side.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200911000/North-America-United-States-Washington-East-McMillan-Spire-Come-Over-to-the-Dark-Side",
+    "https://alpinist.com/doc/web08f/newswire-kearney-east-mcmillan",
+    "https://publications.americanalpineclub.org/articles/12198716200",
+    "http://www.alpenglow.org/nwmj/09/091_McMillan2.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_northeast_buttress",
+     "fact": "Approach line (Terror Basin vs McMillan Creek)",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "climbs steeply toward Terror Basin — the same approach used for West McMillan Spire.",
+     "replace": "climbs steeply toward Terror Basin. From the top of the basin a ledge traverse leads north onto the McMillan-Stetattle divide, where two rappels and a steep snow and ice downclimb drop into the upper McMillan Creek cirque below the north side of the peak."
+    }
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_northeast_buttress",
+   "fact": "Days on the wall",
+   "verdict": "fixed",
+   "correct_value": "The 25 pitches took the first-ascent party three days on the wall with two bivouacs (after 7 pitches and on a ledge higher up), with the rappel descent done the same day as the summit.",
+   "evidence": "The first-ascent report describes a bivy ledge after seven pitches and a second night on the 2003 North Buttress bivy ledge before summiting on the third day. An independent news report gives September 6-8, 2008, two overnight stops on the route, and a same-day rappel descent. The 'full day for 25 pitches' in timing.recommendedStart is the outlier.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200911000/North-America-United-States-Washington-East-McMillan-Spire-Come-Over-to-the-Dark-Side",
+    "https://alpinist.com/doc/web08f/newswire-kearney-east-mcmillan",
+    "http://www.alpenglow.org/nwmj/09/091_McMillan2.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_northeast_buttress",
+     "fact": "Days on the wall",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "Early start from high camp to allow a full day for 25 pitches plus routefinding",
+     "value": "Early start from high camp; plan on about three days and two bivouacs on the wall for the 25 pitches plus routefinding"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_northeast_buttress",
+   "fact": "Climbing season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Aug-Sep for the climb (the high approach may open in July)",
+   "evidence": "season, best_season, climate.summer and climate.fall all put the wall in late summer (August-September) because the compact northeast slabs must dry out; only road.seasonalGate says July. Kearney's attempts and first ascent on this face were in August and September (NWMJ article; FA September 6-8, 2008).",
+   "sources": [
+    "http://www.alpenglow.org/nwmj/09/091_McMillan2.html",
+    "https://alpinist.com/doc/web08f/newswire-kearney-east-mcmillan"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_northeast_buttress",
+     "fact": "Climbing season",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "the climbing route itself is only practical roughly July-September once the high approach sheds snow.",
+     "replace": "the high approach sheds snow by about July, but the wall itself is usually only dry enough roughly August-September."
+    }
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "Route line and grade (via West McMillan's summit and a 5.6 ridge vs directly up the col gully)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One detailed trip report climbs the snow gully (or a reddish ledge and 4th-class rib) to the West-East col and finds easy 3rd-class terrain to East McMillan's summit, then reached West McMillan by a 4th-class southeast face; a comment on another report says the summit-to-summit traverse between the spires goes at low 5th class. So the page mixes two real lines (col direct at 3rd class vs traversing from West McMillan's summit at low 5th), but no second independent source settles the rock grade for East McMillan's own route, and fixing it would rewrite grade, rock_grade, pro_needs and partner requirements. Left open.",
+   "sources": [
+    "https://drdirtbag.com/2014/07/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No published NCCS commitment grade for East McMillan Spire was found; sources describe the neighbouring West McMillan West Ridge only as class 3 from a Terror Basin camp. Without two sources, II vs III cannot be settled.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "Order of the lower approach (steep first vs flat roadbed first)",
+   "verdict": "fixed",
+   "correct_value": "Gentle old roadbed along Goodell Creek for ~3.5-4.5 mi to a cairn at ~1,700 ft, then the steep climb up the spur ridge south of Terror Creek (passing ~3,200 ft).",
+   "evidence": "One trip report: the trail gains a few hundred feet in the first 1.5 miles, levels at ~1,100 ft, reaches the cairn marking the Terror Basin route at ~3.5 mi and ~1,700 ft, then climbs steeply up a spur ridge south of Terror Creek, traversing at ~3,200 ft. A second guide: the unmaintained path ascends gently for ~4.5 miles along Goodell Creek, then from the cairn it is a steep ~2.5 mi, 4,700 ft climb. The road note, cairn waypoint and itinerary already agree; the approach and approach_variants prose had the order reversed.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Order of the lower approach (steep first vs flat roadbed first)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "and climbs steeply north through forest, gaining a timbered ridge crest around 3,200 ft within the first 1.5-2 miles; two creek crossings low on the path can run high and fast on hot afternoons from snowmelt. The tread then eases onto roughly 4 miles of rougher, brushier but less steep going along the ridge (expect deadfall and a handful of washouts - this is an unmaintained boot path, not a maintained trail) before reaching an obvious cairn around mile 3.5-4 where the route angles right/south to follow above Terror Creek.",
+     "replace": "and follows the old Goodell Creek roadbed upvalley for roughly 3.5-4 miles of gentle but brushy going (expect deadfall and a handful of washouts - this is an unmaintained boot path, not a maintained trail); two creek crossings low on the path can run high and fast on hot afternoons from snowmelt. An obvious cairn near 1,700 ft marks where the route leaves the roadbed and climbs steeply up a timbered spur ridge south of Terror Creek, passing about 3,200 ft on the way up."
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Order of the lower approach (steep first vs flat roadbed first)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and climbs steeply north through forest, gaining a timbered ridge crest around 3,200 ft within the first 1.5-2 miles. Two creek crossings low on the path can run high and fast on hot afternoons from snowmelt.\n\nThe tread then eases onto roughly 4 miles of rougher, brushier but less steep going along the ridge, with deadfall and a handful of washouts, before reaching an obvious cairn around mile 3.5-4 where the route angles right and south to follow above Terror Creek.",
+     "replace": "and follows the old Goodell Creek roadbed upvalley for roughly 3.5-4 miles of gentle but brushy going, with deadfall and a handful of washouts. Two creek crossings low on the path can run high and fast on hot afternoons from snowmelt.\n\nAn obvious cairn near 1,700 ft marks where the route leaves the roadbed and climbs steeply up a timbered spur ridge south of Terror Creek, passing about 3,200 ft on the way up."
+    }
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "Base camp and approach drainage in partner requirements",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin base camp reached from Goodell Creek via the Terror Creek path, usually in one long day",
+   "evidence": "Trip reports and guides for this approach go from Goodell Creek up the Terror Creek climbers' path to camp in Terror Basin, typically in a single long day (one report: ~6 hours to the basin; another: gentle 4.5 mi then a steep 2.5 mi climb, done as a two-night trip). Crescent Creek and Access Creek belong to other Pickets approaches; every other field on this row uses Terror Basin.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Base camp and approach drainage in partner requirements",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Multi-day - typically 1.5-2 days to reach the Southern Pickets/Crescent Creek base camp",
+     "replace": "Typically one long day, sometimes two, to reach the Terror Basin base camp"
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Base camp and approach drainage in partner requirements",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "(Goodell Creek/Access Creek)",
+     "replace": "(Goodell Creek/Terror Creek)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "Whether the Terror Basin permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only; Terror Basin is not one of the six advance-reservable cross-country zones",
+   "evidence": "The park's cross-country zones page and its separate backcountry-reservations page both state that only Boston Basin, Eldorado, Sulphide (Glacier), Price, Triumph and Tapto Lakes can be reserved in advance and all other cross-country zones are walk-up only. Independent trip write-ups for Terror Basin describe getting the permit in person at the ranger station before starting, not reserving. The bivy card was right; access, permit, pro tip, trailhead directions and itinerary note were wrong.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "About 60% of permits are reservable in advance via Recreation.gov; the rest are held for walk-up self-issue in person at",
+     "replace": "This zone cannot be reserved in advance; permits are walk-up only, issued in person the day of or the day before your start at"
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "Park-wide about 60% of sites can be reserved in advance, but only six cross-country zones (Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes) are among them. Terror Basin is walk-up only, obtained in person the day of or the day before at the Wilderness Information Center in Marblemount."
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this zone: get the permit in person at the Marblemount Wilderness Information Center the day of or the day before your trip."
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)"
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "expect": "Self-issue a 'Pickets' cross-country zone permit at the Marblemount Wilderness Information Center, or reserve online in advance since walk-up quota is limited",
+     "value": "Get the cross-country zone permit in person at the Marblemount Wilderness Information Center; the zone is walk-up only, so arrive the day before or early on the day you start"
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "self-register or reserve ahead through recreation.gov.",
+     "replace": "pick it up in person at the Marblemount Wilderness Information Center (walk-up only, no advance reservations for this zone)."
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "Whether the Terror Basin permit can be reserved",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(self-register or recreation.gov reservation)",
+     "replace": "(walk-up only, issued in person at Marblemount)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "Distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (11.9 km = 7.4 mi) is the one-way approach distance shown as 'Approach (one way)' and matches the camp waypoint at mile 7.4, while itinerary miles are per day; these are different, labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "The Barrier named as a routefinding hazard on this route",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The Barrier lies on the Terror Basin to Crescent Creek traverse, not on the East McMillan route; drop it from the hazard text.",
+   "evidence": "Southern Pickets trip reports place the Barrier on the crossing from Terror Basin east to Crescent Creek Basin (below Chopping Block), while this route goes from Terror Basin up the Terror Glacier to the McMillan col. The bail text itself says there is no need to continue over the Barrier, yet SEASONAL HAZARDS warned of losing the route there.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "The Barrier named as a routefinding hazard on this route",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "and the risk of losing the route at the Barrier in poor visibility",
+     "replace": "and the risk of losing the route in poor visibility"
+    },
+    {
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "The Barrier named as a routefinding hazard on this route",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "routefinding risk noted at the Barrier",
+     "replace": "routefinding risk on the glacier and col approach"
+    }
+   ]
+  }
+ ]
+}

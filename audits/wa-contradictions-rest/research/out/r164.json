@@ -1,0 +1,187 @@
+{
+ "file": "r164.json",
+ "results": [
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Scramble difficulty and need for a rope",
+   "verdict": "fixed",
+   "correct_value": "Class 2-3 scramble; no rope needed (partner requirements should say Class 2-3, no low-5th moves)",
+   "evidence": "The peak's standard route page describes the route as nothing harder than Class 2 unless you choose Class 3 rock to avoid loose scree. A 2024 trip report calls the scree gully the crux with some class 3 moves; the club route page and encyclopedia entry describe it as a scramble with solid rock and some exposure. No source mentions 4th class, 5th class, or roping.",
+   "sources": [
+    "https://www.summitpost.org/wallaby-peak/554133",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-07.072740562018",
+    "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+    "https://en.wikipedia.org/wiki/Wallaby_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Scramble difficulty and need for a rope",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "Class 3-4 scrambling on loose rock",
+     "value": "Class 2-3 scrambling on loose rock"
+    },
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Scramble difficulty and need for a rope",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "Solid Class 3-4 scrambling experience",
+     "replace": "Solid Class 3 scrambling experience"
+    },
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Scramble difficulty and need for a rope",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "no technical rack required for the standard line though some parties carry a rope for the low-5th-class moves near the top",
+     "replace": "no technical rack or rope required for the standard line"
+    },
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Scramble difficulty and need for a rope",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "beyond the class 3-4 rating",
+     "replace": "beyond the class 2-3 rating"
+    }
+   ]
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 4.8 is the one-way approach figure (rendered as 'Approach (one way)'), matching the approach's own 3.0 mi one-way; 9.7 km and itinerary 6 mi are round trip. Consistent.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Summit time within the day",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "summitTimeHrs unknown (null); the 7.5 is the car-to-car total",
+   "evidence": "The club route page gives about two hours car to Kangaroo Pass and about one hour pass to summit (~3 hr to the top); a trip report gives a 4-5 hr round trip. The row's approach, partner requirements and itinerary legs all put the summit well before the 7.5 hr total, so summitTimeHrs holds the car-to-car total; nulled rather than replaced with a computed number.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+    "https://onehikeaweek.com/2018/05/27/wallaby-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Summit time within the day",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 7.5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Parking pass at the hairpin turnout",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route page for the neighbouring tower says no permits are required to park at the hairpin turn, but the hiking association's page for this peak lists a Northwest Forest Pass / America the Beautiful pass as the parking requirement. Sources disagree; no patch.",
+   "sources": [
+    "https://www.summitpost.org/kangaroo-temple/815101",
+    "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Reliability of the tarn below Kangaroo Pass",
+   "verdict": "fixed",
+   "correct_value": "The tarn below the pass is the only water on the approach but it can be dry by late summer/fall; carry water from the car.",
+   "evidence": "An October 2024 trip report found the tarn below the pass dry and no other water on the path. A separate trip report on the same approach found the tarn near the meadow dried up, with only a trickle below the pass. Calling it 'reliable' is wrong; bivy entry not touched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-08.094757427418",
+    "https://stevensong.com/usa/washington/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Reliability of the tarn below Kangaroo Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "A small tarn just below the pass is the only reliable water source on the approach; there is none higher, so top off here.",
+     "replace": "A small tarn just below the pass is the only water source on the approach and can be dry by late summer or fall; there is none higher, so carry enough from the car."
+    },
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Reliability of the tarn below Kangaroo Pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "A small tarn just below the pass is the only reliable water on the route and there is none higher, so fill up here.",
+     "replace": "A small tarn just below the pass is the only water on the route and can be dry by late summer or fall; there is none higher, so carry enough from the car."
+    },
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Reliability of the tarn below Kangaroo Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "A small tarn just below the pass is the only reliable water anywhere on the route.",
+     "replace": "A small tarn just below the pass is the only water anywhere on the route, and it can be dry by late summer or fall."
+    }
+   ]
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Itinerary summit clock time vs its own leg durations",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~9:30-10:30 AM",
+   "evidence": "From a 6:00 AM start the itinerary's own legs (+1.5-2, +1, +1-1.5 hr) sum to 3.5-4.5 hr, i.e. a summit around 9:30-10:30 AM, not 11:30 AM-12:30 PM. The approach text (2 hr + 1 hr) agrees, and the club route page gives about two hours to the pass and one hour to the summit.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/wallaby-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Itinerary summit clock time vs its own leg durations",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "~11:30 AM-12:30 PM",
+     "value": "~9:30-10:30 AM"
+    }
+   ]
+  }
+ ]
+}

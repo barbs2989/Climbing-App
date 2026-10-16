@@ -9,8 +9,10 @@ import {
   useGuideProfile, useGuideCredentials, useGuideInquiries, useGuideReviews,
   updateGuideProfile, addGuideCredential, resubmitGuideCredential,
   updateInquiryStatus, postGuideReply, reconcileGuideVerification,
-  isGuideVerified, CERT_TRACK_LABELS,
+  isGuideVerified, guideProfileMissingCopy, CERT_TRACK_LABELS, publicNameOf,
 } from "./db";
+import { POP_BACK } from "./popupChrome.js";
+import { photoThumb } from "./photoThumb";
 
 const SECTIONS = [["credentials", "Credentials"], ["inquiries", "Inquiries"], ["reviews", "Reviews"], ["profile", "Profile"]];
 const DAYS_TO_EXPIRY_WARNING = 60;
@@ -26,7 +28,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   const [section, setSection] = useState("credentials");
   useEffect(() => { if (uid) reconcileGuideVerification(uid).catch(() => {}); }, [uid]);
 
-  const { data: profile, refetch: refetchProfile } = useGuideProfile(uid);
+  const { data: profile, refetch: refetchProfile, isError: profileError } = useGuideProfile(uid);
   const { data: credentials, refetch: refetchCreds } = useGuideCredentials(uid);
   const { data: inquiries, refetch: refetchInq, isLoading: inqLoading, isError: inqError } = useGuideInquiries(uid);
   const { data: reviews, refetch: refetchReviews, isLoading: revLoading, isError: revError } = useGuideReviews(uid);
@@ -90,26 +92,35 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   };
 
   if (!session) {
-    return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 }}>
-      <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
-      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to view your guide dashboard.</div>
+    return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+      <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
+      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in to view your guide dashboard.</div>
     </div>, document.body);
   }
   if (!profile) {
-    return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 }}>
-      <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
-      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>You haven't applied to guide yet.</div>
+    return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+      <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
+      {/* Says where to apply, because this screen is reachable in exactly this state and had no
+          way out of it. Settings offers a guide-dashboard button unconditionally, directly under
+          "Become a guide", so a climber who has not applied lands here on a screen that states
+          the problem and offers only Back -- 40 characters, the smallest screen in the app.
+
+          SIGNPOSTING, not a second entry point: it names a control that already exists rather
+          than adding one. The application form is reachable from Settings today, and routing
+          more people into it is a product decision, not a layout repair. */}
+      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>{guideProfileMissingCopy(profileError).head}</div>
+      <div style={{ marginTop: 8, textAlign: "center", color: C.textMuted, fontSize: 12.5, lineHeight: 1.5 }}>{guideProfileMissingCopy(profileError).body}</div>
     </div>, document.body);
   }
 
   return createPortal((
-    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto" }}>
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-          <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+          <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
           <div><div style={{ fontSize: 15, fontWeight: 700 }}>Guide dashboard</div><div style={{ fontSize: 12, color: C.textSub }}>{"Status: " + profile.status + (newInquiries ? " · " + newInquiries + " new inquiries" : "")}</div></div>
         </div>
-        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
+        <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "14px 15px", marginBottom: 14 }}>
@@ -143,7 +154,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
             {nKind === "primary_track" ? <select aria-label="Primary certification track" value={nTrack} onChange={e => setNTrack(e.target.value)} style={{ ...inp, marginTop: 8 }}>{Object.keys(CERT_TRACK_LABELS).map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
               : <select aria-label="Additional certification" value={nCc} onChange={e => setNCc(e.target.value)} style={{ ...inp, marginTop: 8 }}><option value="AIARE">AIARE</option><option value="WFR">WFR</option><option value="other">Other</option></select>}
             <div style={{ display: "flex", gap: 8, marginTop: 8 }}><input aria-label="Certificate no." value={nNum} onChange={e => setNNum(e.target.value)} placeholder="Certificate no." style={inp} /><input aria-label="Issuing org" value={nOrg} onChange={e => setNOrg(e.target.value)} placeholder="Issuing org" style={inp} /></div>
-            <div style={{ display: "flex", gap: 8, marginTop: 9 }}><button onClick={addCred} style={{ flex: 1, background: C.blue, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Submit for verification</button><button onClick={() => setAdding(false)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div>
+            <div style={{ display: "flex", gap: 12, marginTop: 9 }}><button onClick={addCred} style={{ flex: 1, background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Submit for verification</button><button onClick={() => setAdding(false)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div>
           </div> : <button onClick={() => setAdding(true)} style={{ width: "100%", background: C.surface, border: "1px dashed " + C.border, color: C.blue, borderRadius: 10, padding: "10px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>+ Add credential</button>}
         </div>}
 
@@ -151,16 +162,16 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 11 }}>Booking requests from climbers. Accept to hold the date, then agree on price and dates directly with them.</div>
           {(inquiries || []).length ? inquiries.map(q => <div key={q.id} style={card}>
             <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-              {q.profiles && q.profiles.avatar ? <img src={q.profiles.avatar} alt="" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
+              {q.profiles && q.profiles.avatar ? <img src={photoThumb(q.profiles.avatar, 40)} alt="" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} /> : null}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{q.objective || "Climbing inquiry"}</div>
-                <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{(q.profiles && q.profiles.name || "Climber") + " · " + (q.requested_dates || "flexible") + " · " + q.party_size + (q.party_size > 1 ? " climbers" : " climber")}</div>
+                <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{publicNameOf(q.profiles) + " · " + (q.requested_dates || "flexible") + " · " + q.party_size + (q.party_size > 1 ? " climbers" : " climber")}</div>
                 {q.message ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 4 }}>{q.message}</div> : null}
                 {q.includes_minor ? <div style={{ fontSize: 11.5, fontWeight: 700, color: C.amber, background: C.amberBg, borderRadius: 6, padding: "2px 7px", display: "inline-block", marginTop: 4 }}>{"Trip includes a minor"}</div> : null}
               </div>
               {q.status !== "new" ? <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: q.status === "accepted" ? C.green : C.textMuted, background: q.status === "accepted" ? C.greenBg : C.surface, border: "1px solid " + (q.status === "accepted" ? C.greenDim : C.border), borderRadius: 6, padding: "2px 7px" }}>{q.status === "accepted" ? "Accepted" : "Declined"}</span> : null}
             </div>
-            {q.status === "new" ? <div style={{ display: "flex", gap: 8, marginTop: 9 }}>
+            {q.status === "new" ? <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
               <button onClick={() => setInqStatus(q.id, "accepted")} style={{ flex: 1, background: C.green, color: "#04110a", border: "none", borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Accept</button>
               <button onClick={() => setInqStatus(q.id, "declined")} style={{ flex: 1, background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>Decline</button>
             </div> : null}
@@ -170,10 +181,10 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
         {section === "reviews" && <div>
           <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 11 }}>Reviews from climbers who actually sent you an inquiry. A reply shows publicly under the review.</div>
           {(reviews || []).length ? reviews.map(r => <div key={r.id} style={card}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 4 }}><span style={{ fontSize: 12.5, fontWeight: 700, color: C.text }}>{r.profiles && r.profiles.name || "Climber"}</span><span>{"★".repeat(r.rating)}</span></div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 4 }}><span style={{ fontSize: 12.5, fontWeight: 700, color: C.text }}>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span></div>
             <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}><div style={{ fontSize: 12, color: C.blue, fontWeight: 700, marginBottom: 2 }}>Your reply</div><div style={{ fontSize: 12.5, color: C.textSub }}>{r.guide_reply}</div></div>
-              : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply..." style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ background: C.blue, color: "#fff", border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>
+              : replyId === r.id ? <div style={{ marginTop: 8 }}><textarea aria-label="Write a reply" value={replyText} onChange={e => setReplyText(e.target.value)} rows={2} placeholder="Write a reply..." style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} /><div style={{ display: "flex", gap: 8, marginTop: 6 }}><button onClick={() => postReply(r.id)} style={{ background: C.blueSolid, color: "#fff", border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Post reply</button><button onClick={() => { setReplyId(null); setReplyText(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div></div>
                 : <button onClick={() => { setReplyId(r.id); setReplyText(""); }} style={{ marginTop: 8, background: C.surface, border: "1px solid " + C.border, color: C.blue, borderRadius: 8, padding: "9px 12px", fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>Respond</button>}
           </div>) : <div style={{ fontSize: 12.5, color: C.textMuted }}>{revLoading ? "Loading reviews…" : revError ? "Couldn’t load your reviews — check your connection and try again" : "No reviews yet."}</div>}
         </div>}
@@ -187,7 +198,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
           <input aria-label="Regions / areas" value={regions} onChange={e => setRegions(e.target.value)} style={inp} />
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 8, marginTop: 14 }}>Cancellation and turnaround policy</div>
           <textarea aria-label="Cancellation and turnaround policy" value={policy} onChange={e => setPolicy(e.target.value)} rows={4} style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
-          <button onClick={saveProfile} style={{ width: "100%", marginTop: 16, background: C.blue, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Save profile</button>
+          <button onClick={saveProfile} style={{ width: "100%", marginTop: 16, background: C.blueSolid, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Save profile</button>
         </div>}
       </div>
     </div>

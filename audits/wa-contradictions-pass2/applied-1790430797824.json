@@ -1,0 +1,153 @@
+{
+ "applied": [
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Lake Constance quota season"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Lake Constance quota season"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Lake Constance quota season"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_inner_constance_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.740259,
+      "lng": -123.065764,
+      "elev": 700,
+      "name": "Dosewallips Road washout parking (FR-2610)",
+      "note": "Vehicle-accessible road end at the 2002 washout (~9 mi from Hwy 101); self-issue wilderness permit kiosk here before biking/hiking the closed roadbed.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Dosewallips Road inland from US-101, roughly 9 miles, to the vehicle-accessible road end at the 2002 washout. Fill in a self-issue wilderness permit at the kiosk before starting up the closed roadbed."
+     },
+     {
+      "lat": 47.7296,
+      "lng": -123.1417,
+      "elev": 1425,
+      "name": "Lake Constance Trailhead",
+      "note": "Unmaintained climbers' path splits off the old Dosewallips roadbed and climbs steeply up the narrow Constance Creek canyon; unsigned and easy to walk past.",
+      "type": "Junction",
+      "distMi": 5,
+      "directions": "The road beyond has been closed to motor vehicles since the 2002 flood but stays open to foot and bicycle, and most parties ride it; a short riverside bypass gets around the washed-out section before the old roadbed resumes. About 5 miles up, an unmaintained climbers' path splits off the roadbed and starts up the narrow Constance Creek canyon. It is unsigned and easy to walk straight past, so watch for it."
+     },
+     {
+      "lat": 47.74720416666667,
+      "lng": -123.14216875,
+      "elev": 3100,
+      "name": "Creekside Camp Bench",
+      "note": "Trail briefly levels crossing the valley floor beside Constance Creek; flat spot with an established fire ring and reliable running water, a common rest/camp break before the final steep push.",
+      "type": "Water",
+      "distMi": 6,
+      "directions": "The climbers' path climbs steeply and directly up the canyon, unmaintained and choked with blowdown, and this lower section is the hardest walking of the trip. At around 3,100 ft the tread briefly levels out on the valley floor beside Constance Creek at a flat bench with an established fire ring and reliable running water."
+     },
+     {
+      "lat": 47.75073,
+      "lng": -123.14226,
+      "elev": 4800,
+      "name": "Lake Constance",
+      "note": "Emerald backcountry lake cupped in a rock bowl at the mouth of Avalanche Canyon; camping permits are quota-limited May 1-Sept 30, use existing sites to protect the fragile basin.",
+      "type": "Campsite",
+      "distMi": 7.2,
+      "directions": "From the bench the path resumes its steep push, gaining the last 1,700 ft to the lake at 4,800 ft, cupped in a rock bowl at the mouth of Avalanche Canyon. Camping is quota-limited May 1 through September 30, so use the existing sites."
+     },
+     {
+      "lat": 47.75713266666667,
+      "lng": -123.14367333333334,
+      "elev": 5400,
+      "name": "Avalanche Canyon / The Thumb",
+      "note": "Barren, rocky Avalanche Canyon opens north from the lake, a stark contrast to the rainforest below; the Thumb rock formation marks where the South Chute (Mount Constance) and South Gully (Inner Constance) lines diverge on faint, intermittent climbers' track.",
+      "type": "Junction",
+      "distMi": 7.8,
+      "directions": "Head north out of the lake basin into Avalanche Canyon, barren and rocky in contrast to the rainforest below, on faint and intermittent climbers' track and snow patches. Continue up-canyon to the broad couloir below the Thumb, the rock formation that marks where the South Chute on Mount Constance and the South Gully on Inner Constance diverge."
+     },
+     {
+      "lat": 47.76247238888889,
+      "lng": -123.14484902777778,
+      "elev": 6400,
+      "name": "South Defile Snow Choke",
+      "note": "Snow-filled defile narrows to a roughly 2-ft gap with 5-10 ft deep moats opening on each side by mid-late season; parties have reported refrigerator-size snow blocks calving here, so move through quickly and probe snow bridges before committing.",
+      "type": "Hazard",
+      "distMi": 8.3,
+      "directions": "From the mouth of the canyon follow the faint, intermittent climbers' track and snow patches north up Avalanche Canyon to the broad couloir below the Thumb, then take the Inner Constance branch and veer right into a steeper secondary couloir that narrows into the defile. Snow blocks calve out of this constriction as the day warms, so move through it quickly and probe the bridges over the moats before committing weight to them."
+     },
+     {
+      "lat": 47.76674416666667,
+      "lng": -123.14578958333334,
+      "elev": 7200,
+      "name": "East Ridge Notch",
+      "note": "A steep, discontinuous snow finger tops out at this notch on Inner Constance's East Ridge; a short Class 3 rock step gains the ridge crest before the summit scramble.",
+      "type": "Junction",
+      "distMi": 8.7,
+      "directions": "Above the defile the gully continues on discontinuous snow, with repeated stemming between the snow finger and the rock walls to get around the moats and a few short up- and downclimbs on rock where the snow runs out. A steep snow finger tops out at the notch; exit the gully onto the crest by way of a short Class 3-4 rock step."
+     },
+     {
+      "lat": 47.770235,
+      "lng": -123.145435,
+      "elev": 7672,
+      "name": "Inner Constance",
+      "note": "True summit (7,672 ft), the Olympics' 4th/5th-highest peak; final approach is fun Class 2-3 scrambling on pillow basalt along the East Ridge.",
+      "type": "Summit",
+      "distMi": 9,
+      "directions": "Follow the East Ridge crest from the notch on Class 2-3 scrambling over pillow basalt to the top. Rock across this massif is notoriously rotten, so keep the party tight and out of each other's fall line. Do not let the line pull you toward the southwest summit — it has no easy connection across to the true northeast high point."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Lake Constance and Avalanche Canyon to the South Gully",
+      "notes": "The shorter of the two ways in, at roughly 8 miles one-way. Bike or walk about 5 miles of closed Dosewallips Road to the unsigned Lake Constance climbers' trail at about 1,425 ft, then the steep unmaintained boot path up the narrow Constance Creek canyon. At roughly 3,100 ft the tread briefly levels on the valley floor beside the creek at a flat bench with an established fire ring and running water — a common rest stop. From there the last 1,700 ft to Lake Constance at 4,800 ft. Camping at the lake is quota-limited May 1 to September 30.\n\nFrom the lake head north into Avalanche Canyon, barren and rocky in stark contrast to the rainforest below, on faint intermittent climbers' track and snow patches, and continue up-canyon to the broad couloir below the Thumb.",
+      "season": "Roughly Jun-Sep, and snow-dependent in a way most Olympic scrambles are not — this line wants snow still bridging the moats in the defile, so early to mid season is better than late",
+      "hazards": [
+       "Deep moats on both sides of the snow finger in the South Gully defile, needing repeated stemming to bypass",
+       "Collapsing or sliding snow blocks in the constriction as the day warms — a documented injury",
+       "Notoriously loose, rotten Olympic pillow basalt with rockfall on warm days",
+       "Easy to be drawn onto the southwest summit, which has no easy access to the true northeast high point",
+       "Steep snowfields and a small glacier high on the route early season",
+       "The Lake Constance trail is one of the steepest and least maintained in the range"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE OF THIS CLIMB IS A FORK, AND THE FORK IS MARKED BY A ROCK FORMATION CALLED THE THUMB. Head up Avalanche Canyon to the broad couloir below the Thumb. That is where the South Chute (which belongs to MOUNT Constance) and the South Gully (which belongs to INNER Constance, this route) diverge. Two summits sit above one canyon and the Thumb is the thing that tells the two lines apart.\n\nTHE FOG TEST THAT DOES NOT NEED THE THUMB, AND IT IS THE BETTER ONE, IS THE SHAPE OF THE GULLY YOU END UP IN. From the broad couloir, veer RIGHT into a steeper secondary couloir, which narrows into a snow-filled DEFILE. That defile constricts to roughly a two-foot gap with moats five to ten feet deep opening on either side of the snow by mid-to-late season. Nothing else in this canyon does that. If your gully stays broad and open all the way up, you are in the Mount Constance South Chute and climbing the wrong peak.\n\nSECOND TEST, higher: above the defile the snow finger goes discontinuous and you stem repeatedly between snow and rock to get round the moats, with short up- and downclimbs on rock where the snow runs out. A steep finger tops out at a notch on the East Ridge near 7,200 ft, gained by a short Class 3-4 rock step. If you are still on continuous snow with no stemming, you have not reached the defile yet.\n\nWHAT GOING TOO FAR LOOKS LIKE, AND IT IS THE RECORDED WAY THIS ROUTE GOES WRONG: from the East Ridge the line pulls naturally toward the SOUTHWEST summit, which has no easy connection across to the true NORTHEAST high point. Follow the East Ridge crest on Class 2-3 pillow basalt to the northeast top; if the ridge you are on is running away southwest, you are heading for the wrong summit.\n\nSAFETY NOTE THAT IS PART OF THE ROUTE-FINDING: snow blocks calve out of the defile constriction as the day warms — a refrigerator-sized block struck a climber there. Move through it quickly and probe the bridges over the moats before weighting them."
+     },
+     {
+      "name": "Dosewallips road to Constance Pass, then Crystal Basin and Crystal Pass",
+      "notes": "About 16 miles one-way and worth it to some parties precisely because it avoids the Lake Constance trail's brutally steep, unmaintained, blowdown-choked lower section. From the Dosewallips washout at roughly 600 ft, bike or walk the closed roadbed — working round the washout on a riverside bypass — past the Lake Constance turn-off to the old Dosewallips Campground and decommissioned ranger station at the true road end, about 6.5 miles and 1,900 ft of cumulative gain from the gate.\n\nPick up the Constance Pass Trail and climb south and southwest through forest into subalpine parkland to Constance Pass at about 5,850 ft. The upper stretch is steep open meadow and scree, with the last reliable water at creek crossings below treeline.\n\nFrom Constance Pass leave the trail, travel cross-country west into the head of Crystal Basin and climb to Crystal Pass, the windswept notch on the Constance-Warrior massif that divides the Dosewallips side from Avalanche Canyon. Expect a two or three day trip with a camp near Constance Pass or in upper Avalanche Canyon.",
+      "season": "Roughly Jul-Sep, once the snow below Crystal Pass is safe",
+      "hazards": [
+       "The climbers' track fades near Crystal Pass; unmarked talus, scree and snow between there and Constance Pass",
+       "Notoriously rotten pillow basalt with constant rockfall on warm days",
+       "A steep, committing chimney and roof section high on the peak that trip reports call the cave of despair",
+       "Being drawn onto the southwest summit",
+       "No water above Constance Pass except transient snowmelt",
+       "Roughly 6.5 miles of closed road at each end"
+      ],
+      "longForm": true,
+      "baseFinding": "FROM CRYSTAL PASS THE BASE OF THE CLIMB IS DIRECTLY BELOW YOU RATHER THAN ABOVE YOU, WHICH IS THE ONE REAL ADVANTAGE OF THIS SIDE. Descend south into upper Avalanche Canyon on the intermittent climbers' path through scree and talus, keeping to the RIGHT (north) side of the canyon, past the Thumb, and then contour and climb toward Inner Constance's northeast side.\n\nTHE TEST IS STILL THE THUMB AND THE DEFILE, and it still works from above: the fork you want is the one where the South Gully leaves the broad couloir and veers into a steeper secondary couloir that NARROWS to a two-foot gap with deep moats. Coming from Crystal Pass you can also take the northeast side directly — a short step just above the pass leads into a rising traverse along the RIGHT side of the north ridge crest, broken blocky Class 2-3 with occasional Class 4 and low fifth where the crest steepens.\n\nTHE FOG TEST FOR THAT NORTHEAST LINE IS WHICH SIDE OF THE CREST YOU ARE ON. Stay on the crest's RIGHT-hand side as you climb. If you have crossed over and are traversing on the other flank, you are off the line, and the rock over there is worse.\n\nWHAT GOING TOO FAR LOOKS LIKE: the same trap as the other variant — the mountain pulls toward the SOUTHWEST summit, which does not connect easily to the true northeast high point. Keep working toward the NORTHEAST top.\n\nHONEST LIMIT: the informal climbers' track fades near Crystal Pass and this stretch is talus, scree and early-season snow with real route-finding demands. A rope and axe may be prudent on the snow remnant below the pass early in the year."
+     }
+    ]
+   }
+  }
+ ]
+}

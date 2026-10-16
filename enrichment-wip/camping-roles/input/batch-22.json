@@ -1,0 +1,1820 @@
+[
+ {
+  "zone": "twin-sisters",
+  "routes": [
+   {
+    "id": "wa_cinderella_peak_scramble",
+    "name": "Twin Sisters Olivine Scramble",
+    "peak": "Cinderella Peak",
+    "area_id": "wa_cinderella_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6431,
+    "overview": "Cinderella Peak (roughly 6,400-6,500 ft) is a minor summit on the south side of the Green Creek cirque in the Twin Sisters Range, immediately west of Mount Baker and within/adjacent to the Mount Baker Wilderness (Mt. Baker-Snoqualmie National Forest). The Twin Sisters massif is the largest exposed b…",
+    "approach": "Start at the Elbow Lake Trailhead (USFS Trail #697), at the end of FS Road 38 (the Mosquito Lake Road / FS-38 drive from Deming/Acme). The trail immediately meets the Middle Fork Nooksack River — there is no bridge at the marked crossing, and fording can be dangerous or outright impassable during hi…",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_sister_north_face",
+    "name": "North Face",
+    "peak": "Little Sister",
+    "area_id": "wa_little_sister",
+    "discipline": "mountaineering",
+    "grade": "5.4",
+    "high_point_ft": 6526,
+    "overview": "A long, moderate alpine rock route up the North Face of Little Sister, crossing the Green Creek Glacier to gain a wide, moderate-angle face split into two aretes, then finishing with unroped scrambling to the true summit.",
+    "approach": "Same range approach as the standard line: Elbow Lake Trailhead, cross the Middle Fork Nooksack (unofficial log crossing ~1/4 mile downstream of the marked ford), off-trail to Green Creek, cross Green Creek, ascend a rock buttress near 3,800 ft, then travel the Green Creek Glacier to the base of the …",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_sister_west_face",
+    "name": "West Face",
+    "peak": "Little Sister",
+    "area_id": "wa_little_sister",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "high_point_ft": 6526,
+    "overview": "The largest wall of generally sound rock in the Twin Sisters group: a long, low-commitment line of consistent 4th and low-5th-class climbing that can be soloed, simul-climbed, or pitched out over up to seven pitches.",
+    "approach": "Best reached via the Green Creek Circuit: Elbow Lake Trailhead, cross the Middle Fork Nooksack, off-trail to Green Creek and the Green Creek Glacier, then around to the west side of Little Sister (often linked with Skookum Peak on the circuit).",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_twin_sister_scramble",
+    "name": "North Twin Sister Olivine Scramble",
+    "peak": "North Twin Sister",
+    "area_id": "wa_north_twin_sister",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6644,
+    "overview": "North Twin Sister (6,644 ft) is the second-highest and northernmost summit of the Twin Sisters Range, a massif of dunite (mantle-derived, olivine-rich rock) about 10 miles southwest of Mount Baker. This line follows the mountain's standard west ridge on solid, high-friction olivine to the north summ…",
+    "approach": "Drive to the gate before the Clearwater Creek/Middle Fork Nooksack crossing on the logging-road network west of Mosquito Lake Road. From the gate, the approach is entirely on old logging roads and then ridge/brush for roughly 6-6.5 miles and about 5,500 ft of gain car-to-summit, one of the longer ap…",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_twin_sister_west_ridge",
+    "name": "West Ridge",
+    "peak": "North Twin Sister",
+    "area_id": "wa_north_twin_sister",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6644,
+    "overview": "North Twin Sister (6,644 ft) is the second-highest and most-visited summit of the Twin Sisters Range, a striking massif of dunite (an ultramafic, olivine-rich mantle rock) about 10 miles southwest of Mount Baker. Dunite is exposed at the surface in only a handful of places worldwide, and here it wea…",
+    "approach": "Via Mosquito Lake Road (from Acme/Welcome) to a bridge over the Middle Fork Nooksack River, then Forest Road 38; park at the gate and continue roughly 5-6 miles with about 2,000-2,500 ft of gain on private-timberland logging roads (commonly covered by mountain bike) to reach the West Ridge climbers'…",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_skookum_peak_twinsisters_scramble",
+    "name": "Twin Sisters Olivine Scramble",
+    "peak": "Skookum Peak",
+    "area_id": "wa_skookum_peak_twinsisters",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6534,
+    "overview": "Skookum Peak is one of the summits of the Twin Sisters Range west of Mount Baker, a chain famous for its reddish-orange olivine (dunite) rock — a rare exposed fragment of the earth's mantle and the largest such body in the Western Hemisphere. The peak lies on the ridge system extending south from So…",
+    "approach": "From the Mount Baker Ranger District office in Sedro-Woolley, drive north on WA-9 to Acme, turn right (east) on Mosquito Lake Road for about 9 miles, cross the Middle Fork Nooksack River, and continue onto Forest Road 38 for roughly 11 miles to the Elbow Lake Trail's north trailhead (a separate trai…",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_twin_sister_north_ridge",
+    "name": "North Ridge",
+    "peak": "South Twin Sister",
+    "area_id": "wa_south_twin_sister",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4",
+    "high_point_ft": 7004,
+    "overview": "An alternative line on the Twin Sisters Range high point, the North Ridge links South Twin with the saddle toward North Twin and offers a longer, more sustained scramble on the range's distinctive reddish dunite. It is often combined with a traverse of multiple summits in the range.",
+    "approach": "Access is via the Dailey Prairie logging-road network reached from the Middle Fork Nooksack River bridge (~1,200 ft) on the north side of the Twin Sisters Range — the DNR/private gate situation there changes year to year, so treat the drive-in as unverified until confirmed for your trip. From wherev…",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_twin_sister_scramble",
+    "name": "South Twin Sister Olivine Scramble",
+    "peak": "South Twin Sister",
+    "area_id": "wa_south_twin_sister",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7004,
+    "overview": "The standard non-technical line up South Twin Sister: follow the West Ridge approach to a high notch, then bypass the ridge crest's Class 4 step by traversing south across gullies and a seasonal snowfield to the summit, keeping the entire route to Class 2-3 on the range's namesake sticky olivine (du…",
+    "approach": "Identical to the West Ridge approach: Middle Fork Nooksack Road (FR 38) to the gated bridge, then bike the logging roads around Dailey Prairie, hike a brushy climbers' path and talus to Orsino Creek Basin between North and South Twin. Orsino Creek is the last reliable water source.",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_twin_sister_west_ridge",
+    "name": "West Ridge",
+    "peak": "South Twin Sister",
+    "area_id": "wa_south_twin_sister",
+    "discipline": "scrambling",
+    "grade": "Grade II-III, Class 4 / low 5th",
+    "high_point_ft": 7004,
+    "overview": "South Twin Sister is the highest point of the Twin Sisters Range west of Mount Baker, rising from reddish-orange dunite/olivine rock — the largest exposed body of this ultramafic rock in the Western Hemisphere — rather than the granite and volcanic rock typical of the rest of the North Cascades. The…",
+    "approach": "Park at the gated bridge over the Middle Fork Nooksack River (~1,200 ft) at the end of FR 38, reached via Mosquito Lake Road off WA-542. From the gate, most parties mountain-bike the old quarry/logging road system for roughly 6-6.5 miles and about 800-1,000 ft of gain, threading several forks and of…",
+    "camps": [
+     {
+      "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3170,
+      "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes t…"
+     },
+     {
+      "name": "Orsino Creek Basin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and followin…"
+     },
+     {
+      "name": "Col between the Twins and the Sisters Glacier margin",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twin…"
+     },
+     {
+      "name": "South Twin Sister summit bivies",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6932,
+      "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. …"
+     },
+     {
+      "name": "Green Creek cirque dispersed camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for th…"
+     },
+     {
+      "name": "Elbow Lake hiker camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the only established campsites anywhere near this range, reached by a spur off the main trail to the east shore of the lake. They are not on the direct line to any of these five summits, sitting on the divide e…"
+     },
+     {
+      "name": "Orsino Creek Basin / Red Talus Slope",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "Pick up the narrow climbers' path on foot heading southeast. It is brushy and wet in places but followable; it drops slightly, crosses a forested section, and s…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_bear_mountain_chilliwack",
+  "routes": [
+   {
+    "id": "wa_bear_mountain_chilliwack_north_buttress",
+    "name": "North Buttress",
+    "peak": "Bear Mountain",
+    "area_id": "wa_bear_mountain_chilliwack",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "high_point_ft": 7931,
+    "overview": "Bear Mountain's North Buttress is a serious, remote alpine rock route deep in North Cascades National Park near the Canadian border, first climbed by Fred Beckey and Mark Fielding in July 1967 (originally rated NCCS V, F8, A4; now typically climbed free around 5.10). It offers sustained, high-qualit…",
+    "approach": "From the Hannegan Pass Trailhead (~3,100 ft, end of Ruth Creek Rd/FR-32) follow Hannegan Pass Trail #674 — nearly level for the first mile, then a steady grade — about 4 miles and 2,000 ft of gain to Hannegan Pass (5,100 ft), roughly 2.5-3 hours. Drop off the back (east) side of the pass and continu…",
+    "camps": [
+     {
+      "name": "Meadow basin below the northwest-ridge saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The standard and effectively the only high camp for the buttress, in heather meadow a little below the notch on the northwest ridge, where scattered trees give some wind shelter and flat grassy ground. Reached by climbin…"
+     },
+     {
+      "name": "Bear Creek Camp (Chilliwack River Trail)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2300,
+      "notes": "Drop off the east side of the pass and continue about 5 miles down into the Chilliwack valley, bearing right at the national park boundary where the Chilliwack …"
+     },
+     {
+      "name": "NW Ridge saddle high camp (6,480')",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6480,
+      "notes": "Traverse the divide from the meadows, skirting the loose south-facing slopes below Points 6592 and 6822 and crossing a rock rib, to the broad saddle at 6,480 ft…"
+     }
+    ]
+   },
+   {
+    "id": "wa_direct_north_buttress",
+    "name": "Direct North Buttress",
+    "peak": "Bear Mountain",
+    "area_id": "wa_bear_mountain_chilliwack",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "high_point_ft": 7931,
+    "overview": "Bear Mountain's Direct North Buttress climbs the full buttress in one continuous push -- roughly 21 pitches of sustained crack and face climbing to 5.10-, first established by Alan Kearney and Bobby Knight over two and a half days in September 1980, and later freed by Bryan Burdo and Yann Merrand in…",
+    "approach": "Bear Mountain sits deep in the Chilliwack Range and is reached almost entirely on foot from the Hannegan Pass Trailhead: hike over Hannegan Pass, descend the Chilliwack River Trail down-valley, then leave the maintained trail near the Copper Ridge junction and bushwhack/scramble up Bear Mountain's w…",
+    "camps": [
+     {
+      "name": "Hannegan Camp, below Hannegan Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4663,
+      "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. Wit…"
+     },
+     {
+      "name": "Copper Lake Camp, Copper Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5269,
+      "notes": "Of the three camps strung along Copper Ridge, this is the one that solves water: the others are drier, and one is normally described as having no water source at all, which forces a long carry from lower down. That makes…"
+     },
+     {
+      "name": "US Cabin Camp, Chilliwack River",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2608,
+      "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a …"
+     },
+     {
+      "name": "Ouzel Lake basin, head of Depot Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting t…"
+     },
+     {
+      "name": "Basin below the Bear Mountain saddle",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6500,
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in —…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_buckner_mountain",
+  "routes": [
+   {
+    "id": "wa_buckner_mountain_north_face",
+    "name": "North Face",
+    "peak": "Buckner Mountain",
+    "area_id": "wa_buckner_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, AI2-3",
+    "high_point_ft": 9114,
+    "overview": "Buckner's north face is a classic alpine ice and snow climb, holding a sustained slope of moderate steepness that comes into the best shape in late spring and early summer. It is a coveted line for climbers wanting a north-side adventure on one of the range's high summits, often approached from Hors…",
+    "approach": "Start from the Boston Basin Trailhead (~3,200 ft), about 21.7 miles up Cascade River Road from Marblemount (a separate, shorter-drive trailhead than the Cascade Pass TH used for the SW route). The unmaintained climbers' path follows an old, overgrown mining road for about 1 mile to a former mine sit…",
+    "camps": [
+     {
+      "name": "Boston Basin high camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 6300,
+      "notes": "The comfortable planned camp, roughly 6,300 to 6,400 ft on a sandy flat below a permanent snowfield, about three to four hours from the road. Everything on this route beyond it is committing, because the way onto the Bos…"
+     },
+     {
+      "name": "Boston Glacier bivy",
+      "store": "bivy",
+      "type": null,
+      "elev": 7800,
+      "notes": "A planned but fully exposed glacier bivy used to shorten summit day, on one of the largest glaciers in the lower 48. You are camping on a crevassed surface, so probe the platform and its surroundings before dropping the …"
+     },
+     {
+      "name": "Sahale–Boston col bivy",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "A tiny, spectacular perch on the col between Sahale and Boston, used by parties linking this face with other climbs in the basin or descending over Sahale Arm. It is an emergency-sized site, not a camp: there is room for…"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7600,
+      "notes": "Turn north (left) at the pass onto the Sahale Arm path, which switchbacks steeply out of the pass at first. About 0.8 mile up, a signed split sends the right-ha…"
+     }
+    ]
+   },
+   {
+    "id": "wa_buckner_mountain_southwest_face",
+    "name": "Southwest Face / Southwest Slopes",
+    "peak": "Buckner Mountain",
+    "area_id": "wa_buckner_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 9114,
+    "overview": "Buckner Mountain is the third-highest peak in North Cascades National Park, the 14th-highest summit in Washington, and 11th on the state's Bulger list of 100 highest peaks — one of only about ten non-volcanic Washington summits above 9,000 ft. The mountain has two summits of nearly equal height a sh…",
+    "approach": "Start from the Cascade Pass Trailhead (~3,600 ft) at the end of Cascade River Road/FR-15. Take the maintained Cascade Pass Trail, which switchbacks through old-growth forest and then traverses subalpine meadows to Cascade Pass (5,400 ft) at 3.7 mi / ~1,700 ft gain. From the pass, pick up the Sahale …",
+    "camps": [
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Around 7,600 ft at the end of the Sahale Arm trail, about six miles and 4,000 ft from Cascade Pass trailhead. It is the standard base for the southwest side of Buckner: from camp you drop east onto Sahale's southeast rid…"
+     },
+     {
+      "name": "Upper Horseshoe Basin bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A cross-country alternative used by parties who would rather not depend on a Sahale Glacier Camp permit: descend into the upper basin and sleep on whatever ground you reach. The basin is a mix of clean granite slabs, sno…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_concord_tower",
+  "routes": [
+   {
+    "id": "wa_concord_tower_north_face",
+    "name": "North Face",
+    "peak": "Concord Tower",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 7611,
+    "overview": "The original 1956 Beckey/Parrott line and Concord Tower's most popular route: a compact, three-pitch crack-and-corner climb up the north face on generally good granite to the small summit, often combined with Liberty Bell's Beckey Route via the shared notch.",
+    "approach": "Start at the Blue Lake Trailhead (~5,400 ft) on SR-20, about 0.5 mile past milepost 162 and 1.5 miles west of Washington Pass. Follow the well-graded, well-maintained Blue Lake Trail through forest and past small tarns/streams for roughly 1.5-2 miles as it climbs into the open basin below the Libert…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_face_var_right_directisimo",
+    "name": "North Face Var. Right (Directisimo)",
+    "peak": "Concord Tower",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 7560,
+    "overview": "A harder, more direct variation of the standard North Face, sharing the same start and lower pitch but staying direct through steeper crack/corner terrain (5.8) rather than stepping right on the standard 5.6-5.7 line, before rejoining the standard route for the final pitch to the summit.",
+    "approach": "Drive Highway 20 to the Blue Lake Trailhead (~5,400 ft), ~30 miles west of Winthrop, ~0.25 mile west of the Washington Pass Overlook; day-use fee or Northwest Forest/Interagency pass required. Hike the Blue Lake Trail ~1.5 miles to a small meadow, then take the climber's boot path breaking off just …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_face_3",
+    "name": "South Face",
+    "peak": "Concord Tower",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 7569,
+    "overview": "A sunnier, less-trafficked alternative to Concord's classic North Face, the South Face climbs broken corners and cracks up the peak's south side to the same small, exposed summit block. It's commonly linked with Lexington Tower's North Face or Liberty Bell's Beckey Route via the shared notch for an …",
+    "approach": "Drive Highway 20 (North Cascades Highway) to the Blue Lake Trailhead (~5,400 ft), on the south side of the highway about 30 miles west of Winthrop and roughly 0.25 mile west of the Washington Pass Overlook; pay the day-use fee or display a Northwest Forest/Interagency pass (the ~20-car lot fills ear…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_face_center",
+    "name": "South Face Center",
+    "peak": "Concord Tower",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "high_point_ft": 7569,
+    "overview": "A shorter, steeper variation up the center of Concord's south face, starting about 100 ft climber's-left (west) of the standard South Face line. Historically climbed with a short bit of aid (5.7 A3) before being freed at its current, harder free grade; the route finishes by joining the upper portion…",
+    "approach": "Drive Highway 20 to the Blue Lake Trailhead (~5,400 ft), about 30 miles west of Winthrop and a quarter mile west of the Washington Pass Overlook; a day-use fee or Northwest Forest/Interagency pass is required and the small lot fills early. Hike the Blue Lake Trail about 1.5 miles until it opens out,…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_cave_route",
+    "name": "The Cave Route",
+    "peak": "Concord Tower",
+    "area_id": "wa_concord_tower",
+    "discipline": "alpine",
+    "grade": "5.8 R",
+    "high_point_ft": 7569,
+    "overview": "A serious, rarely repeated line on Concord's north side, climbed in three pitches of highly variable rock — described by the route's documenter as ranging from crumbly ('oatmeal') rock and scree to sound slabs with one good crack. The route is generally not recommended except for parties very solid …",
+    "approach": "Drive Highway 20 to the Blue Lake Trailhead (~5,400 ft), ~30 miles west of Winthrop, ~0.25 mile west of the Washington Pass Overlook; day-use fee or Northwest Forest/Interagency pass required. Hike the Blue Lake Trail ~1.5 miles to a small meadow, then take the climber's boot path breaking off just …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_lexington_tower",
+  "routes": [
+   {
+    "id": "wa_lexington_tower_east_face",
+    "name": "East Face",
+    "peak": "Lexington Tower",
+    "area_id": "wa_lexington_tower",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "high_point_ft": 7560,
+    "overview": "Lexington Tower's East Face is a striking 10-pitch alpine rock climb on the prominent east wall of the Liberty Bell skyline, featuring an exposed no-hands traverse, a crux lieback, and memorable offwidth pitches including one with a jammed 2x4 for pro.",
+    "approach": "Park at the pond pullout on the south side of SR-20, about 1.2 miles east of Washington Pass (a small dirt turnout marked by a roadside pond). The climbers' path starts just left (west) of the highway's east-side guardrail/barrier and immediately begins gaining elevation through forest. It pops out …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_face_3",
+    "name": "North Face",
+    "peak": "Lexington Tower",
+    "area_id": "wa_lexington_tower",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": 7560,
+    "overview": "A short, fun 3-pitch 5.6-5.7 outing on Lexington Tower's north side, reached via the Concord-Lexington col above Liberty Bowl. The route climbs blocky, well-protected granite past an awkward leaning first-pitch crack to a finishing knife-edge ridge nicknamed 'the Stegosaur.' It was the original 1954…",
+    "approach": "Start at the Blue Lake Trailhead, a small pullout on SR-20 just west of Washington Pass. Follow the main, well-graded Blue Lake Trail through forest for about 1.5 miles. Watch for a cairned, well-worn climbers' boot path splitting off uphill to the right toward the Liberty Bell group cirque — this j…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_tooth_and_claw",
+    "name": "Tooth and Claw",
+    "peak": "Lexington Tower",
+    "area_id": "wa_lexington_tower",
+    "discipline": "alpine",
+    "grade": "5.12a",
+    "high_point_ft": null,
+    "overview": "Tooth and Claw climbs the steep, sustained slabs directly right of the East Face, giving Lexington Tower's hardest free line at 5.12a. It is more pure slab/edge climbing and considerably less traveled than the neighboring wide-crack testpieces, first climbed by Steve Risse and Dave Tower in 1989.",
+    "approach": "Same start as the East Face: from SR-20, park at the informal pullout on the north shoulder of the highway a short walk east of the small pond, about 1.2 miles east of Washington Pass (no permit needed). A well-beaten climbers' trail leaves the east end of the pond and climbs steeply through timber;…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_liberty_bell",
+  "routes": [
+   {
+    "id": "wa_a_servant_to_liberty",
+    "name": "A Servant To Liberty",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.13-",
+    "high_point_ft": null,
+    "overview": "Also published as 'A Slave to Liberty' (450m, Grade V, 5.13-). Climbs the first three pitches of Freedom or Death (5.10, 5.11, 5.11), then breaks right to join Thin Red Line just below its third-pitch anchor before launching into eight new pitches (four rated 5.12) up the East Face, with the crux 5.…",
+    "approach": "Same East Face approach as Freedom or Death and Thin Red Line: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path from the pond's east end about a mile through forest to the East Face talus. This route starts at the Freedom or Deat…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dark_side_of_liberty",
+    "name": "Dark Side of Liberty",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade IV, 5.13+, 1,100 ft",
+    "high_point_ft": null,
+    "overview": "A 1,100-foot free route up Liberty Bell's shaded northeast face, established by Shanjean Lee and Mikey Schaefer. The pair began equipping the line in 2018 (rappelling in from the neighboring Barber Pole route) and completed the first free ascent in August 2019. The face is perpetually in shade excep…",
+    "approach": "Dark Side of Liberty climbs the northeast face of Liberty Bell and is noted by its first-ascent party as being 'about 20 minutes from the road' — the shortest approach of the major Liberty Bell technical lines. Park at the hairpin turn on WA-20 east of Washington Pass (same general area as the East …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_and_injustice_for_all",
+    "name": "Liberty and Injustice for All",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.12b",
+    "high_point_ft": null,
+    "overview": "Climbs the East Face about 10m right of Thin Red Line, joining it at Thin Red Line's seventh-pitch anchor. Established in 2014 by Mikey Schaefer, who rope-soloed the line. Technical, well-protected climbing on solid edges and thin crack features, with short bouldery 5.12- cruxes near the start of a …",
+    "approach": "Same East Face approach as the other Liberty Crack-area routes: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path from the pond's east end about a mile through forest to the East Face talus. Liberty and Injustice for All takes a l…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_beckey_route",
+    "name": "Beckey Route (Southwest Face)",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.6",
+    "high_point_ft": 7720,
+    "overview": "The Beckey Route is the easiest line to the top of Liberty Bell and one of the most popular moderate alpine rock climbs in Washington Pass. First climbed in 1946 as the original ascent of the peak, it gains the summit in three short pitches of clean Golden Horn granite up the southwest face, with a …",
+    "approach": "From the Blue Lake Trailhead (FS Trail #314, ~5,140 ft, on SR-20 about 1.5 miles west of Washington Pass), follow the maintained, well-graded Blue Lake Trail north through forest and open meadow for about 1.5 miles to a small meadow just past a small stream crossing (the last reliable water). Leave …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_east_face",
+    "name": "East Face",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.6",
+    "high_point_ft": 7720,
+    "overview": "A moderate rock route on the east side of Liberty Bell, giving accessible alpine rock climbing on good Washington Pass granite to the summit. A popular, lower-grade line on the formation.",
+    "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the h…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_independence_route",
+    "name": "The Independence Route",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade V, 5.12a free (orig. F8 A4)",
+    "high_point_ft": 7720,
+    "overview": "One of Liberty Bell's three historic 1960s east-face aid lines (with Liberty Crack and Thin Red Line). Established in May 1966 by Alex Bertulis and Don McPherson as a 20-lead aid route at F8 A4 using roughly 180 pitons and 5 bolts; the line has since been substantially freed, with a full free ascent…",
+    "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the h…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_nw_face",
+    "name": "Northwest Face",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 7720,
+    "overview": "The Northwest Face offers a quality moderate alternative to the Beckey Route on Liberty Bell, with five pitches of clean granite climbing up to 5.9 and a more sustained feel than the standard line. First climbed in 1956 by Hans Kraus and John Rupley via the approach couloir on the northwest side",
+    "approach": "From the Blue Lake Trailhead (5,200 ft, on WA-20 about 1.5 mi west of Washington Pass), follow the maintained Blue Lake Trail roughly 1.5 miles through forest to a small meadow/clearing below Liberty Bell. Leave the Blue Lake Trail here on the well-beaten climbers' path that splits left just past a …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_overexposure",
+    "name": "Overexposure",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.8",
+    "high_point_ft": 7720,
+    "overview": "An aptly named, exposed hard free climb on Liberty Bell's west face. Sustained, technical crack and face climbing on outstanding Washington Pass granite, with the airy position that gives the route its name.",
+    "approach": "Overexposure starts right at the top of the notch between Liberty Bell and Concord Tower, so the trailhead-to-base approach is identical to the Beckey Route: Blue Lake Trailhead (FS Trail #314) → 1.5 miles of maintained trail to the small meadow/stream crossing → climbers' boot path through slabs, t…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_serpentine_crack",
+    "name": "Serpentine Crack",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.11",
+    "high_point_ft": 7720,
+    "overview": "A striking, winding crack line on Liberty Bell's west face giving sustained, well-protected crack climbing on excellent Washington Pass granite. A quality moderate at a friendly free grade.",
+    "approach": "West, from Washington Pass area near Winthrop, Washington",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_bell_thin_red_line",
+    "name": "Thin Red Line",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade IV, 5.12 free (orig. aid V, 5.9 A3)",
+    "high_point_ft": 7720,
+    "overview": "A classic sustained crack line up the steep East Face of Liberty Bell at Washington Pass — one of the area's renowned harder free climbs on superb golden granite. First climbed (aid) by Jim Madsen and Kim Schmitz on July 29, 1967; first freed by Kate Rutherford and Mikey Schaefer in September 2008, …",
+    "approach": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond eastward into forest",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_crack",
+    "name": "Liberty Crack",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "Grade V, 5.11a (or 5.9 A3 original aid; 5.13- fully free)",
+    "high_point_ft": 7746,
+    "overview": "Liberty Crack is the most celebrated route on Liberty Bell and #24 in Roper & Steck's Fifty Classic Climbs of North America, splitting the steep, 1,200-foot east face with a soaring line of cracks. The signature roof on Pitch 2, the 'Lithuanian Lip,' is named for Alex Bertulis' Lithuanian heritage —…",
+    "approach": "Liberty Crack climbs the East Face, and its approach does NOT start from the Blue Lake Trailhead — that's the trailhead for the west-side Beckey Route. Instead, drive to the pullout on the north side of SR-20 at the hairpin curve a short distance east of Washington Pass (about 0.3-0.5 mile past the …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_crack_free",
+    "name": "Liberty Crack (Free)",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.13b",
+    "high_point_ft": 7720,
+    "overview": "A modern free variation to the historic Liberty Crack aid line. Liberty Crack was first freed in 1991 by Brooke Sandahl, who led the crux roof/crack pitch on gear and toproped the protectionless slab beside the old bolt ladder. Mikey Schaefer, Shanjean Lee, Blake Herrington, and Nathan Hadley later …",
+    "approach": "Drive to the hairpin turn on WA-20 just east of Washington Pass and park at the pullout on the curve (this is a different trailhead than the Blue Lake TH used for the SW/NW Face routes). Walk back toward the pass and find the small pond on the south side of the highway; a cairned climbers' path leav…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_traverse",
+    "name": "Liberty Traverse",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": null,
+    "overview": "The classic Liberty Bell Group traverse: start up the Beckey Route on Liberty Bell, continue over the North Face of Concord Tower and the North Face of Lexington Tower, then the Northwest Corner of North Early Winters Spire and the Southwest Rib of South Early Winters Spire. Roughly 26 pitches total…",
+    "approach": "South side of Highway 20, 1 mile west of Washington Pass overlook; from trailhead follow Blue Lake Trail 1.5 miles to climber's trail junction",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_live_free_or_die",
+    "name": "Live Free or Die!™",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.12-",
+    "high_point_ft": null,
+    "overview": "Despite its name and grade label, Live Free or Die! is NOT a boulder problem — it is a full 11-pitch, roughly 1,200-foot free route up Liberty Bell's East Face (grade 5.12- yds; crux may feel 5.12b for shorter climbers), sharing a few meters and belay stances with the Independence Route. Established…",
+    "approach": "Same East Face approach as Liberty Crack: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond on the south side of the road, and follow the cairned climbers' path from the pond's east end about a mile through forest to the talus below the East Face. The route begins in t…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_nw_face_var_remsberg_variation",
+    "name": "NW Face Var. (Remsberg Variation)",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "high_point_ft": 7720,
+    "overview": "A harder finish variation to the standard Northwest Face route, established by Dale Remsberg and Scott Stimpson. Adds flaring 5.10d crack climbing through the upper half of the face in place of the standard route's easier finish.",
+    "approach": "Identical to the standard Northwest Face route, since this is a single-pitch variation on it: from the Blue Lake Trailhead, hike the Blue Lake Trail ~1.5 miles to the meadow, take the climbers' path left past the small stream, and follow it toward Concord as far as it goes before breaking left onto …",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   },
+   {
+    "id": "wa_rapple_grapple",
+    "name": "Rapple Grapple",
+    "peak": "Liberty Bell Mountain",
+    "area_id": "wa_liberty_bell",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 7720,
+    "overview": "Rapple Grapple shares its first pitch with the Beckey Route, then traverses right along the 'Beckey ledge' past a few trees into an open-book corner system with 5.7 finger and hand cracks, rejoining the Beckey Route near the top of the buttress before the final scramble and 5.6 slab to the summit — …",
+    "approach": "From the Blue Lake Trailhead, hike the Blue Lake Trail ~1.5 miles to the meadow, then take the climbers' path left past the small stream up through slabs and talus toward the Liberty Bell-Concord gully. Rapple Grapple shares its first pitch with the Beckey Route, so follow the standard Beckey approa…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_minuteman_spire",
+  "routes": [
+   {
+    "id": "wa_east_face_3",
+    "name": "East Face",
+    "peak": "Minuteman Spire",
+    "area_id": "wa_minuteman_spire",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "high_point_ft": 6969,
+    "overview": "A 6-pitch, Grade III 5.10- moderate alpine rock route up the East Face of the smallest tower in the Liberty Bell Group, climbing progressively better rock to a stellar hand-crack finish near the summit.",
+    "approach": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead. Park at the Blue Lake Trailhead (about 5,200 ft, Northwest Forest Pass required), on t…",
+    "camps": [
+     {
+      "name": "Blue Lake trailhead roadside bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5400,
+      "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walkin…"
+     },
+     {
+      "name": "Liberty Bell basin dispersed sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes a…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season ru…"
+     },
+     {
+      "name": "Klipchuck Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quie…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_molar_tooth",
+  "routes": [
+   {
+    "id": "wa_north_ridge_west_side",
+    "name": "North Ridge - West Side",
+    "peak": "Molar Tooth",
+    "area_id": "wa_molar_tooth",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 7547,
+    "overview": "A moderate alpine route on Molar Tooth's north ridge featuring 2-3 low to moderate 5th class pitches up the west rib to the summit, with excellent granite climbing punctuated by loose rock hazards and quality variations.",
+    "approach": "Two primary approaches: (1) From the Cutthroat Lake trailhead on Highway 20, hike 1.8 miles with 500 feet elevation gain to Cutthroat Lake (4,800 ft). Continue another 3.7 miles with 1,800 feet elevation gain to Cutthroat Pass (6,800 ft), then follow the ridge crest south approximately 1 mile to the…",
+    "camps": [
+     {
+      "name": "Cutthroat Creek trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. Parties climbing the South Buttress or Southeast Buttress routinely sleep here or in a pullout on the road in before a pre-dawn start…"
+     },
+     {
+      "name": "Cutthroat basin climbers' bivy — SOUTH-SIDE routes only",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "SERVES THE SOUTH AND SOUTHEAST ROUTES ONLY. The North Ridge is normally approached from the State Creek side, and this bivy does not help that party at all. From the trailhead a way-path leaves the Cutthroat Lake trail, …"
+     },
+     {
+      "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4945,
+      "notes": "The lake sits about 1.8 miles in with roughly 500 ft of gain, in the basin under the peak's north and east sides. It is a pleasant place to stage, but the quarter-mile closure exists because the shoreline was being loved…"
+     },
+     {
+      "name": "Cutthroat Wall base terrace",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5800,
+      "notes": "The approach leaves the old roadbed a quarter mile from the trailhead at cairns, then climbs left through trees and light brush to a flat bench beneath the west-northwest-facing granite. Most parties do these routes car-…"
+     },
+     {
+      "name": "Lone Fir Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3600,
+      "notes": "The closest developed campground to the Cutthroat Creek trailhead, a short drive east on SR 20 along Early Winters Creek. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the …"
+     },
+     {
+      "name": "Klipchuck Campground, with Early Winters nearby",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen te…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "unzoned:wa_mount_anderson",
+  "routes": [
+   {
+    "id": "wa_mount_anderson_eel_glacier",
+    "name": "Eel Glacier / Flypaper Pass",
+    "peak": "Mount Anderson",
+    "area_id": "wa_mount_anderson",
+    "discipline": "mountaineering",
+    "grade": "Glacier climb with steep snow and short summit rock",
+    "high_point_ft": 7330,
+    "overview": "The standard mountaineering route on Mount Anderson's East Peak (~7,323–7,330 ft), a glaciated summit at the center of the Anderson Massif in Olympic National Park's Daniel J. Evans Wilderness. The massif's true high point, West Peak (~7,365 ft), is a separate, harder rock objective and is NOT reach…",
+    "approach": "From US-101 at Brinnon, turn onto Dosewallips Road and drive roughly 5.5 miles to the washed-out gate — the road has been closed to vehicles since a 2002 flood and remains closed indefinitely as of recent seasons; park here (a mountain bike is a real time-saver for the road-walk ahead). Follow the b…",
+    "camps": [
+     {
+      "name": "Honeymoon Meadows",
+      "store": "bivy",
+      "type": null,
+      "elev": 3527,
+      "notes": "PLANNED camp and the last big established site on the West Fork, roughly eight trail-miles past the ranger station. Dry ground at the far end of the meadows once the snow goes. Getting here involves at least one calf- to…"
+     },
+     {
+      "name": "Camp Siberia / Anderson Pass shelter area",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED alternative about 0.7 mile and 700 ft above Honeymoon Meadows, below Anderson Pass. Sheltered and in trees, which is its value in weather — but parties routinely walk past it without finding it under snow, so do …"
+     },
+     {
+      "name": "Tarn camp above Anderson Pass",
+      "store": "bivy",
+      "type": null,
+      "elev": 5100,
+      "notes": "PLANNED high camp and the one worth reaching — open slopes above Anderson/Valkyrie Lake, roughly a mile past the pass up the climbers' path and moraine, and preferred by parties specifically to avoid sleeping in the fore…"
+     }
+    ]
+   }
+  ]
+ }
+]

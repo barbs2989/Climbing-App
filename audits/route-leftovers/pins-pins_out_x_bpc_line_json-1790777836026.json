@@ -1,0 +1,45 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "op": "clear_line",
+   "points": 2,
+   "why": "2-point sketch drawn from the northwest side; this route approaches from the east"
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "waypoints": [
+    {
+     "lat": 48.73525,
+     "lng": -121.71027,
+     "elev": 2700,
+     "name": "Boulder Ridge Trailhead (Trail #605, FR-1131)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Baker Lake Road to FR-1130, then follow FR-1131 to its end at the Boulder Ridge Trailhead, around 2,700 ft. Boulder Ridge Trail #605 starts from the road's end. This is the lowest trailhead on the mountain, which is why the climb adds up to about 8,000 ft of cumulative gain — the biggest of any Baker route."
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 8
+    }
+   ],
+   "gpx": [
+    [
+     48.805,
+     -121.85
+    ],
+    [
+     48.777,
+     -121.813
+    ]
+   ]
+  }
+ ]
+}

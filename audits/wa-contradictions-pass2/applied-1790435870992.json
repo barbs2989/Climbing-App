@@ -1,0 +1,324 @@
+{
+ "applied": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Glacier used on the approach"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Glacier used on the approach"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Scramble grade of the standard finish"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Scramble grade of the standard finish"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Scramble grade of the standard finish"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Driving direction to Goodell Creek Road"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Permit cost"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Permit cost"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Permit cost"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "before": {
+    "gear": [
+     "Ice axe & crampons (glacier approach via Crescent Creek Basin/Mustard Glacier)",
+     "Glacier travel rope + crevasse-rescue kit (2-3 person rope team)",
+     "Light alpine rock rack for the ridge climbing",
+     "Helmet (loose rock typical of unrepeated Southern Pickets lines)",
+     "60m rope for climbing/rappelling loose sections",
+     "Full overnight glacier-camping kit (multi-day approach)"
+    ],
+    "detailed_rack": "Glacier travel gear for the Crescent Creek Basin/Mustard Glacier approach, plus a light alpine rock rack (assorted nuts + small-to-mid cams ~0.3-2in) and slings for rock steps on the ridge; a 60m rope covers rappelling loose terrain near the Otto-Himmel col.",
+    "rock_grade": "Class 4 (a 5.7 variation exists on the north side of the summit blocks)",
+    "pitch_detail": [
+     {
+      "grade": "Snow / small glacier, moderate",
+      "notes": "From camp at roughly 6,200 ft, climb snow and small glacier slopes northwest toward the notch between Ottohorn and Himmelhorn. About an hour from a Crescent Creek Basin camp. Rope up for glacier travel; crampons and axe. Early season this is a straightforward snow plod, late season it becomes bare ice and rubble.",
+      "pitch": "Section 1 — Crescent Creek Basin to below the col",
+      "lengthM": 305
+     },
+     {
+      "grade": "Steep snow, or loose low 5th class late season",
+      "notes": "The transition from snow to rock at roughly 7,400 ft. Trivial when snow-filled; by August the moat can be overhanging and the exit onto the col can require loose fifth-class moves. The south (Crescent Creek) side is markedly friendlier than the north. Scout the crossing here for the descent.",
+      "pitch": "Section 2 — bergschrund / moat and exit onto the Otto-Himmel col",
+      "lengthM": 60
+     },
+     {
+      "grade": "Class 3",
+      "notes": "From the col, blocky scrambling west up the ridge crest on Skagit Gneiss. Most parties move unroped. Good holds interspersed with detached blocks — keep the party out of each other's fall line.",
+      "pitch": "Section 3 — lower east ridge",
+      "lengthM": 75
+     },
+     {
+      "grade": "Class 4 (or 5.7 variation on the north side)",
+      "notes": "The final step to the summit at 7,840 ft. Graded Class III by the 1961 first-ascent party and Class 4 by the 2003 enchainment party. In 2011 the direct finish was found to be an active fresh-rockfall zone about 30 ft below the ridge; that party avoided it by moving around the corner onto two juggy 5.7 pitches. Judge it on the day and rope up if there is any doubt.",
+      "pitch": "Section 4 — summit blocks",
+      "lengthM": 60
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "3",
+      "label": "Scramble from the Himmelhorn-Ottohorn col",
+      "notes": "From the col the summit is reported as easy scrambling — accounts consistently call the peak class 3 and describe it as one of the few Southern Picket summits that is not fifth class. Parties have climbed it from the col in roughly an hour round trip, some without taking rope or rack out of camp. Picket rock is broken and the col itself is loose, so helmets and careful block-testing matter more than the grade suggests; the col is also the retreat point, and getting back down into Crescent Creek Basin late in the season can be harder than the scramble above."
+     },
+     {
+      "n": 2,
+      "class": "5.7",
+      "label": "Rockfall scar below the summit ridge",
+      "notes": "At least one party found the easy line broke into a fresh rockfall zone about 30 ft below the summit ridge and backed off rather than cross it, returning with a rope and climbing a roped alternative of about two pitches of juggy 5.7 to the top. Treat this as conditions-dependent rather than fixed: the scar is recent enough that the terrain here may have changed again, and a scramble party arriving without gear may find no acceptable line through the unstable blocks. Carry enough to retreat or to protect a short 5th-class variation, and do not commit to the last 100 ft until you can see it."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "before": {
+    "road": {
+     "name": "WA-20 (North Cascades Highway) to Goodell Creek Road, near Newhalem",
+     "status": "Goodell Creek Road/trailhead is reachable whenever WA-20 is open at Newhalem, which is normally year-round.",
+     "driveNote": "From Sedro-Woolley/Marblemount, follow WA-20 east past Newhalem; Goodell Creek Road turns off near the Goodell Creek Campground and dead-ends at the trailhead parking.",
+     "seasonalGate": "WA-20 itself only closes seasonally east of Ross Dam (~milepost 134). The 2025-26 winter saw a later-than-usual spring reopening (mid-June 2026) after storm and rockslide damage between roughly mileposts 142-148, so verify current status for early-season trips."
+    }
+   }
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.7098,
+      "lng": -121.1452,
+      "elev": 1150,
+      "name": "Pyramid Lake Trailhead",
+      "note": "Roadside pullout on the north side of SR-20 near milepost 126.8, just east of Gorge Lake; day hiking needs no permit, but overnight camps in the park require a backcountry permit from the Marblemount Wilderness Information Center.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The Pyramid Lake Trailhead is a signed gravel pullout on the north side of SR-20 near milepost 126.8, about 21 miles east of Marblemount and 6.4 miles past Newhalem, just past the Diablo turnoff at roughly 1,150-1,200 ft. The maintained Pyramid Lake Trail starts across the highway from the pullout. Day hiking needs no permit, but an overnight camp in the park does: pick up the free NPS wilderness permit from the Marblemount Wilderness Information Center on your way through."
+     },
+     {
+      "lat": 48.6948167,
+      "lng": -121.1232137,
+      "elev": 2600,
+      "name": "Pyramid Lake",
+      "note": "Small landslide-dammed tarn with floating carnivorous sundew mats reached via well-graded trail; camping is prohibited at the lake or along the trail corridor, so treat it as a water stop only.",
+      "type": "Water",
+      "distMi": 2.1,
+      "directions": "The Pyramid Lake Trail is maintained the whole way and climbs at a steady grade through old-growth forest, about 1,500 ft over 2.1 miles with no navigational decisions to make. Rock-hop the creek at roughly the 1-mile mark. That crossing and the lake itself are the last easy water you pass, because the climbers' path above offers almost nothing for the next several hours."
+     },
+     {
+      "lat": 48.679753,
+      "lng": -121.133887,
+      "elev": 4555,
+      "name": "Point 4555' / Pyramid Peak east ridge",
+      "note": "Boot path leaves the lakeshore and climbs a steep, often overgrown climber's trail (slide alder, class 2-3 rock and dirt) onto Pyramid Peak's east ridge; easy to lose in fog or on lingering snow.",
+      "type": "Junction",
+      "distMi": 3.2,
+      "directions": "Leave the maintained trail on the lake's south, right-hand side and pick up the unmaintained climbers' path. It is steep and brushy from the first steps and gains roughly 2,000 ft in switchbacks onto Pyramid Peak's east ridge near 4,000 ft, then follows the narrow, knolly crest with loose rock and short route-finding steps. Lingering snow or cloud on that crest is where parties lose the line."
+     },
+     {
+      "lat": 48.665939,
+      "lng": -121.138016,
+      "elev": 5900,
+      "name": "Colonial Glacier moraine camp",
+      "note": "Established tent sites on the terminal-moraine benches above the shrinking Colonial Glacier's meltwater tarn; last reliable camping before the col, exposed to wind.",
+      "type": "Campsite",
+      "distMi": 4.4,
+      "directions": "Short of Pyramid Peak itself, do not climb it. Drop slightly off the ridge and traverse across scree and boulders, often on lingering snow, to the terminal moraine and its meltwater tarn at the foot of the Colonial Glacier. The moraine benches are the standard first camp and the tarn is the water; the ground is open and takes the wind."
+     },
+     {
+      "lat": 48.66009,
+      "lng": -121.143405,
+      "elev": 6840,
+      "name": "Colonial-Neve col",
+      "note": "Broad saddle gained by a short 30-degree snow climb around the moraine lake; rope up for glacier travel here before dropping onto the Neve Glacier.",
+      "type": "Junction",
+      "distMi": 4.9,
+      "directions": "Rope up before leaving camp, as the Colonial Glacier is crevassed. Climb it south past the east flank of Paul Bunyan's Stump on snow up to about 30 degrees, working around the moraine lake, to the broad col near 6,840 ft. A stream at the col makes it a usable second camp and water source."
+     },
+     {
+      "lat": 48.651258,
+      "lng": -121.144741,
+      "elev": 7700,
+      "name": "Neve Glacier crossing",
+      "note": "Roped traverse of one of Washington's largest non-volcanic glaciers toward Snowfield's NW ridge; crevasses are usually well-bridged by midsummer but require active route-finding around open slots.",
+      "type": "Hazard",
+      "distMi": 5.6,
+      "directions": "From the col drop roughly 150-250 ft onto the Neve Glacier and cross it roped. The cleanest line runs through the centre of the crevasse field; bridges are usually sound by midsummer but need active route-finding around open slots and soften through the afternoon. There are very few visual reference points out here, so track your line for the return, because whiteout navigation is the standing problem on this crossing."
+     },
+     {
+      "lat": 48.644282,
+      "lng": -121.145344,
+      "elev": 7950,
+      "name": "West ridge / NW face gully",
+      "note": "Leave the glacier and gain the west ridge via a class 3 gully with an exposed rib crossing about 300-400 vertical feet below the summit.",
+      "type": "Junction",
+      "distMi": 6.1,
+      "directions": "Leave the glacier on Snowfield's northwest side near The Horseman, around 7,700 ft, and gain the west ridge by a class 3 gully with one exposed rib crossing. This puts you 300-400 vertical feet below the summit. Early in the season the rock through here can carry verglas or rime."
+     },
+     {
+      "lat": 48.635339,
+      "lng": -121.138799,
+      "elev": 8351,
+      "name": "Snowfield Peak",
+      "note": "True summit reached by a final class 3-4 blocky scramble; broad views over Colonial, Pyramid, and the peak's namesake permanent snowfields.",
+      "type": "Summit",
+      "distMi": 7,
+      "directions": "A long class 3 gully leads up to a notch just below the true summit, then a short exposed traverse onto the south side and a short stretch of blocky scrambling finishes it. One move is occasionally low class 4, and harder lines exist to either side, so stay on the easiest ground. You downclimb that notch on the way out, so read it as you pass."
+     }
+    ],
+    "itinerary": {
+     "cal": "Best conditions are typically July-September once the Neve/Colonial Glacier crevasses are more settled and the climbers' trail is snow-free; a free NPS wilderness permit from the Marblemount Wilderness Information Center is required for the overnight camp.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Pyramid Lake Trailhead (1,150 ft) on SR-20, a well-graded trail climbs 1,500 ft in 2.1 mi to Pyramid Lake. From there a brushy, unmaintained climbers' trail continues up the ridge above the lake to treeline, with camps at ~5,400 ft, ~5,900 ft (on snow), or in Colonial Basin. Most parties budget 4-6 hours for this leg.",
+       "hours": 5.5,
+       "miles": 5.5,
+       "title": "Approach to high camp",
+       "gainFt": 4750,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "Mid-morning",
+         "label": "Leave trailhead",
+         "detail": "Start on the maintained Pyramid Lake Trail (1,150 ft)."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Pyramid Lake",
+         "detail": "2.1 mi, 1,500 ft gain; trail quality drops from here."
+        },
+        {
+         "time": "+4-5 hr",
+         "label": "Climbers' trail up the ridge",
+         "detail": "Brushy tread gaining the ridge above the lake toward treeline."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Make camp",
+         "detail": "Camp at ~5,400-5,900 ft or in Colonial Basin; melt snow for water."
+        }
+       ],
+       "objective": "Reach treeline/Colonial Basin camp (~5,800-6,000 ft)"
+      },
+      {
+       "n": 2,
+       "note": "An early start crosses the col into the Colonial Glacier basin, ascends to the ~6,800 ft pass, and traverses the Neve Glacier (roped, watch for crevasses that open by midsummer around 6,600 ft) to the west ridge. A short class 3 scramble up a gully/arete system gains the 8,351 ft summit. Most parties reverse the whole route the same day, glissading the snow slopes back to camp before breaking it down and hiking out to the trailhead.",
+       "hours": 9,
+       "miles": 10.5,
+       "title": "Summit day and hike out",
+       "gainFt": 2650,
+       "lossFt": 7300,
+       "packLb": 32,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave camp",
+         "detail": "Rope up before dropping into the Colonial Glacier basin."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Cross Neve Glacier",
+         "detail": "Roped travel past scattered crevasses near 6,600 ft to the pass."
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Summit scramble",
+         "detail": "Class 3-4 gully/arete moves off the west ridge to the 8,351 ft top."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at camp",
+         "detail": "Glissade the glacier snow slopes, break down camp."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Descend the climbers' trail and Pyramid Lake Trail to the car."
+        }
+       ],
+       "objective": "Climb Snowfield Peak via the Colonial and Neve Glaciers, then descend to the car"
+      }
+     ],
+     "totalNote": "A 2-day/1-night weekend trip is the norm: ~15-16 mi and ~7,300 ft gain round trip, with roughly 9 hours camp-to-car on summit day; very fit parties occasionally push it car-to-car in a single ~12-hour day."
+    },
+    "access": {
+     "fees": "$10 per person plus a $6 nonrefundable permit fee for backcountry permits via recreation.gov (about 60% of capacity is reservable in advance, 40% held for walk-up permits at the Marblemount WIC, which are free). No entrance fee for North Cascades National Park itself.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Camping banned at Pyramid Lake and along its trail corridor. Blue bags/WAG bags required in the Colonial/Snowfield zones — no toilets and little soil for burial. Group size in these cross-country zones is capped at 6 climbers.",
+     "permit": "NPS backcountry permit required for any overnight stay (Colonial and Snowfield cross-country zones). Camping is prohibited at Pyramid Lake itself — climbers must camp at least 1/2 mile past the lake. No permit is needed for a single-push day climb.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Complex; permits issued through the Wilderness Information Center in Marblemount.",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None for day use (no NP entrance fee); only the backcountry camping permit applies to overnight trips.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    }
+   }
+  }
+ ]
+}
